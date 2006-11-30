@@ -19,7 +19,18 @@ $wgTranslateMessages['en'] = array(
 
 	'translate-edit-message-in' => 'Current string in <b>$1</b> (Messages$2.php):',
 	'translate-edit-message-in-fb' => 'Current string in fallback language <b>$1</b> (Messages$2.php):',
+);
+$wgTranslateMessages['he'] = array(
+	'translate'            => 'תרגום',
+	'translate-changed'    => '$1 הודעות שלא השתנו',
+	'translate-database'   => '$1 הודעות שאינן במסד הנתונים',
+	'translate-translated' => '$1 הודעות מתורגמות',
+	'translate-core'       => '$1 הודעות שאינן הודעות ליבה',
+	'translate-sort'       => 'מיון: $1',
+	'translate-export'     => 'ייצוא:',
 
+	'translate-edit-message-in'    => 'המחרוזת הנוכחית ל־<b>$1</b> (Messages$2.php):',
+	'translate-edit-message-in-fb' => 'המחרוזת הנוכחית ל־<b>$1</b> בשפת הגיבוי (Messages$2.php):',
 );
 
 ?>
