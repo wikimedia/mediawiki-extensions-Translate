@@ -1,9 +1,4 @@
 <?php
-/**
- * Use this special page to translate MediaWiki system messages.
- * @package MediaWiki
- * @subpackage SpecialPage
- */
 
 class SpecialTranslate extends SpecialPage {
 	const OUTPUT_DEFAULT = 1;
@@ -273,7 +268,7 @@ class SpecialTranslate extends SpecialPage {
 		$mwtalk = $wgLang->getNsText( NS_MEDIAWIKI_TALK );
 		
 		$tableheader = wfElement( 'table', array(
-			'class'   => 'allmessagestable',
+			'class'   => 'mw-special-translate-table',
 			'border'  => '1',
 			'cellspacing' => '0'),
 			null

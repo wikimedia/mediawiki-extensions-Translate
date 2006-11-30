@@ -31,17 +31,45 @@ if ( !function_exists( 'extAddSpecialPage' ) ) {
 	require( dirname(__FILE__) . '/../ExtensionFunctions.php' );
 }
 extAddSpecialPage( dirname(__FILE__) . '/SpecialTranslate_body.php', 'Translate', 'SpecialTranslate' );
+require_once( 'SpecialTranslate_edit.php' );
+global $wgHooks;
 
 # Hook Edit page
-/*global $wgHooks;
-$wgHooks['EditPage::showEditForm:initial'][] = 'wfSpecialEdittor';
+$poks = new SpecialTranslateEditTools();
+$wgHooks['EditPage::showEditForm:initial'][] =
+	array( $poks, 'addTools' );
 
-function wfSpecialEdittor( $object ) {
+$wgHooks['SkinTemplateSetupPageCss'][] = 'wfSpecialTranslateAddCss';
 
-	$object->editFormTextTop .= "hello";
+function wfSpecialTranslateAddCss($css) {
+
+	$css .=
+<<<CSSXYZ
+/* Special:Translate */
+.mw-special-translate-table {
+	width: 100%;
+}
+
+.mw-special-translate-table th {
+	background-color: #b2b2ff;
+}
+
+.mw-special-translate-table tr.orig {
+	background-color: #ffe2e2;
+}
+
+.mw-special-translate-table tr.new {
+	background-color: #e2ffe2;
+}
+
+.mw-special-translate-table tr.def {
+	background-color: #f0f0ff;
+}
+CSSXYZ;
 	return true;
 
-}*/
+}
+
 
 function wfSpecialTranslate() {
 	# Add messages
