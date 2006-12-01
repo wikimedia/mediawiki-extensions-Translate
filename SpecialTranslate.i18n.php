@@ -33,4 +33,18 @@ $wgTranslateMessages['he'] = array(
 	'translate-edit-message-in-fb' => 'המחרוזת הנוכחית ל־<b>$1</b> בשפת הגיבוי (Messages$2.php):',
 );
 
+$wgTranslateMessages['sk'] = array(
+	'translate' => 'Prelož',
+	'translate-changed' => '$1 správ nezmenených',
+	'translate-database' => '$1 správ, ktoré nie sú v databáze',
+	'translate-translated' => '$1 správ nepreložených',
+	'translate-core' => '$1 správ, ktoré nie sú základnými (core) správami',
+	'translate-sort' => 'Zoradiť: $1',
+	'translate-export' => 'Exportovať:',
+
+	'translate-edit-message-in' => 'Aktuálny reťazec v jazyku <b>$1</b> (Messages$2.php):',
+	'translate-edit-message-in-fb' => 'Aktuálny reťazec v jazyku <b>$1</b>, ktorý sa použije ak správa nie je preložená (Messages$2.php):',
+
+);
+
 ?>
