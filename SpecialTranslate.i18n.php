@@ -32,7 +32,18 @@ $wgTranslateMessages['he'] = array(
 	'translate-edit-message-in'    => 'המחרוזת הנוכחית ל־<b>$1</b> (Messages$2.php):',
 	'translate-edit-message-in-fb' => 'המחרוזת הנוכחית ל־<b>$1</b> בשפת הגיבוי (Messages$2.php):',
 );
+$wgTranslateMessages['it'] = array(
+	'translate' => 'Traduzioni',
+	'translate-changed' => '$1 messaggi non modificati',
+	'translate-database' => '$1 messaggi non presenti nel database',
+	'translate-translated' => '$1 messaggi già tradotti',
+	'translate-core' => '$1 messaggi non \'core\'',
+	'translate-sort' => 'Ordina per: $1',
+	'translate-export' => 'Esporta:',
 
+	'translate-edit-message-in' => 'Contenuto attuale in <b>$1</b> (Messages$2.php):',
+	'translate-edit-message-in-fb' => 'Contenuto attuale nella lingua di fallback <b>$1</b> (Messages$2.php):',
+);
 $wgTranslateMessages['sk'] = array(
 	'translate' => 'Prelož',
 	'translate-changed' => '$1 správ nezmenených',
