@@ -55,7 +55,44 @@ $wgTranslateMessages['sk'] = array(
 
 	'translate-edit-message-in' => 'Aktuálny reťazec v jazyku <b>$1</b> (Messages$2.php):',
 	'translate-edit-message-in-fb' => 'Aktuálny reťazec v jazyku <b>$1</b>, ktorý sa použije ak správa nie je preložená (Messages$2.php):',
-
 );
+$wgTranslateMessages['zh-cn'] = array(
+	'translate' => '翻译',
+	'translate-changed' => '$1 句信息未更改',
+	'translate-database' => '$1 句信息不在数据库中',
+	'translate-translated' => '$1 句信息已翻译',
+	'translate-core' => '$1 信息不是核心信息',
+	'translate-sort' => '排序: $1',
+	'translate-export' => '导出:',
+
+	'translate-edit-message-in' => '在 <b>$1</b> 的当前字串 (Messages$2.php):',
+	'translate-edit-message-in-fb' => '在 <b>$1</b> 于倚靠语言中的当前字串 (Messages$2.php):',
+);
+$wgTranslateMessages['zh-tw'] = array(
+	'translate' => '翻譯',
+	'translate-changed' => '$1 句信息未更改',
+	'translate-database' => '$1 句信息不在資料庫中',
+	'translate-translated' => '$1 句信息已翻譯',
+	'translate-core' => '$1 信息不是核心信息',
+	'translate-sort' => '排序: $1',
+	'translate-export' => '匯出:',
+
+	'translate-edit-message-in' => '在 <b>$1</b> 的現行字串 (Messages$2.php):',
+	'translate-edit-message-in-fb' => '在 <b>$1</b> 於倚靠語言中的現行字串 (Messages$2.php):',
+);
+$wgTranslateMessages['zh-yue'] = array(
+	'translate' => '翻譯',
+	'translate-changed' => '$1 句信息未更改',
+	'translate-database' => '$1 句信息唔響資料庫度',
+	'translate-translated' => '$1 句信息已翻譯',
+	'translate-core' => '$1 信息唔係核心信息',
+	'translate-sort' => '排次序: $1',
+	'translate-export' => '倒出:',
+
+	'translate-edit-message-in' => '響 <b>$1</b> 嘅現行字串 (Messages$2.php):',
+	'translate-edit-message-in-fb' => '響 <b>$1</b> 於倚靠語言中嘅現行字串 (Messages$2.php):',
+);
+$wgTranslateMessages['zh-hk'] = $wgTranslateMessages['zh-tw'];
+$wgTranslateMessages['zh-sg'] = $wgTranslateMessages['zh-cn'];
 
 ?>
