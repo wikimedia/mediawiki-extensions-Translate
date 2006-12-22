@@ -26,6 +26,8 @@ class SpecialTranslate extends SpecialPage {
 
 		$this->setup();
 		$this->initializeMessages();
+
+		$this->setHeaders();
 		$this->output();
 
 	}
@@ -93,8 +95,7 @@ class SpecialTranslate extends SpecialPage {
 		$infile = $wgLang->getUnmergedMessagesFor($wgLang->getCode());
 		$infbfile = null;
 		if ( $wgLang->getFallbackLanguage() ) {
-			$langFB = $wgLang->newFromCode($wgLang->getFallbackLanguage());
-			$infbfile = $langFB->getUnmergedMessagesFor($wgLang->getFallbackLanguage());
+			$infbfile = $wgLang->getUnmergedMessagesFor($wgLang->getFallbackLanguage());
 		}
 
 		$sortedArray = array_merge( Language::getMessagesFor( 'en' ), $wgMessageCache->getExtensionMessagesFor( 'en' ) );
