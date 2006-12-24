@@ -10,15 +10,18 @@ $wgTranslateMessages = array();
 
 $wgTranslateMessages['en'] = array(
 	'translate' => 'Translate',
-	'translate-changed' => '$1 messages which are not changed',
-	'translate-database' => '$1 messages which are not in database',
-	'translate-translated' => '$1 messages which are translated',
-	'translate-core' => '$1 messages which are not core messages',
-	'translate-sortlabel' => 'Sort:',
+	'translate-show-label' => 'Show:',
+	'translate-opt-trans' => 'Untranslated only',
+	'translate-opt-optional' => 'Optional',
+	'translate-opt-changed' => 'Changed only',
+	'translate-opt-ignored' => 'Ignored',
+	'translate-opt-database' => 'In database only',
+	'translate-messageclass' => 'Message class:',
+	'translate-sort-label' => 'Sort:',
 	'translate-sort-normal' => 'Normal',
 	'translate-sort-alpha'  => 'Alphabetical',
-	'translate-export' => 'Export:',
-
+	'translate-fetch-button' => 'Fetch',
+	'translate-export-button' => 'Export',
 	'translate-edit-message-in' => 'Current string in <b>$1</b> (Messages$2.php):',
 	'translate-edit-message-in-fb' => 'Current string in fallback language <b>$1</b> (Messages$2.php):',
 );

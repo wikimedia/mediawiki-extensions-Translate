@@ -174,7 +174,6 @@ class SpecialTranslate extends SpecialPage {
 				$wgOut->addHTML( '<textarea id="wpTextbox1" rows="40">' . $input . '</textarea>');
 			}
 		} else {
-			#$wgOut->addHTML( $this->makeNavigation() );
 			$wgOut->addHTML( $this->settingsForm() );
 			$wgOut->addWikiText( $navText );
 			$wgOut->addHTML( $this->makeHTMLText( $this->messages, $this->options, $this->language ) );
@@ -190,32 +189,38 @@ class SpecialTranslate extends SpecialPage {
 		if ( isset( $this->nondefaults['uselang'] ) ) {
 			$form .= Xml::hidden( 'uselang', $this->nondefaults['uselang'] );
 		}
-		$form .= Xml::submitButton('Fetch');
-		$form .= Xml::submitButton('Export', array( 'name' => 'ot'));
+		$form .= Xml::submitButton( wfMsg( 'translate-fetch-button') );
+		$form .= Xml::submitButton( wfMsg( 'translate-export-button' ), array( 'name' => 'ot'));
 		$form .= Xml::closeElement('form'). "\n\n";
 		return $form;
 	}
 
 	function prioritySelector() {
-		$str = 'Show: ' . '<table>' .
+		$str = wfMsgHtml( 'translate-show-label' ) . ' ' . '<table>' .
 		'<tr><td>' .
- 			Xml::checkLabel('Extension', 'extension', 'msgp-extension', $this->options['extension']) .
+ 			Xml::checkLabel('Extension', 'extension',
+			'msgp-extension', $this->options['extension'], array( 'disabled' => 'disabled') ) .
 		'</td><td>' .
-			Xml::checkLabel('Untranslated only', 'missing', 'msgs-translated', $this->options['missing']) .
+			Xml::checkLabel( wfMsg( 'translate-opt-trans' ), 'missing',
+				'msgs-translated', $this->options['missing']) .
 		'</td></tr><tr><td>' .
-			Xml::checkLabel('Optional', 'optional', 'msgp-optional', $this->options['optional']) .
+			Xml::checkLabel( wfMsg( 'translate-opt-optional' ), 'optional',
+				'msgp-optional', $this->options['optional']) .
 		'</td><td>' .
-			Xml::checkLabel('Changed only', 'changed', 'msgs-changed', $this->options['changed']) .
+			Xml::checkLabel( wfMsg( 'translate-opt-changed' ), 'changed',
+				'msgs-changed', $this->options['changed']) .
 		'</td></tr><tr><td>' .
-			Xml::checkLabel('Ignored', 'ignored', 'msgp-ignored', $this->options['ignored']) .
+			Xml::checkLabel( wfMsg( 'translate-opt-ignored' ), 'ignored',
+				'msgp-ignored', $this->options['ignored']) .
 		'</td><td>' .
-			Xml::checkLabel('In database only', 'database', 'msgs-database', $this->options['database']) .
+			Xml::checkLabel( wfMsg( 'translate-opt-database' ), 'database',
+				'msgs-database', $this->options['database']) .
 		'</td></tr></table>';
 		return $str;
 	}
 
 	function sortSelector() {
-		$str = wfMsgHtml('translate-sortlabel') . " " .
+		$str = wfMsgHtml('translate-sort-label') . " " .
 			Xml::openElement('select', array( 'name' => 'sort' )) .
 			Xml::option( wfMsg( 'translate-sort-normal' ), 'normal', $this->options['sort'] === 'normal') .
 			Xml::option( wfMsg( 'translate-sort-alpha' ), 'alpha', $this->options['sort'] === 'alpha') .
@@ -224,7 +229,7 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	function messageClassSelector() {
-		$str = "Message class: " .
+		$str = wfMsgHtml( 'translate-messageclass' ) . ' ' .
 			Xml::openElement('select', array( 'name' => 'msgclass' ));
 		foreach( $this->classes as $class) {
 			$str.= Xml::option( $class->getLabel(), $class->getId(),
@@ -434,6 +439,10 @@ abstract class MessageClass {
 			}
 		}
 
+		if ( $m['msg'] === $fallback ) {
+			return "\n";
+		}
+
 		$key = "'$key'";
 		if ($pad) while ( strlen($key) < $pad ) { $key .= ' '; }
 		$txt .= "$key=> '" . preg_replace( "/(?<!\\\\)'/", "\'", $m['msg']) . "',$comment\n";
@@ -518,11 +527,41 @@ class RenameUserMessageClass extends MessageClass {
 	}
 }
 
+class TranslateMessageClass extends MessageClass {
+
+	protected $label = 'Extension: Translate';
+	protected $id    = 'ext-translate';
+		
+	function export(&$array) {
+		global $wgLang;
+		global $wgTranslateMessages;
+		$code = $wgLang->getCode();
+		$txt = "\$wgTranslateMessages['$code'] = array(\n";
+
+		foreach ($wgTranslateMessages['en'] as $key => $msg) {
+			$txt .= "\t" . $this->exportLine($key, $array[$key]);
+		}
+		$txt .= ");";
+		return $txt;
+	}
+
+	function filter(&$array) {
+		global $wgTranslateMessages;
+		$msgs = $wgTranslateMessages['en'];
+		foreach( $array as $key => $msg) {
+			if ( !isset( $msgs[$key] ) ) {
+				unset( $array[$key] );
+			}
+		}
+	}
+}
+
 global $wgHooks;
 $wgHooks['SpecialTranslateAddMessageClass'][] = 'wfSpecialTranslateAddMessageClasses';
 function wfSpecialTranslateAddMessageClasses($class) {
 	$class[] = new CoreMessageClass();
 	$class[] = new RenameUserMessageClass();
+	$class[] = new TranslateMessageClass();
 }
 
 
