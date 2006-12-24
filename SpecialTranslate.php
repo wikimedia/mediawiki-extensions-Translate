@@ -10,10 +10,11 @@ if (!defined('MEDIAWIKI')) die();
  * @copyright Copyright © 2006, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
-
+error_reporting( E_ALL | E_STRICT );
 $wgExtensionFunctions[] = 'wfSpecialTranslate';
 $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'Translate',
+	'version' => '2.0',
 	'author' => 'Niklas Laxström',
 	'url' => 'http://nike.users.idler.fi/betawiki',
 	'description' => 'Special page for translating Mediawiki'
@@ -65,6 +66,20 @@ function wfSpecialTranslateAddCss($css) {
 .mw-special-translate-table tr.def {
 	background-color: #f0f0ff;
 }
+
+.mw-special-translate-table tr.ign {
+	background-color: #202020;
+}
+
+.mw-special-translate-table tr.opt {
+	background-color: #F2F200;
+}
+
+.mw-special-translate-table tr.dco {
+	background-color: #CCCC33;
+}
+
+
 CSSXYZ;
 	return true;
 
