@@ -26,14 +26,19 @@ $wgTranslateMessages['en'] = array(
 	'translate-edit-message-in-fb' => 'Current string in fallback language <b>$1</b> (Messages$2.php):',
 );
 $wgTranslateMessages['he'] = array(
-	'translate'            => 'תרגום',
-	'translate-changed'    => '$1 הודעות שלא השתנו',
-	'translate-database'   => '$1 הודעות שאינן במסד הנתונים',
-	'translate-translated' => '$1 הודעות מתורגמות',
-	'translate-core'       => '$1 הודעות שאינן הודעות ליבה',
-	'translate-sort'       => 'מיון: $1',
-	'translate-export'     => 'ייצוא:',
-
+	'translate'                    => 'תרגום',
+	'translate-show-label'         => 'הצג:',
+	'translate-opt-trans'          => 'רק לא מתורגמות',
+	'translate-opt-optional'       => 'אופציונאליות',
+	'translate-opt-changed'        => 'רק אם השתנו',
+	'translate-opt-ignored'        => 'אינן לתרגום',
+	'translate-opt-database'       => 'במסד הנתונים בלבד',
+	'translate-messageclass'       => 'סוג ההודעה:',
+	'translate-sort-label'         => 'מיון:',
+	'translate-sort-normal'        => 'רגיל',
+	'translate-sort-alpha'         => 'אלפביתי',
+	'translate-fetch-button'       => 'קבל',
+	'translate-export-button'      => 'ייצוא',
 	'translate-edit-message-in'    => 'המחרוזת הנוכחית ל־<b>$1</b> (Messages$2.php):',
 	'translate-edit-message-in-fb' => 'המחרוזת הנוכחית ל־<b>$1</b> בשפת הגיבוי (Messages$2.php):',
 );
