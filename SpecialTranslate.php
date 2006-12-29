@@ -14,7 +14,7 @@ error_reporting( E_ALL | E_STRICT );
 $wgExtensionFunctions[] = 'wfSpecialTranslate';
 $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'Translate',
-	'version' => '2.2',
+	'version' => '2.3',
 	'author' => 'Niklas Laxström',
 	'url' => 'http://nike.users.idler.fi/betawiki',
 	'description' => 'Special page for translating Mediawiki'

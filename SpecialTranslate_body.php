@@ -7,7 +7,6 @@ class SpecialTranslate extends SpecialPage {
 	private $nondefaults = array();
 	private $options     = array();
 	private $output      = false;
-	private $outputType  = self::OUTPUT_DEFAULT;
 	private $messages    = array();
 	private $messageClass= null;
 	private $classes     = array();
@@ -19,16 +18,11 @@ class SpecialTranslate extends SpecialPage {
 		SpecialPage::SpecialPage( 'Translate' );
 		$this->includable( true );
 
-		wfRunHooks( 'SpecialTranslateAddMessageClass',
-			array( &$this->classes ) );
-
 		global $wgLang, $wgContLang;
 		if( $wgLang->getCode() != $wgContLang->getCode() ) {
 			$this->language = '/' . $wgLang->getCode();
 		}
 
-		$l = new LangProxy;
-		$l->getMessagesInFile( 'cu' );
 	}
 
 	function execute() {
@@ -39,6 +33,9 @@ class SpecialTranslate extends SpecialPage {
 			$wgOut->addWikiText( wfMsg( 'allmessagesnotsupportedDB' ) );
 			return;
 		}
+
+		wfRunHooks( 'SpecialTranslateAddMessageClass',
+			array( &$this->classes ) );
 
 		$this->setup();
 		$this->initializeMessages();
@@ -55,8 +52,6 @@ class SpecialTranslate extends SpecialPage {
 			$this->output = true;
 		}
 
-		$this->outputType = self::OUTPUT_TEXTAREA;
-
 		$defaults = array(
 		/* bool */ 'changed'      => false,
 		/* bool */ 'database'     => false,
@@ -70,41 +65,17 @@ class SpecialTranslate extends SpecialPage {
 		/* str  */ 'msgclass'     => 'core',
 		);
 
-
 		// Dump everything here
 		$nondefaults = array();
 
-		wfAppendToArrayIfNotDefault( 'changed',
-			$wgRequest->getBool( 'changed', $defaults['changed'] ),
-			$defaults, $nondefaults);
-		wfAppendToArrayIfNotDefault( 'database',
-			$wgRequest->getBool( 'database', $defaults['database'] ),
-			$defaults, $nondefaults);
-		wfAppendToArrayIfNotDefault( 'missing',
-			$wgRequest->getBool( 'missing', $defaults['missing'] ),
-			$defaults, $nondefaults);
-		wfAppendToArrayIfNotDefault( 'extension',
-			$wgRequest->getBool( 'extension', $defaults['extension'] ),
-			$defaults, $nondefaults);
-		wfAppendToArrayIfNotDefault( 'optional',
-			$wgRequest->getBool( 'optional', $defaults['optional'] ),
-			$defaults, $nondefaults);
-		wfAppendToArrayIfNotDefault( 'ignored',
-			$wgRequest->getBool( 'ignored', $defaults['ignored'] ),
-			$defaults, $nondefaults);
-		wfAppendToArrayIfNotDefault( 'sort',
-			$wgRequest->getText( 'sort', $defaults['sort'] ),
-			$defaults, $nondefaults);
-		wfAppendToArrayIfNotDefault( 'endiff',
-			$wgRequest->getBool( 'endiff', $defaults['endiff'] ),
-			$defaults, $nondefaults);
-		wfAppendToArrayIfNotDefault( 'uselang',
-			$wgRequest->getText( 'uselang', $defaults['uselang'] ),
-			$defaults, $nondefaults);
-		wfAppendToArrayIfNotDefault( 'msgclass',
-			$wgRequest->getText( 'msgclass', $defaults['msgclass'] ),
-			$defaults, $nondefaults);
-
+		foreach ( $defaults as $v => $t ) {
+			if ( is_bool($t) ) {
+				$r = $wgRequest->getBool( $v, $defaults[$v] );
+			} elseif( is_string($t) ) {
+				$r = $wgRequest->getText( $v, $defaults[$v] );
+			}
+			wfAppendToArrayIfNotDefault( $v, $r, $defaults, $nondefaults);
+		}
 
 		$this->defaults    = $defaults;
 		$this->nondefaults = $nondefaults;
@@ -119,22 +90,14 @@ class SpecialTranslate extends SpecialPage {
 
 	}
 
+	// TODO: fix endiff
 	function initializeMessages() {
 		global $wgMessageCache, $wgLang;
 
 		# Make sure all extension messages are available
 		MessageCache::loadAllMessages();
 
-		$lp = new LangProxy();
-
-		$filtered = $this->getFilteredMessages();
-		$infile = $lp->getMessagesInFile( $wgLang->getCode() );
-		$infbfile = null;
-		if ( $wgLang->getFallbackLanguage() ) {
-			$infbfile = $lp->getMessagesInFile( $wgLang->getFallbackLanguage() );
-		}
-
-		$array = array_merge( Language::getMessagesFor( 'en' ), $wgMessageCache->getExtensionMessagesFor( 'en' ) );
+		$array = $this->messageClass->getArray();
 
 		if ( $this->options['sort'] === 'alpha' ) {
 			ksort( $array );
@@ -143,22 +106,23 @@ class SpecialTranslate extends SpecialPage {
 		$wgMessageCache->disableTransform();
 
 		foreach ( $array as $key => $value ) {
-			$this->messages[$key]['enmsg'] = $value;
-			$this->messages[$key]['filtered'] = isset($filtered[$key]) ? false : true;
-			$this->messages[$key]['statmsg'] = $this->options['endiff'] ? $value : wfMsgNoDb( $key );
-			$this->messages[$key]['msg'] = wfMsg ( $key );
-			$this->messages[$key]['infile'] = @$infile[$key];
-			$this->messages[$key]['infbfile'] = @$infbfile[$key];
-			$this->messages[$key]['optional'] = false;
-			$this->messages[$key]['ignored'] = false;
+			$this->messages[$key]['enmsg'] = $value; // the very original message
+			$this->messages[$key]['statmsg'] = wfMsgNoDb( $key ); // committed translation or fallback
+			$this->messages[$key]['msg'] = wfMsg ( $key ); // current translation
+			$this->messages[$key]['extension'] = true; // overwritten by 'core'
+			$this->messages[$key]['infile'] = null; // filled by message class
+			$this->messages[$key]['infbfile'] = null; // filled by message class
+			$this->messages[$key]['optional'] = false; // filled by message class
+			$this->messages[$key]['ignored'] = false; // filled by message class
+			$this->messages[$key]['changed'] = false; // filled later
+			$this->messages[$key]['defined'] = false; // filled later
 		}
 
 		$wgMessageCache->enableTransform();
 
-		// TODO: filter before fetching trillions of messages
-		$this->messageClass->filter($this->messages);
+		$this->messageClass->fill($this->messages);
 		
-		// Prefill some usefull variables
+		// Calculate some usefull variables
 		foreach ( $this->messages as $key => $value ) {
 			$this->messages[$key]['changed'] = ( $value['msg'] !== $value['statmsg'] );
 			$this->messages[$key]['defined'] = ( $value['changed'] || $value['infile'] !== null );
@@ -171,11 +135,7 @@ class SpecialTranslate extends SpecialPage {
 
 		if ( $this->output ) {
 			$input = htmlspecialchars($this->messageClass->export($this->messages));
-			if ( $this->outputType == self::OUTPUT_DEFAULT) {
-				$wgOut->addHTML( '<pre id="wpTextbox1">' . $input . '</pre>');
-			} else {
-				$wgOut->addHTML( '<textarea id="wpTextbox1" rows="40">' . $input . '</textarea>');
-			}
+			$wgOut->addHTML( '<textarea id="wpTextbox1" rows="40">' . $input . '</textarea>');
 		} else {
 			$wgOut->addHTML( $this->settingsForm() );
 			$wgOut->addHTML( $this->makeHTMLText( $this->messages, $this->options, $this->language ) );
@@ -239,18 +199,6 @@ class SpecialTranslate extends SpecialPage {
 		}
 		$str .= "</select>";
 		return $str;
-	}
-
-	function getFilteredMessages() {
-		global $wgLang;
-		$l = new languages();
-		$arr = $wgLang->getAllMessages();
-		foreach ($arr as $key => $string) {
-			if (in_array($key, $l->getIgnoredMessages(), true)) {
-				unset($arr[$key]);
-			}
-		}
-		return $arr;
 	}
 
 	static function getExistence() {
@@ -351,7 +299,6 @@ class SpecialTranslate extends SpecialPage {
 			if( !$changed && $options['changed'] ) { continue; }
 			if( $m['optional'] && !$options['optional'] ) { continue; }
 			if( $m['ignored'] && !$options['ignored'] ) { continue; }
-			if ( !$options['extension'] && ( $m['filtered'] && !$m['optional'] && !$m['ignored'] ) ) { continue; }
 			$original = $m['statmsg'];
 			$message = $m['msg'];
 	
@@ -366,6 +313,8 @@ class SpecialTranslate extends SpecialPage {
 			} else {
 				$talkLink = $sk->makeBrokenLinkObj( $talkPage, htmlspecialchars( $talk ) );
 			}
+
+			$editLink = $sk->makeKnownLinkObj( $titleObj, wfMsgHtml('edit'), 'action=edit' );
 			
 			$anchor = 'msg_' . htmlspecialchars( strtolower( $title ) );
 			$anchor = wfElement( 'a', array( 'name' => $anchor ) );
@@ -381,7 +330,7 @@ class SpecialTranslate extends SpecialPage {
 			$opt = '';
 			if ($m['optional']) $opt .= ' opt';
 			if ($m['ignored']) $opt .= ' ign';
-			if ($m['filtered'] && !$m['ignored']) $opt .= ' dco';
+			if ($m['extension'] && !$m['ignored'] && !$m['optional']) $opt .= ' dco';
 	
 			if($changed) {
 				$info = wfOpenElement( 'tr', array( 'class' => "orig$opt") );
@@ -399,7 +348,7 @@ class SpecialTranslate extends SpecialPage {
 			} else {
 				$info = wfOpenElement( 'tr', array( 'class' => "def$opt") );
 				$info .= wfOpenElement( 'td' );
-				$info .= "$anchor$pageLink<br />$talkLink";
+				$info .= "$anchor$pageLink<br />$editLink | $talkLink";
 				$info .= wfCloseElement( 'td' );
 				$info .= wfElement( 'td', null, $message );
 				$info .= wfCloseElement( 'tr' );
@@ -427,7 +376,8 @@ abstract class MessageClass {
 	function getLabel() { return $this->label; }
 	function getId() { return $this->id; }
 	abstract function export(&$array);
-	abstract function filter(&$array);
+	abstract function getArray();
+	function fill(&$array) {}
 
 	function exportLine($key, $m, $pad = false) {
 		if ( $m['ignored'] ) { return ''; }
@@ -466,14 +416,12 @@ class CoreMessageClass extends MessageClass {
 		return $txt;
 	}
 
-	function filter(&$array) {
-		$msgs = Language::getMessagesFor('en');
-		foreach( $array as $key => $msg) {
-			if ( !isset( $msgs[$key] ) ) {
-				unset( $array[$key] );
-			}
-		}
+	function getArray() {
+		return Language::getMessagesFor('en');
+	}
 
+	function fill(&$array) {
+		global $wgLang;
 		$l = new languages();
 
 		foreach ($l->getOptionalMessages() as $optMsg) {
@@ -483,6 +431,21 @@ class CoreMessageClass extends MessageClass {
 		foreach ($l->getIgnoredMessages() as $optMsg) {
 			$array[$optMsg]['ignored'] = true;
 		}
+
+		$lp = new LangProxy();
+
+		$infile = $lp->getMessagesInFile( $wgLang->getCode() );
+		$infbfile = null;
+		if ( $wgLang->getFallbackLanguage() ) {
+			$infbfile = $lp->getMessagesInFile( $wgLang->getFallbackLanguage() );
+		}
+
+		foreach ( $array as $key => $value ) {
+			$array[$key]['extension'] = false;
+			$array[$key]['infile'] = isset( $infile[$key] ) ? $infile[$key] : null;
+			$array[$key]['infbfile'] = isset( $infbfile[$key] ) ? $infbfile[$key] : null;
+		}
+
 
 	}
 }
@@ -517,17 +480,15 @@ class RenameUserMessageClass extends MessageClass {
 		return $txt;
 	}
 
-	function filter(&$array) {
+	function getArray() {
 		global $wgRenameuserMessages;
-		$msgs = $wgRenameuserMessages['en'];
-		foreach( $array as $key => $msg) {
-			if ( !isset( $msgs[$key] ) ) {
-				unset( $array[$key] );
-			}
-		}
+		return $wgRenameuserMessages['en'];
+	}
 
+	function fill(&$array) {
 		$array['renameuserlogentry']['ignored'] = true;
 	}
+
 }
 
 class TranslateMessageClass extends MessageClass {
@@ -548,14 +509,9 @@ class TranslateMessageClass extends MessageClass {
 		return $txt;
 	}
 
-	function filter(&$array) {
+	function getArray() {
 		global $wgTranslateMessages;
-		$msgs = $wgTranslateMessages['en'];
-		foreach( $array as $key => $msg) {
-			if ( !isset( $msgs[$key] ) ) {
-				unset( $array[$key] );
-			}
-		}
+		return $wgTranslateMessages['en'];
 	}
 }
 
@@ -563,7 +519,7 @@ global $wgHooks;
 $wgHooks['SpecialTranslateAddMessageClass'][] = 'wfSpecialTranslateAddMessageClasses';
 function wfSpecialTranslateAddMessageClasses($class) {
 	$class[] = new CoreMessageClass();
-	$class[] = new RenameUserMessageClass();
+//	$class[] = new RenameUserMessageClass();
 	$class[] = new TranslateMessageClass();
 }
 
