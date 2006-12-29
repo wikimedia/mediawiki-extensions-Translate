@@ -50,12 +50,13 @@ class SpecialTranslateEditTools {
 		$targetLanguage = Language::factory( $langCode );
 		$langFBcode = $targetLanguage->getFallbackLanguage();
 
+		$lp = new LangProxy();
 		if ( $langFBcode ) {
-			$msgArray = Language::getUnmergedMessagesFor($langFBcode);
+			$msgArray = $lp->getMessagesInFile( $langFBcode );
 			$boxes[] = self::dobox( $msgArray[$key], $langFBcode, 'translate-edit-message-in-fb' );
 		}
 
-		$msgArray = Language::getUnmergedMessagesFor($langCode);
+		$msgArray = $lp->getMessagesInFile( $langCode );
 		$boxes[] = self::dobox( $msgArray[$key], $langCode, 'translate-edit-message-in' );
 
 

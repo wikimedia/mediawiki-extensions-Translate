@@ -14,11 +14,13 @@ error_reporting( E_ALL | E_STRICT );
 $wgExtensionFunctions[] = 'wfSpecialTranslate';
 $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'Translate',
-	'version' => '2.1',
+	'version' => '2.2',
 	'author' => 'Niklas Laxström',
 	'url' => 'http://nike.users.idler.fi/betawiki',
 	'description' => 'Special page for translating Mediawiki'
 );
+
+$wgAutoloadClasses['languages'] = $IP . '/maintenance/language/languages.inc';
 
 # Internationalisation file
 require_once( 'SpecialTranslate.i18n.php' );
@@ -92,6 +94,26 @@ function wfSpecialTranslate() {
 	foreach( $wgTranslateMessages as $key => $value ) {
 		$wgMessageCache->addMessages( $wgTranslateMessages[$key], $key );
 	}
+}
+
+
+class LangProxy {
+
+	function getMessagesInFile( $code ) {
+		global $wgLang;
+		if ( method_exists($wgLang, 'getUnmergedMessagesFor') ) {
+			return Language::getUnmergedMessagesFor( $code );
+		} else {
+			$file = Language::getMessagesFileName( $code );
+			if ( !file_exists( $file ) ) {
+				return NULL;
+			} else {
+				require( $file );
+				return $messages;
+			}
+		}
+	}
+
 }
 
 ?>

@@ -27,7 +27,8 @@ class SpecialTranslate extends SpecialPage {
 			$this->language = '/' . $wgLang->getCode();
 		}
 
-
+		$l = new LangProxy;
+		$l->getMessagesInFile( 'cu' );
 	}
 
 	function execute() {
@@ -124,14 +125,17 @@ class SpecialTranslate extends SpecialPage {
 		# Make sure all extension messages are available
 		MessageCache::loadAllMessages();
 
+		$lp = new LangProxy();
+
 		$filtered = $this->getFilteredMessages();
-		$infile = $wgLang->getUnmergedMessagesFor($wgLang->getCode());
+		$infile = $lp->getMessagesInFile( $wgLang->getCode() );
 		$infbfile = null;
 		if ( $wgLang->getFallbackLanguage() ) {
-			$infbfile = $wgLang->getUnmergedMessagesFor($wgLang->getFallbackLanguage());
+			$infbfile = $lp->getMessagesInFile( $wgLang->getFallbackLanguage() );
 		}
 
 		$array = array_merge( Language::getMessagesFor( 'en' ), $wgMessageCache->getExtensionMessagesFor( 'en' ) );
+
 		if ( $this->options['sort'] === 'alpha' ) {
 			ksort( $array );
 		}
@@ -151,6 +155,7 @@ class SpecialTranslate extends SpecialPage {
 
 		$wgMessageCache->enableTransform();
 
+		// TODO: filter before fetching trillions of messages
 		$this->messageClass->filter($this->messages);
 		
 		// Prefill some usefull variables
@@ -164,8 +169,6 @@ class SpecialTranslate extends SpecialPage {
 	function output() {
 		global $wgOut;
 
-		$navText = wfMsg( 'allmessagestext' );
-
 		if ( $this->output ) {
 			$input = htmlspecialchars($this->messageClass->export($this->messages));
 			if ( $this->outputType == self::OUTPUT_DEFAULT) {
@@ -175,7 +178,6 @@ class SpecialTranslate extends SpecialPage {
 			}
 		} else {
 			$wgOut->addHTML( $this->settingsForm() );
-			$wgOut->addWikiText( $navText );
 			$wgOut->addHTML( $this->makeHTMLText( $this->messages, $this->options, $this->language ) );
 		}
 
@@ -240,10 +242,11 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	function getFilteredMessages() {
-		global $wgLang, $wgIgnoredMessages;
+		global $wgLang;
+		$l = new languages();
 		$arr = $wgLang->getAllMessages();
 		foreach ($arr as $key => $string) {
-			if (in_array($key, $wgIgnoredMessages, true)) {
+			if (in_array($key, $l->getIgnoredMessages(), true)) {
 				unset($arr[$key]);
 			}
 		}
@@ -471,13 +474,13 @@ class CoreMessageClass extends MessageClass {
 			}
 		}
 
-		global $wgOptionalMessages;
-		foreach ($wgOptionalMessages as $optMsg) {
+		$l = new languages();
+
+		foreach ($l->getOptionalMessages() as $optMsg) {
 			$array[$optMsg]['optional'] = true;
 		}
 
-		global $wgIgnoredMessages;
-		foreach ($wgIgnoredMessages as $optMsg) {
+		foreach ($l->getIgnoredMessages() as $optMsg) {
 			$array[$optMsg]['ignored'] = true;
 		}
 
