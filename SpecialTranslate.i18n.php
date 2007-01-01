@@ -25,6 +25,24 @@ $wgTranslateMessages['en'] = array(
 	'translate-edit-message-in' => 'Current string in <b>$1</b> (Messages$2.php):',
 	'translate-edit-message-in-fb' => 'Current string in fallback language <b>$1</b> (Messages$2.php):',
 );
+// bug 8455
+$wgTranslateMessages['cs'] = array(
+	'translate' => 'Přeložit',
+	'translate-show-label' => 'Ukázat:',
+	'translate-opt-trans' => 'Jen nepřeložené',
+	'translate-opt-optional' => 'volitelné',
+	'translate-opt-changed' => 'jen změnené',
+	'translate-opt-ignored' => 'ignorované',
+	'translate-opt-database' => 'jen v databázi',
+	'translate-messageclass' => 'Třída hlášení:',
+	'translate-sort-label' => 'Třídění:',
+	'translate-sort-normal' => 'obvyklé',
+	'translate-sort-alpha'  => 'abecední',
+	'translate-fetch-button' => 'Provést',
+	'translate-export-button' => 'Exportovat',
+	'translate-edit-message-in' => 'Současný řetězec v <b>$1</b> (Messages$2.php):',
+	'translate-edit-message-in-fb' => 'Současný řetězec v záložním jazyce <b>$1</b> (Messages$2.php):',
+);
 
 /* German by Raymond */
 $wgTranslateMessages['de'] = array(
