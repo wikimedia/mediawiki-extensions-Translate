@@ -80,6 +80,23 @@ $wgTranslateMessages['he'] = array(
 	'translate-edit-message-in'    => 'המחרוזת הנוכחית ל־<b>$1</b> (Messages$2.php):',
 	'translate-edit-message-in-fb' => 'המחרוזת הנוכחית ל־<b>$1</b> בשפת הגיבוי (Messages$2.php):',
 );
+$wgTranslateMessages['id'] = array(
+	'translate' => 'Terjemahan',
+	'translate-show-label' => 'Tampilkan:',
+	'translate-opt-trans' => 'Hanya yang tidak diterjemahkan',
+	'translate-opt-optional' => 'Opsional',
+	'translate-opt-changed' => 'Hanya yang berubah',
+	'translate-opt-ignored' => 'Diabaikan',
+	'translate-opt-database' => 'Hanya dalam basisdata',
+	'translate-messageclass' => 'Kelas pesan:',
+	'translate-sort-label' => 'Urutan:',
+	'translate-sort-normal' => 'Normal',
+	'translate-sort-alpha'  => 'Alfabetis',
+	'translate-fetch-button' => 'Cari',
+	'translate-export-button' => 'Ekspor',
+	'translate-edit-message-in' => 'Kalimat dalam <b>$1</b> (Messages$2.php):',
+	'translate-edit-message-in-fb' => 'Kalimat dalam bahasa <b>$1</b> (Messages$2.php):',
+);
 $wgTranslateMessages['it'] = array(
 	'translate' => 'Traduzioni',
 	'translate-changed' => '$1 messaggi non modificati',
