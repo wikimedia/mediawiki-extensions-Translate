@@ -33,8 +33,8 @@ class SpecialTranslateEditTools {
 
 		# Msg
 		$key = $pieces[0];
-		if ($pieces[0] === 'monobook.css') { $key = 'Monobook.css'; }
-		if ($pieces[0] === 'monobook.js') { $key = 'Monobook.js'; }
+		if ($pieces[0] === 'monobook.css') { $key = 'monobook.css'; }
+		if ($pieces[0] === 'monobook.js') { $key = 'monobook.js'; }
 
 		# Language the user is translating to
 		if (!isset($pieces[1])) {
