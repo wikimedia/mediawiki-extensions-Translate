@@ -62,6 +62,23 @@ $wgTranslateMessages['de'] = array(
 	'translate-edit-message-in' => 'Aktueller Text in <b>$1</b> (Messages$2.php):',
 	'translate-edit-message-in-fb' => 'Aktueller Text in der Standard-Sprache <b>$1</b> (Messages$2.php):',
 );
+$wgTranslateMessages['fr'] = array(
+	'translate' => 'Traduire',
+	'translate-show-label' => 'Montrer :',
+	'translate-opt-trans' => 'Non traduits seulement',
+	'translate-opt-optional' => 'Optionel',
+	'translate-opt-changed' => 'Modifiés seulement',
+	'translate-opt-ignored' => 'Ignorés',
+	'translate-opt-database' => 'Dans la base de données seulement',
+	'translate-messageclass' => 'Classe de message :',
+	'translate-sort-label' => 'Trier :',
+	'translate-sort-normal' => 'Normal',
+	'translate-sort-alpha'  => 'Alphabétique',
+	'translate-fetch-button' => 'Obtenir',
+	'translate-export-button' => 'Exporter',
+	'translate-edit-message-in' => 'Chaîne actuellement dans <b>$1</b> (Messages$2.php) :',
+	'translate-edit-message-in-fb' => 'Chaîne actuellement dans la langue par défaut <b>$1</b> (Messages$2.php) :',
+);
 
 $wgTranslateMessages['he'] = array(
 	'translate'                    => 'תרגום',
