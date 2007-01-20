@@ -33,8 +33,6 @@ class SpecialTranslateEditTools {
 
 		# Msg
 		$key = $pieces[0];
-		if ($pieces[0] === 'monobook.css') { $key = 'monobook.css'; }
-		if ($pieces[0] === 'monobook.js') { $key = 'monobook.js'; }
 
 		# Language the user is translating to
 		if (!isset($pieces[1])) {
@@ -48,7 +46,7 @@ class SpecialTranslateEditTools {
 		$boxes[] = self::dobox( $msgArray[$key], 'en', 'translate-edit-message-in' );
 
 		$targetLanguage = Language::factory( $langCode );
-		$langFBcode = $targetLanguage->getFallbackLanguage();
+		$langFBcode = $targetLanguage->getFallbackLanguageCode();
 
 		$lp = new LangProxy();
 		if ( $langFBcode ) {

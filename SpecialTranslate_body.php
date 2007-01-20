@@ -106,9 +106,13 @@ class SpecialTranslate extends SpecialPage {
 		$wgMessageCache->disableTransform();
 
 		foreach ( $array as $key => $value ) {
+			$msg = wfMsg( $key );
+			if ( wfEmptyMsg( $key, $msg ) ) {
+				$msg = wfMsgNoDb( $key );
+			}
 			$this->messages[$key]['enmsg'] = $value; // the very original message
-			$this->messages[$key]['statmsg'] = wfMsgNoDb( $key ); // committed translation or fallback
-			$this->messages[$key]['msg'] = wfMsg ( $key ); // current translation
+			$this->messages[$key]['statmsg'] = $this->options['endiff'] ? $value : wfMsgNoDb( $key ); // committed translation or fallback
+			$this->messages[$key]['msg'] = $msg; // current translation
 			$this->messages[$key]['extension'] = true; // overwritten by 'core'
 			$this->messages[$key]['infile'] = null; // filled by message class
 			$this->messages[$key]['infbfile'] = null; // filled by message class
@@ -228,7 +232,8 @@ class SpecialTranslate extends SpecialPage {
 		);
 		$dbr =& wfGetDB( DB_SLAVE );
 		$page = $dbr->tableName( 'page' );
-		$sql = "SELECT page_namespace,page_title FROM $page WHERE page_namespace IN (" . NS_MEDIAWIKI . ", " . NS_MEDIAWIKI_TALK . ")";
+		$sql = "SELECT page_namespace,page_title FROM $page WHERE page_namespace IN (" .
+			NS_MEDIAWIKI . ", " . NS_MEDIAWIKI_TALK . ")";
 		$res = $dbr->query( $sql );
 		while( $s = $dbr->fetchObject( $res ) ) {
 			$pageExists[$s->page_namespace][$s->page_title] = true;
@@ -315,6 +320,7 @@ class SpecialTranslate extends SpecialPage {
 			}
 
 			$editLink = $sk->makeKnownLinkObj( $titleObj, wfMsgHtml('edit'), 'action=edit' );
+			$historyLink = $sk->makeKnownLinkObj( $titleObj, wfMsgHtml('history'), 'action=history' );
 			
 			$anchor = 'msg_' . htmlspecialchars( strtolower( $title ) );
 			$anchor = wfElement( 'a', array( 'name' => $anchor ) );
@@ -335,7 +341,7 @@ class SpecialTranslate extends SpecialPage {
 			if($changed) {
 				$info = wfOpenElement( 'tr', array( 'class' => "orig$opt") );
 				$info .= wfOpenElement( 'td', array( 'rowspan' => '2') );
-				$info .= "$anchor$pageLink<br />$talkLink";
+				$info .= "$anchor$pageLink<br />$talkLink | $editLink | $historyLink";
 				$info .= wfCloseElement( 'td' );
 				$info .= wfElement( 'td', null, $original );
 				$info .= wfCloseElement( 'tr' );
@@ -344,16 +350,16 @@ class SpecialTranslate extends SpecialPage {
 				$info .= wfElement( 'td', null, $message );
 				$info .= wfCloseElement( 'tr' );
 	
-				$output .= $info;
+				$output .= $info . "\n";
 			} else {
 				$info = wfOpenElement( 'tr', array( 'class' => "def$opt") );
 				$info .= wfOpenElement( 'td' );
-				$info .= "$anchor$pageLink<br />$editLink | $talkLink";
+				$info .= "$anchor$pageLink<br />$talkLink | $editLink | $historyLink";
 				$info .= wfCloseElement( 'td' );
 				$info .= wfElement( 'td', null, $message );
 				$info .= wfCloseElement( 'tr' );
 	
-				$output .= $info;
+				$output .= $info . "\n";
 			}
 	
 			$i++;
@@ -436,8 +442,8 @@ class CoreMessageClass extends MessageClass {
 
 		$infile = $lp->getMessagesInFile( $wgLang->getCode() );
 		$infbfile = null;
-		if ( $wgLang->getFallbackLanguage() ) {
-			$infbfile = $lp->getMessagesInFile( $wgLang->getFallbackLanguage() );
+		if ( $wgLang->getFallbackLanguageCode() ) {
+			$infbfile = $lp->getMessagesInFile( $wgLang->getFallbackLanguageCode() );
 		}
 
 		foreach ( $array as $key => $value ) {
@@ -450,78 +456,16 @@ class CoreMessageClass extends MessageClass {
 	}
 }
 
-class RenameUserMessageClass extends MessageClass {
 
-	protected $label = 'Extension: Rename user';
-	protected $id    = 'ext-renameuser';
-		
-	function export(&$array) {
-		global $wgLang;
-		$code = $wgLang->getCode();
-		$txt = "\$wgRenameuserMessages['$code'] = array(\n";
-
-		$g1 = array( 'renameuser', 'renameuserold', 'renameusernew', 'renameusersubmit' );
-		$g2 = array( 'renameusererrordoesnotexist', 'renameusererrorexists', 'renameusererrorinvalid', 'renameusererrortoomany', 'renameusersuccess' );
-		$g3 = array( 'renameuserlogpage', 'renameuserlogpagetext', 'renameuserlog' );
-
-		foreach ($g1 as $msg) {
-			$txt .= "\t" . $this->exportLine($msg, $array[$msg], 19);
-		}
-		$txt .= "\n";
-		foreach ($g2 as $msg) {
-			$txt .= "\t" . $this->exportLine($msg, $array[$msg], 30);
-		}
-		$txt .= "\n";
-		foreach ($g3 as $msg) {
-			$txt .= "\t" . $this->exportLine($msg, $array[$msg], 24);
-		}
-
-		$txt .= ");";
-		return $txt;
-	}
-
-	function getArray() {
-		global $wgRenameuserMessages;
-		return $wgRenameuserMessages['en'];
-	}
-
-	function fill(&$array) {
-		$array['renameuserlogentry']['ignored'] = true;
-	}
-
-}
-
-class TranslateMessageClass extends MessageClass {
-
-	protected $label = 'Extension: Translate';
-	protected $id    = 'ext-translate';
-		
-	function export(&$array) {
-		global $wgLang;
-		global $wgTranslateMessages;
-		$code = $wgLang->getCode();
-		$txt = "\$wgTranslateMessages['$code'] = array(\n";
-
-		foreach ($wgTranslateMessages['en'] as $key => $msg) {
-			$txt .= "\t" . $this->exportLine($key, $array[$key]);
-		}
-		$txt .= ");";
-		return $txt;
-	}
-
-	function getArray() {
-		global $wgTranslateMessages;
-		return $wgTranslateMessages['en'];
-	}
-}
 
 global $wgHooks;
 $wgHooks['SpecialTranslateAddMessageClass'][] = 'wfSpecialTranslateAddMessageClasses';
 function wfSpecialTranslateAddMessageClasses($class) {
 	$class[] = new CoreMessageClass();
-//	$class[] = new RenameUserMessageClass();
-	$class[] = new TranslateMessageClass();
+	return true;
 }
+
+require_once( 'SpecialTranslate_exts.php' );
 
 
 ?>

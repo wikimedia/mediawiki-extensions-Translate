@@ -9,11 +9,11 @@ if (!defined('MEDIAWIKI')) die();
  * @copyright Copyright © 2006, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
-error_reporting( E_ALL | E_STRICT );
+
 $wgExtensionFunctions[] = 'wfSpecialTranslate';
 $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'Translate',
-	'version' => '2.3',
+	'version' => '2.4',
 	'author' => 'Niklas Laxström',
 	'url' => 'http://nike.users.idler.fi/betawiki',
 	'description' => 'Special page for translating Mediawiki'
@@ -21,8 +21,10 @@ $wgExtensionCredits['specialpage'][] = array(
 
 $wgAutoloadClasses['languages'] = $IP . '/maintenance/language/languages.inc';
 
+
 # Internationalisation file
 require_once( 'SpecialTranslate.i18n.php' );
+
 
 # Message types (ugly?)
 require_once( 'maintenance/language/messageTypes.inc' );
@@ -33,6 +35,7 @@ if ( !function_exists( 'extAddSpecialPage' ) ) {
 	require( dirname(__FILE__) . '/../ExtensionFunctions.php' );
 }
 extAddSpecialPage( dirname(__FILE__) . '/SpecialTranslate_body.php', 'Translate', 'SpecialTranslate' );
+
 require_once( 'SpecialTranslate_edit.php' );
 global $wgHooks;
 
@@ -85,6 +88,17 @@ CSSXYZ;
 	return true;
 
 }
+
+/* Don't require protect for edit interface */
+$wgHooks['userCan'][] = 'wfFixCheck';
+function wfFixCheck( &$title, &$user, $action, &$result ) {
+	if( NS_MEDIAWIKI == $title->mNamespace &&
+		$user->isAllowed('editinterface') ) {
+		$result = true;
+		return true;
+	}
+}
+
 
 
 function wfSpecialTranslate() {
