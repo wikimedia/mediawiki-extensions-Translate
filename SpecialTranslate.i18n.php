@@ -2,8 +2,7 @@
 /**
  * Internationalisation file for Translate extension.
  *
- * @package MediaWiki
- * @subpackage Extensions
+ * @addtogroup Extensions
 */
 
 $wgTranslateMessages = array();

@@ -3,8 +3,7 @@ if (!defined('MEDIAWIKI')) die();
 /**
  * An extension to ease the translation of Mediawiki
  *
- * @package MediaWiki
- * @subpackage Extensions
+ * @addtogroup Extensions
  *
  * @author Niklas Laxström
  * @copyright Copyright © 2006, Niklas Laxström
