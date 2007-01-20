@@ -1,18 +1,44 @@
 <?php
 
-global $wgHooks;
-$wgHooks['SpecialTranslateAddMessageClass'][] = 'wfSpecialTranslateAddMessageClasses2';
-function wfSpecialTranslateAddMessageClasses2($class) {
-	$class[] = new RenameUserMessageClass();
-	$class[] = new TranslateMessageClass();
-	return true;
-}
+abstract class ExtensionMessageClass extends MessageClass {
+	protected $arrName;
+	protected $msgArray;
 
-class RenameUserMessageClass extends MessageClass {
+	function __construct() {
+		global ${$this->arrName};
+		if ( isset( ${$this->arrName} ) ) {
+			$this->msgArray = ${$this->arrName};
+			$this->hook();
+		}
+	}
+		
+	function export(&$array) {
+		global $wgLang;
+		$code = $wgLang->getCode();
+		$txt = "\$$this->arrName['$code'] = array(\n";
+
+		foreach ($this->msgArray['en'] as $key => $msg) {
+			$txt .= "\t" . $this->exportLine($key, $array[$key], false);
+		}
+		$txt .= ");";
+		return $txt;
+	}
+
+	function getArray() {
+		return $this->msgArray['en'];
+	}
+
+}
+	
+
+class RenameUserMessageClass extends ExtensionMessageClass {
 
 	protected $label = 'Extension: Rename user';
 	protected $id    = 'ext-renameuser';
-		
+
+	protected $arrName = 'wgRenameuserMessages';
+	protected $msgArray;
+
 	function export(&$array) {
 		global $wgLang;
 		$code = $wgLang->getCode();
@@ -43,39 +69,21 @@ class RenameUserMessageClass extends MessageClass {
 		return $txt;
 	}
 
-	function getArray() {
-		global $wgRenameuserMessages;
-		return $wgRenameuserMessages['en'];
-	}
-
 	function fill(&$array) {
 		$array['renameuserlogentry']['ignored'] = true;
 	}
 
 }
 
-class TranslateMessageClass extends MessageClass {
+new RenameUserMessageClass();
+
+class TranslateMessageClass extends ExtensionMessageClass {
 
 	protected $label = 'Extension: Translate';
 	protected $id    = 'ext-translate';
-		
-	function export(&$array) {
-		global $wgLang;
-		global $wgTranslateMessages;
-		$code = $wgLang->getCode();
-		$txt = "\$wgTranslateMessages['$code'] = array(\n";
 
-		foreach ($wgTranslateMessages['en'] as $key => $msg) {
-			$txt .= "\t" . $this->exportLine($key, $array[$key]);
-		}
-		$txt .= ");";
-		return $txt;
-	}
-
-	function getArray() {
-		global $wgTranslateMessages;
-		return $wgTranslateMessages['en'];
-	}
+	protected $arrName = 'wgTranslateMessages';
+	protected $msgArray;
 
 	function fill(&$array) {
 		global $wgLang;
@@ -97,33 +105,16 @@ class TranslateMessageClass extends MessageClass {
 	}
 }
 
+new TranslateMessageClass();
 
-class ConfirmEditMessageClass extends MessageClass {
+
+class ConfirmEditMessageClass extends ExtensionMessageClass {
 
 	protected $label   = 'Extension: ConfirmEdit';
 	protected $id      = 'ext-confirmedit';
+
 	protected $arrName = 'wgConfirmEditMessages';
-	protected $msgArray= null;
-	#protected $msgFile = 'ConfirmEdit/ConfirmEdit.i18n.php';
-
-	function __construct() {
-		global ${$this->arrName};
-		if ( isset( ${$this->arrName} ) ) {
-			$this->msgArray = ${$this->arrName};
-			$this->hook();
-		}
-	}
-
-	protected function hook( ) {
-		global $wgHooks;
-		$wgHooks['SpecialTranslateAddMessageClass'][] = array( $this, 'addHook' );
-	}
-
-	function addHook($class) {
-		$class[] = new self();
-		return true;
-	}
-
+	protected $msgArray;
 		
 	function export(&$array) {
 		global $wgLang;
@@ -135,10 +126,6 @@ class ConfirmEditMessageClass extends MessageClass {
 		}
 		$txt .= ");";
 		return $txt;
-	}
-
-	function getArray() {
-		return $this->msgArray['en'];
 	}
 
 	function fill(&$array) {
@@ -162,18 +149,18 @@ class ConfirmEditMessageClass extends MessageClass {
 
 new ConfirmEditMessageClass();
 
-class DuplicatorMessageClass extends ConfirmEditMessageClass {
+class DuplicatorMessageClass extends ExtensionMessageClass {
 	protected $label   = 'Extension: Duplicator';
 	protected $id      = 'ext-duplicator';
 
+	protected $arrName = 'NONE';
+	protected $msgArray;
+
+
 	function __construct() {
+		if (!function_exists('efDuplicatorMessages')) { return; }
 		$this->msgArray = efDuplicatorMessages();
 		$this->hook();
-	}
-
-	function addHook($class) {
-		$class[] = new self();
-		return true;
 	}
 
 	function export(&$array) {

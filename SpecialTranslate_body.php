@@ -379,11 +379,22 @@ abstract class MessageClass {
 
 	protected $label = 'none';
 	protected $id    = 'none';
+
+	function __construct() { $this->hook(); }
 	function getLabel() { return $this->label; }
 	function getId() { return $this->id; }
 	abstract function export(&$array);
 	abstract function getArray();
 	function fill(&$array) {}
+	public function hook() {
+		global $wgHooks;
+		$wgHooks['SpecialTranslateAddMessageClass'][] = array( $this, 'addHook' );
+	}
+
+	function addHook($class) {
+		$class[] = $this;
+		return true;
+	}
 
 	function exportLine($key, $m, $pad = false) {
 		if ( $m['ignored'] ) { return ''; }
@@ -413,6 +424,7 @@ abstract class MessageClass {
 class CoreMessageClass extends MessageClass {
 	protected $label = 'Core system messages';
 	protected $id    = 'core';
+
 	function export(&$array) {
 		$txt = "\$messages = array(\n";
 		foreach( $array as $key => $m ) {
@@ -451,19 +463,11 @@ class CoreMessageClass extends MessageClass {
 			$array[$key]['infile'] = isset( $infile[$key] ) ? $infile[$key] : null;
 			$array[$key]['infbfile'] = isset( $infbfile[$key] ) ? $infbfile[$key] : null;
 		}
-
-
 	}
 }
 
+new CoreMessageClass();
 
-
-global $wgHooks;
-$wgHooks['SpecialTranslateAddMessageClass'][] = 'wfSpecialTranslateAddMessageClasses';
-function wfSpecialTranslateAddMessageClasses($class) {
-	$class[] = new CoreMessageClass();
-	return true;
-}
 
 require_once( 'SpecialTranslate_exts.php' );
 
