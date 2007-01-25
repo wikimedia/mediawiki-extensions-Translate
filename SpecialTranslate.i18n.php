@@ -24,6 +24,7 @@ $wgTranslateMessages['en'] = array(
 	'translate-edit-message-in' => 'Current string in <b>$1</b> (Messages$2.php):',
 	'translate-edit-message-in-fb' => 'Current string in fallback language <b>$1</b> (Messages$2.php):',
 );
+
 $wgTranslateMessages['br'] = array(
 	'translate'=> 'Treiñ',
 	'translate-show-label'=> 'Diskouez :',
@@ -41,6 +42,7 @@ $wgTranslateMessages['br'] = array(
 	'translate-edit-message-in'=> 'Neudennad red e <b>$1</b> (Kemennadennoù$2.php):',
 	'translate-edit-message-in-fb'=> 'Neudennad red er yezh kein <b>$1</b> (Kemennadennoù$2.php):',
 );
+
 // bug 8455
 $wgTranslateMessages['cs'] = array(
 	'translate' => 'Přeložit',
@@ -78,6 +80,7 @@ $wgTranslateMessages['de'] = array(
 	'translate-edit-message-in' => 'Aktueller Text in <b>$1</b> (Messages$2.php):',
 	'translate-edit-message-in-fb' => 'Aktueller Text in der Standard-Sprache <b>$1</b> (Messages$2.php):',
 );
+
 $wgTranslateMessages['fr'] = array(
 	'translate' => 'Traduire',
 	'translate-show-label' => 'Montrer :',
@@ -113,6 +116,7 @@ $wgTranslateMessages['he'] = array(
 	'translate-edit-message-in'    => 'המחרוזת הנוכחית ל־<b>$1</b> (Messages$2.php):',
 	'translate-edit-message-in-fb' => 'המחרוזת הנוכחית ל־<b>$1</b> בשפת הגיבוי (Messages$2.php):',
 );
+
 $wgTranslateMessages['id'] = array(
 	'translate' => 'Terjemahan',
 	'translate-show-label' => 'Tampilkan:',
@@ -130,6 +134,7 @@ $wgTranslateMessages['id'] = array(
 	'translate-edit-message-in' => 'Kalimat dalam <b>$1</b> (Messages$2.php):',
 	'translate-edit-message-in-fb' => 'Kalimat dalam bahasa <b>$1</b> (Messages$2.php):',
 );
+
 $wgTranslateMessages['it'] = array(
 	'translate' => 'Traduzioni',
 	'translate-changed' => '$1 messaggi non modificati',
@@ -138,10 +143,28 @@ $wgTranslateMessages['it'] = array(
 	'translate-core' => '$1 messaggi non \'core\'',
 	'translate-sort' => 'Ordina per: $1',
 	'translate-export' => 'Esporta:',
-
 	'translate-edit-message-in' => 'Contenuto attuale in <b>$1</b> (Messages$2.php):',
 	'translate-edit-message-in-fb' => 'Contenuto attuale nella lingua di fallback <b>$1</b> (Messages$2.php):',
 );
+
+$wgTranslateMessages['nl'] = array(
+	'translate' => 'Vertalen',
+	'translate-show-label' => 'Toon:',
+	'translate-opt-trans' => 'Alleen onvertaalde',
+	'translate-opt-optional' => 'Optineel',
+	'translate-opt-changed' => 'Alleen gewijzigd',
+	'translate-opt-ignored' => 'Genegeerd',
+	'translate-opt-database' => 'Alleen in de database',
+	'translate-messageclass' => 'Berichtklasse:',
+	'translate-sort-label' => 'Sorteren:',
+	'translate-sort-normal' => 'Normaal',
+	'translate-sort-alpha'  => 'Alfabetisch',
+	'translate-fetch-button' => 'Ophalen',
+	'translate-export-button' => 'Exporteren',
+	'translate-edit-message-in' => 'Huidige tekst in <b>$1</b> (Messages$2.php):',
+	'translate-edit-message-in-fb' => 'Huidige tekst in alternatieve taal <b>$1</b> (Messages$2.php):',
+);
+
 $wgTranslateMessages['sk'] = array(
 	'translate' => 'Prelož',
 
@@ -157,10 +180,10 @@ $wgTranslateMessages['sk'] = array(
 	'translate-sort-alpha'  => 'abecedne',
 	'translate-fetch-button' => 'Priniesť',
 	'translate-export-button' => 'Export',
-	
 	'translate-edit-message-in' => 'Aktuálny reťazec v jazyku <b>$1</b> (Messages$2.php):',
 	'translate-edit-message-in-fb' => 'Aktuálny reťazec v jazyku <b>$1</b>, ktorý sa použije ak správa nie je preložená (Messages$2.php):',
 );
+
 $wgTranslateMessages['sr-ec'] = array(
 	'translate' => 'Превод',
 	'translate-show-label' => 'Покажи:',
@@ -178,6 +201,7 @@ $wgTranslateMessages['sr-ec'] = array(
 	'translate-edit-message-in' => 'Тренутни стринг у <b>$1</b> (Messages$2.php):',
 	'translate-edit-message-in-fb' => 'Тренутни стринг у језику <b>$1</b> (Messages$2.php):',
 );
+
 $wgTranslateMessages['sr-el'] = array(
 	'translate' => 'Prevod',
 	'translate-show-label' => 'Pokaži:',
@@ -195,6 +219,7 @@ $wgTranslateMessages['sr-el'] = array(
 	'translate-edit-message-in' => 'Trenutni string u <b>$1</b> (Messages$2.php):',
 	'translate-edit-message-in-fb' => 'Trenutni string u jeziku <b>$1</b> (Messages$2.php):',
 );
+
 $wgTranslateMessages['sr'] = $wgTranslateMessages['sr-ec'];
 $wgTranslateMessages['zh-cn'] = array(
 	'translate' => '翻译',
@@ -204,10 +229,10 @@ $wgTranslateMessages['zh-cn'] = array(
 	'translate-core' => '$1 信息不是核心信息',
 	'translate-sort' => '排序: $1',
 	'translate-export' => '导出:',
-
 	'translate-edit-message-in' => '在 <b>$1</b> 的当前字串 (Messages$2.php):',
 	'translate-edit-message-in-fb' => '在 <b>$1</b> 于倚靠语言中的当前字串 (Messages$2.php):',
 );
+
 $wgTranslateMessages['zh-tw'] = array(
 	'translate' => '翻譯',
 	'translate-changed' => '$1 句信息未更改',
@@ -216,10 +241,10 @@ $wgTranslateMessages['zh-tw'] = array(
 	'translate-core' => '$1 信息不是核心信息',
 	'translate-sort' => '排序: $1',
 	'translate-export' => '匯出:',
-
 	'translate-edit-message-in' => '在 <b>$1</b> 的現行字串 (Messages$2.php):',
 	'translate-edit-message-in-fb' => '在 <b>$1</b> 於倚靠語言中的現行字串 (Messages$2.php):',
 );
+
 $wgTranslateMessages['zh-yue'] = array(
 	'translate' => '翻譯',
 	'translate-changed' => '$1 句信息未更改',
@@ -228,10 +253,10 @@ $wgTranslateMessages['zh-yue'] = array(
 	'translate-core' => '$1 信息唔係核心信息',
 	'translate-sort' => '排次序: $1',
 	'translate-export' => '倒出:',
-
 	'translate-edit-message-in' => '響 <b>$1</b> 嘅現行字串 (Messages$2.php):',
 	'translate-edit-message-in-fb' => '響 <b>$1</b> 於倚靠語言中嘅現行字串 (Messages$2.php):',
 );
+
 $wgTranslateMessages['zh-hk'] = $wgTranslateMessages['zh-tw'];
 $wgTranslateMessages['zh-sg'] = $wgTranslateMessages['zh-cn'];
 
