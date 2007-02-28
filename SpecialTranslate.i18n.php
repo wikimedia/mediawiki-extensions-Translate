@@ -10,6 +10,7 @@ $wgTranslateMessages = array();
 $wgTranslateMessages['en'] = array(
 	'translate' => 'Translate',
 	'translate-show-label' => 'Show:',
+	'translate-opt-review' => 'Review mode',
 	'translate-opt-trans' => 'Untranslated only',
 	'translate-opt-optional' => 'Optional',
 	'translate-opt-changed' => 'Changed only',
@@ -41,6 +42,25 @@ $wgTranslateMessages['br'] = array(
 	'translate-export-button'=> 'Ezporzhiañ',
 	'translate-edit-message-in'=> 'Neudennad red e <b>$1</b> (Kemennadennoù$2.php):',
 	'translate-edit-message-in-fb'=> 'Neudennad red er yezh kein <b>$1</b> (Kemennadennoù$2.php):',
+);
+
+$wgTranslateMessages['ca'] = array(
+	'translate'=> 'Tradueix',
+	'translate-show-label'=> 'Mostra missatges:',
+	'translate-opt-review'=> 'Mode de revisió',
+	'translate-opt-trans'=> 'Només sense traduir',
+	'translate-opt-optional'=> 'Opcionals',
+	'translate-opt-changed'=> 'Només canviats',
+	'translate-opt-ignored'=> 'A ignorar',
+	'translate-opt-database'=> 'Només traduïts en aquesta base de dades',
+	'translate-messageclass'=> 'Classe de missatge:',
+	'translate-sort-label'=> 'Ordenació:',
+	'translate-sort-normal'=> 'Normal',#identical but defined
+	'translate-sort-alpha'=> 'Alfabètica',
+	'translate-fetch-button'=> 'Recull',
+	'translate-export-button'=> 'Exporta',
+	'translate-edit-message-in'=> 'Cadena actual en <strong>$1</strong> (Messages$2.php):',
+	'translate-edit-message-in-fb'=> 'Cadena actual en la llengua per defecte <strong>$1</strong> (Messages$2.php):',
 );
 
 // bug 8455
