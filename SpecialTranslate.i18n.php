@@ -121,21 +121,22 @@ $wgTranslateMessages['fr'] = array(
 );
 
 $wgTranslateMessages['he'] = array(
-	'translate'                    => 'תרגום',
-	'translate-show-label'         => 'הצג:',
-	'translate-opt-trans'          => 'רק לא מתורגמות',
-	'translate-opt-optional'       => 'אופציונאליות',
-	'translate-opt-changed'        => 'רק אם השתנו',
-	'translate-opt-ignored'        => 'אינן לתרגום',
-	'translate-opt-database'       => 'במסד הנתונים בלבד',
-	'translate-messageclass'       => 'סוג ההודעה:',
-	'translate-sort-label'         => 'מיון:',
-	'translate-sort-normal'        => 'רגיל',
-	'translate-sort-alpha'         => 'אלפביתי',
-	'translate-fetch-button'       => 'קבל',
-	'translate-export-button'      => 'ייצוא',
-	'translate-edit-message-in'    => 'המחרוזת הנוכחית ל־<b>$1</b> (Messages$2.php):',
-	'translate-edit-message-in-fb' => 'המחרוזת הנוכחית ל־<b>$1</b> בשפת הגיבוי (Messages$2.php):',
+	'translate'                     => 'תרגום',
+	'translate-show-label'          => 'הצג:',
+	'translate-opt-trans'           => 'רק לא מתורגמות',
+	'translate-opt-optional'        => 'אופציונאליות',
+	'translate-opt-changed'         => 'רק אם השתנו',
+	'translate-opt-ignored'         => 'אינן לתרגום',
+	'translate-opt-database'        => 'במסד הנתונים בלבד',
+	'translate-messageclass'        => 'סוג ההודעה:',
+	'translate-sort-label'          => 'מיון:',
+	'translate-sort-normal'         => 'רגיל',
+	'translate-sort-alpha'          => 'אלפביתי',
+	'translate-fetch-button'        => 'קבל',
+	'translate-export-button'       => 'ייצוא',
+	'translate-edit-message-format' => 'המבנה של הודעה זו הוא <b>$1</b>.',
+	'translate-edit-message-in'     => 'המחרוזת הנוכחית ל־<b>$1</b> ($2):',
+	'translate-edit-message-in-fb'  => 'המחרוזת הנוכחית ל־<b>$1</b> בשפת הגיבוי ($2):',
 );
 
 $wgTranslateMessages['id'] = array(
