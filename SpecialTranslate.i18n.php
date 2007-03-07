@@ -85,21 +85,23 @@ $wgTranslateMessages['cs'] = array(
 
 /* German by Raymond */
 $wgTranslateMessages['de'] = array(
-	'translate' => 'Übersetze',
-	'translate-show-label' => 'Zeige:',
-	'translate-opt-trans' => 'Nur nicht übersetzte',
-	'translate-opt-optional' => 'Optional',
-	'translate-opt-changed' => 'Nur veränderte',
-	'translate-opt-ignored' => 'ignoriert',
-	'translate-opt-database' => 'Nur in Datenbank',
-	'translate-messageclass' => 'Nachrichten-Klasse:',
-	'translate-sort-label' => 'Sortierung:',
-	'translate-sort-normal' => 'Normal',
-	'translate-sort-alpha'  => 'Alphabetisch',
-	'translate-fetch-button' => 'Holen',
-	'translate-export-button' => 'Exportieren',
-	'translate-edit-message-in' => 'Aktueller Text in <b>$1</b> (Messages$2.php):',
-	'translate-edit-message-in-fb' => 'Aktueller Text in der Standard-Sprache <b>$1</b> (Messages$2.php):',
+	'translate'                     => 'Übersetze',
+	'translate-show-label'          => 'Zeige:',
+	'translate-opt-review'          => 'Überprüfungs-Modus',
+	'translate-opt-trans'           => 'Nur nicht übersetzte',
+	'translate-opt-optional'        => 'Optional',
+	'translate-opt-changed'         => 'Nur veränderte',
+	'translate-opt-ignored'         => 'ignoriert',
+	'translate-opt-database'        => 'Nur in Datenbank',
+	'translate-messageclass'        => 'Nachrichten-Klasse:',
+	'translate-sort-label'          => 'Sortierung:',
+	'translate-sort-normal'         => 'Normal',
+	'translate-sort-alpha'          => 'Alphabetisch',
+	'translate-fetch-button'        => 'Holen',
+	'translate-export-button'       => 'Exportieren',
+	'translate-edit-message-format' => 'Das Format dieser Nachricht ist <b>$1</b>.',
+	'translate-edit-message-in'     => 'Aktueller Text in <b>$1</b> ($2):',
+	'translate-edit-message-in-fb'  => 'Aktueller Text in der Ausweich-Sprache <b>$1</b> ($2):',
 );
 
 $wgTranslateMessages['fr'] = array(
