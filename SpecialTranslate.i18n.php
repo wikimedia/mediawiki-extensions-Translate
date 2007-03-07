@@ -167,6 +167,60 @@ $wgTranslateMessages['it'] = array(
 	'translate-edit-message-in-fb' => 'Contenuto attuale nella lingua di fallback <b>$1</b> (Messages$2.php):',
 );
 
+$wgTranslateMessages['kk-kz'] = array(
+	'translate' => 'Аудару',
+	'translate-show-label' => 'Көрсету:',
+	'translate-opt-trans' => 'Тек аударылмағандарды',
+	'translate-opt-optional' => 'Міндетті емес',
+	'translate-opt-changed' => 'Тек өзгергендерді',
+	'translate-opt-ignored' => 'Елемелінген',
+	'translate-opt-database' => 'Тек дерекқорда',
+	'translate-messageclass' => 'Хабар табы:',
+	'translate-sort-label' => 'Сұрыптау:',
+	'translate-sort-normal' => 'Қалыпты',
+	'translate-sort-alpha'  => 'Әліппемен',
+	'translate-fetch-button' => 'Келтіру',
+	'translate-export-button' => 'Сыртқа беру',
+	'translate-edit-message-in' => '<b>$1</b> (Messages$2.php) дегендегі ағымдағы жол:',
+	'translate-edit-message-in-fb' => '<b>$1</b> (Messages$2.php) деген сүйену тіліндегі ағымдағы жол:',
+);
+$wgTranslateMessages['kk-tr'] = array(
+	'translate' => 'Awdarw',
+	'translate-show-label' => 'Körsetw:',
+	'translate-opt-trans' => 'Tek awdarılmağandardı',
+	'translate-opt-optional' => 'Mindetti emes',
+	'translate-opt-changed' => 'Tek özgergenderdi',
+	'translate-opt-ignored' => 'Elemelingen',
+	'translate-opt-database' => 'Tek derekqorda',
+	'translate-messageclass' => 'Xabar tabı:',
+	'translate-sort-label' => 'Surıptaw:',
+	'translate-sort-normal' => 'Qalıptı',
+	'translate-sort-alpha'  => 'Älippemen',
+	'translate-fetch-button' => 'Keltirw',
+	'translate-export-button' => 'Sırtqa berw',
+	'translate-edit-message-in' => '<b>$1</b> (Messages$2.php) degendegi ağımdağı jol:',
+	'translate-edit-message-in-fb' => '<b>$1</b> (Messages$2.php) degen süýenw tilindegi ağımdağı jol:',
+);
+$wgTranslateMessages['kk-cn'] = array(
+	'translate' => 'اۋدارۋ',
+	'translate-show-label' => 'كٴورسەتۋ:',
+	'translate-opt-trans' => 'تەك اۋدارىلماعانداردى',
+	'translate-opt-optional' => 'مٴىندەتتٴى ەمەس',
+	'translate-opt-changed' => 'تەك ٴوزگەرگەندەردٴى',
+	'translate-opt-ignored' => 'ەلەمەلٴىنگەن',
+	'translate-opt-database' => 'تەك دەرەكقوردا',
+	'translate-messageclass' => 'حابار تابى:',
+	'translate-sort-label' => 'سۇرىپتاۋ:',
+	'translate-sort-normal' => 'قالىپتى',
+	'translate-sort-alpha'  => 'ٴالٴىپپەمەن',
+	'translate-fetch-button' => 'كەلتٴىرۋ',
+	'translate-export-button' => 'سىرتقا بەرۋ',
+	'translate-edit-message-in' => '<b>$1</b> (Messages$2.php) دەگەندەگٴى اعىمداعى جول:',
+	'translate-edit-message-in-fb' => '<b>$1</b> (Messages$2.php) دەگەن سٴۇيەنۋ تٴىلٴىندەگٴى اعىمداعى جول:',
+);
+$wgTranslateMessages['kk'] = $wgTranslateMessages['kk-kz'];
+
+
 $wgTranslateMessages['nl'] = array(
 	'translate' => 'Vertalen',
 	'translate-show-label' => 'Toon:',
