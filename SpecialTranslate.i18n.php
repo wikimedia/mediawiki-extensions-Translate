@@ -22,8 +22,9 @@ $wgTranslateMessages['en'] = array(
 	'translate-sort-alpha'  => 'Alphabetical',
 	'translate-fetch-button' => 'Fetch',
 	'translate-export-button' => 'Export',
-	'translate-edit-message-in' => 'Current string in <b>$1</b> (Messages$2.php):',
-	'translate-edit-message-in-fb' => 'Current string in fallback language <b>$1</b> (Messages$2.php):',
+	'translate-edit-message-format' => 'The format of this message is <b>$1</b>.',
+	'translate-edit-message-in' => 'Current string in <b>$1</b> ($2):',
+	'translate-edit-message-in-fb' => 'Current string in fallback language <b>$1</b> ($2):',
 );
 
 $wgTranslateMessages['br'] = array(

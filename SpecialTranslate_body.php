@@ -10,39 +10,22 @@ class SpecialTranslate extends SpecialPage {
 	private $messages    = array();
 	private $messageClass= null;
 	private $classes     = array();
-	private $language    = '';
 
-	private static $existence = null;
+	private static $maxRowCount = 3000;
 
 	function __construct() {
 		SpecialPage::SpecialPage( 'Translate' );
 		$this->includable( true );
-
-		global $wgLang, $wgContLang;
-		if( $wgLang->getCode() != $wgContLang->getCode() ) {
-			$this->language = '/' . $wgLang->getCode();
-		}
-
 	}
 
 	function execute() {
-		global $wgOut, $wgUseDatabaseMessages;
-
-		# The page isn't much use if the MediaWiki namespace is not being used
-		if( !$wgUseDatabaseMessages ) {
-			$wgOut->addWikiText( wfMsg( 'allmessagesnotsupportedDB' ) );
-			return;
-		}
-
-		wfRunHooks( 'SpecialTranslateAddMessageClass',
-			array( &$this->classes ) );
+		require_once( 'SpecialTranslate_exts.php' );
+		$this->classes = efInitializeExtensionClasses( );
 
 		$this->setup();
 		$this->initializeMessages();
-
 		$this->setHeaders();
 		$this->output();
-
 	}
 
 	function setup() {
@@ -53,16 +36,19 @@ class SpecialTranslate extends SpecialPage {
 		}
 
 		$defaults = array(
+		/* bool */ 'x'            => false,
 		/* bool */ 'changed'      => false,
 		/* bool */ 'database'     => false,
 		/* bool */ 'missing'      => false,
-		/* bool */ 'extension'    => true,
+		/* bool */ 'extension'    => false,
 		/* bool */ 'optional'     => false,
     /* bool */ 'ignored'      => false,
 		/* str  */ 'sort'         => 'normal',
 		/* bool */ 'endiff'       => false,
 		/* str  */ 'uselang'      => $wgUser->getOption( 'language' ),
 		/* str  */ 'msgclass'     => 'core',
+		/* str  */ 'filter-key'   => '',
+		/* str  */ 'filter-msg'   => '',
 		);
 
 		// Dump everything here
@@ -83,16 +69,22 @@ class SpecialTranslate extends SpecialPage {
 
 		$this->messageClass = $this->classes[0];
 		foreach( $this->classes as $class ) {
-			if ( $class->getId() === $this->options['msgclass'] ) {
+			if ( $class->hasMessages() && $class->getId() === $this->options['msgclass']) {
+				if ( $this->options['msgclass'] !== 'core' ) {
+					$this->options['extension'] = true;
+				}
 				$this->messageClass = $class;
+				break;
 			}
 		}
 
 	}
 
-	// TODO: fix endiff
 	function initializeMessages() {
-		global $wgMessageCache, $wgLang;
+		global $wgMessageCache, $wgContLang;
+
+		// Don't print huge page on first load
+		if ( !$this->options['x'] ) { return; }
 
 		# Make sure all extension messages are available
 		MessageCache::loadAllMessages();
@@ -103,6 +95,7 @@ class SpecialTranslate extends SpecialPage {
 			ksort( $array );
 		}
 
+		$LinkBatch = new LinkBatch();
 		$wgMessageCache->disableTransform();
 
 		foreach ( $array as $key => $value ) {
@@ -110,8 +103,9 @@ class SpecialTranslate extends SpecialPage {
 			if ( wfEmptyMsg( $key, $msg ) ) {
 				$msg = wfMsgNoDb( $key );
 			}
+
 			$this->messages[$key]['enmsg'] = $value; // the very original message
-			$this->messages[$key]['statmsg'] = $this->options['endiff'] ? $value : wfMsgNoDb( $key ); // committed translation or fallback
+			$this->messages[$key]['statmsg'] = wfMsgNoDb( $key ); // committed translation or fallback
 			$this->messages[$key]['msg'] = $msg; // current translation
 			$this->messages[$key]['extension'] = true; // overwritten by 'core'
 			$this->messages[$key]['infile'] = null; // filled by message class
@@ -119,53 +113,92 @@ class SpecialTranslate extends SpecialPage {
 			$this->messages[$key]['optional'] = false; // filled by message class
 			$this->messages[$key]['ignored'] = false; // filled by message class
 			$this->messages[$key]['changed'] = false; // filled later
+			$this->messages[$key]['pageexists'] = false; // filled later
+			$this->messages[$key]['talkexists'] = false; // filled later
 			$this->messages[$key]['defined'] = false; // filled later
+
+			$LinkBatch->add( NS_MEDIAWIKI, self::titleFromKey( $key ) );
+			$LinkBatch->add( NS_MEDIAWIKI_TALK, self::titleFromKey( $key ) );
 		}
 
 		$wgMessageCache->enableTransform();
 
+		if ( count($this->messages) > 50 ) {
+			$exists = self::doExistenceCheck();
+		} else {
+			$exists = $LinkBatch->execute();
+		}
+
 		$this->messageClass->fill($this->messages);
-		
+
+		$pagePrefix = $wgContLang->getNsText( NS_MEDIAWIKI ) . ':';
+		$talkPrefix = $wgContLang->getNsText( NS_MEDIAWIKI_TALK ) . ':';
 		// Calculate some usefull variables
-		foreach ( $this->messages as $key => $value ) {
-			$this->messages[$key]['changed'] = ( $value['msg'] !== $value['statmsg'] );
-			$this->messages[$key]['defined'] = ( $value['changed'] || $value['infile'] !== null );
+		foreach ( array_keys( $this->messages ) as $key ) {
+			$title = self::titleFromKey( $key );
+			$pageExists = isset( $exists[$pagePrefix . $title] ) &&
+				$exists[$pagePrefix . $title];
+
+			$talkExists = isset( $exists[$talkPrefix . $title] ) &&
+				$exists[$talkPrefix . $title];
+
+			if ( $this->options['endiff'] ) {
+				$this->messages[$key]['statmsg'] = $this->messages[$key]['enmsg'];
+			}
+
+			$this->messages[$key]['changed'] = ( $this->messages[$key]['msg'] !== $this->messages[$key]['statmsg'] );
+			$this->messages[$key]['pageexists'] = $pageExists;
+			$this->messages[$key]['talkexists'] = $talkExists;
+			$this->messages[$key]['defined'] = ( $pageExists || $this->messages[$key]['infile'] !== null );
+
 		}
 
 	}
+
 
 	function output() {
 		global $wgOut;
 
 		if ( $this->output ) {
-			$input = htmlspecialchars($this->messageClass->export($this->messages));
-			$wgOut->addHTML( '<textarea id="wpTextbox1" rows="40">' . $input . '</textarea>');
+			$wgOut->addHTML( Xml::element( 'textarea',
+				array( 'id' => 'wpTextbox1', 'rows' => '40' ),
+				$this->messageClass->export($this->messages) )
+			);
 		} else {
+			if ( !$this->options['x'] ) {
+				$wgOut->addHTML( 'Please choose your settings. Note that fetching all core message results in huge table and over 100 KB page!' );
+			}
+
 			$wgOut->addHTML( $this->settingsForm() );
-			$wgOut->addHTML( $this->makeHTMLText( $this->messages, $this->options, $this->language ) );
+			$wgOut->addHTML( $this->makeHTMLText( $this->messages, $this->options ) );
 		}
 
 	}
 
-	function settingsForm() {
+	protected function settingsForm() {
 		$form = "\n\n" . Xml::openElement('form');
-		$form .= $this->prioritySelector() . wfElement('br');
+		$form .= Xml::hidden( 'x', '1' );
+		$form .= $this->prioritySelector() . Xml::element('br');
 		$form .= $this->messageClassSelector() . " ";
 		$form .= $this->sortSelector() . " ";
-		if ( isset( $this->nondefaults['uselang'] ) ) {
-			$form .= Xml::hidden( 'uselang', $this->nondefaults['uselang'] );
-		}
+		$form .= $this->languageSelector() . " ";
 		$form .= Xml::submitButton( wfMsg( 'translate-fetch-button') );
 		$form .= Xml::submitButton( wfMsg( 'translate-export-button' ), array( 'name' => 'ot'));
 		$form .= Xml::closeElement('form'). "\n\n";
 		return $form;
 	}
 
-	function prioritySelector() {
+	protected function filterInputs() {
+		return
+			Xml::inputLabel( "Key filter:", 'filter-key', 'mw-sp-filter-key' ) . ' ' .
+			Xml::inputLabel( "Messages filter:", 'filter-msg', 'mw-sp-filter-msg' );
+	}
+
+	protected function prioritySelector() {
 		$str = wfMsgHtml( 'translate-show-label' ) . ' ' . '<table>' .
 		'<tr><td>' .
- 			Xml::checkLabel('Extension', 'extension',
-			'msgp-extension', $this->options['extension'], array( 'disabled' => 'disabled') ) .
+ 			Xml::checkLabel( wfMsg( 'translate-opt-review' ), 'endiff',
+			'msgp-endiff', $this->options['endiff']) .
 		'</td><td>' .
 			Xml::checkLabel( wfMsg( 'translate-opt-trans' ), 'missing',
 				'msgs-translated', $this->options['missing']) .
@@ -185,7 +218,7 @@ class SpecialTranslate extends SpecialPage {
 		return $str;
 	}
 
-	function sortSelector() {
+	protected function sortSelector() {
 		$str = wfMsgHtml('translate-sort-label') . " " .
 			Xml::openElement('select', array( 'name' => 'sort' )) .
 			Xml::option( wfMsg( 'translate-sort-normal' ), 'normal', $this->options['sort'] === 'normal') .
@@ -194,10 +227,26 @@ class SpecialTranslate extends SpecialPage {
 		return $str;
 	}
 
-	function messageClassSelector() {
+	protected function languageSelector() {
+		global $wgLang;
+		$languages = Language::getLanguageNames( false );
+		ksort( $languages );
+
+		$options = '';
+		$language = $wgLang->getCode();
+		foreach( $languages as $code => $name ) {
+			$selected = ($code == $language);
+			$options .= Xml::option( "$code - $name", $code, $selected ) . "\n";
+		}
+		$str ='Language: <select name="uselang" class="mw-language-selector">' . $options . '</select>';
+		return $str;
+	}
+
+	protected function messageClassSelector() {
 		$str = wfMsgHtml( 'translate-messageclass' ) . ' ' .
 			Xml::openElement('select', array( 'name' => 'msgclass' ));
 		foreach( $this->classes as $class) {
+			if ( !$class->hasMessages() ) { continue; }
 			$str.= Xml::option( $class->getLabel(), $class->getId(),
 				$this->options['msgclass'] === $class->getId());
 		}
@@ -205,64 +254,25 @@ class SpecialTranslate extends SpecialPage {
 		return $str;
 	}
 
-	static function getExistence() {
-		if (self::$existence === null) {
-			self::$existence = self::doExistenceCheck();
-		}
-		return self::$existence;
-	}
-
-	static function pageExists($page, $talk = false) {
-		global $wgContLang;
-		if (self::$existence === null) {
-			self::$existence = self::doExistenceCheck();
-		}
-		$title = $wgContLang->ucfirst( $key ) . $this->language;
-		return isset( self::$existence[!$talk ? NS_MEDIAWIKI : NS_MEDIAWIKI_TALK][$page] );
-	}
-
-
-	static private function doExistenceCheck() {
-		wfProfileIn( __METHOD__ );
-		# This is a nasty hack to avoid doing independent existence checks
-		# without sending the links and table through the slow wiki parser.
-		$pageExists = array(
-			NS_MEDIAWIKI => array(),
-			NS_MEDIAWIKI_TALK => array()
-		);
-		$dbr =& wfGetDB( DB_SLAVE );
-		$page = $dbr->tableName( 'page' );
-		$sql = "SELECT page_namespace,page_title FROM $page WHERE page_namespace IN (" .
-			NS_MEDIAWIKI . ", " . NS_MEDIAWIKI_TALK . ")";
-		$res = $dbr->query( $sql );
-		while( $s = $dbr->fetchObject( $res ) ) {
-			$pageExists[$s->page_namespace][$s->page_title] = true;
-		}
-		$dbr->freeResult( $res );
-		wfProfileOut( __METHOD__ );
-		return $pageExists;
-	}
-
-
 	static private function tableHeader() {
-		$tableheader = wfElement( 'table', array(
+		$tableheader = Xml::element( 'table', array(
 			'class'   => 'mw-special-translate-table',
 			'border'  => '1',
 			'cellspacing' => '0'),
 			null
 		);
 	
-		$tableheader .= wfOpenElement('tr');
-		$tableheader .= wfElement('th',
+		$tableheader .= Xml::openElement('tr');
+		$tableheader .= Xml::element('th',
 			array( 'rowspan' => '2'),
 			wfMsgHtml('allmessagesname')
 		);
-		$tableheader .= wfElement('th', null, wfMsgHtml('allmessagesdefault') );
-		$tableheader .= wfCloseElement('tr');
+		$tableheader .= Xml::element('th', null, wfMsgHtml('allmessagesdefault') );
+		$tableheader .= Xml::closeElement('tr');
 	
-		$tableheader .= wfOpenElement('tr');
-		$tableheader .= wfElement('th', null, wfMsgHtml('allmessagescurrent') );
-		$tableheader .= wfCloseElement('tr');
+		$tableheader .= Xml::openElement('tr');
+		$tableheader .= Xml::element('th', null, wfMsgHtml('allmessagescurrent') );
+		$tableheader .= Xml::closeElement('tr');
 
 		return $tableheader;
 	}
@@ -272,60 +282,55 @@ class SpecialTranslate extends SpecialPage {
 	 * @param $messages Messages array.
 	 * @return The HTML list of messages.
 	 */
-	static function makeHTMLText( $messages, $options, $language ) {
+	static function makeHTMLText( $messages, $options ) {
 		global $wgLang, $wgContLang, $wgUser;
 		wfProfileIn( __METHOD__ );
 	
 		$sk = $wgUser->getSkin();
-		$talk = $wgLang->getNsText( NS_TALK );
+		$talkLinkText = $wgLang->getNsText( NS_TALK ); // FIXME
+
+		$language = STools::getLanguage();
 
 		$tableheader = self::tableHeader();
-		$tablefooter = wfCloseElement( 'table' );	
-	
-		$pageExists = SpecialTranslate::getExistence();
-		
-		wfProfileIn( __METHOD__ . '-output' );
-	
+		$tablefooter = Xml::closeElement( 'table' );
+			
 		$i = 0;
 		$open = false;
 		$output =  '';
 
 		foreach( $messages as $key => $m ) {
 	
-			$title = $wgContLang->ucfirst( $key ) . $language;
-	
-			$titleObj = Title::makeTitle( NS_MEDIAWIKI, $title );
-			$talkPage = Title::makeTitle( NS_MEDIAWIKI_TALK, $title );
-	
-			$changed = ($m['statmsg'] != $m['msg']);
-			$defined = ($m['infile'] !== NULL || $changed);
-	
-			if( $defined && $options['missing'] ) { continue; }
-			if( !$changed && $options['changed'] ) { continue; }
-			if( $m['optional'] && !$options['optional'] ) { continue; }
-			if( $m['ignored'] && !$options['ignored'] ) { continue; }
+			$title = self::titleFromKey( $key );
+			$page['object'] = Title::makeTitle( NS_MEDIAWIKI, $title );
+			$talk['object'] = Title::makeTitle( NS_MEDIAWIKI_TALK, $title );
+		
+			if ( $options['missing']  && $m['defined'] )     { continue; }
+			if ( $options['changed']  && !$m['changed'] )    { continue; }
+			if (!$options['optional'] && $m['optional'] )    { continue; }
+			if (!$options['ignored']  && $m['ignored'] )     { continue; }
+			if ( $options['database'] && !$m['pageexists'] ) { continue; }
+
 			$original = $m['statmsg'];
 			$message = $m['msg'];
-	
-			if( isset( $pageExists[NS_MEDIAWIKI][$title] ) ) {
-				$pageLink = $sk->makeKnownLinkObj( $titleObj, htmlspecialchars( $key ) );
+
+			if( $m['pageexists'] ) {
+				$page['link'] = $sk->makeKnownLinkObj( $page['object'], htmlspecialchars( $key ) );
 			} else {
-				if ( $options['database'] ) { continue; }
-				$pageLink = $sk->makeBrokenLinkObj( $titleObj, htmlspecialchars( $key ) );
+				$page['link'] = $sk->makeBrokenLinkObj( $page['object'], htmlspecialchars( $key ) );
 			}
-			if( isset( $pageExists[NS_MEDIAWIKI_TALK][$title] ) ) {
-				$talkLink = $sk->makeKnownLinkObj( $talkPage, htmlspecialchars( $talk ) );
+			if( $m['talkexists'] ) {
+				$talk['link'] = $sk->makeKnownLinkObj( $talk['object'], $talkLinkText );
 			} else {
-				$talkLink = $sk->makeBrokenLinkObj( $talkPage, htmlspecialchars( $talk ) );
+				$talk['link'] = $sk->makeBrokenLinkObj( $talk['object'], $talkLinkText );
 			}
 
-			$editLink = $sk->makeKnownLinkObj( $titleObj, wfMsgHtml('edit'), 'action=edit' );
-			$historyLink = $sk->makeKnownLinkObj( $titleObj, wfMsgHtml('history'), 'action=history' );
+			$page['edit'] = $sk->makeKnownLinkObj( $page['object'], wfMsgHtml('edit'), 'action=edit' );
+			$page['history'] = $sk->makeKnownLinkObj( $page['object'], wfMsgHtml('history'), 'action=history' );
 			
-			$anchor = 'msg_' . htmlspecialchars( strtolower( $title ) );
-			$anchor = wfElement( 'a', array( 'name' => $anchor ) );
+			$anchor = 'msg_' . $key;
+			$anchor = Xml::element( 'a', array( 'name' => $anchor ) );
 	
-			if( $i % 3000 === 0 ) {
+			if( $i % self::$maxRowCount === 0 ) {
 				if ( $open ) {
 					$output .= $tablefooter;
 					$open = true;
@@ -334,142 +339,81 @@ class SpecialTranslate extends SpecialPage {
 			}
 
 			$opt = '';
-			if ($m['optional']) $opt .= ' opt';
-			if ($m['ignored']) $opt .= ' ign';
-			if ($m['extension'] && !$m['ignored'] && !$m['optional']) $opt .= ' dco';
+			if ( $m['optional'] )  $opt .= ' opt';
+			if ( $m['ignored'] )   $opt .= ' ign';
+
+			$leftColumn = $anchor . $page['link'] . '<br />' .
+				implode( ' | ', array( $talk['link'] , $page['edit'], $page['history'] ) );
 	
-			if($changed) {
-				$info = wfOpenElement( 'tr', array( 'class' => "orig$opt") );
-				$info .= wfOpenElement( 'td', array( 'rowspan' => '2') );
-				$info .= "$anchor$pageLink<br />$talkLink | $editLink | $historyLink";
-				$info .= wfCloseElement( 'td' );
-				$info .= wfElement( 'td', null, $original );
-				$info .= wfCloseElement( 'tr' );
+			if ( $m['changed'] ) {
+				$info = Xml::openElement( 'tr', array( 'class' => "orig$opt") );
+				$info .= Xml::openElement( 'td', array( 'rowspan' => '2') );
+				$info .= $leftColumn;
+				$info .= Xml::closeElement( 'td' );
+				$info .= Xml::element( 'td', null, $original );
+				$info .= Xml::closeElement( 'tr' );
 	
-				$info .= wfOpenElement( 'tr', array( 'class' => 'new') );
-				$info .= wfElement( 'td', null, $message );
-				$info .= wfCloseElement( 'tr' );
+				$info .= Xml::openElement( 'tr', array( 'class' => 'new') );
+				$info .= Xml::element( 'td', null, $message );
+				$info .= Xml::closeElement( 'tr' );
 	
 				$output .= $info . "\n";
 			} else {
-				$info = wfOpenElement( 'tr', array( 'class' => "def$opt") );
-				$info .= wfOpenElement( 'td' );
-				$info .= "$anchor$pageLink<br />$talkLink | $editLink | $historyLink";
-				$info .= wfCloseElement( 'td' );
-				$info .= wfElement( 'td', null, $message );
-				$info .= wfCloseElement( 'tr' );
+				$info = Xml::openElement( 'tr', array( 'class' => "def$opt") );
+				$info .= Xml::openElement( 'td' );
+				$info .= $leftColumn;
+				$info .= Xml::closeElement( 'td' );
+				$info .= Xml::element( 'td', null, $message );
+				$info .= Xml::closeElement( 'tr' );
 	
 				$output .= $info . "\n";
 			}
 	
 			$i++;
-	
 		}
 	
 		$output .= $tablefooter;
 	
-		wfProfileOut( __METHOD__ . '-output' );
 		wfProfileOut( __METHOD__ );
 		return $output;
 	}
 
-}
-
-abstract class MessageClass {
-
-	protected $label = 'none';
-	protected $id    = 'none';
-
-	function __construct() { $this->hook(); }
-	function getLabel() { return $this->label; }
-	function getId() { return $this->id; }
-	abstract function export(&$array);
-	abstract function getArray();
-	function fill(&$array) {}
-	public function hook() {
-		global $wgHooks;
-		$wgHooks['SpecialTranslateAddMessageClass'][] = array( $this, 'addHook' );
+	static function titleFromKey( $key ) {
+		global $wgContLang;
+		$title = $wgContLang->ucfirst( $key ) . STools::getLanguage();
+		return $title;
 	}
 
-	function addHook($class) {
-		$class[] = $this;
-		return true;
-	}
+	static function doExistenceCheck() {
+		global $wgContLang;
+		wfProfileIn( __METHOD__ );
+		# This is a nasty hack to avoid doing independent existence checks
+		# without sending the links and table through the slow wiki parser.
+		$pageExists = array(
+			NS_MEDIAWIKI => array(),
+			NS_MEDIAWIKI_TALK => array()
+		);
+		$dbr = wfGetDB( DB_SLAVE );
+		$page = $dbr->tableName( 'page' );
+		$sql = "SELECT page_namespace,page_title FROM $page WHERE page_namespace IN (" . NS_MEDIAWIKI . ", " . NS_MEDIAWIKI_TALK . ")";
+		$res = $dbr->query( $sql );
 
-	function exportLine($key, $m, $pad = false) {
-		if ( $m['ignored'] ) { return ''; }
-		$comment = '';
-		$fallback = ( $m['infbfile'] === null ) ? $m['enmsg'] : $m['infbfile'];
+		$pagePrefix = $wgContLang->getNsText( NS_MEDIAWIKI ) . ':';
+		$talkPrefix = $wgContLang->getNsText( NS_MEDIAWIKI_TALK ) . ':';
 
-		if ( $m['optional'] ) {
-			if ( $m['msg'] !== $fallback ) {
-				$comment = "#optional";
+		while( $s = $dbr->fetchObject( $res ) ) {
+			if ( $s->page_namespace == NS_MEDIAWIKI ) {
+				$pageExists[$pagePrefix . $s->page_title] = true;
 			} else {
-				return '';
+				$pageExists[$talkPrefix . $s->page_title] = true;
 			}
 		}
+		$dbr->freeResult( $res );
 
-		if ( $m['msg'] === $fallback ) {
-			return "\n";
-		}
-
-		$key = "'$key'";
-		if ($pad) while ( strlen($key) < $pad ) { $key .= ' '; }
-		$txt .= "$key=> '" . preg_replace( "/(?<!\\\\)'/", "\'", $m['msg']) . "',$comment\n";
-		return $txt;
+		wfProfileOut( __METHOD__ );
+		return $pageExists;
 	}
 
 }
-
-class CoreMessageClass extends MessageClass {
-	protected $label = 'Core system messages';
-	protected $id    = 'core';
-
-	function export(&$array) {
-		$txt = "\$messages = array(\n";
-		foreach( $array as $key => $m ) {
-			$txt .= $this->exportLine($key, $m, 24);
-		}
-		$txt .= ");";
-		return $txt;
-	}
-
-	function getArray() {
-		return Language::getMessagesFor('en');
-	}
-
-	function fill(&$array) {
-		global $wgLang;
-		$l = new languages();
-
-		foreach ($l->getOptionalMessages() as $optMsg) {
-			$array[$optMsg]['optional'] = true;
-		}
-
-		foreach ($l->getIgnoredMessages() as $optMsg) {
-			$array[$optMsg]['ignored'] = true;
-		}
-
-		$lp = new LangProxy();
-
-		$infile = $lp->getMessagesInFile( $wgLang->getCode() );
-		$infbfile = null;
-		if ( $wgLang->getFallbackLanguageCode() ) {
-			$infbfile = $lp->getMessagesInFile( $wgLang->getFallbackLanguageCode() );
-		}
-
-		foreach ( $array as $key => $value ) {
-			$array[$key]['extension'] = false;
-			$array[$key]['infile'] = isset( $infile[$key] ) ? $infile[$key] : null;
-			$array[$key]['infbfile'] = isset( $infbfile[$key] ) ? $infbfile[$key] : null;
-		}
-	}
-}
-
-new CoreMessageClass();
-
-
-require_once( 'SpecialTranslate_exts.php' );
-
 
 ?>

@@ -6,25 +6,54 @@ if (!defined('MEDIAWIKI')) die();
  * @addtogroup Extensions
  *
  * @author Niklas Laxström
- * @copyright Copyright © 2006, Niklas Laxström
+ * @copyright Copyright © 2006-2007, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
 $wgExtensionFunctions[] = 'wfSpecialTranslate';
 $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'Translate',
-	'version' => '2.5',
+	'version' => '3.0',
 	'author' => 'Niklas Laxström',
 	'url' => 'http://nike.users.idler.fi/betawiki',
-	'description' => 'Special page for translating Mediawiki'
+	'description' => 'Special page for translating Mediawiki and beyond'
 );
 
 $wgAutoloadClasses['languages'] = $IP . '/maintenance/language/languages.inc';
 
+/** AC = Available classes */
+$wgTranslateAC = array(
+'core' => 'CoreMessageClass',
+'ext-ajaxshoweditors' => 'AjaxShowEditorsMessageClass',
+'ext-antispoof' => 'AntiSpoofMessageClass',
+'ext-badimage' => 'BadImageMessageClass',
+'ext-bookinformation' => 'BookInformationMessageClass',
+'ext-checkuser' => 'CheckUserMessageClass',
+'ext-confirmedit' => 'ConfirmEditMessageClass',
+'ext-contributors' => 'ContributorsMessageClass',
+'ext-countedits' => 'CountEditsMessageClass',
+'ext-crossnamespacelinks' => 'CrossNamespaceLinksMessageClass',
+'ext-duplicator' => 'DuplicatorMessageClass',
+'ext-fancycaptcha' => 'FancyCaptchaMessageClass',
+'ext-renameuser' => 'RenameUserMessageClass',
+'ext-translate' => 'TranslateMessageClass',
+'out-freecol' => 'FreeColMessageClass',
+);
+
+/** EC = Enabled classes */
+$wgTranslateEC = array();
+$wgTranslateEC[] = 'core';
+
+/** Normally extension messages are assumed to be loaded already. If this
+ *  variable is set to true, classes try to load the messages if not available.
+ */
+$wgTranslateTryLoad = false;
+
+/** Where to look for extension files */
+$wgTranslateExtensionDirectory = "$IP/extensions/";
 
 # Internationalisation file
 require_once( 'SpecialTranslate.i18n.php' );
-
 
 # Message types (ugly?)
 require_once( 'maintenance/language/messageTypes.inc' );
@@ -37,13 +66,14 @@ if ( !function_exists( 'extAddSpecialPage' ) ) {
 extAddSpecialPage( dirname(__FILE__) . '/SpecialTranslate_body.php', 'Translate', 'SpecialTranslate' );
 
 require_once( 'SpecialTranslate_edit.php' );
+
+//extAddSpecialPage( dirname(__FILE__) . '/SpecialMagic.php', 'Magic', 'SpecialMagic' );
+
 global $wgHooks;
 
 # Hook Edit page
 $poks = new SpecialTranslateEditTools();
-$wgHooks['EditPage::showEditForm:initial'][] =
-	array( $poks, 'addTools' );
-
+$wgHooks['EditPage::showEditForm:initial'][] = array( $poks, 'addTools' );
 $wgHooks['SkinTemplateSetupPageCss'][] = 'wfSpecialTranslateAddCss';
 
 function wfSpecialTranslateAddCss($css) {
@@ -79,51 +109,63 @@ function wfSpecialTranslateAddCss($css) {
 	background-color: #F2F200;
 }
 
-.mw-special-translate-table tr.dco {
-	background-color: #CCCC33;
-}
-
-
 CSSXYZ;
 	return true;
 
 }
 
-/* Don't require protect for edit interface */
-$wgHooks['userCan'][] = 'wfFixCheck';
-function wfFixCheck( &$title, &$user, $action, &$result ) {
-	if( NS_MEDIAWIKI == $title->mNamespace &&
-		$user->isAllowed('editinterface') ) {
-		$result = true;
-		return true;
-	}
-}
-
-
-
 function wfSpecialTranslate() {
-	# Add messages
+	# Add messages for this extension
 	global $wgMessageCache, $wgTranslateMessages;
 	foreach( $wgTranslateMessages as $key => $value ) {
 		$wgMessageCache->addMessages( $wgTranslateMessages[$key], $key );
 	}
 }
 
+class STools {
+	static public function indexOf( $array, $index ) {
+		return $array[$index];
+	}
 
-class LangProxy {
+	static public function prettyCode( $code ) {
+		return ucfirst(strtolower(str_replace('-', '_', $code)));
+	}
 
-	function getMessagesInFile( $code ) {
-		global $wgLang;
-		if ( method_exists($wgLang, 'getUnmergedMessagesFor') ) {
-			return Language::getUnmergedMessagesFor( $code );
+	static public function thisOrElse( $candidate, $fallback ) {
+		if ( $candidate === null || $candidate === false ) {
+			return $fallback;
 		} else {
-			$file = Language::getMessagesFileName( $code );
-			if ( !file_exists( $file ) ) {
-				return NULL;
+			return $candidate;
+		}
+	}
+
+	static public function getMessagesInFile( $code ) {
+		$file = Language::getMessagesFileName( $code );
+		if ( !file_exists( $file ) ) {
+			return null;
+		} else {
+			require( $file );
+			return isset( $messages ) ? $messages : null;
+		}
+	}
+
+	static public function getLanguage() {
+		global $wgLang, $wgContLang;
+		static $language = false;
+		if ( !$language ) {
+			if( $wgLang->getCode() != $wgContLang->getCode() ) {
+				$language = '/' . $wgLang->getCode();
 			} else {
-				require( $file );
-				return $messages;
+				$language = '';
 			}
+		}
+		return $language;
+	}
+
+	static public function addMessagesToCache( $array ) {
+		global $wgMessageCache;
+		foreach( array_keys($array) as $key ) {
+			$wgMessageCache->addMessages( $array[$key], $key );
 		}
 	}
 
