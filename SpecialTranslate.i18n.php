@@ -160,15 +160,23 @@ $wgTranslateMessages['id'] = array(
 );
 
 $wgTranslateMessages['it'] = array(
-	'translate' => 'Traduzioni',
-	'translate-changed' => '$1 messaggi non modificati',
-	'translate-database' => '$1 messaggi non presenti nel database',
-	'translate-translated' => '$1 messaggi già tradotti',
-	'translate-core' => '$1 messaggi non \'core\'',
-	'translate-sort' => 'Ordina per: $1',
-	'translate-export' => 'Esporta:',
-	'translate-edit-message-in' => 'Contenuto attuale in <b>$1</b> (Messages$2.php):',
-	'translate-edit-message-in-fb' => 'Contenuto attuale nella lingua di fallback <b>$1</b> (Messages$2.php):',
+	'translate' => 'Traduzione',
+	'translate-show-label' => 'Mostra:',
+	'translate-opt-review' => 'Modalità revisione',
+	'translate-opt-trans' => 'Messaggi da tradurre',
+	'translate-opt-optional' => 'Messagi opzionali',
+	'translate-opt-changed' => 'Messaggi modificati',
+	'translate-opt-ignored' => 'Messaggi ignorati',
+	'translate-opt-database' => 'Messaggi presenti nel database',
+	'translate-messageclass' => 'Classe del messaggio:',
+	'translate-sort-label' => 'Ordinamento:',
+	'translate-sort-normal' => 'Normale',
+	'translate-sort-alpha'  => 'Alfabetico',
+	'translate-fetch-button' => 'Importa',
+	'translate-export-button' => 'Esporta',
+	'translate-edit-message-format' => 'Formato del messaggio: <b>$1</b>.',
+	'translate-edit-message-in' => 'Contenuto attuale in <b>$1</b> ($2):',
+	'translate-edit-message-in-fb' => 'Contenuto attuale nella lingua di riserva <b>$1</b> ($2):',
 );
 
 $wgTranslateMessages['kk-kz'] = array(
