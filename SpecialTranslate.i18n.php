@@ -253,6 +253,26 @@ $wgTranslateMessages['nl'] = array(
 	'translate-edit-message-in-fb' => 'Huidige tekst in alternatieve taal <b>$1</b> (Messages$2.php):',
 );
 
+$wgTranslateMessages['oc'] = array(
+	'translate' => 'Revirar',
+	'translate-show-label' => 'Mostrar:',
+	
+	'translate-opt-trans' => 'Non revirats solament',
+	'translate-opt-optional' => 'Opcional',
+	'translate-opt-changed' => 'Modificats solament',
+	'translate-opt-ignored' => 'Ignorats',
+	'translate-opt-database' => 'Dins la banca de donadas solament',
+	'translate-messageclass' => 'Classa de messatge',
+	'translate-sort-label' => 'Triar:',
+	
+	'translate-sort-alpha' => 'Alfabetic',
+	'translate-fetch-button' => 'Obténer',
+	'translate-export-button' => 'Exportar',
+	'translate-edit-message-format' => 'Lo format d\'aqueste messatge es <b>$1</b>.',
+	'translate-edit-message-in' => 'Cadena actualament dins <b>$1</b> (Messages$2.php) :',
+	'translate-edit-message-in-fb' => 'Cadena actualament dins la lenga per defaut <b>$1</b> (Messages$2.php) :',
+);
+
 $wgTranslateMessages['sk'] = array(
 	'translate' => 'Prelož',
 
