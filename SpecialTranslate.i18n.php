@@ -28,21 +28,23 @@ $wgTranslateMessages['en'] = array(
 );
 
 $wgTranslateMessages['br'] = array(
-	'translate'=> 'Treiñ',
-	'translate-show-label'=> 'Diskouez :',
-	'translate-opt-trans'=> 'Didro hepken',
-	'translate-opt-optional'=> 'Diret',
-	'translate-opt-changed'=> 'Bet kemmet hepken',
-	'translate-opt-ignored'=> 'Dilezet',
-	'translate-opt-database'=> 'En diaz-titouroù hepken',
-	'translate-messageclass'=> 'Rumm kemennadenn',
-	'translate-sort-label'=> 'Seurt :',
-	'translate-sort-normal'=> 'Boutin',
-	'translate-sort-alpha'=> 'Alfabetek',
-	'translate-fetch-button'=> 'Klask',
-	'translate-export-button'=> 'Ezporzhiañ',
-	'translate-edit-message-in'=> 'Neudennad red e <b>$1</b> (Kemennadennoù$2.php):',
-	'translate-edit-message-in-fb'=> 'Neudennad red er yezh kein <b>$1</b> (Kemennadennoù$2.php):',
+	'translate' => 'Treiñ',
+	'translate-show-label' => 'Diskouez :',
+	'translate-opt-review' => 'Mod gwiriañ',
+	'translate-opt-trans' => 'Didro hepken',
+	'translate-opt-optional' => 'Diret',
+	'translate-opt-changed' => 'Bet kemmet hepken',
+	'translate-opt-ignored' => 'Dilezet',
+	'translate-opt-database' => 'En diaz-titouroù hepken',
+	'translate-messageclass' => 'Rumm kemennadenn',
+	'translate-sort-label' => 'Seurt :',
+	'translate-sort-normal' => 'Boutin',
+	'translate-sort-alpha' => 'Alfabetek',
+	'translate-fetch-button' => 'Klask',
+	'translate-export-button' => 'Ezporzhiañ',
+	'translate-edit-message-format' => 'Furmad ar gemennadenn-mañ zo <b>$1</b>.',
+	'translate-edit-message-in' => 'Neudennad red e <b>$1</b> (Kemennadennoù$2.php):',
+	'translate-edit-message-in-fb' => 'Neudennad red er yezh kein <b>$1</b> (Kemennadennoù$2.php):',
 );
 
 $wgTranslateMessages['ca'] = array(
