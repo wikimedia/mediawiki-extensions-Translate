@@ -274,9 +274,9 @@ $wgTranslateMessages['oc'] = array(
 );
 
 $wgTranslateMessages['sk'] = array(
-	'translate' => 'Prelož',
-
+	'translate' => 'Preložiť',
 	'translate-show-label' => 'Zobraziť:',
+	'translate-opt-review' => 'Režim kontroly',
 	'translate-opt-trans' => 'Iba nepreložené',
 	'translate-opt-optional' => 'Voliteľné',
 	'translate-opt-changed' => 'Iba zmenené',
@@ -285,9 +285,10 @@ $wgTranslateMessages['sk'] = array(
 	'translate-messageclass' => 'Trieda správy:',
 	'translate-sort-label' => 'Zoradiť:',
 	'translate-sort-normal' => 'normálne',
-	'translate-sort-alpha'  => 'abecedne',
+	'translate-sort-alpha' => 'abecedne',
 	'translate-fetch-button' => 'Priniesť',
-	'translate-export-button' => 'Export',
+	'translate-export-button' => 'Export',#identical but defined
+	'translate-edit-message-format' => 'Formát tejto správy je <b>$1</b>.',
 	'translate-edit-message-in' => 'Aktuálny reťazec v jazyku <b>$1</b> (Messages$2.php):',
 	'translate-edit-message-in-fb' => 'Aktuálny reťazec v jazyku <b>$1</b>, ktorý sa použije ak správa nie je preložená (Messages$2.php):',
 );
