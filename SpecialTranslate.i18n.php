@@ -146,6 +146,7 @@ $wgTranslateMessages['he'] = array(
 $wgTranslateMessages['id'] = array(
 	'translate' => 'Terjemahan',
 	'translate-show-label' => 'Tampilkan:',
+	'translate-opt-review' => 'Mode tinjauan',
 	'translate-opt-trans' => 'Hanya yang tidak diterjemahkan',
 	'translate-opt-optional' => 'Opsional',
 	'translate-opt-changed' => 'Hanya yang berubah',
@@ -157,6 +158,7 @@ $wgTranslateMessages['id'] = array(
 	'translate-sort-alpha'  => 'Alfabetis',
 	'translate-fetch-button' => 'Cari',
 	'translate-export-button' => 'Ekspor',
+	'translate-edit-message-format' => 'Format pesan ini adalah <b>$1</b>.',
 	'translate-edit-message-in' => 'Kalimat dalam <b>$1</b> (Messages$2.php):',
 	'translate-edit-message-in-fb' => 'Kalimat dalam bahasa <b>$1</b> (Messages$2.php):',
 );
@@ -256,7 +258,7 @@ $wgTranslateMessages['nl'] = array(
 $wgTranslateMessages['oc'] = array(
 	'translate' => 'Revirar',
 	'translate-show-label' => 'Mostrar:',
-	
+
 	'translate-opt-trans' => 'Non revirats solament',
 	'translate-opt-optional' => 'Opcional',
 	'translate-opt-changed' => 'Modificats solament',
@@ -264,7 +266,7 @@ $wgTranslateMessages['oc'] = array(
 	'translate-opt-database' => 'Dins la banca de donadas solament',
 	'translate-messageclass' => 'Classa de messatge',
 	'translate-sort-label' => 'Triar:',
-	
+
 	'translate-sort-alpha' => 'Alfabetic',
 	'translate-fetch-button' => 'Obténer',
 	'translate-export-button' => 'Exportar',
