@@ -13,7 +13,7 @@ if (!defined('MEDIAWIKI')) die();
 $wgExtensionFunctions[] = 'wfSpecialTranslate';
 $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'Translate',
-	'version' => '3.0',
+	'version' => '3.2',
 	'author' => 'Niklas Laxström',
 	'url' => 'http://nike.users.idler.fi/betawiki',
 	'description' => 'Special page for translating Mediawiki and beyond'
@@ -33,10 +33,15 @@ $wgTranslateAC = array(
 'ext-contributors' => 'ContributorsMessageClass',
 'ext-countedits' => 'CountEditsMessageClass',
 'ext-crossnamespacelinks' => 'CrossNamespaceLinksMessageClass',
+'ext-dismissablesitenotice' => 'DismissableSiteNoticeMessageClass',
 'ext-duplicator' => 'DuplicatorMessageClass',
 'ext-fancycaptcha' => 'FancyCaptchaMessageClass',
+'ext-minidonation' => 'MiniDonationMessageClass',
+'ext-minimumnamelength' => 'MinimumNameLengthMessageClass',
 'ext-renameuser' => 'RenameUserMessageClass',
 'ext-translate' => 'TranslateMessageClass',
+'ext-userimages' => 'UserImagesMessageClass',
+'ext-vote' => 'VoteMessageClass',
 'out-freecol' => 'FreeColMessageClass',
 );
 
@@ -56,6 +61,7 @@ $wgTranslateExtensionDirectory = "$IP/extensions/";
 require_once( 'SpecialTranslate.i18n.php' );
 
 # Message types (ugly?)
+# Try to figure out if <i>core</i> message class could do it
 require_once( 'maintenance/language/messageTypes.inc' );
 
 
@@ -67,6 +73,7 @@ extAddSpecialPage( dirname(__FILE__) . '/SpecialTranslate_body.php', 'Translate'
 
 require_once( 'SpecialTranslate_edit.php' );
 
+# Not yet
 //extAddSpecialPage( dirname(__FILE__) . '/SpecialMagic.php', 'Magic', 'SpecialMagic' );
 
 global $wgHooks;
@@ -76,36 +83,37 @@ $poks = new SpecialTranslateEditTools();
 $wgHooks['EditPage::showEditForm:initial'][] = array( $poks, 'addTools' );
 $wgHooks['SkinTemplateSetupPageCss'][] = 'wfSpecialTranslateAddCss';
 
+# TODO: Add only when viewing this page?
 function wfSpecialTranslateAddCss($css) {
 
 	$css .=
 <<<CSSXYZ
 /* Special:Translate */
-.mw-special-translate-table {
+.mw-sp-translate-table {
 	width: 100%;
 }
 
-.mw-special-translate-table th {
+.mw-sp-translate-table th {
 	background-color: #b2b2ff;
 }
 
-.mw-special-translate-table tr.orig {
+.mw-sp-translate-table tr.orig {
 	background-color: #ffe2e2;
 }
 
-.mw-special-translate-table tr.new {
+.mw-sp-translate-table tr.new {
 	background-color: #e2ffe2;
 }
 
-.mw-special-translate-table tr.def {
+.mw-sp-translate-table tr.def {
 	background-color: #f0f0ff;
 }
 
-.mw-special-translate-table tr.ign {
+.mw-sp-translate-table tr.ign {
 	background-color: #202020;
 }
 
-.mw-special-translate-table tr.opt {
+.mw-sp-translate-table tr.opt {
 	background-color: #F2F200;
 }
 

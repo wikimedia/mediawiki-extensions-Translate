@@ -225,7 +225,7 @@ class BadImageMessageClass extends ExtensionMessageClass {
 }
 
 class BookInformationMessageClass extends ExtensionMessageClass {
-	protected $label   = 'Extension: BookInformation';
+	protected $label   = 'Extension: Book Information';
 	protected $id      = 'ext-bookinformation';
 
 	protected $functionName = 'efBookInformationMessages';
@@ -238,7 +238,7 @@ class BookInformationMessageClass extends ExtensionMessageClass {
 }
 
 class CheckUserMessageClass extends ExtensionMessageClass {
-	protected $label   = 'Extension: CheckUser';
+	protected $label   = 'Extension: Check User';
 	protected $id      = 'ext-checkuser';
 
 	protected $arrName     = 'wgCheckUserMessages';
@@ -248,7 +248,7 @@ class CheckUserMessageClass extends ExtensionMessageClass {
 }
 
 class ConfirmEditMessageClass extends ExtensionMessageClass {
-	protected $label = 'Extension: ConfirmEdit';
+	protected $label = 'Extension: Confirm Edit';
 	protected $id    = 'ext-confirmedit';
 
 	protected $arrName     = 'wgConfirmEditMessages';
@@ -271,7 +271,7 @@ class ContributorsMessageClass extends ExtensionMessageClass {
 }
 
 class CountEditsMessageClass extends ExtensionMessageClass {
-	protected $label   = 'Extension: CountEdits';
+	protected $label   = 'Extension: Count Edits';
 	protected $id      = 'ext-countedits';
 
 	protected $functionName = 'efCountEditsMessages';
@@ -291,6 +291,19 @@ class CrossNamespaceLinksMessageClass extends ExtensionMessageClass {
 	protected $messageFile = 'CrossNamespaceLinks/CrossNamespaceLinks.i18n.php';
 
 	protected $exportPad   = 30;
+}
+
+class DismissableSiteNoticeMessageClass extends ExtensionMessageClass {
+	protected $label = 'Extension: Dismissable SiteNotice';
+	protected $id    = 'ext-dismissablesitenotice';
+
+	protected $arrName     = 'wgDismissableSiteNoticeMessages';
+	protected $messageFile = 'DismissableSiteNotice/DismissableSiteNotice.i18n.php';
+
+	function fill(&$array) {
+		parent::fill(&$array);
+		$array['sitenotice_id']['ignored'] = true;
+	}
 }
 
 class DuplicatorMessageClass extends ExtensionMessageClass {
@@ -319,8 +332,29 @@ class FancyCaptchaMessageClass extends ExtensionMessageClass {
 	protected $exportEnd   = '),';
 }
 
+class MiniDonationMessageClass extends ExtensionMessageClass {
+	protected $label = 'Extension: Mini Donation';
+	protected $id    = 'ext-minidonation';
+
+	protected $arrName     = 'wgMiniDonationMessages';
+	protected $messageFile = 'MiniDonation/MiniDonation.i18n.php';
+}
+
+class MinimumNameLengthMessageClass extends ExtensionMessageClass {
+	protected $label   = 'Extension: Minimum Name Length';
+	protected $id      = 'ext-minimumnamelength';
+
+	protected $functionName = 'efMinimumNameLengthMessages';
+	protected $messageFile  = 'MinimumNameLength/MinimumNameLength.i18n.php';
+
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportPrefix= '';
+	protected $exportLineP = '';
+	protected $exportEnd   = '),';
+}
+
 class RenameUserMessageClass extends ExtensionMessageClass {
-	protected $label = 'Extension: RenameUser';
+	protected $label = 'Extension: Rename User';
 	protected $id    = 'ext-renameuser';
 
 	protected $arrName     = 'wgRenameuserMessages';
@@ -340,6 +374,31 @@ class TranslateMessageClass extends ExtensionMessageClass {
 	protected $messageFile = 'Translate/SpecialTranslate.i18n.php';
 }
 
+class UserImagesMessageClass extends ExtensionMessageClass {
+	protected $label   = 'Extension: User Images';
+	protected $id      = 'ext-userimages';
+
+	protected $functionName = 'efUserImagesMessages';
+	protected $messageFile  = 'UserImages/UserImages.i18n.php';
+
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportPrefix= '';
+	protected $exportLineP = '';
+	protected $exportEnd   = '),';
+}
+
+class VoteMessageClass extends ExtensionMessageClass {
+	protected $label   = 'Extension: Vote';
+	protected $id      = 'ext-vote';
+
+	protected $functionName = 'efVoteMessages';
+	protected $messageFile  = 'Vote/Vote.i18n.php';
+
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportPrefix= '';
+	protected $exportLineP = '';
+	protected $exportEnd   = '),';
+}
 
 class FreeColMessageClass extends MessageClass {
 

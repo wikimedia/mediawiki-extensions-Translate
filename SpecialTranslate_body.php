@@ -1,26 +1,43 @@
 <?php
-
+/**
+ * Translate is a special page which is similar to Special:Allmessages, but has
+ * more features to aid in translation. It can be used basically for any
+ * collection of messages which are structured key => message. The actual
+ * parsing and other dirty job is done by Message Classes.
+ */
 class SpecialTranslate extends SpecialPage {
-	const OUTPUT_DEFAULT = 1;
-	const OUTPUT_TEXTAREA = 2;
+	/** Default values for customizable parameters */
 	private $defaults    = array();
+	/** Contains parameters which are different from defaults. Useful for keeping
+	 * get URLs short as possible (not used in this class currently)
+	 */
 	private $nondefaults = array();
+	/** Merged array of defaults and nondefaults for actual use */
 	private $options     = array();
+	/** Instead of tools, print the the messages in copy-paste friendly format. */
 	private $output      = false;
+	/** 2-dimensional array of [message-id][variable]. See function
+	 * initializeMessages.
+	 */
 	private $messages    = array();
+	/** Which message class we are working on */
 	private $messageClass= null;
+	/** List of all available message classes. Some of them may not contain
+	 * messages.
+	 */
 	private $classes     = array();
 
+	/** Maximum number of rows single table can contain */
 	private static $maxRowCount = 3000;
 
 	function __construct() {
 		SpecialPage::SpecialPage( 'Translate' );
-		$this->includable( true );
+		$this->includable( false ); # would need much parsing of $parameters below
 	}
 
-	function execute() {
+	function execute( $parameters ) {
 		require_once( 'SpecialTranslate_exts.php' );
-		$this->classes = efInitializeExtensionClasses( );
+		$this->classes = efInitializeExtensionClasses();
 
 		$this->setup();
 		$this->initializeMessages();
@@ -28,6 +45,9 @@ class SpecialTranslate extends SpecialPage {
 		$this->output();
 	}
 
+	/**
+	 * Initializes variables and parses parameters from request
+	 */
 	function setup() {
 		global $wgUser, $wgRequest;
 
@@ -80,13 +100,17 @@ class SpecialTranslate extends SpecialPage {
 
 	}
 
+	/**
+	 * Initializes messages array.
+	 */
 	function initializeMessages() {
 		global $wgMessageCache, $wgContLang;
 
-		// Don't print huge page on first load
+		# If we are not going to output anything, no need to waste time here
 		if ( !$this->options['x'] ) { return; }
 
 		# Make sure all extension messages are available
+		# Most extensions don't respect this
 		MessageCache::loadAllMessages();
 
 		$array = $this->messageClass->getArray();
@@ -123,6 +147,7 @@ class SpecialTranslate extends SpecialPage {
 
 		$wgMessageCache->enableTransform();
 
+		# I'm not sure if using LinkBatch is any faster, doesn't seem to
 		if ( count($this->messages) > 50 ) {
 			$exists = self::doExistenceCheck();
 		} else {
@@ -157,7 +182,7 @@ class SpecialTranslate extends SpecialPage {
 
 
 	function output() {
-		global $wgOut;
+		global $wgOut, $wgLang;
 
 		if ( $this->output ) {
 			$wgOut->addHTML( Xml::element( 'textarea',
@@ -165,6 +190,7 @@ class SpecialTranslate extends SpecialPage {
 				$this->messageClass->export($this->messages) )
 			);
 		} else {
+
 			if ( !$this->options['x'] ) {
 				$wgOut->addHTML( wfMsg( 'translate-choose-settings' ) );
 			}
@@ -188,10 +214,11 @@ class SpecialTranslate extends SpecialPage {
 		return $form;
 	}
 
+	# Unused
 	protected function filterInputs() {
 		return
-			Xml::inputLabel( "Key filter:", 'filter-key', 'mw-sp-filter-key' ) . ' ' .
-			Xml::inputLabel( "Messages filter:", 'filter-msg', 'mw-sp-filter-msg' );
+			Xml::inputLabel( "Key filter:", 'filter-key', self::id( 'filter-key' ) ) . ' ' .
+			Xml::inputLabel( "Messages filter:", 'filter-msg', self::id( 'filter-msg' ) );
 	}
 
 	protected function prioritySelector() {
@@ -219,11 +246,16 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	protected function sortSelector() {
-		$str = wfMsgHtml('translate-sort-label') . " " .
-			Xml::openElement('select', array( 'name' => 'sort' )) .
-			Xml::option( wfMsg( 'translate-sort-normal' ), 'normal', $this->options['sort'] === 'normal') .
-			Xml::option( wfMsg( 'translate-sort-alpha' ), 'alpha', $this->options['sort'] === 'alpha') .
-			"</select>";
+		$str =
+		self::label( wfMsg('translate-sort-label'), 'sort' ) .
+		Xml::openElement('select', array(
+			'name' => 'sort',
+			'id' => self::id( 'sort' ) )) .
+		Xml::option( wfMsg( 'translate-sort-normal' ), 'normal',
+			$this->options['sort'] === 'normal') .
+		Xml::option( wfMsg( 'translate-sort-alpha' ), 'alpha',
+			$this->options['sort'] === 'alpha') .
+		Xml::closeElement( 'select' );
 		return $str;
 	}
 
@@ -238,25 +270,34 @@ class SpecialTranslate extends SpecialPage {
 			$selected = ($code == $language);
 			$options .= Xml::option( "$code - $name", $code, $selected ) . "\n";
 		}
-		$str = wfMsg( 'translate-language' ) . ': <select name="uselang" class="mw-language-selector">' . $options . '</select>';
+		$str =
+		self::label( wfMsg( 'translate-language' ), 'language' ) .
+		Xml::openElement( 'select', array(
+			'name' => 'uselang',
+			'class' => 'mw-language-selector',
+			'id' => self::id( 'language' ),
+		)) .
+		$options .
+		Xml::closeElement( 'select' );
 		return $str;
 	}
 
 	protected function messageClassSelector() {
-		$str = wfMsgHtml( 'translate-messageclass' ) . ' ' .
-			Xml::openElement('select', array( 'name' => 'msgclass' ));
+		$str = self::label( wfMsg( 'translate-messageclass' ), 'class' ) .
+			Xml::openElement('select',
+				array( 'name' => 'msgclass', 'id' => self::id( 'class' ) ));
 		foreach( $this->classes as $class) {
 			if ( !$class->hasMessages() ) { continue; }
 			$str.= Xml::option( $class->getLabel(), $class->getId(),
 				$this->options['msgclass'] === $class->getId());
 		}
-		$str .= "</select>";
+		$str .= Xml::closeElement( 'select' );;
 		return $str;
 	}
 
 	static private function tableHeader() {
 		$tableheader = Xml::element( 'table', array(
-			'class'   => 'mw-special-translate-table',
+			'class'   => self::id( 'table' ),
 			'border'  => '1',
 			'cellspacing' => '0'),
 			null
@@ -382,6 +423,17 @@ class SpecialTranslate extends SpecialPage {
 		global $wgContLang;
 		$title = $wgContLang->ucfirst( $key ) . STools::getLanguage();
 		return $title;
+	}
+
+	/**
+	 * Shortcut for prefixed keys for ids and classes
+	 */
+	private static function id( $id ) {
+		return "mw-sp-translate-$id";
+	}
+
+	private static function label( $label, $id ) {
+		return Xml::label( $label, self::id( $id) ) . '&nbsp;';
 	}
 
 	static function doExistenceCheck() {
