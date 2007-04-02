@@ -143,6 +143,8 @@ $wgTranslateMessages['he'] = array(
 	'translate-edit-message-format' => 'המבנה של הודעה זו הוא <b>$1</b>.',
 	'translate-edit-message-in'     => 'המחרוזת הנוכחית ל־<b>$1</b> ($2):',
 	'translate-edit-message-in-fb'  => 'המחרוזת הנוכחית ל־<b>$1</b> בשפת הגיבוי ($2):',
+	'translate-choose-settings'     => 'אנא בחרו את ההגדרות שלכם. שימו לב: בחירת כל התוצאות של הודעות הבסיס מופיעה בטבלה גדולה ובדף מעל 100 קילובייט!',
+	'translate-language'            => 'שפה:',
 );
 
 $wgTranslateMessages['id'] = array(
