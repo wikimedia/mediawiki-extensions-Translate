@@ -149,7 +149,7 @@ abstract class ExtensionMessageClass extends MessageClass {
 	function hasMessages() {
 		return $this->msgArray !== null;
 	}
-		
+
 	function export(&$array) {
 		global $wgLang;
 		$code = $wgLang->getCode();
@@ -247,6 +247,21 @@ class CheckUserMessageClass extends ExtensionMessageClass {
 	protected $exportPad   = 25;
 }
 
+class CiteSpecialMessageClass extends ExtensionMessageClass {
+	protected $label   = 'Extension: Cite (special page)';
+	protected $id      = 'ext-citespecial';
+
+	protected $arrName     = 'wgSpecialCiteMessages';
+	protected $messageFile = 'Cite/SpecialCite.i18n.php';
+
+	protected $exportPad   = 20;
+
+	function fill(&$array) {
+		parent::fill(&$array);
+		$array['cite_text']['ignored'] = true;
+	}
+}
+
 class ConfirmEditMessageClass extends ExtensionMessageClass {
 	protected $label = 'Extension: Confirm Edit';
 	protected $id    = 'ext-confirmedit';
@@ -332,6 +347,31 @@ class FancyCaptchaMessageClass extends ExtensionMessageClass {
 	protected $exportEnd   = '),';
 }
 
+class LuceneSearchMessageClass extends ExtensionMessageClass {
+	protected $label = 'Extension: Lucene Search';
+	protected $id    = 'ext-lucenesearch';
+
+	protected $arrName     = 'wgLuceneSearchMessages';
+	protected $messageFile = 'LuceneSearch/LuceneSearch.i18n.php';
+
+	protected $exportPad   = 24;
+}
+
+class MakeBotMessageClass extends ExtensionMessageClass {
+	protected $label = 'Extension: Make Bot';
+	protected $id    = 'ext-makebot';
+
+	protected $functionName = 'efMakebotMessages';
+	protected $messageFile  = 'Makebot/Makebot.i18n.php';
+
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportPrefix= '';
+	protected $exportLineP = '';
+	protected $exportEnd   = '),';
+
+	protected $exportPad   = 26;
+}
+
 class MiniDonationMessageClass extends ExtensionMessageClass {
 	protected $label = 'Extension: Mini Donation';
 	protected $id    = 'ext-minidonation';
@@ -351,6 +391,22 @@ class MinimumNameLengthMessageClass extends ExtensionMessageClass {
 	protected $exportPrefix= '';
 	protected $exportLineP = '';
 	protected $exportEnd   = '),';
+}
+
+class NewuserLogMessageClass extends ExtensionMessageClass {
+	protected $label = 'Extension: Newuser Log';
+	protected $id    = 'ext-newuserlog';
+
+	protected $arrName     = 'wgNewuserlogMessages';
+	protected $messageFile = 'Newuserlog/Newuserlog.i18n.php';
+
+	protected $exportPad   = 27;
+
+	function fill(&$array) {
+		parent::fill(&$array);
+		$array['newuserlogentry']['ignored'] = true;
+		$array['newuserlog-create-text']['ignored'] = true;
+	}
 }
 
 class RenameUserMessageClass extends ExtensionMessageClass {
@@ -419,7 +475,7 @@ class FreeColMessageClass extends MessageClass {
 		} else {
 			return;
 		}
-		
+
 		$code = $wgLang->getCode();
 		$filenameXX = $this->fileDir . "FreeColMessages_$code.properties";
 
