@@ -166,7 +166,7 @@ class SpecialTranslate extends SpecialPage {
 			);
 		} else {
 			if ( !$this->options['x'] ) {
-				$wgOut->addHTML( 'Please choose your settings. Note that fetching all core message results in huge table and over 100 KB page!' );
+				$wgOut->addHTML( wfMsg( 'translate-choose-settings' ) );
 			}
 
 			$wgOut->addHTML( $this->settingsForm() );
@@ -238,7 +238,7 @@ class SpecialTranslate extends SpecialPage {
 			$selected = ($code == $language);
 			$options .= Xml::option( "$code - $name", $code, $selected ) . "\n";
 		}
-		$str ='Language: <select name="uselang" class="mw-language-selector">' . $options . '</select>';
+		$str = wfMsg( 'translate-language' ) . ': <select name="uselang" class="mw-language-selector">' . $options . '</select>';
 		return $str;
 	}
 
@@ -261,7 +261,7 @@ class SpecialTranslate extends SpecialPage {
 			'cellspacing' => '0'),
 			null
 		);
-	
+
 		$tableheader .= Xml::openElement('tr');
 		$tableheader .= Xml::element('th',
 			array( 'rowspan' => '2'),
@@ -269,7 +269,7 @@ class SpecialTranslate extends SpecialPage {
 		);
 		$tableheader .= Xml::element('th', null, wfMsgHtml('allmessagesdefault') );
 		$tableheader .= Xml::closeElement('tr');
-	
+
 		$tableheader .= Xml::openElement('tr');
 		$tableheader .= Xml::element('th', null, wfMsgHtml('allmessagescurrent') );
 		$tableheader .= Xml::closeElement('tr');
@@ -285,7 +285,7 @@ class SpecialTranslate extends SpecialPage {
 	static function makeHTMLText( $messages, $options ) {
 		global $wgLang, $wgContLang, $wgUser;
 		wfProfileIn( __METHOD__ );
-	
+
 		$sk = $wgUser->getSkin();
 		$talkLinkText = $wgLang->getNsText( NS_TALK ); // FIXME
 
@@ -293,17 +293,17 @@ class SpecialTranslate extends SpecialPage {
 
 		$tableheader = self::tableHeader();
 		$tablefooter = Xml::closeElement( 'table' );
-			
+
 		$i = 0;
 		$open = false;
 		$output =  '';
 
 		foreach( $messages as $key => $m ) {
-	
+
 			$title = self::titleFromKey( $key );
 			$page['object'] = Title::makeTitle( NS_MEDIAWIKI, $title );
 			$talk['object'] = Title::makeTitle( NS_MEDIAWIKI_TALK, $title );
-		
+
 			if ( $options['missing']  && $m['defined'] )     { continue; }
 			if ( $options['changed']  && !$m['changed'] )    { continue; }
 			if (!$options['optional'] && $m['optional'] )    { continue; }
@@ -326,10 +326,10 @@ class SpecialTranslate extends SpecialPage {
 
 			$page['edit'] = $sk->makeKnownLinkObj( $page['object'], wfMsgHtml('edit'), 'action=edit' );
 			$page['history'] = $sk->makeKnownLinkObj( $page['object'], wfMsgHtml('history'), 'action=history' );
-			
+
 			$anchor = 'msg_' . $key;
 			$anchor = Xml::element( 'a', array( 'name' => $anchor ) );
-	
+
 			if( $i % self::$maxRowCount === 0 ) {
 				if ( $open ) {
 					$output .= $tablefooter;
@@ -344,7 +344,7 @@ class SpecialTranslate extends SpecialPage {
 
 			$leftColumn = $anchor . $page['link'] . '<br />' .
 				implode( ' | ', array( $talk['link'] , $page['edit'], $page['history'] ) );
-	
+
 			if ( $m['changed'] ) {
 				$info = Xml::openElement( 'tr', array( 'class' => "orig$opt") );
 				$info .= Xml::openElement( 'td', array( 'rowspan' => '2') );
@@ -352,11 +352,11 @@ class SpecialTranslate extends SpecialPage {
 				$info .= Xml::closeElement( 'td' );
 				$info .= Xml::element( 'td', null, $original );
 				$info .= Xml::closeElement( 'tr' );
-	
+
 				$info .= Xml::openElement( 'tr', array( 'class' => 'new') );
 				$info .= Xml::element( 'td', null, $message );
 				$info .= Xml::closeElement( 'tr' );
-	
+
 				$output .= $info . "\n";
 			} else {
 				$info = Xml::openElement( 'tr', array( 'class' => "def$opt") );
@@ -365,15 +365,15 @@ class SpecialTranslate extends SpecialPage {
 				$info .= Xml::closeElement( 'td' );
 				$info .= Xml::element( 'td', null, $message );
 				$info .= Xml::closeElement( 'tr' );
-	
+
 				$output .= $info . "\n";
 			}
-	
+
 			$i++;
 		}
-	
+
 		$output .= $tablefooter;
-	
+
 		wfProfileOut( __METHOD__ );
 		return $output;
 	}

@@ -25,6 +25,8 @@ $wgTranslateMessages['en'] = array(
 	'translate-edit-message-format' => 'The format of this message is <b>$1</b>.',
 	'translate-edit-message-in' => 'Current string in <b>$1</b> ($2):',
 	'translate-edit-message-in-fb' => 'Current string in fallback language <b>$1</b> ($2):',
+	'translate-choose-settings' => 'Please choose your settings. Note that fetching all core message results in huge table and over 100 KB page!',
+	'translate-language'  => 'Language',
 );
 
 $wgTranslateMessages['br'] = array(
@@ -151,7 +153,7 @@ $wgTranslateMessages['id'] = array(
 	'translate-opt-optional' => 'Opsional',
 	'translate-opt-changed' => 'Hanya yang berubah',
 	'translate-opt-ignored' => 'Diabaikan',
-	'translate-opt-database' => 'Hanya dalam basisdata',
+	'translate-opt-database' => 'Hanya dalam basis data',
 	'translate-messageclass' => 'Kelas pesan:',
 	'translate-sort-label' => 'Urutan:',
 	'translate-sort-normal' => 'Normal',
@@ -161,6 +163,8 @@ $wgTranslateMessages['id'] = array(
 	'translate-edit-message-format' => 'Format pesan ini adalah <b>$1</b>.',
 	'translate-edit-message-in' => 'Kalimat dalam <b>$1</b> (Messages$2.php):',
 	'translate-edit-message-in-fb' => 'Kalimat dalam bahasa <b>$1</b> (Messages$2.php):',
+	'translate-choose-settings' => 'Harap tandai pilihan Anda. Perhatikan bahwa tampilan pesan sistem inti akan menghasilkan tabel yang besar dan berukuran lebih dari 100 KB!',
+	'translate-language'  => 'Bahasa',
 );
 
 $wgTranslateMessages['it'] = array(
