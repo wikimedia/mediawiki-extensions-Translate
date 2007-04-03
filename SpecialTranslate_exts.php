@@ -211,6 +211,21 @@ class AntiSpoofMessageClass extends ExtensionMessageClass {
 	protected $exportPad   = 26;
 }
 
+class AsksqlMessageClass extends ExtensionMessageClass {
+	protected $label = 'Extension: Asksql';
+	protected $id    = 'ext-asksql';
+
+	protected $functionName = 'efAsksqlMessages';
+	protected $messageFile  = 'Asksql/Asksql.i18n.php';
+
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportPrefix= '';
+	protected $exportLineP = '';
+	protected $exportEnd   = '),';
+
+	protected $exportPad   = 19;
+}
+
 class BadImageMessageClass extends ExtensionMessageClass {
 	protected $label = 'Extension: Bad Image';
 	protected $id    = 'ext-badimage';
@@ -224,6 +239,21 @@ class BadImageMessageClass extends ExtensionMessageClass {
 	protected $exportEnd   = '),';
 }
 
+class BoardVoteMessageClass extends ExtensionMessageClass {
+	protected $label   = 'Extension: Board Vote';
+	protected $id      = 'ext-boardvote';
+
+	protected $arrName     = 'wgBoardVoteMessages';
+	protected $messageFile = 'BoardVote/BoardVote.i18n.php';
+
+	protected $exportPad   = 26;
+
+	function fill(&$array) {
+		parent::fill(&$array);
+		$array['boardvote_footer']['ignored'] = true;
+	}
+}
+
 class BookInformationMessageClass extends ExtensionMessageClass {
 	protected $label   = 'Extension: Book Information';
 	protected $id      = 'ext-bookinformation';
@@ -235,6 +265,16 @@ class BookInformationMessageClass extends ExtensionMessageClass {
 	protected $exportPrefix= '';
 	protected $exportLineP = '';
 	protected $exportEnd   = '),';
+}
+
+class CentralAuthMessageClass extends ExtensionMessageClass {
+	protected $label   = 'Extension: Central Auth';
+	protected $id      = 'ext-centralauth';
+
+	protected $arrName     = 'wgCentralAuthMessages';
+	protected $messageFile = 'CentralAuth/CentralAuth.i18n.php';
+
+	protected $exportPad   = 39;
 }
 
 class CheckUserMessageClass extends ExtensionMessageClass {
@@ -308,6 +348,16 @@ class CrossNamespaceLinksMessageClass extends ExtensionMessageClass {
 	protected $exportPad   = 30;
 }
 
+class DesysopMessageClass extends ExtensionMessageClass {
+	protected $label = 'Extension: Desysop';
+	protected $id    = 'ext-desysop';
+
+	protected $arrName     = 'wgDesysopMessages';
+	protected $messageFile = 'Desysop/SpecialDesysop.i18n.php';
+
+	protected $exportPad   = 23;
+}
+
 class DismissableSiteNoticeMessageClass extends ExtensionMessageClass {
 	protected $label = 'Extension: Dismissable SiteNotice';
 	protected $id    = 'ext-dismissablesitenotice';
@@ -332,6 +382,29 @@ class DuplicatorMessageClass extends ExtensionMessageClass {
 	protected $exportPrefix= '';
 	protected $exportLineP = '';
 	protected $exportEnd   = '),';
+}
+
+class EditcountMessageClass extends ExtensionMessageClass {
+	protected $label = 'Extension: Edit Count';
+	protected $id    = 'ext-editcount';
+
+	protected $functionName = 'efSpecialEditcountMessages';
+	protected $messageFile  = 'Editcount/SpecialEditcount.i18n.php';
+
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportPrefix= '';
+	protected $exportLineP = '';
+	protected $exportEnd   = '),';
+}
+
+class ExpandTemplatesMessageClass extends ExtensionMessageClass {
+	protected $label = 'Extension: Expand Templates';
+	protected $id    = 'ext-expandtemplates';
+
+	protected $arrName     = 'wgExpandTemplatesMessages';
+	protected $messageFile = 'ExpandTemplates/ExpandTemplates.i18n.php';
+
+	protected $exportPad   = 35;
 }
 
 class FancyCaptchaMessageClass extends ExtensionMessageClass {
