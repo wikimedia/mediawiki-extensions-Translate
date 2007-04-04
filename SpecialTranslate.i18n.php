@@ -189,6 +189,28 @@ $wgTranslateMessages['it'] = array(
 	'translate-edit-message-in-fb' => 'Contenuto attuale nella lingua di riserva <b>$1</b> ($2):',
 );
 
+$wgTranslateMessages['ja'] = array(
+	'translate' => 'インターフェースの翻訳',
+	'translate-show-label' => '表示:',
+	'translate-opt-review' => 'レビューモード',
+	'translate-opt-trans' => '翻訳されていないもの',
+	'translate-opt-optional' => 'データベースにないもの',
+	'translate-opt-changed' => '変更されたもののみ',
+	'translate-opt-ignored' => '無視されているもの',
+	'translate-opt-database' => 'データベースにあるもののみ',
+	'translate-messageclass' => 'メッセージのクラス:',
+	'translate-sort-label' => 'ソート:',
+	'translate-sort-normal' => '通常',
+	'translate-sort-alpha' => 'アルファベット順',
+	'translate-fetch-button' => '表示',
+	'translate-export-button' => '書き出し',
+	'translate-edit-message-format' => 'このメッセージの書式は <b>$1</b> です。',
+	'translate-edit-message-in' => '<b>$1</b> ($2) での現在の文字列:',
+	
+	'translate-choose-settings' => '設定を選択してください。メッセージの表示はテーブルで整形されており、 core メッセージでは 100kB を超えることにご注意ください。',
+	'translate-language' => '言語:',
+);
+
 $wgTranslateMessages['kk-kz'] = array(
 	'translate' => 'Аудару',
 	'translate-show-label' => 'Көрсету:',
