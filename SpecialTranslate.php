@@ -43,6 +43,7 @@ $wgTranslateAC = array(
 'ext-editcount'             => 'EditcountMessageClass',
 'ext-expandtemplates'       => 'ExpandTemplatesMessageClass',
 'ext-fancycaptcha'          => 'FancyCaptchaMessageClass',
+'ext-filepath'              => 'FilePathMessageClass',
 'ext-lucenesearch'          => 'LuceneSearchMessageClass',
 'ext-makebot'               => 'MakeBotMessageClass',
 'ext-minidonation'          => 'MiniDonationMessageClass',

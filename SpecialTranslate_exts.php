@@ -397,6 +397,16 @@ class EditcountMessageClass extends ExtensionMessageClass {
 	protected $exportEnd   = '),';
 }
 
+class FilePathMessageClass extends ExtensionMessageClass {
+	protected $label   = 'Extension: File Path';
+	protected $id      = 'ext-filepath';
+
+	protected $arrName     = 'wgFilepathMessages';
+	protected $messageFile = 'Filepath/SpecialFilepath.i18n.php';
+
+	protected $exportPad   = 18;
+}
+
 class ExpandTemplatesMessageClass extends ExtensionMessageClass {
 	protected $label = 'Extension: Expand Templates';
 	protected $id    = 'ext-expandtemplates';
