@@ -430,6 +430,21 @@ class FancyCaptchaMessageClass extends ExtensionMessageClass {
 	protected $exportEnd   = '),';
 }
 
+class ImageMapMessageClass extends ExtensionMessageClass {
+	protected $label = 'Extension: Image Map';
+	protected $id    = 'ext-imagemap';
+
+	protected $functionName = 'efImageMapMessages';
+	protected $messageFile  = 'ImageMap/ImageMap.i18n.php';
+
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportPrefix= '';
+	protected $exportLineP = '';
+	protected $exportEnd   = '),';
+
+	protected $exportPad   = 32;
+}
+
 class LuceneSearchMessageClass extends ExtensionMessageClass {
 	protected $label = 'Extension: Lucene Search';
 	protected $id    = 'ext-lucenesearch';
@@ -453,6 +468,14 @@ class MakeBotMessageClass extends ExtensionMessageClass {
 	protected $exportEnd   = '),';
 
 	protected $exportPad   = 26;
+}
+
+class MakeSysopMessageClass extends ExtensionMessageClass {
+	protected $label = 'Extension: Make Sysop';
+	protected $id    = 'ext-makesysop';
+
+	protected $arrName     = 'wgMakesysopMessages';
+	protected $messageFile = 'Makesysop/SpecialMakesysop.i18n.php';
 }
 
 class MiniDonationMessageClass extends ExtensionMessageClass {
@@ -518,6 +541,16 @@ class RenameUserMessageClass extends ExtensionMessageClass {
 	}
 }
 
+class SiteMatrixMessageClass extends ExtensionMessageClass {
+	protected $label = 'Extension: Site Matrix';
+	protected $id    = 'ext-sitematrix';
+
+	protected $arrName     = 'wgSiteMatrixMessages';
+	protected $messageFile = 'SiteMatrix/SiteMatrix.i18n.php';
+
+	protected $exportPad   = 13;
+}
+
 class TranslateMessageClass extends ExtensionMessageClass {
 	protected $label = 'Extension: Translate';
 	protected $id    = 'ext-translate';
@@ -532,6 +565,19 @@ class UserImagesMessageClass extends ExtensionMessageClass {
 
 	protected $functionName = 'efUserImagesMessages';
 	protected $messageFile  = 'UserImages/UserImages.i18n.php';
+
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportPrefix= '';
+	protected $exportLineP = '';
+	protected $exportEnd   = '),';
+}
+
+class UsernameBlacklistMessageClass extends ExtensionMessageClass {
+	protected $label   = 'Extension: Username Blacklist';
+	protected $id      = 'ext-usernameblacklist';
+
+	protected $functionName = 'efUsernameBlacklistMessages';
+	protected $messageFile  = 'UsernameBlacklist/UsernameBlacklist.i18n.php';
 
 	protected $exportStart = '\'$CODE\' => array(';
 	protected $exportPrefix= '';
