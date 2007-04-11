@@ -482,6 +482,19 @@ class NewuserLogMessageClass extends ExtensionMessageClass {
 	}
 }
 
+class PatrollerMessageClass extends ExtensionMessageClass {
+	protected $label   = 'Extension: Patroller';
+	protected $id      = 'ext-patroller';
+
+	protected $functionName = 'efPatrollerMessages';
+	protected $messageFile  = 'Patroller/Patroller.i18n.php';
+
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportPrefix= '';
+	protected $exportLineP = '';
+	protected $exportEnd   = '),';
+}
+
 class RenameUserMessageClass extends ExtensionMessageClass {
 	protected $label = 'Extension: Rename User';
 	protected $id    = 'ext-renameuser';

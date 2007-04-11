@@ -48,6 +48,7 @@ $wgTranslateAC = array(
 'ext-minidonation'          => 'MiniDonationMessageClass',
 'ext-minimumnamelength'     => 'MinimumNameLengthMessageClass',
 'ext-newuserlog'            => 'NewuserLogMessageClass',
+'ext-patroller'             => 'PatrollerMessageClass',
 'ext-renameuser'            => 'RenameUserMessageClass',
 'ext-translate'             => 'TranslateMessageClass',
 'ext-userimages'            => 'UserImagesMessageClass',
