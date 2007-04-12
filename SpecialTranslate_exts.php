@@ -397,16 +397,6 @@ class EditcountMessageClass extends ExtensionMessageClass {
 	protected $exportEnd   = '),';
 }
 
-class FilePathMessageClass extends ExtensionMessageClass {
-	protected $label   = 'Extension: File Path';
-	protected $id      = 'ext-filepath';
-
-	protected $arrName     = 'wgFilepathMessages';
-	protected $messageFile = 'Filepath/SpecialFilepath.i18n.php';
-
-	protected $exportPad   = 18;
-}
-
 class ExpandTemplatesMessageClass extends ExtensionMessageClass {
 	protected $label = 'Extension: Expand Templates';
 	protected $id    = 'ext-expandtemplates';
@@ -428,6 +418,31 @@ class FancyCaptchaMessageClass extends ExtensionMessageClass {
 	protected $exportPrefix= '';
 	protected $exportLineP = '';
 	protected $exportEnd   = '),';
+}
+
+class FlaggedRevsMessageClass extends ExtensionMessageClass {
+	protected $label   = 'Extension: Flagged Revs';
+	protected $id      = 'ext-flaggedrevs';
+
+	protected $arrName     = 'RevisionreviewMessages';
+	protected $messageFile = 'FlaggedRevs/FlaggedRevsPage.i18n.php';
+
+	protected $exportStart = '$RevisionreviewMessage[\'$CODE\'] = array(';
+	protected $exportPrefix= '';
+	protected $exportLineP = "\t";
+	protected $exportEnd   = ');';
+
+	protected $exportPad   = 24;
+}
+
+class FilePathMessageClass extends ExtensionMessageClass {
+	protected $label   = 'Extension: File Path';
+	protected $id      = 'ext-filepath';
+
+	protected $arrName     = 'wgFilepathMessages';
+	protected $messageFile = 'Filepath/SpecialFilepath.i18n.php';
+
+	protected $exportPad   = 18;
 }
 
 class ImageMapMessageClass extends ExtensionMessageClass {
@@ -476,6 +491,21 @@ class MakeSysopMessageClass extends ExtensionMessageClass {
 
 	protected $arrName     = 'wgMakesysopMessages';
 	protected $messageFile = 'Makesysop/SpecialMakesysop.i18n.php';
+}
+
+class MakeValidateMessageClass extends ExtensionMessageClass {
+	protected $label = 'Extension: Make Validate';
+	protected $id    = 'ext-makevalidate';
+
+	protected $functionName = 'efMakeValidateMessages';
+	protected $messageFile  = 'FlaggedRevs/Makevalidate.i18n.php';
+
+	protected $exportStart = '$messages[\'$CODE\'] = array(';
+	protected $exportPrefix= '';
+	protected $exportLineP = "\t";
+	protected $exportEnd   = ');';
+
+	protected $exportPad   = 32;
 }
 
 class MiniDonationMessageClass extends ExtensionMessageClass {
