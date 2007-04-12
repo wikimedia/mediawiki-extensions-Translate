@@ -122,8 +122,11 @@ $wgTranslateMessages['fr'] = array(
 	'translate-sort-alpha'  => 'Alphabétique',
 	'translate-fetch-button' => 'Obtenir',
 	'translate-export-button' => 'Exporter',
+	'translate-edit-message-format' => 'Le format de ce message est <b>$1</b>.',
 	'translate-edit-message-in' => 'Chaîne actuellement dans <b>$1</b> (Messages$2.php) :',
 	'translate-edit-message-in-fb' => 'Chaîne actuellement dans la langue par défaut <b>$1</b> (Messages$2.php) :',
+	'translate-choose-settings' => 'Choisissez vos paramêtres. Notez que récupérer tout les messages donne une table gigantesque et une page de plus de 100Ko !',
+	'translate-language'  => 'Langue:',
 );
 
 $wgTranslateMessages['he'] = array(
