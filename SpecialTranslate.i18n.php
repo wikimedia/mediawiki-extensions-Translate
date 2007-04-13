@@ -323,6 +323,8 @@ $wgTranslateMessages['sk'] = array(
 	'translate-edit-message-format' => 'Formát tejto správy je <b>$1</b>.',
 	'translate-edit-message-in' => 'Aktuálny reťazec v jazyku <b>$1</b> (Messages$2.php):',
 	'translate-edit-message-in-fb' => 'Aktuálny reťazec v jazyku <b>$1</b>, ktorý sa použije ak správa nie je preložená (Messages$2.php):',
+	'translate-choose-settings' => 'Prosím, nastavte si svoje preferencie. Pozn.: Prinesenie všetkých správ vyprodukuje obrovskú tabuľku a stránka má vekosť viac ako 100 KB!',
+	'translate-language' => 'Jazyk:',
 );
 
 $wgTranslateMessages['sr-ec'] = array(
