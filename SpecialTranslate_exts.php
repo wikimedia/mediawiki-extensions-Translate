@@ -458,6 +458,11 @@ class ImageMapMessageClass extends ExtensionMessageClass {
 	protected $exportEnd   = '),';
 
 	protected $exportPad   = 32;
+
+	function fill(&$array) {
+		parent::fill(&$array);
+		$array['imagemap_desc_types']['ignored'] = true;
+	}
 }
 
 class LuceneSearchMessageClass extends ExtensionMessageClass {
@@ -468,6 +473,11 @@ class LuceneSearchMessageClass extends ExtensionMessageClass {
 	protected $messageFile = 'LuceneSearch/LuceneSearch.i18n.php';
 
 	protected $exportPad   = 24;
+
+	function fill(&$array) {
+		parent::fill(&$array);
+		$array['searchnearmatch']['ignored'] = true;
+	}
 }
 
 class MakeBotMessageClass extends ExtensionMessageClass {
