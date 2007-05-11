@@ -209,7 +209,7 @@ $wgTranslateMessages['ja'] = array(
 	'translate-export-button' => '書き出し',
 	'translate-edit-message-format' => 'このメッセージの書式は <b>$1</b> です。',
 	'translate-edit-message-in' => '<b>$1</b> ($2) での現在の文字列:',
-	
+
 	'translate-choose-settings' => '設定を選択してください。メッセージの表示はテーブルで整形されており、 core メッセージでは 100kB を超えることにご注意ください。',
 	'translate-language' => '言語:',
 );
@@ -376,6 +376,28 @@ $wgTranslateMessages['sr-el'] = array(
 );
 
 $wgTranslateMessages['sr'] = $wgTranslateMessages['sr-ec'];
+
+$wgTranslateMessages['su'] = array(
+	'translate' => 'Alih basakeun',
+	'translate-show-label' => 'Témbongkeun:',
+	'translate-opt-review' => 'Modeu ulasan',
+	'translate-opt-trans' => 'Ngan nu can dialih basa',
+	'translate-opt-optional' => 'Pilihan',
+	'translate-opt-changed' => 'Ngan nu geus robah',
+	'translate-opt-ignored' => 'Nu diantepkeun',
+	'translate-opt-database' => 'Ngan na pangkalan data',
+	'translate-messageclass' => 'Kelas talatah:',
+	'translate-sort-label' => 'Susun:',
+	'translate-sort-alpha' => 'Nurutkeun abjad',
+	'translate-fetch-button' => 'Pulut',
+	'translate-export-button' => 'Ékspor',
+	'translate-edit-message-format' => 'Ieu talatah boga format <b>$1</b>.',
+	'translate-edit-message-in' => 'String kiwari dina <b>$1</b> ($2):',
+	'translate-edit-message-in-fb' => 'String kiwari dina basa fallback <b>$1</b> ($2):',
+	'translate-choose-settings' => 'Mangga pilih setélan salira. Perhatoskeun yén mulut sadaya talatah akar bakal ngahasilkeun béréndélan leuwih ti 100 KB!',
+	'translate-language' => 'Basa:',
+);
+
 $wgTranslateMessages['zh-cn'] = array(
 	'translate' => '翻译',
 	'translate-show-label' => '显示:',
