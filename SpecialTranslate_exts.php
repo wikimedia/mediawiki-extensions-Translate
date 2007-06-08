@@ -568,6 +568,19 @@ class PatrollerMessageClass extends ExtensionMessageClass {
 	protected $exportEnd   = '),';
 }
 
+class PicturePopupMessageClass extends ExtensionMessageClass {
+	protected $label   = 'Extension: PicturePopup';
+	protected $id      = 'ext-picturepopup';
+
+	protected $functionName = 'efPicturePopupMessages';
+	protected $messageFile  = 'PicturePopup/PicturePopup.i18n.php';
+
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportPrefix= '';
+	protected $exportLineP = '';
+	protected $exportEnd   = '),';
+}
+
 class RenameUserMessageClass extends ExtensionMessageClass {
 	protected $label = 'Extension: Rename User';
 	protected $id    = 'ext-renameuser';
