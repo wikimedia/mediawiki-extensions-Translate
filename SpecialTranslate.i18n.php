@@ -297,6 +297,28 @@ $wgTranslateMessages['nl'] = array(
 	'translate-edit-message-in-fb' => 'Huidige tekst in alternatieve taal <b>$1</b> (Messages$2.php):',
 );
 
+$wgTranslateMessages['no'] = array(
+	'translate' => 'Oversett',
+	'translate-show-label' => 'Vis:',
+	'translate-opt-review' => 'Gjennomgangsmodus',
+	'translate-opt-trans' => 'Kun uoversatte',
+	'translate-opt-optional' => 'Valgfrie',
+	'translate-opt-changed' => 'Kun endrede',
+	'translate-opt-ignored' => 'Ignorerte',
+	'translate-opt-database' => 'Kun i databasen',
+	'translate-messageclass' => 'Meldingsklasse:',
+	'translate-sort-label' => 'Sortering:',
+	'translate-sort-normal' => 'Normal',#identical but defined
+	'translate-sort-alpha' => 'Alfabetisk',
+	'translate-fetch-button' => 'Hent',
+	'translate-export-button' => 'Eksporter',
+	'translate-edit-message-format' => 'Formatet på denne meldingen er <b>$1</b>.',
+	'translate-edit-message-in' => 'Nåværende streng i <b>$1</b> ($2):',
+	'translate-edit-message-in-fb' => 'Nåværende streng i reservespråk <b>$1</b> ($2):',
+	'translate-choose-settings' => 'Velg dine innstillinger. Merk at man får en enorm tabell på over 100&nbsp;kB om man henter alle kjernebeskjeder.',
+	'translate-language' => 'Språk:',
+);
+
 $wgTranslateMessages['oc'] = array(
 	'translate' => 'Revirar',
 	'translate-show-label' => 'Mostrar:',
