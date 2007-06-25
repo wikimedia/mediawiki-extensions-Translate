@@ -348,6 +348,14 @@ class CrossNamespaceLinksMessageClass extends ExtensionMessageClass {
 	protected $exportPad   = 30;
 }
 
+class DeletedContribsMessageClass extends ExtensionMessageClass {
+	protected $label = 'Extension: Deleted Contributions';
+	protected $id    = 'ext-deletedcontribs';
+
+	protected $arrName     = 'wgDeletedContribsMessages';
+	protected $messageFile = 'DeletedContributions/DeletedContributions.i18n.php';
+}
+
 class DesysopMessageClass extends ExtensionMessageClass {
 	protected $label = 'Extension: Desysop';
 	protected $id    = 'ext-desysop';
@@ -592,6 +600,19 @@ class RenameUserMessageClass extends ExtensionMessageClass {
 		parent::fill(&$array);
 		$array['renameuserlogentry']['ignored'] = true;
 	}
+}
+
+class ResignMessageClass extends ExtensionMessageClass {
+	protected $label = 'Extension: Resign';
+	protected $id    = 'ext-resign';
+
+	protected $functionName = 'efResignMessages';
+	protected $messageFile  = 'Resign/SpecialResign.i18n.php';
+
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportPrefix= '';
+	protected $exportLineP = '';
+	protected $exportEnd   = '),';
 }
 
 class SiteMatrixMessageClass extends ExtensionMessageClass {
