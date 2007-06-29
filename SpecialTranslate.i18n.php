@@ -504,4 +504,4 @@ $wgTranslateMessages['zh-yue'] = array(
 $wgTranslateMessages['zh-hk'] = $wgTranslateMessages['zh-tw'];
 $wgTranslateMessages['zh-sg'] = $wgTranslateMessages['zh-cn'];
 
-?>
+

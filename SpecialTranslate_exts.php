@@ -776,4 +776,3 @@ function efInitializeExtensionClasses() {
 	return $classes;
 }
 
-?>

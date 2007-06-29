@@ -468,4 +468,4 @@ class SpecialTranslate extends SpecialPage {
 
 }
 
-?>
+
