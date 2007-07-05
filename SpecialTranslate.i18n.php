@@ -441,47 +441,7 @@ $wgTranslateMessages['su'] = array(
 	'translate-language' => 'Basa:',
 );
 
-$wgTranslateMessages['zh-cn'] = array(
-	'translate' => '翻译',
-	'translate-show-label' => '显示:',
-	'translate-opt-review' => '翻看方式',
-	'translate-opt-trans' => '只有未翻译的',
-	'translate-opt-optional' => '可选的',
-	'translate-opt-changed' => '只有更改过的',
-	'translate-opt-ignored' => '已略过',
-	'translate-opt-database' => '只在数据库中',
-	'translate-messageclass' => '信息类别:',
-	'translate-sort-label' => '排序:',
-	'translate-sort-normal' => '标准',
-	'translate-sort-alpha'  => '按字母排列',
-	'translate-fetch-button' => '颉取',
-	'translate-export-button' => '导出',
-	'translate-edit-message-format' => '这句信息的格式是 <b>$1</b>。',
-	'translate-edit-message-in' => '在 <b>$1</b> 的当前字串 ($2):',
-	'translate-edit-message-in-fb' => '在 <b>$1</b> 于倚靠语言中的当前字串 ($2):',
-);
-
-$wgTranslateMessages['zh-tw'] = array(
-	'translate' => '翻譯',
-	'translate-show-label' => '顯示:',
-	'translate-opt-review' => '翻看模式',
-	'translate-opt-trans' => '只有未翻譯的',
-	'translate-opt-optional' => '可選的',
-	'translate-opt-changed' => '只有更改過的',
-	'translate-opt-ignored' => '已略過',
-	'translate-opt-database' => '只在資料庫中',
-	'translate-messageclass' => '信息類別:',
-	'translate-sort-label' => '排序:',
-	'translate-sort-normal' => '標準',
-	'translate-sort-alpha'  => '按字母排列',
-	'translate-fetch-button' => '頡取',
-	'translate-export-button' => '匯出',
-	'translate-edit-message-format' => '這句信息的格式是 <b>$1</b>。',
-	'translate-edit-message-in' => '在 <b>$1</b> 的現行字串 ($2):',
-	'translate-edit-message-in-fb' => '在 <b>$1</b> 於倚靠語言中的現行字串 ($2):',
-);
-
-$wgTranslateMessages['zh-yue'] = array(
+$wgTranslateMessages['yue'] = array(
 	'translate' => '翻譯',
 	'translate-show-label' => '顯示:',
 	'translate-opt-review' => '翻睇模式',
@@ -499,9 +459,60 @@ $wgTranslateMessages['zh-yue'] = array(
 	'translate-edit-message-format' => '呢句信息嘅格式係 <b>$1</b>。',
 	'translate-edit-message-in' => '響 <b>$1</b> 嘅現行字串 ($2):',
 	'translate-edit-message-in-fb' => '響 <b>$1</b> 於倚靠語言中嘅現行字串 ($2):',
+	'translate-choose-settings' => '請揀你嘅設定。要留意嘅係擷取全部嘅核心信息會載入一個好大嘅表，佢嘅大細可能會超過100KB!',
+	'translate-language'  => '語言:',
 );
 
-$wgTranslateMessages['zh-hk'] = $wgTranslateMessages['zh-tw'];
-$wgTranslateMessages['zh-sg'] = $wgTranslateMessages['zh-cn'];
+$wgTranslateMessages['zh-hans'] = array(
+	'translate' => '翻译',
+	'translate-show-label' => '显示:',
+	'translate-opt-review' => '翻看方式',
+	'translate-opt-trans' => '只有未翻译的',
+	'translate-opt-optional' => '可选的',
+	'translate-opt-changed' => '只有更改过的',
+	'translate-opt-ignored' => '已略过',
+	'translate-opt-database' => '只在数据库中',
+	'translate-messageclass' => '信息类别:',
+	'translate-sort-label' => '排序:',
+	'translate-sort-normal' => '标准',
+	'translate-sort-alpha'  => '按字母排列',
+	'translate-fetch-button' => '颉取',
+	'translate-export-button' => '导出',
+	'translate-edit-message-format' => '这句信息的格式是 <b>$1</b>。',
+	'translate-edit-message-in' => '在 <b>$1</b> 的当前字串 ($2):',
+	'translate-edit-message-in-fb' => '在 <b>$1</b> 于倚靠语言中的当前字串 ($2):',
+	'translate-choose-settings' => '请选择您的设置。要留意的是撷取全部的核心信息会载入一个十分大的列表，它的大小可能会超过100KB!',
+	'translate-language'  => '语言:',
+	
+);
+
+$wgTranslateMessages['zh-hant'] = array(
+	'translate' => '翻譯',
+	'translate-show-label' => '顯示:',
+	'translate-opt-review' => '翻看模式',
+	'translate-opt-trans' => '只有未翻譯的',
+	'translate-opt-optional' => '可選的',
+	'translate-opt-changed' => '只有更改過的',
+	'translate-opt-ignored' => '已略過',
+	'translate-opt-database' => '只在資料庫中',
+	'translate-messageclass' => '信息類別:',
+	'translate-sort-label' => '排序:',
+	'translate-sort-normal' => '標準',
+	'translate-sort-alpha'  => '按字母排列',
+	'translate-fetch-button' => '頡取',
+	'translate-export-button' => '匯出',
+	'translate-edit-message-format' => '這句信息的格式是 <b>$1</b>。',
+	'translate-edit-message-in' => '在 <b>$1</b> 的現行字串 ($2):',
+	'translate-edit-message-in-fb' => '在 <b>$1</b> 於倚靠語言中的現行字串 ($2):',
+	'translate-choose-settings' => '請選擇您的設定。要留意的是擷取全部的核心信息會載入一個十分大的清單，它的大小可能會超過100KB!',
+	'translate-language'  => '語言:',
+);
+
+$wgTranslateMessages['zh-cn'] = $wgTranslateMessages['zh-hans'];
+$wgTranslateMessages['zh-hk'] = $wgTranslateMessages['zh-hant'];
+$wgTranslateMessages['zh-sg'] = $wgTranslateMessages['zh-hans'];
+$wgTranslateMessages['zh-tw'] = $wgTranslateMessages['zh-hant'];
+$wgTranslateMessages['zh-yue'] = $wgTranslateMessages['yue'];
+
 
 
