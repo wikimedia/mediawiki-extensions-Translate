@@ -338,6 +338,29 @@ $wgTranslateMessages['oc'] = array(
 	'translate-language' => 'Lenga:',
 );
 
+/* Piedmontese (Bèrto 'd Sèra) */
+$wgTranslateMessages['pms'] = array(
+	'translate' => 'Viragi',
+	'translate-show-label' => 'Smon:',
+	'translate-opt-review' => 'Andi da revision',
+	'translate-opt-trans' => 'Mach coj da viré',
+	'translate-opt-optional' => 'Opsionaj',
+	'translate-opt-changed' => 'Mach coj modificà',
+	'translate-opt-ignored' => 'Ignorà',
+	'translate-opt-database' => 'Mach coj registrà ant la base dat',
+	'translate-messageclass' => 'Class ëd messagi:',
+	'translate-sort-label' => 'Órdin:',
+	'translate-sort-normal' => 'Normal',
+	'translate-sort-alpha' => 'Alfabétich',
+	'translate-fetch-button' => 'Amporté',
+	'translate-export-button' => 'Esporté',
+	'translate-edit-message-format' => 'La forma d\'ës messagi-sì a l\'é <b>$1</b>.',
+	'translate-edit-message-in' => 'Espression corenta an <b>$1</b> ($2):',
+	'translate-edit-message-in-fb' => 'Espression corenta ant la lenga ëd riserva <b>$1</b> ($2):',
+	'translate-choose-settings' => 'Për piasì ch\'as sërna soe regolassion. Ch\'a ten-a da ment che ën tirand sù tuti ij messagi dël nucleo a l\'é belfé ch\'a-i sàota fòra na supa \'d na tàola da pì che 100 kb!',
+	'translate-language' => 'Lenga:',
+);
+
  $wgTranslateMessages['ru'] = array(
 	'translate' => 'Перевод',
 	'translate-show-label' => 'Показать:',
