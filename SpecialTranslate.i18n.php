@@ -29,6 +29,16 @@ $wgTranslateMessages['en'] = array(
 	'translate-language'  => 'Language:',
 );
 
+$wgTranslateMessages['ar'] = array(
+	'translate' => 'ترجمة',
+	'translate-show-label' => 'عرض:',
+	'translate-opt-trans' => 'غير المترجم فقط',
+	'translate-opt-optional' => 'اختياري',
+	'translate-opt-database' => 'في قاعدة البيانات فقط',
+	'translate-sort-normal' => 'عادي',
+	'translate-language' => 'اللغة:',
+);
+
 $wgTranslateMessages['br'] = array(
 	'translate' => 'Treiñ',
 	'translate-show-label' => 'Diskouez :',
