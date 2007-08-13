@@ -8,6 +8,22 @@
 $wgTranslateMessages = array();
 
 $wgTranslateMessages['en'] = array(
+	'translate-edit' => 'edit',
+	'translate-talk' => 'talk',
+	'translate-history' => 'history',
+
+	'translate-task-view' => 'View all messages from',
+	'translate-task-untranslated' => 'View all untranslated messages from',
+	'translate-task-review' => 'Review changes to',
+	'translate-task-reviewall' => 'Review all translations in',
+	'translate-task-export' => 'Export translations from',
+	'translate-task-export-to-file' => 'Export translation to file from',
+
+	'translate-settings' => 'I want to $1 $2 in language $3 with limit $4. $5',
+
+	'translate-optional' => '(optional)',
+	'translate-ignored' => '(ignored)',
+
 	'translate' => 'Translate',
 	'translate-show-label' => 'Show:',
 	'translate-opt-review' => 'Review mode',
