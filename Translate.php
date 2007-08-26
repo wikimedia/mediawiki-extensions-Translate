@@ -12,7 +12,7 @@ if (!defined('MEDIAWIKI')) die();
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'Translate',
-	'version' => '4.0-rc1',
+	'version' => '4.0-rc2',
 	'author' => 'Niklas Laxström',
 	'description' => 'Special page for translating Mediawiki and beyond'
 );
@@ -99,5 +99,5 @@ if ( !function_exists( 'extAddSpecialPage' ) ) {
 
 extAddSpecialPage( dirname(__FILE__) . '/TranslatePage.php', 'Translate', 'SpecialTranslate' );
 
-$wgHooks['EditPage::showEditForm:initial'][] = array( 'TranslateEditAddons::addTools' );
+$wgHooks['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';
 

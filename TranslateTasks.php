@@ -246,7 +246,7 @@ class ExportMessagesTask extends ViewMessagesTask {
 			$authors[] = "$author - $edits";
 		}
 		$authors = implode( ', ', $authors );
-		$file = $this->messageGroup->getMessageFile();
+		$file = $this->messageGroup->getMessageFile( $this->options->getLanguage() );
 
 		$output = '';
 		if ( $file ) { $output .= "# $file\n"; }

@@ -89,7 +89,7 @@ class CoreMessageGroup extends MessageGroup {
 	protected $label = 'Core system messages';
 	protected $id    = 'core';
 
-	function getMessageFile( $code ) { return "Messages$code.php"; }
+	public function getMessageFile( $code ) { return "Messages$code.php"; }
 
 	public function getMessage( $key, $code ) {
 		$messages = $this->getMessagesInFile( $code );
@@ -837,7 +837,7 @@ class TranslateMessageGroup extends ExtensionMessageGroup {
 	protected $id    = 'ext-translate';
 
 	protected $arrName     = 'messages';
-	protected $messageFile = 'TranslateDev/Translate.i18n.php';
+	protected $messageFile = 'Translate/Translate.i18n.php';
 }
 
 class UserImagesMessageGroup extends ExtensionMessageGroup {
