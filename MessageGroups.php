@@ -1,79 +1,115 @@
 <?php
 
-abstract class MessageClass {
+abstract class MessageGroup {
+	protected $load = false;
 
 	protected $label = 'none';
 	protected $id    = 'none';
 
-	function __construct() {}
-	function getLabel() { return $this->label; }
-	function getId() { return $this->id; }
-	abstract function export(&$array);
-	abstract function getArray();
-	abstract function hasMessages();
-	function fill(&$array) {}
+	function __construct( $load ) {
+		$this->load = $load;
+	}
 
+	/** Returns a human readable name of this class */
+	function getLabel() { return $this->label; }
+
+	/** Returns a unique id used to identify this class */
+	function getId() { return $this->id; }
+
+	/** Message Classes can fill up missing properties */
+	function fill( &$array, $code ) {}
+
+	/** Called when user exports the messages */
+	abstract function export( &$array, $code );
+
+	/** Return array of key => messages for requested language, or empty array */
+	abstract function getDefinitions();
+
+	abstract function getMessage( $key, $code );
+
+	function getMessageGrouping() {
+		return array( $this->getLabel(), array_keys($this->getDefinitions()) );
+	}
+
+	function getMessageFile( $code ) { return ''; }
+
+	/** Checks if the message should be exported. Returns false if not,
+	 *  true if yes and updates $comment.
+	 */
 	function validateLine($m, &$comment) {
 		if ( $m['ignored'] ) { return false; }
-		$fallback = STools::thisOrElse( $m['infbfile'], $m['enmsg'] );
+		$fallback = isset($m['fallback']) ? $m['fallback'] : $m['definition'];
+
+		$translation = $m['database'];
+		if ( $translation === null ) {
+			$translation = $m['infile'];
+		}
+
+		if ( $translation === null ) { return false; }
 
 		if ( $m['optional'] ) {
-			if ( $m['msg'] !== $fallback ) {
+			if ( $translation !== $fallback ) {
 				$comment = "#optional";
 				return true;
 			} else {
 				return false;
 			}
 		}
-		if ( $m['msg'] === $fallback ) {
+		if ( $translation === $fallback ) {
 			if ( $m['defined'] ) {
 				$comment = "#identical but defined";
 				return true;
 			} else {
-				return "\n";
+				return false;
 			}
 		}
 
 		return true;
 	}
 
+	/** Returns php and whitespace formatted key => message line or null */
 	function exportLine($key, $m, $pad = false) {
 		$comment = '';
 		$result = $this->validateLine($m, $comment);
-		if ( $result === false ) { return ''; }
-		if ( is_string( $result ) ) { return $result; }
+		if ( $result === false ) { return null; }
+
+		$translation = $m['database'] ? $m['database'] : $m['infile'];
 
 		$key = "'$key' ";
 		if ($pad) while ( strlen($key) < $pad ) { $key .= ' '; }
-		$txt = "$key=> '" . preg_replace( "/(?<!\\\\)'/", "\'", $m['msg']) . "',$comment\n";
+		$txt = "$key=> '" . preg_replace( "/(?<!\\\\)'/", "\'", $translation) . "',$comment\n";
 		return $txt;
 	}
 
+	public function fillBools( &$array ) {}
+
 }
 
-class CoreMessageClass extends MessageClass {
+class CoreMessageGroup extends MessageGroup {
 	protected $label = 'Core system messages';
 	protected $id    = 'core';
 
-	function hasMessages() {
-		return true;
+	function getMessageFile( $code ) { return "Messages$code.php"; }
+
+	public function getMessage( $key, $code ) {
+		$messages = $this->getMessagesInFile( $code );
+		return isset( $messages[$key] ) ? $messages[$key] : null;
 	}
 
-	function export(&$array) {
+	function export( &$array, $code ) {
 		$txt = "\$messages = array(\n";
 		foreach( $array as $key => $m ) {
-			$txt .= $this->exportLine($key, $m, 24);
+			$txt .= $this->exportLine($key, $m, 30);
 		}
 		$txt .= ");";
 		return $txt;
 	}
 
-	function getArray() {
-		return Language::getMessagesFor('en');
+	function getDefinitions() {
+		return Language::getMessagesFor( 'en' );
 	}
 
-	function fill(&$array) {
-		global $wgLang;
+	public function fillBools( &$array ) {
 		$l = new languages();
 
 		foreach ($l->getOptionalMessages() as $optMsg) {
@@ -83,22 +119,33 @@ class CoreMessageClass extends MessageClass {
 		foreach ($l->getIgnoredMessages() as $optMsg) {
 			$array[$optMsg]['ignored'] = true;
 		}
+	}
 
-		$infile = STools::getMessagesInFile( $wgLang->getCode() );
+	private function getMessagesInFile( $code ) {
+		$file = Language::getMessagesFileName( $code );
+		if ( !file_exists( $file ) ) {
+			return null;
+		} else {
+			require( $file );
+			return isset( $messages ) ? $messages : null;
+		}
+	}
+
+	function fill( &$array, $code ) {
+		$infile = $this->getMessagesInFile( $code );
 		$infbfile = null;
-		if ( Language::getFallbackFor( $wgLang->getCode() ) ) {
-			$infbfile = STools::getMessagesInFile( Language::getFallbackFor( $wgLang->getCode() ) );
+		if ( Language::getFallbackFor( $code ) ) {
+			$infbfile = $this->getMessagesInFile( Language::getFallbackFor( $code ) );
 		}
 
 		foreach ( $array as $key => $value ) {
-			$array[$key]['extension'] = false;
 			$array[$key]['infile'] = isset( $infile[$key] ) ? $infile[$key] : null;
-			$array[$key]['infbfile'] = isset( $infbfile[$key] ) ? $infbfile[$key] : null;
+			$array[$key]['fallback'] = isset( $infbfile[$key] ) ? $infbfile[$key] : null;
 		}
 	}
 }
 
-abstract class ExtensionMessageClass extends MessageClass {
+abstract class ExtensionMessageGroup extends MessageGroup {
 	protected $arrName      = false;
 	protected $msgArray     = null;
 	protected $functionName = false;
@@ -110,90 +157,200 @@ abstract class ExtensionMessageClass extends MessageClass {
 	protected $exportPad   = false;
 	protected $exportLineP = "\t";
 
-	function __construct( $tryLoad ) {
+	public function getMessageFile( $code ) { return $this->messageFile; }
+
+	public function getMessage( $key, $code ) {
+		$this->load( $code );
+		return isset( $this->msgArray[$code][$key] ) ? $this->msgArray[$code][$key] : null;
+	}
+
+	protected function load( $code = '' ) {
+		if ( $code === '' ) throw new MWException( 'load failed1' );;
+		if ( isset($this->msgArray[$code]) ) return;
+
+		$messages = $this->loadMessages( $code );
+		if ( $messages !== null ) {
+			$this->msgArray = $messages;
+			return true;
+		} else {
+				throw new MWException( 'No messages returned for extension' . $this->getLabel() );
+		}
+		return false;
+	}
+
+	protected function getPath( $code = '' ) {
 		global $wgTranslateExtensionDirectory;
 		if ( $this->messageFile ) {
 			$fullPath = $wgTranslateExtensionDirectory . $this->messageFile;
 		} else {
 			$fullPath = false;
 		}
+		return $fullPath;
+	}
+
+	protected function loadMessages( $code = '' ) {
+		$messages = null;
+		$path = $this->getPath( $code );
 
 		if ( $this->arrName ) {
-			global ${$this->arrName};
-			if ( isset( ${$this->arrName} ) ) {
-				$this->msgArray = ${$this->arrName};
-			} elseif ( $tryLoad && $fullPath && file_exists( $fullPath ) ) {
-				@include_once( $fullPath );
-				if ( isset( ${$this->arrName} ) ) {
-					$this->msgArray = ${$this->arrName};
-					// These messages may not be in the cache, make sure they are now
-					STools::addMessagesToCache( $this->msgArray );
-				}
-			}
-
+			return $this->loadFromVariable( $path );
 		} elseif ( $this->functionName ) {
-			if ( function_exists( $this->functionName ) ) {
-				$this->msgArray = call_user_func( $this->functionName );
-			} elseif ( $tryLoad && $fullPath && file_exists( $fullPath ) ) {
-				@include_once( $fullPath );
-				if ( function_exists( $this->functionName ) ) {
-					$this->msgArray = call_user_func( $this->functionName );
-					// These messages may not be in the cache, make sure they are now
-					STools::addMessagesToCache( $this->msgArray );
-				}
-			}
+			return $this->loadFromFunction( $path );
 		}
 
 	}
 
-	function hasMessages() {
-		return $this->msgArray !== null;
+	private function loadFromVariable( $path ) {
+		if ( $this->load && $path && file_exists( $path ) ) {
+			include( $path );
+			if ( isset( ${$this->arrName} ) ) {
+				return ${$this->arrName};
+			}
+		}
 	}
 
-	function export(&$array) {
-		global $wgLang;
-		$code = $wgLang->getCode();
+	private function loadFromFunction( $path ) {
+		if ( function_exists( $this->functionName ) ) {
+			return call_user_func( $this->functionName );
+		} elseif ( $this->load && $path && file_exists( $path ) ) {
+			include( $path );
+			if ( function_exists( $this->functionName ) ) {
+				return call_user_func( $this->functionName );
+			}
+		}
+	}
+
+	function export( &$array, $code ) {
 		$txt = $this->exportPrefix . str_replace(
 			array( '$ARRAY', '$CODE' ),
 			array( $this->arrName, $code ),
 			$this->exportStart ) . "\n";
 
 		foreach ($this->msgArray['en'] as $key => $msg) {
-			$txt .= $this->exportLineP . $this->exportLine($key, $array[$key], $this->exportPad);
+			$line = $this->exportLine($key, $array[$key], $this->exportPad);
+			if ( $line !== null ) {
+				$txt .= $this->exportLineP . $line;
+			}
 		}
 		$txt .= $this->exportPrefix . $this->exportEnd;
 		return $txt;
 	}
 
-	function getArray($code = 'en') {
-		if ( isset( $this->msgArray[$code] ) ) {
-			return $this->msgArray[$code];
+	function getDefinitions() {
+		$this->load( 'en' );
+		if (!isset($this->msgArray['en'])) {
+			throw new MWException( 'Missing messages for extension ' . $this->getId() );
 		}
-		return array();
+		return $this->msgArray['en'];
 	}
 
-	function fill(&$array) {
-		global $wgLang;
+	function fill( &$array, $code ) {
+		$this->load( $code );
 
-		$code = $wgLang->getCode();
-		$infile = isset( $this->msgArray[$code] ) ? $this->msgArray[$code] : null;
-
-		$infbfile = null;
-		$code = Language::getFallbackFor( $code );
-		if ( $code ) {
-			$infbfile = isset( $this->msgArray[$code] ) ? $this->msgArray[$code] : null;
+		$fbcode = Language::getFallbackFor( $code );
+		if ( $fbcode ) {
+			$this->load( $fbcode );
 		}
 
 		foreach ( $array as $key => $value ) {
-			$array[$key]['infile'] = isset( $infile[$key] ) ? $infile[$key] : null;
-			$array[$key]['infbfile'] = isset( $infbfile[$key] ) ? $infbfile[$key] : null;
+			$array[$key]['infile'] = isset( $this->msgArray[$code][$key] ) ?
+				$this->msgArray[$code][$key] : null;
+			$array[$key]['infbfile'] = isset( $this->msgArray[$fbcode][$key] ) ?
+				$this->msgArray[$fbcode][$key] : null;
 		}
 	}
 
 }
 
+class MultipleFileMessageGroup extends ExtensionMessageGroup {
+	protected $filePattern = false;
 
-class AjaxShowEditorsMessageClass extends ExtensionMessageClass {
+	public function getMessageFile( $code ) {
+		return str_replace( '$CODE', $code, $this->filePattern );
+	}
+
+
+	protected function load( $code = '' ) {
+		if ( $code === '' ) return;
+		if ( isset($this->msgArray[$code]) ) return;
+
+		$messages = $this->loadMessages( $code );
+		if ( $messages !== null ) {
+			$this->msgArray[$code] = $messages;
+			return true;
+		}
+
+		return false;
+	}
+
+	protected function getPath( $code = '' ) {
+		if ( $code === 'en' ) {
+			return parent::getPath( 'en' );
+		}
+
+		global $wgTranslateExtensionDirectory;
+		$fullPath = false;
+		if ( $this->filePattern ) {
+			$filename = str_replace( '$CODE', $code, $this->filePattern );
+			$fullPath = $wgTranslateExtensionDirectory . $filename;
+		}
+		return $fullPath;
+	}
+
+}
+
+class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
+	protected $label = 'Extension: All extensions';
+	protected $id    = 'ext-0-all';
+
+	private $classes = null;
+
+	function __construct() {}
+
+	private function init() {
+		if ( $this->classes === null ) {
+			$MG = MessageGroups::singleton();
+			$this->classes = $MG->getGroups();
+			foreach ( $this->classes as $index => $class ) {
+				if ( (strpos( $class->getId(), 'ext-' ) !== 0) || (strpos( $class->getId(), 'ext-0' ) === 0) ) {
+					unset( $this->classes[$index] );
+				}
+			}
+		}
+	}
+
+	function getDefinitions() {
+		$this->init();
+		$array = array();
+		foreach ( $this->classes as $class ) {
+			$array = array_merge( $array, $class->getDefinitions() );
+		}
+		return $array;
+	}
+
+	function export( &$array, $code ) {
+		$this->msgArray['en'] = $this->getDefinitions();
+		parent::export( &$array, $code );
+	}
+
+	function fill( &$array, $language ) {
+		$this->init();
+		foreach ( $this->classes as $class ) {
+			$class->fill( &$array, $language );
+		}
+	}
+
+	function fillBools( &$array ) {
+		$this->init();
+		foreach ( $this->classes as $class ) {
+			$class->fillBools( &$array );
+		}
+	}
+
+
+}
+
+class AjaxShowEditorsMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Extension: Ajax Show Editors';
 	protected $id    = 'ext-ajaxshoweditors';
 
@@ -201,7 +358,7 @@ class AjaxShowEditorsMessageClass extends ExtensionMessageClass {
 	protected $messageFile = 'AjaxShowEditors/AjaxShowEditors.i18n.php';
 }
 
-class AntiSpoofMessageClass extends ExtensionMessageClass {
+class AntiSpoofMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Extension: Anti Spoof';
 	protected $id    = 'ext-antispoof';
 
@@ -211,7 +368,7 @@ class AntiSpoofMessageClass extends ExtensionMessageClass {
 	protected $exportPad   = 26;
 }
 
-class AsksqlMessageClass extends ExtensionMessageClass {
+class AsksqlMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Extension: Asksql';
 	protected $id    = 'ext-asksql';
 
@@ -226,7 +383,20 @@ class AsksqlMessageClass extends ExtensionMessageClass {
 	protected $exportPad   = 19;
 }
 
-class BadImageMessageClass extends ExtensionMessageClass {
+class BackAndForthMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Extension: Back and Forth';
+	protected $id    = 'ext-backandforth';
+
+	protected $functionName = 'efBackAndForthMessages';
+	protected $messageFile  = 'BackAndForth/BackAndForth.i18n.php';
+
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportPrefix= '';
+	protected $exportLineP = "\t";
+	protected $exportEnd   = '),';
+}
+
+class BadImageMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Extension: Bad Image';
 	protected $id    = 'ext-badimage';
 
@@ -239,7 +409,20 @@ class BadImageMessageClass extends ExtensionMessageClass {
 	protected $exportEnd   = '),';
 }
 
-class BoardVoteMessageClass extends ExtensionMessageClass {
+class BlockTitlesMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Extension: Block Titles';
+	protected $id    = 'ext-blocktitles';
+
+	protected $functionName = 'efBlockTitlesMessages';
+	protected $messageFile  = 'BlockTitles/BlockTitles.i18n.php';
+
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportPrefix= '';
+	protected $exportLineP = "\t";
+	protected $exportEnd   = '),';
+}
+
+class BoardVoteMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Extension: Board Vote';
 	protected $id      = 'ext-boardvote';
 
@@ -248,13 +431,12 @@ class BoardVoteMessageClass extends ExtensionMessageClass {
 
 	protected $exportPad   = 26;
 
-	function fill(&$array) {
-		parent::fill(&$array);
+	function fillBools( &$array ) {
 		$array['boardvote_footer']['ignored'] = true;
 	}
 }
 
-class BookInformationMessageClass extends ExtensionMessageClass {
+class BookInformationMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Extension: Book Information';
 	protected $id      = 'ext-bookinformation';
 
@@ -267,7 +449,20 @@ class BookInformationMessageClass extends ExtensionMessageClass {
 	protected $exportEnd   = '),';
 }
 
-class CentralAuthMessageClass extends ExtensionMessageClass {
+class CategoryTreeExtensionGroup extends MultipleFileMessageGroup {
+	protected $label = 'Extension: Category Tree';
+	protected $id    = 'ext-categorytree';
+
+	protected $arrName      = 'messages';
+	protected $messageFile  = 'CategoryTree/CategoryTree.i18n.php';
+	protected $filePattern  = 'CategoryTree/CategoryTree.i18n.$CODE.php';
+
+	protected $exportStart = '$messages[\'$CODE\'] = array(';
+	protected $exportEnd   = '),';
+
+}
+
+class CentralAuthMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Extension: Central Auth';
 	protected $id      = 'ext-centralauth';
 
@@ -277,7 +472,7 @@ class CentralAuthMessageClass extends ExtensionMessageClass {
 	protected $exportPad   = 39;
 }
 
-class CheckUserMessageClass extends ExtensionMessageClass {
+class CheckUserMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Extension: Check User';
 	protected $id      = 'ext-checkuser';
 
@@ -287,7 +482,7 @@ class CheckUserMessageClass extends ExtensionMessageClass {
 	protected $exportPad   = 25;
 }
 
-class CiteSpecialMessageClass extends ExtensionMessageClass {
+class CiteSpecialMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Extension: Cite (special page)';
 	protected $id      = 'ext-citespecial';
 
@@ -296,13 +491,22 @@ class CiteSpecialMessageClass extends ExtensionMessageClass {
 
 	protected $exportPad   = 20;
 
-	function fill(&$array) {
-		parent::fill(&$array);
+	function fillBools( &$array ) {
 		$array['cite_text']['ignored'] = true;
 	}
 }
 
-class ConfirmEditMessageClass extends ExtensionMessageClass {
+class ConfirmAccountMessageGroup extends ExtensionMessageGroup {
+	protected $label   = 'Extension: Confirm Account';
+	protected $id      = 'ext-confirmaccount';
+
+	protected $arrName     = 'wgConfirmAccountMessages';
+	protected $messageFile = 'ConfirmAccount/ConfirmAccount.i18n.php';
+
+	protected $exportPad   = 30;
+}
+
+class ConfirmEditMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Extension: Confirm Edit';
 	protected $id    = 'ext-confirmedit';
 
@@ -312,7 +516,7 @@ class ConfirmEditMessageClass extends ExtensionMessageClass {
 	protected $exportPad   = 30;
 }
 
-class ContributorsMessageClass extends ExtensionMessageClass {
+class ContributorsMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Extension: Contributors';
 	protected $id      = 'ext-contributors';
 
@@ -325,7 +529,7 @@ class ContributorsMessageClass extends ExtensionMessageClass {
 	protected $exportEnd   = '),';
 }
 
-class CountEditsMessageClass extends ExtensionMessageClass {
+class CountEditsMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Extension: Count Edits';
 	protected $id      = 'ext-countedits';
 
@@ -338,17 +542,17 @@ class CountEditsMessageClass extends ExtensionMessageClass {
 	protected $exportEnd   = '),';
 }
 
-class CrossNamespaceLinksMessageClass extends ExtensionMessageClass {
+class CrossNamespaceLinksMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Extension: Cross Namespace Links';
 	protected $id    = 'ext-crossnamespacelinks';
 
 	protected $arrName     = 'wgCrossNamespaceLinksMessages';
-	protected $messageFile = 'CrossNamespaceLinks/CrossNamespaceLinks.i18n.php';
+	protected $messageFile = 'CrossNamespaceLinks/SpecialCrossNamespaceLinks.i18n.php';
 
 	protected $exportPad   = 30;
 }
 
-class DeletedContribsMessageClass extends ExtensionMessageClass {
+class DeletedContribsMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Extension: Deleted Contributions';
 	protected $id    = 'ext-deletedcontribs';
 
@@ -356,7 +560,7 @@ class DeletedContribsMessageClass extends ExtensionMessageClass {
 	protected $messageFile = 'DeletedContributions/DeletedContributions.i18n.php';
 }
 
-class DesysopMessageClass extends ExtensionMessageClass {
+class DesysopMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Extension: Desysop';
 	protected $id    = 'ext-desysop';
 
@@ -366,20 +570,19 @@ class DesysopMessageClass extends ExtensionMessageClass {
 	protected $exportPad   = 23;
 }
 
-class DismissableSiteNoticeMessageClass extends ExtensionMessageClass {
+class DismissableSiteNoticeMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Extension: Dismissable SiteNotice';
 	protected $id    = 'ext-dismissablesitenotice';
 
 	protected $arrName     = 'wgDismissableSiteNoticeMessages';
 	protected $messageFile = 'DismissableSiteNotice/DismissableSiteNotice.i18n.php';
 
-	function fill(&$array) {
-		parent::fill(&$array);
+	function fillBools( &$array ) {
 		$array['sitenotice_id']['ignored'] = true;
 	}
 }
 
-class DuplicatorMessageClass extends ExtensionMessageClass {
+class DuplicatorMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Extension: Duplicator';
 	protected $id    = 'ext-duplicator';
 
@@ -392,7 +595,7 @@ class DuplicatorMessageClass extends ExtensionMessageClass {
 	protected $exportEnd   = '),';
 }
 
-class EditcountMessageClass extends ExtensionMessageClass {
+class EditcountMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Extension: Edit Count';
 	protected $id    = 'ext-editcount';
 
@@ -405,7 +608,7 @@ class EditcountMessageClass extends ExtensionMessageClass {
 	protected $exportEnd   = '),';
 }
 
-class ExpandTemplatesMessageClass extends ExtensionMessageClass {
+class ExpandTemplatesMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Extension: Expand Templates';
 	protected $id    = 'ext-expandtemplates';
 
@@ -415,7 +618,7 @@ class ExpandTemplatesMessageClass extends ExtensionMessageClass {
 	protected $exportPad   = 35;
 }
 
-class FancyCaptchaMessageClass extends ExtensionMessageClass {
+class FancyCaptchaMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Extension: Fancy Captcha';
 	protected $id      = 'ext-fancycaptcha';
 
@@ -428,7 +631,7 @@ class FancyCaptchaMessageClass extends ExtensionMessageClass {
 	protected $exportEnd   = '),';
 }
 
-class FlaggedRevsMessageClass extends ExtensionMessageClass {
+class FlaggedRevsMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Extension: Flagged Revs';
 	protected $id      = 'ext-flaggedrevs';
 
@@ -443,7 +646,7 @@ class FlaggedRevsMessageClass extends ExtensionMessageClass {
 	protected $exportPad   = 24;
 }
 
-class FilePathMessageClass extends ExtensionMessageClass {
+class FilePathMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Extension: File Path';
 	protected $id      = 'ext-filepath';
 
@@ -453,7 +656,7 @@ class FilePathMessageClass extends ExtensionMessageClass {
 	protected $exportPad   = 18;
 }
 
-class ImageMapMessageClass extends ExtensionMessageClass {
+class ImageMapMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Extension: Image Map';
 	protected $id    = 'ext-imagemap';
 
@@ -467,13 +670,12 @@ class ImageMapMessageClass extends ExtensionMessageClass {
 
 	protected $exportPad   = 32;
 
-	function fill(&$array) {
-		parent::fill(&$array);
+	function fillBools( &$array ) {
 		$array['imagemap_desc_types']['ignored'] = true;
 	}
 }
 
-class LuceneSearchMessageClass extends ExtensionMessageClass {
+class LuceneSearchMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Extension: Lucene Search';
 	protected $id    = 'ext-lucenesearch';
 
@@ -482,13 +684,12 @@ class LuceneSearchMessageClass extends ExtensionMessageClass {
 
 	protected $exportPad   = 24;
 
-	function fill(&$array) {
-		parent::fill(&$array);
+	function fillBools( &$array ) {
 		$array['searchnearmatch']['ignored'] = true;
 	}
 }
 
-class MakeBotMessageClass extends ExtensionMessageClass {
+class MakeBotMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Extension: Make Bot';
 	protected $id    = 'ext-makebot';
 
@@ -503,7 +704,7 @@ class MakeBotMessageClass extends ExtensionMessageClass {
 	protected $exportPad   = 26;
 }
 
-class MakeSysopMessageClass extends ExtensionMessageClass {
+class MakeSysopMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Extension: Make Sysop';
 	protected $id    = 'ext-makesysop';
 
@@ -511,7 +712,7 @@ class MakeSysopMessageClass extends ExtensionMessageClass {
 	protected $messageFile = 'Makesysop/SpecialMakesysop.i18n.php';
 }
 
-class MakeValidateMessageClass extends ExtensionMessageClass {
+class MakeValidateMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Extension: Make Validate';
 	protected $id    = 'ext-makevalidate';
 
@@ -526,7 +727,7 @@ class MakeValidateMessageClass extends ExtensionMessageClass {
 	protected $exportPad   = 32;
 }
 
-class MiniDonationMessageClass extends ExtensionMessageClass {
+class MiniDonationMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Extension: Mini Donation';
 	protected $id    = 'ext-minidonation';
 
@@ -534,7 +735,7 @@ class MiniDonationMessageClass extends ExtensionMessageClass {
 	protected $messageFile = 'MiniDonation/MiniDonation.i18n.php';
 }
 
-class MinimumNameLengthMessageClass extends ExtensionMessageClass {
+class MinimumNameLengthMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Extension: Minimum Name Length';
 	protected $id      = 'ext-minimumnamelength';
 
@@ -547,7 +748,7 @@ class MinimumNameLengthMessageClass extends ExtensionMessageClass {
 	protected $exportEnd   = '),';
 }
 
-class NewuserLogMessageClass extends ExtensionMessageClass {
+class NewuserLogMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Extension: Newuser Log';
 	protected $id    = 'ext-newuserlog';
 
@@ -556,14 +757,21 @@ class NewuserLogMessageClass extends ExtensionMessageClass {
 
 	protected $exportPad   = 27;
 
-	function fill(&$array) {
-		parent::fill(&$array);
+	function fillBools( &$array ) {
 		$array['newuserlogentry']['ignored'] = true;
 		$array['newuserlog-create-text']['ignored'] = true;
 	}
 }
 
-class PatrollerMessageClass extends ExtensionMessageClass {
+class OggHandlerMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Extension: Ogg Handler';
+	protected $id    = 'ext-ogghandler';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'OggHandler/OggHandler.i18n.php';
+}
+
+class PatrollerMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Extension: Patroller';
 	protected $id      = 'ext-patroller';
 
@@ -576,7 +784,7 @@ class PatrollerMessageClass extends ExtensionMessageClass {
 	protected $exportEnd   = '),';
 }
 
-class PicturePopupMessageClass extends ExtensionMessageClass {
+class PicturePopupMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Extension: PicturePopup';
 	protected $id      = 'ext-picturepopup';
 
@@ -589,20 +797,19 @@ class PicturePopupMessageClass extends ExtensionMessageClass {
 	protected $exportEnd   = '),';
 }
 
-class RenameUserMessageClass extends ExtensionMessageClass {
+class RenameUserMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Extension: Rename User';
 	protected $id    = 'ext-renameuser';
 
 	protected $arrName     = 'wgRenameuserMessages';
 	protected $messageFile = 'Renameuser/SpecialRenameuser.i18n.php';
 
-	function fill(&$array) {
-		parent::fill(&$array);
+	function fillBools( &$array ) {
 		$array['renameuserlogentry']['ignored'] = true;
 	}
 }
 
-class ResignMessageClass extends ExtensionMessageClass {
+class ResignMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Extension: Resign';
 	protected $id    = 'ext-resign';
 
@@ -615,7 +822,7 @@ class ResignMessageClass extends ExtensionMessageClass {
 	protected $exportEnd   = '),';
 }
 
-class SiteMatrixMessageClass extends ExtensionMessageClass {
+class SiteMatrixMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Extension: Site Matrix';
 	protected $id    = 'ext-sitematrix';
 
@@ -625,15 +832,15 @@ class SiteMatrixMessageClass extends ExtensionMessageClass {
 	protected $exportPad   = 13;
 }
 
-class TranslateMessageClass extends ExtensionMessageClass {
+class TranslateMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Extension: Translate';
 	protected $id    = 'ext-translate';
 
-	protected $arrName     = 'wgTranslateMessages';
-	protected $messageFile = 'Translate/SpecialTranslate.i18n.php';
+	protected $arrName     = 'messages';
+	protected $messageFile = 'TranslateDev/Translate.i18n.php';
 }
 
-class UserImagesMessageClass extends ExtensionMessageClass {
+class UserImagesMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Extension: User Images';
 	protected $id      = 'ext-userimages';
 
@@ -646,7 +853,7 @@ class UserImagesMessageClass extends ExtensionMessageClass {
 	protected $exportEnd   = '),';
 }
 
-class UsernameBlacklistMessageClass extends ExtensionMessageClass {
+class UsernameBlacklistMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Extension: Username Blacklist';
 	protected $id      = 'ext-usernameblacklist';
 
@@ -659,7 +866,7 @@ class UsernameBlacklistMessageClass extends ExtensionMessageClass {
 	protected $exportEnd   = '),';
 }
 
-class VoteMessageClass extends ExtensionMessageClass {
+class VoteMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Extension: Vote';
 	protected $id      = 'ext-vote';
 
@@ -672,7 +879,7 @@ class VoteMessageClass extends ExtensionMessageClass {
 	protected $exportEnd   = '),';
 }
 
-class FreeColMessageClass extends MessageClass {
+class FreeColMessageGroup extends MessageGroup {
 
 	protected $label = 'External: FreeCol';
 	protected $id    = 'out-freecol';
@@ -683,7 +890,6 @@ class FreeColMessageClass extends MessageClass {
 
 	public function __construct( $tryLoad ) {
 		if ( !$tryLoad ) { return; }
-		global $IP, $wgLang;
 		$filenameEN = $this->fileDir . 'FreeColMessages.properties';
 
 		if ( file_exists( $filenameEN ) ) {
@@ -692,13 +898,8 @@ class FreeColMessageClass extends MessageClass {
 			return;
 		}
 
-		$code = $wgLang->getCode();
-		$filenameXX = $this->fileDir . "FreeColMessages_$code.properties";
 
-		$linesXX = false;
-		if ( file_exists( $filenameXX ) ) {
-			$linesXX = file( $filenameXX );
-		}
+
 
 		$this->msgArray = array();
 
@@ -707,6 +908,25 @@ class FreeColMessageClass extends MessageClass {
 			list( $key, $string ) = explode( '=', $line, 2 );
 			$this->msgArray['en'][$this->prefix . $key] = trim($string);
 		}
+
+
+
+	}
+
+	public function getMessage( $key, $code ) {
+		$this->load( $code );
+		return isset( $this->msgArray[$code][$key] ) ? $this->msgArray[$code][$key] : null;
+	}
+
+	private function load( $code ) {
+		#$filenameXX = $this->fileDir . "FreeColMessages_$code.properties";
+		$filenameXX = $this->fileDir . "freecol_$code";
+
+		$linesXX = false;
+		if ( file_exists( $filenameXX ) ) {
+			$linesXX = file( $filenameXX );
+		}
+
 
 		if ( !$linesXX) { return; }
 		foreach ( $linesXX as $line ) {
@@ -717,62 +937,67 @@ class FreeColMessageClass extends MessageClass {
 
 	}
 
-	public function export(&$array) {
+	public function export( &$array, $code ) {
 		global $wgSitename, $wgRequest;
 		$txt = '# Exported on ' . wfTimestamp(TS_ISO_8601) . ' from ' . $wgSitename . "\n# " .
 			$wgRequest->getFullRequestURL() . "\n#\n";
 
-		foreach ($array as $key => $value) {
+		foreach ($array as $key => $m) {
 			list(, $key) = explode( '-', $key, 2);
 			$comment = '';
-			$result = $this->validateLine($value, $comment);
+			$result = $this->validateLine($m, $comment);
 			if ( $result === false ) { continue; }
 			if ( is_string( $result ) ) { continue; }
 
-			$txt .= $key . '=' . rtrim( $value['msg'] ) . "\n";
+			$translation = $m['database'] ? $m['database'] : $m['infile'];
+
+			$txt .= $key . '=' . rtrim( $translation ) . "\n";
 		}
 		return $txt;
 	}
 
-	function fill(&$array) {
-		global $wgLang;
-		$code = $wgLang->getCode();
+
+	function fill( &$array, $code ) {
+		$this->load( $code );
 
 		foreach ( $array as $key => $value ) {
-			$infile = STools::thisOrElse( @$this->msgArray[$code][$key], null );
-			$statmsg = STools::thisOrElse( $infile, $this->msgArray['en'][$key] );
-			$msg = wfMsg( $key . STools::getLanguage() );
-			if ( wfEmptyMsg( $key. STools::getLanguage(), $msg ) ) { $msg = $statmsg; }
-			$array[$key]['enmsg'] = $this->msgArray['en'][$key];
-			$array[$key]['statmsg'] = $statmsg;
-			$array[$key]['msg'] = $msg;
-			$array[$key]['extension'] = true;
+			$infile = isset($this->msgArray[$code][$key]) ? $this->msgArray[$code][$key] : null ;
+			$array[$key]['definition'] = $this->msgArray['en'][$key];
 			$array[$key]['infile'] = $infile;
-			$array[$key]['infbfile'] = null;
 		}
 	}
 
-	function getArray($code = 'en') {
-		if ( isset( $this->msgArray[$code] ) ) {
-			return $this->msgArray[$code];
-		}
-		return array();
+	function getDefinitions() {
+		return $this->msgArray['en'];
 	}
-
-	function hasMessages() { return $this->msgArray !== null; }
 
 }
 
-function efInitializeExtensionClasses() {
-	global $wgTranslateEC, $wgTranslateAC, $wgTranslateTryLoad;
+class MessageGroups {
 
-	$classes = array();
-	foreach ($wgTranslateAC as $id => $class) {
-		if ( in_array( $id, $wgTranslateEC, true ) ) {
-			$classes[] = new $class($wgTranslateTryLoad);
+	public $classes = array();
+
+	private function __construct() {
+		global $wgTranslateEC, $wgTranslateAC, $wgTranslateTryLoad;
+
+		foreach ($wgTranslateAC as $id => $class) {
+			if ( in_array( $id, $wgTranslateEC, true ) ) {
+				$this->classes[] = new $class($wgTranslateTryLoad);
+			}
 		}
 	}
 
-	return $classes;
+
+	public static function singleton() {
+		static $instance;
+		if ( !$instance instanceof self ) {
+			$instance = new self();
+		}
+		return $instance;
+	}
+
+	public function &getGroups() {
+		return $this->classes;
+	}
 }
 
