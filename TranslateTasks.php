@@ -32,6 +32,7 @@ class TaskOptions {
 
 }
 
+
 abstract class TranslateTask {
 	abstract function getId();
 	public function getLabel() {
@@ -155,7 +156,7 @@ class ViewUntranslatedTask extends ViewMessagesTask {
 
 	protected function filterTranslated() {
 		foreach ( $this->messages as $key => $o ) {
-			if ( ($o['database'] !== null || $o['infile'] !== null ) &&  !strstr($o['infile'], '!!FUZZY!!') ) {
+			if ( ($o['database'] !== null || $o['infile'] !== null ) && !strstr($o['infile'], '!!FUZZY!!') ) {
 				unset( $this->messages[$key] );
 			}
 		}

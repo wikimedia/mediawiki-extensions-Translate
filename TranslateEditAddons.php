@@ -33,6 +33,8 @@ class TranslateEditAddons {
 		$rows = count(explode("\n", $msg)) -1;
 		$rows = max(3, min(15, $rows));
 
+		wfLoadExtensionMessages( 'Translate' );
+
 		return
 			wfMsg( $i18nmsg, $names[$code], $prettyCode ) . " " .
 			Xml::Element( 'textarea', array( 'rows' => $rows ), $msg );

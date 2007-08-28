@@ -139,8 +139,12 @@ class CoreMessageGroup extends MessageGroup {
 		}
 
 		foreach ( $array as $key => $value ) {
-			$array[$key]['infile'] = isset( $infile[$key] ) ? $infile[$key] : null;
-			$array[$key]['fallback'] = isset( $infbfile[$key] ) ? $infbfile[$key] : null;
+			if ( isset($infile[$key]) ) {
+				$array[$key]['infile'] = $infile[$key];
+			}
+			if ( isset($infbfile[$key]) ) {
+				$array[$key]['fallback'] = $infbfile[$key];
+			}
 		}
 	}
 }
@@ -253,10 +257,12 @@ abstract class ExtensionMessageGroup extends MessageGroup {
 		}
 
 		foreach ( $array as $key => $value ) {
-			$array[$key]['infile'] = isset( $this->msgArray[$code][$key] ) ?
-				$this->msgArray[$code][$key] : null;
-			$array[$key]['infbfile'] = isset( $this->msgArray[$fbcode][$key] ) ?
-				$this->msgArray[$fbcode][$key] : null;
+			if ( isset($this->msgArray[$code][$key]) ) {
+				$array[$key]['infile'] = $this->msgArray[$code][$key];
+			}
+			if ( isset($this->msgArray[$fbcode][$key]) ) {
+				$array[$key]['infbfile'] = $this->msgArray[$fbcode][$key];
+			}
 		}
 	}
 
@@ -305,18 +311,36 @@ class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
 
 	private $classes = null;
 
-	function __construct() {}
-
 	private function init() {
 		if ( $this->classes === null ) {
-			$MG = MessageGroups::singleton();
-			$this->classes = $MG->getGroups();
+			$this->classes = MessageGroups::singleton()->getGroups();
 			foreach ( $this->classes as $index => $class ) {
 				if ( (strpos( $class->getId(), 'ext-' ) !== 0) || (strpos( $class->getId(), 'ext-0' ) === 0) ) {
 					unset( $this->classes[$index] );
 				}
 			}
 		}
+	}
+
+	protected function load( $code = '' ) {
+		if ( $code === '' ) return;
+
+		$this->init();
+
+		foreach ( $this->classes as $class ) {
+			$class->load( $code );
+		}
+
+	}
+
+	public function getMessage( $key, $code ) {
+		$this->load( $code );
+		$msg = null;
+		foreach ( $this->classes as $class ) {
+			$msg = $class->getMessage( $key, $code );
+			if ( $msg !== null ) return $msg;
+		}
+		return null;
 	}
 
 	function getDefinitions() {
@@ -329,14 +353,18 @@ class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
 	}
 
 	function export( &$array, $code ) {
-		$this->msgArray['en'] = $this->getDefinitions();
-		parent::export( &$array, $code );
+		$this->init();
+		$ret = '';
+		foreach ( $this->classes as $class ) {
+			$ret .= $class->export( &$array, $code ) . "\n\n\n";
+		}
+		return $ret;
 	}
 
-	function fill( &$array, $language ) {
+	function fill( &$array, $code ) {
 		$this->init();
 		foreach ( $this->classes as $class ) {
-			$class->fill( &$array, $language );
+			$class->fill( &$array, $code );
 		}
 	}
 
@@ -515,6 +543,21 @@ class ConfirmEditMessageGroup extends ExtensionMessageGroup {
 
 	protected $exportPad   = 30;
 }
+
+class ContactPageExtensionGroup extends MultipleFileMessageGroup {
+	protected $label = 'Extension: Contact Page';
+	protected $id    = 'ext-contactpage';
+
+	protected $arrName      = 'messages';
+	protected $messageFile  = 'ContactPage/ContactPage.i18n.php';
+	protected $filePattern  = 'ContactPage/ContactPage.i18n.$CODE.php';
+
+	protected $exportStart = '$messages[\'$CODE\'] = array(';
+	protected $exportLineP = '';
+	protected $exportEnd   = '),';
+
+}
+
 
 class ContributorsMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Extension: Contributors';
@@ -748,6 +791,18 @@ class MinimumNameLengthMessageGroup extends ExtensionMessageGroup {
 	protected $exportEnd   = '),';
 }
 
+class NewestPagesMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Extension: Newest Pages';
+	protected $id    = 'ext-newestpages';
+
+	protected $functionName = 'efNewestPagesMessages';
+	protected $messageFile = 'NewestPages/NewestPages.i18n.php';
+
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportLineP = '';
+	protected $exportEnd   = '),';
+}
+
 class NewuserLogMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Extension: Newuser Log';
 	protected $id    = 'ext-newuserlog';
@@ -961,9 +1016,10 @@ class FreeColMessageGroup extends MessageGroup {
 		$this->load( $code );
 
 		foreach ( $array as $key => $value ) {
-			$infile = isset($this->msgArray[$code][$key]) ? $this->msgArray[$code][$key] : null ;
 			$array[$key]['definition'] = $this->msgArray['en'][$key];
-			$array[$key]['infile'] = $infile;
+			if ( isset($this->msgArray[$code][$key]) ) {
+				$array[$key]['infile'] = $this->msgArray[$code][$key];
+			}
 		}
 	}
 

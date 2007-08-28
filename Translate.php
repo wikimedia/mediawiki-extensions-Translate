@@ -12,7 +12,7 @@ if (!defined('MEDIAWIKI')) die();
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'Translate',
-	'version' => '4.0-rc2',
+	'version' => '4.0-rc3',
 	'author' => 'Niklas Laxström',
 	'description' => 'Special page for translating Mediawiki and beyond'
 );
@@ -55,6 +55,7 @@ $wgTranslateAC = array(
 'ext-citespecial'           => 'CiteSpecialMessageGroup',
 'ext-confiraccount'         => 'ConfirmAccountMessageGroup',
 'ext-confirmedit'           => 'ConfirmEditMessageGroup',
+'ext-contactpage'           => 'ContactPageExtensionGroup',
 'ext-contributors'          => 'ContributorsMessageGroup',
 'ext-countedits'            => 'CountEditsMessageGroup',
 'ext-crossnamespacelinks'   => 'CrossNamespaceLinksMessageGroup',
@@ -74,6 +75,7 @@ $wgTranslateAC = array(
 'ext-makevalidate'          => 'MakeValidateMessageGroup',
 'ext-minidonation'          => 'MiniDonationMessageGroup',
 'ext-minimumnamelength'     => 'MinimumNameLengthMessageGroup',
+'ext-newestpages'           => 'NewestPagesMessageGroup',
 'ext-newuserlog'            => 'NewuserLogMessageGroup',
 'ext-ogghandler'            => 'OggHandlerMessageGroup',
 'ext-patroller'             => 'PatrollerMessageGroup',

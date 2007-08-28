@@ -22,4 +22,185 @@ $messages['en'] = array(
 
 	'translate-optional' => '(optional)',
 	'translate-ignored' => '(ignored)',
+
+	'translate-edit-message-format' => 'The format of this message is <b>$1</b>.',
+	'translate-edit-message-in' => 'Current string in <b>$1</b> ($2):',
+	'translate-edit-message-in-fb' => 'Current string in fallback language <b>$1</b> ($2):',
 );
+
+
+
+$wgTranslateMessages['ar'] = array(
+	'translate' => 'ترجمة',
+);
+
+$wgTranslateMessages['br'] = array(
+	'translate' => 'Treiñ',
+	'translate-edit-message-format' => 'Furmad ar gemennadenn-mañ zo <b>$1</b>.',
+	'translate-edit-message-in' => 'Neudennad red e <b>$1</b> ($2):',
+	'translate-edit-message-in-fb' => 'Neudennad red er yezh kein <b>$1</b> ($2):',
+);
+
+$wgTranslateMessages['ca'] = array(
+	'translate'=> 'Tradueix',
+	'translate-edit-message-in'=> 'Cadena actual en <strong>$1</strong> ($2):',
+	'translate-edit-message-in-fb'=> 'Cadena actual en la llengua per defecte <strong>$1</strong> (2):',
+);
+
+$wgTranslateMessages['cs'] = array(
+	'translate' => 'Přeložit',
+	'translate-edit-message-in' => 'Současný řetězec v <b>$1</b> ($2):',
+	'translate-edit-message-in-fb' => 'Současný řetězec v záložním jazyce <b>$1</b> ($2):',
+);
+
+/* German by Raymond */
+$wgTranslateMessages['de'] = array(
+	'translate'                     => 'Übersetze',
+	'translate-edit-message-format' => 'Das Format dieser Nachricht ist <b>$1</b>.',
+	'translate-edit-message-in'     => 'Aktueller Text in <b>$1</b> ($2):',
+	'translate-edit-message-in-fb'  => 'Aktueller Text in der Ausweich-Sprache <b>$1</b> ($2):',
+);
+
+$wgTranslateMessages['fr'] = array(
+	'translate' => 'Traduire',
+	'translate-edit-message-format' => 'Le format de ce message est <b>$1</b>.',
+	'translate-edit-message-in' => 'Chaîne actuellement dans <b>$1</b> ($2) :',
+	'translate-edit-message-in-fb' => 'Chaîne actuellement dans la langue par défaut <b>$1</b> ($2) :',
+);
+
+$wgTranslateMessages['he'] = array(
+	'translate'                     => 'תרגום',
+	'translate-edit-message-format' => 'המבנה של הודעה זו הוא <b>$1</b>.',
+	'translate-edit-message-in'     => 'המחרוזת הנוכחית ל־<b>$1</b> ($2):',
+	'translate-edit-message-in-fb'  => 'המחרוזת הנוכחית ל־<b>$1</b> בשפת הגיבוי ($2):',
+);
+
+$wgTranslateMessages['id'] = array(
+	'translate' => 'Terjemahan',
+	'translate-edit-message-format' => 'Format pesan ini adalah <b>$1</b>.',
+	'translate-edit-message-in' => 'Kalimat dalam <b>$1</b> ($2):',
+	'translate-edit-message-in-fb' => 'Kalimat dalam bahasa <b>$1</b> ($2):',
+);
+
+$wgTranslateMessages['it'] = array(
+	'translate' => 'Traduzione',
+	'translate-edit-message-format' => 'Formato del messaggio: <b>$1</b>.',
+	'translate-edit-message-in' => 'Contenuto attuale in <b>$1</b> ($2):',
+	'translate-edit-message-in-fb' => 'Contenuto attuale nella lingua di riserva <b>$1</b> ($2):',
+);
+
+$wgTranslateMessages['ja'] = array(
+	'translate' => 'インターフェースの翻訳',
+	'translate-edit-message-format' => 'このメッセージの書式は <b>$1</b> です。',
+	'translate-edit-message-in' => '<b>$1</b> ($2) での現在の文字列:',
+);
+
+$wgTranslateMessages['kk-kz'] = array(
+	'translate' => 'Аудару',
+	'translate-edit-message-format' => 'Бұл хабардың пішімі - <b>$1</b>.',
+	'translate-edit-message-in' => '<b>$1</b> ($2) дегендегі ағымдағы жол:',
+	'translate-edit-message-in-fb' => '<b>$1</b> ($2) деген сүйену тілінде ағымдағы жол:',
+);
+$wgTranslateMessages['kk-tr'] = array(
+	'translate' => 'Awdarw',
+	'translate-edit-message-format' => 'Bul xabardıñ pişimi - <b>$1</b>.',
+	'translate-edit-message-in' => '<b>$1</b> ($2) degendegi ağımdağı jol:',
+	'translate-edit-message-in-fb' => '<b>$1</b> ($2) degen süýenw tilinde ağımdağı jol:',
+);
+$wgTranslateMessages['kk-cn'] = array(
+	'translate' => 'اۋدارۋ',
+	'translate-edit-message-format' => 'بۇل حاباردىڭ پٸشٸمٸ - <b>$1</b>.',
+	'translate-edit-message-in' => '<b>$1</b> ($2) دەگەندەگٸ اعىمداعى جول:',
+	'translate-edit-message-in-fb' => '<b>$1</b> ($2) دەگەن سٷيەنۋ تٸلٸندە اعىمداعى جول:',
+);
+$wgTranslateMessages['kk'] = $wgTranslateMessages['kk-kz'];
+
+$wgTranslateMessages['nl'] = array(
+	'translate' => 'Vertalen',
+	'translate-edit-message-in' => 'Huidige tekst in <b>$1</b> ($2):',
+	'translate-edit-message-in-fb' => 'Huidige tekst in alternatieve taal <b>$1</b> ($2):',
+);
+
+$wgTranslateMessages['no'] = array(
+	'translate' => 'Oversett',
+	'translate-edit-message-format' => 'Formatet på denne meldingen er <b>$1</b>.',
+	'translate-edit-message-in' => 'Nåværende streng i <b>$1</b> ($2):',
+	'translate-edit-message-in-fb' => 'Nåværende streng i reservespråk <b>$1</b> ($2):',
+);
+
+$wgTranslateMessages['oc'] = array(
+	'translate' => 'Revirar',
+	'translate-edit-message-format' => 'Lo format d\'aqueste messatge es <b>$1</b>.',
+	'translate-edit-message-in' => 'Cadena actualament dins <b>$1</b> ($2) :',
+	'translate-edit-message-in-fb' => 'Cadena actualament dins la lenga per defaut <b>$1</b> ($2) :',
+);
+
+/* Piedmontese (Bèrto 'd Sèra) */
+$wgTranslateMessages['pms'] = array(
+	'translate' => 'Viragi',
+	'translate-edit-message-format' => 'La forma d\'ës messagi-sì a l\'é <b>$1</b>.',
+	'translate-edit-message-in' => 'Espression corenta an <b>$1</b> ($2):',
+	'translate-edit-message-in-fb' => 'Espression corenta ant la lenga ëd riserva <b>$1</b> ($2):',
+);
+
+$wgTranslateMessages['ru'] = array(
+	'translate' => 'Перевод',
+	'translate-edit-message-format' => 'Формат текущего сообщения - <b>$1</b>.',
+	'translate-edit-message-in' => 'Текущее выражение на языке <b>$1</b> ($2):',
+	'translate-edit-message-in-fb' => 'Текущее выражение на базовом языке <b>$1</b> ($2):',
+);
+
+$wgTranslateMessages['sk'] = array(
+	'translate' => 'Preložiť',
+	'translate-edit-message-format' => 'Formát tejto správy je <b>$1</b>.',
+	'translate-edit-message-in' => 'Aktuálny reťazec v jazyku <b>$1</b> ($2):',
+	'translate-edit-message-in-fb' => 'Aktuálny reťazec v jazyku <b>$1</b>, ktorý sa použije ak správa nie je preložená ($2):',
+);
+
+$wgTranslateMessages['sr-ec'] = array(
+	'translate' => 'Превод',
+	'translate-edit-message-in' => 'Тренутни стринг у <b>$1</b> ($2):',
+	'translate-edit-message-in-fb' => 'Тренутни стринг у језику <b>$1</b> ($2):',
+);
+
+$wgTranslateMessages['sr-el'] = array(
+	'translate' => 'Prevod',
+	'translate-edit-message-in' => 'Trenutni string u <b>$1</b> ($2):',
+	'translate-edit-message-in-fb' => 'Trenutni string u jeziku <b>$1</b> ($2):',
+);
+
+$wgTranslateMessages['sr'] = $wgTranslateMessages['sr-ec'];
+
+$wgTranslateMessages['su'] = array(
+	'translate' => 'Alih basakeun',
+	'translate-edit-message-format' => 'Ieu talatah boga format <b>$1</b>.',
+	'translate-edit-message-in' => 'String kiwari dina <b>$1</b> ($2):',
+	'translate-edit-message-in-fb' => 'String kiwari dina basa fallback <b>$1</b> ($2):',
+);
+
+$wgTranslateMessages['yue'] = array(
+	'translate' => '翻譯',
+	'translate-edit-message-format' => '呢句信息嘅格式係 <b>$1</b>。',
+	'translate-edit-message-in' => '響 <b>$1</b> 嘅現行字串 ($2):',
+	'translate-edit-message-in-fb' => '響 <b>$1</b> 於倚靠語言中嘅現行字串 ($2):',
+);
+
+$wgTranslateMessages['zh-hans'] = array(
+	'translate' => '翻译',
+	'translate-edit-message-format' => '这句信息的格式是 <b>$1</b>。',
+	'translate-edit-message-in' => '在 <b>$1</b> 的当前字串 ($2):',
+	'translate-edit-message-in-fb' => '在 <b>$1</b> 于倚靠语言中的当前字串 ($2):',
+);
+
+$wgTranslateMessages['zh-hant'] = array(
+	'translate' => '翻譯',
+	'translate-edit-message-format' => '這句信息的格式是 <b>$1</b>。',
+	'translate-edit-message-in' => '在 <b>$1</b> 的現行字串 ($2):',
+	'translate-edit-message-in-fb' => '在 <b>$1</b> 於倚靠語言中的現行字串 ($2):',
+);
+
+$wgTranslateMessages['zh-cn'] = $wgTranslateMessages['zh-hans'];
+$wgTranslateMessages['zh-hk'] = $wgTranslateMessages['zh-hant'];
+$wgTranslateMessages['zh-sg'] = $wgTranslateMessages['zh-hans'];
+$wgTranslateMessages['zh-tw'] = $wgTranslateMessages['zh-hant'];
+$wgTranslateMessages['zh-yue'] = $wgTranslateMessages['yue'];
