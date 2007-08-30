@@ -55,7 +55,27 @@ $wgTranslateMessages['cs'] = array(
 
 /* German by Raymond */
 $wgTranslateMessages['de'] = array(
-	'translate'                     => 'Übersetze',
+	'translate'         => 'Übersetze',
+	'translate-edit'    => 'Bearbeite',
+	'translate-talk'    => 'Diskussion',
+	'translate-history' => 'Versionen',
+
+	'translate-task-view'           => 'Zeige alle Systemnachrichten ab',
+	'translate-task-untranslated'   => 'Zeige alle nicht übersetzten Systemnachrichten ab',
+	'translate-task-review'         => 'Prüfe Änderungen bis',
+	'translate-task-reviewall'      => 'Prüfe alle Übersetzungen in',
+	'translate-task-export'         => 'Exportiere alle Übersetzungen ab',
+	'translate-task-export-to-file' => 'Exportiere alle Übersetzungen in eine Datei ab',
+
+	'translate-settings' => 'Ich möchte $1 $2 in der Sprache $3 mit der Beschränkung $4. $5',
+	'translate-paging'   => '<div>Zeige Systemnachrichten von $1 bis $2 von $3. [ $4 | $5 ]</div>',
+	'translate-submit'   => 'Hole',
+	'translate-next'     => 'Nächste Seite',
+	'translate-prev'     => 'Vorherige Seite',
+
+	'translate-optional' => '(optional)',
+	'translate-ignored'  => '(ignoriert)',
+
 	'translate-edit-message-format' => 'Das Format dieser Nachricht ist <b>$1</b>.',
 	'translate-edit-message-in'     => 'Aktueller Text in <b>$1</b> ($2):',
 	'translate-edit-message-in-fb'  => 'Aktueller Text in der Ausweich-Sprache <b>$1</b> ($2):',
