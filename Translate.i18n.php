@@ -200,6 +200,26 @@ $wgTranslateMessages['su'] = array(
 
 $wgTranslateMessages['yue'] = array(
 	'translate' => '翻譯',
+	'translate-edit' => '編輯',
+	'translate-talk' => '對話',
+	'translate-history' => '歷史',
+
+	'translate-task-view' => '去睇全部信息自',
+	'translate-task-untranslated' => '去睇全部未翻譯好嘅信息自',
+	'translate-task-review' => '睇番嗰度嘅更改',
+	'translate-task-reviewall' => '睇番響嗰度嘅全部翻譯',
+	'translate-task-export' => '倒出翻譯自',
+	'translate-task-export-to-file' => '倒出翻譯到檔案自',
+
+	'translate-settings' => '我想去$1響$3語言嘅$2組，上限係$4。 $5',
+	'translate-paging' => '<div>顯示緊由$1條到$2條，總共$3條信息。 [ $4 | $5 ]</div>',
+	'translate-submit' => '擷取',
+	'translate-next' => '下一版',
+	'translate-prev' => '上一版',
+
+	'translate-optional' => '(可選)',
+	'translate-ignored' => '(已略過)',
+
 	'translate-edit-message-format' => '呢句信息嘅格式係 <b>$1</b>。',
 	'translate-edit-message-in' => '響 <b>$1</b> 嘅現行字串 ($2):',
 	'translate-edit-message-in-fb' => '響 <b>$1</b> 於倚靠語言中嘅現行字串 ($2):',
@@ -207,6 +227,26 @@ $wgTranslateMessages['yue'] = array(
 
 $wgTranslateMessages['zh-hans'] = array(
 	'translate' => '翻译',
+	'translate-edit' => '编辑',
+	'translate-talk' => '对话',
+	'translate-history' => '历史',
+
+	'translate-task-view' => '查看全部信息由',
+	'translate-task-untranslated' => '查看全部尚未翻译好的信息由',
+	'translate-task-review' => '复看该处的更改',
+	'translate-task-reviewall' => '复看该处的所有翻译',
+	'translate-task-export' => '导出翻译自',
+	'translate-task-export-to-file' => '导出翻译至文件由',
+
+	'translate-settings' => '我想去$1于$3语言上的$2群组，上限是$4。 $5',
+	'translate-paging' => '<div>显示由$1条到$2条，共$3条信息。 [ $4 | $5 ]</div>',
+	'translate-submit' => '撷取',
+	'translate-next' => '下一页',
+	'translate-prev' => '上一页',
+
+	'translate-optional' => '(可选)',
+	'translate-ignored' => '(已略过)',
+
 	'translate-edit-message-format' => '这句信息的格式是 <b>$1</b>。',
 	'translate-edit-message-in' => '在 <b>$1</b> 的当前字串 ($2):',
 	'translate-edit-message-in-fb' => '在 <b>$1</b> 于倚靠语言中的当前字串 ($2):',
@@ -214,11 +254,32 @@ $wgTranslateMessages['zh-hans'] = array(
 
 $wgTranslateMessages['zh-hant'] = array(
 	'translate' => '翻譯',
+	'translate-edit' => '編輯',
+	'translate-talk' => '對話',
+	'translate-history' => '歷史',
+
+	'translate-task-view' => '檢視全部信息由',
+	'translate-task-untranslated' => '檢視全部尚未翻譯好的信息由',
+	'translate-task-review' => '複看該處的更改',
+	'translate-task-reviewall' => '複看該處的所有翻譯',
+	'translate-task-export' => '匯出翻譯自',
+	'translate-task-export-to-file' => '匯出翻譯至檔案由',
+
+	'translate-settings' => '我想去$1於$3語言上的$2群組，上限是$4。 $5',
+	'translate-paging' => '<div>顯示由$1條到$2條，共$3條信息。 [ $4 | $5 ]</div>',
+	'translate-submit' => '擷取',
+	'translate-next' => '下一頁',
+	'translate-prev' => '上一頁',
+
+	'translate-optional' => '(可選)',
+	'translate-ignored' => '(已略過)',
+
 	'translate-edit-message-format' => '這句信息的格式是 <b>$1</b>。',
 	'translate-edit-message-in' => '在 <b>$1</b> 的現行字串 ($2):',
 	'translate-edit-message-in-fb' => '在 <b>$1</b> 於倚靠語言中的現行字串 ($2):',
 );
 
+$wgTranslateMessages['zh'] = $wgTranslateMessages['zh-hans'];
 $wgTranslateMessages['zh-cn'] = $wgTranslateMessages['zh-hans'];
 $wgTranslateMessages['zh-hk'] = $wgTranslateMessages['zh-hant'];
 $wgTranslateMessages['zh-sg'] = $wgTranslateMessages['zh-hans'];
