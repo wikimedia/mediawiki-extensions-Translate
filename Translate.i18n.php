@@ -28,10 +28,25 @@ $messages['en'] = array(
 	'translate-edit-message-in-fb' => 'Current string in fallback language <b>$1</b> ($2):',
 );
 
-
-
 $wgTranslateMessages['ar'] = array(
 	'translate' => 'ترجمة',
+);
+
+$wgTranslateMessages['bcl'] = array(
+	'translate' => 'Sanglîan',
+	'translate-edit' => 'hirahón',
+	'translate-talk' => 'magtaram',
+	'translate-history' => 'historya',
+	'translate-task-view' => 'Hilingón an gabos na mga mensahe poon',
+	'translate-task-untranslated' => 'Hilingón an gabos na mga dai nasanglîan na mensahe poon',
+	'translate-task-review' => 'Riparohon an mga pagbabâgo sa',
+	'translate-task-reviewall' => 'Riparohon an gabos na mga pagsanglî sa',
+	'translate-settings' => 'Gusto kong $1 $2 sa tataramon na $3 limitado sa $4. $5',
+	'translate-paging' => '<div>Ipinapahiling an mga mensahe poon $1 hasta $2 kan $3. [ $4 | $5 ]</div>',
+	'translate-submit' => 'Kuânon',
+	'translate-next' => 'Sunod na pahina',
+	'translate-prev' => 'Nakaaging pahina',
+	'translate-optional' => '(opsyonal)',
 );
 
 $wgTranslateMessages['br'] = array(
@@ -81,6 +96,44 @@ $wgTranslateMessages['de'] = array(
 	'translate-edit-message-in-fb'  => 'Aktueller Text in der Ausweich-Sprache <b>$1</b> ($2):',
 );
 
+$wgTranslateMessages['eo'] = array(
+	'translate' => 'Tradukado',
+	'translate-edit' => 'redaktu',
+	'translate-talk' => 'diskuto',
+	'translate-history' => 'historio',
+	'translate-task-view' => 'Montri ĉiujn mesaĝojn de',
+	'translate-task-untranslated' => 'Montri ĉiujn netradukitajn mesaĝojn de',
+	'translate-task-review' => 'Rekontroli ŝanĝojn al',
+	'translate-task-reviewall' => 'Rekontroli ĉiujn tradukojn en',
+	'translate-task-export' => 'Eksporti tradukojn de',
+	'translate-task-export-to-file' => 'Eksporti tradukon en dosieron de',
+	'translate-settings' => 'Mi volas $1 $2 en lingvo $3 kun limo $4. $5',
+	'translate-paging' => '<div>Montras mesaĝojn de $1 ĝis $2 el $3. [ $4 | $5 ]</div>',
+	'translate-submit' => 'Alportu',
+	'translate-next' => 'Sekva paĝo',
+	'translate-prev' => 'Antaŭa paĝo',
+	'translate-optional' => '(opcionala)',
+	'translate-ignored' => '(ignorata)',
+	'translate-edit-message-format' => 'La formato de ĉi tiu mesaĝo estas <b>$1</b>.',
+	'translate-edit-message-in' => 'Aktuala literovico en <b>$1</b> ($2):',
+	'translate-edit-message-in-fb' => 'Aktuala literovico en refala lingvo <b>$1</b> ($2):',
+);
+
+$wgTranslateMessages['ext'] = array(
+	'translate' => 'Traucil',
+	'translate-edit' => 'eital',
+	'translate-talk' => 'caraba',
+	'translate-history' => 'estorial',
+	'translate-task-view' => 'Vel tolos mensahis endi',
+	'translate-task-untranslated' => 'Vel tolos mensahis sin traucil endi',
+	'translate-task-export' => 'Esporteal traucionis endi',
+	'translate-paging' => '<div>Muestrandu los mensahis endi el $1 al $2 de $3. [ $4 | $5 ]</div>',
+	'translate-next' => 'Siguienti páhina',
+	'translate-prev' => 'Páhina anteriol',
+	'translate-optional' => '(ocional)',
+	'translate-edit-message-format' => 'El hormatu desti mensahi es <b>$1</b>.',
+);
+
 $wgTranslateMessages['fr'] = array(
 	'translate' => 'Traduire',
 	'translate-edit-message-format' => 'Le format de ce message est <b>$1</b>.',
@@ -93,6 +146,29 @@ $wgTranslateMessages['he'] = array(
 	'translate-edit-message-format' => 'המבנה של הודעה זו הוא <b>$1</b>.',
 	'translate-edit-message-in'     => 'המחרוזת הנוכחית ל־<b>$1</b> ($2):',
 	'translate-edit-message-in-fb'  => 'המחרוזת הנוכחית ל־<b>$1</b> בשפת הגיבוי ($2):',
+);
+
+$wgTranslateMessages['hsb'] = array(
+	'translate' => 'Přełožić',
+	'translate-edit' => 'wobdźěłać',
+	'translate-talk' => 'diskusija',
+	'translate-history' => 'stawizny',
+	'translate-task-view' => 'Pokazaj wšě zdźělenki z',
+	'translate-task-untranslated' => 'Pokazaj njepřełožene zdźělenki z',
+	'translate-task-review' => 'Přepruwuj změny za',
+	'translate-task-reviewall' => 'Přepruwuj wšě přełožki w',
+	'translate-task-export' => 'Eksportuj přełožki z',
+	'translate-task-export-to-file' => 'Eksportuj přełožk do dataje z',
+	'translate-settings' => '$1 $2 w rěči $3 z limitom $4.  $5',
+	'translate-paging' => '<div>Pokazuja so zdźělenki wot $1 do $2 z $3. [ $4 | $5 ]</div>',
+	'translate-submit' => 'Pokazać',
+	'translate-next' => 'Přichodna strona',
+	'translate-prev' => 'Předchadna strona',
+	'translate-optional' => '(opcionalny)',
+	'translate-ignored' => '(ignorowany)',
+	'translate-edit-message-format' => 'Format tuteje zdźělenki je <b>$1</b>.',
+	'translate-edit-message-in' => 'Aktualny tekst w <b>$1</b> ($2):',
+	'translate-edit-message-in-fb' => 'Aktualny tekst we wuhibnej rěči <b>$1</b> ($2):',
 );
 
 $wgTranslateMessages['id'] = array(
