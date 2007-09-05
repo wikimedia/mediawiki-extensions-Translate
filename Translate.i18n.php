@@ -167,6 +167,29 @@ $messages['fr'] = array(
 	'translate-edit-message-in-fb' => 'Chaîne actuellement dans la langue par défaut <b>$1</b> ($2) :',
 );
 
+$messages['frc'] = array(
+	'translate' => 'Traduire',
+	'translate-edit' => 'changer',
+	'translate-talk' => 'discussion',
+	'translate-history' => 'changements',
+	'translate-task-view' => 'voir tous les messages',
+	'translate-task-untranslated' => 'voir tous les messages pas traduits',
+	'translate-task-review' => 'regarder les changements',
+	'translate-task-reviewall' => 'regarder toutes les traductions',
+	'translate-task-export' => 'exporter les traductions',
+	'translate-task-export-to-file' => 'exporter les traductions au dossier',
+	'translate-settings' => 'J\'veux $1 de la classe $2 en $3 avec une limite de $4. $5',
+	'translate-paging' => '<div>Les messages de $1 à $2 de $3. [ $4 | $5 ]</div>',
+	'translate-submit' => 'Charcher',
+	'translate-next' => 'Page suivante',
+	'translate-prev' => 'Page avant',
+	'translate-optional' => '(de choix)',
+	'translate-ignored' => '(ignoré)',
+	'translate-edit-message-format' => 'Le format de ce message est <b>$1</b>.',
+	'translate-edit-message-in' => 'Chaîne courante en <b>$1</b> ($2):',
+	'translate-edit-message-in-fb' => 'Chaîne courante dans la langue en reculant <b>$1</b> ($2):',
+);
+
 $messages['he'] = array(
 	'translate'                     => 'תרגום',
 	'translate-edit-message-format' => 'המבנה של הודעה זו הוא <b>$1</b>.',
