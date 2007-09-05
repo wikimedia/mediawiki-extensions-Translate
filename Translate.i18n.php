@@ -313,8 +313,25 @@ $messages['kk'] = $messages['kk-kz'];
 
 $messages['nl'] = array(
 	'translate' => 'Vertalen',
+	'translate-edit' => 'bewerk',
+	'translate-talk' => 'overleg',
+	'translate-history' => 'geschiedenis',
+	'translate-task-view' => 'alle teksten bekijken van',
+	'translate-task-untranslated' => 'alle onvertaalde teksten bekijken van',
+	'translate-task-review' => 'wijzigingen controleren aan',
+	'translate-task-reviewall' => 'alle vertalingen controleren in',
+	'translate-task-export' => 'vertalingen exporteren van',
+	'translate-task-export-to-file' => 'de vertaling naar bestand exporteren van',
+	'translate-settings' => 'Ik wil $1 $2 in taal $3 met limiet $4. $5',
+	'translate-paging' => '<div>Berichten $1 tot $2 van $3. [ $4 | $5 ]</div>',
+	'translate-submit' => 'Ophalen',
+	'translate-next' => 'volgende',
+	'translate-prev' => 'vorige',
+	'translate-optional' => '(optioneel)',
+	'translate-ignored' => '(genegeerd)',
+	'translate-edit-message-format' => 'Het formaat van dit bericht is <b>$1</b>.',
 	'translate-edit-message-in' => 'Huidige tekst in <b>$1</b> ($2):',
-	'translate-edit-message-in-fb' => 'Huidige tekst in alternatieve taal <b>$1</b> ($2):',
+	'translate-edit-message-in-fb' => 'Huidige tekst in reservetaal <b>$1</b> ($2):',
 );
 
 $messages['no'] = array(
