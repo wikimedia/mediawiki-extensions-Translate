@@ -343,9 +343,15 @@ $messages['no'] = array(
 
 $messages['oc'] = array(
 	'translate' => 'Revirar',
+	'translate-edit' => 'Edicion',
+	'translate-talk' => 'Discussion',
+	'translate-history' => 'Istoric',
+	'translate-next' => 'Pagina seguenta',
+	'translate-prev' => 'Pagina precedenta',
+	'translate-optional' => '(opcional)',
 	'translate-edit-message-format' => 'Lo format d\'aqueste messatge es <b>$1</b>.',
-	'translate-edit-message-in' => 'Cadena actualament dins <b>$1</b> ($2) :',
-	'translate-edit-message-in-fb' => 'Cadena actualament dins la lenga per defaut <b>$1</b> ($2) :',
+	'translate-edit-message-in' => 'Cadena actualament dins <b>$1</b> (Messages$2.php) :',
+	'translate-edit-message-in-fb' => 'Cadena actualament dins la lenga per defaut <b>$1</b> (Messages$2.php) :',
 );
 
 /* Piedmontese (Bèrto 'd Sèra) */
