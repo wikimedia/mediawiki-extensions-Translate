@@ -30,6 +30,25 @@ $messages['en'] = array(
 
 $messages['ar'] = array(
 	'translate' => 'ترجمة',
+	'translate-edit' => 'عدل',
+	'translate-talk' => 'نقاش',
+	'translate-history' => 'تاريخ',
+	'translate-task-view' => 'عرض كل الرسائل من',
+	'translate-task-untranslated' => 'عرض كل الرسائل غير المترجمة من',
+	'translate-task-review' => 'عرض التغييرات ل',
+	'translate-task-reviewall' => 'عرض كل الترجمات في',
+	'translate-task-export' => 'صدر الترجمات من',
+	'translate-task-export-to-file' => 'صدر الترجمة لملف من',
+	'translate-settings' => 'أريد أن $1 $2 في اللغة $3 بالحد $4. $5',
+	'translate-paging' => '<div>عرض الرسائل من $1 إلى $2 ل$3. [ $4 | $5 ]</div>',
+	'translate-submit' => 'إيجاد',
+	'translate-next' => 'الصفحة التالية',
+	'translate-prev' => 'الصفحة السابقة',
+	'translate-optional' => '(اختياري)',
+	'translate-ignored' => '(متجاهل)',
+	'translate-edit-message-format' => 'صياغة هذه الرسالة هي <b>$1</b>.',
+	'translate-edit-message-in' => 'النص الحالي ب <b>$1</b> ($2):',
+	'translate-edit-message-in-fb' => 'النص الحالي باللغة المراجعة <b>$1</b> ($2):',
 );
 
 $messages['bcl'] = array(
