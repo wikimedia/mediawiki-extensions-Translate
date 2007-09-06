@@ -56,7 +56,7 @@ abstract class MessageGroup {
 			}
 		}
 		if ( $translation === $fallback ) {
-			if ( $m['defined'] ) {
+			if ( $m['pageexists'] ) {
 				$comment = "#identical but defined";
 				return true;
 			} else {
@@ -231,6 +231,7 @@ abstract class ExtensionMessageGroup extends MessageGroup {
 			$this->exportStart ) . "\n";
 
 		foreach ($this->msgArray['en'] as $key => $msg) {
+			if ( !isset( $array[$key] ) ) { continue; }
 			$line = $this->exportLine($key, $array[$key], $this->exportPad);
 			if ( $line !== null ) {
 				$txt .= $this->exportLineP . $line;
@@ -485,7 +486,7 @@ class CategoryTreeExtensionGroup extends MultipleFileMessageGroup {
 	protected $messageFile  = 'CategoryTree/CategoryTree.i18n.php';
 	protected $filePattern  = 'CategoryTree/CategoryTree.i18n.$CODE.php';
 
-	protected $exportStart = '$messages[\'$CODE\'] = array(';
+	protected $exportStart = '$messages = array(';
 	protected $exportEnd   = '),';
 
 }
@@ -552,7 +553,7 @@ class ContactPageExtensionGroup extends MultipleFileMessageGroup {
 	protected $messageFile  = 'ContactPage/ContactPage.i18n.php';
 	protected $filePattern  = 'ContactPage/ContactPage.i18n.$CODE.php';
 
-	protected $exportStart = '$messages[\'$CODE\'] = array(';
+	protected $exportStart = '$messages = array(';
 	protected $exportLineP = '';
 	protected $exportEnd   = '),';
 
@@ -681,7 +682,7 @@ class FlaggedRevsMessageGroup extends ExtensionMessageGroup {
 	protected $arrName     = 'RevisionreviewMessages';
 	protected $messageFile = 'FlaggedRevs/FlaggedRevsPage.i18n.php';
 
-	protected $exportStart = '$RevisionreviewMessage[\'$CODE\'] = array(';
+	protected $exportStart = '$RevisionreviewMessages[\'$CODE\'] = array(';
 	protected $exportPrefix= '';
 	protected $exportLineP = "\t";
 	protected $exportEnd   = ');';

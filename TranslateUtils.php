@@ -6,12 +6,7 @@ class TranslateUtils {
 	const MSG = "translate-";
 
 	public static function databaseLanguageSuffix( $language ) {
-		global $wgContLang;
-		if ( $wgContLang->getCode() !== $language ) {
-			return '/' . $language;
-		} else {
-			return '';
-		}
+		return '/' . $language;
 	}
 
 	public static function title( $key, $language ) {
@@ -46,7 +41,6 @@ class TranslateUtils {
 			$messages[$key]['optional'] = false;
 			$messages[$key]['ignored']  = false;
 			$messages[$key]['changed']  = false;
-			$messages[$key]['defined']  = false;
 			$messages[$key]['pageexists'] = false;
 			$messages[$key]['talkexists'] = false;
 		}
@@ -180,7 +174,7 @@ class TranslateUtils {
 		return $tableheader;
 	}
 
-	public static function makeListing( $messages, $language ) {
+	public static function makeListing( $messages, $language, $group ) {
 		global $wgUser;
 		$sk = $wgUser->getSkin();
 		wfLoadExtensionMessages( 'Translate' );
@@ -218,8 +212,6 @@ class TranslateUtils {
 
 			$page['edit'] = $uimsg['edit'];
 			if ( $wgUser->isAllowed( 'translate' ) ) {
-				// UGLY HACK
-				$group = $GLOBALS['wgRequest']->getText('group', '');
 				$page['edit'] = $sk->makeKnownLinkObj( $page['object'], $uimsg['edit'], "action=edit&loadgroup=$group" );
 			}
 			$page['history'] = $sk->makeKnownLinkObj( $page['object'], $uimsg['history'], 'action=history' );

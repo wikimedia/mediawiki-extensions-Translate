@@ -132,7 +132,7 @@ class ViewMessagesTask extends TranslateTask {
 
 		return
 			$tableheader .
-			TranslateUtils::makeListing( $this->messages, $this->options->getLanguage() ) .
+			TranslateUtils::makeListing( $this->messages, $this->options->getLanguage(), $this->messageGroup->getId() ) .
 			$tablefooter;
 	}
 
@@ -212,7 +212,7 @@ class ReviewAllMessagesTask extends ReviewMessagesTask {
 	protected function filterUnchanged() {
 		foreach ( $this->messages as $key => $o ) {
 			$translation = $o['database'] ? $o['database'] : $o['infile'];
-			if ( $o['pageexists'] && $translation != $o['definition'] ) {
+			if ( $o['pageexists'] || ( $translation !== null && $translation != $o['definition'] ) ) {
 				$this->messages[$key]['changed'] = true;
 			} else {
 				unset( $this->messages[$key] );
