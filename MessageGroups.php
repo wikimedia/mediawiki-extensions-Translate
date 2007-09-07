@@ -919,6 +919,19 @@ class NewuserLogMessageGroup extends ExtensionMessageGroup {
 	}
 }
 
+class NewUserNotifMessageGroup extends ExtensionMessageGroup {
+	protected $label   = 'Extension: New User Notification';
+	protected $id      = 'ext-newusernotif';
+
+	protected $functionName = 'efNewUserNotifMessages';
+	protected $messageFile  = 'NewUserNotif/NewUserNotif.i18n.php';
+
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportPrefix= '';
+	protected $exportLineP = '';
+	protected $exportEnd   = '),';
+}
+
 class OggHandlerMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Extension: Ogg Handler';
 	protected $id    = 'ext-ogghandler';
@@ -929,6 +942,45 @@ class OggHandlerMessageGroup extends ExtensionMessageGroup {
 	protected $exportStart = '\'$CODE\' => array(';
 	protected $exportPrefix= "\t";
 	protected $exportLineP = "\t";
+	protected $exportEnd   = '),';
+}
+
+class OversightMessageGroup extends ExtensionMessageGroup {
+	protected $label   = 'Extension: Oversight';
+	protected $id      = 'ext-oversight';
+
+	protected $functionName = 'efHideRevisionMessages';
+	protected $messageFile  = 'Oversight/HideRevision.i18n.php';
+
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportPrefix= '';
+	protected $exportLineP = '';
+	protected $exportEnd   = '),';
+}
+
+class PageByExtensionGroup extends MultipleFileMessageGroup {
+	protected $label = 'Extension: Page By';
+	protected $id    = 'ext-pageby';
+
+	protected $arrName      = 'messages';
+	protected $messageFile  = 'PageBy/PageBy.i18n.php';
+	protected $filePattern  = 'PageBy/PageBy.i18n.$CODE.php';
+
+	protected $exportStart = '$messages = array(';
+	protected $exportEnd   = ');';
+
+}
+
+class ParserFunctionsMessageGroup extends ExtensionMessageGroup {
+	protected $label   = 'Extension: Parser Functions';
+	protected $id      = 'ext-parserfunctions';
+
+	protected $functionName = 'efParserFunctionsMessages';
+	protected $messageFile  = 'ParserFunctions/ParserFunctions.i18n.php';
+
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportPrefix= '';
+	protected $exportLineP = '';
 	protected $exportEnd   = '),';
 }
 
@@ -955,6 +1007,44 @@ class PicturePopupMessageGroup extends ExtensionMessageGroup {
 	protected $exportStart = '\'$CODE\' => array(';
 	protected $exportPrefix= '';
 	protected $exportLineP = '';
+	protected $exportEnd   = '),';
+}
+
+class PlayerExtensionGroup extends MultipleFileMessageGroup {
+	protected $label = 'Extension: Player';
+	protected $id    = 'ext-player';
+
+	protected $arrName      = 'messages';
+	protected $messageFile  = 'Player/Player.i18n.php';
+	protected $filePattern  = 'Player/Player.i18n.$CODE.php';
+
+	protected $exportStart = '$messages = array(';
+	protected $exportEnd   = ');';
+}
+
+class ProfileMonitorMessageGroup extends ExtensionMessageGroup {
+	protected $label   = 'Extension: ProfileMonitor';
+	protected $id      = 'ext-profilemonitor';
+
+	protected $functionName = 'efProfileMonitorMessages';
+	protected $messageFile  = 'ProfileMonitor/ProfileMonitor.i18n.php';
+
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportPrefix= '';
+	protected $exportLineP = '';
+	protected $exportEnd   = '),';
+}
+
+class ProofreadPageMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Extension: Proofread Page';
+	protected $id    = 'ext-proofreadpage';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'ProofreadPage/ProofreadPage.i18n.php';
+
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportPrefix= "\t";
+	protected $exportLineP = "\t";
 	protected $exportEnd   = '),';
 }
 
