@@ -1125,7 +1125,7 @@ class SyntaxHighlight_GeSHiMessageGroup extends ExtensionMessageGroup {
 	protected $id    = 'ext-syntaxhighlightgeshi';
 
 	protected $functionName = 'efSyntaxHighlight_GeSHiMessages';
-	protected $messageFile  = 'SyntaxHighlight_GeSHi/SyntaxHighlight_GeSH.i18n.php';
+	protected $messageFile  = 'SyntaxHighlight_GeSHi/SyntaxHighlight_GeSHi.i18n.php';
 
 	protected $exportStart = '\'$CODE\' => array(';
 	protected $exportPrefix= '';
