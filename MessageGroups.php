@@ -1007,6 +1007,19 @@ class PatrollerMessageGroup extends ExtensionMessageGroup {
 	protected $exportEnd   = '),';
 }
 
+class PdfHandlerMessageGroup extends ExtensionMessageGroup {
+	protected $label   = 'Extension: Pdf Handler';
+	protected $id      = 'ext-pdfhandler';
+
+	protected $functionName = 'efPdfHandlerMessages';
+	protected $messageFile  = 'PdfHandler/PdfHandler.i18n.php';
+
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportPrefix= "\t\t";
+	protected $exportLineP = "\t\t\t";
+	protected $exportEnd   = '),';
+}
+
 class PicturePopupMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Extension: PicturePopup';
 	protected $id      = 'ext-picturepopup';

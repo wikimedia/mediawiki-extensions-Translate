@@ -94,6 +94,7 @@ $wgTranslateAC = array(
 'ext-parserfunctions'       => 'ParserfunctionsMessageGroup',
 'ext-patroller'             => 'PatrollerMessageGroup',
 'ext-picturepopup'          => 'PicturePopupMessageGroup',
+'ext-pdfhandler'            => 'PdfHandlerMessageGroup',
 'ext-player'                => 'PlayerMessageGroup',
 'ext-profilemonitor'        => 'ProfileMonitorMessageGroup',
 'ext-proofreadpage'         => 'ProofreadPageMessageGroup',
