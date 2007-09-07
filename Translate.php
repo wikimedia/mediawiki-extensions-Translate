@@ -101,11 +101,16 @@ $wgTranslateAC = array(
 'ext-selectcategory'        => 'SelectCategoryExtensionGroup',
 'ext-sitematrix'            => 'SiteMatrixMessageGroup',
 'ext-smoothgallery'         => 'SmoothGalleryExtensionGroup',
+'ext-spamblacklist'         => 'SpamBlacklistMessageGroup',
+'ext-syntaxhighlightgeshi'  => 'SyntaxHighlight_GeSHiMessageGroup',
 'ext-talkhere'              => 'TalkHereExtensionGroup',
 'ext-translate'             => 'TranslateMessageGroup',
 'ext-userimages'            => 'UserImagesMessageGroup',
 'ext-usernameblacklist'     => 'UsernameBlacklistMessageGroup',
 'ext-vote'                  => 'VoteMessageGroup',
+'ext-webstore'              => 'WebStoreMessageGroup',
+'ext-wikidatalanguagemanager' => 'WikidataLanguageManagerMessageGroup',
+'ext-wikidataomegawikidatasearch' => 'WikidataOmegaWikiDataSearchMessageGroup',
 'out-freecol'               => 'FreeColMessageGroup',
 );
 

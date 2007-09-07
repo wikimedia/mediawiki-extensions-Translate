@@ -1107,6 +1107,32 @@ class SmoothGalleryExtensionGroup extends MultipleFileMessageGroup {
 	protected $exportEnd   = ');';
 }
 
+class SpamBlacklistMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Extension: Spam Blacklist';
+	protected $id    = 'ext-spamblacklist';
+
+	protected $functionName = 'efSpamBlacklistMessages';
+	protected $messageFile  = 'SpamBlacklist/SpamBlacklist.i18n.php';
+
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportPrefix= '';
+	protected $exportLineP = '';
+	protected $exportEnd   = '),';
+}
+
+class SyntaxHighlight_GeSHiMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Extension: Syntax Highlight GeSHi';
+	protected $id    = 'ext-syntaxhighlightgeshi';
+
+	protected $functionName = 'efSyntaxHighlight_GeSHiMessages';
+	protected $messageFile  = 'SyntaxHighlight_GeSHi/SyntaxHighlight_GeSH.i18n.php';
+
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportPrefix= '';
+	protected $exportLineP = '';
+	protected $exportEnd   = '),';
+}
+
 class TalkHereExtensionGroup extends MultipleFileMessageGroup {
 	protected $label = 'Extension: Talk Here';
 	protected $id    = 'ext-talkhere';
@@ -1164,6 +1190,35 @@ class VoteMessageGroup extends ExtensionMessageGroup {
 	protected $exportPrefix= '';
 	protected $exportLineP = '';
 	protected $exportEnd   = '),';
+}
+
+class WebStoreMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Extension: Web Store';
+	protected $id    = 'ext-webstore';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'WebStore/WebStore.i18n.php';
+
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportPrefix= "\t";
+	protected $exportLineP = "\t";
+	protected $exportEnd   = '),';
+}
+
+class WikidataLanguageManagerMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Extension: Wikidata Language Manager';
+	protected $id    = 'ext-wikidatalanguagemanager';
+
+	protected $arrName     = 'wgLanguageManagerMessages';
+	protected $messageFile = 'Wikidata/SpecialLanguages.i18n.php';
+}
+
+class WikidataOmegaWikiDataSearchMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Extension: Wikidata OmegaWiki Data Search';
+	protected $id    = 'ext-wikidataomegawikidatasearch';
+
+	protected $arrName     = 'wgDataSearchMessages';
+	protected $messageFile = 'Wikidata/OmegaWiki/SpecialDatasearch.i18n.php';
 }
 
 class FreeColMessageGroup extends MessageGroup {
