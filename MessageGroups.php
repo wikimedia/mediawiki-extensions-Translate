@@ -1010,7 +1010,7 @@ class PicturePopupMessageGroup extends ExtensionMessageGroup {
 	protected $exportEnd   = '),';
 }
 
-class PlayerExtensionGroup extends MultipleFileMessageGroup {
+class PlayerMessageGroup extends MultipleFileMessageGroup {
 	protected $label = 'Extension: Player';
 	protected $id    = 'ext-player';
 
