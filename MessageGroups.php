@@ -487,7 +487,7 @@ class CategoryTreeExtensionGroup extends MultipleFileMessageGroup {
 	protected $filePattern  = 'CategoryTree/CategoryTree.i18n.$CODE.php';
 
 	protected $exportStart = '$messages = array(';
-	protected $exportEnd   = '),';
+	protected $exportEnd   = ');';
 
 }
 
@@ -509,6 +509,14 @@ class CheckUserMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'CheckUser/CheckUser.i18n.php';
 
 	protected $exportPad   = 25;
+}
+
+class ChemFunctionsMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Extension: Chemistry';
+	protected $id    = 'ext-chemistry';
+
+	protected $arrName     = 'wgChemFunctions_Messages';
+	protected $messageFile = 'Chemistry/ChemFunctions.i18n.php';
 }
 
 class CiteSpecialMessageGroup extends ExtensionMessageGroup {
@@ -555,10 +563,20 @@ class ContactPageExtensionGroup extends MultipleFileMessageGroup {
 
 	protected $exportStart = '$messages = array(';
 	protected $exportLineP = '';
-	protected $exportEnd   = '),';
+	protected $exportEnd   = ');';
 
 }
 
+class ContributionseditcountMessageGroup extends ExtensionMessageGroup {
+	protected $label   = 'Extension: Contributionseditcount';
+	protected $id      = 'ext-contributionseditcount';
+
+	protected $functionName = 'efContributionseditcountMessages';
+	protected $messageFile  = 'Contributionseditcount/Contributionseditcount.i18n.php';
+
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportEnd   = '),';
+}
 
 class ContributorsMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Extension: Contributors';
@@ -700,6 +718,30 @@ class FilePathMessageGroup extends ExtensionMessageGroup {
 	protected $exportPad   = 18;
 }
 
+class GadgetsExtensionGroup extends MultipleFileMessageGroup {
+	protected $label = 'Extension: Gadgets';
+	protected $id    = 'ext-gadgets';
+
+	protected $arrName      = 'messages';
+	protected $messageFile  = 'Gadgets/Gadgets.i18n.php';
+	protected $filePattern  = 'Gadgets/Gadgets.i18n.$CODE.php';
+
+	protected $exportStart = '$messages = array(';
+	protected $exportEnd   = ');';
+}
+
+class GiveRollbackMessageGroup extends ExtensionMessageGroup {
+	protected $label   = 'Extension: Give Rollback';
+	protected $id      = 'ext-giverollback';
+
+	protected $functionName = 'efGiveRollbackMessages';
+	protected $messageFile  = 'GiveRollback/GiveRollback.i18n.php';
+
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportLineP = '';
+	protected $exportEnd   = '),';
+}
+
 class ImageMapMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Extension: Image Map';
 	protected $id    = 'ext-imagemap';
@@ -717,6 +759,30 @@ class ImageMapMessageGroup extends ExtensionMessageGroup {
 	function fillBools( &$array ) {
 		$array['imagemap_desc_types']['ignored'] = true;
 	}
+}
+
+class InputBoxMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Extension: Input Box';
+	protected $id    = 'ext-inputbox';
+
+	protected $functionName = 'efInputBoxMessages';
+	protected $messageFile  = 'inputbox/InputBox.i18n.php';
+
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportLineP = "\t";
+	protected $exportEnd   = '),';
+
+	protected $exportPad   = 26;
+}
+
+class LinkSearchMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Extension: Link Search';
+	protected $id    = 'ext-linksearch';
+
+	protected $arrName     = 'wgLinkSearchMessages';
+	protected $messageFile = 'LinkSearch/LinkSearch.i18n.php';
+
+	protected $exportPad   = 19;
 }
 
 class LuceneSearchMessageGroup extends ExtensionMessageGroup {
@@ -771,6 +837,28 @@ class MakeValidateMessageGroup extends ExtensionMessageGroup {
 	protected $exportPad   = 32;
 }
 
+class MathStatMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Extension: Math Stat';
+	protected $id    = 'ext-mathstat';
+
+	protected $arrName     = 'wgMathStatFunctionsMessages';
+	protected $messageFile = 'MathStatFunctions/MathStatFunctions.i18n.php';
+}
+
+class MediaFunctionsMessageGroup extends ExtensionMessageGroup {
+	protected $label   = 'Extension: Media Functions';
+	protected $id      = 'ext-mediafunctions';
+
+	protected $functionName = 'efMediaFunctionsMessages';
+	protected $messageFile  = 'MediaFunctions/MediaFunctions.i18n.php';
+
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportLineP = '';
+	protected $exportEnd   = '),';
+
+	protected $exportPad   = 31;
+}
+
 class MiniDonationMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Extension: Mini Donation';
 	protected $id    = 'ext-minidonation';
@@ -790,6 +878,18 @@ class MinimumNameLengthMessageGroup extends ExtensionMessageGroup {
 	protected $exportPrefix= '';
 	protected $exportLineP = '';
 	protected $exportEnd   = '),';
+}
+
+class MiniPreviewExtensionGroup extends MultipleFileMessageGroup {
+	protected $label = 'Extension: Mini Preview';
+	protected $id    = 'ext-minipreview';
+
+	protected $arrName      = 'messages';
+	protected $messageFile  = 'MiniPreview/MiniPreview.i18n.php';
+	protected $filePattern  = 'MiniPreview/MiniPreview.i18n.$CODE.php';
+
+	protected $exportStart = '$messages = array(';
+	protected $exportEnd   = ');';
 }
 
 class NewestPagesMessageGroup extends ExtensionMessageGroup {
@@ -825,6 +925,11 @@ class OggHandlerMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'OggHandler/OggHandler.i18n.php';
+
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportPrefix= "\t";
+	protected $exportLineP = "\t";
+	protected $exportEnd   = '),';
 }
 
 class PatrollerMessageGroup extends ExtensionMessageGroup {
@@ -878,6 +983,18 @@ class ResignMessageGroup extends ExtensionMessageGroup {
 	protected $exportEnd   = '),';
 }
 
+class SelectCategoryExtensionGroup extends MultipleFileMessageGroup {
+	protected $label = 'Extension: Select Category';
+	protected $id    = 'ext-selectcategory';
+
+	protected $arrName      = 'messages';
+	protected $messageFile  = 'SelectCategory/i18n/SelectCategory.i18n.php';
+	protected $filePattern  = 'SelectCategory/i18n/SelectCategory.i18n.$CODE.php';
+
+	protected $exportStart = '$messages = array(';
+	protected $exportEnd   = ');';
+}
+
 class SiteMatrixMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Extension: Site Matrix';
 	protected $id    = 'ext-sitematrix';
@@ -886,6 +1003,30 @@ class SiteMatrixMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'SiteMatrix/SiteMatrix.i18n.php';
 
 	protected $exportPad   = 13;
+}
+
+class SmoothGalleryExtensionGroup extends MultipleFileMessageGroup {
+	protected $label = 'Extension: Smooth Gallery';
+	protected $id    = 'ext-smoothgallery';
+
+	protected $arrName      = 'messages';
+	protected $messageFile  = 'SmoothGallery/SmoothGallery.i18n.php';
+	protected $filePattern  = 'SmoothGallery/SmoothGallery.i18n.$CODE.php';
+
+	protected $exportStart = '$messages = array(';
+	protected $exportEnd   = ');';
+}
+
+class TalkHereExtensionGroup extends MultipleFileMessageGroup {
+	protected $label = 'Extension: Talk Here';
+	protected $id    = 'ext-talkhere';
+
+	protected $arrName      = 'messages';
+	protected $messageFile  = 'TalkHere/TalkHere.i18n.php';
+	protected $filePattern  = 'TalkHere/TalkHere.i18n.$CODE.php';
+
+	protected $exportStart = '$messages = array(';
+	protected $exportEnd   = ');';
 }
 
 class TranslateMessageGroup extends ExtensionMessageGroup {
