@@ -57,6 +57,7 @@ $wgTranslateAC = array(
 'ext-confiraccount'         => 'ConfirmAccountMessageGroup',
 'ext-confirmedit'           => 'ConfirmEditMessageGroup',
 'ext-contactpage'           => 'ContactPageExtensionGroup',
+'ext-contributionscores'    => 'ContributionScoresMessageGroup',
 'ext-contributionseditcount'=> 'ContributionseditcountMessageGroup',
 'ext-contributors'          => 'ContributorsMessageGroup',
 'ext-countedits'            => 'CountEditsMessageGroup',

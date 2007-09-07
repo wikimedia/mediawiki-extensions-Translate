@@ -567,6 +567,16 @@ class ContactPageExtensionGroup extends MultipleFileMessageGroup {
 
 }
 
+class ContributionScoresMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Extension: Contribution Scores';
+	protected $id    = 'ext-contributionscores';
+
+	protected $arrName     = 'allMessages';
+	protected $messageFile = 'ContributionScores/ContributionScores.i18n.php';
+
+	protected $exportLineP = "\t";
+}
+
 class ContributionseditcountMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Extension: Contributionseditcount';
 	protected $id      = 'ext-contributionseditcount';
