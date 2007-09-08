@@ -68,6 +68,29 @@ $messages['bcl'] = array(
 	'translate-optional' => '(opsyonal)',
 );
 
+$messages['bn'] = array(
+	'translate' => 'অনুবাদ করুন',
+	'translate-edit' => 'সম্পাদনা',
+	'translate-talk' => 'আলোচনা',
+	'translate-history' => 'ইতিহাস',
+	'translate-task-view' => 'সমস্ত বার্তা',
+	'translate-task-untranslated' => 'অনুবাদ হয়নি এমন সব বার্তা',
+	'translate-task-review' => 'পরিবর্তনসমূহ পুনর্বিবেচনা',
+	'translate-task-reviewall' => 'সমস্ত অনুবাদ পুনর্বিবেচনা',
+	'translate-task-export' => 'অনুবাদসমুহ প্রেরণ',
+	'translate-task-export-to-file' => 'অনুবাদসমূহ ফাইলে প্রেরণ',
+	'translate-settings' => 'আমি $1 $2 ,$3 ভাষাতে $4 টি বার্তা দেখতে চাই। $5',
+	'translate-paging' => '<div>$3 টি বার্তার মধ্যে $1 থেকে $2 বার্তা দেখানো হয়েছে। [ $4 | $5 ]</div>',
+	'translate-submit' => 'বের করো',
+	'translate-next' => 'পরবর্তী পাতা',
+	'translate-prev' => 'পূর্ববর্তী পাতা',
+	'translate-optional' => '(ঐচ্ছিক)',
+	'translate-ignored' => '(উপেক্ষিত)',
+	'translate-edit-message-format' => 'এই বার্তার ফরমেট হল <b>$1</b>।',
+	'translate-edit-message-in' => 'বর্তমান স্ট্রিং <b>$1</b> ($2):',
+	'translate-edit-message-in-fb' => 'পিছিয়ে পরা ভাষাতে বর্তমান স্ট্রিং <b>$1</b> ($2):',
+);
+
 $messages['br'] = array(
 	'translate' => 'Treiñ',
 	'translate-edit-message-format' => 'Furmad ar gemennadenn-mañ zo <b>$1</b>.',
