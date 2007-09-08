@@ -574,7 +574,10 @@ class ContributionScoresMessageGroup extends ExtensionMessageGroup {
 	protected $arrName     = 'allMessages';
 	protected $messageFile = 'ContributionScores/ContributionScores.i18n.php';
 
-	protected $exportLineP = "\t";
+	protected $exportPrefix= "\t";
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportLineP = "\t\t";
+	protected $exportEnd   = "),";
 }
 
 class ContributionseditcountMessageGroup extends ExtensionMessageGroup {
@@ -978,7 +981,19 @@ class PageByExtensionGroup extends MultipleFileMessageGroup {
 
 	protected $exportStart = '$messages = array(';
 	protected $exportEnd   = ');';
+}
 
+class PasswordResetMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Extension: Password Reset';
+	protected $id    = 'ext-passwordreset';
+
+	protected $arrName     = 'allMessages';
+	protected $messageFile = 'PasswordReset/PasswordReset.i18n.php';
+
+	protected $exportPrefix= "\t";
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportLineP = "\t\t";
+	protected $exportEnd   = "),";
 }
 
 class ParserFunctionsMessageGroup extends ExtensionMessageGroup {

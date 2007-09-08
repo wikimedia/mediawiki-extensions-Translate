@@ -91,6 +91,7 @@ $wgTranslateAC = array(
 'ext-ogghandler'            => 'OggHandlerMessageGroup',
 'ext-oversight'             => 'OversightMessageGroup',
 'ext-pageby'                => 'PageByExtensionGroup',
+'ext-passwordreset'         => 'PasswordResetMessageGroup',
 'ext-parserfunctions'       => 'ParserfunctionsMessageGroup',
 'ext-patroller'             => 'PatrollerMessageGroup',
 'ext-picturepopup'          => 'PicturePopupMessageGroup',
