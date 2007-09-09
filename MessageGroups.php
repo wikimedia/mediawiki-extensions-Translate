@@ -1086,6 +1086,19 @@ class ProofreadPageMessageGroup extends ExtensionMessageGroup {
 	protected $exportEnd   = '),';
 }
 
+class QuizMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Quiz (mw ext)';
+	protected $id    = 'ext-quiz';
+
+	protected $arrName     = 'wgQuizMessages';
+	protected $messageFile = 'Quiz/Quiz.i18n.php';
+
+	protected $exportPrefix= "\t";
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportLineP = "\t\t";
+	protected $exportEnd   = "),";
+}
+
 class RenameUserMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Extension: Rename User';
 	protected $id    = 'ext-renameuser';
@@ -1121,6 +1134,45 @@ class SelectCategoryExtensionGroup extends MultipleFileMessageGroup {
 
 	protected $exportStart = '$messages = array(';
 	protected $exportEnd   = ');';
+}
+
+class SignDocumentAMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Sign Document (a) (mw ext)';
+	protected $id    = 'ext-signdocumenta';
+
+	protected $arrName     = 'allMessages';
+	protected $messageFile = 'SignDocument/SignDocument.i18n.php';
+
+	protected $exportPrefix= "\t";
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportLineP = "\t\t";
+	protected $exportEnd   = "),";
+}
+
+class SignDocumentBMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Sign Document (b) (mw ext)';
+	protected $id    = 'ext-signdocumentb';
+
+	protected $arrName     = 'allMessages';
+	protected $messageFile = 'SignDocument/SpecialCreateSignDocument.i18n.php';
+
+	protected $exportPrefix= "\t";
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportLineP = "\t\t";
+	protected $exportEnd   = "),";
+}
+
+class SignDocumentCMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Sign Document (c) (mw ext)';
+	protected $id    = 'ext-signdocumentc';
+
+	protected $arrName     = 'allMessages';
+	protected $messageFile = 'SignDocument/SpecialSignDocument.i18n.php';
+
+	protected $exportPrefix= "\t";
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportLineP = "\t\t";
+	protected $exportEnd   = "),";
 }
 
 class SiteMatrixMessageGroup extends ExtensionMessageGroup {
@@ -1202,6 +1254,19 @@ class UserImagesMessageGroup extends ExtensionMessageGroup {
 	protected $exportPrefix= '';
 	protected $exportLineP = '';
 	protected $exportEnd   = '),';
+}
+
+class UserMergeMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'User Merge (mw ext)';
+	protected $id    = 'ext-usermerge';
+
+	protected $arrName     = 'allMessages';
+	protected $messageFile = 'UserMerge/UserMerge.i18n.php';
+
+	protected $exportPrefix= "\t";
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportLineP = "\t\t";
+	protected $exportEnd   = "),";
 }
 
 class UsernameBlacklistMessageGroup extends ExtensionMessageGroup {
