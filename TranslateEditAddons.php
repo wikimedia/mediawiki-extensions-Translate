@@ -23,6 +23,7 @@ class TranslateEditAddons {
 */
 
 	private static function doBox( $msg, $code, $i18nmsg ) {
+		global $wgUser;
 		static $names = false;
 		if (!$names ) { $names = Language::getLanguageNames(); }
 		if (!$msg ) { return ''; }
@@ -30,6 +31,7 @@ class TranslateEditAddons {
 		$prettyCode = TranslateUtils::prettyCode( $code );
 
 		/* Approximate row count */
+		$cols = $wgUser->getOption( 'cols' );
 		$rows = count(explode("\n", $msg)) -1;
 		$rows = max(3, min(15, $rows));
 
@@ -37,7 +39,7 @@ class TranslateEditAddons {
 
 		return
 			wfMsg( $i18nmsg, $names[$code], $prettyCode ) . " " .
-			Xml::Element( 'textarea', array( 'rows' => $rows ), $msg );
+			Xml::Element( 'textarea', array( 'rows' => $rows, 'cols' => $cols ), $msg );
 	}
 
 	/**

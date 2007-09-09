@@ -971,7 +971,7 @@ class OversightMessageGroup extends ExtensionMessageGroup {
 	protected $exportEnd   = '),';
 }
 
-class PageByExtensionGroup extends MultipleFileMessageGroup {
+class PageByMessageGroup extends MultipleFileMessageGroup {
 	protected $label = 'Extension: Page By';
 	protected $id    = 'ext-pageby';
 
