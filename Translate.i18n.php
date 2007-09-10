@@ -392,6 +392,13 @@ $messages['ru'] = array(
 	'translate-edit-message-in-fb' => 'Текущее выражение на базовом языке <b>$1</b> ($2):',
 );
 
+$messages['sah'] = array(
+	'translate' => 'Тылбаас',
+	'translate-edit-message-format' => 'Бу этии формата <b>$1</b>.',
+	'translate-edit-message-in' => 'Бу этии <b>$1</b> ($2) тылынан:',
+	'translate-edit-message-in-fb' => 'Бу этии сүрүн <b>$1</b> ($2) тылынан:',
+);
+
 $messages['sk'] = array(
 	'translate' => 'Preložiť',
 	'translate-edit-message-format' => 'Formát tejto správy je <b>$1</b>.',
