@@ -86,7 +86,7 @@ abstract class MessageGroup {
 }
 
 class CoreMessageGroup extends MessageGroup {
-	protected $label = 'Core system messages';
+	protected $label = 'MediaWiki messages';
 	protected $id    = 'core';
 
 	public function getMessageFile( $code ) { return "Messages$code.php"; }
@@ -160,6 +160,8 @@ abstract class ExtensionMessageGroup extends MessageGroup {
 	protected $exportPrefix= '';
 	protected $exportPad   = false;
 	protected $exportLineP = "\t";
+
+	public function getLabel() { return $this->label . " (mw ext)"; }
 
 	public function getMessageFile( $code ) { return $this->messageFile; }
 
@@ -307,7 +309,7 @@ class MultipleFileMessageGroup extends ExtensionMessageGroup {
 }
 
 class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: All extensions';
+	protected $label = 'All extensions';
 	protected $id    = 'ext-0-all';
 
 	private $classes = null;
@@ -380,7 +382,7 @@ class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
 }
 
 class AjaxShowEditorsMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Ajax Show Editors';
+	protected $label = 'Ajax Show Editors';
 	protected $id    = 'ext-ajaxshoweditors';
 
 	protected $arrName     = 'wgAjaxShowEditorsMessages';
@@ -388,7 +390,7 @@ class AjaxShowEditorsMessageGroup extends ExtensionMessageGroup {
 }
 
 class AntiSpoofMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Anti Spoof';
+	protected $label = 'Anti Spoof';
 	protected $id    = 'ext-antispoof';
 
 	protected $arrName     = 'wgAntiSpoofMessages';
@@ -398,7 +400,7 @@ class AntiSpoofMessageGroup extends ExtensionMessageGroup {
 }
 
 class AsksqlMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Asksql';
+	protected $label = 'Asksql';
 	protected $id    = 'ext-asksql';
 
 	protected $functionName = 'efAsksqlMessages';
@@ -413,7 +415,7 @@ class AsksqlMessageGroup extends ExtensionMessageGroup {
 }
 
 class BackAndForthMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Back and Forth';
+	protected $label = 'Back and Forth';
 	protected $id    = 'ext-backandforth';
 
 	protected $functionName = 'efBackAndForthMessages';
@@ -426,7 +428,7 @@ class BackAndForthMessageGroup extends ExtensionMessageGroup {
 }
 
 class BadImageMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Bad Image';
+	protected $label = 'Bad Image';
 	protected $id    = 'ext-badimage';
 
 	protected $functionName = 'efBadImageMessages';
@@ -439,7 +441,7 @@ class BadImageMessageGroup extends ExtensionMessageGroup {
 }
 
 class BlockTitlesMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Block Titles';
+	protected $label = 'Block Titles';
 	protected $id    = 'ext-blocktitles';
 
 	protected $functionName = 'efBlockTitlesMessages';
@@ -452,7 +454,7 @@ class BlockTitlesMessageGroup extends ExtensionMessageGroup {
 }
 
 class BoardVoteMessageGroup extends ExtensionMessageGroup {
-	protected $label   = 'Extension: Board Vote';
+	protected $label   = 'Board Vote';
 	protected $id      = 'ext-boardvote';
 
 	protected $arrName     = 'wgBoardVoteMessages';
@@ -466,7 +468,7 @@ class BoardVoteMessageGroup extends ExtensionMessageGroup {
 }
 
 class BookInformationMessageGroup extends ExtensionMessageGroup {
-	protected $label   = 'Extension: Book Information';
+	protected $label   = 'Book Information';
 	protected $id      = 'ext-bookinformation';
 
 	protected $functionName = 'efBookInformationMessages';
@@ -479,7 +481,7 @@ class BookInformationMessageGroup extends ExtensionMessageGroup {
 }
 
 class CategoryTreeExtensionGroup extends MultipleFileMessageGroup {
-	protected $label = 'Extension: Category Tree';
+	protected $label = 'Category Tree';
 	protected $id    = 'ext-categorytree';
 
 	protected $arrName      = 'messages';
@@ -492,7 +494,7 @@ class CategoryTreeExtensionGroup extends MultipleFileMessageGroup {
 }
 
 class CentralAuthMessageGroup extends ExtensionMessageGroup {
-	protected $label   = 'Extension: Central Auth';
+	protected $label   = 'Central Auth';
 	protected $id      = 'ext-centralauth';
 
 	protected $arrName     = 'wgCentralAuthMessages';
@@ -502,7 +504,7 @@ class CentralAuthMessageGroup extends ExtensionMessageGroup {
 }
 
 class CheckUserMessageGroup extends ExtensionMessageGroup {
-	protected $label   = 'Extension: Check User';
+	protected $label   = 'Check User';
 	protected $id      = 'ext-checkuser';
 
 	protected $arrName     = 'wgCheckUserMessages';
@@ -512,7 +514,7 @@ class CheckUserMessageGroup extends ExtensionMessageGroup {
 }
 
 class ChemFunctionsMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Chemistry';
+	protected $label = 'Chemistry';
 	protected $id    = 'ext-chemistry';
 
 	protected $arrName     = 'wgChemFunctions_Messages';
@@ -520,7 +522,7 @@ class ChemFunctionsMessageGroup extends ExtensionMessageGroup {
 }
 
 class CiteSpecialMessageGroup extends ExtensionMessageGroup {
-	protected $label   = 'Extension: Cite (special page)';
+	protected $label   = 'Cite (special page)';
 	protected $id      = 'ext-citespecial';
 
 	protected $arrName     = 'wgSpecialCiteMessages';
@@ -534,7 +536,7 @@ class CiteSpecialMessageGroup extends ExtensionMessageGroup {
 }
 
 class ConfirmAccountMessageGroup extends ExtensionMessageGroup {
-	protected $label   = 'Extension: Confirm Account';
+	protected $label   = 'Confirm Account';
 	protected $id      = 'ext-confirmaccount';
 
 	protected $arrName     = 'wgConfirmAccountMessages';
@@ -544,7 +546,7 @@ class ConfirmAccountMessageGroup extends ExtensionMessageGroup {
 }
 
 class ConfirmEditMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Confirm Edit';
+	protected $label = 'Confirm Edit';
 	protected $id    = 'ext-confirmedit';
 
 	protected $arrName     = 'wgConfirmEditMessages';
@@ -554,7 +556,7 @@ class ConfirmEditMessageGroup extends ExtensionMessageGroup {
 }
 
 class ContactPageExtensionGroup extends MultipleFileMessageGroup {
-	protected $label = 'Extension: Contact Page';
+	protected $label = 'Contact Page';
 	protected $id    = 'ext-contactpage';
 
 	protected $arrName      = 'messages';
@@ -568,7 +570,7 @@ class ContactPageExtensionGroup extends MultipleFileMessageGroup {
 }
 
 class ContributionScoresMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Contribution Scores';
+	protected $label = 'Contribution Scores';
 	protected $id    = 'ext-contributionscores';
 
 	protected $arrName     = 'allMessages';
@@ -581,7 +583,7 @@ class ContributionScoresMessageGroup extends ExtensionMessageGroup {
 }
 
 class ContributionseditcountMessageGroup extends ExtensionMessageGroup {
-	protected $label   = 'Extension: Contributionseditcount';
+	protected $label   = 'Contributionseditcount';
 	protected $id      = 'ext-contributionseditcount';
 
 	protected $functionName = 'efContributionseditcountMessages';
@@ -592,7 +594,7 @@ class ContributionseditcountMessageGroup extends ExtensionMessageGroup {
 }
 
 class ContributorsMessageGroup extends ExtensionMessageGroup {
-	protected $label   = 'Extension: Contributors';
+	protected $label   = 'Contributors';
 	protected $id      = 'ext-contributors';
 
 	protected $functionName = 'efContributorsMessages';
@@ -605,7 +607,7 @@ class ContributorsMessageGroup extends ExtensionMessageGroup {
 }
 
 class CountEditsMessageGroup extends ExtensionMessageGroup {
-	protected $label   = 'Extension: Count Edits';
+	protected $label   = 'Count Edits';
 	protected $id      = 'ext-countedits';
 
 	protected $functionName = 'efCountEditsMessages';
@@ -618,7 +620,7 @@ class CountEditsMessageGroup extends ExtensionMessageGroup {
 }
 
 class CrossNamespaceLinksMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Cross Namespace Links';
+	protected $label = 'Cross Namespace Links';
 	protected $id    = 'ext-crossnamespacelinks';
 
 	protected $arrName     = 'wgCrossNamespaceLinksMessages';
@@ -628,7 +630,7 @@ class CrossNamespaceLinksMessageGroup extends ExtensionMessageGroup {
 }
 
 class DeletedContribsMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Deleted Contributions';
+	protected $label = 'Deleted Contributions';
 	protected $id    = 'ext-deletedcontribs';
 
 	protected $arrName     = 'wgDeletedContribsMessages';
@@ -636,7 +638,7 @@ class DeletedContribsMessageGroup extends ExtensionMessageGroup {
 }
 
 class DesysopMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Desysop';
+	protected $label = 'Desysop';
 	protected $id    = 'ext-desysop';
 
 	protected $arrName     = 'wgDesysopMessages';
@@ -646,7 +648,7 @@ class DesysopMessageGroup extends ExtensionMessageGroup {
 }
 
 class DismissableSiteNoticeMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Dismissable SiteNotice';
+	protected $label = 'Dismissable SiteNotice';
 	protected $id    = 'ext-dismissablesitenotice';
 
 	protected $arrName     = 'wgDismissableSiteNoticeMessages';
@@ -658,7 +660,7 @@ class DismissableSiteNoticeMessageGroup extends ExtensionMessageGroup {
 }
 
 class DuplicatorMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Duplicator';
+	protected $label = 'Duplicator';
 	protected $id    = 'ext-duplicator';
 
 	protected $functionName = 'efDuplicatorMessages';
@@ -671,7 +673,7 @@ class DuplicatorMessageGroup extends ExtensionMessageGroup {
 }
 
 class EditcountMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Edit Count';
+	protected $label = 'Edit Count';
 	protected $id    = 'ext-editcount';
 
 	protected $functionName = 'efSpecialEditcountMessages';
@@ -684,7 +686,7 @@ class EditcountMessageGroup extends ExtensionMessageGroup {
 }
 
 class ExpandTemplatesMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Expand Templates';
+	protected $label = 'Expand Templates';
 	protected $id    = 'ext-expandtemplates';
 
 	protected $arrName     = 'wgExpandTemplatesMessages';
@@ -694,7 +696,7 @@ class ExpandTemplatesMessageGroup extends ExtensionMessageGroup {
 }
 
 class FancyCaptchaMessageGroup extends ExtensionMessageGroup {
-	protected $label   = 'Extension: Fancy Captcha';
+	protected $label   = 'Fancy Captcha';
 	protected $id      = 'ext-fancycaptcha';
 
 	protected $functionName = 'efFancyCaptchaMessages';
@@ -707,7 +709,7 @@ class FancyCaptchaMessageGroup extends ExtensionMessageGroup {
 }
 
 class FlaggedRevsMessageGroup extends ExtensionMessageGroup {
-	protected $label   = 'Extension: Flagged Revs';
+	protected $label   = 'Flagged Revs';
 	protected $id      = 'ext-flaggedrevs';
 
 	protected $arrName     = 'RevisionreviewMessages';
@@ -722,7 +724,7 @@ class FlaggedRevsMessageGroup extends ExtensionMessageGroup {
 }
 
 class FilePathMessageGroup extends ExtensionMessageGroup {
-	protected $label   = 'Extension: File Path';
+	protected $label   = 'File Path';
 	protected $id      = 'ext-filepath';
 
 	protected $arrName     = 'wgFilepathMessages';
@@ -732,7 +734,7 @@ class FilePathMessageGroup extends ExtensionMessageGroup {
 }
 
 class GadgetsExtensionGroup extends MultipleFileMessageGroup {
-	protected $label = 'Extension: Gadgets';
+	protected $label = 'Gadgets';
 	protected $id    = 'ext-gadgets';
 
 	protected $arrName      = 'messages';
@@ -744,7 +746,7 @@ class GadgetsExtensionGroup extends MultipleFileMessageGroup {
 }
 
 class GiveRollbackMessageGroup extends ExtensionMessageGroup {
-	protected $label   = 'Extension: Give Rollback';
+	protected $label   = 'Give Rollback';
 	protected $id      = 'ext-giverollback';
 
 	protected $functionName = 'efGiveRollbackMessages';
@@ -756,7 +758,7 @@ class GiveRollbackMessageGroup extends ExtensionMessageGroup {
 }
 
 class ImageMapMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Image Map';
+	protected $label = 'Image Map';
 	protected $id    = 'ext-imagemap';
 
 	protected $functionName = 'efImageMapMessages';
@@ -775,7 +777,7 @@ class ImageMapMessageGroup extends ExtensionMessageGroup {
 }
 
 class InputBoxMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Input Box';
+	protected $label = 'Input Box';
 	protected $id    = 'ext-inputbox';
 
 	protected $functionName = 'efInputBoxMessages';
@@ -789,7 +791,7 @@ class InputBoxMessageGroup extends ExtensionMessageGroup {
 }
 
 class LinkSearchMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Link Search';
+	protected $label = 'Link Search';
 	protected $id    = 'ext-linksearch';
 
 	protected $arrName     = 'wgLinkSearchMessages';
@@ -799,7 +801,7 @@ class LinkSearchMessageGroup extends ExtensionMessageGroup {
 }
 
 class LuceneSearchMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Lucene Search';
+	protected $label = 'Lucene Search';
 	protected $id    = 'ext-lucenesearch';
 
 	protected $arrName     = 'wgLuceneSearchMessages';
@@ -813,7 +815,7 @@ class LuceneSearchMessageGroup extends ExtensionMessageGroup {
 }
 
 class MakeBotMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Make Bot';
+	protected $label = 'Make Bot';
 	protected $id    = 'ext-makebot';
 
 	protected $functionName = 'efMakebotMessages';
@@ -828,7 +830,7 @@ class MakeBotMessageGroup extends ExtensionMessageGroup {
 }
 
 class MakeSysopMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Make Sysop';
+	protected $label = 'Make Sysop';
 	protected $id    = 'ext-makesysop';
 
 	protected $arrName     = 'wgMakesysopMessages';
@@ -836,7 +838,7 @@ class MakeSysopMessageGroup extends ExtensionMessageGroup {
 }
 
 class MakeValidateMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Make Validate';
+	protected $label = 'Make Validate';
 	protected $id    = 'ext-makevalidate';
 
 	protected $functionName = 'efMakeValidateMessages';
@@ -851,7 +853,7 @@ class MakeValidateMessageGroup extends ExtensionMessageGroup {
 }
 
 class MathStatMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Math Stat';
+	protected $label = 'Math Stat';
 	protected $id    = 'ext-mathstat';
 
 	protected $arrName     = 'wgMathStatFunctionsMessages';
@@ -859,7 +861,7 @@ class MathStatMessageGroup extends ExtensionMessageGroup {
 }
 
 class MediaFunctionsMessageGroup extends ExtensionMessageGroup {
-	protected $label   = 'Extension: Media Functions';
+	protected $label   = 'Media Functions';
 	protected $id      = 'ext-mediafunctions';
 
 	protected $functionName = 'efMediaFunctionsMessages';
@@ -873,7 +875,7 @@ class MediaFunctionsMessageGroup extends ExtensionMessageGroup {
 }
 
 class MiniDonationMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Mini Donation';
+	protected $label = 'Mini Donation';
 	protected $id    = 'ext-minidonation';
 
 	protected $arrName     = 'wgMiniDonationMessages';
@@ -881,7 +883,7 @@ class MiniDonationMessageGroup extends ExtensionMessageGroup {
 }
 
 class MinimumNameLengthMessageGroup extends ExtensionMessageGroup {
-	protected $label   = 'Extension: Minimum Name Length';
+	protected $label   = 'Minimum Name Length';
 	protected $id      = 'ext-minimumnamelength';
 
 	protected $functionName = 'efMinimumNameLengthMessages';
@@ -894,7 +896,7 @@ class MinimumNameLengthMessageGroup extends ExtensionMessageGroup {
 }
 
 class MiniPreviewExtensionGroup extends MultipleFileMessageGroup {
-	protected $label = 'Extension: Mini Preview';
+	protected $label = 'Mini Preview';
 	protected $id    = 'ext-minipreview';
 
 	protected $arrName      = 'messages';
@@ -906,7 +908,7 @@ class MiniPreviewExtensionGroup extends MultipleFileMessageGroup {
 }
 
 class NewestPagesMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Newest Pages';
+	protected $label = 'Newest Pages';
 	protected $id    = 'ext-newestpages';
 
 	protected $functionName = 'efNewestPagesMessages';
@@ -918,7 +920,7 @@ class NewestPagesMessageGroup extends ExtensionMessageGroup {
 }
 
 class NewuserLogMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Newuser Log';
+	protected $label = 'Newuser Log';
 	protected $id    = 'ext-newuserlog';
 
 	protected $arrName     = 'wgNewuserlogMessages';
@@ -933,7 +935,7 @@ class NewuserLogMessageGroup extends ExtensionMessageGroup {
 }
 
 class NewUserNotifMessageGroup extends ExtensionMessageGroup {
-	protected $label   = 'Extension: New User Notification';
+	protected $label   = 'New User Notification';
 	protected $id      = 'ext-newusernotif';
 
 	protected $functionName = 'efNewUserNotifMessages';
@@ -946,7 +948,7 @@ class NewUserNotifMessageGroup extends ExtensionMessageGroup {
 }
 
 class OggHandlerMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Ogg Handler';
+	protected $label = 'Ogg Handler';
 	protected $id    = 'ext-ogghandler';
 
 	protected $arrName     = 'messages';
@@ -959,7 +961,7 @@ class OggHandlerMessageGroup extends ExtensionMessageGroup {
 }
 
 class OversightMessageGroup extends ExtensionMessageGroup {
-	protected $label   = 'Extension: Oversight';
+	protected $label   = 'Oversight';
 	protected $id      = 'ext-oversight';
 
 	protected $functionName = 'efHideRevisionMessages';
@@ -972,7 +974,7 @@ class OversightMessageGroup extends ExtensionMessageGroup {
 }
 
 class PageByMessageGroup extends MultipleFileMessageGroup {
-	protected $label = 'Extension: Page By';
+	protected $label = 'Page By';
 	protected $id    = 'ext-pageby';
 
 	protected $arrName      = 'messages';
@@ -984,7 +986,7 @@ class PageByMessageGroup extends MultipleFileMessageGroup {
 }
 
 class PasswordResetMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Password Reset';
+	protected $label = 'Password Reset';
 	protected $id    = 'ext-passwordreset';
 
 	protected $arrName     = 'allMessages';
@@ -997,7 +999,7 @@ class PasswordResetMessageGroup extends ExtensionMessageGroup {
 }
 
 class ParserFunctionsMessageGroup extends ExtensionMessageGroup {
-	protected $label   = 'Extension: Parser Functions';
+	protected $label   = 'Parser Functions';
 	protected $id      = 'ext-parserfunctions';
 
 	protected $functionName = 'efParserFunctionsMessages';
@@ -1010,7 +1012,7 @@ class ParserFunctionsMessageGroup extends ExtensionMessageGroup {
 }
 
 class PatrollerMessageGroup extends ExtensionMessageGroup {
-	protected $label   = 'Extension: Patroller';
+	protected $label   = 'Patroller';
 	protected $id      = 'ext-patroller';
 
 	protected $functionName = 'efPatrollerMessages';
@@ -1023,7 +1025,7 @@ class PatrollerMessageGroup extends ExtensionMessageGroup {
 }
 
 class PdfHandlerMessageGroup extends ExtensionMessageGroup {
-	protected $label   = 'Extension: Pdf Handler';
+	protected $label   = 'Pdf Handler';
 	protected $id      = 'ext-pdfhandler';
 
 	protected $functionName = 'efPdfHandlerMessages';
@@ -1036,7 +1038,7 @@ class PdfHandlerMessageGroup extends ExtensionMessageGroup {
 }
 
 class PicturePopupMessageGroup extends ExtensionMessageGroup {
-	protected $label   = 'Extension: PicturePopup';
+	protected $label   = 'PicturePopup';
 	protected $id      = 'ext-picturepopup';
 
 	protected $functionName = 'efPicturePopupMessages';
@@ -1049,7 +1051,7 @@ class PicturePopupMessageGroup extends ExtensionMessageGroup {
 }
 
 class PlayerMessageGroup extends MultipleFileMessageGroup {
-	protected $label = 'Extension: Player';
+	protected $label = 'Player';
 	protected $id    = 'ext-player';
 
 	protected $arrName      = 'messages';
@@ -1061,7 +1063,7 @@ class PlayerMessageGroup extends MultipleFileMessageGroup {
 }
 
 class ProfileMonitorMessageGroup extends ExtensionMessageGroup {
-	protected $label   = 'Extension: ProfileMonitor';
+	protected $label   = 'ProfileMonitor';
 	protected $id      = 'ext-profilemonitor';
 
 	protected $functionName = 'efProfileMonitorMessages';
@@ -1074,7 +1076,7 @@ class ProfileMonitorMessageGroup extends ExtensionMessageGroup {
 }
 
 class ProofreadPageMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Proofread Page';
+	protected $label = 'Proofread Page';
 	protected $id    = 'ext-proofreadpage';
 
 	protected $arrName     = 'messages';
@@ -1087,7 +1089,7 @@ class ProofreadPageMessageGroup extends ExtensionMessageGroup {
 }
 
 class QuizMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Quiz (mw ext)';
+	protected $label = 'Quiz';
 	protected $id    = 'ext-quiz';
 
 	protected $arrName     = 'wgQuizMessages';
@@ -1100,7 +1102,7 @@ class QuizMessageGroup extends ExtensionMessageGroup {
 }
 
 class RenameUserMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Rename User';
+	protected $label = 'Rename User';
 	protected $id    = 'ext-renameuser';
 
 	protected $arrName     = 'wgRenameuserMessages';
@@ -1112,7 +1114,7 @@ class RenameUserMessageGroup extends ExtensionMessageGroup {
 }
 
 class ResignMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Resign';
+	protected $label = 'Resign';
 	protected $id    = 'ext-resign';
 
 	protected $functionName = 'efResignMessages';
@@ -1125,7 +1127,7 @@ class ResignMessageGroup extends ExtensionMessageGroup {
 }
 
 class SelectCategoryExtensionGroup extends MultipleFileMessageGroup {
-	protected $label = 'Extension: Select Category';
+	protected $label = 'Select Category';
 	protected $id    = 'ext-selectcategory';
 
 	protected $arrName      = 'messages';
@@ -1137,7 +1139,7 @@ class SelectCategoryExtensionGroup extends MultipleFileMessageGroup {
 }
 
 class SignDocumentAMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Sign Document (a) (mw ext)';
+	protected $label = 'Sign Document (a)';
 	protected $id    = 'ext-signdocumenta';
 
 	protected $arrName     = 'allMessages';
@@ -1150,7 +1152,7 @@ class SignDocumentAMessageGroup extends ExtensionMessageGroup {
 }
 
 class SignDocumentBMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Sign Document (b) (mw ext)';
+	protected $label = 'Sign Document (b)';
 	protected $id    = 'ext-signdocumentb';
 
 	protected $arrName     = 'allMessages';
@@ -1163,7 +1165,7 @@ class SignDocumentBMessageGroup extends ExtensionMessageGroup {
 }
 
 class SignDocumentCMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Sign Document (c) (mw ext)';
+	protected $label = 'Sign Document (c)';
 	protected $id    = 'ext-signdocumentc';
 
 	protected $arrName     = 'allMessages';
@@ -1176,7 +1178,7 @@ class SignDocumentCMessageGroup extends ExtensionMessageGroup {
 }
 
 class SiteMatrixMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Site Matrix';
+	protected $label = 'Site Matrix';
 	protected $id    = 'ext-sitematrix';
 
 	protected $arrName     = 'wgSiteMatrixMessages';
@@ -1186,7 +1188,7 @@ class SiteMatrixMessageGroup extends ExtensionMessageGroup {
 }
 
 class SmoothGalleryExtensionGroup extends MultipleFileMessageGroup {
-	protected $label = 'Extension: Smooth Gallery';
+	protected $label = 'Smooth Gallery';
 	protected $id    = 'ext-smoothgallery';
 
 	protected $arrName      = 'messages';
@@ -1198,7 +1200,7 @@ class SmoothGalleryExtensionGroup extends MultipleFileMessageGroup {
 }
 
 class SpamBlacklistMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Spam Blacklist';
+	protected $label = 'Spam Blacklist';
 	protected $id    = 'ext-spamblacklist';
 
 	protected $functionName = 'efSpamBlacklistMessages';
@@ -1211,7 +1213,7 @@ class SpamBlacklistMessageGroup extends ExtensionMessageGroup {
 }
 
 class SyntaxHighlight_GeSHiMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Syntax Highlight GeSHi';
+	protected $label = 'Syntax Highlight GeSHi';
 	protected $id    = 'ext-syntaxhighlightgeshi';
 
 	protected $functionName = 'efSyntaxHighlight_GeSHiMessages';
@@ -1224,7 +1226,7 @@ class SyntaxHighlight_GeSHiMessageGroup extends ExtensionMessageGroup {
 }
 
 class TalkHereExtensionGroup extends MultipleFileMessageGroup {
-	protected $label = 'Extension: Talk Here';
+	protected $label = 'Talk Here';
 	protected $id    = 'ext-talkhere';
 
 	protected $arrName      = 'messages';
@@ -1236,7 +1238,7 @@ class TalkHereExtensionGroup extends MultipleFileMessageGroup {
 }
 
 class TranslateMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Translate';
+	protected $label = 'Translate';
 	protected $id    = 'ext-translate';
 
 	protected $arrName     = 'messages';
@@ -1244,7 +1246,7 @@ class TranslateMessageGroup extends ExtensionMessageGroup {
 }
 
 class UserImagesMessageGroup extends ExtensionMessageGroup {
-	protected $label   = 'Extension: User Images';
+	protected $label   = 'User Images';
 	protected $id      = 'ext-userimages';
 
 	protected $functionName = 'efUserImagesMessages';
@@ -1257,7 +1259,7 @@ class UserImagesMessageGroup extends ExtensionMessageGroup {
 }
 
 class UserMergeMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'User Merge (mw ext)';
+	protected $label = 'User Merge';
 	protected $id    = 'ext-usermerge';
 
 	protected $arrName     = 'allMessages';
@@ -1270,7 +1272,7 @@ class UserMergeMessageGroup extends ExtensionMessageGroup {
 }
 
 class UsernameBlacklistMessageGroup extends ExtensionMessageGroup {
-	protected $label   = 'Extension: Username Blacklist';
+	protected $label   = 'Username Blacklist';
 	protected $id      = 'ext-usernameblacklist';
 
 	protected $functionName = 'efUsernameBlacklistMessages';
@@ -1283,7 +1285,7 @@ class UsernameBlacklistMessageGroup extends ExtensionMessageGroup {
 }
 
 class VoteMessageGroup extends ExtensionMessageGroup {
-	protected $label   = 'Extension: Vote';
+	protected $label   = 'Vote';
 	protected $id      = 'ext-vote';
 
 	protected $functionName = 'efVoteMessages';
@@ -1296,7 +1298,7 @@ class VoteMessageGroup extends ExtensionMessageGroup {
 }
 
 class WebStoreMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Web Store';
+	protected $label = 'Web Store';
 	protected $id    = 'ext-webstore';
 
 	protected $arrName     = 'messages';
@@ -1309,7 +1311,7 @@ class WebStoreMessageGroup extends ExtensionMessageGroup {
 }
 
 class WikidataLanguageManagerMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Wikidata Language Manager';
+	protected $label = 'Wikidata Language Manager';
 	protected $id    = 'ext-wikidatalanguagemanager';
 
 	protected $arrName     = 'wgLanguageManagerMessages';
@@ -1317,7 +1319,7 @@ class WikidataLanguageManagerMessageGroup extends ExtensionMessageGroup {
 }
 
 class WikidataOmegaWikiDataSearchMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Extension: Wikidata OmegaWiki Data Search';
+	protected $label = 'Wikidata OmegaWiki Data Search';
 	protected $id    = 'ext-wikidataomegawikidatasearch';
 
 	protected $arrName     = 'wgDataSearchMessages';
@@ -1326,7 +1328,7 @@ class WikidataOmegaWikiDataSearchMessageGroup extends ExtensionMessageGroup {
 
 class FreeColMessageGroup extends MessageGroup {
 
-	protected $label = 'External: FreeCol';
+	protected $label = 'FreeCol (open source game)';
 	protected $id    = 'out-freecol';
 	protected $prefix= 'freecol-';
 
