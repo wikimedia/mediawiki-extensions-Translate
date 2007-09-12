@@ -106,6 +106,23 @@ $messages['ca'] = array(
 
 $messages['cs'] = array(
 	'translate' => 'Přeložit',
+	'translate-edit' => 'editovat',
+	'translate-talk' => 'diskuse',
+	'translate-history' => 'historie',
+	'translate-task-view' => 'Zobrazit všechny zprávy z',
+	'translate-task-untranslated' => 'Zobrazit všechny nepřeložené zprávy z',
+	'translate-task-review' => 'Porovnat změny v',
+	'translate-task-reviewall' => 'Porovnat všechny překlady v',
+	'translate-task-export' => 'Exportovat překlady z',
+	'translate-task-export-to-file' => 'Exportovat do souboru překlady z',
+	'translate-settings' => 'Chci $1 $2 $3. Max. $4 řádek. $5',
+	'translate-paging' => '<div>Zobrazeno od $1 do $2 ze $3. [ $4 | $5 ]</div>',
+	'translate-submit' => 'Provést',
+	'translate-next' => 'Další stránka',
+	'translate-prev' => 'Předchozí stránka',
+	'translate-optional' => '(volitelné)',
+	'translate-ignored' => '(ignorované)',
+	'translate-edit-message-format' => 'Formát této zprávy je <b>$1</b>.',
 	'translate-edit-message-in' => 'Současný řetězec v <b>$1</b> ($2):',
 	'translate-edit-message-in-fb' => 'Současný řetězec v záložním jazyce <b>$1</b> ($2):',
 );
