@@ -351,6 +351,13 @@ $messages['kk-cn'] = array(
 );
 $messages['kk'] = $messages['kk-kz'];
 
+$messages['nds'] = array(
+	'translate' => 'Översetten',
+	'translate-edit-message-format' => 'Format vun disse Naricht is \'\'\'$1\'\'\'.',
+	'translate-edit-message-in' => 'Disse Narichtentext op \'\'\'$1\'\'\' ($2):',
+	'translate-edit-message-in-fb' => 'Disse Narichtentext in de Trüchfall-Spraak \'\'\'$1\'\'\' ($2):',
+);
+
 $messages['nl'] = array(
 	'translate' => 'Vertalen',
 	'translate-edit' => 'bewerk',
