@@ -451,6 +451,13 @@ $messages['su'] = array(
 	'translate-edit-message-in-fb' => 'String kiwari dina basa fallback <b>$1</b> ($2):',
 );
 
+$messages['tet'] = array(
+	'translate' => 'Tradús',
+	'translate-edit' => 'edita',
+	'translate-talk' => 'diskusaun',
+	'translate-history' => 'istória',
+);
+
 $messages['wa'] = array(
 	'translate' => 'Ratourner',
 	'translate-edit' => 'candjî',
