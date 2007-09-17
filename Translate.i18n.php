@@ -99,9 +99,9 @@ $messages['br'] = array(
 );
 
 $messages['ca'] = array(
-	'translate'=> 'Tradueix',
-	'translate-edit-message-in'=> 'Cadena actual en <strong>$1</strong> ($2):',
-	'translate-edit-message-in-fb'=> 'Cadena actual en la llengua per defecte <strong>$1</strong> (2):',
+	'translate' => 'Tradueix',
+	'translate-edit-message-in' => 'Cadena actual en <strong>$1</strong> (Messages$2.php):',
+	'translate-edit-message-in-fb' => 'Cadena actual en la llengua per defecte <strong>$1</strong> (Messages$2.php):',
 );
 
 $messages['cs'] = array(
@@ -449,6 +449,29 @@ $messages['su'] = array(
 	'translate-edit-message-format' => 'Ieu talatah boga format <b>$1</b>.',
 	'translate-edit-message-in' => 'String kiwari dina <b>$1</b> ($2):',
 	'translate-edit-message-in-fb' => 'String kiwari dina basa fallback <b>$1</b> ($2):',
+);
+
+$messages['wa'] = array(
+	'translate' => 'Ratourner',
+	'translate-edit' => 'candjî',
+	'translate-talk' => 'copene',
+	'translate-history' => 'istwere',
+	'translate-task-view' => 'Vey tos les messaedjes',
+	'translate-task-untranslated' => 'Vey tos les messaedjes nén ratournés',
+	'translate-task-review' => 'Verifyî les candjmints',
+	'translate-task-reviewall' => 'Verifyî tos les ratournaedjes',
+	'translate-task-export' => 'Copyî foû les ratournaedjes',
+	'translate-task-export-to-file' => 'Copyî foû viè on fitchî les ratournaedjes',
+	'translate-settings' => '$1 di $2 e lingaedje $3 avou $4 messaedjes so tchaeke pådje. $5',
+	'translate-paging' => '<div>Håynant les messaedjes di $1 a $2 foû di $3. [ $4 | $5 ]</div>',
+	'translate-submit' => 'I va',
+	'translate-next' => 'Pådje shuvante',
+	'translate-prev' => 'Pådje di dvant',
+	'translate-optional' => '(opcionel)',
+	'translate-ignored' => '(ignoré)',
+	'translate-edit-message-format' => 'Li format di ç\' messaedje ci c\' est <b>$1</b>.',
+	'translate-edit-message-in' => 'Li tecse do moumint e lingaedje <b>$1</b> ($2):',
+	'translate-edit-message-in-fb' => 'Tecse pol lingaedje di deujhinme tchuze <b>$1</b> ($2):',
 );
 
 $messages['yue'] = array(
