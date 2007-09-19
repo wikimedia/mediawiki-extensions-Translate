@@ -94,8 +94,8 @@ $messages['bn'] = array(
 $messages['br'] = array(
 	'translate' => 'Treiñ',
 	'translate-edit-message-format' => 'Furmad ar gemennadenn-mañ zo <b>$1</b>.',
-	'translate-edit-message-in' => 'Neudennad red e <b>$1</b> ($2):',
-	'translate-edit-message-in-fb' => 'Neudennad red er yezh kein <b>$1</b> ($2):',
+	'translate-edit-message-in' => 'Neudennad red e <b>$1</b> (Kemennadennoù$2.php):',
+	'translate-edit-message-in-fb' => 'Neudennad red er yezh kein <b>$1</b> (Kemennadennoù$2.php):',
 );
 
 $messages['ca'] = array(
