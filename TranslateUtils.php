@@ -89,12 +89,12 @@ class TranslateUtils {
 	}
 
 	public static function getMessageContent( $key, $language ) {
+		wfProfileIn( __METHOD__ );
 		$title = self::title( $key, $language );
-		self::doExistenceQuery();
-		if ( !isset(self::$contents[$title]) && isset(self::$pageExists[$key]) ) {
+		if ( !isset(self::$contents[$title]) ) {
 			self::getContents( array( $title ) );
 		}
-
+		wfProfileOut( __METHOD__ );
 		return isset(self::$contents[$title]) ? self::$contents[$title] : null;
 	}
 
@@ -102,6 +102,7 @@ class TranslateUtils {
 	private static $contents = array();
 	private static $editors = array();
 	private static function getContents( Array $titles ) {
+		wfProfileIn( __METHOD__ );
 		$dbr = wfGetDB( DB_SLAVE );
 		$rows = $dbr->select( array( 'page', 'revision', 'text' ),
 			array( 'page_title', 'old_text', 'old_flags', 'rev_user_text' ),
@@ -122,13 +123,16 @@ class TranslateUtils {
 		}
 
 		$rows->free();
+		wfProfileOut( __METHOD__ );
 	}
 
 
 	private static $pageExists = null;
 	private static $talkExists = null;
 	private static function doExistenceQuery() {
+		wfProfileIn( __METHOD__ );
 		if ( self::$pageExists !== null && self::$talkExists !== null ) {
+			wfProfileOut( __METHOD__ );
 			return;
 		}
 
@@ -148,6 +152,7 @@ class TranslateUtils {
 			}
 		}
 		$rows->free();
+		wfProfileOut( __METHOD__ );
 	}
 
 	/* Table output helpers */

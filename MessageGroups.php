@@ -1107,10 +1107,6 @@ class RenameUserMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'wgRenameuserMessages';
 	protected $messageFile = 'Renameuser/SpecialRenameuser.i18n.php';
-
-	function fillBools( &$array ) {
-		$array['renameuserlogentry']['ignored'] = true;
-	}
 }
 
 class ResignMessageGroup extends ExtensionMessageGroup {
