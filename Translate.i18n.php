@@ -155,6 +155,10 @@ $messages['de'] = array(
 	'translate-edit-message-in-fb'  => 'Aktueller Text in der Ausweich-Sprache <b>$1</b> ($2):',
 );
 
+$messages['dsb'] = array(
+	'translate' => 'Pśełožyś',
+);
+
 $messages['fi'] = array(
 	'translate' => 'Käännä',
 	'translate-edit' => 'muokkaa',
