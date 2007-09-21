@@ -206,6 +206,27 @@ $messages['ext'] = array(
 
 $messages['fr'] = array(
 	'translate' => 'Traduire',
+
+	'translate-edit' => 'éditer',
+	'translate-talk' => 'discuter',
+	'translate-history' => 'historique',
+
+	'translate-task-view' => 'Voir tous les messages depuis',
+	'translate-task-untranslated' => 'Voir tous les messages non traduits depuis',
+	'translate-task-review' => 'Revoir mes changements depuis',
+	'translate-task-reviewall' => 'Revoir tous les traductions dans',
+	'translate-task-export' => 'Exporter les traductions depuis',
+	'translate-task-export-to-file' => 'Exporter les traductions dans un fichier depuis',
+
+	'translate-settings' => 'Je désire $1 $2 en $3 dans la limite de $4. $5',
+	'translate-paging' => '<div>Afficher les messages depuis $1 vers $2 de $3. [ $4 | $5 ]</div>',
+	'translate-submit' => 'Atteindre',
+	'translate-next' => 'Page suivante',
+	'translate-prev' => 'Page précédente',
+
+	'translate-optional' => '(facultatif)',
+	'translate-ignored' => '(ignoré)',
+
 	'translate-edit-message-format' => 'Le format de ce message est <b>$1</b>.',
 	'translate-edit-message-in' => 'Chaîne actuellement dans <b>$1</b> ($2) :',
 	'translate-edit-message-in-fb' => 'Chaîne actuellement dans la langue par défaut <b>$1</b> ($2) :',
