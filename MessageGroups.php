@@ -1233,6 +1233,19 @@ class TalkHereExtensionGroup extends MultipleFileMessageGroup {
 	protected $exportEnd   = ');';
 }
 
+class TemplateLinkMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Template Link';
+	protected $id    = 'ext-templatelink';
+
+	protected $arrName     = 'allMessages';
+	protected $messageFile = 'TemplateLink/TemplateLink.i18n.php';
+
+	protected $exportPrefix= "\t";
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportLineP = "\t\t";
+	protected $exportEnd   = "),";
+}
+
 class TranslateMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Translate';
 	protected $id    = 'ext-translate';

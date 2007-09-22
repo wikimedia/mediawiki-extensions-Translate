@@ -111,6 +111,7 @@ $wgTranslateAC = array(
 'ext-spamblacklist'         => 'SpamBlacklistMessageGroup',
 'ext-syntaxhighlightgeshi'  => 'SyntaxHighlight_GeSHiMessageGroup',
 'ext-talkhere'              => 'TalkHereExtensionGroup',
+'ext-templatelink'          => 'TemplateLinkMessageGroup',
 'ext-translate'             => 'TranslateMessageGroup',
 'ext-userimages'            => 'UserImagesMessageGroup',
 'ext-usermerge'             => 'UserMergeMessageGroup',
