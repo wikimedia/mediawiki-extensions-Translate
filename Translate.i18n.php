@@ -380,6 +380,16 @@ $messages['kk-cn'] = array(
 );
 $messages['kk'] = $messages['kk-kz'];
 
+$messages['la'] = array(
+	'translate' => 'Traducere',
+	'translate-edit' => 'recensere',
+	'translate-talk' => 'disputatio',
+	'translate-history' => 'historia',
+	'translate-settings' => 'Volo $1 $2 in lingua $3 cum fine $4. $5',
+	'translate-next' => 'Pagina proxima',
+	'translate-prev' => 'Pagina superior',
+);
+
 $messages['nds'] = array(
 	'translate' => 'Översetten',
 	'translate-edit-message-format' => 'Format vun disse Naricht is \'\'\'$1\'\'\'.',
@@ -389,7 +399,7 @@ $messages['nds'] = array(
 
 $messages['nl'] = array(
 	'translate' => 'Vertalen',
-	'translate-edit' => 'bewerk',
+	'translate-edit' => 'bewerken',
 	'translate-talk' => 'overleg',
 	'translate-history' => 'geschiedenis',
 	'translate-task-view' => 'alle teksten bekijken van',
@@ -495,6 +505,8 @@ $messages['tet'] = array(
 	'translate-edit' => 'edita',
 	'translate-talk' => 'diskusaun',
 	'translate-history' => 'istória',
+	'translate-settings' => 'Ha\'u hakarak $1 $2 iha lian $3 with limit $4. $5',
+	'translate-submit' => 'Hola',
 );
 
 $messages['wa'] = array(
