@@ -448,6 +448,27 @@ $messages['pms'] = array(
 	'translate-edit-message-in-fb' => 'Espression corenta ant la lenga ëd riserva <b>$1</b> ($2):',
 );
 
+$messages['pt'] = array(
+	'translate' => 'Traduzir',
+	'translate-edit' => 'editar',
+	'translate-talk' => 'disc',
+	'translate-history' => 'histórico',
+	'translate-task-view' => 'Ver todas as mensagens de',
+	'translate-task-untranslated' => 'Ver todas as mensagens não traduzidas de',
+	'translate-task-review' => 'Rever alterações da',
+	'translate-task-reviewall' => 'Rever todas as traduções na',
+	'translate-task-export' => 'Exportar traduções de',
+	'translate-task-export-to-file' => 'Exportar as traduções para um ficheiro a partir da',
+	'translate-settings' => 'Eu quero $1 $2 no idioma $3 e no limite máximo de $4. $5',
+	'translate-paging' => '<div>Exibindo as mensagens de $1 a $2 de $3. [ $4 | $5 ]</div>',
+	'translate-submit' => 'Trazer',
+	'translate-next' => 'Próxima página',
+	'translate-prev' => 'Página anterior',
+	'translate-optional' => '(opcional)',
+	'translate-ignored' => '(ignorada)',
+	'translate-edit-message-format' => 'O formato desta mensagem é <b>$1</b>.',
+);
+
 $messages['ru'] = array(
 	'translate' => 'Перевод',
 	'translate-edit-message-format' => 'Формат текущего сообщения - <b>$1</b>.',
