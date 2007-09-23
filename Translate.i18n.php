@@ -91,6 +91,10 @@ $messages['bn'] = array(
 	'translate-edit-message-in-fb' => 'পিছিয়ে পরা ভাষাতে বর্তমান স্ট্রিং <b>$1</b> ($2):',
 );
 
+$messages['bpy'] = array(
+	'translate' => 'অনুবাদ করিক',
+);
+
 $messages['br'] = array(
 	'translate' => 'Treiñ',
 	'translate-edit-message-format' => 'Furmad ar gemennadenn-mañ zo <b>$1</b>.',
@@ -443,6 +447,16 @@ $messages['ru'] = array(
 
 $messages['sah'] = array(
 	'translate' => 'Тылбаас',
+	'translate-edit' => 'көннөрүү',
+	'translate-talk' => 'ырытыы',
+	'translate-history' => 'историята',
+	'translate-task-view' => 'Этиилэрин барытын',
+	'translate-task-untranslated' => 'Тылбаастамматах этиилэрин',
+	'translate-settings' => 'Мин маны $2 $1 бу тылынан $3  $4 лимииттээх көрүөхпүн баҕарабын. $5',
+	'translate-paging' => '<div>Барыта $3 этии баарыттан $1 - $2 этиилэр көһүннүлэр [ $4 | $5 ]</div>',
+	'translate-submit' => 'Тал',
+	'translate-next' => 'Аныгыскы сирэй',
+	'translate-prev' => 'Иннинээҕи сирэй',
 	'translate-edit-message-format' => 'Бу этии формата <b>$1</b>.',
 	'translate-edit-message-in' => 'Бу этии <b>$1</b> ($2) тылынан:',
 	'translate-edit-message-in-fb' => 'Бу этии сүрүн <b>$1</b> ($2) тылынан:',
