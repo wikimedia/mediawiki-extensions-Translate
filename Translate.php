@@ -12,7 +12,7 @@ if (!defined('MEDIAWIKI')) die();
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'Translate',
-	'version' => '4.0-rc5',
+	'version' => '4.0',
 	'author' => 'Niklas Laxström',
 	'description' => 'Special page for translating Mediawiki and beyond'
 );
@@ -23,10 +23,19 @@ $wgAutoloadClasses['TranslateUtils'] = $dir . 'TranslateUtils.php';
 $wgAutoloadClasses['MessageGroups'] = $dir . 'MessageGroups.php';
 $wgAutoloadClasses['TranslateEditAddons'] = $dir . 'TranslateEditAddons.php';
 $wgAutoloadClasses['languages'] = $IP . '/maintenance/language/languages.inc';
+$wgAutoloadClasses['SpecialTranslate'] = $dir . 'TranslatePage.php';
+$wgAutoloadClasses['SpecialMagic'] = $dir . 'SpecialMagic.php';
+
 $wgExtensionMessagesFiles['Translate'] = $dir . 'Translate.i18n.php';
 
-// Baah?
-require_once( 'maintenance/language/messageTypes.inc' );
+$wgSpecialPages['Translate'] = 'SpecialTranslate';
+$wgSpecialPages['Magic'] = 'SpecialMagic';
+
+$wgHooks['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';
+
+#
+# Configuration variables
+#
 
 /**
  * If this variable is set to false, this extension will not touch any extension
@@ -126,13 +135,4 @@ $wgTranslateAC = array(
 /** EC = Enabled classes */
 $wgTranslateEC = array();
 $wgTranslateEC[] = 'core';
-
-/* Add specialpage */
-if ( !function_exists( 'extAddSpecialPage' ) ) {
-	require( dirname(__FILE__) . '/../ExtensionFunctions.php' );
-}
-
-extAddSpecialPage( dirname(__FILE__) . '/TranslatePage.php', 'Translate', 'SpecialTranslate' );
-
-$wgHooks['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';
 

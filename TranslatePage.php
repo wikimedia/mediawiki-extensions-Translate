@@ -133,7 +133,16 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	protected function languageSelector() {
-		$languages = Language::getLanguageNames( false );
+		global $wgLang;
+		if ( is_callable(array( 'LanguageNames', 'getNames' )) ) {
+			$languages = LanguageNames::getNames( $wgLang->getCode(),
+				LanguageNames::FALLBACK_NORMAL,
+				LanguageNames::LIST_MW_AND_CLDR
+			);
+		} else {
+			$languages = Language::getLanguageNames( false );
+		}
+		
 		ksort( $languages );
 
 		$options = '';

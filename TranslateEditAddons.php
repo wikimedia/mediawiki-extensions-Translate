@@ -77,18 +77,15 @@ class TranslateEditAddons {
 		if ( $group === null ) return;
 
 		$en = $group->getMessage( $key, 'en' );
-
-		$xx = TranslateUtils::getMessageContent( $key, $code );
-		if ( $xx === null ) {
-			$xx = $group->getMessage( $key, $code );
-		}
+		$xx = $group->getMessage( $key, $code );
 
 		$fb = null;
 		$fbcode = Language::getFallbackFor( $code );
 		if ( $fbcode ) {
-			$fb = TranslateUtils::getMessageContent( $key, $fbcode );
+			$fb = $group->getMessage( $key, $fbcode );
+			/* For fallback, even uncommitted translation may be useful */
 			if ( $fb === null ) {
-				$fb = $group->getMessage( $key, $fbcode );
+				$fb = TranslateUtils::getMessageContent( $key, $fbcode );
 			}
 		}
 
@@ -100,7 +97,6 @@ class TranslateEditAddons {
 		if ( $fb !== null && $fbcode !== 'en' ) {
 			$boxes[] = self::dobox( $fb, $fbcode, 'translate-edit-message-in-fb' );
 		}
-
 
 		if ( $xx !== null && $code !== 'en' ) {
 			$boxes[] = self::dobox( $xx, $code, 'translate-edit-message-in' );
