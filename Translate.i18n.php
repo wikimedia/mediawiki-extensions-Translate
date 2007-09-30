@@ -168,6 +168,14 @@ $messages['fi'] = array(
 	'translate-edit' => 'muokkaa',
 	'translate-talk' => 'keskustelu',
 	'translate-history' => 'historia',
+	'translate-settings' => 'Haluan $1 moduulista $2 kielellä $3 ja enintään $4 viestiä sivulla. $5',
+	'translate-paging' => '<div>Alla on viestit $1–$2; yhteensä $3. [ $4 | $5 ]</div>',
+	'translate-submit' => 'Hae',
+	'translate-next' => 'Seuraava sivu',
+	'translate-prev' => 'Edellinen sivu',
+	'translate-optional' => '(valinnainen)',
+	'translate-ignored' => '(ei-käännettävä)',
+	'translate-edit-message-in' => 'Nykyinen käännös kielellä <b>$1</b> ($2)',
 );
 
 $messages['eo'] = array(
@@ -205,6 +213,7 @@ $messages['ext'] = array(
 	'translate-next' => 'Siguienti páhina',
 	'translate-prev' => 'Páhina anteriol',
 	'translate-optional' => '(ocional)',
+	'translate-ignored' => '(inorau)',
 	'translate-edit-message-format' => 'El hormatu desti mensahi es <b>$1</b>.',
 );
 
@@ -467,6 +476,12 @@ $messages['pt'] = array(
 	'translate-optional' => '(opcional)',
 	'translate-ignored' => '(ignorada)',
 	'translate-edit-message-format' => 'O formato desta mensagem é <b>$1</b>.',
+);
+
+$messages['ro'] = array(
+	'translate' => 'Traducere',
+	'translate-edit-message-format' => 'Formatul acestui mesaj este <b>$1</b>.',
+	'translate-edit-message-in' => 'Textul curent în <b>$1</b> ($2):',
 );
 
 $messages['ru'] = array(
