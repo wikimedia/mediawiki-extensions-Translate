@@ -1223,6 +1223,19 @@ class SpamBlacklistMessageGroup extends ExtensionMessageGroup {
 	protected $exportEnd   = '),';
 }
 
+class SpecialFormMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Special Form';
+	protected $id    = 'ext-specialform';
+
+	protected $arrName     = 'SpecialFormMessages';
+	protected $messageFile = 'SpecialForm/SpecialForm.i18n.php';
+
+	protected $exportPrefix= "\t";
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportLineP = "\t\t";
+	protected $exportEnd   = "),";
+}
+
 class SyntaxHighlight_GeSHiMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Syntax Highlight GeSHi';
 	protected $id    = 'ext-syntaxhighlightgeshi';

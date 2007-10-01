@@ -119,6 +119,7 @@ $wgTranslateAC = array(
 'ext-sitematrix'            => 'SiteMatrixMessageGroup',
 'ext-smoothgallery'         => 'SmoothGalleryExtensionGroup',
 'ext-spamblacklist'         => 'SpamBlacklistMessageGroup',
+'ext-specialform'           => 'SpecialFormMessageGroup',
 'ext-syntaxhighlightgeshi'  => 'SyntaxHighlight_GeSHiMessageGroup',
 'ext-talkhere'              => 'TalkHereExtensionGroup',
 'ext-templatelink'          => 'TemplateLinkMessageGroup',
