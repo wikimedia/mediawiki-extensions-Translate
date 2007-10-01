@@ -97,6 +97,7 @@ $wgTranslateAC = array(
 'ext-newestpages'           => 'NewestPagesMessageGroup',
 'ext-newuserlog'            => 'NewuserLogMessageGroup',
 'ext-newusernotif'          => 'NewUserNotifMessageGroup',
+'ext-nuke'                  => 'NukeMessageGroup',
 'ext-ogghandler'            => 'OggHandlerMessageGroup',
 'ext-oversight'             => 'OversightMessageGroup',
 'ext-pageby'                => 'PageByMessageGroup',

@@ -947,6 +947,21 @@ class NewUserNotifMessageGroup extends ExtensionMessageGroup {
 	protected $exportEnd   = '),';
 }
 
+class NukeMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Nuke';
+	protected $id    = 'ext-nuke';
+
+	protected $functionName = 'SpecialNukeMessages';
+	protected $messageFile  = 'Nuke/SpecialNuke.i18n.php';
+
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportPrefix= "\t";
+	protected $exportLineP = "\t\t";
+	protected $exportEnd   = '),';
+
+	protected $exportPad   = 21;
+}
+
 class OggHandlerMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Ogg Handler';
 	protected $id    = 'ext-ogghandler';
