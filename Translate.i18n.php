@@ -268,6 +268,29 @@ $messages['frc'] = array(
 	'translate-edit-message-in-fb' => 'Chaîne courante dans la langue en reculant <b>$1</b> ($2):',
 );
 
+$messages['gl'] = array(
+	'translate' => 'Traducir',
+	'translate-edit' => 'Editar',
+	'translate-talk' => 'Discusión',
+	'translate-history' => 'Historial',
+	'translate-task-view' => 'Ver todas as mensaxes de',
+	'translate-task-untranslated' => 'Ver todas as mensaxes sen traducir de',
+	'translate-task-review' => 'Revisar cambios en',
+	'translate-task-reviewall' => 'Revisar todas as traducións en',
+	'translate-task-export' => 'Exportar traducións de',
+	'translate-task-export-to-file' => 'Exportar a tradución a un ficheiro de',
+	'translate-settings' => 'Eu quero $1 $2 na linguaxe $3 co límite $4. $5',
+	'translate-paging' => '<div>Amosando mensaxes de $1 a $2 de $3. [ $4 | $5 ]</div>',
+	'translate-submit' => 'Procura',
+	'translate-next' => 'Páxina seguinte',
+	'translate-prev' => 'Páxina anterior',
+	'translate-optional' => '(opcional)',
+	'translate-ignored' => '(ignorado)',
+	'translate-edit-message-format' => 'O formato desta mensaxe é <b>$1</b>.',
+	'translate-edit-message-in' => 'Cadea actual en <b>$1</b> ($2):',
+	'translate-edit-message-in-fb' => 'Cadea actual na lingua de apoio <b>$1</b> ($2):',
+);
+
 $messages['he'] = array(
 	'translate'                     => 'תרגום',
 	'translate-edit-message-format' => 'המבנה של הודעה זו הוא <b>$1</b>.',
@@ -534,6 +557,29 @@ $messages['su'] = array(
 	'translate-edit-message-format' => 'Ieu talatah boga format <b>$1</b>.',
 	'translate-edit-message-in' => 'String kiwari dina <b>$1</b> ($2):',
 	'translate-edit-message-in-fb' => 'String kiwari dina basa fallback <b>$1</b> ($2):',
+);
+
+$messages['sv'] = array(
+	'translate' => 'Översätt',
+	'translate-edit' => 'redigera',
+	'translate-talk' => 'diskussion',
+	'translate-history' => 'historik',
+	'translate-task-view' => 'se alla meddelanden från',
+	'translate-task-untranslated' => 'se alla oöversatta meddelanden från',
+	'translate-task-review' => 'granska ändringar av',
+	'translate-task-reviewall' => 'granska alla översättningar av',
+	'translate-task-export' => 'exportera översättningar från',
+	'translate-task-export-to-file' => 'exportera översättningar till fil från',
+	'translate-settings' => 'Jag vill $1 $2 på språk $3 $4 åt gången. $5',
+	'translate-paging' => '<div>Visar meddelanden från $1 till $2 av $3. [ $4 | $5 ]</div>',
+	'translate-submit' => 'Hämta',
+	'translate-next' => 'Nästa sida',
+	'translate-prev' => 'Föregående sida',
+	'translate-optional' => '(valfritt)',
+	'translate-ignored' => '(används ej)',
+	'translate-edit-message-format' => 'Detta meddelandes format är <b>$1</b>.',
+	'translate-edit-message-in' => 'Nuvarande sträng på <b>$1</b> ($2):',
+	'translate-edit-message-in-fb' => 'Nuvarande sträng i andrahandsspråk <b>$1</b> ($2):',
 );
 
 $messages['tet'] = array(
