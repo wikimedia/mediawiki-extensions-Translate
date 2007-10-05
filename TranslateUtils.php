@@ -260,6 +260,33 @@ class TranslateUtils {
 		return $output;
 	}
 
+	/* Some other helpers for ouput*/
+
+	public static function selector( $name, $options ) {
+		return Xml::tags( 'select', array( 'name' => $name ), $options );
+	}
+
+	public static function languageSelector( $selectedId ) {
+		global $wgLang;
+		if ( is_callable(array( 'LanguageNames', 'getNames' )) ) {
+			$languages = LanguageNames::getNames( $wgLang->getCode(),
+				LanguageNames::FALLBACK_NORMAL,
+				LanguageNames::LIST_MW_AND_CLDR
+			);
+		} else {
+			$languages = Language::getLanguageNames( false );
+		}
+		
+		ksort( $languages );
+
+		$options = '';
+		foreach( $languages as $code => $name ) {
+			$selected = ($code === $selectedId);
+			$options .= Xml::option( "$code - $name", $code, $selected ) . "\n";
+		}
+
+		return self::selector( 'language', $options );
+	}
 
 
 }

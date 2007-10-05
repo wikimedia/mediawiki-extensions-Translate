@@ -26,6 +26,25 @@ $messages['en'] = array(
 	'translate-edit-message-format' => 'The format of this message is <b>$1</b>.',
 	'translate-edit-message-in' => 'Current string in <b>$1</b> ($2):',
 	'translate-edit-message-in-fb' => 'Current string in fallback language <b>$1</b> ($2):',
+
+	'translate-magic-pagename' => 'Extended MediaWiki translation',
+	'translate-magic-form' => 'Language: $1 Module: $2 $3',
+	'translate-magic-submit' => 'Fetch',
+	'translate-magic-cm-to-be' => 'To-be',
+	'translate-magic-cm-current' => 'Current',
+	'translate-magic-cm-original' => 'Original',
+	'translate-magic-cm-fallback' => 'Fallback',
+
+	'translate-magic-cm-save' => 'Save',
+	'translate-magic-cm-export' => 'Export',
+
+	'translate-magic-cm-updatedusing' => 'Updated using Special:Magic',
+	'translate-magic-cm-savefailed' => 'Save failed',
+
+	'translate-magic-special' => 'Special page aliases',
+	'translate-magic-words' => 'Magic words',
+	'translate-magic-skin' => 'Skins name',
+	'translate-magic-namespace' => 'Namespace names',
 );
 
 $messages['ar'] = array(
@@ -243,6 +262,20 @@ $messages['fr'] = array(
 	'translate-edit-message-format' => 'Le format de ce message est <b>$1</b>.',
 	'translate-edit-message-in' => 'Chaîne actuellement dans <b>$1</b> ($2) :',
 	'translate-edit-message-in-fb' => 'Chaîne actuellement dans la langue par défaut <b>$1</b> ($2) :',
+
+	'translate-magic-cm-to-be' => 'Devient',
+	'translate-magic-cm-current' => 'Actuel',
+	'translate-magic-cm-fallback' => 'Revenir',
+	'translate-magic-cm-save' => 'Sauvegarder',
+	'translate-magic-cm-export' => 'Exporter',
+
+	'translate-magic-cm-updatedusing' => 'Mise à jour en utilisant Special:Magic',
+	'translate-magic-cm-savefailed' => 'Échec de la sauvegarde',
+
+	'translate-magic-special' => 'Page spéciales d’alias',
+	'translate-magic-words' => 'Mots magiques',
+	'translate-magic-skin' => 'Nom des interfaces',
+	'translate-magic-namespace' => 'Intitulé des espaces de nommage',
 );
 
 $messages['frc'] = array(
