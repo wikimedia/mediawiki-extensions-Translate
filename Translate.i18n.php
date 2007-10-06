@@ -228,12 +228,16 @@ $messages['ext'] = array(
 	'translate-task-view' => 'Vel tolos mensahis endi',
 	'translate-task-untranslated' => 'Vel tolos mensahis sin traucil endi',
 	'translate-task-export' => 'Esporteal traucionis endi',
+	'translate-task-export-to-file' => 'Esporteal traución a un archivu endi',
 	'translate-paging' => '<div>Muestrandu los mensahis endi el $1 al $2 de $3. [ $4 | $5 ]</div>',
 	'translate-next' => 'Siguienti páhina',
 	'translate-prev' => 'Páhina anteriol',
 	'translate-optional' => '(ocional)',
 	'translate-ignored' => '(inorau)',
 	'translate-edit-message-format' => 'El hormatu desti mensahi es <b>$1</b>.',
+	'translate-magic-cm-save' => 'Emburacal',
+	'translate-magic-cm-export' => 'Esporteal',
+	'translate-magic-words' => 'Parabras máhicas',
 );
 
 $messages['fr'] = array(
@@ -352,6 +356,30 @@ $messages['hsb'] = array(
 	'translate-edit-message-format' => 'Format tuteje zdźělenki je <b>$1</b>.',
 	'translate-edit-message-in' => 'Aktualny tekst w <b>$1</b> ($2):',
 	'translate-edit-message-in-fb' => 'Aktualny tekst we wuhibnej rěči <b>$1</b> ($2):',
+	'translate-magic-pagename' => 'Rozšěrjeny přełožk MediaWiki',
+	'translate-magic-help' => 'Móžěs aliasy specialnych stronow, magiske słowa, mjena šatow a mjena mjenowych rumow přełožić.
+
+W magiskich słowach dyrbiš jendźelske přełožki zapřijeć abo hižo njebudu fungować. Wostaj tež prěni zapisk (0 abo 1) kaž je.
+
+Aliasy specialnych stronow a magiske słowa móža wjacore přełožki měć. Přełožki so přez komy (,) wotdźěleja. Mjeno šatow a mjenowe rumy móže jenož jedyn přełožk měć.
+
+W přełožkach mjenowych rumow <tt>$1 diskusija</tt> je specialna. <tt>$1</tt> so přez mjeno strony, na př. <tt>{{SITENAME}} diskusija</tt> naruna. Jeli w twojej rěči njeje móžno płaćiwy wuraz tworić, bjeztoho zo by so mjeno strony změniło, skontaktuj prošu wuwiwarja.
+
+Dyrbiš w skupinje přełožowarjow być, zo by změny składował. Změny so njeskładuja, doniž  składowanske tłóčatko njekliknješ.',
+	'translate-magic-form' => 'Rěč: $1 Modul: $2 $3',
+	'translate-magic-submit' => 'Pokazać',
+	'translate-magic-cm-to-be' => 'Ma być:',
+	'translate-magic-cm-current' => 'Tuchwilu',
+	'translate-magic-cm-original' => 'Original',#identical but defined
+	'translate-magic-cm-fallback' => 'Wuhibna rěč',
+	'translate-magic-cm-save' => 'Składować',
+	'translate-magic-cm-export' => 'Eksportować',
+	'translate-magic-cm-updatedusing' => 'Z Special:Magic zaktualizowany',
+	'translate-magic-cm-savefailed' => 'Składowanje njeporadźiło',
+	'translate-magic-special' => 'Aliasy specialnych stronow',
+	'translate-magic-words' => 'Magiske słowa',
+	'translate-magic-skin' => 'Mjeno šatow',
+	'translate-magic-namespace' => 'Mjena mjenowych rumow',
 );
 
 $messages['id'] = array(
@@ -376,26 +404,28 @@ $messages['ja'] = array(
 
 # ‪Қазақша (кирил)‬ (AlefZet)
 $messages['kk-kz'] = array(
-	'translate'                     => 'Аудару',
-	'translate-edit'                => 'өңдеу',
-	'translate-talk'                => 'талқылау',
-	'translate-history'             => 'тарихы',
-	'translate-task-view'           => 'Мынадан барлық хабарларды қарау',
-	'translate-task-untranslated'   => 'Мынадан барлық аударылмаған хабарларды қарау',
-	'translate-task-review'         => 'Мынаған жасалған өзгерістерді қарап шығу',
-	'translate-task-reviewall'      => 'Мынадағы барлық аудармаларды қарап шығу',
-	'translate-task-export'         => 'Мынадағы аудармаларды сыртқа беру',
+	'translate' => 'Аудару',
+	'translate-edit' => 'өңдеу',
+	'translate-talk' => 'талқылау',
+	'translate-history' => 'тарихы',
+	'translate-task-view' => 'Мынадан барлық хабарларды қарау',
+	'translate-task-untranslated' => 'Мынадан барлық аударылмаған хабарларды қарау',
+	'translate-task-review' => 'Мынаған жасалған өзгерістерді қарап шығу',
+	'translate-task-reviewall' => 'Мынадағы барлық аудармаларды қарап шығу',
+	'translate-task-export' => 'Мынадағы аудармаларды сыртқа беру',
 	'translate-task-export-to-file' => 'Мынадағы аударманы файл етіп сыртқа беру',
-	'translate-settings'            => 'Талабым: $1 $2 $3 тілінде $4 санымен шектелгенді $5',
-	'translate-paging'              => '<div>Хабарлардың көрсетлуі: $1 нөмірден $2 нөмірге (не барлығы $3). [ $4 | $5 ]</div>',
-	'translate-submit'              => 'Келтіру',
-	'translate-next'                => 'Келесі бет',
-	'translate-prev'                => 'Алдыңғы бет',
-	'translate-optional'            => '(міндетті емес)',
-	'translate-ignored'             => '(елемейтін)',
+	'translate-settings' => 'Талабым: $1 $2 $3 тілінде $4 санымен шектелгенді $5',
+	'translate-paging' => '<div>Хабарлардың көрсетлуі: $1 нөмірден $2 нөмірге (не барлығы $3). [ $4 | $5 ]</div>',
+	'translate-submit' => 'Келтіру',
+	'translate-next' => 'Келесі бет',
+	'translate-prev' => 'Алдыңғы бет',
+	'translate-optional' => '(міндетті емес)',
+	'translate-ignored' => '(елемейтін)',
 	'translate-edit-message-format' => 'Бұл хабардың пішімі — <b>$1</b>.',
-	'translate-edit-message-in'     => 'Ағымдағы жол <b>$1</b> ($2) тілімен:',
-	'translate-edit-message-in-fb'  => 'Ағымдағы жол <b>$1</b> ($2) сүйену тілімен:',
+	'translate-edit-message-in' => 'Ағымдағы жол <b>$1</b> ($2) тілімен:',
+	'translate-edit-message-in-fb' => 'Ағымдағы жол <b>$1</b> ($2) сүйену тілімен:',
+	'translate-magic-pagename' => 'Кеңейтілген MediaWiki аударуы',
+	'translate-magic-submit' => 'Келтіру',
 );
 # ‪Qazaqşa (latın)‬ (AlefZet)
 $messages['kk-tr'] = array(
