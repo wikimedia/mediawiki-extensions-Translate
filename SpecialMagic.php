@@ -146,6 +146,7 @@ class SpecialMagic extends SpecialPage {
 		$this->parseRequest( $wgRequest );
 
 		$wgOut->addHTML( $this->getForm() );
+		$wgOut->addWikitext( wfMsg(self::MSG.'help') );
 
 		if (!$this->module ) { return; }
 		$o = null;
