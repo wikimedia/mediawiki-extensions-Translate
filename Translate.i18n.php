@@ -77,6 +77,21 @@ $messages['ar'] = array(
 	'translate-edit-message-format' => 'صياغة هذه الرسالة هي <b>$1</b>.',
 	'translate-edit-message-in' => 'النص الحالي ب <b>$1</b> ($2):',
 	'translate-edit-message-in-fb' => 'النص الحالي باللغة المراجعة <b>$1</b> ($2):',
+	'translate-magic-pagename' => 'ترجمة ميدياويكي ممددة',
+	'translate-magic-form' => 'اللغة: $1 Module: $2 $3',
+	'translate-magic-submit' => 'إيجاد',
+	'translate-magic-cm-to-be' => 'لتصبح',
+	'translate-magic-cm-current' => 'الحالي',
+	'translate-magic-cm-original' => 'الأصلي',
+	'translate-magic-cm-fallback' => 'المراجعة',
+	'translate-magic-cm-save' => 'حفظ',
+	'translate-magic-cm-export' => 'تصدير',
+	'translate-magic-cm-updatedusing' => 'حدث باستخدام Special:Magic',
+	'translate-magic-cm-savefailed' => 'الحفظ فشل',
+	'translate-magic-special' => 'أسماء الصفحات الخاصة',
+	'translate-magic-words' => 'كلمات سحرية',
+	'translate-magic-skin' => 'أسماء الواجهات',
+	'translate-magic-namespace' => 'أسماء النطاقات',
 );
 
 $messages['bcl'] = array(
@@ -94,6 +109,11 @@ $messages['bcl'] = array(
 	'translate-next' => 'Sunod na pahina',
 	'translate-prev' => 'Nakaaging pahina',
 	'translate-optional' => '(opsyonal)',
+	'translate-magic-form' => 'Tataramon: $1 Module: $2 $3',
+	'translate-magic-submit' => 'Kuânon',
+	'translate-magic-cm-original' => 'Orihinal',
+	'translate-magic-cm-save' => 'Itagama',
+	'translate-magic-cm-savefailed' => 'Bigo an pagtagama',
 );
 
 $messages['bn'] = array(
@@ -196,6 +216,12 @@ $messages['fi'] = array(
 	'translate-edit' => 'muokkaa',
 	'translate-talk' => 'keskustelu',
 	'translate-history' => 'historia',
+	'translate-task-view' => 'nähdä kaikki viestit',
+	'translate-task-untranslated' => 'nähdä kaikki kääntämättömät viestit',
+	'translate-task-review' => 'tarkistaa muutokset',
+	'translate-task-reviewall' => 'tarkistaa kaikki käännökset',
+	'translate-task-export' => 'viedä käännökset',
+	'translate-task-export-to-file' => 'viedä käännökset tiedostoon',
 	'translate-settings' => 'Haluan $1 moduulista $2 kielellä $3 ja enintään $4 viestiä sivulla. $5',
 	'translate-paging' => '<div>Alla on viestit $1–$2; yhteensä $3. [ $4 | $5 ]</div>',
 	'translate-submit' => 'Hae',
@@ -251,40 +277,44 @@ $messages['ext'] = array(
 
 $messages['fr'] = array(
 	'translate' => 'Traduire',
-
 	'translate-edit' => 'éditer',
 	'translate-talk' => 'discuter',
 	'translate-history' => 'historique',
-
 	'translate-task-view' => 'Voir tous les messages depuis',
 	'translate-task-untranslated' => 'Voir tous les messages non traduits depuis',
 	'translate-task-review' => 'Revoir mes changements depuis',
 	'translate-task-reviewall' => 'Revoir tous les traductions dans',
 	'translate-task-export' => 'Exporter les traductions depuis',
 	'translate-task-export-to-file' => 'Exporter les traductions dans un fichier depuis',
-
 	'translate-settings' => 'Je désire $1 $2 en $3 dans la limite de $4. $5',
 	'translate-paging' => '<div>Afficher les messages depuis $1 vers $2 de $3. [ $4 | $5 ]</div>',
 	'translate-submit' => 'Atteindre',
 	'translate-next' => 'Page suivante',
 	'translate-prev' => 'Page précédente',
-
 	'translate-optional' => '(facultatif)',
 	'translate-ignored' => '(ignoré)',
-
 	'translate-edit-message-format' => 'Le format de ce message est <b>$1</b>.',
 	'translate-edit-message-in' => 'Chaîne actuellement dans <b>$1</b> ($2) :',
 	'translate-edit-message-in-fb' => 'Chaîne actuellement dans la langue par défaut <b>$1</b> ($2) :',
+	'translate-magic-pagename' => 'Traduction de MediaWiki étendue',
+	'translate-magic-help' => 'Vous pouvez traduire les alias de pages spéciales, les mots magiques, les noms de skins et les noms d\'espaces de noms.
 
+Dans les mots magiques, vous devez inclure la traduction en anglais ou ça ne fonctionnera plus. De plus, laissez le premier item (0 ou 1) comme c\'est.
+
+Les alias de pages spéciales et les mots magiques peuvent avoir plusieurs traductions. Les traductions sont séparées par une virgule (,). Les noms de skins et d\'espaces de noms ne peuvent avoir qu\'une traduction.
+
+Dans les traductions d\'espaces de noms, <tt>$1 talk</tt> est spécial. <tt>$1</tt> est remplacé par le nom du site (par exemple <tt>{{SITENAME}} talk</tt>). Si ce n\'est pas possible d\'obtenir une expression valide dans votre langue sans changer le nom du site, veuillez contacter un développeur.
+
+Vous devez appartenir au groupe des traducteurs pour sauvegarder les changements. Les changements ne seront pas sauvegardés avant que vous ne cliquiez sur le bouton Saugegarder en bas.',
+	'translate-magic-form' => 'Langue $1 Module : $2 $3',
+	'translate-magic-submit' => 'Aller',
 	'translate-magic-cm-to-be' => 'Devient',
 	'translate-magic-cm-current' => 'Actuel',
 	'translate-magic-cm-fallback' => 'Revenir',
 	'translate-magic-cm-save' => 'Sauvegarder',
 	'translate-magic-cm-export' => 'Exporter',
-
 	'translate-magic-cm-updatedusing' => 'Mise à jour en utilisant Special:Magic',
 	'translate-magic-cm-savefailed' => 'Échec de la sauvegarde',
-
 	'translate-magic-special' => 'Page spéciales d’alias',
 	'translate-magic-words' => 'Mots magiques',
 	'translate-magic-skin' => 'Nom des interfaces',
@@ -522,6 +552,30 @@ $messages['nl'] = array(
 	'translate-edit-message-format' => 'Het formaat van dit bericht is <b>$1</b>.',
 	'translate-edit-message-in' => 'Huidige tekst in <b>$1</b> ($2):',
 	'translate-edit-message-in-fb' => 'Huidige tekst in reservetaal <b>$1</b> ($2):',
+	'translate-magic-pagename' => 'Uitgebreide MediaWiki-vertaling',
+	'translate-magic-help' => 'U kunt alternatieven voor speciale pagina\'s, magische woorden, skinnamen en naamruimtebenamingen vertalen.
+
+In magische woorden moet u de Engelstalige vertalingen opnemen, omdat ze anders niet meer werken. Laat ook de eerste karakters (0 of 1) ongemoeid.
+
+Alternatieven voor speciale pagina\'s en magische woorden kunnen meerdere vertalingen hebben. Scheid vertalingen met een komma (,). Skinnamen en naamruimtebenamingen kunnen slechts één vertaling hebben.
+
+In naamruimtebenamingen is <tt>$1 talk</tt> een uitzondering. <tt>$1</tt> wordt vervangen door de sitenaam (bijvoorbeeld <tt>{{SITENAME}} talk</tt>. Als het in uw taal niet mogelijk is een geldige expressie te vormen zonder de sitenaam te wijzigen, neem dan contact op met een ontwikkelaar.
+
+Om wijzigingen op te slaan moet u lid zijn van de groep vertalers. Wijzigingen worden niet bewaard totdat u op Opslaan heeft geklikt.',
+	'translate-magic-form' => 'Taal: $1 Module: $2 $3',
+	'translate-magic-submit' => 'Ophalen',
+	'translate-magic-cm-to-be' => 'Toekomstig',
+	'translate-magic-cm-current' => 'Huidig',
+	'translate-magic-cm-original' => 'Origineel',
+	'translate-magic-cm-fallback' => 'Alternatief',
+	'translate-magic-cm-save' => 'Opslaan',
+	'translate-magic-cm-export' => 'Exporteren',
+	'translate-magic-cm-updatedusing' => 'Bijgewerkt via Special:Magic',
+	'translate-magic-cm-savefailed' => 'Opslaan mislukt',
+	'translate-magic-special' => 'Alternatieven speciale pagina\'s',
+	'translate-magic-words' => 'Magische woorden',
+	'translate-magic-skin' => 'Skinnamen',
+	'translate-magic-namespace' => 'Naamruimtebenamingen',
 );
 
 $messages['no'] = array(
