@@ -78,6 +78,15 @@ $messages['ar'] = array(
 	'translate-edit-message-in' => 'النص الحالي ب <b>$1</b> ($2):',
 	'translate-edit-message-in-fb' => 'النص الحالي باللغة المراجعة <b>$1</b> ($2):',
 	'translate-magic-pagename' => 'ترجمة ميدياويكي ممددة',
+	'translate-magic-help' => 'يمكنك ترجمة أسماء الصفحات الخاصة، الكلمات السحرية، أسماء الواجهات وأسماء النطاقات.
+
+في الكلمات السحرية تحتاج إلى إضافة الترجمة الإنجليزية وإلا فإنها ستتوقف عن العمل. أيضا اترك المدخل الأول (0 أو 1) كما هو.
+
+أسماء الصفحات الخاصة والكلمات السحرية يمكن أن يكون لهم ترجمات متعددة. الترجمات مفصولة بفاصلة(,). أسماء الواجهات والنطاقات يمكن أن يكون لها ترجمة واحدة.
+
+في ترجمة النطاقات <tt>$1 talk</tt> خاص. <tt>$1</tt> تستبدل باسم الموقع (على سبيل المثال <tt>{{SITENAME}} talk</tt>. لو أنه من غير الممكن في لغتك صياغة تعبير صحيح بدون تغيير اسم الموقع، من فضلك اتصل بمطور.
+
+تحتاج إلى أن تكون في مجموعة المترجمين لحفظ التغييرات. التغييرات لن يتم حفظها حتى على زر الحفظ بالأسفل.',
 	'translate-magic-form' => 'اللغة: $1 Module: $2 $3',
 	'translate-magic-submit' => 'إيجاد',
 	'translate-magic-cm-to-be' => 'لتصبح',
@@ -145,6 +154,11 @@ $messages['bpy'] = array(
 
 $messages['br'] = array(
 	'translate' => 'Treiñ',
+	'translate-edit' => 'kemmañ',
+	'translate-talk' => 'kaozeal',
+	'translate-history' => 'istor',
+	'translate-settings' => 'Me a fell din $1 $2 e $3 e-barzh ar vevenn $4. $5',
+	'translate-paging' => '<div>O tiskouez kemennoù eus $1 da $2 diwar $3. [ $4 | $5 ]</div>',
 	'translate-edit-message-format' => 'Furmad ar gemennadenn-mañ zo <b>$1</b>.',
 	'translate-edit-message-in' => 'Neudennad red e <b>$1</b> (Kemennadennoù$2.php):',
 	'translate-edit-message-in-fb' => 'Neudennad red er yezh kein <b>$1</b> (Kemennadennoù$2.php):',
