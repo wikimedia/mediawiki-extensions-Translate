@@ -536,6 +536,7 @@ $messages['la'] = array(
 	'translate-settings' => 'Volo $1 $2 in lingua $3 cum fine $4. $5',
 	'translate-next' => 'Pagina proxima',
 	'translate-prev' => 'Pagina superior',
+	'translate-magic-cm-save' => 'Servare',
 );
 
 $messages['nds'] = array(
