@@ -833,7 +833,7 @@ class MakeSysopMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Make Sysop';
 	protected $id    = 'ext-makesysop';
 
-	protected $arrName     = 'wgMakesysopMessages';
+	protected $arrName     = 'messages';
 	protected $messageFile = 'Makesysop/SpecialMakesysop.i18n.php';
 }
 
