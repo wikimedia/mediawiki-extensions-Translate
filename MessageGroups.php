@@ -1149,9 +1149,9 @@ class SelectCategoryExtensionGroup extends MultipleFileMessageGroup {
 	protected $exportEnd   = ');';
 }
 
-class SignDocumentAMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Sign Document (a)';
-	protected $id    = 'ext-signdocumenta';
+class SignDocumentMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Sign Document';
+	protected $id    = 'ext-signdocument';
 
 	protected $arrName     = 'allMessages';
 	protected $messageFile = 'SignDocument/SignDocument.i18n.php';
@@ -1162,9 +1162,9 @@ class SignDocumentAMessageGroup extends ExtensionMessageGroup {
 	protected $exportEnd   = "),";
 }
 
-class SignDocumentBMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Sign Document (b)';
-	protected $id    = 'ext-signdocumentb';
+class SpecialCreateSignDocumentMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Special Create Sign Document';
+	protected $id    = 'ext-specialcreatesigndocument';
 
 	protected $arrName     = 'allMessages';
 	protected $messageFile = 'SignDocument/SpecialCreateSignDocument.i18n.php';
@@ -1175,9 +1175,9 @@ class SignDocumentBMessageGroup extends ExtensionMessageGroup {
 	protected $exportEnd   = "),";
 }
 
-class SignDocumentCMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Sign Document (c)';
-	protected $id    = 'ext-signdocumentc';
+class SpecialSignDocumentMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Special Sign Document';
+	protected $id    = 'ext-specialsigndocument';
 
 	protected $arrName     = 'allMessages';
 	protected $messageFile = 'SignDocument/SpecialSignDocument.i18n.php';
