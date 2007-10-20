@@ -56,6 +56,10 @@ You need to be in the translators group to save changes. Changes are not saved u
 	'translate-magic-namespace' => 'Namespace names',
 );
 
+$messages['an'] = array(
+	'translate-magic-form' => 'Lenguache: $1 Module: $2 $3',
+);
+
 $messages['ar'] = array(
 	'translate' => 'ترجمة',
 	'translate-edit' => 'عدل',
@@ -162,7 +166,7 @@ $messages['br'] = array(
 	'translate-edit' => 'kemmañ',
 	'translate-talk' => 'kaozeal',
 	'translate-history' => 'istor',
-	'translate-settings' => 'Me a fell din $1 $2 e $3 e-barzh ar vevenn $4. $5',
+	'translate-settings' => 'Me a fell din $1 $2 e $3 dre $4. $5',
 	'translate-paging' => '<div>O tiskouez kemennoù eus $1 da $2 diwar $3. [ $4 | $5 ]</div>',
 	'translate-edit-message-format' => 'Furmad ar gemennadenn-mañ zo <b>$1</b>.',
 	'translate-edit-message-in' => 'Neudennad red e <b>$1</b> (Kemennadennoù$2.php):',
@@ -544,6 +548,18 @@ $messages['la'] = array(
 	'translate-magic-cm-save' => 'Servare',
 );
 
+$messages['li'] = array(
+	'translate' => 'Vertale',
+	'translate-edit' => 'bewèrk',
+	'translate-talk' => 'euverlèk',
+	'translate-history' => 'gesjiedenis',
+	'translate-task-view' => 'Laot alle berichter zeen van',
+	'translate-task-untranslated' => 'Laot alle ónvertäölde berichter zeen van',
+	'translate-next' => 'Volgende pazjena',
+	'translate-prev' => 'Vörge pazjena',
+	'translate-optional' => '(optioneel)',
+);
+
 $messages['nds'] = array(
 	'translate' => 'Översetten',
 	'translate-edit-message-format' => 'Format vun disse Naricht is \'\'\'$1\'\'\'.',
@@ -758,6 +774,12 @@ $messages['wa'] = array(
 	'translate-edit-message-format' => 'Li format di ç\' messaedje ci c\' est <b>$1</b>.',
 	'translate-edit-message-in' => 'Li tecse do moumint e lingaedje <b>$1</b> ($2):',
 	'translate-edit-message-in-fb' => 'Tecse pol lingaedje di deujhinme tchuze <b>$1</b> ($2):',
+);
+
+$messages['ug'] = array(
+	'translate-edit' => 'uzgartish',
+	'translate-talk' => 'monazire',
+	'translate-history' => 'tarih',
 );
 
 $messages['yue'] = array(
