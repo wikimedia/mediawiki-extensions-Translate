@@ -47,6 +47,8 @@ abstract class MessageGroup {
 
 		if ( $translation === null ) { return false; }
 
+		if ( strpos($translation, '!!FUZZY!!') !== false ) { return false; }
+
 		if ( $m['optional'] ) {
 			if ( $translation !== $fallback ) {
 				$comment = "#optional";
@@ -490,7 +492,6 @@ class CategoryTreeExtensionGroup extends MultipleFileMessageGroup {
 
 	protected $exportStart = '$messages = array(';
 	protected $exportEnd   = ');';
-
 }
 
 class CentralAuthMessageGroup extends ExtensionMessageGroup {
@@ -708,6 +709,18 @@ class FancyCaptchaMessageGroup extends ExtensionMessageGroup {
 	protected $exportEnd   = '),';
 }
 
+class FCKeditorExtensionGroup extends MultipleFileMessageGroup {
+	protected $label = 'FCKeditor';
+	protected $id    = 'ext-fckeditor';
+
+	protected $arrName      = 'allMessages';
+	protected $messageFile  = 'FCKeditor/FCKeditor.i18n.en.php';
+	protected $filePattern  = 'FCKeditor/FCKeditor.i18n.$CODE.php';
+
+	protected $exportStart = '$allMessages = array(';
+	protected $exportEnd   = ');';
+}
+
 class FlaggedRevsMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Flagged Revs';
 	protected $id      = 'ext-flaggedrevs';
@@ -835,6 +848,11 @@ class MakeSysopMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'Makesysop/SpecialMakesysop.i18n.php';
+
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportPrefix= '';
+	protected $exportLineP = '';
+	protected $exportEnd   = '),';
 }
 
 class MakeValidateMessageGroup extends ExtensionMessageGroup {

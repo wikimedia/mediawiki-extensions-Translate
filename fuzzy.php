@@ -26,7 +26,7 @@ class FuzzyBot {
 		$this->titles = $titles;
 		$this->dryrun = $dryrun;
 
-		global $wgTranslateFuzzyBotName, $wgTranslateFuzzyBotId, $wgUser;
+		global $wgTranslateFuzzyBotName, $wgUser;
 
 		if ( !isset( $wgTranslateFuzzyBotName ) ) {
 			echo "\$wgTranslateFuzzyBotName is not set\n";

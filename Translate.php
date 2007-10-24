@@ -12,7 +12,7 @@ if (!defined('MEDIAWIKI')) die();
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'Translate',
-	'version' => '4.1',
+	'version' => '4.2',
 	'author' => 'Niklas Laxström',
 	'description' => 'Special page for translating Mediawiki and beyond'
 );
@@ -25,11 +25,14 @@ $wgAutoloadClasses['TranslateEditAddons'] = $dir . 'TranslateEditAddons.php';
 $wgAutoloadClasses['languages'] = $IP . '/maintenance/language/languages.inc';
 $wgAutoloadClasses['SpecialTranslate'] = $dir . 'TranslatePage.php';
 $wgAutoloadClasses['SpecialMagic'] = $dir . 'SpecialMagic.php';
+$wgAutoloadClasses['SpecialTranslationChanges'] = $dir . 'SpecialTranslationChanges.php';
+
 
 $wgExtensionMessagesFiles['Translate'] = $dir . 'Translate.i18n.php';
 
 $wgSpecialPages['Translate'] = 'SpecialTranslate';
 $wgSpecialPages['Magic'] = 'SpecialMagic';
+$wgSpecialPages['TranslationChanges'] = 'SpecialTranslationChanges';
 
 $wgHooks['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';
 
@@ -78,6 +81,7 @@ $wgTranslateAC = array(
 'ext-editcount'             => 'EditcountMessageGroup',
 'ext-expandtemplates'       => 'ExpandTemplatesMessageGroup',
 'ext-fancycaptcha'          => 'FancyCaptchaMessageGroup',
+'ext-fckeditor'             => 'FCKeditorExtensionGroup',
 'ext-filepath'              => 'FilePathMessageGroup',
 'ext-flaggedrevs'           => 'FlaggedRevsMessageGroup',
 'ext-gadgets'               => 'GadgetsExtensionGroup',

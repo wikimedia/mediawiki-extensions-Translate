@@ -529,12 +529,17 @@ class NamespaceCM extends ComplexMessages {
 	 */
 	public function export() {
 		$array = $this->getArray();
+		foreach ($array[self::LANG_MASTER] as $index => $ns) {
+			if ($index !== 0 && !isset($array[self::LANG_CURRENT][$index][0])) {
+				return "Missing translation for ns $index, cannot export";
+			}
+		}
 
 		$text = <<<EOL
 \$namespaceNames = array(
 	NS_MEDIA          => '{$array[self::LANG_CURRENT][-2][0]}',
 	NS_SPECIAL        => '{$array[self::LANG_CURRENT][-1][0]}',
-	NS_MAIN           => '{$array[self::LANG_CURRENT][0][0]}',
+	NS_MAIN           => '',
 	NS_TALK           => '{$array[self::LANG_CURRENT][1][0]}',
 	NS_USER           => '{$array[self::LANG_CURRENT][2][0]}',
 	NS_USER_TALK      => '{$array[self::LANG_CURRENT][3][0]}',
