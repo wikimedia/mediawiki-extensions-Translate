@@ -255,6 +255,15 @@ class ExportMessagesTask extends ViewMessagesTask {
 		return $output;
 	}
 
+	protected function getAuthorsArray() {
+		$_authors = $this->getAuthors();
+		arsort( $_authors, SORT_NUMERIC );
+		foreach ( $_authors as $author => $edits ) {
+			$authors[] = $author;
+		}
+		return $authors;
+	}
+
 	public function output() {
 		return 	Xml::openElement( 'textarea', array( 'id' => 'wpTextbox1', 'rows' => '50' ) ) .
 			$this->getOutputHeader() .
@@ -274,8 +283,11 @@ class ExportToFileMessagesTask extends ExportMessagesTask {
 		$wgOut->disable();
 		header( 'Content-type: text/plain; charset=UTF-8' );
 		echo
-			$this->getOutputHeader() .
-			$this->messageGroup->export( $this->messages, $this->options->getLanguage() );
+			$this->messageGroup->exportToFile(
+				$this->messages,
+				$this->options->getLanguage(),
+				$this->getAuthorsArray()
+			);
 		return '';
 	}
 }

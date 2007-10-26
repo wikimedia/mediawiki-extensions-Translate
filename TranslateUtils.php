@@ -266,6 +266,18 @@ class TranslateUtils {
 		return Xml::tags( 'select', array( 'name' => $name ), $options );
 	}
 
+	public static function getLanguageName( $code, $native = false ) {
+		if ( !$native && is_callable(array( 'LanguageNames', 'getNames' )) ) {
+			$languages = LanguageNames::getNames( 'en',
+				LanguageNames::FALLBACK_NORMAL,
+				LanguageNames::LIST_MW_AND_CLDR
+			);
+		} else {
+			$languages = Language::getLanguageNames( false );
+		}
+		return isset($languages[$code]) ? $languages[$code] : false;
+	}
+
 	public static function languageSelector( $selectedId ) {
 		global $wgLang;
 		if ( is_callable(array( 'LanguageNames', 'getNames' )) ) {

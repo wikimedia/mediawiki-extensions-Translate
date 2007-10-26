@@ -22,6 +22,10 @@ abstract class MessageGroup {
 	/** Called when user exports the messages */
 	abstract function export( &$array, $code );
 
+	public function exportToFile( &$array, $code ) {
+		return $this->export( $array, code );
+	}
+
 	/** Return array of key => messages for requested language, or empty array */
 	abstract function getDefinitions();
 
@@ -69,6 +73,32 @@ abstract class MessageGroup {
 		return true;
 	}
 
+	public function makeMessageArray( $array ) {
+		$new = array();
+		foreach( $array as $key => $m ) {
+			# CASE1: ignored
+			if ( $m['ignored'] ) continue;
+
+			$translation = $m['database'] !== null ? $m['database'] : $m['infile'];
+			# CASE2: no translation
+			if ( $translation === null ) continue;
+
+			# CASE3: optional messages; accept only if different
+			if ( $m['optional'] && $translation === $m['definition'] ) continue;
+
+			# CASE4: don't export non-translations unless translated in wiki
+			if( !$m['pageexists'] && $translation === $m['definition'] ) continue;
+
+			# Remove fuzzy markings before export
+			str_replace( '!!FUZZY!!', '', $translation );
+
+			# Otherwise it's good
+			$new[$key] = $translation;
+		}
+
+		return $new;
+	}
+
 	/** Returns php and whitespace formatted key => message line or null */
 	function exportLine($key, $m, $pad = false) {
 		$comment = '';
@@ -106,6 +136,57 @@ class CoreMessageGroup extends MessageGroup {
 		$txt .= ");";
 		return $txt;
 	}
+
+	private function formatAuthors( $authors ) {
+		$s = array();
+		foreach ( $authors as $a ) {
+			$s[] = " * @author $a";
+		}
+		return implode( "\n", $s );
+	}
+
+	private function getAuthorsFromFile( $code ) {
+		$filename = Language::getMessagesFileName( $code );
+		$contents = file_get_contents( $filename );
+		$m = array();
+		$count = preg_match_all( '/@author (.*)/', $contents, $m );
+		return $m[1];
+	}
+
+	private function getOther( $code ) {
+		$filename = Language::getMessagesFileName( $code );
+		$contents = file_get_contents( $filename );
+		$start = strpos( $contents, '*/' );
+		$end = strpos( $contents, '$messages' );
+		if ( $start === false ) return '';
+		if ( $start === $end ) return '';
+		$start += 2; // Get over the comment ending
+		if ( $end === false ) return trim( substr( $contents, $start ) );
+		return trim( substr( $contents, $start, $end-$start ) );
+	}
+
+	public function exportToFile( $array, $code, $authors ) {
+		$x = MessageWriter::writeMessagesArray( $this->makeMessageArray( $array ), false );
+		$name = TranslateUtils::getLanguageName( $code );
+		$native = TranslateUtils::getLanguageName( $code, true );
+		$authors = array_merge( $this->getAuthorsFromFile( $code ), $authors );
+		$translators = $this->formatAuthors( $authors );
+		$other = $this->getOther( $code );
+		return <<<CODE
+<?php
+/** $name ($native)
+ *
+ * @addtogroup Language
+ *
+$translators
+ */
+
+$other
+
+$x[0]
+CODE;
+	}
+
 
 	function getDefinitions() {
 		return Language::getMessagesFor( 'en' );

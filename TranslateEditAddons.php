@@ -22,6 +22,27 @@ class TranslateEditAddons {
  }
 */
 
+	private static function getFallbacks( $code ) {
+		global $wgTranslateLanguageFallbacks;
+
+		$fallbacks = array();
+		if ( isset($wgTranslateLanguageFallbacks[$code]) ) {
+				$temp = $wgTranslateLanguageFallbacks[$code];
+			if (!is_array($temp) ) {
+				$fallbacks = array( $temp );
+			} else {
+				$fallbacks = $temp;
+			}
+		}
+
+		$realFallback = Language::getFallbackFor( $code );
+		if ( $realFallback && $realFallback !== 'en' ) {
+			$fallbacks = array_merge( $realFallback, $fallbacks );
+		}
+
+		return $fallbacks;
+	}
+
 	private static function doBox( $msg, $code, $i18nmsg ) {
 		global $wgUser;
 		static $names = false;
@@ -79,23 +100,21 @@ class TranslateEditAddons {
 		$en = $group->getMessage( $key, 'en' );
 		$xx = $group->getMessage( $key, $code );
 
-		$fb = null;
-		$fbcode = Language::getFallbackFor( $code );
-		if ( $fbcode ) {
-			$fb = $group->getMessage( $key, $fbcode );
-			/* For fallback, even uncommitted translation may be useful */
-			if ( $fb === null ) {
-				$fb = TranslateUtils::getMessageContent( $key, $fbcode );
-			}
-		}
 
 		$boxes = array();
 		if ( $en !== null ) {
 			$boxes[] = self::dobox( $en, 'en', 'translate-edit-message-in' );
 		}
 
-		if ( $fb !== null && $fbcode !== 'en' ) {
-			$boxes[] = self::dobox( $fb, $fbcode, 'translate-edit-message-in-fb' );
+		foreach ( self::getFallbacks( $code ) as $fbcode ) {
+			$fb = $group->getMessage( $key, $fbcode );
+			/* For fallback, even uncommitted translation may be useful */
+			if ( $fb === null ) {
+				$fb = TranslateUtils::getMessageContent( $key, $fbcode );
+			}
+			if ( $fb !== null ) {
+				$boxes[] = self::dobox( $fb, $fbcode, 'translate-edit-message-in-fb' );
+			}
 		}
 
 		if ( $xx !== null && $code !== 'en' ) {
