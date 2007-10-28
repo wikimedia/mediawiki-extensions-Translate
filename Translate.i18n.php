@@ -60,6 +60,12 @@ $messages['an'] = array(
 	'translate-magic-form' => 'Lenguache: $1 Module: $2 $3',
 );
 
+$messages['ang'] = array(
+	'translate-edit' => 'ādihtan',
+	'translate-talk' => 'mōtung',
+	'translate-history' => 'stǣr',
+);
+
 $messages['ar'] = array(
 	'translate' => 'ترجمة',
 	'translate-edit' => 'عدل',
