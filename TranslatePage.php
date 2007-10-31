@@ -10,7 +10,7 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	/** Access point for this special page */
-	public function execute() {
+	public function execute( $parameters ) {
 		wfLoadExtensionMessages( 'Translate' );
 
 		global $wgHooks;

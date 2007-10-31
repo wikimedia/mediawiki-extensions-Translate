@@ -22,9 +22,6 @@ class TranslateUtils {
 	 * Initializes messages array.
 	 */
 	public static function initializeMessages( Array $definitions, $sortCallback = null ) {
-		global $wgMessageCache;
-		$wgMessageCache->loadAllMessages();
-
 		$messages = array();
 
 		if ( is_callable( $sortCallback ) ) {
@@ -32,7 +29,6 @@ class TranslateUtils {
 		}
 
 		foreach ( $definitions as $key => $value ) {
-
 			$messages[$key]['definition'] = $value; // the very original message
 			$messages[$key]['database']   = null; // current translation in db
 			$messages[$key]['author']     = null; // Author of the latest revision

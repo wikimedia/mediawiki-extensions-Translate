@@ -7,7 +7,7 @@ class SpecialTranslationChanges extends SpecialPage {
 	}
 
 	/** Access point for this special page */
-	public function execute() {
+	public function execute( $parameters ) {
 		global $wgOut, $wgScriptPath, $wgJsMimeType, $wgStyleVersion;
 		wfLoadExtensionMessages( 'Translate' );
 

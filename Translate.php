@@ -12,7 +12,7 @@ if (!defined('MEDIAWIKI')) die();
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'Translate',
-	'version' => '4.3',
+	'version' => '4.4',
 	'author' => 'Niklas Laxström',
 	'description' => 'Special page for translating Mediawiki and beyond'
 );
@@ -38,6 +38,8 @@ $wgSpecialPages['TranslationChanges'] = 'SpecialTranslationChanges';
 
 $wgHooks['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';
 
+define( 'TRANSLATE_FUZZY', '!!FUZZY!!' );
+
 #
 # Configuration variables
 #
@@ -53,6 +55,9 @@ $wgTranslateExtensionDirectory = "$IP/extensions/";
 
 /** Which other language translations are displayed to help translator */
 $wgTranslateLanguageFallbacks = array();
+
+/** Name of the fuzzer bot */
+$wgTranslateFuzzyBotName = 'FuzzyBot';
 
 /** AC = Available classes */
 $wgTranslateAC = array(

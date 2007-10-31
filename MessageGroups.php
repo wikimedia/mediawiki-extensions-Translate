@@ -1,14 +1,9 @@
 <?php
 
 abstract class MessageGroup {
-	protected $load = false;
-
 	protected $label = 'none';
 	protected $id    = 'none';
-
-	function __construct( $load ) {
-		$this->load = $load;
-	}
+	protected $mcache= array();
 
 	/** Returns a human readable name of this class */
 	function getLabel() { return $this->label; }
@@ -22,8 +17,8 @@ abstract class MessageGroup {
 	/** Called when user exports the messages */
 	abstract function export( &$array, $code );
 
-	public function exportToFile( &$array, $code ) {
-		return $this->export( $array, code );
+	public function exportToFile( &$array, $code, $authors ) {
+		return $this->export( $array, $code );
 	}
 
 	/** Return array of key => messages for requested language, or empty array */
@@ -51,7 +46,7 @@ abstract class MessageGroup {
 
 		if ( $translation === null ) { return false; }
 
-		if ( strpos($translation, '!!FUZZY!!') !== false ) { return false; }
+		if ( strpos($translation, TRANSLATE_FUZZY) !== false ) { return false; }
 
 		if ( $m['optional'] ) {
 			if ( $translation !== $fallback ) {
@@ -73,7 +68,7 @@ abstract class MessageGroup {
 		return true;
 	}
 
-	public function makeMessageArray( $array ) {
+	public function makeMessageArray( &$array ) {
 		$new = array();
 		foreach( $array as $key => $m ) {
 			# CASE1: ignored
@@ -90,7 +85,7 @@ abstract class MessageGroup {
 			if( !$m['pageexists'] && $translation === $m['definition'] ) continue;
 
 			# Remove fuzzy markings before export
-			str_replace( '!!FUZZY!!', '', $translation );
+			$translation = str_replace( TRANSLATE_FUZZY, '', $translation );
 
 			# Otherwise it's good
 			$new[$key] = $translation;
@@ -114,7 +109,6 @@ abstract class MessageGroup {
 	}
 
 	public function fillBools( &$array ) {}
-
 }
 
 class CoreMessageGroup extends MessageGroup {
@@ -124,52 +118,20 @@ class CoreMessageGroup extends MessageGroup {
 	public function getMessageFile( $code ) { return "Messages$code.php"; }
 
 	public function getMessage( $key, $code ) {
-		$messages = $this->getMessagesInFile( $code );
+		$messages = $this->loadMessages( $code );
 		return isset( $messages[$key] ) ? $messages[$key] : null;
 	}
 
 	function export( &$array, $code ) {
-		$txt = "\$messages = array(\n";
-		foreach( $array as $key => $m ) {
-			$txt .= $this->exportLine($key, $m, 30);
-		}
-		$txt .= ");";
-		return $txt;
+		$x = MessageWriter::writeMessagesArray( $this->makeMessageArray( &$array ), false );
+		return $x[0];
 	}
 
-	private function formatAuthors( $authors ) {
-		$s = array();
-		foreach ( $authors as $a ) {
-			$s[] = " * @author $a";
-		}
-		return implode( "\n", $s );
-	}
-
-	private function getAuthorsFromFile( $code ) {
-		$filename = Language::getMessagesFileName( $code );
-		$contents = file_get_contents( $filename );
-		$m = array();
-		$count = preg_match_all( '/@author (.*)/', $contents, $m );
-		return $m[1];
-	}
-
-	private function getOther( $code ) {
-		$filename = Language::getMessagesFileName( $code );
-		$contents = file_get_contents( $filename );
-		$start = strpos( $contents, '*/' );
-		$end = strpos( $contents, '$messages' );
-		if ( $start === false ) return '';
-		if ( $start === $end ) return '';
-		$start += 2; // Get over the comment ending
-		if ( $end === false ) return trim( substr( $contents, $start ) );
-		return trim( substr( $contents, $start, $end-$start ) );
-	}
-
-	public function exportToFile( $array, $code, $authors ) {
-		$x = MessageWriter::writeMessagesArray( $this->makeMessageArray( $array ), false );
+	public function exportToFile( &$array, $code, $authors ) {
+		$x = MessageWriter::writeMessagesArray( $this->makeMessageArray( &$array ), false );
 		$name = TranslateUtils::getLanguageName( $code );
 		$native = TranslateUtils::getLanguageName( $code, true );
-		$authors = array_merge( $this->getAuthorsFromFile( $code ), $authors );
+		$authors = array_unique( array_merge( $this->getAuthorsFromFile( $code ), $authors ) );
 		$translators = $this->formatAuthors( $authors );
 		$other = $this->getOther( $code );
 		return <<<CODE
@@ -204,37 +166,72 @@ CODE;
 		}
 	}
 
-	private function getMessagesInFile( $code ) {
-		$file = Language::getMessagesFileName( $code );
-		if ( !file_exists( $file ) ) {
-			return null;
-		} else {
-			require( $file );
-			return isset( $messages ) ? $messages : null;
+	/* Cache of read messages */
+	private static $mCache = array();
+	private function loadMessages( $code ) {
+		if ( !isset(self::$mCache[$code]) ) {
+			$file = Language::getMessagesFileName( $code );
+			if ( !file_exists( $file ) ) {
+				self::$mCache[$code] = null;
+			} else {
+				require( $file );
+				return self::$mCache[$code] = isset( $messages ) ? $messages : null;
+			}
 		}
+
+		return self::$mCache[$code];
 	}
 
 	function fill( &$array, $code ) {
-		$infile = $this->getMessagesInFile( $code );
+		$infile = $this->loadMessages( $code );
 		$infbfile = null;
 		if ( Language::getFallbackFor( $code ) ) {
-			$infbfile = $this->getMessagesInFile( Language::getFallbackFor( $code ) );
+			$infbfile = $this->loadMessages( Language::getFallbackFor( $code ) );
 		}
 
 		foreach ( $array as $key => $value ) {
 			if ( isset($infile[$key]) ) {
 				$array[$key]['infile'] = $infile[$key];
 			}
-			if ( isset($infbfile[$key]) ) {
+			if ( $infbfile && isset($infbfile[$key]) ) {
 				$array[$key]['fallback'] = $infbfile[$key];
 			}
 		}
 	}
+
+	private function formatAuthors( $authors ) {
+		$s = array();
+		foreach ( $authors as $a ) {
+			$s[] = " * @author $a";
+		}
+		return implode( "\n", $s );
+	}
+
+	private function getAuthorsFromFile( $code ) {
+		$filename = Language::getMessagesFileName( $code );
+		$contents = file_get_contents( $filename );
+		$m = array();
+		$count = preg_match_all( '/@author (.*)/', $contents, $m );
+		return $m[1];
+	}
+
+	private function getOther( $code ) {
+		$filename = Language::getMessagesFileName( $code );
+		$contents = file_get_contents( $filename );
+		$start = strpos( $contents, '*/' );
+		$end = strpos( $contents, '$messages' );
+		if ( $start === false ) return '';
+		if ( $start === $end ) return '';
+		$start += 2; // Get over the comment ending
+		if ( $end === false ) return trim( substr( $contents, $start ) );
+		return trim( substr( $contents, $start, $end-$start ) );
+	}
+
 }
 
 abstract class ExtensionMessageGroup extends MessageGroup {
 	protected $arrName      = false;
-	protected $msgArray     = null;
+	protected $mcache     = null;
 	protected $functionName = false;
 	protected $messageFile  = null;
 
@@ -250,35 +247,25 @@ abstract class ExtensionMessageGroup extends MessageGroup {
 
 	public function getMessage( $key, $code ) {
 		$this->load( $code );
-		return isset( $this->msgArray[$code][$key] ) ? $this->msgArray[$code][$key] : null;
+		return isset( $this->mcache[$code][$key] ) ? $this->mcache[$code][$key] : null;
 	}
 
-	protected function load( $code = '' ) {
-		if ( $code === '' ) throw new MWException( 'load failed1' );;
-		if ( isset($this->msgArray[$code]) ) return;
-
-		$messages = $this->loadMessages( $code );
-		if ( $messages !== null ) {
-			$this->msgArray = $messages;
-			return true;
-		} else {
-				throw new MWException( 'No messages returned for extension' . $this->getLabel() );
-		}
-		return false;
+	protected function load( $code ) {
+		if ( isset($this->mcache[$code]) ) return;
+		$this->mcache = $this->loadMessages( $code );
 	}
 
-	protected function getPath( $code = '' ) {
+	protected function getPath( $code ) {
 		global $wgTranslateExtensionDirectory;
 		if ( $this->messageFile ) {
 			$fullPath = $wgTranslateExtensionDirectory . $this->messageFile;
 		} else {
-			$fullPath = false;
+			throw new MWException( 'Message file not defined' );
 		}
 		return $fullPath;
 	}
 
-	protected function loadMessages( $code = '' ) {
-		$messages = null;
+	protected function loadMessages( $code ) {
 		$path = $this->getPath( $code );
 
 		if ( $this->arrName ) {
@@ -290,10 +277,12 @@ abstract class ExtensionMessageGroup extends MessageGroup {
 	}
 
 	private function loadFromVariable( $path ) {
-		if ( $this->load && $path && file_exists( $path ) ) {
+		if ( file_exists( $path ) ) {
 			include( $path );
 			if ( isset( ${$this->arrName} ) ) {
 				return ${$this->arrName};
+			} else {
+				throw new MWException( "Variable {$this->arrName} is not defined" );
 			}
 		}
 	}
@@ -301,10 +290,12 @@ abstract class ExtensionMessageGroup extends MessageGroup {
 	private function loadFromFunction( $path ) {
 		if ( function_exists( $this->functionName ) ) {
 			return call_user_func( $this->functionName );
-		} elseif ( $this->load && $path && file_exists( $path ) ) {
+		} elseif ( file_exists( $path ) ) {
 			include( $path );
 			if ( function_exists( $this->functionName ) ) {
 				return call_user_func( $this->functionName );
+			} else {
+				throw new MWException( "Function {$this->functionName} is not defined" );
 			}
 		}
 	}
@@ -315,7 +306,7 @@ abstract class ExtensionMessageGroup extends MessageGroup {
 			array( $this->arrName, $code ),
 			$this->exportStart ) . "\n";
 
-		foreach ($this->msgArray['en'] as $key => $msg) {
+		foreach ($this->mcache['en'] as $key => $msg) {
 			if ( !isset( $array[$key] ) ) { continue; }
 			$line = $this->exportLine($key, $array[$key], $this->exportPad);
 			if ( $line !== null ) {
@@ -328,10 +319,7 @@ abstract class ExtensionMessageGroup extends MessageGroup {
 
 	function getDefinitions() {
 		$this->load( 'en' );
-		if (!isset($this->msgArray['en'])) {
-			throw new MWException( 'Missing messages for extension ' . $this->getId() );
-		}
-		return $this->msgArray['en'];
+		return $this->mcache['en'];
 	}
 
 	function fill( &$array, $code ) {
@@ -343,11 +331,11 @@ abstract class ExtensionMessageGroup extends MessageGroup {
 		}
 
 		foreach ( $array as $key => $value ) {
-			if ( isset($this->msgArray[$code][$key]) ) {
-				$array[$key]['infile'] = $this->msgArray[$code][$key];
+			if ( isset($this->mcache[$code][$key]) ) {
+				$array[$key]['infile'] = $this->mcache[$code][$key];
 			}
-			if ( isset($this->msgArray[$fbcode][$key]) ) {
-				$array[$key]['infbfile'] = $this->msgArray[$fbcode][$key];
+			if ( isset($this->mcache[$fbcode][$key]) ) {
+				$array[$key]['infbfile'] = $this->mcache[$fbcode][$key];
 			}
 		}
 	}
@@ -362,20 +350,12 @@ class MultipleFileMessageGroup extends ExtensionMessageGroup {
 	}
 
 
-	protected function load( $code = '' ) {
-		if ( $code === '' ) return;
-		if ( isset($this->msgArray[$code]) ) return;
-
-		$messages = $this->loadMessages( $code );
-		if ( $messages !== null ) {
-			$this->msgArray[$code] = $messages;
-			return true;
-		}
-
-		return false;
+	protected function load( $code ) {
+		if ( isset($this->mcache[$code]) ) return;
+		$this->mcache[$code] = $this->loadMessages( $code );
 	}
 
-	protected function getPath( $code = '' ) {
+	protected function getPath( $code ) {
 		if ( $code === 'en' ) {
 			return parent::getPath( 'en' );
 		}
@@ -408,9 +388,7 @@ class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
 		}
 	}
 
-	protected function load( $code = '' ) {
-		if ( $code === '' ) return;
-
+	protected function load( $code ) {
 		$this->init();
 
 		foreach ( $this->classes as $class ) {
@@ -802,19 +780,18 @@ class FCKeditorExtensionGroup extends MultipleFileMessageGroup {
 	protected $exportEnd   = ');';
 }
 
-class FlaggedRevsMessageGroup extends ExtensionMessageGroup {
+class FlaggedRevsMessageGroup extends MultipleFileMessageGroup {
 	protected $label   = 'Flagged Revs';
 	protected $id      = 'ext-flaggedrevs';
 
-	protected $arrName     = 'RevisionreviewMessages';
-	protected $messageFile = 'FlaggedRevs/FlaggedRevsPage.i18n.php';
+	protected $arrName     = 'messages';
+	protected $messageFile = 'FlaggedRevs/Language/FlaggedRevsPage.i18n.en.php';
+	protected $filePattern = 'FlaggedRevs/Language/FlaggedRevsPage.i18n.$CODE.php';
 
-	protected $exportStart = '$RevisionreviewMessages[\'$CODE\'] = array(';
-	protected $exportPrefix= '';
-	protected $exportLineP = "\t";
+	protected $exportStart = '$messages = array(';
 	protected $exportEnd   = ');';
 
-	protected $exportPad   = 24;
+	protected $exportPad   = 28;
 }
 
 class FilePathMessageGroup extends ExtensionMessageGroup {
@@ -936,17 +913,17 @@ class MakeSysopMessageGroup extends ExtensionMessageGroup {
 	protected $exportEnd   = '),';
 }
 
-class MakeValidateMessageGroup extends ExtensionMessageGroup {
+class MakeValidateMessageGroup extends MultipleFileMessageGroup {
 	protected $label = 'Make Validate';
 	protected $id    = 'ext-makevalidate';
 
-	protected $functionName = 'efMakeValidateMessages';
-	protected $messageFile  = 'FlaggedRevs/Makevalidate.i18n.php';
+	protected $arrName     = 'messages';
+	protected $messageFile = 'FlaggedRevs/Language/Makevalidate.i18n.en.php';
+	protected $filePattern = 'FlaggedRevs/Language/Makevalidate.i18n.$CODE.php';
 
-	protected $exportStart = '$messages[\'$CODE\'] = array(';
-	protected $exportPrefix= '';
-	protected $exportLineP = "\t";
+	protected $exportStart = '$messages = array(';
 	protected $exportEnd   = ');';
+
 
 	protected $exportPad   = 32;
 }
@@ -1468,11 +1445,10 @@ class FreeColMessageGroup extends MessageGroup {
 	protected $id    = 'out-freecol';
 	protected $prefix= 'freecol-';
 
-	protected $msgArray = null;
+	protected $mcache = null;
 	private   $fileDir  = 'freecol/';
 
-	public function __construct( $tryLoad ) {
-		if ( !$tryLoad ) { return; }
+	public function __construct() {
 		$filenameEN = $this->fileDir . 'FreeColMessages.properties';
 
 		if ( file_exists( $filenameEN ) ) {
@@ -1484,12 +1460,12 @@ class FreeColMessageGroup extends MessageGroup {
 
 
 
-		$this->msgArray = array();
+		$this->mcache = array();
 
 		foreach ( $linesEN as $line ) {
 			if ( !strpos( $line, '=' ) ) { continue; }
 			list( $key, $string ) = explode( '=', $line, 2 );
-			$this->msgArray['en'][$this->prefix . $key] = trim($string);
+			$this->mcache['en'][$this->prefix . $key] = trim($string);
 		}
 
 
@@ -1498,7 +1474,7 @@ class FreeColMessageGroup extends MessageGroup {
 
 	public function getMessage( $key, $code ) {
 		$this->load( $code );
-		return isset( $this->msgArray[$code][$key] ) ? $this->msgArray[$code][$key] : null;
+		return isset( $this->mcache[$code][$key] ) ? $this->mcache[$code][$key] : null;
 	}
 
 	private function load( $code ) {
@@ -1515,7 +1491,7 @@ class FreeColMessageGroup extends MessageGroup {
 		foreach ( $linesXX as $line ) {
 			if ( !strpos( $line, '=' ) ) { continue; }
 			list( $key, $string ) = explode( '=', $line, 2 );
-			$this->msgArray[$code][$this->prefix . $key] = trim($string);
+			$this->mcache[$code][$this->prefix . $key] = trim($string);
 		}
 
 	}
@@ -1544,15 +1520,15 @@ class FreeColMessageGroup extends MessageGroup {
 		$this->load( $code );
 
 		foreach ( $array as $key => $value ) {
-			$array[$key]['definition'] = $this->msgArray['en'][$key];
-			if ( isset($this->msgArray[$code][$key]) ) {
-				$array[$key]['infile'] = $this->msgArray[$code][$key];
+			$array[$key]['definition'] = $this->mcache['en'][$key];
+			if ( isset($this->mcache[$code][$key]) ) {
+				$array[$key]['infile'] = $this->mcache[$code][$key];
 			}
 		}
 	}
 
 	function getDefinitions() {
-		return $this->msgArray['en'];
+		return $this->mcache['en'];
 	}
 
 }
@@ -1560,13 +1536,11 @@ class FreeColMessageGroup extends MessageGroup {
 class MessageGroups {
 
 	public $classes = array();
-
 	private function __construct() {
-		global $wgTranslateEC, $wgTranslateAC, $wgTranslateTryLoad;
-
+		global $wgTranslateEC, $wgTranslateAC;
 		foreach ($wgTranslateAC as $id => $class) {
 			if ( in_array( $id, $wgTranslateEC, true ) ) {
-				$this->classes[] = new $class($wgTranslateTryLoad);
+				$this->classes[] = new $class;
 			}
 		}
 	}
@@ -1580,7 +1554,7 @@ class MessageGroups {
 		return $instance;
 	}
 
-	public function &getGroups() {
+	public function getGroups() {
 		return $this->classes;
 	}
 }

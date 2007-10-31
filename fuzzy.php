@@ -112,7 +112,7 @@ class FuzzyBot {
 
 		$wgArticle = new Article( $wgTitle );
 
-		$success = $wgArticle->doEdit( '!!FUZZY!!' . $text, 'Marking as fuzzy', EDIT_FORCE_BOT );
+		$success = $wgArticle->doEdit( TRANSLATE_FUZZY . $text, 'Marking as fuzzy', EDIT_FORCE_BOT );
 
 		if ( $success ) {
 			echo "OK!\n";

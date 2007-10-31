@@ -523,43 +523,58 @@ class NamespaceCM extends ComplexMessages {
 	protected $databaseMsg = 'sp-translate-data-Namespaces';
 	protected $stripUnderscores = true;
 
+	private static $constans = array(
+		-2 => 'NS_MEDIA',
+		-1 => 'NS_SPECIAL',
+		 0 => 'NS_MAIN',
+		 1 => 'NS_TALK',
+		 2 => 'NS_USER',
+		 3 => 'NS_USER_TALK',
+		 4 => 'NS_PROJECT',
+		 5 => 'NS_PROJECT_TALK',
+		 6 => 'NS_IMAGE',
+		 7 => 'NS_IMAGE_TALK',
+		 8 => 'NS_MEDIAWIKI',
+		 9 => 'NS_MEDIAWIKI_TALK',
+		10 => 'NS_TEMPLATE',
+		11 => 'NS_TEMPLATE_TALK',
+		12 => 'NS_HELP',
+		13 => 'NS_HELP_TALK',
+		14 => 'NS_CATEGORY',
+		15 => 'NS_CATEGORY_TALK',
+	);
+
+	private static $pad = 18;
+
 	/**
 	 * Re-implemented
-	 * GLOBALS: $wgMetaNamespace
 	 */
 	public function export() {
 		$array = $this->getArray();
-		foreach ($array[self::LANG_MASTER] as $index => $ns) {
-			if ($index !== 0 && !isset($array[self::LANG_CURRENT][$index][0])) {
-				return "Missing translation for ns $index, cannot export";
+		$output = array();
+		foreach (self::$constans as $index => $constant) {
+			if ( $index === NS_PROJECT ) {
+				$output[] = "\t# NS_PROJECT set by \\\$wgMetaNamespace";
+				continue;
 			}
+
+			$value = false;
+			// Export main always (because it cannot be translated)
+			if ( $index === NS_MAIN ) $value = '';
+
+			if ( isset($array[self::LANG_CURRENT][$index][0]) ) {
+				$value = $array[self::LANG_CURRENT][$index][0];
+			}
+
+			if ( $value === false ) continue;
+
+			$nValue = $this->normalize( $value );
+			$output[] = "\t" . str_pad( $constant, self::$pad ) . "=> $nValue,";
 		}
 
-		$text = <<<EOL
-\$namespaceNames = array(
-	NS_MEDIA          => '{$array[self::LANG_CURRENT][-2][0]}',
-	NS_SPECIAL        => '{$array[self::LANG_CURRENT][-1][0]}',
-	NS_MAIN           => '',
-	NS_TALK           => '{$array[self::LANG_CURRENT][1][0]}',
-	NS_USER           => '{$array[self::LANG_CURRENT][2][0]}',
-	NS_USER_TALK      => '{$array[self::LANG_CURRENT][3][0]}',
-	# NS_PROJECT set by \$wgMetaNamespace
-	NS_PROJECT_TALK   => '{$array[self::LANG_CURRENT][5][0]}',
-	NS_IMAGE          => '{$array[self::LANG_CURRENT][6][0]}',
-	NS_IMAGE_TALK     => '{$array[self::LANG_CURRENT][7][0]}',
-	NS_MEDIAWIKI      => '{$array[self::LANG_CURRENT][8][0]}',
-	NS_MEDIAWIKI_TALK => '{$array[self::LANG_CURRENT][9][0]}',
-	NS_TEMPLATE       => '{$array[self::LANG_CURRENT][10][0]}',
-	NS_TEMPLATE_TALK  => '{$array[self::LANG_CURRENT][11][0]}',
-	NS_HELP           => '{$array[self::LANG_CURRENT][12][0]}',
-	NS_HELP_TALK      => '{$array[self::LANG_CURRENT][13][0]}',
-	NS_CATEGORY       => '{$array[self::LANG_CURRENT][14][0]}',
-	NS_CATEGORY_TALK  => '{$array[self::LANG_CURRENT][15][0]}',
-);
-EOL;
-
-		return $text;
+		return "\$namespaceNames = array(\n" . implode( "\n" , $output ) . "\n);\n";
 	}
+
 }
 
 ?>

@@ -65,7 +65,7 @@ abstract class TranslateTask {
 	protected function doPaging() {
 		$this->total = count( $this->messages );
 
-		$this->messages = &array_slice(
+		$this->messages = array_slice(
 			$this->messages,
 			$this->options->getOffset(),
 			$this->options->getLimit()
@@ -156,7 +156,7 @@ class ViewUntranslatedTask extends ViewMessagesTask {
 
 	protected function filterTranslated() {
 		foreach ( $this->messages as $key => $o ) {
-			if ( ($o['database'] !== null || $o['infile'] !== null ) && !strstr($o['infile'], '!!FUZZY!!') ) {
+			if ( ($o['database'] !== null || $o['infile'] !== null ) && !strstr($o['database'], TRANSLATE_FUZZY) ) {
 				unset( $this->messages[$key] );
 			}
 		}
@@ -256,10 +256,13 @@ class ExportMessagesTask extends ViewMessagesTask {
 	}
 
 	protected function getAuthorsArray() {
+		global $wgTranslateFuzzyBotName;
 		$_authors = $this->getAuthors();
 		arsort( $_authors, SORT_NUMERIC );
 		foreach ( $_authors as $author => $edits ) {
-			$authors[] = $author;
+			if ( $author !== $wgTranslateFuzzyBotName ) {
+				$authors[] = $author;
+			}
 		}
 		return $authors;
 	}
@@ -295,7 +298,7 @@ class ExportToFileMessagesTask extends ExportMessagesTask {
 class TranslateTasks {
 	private static $tasks = null;
 
-	private function init() {
+	private static function init() {
 		$tasks = array();
 		$tasks[] = new ViewMessagesTask();
 		$tasks[] = new ViewUntranslatedTask();

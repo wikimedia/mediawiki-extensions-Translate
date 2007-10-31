@@ -37,7 +37,7 @@ class TranslateEditAddons {
 
 		$realFallback = Language::getFallbackFor( $code );
 		if ( $realFallback && $realFallback !== 'en' ) {
-			$fallbacks = array_merge( $realFallback, $fallbacks );
+			$fallbacks = array_merge( array($realFallback), $fallbacks );
 		}
 
 		return $fallbacks;
