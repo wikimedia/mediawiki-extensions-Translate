@@ -384,7 +384,7 @@ $messages['gl'] = array(
 	'translate-task-reviewall' => 'Revisar todas as traducións en',
 	'translate-task-export' => 'Exportar traducións de',
 	'translate-task-export-to-file' => 'Exportar a tradución a un ficheiro de',
-	'translate-settings' => 'Eu quero $1 $2 na linguaxe $3 co límite $4. $5',
+	'translate-settings' => 'Quero $1 $2 na lingua $3 co límite $4. $5',
 	'translate-paging' => '<div>Amosando mensaxes de $1 a $2 de $3. [ $4 | $5 ]</div>',
 	'translate-submit' => 'Procura',
 	'translate-next' => 'Páxina seguinte',
@@ -394,6 +394,28 @@ $messages['gl'] = array(
 	'translate-edit-message-format' => 'O formato desta mensaxe é <b>$1</b>.',
 	'translate-edit-message-in' => 'Cadea actual en <b>$1</b> ($2):',
 	'translate-edit-message-in-fb' => 'Cadea actual na lingua de apoio <b>$1</b> ($2):',
+	'translate-magic-pagename' => 'Tradución extendida de MediaWiki',
+	'translate-magic-help' => 'Pode traducir os alias das páxinas especiais, as palabras máxicas, os nomes das aparencias e os nomes dos espazos de nomes.
+
+Nas páxinas máxicas ten que incluir as traducións en inglés ou non funcionarán. Deixe tamén o primeiro elemento (0 ou 1) tal e como está.
+
+Os alias de páxinas especiais e as palabras máxicas poden ter varias traducións. As traducións sepáranse mediante unha vírgula (,). Os nomes das aparencias e dos espazos de nomes só poden ter unha tradución.
+
+Nas traducións dos espazos de nomes, <tt>$1 talk</tt> é especial. <tt>$1</tt> substitúese polo nome do sitio (por exemplo <tt>{{SITENAME}} talk</tt>. Se na súa lingua non resulta posíbel formar unha expresión válida sen mudar o nome do sitio, contacte cun programador.',
+	'translate-magic-form' => 'Lingua: $1 Módulo: $2 $3',
+	'translate-magic-submit' => 'Procurar',
+	'translate-magic-cm-to-be' => 'Será',
+	'translate-magic-cm-current' => 'Actual',
+	'translate-magic-cm-original' => 'Orixinal',
+	'translate-magic-cm-fallback' => 'Reserva',
+	'translate-magic-cm-save' => 'Gardar',
+	'translate-magic-cm-export' => 'Exportar',
+	'translate-magic-cm-updatedusing' => 'Actualizado mediante Special:Magic',
+	'translate-magic-cm-savefailed' => 'Fallou o gardado',
+	'translate-magic-special' => 'Alias de páxinas especiais',
+	'translate-magic-words' => 'Palabras máxicas',
+	'translate-magic-skin' => 'Nome das aparencias',
+	'translate-magic-namespace' => 'Nomes dos espazos de nomes',
 );
 
 $messages['he'] = array(
@@ -667,6 +689,13 @@ $messages['pt'] = array(
 	'translate-optional' => '(opcional)',
 	'translate-ignored' => '(ignorada)',
 	'translate-edit-message-format' => 'O formato desta mensagem é <b>$1</b>.',
+);
+
+$messages['rm'] = array(
+	'translate-edit' => 'editar',
+	'translate-talk' => 'discussiun',
+	'translate-history' => 'versiuns',
+	'translate-next' => 'Proxima pagina',
 );
 
 $messages['ro'] = array(
