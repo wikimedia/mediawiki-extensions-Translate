@@ -54,6 +54,8 @@ You need to be in the translators group to save changes. Changes are not saved u
 	'translate-magic-words' => 'Magic words',
 	'translate-magic-skin' => 'Skins name',
 	'translate-magic-namespace' => 'Namespace names',
+
+	'translationchanges' => 'Translation changes',
 );
 
 $messages['an'] = array(
@@ -240,27 +242,6 @@ $messages['dsb'] = array(
 	'translate' => 'Pśełožyś',
 );
 
-$messages['fi'] = array(
-	'translate' => 'Käännä',
-	'translate-edit' => 'muokkaa',
-	'translate-talk' => 'keskustelu',
-	'translate-history' => 'historia',
-	'translate-task-view' => 'nähdä kaikki viestit',
-	'translate-task-untranslated' => 'nähdä kaikki kääntämättömät viestit',
-	'translate-task-review' => 'tarkistaa muutokset',
-	'translate-task-reviewall' => 'tarkistaa kaikki käännökset',
-	'translate-task-export' => 'viedä käännökset',
-	'translate-task-export-to-file' => 'viedä käännökset tiedostoon',
-	'translate-settings' => 'Haluan $1 moduulista $2 kielellä $3 ja enintään $4 viestiä sivulla. $5',
-	'translate-paging' => '<div>Alla on viestit $1–$2; yhteensä $3. [ $4 | $5 ]</div>',
-	'translate-submit' => 'Hae',
-	'translate-next' => 'Seuraava sivu',
-	'translate-prev' => 'Edellinen sivu',
-	'translate-optional' => '(valinnainen)',
-	'translate-ignored' => '(ei-käännettävä)',
-	'translate-edit-message-in' => 'Nykyinen käännös kielellä <b>$1</b> ($2)',
-);
-
 $messages['eo'] = array(
 	'translate' => 'Tradukado',
 	'translate-edit' => 'redaktu',
@@ -304,6 +285,27 @@ $messages['ext'] = array(
 	'translate-magic-words' => 'Parabras máhicas',
 );
 
+$messages['fi'] = array(
+	'translate' => 'Käännä',
+	'translate-edit' => 'muokkaa',
+	'translate-talk' => 'keskustelu',
+	'translate-history' => 'historia',
+	'translate-task-view' => 'nähdä kaikki viestit',
+	'translate-task-untranslated' => 'nähdä kaikki kääntämättömät viestit',
+	'translate-task-review' => 'tarkistaa muutokset',
+	'translate-task-reviewall' => 'tarkistaa kaikki käännökset',
+	'translate-task-export' => 'viedä käännökset',
+	'translate-task-export-to-file' => 'viedä käännökset tiedostoon',
+	'translate-settings' => 'Haluan $1 moduulista $2 kielellä $3 ja enintään $4 viestiä sivulla. $5',
+	'translate-paging' => '<div>Alla on viestit $1–$2; yhteensä $3. [ $4 | $5 ]</div>',
+	'translate-submit' => 'Hae',
+	'translate-next' => 'Seuraava sivu',
+	'translate-prev' => 'Edellinen sivu',
+	'translate-optional' => '(valinnainen)',
+	'translate-ignored' => '(ei-käännettävä)',
+	'translate-edit-message-in' => 'Nykyinen käännös kielellä <b>$1</b> ($2)',
+);
+
 $messages['fr'] = array(
 	'translate' => 'Traduire',
 	'translate-edit' => 'éditer',
@@ -328,13 +330,13 @@ $messages['fr'] = array(
 	'translate-magic-pagename' => 'Traduction de MediaWiki étendue',
 	'translate-magic-help' => 'Vous pouvez traduire les alias de pages spéciales, les mots magiques, les noms de skins et les noms d\'espaces de noms.
 
-Dans les mots magiques, vous devez inclure la traduction en anglais ou ça ne fonctionnera plus. De plus, laissez le premier item (0 ou 1) comme c\'est.
+Dans les mots magiques, vous devez inclure la traduction en anglais ou cela ne fonctionnera plus. De plus, laissez le premier item (0 ou 1) tel quel.
 
-Les alias de pages spéciales et les mots magiques peuvent avoir plusieurs traductions. Les traductions sont séparées par une virgule (,). Les noms de skins et d\'espaces de noms ne peuvent avoir qu\'une traduction.
+Les alias de pages spéciales et les mots magiques peuvent avoir plusieurs traductions. Ces dernières sont séparées par une virgule (,). Les noms de skins et d’espaces de noms ne peuvent avoir qu’une seule traduction.
 
-Dans les traductions d\'espaces de noms, <tt>$1 talk</tt> est spécial. <tt>$1</tt> est remplacé par le nom du site (par exemple <tt>{{SITENAME}} talk</tt>). Si ce n\'est pas possible d\'obtenir une expression valide dans votre langue sans changer le nom du site, veuillez contacter un développeur.
+Dans les traductions d\'espaces de noms, <tt>$1 talk</tt> est spécial. <tt>$1</tt> est remplacé par le nom du site (par exemple <tt>{{SITENAME}} talk</tt>). Si ce n’est pas possible d’obtenir une expression valide dans votre langue sans changer le nom du site, veuillez contacter un développeur.
 
-Vous devez appartenir au groupe des traducteurs pour sauvegarder les changements. Les changements ne seront pas sauvegardés avant que vous ne cliquiez sur le bouton Saugegarder en bas.',
+Vous devez appartenir au groupe des traducteurs pour sauvegarder les changements. Ceux-ci ne seront pas enregistrés tant que vous n’aurez pas cliqué sur sur le bouton « Sauvegarder » en bas.',
 	'translate-magic-form' => 'Langue $1 Module : $2 $3',
 	'translate-magic-submit' => 'Aller',
 	'translate-magic-cm-to-be' => 'Devient',
@@ -371,6 +373,7 @@ $messages['frc'] = array(
 	'translate-edit-message-format' => 'Le format de ce message est <b>$1</b>.',
 	'translate-edit-message-in' => 'Chaîne courante en <b>$1</b> ($2):',
 	'translate-edit-message-in-fb' => 'Chaîne courante dans la langue en reculant <b>$1</b> ($2):',
+	'translationchanges' => 'Modification des traductions',
 );
 
 $messages['gl'] = array(

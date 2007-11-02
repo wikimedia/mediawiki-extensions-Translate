@@ -264,7 +264,7 @@ class ExportMessagesTask extends ViewMessagesTask {
 				$authors[] = $author;
 			}
 		}
-		return $authors;
+		return isset($authors) ? $authors : array();
 	}
 
 	public function output() {

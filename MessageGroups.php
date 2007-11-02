@@ -209,6 +209,7 @@ CODE;
 
 	private function getAuthorsFromFile( $code ) {
 		$filename = Language::getMessagesFileName( $code );
+		if ( !file_exists( $filename ) ) { return array(); }
 		$contents = file_get_contents( $filename );
 		$m = array();
 		$count = preg_match_all( '/@author (.*)/', $contents, $m );
@@ -217,6 +218,7 @@ CODE;
 
 	private function getOther( $code ) {
 		$filename = Language::getMessagesFileName( $code );
+		if ( !file_exists( $filename ) ) { return ''; }
 		$contents = file_get_contents( $filename );
 		$start = strpos( $contents, '*/' );
 		$end = strpos( $contents, '$messages' );
@@ -593,6 +595,17 @@ class CiteSpecialMessageGroup extends ExtensionMessageGroup {
 	function fillBools( &$array ) {
 		$array['cite_text']['ignored'] = true;
 	}
+}
+
+class CommentSpammerMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Comment Spammer';
+	protected $id    = 'ext-commentspammer';
+
+	protected $functionName = 'efCommentSpammerMessages';
+	protected $messageFile  = 'CommentSpammer/CommentSpammer.i18n.php';
+
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportEnd   = '),';
 }
 
 class ConfirmAccountMessageGroup extends ExtensionMessageGroup {
