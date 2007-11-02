@@ -85,8 +85,11 @@ class SpecialTranslate extends SpecialPage {
 
 	}
 
+	/**
+	 * GLOBALS: $wgTitle, $wgScript
+	 */
 	protected function settingsForm() {
-		global $wgTitle;
+		global $wgTitle, $wgScript;
 
 		$tasks = $this->taskSelector();
 		$groups = $this->groupSelector();
@@ -97,10 +100,10 @@ class SpecialTranslate extends SpecialPage {
 		$line = wfMsgHtml( TranslateUtils::MSG . 'settings', $tasks, $groups, $languages, $limit, $button );
 		$form = Xml::tags( 'form',
 			array(
-				'action' => $wgTitle->getLocalURL(),
+				'action' => $wgScript,
 				'method' => 'get'
 			),
-			$line
+			$line . Xml::hidden( 'title', $wgTitle->getPrefixedText() )
 		);
 		return $form;
 	}
