@@ -688,7 +688,7 @@ class CountEditsMessageGroup extends ExtensionMessageGroup {
 
 	protected $exportStart = '\'$CODE\' => array(';
 	protected $exportPrefix= '';
-	protected $exportLineP = '';
+	protected $exportLineP = "\t";
 	protected $exportEnd   = '),';
 }
 
@@ -754,7 +754,7 @@ class EditcountMessageGroup extends ExtensionMessageGroup {
 
 	protected $exportStart = '\'$CODE\' => array(';
 	protected $exportPrefix= '';
-	protected $exportLineP = '';
+	protected $exportLineP = "\t";
 	protected $exportEnd   = '),';
 }
 
@@ -1004,7 +1004,7 @@ class NewestPagesMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'NewestPages/NewestPages.i18n.php';
 
 	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportLineP = '';
+	protected $exportLineP = "\t";
 	protected $exportEnd   = '),';
 }
 
