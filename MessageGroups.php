@@ -471,7 +471,7 @@ class AsksqlMessageGroup extends ExtensionMessageGroup {
 
 	protected $exportStart = '\'$CODE\' => array(';
 	protected $exportPrefix= '';
-	protected $exportLineP = '';
+	protected $exportLineP = "\t";
 	protected $exportEnd   = '),';
 
 	protected $exportPad   = 19;
@@ -499,7 +499,7 @@ class BadImageMessageGroup extends ExtensionMessageGroup {
 
 	protected $exportStart = '\'$CODE\' => array(';
 	protected $exportPrefix= '';
-	protected $exportLineP = '';
+	protected $exportLineP = "\t";
 	protected $exportEnd   = '),';
 }
 
@@ -1419,7 +1419,7 @@ class VoteMessageGroup extends ExtensionMessageGroup {
 
 	protected $exportStart = '\'$CODE\' => array(';
 	protected $exportPrefix= '';
-	protected $exportLineP = '';
+	protected $exportLineP = "\t";
 	protected $exportEnd   = '),';
 }
 
