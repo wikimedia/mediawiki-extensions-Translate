@@ -75,6 +75,7 @@ $messages['ar'] = array(
 	'translate-history' => 'تاريخ',
 	'translate-task-view' => 'عرض كل الرسائل من',
 	'translate-task-untranslated' => 'عرض كل الرسائل غير المترجمة من',
+	'translate-task-optional' => 'اعرض الرسائل الاختيارية من',
 	'translate-task-review' => 'عرض التغييرات ل',
 	'translate-task-reviewall' => 'عرض كل الترجمات في',
 	'translate-task-export' => 'صدر الترجمات من',
@@ -113,6 +114,7 @@ $messages['ar'] = array(
 	'translate-magic-words' => 'كلمات سحرية',
 	'translate-magic-skin' => 'أسماء الواجهات',
 	'translate-magic-namespace' => 'أسماء النطاقات',
+	'translationchanges' => 'تغييرات الترجمة',
 );
 
 $messages['bcl'] = array(

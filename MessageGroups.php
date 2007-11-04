@@ -907,7 +907,7 @@ class MakeBotMessageGroup extends ExtensionMessageGroup {
 
 	protected $exportStart = '\'$CODE\' => array(';
 	protected $exportPrefix= '';
-	protected $exportLineP = '';
+	protected $exportLineP = "\t";
 	protected $exportEnd   = '),';
 
 	protected $exportPad   = 26;
