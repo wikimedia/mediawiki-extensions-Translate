@@ -675,7 +675,7 @@ class ContributorsMessageGroup extends ExtensionMessageGroup {
 
 	protected $exportStart = '\'$CODE\' => array(';
 	protected $exportPrefix= '';
-	protected $exportLineP = '';
+	protected $exportLineP = "\t";
 	protected $exportEnd   = '),';
 }
 
@@ -777,7 +777,7 @@ class FancyCaptchaMessageGroup extends ExtensionMessageGroup {
 
 	protected $exportStart = '\'$CODE\' => array(';
 	protected $exportPrefix= '';
-	protected $exportLineP = '';
+	protected $exportLineP = "\t";
 	protected $exportEnd   = '),';
 }
 
@@ -957,7 +957,7 @@ class MediaFunctionsMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile  = 'MediaFunctions/MediaFunctions.i18n.php';
 
 	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportLineP = '';
+	protected $exportLineP = "\t";
 	protected $exportEnd   = '),';
 
 	protected $exportPad   = 31;
@@ -1150,7 +1150,7 @@ class PicturePopupMessageGroup extends ExtensionMessageGroup {
 
 	protected $exportStart = '\'$CODE\' => array(';
 	protected $exportPrefix= '';
-	protected $exportLineP = '';
+	protected $exportLineP = "\t";
 	protected $exportEnd   = '),';
 }
 
@@ -1175,7 +1175,7 @@ class ProfileMonitorMessageGroup extends ExtensionMessageGroup {
 
 	protected $exportStart = '\'$CODE\' => array(';
 	protected $exportPrefix= '';
-	protected $exportLineP = '';
+	protected $exportLineP = "\t";
 	protected $exportEnd   = '),';
 }
 

@@ -332,13 +332,13 @@ $messages['fr'] = array(
 	'translate-magic-pagename' => 'Traduction de MediaWiki étendue',
 	'translate-magic-help' => 'Vous pouvez traduire les alias de pages spéciales, les mots magiques, les noms de skins et les noms d\'espaces de noms.
 
-Dans les mots magiques, vous devez inclure la traduction en anglais ou cela ne fonctionnera plus. De plus, laissez le premier item (0 ou 1) tel quel.
+Dans les mots magiques, vous devez inclure la traduction en anglais ou ça ne fonctionnera plus. De plus, laissez le premier item (0 ou 1) comme c\'est.
 
-Les alias de pages spéciales et les mots magiques peuvent avoir plusieurs traductions. Ces dernières sont séparées par une virgule (,). Les noms de skins et d’espaces de noms ne peuvent avoir qu’une seule traduction.
+Les alias de pages spéciales et les mots magiques peuvent avoir plusieurs traductions. Les traductions sont séparées par une virgule (,). Les noms de skins et d\'espaces de noms ne peuvent avoir qu\'une traduction.
 
-Dans les traductions d\'espaces de noms, <tt>$1 talk</tt> est spécial. <tt>$1</tt> est remplacé par le nom du site (par exemple <tt>{{SITENAME}} talk</tt>). Si ce n’est pas possible d’obtenir une expression valide dans votre langue sans changer le nom du site, veuillez contacter un développeur.
+Dans les traductions d\'espaces de noms, <tt>$1 talk</tt> est spécial. <tt>$1</tt> est remplacé par le nom du site (par exemple <tt>{{SITENAME}} talk</tt>). Si ce n\'est pas possible d\'obtenir une expression valide dans votre langue sans changer le nom du site, veuillez contacter un développeur.
 
-Vous devez appartenir au groupe des traducteurs pour sauvegarder les changements. Ceux-ci ne seront pas enregistrés tant que vous n’aurez pas cliqué sur sur le bouton « Sauvegarder » en bas.',
+Vous devez appartenir au groupe des traducteurs pour sauvegarder les changements. Les changements ne seront pas sauvegardés avant que vous ne cliquiez sur le bouton Saugegarder en bas.',
 	'translate-magic-form' => 'Langue $1 Module : $2 $3',
 	'translate-magic-submit' => 'Aller',
 	'translate-magic-cm-to-be' => 'Devient',
