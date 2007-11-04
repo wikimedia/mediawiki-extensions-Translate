@@ -437,6 +437,7 @@ $messages['hsb'] = array(
 	'translate-history' => 'stawizny',
 	'translate-task-view' => 'Pokazaj wšě zdźělenki z',
 	'translate-task-untranslated' => 'Pokazaj njepřełožene zdźělenki z',
+	'translate-task-optional' => 'Pokazaj opcionalne zdźělenki z',
 	'translate-task-review' => 'Přepruwuj změny za',
 	'translate-task-reviewall' => 'Přepruwuj wšě přełožki w',
 	'translate-task-export' => 'Eksportuj přełožki z',
@@ -475,6 +476,7 @@ Dyrbiš w skupinje přełožowarjow być, zo by změny składował. Změny so nj
 	'translate-magic-words' => 'Magiske słowa',
 	'translate-magic-skin' => 'Mjeno šatow',
 	'translate-magic-namespace' => 'Mjena mjenowych rumow',
+	'translationchanges' => 'Přełožowanske změny',
 );
 
 $messages['id'] = array(
@@ -607,6 +609,7 @@ $messages['nl'] = array(
 	'translate-history' => 'geschiedenis',
 	'translate-task-view' => 'alle teksten bekijken van',
 	'translate-task-untranslated' => 'alle onvertaalde teksten bekijken van',
+	'translate-task-optional' => 'optionele berichten bekijken van',
 	'translate-task-review' => 'wijzigingen controleren aan',
 	'translate-task-reviewall' => 'alle vertalingen controleren in',
 	'translate-task-export' => 'vertalingen exporteren van',
@@ -645,6 +648,7 @@ Om wijzigingen op te slaan moet u lid zijn van de groep vertalers. Wijzigingen w
 	'translate-magic-words' => 'Magische woorden',
 	'translate-magic-skin' => 'Skinnamen',
 	'translate-magic-namespace' => 'Naamruimtebenamingen',
+	'translationchanges' => 'Vertalingen',
 );
 
 $messages['no'] = array(

@@ -837,7 +837,7 @@ class GiveRollbackMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile  = 'GiveRollback/GiveRollback.i18n.php';
 
 	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportLineP = '';
+	protected $exportLineP = "\t";
 	protected $exportEnd   = '),';
 }
 
@@ -850,7 +850,7 @@ class ImageMapMessageGroup extends ExtensionMessageGroup {
 
 	protected $exportStart = '\'$CODE\' => array(';
 	protected $exportPrefix= '';
-	protected $exportLineP = '';
+	protected $exportLineP = "\t";
 	protected $exportEnd   = '),';
 
 	protected $exportPad   = 32;
@@ -1015,6 +1015,7 @@ class NewuserLogMessageGroup extends ExtensionMessageGroup {
 	protected $arrName     = 'wgNewuserlogMessages';
 	protected $messageFile = 'Newuserlog/Newuserlog.i18n.php';
 
+	protected $exportLineP = "\t";
 	protected $exportPad   = 27;
 
 	function fillBools( &$array ) {
@@ -1060,7 +1061,7 @@ class OggHandlerMessageGroup extends ExtensionMessageGroup {
 
 	protected $exportStart = '\'$CODE\' => array(';
 	protected $exportPrefix= "\t";
-	protected $exportLineP = "\t";
+	protected $exportLineP = "\t\t";
 	protected $exportEnd   = '),';
 }
 
@@ -1073,7 +1074,7 @@ class OversightMessageGroup extends ExtensionMessageGroup {
 
 	protected $exportStart = '\'$CODE\' => array(';
 	protected $exportPrefix= '';
-	protected $exportLineP = '';
+	protected $exportLineP = "\t";
 	protected $exportEnd   = '),';
 }
 
@@ -1111,7 +1112,7 @@ class ParserFunctionsMessageGroup extends ExtensionMessageGroup {
 
 	protected $exportStart = '\'$CODE\' => array(';
 	protected $exportPrefix= '';
-	protected $exportLineP = '';
+	protected $exportLineP = "\t";
 	protected $exportEnd   = '),';
 }
 
@@ -1188,7 +1189,7 @@ class ProofreadPageMessageGroup extends ExtensionMessageGroup {
 
 	protected $exportStart = '\'$CODE\' => array(';
 	protected $exportPrefix= "\t";
-	protected $exportLineP = "\t";
+	protected $exportLineP = "\t\t";
 	protected $exportEnd   = '),';
 }
 
@@ -1222,7 +1223,7 @@ class ResignMessageGroup extends ExtensionMessageGroup {
 
 	protected $exportStart = '\'$CODE\' => array(';
 	protected $exportPrefix= '';
-	protected $exportLineP = '';
+	protected $exportLineP = "\t";
 	protected $exportEnd   = '),';
 }
 
