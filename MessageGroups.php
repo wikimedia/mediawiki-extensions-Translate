@@ -637,7 +637,7 @@ class ContactPageExtensionGroup extends MultipleFileMessageGroup {
 	protected $filePattern  = 'ContactPage/ContactPage.i18n.$CODE.php';
 
 	protected $exportStart = '$messages = array(';
-	protected $exportLineP = '';
+	protected $exportLineP = "\t";
 	protected $exportEnd   = ');';
 
 }
@@ -741,7 +741,7 @@ class DuplicatorMessageGroup extends ExtensionMessageGroup {
 
 	protected $exportStart = '\'$CODE\' => array(';
 	protected $exportPrefix= '';
-	protected $exportLineP = '';
+	protected $exportLineP = "\t";
 	protected $exportEnd   = '),';
 }
 
