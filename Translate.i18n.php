@@ -352,6 +352,7 @@ Vous devez appartenir au groupe des traducteurs pour sauvegarder les changements
 	'translate-magic-words' => 'Mots magiques',
 	'translate-magic-skin' => 'Nom des interfaces',
 	'translate-magic-namespace' => 'Intitulé des espaces de nommage',
+	'translationchanges' => 'Modifications aux traductions',
 );
 
 $messages['frc'] = array(
