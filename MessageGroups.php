@@ -1372,8 +1372,8 @@ class TitleBlacklistMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile  = 'TitleBlacklist/TitleBlacklist.i18n.php';
 
 	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportPrefix= "\t";
-	protected $exportLineP = "\t\t";
+	protected $exportPrefix= "\t\t";
+	protected $exportLineP = "\t\t\t";
 	protected $exportEnd   = '),';
 }
 
