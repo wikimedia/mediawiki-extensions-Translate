@@ -1364,6 +1364,19 @@ class TemplateLinkMessageGroup extends ExtensionMessageGroup {
 	protected $exportEnd   = "),";
 }
 
+class TitleBlacklistMessageGroup extends ExtensionMessageGroup {
+	protected $label   = 'Title Blacklist';
+	protected $id      = 'ext-titleblacklist';
+
+	protected $functionName = 'efGetTitleBlacklistMessages';
+	protected $messageFile  = 'TitleBlacklist/TitleBlacklist.i18n.php';
+
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportPrefix= "\t";
+	protected $exportLineP = "\t\t";
+	protected $exportEnd   = '),';
+}
+
 class TranslateMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Translate';
 	protected $id    = 'ext-translate';

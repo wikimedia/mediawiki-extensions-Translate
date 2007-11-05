@@ -138,6 +138,7 @@ $wgTranslateAC = array(
 'ext-syntaxhighlightgeshi'  => 'SyntaxHighlight_GeSHiMessageGroup',
 'ext-talkhere'              => 'TalkHereExtensionGroup',
 'ext-templatelink'          => 'TemplateLinkMessageGroup',
+'ext-titleblacklist'        => 'TitleBlacklistMessageGroup',
 'ext-translate'             => 'TranslateMessageGroup',
 'ext-userimages'            => 'UserImagesMessageGroup',
 'ext-usermerge'             => 'UserMergeMessageGroup',
