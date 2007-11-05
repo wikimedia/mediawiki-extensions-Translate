@@ -385,6 +385,7 @@ $messages['gl'] = array(
 	'translate-history' => 'Historial',
 	'translate-task-view' => 'Ver todas as mensaxes de',
 	'translate-task-untranslated' => 'Ver todas as mensaxes sen traducir de',
+	'translate-task-optional' => 'Ver mensaxes opcionais de',
 	'translate-task-review' => 'Revisar cambios en',
 	'translate-task-reviewall' => 'Revisar todas as traducións en',
 	'translate-task-export' => 'Exportar traducións de',
@@ -421,6 +422,7 @@ Nas traducións dos espazos de nomes, <tt>$1 talk</tt> é especial. <tt>$1</tt> 
 	'translate-magic-words' => 'Palabras máxicas',
 	'translate-magic-skin' => 'Nome das aparencias',
 	'translate-magic-namespace' => 'Nomes dos espazos de nomes',
+	'translationchanges' => 'Modificacións na tradución',
 );
 
 $messages['he'] = array(
