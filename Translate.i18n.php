@@ -674,9 +674,43 @@ $messages['oc'] = array(
 /* Piedmontese (Bèrto 'd Sèra) */
 $messages['pms'] = array(
 	'translate' => 'Viragi',
+	'translate-edit' => 'modìfica',
+	'translate-talk' => 'discussion',
+	'translate-history' => 'stòria',
+	'translate-task-view' => 'smon-e tuti ij messagi ëd',
+	'translate-task-untranslated' => 'Smon-e tuti ij messagi nen virà ëd',
+	'translate-task-optional' => 'Smon-e ij messagi opsionaj ëd',
+	'translate-task-review' => 'Controlé le modìfiche a',
+	'translate-task-reviewall' => 'Controlé tuti ij viragi ëd',
+	'translate-task-export' => 'Esporté ij viragi ëd',
+	'translate-task-export-to-file' => 'Esporté ij viragi ant n\'archivi da',
+	'translate-settings' => 'I veuj $1 $2 an $3 con lìmit $4. $5',
+	'translate-paging' => '<div>Messagi smonù da $1 a $2 ëd $3. [ $4 | $5 ]</div>',
+	'translate-submit' => 'Smon-e',
+	'translate-next' => 'Pàgina anans',
+	'translate-prev' => 'Pàgina andré',
+	'translate-optional' => '(opsional)',
+	'translate-ignored' => '(ignorà)',
 	'translate-edit-message-format' => 'La forma d\'ës messagi-sì a l\'é <b>$1</b>.',
 	'translate-edit-message-in' => 'Espression corenta an <b>$1</b> ($2):',
 	'translate-edit-message-in-fb' => 'Espression corenta ant la lenga ëd riserva <b>$1</b> ($2):',
+	'translate-magic-pagename' => 'Viragi estèis ëd MediaWiki',
+	'translate-magic-help' => 'A peul viré j\'àlias dle pàgine speciaj, le paròle màgiche, ij nòm dle facie e coj djë spassi nominaj. Con le paròle màgiche a venta ch\'a buta ëdcò ël viragi n\'anglèis, che dësnò a travajo pa pì. Ch\'a vardo ëdcò dë lassé ël prim element (0 or 1) tanme ch\'a lo treuva. J\'àlias dle pàgine soeciaj e le paròle màgiche a peulo avej pì che un viragi. Ij viragi a son separà da vìrgole (,). Ij nòm dle facie e djë spassi nominaj a peulo avej mach un viragi. Ant ël viragi djë spassi nominaj ël cas ëd <tt>$1 talk</tt> a l\'é special. <tt>$1</tt> a ven arpiassà col nòm dël sit (pr\'esempi <tt>{{SITENAME}} talk</tt>). Se sòn as peul nen fesse an soa lenga për rivé a n\'espression bon-a sensa cambié ël nòm dël sit, për piasì, ch\'as buta an contat con un programista. A venta ch\'a sia ant la partìa dij tradutor për podej salvé soe modìfiche. Le modìfiche as salvo nen fin ch\'a-i da nen un colp ansima al al boton ambelessì sota.',
+	'translate-magic-form' => 'Lenga: $1 Mòdulo: $2 $3',
+	'translate-magic-submit' => 'Smon-e',
+	'translate-magic-cm-to-be' => 'da esse',
+	'translate-magic-cm-current' => 'Corent',
+	'translate-magic-cm-original' => 'Original',#identical but defined
+	'translate-magic-cm-fallback' => 'Emergensa',
+	'translate-magic-cm-save' => 'Salvé',
+	'translate-magic-cm-export' => 'Esporté',
+	'translate-magic-cm-updatedusing' => 'Agiornà ën dovrand Special:Magic',
+	'translate-magic-cm-savefailed' => 'Salvatagi falì',
+	'translate-magic-special' => 'Àlias dle pàgine speciaj',
+	'translate-magic-words' => 'Paròle màgiche',
+	'translate-magic-skin' => 'Nòm dle facie',
+	'translate-magic-namespace' => 'Nòm djë spassi nominaj',
+	'translationchanges' => 'Modìfiche ëd viragi',
 );
 
 $messages['pt'] = array(
@@ -772,6 +806,7 @@ $messages['sv'] = array(
 	'translate-history' => 'historik',
 	'translate-task-view' => 'se alla meddelanden från',
 	'translate-task-untranslated' => 'se alla oöversatta meddelanden från',
+	'translate-task-optional' => 'Se valfria systemmeddelande från',
 	'translate-task-review' => 'granska ändringar av',
 	'translate-task-reviewall' => 'granska alla översättningar av',
 	'translate-task-export' => 'exportera översättningar från',
@@ -786,6 +821,31 @@ $messages['sv'] = array(
 	'translate-edit-message-format' => 'Detta meddelandes format är <b>$1</b>.',
 	'translate-edit-message-in' => 'Nuvarande sträng på <b>$1</b> ($2):',
 	'translate-edit-message-in-fb' => 'Nuvarande sträng i andrahandsspråk <b>$1</b> ($2):',
+	'translate-magic-pagename' => 'Utökad MediaWiki-översättning',
+	'translate-magic-help' => 'Du kan översätta alias för specialsidor, magiska ord, skin-namn och namnrymdsnamn.
+
+För magiska ord så måste du inkludera engelska översättningar eller så slutar de att fungera. Lämna också det första (0 eller 1) som det är.
+
+Alias för specialsidor och magiska ord kan ha flera översättningar. Översättningar skiljs åt av ett komma (,). Skin-namn och namnrymder kan enbart ha en översättning.
+
+Vid översättning av namnrymder så är <tt>$1 talk</tt> speciellt. <tt>$1</tt> ersätts med webbplatsens namn (till exempel <tt>{{SITENAME}} talk</tt>). Om det inte är möjligt att skapa en giltig översättning till ditt språk utan att ändra webbplatsens namn, så ta kontakt med en utvecklare.
+
+För att kunna spara ändringar så behöver du tillhöra översättargruppen. Ändringar sparas inte förrän du klickar på spara-knappen nedan.',
+	'translate-magic-form' => 'Språk: $1 Modul: $2 $3',
+	'translate-magic-submit' => 'Hämta',
+	'translate-magic-cm-to-be' => 'Att-bli',
+	'translate-magic-cm-current' => 'Nuvarande',
+	'translate-magic-cm-original' => 'Original',#identical but defined
+	'translate-magic-cm-fallback' => 'Reserv',
+	'translate-magic-cm-save' => 'Spara',
+	'translate-magic-cm-export' => 'Exportera',
+	'translate-magic-cm-updatedusing' => 'Uppdaterad med hjälp av Special:Magic',
+	'translate-magic-cm-savefailed' => 'Det gick ej att spara',
+	'translate-magic-special' => 'Alias till specialsidor',
+	'translate-magic-words' => 'Magiska ord',
+	'translate-magic-skin' => 'Skin-namn',
+	'translate-magic-namespace' => 'Namnrymdsnamn',
+	'translationchanges' => 'Ändrade översättningar',
 );
 
 $messages['tet'] = array(
