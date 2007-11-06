@@ -6,6 +6,7 @@ $messages['en'] = array(
 	'translate-edit' => 'edit',
 	'translate-talk' => 'talk',
 	'translate-history' => 'history',
+	'translate-delete' => 'delete',
 
 	'translate-task-view' => 'View all messages from',
 	'translate-task-untranslated' => 'View all untranslated messages from',

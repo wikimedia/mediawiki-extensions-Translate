@@ -182,7 +182,7 @@ class TranslateUtils {
 
 		static $uimsg = array();
 		if ( !count( $uimsg ) ) {
-			foreach ( array( 'talk', 'edit', 'history', 'optional', 'ignored' ) as $msg ) {
+			foreach ( array( 'talk', 'edit', 'history', 'optional', 'ignored', 'delete' ) as $msg ) {
 				$uimsg[$msg] = wfMsgHtml( self::MSG . $msg );
 			}
 		}
@@ -216,6 +216,7 @@ class TranslateUtils {
 				$page['edit'] = $sk->makeKnownLinkObj( $page['object'], $uimsg['edit'], "action=edit&loadgroup=$group" );
 			}
 			$page['history'] = $sk->makeKnownLinkObj( $page['object'], $uimsg['history'], 'action=history' );
+			$page['delete'] = $sk->makeKnownLinkObj( $page['object'], $uimsg['delete'], 'action=delete' );
 
 			$anchor = 'msg_' . $key;
 			$anchor = Xml::element( 'a', array( 'name' => $anchor, 'href' => "#$anchor" ), "↓" );
@@ -225,7 +226,7 @@ class TranslateUtils {
 			if ( $m['ignored'] )  $extra = $uimsg['ignored'];
 
 			$leftColumn = $anchor . ' ' . $page['link'] . ' ' . $extra . '<br />' .
-				implode( ' | ', array( $talk['link'] , $page['edit'], $page['history'] ) );
+				implode( ' | ', array( $talk['link'] , $page['edit'], $page['history'], $page['delete'] ) );
 
 			if ( $m['changed'] ) {
 				$info = Xml::openElement( 'tr', array( 'class' => "orig") );
