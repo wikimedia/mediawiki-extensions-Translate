@@ -1377,6 +1377,20 @@ class TitleBlacklistMessageGroup extends ExtensionMessageGroup {
 	protected $exportEnd   = '),';
 }
 
+class TodoTasksMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Todo Tasks';
+	protected $id    = 'ext-todotasks';
+
+	protected $arrName     = 'allMessages';
+	protected $messageFile = 'TodoTasks/SpecialTaskList.i18n.php';
+
+	protected $exportPrefix= "\t";
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportLineP = "\t\t";
+	protected $exportEnd   = "),";
+	protected $exportPad   = 13;
+}
+
 class TranslateMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Translate';
 	protected $id    = 'ext-translate';

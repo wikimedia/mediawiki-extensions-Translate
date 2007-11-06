@@ -139,6 +139,7 @@ $wgTranslateAC = array(
 'ext-talkhere'              => 'TalkHereExtensionGroup',
 'ext-templatelink'          => 'TemplateLinkMessageGroup',
 'ext-titleblacklist'        => 'TitleBlacklistMessageGroup',
+'ext-todotasks'             => 'TodoTasksMessageGroup',
 'ext-translate'             => 'TranslateMessageGroup',
 'ext-userimages'            => 'UserImagesMessageGroup',
 'ext-usermerge'             => 'UserMergeMessageGroup',
@@ -153,4 +154,3 @@ $wgTranslateAC = array(
 /** EC = Enabled classes */
 $wgTranslateEC = array();
 $wgTranslateEC[] = 'core';
-
