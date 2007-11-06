@@ -1388,7 +1388,8 @@ class TodoTasksMessageGroup extends ExtensionMessageGroup {
 	protected $exportStart = '\'$CODE\' => array(';
 	protected $exportLineP = "\t\t";
 	protected $exportEnd   = "),";
-	protected $exportPad   = 13;
+
+	protected $exportPad   = 26;
 }
 
 class TranslateMessageGroup extends ExtensionMessageGroup {
