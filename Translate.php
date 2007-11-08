@@ -12,7 +12,7 @@ if (!defined('MEDIAWIKI')) die();
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'Translate',
-	'version' => '4.4',
+	'version' => '4.5',
 	'author' => 'Niklas Laxström',
 	'description' => 'Special page for translating Mediawiki and beyond'
 );

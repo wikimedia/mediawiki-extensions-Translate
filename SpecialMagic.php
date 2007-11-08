@@ -280,7 +280,7 @@ abstract class ComplexMessages {
 			if ( count( $elements ) !== 2 ) { continue; }
 			if ( trim( $elements[1] ) === '' ) { continue; }
 
-			$array[(string)$elements[0]] = explode( ", ", $elements[1] );
+			$array[(string)$elements[0]] = explode( ",", $elements[1] );
 		}
 
 		return $array;

@@ -263,6 +263,14 @@ class TranslateUtils {
 		return Xml::tags( 'select', array( 'name' => $name ), $options );
 	}
 
+	public static function simpleSelector( $name, $items, $selected ) {
+		$options = array();
+		foreach ( $items as $key => $item ) {
+			$options[] = Xml::option( $item, $item, $item === $selected );
+		}
+		return self::selector( $name, implode( "\n", $options ) );
+	}
+
 	public static function getLanguageName( $code, $native = false ) {
 		if ( !$native && is_callable(array( 'LanguageNames', 'getNames' )) ) {
 			$languages = LanguageNames::getNames( 'en',

@@ -220,6 +220,10 @@ CODE;
 		$filename = Language::getMessagesFileName( $code );
 		if ( !file_exists( $filename ) ) { return ''; }
 		$contents = file_get_contents( $filename );
+
+		/** FIXME: handle the case where the first comment is missing */
+		$dollarstart = strpos( $contents, '$' );
+
 		$start = strpos( $contents, '*/' );
 		$end = strpos( $contents, '$messages' );
 		if ( $start === false ) return '';
@@ -1576,6 +1580,14 @@ class FreeColMessageGroup extends MessageGroup {
 }
 
 class MessageGroups {
+	public static function getGroup( $id ) {
+		global $wgTranslateEC, $wgTranslateAC;
+		if ( in_array( $id, $wgTranslateEC) ) {
+			return new $wgTranslateAC[$id];
+		} else {
+			throw new MWException( "No message group for id $id" );
+		}
+	}
 
 	public $classes = array();
 	private function __construct() {

@@ -30,7 +30,7 @@ class SpecialTranslate extends SpecialPage {
 		global $wgUser, $wgRequest;
 
 		$defaults = array(
-		/* str  */ 'task'     => '',
+		/* str  */ 'task'     => 'view',
 		/* str  */ 'sort'     => 'normal',
 		/* str  */ 'language' => $wgUser->getOption( 'language' ),
 		/* str  */ 'group'    => 'core',
@@ -56,24 +56,8 @@ class SpecialTranslate extends SpecialPage {
 		$this->nondefaults = $nondefaults;
 		$this->options     = $nondefaults + $defaults;
 
-
-		$groups = MessageGroups::singleton()->getGroups();
-		$this->group = $groups[0];
-		foreach( $groups as $group ) {
-			if ( $group->getId() === $this->options['group'] ) {
-				$this->group = $group;
-				break;
-			}
-		}
-
-		$tasks = TranslateTasks::tasks();
-		$this->task = $tasks[0];
-		foreach( $tasks as $task ) {
-			if ( $task->getId() === $this->options['task'] ) {
-				$this->task = $task;
-				break;
-			}
-		}
+		$this->group = MessageGroups::getGroup( $this->options['group'] );
+		$this->task  = TranslateTasks::getTask( $this->options['task'] );
 
 		$taskOptions = new TaskOptions(
 			$this->options['language'],
@@ -108,31 +92,14 @@ class SpecialTranslate extends SpecialPage {
 		return $form;
 	}
 
-	protected function selector( $name, $options ) {
-		return Xml::tags( 'select', array( 'name' => $name ), $options );
-	}
-
-	protected function simpleSelector( $name, $items, $selected ) {
-		$options = array();
-		foreach ( $items as $key => $item ) {
-			$options[] = Xml::option( $item, $item, $item === $selected );
-		}
-		return $this->selector( $name, implode( "\n", $options ) );
-	}
-
-
 	private function taskSelector() {
-		$items = array();
-		foreach ( TranslateTasks::tasks() as $task ) {
-			$items[$task->getId()] = $task->getLabel();
-		}
-
 		$options = '';
-		foreach ( $items as $key => $label ) {
-			$options .=  Xml::option( $label , $key, $this->task->getId() === $key );
+		foreach ( TranslateTasks::getTasks() as $id => $class ) {
+			$label = call_user_func( array( $class, 'labelForTask' ), $id );
+			$options .=  Xml::option( $label , $id, $this->task->getId() === $id );
 		}
 
-		return $this->selector( 'task', $options );
+		return TranslateUtils::selector( 'task', $options );
 	}
 
 	protected function languageSelector() {
@@ -154,13 +121,13 @@ class SpecialTranslate extends SpecialPage {
 			$options .= Xml::option( "$code - $name", $code, $selected ) . "\n";
 		}
 
-		return $this->selector( 'language', $options );
+		return TranslateUtils::selector( 'language', $options );
 	}
 
 	protected function limitSelector() {
 		$items = array( 100, 250, 500, 1000, 2000 );
 		$selected = $this->options['limit'];
-		return $this->simpleSelector( 'limit' , $items, $selected );
+		return TranslateUtils::simpleSelector( 'limit' , $items, $selected );
 	}
 
 	protected function groupSelector() {
@@ -170,7 +137,7 @@ class SpecialTranslate extends SpecialPage {
 			$options .= Xml::option( $class->getLabel(), $class->getId(),
 				$this->options['group'] === $class->getId()) . "\n";
 		}
-		return $this->selector( 'group', $options );
+		return TranslateUtils::selector( 'group', $options );
 	}
 
 

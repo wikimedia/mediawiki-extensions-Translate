@@ -34,10 +34,16 @@ class TaskOptions {
 
 
 abstract class TranslateTask {
-	abstract function getId();
-	public function getLabel() {
+	protected $id = '__BUG__';
+
+	/* We need $id here because staticness prevents subclass overriding */
+	public static function labelForTask( $id ) {
 		wfLoadExtensionMessages( 'Translate' );
-		return wfMsg( TranslateUtils::MSG . 'task-' . $this->getId() );
+		return wfMsg( TranslateUtils::MSG . 'task-' . $id );
+	}
+
+	public function getId() {
+		return $this->id;
 	}
 
 	protected $messageGroup = null;
@@ -61,9 +67,8 @@ abstract class TranslateTask {
 		return $this->output();
 	}
 
-	private $total = 0;
 	protected function doPaging() {
-		$this->total = count( $this->messages );
+		$total = count( $this->messages );
 
 		$this->messages = array_slice(
 			$this->messages,
@@ -72,7 +77,7 @@ abstract class TranslateTask {
 		);
 
 		$callback = $this->options->getPagingCB();
-		call_user_func( $callback, $this->options->getOffset(), count( $this->messages ), $this->total );
+		call_user_func( $callback, $this->options->getOffset(), count( $this->messages ), $total );
 	}
 
 	protected function getAuthors() {
@@ -92,15 +97,13 @@ abstract class TranslateTask {
 
 
 class ViewMessagesTask extends TranslateTask {
-
-	public function getId() {
-		return 'view';
-	}
+	protected $id = 'view';
 
 	protected function setProcess() {
 		$this->process = array(
 			array( $this, 'preinit' ),
 			array( $this, 'filterIgnored' ),
+			array( $this, 'filterOptional' ),
 			array( $this, 'doPaging' ),
 			array( $this, 'postinit' ),
 		);
@@ -113,8 +116,16 @@ class ViewMessagesTask extends TranslateTask {
 	}
 
 	protected function filterIgnored() {
-		foreach ( $this->messages as $key => $null ) {
+		foreach ( array_keys( $this->messages ) as $key ) {
 			if ( $this->messages[$key]['ignored'] ) {
+				unset( $this->messages[$key] );
+			}
+		}
+	}
+
+	protected function filterOptional() {
+		foreach ( array_keys( $this->messages ) as $key ) {
+			if ( $this->messages[$key]['optional'] ) {
 				unset( $this->messages[$key] );
 			}
 		}
@@ -139,15 +150,13 @@ class ViewMessagesTask extends TranslateTask {
 }
 
 class ViewUntranslatedTask extends ViewMessagesTask {
-
-	public function getId() {
-		return 'untranslated';
-	}
+	protected $id = 'untranslated';
 
 	protected function setProcess() {
 		$this->process = array(
 			array( $this, 'preinit' ),
 			array( $this, 'filterIgnored' ),
+			array( $this, 'filterOptional' ),
 			array( $this, 'postinit' ),
 			array( $this, 'filterTranslated' ),
 			array( $this, 'doPaging' ),
@@ -162,14 +171,33 @@ class ViewUntranslatedTask extends ViewMessagesTask {
 		}
 	}
 
+}
+
+class ViewOptionalTask extends ViewMessagesTask {
+	protected $id = 'optional';
+
+	protected function setProcess() {
+		$this->process = array(
+			array( $this, 'preinit' ),
+			array( $this, 'filterIgnored' ),
+			array( $this, 'filterNonOptional' ),
+			array( $this, 'doPaging' ),
+			array( $this, 'postinit' ),
+		);
+	}
+
+	protected function filterNonOptional() {
+		foreach ( array_keys( $this->messages ) as $key ) {
+			if ( !$this->messages[$key]['optional'] ) {
+				unset( $this->messages[$key] );
+			}
+		}
+	}
 
 }
 
 class ReviewMessagesTask extends ViewMessagesTask {
-
-	public function getId() {
-		return 'review';
-	}
+	protected $id = 'review';
 
 	protected function setProcess() {
 		$this->process = array(
@@ -194,10 +222,7 @@ class ReviewMessagesTask extends ViewMessagesTask {
 }
 
 class ReviewAllMessagesTask extends ReviewMessagesTask {
-
-	public function getId() {
-		return 'reviewall';
-	}
+	protected $id = 'reviewall';
 
 	protected function setProcess() {
 		$this->process = array(
@@ -224,10 +249,7 @@ class ReviewAllMessagesTask extends ReviewMessagesTask {
 
 
 class ExportMessagesTask extends ViewMessagesTask {
-
-	public function getId() {
-		return 'export';
-	}
+	protected $id = 'export';
 
 	protected function setProcess() {
 		$this->process = array(
@@ -276,10 +298,7 @@ class ExportMessagesTask extends ViewMessagesTask {
 }
 
 class ExportToFileMessagesTask extends ExportMessagesTask {
-
-	public function getId() {
-		return 'export-to-file';
-	}
+	protected $id = 'export-to-file';
 
 	public function output() {
 		global $wgOut;
@@ -296,24 +315,25 @@ class ExportToFileMessagesTask extends ExportMessagesTask {
 }
 
 class TranslateTasks {
-	private static $tasks = null;
+	private static $aTasks = array(
+		'view'           => 'ViewMessagesTask',
+		'untranslated'   => 'ViewUntranslatedTask',
+		'optional'       => 'ViewOptionalTask',
+		'review'         => 'ReviewMessagesTask',
+		'reviewall'      => 'ReviewAllMessagesTask',
+		'export'         => 'ExportMessagesTask',
+		'export-to-file' => 'ExportToFileMessagesTask',
+	);
 
-	private static function init() {
-		$tasks = array();
-		$tasks[] = new ViewMessagesTask();
-		$tasks[] = new ViewUntranslatedTask();
-		$tasks[] = new ReviewMessagesTask();
-		$tasks[] = new ReviewAllMessagesTask();
-		$tasks[] = new ExportMessagesTask();
-		$tasks[] = New ExportToFileMessagesTask();
-		self::$tasks = $tasks;
+	public static function getTasks() {
+		return self::$aTasks;
 	}
 
-	public static function &tasks() {
-		if ( self::$tasks === null ) {
-			self::init();
+	public static function getTask( $id ) {
+		if ( isset(self::$aTasks[$id]) ) {
+			return new self::$aTasks[$id];
+		} else {
+			throw new MWException( "No task for id $id" );
 		}
-		return self::$tasks;
 	}
-
 }

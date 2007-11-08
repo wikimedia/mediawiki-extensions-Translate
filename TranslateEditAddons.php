@@ -81,12 +81,7 @@ class TranslateEditAddons {
 		global $wgRequest;
 		$group = $wgRequest->getText('loadgroup', '' );
 		if ( $group ) {
-			$groups = MessageGroups::singleton()->getGroups();
-			foreach( $groups as $g ) {
-				if ( $g->getId() === $group ) {
-					return $g;
-				}
-			}
+			return MessageGroups::getGroup( $group );
 		}
 		return null;
 	}

@@ -10,6 +10,7 @@ $messages['en'] = array(
 
 	'translate-task-view' => 'View all messages from',
 	'translate-task-untranslated' => 'View all untranslated messages from',
+	'translate-task-optional' => 'View optional messages from',
 	'translate-task-review' => 'Review changes to',
 	'translate-task-reviewall' => 'Review all translations in',
 	'translate-task-export' => 'Export translations from',
