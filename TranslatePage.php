@@ -1,15 +1,23 @@
 <?php
 
 class SpecialTranslate extends SpecialPage {
+	const MSG = 'translate-page-';
 
 	protected $task = null;
 	protected $group = null;
+
+	protected $defaults    = null;
+	protected $nondefaults = null;
+	protected $options     = null;
 
 	function __construct() {
 		SpecialPage::SpecialPage( 'Translate' );
 	}
 
-	/** Access point for this special page */
+	/**
+	 * Access point for this special page.
+	 * GLOBALS: $wgHooks, $wgOut.
+	 */
 	public function execute( $parameters ) {
 		wfLoadExtensionMessages( 'Translate' );
 
@@ -21,6 +29,15 @@ class SpecialTranslate extends SpecialPage {
 
 		global $wgOut;
 		$wgOut->addHTML( $this->settingsForm() );
+
+		if ( !$this->options['language'] ) {
+			$wgOut->addHTML(
+				wfMsgExt( self::MSG . 'no-such-language', array( 'parse' ) )
+			);
+			return;
+		}
+
+		# Everything ok, proceed
 		$table = $this->task->execute();
 		$links = $this->doStupidLinks();
 		$wgOut->addHTML( $links . $table . $links );
