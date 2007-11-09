@@ -614,6 +614,7 @@ $messages['nl'] = array(
 	'translate-edit' => 'bewerken',
 	'translate-talk' => 'overleg',
 	'translate-history' => 'geschiedenis',
+	'translate-delete' => 'terugdraaien',
 	'translate-task-view' => 'alle teksten bekijken van',
 	'translate-task-untranslated' => 'alle onvertaalde teksten bekijken van',
 	'translate-task-optional' => 'optionele berichten bekijken van',
@@ -798,6 +799,13 @@ $messages['sr-el'] = array(
 );
 
 $messages['sr'] = $messages['sr-ec'];
+
+$messages['ss'] = array(
+	'translate' => 'Kuhúmusha',
+	'translate-history' => 'umlandvo',
+	'translate-settings' => 'Ngifuna $1 $2 in language $3 with limit $4. $5',
+	'translate-magic-form' => 'Lú-lwîmi: $1 Module: $2 $3',
+);
 
 $messages['su'] = array(
 	'translate' => 'Alih basakeun',
