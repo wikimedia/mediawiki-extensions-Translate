@@ -77,6 +77,7 @@ $messages['ar'] = array(
 	'translate-edit' => 'عدل',
 	'translate-talk' => 'نقاش',
 	'translate-history' => 'تاريخ',
+	'translate-delete' => 'استرجاع التغييرات',
 	'translate-task-view' => 'عرض كل الرسائل من',
 	'translate-task-untranslated' => 'عرض كل الرسائل غير المترجمة من',
 	'translate-task-optional' => 'اعرض الرسائل الاختيارية من',
@@ -104,7 +105,7 @@ $messages['ar'] = array(
 في ترجمة النطاقات <tt>$1 talk</tt> خاص. <tt>$1</tt> تستبدل باسم الموقع (على سبيل المثال <tt>{{SITENAME}} talk</tt>. لو أنه من غير الممكن في لغتك صياغة تعبير صحيح بدون تغيير اسم الموقع، من فضلك اتصل بمطور.
 
 تحتاج إلى أن تكون في مجموعة المترجمين لحفظ التغييرات. التغييرات لن يتم حفظها حتى على زر الحفظ بالأسفل.',
-	'translate-magic-form' => 'اللغة: $1 Module: $2 $3',
+	'translate-magic-form' => 'اللغة: $1 القالب: $2 $3',
 	'translate-magic-submit' => 'إيجاد',
 	'translate-magic-cm-to-be' => 'لتصبح',
 	'translate-magic-cm-current' => 'الحالي',
@@ -200,6 +201,7 @@ $messages['cs'] = array(
 	'translate-history' => 'historie',
 	'translate-task-view' => 'Zobrazit všechny zprávy z',
 	'translate-task-untranslated' => 'Zobrazit všechny nepřeložené zprávy z',
+	'translate-task-optional' => 'Zobrazit volitelné zprávy z',
 	'translate-task-review' => 'Porovnat změny v',
 	'translate-task-reviewall' => 'Porovnat všechny překlady v',
 	'translate-task-export' => 'Exportovat překlady z',
@@ -214,6 +216,22 @@ $messages['cs'] = array(
 	'translate-edit-message-format' => 'Formát této zprávy je <b>$1</b>.',
 	'translate-edit-message-in' => 'Současný řetězec v <b>$1</b> ($2):',
 	'translate-edit-message-in-fb' => 'Současný řetězec v záložním jazyce <b>$1</b> ($2):',
+	'translate-magic-pagename' => 'Rozšířená možnost překladu Mediawiki',
+	'translate-magic-form' => 'Jazyk: $1 Modul: $2 $3',
+	'translate-magic-submit' => 'Zobrazit',
+	'translate-magic-cm-to-be' => 'nové',
+	'translate-magic-cm-current' => 'současné',
+	'translate-magic-cm-original' => 'původní',
+	'translate-magic-cm-fallback' => 'rezervní',
+	'translate-magic-cm-save' => 'Uložit',
+	'translate-magic-cm-export' => 'Exportovat',
+	'translate-magic-cm-updatedusing' => 'Aktualizovat pomocí Special:Magic',
+	'translate-magic-cm-savefailed' => 'Uložení se nepovedlo',
+	'translate-magic-special' => 'Alternativní jména speciálních stránek',
+	'translate-magic-words' => 'Kouzelná slůvka',
+	'translate-magic-skin' => 'Názvy stylů',
+	'translate-magic-namespace' => 'Názvy jmenných prostorů',
+	'translationchanges' => 'Změny překladů',
 );
 
 /* German by Raymond */
@@ -296,8 +314,10 @@ $messages['fi'] = array(
 	'translate-edit' => 'muokkaa',
 	'translate-talk' => 'keskustelu',
 	'translate-history' => 'historia',
+	'translate-delete' => 'kumoa muutokset',
 	'translate-task-view' => 'nähdä kaikki viestit',
 	'translate-task-untranslated' => 'nähdä kaikki kääntämättömät viestit',
+	'translate-task-optional' => 'nähdä valinnaiset viestit',
 	'translate-task-review' => 'tarkistaa muutokset',
 	'translate-task-reviewall' => 'tarkistaa kaikki käännökset',
 	'translate-task-export' => 'viedä käännökset',
@@ -310,6 +330,7 @@ $messages['fi'] = array(
 	'translate-optional' => '(valinnainen)',
 	'translate-ignored' => '(ei-käännettävä)',
 	'translate-edit-message-in' => 'Nykyinen käännös kielellä <b>$1</b> ($2)',
+	'translate-magic-pagename' => 'Laajennettu MediaWikin kääntäminen',
 );
 
 $messages['fr'] = array(
@@ -486,6 +507,31 @@ Dyrbiš w skupinje přełožowarjow być, zo by změny składował. Změny so nj
 	'translate-magic-skin' => 'Mjeno šatow',
 	'translate-magic-namespace' => 'Mjena mjenowych rumow',
 	'translationchanges' => 'Přełožowanske změny',
+	'translate-page-no-such-language' => 'Njepłaćiwy rěčny kod podaty',
+);
+
+$messages['hu'] = array(
+	'translate' => 'Fordítás',
+	'translate-edit' => 'szerk',
+	'translate-talk' => 'vita',
+	'translate-history' => 'laptörténet',
+	'translate-delete' => 'visszaállítás',
+	'translate-task-view' => 'Összes üzenet megtekintése',
+	'translate-task-untranslated' => 'Összes fordítatlan üzenet megtekintése',
+	'translate-task-optional' => 'Nem kötelező üzenetek megtekintése',
+	'translate-task-review' => 'Nem kötelező üzenetek megtekintése',
+	'translate-task-reviewall' => 'Összes fordítás áttekintése',
+	'translate-task-export' => 'Fordítások kimentése',
+	'translate-task-export-to-file' => 'Fordítások kimentése fájlba',
+	'translate-settings' => '$1 innen: $2, nyelv: $3, megjelenítendő elemek: $4. $5',
+	'translate-paging' => '<div>Üzenetek: $1 – $2 (összesen: $3). [ $4 | $5 ]</div>',
+	'translate-submit' => 'Megjelenítés',
+	'translate-next' => 'következő',
+	'translate-prev' => 'előző',
+	'translate-optional' => '(nem kötelező)',
+	'translate-edit-message-format' => 'Az üzenet formátuma <b>$1</b>.',
+	'translate-edit-message-in' => 'A szöveg <b>$1</b> ($2) nyelven:',
+	'translate-magic-form' => 'Nyelv: $1, modul: $2 $3',
 );
 
 $messages['id'] = array(

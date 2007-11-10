@@ -1037,7 +1037,7 @@ class NewUserNotifMessageGroup extends ExtensionMessageGroup {
 
 	protected $exportStart = '\'$CODE\' => array(';
 	protected $exportPrefix= '';
-	protected $exportLineP = '';
+	protected $exportLineP = "\t";
 	protected $exportEnd   = '),';
 }
 
@@ -1413,7 +1413,7 @@ class UserImagesMessageGroup extends ExtensionMessageGroup {
 
 	protected $exportStart = '\'$CODE\' => array(';
 	protected $exportPrefix= '';
-	protected $exportLineP = '';
+	protected $exportLineP = "\t";
 	protected $exportEnd   = '),';
 }
 
