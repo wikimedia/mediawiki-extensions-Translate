@@ -14,7 +14,8 @@ $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'Translate',
 	'version' => '4.6',
 	'author' => 'Niklas Laxström',
-	'description' => 'Special page for translating Mediawiki and beyond'
+	'description' => 'Special page for translating Mediawiki and beyond',
+	'url' => 'http://www.mediawiki.org/wiki/Extension:Translate',
 );
 
 $dir = dirname(__FILE__) . '/';
