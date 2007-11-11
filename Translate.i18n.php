@@ -451,6 +451,7 @@ Nas traducións dos espazos de nomes, <tt>$1 talk</tt> é especial. <tt>$1</tt> 
 	'translate-magic-skin' => 'Nome das aparencias',
 	'translate-magic-namespace' => 'Nomes dos espazos de nomes',
 	'translationchanges' => 'Modificacións na tradución',
+	'translate-page-no-such-language' => 'Forneceuse un código de lingua non válido',
 );
 
 $messages['he'] = array(
@@ -561,15 +562,17 @@ $messages['kk-kz'] = array(
 	'translate-edit' => 'өңдеу',
 	'translate-talk' => 'талқылау',
 	'translate-history' => 'тарихы',
-	'translate-task-view' => 'Мынадан барлық хабарларды қарау',
-	'translate-task-untranslated' => 'Мынадан барлық аударылмаған хабарларды қарау',
-	'translate-task-review' => 'Мынаған жасалған өзгерістерді қарап шығу',
-	'translate-task-reviewall' => 'Мынадағы барлық аудармаларды қарап шығу',
-	'translate-task-export' => 'Мынадағы аудармаларды сыртқа беру',
-	'translate-task-export-to-file' => 'Мынадағы аударманы файл етіп сыртқа беру',
-	'translate-settings' => 'Талабым: $1 $2 $3 тілінде $4 санымен шектелгенді $5',
-	'translate-paging' => '<div>Хабарлардың көрсетлуі: $1 нөмірден $2 нөмірге (не барлығы $3). [ $4 | $5 ]</div>',
-	'translate-submit' => 'Келтіру',
+	'translate-delete' => 'қайтару',
+	'translate-task-view' => 'барлық хабарын қарау',
+	'translate-task-untranslated' => 'аударылмаған барлық хабарын қарау',
+	'translate-task-optional' => 'міндетті емес хабарларын қарау',
+	'translate-task-review' => 'өзгерістерін қарап шығу',
+	'translate-task-reviewall' => 'барлық аудармаларын қарап шығу',
+	'translate-task-export' => 'аудармаларын сыртқа беру',
+	'translate-task-export-to-file' => 'аудармаларын файлмен сыртқа беру',
+	'translate-settings' => '$3 тіліндегі $2 (көлемімен $4) $1 талап етем. $5',
+	'translate-paging' => '<div>Көрсетілген хабар ауқымы: $1 — $2 (не барлығы $3). [ $4 | $5 ]</div>',
+	'translate-submit' => 'Келтір!',
 	'translate-next' => 'Келесі бет',
 	'translate-prev' => 'Алдыңғы бет',
 	'translate-optional' => '(міндетті емес)',
@@ -578,8 +581,31 @@ $messages['kk-kz'] = array(
 	'translate-edit-message-in' => 'Ағымдағы жол <b>$1</b> ($2) тілімен:',
 	'translate-edit-message-in-fb' => 'Ағымдағы жол <b>$1</b> ($2) сүйену тілімен:',
 	'translate-magic-pagename' => 'Кеңейтілген MediaWiki аударуы',
-	'translate-magic-submit' => 'Келтіру',
+	'translate-magic-help' => 'Арнайы бет бүркемелерін, сиқырлы сөздерін, безендіру мәнер атауларын және есім ая атауларын аудара аласыз.
+
+Сиқырлы сөздерде ағылшынша нұсқасын кіргізуіңіз жөн, әйтпесе қызметі тоқталады. Тағы да бірінші бабын (0 не 1) әрдайым қалдырыңыз.
+
+Арнайы бет бүркемелерінде және сиқырлы сөздерінде бірнеше аударма болуы мүмкін. Аудармалар үтірмен (,) бөліктенеді. Безендіру мәнер және есім ая атауларында тек бір аударма болуы тиіс.
+
+Есім ая аудармаларында <tt>$1_talk</tt> деген арнайы келтіріледі. <tt>$1</tt> деген айналмалы өздіктік торап атауымен алмастырылады (мысалы, <tt>{{SITENAME}} талқылауы</tt>). Егер сіздің тіліңізде торап атауын өзгертпей дұрыс сөйлем құрылмаса, дамытушыларға хабарласыңыз.',
+	'translate-magic-form' => 'Тілі: $1 Құрашы: $2 $3',
+	'translate-magic-submit' => 'Келтір',
+	'translate-magic-cm-to-be' => 'Болуға тиісті',
+	'translate-magic-cm-current' => 'Ағымдағы',
+	'translate-magic-cm-original' => 'Түпнұсқасы',
+	'translate-magic-cm-fallback' => 'Сүйемелдеуі',
+	'translate-magic-cm-save' => 'Сақта!',
+	'translate-magic-cm-export' => 'Сыртқа бер',
+	'translate-magic-cm-updatedusing' => 'Special:Magic дегенді қолданып сақталған',
+	'translate-magic-cm-savefailed' => 'Сақтау сәтсіз болды',
+	'translate-magic-special' => 'Арнайы бет бүркемелері',
+	'translate-magic-words' => 'Сиқыр сөздер',
+	'translate-magic-skin' => 'Безендіру мәнері атаулары',
+	'translate-magic-namespace' => 'Есім ая атаулары',
+	'translationchanges' => 'Аударма өзгерістері',
+	'translate-page-no-such-language' => 'Келтірілген тіл белгілемесі жарамсыз',
 );
+
 # ‪Qazaqşa (latın)‬ (AlefZet)
 $messages['kk-tr'] = array(
 	'translate'                     => 'Awdarw',
