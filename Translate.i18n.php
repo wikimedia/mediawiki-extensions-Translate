@@ -120,6 +120,7 @@ $messages['ar'] = array(
 	'translate-magic-skin' => 'أسماء الواجهات',
 	'translate-magic-namespace' => 'أسماء النطاقات',
 	'translationchanges' => 'تغييرات الترجمة',
+	'translate-page-no-such-language' => 'كود لغة غير صحيح تم توفيره',
 );
 
 $messages['bcl'] = array(
