@@ -626,7 +626,7 @@ class ConfirmEditMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Confirm Edit';
 	protected $id    = 'ext-confirmedit';
 
-	protected $arrName     = 'wgConfirmEditMessages';
+	protected $arrName     = 'messages';
 	protected $messageFile = 'ConfirmEdit/ConfirmEdit.i18n.php';
 
 	protected $exportPad   = 30;
@@ -776,7 +776,7 @@ class FancyCaptchaMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Fancy Captcha';
 	protected $id      = 'ext-fancycaptcha';
 
-	protected $functionName = 'efFancyCaptchaMessages';
+	protected $arrName = 'messages';
 	protected $messageFile  = 'ConfirmEdit/FancyCaptcha.i18n.php';
 
 	protected $exportStart = '\'$CODE\' => array(';
@@ -1308,7 +1308,7 @@ class SpamBlacklistMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Spam Blacklist';
 	protected $id    = 'ext-spamblacklist';
 
-	protected $functionName = 'efSpamBlacklistMessages';
+	protected $arrName = 'messages';
 	protected $messageFile  = 'SpamBlacklist/SpamBlacklist.i18n.php';
 
 	protected $exportStart = '\'$CODE\' => array(';
