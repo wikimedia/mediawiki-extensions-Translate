@@ -734,6 +734,7 @@ Om wijzigingen op te slaan moet u lid zijn van de groep vertalers. Wijzigingen w
 	'translate-magic-skin' => 'Skinnamen',
 	'translate-magic-namespace' => 'Naamruimtebenamingen',
 	'translationchanges' => 'Vertalingen',
+	'translate-page-no-such-language' => 'Er is een ongeldige taalcode opgegeven',
 );
 
 $messages['no'] = array(
