@@ -11,6 +11,9 @@ abstract class MessageGroup {
 	/** Returns a unique id used to identify this class */
 	function getId() { return $this->id; }
 
+	/** Is this a real message group or just some meta group */
+	function isMeta() { return false; }
+
 	/** Message Classes can fill up missing properties */
 	function fill( &$array, $code ) {}
 
@@ -383,6 +386,7 @@ class Core500MessageGroup extends CoreMessageGroup {
 	protected $label = 'MediaWiki messages top 500';
 	protected $id    = 'core-500';
 
+	public function isMeta() { return true; }
 	public function getMessageFile( $code ) { return '-'; }
 	function export( &$array, $code ) { return '-'; }
 	public function exportToFile( &$array, $code, $authors ) { return '-'; }
@@ -409,11 +413,13 @@ class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
 
 	private $classes = null;
 
+	public function isMeta() { return true; }
+
 	private function init() {
 		if ( $this->classes === null ) {
 			$this->classes = MessageGroups::singleton()->getGroups();
 			foreach ( $this->classes as $index => $class ) {
-				if ( (strpos( $class->getId(), 'ext-' ) !== 0) || (strpos( $class->getId(), 'ext-0' ) === 0) ) {
+				if ( (strpos( $class->getId(), 'ext-' ) !== 0) || $g->isMeta() ) {
 					unset( $this->classes[$index] );
 				}
 			}

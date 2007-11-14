@@ -10,7 +10,7 @@ foreach ( $groups as $g ) {
 	$messages = $g->getDefinitions();
 	$id = $g->getId();
 
-	if ( $id === 'ext-0-all' || $id === 'core-500' ) continue;
+	if ( $g->isMeta() ) continue;
 	echo "Working with $id\n";
 	foreach ( $messages as $key => $data ) {
 		if ( isset($hugearray[$key]) ) {
