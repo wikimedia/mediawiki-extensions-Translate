@@ -305,5 +305,17 @@ class TranslateUtils {
 		return self::selector( 'language', $options );
 	}
 
+	private static $keyToGroup = null;
+	public static function messageKeyToGroup( $key ) {
+		if ( is_null(self::$keyToGroup) ) {
+			if ( file_exists(TRANSLATE_INDEXFILE) ) {
+				self::$keyToGroup = unserialize( file_get_contents(TRANSLATE_INDEXFILE) );
+			} else {
+				self::$keyToGroup = array();
+				wfDebug( __METHOD__ . ": Message index missing." );
+			}
+		}
 
+		return @self::$keyToGroup[$key];
+	}
 }

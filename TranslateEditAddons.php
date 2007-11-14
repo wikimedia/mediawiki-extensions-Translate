@@ -77,19 +77,25 @@ class TranslateEditAddons {
 		return array( $key, $langCode );
 	}
 
-	private static function getMessageGroup() {
+	private static function getMessageGroup( $key ) {
 		global $wgRequest;
 		$group = $wgRequest->getText('loadgroup', '' );
+		if ( !$group ) {
+			// Try harder
+			$group = TranslateUtils::messageKeyToGroup( $key );
+		}
+
 		if ( $group ) {
 			return MessageGroups::getGroup( $group );
+		} else {
+			return null;
 		}
-		return null;
 	}
 
 	private static function editBoxes( $object ) {
 		list( $key, $code ) = self::figureMessage( $object );
 
-		$group = self::getMessageGroup();
+		$group = self::getMessageGroup( $key );
 		if ( $group === null ) return;
 
 		$en = $group->getMessage( $key, 'en' );

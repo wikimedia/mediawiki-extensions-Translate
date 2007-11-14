@@ -12,7 +12,7 @@ if (!defined('MEDIAWIKI')) die();
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'Translate',
-	'version' => '4.7',
+	'version' => '5.0',
 	'author' => 'Niklas Laxström',
 	'description' => 'Special page for translating Mediawiki and beyond',
 	'url' => 'http://www.mediawiki.org/wiki/Extension:Translate',
@@ -40,6 +40,7 @@ $wgSpecialPages['TranslationChanges'] = 'SpecialTranslationChanges';
 $wgHooks['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';
 
 define( 'TRANSLATE_FUZZY', '!!FUZZY!!' );
+define( 'TRANSLATE_INDEXFILE', $dir . 'messageindex.ser' );
 
 #
 # Configuration variables
