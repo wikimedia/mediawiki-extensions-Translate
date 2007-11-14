@@ -419,7 +419,7 @@ class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
 		if ( $this->classes === null ) {
 			$this->classes = MessageGroups::singleton()->getGroups();
 			foreach ( $this->classes as $index => $class ) {
-				if ( (strpos( $class->getId(), 'ext-' ) !== 0) || $g->isMeta() ) {
+				if ( (strpos( $class->getId(), 'ext-' ) !== 0) || $class->isMeta() ) {
 					unset( $this->classes[$index] );
 				}
 			}
