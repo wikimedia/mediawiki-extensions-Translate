@@ -16,8 +16,7 @@ foreach ( $groups as $g ) {
 		if ( isset($hugearray[$key]) ) {
 			echo "Key $key already belongs to $hugearray[$key], conflict with $id\n";
 		} else {
-			// PHP doesn't seem to be intelligent enough to save memory
-			$hugearray[$key] =& $id;
+			$hugearray[$key] = $id;
 		}
 	}
 }
