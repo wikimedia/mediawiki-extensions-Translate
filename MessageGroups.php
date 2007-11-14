@@ -1523,7 +1523,7 @@ class FreeColMessageGroup extends MessageGroup {
 	protected $id    = 'out-freecol';
 	protected $prefix= 'freecol-';
 
-	protected $mcache = null;
+	protected $mcache = array();
 	private   $fileDir  = 'freecol/';
 
 	public function __construct() {
@@ -1537,12 +1537,18 @@ class FreeColMessageGroup extends MessageGroup {
 	}
 
 	private function load( $code ) {
-		#$filenameXX = $this->fileDir . "FreeColMessages_$code.properties";
-		$filenameXX = $this->fileDir . "freecol_$code";
+		if ( $code == 'en' ) {
+			$filenameXX = $this->fileDir . "FreeColMessages.properties";
+		} else {
+			$filenameXX = $this->fileDir . "freecol_$code";
+		}
 
 		$linesXX = false;
 		if ( file_exists( $filenameXX ) ) {
 			$linesXX = file( $filenameXX );
+		} else {
+			# No such localisation, fall out
+			return;
 		}
 
 
@@ -1587,26 +1593,7 @@ class FreeColMessageGroup extends MessageGroup {
 	}
 
 	function getDefinitions() {
-		if ( isset( $this->mcache['en'] ) ) {
-			return $this->mcache['en'];
-		}
-
-		$filenameEN = $this->fileDir . 'FreeColMessages.properties';
-
-		if ( file_exists( $filenameEN ) ) {
-			$linesEN = file( $filenameEN );
-		} else {
-			return;
-		}
-
-		$this->mcache = array();
-
-		foreach ( $linesEN as $line ) {
-			if ( !strpos( $line, '=' ) ) { continue; }
-			list( $key, $string ) = explode( '=', $line, 2 );
-			$this->mcache['en'][$this->prefix . $key] = trim($string);
-		}
-
+		$this->load('en');
 		return $this->mcache['en'];
 	}
 
