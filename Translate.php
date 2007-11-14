@@ -12,7 +12,7 @@ if (!defined('MEDIAWIKI')) die();
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'Translate',
-	'version' => '4.6',
+	'version' => '4.7',
 	'author' => 'Niklas Laxström',
 	'description' => 'Special page for translating Mediawiki and beyond',
 	'url' => 'http://www.mediawiki.org/wiki/Extension:Translate',
@@ -63,6 +63,7 @@ $wgTranslateFuzzyBotName = 'FuzzyBot';
 /** AC = Available classes */
 $wgTranslateAC = array(
 'core'                      => 'CoreMessageGroup',
+'core-500'                  => 'Core500MessageGroup',
 'ext-0-all'                 => 'AllMediawikiExtensionsGroup',
 'ext-ajaxshoweditors'       => 'AjaxShowEditorsMessageGroup',
 'ext-antispoof'             => 'AntiSpoofMessageGroup',

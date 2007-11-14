@@ -158,10 +158,12 @@ CODE;
 		$l = new languages();
 
 		foreach ($l->getOptionalMessages() as $optMsg) {
+			if (!isset($array[$optMsg])) continue;
 			$array[$optMsg]['optional'] = true;
 		}
 
 		foreach ($l->getIgnoredMessages() as $optMsg) {
+			if (!isset($array[$optMsg])) continue;
 			$array[$optMsg]['ignored'] = true;
 		}
 	}
@@ -376,6 +378,30 @@ class MultipleFileMessageGroup extends ExtensionMessageGroup {
 	}
 
 }
+
+class Core500MessageGroup extends CoreMessageGroup {
+	protected $label = 'MediaWiki messages top 500';
+	protected $id    = 'core-500';
+
+	public function getMessageFile( $code ) { return '-'; }
+	function export( &$array, $code ) { return '-'; }
+	public function exportToFile( &$array, $code, $authors ) { return '-'; }
+
+	function getDefinitions() {
+		$data = file_get_contents( dirname(__FILE__) . '/wikimedia-500.txt' );
+		$messages = explode( "\n", $data );
+		$contents = Language::getMessagesFor( 'en' );
+		$definitions = array();
+		foreach ( $messages as $key ) {
+			if ( isset($contents[$key]) ) {
+				$definitions[$key] = $contents;
+			}
+		}
+		return $definitions;
+	}
+
+}
+
 
 class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
 	protected $label = 'All extensions';
@@ -1495,27 +1521,8 @@ class FreeColMessageGroup extends MessageGroup {
 	private   $fileDir  = 'freecol/';
 
 	public function __construct() {
-		$filenameEN = $this->fileDir . 'FreeColMessages.properties';
-
-		if ( file_exists( $filenameEN ) ) {
-			$linesEN = file( $filenameEN );
-		} else {
-			return;
-		}
-
-
-
-
-		$this->mcache = array();
-
-		foreach ( $linesEN as $line ) {
-			if ( !strpos( $line, '=' ) ) { continue; }
-			list( $key, $string ) = explode( '=', $line, 2 );
-			$this->mcache['en'][$this->prefix . $key] = trim($string);
-		}
-
-
-
+		global $wgTranslateExtensionDirectory;
+		$this->fileDir = $wgTranslateExtensionDirectory . 'freecol/';
 	}
 
 	public function getMessage( $key, $code ) {
@@ -1574,6 +1581,26 @@ class FreeColMessageGroup extends MessageGroup {
 	}
 
 	function getDefinitions() {
+		if ( isset( $this->mcache['en'] ) ) {
+			return $this->mcache['en'];
+		}
+
+		$filenameEN = $this->fileDir . 'FreeColMessages.properties';
+
+		if ( file_exists( $filenameEN ) ) {
+			$linesEN = file( $filenameEN );
+		} else {
+			return;
+		}
+
+		$this->mcache = array();
+
+		foreach ( $linesEN as $line ) {
+			if ( !strpos( $line, '=' ) ) { continue; }
+			list( $key, $string ) = explode( '=', $line, 2 );
+			$this->mcache['en'][$this->prefix . $key] = trim($string);
+		}
+
 		return $this->mcache['en'];
 	}
 
