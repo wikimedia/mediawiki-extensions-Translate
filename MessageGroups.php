@@ -398,7 +398,7 @@ class Core500MessageGroup extends CoreMessageGroup {
 		$definitions = array();
 		foreach ( $messages as $key ) {
 			if ( isset($contents[$key]) ) {
-				$definitions[$key] = $contents;
+				$definitions[$key] = $contents[$key];
 			}
 		}
 		return $definitions;
