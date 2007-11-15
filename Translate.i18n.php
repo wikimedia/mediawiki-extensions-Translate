@@ -910,7 +910,7 @@ $messages['ss'] = array(
 	'translate' => 'Kuhúmusha',
 	'translate-history' => 'umlandvo',
 	'translate-settings' => 'Ngifuna $1 $2 in language $3 with limit $4. $5',
-	'translate-magic-form' => 'Lú-lwîmi: $1 Module: $2 $3',
+	'translate-magic-form' => 'Lúlwîmi: $1 Module: $2 $3',
 );
 
 $messages['su'] = array(
