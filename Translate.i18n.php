@@ -267,6 +267,28 @@ $messages['dsb'] = array(
 	'translate' => 'Pśełožyś',
 );
 
+$messages['el'] = array(
+	'translate' => 'Μεταφράστε',
+	'translate-edit' => 'επεξεργασία',
+	'translate-talk' => 'Συζήτηση',
+	'translate-history' => 'Ιστορικό',
+	'translate-delete' => 'Επαναφορά αλλαγών',
+	'translate-task-view' => 'δω όλα τα μηνύματα εδώ',
+	'translate-task-untranslated' => 'δω όλα τα αμετάφραστα μηνύματα εδώ',
+	'translate-task-review' => 'δω τις συγκρίσεις των μεταφράσεων εδώ',
+	'translate-task-reviewall' => 'δω όλες τις αναθεωρήσεις των μεταφράσεων εδώ',
+	'translate-settings' => 'Θέλω να $1 $2 στην γλώσσα $3 με όριο τα $4. $5',
+	'translate-paging' => '<div>Παρουσίαση μηνυμάτων $1 έως $2 από τα $3. [ $4 | $5 ]</div>',
+	'translate-submit' => 'Πηγαίνετε',
+	'translate-next' => 'Επόμενη σελίδα',
+	'translate-prev' => 'Προηγούμενη σελίδα',
+	'translate-ignored' => '(αγνοήστε)',
+	'translate-magic-form' => 'Γλώσσα: $1 Ενότητα: $2 $3',
+	'translate-magic-submit' => 'Πηγαίνετε',
+	'translate-magic-special' => 'Πρόσθετα ψευδώνυμα σελίδων',
+	'translationchanges' => 'Αλλαγές μετάφρασης',
+);
+
 $messages['eo'] = array(
 	'translate' => 'Tradukado',
 	'translate-edit' => 'redaktu',
@@ -461,6 +483,22 @@ $messages['he'] = array(
 	'translate-edit-message-format' => 'המבנה של הודעה זו הוא <b>$1</b>.',
 	'translate-edit-message-in'     => 'המחרוזת הנוכחית ל־<b>$1</b> ($2):',
 	'translate-edit-message-in-fb'  => 'המחרוזת הנוכחית ל־<b>$1</b> בשפת הגיבוי ($2):',
+);
+
+$messages['hr'] = array(
+	'translate' => 'Prijevodi sistemskih poruka',
+	'translate-edit' => 'uredi',
+	'translate-talk' => 'razgovor',
+	'translate-history' => 'povijest',
+	'translate-delete' => 'vrati',
+	'translate-task-view' => 'Vidi sve poruke u prostoru',
+	'translate-task-untranslated' => 'Vidi sve neprevedene poruke u prostoru',
+	'translate-task-optional' => 'Vidi dodatne (optional) poruke u prostoru',
+	'translate-settings' => 'Izvrši: $1 $2 za jezik: $3 broj prikazanih poruka $4. $5',
+	'translate-paging' => '<div>Prikazujem poruke od $1 do $2 od ukupno $3. [ $4 | $5 ]</div>',
+	'translate-submit' => 'Nađi',
+	'translate-next' => 'Slijedeća stranica',
+	'translate-prev' => 'Prethodna stranica',
 );
 
 $messages['hsb'] = array(
