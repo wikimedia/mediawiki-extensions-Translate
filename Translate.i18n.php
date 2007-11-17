@@ -62,6 +62,16 @@ You need to be in the translators group to save changes. Changes are not saved u
 	'translate-page-no-such-language' => 'Invalid language code was supplied',
 );
 
+$messages['af'] = array(
+	'translate' => 'Vertaal',
+	'translate-edit' => 'wysig',
+	'translate-talk' => 'bespreking',
+	'translate-history' => 'geskiedenis',
+	'translate-next' => 'Volgende bladsy',
+	'translate-prev' => 'Vorige bladsy',
+	'translate-magic-cm-current' => 'Huidig',
+);
+
 $messages['an'] = array(
 	'translate-magic-form' => 'Lenguache: $1 Module: $2 $3',
 );
@@ -95,7 +105,7 @@ $messages['ar'] = array(
 	'translate-edit-message-format' => 'صياغة هذه الرسالة هي <b>$1</b>.',
 	'translate-edit-message-in' => 'النص الحالي ب <b>$1</b> ($2):',
 	'translate-edit-message-in-fb' => 'النص الحالي باللغة المراجعة <b>$1</b> ($2):',
-	'translate-magic-pagename' => 'ترجمة ميدياويكي ممددة',
+	'translate-magic-pagename' => 'ترجمة الميدياويكي الممتدة',
 	'translate-magic-help' => 'يمكنك ترجمة أسماء الصفحات الخاصة، الكلمات السحرية، أسماء الواجهات وأسماء النطاقات.
 
 في الكلمات السحرية تحتاج إلى إضافة الترجمة الإنجليزية وإلا فإنها ستتوقف عن العمل. أيضا اترك المدخل الأول (0 أو 1) كما هو.
@@ -403,6 +413,7 @@ Vous devez appartenir au groupe des traducteurs pour sauvegarder les changements
 	'translate-magic-skin' => 'Nom des interfaces',
 	'translate-magic-namespace' => 'Intitulé des espaces de nommage',
 	'translationchanges' => 'Modifications aux traductions',
+	'translate-page-no-such-language' => 'Un code langage invalide a été indiqué',
 );
 
 $messages['frc'] = array(
