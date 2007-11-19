@@ -73,7 +73,54 @@ $messages['af'] = array(
 );
 
 $messages['an'] = array(
-	'translate-magic-form' => 'Lenguache: $1 Module: $2 $3',
+	'translate' => 'Traduzir',
+	'translate-edit' => 'editar',
+	'translate-talk' => 'descutir',
+	'translate-history' => 'istorial',
+	'translate-delete' => 'esfer cambeos',
+	'translate-task-view' => 'Beyer toz os mensaches de',
+	'translate-task-untranslated' => 'Beyer toz os mensaches sin traduzir de',
+	'translate-task-optional' => 'Beyer os mensaches opzionals de',
+	'translate-task-review' => 'Rebisar cambeos en',
+	'translate-task-reviewall' => 'Rebisar todas as traduzions en',
+	'translate-task-export' => 'Esportar traduzions de',
+	'translate-task-export-to-file' => 'Esportar á un archibo as traduzions de',
+	'translate-settings' => 'Quiero $1 $2 de l\'idioma $3 con un maisimo de $4. $5',
+	'translate-paging' => '<div>S\'amuestran os mensaches $1 á $2 d\'un total de $3. [ $4 | $5 ]</div>',
+	'translate-submit' => 'Ir á escar',
+	'translate-next' => 'Pachina siguient',
+	'translate-prev' => 'Pachina anterior',
+	'translate-optional' => '(opzional)',
+	'translate-ignored' => '(no considerato)',
+	'translate-edit-message-format' => 'O formato d\'iste mensache ye <b>$1</b>.',
+	'translate-edit-message-in' => 'Testo d\'o mensache autual en <b>$1</b> ($2):',
+	'translate-edit-message-in-fb' => 'Testo d\'o mensache autual en a luenga d\'aduya',
+	'translate-magic-pagename' => 'Traduzión ixamplata de MediaWiki',
+	'translate-magic-help' => 'Puede traduzir os "alias" d\'as pachinas espezials, as parabras machicas, os nombres d\'as aparenzias y os espazios de nombres.
+
+In as parabras machicas, ha d\'encluyir a traduzión en anglés, porque si no lo fa, no funzionarán bien. Deixe tamién o primer elemento (0 u 1) sin cambiar. 
+
+Os alias d\'as pachinas espezials y as parabras machicas pueden tener barias traduzions. As traduzions se deseparan por una coma (,). Os nombres d\'as aparenzias y d\'os espazios de nombres no pueden tener que una unica traduzión.
+
+En as traduzions d\'os espazios de nombres <tt>$1 talk</tt> ye espezial. <tt>$1</tt> ye escambiata por o nombre d\'o sitio (por exemplo <tt>{{SITENAME}} talk</tt>. Si no ye posible en a suya luenga formar una esprisión correuta sin cambiar o nombre d\'o sitio, contaute con un programador.
+
+Ha de pertenexer á la colla de tradutors ta alzar os cambeos. Ístos no quedan rechistratos dica que no se puncha en o botón "Alzar pachina" que ye en o cobaxo d\'a pachina.',
+	'translate-magic-form' => 'Luenga: $1 Modulo: $2 $3',
+	'translate-magic-submit' => 'Ir á escar',
+	'translate-magic-cm-to-be' => 'Esdebiene',
+	'translate-magic-cm-current' => 'Autual',
+	'translate-magic-cm-original' => 'Orichinal',
+	'translate-magic-cm-fallback' => 'Luenga d\'aduya',
+	'translate-magic-cm-save' => 'Alzar',
+	'translate-magic-cm-export' => 'Esportar',
+	'translate-magic-cm-updatedusing' => 'Esbiellato usando Special:Magic',
+	'translate-magic-cm-savefailed' => 'No se podió alzar a pachina',
+	'translate-magic-special' => 'Alias de pachinas espezials',
+	'translate-magic-words' => 'Parabras machicas',
+	'translate-magic-skin' => 'Nombres d\'aparenzias',
+	'translate-magic-namespace' => 'Espazios de nombres',
+	'translationchanges' => 'Cambeos en a traduzión',
+	'translate-page-no-such-language' => 'O codigo de idioma furnito no ye balido',
 );
 
 $messages['ang'] = array(
@@ -293,6 +340,7 @@ $messages['el'] = array(
 	'translate-next' => 'Επόμενη σελίδα',
 	'translate-prev' => 'Προηγούμενη σελίδα',
 	'translate-ignored' => '(αγνοήστε)',
+	'translate-edit-message-format' => 'Το σχήμα αυτού του μηνύματος είναι <b>$1</b>.',
 	'translate-magic-form' => 'Γλώσσα: $1 Ενότητα: $2 $3',
 	'translate-magic-submit' => 'Πηγαίνετε',
 	'translate-magic-special' => 'Πρόσθετα ψευδώνυμα σελίδων',
@@ -505,11 +553,17 @@ $messages['hr'] = array(
 	'translate-task-view' => 'Vidi sve poruke u prostoru',
 	'translate-task-untranslated' => 'Vidi sve neprevedene poruke u prostoru',
 	'translate-task-optional' => 'Vidi dodatne (optional) poruke u prostoru',
+	'translate-task-review' => 'Vidi promjene u prostoru',
+	'translate-task-reviewall' => 'Vidi sve prijevode u prostoru',
+	'translate-task-export' => 'Izvezi prijevode iz prostora',
+	'translate-task-export-to-file' => 'Izvezi u datoteku prijevode iz prostora',
 	'translate-settings' => 'Izvrši: $1 $2 za jezik: $3 broj prikazanih poruka $4. $5',
 	'translate-paging' => '<div>Prikazujem poruke od $1 do $2 od ukupno $3. [ $4 | $5 ]</div>',
 	'translate-submit' => 'Nađi',
 	'translate-next' => 'Slijedeća stranica',
 	'translate-prev' => 'Prethodna stranica',
+	'translate-magic-cm-save' => 'Snimi',
+	'translate-magic-cm-export' => 'Izvezi',
 );
 
 $messages['hsb'] = array(
@@ -596,6 +650,7 @@ $messages['id'] = array(
 
 $messages['it'] = array(
 	'translate' => 'Traduzione',
+	'translate-settings' => 'Quiero $1 $2 enta l\'idioma $3 con limite $4. $5',
 	'translate-edit-message-format' => 'Formato del messaggio: <b>$1</b>.',
 	'translate-edit-message-in' => 'Contenuto attuale in <b>$1</b> ($2):',
 	'translate-edit-message-in-fb' => 'Contenuto attuale nella lingua di riserva <b>$1</b> ($2):',
