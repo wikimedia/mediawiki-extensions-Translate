@@ -76,6 +76,7 @@ $wgTranslateAC = array(
 'ext-bookinformation'       => 'BookInformationMessageGroup',
 'ext-categorytree'          => 'CategoryTreeExtensionGroup',
 'ext-centralauth'           => 'CentralAuthMessageGroup',
+'ext-changeauthor'          => 'ChangeAuthorMessageGroup',
 'ext-checkuser'             => 'CheckUserMessageGroup',
 'ext-chemistry'             => 'ChemFunctionsMessageGroup',
 'ext-citespecial'           => 'CiteSpecialMessageGroup',

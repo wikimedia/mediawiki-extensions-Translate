@@ -601,6 +601,19 @@ class CentralAuthMessageGroup extends ExtensionMessageGroup {
 	protected $exportPad   = 39;
 }
 
+class ChangeAuthorMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Change Author';
+	protected $id    = 'ext-changeauthor';
+
+	protected $arrName     = 'allMessages';
+	protected $messageFile = 'ChangeAuthor/ChangeAuthor.i18n.php';
+
+	protected $exportPrefix= "\t";
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportLineP = "\t\t";
+	protected $exportEnd   = "),";
+}
+
 class CheckUserMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Check User';
 	protected $id      = 'ext-checkuser';
