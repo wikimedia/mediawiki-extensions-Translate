@@ -943,6 +943,7 @@ class LuceneSearchMessageGroup extends ExtensionMessageGroup {
 	protected $exportPad   = 24;
 
 	function fillBools( &$array ) {
+		$array['searchaliases']['ignored'] = true;
 		$array['searchnearmatch']['ignored'] = true;
 	}
 }
@@ -1214,6 +1215,10 @@ class PlayerMessageGroup extends MultipleFileMessageGroup {
 
 	protected $exportStart = '$messages = array(';
 	protected $exportEnd   = ');';
+
+	function fillBools( &$array ) {
+		$array['player-pagetext']['ignored'] = true;
+	}
 }
 
 class ProfileMonitorMessageGroup extends ExtensionMessageGroup {
@@ -1347,6 +1352,10 @@ class SmoothGalleryExtensionGroup extends MultipleFileMessageGroup {
 
 	protected $exportStart = '$messages = array(';
 	protected $exportEnd   = ');';
+
+	function fillBools( &$array ) {
+		$array['smoothgallery-pagetext']['ignored'] = true;
+	}
 }
 
 class SpamBlacklistMessageGroup extends ExtensionMessageGroup {
@@ -1398,6 +1407,12 @@ class TalkHereExtensionGroup extends MultipleFileMessageGroup {
 
 	protected $exportStart = '$messages = array(';
 	protected $exportEnd   = ');';
+
+	function fillBools( &$array ) {
+		$array['talkhere-headtext']['ignored'] = true;
+		$array['talkhere-afterinput']['ignored'] = true;
+		$array['talkhere-afterform']['ignored'] = true;
+	}
 }
 
 class TemplateLinkMessageGroup extends ExtensionMessageGroup {
