@@ -1035,7 +1035,7 @@ class MinimumNameLengthMessageGroup extends ExtensionMessageGroup {
 
 	protected $exportStart = '\'$CODE\' => array(';
 	protected $exportPrefix= '';
-	protected $exportLineP = '';
+	protected $exportLineP = "\t";
 	protected $exportEnd   = '),';
 }
 
