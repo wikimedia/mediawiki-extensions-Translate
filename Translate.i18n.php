@@ -370,6 +370,12 @@ $messages['eo'] = array(
 	'translate-edit-message-in-fb' => 'Aktuala literovico en refala lingvo <b>$1</b> ($2):',
 );
 
+$messages['eu'] = array(
+	'translate-edit' => 'aldatu',
+	'translate-talk' => 'eztabaida',
+	'translate-history' => 'historia',
+);
+
 $messages['ext'] = array(
 	'translate' => 'Traucil',
 	'translate-edit' => 'eital',
@@ -1012,6 +1018,7 @@ $messages['sr'] = $messages['sr-ec'];
 
 $messages['ss'] = array(
 	'translate' => 'Kuhúmusha',
+	'translate-edit' => 'kúhlela',
 	'translate-history' => 'umlandvo',
 	'translate-settings' => 'Ngifuna $1 $2 in language $3 with limit $4. $5',
 	'translate-magic-form' => 'Lúlwîmi: $1 Module: $2 $3',
