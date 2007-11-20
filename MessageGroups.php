@@ -612,6 +612,11 @@ class ChangeAuthorMessageGroup extends ExtensionMessageGroup {
 	protected $exportStart = '\'$CODE\' => array(';
 	protected $exportLineP = "\t\t";
 	protected $exportEnd   = "),";
+
+	function fillBools( &$array ) {
+		$array['changeauthor-short']['ignored'] = true;
+		$array['changeauthor-logpagetext']['ignored'] = true;
+	}
 }
 
 class CheckUserMessageGroup extends ExtensionMessageGroup {
