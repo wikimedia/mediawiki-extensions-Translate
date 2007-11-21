@@ -951,6 +951,10 @@ class InterwikiMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'Interwiki/SpecialInterwiki.i18n.php';
 
 	protected $exportPad   = 24;
+
+	function fillBools( &$array ) {
+		$array['interwiki_logentry']['ignored'] = true;
+	}
 }
 
 class LinkSearchMessageGroup extends ExtensionMessageGroup {
