@@ -914,6 +914,25 @@ class ImageMapMessageGroup extends ExtensionMessageGroup {
 	}
 }
 
+class ImportFreeImagesMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Import Free Images';
+	protected $id    = 'ext-importfreeimages';
+
+	protected $functionName = 'efImportFreeImagesMessages';
+	protected $messageFile  = 'ImportFreeImages/ImportFreeImages.i18n.php';
+
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportPrefix= "\t\t";
+	protected $exportLineP = "\t\t\t";
+	protected $exportEnd   = '),';
+
+	protected $exportPad   = 32;
+
+	function fillBools( &$array ) {
+		$array['imagemap_desc_types']['ignored'] = true;
+	}
+}
+
 class InputBoxMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Input Box';
 	protected $id    = 'ext-inputbox';

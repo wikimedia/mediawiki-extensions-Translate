@@ -102,6 +102,7 @@ $wgTranslateAC = array(
 'ext-gadgets'               => 'GadgetsExtensionGroup',
 'ext-giverollback'          => 'GiveRollbackMessageGroup',
 'ext-imagemap'              => 'ImageMapMessageGroup',
+'ext-importfreeimages'      => 'ImportFreeImagesMessageGroup',
 'ext-inputbox'              => 'InputBoxMessageGroup',
 'ext-linksearch'            => 'LinkSearchMessageGroup',
 'ext-lucenesearch'          => 'LuceneSearchMessageGroup',
