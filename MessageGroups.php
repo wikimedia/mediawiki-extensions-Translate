@@ -1515,7 +1515,7 @@ class UserMergeMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'User Merge';
 	protected $id    = 'ext-usermerge';
 
-	protected $arrName     = 'allMessages';
+	protected $arrName     = 'usermergeMessages';
 	protected $messageFile = 'UserMerge/UserMerge.i18n.php';
 
 	protected $exportPrefix= "\t";
