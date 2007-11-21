@@ -927,10 +927,6 @@ class ImportFreeImagesMessageGroup extends ExtensionMessageGroup {
 	protected $exportEnd   = '),';
 
 	protected $exportPad   = 32;
-
-	function fillBools( &$array ) {
-		$array['imagemap_desc_types']['ignored'] = true;
-	}
 }
 
 class InputBoxMessageGroup extends ExtensionMessageGroup {
