@@ -943,6 +943,16 @@ class InputBoxMessageGroup extends ExtensionMessageGroup {
 	protected $exportPad   = 26;
 }
 
+class InterwikiMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Interwiki Edit Page';
+	protected $id    = 'ext-interwiki';
+
+	protected $arrName     = 'wgSpecialInterwikiMessages';
+	protected $messageFile = 'Interwiki/SpecialInterwiki.i18n.php';
+
+	protected $exportPad   = 24;
+}
+
 class LinkSearchMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Link Search';
 	protected $id    = 'ext-linksearch';

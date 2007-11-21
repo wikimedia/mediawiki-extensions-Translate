@@ -104,6 +104,7 @@ $wgTranslateAC = array(
 'ext-imagemap'              => 'ImageMapMessageGroup',
 'ext-importfreeimages'      => 'ImportFreeImagesMessageGroup',
 'ext-inputbox'              => 'InputBoxMessageGroup',
+'ext-interwiki'             => 'InterwikiMessageGroup',
 'ext-linksearch'            => 'LinkSearchMessageGroup',
 'ext-lucenesearch'          => 'LuceneSearchMessageGroup',
 'ext-makebot'               => 'MakeBotMessageGroup',
