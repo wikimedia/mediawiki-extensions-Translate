@@ -985,6 +985,14 @@ class LinkSearchMessageGroup extends ExtensionMessageGroup {
 	protected $exportPad   = 19;
 }
 
+class LiquidThreadsMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Liquid Threads';
+	protected $id    = 'ext-liquidthreads';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'LiquidThreads/Lqt.i18n.php';
+}
+
 class LuceneSearchMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Lucene Search';
 	protected $id    = 'ext-lucenesearch';

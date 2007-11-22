@@ -108,6 +108,7 @@ $wgTranslateAC = array(
 'ext-inputbox'              => 'InputBoxMessageGroup',
 'ext-interwiki'             => 'InterwikiMessageGroup',
 'ext-linksearch'            => 'LinkSearchMessageGroup',
+'ext-liquidthreads'         => 'LiquidThreadsMessageGroup',
 'ext-lucenesearch'          => 'LuceneSearchMessageGroup',
 'ext-makebot'               => 'MakeBotMessageGroup',
 'ext-makesysop'             => 'MakeSysopMessageGroup',
