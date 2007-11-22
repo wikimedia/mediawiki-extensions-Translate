@@ -480,6 +480,14 @@ class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
 
 }
 
+class AdvancedRandomMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Advanced Random';
+	protected $id    = 'ext-advancedrandom';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'AdvancedRandom/SpecialAdvancedRandom.i18n.php';
+}
+
 class AjaxShowEditorsMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Ajax Show Editors';
 	protected $id    = 'ext-ajaxshoweditors';
@@ -496,6 +504,16 @@ class AntiSpoofMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'AntiSpoof/AntiSpoof_i18n.php';
 
 	protected $exportPad   = 26;
+}
+
+class AssertEditMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Assert Edit';
+	protected $id    = 'ext-assertedit';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'AssertEdit/AssertEdit.i18n.php';
+
+	protected $exportPad   = 22;
 }
 
 class AsksqlMessageGroup extends ExtensionMessageGroup {
