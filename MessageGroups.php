@@ -1333,6 +1333,14 @@ class ResignMessageGroup extends ExtensionMessageGroup {
 	protected $exportEnd   = '),';
 }
 
+class ReviewMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Review';
+	protected $id    = 'ext-review';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'Review/Review.i18n.php';
+}
+
 class SelectCategoryExtensionGroup extends MultipleFileMessageGroup {
 	protected $label = 'Select Category';
 	protected $id    = 'ext-selectcategory';
@@ -1566,6 +1574,16 @@ class VoteMessageGroup extends ExtensionMessageGroup {
 	protected $exportPrefix= '';
 	protected $exportLineP = "\t";
 	protected $exportEnd   = '),';
+}
+
+class WatchersMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Watchers';
+	protected $id    = 'ext-watchers';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'Watchers/Watchers.i18n.php';
+
+	protected $exportPad   = 25;
 }
 
 class WebStoreMessageGroup extends ExtensionMessageGroup {
