@@ -1135,13 +1135,13 @@ class MiniPreviewExtensionGroup extends MultipleFileMessageGroup {
 }
 
 class MultiUploadMessageGroup extends ExtensionMessageGroup {
-        protected $label = 'Multi Upload';
-        protected $id    = 'ext-multiupload';
+	protected $label = 'Multi Upload';
+	protected $id    = 'ext-multiupload';
 
-        protected $arrName     = 'messages';
-        protected $messageFile = 'MultiUpload/SpecialMultipleUpload.i18n.php';
+	protected $arrName     = 'messages';
+	protected $messageFile = 'MultiUpload/SpecialMultipleUpload.i18n.php';
 
-        protected $exportPad   = 20;
+	protected $exportPad   = 20;
 }
 
 class NewestPagesMessageGroup extends ExtensionMessageGroup {
@@ -1355,6 +1355,16 @@ class ProofreadPageMessageGroup extends ExtensionMessageGroup {
 	protected $exportPrefix= "\t";
 	protected $exportLineP = "\t\t";
 	protected $exportEnd   = '),';
+}
+
+class ProtectSectionMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Protect Section';
+	protected $id    = 'ext-protectsection';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'ProtectSection/ProtectSection.i18n.php';
+
+	protected $exportPad   = 28;
 }
 
 class QuizMessageGroup extends ExtensionMessageGroup {

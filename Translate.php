@@ -7,13 +7,14 @@ if (!defined('MEDIAWIKI')) die();
  *
  * @author Niklas Laxström
  * @copyright Copyright © 2006-2007, Niklas Laxström
+ * @copyright Copyright © 2007, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'Translate',
 	'version' => '5.3',
-	'author' => 'Niklas Laxström',
+	'author' => 'Niklas Laxström, Siebrand Mazeland',
 	'description' => 'Special page for translating Mediawiki and beyond',
 	'url' => 'http://www.mediawiki.org/wiki/Extension:Translate',
 );
@@ -133,11 +134,12 @@ $wgTranslateAC = array(
 'ext-parserfunctions'       => 'ParserfunctionsMessageGroup',
 'ext-patroller'             => 'PatrollerMessageGroup',
 'ext-picturepopup'          => 'PicturePopupMessageGroup',
-'ext-postcomment'           => 'PostCommentMessageGroup',
 'ext-pdfhandler'            => 'PdfHandlerMessageGroup',
 'ext-player'                => 'PlayerMessageGroup',
+'ext-postcomment'           => 'PostCommentMessageGroup',
 'ext-profilemonitor'        => 'ProfileMonitorMessageGroup',
 'ext-proofreadpage'         => 'ProofreadPageMessageGroup',
+'ext-protectsection'        => 'ProtectSectionMessageGroup',
 'ext-quiz'                  => 'QuizMessageGroup',
 'ext-renameuser'            => 'RenameUserMessageGroup',
 'ext-resign'                => 'ResignMessageGroup',
