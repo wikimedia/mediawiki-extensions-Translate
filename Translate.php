@@ -121,6 +121,7 @@ $wgTranslateAC = array(
 'ext-minidonation'          => 'MiniDonationMessageGroup',
 'ext-minimumnamelength'     => 'MinimumNameLengthMessageGroup',
 'ext-minipreview'           => 'MiniPreviewExtensionGroup',
+'ext-multiupload'           => 'MultiUploadMessageGroup',
 'ext-newestpages'           => 'NewestPagesMessageGroup',
 'ext-newuserlog'            => 'NewuserLogMessageGroup',
 'ext-newusernotif'          => 'NewUserNotifMessageGroup',

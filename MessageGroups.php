@@ -1134,6 +1134,16 @@ class MiniPreviewExtensionGroup extends MultipleFileMessageGroup {
 	protected $exportEnd   = ');';
 }
 
+class MultiUploadMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Multi Upload';
+	protected $id    = 'ext-multiupload';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'Multiupload/SpecialMultipleUpload.i18n.php';
+
+	protected $exportPad   = 20;
+}
+
 class NewestPagesMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Newest Pages';
 	protected $id    = 'ext-newestpages';
