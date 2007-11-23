@@ -1135,13 +1135,13 @@ class MiniPreviewExtensionGroup extends MultipleFileMessageGroup {
 }
 
 class MultiUploadMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Multi Upload';
-	protected $id    = 'ext-multiupload';
+        protected $label = 'Multi Upload';
+        protected $id    = 'ext-multiupload';
 
-	protected $arrName     = 'messages';
-	protected $messageFile = 'Multiupload/SpecialMultipleUpload.i18n.php';
+        protected $arrName     = 'messages';
+        protected $messageFile = 'MultiUpload/SpecialMultipleUpload.i18n.php';
 
-	protected $exportPad   = 20;
+        protected $exportPad   = 20;
 }
 
 class NewestPagesMessageGroup extends ExtensionMessageGroup {
