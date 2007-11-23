@@ -111,6 +111,7 @@ $wgTranslateAC = array(
 'ext-interwiki'             => 'InterwikiMessageGroup',
 'ext-linksearch'            => 'LinkSearchMessageGroup',
 'ext-liquidthreads'         => 'LiquidThreadsMessageGroup',
+'ext-lookupuser'            => 'LookupUserMessageGroup',
 'ext-lucenesearch'          => 'LuceneSearchMessageGroup',
 'ext-makebot'               => 'MakeBotMessageGroup',
 'ext-makesysop'             => 'MakeSysopMessageGroup',

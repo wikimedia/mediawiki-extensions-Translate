@@ -1013,6 +1013,14 @@ class LiquidThreadsMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'LiquidThreads/Lqt.i18n.php';
 }
 
+class LookupUserMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Lookup User';
+	protected $id    = 'ext-lookupuser';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'LookupUser/LookupUser.i18n.php';
+}
+
 class LuceneSearchMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Lucene Search';
 	protected $id    = 'ext-lucenesearch';
