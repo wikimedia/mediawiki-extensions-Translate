@@ -1175,7 +1175,7 @@ class OggHandlerMessageGroup extends ExtensionMessageGroup {
 	protected $exportEnd   = '),';
 
 	function fillBools( &$array ) {
-		$array['ogg-player-vlc-mozilla']['ignored'] = true;
+		$array['ogg-player-vlc-mozilla']['optional'] = true;
 	}
 }
 
