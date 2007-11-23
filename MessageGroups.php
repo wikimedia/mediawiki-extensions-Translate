@@ -1173,6 +1173,10 @@ class OggHandlerMessageGroup extends ExtensionMessageGroup {
 	protected $exportPrefix= "\t";
 	protected $exportLineP = "\t\t";
 	protected $exportEnd   = '),';
+
+	function fillBools( &$array ) {
+		$array['ogg-player-vlc-mozilla']['ignored'] = true;
+	}
 }
 
 class OversightMessageGroup extends ExtensionMessageGroup {
@@ -1279,6 +1283,14 @@ class PlayerMessageGroup extends MultipleFileMessageGroup {
 	function fillBools( &$array ) {
 		$array['player-pagetext']['ignored'] = true;
 	}
+}
+
+class PostCommentMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Post Comment';
+	protected $id    = 'ext-postcomment';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'Postcomment/SpecialPostcomment.i18n.php';
 }
 
 class ProfileMonitorMessageGroup extends ExtensionMessageGroup {
@@ -1571,6 +1583,16 @@ class UsernameBlacklistMessageGroup extends ExtensionMessageGroup {
 	protected $exportEnd   = '),';
 }
 
+class UserRightsNotifMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'User Rights Notification';
+	protected $id    = 'ext-userrightsnotif';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'UserRightsNotif/UserRightsNotif.i18n.php';
+
+	protected $exportPad   = 26;
+}
+
 class VoteMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Vote';
 	protected $id      = 'ext-vote';
@@ -1605,6 +1627,16 @@ class WebStoreMessageGroup extends ExtensionMessageGroup {
 	protected $exportPrefix= "\t";
 	protected $exportLineP = "\t\t";
 	protected $exportEnd   = '),';
+}
+
+class WhoIsWatchingMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Who Is Watching';
+	protected $id    = 'ext-whoiswatching';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'WhoIsWatching/SpecialWhoIsWatching.i18n.php';
+
+	protected $exportPad   = 30;
 }
 
 class WikidataLanguageManagerMessageGroup extends ExtensionMessageGroup {
