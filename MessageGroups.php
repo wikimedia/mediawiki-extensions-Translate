@@ -840,6 +840,16 @@ class EditcountMessageGroup extends ExtensionMessageGroup {
 	protected $exportEnd   = '),';
 }
 
+class EvalMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Eval';
+	protected $id    = 'ext-eval';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'Eval/SpecialEval.i18n.php';
+
+	protected $exportPad   = 14;
+}
+
 class ExpandTemplatesMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Expand Templates';
 	protected $id    = 'ext-expandtemplates';

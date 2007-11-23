@@ -98,6 +98,7 @@ $wgTranslateAC = array(
 'ext-duplicator'            => 'DuplicatorMessageGroup',
 'ext-editcount'             => 'EditcountMessageGroup',
 'ext-expandtemplates'       => 'ExpandTemplatesMessageGroup',
+'ext-eval'                  => 'EvalMessageGroup',
 'ext-fancycaptcha'          => 'FancyCaptchaMessageGroup',
 'ext-fckeditor'             => 'FCKeditorExtensionGroup',
 'ext-filepath'              => 'FilePathMessageGroup',
