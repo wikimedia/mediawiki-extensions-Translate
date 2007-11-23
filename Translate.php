@@ -73,6 +73,7 @@ $wgTranslateAC = array(
 'ext-asksql'                => 'AsksqlMessageGroup',
 'ext-backandforth'          => 'BackAndForthMessageGroup',
 'ext-badimage'              => 'BadImageMessageGroup',
+'ext-blahtex'               => 'BlahtexMessageGroup',
 'ext-blocktitles'           => 'BlockTitlesMessageGroup',
 'ext-boardvote'             => 'BoardVoteMessageGroup',
 'ext-bookinformation'       => 'BookInformationMessageGroup',

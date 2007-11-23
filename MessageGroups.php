@@ -557,6 +557,16 @@ class BadImageMessageGroup extends ExtensionMessageGroup {
 	protected $exportEnd   = '),';
 }
 
+class BlahtexMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Blahtex';
+	protected $id    = 'ext-blahtex';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'Blahtex/Blahtex.i18n.php';
+
+	protected $exportPad   = 40;
+}
+
 class BlockTitlesMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Block Titles';
 	protected $id    = 'ext-blocktitles';
@@ -1175,7 +1185,7 @@ class OggHandlerMessageGroup extends ExtensionMessageGroup {
 	protected $exportEnd   = '),';
 
 	function fillBools( &$array ) {
-		$array['ogg-player-vlc-mozilla']['optional'] = true;
+		$array['ogg-player-vlc-mozilla']['ignored'] = true;
 	}
 }
 
