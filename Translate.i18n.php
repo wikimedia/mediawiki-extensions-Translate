@@ -457,6 +457,7 @@ Vous devez appartenir au groupe des traducteurs pour sauvegarder les changements
 	'translate-magic-submit' => 'Aller',
 	'translate-magic-cm-to-be' => 'Devient',
 	'translate-magic-cm-current' => 'Actuel',
+	'translate-magic-cm-original' => 'Original',#identical but defined
 	'translate-magic-cm-fallback' => 'Revenir',
 	'translate-magic-cm-save' => 'Sauvegarder',
 	'translate-magic-cm-export' => 'Exporter',
