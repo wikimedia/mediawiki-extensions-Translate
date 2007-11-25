@@ -1703,7 +1703,8 @@ class WhoIsWatchingMessageGroup extends ExtensionMessageGroup {
 	protected $exportStart = '\'$CODE\' => array(';
 	protected $exportPrefix= "\t";
 	protected $exportLineP = "\t\t";
-	protected $exportPad   = 38;
+	protected $exportEnd   = '),';
+	protected $exportPad   = 30;
 }
 
 class WikidataLanguageManagerMessageGroup extends ExtensionMessageGroup {
