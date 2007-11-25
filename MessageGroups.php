@@ -1443,7 +1443,7 @@ class SignDocumentMessageGroup extends ExtensionMessageGroup {
 }
 
 class SpamDiffToolMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Spam Diff Tools';
+	protected $label = 'Spam Diff Tool';
 	protected $id    = 'ext-spamdifftool';
 
 	protected $arrName     = 'messages';
