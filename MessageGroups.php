@@ -1367,6 +1367,14 @@ class ProtectSectionMessageGroup extends ExtensionMessageGroup {
 	protected $exportPad   = 28;
 }
 
+class PurgeMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Purge';
+	protected $id    = 'ext-purge';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'Purge/Purge.i18n.php';
+}
+
 class QuizMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Quiz';
 	protected $id    = 'ext-quiz';
@@ -1432,6 +1440,14 @@ class SignDocumentMessageGroup extends ExtensionMessageGroup {
 	protected $exportStart = '\'$CODE\' => array(';
 	protected $exportLineP = "\t\t";
 	protected $exportEnd   = "),";
+}
+
+class SpamDiffToolMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Spam Diff Tools';
+	protected $id    = 'ext-spamdifftool';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'SpamDiffTool/SpamDiffTool.i18n.php';
 }
 
 class SpecialCreateSignDocumentMessageGroup extends ExtensionMessageGroup {
@@ -1681,10 +1697,13 @@ class WhoIsWatchingMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Who Is Watching';
 	protected $id    = 'ext-whoiswatching';
 
-	protected $arrName     = 'messages';
+	protected $arrName     = 'allMessages';
 	protected $messageFile = 'WhoIsWatching/SpecialWhoIsWatching.i18n.php';
 
-	protected $exportPad   = 30;
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportPrefix= "\t";
+	protected $exportLineP = "\t\t";
+	protected $exportPad   = 38;
 }
 
 class WikidataLanguageManagerMessageGroup extends ExtensionMessageGroup {
