@@ -13,12 +13,8 @@ class TranslateUtils {
 	 * @return The normalised title as a string.
 	 */
 	public static function title( $message, $code ) {
-		global $wgCapitalLinks, $wgContLang;
-		if ( $wgCapitalLinks ) {
-			return $wgContLang->ucfirst( $message . '/' . strtolower( $code ) );
-		} else {
-			return $message . '/' . strtolower( $code );
-		}
+		global $wgContLang;
+		return $wgContLang->ucfirst( $message . '/' . strtolower( $code ) );
 	}
 
 	/**
