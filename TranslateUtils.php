@@ -3,19 +3,22 @@
 
 class TranslateUtils {
 
-	const MSG = "translate-";
+	const MSG = 'translate-';
 
-	public static function databaseLanguageSuffix( $language ) {
-		return '/' . $language;
-	}
-
-	public static function title( $key, $language ) {
-		global $wgContLang;
-		return $wgContLang->ucfirst( $key . self::databaseLanguageSuffix( $language ) );
-	}
-
-	static public function prettyCode( $code ) {
-		return ucfirst(strtolower(str_replace('-', '_', $code)));
+	/**
+	 * Does quick normalisation of message name so that in can be looked from the
+	 * database.
+	 * @param $message Name of the message
+	 * @param $code Language code in lower case and with dash as delimieter
+	 * @return The normalised title as a string.
+	 */
+	public static function title( $message, $code ) {
+		global $wgCapitalLinks, $wgContLang;
+		if ( $wgCapitalLinks ) {
+			return $wgContLang->ucfirst( $message . '/' . strtolower( $code ) );
+		} else {
+			return $message . '/' . strtolower( $code );
+		}
 	}
 
 	/**
@@ -153,7 +156,7 @@ class TranslateUtils {
 
 	/* Table output helpers */
 
-	public static  function tableHeader( $title = '' ) {
+	public static function tableHeader( $title = '' ) {
 		$tableheader = Xml::openElement( 'table', array(
 			'class'   => 'mw-sp-translate-table',
 			'border'  => '1',
@@ -180,11 +183,9 @@ class TranslateUtils {
 		$sk = $wgUser->getSkin();
 		wfLoadExtensionMessages( 'Translate' );
 
-		static $uimsg = array();
-		if ( !count( $uimsg ) ) {
-			foreach ( array( 'talk', 'edit', 'history', 'optional', 'ignored', 'delete' ) as $msg ) {
-				$uimsg[$msg] = wfMsgHtml( self::MSG . $msg );
-			}
+		$uimsg = array();
+		foreach ( array( 'talk', 'edit', 'history', 'optional', 'ignored', 'delete' ) as $msg ) {
+			$uimsg[$msg] = wfMsgHtml( self::MSG . $msg );
 		}
 
 		$output =  '';
@@ -229,27 +230,20 @@ class TranslateUtils {
 				implode( ' | ', array( $talk['link'] , $page['edit'], $page['history'], $page['delete'] ) );
 
 			if ( $m['changed'] ) {
-				$info = Xml::openElement( 'tr', array( 'class' => "orig") );
-				$info .= Xml::openElement( 'td', array( 'rowspan' => '2') );
-				$info .= $leftColumn;
-				$info .= Xml::closeElement( 'td' );
-				$info .= Xml::element( 'td', null, $original );
-				$info .= Xml::closeElement( 'tr' );
+				$output .= Xml::tags( 'tr', array( 'class' => 'orig' ),
+					Xml::tags( 'td', array( 'rowspan' => '2'), $leftColumn ) .
+					Xml::element( 'td', null, $original )
+				);
 
-				$info .= Xml::openElement( 'tr', array( 'class' => 'new') );
-				$info .= Xml::element( 'td', null, $message );
-				$info .= Xml::closeElement( 'tr' );
-
-				$output .= $info . "\n";
+				$output .= Xml::tags( 'tr', array( 'class' => 'new' ),
+					Xml::element( 'td', null, $message ) .
+					Xml::closeElement( 'tr' )
+				);
 			} else {
-				$info = Xml::openElement( 'tr', array( 'class' => "def") );
-				$info .= Xml::openElement( 'td' );
-				$info .= $leftColumn;
-				$info .= Xml::closeElement( 'td' );
-				$info .= Xml::element( 'td', null, $message );
-				$info .= Xml::closeElement( 'tr' );
-
-				$output .= $info . "\n";
+				$output .= Xml::tags( 'tr', array( 'class' => 'def' ),
+					Xml::tags( 'td', null, $leftColumn ) .
+					Xml::element( 'td', null, $message )
+				);
 			}
 
 		}
@@ -265,15 +259,16 @@ class TranslateUtils {
 
 	public static function simpleSelector( $name, $items, $selected ) {
 		$options = array();
-		foreach ( $items as $key => $item ) {
-			$options[] = Xml::option( $item, $item, $item === $selected );
+		foreach ( $items as $item ) {
+			$item = strval( $item );
+			$options[] = Xml::option( $item, $item, $item == $selected );
 		}
 		return self::selector( $name, implode( "\n", $options ) );
 	}
 
-	public static function getLanguageName( $code, $native = false ) {
+	public static function getLanguageName( $code, $native = false, $language = 'en' ) {
 		if ( !$native && is_callable(array( 'LanguageNames', 'getNames' )) ) {
-			$languages = LanguageNames::getNames( 'en',
+			$languages = LanguageNames::getNames( $language ,
 				LanguageNames::FALLBACK_NORMAL,
 				LanguageNames::LIST_MW_AND_CLDR
 			);
@@ -305,17 +300,20 @@ class TranslateUtils {
 		return self::selector( 'language', $options );
 	}
 
-	private static $keyToGroup = null;
 	public static function messageKeyToGroup( $key ) {
-		if ( is_null(self::$keyToGroup) ) {
-			if ( file_exists(TRANSLATE_INDEXFILE) ) {
-				self::$keyToGroup = unserialize( file_get_contents(TRANSLATE_INDEXFILE) );
-			} else {
-				self::$keyToGroup = array();
-				wfDebug( __METHOD__ . ": Message index missing." );
-			}
+		$key = strtolower( $key );
+		$index = self::messageIndex();
+		return @$index[$key];
+	}
+
+	public static function messageIndex() {
+		$keyToGroup = array();
+		if ( file_exists(TRANSLATE_INDEXFILE) ) {
+			$keyToGroup = unserialize( file_get_contents(TRANSLATE_INDEXFILE) );
+		} else {
+			wfDebug( __METHOD__ . ": Message index missing." );
 		}
 
-		return @self::$keyToGroup[$key];
+		return $keyToGroup;
 	}
 }

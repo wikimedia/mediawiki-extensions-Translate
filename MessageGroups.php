@@ -1815,7 +1815,7 @@ class MessageGroups {
 		if ( in_array( $id, $wgTranslateEC) ) {
 			return new $wgTranslateAC[$id];
 		} else {
-			throw new MWException( "No message group for id $id" );
+			return null;
 		}
 	}
 
@@ -1824,7 +1824,7 @@ class MessageGroups {
 		global $wgTranslateEC, $wgTranslateAC;
 		foreach ($wgTranslateAC as $id => $class) {
 			if ( in_array( $id, $wgTranslateEC, true ) ) {
-				$this->classes[] = new $class;
+				$this->classes[$id] = new $class;
 			}
 		}
 	}

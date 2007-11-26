@@ -9,19 +9,6 @@ class TranslateEditAddons {
 		return true;
 	}
 
-/*	private static function messageFormat( $object ) {
-		list( $key, ) = self::figureMessage( $object );
-		$zxx = Language::factory( 'zxx' );
-		$info = $zxx->getMessage( $key );
-		$info = STools::indexOf( explode( ';', $info, 2), 0);
-		if ( $info === null ||
-			!in_array( $info, array('parsed', 'plain', 'magic', 'unescaped') ) ) {
-			$info = 'unknown';
-		}
-		return wfMsgExt( 'translate-edit-message-format', array( 'parse' ), $info );
- }
-*/
-
 	private static function getFallbacks( $code ) {
 		global $wgTranslateLanguageFallbacks;
 
@@ -44,23 +31,26 @@ class TranslateEditAddons {
 	}
 
 	private static function doBox( $msg, $code, $i18nmsg ) {
-		global $wgUser;
-		static $names = false;
-		if (!$names ) { $names = Language::getLanguageNames(); }
+		global $wgUser, $wgLang;
 		if (!$msg ) { return ''; }
 
-		$prettyCode = TranslateUtils::prettyCode( $code );
+		$name = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() );
+		$code = strtolower( $code );
 
 		/* Approximate row count */
 		$cols = $wgUser->getOption( 'cols' );
-		$rows = count(explode("\n", $msg)) -1;
+
+		$rows = 0;
+		foreach ( explode("\n", $msg) as $l ) {
+			$rows += ceil( mb_strlen( $l ) / $cols );
+		}
 		$rows = max(3, min(15, $rows));
 
 		wfLoadExtensionMessages( 'Translate' );
 
 		return
-			wfMsg( $i18nmsg, $names[$code], $prettyCode ) . " " .
-			Xml::Element( 'textarea', array( 'rows' => $rows, 'cols' => $cols ), $msg );
+			wfMsg( $i18nmsg, $name, $code ) . " " .
+			Xml::element( 'textarea', array( 'rows' => $rows, 'cols' => $cols ), $msg );
 	}
 
 	/**
@@ -77,19 +67,28 @@ class TranslateEditAddons {
 		return array( $key, $langCode );
 	}
 
+	/**
+	 * Tries to determine from which group this message belongs. It tries to get
+	 * group id from loadgroup GET-paramater, but fallbacks to messageIndex file
+	 * if no valid group was provided, or the group provided is a meta group.
+	 * @param $key The message key we are interested in.
+	 * @return MessageGroup which the key belongs to, or null.
+	 */
 	private static function getMessageGroup( $key ) {
 		global $wgRequest;
 		$group = $wgRequest->getText('loadgroup', '' );
-		if ( !$group ) {
-			// Try harder
+		$mg = MessageGroups::getGroup( $group );
+
+		# If we were not given group, or the group given was meta...
+		if ( is_null( $mg ) || $mg->isMeta() ) {
+			# .. then try harder, because meta groups are *inefficient*
 			$group = TranslateUtils::messageKeyToGroup( $key );
+			if ( $group ) {
+				$mg = MessageGroups::getGroup( $group );
+			}
 		}
 
-		if ( $group ) {
-			return MessageGroups::getGroup( $group );
-		} else {
-			return null;
-		}
+		return $mg;
 	}
 
 	private static function editBoxes( $object ) {

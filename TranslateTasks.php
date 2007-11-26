@@ -260,8 +260,7 @@ class ExportMessagesTask extends ViewMessagesTask {
 	}
 
 	protected function getOutputHeader() {
-		$names = Language::getLanguageNames( );
-		$name = $names[$this->options->getLanguage()];
+		$name = TranslateUtils::getLanguageName( $this->options->getLanguage() );
 		$_authors = $this->getAuthors();
 		arsort( $_authors, SORT_NUMERIC );
 		$authors = array();
