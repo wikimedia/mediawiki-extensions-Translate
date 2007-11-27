@@ -128,6 +128,7 @@ $wgTranslateAC = array(
 'ext-newusernotif'          => 'NewUserNotifMessageGroup',
 'ext-nuke'                  => 'NukeMessageGroup',
 'ext-ogghandler'            => 'OggHandlerMessageGroup',
+'ext-openid'                => 'OpenIDMessageGroup',
 'ext-oversight'             => 'OversightMessageGroup',
 'ext-pageby'                => 'PageByMessageGroup',
 'ext-passwordreset'         => 'PasswordResetMessageGroup',

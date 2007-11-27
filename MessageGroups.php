@@ -1221,6 +1221,14 @@ class OggHandlerMessageGroup extends ExtensionMessageGroup {
 	}
 }
 
+class OpenIDMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'OpenID';
+	protected $id    = 'ext-openid';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'OpenID/OpenID.i18n.php';
+}
+
 class OversightMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Oversight';
 	protected $id      = 'ext-oversight';
