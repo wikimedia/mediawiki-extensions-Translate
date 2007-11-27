@@ -1543,6 +1543,14 @@ class SpecialFormMessageGroup extends ExtensionMessageGroup {
 	protected $exportEnd   = "),";
 }
 
+class StalePagesMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Stale Pages';
+	protected $id    = 'ext-stalepages';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'StalePages/StalePages.i18n.php';
+}
+
 class SyntaxHighlight_GeSHiMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Syntax Highlight GeSHi';
 	protected $id    = 'ext-syntaxhighlightgeshi';
