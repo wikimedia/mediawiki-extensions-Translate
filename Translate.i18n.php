@@ -809,6 +809,12 @@ $messages['li'] = array(
 	'translate-optional' => '(optioneel)',
 );
 
+$messages['nap'] = array(
+	'translate-edit' => 'càgna',
+	'translate-talk' => 'chiàcchiera',
+	'translate-history' => 'cronologgia',
+);
+
 $messages['nds'] = array(
 	'translate' => 'Översetten',
 	'translate-edit-message-format' => 'Format vun disse Naricht is \'\'\'$1\'\'\'.',
@@ -962,12 +968,14 @@ $messages['pt'] = array(
 	'translate-edit' => 'editar',
 	'translate-talk' => 'disc',
 	'translate-history' => 'histórico',
+	'translate-delete' => 'reverter alterações',
 	'translate-task-view' => 'Ver todas as mensagens de',
 	'translate-task-untranslated' => 'Ver todas as mensagens não traduzidas de',
-	'translate-task-review' => 'Rever alterações da',
-	'translate-task-reviewall' => 'Rever todas as traduções na',
+	'translate-task-optional' => 'Ver mensagens opcionais de',
+	'translate-task-review' => 'Rever alterações em',
+	'translate-task-reviewall' => 'Rever todas as traduções em',
 	'translate-task-export' => 'Exportar traduções de',
-	'translate-task-export-to-file' => 'Exportar as traduções para um ficheiro a partir da',
+	'translate-task-export-to-file' => 'Exportar para ficheiro as traduções de',
 	'translate-settings' => 'Eu quero $1 $2 no idioma $3 e no limite máximo de $4. $5',
 	'translate-paging' => '<div>Exibindo as mensagens de $1 a $2 de $3. [ $4 | $5 ]</div>',
 	'translate-submit' => 'Trazer',
@@ -976,6 +984,19 @@ $messages['pt'] = array(
 	'translate-optional' => '(opcional)',
 	'translate-ignored' => '(ignorada)',
 	'translate-edit-message-format' => 'O formato desta mensagem é <b>$1</b>.',
+	'translate-edit-message-in' => 'Mensagem corrente em <b>$1</b> ($2):',
+	'translate-edit-message-in-fb' => 'Mensagem corrente na língua base <b>$1</b> ($2):',
+	'translate-magic-pagename' => 'Tradução extra do MediaWiki',
+	'translate-magic-form' => 'Língua: $1 Módulo: $2 $3',
+	'translate-magic-submit' => 'Trazer',
+	'translate-magic-cm-current' => 'Actual',
+	'translate-magic-cm-save' => 'Guardar',
+	'translate-magic-cm-export' => 'Exportar',
+	'translate-magic-cm-updatedusing' => 'Actualizado usando {{ns:special}}:Magic',
+	'translate-magic-special' => 'Alias de páginas especiais',
+	'translate-magic-words' => 'Palavras mágicas',
+	'translate-magic-namespace' => 'Nomes de espaços nominais',
+	'translationchanges' => 'Alterações às traduções',
 );
 
 $messages['rm'] = array(
