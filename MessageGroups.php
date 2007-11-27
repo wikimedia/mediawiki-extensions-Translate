@@ -1400,6 +1400,14 @@ class QuizMessageGroup extends ExtensionMessageGroup {
 	protected $exportEnd   = "),";
 }
 
+class RegexBlockMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Regex Block';
+	protected $id    = 'ext-regexblock';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'regexBlock/regexBlock.i18n.php';
+}
+
 class RenameUserMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Rename User';
 	protected $id    = 'ext-renameuser';
