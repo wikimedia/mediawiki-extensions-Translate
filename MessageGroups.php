@@ -728,13 +728,8 @@ class ContributionScoresMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Contribution Scores';
 	protected $id    = 'ext-contributionscores';
 
-	protected $arrName     = 'allMessages';
+	protected $arrName     = 'messages';
 	protected $messageFile = 'ContributionScores/ContributionScores.i18n.php';
-
-	protected $exportPrefix= "\t";
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportLineP = "\t\t";
-	protected $exportEnd   = "),";
 }
 
 class ContributionseditcountMessageGroup extends ExtensionMessageGroup {
