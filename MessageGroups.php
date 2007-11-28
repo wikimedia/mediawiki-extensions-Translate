@@ -987,6 +987,7 @@ class InterwikiMessageGroup extends ExtensionMessageGroup {
 
 	function fillBools( &$array ) {
 		$array['interwiki_logentry']['ignored'] = true;
+		$array['interwiki_url']['optional'] = true;
 	}
 }
 
