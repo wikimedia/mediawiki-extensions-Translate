@@ -1542,6 +1542,10 @@ class SpecialFormMessageGroup extends ExtensionMessageGroup {
 	protected $exportStart = '\'$CODE\' => array(';
 	protected $exportLineP = "\t\t";
 	protected $exportEnd   = "),";
+
+	function fillBools( &$array ) {
+		$array['formtemplatepattern']['ignored'] = true;
+	}
 }
 
 class StalePagesMessageGroup extends ExtensionMessageGroup {
