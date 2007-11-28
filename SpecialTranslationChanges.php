@@ -8,7 +8,7 @@ class SpecialTranslationChanges extends SpecialPage {
 
 	/** Access point for this special page */
 	public function execute( $parameters ) {
-		global $wgOut, $wgScriptPath, $wgJsMimeType, $wgStyleVersion;
+		global $wgOut, $wgScriptPath, $wgJsMimeType, $wgStyleVersion, $wgRequest;
 		wfLoadExtensionMessages( 'Translate' );
 
 		$wgOut->addScript(
@@ -17,27 +17,19 @@ class SpecialTranslationChanges extends SpecialPage {
 			) . '</script>'
 		);
 
-
-		#$this->setup();
 		$this->setHeaders();
 
-		$rows = $this->runQuery();
-		$wgOut->addHTMl( $this->output( $rows ) );
+		$rows = $this->runQuery( $wgRequest->getInt( 'hours', 24 ) );
+		$wgOut->addHTMl( $this->settingsForm() . $this->output( $rows ) );
 	}
 
-	protected function runQuery() {
+	protected function runQuery( $hours = '' ) {
 		$dbr = wfGetDB( DB_SLAVE );
 		$recentchanges = $dbr->tableName( 'recentchanges' );
-
-		$from = '';
-		$days = 1;
-		$cutoff_unixtime = time() - ( $days * 86400 );
-		$cutoff_unixtime = $cutoff_unixtime - ($cutoff_unixtime % 86400);
+		$hours = intval( $hours );
+		$cutoff_unixtime = time() - ( $hours * 3600 );
+		#$cutoff_unixtime = $cutoff_unixtime - ($cutoff_unixtime % 86400);
 		$cutoff = $dbr->timestamp( $cutoff_unixtime );
-		if(preg_match('/^[0-9]{14}$/', $from) and $from > wfTimestamp(TS_MW,$cutoff)) {
-			$cutoff = $dbr->timestamp($from);
-		}
-
 
 		$sql = "SELECT *, substring_index(rc_title, '/', -1) as lang FROM $recentchanges " .
 		"WHERE rc_timestamp >= '{$cutoff}' " .
@@ -64,49 +56,114 @@ class SpecialTranslationChanges extends SpecialPage {
 		return $rows;
 	}
 
-	protected function output( Array $rows ) {
-		global $wgLang;
-		$index = 0;
-		$lastLanguage = '';
-		$output = '';
-		$rowTitle = '';
-		$rowId = '';
-		$rowLang = '';
-		$rowTl = '';
-		$rowCache = array();
+	/**
+	 * GLOBALS: $wgTitle, $wgScript
+	 */
+	protected function settingsForm() {
+		global $wgTitle, $wgScript;
+
+		$limit = $this->timeLimitSelector();
+		$button = Xml::submitButton( wfMsg( TranslateUtils::MSG . 'submit' ) );
+
+		$form = Xml::tags( 'form',
+			array(
+				'action' => $wgScript,
+				'method' => 'get'
+			),
+			Xml::hidden( 'title', $wgTitle->getPrefixedText() ) . $limit . $button
+		);
+		return $form;
+	}
+
+	protected function timeLimitSelector( $selected = 24 ) {
+		$items = array( 3, 6, 12, 24, 48, 72, 168  );
+		return TranslateUtils::simpleSelector( 'hours' , $items, $selected );
+	}
+
+	protected function sort( Array $rows ) {
+		global $wgContLang;
+		$sorted = array();
+		$index = TranslateUtils::messageIndex();
 		foreach ( $rows as $row ) {
+			$pieces = explode('/', $wgContLang->lcfirst($row->rc_title), 2);
 
-			if ( $row->lang !== $lastLanguage ) {
-				$lastLanguage = $row->lang;
-				if ( count($rowCache) ) {
-					$output .= self::makeBlock( $rowLang, $rowTl, $rowCache, $rowId );
-					$rowCache = array();
-				}
+			$group = 'Unknown';
+			$mg = @$index[$pieces[0]];
+			if ( !is_null($mg) ) $group = $mg;
 
-				$rci = 'RCI' . $row->lang . $index;
-				$rcl = 'RCL' . $row->lang . $index;
-				$rcm = 'RCM' . $row->lang . $index;
-				$toggleLink = "javascript:toggleVisibilityE('$rci', '$rcm', '$rcl', 'block')";
-				$rowTl =
-				Xml::tags( 'span', array( 'id' => $rcm ),
-					Xml::tags('a', array( 'href' => $toggleLink ), $this->sideArrow() ) ) .
-				Xml::tags( 'span', array( 'id' => $rcl, 'style' => 'display: none;' ),
-					Xml::tags('a', array( 'href' => $toggleLink ), $this->downArrow() ) );
-
-				$rowLang = $row->lang;
-				$rowId = $rci;
+			$lang = 'site';
+			if ( strpos( $row->rc_title, '/' ) !== false ) {
+				$lang = $row->lang;
 			}
 
-			# New row
-			$date = $wgLang->timeAndDate( $row->rc_timestamp, /* adj */ true, /* format */ true );
-			$rowCache[] = Xml::element( 'li', null, "$date $row->rc_title by $row->rc_user_text" );
+			switch ($group) {
+				case 'core': $class = 'core'; break;
+				case 'out-freecol': $class = 'freecol'; break;
+				default: $class = 'extension'; break;
+			}
 
-			$index++;
+			if ( $lang === 'site' ) {
+				$class = 'site';
+			}
+
+			$sorted[$class][$group][$lang][] = $row;
 		}
+		ksort($sorted);
+		return $sorted;
+	}
 
-		if ( count($rowCache) ) {
-			$output .= self::makeBlock( $rowLang, $rowTl, $rowCache, $rowId  );
-			$rowCache = array();
+	protected function output( Array $rows ) {
+		$groupObjects = MessageGroups::singleton()->getGroups();
+		global $wgLang, $wgUser;
+		$index = -1;
+		$output = '';
+		$skin = $wgUser->getSkin();
+
+		$changes = $this->sort( $rows );
+		foreach ( $changes as $class => $groups ) {
+			#$output .= Xml::element( 'h2', null, $class );
+			foreach ( $groups as $group => $languages ) {
+
+				$label = $group;
+				if ( isset( $groupObjects[$group] ) ) {
+					$label = $groupObjects[$group]->getLabel();
+				}
+				$output .= Xml::element( 'h3', null, $label );
+
+				foreach ( $languages as $language => $rows ) {
+					$index++;
+					$rci = 'RCI' . $language . $index;
+					$rcl = 'RCL' . $language . $index;
+					$rcm = 'RCM' . $language . $index;
+					$toggleLink = "javascript:toggleVisibilityE('$rci', '$rcm', '$rcl', 'block')";
+
+					$rowTl =
+					Xml::tags( 'span', array( 'id' => $rcm ),
+						Xml::tags('a', array( 'href' => $toggleLink ), $this->sideArrow() ) ) .
+					Xml::tags( 'span', array( 'id' => $rcl, 'style' => 'display: none;' ),
+						Xml::tags('a', array( 'href' => $toggleLink ), $this->downArrow() ) );
+
+					$nchanges = wfMsgExt( 'nchanges', array( 'parsemag', 'escape'),
+						$wgLang->formatNum( count($rows) ));
+
+					$export = $skin->makeKnownLink( 'Special:Translate', 'export', "task=export-to-file&language=$language&group=$group" );
+
+					$languageName = TranslateUtils::getLanguageName( $language );
+					if ( !$languageName ) $languageName = $language;
+
+					$output .= Xml::tags( 'h4', null, "$rowTl $language <small>($languageName)</small> ($nchanges) ($export)" );
+					$output .= Xml::openElement( 'ul',
+						array( 'id' => $rci, 'style' => 'display: none' ) );
+
+					foreach ( $rows as $row ) {
+						$date = $wgLang->timeAndDate( $row->rc_timestamp, /* adj */ true, /* format */ true );
+						$output .= Xml::element( 'li', null, "$date $row->rc_title by $row->rc_user_text" );
+					}
+
+					$output .= Xml::closeElement( 'ul' );
+
+				}
+			}
 		}
 
 		return $output;
@@ -118,9 +175,7 @@ class SpecialTranslationChanges extends SpecialPage {
 	private static function makeBlock( $tl, $lang, $rowCache, $rowId ) {
 		global $wgLang;
 		$changes = count($rowCache);
-		$nchanges = wfMsgExt( 'nchanges', array( 'parsemag', 'escape'),
-			$wgLang->formatNum( $changes ));
-		$output = Xml::tags( 'h2', null, "$tl $lang ($nchanges)" );
+		$output = Xml::tags( 'h3', null, "$tl $lang ($nchanges)" );
 		$output .= Xml::tags( 'ul',
 			array( 'id' => $rowId, 'style' => 'display: none' ),
 			implode( "\n", $rowCache )
