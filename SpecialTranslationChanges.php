@@ -109,6 +109,7 @@ class SpecialTranslationChanges extends SpecialPage {
 			$sorted[$class][$group][$lang][] = $row;
 		}
 		ksort($sorted);
+		ksort($sorted['extension']);
 		return $sorted;
 	}
 
