@@ -872,6 +872,8 @@ Om wijzigingen op te slaan moet u lid zijn van de groep vertalers. Wijzigingen w
 	'translate-magic-skin' => 'Skinnamen',
 	'translate-magic-namespace' => 'Naamruimtebenamingen',
 	'translationchanges' => 'Vertalingen',
+	'translationchanges-export' => 'exporteren',
+	'translationchanges-change' => '$1: [[MediaWiki:$2|$2]] door [[User:$3|$3]]',
 	'translate-page-no-such-language' => 'Er is een ongeldige taalcode opgegeven',
 );
 
