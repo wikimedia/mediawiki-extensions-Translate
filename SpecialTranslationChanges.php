@@ -1,6 +1,7 @@
 <?php
 
 class SpecialTranslationChanges extends SpecialPage {
+	const MSG = 'translationchanges-';
 
 	function __construct() {
 		SpecialPage::SpecialPage( 'TranslationChanges' );
@@ -40,19 +41,10 @@ class SpecialTranslationChanges extends SpecialPage {
 
 		// Fetch results, prepare a batch link existence check query
 		$rows = array();
-		$batch = new LinkBatch;
 		while( $row = $dbr->fetchObject( $res ) ){
 			$rows[] = $row;
-			// User page link
-			$title = Title::makeTitleSafe( NS_USER, $row->rc_user_text );
-			$batch->addObj( $title );
-
-			// User talk
-			$title = Title::makeTitleSafe( NS_USER_TALK, $row->rc_user_text );
-			$batch->addObj( $title );
 		}
 		$dbr->freeResult( $res );
-		$batch->execute();
 		return $rows;
 	}
 
@@ -84,6 +76,7 @@ class SpecialTranslationChanges extends SpecialPage {
 		global $wgContLang;
 		$sorted = array();
 		$index = TranslateUtils::messageIndex();
+		$batch = new LinkBatch;
 		foreach ( $rows as $row ) {
 			$pieces = explode('/', $wgContLang->lcfirst($row->rc_title), 2);
 
@@ -107,9 +100,22 @@ class SpecialTranslationChanges extends SpecialPage {
 			}
 
 			$sorted[$class][$group][$lang][] = $row;
+
+			$batch->add( NS_USER,           $row->rc_user_text );
+			$batch->add( NS_USER_TALK,      $row->rc_user_text );
+			if ( $group !== 'core' ) {
+			$batch->add( NS_MEDIAWIKI,      $row->rc_title );
+			}
+			$batch->add( NS_MEDIAWIKI_TALK, $row->rc_title );
+
+
 		}
 		ksort($sorted);
-		ksort($sorted['extension']);
+		if ( isset($sorted['extension']) ) {
+			ksort($sorted['extension']);
+		}
+
+		$batch->execute();
 		return $sorted;
 	}
 
@@ -147,7 +153,10 @@ class SpecialTranslationChanges extends SpecialPage {
 					$nchanges = wfMsgExt( 'nchanges', array( 'parsemag', 'escape'),
 						$wgLang->formatNum( count($rows) ));
 
-					$export = $skin->makeKnownLink( 'Special:Translate', 'export', "task=export-to-file&language=$language&group=$group" );
+					$exportLabel = wfMsg( self::MSG . 'export' );
+					$titleText = 'Special:' . SpecialPage::getLocalNameFor( 'Translate' );
+					$export = $skin->makeKnownLink( $titleText, $exportLabel,
+						"task=export-to-file&language=$language&group=$group" );
 
 					$languageName = TranslateUtils::getLanguageName( $language );
 					if ( !$languageName ) $languageName = $language;
@@ -158,7 +167,10 @@ class SpecialTranslationChanges extends SpecialPage {
 
 					foreach ( $rows as $row ) {
 						$date = $wgLang->timeAndDate( $row->rc_timestamp, /* adj */ true, /* format */ true );
-						$output .= Xml::element( 'li', null, "$date $row->rc_title by $row->rc_user_text" );
+						$msg = wfMsgExt( self::MSG . 'change', array( 'parseinline' ),
+							$date, wfEscapeWikiText($row->rc_title), wfEscapeWikiText($row->rc_user_text)
+						);
+						$output .= Xml::tags( 'li', null, $msg );
 					}
 
 					$output .= Xml::closeElement( 'ul' );

@@ -58,6 +58,8 @@ You need to be in the translators group to save changes. Changes are not saved u
 	'translate-magic-namespace' => 'Namespace names',
 
 	'translationchanges' => 'Translation changes',
+	'translationchanges-export' => 'export',
+	'translationchanges-change' => '$1: [[Mediawiki:$2|$2]] by [[User:$3|$3]]',
 
 	'translate-page-no-such-language' => 'Invalid language code was supplied',
 );
