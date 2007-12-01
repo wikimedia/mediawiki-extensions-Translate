@@ -1097,6 +1097,14 @@ class MediaFunctionsMessageGroup extends ExtensionMessageGroup {
 	protected $exportPad   = 31;
 }
 
+class MicroIDMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'MicroID';
+	protected $id    = 'ext-microid';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'MicroID/MicroID.i18n.php';
+}
+
 class MiniDonationMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Mini Donation';
 	protected $id    = 'ext-minidonation';
