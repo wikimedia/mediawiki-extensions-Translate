@@ -13,7 +13,7 @@ if (!defined('MEDIAWIKI')) die();
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'Translate',
-	'version' => '5.7',
+	'version' => '5.8',
 	'author' => 'Niklas Laxström, Siebrand Mazeland',
 	'description' => 'Special page for translating Mediawiki and beyond',
 	'url' => 'http://www.mediawiki.org/wiki/Extension:Translate',
@@ -151,6 +151,7 @@ $wgTranslateAC = array(
 'ext-selectcategory'        => 'SelectCategoryExtensionGroup',
 'ext-signdocument'          => 'SignDocumentMessageGroup',
 'ext-spamdifftool'          => 'SpamDiffToolMessageGroup',
+'ext-spamregex'             => 'SpamRegexMessageGroup',
 'ext-specialcreatesigndocument' => 'SpecialCreateSignDocumentMessageGroup',
 'ext-specialsigndocument'   => 'SpecialSignDocumentMessageGroup',
 'ext-sitematrix'            => 'SiteMatrixMessageGroup',

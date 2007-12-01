@@ -1474,6 +1474,14 @@ class SpamDiffToolMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'SpamDiffTool/SpamDiffTool.i18n.php';
 }
 
+class SpamRegExMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Spam Regex';
+	protected $id    = 'ext-spamregex';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'SpamRegex/SpamRegex.i18n.php';
+}
+
 class SpecialCreateSignDocumentMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Special Create Sign Document';
 	protected $id    = 'ext-specialcreatesigndocument';
