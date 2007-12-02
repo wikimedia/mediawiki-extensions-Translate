@@ -908,6 +908,14 @@ class FilePathMessageGroup extends ExtensionMessageGroup {
 	protected $exportPad   = 18;
 }
 
+class FindSpamMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Find Spam';
+	protected $id    = 'ext-findspam';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'FindSpam/FindSpam.i18n.php';
+}
+
 class GadgetsExtensionGroup extends MultipleFileMessageGroup {
 	protected $label = 'Gadgets';
 	protected $id    = 'ext-gadgets';
