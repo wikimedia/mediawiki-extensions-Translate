@@ -1441,6 +1441,14 @@ class ReviewMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'Review/Review.i18n.php';
 }
 
+class ScanSetMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Scan Set';
+	protected $id    = 'ext-scanset';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'ScanSet/ScanSet.i18n.php';
+}
+
 class SelectCategoryExtensionGroup extends MultipleFileMessageGroup {
 	protected $label = 'Select Category';
 	protected $id    = 'ext-selectcategory';
