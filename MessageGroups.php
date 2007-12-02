@@ -663,6 +663,10 @@ class ChemFunctionsMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'wgChemFunctions_Messages';
 	protected $messageFile = 'Chemistry/ChemFunctions.i18n.php';
+
+	function fillBools( &$array ) {
+		$array['ChemFunctions_SearchExplanation']['ignored'] = true;
+	}
 }
 
 class CiteSpecialMessageGroup extends ExtensionMessageGroup {
