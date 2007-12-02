@@ -976,6 +976,14 @@ class InputBoxMessageGroup extends ExtensionMessageGroup {
 	protected $exportPad   = 26;
 }
 
+class IntersectionMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Intersection';
+	protected $id    = 'ext-intersection';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'intersection/DynamicPageList.i18n.php';
+}
+
 class InterwikiMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Interwiki Edit Page';
 	protected $id    = 'ext-interwiki';
