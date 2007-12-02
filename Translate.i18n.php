@@ -179,6 +179,8 @@ $messages['ar'] = array(
 	'translate-magic-skin' => 'أسماء الواجهات',
 	'translate-magic-namespace' => 'أسماء النطاقات',
 	'translationchanges' => 'تغييرات الترجمة',
+	'translationchanges-export' => 'تصدير',
+	'translationchanges-change' => '$1: [[Mediawiki:$2|$2]] بواسطة [[User:$3|$3]]',
 	'translate-page-no-such-language' => 'كود لغة غير صحيح تم توفيره',
 );
 
@@ -207,6 +209,10 @@ $messages['bcl'] = array(
 	'translate-magic-cm-save' => 'Itagama',
 	'translate-magic-cm-export' => 'Ipadara',
 	'translate-magic-cm-savefailed' => 'Bigô an pagtagama',
+);
+
+$messages['bg'] = array(
+	'translate-edit' => 'редактиране',
 );
 
 $messages['bn'] = array(
@@ -678,7 +684,7 @@ $messages['id'] = array(
 
 $messages['it'] = array(
 	'translate' => 'Traduzione',
-	'translate-settings' => 'Quiero $1 $2 enta l\'idioma $3 con limite $4. $5',
+	'translate-settings' => 'Desidero $1 $2 in lingua $3 fino a un massimo di $4. $5',
 	'translate-edit-message-format' => 'Formato del messaggio: <b>$1</b>.',
 	'translate-edit-message-in' => 'Contenuto attuale in <b>$1</b> ($2):',
 	'translate-edit-message-in-fb' => 'Contenuto attuale nella lingua di riserva <b>$1</b> ($2):',
