@@ -1031,6 +1031,14 @@ class InterwikiMessageGroup extends ExtensionMessageGroup {
 	}
 }
 
+class LatexDocMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Latex Doc';
+	protected $id    = 'ext-latexdoc';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'LatexDoc/LatexDoc.i18n.php';
+}
+
 class LinkSearchMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Link Search';
 	protected $id    = 'ext-linksearch';
