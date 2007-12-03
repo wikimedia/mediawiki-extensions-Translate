@@ -476,6 +476,8 @@ Vous devez appartenir au groupe des traducteurs pour sauvegarder les changements
 	'translate-magic-skin' => 'Nom des interfaces',
 	'translate-magic-namespace' => 'Intitulé des espaces de nommage',
 	'translationchanges' => 'Modifications aux traductions',
+	'translationchanges-export' => 'exporter',
+	'translationchanges-change' => '$1: [[Mediawiki:$2|$2]] par [[User:$3|$3]]',
 	'translate-page-no-such-language' => 'Un code langage invalide a été indiqué',
 );
 
@@ -648,6 +650,8 @@ Dyrbiš w skupinje přełožowarjow być, zo by změny składował. Změny so nj
 	'translate-magic-skin' => 'Mjeno šatow',
 	'translate-magic-namespace' => 'Mjena mjenowych rumow',
 	'translationchanges' => 'Přełožowanske změny',
+	'translationchanges-export' => 'eksportować',
+	'translationchanges-change' => '$1: [[Mediawiki:$2|$2]] wot [[User:$3|$3]]',
 	'translate-page-no-such-language' => 'Njepłaćiwy rěčny kod podaty',
 );
 
