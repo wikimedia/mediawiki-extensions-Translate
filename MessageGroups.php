@@ -1000,6 +1000,14 @@ class InputBoxMessageGroup extends ExtensionMessageGroup {
 	protected $exportPad   = 26;
 }
 
+class InspectCacheMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Inspect Cache';
+	protected $id    = 'ext-inspectcache';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'InspectCache/InspectCache.i18n.php';
+}
+
 class IntersectionMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Intersection';
 	protected $id    = 'ext-intersection';
@@ -1690,6 +1698,14 @@ class TranslateMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'Translate/Translate.i18n.php';
+}
+
+class UserContactLinksMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'User Contact Links';
+	protected $id    = 'ext-usercontactlinks';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'UserContactLinks/UserSignature.i18n.php';
 }
 
 class UserImagesMessageGroup extends ExtensionMessageGroup {
