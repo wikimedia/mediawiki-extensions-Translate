@@ -898,6 +898,18 @@ class FlaggedRevsMessageGroup extends MultipleFileMessageGroup {
 	protected $exportPad   = 28;
 }
 
+class FormatEmailMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Format Email';
+	protected $id    = 'ext-formatemail';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'FormatEmail/FormatEmail.i18n.php';
+
+	function fillBools( &$array ) {
+		$array['email_header']['ignored'] = true;
+	}
+}
+
 class FilePathMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'File Path';
 	protected $id      = 'ext-filepath';
