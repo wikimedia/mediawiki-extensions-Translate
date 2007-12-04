@@ -1672,6 +1672,14 @@ class TemplateLinkMessageGroup extends ExtensionMessageGroup {
 	protected $exportEnd   = "),";
 }
 
+class ThrottleMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Throttle';
+	protected $id    = 'ext-throttle';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'Throttle/UserThrottle.i18n.php';
+}
+
 class TitleBlacklistMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Title Blacklist';
 	protected $id      = 'ext-titleblacklist';
