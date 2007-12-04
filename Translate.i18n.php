@@ -213,6 +213,12 @@ $messages['bcl'] = array(
 
 $messages['bg'] = array(
 	'translate-edit' => 'редактиране',
+	'translate-history' => 'история',
+	'translate-next' => 'Следваща страница',
+	'translate-prev' => 'Предишна страница',
+	'translate-magic-cm-save' => 'Съхранение',
+	'translate-magic-cm-export' => 'Изнасяне',
+	'translationchanges-export' => 'изнасяне',
 );
 
 $messages['bn'] = array(
