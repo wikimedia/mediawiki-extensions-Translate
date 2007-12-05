@@ -1085,6 +1085,12 @@ $messages['ss'] = array(
 	'translate-magic-form' => 'Lúlwîmi: $1 Module: $2 $3',
 );
 
+$messages['stq'] = array(
+	'translate-edit' => 'Beoarbaide',
+	'translate-talk' => 'Diskussion',
+	'translate-history' => 'Versione',
+);
+
 $messages['su'] = array(
 	'translate' => 'Alih basakeun',
 	'translate-edit-message-format' => 'Ieu talatah boga format <b>$1</b>.',
