@@ -271,7 +271,21 @@ class TranslateUtils {
 		} else {
 			$languages = Language::getLanguageNames( false );
 		}
-		return isset($languages[$code]) ? $languages[$code] : false;
+
+		$parts = explode( '-', $code );
+		$suffix = '';
+		switch ( @$parts[1] ) {
+			case 'latn':
+				$suffix = ' (Latin)'; # TODO: i18n
+				unset( $parts[1] );
+				break;
+			case 'cyrl':
+				$suffix = ' (Cyrillic)'; # TODO: i18n
+				unset( $parts[1] );
+				break;
+		}
+		$code = implode( '-', $parts );
+		return isset($languages[$code]) ? $languages[$code] . $suffix : false;
 	}
 
 	public static function languageSelector( $selectedId ) {
