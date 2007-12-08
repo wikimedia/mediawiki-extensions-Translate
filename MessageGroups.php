@@ -1693,6 +1693,14 @@ class TitleBlacklistMessageGroup extends ExtensionMessageGroup {
 	protected $exportEnd   = '),';
 }
 
+class TodoMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Todo';
+	protected $id    = 'ext-todo';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'Todo/SpecialTodo.i18n.php';
+}
+
 class TodoTasksMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Todo Tasks';
 	protected $id    = 'ext-todotasks';
