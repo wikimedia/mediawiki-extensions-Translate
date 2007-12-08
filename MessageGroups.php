@@ -666,6 +666,14 @@ class ChemFunctionsMessageGroup extends ExtensionMessageGroup {
 
 	function fillBools( &$array ) {
 		$array['ChemFunctions_SearchExplanation']['ignored'] = true;
+		$array['ChemFunctions_EINECS']['optional'] = true;
+		$array['ChemFunctions_CHEBI']['optional'] = true;
+		$array['ChemFunctions_PubChem']['optional'] = true;
+		$array['ChemFunctions_SMILES']['optional'] = true;
+		$array['ChemFunctions_InChI']['optional'] = true;
+		$array['ChemFunctions_RTECS']['optional'] = true;
+		$array['ChemFunctions_KEGG']['optional'] = true;
+		$array['ChemFunctions_DrugBank']['optional'] = true;
 	}
 }
 
