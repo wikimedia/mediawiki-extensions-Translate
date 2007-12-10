@@ -960,6 +960,14 @@ class GiveRollbackMessageGroup extends ExtensionMessageGroup {
 	protected $exportEnd   = '),';
 }
 
+class IconMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Icon';
+	protected $id    = 'ext-icon';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'Icon/Icon.i18n.php';
+}
+
 class ImageMapMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Image Map';
 	protected $id    = 'ext-imagemap';
