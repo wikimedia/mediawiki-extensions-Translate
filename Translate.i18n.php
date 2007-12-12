@@ -286,6 +286,7 @@ $messages['cs'] = array(
 	'translate-edit' => 'editovat',
 	'translate-talk' => 'diskuse',
 	'translate-history' => 'historie',
+	'translate-delete' => 'vrátit změny',
 	'translate-task-view' => 'Zobrazit všechny zprávy z',
 	'translate-task-untranslated' => 'Zobrazit všechny nepřeložené zprávy z',
 	'translate-task-optional' => 'Zobrazit volitelné zprávy z',
@@ -319,6 +320,7 @@ $messages['cs'] = array(
 	'translate-magic-skin' => 'Názvy stylů',
 	'translate-magic-namespace' => 'Názvy jmenných prostorů',
 	'translationchanges' => 'Změny překladů',
+	'translate-page-no-such-language' => 'Zadaný kód jazyka není platný',
 );
 
 /* German by Raymond */
