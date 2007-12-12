@@ -1688,6 +1688,14 @@ class TemplateLinkMessageGroup extends ExtensionMessageGroup {
 	protected $exportEnd   = "),";
 }
 
+class TidyTabMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'TidyTab';
+	protected $id    = 'ext-tidytab';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'TidyTab/Tidy.i18n.php';
+}
+
 class ThrottleMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Throttle';
 	protected $id    = 'ext-throttle';
@@ -1978,4 +1986,3 @@ class MessageGroups {
 		return $this->classes;
 	}
 }
-

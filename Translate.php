@@ -170,6 +170,7 @@ $wgTranslateAC = array(
 'ext-talkhere'              => 'TalkHereExtensionGroup',
 'ext-templatelink'          => 'TemplateLinkMessageGroup',
 'ext-throttle'              => 'ThrottleMessageGroup',
+'ext-tidytab'               => 'TidyTabMessageGroup',
 'ext-titleblacklist'        => 'TitleBlacklistMessageGroup',
 'ext-todo'                  => 'TodoMessageGroup',
 'ext-todotasks'             => 'TodoTasksMessageGroup',
