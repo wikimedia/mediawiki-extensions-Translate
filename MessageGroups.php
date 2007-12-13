@@ -1071,6 +1071,10 @@ class LiquidThreadsMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'LiquidThreads/Lqt.i18n.php';
+
+	function fillBools( &$array ) {
+		$array['lqt_header_warning_before_big']['ignored'] = true;
+	}
 }
 
 class LookupUserMessageGroup extends ExtensionMessageGroup {
