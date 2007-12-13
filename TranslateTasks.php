@@ -135,6 +135,7 @@ class ViewMessagesTask extends TranslateTask {
 		TranslateUtils::fillExistence( &$this->messages, $this->options->getLanguage() );
 		TranslateUtils::fillContents( &$this->messages, $this->options->getLanguage() );
 		$this->messageGroup->fill( &$this->messages, $this->options->getLanguage() );
+		$this->messageGroup->reset();
 	}
 
 	protected function output() {

@@ -80,7 +80,9 @@ class TranslateUtils {
 				$messages[$key]['author'] = self::$editors[$title];
 			}
 		}
-		
+
+		self::$contents = array();
+		self::$editors = array();
 	}
 
 	public static function getMessageContent( $key, $language ) {

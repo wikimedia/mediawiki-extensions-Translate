@@ -126,6 +126,7 @@ class TranslateEditAddons {
 			}
 		}
 
+		$group->reset();
 		return implode("\n\n", $boxes);
 	}
 

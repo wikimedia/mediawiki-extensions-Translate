@@ -1,39 +1,111 @@
 <?php
 
 abstract class MessageGroup {
+	/**
+	 * Human-readable name of this group
+	 */
 	protected $label = 'none';
+
+	/**
+	 * Group-wide unique id of this group. Used also for sorting.
+	 */
 	protected $id    = 'none';
+
+	/**
+	 * Cache of loaded messages.
+	 */
 	protected $mcache= array();
 
-	/** Returns a human readable name of this class */
-	function getLabel() { return $this->label; }
+	/**
+	 * Meta groups consist of multiple groups or parts of other groups. This info
+	 * is used on many places, like when creating message index.
+	 */
+	protected $meta  = false;
 
-	/** Returns a unique id used to identify this class */
-	function getId() { return $this->id; }
+	/**
+	 * Returns a human readable name of this group.
+	 */
+	public function getLabel() { return $this->label; }
 
-	/** Is this a real message group or just some meta group */
-	function isMeta() { return false; }
+	/**
+	 * Returns a unique id of this group.
+	 */
+	public function getId() { return $this->id; }
 
-	/** Message Classes can fill up missing properties */
-	function fill( &$array, $code ) {}
+	/**
+	 * Returns true is this a meta group.
+	 */
+	public function isMeta() { return false; }
 
-	/** Called when user exports the messages */
-	abstract function export( &$array, $code );
+	/**
+	 * In this function message group should add translations from the stored file
+	 * for language code $code and it's fallback language, if used.
+	 *
+	 * @param $array Reference of MessageArray.
+	 * @param $code Language code.
+	 */
+	public abstract function fill( &$array, $code );
 
+	/**
+	 * In this function message group can specify some messages to be optional or
+	 * ignored.
+	 *
+	 * @param $array Reference of MessageArray.
+	 */
+	public function fillBools( &$array ) {}
+
+	/**
+	 * In this function message group should export messages in relevant format.
+	 *
+	 * @param $array Reference of MessageArray.
+	 * @param $code Language code.
+	 */
+	public abstract function export( &$array, $code );
+
+	/**
+	 * In this function message group should export messages in whole-file format,
+	 * if applicable. Default implementation just calls $this->export().
+	 *
+	 * @param $array Reference of MessageArray.
+	 * @param $code Language code.
+	 * @param $authors 1-D array of authors that have edited messages in wiki.
+	 */
 	public function exportToFile( &$array, $code, $authors ) {
 		return $this->export( $array, $code );
 	}
 
-	/** Return array of key => messages for requested language, or empty array */
-	abstract function getDefinitions();
+	/**
+	 * This function returns array of typoe key => definition of all messages
+	 * this message group handles.
+	 *
+	 * @return Array of messages definitions indexed by key.
+	 */
+	public abstract function getDefinitions();
 
-	abstract function getMessage( $key, $code );
+	/**
+	 * Returns of stored translation of message specified by the $key in language
+	 * code $code.
+	 *
+	 * @param $key Key of the message.
+	 * @param $code Language code.
+	 * @return Stored translation or null.
+	 */
+	public abstract function getMessage( $key, $code );
 
-	function getMessageGrouping() {
-		return array( $this->getLabel(), array_keys($this->getDefinitions()) );
+
+	/**
+	 * Returns path to the file where translation of language code $code are.
+	 *
+	 * @return Path to the file or false if not applicable.
+	 */
+	public function getMessageFile( $code ) { return false; }
+
+	/**
+	 * Resets the cache to free memory.
+	 */
+	public function reset() {
+		$this->mcache = array();
 	}
-
-	function getMessageFile( $code ) { return ''; }
 
 	/** Checks if the message should be exported. Returns false if not,
 	 *  true if yes and updates $comment.
@@ -111,7 +183,6 @@ abstract class MessageGroup {
 		return $txt;
 	}
 
-	public function fillBools( &$array ) {}
 }
 
 class CoreMessageGroup extends MessageGroup {
@@ -171,20 +242,18 @@ CODE;
 		}
 	}
 
-	/* Cache of read messages */
-	private static $mCache = array();
 	private function loadMessages( $code ) {
-		if ( !isset(self::$mCache[$code]) ) {
+		if ( !isset($this->mcache[$code]) ) {
 			$file = Language::getMessagesFileName( $code );
 			if ( !file_exists( $file ) ) {
-				self::$mCache[$code] = null;
+				$this->mcache[$code] = null;
 			} else {
 				require( $file );
-				return self::$mCache[$code] = isset( $messages ) ? $messages : null;
+				return $this->mcache[$code] = isset( $messages ) ? $messages : null;
 			}
 		}
 
-		return self::$mCache[$code];
+		return $this->mcache[$code];
 	}
 
 	function fill( &$array, $code ) {
@@ -242,7 +311,6 @@ CODE;
 
 abstract class ExtensionMessageGroup extends MessageGroup {
 	protected $arrName      = false;
-	protected $mcache     = null;
 	protected $functionName = false;
 	protected $messageFile  = null;
 
@@ -261,9 +329,22 @@ abstract class ExtensionMessageGroup extends MessageGroup {
 		return isset( $this->mcache[$code][$key] ) ? $this->mcache[$code][$key] : null;
 	}
 
+	/**
+	 * This function loads messages for given language for further use.
+	 *
+	 * @param $code Language code
+	 * @throws MWException If loading fails.
+	 */
 	protected function load( $code ) {
-		if ( isset($this->mcache[$code]) ) return;
-		$this->mcache = $this->loadMessages( $code );
+		// Check if we have already loaded all messages
+		if ( is_array($this->mcache) ) return;
+
+		// If not, load them now
+		$cache = $this->loadMessages( $code );
+		if ( $cache === null ) {
+			throw new MWException( "Unable to load messages for $code in {$this->label}" );
+		}
+		$this->mcache = $cache;
 	}
 
 	protected function getPath( $code ) {
@@ -276,6 +357,13 @@ abstract class ExtensionMessageGroup extends MessageGroup {
 		return $fullPath;
 	}
 
+	/**
+	 * This function is a wrapper which calls the real loader depending on which
+	 * kind of structure the messages are in this extension.
+	 *
+	 * @param $code Language code of messages to be loaded.
+	 * @returns Array
+	 */
 	protected function loadMessages( $code ) {
 		$path = $this->getPath( $code );
 
@@ -284,31 +372,46 @@ abstract class ExtensionMessageGroup extends MessageGroup {
 		} elseif ( $this->functionName ) {
 			return $this->loadFromFunction( $path );
 		}
-
 	}
 
+	/**
+	 * This function loads a variable from given php file and returns it.
+	 *
+	 * @param $path Path to php file that is passed to include().
+	 * @return Contents of the variable or null if it is not set or file does not
+	 * exist.
+	 */
 	private function loadFromVariable( $path ) {
 		if ( file_exists( $path ) ) {
 			include( $path );
 			if ( isset( ${$this->arrName} ) ) {
 				return ${$this->arrName};
-			} else {
-				throw new MWException( "Variable {$this->arrName} is not defined" );
 			}
 		}
+
+		return null;
 	}
 
+	/**
+	 * This function includes the file given in $path if needed, and calls the
+	 * defined function and returns it return value.
+	 *
+	 * @param $path Path to php file that is passed to include().
+	 * @return Return value of the function or null if the function is not defined
+	 * or file does not exist.
+	 */
 	private function loadFromFunction( $path ) {
+		// Try first calling it directly
 		if ( function_exists( $this->functionName ) ) {
 			return call_user_func( $this->functionName );
 		} elseif ( file_exists( $path ) ) {
 			include( $path );
 			if ( function_exists( $this->functionName ) ) {
 				return call_user_func( $this->functionName );
-			} else {
-				throw new MWException( "Function {$this->functionName} is not defined" );
 			}
 		}
+
+		return null;
 	}
 
 	function export( &$array, $code ) {
@@ -363,7 +466,15 @@ class MultipleFileMessageGroup extends ExtensionMessageGroup {
 
 	protected function load( $code ) {
 		if ( isset($this->mcache[$code]) ) return;
-		$this->mcache[$code] = $this->loadMessages( $code );
+		$cache = $this->loadMessages( $code );
+		if ( $cache === null ) {
+			if ( $code === 'en' ) {
+				throw new MWException( "Unable to load messages for $code in {$this->label}" );
+			} else {
+				$cache = array();
+			}
+		}
+		$this->mcache[$code] = $cache;
 	}
 
 	protected function getPath( $code ) {
@@ -387,7 +498,7 @@ class Core500MessageGroup extends CoreMessageGroup {
 	protected $id    = 'core-500';
 
 	public function isMeta() { return true; }
-	public function getMessageFile( $code ) { return '-'; }
+	public function getMessageFile( $code ) { return false; }
 	function export( &$array, $code ) { return '-'; }
 	public function exportToFile( &$array, $code, $authors ) { return '-'; }
 
@@ -745,7 +856,7 @@ class ContributionScoresMessageGroup extends ExtensionMessageGroup {
 }
 
 class ContributionseditcountMessageGroup extends ExtensionMessageGroup {
-	protected $label   = 'Contributionseditcount';
+	protected $label   = 'Contributions Edit Count';
 	protected $id      = 'ext-contributionseditcount';
 
 	protected $functionName = 'efContributionseditcountMessages';
@@ -1403,7 +1514,7 @@ class PostCommentMessageGroup extends ExtensionMessageGroup {
 }
 
 class ProfileMonitorMessageGroup extends ExtensionMessageGroup {
-	protected $label   = 'ProfileMonitor';
+	protected $label   = 'Profile Monitor';
 	protected $id      = 'ext-profilemonitor';
 
 	protected $functionName = 'efProfileMonitorMessages';
@@ -1868,7 +1979,6 @@ class FreeColMessageGroup extends MessageGroup {
 	protected $id    = 'out-freecol';
 	protected $prefix= 'freecol-';
 
-	protected $mcache = array();
 	private   $fileDir  = 'freecol/';
 
 	public function __construct() {
