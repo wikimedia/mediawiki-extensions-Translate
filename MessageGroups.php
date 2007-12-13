@@ -505,7 +505,7 @@ class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
 	private $classes = null;
 
 	// Don't add the (mw ext) thingie
-	public function getLabel() { return $this->label }
+	public function getLabel() { return $this->label; }
 
 	private function init() {
 		if ( $this->classes === null ) {
