@@ -63,7 +63,6 @@ abstract class TranslateTask {
 		foreach ( $this->process as $function ) {
 			call_user_func( $function );
 		}
-
 		return $this->output();
 	}
 

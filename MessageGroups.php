@@ -4,23 +4,23 @@ abstract class MessageGroup {
 	/**
 	 * Human-readable name of this group
 	 */
-	protected $label = 'none';
+	protected $label  = 'none';
 
 	/**
 	 * Group-wide unique id of this group. Used also for sorting.
 	 */
-	protected $id    = 'none';
+	protected $id     = 'none';
 
 	/**
 	 * Cache of loaded messages.
 	 */
-	protected $mcache= array();
+	protected $mcache = null;
 
 	/**
 	 * Meta groups consist of multiple groups or parts of other groups. This info
 	 * is used on many places, like when creating message index.
 	 */
-	protected $meta  = false;
+	protected $meta   = false;
 
 	/**
 	 * Returns a human readable name of this group.
@@ -60,7 +60,9 @@ abstract class MessageGroup {
 	 * @param $array Reference of MessageArray.
 	 * @param $code Language code.
 	 */
-	public abstract function export( &$array, $code );
+	public function export( &$array, $code ) {
+		return 'Not supported';
+	}
 
 	/**
 	 * In this function message group should export messages in whole-file format,
@@ -107,43 +109,14 @@ abstract class MessageGroup {
 		$this->mcache = array();
 	}
 
-	/** Checks if the message should be exported. Returns false if not,
-	 *  true if yes and updates $comment.
+	/**
+	 * Preprocesses MessageArray to suitable format and filters things that should
+	 * not be exported.
+	 *
+	 * @param $array Reference of MessageArray.
 	 */
-	function validateLine($m, &$comment) {
-		if ( $m['ignored'] ) { return false; }
-		$fallback = isset($m['fallback']) ? $m['fallback'] : $m['definition'];
-
-		$translation = $m['database'];
-		if ( $translation === null ) {
-			$translation = $m['infile'];
-		}
-
-		if ( $translation === null ) { return false; }
-
-		if ( strpos($translation, TRANSLATE_FUZZY) !== false ) { return false; }
-
-		if ( $m['optional'] ) {
-			if ( $translation !== $fallback ) {
-				$comment = "#optional";
-				return true;
-			} else {
-				return false;
-			}
-		}
-		if ( $translation === $fallback ) {
-			if ( $m['pageexists'] ) {
-				$comment = "#identical but defined";
-				return true;
-			} else {
-				return false;
-			}
-		}
-
-		return true;
-	}
-
-	public function makeMessageArray( &$array ) {
+	public function makeExportArray( &$array ) {
+		// We copy only relevant translations to this new array
 		$new = array();
 		foreach( $array as $key => $m ) {
 			# CASE1: ignored
@@ -169,18 +142,17 @@ abstract class MessageGroup {
 		return $new;
 	}
 
-	/** Returns php and whitespace formatted key => message line or null */
-	function exportLine($key, $m, $pad = false) {
-		$comment = '';
-		$result = $this->validateLine($m, $comment);
-		if ( $result === false ) { return null; }
-
-		$translation = $m['database'] ? $m['database'] : $m['infile'];
-
-		$key = "'$key' ";
-		if ($pad) while ( strlen($key) < $pad ) { $key .= ' '; }
-		$txt = "$key=> '" . preg_replace( "/(?<!\\\\)'/", "\'", $translation) . "',$comment\n";
-		return $txt;
+	/**
+	 * Formats list of authors nicely.
+	 *
+	 * @param $authors List of authors
+	 */
+	protected function formatAuthors( $authors ) {
+		$s = array();
+		foreach ( $authors as $a ) {
+			$s[] = " * @author $a";
+		}
+		return implode( "\n", $s );
 	}
 
 }
@@ -197,12 +169,12 @@ class CoreMessageGroup extends MessageGroup {
 	}
 
 	function export( &$array, $code ) {
-		$x = MessageWriter::writeMessagesArray( $this->makeMessageArray( &$array ), false );
+		$x = MessageWriter::writeMessagesArray( $this->makeExportArray( &$array ), false );
 		return $x[0];
 	}
 
 	public function exportToFile( &$array, $code, $authors ) {
-		$x = MessageWriter::writeMessagesArray( $this->makeMessageArray( &$array ), false );
+		$messages = $this->export( $array, $code );
 		$name = TranslateUtils::getLanguageName( $code );
 		$native = TranslateUtils::getLanguageName( $code, true );
 		$authors = array_unique( array_merge( $this->getAuthorsFromFile( $code ), $authors ) );
@@ -219,7 +191,7 @@ $translators
 
 $other
 
-$x[0]
+$messages
 CODE;
 	}
 
@@ -273,14 +245,6 @@ CODE;
 		}
 	}
 
-	private function formatAuthors( $authors ) {
-		$s = array();
-		foreach ( $authors as $a ) {
-			$s[] = " * @author $a";
-		}
-		return implode( "\n", $s );
-	}
-
 	private function getAuthorsFromFile( $code ) {
 		$filename = Language::getMessagesFileName( $code );
 		if ( !file_exists( $filename ) ) { return array(); }
@@ -317,7 +281,6 @@ abstract class ExtensionMessageGroup extends MessageGroup {
 	protected $exportStart = '$$ARRAY[\'$CODE\'] = array(';
 	protected $exportEnd   = ');';
 	protected $exportPrefix= '';
-	protected $exportPad   = false;
 	protected $exportLineP = "\t";
 
 	public function getLabel() { return $this->label . " (mw ext)"; }
@@ -337,7 +300,7 @@ abstract class ExtensionMessageGroup extends MessageGroup {
 	 */
 	protected function load( $code ) {
 		// Check if we have already loaded all messages
-		if ( is_array($this->mcache) ) return;
+		if ( isset($this->mcache['en']) ) return;
 
 		// If not, load them now
 		$cache = $this->loadMessages( $code );
@@ -420,16 +383,28 @@ abstract class ExtensionMessageGroup extends MessageGroup {
 			array( $this->arrName, $code ),
 			$this->exportStart ) . "\n";
 
-		foreach ($this->mcache['en'] as $key => $msg) {
-			if ( !isset( $array[$key] ) ) { continue; }
-			$line = $this->exportLine($key, $array[$key], $this->exportPad);
-			if ( $line !== null ) {
-				$txt .= $this->exportLineP . $line;
-			}
-		}
-		$txt .= $this->exportPrefix . $this->exportEnd;
-		return $txt;
+		// Use the same function that rebuildLanguage.php uses
+		$txt .= MessageWriter::writeMessagesBlock( false,
+			$this->makeExportArray( $array ), array(), $this->exportLineP
+		);
+
+		return $txt . $this->exportEnd;
 	}
+
+	public function exportToFile( &$array, $code, $authors ) {
+		$x = $this->export( $array, $code );
+		$name = TranslateUtils::getLanguageName( $code );
+		$native = TranslateUtils::getLanguageName( $code, true );
+		$translators = $this->formatAuthors( $authors );
+		if ( $translators !== '' ) {
+			$translators = "\n$translators\n";
+		}
+		return <<<CODE
+/** $name ($native)$translators */
+$x
+CODE;
+	}
+
 
 	function getDefinitions() {
 		$this->load( 'en' );
@@ -478,10 +453,14 @@ class MultipleFileMessageGroup extends ExtensionMessageGroup {
 	}
 
 	protected function getPath( $code ) {
+		// Many extensions use non-regular filename for english messages. We use the
+		// single filename for that.
 		if ( $code === 'en' ) {
 			return parent::getPath( 'en' );
 		}
 
+		// And for other files we use pattern, where $CODE is replaced with language
+		// code.
 		global $wgTranslateExtensionDirectory;
 		$fullPath = false;
 		if ( $this->filePattern ) {
@@ -496,11 +475,11 @@ class MultipleFileMessageGroup extends ExtensionMessageGroup {
 class Core500MessageGroup extends CoreMessageGroup {
 	protected $label = 'MediaWiki messages top 500';
 	protected $id    = 'core-500';
+	protected $meta  = true;
 
-	public function isMeta() { return true; }
-	public function getMessageFile( $code ) { return false; }
-	function export( &$array, $code ) { return '-'; }
-	public function exportToFile( &$array, $code, $authors ) { return '-'; }
+	public function export( &$array, $code ) { return 'Not supported'; }
+	public function exportToFile( &$array, $code, $authors ) { return 'Not supported'; }
+
 
 	function getDefinitions() {
 		$data = file_get_contents( dirname(__FILE__) . '/wikimedia-500.txt' );
@@ -521,10 +500,12 @@ class Core500MessageGroup extends CoreMessageGroup {
 class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
 	protected $label = 'All extensions';
 	protected $id    = 'ext-0-all';
+	protected $meta  = true;
 
 	private $classes = null;
 
-	public function isMeta() { return true; }
+	// Don't add the (mw ext) thingie
+	public function getLabel() { return $this->label }
 
 	private function init() {
 		if ( $this->classes === null ) {
@@ -539,11 +520,9 @@ class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
 
 	protected function load( $code ) {
 		$this->init();
-
 		foreach ( $this->classes as $class ) {
 			$class->load( $code );
 		}
-
 	}
 
 	public function getMessage( $key, $code ) {
@@ -569,7 +548,17 @@ class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
 		$this->init();
 		$ret = '';
 		foreach ( $this->classes as $class ) {
-			$ret .= $class->export( &$array, $code ) . "\n\n\n";
+			$ret .= $class->export( $array, $code ) . "\n\n\n";
+		}
+		return $ret;
+	}
+
+	function exportToFile( &$array, $code, $authors ) {
+		$this->init();
+		$ret = '';
+		foreach ( $this->classes as $class ) {
+			$subArray = array_intersect_key( $array, $class->getDefinitions() );
+			$ret .= $class->exportToFile( $subArray, $code, array() ) . "\n\n\n";
 		}
 		return $ret;
 	}
@@ -577,17 +566,22 @@ class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
 	function fill( &$array, $code ) {
 		$this->init();
 		foreach ( $this->classes as $class ) {
-			$class->fill( &$array, $code );
+			$class->fill( $array, $code );
 		}
 	}
 
 	function fillBools( &$array ) {
 		$this->init();
 		foreach ( $this->classes as $class ) {
-			$class->fillBools( &$array );
+			$class->fillBools( $array );
 		}
 	}
 
+	public function reset() {
+		foreach ( $this->classes as $class ) {
+			$class->reset();
+		}
+	}
 
 }
 
@@ -613,8 +607,6 @@ class AntiSpoofMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'wgAntiSpoofMessages';
 	protected $messageFile = 'AntiSpoof/AntiSpoof_i18n.php';
-
-	protected $exportPad   = 26;
 }
 
 class AssertEditMessageGroup extends ExtensionMessageGroup {
@@ -623,8 +615,6 @@ class AssertEditMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'AssertEdit/AssertEdit.i18n.php';
-
-	protected $exportPad   = 22;
 }
 
 class AsksqlMessageGroup extends ExtensionMessageGroup {
@@ -638,8 +628,6 @@ class AsksqlMessageGroup extends ExtensionMessageGroup {
 	protected $exportPrefix= '';
 	protected $exportLineP = "\t";
 	protected $exportEnd   = '),';
-
-	protected $exportPad   = 19;
 }
 
 class BackAndForthMessageGroup extends ExtensionMessageGroup {
@@ -674,8 +662,6 @@ class BlahtexMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'Blahtex/Blahtex.i18n.php';
-
-	protected $exportPad   = 40;
 }
 
 class BlockTitlesMessageGroup extends ExtensionMessageGroup {
@@ -697,8 +683,6 @@ class BoardVoteMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'wgBoardVoteMessages';
 	protected $messageFile = 'BoardVote/BoardVote.i18n.php';
-
-	protected $exportPad   = 26;
 
 	function fillBools( &$array ) {
 		$array['boardvote_footer']['ignored'] = true;
@@ -736,8 +720,6 @@ class CentralAuthMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'wgCentralAuthMessages';
 	protected $messageFile = 'CentralAuth/CentralAuth.i18n.php';
-
-	protected $exportPad   = 39;
 }
 
 class ChangeAuthorMessageGroup extends ExtensionMessageGroup {
@@ -764,8 +746,6 @@ class CheckUserMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'wgCheckUserMessages';
 	protected $messageFile = 'CheckUser/CheckUser.i18n.php';
-
-	protected $exportPad   = 25;
 }
 
 class ChemFunctionsMessageGroup extends ExtensionMessageGroup {
@@ -795,8 +775,6 @@ class CiteSpecialMessageGroup extends ExtensionMessageGroup {
 	protected $arrName     = 'wgSpecialCiteMessages';
 	protected $messageFile = 'Cite/SpecialCite.i18n.php';
 
-	protected $exportPad   = 20;
-
 	function fillBools( &$array ) {
 		$array['cite_text']['ignored'] = true;
 	}
@@ -819,8 +797,6 @@ class ConfirmAccountMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'wgConfirmAccountMessages';
 	protected $messageFile = 'ConfirmAccount/ConfirmAccount.i18n.php';
-
-	protected $exportPad   = 30;
 }
 
 class ConfirmEditMessageGroup extends ExtensionMessageGroup {
@@ -829,8 +805,6 @@ class ConfirmEditMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'ConfirmEdit/ConfirmEdit.i18n.php';
-
-	protected $exportPad   = 30;
 }
 
 class ContactPageExtensionGroup extends MultipleFileMessageGroup {
@@ -898,8 +872,6 @@ class CrossNamespaceLinksMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'wgCrossNamespaceLinksMessages';
 	protected $messageFile = 'CrossNamespaceLinks/SpecialCrossNamespaceLinks.i18n.php';
-
-	protected $exportPad   = 30;
 }
 
 class DeletedContribsMessageGroup extends ExtensionMessageGroup {
@@ -916,8 +888,6 @@ class DesysopMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'wgDesysopMessages';
 	protected $messageFile = 'Desysop/SpecialDesysop.i18n.php';
-
-	protected $exportPad   = 23;
 }
 
 class DismissableSiteNoticeMessageGroup extends ExtensionMessageGroup {
@@ -964,8 +934,6 @@ class EvalMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'Eval/SpecialEval.i18n.php';
-
-	protected $exportPad   = 14;
 }
 
 class ExpandTemplatesMessageGroup extends ExtensionMessageGroup {
@@ -974,8 +942,6 @@ class ExpandTemplatesMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'wgExpandTemplatesMessages';
 	protected $messageFile = 'ExpandTemplates/ExpandTemplates.i18n.php';
-
-	protected $exportPad   = 35;
 }
 
 class FancyCaptchaMessageGroup extends ExtensionMessageGroup {
@@ -1013,8 +979,6 @@ class FlaggedRevsMessageGroup extends MultipleFileMessageGroup {
 
 	protected $exportStart = '$messages = array(';
 	protected $exportEnd   = ');';
-
-	protected $exportPad   = 28;
 }
 
 class FormatEmailMessageGroup extends ExtensionMessageGroup {
@@ -1035,8 +999,6 @@ class FilePathMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'wgFilepathMessages';
 	protected $messageFile = 'Filepath/SpecialFilepath.i18n.php';
-
-	protected $exportPad   = 18;
 }
 
 class FindSpamMessageGroup extends ExtensionMessageGroup {
@@ -1091,8 +1053,6 @@ class ImageMapMessageGroup extends ExtensionMessageGroup {
 	protected $exportLineP = "\t";
 	protected $exportEnd   = '),';
 
-	protected $exportPad   = 32;
-
 	function fillBools( &$array ) {
 		$array['imagemap_desc_types']['ignored'] = true;
 	}
@@ -1109,8 +1069,6 @@ class ImportFreeImagesMessageGroup extends ExtensionMessageGroup {
 	protected $exportPrefix= "\t\t";
 	protected $exportLineP = "\t\t\t";
 	protected $exportEnd   = '),';
-
-	protected $exportPad   = 32;
 }
 
 class InputBoxMessageGroup extends ExtensionMessageGroup {
@@ -1123,8 +1081,6 @@ class InputBoxMessageGroup extends ExtensionMessageGroup {
 	protected $exportStart = '\'$CODE\' => array(';
 	protected $exportLineP = "\t";
 	protected $exportEnd   = '),';
-
-	protected $exportPad   = 26;
 }
 
 class InspectCacheMessageGroup extends ExtensionMessageGroup {
@@ -1150,8 +1106,6 @@ class InterwikiMessageGroup extends ExtensionMessageGroup {
 	protected $arrName     = 'wgSpecialInterwikiMessages';
 	protected $messageFile = 'Interwiki/SpecialInterwiki.i18n.php';
 
-	protected $exportPad   = 24;
-
 	function fillBools( &$array ) {
 		$array['interwiki_logentry']['ignored'] = true;
 		$array['interwiki_url']['optional'] = true;
@@ -1172,8 +1126,6 @@ class LinkSearchMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'wgLinkSearchMessages';
 	protected $messageFile = 'LinkSearch/LinkSearch.i18n.php';
-
-	protected $exportPad   = 19;
 }
 
 class LiquidThreadsMessageGroup extends ExtensionMessageGroup {
@@ -1203,8 +1155,6 @@ class LuceneSearchMessageGroup extends ExtensionMessageGroup {
 	protected $arrName     = 'wgLuceneSearchMessages';
 	protected $messageFile = 'LuceneSearch/LuceneSearch.i18n.php';
 
-	protected $exportPad   = 24;
-
 	function fillBools( &$array ) {
 		$array['searchaliases']['ignored'] = true;
 		$array['searchnearmatch']['ignored'] = true;
@@ -1222,8 +1172,6 @@ class MakeBotMessageGroup extends ExtensionMessageGroup {
 	protected $exportPrefix= '';
 	protected $exportLineP = "\t";
 	protected $exportEnd   = '),';
-
-	protected $exportPad   = 26;
 }
 
 class MakeSysopMessageGroup extends ExtensionMessageGroup {
@@ -1249,9 +1197,6 @@ class MakeValidateMessageGroup extends MultipleFileMessageGroup {
 
 	protected $exportStart = '$messages = array(';
 	protected $exportEnd   = ');';
-
-
-	protected $exportPad   = 32;
 }
 
 class MathStatMessageGroup extends ExtensionMessageGroup {
@@ -1272,8 +1217,6 @@ class MediaFunctionsMessageGroup extends ExtensionMessageGroup {
 	protected $exportStart = '\'$CODE\' => array(';
 	protected $exportLineP = "\t";
 	protected $exportEnd   = '),';
-
-	protected $exportPad   = 31;
 }
 
 class MicroIDMessageGroup extends ExtensionMessageGroup {
@@ -1323,8 +1266,6 @@ class MultiUploadMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'MultiUpload/SpecialMultipleUpload.i18n.php';
-
-	protected $exportPad   = 20;
 }
 
 class NewestPagesMessageGroup extends ExtensionMessageGroup {
@@ -1347,7 +1288,6 @@ class NewuserLogMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'Newuserlog/Newuserlog.i18n.php';
 
 	protected $exportLineP = "\t";
-	protected $exportPad   = 27;
 
 	function fillBools( &$array ) {
 		$array['newuserlogentry']['ignored'] = true;
@@ -1379,8 +1319,6 @@ class NukeMessageGroup extends ExtensionMessageGroup {
 	protected $exportPrefix= "\t";
 	protected $exportLineP = "\t\t";
 	protected $exportEnd   = '),';
-
-	protected $exportPad   = 21;
 }
 
 class OggHandlerMessageGroup extends ExtensionMessageGroup {
@@ -1545,8 +1483,6 @@ class ProtectSectionMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'ProtectSection/ProtectSection.i18n.php';
-
-	protected $exportPad   = 28;
 }
 
 class PurgeMessageGroup extends ExtensionMessageGroup {
@@ -1688,8 +1624,6 @@ class SiteMatrixMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'wgSiteMatrixMessages';
 	protected $messageFile = 'SiteMatrix/SiteMatrix.i18n.php';
-
-	protected $exportPad   = 13;
 }
 
 class SmoothGalleryExtensionGroup extends MultipleFileMessageGroup {
@@ -1838,8 +1772,6 @@ class TodoTasksMessageGroup extends ExtensionMessageGroup {
 	protected $exportStart = '\'$CODE\' => array(';
 	protected $exportLineP = "\t\t";
 	protected $exportEnd   = "),";
-
-	protected $exportPad   = 26;
 }
 
 class TranslateMessageGroup extends ExtensionMessageGroup {
@@ -1903,8 +1835,6 @@ class UserRightsNotifMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'UserRightsNotif/UserRightsNotif.i18n.php';
-
-	protected $exportPad   = 26;
 }
 
 class VoteMessageGroup extends ExtensionMessageGroup {
@@ -1926,8 +1856,6 @@ class WatchersMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'Watchers/Watchers.i18n.php';
-
-	protected $exportPad   = 25;
 }
 
 class WebStoreMessageGroup extends ExtensionMessageGroup {
@@ -1954,7 +1882,6 @@ class WhoIsWatchingMessageGroup extends ExtensionMessageGroup {
 	protected $exportPrefix= "\t";
 	protected $exportLineP = "\t\t";
 	protected $exportEnd   = '),';
-	protected $exportPad   = 30;
 }
 
 class WikidataLanguageManagerMessageGroup extends ExtensionMessageGroup {
@@ -2073,7 +2000,6 @@ class MessageGroups {
 			}
 		}
 	}
-
 
 	public static function singleton() {
 		static $instance;
