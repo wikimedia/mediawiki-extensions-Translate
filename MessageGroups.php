@@ -1374,19 +1374,6 @@ class PdfHandlerMessageGroup extends ExtensionMessageGroup {
 	protected $exportEnd   = '),';
 }
 
-class PicturePopupMessageGroup extends ExtensionMessageGroup {
-	protected $label   = 'PicturePopup';
-	protected $id      = 'ext-picturepopup';
-
-	protected $functionName = 'efPicturePopupMessages';
-	protected $messageFile  = 'PicturePopup/PicturePopup.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportPrefix= '';
-	protected $exportLineP = "\t";
-	protected $exportEnd   = '),';
-}
-
 class PlayerMessageGroup extends MultipleFileMessageGroup {
 	protected $label = 'Player';
 	protected $id    = 'ext-player';
