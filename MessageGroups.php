@@ -35,7 +35,7 @@ abstract class MessageGroup {
 	/**
 	 * Returns true is this a meta group.
 	 */
-	public function isMeta() { return false; }
+	public function isMeta() { return $this->meta; }
 
 	/**
 	 * In this function message group should add translations from the stored file
