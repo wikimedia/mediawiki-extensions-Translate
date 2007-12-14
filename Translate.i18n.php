@@ -848,6 +848,63 @@ $messages['li'] = array(
 	'translate-optional' => '(optioneel)',
 );
 
+/** Lithuanian (Lietuvių)
+ * @author Vpovilaitis
+ */
+$messages['lt'] = array(
+	'translate'                       => 'Išversti',
+	'translate-edit'                  => 'redaguoti',
+	'translate-talk'                  => 'aptarimas',
+	'translate-history'               => 'istorija',
+	'translate-delete'                => 'atšaukti pakeitimus',
+	'translate-task-view'             => 'Pažiūrėti visus pranešimus iš',
+	'translate-task-untranslated'     => 'Pažiūrėti visus neišverstus pranešimus iš',
+	'translate-task-optional'         => 'Pažiūrėti nebūtinus pranešimus iš',
+	'translate-task-review'           => 'Peržiūrėti pakeitimus iš',
+	'translate-task-reviewall'        => 'Peržiūrėti visus vertimus iš',
+	'translate-task-export'           => 'Eksportuoti vertimus iš',
+	'translate-task-export-to-file'   => 'Eksportuoti į failą vertimus iš',
+	'translate-settings'              => 'Aš noriu $1 $2, esančius $3 kalboje ($4 vnt.). $5',
+	'translate-paging'                => '<div>Rodomi pranešimai nuo $1 iki $2 iš $3. [ $4 | $5 ]</div>',
+	'translate-submit'                => 'Išrinkti',
+	'translate-next'                  => 'Sekantis puslapis',
+	'translate-prev'                  => 'Ankstesnis puslapis',
+	'translate-optional'              => '(nebūtinas)',
+	'translate-ignored'               => '(ignoruotas)',
+	'translate-edit-message-format'   => 'Šio pranešimo formatas yra <b>$1</b>.',
+	'translate-edit-message-in'       => 'Einamoji simbolių eilutė <b>$1</b> ($2) kalboje:',
+	'translate-edit-message-in-fb'    => 'Einamoji simbolių eilutė atsarginėje <b>$1</b> ($2) kalboje:',
+	'translate-magic-pagename'        => 'MediaWiki išplėtimų vertimas',
+	'translate-magic-help'            => 'Jūs galite išversti specialių puslapių pavadinimus, magiškus žodžius, apvalkalų pavadinimus ir vardų sričių pavadinimus.
+
+Magiško žodžio vertimuose nurodykite ir vertimą į anglų kalbą, kitaip jis nustos veikti. Taip pat palikite pirmąjį elementą (0 arba 1) tokį koks jis yra.
+
+Specialiojo puslapio pavadinimo ir magiško žodžio vertimai gali būti keli. Vertimai yra skiriami kableliu (,). Apvalkalo ir vardų srities pavadinimas gali turėti tik vieną vertimą.
+
+Vardų sričių vertimuose <tt>$1 aptarimas</tt> yra specialus. <tt>$1</tt> yra pakeičiamas svetainės pavadinimu (Pavyzdžiui <tt>{{SITENAME}} aptarimas</tt>. Jei nėra galimybės Jūsų kalboje suformuoti teisingos išraiškos su svetainės pavadinimo pakeitimu, prašome kreiptis į kūrėjus. 
+
+Jūs turite priklausyti vertėjų grupei, kad galėtumėte išsaugoti pakeitimus. Pakeitimai nebus išsaugoti iki Jūs nuspausite išsaugojimo butoną apačioje.',
+	'translate-magic-form'            => 'Kalba: $1 Tema: $2 $3',
+	'translate-magic-submit'          => 'Išrinkti',
+	'translate-magic-cm-to-be'        => 'Turi būti',
+	'translate-magic-cm-current'      => 'Einamasis',
+	'translate-magic-cm-original'     => 'Originalas',
+	'translate-magic-cm-fallback'     => 'Atsarginė priemonė',
+	'translate-magic-cm-save'         => 'Išsaugoti',
+	'translate-magic-cm-export'       => 'Eksportuoti',
+	'translate-magic-cm-updatedusing' => 'Atnaujintas, naudojant Special:Magic',
+	'translate-magic-cm-savefailed'   => 'Nepavyko išsaugoti',
+	'translate-magic-special'         => 'Specialių puslapių pavadinimai',
+	'translate-magic-words'           => 'Magiški žodžiai',
+	'translate-magic-skin'            => 'Apvalkalų pavadinimai',
+	'translate-magic-namespace'       => 'Vardų srities pavadinimai',
+	'translationchanges'              => 'Vertimo pakeitimai',
+	'translationchanges-export'       => 'eksportuoti',
+	'translationchanges-change'       => '$1: [[Mediawiki:$2|$2]] pagal [[User:$3|$3]]',
+	'translate-page-no-such-language' => 'Buvo nurodytas klaidingas kalbos kodas',
+
+);
+
 $messages['nap'] = array(
 	'translate-edit' => 'càgna',
 	'translate-talk' => 'chiàcchiera',
