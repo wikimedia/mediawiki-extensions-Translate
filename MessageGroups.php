@@ -548,7 +548,8 @@ class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
 		$this->init();
 		$ret = '';
 		foreach ( $this->classes as $class ) {
-			$ret .= $class->export( $array, $code ) . "\n\n\n";
+			$subArray = array_intersect_key( $array, $class->getDefinitions() );
+			$ret .= $class->export( $subArray, $code ) . "\n\n\n";
 		}
 		return $ret;
 	}
@@ -1948,15 +1949,9 @@ class FreeColMessageGroup extends MessageGroup {
 		$txt = '# Exported on ' . wfTimestamp(TS_ISO_8601) . ' from ' . $wgSitename . "\n# " .
 			$wgRequest->getFullRequestURL() . "\n#\n";
 
-		foreach ($array as $key => $m) {
+		$array = $this->makeExportArray( $array );
+		foreach ($array as $key => $translation) {
 			list(, $key) = explode( '-', $key, 2);
-			$comment = '';
-			$result = $this->validateLine($m, $comment);
-			if ( $result === false ) { continue; }
-			if ( is_string( $result ) ) { continue; }
-
-			$translation = $m['database'] ? $m['database'] : $m['infile'];
-
 			$txt .= $key . '=' . rtrim( $translation ) . "\n";
 		}
 		return $txt;
