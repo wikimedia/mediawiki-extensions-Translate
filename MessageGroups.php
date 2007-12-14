@@ -1108,7 +1108,10 @@ class InterwikiMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'Interwiki/SpecialInterwiki.i18n.php';
 
 	function fillBools( &$array ) {
+		$array['interwiki_defaulturl']['ignored'] = true;
+		$array['interwiki_local']['ignored'] = true;
 		$array['interwiki_logentry']['ignored'] = true;
+		$array['interwiki_trans']['ignored'] = true;
 		$array['interwiki_url']['optional'] = true;
 	}
 }
