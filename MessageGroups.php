@@ -388,7 +388,11 @@ abstract class ExtensionMessageGroup extends MessageGroup {
 			$this->makeExportArray( $array ), array(), $this->exportLineP
 		);
 
-		return $txt . $this->exportEnd;
+		// Remove the last newline, not needed here
+		$txt = substr( $txt, 0, -1 );
+		$txt .= $this->exportPrefix . $this->exportEnd;
+
+		return $txt;
 	}
 
 	public function exportToFile( &$array, $code, $authors ) {
