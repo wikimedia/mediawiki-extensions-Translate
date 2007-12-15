@@ -1455,6 +1455,14 @@ class PostCommentMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'Postcomment/SpecialPostcomment.i18n.php';
 }
 
+class PovWatchMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'POV Watch';
+	protected $id    = 'ext-povwatch';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'PovWatch/PovWatch.i18n.php';
+}
+
 class ProfileMonitorMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Profile Monitor';
 	protected $id      = 'ext-profilemonitor';
