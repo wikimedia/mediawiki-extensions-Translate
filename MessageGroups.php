@@ -779,6 +779,23 @@ class CiteMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'Cite/Cite.i18n.php';
+
+	function fillBools( &$array ) {
+		$array['cite_reference_link_key_with_num']['optional'] = true;
+		$array['cite_reference_link_prefix']['optional'] = true;
+		$array['cite_reference_link_suffix']['optional'] = true;
+		$array['cite_references_link_prefix']['optional'] = true;
+		$array['cite_references_link_suffix']['optional'] = true;
+		$array['cite_reference_link']['optional'] = true;
+		$array['cite_references_link_one']['optional'] = true;
+		$array['cite_references_link_many']['optional'] = true;
+		$array['cite_references_link_many_format']['optional'] = true;
+		$array['cite_references_link_many_format_backlink_labels']['optional'] = true;
+		$array['cite_references_link_many_sep']['optional'] = true;
+		$array['cite_references_link_many_and']['optional'] = true;
+		$array['cite_references_prefix']['ignored'] = true;
+		$array['cite_references_suffix']['ignored'] = true;
+	}
 }
 
 class CiteSpecialMessageGroup extends ExtensionMessageGroup {
