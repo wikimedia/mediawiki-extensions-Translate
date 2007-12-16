@@ -773,6 +773,14 @@ class ChemFunctionsMessageGroup extends ExtensionMessageGroup {
 	}
 }
 
+class CiteMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Cite';
+	protected $id    = 'ext-cite';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'Cite/Cite.i18n.php';
+}
+
 class CiteSpecialMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Cite (special page)';
 	protected $id      = 'ext-citespecial';
