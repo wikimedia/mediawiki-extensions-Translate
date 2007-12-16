@@ -1579,6 +1579,14 @@ class SelectCategoryExtensionGroup extends MultipleFileMessageGroup {
 	protected $exportEnd   = ');';
 }
 
+class ShowProcesslistMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Show Processlist';
+	protected $id    = 'ext-showprocesslist';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'ShowProcesslist/ShowProcesslist.i18n.php';
+}
+
 class SignDocumentMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Sign Document';
 	protected $id    = 'ext-signdocument';
@@ -1590,22 +1598,6 @@ class SignDocumentMessageGroup extends ExtensionMessageGroup {
 	protected $exportStart = '\'$CODE\' => array(';
 	protected $exportLineP = "\t\t";
 	protected $exportEnd   = "),";
-}
-
-class SpamDiffToolMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Spam Diff Tool';
-	protected $id    = 'ext-spamdifftool';
-
-	protected $arrName     = 'messages';
-	protected $messageFile = 'SpamDiffTool/SpamDiffTool.i18n.php';
-}
-
-class SpamRegExMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Spam Regex';
-	protected $id    = 'ext-spamregex';
-
-	protected $arrName     = 'messages';
-	protected $messageFile = 'SpamRegex/SpamRegex.i18n.php';
 }
 
 class SpecialCreateSignDocumentMessageGroup extends ExtensionMessageGroup {
@@ -1669,6 +1661,22 @@ class SpamBlacklistMessageGroup extends ExtensionMessageGroup {
 	protected $exportPrefix= '';
 	protected $exportLineP = "\t";
 	protected $exportEnd   = '),';
+}
+
+class SpamDiffToolMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Spam Diff Tool';
+	protected $id    = 'ext-spamdifftool';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'SpamDiffTool/SpamDiffTool.i18n.php';
+}
+
+class SpamRegExMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Spam Regex';
+	protected $id    = 'ext-spamregex';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'SpamRegex/SpamRegex.i18n.php';
 }
 
 class SpecialFormMessageGroup extends ExtensionMessageGroup {
