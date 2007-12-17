@@ -476,9 +476,9 @@ class MultipleFileMessageGroup extends ExtensionMessageGroup {
 
 }
 
-class Core500MessageGroup extends CoreMessageGroup {
-	protected $label = 'MediaWiki messages top 500';
-	protected $id    = 'core-500';
+class CoreMostUsedMessageGroup extends CoreMessageGroup {
+	protected $label = 'MediaWiki messages most used';
+	protected $id    = 'core-mostused';
 	protected $meta  = true;
 
 	public function export( &$array, $code ) { return 'Not supported'; }
@@ -486,7 +486,7 @@ class Core500MessageGroup extends CoreMessageGroup {
 
 
 	function getDefinitions() {
-		$data = file_get_contents( dirname(__FILE__) . '/wikimedia-500.txt' );
+		$data = file_get_contents( dirname(__FILE__) . '/wikimedia-mostused.txt' );
 		$messages = explode( "\n", $data );
 		$contents = Language::getMessagesFor( 'en' );
 		$definitions = array();
