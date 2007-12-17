@@ -96,7 +96,7 @@ class FuzzyBot {
 	}
 
 	private function updateMessage( $title, $text ) {
-		global $wgTitle;
+		global $wgTitle, $wgArticle;
 		$wgTitle = Title::newFromText( "Mediawiki:$title" );
 
 		echo "Updating {$wgTitle->getPrefixedText()}... ";
