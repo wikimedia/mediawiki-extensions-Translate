@@ -355,31 +355,35 @@ $messages['dsb'] = array(
 	'translate' => 'Pśełožyś',
 );
 
+/** Greek (Ελληνικά)
+ * @author Consta
+ */
 $messages['el'] = array(
-	'translate' => 'Μεταφράστε',
-	'translate-edit' => 'επεξεργασία',
-	'translate-talk' => 'Συζήτηση',
-	'translate-history' => 'Ιστορικό',
-	'translate-delete' => 'Επαναφορά αλλαγών',
-	'translate-task-view' => 'όλα τα μηνύματα από το',
-	'translate-task-untranslated' => 'όλα τα αμετάφραστα μηνύματα από το',
-	'translate-task-optional' => 'τα προαιρετικά μηνύματα από το',
-	'translate-task-review' => 'τις αλλαγές των επεξεργασιών από το',
-	'translate-task-reviewall' => 'όλες τις αλλαγές των μεταφράσεων στο',
-	'translate-settings' => 'Θέλω $1 $2 στην γλώσσα $3 με όριο τα $4. $5',
-	'translate-paging' => '<div>Παρουσίαση μηνυμάτων $1 έως $2 από τα $3. [ $4 | $5 ]</div>',
-	'translate-submit' => 'Πηγαίνετε',
-	'translate-next' => 'Επόμενη σελίδα',
-	'translate-prev' => 'Προηγούμενη σελίδα',
-	'translate-optional' => '(προαιρετικά)',
-	'translate-ignored' => '(αγνοήστε)',
+	'translate'                     => 'Μεταφράστε',
+	'translate-edit'                => 'επεξεργασία',
+	'translate-talk'                => 'Συζήτηση',
+	'translate-history'             => 'Ιστορικό',
+	'translate-delete'              => 'Επαναφορά αλλαγών',
+	'translate-task-view'           => 'όλα τα μηνύματα από το',
+	'translate-task-untranslated'   => 'όλα τα αμετάφραστα μηνύματα από το',
+	'translate-task-optional'       => 'τα προαιρετικά μηνύματα από το',
+	'translate-task-review'         => 'τις αλλαγές των επεξεργασιών από το',
+	'translate-task-reviewall'      => 'όλες τις αλλαγές των μεταφράσεων στο',
+	'translate-settings'            => 'Θέλω $1 $2 στην γλώσσα $3 με όριο τα $4. $5',
+	'translate-paging'              => '<div>Παρουσίαση μηνυμάτων $1 έως $2 από τα $3. [ $4 | $5 ]</div>',
+	'translate-submit'              => 'Πηγαίνετε',
+	'translate-next'                => 'Επόμενη σελίδα',
+	'translate-prev'                => 'Προηγούμενη σελίδα',
+	'translate-optional'            => '(προαιρετικά)',
+	'translate-ignored'             => '(αγνοήστε)',
 	'translate-edit-message-format' => 'Το σχήμα αυτού του μηνύματος είναι <b>$1</b>.',
-	'translate-edit-message-in' => 'Τρέχουσα έκδοση στα <b>$1</b> ($2):',
-	'translate-magic-form' => 'Γλώσσα: $1 Ενότητα: $2 $3',
-	'translate-magic-submit' => 'Πηγαίνετε',
-	'translate-magic-special' => 'Πρόσθετα ψευδώνυμα σελίδων',
-	'translationchanges' => 'Αλλαγές μετάφρασης',
-	'translationchanges-change' => '$1: [[Mediawiki:$2|$2]] από [[User:$3|$3]]',
+	'translate-edit-message-in'     => 'Τρέχουσα έκδοση στα <b>$1</b> ($2):',
+	'translate-magic-form'          => 'Γλώσσα: $1 Ενότητα: $2 $3',
+	'translate-magic-submit'        => 'Πηγαίνετε',
+	'translate-magic-cm-fallback'   => 'Επιφύλαξη',
+	'translate-magic-special'       => 'Πρόσθετα ψευδώνυμα σελίδων',
+	'translationchanges'            => 'Αλλαγές μετάφρασης',
+	'translationchanges-change'     => '$1: [[Mediawiki:$2|$2]] από [[User:$3|$3]]',
 );
 
 $messages['eo'] = array(
@@ -1219,10 +1223,33 @@ $messages['ss'] = array(
 	'translate-magic-form' => 'Lúlwîmi: $1 Module: $2 $3',
 );
 
+/** Seeltersk (Seeltersk)
+ * @author Pyt
+ * @author Maartenvdbent
+ */
 $messages['stq'] = array(
-	'translate-edit' => 'Beoarbaide',
-	'translate-talk' => 'Diskussion',
-	'translate-history' => 'Versione',
+	'translate'                     => 'Uursät',
+	'translate-edit'                => 'Beoarbaidje',
+	'translate-talk'                => 'Diskussion',
+	'translate-history'             => 'Versione',
+	'translate-delete'              => 'Annerengen uumekiere',
+	'translate-task-view'           => 'Wies aal Systemättergjuchte fon',
+	'translate-task-untranslated'   => 'Wies aal nit uursätte Systemättergjuchte fon',
+	'translate-task-optional'       => 'Bekiek optionoale Ättergjuchte fon',
+	'translate-task-review'         => 'Wröigje Annerengen bit',
+	'translate-task-reviewall'      => 'Wröigje aal Uursättengen in',
+	'translate-task-export'         => 'Exportier aal Uursättengen fon',
+	'translate-task-export-to-file' => 'Exportier aal Uursättengen in ne Doatäi fon',
+	'translate-settings'            => 'Iek moate $1 $2 in ju Sproake $3 mäd as Scheed $4. $5',
+	'translate-paging'              => '<div>Wies Systemättergjuchte fon $1 bit $2 uut $3. [ $4 | $5 ]</div>',
+	'translate-submit'              => 'Hoal',
+	'translate-next'                => 'Naiste Siede',
+	'translate-prev'                => 'Foarige Siede',
+	'translate-optional'            => '(optional)',
+	'translate-ignored'             => '(ignorierd)',
+	'translate-edit-message-format' => 'Dät Formoat fon disse Ättergjucht is <b>$1</b>.',
+	'translate-edit-message-in'     => 'Aktuellen Text in <b>$1</b> ($2):',
+	'translate-edit-message-in-fb'  => 'Aktuellen Text in ju Uutwiek-Sproake <b>$1</b> ($2):',
 );
 
 $messages['su'] = array(
