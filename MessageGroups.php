@@ -1331,6 +1331,19 @@ class MultiUploadMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'MultiUpload/SpecialMultipleUpload.i18n.php';
 }
 
+class NetworkAuthMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Network Auth';
+	protected $id    = 'ext-networkauth';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'NetworkAuth/NetworkAuth.i18n.php';
+
+	function fillBools( &$array ) {
+		$array['networkauth-name']['optional'] = true;
+		$array['networkauth-purltext']['optional'] = true;
+	}
+}
+
 class NewestPagesMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Newest Pages';
 	protected $id    = 'ext-newestpages';
