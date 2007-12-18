@@ -161,7 +161,10 @@ class CoreMessageGroup extends MessageGroup {
 	protected $label = 'MediaWiki messages';
 	protected $id    = 'core';
 
-	public function getMessageFile( $code ) { return "Messages$code.php"; }
+	public function getMessageFile( $code ) {
+		$code = ucfirst( str_replace( '-', '_', $code ) );
+		return "Messages$code.php";
+	}
 
 	public function getMessage( $key, $code ) {
 		$messages = $this->loadMessages( $code );
@@ -169,17 +172,19 @@ class CoreMessageGroup extends MessageGroup {
 	}
 
 	function export( &$array, $code ) {
-		$x = MessageWriter::writeMessagesArray( $this->makeExportArray( &$array ), false );
-		return $x[0];
+		list( $output, ) = MessageWriter::writeMessagesArray( $this->makeExportArray( $array ), false );
+		return $output;
 	}
 
 	public function exportToFile( &$array, $code, $authors ) {
+		$filename = Language::getMessagesFileName( $code );
+
 		$messages = $this->export( $array, $code );
 		$name = TranslateUtils::getLanguageName( $code );
 		$native = TranslateUtils::getLanguageName( $code, true );
-		$authors = array_unique( array_merge( $this->getAuthorsFromFile( $code ), $authors ) );
+		$authors = array_unique( array_merge( $this->getAuthorsFromFile( $filename ), $authors ) );
 		$translators = $this->formatAuthors( $authors );
-		$other = $this->getOther( $code );
+		$other = $this->getOther( $filename );
 		return <<<CODE
 <?php
 /** $name ($native)
@@ -245,8 +250,13 @@ CODE;
 		}
 	}
 
-	private function getAuthorsFromFile( $code ) {
-		$filename = Language::getMessagesFileName( $code );
+	/**
+	 * Reads all \@author tags from the file and returns array of authors.
+	 *
+	 * @param $filename From which file to get the authors.
+	 * @return Array of authors.
+	 */
+	private function getAuthorsFromFile( $filename ) {
 		if ( !file_exists( $filename ) ) { return array(); }
 		$contents = file_get_contents( $filename );
 		$m = array();
@@ -254,8 +264,7 @@ CODE;
 		return $m[1];
 	}
 
-	private function getOther( $code ) {
-		$filename = Language::getMessagesFileName( $code );
+	private function getOther( $filename ) {
 		if ( !file_exists( $filename ) ) { return ''; }
 		$contents = file_get_contents( $filename );
 
@@ -274,15 +283,35 @@ CODE;
 }
 
 abstract class ExtensionMessageGroup extends MessageGroup {
+	/**
+	 * Name of the array where all messages are stored, if applicable.
+	 */
 	protected $arrName      = false;
+	/**
+	 * Name of the function which returns all messages, if applicable.
+	 */
 	protected $functionName = false;
+	/**
+	 * Path to the file where array or function is defined, relative to extensions
+	 * root directory.
+	 */
 	protected $messageFile  = null;
 
+	/**
+	 * The syntax of array definition. $ARRAY is replaced with $this->arrName and
+	 * $CODE is replaced with exported language.
+	 */
 	protected $exportStart = '$$ARRAY[\'$CODE\'] = array(';
+	/**
+	 * The syntax of array closure.
+	 */
 	protected $exportEnd   = ');';
 	protected $exportPrefix= '';
 	protected $exportLineP = "\t";
 
+	/*
+	 * Append (mw ext) to extension labels. This doesn't break sorting.
+	 */
 	public function getLabel() { return $this->label . " (mw ext)"; }
 
 	public function getMessageFile( $code ) { return $this->messageFile; }
@@ -378,6 +407,7 @@ abstract class ExtensionMessageGroup extends MessageGroup {
 	}
 
 	function export( &$array, $code ) {
+		// Replace variables from definition
 		$txt = $this->exportPrefix . str_replace(
 			array( '$ARRAY', '$CODE' ),
 			array( $this->arrName, $code ),
@@ -761,15 +791,15 @@ class ChemFunctionsMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'Chemistry/ChemFunctions.i18n.php';
 
 	function fillBools( &$array ) {
-		$array['ChemFunctions_SearchExplanation']['ignored'] = true;
-		$array['ChemFunctions_EINECS']['optional'] = true;
-		$array['ChemFunctions_CHEBI']['optional'] = true;
-		$array['ChemFunctions_PubChem']['optional'] = true;
-		$array['ChemFunctions_SMILES']['optional'] = true;
-		$array['ChemFunctions_InChI']['optional'] = true;
-		$array['ChemFunctions_RTECS']['optional'] = true;
-		$array['ChemFunctions_KEGG']['optional'] = true;
-		$array['ChemFunctions_DrugBank']['optional'] = true;
+		$array['chemFunctions_SearchExplanation']['ignored'] = true;
+		$array['chemFunctions_EINECS']['optional'] = true;
+		$array['chemFunctions_CHEBI']['optional'] = true;
+		$array['chemFunctions_PubChem']['optional'] = true;
+		$array['chemFunctions_SMILES']['optional'] = true;
+		$array['chemFunctions_InChI']['optional'] = true;
+		$array['chemFunctions_RTECS']['optional'] = true;
+		$array['chemFunctions_KEGG']['optional'] = true;
+		$array['chemFunctions_DrugBank']['optional'] = true;
 	}
 }
 
