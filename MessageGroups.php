@@ -1079,6 +1079,10 @@ class GadgetsExtensionGroup extends MultipleFileMessageGroup {
 
 	protected $exportStart = '$messages = array(';
 	protected $exportEnd   = ');';
+
+	function fillBools( &$array ) {
+		$array['gadgets-definition']['ignored'] = true;
+	}
 }
 
 class GiveRollbackMessageGroup extends ExtensionMessageGroup {
