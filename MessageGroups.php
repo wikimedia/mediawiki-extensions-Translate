@@ -1241,6 +1241,18 @@ class MakeBotMessageGroup extends ExtensionMessageGroup {
 	protected $exportEnd   = '),';
 }
 
+class MakeReviewerMessageGroup extends MultipleFileMessageGroup {
+	protected $label = 'Make Reviewer';
+	protected $id    = 'ext-makereviewer';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'FlaggedRevs/Language/MakeReviewer.i18n.en.php';
+	protected $filePattern = 'FlaggedRevs/Language/MakeReviewer.i18n.$CODE.php';
+
+	protected $exportStart = '$messages = array(';
+	protected $exportEnd   = ');';
+}
+
 class MakeSysopMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Make Sysop';
 	protected $id    = 'ext-makesysop';
@@ -1252,18 +1264,6 @@ class MakeSysopMessageGroup extends ExtensionMessageGroup {
 	protected $exportPrefix= '';
 	protected $exportLineP = "\t";
 	protected $exportEnd   = '),';
-}
-
-class MakeValidateMessageGroup extends MultipleFileMessageGroup {
-	protected $label = 'Make Validate';
-	protected $id    = 'ext-makevalidate';
-
-	protected $arrName     = 'messages';
-	protected $messageFile = 'FlaggedRevs/Language/Makevalidate.i18n.en.php';
-	protected $filePattern = 'FlaggedRevs/Language/Makevalidate.i18n.$CODE.php';
-
-	protected $exportStart = '$messages = array(';
-	protected $exportEnd   = ');';
 }
 
 class MathStatMessageGroup extends ExtensionMessageGroup {
