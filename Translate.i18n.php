@@ -732,7 +732,7 @@ $messages['ja'] = array(
 );
 
 # ‪Қазақша (кирил)‬ (AlefZet)
-$messages['kk-kz'] = array(
+$messages['kk-cyrl'] = array(
 	'translate' => 'Аудару',
 	'translate-edit' => 'өңдеу',
 	'translate-talk' => 'талқылау',
@@ -782,52 +782,104 @@ $messages['kk-kz'] = array(
 );
 
 # ‪Qazaqşa (latın)‬ (AlefZet)
-$messages['kk-tr'] = array(
-	'translate'                     => 'Awdarw',
-	'translate-edit'                => 'öñdew',
-	'translate-talk'                => 'talqılaw',
-	'translate-history'             => 'tarïxı',
-	'translate-task-view'           => 'Mınadan barlıq xabarlardı qaraw',
-	'translate-task-untranslated'   => 'Mınadan barlıq awdarılmağan xabarlardı qaraw',
-	'translate-task-review'         => 'Mınağan jasalğan özgeristerdi qarap şığw',
-	'translate-task-reviewall'      => 'Mınadağı barlıq awdarmalardı qarap şığw',
-	'translate-task-export'         => 'Mınadağı awdarmalardı sırtqa berw',
-	'translate-task-export-to-file' => 'Mınadağı awdarmanı faýl etip sırtqa berw',
-	'translate-settings'            => 'Talabım: $1 $2 $3 tilinde $4 sanımen şektelgendi $5',
-	'translate-paging'              => '<div>Xabarlardıñ körsetlwi: $1 nömirden $2 nömirge (ne barlığı $3). [ $4 | $5 ]</div>',
-	'translate-submit'              => 'Keltirw',
-	'translate-next'                => 'Kelesi bet',
-	'translate-prev'                => 'Aldıñğı bet',
-	'translate-optional'            => '(mindetti emes)',
-	'translate-ignored'             => '(elemeýtin)',
+$messages['kk-latn'] = array(
+	'translate' => 'Awdarw',
+	'translate-edit' => 'öñdew',
+	'translate-talk' => 'talqılaw',
+	'translate-history' => 'tarïxı',
+	'translate-delete' => 'qaýtarw',
+	'translate-task-view' => 'barlıq xabarın qaraw',
+	'translate-task-untranslated' => 'awdarılmağan barlıq xabarın qaraw',
+	'translate-task-optional' => 'mindetti emes xabarların qaraw',
+	'translate-task-review' => 'özgeristerin qarap şığw',
+	'translate-task-reviewall' => 'barlıq awdarmaların qarap şığw',
+	'translate-task-export' => 'awdarmaların sırtqa berw',
+	'translate-task-export-to-file' => 'awdarmaların faýlmen sırtqa berw',
+	'translate-settings' => '$3 tilindegi $2 (kölemimen $4) $1 talap etem. $5',
+	'translate-paging' => '<div>Körsetilgen xabar awqımı: $1 — $2 (ne barlığı $3). [ $4 | $5 ]</div>',
+	'translate-submit' => 'Keltir!',
+	'translate-next' => 'Kelesi bet',
+	'translate-prev' => 'Aldıñğı bet',
+	'translate-optional' => '(mindetti emes)',
+	'translate-ignored' => '(elemeýtin)',
 	'translate-edit-message-format' => 'Bul xabardıñ pişimi — <b>$1</b>.',
-	'translate-edit-message-in'     => 'Ağımdağı jol <b>$1</b> ($2) tilimen:',
-	'translate-edit-message-in-fb'  => 'Ağımdağı jol <b>$1</b> ($2) süýenw tilimen:',
+	'translate-edit-message-in' => 'Ağımdağı jol <b>$1</b> ($2) tilimen:',
+	'translate-edit-message-in-fb' => 'Ağımdağı jol <b>$1</b> ($2) süýenw tilimen:',
+	'translate-magic-pagename' => 'Keñeýtilgen MediaWiki awdarwı',
+	'translate-magic-help' => 'Arnaýı bet bürkemelerin, sïqırlı sözderin, bezendirw mäner atawların jäne esim aya atawların awdara alasız.
+
+Sïqırlı sözderde ağılşınşa nusqasın kirgizwiñiz jön, äýtpese qızmeti toqtaladı. Tağı da birinşi babın (0 ne 1) ärdaýım qaldırıñız.
+
+Arnaýı bet bürkemelerinde jäne sïqırlı sözderinde birneşe awdarma bolwı mümkin. Awdarmalar ütirmen (,) böliktenedi. Bezendirw mäner jäne esim aya atawlarında tek bir awdarma bolwı tïis.
+
+Esim aya awdarmalarında <tt>$1_talk</tt> degen arnaýı keltiriledi. <tt>$1</tt> degen aýnalmalı özdiktik torap atawımen almastırıladı (mısalı, <tt>{{SITENAME}} talqılawı</tt>). Eger sizdiñ tiliñizde torap atawın özgertpeý durıs söýlem qurılmasa, damıtwşılarğa xabarlasıñız.',
+	'translate-magic-form' => 'Tili: $1 Quraşı: $2 $3',
+	'translate-magic-submit' => 'Keltir',
+	'translate-magic-cm-to-be' => 'Bolwğa tïisti',
+	'translate-magic-cm-current' => 'Ağımdağı',
+	'translate-magic-cm-original' => 'Tüpnusqası',
+	'translate-magic-cm-fallback' => 'Süýemeldewi',
+	'translate-magic-cm-save' => 'Saqta!',
+	'translate-magic-cm-export' => 'Sırtqa ber',
+	'translate-magic-cm-updatedusing' => 'Special:Magic degendi qoldanıp saqtalğan',
+	'translate-magic-cm-savefailed' => 'Saqtaw sätsiz boldı',
+	'translate-magic-special' => 'Arnaýı bet bürkemeleri',
+	'translate-magic-words' => 'Sïqır sözder',
+	'translate-magic-skin' => 'Bezendirw mäneri atawları',
+	'translate-magic-namespace' => 'Esim aya atawları',
+	'translationchanges' => 'Awdarma özgeristeri',
+	'translate-page-no-such-language' => 'Keltirilgen til belgilemesi jaramsız',
 );
-# ‪قازاقشا (اراب)‬ (AlefZet - 20)
-$messages['kk-cn'] = array(
-	'translate'                     => 'اۋدارۋ',
-	'translate-edit'                => 'ٶڭدەۋ',
-	'translate-talk'                => 'تالقىلاۋ',
-	'translate-history'             => 'تاريحى',
-	'translate-task-view'           => 'مىنادان بارلىق حابارلاردى قاراۋ',
-	'translate-task-untranslated'   => 'مىنادان بارلىق اۋدارىلماعان حابارلاردى قاراۋ',
-	'translate-task-review'         => 'مىناعان جاسالعان ٶزگەرٸستەردٸ قاراپ شىعۋ',
-	'translate-task-reviewall'      => 'مىناداعى بارلىق اۋدارمالاردى قاراپ شىعۋ',
-	'translate-task-export'         => 'مىناداعى اۋدارمالاردى سىرتقا بەرۋ',
-	'translate-task-export-to-file' => 'مىناداعى اۋدارمانى فايل ەتٸپ سىرتقا بەرۋ',
-	'translate-settings'            => 'تالابىم: $1 $2 $3 تٸلٸندە $4 سانىمەن شەكتەلگەندٸ $5',
-	'translate-paging'              => '<div>حابارلاردىڭ كٶرسەتلۋٸ: $1 نٶمٸردەن $2 نٶمٸرگە (نە بارلىعى $3). [ $4 | $5 ]</div>',
-	'translate-submit'              => 'كەلتٸرۋ',
-	'translate-next'                => 'كەلەسٸ بەت',
-	'translate-prev'                => 'الدىڭعى بەت',
-	'translate-optional'            => '(مٸندەتتٸ ەمەس)',
-	'translate-ignored'             => '(ەلەمەيتٸن)',
+
+# ‪قازاقشا (اراب)‬ (AlefZet)
+$messages['kk-arab'] = array(
+	'translate' => 'اۋدارۋ',
+	'translate-edit' => 'ٶڭدەۋ',
+	'translate-talk' => 'تالقىلاۋ',
+	'translate-history' => 'تاريحى',
+	'translate-delete' => 'قايتارۋ',
+	'translate-task-view' => 'بارلىق حابارىن قاراۋ',
+	'translate-task-untranslated' => 'اۋدارىلماعان بارلىق حابارىن قاراۋ',
+	'translate-task-optional' => 'مٸندەتتٸ ەمەس حابارلارىن قاراۋ',
+	'translate-task-review' => 'ٶزگەرٸستەرٸن قاراپ شىعۋ',
+	'translate-task-reviewall' => 'بارلىق اۋدارمالارىن قاراپ شىعۋ',
+	'translate-task-export' => 'اۋدارمالارىن سىرتقا بەرۋ',
+	'translate-task-export-to-file' => 'اۋدارمالارىن فايلمەن سىرتقا بەرۋ',
+	'translate-settings' => '$3 تٸلٸندەگٸ $2 (كٶلەمٸمەن $4) $1 تالاپ ەتەم. $5',
+	'translate-paging' => '<div>كٶرسەتٸلگەن حابار اۋقىمى: $1 — $2 (نە بارلىعى $3). [ $4 | $5 ]</div>',
+	'translate-submit' => 'كەلتٸر!',
+	'translate-next' => 'كەلەسٸ بەت',
+	'translate-prev' => 'الدىڭعى بەت',
+	'translate-optional' => '(مٸندەتتٸ ەمەس)',
+	'translate-ignored' => '(ەلەمەيتٸن)',
 	'translate-edit-message-format' => 'بۇل حاباردىڭ پٸشٸمٸ — <b>$1</b>.',
-	'translate-edit-message-in'     => 'اعىمداعى جول <b>$1</b> ($2) تٸلٸمەن:',
-	'translate-edit-message-in-fb'  => 'اعىمداعى جول <b>$1</b> ($2) سٷيەنۋ تٸلٸمەن:',
+	'translate-edit-message-in' => 'اعىمداعى جول <b>$1</b> ($2) تٸلٸمەن:',
+	'translate-edit-message-in-fb' => 'اعىمداعى جول <b>$1</b> ($2) سٷيەنۋ تٸلٸمەن:',
+	'translate-magic-pagename' => 'كەڭەيتٸلگەن MediaWiki اۋدارۋى',
+	'translate-magic-help' => 'ارنايى بەت بٷركەمەلەرٸن, سيقىرلى سٶزدەرٸن, بەزەندٸرۋ مٵنەر اتاۋلارىن جٵنە ەسٸم ايا اتاۋلارىن اۋدارا الاسىز.
+
+سيقىرلى سٶزدەردە اعىلشىنشا نۇسقاسىن كٸرگٸزۋٸڭٸز جٶن, ٵيتپەسە قىزمەتٸ توقتالادى. تاعى دا بٸرٸنشٸ بابىن (0 نە 1) ٵردايىم قالدىرىڭىز.
+
+ارنايى بەت بٷركەمەلەرٸندە جٵنە سيقىرلى سٶزدەرٸندە بٸرنەشە اۋدارما بولۋى مٷمكٸن. اۋدارمالار ٷتٸرمەن (,) بٶلٸكتەنەدٸ. بەزەندٸرۋ مٵنەر جٵنە ەسٸم ايا اتاۋلارىندا تەك بٸر اۋدارما بولۋى تيٸس.
+
+ەسٸم ايا اۋدارمالارىندا <tt>$1_talk</tt> دەگەن ارنايى كەلتٸرٸلەدٸ. <tt>$1</tt> دەگەن اينالمالى ٶزدٸكتٸك توراپ اتاۋىمەن الماستىرىلادى (مىسالى, <tt>{{SITENAME}} تالقىلاۋى</tt>). ەگەر سٸزدٸڭ تٸلٸڭٸزدە توراپ اتاۋىن ٶزگەرتپەي دۇرىس سٶيلەم قۇرىلماسا, دامىتۋشىلارعا حابارلاسىڭىز.',
+	'translate-magic-form' => 'تٸلٸ: $1 قۇراشى: $2 $3',
+	'translate-magic-submit' => 'كەلتٸر',
+	'translate-magic-cm-to-be' => 'بولۋعا تيٸستٸ',
+	'translate-magic-cm-current' => 'اعىمداعى',
+	'translate-magic-cm-original' => 'تٷپنۇسقاسى',
+	'translate-magic-cm-fallback' => 'سٷيەمەلدەۋٸ',
+	'translate-magic-cm-save' => 'ساقتا!',
+	'translate-magic-cm-export' => 'سىرتقا بەر',
+	'translate-magic-cm-updatedusing' => 'Special:Magic دەگەندٸ قولدانىپ ساقتالعان',
+	'translate-magic-cm-savefailed' => 'ساقتاۋ سٵتسٸز بولدى',
+	'translate-magic-special' => 'ارنايى بەت بٷركەمەلەرٸ',
+	'translate-magic-words' => 'سيقىر سٶزدەر',
+	'translate-magic-skin' => 'بەزەندٸرۋ مٵنەرٸ اتاۋلارى',
+	'translate-magic-namespace' => 'ەسٸم ايا اتاۋلارى',
+	'translationchanges' => 'اۋدارما ٶزگەرٸستەرٸ',
+	'translate-page-no-such-language' => 'كەلتٸرٸلگەن تٸل بەلگٸلەمەسٸ جارامسىز',
 );
-$messages['kk'] = $messages['kk-kz'];
 
 $messages['la'] = array(
 	'translate' => 'Traducere',
@@ -1427,6 +1479,13 @@ $messages['zh-hant'] = array(
 	'translate-edit-message-in-fb' => '在 <b>$1</b> 於倚靠語言中的現行字串 ($2):',
 );
 
+/* Kazakh fallbacks */
+$messages['kk-kz'] = $messages['kk-cyrl'];
+$messages['kk-tr'] = $messages['kk-latn'];
+$messages['kk-cn'] = $messages['kk-arab'];
+$messages['kk'] = $messages['kk-cyrl'];
+
+/* Chinese fallbacks */
 $messages['zh'] = $messages['zh-hans'];
 $messages['zh-cn'] = $messages['zh-hans'];
 $messages['zh-hk'] = $messages['zh-hant'];
