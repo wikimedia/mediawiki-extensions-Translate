@@ -507,7 +507,7 @@ class MultipleFileMessageGroup extends ExtensionMessageGroup {
 }
 
 class CoreMostUsedMessageGroup extends CoreMessageGroup {
-	protected $label = 'MediaWiki messages most used';
+	protected $label = 'MediaWiki messages (most used)';
 	protected $id    = 'core-mostused';
 	protected $meta  = true;
 

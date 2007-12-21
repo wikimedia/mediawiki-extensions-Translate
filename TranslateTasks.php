@@ -379,7 +379,7 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 		}
 
 	
-		$out .= "# Translation of $label to $languageName\n# This is experimental feature\n# It is currently impossible to import Gettext files\n";
+		$out .= "# Translation of $label to $languageName\n# This is an experimental feature\n# It is currently impossible to import Gettext files\n";
 		$out .= self::formatmsg( '', $headerlines  );
 
 
