@@ -187,7 +187,10 @@ class ViewUntranslatedTask extends ViewMessagesTask {
 		);
 	}
 
-	// TODO: mention fuzzy
+	/**
+	 * Filters all translated messages. Fuzzy messages are not considered to be
+	 * translated, because they need attention from translators.
+	 */
 	protected function filterTranslated() {
 		foreach ( $this->messages->keys() as $key ) {
 			if ( $this->messages[$key]->translation !== null && !$this->messages[$key]->fuzzy ) {
@@ -362,6 +365,7 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 		$headers = array();
 		$headers['Project-Id-Version'] = 'MediaWiki ' . SpecialVersion::getVersion();
 		$headers['Report-Msgid-Bugs-To'] = 'Bugzilla?';
+		// TODO: sprintfDate doesn't support any time zone flags
 		$headers['POT-Creation-Date'] = $wgLang->sprintfDate( 'xnY-xnm-xnd xnH:xni:xns O', $now );
 		$headers['Language-Team'] = TranslateUtils::getLanguageName( $this->options->getLanguage() );
 		$headers['Content-Type'] = 'text-plain; charset=UTF-8';
@@ -374,7 +378,7 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 		}
 
 	
-		$out .= "# Translation of $label to $languageName\n";
+		$out .= "# Translation of $label to $languageName\n# This is experimental feature\n# It is currently impossible to import Gettext files\n";
 		$out .= self::formatmsg( '', $headerlines  );
 
 
