@@ -1764,7 +1764,7 @@ class SpecialFileListMessageGroup extends ExtensionMessageGroup {
 	protected $id    = 'ext-specialfilelist';
 
 	protected $arrName     = 'messages';
-	protected $messageFile = 'SpecialFileList/SpecialFileList.i18n.php';
+	protected $messageFile = 'SpecialFileList/SpecialFilelist.i18n.php';
 }
 
 class SpecialFormMessageGroup extends ExtensionMessageGroup {
