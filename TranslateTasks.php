@@ -355,7 +355,9 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 	protected $id = 'export-as-po';
 
 	public function output() {
-		global $wgLang, $IP;
+		global $wgLang, $IP, $wgOut;
+		$wgOut->disable();
+		header( 'Content-type: text/plain; charset=UTF-8' );
 
 		$out = '';
 		$now = wfTimestampNow();
@@ -417,7 +419,7 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 
 		}
 
-		return Xml::tags( 'textarea', array( 'id' => 'wpTextbox1', 'rows' => '50' ), $out );
+		echo $out;
 	}
 
 	private static function escape( $line ) {
