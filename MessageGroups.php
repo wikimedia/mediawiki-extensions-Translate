@@ -868,6 +868,19 @@ class ConfirmEditMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'ConfirmEdit/ConfirmEdit.i18n.php';
 }
 
+class ConfirmEditFancyCaptchaMessageGroup extends ExtensionMessageGroup {
+	protected $label   = 'ConfirmEdit Fancy Captcha';
+	protected $id      = 'ext-confirmfancycaptcha';
+
+	protected $arrName = 'messages';
+	protected $messageFile  = 'ConfirmEdit/FancyCaptcha.i18n.php';
+
+	protected $exportStart = '\'$CODE\' => array(';
+	protected $exportPrefix= '';
+	protected $exportLineP = "\t";
+	protected $exportEnd   = '),';
+}
+
 class ContactPageExtensionGroup extends MultipleFileMessageGroup {
 	protected $label = 'Contact Page';
 	protected $id    = 'ext-contactpage';
@@ -1004,19 +1017,6 @@ class ExpandTemplatesMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'ExpandTemplates/ExpandTemplates.i18n.php';
 }
 
-class FancyCaptchaMessageGroup extends ExtensionMessageGroup {
-	protected $label   = 'Fancy Captcha';
-	protected $id      = 'ext-fancycaptcha';
-
-	protected $arrName = 'messages';
-	protected $messageFile  = 'ConfirmEdit/FancyCaptcha.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportPrefix= '';
-	protected $exportLineP = "\t";
-	protected $exportEnd   = '),';
-}
-
 class FCKeditorExtensionGroup extends MultipleFileMessageGroup {
 	protected $label = 'FCKeditor';
 	protected $id    = 'ext-fckeditor';
@@ -1036,6 +1036,18 @@ class FlaggedRevsMessageGroup extends MultipleFileMessageGroup {
 	protected $arrName     = 'messages';
 	protected $messageFile = 'FlaggedRevs/Language/FlaggedRevsPage.i18n.en.php';
 	protected $filePattern = 'FlaggedRevs/Language/FlaggedRevsPage.i18n.$CODE.php';
+
+	protected $exportStart = '$messages = array(';
+	protected $exportEnd   = ');';
+}
+
+class FlaggedRevsMakeReviewerMessageGroup extends MultipleFileMessageGroup {
+	protected $label = 'Flagged Revs Make Reviewer';
+	protected $id    = 'ext-makereviewer';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'FlaggedRevs/Language/MakeReviewer.i18n.en.php';
+	protected $filePattern = 'FlaggedRevs/Language/MakeReviewer.i18n.$CODE.php';
 
 	protected $exportStart = '$messages = array(';
 	protected $exportEnd   = ');';
@@ -1239,18 +1251,6 @@ class MakeBotMessageGroup extends ExtensionMessageGroup {
 	protected $exportPrefix= '';
 	protected $exportLineP = "\t";
 	protected $exportEnd   = '),';
-}
-
-class MakeReviewerMessageGroup extends MultipleFileMessageGroup {
-	protected $label = 'Make Reviewer';
-	protected $id    = 'ext-makereviewer';
-
-	protected $arrName     = 'messages';
-	protected $messageFile = 'FlaggedRevs/Language/MakeReviewer.i18n.en.php';
-	protected $filePattern = 'FlaggedRevs/Language/MakeReviewer.i18n.$CODE.php';
-
-	protected $exportStart = '$messages = array(';
-	protected $exportEnd   = ');';
 }
 
 class MakeSysopMessageGroup extends ExtensionMessageGroup {
@@ -1680,9 +1680,9 @@ class SignDocumentMessageGroup extends ExtensionMessageGroup {
 	protected $exportEnd   = "),";
 }
 
-class SpecialCreateSignDocumentMessageGroup extends ExtensionMessageGroup {
+class SignDocumentSpecialCreateMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Sign Document Special Create';
-	protected $id    = 'ext-specialcreatesigndocument';
+	protected $id    = 'ext-signdocumentspecialcreate';
 
 	protected $arrName     = 'allMessages';
 	protected $messageFile = 'SignDocument/SpecialCreateSignDocument.i18n.php';
@@ -1693,9 +1693,9 @@ class SpecialCreateSignDocumentMessageGroup extends ExtensionMessageGroup {
 	protected $exportEnd   = "),";
 }
 
-class SpecialSignDocumentMessageGroup extends ExtensionMessageGroup {
+class SignDocumentSpecialMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Sign Document Special';
-	protected $id    = 'ext-specialsigndocument';
+	protected $id    = 'ext-signdocumentspecial';
 
 	protected $arrName     = 'allMessages';
 	protected $messageFile = 'SignDocument/SpecialSignDocument.i18n.php';

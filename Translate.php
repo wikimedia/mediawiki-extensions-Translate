@@ -11,7 +11,7 @@ if (!defined('MEDIAWIKI')) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '6.2' );
+define( 'TRANSLATE_VERSION', '6.3' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'Translate',
@@ -96,6 +96,7 @@ $wgTranslateAC = array(
 'ext-commentspammer'        => 'CommentSpammerMessageGroup',
 'ext-confirmaccount'        => 'ConfirmAccountMessageGroup',
 'ext-confirmedit'           => 'ConfirmEditMessageGroup',
+'ext-confirmeditfancycaptcha' => 'ConfirmEditFancyCaptchaMessageGroup',
 'ext-contactpage'           => 'ContactPageExtensionGroup',
 'ext-contributionscores'    => 'ContributionScoresMessageGroup',
 'ext-contributionseditcount'=> 'ContributionseditcountMessageGroup',
@@ -109,11 +110,11 @@ $wgTranslateAC = array(
 'ext-editcount'             => 'EditcountMessageGroup',
 'ext-expandtemplates'       => 'ExpandTemplatesMessageGroup',
 'ext-eval'                  => 'EvalMessageGroup',
-'ext-fancycaptcha'          => 'FancyCaptchaMessageGroup',
 'ext-fckeditor'             => 'FCKeditorExtensionGroup',
 'ext-filepath'              => 'FilePathMessageGroup',
 'ext-findspam'              => 'FindSpamMessageGroup',
 'ext-flaggedrevs'           => 'FlaggedRevsMessageGroup',
+'ext-flaggedrevsmakereviewer' => 'FlaggedRevsMakeReviewerMessageGroup',
 'ext-formatemail'           => 'FormatEmailMessageGroup',
 'ext-gadgets'               => 'GadgetsExtensionGroup',
 'ext-giverollback'          => 'GiveRollbackMessageGroup',
@@ -131,7 +132,6 @@ $wgTranslateAC = array(
 'ext-lucenesearch'          => 'LuceneSearchMessageGroup',
 'ext-makebot'               => 'MakeBotMessageGroup',
 'ext-makesysop'             => 'MakeSysopMessageGroup',
-'ext-makereviewer'          => 'MakeReviewerMessageGroup',
 'ext-mathstat'              => 'MathStatMessageGroup',
 'ext-mediafunctions'        => 'MediaFunctionsMessageGroup',
 'ext-microid'               => 'MicroIDMessageGroup',
@@ -169,8 +169,8 @@ $wgTranslateAC = array(
 'ext-selectcategory'        => 'SelectCategoryExtensionGroup',
 'ext-showprocesslist'       => 'ShowProcesslistMessageGroup',
 'ext-signdocument'          => 'SignDocumentMessageGroup',
-'ext-specialcreatesigndocument' => 'SpecialCreateSignDocumentMessageGroup',
-'ext-specialsigndocument'   => 'SpecialSignDocumentMessageGroup',
+'ext-signdocumentspecial'   => 'SignDocumentSpecialMessageGroup',
+'ext-signdocumentspecialcreate' => 'SignDocumentSpecialCreateMessageGroup',
 'ext-sitematrix'            => 'SiteMatrixMessageGroup',
 'ext-smoothgallery'         => 'SmoothGalleryExtensionGroup',
 'ext-spamblacklist'         => 'SpamBlacklistMessageGroup',
