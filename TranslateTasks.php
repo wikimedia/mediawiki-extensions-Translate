@@ -374,6 +374,8 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 		$headers['Content-Type'] = 'text-plain; charset=UTF-8';
 		$headers['Content-Transfer-Encoding'] = '8bit';
 		$headers['X-Generator'] = 'MediaWiki Translate extension ' . TRANSLATE_VERSION;
+		$headers['X-Language-Code'] = $this->options->getLanguage();
+		$headers['X-Message-Group'] = $this->messageGroup->getId();
 
 		$headerlines = array('');
 		foreach ( $headers as $key => $value ) {
@@ -381,7 +383,7 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 		}
 
 	
-		$out .= "# Translation of $label to $languageName\n# This is an experimental feature\n# It is currently impossible to import Gettext files\n";
+		$out .= "# Translation of $label to $languageName\n# This is an experimental feature\n";
 		$out .= self::formatmsg( '', $headerlines  );
 
 
