@@ -83,10 +83,10 @@ abstract class TranslateTask {
 		$authors = array();
 		foreach ( $this->messages->keys() as $key ) {
 			// Check if there is authors
-			$authors = $this->messages[$key]->authors;
-			if ( !count($authors) ) continue;
+			$_authors = $this->messages[$key]->authors;
+			if ( !count($_authors) ) continue;
 
-			foreach ( $authors as $author ) {
+			foreach ( $_authors as $author ) {
 				if ( !isset($authors[$author]) ) {
 					$authors[$author] = 1;
 				} else {
