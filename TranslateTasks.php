@@ -277,7 +277,8 @@ class ReviewAllMessagesTask extends ReviewMessagesTask {
 			TranslateUtils::makeListing(
 				$this->messages,
 				$this->options->getLanguage(),
-				$this->messageGroup->getId()
+				$this->messageGroup->getId(),
+				true
 			) .
 			$tablefooter;
 	}
