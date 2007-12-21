@@ -52,6 +52,7 @@ abstract class TranslateTask {
 	public final function init( MessageGroup $messageGroup, TaskOptions $options ) {
 		$this->messageGroup = $messageGroup;
 		$this->options = $options;
+		$this->messages = new MessageCollection;
 	}
 
 	protected $process = array();
@@ -69,8 +70,7 @@ abstract class TranslateTask {
 	protected function doPaging() {
 		$total = count( $this->messages );
 
-		$this->messages = array_slice(
-			$this->messages,
+		$this->messages->slice(
 			$this->options->getOffset(),
 			$this->options->getLimit()
 		);
@@ -81,12 +81,17 @@ abstract class TranslateTask {
 
 	protected function getAuthors() {
 		$authors = array();
-		foreach ( array_keys($this->messages) as $key ) {
-			if ( !$this->messages[$key]['author'] ) continue;
-			if ( !isset($authors[$this->messages[$key]['author']]) ) {
-				$authors[$this->messages[$key]['author']] = 1;
-			} else {
-				$authors[$this->messages[$key]['author']]++;
+		foreach ( $this->messages->keys() as $key ) {
+			// Check if there is authors
+			$authors = $this->messages[$key]->authors;
+			if ( !count($authors) ) continue;
+
+			foreach ( $authors as $author ) {
+				if ( !isset($authors[$author]) ) {
+					$authors[$author] = 1;
+				} else {
+					$authors[$author]++;
+				}
 			}
 		}
 		return $authors;
@@ -109,31 +114,46 @@ class ViewMessagesTask extends TranslateTask {
 	}
 
 	protected function preinit() {
-		$this->messages = TranslateUtils::initializeMessages( $this->messageGroup->getDefinitions() );
-		$this->messageGroup->fillBools( &$this->messages );
+		$definitions = $this->messageGroup->getDefinitions();
+		foreach ( $definitions as $key => $definition ) {
+			$this->messages->add( new TMessage( $key, $definition ) );
+		}
+
+		$bools = $this->messageGroup->getBools();
+		foreach ( $bools['optional'] as $key ) {
+			if ( isset($this->messages[$key]) ) {
+				$this->messages[$key]->optional = true;
+			}
+		}
+
+		foreach ( $bools['ignored'] as $key ) {
+			if ( isset($this->messages[$key]) ) {
+				$this->messages[$key]->ignored = true;
+			}
+		}
 		
 	}
 
 	protected function filterIgnored() {
-		foreach ( array_keys( $this->messages ) as $key ) {
-			if ( $this->messages[$key]['ignored'] ) {
-				unset( $this->messages[$key] );
+		foreach ( $this->messages->keys() as $key ) {
+			if ( $this->messages[$key]->ignored ) {
+				unset($this->messages[$key]);
 			}
 		}
 	}
 
 	protected function filterOptional() {
-		foreach ( array_keys( $this->messages ) as $key ) {
-			if ( $this->messages[$key]['optional'] ) {
+		foreach ( $this->messages->keys() as $key ) {
+			if ( $this->messages[$key]->optional ) {
 				unset( $this->messages[$key] );
 			}
 		}
 	}
 
 	protected function postinit() {
-		TranslateUtils::fillExistence( &$this->messages, $this->options->getLanguage() );
-		TranslateUtils::fillContents( &$this->messages, $this->options->getLanguage() );
-		$this->messageGroup->fill( &$this->messages, $this->options->getLanguage() );
+		TranslateUtils::fillExistence( $this->messages, $this->options->getLanguage() );
+		TranslateUtils::fillContents( $this->messages, $this->options->getLanguage() );
+		$this->messageGroup->fill( $this->messages, $this->options->getLanguage() );
 		$this->messageGroup->reset();
 	}
 
@@ -143,7 +163,11 @@ class ViewMessagesTask extends TranslateTask {
 
 		return
 			$tableheader .
-			TranslateUtils::makeListing( $this->messages, $this->options->getLanguage(), $this->messageGroup->getId() ) .
+			TranslateUtils::makeListing(
+				$this->messages,
+				$this->options->getLanguage(),
+				$this->messageGroup->getId()
+			) .
 			$tablefooter;
 	}
 
@@ -163,9 +187,10 @@ class ViewUntranslatedTask extends ViewMessagesTask {
 		);
 	}
 
+	// TODO: mention fuzzy
 	protected function filterTranslated() {
-		foreach ( $this->messages as $key => $o ) {
-			if ( ($o['database'] !== null || $o['infile'] !== null ) && !strstr($o['database'], TRANSLATE_FUZZY) ) {
+		foreach ( $this->messages->keys() as $key ) {
+			if ( $this->messages[$key]->translation !== null && !$this->messages[$key]->fuzzy ) {
 				unset( $this->messages[$key] );
 			}
 		}
@@ -187,8 +212,8 @@ class ViewOptionalTask extends ViewMessagesTask {
 	}
 
 	protected function filterNonOptional() {
-		foreach ( array_keys( $this->messages ) as $key ) {
-			if ( !$this->messages[$key]['optional'] ) {
+		foreach ( $this->messages->keys() as $key ) {
+			if ( !$this->messages[$key]->optional ) {
 				unset( $this->messages[$key] );
 			}
 		}
@@ -204,16 +229,14 @@ class ReviewMessagesTask extends ViewMessagesTask {
 			array( $this, 'preinit' ),
 			array( $this, 'filterIgnored' ),
 			array( $this, 'postinit' ),
-			array( $this, 'filterUntranslated' ),
+			array( $this, 'filterUnchanged' ),
 			array( $this, 'doPaging' ),
 		);
 	}
 
-	protected function filterUntranslated() {
-		foreach ( $this->messages as $key => $o ) {
-			if ( $o['pageexists'] && ( $o['infile'] !== $o['database'] ) ) {
-				$this->messages[$key]['changed'] = true;
-			} else {
+	protected function filterUnchanged() {
+		foreach ( $this->messages->keys() as $key ) {
+			if ( !$this->messages[$key]->changed ) {
 				unset( $this->messages[$key] );
 			}
 		}
@@ -229,20 +252,31 @@ class ReviewAllMessagesTask extends ReviewMessagesTask {
 			array( $this, 'preinit' ),
 			array( $this, 'filterIgnored' ),
 			array( $this, 'postinit' ),
-			array( $this, 'filterUnchanged' ),
+			array( $this, 'filterUntranslated' ),
 			array( $this, 'doPaging' ),
 		);
 	}
 
-	protected function filterUnchanged() {
-		foreach ( $this->messages as $key => $o ) {
-			$translation = $o['database'] ? $o['database'] : $o['infile'];
-			if ( $o['pageexists'] || ( $translation !== null && $translation != $o['definition'] ) ) {
-				$this->messages[$key]['changed'] = true;
-			} else {
+	protected function filterUntranslated() {
+		foreach ( $this->messages->keys() as $key ) {
+			if ( !$this->messages[$key]->translated ) {
 				unset( $this->messages[$key] );
 			}
 		}
+	}
+
+	protected function output() {
+		$tableheader = TranslateUtils::tableHeader( $this->messageGroup->getLabel() );
+		$tablefooter = Xml::closeElement( 'table' );
+
+		return
+			$tableheader .
+			TranslateUtils::makeListing(
+				$this->messages,
+				$this->options->getLanguage(),
+				$this->messageGroup->getId()
+			) .
+			$tablefooter;
 	}
 
 }
@@ -313,6 +347,119 @@ class ExportToFileMessagesTask extends ExportMessagesTask {
 	}
 }
 
+class ExportAsPoMessagesTask extends ExportMessagesTask {
+	protected $id = 'export-as-po';
+
+	public function output() {
+		global $wgLang, $IP;
+
+		$out = '';
+		$now = wfTimestampNow();
+		$label = $this->messageGroup->getLabel();
+		$languageName = TranslateUtils::getLanguageName( $this->options->getLanguage() );
+
+
+		$headers = array();
+		$headers['Project-Id-Version'] = 'MediaWiki ' . SpecialVersion::getVersion();
+		$headers['Report-Msgid-Bugs-To'] = 'Bugzilla?';
+		$headers['POT-Creation-Date'] = $wgLang->sprintfDate( 'xnY-xnm-xnd xnH:xni:xns O', $now );
+		$headers['Language-Team'] = TranslateUtils::getLanguageName( $this->options->getLanguage() );
+		$headers['Content-Type'] = 'text-plain; charset=UTF-8';
+		$headers['Content-Transfer-Encoding'] = '8bit';
+		$headers['X-Generator'] = 'MediaWiki Translate extension ' . TRANSLATE_VERSION;
+
+		$headerlines = array('');
+		foreach ( $headers as $key => $value ) {
+			$headerlines[] = "$key: $value\n";
+		}
+
+	
+		$out .= "# Translation of $label to $languageName\n";
+		$out .= self::formatmsg( '', $headerlines  );
+
+
+		require( $IP . '/maintenance/language/messages.inc' );
+
+		foreach ( $this->messages as $key => $m) {
+			$flags = array();
+
+			# CASE1: ignored
+			if ( $m->ignored ) continue;
+
+			$translation = $m->translation;
+			# CASE2: no translation
+			if ( $translation === null ) $translation = '';
+
+			# CASE3: optional messages; accept only if different
+			if ( $m->optional ) $flags[] = 'optional';
+
+			# CASE4: don't export non-translations unless translated in wiki
+			if( !$m->pageExists && $translation === $m->definition ) $translation = '';
+
+			# Remove fuzzy markings before export
+			if ( strpos( $translation, TRANSLATE_FUZZY ) !== false ) {
+				$translation = str_replace( TRANSLATE_FUZZY, '', $translation );
+				$flags[] = 'fuzzy';
+			}
+
+			$comments = array( $key );
+			if ( isset( $wgMessageComments[$key] ) ) {
+				$comments[] = $wgMessageComments[$key];
+			}
+
+			$out .= self::formatcomments( $comments, $flags );
+			$out .= self::formatmsg( $m->definition, $translation, $key, $flags );
+
+		}
+
+		return Xml::tags( 'textarea', array( 'id' => 'wpTextbox1', 'rows' => '50' ), $out );
+	}
+
+	private static function escape( $line ) {
+		$line = addcslashes( $line, '\\"' );
+		$line = str_replace( "\n", '\n', $line );
+		$line = '"' . $line . '"';
+		return $line;
+	}
+
+	private static function formatcomments( $comments = false, $flags = false ) {
+		$output = array();
+		if ( $comments ) {
+			if ( !is_array( $comments ) ) {
+				$comments = array( $comments );
+			}
+			$output[] = '#. ' . implode( "\n#. ", $comments );
+		}
+
+		if ( $flags ) {
+			$output[] = '#, ' . implode( ', ', $flags );
+		}
+
+		if ( !count( $output ) ) {
+			$output[] = '#:';
+		}
+
+		return implode( "\n", $output ) . "\n";
+	}
+
+	private static function formatmsg( $msgid, $msgstr, $msgctxt = false ) {
+		$output = array();
+
+		if ( $msgctxt ) {
+			$output[] = 'msgctxt ' . self::escape( $msgctxt );
+		}
+
+		if ( !is_array( $msgid ) ) { $msgid = array( $msgid ); }
+		if ( !is_array( $msgstr ) ) { $msgstr = array( $msgstr ); }
+		$output[] = 'msgid ' . implode( "\n", array_map( array( __CLASS__, 'escape' ), $msgid ) );
+		$output[] = 'msgstr ' . implode( "\n", array_map( array( __CLASS__, 'escape' ), $msgstr ) );
+		
+		$out = implode( "\n", $output ) . "\n\n";
+		return $out;
+
+	}
+}
+
 class TranslateTasks {
 	private static $aTasks = array(
 		'view'           => 'ViewMessagesTask',
@@ -322,6 +469,7 @@ class TranslateTasks {
 		'reviewall'      => 'ReviewAllMessagesTask',
 		'export'         => 'ExportMessagesTask',
 		'export-to-file' => 'ExportToFileMessagesTask',
+		'export-as-po'   => 'ExportasPoMessagesTask',
 	);
 
 	public static function getTasks() {

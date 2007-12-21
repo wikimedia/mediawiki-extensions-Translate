@@ -15,6 +15,7 @@ $messages['en'] = array(
 	'translate-task-reviewall' => 'Review all translations in',
 	'translate-task-export' => 'Export translations from',
 	'translate-task-export-to-file' => 'Export translation to file from',
+	'translate-task-export-as-po' => 'Export translation in Gettext format',
 
 	'translate-settings' => 'I want to $1 $2 in language $3 with limit $4. $5',
 	'translate-paging' => '<div>Showing messages from $1 to $2 of $3. [ $4 | $5 ]</div>',

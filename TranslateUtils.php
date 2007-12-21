@@ -43,17 +43,17 @@ class TranslateUtils {
 		return $messages;
 	}
 
-	public static function fillExistence( Array &$messages, $language ) {
+	public static function fillExistence( MessageCollection $messages, $language ) {
 		self::doExistenceQuery();
-		foreach ( array_keys($messages) as $key ) {
-			$messages[$key]['pageexists'] = isset( self::$pageExists[self::title( $key, $language )] );
-			$messages[$key]['talkexists'] = isset( self::$talkExists[self::title( $key, $language )] );
+		foreach ( $messages->keys() as $key ) {
+			$messages[$key]->pageExists = isset( self::$pageExists[self::title( $key, $language )] );
+			$messages[$key]->talkExists = isset( self::$talkExists[self::title( $key, $language )] );
 		}
 	}
 
-	public static function fillContents( Array &$messages, $language ) {
+	public static function fillContents( MessageCollection $messages, $language ) {
 		$titles = array();
-		foreach ( array_keys($messages) as $key ) {
+		foreach ( $messages->keys() as $key ) {
 			$titles[self::title( $key, $language )] = null;
 		}
 		// Determine for which messages are not fetched already
@@ -73,11 +73,11 @@ class TranslateUtils {
 			self::getContents( array_keys( $missing ) );
 		}
 
-		foreach ( array_keys($messages) as $key ) {
+		foreach ( $messages->keys() as $key ) {
 			$title = self::title( $key, $language );
 			if ( isset( self::$contents[$title] ) ) {
-				$messages[$key]['database'] = self::$contents[$title];
-				$messages[$key]['author'] = self::$editors[$title];
+				$messages[$key]->database = self::$contents[$title];
+				$messages[$key]->addAuthor( self::$editors[$title] );
 			}
 		}
 
@@ -176,7 +176,7 @@ class TranslateUtils {
 		return $tableheader;
 	}
 
-	public static function makeListing( $messages, $language, $group ) {
+	public static function makeListing( MessageCollection $messages, $language, $group, $review = false ) {
 		global $wgUser;
 		$sk = $wgUser->getSkin();
 		wfLoadExtensionMessages( 'Translate' );
@@ -195,16 +195,15 @@ class TranslateUtils {
 			$page['object'] = Title::makeTitle( NS_MEDIAWIKI, $title );
 			$talk['object'] = Title::makeTitle( NS_MEDIAWIKI_TALK, $title );
 
-			$original = $m['definition'];
-			$message = isset( $m['database'] ) ? $m['database'] : $m['infile'];
-			if ( !$message ) { $message = $original; }
+			$original = $m->definition;
+			$message = $m->translation ? $m->translation : $original;
 
-			if( $m['pageexists'] ) {
+			if( $m->pageExists ) {
 				$page['link'] = $sk->makeKnownLinkObj( $page['object'], htmlspecialchars( $key ) );
 			} else {
 				$page['link'] = $sk->makeBrokenLinkObj( $page['object'], htmlspecialchars( $key ) );
 			}
-			if( $m['talkexists'] ) {
+			if( $m->talkExists ) {
 				$talk['link'] = $sk->makeKnownLinkObj( $talk['object'], $uimsg['talk'] );
 			} else {
 				$talk['link'] = $sk->makeBrokenLinkObj( $talk['object'], $uimsg['talk'] );
@@ -221,13 +220,13 @@ class TranslateUtils {
 			$anchor = Xml::element( 'a', array( 'name' => $anchor, 'href' => "#$anchor" ), "↓" );
 
 			$extra = '';
-			if ( $m['optional'] ) $extra = $uimsg['optional'];
-			if ( $m['ignored'] )  $extra = $uimsg['ignored'];
+			if ( $m->optional ) $extra = $uimsg['optional'];
+			if ( $m->ignored )  $extra = $uimsg['ignored'];
 
 			$leftColumn = $anchor . ' ' . $page['link'] . ' ' . $extra . '<br />' .
 				implode( ' | ', array( $talk['link'] , $page['edit'], $page['history'], $page['delete'] ) );
 
-			if ( $m['changed'] ) {
+			if ( $review ) {
 				$output .= Xml::tags( 'tr', array( 'class' => 'orig' ),
 					Xml::tags( 'td', array( 'rowspan' => '2'), $leftColumn ) .
 					Xml::element( 'td', null, $original )

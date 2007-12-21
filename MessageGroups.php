@@ -41,18 +41,23 @@ abstract class MessageGroup {
 	 * In this function message group should add translations from the stored file
 	 * for language code $code and it's fallback language, if used.
 	 *
-	 * @param $array Reference of MessageArray.
+	 * @param $messages MessageCollection
 	 * @param $code Language code.
 	 */
-	public abstract function fill( &$array, $code );
+	public abstract function fill( MessageCollection $messages, $code );
 
 	/**
 	 * In this function message group can specify some messages to be optional or
 	 * ignored.
-	 *
-	 * @param $array Reference of MessageArray.
 	 */
-	public function fillBools( &$array ) {}
+	public function getBools() {
+		return array(
+			'optional' => $this->optional,
+			'ignored' => $this->ignored,
+		);
+	}
+	protected $optional = array();
+	protected $ignored = array();
 
 	/**
 	 * In this function message group should export messages in relevant format.
@@ -60,7 +65,7 @@ abstract class MessageGroup {
 	 * @param $array Reference of MessageArray.
 	 * @param $code Language code.
 	 */
-	public function export( &$array, $code ) {
+	public function export( MessageCollection $messages, $code ) {
 		return 'Not supported';
 	}
 
@@ -68,12 +73,12 @@ abstract class MessageGroup {
 	 * In this function message group should export messages in whole-file format,
 	 * if applicable. Default implementation just calls $this->export().
 	 *
-	 * @param $array Reference of MessageArray.
+	 * @param $messages MessageCollection
 	 * @param $code Language code.
 	 * @param $authors 1-D array of authors that have edited messages in wiki.
 	 */
-	public function exportToFile( &$array, $code, $authors ) {
-		return $this->export( $array, $code );
+	public function exportToFile( MessageCollection $messages, $code, $authors ) {
+		return $this->export( $messages, $code );
 	}
 
 	/**
@@ -115,25 +120,26 @@ abstract class MessageGroup {
 	 *
 	 * @param $array Reference of MessageArray.
 	 */
-	public function makeExportArray( &$array ) {
+	public function makeExportArray( MessageCollection $messages ) {
 		// We copy only relevant translations to this new array
 		$new = array();
-		foreach( $array as $key => $m ) {
+		foreach( $messages as $key => $m ) {
 			# CASE1: ignored
-			if ( $m['ignored'] ) continue;
+			if ( $m->ignored ) continue;
 
-			$translation = $m['database'] !== null ? $m['database'] : $m['infile'];
+			$translation = $m->translation;
 			# CASE2: no translation
 			if ( $translation === null ) continue;
 
-			# CASE3: optional messages; accept only if different
-			if ( $m['optional'] && $translation === $m['definition'] ) continue;
-
-			# CASE4: don't export non-translations unless translated in wiki
-			if( !$m['pageexists'] && $translation === $m['definition'] ) continue;
-
 			# Remove fuzzy markings before export
 			$translation = str_replace( TRANSLATE_FUZZY, '', $translation );
+
+			# CASE3: optional messages; accept only if different
+			if ( $m->optional && $translation === $m->definition ) continue;
+
+			# CASE4: don't export non-translations unless translated in wiki
+			if( $m->pageExists && $translation === $m->definition ) continue;
+
 
 			# Otherwise it's good
 			$new[$key] = $translation;
@@ -171,15 +177,15 @@ class CoreMessageGroup extends MessageGroup {
 		return isset( $messages[$key] ) ? $messages[$key] : null;
 	}
 
-	function export( &$array, $code ) {
-		list( $output, ) = MessageWriter::writeMessagesArray( $this->makeExportArray( $array ), false );
+	function export( MessageCollection $messages, $code ) {
+		list( $output, ) = MessageWriter::writeMessagesArray( $this->makeExportArray( $messages ), false );
 		return $output;
 	}
 
-	public function exportToFile( &$array, $code, $authors ) {
+	public function exportToFile( MessageCollection $messages, $code, $authors ) {
 		$filename = Language::getMessagesFileName( $code );
 
-		$messages = $this->export( $array, $code );
+		$messages = $this->export( $messages, $code );
 		$name = TranslateUtils::getLanguageName( $code );
 		$native = TranslateUtils::getLanguageName( $code, true );
 		$authors = array_unique( array_merge( $this->getAuthorsFromFile( $filename ), $authors ) );
@@ -205,18 +211,12 @@ CODE;
 		return Language::getMessagesFor( 'en' );
 	}
 
-	public function fillBools( &$array ) {
+	public function getBools() {
 		$l = new languages();
-
-		foreach ($l->getOptionalMessages() as $optMsg) {
-			if (!isset($array[$optMsg])) continue;
-			$array[$optMsg]['optional'] = true;
-		}
-
-		foreach ($l->getIgnoredMessages() as $optMsg) {
-			if (!isset($array[$optMsg])) continue;
-			$array[$optMsg]['ignored'] = true;
-		}
+		return array(
+			'optional' => $l->getOptionalMessages(),
+			'ignored'  => $l->getIgnoredMessages(),
+		);
 	}
 
 	private function loadMessages( $code ) {
@@ -233,19 +233,19 @@ CODE;
 		return $this->mcache[$code];
 	}
 
-	function fill( &$array, $code ) {
+	public function fill( MessageCollection $messages, $code ) {
 		$infile = $this->loadMessages( $code );
 		$infbfile = null;
 		if ( Language::getFallbackFor( $code ) ) {
 			$infbfile = $this->loadMessages( Language::getFallbackFor( $code ) );
 		}
 
-		foreach ( $array as $key => $value ) {
+		foreach ( $messages->keys() as $key ) {
 			if ( isset($infile[$key]) ) {
-				$array[$key]['infile'] = $infile[$key];
+				$messages[$key]->infile = $infile[$key];
 			}
 			if ( $infbfile && isset($infbfile[$key]) ) {
-				$array[$key]['fallback'] = $infbfile[$key];
+				$messages[$key]->fallback = $infbfile[$key];
 			}
 		}
 	}
@@ -406,7 +406,7 @@ abstract class ExtensionMessageGroup extends MessageGroup {
 		return null;
 	}
 
-	function export( &$array, $code ) {
+	function export( MessageCollection $messages, $code ) {
 		// Replace variables from definition
 		$txt = $this->exportPrefix . str_replace(
 			array( '$ARRAY', '$CODE' ),
@@ -415,7 +415,7 @@ abstract class ExtensionMessageGroup extends MessageGroup {
 
 		// Use the same function that rebuildLanguage.php uses
 		$txt .= MessageWriter::writeMessagesBlock( false,
-			$this->makeExportArray( $array ), array(), $this->exportLineP
+			$this->makeExportArray( $messages ), array(), $this->exportLineP
 		);
 
 		// Remove the last newline, not needed here
@@ -425,8 +425,8 @@ abstract class ExtensionMessageGroup extends MessageGroup {
 		return $txt;
 	}
 
-	public function exportToFile( &$array, $code, $authors ) {
-		$x = $this->export( $array, $code );
+	public function exportToFile( MessageCollection $messages, $code, $authors ) {
+		$x = $this->export( $messages, $code );
 		$name = TranslateUtils::getLanguageName( $code );
 		$native = TranslateUtils::getLanguageName( $code, true );
 		$translators = $this->formatAuthors( $authors );
@@ -445,7 +445,7 @@ CODE;
 		return $this->mcache['en'];
 	}
 
-	function fill( &$array, $code ) {
+	public function fill( MessageCollection $messages, $code ) {
 		$this->load( $code );
 
 		$fbcode = Language::getFallbackFor( $code );
@@ -453,12 +453,12 @@ CODE;
 			$this->load( $fbcode );
 		}
 
-		foreach ( $array as $key => $value ) {
+		foreach ( $messages->keys() as $key ) {
 			if ( isset($this->mcache[$code][$key]) ) {
-				$array[$key]['infile'] = $this->mcache[$code][$key];
+				$messages[$key]->infile = $this->mcache[$code][$key];
 			}
 			if ( isset($this->mcache[$fbcode][$key]) ) {
-				$array[$key]['infbfile'] = $this->mcache[$fbcode][$key];
+				$messages[$key]->fallback = $this->mcache[$fbcode][$key];
 			}
 		}
 	}
@@ -511,8 +511,8 @@ class CoreMostUsedMessageGroup extends CoreMessageGroup {
 	protected $id    = 'core-mostused';
 	protected $meta  = true;
 
-	public function export( &$array, $code ) { return 'Not supported'; }
-	public function exportToFile( &$array, $code, $authors ) { return 'Not supported'; }
+	public function export( MessageCollection $messages, $code ) { return 'Not supported'; }
+	public function exportToFile( MessageCollection $messages, $code, $authors ) { return 'Not supported'; }
 
 
 	function getDefinitions() {
@@ -578,38 +578,42 @@ class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
 		return $array;
 	}
 
-	function export( &$array, $code ) {
+	function export( MessageCollection $messages, $code ) {
 		$this->init();
 		$ret = '';
 		foreach ( $this->classes as $class ) {
-			$subArray = array_intersect_key( $array, $class->getDefinitions() );
+			$subArray = new MessageCollection;
+			$subArray->addMany( $messages->intersect_key( $class->getDefinitions() ) );
 			$ret .= $class->export( $subArray, $code ) . "\n\n\n";
 		}
 		return $ret;
 	}
 
-	function exportToFile( &$array, $code, $authors ) {
+	function exportToFile( MessageCollection $messages, $code, $authors ) {
 		$this->init();
 		$ret = '';
 		foreach ( $this->classes as $class ) {
-			$subArray = array_intersect_key( $array, $class->getDefinitions() );
+			$subArray = new MessageCollection;
+			$subArray->addMany( $messages->intersect_key( $class->getDefinitions() ) );
 			$ret .= $class->exportToFile( $subArray, $code, array() ) . "\n\n\n";
 		}
 		return $ret;
 	}
 
-	function fill( &$array, $code ) {
+	function fill( MessageCollection $messages, $code ) {
 		$this->init();
 		foreach ( $this->classes as $class ) {
-			$class->fill( $array, $code );
+			$class->fill( $messages, $code );
 		}
 	}
 
-	function fillBools( &$array ) {
+	function getBools() {
 		$this->init();
+		$bools = array();
 		foreach ( $this->classes as $class ) {
-			$class->fillBools( $array );
+			$bools = array_merge_recursive( $bools, $class->getBools() );
 		}
+		return $bools;
 	}
 
 	public function reset() {
@@ -719,9 +723,7 @@ class BoardVoteMessageGroup extends ExtensionMessageGroup {
 	protected $arrName     = 'wgBoardVoteMessages';
 	protected $messageFile = 'BoardVote/BoardVote.i18n.php';
 
-	function fillBools( &$array ) {
-		$array['boardvote_footer']['ignored'] = true;
-	}
+	protected $ignored = array( 'boardvote_footer' );
 }
 
 class BookInformationMessageGroup extends ExtensionMessageGroup {
@@ -769,10 +771,7 @@ class ChangeAuthorMessageGroup extends ExtensionMessageGroup {
 	protected $exportLineP = "\t\t";
 	protected $exportEnd   = "),";
 
-	function fillBools( &$array ) {
-		$array['changeauthor-short']['ignored'] = true;
-		$array['changeauthor-logpagetext']['ignored'] = true;
-	}
+	protected $ignored = array( 'changeauthor-short', 'changeauthor-logpagetext' );
 }
 
 class CheckUserMessageGroup extends ExtensionMessageGroup {
@@ -790,17 +789,17 @@ class ChemFunctionsMessageGroup extends ExtensionMessageGroup {
 	protected $arrName     = 'wgChemFunctions_Messages';
 	protected $messageFile = 'Chemistry/ChemFunctions.i18n.php';
 
-	function fillBools( &$array ) {
-		$array['chemFunctions_SearchExplanation']['ignored'] = true;
-		$array['chemFunctions_EINECS']['optional'] = true;
-		$array['chemFunctions_CHEBI']['optional'] = true;
-		$array['chemFunctions_PubChem']['optional'] = true;
-		$array['chemFunctions_SMILES']['optional'] = true;
-		$array['chemFunctions_InChI']['optional'] = true;
-		$array['chemFunctions_RTECS']['optional'] = true;
-		$array['chemFunctions_KEGG']['optional'] = true;
-		$array['chemFunctions_DrugBank']['optional'] = true;
-	}
+	protected $ignored = array( 'chemFunctions_SearchExplanation' );
+	protected $optional = array(
+		'chemFunctions_EINECS',
+		'chemFunctions_CHEBI',
+		'chemFunctions_PubChem',
+		'chemFunctions_SMILES',
+		'chemFunctions_InChI',
+		'chemFunctions_RTECS',
+		'chemFunctions_KEGG',
+		'chemFunctions_DrugBank',
+	);
 }
 
 class CiteMessageGroup extends ExtensionMessageGroup {
@@ -810,22 +809,24 @@ class CiteMessageGroup extends ExtensionMessageGroup {
 	protected $arrName     = 'messages';
 	protected $messageFile = 'Cite/Cite.i18n.php';
 
-	function fillBools( &$array ) {
-		$array['cite_reference_link_key_with_num']['optional'] = true;
-		$array['cite_reference_link_prefix']['optional'] = true;
-		$array['cite_reference_link_suffix']['optional'] = true;
-		$array['cite_references_link_prefix']['optional'] = true;
-		$array['cite_references_link_suffix']['optional'] = true;
-		$array['cite_reference_link']['optional'] = true;
-		$array['cite_references_link_one']['optional'] = true;
-		$array['cite_references_link_many']['optional'] = true;
-		$array['cite_references_link_many_format']['optional'] = true;
-		$array['cite_references_link_many_format_backlink_labels']['optional'] = true;
-		$array['cite_references_link_many_sep']['optional'] = true;
-		$array['cite_references_link_many_and']['optional'] = true;
-		$array['cite_references_prefix']['ignored'] = true;
-		$array['cite_references_suffix']['ignored'] = true;
-	}
+	protected $optional = array(
+		'cite_reference_link_key_with_num',
+		'cite_reference_link_prefix',
+		'cite_reference_link_suffix',
+		'cite_references_link_prefix',
+		'cite_references_link_suffix',
+		'cite_reference_link',
+		'cite_references_link_one',
+		'cite_references_link_many',
+		'cite_references_link_many_format',
+		'cite_references_link_many_format_backlink_labels',
+		'cite_references_link_many_sep',
+		'cite_references_link_many_and',
+	);
+	protected $ignored = array(
+		'cite_references_prefix',
+		'cite_references_suffix',
+	);
 }
 
 class CiteSpecialMessageGroup extends ExtensionMessageGroup {
@@ -835,9 +836,9 @@ class CiteSpecialMessageGroup extends ExtensionMessageGroup {
 	protected $arrName     = 'wgSpecialCiteMessages';
 	protected $messageFile = 'Cite/SpecialCite.i18n.php';
 
-	function fillBools( &$array ) {
-		$array['cite_text']['ignored'] = true;
-	}
+	protected $ignored = array(
+		'cite_text',
+	);
 }
 
 class CommentSpammerMessageGroup extends ExtensionMessageGroup {
@@ -878,7 +879,6 @@ class ContactPageExtensionGroup extends MultipleFileMessageGroup {
 	protected $exportStart = '$messages = array(';
 	protected $exportLineP = "\t";
 	protected $exportEnd   = ');';
-
 }
 
 class ContributionScoresMessageGroup extends ExtensionMessageGroup {
@@ -957,9 +957,9 @@ class DismissableSiteNoticeMessageGroup extends ExtensionMessageGroup {
 	protected $arrName     = 'wgDismissableSiteNoticeMessages';
 	protected $messageFile = 'DismissableSiteNotice/DismissableSiteNotice.i18n.php';
 
-	function fillBools( &$array ) {
-		$array['sitenotice_id']['ignored'] = true;
-	}
+	protected $ignored = array(
+		'sitenotice_id',
+	);
 }
 
 class DuplicatorMessageGroup extends ExtensionMessageGroup {
@@ -1048,9 +1048,9 @@ class FormatEmailMessageGroup extends ExtensionMessageGroup {
 	protected $arrName     = 'messages';
 	protected $messageFile = 'FormatEmail/FormatEmail.i18n.php';
 
-	function fillBools( &$array ) {
-		$array['email_header']['ignored'] = true;
-	}
+	protected $ignored = array(
+		'email_header',
+	);
 }
 
 class FilePathMessageGroup extends ExtensionMessageGroup {
@@ -1080,9 +1080,9 @@ class GadgetsExtensionGroup extends MultipleFileMessageGroup {
 	protected $exportStart = '$messages = array(';
 	protected $exportEnd   = ');';
 
-	function fillBools( &$array ) {
-		$array['gadgets-definition']['ignored'] = true;
-	}
+	protected $ignored = array(
+		'gadgets-definition',
+	);
 }
 
 class GiveRollbackMessageGroup extends ExtensionMessageGroup {
@@ -1117,9 +1117,9 @@ class ImageMapMessageGroup extends ExtensionMessageGroup {
 	protected $exportLineP = "\t";
 	protected $exportEnd   = '),';
 
-	function fillBools( &$array ) {
-		$array['imagemap_desc_types']['ignored'] = true;
-	}
+	protected $ignored = array(
+		'imagemap_desc_types',
+	);
 }
 
 class ImportFreeImagesMessageGroup extends ExtensionMessageGroup {
@@ -1170,13 +1170,13 @@ class InterwikiMessageGroup extends ExtensionMessageGroup {
 	protected $arrName     = 'wgSpecialInterwikiMessages';
 	protected $messageFile = 'Interwiki/SpecialInterwiki.i18n.php';
 
-	function fillBools( &$array ) {
-		$array['interwiki_defaulturl']['ignored'] = true;
-		$array['interwiki_local']['ignored'] = true;
-		$array['interwiki_logentry']['ignored'] = true;
-		$array['interwiki_trans']['ignored'] = true;
-		$array['interwiki_url']['optional'] = true;
-	}
+	protected $ignored = array(
+		'interwiki_defaulturl',
+		'interwiki_local',
+		'interwiki_logentry',
+		'interwiki_trans',
+		'interwiki_url',
+	);
 }
 
 class LatexDocMessageGroup extends ExtensionMessageGroup {
@@ -1202,9 +1202,9 @@ class LiquidThreadsMessageGroup extends ExtensionMessageGroup {
 	protected $arrName     = 'messages';
 	protected $messageFile = 'LiquidThreads/Lqt.i18n.php';
 
-	function fillBools( &$array ) {
-		$array['lqt_header_warning_before_big']['ignored'] = true;
-	}
+	protected $ignored = array(
+		'lqt_header_warning_before_big',
+	);
 }
 
 class LookupUserMessageGroup extends ExtensionMessageGroup {
@@ -1222,10 +1222,10 @@ class LuceneSearchMessageGroup extends ExtensionMessageGroup {
 	protected $arrName     = 'wgLuceneSearchMessages';
 	protected $messageFile = 'LuceneSearch/LuceneSearch.i18n.php';
 
-	function fillBools( &$array ) {
-		$array['searchaliases']['ignored'] = true;
-		$array['searchnearmatch']['ignored'] = true;
-	}
+	protected $ignored = array(
+		'searchaliases',
+		'searchnearmatch',
+	);
 }
 
 class MakeBotMessageGroup extends ExtensionMessageGroup {
@@ -1342,10 +1342,10 @@ class NetworkAuthMessageGroup extends ExtensionMessageGroup {
 	protected $arrName     = 'messages';
 	protected $messageFile = 'NetworkAuth/NetworkAuth.i18n.php';
 
-	function fillBools( &$array ) {
-		$array['networkauth-name']['optional'] = true;
-		$array['networkauth-purltext']['optional'] = true;
-	}
+	protected $optional = array(
+		'networkauth-name',
+		'networkauth-purltext',
+	);
 }
 
 class NewestPagesMessageGroup extends ExtensionMessageGroup {
@@ -1369,10 +1369,10 @@ class NewuserLogMessageGroup extends ExtensionMessageGroup {
 
 	protected $exportLineP = "\t";
 
-	function fillBools( &$array ) {
-		$array['newuserlogentry']['ignored'] = true;
-		$array['newuserlog-create-text']['ignored'] = true;
-	}
+	protected $ignored = array(
+		'newuserlogentry',
+		'newuserlog-create-text',
+	);
 }
 
 class NewUserNotifMessageGroup extends ExtensionMessageGroup {
@@ -1413,13 +1413,13 @@ class OggHandlerMessageGroup extends ExtensionMessageGroup {
 	protected $exportLineP = "\t\t";
 	protected $exportEnd   = '),';
 
-	function fillBools( &$array ) {
-		$array['ogg-player-cortado']['optional'] = true;
-		$array['ogg-player-vlc-mozilla']['optional'] = true;
-		$array['ogg-player-vlc-activex']['optional'] = true;
-		$array['ogg-player-quicktime-mozilla']['optional'] = true;
-		$array['ogg-player-quicktime-activex']['optional'] = true;
-	}
+	protected $optional = array(
+		'ogg-player-cortado',
+		'ogg-player-vlc-mozilla',
+		'ogg-player-vlc-activex',
+		'ogg-player-quicktime-mozilla',
+		'ogg-player-quicktime-activex',
+	);
 }
 
 class OpenIDMessageGroup extends ExtensionMessageGroup {
@@ -1518,9 +1518,9 @@ class PlayerMessageGroup extends MultipleFileMessageGroup {
 	protected $exportStart = '$messages = array(';
 	protected $exportEnd   = ');';
 
-	function fillBools( &$array ) {
-		$array['player-pagetext']['ignored'] = true;
-	}
+	protected $ignored = array(
+		'player-pagetext',
+	);
 }
 
 class PostCommentMessageGroup extends ExtensionMessageGroup {
@@ -1725,9 +1725,9 @@ class SmoothGalleryExtensionGroup extends MultipleFileMessageGroup {
 	protected $exportStart = '$messages = array(';
 	protected $exportEnd   = ');';
 
-	function fillBools( &$array ) {
-		$array['smoothgallery-pagetext']['ignored'] = true;
-	}
+	protected $ignored = array(
+		'smoothgallery-pagetext',
+	);
 }
 
 class SpamBlacklistMessageGroup extends ExtensionMessageGroup {
@@ -1771,9 +1771,9 @@ class SpecialFormMessageGroup extends ExtensionMessageGroup {
 	protected $exportLineP = "\t\t";
 	protected $exportEnd   = "),";
 
-	function fillBools( &$array ) {
-		$array['formtemplatepattern']['ignored'] = true;
-	}
+	protected $ignored = array(
+		'formtemplatepattern',
+	);
 }
 
 class StalePagesMessageGroup extends ExtensionMessageGroup {
@@ -1808,11 +1808,11 @@ class TalkHereExtensionGroup extends MultipleFileMessageGroup {
 	protected $exportStart = '$messages = array(';
 	protected $exportEnd   = ');';
 
-	function fillBools( &$array ) {
-		$array['talkhere-headtext']['ignored'] = true;
-		$array['talkhere-afterinput']['ignored'] = true;
-		$array['talkhere-afterform']['ignored'] = true;
-	}
+	protected $ignored = array(
+		'talkhere-headtext',
+		'talkhere-afterinput',
+		'talkhere-afterform',
+	);
 }
 
 class TemplateLinkMessageGroup extends ExtensionMessageGroup {
@@ -2047,12 +2047,12 @@ class FreeColMessageGroup extends MessageGroup {
 
 	}
 
-	public function export( &$array, $code ) {
+	public function export( MessageCollection $messages, $code ) {
 		global $wgSitename, $wgRequest;
 		$txt = '# Exported on ' . wfTimestamp(TS_ISO_8601) . ' from ' . $wgSitename . "\n# " .
 			$wgRequest->getFullRequestURL() . "\n#\n";
 
-		$array = $this->makeExportArray( $array );
+		$array = $this->makeExportArray( $messages );
 		foreach ($array as $key => $translation) {
 			list(, $key) = explode( '-', $key, 2);
 			$txt .= $key . '=' . rtrim( $translation ) . "\n";
@@ -2061,13 +2061,13 @@ class FreeColMessageGroup extends MessageGroup {
 	}
 
 
-	function fill( &$array, $code ) {
+	function fill( MessageCollection $messages, $code ) {
 		$this->load( $code );
 
-		foreach ( $array as $key => $value ) {
-			$array[$key]['definition'] = $this->mcache['en'][$key];
+		foreach ( $messages->keys() as $key ) {
+			$messages[$key]->definition = $this->mcache['en'][$key];
 			if ( isset($this->mcache[$code][$key]) ) {
-				$array[$key]['infile'] = $this->mcache[$code][$key];
+				$messages[$key]->infile = $this->mcache[$code][$key];
 			}
 		}
 	}

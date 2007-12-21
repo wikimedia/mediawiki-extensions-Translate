@@ -11,9 +11,11 @@ if (!defined('MEDIAWIKI')) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+define( 'TRANSLATE_VERSION', '6.0' );
+
 $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'Translate',
-	'version' => '5.24',
+	'version' => TRANSLATE_VERSION,
 	'author' => 'Niklas Laxström, Siebrand Mazeland',
 	'description' => 'Special page for translating Mediawiki and beyond',
 	'url' => 'http://www.mediawiki.org/wiki/Extension:Translate',
@@ -22,10 +24,16 @@ $wgExtensionCredits['specialpage'][] = array(
 $dir = dirname(__FILE__) . '/';
 $wgAutoloadClasses['TranslateTasks'] = $dir . 'TranslateTasks.php';
 $wgAutoloadClasses['TranslateUtils'] = $dir . 'TranslateUtils.php';
+
 $wgAutoloadClasses['MessageGroups'] = $dir . 'MessageGroups.php';
+
+$wgAutoloadClasses['MessageCollection'] = $dir . 'Message.php';
+$wgAutoloadClasses['TMessage'] = $dir . 'Message.php';
+
 $wgAutoloadClasses['TranslateEditAddons'] = $dir . 'TranslateEditAddons.php';
 $wgAutoloadClasses['languages'] = $IP . '/maintenance/language/languages.inc';
 $wgAutoloadClasses['MessageWriter'] = $IP . '/maintenance/language/writeMessagesArray.inc';
+
 
 $wgAutoloadClasses['SpecialTranslate'] = $dir . 'TranslatePage.php';
 $wgAutoloadClasses['SpecialMagic'] = $dir . 'SpecialMagic.php';
