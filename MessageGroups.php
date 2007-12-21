@@ -1681,7 +1681,7 @@ class SignDocumentMessageGroup extends ExtensionMessageGroup {
 }
 
 class SpecialCreateSignDocumentMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Special Create Sign Document';
+	protected $label = 'Sign Document Special Create';
 	protected $id    = 'ext-specialcreatesigndocument';
 
 	protected $arrName     = 'allMessages';
@@ -1694,7 +1694,7 @@ class SpecialCreateSignDocumentMessageGroup extends ExtensionMessageGroup {
 }
 
 class SpecialSignDocumentMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Special Sign Document';
+	protected $label = 'Sign Document Special';
 	protected $id    = 'ext-specialsigndocument';
 
 	protected $arrName     = 'allMessages';
