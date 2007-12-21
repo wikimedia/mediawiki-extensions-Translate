@@ -1759,6 +1759,14 @@ class SpamRegExMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'SpamRegex/SpamRegex.i18n.php';
 }
 
+class SpecialFileListMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Special File List';
+	protected $id    = 'ext-specialfilelist';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'SpecialFileList/SpecialFileList.i18n.php';
+}
+
 class SpecialFormMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Special Form';
 	protected $id    = 'ext-specialform';
