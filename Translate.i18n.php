@@ -475,56 +475,62 @@ $messages['fi'] = array(
 	'translate-magic-pagename' => 'Laajennettu MediaWikin kääntäminen',
 );
 
+/** French (Français)
+ * @author Sherbrooke
+ * @author Seb35
+ * @author Grondin
+ */
 $messages['fr'] = array(
-	'translate' => 'Traduire',
-	'translate-edit' => 'éditer',
-	'translate-talk' => 'discuter',
-	'translate-history' => 'historique',
-	'translate-delete' => 'Annuler les changements',
-	'translate-task-view' => 'Voir tous les messages depuis',
-	'translate-task-untranslated' => 'Voir tous les messages non traduits depuis',
-	'translate-task-optional' => 'Voir tous les messages facultatifs depuis',
-	'translate-task-review' => 'Revoir mes changements depuis',
-	'translate-task-reviewall' => 'Revoir tous les traductions dans',
-	'translate-task-export' => 'Exporter les traductions depuis',
-	'translate-task-export-to-file' => 'Exporter les traductions dans un fichier depuis',
-	'translate-settings' => 'Je désire $1 $2 en $3 dans la limite de $4. $5',
-	'translate-paging' => '<div>Afficher les messages depuis $1 vers $2 de $3. [ $4 | $5 ]</div>',
-	'translate-submit' => 'Atteindre',
-	'translate-next' => 'Page suivante',
-	'translate-prev' => 'Page précédente',
-	'translate-optional' => '(facultatif)',
-	'translate-ignored' => '(ignoré)',
-	'translate-edit-message-format' => 'Le format de ce message est <b>$1</b>.',
-	'translate-edit-message-in' => 'Chaîne actuellement dans <b>$1</b> ($2) :',
-	'translate-edit-message-in-fb' => 'Chaîne actuellement dans la langue par défaut <b>$1</b> ($2) :',
-	'translate-magic-pagename' => 'Traduction de MediaWiki étendue',
-	'translate-magic-help' => 'Vous pouvez traduire les alias de pages spéciales, les mots magiques, les noms de skins et les noms d\'espaces de noms.
+	'translate'                       => 'Traduire',
+	'translate-edit'                  => 'éditer',
+	'translate-talk'                  => 'discuter',
+	'translate-history'               => 'historique',
+	'translate-delete'                => 'Annuler les changements',
+	'translate-task-view'             => 'Voir tous les messages depuis',
+	'translate-task-untranslated'     => 'Voir tous les messages non traduits depuis',
+	'translate-task-optional'         => 'Voir tous les messages facultatifs depuis',
+	'translate-task-review'           => 'Revoir mes changements depuis',
+	'translate-task-reviewall'        => 'Revoir tous les traductions dans',
+	'translate-task-export'           => 'Exporter les traductions depuis',
+	'translate-task-export-to-file'   => 'Exporter les traductions dans un fichier depuis',
+	'translate-task-export-as-po'     => 'Exporter les traductions au format Gettext',
+	'translate-settings'              => 'Je désire $1 $2 en $3 dans la limite de $4. $5',
+	'translate-paging'                => '<div>Afficher les messages depuis $1 vers $2 de $3. [ $4 | $5 ]</div>',
+	'translate-submit'                => 'Atteindre',
+	'translate-next'                  => 'Page suivante',
+	'translate-prev'                  => 'Page précédente',
+	'translate-optional'              => '(facultatif)',
+	'translate-ignored'               => '(ignoré)',
+	'translate-edit-message-format'   => 'Le format de ce message est <b>$1</b>.',
+	'translate-edit-message-in'       => 'Chaîne actuellement dans <b>$1</b> ($2) :',
+	'translate-edit-message-in-fb'    => 'Chaîne actuellement dans la langue par défaut <b>$1</b> ($2) :',
+	'translate-magic-pagename'        => 'Traduction de MediaWiki étendue',
+	'translate-magic-help'            => "Vous pouvez traduire les alias de pages spéciales, les mots magiques, les noms de skins et les noms d'espaces de noms.
 
-Dans les mots magiques, vous devez inclure la traduction en anglais ou ça ne fonctionnera plus. De plus, laissez le premier item (0 ou 1) comme c\'est.
+Dans les mots magiques, vous devez inclure la traduction en anglais ou ça ne fonctionnera plus. De plus, laissez le premier item (0 ou 1) comme c'est.
 
-Les alias de pages spéciales et les mots magiques peuvent avoir plusieurs traductions. Les traductions sont séparées par une virgule (,). Les noms de skins et d\'espaces de noms ne peuvent avoir qu\'une traduction.
+Les alias de pages spéciales et les mots magiques peuvent avoir plusieurs traductions. Les traductions sont séparées par une virgule (,). Les noms de skins et d'espaces de noms ne peuvent avoir qu'une traduction.
 
-Dans les traductions d\'espaces de noms, <tt>$1 talk</tt> est spécial. <tt>$1</tt> est remplacé par le nom du site (par exemple <tt>{{SITENAME}} talk</tt>). Si ce n\'est pas possible d\'obtenir une expression valide dans votre langue sans changer le nom du site, veuillez contacter un développeur.
+Dans les traductions d'espaces de noms, <tt>$1 talk</tt> est spécial. <tt>$1</tt> est remplacé par le nom du site (par exemple <tt>{{SITENAME}} talk</tt>). Si ce n'est pas possible d'obtenir une expression valide dans votre langue sans changer le nom du site, veuillez contacter un développeur.
 
-Vous devez appartenir au groupe des traducteurs pour sauvegarder les changements. Les changements ne seront pas sauvegardés avant que vous ne cliquiez sur le bouton Saugegarder en bas.',
-	'translate-magic-form' => 'Langue $1 Module : $2 $3',
-	'translate-magic-submit' => 'Aller',
-	'translate-magic-cm-to-be' => 'Devient',
-	'translate-magic-cm-current' => 'Actuel',
-	'translate-magic-cm-original' => 'Original',#identical but defined
-	'translate-magic-cm-fallback' => 'Revenir',
-	'translate-magic-cm-save' => 'Sauvegarder',
-	'translate-magic-cm-export' => 'Exporter',
+Vous devez appartenir au groupe des traducteurs pour sauvegarder les changements. Les changements ne seront pas sauvegardés avant que vous ne cliquiez sur le bouton Saugegarder en bas.",
+	'translate-magic-form'            => 'Langue $1 Module : $2 $3',
+	'translate-magic-submit'          => 'Aller',
+	'translate-magic-cm-to-be'        => 'Devient',
+	'translate-magic-cm-current'      => 'Actuel',
+	'translate-magic-cm-original'     => 'Original',
+	'translate-magic-cm-fallback'     => 'Revenir',
+	'translate-magic-cm-save'         => 'Sauvegarder',
+	'translate-magic-cm-export'       => 'Exporter',
 	'translate-magic-cm-updatedusing' => 'Mise à jour en utilisant Special:Magic',
-	'translate-magic-cm-savefailed' => 'Échec de la sauvegarde',
-	'translate-magic-special' => 'Page spéciales d’alias',
-	'translate-magic-words' => 'Mots magiques',
-	'translate-magic-skin' => 'Nom des interfaces',
-	'translate-magic-namespace' => 'Intitulé des espaces de nommage',
-	'translationchanges' => 'Modifications aux traductions',
-	'translationchanges-export' => 'exporter',
-	'translationchanges-change' => '$1: [[Mediawiki:$2|$2]] par [[User:$3|$3]]',
+	'translate-magic-cm-savefailed'   => 'Échec de la sauvegarde',
+	'translate-magic-special'         => 'Page spéciales d’alias',
+	'translate-magic-words'           => 'Mots magiques',
+	'translate-magic-skin'            => 'Nom des interfaces',
+	'translate-magic-namespace'       => 'Intitulé des espaces de nommage',
+	'translationchanges'              => 'Modifications aux traductions',
+	'translationchanges-export'       => 'exporter',
+	'translationchanges-change'       => '$1: [[Mediawiki:$2|$2]] par [[User:$3|$3]]',
 	'translate-page-no-such-language' => 'Un code langage invalide a été indiqué',
 );
 
