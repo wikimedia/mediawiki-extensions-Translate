@@ -2073,7 +2073,6 @@ class FreeColMessageGroup extends MessageGroup {
 		$this->load( $code );
 
 		foreach ( $messages->keys() as $key ) {
-			$messages[$key]->definition = $this->mcache['en'][$key];
 			if ( isset($this->mcache[$code][$key]) ) {
 				$messages[$key]->infile = $this->mcache[$code][$key];
 			}
