@@ -245,6 +245,21 @@ class ReviewMessagesTask extends ViewMessagesTask {
 		}
 	}
 
+	protected function output() {
+		$tableheader = TranslateUtils::tableHeader( $this->messageGroup->getLabel() );
+		$tablefooter = Xml::closeElement( 'table' );
+
+		return
+			$tableheader .
+			TranslateUtils::makeListing(
+				$this->messages,
+				$this->options->getLanguage(),
+				$this->messageGroup->getId(),
+				true /* Review mode */
+			) .
+			$tablefooter;
+	}
+
 }
 
 class ReviewAllMessagesTask extends ReviewMessagesTask {
@@ -266,21 +281,6 @@ class ReviewAllMessagesTask extends ReviewMessagesTask {
 				unset( $this->messages[$key] );
 			}
 		}
-	}
-
-	protected function output() {
-		$tableheader = TranslateUtils::tableHeader( $this->messageGroup->getLabel() );
-		$tablefooter = Xml::closeElement( 'table' );
-
-		return
-			$tableheader .
-			TranslateUtils::makeListing(
-				$this->messages,
-				$this->options->getLanguage(),
-				$this->messageGroup->getId(),
-				true
-			) .
-			$tablefooter;
 	}
 
 }
