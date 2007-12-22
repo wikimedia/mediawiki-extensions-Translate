@@ -32,7 +32,9 @@ class SpecialTranslationChanges extends SpecialPage {
 		#$cutoff_unixtime = $cutoff_unixtime - ($cutoff_unixtime % 86400);
 		$cutoff = $dbr->timestamp( $cutoff_unixtime );
 
-		$sql = "SELECT *, substring_index(rc_title, '/', -1) as lang FROM $recentchanges " .
+		$fields = 'rc_title, rc_timestamp, rc_user_text';
+
+		$sql = "SELECT $fields, substring_index(rc_title, '/', -1) as lang FROM $recentchanges " .
 		"WHERE rc_timestamp >= '{$cutoff}' " .
 		"AND rc_namespace = 8 " .
 		"ORDER BY lang ASC, rc_timestamp DESC";
@@ -167,7 +169,7 @@ class SpecialTranslationChanges extends SpecialPage {
 
 					foreach ( $rows as $row ) {
 						$date = $wgLang->timeAndDate( $row->rc_timestamp, /* adj */ true, /* format */ true );
-						$msg = wfMsgExt( self::MSG . 'change', array( 'parseinline' ),
+						$msg = wfMsgExt( self::MSG . 'change', array( 'parsemag' ),
 							$date, wfEscapeWikiText($row->rc_title), wfEscapeWikiText($row->rc_user_text)
 						);
 						$output .= Xml::tags( 'li', null, $msg );
