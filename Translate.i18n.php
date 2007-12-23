@@ -185,7 +185,7 @@ $messages['ar'] = array(
 	'translate-magic-namespace'       => 'أسماء النطاقات',
 	'translationchanges'              => 'تغييرات الترجمة',
 	'translationchanges-export'       => 'تصدير',
-	'translationchanges-change'       => '$1: [[Mediawiki:$2|$2]] بواسطة [[User:$3|$3]]',
+	'translationchanges-change'       => '$1: $2 بواسطة $3',
 	'translate-page-no-such-language' => 'كود لغة غير صحيح تم توفيره',
 );
 
@@ -249,7 +249,7 @@ $messages['bg'] = array(
 	'translate-magic-namespace'     => 'Имена на именни пространства',
 	'translationchanges'            => 'Промени в преводите',
 	'translationchanges-export'     => 'изнасяне',
-	'translationchanges-change'     => '$1: [[Mediawiki:$2|$2]] от [[User:$3|$3]]',
+	'translationchanges-change'     => '$1: $2 от $3',
 );
 
 $messages['bn'] = array(
@@ -399,7 +399,7 @@ $messages['el'] = array(
 	'translate-magic-cm-fallback'   => 'Επιφύλαξη',
 	'translate-magic-special'       => 'Πρόσθετα ψευδώνυμα σελίδων',
 	'translationchanges'            => 'Αλλαγές μετάφρασης',
-	'translationchanges-change'     => '$1: [[Mediawiki:$2|$2]] από [[User:$3|$3]]',
+	'translationchanges-change'     => '$1: $2 από $3',
 );
 
 $messages['eo'] = array(
@@ -530,7 +530,7 @@ Vous devez appartenir au groupe des traducteurs pour sauvegarder les changements
 	'translate-magic-namespace'       => 'Intitulé des espaces de nommage',
 	'translationchanges'              => 'Modifications aux traductions',
 	'translationchanges-export'       => 'exporter',
-	'translationchanges-change'       => '$1: [[Mediawiki:$2|$2]] par [[User:$3|$3]]',
+	'translationchanges-change'       => '$1: $2 par $3',
 	'translate-page-no-such-language' => 'Un code langage invalide a été indiqué',
 );
 
@@ -708,7 +708,7 @@ Dyrbiš w skupinje přełožowarjow być, zo by změny składował. Změny so nj
 	'translate-magic-namespace'       => 'Mjena mjenowych rumow',
 	'translationchanges'              => 'Přełožowanske změny',
 	'translationchanges-export'       => 'eksportować',
-	'translationchanges-change'       => '$1: [[Mediawiki:$2|$2]] wot [[User:$3|$3]]',
+	'translationchanges-change'       => '$1: $2 wot $3',
 	'translate-page-no-such-language' => 'Njepłaćiwy rěčny kod podaty',
 );
 
@@ -808,7 +808,7 @@ $messages['kk-arab'] = array(
 	'translate-magic-namespace'       => 'ەسٸم ايا اتاۋلارى',
 	'translationchanges'              => 'اۋدارما ٶزگەرٸستەرٸ',
 	'translationchanges-export'       => 'سىرتقا بەرۋ',
-	'translationchanges-change'       => '$1: [[{{ns:mediawiki}}:$2|$2]] ([[{{ns:user}}:$3|$3]] ٸستەگەن)',
+	'translationchanges-change'       => '$1: $2 ($3 ٸستەگەن)',
 	'translate-page-no-such-language' => 'كەلتٸرٸلگەن تٸل بەلگٸلەمەسٸ جارامسىز',
 );
 
@@ -863,7 +863,7 @@ $messages['kk-cyrl'] = array(
 	'translate-magic-namespace'       => 'Есім ая атаулары',
 	'translationchanges'              => 'Аударма өзгерістері',
 	'translationchanges-export'       => 'сыртқа беру',
-	'translationchanges-change'       => '$1: [[{{ns:mediawiki}}:$2|$2]] ([[{{ns:user}}:$3|$3]] істеген)',
+	'translationchanges-change'       => '$1: $2 ($3 істеген)',
 	'translate-page-no-such-language' => 'Келтірілген тіл белгілемесі жарамсыз',
 );
 
@@ -918,7 +918,7 @@ Esim aya awdarmalarında <tt>$1_talk</tt> degen arnaýı keltiriledi. <tt>$1</tt
 	'translate-magic-namespace'       => 'Esim aya atawları',
 	'translationchanges'              => 'Awdarma özgeristeri',
 	'translationchanges-export'       => 'sırtqa berw',
-	'translationchanges-change'       => '$1: [[{{ns:mediawiki}}:$2|$2]] ([[{{ns:user}}:$3|$3]] istegen)',
+	'translationchanges-change'       => '$1: $2 ($3 istegen)',
 	'translate-page-no-such-language' => 'Keltirilgen til belgilemesi jaramsız',
 );
 
@@ -997,7 +997,7 @@ Jūs turite priklausyti vertėjų grupei, kad galėtumėte išsaugoti pakeitimus
 	'translate-magic-namespace'       => 'Vardų srities pavadinimai',
 	'translationchanges'              => 'Vertimo pakeitimai',
 	'translationchanges-export'       => 'eksportuoti',
-	'translationchanges-change'       => '$1: [[Mediawiki:$2|$2]] pagal [[User:$3|$3]]',
+	'translationchanges-change'       => '$1: $2 pagal $3',
 	'translate-page-no-such-language' => 'Buvo nurodytas klaidingas kalbos kodas',
 
 );
@@ -1069,7 +1069,7 @@ Om wijzigingen op te slaan moet u lid zijn van de groep vertalers. Wijzigingen w
 	'translate-magic-namespace'       => 'Naamruimtebenamingen',
 	'translationchanges'              => 'Vertalingen',
 	'translationchanges-export'       => 'exporteren',
-	'translationchanges-change'       => '$1: [[MediaWiki:$2|$2]] door [[User:$3|$3]]',
+	'translationchanges-change'       => '$1: $2 door $3',
 	'translate-page-no-such-language' => 'Er is een ongeldige taalcode opgegeven',
 );
 
@@ -1125,7 +1125,7 @@ Du må være i oversettergruppa for å lagre endringer. Endringer lagres ikke f�
 	'translate-magic-namespace'       => 'Navneromnavn',
 	'translationchanges'              => 'Oversettelsesendringer',
 	'translationchanges-export'       => 'eksporter',
-	'translationchanges-change'       => '$1: [[MediaWiki:$2|$2]] av [[User:$3|$3]]',
+	'translationchanges-change'       => '$1: $2 av $3',
 	'translate-page-no-such-language' => 'Ugyldig språkkode oppgitt',
 
 );
@@ -1173,7 +1173,7 @@ $messages['oc'] = array(
 	'translate-magic-namespace'       => 'Intitolat dels espacis de nomenatge',
 	'translationchanges'              => 'Modificacions a las traduccions',
 	'translationchanges-export'       => 'exportar',
-	'translationchanges-change'       => '$1: [[Mediawiki:$2|$2]] per [[User:$3|$3]]',
+	'translationchanges-change'       => '$1: $2 per $3',
 	'translate-page-no-such-language' => 'Un còde de lengatge invalid es estat indicat',
 );
 
