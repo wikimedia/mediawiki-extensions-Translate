@@ -530,18 +530,17 @@ class CoreMostUsedMessageGroup extends CoreMessageGroup {
 
 }
 
-
 class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
 	protected $label = 'All extensions';
 	protected $id    = 'ext-0-all';
 	protected $meta  = true;
 
-	private $classes = null;
+	protected $classes = null;
 
 	// Don't add the (mw ext) thingie
 	public function getLabel() { return $this->label; }
 
-	private function init() {
+	protected function init() {
 		if ( $this->classes === null ) {
 			$this->classes = MessageGroups::singleton()->getGroups();
 			foreach ( $this->classes as $index => $class ) {
@@ -622,6 +621,61 @@ class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
 		}
 	}
 
+}
+
+class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
+	protected $label = 'All extensions used by Wikimedia';
+	protected $id    = 'ext-0-wikimedia';
+	protected $meta  = true;
+
+	protected $classes = null;
+
+	protected $wmfextensions = array(
+		'ext-antispoof',
+		'ext-assertedit',
+		'ext-boardvote',
+		'ext-bookinformation',
+		'ext-categorytree',
+		'ext-checkuser',
+		'ext-cite',
+		'ext-citespecial',
+		'ext-confirmedit',
+		'ext-crossnamespacelinks',
+		'ext-deletedcontribs',
+		'ext-dismissablesitenotice',
+		'ext-expandtemplates',
+		'ext-filepath',
+		'ext-gadgets',
+		'ext-imagemap',
+		'ext-inputbox',
+		'ext-intersection',
+		'ext-linksearch',
+		'ext-lucenesearch',
+		'ext-makebot',
+		'ext-makesysop',
+		'ext-newuserlog',
+		'ext-nuke',
+		'ext-ogghandler',
+		'ext-oversight',
+		'ext-proofreadpage',
+		'ext-quiz',
+		'ext-renameuser',
+		'ext-scanset',
+		'ext-sitematrix',
+		'ext-spamblacklist',
+		'ext-syntaxhighlightgeshi',
+		'ext-usernameblacklist',
+	);
+
+	protected function init() {
+		if ( $this->classes === null ) {
+			$this->classes = MessageGroups::singleton()->getGroups();
+			$this->classes = array_intersect_key(
+				$this->classes,
+				array_flip( $this->wmfextensions )
+			);
+		}
+	}
 }
 
 class AdvancedRandomMessageGroup extends ExtensionMessageGroup {

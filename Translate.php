@@ -75,6 +75,7 @@ $wgTranslateAC = array(
 'core'                      => 'CoreMessageGroup',
 'core-mostused'             => 'CoreMostUsedMessageGroup',
 'ext-0-all'                 => 'AllMediawikiExtensionsGroup',
+'ext-0-wikimedia'           => 'AllWikimediaExtensionsGroup',
 'ext-advancedrandom'        => 'AdvancedRandomMessageGroup',
 'ext-ajaxshoweditors'       => 'AjaxShowEditorsMessageGroup',
 'ext-antispoof'             => 'AntiSpoofMessageGroup',
