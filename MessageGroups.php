@@ -624,7 +624,7 @@ class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
 }
 
 class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
-	protected $label = 'All extensions used by Wikimedia';
+	protected $label = 'Extensions used by Wikimedia';
 	protected $id    = 'ext-0-wikimedia';
 	protected $meta  = true;
 
