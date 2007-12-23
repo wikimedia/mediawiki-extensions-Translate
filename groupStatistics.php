@@ -36,7 +36,7 @@ function showUsage() {
 	$msg = <<<END
 Usage: php transstat.php [--help] [--output=csv|text|wiki] --groups
 	--help : this helpful message
-	--group : comma separated list of groups
+	--groups : comma separated list of groups
 	--output : select an output engine one of:
 		* 'csv'      : Comma Separated Values.
 		* 'wiki'     : MediaWiki syntax (default).
