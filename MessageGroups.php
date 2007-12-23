@@ -870,7 +870,7 @@ class ConfirmEditMessageGroup extends ExtensionMessageGroup {
 
 class ConfirmEditFancyCaptchaMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'ConfirmEdit Fancy Captcha';
-	protected $id      = 'ext-confirmfancycaptcha';
+	protected $id      = 'ext-confirmeditfancycaptcha';
 
 	protected $arrName = 'messages';
 	protected $messageFile  = 'ConfirmEdit/FancyCaptcha.i18n.php';
