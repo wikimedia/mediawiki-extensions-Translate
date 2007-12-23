@@ -168,13 +168,13 @@ class TMessage {
 		return strpos($this->database, TRANSLATE_FUZZY) !== false;
 	}
 
-	private $fProperties = array( 'authors', 'changed', 'translated', 'translation', 'fuzzy' );
+	private  static $fProperties = array( 'authors', 'changed', 'translated', 'translation', 'fuzzy' );
 
 	public function __get( $name ) {
 		if ( isset( $this->$name) ) {
 			return $this->$name;
 		} else {
-			if ( in_array( $name, $this->fProperties ) ) {
+			if ( in_array( $name, self::$fProperties ) ) {
 				return $this->$name();
 			}
 		}

@@ -138,14 +138,15 @@ foreach ( $languages as $code => $name ) {
 		$g->fill( $messages, $code );
 
 		// Remove untranslated messages from the list
-		foreach ( $messages as $key => $o ) {
-			if ( $o->translation === null ) {
+		foreach ( $messages->keys() as $key ) {
+			if ( $messages[$key]->translation === null ) {
 				unset( $messages[$key] );
 			}
 		}
 
 		// Count the completion percent and output it
 		$translated = count( $messages );
+
 		$out->element( $out->formatPercent( $translated, $total,
 			/* Inverted color */ false, /* Decimals */ 2 )
 		);
