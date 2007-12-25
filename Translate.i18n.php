@@ -933,6 +933,44 @@ $messages['la'] = array(
 	'translate-magic-cm-save' => 'Servare',
 );
 
+/** Luxembourgish (Lëtzebuergesch)
+ * @author Robby
+ */
+$messages['lb'] = array(
+	'translate'                     => 'Iwwersetzt',
+	'translate-edit'                => 'änneren',
+	'translate-talk'                => 'Diskussioun',
+	'translate-history'             => 'Versiounen',
+	'translate-delete'              => 'Ännerungen zrécksetzen',
+	'translate-task-view'           => 'all Systemmessagen vun',
+	'translate-task-untranslated'   => 'all net iwwersate Systemmessagen vun',
+	'translate-task-optional'       => 'optional Message vun',
+	'translate-task-review'         => 'Ännerungen vun',
+	'translate-task-reviewall'      => 'All Iwwersetzungen nokucken an',
+	'translate-task-export'         => 'Exportéier all Iwwersetzunge vun',
+	'translate-settings'            => 'Ech wëll $1 $2 an der Sprooch $3 mat Maximum $4 gesinn. $5',
+	'translate-paging'              => '<div>Weis Systemmessagen vun $1 bis $2 vun $3. [ $4 | $5 ]</div>',
+	'translate-submit'              => 'Uweisen',
+	'translate-next'                => 'Nächst Säit',
+	'translate-prev'                => 'Virescht Säit',
+	'translate-optional'            => '(optional)',
+	'translate-ignored'             => '(ignoréiert)',
+	'translate-edit-message-format' => 'De Format vun dësem Message ass <b>$1</b>.',
+	'translate-edit-message-in'     => 'Aktuellen Text op <b>$1</b> ($2):',
+	'translate-edit-message-in-fb'  => 'Aktuellen Text an der Ersatz-Sprooch <b>$1</b> ($2):',
+	'translate-magic-form'          => 'Sprooch: $1: Modul: $2 $3',
+	'translate-magic-submit'        => 'Weisen',
+	'translate-magic-cm-current'    => 'Aktuell',
+	'translate-magic-cm-original'   => 'Original',
+	'translate-magic-cm-save'       => 'Späicheren',
+	'translate-magic-cm-export'     => 'Export',
+	'translate-magic-words'         => 'Magesch Wierder',
+	'translate-magic-namespace'     => 'Nummraum Nimm',
+	'translationchanges'            => 'Iwwersetzung ännert',
+	'translationchanges-export'     => 'exportéieren',
+	'translationchanges-change'     => '$1: $2 vun $3',
+);
+
 $messages['li'] = array(
 	'translate' => 'Vertale',
 	'translate-edit' => 'bewèrk',
