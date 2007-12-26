@@ -1915,16 +1915,11 @@ class ThrottleMessageGroup extends ExtensionMessageGroup {
 }
 
 class TitleBlacklistMessageGroup extends ExtensionMessageGroup {
-	protected $label   = 'Title Blacklist';
-	protected $id      = 'ext-titleblacklist';
+	protected $label = 'Title Blacklist';
+	protected $id    = 'ext-titleblacklist';
 
-	protected $functionName = 'efGetTitleBlacklistMessages';
-	protected $messageFile  = 'TitleBlacklist/TitleBlacklist.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportPrefix= "\t\t";
-	protected $exportLineP = "\t\t\t";
-	protected $exportEnd   = '),';
+	protected $arrName     = 'messages';
+	protected $messageFile = 'TitleBlacklist/TitleBlacklist.i18n.php';
 }
 
 class TodoMessageGroup extends ExtensionMessageGroup {
