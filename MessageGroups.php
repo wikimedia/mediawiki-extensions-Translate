@@ -1097,7 +1097,7 @@ class FlaggedRevsMessageGroup extends MultipleFileMessageGroup {
 
 class FlaggedRevsMakeReviewerMessageGroup extends MultipleFileMessageGroup {
 	protected $label = 'Flagged Revs Make Reviewer';
-	protected $id    = 'ext-makereviewer';
+	protected $id    = 'ext-flaggedrevsmakereviewer';
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'FlaggedRevs/Language/MakeReviewer.i18n.en.php';
