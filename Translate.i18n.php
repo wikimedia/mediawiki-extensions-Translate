@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Translations of Translate extension.
+ *
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ */
 $messages = array();
 $messages['en'] = array(
 	'translate' => 'Translate',

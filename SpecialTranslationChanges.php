@@ -1,5 +1,9 @@
 <?php
+if (!defined('MEDIAWIKI')) die();
 
+/**
+ * Implementation of Special:TranslationChanges special page.
+ */
 class SpecialTranslationChanges extends SpecialPage {
 	const MSG = 'translationchanges-';
 
@@ -197,6 +201,11 @@ class SpecialTranslationChanges extends SpecialPage {
 		);
 		return $output;
 	}
+
+	/*
+	 * TODO: Following are from ChangesList.php. Try to figure out some nice place
+	 * to put them in so that they can be used easily.
+	 */
 
 	/**
 	 * Generate HTML for an arrow or placeholder graphic

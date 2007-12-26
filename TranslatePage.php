@@ -2,7 +2,12 @@
 if (!defined('MEDIAWIKI')) die();
 
 /**
- * Implementation of Special:Translate special page.
+ * Implements the core of Translate extension - a special page which shows
+ * a list of messages in a format defined by Tasks.
+ *
+ * @author Niklas Laxström
+ * @copyright Copyright © 2006-2007 Niklas Laxström
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 class SpecialTranslate extends SpecialPage {
 	const MSG = 'translate-page-';

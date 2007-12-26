@@ -1,6 +1,17 @@
 <?php
+if (!defined('MEDIAWIKI')) die();
+/**
+ * Different tasks which encapsulates processing of messages to requested
+ * format.
+ *
+ * @author Niklas Laxström
+ * @copyright Copyright © 2007 Niklas Laxström
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ */
 
-
+/**
+ * Container for options that are passed to tasks.
+ */
 class TaskOptions {
 	private $language = null;
 	private $limit = 0;
@@ -32,7 +43,9 @@ class TaskOptions {
 
 }
 
-
+/**
+ * Implements the core of TranslateTask.
+ */
 abstract class TranslateTask {
 	protected $id = '__BUG__';
 

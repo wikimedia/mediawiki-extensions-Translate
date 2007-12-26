@@ -1,8 +1,14 @@
 <?php
+if (!defined('MEDIAWIKI')) die();
 
-
+/**
+ * This class contains some static helper functions for other classes.
+ *
+ * @author Niklas Laxström
+ * @copyright Copyright © 2007 Niklas Laxström
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ */
 class TranslateUtils {
-
 	const MSG = 'translate-';
 
 	/**
@@ -43,6 +49,12 @@ class TranslateUtils {
 		return $messages;
 	}
 
+	/**
+	 * Fills the page/talk exists bools according to their existence in the
+	 * database.
+	 *
+	 * @param $messages Instance of MessageCollection
+	 */
 	public static function fillExistence( MessageCollection $messages, $language ) {
 		self::doExistenceQuery();
 		foreach ( $messages->keys() as $key ) {
@@ -51,6 +63,11 @@ class TranslateUtils {
 		}
 	}
 
+	/**
+	 * Fills the actual translation from database, if any.
+	 *
+	 * @param $messages Instance of MessageCollection
+	 */
 	public static function fillContents( MessageCollection $messages, $language ) {
 		$titles = array();
 		foreach ( $messages->keys() as $key ) {

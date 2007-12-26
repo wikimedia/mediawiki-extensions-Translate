@@ -1,8 +1,16 @@
 <?php
+if (!defined('MEDIAWIKI')) die();
 
+/**
+ * Tools for edit page view to aid translators.
+ *
+ * @author Niklas Laxström
+ * @copyright Copyright © 2007 Niklas Laxström
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ */
 class TranslateEditAddons {
 	static function addTools( $object ) {
-		if( $object->mTitle->getNamespace() == NS_MEDIAWIKI ) {
+		if( $object->mTitle->getNamespace() === NS_MEDIAWIKI ) {
 			$object->editFormTextTop .= self::editBoxes( $object );
 			//$object->editFormTextTop .= self::messageFormat( $object );
 		}
