@@ -1,5 +1,9 @@
 <?php
+if (!defined('MEDIAWIKI')) die();
 
+/**
+ * Implementation of Special:Translate special page.
+ */
 class SpecialTranslate extends SpecialPage {
 	const MSG = 'translate-page-';
 
