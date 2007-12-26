@@ -1648,6 +1648,14 @@ class QuizMessageGroup extends ExtensionMessageGroup {
 	protected $exportEnd   = "),";
 }
 
+class RandomInCategoryMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Random in Category';
+	protected $id    = 'ext-randomincategory';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'RandomInCategory/SpecialRandomincategory.i18n.php';
+}
+
 class RegexBlockMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Regex Block';
 	protected $id    = 'ext-regexblock';
