@@ -79,54 +79,60 @@ $messages['af'] = array(
 	'translate-magic-cm-current' => 'Huidig',
 );
 
+/** Aragonese (Aragonés)
+ * @author Juanpabl
+ */
 $messages['an'] = array(
-	'translate' => 'Traduzir',
-	'translate-edit' => 'editar',
-	'translate-talk' => 'descutir',
-	'translate-history' => 'istorial',
-	'translate-delete' => 'esfer cambeos',
-	'translate-task-view' => 'Beyer toz os mensaches de',
-	'translate-task-untranslated' => 'Beyer toz os mensaches sin traduzir de',
-	'translate-task-optional' => 'Beyer os mensaches opzionals de',
-	'translate-task-review' => 'Rebisar cambeos en',
-	'translate-task-reviewall' => 'Rebisar todas as traduzions en',
-	'translate-task-export' => 'Esportar traduzions de',
-	'translate-task-export-to-file' => 'Esportar á un archibo as traduzions de',
-	'translate-settings' => 'Quiero $1 $2 de l\'idioma $3 con un maisimo de $4. $5',
-	'translate-paging' => '<div>S\'amuestran os mensaches $1 á $2 d\'un total de $3. [ $4 | $5 ]</div>',
-	'translate-submit' => 'Ir á escar',
-	'translate-next' => 'Pachina siguient',
-	'translate-prev' => 'Pachina anterior',
-	'translate-optional' => '(opzional)',
-	'translate-ignored' => '(no considerato)',
-	'translate-edit-message-format' => 'O formato d\'iste mensache ye <b>$1</b>.',
-	'translate-edit-message-in' => 'Testo d\'o mensache autual en <b>$1</b> ($2):',
-	'translate-edit-message-in-fb' => 'Testo d\'o mensache autual en a luenga d\'aduya',
-	'translate-magic-pagename' => 'Traduzión ixamplata de MediaWiki',
-	'translate-magic-help' => 'Puede traduzir os "alias" d\'as pachinas espezials, as parabras machicas, os nombres d\'as aparenzias y os espazios de nombres.
+	'translate'                       => 'Traduzir',
+	'translate-edit'                  => 'editar',
+	'translate-talk'                  => 'descutir',
+	'translate-history'               => 'istorial',
+	'translate-delete'                => 'esfer cambeos',
+	'translate-task-view'             => 'Beyer toz os mensaches de',
+	'translate-task-untranslated'     => 'Beyer toz os mensaches sin traduzir de',
+	'translate-task-optional'         => 'Beyer os mensaches opzionals de',
+	'translate-task-review'           => 'Rebisar cambeos en',
+	'translate-task-reviewall'        => 'Rebisar todas as traduzions en',
+	'translate-task-export'           => 'Esportar traduzions de',
+	'translate-task-export-to-file'   => 'Esportar á un archibo as traduzions de',
+	'translate-task-export-as-po'     => 'Esportar traduzión en formato Gettext',
+	'translate-settings'              => "Quiero $1 $2 de l'idioma $3 con un maisimo de $4. $5",
+	'translate-paging'                => "<div>S'amuestran os mensaches $1 á $2 d'un total de $3. [ $4 | $5 ]</div>",
+	'translate-submit'                => 'Ir á escar',
+	'translate-next'                  => 'Pachina siguient',
+	'translate-prev'                  => 'Pachina anterior',
+	'translate-optional'              => '(opzional)',
+	'translate-ignored'               => '(no considerato)',
+	'translate-edit-message-format'   => "O formato d'iste mensache ye <b>$1</b>.",
+	'translate-edit-message-in'       => "Testo d'o mensache autual en <b>$1</b> ($2):",
+	'translate-edit-message-in-fb'    => "Testo d'o mensache autual en a luenga d'aduya",
+	'translate-magic-pagename'        => 'Traduzión ixamplata de MediaWiki',
+	'translate-magic-help'            => "Puede traduzir os \"alias\" d'as pachinas espezials, as parabras machicas, os nombres d'as aparenzias y os espazios de nombres.
 
-In as parabras machicas, ha d\'encluyir a traduzión en anglés, porque si no lo fa, no funzionarán bien. Deixe tamién o primer elemento (0 u 1) sin cambiar. 
+In as parabras machicas, ha d'encluyir a traduzión en anglés, porque si no lo fa, no funzionarán bien. Deixe tamién o primer elemento (0 u 1) sin cambiar. 
 
-Os alias d\'as pachinas espezials y as parabras machicas pueden tener barias traduzions. As traduzions se deseparan por una coma (,). Os nombres d\'as aparenzias y d\'os espazios de nombres no pueden tener que una unica traduzión.
+Os alias d'as pachinas espezials y as parabras machicas pueden tener barias traduzions. As traduzions se deseparan por una coma (,). Os nombres d'as aparenzias y d'os espazios de nombres no pueden tener que una unica traduzión.
 
-En as traduzions d\'os espazios de nombres <tt>$1 talk</tt> ye espezial. <tt>$1</tt> ye escambiata por o nombre d\'o sitio (por exemplo <tt>{{SITENAME}} talk</tt>. Si no ye posible en a suya luenga formar una esprisión correuta sin cambiar o nombre d\'o sitio, contaute con un programador.
+En as traduzions d'os espazios de nombres <tt>\$1 talk</tt> ye espezial. <tt>\$1</tt> ye escambiata por o nombre d'o sitio (por exemplo <tt>{{SITENAME}} talk</tt>. Si no ye posible en a suya luenga formar una esprisión correuta sin cambiar o nombre d'o sitio, contaute con un programador.
 
-Ha de pertenexer á la colla de tradutors ta alzar os cambeos. Ístos no quedan rechistratos dica que no se puncha en o botón "Alzar pachina" que ye en o cobaxo d\'a pachina.',
-	'translate-magic-form' => 'Luenga: $1 Modulo: $2 $3',
-	'translate-magic-submit' => 'Ir á escar',
-	'translate-magic-cm-to-be' => 'Esdebiene',
-	'translate-magic-cm-current' => 'Autual',
-	'translate-magic-cm-original' => 'Orichinal',
-	'translate-magic-cm-fallback' => 'Luenga d\'aduya',
-	'translate-magic-cm-save' => 'Alzar',
-	'translate-magic-cm-export' => 'Esportar',
+Ha de pertenexer á la colla de tradutors ta alzar os cambeos. Ístos no quedan rechistratos dica que no se puncha en o botón \"Alzar pachina\" que ye en o cobaxo d'a pachina.",
+	'translate-magic-form'            => 'Luenga: $1 Modulo: $2 $3',
+	'translate-magic-submit'          => 'Ir á escar',
+	'translate-magic-cm-to-be'        => 'Esdebiene',
+	'translate-magic-cm-current'      => 'Autual',
+	'translate-magic-cm-original'     => 'Orichinal',
+	'translate-magic-cm-fallback'     => "Luenga d'aduya",
+	'translate-magic-cm-save'         => 'Alzar',
+	'translate-magic-cm-export'       => 'Esportar',
 	'translate-magic-cm-updatedusing' => 'Esbiellato usando Special:Magic',
-	'translate-magic-cm-savefailed' => 'No se podió alzar a pachina',
-	'translate-magic-special' => 'Alias de pachinas espezials',
-	'translate-magic-words' => 'Parabras machicas',
-	'translate-magic-skin' => 'Nombres d\'aparenzias',
-	'translate-magic-namespace' => 'Espazios de nombres',
-	'translationchanges' => 'Cambeos en a traduzión',
+	'translate-magic-cm-savefailed'   => 'No se podió alzar a pachina',
+	'translate-magic-special'         => 'Alias de pachinas espezials',
+	'translate-magic-words'           => 'Parabras machicas',
+	'translate-magic-skin'            => "Nombres d'aparenzias",
+	'translate-magic-namespace'       => 'Espazios de nombres',
+	'translationchanges'              => 'Cambeos en a traduzión',
+	'translationchanges-export'       => 'esportar',
+	'translationchanges-change'       => '$1: $2 por $3',
 	'translate-page-no-such-language' => 'O codigo de idioma furnito no ye balido',
 );
 
@@ -1313,11 +1319,61 @@ $messages['ro'] = array(
 	'translate-edit-message-in' => 'Textul curent în <b>$1</b> ($2):',
 );
 
+/** Russian (Русский)
+ * @author .:Ajvol:.
+ */
 $messages['ru'] = array(
-	'translate' => 'Перевод',
-	'translate-edit-message-format' => 'Формат текущего сообщения - <b>$1</b>.',
-	'translate-edit-message-in' => 'Текущее выражение на языке <b>$1</b> ($2):',
-	'translate-edit-message-in-fb' => 'Текущее выражение на базовом языке <b>$1</b> ($2):',
+	'translate'                       => 'Перевод',
+	'translate-edit'                  => 'править',
+	'translate-talk'                  => 'обсуждение',
+	'translate-history'               => 'история',
+	'translate-delete'                => 'откатить изменения',
+	'translate-task-view'             => 'Показать все сообщения',
+	'translate-task-untranslated'     => 'Показать непереведённые сообщения',
+	'translate-task-optional'         => 'Показать необязательные сообщения',
+	'translate-task-review'           => 'Проверить изменения',
+	'translate-task-reviewall'        => 'Проверить все переводы',
+	'translate-task-export'           => 'Выгрузить переводы',
+	'translate-task-export-to-file'   => 'Выгрузить переводы в файл',
+	'translate-task-export-as-po'     => 'Выгрузить переводы в формате gettext',
+	'translate-settings'              => '$1 из $2 на языке $3, не более $4 на страницу. $5',
+	'translate-paging'                => '<div>Сообщения от $1 до $2 из $3. [ $4 | $5 ]</div>',
+	'translate-submit'                => 'Вывести',
+	'translate-next'                  => 'следующая страница',
+	'translate-prev'                  => 'предыдущая страница',
+	'translate-optional'              => '(необязательное)',
+	'translate-ignored'               => '(игнорируемое)',
+	'translate-edit-message-format'   => 'Формат текущего сообщения — <b>$1</b>.',
+	'translate-edit-message-in'       => 'Текущее сообщение. Язык: <b>$1</b> ($2).',
+	'translate-edit-message-in-fb'    => 'Текущее сообщение на подставном языке. Язык: <b>$1</b> ($2).',
+	'translate-magic-pagename'        => 'Углублённый перевод MediaWiki',
+	'translate-magic-help'            => 'Вы можете переводить псевдонимы служебных страниц, магические слова, названия тем оформления и пространств имён.
+
+При редактировании магических слов, желательно оставить английский вариант, иначе он не будет работать. Также стоит оставить первое значение (цифра 0 или 1) таким, какое оно есть.
+
+Псевдонимы служебных страниц и магические слова могут иметь несколько вариантов перевода, они разделяются запятой (,). Названия тем оформления и пространства имён могут иметь только один вариант перевода.
+
+В переводах пространств имён строка «Обсуждение $1» обрабатывается особо, «$1» будет заменено на имя сайта (например «Обсуждение {{SITENAME}}»). Свяжитесь с разработчиками, если подобная грамматическая конструкция неверна для вашего языка.
+
+Чтобы сохранить изменения вы должны входить в группу переводчиков. Изменения не будут сохранены, пока вы не нажмёте кнопку ниже.',
+	'translate-magic-form'            => 'Язык: $1 Модуль: $2 $3',
+	'translate-magic-submit'          => 'Вывести',
+	'translate-magic-cm-to-be'        => 'Должно быть',
+	'translate-magic-cm-current'      => 'Текущее',
+	'translate-magic-cm-original'     => 'Исходное',
+	'translate-magic-cm-fallback'     => 'Подставное',
+	'translate-magic-cm-save'         => 'Сохранить',
+	'translate-magic-cm-export'       => 'Выгрузить',
+	'translate-magic-cm-updatedusing' => 'Обновлено с помощью Special:Magic',
+	'translate-magic-cm-savefailed'   => 'Сохранение не удалось',
+	'translate-magic-special'         => 'Псевдонимы служебных страниц',
+	'translate-magic-words'           => 'Магические слова',
+	'translate-magic-skin'            => 'Названия тем оформления',
+	'translate-magic-namespace'       => 'Пространства имён',
+	'translationchanges'              => 'Изменения в переводах',
+	'translationchanges-export'       => 'выгрузить',
+	'translationchanges-change'       => '$1: $2 $3',
+	'translate-page-no-such-language' => 'Передан неверный код языка',
 );
 
 $messages['sah'] = array(
