@@ -1077,6 +1077,14 @@ class FarmerMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'Farmer/Farmer.i18n.php';
+
+	protected $optional = array(
+		'farmercreateurl',
+	);
+	protected $ignored = array(
+		'farmerwikiurl',
+		'farmerinterwikiurl',
+	);
 }
 
 class FCKeditorExtensionGroup extends MultipleFileMessageGroup {
@@ -1244,8 +1252,10 @@ class InterwikiMessageGroup extends ExtensionMessageGroup {
 	protected $arrName     = 'wgSpecialInterwikiMessages';
 	protected $messageFile = 'Interwiki/SpecialInterwiki.i18n.php';
 
-	protected $ignored = array(
+	protected $optional = array(
 		'interwiki_defaulturl',
+	);
+	protected $ignored = array(
 		'interwiki_local',
 		'interwiki_logentry',
 		'interwiki_trans',
