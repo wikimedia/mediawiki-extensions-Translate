@@ -1686,7 +1686,7 @@ class RenameUserMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Rename User';
 	protected $id    = 'ext-renameuser';
 
-	protected $arrName     = 'wgRenameuserMessages';
+	protected $arrName     = 'messages';
 	protected $messageFile = 'Renameuser/SpecialRenameuser.i18n.php';
 }
 
