@@ -127,6 +127,7 @@ $wgTranslateAC = array(
 'ext-inspectcache'          => 'InspectCacheMessageGroup',
 'ext-intersection'          => 'IntersectionMessageGroup',
 'ext-interwiki'             => 'InterwikiMessageGroup',
+'ext-languageselector'      => 'LanguageSelectorMessageGroup',
 'ext-latexdoc'              => 'LatexDocMessageGroup',
 'ext-linksearch'            => 'LinkSearchMessageGroup',
 'ext-liquidthreads'         => 'LiquidThreadsMessageGroup',

@@ -1263,6 +1263,14 @@ class InterwikiMessageGroup extends ExtensionMessageGroup {
 	);
 }
 
+class LanguageSelectorMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Language Selector';
+	protected $id    = 'ext-languageselector';
+
+	protected $arrName = 'messages';
+	protected $messageFile = 'LanguageSelector/LanguageSelector.i18n.php';
+}
+
 class LatexDocMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Latex Doc';
 	protected $id    = 'ext-latexdoc';
