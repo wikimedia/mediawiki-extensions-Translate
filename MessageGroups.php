@@ -1071,6 +1071,14 @@ class ExpandTemplatesMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'ExpandTemplates/ExpandTemplates.i18n.php';
 }
 
+class FarmerMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Farmer';
+	protected $id    = 'ext-farmer';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'Farmer/Farmer.i18n.php';
+}
+
 class FCKeditorExtensionGroup extends MultipleFileMessageGroup {
 	protected $label = 'FCKeditor';
 	protected $id    = 'ext-fckeditor';
