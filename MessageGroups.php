@@ -1254,11 +1254,11 @@ class InterwikiMessageGroup extends ExtensionMessageGroup {
 
 	protected $optional = array(
 		'interwiki_defaulturl',
+		'interwiki_local',
+		'interwiki_trans',
 	);
 	protected $ignored = array(
-		'interwiki_local',
 		'interwiki_logentry',
-		'interwiki_trans',
 		'interwiki_url',
 	);
 }
