@@ -486,8 +486,8 @@ $messages['fi'] = array(
 );
 
 /** French (Français)
- * @author Sherbrooke
  * @author Seb35
+ * @author Sherbrooke
  * @author Grondin
  */
 $messages['fr'] = array(
@@ -568,52 +568,58 @@ $messages['frc'] = array(
 	'translationchanges' => 'Modification des traductions',
 );
 
+/** Galician (Galego)
+ * @author Xosé
+ * @author Alma
+ */
 $messages['gl'] = array(
-	'translate' => 'Traducir',
-	'translate-edit' => 'Editar',
-	'translate-talk' => 'Discusión',
-	'translate-history' => 'Historial',
-	'translate-delete' => 'eliminar',
-	'translate-task-view' => 'Ver todas as mensaxes de',
-	'translate-task-untranslated' => 'Ver todas as mensaxes sen traducir de',
-	'translate-task-optional' => 'Ver mensaxes opcionais de',
-	'translate-task-review' => 'Revisar cambios en',
-	'translate-task-reviewall' => 'Revisar todas as traducións en',
-	'translate-task-export' => 'Exportar traducións de',
-	'translate-task-export-to-file' => 'Exportar a tradución a un ficheiro de',
-	'translate-settings' => 'Quero $1 $2 na lingua $3 co límite $4. $5',
-	'translate-paging' => '<div>Amosando mensaxes de $1 a $2 de $3. [ $4 | $5 ]</div>',
-	'translate-submit' => 'Procura',
-	'translate-next' => 'Páxina seguinte',
-	'translate-prev' => 'Páxina anterior',
-	'translate-optional' => '(opcional)',
-	'translate-ignored' => '(ignorado)',
-	'translate-edit-message-format' => 'O formato desta mensaxe é <b>$1</b>.',
-	'translate-edit-message-in' => 'Cadea actual en <b>$1</b> ($2):',
-	'translate-edit-message-in-fb' => 'Cadea actual na lingua de apoio <b>$1</b> ($2):',
-	'translate-magic-pagename' => 'Tradución extendida de MediaWiki',
-	'translate-magic-help' => 'Pode traducir os alias das páxinas especiais, as palabras máxicas, os nomes das aparencias e os nomes dos espazos de nomes.
+	'translate'                       => 'Traducir',
+	'translate-edit'                  => 'Editar',
+	'translate-talk'                  => 'Discusión',
+	'translate-history'               => 'Historial',
+	'translate-delete'                => 'eliminar',
+	'translate-task-view'             => 'Ver todas as mensaxes de',
+	'translate-task-untranslated'     => 'Ver todas as mensaxes sen traducir de',
+	'translate-task-optional'         => 'Ver mensaxes opcionais de',
+	'translate-task-review'           => 'Revisar cambios en',
+	'translate-task-reviewall'        => 'Revisar todas as traducións en',
+	'translate-task-export'           => 'Exportar traducións de',
+	'translate-task-export-to-file'   => 'Exportar a tradución a un ficheiro de',
+	'translate-settings'              => 'Quero $1 $2 na lingua $3 co límite $4. $5',
+	'translate-paging'                => '<div>Amosando mensaxes de $1 a $2 de $3. [ $4 | $5 ]</div>',
+	'translate-submit'                => 'Procura',
+	'translate-next'                  => 'Páxina seguinte',
+	'translate-prev'                  => 'Páxina anterior',
+	'translate-optional'              => '(opcional)',
+	'translate-ignored'               => '(ignorado)',
+	'translate-edit-message-format'   => 'O formato desta mensaxe é <b>$1</b>.',
+	'translate-edit-message-in'       => 'Cadea actual en <b>$1</b> ($2):',
+	'translate-edit-message-in-fb'    => 'Cadea actual na lingua de apoio <b>$1</b> ($2):',
+	'translate-magic-pagename'        => 'Tradución extendida de MediaWiki',
+	'translate-magic-help'            => 'Pode traducir os alias das páxinas especiais, as palabras máxicas, os nomes das aparencias e os nomes dos espazos de nomes.
 
 Nas páxinas máxicas ten que incluir as traducións en inglés ou non funcionarán. Deixe tamén o primeiro elemento (0 ou 1) tal e como está.
 
 Os alias de páxinas especiais e as palabras máxicas poden ter varias traducións. As traducións sepáranse mediante unha vírgula (,). Os nomes das aparencias e dos espazos de nomes só poden ter unha tradución.
 
 Nas traducións dos espazos de nomes, <tt>$1 talk</tt> é especial. <tt>$1</tt> substitúese polo nome do sitio (por exemplo <tt>{{SITENAME}} talk</tt>. Se na súa lingua non resulta posíbel formar unha expresión válida sen mudar o nome do sitio, contacte cun programador.',
-	'translate-magic-form' => 'Lingua: $1 Módulo: $2 $3',
-	'translate-magic-submit' => 'Procurar',
-	'translate-magic-cm-to-be' => 'Será',
-	'translate-magic-cm-current' => 'Actual',
-	'translate-magic-cm-original' => 'Orixinal',
-	'translate-magic-cm-fallback' => 'Reserva',
-	'translate-magic-cm-save' => 'Gardar',
-	'translate-magic-cm-export' => 'Exportar',
+	'translate-magic-form'            => 'Lingua: $1 Módulo: $2 $3',
+	'translate-magic-submit'          => 'Procurar',
+	'translate-magic-cm-to-be'        => 'Será',
+	'translate-magic-cm-current'      => 'Actual',
+	'translate-magic-cm-original'     => 'Orixinal',
+	'translate-magic-cm-fallback'     => 'Reserva',
+	'translate-magic-cm-save'         => 'Gardar',
+	'translate-magic-cm-export'       => 'Exportar',
 	'translate-magic-cm-updatedusing' => 'Actualizado mediante Special:Magic',
-	'translate-magic-cm-savefailed' => 'Fallou o gardado',
-	'translate-magic-special' => 'Alias de páxinas especiais',
-	'translate-magic-words' => 'Palabras máxicas',
-	'translate-magic-skin' => 'Nome das aparencias',
-	'translate-magic-namespace' => 'Nomes dos espazos de nomes',
-	'translationchanges' => 'Modificacións na tradución',
+	'translate-magic-cm-savefailed'   => 'Fallou o gardado',
+	'translate-magic-special'         => 'Alias de páxinas especiais',
+	'translate-magic-words'           => 'Palabras máxicas',
+	'translate-magic-skin'            => 'Nome das aparencias',
+	'translate-magic-namespace'       => 'Nomes dos espazos de nomes',
+	'translationchanges'              => 'Modificacións na tradución',
+	'translationchanges-export'       => 'exportar',
+	'translationchanges-change'       => '$1: $2 por $3',
 	'translate-page-no-such-language' => 'Forneceuse un código de lingua non válido',
 );
 
@@ -707,6 +713,7 @@ Dyrbiš w skupinje přełožowarjow być, zo by změny składował. Změny so nj
 	'translate-magic-submit'          => 'Pokazać',
 	'translate-magic-cm-to-be'        => 'Ma być:',
 	'translate-magic-cm-current'      => 'Tuchwilu',
+	'translate-magic-cm-original'     => 'Original',
 	'translate-magic-cm-fallback'     => 'Wuhibna rěč',
 	'translate-magic-cm-save'         => 'Składować',
 	'translate-magic-cm-export'       => 'Eksportować',
@@ -1178,7 +1185,6 @@ Du må være i oversettergruppa for å lagre endringer. Endringer lagres ikke f�
 	'translationchanges-export'       => 'eksporter',
 	'translationchanges-change'       => '$1: $2 av $3',
 	'translate-page-no-such-language' => 'Ugyldig språkkode oppgitt',
-
 );
 
 /** Occitan (Occitan)
