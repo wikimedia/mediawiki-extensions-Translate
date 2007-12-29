@@ -12,6 +12,7 @@ $wgGroupPermissions['Translators']['translate'] = true;
 == Changes in version 8 ==
 * Not released
 * export.php for even faster exporting (only core messages supported currently)
+* Message groups can now have description or notes for translations
 
 == Changes in version 7 ==
 * Released 2007-12-29

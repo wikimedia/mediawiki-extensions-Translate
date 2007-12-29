@@ -23,6 +23,11 @@ abstract class MessageGroup {
 	protected $meta   = false;
 
 	/**
+	 * Holds descripton of this group.
+	 */
+	protected $description = null;
+
+	/**
 	 * Returns a human readable name of this group.
 	 */
 	public function getLabel() { return $this->label; }
@@ -36,6 +41,11 @@ abstract class MessageGroup {
 	 * Returns true is this a meta group.
 	 */
 	public function isMeta() { return $this->meta; }
+
+	/**
+	 * Returns description of this group directed to translators.
+	 */
+	public function getDescription() { return $this->description; }
 
 	/**
 	 * In this function message group should add translations from the stored file
@@ -2095,10 +2105,11 @@ class WikidataOmegaWikiDataSearchMessageGroup extends ExtensionMessageGroup {
 }
 
 class FreeColMessageGroup extends MessageGroup {
-
 	protected $label = 'FreeCol (open source game)';
 	protected $id    = 'out-freecol';
 	protected $prefix= 'freecol-';
+
+	protected $description = 'Before starting translating FreeCol to your language, please read [[Translating:FreeCol]] and ask ok from the FreeCol localisation coordinator.';
 
 	private   $fileDir  = 'freecol/';
 

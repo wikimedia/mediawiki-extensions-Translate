@@ -79,12 +79,14 @@ class SpecialTranslate extends SpecialPage {
 			header( 'Content-type: text/plain; charset=UTF-8' );
 			echo $output;
 		} else {
+			$description = $this->getGroupDescription();
 			$links = $this->doStupidLinks();
 			if ( $this->paging['total'] === 0 ) {
-				$wgOut->addHTML( $links );
+				$wgOut->addHTML( $description . $links );
 			} else {
-				$wgOut->addHTML( $links . $output . $links );
+				$wgOut->addHTML( $description . $links . $output . $links );
 			}
+
 		}
 	}
 
@@ -277,5 +279,14 @@ class SpecialTranslate extends SpecialPage {
 		return true;
 	}
 
-
+	protected function getGroupDescription() {
+		global $wgOut;
+		$description = $this->group->getDescription();
+		if ( !$description ) return '';
+		return
+			Xml::openElement( 'fieldset' ) .
+				Xml::element( 'legend', null, wfMsg( self::MSG . 'description-legend' ) ) .
+				$wgOut->parse( $description ) .
+			Xml::closeElement( 'fieldset' );
+	}
 }

@@ -41,6 +41,8 @@ $messages['en'] = array(
 	'translate-next' => 'Next page',
 	'translate-prev' => 'Previous page',
 
+	'translate-page-description-legend' => 'Information about the group',
+
 	'translate-optional' => '(optional)',
 	'translate-ignored' => '(ignored)',
 
