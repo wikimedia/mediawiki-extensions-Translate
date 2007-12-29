@@ -208,6 +208,7 @@ class TranslateUtils {
 		foreach( $messages as $key => $m ) {
 
 			$title = self::title( $key, $messages->code );
+			$tools = array();
 
 			$page['object'] = Title::makeTitle( NS_MEDIAWIKI, $title );
 			$talk['object'] = Title::makeTitle( NS_MEDIAWIKI_TALK, $title );
@@ -225,13 +226,15 @@ class TranslateUtils {
 			} else {
 				$talk['link'] = $sk->makeBrokenLinkObj( $talk['object'], $uimsg['talk'] );
 			}
+			$tools[] = $talk['link'];
 
-			$page['edit'] = $uimsg['edit'];
 			if ( $wgUser->isAllowed( 'translate' ) ) {
-				$page['edit'] = $sk->makeKnownLinkObj( $page['object'], $uimsg['edit'], "action=edit&loadgroup=$group" );
+				$tools[] = $sk->makeKnownLinkObj( $page['object'], $uimsg['edit'], "action=edit&loadgroup=$group" );
+			} else {
+				$tools[] = $uimsg['edit'];
 			}
-			$page['history'] = $sk->makeKnownLinkObj( $page['object'], $uimsg['history'], 'action=history' );
-			$page['delete'] = $sk->makeKnownLinkObj( $page['object'], $uimsg['delete'], 'action=delete' );
+
+			$tools[] = $sk->makeKnownLinkObj( $page['object'], $uimsg['history'], 'action=history' );
 
 			$anchor = 'msg_' . $key;
 			$anchor = Xml::element( 'a', array( 'name' => $anchor, 'href' => "#$anchor" ), "↓" );
@@ -241,7 +244,7 @@ class TranslateUtils {
 			if ( $m->ignored )  $extra = $uimsg['ignored'];
 
 			$leftColumn = $anchor . ' ' . $page['link'] . ' ' . $extra . '<br />' .
-				implode( ' | ', array( $talk['link'] , $page['edit'], $page['history'], $page['delete'] ) );
+				implode( ' | ', $tools );
 
 			if ( $review ) {
 				$output .= Xml::tags( 'tr', array( 'class' => 'orig' ),
