@@ -35,7 +35,7 @@ $messages['en'] = array(
 
 	'translate-page-navigation-legend' => 'Navigation',
 	'translate-page-showing' => 'Showing messages from $1 to $2 of $3.',
-	'translate-page-showing-all' => 'Showing $1 messages.',
+	'translate-page-showing-all' => 'Showing $1 {{PLURAL:$1|message|messages}}.',
 	'translate-page-showing-none' => 'No messages to show.',
 	'translate-page-paging-links' => '[ $1 ] [ $2 ]',
 	'translate-next' => 'Next page',
