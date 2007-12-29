@@ -73,13 +73,18 @@ class SpecialTranslate extends SpecialPage {
 		// Initialise and get output
 		$this->task->init( $this->group, $taskOptions );
 		$output = $this->task->execute();
+
 		if ( $this->task->plainOutput() ) {
 			$wgOut->disable();
 			header( 'Content-type: text/plain; charset=UTF-8' );
 			echo $output;
 		} else {
 			$links = $this->doStupidLinks();
-			$wgOut->addHTML( $links . $output . $links );
+			if ( $this->paging['total'] === 0 ) {
+				$wgOut->addHTML( $links );
+			} else {
+				$wgOut->addHTML( $links . $output . $links );
+			}
 		}
 	}
 
