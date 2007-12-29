@@ -719,13 +719,8 @@ class AsksqlMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Asksql';
 	protected $id    = 'ext-asksql';
 
-	protected $functionName = 'efAsksqlMessages';
+	protected $arrName     = 'messages';
 	protected $messageFile  = 'Asksql/Asksql.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportPrefix= '';
-	protected $exportLineP = "\t";
-	protected $exportEnd   = '),';
 }
 
 class BackAndForthMessageGroup extends ExtensionMessageGroup {
