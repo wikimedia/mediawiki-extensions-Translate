@@ -159,9 +159,9 @@ class TranslateUtils {
 		);
 
 		foreach ( $rows as $row ) {
-			if ( $row->page_namespace === NS_MEDIAWIKI ) {
+			if ( $row->page_namespace === (string)NS_MEDIAWIKI ) {
 				self::$pageExists[$row->page_title] = true;
-			} else {
+			} elseif ( $row->page_namespace === (string)NS_MEDIAWIKI_TALK ) {
 				self::$talkExists[$row->page_title] = true;
 			}
 		}
