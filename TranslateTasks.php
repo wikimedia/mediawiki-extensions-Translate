@@ -148,7 +148,7 @@ class ViewMessagesTask extends TranslateTask {
 				$this->messages[$key]->ignored = true;
 			}
 		}
-		
+
 	}
 
 	protected function filterIgnored() {
@@ -396,7 +396,7 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 			$headerlines[] = "$key: $value\n";
 		}
 
-	
+
 		$out .= "# Translation of $label to $languageName\n# This is an experimental feature\n";
 		$out .= self::formatmsg( '', $headerlines  );
 
@@ -477,7 +477,7 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 		if ( !is_array( $msgstr ) ) { $msgstr = array( $msgstr ); }
 		$output[] = 'msgid ' . implode( "\n", array_map( array( __CLASS__, 'escape' ), $msgid ) );
 		$output[] = 'msgstr ' . implode( "\n", array_map( array( __CLASS__, 'escape' ), $msgstr ) );
-		
+
 		$out = implode( "\n", $output ) . "\n\n";
 		return $out;
 
@@ -491,9 +491,9 @@ class TranslateTasks {
 		'optional'       => 'ViewOptionalTask',
 		'review'         => 'ReviewMessagesTask',
 		'reviewall'      => 'ReviewAllMessagesTask',
+		'export-as-po'   => 'ExportasPoMessagesTask',
 		'export'         => 'ExportMessagesTask',
 		'export-to-file' => 'ExportToFileMessagesTask',
-		'export-as-po'   => 'ExportasPoMessagesTask',
 	);
 
 	public static function getTasks() {
