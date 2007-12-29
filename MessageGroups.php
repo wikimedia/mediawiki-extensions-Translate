@@ -1970,6 +1970,10 @@ class TranslateMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'Translate/Translate.i18n.php';
+
+	protected $optional = array(
+		'translate-page-paging-links',
+	);
 }
 
 class UserContactLinksMessageGroup extends ExtensionMessageGroup {
