@@ -59,6 +59,10 @@ abstract class TranslateTask {
 		return $this->id;
 	}
 
+	public function plainOutput() {
+		return false;
+	}
+
 	protected $messageGroup = null;
 	protected $messages = null;
 	protected $options = null;
@@ -308,6 +312,10 @@ class ExportMessagesTask extends ViewMessagesTask {
 		);
 	}
 
+	public function plainOutput() {
+		return true;
+	}
+
 	protected function getOutputHeader() {
 		$name = TranslateUtils::getLanguageName( $this->options->getLanguage() );
 		$_authors = $this->getAuthors();
@@ -349,15 +357,11 @@ class ExportToFileMessagesTask extends ExportMessagesTask {
 	protected $id = 'export-to-file';
 
 	public function output() {
-		global $wgOut;
-		$wgOut->disable();
-		header( 'Content-type: text/plain; charset=UTF-8' );
-		echo
+		return
 			$this->messageGroup->exportToFile(
 				$this->messages,
 				$this->getAuthorsArray()
 			);
-		return '';
 	}
 }
 
@@ -365,9 +369,9 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 	protected $id = 'export-as-po';
 
 	public function output() {
-		global $wgLang, $IP, $wgOut;
-		$wgOut->disable();
-		header( 'Content-type: text/plain; charset=UTF-8' );
+		global $IP;
+
+		$lang = Language::factory( 'en' );
 
 		$out = '';
 		$now = wfTimestampNow();
@@ -379,7 +383,7 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 		$headers['Project-Id-Version'] = 'MediaWiki ' . SpecialVersion::getVersion();
 		$headers['Report-Msgid-Bugs-To'] = 'Bugzilla?';
 		// TODO: sprintfDate doesn't support any time zone flags
-		$headers['POT-Creation-Date'] = $wgLang->sprintfDate( 'xnY-xnm-xnd xnH:xni:xns O', $now );
+		$headers['POT-Creation-Date'] = $lang->sprintfDate( 'xnY-xnm-xnd xnH:xni:xns O', $now );
 		$headers['Language-Team'] = TranslateUtils::getLanguageName( $this->options->getLanguage() );
 		$headers['Content-Type'] = 'text-plain; charset=UTF-8';
 		$headers['Content-Transfer-Encoding'] = '8bit';
@@ -397,6 +401,7 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 		$out .= self::formatmsg( '', $headerlines  );
 
 
+		// Todo: move to MessageGroup
 		require( $IP . '/maintenance/language/messages.inc' );
 
 		foreach ( $this->messages as $key => $m) {
@@ -431,7 +436,7 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 
 		}
 
-		echo $out;
+		return $out;
 	}
 
 	private static function escape( $line ) {
@@ -499,7 +504,7 @@ class TranslateTasks {
 		if ( isset(self::$aTasks[$id]) ) {
 			return new self::$aTasks[$id];
 		} else {
-			throw new MWException( "No task for id $id" );
+			return null;
 		}
 	}
 }

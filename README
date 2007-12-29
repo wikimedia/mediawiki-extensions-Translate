@@ -4,14 +4,37 @@ LocalSettings.php:
 include("$IP/extensions/Translate/Translate.php");
 $wgTranslateEC = array_keys($wgTranslateAC); // All modules
 $wgTranslateFuzzyBotName = 'FuzzyBot';
-$wgTranslateTryLoad = true;
 $wgGroupPermissions['Translators']['translate'] = true;
 
 * To use fuzzy.php, symlink and run it form maintenance directory
 * Users have to be a member of user group 'Translators' to enable full functionality.
 
+== Changes in version 7 ==
+* Released 2007-12-29
+* New HTMLSelector class
+* Cleaned user interface of Special:Translate
+* Special:TranslationChanges remembers hours option
+* Removed for a while unused setting $wgTranslateTryLoad
+* TranslateTasks::getTask returns null for invalid keys instead of throwing en error
+* New member function TranslateTask::plainOutput - Tasks can use it to request plain text output
+* Add css as a separate file instead of adding it to request output and new setting for it: $wgTranslateCssLocation
+* Filled readme for old changes a bit
+* Experimental po import
+* groupStatistics.php for creating statistics for groups
 
-== New features in version 4 ==
+== Changes in version 6 ==
+* Released 2007-12-21
+* New classes MessageCollection and TMessage
+* Experimental po export
+* MessageGroup::fillBools has changed to getBools and usage changed a little
+* New member function MessageGroup::isMeta
+* Lots of new extensions supported
+
+== Changes in version 5 ==
+* Released 2007-11-14
+* CreateMessageIndex.php which creates serialised index of message key -> group
+
+== Changes in version 4 ==
 * New "task-based" interface
 * Paging of messages
 * Seperation of translation and interface language

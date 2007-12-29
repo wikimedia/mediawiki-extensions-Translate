@@ -11,7 +11,7 @@ if (!defined('MEDIAWIKI')) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '6.7' );
+define( 'TRANSLATE_VERSION', '7.0' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'Translate',
@@ -24,6 +24,7 @@ $wgExtensionCredits['specialpage'][] = array(
 $dir = dirname(__FILE__) . '/';
 $wgAutoloadClasses['TranslateTasks'] = $dir . 'TranslateTasks.php';
 $wgAutoloadClasses['TranslateUtils'] = $dir . 'TranslateUtils.php';
+$wgAutoloadClasses['HTMLSelector'] = $dir . 'TranslateUtils.php';
 
 $wgAutoloadClasses['MessageGroups'] = $dir . 'MessageGroups.php';
 
@@ -55,12 +56,6 @@ define( 'TRANSLATE_INDEXFILE', $dir . 'messageindex.ser' );
 # Configuration variables
 #
 
-/**
- * If this variable is set to false, this extension will not touch any extension
- * files. If set to true, files are read and included to get messages.
- */
-$wgTranslateTryLoad = false;
-
 /** Where to look for extension files */
 $wgTranslateExtensionDirectory = "$IP/extensions/";
 
@@ -69,6 +64,9 @@ $wgTranslateLanguageFallbacks = array();
 
 /** Name of the fuzzer bot */
 $wgTranslateFuzzyBotName = 'FuzzyBot';
+
+/** Address to css if non-default or false */
+$wgTranslateCssLocation = $wgScriptPath . '/extensions/Translate';
 
 /** AC = Available classes */
 $wgTranslateAC = array(

@@ -26,3 +26,16 @@
 .mw-sp-translate-table tr.opt {
 	background-color: #F2F200;
 }
+
+.mw-sp-translate-error {
+	font-style: italic;
+	background-color: yellow;
+	padding-left: 3em;
+	padding-right: 3em;
+}
+
+.mw-sp-translate-settings table {
+	border-spacing: 12pt 5pt;
+	background-color: inherit;
+	font-weight: bold;
+}

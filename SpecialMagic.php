@@ -90,13 +90,11 @@ class SpecialMagic extends SpecialPage {
 	 * @return string
 	 */
 	protected function moduleSelector( $selectedId ) {
-		$options = '';
+		$selector = new HTMLSelector( 'module', 'module', $selectedId );
 		foreach( $this->aModules as $code ) {
-			$selected = ($code === $selectedId);
-			$options .= Xml::option( wfMsg( self::MSG . $code ), $code, $selected ) . "\n";
+			$selector->addOption( wfMsg( self::MSG . $code ), $code );
 		}
-
-		return TranslateUtils::selector( 'module', $options );
+		return $selector->getHTML();
 	}
 
 	/**

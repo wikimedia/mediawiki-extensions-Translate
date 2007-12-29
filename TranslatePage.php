@@ -30,29 +30,60 @@ class SpecialTranslate extends SpecialPage {
 	public function execute( $parameters ) {
 		wfLoadExtensionMessages( 'Translate' );
 
-		global $wgHooks;
-		$wgHooks['SkinTemplateSetupPageCss'][] = array( $this , 'pagecss' );
+		global $wgHooks, $wgOut, $wgTranslateCssLocation;
+		if ( $wgTranslateCssLocation ) {
+			$wgOut->addLink( array( 'rel' => 'stylesheet', 'type' => 'text/css',
+				'href' => "$wgTranslateCssLocation/Translate.css", )
+			);
+		} else {
+			$wgHooks['SkinTemplateSetupPageCss'][] = array( $this , 'pagecss' );
+		}
 
 		$this->setup();
 		$this->setHeaders();
 
-		global $wgOut;
-		$wgOut->addHTML( $this->settingsForm() );
+		$errors = array();
 
 		if ( !$this->options['language'] ) {
-			$wgOut->addHTML(
-				wfMsgExt( self::MSG . 'no-such-language', array( 'parse' ) )
-			);
-			return;
+			$errors['language'] = wfMsgExt( self::MSG . 'no-such-language', array( 'parse' ) );
+			$this->options['language'] = $this->defaults['language'];
+		}
+		if ( !$this->task instanceof TranslateTask ) {
+			$errors['task'] = wfMsgExt( self::MSG . 'no-such-task', array( 'parse' ) );
+			$this->options['task'] = $this->defaults['task'];
+		}
+		if ( !$this->group instanceof MessageGroup ) {
+			$errors['group'] = wfMsgExt( self::MSG . 'no-such-group', array( 'parse' ) );
+			$this->options['group'] = $this->defaults['group'];
 		}
 
-		# Everything ok, proceed
-		$table = $this->task->execute();
-		$links = $this->doStupidLinks();
-		$wgOut->addHTML( $links . $table . $links );
+		// Show errors nicely
+		$wgOut->addHTML( $this->settingsForm( $errors ) );
+
+		if ( count($errors) ) return;
+
+		# Proceed
+		$taskOptions = new TaskOptions(
+			$this->options['language'],
+			$this->options['limit'],
+			$this->options['offset'],
+			array( $this, 'cbAddPagingNumbers' )
+		);
+
+		// Initialise and get output
+		$this->task->init( $this->group, $taskOptions );
+		$output = $this->task->execute();
+		if ( $this->task->plainOutput() ) {
+			$wgOut->disable();
+			header( 'Content-type: text/plain; charset=UTF-8' );
+			echo $output;
+		} else {
+			$links = $this->doStupidLinks();
+			$wgOut->addHTML( $links . $output . $links );
+		}
 	}
 
-	function setup() {
+	protected function setup() {
 		global $wgUser, $wgRequest;
 
 		$defaults = array(
@@ -75,7 +106,7 @@ class SpecialTranslate extends SpecialPage {
 			} elseif( is_string($t) ) {
 				$r = $wgRequest->getText( $v, $defaults[$v] );
 			}
-			wfAppendToArrayIfNotDefault( $v, $r, $defaults, $nondefaults);
+			wfAppendToArrayIfNotDefault( $v, $r, $defaults, $nondefaults );
 		}
 
 		$this->defaults    = $defaults;
@@ -84,86 +115,87 @@ class SpecialTranslate extends SpecialPage {
 
 		$this->group = MessageGroups::getGroup( $this->options['group'] );
 		$this->task  = TranslateTasks::getTask( $this->options['task'] );
-
-		$taskOptions = new TaskOptions(
-			$this->options['language'],
-			$this->options['limit'],
-			$this->options['offset'],
-			array( $this, 'cbAddPagingNumbers' )
-		);
-		$this->task->init( $this->group, $taskOptions );
-
 	}
 
 	/**
 	 * GLOBALS: $wgTitle, $wgScript
 	 */
-	protected function settingsForm() {
+	protected function settingsForm($errors) {
 		global $wgTitle, $wgScript;
 
-		$tasks = $this->taskSelector();
-		$groups = $this->groupSelector();
-		$languages = $this->languageSelector();
+		$task = $this->taskSelector();
+		$group = $this->groupSelector();
+		$language = $this->languageSelector();
 		$limit = $this->limitSelector();
 		$button = Xml::submitButton( wfMsg( TranslateUtils::MSG . 'submit' ) );
 
-		$line = wfMsgHtml( TranslateUtils::MSG . 'settings', $tasks, $groups, $languages, $limit, $button );
-		$form = Xml::tags( 'form',
-			array(
-				'action' => $wgScript,
-				'method' => 'get'
-			),
-			$line . Xml::hidden( 'title', $wgTitle->getPrefixedText() )
-		);
+
+		$options = array();
+		foreach ( array( 'task', 'group', 'language', 'limit' ) as $g ) {
+			$options[] = self::optionRow(
+				Xml::label( wfMsg( self::MSG . $g ), $g),
+				$$g,
+				array_key_exists( $g, $errors ) ? $errors[$g] : null
+			);
+		}
+
+		$form =
+			Xml::openElement( 'fieldset', array( 'class' => 'mw-sp-translate-settings' ) ) .
+				Xml::element( 'legend', null, wfMsg( self::MSG . 'settings-legend' ) ) .
+				Xml::openElement( 'form', array( 'action' => $wgScript, 'method' => 'get' ) ) .
+					Xml::hidden( 'title', $wgTitle->getPrefixedText() ) .
+					Xml::openElement( 'table' ) .
+						implode( "", $options ) .
+						self::optionRow( $button, ' ' ) .
+					Xml::closeElement( 'table' ) .
+				Xml::closeElement( 'form' ) .
+			Xml::closeElement( 'fieldset' );
 		return $form;
 	}
 
-	private function taskSelector() {
-		$options = '';
+	private static function optionRow( $label, $option, $error = null ) {
+		return
+			Xml::openElement( 'tr' ) .
+				Xml::tags( 'td', null, $label ) .
+				Xml::tags( 'td', null, $option ) .
+				( $error ? Xml::tags( 'td', array( 'class' => 'mw-sp-translate-error' ), $error ) : '' ) .
+			Xml::closeElement( 'tr' );
+
+	}
+
+
+	/* Selectors ahead */
+
+	protected function groupSelector() {
+		$groups = MessageGroups::singleton()->getGroups();
+		$selector = new HTMLSelector( 'group', 'group', $this->options['group'] );
+		foreach( $groups as $id => $class ) {
+			$selector->addOption( $class->getLabel(), $id );
+		}
+		return $selector->getHTML();
+	}
+
+	protected function taskSelector() {
+		$selector = new HTMLSelector( 'task', 'task', $this->options['task'] );
 		foreach ( TranslateTasks::getTasks() as $id => $class ) {
 			$label = call_user_func( array( $class, 'labelForTask' ), $id );
-			$options .=  Xml::option( $label , $id, $this->task->getId() === $id );
+			$selector->addOption( $label, $id );
 		}
-
-		return TranslateUtils::selector( 'task', $options );
+		return $selector->getHTML();
 	}
 
 	protected function languageSelector() {
 		global $wgLang;
-		if ( is_callable(array( 'LanguageNames', 'getNames' )) ) {
-			$languages = LanguageNames::getNames( $wgLang->getCode(),
-				LanguageNames::FALLBACK_NORMAL,
-				LanguageNames::LIST_MW_AND_CLDR
-			);
-		} else {
-			$languages = Language::getLanguageNames( false );
-		}
-		
-		ksort( $languages );
-
-		$options = '';
-		foreach( $languages as $code => $name ) {
-			$selected = ($code == $this->options['language']);
-			$options .= Xml::option( "$code - $name", $code, $selected ) . "\n";
-		}
-
-		return TranslateUtils::selector( 'language', $options );
+		return TranslateUtils::languageSelector( $wgLang->getCode(), $this->options['language'] );
 	}
 
 	protected function limitSelector() {
 		$items = array( 100, 250, 500, 1000, 2000 );
-		$selected = $this->options['limit'];
-		return TranslateUtils::simpleSelector( 'limit' , $items, $selected );
-	}
-
-	protected function groupSelector() {
-		$groups = MessageGroups::singleton()->getGroups();
-		$options = '';
-		foreach( $groups as $class) {
-			$options .= Xml::option( $class->getLabel(), $class->getId(),
-				$this->options['group'] === $class->getId()) . "\n";
+		$selector = new HTMLSelector( 'limit', 'limit', $this->options['limit'] );
+		foreach ( $items as $count ) {
+			$selector->addOption( wfMsgExt( self::MSG . 'limit-option', 'parsemag', $count ), $count );
 		}
-		return TranslateUtils::selector( 'group', $options );
+		return $selector->getHTML();
 	}
 
 
@@ -177,25 +209,49 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	protected function doStupidLinks() {
-		if ( $this->paging === null ) { return ''; }
-
-		$previous = wfMsg( TranslateUtils::MSG . 'prev' );
-		if ( $this->options['offset'] > 0 ) {
-			$offset = max( 0, $this->options['offset']-$this->options['limit'] );
-			$previous = $this->makeOffsetLink( $previous, $offset );
-		}
-
-		$nextious = wfMsg( TranslateUtils::MSG . 'next' );
-		if ( $this->paging['total'] != $this->paging['start'] + $this->paging['count'] ) {
-			$offset = $this->options['offset']+$this->options['limit'];
-			$nextious = $this->makeOffsetLink( $nextious, $offset );
-		}
+		if ( $this->paging === null ) return '';
 
 		$start = $this->paging['start'] +1 ;
 		$stop  = $start + $this->paging['count']-1;
 		$total = $this->paging['total'];
 
-		return wfMsgWikiHtml( TranslateUtils::MSG . 'paging', $start, $stop, $total, $previous, $nextious );
+		$allInThisPage = $start === 1 && $total < $this->options['limit'];
+			
+		if ( $this->paging['count'] === 0 ) {
+			$navigation = wfMsgExt( self::MSG . 'showing-none', array( 'parse' ) );
+		} elseif ( $allInThisPage ) {
+			$navigation = wfMsgExt( self::MSG . 'showing-all',
+				array( 'parse' ), $total );
+		} else {
+			$previous = wfMsg( TranslateUtils::MSG . 'prev' );
+			if ( $this->options['offset'] > 0 ) {
+				$offset = max( 0, $this->options['offset']-$this->options['limit'] );
+				$previous = $this->makeOffsetLink( $previous, $offset );
+			}
+
+			$nextious = wfMsg( TranslateUtils::MSG . 'next' );
+			if ( $this->paging['total'] != $this->paging['start'] + $this->paging['count'] ) {
+				$offset = $this->options['offset']+$this->options['limit'];
+				$nextious = $this->makeOffsetLink( $nextious, $offset );
+			}
+
+			$start = $this->paging['start'] +1 ;
+			$stop  = $start + $this->paging['count']-1;
+			$total = $this->paging['total'];
+
+			$showing = wfMsgExt( self::MSG . 'showing',
+				array( 'parseinline' ), $start, $stop, $total );
+			$navigation = wfMsgExt( self::MSG . 'paging-links',
+				array( 'escape', 'replaceafter' ), $previous, $nextious );
+
+			$navigation = Xml::tags( 'p', null, $showing . ' ' . $navigation );
+		}
+
+		return
+			Xml::openElement( 'fieldset' ) .
+				Xml::element( 'legend', null, wfMsg( self::MSG . 'navigation-legend' ) ) .
+				$navigation .
+			Xml::closeElement( 'fieldset' );
 	}
 
 	private function makeOffsetLink( $label, $offset ) {

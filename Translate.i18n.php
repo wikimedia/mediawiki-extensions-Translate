@@ -21,9 +21,23 @@ $messages['en'] = array(
 	'translate-task-export-to-file' => 'Export translation to file from',
 	'translate-task-export-as-po' => 'Export translation in Gettext format',
 
-	'translate-settings' => 'I want to $1 $2 in language $3 with limit $4. $5',
-	'translate-paging' => '<div>Showing messages from $1 to $2 of $3. [ $4 | $5 ]</div>',
-	'translate-submit' => 'Fetch',
+	'translate-page-no-such-language' => 'Specified language was invalid.',
+	'translate-page-no-such-task'     => 'Specified task was invalid.',
+	'translate-page-no-such-group'    => 'Specified group was invalid.',
+
+	'translate-page-settings-legend' => 'Settings',
+	'translate-page-task'     => 'I want to',
+	'translate-page-group'    => 'Group',
+	'translate-page-language' => 'Language',
+	'translate-page-limit'    => 'Limit',
+	'translate-page-limit-option' => '$1 {{PLURAL:$1|message|messages}} per page',
+	'translate-submit'        => 'Fetch',
+
+	'translate-page-navigation-legend' => 'Navigation',
+	'translate-page-showing' => 'Showing messages from $1 to $2 of $3.',
+	'translate-page-showing-all' => 'Showing $1 messages.',
+	'translate-page-showing-none' => 'No messages to show.',
+	'translate-page-paging-links' => '[ $1 ] [ $2 ]',
 	'translate-next' => 'Next page',
 	'translate-prev' => 'Previous page',
 
@@ -65,8 +79,6 @@ You need to be in the translators group to save changes. Changes are not saved u
 	'translationchanges' => 'Translation changes',
 	'translationchanges-export' => 'export',
 	'translationchanges-change' => '$1: $2 by $3',
-
-	'translate-page-no-such-language' => 'Invalid language code was supplied',
 );
 
 $messages['af'] = array(

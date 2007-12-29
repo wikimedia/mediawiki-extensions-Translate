@@ -268,7 +268,7 @@ class TranslateUtils {
 	/* Some other helpers for ouput*/
 
 	public static function selector( $name, $options ) {
-		return Xml::tags( 'select', array( 'name' => $name ), $options );
+		return Xml::tags( 'select', array( 'name' => $name, 'id' => $name ), $options );
 	}
 
 	public static function simpleSelector( $name, $items, $selected ) {
@@ -306,10 +306,10 @@ class TranslateUtils {
 		return isset($languages[$code]) ? $languages[$code] . $suffix : false;
 	}
 
-	public static function languageSelector( $selectedId ) {
+	public static function languageSelector( $language, $selectedId ) {
 		global $wgLang;
 		if ( is_callable(array( 'LanguageNames', 'getNames' )) ) {
-			$languages = LanguageNames::getNames( $wgLang->getCode(),
+			$languages = LanguageNames::getNames( $language,
 				LanguageNames::FALLBACK_NORMAL,
 				LanguageNames::LIST_MW_AND_CLDR
 			);
@@ -319,13 +319,11 @@ class TranslateUtils {
 		
 		ksort( $languages );
 
-		$options = '';
+		$selector = new HTMLSelector( 'language', 'language', $selectedId );
 		foreach( $languages as $code => $name ) {
-			$selected = ($code === $selectedId);
-			$options .= Xml::option( "$code - $name", $code, $selected ) . "\n";
+			$selector->addOption( "$code - $name", $code );
 		}
-
-		return self::selector( 'language', $options );
+		return $selector->getHTML();
 	}
 
 	public static function messageKeyToGroup( $key ) {
@@ -345,3 +343,36 @@ class TranslateUtils {
 		return $keyToGroup;
 	}
 }
+
+
+class HTMLSelector {
+	private $options = array();
+	private $selected = false;
+	private $attributes = array();
+
+	public function __construct( $name = false, $id = false, $selected = false ) {
+		if ( $name ) $this->setAttribute( 'name', $name );
+		if ( $id ) $this->setAttribute( 'id', $id );
+		if ( $selected ) $this->selected = $selected;
+	}
+
+	public function setSelected( $selected ) {
+		$this->selected = $selected;
+	}
+
+	public function setAttribute( $name, $value ) {
+		$this->attributes[$name] = $value;
+	}
+
+	public function addOption( $name, $value = false, $selected = false) {
+		$selected = $selected ? $selected : $this->selected;
+		$value = $value ? $value : $name;
+		$this->options[] = Xml::option( $name, $value, $value === $selected );
+	}
+
+	public function getHTML() {
+		return Xml::tags( 'select', $this->attributes, implode( "\n", $this->options ) );
+	}
+
+}
+

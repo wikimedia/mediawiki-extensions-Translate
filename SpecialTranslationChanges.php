@@ -23,8 +23,9 @@ class SpecialTranslationChanges extends SpecialPage {
 		);
 
 		$this->setHeaders();
-
-		$rows = $this->runQuery( $wgRequest->getInt( 'hours', 24 ) );
+		$this->hours = $wgRequest->getInt( 'hours', 24 );
+	
+		$rows = $this->runQuery( $this->hours );
 		$wgOut->addHTMl( $this->settingsForm() . $this->output( $rows ) );
 	}
 
@@ -60,7 +61,7 @@ class SpecialTranslationChanges extends SpecialPage {
 	protected function settingsForm() {
 		global $wgTitle, $wgScript;
 
-		$limit = $this->timeLimitSelector();
+		$limit = self::timeLimitSelector( $this->hours );
 		$button = Xml::submitButton( wfMsg( TranslateUtils::MSG . 'submit' ) );
 
 		$form = Xml::tags( 'form',
@@ -73,9 +74,11 @@ class SpecialTranslationChanges extends SpecialPage {
 		return $form;
 	}
 
-	protected function timeLimitSelector( $selected = 24 ) {
+	protected static function timeLimitSelector( $selected = 24 ) {
 		$items = array( 3, 6, 12, 24, 48, 72, 168  );
-		return TranslateUtils::simpleSelector( 'hours' , $items, $selected );
+		$selector = new HTMLSelector( 'hours', 'hours', $selected );
+		foreach ( $items as $item ) $selector->addOption( $item );
+		return $selector->getHTML();
 	}
 
 	protected function sort( Array $rows ) {
