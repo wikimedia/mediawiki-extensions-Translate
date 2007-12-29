@@ -55,11 +55,11 @@ class TranslateUtils {
 	 *
 	 * @param $messages Instance of MessageCollection
 	 */
-	public static function fillExistence( MessageCollection $messages, $language ) {
+	public static function fillExistence( MessageCollection $messages ) {
 		self::doExistenceQuery();
 		foreach ( $messages->keys() as $key ) {
-			$messages[$key]->pageExists = isset( self::$pageExists[self::title( $key, $language )] );
-			$messages[$key]->talkExists = isset( self::$talkExists[self::title( $key, $language )] );
+			$messages[$key]->pageExists = isset( self::$pageExists[self::title( $key, $messages->code )] );
+			$messages[$key]->talkExists = isset( self::$talkExists[self::title( $key, $messages->code )] );
 		}
 	}
 
@@ -68,10 +68,10 @@ class TranslateUtils {
 	 *
 	 * @param $messages Instance of MessageCollection
 	 */
-	public static function fillContents( MessageCollection $messages, $language ) {
+	public static function fillContents( MessageCollection $messages ) {
 		$titles = array();
 		foreach ( $messages->keys() as $key ) {
-			$titles[self::title( $key, $language )] = null;
+			$titles[self::title( $key, $messages->code )] = null;
 		}
 		// Determine for which messages are not fetched already
 		$missing = array_diff( $titles, self::$contents );
@@ -91,7 +91,7 @@ class TranslateUtils {
 		}
 
 		foreach ( $messages->keys() as $key ) {
-			$title = self::title( $key, $language );
+			$title = self::title( $key, $messages->code );
 			if ( isset( self::$contents[$title] ) ) {
 				$messages[$key]->database = self::$contents[$title];
 				$messages[$key]->addAuthor( self::$editors[$title] );
@@ -159,7 +159,7 @@ class TranslateUtils {
 		);
 
 		foreach ( $rows as $row ) {
-			if ( $row->page_namespace == NS_MEDIAWIKI ) {
+			if ( $row->page_namespace === NS_MEDIAWIKI ) {
 				self::$pageExists[$row->page_title] = true;
 			} else {
 				self::$talkExists[$row->page_title] = true;
@@ -193,7 +193,7 @@ class TranslateUtils {
 		return $tableheader;
 	}
 
-	public static function makeListing( MessageCollection $messages, $language, $group, $review = false ) {
+	public static function makeListing( MessageCollection $messages, $group, $review = false ) {
 		global $wgUser;
 		$sk = $wgUser->getSkin();
 		wfLoadExtensionMessages( 'Translate' );
@@ -207,7 +207,7 @@ class TranslateUtils {
 
 		foreach( $messages as $key => $m ) {
 
-			$title = self::title( $key, $language );
+			$title = self::title( $key, $messages->code );
 
 			$page['object'] = Title::makeTitle( NS_MEDIAWIKI, $title );
 			$talk['object'] = Title::makeTitle( NS_MEDIAWIKI_TALK, $title );

@@ -11,12 +11,33 @@ if (!defined('MEDIAWIKI')) die();
  */
 
 
+/**
+ * MessageCollection is a collection of TMessages. It supports array accces of
+ * TMessage object by message key. One collection can only have items for one
+ * translation target language.
+ */
 class MessageCollection implements Iterator, ArrayAccess, Countable {
 
+	/**
+	 * Messages are stored in an array.
+	 */
 	private $messages = array();
 
-	/* Iterator methods */
+	/**
+	 * Information of what type of MessageCollection this is.
+	 */
+	public $code = null;
 
+	/**
+	 * Creates new empty messages collection.
+	 *
+	 * @param $code Language code
+	 */
+	public function __construct( $code ) {
+		$this->code = $code;
+	}
+
+	/* Iterator methods */
 	public function rewind() {
 		reset($this->messages);
 	}
@@ -42,7 +63,6 @@ class MessageCollection implements Iterator, ArrayAccess, Countable {
 	}
 
 	/* ArrayAccess methods */
-
 	public function offsetExists( $offset ) {
 		return isset($this->messages[$offset]);
 	}
@@ -62,10 +82,30 @@ class MessageCollection implements Iterator, ArrayAccess, Countable {
 		unset( $this->messages[$offset] );
 	}
 
+	/* Countable methods */
+	/**
+	 * Counts the number of items in this collection.
+	 *
+	 * @return Integer count of items.
+	 */
+	public function count() {
+		return count( $this->messages );
+	}
+
+
+	/**
+	 *  Adds new TMessage object to collection.
+	 */
 	public function add( TMessage $message ) {
 		$this->messages[$message->key] = $message;
 	}
 
+	/**
+	 * Adds array of TMessages to this collection.
+	 *
+	 * @param $messages Array of TMessage objects.
+	 * @throws MWException
+	 */
 	public function addMany( Array $messages ) {
 		foreach ( $messages as $message ) {
 			if ( !$message instanceof TMessage ) {
@@ -75,37 +115,60 @@ class MessageCollection implements Iterator, ArrayAccess, Countable {
 		}
 	}
 
-
+	/**
+	 * Provides an array of keys for safe iteration.
+	 *
+	 * @return Array of string keys.
+	 */
 	public function keys() {
 		return array_keys( $this->messages );
 	}
 
+	/**
+	 * Does array_slice to the messages.
+	 *
+	 * @param $offset Starting offset.
+	 * @param $count Numer of items to slice.
+	 */
 	public function slice( $offset, $count ) {
 		$this->messages = array_slice( $this->messages, $offset, $count );
 	}
 
+	/**
+	 * PHP function array_intersect_key doesn't seem to like object-as-arrays, so
+	 * have to do provide some way to do it. Does not change object state.
+	 *
+	 * @param $array List of keys for messages that should be returned.
+	 * @return New MessageCollection.
+	 */
 	public function intersect_key( Array $array ) {
-		return array_intersect_key( $this->messages, $array );
+		$collection = new MessageCollection( $this->code );
+		$collection->addMany( array_intersect_key( $this->messages, $array ) );
+		return $collection;
 	}
 
-	public function count() {
-		return count( $this->messages );
+	/**
+	 * Shortcut for TranslateUtils::fillExistence.
+	 */
+	public function populatePageExistence() {
+		TranslateUtils::fillExistence( $this );
 	}
 
+	/**
+	 * Shortcut for TranslateUtils::fillContents.
+	 */
+	public function populateTranslationsFromDatabase() {
+		TranslateUtils::fillContents( $this );
+	}
+
+	/* Fail fast */
 	public function __get( $name ) {
-		if (isset($this->messages[$name])) {
-			return $this->messages[$name];
-		}
-
 		throw new MWException( __METHOD__ . ": Trying to access unknown property $name" );
 	}
 
-	public function __isset( $name ) {
-		return isset($this->messages[$name]);
-	}
-
-	public function __unset( $name ) {
-		unset($this->messages[$name]);
+	/* Fail fast */
+	public function __set( $name, $value ) {
+		throw new MWException( __METHOD__ . ": Trying to modify unknown property $name" );
 	}
 
 }
@@ -126,15 +189,21 @@ class TMessage {
 	 */
 	private $authors = array();
 
-	public $infile   = null;
-	public $fallback = null;
-	public $database = null;
+	private $infile   = null;
+	private $fallback = null;
+	private $database = null;
 
-	public $optional   = false;
-	public $ignored    = false;
-	public $pageExists = false;
-	public $talkExists = false;
+	private $optional   = false;
+	private $ignored    = false;
+	private $pageExists = false;
+	private $talkExists = false;
 
+	/**
+	 * Creates new message object.
+	 *
+	 * @param $key Uniquer key identifying this message.
+	 * @param $definition The authoritave definition of this message.
+	 */
 	public function __construct( $key, $definition ) {
 		$this->key = $key;
 		$this->definition = $definition;
@@ -148,6 +217,11 @@ class TMessage {
 		return $this->authors;
 	}
 
+	/**
+	 * Determines if this message has uncommitted changes.
+	 *
+	 * @return true or false
+	 */
 	public function changed() {
 		return $this->pageExists && ( $this->infile !== $this->database );
 	}
@@ -160,42 +234,59 @@ class TMessage {
 		}
 	}
 
+	/**
+	 * Returns the current translation of message. Translation in database are
+	 * preferred over those in source files.
+	 *
+	 * @return Translated string or null if there isn't translation.
+	 */
 	public function translation() {
 		return $this->database ? $this->database : $this->infile;
 	}
 
+	/**
+	 * Determines if the current translation in database (if any) is marked as
+	 * fuzzy.
+	 *
+	 * @return true or false
+	 */
 	public function fuzzy() {
-		return strpos($this->database, TRANSLATE_FUZZY) !== false;
+		if ( $this->database !== null ) {
+			return strpos($this->database, TRANSLATE_FUZZY) !== false;
+		} else {
+			return false;
+		}
 	}
 
-	private  static $fProperties = array( 'authors', 'changed', 'translated', 'translation', 'fuzzy' );
+	private static $callable = array( 'authors', 'changed', 'translated', 'translation', 'fuzzy' );
+	private static $writable = array( 'infile', 'fallback', 'database', 'pageExists', 'talkExists', 'optional', 'ignored' );
 
 	public function __get( $name ) {
-		if ( isset( $this->$name) ) {
+		if ( property_exists( $this, $name ) ) {
 			return $this->$name;
 		} else {
-			if ( in_array( $name, self::$fProperties ) ) {
+			if ( in_array( $name, self::$callable ) ) {
 				return $this->$name();
 			}
 		}
-
 		throw new MWException( __METHOD__ . ": Trying to access unknown property $name" );
 	}
 
 	public function __set( $name, $value ) {
-		if ( isset($this->$name) ) {
+		if ( in_array( $name, self::$writable ) ) {
 			if ( gettype($this->$name) === gettype($value) || $this->$name === null && is_string($value) ) {
 				$this->$name = $value;
 			} else {
 				$type = gettype($value);
 				throw new MWException( __METHOD__ . ": Trying to set the value of property $name to illegal data type $type" );
 			}
+		} else {
+			throw new MWException( __METHOD__ . ": Trying to set unknown property $name with value $value" );
 		}
-		throw new MWException( __METHOD__ . ": Trying to set unknown property $name with value $value" );
 	}
 
 	public function __isset( $name ) {
-		if ( isset($this->$name) ) {
+		if ( property_exists( $this, $name ) ) {
 			return $this->$name !== null;
 		} else {
 			return false;

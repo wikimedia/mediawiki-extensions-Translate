@@ -42,9 +42,8 @@ abstract class MessageGroup {
 	 * for language code $code and it's fallback language, if used.
 	 *
 	 * @param $messages MessageCollection
-	 * @param $code Language code.
 	 */
-	public abstract function fill( MessageCollection $messages, $code );
+	public abstract function fill( MessageCollection $messages );
 
 	/**
 	 * In this function message group can specify some messages to be optional or
@@ -63,9 +62,8 @@ abstract class MessageGroup {
 	 * In this function message group should export messages in relevant format.
 	 *
 	 * @param $array Reference of MessageArray.
-	 * @param $code Language code.
 	 */
-	public function export( MessageCollection $messages, $code ) {
+	public function export( MessageCollection $messages ) {
 		return 'Not supported';
 	}
 
@@ -74,11 +72,10 @@ abstract class MessageGroup {
 	 * if applicable. Default implementation just calls $this->export().
 	 *
 	 * @param $messages MessageCollection
-	 * @param $code Language code.
 	 * @param $authors 1-D array of authors that have edited messages in wiki.
 	 */
-	public function exportToFile( MessageCollection $messages, $code, $authors ) {
-		return $this->export( $messages, $code );
+	public function exportToFile( MessageCollection $messages, $authors ) {
+		return $this->export( $messages );
 	}
 
 	/**
@@ -177,17 +174,17 @@ class CoreMessageGroup extends MessageGroup {
 		return isset( $messages[$key] ) ? $messages[$key] : null;
 	}
 
-	function export( MessageCollection $messages, $code ) {
+	function export( MessageCollection $messages ) {
 		list( $output, ) = MessageWriter::writeMessagesArray( $this->makeExportArray( $messages ), false );
 		return $output;
 	}
 
-	public function exportToFile( MessageCollection $messages, $code, $authors ) {
-		$filename = Language::getMessagesFileName( $code );
+	public function exportToFile( MessageCollection $messages, $authors ) {
+		$filename = Language::getMessagesFileName( $messages->code );
 
-		$messages = $this->export( $messages, $code );
-		$name = TranslateUtils::getLanguageName( $code );
-		$native = TranslateUtils::getLanguageName( $code, true );
+		$messagesAsString = $this->export( $messages );
+		$name = TranslateUtils::getLanguageName( $messages->code );
+		$native = TranslateUtils::getLanguageName( $messages->code, true );
 		$authors = array_unique( array_merge( $this->getAuthorsFromFile( $filename ), $authors ) );
 		$translators = $this->formatAuthors( $authors );
 		$other = $this->getOther( $filename );
@@ -202,7 +199,7 @@ $translators
 
 $other
 
-$messages
+$messagesAsString
 CODE;
 	}
 
@@ -233,11 +230,11 @@ CODE;
 		return $this->mcache[$code];
 	}
 
-	public function fill( MessageCollection $messages, $code ) {
-		$infile = $this->loadMessages( $code );
+	public function fill( MessageCollection $messages ) {
+		$infile = $this->loadMessages( $messages->code );
 		$infbfile = null;
-		if ( Language::getFallbackFor( $code ) ) {
-			$infbfile = $this->loadMessages( Language::getFallbackFor( $code ) );
+		if ( Language::getFallbackFor( $messages->code ) ) {
+			$infbfile = $this->loadMessages( Language::getFallbackFor( $messages->code ) );
 		}
 
 		foreach ( $messages->keys() as $key ) {
@@ -406,11 +403,11 @@ abstract class ExtensionMessageGroup extends MessageGroup {
 		return null;
 	}
 
-	function export( MessageCollection $messages, $code ) {
+	function export( MessageCollection $messages ) {
 		// Replace variables from definition
 		$txt = $this->exportPrefix . str_replace(
 			array( '$ARRAY', '$CODE' ),
-			array( $this->arrName, $code ),
+			array( $this->arrName, $messages->code ),
 			$this->exportStart ) . "\n";
 
 		// Use the same function that rebuildLanguage.php uses
@@ -425,10 +422,10 @@ abstract class ExtensionMessageGroup extends MessageGroup {
 		return $txt;
 	}
 
-	public function exportToFile( MessageCollection $messages, $code, $authors ) {
-		$x = $this->export( $messages, $code );
-		$name = TranslateUtils::getLanguageName( $code );
-		$native = TranslateUtils::getLanguageName( $code, true );
+	public function exportToFile( MessageCollection $messages, $authors ) {
+		$x = $this->export( $messages );
+		$name = TranslateUtils::getLanguageName( $messages->code );
+		$native = TranslateUtils::getLanguageName( $messages->code, true );
 		$translators = $this->formatAuthors( $authors );
 		if ( $translators !== '' ) {
 			$translators = "\n$translators\n";
@@ -445,17 +442,17 @@ CODE;
 		return $this->mcache['en'];
 	}
 
-	public function fill( MessageCollection $messages, $code ) {
-		$this->load( $code );
+	public function fill( MessageCollection $messages ) {
+		$this->load( $messages->code );
 
-		$fbcode = Language::getFallbackFor( $code );
+		$fbcode = Language::getFallbackFor( $messages->code );
 		if ( $fbcode ) {
 			$this->load( $fbcode );
 		}
 
 		foreach ( $messages->keys() as $key ) {
-			if ( isset($this->mcache[$code][$key]) ) {
-				$messages[$key]->infile = $this->mcache[$code][$key];
+			if ( isset($this->mcache[$messages->code][$key]) ) {
+				$messages[$key]->infile = $this->mcache[$messages->code][$key];
 			}
 			if ( isset($this->mcache[$fbcode][$key]) ) {
 				$messages[$key]->fallback = $this->mcache[$fbcode][$key];
@@ -511,8 +508,8 @@ class CoreMostUsedMessageGroup extends CoreMessageGroup {
 	protected $id    = 'core-mostused';
 	protected $meta  = true;
 
-	public function export( MessageCollection $messages, $code ) { return 'Not supported'; }
-	public function exportToFile( MessageCollection $messages, $code, $authors ) { return 'Not supported'; }
+	public function export( MessageCollection $messages ) { return 'Not supported'; }
+	public function exportToFile( MessageCollection $messages, $authors ) { return 'Not supported'; }
 
 
 	function getDefinitions() {
@@ -577,32 +574,30 @@ class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
 		return $array;
 	}
 
-	function export( MessageCollection $messages, $code ) {
+	function export( MessageCollection $messages ) {
 		$this->init();
 		$ret = '';
 		foreach ( $this->classes as $class ) {
-			$subArray = new MessageCollection;
-			$subArray->addMany( $messages->intersect_key( $class->getDefinitions() ) );
-			$ret .= $class->export( $subArray, $code ) . "\n\n\n";
+			$subCollection = $messages->intersect_key( $class->getDefinitions() );
+			$ret .= $class->export( $subCollection ) . "\n\n\n";
 		}
 		return $ret;
 	}
 
-	function exportToFile( MessageCollection $messages, $code, $authors ) {
+	function exportToFile( MessageCollection $messages, $authors ) {
 		$this->init();
 		$ret = '';
 		foreach ( $this->classes as $class ) {
-			$subArray = new MessageCollection;
-			$subArray->addMany( $messages->intersect_key( $class->getDefinitions() ) );
-			$ret .= $class->exportToFile( $subArray, $code, array() ) . "\n\n\n";
+			$subCollection = $messages->intersect_key( $class->getDefinitions() );
+			$ret .= $class->exportToFile( $subCollection, array() ) . "\n\n\n";
 		}
 		return $ret;
 	}
 
-	function fill( MessageCollection $messages, $code ) {
+	function fill( MessageCollection $messages ) {
 		$this->init();
 		foreach ( $this->classes as $class ) {
-			$class->fill( $messages, $code );
+			$class->fill( $messages );
 		}
 	}
 
@@ -2138,7 +2133,7 @@ class FreeColMessageGroup extends MessageGroup {
 
 	}
 
-	public function export( MessageCollection $messages, $code ) {
+	public function export( MessageCollection $messages ) {
 		global $wgSitename, $wgRequest;
 		$txt = '# Exported on ' . wfTimestamp(TS_ISO_8601) . ' from ' . $wgSitename . "\n# " .
 			$wgRequest->getFullRequestURL() . "\n#\n";
@@ -2152,12 +2147,12 @@ class FreeColMessageGroup extends MessageGroup {
 	}
 
 
-	function fill( MessageCollection $messages, $code ) {
-		$this->load( $code );
+	function fill( MessageCollection $messages ) {
+		$this->load( $messages->code );
 
 		foreach ( $messages->keys() as $key ) {
-			if ( isset($this->mcache[$code][$key]) ) {
-				$messages[$key]->infile = $this->mcache[$code][$key];
+			if ( isset($this->mcache[$messages->code][$key]) ) {
+				$messages[$key]->infile = $this->mcache[$messages->code][$key];
 			}
 		}
 	}

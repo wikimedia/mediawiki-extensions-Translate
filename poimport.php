@@ -73,7 +73,7 @@ class PoImporter {
 	 * @return MessageCollection
 	 */
 	protected function initMessages( $id, $code ) {
-		$messages = new MessageCollection;
+		$messages = new MessageCollection( $code );
 		$group = MessageGroups::getGroup( $id );
 
 		$definitions = $group->getDefinitions();
@@ -89,9 +89,9 @@ class PoImporter {
 			if ( isset($messages[$key]) ) { $messages[$key]->ignored = true; }
 		}
 
-		TranslateUtils::fillExistence( $messages, $code );
-		TranslateUtils::fillContents( $messages, $code );
-		$group->fill( $messages, $code );
+		$messages->populatePageExistence();
+		$messages->populateTranslationsFromDatabase();
+		$group->fill( $messages );
 
 		return $messages;
 	}

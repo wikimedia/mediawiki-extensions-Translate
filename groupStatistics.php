@@ -119,7 +119,7 @@ foreach ( $languages as $code => $name ) {
 
 	foreach ( $groups as $g ) {
 		// Initialise messages
-		$messages = new MessageCollection;
+		$messages = new MessageCollection( $code );
 		$definitions = $g->getDefinitions();
 		foreach ( $definitions as $key => $definition ) {
 			$messages->add( new TMessage( $key, $definition ) );
@@ -134,8 +134,8 @@ foreach ( $languages as $code => $name ) {
 		$total = count( $messages );
 
 		// Get all translations. Could this be done more efficient?
-		TranslateUtils::fillContents( $messages, $code );
-		$g->fill( $messages, $code );
+		TranslateUtils::fillContents( $messages );
+		$g->fill( $messages );
 
 		// Remove untranslated messages from the list
 		foreach ( $messages->keys() as $key ) {

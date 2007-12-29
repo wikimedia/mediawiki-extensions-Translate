@@ -18,7 +18,7 @@ class TaskOptions {
 	private $offset = 0;
 	private $pagingCB = null;
 
-	public function __construct( $language, $limit, $offset, $pagingCB ) {
+	public function __construct( $language, $limit = 0, $offset = 0, $pagingCB = null ) {
 		$this->language = $language;
 		$this->limit = $limit;
 		$this->offset = $offset;
@@ -65,7 +65,7 @@ abstract class TranslateTask {
 	public final function init( MessageGroup $messageGroup, TaskOptions $options ) {
 		$this->messageGroup = $messageGroup;
 		$this->options = $options;
-		$this->messages = new MessageCollection;
+		$this->messages = new MessageCollection( $this->options->getLanguage() );
 	}
 
 	protected $process = array();
@@ -164,9 +164,9 @@ class ViewMessagesTask extends TranslateTask {
 	}
 
 	protected function postinit() {
-		TranslateUtils::fillExistence( $this->messages, $this->options->getLanguage() );
-		TranslateUtils::fillContents( $this->messages, $this->options->getLanguage() );
-		$this->messageGroup->fill( $this->messages, $this->options->getLanguage() );
+		$this->messages->populatePageExistence();
+		$this->messages->populateTranslationsFromDatabase();
+		$this->messageGroup->fill( $this->messages );
 		$this->messageGroup->reset();
 	}
 
@@ -178,7 +178,6 @@ class ViewMessagesTask extends TranslateTask {
 			$tableheader .
 			TranslateUtils::makeListing(
 				$this->messages,
-				$this->options->getLanguage(),
 				$this->messageGroup->getId()
 			) .
 			$tablefooter;
@@ -266,7 +265,6 @@ class ReviewMessagesTask extends ViewMessagesTask {
 			$tableheader .
 			TranslateUtils::makeListing(
 				$this->messages,
-				$this->options->getLanguage(),
 				$this->messageGroup->getId(),
 				true /* Review mode */
 			) .
@@ -342,7 +340,7 @@ class ExportMessagesTask extends ViewMessagesTask {
 	public function output() {
 		return 	Xml::openElement( 'textarea', array( 'id' => 'wpTextbox1', 'rows' => '50' ) ) .
 			$this->getOutputHeader() .
-			$this->messageGroup->export( $this->messages, $this->options->getLanguage() ) . "\n\n\n" .
+			$this->messageGroup->export( $this->messages ) . "\n\n\n" .
 			"</textarea>";
 	}
 }
@@ -357,7 +355,6 @@ class ExportToFileMessagesTask extends ExportMessagesTask {
 		echo
 			$this->messageGroup->exportToFile(
 				$this->messages,
-				$this->options->getLanguage(),
 				$this->getAuthorsArray()
 			);
 		return '';
