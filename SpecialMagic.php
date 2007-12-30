@@ -13,31 +13,8 @@ class SpecialMagic extends SpecialPage {
 	const MODULE_SPECIAL   = 'special';
 	const MODULE_NAMESPACE = 'namespace';
 
-
 	const INDEX_OF_MODULE = 0;
 	const INDEX_OF_LANGUAGE = 1;
-
-
-	/** Target language for translations */
-	private $language = 'en';
-
-	/**
-	 * Which module is active.
-	 * This is only a key to the the module, not an object.
-   */
-	private $module   = null;
-
-	/** Did the user request a save. */
-	private $savetodb = false;
-	/** Did the user request a export. */
-	private $export   = false;
-
-	/**
-	 * Was the query posted.
-	 * For more robust implementation, saving is only allowed in posted requests.
-	 */
-	private $posted   = false;
-
 
 	/** List of supported modules */
 	private $aModules = array(
@@ -47,11 +24,14 @@ class SpecialMagic extends SpecialPage {
 		self::MODULE_MAGIC
 	);
 
+	/** Page options */
+	private $options = array();
+	private $defaults = array();
+	private $nondefaults = array();
+
 	public function __construct() {
 		SpecialPage::SpecialPage( 'Magic' );
 	}
-
-
 
 	/**
 	 * @see SpecialPage::getDescription
@@ -60,24 +40,24 @@ class SpecialMagic extends SpecialPage {
 		return wfMsg( self::MSG.'pagename' );
 	}
 
-
 	/**
 	 * Returns xhtml output of the form
 	 * GLOBALS: $wgLang, $wgTitle
 	 */
 	protected function getForm() {
-		global $wgLang, $wgTitle;
+		global $wgLang, $wgTitle, $wgScript;
 		$line = wfMsgExt( self::MSG.'form', array( 'parse', 'replaceafter' ),
-			TranslateUtils::languageSelector( $this->language ),
-			$this->moduleSelector( $this->module ),
+			TranslateUtils::languageSelector( $wgLang->getCode(), $this->options['language'] ),
+			$this->moduleSelector( $this->options['module'] ),
 			Xml::submitButton( wfMsg( self::MSG.'submit' ) )
 		);
 
 		$form = Xml::tags( 'form',
 			array(
-				'action' => $wgTitle->getLocalURL(),
+				'action' => $wgScript,
 				'method' => 'get'
 			),
+			Xml::hidden( 'title', $wgTitle->getPrefixedText() ) .
 			$line
 		);
 		return $form;
@@ -101,74 +81,85 @@ class SpecialMagic extends SpecialPage {
 	 * Parser special page parameters from /-style input
 	 * @param $params String of /-delimited params. First is module, second is language.
 	 */
-	protected function parseParams( $params ) {
+	protected function parseParams( $params, $options ) {
 		$aParam = explode( '/', $params );
 		if ( isset($aParam[self::INDEX_OF_MODULE]) ) {
-			$this->module = $aParam[self::INDEX_OF_MODULE];
+			$options['module'] = $aParam[self::INDEX_OF_MODULE];
 		}
 		if ( isset($aParam[self::INDEX_OF_LANGUAGE]) ) {
-			$this->language = $aParam[self::INDEX_OF_LANGUAGE];
+			$options['language'] = $aParam[self::INDEX_OF_LANGUAGE];
 		}
+		return $options;
 	}
 
-	/**
-	 * Parser special page parameters from WebRequest object
-	 * @param $request WebRequest object
-	 */
-	protected function parseRequest( WebRequest $request ) {
-		$module = $request->getVal( 'module' );
-		if ( $module !== null ) {
-			$this->module = $module;
+	protected function setup( $parameters ) {
+		global $wgUser, $wgRequest;
+
+		$defaults = array(
+		/* str  */ 'module'   => '',
+		/* str  */ 'language' => $wgUser->getOption( 'language' ),
+		/* bool */ 'export'   => false,
+		/* bool */ 'savetodb' => false,
+		);
+
+		// Place where all non default variables will end
+		$nondefaults = array();
+
+		// Temporary store possible values parsed from parameters
+		$options = $defaults;
+		$options = $this->parseParams( $parameters, $options );
+		foreach ( $options as $v => $t ) {
+			if ( is_bool($t) ) {
+				$r = $wgRequest->getBool( $v, $options[$v] );
+			} elseif( is_int($t) ) {
+				$r = $wgRequest->getInt( $v, $options[$v] );
+			} elseif( is_string($t) ) {
+				$r = $wgRequest->getText( $v, $options[$v] );
+			}
+			wfAppendToArrayIfNotDefault( $v, $r, $defaults, $nondefaults );
 		}
-		$language = $request->getVal( 'language' );
-		if ( $language !== null ) {
-			$this->language = $language;
-		}
-		$this->posted = $request->wasPosted();
-		$this->export = $request->getVal( 'export' ) !== null;
-		$this->savetodb = $request->getVal( 'savetodb' ) !== null;
+
+		$this->defaults    = $defaults;
+		$this->nondefaults = $nondefaults;
+		$this->options     = $nondefaults + $defaults;
 	}
 
 	/**
 	 * The special page running code
 	 * GLOBALS: $wgWebRequest, $wgOut, $wgUser, $wgLang
 	 */
-	public function execute( $params ) {
+	public function execute( $parameters ) {
 		global $wgUser, $wgOut, $wgRequest, $wgLang;
 		wfLoadExtensionMessages( 'Translate' );
 
+		$this->setup( $parameters );
 		$this->setHeaders();
-
-		$this->language = $wgLang->getCode();
-		$this->parseParams( $params );
-		$this->parseRequest( $wgRequest );
 
 		$wgOut->addHTML( $this->getForm() );
 		$wgOut->addWikitext( wfMsg(self::MSG.'help') );
 
-		if (!$this->module ) { return; }
+		if (!$this->options['module'] ) { return; }
 		$o = null;
-
-		switch ( $this->module ) {
+		switch ( $this->options['module'] ) {
 			case 'alias':
 			case self::MODULE_SPECIAL:
-				$o = new SpecialPageAliasesCM( $this->language );
+				$o = new SpecialPageAliasesCM( $this->options['language'] );
 				break;
 			case self::MODULE_MAGIC:
-				$o = new MagicWordsCM( $this->language );
+				$o = new MagicWordsCM( $this->options['language'] );
 				break;
 			case self::MODULE_SKIN:
-				$o = new SkinNamesCM( $this->language );
+				$o = new SkinNamesCM( $this->options['language'] );
 				break;
 			case self::MODULE_NAMESPACE:
-				$o = new NamespaceCM( $this->language );
+				$o = new NamespaceCM( $this->options['language'] );
 				break;
 
 			default:
 				return;
 		}
 
-		if ( $this->posted && $this->savetodb ) {
+		if ( $wgRequest->wasPosted() && $this->options['savetodb'] ) {
 			if ( !$wgUser->isAllowed( 'translate' ) ) {
 				$wgOut->permissionRequired( 'translate' );
 				return;
@@ -178,7 +169,7 @@ class SpecialMagic extends SpecialPage {
 		}
 
 		if ( $o instanceof ComplexMessages ) {
-			if ( $this->export ) {
+			if ( $this->options['export'] ) {
 				$result = Xml::element( 'textarea', array( 'rows' => '30' ) , $o->export() );
 			} else {
 				$result = $o->output();
