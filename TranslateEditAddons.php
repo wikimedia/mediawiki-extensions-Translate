@@ -9,16 +9,17 @@ if (!defined('MEDIAWIKI')) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 class TranslateEditAddons {
+	const MSG = 'translate-edit-';
+
 	static function addTools( $object ) {
 		if( $object->mTitle->getNamespace() === NS_MEDIAWIKI ) {
 			$object->editFormTextTop .= self::editBoxes( $object );
-			//$object->editFormTextTop .= self::messageFormat( $object );
 		}
 		return true;
 	}
 
 	private static function getFallbacks( $code ) {
-		global $wgTranslateLanguageFallbacks;
+		global $wgTranslateLanguageFallbacks, $wgTranslateDocumentationLanguageCode;
 
 		$fallbacks = array();
 		if ( isset($wgTranslateLanguageFallbacks[$code]) ) {
@@ -38,27 +39,30 @@ class TranslateEditAddons {
 		return $fallbacks;
 	}
 
-	private static function doBox( $msg, $code, $i18nmsg ) {
+	private static function doBox( $msg, $code, $title = false ) {
 		global $wgUser, $wgLang;
 		if (!$msg ) { return ''; }
 
 		$name = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() );
 		$code = strtolower( $code );
 
-		/* Approximate row count */
-		$cols = $wgUser->getOption( 'cols' );
-
-		$rows = 0;
-		foreach ( explode("\n", $msg) as $l ) {
-			$rows += ceil( mb_strlen( $l ) / $cols );
+		$attributes = array();
+		if ( !$title ) {
+			$attributes['class'] = 'mw-sp-translate-in-other-big';
 		}
-		$rows = max(3, min(15, $rows));
+		if ( mb_strlen( $msg ) < 100 && !$title ) {
+			$attributes['class'] = 'mw-sp-translate-in-other-small';
+		}
 
-		wfLoadExtensionMessages( 'Translate' );
+		$msg = htmlspecialchars( $msg );
+		$msg = preg_replace( '/^ /m', '&nbsp; ', $msg );
+		$msg = preg_replace( '/ $/m', ' &nbsp;', $msg );
+		$msg = preg_replace( '/  /', '&nbsp; ', $msg );
+		$msg = str_replace( "\n", '<br />', $msg );
 
-		return
-			wfMsg( $i18nmsg, $name, $code ) . " " .
-			Xml::element( 'textarea', array( 'rows' => $rows, 'cols' => $cols ), $msg );
+		if ( !$title ) $title = "$name ($code)";
+
+		return TranslateUtils::fieldset( $title, Xml::tags( 'code', null, $msg ), $attributes );
 	}
 
 	/**
@@ -100,6 +104,9 @@ class TranslateEditAddons {
 	}
 
 	private static function editBoxes( $object ) {
+		wfLoadExtensionMessages( 'Translate' );
+		global $wgTranslateDocumentationLanguageCode, $wgOut;
+
 		list( $key, $code ) = self::figureMessage( $object );
 
 		$group = self::getMessageGroup( $key );
@@ -111,9 +118,10 @@ class TranslateEditAddons {
 
 		$boxes = array();
 		if ( $en !== null ) {
-			$boxes[] = self::dobox( $en, 'en', 'translate-edit-message-in' );
+			$boxes[] = self::doBox( $en, 'en', wfMsg( self::MSG . 'definition' ) );
 		}
 
+		$inOtherLanguages = array();
 		foreach ( self::getFallbacks( $code ) as $fbcode ) {
 			$fb = $group->getMessage( $key, $fbcode );
 			/* For fallback, even uncommitted translation may be useful */
@@ -121,12 +129,26 @@ class TranslateEditAddons {
 				$fb = TranslateUtils::getMessageContent( $key, $fbcode );
 			}
 			if ( $fb !== null ) {
-				$boxes[] = self::dobox( $fb, $fbcode, 'translate-edit-message-in-fb' );
+				$inOtherLanguages[] = self::dobox( $fb, $fbcode );
+			}
+		}
+		if ( count($inOtherLanguages) ) {
+			$boxes[] = TranslateUtils::fieldset( wfMsg( self::MSG . 'in-other-languages' ),
+				implode( "\n", $inOtherLanguages ) );
+		}
+
+		if ( $wgTranslateDocumentationLanguageCode ) {
+			$info = TranslateUtils::getMessageContent( $key, $wgTranslateDocumentationLanguageCode );
+			if ( $info ) {
+				$boxes[] = TranslateUtils::fieldset(
+					wfMsg( self::MSG . 'information' ), $wgOut->parse( $info )
+				);
 			}
 		}
 
+
 		if ( $xx !== null && $code !== 'en' ) {
-			$boxes[] = self::dobox( $xx, $code, 'translate-edit-message-in' );
+			$boxes[] = self::dobox( $xx, $code, wfMsg( self::MSG . 'committed' ) );
 		
 		// Hack initial content
 			if ($object->textbox1 === '') {

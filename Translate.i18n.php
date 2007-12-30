@@ -46,9 +46,10 @@ $messages['en'] = array(
 	'translate-optional' => '(optional)',
 	'translate-ignored' => '(ignored)',
 
-	'translate-edit-message-format' => 'The format of this message is <b>$1</b>.',
-	'translate-edit-message-in' => 'Current string in <b>$1</b> ($2):',
-	'translate-edit-message-in-fb' => 'Current string in fallback language <b>$1</b> ($2):',
+	'translate-edit-definition' => 'Message definition',
+	'translate-edit-information' => 'Information about this message',
+	'translate-edit-in-other-languages' => 'Translations in other languages',
+	'translate-edit-committed' => 'Current committed translation',
 
 	'translate-magic-pagename' => 'Extended MediaWiki translation',
 	'translate-magic-help' => 'You can translate special pages aliases, magic words, skin names and namespace names.

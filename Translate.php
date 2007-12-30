@@ -11,7 +11,7 @@ if (!defined('MEDIAWIKI')) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '7.2' );
+define( 'TRANSLATE_VERSION', '7.3' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'Translate',
@@ -69,6 +69,9 @@ $wgTranslateFuzzyBotName = 'FuzzyBot';
 
 /** Address to css if non-default or false */
 $wgTranslateCssLocation = $wgScriptPath . '/extensions/Translate';
+
+/** Language code for special documentation language */
+$wgTranslateDocumentationLanguageCode = false;
 
 /** AC = Available classes */
 $wgTranslateAC = array(

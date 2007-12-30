@@ -345,6 +345,14 @@ class TranslateUtils {
 
 		return $keyToGroup;
 	}
+
+	public static function fieldset( $legend, $contents, $attributes = array() ) {
+		$attributes = $attributes + array( 'style' => 'line-height: normal;' );
+		return
+			Xml::openElement( 'fieldset', $attributes ) .
+				Xml::element( 'legend', null, $legend ) . $contents .
+			Xml::closeElement( 'fieldset' );
+	}
 }
 
 
