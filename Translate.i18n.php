@@ -553,16 +553,15 @@ $messages['fi'] = array(
 /** French (Français)
  * @author Grondin
  * @author Seb35
+ * @author Dereckson
  * @author Sherbrooke
  * @author Siebrand
- * @author Dereckson
  */
 $messages['fr'] = array(
 	'translate'                         => 'Traduire',
 	'translate-edit'                    => 'éditer',
 	'translate-talk'                    => 'discuter',
 	'translate-history'                 => 'historique',
-	'translate-delete'                  => 'Annuler les changements',
 	'translate-task-view'               => 'Voir tous les messages depuis',
 	'translate-task-untranslated'       => 'Voir tous les messages non traduits depuis',
 	'translate-task-optional'           => 'Voir tous les messages facultatifs depuis',
@@ -591,7 +590,9 @@ $messages['fr'] = array(
 	'translate-optional'                => '(facultatif)',
 	'translate-ignored'                 => '(ignoré)',
 	'translate-edit-definition'         => 'Définition du message',
-	'translate-edit-information'        => 'Informations concernant ce message',
+	'translate-edit-contribute'         => 'contribuer',
+	'translate-edit-no-information'     => "Ce message n'est actuellement pas documenté. Si vous savez où ou comment ce message est utilisé, vous pouvez aider les autres traducteurs en documentant ce message.",
+	'translate-edit-information'        => 'Informations concernant ce message ($1)',
 	'translate-edit-in-other-languages' => 'Message dans les autres langues',
 	'translate-edit-committed'          => 'Actuelle traduction déjà dans le logiciel',
 	'translate-magic-pagename'          => 'Traduction de MediaWiki étendue',
