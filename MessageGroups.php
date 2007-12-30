@@ -740,7 +740,7 @@ class BadImageMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Bad Image';
 	protected $id    = 'ext-badimage';
 
-	protected $functionName = 'efBadImageMessages';
+	protected $arrName = 'messages';
 	protected $messageFile  = 'BadImage/BadImage.i18n.php';
 
 	protected $exportStart = '\'$CODE\' => array(';
