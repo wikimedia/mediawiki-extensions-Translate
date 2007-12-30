@@ -18,6 +18,7 @@ $wgGroupPermissions['Translators']['translate'] = true;
 * --skiplanguages option for groupStatistics.php
 * Force keys to lower case in serialised index to avoid misses due to case
 * Changed fuzzy.php to assume location of commandline.inc, so that it can be run from any location
+* Preserve whitespace also in Special:Translate table
 
 == Changes in version 7 ==
 * Released 2007-12-29

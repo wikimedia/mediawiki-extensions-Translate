@@ -249,17 +249,17 @@ class TranslateUtils {
 			if ( $review ) {
 				$output .= Xml::tags( 'tr', array( 'class' => 'orig' ),
 					Xml::tags( 'td', array( 'rowspan' => '2'), $leftColumn ) .
-					Xml::element( 'td', null, $original )
+					Xml::tags( 'td', null, TranslateUtils::convertWhiteSpaceToHTML( $message ) )
 				);
 
 				$output .= Xml::tags( 'tr', array( 'class' => 'new' ),
-					Xml::element( 'td', null, $message ) .
+					Xml::tags( 'td', null, TranslateUtils::convertWhiteSpaceToHTML( $message ) ) .
 					Xml::closeElement( 'tr' )
 				);
 			} else {
 				$output .= Xml::tags( 'tr', array( 'class' => 'def' ),
 					Xml::tags( 'td', null, $leftColumn ) .
-					Xml::element( 'td', null, $message )
+					Xml::tags( 'td', null, TranslateUtils::convertWhiteSpaceToHTML( $message ) )
 				);
 			}
 
@@ -352,6 +352,24 @@ class TranslateUtils {
 			Xml::openElement( 'fieldset', $attributes ) .
 				Xml::tags( 'legend', null, $legend ) . $contents .
 			Xml::closeElement( 'fieldset' );
+	}
+
+	/**
+	 * Escapes the message, and does some mangling to whitespace, so that it is
+	 * preserved when outputted as-is to html page. Line feeds are converted to
+	 * <br /> and occurances of leading and trailing and multiple consecutive
+	 * spaces to non-breaking spaces.
+	 *
+	 * @param $msg Plain text string.
+	 * @return Text string that is ready for outputting.
+	 */
+	public static function convertWhiteSpaceToHTML( $msg ) {
+		$msg = htmlspecialchars( $msg );
+		$msg = preg_replace( '/^ /m', '&nbsp; ', $msg );
+		$msg = preg_replace( '/ $/m', ' &nbsp;', $msg );
+		$msg = preg_replace( '/  /', '&nbsp; ', $msg );
+		$msg = str_replace( "\n", '<br />', $msg );
+		return $msg;
 	}
 }
 

@@ -54,11 +54,7 @@ class TranslateEditAddons {
 			$attributes['class'] = 'mw-sp-translate-in-other-small';
 		}
 
-		$msg = htmlspecialchars( $msg );
-		$msg = preg_replace( '/^ /m', '&nbsp; ', $msg );
-		$msg = preg_replace( '/ $/m', ' &nbsp;', $msg );
-		$msg = preg_replace( '/  /', '&nbsp; ', $msg );
-		$msg = str_replace( "\n", '<br />', $msg );
+		$msg = TranslateUtils::convertWhiteSpaceToHTML( $msg );
 
 		if ( !$title ) $title = "$name ($code)";
 		$title = htmlspecialchars( $title );
