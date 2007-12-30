@@ -1164,31 +1164,44 @@ $messages['nds'] = array(
  * @author SPQRobin
  */
 $messages['nl'] = array(
-	'translate'                       => 'Vertalen',
-	'translate-edit'                  => 'bewerken',
-	'translate-talk'                  => 'overleg',
-	'translate-history'               => 'geschiedenis',
-	'translate-delete'                => 'terugdraaien',
-	'translate-task-view'             => 'alle teksten bekijken van',
-	'translate-task-untranslated'     => 'alle onvertaalde teksten bekijken van',
-	'translate-task-optional'         => 'optionele berichten bekijken van',
-	'translate-task-review'           => 'wijzigingen controleren aan',
-	'translate-task-reviewall'        => 'alle vertalingen controleren in',
-	'translate-task-export'           => 'vertalingen exporteren van',
-	'translate-task-export-to-file'   => 'de vertaling naar bestand exporteren van',
-	'translate-task-export-as-po'     => 'de vertaling naar Gettext-formaat exporteren van',
-	'translate-settings'              => 'Ik wil $1 $2 in taal $3 met limiet $4. $5',
-	'translate-paging'                => '<div>Berichten $1 tot $2 van $3. [ $4 | $5 ]</div>',
-	'translate-submit'                => 'Ophalen',
-	'translate-next'                  => 'volgende',
-	'translate-prev'                  => 'vorige',
-	'translate-optional'              => '(optioneel)',
-	'translate-ignored'               => '(genegeerd)',
-	'translate-edit-message-format'   => 'Het formaat van dit bericht is <b>$1</b>.',
-	'translate-edit-message-in'       => 'Huidige tekst in <b>$1</b> ($2):',
-	'translate-edit-message-in-fb'    => 'Huidige tekst in reservetaal <b>$1</b> ($2):',
-	'translate-magic-pagename'        => 'Uitgebreide MediaWiki-vertaling',
-	'translate-magic-help'            => "U kunt alternatieven voor speciale pagina's, magische woorden, skinnamen en naamruimtebenamingen vertalen.
+	'translate'                         => 'Vertalen',
+	'translate-edit'                    => 'bewerken',
+	'translate-talk'                    => 'overleg',
+	'translate-history'                 => 'geschiedenis',
+	'translate-delete'                  => 'terugdraaien',
+	'translate-task-view'               => 'alle teksten bekijken',
+	'translate-task-untranslated'       => 'alle onvertaalde teksten bekijken',
+	'translate-task-optional'           => 'optionele berichten bekijken',
+	'translate-task-review'             => 'wijzigingen controleren',
+	'translate-task-reviewall'          => 'alle vertalingen controleren',
+	'translate-task-export'             => 'vertalingen exporteren',
+	'translate-task-export-to-file'     => 'vertalingen naar bestand exporteren',
+	'translate-task-export-as-po'       => 'vertalingen naar Gettext-formaat exporteren',
+	'translate-page-no-such-language'   => 'Er is een ongeldige taalcode opgegeven',
+	'translate-page-no-such-task'       => 'De aangegeven functie bestaat niet.',
+	'translate-page-no-such-group'      => 'De aangegeven groep bestaat niet.',
+	'translate-page-settings-legend'    => 'Instellingen',
+	'translate-page-task'               => 'Ik wil',
+	'translate-page-group'              => 'Groep',
+	'translate-page-language'           => 'Taal',
+	'translate-page-limit'              => 'Maximaal',
+	'translate-page-limit-option'       => '$1 {{PLURAL:$1|bericht|berichten}} per pagina',
+	'translate-submit'                  => 'Ophalen',
+	'translate-page-navigation-legend'  => 'Navigatie',
+	'translate-page-showing'            => 'De berichten $1 tot $2 van $3 worden getoond.',
+	'translate-page-showing-all'        => 'Er {{PLURAL:$1|wordt 1 bericht|worden $1 berichten}} getoond.',
+	'translate-page-showing-none'       => 'Er zijn geen berichten in deze selectie.',
+	'translate-next'                    => 'volgende',
+	'translate-prev'                    => 'vorige',
+	'translate-page-description-legend' => 'Informatie over de groep',
+	'translate-optional'                => '(optioneel)',
+	'translate-ignored'                 => '(genegeerd)',
+	'translate-edit-definition'         => 'Berichtdefinitie',
+	'translate-edit-information'        => 'Informatie over dit bericht',
+	'translate-edit-in-other-languages' => 'Bericht in andere talen',
+	'translate-edit-committed'          => 'Huidig bericht in software',
+	'translate-magic-pagename'          => 'Uitgebreide MediaWiki-vertaling',
+	'translate-magic-help'              => "U kunt alternatieven voor speciale pagina's, magische woorden, skinnamen en naamruimtebenamingen vertalen.
 
 In magische woorden moet u de Engelstalige vertalingen opnemen, omdat ze anders niet meer werken. Laat ook de eerste karakters (0 of 1) ongemoeid.
 
@@ -1197,24 +1210,23 @@ Alternatieven voor speciale pagina's en magische woorden kunnen meerdere vertali
 In naamruimtebenamingen is <tt>$1 talk</tt> een uitzondering. <tt>$1</tt> wordt vervangen door de sitenaam (bijvoorbeeld <tt>{{SITENAME}} talk</tt>. Als het in uw taal niet mogelijk is een geldige expressie te vormen zonder de sitenaam te wijzigen, neem dan contact op met een ontwikkelaar.
 
 Om wijzigingen op te slaan moet u lid zijn van de groep vertalers. Wijzigingen worden niet bewaard totdat u op Opslaan heeft geklikt.",
-	'translate-magic-form'            => 'Taal: $1 Module: $2 $3',
-	'translate-magic-submit'          => 'Ophalen',
-	'translate-magic-cm-to-be'        => 'Toekomstig',
-	'translate-magic-cm-current'      => 'Huidig',
-	'translate-magic-cm-original'     => 'Origineel',
-	'translate-magic-cm-fallback'     => 'Alternatief',
-	'translate-magic-cm-save'         => 'Opslaan',
-	'translate-magic-cm-export'       => 'Exporteren',
-	'translate-magic-cm-updatedusing' => 'Bijgewerkt via Special:Magic',
-	'translate-magic-cm-savefailed'   => 'Opslaan mislukt',
-	'translate-magic-special'         => "Alternatieven speciale pagina's",
-	'translate-magic-words'           => 'Magische woorden',
-	'translate-magic-skin'            => 'Skinnamen',
-	'translate-magic-namespace'       => 'Naamruimtebenamingen',
-	'translationchanges'              => 'Vertalingen',
-	'translationchanges-export'       => 'exporteren',
-	'translationchanges-change'       => '$1: $2 door $3',
-	'translate-page-no-such-language' => 'Er is een ongeldige taalcode opgegeven',
+	'translate-magic-form'              => 'Taal: $1 Module: $2 $3',
+	'translate-magic-submit'            => 'Ophalen',
+	'translate-magic-cm-to-be'          => 'Toekomstig',
+	'translate-magic-cm-current'        => 'Huidig',
+	'translate-magic-cm-original'       => 'Oorspronkelijk',
+	'translate-magic-cm-fallback'       => 'Alternatief',
+	'translate-magic-cm-save'           => 'Opslaan',
+	'translate-magic-cm-export'         => 'Exporteren',
+	'translate-magic-cm-updatedusing'   => 'Bijgewerkt via Special:Magic',
+	'translate-magic-cm-savefailed'     => 'Opslaan mislukt',
+	'translate-magic-special'           => "Alternatieven speciale pagina's",
+	'translate-magic-words'             => 'Magische woorden',
+	'translate-magic-skin'              => 'Skinnamen',
+	'translate-magic-namespace'         => 'Naamruimtebenamingen',
+	'translationchanges'                => 'Vertalingen',
+	'translationchanges-export'         => 'exporteren',
+	'translationchanges-change'         => '$1: $2 door $3',
 );
 
 /** Norwegian (‪Norsk (bokmål)‬)
@@ -1396,6 +1408,17 @@ $messages['pt'] = array(
 	'translate-magic-words' => 'Palavras mágicas',
 	'translate-magic-namespace' => 'Nomes de espaços nominais',
 	'translationchanges' => 'Alterações às traduções',
+);
+
+/** Message documentation (Message documentation)
+ * @author Nike
+ * @author SPQRobin
+ */
+$messages['qqq'] = array(
+	'translate'                       => 'Part of the "Translate" extension. This message is the page title of the special page [[Special:Translate]].',
+	'translate-page-no-such-language' => "Shown when someone requests a language that doesn't exists. [{{FULLURL:Special:Translate|language=}} Example].",
+	'translate-page-no-such-task'     => "Shown when someone requests a task that doesn't exists. [{{FULLURL:Special:Translate|task=}} Example].",
+	'translate-page-no-such-group'    => "Shown when someone requests a group that doesn't exists. [{{FULLURL:Special:Translate|group=}} Example].",
 );
 
 $messages['rm'] = array(
