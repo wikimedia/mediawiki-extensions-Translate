@@ -10,7 +10,6 @@ $messages['en'] = array(
 	'translate-edit' => 'edit',
 	'translate-talk' => 'talk',
 	'translate-history' => 'history',
-	'translate-delete' => 'revert changes',
 
 	'translate-task-view' => 'View all messages from',
 	'translate-task-untranslated' => 'View all untranslated messages from',
@@ -47,7 +46,9 @@ $messages['en'] = array(
 	'translate-ignored' => '(ignored)',
 
 	'translate-edit-definition' => 'Message definition',
-	'translate-edit-information' => 'Information about this message',
+	'translate-edit-contribute' => 'contribute',
+	'translate-edit-no-information' => "''This message has no documentation. If you know where or how this message is used, you can help other translators by adding documentation to this message.''",
+	'translate-edit-information' => 'Information about this message ($1)',
 	'translate-edit-in-other-languages' => 'Message in other languages',
 	'translate-edit-committed' => 'Current translation in software',
 

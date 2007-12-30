@@ -61,6 +61,7 @@ class TranslateEditAddons {
 		$msg = str_replace( "\n", '<br />', $msg );
 
 		if ( !$title ) $title = "$name ($code)";
+		$title = htmlspecialchars( $title );
 
 		return TranslateUtils::fieldset( $title, Xml::tags( 'code', null, $msg ), $attributes );
 	}
@@ -133,17 +134,21 @@ class TranslateEditAddons {
 			}
 		}
 		if ( count($inOtherLanguages) ) {
-			$boxes[] = TranslateUtils::fieldset( wfMsg( self::MSG . 'in-other-languages' ),
+			$boxes[] = TranslateUtils::fieldset( wfMsgHtml( self::MSG . 'in-other-languages' ),
 				implode( "\n", $inOtherLanguages ) );
 		}
 
 		if ( $wgTranslateDocumentationLanguageCode ) {
+			global $wgUser;
+			$title = Title::makeTitle( NS_MEDIAWIKI, $key . '/' . $wgTranslateDocumentationLanguageCode );
+			$edit = $wgUser->getSkin()->makeKnownLinkObj( $title, wfMsgHtml( self::MSG . 'contribute' ), 'action=edit' );
 			$info = TranslateUtils::getMessageContent( $key, $wgTranslateDocumentationLanguageCode );
-			if ( $info ) {
-				$boxes[] = TranslateUtils::fieldset(
-					wfMsg( self::MSG . 'information' ), $wgOut->parse( $info )
-				);
+			if ( !$info ) {
+				$info = wfMsg( self::MSG . 'no-information' );
 			}
+			$boxes[] = TranslateUtils::fieldset(
+				wfMsgHtml( self::MSG . 'information', $edit ), $wgOut->parse( $info )
+			);
 		}
 
 

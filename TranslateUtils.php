@@ -350,7 +350,7 @@ class TranslateUtils {
 		$attributes = $attributes + array( 'style' => 'line-height: normal;' );
 		return
 			Xml::openElement( 'fieldset', $attributes ) .
-				Xml::element( 'legend', null, $legend ) . $contents .
+				Xml::tags( 'legend', null, $legend ) . $contents .
 			Xml::closeElement( 'fieldset' );
 	}
 }
