@@ -1514,7 +1514,7 @@ class OversightMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Oversight';
 	protected $id      = 'ext-oversight';
 
-	protected $functionName = 'efHideRevisionMessages';
+	protected $arrName = 'messages';
 	protected $messageFile  = 'Oversight/HideRevision.i18n.php';
 
 	protected $exportStart = '\'$CODE\' => array(';
