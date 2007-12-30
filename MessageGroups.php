@@ -761,7 +761,7 @@ class BlockTitlesMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Block Titles';
 	protected $id    = 'ext-blocktitles';
 
-	protected $functionName = 'efBlockTitlesMessages';
+	protected $arrName = 'messages';
 	protected $messageFile  = 'BlockTitles/BlockTitles.i18n.php';
 
 	protected $exportStart = '\'$CODE\' => array(';
