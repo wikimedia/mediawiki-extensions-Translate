@@ -832,7 +832,7 @@ class CheckUserMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Check User';
 	protected $id      = 'ext-checkuser';
 
-	protected $arrName     = 'wgCheckUserMessages';
+	protected $arrName     = 'messages';
 	protected $messageFile = 'CheckUser/CheckUser.i18n.php';
 }
 
