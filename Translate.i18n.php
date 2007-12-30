@@ -48,8 +48,8 @@ $messages['en'] = array(
 
 	'translate-edit-definition' => 'Message definition',
 	'translate-edit-information' => 'Information about this message',
-	'translate-edit-in-other-languages' => 'Translations in other languages',
-	'translate-edit-committed' => 'Current committed translation',
+	'translate-edit-in-other-languages' => 'Message in other languages',
+	'translate-edit-committed' => 'Current translation in software',
 
 	'translate-magic-pagename' => 'Extended MediaWiki translation',
 	'translate-magic-help' => 'You can translate special pages aliases, magic words, skin names and namespace names.
