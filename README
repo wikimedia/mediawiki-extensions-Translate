@@ -6,7 +6,6 @@ $wgTranslateEC = array_keys($wgTranslateAC); // All modules
 $wgTranslateFuzzyBotName = 'FuzzyBot';
 $wgGroupPermissions['Translators']['translate'] = true;
 
-* To use fuzzy.php, symlink and run it form maintenance directory
 * Users have to be a member of user group 'Translators' to enable full functionality.
 
 == Changes in version 8 ==
@@ -17,6 +16,8 @@ $wgGroupPermissions['Translators']['translate'] = true;
 * New variable $wgTranslateDocumentationLanguageCode
 * Fixed Special:Magic form submission and selector bug
 * --skiplanguages option for groupStatistics.php
+* Force keys to lower case in serialised index to avoid misses due to case
+* Changed fuzzy.php to assume location of commandline.inc, so that it can be run from any location
 
 == Changes in version 7 ==
 * Released 2007-12-29

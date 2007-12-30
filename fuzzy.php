@@ -1,8 +1,7 @@
 <?php
 
-#$optionsWithArgs = array( 'u', 's' );
-
-require_once( 'commandLine.inc' );
+$IP = "../../maintenance/";
+require_once( $IP . 'commandLine.inc' );
 
 if ( count( $args ) == 0 || isset( $options['help'] ) ) {
 	print <<<EOT

@@ -81,7 +81,7 @@ class SpecialTranslate extends SpecialPage {
 		} else {
 			$description = $this->getGroupDescription();
 			$links = $this->doStupidLinks();
-			if ( $this->paging['total'] === 0 ) {
+			if ( $this->paging['count'] === 0 ) {
 				$wgOut->addHTML( $description . $links );
 			} else {
 				$wgOut->addHTML( $description . $links . $output . $links );
