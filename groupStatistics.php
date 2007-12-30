@@ -10,7 +10,7 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-$optionsWithArgs = array( 'groups', 'output' );
+$optionsWithArgs = array( 'groups', 'output', 'skiplanguages', );
 
 function stderr( $message ) {
 	static $stderr = null;
@@ -37,6 +37,7 @@ function showUsage() {
 Usage: php transstat.php [--help] [--output=csv|text|wiki] --groups
 	--help : this helpful message
 	--groups : comma separated list of groups
+	--skiplanguages : comma separated list of languages that should be skipped
 	--output : select an output engine one of:
 		* 'csv'      : Comma Separated Values.
 		* 'wiki'     : MediaWiki syntax (default).
@@ -76,6 +77,11 @@ if ( !isset($options['groups']) ) {
 $groups = array();
 $reqGroups = array_map( 'trim', explode( ',', $options['groups'] ) );
 
+$skipLanguages = array();
+if ( isset($options['skiplanguages']) ) {
+	$skipLanguages = array_map( 'trim', explode( ',', $options['skiplanguages'] ) );
+}
+
 // List of all groups
 $allGroups = MessageGroups::singleton()->getGroups();
 
@@ -109,8 +115,8 @@ $out->blockend();
 
 // Perform the statistic calculations on every language
 foreach ( $languages as $code => $name ) {
-	// Here we assume that all testing languages like enRTL are filtered by
-	// missing core translations file.
+	// Skip list
+	if ( in_array( $code, $skipLanguages ) ) continue;
 
 	$out->blockstart();
 	$out->element( $code );

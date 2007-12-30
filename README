@@ -16,6 +16,7 @@ $wgGroupPermissions['Translators']['translate'] = true;
 * Enhanced edit view with fieldsets and message documentation
 * New variable $wgTranslateDocumentationLanguageCode
 * Fixed Special:Magic form submission and selector bug
+* --skiplanguages option for groupStatistics.php
 
 == Changes in version 7 ==
 * Released 2007-12-29
