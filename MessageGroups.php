@@ -910,7 +910,7 @@ class ConfirmAccountMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Confirm Account';
 	protected $id      = 'ext-confirmaccount';
 
-	protected $arrName     = 'wgConfirmAccountMessages';
+	protected $arrName     = 'messages';
 	protected $messageFile = 'ConfirmAccount/ConfirmAccount.i18n.php';
 }
 
