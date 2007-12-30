@@ -1091,6 +1091,7 @@ $messages['li'] = array(
 
 /** Lithuanian (Lietuvių)
  * @author Vpovilaitis
+ * @author Siebrand
  */
 $messages['lt'] = array(
 	'translate'                       => 'Išversti',
@@ -1105,16 +1106,12 @@ $messages['lt'] = array(
 	'translate-task-reviewall'        => 'Peržiūrėti visus vertimus iš',
 	'translate-task-export'           => 'Eksportuoti vertimus iš',
 	'translate-task-export-to-file'   => 'Eksportuoti į failą vertimus iš',
-	'translate-settings'              => 'Aš noriu $1 $2, esančius $3 kalboje ($4 vnt.). $5',
-	'translate-paging'                => '<div>Rodomi pranešimai nuo $1 iki $2 iš $3. [ $4 | $5 ]</div>',
+	'translate-page-no-such-language' => 'Buvo nurodytas klaidingas kalbos kodas',
 	'translate-submit'                => 'Išrinkti',
 	'translate-next'                  => 'Sekantis puslapis',
 	'translate-prev'                  => 'Ankstesnis puslapis',
 	'translate-optional'              => '(nebūtinas)',
 	'translate-ignored'               => '(ignoruotas)',
-	'translate-edit-message-format'   => 'Šio pranešimo formatas yra <b>$1</b>.',
-	'translate-edit-message-in'       => 'Einamoji simbolių eilutė <b>$1</b> ($2) kalboje:',
-	'translate-edit-message-in-fb'    => 'Einamoji simbolių eilutė atsarginėje <b>$1</b> ($2) kalboje:',
 	'translate-magic-pagename'        => 'MediaWiki išplėtimų vertimas',
 	'translate-magic-help'            => 'Jūs galite išversti specialių puslapių pavadinimus, magiškus žodžius, apvalkalų pavadinimus ir vardų sričių pavadinimus.
 
@@ -1142,8 +1139,6 @@ Jūs turite priklausyti vertėjų grupei, kad galėtumėte išsaugoti pakeitimus
 	'translationchanges'              => 'Vertimo pakeitimai',
 	'translationchanges-export'       => 'eksportuoti',
 	'translationchanges-change'       => '$1: $2 pagal $3',
-	'translate-page-no-such-language' => 'Buvo nurodytas klaidingas kalbos kodas',
-
 );
 
 $messages['nap'] = array(
