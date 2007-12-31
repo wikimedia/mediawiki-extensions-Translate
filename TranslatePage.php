@@ -222,7 +222,7 @@ class SpecialTranslate extends SpecialPage {
 		$stop  = $start + $this->paging['count']-1;
 		$total = $this->paging['total'];
 
-		$allInThisPage = $start === 1 && $total < $this->options['limit'];
+		$allInThisPage = $start === 1 && $total <= $this->options['limit'];
 			
 		if ( $this->paging['count'] === 0 ) {
 			$navigation = wfMsgExt( self::MSG . 'showing-none', array( 'parse' ) );
