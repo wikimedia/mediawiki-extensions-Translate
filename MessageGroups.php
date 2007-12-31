@@ -742,11 +742,6 @@ class BadImageMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName = 'messages';
 	protected $messageFile  = 'BadImage/BadImage.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportPrefix= '';
-	protected $exportLineP = "\t";
-	protected $exportEnd   = '),';
 }
 
 class BlahtexMessageGroup extends ExtensionMessageGroup {
@@ -1516,11 +1511,6 @@ class OversightMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName = 'messages';
 	protected $messageFile  = 'Oversight/HideRevision.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportPrefix= '';
-	protected $exportLineP = "\t";
-	protected $exportEnd   = '),';
 }
 
 class PageByMessageGroup extends MultipleFileMessageGroup {
