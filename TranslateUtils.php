@@ -249,7 +249,7 @@ class TranslateUtils {
 			if ( $review ) {
 				$output .= Xml::tags( 'tr', array( 'class' => 'orig' ),
 					Xml::tags( 'td', array( 'rowspan' => '2'), $leftColumn ) .
-					Xml::tags( 'td', null, TranslateUtils::convertWhiteSpaceToHTML( $message ) )
+					Xml::tags( 'td', null, TranslateUtils::convertWhiteSpaceToHTML( $original ) )
 				);
 
 				$output .= Xml::tags( 'tr', array( 'class' => 'new' ),
