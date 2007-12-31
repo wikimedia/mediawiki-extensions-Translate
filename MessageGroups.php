@@ -427,7 +427,8 @@ abstract class ExtensionMessageGroup extends MessageGroup {
 
 		// Remove the last newline, not needed here
 		$txt = substr( $txt, 0, -1 );
-		$txt .= $this->exportPrefix . $this->exportEnd;
+		// But actually needed here
+		$txt .= $this->exportPrefix . $this->exportEnd . "\n";
 
 		return $txt;
 	}
