@@ -90,7 +90,7 @@ class SpecialTranslationChanges extends SpecialPage {
 			$pieces = explode('/', $wgContLang->lcfirst($row->rc_title), 2);
 
 			$group = 'Unknown';
-			$mg = @$index[$pieces[0]];
+			$mg = @$index[strtolower($pieces[0])];
 			if ( !is_null($mg) ) $group = $mg;
 
 			$lang = 'site';

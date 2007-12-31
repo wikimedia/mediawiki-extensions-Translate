@@ -241,7 +241,7 @@ abstract class ComplexMessages {
 			return array_merge( $a1, $a2 );
 		} else {
 			foreach ( $a1 as $index => $value ) {
-				if ( !isset($a2[$index][0]) || !$a2[$index][0] ) {
+				if ( !isset($a2[$index]) || !$a2[$index] ) {
 					$a2[$index] = $a1[$index];
 				}
 			}
@@ -268,8 +268,11 @@ abstract class ComplexMessages {
 			$elements = explode( '=', $line, 2 );
 			if ( count( $elements ) !== 2 ) { continue; }
 			if ( trim( $elements[1] ) === '' ) { continue; }
-
-			$array[(string)$elements[0]] = explode( ",", $elements[1] );
+			if ( $this->elementsInArray ) {
+				$array[(string)$elements[0]] = explode( ",", $elements[1] );
+			} else {
+				$array[(string)$elements[0]] = $elements[1];
+			}
 		}
 
 		return $array;
@@ -287,7 +290,11 @@ abstract class ComplexMessages {
 	protected function val( $type, $key ) {
 		$array = $this->getArray();
 		$subarray = @$array[$type][$key];
-		if ( !$subarray || count( $subarray ) < 1 ) return array();
+		if ( $this->elementsInArray ) {
+			if ( !$subarray || count( $subarray ) < 1 ) return array();
+		} else {
+			if ( !$subarray ) return '';
+		}
 		return $subarray;
 	}
 
@@ -442,21 +449,16 @@ abstract class ComplexMessages {
 		foreach ( $this->getIterator() as $key ) {
 			$temp = "\t'$key'";
 			while ( strlen( $temp ) <= $this->exportPad ) { $temp .= ' '; }
-
-			if ( count($this->val(self::LANG_CURRENT, $key)) ) {
-				$normalized = array_map( array( $this, 'normalize' ), $this->val(self::LANG_CURRENT, $key ) );
-
-				if ( $this->elementsInArray ) {
-					$temp .= "=> array( ". implode( ', ', $normalized )." ),";
-				} else {
-					if ( count( $normalized ) > 1 ) {
-						throw new MWException( 'Too many elements for ' . $this->id . '. Key: ' . $key );
-					} else {
-						$temp .= "=> $normalized[0],";
-					}
-				}
-				$text[] = $temp;
+			$val = $this->val(self::LANG_CURRENT, $key );
+			if ( !$val || !count( $val ) ) continue;
+			if ( $this->elementsInArray ) {
+				$normalized = array_map( array( $this, 'normalize' ), $val );
+				$temp .= "=> array( ". implode( ', ', $normalized )." ),";
+			} else {
+				$normalized = $this->normalize(  $val );
+				$temp .= "=> $normalized,";
 			}
+			$text[] = $temp;
 		}
 
 		$text[] = ');';
@@ -549,10 +551,10 @@ class NamespaceCM extends ComplexMessages {
 
 			$value = false;
 			// Export main always (because it cannot be translated)
-			if ( $index === NS_MAIN ) $value = '';
+			#if ( $index === NS_MAIN ) $value = '';
 
-			if ( isset($array[self::LANG_CURRENT][$index][0]) ) {
-				$value = $array[self::LANG_CURRENT][$index][0];
+			if ( isset($array[self::LANG_CURRENT][$index]) ) {
+				$value = $array[self::LANG_CURRENT][$index];
 			}
 
 			if ( $value === false ) continue;
