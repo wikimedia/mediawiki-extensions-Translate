@@ -759,11 +759,6 @@ class BlockTitlesMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName = 'messages';
 	protected $messageFile  = 'BlockTitles/BlockTitles.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportPrefix= '';
-	protected $exportLineP = "\t";
-	protected $exportEnd   = '),';
 }
 
 class BoardVoteMessageGroup extends ExtensionMessageGroup {
