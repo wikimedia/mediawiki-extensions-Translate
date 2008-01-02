@@ -161,13 +161,15 @@ class TranslateEditAddons {
 		}
 
 		// Some syntactic checks
-		$message = new TMessage( $key, $en );
-		$message->database = $object->textbox1 ? $object->textbox1 : $xx;
-		$checks = MessageChecks::doChecks( $message );
-		if ( count($checks) ) {
-			$boxes[] = TranslateUtils::fieldset( wfMsgHtml( self::MSG . 'warnings' ), implode( '<hr />', $checks) );
+		$translation = $object->textbox1 ? $object->textbox1 : $xx;
+		if ( $translation ) {
+			$message = new TMessage( $key, $en );
+			$message->database = $translation;
+			$checks = MessageChecks::doChecks( $message );
+			if ( count($checks) ) {
+				$boxes[] = TranslateUtils::fieldset( wfMsgHtml( self::MSG . 'warnings' ), implode( '<hr />', $checks) );
+			}
 		}
-
 
 		$group->reset();
 		return implode("\n\n", $boxes);
