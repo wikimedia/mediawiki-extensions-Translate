@@ -1,5 +1,16 @@
 <?php
 
+/**
+ * Command line script to mark translations fuzzy (similar to gettext fuzzy).
+ *
+ * @addtogroup Extensions
+ *
+ * @author Niklas Laxström
+ * @copyright Copyright © 2007-2008, Niklas Laxström
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ */
+
+
 $IP = "../../maintenance/";
 require_once( $IP . 'commandLine.inc' );
 
@@ -95,12 +106,18 @@ class FuzzyBot {
 	}
 
 	private function updateMessage( $title, $text ) {
-		global $wgTitle, $wgArticle;
+		global $wgTitle, $wgArticle, $wgTranslateDocumentationLanguageCode;
 		$wgTitle = Title::newFromText( "Mediawiki:$title" );
 
 		echo "Updating {$wgTitle->getPrefixedText()}... ";
 		if ( !$wgTitle instanceof Title ) {
 			echo "INVALID TITLE!\n";
+			return;
+		}
+
+		$items = explode( '/', $wgTitle->getText(), 2 );
+		if ( isset( $items[1] ) && $items[1] === $wgTranslateDocumentationLanguageCode ) {
+			echo "IGNORED!\n";
 			return;
 		}
 
