@@ -544,7 +544,6 @@ $messages['fi'] = array(
 	'translate-edit'                    => 'muokkaa',
 	'translate-talk'                    => 'keskustelu',
 	'translate-history'                 => 'historia',
-	'translate-delete'                  => 'kumoa muutokset',
 	'translate-task-view'               => 'nähdä kaikki viestit',
 	'translate-task-untranslated'       => 'nähdä kaikki kääntämättömät viestit',
 	'translate-task-optional'           => 'nähdä valinnaiset viestit',
@@ -572,8 +571,15 @@ $messages['fi'] = array(
 	'translate-page-description-legend' => 'Tietoja ryhmästä',
 	'translate-optional'                => '(valinnainen)',
 	'translate-ignored'                 => '(ei-käännettävä)',
+	'translate-edit-definition'         => 'Viestin määritelmä',
+	'translate-edit-contribute'         => 'auta dokumentoinnissa',
+	'translate-edit-no-information'     => "''Tätä viestiä ei ole dokumentoitu. Jos tiedät missä tai miten tätä viestiä käytetään, voit auttaa muita kääntäjiä lisäämällä kommentteja tähän viestiin.''",
+	'translate-edit-information'        => 'Tietoja viestistä ($1)',
+	'translate-edit-in-other-languages' => 'Viesti muilla kielillä',
+	'translate-edit-committed'          => 'Nykyinen ohjelmiston käyttämä käännös',
 	'translate-magic-pagename'          => 'Laajennettu MediaWikin kääntäminen',
 	'translationchanges'                => 'Käännösmuutokset',
+	'translationchanges-export'         => 'vie',
 );
 
 /** French (Français)
@@ -1678,33 +1684,47 @@ $messages['su'] = array(
 /** Swedish (Svenska)
  * @author Sannab
  * @author Lejonel
+ * @author Siebrand
  */
 $messages['sv'] = array(
-	'translate'                       => 'Översätt',
-	'translate-edit'                  => 'redigera',
-	'translate-talk'                  => 'diskussion',
-	'translate-history'               => 'historik',
-	'translate-delete'                => 'ta bort ändringar',
-	'translate-task-view'             => 'se alla meddelanden från',
-	'translate-task-untranslated'     => 'se alla oöversatta meddelanden från',
-	'translate-task-optional'         => 'se valfria systemmeddelanden från',
-	'translate-task-review'           => 'granska ändringar av',
-	'translate-task-reviewall'        => 'granska alla översättningar av',
-	'translate-task-export'           => 'exportera översättningar från',
-	'translate-task-export-to-file'   => 'exportera översättningar till fil från',
-	'translate-task-export-as-po'     => 'exportera översättningar i Gettext-format från',
-	'translate-settings'              => 'Jag vill $1 $2 på språk $3 $4 åt gången. $5',
-	'translate-paging'                => '<div>Visar meddelanden från $1 till $2 av $3. [ $4 | $5 ]</div>',
-	'translate-submit'                => 'Hämta',
-	'translate-next'                  => 'Nästa sida',
-	'translate-prev'                  => 'Föregående sida',
-	'translate-optional'              => '(valfritt)',
-	'translate-ignored'               => '(används ej)',
-	'translate-edit-message-format'   => 'Detta meddelandes format är <b>$1</b>.',
-	'translate-edit-message-in'       => 'Nuvarande sträng på <b>$1</b> ($2):',
-	'translate-edit-message-in-fb'    => 'Nuvarande sträng i andrahandsspråk <b>$1</b> ($2):',
-	'translate-magic-pagename'        => 'Utökad MediaWiki-översättning',
-	'translate-magic-help'            => 'Du kan översätta alias för specialsidor, magiska ord, skin-namn och namnrymdsnamn.
+	'translate'                         => 'Översätt',
+	'translate-edit'                    => 'redigera',
+	'translate-talk'                    => 'diskussion',
+	'translate-history'                 => 'historik',
+	'translate-task-view'               => 'se alla meddelanden från',
+	'translate-task-untranslated'       => 'se alla oöversatta meddelanden från',
+	'translate-task-optional'           => 'se valfria systemmeddelanden från',
+	'translate-task-review'             => 'granska ändringar av',
+	'translate-task-reviewall'          => 'granska alla översättningar av',
+	'translate-task-export'             => 'exportera översättningar från',
+	'translate-task-export-to-file'     => 'exportera översättningar till fil från',
+	'translate-task-export-as-po'       => 'exportera översättningar i Gettext-format från',
+	'translate-page-no-such-language'   => 'Det angivna språket är inte giltigt.',
+	'translate-page-no-such-task'       => 'Den angivna åtgärden är inte giltig.',
+	'translate-page-no-such-group'      => 'Den angivna gruppen är inte giltig.',
+	'translate-page-settings-legend'    => 'Inställningar',
+	'translate-page-task'               => 'Jag vill',
+	'translate-page-group'              => 'Grupp',
+	'translate-page-language'           => 'Språk',
+	'translate-page-limit'              => 'Antal',
+	'translate-page-limit-option'       => '$1 {{PLURAL:$1|meddelande|meddelanden}} per sida',
+	'translate-submit'                  => 'Hämta',
+	'translate-page-navigation-legend'  => 'Navigering',
+	'translate-page-showing'            => 'Visar meddelande $1 till $2 av $3.',
+	'translate-page-showing-all'        => 'Visar $1 {{PLURAL:$1|meddelande|meddelanden}}.',
+	'translate-page-showing-none'       => 'Det finns inga meddelanden att visa.',
+	'translate-next'                    => 'Nästa sida',
+	'translate-prev'                    => 'Föregående sida',
+	'translate-optional'                => '(valfritt)',
+	'translate-ignored'                 => '(används ej)',
+	'translate-edit-definition'         => 'Definition av meddelandet',
+	'translate-edit-contribute'         => 'bidra',
+	'translate-edit-no-information'     => "''Det här meddelandet har ingen dokumentation. Om du vet var eller hur detta meddelande används, så kan du hjälpa andra översättare genom att skriva dokumentation för meddelandet.''",
+	'translate-edit-information'        => 'Information om detta meddelande ($1)',
+	'translate-edit-in-other-languages' => 'Meddelandet på andra språk',
+	'translate-edit-committed'          => 'Nuvarande översättning i mjukvaran',
+	'translate-magic-pagename'          => 'Utökad MediaWiki-översättning',
+	'translate-magic-help'              => 'Du kan översätta alias för specialsidor, magiska ord, skin-namn och namnrymdsnamn.
 
 För magiska ord så måste du inkludera engelska översättningar eller så slutar de att fungera. Lämna också det första (0 eller 1) som det är.
 
@@ -1713,21 +1733,23 @@ Alias för specialsidor och magiska ord kan ha flera översättningar. Översät
 Vid översättning av namnrymder så är <tt>$1 talk</tt> speciellt. <tt>$1</tt> ersätts med webbplatsens namn (till exempel <tt>{{SITENAME}} talk</tt>). Om det inte är möjligt att skapa en giltig översättning till ditt språk utan att ändra webbplatsens namn, så ta kontakt med en utvecklare.
 
 För att kunna spara ändringar så behöver du tillhöra översättargruppen. Ändringar sparas inte förrän du klickar på spara-knappen nedan.',
-	'translate-magic-form'            => 'Språk: $1 Modul: $2 $3',
-	'translate-magic-submit'          => 'Hämta',
-	'translate-magic-cm-to-be'        => 'Att-bli',
-	'translate-magic-cm-current'      => 'Nuvarande',
-	'translate-magic-cm-original'     => 'Original',
-	'translate-magic-cm-fallback'     => 'Reserv',
-	'translate-magic-cm-save'         => 'Spara',
-	'translate-magic-cm-export'       => 'Exportera',
-	'translate-magic-cm-updatedusing' => 'Uppdaterad med hjälp av Special:Magic',
-	'translate-magic-cm-savefailed'   => 'Det gick ej att spara',
-	'translate-magic-special'         => 'Alias till specialsidor',
-	'translate-magic-words'           => 'Magiska ord',
-	'translate-magic-skin'            => 'Skin-namn',
-	'translate-magic-namespace'       => 'Namnrymdsnamn',
-	'translationchanges'              => 'Ändrade översättningar',
+	'translate-magic-form'              => 'Språk: $1 Modul: $2 $3',
+	'translate-magic-submit'            => 'Hämta',
+	'translate-magic-cm-to-be'          => 'Att-bli',
+	'translate-magic-cm-current'        => 'Nuvarande',
+	'translate-magic-cm-original'       => 'Original',
+	'translate-magic-cm-fallback'       => 'Reserv',
+	'translate-magic-cm-save'           => 'Spara',
+	'translate-magic-cm-export'         => 'Exportera',
+	'translate-magic-cm-updatedusing'   => 'Uppdaterad med hjälp av Special:Magic',
+	'translate-magic-cm-savefailed'     => 'Det gick ej att spara',
+	'translate-magic-special'           => 'Alias till specialsidor',
+	'translate-magic-words'             => 'Magiska ord',
+	'translate-magic-skin'              => 'Skin-namn',
+	'translate-magic-namespace'         => 'Namnrymdsnamn',
+	'translationchanges'                => 'Ändrade översättningar',
+	'translationchanges-export'         => 'exportera',
+	'translationchanges-change'         => '$1: $2 av $3',
 );
 
 $messages['tet'] = array(
@@ -1766,6 +1788,18 @@ $messages['ug'] = array(
 	'translate-edit' => 'uzgartish',
 	'translate-talk' => 'monazire',
 	'translate-history' => 'tarih',
+);
+
+/** Volapük (Volapük)
+ * @author Malafaya
+ */
+$messages['vo'] = array(
+	'translate-page-task'       => 'Vilob',
+	'translate-page-group'      => 'Grup',
+	'translate-page-language'   => 'Pük',
+	'translate-next'            => 'Pad sököl',
+	'translate-prev'            => 'Pad büik',
+	'translate-magic-namespace' => 'Nems nemaspadas',
 );
 
 $messages['yue'] = array(
