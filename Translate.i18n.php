@@ -214,6 +214,7 @@ $messages['ar'] = array(
 	'translate-edit-information'        => 'معلومات حول هذه الرسالة ($1)',
 	'translate-edit-in-other-languages' => 'الرسالة بلغات أخرى',
 	'translate-edit-committed'          => 'الترجمة الحالية في البرنامج',
+	'translate-edit-warnings'           => 'التحذيرات حول الترجمات غير المكتملة',
 	'translate-magic-pagename'          => 'ترجمة الميدياويكي الممتدة',
 	'translate-magic-help'              => 'يمكنك ترجمة أسماء الصفحات الخاصة، الكلمات السحرية، أسماء الواجهات وأسماء النطاقات.
 
@@ -241,6 +242,11 @@ $messages['ar'] = array(
 	'translationchanges'                => 'تغييرات الترجمة',
 	'translationchanges-export'         => 'تصدير',
 	'translationchanges-change'         => '$1: $2 بواسطة $3',
+	'translate-checks-parameters'       => 'المحددات التالية غير مستخدمة: <strong>$1</strong>',
+	'translate-checks-balance'          => 'يوجد عدد غير زوجي من الأقواس: <strong>$1</strong>',
+	'translate-checks-links'            => 'الوصلات التالية بها مشاكل: <strong>$1</strong>',
+	'translate-checks-xhtml'            => 'من فضلك استبدل الوسوم التالية بالبدائل الصحيحة: <strong>$1</strong>',
+	'translate-checks-plural'           => 'التعريف يستخدم <nowiki>{{PLURAL:}}</nowiki> لكن الترجمة لا.',
 );
 
 $messages['bcl'] = array(
@@ -1278,6 +1284,7 @@ $messages['nl'] = array(
 	'translate-edit-information'        => 'Informatie over dit bericht ($1)',
 	'translate-edit-in-other-languages' => 'Bericht in andere talen',
 	'translate-edit-committed'          => 'Huidig bericht in software',
+	'translate-edit-warnings'           => 'Waarschuwingen over onjuiste vertalingen',
 	'translate-magic-pagename'          => 'Uitgebreide MediaWiki-vertaling',
 	'translate-magic-help'              => "U kunt alternatieven voor speciale pagina's, magische woorden, skinnamen en naamruimtebenamingen vertalen.
 
@@ -1305,6 +1312,11 @@ Om wijzigingen op te slaan moet u lid zijn van de groep vertalers. Wijzigingen w
 	'translationchanges'                => 'Vertalingen',
 	'translationchanges-export'         => 'exporteren',
 	'translationchanges-change'         => '$1: $2 door $3',
+	'translate-checks-parameters'       => 'De volgende parameters worden niet gebruikt: <strong>$1</strong>',
+	'translate-checks-balance'          => 'Er wordt een oneven aantal haakjes gebruikt: <strong>$1</strong>',
+	'translate-checks-links'            => 'De volgende links zijn problematisch: <strong>$1</strong>',
+	'translate-checks-xhtml'            => 'Vervang de volgende tags door de juiste: <strong>$1</strong>',
+	'translate-checks-plural'           => 'De definitie bevat <nowiki>{{PLURAL:}}</nowiki>, maar de vertaling niet.',
 );
 
 /** Norwegian (‪Norsk (bokmål)‬)
@@ -1494,7 +1506,17 @@ $messages['pt'] = array(
 	'translate-edit-information'        => 'Informações sobre esta mensagem',
 	'translate-edit-in-other-languages' => 'Mensagem em outros idiomas',
 	'translate-edit-committed'          => 'Tradução actualmente disponível no software',
+	'translate-edit-warnings'           => 'Avisos sobre traduções incompletas',
 	'translate-magic-pagename'          => 'Tradução extra do MediaWiki',
+	'translate-magic-help'              => 'Você pode traduzir alias de páginas especiais, palavras mágicas, nomes de temas (skins) e nomes de espaços nominais.
+
+É necessário incluir os termos em Inglês para as palavras mágicas, ou elas pararão de funcionar. Mantenha também o primeiro item (0 ou 1) da forma como se encontra.
+
+Os alias de páginas especiais e palavras mágicas podem receber múltiplas traduções, separadas por vírgulas (,). Nomes de temas e espaços nominais podem receber apenas uma tradução.
+
+Nas traduções de espaços nominais a partícula <tt>$1 talk</tt> é especial. <tt>$1</tt> é trocada pelo nome do sítio (por exemplo, <tt>{{SITENAME}} talk</tt>. Se não é possível formar em seu idioma expressões válidas sem mexer com o nome do sítio, por gentileza, procure um desenvolvedor.
+
+É necessário pertencer ao grupo de tradutores para conseguir salvar as alterações. As alterações não serão salvas até que você clique no botão de salvar.',
 	'translate-magic-form'              => 'Língua: $1 Módulo: $2 $3',
 	'translate-magic-submit'            => 'Trazer',
 	'translate-magic-cm-current'        => 'Actual',
@@ -1502,12 +1524,18 @@ $messages['pt'] = array(
 	'translate-magic-cm-save'           => 'Guardar',
 	'translate-magic-cm-export'         => 'Exportar',
 	'translate-magic-cm-updatedusing'   => 'Actualizado usando {{ns:special}}:Magic',
+	'translate-magic-cm-savefailed'     => 'Erro ao salvar',
 	'translate-magic-special'           => 'Alias de páginas especiais',
 	'translate-magic-words'             => 'Palavras mágicas',
+	'translate-magic-skin'              => 'Nomes dos temas',
 	'translate-magic-namespace'         => 'Nomes de espaços nominais',
 	'translationchanges'                => 'Alterações às traduções',
 	'translationchanges-export'         => 'exportar',
 	'translationchanges-change'         => '$1: $2 por $3',
+	'translate-checks-parameters'       => 'Os seguintes parâmetros não são usados: <strong>$1</strong>',
+	'translate-checks-links'            => 'Os seguintes links possuem problemas: <strong>$1</strong>',
+	'translate-checks-xhtml'            => 'Por gentileza, troque as seguintes tags pelas corretas: <strong>$1</strong>',
+	'translate-checks-plural'           => 'A definição usa <nowiki>{{PLURAL:}}</nowiki>, mas a tradução não.',
 );
 
 /** Message documentation (Message documentation)
