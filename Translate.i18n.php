@@ -51,6 +51,7 @@ $messages['en'] = array(
 	'translate-edit-information' => 'Information about this message ($1)',
 	'translate-edit-in-other-languages' => 'Message in other languages',
 	'translate-edit-committed' => 'Current translation in software',
+	'translate-edit-warnings' => 'Warnings about incomplete translations',
 
 	'translate-magic-pagename' => 'Extended MediaWiki translation',
 	'translate-magic-help' => 'You can translate special pages aliases, magic words, skin names and namespace names.
@@ -83,6 +84,12 @@ You need to be in the translators group to save changes. Changes are not saved u
 	'translationchanges' => 'Translation changes',
 	'translationchanges-export' => 'export',
 	'translationchanges-change' => '$1: $2 by $3',
+
+	'translate-checks-parameters' => 'Following parameters are not used: <strong>$1</strong>',
+	'translate-checks-balance' => 'There is uneven amount of parentheses: <strong>$1</strong>',
+	'translate-checks-links' => 'Following links are problematic: <strong>$1</strong>',
+	'translate-checks-xhtml' => 'Please replace the following tags with correct ones: <strong>$1</strong>',
+	'translate-checks-plural' => 'Definition uses <nowiki>{{PLURAL:}}</nowiki> but translation does not.',
 );
 
 $messages['af'] = array(

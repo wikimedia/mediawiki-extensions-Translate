@@ -19,6 +19,8 @@ $wgGroupPermissions['Translators']['translate'] = true;
 * Force keys to lower case in serialised index to avoid misses due to case
 * Changed fuzzy.php to assume location of commandline.inc, so that it can be run from any location
 * Preserve whitespace also in Special:Translate table
+* Run checks on editing view (current translation or submitted translation in preview) and display them to user
+* Fixed a bug where empty text area would be filled with current translation even after first page load
 
 == Changes in version 7 ==
 * Released 2007-12-29

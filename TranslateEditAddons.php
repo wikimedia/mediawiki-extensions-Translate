@@ -5,7 +5,7 @@ if (!defined('MEDIAWIKI')) die();
  * Tools for edit page view to aid translators.
  *
  * @author Niklas Laxström
- * @copyright Copyright © 2007 Niklas Laxström
+ * @copyright Copyright © 2007-2008 Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 class TranslateEditAddons {
@@ -112,12 +112,13 @@ class TranslateEditAddons {
 		$en = $group->getMessage( $key, 'en' );
 		$xx = $group->getMessage( $key, $code );
 
-
+		// Definition
 		$boxes = array();
 		if ( $en !== null ) {
 			$boxes[] = self::doBox( $en, 'en', wfMsg( self::MSG . 'definition' ) );
 		}
 
+		// In other languages (if any)
 		$inOtherLanguages = array();
 		foreach ( self::getFallbacks( $code ) as $fbcode ) {
 			$fb = $group->getMessage( $key, $fbcode );
@@ -134,6 +135,7 @@ class TranslateEditAddons {
 				implode( "\n", $inOtherLanguages ) );
 		}
 
+		// User provided documentation
 		if ( $wgTranslateDocumentationLanguageCode ) {
 			global $wgUser;
 			$title = Title::makeTitle( NS_MEDIAWIKI, $key . '/' . $wgTranslateDocumentationLanguageCode );
@@ -147,15 +149,25 @@ class TranslateEditAddons {
 			);
 		}
 
-
+		// Current committed translation
+		// Should this be higher up, because it's not as importad as definition for example
 		if ( $xx !== null && $code !== 'en' ) {
 			$boxes[] = self::dobox( $xx, $code, wfMsg( self::MSG . 'committed' ) );
-		
-		// Hack initial content
-			if ($object->textbox1 === '') {
+
+			// Append translation from the file to edit area, if it's empty.
+			if ($object->firsttime && $object->textbox1 === '') {
 				$object->textbox1 = $xx;
 			}
 		}
+
+		// Some syntactic checks
+		$message = new TMessage( $key, $en );
+		$message->database = $object->textbox1 ? $object->textbox1 : $xx;
+		$checks = MessageChecks::doChecks( $message );
+		if ( count($checks) ) {
+			$boxes[] = TranslateUtils::fieldset( wfMsgHtml( self::MSG . 'warnings' ), implode( '<hr />', $checks) );
+		}
+
 
 		$group->reset();
 		return implode("\n\n", $boxes);

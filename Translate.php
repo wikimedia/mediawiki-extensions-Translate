@@ -6,12 +6,12 @@ if (!defined('MEDIAWIKI')) die();
  * @addtogroup Extensions
  *
  * @author Niklas Laxström
- * @copyright Copyright © 2006-2007, Niklas Laxström
+ * @copyright Copyright © 2006-2008, Niklas Laxström
  * @copyright Copyright © 2007, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '7.6' );
+define( 'TRANSLATE_VERSION', '7.7' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'Translate',
@@ -28,6 +28,7 @@ $wgAutoloadClasses['TaskOptions'] = $dir . 'TranslateTasks.php';
 $wgAutoloadClasses['TranslateUtils'] = $dir . 'TranslateUtils.php';
 $wgAutoloadClasses['HTMLSelector'] = $dir . 'TranslateUtils.php';
 
+$wgAutoloadClasses['MessageChecks'] = $dir . 'MessageChecks.php';
 $wgAutoloadClasses['MessageGroups'] = $dir . 'MessageGroups.php';
 
 $wgAutoloadClasses['MessageCollection'] = $dir . 'Message.php';
