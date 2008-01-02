@@ -154,7 +154,7 @@ class MessageChecks {
 		if ( stripos( $definition, '{{plural:' ) !== false &&
 			stripos( $translation, '{{plural:' ) === false ) {
 			return true;
-    } else {
+		} else {
 			return false;
 		}
 	}
