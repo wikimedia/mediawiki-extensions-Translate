@@ -1734,6 +1734,14 @@ class SelectCategoryExtensionGroup extends MultipleFileMessageGroup {
 	protected $exportEnd   = ');';
 }
 
+class SemanticFormsMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Semantic Forms';
+	protected $id    = 'ext-semanticforms';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'SemanticForms/languages/SF_Messages.php';
+}
+
 class ShowProcesslistMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Show Processlist';
 	protected $id    = 'ext-showprocesslist';
