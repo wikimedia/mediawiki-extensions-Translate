@@ -403,6 +403,7 @@ $messages['cs'] = array(
 	'translate-page-navigation-legend'  => 'Navigace',
 	'translate-page-showing'            => 'Zobrazeny zprávy $1 až $2 z $3.',
 	'translate-page-showing-all'        => 'Zobrazeno $1 {{PLURAL:$1|zpráva|zprávy|zpráv}}.',
+	'translate-page-showing-none'       => 'Požadavku neodpovídají žádné zprávy.',
 	'translate-next'                    => 'Další stránka',
 	'translate-prev'                    => 'Předchozí stránka',
 	'translate-page-description-legend' => 'Informace o skupině',
@@ -413,6 +414,8 @@ $messages['cs'] = array(
 	'translate-edit-no-information'     => "''K této zprávě není dokumentace. Pokud víte, kde nebo jak se zpráva používá, můžete pomoci dalším překladatelům tím, že přidáte dokumentaci k této zprávě.''",
 	'translate-edit-information'        => 'Informace o této zprávě ($1)',
 	'translate-edit-in-other-languages' => 'Zpráva v jiných jazycích',
+	'translate-edit-committed'          => 'Současný překlad v úložišti',
+	'translate-edit-warnings'           => 'Varování neúplného překladu',
 	'translate-magic-pagename'          => 'Rozšířená možnost překladu Mediawiki',
 	'translate-magic-form'              => 'Jazyk: $1 Modul: $2 $3',
 	'translate-magic-submit'            => 'Zobrazit',
@@ -429,6 +432,11 @@ $messages['cs'] = array(
 	'translate-magic-skin'              => 'Názvy stylů',
 	'translate-magic-namespace'         => 'Názvy jmenných prostorů',
 	'translationchanges'                => 'Změny překladů',
+	'translate-checks-parameters'       => 'Tyto parametry nejsou použity: <strong>$1</strong>',
+	'translate-checks-balance'          => 'Vyskytuje se lichý počet závorek: <strong>$1</strong>',
+	'translate-checks-links'            => 'Následující odkazy jsou problematické: <strong>$1</strong>',
+	'translate-checks-xhtml'            => 'Opravte následující značky: <strong>$1</strong>',
+	'translate-checks-plural'           => 'Zdroj používá <nowiki>{{PLURAL:}}</nowiki>, ale překlad nikoliv.',
 );
 
 /* German by Raymond */
@@ -1841,19 +1849,48 @@ $messages['ug'] = array(
 );
 
 /** Volapük (Volapük)
+ * @author Smeira
  * @author Malafaya
  */
 $messages['vo'] = array(
-	'translate'                 => 'Tradutön',
-	'translate-edit'            => 'redakön',
-	'translate-talk'            => 'bespik',
-	'translate-page-task'       => 'Vilob',
-	'translate-page-group'      => 'Grup',
-	'translate-page-language'   => 'Pük',
-	'translate-page-limit'      => 'Mied',
-	'translate-next'            => 'Pad sököl',
-	'translate-prev'            => 'Pad büik',
-	'translate-magic-namespace' => 'Nems nemaspadas',
+	'translate'                         => 'Tradutön',
+	'translate-edit'                    => 'redakön',
+	'translate-talk'                    => 'bespik',
+	'translate-history'                 => 'jenotem',
+	'translate-task-view'               => 'logön nunis valik in',
+	'translate-task-untranslated'       => 'logön nunis no petradutölis valikis in',
+	'translate-page-no-such-language'   => 'Pük pevälöl no dabinon.',
+	'translate-page-no-such-task'       => 'Vobod pevilöl no dabinon.',
+	'translate-page-no-such-group'      => 'Grup pevälöl no dabinon.',
+	'translate-page-settings-legend'    => 'Paramets',
+	'translate-page-task'               => 'Vilob',
+	'translate-page-group'              => 'Grup:',
+	'translate-page-language'           => 'Pük:',
+	'translate-page-limit'              => 'Mied:',
+	'translate-page-limit-option'       => '{{PLURAL:$1|nun|nuns}} $1 a pad',
+	'translate-submit'                  => 'Getolöd',
+	'translate-page-navigation-legend'  => 'Nafam',
+	'translate-page-showing'            => 'Nuns de nüm: $1 ad $2 (se $3).',
+	'translate-page-showing-all'        => '{{PLURAL:$1|Nun|Nuns}} $1 {{PLURAL:$1|pajonon|pajonons}}.',
+	'translate-page-showing-none'       => 'Nuns jonabik no dabinons.',
+	'translate-next'                    => 'Pad sököl',
+	'translate-prev'                    => 'Pad büik',
+	'translate-page-description-legend' => 'Nüns tefü grup',
+	'translate-ignored'                 => '(penedemöl)',
+	'translate-edit-definition'         => 'Miedet nuna',
+	'translate-edit-contribute'         => 'keblünön',
+	'translate-edit-no-information'     => 'Nun at no peplänon. If sevol, kiöpo u lio nun at pagebon, kanol yufön tradutanis votik medä penol pläni gudik dö geb onik.',
+	'translate-edit-information'        => 'Plän nuna at ($1)',
+	'translate-edit-in-other-languages' => 'Nun in püks votik',
+	'translate-edit-warnings'           => 'Nüneds tefü tradutods no lölöfiks',
+	'translate-magic-cm-to-be'          => 'Ovedon',
+	'translate-magic-cm-save'           => 'Dakipön',
+	'translate-magic-cm-savefailed'     => 'Dakip no eplöpon',
+	'translate-magic-words'             => 'Vöds magivik',
+	'translate-magic-namespace'         => 'Nems nemaspadas',
+	'translationchanges-change'         => '$1: $2 fa $3',
+	'translate-checks-parameters'       => 'Paramets sököl no pagebons: <strong>$1</strong>',
+	'translate-checks-links'            => 'Yüms sököl binons säkädiks: <strong>$1</strong>',
 );
 
 $messages['yue'] = array(
