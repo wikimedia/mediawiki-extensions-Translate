@@ -640,6 +640,7 @@ $messages['fr'] = array(
 	'translate-edit-information'        => 'Informations concernant ce message ($1)',
 	'translate-edit-in-other-languages' => 'Message dans les autres langues',
 	'translate-edit-committed'          => 'Actuelle traduction déjà dans le logiciel',
+	'translate-edit-warnings'           => 'Avertissements concernant les traductions incomplètes',
 	'translate-magic-pagename'          => 'Traduction de MediaWiki étendue',
 	'translate-magic-help'              => "Vous pouvez traduire les alias de pages spéciales, les mots magiques, les noms de skins et les noms d'espaces de noms.
 
@@ -667,6 +668,11 @@ Vous devez appartenir au groupe des traducteurs pour sauvegarder les changements
 	'translationchanges'                => 'Traductions modifiées',
 	'translationchanges-export'         => 'exporter',
 	'translationchanges-change'         => '$1: $2 par $3',
+	'translate-checks-parameters'       => 'Les paramètres suivants ne sont pas utilisés : <strong>$1</strong>',
+	'translate-checks-balance'          => 'Il y a un nombre incorrect de parenthèses : <strong>$1</strong>',
+	'translate-checks-links'            => 'Les liens suivants sont douteux : <strong>$1</strong>',
+	'translate-checks-xhtml'            => 'Vous êtes invité à remettre en place les balises suivantes avec celles qui sont correctes : <strong>$1</strong>',
+	'translate-checks-plural'           => 'La définition utilise <nowiki>{{PLURAL:}}</nowiki> mais pas la traduction.',
 );
 
 $messages['frc'] = array(
