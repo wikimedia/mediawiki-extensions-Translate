@@ -27,15 +27,15 @@ class MessageChecks {
 		}
 
 		if ( count($values = self::checkBalance( $message )) ) {
-			$warnings[] = wfMsgExt( self::MSG . 'balance', 'parse', implode( ', ', $values ) );
+			$warnings[] = wfMsgExt( self::MSG . 'balance', 'parse', wfEscapeWikiText( implode( ', ', $values ) ) );
 		}
 
 		if ( count($values = self::checkLinks( $message )) ) {
-			$warnings[] = wfMsgExt( self::MSG . 'links', 'parse', implode( ', ', $values ) );
+			$warnings[] = wfMsgExt( self::MSG . 'links', 'parse', wfEscapeWikiText( implode( ', ', $values ) ) );
 		}
 
 		if ( count($values = self::checkXHTML( $message )) ) {
-			$warnings[] = wfMsgExt( self::MSG . 'xhtml', 'parse', implode( ', ', $values ) );
+			$warnings[] = wfMsgExt( self::MSG . 'xhtml', 'parse', htmlspecialchars( implode( ', ', $values ) ) );
 		}
 
 		if ( self::checkPlural( $message ) ) {
@@ -107,6 +107,7 @@ class MessageChecks {
 		for ($i = 0; $i < count($matches[0]); $i++ ) {
 			if ( preg_match( '/({{ns:)?special(}})?:.*/sDui', $matches[1][$i] ) ) continue;
 			if ( preg_match( '/{{mediawiki:.*}}/sDui', $matches[1][$i] ) ) continue;
+			if ( preg_match( '/user([ _]talk)?:.*/sDui', $matches[1][$i] ) ) continue;
 			
 			$links[] = "[[{$matches[1][$i]}|{$matches[2][$i]}]]";
 		}
@@ -136,7 +137,7 @@ class MessageChecks {
 			$matches = array();
 			preg_match_all( $wrong, $translation, $matches, PREG_PATTERN_ORDER);
 			foreach ( $matches[0] as $wrongMatch ) {
-				$wrongTags[$wrongMatch] = htmlspecialchars( "$wrongMatch → $correct" );
+				$wrongTags[$wrongMatch] = "$wrongMatch → $correct";
 			}
 		}
 		return $wrongTags;
