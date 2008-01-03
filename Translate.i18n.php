@@ -1844,9 +1844,13 @@ $messages['ug'] = array(
  * @author Malafaya
  */
 $messages['vo'] = array(
+	'translate'                 => 'Tradutön',
+	'translate-edit'            => 'redakön',
+	'translate-talk'            => 'bespik',
 	'translate-page-task'       => 'Vilob',
 	'translate-page-group'      => 'Grup',
 	'translate-page-language'   => 'Pük',
+	'translate-page-limit'      => 'Mied',
 	'translate-next'            => 'Pad sököl',
 	'translate-prev'            => 'Pad büik',
 	'translate-magic-namespace' => 'Nems nemaspadas',
