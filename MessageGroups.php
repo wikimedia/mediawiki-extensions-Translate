@@ -2169,23 +2169,119 @@ class FreeColMessageGroup extends MessageGroup {
 
 }
 
+class WikiMessageGroup extends MessageGroup {
+	/**
+	 * Human-readable name of this group
+	 */
+	protected $label  = 'none';
+
+	/**
+	 * Group-wide unique id of this group. Used also for sorting.
+	 */
+	protected $id     = 'none';
+
+	/**
+	 * Name of the page in Mediawiki-namespace that contains white-space separated
+	 * list of message keys.
+	 */
+	protected $source = null;
+
+	/**
+	 * Constructor.
+	 *
+	 * @param $id Unique id for this group.
+	 * @param $source Mediawiki message that contains list of message keys.
+	 */
+	public function __construct( $id, $source ) {
+		$this->id = $id;
+		$this->source = $source;
+	}
+
+	/* Implemted functions */
+
+	/* Do nothing, as there is no "source file". */
+	public function fill( MessageCollection $messages ) {
+		return;
+	}
+
+	/* Fetch definitions from database */
+	public function getDefinitions() {
+		$definitions = array();
+		/* In theory could have templates that are substitued */
+		$contents = wfMsg( $this->source );
+		$messages = preg_split( '/\s+/', $contents );
+		foreach ( $messages as $message ) {
+			if ( !$message ) continue;
+			$definitions[$message] = wfMsgForContentNoTrans( $message );
+		}
+		return $definitions;
+	}
+
+	/**
+	 * Returns of stored translation of message specified by the $key in language
+	 * code $code.
+	 *
+	 * @param $key Key of the message.
+	 * @param $code Language code.
+	 * @return Stored translation or null.
+	 */
+	public function getMessage( $key, $code ) {
+		global $wgContLang;
+		if ( $code && $wgContLang->getCode() !== $code ) {
+			$key = "$key/$code";
+		}
+		$message = wfMsgExt( $key, array() );
+		return wfEmptyMsg( $key, $message ) ? null : $message;
+	}
+
+	/* New functions */
+
+	/**
+	 * Sets a description of this group. It will be parsed as wikitext.
+	 *
+	 * @param $description The description.
+	 */
+	public function setDescription( $description ) {
+		$this->description = $description;
+	}
+
+	/**
+	 * Sets a label for this group.
+	 *
+	 * @param $label The label.
+	 */
+	public function setLabel( $label ) {
+		$this->label = $label;
+	}
+}
+
 class MessageGroups {
 	public static function getGroup( $id ) {
-		global $wgTranslateEC, $wgTranslateAC;
+		global $wgTranslateEC, $wgTranslateAC, $wgTranslateCC;
 		if ( in_array( $id, $wgTranslateEC) ) {
 			return new $wgTranslateAC[$id];
 		} else {
-			return null;
+			if ( array_key_exists( $id, $wgTranslateCC ) ) {
+				if ( is_callable( $wgTranslateCC[$id] ) ) {
+					return call_user_func( $wgTranslateCC[$id], $id );
+				} else {
+					return $wgTranslateCC[$id];
+				}
+			} else {
+				return null;
+			}
 		}
 	}
 
 	public $classes = array();
 	private function __construct() {
-		global $wgTranslateEC, $wgTranslateAC;
-		foreach ($wgTranslateAC as $id => $class) {
-			if ( in_array( $id, $wgTranslateEC, true ) ) {
-				$this->classes[$id] = new $class;
-			}
+		global $wgTranslateEC, $wgTranslateCC;
+
+		$all = array_merge( $wgTranslateEC, array_keys( $wgTranslateCC ) );
+		sort( $all );
+		foreach ( $all as $id ) {
+			$g = self::getGroup( $id );
+			$this->classes[$g->getId()] = $g;
 		}
 	}
 

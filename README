@@ -8,6 +8,26 @@ $wgGroupPermissions['Translators']['translate'] = true;
 
 * Users have to be a member of user group 'Translators' to enable full functionality.
 
+=== Defining custom message groups ===
+
+Example of creating message group for custom user interface of the wiki.
+After including the extension, use the following code:
+
+<code>
+/* Value can be either anything callable, which is called by key as parameter,
+ * or it can be instance of MessageGroup.
+ */
+$wgTranslateCC['wikigroup'] = 'customMessageGroups';
+
+/* $id would be "wikigroup" */
+function customMessageGroups( $id ) {
+	$mg = new WikiMessageGroup( 'wiki-wikiname', 'wikiname-messages' );
+	$mg->setLabel( 'Wikiname UI Messages' );
+	$mg->setDescription( 'This group contains user interface messages used on Wikiname.' );
+	return $mg;
+}
+</code>
+
 == Changes in version 8 ==
 * Not released
 * export.php for even faster exporting (only core messages supported currently)
@@ -23,6 +43,9 @@ $wgGroupPermissions['Translators']['translate'] = true;
 * Fixed a bug where empty text area would be filled with current translation even after first page load
 * Don't fuzzy Documentation language
 * Export task was erronously outputting as plain
+* New variable $wgTranslateCC for adding custom groups
+* WikiMessageGroup class, which is easy to use class for defining a message group for wiki's custom user interface elements
+* Array keys in $wgTranslateEC and $wgTranslateAC are not used for alphabetical sorting only. MessageGroup::$id and MessageGroup::getId() are used for everything else.
 
 == Changes in version 7 ==
 * Released 2007-12-29
