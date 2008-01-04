@@ -2227,10 +2227,13 @@ class WikiMessageGroup extends MessageGroup {
 	 */
 	public function getMessage( $key, $code ) {
 		global $wgContLang;
+		$params = array();
 		if ( $code && $wgContLang->getCode() !== $code ) {
 			$key = "$key/$code";
+		} else {
+			$params[] = 'content';
 		}
-		$message = wfMsgExt( $key, array() );
+		$message = wfMsgExt( $key, $params );
 		return wfEmptyMsg( $key, $message ) ? null : $message;
 	}
 
