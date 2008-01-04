@@ -312,10 +312,6 @@ class ExportMessagesTask extends ViewMessagesTask {
 		);
 	}
 
-	public function plainOutput() {
-		return true;
-	}
-
 	protected function getOutputHeader() {
 		$name = TranslateUtils::getLanguageName( $this->options->getLanguage() );
 		$_authors = $this->getAuthors();
@@ -356,6 +352,10 @@ class ExportMessagesTask extends ViewMessagesTask {
 class ExportToFileMessagesTask extends ExportMessagesTask {
 	protected $id = 'export-to-file';
 
+	public function plainOutput() {
+		return true;
+	}
+
 	public function output() {
 		return
 			$this->messageGroup->exportToFile(
@@ -367,6 +367,10 @@ class ExportToFileMessagesTask extends ExportMessagesTask {
 
 class ExportAsPoMessagesTask extends ExportMessagesTask {
 	protected $id = 'export-as-po';
+
+	public function plainOutput() {
+		return true;
+	}
 
 	public function output() {
 		global $IP;
