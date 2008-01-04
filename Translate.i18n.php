@@ -1808,6 +1808,11 @@ För att kunna spara ändringar så behöver du tillhöra översättargruppen. �
 	'translationchanges'                => 'Ändrade översättningar',
 	'translationchanges-export'         => 'exportera',
 	'translationchanges-change'         => '$1: $2 av $3',
+	'translate-checks-parameters'       => 'Följande parametrar används inte: <strong>$1</strong>',
+	'translate-checks-balance'          => 'Antalet påbörjade och avslutade parenteser är olika: <strong>$1</strong>',
+	'translate-checks-links'            => 'Följande länkar är problematiska: <strong>$1</strong>',
+	'translate-checks-xhtml'            => 'Följande felaktiga taggar bör ersättas: <strong>$1</strong>',
+	'translate-checks-plural'           => '<nowiki>{{PLURAL:}}</nowiki> används i definitionen, men inte i översättningen.',
 );
 
 $messages['tet'] = array(
