@@ -2005,13 +2005,8 @@ class UsernameBlacklistMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Username Blacklist';
 	protected $id      = 'ext-usernameblacklist';
 
-	protected $functionName = 'efUsernameBlacklistMessages';
+	protected $arrName = 'messages';
 	protected $messageFile  = 'UsernameBlacklist/UsernameBlacklist.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportPrefix= '';
-	protected $exportLineP = "\t";
-	protected $exportEnd   = '),';
 }
 
 class UserRightsNotifMessageGroup extends ExtensionMessageGroup {
