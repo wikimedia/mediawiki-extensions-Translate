@@ -1213,12 +1213,8 @@ class InputBoxMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Input Box';
 	protected $id    = 'ext-inputbox';
 
-	protected $functionName = 'efInputBoxMessages';
+	protected $arrName = 'messages';
 	protected $messageFile  = 'inputbox/InputBox.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportLineP = "\t";
-	protected $exportEnd   = '),';
 }
 
 class InspectCacheMessageGroup extends ExtensionMessageGroup {
