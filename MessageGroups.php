@@ -1312,13 +1312,8 @@ class MakeBotMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Make Bot';
 	protected $id    = 'ext-makebot';
 
-	protected $functionName = 'efMakebotMessages';
+	protected $arrName = 'messages';
 	protected $messageFile  = 'Makebot/Makebot.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportPrefix= '';
-	protected $exportLineP = "\t";
-	protected $exportEnd   = '),';
 }
 
 class MakeSysopMessageGroup extends ExtensionMessageGroup {
