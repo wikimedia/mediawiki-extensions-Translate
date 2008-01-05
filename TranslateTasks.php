@@ -373,7 +373,7 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 	}
 
 	public function output() {
-		global $IP;
+		global $IP, $wgServer, $wgTranslateDocumentationLanguageCode;
 
 		$lang = Language::factory( 'en' );
 
@@ -385,9 +385,10 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 
 		$headers = array();
 		$headers['Project-Id-Version'] = 'MediaWiki ' . SpecialVersion::getVersion();
-		$headers['Report-Msgid-Bugs-To'] = 'Bugzilla?';
+		// TODO: make this customisable or something
+		$headers['Report-Msgid-Bugs-To'] = $wgServer;
 		// TODO: sprintfDate doesn't support any time zone flags
-		$headers['POT-Creation-Date'] = $lang->sprintfDate( 'xnY-xnm-xnd xnH:xni:xns O', $now );
+		$headers['POT-Creation-Date'] = $lang->sprintfDate( 'xnY-xnm-xnd xnH:xni:xns+0000', $now );
 		$headers['Language-Team'] = TranslateUtils::getLanguageName( $this->options->getLanguage() );
 		$headers['Content-Type'] = 'text-plain; charset=UTF-8';
 		$headers['Content-Transfer-Encoding'] = '8bit';
@@ -400,13 +401,8 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 			$headerlines[] = "$key: $value\n";
 		}
 
-
-		$out .= "# Translation of $label to $languageName\n# This is an experimental feature\n";
+		$out .= "# Translation of $label to $languageName\n";
 		$out .= self::formatmsg( '', $headerlines  );
-
-
-		// Todo: move to MessageGroup
-		require( $IP . '/maintenance/language/messages.inc' );
 
 		foreach ( $this->messages as $key => $m) {
 			$flags = array();
@@ -430,9 +426,10 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 				$flags[] = 'fuzzy';
 			}
 
-			$comments = array( $key );
-			if ( isset( $wgMessageComments[$key] ) ) {
-				$comments[] = $wgMessageComments[$key];
+			$comments = '';
+			if ( $wgTranslateDocumentationLanguageCode ) {
+				$documentation = TranslateUtils::getMessageContent( $key, $wgTranslateDocumentationLanguageCode );
+				if ( $documentation ) $comments = $documentation;
 			}
 
 			$out .= self::formatcomments( $comments, $flags );
@@ -453,10 +450,7 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 	private static function formatcomments( $comments = false, $flags = false ) {
 		$output = array();
 		if ( $comments ) {
-			if ( !is_array( $comments ) ) {
-				$comments = array( $comments );
-			}
-			$output[] = '#. ' . implode( "\n#. ", $comments );
+			$output[] = '#. ' . implode( "\n#. ", explode( "\n", $comments ) );
 		}
 
 		if ( $flags ) {
