@@ -304,7 +304,7 @@ $messages['bg'] = array(
 	'translate-submit'                  => 'Извличане',
 	'translate-page-navigation-legend'  => 'Навигация',
 	'translate-page-showing'            => 'Показани са съобщения от $1 до $2 от общо $3.',
-	'translate-page-showing-all'        => '{{PLURAL:$1|Показано е 1 съобщение|Показани са $1 съобщения}}.',
+	'translate-page-showing-all'        => '$1 {{PLURAL:$1|съобщение е показано|съобщения са показани}}.',
 	'translate-page-showing-none'       => 'Няма съобщения, които да бъдат показани.',
 	'translate-next'                    => 'Следваща страница',
 	'translate-prev'                    => 'Предишна страница',
@@ -329,7 +329,6 @@ $messages['bg'] = array(
 	'translationchanges'                => 'Промени в преводите',
 	'translationchanges-export'         => 'изнасяне',
 	'translationchanges-change'         => '$1: $2 от $3',
-	'translate-checks-xhtml'            => 'Необходимо е заместване на посочените етикети с правилни: <strong>$1</strong>',
 );
 
 $messages['bn'] = array(
@@ -1163,7 +1162,6 @@ $messages['lb'] = array(
 	'translate-edit-information'        => 'Informatioun iwwert dëse Message ($1)',
 	'translate-edit-in-other-languages' => 'Message an anere Sproochen',
 	'translate-edit-committed'          => 'Aktuell Iwwersetzung an der Software',
-	'translate-edit-warnings'           => 'Warnunge virun onkompletten Iwwersetzungen',
 	'translate-magic-pagename'          => 'Erweidert MediaWiki Iwwersetzung',
 	'translate-magic-form'              => 'Sprooch: $1: Modul: $2 $3',
 	'translate-magic-submit'            => 'Weisen',
@@ -1179,11 +1177,6 @@ $messages['lb'] = array(
 	'translationchanges'                => 'Iwwersetzung ännert',
 	'translationchanges-export'         => 'exportéieren',
 	'translationchanges-change'         => '$1: $2 vun $3',
-	'translate-checks-parameters'       => 'Dës Parameter ginn net benotzt: <strong>$1</strong>',
-	'translate-checks-balance'          => 'Et gëtt eng ongerued Zuel vu Klammere benotzt: <strong>$1</strong>',
-	'translate-checks-links'            => 'Dës Linke si problematesch: <strong>$1</strong>',
-	'translate-checks-xhtml'            => "Ersetzt dës ''Tag''en w.e.g. duerch déi korrekt: <strong>$1</strong>",
-	'translate-checks-plural'           => "D'Definitioun benotzt <nowiki>{{PLURAL:}}</nowiki> awer d'Iwwersetzung mécht dat net.",
 );
 
 $messages['li'] = array(
