@@ -325,11 +325,16 @@ $messages['bg'] = array(
 	'translate-magic-cm-export'         => 'Изнасяне',
 	'translate-magic-cm-updatedusing'   => 'Обновено чрез Special:Magic',
 	'translate-magic-cm-savefailed'     => 'Съхраняването беше неуспешно',
+	'translate-magic-words'             => 'Вълшебни думички',
+	'translate-magic-skin'              => 'Имена на облици',
 	'translate-magic-namespace'         => 'Имена на именни пространства',
 	'translationchanges'                => 'Промени в преводите',
 	'translationchanges-export'         => 'изнасяне',
 	'translationchanges-change'         => '$1: $2 от $3',
+	'translate-checks-parameters'       => 'Следните параметри не се използват: <strong>$1</strong>',
+	'translate-checks-links'            => 'Следните препратки са проблемни: <strong>$1</strong>',
 	'translate-checks-xhtml'            => 'Необходимо е заместване на посочените етикети с правилни: <strong>$1</strong>',
+	'translate-checks-plural'           => 'Оригиналното съобщение използва <nowiki>{{PLURAL:}}</nowiki>, а преводът — не.',
 );
 
 $messages['bn'] = array(
@@ -371,10 +376,79 @@ $messages['br'] = array(
 	'translate-edit-message-in-fb' => 'Neudennad red er yezh kein <b>$1</b> (Kemennadennoù$2.php):',
 );
 
+/** Catalan (Català)
+ * @author SMP
+ * @author Toniher
+ */
 $messages['ca'] = array(
-	'translate' => 'Tradueix',
-	'translate-edit-message-in' => 'Cadena actual en <strong>$1</strong> (Messages$2.php):',
-	'translate-edit-message-in-fb' => 'Cadena actual en la llengua per defecte <strong>$1</strong> (Messages$2.php):',
+	'translate'                         => 'Tradueix',
+	'translate-edit'                    => 'edita',
+	'translate-talk'                    => 'discussió',
+	'translate-history'                 => 'historial',
+	'translate-task-view'               => 'veure tots els missatges de',
+	'translate-task-untranslated'       => 'veure els missatges no traduïts de',
+	'translate-task-optional'           => 'veure els missatges opcionals de',
+	'translate-task-review'             => 'revisar els canvis a',
+	'translate-task-reviewall'          => 'revisar les traduccions de',
+	'translate-task-export'             => 'exportar les traduccions de',
+	'translate-task-export-to-file'     => 'exportar a un fitxer de',
+	'translate-task-export-as-po'       => 'exportar en format Gettext',
+	'translate-page-no-such-language'   => "L'idioma especificat no és vàlid.",
+	'translate-page-no-such-task'       => 'La tasca especificada no és vàlida.',
+	'translate-page-no-such-group'      => 'El grup especificat no és vàlid.',
+	'translate-page-settings-legend'    => 'Preferències',
+	'translate-page-task'               => 'Vull',
+	'translate-page-group'              => 'Grup',
+	'translate-page-language'           => 'Idioma',
+	'translate-page-limit'              => 'Límit',
+	'translate-page-limit-option'       => '$1 {{PLURAL:$1|missatge|missatges}} per pàgina',
+	'translate-submit'                  => 'Mostra',
+	'translate-page-navigation-legend'  => 'Navegació',
+	'translate-page-showing'            => 'Mostrant missatges del $1 al $2 de $3.',
+	'translate-page-showing-all'        => 'Mostrant $1 {{PLURAL:$1|missatge|missatges}}.',
+	'translate-page-showing-none'       => 'No hi ha missatges a mostrar.',
+	'translate-next'                    => 'Pàgina posterior',
+	'translate-prev'                    => 'Pàgina anterior',
+	'translate-page-description-legend' => 'Informació del grup',
+	'translate-optional'                => '(opcional)',
+	'translate-ignored'                 => '(ignorat)',
+	'translate-edit-definition'         => 'Definició del missatge',
+	'translate-edit-contribute'         => 'contribueix',
+	'translate-edit-no-information'     => "''Aquest missatge no té documentació. Si sabeu on o com és usat aquest missatge podeu ajudar la resta de traductors afegint-hi la documentació.''",
+	'translate-edit-information'        => 'Informació sobre el missatge ($1)',
+	'translate-edit-in-other-languages' => 'Missatge en altres idiomes',
+	'translate-edit-committed'          => 'Traducció utilitzada actualment pel programa',
+	'translate-edit-warnings'           => 'Avisos de traducció incompleta',
+	'translate-magic-pagename'          => 'Traducció ampliada del MediaWiki',
+	'translate-magic-help'              => "Aquí podeu traduir els noms de les pàgines especials, les paraules màgiques, els noms dels estils de pell (''skins'') i els títols dels diferents espais de noms (''namespaces'').
+
+A les paraules màgiques cal que hi incloeu les traduccions en anglès per a que continuïn funcionant. També cal que deixeu el primer ítem (0 o 1) igual que a l'original.
+
+Els títols de les pàgines especials i les paraules màgiques poden tenir múltiples traduccions. Separeu-les per una coma (,) i un espai. Els estils i els espais de noms només poden tenir una traducció.
+
+Dins les traduccions dels espais de noms, la <tt>$1 talk</tt> és especial. <tt>$1</tt> es substitueix pel nom del projecte (per exemple <tt>{{SITENAME}} talk</tt>). Si no és possible fer-ho així en el vostre idioma sense canviar la forma gramatical del nom del projecte, contacteu amb un programador.
+
+Heu de tenir permisos de traductor per a desar els canvis, que no es guardaran fins que no cliqueu el botó corresponent.",
+	'translate-magic-form'              => 'Idioma: $1 Mòdul: $2 $3',
+	'translate-magic-submit'            => 'Mostra',
+	'translate-magic-cm-current'        => 'Actual',
+	'translate-magic-cm-original'       => 'Original',
+	'translate-magic-cm-fallback'       => 'Idioma de referència',
+	'translate-magic-cm-save'           => 'Desa',
+	'translate-magic-cm-export'         => 'Exporta',
+	'translate-magic-cm-updatedusing'   => 'Actualitzat amb Special:Magic',
+	'translate-magic-cm-savefailed'     => 'Error al desar',
+	'translate-magic-special'           => 'Noms de les pàgines especials',
+	'translate-magic-words'             => 'Paraules màgiques',
+	'translate-magic-skin'              => 'Noms dels estils',
+	'translationchanges'                => 'Canvis a la traducció',
+	'translationchanges-export'         => 'exporta',
+	'translationchanges-change'         => '$1:$2 per $3',
+	'translate-checks-parameters'       => "Els paràmetres següents no s'estan usant: <strong>$1</strong>",
+	'translate-checks-balance'          => 'El format dels parèntesis no és correcte: <strong>$1</strong>',
+	'translate-checks-links'            => 'Els enllaços següents són problemàtics: <strong>$1</strong>',
+	'translate-checks-xhtml'            => "Les següents funcions no s'estan usant correctament: <strong>$1</strong>",
+	'translate-checks-plural'           => 'La definició utilitza <nowiki>{{PLURAL:}}</nowiki> i en canvi la traducció no.',
 );
 
 /** Czech (Česky)
@@ -880,7 +954,7 @@ $messages['hu'] = array(
 	'translate-task-view'               => 'Összes üzenet megtekintése',
 	'translate-task-untranslated'       => 'Összes fordítatlan üzenet megtekintése',
 	'translate-task-optional'           => 'Nem kötelező üzenetek megtekintése',
-	'translate-task-review'             => 'Nem kötelező üzenetek megtekintése',
+	'translate-task-review'             => 'Változások áttekintése',
 	'translate-task-reviewall'          => 'Összes fordítás áttekintése',
 	'translate-task-export'             => 'Fordítások kimentése',
 	'translate-task-export-to-file'     => 'Fordítások kimentése fájlba',
@@ -1596,6 +1670,7 @@ $messages['ro'] = array(
 
 /** Russian (Русский)
  * @author .:Ajvol:.
+ * @author Nike
  */
 $messages['ru'] = array(
 	'translate'                         => 'Перевод',
@@ -1632,7 +1707,7 @@ $messages['ru'] = array(
 	'translate-edit-definition'         => 'Формулировка сообщения',
 	'translate-edit-contribute'         => 'править',
 	'translate-edit-no-information'     => "''Это сообщение не имеет описания. Если вы знаете где или как это сообщение используется, то вы можете помочь другим переводчикам, добавив описание к этому сообщению''",
-	'translate-edit-information'        => 'Информация об этом сообщении',
+	'translate-edit-information'        => 'Информация об этом сообщении ($1)',
 	'translate-edit-in-other-languages' => 'Сообщение на других языках',
 	'translate-edit-committed'          => 'Текущий перевод в программе',
 	'translate-magic-pagename'          => 'Углублённый перевод MediaWiki',
@@ -1822,13 +1897,24 @@ För att kunna spara ändringar så behöver du tillhöra översättargruppen. �
 	'translate-checks-plural'           => '<nowiki>{{PLURAL:}}</nowiki> används i definitionen, men inte i översättningen.',
 );
 
+/** Tetum (Tetun)
+ * @author MF-Warburg
+ */
 $messages['tet'] = array(
-	'translate' => 'Tradús',
-	'translate-edit' => 'edita',
-	'translate-talk' => 'diskusaun',
-	'translate-history' => 'istória',
-	'translate-settings' => 'Ha\'u hakarak $1 $2 iha lian $3 with limit $4. $5',
-	'translate-submit' => 'Hola',
+	'translate'                         => 'Tradús',
+	'translate-edit'                    => 'edita',
+	'translate-talk'                    => 'diskusaun',
+	'translate-history'                 => 'istória',
+	'translate-task-view'               => 'Haree mensajen hotu husi',
+	'translate-page-task'               => "Ha'u hakarak",
+	'translate-page-group'              => 'Lubu',
+	'translate-page-language'           => 'Lian',
+	'translate-submit'                  => 'Hola',
+	'translate-page-showing-all'        => 'Dalan $1 mensajen.',
+	'translate-next'                    => 'Pájina oinmai',
+	'translate-page-description-legend' => 'Informasaun kona-ba lubu',
+	'translate-edit-in-other-languages' => 'Mensajen iha lian seluk',
+	'translate-magic-submit'            => 'Hola',
 );
 
 $messages['wa'] = array(
