@@ -28,6 +28,11 @@ abstract class MessageGroup {
 	protected $description = null;
 
 	/**
+	 * Class name of File exporter.
+	 */
+	protected $fileExporter = null;
+
+	/**
 	 * Returns a human readable name of this group.
 	 */
 	public function getLabel() { return $this->label; }
@@ -46,6 +51,20 @@ abstract class MessageGroup {
 	 * Returns description of this group directed to translators.
 	 */
 	public function getDescription() { return $this->description; }
+
+	/**
+	 * Can be used to determine if this group can be exported to a file.
+	 */
+	public function canExportToFile() {
+		return $this->fileExporter !== null;
+	}
+
+	/**
+	 * Returns a class name of file exporter.
+	 */
+	public function getFileExporter() {
+		return $this->fileExporter;
+	}
 
 	/**
 	 * In this function message group should add translations from the stored file
@@ -173,6 +192,7 @@ abstract class MessageGroup {
 class CoreMessageGroup extends MessageGroup {
 	protected $label = 'MediaWiki messages';
 	protected $id    = 'core';
+	protected $fileExporter = 'CoreExporter';
 
 	public function getMessageFile( $code ) {
 		$code = ucfirst( str_replace( '-', '_', $code ) );
@@ -290,6 +310,7 @@ CODE;
 }
 
 abstract class ExtensionMessageGroup extends MessageGroup {
+	protected $fileExporter = 'StandardExtensionExporter';
 	/**
 	 * Name of the array where all messages are stored, if applicable.
 	 */
@@ -474,6 +495,7 @@ CODE;
 }
 
 class MultipleFileMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $filePattern = false;
 
 	public function getMessageFile( $code ) {
@@ -515,6 +537,7 @@ class MultipleFileMessageGroup extends ExtensionMessageGroup {
 }
 
 class CoreMostUsedMessageGroup extends CoreMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'MediaWiki messages (most used)';
 	protected $id    = 'core-mostused';
 	protected $meta  = true;
@@ -539,6 +562,7 @@ class CoreMostUsedMessageGroup extends CoreMessageGroup {
 }
 
 class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'All extensions';
 	protected $id    = 'ext-0-all';
 	protected $meta  = true;
@@ -630,6 +654,7 @@ class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
 }
 
 class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
+	protected $fileExporter = null;
 	protected $label = 'Extensions used by Wikimedia';
 	protected $id    = 'ext-0-wikimedia';
 	protected $meta  = true;
@@ -699,6 +724,7 @@ class AdvancedRandomMessageGroup extends ExtensionMessageGroup {
 }
 
 class AjaxShowEditorsMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Ajax Show Editors';
 	protected $id    = 'ext-ajaxshoweditors';
 

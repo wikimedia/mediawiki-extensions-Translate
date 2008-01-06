@@ -49,11 +49,11 @@ if ( is_null( $group ) || $group->isMeta() ) {
 	echo "Invalid group\n\n";
 }
 
-// TODO: FIXME
-if ( $group->getId() === 'core' ) {
-	$exporter = new CoreExporter( $group, $langs, $options['target'] );
+if ( $group->canExportToFile() ) {
+	$class = $group->getFileExporter();
+	$exporter = new $class( $group, $langs, $options['target'] );
 } else {
-	$exporter = new StandardExtensionExporter( $group, $langs, $options['target'] );
+	echo "Cannot export to file\n\n";
 }
 
 $exporter->export();
