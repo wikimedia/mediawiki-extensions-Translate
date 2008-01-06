@@ -887,6 +887,7 @@ $messages['hr'] = array(
 
 /** Upper Sorbian (Hornjoserbsce)
  * @author Michawiki
+ * @author Siebrand
  * @author Dundak
  */
 $messages['hsb'] = array(
@@ -894,7 +895,6 @@ $messages['hsb'] = array(
 	'translate-edit'                  => 'wobdźěłać',
 	'translate-talk'                  => 'diskusija',
 	'translate-history'               => 'stawizny',
-	'translate-delete'                => 'wušmórnyć',
 	'translate-task-view'             => 'Pokazaj wšě zdźělenki z',
 	'translate-task-untranslated'     => 'Pokazaj njepřełožene zdźělenki z',
 	'translate-task-optional'         => 'Pokazaj opcionalne zdźělenki z',
@@ -903,16 +903,17 @@ $messages['hsb'] = array(
 	'translate-task-export'           => 'Eksportuj přełožki z',
 	'translate-task-export-to-file'   => 'Eksportuj přełožk do dataje z',
 	'translate-task-export-as-po'     => 'Přełožk we formaće Gettext eksportować',
-	'translate-settings'              => '$1 $2 w rěči $3 z limitom $4.  $5',
-	'translate-paging'                => '<div>Pokazuja so zdźělenki wot $1 do $2 z $3. [ $4 | $5 ]</div>',
+	'translate-page-no-such-language' => 'Njepłaćiwy rěčny kod podaty',
+	'translate-page-task'             => 'Akcija',
+	'translate-page-group'            => 'Skupina',
+	'translate-page-language'         => 'Rěč',
+	'translate-page-limit'            => 'Ličba zdźělenkow',
+	'translate-page-limit-option'     => '$1 {{PLURAL:$1|zdźělenka|zdźělence|zdźělenki|zdźělenkow}} na stronu',
 	'translate-submit'                => 'Pokazać',
 	'translate-next'                  => 'Přichodna strona',
 	'translate-prev'                  => 'Předchadna strona',
 	'translate-optional'              => '(opcionalny)',
 	'translate-ignored'               => '(ignorowany)',
-	'translate-edit-message-format'   => 'Format tuteje zdźělenki je <b>$1</b>.',
-	'translate-edit-message-in'       => 'Aktualny tekst w <b>$1</b> ($2):',
-	'translate-edit-message-in-fb'    => 'Aktualny tekst we wuhibnej rěči <b>$1</b> ($2):',
 	'translate-magic-pagename'        => 'Rozšěrjeny přełožk MediaWiki',
 	'translate-magic-help'            => 'Móžěs aliasy specialnych stronow, magiske słowa, mjena šatow a mjena mjenowych rumow přełožić.
 
@@ -940,7 +941,6 @@ Dyrbiš w skupinje přełožowarjow być, zo by změny składował. Změny so nj
 	'translationchanges'              => 'Přełožowanske změny',
 	'translationchanges-export'       => 'eksportować',
 	'translationchanges-change'       => '$1: $2 wot $3',
-	'translate-page-no-such-language' => 'Njepłaćiwy rěčny kod podaty',
 );
 
 /** Hungarian (Magyar)
