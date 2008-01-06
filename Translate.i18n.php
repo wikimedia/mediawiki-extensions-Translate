@@ -5,6 +5,7 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 $messages = array();
+
 $messages['en'] = array(
 	'translate' => 'Translate',
 	'translate-edit' => 'edit',
@@ -90,6 +91,19 @@ You need to be in the translators group to save changes. Changes are not saved u
 	'translate-checks-links' => 'Following links are problematic: <strong>$1</strong>',
 	'translate-checks-xhtml' => 'Please replace the following tags with correct ones: <strong>$1</strong>',
 	'translate-checks-plural' => 'Definition uses <nowiki>{{PLURAL:}}</nowiki> but translation does not.',
+);
+
+/** Message documentation (Message documentation)
+ * @author Nike
+ * @author Siebrand
+ * @author SPQRobin
+ */
+$messages['qqq'] = array(
+	'translate'                       => 'Part of the "Translate" extension. This message is the page title of the special page [[Special:Translate]].',
+	'translate-page-no-such-language' => "Shown when someone requests a language that doesn't exists. [{{FULLURL:Special:Translate|language=}} Example].",
+	'translate-page-no-such-task'     => "Shown when someone requests a task that doesn't exists. [{{FULLURL:Special:Translate|task=}} Example].",
+	'translate-page-no-such-group'    => "Shown when someone requests a group that doesn't exists. [{{FULLURL:Special:Translate|group=}} Example].",
+	'translate-edit-no-information'   => 'Message is used as a hint to translators that documentation for a message without documentation is needed.',
 );
 
 $messages['af'] = array(
@@ -1228,11 +1242,6 @@ Esim aya awdarmalarında <tt>$1_talk</tt> degen arnaýı keltiriledi. <tt>$1</tt
 	'translate-checks-plural'           => 'Anıqtalımda <nowiki>{{PLURAL:}}</nowiki> paýdalanılğan, biraq awdarmada bul joq.',
 );
 
-/* Kazakh fallbacks */
-$messages['kk-kz'] = $messages['kk-cyrl'];
-$messages['kk-tr'] = $messages['kk-latn'];
-$messages['kk-cn'] = $messages['kk-arab'];
-$messages['kk'] = $messages['kk-cyrl'];
 
 $messages['la'] = array(
 	'translate' => 'Traducere',
@@ -1692,19 +1701,6 @@ Nas traduções de espaços nominais a partícula <tt>$1 talk</tt> é especial. 
 	'translate-checks-plural'           => 'A definição usa <nowiki>{{PLURAL:}}</nowiki>, mas a tradução não.',
 );
 
-/** Message documentation (Message documentation)
- * @author Nike
- * @author Siebrand
- * @author SPQRobin
- */
-$messages['qqq'] = array(
-	'translate'                       => 'Part of the "Translate" extension. This message is the page title of the special page [[Special:Translate]].',
-	'translate-page-no-such-language' => "Shown when someone requests a language that doesn't exists. [{{FULLURL:Special:Translate|language=}} Example].",
-	'translate-page-no-such-task'     => "Shown when someone requests a task that doesn't exists. [{{FULLURL:Special:Translate|task=}} Example].",
-	'translate-page-no-such-group'    => "Shown when someone requests a group that doesn't exists. [{{FULLURL:Special:Translate|group=}} Example].",
-	'translate-edit-no-information'   => 'Message is used as a hint to translators that documentation for a message without documentation is needed.',
-);
-
 $messages['rm'] = array(
 	'translate-edit' => 'editar',
 	'translate-talk' => 'discussiun',
@@ -1825,7 +1821,6 @@ $messages['sr-el'] = array(
 	'translate-edit-message-in-fb' => 'Trenutni string u jeziku <b>$1</b> ($2):',
 );
 
-$messages['sr'] = $messages['sr-ec'];
 
 $messages['ss'] = array(
 	'translate' => 'Kuhúmusha',
@@ -1967,29 +1962,6 @@ $messages['tet'] = array(
 	'translate-magic-submit'            => 'Hola',
 );
 
-$messages['wa'] = array(
-	'translate' => 'Ratourner',
-	'translate-edit' => 'candjî',
-	'translate-talk' => 'copene',
-	'translate-history' => 'istwere',
-	'translate-task-view' => 'Vey tos les messaedjes',
-	'translate-task-untranslated' => 'Vey tos les messaedjes nén ratournés',
-	'translate-task-review' => 'Verifyî les candjmints',
-	'translate-task-reviewall' => 'Verifyî tos les ratournaedjes',
-	'translate-task-export' => 'Copyî foû les ratournaedjes',
-	'translate-task-export-to-file' => 'Copyî foû viè on fitchî les ratournaedjes',
-	'translate-settings' => '$1 di $2 e lingaedje $3 avou $4 messaedjes so tchaeke pådje. $5',
-	'translate-paging' => '<div>Håynant les messaedjes di $1 a $2 foû di $3. [ $4 | $5 ]</div>',
-	'translate-submit' => 'I va',
-	'translate-next' => 'Pådje shuvante',
-	'translate-prev' => 'Pådje di dvant',
-	'translate-optional' => '(opcionel)',
-	'translate-ignored' => '(ignoré)',
-	'translate-edit-message-format' => 'Li format di ç\' messaedje ci c\' est <b>$1</b>.',
-	'translate-edit-message-in' => 'Li tecse do moumint e lingaedje <b>$1</b> ($2):',
-	'translate-edit-message-in-fb' => 'Tecse pol lingaedje di deujhinme tchuze <b>$1</b> ($2):',
-);
-
 $messages['ug'] = array(
 	'translate-edit' => 'uzgartish',
 	'translate-talk' => 'monazire',
@@ -2039,6 +2011,29 @@ $messages['vo'] = array(
 	'translationchanges-change'         => '$1: $2 fa $3',
 	'translate-checks-parameters'       => 'Paramets sököl no pagebons: <strong>$1</strong>',
 	'translate-checks-links'            => 'Yüms sököl binons säkädiks: <strong>$1</strong>',
+);
+
+$messages['wa'] = array(
+	'translate' => 'Ratourner',
+	'translate-edit' => 'candjî',
+	'translate-talk' => 'copene',
+	'translate-history' => 'istwere',
+	'translate-task-view' => 'Vey tos les messaedjes',
+	'translate-task-untranslated' => 'Vey tos les messaedjes nén ratournés',
+	'translate-task-review' => 'Verifyî les candjmints',
+	'translate-task-reviewall' => 'Verifyî tos les ratournaedjes',
+	'translate-task-export' => 'Copyî foû les ratournaedjes',
+	'translate-task-export-to-file' => 'Copyî foû viè on fitchî les ratournaedjes',
+	'translate-settings' => '$1 di $2 e lingaedje $3 avou $4 messaedjes so tchaeke pådje. $5',
+	'translate-paging' => '<div>Håynant les messaedjes di $1 a $2 foû di $3. [ $4 | $5 ]</div>',
+	'translate-submit' => 'I va',
+	'translate-next' => 'Pådje shuvante',
+	'translate-prev' => 'Pådje di dvant',
+	'translate-optional' => '(opcionel)',
+	'translate-ignored' => '(ignoré)',
+	'translate-edit-message-format' => 'Li format di ç\' messaedje ci c\' est <b>$1</b>.',
+	'translate-edit-message-in' => 'Li tecse do moumint e lingaedje <b>$1</b> ($2):',
+	'translate-edit-message-in-fb' => 'Tecse pol lingaedje di deujhinme tchuze <b>$1</b> ($2):',
 );
 
 $messages['yue'] = array(
@@ -2121,6 +2116,13 @@ $messages['zh-hant'] = array(
 	'translate-edit-message-in' => '在 <b>$1</b> 的現行字串 ($2):',
 	'translate-edit-message-in-fb' => '在 <b>$1</b> 於倚靠語言中的現行字串 ($2):',
 );
+
+/* Kazakh fallbacks */
+$messages['kk'] = $messages['kk-cyrl'];
+$messages['kk-cn'] = $messages['kk-arab'];
+$messages['kk-kz'] = $messages['kk-cyrl'];
+$messages['kk-tr'] = $messages['kk-latn'];
+$messages['sr'] = $messages['sr-ec'];
 
 /* Chinese fallbacks */
 $messages['zh'] = $messages['zh-hans'];
