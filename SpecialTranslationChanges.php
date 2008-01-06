@@ -141,10 +141,19 @@ class SpecialTranslationChanges extends SpecialPage {
 			foreach ( $groups as $group => $languages ) {
 
 				$label = $group;
+				$sublabel = false;
 				if ( isset( $groupObjects[$group] ) ) {
 					$label = $groupObjects[$group]->getLabel();
+					if ( $groupObjects[$group]->canExportToFile() ) {
+						$langs = implode( ', ', array_keys( $languages ) );
+						$id = $groupObjects[$group]->getId();
+						$sublabel .= "→ $id '$langs'";
+					}
 				}
 				$output .= Xml::element( 'h3', null, $label );
+				if ( $sublabel ) {
+					$output .= Xml::tags( 'p', null, $sublabel );
+				}
 
 				foreach ( $languages as $language => $rows ) {
 					$index++;
@@ -163,6 +172,7 @@ class SpecialTranslationChanges extends SpecialPage {
 						$wgLang->formatNum( count($rows) ));
 
 					$exportLabel = wfMsg( self::MSG . 'export' );
+
 					$titleText = 'Special:' . SpecialPage::getLocalNameFor( 'Translate' );
 					$export = $skin->makeKnownLink( $titleText, $exportLabel,
 						"task=export-to-file&language=$language&group=$group" );
