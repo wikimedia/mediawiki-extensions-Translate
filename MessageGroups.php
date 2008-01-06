@@ -642,15 +642,19 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-boardvote',
 		'ext-bookinformation',
 		'ext-categorytree',
+		'ext-centralauth', # not yet in production (see http://test.wikipedia.org)
 		'ext-checkuser',
 		'ext-cite',
 		'ext-citespecial',
 		'ext-confirmedit',
+		'ext-confirmeditfancycaptcha',
 		'ext-crossnamespacelinks',
 		'ext-deletedcontribs',
 		'ext-dismissablesitenotice',
 		'ext-expandtemplates',
 		'ext-filepath',
+		'ext-flaggedrevs', # not yet in production (see http://test.wikipedia.org)
+		'ext-flaggedrevsmakereviewer', # not yet in production (see http://test.wikipedia.org)
 		'ext-gadgets',
 		'ext-imagemap',
 		'ext-inputbox',
@@ -663,6 +667,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-nuke',
 		'ext-ogghandler',
 		'ext-oversight',
+		'ext-parserfunctions',
 		'ext-proofreadpage',
 		'ext-quiz',
 		'ext-renameuser',
