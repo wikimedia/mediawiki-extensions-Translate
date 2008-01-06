@@ -184,8 +184,8 @@ class SpecialTranslate extends SpecialPage {
 
 	protected function taskSelector() {
 		$selector = new HTMLSelector( 'task', 'task', $this->options['task'] );
-		foreach ( TranslateTasks::getTasks() as $id => $class ) {
-			$label = call_user_func( array( $class, 'labelForTask' ), $id );
+		foreach ( TranslateTasks::getTasks() as $id ) {
+			$label = call_user_func( array( 'TranslateTask', 'labelForTask' ), $id );
 			$selector->addOption( $label, $id );
 		}
 		return $selector->getHTML();

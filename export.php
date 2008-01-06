@@ -1,6 +1,6 @@
 <?php
 
-$optionsWithArgs = array( 'lang', 'target' );
+$optionsWithArgs = array( 'lang', 'target', 'group' );
 
 $IP = "../../maintenance/";
 require_once( $IP . 'commandLine.inc' );
@@ -14,6 +14,7 @@ Usage: php export.php [options...]
 Options:
   --target      Target directory for exported files
   --lang        Comma separated list of language codes
+  --group       Group id
 
 EOT;
 	exit( 1 );
@@ -29,6 +30,11 @@ if ( !isset($options['lang']) ) {
 	showUsage();
 }
 
+if ( !isset($options['group']) ) {
+	echo "You need to specify group\n\n";
+	showUsage();
+}
+
 if ( !is_writable( $options['target'] ) ) {
 	echo "Target directory is not writable\n\n";
 	showUsage();
@@ -37,14 +43,17 @@ if ( !is_writable( $options['target'] ) ) {
 $langs = array_map( 'trim', explode( ',', $options['lang'] ) );
 
 
-$group = MessageGroups::getGroup( 'core' );
+$group = MessageGroups::getGroup( $options['group'] );
 
-foreach ( $langs as $code ) {
-	$taskOptions = new TaskOptions( $code, 0, 0, 0, null );
-	$task  = TranslateTasks::getTask( 'export-to-file' );
-	$task->init( $group, $taskOptions );
-	file_put_contents(
-		$options['target'] . '/'. $group->getMessageFile( $code ),
-		$task->execute()
-	);
+if ( is_null( $group ) || $group->isMeta() ) {
+	echo "Invalid group\n\n";
 }
+
+// TODO: FIXME
+if ( $group->getId() === 'core' ) {
+	$exporter = new CoreExporter( $group, $langs, $options['target'] );
+} else {
+	$exporter = new StandardExtensionExporter( $group, $langs, $options['target'] );
+}
+
+$exporter->export();

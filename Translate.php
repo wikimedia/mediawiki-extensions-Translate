@@ -11,7 +11,7 @@ if (!defined('MEDIAWIKI')) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '7.11' );
+define( 'TRANSLATE_VERSION', '7.12' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'Translate',
@@ -34,6 +34,9 @@ $wgAutoloadClasses['MessageGroups'] = $dir . 'MessageGroups.php';
 $wgAutoloadClasses['MessageCollection'] = $dir . 'Message.php';
 $wgAutoloadClasses['TMessage'] = $dir . 'Message.php';
 
+$wgAutoloadClasses['CoreExporter'] = $dir . 'Exporters.php';
+$wgAutoloadClasses['StandardExtensionExporter'] = $dir . 'Exporters.php';
+
 $wgAutoloadClasses['TranslateEditAddons'] = $dir . 'TranslateEditAddons.php';
 $wgAutoloadClasses['languages'] = $IP . '/maintenance/language/languages.inc';
 $wgAutoloadClasses['MessageWriter'] = $IP . '/maintenance/language/writeMessagesArray.inc';
@@ -54,6 +57,7 @@ $wgHooks['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';
 
 define( 'TRANSLATE_FUZZY', '!!FUZZY!!' );
 define( 'TRANSLATE_INDEXFILE', $dir . 'messageindex.ser' );
+define( 'TRANSLATE_CHECKFILE', $dir . 'messagecheck.ser' );
 
 #
 # Configuration variables
@@ -217,3 +221,15 @@ $wgTranslateEC[] = 'core';
 
 /** CC = Custom classes */
 $wgTranslateCC = array();
+
+/** Tasks */
+$wgTranslateTasks = array(
+	'view'           => 'ViewMessagesTask',
+	'untranslated'   => 'ViewUntranslatedTask',
+	'optional'       => 'ViewOptionalTask',
+	'review'         => 'ReviewMessagesTask',
+	'reviewall'      => 'ReviewAllMessagesTask',
+	'export-as-po'   => 'ExportasPoMessagesTask',
+	'export'         => 'ExportMessagesTask',
+	'export-to-file' => 'ExportToFileMessagesTask',
+);

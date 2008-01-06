@@ -48,6 +48,7 @@ function customMessageGroups( $id ) {
 * Array keys in $wgTranslateEC and $wgTranslateAC are not used for alphabetical sorting only. MessageGroup::$id and MessageGroup::getId() are used for everything else.
 * Export documentation messages as "extracted comments" in po export
 * Import fuzzy messages as fuzzy in po import
+* Experimental support for some extensions in export.php
 
 == Changes in version 7 ==
 * Released 2007-12-29

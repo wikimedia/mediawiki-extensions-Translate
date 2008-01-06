@@ -483,24 +483,19 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 }
 
 class TranslateTasks {
-	private static $aTasks = array(
-		'view'           => 'ViewMessagesTask',
-		'untranslated'   => 'ViewUntranslatedTask',
-		'optional'       => 'ViewOptionalTask',
-		'review'         => 'ReviewMessagesTask',
-		'reviewall'      => 'ReviewAllMessagesTask',
-		'export-as-po'   => 'ExportasPoMessagesTask',
-		'export'         => 'ExportMessagesTask',
-		'export-to-file' => 'ExportToFileMessagesTask',
-	);
-
 	public static function getTasks() {
-		return self::$aTasks;
+		global $wgTranslateTasks;
+		return array_keys( $wgTranslateTasks );
 	}
 
 	public static function getTask( $id ) {
-		if ( isset(self::$aTasks[$id]) ) {
-			return new self::$aTasks[$id];
+		global $wgTranslateTasks;
+		if ( array_key_exists( $id, $wgTranslateTasks ) ) {
+			if ( is_callable( $wgTranslateTasks[$id] ) ) {
+				return call_user_func( $wgTranslateTasks[$id], $id );
+			} else {
+				return new $wgTranslateTasks[$id];
+			}
 		} else {
 			return null;
 		}

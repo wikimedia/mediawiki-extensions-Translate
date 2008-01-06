@@ -21,7 +21,9 @@ class MessageChecks {
 	 * @return Array of warning messages, html-format.
 	 */
 	public static function doChecks( TMessage $message ) {
+		wfLoadExtensionMessages( 'Translate' );
 		$warnings = array();
+
 		if ( count($values = self::checkParameters( $message )) ) {
 			$warnings[] = wfMsgExt( self::MSG . 'parameters', 'parse', implode( ', ', $values ) );
 		}
@@ -43,6 +45,16 @@ class MessageChecks {
 		}
 
 		return $warnings;
+	}
+
+	public static function doFastChecks( TMessage $message ) {
+		if ( !$message->translation ) return false;
+		return
+			self::checkPlural( $message ) ||
+			self::checkParameters( $message ) ||
+			self::checkBalance( $message ) ||
+			self::checkLinks( $message ) ||
+			self::checkXHTML( $message );
 	}
 
 	/**
