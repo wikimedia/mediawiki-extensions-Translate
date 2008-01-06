@@ -814,13 +814,8 @@ class ChangeAuthorMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Change Author';
 	protected $id    = 'ext-changeauthor';
 
-	protected $arrName     = 'allMessages';
+	protected $arrName     = 'messages';
 	protected $messageFile = 'ChangeAuthor/ChangeAuthor.i18n.php';
-
-	protected $exportPrefix= "\t";
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportLineP = "\t\t";
-	protected $exportEnd   = "),";
 
 	protected $ignored = array( 'changeauthor-short', 'changeauthor-logpagetext' );
 }
