@@ -8,6 +8,10 @@ $wgGroupPermissions['Translators']['translate'] = true;
 
 * Users have to be a member of user group 'Translators' to enable full functionality.
 
+If your extensions are located in a directory other than $IP/extensions/, you should
+update $wgTranslateExtensionDirectory and $wgTranslateCssLocation. Check Translate.php
+to see what values they expect.
+
 === Defining custom message groups ===
 
 Example of creating message group for custom user interface of the wiki.
