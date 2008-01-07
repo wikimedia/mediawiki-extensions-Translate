@@ -733,11 +733,21 @@ class AjaxShowEditorsMessageGroup extends ExtensionMessageGroup {
 }
 
 class AntiSpoofMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Anti Spoof';
 	protected $id    = 'ext-antispoof';
 
 	protected $arrName     = 'wgAntiSpoofMessages';
 	protected $messageFile = 'AntiSpoof/AntiSpoof_i18n.php';
+}
+
+class AsksqlMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
+	protected $label = 'Asksql';
+	protected $id    = 'ext-asksql';
+
+	protected $arrName     = 'messages';
+	protected $messageFile  = 'Asksql/Asksql.i18n.php';
 }
 
 class AssertEditMessageGroup extends ExtensionMessageGroup {
@@ -748,15 +758,8 @@ class AssertEditMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'AssertEdit/AssertEdit.i18n.php';
 }
 
-class AsksqlMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Asksql';
-	protected $id    = 'ext-asksql';
-
-	protected $arrName     = 'messages';
-	protected $messageFile  = 'Asksql/Asksql.i18n.php';
-}
-
 class BackAndForthMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Back and Forth';
 	protected $id    = 'ext-backandforth';
 
@@ -794,6 +797,7 @@ class BlockTitlesMessageGroup extends ExtensionMessageGroup {
 }
 
 class BoardVoteMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label   = 'Board Vote';
 	protected $id      = 'ext-boardvote';
 
@@ -804,6 +808,7 @@ class BoardVoteMessageGroup extends ExtensionMessageGroup {
 }
 
 class BookInformationMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label   = 'Book Information';
 	protected $id      = 'ext-bookinformation';
 
@@ -817,6 +822,7 @@ class BookInformationMessageGroup extends ExtensionMessageGroup {
 }
 
 class CategoryTreeExtensionGroup extends MultipleFileMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Category Tree';
 	protected $id    = 'ext-categorytree';
 
@@ -855,6 +861,7 @@ class CheckUserMessageGroup extends ExtensionMessageGroup {
 }
 
 class ChemFunctionsMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Chemistry';
 	protected $id    = 'ext-chemistry';
 
@@ -902,6 +909,7 @@ class CiteMessageGroup extends ExtensionMessageGroup {
 }
 
 class CiteSpecialMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label   = 'Cite (special page)';
 	protected $id      = 'ext-citespecial';
 
@@ -914,6 +922,7 @@ class CiteSpecialMessageGroup extends ExtensionMessageGroup {
 }
 
 class CommentSpammerMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Comment Spammer';
 	protected $id    = 'ext-commentspammer';
 
@@ -941,6 +950,7 @@ class ConfirmEditMessageGroup extends ExtensionMessageGroup {
 }
 
 class ConfirmEditFancyCaptchaMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label   = 'ConfirmEdit Fancy Captcha';
 	protected $id      = 'ext-confirmeditfancycaptcha';
 
@@ -954,6 +964,7 @@ class ConfirmEditFancyCaptchaMessageGroup extends ExtensionMessageGroup {
 }
 
 class ContactPageExtensionGroup extends MultipleFileMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Contact Page';
 	protected $id    = 'ext-contactpage';
 
@@ -975,6 +986,7 @@ class ContributionScoresMessageGroup extends ExtensionMessageGroup {
 }
 
 class ContributionseditcountMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label   = 'Contributions Edit Count';
 	protected $id      = 'ext-contributionseditcount';
 
@@ -986,6 +998,7 @@ class ContributionseditcountMessageGroup extends ExtensionMessageGroup {
 }
 
 class ContributorsMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label   = 'Contributors';
 	protected $id      = 'ext-contributors';
 
@@ -999,6 +1012,7 @@ class ContributorsMessageGroup extends ExtensionMessageGroup {
 }
 
 class CountEditsMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label   = 'Count Edits';
 	protected $id      = 'ext-countedits';
 
@@ -1012,6 +1026,7 @@ class CountEditsMessageGroup extends ExtensionMessageGroup {
 }
 
 class CrossNamespaceLinksMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Cross Namespace Links';
 	protected $id    = 'ext-crossnamespacelinks';
 
@@ -1020,6 +1035,7 @@ class CrossNamespaceLinksMessageGroup extends ExtensionMessageGroup {
 }
 
 class DeletedContribsMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Deleted Contributions';
 	protected $id    = 'ext-deletedcontribs';
 
@@ -1028,6 +1044,7 @@ class DeletedContribsMessageGroup extends ExtensionMessageGroup {
 }
 
 class DesysopMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Desysop';
 	protected $id    = 'ext-desysop';
 
@@ -1036,6 +1053,7 @@ class DesysopMessageGroup extends ExtensionMessageGroup {
 }
 
 class DismissableSiteNoticeMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Dismissable SiteNotice';
 	protected $id    = 'ext-dismissablesitenotice';
 
@@ -1048,6 +1066,7 @@ class DismissableSiteNoticeMessageGroup extends ExtensionMessageGroup {
 }
 
 class DuplicatorMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Duplicator';
 	protected $id    = 'ext-duplicator';
 
@@ -1061,6 +1080,7 @@ class DuplicatorMessageGroup extends ExtensionMessageGroup {
 }
 
 class EditcountMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Edit Count';
 	protected $id    = 'ext-editcount';
 
@@ -1082,6 +1102,8 @@ class EvalMessageGroup extends ExtensionMessageGroup {
 }
 
 class ExpandTemplatesMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
+	protected $fileExporter = null;
 	protected $label = 'Expand Templates';
 	protected $id    = 'ext-expandtemplates';
 
@@ -1106,6 +1128,7 @@ class FarmerMessageGroup extends ExtensionMessageGroup {
 }
 
 class FCKeditorExtensionGroup extends MultipleFileMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'FCKeditor';
 	protected $id    = 'ext-fckeditor';
 
@@ -1118,6 +1141,7 @@ class FCKeditorExtensionGroup extends MultipleFileMessageGroup {
 }
 
 class FlaggedRevsMessageGroup extends MultipleFileMessageGroup {
+	protected $fileExporter = null;
 	protected $label   = 'Flagged Revs';
 	protected $id      = 'ext-flaggedrevs';
 
@@ -1130,6 +1154,7 @@ class FlaggedRevsMessageGroup extends MultipleFileMessageGroup {
 }
 
 class FlaggedRevsMakeReviewerMessageGroup extends MultipleFileMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Flagged Revs Make Reviewer';
 	protected $id    = 'ext-flaggedrevsmakereviewer';
 
@@ -1141,19 +1166,8 @@ class FlaggedRevsMakeReviewerMessageGroup extends MultipleFileMessageGroup {
 	protected $exportEnd   = ');';
 }
 
-class FormatEmailMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Format Email';
-	protected $id    = 'ext-formatemail';
-
-	protected $arrName     = 'messages';
-	protected $messageFile = 'FormatEmail/FormatEmail.i18n.php';
-
-	protected $ignored = array(
-		'email_header',
-	);
-}
-
 class FilePathMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label   = 'File Path';
 	protected $id      = 'ext-filepath';
 
@@ -1169,7 +1183,20 @@ class FindSpamMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'FindSpam/FindSpam.i18n.php';
 }
 
+class FormatEmailMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Format Email';
+	protected $id    = 'ext-formatemail';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'FormatEmail/FormatEmail.i18n.php';
+
+	protected $ignored = array(
+		'email_header',
+	);
+}
+
 class GadgetsExtensionGroup extends MultipleFileMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Gadgets';
 	protected $id    = 'ext-gadgets';
 
@@ -1186,6 +1213,7 @@ class GadgetsExtensionGroup extends MultipleFileMessageGroup {
 }
 
 class GiveRollbackMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label   = 'Give Rollback';
 	protected $id      = 'ext-giverollback';
 
@@ -1206,6 +1234,7 @@ class IconMessageGroup extends ExtensionMessageGroup {
 }
 
 class ImageMapMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Image Map';
 	protected $id    = 'ext-imagemap';
 
@@ -1223,6 +1252,7 @@ class ImageMapMessageGroup extends ExtensionMessageGroup {
 }
 
 class ImportFreeImagesMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Import Free Images';
 	protected $id    = 'ext-importfreeimages';
 
@@ -1260,6 +1290,7 @@ class IntersectionMessageGroup extends ExtensionMessageGroup {
 }
 
 class InterwikiMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Interwiki Edit Page';
 	protected $id    = 'ext-interwiki';
 
@@ -1294,6 +1325,7 @@ class LatexDocMessageGroup extends ExtensionMessageGroup {
 }
 
 class LinkSearchMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Link Search';
 	protected $id    = 'ext-linksearch';
 
@@ -1322,6 +1354,7 @@ class LookupUserMessageGroup extends ExtensionMessageGroup {
 }
 
 class LuceneSearchMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Lucene Search';
 	protected $id    = 'ext-lucenesearch';
 
@@ -1343,6 +1376,7 @@ class MakeBotMessageGroup extends ExtensionMessageGroup {
 }
 
 class MakeSysopMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Make Sysop';
 	protected $id    = 'ext-makesysop';
 
@@ -1356,6 +1390,7 @@ class MakeSysopMessageGroup extends ExtensionMessageGroup {
 }
 
 class MathStatMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Math Stat';
 	protected $id    = 'ext-mathstat';
 
@@ -1364,6 +1399,7 @@ class MathStatMessageGroup extends ExtensionMessageGroup {
 }
 
 class MediaFunctionsMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label   = 'Media Functions';
 	protected $id      = 'ext-mediafunctions';
 
@@ -1384,6 +1420,7 @@ class MicroIDMessageGroup extends ExtensionMessageGroup {
 }
 
 class MiniDonationMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Mini Donation';
 	protected $id    = 'ext-minidonation';
 
@@ -1392,6 +1429,7 @@ class MiniDonationMessageGroup extends ExtensionMessageGroup {
 }
 
 class MinimumNameLengthMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label   = 'Minimum Name Length';
 	protected $id      = 'ext-minimumnamelength';
 
@@ -1405,6 +1443,7 @@ class MinimumNameLengthMessageGroup extends ExtensionMessageGroup {
 }
 
 class MiniPreviewExtensionGroup extends MultipleFileMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Mini Preview';
 	protected $id    = 'ext-minipreview';
 
@@ -1438,6 +1477,7 @@ class NetworkAuthMessageGroup extends ExtensionMessageGroup {
 }
 
 class NewestPagesMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Newest Pages';
 	protected $id    = 'ext-newestpages';
 
@@ -1450,6 +1490,7 @@ class NewestPagesMessageGroup extends ExtensionMessageGroup {
 }
 
 class NewuserLogMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Newuser Log';
 	protected $id    = 'ext-newuserlog';
 
@@ -1465,6 +1506,7 @@ class NewuserLogMessageGroup extends ExtensionMessageGroup {
 }
 
 class NewUserNotifMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label   = 'New User Notification';
 	protected $id      = 'ext-newusernotif';
 
@@ -1478,6 +1520,7 @@ class NewUserNotifMessageGroup extends ExtensionMessageGroup {
 }
 
 class NukeMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Nuke';
 	protected $id    = 'ext-nuke';
 
@@ -1491,6 +1534,7 @@ class NukeMessageGroup extends ExtensionMessageGroup {
 }
 
 class OggHandlerMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Ogg Handler';
 	protected $id    = 'ext-ogghandler';
 
@@ -1528,6 +1572,7 @@ class OversightMessageGroup extends ExtensionMessageGroup {
 }
 
 class PageByMessageGroup extends MultipleFileMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Page By';
 	protected $id    = 'ext-pageby';
 
@@ -1540,6 +1585,7 @@ class PageByMessageGroup extends MultipleFileMessageGroup {
 }
 
 class PasswordResetMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Password Reset';
 	protected $id    = 'ext-passwordreset';
 
@@ -1553,6 +1599,7 @@ class PasswordResetMessageGroup extends ExtensionMessageGroup {
 }
 
 class ParserFunctionsMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label   = 'Parser Functions';
 	protected $id      = 'ext-parserfunctions';
 
@@ -1566,6 +1613,7 @@ class ParserFunctionsMessageGroup extends ExtensionMessageGroup {
 }
 
 class PatrollerMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label   = 'Patroller';
 	protected $id      = 'ext-patroller';
 
@@ -1579,6 +1627,7 @@ class PatrollerMessageGroup extends ExtensionMessageGroup {
 }
 
 class PdfHandlerMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label   = 'Pdf Handler';
 	protected $id      = 'ext-pdfhandler';
 
@@ -1592,6 +1641,7 @@ class PdfHandlerMessageGroup extends ExtensionMessageGroup {
 }
 
 class PlayerMessageGroup extends MultipleFileMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Player';
 	protected $id    = 'ext-player';
 
@@ -1624,6 +1674,7 @@ class PovWatchMessageGroup extends ExtensionMessageGroup {
 }
 
 class ProfileMonitorMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label   = 'Profile Monitor';
 	protected $id      = 'ext-profilemonitor';
 
@@ -1637,6 +1688,7 @@ class ProfileMonitorMessageGroup extends ExtensionMessageGroup {
 }
 
 class ProofreadPageMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Proofread Page';
 	protected $id    = 'ext-proofreadpage';
 
@@ -1666,6 +1718,7 @@ class PurgeMessageGroup extends ExtensionMessageGroup {
 }
 
 class QuizMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Quiz';
 	protected $id    = 'ext-quiz';
 
@@ -1703,6 +1756,7 @@ class RenameUserMessageGroup extends ExtensionMessageGroup {
 }
 
 class ResignMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Resign';
 	protected $id    = 'ext-resign';
 
@@ -1740,6 +1794,7 @@ class ScanSetMessageGroup extends ExtensionMessageGroup {
 }
 
 class SelectCategoryExtensionGroup extends MultipleFileMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Select Category';
 	protected $id    = 'ext-selectcategory';
 
@@ -1768,6 +1823,7 @@ class ShowProcesslistMessageGroup extends ExtensionMessageGroup {
 }
 
 class SignDocumentMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Sign Document';
 	protected $id    = 'ext-signdocument';
 
@@ -1781,6 +1837,7 @@ class SignDocumentMessageGroup extends ExtensionMessageGroup {
 }
 
 class SignDocumentSpecialCreateMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Sign Document Special Create';
 	protected $id    = 'ext-signdocumentspecialcreate';
 
@@ -1794,6 +1851,7 @@ class SignDocumentSpecialCreateMessageGroup extends ExtensionMessageGroup {
 }
 
 class SignDocumentSpecialMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Sign Document Special';
 	protected $id    = 'ext-signdocumentspecial';
 
@@ -1807,6 +1865,7 @@ class SignDocumentSpecialMessageGroup extends ExtensionMessageGroup {
 }
 
 class SiteMatrixMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Site Matrix';
 	protected $id    = 'ext-sitematrix';
 
@@ -1815,6 +1874,7 @@ class SiteMatrixMessageGroup extends ExtensionMessageGroup {
 }
 
 class SmoothGalleryExtensionGroup extends MultipleFileMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Smooth Gallery';
 	protected $id    = 'ext-smoothgallery';
 
@@ -1831,6 +1891,7 @@ class SmoothGalleryExtensionGroup extends MultipleFileMessageGroup {
 }
 
 class SpamBlacklistMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Spam Blacklist';
 	protected $id    = 'ext-spamblacklist';
 
@@ -1868,6 +1929,7 @@ class SpecialFileListMessageGroup extends ExtensionMessageGroup {
 }
 
 class SpecialFormMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Special Form';
 	protected $id    = 'ext-specialform';
 
@@ -1893,6 +1955,7 @@ class StalePagesMessageGroup extends ExtensionMessageGroup {
 }
 
 class SyntaxHighlight_GeSHiMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Syntax Highlight GeSHi';
 	protected $id    = 'ext-syntaxhighlightgeshi';
 
@@ -1906,6 +1969,7 @@ class SyntaxHighlight_GeSHiMessageGroup extends ExtensionMessageGroup {
 }
 
 class TalkHereExtensionGroup extends MultipleFileMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Talk Here';
 	protected $id    = 'ext-talkhere';
 
@@ -1924,6 +1988,7 @@ class TalkHereExtensionGroup extends MultipleFileMessageGroup {
 }
 
 class TemplateLinkMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Template Link';
 	protected $id    = 'ext-templatelink';
 
@@ -1969,6 +2034,7 @@ class TodoMessageGroup extends ExtensionMessageGroup {
 }
 
 class TodoTasksMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Todo Tasks';
 	protected $id    = 'ext-todotasks';
 
@@ -2002,6 +2068,7 @@ class UserContactLinksMessageGroup extends ExtensionMessageGroup {
 }
 
 class UserImagesMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label   = 'User Images';
 	protected $id      = 'ext-userimages';
 
@@ -2015,6 +2082,7 @@ class UserImagesMessageGroup extends ExtensionMessageGroup {
 }
 
 class UserMergeMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'User Merge';
 	protected $id    = 'ext-usermerge';
 
@@ -2044,6 +2112,7 @@ class UserRightsNotifMessageGroup extends ExtensionMessageGroup {
 }
 
 class VoteMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label   = 'Vote';
 	protected $id      = 'ext-vote';
 
@@ -2065,6 +2134,7 @@ class WatchersMessageGroup extends ExtensionMessageGroup {
 }
 
 class WebStoreMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Web Store';
 	protected $id    = 'ext-webstore';
 
@@ -2078,6 +2148,7 @@ class WebStoreMessageGroup extends ExtensionMessageGroup {
 }
 
 class WhoIsWatchingMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Who Is Watching';
 	protected $id    = 'ext-whoiswatching';
 
