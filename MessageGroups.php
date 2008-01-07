@@ -2017,6 +2017,14 @@ class TranslateMessageGroup extends ExtensionMessageGroup {
 	);
 }
 
+class UsageStatisticsMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Usage Statistics';
+	protected $id    = 'ext-usagestatistics';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'UsageStatistics/SpecialUserStats.i18n.php';
+}
+
 class UserContactLinksMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'User Contact Links';
 	protected $id    = 'ext-usercontactlinks';
