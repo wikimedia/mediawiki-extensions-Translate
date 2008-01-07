@@ -1103,7 +1103,6 @@ class EvalMessageGroup extends ExtensionMessageGroup {
 
 class ExpandTemplatesMessageGroup extends ExtensionMessageGroup {
 	protected $fileExporter = null;
-	protected $fileExporter = null;
 	protected $label = 'Expand Templates';
 	protected $id    = 'ext-expandtemplates';
 
