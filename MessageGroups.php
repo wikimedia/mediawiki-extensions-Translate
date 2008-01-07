@@ -1878,17 +1878,11 @@ class SmoothGalleryExtensionGroup extends MultipleFileMessageGroup {
 }
 
 class SpamBlacklistMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Spam Blacklist';
 	protected $id    = 'ext-spamblacklist';
 
 	protected $arrName = 'messages';
 	protected $messageFile  = 'SpamBlacklist/SpamBlacklist.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportPrefix= '';
-	protected $exportLineP = "\t";
-	protected $exportEnd   = '),';
 }
 
 class SpamDiffToolMessageGroup extends ExtensionMessageGroup {
