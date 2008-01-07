@@ -950,17 +950,11 @@ class ConfirmEditMessageGroup extends ExtensionMessageGroup {
 }
 
 class ConfirmEditFancyCaptchaMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label   = 'ConfirmEdit Fancy Captcha';
 	protected $id      = 'ext-confirmeditfancycaptcha';
 
 	protected $arrName = 'messages';
 	protected $messageFile  = 'ConfirmEdit/FancyCaptcha.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportPrefix= '';
-	protected $exportLineP = "\t";
-	protected $exportEnd   = '),';
 }
 
 class ContactPageExtensionGroup extends MultipleFileMessageGroup {
