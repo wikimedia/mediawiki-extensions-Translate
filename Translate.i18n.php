@@ -1900,6 +1900,7 @@ $messages['sv'] = array(
 	'translate-page-showing-none'       => 'Det finns inga meddelanden att visa.',
 	'translate-next'                    => 'Nästa sida',
 	'translate-prev'                    => 'Föregående sida',
+	'translate-page-description-legend' => 'Information om gruppen',
 	'translate-optional'                => '(valfritt)',
 	'translate-ignored'                 => '(används ej)',
 	'translate-edit-definition'         => 'Definition av meddelandet',
