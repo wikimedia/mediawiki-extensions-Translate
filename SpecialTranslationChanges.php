@@ -145,7 +145,7 @@ class SpecialTranslationChanges extends SpecialPage {
 				if ( isset( $groupObjects[$group] ) ) {
 					$label = $groupObjects[$group]->getLabel();
 					if ( $groupObjects[$group]->canExportToFile() ) {
-						$langs = implode( ', ', array_keys( $languages ) );
+						$langs = implode( ',', array_keys( $languages ) );
 						$id = $groupObjects[$group]->getId();
 						$sublabel .= "→ $id '$langs'";
 					}
