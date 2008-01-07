@@ -1566,17 +1566,12 @@ class PageByMessageGroup extends MultipleFileMessageGroup {
 }
 
 class PasswordResetMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Password Reset';
 	protected $id    = 'ext-passwordreset';
 
-	protected $arrName     = 'allMessages';
+	protected $arrName     = 'messages';
 	protected $messageFile = 'PasswordReset/PasswordReset.i18n.php';
 
-	protected $exportPrefix= "\t";
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportLineP = "\t\t";
-	protected $exportEnd   = "),";
 }
 
 class ParserFunctionsMessageGroup extends ExtensionMessageGroup {
