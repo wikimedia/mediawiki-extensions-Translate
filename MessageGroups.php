@@ -1664,17 +1664,11 @@ class ProfileMonitorMessageGroup extends ExtensionMessageGroup {
 }
 
 class ProofreadPageMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Proofread Page';
 	protected $id    = 'ext-proofreadpage';
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'ProofreadPage/ProofreadPage.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportPrefix= "\t";
-	protected $exportLineP = "\t\t";
-	protected $exportEnd   = '),';
 }
 
 class ProtectSectionMessageGroup extends ExtensionMessageGroup {
