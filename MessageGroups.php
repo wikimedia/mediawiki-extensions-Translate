@@ -832,7 +832,7 @@ class CentralAuthMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Central Auth';
 	protected $id      = 'ext-centralauth';
 
-	protected $arrName     = 'wgCentralAuthMessages';
+	protected $arrName     = 'messages';
 	protected $messageFile = 'CentralAuth/CentralAuth.i18n.php';
 }
 
