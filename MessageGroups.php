@@ -1521,17 +1521,11 @@ class NukeMessageGroup extends ExtensionMessageGroup {
 }
 
 class OggHandlerMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Ogg Handler';
 	protected $id    = 'ext-ogghandler';
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'OggHandler/OggHandler.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportPrefix= "\t";
-	protected $exportLineP = "\t\t";
-	protected $exportEnd   = '),';
 
 	protected $optional = array(
 		'ogg-player-cortado',
