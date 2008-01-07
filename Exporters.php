@@ -110,7 +110,7 @@ class StandardExtensionExporter implements MessageExporter {
 
 		list( , $header, $data) = $matches;
 
-		$sectionP = '(?: /\*\* .*? \*/ )? .*? (?: \n\);\n\n | \S;\n )';
+		$sectionP = '(?: /\*\* .*? \*/ )? (?: ( [^\n]*?  \S;\n ) | (?: .*?  \n\);\n\n ) )';
 		$codeP = '\$messages\[\' (.*?) \'\]';
 
 		$sectionMatches = array();
