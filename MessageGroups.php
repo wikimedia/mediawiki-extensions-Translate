@@ -1369,17 +1369,11 @@ class MakeBotMessageGroup extends ExtensionMessageGroup {
 }
 
 class MakeSysopMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Make Sysop';
 	protected $id    = 'ext-makesysop';
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'Makesysop/SpecialMakesysop.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportPrefix= '';
-	protected $exportLineP = "\t";
-	protected $exportEnd   = '),';
 }
 
 class MathStatMessageGroup extends ExtensionMessageGroup {
