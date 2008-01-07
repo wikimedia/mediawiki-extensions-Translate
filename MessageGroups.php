@@ -1688,17 +1688,11 @@ class PurgeMessageGroup extends ExtensionMessageGroup {
 }
 
 class QuizMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Quiz';
 	protected $id    = 'ext-quiz';
 
-	protected $arrName     = 'wgQuizMessages';
+	protected $arrName     = 'messages';
 	protected $messageFile = 'Quiz/Quiz.i18n.php';
-
-	protected $exportPrefix= "\t";
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportLineP = "\t\t";
-	protected $exportEnd   = "),";
 }
 
 class RandomInCategoryMessageGroup extends ExtensionMessageGroup {
