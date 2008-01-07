@@ -119,16 +119,19 @@ class StandardExtensionExporter implements MessageExporter {
 		}
 
 		$sections = array();
-
+		$unknown = array();
 		foreach ( $sectionMatches as $index => $data ) {
 			$code = array();
 			if ( !preg_match( "~$codeP~xsu", $data[0], $code ) ) {
-				throw new MWException( "Malformed section" );
+				echo "Malformed section:\n$data[0]";
+				$unknown[] = $data[0];
+			} else {
+				$sections[$code[1]] = $data[0];
 			}
-			$sections[$code[1]] = $data[0];
 		}
 
 		ksort( $sections );
+		$sections[] = implode( "\n", $unknown );
 
 		return array( $header, $sections );
 	}
