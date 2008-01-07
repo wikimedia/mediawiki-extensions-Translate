@@ -147,7 +147,7 @@ class SpecialTranslationChanges extends SpecialPage {
 					if ( $groupObjects[$group]->canExportToFile() ) {
 						$langs = implode( ',', array_keys( $languages ) );
 						$id = $groupObjects[$group]->getId();
-						$sublabel .= "→ $id '$langs'";
+						$sublabel .= "$id $langs";
 					}
 				}
 				$output .= Xml::element( 'h3', null, $label );
