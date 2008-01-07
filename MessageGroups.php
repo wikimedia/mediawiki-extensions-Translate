@@ -2129,17 +2129,11 @@ class WebStoreMessageGroup extends ExtensionMessageGroup {
 }
 
 class WhoIsWatchingMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Who Is Watching';
 	protected $id    = 'ext-whoiswatching';
 
-	protected $arrName     = 'allMessages';
+	protected $arrName     = 'messages';
 	protected $messageFile = 'WhoIsWatching/SpecialWhoIsWatching.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportPrefix= "\t";
-	protected $exportLineP = "\t\t";
-	protected $exportEnd   = '),';
 }
 
 class WikidataLanguageManagerMessageGroup extends ExtensionMessageGroup {
