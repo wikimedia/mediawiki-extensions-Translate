@@ -760,7 +760,7 @@ class BackAndForthMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Back and Forth';
 	protected $id    = 'ext-backandforth';
 
-	protected $functionName = 'messages';
+	protected $arrName = 'messages';
 	protected $messageFile  = 'BackAndForth/BackAndForth.i18n.php';
 }
 
