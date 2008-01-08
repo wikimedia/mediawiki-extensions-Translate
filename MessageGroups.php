@@ -1069,11 +1069,10 @@ class EvalMessageGroup extends ExtensionMessageGroup {
 }
 
 class ExpandTemplatesMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Expand Templates';
 	protected $id    = 'ext-expandtemplates';
 
-	protected $arrName     = 'wgExpandTemplatesMessages';
+	protected $arrName     = 'messages';
 	protected $messageFile = 'ExpandTemplates/ExpandTemplates.i18n.php';
 }
 
