@@ -796,11 +796,10 @@ class BlockTitlesMessageGroup extends ExtensionMessageGroup {
 }
 
 class BoardVoteMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label   = 'Board Vote';
 	protected $id      = 'ext-boardvote';
 
-	protected $arrName     = 'wgBoardVoteMessages';
+	protected $arrName     = 'messages';
 	protected $messageFile = 'BoardVote/BoardVote.i18n.php';
 
 	protected $ignored = array( 'boardvote_footer' );
