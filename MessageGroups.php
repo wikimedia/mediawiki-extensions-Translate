@@ -2034,17 +2034,11 @@ class UserImagesMessageGroup extends ExtensionMessageGroup {
 }
 
 class UserMergeMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'User Merge';
 	protected $id    = 'ext-usermerge';
 
-	protected $arrName     = 'usermergeMessages';
+	protected $arrName     = 'messages';
 	protected $messageFile = 'UserMerge/UserMerge.i18n.php';
-
-	protected $exportPrefix= "\t";
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportLineP = "\t\t";
-	protected $exportEnd   = "),";
 }
 
 class UsernameBlacklistMessageGroup extends ExtensionMessageGroup {
