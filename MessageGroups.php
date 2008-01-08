@@ -974,7 +974,7 @@ class ContributorsMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Contributors';
 	protected $id      = 'ext-contributors';
 
-	protected $functionName = 'messages';
+	protected $arrName = 'messages';
 	protected $messageFile  = 'Contributors/Contributors.i18n.php';
 }
 
