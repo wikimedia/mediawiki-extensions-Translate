@@ -740,7 +740,6 @@ class AntiSpoofMessageGroup extends ExtensionMessageGroup {
 }
 
 class AsksqlMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Asksql';
 	protected $id    = 'ext-asksql';
 
