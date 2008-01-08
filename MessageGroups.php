@@ -724,11 +724,10 @@ class AdvancedRandomMessageGroup extends ExtensionMessageGroup {
 }
 
 class AjaxShowEditorsMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Ajax Show Editors';
 	protected $id    = 'ext-ajaxshoweditors';
 
-	protected $arrName     = 'wgAjaxShowEditorsMessages';
+	protected $arrName     = 'messages';
 	protected $messageFile = 'AjaxShowEditors/AjaxShowEditors.i18n.php';
 }
 
