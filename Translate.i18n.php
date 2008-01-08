@@ -905,31 +905,46 @@ $messages['hr'] = array(
  * @author Dundak
  */
 $messages['hsb'] = array(
-	'translate'                       => 'Přełožić',
-	'translate-edit'                  => 'wobdźěłać',
-	'translate-talk'                  => 'diskusija',
-	'translate-history'               => 'stawizny',
-	'translate-task-view'             => 'Pokazaj wšě zdźělenki z',
-	'translate-task-untranslated'     => 'Pokazaj njepřełožene zdźělenki z',
-	'translate-task-optional'         => 'Pokazaj opcionalne zdźělenki z',
-	'translate-task-review'           => 'Přepruwuj změny za',
-	'translate-task-reviewall'        => 'Přepruwuj wšě přełožki w',
-	'translate-task-export'           => 'Eksportuj přełožki z',
-	'translate-task-export-to-file'   => 'Eksportuj přełožk do dataje z',
-	'translate-task-export-as-po'     => 'Přełožk we formaće Gettext eksportować',
-	'translate-page-no-such-language' => 'Njepłaćiwy rěčny kod podaty',
-	'translate-page-task'             => 'Akcija',
-	'translate-page-group'            => 'Skupina',
-	'translate-page-language'         => 'Rěč',
-	'translate-page-limit'            => 'Ličba zdźělenkow',
-	'translate-page-limit-option'     => '$1 {{PLURAL:$1|zdźělenka|zdźělence|zdźělenki|zdźělenkow}} na stronu',
-	'translate-submit'                => 'Pokazać',
-	'translate-next'                  => 'Přichodna strona',
-	'translate-prev'                  => 'Předchadna strona',
-	'translate-optional'              => '(opcionalny)',
-	'translate-ignored'               => '(ignorowany)',
-	'translate-magic-pagename'        => 'Rozšěrjeny přełožk MediaWiki',
-	'translate-magic-help'            => 'Móžěs aliasy specialnych stronow, magiske słowa, mjena šatow a mjena mjenowych rumow přełožić.
+	'translate'                         => 'Přełožić',
+	'translate-edit'                    => 'wobdźěłać',
+	'translate-talk'                    => 'diskusija',
+	'translate-history'                 => 'stawizny',
+	'translate-task-view'               => 'Pokazaj wšě zdźělenki z',
+	'translate-task-untranslated'       => 'Pokazaj njepřełožene zdźělenki z',
+	'translate-task-optional'           => 'Pokazaj opcionalne zdźělenki z',
+	'translate-task-review'             => 'Přepruwuj změny za',
+	'translate-task-reviewall'          => 'Přepruwuj wšě přełožki w',
+	'translate-task-export'             => 'Eksportuj přełožki z',
+	'translate-task-export-to-file'     => 'Eksportuj přełožk do dataje z',
+	'translate-task-export-as-po'       => 'Přełožk we formaće Gettext eksportować',
+	'translate-page-no-such-language'   => 'Njepłaćiwy rěčny kod podaty',
+	'translate-page-no-such-task'       => 'Podaty nadawk bě njepłaćiwy.',
+	'translate-page-no-such-group'      => 'Podata skupina bě njepłaćiwa.',
+	'translate-page-settings-legend'    => 'Nastajenja',
+	'translate-page-task'               => 'Akcija',
+	'translate-page-group'              => 'Skupina',
+	'translate-page-language'           => 'Rěč',
+	'translate-page-limit'              => 'Ličba zdźělenkow',
+	'translate-page-limit-option'       => '$1 {{PLURAL:$1|zdźělenka|zdźělence|zdźělenki|zdźělenkow}} na stronu',
+	'translate-submit'                  => 'Pokazać',
+	'translate-page-navigation-legend'  => 'Nawigacija',
+	'translate-page-showing'            => 'Zdźělenki wot $1 do $2 z $3 pokazać.',
+	'translate-page-showing-all'        => '{{PLURAL:$1|Pokazuje so|Pokazujetej so|Pokazuja so|Pokazuje so}} $1 {{PLURAL:$1|zdźělenka|zdźělence|zdźělenki|zdźělenkow}}.',
+	'translate-page-showing-none'       => 'Njejsu zdźělenki, kotrež hodźa so pokazać.',
+	'translate-next'                    => 'Přichodna strona',
+	'translate-prev'                    => 'Předchadna strona',
+	'translate-page-description-legend' => 'Informacije wo skupinje',
+	'translate-optional'                => '(opcionalny)',
+	'translate-ignored'                 => '(ignorowany)',
+	'translate-edit-definition'         => 'Definicija zdźělenki',
+	'translate-edit-contribute'         => 'přinošować',
+	'translate-edit-no-information'     => "''Tuta zdźělenka dokumentaciju nima, Jeli wěš, hdźež tuta zdźělenka so wužiwa, móžeš druhim přełožowarjam pomhać přidawajo dokumentaciju k tutej zdźělence.''",
+	'translate-edit-information'        => 'Informacije wo tutej zdźělence ($1)',
+	'translate-edit-in-other-languages' => 'Zdźělenka w druhich rěčach',
+	'translate-edit-committed'          => 'Aktualny přełožk w softwarje',
+	'translate-edit-warnings'           => 'Warnowanja wo njedospołnych přełožkach',
+	'translate-magic-pagename'          => 'Rozšěrjeny přełožk MediaWiki',
+	'translate-magic-help'              => 'Móžěs aliasy specialnych stronow, magiske słowa, mjena šatow a mjena mjenowych rumow přełožić.
 
 W magiskich słowach dyrbiš jendźelske přełožki zapřijeć abo hižo njebudu fungować. Wostaj tež prěni zapisk (0 abo 1) kaž je.
 
@@ -938,23 +953,28 @@ Aliasy specialnych stronow a magiske słowa móža wjacore přełožki měć. P�
 W přełožkach mjenowych rumow <tt>$1 diskusija</tt> je specialna. <tt>$1</tt> so přez mjeno strony, na př. <tt>{{SITENAME}} diskusija</tt> naruna. Jeli w twojej rěči njeje móžno płaćiwy wuraz tworić, bjeztoho zo by so mjeno strony změniło, skontaktuj prošu wuwiwarja.
 
 Dyrbiš w skupinje přełožowarjow być, zo by změny składował. Změny so njeskładuja, doniž  składowanske tłóčatko njekliknješ.',
-	'translate-magic-form'            => 'Rěč: $1 Modul: $2 $3',
-	'translate-magic-submit'          => 'Pokazać',
-	'translate-magic-cm-to-be'        => 'Ma być:',
-	'translate-magic-cm-current'      => 'Tuchwilu',
-	'translate-magic-cm-original'     => 'Original',
-	'translate-magic-cm-fallback'     => 'Wuhibna rěč',
-	'translate-magic-cm-save'         => 'Składować',
-	'translate-magic-cm-export'       => 'Eksportować',
-	'translate-magic-cm-updatedusing' => 'Z Special:Magic zaktualizowany',
-	'translate-magic-cm-savefailed'   => 'Składowanje njeporadźiło',
-	'translate-magic-special'         => 'Aliasy specialnych stronow',
-	'translate-magic-words'           => 'Magiske słowa',
-	'translate-magic-skin'            => 'Mjeno šatow',
-	'translate-magic-namespace'       => 'Mjena mjenowych rumow',
-	'translationchanges'              => 'Přełožowanske změny',
-	'translationchanges-export'       => 'eksportować',
-	'translationchanges-change'       => '$1: $2 wot $3',
+	'translate-magic-form'              => 'Rěč: $1 Modul: $2 $3',
+	'translate-magic-submit'            => 'Pokazać',
+	'translate-magic-cm-to-be'          => 'Ma być:',
+	'translate-magic-cm-current'        => 'Tuchwilu',
+	'translate-magic-cm-original'       => 'Original',
+	'translate-magic-cm-fallback'       => 'Wuhibna rěč',
+	'translate-magic-cm-save'           => 'Składować',
+	'translate-magic-cm-export'         => 'Eksportować',
+	'translate-magic-cm-updatedusing'   => 'Z Special:Magic zaktualizowany',
+	'translate-magic-cm-savefailed'     => 'Składowanje njeporadźiło',
+	'translate-magic-special'           => 'Aliasy specialnych stronow',
+	'translate-magic-words'             => 'Magiske słowa',
+	'translate-magic-skin'              => 'Mjeno šatow',
+	'translate-magic-namespace'         => 'Mjena mjenowych rumow',
+	'translationchanges'                => 'Přełožowanske změny',
+	'translationchanges-export'         => 'eksportować',
+	'translationchanges-change'         => '$1: $2 wot $3',
+	'translate-checks-parameters'       => 'Slědowace parametry so njewužiwaja: <strong>$1</strong>',
+	'translate-checks-balance'          => 'Je njeruna ličba spinkow: <strong>$1</strong>',
+	'translate-checks-links'            => 'Slědowace wotkazy su problematiske: <strong>$1</strong>',
+	'translate-checks-xhtml'            => 'Narunaj prošu slědowace taflički přez korektne: <strong>$1</strong>',
+	'translate-checks-plural'           => 'Definicija wužiwa <nowiki>{{PLURAL:}}</nowiki>, přełožk pak nic.',
 );
 
 /** Hungarian (Magyar)
@@ -972,6 +992,10 @@ $messages['hu'] = array(
 	'translate-task-reviewall'          => 'Összes fordítás áttekintése',
 	'translate-task-export'             => 'Fordítások kimentése',
 	'translate-task-export-to-file'     => 'Fordítások kimentése fájlba',
+	'translate-task-export-as-po'       => 'Fordítás kimentése Gettext formátumba',
+	'translate-page-no-such-language'   => 'A megadott nyelv érvénytelen',
+	'translate-page-no-such-task'       => 'A megadott művelet érvénytelen',
+	'translate-page-no-such-group'      => 'A megadott csoport érvénytelen',
 	'translate-page-settings-legend'    => 'Beállítások',
 	'translate-page-task'               => 'Elvégzendő művelet',
 	'translate-page-group'              => 'Csoport',
@@ -993,9 +1017,15 @@ $messages['hu'] = array(
 	'translate-edit-information'        => 'Használat ($1)',
 	'translate-edit-in-other-languages' => 'Az üzenet más nyelveken',
 	'translate-edit-committed'          => 'Jelenlegi fordítás',
+	'translate-edit-warnings'           => 'Hiányosságok a fordításban',
 	'translate-magic-form'              => 'Nyelv: $1, modul: $2 $3',
 	'translationchanges'                => 'Fordítások',
 	'translationchanges-export'         => 'kimentés',
+	'translate-checks-parameters'       => 'A következő paraméterek nincsenek használva: <strong>$1</strong>',
+	'translate-checks-balance'          => 'Nem egyenlő számban vannak használva a nyitó- és zárójelek: <strong>$1</strong>',
+	'translate-checks-links'            => 'A következő linkek nem megfelelőek: <strong>$1</strong>',
+	'translate-checks-xhtml'            => 'A következő tag-eket cseréld le a megfelelőekre: <strong>$1</strong>',
+	'translate-checks-plural'           => 'Az alapértelmezett változatban van <nowiki>{{PLURAL:}}</nowiki> forma, míg a fordításban nincs (magyar nyelv esetén ez nem feltétlenül probléma!).',
 );
 
 $messages['id'] = array(
@@ -2118,14 +2148,11 @@ $messages['zh-hant'] = array(
 	'translate-edit-message-in-fb' => '在 <b>$1</b> 於倚靠語言中的現行字串 ($2):',
 );
 
-/* Kazakh fallbacks */
 $messages['kk'] = $messages['kk-cyrl'];
 $messages['kk-cn'] = $messages['kk-arab'];
 $messages['kk-kz'] = $messages['kk-cyrl'];
 $messages['kk-tr'] = $messages['kk-latn'];
 $messages['sr'] = $messages['sr-ec'];
-
-/* Chinese fallbacks */
 $messages['zh'] = $messages['zh-hans'];
 $messages['zh-cn'] = $messages['zh-hans'];
 $messages['zh-hk'] = $messages['zh-hant'];
