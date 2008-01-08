@@ -1986,17 +1986,11 @@ class TodoMessageGroup extends ExtensionMessageGroup {
 }
 
 class TodoTasksMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Todo Tasks';
 	protected $id    = 'ext-todotasks';
 
-	protected $arrName     = 'allMessages';
+	protected $arrName     = 'messages';
 	protected $messageFile = 'TodoTasks/SpecialTaskList.i18n.php';
-
-	protected $exportPrefix= "\t";
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportLineP = "\t\t";
-	protected $exportEnd   = "),";
 }
 
 class TranslateMessageGroup extends ExtensionMessageGroup {
