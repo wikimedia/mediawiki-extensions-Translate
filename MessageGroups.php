@@ -806,17 +806,11 @@ class BoardVoteMessageGroup extends ExtensionMessageGroup {
 }
 
 class BookInformationMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label   = 'Book Information';
 	protected $id      = 'ext-bookinformation';
 
-	protected $functionName = 'efBookInformationMessages';
+	protected $arrName = 'messages';
 	protected $messageFile  = 'BookInformation/BookInformation.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportPrefix= '';
-	protected $exportLineP = "\t";
-	protected $exportEnd   = '),';
 }
 
 class CategoryTreeExtensionGroup extends MultipleFileMessageGroup {
