@@ -733,12 +733,11 @@ class AjaxShowEditorsMessageGroup extends ExtensionMessageGroup {
 }
 
 class AntiSpoofMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Anti Spoof';
 	protected $id    = 'ext-antispoof';
 
-	protected $arrName     = 'wgAntiSpoofMessages';
-	protected $messageFile = 'AntiSpoof/AntiSpoof_i18n.php';
+	protected $arrName     = 'messages';
+	protected $messageFile = 'AntiSpoof/AntiSpoof.i18n.php';
 }
 
 class AsksqlMessageGroup extends ExtensionMessageGroup {
