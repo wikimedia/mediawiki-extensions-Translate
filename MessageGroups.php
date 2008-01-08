@@ -1887,17 +1887,11 @@ class SpecialFileListMessageGroup extends ExtensionMessageGroup {
 }
 
 class SpecialFormMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Special Form';
 	protected $id    = 'ext-specialform';
 
-	protected $arrName     = 'SpecialFormMessages';
+	protected $arrName     = 'messages';
 	protected $messageFile = 'SpecialForm/SpecialForm.i18n.php';
-
-	protected $exportPrefix= "\t";
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportLineP = "\t\t";
-	protected $exportEnd   = "),";
 
 	protected $ignored = array(
 		'formtemplatepattern',
