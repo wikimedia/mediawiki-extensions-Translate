@@ -971,17 +971,11 @@ class ContributionseditcountMessageGroup extends ExtensionMessageGroup {
 }
 
 class ContributorsMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label   = 'Contributors';
 	protected $id      = 'ext-contributors';
 
-	protected $functionName = 'efContributorsMessages';
+	protected $functionName = 'messages';
 	protected $messageFile  = 'Contributors/Contributors.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportPrefix= '';
-	protected $exportLineP = "\t";
-	protected $exportEnd   = '),';
 }
 
 class CountEditsMessageGroup extends ExtensionMessageGroup {
