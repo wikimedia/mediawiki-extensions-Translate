@@ -757,17 +757,11 @@ class AssertEditMessageGroup extends ExtensionMessageGroup {
 }
 
 class BackAndForthMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Back and Forth';
 	protected $id    = 'ext-backandforth';
 
-	protected $functionName = 'efBackAndForthMessages';
+	protected $functionName = 'messages';
 	protected $messageFile  = 'BackAndForth/BackAndForth.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportPrefix= '';
-	protected $exportLineP = "\t";
-	protected $exportEnd   = '),';
 }
 
 class BadImageMessageGroup extends ExtensionMessageGroup {
