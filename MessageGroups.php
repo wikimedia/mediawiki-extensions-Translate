@@ -906,15 +906,11 @@ class CiteSpecialMessageGroup extends ExtensionMessageGroup {
 }
 
 class CommentSpammerMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Comment Spammer';
 	protected $id    = 'ext-commentspammer';
 
-	protected $functionName = 'efCommentSpammerMessages';
+	protected $arrName = 'messages';
 	protected $messageFile  = 'CommentSpammer/CommentSpammer.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportEnd   = '),';
 }
 
 class ConfirmAccountMessageGroup extends ExtensionMessageGroup {
