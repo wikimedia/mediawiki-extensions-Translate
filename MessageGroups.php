@@ -1762,6 +1762,14 @@ class SelectCategoryExtensionGroup extends MultipleFileMessageGroup {
 	protected $exportEnd   = ');';
 }
 
+class SemanticDrilldownMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Semantic Drilldown';
+	protected $id    = 'ext-semanticdrilldown';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'SemanticDrilldown/languages/SD_Messages.php';
+}
+
 class SemanticFormsMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Semantic Forms';
 	protected $id    = 'ext-semanticforms';
