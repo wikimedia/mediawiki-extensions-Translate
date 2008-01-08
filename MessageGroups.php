@@ -846,11 +846,10 @@ class CheckUserMessageGroup extends ExtensionMessageGroup {
 }
 
 class ChemFunctionsMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Chemistry';
 	protected $id    = 'ext-chemistry';
 
-	protected $arrName     = 'wgChemFunctions_Messages';
+	protected $arrName     = 'messages';
 	protected $messageFile = 'Chemistry/ChemFunctions.i18n.php';
 
 	protected $ignored = array( 'chemFunctions_SearchExplanation' );
