@@ -993,11 +993,10 @@ class CrossNamespaceLinksMessageGroup extends ExtensionMessageGroup {
 }
 
 class DeletedContribsMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Deleted Contributions';
 	protected $id    = 'ext-deletedcontribs';
 
-	protected $arrName     = 'wgDeletedContribsMessages';
+	protected $arrName     = 'messages';
 	protected $messageFile = 'DeletedContributions/DeletedContributions.i18n.php';
 }
 
