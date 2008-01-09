@@ -1370,6 +1370,14 @@ class MediaFunctionsMessageGroup extends ExtensionMessageGroup {
 	protected $exportEnd   = '),';
 }
 
+class MetavidWikiMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Metavid Wiki';
+	protected $id    = 'ext-metavidwiki';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'MetavidWik/languages/MV_Messages.php';
+}
+
 class MicroIDMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'MicroID';
 	protected $id    = 'ext-microid';
