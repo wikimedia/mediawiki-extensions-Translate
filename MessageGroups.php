@@ -1001,11 +1001,10 @@ class DeletedContribsMessageGroup extends ExtensionMessageGroup {
 }
 
 class DesysopMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Desysop';
 	protected $id    = 'ext-desysop';
 
-	protected $arrName     = 'wgDesysopMessages';
+	protected $arrName     = 'messages';
 	protected $messageFile = 'Desysop/SpecialDesysop.i18n.php';
 }
 
