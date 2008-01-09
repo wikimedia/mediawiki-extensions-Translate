@@ -1659,6 +1659,15 @@ class PurgeMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'Purge/Purge.i18n.php';
 }
 
+class PurgeCacheMessageGroup extends ExtensionMessageGroup {
+
+	protected $label = 'Purge cache';
+	protected $id = 'ext-purgecache';
+
+	protected $arrName = 'messages';
+	protected $messageFile = 'PurgeCache/PurgeCache.i18n.php';
+}
+
 class QuizMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Quiz';
 	protected $id    = 'ext-quiz';

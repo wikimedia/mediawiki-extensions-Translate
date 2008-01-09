@@ -170,6 +170,7 @@ $wgTranslateAC = array(
 'ext-proofreadpage'         => 'ProofreadPageMessageGroup',
 'ext-protectsection'        => 'ProtectSectionMessageGroup',
 'ext-purge'                 => 'PurgeMessageGroup',
+'ext-purgecache'            => 'PurgeCacheMessageGroup',
 'ext-quiz'                  => 'QuizMessageGroup',
 'ext-randomincategory'      => 'RandomInCategoryMessageGroup',
 'ext-regexblock'            => 'RegexBlockMessageGroup',
