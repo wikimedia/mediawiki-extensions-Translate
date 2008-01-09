@@ -1124,11 +1124,10 @@ class FlaggedRevsMakeReviewerMessageGroup extends MultipleFileMessageGroup {
 }
 
 class FilePathMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label   = 'File Path';
 	protected $id      = 'ext-filepath';
 
-	protected $arrName     = 'wgFilepathMessages';
+	protected $arrName     = 'messages';
 	protected $messageFile = 'Filepath/SpecialFilepath.i18n.php';
 }
 
