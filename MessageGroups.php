@@ -1375,7 +1375,7 @@ class MetavidWikiMessageGroup extends ExtensionMessageGroup {
 	protected $id    = 'ext-metavidwiki';
 
 	protected $arrName     = 'messages';
-	protected $messageFile = 'MetavidWik/languages/MV_Messages.php';
+	protected $messageFile = 'MetavidWiki/languages/MV_Messages.php';
 }
 
 class MicroIDMessageGroup extends ExtensionMessageGroup {
