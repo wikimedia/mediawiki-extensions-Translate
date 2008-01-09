@@ -1809,11 +1809,10 @@ class SignDocumentSpecialMessageGroup extends ExtensionMessageGroup {
 }
 
 class SiteMatrixMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Site Matrix';
 	protected $id    = 'ext-sitematrix';
 
-	protected $arrName     = 'wgSiteMatrixMessages';
+	protected $arrName     = 'messages';
 	protected $messageFile = 'SiteMatrix/SiteMatrix.i18n.php';
 }
 
