@@ -125,7 +125,6 @@ abstract class MessageGroup {
 	 */
 	public abstract function getMessage( $key, $code );
 
-
 	/**
 	 * Returns path to the file where translation of language code $code are.
 	 *
@@ -165,7 +164,6 @@ abstract class MessageGroup {
 
 			# CASE4: don't export non-translations unless translated in wiki
 			if ( !$m->pageExists && $translation === $m->definition ) continue;
-
 
 			# Otherwise it's good
 			$new[$key] = $translation;
@@ -232,7 +230,6 @@ $other
 $messagesAsString
 CODE;
 	}
-
 
 	function getDefinitions() {
 		return Language::getMessagesFor( 'en' );
@@ -306,7 +303,6 @@ CODE;
 		if ( $end === false ) return trim( substr( $contents, $start ) );
 		return trim( substr( $contents, $start, $end-$start ) );
 	}
-
 }
 
 abstract class ExtensionMessageGroup extends MessageGroup {
@@ -468,7 +464,6 @@ $x
 CODE;
 	}
 
-
 	function getDefinitions() {
 		$this->load( 'en' );
 		return $this->mcache['en'];
@@ -501,7 +496,6 @@ class MultipleFileMessageGroup extends ExtensionMessageGroup {
 	public function getMessageFile( $code ) {
 		return str_replace( '$CODE', $code, $this->filePattern );
 	}
-
 
 	protected function load( $code ) {
 		if ( isset($this->mcache[$code]) ) return;
@@ -544,7 +538,6 @@ class CoreMostUsedMessageGroup extends CoreMessageGroup {
 
 	public function export( MessageCollection $messages ) { return 'Not supported'; }
 	public function exportToFile( MessageCollection $messages, $authors ) { return 'Not supported'; }
-
 
 	function getDefinitions() {
 		$data = file_get_contents( dirname(__FILE__) . '/wikimedia-mostused.txt' );
@@ -1483,17 +1476,11 @@ class NewUserNotifMessageGroup extends ExtensionMessageGroup {
 }
 
 class NukeMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Nuke';
 	protected $id    = 'ext-nuke';
 
-	protected $functionName = 'SpecialNukeMessages';
+	protected $arrName = 'messages';
 	protected $messageFile  = 'Nuke/SpecialNuke.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportPrefix= "\t";
-	protected $exportLineP = "\t\t";
-	protected $exportEnd   = '),';
 }
 
 class OggHandlerMessageGroup extends ExtensionMessageGroup {
@@ -2146,7 +2133,6 @@ class FreeColMessageGroup extends MessageGroup {
 			return;
 		}
 
-
 		if ( !$linesXX) { return; }
 		foreach ( $linesXX as $line ) {
 			if ( !strpos( $line, '=' ) ) { continue; }
@@ -2168,7 +2154,6 @@ class FreeColMessageGroup extends MessageGroup {
 		}
 		return $txt;
 	}
-
 
 	function fill( MessageCollection $messages ) {
 		$this->load( $messages->code );
