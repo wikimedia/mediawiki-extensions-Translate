@@ -1277,11 +1277,10 @@ class LatexDocMessageGroup extends ExtensionMessageGroup {
 }
 
 class LinkSearchMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Link Search';
 	protected $id    = 'ext-linksearch';
 
-	protected $arrName     = 'wgLinkSearchMessages';
+	protected $arrName     = 'messages';
 	protected $messageFile = 'LinkSearch/LinkSearch.i18n.php';
 }
 
