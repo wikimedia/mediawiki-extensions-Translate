@@ -1009,11 +1009,10 @@ class DesysopMessageGroup extends ExtensionMessageGroup {
 }
 
 class DismissableSiteNoticeMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Dismissable SiteNotice';
 	protected $id    = 'ext-dismissablesitenotice';
 
-	protected $arrName     = 'wgDismissableSiteNoticeMessages';
+	protected $arrName     = 'messages';
 	protected $messageFile = 'DismissableSiteNotice/DismissableSiteNotice.i18n.php';
 
 	protected $ignored = array(
