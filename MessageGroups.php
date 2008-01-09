@@ -1456,14 +1456,11 @@ class NewestPagesMessageGroup extends ExtensionMessageGroup {
 }
 
 class NewuserLogMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Newuser Log';
 	protected $id    = 'ext-newuserlog';
 
-	protected $arrName     = 'wgNewuserlogMessages';
+	protected $arrName     = 'messages';
 	protected $messageFile = 'Newuserlog/Newuserlog.i18n.php';
-
-	protected $exportLineP = "\t";
 
 	protected $ignored = array(
 		'newuserlogentry',
