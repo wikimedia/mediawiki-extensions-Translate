@@ -993,11 +993,10 @@ class CountEditsMessageGroup extends ExtensionMessageGroup {
 }
 
 class CrossNamespaceLinksMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Cross Namespace Links';
 	protected $id    = 'ext-crossnamespacelinks';
 
-	protected $arrName     = 'wgCrossNamespaceLinksMessages';
+	protected $arrName     = 'messages';
 	protected $messageFile = 'CrossNamespaceLinks/SpecialCrossNamespaceLinks.i18n.php';
 }
 
