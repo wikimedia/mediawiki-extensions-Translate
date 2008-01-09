@@ -885,11 +885,10 @@ class CiteMessageGroup extends ExtensionMessageGroup {
 }
 
 class CiteSpecialMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label   = 'Cite (special page)';
 	protected $id      = 'ext-citespecial';
 
-	protected $arrName     = 'wgSpecialCiteMessages';
+	protected $arrName     = 'messages';
 	protected $messageFile = 'Cite/SpecialCite.i18n.php';
 
 	protected $ignored = array(
