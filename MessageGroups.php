@@ -679,8 +679,8 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-intersection',
 		'ext-linksearch',
 		'ext-lucenesearch',
-		'ext-makebot',
-		'ext-makesysop',
+		#'ext-makebot', # about to become obsolete pending Userrights interface clean up
+		#'ext-makesysop', # about to become obsolete pending Userrights interface clean up
 		'ext-newuserlog',
 		'ext-nuke',
 		'ext-ogghandler',
@@ -1318,6 +1318,7 @@ class LuceneSearchMessageGroup extends ExtensionMessageGroup {
 	);
 }
 
+# about to become obsolete pending Userrights interface clean up
 class MakeBotMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Make Bot';
 	protected $id    = 'ext-makebot';
@@ -1326,6 +1327,7 @@ class MakeBotMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile  = 'Makebot/Makebot.i18n.php';
 }
 
+# about to become obsolete pending Userrights interface clean up
 class MakeSysopMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Make Sysop';
 	protected $id    = 'ext-makesysop';
