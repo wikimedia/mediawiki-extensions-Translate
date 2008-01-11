@@ -1180,7 +1180,7 @@ class ImportFreeImagesMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Import Free Images';
 	protected $id    = 'ext-importfreeimages';
 
-	protected $functionName = 'messages';
+	protected $arrName = 'messages';
 	protected $messageFile  = 'ImportFreeImages/ImportFreeImages.i18n.php';
 }
 
