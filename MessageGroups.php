@@ -1069,11 +1069,11 @@ class FCKeditorExtensionGroup extends MultipleFileMessageGroup {
 	protected $label = 'FCKeditor';
 	protected $id    = 'ext-fckeditor';
 
-	protected $arrName      = 'allMessages';
+	protected $arrName      = 'messages';
 	protected $messageFile  = 'FCKeditor/FCKeditor.i18n.en.php';
 	protected $filePattern  = 'FCKeditor/FCKeditor.i18n.$CODE.php';
 
-	protected $exportStart = '$allMessages = array(';
+	protected $exportStart = '$messages = array(';
 	protected $exportEnd   = ');';
 }
 
@@ -1149,16 +1149,11 @@ class GadgetsExtensionGroup extends MultipleFileMessageGroup {
 }
 
 class GiveRollbackMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label   = 'Give Rollback';
 	protected $id      = 'ext-giverollback';
 
-	protected $functionName = 'efGiveRollbackMessages';
+	protected $arrName = 'messages';
 	protected $messageFile  = 'GiveRollback/GiveRollback.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportLineP = "\t";
-	protected $exportEnd   = '),';
 }
 
 class IconMessageGroup extends ExtensionMessageGroup {
