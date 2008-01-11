@@ -1412,17 +1412,11 @@ class NewuserLogMessageGroup extends ExtensionMessageGroup {
 }
 
 class NewUserNotifMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label   = 'New User Notification';
 	protected $id      = 'ext-newusernotif';
 
-	protected $functionName = 'efNewUserNotifMessages';
+	protected $arrName = 'messages';
 	protected $messageFile  = 'NewUserNotif/NewUserNotif.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportPrefix= '';
-	protected $exportLineP = "\t";
-	protected $exportEnd   = '),';
 }
 
 class NukeMessageGroup extends ExtensionMessageGroup {
