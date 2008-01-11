@@ -1341,11 +1341,10 @@ class MicroIDMessageGroup extends ExtensionMessageGroup {
 }
 
 class MiniDonationMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Mini Donation';
 	protected $id    = 'ext-minidonation';
 
-	protected $arrName     = 'wgMiniDonationMessages';
+	protected $arrName     = 'messages';
 	protected $messageFile = 'MiniDonation/MiniDonation.i18n.php';
 }
 
