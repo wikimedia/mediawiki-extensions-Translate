@@ -1209,11 +1209,10 @@ class IntersectionMessageGroup extends ExtensionMessageGroup {
 }
 
 class InterwikiMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Interwiki Edit Page';
 	protected $id    = 'ext-interwiki';
 
-	protected $arrName     = 'wgSpecialInterwikiMessages';
+	protected $arrName     = 'messages';
 	protected $messageFile = 'Interwiki/SpecialInterwiki.i18n.php';
 
 	protected $optional = array(
