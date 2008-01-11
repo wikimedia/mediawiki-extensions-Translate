@@ -86,7 +86,6 @@ class SpecialTranslate extends SpecialPage {
 			} else {
 				$wgOut->addHTML( $description . $links . $output . $links );
 			}
-
 		}
 	}
 
@@ -197,7 +196,7 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	protected function limitSelector() {
-		$items = array( 100, 250, 500, 1000, 2000 );
+		$items = array( 100, 250, 500, 1000, 2500 );
 		$selector = new HTMLSelector( 'limit', 'limit', $this->options['limit'] );
 		foreach ( $items as $count ) {
 			$selector->addOption( wfMsgExt( self::MSG . 'limit-option', 'parsemag', $count ), $count );
@@ -223,7 +222,7 @@ class SpecialTranslate extends SpecialPage {
 		$total = $this->paging['total'];
 
 		$allInThisPage = $start === 1 && $total <= $this->options['limit'];
-			
+
 		if ( $this->paging['count'] === 0 ) {
 			$navigation = wfMsgExt( self::MSG . 'showing-none', array( 'parse' ) );
 		} elseif ( $allInThisPage ) {
