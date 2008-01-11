@@ -1165,17 +1165,11 @@ class IconMessageGroup extends ExtensionMessageGroup {
 }
 
 class ImageMapMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Image Map';
 	protected $id    = 'ext-imagemap';
 
-	protected $functionName = 'efImageMapMessages';
+	protected $arrName = 'messages';
 	protected $messageFile  = 'ImageMap/ImageMap.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportPrefix= '';
-	protected $exportLineP = "\t";
-	protected $exportEnd   = '),';
 
 	protected $ignored = array(
 		'imagemap_desc_types',
