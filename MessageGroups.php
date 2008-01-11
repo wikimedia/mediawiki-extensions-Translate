@@ -1025,17 +1025,11 @@ class DuplicatorMessageGroup extends ExtensionMessageGroup {
 }
 
 class EditcountMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Edit Count';
 	protected $id    = 'ext-editcount';
 
-	protected $functionName = 'efSpecialEditcountMessages';
+	protected $arrName = 'messages';
 	protected $messageFile  = 'Editcount/SpecialEditcount.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportPrefix= '';
-	protected $exportLineP = "\t";
-	protected $exportEnd   = '),';
 }
 
 class EvalMessageGroup extends ExtensionMessageGroup {
