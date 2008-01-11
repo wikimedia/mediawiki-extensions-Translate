@@ -1510,17 +1510,11 @@ class PatrollerMessageGroup extends ExtensionMessageGroup {
 }
 
 class PdfHandlerMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label   = 'Pdf Handler';
 	protected $id      = 'ext-pdfhandler';
 
-	protected $functionName = 'efPdfHandlerMessages';
+	protected $arrName = 'messages';
 	protected $messageFile  = 'PdfHandler/PdfHandler.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportPrefix= "\t\t";
-	protected $exportLineP = "\t\t\t";
-	protected $exportEnd   = '),';
 }
 
 class PlayerMessageGroup extends MultipleFileMessageGroup {
@@ -1557,17 +1551,11 @@ class PovWatchMessageGroup extends ExtensionMessageGroup {
 }
 
 class ProfileMonitorMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label   = 'Profile Monitor';
 	protected $id      = 'ext-profilemonitor';
 
-	protected $functionName = 'efProfileMonitorMessages';
+	protected $arrName = 'messages';
 	protected $messageFile  = 'ProfileMonitor/ProfileMonitor.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportPrefix= '';
-	protected $exportLineP = "\t";
-	protected $exportEnd   = '),';
 }
 
 class ProofreadPageMessageGroup extends ExtensionMessageGroup {
@@ -1636,17 +1624,11 @@ class RenameUserMessageGroup extends ExtensionMessageGroup {
 }
 
 class ResignMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Resign';
 	protected $id    = 'ext-resign';
 
-	protected $functionName = 'efResignMessages';
+	protected $arrName = 'messages';
 	protected $messageFile  = 'Resign/SpecialResign.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportPrefix= '';
-	protected $exportLineP = "\t";
-	protected $exportEnd   = '),';
 }
 
 class ReviewMessageGroup extends ExtensionMessageGroup {
@@ -1857,17 +1839,11 @@ class TalkHereExtensionGroup extends MultipleFileMessageGroup {
 }
 
 class TemplateLinkMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Template Link';
 	protected $id    = 'ext-templatelink';
 
-	protected $arrName     = 'allMessages';
+	protected $arrName     = 'messages';
 	protected $messageFile = 'TemplateLink/TemplateLink.i18n.php';
-
-	protected $exportPrefix= "\t";
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportLineP = "\t\t";
-	protected $exportEnd   = "),";
 }
 
 class TidyTabMessageGroup extends ExtensionMessageGroup {
@@ -1939,17 +1915,11 @@ class UserContactLinksMessageGroup extends ExtensionMessageGroup {
 }
 
 class UserImagesMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label   = 'User Images';
 	protected $id      = 'ext-userimages';
 
-	protected $functionName = 'efUserImagesMessages';
+	protected $arrName = 'messages';
 	protected $messageFile  = 'UserImages/UserImages.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportPrefix= '';
-	protected $exportLineP = "\t";
-	protected $exportEnd   = '),';
 }
 
 class UserMergeMessageGroup extends ExtensionMessageGroup {
@@ -1977,17 +1947,11 @@ class UserRightsNotifMessageGroup extends ExtensionMessageGroup {
 }
 
 class VoteMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label   = 'Vote';
 	protected $id      = 'ext-vote';
 
-	protected $functionName = 'efVoteMessages';
+	protected $arrName = 'messages';
 	protected $messageFile  = 'Vote/Vote.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportPrefix= '';
-	protected $exportLineP = "\t";
-	protected $exportEnd   = '),';
 }
 
 class WatchersMessageGroup extends ExtensionMessageGroup {
@@ -1999,17 +1963,11 @@ class WatchersMessageGroup extends ExtensionMessageGroup {
 }
 
 class WebStoreMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Web Store';
 	protected $id    = 'ext-webstore';
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'WebStore/WebStore.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportPrefix= "\t";
-	protected $exportLineP = "\t\t";
-	protected $exportEnd   = '),';
 }
 
 class WhoIsWatchingMessageGroup extends ExtensionMessageGroup {
