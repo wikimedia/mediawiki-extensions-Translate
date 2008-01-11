@@ -1855,17 +1855,11 @@ class StalePagesMessageGroup extends ExtensionMessageGroup {
 }
 
 class SyntaxHighlight_GeSHiMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Syntax Highlight GeSHi';
 	protected $id    = 'ext-syntaxhighlightgeshi';
 
-	protected $functionName = 'efSyntaxHighlight_GeSHiMessages';
+	protected $arrName = 'messages';
 	protected $messageFile  = 'SyntaxHighlight_GeSHi/SyntaxHighlight_GeSHi.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportPrefix= '';
-	protected $exportLineP = "\t";
-	protected $exportEnd   = '),';
 }
 
 class TalkHereExtensionGroup extends MultipleFileMessageGroup {
