@@ -1177,17 +1177,11 @@ class ImageMapMessageGroup extends ExtensionMessageGroup {
 }
 
 class ImportFreeImagesMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Import Free Images';
 	protected $id    = 'ext-importfreeimages';
 
-	protected $functionName = 'efImportFreeImagesMessages';
+	protected $functionName = 'messages';
 	protected $messageFile  = 'ImportFreeImages/ImportFreeImages.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportPrefix= "\t\t";
-	protected $exportLineP = "\t\t\t";
-	protected $exportEnd   = '),';
 }
 
 class InputBoxMessageGroup extends ExtensionMessageGroup {
