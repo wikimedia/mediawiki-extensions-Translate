@@ -1391,16 +1391,11 @@ class NetworkAuthMessageGroup extends ExtensionMessageGroup {
 }
 
 class NewestPagesMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Newest Pages';
 	protected $id    = 'ext-newestpages';
 
-	protected $functionName = 'efNewestPagesMessages';
+	protected $arrName = 'messages';
 	protected $messageFile = 'NewestPages/NewestPages.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportLineP = "\t";
-	protected $exportEnd   = '),';
 }
 
 class NewuserLogMessageGroup extends ExtensionMessageGroup {
