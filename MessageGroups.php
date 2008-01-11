@@ -1349,17 +1349,11 @@ class MiniDonationMessageGroup extends ExtensionMessageGroup {
 }
 
 class MinimumNameLengthMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label   = 'Minimum Name Length';
 	protected $id      = 'ext-minimumnamelength';
 
-	protected $functionName = 'efMinimumNameLengthMessages';
+	protected $arrName = 'messages';
 	protected $messageFile  = 'MinimumNameLength/MinimumNameLength.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportPrefix= '';
-	protected $exportLineP = "\t";
-	protected $exportEnd   = '),';
 }
 
 class MiniPreviewExtensionGroup extends MultipleFileMessageGroup {
