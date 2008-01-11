@@ -967,17 +967,11 @@ class ContributorsMessageGroup extends ExtensionMessageGroup {
 }
 
 class CountEditsMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label   = 'Count Edits';
 	protected $id      = 'ext-countedits';
 
-	protected $functionName = 'efCountEditsMessages';
+	protected $arrName = 'messages';
 	protected $messageFile  = 'CountEdits/CountEdits.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportPrefix= '';
-	protected $exportLineP = "\t";
-	protected $exportEnd   = '),';
 }
 
 class CrossNamespaceLinksMessageGroup extends ExtensionMessageGroup {
