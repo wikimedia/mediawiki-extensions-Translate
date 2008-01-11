@@ -951,15 +951,11 @@ class ContributionScoresMessageGroup extends ExtensionMessageGroup {
 }
 
 class ContributionseditcountMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label   = 'Contributions Edit Count';
 	protected $id      = 'ext-contributionseditcount';
 
-	protected $functionName = 'efContributionseditcountMessages';
+	protected $arrName = 'messages';
 	protected $messageFile  = 'Contributionseditcount/Contributionseditcount.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportEnd   = '),';
 }
 
 class ContributorsMessageGroup extends ExtensionMessageGroup {
