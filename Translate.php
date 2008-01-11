@@ -11,7 +11,7 @@ if (!defined('MEDIAWIKI')) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '7.16' );
+define( 'TRANSLATE_VERSION', '7.17' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'Translate',

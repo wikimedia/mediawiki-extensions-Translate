@@ -1011,17 +1011,11 @@ class DismissableSiteNoticeMessageGroup extends ExtensionMessageGroup {
 }
 
 class DuplicatorMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Duplicator';
 	protected $id    = 'ext-duplicator';
 
-	protected $functionName = 'efDuplicatorMessages';
+	protected $arrName = 'messages';
 	protected $messageFile  = 'Duplicator/Duplicator.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportPrefix= '';
-	protected $exportLineP = "\t";
-	protected $exportEnd   = '),';
 }
 
 class EditcountMessageGroup extends ExtensionMessageGroup {
@@ -1312,16 +1306,11 @@ class MathStatMessageGroup extends ExtensionMessageGroup {
 }
 
 class MediaFunctionsMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label   = 'Media Functions';
 	protected $id      = 'ext-mediafunctions';
 
-	protected $functionName = 'efMediaFunctionsMessages';
+	protected $arrName = 'messages';
 	protected $messageFile  = 'MediaFunctions/MediaFunctions.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportLineP = "\t";
-	protected $exportEnd   = '),';
 }
 
 class MetavidWikiMessageGroup extends ExtensionMessageGroup {
