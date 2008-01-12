@@ -1993,6 +1993,24 @@ $messages['tet'] = array(
 	'translate-magic-submit'            => 'Hola',
 );
 
+/** Turkish (Türkçe)
+ * @author Karduelis
+ */
+$messages['tr'] = array(
+	'translate'                      => 'Çeviri',
+	'translate-edit'                 => 'Düzelt',
+	'translate-talk'                 => 'Tartışma',
+	'translate-history'              => 'Geçmiş',
+	'translate-page-settings-legend' => 'Ayarlar',
+	'translate-page-group'           => 'Grup',
+	'translate-page-language'        => 'Dil',
+	'translate-page-limit'           => 'Sınır',
+	'translate-submit'               => 'Getir',
+	'translate-next'                 => 'İleri',
+	'translate-prev'                 => 'Geri',
+	'translate-edit-contribute'      => 'Katkıda bulun',
+);
+
 $messages['ug'] = array(
 	'translate-edit' => 'uzgartish',
 	'translate-talk' => 'monazire',
