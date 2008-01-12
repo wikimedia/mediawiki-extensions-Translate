@@ -798,6 +798,14 @@ class BookInformationMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile  = 'BookInformation/BookInformation.i18n.php';
 }
 
+class CallMessageGroup extends ExtensionMessageGroup {
+	protected $label   = 'Call';
+	protected $id      = 'ext-call';
+
+	protected $arrName = 'messages';
+	protected $messageFile = 'Call/Call.i18n.php';
+}
+
 class CategoryTreeExtensionGroup extends MultipleFileMessageGroup {
 	protected $fileExporter = null;
 	protected $label = 'Category Tree';
