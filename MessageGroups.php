@@ -1305,11 +1305,10 @@ class MakeSysopMessageGroup extends ExtensionMessageGroup {
 }
 
 class MathStatMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Math Stat';
 	protected $id    = 'ext-mathstat';
 
-	protected $arrName     = 'wgMathStatFunctionsMessages';
+	protected $arrName     = 'messages';
 	protected $messageFile = 'MathStatFunctions/MathStatFunctions.i18n.php';
 }
 
