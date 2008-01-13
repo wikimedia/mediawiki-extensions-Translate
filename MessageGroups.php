@@ -1273,11 +1273,10 @@ class LookupUserMessageGroup extends ExtensionMessageGroup {
 }
 
 class LuceneSearchMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Lucene Search';
 	protected $id    = 'ext-lucenesearch';
 
-	protected $arrName     = 'wgLuceneSearchMessages';
+	protected $arrName     = 'messages';
 	protected $messageFile = 'LuceneSearch/LuceneSearch.i18n.php';
 
 	protected $ignored = array(
