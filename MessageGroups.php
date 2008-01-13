@@ -1485,17 +1485,11 @@ class ParserFunctionsMessageGroup extends ExtensionMessageGroup {
 }
 
 class PatrollerMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label   = 'Patroller';
 	protected $id      = 'ext-patroller';
 
-	protected $functionName = 'efPatrollerMessages';
+	protected $arrName = 'messages';
 	protected $messageFile  = 'Patroller/Patroller.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportPrefix= '';
-	protected $exportLineP = "\t";
-	protected $exportEnd   = '),';
 }
 
 class PdfHandlerMessageGroup extends ExtensionMessageGroup {
