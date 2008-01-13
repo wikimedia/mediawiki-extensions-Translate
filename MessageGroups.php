@@ -1970,6 +1970,7 @@ class WhoIsWatchingMessageGroup extends ExtensionMessageGroup {
 }
 
 class WikidataLanguageManagerMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Wikidata Language Manager';
 	protected $id    = 'ext-wikidatalanguagemanager';
 
@@ -1978,6 +1979,7 @@ class WikidataLanguageManagerMessageGroup extends ExtensionMessageGroup {
 }
 
 class WikidataOmegaWikiDataSearchMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Wikidata OmegaWiki Data Search';
 	protected $id    = 'ext-wikidataomegawikidatasearch';
 
