@@ -1479,17 +1479,11 @@ class PasswordResetMessageGroup extends ExtensionMessageGroup {
 }
 
 class ParserFunctionsMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label   = 'Parser Functions';
 	protected $id      = 'ext-parserfunctions';
 
-	protected $functionName = 'efParserFunctionsMessages';
+	protected $arrName = 'messages';
 	protected $messageFile  = 'ParserFunctions/ParserFunctions.i18n.php';
-
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportPrefix= '';
-	protected $exportLineP = "\t";
-	protected $exportEnd   = '),';
 }
 
 class PatrollerMessageGroup extends ExtensionMessageGroup {
