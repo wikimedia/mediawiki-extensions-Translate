@@ -1676,45 +1676,27 @@ class ShowProcesslistMessageGroup extends ExtensionMessageGroup {
 }
 
 class SignDocumentMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Sign Document';
 	protected $id    = 'ext-signdocument';
 
-	protected $arrName     = 'allMessages';
+	protected $arrName     = 'messages';
 	protected $messageFile = 'SignDocument/SignDocument.i18n.php';
-
-	protected $exportPrefix= "\t";
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportLineP = "\t\t";
-	protected $exportEnd   = "),";
 }
 
 class SignDocumentSpecialCreateMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Sign Document Special Create';
 	protected $id    = 'ext-signdocumentspecialcreate';
 
-	protected $arrName     = 'allMessages';
+	protected $arrName     = 'messages';
 	protected $messageFile = 'SignDocument/SpecialCreateSignDocument.i18n.php';
-
-	protected $exportPrefix= "\t";
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportLineP = "\t\t";
-	protected $exportEnd   = "),";
 }
 
 class SignDocumentSpecialMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Sign Document Special';
 	protected $id    = 'ext-signdocumentspecial';
 
-	protected $arrName     = 'allMessages';
+	protected $arrName     = 'messages';
 	protected $messageFile = 'SignDocument/SpecialSignDocument.i18n.php';
-
-	protected $exportPrefix= "\t";
-	protected $exportStart = '\'$CODE\' => array(';
-	protected $exportLineP = "\t\t";
-	protected $exportEnd   = "),";
 }
 
 class SiteMatrixMessageGroup extends ExtensionMessageGroup {
