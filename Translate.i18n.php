@@ -263,6 +263,82 @@ $messages['ar'] = array(
 	'translate-checks-plural'           => 'التعريف يستخدم <nowiki>{{PLURAL:}}</nowiki> لكن الترجمة لا.',
 );
 
+/** Asturian (Asturianu)
+ * @author Esbardu
+ */
+$messages['ast'] = array(
+	'translate'                         => 'Traducir',
+	'translate-edit'                    => 'editar',
+	'translate-talk'                    => 'alderique',
+	'translate-history'                 => 'historial',
+	'translate-task-view'               => 'Ver tolos mensaxes del',
+	'translate-task-untranslated'       => 'Ver tolos mensaxes non traducíos del',
+	'translate-task-optional'           => 'Ver los mensaxes opcionales del',
+	'translate-task-review'             => 'Revisar los cambeos nel',
+	'translate-task-reviewall'          => 'Revisar toles traducciones del',
+	'translate-task-export'             => 'Esportar les traducciones del',
+	'translate-task-export-to-file'     => 'Esportar a un archivu les traducciones del',
+	'translate-task-export-as-po'       => 'Esportar les traducciones en formatu Gettext',
+	'translate-page-no-such-language'   => 'La llingua especificada nun foi válida.',
+	'translate-page-no-such-task'       => 'El llabor especificáu nun foi válidu.',
+	'translate-page-no-such-group'      => 'El grupu especificáu nun foi válidu.',
+	'translate-page-settings-legend'    => 'Configuración',
+	'translate-page-task'               => 'Quiero',
+	'translate-page-group'              => 'Grupu',
+	'translate-page-language'           => 'Llingua',
+	'translate-page-limit'              => 'Llímite',
+	'translate-page-limit-option'       => '$1 {{PLURAL:$1|mensaxe|mensaxes}} per páxina',
+	'translate-submit'                  => 'Amosar',
+	'translate-page-navigation-legend'  => 'Navegación',
+	'translate-page-showing'            => 'Amosando mensaxes del $1 al $2 de $3.',
+	'translate-page-showing-all'        => 'Amosando $1 {{PLURAL:$1|mensaxe|mensaxes}}.',
+	'translate-page-showing-none'       => "Nun hai mensaxes qu'amosar.",
+	'translate-next'                    => 'Páxina siguiente',
+	'translate-prev'                    => 'Páxina anterior',
+	'translate-page-description-legend' => 'Información del grupu',
+	'translate-optional'                => '(opcional)',
+	'translate-ignored'                 => '(inoráu)',
+	'translate-edit-definition'         => 'Definición del mensaxe',
+	'translate-edit-contribute'         => 'contribuyir',
+	'translate-edit-no-information'     => "''Esti mensaxe nun tien documentación. Si sabes ú o cómo s'usa esti mensaxe, pues aidar a otros traductores amestando documentación a esti mensaxe.''",
+	'translate-edit-information'        => 'Información sobre esti mensaxe ($1)',
+	'translate-edit-in-other-languages' => "Mensaxe n'otres llingües",
+	'translate-edit-committed'          => 'Traducción actual nel software',
+	'translate-edit-warnings'           => 'Avisos sobre traducciones incompletes',
+	'translate-magic-pagename'          => 'Traducción estendida de MediaWiki',
+	'translate-magic-help'              => "Pues traducir los nomes de les páxines especiales, les pallabres máxiques, los nomes de les pieles y los nomes de los espacios de nome.
+
+Nes pallabres máxiques necesites incluyir les traducciones ingleses, o dexarán de furrular. Dexa tamién el primer elementu (0 ó 1) como ta.
+
+Los nomes de les páxines especiales y les pallabres máxiques puen tener múltiples traducciones. Les traducciones sepárense con una coma (,). Los nomes de les pieles y los espacios de nome namái puen tener una traducción.
+
+Nes traducciones de los espacios de nome <tt>$1 talk</tt> ye especial <tt>$1</tt> ye sustituyíu pol nome del sitiu (por exemplu <tt>{{SITENAME}} talk</tt>). Si na to llingua nun ye posible formar una espresión válida ensin camudar el nome del sitiu, por favor contauta con un desenrollador.
+
+Necesites tar nel grupu de traductores pa guardar los cambeos. Los cambeos nun se graben hasta que calques nel botón guardar d'abaxo.",
+	'translate-magic-form'              => 'Llingua: $1 Módulu: $2 $3',
+	'translate-magic-submit'            => 'Amosar',
+	'translate-magic-cm-to-be'          => 'Propuesta',
+	'translate-magic-cm-current'        => 'Actual',
+	'translate-magic-cm-original'       => 'Orixinal',
+	'translate-magic-cm-fallback'       => 'Llingua por defeutu',
+	'translate-magic-cm-save'           => 'Guardar',
+	'translate-magic-cm-export'         => 'Esportar',
+	'translate-magic-cm-updatedusing'   => 'Actualizao usando Special:Magic',
+	'translate-magic-cm-savefailed'     => "Falló'l guardáu",
+	'translate-magic-special'           => 'Nomes de páxines especiales',
+	'translate-magic-words'             => 'Pallabres máxiques',
+	'translate-magic-skin'              => 'Nomes de pieles',
+	'translate-magic-namespace'         => "Nomes d'espacios de nome",
+	'translationchanges'                => 'Cambeos de traducción',
+	'translationchanges-export'         => 'esportar',
+	'translationchanges-change'         => '$1: $2 por $3',
+	'translate-checks-parameters'       => "Los siguientes parámetros nun s'usen: <strong>$1</strong>",
+	'translate-checks-balance'          => 'Hai un númberu impar de paréntesis: <strong>$1</strong>',
+	'translate-checks-links'            => 'Los siguientes enllaces son problemáticos: <strong>$1</strong>',
+	'translate-checks-xhtml'            => 'Por favor sustitúi les siguientes etiquetes coles correutes: <strong>$1</strong>',
+	'translate-checks-plural'           => 'La definición usa <nowiki>{{PLURAL:}}</nowiki> pero la traducción non.',
+);
+
 $messages['bcl'] = array(
 	'translate' => 'Sangliân',
 	'translate-edit' => 'hirahón',
@@ -1939,6 +2015,7 @@ $messages['sv'] = array(
 	'translate-edit-information'        => 'Information om detta meddelande ($1)',
 	'translate-edit-in-other-languages' => 'Meddelandet på andra språk',
 	'translate-edit-committed'          => 'Nuvarande översättning i mjukvaran',
+	'translate-edit-warnings'           => 'Varningar om fel i översättningen',
 	'translate-magic-pagename'          => 'Utökad MediaWiki-översättning',
 	'translate-magic-help'              => 'Du kan översätta alias för specialsidor, magiska ord, skin-namn och namnrymdsnamn.
 
