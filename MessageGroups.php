@@ -1957,6 +1957,8 @@ class WikidataOmegaWikiDataSearchMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'Wikidata/OmegaWiki/SpecialDatasearch.i18n.php';
+
+	protected $ignored = array( 'ow_editing_policy_url' );
 }
 
 class FreeColMessageGroup extends MessageGroup {
