@@ -1944,19 +1944,12 @@ class WhoIsWatchingMessageGroup extends ExtensionMessageGroup {
 }
 
 class WikidataLanguageManagerMessageGroup extends ExtensionMessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'Wikidata Language Manager';
 	protected $id    = 'ext-wikidatalanguagemanager';
 
-	protected $arrName     = 'messages';
+	protected $arrName     = 'wdMessages';
 	protected $messageFile = 'Wikidata/SpecialLanguages.i18n.php';
-}
-
-class WikidataOmegaWikiDataSearchMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Wikidata OmegaWiki Data Search';
-	protected $id    = 'ext-wikidataomegawikidatasearch';
-
-	protected $arrName     = 'messages';
-	protected $messageFile = 'Wikidata/OmegaWiki/SpecialDatasearch.i18n.php';
 
 	protected $ignored = array( 'ow_editing_policy_url' );
 }
