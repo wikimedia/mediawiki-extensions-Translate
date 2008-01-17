@@ -685,6 +685,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-nuke',
 		'ext-ogghandler',
 		'ext-oversight',
+		'ext-parserdifftest',
 		'ext-parserfunctions',
 		'ext-proofreadpage',
 		'ext-quiz',
@@ -1474,6 +1475,14 @@ class PasswordResetMessageGroup extends ExtensionMessageGroup {
 	protected $arrName     = 'messages';
 	protected $messageFile = 'PasswordReset/PasswordReset.i18n.php';
 
+}
+
+class ParserDiffTestMessageGroup extends ExtensionMessageGroup {
+	protected $label   = 'Parser Diff Test';
+	protected $id      = 'ext-parserdifftest';
+
+	protected $arrName = 'messages';
+	protected $messageFile  = 'ParserDiffTest/ParserDiffTest.i18n.php';
 }
 
 class ParserFunctionsMessageGroup extends ExtensionMessageGroup {

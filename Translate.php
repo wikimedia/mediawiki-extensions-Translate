@@ -162,6 +162,7 @@ $wgTranslateAC = array(
 'ext-oversight'             => 'OversightMessageGroup',
 'ext-pageby'                => 'PageByMessageGroup',
 'ext-passwordreset'         => 'PasswordResetMessageGroup',
+'ext-parserdifftest'        => 'ParserDiffTestMessageGroup',
 'ext-parserfunctions'       => 'ParserfunctionsMessageGroup',
 'ext-patroller'             => 'PatrollerMessageGroup',
 'ext-pdfhandler'            => 'PdfHandlerMessageGroup',
