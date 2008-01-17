@@ -1680,7 +1680,7 @@ $messages['oc'] = array(
 	'translate-ignored'                 => '(ignorat)',
 	'translate-edit-definition'         => 'Definicion del messatge',
 	'translate-edit-contribute'         => 'contribuir',
-	'translate-edit-no-information'     => 'Actualament, aqueste messatge es pas documentat. Se sabètz ont o cossí aqueste messatge es utilizat, podètz ajuadar los autres traductors en documentant aqueste messatge.',
+	'translate-edit-no-information'     => 'Actualament, aqueste messatge es pas documentat. Se sabètz ont o cossí aqueste messatge es utilizat, podètz ajudar los autres traductors en documentant aqueste messatge.',
 	'translate-edit-information'        => 'Informacions concernent aqueste messatge ($1)',
 	'translate-edit-in-other-languages' => 'Messatge dins las autras lengas',
 	'translate-edit-committed'          => 'Traduccions actualas ja dins lo logicial',
@@ -2105,6 +2105,7 @@ $messages['tr'] = array(
 	'translate-next'                 => 'İleri',
 	'translate-prev'                 => 'Geri',
 	'translate-edit-contribute'      => 'Katkıda bulun',
+	'translate-magic-cm-save'        => 'Kaydet',
 );
 
 $messages['ug'] = array(
