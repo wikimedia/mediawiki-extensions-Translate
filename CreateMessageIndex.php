@@ -13,8 +13,11 @@ foreach ( $groups as $g ) {
 	$messages = $g->getDefinitions();
 	$id = $g->getId();
 
-
-	echo "Working with $id\n";
+	if ( is_array( $messages ) ) {
+		echo "Working with $id\n";
+	} else {
+		echo "Something wrong with $id... skipping\n";
+	}
 	foreach ( $messages as $key => $data ) {
 		# Force all keys to lower case, because the case doesn't matter and it is
 		# easier to do comparing when the case of first letter is unknown, because

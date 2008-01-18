@@ -2123,6 +2123,15 @@ class WikiMessageGroup extends MessageGroup {
 	public function setLabel( $label ) {
 		$this->label = $label;
 	}
+
+	/**
+	 * Sets meta status for this group.
+	 *
+	 * @param $value Boolean value
+	 */
+	public function setMeta( $value ) {
+		$this->meta = (bool) $value;
+	}
 }
 
 class MessageGroups {
