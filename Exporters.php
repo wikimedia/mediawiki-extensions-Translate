@@ -87,7 +87,7 @@ class StandardExtensionExporter implements MessageExporter {
 
 		$headerP = "
 		.*? # Ungreedily eat header
-		\$$var \s* = \s* array\(\);";
+		\\$$var \s* = \s* array\(\);";
 		/*
 		* x to have nice syntax
 		* u for utf-8
@@ -103,7 +103,7 @@ class StandardExtensionExporter implements MessageExporter {
 		list( , $header, $data) = $matches;
 
 		$sectionP = '(?: /\*\* .*? \*/ )? (?: ( [^\n]*?  \S;\n ) | (?: .*?  \n\);\n\n ) )';
-		$codeP = "\$$var\[' (.*?) '\]";
+		$codeP = "\\$$var\[' (.*?) '\]";
 
 		$sectionMatches = array();
 		if ( !preg_match_all( "~$sectionP~xsu", $data, $sectionMatches, PREG_SET_ORDER ) ) {
