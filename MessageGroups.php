@@ -1455,17 +1455,12 @@ class OversightMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile  = 'Oversight/HideRevision.i18n.php';
 }
 
-class PageByMessageGroup extends MultipleFileMessageGroup {
-	protected $fileExporter = null;
+class PageByMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Page By';
 	protected $id    = 'ext-pageby';
 
 	protected $arrName      = 'messages';
 	protected $messageFile  = 'PageBy/PageBy.i18n.php';
-	protected $filePattern  = 'PageBy/PageBy.i18n.$CODE.php';
-
-	protected $exportStart = '$messages = array(';
-	protected $exportEnd   = ');';
 }
 
 class PasswordResetMessageGroup extends ExtensionMessageGroup {
