@@ -7,7 +7,7 @@ require_once( $IP . 'commandLine.inc' );
 
 function showUsage() {
 	print <<<EOT
-Message exporter. Currently supports only cor messages.
+Message exporter.
 
 Usage: php export.php [options...]
 

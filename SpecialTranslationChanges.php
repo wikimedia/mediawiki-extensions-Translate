@@ -23,36 +23,10 @@ class SpecialTranslationChanges extends SpecialPage {
 		);
 
 		$this->setHeaders();
-		$this->hours = $wgRequest->getInt( 'hours', 24 );
+		$this->hours = min( 168, $wgRequest->getInt( 'hours', 24 ) );
 	
-		$rows = $this->runQuery( $this->hours );
+		$rows = TranslateUtils::translationChanges( $this->hours );
 		$wgOut->addHTMl( $this->settingsForm() . $this->output( $rows ) );
-	}
-
-	protected function runQuery( $hours = '' ) {
-		$dbr = wfGetDB( DB_SLAVE );
-		$recentchanges = $dbr->tableName( 'recentchanges' );
-		$hours = intval( $hours );
-		$cutoff_unixtime = time() - ( $hours * 3600 );
-		#$cutoff_unixtime = $cutoff_unixtime - ($cutoff_unixtime % 86400);
-		$cutoff = $dbr->timestamp( $cutoff_unixtime );
-
-		$fields = 'rc_title, rc_timestamp, rc_user_text';
-
-		$sql = "SELECT $fields, substring_index(rc_title, '/', -1) as lang FROM $recentchanges " .
-		"WHERE rc_timestamp >= '{$cutoff}' " .
-		"AND rc_namespace = 8 " .
-		"ORDER BY lang ASC, rc_timestamp DESC";
-
-		$res = $dbr->query( $sql, __METHOD__ );
-
-		// Fetch results, prepare a batch link existence check query
-		$rows = array();
-		while( $row = $dbr->fetchObject( $res ) ){
-			$rows[] = $row;
-		}
-		$dbr->freeResult( $res );
-		return $rows;
 	}
 
 	/**
