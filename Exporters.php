@@ -10,28 +10,23 @@ if (!defined('MEDIAWIKI')) die();
  */
 
 interface MessageExporter {
-	public function __construct( $group, $languages, $target );
-	public function export();
+	public function __construct( MessageGroup $group );
+	public function export( Array $languages, $target );
 }
 
 class CoreExporter implements MessageExporter {
 	protected $group = null;
-	protected $languages = array();
-	protected $target = null;
-
-	public function __construct( $group, $languages, $target ) {
+	public function __construct( MessageGroup $group ) {
 		$this->group = $group;
-		$this->languages = $languages;
-		$this->target = $target;
 	}
 
-	public function export() {
-		foreach ( $this->languages as $code ) {
+	public function export( Array $languages, $target ) {
+		foreach ( $languages as $code ) {
 			$taskOptions = new TaskOptions( $code, 0, 0, 0, null );
 			$task = TranslateTasks::getTask( 'export-to-file' );
 			$task->init( $this->group, $taskOptions );
 			file_put_contents(
-				$this->target . '/'. $this->group->getMessageFile( $code ),
+				$target . '/'. $this->group->getMessageFile( $code ),
 				$task->execute()
 			);
 		}
@@ -41,40 +36,35 @@ class CoreExporter implements MessageExporter {
 
 class StandardExtensionExporter implements MessageExporter {
 	protected $group = null;
-	protected $languages = array();
-	protected $target = null;
-
-	public function __construct( $group, $languages, $target ) {
+	public function __construct( MessageGroup $group ) {
 		$this->group = $group;
-		$this->languages = $languages;
-		$this->target = $target;
 	}
 
-	public function export() {
+	public function export( Array $languages, $target ) {
 		global $wgTranslateExtensionDirectory;
 		$filename = $this->group->getMessageFile( '' /* Ignored */ );
 		list( $header, $sections ) = $this->parse( $wgTranslateExtensionDirectory . '/' . $filename );
 		$output = $header;
-		$output .= $this->exportLanguage( 'en', $sections );
-		$output .= $this->exportLanguage( 'qqq', $sections );
+		$output .= $this->exportLanguage( 'en', $languages, $sections );
+		$output .= $this->exportLanguage( 'qqq', $languages, $sections );
 
-		$languages = Language::getLanguageNames( false );
-		foreach ( array_keys( $languages ) as $code ) {
+		$__languages = Language::getLanguageNames( false );
+		foreach ( array_keys( $__languages ) as $code ) {
 			if ( $code === 'en' || $code === 'qqq' ) continue;
-			$output .= $this->exportLanguage( $code, $sections );
+			$output .= $this->exportLanguage( $code, $languages, $sections );
 		}
 
 		// The hacks, aka copies of another languages
 		$output .= implode( '', $sections );
 
-		$targetFile = $this->target . '/' . $filename;
+		$targetFile = $target . '/' . $filename;
 		wfMkdirParents( dirname( $targetFile ) );
 		file_put_contents( $targetFile, $output );
 	}
 
-	protected function exportLanguage( $code, &$sections ) {
+	private function exportLanguage( $code, Array $languages, &$sections ) {
 		$output = '';
-		if ( in_array( $code, $this->languages ) ) {
+		if ( in_array( $code, $languages ) ) {
 			$taskOptions = new TaskOptions( $code, 0, 0, 0, null );
 			$task  = TranslateTasks::getTask( 'export-to-file' );
 			$task->init( $this->group, $taskOptions );
@@ -91,11 +81,13 @@ class StandardExtensionExporter implements MessageExporter {
 	}
 
 	protected function parse( $filename ) {
+		$var = $this->group->getVariableName();
+
 		$data = file_get_contents( $filename );
 
-		$headerP = '
+		$headerP = "
 		.*? # Ungreedily eat header
-		\$messages \s* = \s* array\(\);';
+		\$$var \s* = \s* array\(\);";
 		/*
 		* x to have nice syntax
 		* u for utf-8
@@ -111,7 +103,7 @@ class StandardExtensionExporter implements MessageExporter {
 		list( , $header, $data) = $matches;
 
 		$sectionP = '(?: /\*\* .*? \*/ )? (?: ( [^\n]*?  \S;\n ) | (?: .*?  \n\);\n\n ) )';
-		$codeP = '\$messages\[\' (.*?) \'\]';
+		$codeP = "\$$var\[' (.*?) '\]";
 
 		$sectionMatches = array();
 		if ( !preg_match_all( "~$sectionP~xsu", $data, $sectionMatches, PREG_SET_ORDER ) ) {
@@ -135,4 +127,31 @@ class StandardExtensionExporter implements MessageExporter {
 
 		return array( $header, $sections );
 	}
+}
+
+class MultipleFileExtensionExporter extends StandardExtensionExporter {
+	protected $header = '';
+
+	public function export( Array $languages, $target ) {
+		foreach ( $languages as $code ) {
+			$output = "<?php\n";
+			$output .= $this->header;
+			$output .= $this->exportLang( $code );
+
+			$filename = $this->group->getMessageFile( $code );
+			$targetFile = $target . '/' . $filename;
+			wfMkdirParents( dirname( $targetFile ) );
+			file_put_contents( $targetFile, $output );
+		}
+	}
+
+	private function exportLang( $code ) {
+		$output = '';
+		$taskOptions = new TaskOptions( $code, 0, 0, 0, null );
+		$task  = TranslateTasks::getTask( 'export-to-file' );
+		$task->init( $this->group, $taskOptions );
+		$output = $task->execute() . "\n";
+		return $output;
+	}
+
 }

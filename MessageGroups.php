@@ -63,7 +63,7 @@ abstract class MessageGroup {
 	 * Returns a class name of file exporter.
 	 */
 	public function getFileExporter() {
-		return $this->fileExporter;
+		return new $this->fileExporter( $this );
 	}
 
 	/**
@@ -339,6 +339,10 @@ abstract class ExtensionMessageGroup extends MessageGroup {
 	public function getLabel() { return $this->label . " (mw ext)"; }
 
 	public function getMessageFile( $code ) { return $this->messageFile; }
+
+	public function getVariableName() {
+		return $this->arrName ? $this->arrName : 'messages';
+	}
 
 	public function getMessage( $key, $code ) {
 		$this->load( $code );
@@ -1081,7 +1085,7 @@ class FCKeditorExtensionGroup extends MultipleFileMessageGroup {
 }
 
 class FlaggedRevsMessageGroup extends MultipleFileMessageGroup {
-	protected $fileExporter = null;
+	protected $fileExporter = 'MultipleFileExtensionExporter';
 	protected $label   = 'Flagged Revs';
 	protected $id      = 'ext-flaggedrevs';
 

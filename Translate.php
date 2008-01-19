@@ -36,6 +36,8 @@ $wgAutoloadClasses['TMessage'] = $dir . 'Message.php';
 
 $wgAutoloadClasses['CoreExporter'] = $dir . 'Exporters.php';
 $wgAutoloadClasses['StandardExtensionExporter'] = $dir . 'Exporters.php';
+$wgAutoloadClasses['MultipleFileExtensionExporter'] = $dir . 'Exporters.php';
+
 
 $wgAutoloadClasses['TranslateEditAddons'] = $dir . 'TranslateEditAddons.php';
 $wgAutoloadClasses['languages'] = $IP . '/maintenance/language/languages.inc';

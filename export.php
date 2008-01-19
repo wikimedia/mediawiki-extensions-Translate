@@ -50,10 +50,8 @@ if ( is_null( $group ) || $group->isMeta() ) {
 }
 
 if ( $group->canExportToFile() ) {
-	$class = $group->getFileExporter();
-	$exporter = new $class( $group, $langs, $options['target'] );
+	$exporter = $group->getFileExporter();
+	$exporter->export( $langs, $options['target'] );
 } else {
 	echo "Cannot export to file\n\n";
 }
-
-$exporter->export();
