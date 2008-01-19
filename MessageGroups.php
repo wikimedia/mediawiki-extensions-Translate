@@ -1788,19 +1788,15 @@ class SyntaxHighlight_GeSHiMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile  = 'SyntaxHighlight_GeSHi/SyntaxHighlight_GeSHi.i18n.php';
 }
 
-class TalkHereExtensionGroup extends MultipleFileMessageGroup {
-	protected $fileExporter = null;
+class TalkHereExtensionGroup extends ExtensionMessageGroup {
 	protected $label = 'Talk Here';
 	protected $id    = 'ext-talkhere';
 
 	protected $arrName      = 'messages';
 	protected $messageFile  = 'TalkHere/TalkHere.i18n.php';
-	protected $filePattern  = 'TalkHere/TalkHere.i18n.$CODE.php';
-
-	protected $exportStart = '$messages = array(';
-	protected $exportEnd   = ');';
 
 	protected $ignored = array(
+		'talkhere-title',
 		'talkhere-headtext',
 		'talkhere-afterinput',
 		'talkhere-afterform',
