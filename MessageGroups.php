@@ -1642,17 +1642,12 @@ class ScanSetMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'ScanSet/ScanSet.i18n.php';
 }
 
-class SelectCategoryExtensionGroup extends MultipleFileMessageGroup {
-	protected $fileExporter = null;
+class SelectCategoryExtensionGroup extends ExtensionMessageGroup {
 	protected $label = 'Select Category';
 	protected $id    = 'ext-selectcategory';
 
 	protected $arrName      = 'messages';
 	protected $messageFile  = 'SelectCategory/i18n/SelectCategory.i18n.php';
-	protected $filePattern  = 'SelectCategory/i18n/SelectCategory.i18n.$CODE.php';
-
-	protected $exportStart = '$messages = array(';
-	protected $exportEnd   = ');';
 }
 
 class SemanticDrilldownMessageGroup extends ExtensionMessageGroup {
