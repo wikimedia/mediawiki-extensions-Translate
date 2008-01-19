@@ -1647,7 +1647,7 @@ class SelectCategoryExtensionGroup extends ExtensionMessageGroup {
 	protected $id    = 'ext-selectcategory';
 
 	protected $arrName      = 'messages';
-	protected $messageFile  = 'SelectCategory/i18n/SelectCategory.i18n.php';
+	protected $messageFile  = 'SelectCategory/SelectCategory.i18n.php';
 }
 
 class SemanticDrilldownMessageGroup extends ExtensionMessageGroup {
