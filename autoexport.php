@@ -89,7 +89,7 @@ foreach ( $exports as $group => $languages ) {
 		list( $group, ) = explode( '-', $group, 2 );
 	}
 	if ( isset($notice[$group]) ) {
-		$notice[$group] += $languages;
+		$notice[$group] = array_merge( $notice[$group], $languages );
 	} else {
 		$notice[$group] = $languages;
 	}
@@ -99,5 +99,5 @@ foreach ( $notice as $group => $languages ) {
 	$languages = array_unique( $languages );
 	sort($languages);
 	$languagelist = implode(', ', $languages );
-	echo "Committed $group: $languagelist\n";
+	echo "# Committed $group: $languagelist\n";
 }
