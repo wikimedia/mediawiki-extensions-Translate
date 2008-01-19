@@ -812,7 +812,7 @@ class CallMessageGroup extends ExtensionMessageGroup {
 }
 
 class CategoryTreeExtensionGroup extends MultipleFileMessageGroup {
-	protected $fileExporter = null;
+	protected $fileExporter = 'MultipleFileExtensionExporter';
 	protected $label = 'Category Tree';
 	protected $id    = 'ext-categorytree';
 
@@ -942,7 +942,7 @@ class ConfirmEditFancyCaptchaMessageGroup extends ExtensionMessageGroup {
 }
 
 class ContactPageExtensionGroup extends MultipleFileMessageGroup {
-	protected $fileExporter = null;
+	protected $fileExporter = 'MultipleFileExtensionExporter';
 	protected $label = 'Contact Page';
 	protected $id    = 'ext-contactpage';
 
@@ -1072,7 +1072,7 @@ class FarmerMessageGroup extends ExtensionMessageGroup {
 }
 
 class FCKeditorExtensionGroup extends MultipleFileMessageGroup {
-	protected $fileExporter = null;
+	protected $fileExporter = 'MultipleFileExtensionExporter';
 	protected $label = 'FCKeditor';
 	protected $id    = 'ext-fckeditor';
 
@@ -1098,7 +1098,7 @@ class FlaggedRevsMessageGroup extends MultipleFileMessageGroup {
 }
 
 class FlaggedRevsMakeReviewerMessageGroup extends MultipleFileMessageGroup {
-	protected $fileExporter = null;
+	protected $fileExporter = 'MultipleFileExtensionExporter';
 	protected $label = 'Flagged Revs Make Reviewer';
 	protected $id    = 'ext-flaggedrevsmakereviewer';
 
@@ -1139,7 +1139,7 @@ class FormatEmailMessageGroup extends ExtensionMessageGroup {
 }
 
 class GadgetsExtensionGroup extends MultipleFileMessageGroup {
-	protected $fileExporter = null;
+	protected $fileExporter = 'MultipleFileExtensionExporter';
 	protected $label = 'Gadgets';
 	protected $id    = 'ext-gadgets';
 
@@ -1357,7 +1357,7 @@ class MinimumNameLengthMessageGroup extends ExtensionMessageGroup {
 }
 
 class MiniPreviewExtensionGroup extends MultipleFileMessageGroup {
-	protected $fileExporter = null;
+	protected $fileExporter = 'MultipleFileExtensionExporter';
 	protected $label = 'Mini Preview';
 	protected $id    = 'ext-minipreview';
 
@@ -1509,7 +1509,7 @@ class PdfHandlerMessageGroup extends ExtensionMessageGroup {
 }
 
 class PlayerMessageGroup extends MultipleFileMessageGroup {
-	protected $fileExporter = null;
+	protected $fileExporter = 'MultipleFileExtensionExporter';
 	protected $label = 'Player';
 	protected $id    = 'ext-player';
 
@@ -1711,7 +1711,7 @@ class SiteMatrixMessageGroup extends ExtensionMessageGroup {
 }
 
 class SmoothGalleryExtensionGroup extends MultipleFileMessageGroup {
-	protected $fileExporter = null;
+	protected $fileExporter = 'MultipleFileExtensionExporter';
 	protected $label = 'Smooth Gallery';
 	protected $id    = 'ext-smoothgallery';
 
@@ -1943,7 +1943,6 @@ class WhoIsWatchingMessageGroup extends ExtensionMessageGroup {
 }
 
 class WikidataLanguageManagerMessageGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'Wikidata Language Manager';
 	protected $id    = 'ext-wikidatalanguagemanager';
 
