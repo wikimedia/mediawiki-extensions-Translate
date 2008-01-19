@@ -1953,6 +1953,7 @@ class WikidataLanguageManagerMessageGroup extends ExtensionMessageGroup {
 }
 
 class FreeColMessageGroup extends MessageGroup {
+	protected $fileExporter = null;
 	protected $label = 'FreeCol (open source game)';
 	protected $id    = 'out-freecol';
 	protected $prefix= 'freecol-';
