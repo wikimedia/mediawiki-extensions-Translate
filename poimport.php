@@ -108,6 +108,7 @@ class PoImporter {
 	 */
 	public function parse() {
 		$data = file_get_contents( $this->file );
+		$data = str_replace( "\r\n", "\n", $data );
 
 		$matches = array();
 		if ( preg_match( '/X-Language-Code:\s+([a-zA-Z-_]+)/', $data, $matches ) ) {
@@ -133,13 +134,15 @@ class PoImporter {
 		$poformat = '".*"\n?(^".*"$\n?)*';
 		$quotePattern = '/(^"|"$\n?)/m';
 
-		$sections = preg_split( "/\n{2,}/", $data );
+		$sections = preg_split( '/\n{2,}/', $data );
 		$changes = array();
 		foreach ( $sections as $section ) {
 			$matches = array();
 			if ( preg_match( "/^msgctxt\s($poformat)/mx", $section, $matches ) ) {
 				// Remove quoting
 				$key = preg_replace( $quotePattern, '', $matches[1] );
+				// Ignore unknown keys
+				if ( !isset($contents[$key]) ) continue;
 			} else {
 				continue;
 			}
@@ -158,7 +161,7 @@ class PoImporter {
 				$translation = TRANSLATE_FUZZY . $translation;
 			}
 
-			if ( $translation !== $contents[$key]->translation ) {
+			if ( $translation !== (string) $contents[$key]->translation ) {
 				echo "Translation of $key differs:\n$translation\n\n";
 				$changes["$key/$code"] = $translation;
 			}
