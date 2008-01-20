@@ -673,12 +673,31 @@ $messages['dsb'] = array(
 	'translate-edit-no-information'     => "''Toś ta powěsć njama dokumentaciju. Jolic wěš, źož abo kak toś ta powěsć se wužywa, móžoš drugim pśełožowarjam pomagaś, z tym až dokumentaciju k toś tej powěsći pśidawaš.''",
 	'translate-edit-information'        => 'Informacije wó toś tej powěsći ($1)',
 	'translate-edit-in-other-languages' => 'Powěsć w drugich rěcach',
+	'translate-edit-committed'          => 'Aktualny pśełožk w software',
+	'translate-edit-warnings'           => 'Warnowanja wó njedopołnych pśełožkach',
+	'translate-magic-pagename'          => 'Rozšyrjony pśełožk MediaWiki',
+	'translate-magic-help'              => 'Móžoš aliasy specialnych bokow, magiske słowa, mjenja šatow a mjenja mjenjowych rumow pśełožyś.
+
+Pla magiskich słow dejš engelske wurazy zapśimjeś, howac juž njefunkcioněruju. Wóstaj teke prědny zapisk (0 abo 1) kaž jo.
+
+Aliasy specialnych bokow a magiske słowa mógu někotare pśełožki měś. Pśełožki se pśez komu (,) źěle. Mjenja šatow a mjenjowe rumy mógu jano jaden pśełožk měś.
+
+Mjazy pśełožkami mjenjowych rumow <tt>$1 diskusija</tt> jo wósebny. <tt>$1</tt> se pśez mjenjom sedła wuměnja (na pśikład <tt>{{SITENAME}} diskusija</tt>). Jolic w twójej rěcy njejo móžno płaśiwy wuraz formowaś, mimo až dejš mě sedła změniš, staj se pšosym z wuwiwarjom do zwiska.
+
+Musyš w krupce pśełožowarjow byś, aby změny cyniś mógł. Změny se njeskładuju, až njekliknjoš tłocanko "Składowaś" dołojce.',
 	'translate-magic-form'              => 'Rěc: $1 Modul: $2 $3',
 	'translate-magic-submit'            => 'Pokazaś',
+	'translate-magic-cm-to-be'          => 'Ma byś',
+	'translate-magic-cm-current'        => 'aktualne',
+	'translate-magic-cm-original'       => 'Original',
+	'translate-magic-cm-fallback'       => 'Alternatiwna rěc',
 	'translate-magic-cm-save'           => 'Składowaś',
 	'translate-magic-cm-export'         => 'Eksportěrowaś',
+	'translate-magic-cm-updatedusing'   => 'Z pomocu Special:Magic zaktualizěrowany',
+	'translate-magic-cm-savefailed'     => 'Składowanje jo se njeraźiło',
 	'translate-magic-special'           => 'Aliasy specialnych bokow',
 	'translate-magic-words'             => 'Magiske słowa',
+	'translate-magic-skin'              => 'Mě šatow',
 	'translate-magic-namespace'         => 'Mjenja mjenjowych rumow',
 	'translationchanges'                => 'Změny pśełožka',
 	'translationchanges-export'         => 'eksportěrowaś',
@@ -686,6 +705,7 @@ $messages['dsb'] = array(
 	'translate-checks-parameters'       => 'Slědujuce parametry se njewužywaju: <strong>$1</strong>',
 	'translate-checks-balance'          => 'Jo njerowna licba spinkow: <strong>$1</strong>',
 	'translate-checks-links'            => 'Slědujuce wótkazy su problematiske: <strong>$1</strong>',
+	'translate-checks-xhtml'            => 'Wuměń pšosym slědujuce tagi pśez korektne: <strong>$1</strong>',
 	'translate-checks-plural'           => 'Definicija <nowiki>{{PLURAL:}}</nowiki> wužywa, pśełožk pak nic.',
 );
 
