@@ -1505,6 +1505,7 @@ $messages['lb'] = array(
 	'translate-magic-pagename'          => 'Erweidert MediaWiki Iwwersetzung',
 	'translate-magic-form'              => 'Sprooch: $1: Modul: $2 $3',
 	'translate-magic-submit'            => 'Weisen',
+	'translate-magic-cm-to-be'          => 'Gëtt',
 	'translate-magic-cm-current'        => 'Aktuell',
 	'translate-magic-cm-original'       => 'Original',
 	'translate-magic-cm-fallback'       => 'Ersatzsprooch',
