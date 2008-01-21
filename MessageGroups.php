@@ -698,7 +698,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-sitematrix',
 		'ext-spamblacklist',
 		'ext-syntaxhighlightgeshi',
-		'ext-titleblacklist',
+		#'ext-titleblacklist', no longer used
 		'ext-usernameblacklist',
 	);
 
