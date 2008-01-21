@@ -665,7 +665,7 @@ $messages['dsb'] = array(
 	'translate-page-showing-none'       => 'Njedaju powěsći.',
 	'translate-next'                    => 'Pśiducy bok',
 	'translate-prev'                    => 'Slědny bok',
-	'translate-page-description-legend' => 'Informacije wó krupce',
+	'translate-page-description-legend' => 'Informacije wó kupce',
 	'translate-optional'                => '(opcionalny)',
 	'translate-ignored'                 => '(ignorěrowany)',
 	'translate-edit-definition'         => 'Definicija powěsći',
@@ -684,7 +684,7 @@ Aliasy specialnych bokow a magiske słowa mógu někotare pśełožki měś. Pś
 
 Mjazy pśełožkami mjenjowych rumow <tt>$1 diskusija</tt> jo wósebny. <tt>$1</tt> se pśez mjenjom sedła wuměnja (na pśikład <tt>{{SITENAME}} diskusija</tt>). Jolic w twójej rěcy njejo móžno płaśiwy wuraz formowaś, mimo až dejš mě sedła změniš, staj se pšosym z wuwiwarjom do zwiska.
 
-Musyš w krupce pśełožowarjow byś, aby změny cyniś mógł. Změny se njeskładuju, až njekliknjoš tłocanko "Składowaś" dołojce.',
+Musyš w kupce pśełožowarjow byś, aby změny cyniś mógł. Změny se njeskładuju, až njekliknjoš tłocanko "Składowaś" dołojce.',
 	'translate-magic-form'              => 'Rěc: $1 Modul: $2 $3',
 	'translate-magic-submit'            => 'Pokazaś',
 	'translate-magic-cm-to-be'          => 'Ma byś',
@@ -946,58 +946,63 @@ $messages['frc'] = array(
 );
 
 /** Galician (Galego)
- * @author Xosé
  * @author Alma
+ * @author Xosé
+ * @author Siebrand
  */
 $messages['gl'] = array(
-	'translate'                       => 'Traducir',
-	'translate-edit'                  => 'Editar',
-	'translate-talk'                  => 'Discusión',
-	'translate-history'               => 'Historial',
-	'translate-delete'                => 'eliminar',
-	'translate-task-view'             => 'Ver todas as mensaxes de',
-	'translate-task-untranslated'     => 'Ver todas as mensaxes sen traducir de',
-	'translate-task-optional'         => 'Ver mensaxes opcionais de',
-	'translate-task-review'           => 'Revisar cambios en',
-	'translate-task-reviewall'        => 'Revisar todas as traducións en',
-	'translate-task-export'           => 'Exportar traducións de',
-	'translate-task-export-to-file'   => 'Exportar a tradución a un ficheiro de',
-	'translate-settings'              => 'Quero $1 $2 na lingua $3 co límite $4. $5',
-	'translate-paging'                => '<div>Amosando mensaxes de $1 a $2 de $3. [ $4 | $5 ]</div>',
-	'translate-submit'                => 'Procura',
-	'translate-next'                  => 'Páxina seguinte',
-	'translate-prev'                  => 'Páxina anterior',
-	'translate-optional'              => '(opcional)',
-	'translate-ignored'               => '(ignorado)',
-	'translate-edit-message-format'   => 'O formato desta mensaxe é <b>$1</b>.',
-	'translate-edit-message-in'       => 'Cadea actual en <b>$1</b> ($2):',
-	'translate-edit-message-in-fb'    => 'Cadea actual na lingua de apoio <b>$1</b> ($2):',
-	'translate-magic-pagename'        => 'Tradución extendida de MediaWiki',
-	'translate-magic-help'            => 'Pode traducir os alias das páxinas especiais, as palabras máxicas, os nomes das aparencias e os nomes dos espazos de nomes.
+	'translate'                         => 'Traducir',
+	'translate-edit'                    => 'Editar',
+	'translate-talk'                    => 'Discusión',
+	'translate-history'                 => 'Historial',
+	'translate-task-view'               => 'Ver todas as mensaxes de',
+	'translate-task-untranslated'       => 'Ver todas as mensaxes sen traducir de',
+	'translate-task-optional'           => 'Ver mensaxes opcionais de',
+	'translate-task-review'             => 'Revisar cambios en',
+	'translate-task-reviewall'          => 'Revisar todas as traducións en',
+	'translate-task-export'             => 'Exportar traducións de',
+	'translate-task-export-to-file'     => 'Exportar a tradución a un ficheiro de',
+	'translate-page-no-such-language'   => 'Forneceuse un código de lingua non válido',
+	'translate-page-limit'              => 'Límite',
+	'translate-page-limit-option'       => '$1 {{PLURAL:$1|mensaxe|mensaxes}} por páxina',
+	'translate-submit'                  => 'Procura',
+	'translate-page-showing-none'       => 'Non hai mensaxes para amosar.',
+	'translate-next'                    => 'Páxina seguinte',
+	'translate-prev'                    => 'Páxina anterior',
+	'translate-page-description-legend' => 'Información acerca do grupo',
+	'translate-optional'                => '(opcional)',
+	'translate-ignored'                 => '(ignorado)',
+	'translate-edit-definition'         => 'Definición da mensaxe',
+	'translate-edit-no-information'     => "''Esta mensaxe non ten documentación. Se vostede sabe donde ou como se usa esta mensaxe, pode axudar a outros traductores engadindo documentación a esta mensaxe.''",
+	'translate-edit-information'        => 'Información acerca desta mensaxe ($1)',
+	'translate-edit-in-other-languages' => 'Mensaxe en otras linguas',
+	'translate-magic-pagename'          => 'Tradución extendida de MediaWiki',
+	'translate-magic-help'              => 'Pode traducir os alias das páxinas especiais, as palabras máxicas, os nomes das aparencias e os nomes dos espazos de nomes.
 
 Nas páxinas máxicas ten que incluir as traducións en inglés ou non funcionarán. Deixe tamén o primeiro elemento (0 ou 1) tal e como está.
 
 Os alias de páxinas especiais e as palabras máxicas poden ter varias traducións. As traducións sepáranse mediante unha vírgula (,). Os nomes das aparencias e dos espazos de nomes só poden ter unha tradución.
 
 Nas traducións dos espazos de nomes, <tt>$1 talk</tt> é especial. <tt>$1</tt> substitúese polo nome do sitio (por exemplo <tt>{{SITENAME}} talk</tt>. Se na súa lingua non resulta posíbel formar unha expresión válida sen mudar o nome do sitio, contacte cun programador.',
-	'translate-magic-form'            => 'Lingua: $1 Módulo: $2 $3',
-	'translate-magic-submit'          => 'Procurar',
-	'translate-magic-cm-to-be'        => 'Será',
-	'translate-magic-cm-current'      => 'Actual',
-	'translate-magic-cm-original'     => 'Orixinal',
-	'translate-magic-cm-fallback'     => 'Reserva',
-	'translate-magic-cm-save'         => 'Gardar',
-	'translate-magic-cm-export'       => 'Exportar',
-	'translate-magic-cm-updatedusing' => 'Actualizado mediante Special:Magic',
-	'translate-magic-cm-savefailed'   => 'Fallou o gardado',
-	'translate-magic-special'         => 'Alias de páxinas especiais',
-	'translate-magic-words'           => 'Palabras máxicas',
-	'translate-magic-skin'            => 'Nome das aparencias',
-	'translate-magic-namespace'       => 'Nomes dos espazos de nomes',
-	'translationchanges'              => 'Modificacións na tradución',
-	'translationchanges-export'       => 'exportar',
-	'translationchanges-change'       => '$1: $2 por $3',
-	'translate-page-no-such-language' => 'Forneceuse un código de lingua non válido',
+	'translate-magic-form'              => 'Lingua: $1 Módulo: $2 $3',
+	'translate-magic-submit'            => 'Procurar',
+	'translate-magic-cm-to-be'          => 'Será',
+	'translate-magic-cm-current'        => 'Actual',
+	'translate-magic-cm-original'       => 'Orixinal',
+	'translate-magic-cm-fallback'       => 'Reserva',
+	'translate-magic-cm-save'           => 'Gardar',
+	'translate-magic-cm-export'         => 'Exportar',
+	'translate-magic-cm-updatedusing'   => 'Actualizado mediante Special:Magic',
+	'translate-magic-cm-savefailed'     => 'Fallou o gardado',
+	'translate-magic-special'           => 'Alias de páxinas especiais',
+	'translate-magic-words'             => 'Palabras máxicas',
+	'translate-magic-skin'              => 'Nome das aparencias',
+	'translate-magic-namespace'         => 'Nomes dos espazos de nomes',
+	'translationchanges'                => 'Modificacións na tradución',
+	'translationchanges-export'         => 'exportar',
+	'translationchanges-change'         => '$1: $2 por $3',
+	'translate-checks-parameters'       => 'Os seguintes parámetros non son usados: <strong>$1</strong>',
+	'translate-checks-links'            => 'As seguintes ligazóns son problemáticas: <strong>$1</strong>',
 );
 
 $messages['he'] = array(
