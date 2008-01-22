@@ -839,7 +839,13 @@ class ChangeAuthorMessageGroup extends ExtensionMessageGroup {
 	protected $arrName     = 'messages';
 	protected $messageFile = 'ChangeAuthor/ChangeAuthor.i18n.php';
 
-	protected $ignored = array( 'changeauthor-short', 'changeauthor-logpagetext' );
+	protected $optional = array(
+		'changeauthor-rev',
+	);
+	protected $ignored = array(
+		'changeauthor-short',
+		'changeauthor-logpagetext'
+	);
 }
 
 class CheckUserMessageGroup extends ExtensionMessageGroup {
@@ -923,6 +929,10 @@ class ConfirmAccountMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'ConfirmAccount/ConfirmAccount.i18n.php';
+
+	protected $optional = array(
+		'requestaccount-info',
+	);
 }
 
 class ConfirmEditMessageGroup extends ExtensionMessageGroup {
@@ -1095,6 +1105,10 @@ class FlaggedRevsMessageGroup extends MultipleFileMessageGroup {
 
 	protected $exportStart = '$messages = array(';
 	protected $exportEnd   = ');';
+
+	protected $optional = array(
+		'revreview-toggle',
+	);
 }
 
 class FlaggedRevsMakeReviewerMessageGroup extends MultipleFileMessageGroup {
