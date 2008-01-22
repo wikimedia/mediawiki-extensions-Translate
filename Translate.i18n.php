@@ -1554,6 +1554,7 @@ $messages['lt'] = array(
 	'translate-task-reviewall'          => 'Peržiūrėti visus vertimus iš',
 	'translate-task-export'             => 'Eksportuoti vertimus iš',
 	'translate-task-export-to-file'     => 'Eksportuoti į failą vertimus iš',
+	'translate-task-export-as-po'       => 'Eksportuoti vertimą Gettext formatu',
 	'translate-page-no-such-language'   => 'Buvo nurodytas klaidingas kalbos kodas',
 	'translate-page-settings-legend'    => 'Nustatymai',
 	'translate-page-task'               => 'Aš noriu',
@@ -1602,6 +1603,7 @@ Jūs turite priklausyti vertėjų grupei, kad galėtumėte išsaugoti pakeitimus
 	'translationchanges'                => 'Vertimo pakeitimai',
 	'translationchanges-export'         => 'eksportuoti',
 	'translationchanges-change'         => '$1: $2 pagal $3',
+	'translate-checks-plural'           => 'Aprašymas naudoja <nowiki>{{PLURAL:}}</nowiki>, bet vertimas ne.',
 );
 
 $messages['nap'] = array(
