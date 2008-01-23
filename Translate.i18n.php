@@ -745,6 +745,7 @@ $messages['el'] = array(
 	'translate-magic-special'           => 'Πρόσθετα ψευδώνυμα σελίδων',
 	'translationchanges'                => 'Αλλαγές μετάφρασης',
 	'translationchanges-change'         => '$1: $2 από $3',
+	'translate-checks-links'            => 'Οι Ακόλουθοι σύνδεσμοι είναι προβληματικοί: <strong>$1</strong>',
 );
 
 $messages['eo'] = array(
