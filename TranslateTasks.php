@@ -375,13 +375,17 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 	public function output() {
 		global $IP, $wgServer, $wgTranslateDocumentationLanguageCode;
 
+
 		$lang = Language::factory( 'en' );
 
 		$out = '';
 		$now = wfTimestampNow();
 		$label = $this->messageGroup->getLabel();
-		$languageName = TranslateUtils::getLanguageName( $this->options->getLanguage() );
+		$code = $this->options->getLanguage();
+		$languageName = TranslateUtils::getLanguageName( $code );
 
+		$filename = $code . '_' . $this->messageGroup->getID() . '.po';
+		header( "Content-Disposition: attachment; filename=\"$filename\"" );
 
 		$headers = array();
 		$headers['Project-Id-Version'] = 'MediaWiki ' . SpecialVersion::getVersion();
