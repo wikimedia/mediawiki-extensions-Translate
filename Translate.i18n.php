@@ -1226,6 +1226,16 @@ $messages['ja'] = array(
 	'translate-edit-message-in' => '<b>$1</b> ($2) での現在の文字列:',
 );
 
+/** Georgian (ქართული)
+ * @author Malafaya
+ */
+$messages['ka'] = array(
+	'translate-edit'          => 'რედაქტირება',
+	'translate-talk'          => 'განხილვა',
+	'translate-history'       => 'ისტორია',
+	'translate-page-language' => 'ენა',
+);
+
 /** ‫قازاقشا (تٴوتە)‬ (‫قازاقشا (تٴوتە)‬)
  * @author AlefZet
  */
