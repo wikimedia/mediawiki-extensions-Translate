@@ -932,6 +932,7 @@ class ConfirmAccountMessageGroup extends ExtensionMessageGroup {
 
 	protected $optional = array(
 		'requestaccount-info',
+		'requestaccount-footer'
 	);
 }
 
