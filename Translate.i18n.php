@@ -604,32 +604,93 @@ $messages['cs'] = array(
 	'translate-checks-plural'           => 'Zdroj používá <nowiki>{{PLURAL:}}</nowiki>, ale překlad nikoliv.',
 );
 
-/* German by Raymond */
+/** German (Deutsch)
+ * @author Raimond Spekking
+ */
 $messages['de'] = array(
 	'translate'         => 'Übersetze',
 	'translate-edit'    => 'Bearbeite',
 	'translate-talk'    => 'Diskussion',
 	'translate-history' => 'Versionen',
 
-	'translate-task-view'           => 'Zeige alle Systemnachrichten ab',
-	'translate-task-untranslated'   => 'Zeige alle nicht übersetzten Systemnachrichten ab',
-	'translate-task-review'         => 'Prüfe Änderungen bis',
-	'translate-task-reviewall'      => 'Prüfe alle Übersetzungen in',
-	'translate-task-export'         => 'Exportiere alle Übersetzungen ab',
-	'translate-task-export-to-file' => 'Exportiere alle Übersetzungen in eine Datei ab',
+	'translate-task-view'           => 'Zeige alle Systemnachrichten der',
+	'translate-task-untranslated'   => 'Zeige alle nicht übersetzten Systemnachrichten der',
+	'translate-task-optional'       => 'Zeige optionale Systemnachrichten der',
+	'translate-task-review'         => 'Prüfe Änderungen der',
+	'translate-task-reviewall'      => 'Prüfe alle Übersetzungen der',
+	'translate-task-export'         => 'Exportiere alle Übersetzungen der',
+	'translate-task-export-to-file' => 'Exportiere alle Übersetzungen in eine Datei der',
+	'translate-task-export-as-po'   => 'Exportiere alle Übersetzungen in das Gettext-Format der',
 
-	'translate-settings' => 'Ich möchte $1 $2 in der Sprache $3 mit der Beschränkung $4. $5',
-	'translate-paging'   => '<div>Zeige Systemnachrichten von $1 bis $2 von $3. [ $4 | $5 ]</div>',
-	'translate-submit'   => 'Hole',
-	'translate-next'     => 'Nächste Seite',
-	'translate-prev'     => 'Vorherige Seite',
+	'translate-page-no-such-language' => 'Die angegebene Sprache ist ungültig.',
+	'translate-page-no-such-task'     => 'Die angegebene Aufgabe ist ungültig.',
+	'translate-page-no-such-group'    => 'Die angegebene Gruppe ist ungültig.',
+
+	'translate-page-settings-legend' => 'Einstellungen',
+	'translate-page-task'            => 'Aufgabe',
+	'translate-page-group'           => 'Gruppe',
+	'translate-page-language'        => 'Sprache',
+	'translate-page-limit'           => 'Limit',
+	'translate-page-limit-option'    => '$1 {{PLURAL:$1|Systemnachricht|Systemnachrichten}} pro Seite',
+	'translate-submit'               => 'Hole',
+
+	'translate-page-navigation-legend' => 'Navigation',
+	'translate-page-showing'           => 'Systemnachrichten $1 bis $2 von insgesamt $3.',
+	'translate-page-showing-all'       => '$1 {{PLURAL:$1|Systemnachricht|Systemnachrichten}}.',
+	'translate-page-showing-none'      => 'Keine Systemnachrichten zur Anzeige vorhanden.',
+	'translate-next'                   => 'Nächste Seite',
+	'translate-prev'                   => 'Vorherige Seite',
+
+	'translate-page-description-legend' => 'Informationen über diese Gruppe',
 
 	'translate-optional' => '(optional)',
 	'translate-ignored'  => '(ignoriert)',
 
-	'translate-edit-message-format' => 'Das Format dieser Nachricht ist <b>$1</b>.',
-	'translate-edit-message-in'     => 'Aktueller Text in <b>$1</b> ($2):',
-	'translate-edit-message-in-fb'  => 'Aktueller Text in der Ausweich-Sprache <b>$1</b> ($2):',
+	'translate-edit-definition'         => 'Systemnachricht im Original',
+	'translate-edit-contribute'         => 'bearbeiten',
+	'translate-edit-no-information'     => "''Diese Systemnachricht hat noch keine Dokumentation. Wenn du weisst, wo und welchem Zusammenhang sie benutzt wird, kannst du anderen Übersetzern helfen, indem du eine Dokumentatin hinzufügst.''",
+	'translate-edit-information'        => 'Information über diese Systemnachricht ($1)',
+	'translate-edit-in-other-languages' => 'Systemnachricht in anderer Sprache',
+	'translate-edit-committed'          => 'Aktuelle Übersetzung',
+	'translate-edit-warnings'           => 'Warnung über unvollständige Übersetzungen',
+
+	'translate-magic-pagename'    => 'Erweiterte MediaWiki-Übersetzung',
+	'translate-magic-help'        => 'Du kannst Aliase für Spezialseiten, den magischen Wörtern, Skinnamen und Namensraum-Namen übersetzen.
+
+Für die magischen Wörter muss das englische Original bestehen bleiben, auch die erste Zahl (0 oder 1) darf nicht verändert werden.
+
+Spezialseiten und magische Wörter können mehrere Übersetzungen, jeweils getrennt durch ein Komma (,) haben. Skins und Namensraum-Namen dürfen nur je eine Übersetzung haben.
+
+In Namensraum-Namen-Übersetzungen hat <tt>$1 talk</tt> eine spezielle Bedeutung. <tt>$1</tt> wird durch den Projektnamen ersetzt (zum Beispiel <tt>{{SITENAME}} talk</tt>. Wenn es in deiner Sprache nicht möglich ist, eine grammatikalisch korrekte Form zu bilden, kontaktiere bitte einen Systemadministrator.
+
+Du musst in der Übersetzer-Gruppe sein um Änderungen zu speichern. Änderungen werden erst beim Klick auf den Speichern-Button gespeichert.',
+	'translate-magic-form'        => 'Sprache: $1 Modul: $2 $3',
+	'translate-magic-submit'      => 'Hole',
+	'translate-magic-cm-to-be'    => 'To-be',
+	'translate-magic-cm-current'  => 'Aktuell',
+	'translate-magic-cm-original' => 'Original',
+	'translate-magic-cm-fallback' => 'Fallback',
+
+	'translate-magic-cm-save'   => 'Speichern',
+	'translate-magic-cm-export' => 'Exportieren',
+
+	'translate-magic-cm-updatedusing' => 'Aktualisiert durch Special:Magic',
+	'translate-magic-cm-savefailed'   => 'Speichern fehlgeschlagen',
+
+	'translate-magic-special'   => 'Spezialseiten-Aliase',
+	'translate-magic-words'     => 'Magische Wörter',
+	'translate-magic-skin'      => 'Skins',
+	'translate-magic-namespace' => 'Namensraum-Namen',
+
+	'translationchanges'        => 'Übersetzungsänderungen',
+	'translationchanges-export' => 'exportieren',
+	'translationchanges-change' => '$1: $2 durch $3',
+
+	'translate-checks-parameters' => 'Die folgenden Parameter wurden nicht benutzt: <strong>$1</strong>',
+	'translate-checks-balance'    => 'Die Klammersetzung ist nicht ausgeglichen: <strong>$1</strong>',
+	'translate-checks-links'      => 'Die folgenden Links sind problematisch: <strong>$1</strong>',
+	'translate-checks-xhtml'      => 'Bitte ersettze die folgenden Tags mit den korrekten: <strong>$1</strong>',
+	'translate-checks-plural'     => 'Das Original benutzt <nowiki>{{PLURAL:}}</nowiki>, die Übersetzung aber nicht.',
 );
 
 /** Lower Sorbian (Dolnoserbski)
@@ -2397,6 +2458,7 @@ $messages['zh-hant'] = array(
 	'translate-edit-message-in-fb' => '在 <b>$1</b> 於倚靠語言中的現行字串 ($2):',
 );
 
+$messages['de-formal'] = $messages['de'];
 $messages['kk'] = $messages['kk-cyrl'];
 $messages['kk-cn'] = $messages['kk-arab'];
 $messages['kk-kz'] = $messages['kk-cyrl'];
