@@ -405,6 +405,7 @@ $messages['bg'] = array(
 	'translate-edit-information'        => 'Информация за това съобщение ($1)',
 	'translate-edit-in-other-languages' => 'Това съобщение на други езици',
 	'translate-edit-committed'          => 'Текущ превод в софтуера',
+	'translate-edit-warnings'           => 'Забележки за непълни преводи',
 	'translate-magic-pagename'          => 'Разширено превеждане на МедияУики',
 	'translate-magic-form'              => 'Език: $1 Модул: $2 $3',
 	'translate-magic-submit'            => 'Извличане',
