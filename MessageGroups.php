@@ -811,7 +811,15 @@ class CallMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'Call/Call.i18n.php';
 }
 
-class CategoryTreeExtensionGroup extends MultipleFileMessageGroup {
+class CategoryStepperMessageGroup extends ExtensionMessageGroup {
+	protected $label   = 'Category Stepper';
+	protected $id      = 'ext-categorystepper';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'CategoryStepper/CategoryStepper.i18n.php';
+}
+
+class CategoryTreeMessageGroup extends MultipleFileMessageGroup {
 	protected $fileExporter = 'MultipleFileExtensionExporter';
 	protected $label = 'Category Tree';
 	protected $id    = 'ext-categorytree';
@@ -952,7 +960,7 @@ class ConfirmEditFancyCaptchaMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile  = 'ConfirmEdit/FancyCaptcha.i18n.php';
 }
 
-class ContactPageExtensionGroup extends MultipleFileMessageGroup {
+class ContactPageMessageGroup extends MultipleFileMessageGroup {
 	protected $fileExporter = 'MultipleFileExtensionExporter';
 	protected $label = 'Contact Page';
 	protected $id    = 'ext-contactpage';
@@ -1082,7 +1090,7 @@ class FarmerMessageGroup extends ExtensionMessageGroup {
 	);
 }
 
-class FCKeditorExtensionGroup extends MultipleFileMessageGroup {
+class FCKeditorMessageGroup extends MultipleFileMessageGroup {
 	protected $fileExporter = 'MultipleFileExtensionExporter';
 	protected $label = 'FCKeditor';
 	protected $id    = 'ext-fckeditor';
@@ -1153,7 +1161,7 @@ class FormatEmailMessageGroup extends ExtensionMessageGroup {
 	);
 }
 
-class GadgetsExtensionGroup extends MultipleFileMessageGroup {
+class GadgetsMessageGroup extends MultipleFileMessageGroup {
 	protected $fileExporter = 'MultipleFileExtensionExporter';
 	protected $label = 'Gadgets';
 	protected $id    = 'ext-gadgets';
@@ -1371,7 +1379,7 @@ class MinimumNameLengthMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile  = 'MinimumNameLength/MinimumNameLength.i18n.php';
 }
 
-class MiniPreviewExtensionGroup extends MultipleFileMessageGroup {
+class MiniPreviewMessageGroup extends MultipleFileMessageGroup {
 	protected $fileExporter = 'MultipleFileExtensionExporter';
 	protected $label = 'Mini Preview';
 	protected $id    = 'ext-minipreview';
@@ -1382,6 +1390,16 @@ class MiniPreviewExtensionGroup extends MultipleFileMessageGroup {
 
 	protected $exportStart = '$messages = array(';
 	protected $exportEnd   = ');';
+}
+
+class MultiBoilerplateMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Multi Boilerplate';
+	protected $id    = 'ext-multiboilerplate';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'MultiBoilerplate/MultiBoilerplate.i18n.php';
+
+	protected $ignored = array( 'multiboilerplate-label' );
 }
 
 class MultiUploadMessageGroup extends ExtensionMessageGroup {
@@ -1661,7 +1679,7 @@ class ScanSetMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'ScanSet/ScanSet.i18n.php';
 }
 
-class SelectCategoryExtensionGroup extends ExtensionMessageGroup {
+class SelectCategoryMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Select Category';
 	protected $id    = 'ext-selectcategory';
 
@@ -1725,7 +1743,7 @@ class SiteMatrixMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'SiteMatrix/SiteMatrix.i18n.php';
 }
 
-class SmoothGalleryExtensionGroup extends MultipleFileMessageGroup {
+class SmoothGalleryMessageGroup extends MultipleFileMessageGroup {
 	protected $fileExporter = 'MultipleFileExtensionExporter';
 	protected $label = 'Smooth Gallery';
 	protected $id    = 'ext-smoothgallery';
@@ -1802,7 +1820,7 @@ class SyntaxHighlight_GeSHiMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile  = 'SyntaxHighlight_GeSHi/SyntaxHighlight_GeSHi.i18n.php';
 }
 
-class TalkHereExtensionGroup extends ExtensionMessageGroup {
+class TalkHereMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Talk Here';
 	protected $id    = 'ext-talkhere';
 
