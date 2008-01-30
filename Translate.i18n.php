@@ -106,6 +106,13 @@ $messages['qqq'] = array(
 	'translate-edit-no-information'   => 'Message is used as a hint to translators that documentation for a message without documentation is needed.',
 );
 
+/** მარგალური (მარგალური)
+ * @author Malafaya
+ */
+$messages['xmf'] = array(
+	'translate-page-language' => 'ნინა',
+);
+
 $messages['af'] = array(
 	'translate' => 'Vertaal',
 	'translate-edit' => 'wysig',
@@ -707,7 +714,7 @@ $messages['dsb'] = array(
 	'translate-task-untranslated'       => 'Njepśełožone powěsći pokazaś',
 	'translate-task-optional'           => 'Opcionelne powěsći pokazaś',
 	'translate-task-review'             => 'Změny pśeglědaś',
-	'translate-task-reviewall'          => 'Wšykne pśełožki pśeglědaś w',
+	'translate-task-reviewall'          => 'Wšykne pśełožki pśeglědaś',
 	'translate-task-export'             => 'Pśełožki eksportěrowaś',
 	'translate-task-export-to-file'     => 'Pśełožk do dataje eksportěrowaś',
 	'translate-task-export-as-po'       => 'Pśełožk we formaśe Gettext eksportěrowaś',
@@ -1027,9 +1034,13 @@ $messages['gl'] = array(
 	'translate-task-export'             => 'Exportar traducións de',
 	'translate-task-export-to-file'     => 'Exportar a tradución a un ficheiro de',
 	'translate-page-no-such-language'   => 'Forneceuse un código de lingua non válido',
+	'translate-page-settings-legend'    => 'Configuracións',
+	'translate-page-group'              => 'Grupo',
+	'translate-page-language'           => 'Lingua',
 	'translate-page-limit'              => 'Límite',
 	'translate-page-limit-option'       => '$1 {{PLURAL:$1|mensaxe|mensaxes}} por páxina',
 	'translate-submit'                  => 'Procura',
+	'translate-page-showing-all'        => 'Amosando $1 {{PLURAL:$1|mensaxe|mensaxes}}.',
 	'translate-page-showing-none'       => 'Non hai mensaxes para amosar.',
 	'translate-next'                    => 'Páxina seguinte',
 	'translate-prev'                    => 'Páxina anterior',
@@ -1040,6 +1051,7 @@ $messages['gl'] = array(
 	'translate-edit-no-information'     => "''Esta mensaxe non ten documentación. Se vostede sabe donde ou como se usa esta mensaxe, pode axudar a outros traductores engadindo documentación a esta mensaxe.''",
 	'translate-edit-information'        => 'Información acerca desta mensaxe ($1)',
 	'translate-edit-in-other-languages' => 'Mensaxe en otras linguas',
+	'translate-edit-committed'          => 'Tradución actual no software',
 	'translate-magic-pagename'          => 'Tradución extendida de MediaWiki',
 	'translate-magic-help'              => 'Pode traducir os alias das páxinas especiais, as palabras máxicas, os nomes das aparencias e os nomes dos espazos de nomes.
 
