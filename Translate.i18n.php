@@ -2174,6 +2174,13 @@ $messages['sk'] = array(
 	'translate-edit-message-in-fb' => 'Aktuálny reťazec v jazyku <b>$1</b>, ktorý sa použije ak správa nie je preložená ($2):',
 );
 
+/** Somali (Soomaaliga)
+ * @author Mimursal
+ */
+$messages['so'] = array(
+	'translate' => 'Tarjun',
+);
+
 $messages['sr-ec'] = array(
 	'translate' => 'Превод',
 	'translate-edit-message-in' => 'Тренутни стринг у <b>$1</b> ($2):',
