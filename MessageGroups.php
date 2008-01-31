@@ -683,12 +683,9 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-intersection',
 		'ext-linksearch',
 		'ext-lucenesearch',
-		#'ext-makebot', # about to become obsolete pending Userrights interface clean up
-		#'ext-makesysop', # about to become obsolete pending Userrights interface clean up
 		'ext-newuserlog',
 		'ext-nuke',
 		'ext-ogghandler',
-		'ext-oversight',
 		'ext-parserdifftest',
 		'ext-parserfunctions',
 		'ext-proofreadpage',
@@ -698,7 +695,6 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-sitematrix',
 		'ext-spamblacklist',
 		'ext-syntaxhighlightgeshi',
-		#'ext-titleblacklist', no longer used
 		'ext-usernameblacklist',
 	);
 
@@ -1178,14 +1174,6 @@ class GadgetsMessageGroup extends MultipleFileMessageGroup {
 	);
 }
 
-class GiveRollbackMessageGroup extends ExtensionMessageGroup {
-	protected $label   = 'Give Rollback';
-	protected $id      = 'ext-giverollback';
-
-	protected $arrName = 'messages';
-	protected $messageFile  = 'GiveRollback/GiveRollback.i18n.php';
-}
-
 class IconMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Icon';
 	protected $id    = 'ext-icon';
@@ -1311,24 +1299,6 @@ class LuceneSearchMessageGroup extends ExtensionMessageGroup {
 		'searchaliases',
 		'searchnearmatch',
 	);
-}
-
-# about to become obsolete pending Userrights interface clean up
-class MakeBotMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Make Bot';
-	protected $id    = 'ext-makebot';
-
-	protected $arrName = 'messages';
-	protected $messageFile  = 'Makebot/Makebot.i18n.php';
-}
-
-# about to become obsolete pending Userrights interface clean up
-class MakeSysopMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Make Sysop';
-	protected $id    = 'ext-makesysop';
-
-	protected $arrName     = 'messages';
-	protected $messageFile = 'Makesysop/SpecialMakesysop.i18n.php';
 }
 
 class MathStatMessageGroup extends ExtensionMessageGroup {
@@ -1482,14 +1452,6 @@ class OpenIDMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'OpenID/OpenID.i18n.php';
-}
-
-class OversightMessageGroup extends ExtensionMessageGroup {
-	protected $label   = 'Oversight';
-	protected $id      = 'ext-oversight';
-
-	protected $arrName = 'messages';
-	protected $messageFile  = 'Oversight/HideRevision.i18n.php';
 }
 
 class PageByMessageGroup extends ExtensionMessageGroup {
