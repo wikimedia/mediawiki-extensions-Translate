@@ -17,6 +17,7 @@ foreach ( $groups as $g ) {
 		echo "Working with $id\n";
 	} else {
 		echo "Something wrong with $id... skipping\n";
+		continue;
 	}
 	foreach ( $messages as $key => $data ) {
 		# Force all keys to lower case, because the case doesn't matter and it is
