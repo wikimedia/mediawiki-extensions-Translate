@@ -106,13 +106,6 @@ $messages['qqq'] = array(
 	'translate-edit-no-information'   => 'Message is used as a hint to translators that documentation for a message without documentation is needed.',
 );
 
-/** მარგალური (მარგალური)
- * @author Malafaya
- */
-$messages['xmf'] = array(
-	'translate-page-language' => 'ნინა',
-);
-
 $messages['af'] = array(
 	'translate' => 'Vertaal',
 	'translate-edit' => 'wysig',
@@ -1286,6 +1279,48 @@ $messages['id'] = array(
 	'translate-edit-message-in-fb' => 'Kalimat dalam bahasa <b>$1</b> ($2):',
 );
 
+/** Icelandic (Íslenska)
+ * @author S.Örvarr.S
+ */
+$messages['is'] = array(
+	'translate'                         => 'Þýða',
+	'translate-edit'                    => 'breyta',
+	'translate-talk'                    => 'spjall',
+	'translate-history'                 => 'breytingaskrá',
+	'translate-task-view'               => 'Skoða allar meldingar frá',
+	'translate-task-untranslated'       => 'Skoða allar óþýddar meldingar frá',
+	'translate-task-optional'           => 'Skoða valfrjálsar meldingar frá',
+	'translate-task-review'             => 'Kanna breytingar á',
+	'translate-page-settings-legend'    => 'Stillingar',
+	'translate-page-task'               => 'Ég vil',
+	'translate-page-group'              => 'Hópur',
+	'translate-page-language'           => 'Tungumál',
+	'translate-page-limit'              => 'Takmark',
+	'translate-submit'                  => 'Sækja',
+	'translate-page-navigation-legend'  => 'Flakk',
+	'translate-page-showing'            => 'Sýni meldingar frá $1 til $2 af $3.',
+	'translate-page-showing-all'        => 'Sýni $1 {{PLURAL:$1|melding|meldingar}}.',
+	'translate-page-showing-none'       => 'Engar meldingar til að sýna.',
+	'translate-next'                    => 'Næsta síða',
+	'translate-prev'                    => 'Fyrri síða',
+	'translate-page-description-legend' => 'Upplýsingar um hópinn',
+	'translate-optional'                => '(valfrjálst)',
+	'translate-ignored'                 => '(hunsað)',
+	'translate-edit-information'        => 'Upplýsingar um þessa meldingu ($1)',
+	'translate-edit-in-other-languages' => 'Melding á öðrum tungumálum',
+	'translate-edit-warnings'           => 'Viðvaranir vegna ókláraðar þýðinga',
+	'translate-magic-form'              => 'Tungumál: $1 Eining: $2 $3',
+	'translate-magic-submit'            => 'Sækja',
+	'translate-magic-cm-current'        => 'Núverandi',
+	'translate-magic-cm-save'           => 'Vista',
+	'translate-magic-cm-export'         => 'Flytja',
+	'translate-magic-namespace'         => 'Heiti nafnrýma',
+	'translationchanges'                => 'Breytingar þýðinga',
+	'translationchanges-export'         => 'flytja',
+	'translationchanges-change'         => '$1: $2 eftir $3',
+	'translate-checks-links'            => 'Eftirfarandi tenglar eru vafasamir: <strong>$1</strong>',
+);
+
 $messages['it'] = array(
 	'translate' => 'Traduzione',
 	'translate-settings' => 'Desidero $1 $2 in lingua $3 fino a un massimo di $4. $5',
@@ -2388,6 +2423,13 @@ $messages['wa'] = array(
 	'translate-edit-message-format' => 'Li format di ç\' messaedje ci c\' est <b>$1</b>.',
 	'translate-edit-message-in' => 'Li tecse do moumint e lingaedje <b>$1</b> ($2):',
 	'translate-edit-message-in-fb' => 'Tecse pol lingaedje di deujhinme tchuze <b>$1</b> ($2):',
+);
+
+/** მარგალური (მარგალური)
+ * @author Malafaya
+ */
+$messages['xmf'] = array(
+	'translate-page-language' => 'ნინა',
 );
 
 $messages['yue'] = array(
