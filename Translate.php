@@ -11,13 +11,13 @@ if (!defined('MEDIAWIKI')) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '7.19' );
+define( 'TRANSLATE_VERSION', '7.20' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'Translate',
 	'version' => TRANSLATE_VERSION,
 	'author' => 'Niklas Laxström, Siebrand Mazeland',
-	'description' => 'Special page for translating Mediawiki and beyond',
+	'description' => '[[Special:Translate|Special page]] for translating Mediawiki and beyond',
 	'url' => 'http://www.mediawiki.org/wiki/Extension:Translate',
 );
 
