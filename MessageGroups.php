@@ -1018,14 +1018,6 @@ class DeletedContribsMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'DeletedContributions/DeletedContributions.i18n.php';
 }
 
-class DesysopMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Desysop';
-	protected $id    = 'ext-desysop';
-
-	protected $arrName     = 'messages';
-	protected $messageFile = 'Desysop/SpecialDesysop.i18n.php';
-}
-
 class DismissableSiteNoticeMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Dismissable SiteNotice';
 	protected $id    = 'ext-dismissablesitenotice';

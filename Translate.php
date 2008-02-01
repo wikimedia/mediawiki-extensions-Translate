@@ -117,7 +117,6 @@ $wgTranslateAC = array(
 'ext-countedits'            => 'CountEditsMessageGroup',
 'ext-crossnamespacelinks'   => 'CrossNamespaceLinksMessageGroup',
 'ext-deletedcontribs'       => 'DeletedContribsMessageGroup',
-'ext-desysop'               => 'DesysopMessageGroup',
 'ext-dismissablesitenotice' => 'DismissableSiteNoticeMessageGroup',
 'ext-duplicator'            => 'DuplicatorMessageGroup',
 'ext-editcount'             => 'EditcountMessageGroup',
