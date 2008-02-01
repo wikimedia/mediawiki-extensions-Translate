@@ -674,7 +674,6 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-deletedcontribs',
 		'ext-dismissablesitenotice',
 		'ext-expandtemplates',
-		'ext-filepath',
 		'ext-flaggedrevs', # not yet in production (see http://test.wikipedia.org)
 		'ext-flaggedrevsmakereviewer', # not yet in production (see http://test.wikipedia.org)
 		'ext-gadgets',
@@ -1119,14 +1118,6 @@ class FlaggedRevsMakeReviewerMessageGroup extends MultipleFileMessageGroup {
 
 	protected $exportStart = '$messages = array(';
 	protected $exportEnd   = ');';
-}
-
-class FilePathMessageGroup extends ExtensionMessageGroup {
-	protected $label   = 'File Path';
-	protected $id      = 'ext-filepath';
-
-	protected $arrName     = 'messages';
-	protected $messageFile = 'Filepath/SpecialFilepath.i18n.php';
 }
 
 class FindSpamMessageGroup extends ExtensionMessageGroup {
