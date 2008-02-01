@@ -611,6 +611,7 @@ $messages['cs'] = array(
  */
 $messages['de'] = array(
 	'translate'         => 'Übersetze',
+	'translate-desc'    => '[[Special:Translate|Spezialseite]] für die Übersetzung von MediaWiki-Systemnachrichten',
 	'translate-edit'    => 'Bearbeite',
 	'translate-talk'    => 'Diskussion',
 	'translate-history' => 'Versionen',
