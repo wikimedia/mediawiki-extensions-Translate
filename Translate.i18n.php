@@ -8,6 +8,7 @@ $messages = array();
 
 $messages['en'] = array(
 	'translate' => 'Translate',
+	'translate-desc' => '[[Special:Translate|Special page]] for translating Mediawiki and beyond',
 	'translate-edit' => 'edit',
 	'translate-talk' => 'talk',
 	'translate-history' => 'history',
@@ -1746,6 +1747,7 @@ $messages['nds'] = array(
  */
 $messages['nl'] = array(
 	'translate'                         => 'Vertalen',
+	'translate-desc'                    => '[[Special:Translate|Speciale pagina]] voor het vertalen van MediaWiki en meer',
 	'translate-edit'                    => 'bewerken',
 	'translate-talk'                    => 'overleg',
 	'translate-history'                 => 'geschiedenis',
