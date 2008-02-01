@@ -916,6 +916,7 @@ $messages['fi'] = array(
  */
 $messages['fr'] = array(
 	'translate'                         => 'Traduire',
+	'translate-desc'                    => '[[Special:Translate|Page spéciale]] pour traduire Mediawiki et même plus encore.',
 	'translate-edit'                    => 'éditer',
 	'translate-talk'                    => 'discuter',
 	'translate-history'                 => 'historique',
@@ -1035,6 +1036,7 @@ $messages['gl'] = array(
 	'translate-page-limit'              => 'Límite',
 	'translate-page-limit-option'       => '$1 {{PLURAL:$1|mensaxe|mensaxes}} por páxina',
 	'translate-submit'                  => 'Procura',
+	'translate-page-showing'            => 'Amosando mensaxes de $1 a $2 de $3.',
 	'translate-page-showing-all'        => 'Amosando $1 {{PLURAL:$1|mensaxe|mensaxes}}.',
 	'translate-page-showing-none'       => 'Non hai mensaxes para amosar.',
 	'translate-next'                    => 'Páxina seguinte',
@@ -1152,6 +1154,7 @@ $messages['hr'] = array(
  */
 $messages['hsb'] = array(
 	'translate'                         => 'Přełožić',
+	'translate-desc'                    => '[[Special:Translate|Specialna strona]] za přełožowanje Mediawiki a druheho',
 	'translate-edit'                    => 'wobdźěłać',
 	'translate-talk'                    => 'diskusija',
 	'translate-history'                 => 'stawizny',
