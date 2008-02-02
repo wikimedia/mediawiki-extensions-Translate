@@ -99,6 +99,7 @@ $wgTranslateAC = array(
 'ext-blocktitles'           => 'BlockTitlesMessageGroup',
 'ext-boardvote'             => 'BoardVoteMessageGroup',
 'ext-bookinformation'       => 'BookInformationMessageGroup',
+'ext-breadcrumbs'           => 'BreadCrumbsMessageGroup',
 'ext-call'                  => 'CallMessageGroup',
 'ext-categorystepper'       => 'CategoryStepperMessageGroup',
 'ext-categorytree'          => 'CategoryTreeMessageGroup',

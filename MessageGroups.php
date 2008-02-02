@@ -807,6 +807,14 @@ class BookInformationMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile  = 'BookInformation/BookInformation.i18n.php';
 }
 
+class BreadCrumbsMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Breadcrumbs navigation';
+	protected $id    = 'ext-breadcrumbs';
+
+	protected $arrName = 'messages';
+	protected $messageFile = 'BreadCrumbs/BreadCrumbs.i18n.php';
+}
+
 class CallMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Call';
 	protected $id      = 'ext-call';
