@@ -749,7 +749,7 @@ class AssertEditMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'AssertEdit/AssertEdit.i18n.php';
 }
 
-class AutomaticGroups extends ExtensionMessageGroup {
+class AutomaticGroupsMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Automatic Groups';
 	protected $id    = 'ext-automaticgroups';
 
