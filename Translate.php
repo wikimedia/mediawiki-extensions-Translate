@@ -159,6 +159,7 @@ $wgTranslateAC = array(
 'ext-nuke'                  => 'NukeMessageGroup',
 'ext-ogghandler'            => 'OggHandlerMessageGroup',
 #'ext-openid'                => 'OpenIDMessageGroup',
+'ext-oversight'             => 'OversightMessageGroup',
 'ext-pageby'                => 'PageByMessageGroup',
 'ext-passwordreset'         => 'PasswordResetMessageGroup',
 'ext-parserdifftest'        => 'ParserDiffTestMessageGroup',

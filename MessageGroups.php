@@ -685,6 +685,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-newuserlog',
 		'ext-nuke',
 		'ext-ogghandler',
+		'ext-oversight',
 		'ext-parserdifftest',
 		'ext-parserfunctions',
 		'ext-proofreadpage',
@@ -1435,6 +1436,14 @@ class OpenIDMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'OpenID/OpenID.i18n.php';
+}
+
+class OversightMessageGroup extends ExtensionMessageGroup { 	 
+         protected $label   = 'Oversight'; 	 
+         protected $id      = 'ext-oversight'; 	 
+
+         protected $arrName = 'messages'; 	 
+         protected $messageFile  = 'Oversight/HideRevision.i18n.php'; 	 
 }
 
 class PageByMessageGroup extends ExtensionMessageGroup {
