@@ -88,6 +88,7 @@ $wgTranslateAC = array(
 'ext-0-all'                 => 'AllMediawikiExtensionsGroup',
 'ext-0-wikimedia'           => 'AllWikimediaExtensionsGroup',
 'ext-advancedrandom'        => 'AdvancedRandomMessageGroup',
+'ext-automaticgroups'       => 'AutomaticGroups',
 'ext-ajaxshoweditors'       => 'AjaxShowEditorsMessageGroup',
 'ext-antispoof'             => 'AntiSpoofMessageGroup',
 'ext-assertedit'            => 'AssertEditMessageGroup',

@@ -749,6 +749,14 @@ class AssertEditMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'AssertEdit/AssertEdit.i18n.php';
 }
 
+class AutomaticGroups extends ExtensionMessageGroup {
+	protected $label = 'Automatic Groups';
+	protected $id    = 'ext-automaticgroups';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'AutomaticGroups/AutomaticGroups.i18n.php';
+}
+
 class BackAndForthMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Back and Forth';
 	protected $id    = 'ext-backandforth';
