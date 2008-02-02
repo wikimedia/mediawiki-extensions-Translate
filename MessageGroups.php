@@ -1454,12 +1454,12 @@ class OpenIDMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'OpenID/OpenID.i18n.php';
 }
 
-class OversightMessageGroup extends ExtensionMessageGroup { 	 
-         protected $label   = 'Oversight'; 	 
-         protected $id      = 'ext-oversight'; 	 
+class OversightMessageGroup extends ExtensionMessageGroup {
+         protected $label   = 'Oversight';
+         protected $id      = 'ext-oversight';
 
-         protected $arrName = 'messages'; 	 
-         protected $messageFile  = 'Oversight/HideRevision.i18n.php'; 	 
+         protected $arrName = 'messages';
+         protected $messageFile  = 'Oversight/HideRevision.i18n.php';
 }
 
 class PageByMessageGroup extends ExtensionMessageGroup {
@@ -1511,17 +1511,12 @@ class PdfHandlerMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile  = 'PdfHandler/PdfHandler.i18n.php';
 }
 
-class PlayerMessageGroup extends MultipleFileMessageGroup {
-	protected $fileExporter = 'MultipleFileExtensionExporter';
+class PlayerMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Player';
 	protected $id    = 'ext-player';
 
 	protected $arrName      = 'messages';
 	protected $messageFile  = 'Player/Player.i18n.php';
-	protected $filePattern  = 'Player/Player.i18n.$CODE.php';
-
-	protected $exportStart = '$messages = array(';
-	protected $exportEnd   = ');';
 
 	protected $ignored = array(
 		'player-pagetext',
