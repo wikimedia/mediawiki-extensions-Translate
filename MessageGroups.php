@@ -1708,17 +1708,12 @@ class SiteMatrixMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'SiteMatrix/SiteMatrix.i18n.php';
 }
 
-class SmoothGalleryMessageGroup extends MultipleFileMessageGroup {
-	protected $fileExporter = 'MultipleFileExtensionExporter';
+class SmoothGalleryMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Smooth Gallery';
 	protected $id    = 'ext-smoothgallery';
 
 	protected $arrName      = 'messages';
 	protected $messageFile  = 'SmoothGallery/SmoothGallery.i18n.php';
-	protected $filePattern  = 'SmoothGallery/SmoothGallery.i18n.$CODE.php';
-
-	protected $exportStart = '$messages = array(';
-	protected $exportEnd   = ');';
 
 	protected $ignored = array(
 		'smoothgallery-pagetext',
