@@ -1344,7 +1344,7 @@ class MinimumNameLengthMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile  = 'MinimumNameLength/MinimumNameLength.i18n.php';
 }
 
-class MiniPreviewMessageGroup extends MultipleFileMessageGroup {
+class MiniPreviewMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Mini Preview';
 	protected $id    = 'ext-minipreview';
 
