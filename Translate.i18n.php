@@ -377,6 +377,7 @@ $messages['bcl'] = array(
  */
 $messages['bg'] = array(
 	'translate'                         => 'Превеждане',
+	'translate-desc'                    => '[[Special:Translate|Специална страница]] за превеждане на Mediawiki и др.',
 	'translate-edit'                    => 'редактиране',
 	'translate-talk'                    => 'беседа',
 	'translate-history'                 => 'история',
@@ -974,7 +975,7 @@ $messages['fi'] = array(
 	'translate-magic-cm-savefailed'     => 'Tallennus epäonnistui',
 	'translationchanges'                => 'Käännösmuutokset',
 	'translationchanges-export'         => 'vie',
-	'translationchanges-change'         => '$1: Käyttäjä $2 muutti sivua $3',
+	'translationchanges-change'         => '$1: Käyttäjä $3 muutti sivua $2',
 );
 
 /** French (Français)
@@ -1080,6 +1081,73 @@ $messages['frc'] = array(
 	'translate-edit-message-in' => 'Chaîne courante en <b>$1</b> ($2):',
 	'translate-edit-message-in-fb' => 'Chaîne courante dans la langue en reculant <b>$1</b> ($2):',
 	'translationchanges' => 'Modification des traductions',
+);
+
+/** Franco-Provençal (Arpetan)
+ * @author ChrisPtDe
+ */
+$messages['frp'] = array(
+	'translate'                         => 'Traduire',
+	'translate-desc'                    => '[[Special:Translate|Pâge spèciâla]] por traduire MediaWiki et mémo ples oncor.',
+	'translate-edit'                    => 'èditar',
+	'translate-talk'                    => 'discutar',
+	'translate-history'                 => 'historico',
+	'translate-task-view'               => 'Vêre tôs los mèssâjos dês',
+	'translate-task-untranslated'       => 'Vêre tôs los mèssâjos pas traduits dês',
+	'translate-task-optional'           => 'Vêre tôs los mèssâjos u chouèx dês',
+	'translate-task-review'             => 'Revêre mos changements dês',
+	'translate-task-reviewall'          => 'Revêre totes les traduccions dens',
+	'translate-task-export'             => 'Èxportar les traduccions dês',
+	'translate-task-export-to-file'     => 'Èxportar les traduccions dens un fichiér dês',
+	'translate-task-export-as-po'       => 'Èxportar les traduccions u format gettext',
+	'translate-page-no-such-language'   => 'Un code lengâjo envalido at étâ endicâ.',
+	'translate-page-no-such-task'       => 'L’ovrâjo spècefiâ est envalido.',
+	'translate-page-no-such-group'      => 'Lo groupe spècefiâ est envalido.',
+	'translate-page-settings-legend'    => 'Configuracion',
+	'translate-page-task'               => 'Vuel',
+	'translate-page-group'              => 'Groupe',
+	'translate-page-language'           => 'Lengoua',
+	'translate-page-limit'              => 'Limita',
+	'translate-page-limit-option'       => '$1 {{PLURAL:$1|mèssâjo|mèssâjos}} per pâge',
+	'translate-submit'                  => 'Avengiér',
+	'translate-page-navigation-legend'  => 'Navigacion',
+	'translate-page-showing'            => 'Visualisacion des mèssâjos de $1 a $2 sur $3.',
+	'translate-page-showing-all'        => 'Visualisacion de $1 {{PLURAL:$1|mèssâjo|mèssâjos}}.',
+	'translate-page-showing-none'       => 'Nion mèssâjo a visualisar.',
+	'translate-next'                    => 'Pâge siuventa',
+	'translate-prev'                    => 'Pâge prècèdenta',
+	'translate-page-description-legend' => 'Enformacion a propôs du groupe',
+	'translate-optional'                => '(u chouèx)',
+	'translate-ignored'                 => '(ignorâ)',
+	'translate-edit-definition'         => 'Dèfinicion du mèssâjo',
+	'translate-edit-contribute'         => 'contribuar',
+	'translate-edit-no-information'     => "''Orendrêt, ceti mèssâjo est pas documentâ. Se vos sâde yô ou coment ceti mèssâjo est utilisâ, vos pouede édiér los ôtros traductors en documentent ceti mèssâjo.''",
+	'translate-edit-information'        => 'Enformacions regardent ceti mèssâjo ($1)',
+	'translate-edit-in-other-languages' => 'Mèssâjo dens les ôtres lengoues',
+	'translate-edit-committed'          => 'Traduccion d’ora ja dens la programeria',
+	'translate-edit-warnings'           => 'Avèrtissements regardent les traduccions pas complètes',
+	'translate-magic-pagename'          => 'Traduccion de MediaWiki ètendua',
+	'translate-magic-form'              => 'Lengoua : $1 Modulo : $2 $3',
+	'translate-magic-submit'            => 'Alar',
+	'translate-magic-cm-to-be'          => 'Vint',
+	'translate-magic-cm-current'        => 'Ora',
+	'translate-magic-cm-original'       => 'Originâl',
+	'translate-magic-cm-fallback'       => 'Lengoua de refèrence',
+	'translate-magic-cm-save'           => 'Sôvar',
+	'translate-magic-cm-export'         => 'Èxportar',
+	'translate-magic-cm-updatedusing'   => 'Betâ a jorn en utilisent Special:Magic',
+	'translate-magic-special'           => 'Noms de les pâges spèciâles',
+	'translate-magic-words'             => 'Mots magicos',
+	'translate-magic-skin'              => 'Noms de les entèrfaces',
+	'translate-magic-namespace'         => 'Noms des èspâços de nom',
+	'translationchanges'                => 'Traduccions modifiâs',
+	'translationchanges-export'         => 'èxportar',
+	'translationchanges-change'         => '$1 : $2 per $3',
+	'translate-checks-parameters'       => 'Los paramètres siuvents sont pas utilisâs : <strong>$1</strong>',
+	'translate-checks-balance'          => 'Y at un nombro fôx de parentèses : <strong>$1</strong>',
+	'translate-checks-links'            => 'Los lims siuvents sont pas de sûr : <strong>$1</strong>',
+	'translate-checks-xhtml'            => 'Vos éte envitâ a remetre en place les balises siuventes avouéc celes que sont corrèctes : <strong>$1</strong>',
+	'translate-checks-plural'           => 'La dèfinicion utilise <nowiki>{{PLURAL:}}</nowiki> mas pas la traduccion.',
 );
 
 /** Galician (Galego)
@@ -1543,12 +1611,12 @@ $messages['kk-cyrl'] = array(
 	'translate-page-description-legend' => 'Бұл топ туралы мәлімет',
 	'translate-optional'                => '(міндетті емес)',
 	'translate-ignored'                 => '(елемейтін)',
-	'translate-edit-definition'         => 'Хабардың анықталымы',
+	'translate-edit-definition'         => 'Хабар анықтауы',
 	'translate-edit-contribute'         => 'үлес бер',
 	'translate-edit-no-information'     => "''Бұл хабар құжаттамасыз. Егер осы хабардың қайда немесе қалай қолданғанын білсеңіз, бұл хабарға құжаттама келтіріп, басқа аударушыларға көмектесе аласыз.''",
 	'translate-edit-information'        => 'Бұл хабар туралы мәлімет ($1)',
 	'translate-edit-in-other-languages' => 'Хабар басқа тілдерде',
-	'translate-edit-committed'          => 'Бағдарламадағы ағымдық аударма',
+	'translate-edit-committed'          => 'Ағымдағы аударма бағдарламада',
 	'translate-edit-warnings'           => 'Толық аударылмаған хабарлар туралы аңғартпалар',
 	'translate-magic-pagename'          => 'Кеңейтілген MediaWiki аударуы',
 	'translate-magic-help'              => 'Арнайы бет бүркемелерін, сиқырлы сөздерін, безендіру мәнер атауларын және есім ая атауларын аудара аласыз.
@@ -1973,6 +2041,7 @@ Du må være i oversettergruppa for å lagre endringer. Endringer lagres ikke f�
 
 /** Occitan (Occitan)
  * @author Cedric31
+ * @author ChrisPtDe
  */
 $messages['oc'] = array(
 	'translate'                         => 'Traduire',
@@ -2035,7 +2104,7 @@ $messages['oc'] = array(
 	'translate-checks-parameters'       => 'Los paramètres seguents son pas utilizats : <strong>$1</strong',
 	'translate-checks-balance'          => 'I a un nombre incorrècte de parentèsis : <strong>$1</strong>',
 	'translate-checks-links'            => 'Los ligams seguents son dobtoses : <strong>$1</strong',
-	'translate-checks-xhtml'            => 'Sètz convidats a tornar metre en plaça las balisas seguentas amb las que son corrèctas : <strong>$1</strong',
+	'translate-checks-xhtml'            => 'Sètz convidats a tornar metre en plaça las balisas seguentas amb las que son corrèctas : <strong>$1</strong>',
 	'translate-checks-plural'           => 'La definicion utiliza <nowiki>{{PLURAL:}}</nowiki> mas pas la traduccion',
 );
 
