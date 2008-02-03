@@ -1095,16 +1095,11 @@ class FarmerMessageGroup extends ExtensionMessageGroup {
 }
 
 class FCKeditorMessageGroup extends MultipleFileMessageGroup {
-	protected $fileExporter = 'MultipleFileExtensionExporter';
 	protected $label = 'FCKeditor';
 	protected $id    = 'ext-fckeditor';
 
 	protected $arrName      = 'messages';
-	protected $messageFile  = 'FCKeditor/FCKeditor.i18n.en.php';
-	protected $filePattern  = 'FCKeditor/FCKeditor.i18n.$CODE.php';
-
-	protected $exportStart = '$messages = array(';
-	protected $exportEnd   = ');';
+	protected $messageFile  = 'FCKeditor/FCKeditor.i18n.php';
 }
 
 class FlaggedRevsMessageGroup extends MultipleFileMessageGroup {
