@@ -1104,34 +1104,24 @@ class FCKeditorMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile  = 'FCKeditor/FCKeditor.i18n.php';
 }
 
-class FlaggedRevsMessageGroup extends MultipleFileMessageGroup {
-	protected $fileExporter = 'MultipleFileExtensionExporter';
+class FlaggedRevsMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Flagged Revs';
 	protected $id      = 'ext-flaggedrevs';
 
 	protected $arrName     = 'messages';
-	protected $messageFile = 'FlaggedRevs/Language/FlaggedRevsPage.i18n.en.php';
-	protected $filePattern = 'FlaggedRevs/Language/FlaggedRevsPage.i18n.$CODE.php';
-
-	protected $exportStart = '$messages = array(';
-	protected $exportEnd   = ');';
+	protected $messageFile = 'FlaggedRevs/FlaggedRevsPage.i18n.php';
 
 	protected $optional = array(
 		'revreview-toggle',
 	);
 }
 
-class FlaggedRevsMakeReviewerMessageGroup extends MultipleFileMessageGroup {
-	protected $fileExporter = 'MultipleFileExtensionExporter';
+class FlaggedRevsMakeReviewerMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Flagged Revs Make Reviewer';
 	protected $id    = 'ext-flaggedrevsmakereviewer';
 
 	protected $arrName     = 'messages';
-	protected $messageFile = 'FlaggedRevs/Language/MakeReviewer.i18n.en.php';
-	protected $filePattern = 'FlaggedRevs/Language/MakeReviewer.i18n.$CODE.php';
-
-	protected $exportStart = '$messages = array(';
-	protected $exportEnd   = ');';
+	protected $messageFile = 'FlaggedRevs/MakeReviewer.i18n.php';
 }
 
 class FindSpamMessageGroup extends ExtensionMessageGroup {
