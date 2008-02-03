@@ -1094,7 +1094,7 @@ class FarmerMessageGroup extends ExtensionMessageGroup {
 	);
 }
 
-class FCKeditorMessageGroup extends MultipleFileMessageGroup {
+class FCKeditorMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'FCKeditor';
 	protected $id    = 'ext-fckeditor';
 
