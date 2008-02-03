@@ -836,6 +836,14 @@ class CategoryTreeMessageGroup extends MultipleFileMessageGroup {
 	protected $exportEnd   = ');';
 }
 
+class CatFeedMessageGroup extends ExtensionMessageGroup {
+	protected $label       = 'Category Feed';
+	protected $id          = 'ext-catfeed';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'catfeed/catfeed.i18n.php';
+}
+
 class CentralAuthMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Central Auth';
 	protected $id      = 'ext-centralauth';

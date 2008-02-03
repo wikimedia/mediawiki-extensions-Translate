@@ -102,6 +102,7 @@ $wgTranslateAC = array(
 'ext-call'                  => 'CallMessageGroup',
 'ext-categorystepper'       => 'CategoryStepperMessageGroup',
 'ext-categorytree'          => 'CategoryTreeMessageGroup',
+'ext-catfeed'               => 'CatFeedMessageGroup',
 'ext-centralauth'           => 'CentralAuthMessageGroup',
 'ext-changeauthor'          => 'ChangeAuthorMessageGroup',
 'ext-checkuser'             => 'CheckUserMessageGroup',
