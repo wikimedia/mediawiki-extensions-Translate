@@ -1345,16 +1345,11 @@ class MinimumNameLengthMessageGroup extends ExtensionMessageGroup {
 }
 
 class MiniPreviewMessageGroup extends MultipleFileMessageGroup {
-	protected $fileExporter = 'MultipleFileExtensionExporter';
 	protected $label = 'Mini Preview';
 	protected $id    = 'ext-minipreview';
 
 	protected $arrName      = 'messages';
 	protected $messageFile  = 'MiniPreview/MiniPreview.i18n.php';
-	protected $filePattern  = 'MiniPreview/MiniPreview.i18n.$CODE.php';
-
-	protected $exportStart = '$messages = array(';
-	protected $exportEnd   = ');';
 }
 
 class MultiBoilerplateMessageGroup extends ExtensionMessageGroup {
