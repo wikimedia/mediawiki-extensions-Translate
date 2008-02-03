@@ -107,13 +107,17 @@ $messages['qqq'] = array(
 	'translate-edit-no-information'   => 'Message is used as a hint to translators that documentation for a message without documentation is needed.',
 );
 
+/** Afrikaans (Afrikaans)
+ * @author SPQRobin
+ */
 $messages['af'] = array(
-	'translate' => 'Vertaal',
-	'translate-edit' => 'wysig',
-	'translate-talk' => 'bespreking',
-	'translate-history' => 'geskiedenis',
-	'translate-next' => 'Volgende bladsy',
-	'translate-prev' => 'Vorige bladsy',
+	'translate'                  => 'Vertaal',
+	'translate-edit'             => 'wysig',
+	'translate-talk'             => 'bespreking',
+	'translate-history'          => 'geskiedenis',
+	'translate-page-language'    => 'Taal',
+	'translate-next'             => 'Volgende bladsy',
+	'translate-prev'             => 'Vorige bladsy',
 	'translate-magic-cm-current' => 'Huidig',
 );
 
@@ -400,6 +404,7 @@ $messages['bg'] = array(
 	'translate-next'                    => 'Следваща страница',
 	'translate-prev'                    => 'Предишна страница',
 	'translate-page-description-legend' => 'Информация за групата',
+	'translate-optional'                => '(незадължително)',
 	'translate-edit-definition'         => 'Оригинално съобщение',
 	'translate-edit-contribute'         => 'добавяне на документация',
 	'translate-edit-no-information'     => 'За това съобщение няма документация. Ако знаете къде и как се използва, можете да помогнете на останалите преводачи като добавите документация за това съобщение.',
@@ -813,27 +818,82 @@ $messages['el'] = array(
 	'translate-checks-links'            => 'Οι Ακόλουθοι σύνδεσμοι είναι προβληματικοί: <strong>$1</strong>',
 );
 
+/** Esperanto (Esperanto)
+ * @author Michawiki
+ * @author Tlustulimu
+ */
 $messages['eo'] = array(
-	'translate' => 'Tradukado',
-	'translate-edit' => 'redaktu',
-	'translate-talk' => 'diskuto',
-	'translate-history' => 'historio',
-	'translate-task-view' => 'Montri ĉiujn mesaĝojn de',
-	'translate-task-untranslated' => 'Montri ĉiujn netradukitajn mesaĝojn de',
-	'translate-task-review' => 'Rekontroli ŝanĝojn al',
-	'translate-task-reviewall' => 'Rekontroli ĉiujn tradukojn en',
-	'translate-task-export' => 'Eksporti tradukojn de',
-	'translate-task-export-to-file' => 'Eksporti tradukon en dosieron de',
-	'translate-settings' => 'Mi volas $1 $2 en lingvo $3 kun limo $4. $5',
-	'translate-paging' => '<div>Montras mesaĝojn de $1 ĝis $2 el $3. [ $4 | $5 ]</div>',
-	'translate-submit' => 'Alportu',
-	'translate-next' => 'Sekva paĝo',
-	'translate-prev' => 'Antaŭa paĝo',
-	'translate-optional' => '(opcionala)',
-	'translate-ignored' => '(ignorata)',
-	'translate-edit-message-format' => 'La formato de ĉi tiu mesaĝo estas <b>$1</b>.',
-	'translate-edit-message-in' => 'Aktuala literovico en <b>$1</b> ($2):',
-	'translate-edit-message-in-fb' => 'Aktuala literovico en refala lingvo <b>$1</b> ($2):',
+	'translate'                         => 'Tradukado',
+	'translate-desc'                    => '[[Special:Translate|Speciala paĝo]] por traduki Mediawiki kaj alia',
+	'translate-edit'                    => 'redaktu',
+	'translate-talk'                    => 'diskuto',
+	'translate-history'                 => 'historio',
+	'translate-task-view'               => 'Rigardi ĉiujn mesaĝojn de',
+	'translate-task-untranslated'       => 'Rigardi ĉiujn netradukitajn mesaĝojn de',
+	'translate-task-optional'           => 'Rigardi laŭvolajn mesaĝojn',
+	'translate-task-review'             => 'Rekontroli ŝanĝojn al',
+	'translate-task-reviewall'          => 'Rekontroli ĉiujn tradukojn en',
+	'translate-task-export'             => 'Eksporti tradukojn de',
+	'translate-task-export-to-file'     => 'Eksporti tradukon en dosieron de',
+	'translate-task-export-as-po'       => 'Eksporti tradukon al la formato Gettext',
+	'translate-page-no-such-language'   => 'Specifita lingvo estas malvalida.',
+	'translate-page-no-such-task'       => 'Specifita tasko estis malvalida.',
+	'translate-page-no-such-group'      => 'Specifita grupo estas malvalida.',
+	'translate-page-settings-legend'    => 'Agordoj',
+	'translate-page-task'               => 'Mi volas',
+	'translate-page-group'              => 'Grupo',
+	'translate-page-language'           => 'Lingvo',
+	'translate-page-limit'              => 'Nombro de mesaĝoj',
+	'translate-page-limit-option'       => '$1 {{PLURAL:$1|mesaĝo|mesaĝoj}} po paĝo',
+	'translate-submit'                  => 'Alportu',
+	'translate-page-navigation-legend'  => 'Navigado',
+	'translate-page-showing'            => 'Estas motrataj mesaĝoj $1 ĝis $2 el $3.',
+	'translate-page-showing-all'        => 'Estas montrataj $1 {{PLURAL:$1|mesaĝo|mesaĝoj}}.',
+	'translate-page-showing-none'       => 'Ne estas mesaĝoj por montri.',
+	'translate-next'                    => 'Sekva paĝo',
+	'translate-prev'                    => 'Antaŭa paĝo',
+	'translate-page-description-legend' => 'Informoj pri la grupo',
+	'translate-optional'                => '(opcionala)',
+	'translate-ignored'                 => '(ignorata)',
+	'translate-edit-definition'         => 'Mesaĝa difino',
+	'translate-edit-contribute'         => 'kontribui',
+	'translate-edit-no-information'     => "''Ĉi tiu mesago ne havas dokumentaron. Se vi scias, kie aŭ kiel ĉi tiu mesaĝo estas uzata, vi povas helpi al aliaj tradukantoj aldonante la dokumentaron al ĉi tiu mesaĝo.''",
+	'translate-edit-information'        => 'Informoj pri ĉi tiu mesaĝo ($1)',
+	'translate-edit-in-other-languages' => 'Mesaĝo en aliaj lingvoj',
+	'translate-edit-committed'          => 'Aktuala traduko en programaro',
+	'translate-edit-warnings'           => 'Avertoj pri nekompletaj tradukoj',
+	'translate-magic-pagename'          => 'Etendita traduko de MediaWiki',
+	'translate-magic-help'              => 'Vi povas traduki specialajn paĝojn, magiajn vortojn, nomojn de etosoj kaj nomojn de nomspacoj.
+
+En la magiajn vortojn vi devas inkludi la anglajn esprimojn aŭ ili ne plu funkcios. Lasu ankaŭ la unuan enskribon (0 aŭ 1) kiel ĝi estas.
+
+La kromnomoj de specialaj paĝoj povas havi plurajn tradukojn. La tradukoj estas disigataj per komo (,). Nomoj de etosoj kaj nomspacoj povas havi nur unu tradukon.
+
+En tradukoj de nomspacoj <tt>$1 diskuto</tt> estas speciala. <tt>$1</tt> estas anstataŭigata per la reteja nomo (ekzemple <tt>{{SITENAME}} diskuto</tt>). Se ne estas eble en via lingvo formi validan esprimon sen ŝanĝi la retejan nomon, bonvolu kontakti programiston.
+
+Vi devas esti en la grupo de tradukantoj por konservi ŝanĝojn. Ŝanĝoj ne estos konservataj, ĝis vi alklakis la butonon Konservu malsupre.',
+	'translate-magic-form'              => 'Lingvo: $1 Modulo: $2 $3',
+	'translate-magic-submit'            => 'Montri',
+	'translate-magic-cm-to-be'          => 'Estu',
+	'translate-magic-cm-current'        => 'Nuntempe',
+	'translate-magic-cm-original'       => 'Originalo',
+	'translate-magic-cm-fallback'       => 'Alternativo',
+	'translate-magic-cm-save'           => 'Konservu',
+	'translate-magic-cm-export'         => 'Eksportu',
+	'translate-magic-cm-updatedusing'   => 'Ĝisdatigita pere de Special:Magic',
+	'translate-magic-cm-savefailed'     => 'Konservado malsukcesis',
+	'translate-magic-special'           => 'Kromnomoj de specialaj paĝoj',
+	'translate-magic-words'             => 'Magiaj vortoj',
+	'translate-magic-skin'              => 'Nomoj de etosoj',
+	'translate-magic-namespace'         => 'Nomoj de nomspacoj',
+	'translationchanges'                => 'Tradukŝanĝoj',
+	'translationchanges-export'         => 'eksportu',
+	'translationchanges-change'         => '$1: $2 de $3',
+	'translate-checks-parameters'       => 'Jenaj parametroj ne estas uzataj: <strong>$1</strong>',
+	'translate-checks-balance'          => 'Estas nepara nombro de krampoj: <strong>$1</strong>',
+	'translate-checks-links'            => 'Jenaj ligiloj estas problemaj: <strong>$1</strong>',
+	'translate-checks-xhtml'            => 'Bonvolu anstataŭigi jenajn etikedojn per la korektaj: <strong>$1</strong>',
+	'translate-checks-plural'           => 'Difino uzas <nowiki>{{PLURAL:}}</nowiki>, sed traduko ne.',
 );
 
 $messages['eu'] = array(
@@ -864,9 +924,11 @@ $messages['ext'] = array(
 
 /** Finnish (Suomi)
  * @author Nike
+ * @author Crt
  */
 $messages['fi'] = array(
 	'translate'                         => 'Käännä',
+	'translate-desc'                    => '[[Special:Translate|Toimintosivu]], jolla voi kääntää MediaWikiä ja muutakin',
 	'translate-edit'                    => 'muokkaa',
 	'translate-talk'                    => 'keskustelu',
 	'translate-history'                 => 'historia',
@@ -903,9 +965,16 @@ $messages['fi'] = array(
 	'translate-edit-information'        => 'Tietoja viestistä ($1)',
 	'translate-edit-in-other-languages' => 'Viesti muilla kielillä',
 	'translate-edit-committed'          => 'Nykyinen ohjelmiston käyttämä käännös',
+	'translate-edit-warnings'           => 'Varoituksia virheellisestä käännöksestä',
 	'translate-magic-pagename'          => 'Laajennettu MediaWikin kääntäminen',
+	'translate-magic-cm-current'        => 'Nykyinen',
+	'translate-magic-cm-original'       => 'Alkuperäinen',
+	'translate-magic-cm-save'           => 'Tallenna',
+	'translate-magic-cm-export'         => 'Vie',
+	'translate-magic-cm-savefailed'     => 'Tallennus epäonnistui',
 	'translationchanges'                => 'Käännösmuutokset',
 	'translationchanges-export'         => 'vie',
+	'translationchanges-change'         => '$1: Käyttäjä $2 muutti sivua $3',
 );
 
 /** French (Français)
@@ -2187,11 +2256,81 @@ $messages['sah'] = array(
 	'translate-edit-message-in-fb' => 'Бу этии сүрүн <b>$1</b> ($2) тылынан:',
 );
 
+/** Slovak (Slovenčina)
+ * @author Helix84
+ */
 $messages['sk'] = array(
-	'translate' => 'Preložiť',
-	'translate-edit-message-format' => 'Formát tejto správy je <b>$1</b>.',
-	'translate-edit-message-in' => 'Aktuálny reťazec v jazyku <b>$1</b> ($2):',
-	'translate-edit-message-in-fb' => 'Aktuálny reťazec v jazyku <b>$1</b>, ktorý sa použije ak správa nie je preložená ($2):',
+	'translate'                         => 'Preložiť',
+	'translate-desc'                    => '[[Special:Translate|Špeciálna stránka]] na preklad MediaWiki a iného',
+	'translate-edit'                    => 'upraviť',
+	'translate-talk'                    => 'diskusia',
+	'translate-history'                 => 'história',
+	'translate-task-view'               => 'Zobraziť všetky správy z',
+	'translate-task-untranslated'       => 'Zobraziť všetky nepreložené správy z',
+	'translate-task-optional'           => 'Zobraziť voliteľné správy z',
+	'translate-task-review'             => 'Skontrolovať zmeny v',
+	'translate-task-reviewall'          => 'Skontrolovať všetky preklady v',
+	'translate-task-export'             => 'Exportovať preklady z',
+	'translate-task-export-to-file'     => 'Exportovať preklad do súboru z',
+	'translate-task-export-as-po'       => 'Exportovať preklad vo formáte Gettext z',
+	'translate-page-no-such-language'   => 'Zadaný jazyk bol neplatný.',
+	'translate-page-no-such-task'       => 'Zadaná úloha bola neplatná.',
+	'translate-page-no-such-group'      => 'Zadaná skupina bola neplatná.',
+	'translate-page-settings-legend'    => 'Nastavenia',
+	'translate-page-task'               => 'Chcem',
+	'translate-page-group'              => 'Skupina',
+	'translate-page-language'           => 'Jazyk',
+	'translate-page-limit'              => 'Limit',
+	'translate-page-limit-option'       => '$1 {{PLURAL:$1|správa|správy|správ}} na stránku',
+	'translate-submit'                  => 'Vykonať',
+	'translate-page-navigation-legend'  => 'Navigácia',
+	'translate-page-showing'            => 'Zobrazujú sa správy od $1 do $2 z $3.',
+	'translate-page-showing-all'        => 'Zobrazuje sa $1 {{PLURAL:$1|správa|správy|správ}}.',
+	'translate-page-showing-none'       => 'Žiadne správy.',
+	'translate-next'                    => 'Ďalšia stránka',
+	'translate-prev'                    => 'Predošlá stránka',
+	'translate-page-description-legend' => 'Informácie o skupine',
+	'translate-optional'                => '(voliteľné)',
+	'translate-ignored'                 => '(ignorované)',
+	'translate-edit-definition'         => 'Definícia správy',
+	'translate-edit-contribute'         => 'prispejte',
+	'translate-edit-no-information'     => "''Táto správa nie je zdokumentovaná. Ak viete kde alebo ako je táto správa použitá, môžete pomôcť ostatným prekaldateľom tým, že jej pridáte dokumentáciu.''",
+	'translate-edit-information'        => 'Informácie o tejto správe ($1)',
+	'translate-edit-in-other-languages' => 'Správa v iných jazykoch',
+	'translate-edit-committed'          => 'Aktuálny preklad v softvéri',
+	'translate-edit-warnings'           => 'Upozornenia na neúplné preklady',
+	'translate-magic-pagename'          => 'Rozšírený preklad MediaWiki',
+	'translate-magic-help'              => 'Môžete prekladať aliasy špeciálnych stránok, magické slová, názvy tém vzhľadu a návzy menných priestorov.
+
+V magických slovách musíte zahrnúť aj anglické preklady, inak prestanú fungovať. Tiež ponechajte nezmenenú prvú položku (0 alebo 1).
+
+Aliasy špeciálnych stránok a magických slov môžu moť viacero prekladov. Preklady sa oddeľojú čiarkami („,“). Názvy tém vzhľadu a návzy menných priestorov môžu mať iba jeden preklad.
+
+V prekladoch menných priestorov je <tt>$1 talk</tt> špeciálne. <tt>$1</tt> sa nahradí názvom webovej lokality (napr. <tt>{{SITENAME}} talk</tt>. Ak vo vašom jazyku nie je možné vytvoriť zmysluplný výraz bez zmeny názvu webovej lokality, prosím, kontaktujte vývojára.
+
+Aby ste mohli ukladať zmeny, musíte byť členom skupiny Translators. Zmeny sa neuložia, kým nekliknete na tlačidlo uložiť dolu.',
+	'translate-magic-form'              => 'Jazyk: $1 Modul: $2 $3',
+	'translate-magic-submit'            => 'Vykonať',
+	'translate-magic-cm-to-be'          => 'Byť',
+	'translate-magic-cm-current'        => 'Aktuálna',
+	'translate-magic-cm-original'       => 'Pôvodná',
+	'translate-magic-cm-fallback'       => 'Štandardná',
+	'translate-magic-cm-save'           => 'Uložiť',
+	'translate-magic-cm-export'         => 'Exportovať',
+	'translate-magic-cm-updatedusing'   => 'Aktualizované pomocou Special:Magic',
+	'translate-magic-cm-savefailed'     => 'Uloženie sa nepodarilo',
+	'translate-magic-special'           => 'Aliasy špeciálnych stránok',
+	'translate-magic-words'             => 'Magické slová',
+	'translate-magic-skin'              => 'Názvy tém vzhľadu',
+	'translate-magic-namespace'         => 'Názvy menných priestorov',
+	'translationchanges'                => 'Zmeny v preklade',
+	'translationchanges-export'         => 'export',
+	'translationchanges-change'         => '$1: $2 ($3)',
+	'translate-checks-parameters'       => 'Nasledovné parametre nie sú použité: <strong>$1</strong>',
+	'translate-checks-balance'          => 'Chyba v párovaní zátvoriek: <strong>$1</strong>',
+	'translate-checks-links'            => 'Nasledovné odkazy sú problematické: <strong>$1</strong>',
+	'translate-checks-xhtml'            => 'Prosím, nahraďte nasledovné značky správnymi: <strong>$1</strong>',
+	'translate-checks-plural'           => 'Definícia používa <nowiki>{{PLURAL:}}</nowiki>, ale preklad nie.',
 );
 
 /** Somali (Soomaaliga)
@@ -2420,6 +2559,7 @@ $messages['vo'] = array(
 	'translate-edit-in-other-languages' => 'Nun in püks votik',
 	'translate-edit-warnings'           => 'Nüneds tefü tradutods no lölöfiks',
 	'translate-magic-cm-to-be'          => 'Ovedon',
+	'translate-magic-cm-original'       => 'Rigik',
 	'translate-magic-cm-save'           => 'Dakipön',
 	'translate-magic-cm-savefailed'     => 'Dakip no eplöpon',
 	'translate-magic-words'             => 'Vöds magivik',
