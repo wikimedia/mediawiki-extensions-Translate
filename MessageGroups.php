@@ -868,6 +868,14 @@ class ChangeAuthorMessageGroup extends ExtensionMessageGroup {
 	);
 }
 
+class CharInsertMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'CharInsert';
+	protected $id    = 'ext-charinsert';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'CharInsert/CharInsert.i18n.php';
+}
+
 class CheckUserMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Check User';
 	protected $id      = 'ext-checkuser';

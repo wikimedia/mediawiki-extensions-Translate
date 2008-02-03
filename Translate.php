@@ -105,6 +105,7 @@ $wgTranslateAC = array(
 'ext-catfeed'               => 'CatFeedMessageGroup',
 'ext-centralauth'           => 'CentralAuthMessageGroup',
 'ext-changeauthor'          => 'ChangeAuthorMessageGroup',
+'ext-charinsert'            => 'CharInsertMessageGroup',
 'ext-checkuser'             => 'CheckUserMessageGroup',
 'ext-chemistry'             => 'ChemFunctionsMessageGroup',
 'ext-cite'                  => 'CiteMessageGroup',
