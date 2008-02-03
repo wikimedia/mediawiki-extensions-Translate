@@ -55,6 +55,9 @@ class SpecialTranslationChanges extends SpecialPage {
 		return $selector->getHTML();
 	}
 
+	/**
+	 * Preprocesses changes.
+	 */
 	protected function sort( Array $rows ) {
 		global $wgContLang;
 		$sorted = array();
@@ -111,23 +114,13 @@ class SpecialTranslationChanges extends SpecialPage {
 
 		$changes = $this->sort( $rows );
 		foreach ( $changes as $class => $groups ) {
-			#$output .= Xml::element( 'h2', null, $class );
 			foreach ( $groups as $group => $languages ) {
 
 				$label = $group;
-				$sublabel = false;
 				if ( isset( $groupObjects[$group] ) ) {
 					$label = $groupObjects[$group]->getLabel();
-					if ( $groupObjects[$group]->canExportToFile() ) {
-						$langs = implode( ',', array_keys( $languages ) );
-						$id = $groupObjects[$group]->getId();
-						$sublabel .= "$id $langs";
-					}
 				}
 				$output .= Xml::element( 'h3', null, $label );
-				if ( $sublabel ) {
-					$output .= Xml::tags( 'p', null, $sublabel );
-				}
 
 				foreach ( $languages as $language => $rows ) {
 					$index++;
