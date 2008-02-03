@@ -1603,14 +1603,6 @@ class RenameUserMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'Renameuser/SpecialRenameuser.i18n.php';
 }
 
-class ResignMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Resign';
-	protected $id    = 'ext-resign';
-
-	protected $arrName = 'messages';
-	protected $messageFile  = 'Resign/SpecialResign.i18n.php';
-}
-
 class ReviewMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Review';
 	protected $id    = 'ext-review';

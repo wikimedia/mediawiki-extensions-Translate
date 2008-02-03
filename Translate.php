@@ -180,7 +180,6 @@ $wgTranslateAC = array(
 'ext-randomincategory'      => 'RandomInCategoryMessageGroup',
 'ext-regexblock'            => 'RegexBlockMessageGroup',
 'ext-renameuser'            => 'RenameUserMessageGroup',
-'ext-resign'                => 'ResignMessageGroup',
 'ext-review'                => 'ReviewMessageGroup',
 'ext-scanset'               => 'ScanSetMessageGroup',
 'ext-seealso'               => 'SeealsoMessageGroup',
