@@ -1520,6 +1520,7 @@ class PlayerMessageGroup extends ExtensionMessageGroup {
 
 	protected $ignored = array(
 		'player-pagetext',
+		'player-imagepage-header',
 	);
 }
 
