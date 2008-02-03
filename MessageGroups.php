@@ -935,6 +935,14 @@ class CiteSpecialMessageGroup extends ExtensionMessageGroup {
 	);
 }
 
+class CleanChangesMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Clean changes';
+	protected $id    = 'ext-cleanchanges';
+
+	protected $arrName = 'messages';
+	protected $messageFile  = 'CleanChanges/CleanChanges.i18n.php';
+}
+
 class CommentSpammerMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Comment Spammer';
 	protected $id    = 'ext-commentspammer';
