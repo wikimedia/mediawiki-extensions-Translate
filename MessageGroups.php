@@ -972,18 +972,12 @@ class ConfirmEditFancyCaptchaMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile  = 'ConfirmEdit/FancyCaptcha.i18n.php';
 }
 
-class ContactPageMessageGroup extends MultipleFileMessageGroup {
-	protected $fileExporter = 'MultipleFileExtensionExporter';
+class ContactPageMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Contact Page';
 	protected $id    = 'ext-contactpage';
 
 	protected $arrName      = 'messages';
 	protected $messageFile  = 'ContactPage/ContactPage.i18n.php';
-	protected $filePattern  = 'ContactPage/ContactPage.i18n.$CODE.php';
-
-	protected $exportStart = '$messages = array(';
-	protected $exportLineP = "\t";
-	protected $exportEnd   = ');';
 }
 
 class ContributionScoresMessageGroup extends ExtensionMessageGroup {
