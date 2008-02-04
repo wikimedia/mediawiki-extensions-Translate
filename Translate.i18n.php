@@ -984,6 +984,7 @@ $messages['fi'] = array(
  * @author Dereckson
  * @author Sherbrooke
  * @author Siebrand
+ * @author ChrisPtDe
  */
 $messages['fr'] = array(
 	'translate'                         => 'Traduire',
@@ -1034,7 +1035,7 @@ Les alias de pages spéciales et les mots magiques peuvent avoir plusieurs tradu
 
 Dans les traductions d'espaces de noms, <tt>$1 talk</tt> est spécial. <tt>$1</tt> est remplacé par le nom du site (par exemple <tt>{{SITENAME}} talk</tt>). Si ce n'est pas possible d'obtenir une expression valide dans votre langue sans changer le nom du site, veuillez contacter un développeur.
 
-Vous devez appartenir au groupe des traducteurs pour sauvegarder les changements. Les changements ne seront pas sauvegardés avant que vous ne cliquiez sur le bouton Saugegarder en bas.",
+Vous devez appartenir au groupe des traducteurs pour sauvegarder les changements. Les changements ne seront pas sauvegardés avant que vous ne cliquiez sur le bouton Sauvegarder en bas.",
 	'translate-magic-form'              => 'Langue $1 Module : $2 $3',
 	'translate-magic-submit'            => 'Aller',
 	'translate-magic-cm-to-be'          => 'Devient',
@@ -1127,6 +1128,15 @@ $messages['frp'] = array(
 	'translate-edit-committed'          => 'Traduccion d’ora ja dens la programeria',
 	'translate-edit-warnings'           => 'Avèrtissements regardent les traduccions pas complètes',
 	'translate-magic-pagename'          => 'Traduccion de MediaWiki ètendua',
+	'translate-magic-help'              => 'Vos pouede traduire los noms de les pâges spèciâles, los mots magicos, los noms de les entèrfaces et los titros des èspâços de nom.
+
+Dens los mots magicos, vos dête encllure la traduccion en anglès ou cen fonccionerat pas més. Et pués, lèssiéd lo premiér èlèment (0 ou ben 1) coment il est.
+
+Los noms de les pâges spèciâles et los mots magicos pôvont avêr plusiors traduccions. Les traduccions sont sèparâs per una virgula (,). Los noms de les entèrfaces et los titros des èspâços de nom pôvont avêr ren que yona traduccion.
+
+Dens les traduccions des èspâços de nom, <tt>$1 talk</tt> est spèciâl. <tt>$1</tt> est remplaciê per lo nom du seto (per ègzemplo <tt>{{SITENAME}} talk</tt>). S’o est pas possiblo d’obtegnir una èxprèssion valida dens voutra lengoua sen changiér lo nom du seto, volyéd vos veriér vers un dèvelopior.
+
+Vos dête apartegnir a la tropa des traductors por sôvar los changements. Los changements seront pas sôvâs devant que vos clicâd sur lo boton « Sôvar » d’avâl.',
 	'translate-magic-form'              => 'Lengoua : $1 Modulo : $2 $3',
 	'translate-magic-submit'            => 'Alar',
 	'translate-magic-cm-to-be'          => 'Vint',
@@ -1136,10 +1146,11 @@ $messages['frp'] = array(
 	'translate-magic-cm-save'           => 'Sôvar',
 	'translate-magic-cm-export'         => 'Èxportar',
 	'translate-magic-cm-updatedusing'   => 'Betâ a jorn en utilisent Special:Magic',
+	'translate-magic-cm-savefailed'     => 'Falyita de la sôvegouârda',
 	'translate-magic-special'           => 'Noms de les pâges spèciâles',
 	'translate-magic-words'             => 'Mots magicos',
 	'translate-magic-skin'              => 'Noms de les entèrfaces',
-	'translate-magic-namespace'         => 'Noms des èspâços de nom',
+	'translate-magic-namespace'         => 'Titros des èspâços de nom',
 	'translationchanges'                => 'Traduccions modifiâs',
 	'translationchanges-export'         => 'èxportar',
 	'translationchanges-change'         => '$1 : $2 per $3',
@@ -1174,6 +1185,7 @@ $messages['gl'] = array(
 	'translate-page-limit'              => 'Límite',
 	'translate-page-limit-option'       => '$1 {{PLURAL:$1|mensaxe|mensaxes}} por páxina',
 	'translate-submit'                  => 'Procura',
+	'translate-page-navigation-legend'  => 'Navegación',
 	'translate-page-showing'            => 'Amosando mensaxes de $1 a $2 de $3.',
 	'translate-page-showing-all'        => 'Amosando $1 {{PLURAL:$1|mensaxe|mensaxes}}.',
 	'translate-page-showing-none'       => 'Non hai mensaxes para amosar.',
@@ -1183,10 +1195,12 @@ $messages['gl'] = array(
 	'translate-optional'                => '(opcional)',
 	'translate-ignored'                 => '(ignorado)',
 	'translate-edit-definition'         => 'Definición da mensaxe',
+	'translate-edit-contribute'         => 'contribuír',
 	'translate-edit-no-information'     => "''Esta mensaxe non ten documentación. Se vostede sabe donde ou como se usa esta mensaxe, pode axudar a outros traductores engadindo documentación a esta mensaxe.''",
 	'translate-edit-information'        => 'Información acerca desta mensaxe ($1)',
 	'translate-edit-in-other-languages' => 'Mensaxe en otras linguas',
 	'translate-edit-committed'          => 'Tradución actual no software',
+	'translate-edit-warnings'           => 'Avisos acerca de traducións incompletas',
 	'translate-magic-pagename'          => 'Tradución extendida de MediaWiki',
 	'translate-magic-help'              => 'Pode traducir os alias das páxinas especiais, as palabras máxicas, os nomes das aparencias e os nomes dos espazos de nomes.
 
@@ -1214,6 +1228,7 @@ Nas traducións dos espazos de nomes, <tt>$1 talk</tt> é especial. <tt>$1</tt> 
 	'translationchanges-change'         => '$1: $2 por $3',
 	'translate-checks-parameters'       => 'Os seguintes parámetros non son usados: <strong>$1</strong>',
 	'translate-checks-links'            => 'As seguintes ligazóns son problemáticas: <strong>$1</strong>',
+	'translate-checks-plural'           => 'A definición usa <nowiki>{{PLURAL:}}</nowiki> pero a tradución non.',
 );
 
 $messages['he'] = array(
@@ -2473,6 +2488,7 @@ $messages['su'] = array(
  */
 $messages['sv'] = array(
 	'translate'                         => 'Översätt',
+	'translate-desc'                    => '[[Special:Translate|Specialsida]] för översättning av Mediawiki och annat',
 	'translate-edit'                    => 'redigera',
 	'translate-talk'                    => 'diskussion',
 	'translate-history'                 => 'historik',
