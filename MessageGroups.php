@@ -1152,17 +1152,12 @@ class FormatEmailMessageGroup extends ExtensionMessageGroup {
 	);
 }
 
-class GadgetsMessageGroup extends MultipleFileMessageGroup {
-	protected $fileExporter = 'MultipleFileExtensionExporter';
+class GadgetsMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Gadgets';
 	protected $id    = 'ext-gadgets';
 
 	protected $arrName      = 'messages';
 	protected $messageFile  = 'Gadgets/Gadgets.i18n.php';
-	protected $filePattern  = 'Gadgets/Gadgets.i18n.$CODE.php';
-
-	protected $exportStart = '$messages = array(';
-	protected $exportEnd   = ');';
 
 	protected $ignored = array(
 		'gadgets-definition',
