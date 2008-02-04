@@ -110,6 +110,7 @@ $wgTranslateAC = array(
 'ext-chemistry'             => 'ChemFunctionsMessageGroup',
 'ext-cite'                  => 'CiteMessageGroup',
 'ext-citespecial'           => 'CiteSpecialMessageGroup',
+'ext-cldr'                  => 'LanguageNamesMessageGroup',
 'ext-cleanchanges'          => 'CleanChangesMessageGroup',
 'ext-commentspammer'        => 'CommentSpammerMessageGroup',
 'ext-confirmaccount'        => 'ConfirmAccountMessageGroup',

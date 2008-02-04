@@ -1229,6 +1229,14 @@ class InterwikiMessageGroup extends ExtensionMessageGroup {
 	);
 }
 
+class LanguageNamesMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Cldr';
+	protected $id    = 'ext-cldr';
+
+	protected $arrName = 'messages';
+	protected $messageFile = 'cldr/LanguageNames.i18n.php';
+}
+
 class LanguageSelectorMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Language Selector';
 	protected $id    = 'ext-languageselector';
