@@ -823,17 +823,12 @@ class CategoryStepperMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'CategoryStepper/CategoryStepper.i18n.php';
 }
 
-class CategoryTreeMessageGroup extends MultipleFileMessageGroup {
-	protected $fileExporter = 'MultipleFileExtensionExporter';
+class CategoryTreeMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Category Tree';
 	protected $id    = 'ext-categorytree';
 
 	protected $arrName      = 'messages';
 	protected $messageFile  = 'CategoryTree/CategoryTree.i18n.php';
-	protected $filePattern  = 'CategoryTree/CategoryTree.i18n.$CODE.php';
-
-	protected $exportStart = '$messages = array(';
-	protected $exportEnd   = ');';
 }
 
 class CatFeedMessageGroup extends ExtensionMessageGroup {
