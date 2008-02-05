@@ -1995,6 +1995,7 @@ Om wijzigingen op te slaan moet u lid zijn van de groep vertalers. Wijzigingen w
  */
 $messages['no'] = array(
 	'translate'                         => 'Oversett',
+	'translate-desc'                    => '[[Special:Translate|Spesialside]] for oversettelse av MediaWiki o.a.',
 	'translate-edit'                    => 'rediger',
 	'translate-talk'                    => 'diskusjon',
 	'translate-history'                 => 'historikk',
@@ -2025,7 +2026,14 @@ $messages['no'] = array(
 	'translate-page-description-legend' => 'Informasjon om gruppa',
 	'translate-optional'                => '(valgfri)',
 	'translate-ignored'                 => '(ignorert)',
-	'translate-magic-pagename'          => 'Utvided MediaWiki-oversettelse',
+	'translate-edit-definition'         => 'Beskjeden som skal oversettes',
+	'translate-edit-contribute'         => 'bidra',
+	'translate-edit-no-information'     => "''Denne beskjeden har ikke dokumentasjon. Om du vet hvor eller hvordan denne beskjeden brukes, kan du hjelpe andre oversettere ved å legge inn dokumentasjon til denne beskjeden.''",
+	'translate-edit-information'        => 'Informasjon om denne beskjeden ($1)',
+	'translate-edit-in-other-languages' => 'Beskjeden på andre språk',
+	'translate-edit-committed'          => 'Nåværende oversettelse',
+	'translate-edit-warnings'           => 'Advarsler om ufullstendige oversettelser',
+	'translate-magic-pagename'          => 'Utvidet MediaWiki-oversettelse',
 	'translate-magic-help'              => 'Du kan oversette spesialsidenavn, magiske ord, utseendenavn og navneromnavn.
 
 I magiske ord må du inkludere engelskspråklige oversettelser, ellers vil de ikke fungere. La også det første punktet (0 eller 1) være som det er.
@@ -2052,6 +2060,11 @@ Du må være i oversettergruppa for å lagre endringer. Endringer lagres ikke f�
 	'translationchanges'                => 'Oversettelsesendringer',
 	'translationchanges-export'         => 'eksporter',
 	'translationchanges-change'         => '$1: $2 av $3',
+	'translate-checks-parameters'       => 'Følgende parametere brukes ikke: <strong>$1</strong>',
+	'translate-checks-balance'          => 'Det er et ujevnt antall parenteser: <strong>$1</strong>',
+	'translate-checks-links'            => 'Følgende lenker er problematiske: <strong>$1</strong>',
+	'translate-checks-xhtml'            => 'Erstatt følgende tagger med de korrekte: <strong>$1</strong>',
+	'translate-checks-plural'           => 'Definisjonen bruker <nowiki>{{PLURAL:}}</nowiki>, men oversettelsen gjør ikke det.',
 );
 
 /** Occitan (Occitan)
