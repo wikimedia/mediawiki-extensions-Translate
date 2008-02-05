@@ -1633,6 +1633,14 @@ class SelectCategoryMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile  = 'SelectCategory/SelectCategory.i18n.php';
 }
 
+class SemanticCalendarMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Semantic Calendar';
+	protected $id    = 'ext-semanticcalendar';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'SemanticCalendar/languages/SC_Messages.php';
+}
+
 class SemanticDrilldownMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Semantic Drilldown';
 	protected $id    = 'ext-semanticdrilldown';

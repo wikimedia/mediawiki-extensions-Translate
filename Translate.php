@@ -187,6 +187,7 @@ $wgTranslateAC = array(
 'ext-scanset'               => 'ScanSetMessageGroup',
 'ext-seealso'               => 'SeealsoMessageGroup',
 'ext-selectcategory'        => 'SelectCategoryMessageGroup',
+'ext-semanticcalendar'      => 'SemanticCalendarMessageGroup',
 'ext-semanticdrilldown'     => 'SemanticDrilldownMessageGroup',
 'ext-semanticforms'         => 'SemanticFormsMessageGroup',
 'ext-showprocesslist'       => 'ShowProcesslistMessageGroup',
