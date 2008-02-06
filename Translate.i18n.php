@@ -72,6 +72,7 @@ You need to be in the translators group to save changes. Changes are not saved u
 	'translate-magic-cm-original' => 'Original',
 	'translate-magic-cm-fallback' => 'Fallback',
 
+	'translate-magic-cm-comment' => 'Comment:',
 	'translate-magic-cm-save' => 'Save',
 	'translate-magic-cm-export' => 'Export',
 

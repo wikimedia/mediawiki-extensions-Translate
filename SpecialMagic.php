@@ -375,7 +375,10 @@ abstract class ComplexMessages {
 	}
 
 	public function getButtons() {
-		return Xml::submitButton( wfMsg(self::MSG.'save'), array( 'name' => 'savetodb' ) ) . Xml::submitButton(  wfMsg(self::MSG.'export'), array( 'name' => 'export') );
+		return
+			Xml::inputLabel( wfMsg(self::MSG.'comment'), 'comment', 'sp-translate-magic-comment' ) .
+			Xml::submitButton( wfMsg(self::MSG.'save'), array( 'name' => 'savetodb' ) ) .
+			Xml::submitButton( wfMsg(self::MSG.'export'), array( 'name' => 'export') );
 	}
 
 	public function formatElement( $element ) {
@@ -424,7 +427,8 @@ abstract class ComplexMessages {
 
 		$data = "# DO NOT EDIT THIS PAGE DIRECTLY! Use [[Special:Magic]].\n<pre>\n" . $this->formatForSave( $request ) . "\n</pre>";
 
-		$success = $article->doEdit( $data, wfMsgForContent(self::MSG.'updatedusing'), 0 );
+		$comment = $request->getText( 'comment', wfMsgForContent(self::MSG.'updatedusing'));
+		$success = $article->doEdit( $data, $comment, 0 );
 
 		if ( !$success ) {
 			throw new MWException( wfMsgHtml(self::MSG.'savefailed') );

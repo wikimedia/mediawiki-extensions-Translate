@@ -33,7 +33,7 @@ function customMessageGroups( $id ) {
 </code>
 
 == Changes in version 8 ==
-* Not released
+* Released 2008-02-06
 * export.php for even faster exporting (only core messages supported currently)
 * Message groups can now have description or notes for translations
 * Enhanced edit view with fieldsets and message documentation
@@ -57,6 +57,7 @@ function customMessageGroups( $id ) {
 * autoexport.php helper
 * Content-Disposition header for po export
 * Link to Special:Translate added in Special:Version
+* Possibility to add comments when editing with Special:magic
 
 == Changes in version 7 ==
 * Released 2007-12-29
