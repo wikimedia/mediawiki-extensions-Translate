@@ -717,6 +717,14 @@ class AdvancedRandomMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'AdvancedRandom/SpecialAdvancedRandom.i18n.php';
 }
 
+class AjaxQueryPagesMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Ajax Query Pages';
+	protected $id    = 'ext-ajaxquerypages';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'AjaxQueryPages/AjaxQueryPages.i18n.php';
+}
+
 class AjaxShowEditorsMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Ajax Show Editors';
 	protected $id    = 'ext-ajaxshoweditors';
@@ -1013,6 +1021,14 @@ class ContributorsMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName = 'messages';
 	protected $messageFile  = 'Contributors/Contributors.i18n.php';
+}
+
+class ContributorsAddonMessageGroup extends ExtensionMessageGroup {
+	protected $label   = 'Contributors Add-on';
+	protected $id      = 'ext-contributorsaddon';
+
+	protected $arrName = 'messages';
+	protected $messageFile  = 'ContributorsAddon/ContributorsAddon.i18n.php';
 }
 
 class CountEditsMessageGroup extends ExtensionMessageGroup {
