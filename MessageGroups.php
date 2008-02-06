@@ -1373,7 +1373,7 @@ class MultiBoilerplateMessageGroup extends ExtensionMessageGroup {
 	protected $arrName     = 'messages';
 	protected $messageFile = 'MultiBoilerplate/MultiBoilerplate.i18n.php';
 
-	protected $ignored = array( 'multiboilerplate-label' );
+	protected $ignored = array( 'multiboilerplate', 'multiboilerplate-label' );
 }
 
 class MultiUploadMessageGroup extends ExtensionMessageGroup {
