@@ -111,14 +111,16 @@ $messages['qqq'] = array(
  * @author SPQRobin
  */
 $messages['af'] = array(
-	'translate'                  => 'Vertaal',
-	'translate-edit'             => 'wysig',
-	'translate-talk'             => 'bespreking',
-	'translate-history'          => 'geskiedenis',
-	'translate-page-language'    => 'Taal',
-	'translate-next'             => 'Volgende bladsy',
-	'translate-prev'             => 'Vorige bladsy',
-	'translate-magic-cm-current' => 'Huidig',
+	'translate'                         => 'Vertaal',
+	'translate-edit'                    => 'wysig',
+	'translate-talk'                    => 'bespreking',
+	'translate-history'                 => 'geskiedenis',
+	'translate-page-language'           => 'Taal',
+	'translate-next'                    => 'Volgende bladsy',
+	'translate-prev'                    => 'Vorige bladsy',
+	'translate-edit-in-other-languages' => 'Boodskap in andere tale',
+	'translate-magic-cm-current'        => 'Huidig',
+	'translate-magic-cm-save'           => 'Stoor',
 );
 
 /** Aragonese (Aragonés)
@@ -1500,10 +1502,35 @@ $messages['it'] = array(
 	'translate-edit-message-in-fb' => 'Contenuto attuale nella lingua di riserva <b>$1</b> ($2):',
 );
 
+/** Japanese (日本語)
+ * @author Marine-Blue
+ */
 $messages['ja'] = array(
-	'translate' => 'インターフェースの翻訳',
-	'translate-edit-message-format' => 'このメッセージの書式は <b>$1</b> です。',
-	'translate-edit-message-in' => '<b>$1</b> ($2) での現在の文字列:',
+	'translate'                        => 'インターフェースの翻訳',
+	'translate-desc'                   => 'MediaWikiや拡張機能を翻訳するための[[Special:Translate|特別ページ]]',
+	'translate-edit'                   => '編集',
+	'translate-talk'                   => 'ノート',
+	'translate-history'                => '履歴',
+	'translate-task-view'              => 'すべてのメッセージ',
+	'translate-task-untranslated'      => '未翻訳メッセージ',
+	'translate-task-optional'          => '任意のメッセージ',
+	'translate-task-review'            => '更新が必要なもの',
+	'translate-task-reviewall'         => '翻訳済みメッセージ',
+	'translate-task-export'            => '翻訳された PHP コードをテキストエリアに出力',
+	'translate-task-export-to-file'    => '翻訳された PHP コードをファイルとしてエクスポート',
+	'translate-task-export-as-po'      => '翻訳された PHP コードを gettext 形式でエクスポート',
+	'translate-page-settings-legend'   => '設定',
+	'translate-page-task'              => '絞込み',
+	'translate-page-group'             => '種類',
+	'translate-page-language'          => '言語',
+	'translate-page-limit'             => '表示数',
+	'translate-page-limit-option'      => '1ページごとに $1 項目',
+	'translate-submit'                 => '再表示',
+	'translate-page-navigation-legend' => 'ナビゲーション',
+	'translate-page-showing'           => '全 $3 件中 $1 件目から $2 件目まで表示しています',
+	'translate-page-showing-all'       => '全 $1 件を表示しています',
+	'translate-next'                   => '次のページ',
+	'translate-prev'                   => '前のページ',
 );
 
 /** Georgian (ქართული)
@@ -2209,7 +2236,7 @@ $messages['pt'] = array(
 	'translate-page-showing'            => 'Exibindo mensagens de $1 a $2 de $3.',
 	'translate-page-showing-all'        => 'Exibindo $1 {{PLURAL:$1|mensagem|mensagens}}.',
 	'translate-page-showing-none'       => 'Não há mensagens a serem exibidas.',
-	'translate-next'                    => 'Próxima página',
+	'translate-next'                    => 'Página seguinte',
 	'translate-prev'                    => 'Página anterior',
 	'translate-page-description-legend' => 'Informação sobre o grupo',
 	'translate-optional'                => '(opcional)',
