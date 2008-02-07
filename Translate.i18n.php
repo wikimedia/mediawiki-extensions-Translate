@@ -116,12 +116,20 @@ $messages['af'] = array(
 	'translate-edit'                    => 'wysig',
 	'translate-talk'                    => 'bespreking',
 	'translate-history'                 => 'geskiedenis',
+	'translate-page-task'               => 'Ek wil',
+	'translate-page-group'              => 'Groep',
 	'translate-page-language'           => 'Taal',
+	'translate-page-limit-option'       => '$1 {{PLURAL:$1|boodskap|boodskappe}} per bladsy',
+	'translate-page-navigation-legend'  => 'Navigasie',
+	'translate-page-showing-none'       => 'Geen boodskappe te wys.',
 	'translate-next'                    => 'Volgende bladsy',
 	'translate-prev'                    => 'Vorige bladsy',
+	'translate-page-description-legend' => 'Inligting oor hierdie groep',
+	'translate-edit-information'        => 'Inligting oor hierdie boodskap ($1)',
 	'translate-edit-in-other-languages' => 'Boodskap in andere tale',
 	'translate-magic-cm-current'        => 'Huidig',
 	'translate-magic-cm-save'           => 'Stoor',
+	'translate-magic-namespace'         => 'Naamruimtenamen',
 );
 
 /** Aragonese (Aragonés)
@@ -200,6 +208,7 @@ $messages['ang'] = array(
  */
 $messages['ar'] = array(
 	'translate'                         => 'ترجمة',
+	'translate-desc'                    => '[[Special:Translate|صفحة خاصة]] لترجمة الميدياويكي وما بعده',
 	'translate-edit'                    => 'عدل',
 	'translate-talk'                    => 'نقاش',
 	'translate-history'                 => 'تاريخ',
@@ -253,6 +262,7 @@ $messages['ar'] = array(
 	'translate-magic-cm-current'        => 'الحالي',
 	'translate-magic-cm-original'       => 'الأصلي',
 	'translate-magic-cm-fallback'       => 'المراجعة',
+	'translate-magic-cm-comment'        => 'تعليق:',
 	'translate-magic-cm-save'           => 'حفظ',
 	'translate-magic-cm-export'         => 'تصدير',
 	'translate-magic-cm-updatedusing'   => 'حدث باستخدام Special:Magic',
@@ -1045,6 +1055,7 @@ Vous devez appartenir au groupe des traducteurs pour sauvegarder les changements
 	'translate-magic-cm-current'        => 'Actuel',
 	'translate-magic-cm-original'       => 'Original',
 	'translate-magic-cm-fallback'       => 'Revenir',
+	'translate-magic-cm-comment'        => 'Commentaire :',
 	'translate-magic-cm-save'           => 'Sauvegarder',
 	'translate-magic-cm-export'         => 'Exporter',
 	'translate-magic-cm-updatedusing'   => 'Mise à jour en utilisant Special:Magic',
@@ -1999,6 +2010,7 @@ Om wijzigingen op te slaan moet u lid zijn van de groep vertalers. Wijzigingen w
 	'translate-magic-cm-current'        => 'Huidig',
 	'translate-magic-cm-original'       => 'Oorspronkelijk',
 	'translate-magic-cm-fallback'       => 'Alternatief',
+	'translate-magic-cm-comment'        => 'Samenvatting:',
 	'translate-magic-cm-save'           => 'Opslaan',
 	'translate-magic-cm-export'         => 'Exporteren',
 	'translate-magic-cm-updatedusing'   => 'Bijgewerkt via Special:Magic',
@@ -2410,7 +2422,7 @@ $messages['sk'] = array(
 	'translate-submit'                  => 'Vykonať',
 	'translate-page-navigation-legend'  => 'Navigácia',
 	'translate-page-showing'            => 'Zobrazujú sa správy od $1 do $2 z $3.',
-	'translate-page-showing-all'        => 'Zobrazuje sa $1 {{PLURAL:$1|správa|správy|správ}}.',
+	'translate-page-showing-all'        => '{{PLURAL:$1|Zobrazuje sa $1 správa|Zobrazujú sa $1 správy|Zobrazuje sa $1 správ}}.',
 	'translate-page-showing-none'       => 'Žiadne správy.',
 	'translate-next'                    => 'Ďalšia stránka',
 	'translate-prev'                    => 'Predošlá stránka',
@@ -2440,6 +2452,7 @@ Aby ste mohli ukladať zmeny, musíte byť členom skupiny Translators. Zmeny sa
 	'translate-magic-cm-current'        => 'Aktuálna',
 	'translate-magic-cm-original'       => 'Pôvodná',
 	'translate-magic-cm-fallback'       => 'Štandardná',
+	'translate-magic-cm-comment'        => 'Komentár:',
 	'translate-magic-cm-save'           => 'Uložiť',
 	'translate-magic-cm-export'         => 'Exportovať',
 	'translate-magic-cm-updatedusing'   => 'Aktualizované pomocou Special:Magic',
@@ -2525,6 +2538,7 @@ $messages['su'] = array(
 /** Swedish (Svenska)
  * @author Sannab
  * @author Lejonel
+ * @author Max sonnelid
  * @author Siebrand
  */
 $messages['sv'] = array(
@@ -2583,6 +2597,7 @@ För att kunna spara ändringar så behöver du tillhöra översättargruppen. �
 	'translate-magic-cm-current'        => 'Nuvarande',
 	'translate-magic-cm-original'       => 'Original',
 	'translate-magic-cm-fallback'       => 'Reserv',
+	'translate-magic-cm-comment'        => 'Kommentar:',
 	'translate-magic-cm-save'           => 'Spara',
 	'translate-magic-cm-export'         => 'Exportera',
 	'translate-magic-cm-updatedusing'   => 'Uppdaterad med hjälp av Special:Magic',
@@ -2637,9 +2652,15 @@ $messages['tr'] = array(
 	'translate-submit'               => 'Getir',
 	'translate-next'                 => 'İleri',
 	'translate-prev'                 => 'Geri',
+	'translate-optional'             => '(isteğe bağlı)',
+	'translate-ignored'              => '(yok sayılan)',
 	'translate-edit-contribute'      => 'Katkıda bulun',
+	'translate-magic-form'           => 'Dil: $1 Modül: $2 $3',
 	'translate-magic-submit'         => 'Getir',
+	'translate-magic-cm-to-be'       => 'Yap',
+	'translate-magic-cm-current'     => 'Güncelle',
 	'translate-magic-cm-original'    => 'Orjinal',
+	'translate-magic-cm-comment'     => 'Açıklama :',
 	'translate-magic-cm-save'        => 'Kaydet',
 );
 
