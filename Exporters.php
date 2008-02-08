@@ -83,7 +83,7 @@ class StandardExtensionExporter implements MessageExporter {
 	protected function parse( $filename ) {
 		$var = $this->group->getVariableName();
 
-		$data = file_get_contents( $filename );
+		$data = file_get_contents( $filename ) . "\n";
 
 		$headerP = "
 		.*? # Ungreedily eat header
