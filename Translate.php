@@ -137,6 +137,7 @@ $wgTranslateAC = array(
 'ext-flaggedrevsmakereviewer' => 'FlaggedRevsMakeReviewerMessageGroup',
 'ext-formatemail'           => 'FormatEmailMessageGroup',
 'ext-gadgets'               => 'GadgetsMessageGroup',
+'ext-i18ntags'              => 'I18nTagsMessageGroup',
 'ext-icon'                  => 'IconMessageGroup',
 'ext-imagemap'              => 'ImageMapMessageGroup',
 'ext-importfreeimages'      => 'ImportFreeImagesMessageGroup',

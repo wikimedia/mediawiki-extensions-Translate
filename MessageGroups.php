@@ -1175,6 +1175,14 @@ class GadgetsMessageGroup extends ExtensionMessageGroup {
 	);
 }
 
+class I18nTagsMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Parser i18n tags ';
+	protected $id    = 'ext-i18ntags';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'I18nTags/I18nTags.i18n.php';
+}
+
 class IconMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Icon';
 	protected $id    = 'ext-icon';
