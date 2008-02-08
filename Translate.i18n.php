@@ -969,6 +969,85 @@ $messages['ext'] = array(
 	'translate-magic-words' => 'Parabras máhicas',
 );
 
+/** فارسی (فارسی)
+ * @author Huji
+ */
+$messages['fa'] = array(
+	'translate'                         => 'ترجمه',
+	'translate-desc'                    => '[[Special:Translate|صفحهٔ ویژه‌ای]] برای ترجمهٔ مدیاویکی و فراتر از آن',
+	'translate-edit'                    => 'ویرایش',
+	'translate-talk'                    => 'بحث',
+	'translate-history'                 => 'تاریخچه',
+	'translate-task-view'               => 'نمایش تمام پیغام‌ها',
+	'translate-task-untranslated'       => 'نمایش تمام پیغام‌های ترجمه نشده',
+	'translate-task-optional'           => 'نمایش پیغام‌های اختیاری',
+	'translate-task-review'             => 'بازبینی تغییرها',
+	'translate-task-reviewall'          => 'بازبینی تمام ترجمه‌ها',
+	'translate-task-export'             => 'صدور ترجمه‌ها',
+	'translate-task-export-to-file'     => 'صدور ترجمه‌ها به یک پرونده',
+	'translate-task-export-as-po'       => 'صدور ترجمه‌ها در قالب Gettext',
+	'translate-page-no-such-language'   => 'زبان مورد نظر غیر مجاز است.',
+	'translate-page-no-such-task'       => 'عمل مورد نظر غیر مجاز است.',
+	'translate-page-no-such-group'      => 'گروه مورد نظر غیر مجاز است.',
+	'translate-page-settings-legend'    => 'تنظیمات',
+	'translate-page-task'               => 'دستور',
+	'translate-page-group'              => 'گروه',
+	'translate-page-language'           => 'زبان',
+	'translate-page-limit'              => 'تعداد',
+	'translate-page-limit-option'       => '$1 {{PLURAL:$1|پیغام|پیغام}} در هر صفحه',
+	'translate-submit'                  => 'بیاور',
+	'translate-page-navigation-legend'  => 'گشتن',
+	'translate-page-showing'            => 'نمایش پیغام‌های $1 تا $2 از $3.',
+	'translate-page-showing-all'        => 'نمایش $1 {{PLURAL:$1|پیغام|پیغام}}.',
+	'translate-page-showing-none'       => 'پیغامی برای نمایش وجود ندارد.',
+	'translate-next'                    => 'صفحهٔ بعدی',
+	'translate-prev'                    => 'صفحهٔ قبلی',
+	'translate-page-description-legend' => 'اطلاعات در مورد گروه',
+	'translate-optional'                => '(اختیاری)',
+	'translate-ignored'                 => '(نادیده گرفته شده)',
+	'translate-edit-definition'         => 'تعریف پیغام',
+	'translate-edit-contribute'         => 'مشارکت',
+	'translate-edit-no-information'     => "''این پیغام دارای توضیحات نیست. اگر شما می‌دانید که این پیغام چگونه یا در کجا استفاده می‌شود، شما می‌توانید با اضافه کردن توضیحات به دیگر ترجمه‌کنندگان کمک کنید.''",
+	'translate-edit-information'        => 'اطلاعات در مورد این پیغام ($1)',
+	'translate-edit-in-other-languages' => 'همین پیغام در دیگر زبان‌ها',
+	'translate-edit-committed'          => 'ترجمهٔ فعلی در نرم‌افزار',
+	'translate-edit-warnings'           => 'هشدار در مورد ترجمه‌های ناکامل',
+	'translate-magic-pagename'          => 'ترجمهٔ گسترش یافتهٔ مدیاویکی',
+	'translate-magic-help'              => 'شما می‌توانید نام مستعار صفحه‌های ویژه، واژه‌های جادویی، نام پوسته‌ها و نام فضاهای نام را ترجمه کنید.
+
+در مورد واژه‌های جادویی ترجمهٔ شما باید شامل معادل انگلیسی هم باشد وگرنه واژهٔ جادویی کار نخواهد کرد. هم‌چنین، اولین بخش (0 یا 1) را تغییر ندهید.
+
+نام‌های مستعار صفحه‌های ویژه و واژه‌های جادویی می‌توانند بیش از یک ترجمه داشته باشند. ترجمه‌ها با یک کامای انگلیسی (,) از هم جدا می‌شوند. نام پوسته‌ها و فضاهای نام تنها می‌تواند یک ترجمه داشته باشد.
+
+در ترجمهٔ نام فضاهای نام <tt>$1 talk</tt> خاص است. <tt>$1</tt> توسط نام وبگاه جایگزین می‌شود (مانند <tt>{{SITENAME}} talk</tt>). اگر در زبان شما امکان ایجاد چنین عبارتی بدون تغییر دادن نام وبگاه وجود ندارد، لطفاً با یکی از توسعه‌دهندگان نرم‌افزار تماس بگیرید.
+
+برای ذخیره کردن تغییرها باید عضو گروه ترجمه‌کنندگان باشید. تغییرات زمانی ذخیره می‌شوند که دکمهٔ ذخیره را در پایین صفحه فشار دهید.',
+	'translate-magic-form'              => 'زبان: $1 واحد: $2 $3',
+	'translate-magic-submit'            => 'بیاور',
+	'translate-magic-cm-to-be'          => 'آینده',
+	'translate-magic-cm-current'        => 'اخیر',
+	'translate-magic-cm-original'       => 'اصلی',
+	'translate-magic-cm-fallback'       => 'پشت‌انداز',
+	'translate-magic-cm-comment'        => 'توضیحات:',
+	'translate-magic-cm-save'           => 'ذخیره',
+	'translate-magic-cm-export'         => 'صدور',
+	'translate-magic-cm-updatedusing'   => 'به روز شده توسط Special:Magic',
+	'translate-magic-cm-savefailed'     => 'شکست در ذخیره کردن اطلاعات',
+	'translate-magic-special'           => 'نام مستعار صفحه‌های ویژه',
+	'translate-magic-words'             => 'واژه‌های جادویی',
+	'translate-magic-skin'              => 'اسم پوسته‌ها',
+	'translate-magic-namespace'         => 'اسم فضاهای نام',
+	'translationchanges'                => 'تغییرهای ترجمه',
+	'translationchanges-export'         => 'صدور',
+	'translationchanges-change'         => '$1: $2 توسط $3',
+	'translate-checks-parameters'       => 'این پارامترها استفاده نشده‌اند: <strong>$1</strong>',
+	'translate-checks-balance'          => 'تعداد پرانتزها زوج نیست: <strong>$1</strong>',
+	'translate-checks-links'            => 'پیوندهایی که در ادامه می‌آیند مشکل‌ساز هستند: <strong>$1</strong>',
+	'translate-checks-xhtml'            => 'لطفاً این برچسب‌ها را با موارد درست جایگزین کنید: <strong>$1</strong>',
+	'translate-checks-plural'           => 'تعریف از <nowiki>{{PLURAL:}}</nowiki> استفاده می‌کند اما ترجمه از آن استفاده نمی‌کند.',
+
+);
+
 /** Finnish (Suomi)
  * @author Nike
  * @author Crt
