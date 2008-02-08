@@ -910,6 +910,39 @@ Vi devas esti en la grupo de tradukantoj por konservi ŝanĝojn. Ŝanĝoj ne est
 	'translate-checks-plural'           => 'Difino uzas <nowiki>{{PLURAL:}}</nowiki>, sed traduko ne.',
 );
 
+/** Spanish (Español)
+ * @author Lin linao
+ */
+$messages['es'] = array(
+	'translate'                         => 'Traducir',
+	'translate-edit'                    => 'editar',
+	'translate-talk'                    => 'discusión',
+	'translate-history'                 => 'historial',
+	'translate-task-view'               => 'Ver todos los mensajes de',
+	'translate-task-untranslated'       => 'Ver todos los mensajes sin traducir de',
+	'translate-task-optional'           => 'Ver los mensajes opcionales de',
+	'translate-task-review'             => 'Revisar cambios en',
+	'translate-task-reviewall'          => 'Revisar todas las traducciones en',
+	'translate-task-export'             => 'Exportar traducciones desde',
+	'translate-page-settings-legend'    => 'Preferencias',
+	'translate-page-task'               => 'Deseo',
+	'translate-page-group'              => 'Grupo',
+	'translate-page-language'           => 'Idioma',
+	'translate-page-limit-option'       => '$1 {{PLURAL:$1|mensaje|mensajes}} por página',
+	'translate-page-navigation-legend'  => 'Navegación',
+	'translate-page-showing'            => 'Mostrando mensajes del $1 al $2 de $3',
+	'translate-page-showing-none'       => 'No hay mensajes para mostrar',
+	'translate-next'                    => 'Página siguiente',
+	'translate-prev'                    => 'Página anterior',
+	'translate-page-description-legend' => 'Información acerca del grupo',
+	'translate-optional'                => '(opcional)',
+	'translate-edit-no-information'     => "''Este mensaje no posee documentación. Si sabes dónde o cómo es usado, puedes ayudar a otros traductores añadiéndole documentación.''",
+	'translate-edit-information'        => 'Información acerca de este mensaje ($1)',
+	'translate-edit-in-other-languages' => 'Mensaje en otros idiomas',
+	'translate-edit-warnings'           => 'Advertencias acerca de traducciones incompletas',
+	'translate-magic-cm-save'           => 'Guardar',
+);
+
 $messages['eu'] = array(
 	'translate-edit' => 'aldatu',
 	'translate-talk' => 'eztabaida',
@@ -1229,6 +1262,7 @@ Nas traducións dos espazos de nomes, <tt>$1 talk</tt> é especial. <tt>$1</tt> 
 	'translate-magic-cm-current'        => 'Actual',
 	'translate-magic-cm-original'       => 'Orixinal',
 	'translate-magic-cm-fallback'       => 'Reserva',
+	'translate-magic-cm-comment'        => 'Comentario:',
 	'translate-magic-cm-save'           => 'Gardar',
 	'translate-magic-cm-export'         => 'Exportar',
 	'translate-magic-cm-updatedusing'   => 'Actualizado mediante Special:Magic',
@@ -1393,6 +1427,13 @@ Dyrbiš w skupinje přełožowarjow być, zo by změny składował. Změny so nj
 	'translate-checks-plural'           => 'Definicija wužiwa <nowiki>{{PLURAL:}}</nowiki>, přełožk pak nic.',
 );
 
+/** Haitian (Kreyòl ayisyen)
+ * @author Masterches
+ */
+$messages['ht'] = array(
+	'translate' => 'Tradui',
+);
+
 /** Hungarian (Magyar)
  * @author Bdanee
  */
@@ -1516,6 +1557,7 @@ $messages['it'] = array(
 
 /** Japanese (日本語)
  * @author Marine-Blue
+ * @author JtFuruhata
  */
 $messages['ja'] = array(
 	'translate'                        => 'インターフェースの翻訳',
@@ -1531,6 +1573,9 @@ $messages['ja'] = array(
 	'translate-task-export'            => '翻訳された PHP コードをテキストエリアに出力',
 	'translate-task-export-to-file'    => '翻訳された PHP コードをファイルとしてエクスポート',
 	'translate-task-export-as-po'      => '翻訳された PHP コードを gettext 形式でエクスポート',
+	'translate-page-no-such-language'  => '言語指定が不正です',
+	'translate-page-no-such-task'      => '絞り込みの指定が不正です',
+	'translate-page-no-such-group'     => '種類の指定が不正です',
 	'translate-page-settings-legend'   => '設定',
 	'translate-page-task'              => '絞込み',
 	'translate-page-group'             => '種類',
@@ -2431,7 +2476,7 @@ $messages['sk'] = array(
 	'translate-ignored'                 => '(ignorované)',
 	'translate-edit-definition'         => 'Definícia správy',
 	'translate-edit-contribute'         => 'prispejte',
-	'translate-edit-no-information'     => "''Táto správa nie je zdokumentovaná. Ak viete kde alebo ako je táto správa použitá, môžete pomôcť ostatným prekaldateľom tým, že jej pridáte dokumentáciu.''",
+	'translate-edit-no-information'     => "''Táto správa nie je zdokumentovaná. Ak viete kde alebo ako je táto správa použitá, môžete pomôcť ostatným prekladateľom tým, že jej pridáte dokumentáciu.''",
 	'translate-edit-information'        => 'Informácie o tejto správe ($1)',
 	'translate-edit-in-other-languages' => 'Správa v iných jazykoch',
 	'translate-edit-committed'          => 'Aktuálny preklad v softvéri',
@@ -2441,11 +2486,11 @@ $messages['sk'] = array(
 
 V magických slovách musíte zahrnúť aj anglické preklady, inak prestanú fungovať. Tiež ponechajte nezmenenú prvú položku (0 alebo 1).
 
-Aliasy špeciálnych stránok a magických slov môžu moť viacero prekladov. Preklady sa oddeľojú čiarkami („,“). Názvy tém vzhľadu a návzy menných priestorov môžu mať iba jeden preklad.
+Aliasy špeciálnych stránok a magických slov môžu mať viacero prekladov. Preklady sa oddeľujú čiarkami („,“). Názvy tém vzhľadu a názvy menných priestorov môžu mať iba jeden preklad.
 
 V prekladoch menných priestorov je <tt>$1 talk</tt> špeciálne. <tt>$1</tt> sa nahradí názvom webovej lokality (napr. <tt>{{SITENAME}} talk</tt>. Ak vo vašom jazyku nie je možné vytvoriť zmysluplný výraz bez zmeny názvu webovej lokality, prosím, kontaktujte vývojára.
 
-Aby ste mohli ukladať zmeny, musíte byť členom skupiny Translators. Zmeny sa neuložia, kým nekliknete na tlačidlo uložiť dolu.',
+Aby ste mohli ukladať zmeny, musíte byť členom skupiny Translators. Zmeny sa neuložia, kým nekliknete na tlačidlo Uložiť dolu.',
 	'translate-magic-form'              => 'Jazyk: $1 Modul: $2 $3',
 	'translate-magic-submit'            => 'Vykonať',
 	'translate-magic-cm-to-be'          => 'Byť',
@@ -2634,6 +2679,70 @@ $messages['tet'] = array(
 	'translate-page-description-legend' => 'Informasaun kona-ba lubu',
 	'translate-edit-in-other-languages' => 'Mensajen iha lian seluk',
 	'translate-magic-submit'            => 'Hola',
+);
+
+/** Thai (ไทย)
+ * @author Ans
+ */
+$messages['th'] = array(
+	'translate'                         => 'แปล',
+	'translate-edit'                    => 'แก้ไข',
+	'translate-talk'                    => 'พูดคุย',
+	'translate-history'                 => 'ประวัติ',
+	'translate-task-view'               => 'ดูข้อความทั้งหมด จาก',
+	'translate-task-untranslated'       => 'ดูข้อความทั้งหมดที่ยังไม่ได้แปล จาก',
+	'translate-task-optional'           => 'ดูข้อความ optional จาก',
+	'translate-task-review'             => 'ตรวจดูสิ่งที่เปลี่ยนแปลง ของ',
+	'translate-task-reviewall'          => 'ตรวจดูข้อความทั้งหมดที่แปลแล้ว ของ',
+	'translate-task-export'             => 'ส่งงานแปลออกมา จาก',
+	'translate-task-export-to-file'     => 'ส่งงานแปลออกมาเป็นไฟล์ จาก',
+	'translate-task-export-as-po'       => 'ส่งงานแปลออกมาในรูปแบบ Gettext จาก',
+	'translate-page-no-such-language'   => 'ใส่รหัสภาษา (language) ไม่ถูกต้อง',
+	'translate-page-no-such-task'       => 'ใส่ชื่อ task ไม่ถูกต้อง',
+	'translate-page-no-such-group'      => 'ใส่ชื่อกลุ่ม (group) ไม่ถูกต้อง',
+	'translate-page-settings-legend'    => 'กำหนดค่า',
+	'translate-page-task'               => 'ต้องการ',
+	'translate-page-group'              => 'กลุ่มของ',
+	'translate-page-language'           => 'ภาษา',
+	'translate-page-limit'              => 'ไม่เกิน',
+	'translate-page-limit-option'       => '$1 ข้อความต่อหน้า',
+	'translate-submit'                  => 'ดึงข้อมูล',
+	'translate-page-navigation-legend'  => 'แถบนำทาง',
+	'translate-page-showing'            => 'แสดงตั้งแต่ข้อความที่ $1 ถึง $2 จากทั้งหมด $3 ข้อความ',
+	'translate-page-showing-all'        => 'แสดง $1 ข้อความ',
+	'translate-page-showing-none'       => 'ไม่มีข้อความแสดง',
+	'translate-next'                    => 'หน้าถัดไป',
+	'translate-prev'                    => 'หน้าก่อน',
+	'translate-page-description-legend' => 'ข้อมูลเกี่ยวกับกลุ่มข้อความ',
+	'translate-edit-definition'         => 'นิยามข้อความ',
+	'translate-edit-contribute'         => 'ช่วยเขียน',
+	'translate-edit-no-information'     => "''ข้อความนี้ไม่มีคำอธิบายการใช้งาน.  ถ้าคุณทราบว่าข้อความนี้ใช้ตรงส่วนไหนหรือใช้อย่างไร, คุณสามารถช่วยเพิ่มคำอธิบายการใช้งานของข้อความนี้ เพื่อเป็นประโยชน์แก่ผู้แปลคนอื่นๆ ได้.''",
+	'translate-edit-information'        => 'ข้อมูลเกี่ยวกับข้อความนี้ ($1)',
+	'translate-edit-in-other-languages' => 'ข้อความนี้ในภาษาอื่นๆ',
+	'translate-edit-committed'          => 'ข้อความแปลที่ฝังอยู่ในตัวโปรแกรม',
+	'translate-edit-warnings'           => 'คำเตือนเกี่ยวกับงานแปลที่ยังไม่เสร็จสมบูรณ์',
+	'translate-magic-pagename'          => 'ส่วนขยายการแปลในมีเดียวิกิ',
+	'translate-magic-form'              => 'ภาษา: $1 Module: $2 $3',
+	'translate-magic-submit'            => 'ดึงข้อมูล',
+	'translate-magic-cm-to-be'          => 'แก้เป็น',
+	'translate-magic-cm-current'        => 'ปัจจุบัน',
+	'translate-magic-cm-original'       => 'ต้นฉบับ',
+	'translate-magic-cm-fallback'       => 'ถอยกลับ',
+	'translate-magic-cm-comment'        => 'หมายเหตุ:',
+	'translate-magic-cm-save'           => 'บันทึก',
+	'translate-magic-cm-export'         => 'ส่งออกมา',
+	'translate-magic-cm-updatedusing'   => 'แก้ไขด้วย Special:Magic',
+	'translate-magic-cm-savefailed'     => 'บันทึกไม่สำเร็จ',
+	'translate-magic-special'           => 'ชื่อ alias ของหน้าพิเศษ',
+	'translate-magic-words'             => 'ตัวแปรพิเศษ',
+	'translate-magic-skin'              => 'ชื่อแบบหน้าตา',
+	'translate-magic-namespace'         => 'ชื่อเนมสเปซ',
+	'translationchanges-export'         => 'ส่งออกมา',
+	'translate-checks-parameters'       => 'ตัวแปรต่อไปนี้ไม่ได้รับการใช้งาน: <strong>$1</strong>',
+	'translate-checks-balance'          => 'จับคู่วงเล็บไม่ครบคู่: <strong>$1</strong>',
+	'translate-checks-links'            => 'ลิงก์ต่อไปนี้ทำให้เกิดปัญหา: <strong>$1</strong>',
+	'translate-checks-xhtml'            => 'tag เหล่านี้ไม่ถูกต้อง กรุณาแก้ไขโดยใช้ tag ที่ถูกต้อง: <strong>$1</strong>',
+	'translate-checks-plural'           => 'ข้อความต้นฉบับใช้ <nowiki>{{PLURAL:}}</nowiki> ในขณะที่ข้อความที่แปลแล้วไม่ได้ใช้',
 );
 
 /** Turkish (Türkçe)
@@ -2826,3 +2935,4 @@ $messages['zh-hant'] = array(
 	'translate-edit-message-in' => '在 <b>$1</b> 的現行字串 ($2):',
 	'translate-edit-message-in-fb' => '在 <b>$1</b> 於倚靠語言中的現行字串 ($2):',
 );
+
