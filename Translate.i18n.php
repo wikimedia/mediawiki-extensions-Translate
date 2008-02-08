@@ -2826,16 +2826,3 @@ $messages['zh-hant'] = array(
 	'translate-edit-message-in' => '在 <b>$1</b> 的現行字串 ($2):',
 	'translate-edit-message-in-fb' => '在 <b>$1</b> 於倚靠語言中的現行字串 ($2):',
 );
-
-$messages['de-formal'] = $messages['de'];
-$messages['kk'] = $messages['kk-cyrl'];
-$messages['kk-cn'] = $messages['kk-arab'];
-$messages['kk-kz'] = $messages['kk-cyrl'];
-$messages['kk-tr'] = $messages['kk-latn'];
-$messages['sr'] = $messages['sr-ec'];
-$messages['zh'] = $messages['zh-hans'];
-$messages['zh-cn'] = $messages['zh-hans'];
-$messages['zh-hk'] = $messages['zh-hant'];
-$messages['zh-sg'] = $messages['zh-hans'];
-$messages['zh-tw'] = $messages['zh-hant'];
-$messages['zh-yue'] = $messages['yue'];
