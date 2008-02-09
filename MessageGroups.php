@@ -1948,6 +1948,14 @@ class WhoIsWatchingMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'WhoIsWatching/SpecialWhoIsWatching.i18n.php';
 }
 
+class WhosOnlineMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Who\s Online';
+	protected $id    = 'ext-whosonline';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'WhosOnline/WhosOnline.i18n.php';
+}
+
 class WikidataLanguageManagerMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Wikidata Language Manager';
 	protected $id    = 'ext-wikidatalanguagemanager';
