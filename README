@@ -32,6 +32,10 @@ function customMessageGroups( $id ) {
 }
 </code>
 
+== Chages in version 9 ==
+* Not released
+* (bug 12955) Numbers should be localized in Translate extension
+
 == Changes in version 8 ==
 * Released 2008-02-06
 * export.php for even faster exporting (only core messages supported currently)

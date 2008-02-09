@@ -196,10 +196,11 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	protected function limitSelector() {
+		global $wgLang;
 		$items = array( 100, 250, 500, 1000, 2500 );
 		$selector = new HTMLSelector( 'limit', 'limit', $this->options['limit'] );
 		foreach ( $items as $count ) {
-			$selector->addOption( wfMsgExt( self::MSG . 'limit-option', 'parsemag', $count ), $count );
+			$selector->addOption( wfMsgExt( self::MSG . 'limit-option', 'parsemag', $wgLang->formatNum( $count ) ), $count );
 		}
 		return $selector->getHTML();
 	}
