@@ -1949,7 +1949,7 @@ class WhoIsWatchingMessageGroup extends ExtensionMessageGroup {
 }
 
 class WhosOnlineMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Who\s Online';
+	protected $label = 'Who\'s Online';
 	protected $id    = 'ext-whosonline';
 
 	protected $arrName     = 'messages';
