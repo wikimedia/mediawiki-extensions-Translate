@@ -142,6 +142,7 @@ $wgTranslateAC = array(
 'ext-icon'                  => 'IconMessageGroup',
 'ext-imagemap'              => 'ImageMapMessageGroup',
 'ext-importfreeimages'      => 'ImportFreeImagesMessageGroup',
+'ext-importusers'            => 'ImportUsersMessageGroup',  
 'ext-inputbox'              => 'InputBoxMessageGroup',
 'ext-inspectcache'          => 'InspectCacheMessageGroup',
 'ext-intersection'          => 'IntersectionMessageGroup',

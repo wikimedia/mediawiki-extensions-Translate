@@ -1219,6 +1219,14 @@ class ImportFreeImagesMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile  = 'ImportFreeImages/ImportFreeImages.i18n.php';
 }
 
+class ImportUsersMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Import Users';
+	protected $id    = 'ext-importusers';
+
+	protected $arrName = 'messages';
+	protected $messageFile = 'ImportUsers/SpecialImportUsers.i18n.php';
+}
+
 class InputBoxMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Input Box';
 	protected $id    = 'ext-inputbox';
