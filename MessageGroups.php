@@ -1840,6 +1840,14 @@ class TitleBlacklistMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'TitleBlacklist/TitleBlacklist.i18n.php';
 }
 
+class TitleKeyMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Title Key';
+	protected $id    = 'ext-titlekey';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'TitleKey/TitleKey.i18n.php';
+}
+
 class TodoMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Todo';
 	protected $id    = 'ext-todo';
