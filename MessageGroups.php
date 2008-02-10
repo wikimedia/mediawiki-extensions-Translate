@@ -1083,6 +1083,14 @@ class EditcountMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile  = 'Editcount/SpecialEditcount.i18n.php';
 }
 
+class EditUserMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Edit User';
+	protected $id    = 'ext-edituser';
+
+	protected $arrName = 'messages';
+	protected $messageFile  = 'EditUser/EditUser.i18n.php';
+}
+
 class EvalMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Eval';
 	protected $id    = 'ext-eval';
