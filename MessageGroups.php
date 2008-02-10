@@ -1442,6 +1442,14 @@ class NewuserLogMessageGroup extends ExtensionMessageGroup {
 	);
 }
 
+class NewUserMessageMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'New User Message';
+	protected $id    = 'ext-newusermessage';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'NewUserMessage/NewUserMessage.i18n.php';
+}
+
 class NewUserNotifMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'New User Notification';
 	protected $id      = 'ext-newusernotif';

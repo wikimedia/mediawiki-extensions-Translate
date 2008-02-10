@@ -165,6 +165,7 @@ $wgTranslateAC = array(
 'ext-networkauth'           => 'NetworkAuthMessageGroup',
 'ext-newestpages'           => 'NewestPagesMessageGroup',
 'ext-newuserlog'            => 'NewuserLogMessageGroup',
+'ext-newusermessage'        => 'NewUserMessageMessageGroup',
 'ext-newusernotif'          => 'NewUserNotifMessageGroup',
 'ext-nuke'                  => 'NukeMessageGroup',
 'ext-ogghandler'            => 'OggHandlerMessageGroup',
