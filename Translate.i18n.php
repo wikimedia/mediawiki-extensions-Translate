@@ -397,6 +397,7 @@ $messages['bg'] = array(
 	'translate-history'                 => 'история',
 	'translate-task-view'               => 'Преглед на всички съобщения от',
 	'translate-task-untranslated'       => 'Преглед на всички непреведени съобщения от',
+	'translate-task-optional'           => 'Преглед на незадължителните съобщения от',
 	'translate-task-review'             => 'Преглед на променените съобщения в',
 	'translate-task-reviewall'          => 'Преглед на всички преводи в',
 	'translate-task-export'             => 'Изнасяне на преводите от',
@@ -520,15 +521,38 @@ $messages['br'] = array(
 	'translate-edit-committed'          => 'Troidigezh zo er meziant bremañ',
 	'translate-edit-warnings'           => 'Kemennoù diwall diwar-benn an troidigezhioù diglok',
 	'translate-magic-pagename'          => 'Troidigezh Mediawiki astennet',
+	'translate-magic-help'              => "Gallout a rit treiñ aliasoù ar pajennoù dibar, ar gerioù burzhudus anvioù an etrefasoù hag anvioù an esaouennoù anv.
+
+Evit ar pezh a sell ouzh ar gerioù burzhudus e vo ret deoc'h ouzhpennañ an droidigezh saoznek pe ne'z aint ket en-dro ken. Dalc'hit ivez an elfenn gentañ (0 pe 1) evel m'emañ.
+
+Gallout a ra aliasoù ar pajennoù dibar hag ar gerioù burzhudus kaout meur a droidigezh. Dispartiet eo an troidigezhioù dre skejoù (,). N'hall anvioù an etrefasoù ha re an esaouennoù anv nemet kaout un droidigezh hepken.
+
+E troidigezhioù an esaouennoù anv eo dibar <tt>$1 talk</tt>. Erlec'hiet eo <tt>$1</tt> gant anv al lec'hienn (da skouer <tt>{{SITENAME}} talk</tt>. Ma n'haller ket sevel lavarennoù reizh en ho yezh hep kemmañ anv al lec'hienn, kit e darempred gant un diorroer.
+
+Ret eo deoc'h bezañ ezel eus ur strollad troourien evit enrollañ ar c'hemmoù. Ne vo ket enrollet ar c'hemmoù e-keit ha ne vo ket bet pouezet war ar bouton dindan.",
 	'translate-magic-form'              => 'Yezh $1 Modulenn : $2 $3',
 	'translate-magic-submit'            => 'Mont',
+	'translate-magic-cm-to-be'          => 'A zeu da vezañ',
+	'translate-magic-cm-current'        => 'Bremañ',
+	'translate-magic-cm-original'       => 'Orin',
+	'translate-magic-cm-fallback'       => 'Distreiñ',
 	'translate-magic-cm-comment'        => 'Notenn :',
 	'translate-magic-cm-save'           => 'Enrollañ',
 	'translate-magic-cm-export'         => 'Ezporzhiañ',
+	'translate-magic-cm-updatedusing'   => 'Hizivaet en ur implijout Special:Magic',
+	'translate-magic-cm-savefailed'     => "C'hwitet enrollañ",
+	'translate-magic-special'           => 'Aliasoù pajenn zibar',
 	'translate-magic-words'             => 'Gerioù burzhudus',
+	'translate-magic-skin'              => 'Anvioù an etrefasoù',
+	'translate-magic-namespace'         => 'Anv an esaouennoù anv',
 	'translationchanges'                => 'Troidigezhioù bet adwelet',
 	'translationchanges-export'         => 'Ezporzhiañ',
 	'translationchanges-change'         => '$1: $2 gant $3',
+	'translate-checks-parameters'       => 'Ne vez ket graet gant an arventennoù da-heul : <strong>$1</strong>',
+	'translate-checks-balance'          => 'Direizh eo an niver a grommelloù : <strong>$1</strong>',
+	'translate-checks-links'            => 'Kudennek eo al liammoù da-heul : <strong>$1</strong>',
+	'translate-checks-xhtml'            => "Erlec'hiit ar balizennoù da-heul gant ar re a zegouezh mar plij : <strong>$1</strong>",
+	'translate-checks-plural'           => 'Ober a ra an termenadur gant <nowiki>{{PLURAL:}}</nowiki> padal an droidigezh ne ra ket.',
 );
 
 /** Catalan (Català)
@@ -766,6 +790,7 @@ Du musst in der Übersetzer-Gruppe sein um Änderungen zu speichern. Änderungen
  */
 $messages['dsb'] = array(
 	'translate'                         => 'Pśełožyś',
+	'translate-desc'                    => '[[Special:Translate|Specialny bok]] za pśełožowanje Mediawiki a druge',
 	'translate-edit'                    => 'wobźěłaś',
 	'translate-talk'                    => 'Diskusija',
 	'translate-history'                 => 'Wersije',
@@ -819,6 +844,7 @@ Musyš w kupce pśełožowarjow byś, aby změny cyniś mógł. Změny se njesk�
 	'translate-magic-cm-current'        => 'aktualne',
 	'translate-magic-cm-original'       => 'Original',
 	'translate-magic-cm-fallback'       => 'Alternatiwna rěc',
+	'translate-magic-cm-comment'        => 'Komentar',
 	'translate-magic-cm-save'           => 'Składowaś',
 	'translate-magic-cm-export'         => 'Eksportěrowaś',
 	'translate-magic-cm-updatedusing'   => 'Z pomocu Special:Magic zaktualizěrowany',
@@ -2460,7 +2486,7 @@ $messages['pt'] = array(
 	'translate-page-settings-legend'    => 'Configurações',
 	'translate-page-task'               => 'Eu desejo',
 	'translate-page-group'              => 'Grupo',
-	'translate-page-language'           => 'Idioma',
+	'translate-page-language'           => 'Língua',
 	'translate-page-limit'              => 'Limite',
 	'translate-page-limit-option'       => '$1 {{PLURAL:$1|mensagem|mensagens}} por página',
 	'translate-submit'                  => 'Trazer',
@@ -2866,8 +2892,8 @@ $messages['th'] = array(
 	'translate-task-view'               => 'ดูข้อความทั้งหมด จาก',
 	'translate-task-untranslated'       => 'ดูข้อความทั้งหมดที่ยังไม่ได้แปล จาก',
 	'translate-task-optional'           => 'ดูข้อความ optional จาก',
-	'translate-task-review'             => 'ตรวจดูสิ่งที่เปลี่ยนแปลง ของ',
-	'translate-task-reviewall'          => 'ตรวจดูข้อความทั้งหมดที่แปลแล้ว ของ',
+	'translate-task-review'             => 'ตรวจดูสิ่งที่เปลี่ยนแปลง ใน',
+	'translate-task-reviewall'          => 'ตรวจดูข้อความทั้งหมดที่แปลแล้ว ใน',
 	'translate-task-export'             => 'ส่งงานแปลออกมา จาก',
 	'translate-task-export-to-file'     => 'ส่งงานแปลออกมาเป็นไฟล์ จาก',
 	'translate-task-export-as-po'       => 'ส่งงานแปลออกมาในรูปแบบ Gettext จาก',
