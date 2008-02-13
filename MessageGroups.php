@@ -960,6 +960,11 @@ class CommentPagesMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName = 'messages';
 	protected $messageFile  = 'CommentPages/CommentPages.i18n.php';
+
+	protected $ignored = array(
+		'commenttab-editintro',
+		'commenttab-preload',
+	);
 }
 
 class CommentSpammerMessageGroup extends ExtensionMessageGroup {
