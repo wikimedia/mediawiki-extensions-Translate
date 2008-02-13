@@ -282,6 +282,19 @@ $messages['ar'] = array(
 	'translate-checks-plural'           => 'التعريف يستخدم <nowiki>{{PLURAL:}}</nowiki> لكن الترجمة لا.',
 );
 
+/** Araucanian (Mapudungun)
+ * @author Poquil
+ */
+$messages['arn'] = array(
+	'translate-talk'                => 'dungun',
+	'translate-page-showing'        => 'adkintun mensajes del $1 al $2 de $3',
+	'translate-page-showing-all'    => 'adkintun $1 {{PLURAL:$1|message|messages}}.',
+	'translate-edit-contribute'     => 'ñma',
+	'translate-magic-cm-original'   => 'kuse',
+	'translate-magic-cm-save'       => 'elkünun',
+	'translate-magic-cm-savefailed' => 'elkünun weda',
+);
+
 /** Asturian (Asturianu)
  * @author Esbardu
  */
@@ -900,6 +913,7 @@ $messages['el'] = array(
 	'translate-magic-special'           => 'Πρόσθετα ψευδώνυμα σελίδων',
 	'translationchanges'                => 'Αλλαγές μετάφρασης',
 	'translationchanges-change'         => '$1: $2 από $3',
+	'translate-checks-parameters'       => 'Οι παράμετροι που ακολουθούν δεν χρησιμοποιούνται: <strong>$1</strong>',
 	'translate-checks-links'            => 'Οι Ακόλουθοι σύνδεσμοι είναι προβληματικοί: <strong>$1</strong>',
 );
 
@@ -2358,6 +2372,7 @@ Du må være i oversettergruppa for å lagre endringer. Endringer lagres ikke f�
  */
 $messages['oc'] = array(
 	'translate'                         => 'Traduire',
+	'translate-desc'                    => '[[Special:Translate|Pagina especiala]] per traduire Mediawiki e quitament mai encara.',
 	'translate-edit'                    => 'Edicion',
 	'translate-talk'                    => 'Discussion',
 	'translate-history'                 => 'Istoric',
@@ -2403,6 +2418,7 @@ $messages['oc'] = array(
 	'translate-magic-cm-current'        => 'Actual',
 	'translate-magic-cm-original'       => 'Original',
 	'translate-magic-cm-fallback'       => 'Tornar',
+	'translate-magic-cm-comment'        => 'Comentari :',
 	'translate-magic-cm-save'           => 'Salvagadar',
 	'translate-magic-cm-export'         => 'Exportar',
 	'translate-magic-cm-updatedusing'   => 'Mesa a jorn en utilizant Special:Magic',
@@ -2894,9 +2910,9 @@ $messages['th'] = array(
 	'translate-task-optional'           => 'ดูข้อความ optional จาก',
 	'translate-task-review'             => 'ตรวจดูสิ่งที่เปลี่ยนแปลง ใน',
 	'translate-task-reviewall'          => 'ตรวจดูข้อความทั้งหมดที่แปลแล้ว ใน',
-	'translate-task-export'             => 'ส่งงานแปลออกมา จาก',
-	'translate-task-export-to-file'     => 'ส่งงานแปลออกมาเป็นไฟล์ จาก',
-	'translate-task-export-as-po'       => 'ส่งงานแปลออกมาในรูปแบบ Gettext จาก',
+	'translate-task-export'             => 'ส่งงานแปลออกมา (export) จาก',
+	'translate-task-export-to-file'     => 'ส่งงานแปลออกมา (export) เป็นไฟล์ จาก',
+	'translate-task-export-as-po'       => 'ส่งงานแปลออกมา (export) ในรูปแบบ Gettext จาก',
 	'translate-page-no-such-language'   => 'ใส่รหัสภาษา (language) ไม่ถูกต้อง',
 	'translate-page-no-such-task'       => 'ใส่ชื่อ task ไม่ถูกต้อง',
 	'translate-page-no-such-group'      => 'ใส่ชื่อกลุ่ม (group) ไม่ถูกต้อง',
@@ -2930,7 +2946,7 @@ $messages['th'] = array(
 	'translate-magic-cm-fallback'       => 'ถอยกลับ',
 	'translate-magic-cm-comment'        => 'หมายเหตุ:',
 	'translate-magic-cm-save'           => 'บันทึก',
-	'translate-magic-cm-export'         => 'ส่งออกมา',
+	'translate-magic-cm-export'         => 'ส่งออกมา (export)',
 	'translate-magic-cm-updatedusing'   => 'แก้ไขด้วย Special:Magic',
 	'translate-magic-cm-savefailed'     => 'บันทึกไม่สำเร็จ',
 	'translate-magic-special'           => 'ชื่อ alias ของหน้าพิเศษ',
@@ -2938,7 +2954,7 @@ $messages['th'] = array(
 	'translate-magic-skin'              => 'ชื่อแบบหน้าตา',
 	'translate-magic-namespace'         => 'ชื่อเนมสเปซ',
 	'translationchanges'                => 'สิ่งที่เปลี่ยนแปลงในงานแปล',
-	'translationchanges-export'         => 'ส่งออกมา',
+	'translationchanges-export'         => 'ส่งออกมา (export)',
 	'translationchanges-change'         => '$1: $2 โดย $3',
 	'translate-checks-parameters'       => 'ตัวแปรต่อไปนี้ไม่ได้รับการใช้งาน: <strong>$1</strong>',
 	'translate-checks-balance'          => 'จับคู่วงเล็บไม่ครบคู่: <strong>$1</strong>',
