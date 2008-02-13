@@ -1673,12 +1673,12 @@ class ReviewMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'Review/Review.i18n.php';
 }
 
-class RightsFunctionsMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Rights Functions';
-	protected $id    = 'ext-rightsfunctions';
+class RightFunctionsMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Right Functions';
+	protected $id    = 'ext-rightfunctions';
 
 	protected $arrName     = 'messages';
-	protected $messageFile = 'RightsFunctions/RightsFunctions.i18n.php';
+	protected $messageFile = 'RightFunctions/RightFunctions.i18n.php';
 }
 
 class SeealsoMessageGroup extends ExtensionMessageGroup {
