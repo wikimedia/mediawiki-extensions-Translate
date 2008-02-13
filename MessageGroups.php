@@ -954,6 +954,14 @@ class CleanChangesMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile  = 'CleanChanges/CleanChanges.i18n.php';
 }
 
+class CommentPagesMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Comment Pages';
+	protected $id    = 'ext-commentpages';
+
+	protected $arrName = 'messages';
+	protected $messageFile  = 'CommentPages/CommentPages.i18n.php';
+}
+
 class CommentSpammerMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Comment Spammer';
 	protected $id    = 'ext-commentspammer';
@@ -1157,6 +1165,14 @@ class FindSpamMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'FindSpam/FindSpam.i18n.php';
+}
+
+class ForcePreviewMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Force Preview';
+	protected $id    = 'ext-forcepreview';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'ForcePreview/ForcePreview.i18n.php';
 }
 
 class FormatEmailMessageGroup extends ExtensionMessageGroup {
@@ -1655,6 +1671,14 @@ class ReviewMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'Review/Review.i18n.php';
+}
+
+class RightsFunctionsMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Rights Functions';
+	protected $id    = 'ext-rightsfunctions';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'RightsFunctions/RightsFunctions.i18n.php';
 }
 
 class SeealsoMessageGroup extends ExtensionMessageGroup {

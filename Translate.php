@@ -11,7 +11,7 @@ if (!defined('MEDIAWIKI')) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '8.3' );
+define( 'TRANSLATE_VERSION', '8.4' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'Translate',
@@ -113,6 +113,7 @@ $wgTranslateAC = array(
 'ext-citespecial'           => 'CiteSpecialMessageGroup',
 'ext-cldr'                  => 'LanguageNamesMessageGroup',
 'ext-cleanchanges'          => 'CleanChangesMessageGroup',
+'ext-commentpages'          => 'CommentPagesMessageGroup',
 'ext-commentspammer'        => 'CommentSpammerMessageGroup',
 'ext-confirmaccount'        => 'ConfirmAccountMessageGroup',
 'ext-confirmedit'           => 'ConfirmEditMessageGroup',
@@ -136,6 +137,7 @@ $wgTranslateAC = array(
 'ext-findspam'              => 'FindSpamMessageGroup',
 'ext-flaggedrevs'           => 'FlaggedRevsMessageGroup',
 'ext-flaggedrevsmakereviewer' => 'FlaggedRevsMakeReviewerMessageGroup',
+'ext-forcepreview'          => 'ForcePreviewMessageGroup',
 'ext-formatemail'           => 'FormatEmailMessageGroup',
 'ext-gadgets'               => 'GadgetsMessageGroup',
 'ext-i18ntags'              => 'I18nTagsMessageGroup',
@@ -190,6 +192,7 @@ $wgTranslateAC = array(
 'ext-regexblock'            => 'RegexBlockMessageGroup',
 'ext-renameuser'            => 'RenameUserMessageGroup',
 'ext-review'                => 'ReviewMessageGroup',
+'ext-rightsfunctions'       => 'RightsFunctionsMessageGroup',
 'ext-scanset'               => 'ScanSetMessageGroup',
 'ext-seealso'               => 'SeealsoMessageGroup',
 'ext-selectcategory'        => 'SelectCategoryMessageGroup',
