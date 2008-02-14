@@ -1061,6 +1061,14 @@ class CrossNamespaceLinksMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'CrossNamespaceLinks/SpecialCrossNamespaceLinks.i18n.php';
 }
 
+class CrosswikiBlockMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Crosswiki Block';
+	protected $id    = 'ext-crosswikiblock';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'Crosswiki/Block/CrosswikiBlock.i18n.php';
+}
+
 class DeletedContribsMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Deleted Contributions';
 	protected $id    = 'ext-deletedcontribs';
