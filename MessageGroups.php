@@ -1386,6 +1386,14 @@ class MetavidWikiMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'MetavidWiki/languages/MV_Messages.php';
+
+	protected $optional = array(
+		'ao file 64Kb MPEG4',
+		'ao file 256Kb MPEG4',
+		'ao file MPEG1',
+		'ao file MPEG2',
+		'ao file flash flv',
+	);
 }
 
 class MicroIDMessageGroup extends ExtensionMessageGroup {
