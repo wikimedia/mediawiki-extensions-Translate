@@ -1465,6 +1465,23 @@ class NewsMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'News/News.i18n.php';
+
+	protected $optional = array(
+		'newsextension-unknownformat',	
+		'newsextension-feednotfound',
+		'newsextension-feedrequest',
+		'newsextension-checkok',
+		'newsextension-checkok1',
+		'newsextension-gotcached',
+		'newsextension-purge',
+		'newsextension-loggin',
+		'newsextension-outputting',
+		'newsextension-stale',
+		'newsextension-nofoundonpage',
+		'newsextension-renderedfeed',
+		'newsextension-cachingfeed',
+		'newsextension-freshfeed',
+	);
 }
 
 class NewuserLogMessageGroup extends ExtensionMessageGroup {
