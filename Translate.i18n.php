@@ -1208,8 +1208,9 @@ $messages['fi'] = array(
  * @author Grondin
  * @author Seb35
  * @author Dereckson
- * @author Sherbrooke
  * @author Siebrand
+ * @author Sherbrooke
+ * @author Urhixidur
  * @author ChrisPtDe
  */
 $messages['fr'] = array(
@@ -1250,7 +1251,7 @@ $messages['fr'] = array(
 	'translate-edit-no-information'     => "Ce message n'est actuellement pas documenté. Si vous savez où ou comment ce message est utilisé, vous pouvez aider les autres traducteurs en documentant ce message.",
 	'translate-edit-information'        => 'Informations concernant ce message ($1)',
 	'translate-edit-in-other-languages' => 'Message dans les autres langues',
-	'translate-edit-committed'          => 'Actuelle traduction déjà dans le logiciel',
+	'translate-edit-committed'          => 'Traduction courante',
 	'translate-edit-warnings'           => 'Avertissements concernant les traductions incomplètes',
 	'translate-magic-pagename'          => 'Traduction de MediaWiki étendue',
 	'translate-magic-help'              => "Vous pouvez traduire les alias de pages spéciales, les mots magiques, les noms de skins et les noms d'espaces de noms.
@@ -1391,12 +1392,13 @@ Vos dête apartegnir a la tropa des traductors por sôvar los changements. Los c
 /** Galician (Galego)
  * @author Alma
  * @author Xosé
+ * @author Toliño
  * @author Siebrand
  */
 $messages['gl'] = array(
 	'translate'                         => 'Traducir',
 	'translate-edit'                    => 'Editar',
-	'translate-talk'                    => 'Discusión',
+	'translate-talk'                    => 'conversa',
 	'translate-history'                 => 'Historial',
 	'translate-task-view'               => 'Ver todas as mensaxes de',
 	'translate-task-untranslated'       => 'Ver todas as mensaxes sen traducir de',
@@ -1423,7 +1425,7 @@ $messages['gl'] = array(
 	'translate-ignored'                 => '(ignorado)',
 	'translate-edit-definition'         => 'Definición da mensaxe',
 	'translate-edit-contribute'         => 'contribuír',
-	'translate-edit-no-information'     => "''Esta mensaxe non ten documentación. Se vostede sabe donde ou como se usa esta mensaxe, pode axudar a outros traductores engadindo documentación a esta mensaxe.''",
+	'translate-edit-no-information'     => "''Esta mensaxe non ten documentación. Se vostede sabe onde ou como se usa esta mensaxe, pode axudar a outros tradutores engadindo documentación a esta mensaxe.''",
 	'translate-edit-information'        => 'Información acerca desta mensaxe ($1)',
 	'translate-edit-in-other-languages' => 'Mensaxe en otras linguas',
 	'translate-edit-committed'          => 'Tradución actual no software',
@@ -1431,11 +1433,11 @@ $messages['gl'] = array(
 	'translate-magic-pagename'          => 'Tradución extendida de MediaWiki',
 	'translate-magic-help'              => 'Pode traducir os alias das páxinas especiais, as palabras máxicas, os nomes das aparencias e os nomes dos espazos de nomes.
 
-Nas páxinas máxicas ten que incluir as traducións en inglés ou non funcionarán. Deixe tamén o primeiro elemento (0 ou 1) tal e como está.
+Nas páxinas máxicas ten que incluír as traducións en inglés ou non funcionarán. Deixe tamén o primeiro elemento (0 ou 1) tal e como está.
 
 Os alias de páxinas especiais e as palabras máxicas poden ter varias traducións. As traducións sepáranse mediante unha vírgula (,). Os nomes das aparencias e dos espazos de nomes só poden ter unha tradución.
 
-Nas traducións dos espazos de nomes, <tt>$1 talk</tt> é especial. <tt>$1</tt> substitúese polo nome do sitio (por exemplo <tt>{{SITENAME}} talk</tt>. Se na súa lingua non resulta posíbel formar unha expresión válida sen mudar o nome do sitio, contacte cun programador.',
+Nas traducións dos espazos de nomes, <tt>$1 talk</tt> é especial. <tt>$1</tt> substitúese polo nome do sitio (por exemplo <tt>{{SITENAME}} talk</tt>). Se na súa lingua non resulta posíbel formar unha expresión válida sen mudar o nome do sitio, contacte cun programador.',
 	'translate-magic-form'              => 'Lingua: $1 Módulo: $2 $3',
 	'translate-magic-submit'            => 'Procurar',
 	'translate-magic-cm-to-be'          => 'Será',
