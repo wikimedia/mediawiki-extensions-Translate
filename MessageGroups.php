@@ -1459,6 +1459,14 @@ class NewestPagesMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'NewestPages/NewestPages.i18n.php';
 }
 
+class NewsMessageGroup extends ExtensionMessageGroup {
+	protected $label       = 'News';
+	protected $id          = 'ext-news';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'News/News.i18n.php';
+}
+
 class NewuserLogMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Newuser Log';
 	protected $id    = 'ext-newuserlog';

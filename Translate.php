@@ -167,6 +167,7 @@ $wgTranslateAC = array(
 'ext-multiupload'           => 'MultiUploadMessageGroup',
 'ext-networkauth'           => 'NetworkAuthMessageGroup',
 'ext-newestpages'           => 'NewestPagesMessageGroup',
+'ext-news'                  => 'NewsMessageGroup',
 'ext-newuserlog'            => 'NewuserLogMessageGroup',
 'ext-newusermessage'        => 'NewUserMessageMessageGroup',
 'ext-newusernotif'          => 'NewUserNotifMessageGroup',
