@@ -830,6 +830,8 @@ class CategoryStepperMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'CategoryStepper/CategoryStepper.i18n.php';
+
+	protected $ignored = array( 'categorystepper' );
 }
 
 class CategoryTreeMessageGroup extends ExtensionMessageGroup {
