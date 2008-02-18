@@ -1698,6 +1698,14 @@ class RandomInCategoryMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'RandomInCategory/SpecialRandomincategory.i18n.php';
 }
 
+class RandomRootpageMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Random Root Page';
+	protected $id    = 'ext-randomrootpage';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'RandomRootPage/RandomRootpage.i18n.php';
+}
+
 class RegexBlockMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Regex Block';
 	protected $id    = 'ext-regexblock';
