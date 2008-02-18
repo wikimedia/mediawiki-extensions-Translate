@@ -655,6 +655,7 @@ Heu de tenir permisos de traductor per a desar els canvis, que no es guardaran f
 
 /** Czech (Česky)
  * @author Li-sung
+ * @author Matěj Grabovský
  */
 $messages['cs'] = array(
 	'translate'                         => 'Přeložit',
@@ -671,13 +672,15 @@ $messages['cs'] = array(
 	'translate-task-export-to-file'     => 'Exportovat do souboru překlady z',
 	'translate-task-export-as-po'       => 'Exportovat překlad do formátu Gettext',
 	'translate-page-no-such-language'   => 'Zadaný kód jazyka není platný',
+	'translate-page-no-such-task'       => 'Zadaná úloha byla neplatná.',
+	'translate-page-no-such-group'      => 'Zadaná skupina byla neplatná.',
 	'translate-page-settings-legend'    => 'Nastavení',
 	'translate-page-task'               => 'Chci',
 	'translate-page-group'              => 'skupina',
 	'translate-page-language'           => 'v jazyce',
 	'translate-page-limit'              => 's omezením',
 	'translate-page-limit-option'       => '$1 {{PLURAL:$1|zpráva|zprávy|zpráv}} na stránce',
-	'translate-submit'                  => 'Provést',
+	'translate-submit'                  => 'Ukázat',
 	'translate-page-navigation-legend'  => 'Navigace',
 	'translate-page-showing'            => 'Zobrazeny zprávy $1 až $2 z $3.',
 	'translate-page-showing-all'        => 'Zobrazeno $1 {{PLURAL:$1|zpráva|zprávy|zpráv}}.',
@@ -701,6 +704,7 @@ $messages['cs'] = array(
 	'translate-magic-cm-current'        => 'současné',
 	'translate-magic-cm-original'       => 'původní',
 	'translate-magic-cm-fallback'       => 'rezervní',
+	'translate-magic-cm-comment'        => 'Komentář:',
 	'translate-magic-cm-save'           => 'Uložit',
 	'translate-magic-cm-export'         => 'Exportovat',
 	'translate-magic-cm-updatedusing'   => 'Aktualizovat pomocí Special:Magic',
@@ -1397,6 +1401,7 @@ Vos dête apartegnir a la tropa des traductors por sôvar los changements. Los c
  */
 $messages['gl'] = array(
 	'translate'                         => 'Traducir',
+	'translate-desc'                    => '[[Special:Translate|Páxina especial]] para traducir Mediawiki e máis alá',
 	'translate-edit'                    => 'Editar',
 	'translate-talk'                    => 'conversa',
 	'translate-history'                 => 'Historial',
@@ -1407,8 +1412,12 @@ $messages['gl'] = array(
 	'translate-task-reviewall'          => 'Revisar todas as traducións en',
 	'translate-task-export'             => 'Exportar traducións de',
 	'translate-task-export-to-file'     => 'Exportar a tradución a un ficheiro de',
+	'translate-task-export-as-po'       => 'Exportar a tradución en formato Gettext',
 	'translate-page-no-such-language'   => 'Forneceuse un código de lingua non válido',
+	'translate-page-no-such-task'       => 'Tarefa especificada non válida',
+	'translate-page-no-such-group'      => 'Grupo especificado non válido.',
 	'translate-page-settings-legend'    => 'Configuracións',
+	'translate-page-task'               => 'Quero',
 	'translate-page-group'              => 'Grupo',
 	'translate-page-language'           => 'Lingua',
 	'translate-page-limit'              => 'Límite',
@@ -1427,7 +1436,7 @@ $messages['gl'] = array(
 	'translate-edit-contribute'         => 'contribuír',
 	'translate-edit-no-information'     => "''Esta mensaxe non ten documentación. Se vostede sabe onde ou como se usa esta mensaxe, pode axudar a outros tradutores engadindo documentación a esta mensaxe.''",
 	'translate-edit-information'        => 'Información acerca desta mensaxe ($1)',
-	'translate-edit-in-other-languages' => 'Mensaxe en otras linguas',
+	'translate-edit-in-other-languages' => 'Mensaxe noutras linguas',
 	'translate-edit-committed'          => 'Tradución actual no software',
 	'translate-edit-warnings'           => 'Avisos acerca de traducións incompletas',
 	'translate-magic-pagename'          => 'Tradución extendida de MediaWiki',
@@ -1457,7 +1466,9 @@ Nas traducións dos espazos de nomes, <tt>$1 talk</tt> é especial. <tt>$1</tt> 
 	'translationchanges-export'         => 'exportar',
 	'translationchanges-change'         => '$1: $2 por $3',
 	'translate-checks-parameters'       => 'Os seguintes parámetros non son usados: <strong>$1</strong>',
+	'translate-checks-balance'          => 'Hai unha cantidade irregular de parénteses: <strong>$1</strong>',
 	'translate-checks-links'            => 'As seguintes ligazóns son problemáticas: <strong>$1</strong>',
+	'translate-checks-xhtml'            => 'Por favor reemprace as seguintes etiquetas por unhas correctas: <strong>$1</strong>',
 	'translate-checks-plural'           => 'A definición usa <nowiki>{{PLURAL:}}</nowiki> pero a tradución non.',
 );
 
