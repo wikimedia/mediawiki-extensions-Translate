@@ -2098,7 +2098,7 @@ class WikidataLanguageManagerMessageGroup extends ExtensionMessageGroup {
 	protected $ignored = array( 'ow_editing_policy_url' );
 }
 
-class WikihieroManagerMessageGroup extends ExtensionMessageGroup {
+class WikihieroMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Wikihiero';
 	protected $id    = 'ext-wikihiero';
 
