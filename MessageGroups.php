@@ -673,6 +673,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-crossnamespacelinks',
 		'ext-deletedcontribs',
 		'ext-dismissablesitenotice',
+		'ext-doublewiki',
 		'ext-expandtemplates',
 		'ext-flaggedrevs', # not yet in production (see http://test.wikipedia.org)
 		'ext-flaggedrevsmakereviewer', # not yet in production (see http://test.wikipedia.org)
@@ -688,6 +689,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-oversight',
 		'ext-parserdifftest',
 		'ext-parserfunctions',
+		'ext-poem',
 		'ext-proofreadpage',
 		'ext-quiz',
 		'ext-renameuser',
@@ -697,6 +699,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-syntaxhighlightgeshi',
 		'ext-titleblacklist',
 		'ext-usernameblacklist',
+		'ext-wikihiero',
 	);
 
 	protected function init() {
@@ -1089,6 +1092,14 @@ class DismissableSiteNoticeMessageGroup extends ExtensionMessageGroup {
 	protected $ignored = array(
 		'sitenotice_id',
 	);
+}
+
+class DoubleWikiMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Double Wiki';
+	protected $id    = 'ext-doublewiki';
+
+	protected $arrName = 'messages';
+	protected $messageFile  = 'DoubleWiki/DoubleWiki.i18n.php';
 }
 
 class DuplicatorMessageGroup extends ExtensionMessageGroup {
@@ -1625,6 +1636,14 @@ class PlayerMessageGroup extends ExtensionMessageGroup {
 	);
 }
 
+class PoemMessageGroup extends ExtensionMessageGroup {
+	protected $label   = 'Poem';
+	protected $id      = 'ext-poem';
+
+	protected $arrName = 'messages';
+	protected $messageFile  = 'Poem/Poem.i18n.php';
+}
+
 class PostCommentMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Post Comment';
 	protected $id    = 'ext-postcomment';
@@ -2077,6 +2096,14 @@ class WikidataLanguageManagerMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'Wikidata/SpecialLanguages.i18n.php';
 
 	protected $ignored = array( 'ow_editing_policy_url' );
+}
+
+class WikihieroManagerMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Wikihiero';
+	protected $id    = 'ext-wikihiero';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'wikihiero/wikihiero.i18n.php';
 }
 
 class FreeColMessageGroup extends MessageGroup {

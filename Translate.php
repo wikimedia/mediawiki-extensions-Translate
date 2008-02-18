@@ -128,6 +128,7 @@ $wgTranslateAC = array(
 'ext-crosswikiblock'        => 'CrosswikiBlockMessageGroup',
 'ext-deletedcontribs'       => 'DeletedContribsMessageGroup',
 'ext-dismissablesitenotice' => 'DismissableSiteNoticeMessageGroup',
+'ext-doublewiki'            => 'DoubleWikiMessageGroup',
 'ext-duplicator'            => 'DuplicatorMessageGroup',
 'ext-editcount'             => 'EditcountMessageGroup',
 'ext-edituser'              => 'EditUserMessageGroup',
@@ -182,6 +183,7 @@ $wgTranslateAC = array(
 'ext-patroller'             => 'PatrollerMessageGroup',
 'ext-pdfhandler'            => 'PdfHandlerMessageGroup',
 'ext-player'                => 'PlayerMessageGroup',
+'ext-poem'                  => 'PoemMessageGroup',
 'ext-postcomment'           => 'PostCommentMessageGroup',
 'ext-povwatch'              => 'PovWatchMessageGroup',
 'ext-profilemonitor'        => 'ProfileMonitorMessageGroup',
@@ -236,6 +238,7 @@ $wgTranslateAC = array(
 'ext-whoiswatching'         => 'WhoIsWatchingMessageGroup',
 'ext-whosonline'            => 'WhosOnlineMessageGroup',
 'ext-wikidatalanguagemanager' => 'WikidataLanguageManagerMessageGroup',
+'ext-wikihiero'             => 'WikihieroMessageGroup',
 'out-freecol'               => 'FreeColMessageGroup',
 );
 
