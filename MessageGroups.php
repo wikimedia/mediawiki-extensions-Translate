@@ -1074,6 +1074,14 @@ class CrosswikiBlockMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'Crosswiki/Block/CrosswikiBlock.i18n.php';
 }
 
+class DataTransferMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Data Transfer';
+	protected $id    = 'ext-datatransfer';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'DataTransfer/languages/DT_Messages.php';
+}
+
 class DeletedContribsMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Deleted Contributions';
 	protected $id    = 'ext-deletedcontribs';
