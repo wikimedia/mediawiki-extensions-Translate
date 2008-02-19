@@ -2900,6 +2900,19 @@ För att kunna spara ändringar så behöver du tillhöra översättargruppen. �
 	'translate-checks-plural'           => '<nowiki>{{PLURAL:}}</nowiki> används i definitionen, men inte i översättningen.',
 );
 
+/** Telugu (తెలుగు)
+ * @author Veeven
+ */
+$messages['te'] = array(
+	'translate'                      => 'అనువదించు',
+	'translate-history'              => 'చరిత్ర',
+	'translate-page-settings-legend' => 'అమరికలు',
+	'translate-page-language'        => 'భాష',
+	'translate-page-limit'           => 'పరిమితి',
+	'translate-next'                 => 'తర్వాతి పేజీ',
+	'translate-magic-cm-comment'     => 'వ్యాఖ్య:',
+);
+
 /** Tetum (Tetun)
  * @author MF-Warburg
  */
