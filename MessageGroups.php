@@ -681,6 +681,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-imagemap',
 		'ext-inputbox',
 		'ext-intersection',
+		'ext-labeledsectiontransclusion',
 		'ext-linksearch',
 		'ext-lucenesearch',
 		'ext-newuserlog',
@@ -697,6 +698,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-sitematrix',
 		'ext-spamblacklist',
 		'ext-syntaxhighlightgeshi',
+		'ext-timeline',
 		'ext-titleblacklist',
 		'ext-usernameblacklist',
 		'ext-wikihiero',
@@ -1318,6 +1320,14 @@ class InterwikiMessageGroup extends ExtensionMessageGroup {
 		'interwiki_logentry',
 		'interwiki_url',
 	);
+}
+
+class LabeledSectionTransclusionMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Labeled Section Transclusion';
+	protected $id    = 'ext-labeledsectiontransclusion';
+
+	protected $arrName = 'messages';
+	protected $messageFile = 'LabeledSectionTransclusion/lst.i18n.php';
 }
 
 class LanguageNamesMessageGroup extends ExtensionMessageGroup {
@@ -1962,6 +1972,14 @@ class ThrottleMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'Throttle/UserThrottle.i18n.php';
+}
+
+class TimelineMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Timeline';
+	protected $id    = 'ext-timeline';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'timeline/Timeline.i18n.php';
 }
 
 class TitleBlacklistMessageGroup extends ExtensionMessageGroup {
