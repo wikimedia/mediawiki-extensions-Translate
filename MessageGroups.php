@@ -1740,7 +1740,7 @@ class RandomRootpageMessageGroup extends ExtensionMessageGroup {
 	protected $id    = 'ext-randomrootpage';
 
 	protected $arrName     = 'messages';
-	protected $messageFile = 'RandomRootPage/Randomrootpage.i18n.php';
+	protected $messageFile = 'Randomrootpage/Randomrootpage.i18n.php';
 }
 
 class RegexBlockMessageGroup extends ExtensionMessageGroup {
