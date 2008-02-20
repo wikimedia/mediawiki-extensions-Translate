@@ -1076,6 +1076,14 @@ class CrosswikiBlockMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'Crosswiki/Block/CrosswikiBlock.i18n.php';
 }
 
+class CrowdAuthenticationMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Crowd Authentication';
+	protected $id    = 'ext-crowdauthentication';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'CrowdAuthentication/CrowdAuthentication.i18n.php';
+}
+
 class DataTransferMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Data Transfer';
 	protected $id    = 'ext-datatransfer';
@@ -1126,6 +1134,14 @@ class EditcountMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName = 'messages';
 	protected $messageFile  = 'Editcount/SpecialEditcount.i18n.php';
+}
+
+class EditOwnMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Edit Own';
+	protected $id    = 'ext-editown';
+
+	protected $arrName = 'messages';
+	protected $messageFile  = 'EditOwn/EditOwn.i18n.php';
 }
 
 class EditUserMessageGroup extends ExtensionMessageGroup {
@@ -1236,8 +1252,24 @@ class GadgetsMessageGroup extends ExtensionMessageGroup {
 	);
 }
 
+class GlobalUsageMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Global Usage';
+	protected $id    = 'ext-globalusage';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'GlobalUsage/GlobalUsage.i18n.php';
+}
+
+class GoogleAnalyticsMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Google Analytics';
+	protected $id    = 'ext-googleanalytics';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'googleAnalytics/googleAnalytics.i18n.php';
+}
+
 class I18nTagsMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Parser i18n tags ';
+	protected $label = 'Parser i18n tags';
 	protected $id    = 'ext-i18ntags';
 
 	protected $arrName     = 'messages';
@@ -1725,6 +1757,14 @@ class QuizMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'Quiz/Quiz.i18n.php';
+}
+
+class RandomImageMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Random Image';
+	protected $id    = 'ext-randomimage';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'RandomImage/RandomImage.i18n.php';
 }
 
 class RandomInCategoryMessageGroup extends ExtensionMessageGroup {
