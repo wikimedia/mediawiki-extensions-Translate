@@ -665,6 +665,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-bookinformation',
 		'ext-categorytree',
 		'ext-centralauth', # not yet in production (see http://test.wikipedia.org)
+		'ext-centralnotice',
 		'ext-checkuser',
 		'ext-cite',
 		'ext-citespecial',
@@ -861,6 +862,14 @@ class CentralAuthMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'CentralAuth/CentralAuth.i18n.php';
+}
+
+class CentralNoticeMessageGroup extends ExtensionMessageGroup {
+	protected $label   = 'Central Notice';
+	protected $id      = 'ext-centralnotice';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'CentralNotice/CentralNotice.i18n.php';
 }
 
 class ChangeAuthorMessageGroup extends ExtensionMessageGroup {
