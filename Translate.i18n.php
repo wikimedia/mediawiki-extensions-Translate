@@ -934,6 +934,7 @@ $messages['el'] = array(
 /** Esperanto (Esperanto)
  * @author Michawiki
  * @author Tlustulimu
+ * @author Yekrats
  */
 $messages['eo'] = array(
 	'translate'                         => 'Tradukado',
@@ -991,6 +992,7 @@ Vi devas esti en la grupo de tradukantoj por konservi ŝanĝojn. Ŝanĝoj ne est
 	'translate-magic-cm-current'        => 'Nuntempe',
 	'translate-magic-cm-original'       => 'Originalo',
 	'translate-magic-cm-fallback'       => 'Alternativo',
+	'translate-magic-cm-comment'        => 'Komento:',
 	'translate-magic-cm-save'           => 'Konservu',
 	'translate-magic-cm-export'         => 'Eksportu',
 	'translate-magic-cm-updatedusing'   => 'Ĝisdatigita pere de Special:Magic',
@@ -1401,7 +1403,7 @@ Vos dête apartegnir a la tropa des traductors por sôvar los changements. Los c
  */
 $messages['gl'] = array(
 	'translate'                         => 'Traducir',
-	'translate-desc'                    => '[[Special:Translate|Páxina especial]] para traducir Mediawiki e máis alá',
+	'translate-desc'                    => '[[Special:Translate|Páxina especial]] para traducir Mediawiki e outras extensións',
 	'translate-edit'                    => 'Editar',
 	'translate-talk'                    => 'conversa',
 	'translate-history'                 => 'Historial',
@@ -2122,6 +2124,7 @@ $messages['lb'] = array(
 	'translate-magic-cm-current'        => 'Aktuell',
 	'translate-magic-cm-original'       => 'Original',
 	'translate-magic-cm-fallback'       => 'Ersatzsprooch',
+	'translate-magic-cm-comment'        => 'Bemierkung:',
 	'translate-magic-cm-save'           => 'Späicheren',
 	'translate-magic-cm-export'         => 'Export',
 	'translate-magic-cm-updatedusing'   => 'Geännert ma Hëllef vu Spezial:Magic',
@@ -2371,6 +2374,7 @@ Du må være i oversettergruppa for å lagre endringer. Endringer lagres ikke f�
 	'translate-magic-cm-current'        => 'Nåværende',
 	'translate-magic-cm-original'       => 'Opprinnelig',
 	'translate-magic-cm-fallback'       => 'Reserve',
+	'translate-magic-cm-comment'        => 'Kommentar:',
 	'translate-magic-cm-save'           => 'Lagre',
 	'translate-magic-cm-export'         => 'Eksporter',
 	'translate-magic-cm-updatedusing'   => 'Oppdatert vha. Special:Magic',
@@ -2508,6 +2512,7 @@ $messages['pms'] = array(
  */
 $messages['pt'] = array(
 	'translate'                         => 'Traduzir',
+	'translate-desc'                    => '[[{{ns:special}}:Translate|Página especial]] para traduzir o MediaWiki e mais',
 	'translate-edit'                    => 'editar',
 	'translate-talk'                    => 'disc',
 	'translate-history'                 => 'histórico',
@@ -2557,8 +2562,11 @@ Nas traduções de espaços nominais a partícula <tt>$1 talk</tt> é especial. 
 É necessário pertencer ao grupo de tradutores para conseguir salvar as alterações. As alterações não serão salvas até que você clique no botão de salvar.',
 	'translate-magic-form'              => 'Língua: $1 Módulo: $2 $3',
 	'translate-magic-submit'            => 'Trazer',
+	'translate-magic-cm-to-be'          => 'Novo',
 	'translate-magic-cm-current'        => 'Actual',
 	'translate-magic-cm-original'       => 'Original',
+	'translate-magic-cm-fallback'       => '"Fallback"',
+	'translate-magic-cm-comment'        => 'Comentário:',
 	'translate-magic-cm-save'           => 'Guardar',
 	'translate-magic-cm-export'         => 'Exportar',
 	'translate-magic-cm-updatedusing'   => 'Actualizado usando {{ns:special}}:Magic',
@@ -2571,6 +2579,7 @@ Nas traduções de espaços nominais a partícula <tt>$1 talk</tt> é especial. 
 	'translationchanges-export'         => 'exportar',
 	'translationchanges-change'         => '$1: $2 por $3',
 	'translate-checks-parameters'       => 'Os seguintes parâmetros não são usados: <strong>$1</strong>',
+	'translate-checks-balance'          => 'Há um número ímpar de parênteses: <strong>$1</strong>',
 	'translate-checks-links'            => 'Os seguintes links possuem problemas: <strong>$1</strong>',
 	'translate-checks-xhtml'            => 'Por gentileza, troque as seguintes tags pelas corretas: <strong>$1</strong>',
 	'translate-checks-plural'           => 'A definição usa <nowiki>{{PLURAL:}}</nowiki>, mas a tradução não.',
