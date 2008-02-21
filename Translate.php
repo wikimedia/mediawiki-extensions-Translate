@@ -11,15 +11,15 @@ if (!defined('MEDIAWIKI')) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '8.10' );
+define( 'TRANSLATE_VERSION', '8.11' );
 
 $wgExtensionCredits['specialpage'][] = array(
-	'name' => 'Translate',
-	'version' => TRANSLATE_VERSION,
-	'author' => array( 'Niklas Laxström', 'Siebrand Mazeland' ),
-	'description' => '[[Special:Translate|Special page]] for translating Mediawiki and beyond',
+	'name'           => 'Translate',
+	'version'        => TRANSLATE_VERSION,
+	'author'         => array( 'Niklas Laxström', 'Siebrand Mazeland' ),
+	'description'    => '[[Special:Translate|Special page]] for translating Mediawiki and beyond',
 	'descriptionmsg' => 'translate-desc',
-	'url' => 'http://www.mediawiki.org/wiki/Extension:Translate',
+	'url'            => 'http://www.mediawiki.org/wiki/Extension:Translate',
 );
 
 $dir = dirname(__FILE__) . '/';
@@ -148,11 +148,12 @@ $wgTranslateAC = array(
 'ext-gadgets'               => 'GadgetsMessageGroup',
 'ext-globalusage'           => 'GlobalUsageMessageGroup',
 'ext-googleanalytics'       => 'GoogleAnalyticsMessageGroup',
+'ext-googlemaps'            => 'GoogleMapsMessageGroup',
 'ext-i18ntags'              => 'I18nTagsMessageGroup',
 'ext-icon'                  => 'IconMessageGroup',
 'ext-imagemap'              => 'ImageMapMessageGroup',
 'ext-importfreeimages'      => 'ImportFreeImagesMessageGroup',
-'ext-importusers'            => 'ImportUsersMessageGroup',  
+'ext-importusers'           => 'ImportUsersMessageGroup',  
 'ext-inputbox'              => 'InputBoxMessageGroup',
 'ext-inspectcache'          => 'InspectCacheMessageGroup',
 'ext-intersection'          => 'IntersectionMessageGroup',

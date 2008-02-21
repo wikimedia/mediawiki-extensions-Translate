@@ -1277,6 +1277,14 @@ class GoogleAnalyticsMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'googleAnalytics/googleAnalytics.i18n.php';
 }
 
+class GoogleMapsMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Google Maps';
+	protected $id    = 'ext-googlemaps';
+
+	protected $arrName     = 'wgGoogleMapsMessages';
+	protected $messageFile = 'GoogleMaps/GoogleMaps.i18n.php';
+}
+
 class I18nTagsMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Parser i18n tags';
 	protected $id    = 'ext-i18ntags';
