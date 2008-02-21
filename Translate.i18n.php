@@ -1377,6 +1377,7 @@ Vos dête apartegnir a la tropa des traductors por sôvar los changements. Los c
 	'translate-magic-cm-current'        => 'Ora',
 	'translate-magic-cm-original'       => 'Originâl',
 	'translate-magic-cm-fallback'       => 'Lengoua de refèrence',
+	'translate-magic-cm-comment'        => 'Comentèro :',
 	'translate-magic-cm-save'           => 'Sôvar',
 	'translate-magic-cm-export'         => 'Èxportar',
 	'translate-magic-cm-updatedusing'   => 'Betâ a jorn en utilisent Special:Magic',
@@ -2222,6 +2223,15 @@ Jūs turite priklausyti vertėjų grupei, kad galėtumėte išsaugoti pakeitimus
 	'translate-checks-plural'           => 'Aprašymas naudoja <nowiki>{{PLURAL:}}</nowiki>, bet vertimas ne.',
 );
 
+/** Malayalam (മലയാളം)
+ * @author Jacob.jose
+ */
+$messages['ml'] = array(
+	'translate'                  => 'വിവര്‍ത്തനം ചെയ്യുക',
+	'translate-page-showing'     => '$3 സന്ദേശങ്ങളുള്ളതില്‍ $1 മുതല്‍ $2 വരെയുള്ളവ പ്രദര്‍ശിപ്പിച്ചിരിക്കുന്നു',
+	'translate-page-showing-all' => '$1 {{PLURAL:$1|സന്ദേശം|സന്ദേശങ്ങള്‍}} പ്രദര്‍ശിപ്പിക്കുന്നു.',
+);
+
 $messages['nap'] = array(
 	'translate-edit' => 'càgna',
 	'translate-talk' => 'chiàcchiera',
@@ -2604,6 +2614,7 @@ $messages['ro'] = array(
  */
 $messages['ru'] = array(
 	'translate'                         => 'Перевод',
+	'translate-desc'                    => '[[Special:Translate|Служебная страница]] для перевода Mediawiki и прочих программ',
 	'translate-edit'                    => 'править',
 	'translate-talk'                    => 'обсуждение',
 	'translate-history'                 => 'история',
@@ -2640,6 +2651,7 @@ $messages['ru'] = array(
 	'translate-edit-information'        => 'Информация об этом сообщении ($1)',
 	'translate-edit-in-other-languages' => 'Сообщение на других языках',
 	'translate-edit-committed'          => 'Текущий перевод в программе',
+	'translate-edit-warnings'           => 'Предупреждения о неполных переводах',
 	'translate-magic-pagename'          => 'Углублённый перевод MediaWiki',
 	'translate-magic-help'              => 'Вы можете переводить псевдонимы служебных страниц, магические слова, названия тем оформления и пространств имён.
 
@@ -2656,6 +2668,7 @@ $messages['ru'] = array(
 	'translate-magic-cm-current'        => 'Текущее',
 	'translate-magic-cm-original'       => 'Исходное',
 	'translate-magic-cm-fallback'       => 'Подставное',
+	'translate-magic-cm-comment'        => 'Примечание:',
 	'translate-magic-cm-save'           => 'Сохранить',
 	'translate-magic-cm-export'         => 'Выгрузить',
 	'translate-magic-cm-updatedusing'   => 'Обновлено с помощью Special:Magic',
@@ -2667,6 +2680,11 @@ $messages['ru'] = array(
 	'translationchanges'                => 'Изменения в переводах',
 	'translationchanges-export'         => 'выгрузить',
 	'translationchanges-change'         => '$1: $2 $3',
+	'translate-checks-parameters'       => 'Следующие параметры не используются: <strong>$1</strong>',
+	'translate-checks-balance'          => 'Непарное количество открывающих и закрывающих скобок: <strong>$1</strong>',
+	'translate-checks-links'            => 'Следующие ссылки вызывают проблемы: <strong>$1</strong>',
+	'translate-checks-xhtml'            => 'Пожалуйста, исправьте следующие теги: <strong>$1</strong>',
+	'translate-checks-plural'           => 'Оригинал использует <nowiki>{{PLURAL:}}</nowiki>, а перевод — нет.',
 );
 
 $messages['sah'] = array(
@@ -2913,13 +2931,30 @@ För att kunna spara ändringar så behöver du tillhöra översättargruppen. �
  * @author Veeven
  */
 $messages['te'] = array(
-	'translate'                      => 'అనువదించు',
-	'translate-history'              => 'చరిత్ర',
-	'translate-page-settings-legend' => 'అమరికలు',
-	'translate-page-language'        => 'భాష',
-	'translate-page-limit'           => 'పరిమితి',
-	'translate-next'                 => 'తర్వాతి పేజీ',
-	'translate-magic-cm-comment'     => 'వ్యాఖ్య:',
+	'translate'                         => 'అనువదించు',
+	'translate-edit'                    => 'మార్చు',
+	'translate-talk'                    => 'చర్చ',
+	'translate-history'                 => 'చరిత్ర',
+	'translate-page-settings-legend'    => 'అమరికలు',
+	'translate-page-group'              => 'సమూహం',
+	'translate-page-language'           => 'భాష',
+	'translate-page-limit'              => 'పరిమితి',
+	'translate-page-limit-option'       => 'పేజీకి $1 {{PLURAL:$1|సందేశం|సందేశాలు}}',
+	'translate-page-showing'            => 'మొత్తం $3 సందేశాల్లో $1 నుండి $2 వరకు చూపిస్తున్నాం.',
+	'translate-page-showing-all'        => '$1 {{PLURAL:$1|సందేశాన్ని|సందేశాలను}} చూపిస్తున్నాం.',
+	'translate-page-showing-none'       => 'ఇంక సందేశాలేమీ లేవు.',
+	'translate-next'                    => 'తర్వాతి పేజీ',
+	'translate-prev'                    => 'క్రితం పేజీ',
+	'translate-optional'                => '(ఐచ్ఛికం)',
+	'translate-edit-definition'         => 'సందేశ నిర్వచనం',
+	'translate-edit-information'        => 'ఈ సందేశం గురించి సమాచారం ($1)',
+	'translate-edit-in-other-languages' => 'ఇతర భాషలలోని సందేశాలు',
+	'translate-edit-warnings'           => 'అసంపూర్తి అనువాదాల గురించి హెచ్చరికలు',
+	'translate-magic-submit'            => 'తీసుకురా',
+	'translate-magic-cm-comment'        => 'వ్యాఖ్య:',
+	'translate-magic-cm-save'           => 'భద్రపరచు',
+	'translate-magic-special'           => 'ప్రత్యేక పేజీల మారుపేర్లు',
+	'translationchanges'                => 'అనువాద మార్పులు',
 );
 
 /** Tetum (Tetun)
