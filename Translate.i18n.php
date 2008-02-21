@@ -727,7 +727,7 @@ $messages['cs'] = array(
 $messages['de'] = array(
 	'translate'         => 'Übersetze',
 	'translate-desc'    => '[[Special:Translate|Spezialseite]] für die Übersetzung von MediaWiki-Systemnachrichten',
-	'translate-edit'    => 'Bearbeite',
+	'translate-edit'    => 'Bearbeiten',
 	'translate-talk'    => 'Diskussion',
 	'translate-history' => 'Versionen',
 
@@ -766,7 +766,7 @@ $messages['de'] = array(
 
 	'translate-edit-definition'         => 'Systemnachricht im Original',
 	'translate-edit-contribute'         => 'bearbeiten',
-	'translate-edit-no-information'     => "''Diese Systemnachricht hat noch keine Dokumentation. Wenn du weisst, wo und welchem Zusammenhang sie benutzt wird, kannst du anderen Übersetzern helfen, indem du eine Dokumentatin hinzufügst.''",
+	'translate-edit-no-information'     => "''Diese Systemnachricht hat noch keine Dokumentation. Wenn du weißt, wo und welchem Zusammenhang sie benutzt wird, kannst du anderen Übersetzern helfen, indem du eine Dokumentation hinzufügst.''",
 	'translate-edit-information'        => 'Information über diese Systemnachricht ($1)',
 	'translate-edit-in-other-languages' => 'Systemnachricht in anderer Sprache',
 	'translate-edit-committed'          => 'Aktuelle Übersetzung',
