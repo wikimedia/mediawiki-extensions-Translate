@@ -971,6 +971,14 @@ class CleanChangesMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile  = 'CleanChanges/CleanChanges.i18n.php';
 }
 
+class CollectionMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Collection';
+	protected $id    = 'ext-collection';
+
+	protected $arrName = 'messages';
+	protected $messageFile  = 'Collection/Collection.i18n.php';
+}
+
 class CommentPagesMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Comment Pages';
 	protected $id    = 'ext-commentpages';
