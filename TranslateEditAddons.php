@@ -49,6 +49,10 @@ class TranslateEditAddons {
 		$attributes = array();
 		if ( !$title ) {
 			$attributes['class'] = 'mw-sp-translate-in-other-big';
+		} elseif ( $code === 'en' ) {
+			$attributes['class'] = 'mw-sp-translate-edit-definition';
+		} else {
+			$attributes['class'] = 'mw-sp-translate-edit-committed';
 		}
 		if ( mb_strlen( $msg ) < 100 && !$title ) {
 			$attributes['class'] = 'mw-sp-translate-in-other-small';
@@ -132,7 +136,7 @@ class TranslateEditAddons {
 		}
 		if ( count($inOtherLanguages) ) {
 			$boxes[] = TranslateUtils::fieldset( wfMsgHtml( self::MSG . 'in-other-languages' ),
-				implode( "\n", $inOtherLanguages ) );
+				implode( "\n", $inOtherLanguages ), array( 'class' => 'mw-sp-translate-edit-inother' ) );
 		}
 
 		// User provided documentation
@@ -145,7 +149,8 @@ class TranslateEditAddons {
 				$info = wfMsg( self::MSG . 'no-information' );
 			}
 			$boxes[] = TranslateUtils::fieldset(
-				wfMsgHtml( self::MSG . 'information', $edit ), $wgOut->parse( $info )
+				wfMsgHtml( self::MSG . 'information', $edit ), $wgOut->parse( $info ),
+				$info ? array( 'class' => 'mw-sp-translate-edit-info' ) : array( 'id' => 'mw-sp-translate-edit-noinfo' )
 			);
 		}
 
@@ -167,7 +172,8 @@ class TranslateEditAddons {
 			$message->database = $translation;
 			$checks = MessageChecks::doChecks( $message );
 			if ( count($checks) ) {
-				$boxes[] = TranslateUtils::fieldset( wfMsgHtml( self::MSG . 'warnings' ), implode( '<hr />', $checks) );
+				$boxes[] = TranslateUtils::fieldset( wfMsgHtml( self::MSG . 'warnings' ), implode( '<hr />', $checks),
+					array( 'class' => 'mw-sp-translate-edit-warnings' ) );
 			}
 		}
 
