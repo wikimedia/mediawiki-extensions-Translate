@@ -1216,10 +1216,10 @@ $messages['fi'] = array(
 
 /** French (Français)
  * @author Grondin
+ * @author Sherbrooke
  * @author Seb35
  * @author Dereckson
  * @author Siebrand
- * @author Sherbrooke
  * @author Urhixidur
  * @author ChrisPtDe
  */
@@ -1237,7 +1237,7 @@ $messages['fr'] = array(
 	'translate-task-export'             => 'Exporter les traductions depuis',
 	'translate-task-export-to-file'     => 'Exporter les traductions dans un fichier depuis',
 	'translate-task-export-as-po'       => 'Exporter les traductions au format Gettext',
-	'translate-page-no-such-language'   => 'Un code langage invalide a été indiqué',
+	'translate-page-no-such-language'   => 'Un code langage invalide a été indiqué.',
 	'translate-page-no-such-task'       => 'La tâche spécifiée est invalide.',
 	'translate-page-no-such-group'      => 'Le groupe spécifié est invalide.',
 	'translate-page-settings-legend'    => 'Configuration',
@@ -1268,9 +1268,9 @@ $messages['fr'] = array(
 
 Dans les mots magiques, vous devez inclure la traduction en anglais ou ça ne fonctionnera plus. De plus, laissez le premier item (0 ou 1) comme c'est.
 
-Les alias de pages spéciales et les mots magiques peuvent avoir plusieurs traductions. Les traductions sont séparées par une virgule (,). Les noms de skins et d'espaces de noms ne peuvent avoir qu'une traduction.
+Les alias de pages spéciales et les mots magiques peuvent avoir plusieurs traductions. Les traductions sont séparées par une virgule (,). Les noms d'habillages et d'espaces de noms ne peuvent avoir qu'une traduction.
 
-Dans les traductions d'espaces de noms, <tt>$1 talk</tt> est spécial. <tt>$1</tt> est remplacé par le nom du site (par exemple <tt>{{SITENAME}} talk</tt>). Si ce n'est pas possible d'obtenir une expression valide dans votre langue sans changer le nom du site, veuillez contacter un développeur.
+Dans les traductions d'espaces de noms, <tt>$1 talk</tt> est spécial. <tt>$1</tt> est remplacé par le nom du site (par exemple <tt>{{SITENAME}} talk</tt>). S'il n'est pas possible d'obtenir une expression valide dans votre langue sans changer le nom du site, veuillez contacter un développeur.
 
 Vous devez appartenir au groupe des traducteurs pour sauvegarder les changements. Les changements ne seront pas sauvegardés avant que vous ne cliquiez sur le bouton Sauvegarder en bas.",
 	'translate-magic-form'              => 'Langue $1 Module : $2 $3',
@@ -2161,6 +2161,13 @@ $messages['li'] = array(
 	'translate-optional' => '(optioneel)',
 );
 
+/** Lao (ລາວ)
+ * @author Passawuth
+ */
+$messages['lo'] = array(
+	'translate-desc' => '[[Special:Translate|ໜ້າພິເສດ]]ສຳຫຼັບແປມີເດຍວິກິແລະອື່ນ າ',
+);
+
 /** Lithuanian (Lietuvių)
  * @author Vpovilaitis
  * @author Garas
@@ -2990,9 +2997,11 @@ $messages['tet'] = array(
 
 /** Thai (ไทย)
  * @author Ans
+ * @author Passawuth
  */
 $messages['th'] = array(
 	'translate'                         => 'แปล',
+	'translate-desc'                    => '[[Special:Translate|หน้าพิเศษ]]สำหรับแปลมีเดียวิกิและอื่น ๆ',
 	'translate-edit'                    => 'แก้ไข',
 	'translate-talk'                    => 'พูดคุย',
 	'translate-history'                 => 'ประวัติ',
@@ -3021,6 +3030,8 @@ $messages['th'] = array(
 	'translate-next'                    => 'หน้าถัดไป',
 	'translate-prev'                    => 'หน้าก่อน',
 	'translate-page-description-legend' => 'ข้อมูลเกี่ยวกับกลุ่มข้อความ',
+	'translate-optional'                => '(สามารถเลือกได้)',
+	'translate-ignored'                 => '(เพิกเฉย)',
 	'translate-edit-definition'         => 'นิยามข้อความ',
 	'translate-edit-contribute'         => 'ช่วยเขียน',
 	'translate-edit-no-information'     => "''ข้อความนี้ไม่มีคำอธิบายการใช้งาน.  ถ้าคุณทราบว่าข้อความนี้ใช้ตรงส่วนไหนหรือใช้อย่างไร, คุณสามารถช่วยเพิ่มคำอธิบายการใช้งานของข้อความนี้ เพื่อเป็นประโยชน์แก่ผู้แปลคนอื่นๆ ได้.''",
@@ -3029,6 +3040,15 @@ $messages['th'] = array(
 	'translate-edit-committed'          => 'ข้อความแปลที่ฝังอยู่ในตัวโปรแกรม',
 	'translate-edit-warnings'           => 'คำเตือนเกี่ยวกับงานแปลที่ยังไม่เสร็จสมบูรณ์',
 	'translate-magic-pagename'          => 'ส่วนขยายการแปลในมีเดียวิกิ',
+	'translate-magic-help'              => 'คุณสามารถแปลชื่อหน้าพิเศษต่าง ๆ, ตัวแปรพิเศษ, ชื่อสกิน และ ชื่อเนมสเปซ
+
+ในตัวแปรพิเศษ กรุณาใส่คำแปลภาษาอังกฤษไปด้วยเช่นเดียวกัน มิฉะนั้นมันจะหยุดทำงาน กรุณาเว้นอันที่ 1 (0 หรือ 1) อย่างที่มันเป็น
+
+ชื่อหน้าพิเศษและตัวแปรพิเศษสามารถมีคำแปลได้หลายอย่าง คำแปลจะแยกโดยการใช้ จุลภาค (,) ; ชื่อสกินและเนมสเปซสามารถมีคำแปลได้แค่คำเดียว
+
+ในคำแปลชื่อเนมสเปซ <tt>คุยเรื่อง$1</tt> ต้องระวังเป็นพิเศษ <tt>$1</tt> จะถูกแทนที่โดยชื่อเว็บไซต์ (เช่น <tt>คุยเรื่อง{{SITENAME}}</tt> ถ้าไม่สามารถกระทำการดังกล่าวได้ในภาษาของคุณ, กรุณาติดต่อผู้ดูแลระบบขั้นสูง
+
+คุณต้องอยู่ในกลุ่มคนแปลเพื่อที่จะบันทึกข้อมูลได้ ข้อมูลจะไม่ถูกบันทึกตราบใดที่คุณยังไม่กด "บันทึก"',
 	'translate-magic-form'              => 'ภาษา: $1 Module: $2 $3',
 	'translate-magic-submit'            => 'ดึงข้อมูล',
 	'translate-magic-cm-to-be'          => 'แก้เป็น',
