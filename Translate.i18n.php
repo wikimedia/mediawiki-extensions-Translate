@@ -586,6 +586,7 @@ Ret eo deoc'h bezañ ezel eus ur strollad troourien evit enrollañ ar c'hemmoù.
  */
 $messages['ca'] = array(
 	'translate'                         => 'Tradueix',
+	'translate-desc'                    => '[[Special:Translate|Pàgina especial]] per a traduir el Mediawiki i altres coses',
 	'translate-edit'                    => 'edita',
 	'translate-talk'                    => 'discussió',
 	'translate-history'                 => 'historial',
@@ -635,6 +636,7 @@ Dins les traduccions dels espais de noms, la <tt>$1 talk</tt> és especial. <tt>
 Heu de tenir permisos de traductor per a desar els canvis, que no es guardaran fins que no cliqueu el botó corresponent.",
 	'translate-magic-form'              => 'Llengua: $1 Mòdul: $2 $3',
 	'translate-magic-submit'            => 'Mostra',
+	'translate-magic-cm-to-be'          => 'Serà',
 	'translate-magic-cm-current'        => 'Actual',
 	'translate-magic-cm-original'       => 'Original',
 	'translate-magic-cm-fallback'       => 'Llengua de referència',
@@ -1266,15 +1268,15 @@ $messages['fr'] = array(
 	'translate-edit-committed'          => 'Traduction courante',
 	'translate-edit-warnings'           => 'Avertissements concernant les traductions incomplètes',
 	'translate-magic-pagename'          => 'Traduction de MediaWiki étendue',
-	'translate-magic-help'              => "Vous pouvez traduire les alias de pages spéciales, les mots magiques, les noms de skins et les noms d'espaces de noms.
+	'translate-magic-help'              => 'Vous pouvez traduire les alias de pages spéciales, les mots magiques, les noms d’habillages et les noms d’espaces de noms.
 
-Dans les mots magiques, vous devez inclure la traduction en anglais ou ça ne fonctionnera plus. De plus, laissez le premier item (0 ou 1) comme c'est.
+Dans les mots magiques, vous devez inclure la traduction en anglais ou ça ne fonctionnera plus. De plus, laissez le premier article (0 ou 1) tel quel.
 
-Les alias de pages spéciales et les mots magiques peuvent avoir plusieurs traductions. Les traductions sont séparées par une virgule (,). Les noms d'habillages et d'espaces de noms ne peuvent avoir qu'une traduction.
+Les alias de pages spéciales et les mots magiques peuvent avoir plusieurs traductions. Les traductions sont séparées par une virgule (,). Les noms d’habillages et d’espaces de noms ne peuvent avoir qu’une traduction.
 
-Dans les traductions d'espaces de noms, <tt>$1 talk</tt> est spécial. <tt>$1</tt> est remplacé par le nom du site (par exemple <tt>{{SITENAME}} talk</tt>). S'il n'est pas possible d'obtenir une expression valide dans votre langue sans changer le nom du site, veuillez contacter un développeur.
+Dans les traductions d’espaces de noms, <tt>$1 talk</tt> est spécial. <tt>$1</tt> est remplacé par le nom du site (par exemple <tt>{{SITENAME}} talk</tt>). S’il n’est pas possible d’obtenir une expression valide dans votre langue sans changer le nom du site, veuillez contacter un développeur.
 
-Vous devez appartenir au groupe des traducteurs pour sauvegarder les changements. Les changements ne seront pas sauvegardés avant que vous ne cliquiez sur le bouton Sauvegarder en bas.",
+Vous devez appartenir au groupe des traducteurs pour sauvegarder les changements. Les changements ne seront pas sauvegardés tant que vous n’aurez pas cliqué sur le bouton « Sauvegarder ».',
 	'translate-magic-form'              => 'Langue $1 Module : $2 $3',
 	'translate-magic-submit'            => 'Aller',
 	'translate-magic-cm-to-be'          => 'Devient',
