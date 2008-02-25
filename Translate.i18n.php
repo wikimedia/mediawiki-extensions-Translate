@@ -309,6 +309,7 @@ $messages['arn'] = array(
  */
 $messages['ast'] = array(
 	'translate'                         => 'Traducir',
+	'translate-desc'                    => '[[Special:Translate|Páxina especial]] pa traducir Mediawiki y más',
 	'translate-edit'                    => 'editar',
 	'translate-talk'                    => 'alderique',
 	'translate-history'                 => 'historial',
@@ -362,6 +363,7 @@ Necesites tar nel grupu de traductores pa guardar los cambeos. Los cambeos nun s
 	'translate-magic-cm-current'        => 'Actual',
 	'translate-magic-cm-original'       => 'Orixinal',
 	'translate-magic-cm-fallback'       => 'Llingua por defeutu',
+	'translate-magic-cm-comment'        => 'Comentariu:',
 	'translate-magic-cm-save'           => 'Guardar',
 	'translate-magic-cm-export'         => 'Esportar',
 	'translate-magic-cm-updatedusing'   => 'Actualizao usando Special:Magic',
@@ -2067,6 +2069,14 @@ Esim aya awdarmalarında <tt>$1_talk</tt> degen arnaýı keltiriledi. <tt>$1</tt
 	'translate-checks-plural'           => 'Anıqtalımda <nowiki>{{PLURAL:}}</nowiki> paýdalanılğan, biraq awdarmada bul joq.',
 );
 
+/** Khmer (ភាសាខ្មែរ)
+ * @author Chhorran
+ */
+$messages['km'] = array(
+	'translate-magic-skin'      => 'ឈ្មោះ សំបកនានា',
+	'translate-magic-namespace' => 'ឈ្មោះនានា នៃវាលឈ្មោះ',
+);
+
 
 $messages['la'] = array(
 	'translate' => 'Traducere',
@@ -2941,14 +2951,35 @@ För att kunna spara ändringar så behöver du tillhöra översättargruppen. �
 	'translate-checks-plural'           => '<nowiki>{{PLURAL:}}</nowiki> används i definitionen, men inte i översättningen.',
 );
 
+/** Tamil (தமிழ்)
+ * @author Trengarasu
+ */
+$messages['ta'] = array(
+	'translate'                       => 'மொழிப்பெயர்ப்பு',
+	'translate-edit'                  => 'தொகு',
+	'translate-talk'                  => 'உரையாடல்',
+	'translate-history'               => 'வரலாறு',
+	'translate-page-no-such-language' => 'குறித்த மொழி செல்லுபடியற்றதாகும்.',
+	'translate-page-language'         => 'மொழி',
+	'translate-next'                  => 'அடுத்தப் பக்கம்',
+	'translate-prev'                  => 'முந்தைய பக்கம்',
+	'translate-magic-cm-save'         => 'பக்கத்தை சேமி',
+	'translate-magic-cm-savefailed'   => 'சேமிப்பு தோல்வி',
+	'translationchanges-export'       => 'ஏற்றுமதி',
+);
+
 /** Telugu (తెలుగు)
  * @author Veeven
  */
 $messages['te'] = array(
 	'translate'                         => 'అనువదించు',
+	'translate-desc'                    => 'మీడియావికీ మరియు ఆపైవాటిని అనువదించడానికి [[Special:Translate|ప్రత్యేక పేజీ]]',
 	'translate-edit'                    => 'మార్చు',
 	'translate-talk'                    => 'చర్చ',
 	'translate-history'                 => 'చరిత్ర',
+	'translate-task-view'               => 'అన్ని సందేశాలు చూడాలి',
+	'translate-task-untranslated'       => 'అన్ని అనువాదంకాని సందేశాలు చూడాలి',
+	'translate-task-optional'           => 'ఐచ్చిక సందేశాలు చూడాలనుకుంటున్నాను',
 	'translate-page-settings-legend'    => 'అమరికలు',
 	'translate-page-group'              => 'సమూహం',
 	'translate-page-language'           => 'భాష',
