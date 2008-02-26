@@ -180,7 +180,7 @@ $messages['an'] = array(
 	'translate-magic-pagename'          => 'Traduzión ixamplata de MediaWiki',
 	'translate-magic-help'              => "Puede traduzir os \"alias\" d'as pachinas espezials, as parabras machicas, os nombres d'as aparenzias y os espazios de nombres.
 
-In as parabras machicas, ha d'encluyir a traduzión en anglés, porque si no lo fa, no funzionarán bien. Deixe tamién o primer elemento (0 u 1) sin cambiar. 
+In as parabras machicas, ha d'encluyir a traduzión en anglés, porque si no lo fa, no funzionarán bien. Deixe tamién o primer elemento (0 u 1) sin cambiar.
 
 Os alias d'as pachinas espezials y as parabras machicas pueden tener barias traduzions. As traduzions se deseparan por una coma (,). Os nombres d'as aparenzias y d'os espazios de nombres no pueden tener que una unica traduzión.
 
@@ -1702,11 +1702,96 @@ $messages['hu'] = array(
 	'translate-checks-plural'           => 'Az alapértelmezett változatban van <nowiki>{{PLURAL:}}</nowiki> forma, míg a fordításban nincs (magyar nyelv esetén ez nem feltétlenül probléma!).',
 );
 
+/** Indonesian (Bahasa Indonesia)
+ * @author IvanLanin
+ */
 $messages['id'] = array(
 	'translate' => 'Terjemahan',
-	'translate-edit-message-format' => 'Format pesan ini adalah <b>$1</b>.',
-	'translate-edit-message-in' => 'Kalimat dalam <b>$1</b> ($2):',
-	'translate-edit-message-in-fb' => 'Kalimat dalam bahasa <b>$1</b> ($2):',
+	'translate-desc' => '[[Special:Translate|Halaman istimewa]] untuk menerjemahkan Mediawiki',
+	'translate-edit' => 'sunting',
+	'translate-talk' => 'bicara',
+	'translate-history' => 'versi',
+
+	'translate-task-view' => 'Tampilkan semua pesan dari',
+	'translate-task-untranslated' => 'Tampilkan semua pesan yang belum diterjemahkan dari',
+	'translate-task-optional' => 'Tampilkan pesan opsional dari',
+	'translate-task-review' => 'Tinjau perubahan dari',
+	'translate-task-reviewall' => 'Tinjau semua perubahan pada',
+	'translate-task-export' => 'Ekspor terjemahan dari',
+	'translate-task-export-to-file' => 'Ekspor terjemahan ke berkas dari',
+	'translate-task-export-as-po' => 'Ekspor terjemahan ke format Gettext dari',
+
+	'translate-page-no-such-language' => 'Bahasa yang dipilih tak valid.',
+	'translate-page-no-such-task'     => 'Operasi yang dipilih tak valid.',
+	'translate-page-no-such-group'    => 'Grup yang dipilih tak valid.',
+
+	'translate-page-settings-legend' => 'Pengaturan',
+	'translate-page-task'     => 'Saya ingin',
+	'translate-page-group'    => 'Grup',
+	'translate-page-language' => 'Bahasa',
+	'translate-page-limit'    => 'Limit',
+	'translate-page-limit-option' => '$1 {{PLURAL:$1|pesan|pesan}} per halaman',
+	'translate-submit'        => 'Ambil',
+
+	'translate-page-navigation-legend' => 'Navigasi',
+	'translate-page-showing' => 'Menampilkan pesan $1 hingga $2 dari $3.',
+	'translate-page-showing-all' => 'Menampilkan $1 {{PLURAL:$1|pesan|pesan}}.',
+	'translate-page-showing-none' => 'Tak ada pesan yang dapat ditampilkan.',
+	'translate-page-paging-links' => '[ $1 ] [ $2 ]',
+	'translate-next' => 'Halaman selanjutnya',
+	'translate-prev' => 'Halaman sebelumnya',
+
+	'translate-page-description-legend' => 'Informasi mengenai grup',
+
+	'translate-optional' => '(opsional)',
+	'translate-ignored' => '(diabaikan)',
+
+	'translate-edit-definition' => 'Definisi pesan',
+	'translate-edit-contribute' => 'berkontribusi',
+	'translate-edit-no-information' => "''Pesan ini tak memiliki dokumentasi. JIka Anda tahu di mana dan bagaimana pesan ini digunakan, Anda dapat menolong penerjemah lain dengan menambahkan dokumentasi bagi pesan ini.''",
+	'translate-edit-information' => 'Informasi mengenai pesan ini ($1)',
+	'translate-edit-in-other-languages' => 'Pesan dalam bahasa lain',
+	'translate-edit-committed' => 'Translasi yang ada di perangkat lunak',
+	'translate-edit-warnings' => 'Peringatan mengenai terjemahan yang tak lengkap',
+
+	'translate-magic-pagename' => 'Perluasan terjemahan Mediawiki',
+	'translate-magic-help' => 'Anda dapat menerjemahkan alias untuk halaman istimewa, kata magis, nama kulit, dan nama ruang nama.
+
+Untuk kata magis, Anda perlu mencantumkan pula terjemahan bahasa Inggris atau akan terjadi kesalahan. Juga tetap cantumkan item pertama (0 atau 1) begitu saja.
+
+Alias untuk halaman istimewa dan kata magis dapat memiliki lebih dari satu terjemahan yang masing-masing dipisahkan dengan koma (,). Nama kulit dan ruang nama hanya dapat memiliki satu terjemahan.
+
+Dalam terjemahan ruang nama <tt>$1 talk</tt> diperlakukan khusus. <tt>$1</tt> digantikan dengan nama situs (contohnya <tt>{{SITENAME}} talk</tt>. Jika bahasa Anda tidak memungkinkan untuk membentuk suatu ekspresi yang valid tanpa mengganti nama situs, silakan kontak salah seorang pengembang.
+
+Anda perlu menjadi anggota grup penerjemah untuk menyimpan perubahan. Perubahan tak akan disimpan hingga Anda mengklik tombol simpan di bawah.',
+	'translate-magic-form' => 'Bahasa: $1 Modul: $2 $3',
+	'translate-magic-submit' => 'Ambil',
+	'translate-magic-cm-to-be' => 'Menjadi',
+	'translate-magic-cm-current' => 'Kini',
+	'translate-magic-cm-original' => 'Asal',
+	'translate-magic-cm-fallback' => 'Fallback',
+
+	'translate-magic-cm-comment' => 'Komentar:',
+	'translate-magic-cm-save' => 'Simpan',
+	'translate-magic-cm-export' => 'Ekspor',
+
+	'translate-magic-cm-updatedusing' => 'Diubah menggunakan Special:Magic',
+	'translate-magic-cm-savefailed' => 'Gagal disimpan',
+
+	'translate-magic-special' => 'Alias halaman istimewa',
+	'translate-magic-words' => 'Kata magis',
+	'translate-magic-skin' => 'Nama kulit',
+	'translate-magic-namespace' => 'Nama ruang nama',
+
+	'translationchanges' => 'Perubahan terjemahan',
+	'translationchanges-export' => 'ekspor',
+	'translationchanges-change' => '$1: $2 oleh $3',
+
+	'translate-checks-parameters' => 'Parameter-parameter berikut tidak digunakan: <strong>$1</strong>',
+	'translate-checks-balance' => 'Jumlah pengapit tak seimbang: <strong>$1</strong>',
+	'translate-checks-links' => 'Pranala berikut bermasalah: <strong>$1</strong>',
+	'translate-checks-xhtml' => 'Harap ganti tag-tag berikut dengan tag yang tepat: <strong>$1</strong>',
+	'translate-checks-plural' => 'Definisi menggunakan <nowiki>{{PLURAL:}}</nowiki> tapi terjemahannya tidak.',
 );
 
 /** Icelandic (Íslenska)
@@ -2226,7 +2311,7 @@ Magiško žodžio vertimuose nurodykite ir vertimą į anglų kalbą, kitaip jis
 
 Specialiojo puslapio pavadinimo ir magiško žodžio vertimai gali būti keli. Vertimai yra skiriami kableliu (,). Apvalkalo ir vardų srities pavadinimas gali turėti tik vieną vertimą.
 
-Vardų sričių vertimuose <tt>$1 aptarimas</tt> yra specialus. <tt>$1</tt> yra pakeičiamas svetainės pavadinimu (Pavyzdžiui <tt>{{SITENAME}} aptarimas</tt>. Jei nėra galimybės Jūsų kalboje suformuoti teisingos išraiškos su svetainės pavadinimo pakeitimu, prašome kreiptis į kūrėjus. 
+Vardų sričių vertimuose <tt>$1 aptarimas</tt> yra specialus. <tt>$1</tt> yra pakeičiamas svetainės pavadinimu (Pavyzdžiui <tt>{{SITENAME}} aptarimas</tt>. Jei nėra galimybės Jūsų kalboje suformuoti teisingos išraiškos su svetainės pavadinimo pakeitimu, prašome kreiptis į kūrėjus.
 
 Jūs turite priklausyti vertėjų grupei, kad galėtumėte išsaugoti pakeitimus. Pakeitimai nebus išsaugoti iki Jūs nuspausite išsaugojimo butoną apačioje.',
 	'translate-magic-form'              => 'Kalba: $1 Tema: $2 $3',
