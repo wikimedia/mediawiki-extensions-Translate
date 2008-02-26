@@ -1387,6 +1387,14 @@ class InterwikiMessageGroup extends ExtensionMessageGroup {
 	);
 }
 
+class InvitationsMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Invitations';
+	protected $id    = 'ext-invitations';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'Invitations/Invitations.i18n.php';
+}
+
 class LabeledSectionTransclusionMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Labeled Section Transclusion';
 	protected $id    = 'ext-labeledsectiontransclusion';
