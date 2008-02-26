@@ -2004,6 +2004,14 @@ class SpecialFormMessageGroup extends ExtensionMessageGroup {
 	);
 }
 
+class SubPageList3MessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Sub Page List 3';
+	protected $id    = 'ext-subpagelist3';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'SubPageList3/SubPageList3.i18n.php';
+}
+
 class StalePagesMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Stale Pages';
 	protected $id    = 'ext-stalepages';
