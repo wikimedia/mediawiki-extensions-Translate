@@ -32,6 +32,9 @@ abstract class MessageGroup {
 	 */
 	protected $fileExporter = null;
 
+	/*******/
+	protected $mangler = null;
+
 	/**
 	 * Returns a human readable name of this group.
 	 */
@@ -149,6 +152,8 @@ abstract class MessageGroup {
 		// We copy only relevant translations to this new array
 		$new = array();
 		foreach( $messages as $key => $m ) {
+			$key = $this->mangler->unMangle( $key );
+
 			# CASE1: ignored
 			if ( $m->ignored ) continue;
 
@@ -185,6 +190,11 @@ abstract class MessageGroup {
 		return implode( "\n", $s );
 	}
 
+
+	public function __construct() {
+		$this->mangler = StringMatcher::emptyMatcher();
+	}
+
 }
 
 class CoreMessageGroup extends MessageGroup {
@@ -195,6 +205,10 @@ class CoreMessageGroup extends MessageGroup {
 	public function getMessageFile( $code ) {
 		$code = ucfirst( str_replace( '-', '_', $code ) );
 		return "Messages$code.php";
+	}
+
+	protected function getFileLocation( $code ) {
+		return Language::getMessagesFileName( $code );
 	}
 
 	public function getMessage( $key, $code ) {
@@ -208,7 +222,7 @@ class CoreMessageGroup extends MessageGroup {
 	}
 
 	public function exportToFile( MessageCollection $messages, $authors ) {
-		$filename = Language::getMessagesFileName( $messages->code );
+		$filename = $this->getFileLocation( $messages->code );
 
 		$messagesAsString = $this->export( $messages );
 		$name = TranslateUtils::getLanguageName( $messages->code );
@@ -232,28 +246,24 @@ CODE;
 	}
 
 	function getDefinitions() {
-		return Language::getMessagesFor( 'en' );
+		return $this->loadMessages( 'en' );
 	}
 
 	public function getBools() {
 		$l = new languages();
 		return array(
-			'optional' => $l->getOptionalMessages(),
-			'ignored'  => $l->getIgnoredMessages(),
+			'optional' => $this->mangler->mangle( $l->getOptionalMessages() ),
+			'ignored'  => $this->mangler->mangle( $l->getIgnoredMessages() ),
 		);
 	}
 
-	private function loadMessages( $code ) {
+	protected function loadMessages( $code ) {
 		if ( !isset($this->mcache[$code]) ) {
-			$file = Language::getMessagesFileName( $code );
-			if ( !file_exists( $file ) ) {
-				$this->mcache[$code] = null;
-			} else {
-				require( $file );
-				return $this->mcache[$code] = isset( $messages ) ? $messages : null;
-			}
+			$file = $this->getFileLocation( $code );
+			$this->mcache[$code] = $this->mangler->mangle(
+				ResourceLoader::loadVariableFromPHPFile( $file, 'messages' )
+			);
 		}
-
 		return $this->mcache[$code];
 	}
 
@@ -267,9 +277,6 @@ CODE;
 		foreach ( $messages->keys() as $key ) {
 			if ( isset($infile[$key]) ) {
 				$messages[$key]->infile = $infile[$key];
-			}
-			if ( $infbfile && isset($infbfile[$key]) ) {
-				$messages[$key]->fallback = $infbfile[$key];
 			}
 		}
 	}
@@ -302,6 +309,25 @@ CODE;
 		$start += 2; // Get over the comment ending
 		if ( $end === false ) return trim( substr( $contents, $start ) );
 		return trim( substr( $contents, $start, $end-$start ) );
+	}
+}
+
+class BranchedCoreMessageGroup extends CoreMessageGroup {
+	protected $label = 'MediaWiki messages ($1)';
+	protected $id    = 'core-$1';
+	protected $fileExporter = 'CoreExporter';
+	protected $path = '__BUG__';
+	protected $meta  = true;
+
+	public function __construct( $path, $branch, StringMatcher $mangler ) {
+		$this->path = $path;
+		$this->label = str_replace( '$1', $branch, $this->label );
+		$this->id = Sanitizer::escapeId( str_replace( '$1', $branch, $this->id ) );
+		$this->mangler = $mangler;
+	}
+
+	protected function getFileLocation( $code ) {
+		return $this->path . '/' . $this->getMessageFile( $code );
 	}
 }
 
@@ -2236,6 +2262,7 @@ class FreeColMessageGroup extends MessageGroup {
 	private   $fileDir  = 'freecol/';
 
 	public function __construct() {
+		parent::__construct();
 		global $wgTranslateExtensionDirectory;
 		$this->fileDir = $wgTranslateExtensionDirectory . 'freecol/';
 	}
@@ -2323,6 +2350,7 @@ class WikiMessageGroup extends MessageGroup {
 	 * @param $source Mediawiki message that contains list of message keys.
 	 */
 	public function __construct( $id, $source ) {
+		parent::__construct();
 		$this->id = $id;
 		$this->source = $source;
 	}

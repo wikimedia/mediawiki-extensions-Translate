@@ -11,7 +11,7 @@ if (!defined('MEDIAWIKI')) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '8.15' );
+define( 'TRANSLATE_VERSION', '8.16' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name'           => 'Translate',
@@ -28,6 +28,8 @@ $wgAutoloadClasses['TaskOptions'] = $dir . 'TranslateTasks.php';
 
 $wgAutoloadClasses['TranslateUtils'] = $dir . 'TranslateUtils.php';
 $wgAutoloadClasses['HTMLSelector'] = $dir . 'TranslateUtils.php';
+$wgAutoloadClasses['ResourceLoader'] = $dir . 'utils/ResourceLoader.php';
+$wgAutoloadClasses['StringMatcher'] = $dir . 'utils/StringMatcher.php';
 
 $wgAutoloadClasses['MessageChecks'] = $dir . 'MessageChecks.php';
 $wgAutoloadClasses['MessageGroups'] = $dir . 'MessageGroups.php';

@@ -35,6 +35,7 @@ function customMessageGroups( $id ) {
 == Chages in version 9 ==
 * Not released
 * (bug 12955) Numbers should be localized in Translate extension
+* Support branches for core messages
 
 == Changes in version 8 ==
 * Released 2008-02-06
