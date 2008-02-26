@@ -1393,6 +1393,10 @@ class InvitationsMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'Invitations/Invitations.i18n.php';
+
+	protected $ignored = array(
+		'invitations-uninvitedlist-item',
+	);
 }
 
 class LabeledSectionTransclusionMessageGroup extends ExtensionMessageGroup {
