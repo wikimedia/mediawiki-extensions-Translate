@@ -45,7 +45,7 @@ $langs = array_map( 'trim', explode( ',', $options['lang'] ) );
 
 $group = MessageGroups::getGroup( $options['group'] );
 
-if ( !$group instanceof MessageGroup || $group->isMeta() ) {
+if ( !$group instanceof MessageGroup ) {
 	echo "Invalid group\n\n";
 	exit( 1 );
 }
