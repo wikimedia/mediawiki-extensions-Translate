@@ -103,7 +103,7 @@ class StringMatcher {
 				$temp[$key] = $value; // Assign a reference
 			}
 		}
-		
+
 		return $temp;
 	}
 

@@ -112,7 +112,6 @@ class TranslateUtils {
 		return isset(self::$contents[$title]) ? self::$contents[$title] : null;
 	}
 
-
 	private static $contents = array();
 	private static $editors = array();
 	private static function getContents( Array $titles ) {
@@ -140,7 +139,6 @@ class TranslateUtils {
 		wfProfileOut( __METHOD__ );
 	}
 
-
 	private static $pageExists = null;
 	private static $talkExists = null;
 	private static function doExistenceQuery() {
@@ -155,7 +153,7 @@ class TranslateUtils {
 			'page',
 			array( 'page_namespace', 'page_title' ),
 			array( 'page_namespace' => array( NS_MEDIAWIKI, NS_MEDIAWIKI_TALK ) ),
-			__METHOD__ 
+			__METHOD__
 		);
 
 		foreach ( $rows as $row ) {
@@ -168,7 +166,6 @@ class TranslateUtils {
 		$rows->free();
 		wfProfileOut( __METHOD__ );
 	}
-
 
 	public static function translationChanges( $hours = 24 ) {
 		$dbr = wfGetDB( DB_SLAVE );
@@ -346,7 +343,7 @@ class TranslateUtils {
 		} else {
 			$languages = Language::getLanguageNames( false );
 		}
-		
+
 		ksort( $languages );
 
 		$selector = new HTMLSelector( 'language', 'language', $selectedId );
@@ -400,7 +397,6 @@ class TranslateUtils {
 	}
 }
 
-
 class HTMLSelector {
 	private $options = array();
 	private $selected = false;
@@ -431,4 +427,3 @@ class HTMLSelector {
 	}
 
 }
-

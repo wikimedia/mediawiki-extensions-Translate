@@ -181,7 +181,6 @@ class SpecialMagic extends SpecialPage {
 
 }
 
-
 abstract class ComplexMessages {
 	const MSG = 'translate-magic-cm-';
 
@@ -569,7 +568,4 @@ class NamespaceCM extends ComplexMessages {
 
 		return "\$namespaceNames = array(\n" . implode( "\n" , $output ) . "\n);\n";
 	}
-
 }
-
-?>

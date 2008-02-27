@@ -121,7 +121,7 @@ class MessageChecks {
 			if ( preg_match( '/{{mediawiki:.*}}/sDui', $matches[1][$i] ) ) continue;
 			if ( preg_match( '/user([ _]talk)?:.*/sDui', $matches[1][$i] ) ) continue;
 			if ( preg_match( '/:?\$[1-9]/sDu', $matches[1][$i] ) ) continue;
-			
+
 			$links[] = "[[{$matches[1][$i]}|{$matches[2][$i]}]]";
 		}
 		return $links;

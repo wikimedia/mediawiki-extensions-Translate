@@ -24,7 +24,7 @@ class SpecialTranslationChanges extends SpecialPage {
 
 		$this->setHeaders();
 		$this->hours = min( 168, $wgRequest->getInt( 'hours', 24 ) );
-	
+
 		$rows = TranslateUtils::translationChanges( $this->hours );
 		$wgOut->addHTMl( $this->settingsForm() . $this->output( $rows ) );
 	}
@@ -222,6 +222,4 @@ class SpecialTranslationChanges extends SpecialPage {
 	function downArrow() {
 		return $this->arrow( 'd', '-' );
 	}
-
-
 }

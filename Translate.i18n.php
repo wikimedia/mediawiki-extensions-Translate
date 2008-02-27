@@ -6,6 +6,9 @@
  */
 $messages = array();
 
+/** English
+ * @author Nike
+ */
 $messages['en'] = array(
 	'translate' => 'Translate',
 	'translate-desc' => '[[Special:Translate|Special page]] for translating Mediawiki and beyond',
@@ -3490,4 +3493,3 @@ $messages['zh-hant'] = array(
 	'translate-edit-message-in' => '在 <b>$1</b> 的現行字串 ($2):',
 	'translate-edit-message-in-fb' => '在 <b>$1</b> 於倚靠語言中的現行字串 ($2):',
 );
-

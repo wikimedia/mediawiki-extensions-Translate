@@ -1609,7 +1609,7 @@ class NewsMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'News/News.i18n.php';
 
 	protected $optional = array(
-		'newsextension-unknownformat',	
+		'newsextension-unknownformat',
 		'newsextension-feednotfound',
 		'newsextension-feedrequest',
 		'newsextension-checkok',

@@ -169,7 +169,6 @@ class SpecialTranslate extends SpecialPage {
 
 	}
 
-
 	/* Selectors ahead */
 
 	protected function groupSelector() {
@@ -204,7 +203,6 @@ class SpecialTranslate extends SpecialPage {
 		}
 		return $selector->getHTML();
 	}
-
 
 	private $paging = null;
 	public function cbAddPagingNumbers( $start, $count, $total ) {

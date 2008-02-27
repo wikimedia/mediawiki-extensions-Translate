@@ -116,7 +116,6 @@ abstract class TranslateTask {
 
 }
 
-
 class ViewMessagesTask extends TranslateTask {
 	protected $id = 'view';
 
@@ -300,7 +299,6 @@ class ReviewAllMessagesTask extends ReviewMessagesTask {
 
 }
 
-
 class ExportMessagesTask extends ViewMessagesTask {
 	protected $id = 'export';
 
@@ -374,7 +372,6 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 
 	public function output() {
 		global $IP, $wgServer, $wgTranslateDocumentationLanguageCode;
-
 
 		$lang = Language::factory( 'en' );
 
