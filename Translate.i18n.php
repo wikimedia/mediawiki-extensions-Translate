@@ -1223,11 +1223,11 @@ $messages['fi'] = array(
 
 /** French (Français)
  * @author Grondin
- * @author Sherbrooke
+ * @author Urhixidur
  * @author Seb35
+ * @author Sherbrooke
  * @author Dereckson
  * @author Siebrand
- * @author Urhixidur
  * @author ChrisPtDe
  */
 $messages['fr'] = array(
@@ -1236,14 +1236,14 @@ $messages['fr'] = array(
 	'translate-edit'                    => 'éditer',
 	'translate-talk'                    => 'discuter',
 	'translate-history'                 => 'historique',
-	'translate-task-view'               => 'Voir tous les messages depuis',
-	'translate-task-untranslated'       => 'Voir tous les messages non traduits depuis',
-	'translate-task-optional'           => 'Voir tous les messages facultatifs depuis',
-	'translate-task-review'             => 'Revoir mes changements depuis',
-	'translate-task-reviewall'          => 'Revoir toutes les traductions dans',
-	'translate-task-export'             => 'Exporter les traductions depuis',
-	'translate-task-export-to-file'     => 'Exporter les traductions dans un fichier depuis',
-	'translate-task-export-as-po'       => 'Exporter les traductions au format Gettext',
+	'translate-task-view'               => 'Voir tous les messages du',
+	'translate-task-untranslated'       => 'Voir tous les messages non traduits du',
+	'translate-task-optional'           => 'Voir tous les messages facultatifs du',
+	'translate-task-review'             => 'Revoir mes changements au',
+	'translate-task-reviewall'          => 'Revoir toutes les traductions du',
+	'translate-task-export'             => 'Exporter les traductions du',
+	'translate-task-export-to-file'     => 'Exporter dans un fichier les traductions du',
+	'translate-task-export-as-po'       => 'Exporter au format Gettext les traductions du',
 	'translate-page-no-such-language'   => 'Un code langage invalide a été indiqué.',
 	'translate-page-no-such-task'       => 'La tâche spécifiée est invalide.',
 	'translate-page-no-such-group'      => 'Le groupe spécifié est invalide.',
@@ -1301,7 +1301,7 @@ Vous devez appartenir au groupe des traducteurs pour sauvegarder les changements
 	'translate-checks-parameters'       => 'Les paramètres suivants ne sont pas utilisés : <strong>$1</strong>',
 	'translate-checks-balance'          => 'Il y a un nombre incorrect de parenthèses : <strong>$1</strong>',
 	'translate-checks-links'            => 'Les liens suivants sont douteux : <strong>$1</strong>',
-	'translate-checks-xhtml'            => 'Vous êtes invité à remettre en place les balises suivantes avec celles qui sont correctes : <strong>$1</strong>',
+	'translate-checks-xhtml'            => 'Vous êtes invité à corriger les balises suivantes : <strong>$1</strong>',
 	'translate-checks-plural'           => 'La définition utilise <nowiki>{{PLURAL:}}</nowiki> mais pas la traduction.',
 );
 
@@ -1891,7 +1891,7 @@ $messages['ja'] = array(
 	'translate-edit-in-other-languages' => '他言語でのメッセージ',
 	'translate-edit-committed'          => '現在ソフトウェア上で採用されている翻訳メッセージ',
 	'translate-edit-warnings'           => '不完全な翻訳に対する警告',
-	'translate-magic-pagename'          => 'MedeiaWiki固有項目の翻訳',
+	'translate-magic-pagename'          => 'MediaWiki拡張項目の翻訳',
 	'translate-magic-help'              => '特別ページへのエイリアス、マジックワード、スキン名、名前空間名も翻訳できます。
 
 マジックワードを翻訳する際には、英語のものも含めておく必要があることに注意してください。さもなくば、それらは動作しなくなります。また、最初の項目（0か1）はそのままにしておいてください。
@@ -2163,8 +2163,21 @@ Esim aya awdarmalarında <tt>$1_talk</tt> degen arnaýı keltiriledi. <tt>$1</tt
  * @author Chhorran
  */
 $messages['km'] = array(
-	'translate-magic-skin'      => 'ឈ្មោះ សំបកនានា',
-	'translate-magic-namespace' => 'ឈ្មោះនានា នៃវាលឈ្មោះ',
+	'translate'                   => 'ប្រែសំរួល',
+	'translate-edit'              => 'កែប្រែ',
+	'translate-history'           => 'ប្រវត្តិ',
+	'translate-page-group'        => 'ក្រុម',
+	'translate-page-language'     => 'ភាសា',
+	'translate-page-showing-none' => 'គ្មានសារ ត្រូវបង្ហាញ ។',
+	'translate-next'              => 'ទំព័របន្ទាប់',
+	'translate-prev'              => 'ទំព័រមុន',
+	'translate-optional'          => '(ជំរើស)',
+	'translate-edit-contribute'   => 'រួមចំណែក',
+	'translate-magic-cm-save'     => 'រក្សាទុក',
+	'translate-magic-cm-export'   => 'នាំចេញ',
+	'translate-magic-skin'        => 'ឈ្មោះ សំបកនានា',
+	'translate-magic-namespace'   => 'ឈ្មោះនានា នៃវាលឈ្មោះ',
+	'translationchanges-export'   => 'នាំចេញ',
 );
 
 
@@ -2359,6 +2372,36 @@ $messages['ml'] = array(
 	'translate'                  => 'വിവര്‍ത്തനം ചെയ്യുക',
 	'translate-page-showing'     => '$3 സന്ദേശങ്ങളുള്ളതില്‍ $1 മുതല്‍ $2 വരെയുള്ളവ പ്രദര്‍ശിപ്പിച്ചിരിക്കുന്നു',
 	'translate-page-showing-all' => '$1 {{PLURAL:$1|സന്ദേശം|സന്ദേശങ്ങള്‍}} പ്രദര്‍ശിപ്പിക്കുന്നു.',
+);
+
+/** Marathi (मराठी)
+ * @author Mahitgar
+ */
+$messages['mr'] = array(
+	'translate-page-language'           => 'भाषा',
+	'translate-page-limit'              => 'मर्यादा',
+	'translate-submit'                  => 'शेंदा(ओढा)',
+	'translate-page-navigation-legend'  => 'सुचालन',
+	'translate-next'                    => 'पुढील पान',
+	'translate-prev'                    => 'मागील पान',
+	'translate-page-description-legend' => 'गटाबद्दल माहिती',
+	'translate-optional'                => 'पर्यायी',
+	'translate-ignored'                 => '(दुर्लक्षीत)',
+	'translate-edit-definition'         => 'संदेश व्याख्या',
+	'translate-edit-contribute'         => 'योगदान करा',
+	'translate-magic-form'              => 'भाषा: $1 मॉड्यूल: $2 $3',
+	'translate-magic-submit'            => 'ओढा',
+	'translate-magic-cm-current'        => 'सद्य',
+	'translate-magic-cm-original'       => 'मूळ',
+	'translate-magic-cm-save'           => 'जतन करा',
+	'translate-magic-cm-export'         => 'नीर्यात',
+	'translate-magic-cm-savefailed'     => 'जतन अयशस्वी',
+	'translate-magic-special'           => 'विशेष पान टोपणनावे',
+	'translate-magic-words'             => 'जादूई शब्द',
+	'translate-magic-skin'              => 'त्वचेचे नाव',
+	'translate-magic-namespace'         => 'नामविश्व नावे',
+	'translationchanges-export'         => 'नीर्यात',
+	'translationchanges-change'         => '$1: $2 ने $3',
 );
 
 $messages['nap'] = array(
@@ -3259,6 +3302,23 @@ $messages['ug'] = array(
 	'translate-history' => 'tarih',
 );
 
+/** Ukrainian (Українська)
+ * @author Ahonc
+ */
+$messages['uk'] = array(
+	'translate'                   => 'Переклад',
+	'translate-desc'              => '[[Special:Translate|Спеціальна сторінка]] для перекладу Mediawiki та інших програм',
+	'translate-edit'              => 'редагувати',
+	'translate-talk'              => 'обговорення',
+	'translate-history'           => 'історія',
+	'translate-task-view'         => 'Переглянути всі повідомлення',
+	'translate-task-untranslated' => 'Переглянути неперекладені повідомлення',
+	'translate-task-optional'     => "Переглянути необов'язкові повідомлення",
+	'translate-task-review'       => 'Перевірити зміни',
+	'translate-task-reviewall'    => 'Перевірити всі переклади',
+	'translate-task-export'       => 'Експортувати переклади',
+);
+
 /** Vietnamese (Tiếng Việt)
  * @author Vinhtantran
  */
@@ -3493,3 +3553,4 @@ $messages['zh-hant'] = array(
 	'translate-edit-message-in' => '在 <b>$1</b> 的現行字串 ($2):',
 	'translate-edit-message-in-fb' => '在 <b>$1</b> 於倚靠語言中的現行字串 ($2):',
 );
+
