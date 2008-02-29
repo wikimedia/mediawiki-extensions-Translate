@@ -243,6 +243,7 @@ $wgTranslateAC = array(
 'ext-todotasks'             => 'TodoTasksMessageGroup',
 'ext-translate'             => 'TranslateMessageGroup',
 'ext-usagestatistics'       => 'UsageStatisticsMessageGroup',
+'ext-userboard'             => 'UserBoardMessageGroup',
 'ext-usercontactlinks'      => 'UserContactLinksMessageGroup',
 'ext-userimages'            => 'UserImagesMessageGroup',
 'ext-usermerge'             => 'UserMergeMessageGroup',

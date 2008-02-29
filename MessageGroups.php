@@ -2185,6 +2185,14 @@ class UsernameBlacklistMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile  = 'UsernameBlacklist/UsernameBlacklist.i18n.php';
 }
 
+class UserBoardMessageGroup extends ExtensionMessageGroup {
+	protected $label    = 'User Board';
+	protected $id       = 'ext-userboard';
+
+	protected $arrName  = 'wgUserBoardMessages';
+	protected $messageFile = 'UserBoard/UserBoard.i18n.php';
+}
+
 class UserRightsNotifMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'User Rights Notification';
 	protected $id    = 'ext-userrightsnotif';
