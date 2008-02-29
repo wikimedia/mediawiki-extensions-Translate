@@ -1254,6 +1254,7 @@ $messages['fr'] = array(
 	'translate-page-limit'              => 'Limite',
 	'translate-page-limit-option'       => '$1 {{PLURAL:$1|message|messages}} par page',
 	'translate-submit'                  => 'Atteindre',
+	'translate-page-navigation-legend'  => 'Navigation',
 	'translate-page-showing'            => 'Visualisation des messages de $1 à $2 sur $3.',
 	'translate-page-showing-all'        => 'Visualisation de $1 {{PLURAL:$1|message|messages}}',
 	'translate-page-showing-none'       => 'Aucun message à visualiser.',
@@ -1283,6 +1284,7 @@ Vous devez appartenir au groupe des traducteurs pour sauvegarder les changements
 	'translate-magic-submit'            => 'Aller',
 	'translate-magic-cm-to-be'          => 'Devient',
 	'translate-magic-cm-current'        => 'Actuel',
+	'translate-magic-cm-original'       => 'Original',
 	'translate-magic-cm-fallback'       => 'Revenir',
 	'translate-magic-cm-comment'        => 'Commentaire :',
 	'translate-magic-cm-save'           => 'Sauvegarder',
@@ -3551,4 +3553,3 @@ $messages['zh-hant'] = array(
 	'translate-edit-message-in' => '在 <b>$1</b> 的現行字串 ($2):',
 	'translate-edit-message-in-fb' => '在 <b>$1</b> 於倚靠語言中的現行字串 ($2):',
 );
-
