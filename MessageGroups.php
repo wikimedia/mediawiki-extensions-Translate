@@ -1986,6 +1986,30 @@ class SmoothGalleryMessageGroup extends ExtensionMessageGroup {
 	);
 }
 
+class SocialProfileUserBoardMessageGroup extends ExtensionMessageGroup {
+	protected $label    = 'Social Profile User Board';
+	protected $id       = 'ext-socialprofileuserboard';
+
+	protected $arrName  = 'messages';
+	protected $messageFile = 'SocialProfile/UserBoard/UserBoard.i18n.php';
+}
+
+class SocialProfileUserProfileMessageGroup extends ExtensionMessageGroup {
+	protected $label    = 'Social Profile User Profile';
+	protected $id       = 'ext-socialprofileuserprofile';
+
+	protected $arrName  = 'messages';
+	protected $messageFile = 'SocialProfile/UserProfile/UserProfile.i18n.php';
+}
+
+class SocialProfileUserRelationshipMessageGroup extends ExtensionMessageGroup {
+	protected $label    = 'Social Profile User Relationship';
+	protected $id       = 'ext-socialprofileuserrelationship';
+
+	protected $arrName  = 'messages';
+	protected $messageFile = 'SocialProfile/UserRelationship/UserRelationship.i18n.php';
+}
+
 class SpamBlacklistMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Spam Blacklist';
 	protected $id    = 'ext-spamblacklist';
@@ -2183,14 +2207,6 @@ class UsernameBlacklistMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName = 'messages';
 	protected $messageFile  = 'UsernameBlacklist/UsernameBlacklist.i18n.php';
-}
-
-class UserBoardMessageGroup extends ExtensionMessageGroup {
-	protected $label    = 'User Board';
-	protected $id       = 'ext-userboard';
-
-	protected $arrName  = 'wgUserBoardMessages';
-	protected $messageFile = 'UserBoard/UserBoard.i18n.php';
 }
 
 class UserRightsNotifMessageGroup extends ExtensionMessageGroup {
