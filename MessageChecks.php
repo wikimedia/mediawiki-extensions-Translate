@@ -140,7 +140,7 @@ class MessageChecks {
 			'~<hr *(\\\\)?>~suDi' => '<hr />', // Wrong syntax
 			'~<br *(\\\\)?>~suDi' => '<br />',
 			'~<hr/>~suDi' => '<hr />', // Wrong syntax
-			'~<br/>~suDi' => '<br />',
+			'~<br />~suDi' => '<br />',
 			'~<(HR|Hr|hR) />~su' => '<hr />', // Case
 			'~<(BR|Br|bR) />~su' => '<br />',
 		);
