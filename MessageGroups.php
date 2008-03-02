@@ -2281,7 +2281,7 @@ class FreeColMessageGroup extends MessageGroup {
 	protected $id    = 'out-freecol';
 	protected $prefix= 'freecol-';
 
-	protected $description = 'Before starting translating FreeCol to your language, please read [[Translating:FreeCol]] and ask ok from the FreeCol localisation coordinator.';
+	protected $description = 'Before starting translating FreeCol to your language, please read [[Translating:FreeCol]] and ask ok from the FreeCol localisation coordinator. Freecol uses GPL-license.';
 
 	private   $fileDir  = 'freecol/';
 
