@@ -21,19 +21,39 @@ Fuzzy bot command line script
 Usage: php fuzzy.php [options...] <messages>
 
 Options:
-  -really      Don't just run dry-run
+  --really        Don't just run dry-run
+  --skiplanguages Skip some languages
+  --comment       Comment for updating
 
 EOT;
 	exit( 1 );
 }
+
+$_skipLanguages = array();
+if ( isset($options['skiplanguages']) ) {
+	$_skipLanguages = array_map( 'trim', explode( ',', $options['skiplanguages'] ) );
+}
+$_comment = @$options['comment'];
+$_dryrun = !isset( $options['really'] );
+
+
+
+$bot = new FuzzyBot( $args, $_comment, $_skipLanguages, $_dryrun );
+
+$bot->execute();
 
 class FuzzyBot {
 
 	private $titles = array();
 	private $dryrun = true;
 	private $allclear = false;
-	public function __construct( $titles, $dryrun = true ) {
+	private $comment = null;
+	private $skipLanguages = array();
+
+	public function __construct( $titles, $comment, $skipLanguages, $dryrun = true ) {
 		$this->titles = $titles;
+		$this->comment = $comment;
+		$this->skipLanguages = $skipLanguages;
 		$this->dryrun = $dryrun;
 
 		global $wgTranslateFuzzyBotName, $wgUser;
@@ -86,6 +106,10 @@ class FuzzyBot {
 			$dbr->makeList( $search_titles, LIST_OR ),
 		);
 
+		if ( count($this->skipLanguages) ) {
+			$condArray[] = 'substring_index(page_title, \'/\', -1) NOT IN (' . $dbr->makeList( $this->skipLanguages ) . ')';
+		}
+
 		$conds = $dbr->makeList( $condArray, LIST_AND);
 
 		$rows = $dbr->select(
@@ -128,7 +152,9 @@ class FuzzyBot {
 
 		$wgArticle = new Article( $wgTitle );
 
-		$success = $wgArticle->doEdit( TRANSLATE_FUZZY . $text, 'Marking as fuzzy', EDIT_FORCE_BOT );
+		$comment = $this->comment ? $this->comment : 'Marking as fuzzy';
+
+		$success = $wgArticle->doEdit( TRANSLATE_FUZZY . $text, $comment, EDIT_FORCE_BOT );
 
 		if ( $success ) {
 			echo "OK!\n";
@@ -139,29 +165,3 @@ class FuzzyBot {
 	}
 
 }
-
-$bot = new FuzzyBot( $args, !isset( $options['really'] ) );
-
-$bot->execute();
-/*
-
-$wgArticle = new Article( $wgTitle );
-
-# Read the text
-$text = file_get_contents( 'php://stdin' );
-
-# Do the edit
-print "Saving... ";
-$success = $wgArticle->doEdit( $text, $summary,
-	( $minor ? EDIT_MINOR : 0 ) |
-	( $bot ? EDIT_FORCE_BOT : 0 ) |
-	( $autoSummary ? EDIT_AUTOSUMMARY : 0 ) |
-	( $noRC ? EDIT_SUPPRESS_RC : 0 ) );
-if ( $success ) {
-	print "done\n";
-} else {
-	print "failed\n";
-	exit( 1 );
-}
-
-*/
