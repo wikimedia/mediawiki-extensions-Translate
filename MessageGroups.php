@@ -2157,6 +2157,14 @@ class TodoTasksMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'TodoTasks/SpecialTaskList.i18n.php';
 }
 
+class TooltipMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Tool Tip';
+	protected $id    = 'ext-tooltip';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'Tooltip/Tooltip.i18n.php';
+}
+
 class TranslateMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Translate';
 	protected $id    = 'ext-translate';

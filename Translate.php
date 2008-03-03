@@ -244,6 +244,7 @@ $wgTranslateAC = array(
 'ext-titlekey'              => 'TitleKeyMessageGroup',
 'ext-todo'                  => 'TodoMessageGroup',
 'ext-todotasks'             => 'TodoTasksMessageGroup',
+'ext-tooltip'               => 'TooltipMessageGroup',
 'ext-translate'             => 'TranslateMessageGroup',
 'ext-usagestatistics'       => 'UsageStatisticsMessageGroup',
 'ext-usercontactlinks'      => 'UserContactLinksMessageGroup',
