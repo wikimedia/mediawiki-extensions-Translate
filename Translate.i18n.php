@@ -181,13 +181,13 @@ $messages['an'] = array(
 	'translate-optional'                => '(opzional)',
 	'translate-ignored'                 => '(no considerato)',
 	'translate-magic-pagename'          => 'Traduzión ixamplata de MediaWiki',
-	'translate-magic-help'              => "Puede traduzir os \"alias\" d'as pachinas espezials, as parabras machicas, os nombres d'as aparenzias y os espazios de nombres.
+	'translate-magic-help'              => "Puede traduzir os \"alias\" d'as pachinas espezials, as palabras machicas, os nombres d'as aparenzias y os espazios de nombres.
 
-In as parabras machicas, ha d'encluyir a traduzión en anglés, porque si no lo fa, no funzionarán bien. Deixe tamién o primer elemento (0 u 1) sin cambiar.
+En as palabras machicas, ha d'encluyir a traduzión en anglés, porque si no lo fa, no funzionarán bien. Deixe tamién o primer elemento (0 u 1) sin cambiar.
 
 Os alias d'as pachinas espezials y as parabras machicas pueden tener barias traduzions. As traduzions se deseparan por una coma (,). Os nombres d'as aparenzias y d'os espazios de nombres no pueden tener que una unica traduzión.
 
-En as traduzions d'os espazios de nombres <tt>\$1 talk</tt> ye espezial. <tt>\$1</tt> ye escambiata por o nombre d'o sitio (por exemplo <tt>{{SITENAME}} talk</tt>. Si no ye posible en a suya luenga formar una esprisión correuta sin cambiar o nombre d'o sitio, contaute con un programador.
+En as traduzions d'os espazios de nombres <tt>\$1 talk</tt> ye espezial. <tt>\$1</tt> ye escambiata por o nombre d'o sitio (por exemplo <tt>{{SITENAME}} talk</tt>). Si no ye posible en a suya luenga formar una esprisión correuta sin cambiar o nombre d'o sitio, contaute con un programador.
 
 Ha de pertenexer á la colla de tradutors ta alzar os cambeos. Ístos no quedan rechistratos dica que no se puncha en o botón \"Alzar pachina\" que ye en o cobaxo d'a pachina.",
 	'translate-magic-form'              => 'Luenga: $1 Modulo: $2 $3',
@@ -448,6 +448,7 @@ $messages['bg'] = array(
 	'translate-prev'                    => 'Предишна страница',
 	'translate-page-description-legend' => 'Информация за групата',
 	'translate-optional'                => '(незадължително)',
+	'translate-ignored'                 => '(пренебрегнато)',
 	'translate-edit-definition'         => 'Оригинално съобщение',
 	'translate-edit-contribute'         => 'добавяне на документация',
 	'translate-edit-no-information'     => 'За това съобщение няма документация. Ако знаете къде и как се използва, можете да помогнете на останалите преводачи като добавите документация за това съобщение.',
@@ -473,6 +474,7 @@ $messages['bg'] = array(
 	'translationchanges-export'         => 'изнасяне',
 	'translationchanges-change'         => '$1: $2 от $3',
 	'translate-checks-parameters'       => 'Следните параметри не се използват: <strong>$1</strong>',
+	'translate-checks-balance'          => 'Съобщението съдържа необичаен брой скоби: <strong>$1</strong>',
 	'translate-checks-links'            => 'Следните препратки са проблемни: <strong>$1</strong>',
 	'translate-checks-xhtml'            => 'Необходимо е заместване на посочените етикети с правилни: <strong>$1</strong>',
 	'translate-checks-plural'           => 'Оригиналното съобщение използва <nowiki>{{PLURAL:}}</nowiki>, а преводът — не.',
@@ -1415,7 +1417,7 @@ Vos dête apartegnir a la tropa des traductors por sôvar los changements. Los c
  */
 $messages['gl'] = array(
 	'translate'                         => 'Traducir',
-	'translate-desc'                    => '[[Special:Translate|Páxina especial]] para traducir Mediawiki e outras extensións',
+	'translate-desc'                    => '[[Special:Translate|Páxina especial]] para traducir Mediawiki e máis',
 	'translate-edit'                    => 'Editar',
 	'translate-talk'                    => 'conversa',
 	'translate-history'                 => 'Historial',
@@ -2175,11 +2177,11 @@ $messages['km'] = array(
 	'translate-task-reviewall'          => 'មើល ឡើងវិញ បទប្រែសំរួល ក្នុង',
 	'translate-task-export'             => 'នាំចេញ បទប្រែសំរួល ពី',
 	'translate-task-export-to-file'     => 'នាំចេញ បទប្រែសំរួល ជាឯកសារ ពី',
-	'translate-task-export-as-po'       => 'នាំចេញ បទប្រែសំរួល ជា ទំរង់ Gettext',
+	'translate-task-export-as-po'       => 'នាំចេញ បទប្រែសំរួល ជា ទំរង់ អក្សរសុទ្ធ',
 	'translate-page-no-such-language'   => 'ភាសាដែលបានសំដៅ គ្មានសុពលភាព ។',
 	'translate-page-no-such-task'       => 'ភារកិច្ចដែលបានសំដៅ គ្មានសុពលភាព ។',
 	'translate-page-no-such-group'      => 'ក្រុមដែលបានសំដៅ គ្មានសុពលភាព ។',
-	'translate-page-settings-legend'    => 'ការកំណត់',
+	'translate-page-settings-legend'    => 'កំណត់ នានា',
 	'translate-page-task'               => 'ខ្ញុំចង់',
 	'translate-page-group'              => 'ក្រុម',
 	'translate-page-language'           => 'ភាសា',
@@ -2202,6 +2204,15 @@ $messages['km'] = array(
 	'translate-edit-committed'          => 'បទប្រែសំរួល បច្ចុប្បន្ន ក្នុងផ្នែកទន់',
 	'translate-edit-warnings'           => 'ព្រមាន អំពី បទប្រែសំរួលមិនពេញលេញ',
 	'translate-magic-pagename'          => 'បទប្រែសំរួល មីឌាវិគី បន្ថែម',
+	'translate-magic-help'              => "អ្នកអាចប្រែសំរួល ឈ្មោះក្លែង នៃ ទំព័រពិសេស, ពាក្យទិព្វ, ឈ្មោះសំបក និង ឈ្មោះ នៃវាលឈ្មោះ ។
+
+ក្នុងពាក្យទិព្វ ត្រូវដាក់រួមទាំង បទប្រែសំរួល ភាសាអង់គ្លេស, បើមិនដូច្នោះ វាលែងធ្វើការ ។ ដាក់ផងដែរ លេខរៀងដំបូង (0 ឬ 1) តាម ដែលវាមាន ។
+
+ឈ្មោះក្លែង នៃ ទំព័រពិសេស និង ពាក្យទិព្វ អាចមាន ច្រើនបទប្រែសំរួល ។ បទប្រែសំរួល ត្រូវបានខណ្ឌ ដោយ សញ្ញាក្បៀស (,) ។ ឈ្មោះសំបក និង វាលឈ្មោះ អាចមានត្រឹមតែ មួយបទប្រែសំរួល ។
+
+ក្នុងបទប្រែសំរួល វាលឈ្មោះ <tt>$1 talk</tt> មាន ករណីពិសេស។ <tt>$1</tt> ត្រូវបានជំនួស ដោយ ឈ្មោះសៃថ៍ (ឧទាហរ <tt>{{SITENAME}} talk</tt> ។ បើ ភាសារបស់អ្នក មិនបាន បង្ហាញត្រឹមត្រូវ ដោយមិនប្តូរ ឈ្មោះសៃថ៍, សូមទាក់ទង អ្នកអភិវឌ្ឍ ។
+
+អ្នកចាំបាច់ ត្រូវតែថិតក្នុង ក្រុមអ្នកប្រែសំរួល ទើបអាច រក្សាទុក បំលាស់ប្តូរ ។  បំលាស់ប្តូរ នឹងមិនត្រូវបានរក្សាទុក លើកលែងតែ អ្នកបានចុច ប្រអប់ 'រក្សាទុក' ខាងក្រោម ។",
 	'translate-magic-form'              => 'ភាសា៖ $1 កញ្ចប់៖ $2 $3',
 	'translate-magic-submit'            => 'នាំមក បង្ហាញ',
 	'translate-magic-cm-to-be'          => 'ទៅជា',
@@ -2419,6 +2430,8 @@ $messages['ml'] = array(
  * @author Mahitgar
  */
 $messages['mr'] = array(
+	'translate-page-task'               => 'मी इच्छीतो की',
+	'translate-page-group'              => 'गट',
 	'translate-page-language'           => 'भाषा',
 	'translate-page-limit'              => 'मर्यादा',
 	'translate-submit'                  => 'शेंदा(ओढा)',
@@ -2434,6 +2447,7 @@ $messages['mr'] = array(
 	'translate-magic-submit'            => 'ओढा',
 	'translate-magic-cm-current'        => 'सद्य',
 	'translate-magic-cm-original'       => 'मूळ',
+	'translate-magic-cm-comment'        => 'प्रतिक्रीया',
 	'translate-magic-cm-save'           => 'जतन करा',
 	'translate-magic-cm-export'         => 'नीर्यात',
 	'translate-magic-cm-savefailed'     => 'जतन अयशस्वी',
@@ -2661,7 +2675,7 @@ $messages['oc'] = array(
 	'translate-edit-committed'          => 'Traduccions actualas ja dins lo logicial',
 	'translate-edit-warnings'           => 'Avertiments concernent las traduccions incomplètas',
 	'translate-magic-pagename'          => 'Traduccion de MediaWiki espandida',
-	'translate-magic-help'              => "Podètz traduire los alias de paginas especialas, los mots magics, los noms de skins e los noms d'espacis de noms. Dins los mots magics, devètz inclòure la traduccion en anglés o aquò foncionarà pas mai. E mai, daissatz lo primièr item (0 o 1) coma es. Los alias de paginas especialas e los mots magics pòdon aver mantuna traduccion. Las traduccions son separadas per una virgula (,). Los noms de skins e d'espacis de noms pòdon pas aver qu'una traduccion. Dins las traduccions d'espacis de noms, <tt>$1 talk</tt> es especial. <tt>$1</tt> es remplaçat pel nom del site (per exemple <tt>{{SITENAME}} talk</tt>). Se es pas possible d'obténer una expression valida dins vòstra lenga sens cambiar lo nom del site, contactatz un desvolopaire. Devètz aparténer al grop dels traductors per salvagardar los cambiaments. Los cambiaments seràn pas salvagardats abans que cliquèssetz sul boton Salvagardar en bas.",
+	'translate-magic-help'              => "Podètz traduire los alias de paginas especialas, los mots magics, los noms de skins e los noms d'espacis de noms. Dins los mots magics, devètz inclòure la traduccion en anglés o aquò foncionarà pas mai. E mai, daissatz lo primièr item (0 o 1) coma es. Los alias de paginas especialas e los mots magics pòdon aver mantuna traduccion. Las traduccions son separadas per una virgula (,). Los noms de skins e d'espacis de noms pòdon pas aver qu'una traduccion. Dins las traduccions d'espacis de noms, <tt>$1 talk</tt> es especial. <tt>$1</tt> es remplaçat pel nom del sit (per exemple <tt>{{SITENAME}} talk</tt>). Se es pas possible d'obténer una expression valida dins vòstra lenga sens cambiar lo nom del sit, contactatz un desvolopaire. Devètz aparténer al grop dels traductors per salvagardar los cambiaments. Los cambiaments seràn pas salvagardats abans que cliquèssetz sul boton Salvagardar en bas.",
 	'translate-magic-form'              => 'Lenga $1 Modul : $2 $3',
 	'translate-magic-submit'            => 'Anar',
 	'translate-magic-cm-to-be'          => 'Desven',
@@ -2824,6 +2838,7 @@ $messages['ro'] = array(
 /** Russian (Русский)
  * @author .:Ajvol:.
  * @author Nike
+ * @author Ahonc
  */
 $messages['ru'] = array(
 	'translate'                         => 'Перевод',
@@ -2860,7 +2875,7 @@ $messages['ru'] = array(
 	'translate-ignored'                 => '(игнорируемое)',
 	'translate-edit-definition'         => 'Формулировка сообщения',
 	'translate-edit-contribute'         => 'править',
-	'translate-edit-no-information'     => "''Это сообщение не имеет описания. Если вы знаете где или как это сообщение используется, то вы можете помочь другим переводчикам, добавив описание к этому сообщению''",
+	'translate-edit-no-information'     => "''Это сообщение не имеет описания. Если вы знаете, где или как это сообщение используется, то вы можете помочь другим переводчикам, добавив описание к этому сообщению''",
 	'translate-edit-information'        => 'Информация об этом сообщении ($1)',
 	'translate-edit-in-other-languages' => 'Сообщение на других языках',
 	'translate-edit-committed'          => 'Текущий перевод в программе',
@@ -3201,6 +3216,7 @@ $messages['te'] = array(
 	'translate-magic-cm-comment'        => 'వ్యాఖ్య:',
 	'translate-magic-cm-save'           => 'భద్రపరచు',
 	'translate-magic-special'           => 'ప్రత్యేక పేజీల మారుపేర్లు',
+	'translate-magic-words'             => 'మాయా పదాలు',
 	'translationchanges'                => 'అనువాద మార్పులు',
 	'translationchanges-export'         => 'ఎగుమతించు',
 	'translationchanges-change'         => '$1: $3 చే $2',
@@ -3275,11 +3291,11 @@ $messages['th'] = array(
 	'translate-edit-committed'          => 'ข้อความแปลที่ฝังอยู่ในตัวโปรแกรม',
 	'translate-edit-warnings'           => 'คำเตือนเกี่ยวกับงานแปลที่ยังไม่เสร็จสมบูรณ์',
 	'translate-magic-pagename'          => 'ส่วนขยายการแปลในมีเดียวิกิ',
-	'translate-magic-help'              => 'คุณสามารถแปลชื่อหน้าพิเศษต่าง ๆ, ตัวแปรพิเศษ, ชื่อสกิน และ ชื่อเนมสเปซ
+	'translate-magic-help'              => 'คุณสามารถแปลชื่อหน้าพิเศษต่าง ๆ, ตัวแปรพิเศษ, ชื่อแบบหน้าตา และ ชื่อเนมสเปซ
 
 ในตัวแปรพิเศษ กรุณาใส่คำแปลภาษาอังกฤษไปด้วยเช่นเดียวกัน มิฉะนั้นมันจะหยุดทำงาน กรุณาเว้นอันที่ 1 (0 หรือ 1) อย่างที่มันเป็น
 
-ชื่อหน้าพิเศษและตัวแปรพิเศษสามารถมีคำแปลได้หลายอย่าง คำแปลจะแยกโดยการใช้ จุลภาค (,) ; ชื่อสกินและเนมสเปซสามารถมีคำแปลได้แค่คำเดียว
+ชื่อหน้าพิเศษและตัวแปรพิเศษสามารถมีคำแปลได้หลายอย่าง คำแปลจะแยกโดยการใช้ จุลภาค (,) ; ชื่อแบบหน้าตาและเนมสเปซสามารถมีคำแปลได้แค่คำเดียว
 
 ในคำแปลชื่อเนมสเปซ <tt>คุยเรื่อง$1</tt> ต้องระวังเป็นพิเศษ <tt>$1</tt> จะถูกแทนที่โดยชื่อเว็บไซต์ (เช่น <tt>คุยเรื่อง{{SITENAME}}</tt> ถ้าไม่สามารถกระทำการดังกล่าวได้ในภาษาของคุณ, กรุณาติดต่อผู้ดูแลระบบขั้นสูง
 
@@ -3345,38 +3361,46 @@ $messages['ug'] = array(
 
 /** Ukrainian (Українська)
  * @author Ahonc
+ * @author AS
  */
 $messages['uk'] = array(
-	'translate'                        => 'Переклад',
-	'translate-desc'                   => '[[Special:Translate|Спеціальна сторінка]] для перекладу Mediawiki та інших програм',
-	'translate-edit'                   => 'редагувати',
-	'translate-talk'                   => 'обговорення',
-	'translate-history'                => 'історія',
-	'translate-task-view'              => 'Переглянути всі повідомлення',
-	'translate-task-untranslated'      => 'Переглянути неперекладені повідомлення',
-	'translate-task-optional'          => "Переглянути необов'язкові повідомлення",
-	'translate-task-review'            => 'Перевірити зміни',
-	'translate-task-reviewall'         => 'Перевірити всі переклади',
-	'translate-task-export'            => 'Експортувати переклади',
-	'translate-task-export-to-file'    => 'Експортувати переклади до файлу',
-	'translate-task-export-as-po'      => 'Експортувати переклади у форматі gettext',
-	'translate-page-no-such-language'  => 'Передано неправильний код мови.',
-	'translate-page-no-such-task'      => 'Неправильно вказане завдання.',
-	'translate-page-no-such-group'     => 'Неправильно вказана група.',
-	'translate-page-settings-legend'   => 'Параметри',
-	'translate-page-task'              => 'Я хочу',
-	'translate-page-group'             => 'Група',
-	'translate-page-language'          => 'Мова',
-	'translate-page-limit'             => 'Обмеження',
-	'translate-page-limit-option'      => '$1 {{PLURAL:$1|повідомлення|повідомлення|повідомлень}} на сторінку',
-	'translate-submit'                 => 'Вивести',
-	'translate-page-navigation-legend' => 'Навігація',
-	'translate-page-showing'           => 'Показані повідомлення з $1 по $2 із $3.',
-	'translate-page-showing-all'       => '{{PLURAL:$1|Показане $1 повідомлення|Показані $1 повідомлення|Показані $1 повідомлень}}.',
-	'translate-page-showing-none'      => 'Нема повідомлень для відображення.',
-	'translate-next'                   => 'наступна сторінка',
-	'translate-prev'                   => 'попередня сторінка',
-	'translate-edit-definition'        => 'Текст повідомлення',
+	'translate'                         => 'Переклад',
+	'translate-desc'                    => '[[Special:Translate|Спеціальна сторінка]] для перекладу Mediawiki та інших програм',
+	'translate-edit'                    => 'редагувати',
+	'translate-talk'                    => 'обговорення',
+	'translate-history'                 => 'історія',
+	'translate-task-view'               => 'Переглянути всі повідомлення',
+	'translate-task-untranslated'       => 'Переглянути неперекладені повідомлення',
+	'translate-task-optional'           => "Переглянути необов'язкові повідомлення",
+	'translate-task-review'             => 'Перевірити зміни',
+	'translate-task-reviewall'          => 'Перевірити всі переклади',
+	'translate-task-export'             => 'Експортувати переклади',
+	'translate-task-export-to-file'     => 'Експортувати переклади до файлу',
+	'translate-task-export-as-po'       => 'Експортувати переклади у форматі gettext',
+	'translate-page-no-such-language'   => 'Передано неправильний код мови.',
+	'translate-page-no-such-task'       => 'Неправильно вказане завдання.',
+	'translate-page-no-such-group'      => 'Неправильно вказана група.',
+	'translate-page-settings-legend'    => 'Параметри',
+	'translate-page-task'               => 'Я хочу',
+	'translate-page-group'              => 'Група',
+	'translate-page-language'           => 'Мова',
+	'translate-page-limit'              => 'Обмеження',
+	'translate-page-limit-option'       => '$1 {{PLURAL:$1|повідомлення|повідомлення|повідомлень}} на сторінку',
+	'translate-submit'                  => 'Вивести',
+	'translate-page-navigation-legend'  => 'Навігація',
+	'translate-page-showing'            => 'Показані повідомлення з $1 по $2 із $3.',
+	'translate-page-showing-all'        => '{{PLURAL:$1|Показане $1 повідомлення|Показані $1 повідомлення|Показані $1 повідомлень}}.',
+	'translate-page-showing-none'       => 'Нема повідомлень для відображення.',
+	'translate-next'                    => 'наступна сторінка',
+	'translate-prev'                    => 'попередня сторінка',
+	'translate-page-description-legend' => 'Інформація про групу',
+	'translate-edit-definition'         => 'Текст повідомлення',
+	'translate-edit-contribute'         => 'редагувати',
+	'translate-edit-no-information'     => "''Це повідомлення не має документації. Якщо ви знаєте, де чи як воно використовується, ви можете допомогти іншим перекладачам, додавши опис для цього повідомлення.''",
+	'translate-edit-information'        => 'Інформація про це повідомлення ($1)',
+	'translate-edit-in-other-languages' => 'Повідомлення іншими мовами',
+	'translate-magic-cm-comment'        => 'Коментар:',
+	'translate-magic-namespace'         => 'Простори імен',
 );
 
 /** Vietnamese (Tiếng Việt)
