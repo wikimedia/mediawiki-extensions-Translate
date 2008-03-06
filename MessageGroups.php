@@ -856,6 +856,14 @@ class CallMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'Call/Call.i18n.php';
 }
 
+class CategoryIntersectionMessageGroup extends ExtensionMessageGroup {
+	protected $label       = 'Category Intersection';
+	protected $id          = 'ext-categoryintersection';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'CategoryIntersection/CategoryIntersection.i18n.php';
+}
+
 class CategoryStepperMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Category Stepper';
 	protected $id      = 'ext-categorystepper';

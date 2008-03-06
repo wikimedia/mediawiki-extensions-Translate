@@ -103,6 +103,7 @@ $wgTranslateAC = array(
 'ext-bookinformation'       => 'BookInformationMessageGroup',
 'ext-breadcrumbs'           => 'BreadCrumbsMessageGroup',
 'ext-call'                  => 'CallMessageGroup',
+'ext-categoryintersection'  => 'CategoryIntersectionMessageGroup',
 'ext-categorystepper'       => 'CategoryStepperMessageGroup',
 'ext-categorytree'          => 'CategoryTreeMessageGroup',
 'ext-catfeed'               => 'CatFeedMessageGroup',
