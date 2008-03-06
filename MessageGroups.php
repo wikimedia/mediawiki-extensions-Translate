@@ -2291,6 +2291,14 @@ class WikihieroMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'wikihiero/wikihiero.i18n.php';
 }
 
+class YUIMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'YUI';
+	protected $id    =  'ext-yui';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'SocialProfile/YUI/yui.i18n.php';
+}
+
 class FreeColMessageGroup extends MessageGroup {
 	protected $fileExporter = null;
 	protected $label = 'FreeCol (open source game)';

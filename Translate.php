@@ -260,6 +260,7 @@ $wgTranslateAC = array(
 'ext-whosonline'            => 'WhosOnlineMessageGroup',
 'ext-wikidatalanguagemanager' => 'WikidataLanguageManagerMessageGroup',
 'ext-wikihiero'             => 'WikihieroMessageGroup',
+'ext-yui'                   => 'YUIMessageGroup',
 'out-freecol'               => 'FreeColMessageGroup',
 );
 
