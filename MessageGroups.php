@@ -1585,7 +1585,7 @@ class NavigationPopupsMessageGroup extends ExtensionMessageGroup {
 	protected $id    = 'ext-navigationpopups';
 
 	protected $arrName     = 'messages';
-	protected $messageFile = '/NavigationPopups/NavigationPopups.18n.php';
+	protected $messageFile = 'NavigationPopups/NavigationPopups.18n.php';
 }
 
 class NetworkAuthMessageGroup extends ExtensionMessageGroup {
