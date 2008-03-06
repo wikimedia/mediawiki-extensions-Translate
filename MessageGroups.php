@@ -1580,6 +1580,15 @@ class MultiUploadMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'MultiUpload/SpecialMultipleUpload.i18n.php';
 }
 
+class NavigationPopupsMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Navigation Popups';
+	protected $id    = 'ext-navigationpopups';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = '/NavigationPopups/NavigationPopups.18n.php';
+}
+
+
 class NetworkAuthMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Network Auth';
 	protected $id    = 'ext-networkauth';

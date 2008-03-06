@@ -179,6 +179,7 @@ $wgTranslateAC = array(
 'ext-minipreview'           => 'MiniPreviewMessageGroup',
 'ext-multiboilerplate'      => 'MultiBoilerplateMessageGroup',
 'ext-multiupload'           => 'MultiUploadMessageGroup',
+'ext-navigationpopups'      => 'NavigationPopupsMessageGroup',
 'ext-networkauth'           => 'NetworkAuthMessageGroup',
 'ext-newestpages'           => 'NewestPagesMessageGroup',
 'ext-news'                  => 'NewsMessageGroup',
