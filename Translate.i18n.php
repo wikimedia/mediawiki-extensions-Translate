@@ -2530,21 +2530,22 @@ $messages['nl'] = array(
 	'translate-ignored'                 => '(genegeerd)',
 	'translate-edit-definition'         => 'Berichtdefinitie',
 	'translate-edit-contribute'         => 'bijdragen',
-	'translate-edit-no-information'     => "''Dit bericht heeft geen documentatie. Als u weet waar dit bericht wordt gebruikt, dan kunt u andere gebruikers helpen door documentatie voor dit bericht toe te voegen.''",
+	'translate-edit-no-information'     => "''Dit bericht heeft geen documentatie.
+Als u weet waar dit bericht wordt gebruikt, dan kunt u andere gebruikers helpen door documentatie voor dit bericht toe te voegen.''",
 	'translate-edit-information'        => 'Informatie over dit bericht ($1)',
 	'translate-edit-in-other-languages' => 'Bericht in andere talen',
 	'translate-edit-committed'          => 'Huidig bericht in software',
 	'translate-edit-warnings'           => 'Waarschuwingen over onjuiste vertalingen',
 	'translate-magic-pagename'          => 'Uitgebreide MediaWiki-vertaling',
-	'translate-magic-help'              => "U kunt alternatieven voor speciale pagina's, magische woorden, skinnamen en naamruimtebenamingen vertalen.
+	'translate-magic-help'              => 'U kunt alternatieven voor speciale pagina\'s, magische woorden, skinnamen en naamruimtebenamingen vertalen.
 
 In magische woorden moet u de Engelstalige vertalingen opnemen, omdat ze anders niet meer werken. Laat ook de eerste cijfers (0 of 1) ongewijzigd.
 
-Alternatieven voor speciale pagina's en magische woorden kunnen meerdere vertalingen hebben. Scheid vertalingen met een komma (,). Skinnamen en naamruimtebenamingen kunnen slechts één vertaling hebben.
+Alternatieven voor speciale pagina\'s en magische woorden kunnen meerdere vertalingen hebben. Scheid vertalingen met een komma (,). Skinnamen en naamruimtebenamingen kunnen slechts één vertaling hebben.
 
 In naamruimtebenamingen is <tt>$1 talk</tt> een uitzondering. <tt>$1</tt> wordt vervangen door de sitenaam (bijvoorbeeld <tt>{{SITENAME}} talk</tt>. Als het in uw taal niet mogelijk is een geldige uitdrukking te vormen zonder de sitenaam te wijzigen, neem dan contact op met een ontwikkelaar.
 
-Om wijzigingen op te slaan moet u lid zijn van de groep vertalers. Wijzigingen worden niet bewaard totdat u op Opslaan heeft geklikt.",
+Om wijzigingen op te slaan moet u lid zijn van de groep vertalers. Wijzigingen worden niet bewaard totdat u op "Pagina opslaan" hebt geklikt.',
 	'translate-magic-form'              => 'Taal: $1 Module: $2 $3',
 	'translate-magic-submit'            => 'Ophalen',
 	'translate-magic-cm-to-be'          => 'Toekomstig',
