@@ -1279,6 +1279,14 @@ class FindSpamMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'FindSpam/FindSpam.i18n.php';
 }
 
+class FixedImageMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Fixed Image';
+	protected $id    = 'ext-fixedimage';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'FixedImage/FixedImage.i18n.php';
+}
+
 class ForcePreviewMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Force Preview';
 	protected $id    = 'ext-forcepreview';
@@ -1317,6 +1325,14 @@ class GlobalUsageMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'GlobalUsage/GlobalUsage.i18n.php';
+}
+
+class GnuplotMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Gnuplot';
+	protected $id    = 'ext-gnuplot';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'Gnuplot/Gnuplot.i18n.php';
 }
 
 class GoogleAnalyticsMessageGroup extends ExtensionMessageGroup {
