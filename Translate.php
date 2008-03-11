@@ -11,7 +11,7 @@ if (!defined('MEDIAWIKI')) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '8.17' );
+define( 'TRANSLATE_VERSION', '8.18' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name'           => 'Translate',
@@ -156,6 +156,7 @@ $wgTranslateAC = array(
 'ext-gnuplot'               => 'GnuplotMessageGroup',
 'ext-googleanalytics'       => 'GoogleAnalyticsMessageGroup',
 'ext-googlemaps'            => 'GoogleMapsMessageGroup',
+'ext-htmlets'               => 'HTMLetsMessageGroup',
 'ext-i18ntags'              => 'I18nTagsMessageGroup',
 'ext-icon'                  => 'IconMessageGroup',
 'ext-imagemap'              => 'ImageMapMessageGroup',
@@ -191,7 +192,7 @@ $wgTranslateAC = array(
 'ext-newusernotif'          => 'NewUserNotifMessageGroup',
 'ext-nuke'                  => 'NukeMessageGroup',
 'ext-ogghandler'            => 'OggHandlerMessageGroup',
-#'ext-openid'                => 'OpenIDMessageGroup',
+'ext-openid'                => 'OpenIDMessageGroup',
 'ext-oversight'             => 'OversightMessageGroup',
 'ext-pageby'                => 'PageByMessageGroup',
 'ext-passwordreset'         => 'PasswordResetMessageGroup',
@@ -259,6 +260,7 @@ $wgTranslateAC = array(
 'ext-vote'                  => 'VoteMessageGroup',
 'ext-watchers'              => 'WatchersMessageGroup',
 'ext-webstore'              => 'WebStoreMessageGroup',
+'ext-whitelist'             => 'WhiteListMessageGroup',
 'ext-whoiswatching'         => 'WhoIsWatchingMessageGroup',
 'ext-whosonline'            => 'WhosOnlineMessageGroup',
 'ext-wikidatalanguagemanager' => 'WikidataLanguageManagerMessageGroup',

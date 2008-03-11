@@ -1351,6 +1351,14 @@ class GoogleMapsMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'GoogleMaps/GoogleMaps.i18n.php';
 }
 
+class HTMLetsMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'HTMLets';
+	protected $id    = 'ext-htmlets';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'HTMLets/HTMLets.i18n.php';
+}
+
 class I18nTagsMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Parser i18n tags';
 	protected $id    = 'ext-i18ntags';
@@ -2279,6 +2287,14 @@ class WebStoreMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'WebStore/WebStore.i18n.php';
+}
+
+class WhiteListMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'White List';
+	protected $id    = 'ext-whitelist';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'WhiteList/SpecialWhitelistEdit.i18n.php';
 }
 
 class WhoIsWatchingMessageGroup extends ExtensionMessageGroup {
