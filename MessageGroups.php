@@ -2293,7 +2293,7 @@ class WhiteListMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'White List';
 	protected $id    = 'ext-whitelist';
 
-	protected $arrName     = 'messages';
+	protected $arrName     = 'allMessages';
 	protected $messageFile = 'WhiteList/SpecialWhitelistEdit.i18n.php';
 }
 
