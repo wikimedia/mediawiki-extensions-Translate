@@ -1151,6 +1151,14 @@ class DeletedContribsMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'DeletedContributions/DeletedContributions.i18n.php';
 }
 
+class DidYouMeanMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Did You Mean';
+	protected $id    = 'ext-didyoumean';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'DidYouMean/DidYouMean.i18n.php';
+}
+
 class DismissableSiteNoticeMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Dismissable SiteNotice';
 	protected $id    = 'ext-dismissablesitenotice';
