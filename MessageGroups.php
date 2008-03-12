@@ -1625,7 +1625,7 @@ class MWSearchMessageGroup extends ExtensionMessageGroup {
 	protected $id    = 'ext-mwsearch';
 
 	protected $arrName     = 'messages';
-	protected $messageFile = 'MWSearch/MWSearch.18n.php';
+	protected $messageFile = 'MWSearch/MWSearch.i18n.php';
 }
 
 class NavigationPopupsMessageGroup extends ExtensionMessageGroup {
