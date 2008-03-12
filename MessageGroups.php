@@ -1620,6 +1620,14 @@ class MultiUploadMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'MultiUpload/SpecialMultipleUpload.i18n.php';
 }
 
+class MWSearchMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'MediaWiki Search';
+	protected $id    = 'ext-mwsearch';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'MWSearch/MWSearch.18n.php';
+}
+
 class NavigationPopupsMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Navigation Popups';
 	protected $id    = 'ext-navigationpopups';
@@ -2345,6 +2353,14 @@ class YUIMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'SocialProfile/YUI/yui.i18n.php';
+}
+
+class YouTubeAuthSubMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'YouTube Auth Sub';
+	protected $id    =  'ext-youtubeauthsub';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'YouTubeAuthSub/YouTubeAuthSub.i18n.php';
 }
 
 class FreeColMessageGroup extends MessageGroup {
