@@ -2164,16 +2164,17 @@ Esim aya awdarmalarında <tt>$1_talk</tt> degen arnaýı keltiriledi. <tt>$1</tt
 /** Khmer (ភាសាខ្មែរ)
  * @author Chhorran
  * @author គីមស៊្រុន
+ * @author Lovekhmer
  */
 $messages['km'] = array(
-	'translate'                         => 'ប្រែសំរួល',
+	'translate'                         => 'បកប្រែ',
 	'translate-desc'                    => '[[Special:Translate|ទំព័រ​ពិសេស]] សំរាប់ប្រែសំរួល​មេឌាវិគី​ និង របស់​ផ្សេងទៀត',
 	'translate-edit'                    => 'កែប្រែ',
 	'translate-talk'                    => 'ពិភាក្សា',
 	'translate-history'                 => 'ប្រវត្តិ',
-	'translate-task-view'               => 'មើល​គ្រប់សារ ពី',
+	'translate-task-view'               => 'មើល​គ្រប់សារពី',
 	'translate-task-untranslated'       => 'មើល​គ្រប់​សារដែល​មិនទាន់ប្រែសំរួល ពី',
-	'translate-task-optional'           => 'មើល​សារជំរើស ពី',
+	'translate-task-optional'           => 'មើល​សារដែលបានជ្រើសរើសពី',
 	'translate-task-review'             => 'មើល​ឡើងវិញ​នូវបំលាស់ប្តូរ​នានា​ចំពោះ',
 	'translate-task-reviewall'          => 'មើល​ឡើងវិញ​បទប្រែសំរួល​ទាំងអស់​ក្នុង',
 	'translate-task-export'             => 'នាំចេញ​បទប្រែសំរួល ពី',
@@ -2182,17 +2183,17 @@ $messages['km'] = array(
 	'translate-page-no-such-language'   => 'ភាសាដែលបានសំដៅ គ្មានសុពលភាព ។',
 	'translate-page-no-such-task'       => 'កិច្ចការដែលបានសំដៅ គ្មានសុពលភាព ។',
 	'translate-page-no-such-group'      => 'ក្រុមដែលបានសំដៅ គ្មានសុពលភាព ។',
-	'translate-page-settings-legend'    => 'កំណត់ នានា',
+	'translate-page-settings-legend'    => 'ការកំណត់យក',
 	'translate-page-task'               => 'ខ្ញុំចង់',
 	'translate-page-group'              => 'ក្រុម',
 	'translate-page-language'           => 'ភាសា',
 	'translate-page-limit'              => 'កំរិត',
 	'translate-page-limit-option'       => '$1 {{PLURAL:$1|សារ}} ក្នុងមួយទំព័រ',
 	'translate-submit'                  => 'នាំមក​បង្ហាញ',
-	'translate-page-navigation-legend'  => 'ត្រាច់រក',
+	'translate-page-navigation-legend'  => 'ទិសដៅ',
 	'translate-page-showing'            => 'កំពុងបង្ហាញ​សារ​តាមលំដាប់ ពី $1 ដល់ $2 នៃ $3 ។',
 	'translate-page-showing-all'        => 'កំពុងបង្ហាញ $1 {{PLURAL:$1|សារ}}។',
-	'translate-page-showing-none'       => 'គ្មានសារ​ត្រូវបង្ហាញ ។',
+	'translate-page-showing-none'       => 'មិនមានសារ​ត្រូវបង្ហាញទេ។',
 	'translate-next'                    => 'ទំព័របន្ទាប់',
 	'translate-prev'                    => 'ទំព័រមុន',
 	'translate-page-description-legend' => 'ពត៌មាន​អំពី​ក្រុម',
@@ -2204,7 +2205,7 @@ $messages['km'] = array(
 	'translate-edit-in-other-languages' => 'សារ​ជាភាសា​ដទៃទៀត',
 	'translate-edit-committed'          => 'បទប្រែសំរួល​បច្ចុប្បន្ន​ក្នុងផ្នែកទន់',
 	'translate-edit-warnings'           => 'ការព្រមាន​អំពី​បទប្រែសំរួលមិនពេញលេញ',
-	'translate-magic-pagename'          => 'បទប្រែសំរួល​មេឌាវិគី​បន្ថែម',
+	'translate-magic-pagename'          => 'ការបកប្រែ​មេឌាវិគី​បន្ថែម',
 	'translate-magic-help'              => "អ្នកអាចប្រែសំរួល ឈ្មោះក្លែង នៃ ទំព័រពិសេស, ពាក្យទិព្វ, ឈ្មោះសំបក និង ឈ្មោះ នៃវាលឈ្មោះ ។
 
 ក្នុងពាក្យទិព្វ ត្រូវដាក់រួមទាំង បទប្រែសំរួល ភាសាអង់គ្លេស, បើមិនដូច្នោះ វាលែងធ្វើការ ។ ដាក់ផងដែរ លេខរៀងដំបូង (0 ឬ 1) តាម ដែលវាមាន ។
@@ -2214,22 +2215,23 @@ $messages['km'] = array(
 ក្នុងបទប្រែសំរួល វាលឈ្មោះ <tt>$1 talk</tt> មាន ករណីពិសេស។ <tt>$1</tt> ត្រូវបានជំនួស ដោយ ឈ្មោះសៃថ៍ (ឧទាហរ <tt>{{SITENAME}} talk</tt> ។ បើ ភាសារបស់អ្នក មិនបាន បង្ហាញត្រឹមត្រូវ ដោយមិនប្តូរ ឈ្មោះសៃថ៍, សូមទាក់ទង អ្នកអភិវឌ្ឍ ។
 
 អ្នកចាំបាច់ ត្រូវតែថិតក្នុង ក្រុមអ្នកប្រែសំរួល ទើបអាច រក្សាទុក បំលាស់ប្តូរ ។  បំលាស់ប្តូរ នឹងមិនត្រូវបានរក្សាទុក លើកលែងតែ អ្នកបានចុច ប្រអប់ 'រក្សាទុក' ខាងក្រោម ។",
-	'translate-magic-form'              => 'ភាសា៖ $1 កញ្ចប់៖ $2 $3',
+	'translate-magic-form'              => 'ភាសា៖ $1 ម៉ូឌុល៖ $2 $3',
 	'translate-magic-submit'            => 'នាំមក​បង្ហាញ',
 	'translate-magic-cm-to-be'          => 'ទៅជា',
 	'translate-magic-cm-current'        => 'បច្ចុប្បន្ន',
 	'translate-magic-cm-original'       => 'ដើម',
-	'translate-magic-cm-comment'        => 'វិចារ៖',
+	'translate-magic-cm-comment'        => 'យោបល់៖',
 	'translate-magic-cm-save'           => 'រក្សាទុក',
 	'translate-magic-cm-export'         => 'នាំចេញ',
 	'translate-magic-cm-updatedusing'   => 'បានបន្ទាន់សម័យ​ដោយប្រើប្រាស់ Special:Magic',
-	'translate-magic-cm-savefailed'     => 'រក្សាទុក​បានបរាជ័យ',
+	'translate-magic-cm-savefailed'     => 'រក្សាទុកមិនបានសំរេច',
+	'translate-magic-special'           => 'ឈ្មោះក្លែងក្លាយនៃទំព័រពិសេស',
 	'translate-magic-words'             => 'ពាក្យទិព្វ',
-	'translate-magic-skin'              => 'ឈ្មោះ សំបកនានា',
-	'translate-magic-namespace'         => 'ឈ្មោះនានា នៃវាលឈ្មោះ',
-	'translationchanges'                => 'បំលាស់ប្តូរ នៃបំរែសំរួល',
+	'translate-magic-skin'              => 'ឈ្មោះសំបក',
+	'translate-magic-namespace'         => 'ឈ្មោះនៃលំហឈ្មោះ',
+	'translationchanges'                => 'បំលាស់ប្តូរនៃការបកប្រែ',
 	'translationchanges-export'         => 'នាំចេញ',
-	'translate-checks-parameters'       => 'ប៉ារ៉ាម៉ែតទាំងឡាយនេះមិនត្រូវបានគេប្រើ៖ <strong>$1</strong>',
+	'translate-checks-parameters'       => 'ប៉ារ៉ាម៉ែត្រទាំងនេះមិនត្រូវបានគេប្រើទេ៖ <strong>$1</strong>',
 	'translate-checks-balance'          => 'មានវង់ក្រចក​ដែលមិន​មាន​គូ៖ <strong>$1</strong>',
 	'translate-checks-links'            => 'តំណភ្ជាប់ទាំងនេះ​មានបញ្ហា ៖ <strong>$1</strong>',
 	'translate-checks-xhtml'            => 'សូម​ជំនួស​ប្លាកទាំងនេះ​ដោយ​ប្លាកដែលត្រឹមត្រូវ ៖ <strong>$1</strong>',
@@ -2524,8 +2526,8 @@ $messages['nl'] = array(
 	'translate-page-limit-option'       => '$1 {{PLURAL:$1|bericht|berichten}} per pagina',
 	'translate-submit'                  => 'Ophalen',
 	'translate-page-navigation-legend'  => 'Navigatie',
-	'translate-page-showing'            => 'De berichten $1 tot $2 van $3 worden getoond.',
-	'translate-page-showing-all'        => 'Er {{PLURAL:$1|wordt 1 bericht|worden $1 berichten}} getoond.',
+	'translate-page-showing'            => 'De berichten $1 tot $2 van $3 worden weergegeven.',
+	'translate-page-showing-all'        => 'Er {{PLURAL:$1|wordt 1 bericht|worden $1 berichten}} weergegeven.',
 	'translate-page-showing-none'       => 'Er zijn geen berichten in deze selectie.',
 	'translate-next'                    => 'volgende',
 	'translate-prev'                    => 'vorige',
@@ -2723,6 +2725,45 @@ $messages['oc'] = array(
 	'translate-checks-links'            => 'Los ligams seguents son dobtoses : <strong>$1</strong',
 	'translate-checks-xhtml'            => 'Sètz convidats a tornar metre en plaça las balisas seguentas amb las que son corrèctas : <strong>$1</strong>',
 	'translate-checks-plural'           => 'La definicion utiliza <nowiki>{{PLURAL:}}</nowiki> mas pas la traduccion',
+);
+
+/** Polish (Polski)
+ * @author McMonster
+ */
+$messages['pl'] = array(
+	'translate'                         => 'Przetłumacz',
+	'translate-edit'                    => 'edytuj',
+	'translate-talk'                    => 'dyskusja',
+	'translate-history'                 => 'historia',
+	'translate-task-view'               => 'Pokazać wszystkie komunikaty z',
+	'translate-task-untranslated'       => 'Pokazać wszystkie nieprzetłumaczone komunikaty z',
+	'translate-task-optional'           => 'Pokazać opcjonalne komunikaty z',
+	'translate-task-review'             => 'Przejrzeć zmiany w',
+	'translate-task-reviewall'          => 'Przejrzeć wszystkie tłumaczenia w',
+	'translate-task-export'             => 'Wyeksportować tłumaczenia z',
+	'translate-task-export-to-file'     => 'Wyeksportować tłumaczenie do pliku z',
+	'translate-task-export-as-po'       => 'Wyeksportować tłumaczenie w formacie Gettext',
+	'translate-page-settings-legend'    => 'Ustawienia',
+	'translate-page-task'               => 'Chcę',
+	'translate-page-group'              => 'Grupa',
+	'translate-page-language'           => 'Język',
+	'translate-page-limit-option'       => '$1 {{PLURAL:$1|komunikat|komunikaty|komunikatów}} na stronę',
+	'translate-submit'                  => 'Pobierz',
+	'translate-page-navigation-legend'  => 'Nawigacja',
+	'translate-page-showing'            => 'Pokazane komunikaty od $1 do $2 z $3.',
+	'translate-page-showing-all'        => 'Pokazano $1 {{PLURAL:$1|komunikat|komunikatów}}.',
+	'translate-page-showing-none'       => 'Brak komunikatów do pokazania.',
+	'translate-next'                    => 'Następna strona',
+	'translate-prev'                    => 'Poprzednia strona',
+	'translate-edit-definition'         => 'Tekst źródłowy komunikatu',
+	'translate-edit-no-information'     => "''Ten komunikat nie posiada dokumentacji. Jeśli wiesz gdzie lub jak ten komunikat jest używany, możesz pomóc innym tłumaczom przez dodanie dokumentacji do tego komunikatu.''",
+	'translate-edit-information'        => 'Informacja na temat tego komunikatu ($1)',
+	'translate-edit-in-other-languages' => 'Komunikaty w innych językach',
+	'translate-edit-warnings'           => 'Ostrzeżenia o niedokończonych tłumaczeniach',
+	'translate-magic-form'              => 'Język: $1 Moduł: $2 $3',
+	'translate-magic-submit'            => 'Pobierz',
+	'translate-magic-cm-save'           => 'Zapisz',
+	'translationchanges-export'         => 'eksportuj',
 );
 
 /* Piedmontese (Bèrto 'd Sèra) */
@@ -3101,7 +3142,7 @@ $messages['su'] = array(
 /** Swedish (Svenska)
  * @author Sannab
  * @author Lejonel
- * @author Max sonnelid
+ * @author M.M.S.
  * @author Siebrand
  */
 $messages['sv'] = array(
@@ -3238,8 +3279,10 @@ $messages['te'] = array(
 	'translate-magic-form'              => 'భాష: $1 మాడ్యూలు: $2 $3',
 	'translate-magic-submit'            => 'తీసుకురా',
 	'translate-magic-cm-current'        => 'ప్రస్తుత',
+	'translate-magic-cm-original'       => 'అసలు',
 	'translate-magic-cm-comment'        => 'వ్యాఖ్య:',
 	'translate-magic-cm-save'           => 'భద్రపరచు',
+	'translate-magic-cm-export'         => 'ఎగుమతి చేయండి',
 	'translate-magic-special'           => 'ప్రత్యేక పేజీల మారుపేర్లు',
 	'translate-magic-words'             => 'మాయా పదాలు',
 	'translationchanges'                => 'అనువాద మార్పులు',
