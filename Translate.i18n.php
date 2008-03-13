@@ -3314,6 +3314,13 @@ $messages['tet'] = array(
 	'translate-magic-submit'            => 'Hola',
 );
 
+/** Tajik (Тоҷикӣ)
+ * @author Ibrahim
+ */
+$messages['tg'] = array(
+	'translate-talk' => 'баҳс',
+);
+
 /** Thai (ไทย)
  * @author Ans
  * @author Passawuth
