@@ -1816,6 +1816,7 @@ $messages['is'] = array(
 	'translate-page-group'              => 'Hópur',
 	'translate-page-language'           => 'Tungumál',
 	'translate-page-limit'              => 'Takmark',
+	'translate-page-limit-option'       => '$1 {{PLURAL:$1|melding|meldingar}} á hverri síðu',
 	'translate-submit'                  => 'Sækja',
 	'translate-page-navigation-legend'  => 'Flakk',
 	'translate-page-showing'            => 'Sýni meldingar frá $1 til $2 af $3.',
@@ -1826,12 +1827,16 @@ $messages['is'] = array(
 	'translate-page-description-legend' => 'Upplýsingar um hópinn',
 	'translate-optional'                => '(valfrjálst)',
 	'translate-ignored'                 => '(hunsað)',
+	'translate-edit-definition'         => 'Útskýring á meldingu',
+	'translate-edit-contribute'         => 'breyta',
 	'translate-edit-information'        => 'Upplýsingar um þessa meldingu ($1)',
 	'translate-edit-in-other-languages' => 'Melding á öðrum tungumálum',
+	'translate-edit-committed'          => 'Núverandi þýðing í hugbúnaðinum',
 	'translate-edit-warnings'           => 'Viðvaranir vegna ókláraðar þýðinga',
 	'translate-magic-form'              => 'Tungumál: $1 Eining: $2 $3',
 	'translate-magic-submit'            => 'Sækja',
 	'translate-magic-cm-current'        => 'Núverandi',
+	'translate-magic-cm-comment'        => 'Athugasemd:',
 	'translate-magic-cm-save'           => 'Vista',
 	'translate-magic-cm-export'         => 'Flytja',
 	'translate-magic-namespace'         => 'Heiti nafnrýma',
@@ -2729,6 +2734,7 @@ $messages['oc'] = array(
 
 /** Polish (Polski)
  * @author McMonster
+ * @author Wpedzich
  */
 $messages['pl'] = array(
 	'translate'                         => 'Przetłumacz',
@@ -2743,6 +2749,9 @@ $messages['pl'] = array(
 	'translate-task-export'             => 'Wyeksportować tłumaczenia z',
 	'translate-task-export-to-file'     => 'Wyeksportować tłumaczenie do pliku z',
 	'translate-task-export-as-po'       => 'Wyeksportować tłumaczenie w formacie Gettext',
+	'translate-page-no-such-language'   => 'Podano nieprawidłowy język.',
+	'translate-page-no-such-task'       => 'Podano nieprawidłowe zadanie.',
+	'translate-page-no-such-group'      => 'Podano nieprawidłową grupę.',
 	'translate-page-settings-legend'    => 'Ustawienia',
 	'translate-page-task'               => 'Chcę',
 	'translate-page-group'              => 'Grupa',
@@ -2755,6 +2764,7 @@ $messages['pl'] = array(
 	'translate-page-showing-none'       => 'Brak komunikatów do pokazania.',
 	'translate-next'                    => 'Następna strona',
 	'translate-prev'                    => 'Poprzednia strona',
+	'translate-page-description-legend' => 'Informacje na temat grupy',
 	'translate-edit-definition'         => 'Tekst źródłowy komunikatu',
 	'translate-edit-no-information'     => "''Ten komunikat nie posiada dokumentacji. Jeśli wiesz gdzie lub jak ten komunikat jest używany, możesz pomóc innym tłumaczom przez dodanie dokumentacji do tego komunikatu.''",
 	'translate-edit-information'        => 'Informacja na temat tego komunikatu ($1)',
@@ -2762,8 +2772,22 @@ $messages['pl'] = array(
 	'translate-edit-warnings'           => 'Ostrzeżenia o niedokończonych tłumaczeniach',
 	'translate-magic-form'              => 'Język: $1 Moduł: $2 $3',
 	'translate-magic-submit'            => 'Pobierz',
+	'translate-magic-cm-comment'        => 'Komentarz:',
 	'translate-magic-cm-save'           => 'Zapisz',
+	'translate-magic-cm-export'         => 'Eksportuj',
+	'translate-magic-cm-updatedusing'   => 'Uaktualnio0ne za pomocą strony Special:Magic',
+	'translate-magic-cm-savefailed'     => 'Zapis nieudany',
+	'translate-magic-special'           => 'Aliasy stron specjalnych',
+	'translate-magic-words'             => 'Magiczne słowa',
+	'translate-magic-skin'              => 'Nazwy motywów',
+	'translate-magic-namespace'         => 'Nazwy w przestrzeni nazw',
+	'translationchanges'                => 'Zmiany w tłumaczeniu',
 	'translationchanges-export'         => 'eksportuj',
+	'translate-checks-parameters'       => 'Następujące parametry nie są wykorzystywane: <strong>$1</strong>',
+	'translate-checks-balance'          => 'W wyrażeniu napotkano nieparzystą liczbę nawiasów: <strong>$1</strong>',
+	'translate-checks-links'            => 'Wystąpiły problemy z następującymi linkami: <strong>$1</strong>',
+	'translate-checks-xhtml'            => 'Zastąp następujące znaczniki na prawidłowe: strong>$1</strong>',
+	'translate-checks-plural'           => 'Definicja wykorzystuje mechanizm <nowiki>{{PLURAL:}}</nowiki>, lecz tłumaczenie go nie uwzględnia.',
 );
 
 /* Piedmontese (Bèrto 'd Sèra) */
