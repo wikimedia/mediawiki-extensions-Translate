@@ -52,7 +52,8 @@ $messages['en'] = array(
 
 	'translate-edit-definition' => 'Message definition',
 	'translate-edit-contribute' => 'contribute',
-	'translate-edit-no-information' => "''This message has no documentation. If you know where or how this message is used, you can help other translators by adding documentation to this message.''",
+	'translate-edit-no-information' => "''This message has no documentation.
+If you know where or how this message is used, you can help other translators by adding documentation to this message.''",
 	'translate-edit-information' => 'Information about this message ($1)',
 	'translate-edit-in-other-languages' => 'Message in other languages',
 	'translate-edit-committed' => 'Current translation in software',
@@ -61,13 +62,18 @@ $messages['en'] = array(
 	'translate-magic-pagename' => 'Extended MediaWiki translation',
 	'translate-magic-help' => 'You can translate special pages aliases, magic words, skin names and namespace names.
 
-In magic words you need to include English translations or they stop working. Also leave the first item (0 or 1) as it is.
+In magic words you need to include English translations or they stop working.
+Also leave the first item (0 or 1) as it is.
 
-Special page aliases and magic words can have multiple translations. Translations are seperated by a comma (,). Skin names and namespaces can have only one translation.
+Special page aliases and magic words can have multiple translations.
+Translations are seperated by a comma (,).
+Skin names and namespaces can have only one translation.
 
-In namespace translations <tt>$1 talk</tt> is special. <tt>$1</tt> is replaced with sitename (for example <tt>{{SITENAME}} talk</tt>. If it is not possible in your language to form valid expression without changing sitename, please contact a developer.
+In namespace translations <tt>$1 talk</tt> is special. <tt>$1</tt> is replaced with sitename (for example <tt>{{SITENAME}} talk</tt>).
+If it is not possible in your language to form valid expression without changing sitename, please contact a developer.
 
-You need to be in the translators group to save changes. Changes are not saved until you click save button below.',
+You need to be in the translators group to save changes.
+Changes are not saved until you click save button below.',
 	'translate-magic-form' => 'Language: $1 Module: $2 $3',
 	'translate-magic-submit' => 'Fetch',
 	'translate-magic-cm-to-be' => 'To-be',
