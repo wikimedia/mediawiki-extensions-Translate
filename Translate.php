@@ -11,7 +11,7 @@ if (!defined('MEDIAWIKI')) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '8.20' );
+define( 'TRANSLATE_VERSION', '8.21' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name'           => 'Translate',
@@ -206,6 +206,7 @@ $wgTranslateAC = array(
 'ext-poem'                  => 'PoemMessageGroup',
 'ext-postcomment'           => 'PostCommentMessageGroup',
 'ext-povwatch'              => 'PovWatchMessageGroup',
+'ext-preloader'             => 'PreloaderMessageGroup',
 'ext-profilemonitor'        => 'ProfileMonitorMessageGroup',
 'ext-proofreadpage'         => 'ProofreadPageMessageGroup',
 'ext-protectsection'        => 'ProtectSectionMessageGroup',

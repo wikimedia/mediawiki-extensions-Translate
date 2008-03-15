@@ -1837,6 +1837,14 @@ class PovWatchMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'PovWatch/PovWatch.i18n.php';
 }
 
+class PreloaderMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Preloader';
+	protected $id    = 'ext-preloader';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'Preloader/Preloader.i18n.php';
+}
+
 class ProfileMonitorMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Profile Monitor';
 	protected $id      = 'ext-profilemonitor';
