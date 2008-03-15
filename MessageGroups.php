@@ -2379,12 +2379,13 @@ class FreeColMessageGroup extends MessageGroup {
 
 	protected $description = 'Before starting translating FreeCol to your language, please read [[Translating:FreeCol]] and ask ok from the FreeCol localisation coordinator. Freecol uses GPL-license.';
 
-	private   $fileDir  = 'freecol/';
+	private   $fileDir  = '__BUG__';
 
 	public function __construct() {
 		parent::__construct();
 		global $wgTranslateExtensionDirectory;
 		$this->fileDir = $wgTranslateExtensionDirectory . 'freecol/';
+		$this->mangler = new StringMatcher( $this->prefix, array( '*' ) );
 	}
 
 	public function getMessage( $key, $code ) {
@@ -2392,26 +2393,38 @@ class FreeColMessageGroup extends MessageGroup {
 		return isset( $this->mcache[$code][$key] ) ? $this->mcache[$code][$key] : null;
 	}
 
-	private function load( $code ) {
+	public function getMessageFile( $code ) {
 		if ( $code == 'en' ) {
-			$filenameXX = $this->fileDir . "FreeColMessages.properties";
+			return 'FreeColMessages.properties';
 		} else {
-			$filenameXX = $this->fileDir . "freecol_$code";
+			return "freecol_$code";
 		}
+	}
 
-		$linesXX = false;
-		if ( file_exists( $filenameXX ) ) {
-			$linesXX = file( $filenameXX );
+	protected function getFileLocation( $code ) {
+		return $this->fileDir . $this->getMessageFile( $code );
+	}
+
+	private function load( $code ) {
+		if ( isset($this->mcache[$code]) ) return;
+
+		$filename = $this->getFileLocation( $code );
+
+		$lines = false;
+		if ( file_exists( $filename ) ) {
+			$lines = file( $filename );
 		} else {
 			# No such localisation, fall out
+			$this->mcache[$code] = null;
 			return;
 		}
 
-		if ( !$linesXX) { return; }
-		foreach ( $linesXX as $line ) {
+		if ( !$lines ) { return; }
+
+		foreach ( $lines as $line ) {
 			if ( !strpos( $line, '=' ) ) { continue; }
 			list( $key, $string ) = explode( '=', $line, 2 );
-			$this->mcache[$code][$this->prefix . $key] = trim($string);
+			$this->mcache[$code][$this->mangler->mangle($key)] = trim($string);
 		}
 
 	}
@@ -2423,7 +2436,6 @@ class FreeColMessageGroup extends MessageGroup {
 
 		$array = $this->makeExportArray( $messages );
 		foreach ($array as $key => $translation) {
-			list(, $key) = explode( '-', $key, 2);
 			$txt .= $key . '=' . rtrim( $translation ) . "\n";
 		}
 		return $txt;
