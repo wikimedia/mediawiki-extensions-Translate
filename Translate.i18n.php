@@ -2735,9 +2735,12 @@ $messages['oc'] = array(
 /** Polish (Polski)
  * @author McMonster
  * @author Wpedzich
+ * @author Derbeth
+ * @author Dodek
  */
 $messages['pl'] = array(
 	'translate'                         => 'Przetłumacz',
+	'translate-desc'                    => '[[Special:Translate|Strona specjalna]] do tłumaczenia Mediawiki i innych',
 	'translate-edit'                    => 'edytuj',
 	'translate-talk'                    => 'dyskusja',
 	'translate-history'                 => 'historia',
@@ -2756,6 +2759,7 @@ $messages['pl'] = array(
 	'translate-page-task'               => 'Chcę',
 	'translate-page-group'              => 'Grupa',
 	'translate-page-language'           => 'Język',
+	'translate-page-limit'              => 'Ograniczenie',
 	'translate-page-limit-option'       => '$1 {{PLURAL:$1|komunikat|komunikaty|komunikatów}} na stronę',
 	'translate-submit'                  => 'Pobierz',
 	'translate-page-navigation-legend'  => 'Nawigacja',
@@ -2765,17 +2769,35 @@ $messages['pl'] = array(
 	'translate-next'                    => 'Następna strona',
 	'translate-prev'                    => 'Poprzednia strona',
 	'translate-page-description-legend' => 'Informacje na temat grupy',
+	'translate-optional'                => '(dodatkowe)',
+	'translate-ignored'                 => '(zignorowane)',
 	'translate-edit-definition'         => 'Tekst źródłowy komunikatu',
+	'translate-edit-contribute'         => 'prześlij',
 	'translate-edit-no-information'     => "''Ten komunikat nie posiada dokumentacji. Jeśli wiesz gdzie lub jak ten komunikat jest używany, możesz pomóc innym tłumaczom przez dodanie dokumentacji do tego komunikatu.''",
 	'translate-edit-information'        => 'Informacja na temat tego komunikatu ($1)',
 	'translate-edit-in-other-languages' => 'Komunikaty w innych językach',
+	'translate-edit-committed'          => 'Aktualne tłumaczenie oprogramowania',
 	'translate-edit-warnings'           => 'Ostrzeżenia o niedokończonych tłumaczeniach',
+	'translate-magic-pagename'          => 'Rozszerzone tłumaczenie MediaWiki',
+	'translate-magic-help'              => 'Możliwe jest tłumaczenie aliasów stron specjalnych, magicznych słów, nazw motywów i nazw poszczególnych przestrzeni.
+
+Do magicznych słów należy dołączyć wersje angielskie, gdyż w przeciwnym razie przestaną one działać. Pierwszy wpis należy pozostawić w takim stanie, w jakim on występuje (0 lub 1).
+
+Aliasy stron specjalnych i magiczne słowa mogą mieć wiele tłumaczeń, które oddziela się przecinkiem (,). Nazwy motywów i przestrzeni mogą mieć tylko po jednym tłumaczeniu.
+
+Podczas tłumaczenia nazw specjalne znaczenie ma zapis <tt>Dyskusja $1</tt>, gdzie <tt>$1</tt> zamienia się w nazwę serwisu - na przykład <tt>Dyskusja {{SITENAME}}</tt>. Jeśli w danym języku niemożliwe jest sformułowanie prawidłowego wpisu bez zmiany nazwy serwisu, należy skontaktować się z deweloperem.
+
+By móc zapisać zmiany, należy znaleźć się w grupie tłumaczy. Zmiany nie są zapisywane, dopóki użytkownik nie naciśnie umieszczonego poniżej przycisku "Zapisz".',
 	'translate-magic-form'              => 'Język: $1 Moduł: $2 $3',
 	'translate-magic-submit'            => 'Pobierz',
+	'translate-magic-cm-to-be'          => 'Przyszły',
+	'translate-magic-cm-current'        => 'Aktualny',
+	'translate-magic-cm-original'       => 'Początkowy',
+	'translate-magic-cm-fallback'       => 'Poprzedni',
 	'translate-magic-cm-comment'        => 'Komentarz:',
 	'translate-magic-cm-save'           => 'Zapisz',
 	'translate-magic-cm-export'         => 'Eksportuj',
-	'translate-magic-cm-updatedusing'   => 'Uaktualnio0ne za pomocą strony Special:Magic',
+	'translate-magic-cm-updatedusing'   => 'Uaktualnione za pomocą strony Special:Magic',
 	'translate-magic-cm-savefailed'     => 'Zapis nieudany',
 	'translate-magic-special'           => 'Aliasy stron specjalnych',
 	'translate-magic-words'             => 'Magiczne słowa',
@@ -2783,6 +2805,7 @@ $messages['pl'] = array(
 	'translate-magic-namespace'         => 'Nazwy w przestrzeni nazw',
 	'translationchanges'                => 'Zmiany w tłumaczeniu',
 	'translationchanges-export'         => 'eksportuj',
+	'translationchanges-change'         => '$1: $2 przez $3',
 	'translate-checks-parameters'       => 'Następujące parametry nie są wykorzystywane: <strong>$1</strong>',
 	'translate-checks-balance'          => 'W wyrażeniu napotkano nieparzystą liczbę nawiasów: <strong>$1</strong>',
 	'translate-checks-links'            => 'Wystąpiły problemy z następującymi linkami: <strong>$1</strong>',
@@ -3342,7 +3365,24 @@ $messages['tet'] = array(
  * @author Ibrahim
  */
 $messages['tg'] = array(
-	'translate-talk' => 'баҳс',
+	'translate-talk'                  => 'баҳс',
+	'translate-magic-form'            => 'Забон: $1 Воҳид: $2 $3',
+	'translate-magic-cm-to-be'        => 'Будан',
+	'translate-magic-cm-current'      => 'Кунунӣ',
+	'translate-magic-cm-original'     => 'Аслӣ',
+	'translate-magic-cm-fallback'     => 'Пуштандоз',
+	'translate-magic-cm-comment'      => 'Тавзеҳот:',
+	'translate-magic-cm-save'         => 'Захира',
+	'translate-magic-cm-export'       => 'Судур',
+	'translate-magic-cm-updatedusing' => 'Барӯз шуд тавассути Special:Magic',
+	'translate-magic-cm-savefailed'   => 'Шикаст дар захира кардан',
+	'translate-magic-words'           => 'Калимаҳои ҷодуӣ',
+	'translate-magic-skin'            => 'Исми пӯстаҳо',
+	'translate-magic-namespace'       => 'Исми фазоҳои ном',
+	'translationchanges'              => 'Тағйироти тарҷума',
+	'translationchanges-export'       => 'судур',
+	'translationchanges-change'       => '$1: $2 аз тарафи $3',
+	'translate-checks-parameters'     => 'Параметрҳои зерин истифода нашудаанд: <strong>$1</strong>',
 );
 
 /** Thai (ไทย)
