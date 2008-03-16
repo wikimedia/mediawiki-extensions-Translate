@@ -2411,7 +2411,7 @@ Magiško žodžio vertimuose nurodykite ir vertimą į anglų kalbą, kitaip jis
 
 Specialiojo puslapio pavadinimo ir magiško žodžio vertimai gali būti keli. Vertimai yra skiriami kableliu (,). Apvalkalo ir vardų srities pavadinimas gali turėti tik vieną vertimą.
 
-Vardų sričių vertimuose <tt>$1 aptarimas</tt> yra specialus. <tt>$1</tt> yra pakeičiamas svetainės pavadinimu (Pavyzdžiui <tt>{{SITENAME}} aptarimas</tt>. Jei nėra galimybės Jūsų kalboje suformuoti teisingos išraiškos su svetainės pavadinimo pakeitimu, prašome kreiptis į kūrėjus.
+Vardų sričių vertimuose <tt>$1 aptarimas</tt> yra specialus. <tt>$1</tt> yra pakeičiamas svetainės pavadinimu (Pavyzdžiui <tt>{{SITENAME}} aptarimas</tt>. Jei nėra galimybės Jūsų kalboje suformuoti teisingos išraiškos su svetainės pavadinimo pakeitimu, prašome kreiptis į kūrėjus. 
 
 Jūs turite priklausyti vertėjų grupei, kad galėtumėte išsaugoti pakeitimus. Pakeitimai nebus išsaugoti iki Jūs nuspausite išsaugojimo butoną apačioje.',
 	'translate-magic-form'              => 'Kalba: $1 Tema: $2 $3',
@@ -2560,7 +2560,7 @@ In magische woorden moet u de Engelstalige vertalingen opnemen, omdat ze anders 
 
 Alternatieven voor speciale pagina\'s en magische woorden kunnen meerdere vertalingen hebben. Scheid vertalingen met een komma (,). Skinnamen en naamruimtebenamingen kunnen slechts één vertaling hebben.
 
-In naamruimtebenamingen is <tt>$1 talk</tt> een uitzondering. <tt>$1</tt> wordt vervangen door de sitenaam (bijvoorbeeld <tt>{{SITENAME}} talk</tt>. Als het in uw taal niet mogelijk is een geldige uitdrukking te vormen zonder de sitenaam te wijzigen, neem dan contact op met een ontwikkelaar.
+In naamruimtebenamingen is <tt>$1 talk</tt> een uitzondering. <tt>$1</tt> wordt vervangen door de sitenaam (bijvoorbeeld <tt>{{SITENAME}} talk</tt>). Als het in uw taal niet mogelijk is een geldige uitdrukking te vormen zonder de sitenaam te wijzigen, neem dan contact op met een ontwikkelaar.
 
 Om wijzigingen op te slaan moet u lid zijn van de groep vertalers. Wijzigingen worden niet bewaard totdat u op "Pagina opslaan" hebt geklikt.',
 	'translate-magic-form'              => 'Taal: $1 Module: $2 $3',
@@ -2588,7 +2588,7 @@ Om wijzigingen op te slaan moet u lid zijn van de groep vertalers. Wijzigingen w
 	'translate-checks-plural'           => 'De definitie bevat <nowiki>{{PLURAL:}}</nowiki>, maar de vertaling niet.',
 );
 
-/** Norwegian (‪Norsk (bokmål)‬)
+/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
  * @author Jon Harald Søby
  * @author Siebrand
  */
@@ -2633,13 +2633,13 @@ $messages['no'] = array(
 	'translate-edit-committed'          => 'Nåværende oversettelse',
 	'translate-edit-warnings'           => 'Advarsler om ufullstendige oversettelser',
 	'translate-magic-pagename'          => 'Utvidet MediaWiki-oversettelse',
-	'translate-magic-help'              => 'Du kan oversette spesialsidenavn, magiske ord, utseendenavn og navneromnavn.
+	'translate-magic-help'              => 'u kan oversette spesialsidenavn, magiske ord, utseendenavn og navneromnavn.
 
 I magiske ord må du inkludere engelskspråklige oversettelser, ellers vil de ikke fungere. La også det første punktet (0 eller 1) være som det er.
 
 Spesialsidenavn og magiske ord kan ha flere oversettelser. Oversettelser skilles med et komma (,). Utseendenavn og navnerom kan kun ha én oversettelse.
 
-I navneromoversettelsene er <tt>$1 talk</tt> spesiell. <tt>$1</tt> erstattes med sidens navn (for eksempel <tt>{{SITENAME}}</tt>. Om det ikke er mulig å få til et gyldig uttrykk på ditt språk her uten å endre sidenavnet, kontakt en utvikler.
+I navneromoversettelsene er <tt>$1 talk</tt> spesiell. <tt>$1</tt> erstattes med sidens navn (for eksempel <tt>{{SITENAME}}</tt>). Om det ikke er mulig å få til et gyldig uttrykk på ditt språk her uten å endre sidenavnet, kontakt en utvikler.
 
 Du må være i oversettergruppa for å lagre endringer. Endringer lagres ikke før du klikker på lagre-knappen nedenfor.',
 	'translate-magic-form'              => 'Språk: $1 Modul: $2 $3',
@@ -3371,24 +3371,64 @@ $messages['tet'] = array(
  * @author Ibrahim
  */
 $messages['tg'] = array(
-	'translate-talk'                  => 'баҳс',
-	'translate-magic-form'            => 'Забон: $1 Воҳид: $2 $3',
-	'translate-magic-cm-to-be'        => 'Будан',
-	'translate-magic-cm-current'      => 'Кунунӣ',
-	'translate-magic-cm-original'     => 'Аслӣ',
-	'translate-magic-cm-fallback'     => 'Пуштандоз',
-	'translate-magic-cm-comment'      => 'Тавзеҳот:',
-	'translate-magic-cm-save'         => 'Захира',
-	'translate-magic-cm-export'       => 'Судур',
-	'translate-magic-cm-updatedusing' => 'Барӯз шуд тавассути Special:Magic',
-	'translate-magic-cm-savefailed'   => 'Шикаст дар захира кардан',
-	'translate-magic-words'           => 'Калимаҳои ҷодуӣ',
-	'translate-magic-skin'            => 'Исми пӯстаҳо',
-	'translate-magic-namespace'       => 'Исми фазоҳои ном',
-	'translationchanges'              => 'Тағйироти тарҷума',
-	'translationchanges-export'       => 'судур',
-	'translationchanges-change'       => '$1: $2 аз тарафи $3',
-	'translate-checks-parameters'     => 'Параметрҳои зерин истифода нашудаанд: <strong>$1</strong>',
+	'translate'                         => 'Тарҷума',
+	'translate-desc'                    => '[[Special:Translate|Саҳифаи вижа]] барои тарҷумаи МедиаВики ва бартар аз он',
+	'translate-edit'                    => 'вироиш',
+	'translate-talk'                    => 'баҳс',
+	'translate-history'                 => 'таърих',
+	'translate-task-view'               => 'Намоиши тамоми пайғомҳо аз',
+	'translate-task-untranslated'       => 'Намоиши тамоми пайғомҳои тарҷуманашуда аз',
+	'translate-task-optional'           => 'Намоиши пайғомҳои ихтиёрӣ аз',
+	'translate-task-review'             => 'Бозбинии тағйирот',
+	'translate-task-reviewall'          => 'Бозбинии тамоми тарҷумаҳо дар',
+	'translate-task-export'             => 'Судури тарҷумаҳо аз',
+	'translate-task-export-to-file'     => 'Судури тарҷумаҳо ба як парванда аз',
+	'translate-task-export-as-po'       => 'Судури тарҷумаҳо дар қолаби Gettext',
+	'translate-page-no-such-language'   => 'Забони мушаххасшуда ғайримиҷоз аст.',
+	'translate-page-no-such-task'       => 'Амали мушаххасшуда ғайримиҷоз аст.',
+	'translate-page-no-such-group'      => 'Гурӯҳи мушаххасшуда ғайримиҷоз аст.',
+	'translate-page-settings-legend'    => 'Танзимот',
+	'translate-page-task'               => 'Ман мехоҳам',
+	'translate-page-group'              => 'Гурӯҳ',
+	'translate-page-language'           => 'Забон',
+	'translate-page-limit'              => 'Ҳудуд',
+	'translate-page-limit-option'       => '$1 {{PLURAL:$1|пайғом|пайғомҳо}} дар ҳар саҳифа',
+	'translate-submit'                  => 'Вокашидан',
+	'translate-page-navigation-legend'  => 'Гаштан',
+	'translate-page-showing'            => 'Намоиши пайғомҳои $3 аз $1 то $2.',
+	'translate-page-showing-all'        => 'Намоиши $1 {{PLURAL:$1|пайғом|пайғомҳо}}.',
+	'translate-page-showing-none'       => 'Пайғоме барои намоиши вуҷуд надорад.',
+	'translate-next'                    => 'Саҳифаи баъдӣ',
+	'translate-prev'                    => 'Саҳифаи қаблӣ',
+	'translate-page-description-legend' => 'Иттилоот дар бораи гурӯҳ',
+	'translate-optional'                => '(ихтиёрӣ)',
+	'translate-ignored'                 => '(нодида гирифташуда)',
+	'translate-edit-definition'         => 'Таърифи пайғом',
+	'translate-edit-contribute'         => 'ҳиссагузорӣ',
+	'translate-edit-no-information'     => "''Ин пайғом дорои тавзеҳот нест. 
+Агар шумо медонед ин пағом чигуна ё дар куҷо истифода мешавад, шумо метавонед бо изофа кардани тавзеҳот ба ин пайғом ба дигар тарҷумакунандагон кӯмак кунед.''",
+	'translate-edit-information'        => 'Иттилоот дар мавриди ин пайғом ($1)',
+	'translate-edit-in-other-languages' => 'Ҳамин пайғом дар дигар забонҳо',
+	'translate-edit-committed'          => 'Тарҷумаи феълӣ дар нармафзор',
+	'translate-edit-warnings'           => 'Ҳушдор дар мавриди тарҷумаҳои нокомил',
+	'translate-magic-pagename'          => 'Тарҷумаи густаришёфтаи МедиаВики',
+	'translate-magic-form'              => 'Забон: $1 Воҳид: $2 $3',
+	'translate-magic-cm-to-be'          => 'Будан',
+	'translate-magic-cm-current'        => 'Кунунӣ',
+	'translate-magic-cm-original'       => 'Аслӣ',
+	'translate-magic-cm-fallback'       => 'Пуштандоз',
+	'translate-magic-cm-comment'        => 'Тавзеҳот:',
+	'translate-magic-cm-save'           => 'Захира',
+	'translate-magic-cm-export'         => 'Судур',
+	'translate-magic-cm-updatedusing'   => 'Барӯз шуд тавассути Special:Magic',
+	'translate-magic-cm-savefailed'     => 'Шикаст дар захира кардан',
+	'translate-magic-words'             => 'Калимаҳои ҷодуӣ',
+	'translate-magic-skin'              => 'Исми пӯстаҳо',
+	'translate-magic-namespace'         => 'Исми фазоҳои ном',
+	'translationchanges'                => 'Тағйироти тарҷума',
+	'translationchanges-export'         => 'судур',
+	'translationchanges-change'         => '$1: $2 аз тарафи $3',
+	'translate-checks-parameters'       => 'Параметрҳои зерин истифода нашудаанд: <strong>$1</strong>',
 );
 
 /** Thai (ไทย)
@@ -3556,6 +3596,7 @@ $messages['uk'] = array(
 
 /** Vietnamese (Tiếng Việt)
  * @author Vinhtantran
+ * @author Minh Nguyen
  */
 $messages['vi'] = array(
 	'translate'                         => 'Biên dịch',
@@ -3604,7 +3645,7 @@ Trong các từ thần chú bạn cần phải ghi kèm các bản dịch tiến
 
 Bí danh của các trang đặc biệt và từ thần chú có thể có nhiều bản dịch. Các bản dịch phân cách nhau bằng dấu phẩy (,). Tên hình dạng giao diện và không gian tên chỉ có thể có một bản dịch.
 
-Trong các bản dịch không gian tên, <tt>$1 talk</tt> có đặc biệt hơn. <tt>$1</tt> được thay thế bằng tên trang (ví dụ <tt>{{SITENAME}} talk</tt>. Nếu ngôn ngữ của bạn không thể hiển thị đúng nếu không đổi tên trang (SITENAME), xin hãy liên hệ với một lập trình viên.
+Trong các bản dịch không gian tên, <tt>$1 talk</tt> có đặc biệt hơn. <tt>$1</tt> được thay thế bằng tên trang (ví dụ <tt>{{SITENAME}} talk</tt>). Nếu ngôn ngữ của bạn không thể hiển thị đúng nếu không đổi tên trang (SITENAME), xin hãy liên hệ với một lập trình viên.
 
 Bạn cần phải thuộc nhóm biên dịch viên để có thể lưu các thay đổi. Các thay đổi sẽ không được lưu lại đến khi nào bạn nhấn vào nút lưu ở dưới.',
 	'translate-magic-form'              => 'Ngôn ngữ: $1 Gói: $2 $3',
