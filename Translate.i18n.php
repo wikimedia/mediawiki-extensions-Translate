@@ -1624,6 +1624,7 @@ Dyrbiš w skupinje přełožowarjow być, zo by změny składował. Změny so nj
 	'translate-magic-cm-current'        => 'Tuchwilu',
 	'translate-magic-cm-original'       => 'Original',
 	'translate-magic-cm-fallback'       => 'Wuhibna rěč',
+	'translate-magic-cm-comment'        => 'Komentar:',
 	'translate-magic-cm-save'           => 'Składować',
 	'translate-magic-cm-export'         => 'Eksportować',
 	'translate-magic-cm-updatedusing'   => 'Z Special:Magic zaktualizowany',
