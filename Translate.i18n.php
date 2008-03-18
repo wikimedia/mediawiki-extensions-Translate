@@ -2862,6 +2862,25 @@ $messages['pms'] = array(
 	'translationchanges' => 'Modìfiche ëd viragi',
 );
 
+/** Pashto (پښتو)
+ * @author Ahmed-Najib-Biabani-Ibrahimkhel
+ */
+$messages['ps'] = array(
+	'translate'                         => 'ژباړل',
+	'translate-talk'                    => 'خبرې اترې',
+	'translate-history'                 => 'پېښليک',
+	'translate-task-view'               => 'ټول هغه پيغامونه کتل چې دي په',
+	'translate-edit-contribute'         => 'ونډه اخيستل',
+	'translate-edit-information'        => 'د همدې پيغام په اړه مالومات ($1)',
+	'translate-edit-in-other-languages' => 'پيغام په نورو ژبو کې',
+	'translate-magic-submit'            => 'راغونډول',
+	'translate-magic-cm-current'        => 'اوسنی',
+	'translate-magic-cm-original'       => 'آرنی',
+	'translate-magic-cm-save'           => 'خوندي کول',
+	'translate-magic-words'             => 'کوډګريز وييونه',
+	'translationchanges'                => 'د ژباړې بدلونونه',
+);
+
 /** Portuguese (Português)
  * @author 555
  * @author Malafaya
@@ -2902,7 +2921,7 @@ $messages['pt'] = array(
 	'translate-edit-definition'         => 'Definição da mensagem',
 	'translate-edit-contribute'         => 'contribua',
 	'translate-edit-no-information'     => "''Esta mensagem ainda não foi documentada. Caso você saiba onde ou como ela é utilizada poderá ajudar outros tradutores adicionando dados sobre esta mensagem.''",
-	'translate-edit-information'        => 'Informações sobre esta mensagem',
+	'translate-edit-information'        => 'Informações sobre esta mensagem ($1)',
 	'translate-edit-in-other-languages' => 'Mensagem em outros idiomas',
 	'translate-edit-committed'          => 'Tradução actualmente disponível no software',
 	'translate-edit-warnings'           => 'Avisos sobre traduções incompletas',
@@ -2911,11 +2930,13 @@ $messages['pt'] = array(
 
 É necessário incluir os termos em Inglês para as palavras mágicas, ou elas pararão de funcionar. Mantenha também o primeiro item (0 ou 1) da forma como se encontra.
 
-Os alias de páginas especiais e palavras mágicas podem receber múltiplas traduções, separadas por vírgulas (,). Nomes de temas e espaços nominais podem receber apenas uma tradução.
+Os alias de páginas especiais e palavras mágicas podem receber múltiplas traduções, separadas por vírgulas (,).
+Nomes de temas e espaços nominais podem receber apenas uma tradução.
 
 Nas traduções de espaços nominais a partícula <tt>$1 talk</tt> é especial. <tt>$1</tt> é trocada pelo nome do sítio (por exemplo, <tt>{{SITENAME}} talk</tt>. Se não é possível formar em seu idioma expressões válidas sem mexer com o nome do sítio, por gentileza, procure um desenvolvedor.
 
-É necessário pertencer ao grupo de tradutores para conseguir salvar as alterações. As alterações não serão salvas até que você clique no botão de salvar.',
+É necessário pertencer ao grupo de tradutores para conseguir salvar as alterações.
+As alterações não serão salvas até que você clique no botão de salvar.',
 	'translate-magic-form'              => 'Língua: $1 Módulo: $2 $3',
 	'translate-magic-submit'            => 'Trazer',
 	'translate-magic-cm-to-be'          => 'Novo',
