@@ -240,10 +240,12 @@ class TranslateUtils {
 			$original = $m->definition;
 			$message = $m->translation ? $m->translation : $original;
 
+			global $wgLang;
+			$niceTitle = $wgLang->truncate( $key, -30, '…' );
 			if( $m->pageExists ) {
-				$page['link'] = $sk->makeKnownLinkObj( $page['object'], htmlspecialchars( $key ) );
+				$page['link'] = $sk->makeKnownLinkObj( $page['object'], htmlspecialchars( $niceTitle ) );
 			} else {
-				$page['link'] = $sk->makeBrokenLinkObj( $page['object'], htmlspecialchars( $key ) );
+				$page['link'] = $sk->makeBrokenLinkObj( $page['object'], htmlspecialchars( $niceTitle ) );
 			}
 			if( $m->talkExists ) {
 				$talk['link'] = $sk->makeKnownLinkObj( $talk['object'], $uimsg['talk'] );

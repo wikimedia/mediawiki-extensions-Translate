@@ -93,7 +93,7 @@ class SpecialTranslate extends SpecialPage {
 		global $wgUser, $wgRequest;
 
 		$defaults = array(
-		/* str  */ 'task'     => 'view',
+		/* str  */ 'task'     => 'untranslated',
 		/* str  */ 'sort'     => 'normal',
 		/* str  */ 'language' => $wgUser->getOption( 'language' ),
 		/* str  */ 'group'    => 'core',
