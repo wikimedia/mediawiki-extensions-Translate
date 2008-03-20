@@ -153,6 +153,7 @@ $messages['af'] = array(
 
 /** Aragonese (Aragonés)
  * @author Juanpabl
+ * @author Siebrand
  */
 $messages['an'] = array(
 	'translate'                         => 'Traduzir',
@@ -204,7 +205,7 @@ Ha de pertenexer á la colla de tradutors ta alzar os cambeos. Ístos no quedan 
 	'translate-magic-cm-fallback'       => "Luenga d'aduya",
 	'translate-magic-cm-save'           => 'Alzar',
 	'translate-magic-cm-export'         => 'Esportar',
-	'translate-magic-cm-updatedusing'   => 'Esbiellato usando Special:Magic',
+	'translate-magic-cm-updatedusing'   => 'Esbiellato usando [[Special:Magic]]',
 	'translate-magic-cm-savefailed'     => 'No se podió alzar a pachina',
 	'translate-magic-special'           => 'Alias de pachinas espezials',
 	'translate-magic-words'             => 'Parabras machicas',
@@ -284,7 +285,7 @@ $messages['ar'] = array(
 	'translate-magic-cm-comment'        => 'تعليق:',
 	'translate-magic-cm-save'           => 'حفظ',
 	'translate-magic-cm-export'         => 'تصدير',
-	'translate-magic-cm-updatedusing'   => 'حدث باستخدام Special:Magic',
+	'translate-magic-cm-updatedusing'   => 'حدث باستخدام [[Special:Magic]]',
 	'translate-magic-cm-savefailed'     => 'الحفظ فشل',
 	'translate-magic-special'           => 'أسماء الصفحات الخاصة',
 	'translate-magic-words'             => 'كلمات سحرية',
@@ -315,6 +316,7 @@ $messages['arn'] = array(
 
 /** Asturian (Asturianu)
  * @author Esbardu
+ * @author Siebrand
  */
 $messages['ast'] = array(
 	'translate'                         => 'Traducir',
@@ -375,7 +377,7 @@ Necesites tar nel grupu de traductores pa guardar los cambeos. Los cambeos nun s
 	'translate-magic-cm-comment'        => 'Comentariu:',
 	'translate-magic-cm-save'           => 'Guardar',
 	'translate-magic-cm-export'         => 'Esportar',
-	'translate-magic-cm-updatedusing'   => 'Actualizao usando Special:Magic',
+	'translate-magic-cm-updatedusing'   => 'Actualizao usando [[Special:Magic]]',
 	'translate-magic-cm-savefailed'     => "Falló'l guardáu",
 	'translate-magic-special'           => 'Nomes de páxines especiales',
 	'translate-magic-words'             => 'Pallabres máxiques',
@@ -471,7 +473,7 @@ $messages['bg'] = array(
 	'translate-magic-cm-comment'        => 'Коментар:',
 	'translate-magic-cm-save'           => 'Съхранение',
 	'translate-magic-cm-export'         => 'Изнасяне',
-	'translate-magic-cm-updatedusing'   => 'Обновено чрез Special:Magic',
+	'translate-magic-cm-updatedusing'   => 'Обновено чрез [[Special:Magic]]',
 	'translate-magic-cm-savefailed'     => 'Съхраняването беше неуспешно',
 	'translate-magic-words'             => 'Вълшебни думички',
 	'translate-magic-skin'              => 'Имена на облици',
@@ -515,6 +517,7 @@ $messages['bpy'] = array(
 
 /** Breton (Brezhoneg)
  * @author Fulup
+ * @author Siebrand
  */
 $messages['br'] = array(
 	'translate'                         => 'Treiñ',
@@ -575,7 +578,7 @@ Ret eo deoc'h bezañ ezel eus ur strollad troourien evit enrollañ ar c'hemmoù.
 	'translate-magic-cm-comment'        => 'Notenn :',
 	'translate-magic-cm-save'           => 'Enrollañ',
 	'translate-magic-cm-export'         => 'Ezporzhiañ',
-	'translate-magic-cm-updatedusing'   => 'Hizivaet en ur implijout Special:Magic',
+	'translate-magic-cm-updatedusing'   => 'Hizivaet en ur implijout [[Special:Magic]]',
 	'translate-magic-cm-savefailed'     => "C'hwitet enrollañ",
 	'translate-magic-special'           => 'Aliasoù pajenn zibar',
 	'translate-magic-words'             => 'Gerioù burzhudus',
@@ -594,6 +597,7 @@ Ret eo deoc'h bezañ ezel eus ur strollad troourien evit enrollañ ar c'hemmoù.
 /** Catalan (Català)
  * @author SMP
  * @author Toniher
+ * @author Siebrand
  */
 $messages['ca'] = array(
 	'translate'                         => 'Tradueix',
@@ -654,7 +658,7 @@ Heu de tenir permisos de traductor per a desar els canvis, que no es guardaran f
 	'translate-magic-cm-comment'        => 'Comentari:',
 	'translate-magic-cm-save'           => 'Desa',
 	'translate-magic-cm-export'         => 'Exporta',
-	'translate-magic-cm-updatedusing'   => 'Actualitzat amb Special:Magic',
+	'translate-magic-cm-updatedusing'   => 'Actualitzat amb [[Special:Magic]]',
 	'translate-magic-cm-savefailed'     => 'Error al desar',
 	'translate-magic-special'           => 'Noms de les pàgines especials',
 	'translate-magic-words'             => 'Paraules màgiques',
@@ -673,6 +677,7 @@ Heu de tenir permisos de traductor per a desar els canvis, que no es guardaran f
 /** Czech (Česky)
  * @author Li-sung
  * @author Matěj Grabovský
+ * @author Siebrand
  */
 $messages['cs'] = array(
 	'translate'                         => 'Přeložit',
@@ -724,7 +729,7 @@ $messages['cs'] = array(
 	'translate-magic-cm-comment'        => 'Komentář:',
 	'translate-magic-cm-save'           => 'Uložit',
 	'translate-magic-cm-export'         => 'Exportovat',
-	'translate-magic-cm-updatedusing'   => 'Aktualizovat pomocí Special:Magic',
+	'translate-magic-cm-updatedusing'   => 'Aktualizovat pomocí [[Special:Magic]]',
 	'translate-magic-cm-savefailed'     => 'Uložení se nepovedlo',
 	'translate-magic-special'           => 'Alternativní jména speciálních stránek',
 	'translate-magic-words'             => 'Kouzelná slůvka',
@@ -832,6 +837,7 @@ Du musst in der Übersetzer-Gruppe sein um Änderungen zu speichern. Änderungen
 
 /** Lower Sorbian (Dolnoserbski)
  * @author Michawiki
+ * @author Siebrand
  * @author Dundak
  */
 $messages['dsb'] = array(
@@ -893,7 +899,7 @@ Musyš w kupce pśełožowarjow byś, aby změny cyniś mógł. Změny se njesk�
 	'translate-magic-cm-comment'        => 'Komentar',
 	'translate-magic-cm-save'           => 'Składowaś',
 	'translate-magic-cm-export'         => 'Eksportěrowaś',
-	'translate-magic-cm-updatedusing'   => 'Z pomocu Special:Magic zaktualizěrowany',
+	'translate-magic-cm-updatedusing'   => 'Z pomocu [[Special:Magic]] zaktualizěrowany',
 	'translate-magic-cm-savefailed'     => 'Składowanje jo se njeraźiło',
 	'translate-magic-special'           => 'Aliasy specialnych bokow',
 	'translate-magic-words'             => 'Magiske słowa',
@@ -954,6 +960,7 @@ $messages['el'] = array(
  * @author Michawiki
  * @author Tlustulimu
  * @author Yekrats
+ * @author Siebrand
  */
 $messages['eo'] = array(
 	'translate'                         => 'Tradukado',
@@ -1014,7 +1021,7 @@ Vi devas esti en la grupo de tradukantoj por konservi ŝanĝojn. Ŝanĝoj ne est
 	'translate-magic-cm-comment'        => 'Komento:',
 	'translate-magic-cm-save'           => 'Konservu',
 	'translate-magic-cm-export'         => 'Eksportu',
-	'translate-magic-cm-updatedusing'   => 'Ĝisdatigita pere de Special:Magic',
+	'translate-magic-cm-updatedusing'   => 'Ĝisdatigita pere de [[Special:Magic]]',
 	'translate-magic-cm-savefailed'     => 'Konservado malsukcesis',
 	'translate-magic-special'           => 'Kromnomoj de specialaj paĝoj',
 	'translate-magic-words'             => 'Magiaj vortoj',
@@ -1339,6 +1346,7 @@ $messages['frc'] = array(
 
 /** Franco-Provençal (Arpetan)
  * @author ChrisPtDe
+ * @author Siebrand
  */
 $messages['frp'] = array(
 	'translate'                         => 'Traduire',
@@ -1399,7 +1407,7 @@ Vos dête apartegnir a la tropa des traductors por sôvar los changements. Los c
 	'translate-magic-cm-comment'        => 'Comentèro :',
 	'translate-magic-cm-save'           => 'Sôvar',
 	'translate-magic-cm-export'         => 'Èxportar',
-	'translate-magic-cm-updatedusing'   => 'Betâ a jorn en utilisent Special:Magic',
+	'translate-magic-cm-updatedusing'   => 'Betâ a jorn en utilisent [[Special:Magic]]',
 	'translate-magic-cm-savefailed'     => 'Falyita de la sôvegouârda',
 	'translate-magic-special'           => 'Noms de les pâges spèciâles',
 	'translate-magic-words'             => 'Mots magicos',
@@ -1478,7 +1486,7 @@ Nas traducións dos espazos de nomes, <tt>$1 talk</tt> é especial. <tt>$1</tt> 
 	'translate-magic-cm-comment'        => 'Comentario:',
 	'translate-magic-cm-save'           => 'Gardar',
 	'translate-magic-cm-export'         => 'Exportar',
-	'translate-magic-cm-updatedusing'   => 'Actualizado mediante Special:Magic',
+	'translate-magic-cm-updatedusing'   => 'Actualizado mediante [[Special:Magic]]',
 	'translate-magic-cm-savefailed'     => 'Fallou o gardado',
 	'translate-magic-special'           => 'Alias de páxinas especiais',
 	'translate-magic-words'             => 'Palabras máxicas',
@@ -1504,6 +1512,7 @@ $messages['he'] = array(
 /** Croatian (Hrvatski)
  * @author Dnik
  * @author SpeedyGonsales
+ * @author Siebrand
  */
 $messages['hr'] = array(
 	'translate'                         => 'Prijevodi sistemskih poruka',
@@ -1549,7 +1558,7 @@ $messages['hr'] = array(
 	'translate-magic-cm-fallback'       => 'Pričuvna inačica',
 	'translate-magic-cm-save'           => 'Snimi',
 	'translate-magic-cm-export'         => 'Izvezi',
-	'translate-magic-cm-updatedusing'   => 'Osvježeno uporabom Special:Magic stranice',
+	'translate-magic-cm-updatedusing'   => 'Osvježeno uporabom [[Special:Magic]] stranice',
 	'translate-magic-cm-savefailed'     => 'Snimanje nije uspjelo',
 	'translate-magic-special'           => 'Alijasi posebnih stranica',
 	'translate-magic-words'             => 'Magične riječi (stringovi)',
@@ -1627,7 +1636,7 @@ Dyrbiš w skupinje přełožowarjow być, zo by změny składował. Změny so nj
 	'translate-magic-cm-comment'        => 'Komentar:',
 	'translate-magic-cm-save'           => 'Składować',
 	'translate-magic-cm-export'         => 'Eksportować',
-	'translate-magic-cm-updatedusing'   => 'Z Special:Magic zaktualizowany',
+	'translate-magic-cm-updatedusing'   => 'Z [[Special:Magic]] zaktualizowany',
 	'translate-magic-cm-savefailed'     => 'Składowanje njeporadźiło',
 	'translate-magic-special'           => 'Aliasy specialnych stronow',
 	'translate-magic-words'             => 'Magiske słowa',
@@ -1652,6 +1661,7 @@ $messages['ht'] = array(
 
 /** Hungarian (Magyar)
  * @author Bdanee
+ * @author Siebrand
  */
 $messages['hu'] = array(
 	'translate'                         => 'Fordítás',
@@ -1699,7 +1709,7 @@ $messages['hu'] = array(
 	'translate-magic-cm-original'       => 'Eredeti',
 	'translate-magic-cm-save'           => 'Mentés',
 	'translate-magic-cm-export'         => 'Exportálás',
-	'translate-magic-cm-updatedusing'   => 'Frissítve a Special:Magic használatával',
+	'translate-magic-cm-updatedusing'   => 'Frissítve a [[Special:Magic]] használatával',
 	'translate-magic-cm-savefailed'     => 'Mentés sikertelen',
 	'translate-magic-special'           => 'Speciális lapok álnevei',
 	'translate-magic-skin'              => 'Felületek nevei',
@@ -1864,6 +1874,7 @@ $messages['it'] = array(
 /** Japanese (日本語)
  * @author JtFuruhata
  * @author Marine-Blue
+ * @author Siebrand
  */
 $messages['ja'] = array(
 	'translate'                         => 'ソフトウェアメッセージの翻訳',
@@ -1924,7 +1935,7 @@ $messages['ja'] = array(
 	'translate-magic-cm-comment'        => '編集内容の要約:',
 	'translate-magic-cm-save'           => '保存',
 	'translate-magic-cm-export'         => 'エクスポート',
-	'translate-magic-cm-updatedusing'   => 'Special:Magic による更新に成功しました',
+	'translate-magic-cm-updatedusing'   => '[[Special:Magic]] による更新に成功しました',
 	'translate-magic-cm-savefailed'     => '保存に失敗しました',
 	'translate-magic-special'           => '特別ページへのエイリアス',
 	'translate-magic-words'             => 'マジックワード',
@@ -2173,10 +2184,58 @@ Esim aya awdarmalarında <tt>$1_talk</tt> degen arnaýı keltiriledi. <tt>$1</tt
 	'translate-checks-plural'           => 'Anıqtalımda <nowiki>{{PLURAL:}}</nowiki> paýdalanılğan, biraq awdarmada bul joq.',
 );
 
+/** Kazakh (Kazakhstan) (‪Қазақша (Қазақстан)‬)
+ * @author AlefZet
+ * @author Siebrand
+ */
+$messages['kk-kz'] = array(
+	'translate'                       => 'Аудару',
+	'translate-edit'                  => 'өңдеу',
+	'translate-talk'                  => 'талқылау',
+	'translate-history'               => 'тарихы',
+	'translate-task-view'             => 'барлық хабарын қарау',
+	'translate-task-untranslated'     => 'аударылмаған барлық хабарын қарау',
+	'translate-task-optional'         => 'міндетті емес хабарларын қарау',
+	'translate-task-review'           => 'өзгерістерін қарап шығу',
+	'translate-task-reviewall'        => 'барлық аудармаларын қарап шығу',
+	'translate-task-export'           => 'аудармаларын сыртқа беру',
+	'translate-task-export-to-file'   => 'аудармаларын файлмен сыртқа беру',
+	'translate-page-no-such-language' => 'Келтірілген тіл белгілемесі жарамсыз',
+	'translate-submit'                => 'Келтір!',
+	'translate-next'                  => 'Келесі бет',
+	'translate-prev'                  => 'Алдыңғы бет',
+	'translate-optional'              => '(міндетті емес)',
+	'translate-ignored'               => '(елемейтін)',
+	'translate-magic-pagename'        => 'Кеңейтілген MediaWiki аударуы',
+	'translate-magic-help'            => 'Арнайы бет бүркемелерін, сиқырлы сөздерін, безендіру мәнер атауларын және есім ая атауларын аудара аласыз.
+
+Сиқырлы сөздерде ағылшынша нұсқасын кіргізуіңіз жөн, әйтпесе қызметі тоқталады. Тағы да бірінші бабын (0 не 1) әрдайым қалдырыңыз.
+
+Арнайы бет бүркемелерінде және сиқырлы сөздерінде бірнеше аударма болуы мүмкін. Аудармалар үтірмен (,) бөліктенеді. Безендіру мәнер және есім ая атауларында тек бір аударма болуы тиіс.
+
+Есім ая аудармаларында <tt>$1_talk</tt> деген арнайы келтіріледі. <tt>$1</tt> деген айналмалы өздіктік торап атауымен алмастырылады (мысалы, <tt>{{SITENAME}} талқылауы</tt>). Егер сіздің тіліңізде торап атауын өзгертпей дұрыс сөйлем құрылмаса, дамытушыларға хабарласыңыз.',
+	'translate-magic-form'            => 'Тілі: $1 Құрашы: $2 $3',
+	'translate-magic-submit'          => 'Келтір',
+	'translate-magic-cm-to-be'        => 'Болуға тиісті',
+	'translate-magic-cm-current'      => 'Ағымдағы',
+	'translate-magic-cm-original'     => 'Түпнұсқасы',
+	'translate-magic-cm-fallback'     => 'Сүйемелдеуі',
+	'translate-magic-cm-save'         => 'Сақта!',
+	'translate-magic-cm-export'       => 'Сыртқа бер',
+	'translate-magic-cm-updatedusing' => '[[Special:Magic]] дегенді қолданып сақталған',
+	'translate-magic-cm-savefailed'   => 'Сақтау сәтсіз болды',
+	'translate-magic-special'         => 'Арнайы бет бүркемелері',
+	'translate-magic-words'           => 'Сиқыр сөздер',
+	'translate-magic-skin'            => 'Безендіру мәнері атаулары',
+	'translate-magic-namespace'       => 'Есім ая атаулары',
+	'translationchanges'              => 'Аударма өзгерістері',
+);
+
 /** Khmer (ភាសាខ្មែរ)
  * @author Chhorran
  * @author គីមស៊្រុន
  * @author Lovekhmer
+ * @author Siebrand
  */
 $messages['km'] = array(
 	'translate'                         => 'បកប្រែ',
@@ -2235,7 +2294,7 @@ $messages['km'] = array(
 	'translate-magic-cm-comment'        => 'យោបល់៖',
 	'translate-magic-cm-save'           => 'រក្សាទុក',
 	'translate-magic-cm-export'         => 'នាំចេញ',
-	'translate-magic-cm-updatedusing'   => 'បានបន្ទាន់សម័យ​ដោយប្រើប្រាស់ Special:Magic',
+	'translate-magic-cm-updatedusing'   => 'បានបន្ទាន់សម័យ​ដោយប្រើប្រាស់ [[Special:Magic]]',
 	'translate-magic-cm-savefailed'     => 'រក្សាទុកមិនបានសំរេច',
 	'translate-magic-special'           => 'ឈ្មោះក្លែងក្លាយនៃទំព័រពិសេស',
 	'translate-magic-words'             => 'ពាក្យទិព្វ',
@@ -2295,7 +2354,7 @@ $messages['lb'] = array(
 	'translate-page-showing-all'        => '$1 {{PLURAL:$1|Message|Message}} gi gewisen',
 	'translate-page-showing-none'       => 'Kee Message fir ze weisen',
 	'translate-next'                    => 'Nächst Säit',
-	'translate-prev'                    => 'Virescht Säit',
+	'translate-prev'                    => 'Säit virdrun',
 	'translate-page-description-legend' => 'Informatiounen iwwert de Grupp',
 	'translate-optional'                => '(optional)',
 	'translate-ignored'                 => '(ignoréiert)',
@@ -2316,7 +2375,7 @@ $messages['lb'] = array(
 	'translate-magic-cm-comment'        => 'Bemierkung:',
 	'translate-magic-cm-save'           => 'Späicheren',
 	'translate-magic-cm-export'         => 'Export',
-	'translate-magic-cm-updatedusing'   => 'Geännert ma Hëllef vu Spezial:Magic',
+	'translate-magic-cm-updatedusing'   => 'Geännert ma Hëllef vu [[Special:Magic]]',
 	'translate-magic-cm-savefailed'     => 'Späicheren huet net fonktionéiert',
 	'translate-magic-special'           => "Spezialsäit vun den 'Aliasnimm'",
 	'translate-magic-words'             => 'Magesch Wierder',
@@ -2423,7 +2482,7 @@ Jūs turite priklausyti vertėjų grupei, kad galėtumėte išsaugoti pakeitimus
 	'translate-magic-cm-fallback'       => 'Atsarginė priemonė',
 	'translate-magic-cm-save'           => 'Išsaugoti',
 	'translate-magic-cm-export'         => 'Eksportuoti',
-	'translate-magic-cm-updatedusing'   => 'Atnaujintas, naudojant Special:Magic',
+	'translate-magic-cm-updatedusing'   => 'Atnaujintas, naudojant [[Special:Magic]]',
 	'translate-magic-cm-savefailed'     => 'Nepavyko išsaugoti',
 	'translate-magic-special'           => 'Specialių puslapių pavadinimai',
 	'translate-magic-words'             => 'Magiški žodžiai',
@@ -2573,7 +2632,7 @@ Om wijzigingen op te slaan moet u lid zijn van de groep vertalers. Wijzigingen w
 	'translate-magic-cm-comment'        => 'Samenvatting:',
 	'translate-magic-cm-save'           => 'Opslaan',
 	'translate-magic-cm-export'         => 'Exporteren',
-	'translate-magic-cm-updatedusing'   => 'Bijgewerkt via Special:Magic',
+	'translate-magic-cm-updatedusing'   => 'Bijgewerkt via [[Special:Magic]]',
 	'translate-magic-cm-savefailed'     => 'Opslaan mislukt',
 	'translate-magic-special'           => "Alternatieven speciale pagina's",
 	'translate-magic-words'             => 'Magische woorden',
@@ -2652,7 +2711,7 @@ Du må være i oversettergruppa for å lagre endringer. Endringer lagres ikke f�
 	'translate-magic-cm-comment'        => 'Kommentar:',
 	'translate-magic-cm-save'           => 'Lagre',
 	'translate-magic-cm-export'         => 'Eksporter',
-	'translate-magic-cm-updatedusing'   => 'Oppdatert vha. Special:Magic',
+	'translate-magic-cm-updatedusing'   => 'Oppdatert vha. [[Special:Magic]]',
 	'translate-magic-cm-savefailed'     => 'Lagring mislyktes',
 	'translate-magic-special'           => 'Spesialsidenavn',
 	'translate-magic-words'             => 'Magiske ord',
@@ -2671,6 +2730,7 @@ Du må være i oversettergruppa for å lagre endringer. Endringer lagres ikke f�
 /** Occitan (Occitan)
  * @author Cedric31
  * @author ChrisPtDe
+ * @author Siebrand
  */
 $messages['oc'] = array(
 	'translate'                         => 'Traduire',
@@ -2723,7 +2783,7 @@ $messages['oc'] = array(
 	'translate-magic-cm-comment'        => 'Comentari :',
 	'translate-magic-cm-save'           => 'Salvagadar',
 	'translate-magic-cm-export'         => 'Exportar',
-	'translate-magic-cm-updatedusing'   => 'Mesa a jorn en utilizant Special:Magic',
+	'translate-magic-cm-updatedusing'   => 'Mesa a jorn en utilizant [[Special:Magic]]',
 	'translate-magic-cm-savefailed'     => 'La salvagàrdia a pas capitat',
 	'translate-magic-special'           => 'Pagina especiala d’alias',
 	'translate-magic-words'             => 'Mots magics',
@@ -2742,7 +2802,7 @@ $messages['oc'] = array(
 /** Polish (Polski)
  * @author McMonster
  * @author Wpedzich
- * @author Derbeth
+ * @author Siebrand
  * @author Dodek
  */
 $messages['pl'] = array(
@@ -2804,7 +2864,7 @@ By móc zapisać zmiany, należy znaleźć się w grupie tłumaczy. Zmiany nie s
 	'translate-magic-cm-comment'        => 'Komentarz:',
 	'translate-magic-cm-save'           => 'Zapisz',
 	'translate-magic-cm-export'         => 'Eksportuj',
-	'translate-magic-cm-updatedusing'   => 'Uaktualnione za pomocą strony Special:Magic',
+	'translate-magic-cm-updatedusing'   => 'Uaktualnione za pomocą strony [[Special:Magic]]',
 	'translate-magic-cm-savefailed'     => 'Zapis nieudany',
 	'translate-magic-special'           => 'Aliasy stron specjalnych',
 	'translate-magic-words'             => 'Magiczne słowa',
@@ -2820,46 +2880,44 @@ By móc zapisać zmiany, należy znaleźć się w grupie tłumaczy. Zmiany nie s
 	'translate-checks-plural'           => 'Definicja wykorzystuje mechanizm <nowiki>{{PLURAL:}}</nowiki>, lecz tłumaczenie go nie uwzględnia.',
 );
 
-/* Piedmontese (Bèrto 'd Sèra) */
+/** Piemontèis (Piemontèis)
+ * @author Bèrto 'd Sèra
+ * @author Siebrand
+ */
 $messages['pms'] = array(
-	'translate' => 'Viragi',
-	'translate-edit' => 'modìfica',
-	'translate-talk' => 'discussion',
-	'translate-history' => 'stòria',
-	'translate-task-view' => 'smon-e tuti ij messagi ëd',
-	'translate-task-untranslated' => 'Smon-e tuti ij messagi nen virà ëd',
-	'translate-task-optional' => 'Smon-e ij messagi opsionaj ëd',
-	'translate-task-review' => 'Controlé le modìfiche a',
-	'translate-task-reviewall' => 'Controlé tuti ij viragi ëd',
-	'translate-task-export' => 'Esporté ij viragi ëd',
-	'translate-task-export-to-file' => 'Esporté ij viragi ant n\'archivi da',
-	'translate-settings' => 'I veuj $1 $2 an $3 con lìmit $4. $5',
-	'translate-paging' => '<div>Messagi smonù da $1 a $2 ëd $3. [ $4 | $5 ]</div>',
-	'translate-submit' => 'Smon-e',
-	'translate-next' => 'Pàgina anans',
-	'translate-prev' => 'Pàgina andré',
-	'translate-optional' => '(opsional)',
-	'translate-ignored' => '(ignorà)',
-	'translate-edit-message-format' => 'La forma d\'ës messagi-sì a l\'é <b>$1</b>.',
-	'translate-edit-message-in' => 'Espression corenta an <b>$1</b> ($2):',
-	'translate-edit-message-in-fb' => 'Espression corenta ant la lenga ëd riserva <b>$1</b> ($2):',
-	'translate-magic-pagename' => 'Viragi estèis ëd MediaWiki',
-	'translate-magic-help' => 'A peul viré j\'àlias dle pàgine speciaj, le paròle màgiche, ij nòm dle facie e coj djë spassi nominaj. Con le paròle màgiche a venta ch\'a buta ëdcò ël viragi n\'anglèis, che dësnò a travajo pa pì. Ch\'a vardo ëdcò dë lassé ël prim element (0 or 1) tanme ch\'a lo treuva. J\'àlias dle pàgine soeciaj e le paròle màgiche a peulo avej pì che un viragi. Ij viragi a son separà da vìrgole (,). Ij nòm dle facie e djë spassi nominaj a peulo avej mach un viragi. Ant ël viragi djë spassi nominaj ël cas ëd <tt>$1 talk</tt> a l\'é special. <tt>$1</tt> a ven arpiassà col nòm dël sit (pr\'esempi <tt>{{SITENAME}} talk</tt>). Se sòn as peul nen fesse an soa lenga për rivé a n\'espression bon-a sensa cambié ël nòm dël sit, për piasì, ch\'as buta an contat con un programista. A venta ch\'a sia ant la partìa dij tradutor për podej salvé soe modìfiche. Le modìfiche as salvo nen fin ch\'a-i da nen un colp ansima al al boton ambelessì sota.',
-	'translate-magic-form' => 'Lenga: $1 Mòdulo: $2 $3',
-	'translate-magic-submit' => 'Smon-e',
-	'translate-magic-cm-to-be' => 'da esse',
-	'translate-magic-cm-current' => 'Corent',
-	'translate-magic-cm-original' => 'Original',#identical but defined
-	'translate-magic-cm-fallback' => 'Emergensa',
-	'translate-magic-cm-save' => 'Salvé',
-	'translate-magic-cm-export' => 'Esporté',
-	'translate-magic-cm-updatedusing' => 'Agiornà ën dovrand Special:Magic',
-	'translate-magic-cm-savefailed' => 'Salvatagi falì',
-	'translate-magic-special' => 'Àlias dle pàgine speciaj',
-	'translate-magic-words' => 'Paròle màgiche',
-	'translate-magic-skin' => 'Nòm dle facie',
-	'translate-magic-namespace' => 'Nòm djë spassi nominaj',
-	'translationchanges' => 'Modìfiche ëd viragi',
+	'translate'                       => 'Viragi',
+	'translate-edit'                  => 'modìfica',
+	'translate-talk'                  => 'discussion',
+	'translate-history'               => 'stòria',
+	'translate-task-view'             => 'smon-e tuti ij messagi ëd',
+	'translate-task-untranslated'     => 'Smon-e tuti ij messagi nen virà ëd',
+	'translate-task-optional'         => 'Smon-e ij messagi opsionaj ëd',
+	'translate-task-review'           => 'Controlé le modìfiche a',
+	'translate-task-reviewall'        => 'Controlé tuti ij viragi ëd',
+	'translate-task-export'           => 'Esporté ij viragi ëd',
+	'translate-task-export-to-file'   => "Esporté ij viragi ant n'archivi da",
+	'translate-submit'                => 'Smon-e',
+	'translate-next'                  => 'Pàgina anans',
+	'translate-prev'                  => 'Pàgina andré',
+	'translate-optional'              => '(opsional)',
+	'translate-ignored'               => '(ignorà)',
+	'translate-magic-pagename'        => 'Viragi estèis ëd MediaWiki',
+	'translate-magic-help'            => "A peul viré j'àlias dle pàgine speciaj, le paròle màgiche, ij nòm dle facie e coj djë spassi nominaj. Con le paròle màgiche a venta ch'a buta ëdcò ël viragi n'anglèis, che dësnò a travajo pa pì. Ch'a vardo ëdcò dë lassé ël prim element (0 or 1) tanme ch'a lo treuva. J'àlias dle pàgine soeciaj e le paròle màgiche a peulo avej pì che un viragi. Ij viragi a son separà da vìrgole (,). Ij nòm dle facie e djë spassi nominaj a peulo avej mach un viragi. Ant ël viragi djë spassi nominaj ël cas ëd <tt>$1 talk</tt> a l'é special. <tt>$1</tt> a ven arpiassà col nòm dël sit (pr'esempi <tt>{{SITENAME}} talk</tt>). Se sòn as peul nen fesse an soa lenga për rivé a n'espression bon-a sensa cambié ël nòm dël sit, për piasì, ch'as buta an contat con un programista. A venta ch'a sia ant la partìa dij tradutor për podej salvé soe modìfiche. Le modìfiche as salvo nen fin ch'a-i da nen un colp ansima al al boton ambelessì sota.",
+	'translate-magic-form'            => 'Lenga: $1 Mòdulo: $2 $3',
+	'translate-magic-submit'          => 'Smon-e',
+	'translate-magic-cm-to-be'        => 'da esse',
+	'translate-magic-cm-current'      => 'Corent',
+	'translate-magic-cm-original'     => 'Original',
+	'translate-magic-cm-fallback'     => 'Emergensa',
+	'translate-magic-cm-save'         => 'Salvé',
+	'translate-magic-cm-export'       => 'Esporté',
+	'translate-magic-cm-updatedusing' => 'Agiornà ën dovrand [[Special:Magic]]',
+	'translate-magic-cm-savefailed'   => 'Salvatagi falì',
+	'translate-magic-special'         => 'Àlias dle pàgine speciaj',
+	'translate-magic-words'           => 'Paròle màgiche',
+	'translate-magic-skin'            => 'Nòm dle facie',
+	'translate-magic-namespace'       => 'Nòm djë spassi nominaj',
+	'translationchanges'              => 'Modìfiche ëd viragi',
 );
 
 /** Pashto (پښتو)
@@ -2884,6 +2942,7 @@ $messages['ps'] = array(
 /** Portuguese (Português)
  * @author 555
  * @author Malafaya
+ * @author Siebrand
  */
 $messages['pt'] = array(
 	'translate'                         => 'Traduzir',
@@ -2946,7 +3005,7 @@ As alterações não serão salvas até que você clique no botão de salvar.',
 	'translate-magic-cm-comment'        => 'Comentário:',
 	'translate-magic-cm-save'           => 'Guardar',
 	'translate-magic-cm-export'         => 'Exportar',
-	'translate-magic-cm-updatedusing'   => 'Actualizado usando {{ns:special}}:Magic',
+	'translate-magic-cm-updatedusing'   => 'Actualizado usando [[Special:Magic]]',
 	'translate-magic-cm-savefailed'     => 'Erro ao salvar',
 	'translate-magic-special'           => 'Alias de páginas especiais',
 	'translate-magic-words'             => 'Palavras mágicas',
@@ -2977,8 +3036,9 @@ $messages['ro'] = array(
 
 /** Russian (Русский)
  * @author .:Ajvol:.
- * @author Nike
+ * @author Siebrand
  * @author Ahonc
+ * @author Nike
  */
 $messages['ru'] = array(
 	'translate'                         => 'Перевод',
@@ -3039,7 +3099,7 @@ $messages['ru'] = array(
 	'translate-magic-cm-comment'        => 'Примечание:',
 	'translate-magic-cm-save'           => 'Сохранить',
 	'translate-magic-cm-export'         => 'Выгрузить',
-	'translate-magic-cm-updatedusing'   => 'Обновлено с помощью Special:Magic',
+	'translate-magic-cm-updatedusing'   => 'Обновлено с помощью [[Special:Magic]]',
 	'translate-magic-cm-savefailed'     => 'Сохранение не удалось',
 	'translate-magic-special'           => 'Псевдонимы служебных страниц',
 	'translate-magic-words'             => 'Магические слова',
@@ -3074,6 +3134,7 @@ $messages['sah'] = array(
 
 /** Slovak (Slovenčina)
  * @author Helix84
+ * @author Siebrand
  */
 $messages['sk'] = array(
 	'translate'                         => 'Preložiť',
@@ -3116,7 +3177,7 @@ $messages['sk'] = array(
 	'translate-edit-committed'          => 'Aktuálny preklad v softvéri',
 	'translate-edit-warnings'           => 'Upozornenia na neúplné preklady',
 	'translate-magic-pagename'          => 'Rozšírený preklad MediaWiki',
-	'translate-magic-help'              => 'Môžete prekladať aliasy špeciálnych stránok, magické slová, názvy tém vzhľadu a návzy menných priestorov.
+	'translate-magic-help'              => 'Môžete prekladať aliasy špeciálnych stránok, magické slová, názvy tém vzhľadu a názvy menných priestorov.
 
 V magických slovách musíte zahrnúť aj anglické preklady, inak prestanú fungovať. Tiež ponechajte nezmenenú prvú položku (0 alebo 1).
 
@@ -3124,7 +3185,7 @@ Aliasy špeciálnych stránok a magických slov môžu mať viacero prekladov. P
 
 V prekladoch menných priestorov je <tt>$1 talk</tt> špeciálne. <tt>$1</tt> sa nahradí názvom webovej lokality (napr. <tt>{{SITENAME}} talk</tt>. Ak vo vašom jazyku nie je možné vytvoriť zmysluplný výraz bez zmeny názvu webovej lokality, prosím, kontaktujte vývojára.
 
-Aby ste mohli ukladať zmeny, musíte byť členom skupiny Translators. Zmeny sa neuložia, kým nekliknete na tlačidlo Uložiť dolu.',
+Aby ste mohli ukladať zmeny, musíte byť členom skupiny translators. Zmeny sa neuložia, kým nekliknete na tlačidlo Uložiť dolu.',
 	'translate-magic-form'              => 'Jazyk: $1 Modul: $2 $3',
 	'translate-magic-submit'            => 'Vykonať',
 	'translate-magic-cm-to-be'          => 'Byť',
@@ -3134,7 +3195,7 @@ Aby ste mohli ukladať zmeny, musíte byť členom skupiny Translators. Zmeny sa
 	'translate-magic-cm-comment'        => 'Komentár:',
 	'translate-magic-cm-save'           => 'Uložiť',
 	'translate-magic-cm-export'         => 'Exportovať',
-	'translate-magic-cm-updatedusing'   => 'Aktualizované pomocou Special:Magic',
+	'translate-magic-cm-updatedusing'   => 'Aktualizované pomocou [[Special:Magic]]',
 	'translate-magic-cm-savefailed'     => 'Uloženie sa nepodarilo',
 	'translate-magic-special'           => 'Aliasy špeciálnych stránok',
 	'translate-magic-words'             => 'Magické slová',
@@ -3217,8 +3278,8 @@ $messages['su'] = array(
 /** Swedish (Svenska)
  * @author Sannab
  * @author Lejonel
- * @author M.M.S.
  * @author Siebrand
+ * @author M.M.S.
  */
 $messages['sv'] = array(
 	'translate'                         => 'Översätt',
@@ -3279,7 +3340,7 @@ För att kunna spara ändringar så behöver du tillhöra översättargruppen. �
 	'translate-magic-cm-comment'        => 'Kommentar:',
 	'translate-magic-cm-save'           => 'Spara',
 	'translate-magic-cm-export'         => 'Exportera',
-	'translate-magic-cm-updatedusing'   => 'Uppdaterad med hjälp av Special:Magic',
+	'translate-magic-cm-updatedusing'   => 'Uppdaterad med hjälp av [[Special:Magic]]',
 	'translate-magic-cm-savefailed'     => 'Det gick ej att spara',
 	'translate-magic-special'           => 'Alias till specialsidor',
 	'translate-magic-words'             => 'Magiska ord',
@@ -3391,6 +3452,7 @@ $messages['tet'] = array(
 
 /** Tajik (Тоҷикӣ)
  * @author Ibrahim
+ * @author Siebrand
  */
 $messages['tg'] = array(
 	'translate'                         => 'Тарҷума',
@@ -3442,7 +3504,7 @@ $messages['tg'] = array(
 	'translate-magic-cm-comment'        => 'Тавзеҳот:',
 	'translate-magic-cm-save'           => 'Захира',
 	'translate-magic-cm-export'         => 'Судур',
-	'translate-magic-cm-updatedusing'   => 'Барӯз шуд тавассути Special:Magic',
+	'translate-magic-cm-updatedusing'   => 'Барӯз шуд тавассути [[Special:Magic]]',
 	'translate-magic-cm-savefailed'     => 'Шикаст дар захира кардан',
 	'translate-magic-words'             => 'Калимаҳои ҷодуӣ',
 	'translate-magic-skin'              => 'Исми пӯстаҳо',
@@ -3456,6 +3518,7 @@ $messages['tg'] = array(
 /** Thai (ไทย)
  * @author Ans
  * @author Passawuth
+ * @author Siebrand
  */
 $messages['th'] = array(
 	'translate'                         => 'แปล',
@@ -3516,7 +3579,7 @@ $messages['th'] = array(
 	'translate-magic-cm-comment'        => 'หมายเหตุ:',
 	'translate-magic-cm-save'           => 'บันทึก',
 	'translate-magic-cm-export'         => 'ส่งออกมา (export)',
-	'translate-magic-cm-updatedusing'   => 'แก้ไขด้วย Special:Magic',
+	'translate-magic-cm-updatedusing'   => 'แก้ไขด้วย [[Special:Magic]]',
 	'translate-magic-cm-savefailed'     => 'บันทึกไม่สำเร็จ',
 	'translate-magic-special'           => 'ชื่อ alias ของหน้าพิเศษ',
 	'translate-magic-words'             => 'ตัวแปรพิเศษ',
@@ -3618,6 +3681,7 @@ $messages['uk'] = array(
 
 /** Vietnamese (Tiếng Việt)
  * @author Vinhtantran
+ * @author Siebrand
  * @author Minh Nguyen
  */
 $messages['vi'] = array(
@@ -3679,7 +3743,7 @@ Bạn cần phải thuộc nhóm biên dịch viên để có thể lưu các th
 	'translate-magic-cm-comment'        => 'Tóm lược:',
 	'translate-magic-cm-save'           => 'Lưu',
 	'translate-magic-cm-export'         => 'Xuất',
-	'translate-magic-cm-updatedusing'   => 'Đã cập nhật bằng Special:Magic',
+	'translate-magic-cm-updatedusing'   => 'Đã cập nhật bằng [[Special:Magic]]',
 	'translate-magic-cm-savefailed'     => 'Lưu thất bại',
 	'translate-magic-special'           => 'Bí danh của các trang đặc biệt',
 	'translate-magic-words'             => 'Từ thần chú',
