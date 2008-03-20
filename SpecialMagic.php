@@ -211,7 +211,7 @@ abstract class ComplexMessages {
 	}
 
 	public function getTitle() {
-		wfMsg( self::MSG . $this->id );
+		return wfMsg( 'translate-magic-' . $this->id );
 	}
 
 	#
@@ -326,20 +326,17 @@ abstract class ComplexMessages {
 
 		$array = $this->getArray();
 		$fb = isset($array[self::LANG_FALLBACK]);
+		$colspan = array( 'colspan' => 3 + (int) $fb );;
 
 		$table['start'] = Xml::openElement( 'table', $this->tableAttributes );
-		$table['heading'] = Xml::element( 'th', array('colspan' => '4' ), $this->getTitle() );
+		$table['heading'] = Xml::element( 'th', $colspan, $this->getTitle() );
 		$table['subheading'][] = Xml::element( 'th', null, wfMsg(self::MSG.'original') );
 		if ( $fb ) $table['subheading'][] = Xml::element( 'th', null, wfMsg(self::MSG.'fallback') );
 		$table['subheading'][] = Xml::element( 'th', null, wfMsg(self::MSG.'current') );
 		$table['subheading'][] = Xml::element( 'th', null, wfMsg(self::MSG.'to-be') );
 		$table['headings'] =
-			Xml::openElement( 'tr' ) .
-			$table['heading'] .
-			Xml::closeElement( 'tr' ) .
-			Xml::openElement( 'tr' ) .
-			implode( "\n", $table['subheading'] ) .
-			Xml::closeElement( 'tr' );
+			Xml::tags( 'tr', null, $table['heading'] ) .
+			Xml::tags( 'tr', null, implode( "\n", $table['subheading'] ) );
 
 		$aColumns = array();
 		$aColumns[] = self::LANG_MASTER;
@@ -361,7 +358,7 @@ abstract class ComplexMessages {
 
 		$table['row'][] =
 			Xml::tags( 'tr', null,
-				Xml::tags( 'td', array( 'colspan' => $fb ? 4 : 3 ), $this->getButtons() )
+				Xml::tags( 'td', $colspan, $this->getButtons() )
 			);
 
 		$table['rows'] = implode( "\n", $table['row'] );
