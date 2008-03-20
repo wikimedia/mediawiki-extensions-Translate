@@ -1195,12 +1195,28 @@ class EditcountMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile  = 'Editcount/SpecialEditcount.i18n.php';
 }
 
+class EditMessagesMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Edit Messages';
+	protected $id    = 'ext-editmessages';
+
+	protected $arrName = 'messages';
+	protected $messageFile  = 'EditMessages/EditMessages.i18n.php';
+}
+
 class EditOwnMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Edit Own';
 	protected $id    = 'ext-editown';
 
 	protected $arrName = 'messages';
 	protected $messageFile  = 'EditOwn/EditOwn.i18n.php';
+}
+
+class EditSubpagesMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Edit Subpages';
+	protected $id    = 'ext-editsubpages';
+
+	protected $arrName = 'messages';
+	protected $messageFile  = 'EditSubpages/EditSubpages.i18n.php';
 }
 
 class EditUserMessageGroup extends ExtensionMessageGroup {
