@@ -85,7 +85,7 @@ Changes are not saved until you click save button below.',
 	'translate-magic-cm-save' => 'Save',
 	'translate-magic-cm-export' => 'Export',
 
-	'translate-magic-cm-updatedusing' => 'Updated using Special:Magic',
+	'translate-magic-cm-updatedusing' => 'Updated using [[Special:Magic]]',
 	'translate-magic-cm-savefailed' => 'Save failed',
 
 	'translate-magic-special' => 'Special page aliases',
