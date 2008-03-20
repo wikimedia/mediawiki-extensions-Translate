@@ -382,11 +382,14 @@ abstract class ComplexMessages {
 
 	public function formatElement( $element ) {
 		if (!count( $element ) ) return '';
-		if ( is_array($element) ) $element = implode( ', ', $element );
 		if ( $this->stripUnderscores ) {
 			$element = str_replace('_', ' ', $element);
 		}
-		return $element;
+		if ( is_array($element) ) {
+			$element = array_map( 'trim', $element );
+			$element = implode( ', ', $element );
+		}
+		return trim($element);
 	}
 
 	function getKeyForEdit( $key ) {
