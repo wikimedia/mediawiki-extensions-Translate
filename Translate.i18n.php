@@ -2422,6 +2422,7 @@ $messages['li'] = array(
  * @author Passawuth
  */
 $messages['lo'] = array(
+	'translate'      => 'ແປ',
 	'translate-desc' => '[[Special:Translate|ໜ້າພິເສດ]]ສຳຫຼັບແປມີເດຍວິກິແລະອື່ນ າ',
 );
 
