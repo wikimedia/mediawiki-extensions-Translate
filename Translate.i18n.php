@@ -1660,7 +1660,7 @@ $messages['ht'] = array(
 );
 
 /** Hungarian (Magyar)
- * @author Bdanee
+ * @author Dani
  * @author Siebrand
  */
 $messages['hu'] = array(
