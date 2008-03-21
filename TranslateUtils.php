@@ -373,7 +373,6 @@ class TranslateUtils {
 	}
 
 	public static function fieldset( $legend, $contents, $attributes = array() ) {
-		$attributes = $attributes + array( 'style' => 'line-height: normal;' );
 		return
 			Xml::openElement( 'fieldset', $attributes ) .
 				Xml::tags( 'legend', null, $legend ) . $contents .
