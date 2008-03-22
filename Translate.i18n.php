@@ -745,6 +745,13 @@ $messages['cs'] = array(
 	'translate-checks-plural'           => 'Zdroj používá <nowiki>{{PLURAL:}}</nowiki>, ale překlad nikoliv.',
 );
 
+/** Welsh (Cymraeg)
+ * @author Lloffiwr
+ */
+$messages['cy'] = array(
+	'translate-edit' => 'golygu',
+);
+
 /** German (Deutsch)
  * @author Raimond Spekking
  */
