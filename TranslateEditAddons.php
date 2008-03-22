@@ -149,7 +149,7 @@ class TranslateEditAddons {
 				$info = wfMsg( self::MSG . 'no-information' );
 			}
 			$boxes[] = TranslateUtils::fieldset(
-				wfMsgHtml( self::MSG . 'information', $edit ), $wgOut->parse( $info ),
+				wfMsgHtml( self::MSG . 'information', $edit ), $wgOut->parse( $info, false ),
 				$info ? array( 'class' => 'mw-sp-translate-edit-info' ) : array( 'id' => 'mw-sp-translate-edit-noinfo' )
 			);
 		}
