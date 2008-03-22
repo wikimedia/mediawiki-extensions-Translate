@@ -262,7 +262,8 @@ abstract class ComplexMessages {
 		$lines = explode( "\n", $data );
 		$array = array();
 		foreach ( $lines as $line ) {
-			if ( ltrim( $line[0] ) === '#' || ltrim( $line[0] ) === '<') { continue; }
+			$line = trim($line);
+			if ( $line === '' || $line[0] === '#' || $line[0] === '<' ) { continue; }
 
 			$elements = explode( '=', $line, 2 );
 			if ( count( $elements ) !== 2 ) { continue; }
