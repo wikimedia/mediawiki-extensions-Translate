@@ -710,7 +710,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-intersection',
 		'ext-labeledsectiontransclusion',
 		'ext-linksearch',
-		'ext-lucenesearch',
+		'ext-mwsearch',
 		'ext-newuserlog',
 		'ext-nuke',
 		'ext-ogghandler',
@@ -1539,19 +1539,6 @@ class LookupUserMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'LookupUser/LookupUser.i18n.php';
-}
-
-class LuceneSearchMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Lucene Search';
-	protected $id    = 'ext-lucenesearch';
-
-	protected $arrName     = 'messages';
-	protected $messageFile = 'LuceneSearch/LuceneSearch.i18n.php';
-
-	protected $ignored = array(
-		'searchaliases',
-		'searchnearmatch',
-	);
 }
 
 class MathStatMessageGroup extends ExtensionMessageGroup {

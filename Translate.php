@@ -176,7 +176,6 @@ $wgTranslateAC = array(
 'ext-linksearch'            => 'LinkSearchMessageGroup',
 'ext-liquidthreads'         => 'LiquidThreadsMessageGroup',
 'ext-lookupuser'            => 'LookupUserMessageGroup',
-'ext-lucenesearch'          => 'LuceneSearchMessageGroup',
 'ext-mathstat'              => 'MathStatMessageGroup',
 'ext-mediafunctions'        => 'MediaFunctionsMessageGroup',
 'ext-metavidwiki'           => 'MetavidWikiMessageGroup',
