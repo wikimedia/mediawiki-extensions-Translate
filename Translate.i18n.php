@@ -752,6 +752,21 @@ $messages['cy'] = array(
 	'translate-edit' => 'golygu',
 );
 
+/** Danish (Dansk)
+ * @author Jon Harald Søby
+ */
+$messages['da'] = array(
+	'translate-edit'                   => 'redigér',
+	'translate-talk'                   => 'dsikussion',
+	'translate-history'                => 'historik',
+	'translate-page-group'             => 'Gruppe',
+	'translate-page-language'          => 'Sprog',
+	'translate-page-navigation-legend' => 'Navigation',
+	'translate-next'                   => 'Næste side',
+	'translate-prev'                   => 'Forrige side',
+	'translate-magic-cm-current'       => 'Nuværende',
+);
+
 /** German (Deutsch)
  * @author Raimond Spekking
  */
@@ -2656,6 +2671,26 @@ Om wijzigingen op te slaan moet u lid zijn van de groep vertalers. Wijzigingen w
 	'translate-checks-plural'           => 'De definitie bevat <nowiki>{{PLURAL:}}</nowiki>, maar de vertaling niet.',
 );
 
+/** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
+ * @author Jon Harald Søby
+ */
+$messages['nn'] = array(
+	'translate-edit'                   => 'endre',
+	'translate-talk'                   => 'diskusjon',
+	'translate-history'                => 'historikk',
+	'translate-page-group'             => 'Gruppe',
+	'translate-page-language'          => 'Språk',
+	'translate-page-navigation-legend' => 'Navigering',
+	'translate-next'                   => 'Neste side',
+	'translate-prev'                   => 'Førre side',
+	'translate-optional'               => '(valfri)',
+	'translate-magic-cm-current'       => 'Noverande',
+	'translate-magic-cm-comment'       => 'Kommentar:',
+	'translate-magic-cm-save'          => 'Lagre',
+	'translate-magic-cm-export'        => 'Eksporter',
+	'translationchanges-export'        => 'eksporter',
+);
+
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
  * @author Jon Harald Søby
  * @author Siebrand
@@ -2711,7 +2746,7 @@ I navneromoversettelsene er <tt>$1 talk</tt> spesiell. <tt>$1</tt> erstattes med
 
 Du må være i oversettergruppa for å lagre endringer. Endringer lagres ikke før du klikker på lagre-knappen nedenfor.',
 	'translate-magic-form'              => 'Språk: $1 Modul: $2 $3',
-	'translate-magic-submit'            => 'Skaff',
+	'translate-magic-submit'            => 'Hent',
 	'translate-magic-cm-to-be'          => 'Framtidig',
 	'translate-magic-cm-current'        => 'Nåværende',
 	'translate-magic-cm-original'       => 'Opprinnelig',
@@ -3044,8 +3079,8 @@ $messages['ro'] = array(
 
 /** Russian (Русский)
  * @author .:Ajvol:.
- * @author Siebrand
  * @author Ahonc
+ * @author Siebrand
  * @author Nike
  */
 $messages['ru'] = array(
