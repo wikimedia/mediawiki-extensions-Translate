@@ -1509,7 +1509,7 @@ Nas traducións dos espazos de nomes, <tt>$1 talk</tt> é especial. <tt>$1</tt> 
 	'translate-checks-balance'          => 'Hai unha cantidade irregular de parénteses: <strong>$1</strong>',
 	'translate-checks-links'            => 'As seguintes ligazóns son problemáticas: <strong>$1</strong>',
 	'translate-checks-xhtml'            => 'Por favor reemprace as seguintes etiquetas por unhas correctas: <strong>$1</strong>',
-	'translate-checks-plural'           => 'A definición usa <nowiki>{{PLURAL:}}</nowiki> pero a tradución non.',
+	'translate-checks-plural'           => 'A definición usa <nowiki>{{PLURAL:}}</nowiki>, pero a tradución non.',
 );
 
 $messages['he'] = array(
@@ -4008,3 +4008,4 @@ $messages['zh-hant'] = array(
 	'translate-magic-namespace' => '名字空間名稱',
 	'translate-checks-parameters' => '以下參數沒有使用到：<strong>$1</strong>',
 );
+
