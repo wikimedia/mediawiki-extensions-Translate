@@ -4,63 +4,64 @@
  *
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
+
 $messages = array();
 
 /** English
  * @author Nike
  */
 $messages['en'] = array(
-	'translate' => 'Translate',
-	'translate-desc' => '[[Special:Translate|Special page]] for translating Mediawiki and beyond',
-	'translate-edit' => 'edit',
-	'translate-talk' => 'talk',
+	'translate'         => 'Translate',
+	'translate-desc'    => '[[Special:Translate|Special page]] for translating MediaWiki and beyond',
+	'translate-edit'    => 'edit',
+	'translate-talk'    => 'talk',
 	'translate-history' => 'history',
 
-	'translate-task-view' => 'View all messages from',
-	'translate-task-untranslated' => 'View all untranslated messages from',
-	'translate-task-optional' => 'View optional messages from',
-	'translate-task-review' => 'Review changes to',
-	'translate-task-reviewall' => 'Review all translations in',
-	'translate-task-export' => 'Export translations from',
+	'translate-task-view'           => 'View all messages from',
+	'translate-task-untranslated'   => 'View all untranslated messages from',
+	'translate-task-optional'       => 'View optional messages from',
+	'translate-task-review'         => 'Review changes to',
+	'translate-task-reviewall'      => 'Review all translations in',
+	'translate-task-export'         => 'Export translations from',
 	'translate-task-export-to-file' => 'Export translation to file from',
-	'translate-task-export-as-po' => 'Export translation in Gettext format',
+	'translate-task-export-as-po'   => 'Export translation in Gettext format',
 
 	'translate-page-no-such-language' => 'Specified language was invalid.',
 	'translate-page-no-such-task'     => 'Specified task was invalid.',
 	'translate-page-no-such-group'    => 'Specified group was invalid.',
 
 	'translate-page-settings-legend' => 'Settings',
-	'translate-page-task'     => 'I want to',
-	'translate-page-group'    => 'Group',
-	'translate-page-language' => 'Language',
-	'translate-page-limit'    => 'Limit',
-	'translate-page-limit-option' => '$1 {{PLURAL:$1|message|messages}} per page',
-	'translate-submit'        => 'Fetch',
+	'translate-page-task'            => 'I want to',
+	'translate-page-group'           => 'Group',
+	'translate-page-language'        => 'Language',
+	'translate-page-limit'           => 'Limit',
+	'translate-page-limit-option'    => '$1 {{PLURAL:$1|message|messages}} per page',
+	'translate-submit'               => 'Fetch',
 
 	'translate-page-navigation-legend' => 'Navigation',
-	'translate-page-showing' => 'Showing messages from $1 to $2 of $3.',
-	'translate-page-showing-all' => 'Showing $1 {{PLURAL:$1|message|messages}}.',
-	'translate-page-showing-none' => 'No messages to show.',
-	'translate-page-paging-links' => '[ $1 ] [ $2 ]',
-	'translate-next' => 'Next page',
-	'translate-prev' => 'Previous page',
+	'translate-page-showing'           => 'Showing messages from $1 to $2 of $3.',
+	'translate-page-showing-all'       => 'Showing $1 {{PLURAL:$1|message|messages}}.',
+	'translate-page-showing-none'      => 'No messages to show.',
+	'translate-page-paging-links'      => '[ $1 ] [ $2 ]',
+	'translate-next'                   => 'Next page',
+	'translate-prev'                   => 'Previous page',
 
 	'translate-page-description-legend' => 'Information about the group',
 
 	'translate-optional' => '(optional)',
-	'translate-ignored' => '(ignored)',
+	'translate-ignored'  => '(ignored)',
 
-	'translate-edit-definition' => 'Message definition',
-	'translate-edit-contribute' => 'contribute',
-	'translate-edit-no-information' => "''This message has no documentation.
+	'translate-edit-definition'         => 'Message definition',
+	'translate-edit-contribute'         => 'contribute',
+	'translate-edit-no-information'     => "''This message has no documentation.
 If you know where or how this message is used, you can help other translators by adding documentation to this message.''",
-	'translate-edit-information' => 'Information about this message ($1)',
+	'translate-edit-information'        => 'Information about this message ($1)',
 	'translate-edit-in-other-languages' => 'Message in other languages',
-	'translate-edit-committed' => 'Current translation in software',
-	'translate-edit-warnings' => 'Warnings about incomplete translations',
+	'translate-edit-committed'          => 'Current translation in software',
+	'translate-edit-warnings'           => 'Warnings about incomplete translations',
 
-	'translate-magic-pagename' => 'Extended MediaWiki translation',
-	'translate-magic-help' => 'You can translate special pages aliases, magic words, skin names and namespace names.
+	'translate-magic-pagename'    => 'Extended MediaWiki translation',
+	'translate-magic-help'        => 'You can translate special pages aliases, magic words, skin names and namespace names.
 
 In magic words you need to include English translations or they stop working.
 Also leave the first item (0 or 1) as it is.
@@ -74,34 +75,34 @@ If it is not possible in your language to form valid expression without changing
 
 You need to be in the translators group to save changes.
 Changes are not saved until you click save button below.',
-	'translate-magic-form' => 'Language: $1 Module: $2 $3',
-	'translate-magic-submit' => 'Fetch',
-	'translate-magic-cm-to-be' => 'To-be',
-	'translate-magic-cm-current' => 'Current',
+	'translate-magic-form'        => 'Language: $1 Module: $2 $3',
+	'translate-magic-submit'      => 'Fetch',
+	'translate-magic-cm-to-be'    => 'To-be',
+	'translate-magic-cm-current'  => 'Current',
 	'translate-magic-cm-original' => 'Original',
 	'translate-magic-cm-fallback' => 'Fallback',
 
 	'translate-magic-cm-comment' => 'Comment:',
-	'translate-magic-cm-save' => 'Save',
-	'translate-magic-cm-export' => 'Export',
+	'translate-magic-cm-save'    => 'Save',
+	'translate-magic-cm-export'  => 'Export',
 
 	'translate-magic-cm-updatedusing' => 'Updated using [[Special:Magic]]',
-	'translate-magic-cm-savefailed' => 'Save failed',
+	'translate-magic-cm-savefailed'   => 'Save failed',
 
-	'translate-magic-special' => 'Special page aliases',
-	'translate-magic-words' => 'Magic words',
-	'translate-magic-skin' => 'Skins name',
+	'translate-magic-special'   => 'Special page aliases',
+	'translate-magic-words'     => 'Magic words',
+	'translate-magic-skin'      => 'Skins name',
 	'translate-magic-namespace' => 'Namespace names',
 
-	'translationchanges' => 'Translation changes',
+	'translationchanges'        => 'Translation changes',
 	'translationchanges-export' => 'export',
 	'translationchanges-change' => '$1: $2 by $3',
 
 	'translate-checks-parameters' => 'Following parameters are not used: <strong>$1</strong>',
-	'translate-checks-balance' => 'There is uneven amount of parentheses: <strong>$1</strong>',
-	'translate-checks-links' => 'Following links are problematic: <strong>$1</strong>',
-	'translate-checks-xhtml' => 'Please replace the following tags with correct ones: <strong>$1</strong>',
-	'translate-checks-plural' => 'Definition uses <nowiki>{{PLURAL:}}</nowiki> but translation does not.',
+	'translate-checks-balance'    => 'There is uneven amount of parentheses: <strong>$1</strong>',
+	'translate-checks-links'      => 'Following links are problematic: <strong>$1</strong>',
+	'translate-checks-xhtml'      => 'Please replace the following tags with correct ones: <strong>$1</strong>',
+	'translate-checks-plural'     => 'Definition uses <nowiki>{{PLURAL:}}</nowiki> but translation does not.',
 );
 
 /** Afrikaans (Afrikaans)
@@ -2481,7 +2482,7 @@ Magiško žodžio vertimuose nurodykite ir vertimą į anglų kalbą, kitaip jis
 
 Specialiojo puslapio pavadinimo ir magiško žodžio vertimai gali būti keli. Vertimai yra skiriami kableliu (,). Apvalkalo ir vardų srities pavadinimas gali turėti tik vieną vertimą.
 
-Vardų sričių vertimuose <tt>$1 aptarimas</tt> yra specialus. <tt>$1</tt> yra pakeičiamas svetainės pavadinimu (Pavyzdžiui <tt>{{SITENAME}} aptarimas</tt>. Jei nėra galimybės Jūsų kalboje suformuoti teisingos išraiškos su svetainės pavadinimo pakeitimu, prašome kreiptis į kūrėjus. 
+Vardų sričių vertimuose <tt>$1 aptarimas</tt> yra specialus. <tt>$1</tt> yra pakeičiamas svetainės pavadinimu (Pavyzdžiui <tt>{{SITENAME}} aptarimas</tt>. Jei nėra galimybės Jūsų kalboje suformuoti teisingos išraiškos su svetainės pavadinimo pakeitimu, prašome kreiptis į kūrėjus.
 
 Jūs turite priklausyti vertėjų grupei, kad galėtumėte išsaugoti pakeitimus. Pakeitimai nebus išsaugoti iki Jūs nuspausite išsaugojimo butoną apačioje.',
 	'translate-magic-form'              => 'Kalba: $1 Tema: $2 $3',
@@ -3519,7 +3520,7 @@ $messages['tg'] = array(
 	'translate-ignored'                 => '(нодида гирифташуда)',
 	'translate-edit-definition'         => 'Таърифи пайғом',
 	'translate-edit-contribute'         => 'ҳиссагузорӣ',
-	'translate-edit-no-information'     => "''Ин пайғом дорои тавзеҳот нест. 
+	'translate-edit-no-information'     => "''Ин пайғом дорои тавзеҳот нест.
 Агар шумо медонед ин пағом чигуна ё дар куҷо истифода мешавад, шумо метавонед бо изофа кардани тавзеҳот ба ин пайғом ба дигар тарҷумакунандагон кӯмак кунед.''",
 	'translate-edit-information'        => 'Иттилоот дар мавриди ин пайғом ($1)',
 	'translate-edit-in-other-languages' => 'Ҳамин пайғом дар дигар забонҳо',
