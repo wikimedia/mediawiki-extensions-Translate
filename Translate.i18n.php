@@ -104,19 +104,6 @@ Changes are not saved until you click save button below.',
 	'translate-checks-plural' => 'Definition uses <nowiki>{{PLURAL:}}</nowiki> but translation does not.',
 );
 
-/** Message documentation (Message documentation)
- * @author Nike
- * @author Siebrand
- * @author SPQRobin
- */
-$messages['qqq'] = array(
-	'translate'                       => 'Part of the "Translate" extension. This message is the page title of the special page [[Special:Translate]].',
-	'translate-page-no-such-language' => "Shown when someone requests a language that doesn't exists. [{{FULLURL:Special:Translate|language=}} Example].",
-	'translate-page-no-such-task'     => "Shown when someone requests a task that doesn't exists. [{{FULLURL:Special:Translate|task=}} Example].",
-	'translate-page-no-such-group'    => "Shown when someone requests a group that doesn't exists. [{{FULLURL:Special:Translate|group=}} Example].",
-	'translate-edit-no-information'   => 'Message is used as a hint to translators that documentation for a message without documentation is needed.',
-);
-
 /** Afrikaans (Afrikaans)
  * @author SPQRobin
  */
