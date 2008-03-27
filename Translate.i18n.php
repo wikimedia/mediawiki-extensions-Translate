@@ -2507,11 +2507,13 @@ Jūs turite priklausyti vertėjų grupei, kad galėtumėte išsaugoti pakeitimus
 
 /** Malayalam (മലയാളം)
  * @author Jacob.jose
+ * @author Shijualex
  */
 $messages['ml'] = array(
 	'translate'                  => 'വിവര്‍ത്തനം ചെയ്യുക',
 	'translate-page-showing'     => '$3 സന്ദേശങ്ങളുള്ളതില്‍ $1 മുതല്‍ $2 വരെയുള്ളവ പ്രദര്‍ശിപ്പിച്ചിരിക്കുന്നു',
 	'translate-page-showing-all' => '$1 {{PLURAL:$1|സന്ദേശം|സന്ദേശങ്ങള്‍}} പ്രദര്‍ശിപ്പിക്കുന്നു.',
+	'translate-magic-cm-comment' => 'അഭിപ്രായം:',
 );
 
 /** Marathi (मराठी)
@@ -2713,7 +2715,7 @@ $messages['no'] = array(
 	'translate-page-showing-none'       => 'Ingen beskjeder å vise.',
 	'translate-next'                    => 'Neste side',
 	'translate-prev'                    => 'Forrige side',
-	'translate-page-description-legend' => 'Informasjon om gruppa',
+	'translate-page-description-legend' => 'Informasjon om gruppen',
 	'translate-optional'                => '(valgfri)',
 	'translate-ignored'                 => '(ignorert)',
 	'translate-edit-definition'         => 'Beskjeden som skal oversettes',
