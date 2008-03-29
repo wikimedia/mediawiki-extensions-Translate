@@ -116,11 +116,7 @@ class TranslateEditAddons {
 		$en = $group->getMessage( $key, 'en' );
 		$xx = $group->getMessage( $key, $code );
 
-		// Definition
 		$boxes = array();
-		if ( $en !== null ) {
-			$boxes[] = self::doBox( $en, 'en', wfMsg( self::MSG . 'definition' ) );
-		}
 
 		// In other languages (if any)
 		$inOtherLanguages = array();
@@ -157,13 +153,19 @@ class TranslateEditAddons {
 		// Current committed translation
 		// Should this be higher up, because it's not as importad as definition for example
 		if ( $xx !== null && $code !== 'en' ) {
-			$boxes[] = self::dobox( $xx, $code, wfMsg( self::MSG . 'committed' ) );
+			//$boxes[] = self::dobox( $xx, $code, wfMsg( self::MSG . 'committed' ) );
 
 			// Append translation from the file to edit area, if it's empty.
 			if ($object->firsttime && $object->textbox1 === '') {
 				$object->textbox1 = $xx;
 			}
 		}
+
+		// Definition
+		if ( $en !== null ) {
+			$boxes[] = self::doBox( $en, 'en', wfMsg( self::MSG . 'definition' ) );
+		}
+
 
 		// Some syntactic checks
 		$translation = $object->textbox1 ? $object->textbox1 : $xx;

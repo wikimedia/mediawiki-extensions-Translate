@@ -25,23 +25,23 @@ class MessageChecks {
 		$warnings = array();
 
 		if ( count($values = self::checkParameters( $message )) ) {
-			$warnings[] = wfMsgExt( self::MSG . 'parameters', 'parse', implode( ', ', $values ) );
+			$warnings[] = wfMsgExt( self::MSG . 'parameters', 'parseinline', implode( ', ', $values ) );
 		}
 
 		if ( count($values = self::checkBalance( $message )) ) {
-			$warnings[] = wfMsgExt( self::MSG . 'balance', 'parse', wfEscapeWikiText( implode( ', ', $values ) ) );
+			$warnings[] = wfMsgExt( self::MSG . 'balance', 'parseinline', wfEscapeWikiText( implode( ', ', $values ) ) );
 		}
 
 		if ( count($values = self::checkLinks( $message )) ) {
-			$warnings[] = wfMsgExt( self::MSG . 'links', 'parse', wfEscapeWikiText( implode( ', ', $values ) ) );
+			$warnings[] = wfMsgExt( self::MSG . 'links', 'parseinline', wfEscapeWikiText( implode( ', ', $values ) ) );
 		}
 
 		if ( count($values = self::checkXHTML( $message )) ) {
-			$warnings[] = wfMsgExt( self::MSG . 'xhtml', 'parse', htmlspecialchars( implode( ', ', $values ) ) );
+			$warnings[] = wfMsgExt( self::MSG . 'xhtml', 'parseinline', htmlspecialchars( implode( ', ', $values ) ) );
 		}
 
 		if ( self::checkPlural( $message ) ) {
-			$warnings[] = wfMsgExt( self::MSG . 'plural', 'parse' );
+			$warnings[] = wfMsgExt( self::MSG . 'plural', 'parseinline' );
 		}
 
 		return $warnings;
