@@ -3389,6 +3389,15 @@ För att kunna spara ändringar så behöver du tillhöra översättargruppen. �
 	'translate-checks-plural'           => '<nowiki>{{PLURAL:}}</nowiki> används i definitionen, men inte i översättningen.',
 );
 
+/** ślůnski (ślůnski)
+ * @author Herr Kriss
+ * @author Pimke
+ */
+$messages['szl'] = array(
+	'translate-edit'    => 'sprowjéj',
+	'translate-history' => 'historjo',
+);
+
 /** Tamil (தமிழ்)
  * @author Trengarasu
  */
