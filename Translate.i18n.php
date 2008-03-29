@@ -3888,58 +3888,180 @@ $messages['xmf'] = array(
 	'translate-page-language' => 'ნინა',
 );
 
+/** Cantonese
+ * @author Shinjiman
+ */
 $messages['yue'] = array(
-	'translate' => '翻譯',
-	'translate-edit' => '編輯',
-	'translate-talk' => '對話',
+	'translate'         => '翻譯',
+	'translate-desc'    => '翻譯MediaWiki同其它嘢嘅[[Special:Translate|特別頁]]',
+	'translate-edit'    => '編輯',
+	'translate-talk'    => '對話',
 	'translate-history' => '歷史',
 
-	'translate-task-view' => '去睇全部信息自',
-	'translate-task-untranslated' => '去睇全部未翻譯好嘅信息自',
-	'translate-task-review' => '睇番嗰度嘅更改',
-	'translate-task-reviewall' => '睇番響嗰度嘅全部翻譯',
-	'translate-task-export' => '倒出翻譯自',
+	'translate-task-view'           => '去睇全部信息自',
+	'translate-task-untranslated'   => '去睇全部未翻譯好嘅信息自',
+	'translate-task-optional'       => '去睇可選用嘅信息自',
+	'translate-task-review'         => '睇番嗰度嘅更改',
+	'translate-task-reviewall'      => '睇番響嗰度嘅全部翻譯',
+	'translate-task-export'         => '倒出翻譯自',
 	'translate-task-export-to-file' => '倒出翻譯到檔案自',
+	'translate-task-export-as-po'   => '倒出翻譯到 Gettext 格式',
 
-	'translate-settings' => '我想去$1響$3語言嘅$2組，上限係$4。 $5',
-	'translate-paging' => '<div>顯示緊由$1條到$2條，總共$3條信息。 [ $4 | $5 ]</div>',
-	'translate-submit' => '擷取',
-	'translate-next' => '下一版',
-	'translate-prev' => '上一版',
+	'translate-page-no-such-language' => '所指定嘅語言唔正確。',
+	'translate-page-no-such-task'     => '所指定嘅工作唔正確。',
+	'translate-page-no-such-group'    => '所指定嘅組唔正確。',
+
+	'translate-page-settings-legend'   => '設定',
+	'translate-page-task'              => '我想去',
+	'translate-page-group'             => '組',
+	'translate-page-language'          => '語言',
+	'translate-page-limit'             => '上限',
+	'translate-page-limit-option'      => '每一版有$1個信息',
+	'translate-submit'                 => '擷取',
+	'translate-page-navigation-legend' => '導航',
+	'translate-page-showing'           => '顯示緊由 $1到$2 ，總共 $3 個信息。',
+	'translate-page-showing-all'       => '顯示緊 $1個信息。',
+	'translate-page-showing-none'      => '無信息可顯示。',
+	'translate-next'                   => '下一版',
+	'translate-prev'                   => '上一版',
+
+	'translate-page-description-legend' => '有關嗰組嘅信息',
 
 	'translate-optional' => '(可選)',
-	'translate-ignored' => '(已略過)',
+	'translate-ignored'  => '(已略過)',
 
-	'translate-edit-message-format' => '呢句信息嘅格式係 <b>$1</b>。',
-	'translate-edit-message-in' => '響 <b>$1</b> 嘅現行字串 ($2):',
-	'translate-edit-message-in-fb' => '響 <b>$1</b> 於倚靠語言中嘅現行字串 ($2):',
+	'translate-edit-definition'         => '信息定義',
+	'translate-edit-contribute'         => '貢獻',
+	'translate-edit-no-information'     => "''呢句信息無註解。
+如果你知道呢句信息響邊同埋點用，你可以加註解去呢個信息去幫其他嘅翻譯者。''",
+	'translate-edit-information'        => '呢句信息嘅資料 ($1)',
+	'translate-edit-in-other-languages' => '其它語言嘅信息',
+	'translate-edit-committed'          => '而家響軟件嘅翻譯',
+	'translate-edit-warnings'           => '有關未譯好嘅警告',
+
+	'translate-magic-pagename'    => '延伸MediaWiki翻譯',
+	'translate-magic-help'        => '你可以翻譯特別頁替身、魔術字、皮名同埋名空間嘅名。
+
+響魔術字度你係要同時包括英文嘅翻譯，唔係嘅話就會唔能夠運作。
+同時保持第一個項目 (0或1) 不變。
+
+特別頁替身同埋魔術字可以有多個翻譯。
+翻譯係以逗號 (,) 分隔。
+皮名同埋空間名只可以有一項翻譯。
+
+響空間名翻譯度， <tt>$1 talk</tt> 係特別嘅。 <tt>$1</tt> 會由網名代替咗（例如<tt>{{SITENAME}} talk</tt>）。
+如果你嘅語言組合唔能夠響網站名唔改嘅情況之下去組合成你嘅意思，請聯絡技術員。
+
+你需要係翻譯組嘅組員去儲存嘅啲信息。
+響你撳下面嘅儲存擊之前，啲改動唔會儲存落來。',
+	'translate-magic-form'        => '語言: $1 模組: $2 $3',
+	'translate-magic-submit'      => '擷取',
+	'translate-magic-cm-to-be'    => '翻譯',
+	'translate-magic-cm-current'  => '現時',
+	'translate-magic-cm-original' => '原本',
+	'translate-magic-cm-fallback' => '備份',
+
+	'translate-magic-cm-comment' => '註解:',
+	'translate-magic-cm-save'    => '保存',
+	'translate-magic-cm-export'  => '倒出',
+
+	'translate-magic-cm-updatedusing' => '用[[Special:Magic]]更新咗',
+	'translate-magic-cm-savefailed'   => '保存失敗',
+
+	'translate-magic-special'   => '特別頁替身',
+	'translate-magic-words'     => '魔術字',
+	'translate-magic-skin'      => '皮名',
+	'translate-magic-namespace' => '名空間名',
+
+	'translationchanges'        => '翻譯更改',
+	'translationchanges-export' => '倒出',
+	'translationchanges-change' => '$1: $2 由 $3',
+
+	'translate-checks-parameters' => '下面嘅參數係無用到嘅: <strong>$1</strong>',
+	'translate-checks-balance'    => '插入字嘅數量唔均等: <strong>$1</strong>',
+	'translate-checks-links'      => '下面嘅連結有問題: <strong>$1</strong>',
+	'translate-checks-xhtml'      => '請改下面嘅標籤去正確嘅: <strong>$1</strong>',
+	'translate-checks-plural'     => '用 <nowiki>{{PLURAL:}}</nowiki> 嘅解解釋但係翻譯無用到。',
 );
 
+/** Simplified Chinese (‪中文(简体)‬)
+ * @author Alexsh
+ */
 $messages['zh-hans'] = array(
-	'translate' => '翻译',
-	'translate-edit' => '编辑',
-	'translate-talk' => '对话',
-	'translate-history' => '历史',
+	'translate'                         => '翻译',
+	'translate-desc'                    => '翻译MediaWiki介面信息的[[Special:Translate|特殊页面]]',
+	'translate-edit'                    => '编辑',
+	'translate-talk'                    => '对话',
+	'translate-history'                 => '历史',
+	'translate-task-view'               => '查看全部信息',
+	'translate-task-untranslated'       => '查看尚未翻译的信息',
+	'translate-task-optional'           => '查看可选的信息',
+	'translate-task-review'             => '检查该处的更改',
+	'translate-task-reviewall'          => '检查该群组的翻译',
+	'translate-task-export'             => '导出翻译',
+	'translate-task-export-to-file'     => '导出翻译至文件',
+	'translate-task-export-as-po'       => '以纯文字格式导出翻译',
+	'translate-page-no-such-language'   => '选择的语言错误',
+	'translate-page-no-such-task'       => '选择的功能错误',
+	'translate-page-no-such-group'      => '选择的群组错误',
+	'translate-page-settings-legend'    => '设置',
+	'translate-page-task'               => '选择功能',
+	'translate-page-group'              => '群组',
+	'translate-page-language'           => '语言',
+	'translate-page-limit'              => '每页显示',
+	'translate-page-limit-option'       => '$1个信息',
+	'translate-submit'                  => '撷取',
+	'translate-page-navigation-legend'  => '导航',
+	'translate-page-showing'            => '显示第 $1 到第 $2 个信息，总共有 $3 个',
+	'translate-page-showing-all'        => '显示 $1 个信息',
+	'translate-page-showing-none'       => '没有任何信息',
+	'translate-next'                    => '下一页',
+	'translate-prev'                    => '上一页',
+	'translate-page-description-legend' => '关于本群组',
+	'translate-optional'                => '(可选)',
+	'translate-ignored'                 => '(已略过)',
+	'translate-edit-definition'         => '信息原文',
+	'translate-edit-contribute'         => '贡献',
+	'translate-edit-no-information'     => "''本介面信息没有任何说明信息
+如果您知道这个信息是使用在哪个地方，您可以增加说明信息以协助其他翻译者''",
+	'translate-edit-information'        => '关于本介面信息的信息 ($1)',
+	'translate-edit-in-other-languages' => '其他语言的信息',
+	'translate-edit-committed'          => '当前翻译',
+	'translate-edit-warnings'           => '未完成翻译的警告',
+	'translate-magic-pagename'          => '延伸的MediaWiki翻译',
+	'translate-magic-help'              => "您可以使用本特殊页面翻译'''特殊页面别名'''、'''魔术字'''、'''面板名称'''以及'''名字空间名称'''。
 
-	'translate-task-view' => '查看全部信息由',
-	'translate-task-untranslated' => '查看全部尚未翻译好的信息由',
-	'translate-task-review' => '复看该处的更改',
-	'translate-task-reviewall' => '复看该处的所有翻译',
-	'translate-task-export' => '导出翻译自',
-	'translate-task-export-to-file' => '导出翻译至文件由',
+翻译魔术字时，新的名称必需含有英文，否则无法生效。第一个字元也请避免0或1这两个字元
 
-	'translate-settings' => '我想去$1于$3语言上的$2群组，上限是$4。 $5',
-	'translate-paging' => '<div>显示由$1条到$2条，共$3条信息。 [ $4 | $5 ]</div>',
-	'translate-submit' => '撷取',
-	'translate-next' => '下一页',
-	'translate-prev' => '上一页',
+特殊页面别名以及魔术字可以使用复数的翻译，请使用逗号(,)分隔。面板名称以及名字空间名称只能有一个翻译。
 
-	'translate-optional' => '(可选)',
-	'translate-ignored' => '(已略过)',
+名字空间名称中，要注意<tt>$1 讨论</tt>这个空间名称在翻译时，<tt>$1</tt>会受到网站名称影响(例如<tt>{{SITENAME}} talk</tt>)。
+如果您的翻译没有更动网站名称，但无法正确显示的话，请联络MediaWiki开发者。
 
-	'translate-edit-message-format' => '这句信息的格式是 <b>$1</b>。',
-	'translate-edit-message-in' => '在 <b>$1</b> 的当前字串 ($2):',
-	'translate-edit-message-in-fb' => '在 <b>$1</b> 于倚靠语言中的当前字串 ($2):',
+您必需属于翻译者群组才能保存这些更改。在按下保存之前，这些更改均不会被更动。",
+	'translate-magic-form'              => '语言：$1 功能：$2 $3',
+	'translate-magic-submit'            => '撷取',
+	'translate-magic-cm-to-be'          => '翻译',
+	'translate-magic-cm-current'        => '目前',
+	'translate-magic-cm-original'       => '原始信息',
+	'translate-magic-cm-fallback'       => '备份',
+	'translate-magic-cm-comment'        => '原因：',
+	'translate-magic-cm-save'           => '保存',
+	'translate-magic-cm-export'         => '导出',
+	'translate-magic-cm-updatedusing'   => '已使用[[Special:Magic]]更新',
+	'translate-magic-cm-savefailed'     => '保存失败',
+	'translate-magic-special'           => '特殊页面别名',
+	'translate-magic-words'             => '魔术字',
+	'translate-magic-skin'              => '面板名称',
+	'translate-magic-namespace'         => '名字空间名称',
+	'translationchanges'                => '翻译更改',
+	'translationchanges-export'         => '{{int:translate-magic-cm-export}}',
+	'translationchanges-change'         => '$1: $2 由$3翻译',
+	'translate-checks-parameters'       => '以下参数没有使用到：<strong>$1</strong>',
+	'translate-checks-balance'          => '括号的数量不一致：<strong>$1</strong>',
+	'translate-checks-links'            => '以下的连结可能有问题：<strong>$1</strong>',
+	'translate-checks-xhtml'            => '请修正以下的标签：<strong>$1</strong>',
+	'translate-checks-plural'           => '原始信息使用于<nowiki>{{PLURAL:}}</nowiki>中，并没有用于翻译。',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
