@@ -548,15 +548,20 @@ $messages['br'] = array(
 	'translate-edit-committed'          => 'Troidigezh zo er meziant bremañ',
 	'translate-edit-warnings'           => 'Kemennoù diwall diwar-benn an troidigezhioù diglok',
 	'translate-magic-pagename'          => 'Troidigezh Mediawiki astennet',
-	'translate-magic-help'              => "Gallout a rit treiñ aliasoù ar pajennoù dibar, ar gerioù burzhudus anvioù an etrefasoù hag anvioù an esaouennoù anv.
+	'translate-magic-help'              => "Gallout a rit treiñ aliasoù ar pajennoù dibar, ar gerioù burzhudus, anvioù an etrefasoù hag anvioù an esaouennoù anv.
 
-Evit ar pezh a sell ouzh ar gerioù burzhudus e vo ret deoc'h ouzhpennañ an droidigezh saoznek pe ne'z aint ket en-dro ken. Dalc'hit ivez an elfenn gentañ (0 pe 1) evel m'emañ.
+Evit ar pezh a sell ouzh ar gerioù burzhudus e vo ret deoc'h ouzhpennañ an droidigezh saoznek pe ne'z aint ket en-dro ken. 
+Dalc'hit ivez an elfenn gentañ (0 pe 1) evel m'emañ.
 
-Gallout a ra aliasoù ar pajennoù dibar hag ar gerioù burzhudus kaout meur a droidigezh. Dispartiet eo an troidigezhioù dre skejoù (,). N'hall anvioù an etrefasoù ha re an esaouennoù anv nemet kaout un droidigezh hepken.
+Aliasoù ar pajennoù dibar hag ar gerioù burzhudus a c'hall kaout meur a droidigezh. 
+Dispartiet eo an troidigezhioù dre skejoù (,). 
+N'hall anvioù an etrefasoù ha re an esaouennoù anv nemet kaout un droidigezh hepken.
 
-E troidigezhioù an esaouennoù anv eo dibar <tt>$1 talk</tt>. Erlec'hiet eo <tt>$1</tt> gant anv al lec'hienn (da skouer <tt>{{SITENAME}} talk</tt>. Ma n'haller ket sevel lavarennoù reizh en ho yezh hep kemmañ anv al lec'hienn, kit e darempred gant un diorroer.
+E troidigezhioù an esaouennoù anv eo dibar <tt>$1 talk</tt>. Erlec'hiet eo <tt>$1</tt> gant anv al lec'hienn (da skouer <tt>{{SITENAME}} talk</tt>). 
+Ma n'haller ket sevel lavarennoù reizh en ho yezh hep kemmañ anv al lec'hienn, kit e darempred gant un diorroer.
 
-Ret eo deoc'h bezañ ezel eus ur strollad troourien evit enrollañ ar c'hemmoù. Ne vo ket enrollet ar c'hemmoù e-keit ha ne vo ket bet pouezet war ar bouton dindan.",
+Ret eo deoc'h bezañ ezel eus ur strollad troerien evit enrollañ ar c'hemmoù. 
+Ne vo ket enrollet ar c'hemmoù e-keit ha ne vo ket bet pouezet war ar bouton dindan.",
 	'translate-magic-form'              => 'Yezh $1 Modulenn : $2 $3',
 	'translate-magic-submit'            => 'Mont',
 	'translate-magic-cm-to-be'          => 'A zeu da vezañ',
@@ -1442,9 +1447,9 @@ Vos dête apartegnir a la tropa des traductors por sôvar los changements. Los c
 $messages['gl'] = array(
 	'translate'                         => 'Traducir',
 	'translate-desc'                    => '[[Special:Translate|Páxina especial]] para traducir Mediawiki e máis',
-	'translate-edit'                    => 'Editar',
+	'translate-edit'                    => 'editar',
 	'translate-talk'                    => 'conversa',
-	'translate-history'                 => 'Historial',
+	'translate-history'                 => 'historial',
 	'translate-task-view'               => 'Ver todas as mensaxes de',
 	'translate-task-untranslated'       => 'Ver todas as mensaxes sen traducir de',
 	'translate-task-optional'           => 'Ver mensaxes opcionais de',
@@ -2833,25 +2838,26 @@ $messages['oc'] = array(
 );
 
 /** Polish (Polski)
- * @author McMonster
  * @author Wpedzich
+ * @author Sp5uhe
+ * @author McMonster
  * @author Siebrand
  * @author Dodek
  */
 $messages['pl'] = array(
 	'translate'                         => 'Przetłumacz',
-	'translate-desc'                    => '[[Special:Translate|Strona specjalna]] do tłumaczenia Mediawiki i innych',
+	'translate-desc'                    => '[[Special:Translate|Strona specjalna]] dająca funkcjonalność tłumaczenia MediaWiki i innych',
 	'translate-edit'                    => 'edytuj',
 	'translate-talk'                    => 'dyskusja',
 	'translate-history'                 => 'historia',
-	'translate-task-view'               => 'Pokazać wszystkie komunikaty z',
-	'translate-task-untranslated'       => 'Pokazać wszystkie nieprzetłumaczone komunikaty z',
-	'translate-task-optional'           => 'Pokazać opcjonalne komunikaty z',
-	'translate-task-review'             => 'Przejrzeć zmiany w',
-	'translate-task-reviewall'          => 'Przejrzeć wszystkie tłumaczenia w',
-	'translate-task-export'             => 'Wyeksportować tłumaczenia z',
-	'translate-task-export-to-file'     => 'Wyeksportować tłumaczenie do pliku z',
-	'translate-task-export-as-po'       => 'Wyeksportować tłumaczenie w formacie Gettext',
+	'translate-task-view'               => 'zobaczyć wszystkie komunikaty z',
+	'translate-task-untranslated'       => 'zobaczyć wszystkie nieprzetłumaczone komunikaty z',
+	'translate-task-optional'           => 'zobaczyć opcjonalne komunikaty z',
+	'translate-task-review'             => 'przejrzeć zmiany w',
+	'translate-task-reviewall'          => 'przejrzeć wszystkie tłumaczenia w',
+	'translate-task-export'             => 'wyeksportować tłumaczenia z',
+	'translate-task-export-to-file'     => 'wyeksportować tłumaczenie do pliku z',
+	'translate-task-export-as-po'       => 'wyeksportować tłumaczenie w formacie Gettext',
 	'translate-page-no-such-language'   => 'Podano nieprawidłowy język.',
 	'translate-page-no-such-task'       => 'Podano nieprawidłowe zadanie.',
 	'translate-page-no-such-group'      => 'Podano nieprawidłową grupę.',
@@ -2860,12 +2866,12 @@ $messages['pl'] = array(
 	'translate-page-group'              => 'Grupa',
 	'translate-page-language'           => 'Język',
 	'translate-page-limit'              => 'Ograniczenie',
-	'translate-page-limit-option'       => '$1 {{PLURAL:$1|komunikat|komunikaty|komunikatów}} na stronę',
-	'translate-submit'                  => 'Pobierz',
+	'translate-page-limit-option'       => '$1 {{PLURAL:$1|komunikat|komunikatów|komunikaty}} na stronę',
+	'translate-submit'                  => 'Wyświetl',
 	'translate-page-navigation-legend'  => 'Nawigacja',
-	'translate-page-showing'            => 'Pokazane komunikaty od $1 do $2 z $3.',
-	'translate-page-showing-all'        => 'Pokazano $1 {{PLURAL:$1|komunikat|komunikatów}}.',
-	'translate-page-showing-none'       => 'Brak komunikatów do pokazania.',
+	'translate-page-showing'            => 'Wyświetlone komunikaty od $1 do $2 z $3.',
+	'translate-page-showing-all'        => 'Wyświetlono $1 {{PLURAL:$1|komunikat|komunikatów|komunikaty}}.',
+	'translate-page-showing-none'       => 'Brak komunikatów do wyświetlenia.',
 	'translate-next'                    => 'Następna strona',
 	'translate-prev'                    => 'Poprzednia strona',
 	'translate-page-description-legend' => 'Informacje na temat grupy',
@@ -2887,9 +2893,10 @@ Aliasy stron specjalnych i magiczne słowa mogą mieć wiele tłumaczeń, które
 
 Podczas tłumaczenia nazw specjalne znaczenie ma zapis <tt>Dyskusja $1</tt>, gdzie <tt>$1</tt> zamienia się w nazwę serwisu - na przykład <tt>Dyskusja {{SITENAME}}</tt>. Jeśli w danym języku niemożliwe jest sformułowanie prawidłowego wpisu bez zmiany nazwy serwisu, należy skontaktować się z deweloperem.
 
-By móc zapisać zmiany, należy znaleźć się w grupie tłumaczy. Zmiany nie są zapisywane, dopóki użytkownik nie naciśnie umieszczonego poniżej przycisku "Zapisz".',
+Zapisanie zmian jest możliwe tylko dla członków grupy tłumaczy.
+Zmiany nie są zapisywane, dopóki użytkownik nie naciśnie umieszczonego poniżej przycisku "Zapisz".',
 	'translate-magic-form'              => 'Język: $1 Moduł: $2 $3',
-	'translate-magic-submit'            => 'Pobierz',
+	'translate-magic-submit'            => 'Wyświetl',
 	'translate-magic-cm-to-be'          => 'Przyszły',
 	'translate-magic-cm-current'        => 'Aktualny',
 	'translate-magic-cm-original'       => 'Początkowy',
@@ -2902,15 +2909,15 @@ By móc zapisać zmiany, należy znaleźć się w grupie tłumaczy. Zmiany nie s
 	'translate-magic-special'           => 'Aliasy stron specjalnych',
 	'translate-magic-words'             => 'Magiczne słowa',
 	'translate-magic-skin'              => 'Nazwy motywów',
-	'translate-magic-namespace'         => 'Nazwy w przestrzeni nazw',
+	'translate-magic-namespace'         => 'Nazwy przestrzeni nazw',
 	'translationchanges'                => 'Zmiany w tłumaczeniu',
 	'translationchanges-export'         => 'eksportuj',
 	'translationchanges-change'         => '$1: $2 przez $3',
 	'translate-checks-parameters'       => 'Następujące parametry nie są wykorzystywane: <strong>$1</strong>',
 	'translate-checks-balance'          => 'W wyrażeniu napotkano nieparzystą liczbę nawiasów: <strong>$1</strong>',
 	'translate-checks-links'            => 'Wystąpiły problemy z następującymi linkami: <strong>$1</strong>',
-	'translate-checks-xhtml'            => 'Zastąp następujące znaczniki na prawidłowe: strong>$1</strong>',
-	'translate-checks-plural'           => 'Definicja wykorzystuje mechanizm <nowiki>{{PLURAL:}}</nowiki>, lecz tłumaczenie go nie uwzględnia.',
+	'translate-checks-xhtml'            => 'Zastąp następujące znaczniki prawidłowymi: <strong>$1</strong>',
+	'translate-checks-plural'           => 'Definicja wykorzystuje funkcję <nowiki>{{PLURAL:}}</nowiki>, lecz w tłumaczeniu nie została ona użyta.',
 );
 
 /** Piemontèis (Piemontèis)
