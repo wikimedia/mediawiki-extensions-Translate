@@ -703,7 +703,6 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-doublewiki',
 		'ext-expandtemplates',
 		'ext-flaggedrevs', # not yet in production (see http://test.wikipedia.org)
-		'ext-flaggedrevsmakereviewer', # not yet in production (see http://test.wikipedia.org)
 		'ext-gadgets',
 		'ext-imagemap',
 		'ext-inputbox',
@@ -1285,14 +1284,6 @@ class FlaggedRevsMessageGroup extends ExtensionMessageGroup {
 	protected $optional = array(
 		'revreview-toggle',
 	);
-}
-
-class FlaggedRevsMakeReviewerMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Flagged Revs Make Reviewer';
-	protected $id    = 'ext-flaggedrevsmakereviewer';
-
-	protected $arrName     = 'messages';
-	protected $messageFile = 'FlaggedRevs/MakeReviewer.i18n.php';
 }
 
 class FindSpamMessageGroup extends ExtensionMessageGroup {
