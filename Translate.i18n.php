@@ -3503,7 +3503,7 @@ $messages['tet'] = array(
  * @author Ibrahim
  * @author Siebrand
  */
-$messages['tg'] = array(
+$messages['tg-cyrl'] = array(
 	'translate'                         => 'Тарҷума',
 	'translate-desc'                    => '[[Special:Translate|Саҳифаи вижа]] барои тарҷумаи МедиаВики ва бартар аз он',
 	'translate-edit'                    => 'вироиш',
