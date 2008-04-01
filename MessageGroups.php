@@ -1564,6 +1564,14 @@ class MetavidWikiMessageGroup extends ExtensionMessageGroup {
 	);
 }
 
+class MibbitMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Mibbit';
+	protected $id    = 'ext-mibbit';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'Mibbit/Mibbit.i18n.php';
+}
+
 class MicroIDMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'MicroID';
 	protected $id    = 'ext-microid';
