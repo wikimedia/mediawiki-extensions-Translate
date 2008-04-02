@@ -163,7 +163,8 @@ class TranslateEditAddons {
 
 		// Definition
 		if ( $en !== null ) {
-			$boxes[] = self::doBox( $en, 'en', wfMsg( self::MSG . 'definition' ) );
+			$label = " ({$group->getLabel()})";
+			$boxes[] = self::doBox( $en, 'en', wfMsg( self::MSG . 'definition' ) . $label );
 		}
 
 

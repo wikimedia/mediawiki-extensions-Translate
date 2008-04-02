@@ -39,6 +39,8 @@ function customMessageGroups( $id ) {
 * fuzzy.php got support for --comment and --skiplanguages
 * untranslated is now the default task
 * truncate very long message names in table view
+* show definition closer to edit area
+* show the group of message when editing
 
 == Changes in version 8 ==
 * Released 2008-02-06
