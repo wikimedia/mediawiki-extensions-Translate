@@ -2800,18 +2800,18 @@ $messages['oc'] = array(
 	'translate-page-showing-none'       => 'Cap de messatge de visualizar.',
 	'translate-next'                    => 'Pagina seguenta',
 	'translate-prev'                    => 'Pagina precedenta',
-	'translate-page-description-legend' => 'Informacion a prepaus del grop',
+	'translate-page-description-legend' => 'Entresenha a prepaus del grop',
 	'translate-optional'                => '(opcional)',
 	'translate-ignored'                 => '(ignorat)',
 	'translate-edit-definition'         => 'Definicion del messatge',
 	'translate-edit-contribute'         => 'contribuir',
 	'translate-edit-no-information'     => 'Actualament, aqueste messatge es pas documentat. Se sabètz ont o cossí aqueste messatge es utilizat, podètz ajudar los autres traductors en documentant aqueste messatge.',
-	'translate-edit-information'        => 'Informacions concernent aqueste messatge ($1)',
+	'translate-edit-information'        => 'Entresenhas concernent aqueste messatge ($1)',
 	'translate-edit-in-other-languages' => 'Messatge dins las autras lengas',
 	'translate-edit-committed'          => 'Traduccions actualas ja dins lo logicial',
 	'translate-edit-warnings'           => 'Avertiments concernent las traduccions incomplètas',
 	'translate-magic-pagename'          => 'Traduccion de MediaWiki espandida',
-	'translate-magic-help'              => "Podètz traduire los alias de paginas especialas, los mots magics, los noms de skins e los noms d'espacis de noms. Dins los mots magics, devètz inclòure la traduccion en anglés o aquò foncionarà pas mai. E mai, daissatz lo primièr item (0 o 1) coma es. Los alias de paginas especialas e los mots magics pòdon aver mantuna traduccion. Las traduccions son separadas per una virgula (,). Los noms de skins e d'espacis de noms pòdon pas aver qu'una traduccion. Dins las traduccions d'espacis de noms, <tt>$1 talk</tt> es especial. <tt>$1</tt> es remplaçat pel nom del sit (per exemple <tt>{{SITENAME}} talk</tt>). Se es pas possible d'obténer una expression valida dins vòstra lenga sens cambiar lo nom del sit, contactatz un desvolopaire. Devètz aparténer al grop dels traductors per salvagardar los cambiaments. Los cambiaments seràn pas salvagardats abans que cliquèssetz sul boton Salvagardar en bas.",
+	'translate-magic-help'              => "Podètz traduire los alias de paginas especialas, los mots magics, los noms de skins e los noms d'espacis de noms. Dins los mots magics, devètz inclure la traduccion en anglés o aquò foncionarà pas mai. E mai, daissatz lo primièr item (0 o 1) coma es. Los alias de paginas especialas e los mots magics pòdon aver mantuna traduccion. Las traduccions son separadas per una virgula (,). Los noms de skins e d'espacis de noms pòdon pas aver qu'una traduccion. Dins las traduccions d'espacis de noms, <tt>$1 talk</tt> es especial. <tt>$1</tt> es remplaçat pel nom del sit (per exemple <tt>{{SITENAME}} talk</tt>). Se es pas possible d'obténer una expression valida dins vòstra lenga sens cambiar lo nom del sit, contactatz un desvolopaire. Devètz aparténer al grop dels traductors per salvagardar los cambiaments. Los cambiaments seràn pas salvagardats abans que cliquèssetz sul boton Salvagardar en bas.",
 	'translate-magic-form'              => 'Lenga $1 Modul : $2 $3',
 	'translate-magic-submit'            => 'Anar',
 	'translate-magic-cm-to-be'          => 'Desven',
@@ -3258,10 +3258,31 @@ $messages['so'] = array(
 	'translate' => 'Tarjun',
 );
 
+/** Serbian Cyrillic ekavian (ћирилица)
+ * @author Sasa Stefanovic
+ */
 $messages['sr-ec'] = array(
-	'translate' => 'Превод',
-	'translate-edit-message-in' => 'Тренутни стринг у <b>$1</b> ($2):',
-	'translate-edit-message-in-fb' => 'Тренутни стринг у језику <b>$1</b> ($2):',
+	'translate'                         => 'Превод',
+	'translate-edit'                    => 'уреди',
+	'translate-talk'                    => 'разговор',
+	'translate-history'                 => 'историја',
+	'translate-page-settings-legend'    => 'Подешавања',
+	'translate-page-task'               => 'Желим да',
+	'translate-page-group'              => 'Група',
+	'translate-page-language'           => 'Језик',
+	'translate-page-limit'              => 'Граница',
+	'translate-page-limit-option'       => '$1 {{PLURAL:$1|порука|поруке|порука}} по страни',
+	'translate-submit'                  => 'Добави',
+	'translate-page-navigation-legend'  => 'Навигација',
+	'translate-next'                    => 'Следећа страна',
+	'translate-prev'                    => 'Претходна страна',
+	'translate-edit-in-other-languages' => 'Порука на другим језицима',
+	'translate-magic-cm-current'        => 'Тренутно',
+	'translate-magic-cm-original'       => 'Оригинал',
+	'translate-magic-cm-comment'        => 'Коментар:',
+	'translate-magic-cm-save'           => 'Сачувај',
+	'translate-magic-cm-export'         => 'Извоз',
+	'translationchanges-export'         => 'извоз',
 );
 
 $messages['sr-el'] = array(
@@ -3612,13 +3633,17 @@ $messages['th'] = array(
 	'translate-magic-pagename'          => 'ส่วนขยายการแปลในมีเดียวิกิ',
 	'translate-magic-help'              => 'คุณสามารถแปลชื่อหน้าพิเศษต่าง ๆ, ตัวแปรพิเศษ, ชื่อแบบหน้าตา และ ชื่อเนมสเปซ
 
-ในตัวแปรพิเศษ กรุณาใส่คำแปลภาษาอังกฤษไปด้วยเช่นเดียวกัน มิฉะนั้นมันจะหยุดทำงาน กรุณาเว้นอันที่ 1 (0 หรือ 1) อย่างที่มันเป็น
+ในตัวแปรพิเศษ กรุณาใส่คำแปลภาษาอังกฤษไปด้วยเช่นเดียวกัน มิฉะนั้นมันจะหยุดทำงาน กรุณาเว้นอันแรก (0 หรือ 1) อย่างที่มันเป็น
 
-ชื่อหน้าพิเศษและตัวแปรพิเศษสามารถมีคำแปลได้หลายอย่าง คำแปลจะแยกโดยการใช้ จุลภาค (,) ; ชื่อแบบหน้าตาและเนมสเปซสามารถมีคำแปลได้แค่คำเดียว
+ชื่อหน้าพิเศษและตัวแปรพิเศษสามารถมีคำแปลได้หลายอย่าง 
+คำแปลจะแยกโดยการใช้ จุลภาค (,) 
+ชื่อแบบหน้าตาและเนมสเปซสามารถมีคำแปลได้แค่คำเดียว
 
-ในคำแปลชื่อเนมสเปซ <tt>คุยเรื่อง$1</tt> ต้องระวังเป็นพิเศษ <tt>$1</tt> จะถูกแทนที่โดยชื่อเว็บไซต์ (เช่น <tt>คุยเรื่อง{{SITENAME}}</tt> ถ้าไม่สามารถกระทำการดังกล่าวได้ในภาษาของคุณ, กรุณาติดต่อผู้ดูแลระบบขั้นสูง
+ในคำแปลชื่อเนมสเปซ <tt>คุยเรื่อง$1</tt> ต้องระวังเป็นพิเศษ <tt>$1</tt> จะถูกแทนที่โดยชื่อเว็บไซต์ (เช่น <tt>คุยเรื่อง{{SITENAME}}</tt>) 
+ถ้าไม่สามารถกระทำการดังกล่าวได้ในภาษาของคุณ, กรุณาติดต่อผู้ดูแลระบบขั้นสูง
 
-คุณต้องอยู่ในกลุ่มคนแปลเพื่อที่จะบันทึกข้อมูลได้ ข้อมูลจะไม่ถูกบันทึกตราบใดที่คุณยังไม่กด "บันทึก"',
+คุณต้องอยู่ในกลุ่มคนแปลเพื่อที่จะบันทึกข้อมูลได้ 
+ข้อมูลจะไม่ถูกบันทึกตราบใดที่คุณยังไม่กด "บันทึก"',
 	'translate-magic-form'              => 'ภาษา: $1 Module: $2 $3',
 	'translate-magic-submit'            => 'ดึงข้อมูล',
 	'translate-magic-cm-to-be'          => 'แก้เป็น',
