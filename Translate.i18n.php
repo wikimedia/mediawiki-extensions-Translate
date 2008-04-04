@@ -828,8 +828,9 @@ Du musst in der Übersetzer-Gruppe sein um Änderungen zu speichern. Änderungen
 	'translate-magic-cm-original' => 'Original',
 	'translate-magic-cm-fallback' => 'Fallback',
 
-	'translate-magic-cm-save'   => 'Speichern',
-	'translate-magic-cm-export' => 'Exportieren',
+	'translate-magic-cm-comment' => 'Kommentar:',
+	'translate-magic-cm-save'    => 'Speichern',
+	'translate-magic-cm-export'  => 'Exportieren',
 
 	'translate-magic-cm-updatedusing' => 'Aktualisiert durch Special:Magic',
 	'translate-magic-cm-savefailed'   => 'Speichern fehlgeschlagen',
