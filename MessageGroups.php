@@ -2357,6 +2357,14 @@ class WikihieroMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'wikihiero/wikihiero.i18n.php';
 }
 
+class WoopraMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Woopra';
+	protected $id    = 'ext-woopra';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'Woopra/Woopra.i18n.php';
+}
+
 class YUIMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'YUI';
 	protected $id    =  'ext-yui';

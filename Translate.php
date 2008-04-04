@@ -266,6 +266,7 @@ $wgTranslateAC = array(
 'ext-webstore'              => 'WebStoreMessageGroup',
 'ext-whitelist'             => 'WhiteListMessageGroup',
 'ext-whoiswatching'         => 'WhoIsWatchingMessageGroup',
+'ext-woopra'                => 'WoopraMessageGroup',
 'ext-whosonline'            => 'WhosOnlineMessageGroup',
 'ext-wikidatalanguagemanager' => 'WikidataLanguageManagerMessageGroup',
 'ext-wikihiero'             => 'WikihieroMessageGroup',
