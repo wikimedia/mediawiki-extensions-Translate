@@ -1525,6 +1525,13 @@ $messages['he'] = array(
 	'translate-edit-message-in-fb'  => 'המחרוזת הנוכחית ל־<b>$1</b> בשפת הגיבוי ($2):',
 );
 
+/** Hindi (हिन्दी)
+ * @author Kaustubh
+ */
+$messages['hi'] = array(
+	'translate-magic-cm-comment' => 'टिप्पणी:',
+);
+
 /** Croatian (Hrvatski)
  * @author Dnik
  * @author SpeedyGonsales
