@@ -671,6 +671,7 @@ Heu de tenir permisos de traductor per a desar els canvis, que no es guardaran f
  * @author Li-sung
  * @author Matěj Grabovský
  * @author Siebrand
+ * @author Danny B.
  */
 $messages['cs'] = array(
 	'translate'                         => 'Přeložit',
@@ -698,7 +699,7 @@ $messages['cs'] = array(
 	'translate-submit'                  => 'Ukázat',
 	'translate-page-navigation-legend'  => 'Navigace',
 	'translate-page-showing'            => 'Zobrazeny zprávy $1 až $2 z $3.',
-	'translate-page-showing-all'        => 'Zobrazeno $1 {{PLURAL:$1|zpráva|zprávy|zpráv}}.',
+	'translate-page-showing-all'        => '{{plural:$1|Zobrazena $1 zpráva|Zobrazeny $1 zprávy|Zobrazeno $1 zpráv}}.',
 	'translate-page-showing-none'       => 'Požadavku neodpovídají žádné zprávy.',
 	'translate-next'                    => 'Další stránka',
 	'translate-prev'                    => 'Předchozí stránka',
@@ -1009,7 +1010,7 @@ $messages['eo'] = array(
 	'translate-next'                    => 'Sekva paĝo',
 	'translate-prev'                    => 'Antaŭa paĝo',
 	'translate-page-description-legend' => 'Informoj pri la grupo',
-	'translate-optional'                => '(opcionala)',
+	'translate-optional'                => '(nedeviga)',
 	'translate-ignored'                 => '(ignorata)',
 	'translate-edit-definition'         => 'Mesaĝa difino',
 	'translate-edit-contribute'         => 'kontribui',
@@ -2854,7 +2855,7 @@ $messages['oc'] = array(
  */
 $messages['pl'] = array(
 	'translate'                         => 'Przetłumacz',
-	'translate-desc'                    => '[[Special:Translate|Strona specjalna]] dająca funkcjonalność tłumaczenia MediaWiki i innych',
+	'translate-desc'                    => '[[Special:Translate|Strona specjalna]] umożliwiająca tłumaczenie MediaWiki oraz innych programów',
 	'translate-edit'                    => 'edytuj',
 	'translate-talk'                    => 'dyskusja',
 	'translate-history'                 => 'historia',
@@ -2899,7 +2900,8 @@ Do magicznych słów należy dołączyć wersje angielskie, gdyż w przeciwnym r
 
 Aliasy stron specjalnych i magiczne słowa mogą mieć wiele tłumaczeń, które oddziela się przecinkiem (,). Nazwy motywów i przestrzeni mogą mieć tylko po jednym tłumaczeniu.
 
-Podczas tłumaczenia nazw specjalne znaczenie ma zapis <tt>Dyskusja $1</tt>, gdzie <tt>$1</tt> zamienia się w nazwę serwisu - na przykład <tt>Dyskusja {{SITENAME}}</tt>. Jeśli w danym języku niemożliwe jest sformułowanie prawidłowego wpisu bez zmiany nazwy serwisu, należy skontaktować się z deweloperem.
+Podczas tłumaczenia nazw specjalne znaczenie ma zapis <tt>Dyskusja $1</tt>, gdzie <tt>$1</tt> zamieniane jest w nazwę serwisu - na przykład <tt>Dyskusja {{SITENAME}}</tt>.
+Jeśli w danym języku niemożliwe jest sformułowanie prawidłowego wpisu bez zmiany nazwy serwisu, należy skontaktować się z deweloperem.
 
 Zapisanie zmian jest możliwe tylko dla członków grupy tłumaczy.
 Zmiany nie są zapisywane, dopóki użytkownik nie naciśnie umieszczonego poniżej przycisku "Zapisz".',
@@ -2912,7 +2914,7 @@ Zmiany nie są zapisywane, dopóki użytkownik nie naciśnie umieszczonego poni�
 	'translate-magic-cm-comment'        => 'Komentarz:',
 	'translate-magic-cm-save'           => 'Zapisz',
 	'translate-magic-cm-export'         => 'Eksportuj',
-	'translate-magic-cm-updatedusing'   => 'Uaktualnione za pomocą strony [[Special:Magic]]',
+	'translate-magic-cm-updatedusing'   => 'Uaktualniane za pomocą strony [[Special:Magic]]',
 	'translate-magic-cm-savefailed'     => 'Zapis nieudany',
 	'translate-magic-special'           => 'Aliasy stron specjalnych',
 	'translate-magic-words'             => 'Magiczne słowa',
