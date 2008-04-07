@@ -71,11 +71,8 @@ class StandardExtensionExporter implements MessageExporter {
 			$output = $task->execute() . "\n";
 			unset( $sections[$code] );
 		} elseif ( isset( $sections[$code] ) ) {
-			# Hacks...
-			if ( strpos( $sections[$code], "];\n" ) === false ) {
-				$output = $sections[$code];
-				unset( $sections[$code] );
-			}
+			$output = $sections[$code];
+			unset( $sections[$code] );
 		}
 		return $output;
 	}
@@ -102,7 +99,7 @@ class StandardExtensionExporter implements MessageExporter {
 
 		list( , $header, $data) = $matches;
 
-		$sectionP = '(?: /\*\* .*? \*/ )? (?: ( [^\n]*?  \S;\n ) | (?: .*?  \n\);\n\n ) )';
+		$sectionP = '(?: /\*\* .*? \*/ )? (?: .*?  \n\);\n\n )';
 		$codeP = "\\$$var\[' (.*?) '\]";
 
 		$sectionMatches = array();
@@ -122,8 +119,9 @@ class StandardExtensionExporter implements MessageExporter {
 			}
 		}
 
-		ksort( $sections );
-		$sections[] = implode( "\n", $unknown );
+		#ksort( $sections );
+		if ( $unknown )
+			$sections[] = implode( "\n", $unknown );
 
 		return array( $header, $sections );
 	}
