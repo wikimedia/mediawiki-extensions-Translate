@@ -3530,7 +3530,7 @@ $messages['tet'] = array(
 	'translate-magic-submit'            => 'Hola',
 );
 
-/** Tajik (Тоҷикӣ)
+/** Tajik (Cyrillic) (Тоҷикӣ/tojikī (Cyrillic))
  * @author Ibrahim
  * @author Siebrand
  */
@@ -3569,7 +3569,7 @@ $messages['tg-cyrl'] = array(
 	'translate-ignored'                 => '(нодида гирифташуда)',
 	'translate-edit-definition'         => 'Таърифи пайғом',
 	'translate-edit-contribute'         => 'ҳиссагузорӣ',
-	'translate-edit-no-information'     => "''Ин пайғом дорои тавзеҳот нест.
+	'translate-edit-no-information'     => "''Ин пайғом дорои тавзеҳот нест. 
 Агар шумо медонед ин пағом чигуна ё дар куҷо истифода мешавад, шумо метавонед бо изофа кардани тавзеҳот ба ин пайғом ба дигар тарҷумакунандагон кӯмак кунед.''",
 	'translate-edit-information'        => 'Иттилоот дар мавриди ин пайғом ($1)',
 	'translate-edit-in-other-languages' => 'Ҳамин пайғом дар дигар забонҳо',
@@ -3577,6 +3577,7 @@ $messages['tg-cyrl'] = array(
 	'translate-edit-warnings'           => 'Ҳушдор дар мавриди тарҷумаҳои нокомил',
 	'translate-magic-pagename'          => 'Тарҷумаи густаришёфтаи МедиаВики',
 	'translate-magic-form'              => 'Забон: $1 Воҳид: $2 $3',
+	'translate-magic-submit'            => 'Вокашидан',
 	'translate-magic-cm-to-be'          => 'Будан',
 	'translate-magic-cm-current'        => 'Кунунӣ',
 	'translate-magic-cm-original'       => 'Аслӣ',
