@@ -11,7 +11,7 @@ if (!defined('MEDIAWIKI')) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '8.23' );
+define( 'TRANSLATE_VERSION', '8.24' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name'           => 'Translate',
@@ -152,10 +152,12 @@ $wgTranslateAC = array(
 'ext-forcepreview'          => 'ForcePreviewMessageGroup',
 'ext-formatemail'           => 'FormatEmailMessageGroup',
 'ext-gadgets'               => 'GadgetsMessageGroup',
+'ext-globalblocking'        => 'GlobalBlockingMessageGroup',
 'ext-globalusage'           => 'GlobalUsageMessageGroup',
 'ext-gnuplot'               => 'GnuplotMessageGroup',
 'ext-googleanalytics'       => 'GoogleAnalyticsMessageGroup',
 'ext-googlemaps'            => 'GoogleMapsMessageGroup',
+'ext-gotocategory'          => 'GoToCategoryMessageGroup',
 'ext-htmlets'               => 'HTMLetsMessageGroup',
 'ext-i18ntags'              => 'I18nTagsMessageGroup',
 'ext-icon'                  => 'IconMessageGroup',
@@ -261,6 +263,7 @@ $wgTranslateAC = array(
 'ext-userrightsnotif'       => 'UserRightsNotifMessageGroup',
 'ext-vote'                  => 'VoteMessageGroup',
 'ext-watchers'              => 'WatchersMessageGroup',
+'ext-watchsubpages'         => 'WatchSubpagesMessageGroup',
 'ext-webstore'              => 'WebStoreMessageGroup',
 'ext-whitelist'             => 'WhiteListMessageGroup',
 'ext-whoiswatching'         => 'WhoIsWatchingMessageGroup',

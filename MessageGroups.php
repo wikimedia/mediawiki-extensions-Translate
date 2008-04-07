@@ -702,7 +702,6 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-dismissablesitenotice',
 		'ext-doublewiki',
 		'ext-expandtemplates',
-		'ext-flaggedrevs', # not yet in production (see http://test.wikipedia.org)
 		'ext-gadgets',
 		'ext-imagemap',
 		'ext-inputbox',
@@ -1334,6 +1333,17 @@ class GadgetsMessageGroup extends ExtensionMessageGroup {
 	);
 }
 
+class GlobalBlockingMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Global Blocking';
+	protected $id    = 'ext-globalblocking';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'GlobalBlocking/GlobalBlocking.i18n.php';
+
+	protected $ignored = array( 'globalblocking-expiry-options' );
+
+}
+
 class GlobalUsageMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Global Usage';
 	protected $id    = 'ext-globalusage';
@@ -1364,6 +1374,14 @@ class GoogleMapsMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'wgGoogleMapsMessages';
 	protected $messageFile = 'GoogleMaps/GoogleMaps.i18n.php';
+}
+
+class GoToCategoryMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Go To Category';
+	protected $id    = 'ext-gotocategory';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'GoToCategory/GoToCategory.i18n.php';
 }
 
 class HTMLetsMessageGroup extends ExtensionMessageGroup {
@@ -2305,6 +2323,14 @@ class WatchersMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'Watchers/Watchers.i18n.php';
+}
+
+class WatchSubpagesMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Watch Subpages';
+	protected $id    = 'ext-watchsubpages';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'WatchSubpages/WatchSubpages.i18n.php';
 }
 
 class WebStoreMessageGroup extends ExtensionMessageGroup {
