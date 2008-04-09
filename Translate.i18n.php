@@ -1530,7 +1530,9 @@ $messages['he'] = array(
  * @author Kaustubh
  */
 $messages['hi'] = array(
-	'translate-magic-cm-comment' => 'टिप्पणी:',
+	'translate-page-navigation-legend' => 'नैविगेशन',
+	'translate-magic-cm-comment'       => 'टिप्पणी:',
+	'translate-magic-cm-save'          => 'संजोयें',
 );
 
 /** Croatian (Hrvatski)
@@ -2904,7 +2906,7 @@ Podczas tłumaczenia nazw specjalne znaczenie ma zapis <tt>Dyskusja $1</tt>, gdz
 Jeśli w danym języku niemożliwe jest sformułowanie prawidłowego wpisu bez zmiany nazwy serwisu, należy skontaktować się z deweloperem.
 
 Zapisanie zmian jest możliwe tylko dla członków grupy tłumaczy.
-Zmiany nie są zapisywane, dopóki użytkownik nie naciśnie umieszczonego poniżej przycisku "Zapisz".',
+Zmiany nie są zapisywane, dopóki użytkownik nie naciśnie umieszczonego poniżej przycisku „Zapisz”.',
 	'translate-magic-form'              => 'Język: $1 Moduł: $2 $3',
 	'translate-magic-submit'            => 'Wyświetl',
 	'translate-magic-cm-to-be'          => 'Przyszły',
