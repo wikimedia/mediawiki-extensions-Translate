@@ -11,7 +11,7 @@ if (!defined('MEDIAWIKI')) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '8.24' );
+define( 'TRANSLATE_VERSION', '8.25' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name'           => 'Translate',
@@ -41,16 +41,13 @@ $wgAutoloadClasses['CoreExporter'] = $dir . 'Exporters.php';
 $wgAutoloadClasses['StandardExtensionExporter'] = $dir . 'Exporters.php';
 $wgAutoloadClasses['MultipleFileExtensionExporter'] = $dir . 'Exporters.php';
 
-
 $wgAutoloadClasses['TranslateEditAddons'] = $dir . 'TranslateEditAddons.php';
 $wgAutoloadClasses['languages'] = $IP . '/maintenance/language/languages.inc';
 $wgAutoloadClasses['MessageWriter'] = $IP . '/maintenance/language/writeMessagesArray.inc';
 
-
 $wgAutoloadClasses['SpecialTranslate'] = $dir . 'TranslatePage.php';
 $wgAutoloadClasses['SpecialMagic'] = $dir . 'SpecialMagic.php';
 $wgAutoloadClasses['SpecialTranslationChanges'] = $dir . 'SpecialTranslationChanges.php';
-
 
 $wgExtensionMessagesFiles['Translate'] = $dir . 'Translate.i18n.php';
 
@@ -59,6 +56,9 @@ $wgSpecialPages['Magic'] = 'SpecialMagic';
 $wgSpecialPages['TranslationChanges'] = 'SpecialTranslationChanges';
 
 $wgHooks['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';
+
+$wgAutoloadClasses['TranslatePreferences'] = $dir . 'TranslateUtils.php';
+$wgHooks['UserToggles'][] = 'TranslatePreferences::TranslateUserToggles';
 
 define( 'TRANSLATE_FUZZY', '!!FUZZY!!' );
 define( 'TRANSLATE_INDEXFILE', $dir . 'messageindex.ser' );
