@@ -289,6 +289,7 @@ $messages['ar'] = array(
 	'translate-checks-links'            => 'الوصلات التالية بها مشاكل: <strong>$1</strong>',
 	'translate-checks-xhtml'            => 'من فضلك استبدل الوسوم التالية بالبدائل الصحيحة: <strong>$1</strong>',
 	'translate-checks-plural'           => 'التعريف يستخدم <nowiki>{{PLURAL:}}</nowiki> لكن الترجمة لا.',
+	'tog-translate-nonewsletter'        => 'لا ترسل لي إخطارات بريدية بالبريد الإلكتروني (متعلقة فقط بالمستخدمين الذين يمتلكون عنوان بريد الإلكتروني مؤكد)',
 );
 
 /** Araucanian (Mapudungun)
@@ -1339,6 +1340,7 @@ Vous devez appartenir au groupe des traducteurs pour sauvegarder les changements
 	'translate-checks-links'            => 'Les liens suivants sont douteux : <strong>$1</strong>',
 	'translate-checks-xhtml'            => 'Vous êtes invité à corriger les balises suivantes : <strong>$1</strong>',
 	'translate-checks-plural'           => 'La définition utilise <nowiki>{{PLURAL:}}</nowiki> mais pas la traduction.',
+	'tog-translate-nonewsletter'        => 'Ne m’envoyez pas la lettre d’information par courrier (ne concerne que les utilisateurs qui disposent d’une adresse courriel confirmée)',
 );
 
 $messages['frc'] = array(
@@ -1534,9 +1536,15 @@ $messages['he'] = array(
  * @author Kaustubh
  */
 $messages['hi'] = array(
+	'translate-edit'                   => 'संपादन',
+	'translate-history'                => 'इतिहास',
+	'translate-page-language'          => 'भाषा',
 	'translate-page-navigation-legend' => 'नैविगेशन',
+	'translate-optional'               => '(वैकल्पिक)',
 	'translate-magic-cm-comment'       => 'टिप्पणी:',
 	'translate-magic-cm-save'          => 'संजोयें',
+	'translate-magic-cm-export'        => 'निर्यात',
+	'translationchanges-export'        => 'निर्यात',
 );
 
 /** Croatian (Hrvatski)
@@ -2538,6 +2546,7 @@ $messages['ml'] = array(
 
 /** Marathi (मराठी)
  * @author Mahitgar
+ * @author Kaustubh
  */
 $messages['mr'] = array(
 	'translate'                         => 'भाषांतर करा',
@@ -2563,7 +2572,7 @@ $messages['mr'] = array(
 	'translate-next'                    => 'पुढील पान',
 	'translate-prev'                    => 'मागील पान',
 	'translate-page-description-legend' => 'गटाबद्दल माहिती',
-	'translate-optional'                => 'पर्यायी',
+	'translate-optional'                => '(वैकल्पिक)',
 	'translate-ignored'                 => '(दुर्लक्षीत)',
 	'translate-edit-definition'         => 'संदेश व्याख्या',
 	'translate-edit-contribute'         => 'योगदान करा',
@@ -2679,6 +2688,7 @@ Om wijzigingen op te slaan moet u lid zijn van de groep vertalers. Wijzigingen w
 	'translate-checks-links'            => 'De volgende links zijn problematisch: <strong>$1</strong>',
 	'translate-checks-xhtml'            => 'Vervang de volgende tags door de juiste: <strong>$1</strong>',
 	'translate-checks-plural'           => 'De definitie bevat <nowiki>{{PLURAL:}}</nowiki>, maar de vertaling niet.',
+	'tog-translate-nonewsletter'        => 'Stuur mij geen nieuwsbrieven per e-mail (alleen relevant voor gebruikers met een bevestigd e-mailadres)',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
@@ -3265,6 +3275,7 @@ Aby ste mohli ukladať zmeny, musíte byť členom skupiny translators. Zmeny sa
 	'translate-checks-links'            => 'Nasledovné odkazy sú problematické: <strong>$1</strong>',
 	'translate-checks-xhtml'            => 'Prosím, nahraďte nasledovné značky správnymi: <strong>$1</strong>',
 	'translate-checks-plural'           => 'Definícia používa <nowiki>{{PLURAL:}}</nowiki>, ale preklad nie.',
+	'tog-translate-nonewsletter'        => 'Neposielať mi novinky emailom (týka sa iba používateľov s potvrdenou emailovou adresou)',
 );
 
 /** Somali (Soomaaliga)
