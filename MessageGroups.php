@@ -1755,6 +1755,16 @@ class OggHandlerMessageGroup extends ExtensionMessageGroup {
 	);
 }
 
+class OnlineStatusMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Online Status';
+	protected $id    = 'ext-onlinestatus';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'OnlineStatus/OnlineStatus.i18n.php';
+
+	protected $ignored = array( 'onlinestatus-levels' );
+}
+
 class OpenIDMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'OpenID';
 	protected $id    = 'ext-openid';
