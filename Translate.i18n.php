@@ -852,6 +852,8 @@ Du musst in der Übersetzer-Gruppe sein um Änderungen zu speichern. Änderungen
 	'translate-checks-links'      => 'Die folgenden Links sind problematisch: <strong>$1</strong>',
 	'translate-checks-xhtml'      => 'Bitte ersettze die folgenden Tags mit den korrekten: <strong>$1</strong>',
 	'translate-checks-plural'     => 'Das Original benutzt <nowiki>{{PLURAL:}}</nowiki>, die Übersetzung aber nicht.',
+
+	'tog-translate-nonewsletter' => 'Sende mir keine E-Mail-Newsletter zu (nur für Benutzer für bestätigten E-Mail-Adressen relevant)',
 );
 
 /** Lower Sorbian (Dolnoserbski)
