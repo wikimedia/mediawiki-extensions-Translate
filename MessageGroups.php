@@ -788,6 +788,14 @@ class AssertEditMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'AssertEdit/AssertEdit.i18n.php';
 }
 
+class AuthorProtectMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Author Protect';
+	protected $id    = 'ext-authorprotect';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'AuthorProtect/AuthorProtect.i18n.php';
+}
+
 class BackAndForthMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Back and Forth';
 	protected $id    = 'ext-backandforth';
