@@ -2866,7 +2866,6 @@ $messages['oc'] = array(
  * @author Wpedzich
  * @author Sp5uhe
  * @author McMonster
- * @author Siebrand
  * @author Dodek
  */
 $messages['pl'] = array(
@@ -2944,6 +2943,7 @@ Zmiany nie są zapisywane, dopóki użytkownik nie naciśnie umieszczonego poni�
 	'translate-checks-links'            => 'Wystąpiły problemy z następującymi linkami: <strong>$1</strong>',
 	'translate-checks-xhtml'            => 'Zastąp następujące znaczniki prawidłowymi: <strong>$1</strong>',
 	'translate-checks-plural'           => 'Definicja wykorzystuje funkcję <nowiki>{{PLURAL:}}</nowiki>, lecz w tłumaczeniu nie została ona użyta.',
+	'tog-translate-nonewsletter'        => 'Nie wysyłaj do mnie biuletynów pocztą elektroniczną (dotyczy tylko użytkowników z potwierdzonym adresem e-mail)',
 );
 
 /** Piemontèis (Piemontèis)
