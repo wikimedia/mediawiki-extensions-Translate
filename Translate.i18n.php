@@ -2688,7 +2688,7 @@ Om wijzigingen op te slaan moet u lid zijn van de groep vertalers. Wijzigingen w
 	'translate-checks-links'            => 'De volgende links zijn problematisch: <strong>$1</strong>',
 	'translate-checks-xhtml'            => 'Vervang de volgende tags door de juiste: <strong>$1</strong>',
 	'translate-checks-plural'           => 'De definitie bevat <nowiki>{{PLURAL:}}</nowiki>, maar de vertaling niet.',
-	'tog-translate-nonewsletter'        => 'Stuur mij geen nieuwsbrieven per e-mail (alleen relevant voor gebruikers met een bevestigd e-mailadres)',
+	'tog-translate-nonewsletter'        => 'Mij geen nieuwsbrieven per e-mail sturen (alleen relevant voor gebruikers met een bevestigd e-mailadres)',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
@@ -2788,6 +2788,7 @@ Du må være i oversettergruppa for å lagre endringer. Endringer lagres ikke f�
 	'translate-checks-links'            => 'Følgende lenker er problematiske: <strong>$1</strong>',
 	'translate-checks-xhtml'            => 'Erstatt følgende tagger med de korrekte: <strong>$1</strong>',
 	'translate-checks-plural'           => 'Definisjonen bruker <nowiki>{{PLURAL:}}</nowiki>, men oversettelsen gjør ikke det.',
+	'tog-translate-nonewsletter'        => 'Ikke send meg nyhetsbrev (gjelder kun brukere med bekreftet e-postadresse)',
 );
 
 /** Occitan (Occitan)
