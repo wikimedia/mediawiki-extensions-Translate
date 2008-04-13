@@ -30,6 +30,7 @@ class SpecialTranslate extends SpecialPage {
 	public function execute( $parameters ) {
 		wfLoadExtensionMessages( 'Translate' );
 		TranslateUtils::injectCSS();
+		global $wgOut;
 
 		$this->setup();
 		$this->setHeaders();
