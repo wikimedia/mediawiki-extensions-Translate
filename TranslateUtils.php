@@ -396,6 +396,28 @@ class TranslateUtils {
 		$msg = str_replace( "\n", '<br />', $msg );
 		return $msg;
 	}
+
+	public static function injectCSS() {
+		static $done = false;
+		if ( $done ) return;
+
+		global $wgHooks, $wgOut, $wgTranslateCssLocation;
+		if ( $wgTranslateCssLocation ) {
+			$wgOut->addLink( array( 'rel' => 'stylesheet', 'type' => 'text/css',
+				'href' => "$wgTranslateCssLocation/Translate.css", )
+			);
+		} else {
+			$wgHooks['SkinTemplateSetupPageCss'][] = array( __CLASS__ , 'injectCSSCB' );
+		}
+		$done = true;
+	}
+
+	public static function injectCSSCB( &$css ) {
+		$file = dirname( __FILE__ ) . '/Translate.css';
+		$css .= "/*<![CDATA[*/\n" . htmlspecialchars( file_get_contents( $file ) ) . "\n/*]]>*/";
+		return true;
+	}
+	
 }
 
 class HTMLSelector {

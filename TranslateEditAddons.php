@@ -141,12 +141,17 @@ class TranslateEditAddons {
 			$title = Title::makeTitle( NS_MEDIAWIKI, $key . '/' . $wgTranslateDocumentationLanguageCode );
 			$edit = $wgUser->getSkin()->makeKnownLinkObj( $title, wfMsgHtml( self::MSG . 'contribute' ), 'action=edit' );
 			$info = TranslateUtils::getMessageContent( $key, $wgTranslateDocumentationLanguageCode );
+			$class = 'mw-sp-translate-edit-info';
+
 			if ( !$info ) {
 				$info = wfMsg( self::MSG . 'no-information' );
+				$class = 'mw-sp-translate-edit-noinfo';
 			}
+
+			$class .= ' mw-sp-translate-message-documentation';
+
 			$boxes[] = TranslateUtils::fieldset(
-				wfMsgHtml( self::MSG . 'information', $edit ), $wgOut->parse( $info, false ),
-				$info ? array( 'class' => 'mw-sp-translate-edit-info' ) : array( 'id' => 'mw-sp-translate-edit-noinfo' )
+				wfMsgHtml( self::MSG . 'information', $edit ), $wgOut->parse( $info ), array( 'class' => $class )
 			);
 		}
 
@@ -181,7 +186,8 @@ class TranslateEditAddons {
 		}
 
 		$group->reset();
-		return implode("\n\n", $boxes);
+		TranslateUtils::injectCSS();
+		return Xml::tags( 'div', array( 'class' => 'mw-sp-translate-edit-fields' ), implode("\n\n", $boxes) );
 	}
 
 

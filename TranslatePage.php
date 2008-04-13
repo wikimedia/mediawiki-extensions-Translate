@@ -29,15 +29,7 @@ class SpecialTranslate extends SpecialPage {
 	 */
 	public function execute( $parameters ) {
 		wfLoadExtensionMessages( 'Translate' );
-
-		global $wgHooks, $wgOut, $wgTranslateCssLocation;
-		if ( $wgTranslateCssLocation ) {
-			$wgOut->addLink( array( 'rel' => 'stylesheet', 'type' => 'text/css',
-				'href' => "$wgTranslateCssLocation/Translate.css", )
-			);
-		} else {
-			$wgHooks['SkinTemplateSetupPageCss'][] = array( $this , 'pagecss' );
-		}
+		TranslateUtils::injectCSS();
 
 		$this->setup();
 		$this->setHeaders();
@@ -269,12 +261,6 @@ class SpecialTranslate extends SpecialPage {
 			)
 		);
 		return $link;
-	}
-
-	public function pagecss( $css ) {
-		$file = dirname( __FILE__ ) . '/Translate.css';
-		$css .= "/*<![CDATA[*/\n" . htmlspecialchars( file_get_contents( $file ) ) . "\n/*]]>*/";
-		return true;
 	}
 
 	protected function getGroupDescription() {

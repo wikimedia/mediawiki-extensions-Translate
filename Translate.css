@@ -39,3 +39,9 @@
 	background-color: inherit;
 	font-weight: bold;
 }
+
+.mw-sp-translate-edit-fields fieldset {
+	line-height: normal;
+}
+
+
