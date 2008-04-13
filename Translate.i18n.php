@@ -2927,7 +2927,7 @@ Zmiany nie są zapisywane, dopóki użytkownik nie naciśnie umieszczonego poni�
 	'translate-magic-cm-current'        => 'Aktualny',
 	'translate-magic-cm-original'       => 'Początkowy',
 	'translate-magic-cm-fallback'       => 'Poprzedni',
-	'translate-magic-cm-comment'        => 'Komentarz:',
+	'translate-magic-cm-comment'        => 'Opis zmian:',
 	'translate-magic-cm-save'           => 'Zapisz',
 	'translate-magic-cm-export'         => 'Eksportuj',
 	'translate-magic-cm-updatedusing'   => 'Uaktualniane za pomocą strony [[Special:Magic]]',
@@ -3445,13 +3445,15 @@ För att kunna spara ändringar så behöver du tillhöra översättargruppen. �
 	'translate-checks-plural'           => '<nowiki>{{PLURAL:}}</nowiki> används i definitionen, men inte i översättningen.',
 );
 
-/** ślůnski (ślůnski)
+/** Silesian (ślůnski)
  * @author Herr Kriss
  * @author Pimke
  */
 $messages['szl'] = array(
 	'translate-edit'    => 'sprowjéj',
 	'translate-history' => 'historjo',
+	'translate-next'    => 'Nostympno zajta',
+	'translate-prev'    => 'Popředńo zajta',
 );
 
 /** Tamil (தமிழ்)
