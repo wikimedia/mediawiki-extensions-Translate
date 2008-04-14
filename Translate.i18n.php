@@ -109,6 +109,7 @@ Changes are not saved until you click save button below.',
 
 /** Afrikaans (Afrikaans)
  * @author SPQRobin
+ * @author Arnobarnard
  */
 $messages['af'] = array(
 	'translate'                         => 'Vertaal',
@@ -119,26 +120,38 @@ $messages['af'] = array(
 	'translate-task-view'               => 'alle boodskappe bekyk van',
 	'translate-task-untranslated'       => 'alle onvertaalde boodskappe bekyk van',
 	'translate-task-optional'           => 'opsionele boodskappe bekyk van',
+	'translate-task-review'             => 'Hersien wysigings aan',
+	'translate-task-reviewall'          => 'Hersien alle vertalings in',
 	'translate-page-task'               => 'Ek wil',
 	'translate-page-group'              => 'Groep',
 	'translate-page-language'           => 'Taal',
+	'translate-page-limit'              => 'Limiet',
 	'translate-page-limit-option'       => '$1 {{PLURAL:$1|boodskap|boodskappe}} per bladsy',
+	'translate-submit'                  => 'Gaan haal',
 	'translate-page-navigation-legend'  => 'Navigasie',
+	'translate-page-showing'            => 'Wys boodskappe van $1 tot $2 uit $3.',
 	'translate-page-showing-all'        => 'Wys $1 {{PLURAL:$1|boodskap|boodskappe}}.',
 	'translate-page-showing-none'       => 'Geen boodskappe te wys.',
 	'translate-next'                    => 'Volgende bladsy',
 	'translate-prev'                    => 'Vorige bladsy',
 	'translate-page-description-legend' => 'Inligting oor hierdie groep',
 	'translate-optional'                => '(opsioneel)',
+	'translate-ignored'                 => '(geïgnoreer)',
+	'translate-edit-definition'         => 'Boodskap definisie',
 	'translate-edit-contribute'         => 'wysig',
 	'translate-edit-information'        => 'Inligting oor hierdie boodskap ($1)',
 	'translate-edit-in-other-languages' => 'Boodskap in andere tale',
 	'translate-edit-committed'          => 'Huidige vertaling in sagteware',
+	'translate-edit-warnings'           => 'Waarskuwings oor onvoltooide vertalings',
 	'translate-magic-form'              => 'Taal: $1 Module: $2 $3',
+	'translate-magic-submit'            => 'Gaan haal',
 	'translate-magic-cm-current'        => 'Huidig',
+	'translate-magic-cm-original'       => 'Oorspronklik',
 	'translate-magic-cm-comment'        => 'Opmerking:',
 	'translate-magic-cm-save'           => 'Stoor',
+	'translate-magic-cm-updatedusing'   => 'Opgedateer deur [[Special:Magic]] te gebruik',
 	'translate-magic-namespace'         => 'Naamruimtenamen',
+	'translationchanges'                => 'Vertaling wysigings',
 );
 
 /** Aragonese (Aragonés)
@@ -2079,6 +2092,7 @@ $messages['kk-arab'] = array(
  */
 $messages['kk-cyrl'] = array(
 	'translate'                         => 'Аудару',
+	'translate-desc'                    => 'MediaWiki және онан тыс аудару үшін [[Special:Translate|арнайы бет]]',
 	'translate-edit'                    => 'өңдеу',
 	'translate-talk'                    => 'талқылау',
 	'translate-history'                 => 'тарихы',
@@ -2130,6 +2144,7 @@ $messages['kk-cyrl'] = array(
 	'translate-magic-cm-current'        => 'Ағымдағысы',
 	'translate-magic-cm-original'       => 'Түпнұсқасы',
 	'translate-magic-cm-fallback'       => 'Сүйемелдеуі',
+	'translate-magic-cm-comment'        => 'Мәндеме:',
 	'translate-magic-cm-save'           => 'Сақта!',
 	'translate-magic-cm-export'         => 'Сыртқа бер',
 	'translate-magic-cm-updatedusing'   => 'Special:Magic дегенді қолданып сақталған',
@@ -2146,6 +2161,7 @@ $messages['kk-cyrl'] = array(
 	'translate-checks-links'            => 'Келесі сілтемелер жарамсыз: <strong>$1</strong>',
 	'translate-checks-xhtml'            => 'Келесі белгілемелерді дұрыстарымен алмастырыңыз: <strong>$1</strong>',
 	'translate-checks-plural'           => 'Анықталымда <nowiki>{{PLURAL:}}</nowiki> пайдаланылған, бірақ аудармада бұл жоқ.',
+	'tog-translate-nonewsletter'        => 'Жаңалық хаттарды маған жіберме (тек құпталған е-пошта жайы бар қатысушыларға тиісті)',
 );
 
 /** Kazakh (Latin) (Қазақша (Latin))
@@ -2912,16 +2928,18 @@ $messages['pl'] = array(
 	'translate-magic-pagename'          => 'Rozszerzone tłumaczenie MediaWiki',
 	'translate-magic-help'              => 'Możliwe jest tłumaczenie aliasów stron specjalnych, magicznych słów, nazw motywów i nazw poszczególnych przestrzeni.
 
-Do magicznych słów należy dołączyć wersje angielskie, gdyż w przeciwnym razie przestaną one działać. Pierwszy wpis należy pozostawić w takim stanie, w jakim on występuje (0 lub 1).
+Do magicznych słów należy dołączyć wersje angielskie, gdyż w przeciwnym razie przestaną one działać.
+Pierwszy wpis należy pozostawić w takim stanie, w jakim on występuje (0 lub 1).
 
-Aliasy stron specjalnych i magiczne słowa mogą mieć wiele tłumaczeń, które oddziela się przecinkiem (,). Nazwy motywów i przestrzeni mogą mieć tylko po jednym tłumaczeniu.
+Aliasy stron specjalnych i magiczne słowa mogą mieć wiele tłumaczeń, które oddziela się przecinkiem (,).
+Nazwy motywów i przestrzeni mogą mieć tylko po jednym tłumaczeniu.
 
-Podczas tłumaczenia nazw specjalne znaczenie ma zapis <tt>Dyskusja $1</tt>, gdzie <tt>$1</tt> zamieniane jest w nazwę serwisu - na przykład <tt>Dyskusja {{SITENAME}}</tt>.
+Podczas tłumaczenia nazw specjalne znaczenie ma zapis <tt>Dyskusja $1</tt>, gdzie <tt>$1</tt> zamieniane jest w nazwę serwisu – na przykład <tt>Dyskusja {{SITENAME}}</tt>.
 Jeśli w danym języku niemożliwe jest sformułowanie prawidłowego wpisu bez zmiany nazwy serwisu, należy skontaktować się z deweloperem.
 
 Zapisanie zmian jest możliwe tylko dla członków grupy tłumaczy.
 Zmiany nie są zapisywane, dopóki użytkownik nie naciśnie umieszczonego poniżej przycisku „Zapisz”.',
-	'translate-magic-form'              => 'Język: $1 Moduł: $2 $3',
+	'translate-magic-form'              => 'Język $1 Moduł $2 $3',
 	'translate-magic-submit'            => 'Wyświetl',
 	'translate-magic-cm-to-be'          => 'Przyszły',
 	'translate-magic-cm-current'        => 'Aktualny',
@@ -2994,7 +3012,15 @@ $messages['ps'] = array(
 	'translate'                         => 'ژباړل',
 	'translate-talk'                    => 'خبرې اترې',
 	'translate-history'                 => 'پېښليک',
-	'translate-task-view'               => 'ټول هغه پيغامونه کتل چې دي په',
+	'translate-task-view'               => 'ټول هغه پيغامونه چې دي په',
+	'translate-task-untranslated'       => 'ټول هغه ناژباړلي پيغامونه چې دي په',
+	'translate-page-task'               => 'زه غواړم چې',
+	'translate-page-group'              => 'ډله',
+	'translate-page-language'           => 'ژبه',
+	'translate-page-limit'              => 'بريد',
+	'translate-page-limit-option'       => '$1 {{PLURAL:$1|پيغام|پيغامونه}} په يوه مخ کې',
+	'translate-submit'                  => 'راغونډول',
+	'translate-page-description-legend' => 'د ډلې په اړه مالومات',
 	'translate-edit-contribute'         => 'ونډه اخيستل',
 	'translate-edit-information'        => 'د همدې پيغام په اړه مالومات ($1)',
 	'translate-edit-in-other-languages' => 'پيغام په نورو ژبو کې',
@@ -3367,8 +3393,8 @@ $messages['su'] = array(
 /** Swedish (Svenska)
  * @author Sannab
  * @author Lejonel
- * @author Siebrand
  * @author M.M.S.
+ * @author Siebrand
  */
 $messages['sv'] = array(
 	'translate'                         => 'Översätt',
@@ -3443,6 +3469,7 @@ För att kunna spara ändringar så behöver du tillhöra översättargruppen. �
 	'translate-checks-links'            => 'Följande länkar är problematiska: <strong>$1</strong>',
 	'translate-checks-xhtml'            => 'Följande felaktiga taggar bör ersättas: <strong>$1</strong>',
 	'translate-checks-plural'           => '<nowiki>{{PLURAL:}}</nowiki> används i definitionen, men inte i översättningen.',
+	'tog-translate-nonewsletter'        => 'Sänd mig inte nyhetsbrev (gäller endast användare med bekräftad e-postadress)',
 );
 
 /** Silesian (ślůnski)
