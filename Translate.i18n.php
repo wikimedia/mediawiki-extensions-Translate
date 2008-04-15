@@ -1538,6 +1538,19 @@ Nas traducións dos espazos de nomes, <tt>$1 talk</tt> é especial. <tt>$1</tt> 
 	'translate-checks-plural'           => 'A definición usa <nowiki>{{PLURAL:}}</nowiki>, pero a tradución non.',
 );
 
+/** Manx (Gaelg)
+ * @author MacTire02
+ */
+$messages['gv'] = array(
+	'translate'                         => 'Dy hyndaa',
+	'translate-edit'                    => 'reaghey',
+	'translate-history'                 => 'shennaghys',
+	'translate-page-group'              => 'Possan',
+	'translate-page-language'           => 'Çhengey',
+	'translate-page-limit'              => 'Jeoraght',
+	'translate-edit-in-other-languages' => 'Çhaghteraght ayns çhengaghyn elley',
+);
+
 $messages['he'] = array(
 	'translate'                     => 'תרגום',
 	'translate-edit-message-format' => 'המבנה של הודעה זו הוא <b>$1</b>.',
@@ -1704,10 +1717,70 @@ Dyrbiš w skupinje přełožowarjow być, zo by změny składował. Změny so nj
 );
 
 /** Haitian (Kreyòl ayisyen)
+ * @author Jvm
  * @author Masterches
  */
 $messages['ht'] = array(
-	'translate' => 'Tradui',
+	'translate'                         => 'Tradui',
+	'translate-desc'                    => '[[Special:Translate|Paj espesyal]] pou tradi MediaWiki e plis ankò.',
+	'translate-edit'                    => 'edite',
+	'translate-talk'                    => 'pale',
+	'translate-history'                 => 'istwa',
+	'translate-task-view'               => 'Wè tout mesaj soti nan',
+	'translate-task-untranslated'       => 'Wè tout mesaj ki pa tradi soti nan',
+	'translate-task-optional'           => 'Wè mesaj optional soti nan',
+	'translate-task-review'             => 'Revize chanjman nan',
+	'translate-task-reviewall'          => 'Revize tout tradiksyon yo nan',
+	'translate-task-export'             => 'Expòte tradiksyon yo nan',
+	'translate-task-export-to-file'     => 'Expòte tradisyon a yon fil soti nan',
+	'translate-task-export-as-po'       => 'Expòte tradisyon nan fòmat Gettext',
+	'translate-page-no-such-language'   => 'Langaj espesifye-a envalid.',
+	'translate-page-no-such-task'       => 'Tach espesifye-a envalid.',
+	'translate-page-no-such-group'      => 'Group espesifye-a invalid',
+	'translate-page-settings-legend'    => 'Konfigirasyon, preferans',
+	'translate-page-task'               => 'Mwen vle',
+	'translate-page-group'              => 'Gwoup',
+	'translate-page-language'           => 'Lang',
+	'translate-page-limit'              => 'Limit',
+	'translate-page-limit-option'       => '$1 {{PLURAL:$1|mesaj|mesaj}} nan chak paj',
+	'translate-submit'                  => 'Ale, fouye',
+	'translate-page-navigation-legend'  => 'Navigasyon',
+	'translate-page-showing'            => 'Moutre mesaj $1 a $2 sou $3.',
+	'translate-page-showing-all'        => 'Moutre $1 {{PLURAL:$1|message|mesaj}}.',
+	'translate-page-showing-none'       => 'Pa genyen pyès mesaj pou montre.',
+	'translate-next'                    => 'Paj swivan',
+	'translate-prev'                    => 'Paj presedan',
+	'translate-page-description-legend' => 'Enfòmasyon sou group la',
+	'translate-optional'                => '(opsyonal)',
+	'translate-ignored'                 => '(ignore)',
+	'translate-edit-definition'         => 'Mesaj definisyon',
+	'translate-edit-contribute'         => 'kontribiye',
+	'translate-edit-no-information'     => "''Mesaj sa pa dokimante.
+Si w konnen ki kote mesaj sa itilize, ou kapab ede lòt tradiktè pa ajoute dokimantasyon pou mesaj sa.''",
+	'translate-edit-information'        => 'Enfòmasyon konsène mesaj sa ($1)',
+	'translate-edit-in-other-languages' => 'Mesaj nan lòt langaj yo',
+	'translate-edit-committed'          => 'Trandiksyon kouran nan logisye',
+	'translate-edit-warnings'           => 'Kosyon konsène tradiksyon enkonplete yo',
+	'translate-magic-pagename'          => 'MediaWiki tradiksyon prolonje',
+	'translate-magic-help'              => 'Ou kapab tradi alias paj especial yo, mo majik, non po yo ak non nonespas yo.
+
+Nan mo majik yo ou bezwen enkli tradiksyon angle oubyen yo sispann travay.
+Epi kite premye bagay la (0 or 1) kòm li ye.
+
+Alias paj espesyal yo ak mo majik yo kapab gen miltip tradiksyon.
+Tradiksyon yo separe pa yon vigil (,).
+Non po ak nonespas kapab gen yon sèl tradiksyon.
+
+Nan nonespas tradiksyon yo <tt>$1 pale</tt> espesyal. <tt>$1</tt> ranplase pa nonsitwèb (pa ekzanp <tt>{{SITENAME}} pale</tt>).
+Si li pa posib nan langaj ou pou fòme expresyon valid san ou pa chanje nonsitwèb, souple kontakte yon devlopè.
+
+Fò ke ou nan yon group tradiktè pou ou kapab sove chanjman.
+Chanjman yo pa sove tou pandan ou pa klike sou bouton sove anba.',
+	'translate-magic-form'              => 'Langaj: $1 Modil: $2 $3',
+	'translate-magic-submit'            => 'Mande',
+	'translate-magic-cm-to-be'          => "Ap vin'",
+	'translate-magic-cm-current'        => 'Aktyèl',
+	'translate-magic-cm-original'       => 'Orijinal',
 );
 
 /** Hungarian (Magyar)
