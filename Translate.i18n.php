@@ -2946,7 +2946,17 @@ $messages['oc'] = array(
 	'translate-edit-committed'          => 'Traduccions actualas ja dins lo logicial',
 	'translate-edit-warnings'           => 'Avertiments concernent las traduccions incomplètas',
 	'translate-magic-pagename'          => 'Traduccion de MediaWiki espandida',
-	'translate-magic-help'              => "Podètz traduire los alias de paginas especialas, los mots magics, los noms de skins e los noms d'espacis de noms. Dins los mots magics, devètz inclure la traduccion en anglés o aquò foncionarà pas mai. E mai, daissatz lo primièr item (0 o 1) coma es. Los alias de paginas especialas e los mots magics pòdon aver mantuna traduccion. Las traduccions son separadas per una virgula (,). Los noms de skins e d'espacis de noms pòdon pas aver qu'una traduccion. Dins las traduccions d'espacis de noms, <tt>$1 talk</tt> es especial. <tt>$1</tt> es remplaçat pel nom del sit (per exemple <tt>{{SITENAME}} talk</tt>). Se es pas possible d'obténer una expression valida dins vòstra lenga sens cambiar lo nom del sit, contactatz un desvolopaire. Devètz aparténer al grop dels traductors per salvagardar los cambiaments. Los cambiaments seràn pas salvagardats abans que cliquèssetz sul boton Salvagardar en bas.",
+	'translate-magic-help'              => "Podètz traduire los aliàs de paginas especialas, los mots magics, los noms de skins e los noms d'espacis de noms.
+
+Dins los mots magics, vos cal inclure la traduccion en anglés o aquò foncionarà pas mai. E mai, daissatz lo primièr item (0 o 1) coma es.
+
+Los aliàs de paginas especialas e los mots magics pòdon aver mantuna traduccion. Las traduccions son separadas per una virgula (,).
+Los noms de skins e d'espacis de noms pòdon pas aver qu'una traduccion.
+
+Dins las traduccions d'espacis de noms, <tt>$1 talk</tt> es especial. <tt>$1</tt> es remplaçat pel nom del sit (per exemple <tt>{{SITENAME}} talk</tt>).
+Se es pas possible d'obténer una expression valida dins vòstra lenga sens cambiar lo nom del sit, contactatz un desvolopaire.
+
+Vos cal aparténer al grop dels traductors per salvagardar los cambiaments. Los cambiaments seràn pas salvagardats abans que cliquèssetz sul boton Salvagardar en bas.",
 	'translate-magic-form'              => 'Lenga $1 Modul : $2 $3',
 	'translate-magic-submit'            => 'Anar',
 	'translate-magic-cm-to-be'          => 'Desven',
@@ -2970,6 +2980,7 @@ $messages['oc'] = array(
 	'translate-checks-links'            => 'Los ligams seguents son dobtoses : <strong>$1</strong',
 	'translate-checks-xhtml'            => 'Sètz convidats a tornar metre en plaça las balisas seguentas amb las que son corrèctas : <strong>$1</strong>',
 	'translate-checks-plural'           => 'La definicion utiliza <nowiki>{{PLURAL:}}</nowiki> mas pas la traduccion',
+	'tog-translate-nonewsletter'        => 'Me mandetz pas la letra d’informacion per corrièr (concernís pas que les utilizaires que dispausan d’una adreça de corrièr electronic confirmada)',
 );
 
 /** Polish (Polski)
