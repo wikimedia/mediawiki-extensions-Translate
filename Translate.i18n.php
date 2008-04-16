@@ -1536,6 +1536,7 @@ Nas traducións dos espazos de nomes, <tt>$1 talk</tt> é especial. <tt>$1</tt> 
 	'translate-checks-links'            => 'As seguintes ligazóns son problemáticas: <strong>$1</strong>',
 	'translate-checks-xhtml'            => 'Por favor reemprace as seguintes etiquetas por unhas correctas: <strong>$1</strong>',
 	'translate-checks-plural'           => 'A definición usa <nowiki>{{PLURAL:}}</nowiki>, pero a tradución non.',
+	'tog-translate-nonewsletter'        => 'Non me enviedes follas informativas ao meu correo electrónico (só relevante para os usuarios cun enderezo de correo electrónico confirmado)',
 );
 
 /** Manx (Gaelg)
@@ -1733,7 +1734,7 @@ $messages['ht'] = array(
 	'translate-task-reviewall'          => 'Revize tout tradiksyon yo nan',
 	'translate-task-export'             => 'Expòte tradiksyon yo nan',
 	'translate-task-export-to-file'     => 'Expòte tradisyon a yon fil soti nan',
-	'translate-task-export-as-po'       => 'Expòte tradisyon nan fòmat Gettext',
+	'translate-task-export-as-po'       => 'Expòte tradiksyon nan fòmat Gettext',
 	'translate-page-no-such-language'   => 'Langaj espesifye-a envalid.',
 	'translate-page-no-such-task'       => 'Tach espesifye-a envalid.',
 	'translate-page-no-such-group'      => 'Group espesifye-a invalid',
@@ -1781,6 +1782,25 @@ Chanjman yo pa sove tou pandan ou pa klike sou bouton sove anba.',
 	'translate-magic-cm-to-be'          => "Ap vin'",
 	'translate-magic-cm-current'        => 'Aktyèl',
 	'translate-magic-cm-original'       => 'Orijinal',
+	'translate-magic-cm-fallback'       => 'Retabli',
+	'translate-magic-cm-comment'        => 'Kòmantè:',
+	'translate-magic-cm-save'           => 'Sove',
+	'translate-magic-cm-export'         => 'Expòte',
+	'translate-magic-cm-updatedusing'   => 'Met an kouran itilize [[Special:Magic]]',
+	'translate-magic-cm-savefailed'     => 'Sove chwe',
+	'translate-magic-special'           => 'Alias paj espesyal yo',
+	'translate-magic-words'             => 'Mo majik yo',
+	'translate-magic-skin'              => 'Non po',
+	'translate-magic-namespace'         => 'Non nonespas yo',
+	'translationchanges'                => 'Tradiksyon chanjman',
+	'translationchanges-export'         => 'expòte',
+	'translationchanges-change'         => '$1: $2 pa $3',
+	'translate-checks-parameters'       => 'Paramèt swivan yo pa itilize: <strong>$1</strong>',
+	'translate-checks-balance'          => 'Genyen yon kantite paramè enpè: <strong>$1</strong>',
+	'translate-checks-links'            => 'Chèn swivan yo problèmatik: <strong>$1</strong>',
+	'translate-checks-xhtml'            => 'Souple ranplase tag swivan yo avèk sa ki kòrèk yo: <strong>$1</strong>',
+	'translate-checks-plural'           => 'Definisyon itilize <nowiki>{{PLURAL:}}</nowiki> men pa tradiksyon.',
+	'tog-translate-nonewsletter'        => 'Piga voye e-mèl korespondans ban mwen (relevan sèlman pou itilizatè avèk yon adrès e-mèl valide)',
 );
 
 /** Hungarian (Magyar)
