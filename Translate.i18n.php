@@ -1467,7 +1467,7 @@ Vos dête apartegnir a la tropa des traductors por sôvar los changements. Los c
  */
 $messages['gl'] = array(
 	'translate'                         => 'Traducir',
-	'translate-desc'                    => '[[Special:Translate|Páxina especial]] para traducir Mediawiki e máis',
+	'translate-desc'                    => '[[Special:Translate|Páxina especial]] para traducir Mediawiki e outras extensións',
 	'translate-edit'                    => 'editar',
 	'translate-talk'                    => 'conversa',
 	'translate-history'                 => 'historial',
@@ -1500,7 +1500,8 @@ $messages['gl'] = array(
 	'translate-ignored'                 => '(ignorado)',
 	'translate-edit-definition'         => 'Definición da mensaxe',
 	'translate-edit-contribute'         => 'contribuír',
-	'translate-edit-no-information'     => "''Esta mensaxe non ten documentación. Se vostede sabe onde ou como se usa esta mensaxe, pode axudar a outros tradutores engadindo documentación a esta mensaxe.''",
+	'translate-edit-no-information'     => "''Esta mensaxe non ten documentación.''
+''Se sabe onde ou como se usa esta mensaxe, pode axudar a outros tradutores engadíndolle datos.''",
 	'translate-edit-information'        => 'Información acerca desta mensaxe ($1)',
 	'translate-edit-in-other-languages' => 'Mensaxe noutras linguas',
 	'translate-edit-committed'          => 'Tradución actual no software',
