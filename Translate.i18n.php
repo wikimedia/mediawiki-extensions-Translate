@@ -2097,11 +2097,13 @@ $messages['ja'] = array(
 
 /** Georgian (ქართული)
  * @author Malafaya
+ * @author Sopho
  */
 $messages['ka'] = array(
 	'translate-edit'          => 'რედაქტირება',
 	'translate-talk'          => 'განხილვა',
 	'translate-history'       => 'ისტორია',
+	'translate-page-group'    => 'ჯგუფი',
 	'translate-page-language' => 'ენა',
 );
 
