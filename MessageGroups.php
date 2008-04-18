@@ -2057,6 +2057,14 @@ class SemanticFormsMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'SemanticForms/languages/SF_Messages.php';
 }
 
+class SemanticMediaWikiMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Semantic MediaWiki';
+	protected $id    = 'ext-semanticmediawiki';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'SemanticMediaWiki/languages/SMW_Messages.php';
+}
+
 class ShowProcesslistMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Show Processlist';
 	protected $id    = 'ext-showprocesslist';
