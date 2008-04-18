@@ -2063,6 +2063,19 @@ class SemanticMediaWikiMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'SemanticMediaWiki/languages/SMW_Messages.php';
+
+	protected $ignored = array(
+		'smw uri blacklist',
+		'smw_service_online_maps',
+	);
+
+	protected $optional = array(
+		'smw_rss_link',
+		'smw_decseparator',
+		'smw_kiloseparator',
+		'smw_rss_description',
+		'smw_browse_more',
+	);
 }
 
 class ShowProcesslistMessageGroup extends ExtensionMessageGroup {
