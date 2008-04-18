@@ -2065,9 +2065,9 @@ class SemanticMediaWikiMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'SemanticMediaWiki/languages/SMW_Messages.php';
 
 	protected $ignored = array(
-		'smw uri blacklist',
-		'smw_service_online_maps',
 		'smw_ask_doculink',
+		'smw_service_online_maps',
+		'smw_uri_blacklist',
 	);
 
 	protected $optional = array(
