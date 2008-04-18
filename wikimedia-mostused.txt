@@ -50,6 +50,7 @@ tooltip-n-help
 tooltip-n-portal
 tooltip-n-sitesupport
 userlogin
+nav-login-createaccount
 tooltip-pt-login
 tooltip-n-randompage
 bad_image_list
