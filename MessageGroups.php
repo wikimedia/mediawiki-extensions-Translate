@@ -1040,6 +1040,27 @@ class CommentSpammerMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile  = 'CommentSpammer/CommentSpammer.i18n.php';
 }
 
+class ConfigureMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Configure';
+	protected $id    = 'ext-configure';
+
+	protected $arrName = 'messages';
+	protected $messageFile  = 'Configure/Configure.i18n.php';
+
+	protected $optional = array(
+		'configure-section-html',
+		'configure-section-ajax',
+		'configure-section-interwiki',
+		'configure-section-squid',
+		'configure-section-cookie',
+		'configure-section-svg',
+		'configure-section-parser',
+		'configure-section-tex',
+		'configure-section-tidy',
+		'configure-section-htcp',
+	);
+}
+
 class ConfirmAccountMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Confirm Account';
 	protected $id      = 'ext-confirmaccount';
