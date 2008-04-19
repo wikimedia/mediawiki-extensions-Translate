@@ -1052,12 +1052,9 @@ class ConfigureMessageGroup extends ExtensionMessageGroup {
 		'configure-section-ajax',
 		'configure-section-interwiki',
 		'configure-section-squid',
-		'configure-section-cookie',
 		'configure-section-svg',
-		'configure-section-parser',
 		'configure-section-tex',
 		'configure-section-tidy',
-		'configure-section-htcp',
 	);
 }
 
