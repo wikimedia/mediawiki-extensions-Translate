@@ -1461,8 +1461,8 @@ Vos dête apartegnir a la tropa des traductors por sôvar los changements. Los c
 
 /** Galician (Galego)
  * @author Alma
- * @author Xosé
  * @author Toliño
+ * @author Xosé
  * @author Siebrand
  */
 $messages['gl'] = array(
@@ -1473,22 +1473,22 @@ $messages['gl'] = array(
 	'translate-history'                 => 'historial',
 	'translate-task-view'               => 'Ver todas as mensaxes de',
 	'translate-task-untranslated'       => 'Ver todas as mensaxes sen traducir de',
-	'translate-task-optional'           => 'Ver mensaxes opcionais de',
-	'translate-task-review'             => 'Revisar cambios en',
+	'translate-task-optional'           => 'Ver as mensaxes opcionais de',
+	'translate-task-review'             => 'Revisar os cambios en',
 	'translate-task-reviewall'          => 'Revisar todas as traducións en',
-	'translate-task-export'             => 'Exportar traducións de',
-	'translate-task-export-to-file'     => 'Exportar a tradución a un ficheiro de',
+	'translate-task-export'             => 'Exportar as traducións de',
+	'translate-task-export-to-file'     => 'Exportar a un ficheiro a tradución de',
 	'translate-task-export-as-po'       => 'Exportar a tradución en formato Gettext',
-	'translate-page-no-such-language'   => 'Forneceuse un código de lingua non válido',
-	'translate-page-no-such-task'       => 'Tarefa especificada non válida',
-	'translate-page-no-such-group'      => 'Grupo especificado non válido.',
+	'translate-page-no-such-language'   => 'O código de lingua especificado non é válido.',
+	'translate-page-no-such-task'       => 'A tarefa especificada non é válida.',
+	'translate-page-no-such-group'      => 'O grupo especificado non é válido.',
 	'translate-page-settings-legend'    => 'Configuracións',
 	'translate-page-task'               => 'Quero',
 	'translate-page-group'              => 'Grupo',
 	'translate-page-language'           => 'Lingua',
 	'translate-page-limit'              => 'Límite',
 	'translate-page-limit-option'       => '$1 {{PLURAL:$1|mensaxe|mensaxes}} por páxina',
-	'translate-submit'                  => 'Procura',
+	'translate-submit'                  => 'Procurar',
 	'translate-page-navigation-legend'  => 'Navegación',
 	'translate-page-showing'            => 'Amosando as mensaxes da $1 á $2, dun total de $3.',
 	'translate-page-showing-all'        => 'Amosando {{PLURAL:$1|unha mensaxe|$1 mensaxes}}.',
@@ -2422,6 +2422,7 @@ $messages['km'] = array(
 	'translate-ignored'                 => '(បានបោះបង់)',
 	'translate-edit-definition'         => 'និយមន័យ​របស់​សារ',
 	'translate-edit-contribute'         => 'រួមចំណែក',
+	'translate-edit-no-information'     => "''សារនេះមិនមានពត៌មានបន្ថែមទេ។ ប្រសិនបើអ្នកដឹងពីទីកន្លែងនិងរបៀបប្រើប្រាស់សារនេះ អ្នកអាចជួយអ្នកបកប្រែផ្សេងទៀតតាមរយៈការដាក់បន្ថែមពត៌មានទាំងនោះមកអោយសារនេះ។",
 	'translate-edit-information'        => 'ពត៌មាន​អំពី​សារនេះ ($1)',
 	'translate-edit-in-other-languages' => 'សារ​ជាភាសា​ដទៃទៀត',
 	'translate-edit-committed'          => 'បទប្រែសំរួល​បច្ចុប្បន្ន​ក្នុងផ្នែកទន់',
