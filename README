@@ -41,6 +41,7 @@ function customMessageGroups( $id ) {
 * truncate very long message names in table view
 * show definition closer to edit area
 * show the group of message when editing
+* branched core messages should now export properly
 
 == Changes in version 8 ==
 * Released 2008-02-06

@@ -318,17 +318,37 @@ class BranchedCoreMessageGroup extends CoreMessageGroup {
 	protected $fileExporter = 'CoreExporter';
 	protected $path = '__BUG__';
 	protected $meta  = true;
+	protected $metaDataPath = '__BUG__';
 
 	public function __construct( $path, $branch, StringMatcher $mangler ) {
 		$this->path = $path;
 		$this->label = str_replace( '$1', $branch, $this->label );
 		$this->id = Sanitizer::escapeId( str_replace( '$1', $branch, $this->id ) );
 		$this->mangler = $mangler;
+		$this->metaDataPath = $path . '/maintenance/language';
 	}
 
 	protected function getFileLocation( $code ) {
-		return $this->path . '/' . $this->getMessageFile( $code );
+		return $this->path . '/languages/messages/' . $this->getMessageFile( $code );
 	}
+
+	public function setMetaDataPath( $path ) {
+		$this->metaDataPath = $path;
+	}
+
+	public function getBools() {
+		require( $this->metaDataPath . '/messageTypes.inc' );
+		return array(
+			'optional' => $this->mangler->mangle( $wgOptionalMessages ),
+			'ignored'  => $this->mangler->mangle( $wgIgnoredMessages ),
+		);
+	}
+
+	public function export( MessageCollection $messages ) {
+		list( $output, ) = MessageWriter::writeMessagesArray( $this->makeExportArray( $messages ), false, $this->metaDataPath );
+		return $output;
+	}
+
 }
 
 abstract class ExtensionMessageGroup extends MessageGroup {
