@@ -68,27 +68,6 @@ Klicken Sie erst OK wenn Sie dies durchgeführt haben.',
 	'msg_CloseAll'          => 'Bitte schließen Sie alle Dokumente bis auf das, welches Sie konvertieren möchten! Das Makro wird jetzt beendet.',
 );
 
-/** Français (Français) */
-$messages['fr'] = array(
-	'wikiSearchTitle'       => 'Rechercher -',
-	'wikiCategoryKeyWord'   => 'catégorie',
-	'wikiUploadTitle'       => 'Télécharger',
-	'clickChartText'        => 'cliquez moi !',
-	'unableToConvertMarker' => '## Erreur de conversion de ##:',
-	'txt_TitlePage'         => 'Page de titre',
-	'txt_PageHeader'        => 'En-tête de page',
-	'txt_PageFooter'        => 'Pied de page',
-	'txt_Footnote'          => 'Notes de bas de page',
-	'msg_Upload_Info'       => "Maintenant le fichier image va être téléchargé. Avant de commencer, vous devez organiser correctement votre navigateur :
-1. Fermez toutes les fenêtres latérales comme celle des favoris.
-2. Identifiez vous dans votre wiki.
-Ne cliquez pas sur OK avant d'avoir vérifé tout cela.",
-	'msg_Finished'          => "Conversion terminée. Collez le contenu du bloc-note dans l'éditeur du wiki.",
-	'msg_NoDocumentLoaded'  => "Aucun document n'a été chargé.",
-	'msg_LoadDocument'      => 'Veuillez charger le document à convertir.',
-	'msg_CloseAll'          => "Veuillez fermer tous les documents sauf celui que vous souhaitez convertir ! La macro va maintenant s'arrêter.",
-);
-
 /** Español (Español) */
 $messages['es'] = array(
 	'wikiSearchTitle'       => 'Buscar -',
@@ -111,25 +90,50 @@ No tecleo acepter antes de comprobar esto.',
 	'msg_CloseAll'          => '¡Cerrar por favor todos los documentos pero el que deseas convertir! La macro ahora parará.',
 );
 
-/** Nederlands (Nederlands) */
+/** Français (Français) */
+$messages['fr'] = array(
+	'wikiSearchTitle'       => 'Rechercher -',
+	'wikiCategoryKeyWord'   => 'catégorie',
+	'wikiUploadTitle'       => 'Télécharger',
+	'clickChartText'        => 'cliquez moi !',
+	'unableToConvertMarker' => '## Erreur de conversion de ##:',
+	'txt_TitlePage'         => 'Page de titre',
+	'txt_PageHeader'        => 'En-tête de page',
+	'txt_PageFooter'        => 'Pied de page',
+	'txt_Footnote'          => 'Notes de bas de page',
+	'msg_Upload_Info'       => "Maintenant le fichier image va être téléchargé. Avant de commencer, vous devez organiser correctement votre navigateur :
+1. Fermez toutes les fenêtres latérales comme celle des favoris.
+2. Identifiez vous dans votre wiki.
+Ne cliquez pas sur OK avant d'avoir vérifé tout cela.",
+	'msg_Finished'          => "Conversion terminée. Collez le contenu du bloc-note dans l'éditeur du wiki.",
+	'msg_NoDocumentLoaded'  => "Aucun document n'a été chargé.",
+	'msg_LoadDocument'      => 'Veuillez charger le document à convertir.',
+	'msg_CloseAll'          => "Veuillez fermer tous les documents sauf celui que vous souhaitez convertir ! La macro va maintenant s'arrêter.",
+);
+
+/** Dutch (Nederlands)
+ * @author Siebrand
+ * @author SPQRobin
+ */
 $messages['nl'] = array(
 	'wikiSearchTitle'       => 'Zoeken -',
 	'wikiCategoryKeyWord'   => 'categorie',
 	'categoryImagePreFix'   => 'Afbeelding ',
+	'wikiUploadTitle'       => 'Uploaden',
 	'clickChartText'        => 'klik mij!',
-	'unableToConvertMarker' => '## converteer Error ##: ',
-	'txt_TitlePage'         => 'Hoofdpagina',
+	'unableToConvertMarker' => '## Conversiefout ##:',
+	'txt_TitlePage'         => 'Paginanaam',
 	'txt_PageHeader'        => 'Koptekst',
 	'txt_PageFooter'        => 'Voettekst',
 	'txt_Footnote'          => 'Voetnoten',
-	'msg_Upload_Info'       => 'Nu zal de afbeelding upload beginnen. Voordat je begint moet je je internet browser goed zetten:
-1. SLuit alle zijbalken zoals bladwijzers of favorieten.
-2. Meld je aan bij je wiki.
-Klik niet op ok voordat je dit gecontroleerd hebt.',
-	'msg_Finished'          => 'Converteren klaar. Plak de klembord inhoud in je wiki editor.',
+	'msg_Upload_Info'       => 'Nu zal de afbeeldingupload beginnen. Voordat u begint moet u uw internetbrowser goed zetten:
+1. Sluit alle zijbalken zoals bladwijzers of favorieten.
+2. Meld u aan bij uw wiki.
+Klik niet op OK voordat u dit gecontroleerd hebt.',
+	'msg_Finished'          => 'De conversie is afgerond. U kunt nu de inhoud van uw klembord in uw wiki-editor plakken.',
 	'msg_NoDocumentLoaded'  => 'Het document is niet geladen.',
-	'msg_LoadDocument'      => 'AUB laad de documenten om te converteren.',
-	'msg_CloseAll'          => 'AUB sluit alle documenten behalve degene die je wilt converteren! De macro zal nu stoppen.',
+	'msg_LoadDocument'      => 'Laad alstublieft de te converteren documenten.',
+	'msg_CloseAll'          => 'Sluit alstublieft alle documenten behalve het document dat u wilt converteren! De marco wordt nu afgebroken.',
 );
 
 /** Português (Português) */
@@ -171,3 +175,4 @@ $messages['ru'] = array(
 	'msg_LoadDocument'     => 'Пожалуйста загрузите документ в конвертер.',
 	'msg_CloseAll'         => 'Пожалуйста закройте все документы кроме того который нужно сконвертировать! Макрос остановлен.',
 );
+

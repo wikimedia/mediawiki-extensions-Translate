@@ -1974,6 +1974,9 @@ $messages['is'] = array(
 	'translate-task-optional'           => 'Skoða valfrjálsar meldingar frá',
 	'translate-task-review'             => 'Kanna breytingar á',
 	'translate-task-reviewall'          => 'Kanna allar breytingar á',
+	'translate-page-no-such-language'   => 'Tilgreinda tungumálið var ógilt.',
+	'translate-page-no-such-task'       => 'Tilgreinda verkefnið var ógilt.',
+	'translate-page-no-such-group'      => 'Tilgreindur hópur var ógildur.',
 	'translate-page-settings-legend'    => 'Stillingar',
 	'translate-page-task'               => 'Ég vil',
 	'translate-page-group'              => 'Hópur',
@@ -2000,16 +2003,22 @@ Ef þú veist hvar eða hverning hún er notuð getur þú hjálpað öðrum þ�
 	'translate-edit-warnings'           => 'Viðvaranir vegna ókláraðar þýðinga',
 	'translate-magic-form'              => 'Tungumál: $1 Eining: $2 $3',
 	'translate-magic-submit'            => 'Sækja',
+	'translate-magic-cm-to-be'          => 'Verðandi',
 	'translate-magic-cm-current'        => 'Núverandi',
+	'translate-magic-cm-original'       => 'Upprunalega',
 	'translate-magic-cm-comment'        => 'Athugasemd:',
 	'translate-magic-cm-save'           => 'Vista',
 	'translate-magic-cm-export'         => 'Flytja',
+	'translate-magic-cm-savefailed'     => 'Vistun mistókst',
+	'translate-magic-special'           => 'Aukanefni kerfissíðna',
 	'translate-magic-skin'              => 'Heiti þema',
 	'translate-magic-namespace'         => 'Heiti nafnrýma',
 	'translationchanges'                => 'Breytingar þýðinga',
 	'translationchanges-export'         => 'flytja',
 	'translationchanges-change'         => '$1: $2 eftir $3',
+	'translate-checks-parameters'       => 'Eftirfarandi færibreytur eru ekki notaðar: <strong>$1</strong>',
 	'translate-checks-links'            => 'Eftirfarandi tenglar eru vafasamir: <strong>$1</strong>',
+	'translate-checks-xhtml'            => 'Gjörðu svo vel og skiptu út eftirfarandi tögum fyrir þau réttu: <strong>$1</strong>',
 	'translate-checks-plural'           => 'Skilgreiningin notar <nowiki>{{PLURAL:}}</nowiki> en ekki þýðingin.',
 	'tog-translate-nonewsletter'        => 'Ekki senda mér rafrænt fréttabréf (aðeins fyrir notendur með staðfest netföng)',
 );
@@ -2464,6 +2473,15 @@ $messages['km'] = array(
 	'translate-checks-links'            => 'តំណភ្ជាប់ទាំងនេះ​មានបញ្ហា ៖ <strong>$1</strong>',
 	'translate-checks-xhtml'            => 'សូម​ជំនួស​ប្លាកទាំងនេះ​ដោយ​ប្លាកដែលត្រឹមត្រូវ ៖ <strong>$1</strong>',
 	'translate-checks-plural'           => 'និយមន័យ​ប្រើប្រាស់ <nowiki>{{PLURAL:}}</nowiki> ប៉ុន្តែ​បទប្រែសំរួល​មិនមាន ។',
+);
+
+/** Korean (한국어)
+ * @author ToePeu
+ */
+$messages['ko'] = array(
+	'translate-edit'    => '편집',
+	'translate-talk'    => '토론',
+	'translate-history' => '역사',
 );
 
 
@@ -2991,6 +3009,13 @@ Vos cal aparténer al grop dels traductors per salvagardar los cambiaments. Los 
 	'translate-checks-xhtml'            => 'Sètz convidats a tornar metre en plaça las balisas seguentas amb las que son corrèctas : <strong>$1</strong>',
 	'translate-checks-plural'           => 'La definicion utiliza <nowiki>{{PLURAL:}}</nowiki> mas pas la traduccion',
 	'tog-translate-nonewsletter'        => 'Me mandetz pas la letra d’informacion per corrièr (concernís pas que les utilizaires que dispausan d’una adreça de corrièr electronic confirmada)',
+);
+
+/** Ossetic (Иронау)
+ * @author Amikeco
+ */
+$messages['os'] = array(
+	'translate-page-language' => 'Æвзаг',
 );
 
 /** Polish (Polski)
