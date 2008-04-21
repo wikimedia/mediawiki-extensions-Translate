@@ -1973,6 +1973,7 @@ $messages['is'] = array(
 	'translate-task-untranslated'       => 'Skoða allar óþýddar meldingar frá',
 	'translate-task-optional'           => 'Skoða valfrjálsar meldingar frá',
 	'translate-task-review'             => 'Kanna breytingar á',
+	'translate-task-reviewall'          => 'Kanna allar breytingar á',
 	'translate-page-settings-legend'    => 'Stillingar',
 	'translate-page-task'               => 'Ég vil',
 	'translate-page-group'              => 'Hópur',
@@ -1991,6 +1992,8 @@ $messages['is'] = array(
 	'translate-ignored'                 => '(hunsað)',
 	'translate-edit-definition'         => 'Útskýring á meldingu',
 	'translate-edit-contribute'         => 'breyta',
+	'translate-edit-no-information'     => "''Þessi melding hefur enga skjölun.
+Ef þú veist hvar eða hverning hún er notuð getur þú hjálpað öðrum þýðendum með því að bæta skjölun við meldinguna.''",
 	'translate-edit-information'        => 'Upplýsingar um þessa meldingu ($1)',
 	'translate-edit-in-other-languages' => 'Melding á öðrum tungumálum',
 	'translate-edit-committed'          => 'Núverandi þýðing í hugbúnaðinum',
@@ -2001,11 +2004,14 @@ $messages['is'] = array(
 	'translate-magic-cm-comment'        => 'Athugasemd:',
 	'translate-magic-cm-save'           => 'Vista',
 	'translate-magic-cm-export'         => 'Flytja',
+	'translate-magic-skin'              => 'Heiti þema',
 	'translate-magic-namespace'         => 'Heiti nafnrýma',
 	'translationchanges'                => 'Breytingar þýðinga',
 	'translationchanges-export'         => 'flytja',
 	'translationchanges-change'         => '$1: $2 eftir $3',
 	'translate-checks-links'            => 'Eftirfarandi tenglar eru vafasamir: <strong>$1</strong>',
+	'translate-checks-plural'           => 'Skilgreiningin notar <nowiki>{{PLURAL:}}</nowiki> en ekki þýðingin.',
+	'tog-translate-nonewsletter'        => 'Ekki senda mér rafrænt fréttabréf (aðeins fyrir notendur með staðfest netföng)',
 );
 
 $messages['it'] = array(
@@ -2976,7 +2982,7 @@ Vos cal aparténer al grop dels traductors per salvagardar los cambiaments. Los 
 	'translate-magic-words'             => 'Mots magics',
 	'translate-magic-skin'              => 'Nom de las interfàcias',
 	'translate-magic-namespace'         => 'Intitolat dels espacis de nomenatge',
-	'translationchanges'                => 'Modificacions a las traduccions',
+	'translationchanges'                => 'Traduccions modificadas',
 	'translationchanges-export'         => 'exportar',
 	'translationchanges-change'         => '$1: [[Mediawiki:$2|$2]] per [[User:$3|$3]]',
 	'translate-checks-parameters'       => 'Los paramètres seguents son pas utilizats : <strong>$1</strong',
