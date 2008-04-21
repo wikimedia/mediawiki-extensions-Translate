@@ -2490,7 +2490,7 @@ class Word2MediaWikiPlusMessageGroup extends ExtensionMessageGroup {
 	protected $id    =  'out-word2mediawikiplus';
 
 	protected $arrName     = 'messages';
-	protected $messageFile = 'translate/external/Word2MediaWikiPlus/Word2MediaWikiPlus.i18n.php';
+	protected $messageFile = 'Translate/external/Word2MediaWikiPlus/Word2MediaWikiPlus.i18n.php';
 }
 
 class FreeColMessageGroup extends MessageGroup {
