@@ -11,7 +11,7 @@ if (!defined('MEDIAWIKI')) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '8.29' );
+define( 'TRANSLATE_VERSION', '8.30' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name'           => 'Translate',
@@ -278,6 +278,7 @@ $wgTranslateAC = array(
 'ext-youtubeauthsub'        => 'YouTubeAuthSubMessageGroup',
 'ext-yui'                   => 'YUIMessageGroup',
 'out-freecol'               => 'FreeColMessageGroup',
+'out-word2mediawikiplus'    => 'Word2MediaWikiPlusMessageGroup',
 );
 
 /** EC = Enabled classes */

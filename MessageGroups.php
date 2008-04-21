@@ -2485,6 +2485,14 @@ class YouTubeAuthSubMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'YouTubeAuthSub/YouTubeAuthSub.i18n.php';
 }
 
+class Word2MediaWikiPlusMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Word2MediaWiki Plus';
+	protected $id    =  'out-word2mediawikiplus';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'translate/external/Word2MediaWikiPlus/Word2MediaWikiPlus.i18n.php';
+}
+
 class FreeColMessageGroup extends MessageGroup {
 	protected $fileExporter = null;
 	protected $label = 'FreeCol (open source game)';
