@@ -177,11 +177,22 @@ $messages['de'] = array(
 	'txt_PageFooter'        => 'Fußzeile',
 	'txt_Footnote'          => 'Fußnoten',
 	'msg_Upload_Info'       => 'Jetzt werden die Bilder hochgeladen. Vorher muss der Browser korrekt eingestellt sein, damit es funktioniert:
+1. Schließe alle Seitenleisten wie z.B. die Favoriten.
+2. Melde dich an deinem Wiki an.
+Klicke erst OK, wenn du dies durchgeführt habst.',
+	'msg_Finished'          => 'Konvertierung beendet. Füge die Daten aus der Zwischenablage in dein Wiki ein.',
+	'msg_NoDocumentLoaded'  => 'Es wurde kein Dokument geladen.',
+	'msg_LoadDocument'      => 'Bitte lade das zu konvertierende Dokument.',
+	'msg_CloseAll'          => 'Bitte schließe alle Dokumente bis auf das, welches du konvertieren möchtest! Das Makro wird jetzt beendet.',
+);
+
+/** Deutsch - formal address (Deutsch - förmliche Anrede) */
+$messages['de-formal'] = array(
+	'msg_Upload_Info'       => 'Jetzt werden die Bilder hochgeladen. Vorher muss der Browser korrekt eingestellt sein, damit es funktioniert:
 1. Schließen Sie alle Seitenleisten wie z.B. die Favoriten.
 2. Melden Sie sich an Ihrem Wiki an.
-Klicken Sie erst OK wenn Sie dies durchgeführt haben.',
+Klicken Sie erst OK, wenn Sie dies durchgeführt haben.',
 	'msg_Finished'          => 'Konvertierung beendet. Fügen Sie die Daten aus der Zwischenablage in Ihr Wiki ein.',
-	'msg_NoDocumentLoaded'  => 'Es wurde kein Dokument geladen.',
 	'msg_LoadDocument'      => 'Bitte laden Sie das zu konvertierende Dokument.',
 	'msg_CloseAll'          => 'Bitte schließen Sie alle Dokumente bis auf das, welches Sie konvertieren möchten! Das Makro wird jetzt beendet.',
 );
