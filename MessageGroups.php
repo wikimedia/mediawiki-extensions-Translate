@@ -1889,6 +1889,14 @@ class PlayerMessageGroup extends ExtensionMessageGroup {
 	);
 }
 
+class PNGHandlerMessageGroup extends ExtensionMessageGroup {
+	protected $label   = 'PNG Handler';
+	protected $id      = 'ext-pnghandler';
+
+	protected $arrName = 'messages';
+	protected $messageFile  = 'PNGHandler/PNGHandler.i18n.php';
+}
+
 class PoemMessageGroup extends ExtensionMessageGroup {
 	protected $label   = 'Poem';
 	protected $id      = 'ext-poem';
