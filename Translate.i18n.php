@@ -2564,6 +2564,7 @@ $messages['lb'] = array(
 	'translate-checks-links'            => 'Dës Linke si problematesch: <strong>$1</strong>',
 	'translate-checks-xhtml'            => "Ersetzt dës ''Tag''en w.e.g. duerch déi korrekt: <strong>$1</strong>",
 	'translate-checks-plural'           => "D'Definitioun benotzt <nowiki>{{PLURAL:}}</nowiki> awer d'Iwwersetzung mécht dat net.",
+	'tog-translate-nonewsletter'        => 'Schéckt mir keng E-Mail-Newsletter. (nëmme relevant fir Benotzer mat enger confirméierter e-Mailadress)',
 );
 
 /** Limburgish (Limburgs)
@@ -2974,11 +2975,11 @@ $messages['oc'] = array(
 	'translate-edit-committed'          => 'Traduccions actualas ja dins lo logicial',
 	'translate-edit-warnings'           => 'Avertiments concernent las traduccions incomplètas',
 	'translate-magic-pagename'          => 'Traduccion de MediaWiki espandida',
-	'translate-magic-help'              => "Podètz traduire los aliàs de paginas especialas, los mots magics, los noms de skins e los noms d'espacis de noms.
+	'translate-magic-help'              => "Podètz traduire los aliases de paginas especialas, los mots magics, los noms de skins e los noms d'espacis de noms.
 
 Dins los mots magics, vos cal inclure la traduccion en anglés o aquò foncionarà pas mai. E mai, daissatz lo primièr item (0 o 1) coma es.
 
-Los aliàs de paginas especialas e los mots magics pòdon aver mantuna traduccion. Las traduccions son separadas per una virgula (,).
+Los aliases de paginas especialas e los mots magics pòdon aver mantuna traduccion. Las traduccions son separadas per una virgula (,).
 Los noms de skins e d'espacis de noms pòdon pas aver qu'una traduccion.
 
 Dins las traduccions d'espacis de noms, <tt>$1 talk</tt> es especial. <tt>$1</tt> es remplaçat pel nom del sit (per exemple <tt>{{SITENAME}} talk</tt>).
@@ -2996,7 +2997,7 @@ Vos cal aparténer al grop dels traductors per salvagardar los cambiaments. Los 
 	'translate-magic-cm-export'         => 'Exportar',
 	'translate-magic-cm-updatedusing'   => 'Mesa a jorn en utilizant [[Special:Magic]]',
 	'translate-magic-cm-savefailed'     => 'La salvagàrdia a pas capitat',
-	'translate-magic-special'           => 'Pagina especiala d’alias',
+	'translate-magic-special'           => 'Pagina especiala d’aliases',
 	'translate-magic-words'             => 'Mots magics',
 	'translate-magic-skin'              => 'Nom de las interfàcias',
 	'translate-magic-namespace'         => 'Intitolat dels espacis de nomenatge',
