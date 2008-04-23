@@ -3016,7 +3016,9 @@ Vos cal aparténer al grop dels traductors per salvagardar los cambiaments. Los 
  * @author Amikeco
  */
 $messages['os'] = array(
-	'translate-page-language' => 'Æвзаг',
+	'translate-edit'             => 'баив æй',
+	'translate-page-language'    => 'Æвзаг',
+	'translate-magic-cm-current' => 'Нырыккон',
 );
 
 /** Polish (Polski)
