@@ -1071,6 +1071,7 @@ class ConfigureMessageGroup extends ExtensionMessageGroup {
 		'configure-section-html',
 		'configure-section-ajax',
 		'configure-section-interwiki',
+		'configure-section-memcached',
 		'configure-section-squid',
 		'configure-section-svg',
 		'configure-section-tex',
