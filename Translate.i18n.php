@@ -104,7 +104,8 @@ Changes are not saved until you click save button below.',
 	'translate-checks-xhtml'      => 'Please replace the following tags with correct ones: <strong>$1</strong>',
 	'translate-checks-plural'     => 'Definition uses <nowiki>{{PLURAL:}}</nowiki> but translation does not.',
 
-	'tog-translate-nonewsletter' => 'Do not send me e-mail newsletters (relevant only for users with a confirmed e-mailaddress)'
+	'tog-translate-nonewsletter' => 'Do not send me e-mail newsletters (relevant only for users with a confirmed e-mailaddress)',
+	'right-translate'            => 'Edit using the translate interface',
 );
 
 /** Afrikaans (Afrikaans)
