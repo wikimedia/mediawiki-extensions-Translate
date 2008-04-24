@@ -684,6 +684,15 @@ Heu de tenir permisos de traductor per a desar els canvis, que no es guardaran f
 	'translate-checks-plural'           => 'La definició utilitza <nowiki>{{PLURAL:}}</nowiki> i en canvi la traducció no.',
 );
 
+/** Chamorro (Chamoru)
+ * @author Jatrobat
+ */
+$messages['ch'] = array(
+	'translate-edit'                   => 'tulaika',
+	'translate-talk'                   => 'adingan',
+	'translate-page-navigation-legend' => 'Nabegasion',
+);
+
 /** Czech (Česky)
  * @author Li-sung
  * @author Matěj Grabovský
@@ -1276,10 +1285,11 @@ $messages['fi'] = array(
  * @author Grondin
  * @author Urhixidur
  * @author Seb35
- * @author Sherbrooke
  * @author Dereckson
+ * @author Sherbrooke
  * @author Siebrand
  * @author ChrisPtDe
+ * @author IAlex
  */
 $messages['fr'] = array(
 	'translate'                         => 'Traduire',
@@ -1355,6 +1365,7 @@ Vous devez appartenir au groupe des traducteurs pour sauvegarder les changements
 	'translate-checks-xhtml'            => 'Vous êtes invité à corriger les balises suivantes : <strong>$1</strong>',
 	'translate-checks-plural'           => 'La définition utilise <nowiki>{{PLURAL:}}</nowiki> mais pas la traduction.',
 	'tog-translate-nonewsletter'        => 'Ne m’envoyez pas la lettre d’information par courrier (ne concerne que les utilisateurs qui disposent d’une adresse courriel confirmée)',
+	'right-translate'                   => "Modifier en utilisant l'interface de traduction",
 );
 
 $messages['frc'] = array(
@@ -2828,6 +2839,7 @@ Om wijzigingen op te slaan moet u lid zijn van de groep vertalers. Wijzigingen w
 	'translate-checks-xhtml'            => 'Vervang de volgende tags door de juiste: <strong>$1</strong>',
 	'translate-checks-plural'           => 'De definitie bevat <nowiki>{{PLURAL:}}</nowiki>, maar de vertaling niet.',
 	'tog-translate-nonewsletter'        => 'Mij geen nieuwsbrieven per e-mail sturen (alleen relevant voor gebruikers met een bevestigd e-mailadres)',
+	'right-translate'                   => 'Bewerken via de vertaalinterface',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
@@ -2928,6 +2940,7 @@ Du må være i oversettergruppa for å lagre endringer. Endringer lagres ikke f�
 	'translate-checks-xhtml'            => 'Erstatt følgende tagger med de korrekte: <strong>$1</strong>',
 	'translate-checks-plural'           => 'Definisjonen bruker <nowiki>{{PLURAL:}}</nowiki>, men oversettelsen gjør ikke det.',
 	'tog-translate-nonewsletter'        => 'Ikke send meg nyhetsbrev (gjelder kun brukere med bekreftet e-postadresse)',
+	'right-translate'                   => 'Redigere med oversettingsgrensesnittet',
 );
 
 /** Occitan (Occitan)
@@ -3349,6 +3362,8 @@ $messages['ru'] = array(
 	'translate-checks-links'            => 'Следующие ссылки вызывают проблемы: <strong>$1</strong>',
 	'translate-checks-xhtml'            => 'Пожалуйста, исправьте следующие теги: <strong>$1</strong>',
 	'translate-checks-plural'           => 'Оригинал использует <nowiki>{{PLURAL:}}</nowiki>, а перевод — нет.',
+	'tog-translate-nonewsletter'        => 'Не отправлять мне информационный бюллетень по электронной почте (только для участников с подтверждёнными почтовыми адресами)',
+	'right-translate'                   => 'правка с использованием интерфейса перевода',
 );
 
 $messages['sah'] = array(
@@ -3613,6 +3628,7 @@ För att kunna spara ändringar så behöver du tillhöra översättargruppen. �
 	'translate-checks-xhtml'            => 'Följande felaktiga taggar bör ersättas: <strong>$1</strong>',
 	'translate-checks-plural'           => '<nowiki>{{PLURAL:}}</nowiki> används i definitionen, men inte i översättningen.',
 	'tog-translate-nonewsletter'        => 'Sänd mig inte nyhetsbrev (gäller endast användare med bekräftad e-postadress)',
+	'right-translate'                   => 'Redigera genom översättningsgränssnittet',
 );
 
 /** Silesian (ślůnski)

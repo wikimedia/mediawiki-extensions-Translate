@@ -208,6 +208,13 @@ $messages['bg'] = array(
 	'msg_Cancel'                 => 'Отказване',
 );
 
+/** Chamorro (Chamoru)
+ * @author Jatrobat
+ */
+$messages['ch'] = array(
+	'wikiSearchTitle' => 'Aligao -',
+);
+
 /** Deutsch (Deutsch) */
 $messages['de'] = array(
 	'wikiSearchTitle'       => 'Suchergebnisse -',
@@ -318,6 +325,8 @@ Klickt net op OK ier Dir net all dëst nogekuckt hutt.",
 	'msg_ArticleCategory'                    => 'Artikel-Kategorie',
 	'msg_ImageCategory'                      => 'Bild-Kategorie',
 	'msg_ImageDescription'                   => "Zousätzlechen Text fir d'Bildbeschreiwung",
+	'msg_ImageHandlingFrame'                 => 'Bild  verschaffen',
+	'msg_ImageExtraction'                    => 'Biller eraushuelen',
 	'msg_ImageUseMSPhoto'                    => 'An den MS Photo Editor als neit Bild kopéieren',
 	'msg_ImageUpdate'                        => 'Billerfichieren aktualiséieren',
 	'msg_ImageUpload'                        => 'Biller eroplueden',
@@ -328,8 +337,10 @@ Klickt net op OK ier Dir net all dëst nogekuckt hutt.",
 	'msg_AsInDocument'                       => 'Esou wéi am Dokument',
 	'msg_ImageSizeFrame'                     => 'Gréisst vum Bild',
 	'msg_ImageFullSize'                      => 'Ganz Gréisst benotzen',
+	'msg_ImageFullSizeToolTip'               => "Déi ganz Gréisst vum Bild benotzen och wann d'Gréiss vum Bild am Word reduzéiert ass",
 	'msg_ImageDocumentSize'                  => 'Benotzt Dokumentegréisst',
 	'msg_ImageDocumentSizeToolTip'           => 'Bild op déi Gréisst uppassen wéi et am word ugewise gëtt',
+	'msg_ImageDocumentSizeMaxWidth'          => 'Dokumentegréisst bis zur maximaler Breet benotzen',
 	'msg_ImageMaxWidthFrame'                 => 'Maximal Breet vun engem Bild',
 	'msg_ConvertTab'                         => 'Erweidert Textëmwandlung',
 	'msg_ConvertTextFrame'                   => 'Textëmwandlung',
@@ -345,11 +356,13 @@ Klickt net op OK ier Dir net all dëst nogekuckt hutt.",
 	'msg_ConvertTableStyleParagraphFrames'   => 'Tabellestyl (Abschnitt - Rummen (frames))',
 	'msg_ConvertTabTables'                   => 'Tabellen déi mat Tabulatioune gemaach sinn ëmwandelen',
 	'msg_ConvertParagraphsFrame'             => 'Abschnitter',
+	'msg_ConvertFirstLineIndents'            => 'Erageréckelt éischt Linn ëmwandelen',
 	'msg_ConvertNewParagraphs'               => 'Nei Abschnitter mat <br/>en maachen',
 	'msg_ConvertReplacePageBreaks'           => 'Ersetz Säitenëmbrech duerch horizontal Linnen',
 	'msg_ConvertJustifiedText'               => 'Geriiten Text ëmwandelen',
 	'msg_ConvertHeadingsFrame'               => 'Iwwerschrëften',
 	'msg_ConvertFirstLevelHeading'           => 'Iwwerschrëft vum éischte Niveau',
+	'msg_ConvertTitlePage'                   => 'Titelsäittext asetzen',
 	'msg_Convert'                            => 'Ëmwandelen',
 	'msg_ImagesOnly'                         => 'Nëmme Biller',
 	'msg_Cancel'                             => 'Zréck',
