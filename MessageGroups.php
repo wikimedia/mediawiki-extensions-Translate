@@ -816,6 +816,24 @@ class AuthorProtectMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'AuthorProtect/AuthorProtect.i18n.php';
 }
 
+class BabelMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Babel';
+	protected $id    = 'ext-babel';
+
+	protected $arrName = 'messages';
+	protected $messageFile  = 'Babel/Babel.i18n.php';
+
+	protected $ignored = array(
+		'babel-box-cellspacing',
+		'babel-category-prefix',
+		'babel-category-suffix',
+		'babel-portal-prefix',
+		'babel-portal-suffix',
+		'babel-template-prefix',
+		'babel-template-suffix',
+	);
+}
+
 class BackAndForthMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Back and Forth';
 	protected $id    = 'ext-backandforth';
