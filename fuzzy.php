@@ -10,9 +10,9 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-
-$IP = "../../maintenance/";
-require_once( $IP . 'commandLine.inc' );
+$dir = dirname( __FILE__ ); $IP = "$dir/../..";
+@include("$dir/../CorePath.php"); // Allow override
+require_once( "$IP/maintenance/commandLine.inc" );
 
 if ( count( $args ) == 0 || isset( $options['help'] ) ) {
 	print <<<EOT

@@ -12,14 +12,16 @@
 
 $optionsWithArgs = array( 'groups', 'output', 'skiplanguages', );
 
+$dir = dirname( __FILE__ ); $IP = "$dir/../..";
+@include("$dir/../CorePath.php"); // Allow override
+require_once( "$IP/maintenance/commandLine.inc" );
+
 function stderr( $message ) {
 	static $stderr = null;
 	if (is_null($stderr)) $stderr = fopen( "php://stderr", "wt" );
 	fwrite( $stderr, $message . "\n" );
 }
 
-$MY_IP = "../../maintenance";
-require_once( $MY_IP . '/commandLine.inc' );
 require_once( $IP . '/maintenance/language/StatOutputs.php' );
 
 if ( isset( $options['help'] ) ) {
