@@ -108,6 +108,15 @@ Changes are not saved until you click save button below.',
 	'right-translate'            => 'Edit using the translate interface',
 );
 
+/** Karelian (Karjala)
+ * @author Flrn
+ */
+$messages['krl'] = array(
+	'translate-edit'                   => 'muokkaus',
+	'translate-talk'                   => 'pagin',
+	'translate-page-navigation-legend' => 'Valličy',
+);
+
 /** Afrikaans (Afrikaans)
  * @author SPQRobin
  * @author Arnobarnard
@@ -229,6 +238,7 @@ $messages['ang'] = array(
 /** Arabic (العربية)
  * @author Meno25
  * @author Siebrand
+ * @author SieBot
  */
 $messages['ar'] = array(
 	'translate'                         => 'ترجمة',
@@ -304,6 +314,7 @@ $messages['ar'] = array(
 	'translate-checks-xhtml'            => 'من فضلك استبدل الوسوم التالية بالبدائل الصحيحة: <strong>$1</strong>',
 	'translate-checks-plural'           => 'التعريف يستخدم <nowiki>{{PLURAL:}}</nowiki> لكن الترجمة لا.',
 	'tog-translate-nonewsletter'        => 'لا ترسل لي إخطارات بريدية بالبريد الإلكتروني (متعلقة فقط بالمستخدمين الذين يمتلكون عنوان بريد الإلكتروني مؤكد)',
+	'right-translate'                   => 'التعديل باستخدام واجهة المترجم',
 );
 
 /** Araucanian (Mapudungun)
@@ -682,6 +693,8 @@ Heu de tenir permisos de traductor per a desar els canvis, que no es guardaran f
 	'translate-checks-links'            => 'Els enllaços següents són problemàtics: <strong>$1</strong>',
 	'translate-checks-xhtml'            => 'Reemplaceu les etiquetes següents amb les correctes: <strong>$1</strong>',
 	'translate-checks-plural'           => 'La definició utilitza <nowiki>{{PLURAL:}}</nowiki> i en canvi la traducció no.',
+	'tog-translate-nonewsletter'        => "No m'enviïs per correu electrònic el recull de notícies (només per a usuaris amb adreça electrònica)",
+	'right-translate'                   => 'Editar fent servir la interfície de traducció',
 );
 
 /** Chamorro (Chamoru)
@@ -1587,6 +1600,13 @@ $messages['hi'] = array(
 	'translationchanges-export'        => 'निर्यात',
 );
 
+/** Hiligaynon (Ilonggo)
+ * @author Jose77
+ */
+$messages['hil'] = array(
+	'translate-page-navigation-legend' => 'Nabigayson',
+);
+
 /** Croatian (Hrvatski)
  * @author Dnik
  * @author SpeedyGonsales
@@ -2285,6 +2305,7 @@ $messages['kk-cyrl'] = array(
 	'translate-checks-xhtml'            => 'Келесі белгілемелерді дұрыстарымен алмастырыңыз: <strong>$1</strong>',
 	'translate-checks-plural'           => 'Анықталымда <nowiki>{{PLURAL:}}</nowiki> пайдаланылған, бірақ аудармада бұл жоқ.',
 	'tog-translate-nonewsletter'        => 'Жаңалық хаттарды маған жіберме (тек құпталған е-пошта жайы бар қатысушыларға тиісті)',
+	'right-translate'                   => 'Аудару тілдесуін қолданып өңдеу',
 );
 
 /** Kazakh (Latin) (Қазақша (Latin))
@@ -3461,6 +3482,7 @@ Aby ste mohli ukladať zmeny, musíte byť členom skupiny translators. Zmeny sa
 	'translate-checks-xhtml'            => 'Prosím, nahraďte nasledovné značky správnymi: <strong>$1</strong>',
 	'translate-checks-plural'           => 'Definícia používa <nowiki>{{PLURAL:}}</nowiki>, ale preklad nie.',
 	'tog-translate-nonewsletter'        => 'Neposielať mi novinky emailom (týka sa iba používateľov s potvrdenou emailovou adresou)',
+	'right-translate'                   => 'Vykonávať úpravy pomocou rozhrania Preložiť',
 );
 
 /** Somali (Soomaaliga)
