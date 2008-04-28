@@ -891,6 +891,7 @@ Du musst in der Übersetzer-Gruppe sein um Änderungen zu speichern. Änderungen
 	'translate-checks-plural'     => 'Das Original benutzt <nowiki>{{PLURAL:}}</nowiki>, die Übersetzung aber nicht.',
 
 	'tog-translate-nonewsletter' => 'Sende mir keine E-Mail-Newsletter zu (nur für Benutzer für bestätigten E-Mail-Adressen relevant)',
+	'right-translate'            => 'Benutzung des Übersetzen-Interfaces',
 );
 
 /** Lower Sorbian (Dolnoserbski)
