@@ -436,6 +436,29 @@ $messages['bcl'] = array(
 	'translate-magic-cm-savefailed' => 'Bigô an pagtagama',
 );
 
+/** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
+ * @author EugeneZelenko
+ */
+$messages['be-tarask'] = array(
+	'translate'                         => 'Пераклад',
+	'translate-edit'                    => 'рэдагаваць',
+	'translate-talk'                    => 'абмеркаваньне',
+	'translate-history'                 => 'гісторыя',
+	'translate-task-export'             => 'Экспартаваць пераклады',
+	'translate-task-export-to-file'     => 'Экспартаваць пераклады ў файл',
+	'translate-task-export-as-po'       => 'Экспартаваць пераклады ў фармаце gettext',
+	'translate-page-task'               => 'Я хачу',
+	'translate-page-group'              => 'Група',
+	'translate-page-language'           => 'Мова',
+	'translate-page-navigation-legend'  => 'Навігацыя',
+	'translate-next'                    => 'Наступная старонка',
+	'translate-prev'                    => 'Папярэдняя старонка',
+	'translate-page-description-legend' => 'Інфармацыя пра групу',
+	'translate-edit-information'        => 'Інфармацыя пра гэтае паведамленьне ($1)',
+	'translate-edit-in-other-languages' => 'Паведамленьне на іншых мовах',
+	'translate-magic-cm-comment'        => 'Камэнтар:',
+);
+
 /** Bulgarian (Български)
  * @author DCLXVI
  * @author Siebrand
@@ -699,10 +722,11 @@ Heu de tenir permisos de traductor per a desar els canvis, que no es guardaran f
 
 /** Chamorro (Chamoru)
  * @author Jatrobat
+ * @author Gadao01
  */
 $messages['ch'] = array(
 	'translate-edit'                   => 'tulaika',
-	'translate-talk'                   => 'adingan',
+	'translate-talk'                   => 'kuentusi',
 	'translate-page-navigation-legend' => 'Nabegasion',
 );
 
@@ -1485,6 +1509,13 @@ Vos dête apartegnir a la tropa des traductors por sôvar los changements. Los c
 	'translate-checks-plural'           => 'La dèfinicion utilise <nowiki>{{PLURAL:}}</nowiki> mas pas la traduccion.',
 );
 
+/** Irish (Gaeilge)
+ * @author Moilleadóir
+ */
+$messages['ga'] = array(
+	'translate-page-navigation-legend' => 'Nascleanúint',
+);
+
 /** Galician (Galego)
  * @author Alma
  * @author Toliño
@@ -1749,6 +1780,8 @@ Dyrbiš w skupinje přełožowarjow być, zo by změny składował. Změny so nj
 	'translate-checks-links'            => 'Slědowace wotkazy su problematiske: <strong>$1</strong>',
 	'translate-checks-xhtml'            => 'Narunaj prošu slědowace taflički přez korektne: <strong>$1</strong>',
 	'translate-checks-plural'           => 'Definicija wužiwa <nowiki>{{PLURAL:}}</nowiki>, přełožk pak nic.',
+	'tog-translate-nonewsletter'        => 'Njepósćel mi žadyn e-mejlowy dopis nowinkow (jenož za wužiwarjow z wobkrućenej e-mejlowej adresu relewantny)',
+	'right-translate'                   => 'Z pomocu powjercha přełožowanja wobdźěłać',
 );
 
 /** Haitian (Kreyòl ayisyen)
@@ -2142,6 +2175,27 @@ $messages['ja'] = array(
 	'translate-checks-links'            => 'リンクに問題があります: <strong>$1</strong>',
 	'translate-checks-xhtml'            => '正しいタグに修正してください: <strong>$1</strong>',
 	'translate-checks-plural'           => '元のメッセージでは <nowiki>{{PLURAL:}}</nowiki> を使用していますが、翻訳の中にはありません。',
+);
+
+/** Javanese (Basa Jawa)
+ * @author Meursault2004
+ */
+$messages['jv'] = array(
+	'translate'                         => 'Pertalna/Terjemahna',
+	'translate-edit'                    => 'sunting',
+	'translate-talk'                    => 'wicara',
+	'translate-history'                 => 'sajarah/vèrsi',
+	'translate-task-view'               => 'Tuduhna kabèh pesen saka',
+	'translate-page-task'               => 'Aku kepéngin',
+	'translate-page-language'           => 'Basa',
+	'translate-page-limit'              => 'Limit (wates)',
+	'translate-page-navigation-legend'  => 'Navigasi',
+	'translate-next'                    => 'Kaca sabanjuré',
+	'translate-prev'                    => 'Kaca sadurungé',
+	'translate-edit-contribute'         => 'awèh kontribusi',
+	'translate-edit-in-other-languages' => 'Pesen ing basa liya',
+	'translate-magic-cm-save'           => 'Simpen',
+	'translate-magic-cm-export'         => 'Èkspor',
 );
 
 /** Georgian (ქართული)
@@ -2706,11 +2760,13 @@ Jūs turite priklausyti vertėjų grupei, kad galėtumėte išsaugoti pakeitimus
 );
 
 /** Malayalam (മലയാളം)
- * @author Jacob.jose
  * @author Shijualex
+ * @author Jacob.jose
  */
 $messages['ml'] = array(
 	'translate'                  => 'വിവര്‍ത്തനം ചെയ്യുക',
+	'translate-edit'             => 'തിരുത്തുക',
+	'translate-history'          => 'നാള്‍വഴി',
 	'translate-page-showing'     => '$3 സന്ദേശങ്ങളുള്ളതില്‍ $1 മുതല്‍ $2 വരെയുള്ളവ പ്രദര്‍ശിപ്പിച്ചിരിക്കുന്നു',
 	'translate-page-showing-all' => '$1 {{PLURAL:$1|സന്ദേശം|സന്ദേശങ്ങള്‍}} പ്രദര്‍ശിപ്പിക്കുന്നു.',
 	'translate-magic-cm-comment' => 'അഭിപ്രായം:',
@@ -3046,6 +3102,7 @@ Vos cal aparténer al grop dels traductors per salvagardar los cambiaments. Los 
 	'translate-checks-xhtml'            => 'Sètz convidats a tornar metre en plaça las balisas seguentas amb las que son corrèctas : <strong>$1</strong>',
 	'translate-checks-plural'           => 'La definicion utiliza <nowiki>{{PLURAL:}}</nowiki> mas pas la traduccion',
 	'tog-translate-nonewsletter'        => 'Me mandetz pas la letra d’informacion per corrièr (concernís pas que les utilizaires que dispausan d’una adreça de corrièr electronic confirmada)',
+	'right-translate'                   => "Modificar en utilizant l'interfàcia de traduccion",
 );
 
 /** Ossetic (Иронау)
