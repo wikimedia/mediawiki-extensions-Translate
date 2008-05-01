@@ -2037,6 +2037,14 @@ class RenameUserMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'Renameuser/SpecialRenameuser.i18n.php';
 }
 
+class ReplaceTextMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Replace Text';
+	protected $id    = 'ext-replacetext';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'ReplaceText/ReplaceText.i18n.php';
+}
+
 class ReviewMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Review';
 	protected $id    = 'ext-review';

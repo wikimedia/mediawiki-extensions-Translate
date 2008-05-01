@@ -224,6 +224,7 @@ $wgTranslateAC = array(
 'ext-randomrootpage'        => 'RandomRootpageMessageGroup',
 'ext-regexblock'            => 'RegexBlockMessageGroup',
 'ext-renameuser'            => 'RenameUserMessageGroup',
+'ext-replacetext'           => 'ReplaceTextMessageGroup',
 'ext-review'                => 'ReviewMessageGroup',
 'ext-rightfunctions'        => 'RightFunctionsMessageGroup',
 'ext-scanset'               => 'ScanSetMessageGroup',
