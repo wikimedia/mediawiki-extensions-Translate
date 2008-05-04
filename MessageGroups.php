@@ -760,6 +760,14 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 	}
 }
 
+class AbsenteeLandlordMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Absentee Landlord';
+	protected $id    = 'ext-absenteelandlord';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'AbsenteeLandlord/AbsenteeLandlord.i18n.php';
+}
+
 class AdvancedRandomMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Advanced Random';
 	protected $id    = 'ext-advancedrandom';
@@ -790,6 +798,14 @@ class AntiSpoofMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'AntiSpoof/AntiSpoof.i18n.php';
+}
+
+class ApcMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'APC';
+	protected $id    = 'ext-apc';
+
+	protected $arrName     = 'messages';
+	protected $messageFile  = 'APC/ViewAPC.i18n.php';
 }
 
 class AsksqlMessageGroup extends ExtensionMessageGroup {
