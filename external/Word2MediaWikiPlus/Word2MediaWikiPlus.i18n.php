@@ -657,25 +657,31 @@ $messages['hi'] = array(
  */
 $messages['hil'] = array(
 	'wikiSearchTitle' => 'Pangita-a',
+	'msg_Cancel'      => 'Kanselahon',
 );
 
 /** Javanese (Basa Jawa)
  * @author Meursault2004
  */
 $messages['jv'] = array(
-	'wikiSearchTitle'      => 'Golèk -',
-	'wikiCategoryKeyWord'  => 'Kategori',
-	'wikiUploadTitle'      => 'Unggah',
-	'txt_TitlePage'        => 'Kaca irah-irahan',
-	'txt_Footnote'         => 'Cathetan sikil',
-	'msg_SimpleTab'        => 'Prasaja',
-	'msg_ArticleName'      => 'Jeneng Artikel',
-	'msg_TargetWikiFrame'  => 'Wiki Tujuan',
-	'msg_CategoryFrame'    => 'Kategori',
-	'msg_ImageSizeFrame'   => 'Ukuran Gambar',
-	'msg_ConvertTextFrame' => 'Konversi Tèks',
-	'msg_Convert'          => 'Konversi',
-	'msg_Cancel'           => 'Batal',
+	'wikiSearchTitle'            => 'Golèk -',
+	'wikiCategoryKeyWord'        => 'Kategori',
+	'categoryImagePreFix'        => 'Gambar-gambar',
+	'wikiUploadTitle'            => 'Unggah',
+	'clickChartText'             => 'klika aku!',
+	'txt_TitlePage'              => 'Kaca irah-irahan',
+	'txt_Footnote'               => 'Cathetan sikil',
+	'msg_SimpleTab'              => 'Prasaja',
+	'msg_ArticleName'            => 'Jeneng Artikel',
+	'msg_TargetWikiFrame'        => 'Wiki Tujuan',
+	'msg_CategoryFrame'          => 'Kategori',
+	'msg_ImageSizeFrame'         => 'Ukuran Gambar',
+	'msg_ConvertTab'             => 'Konvèrsi Canggih Tèks',
+	'msg_ConvertTextFrame'       => 'Konversi Tèks',
+	'msg_ConvertParagraphsFrame' => 'Paragraf',
+	'msg_Convert'                => 'Konversi',
+	'msg_ImagesOnly'             => 'Namung Gambar',
+	'msg_Cancel'                 => 'Batal',
 );
 
 /** Georgian (ქართული)
@@ -689,6 +695,7 @@ $messages['ka'] = array(
 
 /** Khmer (ភាសាខ្មែរ)
  * @author គីមស៊្រុន
+ * @author Lovekhmer
  */
 $messages['km'] = array(
 	'wikiSearchTitle'                        => 'ស្វែងរក',
@@ -697,6 +704,7 @@ $messages['km'] = array(
 	'wikiUploadTitle'                        => 'ផ្ទុកឡើង',
 	'clickChartText'                         => 'ចុចទីនេះ!',
 	'unableToConvertMarker'                  => '## កំហុសក្នុងការបំលែង ##:',
+	'txt_TitlePage'                          => 'ដាក់ចំនងជើងទំព័រ',
 	'txt_PageHeader'                         => 'ក្បាលទំព័រ',
 	'txt_PageFooter'                         => 'ជើងទំព័រ',
 	'txt_Footnote'                           => 'កំនត់សំគាល់',
@@ -812,6 +820,13 @@ Klickt net op OK ier Dir net all dëst nogekuckt hutt.",
 	'msg_Convert'                            => 'Ëmwandelen',
 	'msg_ImagesOnly'                         => 'Nëmme Biller',
 	'msg_Cancel'                             => 'Zréck',
+);
+
+/** Malayalam (മലയാളം)
+ * @author Shijualex
+ */
+$messages['ml'] = array(
+	'msg_Cancel' => 'റദ്ദാക്കുക',
 );
 
 /** Marathi (मराठी)
@@ -1247,6 +1262,32 @@ $messages['pl'] = array(
 	'msg_Convert'                            => 'Konwertuj',
 	'msg_ImagesOnly'                         => 'Tylko grafiki',
 	'msg_Cancel'                             => 'Anuluj',
+);
+
+/** Pashto (پښتو)
+ * @author Ahmed-Najib-Biabani-Ibrahimkhel
+ */
+$messages['ps'] = array(
+	'wikiSearchTitle'        => 'پلټل -',
+	'wikiCategoryKeyWord'    => 'وېشنيزه',
+	'categoryImagePreFix'    => 'انځورونه',
+	'clickChartText'         => 'پر ما وټوکه!',
+	'txt_TitlePage'          => 'د سرليک مخ',
+	'msg_SimpleTab'          => 'ساده',
+	'msg_ArticleName'        => 'د ليکنې نوم',
+	'msg_TestSystem'         => 'آزمېښتي غونډال',
+	'msg_CategoryFrame'      => 'وېشنيزه',
+	'msg_MultipleCats'       => 'ګڼ شمېر وېشنيزې د کامې (،) په کارولو سره يو له بل نه بېلول',
+	'msg_ArticleCategory'    => 'د ليکنو وېشنيزه',
+	'msg_ImageCategory'      => 'د انځورونو وېشنيزه',
+	'msg_ImageDescription'   => 'د انځور د څرګندولو لپاره اضافه متن',
+	'msg_Always'             => 'تل',
+	'msg_Never'              => 'هېڅکله',
+	'msg_ImageSizeFrame'     => 'د انځور کچه',
+	'msg_ImageFullSize'      => 'بشپړه کچه کارول',
+	'msg_ConvertTablesFrame' => 'لښتيالونه',
+	'msg_ConvertTitlePage'   => 'د مخ د سرليک متن ځايول',
+	'msg_ImagesOnly'         => 'يواځې انځورونه',
 );
 
 /** Portuguese (Português)

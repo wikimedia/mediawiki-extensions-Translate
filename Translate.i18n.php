@@ -525,6 +525,8 @@ $messages['bg'] = array(
 	'translate-checks-links'            => 'Следните препратки са проблемни: <strong>$1</strong>',
 	'translate-checks-xhtml'            => 'Необходимо е заместване на посочените етикети с правилни: <strong>$1</strong>',
 	'translate-checks-plural'           => 'Оригиналното съобщение използва <nowiki>{{PLURAL:}}</nowiki>, а преводът — не.',
+	'tog-translate-nonewsletter'        => 'Без получаване на бюлетин по е-поща (за потребители с потвърден адрес за е-поща)',
+	'right-translate'                   => 'Редактиране чрез интерфейса за превод',
 );
 
 /** Bengali (বাংলা)
@@ -1636,6 +1638,8 @@ $messages['hi'] = array(
  * @author Jose77
  */
 $messages['hil'] = array(
+	'translate-edit'                   => 'ilisan',
+	'translate-history'                => 'saysay',
 	'translate-page-navigation-legend' => 'Nabigayson',
 );
 
@@ -2182,20 +2186,59 @@ $messages['ja'] = array(
  */
 $messages['jv'] = array(
 	'translate'                         => 'Pertalna/Terjemahna',
+	'translate-desc'                    => '[[Special:Translate|Kaca astaméwa]] kanggo mertal Mediawiki lan liyané',
 	'translate-edit'                    => 'sunting',
 	'translate-talk'                    => 'wicara',
 	'translate-history'                 => 'sajarah/vèrsi',
 	'translate-task-view'               => 'Tuduhna kabèh pesen saka',
+	'translate-task-untranslated'       => 'Tuduhna kabèh pesen sing durung dipertal saka',
+	'translate-task-optional'           => 'Tuduhna pesen opsional saka',
+	'translate-task-review'             => 'Tinjo owah-owahan saka',
+	'translate-task-reviewall'          => 'Tinjo kabèh owah-owahan ing',
+	'translate-task-export'             => 'Èkspor pertalan saka',
+	'translate-task-export-to-file'     => 'Èkspor pertalan menyang berkas saka',
+	'translate-task-export-as-po'       => 'Èkspor pertalan ing format Gettext',
+	'translate-page-no-such-language'   => 'Basa sing dipilih ora absah.',
+	'translate-page-no-such-task'       => 'Operasi sing dipilih ora absah.',
+	'translate-page-no-such-group'      => 'Grup sing dipilih ora absah.',
+	'translate-page-settings-legend'    => 'Pangaturan',
 	'translate-page-task'               => 'Aku kepéngin',
+	'translate-page-group'              => 'Kelompok',
 	'translate-page-language'           => 'Basa',
 	'translate-page-limit'              => 'Limit (wates)',
+	'translate-page-limit-option'       => '$1 {{PLURAL:$1|pesen|pesen}} per kaca',
+	'translate-submit'                  => 'Jupuk',
 	'translate-page-navigation-legend'  => 'Navigasi',
+	'translate-page-showing'            => 'Nuduhaké pesen $1 nganti $2 saka $3.',
+	'translate-page-showing-all'        => 'Nuduhaké $1 {{PLURAL:$1|pesen|pesen}}.',
+	'translate-page-showing-none'       => 'Ora ana pesen sing bisa dituduhaké.',
 	'translate-next'                    => 'Kaca sabanjuré',
 	'translate-prev'                    => 'Kaca sadurungé',
+	'translate-page-description-legend' => 'Informasi ngenani grup utawa kelompok',
+	'translate-optional'                => '(opsional)',
+	'translate-ignored'                 => '(dilirwakaké)',
+	'translate-edit-definition'         => 'Définisi pesen',
 	'translate-edit-contribute'         => 'awèh kontribusi',
+	'translate-edit-information'        => 'Informasi perkara pesen iki ($1)',
 	'translate-edit-in-other-languages' => 'Pesen ing basa liya',
+	'translate-edit-warnings'           => 'Pèngetan perkara pertalan sing ora pepak',
+	'translate-magic-submit'            => 'Jupuk',
+	'translate-magic-cm-current'        => 'Saiki',
+	'translate-magic-cm-original'       => 'Asli',
+	'translate-magic-cm-fallback'       => 'Cadhangan',
+	'translate-magic-cm-comment'        => 'Komentar:',
 	'translate-magic-cm-save'           => 'Simpen',
 	'translate-magic-cm-export'         => 'Èkspor',
+	'translate-magic-cm-updatedusing'   => 'Dimutakiraké nganggo [[Special:Magic]]',
+	'translate-magic-cm-savefailed'     => 'Gagal disimpen',
+	'translate-magic-words'             => 'Tembung-tembung magis',
+	'translate-magic-skin'              => 'Jeneng kulit',
+	'translate-magic-namespace'         => 'Jeneng bilik nama',
+	'translationchanges-export'         => 'èkspor',
+	'translationchanges-change'         => '$1: $2 déning $3',
+	'translate-checks-parameters'       => 'Paramèter-paramèter ing ngisor iki ora dienggo: <strong>$1</strong>',
+	'tog-translate-nonewsletter'        => 'Aja ngirimi aku jurnal warta e-mail (namung rélévan kanggo para panganggo sing wis konfirmasi alamat e-mailé)',
+	'right-translate'                   => 'Nyunting nganggo antarmuka pertalan',
 );
 
 /** Georgian (ქართული)
@@ -2767,9 +2810,13 @@ $messages['ml'] = array(
 	'translate'                  => 'വിവര്‍ത്തനം ചെയ്യുക',
 	'translate-edit'             => 'തിരുത്തുക',
 	'translate-history'          => 'നാള്‍വഴി',
+	'translate-page-language'    => 'ഭാഷ',
 	'translate-page-showing'     => '$3 സന്ദേശങ്ങളുള്ളതില്‍ $1 മുതല്‍ $2 വരെയുള്ളവ പ്രദര്‍ശിപ്പിച്ചിരിക്കുന്നു',
 	'translate-page-showing-all' => '$1 {{PLURAL:$1|സന്ദേശം|സന്ദേശങ്ങള്‍}} പ്രദര്‍ശിപ്പിക്കുന്നു.',
+	'translate-next'             => 'അടുത്ത താള്‍',
+	'translate-prev'             => 'മുന്‍പത്തെ താള്‍',
 	'translate-magic-cm-comment' => 'അഭിപ്രായം:',
+	'translate-magic-cm-save'    => 'സേവ് ചെയ്യുക',
 );
 
 /** Marathi (मराठी)
