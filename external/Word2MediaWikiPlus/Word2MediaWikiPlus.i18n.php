@@ -172,6 +172,14 @@ $messages['krl'] = array(
 	'msg_Cancel'      => 'Keskevytä',
 );
 
+/** Afrikaans (Afrikaans)
+ * @author Arnobarnard
+ */
+$messages['af'] = array(
+	'wikiSearchTitle' => 'Soek -',
+	'msg_Cancel'      => 'Kanselleer',
+);
+
 /** Kotava (Kotava)
  * @author Wikimistusik
  */
@@ -669,15 +677,23 @@ $messages['jv'] = array(
 	'categoryImagePreFix'        => 'Gambar-gambar',
 	'wikiUploadTitle'            => 'Unggah',
 	'clickChartText'             => 'klika aku!',
+	'unableToConvertMarker'      => '## Kaluputan konvèrsi ##:',
 	'txt_TitlePage'              => 'Kaca irah-irahan',
+	'txt_PageHeader'             => 'Sirah kaca',
+	'txt_PageFooter'             => 'Sikil kaca',
 	'txt_Footnote'               => 'Cathetan sikil',
+	'msg_NoDocumentLoaded'       => 'Ora ana dokumèn sing diunggahaké.',
 	'msg_SimpleTab'              => 'Prasaja',
 	'msg_ArticleName'            => 'Jeneng Artikel',
 	'msg_TargetWikiFrame'        => 'Wiki Tujuan',
+	'msg_CheckURL'               => 'Priksa URL',
 	'msg_CategoryFrame'          => 'Kategori',
+	'msg_ImageUpdate'            => 'Anyarana berkas gambar sing ana',
+	'msg_AsInDocument'           => 'Kaya ing dokumèn',
 	'msg_ImageSizeFrame'         => 'Ukuran Gambar',
 	'msg_ConvertTab'             => 'Konvèrsi Canggih Tèks',
 	'msg_ConvertTextFrame'       => 'Konversi Tèks',
+	'msg_ConvertWikiSyntax'      => 'Konvèrsi sintaksis wiki',
 	'msg_ConvertParagraphsFrame' => 'Paragraf',
 	'msg_Convert'                => 'Konversi',
 	'msg_ImagesOnly'             => 'Namung Gambar',
@@ -736,6 +752,17 @@ $messages['km'] = array(
 	'msg_Convert'                            => 'បំលែង',
 	'msg_ImagesOnly'                         => 'សំរាប់តែរូបភាព',
 	'msg_Cancel'                             => 'បោះបង់',
+);
+
+/** Kinaray-a (Kinaray-a)
+ * @author Jose77
+ */
+$messages['krj'] = array(
+	'wikiSearchTitle'     => 'Sagap',
+	'wikiCategoryKeyWord' => 'kategorya',
+	'msg_CategoryFrame'   => 'Kategorya',
+	'msg_Never'           => 'Indi gid',
+	'msg_Cancel'          => 'Kanselar',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
@@ -820,6 +847,22 @@ Klickt net op OK ier Dir net all dëst nogekuckt hutt.",
 	'msg_Convert'                            => 'Ëmwandelen',
 	'msg_ImagesOnly'                         => 'Nëmme Biller',
 	'msg_Cancel'                             => 'Zréck',
+);
+
+/** Limburgish (Limburgs)
+ * @author Ooswesthoesbes
+ */
+$messages['li'] = array(
+	'wikiSearchTitle'            => 'Zeuke -',
+	'wikiCategoryKeyWord'        => 'categorie',
+	'categoryImagePreFix'        => 'Aafbeilding',
+	'wikiUploadTitle'            => 'Uploade',
+	'clickChartText'             => 'klik mich!',
+	'msg_ConvertTablesFrame'     => 'Tebèller',
+	'msg_ConvertParagraphsFrame' => 'Paragräöf',
+	'msg_Convert'                => 'Konvertere',
+	'msg_ImagesOnly'             => 'Allein media',
+	'msg_Cancel'                 => 'Annulere',
 );
 
 /** Malayalam (മലയാളം)
@@ -1670,5 +1713,16 @@ $messages['vi'] = array(
 	'msg_Convert'                            => 'Chuyển đổi',
 	'msg_ImagesOnly'                         => 'Chỉ hình',
 	'msg_Cancel'                             => 'Hủy',
+);
+
+/** Volapük (Volapük)
+ * @author Malafaya
+ */
+$messages['vo'] = array(
+	'categoryImagePreFix' => 'Magods',
+	'txt_TitlePage'       => 'Tiädapad',
+	'msg_Always'          => 'Ai',
+	'msg_Never'           => 'Neai',
+	'msg_ImagesOnly'      => 'Te Magods',
 );
 

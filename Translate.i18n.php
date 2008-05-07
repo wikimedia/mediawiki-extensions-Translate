@@ -141,7 +141,7 @@ $messages['af'] = array(
 	'translate-page-navigation-legend'  => 'Navigasie',
 	'translate-page-showing'            => 'Wys boodskappe van $1 tot $2 uit $3.',
 	'translate-page-showing-all'        => 'Wys $1 {{PLURAL:$1|boodskap|boodskappe}}.',
-	'translate-page-showing-none'       => 'Geen boodskappe te wys.',
+	'translate-page-showing-none'       => 'Geen boodskappe om te wys.',
 	'translate-next'                    => 'Volgende bladsy',
 	'translate-prev'                    => 'Vorige bladsy',
 	'translate-page-description-legend' => 'Inligting oor hierdie groep',
@@ -828,47 +828,38 @@ $messages['da'] = array(
 
 /** German (Deutsch)
  * @author Raimond Spekking
+ * @author Purodha
  */
 $messages['de'] = array(
-	'translate'         => 'Übersetze',
-	'translate-desc'    => '[[Special:Translate|Spezialseite]] für die Übersetzung von MediaWiki-Systemnachrichten',
-	'translate-edit'    => 'Bearbeiten',
-	'translate-talk'    => 'Diskussion',
-	'translate-history' => 'Versionen',
-
-	'translate-task-view'           => 'Zeige alle Systemnachrichten der',
-	'translate-task-untranslated'   => 'Zeige alle nicht übersetzten Systemnachrichten der',
-	'translate-task-optional'       => 'Zeige optionale Systemnachrichten der',
-	'translate-task-review'         => 'Prüfe Änderungen der',
-	'translate-task-reviewall'      => 'Prüfe alle Übersetzungen der',
-	'translate-task-export'         => 'Exportiere alle Übersetzungen der',
-	'translate-task-export-to-file' => 'Exportiere alle Übersetzungen in eine Datei der',
-	'translate-task-export-as-po'   => 'Exportiere alle Übersetzungen in das Gettext-Format der',
-
-	'translate-page-no-such-language' => 'Die angegebene Sprache ist ungültig.',
-	'translate-page-no-such-task'     => 'Die angegebene Aufgabe ist ungültig.',
-	'translate-page-no-such-group'    => 'Die angegebene Gruppe ist ungültig.',
-
-	'translate-page-settings-legend' => 'Einstellungen',
-	'translate-page-task'            => 'Aufgabe',
-	'translate-page-group'           => 'Gruppe',
-	'translate-page-language'        => 'Sprache',
-	'translate-page-limit'           => 'Limit',
-	'translate-page-limit-option'    => '$1 {{PLURAL:$1|Systemnachricht|Systemnachrichten}} pro Seite',
-	'translate-submit'               => 'Hole',
-
-	'translate-page-navigation-legend' => 'Navigation',
-	'translate-page-showing'           => 'Systemnachrichten $1 bis $2 von insgesamt $3.',
-	'translate-page-showing-all'       => '$1 {{PLURAL:$1|Systemnachricht|Systemnachrichten}}.',
-	'translate-page-showing-none'      => 'Keine Systemnachrichten zur Anzeige vorhanden.',
-	'translate-next'                   => 'Nächste Seite',
-	'translate-prev'                   => 'Vorherige Seite',
-
+	'translate'                         => 'Übersetze',
+	'translate-desc'                    => '[[Special:Translate|Spezialseite]] für die Übersetzung von MediaWiki-Systemnachrichten',
+	'translate-edit'                    => 'Bearbeiten',
+	'translate-talk'                    => 'Diskussion',
+	'translate-history'                 => 'Versionen',
+	'translate-task-view'               => 'Zeige alle Systemnachrichten der',
+	'translate-task-untranslated'       => 'Zeige alle nicht übersetzten Systemnachrichten der',
+	'translate-task-optional'           => 'Zeige optionale Systemnachrichten der',
+	'translate-task-review'             => 'Prüfe Änderungen der',
+	'translate-task-reviewall'          => 'Prüfe alle Übersetzungen der',
+	'translate-task-export'             => 'Exportiere alle Übersetzungen der',
+	'translate-task-export-to-file'     => 'Exportiere alle Übersetzungen in eine Datei der',
+	'translate-task-export-as-po'       => 'Exportiere alle Übersetzungen in das Gettext-Format der',
+	'translate-page-no-such-language'   => 'Die angegebene Sprache ist ungültig.',
+	'translate-page-no-such-task'       => 'Die angegebene Aufgabe ist ungültig.',
+	'translate-page-no-such-group'      => 'Die angegebene Gruppe ist ungültig.',
+	'translate-page-settings-legend'    => 'Einstellungen',
+	'translate-page-task'               => 'Aufgabe',
+	'translate-page-group'              => 'Gruppe',
+	'translate-page-language'           => 'Sprache',
+	'translate-page-limit-option'       => '$1 {{PLURAL:$1|Systemnachricht|Systemnachrichten}} pro Seite',
+	'translate-submit'                  => 'Hole',
+	'translate-page-showing'            => 'Systemnachrichten $1 bis $2 von insgesamt $3.',
+	'translate-page-showing-all'        => '$1 {{PLURAL:$1|Systemnachricht|Systemnachrichten}}.',
+	'translate-page-showing-none'       => 'Keine Systemnachrichten zur Anzeige vorhanden.',
+	'translate-next'                    => 'Nächste Seite',
+	'translate-prev'                    => 'Vorherige Seite',
 	'translate-page-description-legend' => 'Informationen über diese Gruppe',
-
-	'translate-optional' => '(optional)',
-	'translate-ignored'  => '(ignoriert)',
-
+	'translate-ignored'                 => '(ignoriert)',
 	'translate-edit-definition'         => 'Systemnachricht im Original',
 	'translate-edit-contribute'         => 'bearbeiten',
 	'translate-edit-no-information'     => "''Diese Systemnachricht hat noch keine Dokumentation. Wenn du weißt, wo und welchem Zusammenhang sie benutzt wird, kannst du anderen Übersetzern helfen, indem du eine Dokumentation hinzufügst.''",
@@ -876,48 +867,38 @@ $messages['de'] = array(
 	'translate-edit-in-other-languages' => 'Systemnachricht in anderer Sprache',
 	'translate-edit-committed'          => 'Aktuelle Übersetzung',
 	'translate-edit-warnings'           => 'Warnung über unvollständige Übersetzungen',
+	'translate-magic-pagename'          => 'Erweiterte MediaWiki-Übersetzung',
+	'translate-magic-help'              => 'Du kannst hier Aliase für Spezialseiten, magische Wörter, Skinnamen und Namensraumnamen übersetzen.
 
-	'translate-magic-pagename'    => 'Erweiterte MediaWiki-Übersetzung',
-	'translate-magic-help'        => 'Du kannst Aliase für Spezialseiten, den magischen Wörtern, Skinnamen und Namensraum-Namen übersetzen.
+Bei den magischen Wörtern muss das englische Original bestehen bleiben, auch die erste Zahl (0 oder 1) darf nicht verändert werden.
 
-Für die magischen Wörter muss das englische Original bestehen bleiben, auch die erste Zahl (0 oder 1) darf nicht verändert werden.
+Spezialseiten und magische Wörter können mehrere Übersetzungen haben, sie werden jeweils durch ein Komma (,) getrennt. Skinnamen und Namensraumnamen dürfen nur je eine Übersetzung haben.
 
-Spezialseiten und magische Wörter können mehrere Übersetzungen, jeweils getrennt durch ein Komma (,) haben. Skins und Namensraum-Namen dürfen nur je eine Übersetzung haben.
+In der Übersetzung eines Namensraumnamens hat <tt>$1 talk</tt> eine spezielle Bedeutung. <tt>$1</tt> wird durch den Projektnamen ersetzt (zum Beispiel <tt>{{SITENAME}} talk</tt>. Wenn es in Deiner Sprache nicht möglich ist, eine grammatikalisch korrekte Form davon zu bilden ohne den Projektnamen zu verändern, kontaktiere bitte einen Systemadministrator.
 
-In Namensraum-Namen-Übersetzungen hat <tt>$1 talk</tt> eine spezielle Bedeutung. <tt>$1</tt> wird durch den Projektnamen ersetzt (zum Beispiel <tt>{{SITENAME}} talk</tt>. Wenn es in deiner Sprache nicht möglich ist, eine grammatikalisch korrekte Form zu bilden, kontaktiere bitte einen Systemadministrator.
-
-Du musst in der Übersetzer-Gruppe sein um Änderungen zu speichern. Änderungen werden erst beim Klick auf den Speichern-Button gespeichert.',
-	'translate-magic-form'        => 'Sprache: $1 Modul: $2 $3',
-	'translate-magic-submit'      => 'Hole',
-	'translate-magic-cm-to-be'    => 'To-be',
-	'translate-magic-cm-current'  => 'Aktuell',
-	'translate-magic-cm-original' => 'Original',
-	'translate-magic-cm-fallback' => 'Fallback',
-
-	'translate-magic-cm-comment' => 'Kommentar:',
-	'translate-magic-cm-save'    => 'Speichern',
-	'translate-magic-cm-export'  => 'Exportieren',
-
-	'translate-magic-cm-updatedusing' => 'Aktualisiert durch Special:Magic',
-	'translate-magic-cm-savefailed'   => 'Speichern fehlgeschlagen',
-
-	'translate-magic-special'   => 'Spezialseiten-Aliase',
-	'translate-magic-words'     => 'Magische Wörter',
-	'translate-magic-skin'      => 'Skins',
-	'translate-magic-namespace' => 'Namensraum-Namen',
-
-	'translationchanges'        => 'Übersetzungsänderungen',
-	'translationchanges-export' => 'exportieren',
-	'translationchanges-change' => '$1: $2 durch $3',
-
-	'translate-checks-parameters' => 'Die folgenden Parameter wurden nicht benutzt: <strong>$1</strong>',
-	'translate-checks-balance'    => 'Die Klammersetzung ist nicht ausgeglichen: <strong>$1</strong>',
-	'translate-checks-links'      => 'Die folgenden Links sind problematisch: <strong>$1</strong>',
-	'translate-checks-xhtml'      => 'Bitte ersettze die folgenden Tags mit den korrekten: <strong>$1</strong>',
-	'translate-checks-plural'     => 'Das Original benutzt <nowiki>{{PLURAL:}}</nowiki>, die Übersetzung aber nicht.',
-
-	'tog-translate-nonewsletter' => 'Sende mir keine E-Mail-Newsletter zu (nur für Benutzer für bestätigten E-Mail-Adressen relevant)',
-	'right-translate'            => 'Benutzung des Übersetzen-Interfaces',
+Du musst in der Übersetzer-Gruppe sein, um Änderungen zu speichern. Änderungen werden erst beim Klick auf den Speichern-Button gespeichert.',
+	'translate-magic-form'              => 'Sprache: $1 Modul: $2 $3',
+	'translate-magic-submit'            => 'Hole',
+	'translate-magic-cm-current'        => 'Aktuell',
+	'translate-magic-cm-comment'        => 'Kommentar:',
+	'translate-magic-cm-save'           => 'Speichern',
+	'translate-magic-cm-export'         => 'Exportieren',
+	'translate-magic-cm-updatedusing'   => 'Aktualisiert durch Special:Magic',
+	'translate-magic-cm-savefailed'     => 'Speichern fehlgeschlagen',
+	'translate-magic-special'           => 'Spezialseiten-Aliase',
+	'translate-magic-words'             => 'Magische Wörter',
+	'translate-magic-skin'              => 'Skins',
+	'translate-magic-namespace'         => 'Namensraum-Namen',
+	'translationchanges'                => 'Übersetzungsänderungen',
+	'translationchanges-export'         => 'exportieren',
+	'translationchanges-change'         => '$1: $2 durch $3',
+	'translate-checks-parameters'       => 'Die folgenden Parameter wurden nicht benutzt: <strong>$1</strong>',
+	'translate-checks-balance'          => 'Die Klammersetzung ist nicht ausgeglichen: <strong>$1</strong>',
+	'translate-checks-links'            => 'Die folgenden Links sind problematisch: <strong>$1</strong>',
+	'translate-checks-xhtml'            => 'Bitte ersettze die folgenden Tags durch die korrekten: <strong>$1</strong>',
+	'translate-checks-plural'           => 'Das Original benutzt <nowiki>{{PLURAL:}}</nowiki>, die Übersetzung aber nicht.',
+	'tog-translate-nonewsletter'        => 'Sende mir keine E-Mail-Newsletter zu (nur für Benutzer für bestätigten E-Mail-Adressen relevant)',
+	'right-translate'                   => 'Benutzung des Übersetzen-Interfaces',
 );
 
 /** Lower Sorbian (Dolnoserbski)
@@ -1639,6 +1620,7 @@ $messages['hi'] = array(
  */
 $messages['hil'] = array(
 	'translate-edit'                   => 'ilisan',
+	'translate-talk'                   => 'hisayranay',
 	'translate-history'                => 'saysay',
 	'translate-page-navigation-legend' => 'Nabigayson',
 );
@@ -2615,6 +2597,89 @@ $messages['ko'] = array(
 	'translate-history' => '역사',
 );
 
+/** Kinaray-a (Kinaray-a)
+ * @author Jose77
+ */
+$messages['krj'] = array(
+	'translate-edit'    => 'iislan',
+	'translate-talk'    => 'wakal',
+	'translate-history' => 'Kasaysayan',
+);
+
+/** Ripoarisch (Ripoarisch)
+ * @author Purodha
+ */
+$messages['ksh'] = array(
+	'translate'                         => 'Övversäze',
+	'translate-desc'                    => '[[Special:Translate|Söndersigk]] för et Översäze fon MediaWiki sing Meldonge, un mieh',
+	'translate-edit'                    => 'Änndere',
+	'translate-talk'                    => 'Klaaf',
+	'translate-task-view'               => 'Zeijsh all de Nohreschte fon',
+	'translate-task-untranslated'       => 'Zeijsh all de nit övversäzte Nohreschte fon',
+	'translate-task-optional'           => "Zeijsh all de 'nit esu nüüdijje' Nohreschte fon",
+	'translate-task-review'             => 'Donn de Ännderonge prööfe fon',
+	'translate-task-reviewall'          => 'Donn de Övversäzzonge prööfe fon',
+	'translate-task-export'             => 'Donn de Övversäzzonge Äxpochteere fon',
+	'translate-task-export-to-file'     => 'Donn de Övversäzzonge en_en Datteij Äxpochteere, fon',
+	'translate-task-export-as-po'       => 'Donn de Övversäzzonge en et Jettäx Fommaat Äxpochteere, fon',
+	'translate-page-no-such-language'   => 'De aanjejoove Shprooch känne me nit.',
+	'translate-page-no-such-task'       => 'De aanjejoove Opjav känne me nit.',
+	'translate-page-no-such-group'      => 'De aanjejoove Jrop känne me nit.',
+	'translate-page-settings-legend'    => 'Ennshtellonge',
+	'translate-page-group'              => 'Jropp',
+	'translate-page-language'           => 'Shprooch',
+	'translate-page-limit'              => 'Ömfang',
+	'translate-page-limit-option'       => '$1 Nohreschte pro Sigk',
+	'translate-submit'                  => 'Zeije! - Loß Jonn!',
+	'translate-page-navigation-legend'  => 'Aanzahl',
+	'translate-page-showing'            => 'De Nohreshte fon Nommer $1 aff, beß $2, fon ennßjesammp $3.',
+	'translate-page-showing-all'        => '{{PLURAL:$1|Eijn_Nohresch|$1 Nohreschte|Keijn_esu_e_Nohreschte}}.',
+	'translate-page-showing-none'       => 'Nix för Aan_ze_zeije.',
+	'translate-next'                    => 'Näx Sigk',
+	'translate-prev'                    => 'Förrije Sigk',
+	'translate-page-description-legend' => 'Enfommazjohne övver di Jrop',
+	'translate-optional'                => '(nit esu nüüdesch)',
+	'translate-ignored'                 => '(övverjange)',
+	'translate-edit-definition'         => 'De Ojinaal Nohresch',
+	'translate-edit-contribute'         => 'beijdraare',
+	'translate-edit-no-information'     => "''Mer han kein Beschrievong oddo Dokementazjohn för dat Täxshtöck. Wann De weijß, wann un woh dit Shtöck jenou jebruch weed, dann kanns De de Anndere hellefe, un en Äklierong för_et ennjävve.''",
+	'translate-edit-information'        => 'Ennfommazjohne övver hee di Nohresch  ($1)',
+	'translate-edit-in-other-languages' => 'Di Noresch in annder Shprooche',
+	'translate-edit-warnings'           => 'Warnonge wääje unkomplätte Övversäzonge',
+	'translate-magic-pagename'          => 'MediaWiki sing Extras övversäze',
+	'translate-magic-help'              => 'Hee kanns_De Zweijtname fö Söndersigge, Zauberwööter, Name för Ovverfläshe, un de Appachtemangname översäze.
+
+Beij de Zauberwööter darrfß_De dat Ojjinaal (op änglesch) nit aanpake, un och di Zahl am Aanfang (0 odder 1) darfß_De nit änndere.
+
+Söndersigge ier Zweijtname, un de Zauberwööter könne mieh wi eijn Övversäzong han. Dozwesche shteijt jeeweijls_e "," (Komma). Ovverfläshename un Name fö Appachtemangs könne nur eijn Övversätzong han.
+
+Beij de Övversäzonge för de Appachtemangs ier Name hät „<tt>$1 talk</tt>“ ene shpezjälle Senn. Dat „<tt>$1</tt>“ shteijt doh als enne Plazhallder för dä Projäkname (zem Beijshpöll dat „<tt>{{SITENAME}}</tt>“ en: „<tt>Övver {{SITENAME}} Klaafe</tt>“. Wann Ding Shprooch ed nit heerjitt, dat_De ene grammatesch reschtejje Forrem henkreßß, ohne an dämm Projetname ändere zo mößße, dann donn ene Äntwecklor do drop aansäzze.
+
+Do moß en de Jrop „Övversäzer“ sen, för hee Änderonge maache ze könne. Änderongen weede ehts bem Klicke op dä Knopp förr_et Seschere faßjehallde.',
+	'translate-magic-form'              => 'Shprooch: $1 Pöngel: $2 $3',
+	'translate-magic-submit'            => 'Loß jonn!',
+	'translate-magic-cm-to-be'          => 'Soll wääde',
+	'translate-magic-cm-current'        => 'Eß jäz',
+	'translate-magic-cm-original'       => 'Orrijinaal',
+	'translate-magic-cm-comment'        => 'Koot zesamme jefaß, Quell',
+	'translate-magic-cm-save'           => 'Seschere',
+	'translate-magic-cm-export'         => 'Äxpocht aanfange',
+	'translate-magic-cm-updatedusing'   => 'Övver [[Special:Magic]] jeänndert.',
+	'translate-magic-cm-savefailed'     => 'Et Seschere eß donäve jejange',
+	'translate-magic-special'           => 'Zweijtname för Söndersigge',
+	'translate-magic-words'             => 'Zauberwööter',
+	'translate-magic-skin'              => 'Name för Ovverfläshe',
+	'translate-magic-namespace'         => 'Appachtemang_Name',
+	'translationchanges'                => 'Neu Övversäzonge',
+	'translationchanges-export'         => 'Äxpochteere',
+	'translationchanges-change'         => '$1: $2 fum $3',
+	'translate-checks-parameters'       => 'Di Parammeetere hee sen nit jebruch woode: <strong>$1</strong>',
+	'translate-checks-balance'          => 'Do jonn ongerscheedlish fill Klammere op un zoh: <strong>$1</strong>',
+	'translate-checks-links'            => 'Hee di Lengks senn problemattesch: <strong>$1</strong>',
+	'translate-checks-plural'           => 'De Ojjinaal-Nohresch bruch <nowiki>{{PLURAL:}}</nowiki>, ävver de Övversäzong deijt dat nit?',
+	'tog-translate-nonewsletter'        => 'Donn mer keijn Rondschriive övver de eläktronesche Poß scheke (nor för Medmaacher med beschtäteschte Addräß för de e-mail)',
+);
+
 
 $messages['la'] = array(
 	'translate' => 'Traducere',
@@ -2835,6 +2900,12 @@ $messages['mr'] = array(
 	'translate-task-review'             => 'चे बदल तपासा',
 	'translate-task-reviewall'          => 'मधील सर्व भाषांतरणे तपासा',
 	'translate-task-export'             => 'कडून भाषांतरणे निर्यात करा',
+	'translate-task-export-to-file'     => 'भाषांतराची संचिका निर्यात करा',
+	'translate-task-export-as-po'       => 'भाषांतरणे Gettext रुपरेषेत निर्यात करा',
+	'translate-page-no-such-language'   => 'दिलेली भाषा अयोग्य आहे.',
+	'translate-page-no-such-task'       => 'दिलेले कार्य अयोग्य आहे.',
+	'translate-page-no-such-group'      => 'दिलेला गट अयोग्य आहे.',
+	'translate-page-settings-legend'    => 'सेटिंग',
 	'translate-page-task'               => 'मी इच्छीतो की',
 	'translate-page-group'              => 'गट',
 	'translate-page-language'           => 'भाषा',
@@ -2844,6 +2915,7 @@ $messages['mr'] = array(
 	'translate-page-navigation-legend'  => 'सुचालन',
 	'translate-page-showing'            => '$3चे $1पासून $2पर्यंत संदेश दाखवत आहे.',
 	'translate-page-showing-all'        => '$1 {{PLURAL:$1|संदेश|संदेश}} दाखवत आहे .',
+	'translate-page-showing-none'       => 'दाखविण्यासाठी संदेश नाहीत.',
 	'translate-next'                    => 'पुढील पान',
 	'translate-prev'                    => 'मागील पान',
 	'translate-page-description-legend' => 'गटाबद्दल माहिती',
@@ -2855,21 +2927,28 @@ $messages['mr'] = array(
 	'translate-edit-information'        => '($1)या संदेशाबद्दल माहिती',
 	'translate-edit-in-other-languages' => 'इतर भाषातील संदेश',
 	'translate-edit-committed'          => 'संकेतन प्रणालीमधील सध्याचे भाषांतरण',
+	'translate-edit-warnings'           => 'अर्धवट भाषांतरांसाठीचे इशारे',
+	'translate-magic-pagename'          => 'वाढीव मीडियाविकि भाषांतर',
 	'translate-magic-form'              => 'भाषा: $1 मॉड्यूल: $2 $3',
 	'translate-magic-submit'            => 'ओढा',
 	'translate-magic-cm-to-be'          => 'अपेक्षीत',
 	'translate-magic-cm-current'        => 'सद्य',
 	'translate-magic-cm-original'       => 'मूळ',
+	'translate-magic-cm-fallback'       => 'पर्यायी',
 	'translate-magic-cm-comment'        => 'प्रतिक्रीया',
 	'translate-magic-cm-save'           => 'जतन करा',
 	'translate-magic-cm-export'         => 'नीर्यात',
+	'translate-magic-cm-updatedusing'   => '[[Special:Magic]] वापरून बदलले',
 	'translate-magic-cm-savefailed'     => 'जतन अयशस्वी',
 	'translate-magic-special'           => 'विशेष पान टोपणनावे',
 	'translate-magic-words'             => 'जादूई शब्द',
 	'translate-magic-skin'              => 'त्वचेचे नाव',
 	'translate-magic-namespace'         => 'नामविश्व नावे',
+	'translationchanges'                => 'भाषांतरांमधील बदल',
 	'translationchanges-export'         => 'नीर्यात',
 	'translationchanges-change'         => '$1: $2 ने $3',
+	'translate-checks-parameters'       => 'खालील पॅरॅमीटर्स वापरलेले नाहीत: <strong>$1</strong>',
+	'translate-checks-balance'          => 'चुकीची कंस संख्या: <strong>$1</strong>',
 );
 
 $messages['nap'] = array(
