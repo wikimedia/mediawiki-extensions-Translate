@@ -848,7 +848,7 @@ class BabelMessageGroup extends ExtensionMessageGroup {
 		'babel-template-prefix',
 		'babel-template-suffix',
 	);
-	private $optional = array(
+	protected $optional = array(
 		'babel-0-female',
 		'babel-1-female',
 		'babel-2-female',
