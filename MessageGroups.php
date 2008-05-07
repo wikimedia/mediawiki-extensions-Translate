@@ -848,6 +848,36 @@ class BabelMessageGroup extends ExtensionMessageGroup {
 		'babel-template-prefix',
 		'babel-template-suffix',
 	);
+	private $optional = array(
+		'babel-0-female',
+		'babel-1-female',
+		'babel-2-female',
+		'babel-3-female',
+		'babel-4-female',
+		'babel-5-female',
+		'babel-N-female',
+		'babel-0-n-female',
+		'babel-1-n-female',
+		'babel-2-n-female',
+		'babel-3-n-female',
+		'babel-4-n-female',
+		'babel-5-n-female',
+		'babel-N-n-female',
+		'babel-0-male',
+		'babel-1-male',
+		'babel-2-male',
+		'babel-3-male',
+		'babel-4-male',
+		'babel-5-male',
+		'babel-N-male',
+		'babel-0-n-male',
+		'babel-1-n-male',
+		'babel-2-n-male',
+		'babel-3-n-male',
+		'babel-4-n-male',
+		'babel-5-n-male',
+		'babel-N-n-male',
+	);
 }
 
 class BackAndForthMessageGroup extends ExtensionMessageGroup {
