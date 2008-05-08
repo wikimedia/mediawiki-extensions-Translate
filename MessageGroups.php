@@ -1071,7 +1071,6 @@ class CiteMessageGroup extends ExtensionMessageGroup {
 	);
 	protected $ignored = array(
 		'cite_references_prefix',
-		'cite_references_prefix_a',
 		'cite_references_suffix',
 	);
 }
