@@ -2217,6 +2217,14 @@ class SiteMatrixMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'SiteMatrix/SiteMatrix.i18n.php';
 }
 
+class SkinPerPageMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Skin Per Page';
+	protected $id    = 'ext-skinperpage';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'SkinPerPage/SkinPerPage.i18n.php';
+}
+
 class SmoothGalleryMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Smooth Gallery';
 	protected $id    = 'ext-smoothgallery';
