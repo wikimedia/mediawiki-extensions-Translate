@@ -688,9 +688,14 @@ $messages['jv'] = array(
 	'msg_TargetWikiFrame'        => 'Wiki Tujuan',
 	'msg_CheckURL'               => 'Priksa URL',
 	'msg_CategoryFrame'          => 'Kategori',
+	'msg_ImageCategory'          => 'Kategori Gambar',
 	'msg_ImageUpdate'            => 'Anyarana berkas gambar sing ana',
+	'msg_ImageUpload'            => 'Ngunggahaké Gambar',
+	'msg_Always'                 => 'Saben wektu',
+	'msg_Never'                  => 'Ora tau',
 	'msg_AsInDocument'           => 'Kaya ing dokumèn',
 	'msg_ImageSizeFrame'         => 'Ukuran Gambar',
+	'msg_ImageDocumentSize'      => 'Nganggo dokumèn ukuran',
 	'msg_ConvertTab'             => 'Konvèrsi Canggih Tèks',
 	'msg_ConvertTextFrame'       => 'Konversi Tèks',
 	'msg_ConvertWikiSyntax'      => 'Konvèrsi sintaksis wiki',
@@ -869,7 +874,20 @@ $messages['li'] = array(
  * @author Shijualex
  */
 $messages['ml'] = array(
-	'msg_Cancel' => 'റദ്ദാക്കുക',
+	'wikiSearchTitle'     => 'തിരയുക -',
+	'wikiCategoryKeyWord' => 'വിഭാഗം',
+	'categoryImagePreFix' => 'ചിത്രങ്ങള്‍',
+	'wikiUploadTitle'     => 'അപ്‌ലോഡ്',
+	'clickChartText'      => 'ഇവിടെ ഞെക്കൂ!',
+	'txt_TitlePage'       => 'തലക്കെട്ട് താളില്‍പോകാനുള്ള ടെക്സ്റ്റ്',
+	'txt_PageHeader'      => 'താളിന്റെ ഹെഡറില്‍ വരാനുള്ള ടെക്സ്റ്റ്',
+	'txt_PageFooter'      => 'താളിന്റെ ഫൂട്ടറില്‍ വരാനുള്ള ടെക്സ്റ്റ്',
+	'txt_Footnote'        => 'ഫൂട്ട്നോട്ടുകള്‍',
+	'msg_SimpleTab'       => 'ലളിതം',
+	'msg_ArticleName'     => 'ലേഖനത്തിന്റെ പേര്‌',
+	'msg_TargetWikiFrame' => 'ലക്ഷ്യ വിക്കി',
+	'msg_CategoryFrame'   => 'വിഭാഗം',
+	'msg_Cancel'          => 'റദ്ദാക്കുക',
 );
 
 /** Marathi (मराठी)
@@ -1614,9 +1632,11 @@ $messages['te'] = array(
 	'wikiCategoryKeyWord'      => 'వర్గం',
 	'categoryImagePreFix'      => 'బొమ్మలు',
 	'msg_ArticleName'          => 'వ్యాసపు పేరు',
+	'msg_TargetWikiFrame'      => 'లక్ష్యిత వికీ',
 	'msg_CategoryFrame'        => 'వర్గం',
 	'msg_ArticleCategory'      => 'వ్యాసపు వర్గం',
 	'msg_ImageCategory'        => 'బొమ్మ వర్గం',
+	'msg_ImageDescription'     => 'బొమ్మ వివరణకై అదనపు పాఠ్యం',
 	'msg_Always'               => 'ఎల్లప్పుడూ',
 	'msg_ImageSizeFrame'       => 'బొమ్మ పరిమాణం',
 	'msg_ImageFullSize'        => 'పూర్తి పరిమాణం వాడు',
@@ -1624,6 +1644,7 @@ $messages['te'] = array(
 	'msg_ConvertTableStyle'    => 'పట్టిక శైలి',
 	'msg_ConvertHeadingsFrame' => 'శీర్షికలు',
 	'msg_ImagesOnly'           => 'బొమ్మలు మాత్రమే',
+	'msg_Cancel'               => 'రద్దు',
 );
 
 /** Ukrainian (Українська)
