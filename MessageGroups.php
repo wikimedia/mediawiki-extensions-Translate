@@ -727,6 +727,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-parserdifftest',
 		'ext-parserfunctions',
 		'ext-poem',
+		'ext-skinperpage',
 		'ext-spamblacklist',
 		'ext-syntaxhighlightgeshi',
 		'ext-centralnotice',
