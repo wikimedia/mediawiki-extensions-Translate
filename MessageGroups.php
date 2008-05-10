@@ -2576,7 +2576,7 @@ class Word2MediaWikiPlusMessageGroup extends ExtensionMessageGroup {
 }
 
 class FreeColMessageGroup extends MessageGroup {
-	protected $fileExporter = null;
+	protected $fileExporter = 'CoreExporter';
 	protected $label = 'FreeCol (open source game)';
 	protected $id    = 'out-freecol';
 	protected $prefix= 'freecol-';
@@ -2584,6 +2584,16 @@ class FreeColMessageGroup extends MessageGroup {
 	protected $description = 'Before starting translating FreeCol to your language, please read [[Translating:FreeCol]] and ask ok from the FreeCol localisation coordinator. Freecol uses GPL-license.';
 
 	private   $fileDir  = '__BUG__';
+
+	protected $codeMap = array(
+		'cs' => 'cs_CZ',
+		'es' => 'es_ES',
+		'it' => 'it_IT',
+		'no' => 'nb_NO',
+		'pl' => 'pl_PL',
+		'sv' => 'sv_SE',
+		'nl-be' => 'nl_BE',
+	);
 
 	public function __construct() {
 		parent::__construct();
@@ -2601,7 +2611,10 @@ class FreeColMessageGroup extends MessageGroup {
 		if ( $code == 'en' ) {
 			return 'FreeColMessages.properties';
 		} else {
-			return "freecol_$code";
+			if ( isset($this->codeMap[$code]) ) {
+				$code = $this->codeMap[$code];
+			}
+			return "FreeColMessages_$code.properties";
 		}
 	}
 
@@ -2634,15 +2647,29 @@ class FreeColMessageGroup extends MessageGroup {
 	}
 
 	public function export( MessageCollection $messages ) {
+		return $this->exportToFile( $messages, array() );
+	}
+
+	public function exportToFile( MessageCollection $messages, $authors ) {
 		global $wgSitename, $wgRequest;
-		$txt = '# Exported on ' . wfTimestamp(TS_ISO_8601) . ' from ' . $wgSitename . "\n# " .
-			$wgRequest->getFullRequestURL() . "\n#\n";
+		$txt = '# Exported on ' . wfTimestamp(TS_ISO_8601) . ' from ' . $wgSitename . "\n#\n";
+		if ( count( $authors ) ) {
+			$txt .=  $this->formatAuthors( $authors ) . "\n";
+		}
 
 		$array = $this->makeExportArray( $messages );
 		foreach ($array as $key => $translation) {
 			$txt .= $key . '=' . rtrim( $translation ) . "\n";
 		}
 		return $txt;
+	}
+
+	protected function formatAuthors( $authors ) {
+		$s = array();
+		foreach ( $authors as $a ) {
+			$s[] = "# Author: $a";
+		}
+		return implode( "\n", $s );
 	}
 
 	function fill( MessageCollection $messages ) {
