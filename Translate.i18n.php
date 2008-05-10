@@ -2511,8 +2511,8 @@ $messages['kk-kz'] = array(
 );
 
 /** Khmer (ភាសាខ្មែរ)
- * @author Chhorran
  * @author គីមស៊្រុន
+ * @author Chhorran
  * @author Lovekhmer
  * @author Siebrand
  */
@@ -2523,17 +2523,17 @@ $messages['km'] = array(
 	'translate-talk'                    => 'ពិភាក្សា',
 	'translate-history'                 => 'ប្រវត្តិ',
 	'translate-task-view'               => 'មើល​គ្រប់សារពី',
-	'translate-task-untranslated'       => 'មើល​គ្រប់​សារដែល​មិនទាន់ប្រែសំរួល ពី',
+	'translate-task-untranslated'       => 'មើល​គ្រប់​សារដែល​មិនទាន់ប្រែសំរួលពី',
 	'translate-task-optional'           => 'មើល​សារដែលបានជ្រើសរើសពី',
 	'translate-task-review'             => 'មើល​ឡើងវិញ​នូវបំលាស់ប្តូរ​នានា​ចំពោះ',
 	'translate-task-reviewall'          => 'មើល​ឡើងវិញ​បទប្រែសំរួល​ទាំងអស់​ក្នុង',
-	'translate-task-export'             => 'នាំចេញ​បទប្រែសំរួល ពី',
-	'translate-task-export-to-file'     => 'នាំចេញ បទប្រែសំរួល ជាឯកសារ ពី',
+	'translate-task-export'             => 'នាំចេញ​បទប្រែសំរួលពី',
+	'translate-task-export-to-file'     => 'នាំចេញបទប្រែសំរួលជាឯកសារពី',
 	'translate-task-export-as-po'       => 'នាំចេញ​បទប្រែសំរួល​ជា​ទំរង់ អក្សរសុទ្ធ',
 	'translate-page-no-such-language'   => 'ភាសាដែលបានសំដៅ គ្មានសុពលភាព ។',
 	'translate-page-no-such-task'       => 'កិច្ចការដែលបានសំដៅ គ្មានសុពលភាព ។',
 	'translate-page-no-such-group'      => 'ក្រុមដែលបានសំដៅ គ្មានសុពលភាព ។',
-	'translate-page-settings-legend'    => 'ការកំណត់យក',
+	'translate-page-settings-legend'    => 'ការកំនត់យក',
 	'translate-page-task'               => 'ខ្ញុំចង់',
 	'translate-page-group'              => 'ក្រុម',
 	'translate-page-language'           => 'ភាសា',
@@ -2550,7 +2550,7 @@ $messages['km'] = array(
 	'translate-optional'                => '(ជំរើស)',
 	'translate-ignored'                 => '(បានបោះបង់)',
 	'translate-edit-definition'         => 'និយមន័យ​របស់​សារ',
-	'translate-edit-contribute'         => 'រួមចំណែក',
+	'translate-edit-contribute'         => 'រួមចំនែក',
 	'translate-edit-no-information'     => "''សារនេះមិនមានពត៌មានបន្ថែមទេ។ ប្រសិនបើអ្នកដឹងពីទីកន្លែងនិងរបៀបប្រើប្រាស់សារនេះ អ្នកអាចជួយអ្នកបកប្រែផ្សេងទៀតតាមរយៈការដាក់បន្ថែមពត៌មានទាំងនោះមកអោយសារនេះ។",
 	'translate-edit-information'        => 'ពត៌មាន​អំពី​សារនេះ ($1)',
 	'translate-edit-in-other-languages' => 'សារ​ជាភាសា​ដទៃទៀត',
@@ -2584,7 +2584,7 @@ $messages['km'] = array(
 	'translationchanges-export'         => 'នាំចេញ',
 	'translate-checks-parameters'       => 'ប៉ារ៉ាម៉ែត្រទាំងនេះមិនត្រូវបានគេប្រើទេ៖ <strong>$1</strong>',
 	'translate-checks-balance'          => 'មានវង់ក្រចក​ដែលមិន​មាន​គូ៖ <strong>$1</strong>',
-	'translate-checks-links'            => 'តំណភ្ជាប់ទាំងនេះ​មានបញ្ហា ៖ <strong>$1</strong>',
+	'translate-checks-links'            => 'តំនភ្ជាប់ទាំងនេះ​មានបញ្ហា ៖ <strong>$1</strong>',
 	'translate-checks-xhtml'            => 'សូម​ជំនួស​ប្លាកទាំងនេះ​ដោយ​ប្លាកដែលត្រឹមត្រូវ ៖ <strong>$1</strong>',
 	'translate-checks-plural'           => 'និយមន័យ​ប្រើប្រាស់ <nowiki>{{PLURAL:}}</nowiki> ប៉ុន្តែ​បទប្រែសំរួល​មិនមាន ។',
 );
@@ -3253,13 +3253,13 @@ $messages['pl'] = array(
 	'translate-edit'                    => 'edytuj',
 	'translate-talk'                    => 'dyskusja',
 	'translate-history'                 => 'historia',
-	'translate-task-view'               => 'zobaczyć wszystkie komunikaty z',
-	'translate-task-untranslated'       => 'zobaczyć wszystkie nieprzetłumaczone komunikaty z',
-	'translate-task-optional'           => 'zobaczyć opcjonalne komunikaty z',
-	'translate-task-review'             => 'przejrzeć zmiany w',
-	'translate-task-reviewall'          => 'przejrzeć wszystkie tłumaczenia w',
-	'translate-task-export'             => 'wyeksportować tłumaczenia z',
-	'translate-task-export-to-file'     => 'wyeksportować tłumaczenie do pliku z',
+	'translate-task-view'               => 'zobaczyć wszystkie komunikaty',
+	'translate-task-untranslated'       => 'zobaczyć wszystkie nieprzetłumaczone komunikaty',
+	'translate-task-optional'           => 'zobaczyć opcjonalne komunikaty',
+	'translate-task-review'             => 'sprawdzić zmiany',
+	'translate-task-reviewall'          => 'przejrzeć wszystkie tłumaczenia',
+	'translate-task-export'             => 'wyeksportować tłumaczenie',
+	'translate-task-export-to-file'     => 'wyeksportować tłumaczenie do pliku',
 	'translate-task-export-as-po'       => 'wyeksportować tłumaczenie w formacie Gettext',
 	'translate-page-no-such-language'   => 'Podano nieprawidłowy język.',
 	'translate-page-no-such-task'       => 'Podano nieprawidłowe zadanie.',
