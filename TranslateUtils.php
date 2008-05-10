@@ -27,6 +27,7 @@ class TranslateUtils {
 	 * Initializes messages array.
 	 */
 	public static function initializeMessages( Array $definitions, $sortCallback = null ) {
+		wfMemIn( __METHOD__ );
 		$messages = array();
 
 		if ( is_callable( $sortCallback ) ) {
@@ -46,6 +47,7 @@ class TranslateUtils {
 			$messages[$key]['talkexists'] = false;
 		}
 
+		wfMemOut( __METHOD__ );
 		return $messages;
 	}
 
@@ -56,11 +58,13 @@ class TranslateUtils {
 	 * @param $messages Instance of MessageCollection
 	 */
 	public static function fillExistence( MessageCollection $messages ) {
+		wfMemIn( __METHOD__ );
 		self::doExistenceQuery();
 		foreach ( $messages->keys() as $key ) {
 			$messages[$key]->pageExists = isset( self::$pageExists[self::title( $key, $messages->code )] );
 			$messages[$key]->talkExists = isset( self::$talkExists[self::title( $key, $messages->code )] );
 		}
+		wfMemOut( __METHOD__ );
 	}
 
 	/**
@@ -69,6 +73,7 @@ class TranslateUtils {
 	 * @param $messages Instance of MessageCollection
 	 */
 	public static function fillContents( MessageCollection $messages ) {
+		wfMemIn( __METHOD__ );
 		$titles = array();
 		foreach ( $messages->keys() as $key ) {
 			$titles[self::title( $key, $messages->code )] = null;
@@ -100,21 +105,25 @@ class TranslateUtils {
 
 		self::$contents = array();
 		self::$editors = array();
+		wfMemOut( __METHOD__ );
 	}
 
 	public static function getMessageContent( $key, $language ) {
+		wfMemIn( __METHOD__ );
 		wfProfileIn( __METHOD__ );
 		$title = self::title( $key, $language );
 		if ( !isset(self::$contents[$title]) ) {
 			self::getContents( array( $title ) );
 		}
 		wfProfileOut( __METHOD__ );
+		wfMemOut( __METHOD__ );
 		return isset(self::$contents[$title]) ? self::$contents[$title] : null;
 	}
 
 	private static $contents = array();
 	private static $editors = array();
 	private static function getContents( Array $titles ) {
+		wfMemIn( __METHOD__ );
 		wfProfileIn( __METHOD__ );
 		$dbr = wfGetDB( DB_SLAVE );
 		$rows = $dbr->select( array( 'page', 'revision', 'text' ),
@@ -137,14 +146,17 @@ class TranslateUtils {
 
 		$rows->free();
 		wfProfileOut( __METHOD__ );
+		wfMemOut( __METHOD__ );
 	}
 
 	private static $pageExists = null;
 	private static $talkExists = null;
 	private static function doExistenceQuery() {
+		wfMemIn( __METHOD__ );
 		wfProfileIn( __METHOD__ );
 		if ( self::$pageExists !== null && self::$talkExists !== null ) {
 			wfProfileOut( __METHOD__ );
+			wfMemOut( __METHOD__ );
 			return;
 		}
 
@@ -165,9 +177,11 @@ class TranslateUtils {
 		}
 		$rows->free();
 		wfProfileOut( __METHOD__ );
+		wfMemOut( __METHOD__ );
 	}
 
 	public static function translationChanges( $hours = 24 ) {
+		wfMemIn( __METHOD__ );
 		$dbr = wfGetDB( DB_SLAVE );
 		$recentchanges = $dbr->tableName( 'recentchanges' );
 		$hours = intval( $hours );
@@ -190,6 +204,7 @@ class TranslateUtils {
 			$rows[] = $row;
 		}
 		$dbr->freeResult( $res );
+		wfMemOut( __METHOD__ );
 		return $rows;
 	}
 
@@ -218,6 +233,7 @@ class TranslateUtils {
 	}
 
 	public static function makeListing( MessageCollection $messages, $group, $review = false ) {
+		wfMemIn( __METHOD__ );
 		global $wgUser;
 		$sk = $wgUser->getSkin();
 		wfLoadExtensionMessages( 'Translate' );
@@ -291,6 +307,7 @@ class TranslateUtils {
 
 		}
 
+		wfMemOut( __METHOD__ );
 		return $output;
 	}
 
@@ -310,6 +327,7 @@ class TranslateUtils {
 	}
 
 	public static function getLanguageName( $code, $native = false, $language = 'en' ) {
+		wfMemIn( __METHOD__ );
 		if ( !$native && is_callable(array( 'LanguageNames', 'getNames' )) ) {
 			$languages = LanguageNames::getNames( $language ,
 				LanguageNames::FALLBACK_NORMAL,
@@ -332,10 +350,12 @@ class TranslateUtils {
 				break;
 		}
 		$code = implode( '-', $parts );
+		wfMemOut( __METHOD__ );
 		return isset($languages[$code]) ? $languages[$code] . $suffix : false;
 	}
 
 	public static function languageSelector( $language, $selectedId ) {
+		wfMemIn( __METHOD__ );
 		global $wgLang;
 		if ( is_callable(array( 'LanguageNames', 'getNames' )) ) {
 			$languages = LanguageNames::getNames( $language,
@@ -352,6 +372,7 @@ class TranslateUtils {
 		foreach( $languages as $code => $name ) {
 			$selector->addOption( "$code - $name", $code );
 		}
+		wfMemOut( __METHOD__ );
 		return $selector->getHTML();
 	}
 
@@ -362,6 +383,7 @@ class TranslateUtils {
 	}
 
 	public static function messageIndex() {
+		wfMemIn( __METHOD__ );
 		$keyToGroup = array();
 		if ( file_exists(TRANSLATE_INDEXFILE) ) {
 			$keyToGroup = unserialize( file_get_contents(TRANSLATE_INDEXFILE) );
@@ -369,6 +391,7 @@ class TranslateUtils {
 			wfDebug( __METHOD__ . ": Message index missing." );
 		}
 
+		wfMemOut( __METHOD__ );
 		return $keyToGroup;
 	}
 

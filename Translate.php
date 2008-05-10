@@ -304,3 +304,10 @@ $wgTranslateTasks = array(
 	'export'         => 'ExportMessagesTask',
 	'export-to-file' => 'ExportToFileMessagesTask',
 );
+
+if ( $wgDebugComments ) {
+	require_once( "$dir/utils/MemProfile.php" );
+} else {
+	function wfMemIn() {}
+	function wfMemOut() {}
+}
