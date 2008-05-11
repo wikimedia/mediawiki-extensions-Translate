@@ -2013,6 +2013,13 @@ Anda perlu menjadi anggota grup penerjemah untuk menyimpan perubahan. Perubahan 
 	'translate-checks-plural' => 'Definisi menggunakan <nowiki>{{PLURAL:}}</nowiki> tapi terjemahannya tidak.',
 );
 
+/** Iloko (Ilokano)
+ * @author Saluyot
+ */
+$messages['ilo'] = array(
+	'translate' => 'Ipatarus',
+);
+
 /** Icelandic (Íslenska)
  * @author S.Örvarr.S
  */
@@ -2866,6 +2873,14 @@ Jūs turite priklausyti vertėjų grupei, kad galėtumėte išsaugoti pakeitimus
 	'translationchanges-export'         => 'eksportuoti',
 	'translationchanges-change'         => '$1: $2 pagal $3',
 	'translate-checks-plural'           => 'Aprašymas naudoja <nowiki>{{PLURAL:}}</nowiki>, bet vertimas ne.',
+);
+
+/** Latvian (Latviešu)
+ * @author Yyy
+ */
+$messages['lv'] = array(
+	'translate-next' => 'Nākamā lapa',
+	'translate-prev' => 'Iepriekšējā lapa',
 );
 
 /** Malayalam (മലയാളം)
