@@ -1666,6 +1666,22 @@ class LookupUserMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'LookupUser/LookupUser.i18n.php';
 }
 
+
+class MaintenanceMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Maintenance';
+	protected $id    = 'ext-maintenance';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'Maintenance/Maintenance.i18n.php';
+
+	protected $ignored = array(
+		'maintenance-initEditCount',
+		'maintenance-runJobs',
+		'maintenance-showJobs',
+		'maintenance-stats',
+	);
+}
+
 class MathStatMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Math Stat';
 	protected $id    = 'ext-mathstat';
@@ -2212,6 +2228,14 @@ class SignDocumentSpecialMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName     = 'messages';
 	protected $messageFile = 'SignDocument/SpecialSignDocument.i18n.php';
+}
+
+class SimpleAntiSpamMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Simple Anti Spam';
+	protected $id    = 'ext-simpleantispam';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'SimpleAntiSpam/SimpleAntiSpam.i18n.php';
 }
 
 class SiteMatrixMessageGroup extends ExtensionMessageGroup {
