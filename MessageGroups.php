@@ -921,6 +921,10 @@ class BoardVoteMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'BoardVote/BoardVote.i18n.php';
 
 	protected $ignored = array( 'boardvote_footer' );
+	protected $optional = array(
+		'boardvote_intro',
+		'go_to_board_vote',
+	);
 }
 
 class BookInformationMessageGroup extends ExtensionMessageGroup {
