@@ -716,6 +716,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-confirmeditfancycaptcha',
 		'ext-crossnamespacelinks',
 		'ext-expandtemplates',
+		'ext-flaggedrevs',
 		'ext-gadgets',
 		'ext-imagemap',
 		'ext-centralauth',
@@ -1386,7 +1387,7 @@ class FCKeditorMessageGroup extends ExtensionMessageGroup {
 }
 
 class FlaggedRevsMessageGroup extends ExtensionMessageGroup {
-	protected $label   = 'Flagged Revs';
+	protected $label   = 'Flagged Revisions';
 	protected $id      = 'ext-flaggedrevs';
 
 	protected $arrName     = 'messages';

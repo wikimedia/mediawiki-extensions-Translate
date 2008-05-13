@@ -154,6 +154,7 @@ $wgTranslateAC = array(
 'ext-farmer'                => 'FarmerMessageGroup',
 'ext-findspam'              => 'FindSpamMessageGroup',
 'ext-fixedimage'            => 'FixedImageMessageGroup',
+'ext-flaggedrevs'           => 'FlaggedRevsMessageGroup',
 'ext-forcepreview'          => 'ForcePreviewMessageGroup',
 'ext-formatemail'           => 'FormatEmailMessageGroup',
 'ext-gadgets'               => 'GadgetsMessageGroup',
