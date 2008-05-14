@@ -1840,7 +1840,6 @@ class NewuserLogMessageGroup extends ExtensionMessageGroup {
 
 	protected $ignored = array(
 		'newuserlogentry',
-		'newuserlog-create-text',
 	);
 }
 
