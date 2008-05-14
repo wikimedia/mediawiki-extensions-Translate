@@ -60,6 +60,8 @@ $wgHooks['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';
 $wgAutoloadClasses['TranslatePreferences'] = $dir . 'TranslateUtils.php';
 $wgHooks['UserToggles'][] = 'TranslatePreferences::TranslateUserToggles';
 
+$wgAvailableRights[] = 'translate';
+
 define( 'TRANSLATE_FUZZY', '!!FUZZY!!' );
 define( 'TRANSLATE_INDEXFILE', $dir . 'messageindex.ser' );
 define( 'TRANSLATE_CHECKFILE', $dir . 'messagecheck.ser' );
