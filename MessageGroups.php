@@ -1290,6 +1290,14 @@ class DoubleWikiMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile  = 'DoubleWiki/DoubleWiki.i18n.php';
 }
 
+class DPLForumMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'DPL Forum';
+	protected $id    = 'ext-dplforum';
+
+	protected $arrName = 'messages';
+	protected $messageFile  = 'DPLforum/DPLforum.i18n.php';
+}
+
 class DuplicatorMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Duplicator';
 	protected $id    = 'ext-duplicator';
