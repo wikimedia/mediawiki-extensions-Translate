@@ -1533,6 +1533,14 @@ class ImageMapMessageGroup extends ExtensionMessageGroup {
 	);
 }
 
+class ImageTaggingMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Image Tagging';
+	protected $id    = 'ext-imagetagging';
+
+	protected $arrName = 'messages';
+	protected $messageFile  = 'ImageTagging/ImageTagging.i18n.php';
+}
+
 class ImportFreeImagesMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Import Free Images';
 	protected $id    = 'ext-importfreeimages';
