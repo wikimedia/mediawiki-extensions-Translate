@@ -238,7 +238,6 @@ $messages['ang'] = array(
 /** Arabic (العربية)
  * @author Meno25
  * @author Siebrand
- * @author SieBot
  */
 $messages['ar'] = array(
 	'translate'                         => 'ترجمة',
@@ -1031,7 +1030,7 @@ $messages['el'] = array(
 $messages['eo'] = array(
 	'translate'                         => 'Tradukado',
 	'translate-desc'                    => '[[Special:Translate|Speciala paĝo]] por traduki Mediawiki kaj alia',
-	'translate-edit'                    => 'redaktu',
+	'translate-edit'                    => 'redakti',
 	'translate-talk'                    => 'diskuto',
 	'translate-history'                 => 'historio',
 	'translate-task-view'               => 'Rigardi ĉiujn mesaĝojn de',
@@ -1528,7 +1527,7 @@ $messages['gl'] = array(
 	'translate-page-language'           => 'Lingua',
 	'translate-page-limit'              => 'Límite',
 	'translate-page-limit-option'       => '$1 {{PLURAL:$1|mensaxe|mensaxes}} por páxina',
-	'translate-submit'                  => 'Procurar',
+	'translate-submit'                  => 'Amosar',
 	'translate-page-navigation-legend'  => 'Navegación',
 	'translate-page-showing'            => 'Amosando as mensaxes da $1 á $2, dun total de $3.',
 	'translate-page-showing-all'        => 'Amosando {{PLURAL:$1|unha mensaxe|$1 mensaxes}}.',
@@ -1555,7 +1554,7 @@ Os alias de páxinas especiais e as palabras máxicas poden ter varias tradució
 
 Nas traducións dos espazos de nomes, <tt>$1 talk</tt> é especial. <tt>$1</tt> substitúese polo nome do sitio (por exemplo <tt>{{SITENAME}} talk</tt>). Se na súa lingua non resulta posíbel formar unha expresión válida sen mudar o nome do sitio, contacte cun programador.',
 	'translate-magic-form'              => 'Lingua: $1 Módulo: $2 $3',
-	'translate-magic-submit'            => 'Procurar',
+	'translate-magic-submit'            => 'Amosar',
 	'translate-magic-cm-to-be'          => 'Será',
 	'translate-magic-cm-current'        => 'Actual',
 	'translate-magic-cm-original'       => 'Orixinal',
@@ -2718,7 +2717,7 @@ $messages['lb'] = array(
 	'translate-submit'                  => 'Uweisen',
 	'translate-page-navigation-legend'  => 'Navigatioun',
 	'translate-page-showing'            => "D'Message vun $1 bis $2 vun am Ganzen $3 gi gewisen.",
-	'translate-page-showing-all'        => '$1 {{PLURAL:$1|Message|Message}} gi gewisen',
+	'translate-page-showing-all'        => '$1 {{PLURAL:$1|Message gëtt|Message gi}} gewisen',
 	'translate-page-showing-none'       => 'Kee Message fir ze weisen',
 	'translate-next'                    => 'Nächst Säit',
 	'translate-prev'                    => 'Säit virdrun',
@@ -2886,6 +2885,8 @@ $messages['ml'] = array(
 	'translate-prev'             => 'മുന്‍പത്തെ താള്‍',
 	'translate-magic-cm-comment' => 'അഭിപ്രായം:',
 	'translate-magic-cm-save'    => 'സേവ് ചെയ്യുക',
+	'translate-magic-cm-export'  => 'എക്സ്പോര്‍ട്ട്',
+	'translationchanges-export'  => 'എക്സ്പോര്‍ട്ട്',
 );
 
 /** Marathi (मराठी)
@@ -4199,6 +4200,92 @@ $messages['uk'] = array(
 	'translate-checks-links'            => 'Наступні посилання проблематичні: <strong>$1</strong>',
 	'translate-checks-xhtml'            => 'Будь ласка, виправте наступні теги: <strong>$1</strong>',
 	'translate-checks-plural'           => 'Оригінал використовує <nowiki>{{PLURAL:}}</nowiki>, а переклад — ні.',
+);
+
+/** Vèneto (Vèneto)
+ * @author Candalua
+ */
+$messages['vec'] = array(
+	'translate'                         => 'Tradussion',
+	'translate-desc'                    => '[[Special:Translate|Pagina speciale]] par tradur MediaWiki e altro',
+	'translate-edit'                    => 'modifica',
+	'translate-talk'                    => 'discussion',
+	'translate-history'                 => 'storia',
+	'translate-task-view'               => 'Vardar tuti i messagi de',
+	'translate-task-untranslated'       => 'Vardar tuti i messagi non tradoti de',
+	'translate-task-optional'           => 'Vardar i messagi opsionali de',
+	'translate-task-review'             => 'Rivardar i canbiamenti a',
+	'translate-task-reviewall'          => 'Rivardar tute le tradussion in',
+	'translate-task-export'             => 'Esportar le tradussion da',
+	'translate-task-export-to-file'     => 'Esportar in un file le tradussion da',
+	'translate-task-export-as-po'       => 'Esportar le tradussion in formato Gettext',
+	'translate-page-no-such-language'   => 'La lengua indicà no la xe valida.',
+	'translate-page-no-such-task'       => "L'azion indicà no la xe valida.",
+	'translate-page-no-such-group'      => "El grupo indicà no'l xe valido.",
+	'translate-page-settings-legend'    => 'Inpostassion',
+	'translate-page-task'               => 'Mi vôi',
+	'translate-page-group'              => 'Grupo',
+	'translate-page-language'           => 'Lengua',
+	'translate-page-limit'              => 'Limite',
+	'translate-page-limit-option'       => '$1 {{PLURAL:$1|messagio|messagi}} par pagina',
+	'translate-submit'                  => 'Mostra',
+	'translate-page-navigation-legend'  => 'Navigassion',
+	'translate-page-showing'            => 'Sti qua i xe i messagi da $1 a $2 de $3.',
+	'translate-page-showing-all'        => 'Ghe xe $1 {{PLURAL:$1|messagio|messagi}}.',
+	'translate-page-showing-none'       => 'Nissun messagio da far védar.',
+	'translate-next'                    => 'Pagina sucessiva',
+	'translate-prev'                    => 'Pagina preçedente',
+	'translate-page-description-legend' => 'Informassion sul grupo',
+	'translate-optional'                => '(opsionale)',
+	'translate-ignored'                 => '(ignorà)',
+	'translate-edit-definition'         => 'Definission del messagio',
+	'translate-edit-contribute'         => 'contribuìssi',
+	'translate-edit-no-information'     => "''Sto messagio no'l gà documentassion.
+Se te sè dove o come sto messagio el vien doparà, te podi jutar altri tradutori zontando documentassion a sto messagio.''",
+	'translate-edit-information'        => 'Informassion su sto messagio ($1)',
+	'translate-edit-in-other-languages' => 'Sto messagio in altre lengue',
+	'translate-edit-committed'          => 'Tradussion atuale del software',
+	'translate-edit-warnings'           => 'Avertimenti su tradussion incomplete',
+	'translate-magic-pagename'          => 'Tradussion estesa de MediaWiki',
+	'translate-magic-help'              => "Te pol tradur i alias de le pagine speciali, le parole magiche, i nomi de le skin e i nomi dei namespace.
+
+In te le parole magiche te ghè da inserir le version in Inglese senò no le va più.
+Lassa inoltre el primo elemento (0 o 1) cussita come l'è.
+
+I alias e le parole magiche le pol verghe più tradussion.
+Le tradussion le xe separà da na virgola (,).
+I nomi de le skin e dei namespace i pol verghe na tradussion sola.
+
+In te le tradussion dei namespace <tt>$1 talk</tt> el xe speciale. <tt>$1</tt> el vien sostituìo col nome del sito (par esenpio <tt>{{SITENAME}} talk</tt>).
+Se ne la to lengua no se riesse a scrivar na espression valida sensa canbiar el nome del sito, par piaser contata un svilupador.
+
+Te ghè da èssar nel grupo dei tradutori par salvar i canbiamenti.
+I canbiamenti no i xe salvà finché no te struchi el boton qua soto.",
+	'translate-magic-form'              => 'Lengua: $1 Modulo: $2 $3',
+	'translate-magic-submit'            => 'Mostra',
+	'translate-magic-cm-to-be'          => 'Nova',
+	'translate-magic-cm-current'        => 'Atuale',
+	'translate-magic-cm-original'       => 'Originàl',
+	'translate-magic-cm-fallback'       => 'Fallback',
+	'translate-magic-cm-comment'        => 'Comento:',
+	'translate-magic-cm-save'           => 'Salva',
+	'translate-magic-cm-export'         => 'Esporta',
+	'translate-magic-cm-updatedusing'   => 'Agiornà doparando [[Special:Magic]]',
+	'translate-magic-cm-savefailed'     => 'Salvatagio mìa riussìo',
+	'translate-magic-special'           => 'Nomi alternativi de le pagine speciali',
+	'translate-magic-words'             => 'Parole magiche',
+	'translate-magic-skin'              => 'Nomi de le skin',
+	'translate-magic-namespace'         => 'Nomi dei namespace',
+	'translationchanges'                => 'Modifiche a le tradussion',
+	'translationchanges-export'         => 'esporta',
+	'translationchanges-change'         => '$1: $2 da $3',
+	'translate-checks-parameters'       => 'I seguenti parametri no i xe mìa doparà: <strong>$1</strong>',
+	'translate-checks-balance'          => 'Ghe xe un nùmaro dispari de paréntesi: <strong>$1</strong>',
+	'translate-checks-links'            => 'I colegamenti seguenti i pol causar problemi: <strong>$1</strong>',
+	'translate-checks-xhtml'            => 'Par piaser, sostituìssi i seguenti tag con quei giusti: <strong>$1</strong>',
+	'translate-checks-plural'           => 'La definission la dòpara <nowiki>{{PLURAL:}}</nowiki> ma la tradussion no.',
+	'tog-translate-nonewsletter'        => 'No stà mandarme notiziari par e-mail (solo utenti che gà un indirisso e-mail convalidà)',
+	'right-translate'                   => "Modifica doparando l'interfacia de tradussion",
 );
 
 /** Vietnamese (Tiếng Việt)
