@@ -33,7 +33,7 @@ class SpecialTranslate extends SpecialPage {
 		wfMemIn( __METHOD__ );
 		wfLoadExtensionMessages( 'Translate' );
 		TranslateUtils::injectCSS();
-		global $wgOut;
+		global $wgOut, $wgTranslateBlacklist;
 
 		$this->setup();
 		$this->setHeaders();
@@ -59,6 +59,20 @@ class SpecialTranslate extends SpecialPage {
 		if ( count($errors) ) {
 			wfMemOut( __METHOD__ );
 			return;
+		} else {
+			$checks = array(
+				$this->options['group'],
+				strtok( $this->options['group'], '-' ),
+				'*'
+			);
+
+			foreach ( $checks as $check ) {
+				$reason = @$wgTranslateBlacklist[$check][$this->options['language']];
+				if ( $reason !== null ) {
+					$wgOut->addWikiMsg( self::MSG . 'disabled', $reason );
+					return;
+				}
+			}
 		}
 
 		# Proceed
