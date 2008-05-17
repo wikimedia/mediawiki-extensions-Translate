@@ -304,6 +304,22 @@ $messages['bg'] = array(
 	'msg_Cancel'                 => 'Отказване',
 );
 
+/** Breton (Brezhoneg)
+ * @author Fulup
+ */
+$messages['br'] = array(
+	'wikiSearchTitle'            => 'Klask -',
+	'wikiCategoryKeyWord'        => 'rummad',
+	'categoryImagePreFix'        => 'Skeudennoù',
+	'wikiUploadTitle'            => 'Enporzhiañ',
+	'clickChartText'             => 'Klikit warnon !',
+	'txt_TitlePage'              => 'Pajenn ditl',
+	'msg_ArticleName'            => 'Anv ar pennad',
+	'msg_ConvertTablesFrame'     => 'Taolennoù',
+	'msg_ConvertParagraphsFrame' => 'Rannbennadoù',
+	'msg_Cancel'                 => 'Nullañ',
+);
+
 /** Chamorro (Chamoru)
  * @author Jatrobat
  */
@@ -472,7 +488,7 @@ $messages['eo'] = array(
 	'msg_ConvertTitlePage'                   => 'Enigu Tekston de Titola Paĝo',
 	'msg_Convert'                            => 'Konvertu',
 	'msg_ImagesOnly'                         => 'Nur Bildoj',
-	'msg_Cancel'                             => 'Nuligu',
+	'msg_Cancel'                             => 'Nuligi',
 );
 
 /** Español (Español) */
@@ -737,6 +753,13 @@ $messages['ilo'] = array(
 	'msg_Always'           => 'Kankanayon',
 	'msg_ImagesOnly'       => 'Im-imahen laeng',
 	'msg_Cancel'           => 'Ibabawi',
+);
+
+/** Ingush (ГІалгІай Ğalğaj)
+ * @author Jose77
+ */
+$messages['inh'] = array(
+	'wikiSearchTitle' => 'леха -',
 );
 
 /** Icelandic (Íslenska)

@@ -1088,7 +1088,7 @@ Vi devas esti en la grupo de tradukantoj por konservi ŝanĝojn. Ŝanĝoj ne est
 	'translate-magic-cm-original'       => 'Originalo',
 	'translate-magic-cm-fallback'       => 'Alternativo',
 	'translate-magic-cm-comment'        => 'Komento:',
-	'translate-magic-cm-save'           => 'Konservu',
+	'translate-magic-cm-save'           => 'Konservi',
 	'translate-magic-cm-export'         => 'Eksportu',
 	'translate-magic-cm-updatedusing'   => 'Ĝisdatigita pere de [[Special:Magic]]',
 	'translate-magic-cm-savefailed'     => 'Konservado malsukcesis',
@@ -2994,6 +2994,9 @@ $messages['nl'] = array(
 	'translate-page-no-such-language'   => 'Er is een ongeldige taalcode opgegeven',
 	'translate-page-no-such-task'       => 'De aangegeven functie bestaat niet.',
 	'translate-page-no-such-group'      => 'De aangegeven groep bestaat niet.',
+	'translate-page-disabled'           => "Vertalingen in deze taal voor deze groep zijn uitgeschakeld. Reden:
+
+''$1''",
 	'translate-page-settings-legend'    => 'Instellingen',
 	'translate-page-task'               => 'Ik wil',
 	'translate-page-group'              => 'Groep',
@@ -3096,6 +3099,9 @@ $messages['no'] = array(
 	'translate-page-no-such-language'   => 'Ugyldig språkkode angitt.',
 	'translate-page-no-such-task'       => 'Ugyldig oppgave angitt.',
 	'translate-page-no-such-group'      => 'Ugyldig gruppe angitt.',
+	'translate-page-disabled'           => "Oversettelser til dette språket i denne gruppen er blitt slått av. Årsak:
+
+''$1''",
 	'translate-page-settings-legend'    => 'Innstillinger',
 	'translate-page-task'               => 'Jeg vil',
 	'translate-page-group'              => 'Gruppe',
@@ -3786,6 +3792,9 @@ $messages['sv'] = array(
 	'translate-page-no-such-language'   => 'Det angivna språket är inte giltigt.',
 	'translate-page-no-such-task'       => 'Den angivna åtgärden är inte giltig.',
 	'translate-page-no-such-group'      => 'Den angivna gruppen är inte giltig.',
+	'translate-page-disabled'           => "Översättningar till det här språket i den här gruppen har stängts av. Anledning:
+
+''$1''",
 	'translate-page-settings-legend'    => 'Inställningar',
 	'translate-page-task'               => 'Jag vill',
 	'translate-page-group'              => 'Grupp',
