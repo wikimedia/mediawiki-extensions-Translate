@@ -11,7 +11,7 @@ if (!defined('MEDIAWIKI')) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '8.36' );
+define( 'TRANSLATE_VERSION', '8.38' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name'           => 'Translate',
@@ -166,11 +166,12 @@ $wgTranslateAC = array(
 'ext-didyoumean'            => 'DidYouMeanMessageGroup',
 'ext-dismissablesitenotice' => 'DismissableSiteNoticeMessageGroup',
 'ext-doublewiki'            => 'DoubleWikiMessageGroup',
+'ext-dplforum'              => 'DPLForumMessageGroup',
 'ext-duplicator'            => 'DuplicatorMessageGroup',
 'ext-editcount'             => 'EditcountMessageGroup',
 'ext-editmessages'          => 'EditMessagesMessageGroup',
 'ext-editown'               => 'EditOwnMessageGroup',
-'ext-editsubpages'         => 'EditSubpagesMessageGroup',
+'ext-editsubpages'          => 'EditSubpagesMessageGroup',
 'ext-edituser'              => 'EditUserMessageGroup',
 'ext-emailaddressimage'     => 'EmailAddressImageMessageGroup',
 'ext-eval'                  => 'EvalMessageGroup',
@@ -192,6 +193,7 @@ $wgTranslateAC = array(
 'ext-i18ntags'              => 'I18nTagsMessageGroup',
 'ext-icon'                  => 'IconMessageGroup',
 'ext-imagemap'              => 'ImageMapMessageGroup',
+'ext-imagetagging'          => 'ImageTaggingMessageGroup',
 'ext-importfreeimages'      => 'ImportFreeImagesMessageGroup',
 'ext-importusers'           => 'ImportUsersMessageGroup',
 'ext-inputbox'              => 'InputBoxMessageGroup',

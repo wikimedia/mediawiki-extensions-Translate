@@ -42,6 +42,7 @@ function customMessageGroups( $id ) {
 * show definition closer to edit area
 * show the group of message when editing
 * branched core messages should now export properly
+* $wgTranslateBlacklist added to prevent edits to certain language/group combinations
 
 == Changes in version 8 ==
 * Released 2008-02-06
