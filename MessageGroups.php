@@ -1136,6 +1136,8 @@ class ConfigureMessageGroup extends ExtensionMessageGroup {
 	protected $optional = array(
 		'configure-section-html',
 		'configure-section-ajax',
+		'configure-section-djvu',
+		'configure-section-imagemagick',
 		'configure-section-interwiki',
 		'configure-section-memcached',
 		'configure-section-squid',
