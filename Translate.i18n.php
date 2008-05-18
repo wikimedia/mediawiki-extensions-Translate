@@ -1332,6 +1332,7 @@ $messages['fr'] = array(
 	'translate-page-no-such-language'   => 'Un code langage invalide a été indiqué.',
 	'translate-page-no-such-task'       => 'La tâche spécifiée est invalide.',
 	'translate-page-no-such-group'      => 'Le groupe spécifié est invalide.',
+	'translate-page-disabled'           => 'Les traductions dans cette langue dans ce groupe ont été désactivées. Motif :',
 	'translate-page-settings-legend'    => 'Configuration',
 	'translate-page-task'               => 'Je veux',
 	'translate-page-group'              => 'Groupe',
