@@ -850,6 +850,9 @@ $messages['de'] = array(
 	'translate-page-no-such-language'   => 'Die angegebene Sprache ist ungültig.',
 	'translate-page-no-such-task'       => 'Die angegebene Aufgabe ist ungültig.',
 	'translate-page-no-such-group'      => 'Die angegebene Gruppe ist ungültig.',
+	'translate-page-disabled'           => "Übersetzungen in dieser Sprache in dieser Gruppe wurde deaktiviert. Grund:
+
+''$1''",
 	'translate-page-settings-legend'    => 'Einstellungen',
 	'translate-page-task'               => 'Aufgabe',
 	'translate-page-group'              => 'Gruppe',
