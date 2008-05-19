@@ -2209,6 +2209,7 @@ class SemanticMediaWikiMessageGroup extends ExtensionMessageGroup {
 		'smw_kiloseparator',
 		'smw_rss_description',
 		'smw_browse_more',
+		'specialpages-group-smw_group',
 	);
 }
 
