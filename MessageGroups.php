@@ -1356,6 +1356,14 @@ class EmailAddressImageMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'EmailAddressImage/EmailAddressImage.i18n.php';
 }
 
+class EmailArticleMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Email Article';
+	protected $id    = 'ext-emailarticle';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'EmailArticle/EmailArticle.i18n.php';
+}
+
 class EvalMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Eval';
 	protected $id    = 'ext-eval';

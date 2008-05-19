@@ -174,6 +174,7 @@ $wgTranslateAC = array(
 'ext-editsubpages'          => 'EditSubpagesMessageGroup',
 'ext-edituser'              => 'EditUserMessageGroup',
 'ext-emailaddressimage'     => 'EmailAddressImageMessageGroup',
+'ext-emailarticle'          => 'EmailArticleMessageGroup',
 'ext-eval'                  => 'EvalMessageGroup',
 'ext-expandtemplates'       => 'ExpandTemplatesMessageGroup',
 'ext-farmer'                => 'FarmerMessageGroup',
