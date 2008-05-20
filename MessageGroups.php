@@ -234,7 +234,8 @@ class CoreMessageGroup extends MessageGroup {
 <?php
 /** $name ($native)
  *
- * @addtogroup Language
+ * @ingroup Language
+ * @file
  *
 $translators
  */
