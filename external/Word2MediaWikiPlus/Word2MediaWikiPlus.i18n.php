@@ -176,8 +176,11 @@ $messages['krl'] = array(
  * @author Arnobarnard
  */
 $messages['af'] = array(
-	'wikiSearchTitle' => 'Soek -',
-	'msg_Cancel'      => 'Kanselleer',
+	'wikiSearchTitle'     => 'Soek -',
+	'wikiCategoryKeyWord' => 'kategorie',
+	'msg_CategoryFrame'   => 'Kategorie',
+	'msg_Never'           => 'Nooit',
+	'msg_Cancel'          => 'Kanselleer',
 );
 
 /** Kotava (Kotava)

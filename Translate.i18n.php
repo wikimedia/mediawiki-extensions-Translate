@@ -3670,6 +3670,9 @@ $messages['sk'] = array(
 	'translate-page-no-such-language'   => 'Zadaný jazyk bol neplatný.',
 	'translate-page-no-such-task'       => 'Zadaná úloha bola neplatná.',
 	'translate-page-no-such-group'      => 'Zadaná skupina bola neplatná.',
+	'translate-page-disabled'           => "Preklady v tejto skupine do tohto jazyka boli zakázané. Dôvod:
+
+''$1''",
 	'translate-page-settings-legend'    => 'Nastavenia',
 	'translate-page-task'               => 'Chcem',
 	'translate-page-group'              => 'Skupina',
