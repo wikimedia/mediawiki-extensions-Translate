@@ -242,6 +242,7 @@ $messages['ang'] = array(
 /** Arabic (العربية)
  * @author Meno25
  * @author Siebrand
+ * @author ترجمان05
  */
 $messages['ar'] = array(
 	'translate'                         => 'ترجمة',
@@ -260,6 +261,9 @@ $messages['ar'] = array(
 	'translate-page-no-such-language'   => 'كود لغة غير صحيح تم توفيره',
 	'translate-page-no-such-task'       => 'المهمة المحددة كانت غير صحيحة.',
 	'translate-page-no-such-group'      => 'المجموعة المحددة كانت غير صحيحة.',
+	'translate-page-disabled'           => "لقد عطّلت التّرجمات إلى هذه اللّغة بالنسبة لهذه المجموعة. السّبب::
+
+''$1''",
 	'translate-page-settings-legend'    => 'الإعدادات',
 	'translate-page-task'               => 'أريد',
 	'translate-page-group'              => 'المجموعة',
