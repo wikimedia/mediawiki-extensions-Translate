@@ -3268,7 +3268,7 @@ $messages['oc'] = array(
 	'translate-magic-pagename'          => 'Traduccion de MediaWiki espandida',
 	'translate-magic-help'              => "Podètz traduire los aliases de paginas especialas, los mots magics, los noms de skins e los noms d'espacis de noms.
 
-Dins los mots magics, vos cal inclure la traduccion en anglés o aquò foncionarà pas mai. E mai, daissatz lo primièr item (0 o 1) coma es.
+Dins los mots magics, vos cal enclure la traduccion en anglés o aquò foncionarà pas mai. E mai, daissatz lo primièr item (0 o 1) coma es.
 
 Los aliases de paginas especialas e los mots magics pòdon aver mantuna traduccion. Las traduccions son separadas per una virgula (,).
 Los noms de skins e d'espacis de noms pòdon pas aver qu'una traduccion.
