@@ -487,6 +487,9 @@ $messages['bg'] = array(
 	'translate-page-no-such-language'   => 'Избраният език е невалиден.',
 	'translate-page-no-such-task'       => 'Избраната задача е невалидна.',
 	'translate-page-no-such-group'      => 'Избраната група е невалидна',
+	'translate-page-disabled'           => "Преводите на този език в тази група са изключени. Причина:
+
+''$1''",
 	'translate-page-settings-legend'    => 'Настройки',
 	'translate-page-task'               => 'Действие:',
 	'translate-page-group'              => 'Група:',
@@ -2903,6 +2906,9 @@ $messages['ml'] = array(
 	'translate-task-optional'           => 'പരിഭാഷ നിര്‍ബന്ധമില്ലാത്തെ സന്ദേശങ്ങള്‍ കാണണം',
 	'translate-task-review'             => 'മാറ്റങ്ങള്‍ വന്ന സന്ദേശങ്ങള്‍ കാണണം',
 	'translate-task-reviewall'          => 'പരിഭാഷ ചെയ്തവ സംശോധനം ചെയ്യണം',
+	'translate-page-no-such-language'   => 'തിരഞ്ഞെടുത്ത ഭാഷ അസാധുവാണ്‌.',
+	'translate-page-no-such-task'       => 'തിരഞ്ഞെടുത്ത ടാസ്ക് അസാധുവാണ്‌.',
+	'translate-page-no-such-group'      => 'തിരഞ്ഞെടുത്ത ഗ്രൂപ്പ് അസാധുവാണ്‌.',
 	'translate-page-disabled'           => "ഈ ഗ്രൂപ്പിലുള്ള സന്ദേശങ്ങള്‍ക്ക് ഈ ഭാഷയിലുള്ള പരിഭാഷ നിരോധിച്ചിരിക്കുന്നു. കാരണം:
 
 ''$1''",
@@ -2915,12 +2921,13 @@ $messages['ml'] = array(
 	'translate-submit'                  => 'സമര്‍പ്പിക്കുക',
 	'translate-page-showing'            => '$3 സന്ദേശങ്ങളുള്ളതില്‍ $1 മുതല്‍ $2 വരെയുള്ളവ പ്രദര്‍ശിപ്പിച്ചിരിക്കുന്നു',
 	'translate-page-showing-all'        => '$1 {{PLURAL:$1|സന്ദേശം|സന്ദേശങ്ങള്‍}} പ്രദര്‍ശിപ്പിക്കുന്നു.',
-	'translate-page-showing-none'       => 'പര്‍ദര്‍ശിപ്പിക്കുവാന്‍ സന്ദേശങ്ങളില്ല.',
+	'translate-page-showing-none'       => 'പ്രദര്‍ശിപ്പിക്കുവാന്‍ സന്ദേശങ്ങളില്ല.',
 	'translate-next'                    => 'അടുത്ത താള്‍',
 	'translate-prev'                    => 'മുന്‍പത്തെ താള്‍',
 	'translate-page-description-legend' => 'ഗ്രൂപ്പിനെപ്പറ്റിയുള്ള വിവരങ്ങള്‍',
 	'translate-optional'                => '(നിര്‍ബന്ധമില്ല)',
 	'translate-edit-definition'         => 'സന്ദേശത്തിന്റെ നിര്‍‌വചനം',
+	'translate-edit-contribute'         => 'സംഭാവന ചെയ്യുക',
 	'translate-edit-no-information'     => "''ഈ സന്ദേശത്തിനു ഡോക്കുമെന്റേഷന്‍ ഇല്ല.
 ഈ സന്ദേശം എങ്ങനെയാണു ഉപയോഗിക്കപ്പെടുന്നത് എന്ന് നിങ്ങള്‍ക്ക് അറിയാമെങ്കില്‍, അതിനെകുറിച്ചുള്ള ഡോക്കുമെന്റേഷന്‍ ചേര്‍ത്ത് താങ്കള്‍ക്ക് മറ്റുള്ള പരിഭാഷകര്‍ക്കു സഹായമേകാം.''",
 	'translate-edit-information'        => 'ഈ സന്ദേശത്തെക്കുറിച്ചുള്ള വിവരണം ($1)',
@@ -2935,6 +2942,7 @@ $messages['ml'] = array(
 	'translate-magic-cm-save'           => 'സേവ് ചെയ്യുക',
 	'translate-magic-cm-export'         => 'എക്സ്പോര്‍ട്ട്',
 	'translate-magic-cm-savefailed'     => 'സേവ് ചെയ്യാന്‍ പറ്റിയില്ല',
+	'translate-magic-special'           => 'പ്രത്യേക താളുകളുടെ അലിയാസുകള്‍',
 	'translate-magic-namespace'         => 'നേംസ്പേസ് നാമങ്ങള്‍',
 	'translationchanges'                => 'പരിഭാഷയിലെ മാറ്റങ്ങള്‍',
 	'translationchanges-export'         => 'എക്സ്പോര്‍ട്ട്',
