@@ -747,6 +747,7 @@ $messages['ch'] = array(
  * @author Matěj Grabovský
  * @author Siebrand
  * @author Danny B.
+ * @author Mormegil
  */
 $messages['cs'] = array(
 	'translate'                         => 'Přeložit',
@@ -787,7 +788,7 @@ $messages['cs'] = array(
 	'translate-edit-information'        => 'Informace o této zprávě ($1)',
 	'translate-edit-in-other-languages' => 'Zpráva v jiných jazycích',
 	'translate-edit-committed'          => 'Současný překlad v úložišti',
-	'translate-edit-warnings'           => 'Varování neúplného překladu',
+	'translate-edit-warnings'           => 'Upozornění na neúplný překlad',
 	'translate-magic-pagename'          => 'Rozšířená možnost překladu Mediawiki',
 	'translate-magic-form'              => 'Jazyk: $1 Modul: $2 $3',
 	'translate-magic-submit'            => 'Zobrazit',
@@ -2631,6 +2632,7 @@ $messages['ksh'] = array(
 	'translate-desc'                    => '[[Special:Translate|Söndersigk]] för et Översäze fon MediaWiki sing Meldonge, un mieh',
 	'translate-edit'                    => 'Änndere',
 	'translate-talk'                    => 'Klaaf',
+	'translate-history'                 => 'Versione',
 	'translate-task-view'               => 'Zeijsh all de Nohreschte fon',
 	'translate-task-untranslated'       => 'Zeijsh all de nit övversäzte Nohreschte fon',
 	'translate-task-optional'           => "Zeijsh all de 'nit esu nüüdijje' Nohreschte fon",
@@ -2642,12 +2644,16 @@ $messages['ksh'] = array(
 	'translate-page-no-such-language'   => 'De aanjejoove Shprooch känne me nit.',
 	'translate-page-no-such-task'       => 'De aanjejoove Opjav känne me nit.',
 	'translate-page-no-such-group'      => 'De aanjejoove Jrop känne me nit.',
+	'translate-page-disabled'           => "Övversezonge sen affjeschalldt för di Jropp un Shprooch, weil:
+
+''$1''",
 	'translate-page-settings-legend'    => 'Ennshtellonge',
+	'translate-page-task'               => 'Opjaav',
 	'translate-page-group'              => 'Jropp',
 	'translate-page-language'           => 'Shprooch',
 	'translate-page-limit'              => 'Ömfang',
 	'translate-page-limit-option'       => '$1 Nohreschte pro Sigk',
-	'translate-submit'                  => 'Zeije! - Loß Jonn!',
+	'translate-submit'                  => 'Loß Jonn!',
 	'translate-page-navigation-legend'  => 'Aanzahl',
 	'translate-page-showing'            => 'De Nohreshte fon Nommer $1 aff, beß $2, fon ennßjesammp $3.',
 	'translate-page-showing-all'        => '{{PLURAL:$1|Eijn_Nohresch|$1 Nohreschte|Keijn_esu_e_Nohreschte}}.',
@@ -2662,6 +2668,7 @@ $messages['ksh'] = array(
 	'translate-edit-no-information'     => "''Mer han kein Beschrievong oddo Dokementazjohn för dat Täxshtöck. Wann De weijß, wann un woh dit Shtöck jenou jebruch weed, dann kanns De de Anndere hellefe, un en Äklierong för_et ennjävve.''",
 	'translate-edit-information'        => 'Ennfommazjohne övver hee di Nohresch  ($1)',
 	'translate-edit-in-other-languages' => 'Di Noresch in annder Shprooche',
+	'translate-edit-committed'          => 'Es aktowäll övversaz met',
 	'translate-edit-warnings'           => 'Warnonge wääje unkomplätte Övversäzonge',
 	'translate-magic-pagename'          => 'MediaWiki sing Extras övversäze',
 	'translate-magic-help'              => 'Hee kanns_De Zweijtname fö Söndersigge, Zauberwööter, Name för Ovverfläshe, un de Appachtemangname översäze.
@@ -2678,6 +2685,7 @@ Do moß en de Jrop „Övversäzer“ sen, för hee Änderonge maache ze könne.
 	'translate-magic-cm-to-be'          => 'Soll wääde',
 	'translate-magic-cm-current'        => 'Eß jäz',
 	'translate-magic-cm-original'       => 'Orrijinaal',
+	'translate-magic-cm-fallback'       => 'Fallback',
 	'translate-magic-cm-comment'        => 'Koot zesamme jefaß, Quell',
 	'translate-magic-cm-save'           => 'Seschere',
 	'translate-magic-cm-export'         => 'Äxpocht aanfange',
@@ -2693,8 +2701,10 @@ Do moß en de Jrop „Övversäzer“ sen, för hee Änderonge maache ze könne.
 	'translate-checks-parameters'       => 'Di Parammeetere hee sen nit jebruch woode: <strong>$1</strong>',
 	'translate-checks-balance'          => 'Do jonn ongerscheedlish fill Klammere op un zoh: <strong>$1</strong>',
 	'translate-checks-links'            => 'Hee di Lengks senn problemattesch: <strong>$1</strong>',
+	'translate-checks-xhtml'            => 'Donn hee di Kommandos ußtuusche, un schriif de reschtije do för hen: <strong>$1</strong>',
 	'translate-checks-plural'           => 'De Ojjinaal-Nohresch bruch <nowiki>{{PLURAL:}}</nowiki>, ävver de Övversäzong deijt dat nit?',
 	'tog-translate-nonewsletter'        => 'Donn mer keijn Rondschriive övver de eläktronesche Poß scheke (nor för Medmaacher med beschtäteschte Addräß för de e-mail)',
+	'right-translate'                   => 'Med dä Schnettshtäll zom Övverseze ärrbeide',
 );
 
 

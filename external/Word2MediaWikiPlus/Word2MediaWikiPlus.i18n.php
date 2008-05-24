@@ -172,6 +172,13 @@ $messages['krl'] = array(
 	'msg_Cancel'      => 'Keskevytä',
 );
 
+/** Eastern Mari (Олык Марий йылме)
+ * @author Сай
+ */
+$messages['mhr'] = array(
+	'msg_Cancel' => 'Чарташ',
+);
+
 /** Afrikaans (Afrikaans)
  * @author Arnobarnard
  */
@@ -181,6 +188,13 @@ $messages['af'] = array(
 	'msg_CategoryFrame'   => 'Kategorie',
 	'msg_Never'           => 'Nooit',
 	'msg_Cancel'          => 'Kanselleer',
+);
+
+/** Arabic (العربية)
+ * @author OsamaK
+ */
+$messages['ar'] = array(
+	'msg_Never' => 'أبدا',
 );
 
 /** Kotava (Kotava)
@@ -1430,7 +1444,7 @@ $messages['oc'] = array(
 	'txt_PageHeader'                         => 'Entèsta de pagina',
 	'txt_PageFooter'                         => 'Pè de pagina',
 	'txt_Footnote'                           => 'Nòtas de bas de pagina',
-	'msg_Upload_Info'                        => "Ara lo fichièr imatge va èsser telecargat. Abans de començar, vos cal organizar corrèctament vòstre navigaire :
+	'msg_Upload_Info'                        => "Ara lo fichièr imatge va èsser telecargat. Abans de començar, vos cal organizar corrèctament vòstre navigador :
 1. Tampatz totas las fenèstras lateralas coma la dels favorits.
 2. Identificatz-vos dins vòstre wiki.
 Cliquetz pas sus D'ACÒRDI abans d'aver verificat tot aquò.",
