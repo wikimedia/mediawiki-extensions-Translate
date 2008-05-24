@@ -247,6 +247,7 @@ $wgTranslateAC = array(
 'ext-profilemonitor'        => 'ProfileMonitorMessageGroup',
 'ext-proofreadpage'         => 'ProofreadPageMessageGroup',
 'ext-protectsection'        => 'ProtectSectionMessageGroup',
+'ext-psinotocnum'           => 'PSINoTocNumMessageGroup',
 'ext-purge'                 => 'PurgeMessageGroup',
 'ext-purgecache'            => 'PurgeCacheMessageGroup',
 'ext-quiz'                  => 'QuizMessageGroup',

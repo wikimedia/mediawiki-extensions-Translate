@@ -2063,6 +2063,14 @@ class ProtectSectionMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'ProtectSection/ProtectSection.i18n.php';
 }
 
+class PSINoTocNumMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'PSI NoTocNum';
+	protected $id    = 'ext-psinotocnum';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'PSINoTocNum/PSINoTocNum.i18n.php';		
+}
+
 class PurgeMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Purge';
 	protected $id    = 'ext-purge';
