@@ -709,7 +709,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-antispoof',
 		'ext-assertedit',
 		'ext-boardvote',
-		'ext-bookinformation',
+		#'ext-bookinformation', # could not find this used anywhere / Siebrand 2008-05-26
 		'ext-categorytree',
 		'ext-centralauth',
 		'ext-centralnotice',
@@ -723,6 +723,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-dismissablesitenotice',
 		'ext-doublewiki',
 		'ext-expandtemplates',
+		'ext-fixedimage',
 		'ext-flaggedrevs',
 		'ext-gadgets',
 		'ext-imagemap',
@@ -733,6 +734,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-mwsearch',
 		'ext-newuserlog',
 		'ext-nuke',
+		'ext-oai',
 		'ext-ogghandler',
 		'ext-oversight',
 		'ext-parserdifftest',
@@ -749,6 +751,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-syntaxhighlightgeshi',
 		'ext-timeline',
 		'ext-titleblacklist',
+		'ext-titlekey',
 		'ext-usernameblacklist',
 		'ext-wikihiero',
 	);
@@ -1893,6 +1896,14 @@ class NukeMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName = 'messages';
 	protected $messageFile  = 'Nuke/SpecialNuke.i18n.php';
+}
+
+class OaiMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'OAI-PMH repository';
+	protected $id    = 'ext-oai';
+
+	protected $arrName = 'messages';
+	protected $messageFile  = 'OAI/OAIRepo.i18n.php';
 }
 
 class OggHandlerMessageGroup extends ExtensionMessageGroup {
