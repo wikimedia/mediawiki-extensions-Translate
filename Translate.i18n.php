@@ -1584,7 +1584,7 @@ Nas traducións dos espazos de nomes, <tt>$1 talk</tt> é especial. <tt>$1</tt> 
 	'translate-magic-words'             => 'Palabras máxicas',
 	'translate-magic-skin'              => 'Nome das aparencias',
 	'translate-magic-namespace'         => 'Nomes dos espazos de nomes',
-	'translationchanges'                => 'Modificacións na tradución',
+	'translationchanges'                => 'Modificacións nas traducións',
 	'translationchanges-export'         => 'exportar',
 	'translationchanges-change'         => '$1: $2 por $3',
 	'translate-checks-parameters'       => 'Os seguintes parámetros non son usados: <strong>$1</strong>',
@@ -2408,9 +2408,11 @@ $messages['kk-cyrl'] = array(
 
 /** Kazakh (Latin) (Қазақша (Latin))
  * @author AlefZet
+ * @author Siebrand
+ * @author Atabek
  */
 $messages['kk-latn'] = array(
-	'translate'                         => 'Awdarw',
+	'translate'                         => 'Awdarıw',
 	'translate-edit'                    => 'öñdew',
 	'translate-talk'                    => 'talqılaw',
 	'translate-history'                 => 'tarïxı',
@@ -2649,7 +2651,7 @@ $messages['ksh'] = array(
 ''$1''",
 	'translate-page-settings-legend'    => 'Ennshtellonge',
 	'translate-page-task'               => 'Opjaav',
-	'translate-page-group'              => 'Jropp',
+	'translate-page-group'              => 'Jrupp',
 	'translate-page-language'           => 'Shprooch',
 	'translate-page-limit'              => 'Ömfang',
 	'translate-page-limit-option'       => '$1 Nohreschte pro Sigk',
