@@ -1623,14 +1623,27 @@ $messages['he'] = array(
 );
 
 /** Hindi (हिन्दी)
+ * @author Ashishbhatnagar72
  * @author Kaustubh
  */
 $messages['hi'] = array(
+	'translate'                        => 'अनुवाद',
 	'translate-edit'                   => 'संपादन',
+	'translate-talk'                   => 'वार्ता',
 	'translate-history'                => 'इतिहास',
+	'translate-task-view'              => 'से सभी संदेश देखें',
+	'translate-task-untranslated'      => 'से सभी अननुवादित संदेश देखें',
+	'translate-task-optional'          => 'से वैकल्पिक संदेश देखें',
+	'translate-task-review'            => 'बदलावों का पुनरावलोकन',
+	'translate-task-reviewall'         => 'में सभी अनुवादों का पुनरावलिकन करें',
+	'translate-task-export'            => 'से अनुवाद आयात करें.',
+	'translate-page-disabled'          => "इस भा्षा के इस समूह में अनुवाद बंद हैं. कारण:
+''$1''",
 	'translate-page-language'          => 'भाषा',
 	'translate-page-navigation-legend' => 'नैविगेशन',
+	'translate-page-showing'           => '$3 में से $1 से $2  तक संदेश दर्शित हैं.',
 	'translate-optional'               => '(वैकल्पिक)',
+	'translate-magic-submit'           => 'ढूंढे',
 	'translate-magic-cm-comment'       => 'टिप्पणी:',
 	'translate-magic-cm-save'          => 'संजोयें',
 	'translate-magic-cm-export'        => 'निर्यात',
@@ -1945,6 +1958,7 @@ $messages['hu'] = array(
 
 /** Indonesian (Bahasa Indonesia)
  * @author IvanLanin
+ * @author Rex
  * @author Meursault2004
  */
 $messages['id'] = array(
@@ -1964,10 +1978,14 @@ $messages['id'] = array(
 	'translate-page-no-such-language'   => 'Bahasa yang dipilih tak valid.',
 	'translate-page-no-such-task'       => 'Operasi yang dipilih tak valid.',
 	'translate-page-no-such-group'      => 'Grup yang dipilih tak valid.',
+	'translate-page-disabled'           => "Penerjemahan dalam bahasa ini telah dinon-aktifkan. Alasan:
+
+''$1''",
 	'translate-page-settings-legend'    => 'Pengaturan',
 	'translate-page-task'               => 'Saya ingin',
-	'translate-page-group'              => 'Grup',
+	'translate-page-group'              => 'Kelompok',
 	'translate-page-language'           => 'Bahasa',
+	'translate-page-limit'              => 'Batasan',
 	'translate-page-limit-option'       => '$1 {{PLURAL:$1|pesan|pesan}} per halaman',
 	'translate-submit'                  => 'Ambil',
 	'translate-page-navigation-legend'  => 'Navigasi',
@@ -2001,6 +2019,7 @@ Anda perlu menjadi anggota grup penerjemah untuk menyimpan perubahan. Perubahan 
 	'translate-magic-cm-to-be'          => 'Menjadi',
 	'translate-magic-cm-current'        => 'Kini',
 	'translate-magic-cm-original'       => 'Asal',
+	'translate-magic-cm-fallback'       => 'Kembalikan',
 	'translate-magic-cm-comment'        => 'Komentar:',
 	'translate-magic-cm-save'           => 'Simpan',
 	'translate-magic-cm-export'         => 'Ekspor',
@@ -2018,6 +2037,8 @@ Anda perlu menjadi anggota grup penerjemah untuk menyimpan perubahan. Perubahan 
 	'translate-checks-links'            => 'Pranala berikut bermasalah: <strong>$1</strong>',
 	'translate-checks-xhtml'            => 'Harap ganti tag-tag berikut dengan tag yang tepat: <strong>$1</strong>',
 	'translate-checks-plural'           => 'Definisi menggunakan <nowiki>{{PLURAL:}}</nowiki> tapi terjemahannya tidak.',
+	'tog-translate-nonewsletter'        => 'Jangan kirimkan saya e-mail berita (hanya untuk pengguna dengan alamat surat-e yang sudah dikonfirmasi)',
+	'right-translate'                   => 'Sunting menggunakan antarmuka penerjemahan',
 );
 
 /** Iloko (Ilokano)
@@ -3762,6 +3783,13 @@ Aby ste mohli ukladať zmeny, musíte byť členom skupiny translators. Zmeny sa
  */
 $messages['so'] = array(
 	'translate' => 'Tarjun',
+);
+
+/** Albanian (Shqip)
+ * @author Dori
+ */
+$messages['sq'] = array(
+	'translate' => 'Përkthime',
 );
 
 /** Serbian Cyrillic ekavian (ћирилица)
