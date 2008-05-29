@@ -1609,10 +1609,13 @@ $messages['gv'] = array(
 );
 
 /** Hawaiian (Hawai`i)
+ * @author Kalani
  * @author Singularity
  */
 $messages['haw'] = array(
-	'translate' => 'Unuhi',
+	'translate'         => 'Unuhi',
+	'translate-edit'    => 'e ho‘opololei',
+	'translate-history' => 'he aha i ho‘ololi ‘ia ai',
 );
 
 $messages['he'] = array(
@@ -3309,7 +3312,7 @@ Los noms de skins e d'espacis de noms pòdon pas aver qu'una traduccion.
 Dins las traduccions d'espacis de noms, <tt>$1 talk</tt> es especial. <tt>$1</tt> es remplaçat pel nom del sit (per exemple <tt>{{SITENAME}} talk</tt>).
 Se es pas possible d'obténer una expression valida dins vòstra lenga sens cambiar lo nom del sit, contactatz un desvolopaire.
 
-Vos cal aparténer al grop dels traductors per salvagardar los cambiaments. Los cambiaments seràn pas salvagardats abans que cliquèssetz sul boton Salvagardar en bas.",
+Vos cal aparténer al grop dels traductors per salvar los cambiaments. Los cambiaments seràn pas salvats abans que cliquèssetz sul boton Salvar en bas.",
 	'translate-magic-form'              => 'Lenga $1 Modul : $2 $3',
 	'translate-magic-submit'            => 'Anar',
 	'translate-magic-cm-to-be'          => 'Desven',
@@ -3320,7 +3323,7 @@ Vos cal aparténer al grop dels traductors per salvagardar los cambiaments. Los 
 	'translate-magic-cm-save'           => 'Salvagadar',
 	'translate-magic-cm-export'         => 'Exportar',
 	'translate-magic-cm-updatedusing'   => 'Mesa a jorn en utilizant [[Special:Magic]]',
-	'translate-magic-cm-savefailed'     => 'La salvagàrdia a pas capitat',
+	'translate-magic-cm-savefailed'     => 'Lo salvament a pas capitat',
 	'translate-magic-special'           => 'Pagina especiala d’aliases',
 	'translate-magic-words'             => 'Mots magics',
 	'translate-magic-skin'              => 'Nom de las interfàcias',

@@ -337,6 +337,18 @@ $messages['br'] = array(
 	'msg_Cancel'                 => 'Nullañ',
 );
 
+/** Catalan (Català)
+ * @author Jordi Roqué
+ */
+$messages['ca'] = array(
+	'wikiSearchTitle'     => 'Cerca -',
+	'wikiCategoryKeyWord' => 'categoria',
+	'msg_CategoryFrame'   => 'Categoria',
+	'msg_Always'          => 'Sempre',
+	'msg_Never'           => 'Mai',
+	'msg_ImageSizeFrame'  => 'Mida de la imatge',
+);
+
 /** Chamorro (Chamoru)
  * @author Jatrobat
  */
@@ -1097,21 +1109,35 @@ $messages['li'] = array(
  * @author Shijualex
  */
 $messages['ml'] = array(
-	'wikiSearchTitle'     => 'തിരയുക -',
-	'wikiCategoryKeyWord' => 'വിഭാഗം',
-	'categoryImagePreFix' => 'ചിത്രങ്ങള്‍',
-	'wikiUploadTitle'     => 'അപ്‌ലോഡ്',
-	'clickChartText'      => 'ഇവിടെ ഞെക്കൂ!',
-	'txt_TitlePage'       => 'തലക്കെട്ട് താളില്‍പോകാനുള്ള ടെക്സ്റ്റ്',
-	'txt_PageHeader'      => 'താളിന്റെ ഹെഡറില്‍ വരാനുള്ള ടെക്സ്റ്റ്',
-	'txt_PageFooter'      => 'താളിന്റെ ഫൂട്ടറില്‍ വരാനുള്ള ടെക്സ്റ്റ്',
-	'txt_Footnote'        => 'ഫൂട്ട്നോട്ടുകള്‍',
-	'msg_SimpleTab'       => 'ലളിതം',
-	'msg_ArticleName'     => 'ലേഖനത്തിന്റെ പേര്‌',
-	'msg_TargetWikiFrame' => 'ലക്ഷ്യ വിക്കി',
-	'msg_CategoryFrame'   => 'വിഭാഗം',
-	'msg_Never'           => 'ഒരിക്കലും അരുത്',
-	'msg_Cancel'          => 'റദ്ദാക്കുക',
+	'wikiSearchTitle'      => 'തിരയുക -',
+	'wikiCategoryKeyWord'  => 'വിഭാഗം',
+	'categoryImagePreFix'  => 'ചിത്രങ്ങള്‍',
+	'wikiUploadTitle'      => 'അപ്‌ലോഡ്',
+	'clickChartText'       => 'ഇവിടെ ഞെക്കൂ!',
+	'txt_TitlePage'        => 'തലക്കെട്ട് താളില്‍പോകാനുള്ള ടെക്സ്റ്റ്',
+	'txt_PageHeader'       => 'താളിന്റെ ഹെഡറില്‍ വരാനുള്ള ടെക്സ്റ്റ്',
+	'txt_PageFooter'       => 'താളിന്റെ ഫൂട്ടറില്‍ വരാനുള്ള ടെക്സ്റ്റ്',
+	'txt_Footnote'         => 'ഫൂട്ട്നോട്ടുകള്‍',
+	'msg_NoDocumentLoaded' => 'പ്രമാണമൊന്നും ലോഡ് ചെയ്തിട്ടില്ല.',
+	'msg_LoadDocument'     => 'കണ്‍‌വേര്‍ട്ട് ചെയ്യാനുള്ള പ്രമാണം അപ്‌ലോഡ് ചെയ്യുക.',
+	'msg_SimpleTab'        => 'ലളിതം',
+	'msg_ArticleName'      => 'ലേഖനത്തിന്റെ പേര്‌',
+	'msg_TargetWikiFrame'  => 'ലക്ഷ്യ വിക്കി',
+	'msg_CheckURL'         => 'URL പരിശോധിക്കുക',
+	'msg_CategoryFrame'    => 'വിഭാഗം',
+	'msg_MultipleCats'     => 'കോമ (,) ഉപയോഗിച്ച് വിവിധ വിഭാഗങ്ങളെ വേര്‍തിരിക്കുക',
+	'msg_ArticleCategory'  => 'ലേഖനങ്ങളുടെ വിഭാഗം',
+	'msg_ImageCategory'    => 'ചിത്രങ്ങളുടെ വിഭാഗം',
+	'msg_ImageDescription' => 'ചിത്രത്തിന്റെ വിവരണത്തിനു വേണ്ടിയുള്ള അധിക ടെക്സ്റ്റ്',
+	'msg_ImageUpdate'      => 'നിലവിലുള്ള ചിത്രങ്ങള്‍ പുതുക്കുക',
+	'msg_ImageUpload'      => 'ചിത്രങ്ങള്‍ അപ്‌ലോഡ് ചെയ്യുക',
+	'msg_ImageReload'      => 'ചിത്രങ്ങള്‍ റീലോഡ് ചെയ്യുക',
+	'msg_Always'           => 'എപ്പോഴും',
+	'msg_Never'            => 'ഒരിക്കലും അരുത്',
+	'msg_AsInDocument'     => 'പ്രമാണത്തില്‍ ഉള്ളതു പോലെ',
+	'msg_ImageSizeFrame'   => 'ചിത്രത്തിന്റെ വലിപ്പം',
+	'msg_ImageFullSize'    => 'മുഴുവന്‍ വലിപ്പവും ഉപയോഗിക്കുക',
+	'msg_Cancel'           => 'റദ്ദാക്കുക',
 );
 
 /** Marathi (मराठी)
