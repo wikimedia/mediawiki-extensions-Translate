@@ -2096,7 +2096,7 @@ class PdfHandlerMessageGroup extends ExtensionMessageGroup {
 }
 
 class PiwikMessageGroup extends ExtensionMessageGroup {
-	protected $label   = 'Piwiki';
+	protected $label   = 'Piwik';
 	protected $id      = 'ext-piwik';
 
 	protected $arrName = 'messages';
