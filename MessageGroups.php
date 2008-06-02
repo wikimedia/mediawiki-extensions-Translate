@@ -2087,6 +2087,14 @@ class PdfHandlerMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile  = 'PdfHandler/PdfHandler.i18n.php';
 }
 
+class PiwikMessageGroup extends ExtensionMessageGroup {
+	protected $label   = 'Piwiki';
+	protected $id      = 'ext-piwik';
+
+	protected $arrName = 'messages';
+	protected $messageFile  = 'Piwik/Piwik.i18n.php';
+}
+
 class PlayerMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Player';
 	protected $id    = 'ext-player';

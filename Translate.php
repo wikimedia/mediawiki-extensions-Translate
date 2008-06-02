@@ -248,6 +248,7 @@ $wgTranslateAC = array(
 'ext-passwordreset'         => 'PasswordResetMessageGroup',
 'ext-patroller'             => 'PatrollerMessageGroup',
 'ext-pdfhandler'            => 'PdfHandlerMessageGroup',
+'ext-piwiki'                => 'PiwikMessageGroup',
 'ext-player'                => 'PlayerMessageGroup',
 'ext-pnghandler'            => 'PNGHandlerMessageGroup',
 'ext-poem'                  => 'PoemMessageGroup',
