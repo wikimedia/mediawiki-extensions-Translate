@@ -1537,6 +1537,9 @@ $messages['gl'] = array(
 	'translate-page-no-such-language'   => 'O código de lingua especificado non é válido.',
 	'translate-page-no-such-task'       => 'A tarefa especificada non é válida.',
 	'translate-page-no-such-group'      => 'O grupo especificado non é válido.',
+	'translate-page-disabled'           => "As traducións desta lingua neste grupo foron deshabilitadas. Razón:
+
+''$1''",
 	'translate-page-settings-legend'    => 'Configuracións',
 	'translate-page-task'               => 'Quero',
 	'translate-page-group'              => 'Grupo',
@@ -1593,6 +1596,7 @@ Nas traducións dos espazos de nomes, <tt>$1 talk</tt> é especial. <tt>$1</tt> 
 	'translate-checks-xhtml'            => 'Por favor reemprace as seguintes etiquetas por unhas correctas: <strong>$1</strong>',
 	'translate-checks-plural'           => 'A definición usa <nowiki>{{PLURAL:}}</nowiki>, pero a tradución non.',
 	'tog-translate-nonewsletter'        => 'Non me enviedes follas informativas ao meu correo electrónico (só relevante para os usuarios cun enderezo de correo electrónico confirmado)',
+	'right-translate'                   => 'Editar usando a interface de tradución',
 );
 
 /** Manx (Gaelg)
@@ -2277,6 +2281,79 @@ $messages['ka'] = array(
 	'translate-page-language' => 'ენა',
 );
 
+/** Kara-Kalpak (Qaraqalpaqsha)
+ * @author Atabek
+ */
+$messages['kaa'] = array(
+	'translate'                         => 'Awdarıw',
+	'translate-edit'                    => "o'zgertiw",
+	'translate-talk'                    => "sa'wbet",
+	'translate-history'                 => 'tariyxı',
+	'translate-task-view'               => 'Barlıq xabarlardı qaraw',
+	'translate-task-untranslated'       => "Barlıq awdarılmag'an xabarlardı qaraw",
+	'translate-task-optional'           => "Sha'rt emes xabarlardı qaraw",
+	'translate-task-review'             => "O'zgerislerdi qarap shıg'ıw",
+	'translate-task-reviewall'          => "Barlıq awdarılg'anlardı qarap shıg'ıw",
+	'translate-task-export'             => "Awdarılg'anlardı eksport qılıw",
+	'translate-task-export-to-file'     => "Awdarılg'anlardı faylg'a eksport qılıw",
+	'translate-task-export-as-po'       => "Awdarılg'anlardı Gettext formatında eksport qılıw",
+	'translate-page-no-such-language'   => 'Keltirilgen til jaramsız',
+	'translate-page-no-such-task'       => 'Keltirilgen tapsırma jaramsız',
+	'translate-page-no-such-group'      => 'Keltirilgen topar jaramsız',
+	'translate-page-disabled'           => "Bul toparda usı tilge awdarıwlar toqtatılg'an. Sebep:
+
+''$1''",
+	'translate-page-settings-legend'    => 'Sazlawlar',
+	'translate-page-task'               => 'Talabım:',
+	'translate-page-group'              => 'Xabar toparı',
+	'translate-page-language'           => 'Til',
+	'translate-page-limit'              => 'Sheklew',
+	'translate-page-limit-option'       => "ha'r bette {{PLURAL:$1|1|$1}} xabar",
+	'translate-submit'                  => "Ko'rset",
+	'translate-page-navigation-legend'  => 'Navigatsiya',
+	'translate-page-showing'            => "Ko'rsetilgen xabarlar aralıg'ı: $1 - $2 (barlıg'ı $3).",
+	'translate-page-showing-all'        => "{{PLURAL:$1|1|$1}} xabar ko'rsetilmekte",
+	'translate-page-showing-none'       => "Ko'rsetiwge hesh qanday xabar joq.",
+	'translate-next'                    => 'Keyingi bet',
+	'translate-prev'                    => "Aldıng'ı bet",
+	'translate-page-description-legend' => "Topar haqqında mag'lıwmat",
+	'translate-optional'                => "(sha'rt emes)",
+	'translate-ignored'                 => "(itibar berilmeytug'ın)",
+	'translate-edit-definition'         => "Xabardın' anıqlaması",
+	'translate-edit-contribute'         => "u'les qosıw",
+	'translate-edit-no-information'     => "''Bul xabardın' hu'jjet mag'lıwmatı joq. Eger siz bul xabar qayerde yamasa qalay paydalang'anın bilsen'iz, basqa awdarıwshılıwg'a usı xabardın' hu'jjet mag'lıwmatın ko'rsetip ja'rdem beriwin'iz mu'mkin.''",
+	'translate-edit-information'        => "Bul xabar haqqında mag'lıwmat ($1)",
+	'translate-edit-in-other-languages' => 'Bul xabar basqa tillerde',
+	'translate-edit-committed'          => "Bag'darlamadag'ı ha'zirgi awdarması",
+	'translate-edit-warnings'           => "Tolıq awdarılmag'an xabarlar haqqında esletpeler",
+	'translate-magic-pagename'          => "Ken'eytilgen MediaWiki awdarması",
+	'translate-magic-form'              => 'Til: $1 Modul: $2 $3',
+	'translate-magic-submit'            => "Ko'rset",
+	'translate-magic-cm-to-be'          => 'Bolıwı kerek',
+	'translate-magic-cm-current'        => "Ha'zirgisi",
+	'translate-magic-cm-original'       => 'Original',
+	'translate-magic-cm-fallback'       => 'Fallback',
+	'translate-magic-cm-comment'        => 'Kommentariy:',
+	'translate-magic-cm-save'           => 'Saqla',
+	'translate-magic-cm-export'         => 'Eksport qılıw',
+	'translate-magic-cm-updatedusing'   => "[[Special:Magic]] qollanıp saqlang'an",
+	'translate-magic-cm-savefailed'     => "Saqlaw sa'tsiz tamamlandı",
+	'translate-magic-special'           => 'Arnawlı bet laqabı',
+	'translate-magic-words'             => "Sıyqırlı so'zler",
+	'translate-magic-skin'              => 'Skin atları',
+	'translate-magic-namespace'         => "İsimler ko'pligi atları",
+	'translationchanges'                => "Awdarma o'zgerisleri",
+	'translationchanges-export'         => 'eksport qılıw',
+	'translationchanges-change'         => '$1: $2 ($3 boyınsha)',
+	'translate-checks-parameters'       => "To'mendegi parametrler qollanılmag'an: <strong>$1</strong>",
+	'translate-checks-balance'          => "Qawıslardın' sanı jup emes: <strong>$1</strong>",
+	'translate-checks-links'            => "To'mendegi siltewler jaramsız: <strong>$1</strong>",
+	'translate-checks-xhtml'            => "To'mendegi teglerdi durıslıları menen o'zgertin': <strong>$1</strong>",
+	'translate-checks-plural'           => "Anıqlamada <nowiki>{{PLURAL:}}</nowiki> paydalanılg'an, biraq awdarmada bul joq.",
+	'tog-translate-nonewsletter'        => "Mag'an e-mail boyınsha jan'alıqlardı jibermen' (tek e-mail adresin tastıyıqlag'an paydalanıwshılarg'a tiyisli)",
+	'right-translate'                   => "Awdarma interfeysi ja'rdeminde o'zgertiw",
+);
+
 /** ‫قازاقشا (تٴوتە)‬ (‫قازاقشا (تٴوتە)‬)
  * @author AlefZet
  */
@@ -2357,31 +2434,34 @@ $messages['kk-arab'] = array(
  */
 $messages['kk-cyrl'] = array(
 	'translate'                         => 'Аудару',
-	'translate-desc'                    => 'MediaWiki және онан тыс аудару үшін [[Special:Translate|арнайы бет]]',
+	'translate-desc'                    => 'MediaWiki дегенді және бұнан тыстарды аудару үшін арналған [[Special:Translate|арнайы бет]]',
 	'translate-edit'                    => 'өңдеу',
 	'translate-talk'                    => 'талқылау',
 	'translate-history'                 => 'тарихы',
 	'translate-task-view'               => 'барлық хабарын қарау',
 	'translate-task-untranslated'       => 'аударылмаған барлық хабарын қарау',
 	'translate-task-optional'           => 'міндетті емес хабарларын қарау',
-	'translate-task-review'             => 'өзгерістерін қарап шығу',
+	'translate-task-review'             => 'өзгерістерін шолып шығу',
 	'translate-task-reviewall'          => 'барлық аудармаларын қарап шығу',
 	'translate-task-export'             => 'аудармаларын сыртқа беру',
 	'translate-task-export-to-file'     => 'аудармаларын файлмен сыртқа беру',
 	'translate-task-export-as-po'       => 'аудармаларын Gettext пішімімен сыртқа беру',
-	'translate-page-no-such-language'   => 'Келтірілген тіл белгілемесі жарамсыз',
-	'translate-page-no-such-task'       => 'Енгізілген тапсырма жарамсыз.',
-	'translate-page-no-such-group'      => 'Енгізілген тоб жарамсыз.',
-	'translate-page-settings-legend'    => 'Баптау',
+	'translate-page-no-such-language'   => 'Келтірілген тіл жарамсыз',
+	'translate-page-no-such-task'       => 'Келтірілген тапсырма жарамсыз.',
+	'translate-page-no-such-group'      => 'Келтірілген топ жарамсыз.',
+	'translate-page-disabled'           => "Осы топтағы бұл тілге аударуы өшірілген. Себебі:
+
+''$1''",
+	'translate-page-settings-legend'    => 'Бапталымдар',
 	'translate-page-task'               => 'Талабым:',
 	'translate-page-group'              => 'Хабар тобы',
 	'translate-page-language'           => 'Тілі',
 	'translate-page-limit'              => 'Шектемі',
-	'translate-page-limit-option'       => 'бет сайын  {{PLURAL:$1|1|$1}} хабар',
+	'translate-page-limit-option'       => 'бет сайын $1 хабар',
 	'translate-submit'                  => 'Келтір!',
 	'translate-page-navigation-legend'  => 'Бағыттау',
 	'translate-page-showing'            => 'Көрсетілген хабар ауқымы: $1 — $2 (не барлығы $3).',
-	'translate-page-showing-all'        => 'Көрсетілуі: {{PLURAL:$1|1|$1}} хабар.',
+	'translate-page-showing-all'        => 'Көрсетілуі: $1 хабар.',
 	'translate-page-showing-none'       => 'Көрсетілетін еш хабар жоқ.',
 	'translate-next'                    => 'Келесі бет',
 	'translate-prev'                    => 'Алдыңғы бет',
@@ -2390,39 +2470,47 @@ $messages['kk-cyrl'] = array(
 	'translate-ignored'                 => '(елемейтін)',
 	'translate-edit-definition'         => 'Хабар анықтауы',
 	'translate-edit-contribute'         => 'үлес бер',
-	'translate-edit-no-information'     => "''Бұл хабар құжаттамасыз. Егер осы хабардың қайда немесе қалай қолданғанын білсеңіз, бұл хабарға құжаттама келтіріп, басқа аударушыларға көмектесе аласыз.''",
+	'translate-edit-no-information'     => "''Бұл хабар құжаттамасыз.
+Егер бұл хабардың қайда немесе қалай қолданғанын білсеңіз, бұл хабарға құжаттама келтіріп, басқа аударушыларға көмектесе аласыз.''",
 	'translate-edit-information'        => 'Бұл хабар туралы мәлімет ($1)',
 	'translate-edit-in-other-languages' => 'Хабар басқа тілдерде',
-	'translate-edit-committed'          => 'Ағымдағы аударма бағдарламада',
-	'translate-edit-warnings'           => 'Толық аударылмаған хабарлар туралы аңғартпалар',
+	'translate-edit-committed'          => 'Бағдарлама жасақтамадағы ағымдақ аударма',
+	'translate-edit-warnings'           => 'Толық аударылмаған хабарлар туралы құлақтандырулар',
 	'translate-magic-pagename'          => 'Кеңейтілген MediaWiki аударуы',
-	'translate-magic-help'              => 'Арнайы бет бүркемелерін, сиқырлы сөздерін, безендіру мәнер атауларын және есім ая атауларын аудара аласыз.
+	'translate-magic-help'              => 'Арнайы бет бүркеме аттарын, сиқырлы сөздерді, мәнер атауларын және есім ая атауларын аудара аласыз.
 
-Сиқырлы сөздерде ағылшынша нұсқасын кіргізуіңіз жөн, әйтпесе қызметі тоқталады. Тағы да бірінші бабын (0 не 1) әрдайым қалдырыңыз.
+Сиқырлы сөздерде ағылшынша нұсқасын кіргізуіңіз жөн, әйтпесе қызметі тоқталады.
+Тағы да бірінші бабын (0 не 1) әрдайым қалдырыңыз.
 
-Арнайы бет бүркемелерінде және сиқырлы сөздерінде бірнеше аударма болуы мүмкін. Аудармалар үтірмен (,) бөліктенеді. Безендіру мәнер және есім ая атауларында тек бір аударма болуы тиіс.
+Арнайы бет бүркеме аттарында және сиқырлы сөздерде бірнеше аударма болуы мүмкін.
+Аудармалар үтірмен (,) бөлінеді.
+Мәнер және есім ая атауларында тек бір аударма болуы мүмкін.
 
-Есім ая аудармаларында <tt>$1_talk</tt> деген арнайы келтіріледі. <tt>$1</tt> деген айналмалы өздіктік торап атауымен алмастырылады (мысалы, <tt>{{SITENAME}} талқылауы</tt>). Егер сіздің тіліңізде торап атауын өзгертпей дұрыс сөйлем құрылмаса, дамытушыларға хабарласыңыз.',
+Есім ая аудармаларында <tt>$1_talk</tt> деген арнайы боп табылады. <tt>$1</tt> айналмалысы торап атауымен алмастырылады (мысалы, <tt>{{SITENAME}} талқылауы</tt>).
+Егер сіздің тіліңізде торап атауын өзгертпей дұрыс айтылым құрылмаса, дамытушыға хабарласыңыз.
+
+Өзгерістерді сақтау үшін аудармашылар тобына кіруіңіз жөн.
+Сақтау батырмасын нұқығанша дейін өзгерістер сақталмайды.',
 	'translate-magic-form'              => 'Тілі: $1 Құрашы: $2 $3',
 	'translate-magic-submit'            => 'Келтір',
 	'translate-magic-cm-to-be'          => 'Болуға тиістісі',
 	'translate-magic-cm-current'        => 'Ағымдағысы',
 	'translate-magic-cm-original'       => 'Түпнұсқасы',
-	'translate-magic-cm-fallback'       => 'Сүйемелдеуі',
+	'translate-magic-cm-fallback'       => 'Тіреуіші',
 	'translate-magic-cm-comment'        => 'Мәндеме:',
 	'translate-magic-cm-save'           => 'Сақта!',
 	'translate-magic-cm-export'         => 'Сыртқа бер',
 	'translate-magic-cm-updatedusing'   => 'Special:Magic дегенді қолданып сақталған',
 	'translate-magic-cm-savefailed'     => 'Сақтау сәтсіз болды',
-	'translate-magic-special'           => 'Арнайы бет бүркемелері',
+	'translate-magic-special'           => 'Арнайы бет бүркеме аттары',
 	'translate-magic-words'             => 'Сиқыр сөздер',
-	'translate-magic-skin'              => 'Безендіру мәнері атаулары',
+	'translate-magic-skin'              => 'Мәнер атаулары',
 	'translate-magic-namespace'         => 'Есім ая атаулары',
 	'translationchanges'                => 'Аударма өзгерістері',
 	'translationchanges-export'         => 'сыртқа беру',
 	'translationchanges-change'         => '$1: $2 ($3 істеген)',
 	'translate-checks-parameters'       => 'Келесі бапталымдар пайдаланылмаған: <strong>$1</strong>',
-	'translate-checks-balance'          => 'Мында жақшалардың барлық саны жұп емес: <strong>$1</strong>',
+	'translate-checks-balance'          => 'Мында жақшалардың бүкіл саны жұп емес: <strong>$1</strong>',
 	'translate-checks-links'            => 'Келесі сілтемелер жарамсыз: <strong>$1</strong>',
 	'translate-checks-xhtml'            => 'Келесі белгілемелерді дұрыстарымен алмастырыңыз: <strong>$1</strong>',
 	'translate-checks-plural'           => 'Анықталымда <nowiki>{{PLURAL:}}</nowiki> пайдаланылған, бірақ аудармада бұл жоқ.',
@@ -3524,6 +3612,9 @@ $messages['pt'] = array(
 	'translate-page-no-such-language'   => 'A língua especificada é inválida',
 	'translate-page-no-such-task'       => 'A tarefa especificada é inválida',
 	'translate-page-no-such-group'      => 'O grupo especificado é inválido.',
+	'translate-page-disabled'           => "As traduções para este idioma, neste grupo, foram desabilitadas. Motivo:
+
+''$1''",
 	'translate-page-settings-legend'    => 'Configurações',
 	'translate-page-task'               => 'Eu desejo',
 	'translate-page-group'              => 'Grupo',
@@ -3582,6 +3673,8 @@ As alterações não serão salvas até que você clique no botão de salvar.',
 	'translate-checks-links'            => 'Os seguintes links possuem problemas: <strong>$1</strong>',
 	'translate-checks-xhtml'            => 'Por gentileza, troque as seguintes tags pelas corretas: <strong>$1</strong>',
 	'translate-checks-plural'           => 'A definição usa <nowiki>{{PLURAL:}}</nowiki>, mas a tradução não.',
+	'tog-translate-nonewsletter'        => 'Não me enviar newsletters por e-mail (relevante apenas para utilizadores com um endereço de e-mail confirmado)',
+	'right-translate'                   => 'Editar usando a interface de tradução',
 );
 
 $messages['rm'] = array(
@@ -3866,11 +3959,78 @@ $messages['stq'] = array(
 	'translate-edit-message-in-fb'  => 'Aktuellen Text in ju Uutwiek-Sproake <b>$1</b> ($2):',
 );
 
+/** Sundanese (Basa Sunda)
+ * @author Irwangatot
+ * @author Kandar
+ */
 $messages['su'] = array(
-	'translate' => 'Alih basakeun',
-	'translate-edit-message-format' => 'Ieu talatah boga format <b>$1</b>.',
-	'translate-edit-message-in' => 'String kiwari dina <b>$1</b> ($2):',
-	'translate-edit-message-in-fb' => 'String kiwari dina basa fallback <b>$1</b> ($2):',
+	'translate'                         => 'Alih basakeun',
+	'translate-desc'                    => '[[Special:Translate|Kaca husus]] keur narjamahkeun Mediawiki',
+	'translate-edit'                    => 'édit',
+	'translate-talk'                    => 'sawala',
+	'translate-history'                 => 'Jujutan',
+	'translate-task-view'               => 'Tembongkeun kabeh talatah ti',
+	'translate-task-untranslated'       => 'Tembongkeun talatah nu acan ditarjamahkeun ti',
+	'translate-task-optional'           => 'Tembongkeun talatah piliheun ti',
+	'translate-task-review'             => 'Témbongkeun parobahan ti',
+	'translate-task-reviewall'          => 'Témbongkeun kabeh parobahan dina',
+	'translate-task-export'             => 'Ékspor tarjamahan ti',
+	'translate-task-export-to-file'     => 'Ékspor tarjamahan ka koropak ti',
+	'translate-task-export-as-po'       => 'Ékspor tarjamahan ka format Gettext ti',
+	'translate-page-no-such-language'   => 'Basa anu dipilih teu kaci.',
+	'translate-page-no-such-task'       => 'Gaweun anu dipilih teu kaci.',
+	'translate-page-no-such-group'      => 'Jumplukan nu dipilih teu kaci.',
+	'translate-page-disabled'           => "Narjamahkeun dina basa ieu geus dinon-aktifkeun. Alesana:
+
+''$1''",
+	'translate-page-settings-legend'    => 'Pangatur',
+	'translate-page-task'               => 'Kuring hayang',
+	'translate-page-group'              => 'Jumplukan',
+	'translate-page-language'           => 'Basa',
+	'translate-page-limit'              => 'Batesan',
+	'translate-page-limit-option'       => '$1 {{PLURAL:$1|talatah|talatah}} per kaca',
+	'translate-submit'                  => 'Kintun',
+	'translate-page-navigation-legend'  => 'Pituduh',
+	'translate-page-showing'            => 'Tembongan talatah $1 nepi $2 ti $3.',
+	'translate-page-showing-all'        => 'Tembongan $1 {{PLURAL:$1|talatah|talatah}}.',
+	'translate-page-showing-none'       => 'Teu aya talatah nu tiasa ditembongkeun.',
+	'translate-next'                    => 'Kaca salajengna',
+	'translate-prev'                    => 'Kaca saméméhna',
+	'translate-page-description-legend' => 'Informasi ngeunaan grup',
+	'translate-optional'                => '(piliheun)',
+	'translate-edit-definition'         => 'Definisi talatah',
+	'translate-edit-contribute'         => 'milu ngédit',
+	'translate-edit-no-information'     => "''Talatah ieu teu ngabogaan dokuméntasi. Lamun Anjeun nyaho di mana sarta kumaha talatah ieu dipaké, Anjeun bisa nulungan panarjamah séjén kalawan nambahan dokuméntasi pikeun talatah ieu.''",
+	'translate-edit-information'        => 'Informasi ngeunaan talatah ieu ($1)',
+	'translate-edit-in-other-languages' => 'Talatah dina basa séjén',
+	'translate-edit-committed'          => 'Parobahan anu aya di pakakas',
+	'translate-edit-warnings'           => 'Panginget ngeunaan tarjamahan anu teu pepek',
+	'translate-magic-pagename'          => 'Landian tarjamahan Mediawiki',
+	'translate-magic-help'              => "Anjeun bisa narjamahkuen landian pikeun kaca husus, kecap magis, ngaran kulit, sarta ngaran ''ngaranspasi''.
+
+Pikeun kecap magis, Anjeun perlu nyantumkeun ogé tarjamahan basa Inggris atawa baris lumangsung kasalahan. Ogé tetep nyantumkeun item kahiji (0 atawa 1) kitu waé.
+
+Landian pikeun halaman husus sarta kecap magis bisa ngabogaan leuwih ti hiji tarjamahan anu lainna dipisahkan ku koma (,). Ngaran kulit sarta ngaranspasi ngan bisa ngabogaan hiji tarjamahan.
+
+Dina tarjamahan ngaranspasi <tt>$1 talk</tt> diperlakukan husus. <tt>$1</tt>  digantikeun kalawan ngaran loka (contona {{SITENAME}} talk. Lamun basa Anjeun henteu matak bisa pikeun nyieun hiji ekspresi anu valid tanpa ngaganti ngaran loka, sumangga kontak salah saurang pengembang.
+
+Anjeun perlu jadi anggota grup panarjamah pikeun nyimpen parobahan. Parobahan moal disimpen nepi ka Anjeun ngaklik tombol simpen di handapeun.",
+	'translate-magic-form'              => 'Basa: $1 Modul: $2 $3',
+	'translate-magic-submit'            => 'Kintun',
+	'translate-magic-cm-to-be'          => 'Jadina',
+	'translate-magic-cm-current'        => 'Kiwari',
+	'translate-magic-cm-comment'        => 'Kamandang:',
+	'translate-magic-cm-save'           => 'Simpen',
+	'translate-magic-cm-export'         => 'Ekspor',
+	'translate-magic-cm-updatedusing'   => 'Dirobah ngagunakeun [[Special:Magic]]',
+	'translate-magic-special'           => 'Landian kaca husus',
+	'translate-magic-words'             => 'Kecap magis',
+	'translate-magic-skin'              => 'Ngaran kulit',
+	'translate-magic-namespace'         => 'Ngaran ngaranspasi',
+	'translationchanges'                => 'Parobahan tarjamahan',
+	'translationchanges-change'         => '$1: $2 ku $3',
+	'translate-checks-xhtml'            => 'Sok ganti tag-tag ieu kalawan tag anu pas:<strong>$1</strong>',
+	'right-translate'                   => 'Édit migunakeun antarmuka panarjamah',
 );
 
 /** Swedish (Svenska)
@@ -4308,7 +4468,7 @@ $messages['uk'] = array(
 	'translate-magic-special'           => 'Псевдоніми спеціальних сторінок',
 	'translate-magic-words'             => 'Магічні слова',
 	'translate-magic-skin'              => 'Назви тем оформлення',
-	'translate-magic-namespace'         => 'Простори імен',
+	'translate-magic-namespace'         => 'Простори назв',
 	'translationchanges'                => 'Зміни в перекладах',
 	'translationchanges-export'         => 'експортувати',
 	'translationchanges-change'         => '$1: $2 $3',

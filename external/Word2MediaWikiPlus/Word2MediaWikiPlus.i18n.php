@@ -851,6 +851,33 @@ $messages['hil'] = array(
 	'msg_Cancel'      => 'Kanselahon',
 );
 
+/** Indonesian (Bahasa Indonesia)
+ * @author Irwangatot
+ */
+$messages['id'] = array(
+	'wikiSearchTitle'            => 'Pencarian -',
+	'wikiCategoryKeyWord'        => 'kategori',
+	'categoryImagePreFix'        => 'Berkas',
+	'wikiUploadTitle'            => 'Pemuatan',
+	'txt_TitlePage'              => 'Judul',
+	'txt_Footnote'               => 'Catatan kaki',
+	'msg_SimpleTab'              => 'Sederhana',
+	'msg_ArticleName'            => 'Nama Artikel',
+	'msg_TestSystem'             => 'Uji Coba Sistem',
+	'msg_CategoryFrame'          => 'Kategori',
+	'msg_ArticleCategory'        => 'Kategori Artikel',
+	'msg_ImageCategory'          => 'Kategori Berkas',
+	'msg_Always'                 => 'Selalu',
+	'msg_Never'                  => 'Tidak pernah',
+	'msg_ImageSizeFrame'         => 'Ukuran Berkas',
+	'msg_ImageFullSize'          => 'Gunakan ukuran penuh',
+	'msg_ConvertTabTables'       => 'Ubah tabel yang dibuat dari tabulasi',
+	'msg_ConvertParagraphsFrame' => 'Paragraf',
+	'msg_ConvertNewParagraphs'   => 'Jadikan paragraf baru dengan <br/>s',
+	'msg_ConvertPageFooters'     => 'Mengubah catatan kaki dari halaman',
+	'msg_Cancel'                 => 'Batalkan',
+);
+
 /** Iloko (Ilokano)
  * @author Saluyot
  */
@@ -1882,6 +1909,38 @@ $messages['sr-ec'] = array(
 	'msg_AsInDocument'      => 'Као у документу',
 	'msg_ImageSizeFrame'    => 'Величина слике',
 	'msg_ImageFullSize'     => 'Користи пуну величину',
+);
+
+/** Sundanese (Basa Sunda)
+ * @author Irwangatot
+ */
+$messages['su'] = array(
+	'wikiSearchTitle'            => 'Téang -',
+	'wikiCategoryKeyWord'        => 'katagori',
+	'categoryImagePreFix'        => 'Gambar',
+	'wikiUploadTitle'            => 'Muatkeun koropak',
+	'clickChartText'             => 'click abdi!',
+	'unableToConvertMarker'      => '## kasalahan pangrobahan ##:',
+	'txt_TitlePage'              => 'Judul kaca',
+	'txt_PageHeader'             => 'Hulu kaca',
+	'txt_PageFooter'             => 'Suku kaca',
+	'txt_Footnote'               => 'Catetan',
+	'msg_SimpleTab'              => 'Basajan',
+	'msg_ArticleName'            => 'Ngaran Artikel',
+	'msg_TargetWikiFrame'        => 'Wiki Udagan',
+	'msg_CategoryFrame'          => 'Kategori',
+	'msg_ArticleCategory'        => 'Kategori Artikel',
+	'msg_ImageCategory'          => 'Kategori Gambar',
+	'msg_ImageUpload'            => 'Muatkeun koropak',
+	'msg_Never'                  => 'Ulah',
+	'msg_ConvertTabTables'       => 'Robah tabel nu di jieun tina tabulasi',
+	'msg_ConvertParagraphsFrame' => 'Paragraf',
+	'msg_ConvertNewParagraphs'   => 'Jadikeun paragraf anyar kalawan <br/>s',
+	'msg_ConvertPageFooters'     => 'Robah catetan kaca',
+	'msg_ConvertTitlePage'       => 'Asupkeun Judul Kaca',
+	'msg_Convert'                => 'Robah',
+	'msg_ImagesOnly'             => 'Gambar wungkul',
+	'msg_Cancel'                 => 'Bolay',
 );
 
 /** Swedish (Svenska)
