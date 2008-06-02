@@ -808,6 +808,14 @@ class AjaxShowEditorsMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'AjaxShowEditors/AjaxShowEditors.i18n.php';
 }
 
+class AntiBotMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Anti Bot';
+	protected $id    = 'ext-antibot';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'AntiBot/AntiBot.i18n.php';
+}
+
 class AntiSpoofMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Anti Spoof';
 	protected $id    = 'ext-antispoof';
