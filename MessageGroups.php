@@ -724,7 +724,16 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-doublewiki',
 		'ext-expandtemplates',
 		'ext-fixedimage',
-		'ext-flaggedrevs',
+		'ext-fr-depreciationoversight',
+		'ext-fr-flaggedrevs',
+		'ext-fr-flaggedrevsaliases',
+		'ext-fr-oldreviewedpages',
+		'ext-fr-qualityoversight',
+		'ext-fr-reviewedpages',
+		'ext-fr-stabilization',
+		'ext-fr-stablepages',
+		'ext-fr-stableversions',
+		'ext-fr-unreviewedpages',
 		'ext-gadgets',
 		'ext-imagemap',
 		'ext-inputbox',
@@ -1409,16 +1418,97 @@ class FCKeditorMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile  = 'FCKeditor/FCKeditor.i18n.php';
 }
 
-class FlaggedRevsMessageGroup extends ExtensionMessageGroup {
-	protected $label   = 'Flagged Revisions';
-	protected $id      = 'ext-flaggedrevs';
+class FRDepreciationOversightMessageGroup extends ExtensionMessageGroup {
+	protected $label   = 'Flagged Revisions - Depreciation Oversight';
+	protected $id      = 'ext-fr-depreciationoversight';
 
 	protected $arrName     = 'messages';
-	protected $messageFile = 'FlaggedRevs/FlaggedRevsPage.i18n.php';
+	protected $messageFile = 'FlaggedRevs/language/DepreciationOversight.i18n.php';
+
+}
+
+class FRFlaggedRevsMessageGroup extends ExtensionMessageGroup {
+	protected $label   = 'Flagged Revisions - Flagged Revs';
+	protected $id      = 'ext-fr-flaggedrevs';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'FlaggedRevs/language/FlaggedRevs.i18n.php';
 
 	protected $optional = array(
 		'revreview-toggle',
 	);
+}
+
+class FRFlaggedRevsAliasesMessageGroup extends ExtensionMessageGroup {
+	protected $label   = 'Flagged Revisions - Flagged Revs Aliases';
+	protected $id      = 'ext-fr-flaggedrevsaliases';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'FlaggedRevs/language/FlaggedRevsAliases.i18n.php';
+
+}
+
+class FROldReviewedPagesMessageGroup extends ExtensionMessageGroup {
+	protected $label   = 'Flagged Revisions - Old Reviewed Pages';
+	protected $id      = 'ext-fr-oldreviewedpages';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'FlaggedRevs/language/OldReviewedPages.i18n.php';
+
+}
+
+class FRQualityOversightMessageGroup extends ExtensionMessageGroup {
+	protected $label   = 'Flagged Revisions - Quality Oversight';
+	protected $id      = 'ext-fr-qualityoversight';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'FlaggedRevs/language/QualityOversight.i18n.php';
+
+}
+
+class FRReviewedPagesMessageGroup extends ExtensionMessageGroup {
+	protected $label   = 'Flagged Revisions - Reviewed Pages';
+	protected $id      = 'ext-fr-reviewedpages';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'FlaggedRevs/language/ReviewedPages.i18n.php';
+
+}
+
+class FRStabilizationMessageGroup extends ExtensionMessageGroup {
+	protected $label   = 'Flagged Revisions - Stabilization';
+	protected $id      = 'ext-fr-stabilization';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'FlaggedRevs/language/Stabilization.i18n.php';
+
+}
+
+class FRStablePagesMessageGroup extends ExtensionMessageGroup {
+	protected $label   = 'Flagged Revisions - Stable Pages';
+	protected $id      = 'ext-fr-stablepages';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'FlaggedRevs/language/StablePages.i18n.php';
+
+}
+
+class FRStableVersionsMessageGroup extends ExtensionMessageGroup {
+	protected $label   = 'Flagged Revisions - Stable Versions';
+	protected $id      = 'ext-fr-stableversions';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'FlaggedRevs/language/StableVersions.i18n.php';
+
+}
+
+class FRUnreviewedPagesMessageGroup extends ExtensionMessageGroup {
+	protected $label   = 'Flagged Revisions - Unreviewed Pages';
+	protected $id      = 'ext-fr-unreviewedpages';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'FlaggedRevs/language/UnreviewedPages.i18n.php';
+
 }
 
 class FindSpamMessageGroup extends ExtensionMessageGroup {
