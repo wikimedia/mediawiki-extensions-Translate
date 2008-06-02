@@ -2500,6 +2500,14 @@ class SyntaxHighlight_GeSHiMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile  = 'SyntaxHighlight_GeSHi/SyntaxHighlight_GeSHi.i18n.php';
 }
 
+class Tab0MessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Tab 0';
+	protected $id    = 'ext-tab0';
+
+	protected $arrName = 'messages';
+	protected $messageFile  = 'Tab0/Tab0.i18n.php';
+}
+
 class TalkHereMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Talk Here';
 	protected $id    = 'ext-talkhere';

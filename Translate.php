@@ -296,6 +296,7 @@ $wgTranslateAC = array(
 'ext-stalepages'            => 'StalePagesMessageGroup',
 'ext-subpagelist3'          => 'SubPageList3MessageGroup',
 'ext-syntaxhighlightgeshi'  => 'SyntaxHighlight_GeSHiMessageGroup',
+'ext-tab0'                  => 'Tab0MessageGroup',
 'ext-talkhere'              => 'TalkHereMessageGroup',
 'ext-templatelink'          => 'TemplateLinkMessageGroup',
 'ext-throttle'              => 'ThrottleMessageGroup',
