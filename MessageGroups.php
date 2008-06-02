@@ -2101,6 +2101,10 @@ class PiwikMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName = 'messages';
 	protected $messageFile  = 'Piwik/Piwik.i18n.php';
+
+	protected $optional = array(
+		'piwik',
+	);
 }
 
 class PlayerMessageGroup extends ExtensionMessageGroup {
