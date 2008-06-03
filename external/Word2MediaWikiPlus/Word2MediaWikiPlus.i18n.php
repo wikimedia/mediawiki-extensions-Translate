@@ -1032,6 +1032,13 @@ $messages['ksh'] = array(
 	'msg_Cancel'      => 'Draanjevve',
 );
 
+/** Kurdish (Kurdî / كوردی)
+ * @author Bangin
+ */
+$messages['ku'] = array(
+	'wikiSearchTitle' => 'Lêbigere -',
+);
+
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
  */
