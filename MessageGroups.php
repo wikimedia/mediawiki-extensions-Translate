@@ -2619,6 +2619,16 @@ class TranslateMessageGroup extends ExtensionMessageGroup {
 	);
 }
 
+class TorBlockMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'TOr Block';
+	protected $id    = 'ext-torblock';
+
+	protected $arrName     = 'messages';
+	protected $messageFile = 'TorBlock/TorBlock.i18n.php';
+}
+
+
+
 class UsageStatisticsMessageGroup extends ExtensionMessageGroup {
 	protected $label = 'Usage Statistics';
 	protected $id    = 'ext-usagestatistics';
