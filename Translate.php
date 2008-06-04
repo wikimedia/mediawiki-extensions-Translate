@@ -109,10 +109,12 @@ $wgTranslateBlacklist = array();
 
 /** AC = Available classes */
 $wgTranslateAC = array(
-'core'                      => 'CoreMessageGroup',
 'core-mostused'             => 'CoreMostUsedMessageGroup',
-'ext-0-all'                 => 'AllMediawikiExtensionsGroup',
 'ext-0-wikimedia'           => 'AllWikimediaExtensionsGroup',
+'core'                      => 'CoreMessageGroup',
+'ext-0-all'                 => 'AllMediawikiExtensionsGroup',
+'out-word2mediawikiplus'    => 'Word2MediaWikiPlusMessageGroup',
+'out-freecol'               => 'FreeColMessageGroup',
 'ext-absenteelandlord'      => 'AbsenteeLandlordMessageGroup',
 'ext-advancedrandom'        => 'AdvancedRandomMessageGroup',
 'ext-ajaxquerypages'        => 'AjaxQueryPagesMessageGroup',
@@ -327,8 +329,6 @@ $wgTranslateAC = array(
 'ext-woopra'                => 'WoopraMessageGroup',
 'ext-youtubeauthsub'        => 'YouTubeAuthSubMessageGroup',
 'ext-yui'                   => 'YUIMessageGroup',
-'out-freecol'               => 'FreeColMessageGroup',
-'out-word2mediawikiplus'    => 'Word2MediaWikiPlusMessageGroup',
 );
 
 /** EC = Enabled classes */
