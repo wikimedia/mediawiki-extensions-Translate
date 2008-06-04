@@ -709,7 +709,6 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-antispoof',
 		'ext-assertedit',
 		'ext-boardvote',
-		#'ext-bookinformation', # could not find this used anywhere / Siebrand 2008-05-26
 		'ext-categorytree',
 		'ext-centralauth',
 		'ext-centralnotice',
@@ -761,6 +760,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-timeline',
 		'ext-titleblacklist',
 		'ext-titlekey',
+		'ext-torblock',
 		'ext-usernameblacklist',
 		'ext-wikihiero',
 	);
@@ -1360,6 +1360,14 @@ class EditSubpagesMessageGroup extends ExtensionMessageGroup {
 
 	protected $arrName = 'messages';
 	protected $messageFile  = 'EditSubpages/EditSubpages.i18n.php';
+}
+
+class EditSimilarMessageGroup extends ExtensionMessageGroup {
+	protected $label = 'Edit Similar';
+	protected $id    = 'ext-editsimilar';
+
+	protected $arrName = 'messages';
+	protected $messageFile  = 'EditSimilar/EditSimilar.i18n.php';
 }
 
 class EditUserMessageGroup extends ExtensionMessageGroup {
