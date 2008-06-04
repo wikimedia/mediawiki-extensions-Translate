@@ -176,7 +176,8 @@ $messages['krl'] = array(
  * @author Сай
  */
 $messages['mhr'] = array(
-	'msg_Cancel' => 'Чарташ',
+	'wikiSearchTitle' => 'Кычал -',
+	'msg_Cancel'      => 'Чарташ',
 );
 
 /** Afrikaans (Afrikaans)
@@ -1035,7 +1036,7 @@ $messages['ksh'] = array(
 /** Kurdish (Kurdî / كوردی)
  * @author Bangin
  */
-$messages['ku'] = array(
+$messages['ku-latn'] = array(
 	'wikiSearchTitle' => 'Lêbigere -',
 );
 
@@ -1777,22 +1778,52 @@ Não aperte OK antes de ter feito isto.',
 	'msg_Cancel'                             => 'Cancelar',
 );
 
-/** Русский (Русский) */
+/** Russian (Русский)
+ * @author Александр Сигачёв
+ */
 $messages['ru'] = array(
-	'wikiSearchTitle'      => 'Результаты поиска -',
-	'wikiCategoryKeyWord'  => 'Категории -',
-	'wikiUploadTitle'      => 'Загрузить файл -',
-	'txt_TitlePage'        => 'Заглавная страница',
-	'txt_PageHeader'       => 'Заголовок страницы',
-	'txt_Footnote'         => 'Примечания',
-	'msg_Upload_Info'      => 'Сейчас начнется загрузка сообщений. Перед началом правильно настройте окно проводника Интернет:
+	'wikiSearchTitle'           => 'Результаты поиска -',
+	'wikiCategoryKeyWord'       => 'Категории -',
+	'categoryImagePreFix'       => 'Изображения',
+	'wikiUploadTitle'           => 'Загрузить файл -',
+	'clickChartText'            => 'нажми меня!',
+	'unableToConvertMarker'     => '## Ошибка преобразования ##:',
+	'txt_TitlePage'             => 'Заглавная страница',
+	'txt_PageHeader'            => 'Заголовок страницы',
+	'txt_PageFooter'            => 'Подвал страницы',
+	'txt_Footnote'              => 'Примечания',
+	'msg_Upload_Info'           => 'Сейчас начнется загрузка сообщений. Перед началом правильно настройте окно проводника Интернет:
 1. Закройте все панели вроде Закладки.
 2. Войдите под своим логином в Wiki.
 Не нажимайте ОК пока не сделаете это!',
-	'msg_Finished'         => 'Конвертация завершена.Вставте текст из буфера обмена в редактор WiKi',
-	'msg_NoDocumentLoaded' => 'Документы не загружены.',
-	'msg_LoadDocument'     => 'Пожалуйста загрузите документ в конвертер.',
-	'msg_CloseAll'         => 'Пожалуйста закройте все документы кроме того который нужно сконвертировать! Макрос остановлен.',
+	'msg_Finished'              => 'Конвертация завершена.Вставте текст из буфера обмена в редактор WiKi',
+	'msg_NoDocumentLoaded'      => 'Документы не загружены.',
+	'msg_LoadDocument'          => 'Пожалуйста загрузите документ в конвертер.',
+	'msg_CloseAll'              => 'Пожалуйста закройте все документы кроме того который нужно сконвертировать! Макрос остановлен.',
+	'msg_SimpleTab'             => 'Простой',
+	'msg_ArticleName'           => 'Название статьи',
+	'msg_TargetWikiFrame'       => 'Целевая вики',
+	'msg_TestSystem'            => 'Проверочная система',
+	'msg_ProdSystem'            => 'Рабочая система',
+	'msg_CheckURL'              => 'Проверка адреса',
+	'msg_CategoryFrame'         => 'Категория',
+	'msg_MultipleCats'          => 'Разделять категории запятой (,)',
+	'msg_ArticleCategory'       => 'Категория статьи',
+	'msg_ImageCategory'         => 'Категория изображения',
+	'msg_ImageDescription'      => 'Дополнительный текст, описывающий изображение',
+	'msg_ImageExtraction'       => 'Извлечь изображения',
+	'msg_ImageUseMSPhoto'       => 'Вставить в MS Photo Editor как новую картинку',
+	'msg_ImageUpdate'           => 'Обновить существующие файлы изображений',
+	'msg_ImageUpload'           => 'Загрузить изображения',
+	'msg_ImageReload'           => 'Перезагрузить изображения',
+	'msg_ImageUseFrames'        => 'Использовать фреймы',
+	'msg_Always'                => 'Всегда',
+	'msg_Never'                 => 'Никогда',
+	'msg_AsInDocument'          => 'Как в документе',
+	'msg_ImageSizeFrame'        => 'Размер изображения',
+	'msg_ImageFullSize'         => 'Использовать полный размер',
+	'msg_ImageFullSizeToolTip'  => 'Использовать полный размер, независимо от того, было ли изображение уменьшено в Word',
+	'msg_ImageFullSizeMaxWidth' => 'Использовать полный размер, вплоть до наибольшей ширины',
 );
 
 /** Slovak (Slovenčina)

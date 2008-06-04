@@ -3147,11 +3147,21 @@ $messages['nap'] = array(
 	'translate-history' => 'cronologgia',
 );
 
+/** Low German (Plattdüütsch)
+ * @author Slomox
+ */
 $messages['nds'] = array(
-	'translate' => 'Översetten',
-	'translate-edit-message-format' => 'Format vun disse Naricht is \'\'\'$1\'\'\'.',
-	'translate-edit-message-in' => 'Disse Narichtentext op \'\'\'$1\'\'\' ($2):',
-	'translate-edit-message-in-fb' => 'Disse Narichtentext in de Trüchfall-Spraak \'\'\'$1\'\'\' ($2):',
+	'translate'                   => 'Översetten',
+	'translate-edit'              => 'ännern',
+	'translate-talk'              => 'Diskuschoon',
+	'translate-history'           => 'Historie',
+	'translate-page-task'         => 'Ik will',
+	'translate-page-group'        => 'Grupp',
+	'translate-page-language'     => 'Spraak',
+	'translate-magic-cm-original' => 'Original',
+	'translate-magic-cm-comment'  => 'Kommentar:',
+	'translate-magic-cm-save'     => 'Spiekern',
+	'translate-magic-special'     => 'Spezialsieden-Alternativnaams',
 );
 
 /** Dutch (Nederlands)
@@ -3521,6 +3531,7 @@ Zmiany nie są zapisywane, dopóki użytkownik nie naciśnie umieszczonego poni�
 	'translate-checks-xhtml'            => 'Zastąp następujące znaczniki prawidłowymi: <strong>$1</strong>',
 	'translate-checks-plural'           => 'Definicja wykorzystuje funkcję <nowiki>{{PLURAL:}}</nowiki>, lecz w tłumaczeniu nie została ona użyta.',
 	'tog-translate-nonewsletter'        => 'Nie wysyłaj do mnie biuletynów pocztą elektroniczną (dotyczy tylko użytkowników z potwierdzonym adresem e-mail)',
+	'right-translate'                   => 'Edycja z użyciem interfejsu tłumaczeń',
 );
 
 /** Piemontèis (Piemontèis)
