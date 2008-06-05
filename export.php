@@ -51,9 +51,5 @@ if ( !$group instanceof MessageGroup ) {
 	exit( 1 );
 }
 
-if ( $group->canExportToFile() ) {
-	$exporter = $group->getFileExporter();
-	$exporter->export( $langs, $options['target'] );
-} else {
-	echo "Cannot export to file\n\n";
-}
+$writer = $group->getWriter();
+$writer->fileExport( $langs, $options['target'] );

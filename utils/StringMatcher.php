@@ -1,6 +1,6 @@
 <?php
 
-class StringMatcher {
+class StringMatcher extends StringMangler {
 	protected $sPrefix = '';
 	protected $aExact  = array();
 	protected $aPrefix = array();

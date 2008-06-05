@@ -170,7 +170,6 @@ class ViewMessagesTask extends TranslateTask {
 		$this->messages->populatePageExistence();
 		$this->messages->populateTranslationsFromDatabase();
 		$this->messageGroup->fill( $this->messages );
-		$this->messageGroup->reset();
 	}
 
 	protected function output() {
@@ -310,23 +309,6 @@ class ExportMessagesTask extends ViewMessagesTask {
 		);
 	}
 
-	protected function getOutputHeader() {
-		$name = TranslateUtils::getLanguageName( $this->options->getLanguage() );
-		$_authors = $this->getAuthors();
-		arsort( $_authors, SORT_NUMERIC );
-		$authors = array();
-		foreach ( $_authors as $author => $edits ) {
-			$authors[] = "$author - $edits";
-		}
-		$authors = implode( ', ', $authors );
-		$file = $this->messageGroup->getMessageFile( $this->options->getLanguage() );
-
-		$output = '';
-		if ( $file ) { $output .= "# $file\n"; }
-		$output .= "# $name ($authors)\n";
-		return $output;
-	}
-
 	protected function getAuthorsArray() {
 		global $wgTranslateFuzzyBotName;
 		$_authors = $this->getAuthors();
@@ -340,9 +322,12 @@ class ExportMessagesTask extends ViewMessagesTask {
 	}
 
 	public function output() {
-		return 	Xml::openElement( 'textarea', array( 'id' => 'wpTextbox1', 'rows' => '50' ) ) .
-			$this->getOutputHeader() .
-			$this->messageGroup->export( $this->messages ) . "\n\n\n" .
+		$writer = $this->messageGroup->getWriter();
+		$writer->addAuthors( $this->getAuthorsArray() );
+		$data = $writer->webExport( $this->messages );
+		
+		return Xml::openElement( 'textarea', array( 'id' => 'wpTextbox1', 'rows' => '50' ) ) .
+			$data .
 			"</textarea>";
 	}
 }
@@ -355,11 +340,9 @@ class ExportToFileMessagesTask extends ExportMessagesTask {
 	}
 
 	public function output() {
-		return
-			$this->messageGroup->exportToFile(
-				$this->messages,
-				$this->getAuthorsArray()
-			);
+		$writer = $this->messageGroup->getWriter();
+		$writer->addAuthors( $this->getAuthorsArray() );
+		return $writer->webExport( $this->messages );
 	}
 }
 

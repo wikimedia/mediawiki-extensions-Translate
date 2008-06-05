@@ -43,6 +43,8 @@ function customMessageGroups( $id ) {
 * show the group of message when editing
 * branched core messages should now export properly
 * $wgTranslateBlacklist added to prevent edits to certain language/group combinations
+* new exporters
+* changed the way of adding MediaWiki extensions
 
 == Changes in version 8 ==
 * Released 2008-02-06
