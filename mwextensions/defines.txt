@@ -344,7 +344,6 @@ id = ext-mwsearch
 file = MWSearch/MWSearch.i18n.php
 
 Navigation Popups
-file = NavigationPopups/NavigationPopups.18n.php
 
 Network Auth
 optional = networkauth-name, networkauth-purltext
