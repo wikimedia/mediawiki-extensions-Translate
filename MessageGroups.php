@@ -149,7 +149,6 @@ class CoreMessageGroup extends MessageGroup {
 		$this->metaDataPrefix = $IP . '/maintenance/language';
 	}
 
-
 	protected $prefix = '';
 	public function getPrefix() { return $this->prefix; }
 	public function setPrefix( $value ) { $this->prefix = $value; }
@@ -197,28 +196,6 @@ class CoreMessageGroup extends MessageGroup {
 		);
 	}
 
-}
-
-class BranchedCoreMessageGroup extends CoreMessageGroup {
-	protected $label = 'MediaWiki messages ($1)';
-	protected $id    = 'core-$1';
-	protected $path = '__BUG__';
-	protected $meta  = true;
-	protected $metaDataPath = '__BUG__';
-
-	public function __construct( $path, $branch, StringMatcher $mangler ) {
-		$this->path = $path;
-		$this->label = str_replace( '$1', $branch, $this->label );
-		$this->id = Sanitizer::escapeId( str_replace( '$1', $branch, $this->id ) );
-		$this->mangler = $mangler;
-		$this->prefix = $path . '/languages/messages';
-		$this->metaDataPrefix = $path . '/maintenance/language';
-	}
-
-	public function setMetaDataPath( $path ) {
-		$this->prefix = $path . '/languages/messages';
-		$this->metaDataPrefix = $path . '/maintenance/language';
-	}
 }
 
 class ExtensionMessageGroup extends MessageGroup {
