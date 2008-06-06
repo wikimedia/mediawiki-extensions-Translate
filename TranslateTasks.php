@@ -323,7 +323,7 @@ class ExportMessagesTask extends ViewMessagesTask {
 
 	public function output() {
 		$writer = $this->messageGroup->getWriter();
-		$writer->addAuthors( $this->getAuthorsArray() );
+		$writer->addAuthors( $this->getAuthorsArray(), $this->options->getLanguage() );
 		$data = $writer->webExport( $this->messages );
 		
 		return Xml::openElement( 'textarea', array( 'id' => 'wpTextbox1', 'rows' => '50' ) ) .
@@ -341,7 +341,7 @@ class ExportToFileMessagesTask extends ExportMessagesTask {
 
 	public function output() {
 		$writer = $this->messageGroup->getWriter();
-		$writer->addAuthors( $this->getAuthorsArray() );
+		$writer->addAuthors( $this->getAuthorsArray(), $this->options->getLanguage() );
 		return $writer->webExport( $this->messages );
 	}
 }
