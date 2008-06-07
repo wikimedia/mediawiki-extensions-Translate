@@ -64,6 +64,11 @@ abstract class MessageGroup {
 	public function getMangler() { return $this->mangler; }
 	public function setMangler( $value ) { $this->mangler = $value; }
 
+	/**
+	 * All the messages for this group, by language code.
+	 */
+	private $messages = array();
+
 	public static function factory( $label, $id ) {
 		return null;
 	}
@@ -106,8 +111,10 @@ abstract class MessageGroup {
 	 * @return Stored translation or null.
 	 */
 	public function getMessage( $key, $code ) {
-		$cache = $this->load( $code );
-		return isset( $cache[$key] ) ? $cache[$key] : null;
+		if( !isset( $this->messages[$code] ) ) {
+			$this->messages[$code] = $this->load( $code );
+		}
+		return isset( $this->messages[$code][$key] ) ? $this->messages[$code][$key] : null;
 	}
 
 	/**
