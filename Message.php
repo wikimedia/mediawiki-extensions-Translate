@@ -147,20 +147,6 @@ class MessageCollection implements Iterator, ArrayAccess, Countable {
 		return $collection;
 	}
 
-	/**
-	 * Shortcut for TranslateUtils::fillExistence.
-	 */
-	public function populatePageExistence() {
-		TranslateUtils::fillExistence( $this );
-	}
-
-	/**
-	 * Shortcut for TranslateUtils::fillContents.
-	 */
-	public function populateTranslationsFromDatabase() {
-		TranslateUtils::fillContents( $this );
-	}
-
 	/* Fail fast */
 	public function __get( $name ) {
 		throw new MWException( __METHOD__ . ": Trying to access unknown property $name" );
@@ -291,4 +277,5 @@ class TMessage {
 			return false;
 		}
 	}
+
 }

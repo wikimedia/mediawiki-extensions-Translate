@@ -168,29 +168,15 @@ class SimpleFormatWriter {
 	}
 
 	protected function getMessagesForExport( MessageGroup $group, $code ) {
-		$messages = new MessageCollection( $code );
-		$definitions = $this->group->getDefinitions();
-		foreach ( $definitions as $key => $definition ) {
-			$messages->add( new TMessage( $key, $definition ) );
-		}
+		$messages = $this->group->initCollection( $code );
 
-		$bools = $this->group->getBools();
-		foreach ( $bools['optional'] as $key ) {
-			if ( isset($messages[$key]) ) {
-				$messages[$key]->optional = true;
-			}
-		}
-
-		foreach ( $bools['ignored'] as $key ) {
-			if ( isset($messages[$key]) ) {
+		foreach ( $messages->keys() as $key ) {
+			if ( $messages[$key]->ignored ) {
 				unset($messages[$key]);
 			}
 		}
 
-		$messages->populatePageExistence();
-		$messages->populateTranslationsFromDatabase();
-		$this->group->fill( $messages );
-
+		$this->group->fillCollection( $messages );
 		return $this->makeExportArray( $messages );
 	}
 
