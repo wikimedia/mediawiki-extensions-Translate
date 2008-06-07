@@ -282,20 +282,12 @@ class GettextFormatWriter  extends SimpleFormatWriter {
 		return $out;
 	}
 
-<<<<<<< .mine
 	protected function escape( $line ) {
 		#$line = addcslashes( $line, '\\"' );
 		$line = str_replace( "\n", '\n', $line );
 		$line = '"' . $line . '"';
 		return $line;
-=======
-	public function parseMessages( $filename ) {
-		$messages = array();
-		require( $filename );
-		return $messages;
->>>>>>> .r35998
 	}
-<<<<<<< .mine
 
 	protected function formatcomments( $comments, $documentation = false, $flags = false ) {
 		if ( $documentation ) {
@@ -304,8 +296,6 @@ class GettextFormatWriter  extends SimpleFormatWriter {
 			}
 		}
 
-=======
->>>>>>> .r35998
 		if ( $flags ) {
 			$comments[','][] = implode( ', ', $flags );
 		}
