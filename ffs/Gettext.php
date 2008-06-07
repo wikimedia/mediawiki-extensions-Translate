@@ -1,109 +1,129 @@
 <?php
 if (!defined('MEDIAWIKI')) die();
-/**
- * Parses a po file that has been exported from Mediawiki. Other files are not
- * supported.
- */
 
-class GettextFormatHandler {
+class GettextFormatReader extends SimpleFormatReader {
+	public function setPotMode( $value ) {
+		$this->pot = $value;
+	}
+	protected $pot = false;
 
-	public function __construct( $file ) {
-		$this->file = $file;
+	public function parseAuthors() {
+		return array(); // Not implemented
 	}
 
-	/**
-	 * Loads translations for comparison.
-	 *
-	 * @param $id Id of MessageGroup.
-	 * @param $code Language code.
-	 * @return MessageCollection
-	 */
-	protected function initMessages( $id, $code ) {
-		$messages = new MessageCollection( $code );
-		$group = MessageGroups::getGroup( $id );
-
-		$definitions = $group->getDefinitions();
-		foreach ( $definitions as $key => $definition ) {
-			$messages->add( new TMessage( $key, $definition ) );
+	public function parseStaticHeader() {
+		if ( $this->filename === false ) {
+			return '';
 		}
-
-		$bools = $group->getBools();
-		foreach ( $bools['optional'] as $key ) {
-			if ( isset($messages[$key]) ) { $messages[$key]->optional = true; }
-		}
-		foreach ( $bools['ignored'] as $key ) {
-			if ( isset($messages[$key]) ) { $messages[$key]->ignored = true; }
-		}
-
-		$messages->populatePageExistence();
-		$messages->populateTranslationsFromDatabase();
-		$group->fill( $messages );
-
-		return $messages;
+		$data = file_get_contents( $this->filename );
+		$length = strpos( $data, "msgid" );
+		return substr( $data, 0, $length );
 	}
 
-	/**
-	 * Parses relevant stuff from the po file.
-	 */
-	public function parse() {
-		$data = file_get_contents( $this->file );
+	public function parseFile() {
+		$data = file_get_contents( $this->filename );
 		$data = str_replace( "\r\n", "\n", $data );
 
 		$matches = array();
 		if ( preg_match( '/X-Language-Code:\s+([a-zA-Z-_]+)/', $data, $matches ) ) {
 			$code = $matches[1];
-			echo "Detected language as $code\n";
 		} else {
-			echo "Unable to determine language code\n";
-			return false;
 		}
 
 		if ( preg_match( '/X-Message-Group:\s+([a-zA-Z0-9-_]+)/', $data, $matches ) ) {
 			$groupId = $matches[1];
-			echo "Detected message group as $groupId\n";
+			$useCtxtAsKey = true;
 		} else {
-			echo "Unable to determine message group\n";
-			return false;
+			$useCtxtAsKey = false;
 		}
-
-		$contents = $this->initMessages( $groupId, $code );
-
-		echo "----\n";
 
 		$poformat = '".*"\n?(^".*"$\n?)*';
 		$quotePattern = '/(^"|"$\n?)/m';
 
 		$sections = preg_split( '/\n{2,}/', $data );
+		array_shift( $sections ); // First isn't an actual message
 		$changes = array();
 		foreach ( $sections as $section ) {
+			if ( trim($section) === '' ) continue;
+
+			$item = array(
+				'ctxt'  => '',
+				'id'    => '',
+				'str'   => '',
+				'flags' => array(),
+				'comments' => array(),
+			);
+
 			$matches = array();
 			if ( preg_match( "/^msgctxt\s($poformat)/mx", $section, $matches ) ) {
 				// Remove quoting
-				$key = preg_replace( $quotePattern, '', $matches[1] );
-				// Ignore unknown keys
-				if ( !isset($contents[$key]) ) continue;
-			} else {
+				$item['ctxt'] = preg_replace( $quotePattern, '', $matches[1] );
+			} elseif ( $useCtxtAsKey ) {
+				// Invalid message
 				continue;
 			}
+
+			$matches = array();
+			if ( preg_match( "/^msgid\s($poformat)/mx", $section, $matches ) ) {
+				// Remove quoting
+				$item['id'] = preg_replace( $quotePattern, '', $matches[1] );
+				// Restore new lines and remove quoting
+				//$definition = stripcslashes( $definition );
+			} else {
+				#echo "Definition not found!\n$section";
+				continue;
+			}
+
 			$matches = array();
 			if ( preg_match( "/^msgstr\s($poformat)/mx", $section, $matches ) ) {
 				// Remove quoting
-				$translation = preg_replace( $quotePattern, '', $matches[1] );
+				$item['str'] = preg_replace( $quotePattern, '', $matches[1] );
 				// Restore new lines and remove quoting
-				$translation = stripcslashes( $translation );
+				#$translation = stripcslashes( $translation );
 			} else {
+				#echo "Translation not found!\n";
 				continue;
 			}
 
-			// Fuzzy messages
-			if ( preg_match( '/^#, fuzzy$/m', $section ) ) {
-				$translation = TRANSLATE_FUZZY . $translation;
+			// Parse flags
+			$matches = array();
+			if ( preg_match( '/^#,(.*)$/m', $section, $matches ) ) {
+				$flags = array_map( 'trim', explode( ',', $matches[1] ) );
+				foreach ( $flags as $key => $flag ) {
+					if ( $flag === 'fuzzy' ) {
+						$item['str'] = TRANSLATE_FUZZY . $item['str'];
+						unset( $flags[$key] );
+					}
+				}
+				$item['flags'] = $flags;
 			}
 
-			if ( $translation !== (string) $contents[$key]->translation ) {
-				echo "Translation of $key differs:\n$translation\n\n";
-				$changes["$key/$code"] = $translation;
+			$matches = array();
+			if ( preg_match_all( '/^#([^ ]) (.*)$/m', $section, $matches, PREG_SET_ORDER ) ) {
+				foreach( $matches as $match ) {
+					if ( $match[1] !== ',' ) {
+						$item['comments'][$match[1]][] = $match[2];
+					}
+				}
 			}
+
+			$lang = Language::factory( 'en' );
+			if ( $useCtxtAsKey ) {
+				$key = $item['ctxt'];
+			} else {
+				global $wgLegalTitleChars;
+				$hash = sha1( $item['ctxt'] . $item['id'] );
+				$snippet = $item['id'];
+				$snippet = preg_replace( "/[^$wgLegalTitleChars]/", ' ', $snippet );
+				$snippet = preg_replace( "/[:&%]/", ' ', $snippet );
+				$snippet = preg_replace( "/ {2,}/", ' ', $snippet );
+				$snippet = str_replace( ' ', '_', $snippet );
+				$snippet = trim( $snippet );
+				$snippet = $lang->truncate( $snippet, 30 );
+				$key = $hash . '-' . $snippet;
+			}
+
+			$changes[$key] = $item;
 
 		}
 
@@ -111,80 +131,216 @@ class GettextFormatHandler {
 
 	}
 
-	// Inherited: Stored objects
-	protected $info;
-
-	public function makeHeaderTo( $handle ) {
-		$name = $this->info->getOption( 'languagename' );
-		$native = $this->info->getOption( 'nativename' );
-		$authors = $this->_formatAuthors( $this->info->getOption( 'authors' ) );
-
-		fwrite( $handle, <<<HEADER
-# Messages for $name ($native)
-# Exported from XYZ
-$authors
-
-HEADER
-		);
-	}
-
-	protected function _formatAuthors( array $authors ) {
-		$s = array();
-		foreach ( $authors as $a ) {
-			$s[] = "# Author: $a";
-		}
-		return "\n" . implode( "\n", $s ) . "\n";
-	}
-
-	protected function _exportItem( $handle, $key, $value ) {
-		$prefix = $this->info->getOption( 'exportprefix' );
-		if ( $prefix ) fwrite( $handle, $prefix );
-
-		# Add the key name
-		fwrite( $handle, "'$key'" );
-		# Add the appropriate block whitespace
-		fwrite( $handle, str_repeat( ' ', $this->padTo - strlen($key) ) );
-		fwrite( $handle, ' => ' );
-
-		# Check for the appropriate apostrophe and add the value
-		# Quote \ here, because it needs always escaping
-		$value = addcslashes( $value, '\\' );
-
-		# For readability
-		$single = "'";
-		$double = '"';
-		$quote = $single;
-
-		# It is safe to use '-quoting, unless there is '-quote in the text
-		if( strpos( $value, $single ) !== false ) {
-
-			# In case there is no variables that need to be escaped, just use "-quote
-			if( strpos( $value, $double ) === false && !preg_match('/\$[^0-9]/', $value) ) {
-				$quote = $double;
-
-			# Something needs quoting, pick the quote which causes less quoting
+	public function parseMessages( StringMangler $mangler ) {
+		$defs = $this->parseFile();
+		$messages = array();
+		foreach ( $defs as $key => $def ) {
+			if ( $this->pot ) {
+				$messages[$key] = $def['id'];
 			} else {
-				$doubleEsc = substr_count( $value, $double ) + substr_count( $value, '$' );
-				$singleEsc = substr_count( $value, $single );
-
-				if ( $doubleEsc < $singleEsc ) {
-					$quote = $double;
-					$extra = '$';
-				} else {
-					$extra = '';
+				if ( $def['str'] !== '' ) {
+					$messages[$key] = $def['str'];
 				}
-
-				$value = addcslashes( $value, $quote . $extra );
 			}
 		}
-
-		fwrite( $handle, $quote . $value . $quote );
-		fwrite( $handle, ",\n" );
+		return $messages;
 	}
 
+}
+
+class GettextFormatWriter  extends SimpleFormatWriter {
+	protected $data = array();
+
+	public function fileExport( array $languages, $targetDirectory ) {
+		foreach ( $languages as $code ) {
+			$messages = $this->getMessagesForExport( $this->group, $code );
+			$filename = $this->group->getMessageFile( $code );
+			$target = $targetDirectory . '/' . $filename;
+
+			wfMkdirParents( dirname( $target ) );
+			$tHandle = fopen( $target, 'wt' );
+			if ( $tHandle === false ) {
+				throw new MWException( "Unable to open target for writing" );
+			}
+
+			$this->exportLanguage( $tHandle, $code, $messages );
+
+			fclose( $tHandle );
+		}
+	}
+
+	public function webExport( MessageCollection $MG ) {
+		global $wgTranslateExtensionDirectory;
+		$filename = $this->group->getMessageFile( $MG->code );
+
+		$tHandle = fopen( 'php://temp', 'wt' );
+
+		$this->exportLanguage( $tHandle, $MG->code, $MG );
+
+		rewind( $tHandle );
+		$data = stream_get_contents( $tHandle );
+		fclose( $tHandle );
+		return $data;
+	}
+
+	public function load( $code ) {
+		$reader = $this->group->getReader( $code );
+		if ( $reader ) {
+			$this->addAuthors( $reader->parseAuthors(), $code );
+			$this->staticHeader = $reader->parseStaticHeader();
+			$this->data = $reader->parseFile();
+		}
+	}
+
+
+	public function exportLanguage( $handle, $code, $messages ) {
+		global $wgSitename, $wgServer, $wgTranslateDocumentationLanguageCode;
+
+		$this->load( $code );
+		$lang = Language::factory( 'en' );
+
+		$out = '';
+		$now = wfTimestampNow();
+		$label = $this->group->getLabel();
+		$languageName = TranslateUtils::getLanguageName( $code );
+
+		$headers = array();
+		$headers['Project-Id-Version'] = $label;
+		// TODO: make this customisable or something
+		//$headers['Report-Msgid-Bugs-To'] = $wgServer;
+		// TODO: sprintfDate doesn't support any time zone flags
+		//$headers['POT-Creation-Date']
+		$headers['PO-Revision-Date'] = $lang->sprintfDate( 'xnY-xnm-xnd xnH:xni:xns+0000', $now );
+		$headers['Language-Team'] = $languageName;
+		$headers['Content-Type'] = 'text/plain; charset=UTF-8';
+		$headers['Content-Transfer-Encoding'] = '8bit';
+
+		$headers['X-Generator'] = 'MediaWiki ' . SpecialVersion::getVersion() .
+			"; Translate extension (" .TRANSLATE_VERSION . ")";
+
+		$headers['X-Translation-Project'] = "$wgSitename at $wgServer";
+		$headers['X-Language-Code'] = $code;
+		$headers['X-Message-Group'] = $this->group->getId();
+
+		$headerlines = array('');
+		foreach ( $headers as $key => $value ) {
+			$headerlines[] = "$key: $value\n";
+		}
+
+		fwrite( $handle, "# Translation of $label to $languageName\n#\n" );
+		fwrite( $handle, $this->formatAuthors( "# Author@$wgSitename: ", $code ) );
+		fwrite( $handle, "# --\n" );
+
+		$header = preg_replace( '/^# translation of (.*) to (.*)$\n/im', '', $this->staticHeader );
+
+		fwrite( $handle, $header );
+		fwrite( $handle, $this->formatmsg( '', $headerlines  ) );
+
+		foreach ( $messages as $key => $m) {
+			$flags = array();
+
+			# CASE1: ignored
+			if ( $m->ignored ) $flags[] = 'x-ignored';
+
+			$translation = $m->translation;
+			# CASE2: no translation
+			if ( $translation === null ) $translation = '';
+
+			# CASE3: optional messages; accept only if different
+			if ( $m->optional ) $flags[] = 'x-optional';
+
+			# Remove fuzzy markings before export
+			$flags = array();
+			$comments = array();
+			if ( isset($this->data[$key]['flags']) ) {
+				$flags = $this->data[$key]['flags'];
+			}
+			if ( strpos( $translation, TRANSLATE_FUZZY ) !== false ) {
+				$translation = str_replace( TRANSLATE_FUZZY, '', $translation );
+				$flags[] = 'fuzzy';
+			}
+
+			$documentation = '';
+			if ( $wgTranslateDocumentationLanguageCode ) {
+				$documentation = TranslateUtils::getMessageContent( $key, $wgTranslateDocumentationLanguageCode );
+			}
+
+			$comments = array();
+			if ( isset($this->data[$key]['comments']) ) {
+				$comments = $this->data[$key]['comments'];
+			}
+
+			fwrite( $handle, $this->formatcomments( $comments, $documentation, $flags ) );
+
+			if ( isset($this->data[$key]['ctxt']) ) {
+				$key = $this->data[$key]['ctxt'];
+			}
+			fwrite( $handle, $this->formatmsg( $m->definition, $translation, $key ) );
+
+		}
+
+		return $out;
+	}
+
+<<<<<<< .mine
+	protected function escape( $line ) {
+		#$line = addcslashes( $line, '\\"' );
+		$line = str_replace( "\n", '\n', $line );
+		$line = '"' . $line . '"';
+		return $line;
+=======
 	public function parseMessages( $filename ) {
 		$messages = array();
 		require( $filename );
 		return $messages;
+>>>>>>> .r35998
+	}
+<<<<<<< .mine
+
+	protected function formatcomments( $comments, $documentation = false, $flags = false ) {
+		if ( $documentation ) {
+			foreach ( explode( "\n", $documentation ) as $line ) {
+				$comments['.'][] = $line;
+			}
+		}
+
+=======
+>>>>>>> .r35998
+		if ( $flags ) {
+			$comments[','][] = implode( ', ', $flags );
+		}
+
+		// Ensure there is always something
+		if ( !count($comments) ) $comments[':'][] = '';
+
+		$order = array( ' ', '.', ':', ',', '|' );
+		$output = array();
+		foreach ( $order as $type ) {
+			if ( !isset($comments[$type]) ) continue;
+			foreach ( $comments[$type] as $value ) {
+				$output[] = "#$type $value";
+			}
+		}
+
+		return implode( "\n", $output ) . "\n";
+	}
+
+	protected function formatmsg( $msgid, $msgstr, $msgctxt = false ) {
+		$output = array();
+
+		if ( $msgctxt ) {
+			$output[] = 'msgctxt ' . $this->escape( $msgctxt );
+		}
+
+		if ( !is_array( $msgid ) ) { $msgid = array( $msgid ); }
+		if ( !is_array( $msgstr ) ) { $msgstr = array( $msgstr ); }
+
+		$cb = array( $this, 'escape' );
+		$output[] = 'msgid ' . implode( "\n", array_map( $cb, $msgid ) );
+		$output[] = 'msgstr ' . implode( "\n", array_map( $cb, $msgstr ) );
+
+		$out = implode( "\n", $output ) . "\n\n";
+		return $out;
+
 	}
 }

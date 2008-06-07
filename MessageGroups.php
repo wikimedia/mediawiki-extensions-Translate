@@ -1,5 +1,4 @@
 <?php
-if (!defined('MEDIAWIKI')) die();
 
 abstract class MessageGroup {
 	/**
@@ -65,14 +64,7 @@ abstract class MessageGroup {
 	public function getMangler() { return $this->mangler; }
 	public function setMangler( $value ) { $this->mangler = $value; }
 
-	/**
-	 * All the messages for this group, by language code.
-	 */
-	private $messages = array();
-
-	public static function factory( $label, $id ) {
-		return null;
-	}
+	public $namespaces = array( NS_MEDIAWIKI, NS_MEDIAWIKI_TALK );
 
 	public function getReader( $code ) {
 		return null;
@@ -117,6 +109,10 @@ abstract class MessageGroup {
 		}
 		return isset( $this->messages[$code][$key] ) ? $this->messages[$code][$key] : null;
 	}
+	/**
+	 * All the messages for this group, by language code.
+	 */
+	private $messages = array();
 
 	/**
 	 * In this function message group should add translations from the stored file
@@ -140,8 +136,42 @@ abstract class MessageGroup {
 	 */
 	public function getMessageFile( $code ) { return false; }
 
+
+	public function initCollection( $code ) {
+		$collection = new MessageCollection( $code );
+		$definitions = $this->getDefinitions();
+		foreach ( $definitions as $key => $definition ) {
+			$collection->add( new TMessage( $key, $definition ) );
+		}
+
+		$bools = $this->getBools();
+		foreach ( $bools['optional'] as $key ) {
+			if ( isset($collection[$key]) ) {
+				$collection[$key]->optional = true;
+			}
+		}
+
+		foreach ( $bools['ignored'] as $key ) {
+			if ( isset($collection[$key]) ) {
+				$collection[$key]->ignored = true;
+			}
+		}
+
+		return $collection;
+	}
+
+	public function fillCollection( MessageCollection $collection ) {
+		TranslateUtils::fillExistence( $collection, $this->namespaces );
+		TranslateUtils::fillContents( $collection, $this->namespaces );
+		$this->fill( $collection );
+	}
+
 	public function __construct() {
 		$this->mangler = StringMatcher::emptyMatcher();
+	}
+
+	public static function factory( $label, $id ) {
+		return null;
 	}
 
 }
@@ -229,11 +259,6 @@ class ExtensionMessageGroup extends MessageGroup {
 		return $group;
 	}
 
-	/*
-	 * Append (mw ext) to extension labels. This doesn't break sorting.
-	 */
-	public function getLabel() { return $this->label . " (mw ext)"; }
-
 	/**
 	 * This function loads messages for given language for further use.
 	 *
@@ -278,7 +303,6 @@ class ExtensionMessageGroup extends MessageGroup {
 }
 
 class CoreMostUsedMessageGroup extends CoreMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'MediaWiki messages (most used)';
 	protected $id    = 'core-mostused';
 	protected $meta  = true;
@@ -302,7 +326,6 @@ class CoreMostUsedMessageGroup extends CoreMessageGroup {
 }
 
 class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
-	protected $fileExporter = null;
 	protected $label = 'All extensions';
 	protected $id    = 'ext-0-all';
 	protected $meta  = true;
@@ -367,7 +390,6 @@ class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
 }
 
 class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
-	protected $fileExporter = null;
 	protected $label = 'Extensions used by Wikimedia';
 	protected $id    = 'ext-0-wikimedia';
 	protected $meta  = true;
@@ -446,7 +468,6 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 }
 
 class AllFlaggedRevsExtensionsGroup extends AllMediawikiExtensionsGroup {
-	protected $fileExporter = null;
 	protected $label = 'All FlaggedRevs messages';
 	protected $id    = 'ext-0-flaggedrevs';
 	protected $meta  = true;
@@ -485,7 +506,6 @@ class Word2MediaWikiPlusMessageGroup extends ExtensionMessageGroup {
 
 
 class FreeColMessageGroup extends MessageGroup {
-	protected $fileExporter = 'CoreExporter';
 	protected $label = 'FreeCol (open source game)';
 	protected $id    = 'out-freecol';
 	protected $prefix= 'freecol-';
@@ -532,6 +552,54 @@ class FreeColMessageGroup extends MessageGroup {
 
 	public function getWriter() {
 		return new JavaFormatWriter( $this );
+	}
+
+}
+
+class GettextMessageGroup extends MessageGroup {
+	/**
+	 * Name of the array where all messages are stored, if applicable.
+	 */
+	protected $potFile      = 'messages';
+	public function getPotFile() { return $this->potFile; }
+	public function setPotFile( $value ) { $this->potFile = $value; }
+
+	protected $codeMap = array();
+
+
+	protected $prefix = '';
+	public function getPrefix() { return $this->prefix; }
+	public function setPrefix( $value ) { $this->prefix = $value; }
+
+
+	public function getMessageFile( $code ) {
+		if ( $code == 'en' ) {
+			return $this->getPotFile();
+		} else {
+			if ( isset($this->codeMap[$code]) ) {
+				$code = $this->codeMap[$code];
+			}
+			return "$code.po";
+		}
+	}
+
+	public static function factory( $label, $id ) {
+		$group = new GettextMessageGroup;
+		$group->setLabel( $label );
+		$group->setId( $id );
+		return $group;
+	}
+
+
+	public function getReader( $code ) {
+		$reader = new GettextFormatReader( $this->getPrefix() . $this->getMessageFile( $code ) );
+		if ( $code === 'en' )
+			$reader->setPotMode( true );
+		return $reader;
+	}
+
+	public function getWriter() {
+		return new GettextFormatWriter( $this );
 	}
 
 }

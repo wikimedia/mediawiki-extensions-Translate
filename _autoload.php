@@ -39,7 +39,8 @@ $wgAutoloadClasses['WikiFormatReader'] = $dir . 'ffs/Wiki.php';
 $wgAutoloadClasses['WikiFormatWriter'] = $dir . 'ffs/Wiki.php';
 $wgAutoloadClasses['WikiExtensionFormatReader'] = $dir . 'ffs/WikiExtension.php';
 $wgAutoloadClasses['WikiExtensionFormatWriter'] = $dir . 'ffs/WikiExtension.php';
-$wgAutoloadClasses['GettextFormatHandler'] = $dir . 'ffs/Gettext.php';
+$wgAutoloadClasses['GettextFormatReader'] = $dir . 'ffs/Gettext.php';
+$wgAutoloadClasses['GettextFormatWriter'] = $dir . 'ffs/Gettext.php';
 $wgAutoloadClasses['JavaFormatReader'] = $dir . 'ffs/Java.php';
 $wgAutoloadClasses['JavaFormatWriter'] = $dir . 'ffs/Java.php';
 
@@ -57,6 +58,6 @@ $wgAutoloadClasses['SmRegexRewriter'] = $dir . 'utils/StringMangler.php';
 
 
 # predefined group
-$wgAutoloadClasses['PremadeMediawikiExtensionGroups'] = $dir . 'mwextensions/MediaWikiExtensions.php';
+$wgAutoloadClasses['PremadeMediawikiExtensionGroups'] = $dir . 'groups/MediaWikiExtensions.php';
 
 
