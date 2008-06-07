@@ -147,6 +147,8 @@ foreach ( $languages as $code => $name ) {
 		foreach ( $messages->keys() as $key ) {
 			if ( $messages[$key]->translation === null ) {
 				unset( $messages[$key] );
+			} elseif ( $messages[$key]->fuzzy ) {
+				unset( $messages[$key] );
 			}
 		}
 
