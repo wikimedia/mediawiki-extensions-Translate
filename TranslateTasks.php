@@ -69,7 +69,6 @@ abstract class TranslateTask {
 	public final function init( MessageGroup $messageGroup, TaskOptions $options ) {
 		$this->messageGroup = $messageGroup;
 		$this->options = $options;
-		$this->messages = new MessageCollection( $this->options->getLanguage() );
 	}
 
 	protected $process = array();
@@ -130,24 +129,8 @@ class ViewMessagesTask extends TranslateTask {
 	}
 
 	protected function preinit() {
-		$definitions = $this->messageGroup->getDefinitions();
-		foreach ( $definitions as $key => $definition ) {
-			$this->messages->add( new TMessage( $key, $definition ) );
-		}
-
-		$bools = $this->messageGroup->getBools();
-		foreach ( $bools['optional'] as $key ) {
-			if ( isset($this->messages[$key]) ) {
-				$this->messages[$key]->optional = true;
-			}
-		}
-
-		foreach ( $bools['ignored'] as $key ) {
-			if ( isset($this->messages[$key]) ) {
-				$this->messages[$key]->ignored = true;
-			}
-		}
-
+		$this->messages =
+			$this->messageGroup->initCollection( $this->options->getLanguage() );
 	}
 
 	protected function filterIgnored() {
@@ -167,9 +150,7 @@ class ViewMessagesTask extends TranslateTask {
 	}
 
 	protected function postinit() {
-		$this->messages->populatePageExistence();
-		$this->messages->populateTranslationsFromDatabase();
-		$this->messageGroup->fill( $this->messages );
+		$this->messageGroup->fillCollection( $this->messages );
 	}
 
 	protected function output() {
@@ -180,7 +161,9 @@ class ViewMessagesTask extends TranslateTask {
 			$tableheader .
 			TranslateUtils::makeListing(
 				$this->messages,
-				$this->messageGroup->getId()
+				$this->messageGroup->getId(),
+				false,
+				$this->messageGroup->namespaces
 			) .
 			$tablefooter;
 	}
@@ -268,7 +251,8 @@ class ReviewMessagesTask extends ViewMessagesTask {
 			TranslateUtils::makeListing(
 				$this->messages,
 				$this->messageGroup->getId(),
-				true /* Review mode */
+				true, /* Review mode */
+				$this->messageGroup->namespaces
 			) .
 			$tablefooter;
 	}

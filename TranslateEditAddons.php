@@ -12,7 +12,8 @@ class TranslateEditAddons {
 	const MSG = 'translate-edit-';
 
 	static function addTools( $object ) {
-		if( $object->mTitle->getNamespace() === NS_MEDIAWIKI ) {
+		global $wgTranslateMessageNamespaces;
+		if( in_array($object->mTitle->getNamespace(), $wgTranslateMessageNamespaces) ) {
 			$object->editFormTextTop .= self::editBoxes( $object );
 		}
 		return true;
@@ -87,7 +88,7 @@ class TranslateEditAddons {
 	 * @param $key The message key we are interested in.
 	 * @return MessageGroup which the key belongs to, or null.
 	 */
-	private static function getMessageGroup( $key ) {
+	private static function getMessageGroup( $namespace, $key ) {
 		global $wgRequest;
 		$group = $wgRequest->getText('loadgroup', '' );
 		$mg = MessageGroups::getGroup( $group );
@@ -95,7 +96,7 @@ class TranslateEditAddons {
 		# If we were not given group, or the group given was meta...
 		if ( is_null( $mg ) || $mg->isMeta() ) {
 			# .. then try harder, because meta groups are *inefficient*
-			$group = TranslateUtils::messageKeyToGroup( $key );
+			$group = TranslateUtils::messageKeyToGroup( $namespace, $key );
 			if ( $group ) {
 				$mg = MessageGroups::getGroup( $group );
 			}
@@ -110,8 +111,10 @@ class TranslateEditAddons {
 
 		list( $key, $code ) = self::figureMessage( $object );
 
-		$group = self::getMessageGroup( $key );
+		$group = self::getMessageGroup( $object->mTitle->getNamespace(), $key );
 		if ( $group === null ) return;
+
+		list( $nsMain, /* $nsTalk */) = $group->namespaces;
 
 		$en = $group->getMessage( $key, 'en' );
 		$xx = $group->getMessage( $key, $code );
@@ -141,6 +144,9 @@ class TranslateEditAddons {
 			$title = Title::makeTitle( NS_MEDIAWIKI, $key . '/' . $wgTranslateDocumentationLanguageCode );
 			$edit = $wgUser->getSkin()->makeKnownLinkObj( $title, wfMsgHtml( self::MSG . 'contribute' ), 'action=edit' );
 			$info = TranslateUtils::getMessageContent( $key, $wgTranslateDocumentationLanguageCode );
+			if ( !$info ) {
+				$info = $group->getMessage( $key, $wgTranslateDocumentationLanguageCode );
+			}
 			$class = 'mw-sp-translate-edit-info';
 
 			if ( !$info ) {

@@ -24,113 +24,115 @@ class TranslateUtils {
 	}
 
 	/**
-	 * Initializes messages array.
-	 */
-	public static function initializeMessages( Array $definitions, $sortCallback = null ) {
-		wfMemIn( __METHOD__ );
-		$messages = array();
-
-		if ( is_callable( $sortCallback ) ) {
-			call_user_func_array( $sortCallback, array( &$definitions ) );
-		}
-
-		foreach ( $definitions as $key => $value ) {
-			$messages[$key]['definition'] = $value; // the very original message
-			$messages[$key]['database']   = null; // current translation in db
-			$messages[$key]['author']     = null; // Author of the latest revision
-			$messages[$key]['infile']     = null; // current translation in file
-			$messages[$key]['fallback']   = null; // current fallback
-			$messages[$key]['optional'] = false;
-			$messages[$key]['ignored']  = false;
-			$messages[$key]['changed']  = false;
-			$messages[$key]['pageexists'] = false;
-			$messages[$key]['talkexists'] = false;
-		}
-
-		wfMemOut( __METHOD__ );
-		return $messages;
-	}
-
-	/**
 	 * Fills the page/talk exists bools according to their existence in the
 	 * database.
 	 *
-	 * @param $messages Instance of MessageCollection
+	 * @param $messages MessageCollection
+	 * @param $namespaces Array: two-item 1-d array with namespace numbers
 	 */
-	public static function fillExistence( MessageCollection $messages ) {
-		wfMemIn( __METHOD__ );
-		self::doExistenceQuery();
+	public static function fillExistence( MessageCollection $messages,
+		array $namespaces ) {
+		wfMemIn( __METHOD__ ); wfProfileIn( __METHOD__ );
+
+		// Filter the titles so that we can find the respective pages from the db
+		$code = $messages->code;
+		$titles = array();
 		foreach ( $messages->keys() as $key ) {
-			$messages[$key]->pageExists = isset( self::$pageExists[self::title( $key, $messages->code )] );
-			$messages[$key]->talkExists = isset( self::$talkExists[self::title( $key, $messages->code )] );
+			$titles[] = self::title( $key, $code );
 		}
-		wfMemOut( __METHOD__ );
+
+		// Quick return if nothing to search
+		if ( !count($titles) ) return;
+
+		// Fetch from database, we will get existing titles as the result
+		$dbr = wfGetDB( DB_SLAVE );
+		$rows = $dbr->select(
+			'page',
+			array( 'page_namespace', 'page_title' ),
+			array(
+				'page_namespace' => $namespaces,
+				'page_title'     => $titles,
+			),
+			__METHOD__
+		);
+
+		// Now store the pages we found...
+		foreach ( $rows as $row ) {
+			if ( $row->page_namespace == $namespaces[0] ) {
+				$pages[$row->page_title] = true;
+			} elseif ( $row->page_namespace == $namespaces[1]) {
+				$talks[$row->page_title] = true;
+			}
+		}
+		$rows->free();
+
+		// ... and loop again to populate the collection
+		foreach ( $messages->keys() as $key ) {
+			$messages[$key]->pageExists = isset( $pages[self::title( $key, $code )] );
+			$messages[$key]->talkExists = isset( $talks[self::title( $key, $code )] );
+		}
+
+		wfProfileOut( __METHOD__ ); wfMemOut( __METHOD__ );
 	}
 
 	/**
 	 * Fills the actual translation from database, if any.
+	 * TranslateUtils::fillExistence must be called before this to populate page
+	 * existences.
 	 *
-	 * @param $messages Instance of MessageCollection
+	 * @param $messages MessageCollection
+	 * @param $namespaces Array: two-item 1-d array with namespace numbers
 	 */
-	public static function fillContents( MessageCollection $messages ) {
-		wfMemIn( __METHOD__ );
+	public static function fillContents( MessageCollection $messages,
+		array $namespaces ) {
+		wfMemIn( __METHOD__ ); wfProfileIn( __METHOD__ );
+
 		$titles = array();
 		foreach ( $messages->keys() as $key ) {
-			$titles[self::title( $key, $messages->code )] = null;
-		}
-		// Determine for which messages are not fetched already
-		$missing = array_diff( $titles, self::$contents );
-
-
-		// Don't fetch pages that do not exists
-		self::doExistenceQuery();
-		foreach ( array_keys( $missing ) as $message ) {
-			if ( !isset(self::$pageExists[$message] ) ) {
-				unset( $missing[$message] );
+			// Only fetch messages for pages that exists
+			if ( $messages[$key]->pageExists ) {
+				$titles[] = self::title( $key, $messages->code );
 			}
 		}
 
-		// Fetch contents for the rest
-		if ( count( $missing ) ) {
-			self::getContents( array_keys( $missing ) );
-		}
+		if ( !count($titles) ) return;
+
+		// Fetch contents
+		$titles = self::getContents( $titles, $namespaces[0] );
 
 		foreach ( $messages->keys() as $key ) {
 			$title = self::title( $key, $messages->code );
-			if ( isset( self::$contents[$title] ) ) {
-				$messages[$key]->database = self::$contents[$title];
-				$messages[$key]->addAuthor( self::$editors[$title] );
+			if ( isset($titles[$title]) ) {
+				$messages[$key]->database = $titles[$title][0];
+				$messages[$key]->addAuthor( $titles[$title][1] );
 			}
 		}
 
-		self::$contents = array();
-		self::$editors = array();
-		wfMemOut( __METHOD__ );
+		wfProfileOut( __METHOD__ ); wfMemOut( __METHOD__ );
 	}
 
-	public static function getMessageContent( $key, $language ) {
-		wfMemIn( __METHOD__ );
-		wfProfileIn( __METHOD__ );
+	public static function getMessageContent( $key, $language,
+		$namespace = NS_MEDIAWIKI ) {
+
 		$title = self::title( $key, $language );
-		if ( !isset(self::$contents[$title]) ) {
-			self::getContents( array( $title ) );
-		}
-		wfProfileOut( __METHOD__ );
-		wfMemOut( __METHOD__ );
-		return isset(self::$contents[$title]) ? self::$contents[$title] : null;
+		$data = self::getContents( array($title), $namespace );
+		return isset($data[$title][0]) ? $data[$title][0] : null;
 	}
 
-	private static $contents = array();
-	private static $editors = array();
-	private static function getContents( Array $titles ) {
-		wfMemIn( __METHOD__ );
-		wfProfileIn( __METHOD__ );
+	/**
+	 * Fetches contents for titles in given namespace
+	 *
+	 * @param $titles Mixed: string or array of titles.
+	 * @param $namespace Mixed: the number of the namespace to look in for.
+	 */
+	private static function getContents( $titles, $namespace ) {
+		wfMemIn( __METHOD__ ); wfProfileIn( __METHOD__ );
 		$dbr = wfGetDB( DB_SLAVE );
 		$rows = $dbr->select( array( 'page', 'revision', 'text' ),
 			array( 'page_title', 'old_text', 'old_flags', 'rev_user_text' ),
 			array(
 				'page_is_redirect'  => 0,
-				'page_namespace'    => NS_MEDIAWIKI,
+				'page_namespace'    => $namespace,
 				'page_latest=rev_id',
 				'rev_text_id=old_id',
 				'page_title'        => $titles
@@ -140,25 +142,20 @@ class TranslateUtils {
 
 
 		foreach ( $rows as $row ) {
-			self::$contents[$row->page_title] = Revision::getRevisionText( $row );
-			self::$editors[$row->page_title] = $row->rev_user_text;
+			$titles[$row->page_title] = array(
+				Revision::getRevisionText( $row ),
+				$row->rev_user_text
+			);
 		}
-
 		$rows->free();
-		wfProfileOut( __METHOD__ );
-		wfMemOut( __METHOD__ );
+
+		return $titles;
+		wfProfileOut( __METHOD__ ); wfMemOut( __METHOD__ );
 	}
 
-	private static $pageExists = null;
-	private static $talkExists = null;
-	private static function doExistenceQuery() {
+	private static function doExistenceQuery( MessageCollection $message) {
 		wfMemIn( __METHOD__ );
 		wfProfileIn( __METHOD__ );
-		if ( self::$pageExists !== null && self::$talkExists !== null ) {
-			wfProfileOut( __METHOD__ );
-			wfMemOut( __METHOD__ );
-			return;
-		}
 
 		$dbr = wfGetDB( DB_SLAVE );
 		$rows = $dbr->select(
@@ -232,8 +229,11 @@ class TranslateUtils {
 		return $tableheader;
 	}
 
-	public static function makeListing( MessageCollection $messages, $group, $review = false ) {
-		wfMemIn( __METHOD__ );
+	public static function makeListing( MessageCollection $messages, $group,
+		$review = false, array $namespaces ) {
+
+		wfMemIn( __METHOD__ ); wfProfileIn( __METHOD__ );
+
 		global $wgUser;
 		$sk = $wgUser->getSkin();
 		wfLoadExtensionMessages( 'Translate' );
@@ -250,8 +250,8 @@ class TranslateUtils {
 			$title = self::title( $key, $messages->code );
 			$tools = array();
 
-			$page['object'] = Title::makeTitle( NS_MEDIAWIKI, $title );
-			$talk['object'] = Title::makeTitle( NS_MEDIAWIKI_TALK, $title );
+			$page['object'] = Title::makeTitle( $namespaces[0], $title );
+			$talk['object'] = Title::makeTitle( $namespaces[1], $title );
 
 			$original = $m->definition;
 			$message = $m->translation ? $m->translation : $original;
@@ -307,7 +307,7 @@ class TranslateUtils {
 
 		}
 
-		wfMemOut( __METHOD__ );
+		wfProfileOut( __METHOD__ ); wfMemOut( __METHOD__ );
 		return $output;
 	}
 
@@ -376,8 +376,8 @@ class TranslateUtils {
 		return $selector->getHTML();
 	}
 
-	public static function messageKeyToGroup( $key ) {
-		$key = strtolower( $key );
+	public static function messageKeyToGroup( $namespace, $key ) {
+		$key = strtolower( "$namespace:$key" );
 		$index = self::messageIndex();
 		return @$index[$key];
 	}

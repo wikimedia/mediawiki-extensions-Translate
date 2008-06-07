@@ -21,11 +21,14 @@ foreach ( $groups as $g ) {
 		echo "Something wrong with $id... skipping\n";
 		continue;
 	}
+
+	$namespace = $g->namespaces[0];
+
 	foreach ( $messages as $key => $data ) {
 		# Force all keys to lower case, because the case doesn't matter and it is
 		# easier to do comparing when the case of first letter is unknown, because
 		# mediawiki forces it to upper case
-		$key = strtolower( $key );
+		$key = strtolower( "$namespace:$key" );
 		if ( isset($hugearray[$key]) ) {
 			echo "Key $key already belongs to $hugearray[$key], conflict with $id\n";
 		} else {

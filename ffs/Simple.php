@@ -218,7 +218,7 @@ class SimpleFormatWriter {
 
 	protected function exportStaticHeader( $target ) {
 		if( $this->staticHeader ) {
-			fwrite( $target, $this->staticHeader );
+			fwrite( $target, $this->staticHeader . "\n" );
 		}
 	}
 

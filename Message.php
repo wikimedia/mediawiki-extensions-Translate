@@ -190,7 +190,6 @@ class TMessage {
 	private $authors = array();
 
 	private $infile   = null;
-	private $fallback = null;
 	private $database = null;
 
 	private $optional   = false;
@@ -259,7 +258,7 @@ class TMessage {
 	}
 
 	private static $callable = array( 'authors', 'changed', 'translated', 'translation', 'fuzzy' );
-	private static $writable = array( 'infile', 'fallback', 'database', 'pageExists', 'talkExists', 'optional', 'ignored' );
+	private static $writable = array( 'infile', 'database', 'pageExists', 'talkExists', 'optional', 'ignored' );
 
 	public function __get( $name ) {
 		if ( property_exists( $this, $name ) ) {
