@@ -325,7 +325,7 @@ class ExportMessagesTask extends ViewMessagesTask {
 		$writer = $this->messageGroup->getWriter();
 		$writer->addAuthors( $this->getAuthorsArray(), $this->options->getLanguage() );
 		$data = $writer->webExport( $this->messages );
-		
+
 		return Xml::openElement( 'textarea', array( 'id' => 'wpTextbox1', 'rows' => '50' ) ) .
 			$data .
 			"</textarea>";

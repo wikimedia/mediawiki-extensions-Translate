@@ -1,4 +1,5 @@
 <?php
+if (!defined('MEDIAWIKI')) die();
 
 class StringMatcher extends StringMangler {
 	protected $sPrefix = '';
@@ -106,5 +107,4 @@ class StringMatcher extends StringMangler {
 
 		return $temp;
 	}
-
 }

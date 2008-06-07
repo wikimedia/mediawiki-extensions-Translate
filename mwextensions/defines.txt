@@ -136,6 +136,8 @@ file = ContributorsAddon/ContributorsAddon.i18n.php
 
 Count Edits
 
+Create Box
+
 Cross Namespace Links
 file = CrossNamespaceLinks/SpecialCrossNamespaceLinks.i18n.php
 

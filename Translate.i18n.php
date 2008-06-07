@@ -613,17 +613,17 @@ $messages['br'] = array(
 	'translate-magic-pagename'          => 'Troidigezh Mediawiki astennet',
 	'translate-magic-help'              => "Gallout a rit treiñ aliasoù ar pajennoù dibar, ar gerioù burzhudus, anvioù an etrefasoù hag anvioù an esaouennoù anv.
 
-Evit ar pezh a sell ouzh ar gerioù burzhudus e vo ret deoc'h ouzhpennañ an droidigezh saoznek pe ne'z aint ket en-dro ken. 
+Evit ar pezh a sell ouzh ar gerioù burzhudus e vo ret deoc'h ouzhpennañ an droidigezh saoznek pe ne'z aint ket en-dro ken.
 Dalc'hit ivez an elfenn gentañ (0 pe 1) evel m'emañ.
 
-Aliasoù ar pajennoù dibar hag ar gerioù burzhudus a c'hall kaout meur a droidigezh. 
-Dispartiet eo an troidigezhioù dre skejoù (,). 
+Aliasoù ar pajennoù dibar hag ar gerioù burzhudus a c'hall kaout meur a droidigezh.
+Dispartiet eo an troidigezhioù dre skejoù (,).
 N'hall anvioù an etrefasoù ha re an esaouennoù anv nemet kaout un droidigezh hepken.
 
-E troidigezhioù an esaouennoù anv eo dibar <tt>$1 talk</tt>. Erlec'hiet eo <tt>$1</tt> gant anv al lec'hienn (da skouer <tt>{{SITENAME}} talk</tt>). 
+E troidigezhioù an esaouennoù anv eo dibar <tt>$1 talk</tt>. Erlec'hiet eo <tt>$1</tt> gant anv al lec'hienn (da skouer <tt>{{SITENAME}} talk</tt>).
 Ma n'haller ket sevel lavarennoù reizh en ho yezh hep kemmañ anv al lec'hienn, kit e darempred gant un diorroer.
 
-Ret eo deoc'h bezañ ezel eus ur strollad troerien evit enrollañ ar c'hemmoù. 
+Ret eo deoc'h bezañ ezel eus ur strollad troerien evit enrollañ ar c'hemmoù.
 Ne vo ket enrollet ar c'hemmoù e-keit ha ne vo ket bet pouezet war ar bouton dindan.",
 	'translate-magic-form'              => 'Yezh $1 Modulenn : $2 $3',
 	'translate-magic-submit'            => 'Mont',
@@ -4275,7 +4275,7 @@ $messages['tg-cyrl'] = array(
 	'translate-ignored'                 => '(нодида гирифташуда)',
 	'translate-edit-definition'         => 'Таърифи пайғом',
 	'translate-edit-contribute'         => 'ҳиссагузорӣ',
-	'translate-edit-no-information'     => "''Ин пайғом дорои тавзеҳот нест. 
+	'translate-edit-no-information'     => "''Ин пайғом дорои тавзеҳот нест.
 Агар шумо медонед ин пағом чигуна ё дар куҷо истифода мешавад, шумо метавонед бо изофа кардани тавзеҳот ба ин пайғом ба дигар тарҷумакунандагон кӯмак кунед.''",
 	'translate-edit-information'        => 'Иттилоот дар мавриди ин пайғом ($1)',
 	'translate-edit-in-other-languages' => 'Ҳамин пайғом дар дигар забонҳо',
@@ -4352,14 +4352,14 @@ $messages['th'] = array(
 
 ในตัวแปรพิเศษ กรุณาใส่คำแปลภาษาอังกฤษไปด้วยเช่นเดียวกัน มิฉะนั้นมันจะหยุดทำงาน กรุณาเว้นอันแรก (0 หรือ 1) อย่างที่มันเป็น
 
-ชื่อหน้าพิเศษและตัวแปรพิเศษสามารถมีคำแปลได้หลายอย่าง 
-คำแปลจะแยกโดยการใช้ จุลภาค (,) 
+ชื่อหน้าพิเศษและตัวแปรพิเศษสามารถมีคำแปลได้หลายอย่าง
+คำแปลจะแยกโดยการใช้ จุลภาค (,)
 ชื่อแบบหน้าตาและเนมสเปซสามารถมีคำแปลได้แค่คำเดียว
 
-ในคำแปลชื่อเนมสเปซ <tt>คุยเรื่อง$1</tt> ต้องระวังเป็นพิเศษ <tt>$1</tt> จะถูกแทนที่โดยชื่อเว็บไซต์ (เช่น <tt>คุยเรื่อง{{SITENAME}}</tt>) 
+ในคำแปลชื่อเนมสเปซ <tt>คุยเรื่อง$1</tt> ต้องระวังเป็นพิเศษ <tt>$1</tt> จะถูกแทนที่โดยชื่อเว็บไซต์ (เช่น <tt>คุยเรื่อง{{SITENAME}}</tt>)
 ถ้าไม่สามารถกระทำการดังกล่าวได้ในภาษาของคุณ, กรุณาติดต่อผู้ดูแลระบบขั้นสูง
 
-คุณต้องอยู่ในกลุ่มคนแปลเพื่อที่จะบันทึกข้อมูลได้ 
+คุณต้องอยู่ในกลุ่มคนแปลเพื่อที่จะบันทึกข้อมูลได้
 ข้อมูลจะไม่ถูกบันทึกตราบใดที่คุณยังไม่กด "บันทึก"',
 	'translate-magic-form'              => 'ภาษา: $1 Module: $2 $3',
 	'translate-magic-submit'            => 'ดึงข้อมูล',
@@ -4987,4 +4987,3 @@ $messages['zh-hant'] = array(
 	'translate-checks-xhtml'            => '請修正以下的標籤：<strong>$1</strong>',
 	'translate-checks-plural'           => '原始訊息使用於<nowiki>{{PLURAL:}}</nowiki>中，並沒有用於翻譯。',
 );
-

@@ -9,7 +9,6 @@ if (!defined('MEDIAWIKI')) die();
  * @file
  */
 
-
 class WikiExtensionFormatReader extends WikiFormatReader {
 	public function parseSections( $var ) {
 		if ( $this->filename === false ) {
@@ -178,5 +177,4 @@ class WikiExtensionFormatWriter extends WikiFormatWriter {
 
 	// Inherit
 	#protected function writeMessagesBlock( $handle, $messages );
-
 }

@@ -15,7 +15,6 @@ if (!defined('MEDIAWIKI')) die();
  * @file
  */
 
-
 class WikiFormatReader extends SimpleFormatReader {
 	// Set by creater
 	public $variableName = 'messages';
@@ -199,5 +198,4 @@ HEADER
 		fwrite( $handle, $quote . $value . $quote );
 		fwrite( $handle, ",\n" );
 	}
-
 }

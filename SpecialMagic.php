@@ -1,4 +1,5 @@
 <?php
+if (!defined('MEDIAWIKI')) die();
 
 /**
  * This special page helps with the translations of MediaWiki features that are

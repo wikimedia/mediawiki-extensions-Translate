@@ -1,4 +1,5 @@
 <?php
+if (!defined('MEDIAWIKI')) die();
 
 class StringMangler {
 	protected $manglers;

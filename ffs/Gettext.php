@@ -1,9 +1,10 @@
 <?php
-
+if (!defined('MEDIAWIKI')) die();
 /**
  * Parses a po file that has been exported from Mediawiki. Other files are not
  * supported.
  */
+
 class GettextFormatHandler {
 
 	public function __construct( $file ) {
@@ -185,8 +186,5 @@ HEADER
 		$messages = array();
 		require( $filename );
 		return $messages;
-		
 	}
-
-
 }

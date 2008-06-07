@@ -1,4 +1,5 @@
 <?php
+if (!defined('MEDIAWIKI')) die();
 /**
  * Imports po files exported from Special:Translate back.
  *
@@ -251,6 +252,5 @@ class WikiWriter {
 		} else {
 			echo "Failed!\n";
 		}
-
 	}
 }

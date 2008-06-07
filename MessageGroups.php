@@ -1,4 +1,5 @@
 <?php
+if (!defined('MEDIAWIKI')) die();
 
 abstract class MessageGroup {
 	/**
@@ -438,6 +439,38 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 			$this->classes = array();
 			$classes = MessageGroups::singleton()->getGroups();
 			foreach ( $this->wmfextensions as $key ) {
+				$this->classes[$key] = $classes[$key];
+			}
+		}
+	}
+}
+
+class AllFlaggedRevsExtensionsGroup extends AllMediawikiExtensionsGroup {
+	protected $fileExporter = null;
+	protected $label = 'All FlaggedRevs messages';
+	protected $id    = 'ext-0-flaggedrevs';
+	protected $meta  = true;
+
+	protected $classes = null;
+
+	protected $flaggedrevsextensions = array(
+		'ext-fr-flaggedrevs',
+		'ext-fr-depreciationoversight',
+		'ext-fr-flaggedrevsaliases',
+		'ext-fr-oldreviewedpages',
+		'ext-fr-qualityoversight',
+		'ext-fr-reviewedpages',
+		'ext-fr-stabilization',
+		'ext-fr-stablepages',
+		'ext-fr-stableversions',
+		'ext-fr-unreviewedpages',
+	);
+
+	protected function init() {
+		if ( $this->classes === null ) {
+			$this->classes = array();
+			$classes = MessageGroups::singleton()->getGroups();
+			foreach ( $this->flaggedrevsextensions as $key ) {
 				$this->classes[$key] = $classes[$key];
 			}
 		}

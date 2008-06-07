@@ -1,4 +1,5 @@
 <?php
+if (!defined('MEDIAWIKI')) die();
 
 class PremadeMediawikiExtensionGroups {
 	protected $groups;
@@ -52,7 +53,7 @@ class PremadeMediawikiExtensionGroups {
 				$groups[] = $newgroup;
 			}
 		}
-		
+
 
 		foreach ( $groups as $g ) {
 			if ( !is_array($g) ) {

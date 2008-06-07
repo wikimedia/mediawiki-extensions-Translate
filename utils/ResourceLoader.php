@@ -1,4 +1,5 @@
 <?php
+if (!defined('MEDIAWIKI')) die();
 
 class ResourceLoader {
 
@@ -10,5 +11,4 @@ class ResourceLoader {
 			return isset( $$_variable ) ? $$_variable : null;
 		}
 	}
-
 }

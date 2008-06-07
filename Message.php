@@ -292,5 +292,4 @@ class TMessage {
 			return false;
 		}
 	}
-
 }

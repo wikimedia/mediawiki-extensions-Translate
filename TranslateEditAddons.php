@@ -188,6 +188,4 @@ class TranslateEditAddons {
 		TranslateUtils::injectCSS();
 		return Xml::tags( 'div', array( 'class' => 'mw-sp-translate-edit-fields' ), implode("\n\n", $boxes) );
 	}
-
-
 }

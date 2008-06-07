@@ -88,6 +88,7 @@ $wgTranslateAC = array(
 'core-mostused'             => 'CoreMostUsedMessageGroup',
 'ext-0-all'                 => 'AllMediawikiExtensionsGroup',
 'ext-0-wikimedia'           => 'AllWikimediaExtensionsGroup',
+'ext-0-flaggedrevs'         => 'AllFlaggedRevsExtensionsGroup',
 'out-freecol'               => 'FreeColMessageGroup',
 'out-word2mediawikiplus'    => 'Word2MediaWikiPlusMessageGroup',
 );
