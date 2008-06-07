@@ -173,7 +173,6 @@ abstract class MessageGroup {
 	public static function factory( $label, $id ) {
 		return null;
 	}
-
 }
 
 class CoreMessageGroup extends MessageGroup {
@@ -233,7 +232,6 @@ class CoreMessageGroup extends MessageGroup {
 			ResourceLoader::loadVariableFromPHPFile( $file, 'messages' )
 		);
 	}
-
 }
 
 class ExtensionMessageGroup extends MessageGroup {
@@ -299,7 +297,6 @@ class ExtensionMessageGroup extends MessageGroup {
 		$writer->variableName = $this->getVariableName();
 		return $writer;
 	}
-
 }
 
 class CoreMostUsedMessageGroup extends CoreMessageGroup {
@@ -322,7 +319,6 @@ class CoreMostUsedMessageGroup extends CoreMessageGroup {
 		}
 		return $definitions;
 	}
-
 }
 
 class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
@@ -386,7 +382,6 @@ class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
 		}
 		return $bools;
 	}
-
 }
 
 class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
@@ -397,24 +392,32 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $classes = null;
 
 	protected $wmfextensions = array(
-		'ext-antispoof',
-		'ext-assertedit',
-		'ext-boardvote',
-		'ext-categorytree',
-		'ext-centralauth',
-		'ext-centralnotice',
-		'ext-checkuser',
+		'ext-inputbox', // used on all wikis by all users
 		'ext-cite',
 		'ext-citespecial',
+		'ext-newuserlog',
 		'ext-confirmedit',
 		'ext-confirmeditfancycaptcha',
-		'ext-crossnamespacelinks',
-		'ext-deletedcontribs',
+		'ext-categorytree',
 		'ext-dismissablesitenotice',
-		'ext-doublewiki',
 		'ext-expandtemplates',
+		'ext-parserfunctions',
+		'ext-crossnamespacelinks',
+		'ext-ogghandler',
+		'ext-imagemap',
+		'ext-labeledsectiontransclusion',
+		'ext-mwsearch',
+		'ext-linksearch',
+		'ext-sitematrix',
+		'ext-gadgets',
 		'ext-fixedimage',
-		'ext-fr-depreciationoversight',
+		'ext-centralauth',
+		'ext-syntaxhighlightgeshi', // limited UI use (Special:Version and errors in usage mostly)
+		'ext-timeline',
+		'ext-wikihiero',
+		'ext-oai',
+		'ext-poem',
+		'ext-fr-depreciationoversight', // used on some wikis by all users
 		'ext-fr-flaggedrevs',
 		'ext-fr-flaggedrevsaliases',
 		'ext-fr-oldreviewedpages',
@@ -424,36 +427,28 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-fr-stablepages',
 		'ext-fr-stableversions',
 		'ext-fr-unreviewedpages',
-		'ext-gadgets',
-		'ext-imagemap',
-		'ext-inputbox',
+		'ext-doublewiki',
 		'ext-intersection',
-		'ext-labeledsectiontransclusion',
-		'ext-linksearch',
-		'ext-mwsearch',
-		'ext-newuserlog',
-		'ext-nuke',
-		'ext-oai',
-		'ext-ogghandler',
-		'ext-oversight',
-		'ext-parserdifftest',
-		'ext-parserfunctions',
-		'ext-poem',
 		'ext-proofreadpage',
 		'ext-quiz',
-		'ext-renameuser',
 		'ext-scanset',
-		'ext-simpleantispam',
-		'ext-sitematrix',
 		'ext-skinperpage',
+		'ext-antispoof', // anti spam and such (usually all wikis)
 		'ext-spamblacklist',
-		'ext-syntaxhighlightgeshi',
-		'ext-timeline',
+		'ext-simpleantispam',
 		'ext-titleblacklist',
 		'ext-titlekey',
 		'ext-torblock',
 		'ext-usernameblacklist',
-		'ext-wikihiero',
+		'ext-deletedcontribs', // sysop or higher only
+		'ext-checkuser',
+		'ext-nuke',
+		'ext-oversight',
+		'ext-renameuser',
+		'ext-assertedit', // bots
+		'ext-centralnotice', // used rarely
+		'ext-parserdifftest', // used rarely (still needed?)
+		'ext-boardvote', // used rarely
 	);
 
 	protected function init() {
@@ -504,7 +499,6 @@ class Word2MediaWikiPlusMessageGroup extends ExtensionMessageGroup {
 	protected $messageFile = 'Translate/external/Word2MediaWikiPlus/Word2MediaWikiPlus.i18n.php';
 }
 
-
 class FreeColMessageGroup extends MessageGroup {
 	protected $label = 'FreeCol (open source game)';
 	protected $id    = 'out-freecol';
@@ -553,7 +547,6 @@ class FreeColMessageGroup extends MessageGroup {
 	public function getWriter() {
 		return new JavaFormatWriter( $this );
 	}
-
 }
 
 class GettextMessageGroup extends MessageGroup {
@@ -601,7 +594,6 @@ class GettextMessageGroup extends MessageGroup {
 	public function getWriter() {
 		return new GettextFormatWriter( $this );
 	}
-
 }
 
 class WikiMessageGroup extends MessageGroup {
@@ -655,7 +647,6 @@ class WikiMessageGroup extends MessageGroup {
 		$message = wfMsgExt( $key, $params );
 		return wfEmptyMsg( $key, $message ) ? null : $message;
 	}
-
 }
 
 class MessageGroups {
