@@ -127,23 +127,21 @@ foreach ( $languages as $code => $name ) {
 
 	foreach ( $groups as $g ) {
 		// Initialise messages
-		$messages = new MessageCollection( $code );
-		$definitions = $g->getDefinitions();
-		foreach ( $definitions as $key => $definition ) {
-			$messages->add( new TMessage( $key, $definition ) );
-		}
+		$messages = $g->initCollection( $code );
 
-		$bools = $g->getBools();
-		foreach ( array_merge($bools['ignored'], $bools['optional']) as $key ) {
-			unset($messages[$key]);
+		foreach ( $messages->keys() as $key ) {
+			if ( $messages[$key]->optional ) {
+				unset( $messages[$key] );
+			} elseif( $messages[$key]->ignored ) {
+				unset( $messages[$key] );
+			}
 		}
 
 		// Store the count of real messages for later calculation.
 		$total = count( $messages );
 
 		// Get all translations. Could this be done more efficient?
-		TranslateUtils::fillContents( $messages );
-		$g->fill( $messages );
+		$g->fillCollection( $messages );
 
 		// Remove untranslated messages from the list
 		foreach ( $messages->keys() as $key ) {
