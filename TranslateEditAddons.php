@@ -161,13 +161,9 @@ class TranslateEditAddons {
 			);
 		}
 
-		// Current committed translation
-		// Should this be higher up, because it's not as importad as definition for example
 		if ( $xx !== null && $code !== 'en' ) {
-			//$boxes[] = self::dobox( $xx, $code, wfMsg( self::MSG . 'committed' ) );
-
 			// Append translation from the file to edit area, if it's empty.
-			if ($object->firsttime && $object->textbox1 === '') {
+			if ($object->firsttime && $object->textbox1 === null ) {
 				$object->textbox1 = $xx;
 			}
 		}
@@ -194,4 +190,6 @@ class TranslateEditAddons {
 		TranslateUtils::injectCSS();
 		return Xml::tags( 'div', array( 'class' => 'mw-sp-translate-edit-fields' ), implode("\n\n", $boxes) );
 	}
+
+
 }
