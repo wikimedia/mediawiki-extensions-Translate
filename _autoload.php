@@ -27,6 +27,8 @@ $wgAutoloadClasses['TranslateEditAddons'] = $dir . 'TranslateEditAddons.php';
 $wgAutoloadClasses['languages'] = $IP . '/maintenance/language/languages.inc';
 $wgAutoloadClasses['MessageWriter'] = $IP . '/maintenance/language/writeMessagesArray.inc';
 
+$wgAutoloadClasses['TranslateRcFilter'] = $dir . 'RcFilter.php';
+
 $wgAutoloadClasses['SpecialTranslate'] = $dir . 'TranslatePage.php';
 $wgAutoloadClasses['SpecialMagic'] = $dir . 'SpecialMagic.php';
 $wgAutoloadClasses['SpecialTranslationChanges'] = $dir . 'SpecialTranslationChanges.php';

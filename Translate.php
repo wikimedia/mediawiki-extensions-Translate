@@ -34,6 +34,8 @@ $wgSpecialPages['TranslationChanges'] = 'SpecialTranslationChanges';
 
 $wgHooks['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';
 $wgHooks['UserToggles'][] = 'TranslatePreferences::TranslateUserToggles';
+$wgHooks['SpecialRecentChangesQuery'][] = 'TranslateRcFilter::translationFilter';
+$wgHooks['SpecialRecentChangesPanel'][] = 'TranslateRcFilter::translationFilterForm';
 
 $wgAvailableRights[] = 'translate';
 
