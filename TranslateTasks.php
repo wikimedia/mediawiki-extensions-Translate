@@ -94,25 +94,6 @@ abstract class TranslateTask {
 		$callback = $this->options->getPagingCB();
 		call_user_func( $callback, $this->options->getOffset(), count( $this->messages ), $total );
 	}
-
-	protected function getAuthors() {
-		$authors = array();
-		foreach ( $this->messages->keys() as $key ) {
-			// Check if there is authors
-			$_authors = $this->messages[$key]->authors;
-			if ( !count($_authors) ) continue;
-
-			foreach ( $_authors as $author ) {
-				if ( !isset($authors[$author]) ) {
-					$authors[$author] = 1;
-				} else {
-					$authors[$author]++;
-				}
-			}
-		}
-		return $authors;
-	}
-
 }
 
 class ViewMessagesTask extends TranslateTask {
@@ -293,23 +274,11 @@ class ExportMessagesTask extends ViewMessagesTask {
 		);
 	}
 
-	protected function getAuthorsArray() {
-		global $wgTranslateFuzzyBotName;
-		$_authors = $this->getAuthors();
-		arsort( $_authors, SORT_NUMERIC );
-		foreach ( $_authors as $author => $edits ) {
-			if ( $author !== $wgTranslateFuzzyBotName ) {
-				$authors[] = $author;
-			}
-		}
-		return isset($authors) ? $authors : array();
-	}
 
 	public function output() {
 		$writer = $this->messageGroup->getWriter();
-		$writer->addAuthors( $this->getAuthorsArray(), $this->options->getLanguage() );
 		$data = $writer->webExport( $this->messages );
-
+		
 		return Xml::openElement( 'textarea', array( 'id' => 'wpTextbox1', 'rows' => '50' ) ) .
 			$data .
 			"</textarea>";
@@ -325,7 +294,6 @@ class ExportToFileMessagesTask extends ExportMessagesTask {
 
 	public function output() {
 		$writer = $this->messageGroup->getWriter();
-		$writer->addAuthors( $this->getAuthorsArray(), $this->options->getLanguage() );
 		return $writer->webExport( $this->messages );
 	}
 }

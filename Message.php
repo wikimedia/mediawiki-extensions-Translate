@@ -157,6 +157,33 @@ class MessageCollection implements Iterator, ArrayAccess, Countable {
 		throw new MWException( __METHOD__ . ": Trying to modify unknown property $name" );
 	}
 
+	public function getAuthors() {
+		global $wgTranslateFuzzyBotName;
+
+		$authors = array();
+		foreach ( $this->keys() as $key ) {
+			// Check if there is authors
+			$_authors = $this->messages[$key]->authors;
+			if ( !count($_authors) ) continue;
+
+			foreach ( $_authors as $author ) {
+				if ( !isset($authors[$author]) ) {
+					$authors[$author] = 1;
+				} else {
+					$authors[$author]++;
+				}
+			}
+		}
+
+		arsort( $authors, SORT_NUMERIC );
+		foreach ( $authors as $author => $edits ) {
+			if ( $author !== $wgTranslateFuzzyBotName ) {
+				$filteredAuthors[] = $author;
+			}
+		}
+		return isset($filteredAuthors) ? $filteredAuthors : array();
+	}
+
 }
 
 class TMessage {

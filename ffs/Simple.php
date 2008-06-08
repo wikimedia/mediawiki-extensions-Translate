@@ -159,6 +159,7 @@ class SimpleFormatWriter {
 
 		$tHandle = fopen( 'php://temp', 'wt' );
 
+		$this->addAuthors( $MG->getAuthors(), $MG->code );
 		$this->exportLanguage( $tHandle, $MG->code, $messages );
 
 		rewind( $tHandle );
@@ -177,6 +178,7 @@ class SimpleFormatWriter {
 		}
 
 		$this->group->fillCollection( $messages );
+		$this->addAuthors( $messages->getAuthors(), $code );
 		return $this->makeExportArray( $messages );
 	}
 
