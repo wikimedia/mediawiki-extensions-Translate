@@ -3470,6 +3470,9 @@ $messages['pl'] = array(
 	'translate-page-no-such-language'   => 'Podano nieprawidłowy język.',
 	'translate-page-no-such-task'       => 'Podano nieprawidłowe zadanie.',
 	'translate-page-no-such-group'      => 'Podano nieprawidłową grupę.',
+	'translate-page-disabled'           => "Tłumaczenia na ten język, w tej grupie, zostały wstrzymane z następującego powodu:
+
+''$1''",
 	'translate-page-settings-legend'    => 'Ustawienia',
 	'translate-page-task'               => 'Chcę',
 	'translate-page-group'              => 'Grupa',
@@ -3589,6 +3592,7 @@ $messages['ps'] = array(
 	'translate-page-limit'              => 'بريد',
 	'translate-page-limit-option'       => '$1 {{PLURAL:$1|پيغام|پيغامونه}} په يوه مخ کې',
 	'translate-submit'                  => 'راغونډول',
+	'translate-page-navigation-legend'  => 'ګرځښت',
 	'translate-page-description-legend' => 'د ډلې په اړه مالومات',
 	'translate-edit-contribute'         => 'ونډه اخيستل',
 	'translate-edit-information'        => 'د همدې پيغام په اړه مالومات ($1)',
@@ -4987,3 +4991,4 @@ $messages['zh-hant'] = array(
 	'translate-checks-xhtml'            => '請修正以下的標籤：<strong>$1</strong>',
 	'translate-checks-plural'           => '原始訊息使用於<nowiki>{{PLURAL:}}</nowiki>中，並沒有用於翻譯。',
 );
+
