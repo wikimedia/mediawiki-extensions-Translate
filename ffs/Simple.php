@@ -122,6 +122,7 @@ class SimpleFormatWriter {
 		}
 
 		$this->authors[$code] += $authors;
+		$this->authors[$code] = array_unique($this->authors[$code]);
 	}
 
 	public function load( $code ) {
