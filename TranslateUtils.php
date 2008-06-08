@@ -179,6 +179,8 @@ class TranslateUtils {
 
 	public static function translationChanges( $hours = 24 ) {
 		wfMemIn( __METHOD__ );
+		global $wgTranslateMessageNamespaces;
+
 		$dbr = wfGetDB( DB_SLAVE );
 		$recentchanges = $dbr->tableName( 'recentchanges' );
 		$hours = intval( $hours );
@@ -186,11 +188,13 @@ class TranslateUtils {
 		#$cutoff_unixtime = $cutoff_unixtime - ($cutoff_unixtime % 86400);
 		$cutoff = $dbr->timestamp( $cutoff_unixtime );
 
-		$fields = 'rc_title, rc_timestamp, rc_user_text';
+		$namespaces = $dbr->makeList( $wgTranslateMessageNamespaces );
+
+		$fields = 'rc_title, rc_timestamp, rc_user_text, rc_namespace';
 
 		$sql = "SELECT $fields, substring_index(rc_title, '/', -1) as lang FROM $recentchanges " .
 		"WHERE rc_timestamp >= '{$cutoff}' " .
-		"AND rc_namespace = 8 " .
+		"AND rc_namespace in ($namespaces) " .
 		"ORDER BY lang ASC, rc_timestamp DESC";
 
 		$res = $dbr->query( $sql, __METHOD__ );

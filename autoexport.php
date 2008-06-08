@@ -61,9 +61,11 @@ foreach ( $rows as $row ) {
 	$group = false;
 	$code = false;
 
-	$pieces = explode('/', $wgContLang->lcfirst($row->rc_title), 2);
+	list( $pieces, ) = explode('/', $wgContLang->lcfirst($row->rc_title), 2);
 
-	$mg = @$index[strtolower($pieces[0])];
+	$key = strtolower( $row->rc_namespace . ':' . $pieces );
+
+	$mg = @$index[$key];
 	if ( !is_null($mg) ) $group = $mg;
 
 	if ( strpos( $row->rc_title, '/' ) !== false ) {
