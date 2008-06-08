@@ -81,25 +81,10 @@ class PoImporter {
 	 * @return MessageCollection
 	 */
 	protected function initMessages( $id, $code ) {
-		$messages = new MessageCollection( $code );
 		$group = MessageGroups::getGroup( $id );
 
-		$definitions = $group->getDefinitions();
-		foreach ( $definitions as $key => $definition ) {
-			$messages->add( new TMessage( $key, $definition ) );
-		}
-
-		$bools = $group->getBools();
-		foreach ( $bools['optional'] as $key ) {
-			if ( isset($messages[$key]) ) { $messages[$key]->optional = true; }
-		}
-		foreach ( $bools['ignored'] as $key ) {
-			if ( isset($messages[$key]) ) { $messages[$key]->ignored = true; }
-		}
-
-		$messages->populatePageExistence();
-		$messages->populateTranslationsFromDatabase();
-		$group->fill( $messages );
+		$messages = $group->initCollection( $code );
+		$group->fillCollection( $messages );
 
 		return $messages;
 	}
