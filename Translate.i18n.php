@@ -870,14 +870,17 @@ $messages['de'] = array(
 	'translate-page-task'               => 'Aufgabe',
 	'translate-page-group'              => 'Gruppe',
 	'translate-page-language'           => 'Sprache',
+	'translate-page-limit'              => 'Limit',
 	'translate-page-limit-option'       => '$1 {{PLURAL:$1|Systemnachricht|Systemnachrichten}} pro Seite',
 	'translate-submit'                  => 'Hole',
+	'translate-page-navigation-legend'  => 'Navigation',
 	'translate-page-showing'            => 'Systemnachrichten $1 bis $2 von insgesamt $3.',
 	'translate-page-showing-all'        => '$1 {{PLURAL:$1|Systemnachricht|Systemnachrichten}}.',
 	'translate-page-showing-none'       => 'Keine Systemnachrichten zur Anzeige vorhanden.',
 	'translate-next'                    => 'Nächste Seite',
 	'translate-prev'                    => 'Vorherige Seite',
 	'translate-page-description-legend' => 'Informationen über diese Gruppe',
+	'translate-optional'                => '(optional)',
 	'translate-ignored'                 => '(ignoriert)',
 	'translate-edit-definition'         => 'Systemnachricht im Original',
 	'translate-edit-contribute'         => 'bearbeiten',
@@ -918,6 +921,10 @@ Du musst in der Übersetzer-Gruppe sein, um Änderungen zu speichern. Änderunge
 	'translate-checks-plural'           => 'Das Original benutzt <nowiki>{{PLURAL:}}</nowiki>, die Übersetzung aber nicht.',
 	'tog-translate-nonewsletter'        => 'Sende mir keine E-Mail-Newsletter zu (nur für Benutzer für bestätigten E-Mail-Adressen relevant)',
 	'right-translate'                   => 'Benutzung des Übersetzen-Interfaces',
+	'translate-rc-translation-filter'        => 'Übersetzungen filtern:',
+	'translate-rc-translation-filter-no'     => 'nichts',
+	'translate-rc-translation-filter-only'   => 'Zeige nur Übersetzungen',
+	'translate-rc-translation-filter-filter' => 'Übersetzungen filtern',
 );
 
 /** Lower Sorbian (Dolnoserbski)
