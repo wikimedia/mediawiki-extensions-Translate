@@ -115,6 +115,7 @@ Changes are not saved until you click save button below.',
 	'translate-rc-translation-filter-no' => 'Do nothing',
 	'translate-rc-translation-filter-only' => 'Show translations only',
 	'translate-rc-translation-filter-filter' => 'Filter out translations',
+	'translate-rc-translation-filter-site' => 'Changes to site messages only',
 );
 
 /** Karelian (Karjala)

@@ -22,7 +22,8 @@ class SimpleFormatReader {
 		}
 	}
 
-	protected $authors, $staticHeader;
+	protected $authors = array();
+	protected $staticHeader = '';
 
 	public function parseAuthors() {
 		if ( $this->authors === null ) {
@@ -40,7 +41,7 @@ class SimpleFormatReader {
 
 	protected function parseHeader() {
 		if ( $this->filename === false ) {
-			return '';
+			return;
 		}
 
 		$authors = array();

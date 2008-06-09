@@ -19,10 +19,13 @@ class TranslateRcFilter {
 
 		if ( $translations === 'only' ) {
 			$conds[] = 'rc_namespace IN (' . $dbr->makeList($namespaces) . ')';
+			$conds[] = 'rc_title like \'%%/%%\'';
 		} elseif ( $translations === 'filter' ) {
 			$conds[] = 'rc_namespace NOT IN (' . $dbr->makeList($namespaces) . ')';
+		} elseif ( $translations === 'site' ) {
+			$conds[] = 'rc_namespace IN (' . $dbr->makeList($namespaces) . ')';
+			$conds[] = 'rc_title not like \'%%/%%\'';
 		}
-
 		return true;
 	}
 
@@ -38,6 +41,7 @@ class TranslateRcFilter {
 		$select->addOption( wfMsg( 'translate-rc-translation-filter-no' ), '' );
 		$select->addOption( wfMsg( 'translate-rc-translation-filter-only' ), 'only' );
 		$select->addOption( wfMsg( 'translate-rc-translation-filter-filter' ), 'filter' );
+		$select->addOption( wfMsg( 'translate-rc-translation-filter-site' ), 'site' );
 
 		$items['translations'] = array( $label, $select->getHTML() );
 		return true;
