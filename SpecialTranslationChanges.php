@@ -64,10 +64,11 @@ class SpecialTranslationChanges extends SpecialPage {
 		$index = TranslateUtils::messageIndex();
 		$batch = new LinkBatch;
 		foreach ( $rows as $row ) {
-			$pieces = explode('/', $wgContLang->lcfirst($row->rc_title), 2);
+			list( $pieces, ) = explode('/', $wgContLang->lcfirst($row->rc_title), 2);
 
+			$key = strtolower($row->rc_namespace. ':' . $pieces);
 			$group = 'Unknown';
-			$mg = @$index[strtolower($pieces[0])];
+			$mg = @$index[$key];
 			if ( !is_null($mg) ) $group = $mg;
 
 			$lang = 'site';

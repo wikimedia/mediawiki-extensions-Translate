@@ -11,7 +11,7 @@ if (!defined('MEDIAWIKI')) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '8.44' );
+define( 'TRANSLATE_VERSION', '8.45' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name'           => 'Translate',
@@ -31,6 +31,7 @@ $wgExtensionMessagesFiles['Translate'] = $dir . 'Translate.i18n.php';
 $wgSpecialPages['Translate'] = 'SpecialTranslate';
 $wgSpecialPages['Magic'] = 'SpecialMagic';
 $wgSpecialPages['TranslationChanges'] = 'SpecialTranslationChanges';
+$wgSpecialPageGroups['TranslationChanges'] = 'changes';
 
 $wgHooks['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';
 $wgHooks['UserToggles'][] = 'TranslatePreferences::TranslateUserToggles';
