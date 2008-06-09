@@ -111,10 +111,10 @@ Changes are not saved until you click save button below.',
 	'tog-translate-nonewsletter' => 'Do not send me e-mail newsletters (relevant only for users with a confirmed e-mailaddress)',
 	'right-translate'            => 'Edit using the translate interface',
 
-	'translate-rc-translation-filter' => 'Translations:',
+	'translate-rc-translation-filter' => 'Filter translations:',
 	'translate-rc-translation-filter-no' => 'Do nothing',
-	'translate-rc-translation-filter-only' => 'Only',
-	'translate-rc-translation-filter-filter' => 'Filter',
+	'translate-rc-translation-filter-only' => 'Show translations only',
+	'translate-rc-translation-filter-filter' => 'Filter out translations',
 );
 
 /** Karelian (Karjala)
