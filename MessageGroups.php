@@ -587,7 +587,7 @@ class FreeColMessageGroup extends MessageGroup {
 		'freecol-newColonyName.4.21', 'freecol-newColonyName.4.22', 'freecol-newColonyName.4.23', 
 		'freecol-newColonyName.4.24', 'freecol-newColonyName.4.25', 'freecol-newColonyName.4.26',
 		'freecol-newColonyName.4.27', 'freecol-newColonyName.4.28', 'freecol-newColonyName.4.29',
-		'freecol-model.nation.Portuguese', 'freecol-model.nation.Portuguese.Europe',
+		'freecol-model.nation.Portuguese.Europe',
 		'freecol-model.nation.Portuguese.ruler', 'freecol-model.nation.refPortuguese.ruler',
 		'freecol-model.nation.Dutch.ruler', 'freecol-model.nation.English.ruler', 'freecol-model.nation.French.ruler',
 		'freecol-model.nation.Spanish.ruler', 'freecol-model.nation.Inca.ruler', 'freecol-model.nation.Aztec.ruler',
