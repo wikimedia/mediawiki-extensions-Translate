@@ -122,7 +122,7 @@ class SimpleFormatWriter {
 			$this->authors[$code] = array();
 		}
 
-		$this->authors[$code] += $authors;
+		$this->authors[$code] = wfArrayMerge($this->authors[$code], $authors);
 		$this->authors[$code] = array_unique($this->authors[$code]);
 	}
 
