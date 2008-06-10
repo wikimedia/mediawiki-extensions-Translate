@@ -603,6 +603,15 @@ class FreeColMessageGroup extends MessageGroup {
 		'freecol-foundingFather.thomasPaine.birthAndDeath', 'freecol-foundingFather.simonBolivar.birthAndDeath', 'freecol-foundingFather.benjaminFranklin.birthAndDeath',
 		'freecol-foundingFather.williamBrewster.birthAndDeath', 'freecol-foundingFather.williamPenn.birthAndDeath', 'freecol-foundingFather.fatherJeanDeBrebeuf.birthAndDeath',
 		'freecol-foundingFather.juanDeSepulveda.birthAndDeath', 'freecol-foundingFather.bartolomeDeLasCasas.birthAndDeath',
+		'freecol-foundingFather.adamSmith.name', 'freecol-foundingFather.jacobFugger.name', 'freecol-foundingFather.peterMinuit.name',
+		'freecol-foundingFather.peterStuyvesant.name', 'freecol-foundingFather.janDeWitt.name', 'freecol-foundingFather.ferdinandMagellan.name',
+		'freecol-foundingFather.franciscoDeCoronado.name', 'freecol-foundingFather.hernandoDeSoto.name', 'freecol-foundingFather.henryHudson.name',
+		'freecol-foundingFather.laSalle.name', 'freecol-foundingFather.hernanCortes.name', 'freecol-foundingFather.georgeWashington.name',
+		'freecol-foundingFather.paulRevere.name', 'freecol-foundingFather.francisDrake.name', 'freecol-foundingFather.johnPaulJones.name',
+		'freecol-foundingFather.thomasJefferson.name', 'freecol-foundingFather.pocahontas.name', 'freecol-foundingFather.thomasPaine.name',
+		'freecol-foundingFather.simonBolivar.name', 'freecol-foundingFather.benjaminFranklin.name', 'freecol-foundingFather.williamBrewster.name',
+		'freecol-foundingFather.williamPenn.name', 'freecol-foundingFather.fatherJeanDeBrebeuf.name', 'freecol-foundingFather.juanDeSepulveda.name',
+		'freecol-foundingFather.bartolomeDeLasCasas.name',
 	);
 
 	public function __construct() {
