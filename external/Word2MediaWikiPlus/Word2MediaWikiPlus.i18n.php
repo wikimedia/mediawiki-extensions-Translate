@@ -2078,6 +2078,7 @@ $messages['sv'] = array(
 	'msg_ConvertTableStyleParagraphFrames'   => 'Tabellstil (avsnitt - ramar)',
 	'msg_ConvertTabTables'                   => 'Konvertera tabeller gjorda från flikar',
 	'msg_ConvertParagraphsFrame'             => 'Paragrafer',
+	'msg_ConvertFirstLineIndents'            => 'Konvertera indrag i första raden',
 	'msg_ConvertNewParagraphs'               => 'Gör nya avsnitt med <br />:er',
 	'msg_Convert'                            => 'Konvertera',
 	'msg_ImagesOnly'                         => 'Endast bilder',
