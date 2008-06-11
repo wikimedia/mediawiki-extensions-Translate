@@ -192,10 +192,43 @@ $messages['af'] = array(
 );
 
 /** Arabic (العربية)
+ * @author Meno25
  * @author OsamaK
  */
 $messages['ar'] = array(
-	'msg_Never' => 'أبدا',
+	'wikiCategoryKeyWord'      => 'تصنيف',
+	'categoryImagePreFix'      => 'صور',
+	'wikiUploadTitle'          => 'رفع',
+	'clickChartText'           => 'اضغط على!',
+	'txt_TitlePage'            => 'صفحة العنوان',
+	'txt_PageHeader'           => 'رأس الصفحة',
+	'txt_PageFooter'           => 'ذيل الصفحة',
+	'msg_NoDocumentLoaded'     => 'لا وثيقة تم تحميلها',
+	'msg_LoadDocument'         => 'من فضلك حمل الوثيقة للتحويل.',
+	'msg_SimpleTab'            => 'بسيط',
+	'msg_ArticleName'          => 'اسم مقال',
+	'msg_TargetWikiFrame'      => 'ويكي مستهدف',
+	'msg_TestSystem'           => 'نظام اختبار',
+	'msg_ProdSystem'           => 'نظام الإنتاج',
+	'msg_CategoryFrame'        => 'تصنيف',
+	'msg_ArticleCategory'      => 'تصنيف مقال',
+	'msg_ImageCategory'        => 'تصنيف صورة',
+	'msg_ImageUpload'          => 'رفع صور',
+	'msg_ImageUseFrames'       => 'استخدم الأطر',
+	'msg_Always'               => 'دائما',
+	'msg_Never'                => 'أبدا',
+	'msg_AsInDocument'         => 'كما في الوثيقة',
+	'msg_ImageSizeFrame'       => 'حجم الصورة',
+	'msg_ImageFullSize'        => 'استخدم الحجم الكامل',
+	'msg_ImageDocumentSize'    => 'استخدم حجم الوثيقة',
+	'msg_ImageMaxWidthFrame'   => 'عرض الصورة الأقصى',
+	'msg_ConvertFontSize'      => 'حول حجم الخط',
+	'msg_ConvertComments'      => 'حول التعليقات',
+	'msg_ConvertTablesFrame'   => 'جداول',
+	'msg_ConvertHeadingsFrame' => 'عناوين',
+	'msg_Convert'              => 'تحويل',
+	'msg_ImagesOnly'           => 'صور فقط',
+	'msg_Cancel'               => 'إلغاء',
 );
 
 /** Kotava (Kotava)
@@ -854,14 +887,21 @@ $messages['hil'] = array(
 
 /** Indonesian (Bahasa Indonesia)
  * @author Irwangatot
+ * @author Rex
  */
 $messages['id'] = array(
 	'wikiSearchTitle'            => 'Pencarian -',
 	'wikiCategoryKeyWord'        => 'kategori',
 	'categoryImagePreFix'        => 'Berkas',
 	'wikiUploadTitle'            => 'Pemuatan',
+	'clickChartText'             => 'klik di sini!',
+	'unableToConvertMarker'      => '## Gagal mengkonversi ##:',
 	'txt_TitlePage'              => 'Judul',
+	'txt_PageHeader'             => 'Kepala halaman',
+	'txt_PageFooter'             => 'Kaki halaman',
 	'txt_Footnote'               => 'Catatan kaki',
+	'msg_Upload_Info'            => "Pemuatan berkas akan dimulai. Sebelum Anda memulai Anda perlu mengeset penjelajah web right:\\r\\n1. Tutup semua ''sidebar'' seperti ''favorites''.\\r\\n2. Masuk log ke wiki Anda.\\r\\n\\Jangan klik ok sebelum Anda memeriksa ini.",
+	'msg_Finished'               => "Konversi selesai. Anda dapat mempastakan isi ''clipboard'' ke editor wiki Anda.",
 	'msg_SimpleTab'              => 'Sederhana',
 	'msg_ArticleName'            => 'Nama Artikel',
 	'msg_TargetWikiFrame'        => 'Wiki Tujuan',
@@ -2080,6 +2120,13 @@ $messages['sv'] = array(
 	'msg_ConvertParagraphsFrame'             => 'Paragrafer',
 	'msg_ConvertFirstLineIndents'            => 'Konvertera indrag i första raden',
 	'msg_ConvertNewParagraphs'               => 'Gör nya avsnitt med <br />:er',
+	'msg_ConvertReplacePageBreaks'           => 'Ersätt sidbrytningar med horisontella linjer',
+	'msg_ConvertJustifiedText'               => 'Konvertera autojusterad text',
+	'msg_ConvertHeadingsFrame'               => 'Huvuden',
+	'msg_ConvertFirstLevelHeading'           => 'Första nivåns rubrik',
+	'msg_ConvertPageHeaders'                 => 'Konvertera sidhuvud',
+	'msg_ConvertPageFooters'                 => 'Konvertera sidfot',
+	'msg_ConvertTitlePage'                   => 'Sätt in text med sidans titel',
 	'msg_Convert'                            => 'Konvertera',
 	'msg_ImagesOnly'                         => 'Endast bilder',
 	'msg_Cancel'                             => 'Avbryt',

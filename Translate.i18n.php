@@ -785,7 +785,7 @@ $messages['cs'] = array(
 	'translate-submit'                  => 'Ukázat',
 	'translate-page-navigation-legend'  => 'Navigace',
 	'translate-page-showing'            => 'Zobrazeny zprávy $1 až $2 z $3.',
-	'translate-page-showing-all'        => '{{plural:$1|Zobrazena $1 zpráva|Zobrazeny $1 zprávy|Zobrazeno $1 zpráv}}.',
+	'translate-page-showing-all'        => '{{PLURAL:$1|Zobrazena $1 zpráva|Zobrazeny $1 zprávy|Zobrazeno $1 zpráv}}.',
 	'translate-page-showing-none'       => 'Požadavku neodpovídají žádné zprávy.',
 	'translate-next'                    => 'Další stránka',
 	'translate-prev'                    => 'Předchozí stránka',
@@ -1336,8 +1336,9 @@ $messages['fi'] = array(
 /** French (Français)
  * @author Grondin
  * @author Urhixidur
- * @author Seb35
  * @author Dereckson
+ * @author Seb35
+ * @author Verdy p
  * @author Sherbrooke
  * @author Siebrand
  * @author ChrisPtDe
@@ -1424,7 +1425,8 @@ Vous devez appartenir au groupe des traducteurs pour sauvegarder les changements
 	'translate-rc-translation-filter'        => 'Filtrer les traductions :',
 	'translate-rc-translation-filter-no'     => 'Ne rien faire',
 	'translate-rc-translation-filter-only'   => 'Afficher uniquement les traductions',
-	'translate-rc-translation-filter-filter' => 'Épurer les traductions',
+	'translate-rc-translation-filter-filter' => 'Éliminer les traductions',
+	'translate-rc-translation-filter-site'   => 'Seulement les changements de messages du site',
 );
 
 $messages['frc'] = array(
@@ -2460,51 +2462,51 @@ $messages['kk-arab'] = array(
  * @author Siebrand
  */
 $messages['kk-cyrl'] = array(
-	'translate'                         => 'Аудару',
-	'translate-desc'                    => 'MediaWiki дегенді және бұнан тыстарды аудару үшін арналған [[Special:Translate|арнайы бет]]',
-	'translate-edit'                    => 'өңдеу',
-	'translate-talk'                    => 'талқылау',
-	'translate-history'                 => 'тарихы',
-	'translate-task-view'               => 'барлық хабарын қарау',
-	'translate-task-untranslated'       => 'аударылмаған барлық хабарын қарау',
-	'translate-task-optional'           => 'міндетті емес хабарларын қарау',
-	'translate-task-review'             => 'өзгерістерін шолып шығу',
-	'translate-task-reviewall'          => 'барлық аудармаларын қарап шығу',
-	'translate-task-export'             => 'аудармаларын сыртқа беру',
-	'translate-task-export-to-file'     => 'аудармаларын файлмен сыртқа беру',
-	'translate-task-export-as-po'       => 'аудармаларын Gettext пішімімен сыртқа беру',
-	'translate-page-no-such-language'   => 'Келтірілген тіл жарамсыз',
-	'translate-page-no-such-task'       => 'Келтірілген тапсырма жарамсыз.',
-	'translate-page-no-such-group'      => 'Келтірілген топ жарамсыз.',
-	'translate-page-disabled'           => "Осы топтағы бұл тілге аударуы өшірілген. Себебі:
+	'translate'                              => 'Аудару',
+	'translate-desc'                         => 'MediaWiki дегенді және бұнан тыстарды аудару үшін арналған [[Special:Translate|арнайы бет]]',
+	'translate-edit'                         => 'өңдеу',
+	'translate-talk'                         => 'талқылау',
+	'translate-history'                      => 'тарихы',
+	'translate-task-view'                    => 'барлық хабарын қарау',
+	'translate-task-untranslated'            => 'аударылмаған барлық хабарын қарау',
+	'translate-task-optional'                => 'міндетті емес хабарларын қарау',
+	'translate-task-review'                  => 'өзгерістерін шолып шығу',
+	'translate-task-reviewall'               => 'барлық аудармаларын қарап шығу',
+	'translate-task-export'                  => 'аудармаларын сыртқа беру',
+	'translate-task-export-to-file'          => 'аудармаларын файлмен сыртқа беру',
+	'translate-task-export-as-po'            => 'аудармаларын Gettext пішімімен сыртқа беру',
+	'translate-page-no-such-language'        => 'Келтірілген тіл жарамсыз',
+	'translate-page-no-such-task'            => 'Келтірілген тапсырма жарамсыз.',
+	'translate-page-no-such-group'           => 'Келтірілген топ жарамсыз.',
+	'translate-page-disabled'                => "Осы топтағы бұл тілге аударуы өшірілген. Себебі:
 
 ''$1''",
-	'translate-page-settings-legend'    => 'Бапталымдар',
-	'translate-page-task'               => 'Талабым:',
-	'translate-page-group'              => 'Хабар тобы',
-	'translate-page-language'           => 'Тілі',
-	'translate-page-limit'              => 'Шектемі',
-	'translate-page-limit-option'       => 'бет сайын $1 хабар',
-	'translate-submit'                  => 'Келтір!',
-	'translate-page-navigation-legend'  => 'Бағыттау',
-	'translate-page-showing'            => 'Көрсетілген хабар ауқымы: $1 — $2 (не барлығы $3).',
-	'translate-page-showing-all'        => 'Көрсетілуі: $1 хабар.',
-	'translate-page-showing-none'       => 'Көрсетілетін еш хабар жоқ.',
-	'translate-next'                    => 'Келесі бет',
-	'translate-prev'                    => 'Алдыңғы бет',
-	'translate-page-description-legend' => 'Бұл топ туралы мәлімет',
-	'translate-optional'                => '(міндетті емес)',
-	'translate-ignored'                 => '(елемейтін)',
-	'translate-edit-definition'         => 'Хабар анықтауы',
-	'translate-edit-contribute'         => 'үлес бер',
-	'translate-edit-no-information'     => "''Бұл хабар құжаттамасыз.
+	'translate-page-settings-legend'         => 'Бапталымдар',
+	'translate-page-task'                    => 'Талабым:',
+	'translate-page-group'                   => 'Хабар тобы',
+	'translate-page-language'                => 'Тілі',
+	'translate-page-limit'                   => 'Шектемі',
+	'translate-page-limit-option'            => 'бет сайын $1 хабар',
+	'translate-submit'                       => 'Келтір!',
+	'translate-page-navigation-legend'       => 'Бағыттау',
+	'translate-page-showing'                 => 'Көрсетілген хабар ауқымы: $1 — $2 (не барлығы $3).',
+	'translate-page-showing-all'             => 'Көрсетілуі: $1 хабар.',
+	'translate-page-showing-none'            => 'Көрсетілетін еш хабар жоқ.',
+	'translate-next'                         => 'Келесі бет',
+	'translate-prev'                         => 'Алдыңғы бет',
+	'translate-page-description-legend'      => 'Бұл топ туралы мәлімет',
+	'translate-optional'                     => '(міндетті емес)',
+	'translate-ignored'                      => '(елемейтін)',
+	'translate-edit-definition'              => 'Хабар анықтауы',
+	'translate-edit-contribute'              => 'үлес бер',
+	'translate-edit-no-information'          => "''Бұл хабар құжаттамасыз.
 Егер бұл хабардың қайда немесе қалай қолданғанын білсеңіз, бұл хабарға құжаттама келтіріп, басқа аударушыларға көмектесе аласыз.''",
-	'translate-edit-information'        => 'Бұл хабар туралы мәлімет ($1)',
-	'translate-edit-in-other-languages' => 'Хабар басқа тілдерде',
-	'translate-edit-committed'          => 'Бағдарлама жасақтамадағы ағымдақ аударма',
-	'translate-edit-warnings'           => 'Толық аударылмаған хабарлар туралы құлақтандырулар',
-	'translate-magic-pagename'          => 'Кеңейтілген MediaWiki аударуы',
-	'translate-magic-help'              => 'Арнайы бет бүркеме аттарын, сиқырлы сөздерді, мәнер атауларын және есім ая атауларын аудара аласыз.
+	'translate-edit-information'             => 'Бұл хабар туралы мәлімет ($1)',
+	'translate-edit-in-other-languages'      => 'Хабар басқа тілдерде',
+	'translate-edit-committed'               => 'Бағдарлама жасақтамадағы ағымдақ аударма',
+	'translate-edit-warnings'                => 'Толық аударылмаған хабарлар туралы құлақтандырулар',
+	'translate-magic-pagename'               => 'Кеңейтілген MediaWiki аударуы',
+	'translate-magic-help'                   => 'Арнайы бет бүркеме аттарын, сиқырлы сөздерді, мәнер атауларын және есім ая атауларын аудара аласыз.
 
 Сиқырлы сөздерде ағылшынша нұсқасын кіргізуіңіз жөн, әйтпесе қызметі тоқталады.
 Тағы да бірінші бабын (0 не 1) әрдайым қалдырыңыз.
@@ -2518,31 +2520,36 @@ $messages['kk-cyrl'] = array(
 
 Өзгерістерді сақтау үшін аудармашылар тобына кіруіңіз жөн.
 Сақтау батырмасын нұқығанша дейін өзгерістер сақталмайды.',
-	'translate-magic-form'              => 'Тілі: $1 Құрашы: $2 $3',
-	'translate-magic-submit'            => 'Келтір',
-	'translate-magic-cm-to-be'          => 'Болуға тиістісі',
-	'translate-magic-cm-current'        => 'Ағымдағысы',
-	'translate-magic-cm-original'       => 'Түпнұсқасы',
-	'translate-magic-cm-fallback'       => 'Тіреуіші',
-	'translate-magic-cm-comment'        => 'Мәндеме:',
-	'translate-magic-cm-save'           => 'Сақта!',
-	'translate-magic-cm-export'         => 'Сыртқа бер',
-	'translate-magic-cm-updatedusing'   => 'Special:Magic дегенді қолданып сақталған',
-	'translate-magic-cm-savefailed'     => 'Сақтау сәтсіз болды',
-	'translate-magic-special'           => 'Арнайы бет бүркеме аттары',
-	'translate-magic-words'             => 'Сиқыр сөздер',
-	'translate-magic-skin'              => 'Мәнер атаулары',
-	'translate-magic-namespace'         => 'Есім ая атаулары',
-	'translationchanges'                => 'Аударма өзгерістері',
-	'translationchanges-export'         => 'сыртқа беру',
-	'translationchanges-change'         => '$1: $2 ($3 істеген)',
-	'translate-checks-parameters'       => 'Келесі бапталымдар пайдаланылмаған: <strong>$1</strong>',
-	'translate-checks-balance'          => 'Мында жақшалардың бүкіл саны жұп емес: <strong>$1</strong>',
-	'translate-checks-links'            => 'Келесі сілтемелер жарамсыз: <strong>$1</strong>',
-	'translate-checks-xhtml'            => 'Келесі белгілемелерді дұрыстарымен алмастырыңыз: <strong>$1</strong>',
-	'translate-checks-plural'           => 'Анықталымда <nowiki>{{PLURAL:}}</nowiki> пайдаланылған, бірақ аудармада бұл жоқ.',
-	'tog-translate-nonewsletter'        => 'Жаңалық хаттарды маған жіберме (тек құпталған е-пошта жайы бар қатысушыларға тиісті)',
-	'right-translate'                   => 'Аудару тілдесуін қолданып өңдеу',
+	'translate-magic-form'                   => 'Тілі: $1 Құрашы: $2 $3',
+	'translate-magic-submit'                 => 'Келтір',
+	'translate-magic-cm-to-be'               => 'Болуға тиістісі',
+	'translate-magic-cm-current'             => 'Ағымдағысы',
+	'translate-magic-cm-original'            => 'Түпнұсқасы',
+	'translate-magic-cm-fallback'            => 'Тіреуіші',
+	'translate-magic-cm-comment'             => 'Мәндеме:',
+	'translate-magic-cm-save'                => 'Сақта!',
+	'translate-magic-cm-export'              => 'Сыртқа бер',
+	'translate-magic-cm-updatedusing'        => 'Special:Magic дегенді қолданып сақталған',
+	'translate-magic-cm-savefailed'          => 'Сақтау сәтсіз болды',
+	'translate-magic-special'                => 'Арнайы бет бүркеме аттары',
+	'translate-magic-words'                  => 'Сиқыр сөздер',
+	'translate-magic-skin'                   => 'Мәнер атаулары',
+	'translate-magic-namespace'              => 'Есім ая атаулары',
+	'translationchanges'                     => 'Аударма өзгерістері',
+	'translationchanges-export'              => 'сыртқа беру',
+	'translationchanges-change'              => '$1: $2 ($3 істеген)',
+	'translate-checks-parameters'            => 'Келесі бапталымдар пайдаланылмаған: <strong>$1</strong>',
+	'translate-checks-balance'               => 'Мында жақшалардың бүкіл саны жұп емес: <strong>$1</strong>',
+	'translate-checks-links'                 => 'Келесі сілтемелер жарамсыз: <strong>$1</strong>',
+	'translate-checks-xhtml'                 => 'Келесі белгілемелерді дұрыстарымен алмастырыңыз: <strong>$1</strong>',
+	'translate-checks-plural'                => 'Анықталымда <nowiki>{{PLURAL:}}</nowiki> пайдаланылған, бірақ аудармада бұл жоқ.',
+	'tog-translate-nonewsletter'             => 'Жаңалық хаттарды маған жіберме (тек құпталған е-пошта жайы бар қатысушыларға тиісті)',
+	'right-translate'                        => 'Аудару тілдесуін қолданып өңдеу',
+	'translate-rc-translation-filter'        => 'Аудармаларды сүзгілеу:',
+	'translate-rc-translation-filter-no'     => 'Ештеңе істемеу',
+	'translate-rc-translation-filter-only'   => 'Тек аудармаларды көрсету',
+	'translate-rc-translation-filter-filter' => 'Аудармаларды сүзгілеп тастау',
+	'translate-rc-translation-filter-site'   => 'Тек торап хабарларының өзгерістері',
 );
 
 /** Kazakh (Latin) (Қазақша (Latin))
@@ -3282,6 +3289,7 @@ Om wijzigingen op te slaan moet u lid zijn van de groep vertalers. Wijzigingen w
 	'translate-rc-translation-filter-no'     => 'Niets doen',
 	'translate-rc-translation-filter-only'   => 'Alleen vertalingen weergeven',
 	'translate-rc-translation-filter-filter' => 'Vertalingen wegfilteren',
+	'translate-rc-translation-filter-site'   => 'Alleen wijzigingen aan lokale systeemberichten',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
@@ -3571,7 +3579,7 @@ Zmiany nie są zapisywane, dopóki użytkownik nie naciśnie umieszczonego poni�
 	'tog-translate-nonewsletter'             => 'Nie wysyłaj do mnie biuletynów pocztą elektroniczną (dotyczy tylko użytkowników z potwierdzonym adresem e-mail)',
 	'right-translate'                        => 'Edycja z użyciem interfejsu tłumaczeń',
 	'translate-rc-translation-filter'        => 'Filtruj tłumaczenia:',
-	'translate-rc-translation-filter-no'     => 'Nie rób nic',
+	'translate-rc-translation-filter-no'     => 'Nic nie rób',
 	'translate-rc-translation-filter-only'   => 'Pokaż tylko tłumaczenia',
 	'translate-rc-translation-filter-filter' => 'Pokaż wszystkie bez tłumaczeń',
 );
@@ -4093,8 +4101,8 @@ Anjeun perlu jadi anggota grup panarjamah pikeun nyimpen parobahan. Parobahan mo
 );
 
 /** Swedish (Svenska)
- * @author Sannab
  * @author Lejonel
+ * @author Sannab
  * @author M.M.S.
  * @author Siebrand
  */
@@ -4179,7 +4187,7 @@ För att kunna spara ändringar så behöver du tillhöra översättargruppen. �
 	'translate-rc-translation-filter'        => 'Filtrera översättningar:',
 	'translate-rc-translation-filter-no'     => 'Gör ingenting',
 	'translate-rc-translation-filter-only'   => 'Visa endast översättningar',
-	'translate-rc-translation-filter-filter' => 'Filtrera ut översättningar',
+	'translate-rc-translation-filter-filter' => 'Filtrera bort översättningar',
 	'translate-rc-translation-filter-site'   => 'Endast ändringar till {{SITENAME}}-meddelanden',
 );
 
