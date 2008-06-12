@@ -7,10 +7,26 @@ require_once( "$IP/maintenance/commandLine.inc" );
 $groups = MessageGroups::singleton()->getGroups();
 
 $hugearray = array();
+$postponed = array();
 
 foreach ( $groups as $g ) {
 	# Skip meta thingies
-	if ( $g->isMeta() ) continue;
+	if ( $g->isMeta() ) {
+		$postponed[] = $g;
+		continue;
+	}
+
+	checkAndAdd( $g );
+}
+
+foreach ( $postponed as $g ) {
+	checkAndAdd( $g, true );
+}
+
+file_put_contents( TRANSLATE_INDEXFILE, serialize( $hugearray ) );
+
+function checkAndAdd( $g, $ignore = false ) {
+	global $hugearray;
 
 	$messages = $g->getDefinitions();
 	$id = $g->getId();
@@ -30,12 +46,12 @@ foreach ( $groups as $g ) {
 		# mediawiki forces it to upper case
 		$key = strtolower( "$namespace:$key" );
 		if ( isset($hugearray[$key]) ) {
-			echo "Key $key already belongs to $hugearray[$key], conflict with $id\n";
+			if ( !$ignore )
+				echo "Key $key already belongs to $hugearray[$key], conflict with $id\n";
 		} else {
 			$hugearray[$key] = &$id;
 		}
 	}
 	unset($id); // Disconnect the previous references to this $id
-}
 
-file_put_contents( TRANSLATE_INDEXFILE, serialize( $hugearray ) );
+}
