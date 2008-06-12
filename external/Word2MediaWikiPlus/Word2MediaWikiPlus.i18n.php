@@ -920,7 +920,10 @@ $messages['id'] = array(
 	'msg_ConvertTabTables'       => 'Ubah tabel yang dibuat dari tabulasi',
 	'msg_ConvertParagraphsFrame' => 'Paragraf',
 	'msg_ConvertNewParagraphs'   => 'Jadikan paragraf baru dengan <br/>s',
+	'msg_ConvertPageHeaders'     => 'Mengubah bagian depan halaman',
 	'msg_ConvertPageFooters'     => 'Mengubah catatan kaki dari halaman',
+	'msg_ConvertTitlePage'       => 'Masukan teks Judul Halaman',
+	'msg_Convert'                => 'Mengubah',
 	'msg_ImagesOnly'             => 'Hanya Gambar',
 	'msg_Cancel'                 => 'Batalkan',
 );
