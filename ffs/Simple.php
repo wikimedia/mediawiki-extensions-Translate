@@ -197,10 +197,45 @@ class SimpleFormatWriter {
 		fwrite( $handle, self::SEPARATOR . "\n");
 	}
 
+
+	public function filterAuthors( array $authors, $code, $groupId ) {
+		global $wgTranslateAuthorBlacklist;
+		foreach ( $authors as $i => $v ) {
+			$hash = "$groupId;$code;$v";
+
+			$blacklisted = false;
+			foreach ( $wgTranslateAuthorBlacklist as $rule ) {
+				list( $type, $regex ) = $rule;
+				if ( preg_match($regex, $hash) ) {
+					if ( $type === 'white' ) {
+						$blacklisted = false;
+						break;
+					} else {
+						$blacklisted = true;
+					}
+				}
+			}
+
+			if ( $blacklisted ) {
+				unset($authors[$i]);
+			}
+
+		}
+
+		return $authors;
+
+	}
+
 	protected function formatAuthors( $prefix, $code ) {
+		// Check if there is any authors at all
 		if ( empty($this->authors[$code]) ) return '';
+
+		$groupId = $this->group->getId();
+		$authors = $this->authors[$code];
+		$authors = $this->filterAuthors( $authors, $code, $groupId );
+
 		$s = array();
-		foreach ( $this->authors[$code] as $a ) {
+		foreach ( $authors as $a ) {
 			$s[] = $prefix . $a;
 		}
 		return implode( "\n", $s ) . "\n";

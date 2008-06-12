@@ -47,6 +47,7 @@ function customMessageGroups( $id ) {
 * changed the way of adding MediaWiki extensions
 * support for having messages in namespaces other than NS_MEDIAWIKi
 * try to load qqq from files if not found from the database
+* added $wgTranslateAuthorBlacklist
 
 == Changes in version 8 ==
 * Released 2008-02-06

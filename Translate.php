@@ -11,7 +11,7 @@ if (!defined('MEDIAWIKI')) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '8.45' );
+define( 'TRANSLATE_VERSION', '8.46' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name'           => 'Translate',
@@ -84,6 +84,21 @@ $wgTranslateDocumentationLanguageCode = false;
  */
 
 $wgTranslateBlacklist = array();
+
+/**
+ * Two-dimensional array of rules that blacklists certain authors from appearing
+ * in the exports. This is useful for keeping bots and people doing maintenance
+ * work in translations not to appear besides real translators everywhere.
+ *
+ * Rules are arrays, where first element is type: white or black. Whitelisting
+ * always overrules blacklisting. Second element should be a valid pattern that
+ * can be given a preg_match(). It will be matched against string of format
+ * "group-id;language;author name", without quotes.
+ * As an example by default we have rule that ignores all authors whose name
+ * ends in a bot for all languages and all groups.
+ */
+$wgTranslateAuthorBlacklist = array();
+$wgTranslateAuthorBlacklist[] = array( 'black', '/^.*;.*;.*Bot$/Ui' );
 
 $wgTranslateMessageNamespaces = array( NS_MEDIAWIKI );
 
