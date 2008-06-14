@@ -186,6 +186,8 @@ file = Eval/SpecialEval.i18n.php
 
 Expand Templates
 
+Extension Distributor
+
 Farmer
 optional = farmercreateurl
 ignored = farmerwikiurl, farmerinterwikiurl
@@ -599,3 +601,4 @@ YUI
 file = SocialProfile/YUI/yui.i18n.php
 
 YouTube Auth Sub
+
