@@ -460,6 +460,10 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 			}
 		}
 	}
+
+	public function wmfextensions() {
+		return $this->wmfextensions;
+	}
 }
 
 class AllFlaggedRevsExtensionsGroup extends AllMediawikiExtensionsGroup {
