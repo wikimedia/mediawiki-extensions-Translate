@@ -24,10 +24,11 @@ class GettextFormatReader extends SimpleFormatReader {
 		$data = file_get_contents( $this->filename );
 		$data = str_replace( "\r\n", "\n", $data );
 
+		$pluralForms = false;
+
 		$matches = array();
 		if ( preg_match( '/X-Language-Code:\s+([a-zA-Z-_]+)/', $data, $matches ) ) {
 			$code = $matches[1];
-		} else {
 		}
 
 		if ( preg_match( '/X-Message-Group:\s+([a-zA-Z0-9-_]+)/', $data, $matches ) ) {
@@ -35,6 +36,10 @@ class GettextFormatReader extends SimpleFormatReader {
 			$useCtxtAsKey = true;
 		} else {
 			$useCtxtAsKey = false;
+		}
+
+		if ( preg_match( '/Plural-Forms:\s+nplurals=([0-9]+)/', $data, $matches ) ) {
+			$pluralForms = $matches[1];
 		}
 
 		$poformat = '".*"\n?(^".*"$\n?)*';
@@ -74,15 +79,42 @@ class GettextFormatReader extends SimpleFormatReader {
 				continue;
 			}
 
+			$pluralMessage = false;
 			$matches = array();
-			if ( preg_match( "/^msgstr\s($poformat)/mx", $section, $matches ) ) {
-				// Remove quoting
-				$item['str'] = preg_replace( $quotePattern, '', $matches[1] );
-				// Restore new lines and remove quoting
-				#$translation = stripcslashes( $translation );
+			if ( preg_match( "/^msgid_plural\s($poformat)/mx", $section, $matches ) ) {
+				$pluralMessage = true;
+				$plural = preg_replace( $quotePattern, '', $matches[1] );;
+				$item['id'] = "{{PLURAL:GETTEXT|{$item['id']}|$plural}}";
+
+				var_dump( $item['id'] );
+			}
+
+			if ( $pluralMessage ) {
+
+				$actualForms = array();
+				for ( $i = 0; $i < $pluralForms; $i++ ) {
+					$matches = array();
+					if ( preg_match( "/^msgstr\[$i\]\s($poformat)/mx", $section, $matches ) ) {
+						$actualForms[] = preg_replace( $quotePattern, '', $matches[1] );
+					} else {
+						throw new MWException( "Plural not found, expecting $i" );
+					}
+				}
+
+				$item['str'] = '{{PLURAL:GETTEXT|' . implode( '|', $actualForms ) . '}}';
+				var_dump( $item['str'] );
 			} else {
-				#echo "Translation not found!\n";
-				continue;
+
+				$matches = array();
+				if ( preg_match( "/^msgstr\s($poformat)/mx", $section, $matches ) ) {
+					// Remove quoting
+					$item['str'] = preg_replace( $quotePattern, '', $matches[1] );
+					// Restore new lines and remove quoting
+					#$translation = stripcslashes( $translation );
+				} else {
+					#echo "Translation not found!\n";
+					continue;
+				}
 			}
 
 			// Parse flags
