@@ -40,6 +40,8 @@ Usage: php transstat.php [--help] [--output=csv|text|wiki] --groups
 	--help : this helpful message
 	--groups : comma separated list of groups
 	--skiplanguages : comma separated list of languages that should be skipped
+	--skipzero : skip languages that don't have any localisation at all
+	--fuzzy : add column for fuzzy counts
 	--output : select an output engine one of:
 		* 'csv'      : Comma Separated Values.
 		* 'wiki'     : MediaWiki syntax (default).
@@ -111,6 +113,9 @@ $out->element( 'Language', true );
 foreach ( $groups as $g ) {
 	// Add unprocessed description of group as heading
 	$out->element( $g->getLabel(), true );
+	if ( isset($options['fuzzy']) ) {
+		$out->element( 'Fuzzy', true );
+	}
 }
 $out->blockend();
 
@@ -120,10 +125,8 @@ foreach ( $languages as $code => $name ) {
 	// Skip list
 	if ( in_array( $code, $skipLanguages ) ) continue;
 
-	$out->blockstart();
-	$out->element( $code );
-	$out->element( $name );
-
+	$allZero = true;
+	$columns = array();
 
 	foreach ( $groups as $g ) {
 		// Initialise messages
@@ -139,6 +142,7 @@ foreach ( $languages as $code => $name ) {
 
 		// Store the count of real messages for later calculation.
 		$total = count( $messages );
+		$fuzzy = 0;
 
 		// Get all translations. Could this be done more efficient?
 		$g->fillCollection( $messages );
@@ -148,17 +152,32 @@ foreach ( $languages as $code => $name ) {
 			if ( $messages[$key]->translation === null ) {
 				unset( $messages[$key] );
 			} elseif ( $messages[$key]->fuzzy ) {
+				$fuzzy++;
 				unset( $messages[$key] );
 			}
 		}
 
 		// Count the completion percent and output it
 		$translated = count( $messages );
+		if ( $translated !== 0 ) $allZero = false;
 
-		$out->element( $out->formatPercent( $translated, $total,
-			/* Inverted color */ false, /* Decimals */ 2 )
-		);
+		$columns[] = $out->formatPercent( $translated, $total,
+			/* Inverted color */ false, /* Decimals */ 2 );
+
+		if ( isset($options['fuzzy']) ) {
+			$columns[] = $out->formatPercent( $fuzzy, $total,
+				/* Inverted color */ true, /* Decimals */ 2 );
+		}
+
 	}
+
+	if ( $allZero && isset($options['skipzero']) ) continue;
+
+	$out->blockstart();
+	$out->element( $code );
+	$out->element( $name );
+
+	foreach ( $columns as $c ) $out->element( $c );
 
 	$out->blockend();
 }

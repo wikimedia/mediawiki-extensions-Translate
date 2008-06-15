@@ -48,6 +48,7 @@ function customMessageGroups( $id ) {
 * support for having messages in namespaces other than NS_MEDIAWIKi
 * try to load qqq from files if not found from the database
 * added $wgTranslateAuthorBlacklist
+* new options to groupStatistics.php: --fuzzy and --skipzero
 
 == Changes in version 8 ==
 * Released 2008-02-06
