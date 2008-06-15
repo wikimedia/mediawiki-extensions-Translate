@@ -311,6 +311,86 @@ $messages['avk'] = array(
 	'msg_Cancel'                             => 'Waljoara',
 );
 
+/** بلوچی مکرانی (بلوچی مکرانی)
+ * @author Mostafadaneshvar
+ */
+$messages['bcc'] = array(
+	'wikiSearchTitle'                        => 'گردگ',
+	'wikiCategoryKeyWord'                    => 'دسته',
+	'categoryImagePreFix'                    => 'تصاویر',
+	'wikiUploadTitle'                        => 'آپلود',
+	'clickChartText'                         => 'منء کلیک کن!',
+	'unableToConvertMarker'                  => '## حطا تبدیل ##:',
+	'txt_TitlePage'                          => 'عنوان صفحه',
+	'txt_PageHeader'                         => 'سربرگ صفحه',
+	'txt_PageFooter'                         => 'ته برگ صفحه',
+	'txt_Footnote'                           => 'جهل نوشتآن',
+	'msg_Upload_Info'                        => 'هنو آپلود فایل شروع بیت. پیش چه شی که شما شروع کنیت بایدن وتی بروزرء شر تنظیم کینت:\\r\\n1. کل نوار کشی گان بند په داب فوریتس.\\r\\n2. ته وتی وی کی وارد بیت.\\r\\n\\ پیش چه شی که شی ا چک کنیت هوبت کلیک مکنیت.',
+	'msg_Finished'                           => 'تبدیل تمام بوت. وتی کلیپبورد محتواء ته اصلاح گر وتی ویکی وارد کنیت.',
+	'msg_NoDocumentLoaded'                   => 'هچ سندی بار نه بوتت.',
+	'msg_LoadDocument'                       => 'لطفا سندء بار کنیت به تبدیل کتن',
+	'msg_CloseAll'                           => 'لطفا کل سندان بندیت غیر چه آی که شما لوٹیت بدلی کنیت. ماکرو هنو متوقف بیت.',
+	'msg_SimpleTab'                          => 'ساده',
+	'msg_ArticleName'                        => 'نام مقاله',
+	'msg_TargetWikiFrame'                    => 'ویکی هدف',
+	'msg_TestSystem'                         => 'آزمایش سیستم',
+	'msg_ProdSystem'                         => 'سیستم تولید',
+	'msg_CheckURL'                           => 'کنترل یو ار ال',
+	'msg_CategoryFrame'                      => 'دسته',
+	'msg_MultipleCats'                       => 'جدا کنیت دسته جات چنتایء گون ویرگول(،)',
+	'msg_ArticleCategory'                    => 'دسته مقاله',
+	'msg_ImageCategory'                      => 'دسته عکس',
+	'msg_ImageDescription'                   => 'گیشترین متن په توضیح متن',
+	'msg_ImageHandlingFrame'                 => 'په دست گرگ عکس',
+	'msg_ImageExtraction'                    => 'گیشترین عکس',
+	'msg_ImageUseMSPhoto'                    => 'ته یک اصلاح گر عکس MS په عنوان نوکین عکس الصاق کن',
+	'msg_ImageUpdate'                        => 'هستین فایلان عکسء په ورچ کن',
+	'msg_ImageUpload'                        => 'آپلود عکسان',
+	'msg_ImageReload'                        => 'دگه بارکتن عکسان',
+	'msg_ImageUseFrames'                     => 'چه فریم استفاده کن',
+	'msg_Always'                             => 'یکسره',
+	'msg_Never'                              => 'هچ وهد',
+	'msg_AsInDocument'                       => 'په داب یک سند',
+	'msg_ImageSizeFrame'                     => 'اندازه عکس',
+	'msg_ImageFullSize'                      => 'چه اندازه کامل استفاده کن',
+	'msg_ImageFullSizeToolTip'               => 'چه اندازه کامل عکس استفاده کن با وجود شی که آیا عکس ته ورد هورد بوته',
+	'msg_ImageFullSizeMaxWidth'              => 'چه اندازه کامل تا آهرین حد پهنات استفاده کن',
+	'msg_ImageFullSizeMaxWidthToolTip'       => 'چه اندازه کامل تا آهرین حد مشخص بوتگ استفاده کن',
+	'msg_ImageDocumentSize'                  => 'چه اندازه سند استفاده کن',
+	'msg_ImageDocumentSizeToolTip'           => 'عکس دان اندازه ای که ورد پیش دارگنت اندازه ایء عوض کن',
+	'msg_ImageDocumentSizeMaxWidth'          => 'چه اندازه ی سند دان آهری پنهات استفاده کن',
+	'msg_ImageDocumentSizeMaxWidthToolTip'   => 'اندازه عکسء دان اندازه ای که ورد تا گشیترین پهنات پیش داریت عوض کن',
+	'msg_ImageMaxWidthFrame'                 => 'گشیترین پنهات عکس',
+	'msg_ConvertTab'                         => 'پیشرپتگین تبدیل متن',
+	'msg_ConvertTextFrame'                   => 'تبدیل متن',
+	'msg_ConvertWikiSyntax'                  => 'ترکیب ویکی بدل کن',
+	'msg_ConvertFontSize'                    => 'اندازه کلم عوض کن',
+	'msg_ConvertNumberedLists'               => 'لسیتان دستی شماره بل، همی دابی که ورد پیش داریت',
+	'msg_ConvertComments'                    => 'نظرات بدل کن',
+	'msg_ConvertInternalAnchors'             => 'درونی لنگرانء بدل کن',
+	'msg_ConvertFootnotes'                   => 'جهل نوشتان بدل کن',
+	'msg_ConvertBookmarks'                   => 'بدل کن نشان هشتکینانء',
+	'msg_ConvertTablesFrame'                 => 'جداول',
+	'msg_ConvertTableStyle'                  => 'سبک جدول',
+	'msg_ConvertTableStyleNoFrames'          => 'سبک جدول(بی فریم)',
+	'msg_ConvertTableStyleParagraphNoFrames' => 'سبک جدول(پاراگراف-بی فریم)',
+	'msg_ConvertTableStyleParagraphFrames'   => 'سبک جدول(پاراگراف- فریمی)',
+	'msg_ConvertTabTables'                   => 'جداولی که چه تب شر بیتگن بدل کن',
+	'msg_ConvertParagraphsFrame'             => 'پاراگرافان',
+	'msg_ConvertFirstLineIndents'            => 'اولی خطانء ته رفته آ بدل کن',
+	'msg_ConvertNewParagraphs'               => 'نوکین پاراگرافانی شرکن گون<br/>s',
+	'msg_ConvertReplacePageBreaks'           => 'پروش صفحاتء گون خطوط افقی بدل کن',
+	'msg_ConvertJustifiedText'               => 'متنآن همترازء بدل کن',
+	'msg_ConvertHeadingsFrame'               => 'عناوین',
+	'msg_ConvertFirstLevelHeading'           => 'سطح اول عنوان هلگ',
+	'msg_ConvertPageHeaders'                 => 'عناوین صفحه بدل کن',
+	'msg_ConvertPageFooters'                 => 'بدل کن جهل نوستان صفحهء',
+	'msg_ConvertTitlePage'                   => 'متن صفحه عنوان واردکن',
+	'msg_Convert'                            => 'بدل کتن',
+	'msg_ImagesOnly'                         => 'فقط تصاویر',
+	'msg_Cancel'                             => 'کنسل',
+);
+
 /** Bulgarian (Български)
  * @author DCLXVI
  */
@@ -754,6 +834,14 @@ Ne cliquez pas sur OK avant d'avoir vérifé tout cela.",
 	'msg_Cancel'                             => 'Annuler',
 );
 
+/** Western Frisian (Frysk)
+ * @author Snakesteuben
+ */
+$messages['fy'] = array(
+	'wikiCategoryKeyWord' => 'kategory',
+	'msg_CategoryFrame'   => 'Kategory',
+);
+
 /** Irish (Gaeilge)
  * @author Moilleadóir
  */
@@ -795,6 +883,14 @@ $messages['gl'] = array(
 	'msg_Convert'                => 'Converter',
 	'msg_ImagesOnly'             => 'Só imaxes',
 	'msg_Cancel'                 => 'Cancelar',
+);
+
+/** Hawaiian (Hawai`i)
+ * @author Singularity
+ */
+$messages['haw'] = array(
+	'wikiCategoryKeyWord' => 'mahele',
+	'msg_CategoryFrame'   => 'Mahele',
 );
 
 /** Hindi (हिन्दी)
@@ -2172,6 +2268,13 @@ $messages['tg-cyrl'] = array(
 	'msg_ImageSizeFrame'  => 'Андозаи Акс',
 	'msg_ImagesOnly'      => 'Танҳо аксҳо',
 	'msg_Cancel'          => 'Лағв',
+);
+
+/** Turkish (Türkçe)
+ * @author Karduelis
+ */
+$messages['tr'] = array(
+	'msg_Never' => 'Asla',
 );
 
 /** Ukrainian (Українська)
