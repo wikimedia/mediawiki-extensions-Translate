@@ -33,7 +33,7 @@ class SimpleFormatReader {
 	}
 
 	public function parseStaticHeader() {
-		if ( $this->staticHeader === null ) {
+		if ( $this->staticHeader === '' ) {
 			$this->parseHeader();
 		}
 		return $this->staticHeader;
@@ -69,7 +69,6 @@ class SimpleFormatReader {
 				$staticHeader .= $line;
 			}
 		}
-
 		fclose( $handle );
 
 		$this->authors = $authors;
