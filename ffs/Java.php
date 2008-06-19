@@ -10,6 +10,7 @@ if (!defined('MEDIAWIKI')) die();
  */
 
 class JavaFormatReader extends SimpleFormatReader {
+
 	protected function parseHeader() {
 		if ( $this->filename === false ) {
 			return;
@@ -62,7 +63,7 @@ class JavaFormatReader extends SimpleFormatReader {
 		$messages = array();
 
 		foreach ( $lines as $line ) {
-			if ( !strpos( $line, '=' ) ) { continue; }
+			if ( $line === '' || !strpos( $line, '=' ) || $line[0] === '#' ) { continue; }
 			list( $key, $value ) = explode( '=', $line, 2 );
 			$messages[$mangler->mangle($key)] = trim($value);
 		}
