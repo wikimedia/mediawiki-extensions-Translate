@@ -49,6 +49,9 @@ function customMessageGroups( $id ) {
 * try to load qqq from files if not found from the database
 * added $wgTranslateAuthorBlacklist
 * new options to groupStatistics.php: --fuzzy and --skipzero
+* fuzzy respects now $wgTranslateMessageNamespaces
+* freecol not added by default
+* Messages keys can now start with capital letter, but have to be unique after normalising case and spaces
 
 == Changes in version 8 ==
 * Released 2008-02-06

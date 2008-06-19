@@ -59,7 +59,8 @@ $wgAutoloadClasses['SmAffixRewriter'] = $dir . 'utils/StringMangler.php';
 $wgAutoloadClasses['SmRegexRewriter'] = $dir . 'utils/StringMangler.php';
 
 
-# predefined group
+# predefined groups
 $wgAutoloadClasses['PremadeMediawikiExtensionGroups'] = $dir . 'groups/MediaWikiExtensions.php';
+$wgAutoloadClasses['FreeColMessageGroup'] = $dir . 'groups/FreeCol.php';
 
 

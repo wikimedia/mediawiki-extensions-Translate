@@ -90,6 +90,7 @@ class FuzzyBot {
 	}
 
 	private function getPages() {
+		global $wgTranslateMessageNamespaces;
 		$dbr = wfGetDB( DB_SLAVE );
 
 		$search_titles = array();
@@ -100,7 +101,7 @@ class FuzzyBot {
 
 		$condArray = array(
 			'page_is_redirect'  => 0,
-			'page_namespace'    => NS_MEDIAWIKI,
+			'page_namespace'    => $wgTranslateMessageNamespaces,
 			'page_latest=rev_id',
 			'rev_text_id=old_id',
 			$dbr->makeList( $search_titles, LIST_OR ),

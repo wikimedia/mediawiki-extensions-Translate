@@ -22,7 +22,7 @@ class SimpleFormatReader {
 		}
 	}
 
-	protected $authors = array();
+	protected $authors = null;
 	protected $staticHeader = '';
 
 	public function parseAuthors() {
