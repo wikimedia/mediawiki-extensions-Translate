@@ -99,8 +99,7 @@ foreach ( $reqGroups as $id ) {
 }
 
 // List of all customized languages.
-$languages = Language::getLanguageNames( true );
-
+$languages = Language::getLanguageNames( false );
 // Default sorting order by language code, users can sort wiki output by any
 // column, if it is supported.
 ksort( $languages );
