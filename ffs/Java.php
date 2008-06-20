@@ -9,8 +9,22 @@ if (!defined('MEDIAWIKI')) die();
  * @file
  */
 
+/**
+ * Reader for java property files. Not completely general, as it excepts two
+ * comment sections at the top, separated by a blank line.
+ *
+ * Authors in the first section are detected, if prefixed with '# Author: '.
+ * Second section (if any) is returned verbatim.
+ */
 class JavaFormatReader extends SimpleFormatReader {
 
+	/**
+ 	 * Inherited from SimpleFormatReader, which parses whole header in one pass.
+	 * Basically the same, with different author prefix and separator between
+	 * headers and messages.
+	 *
+	 * FIXME: possible to refactor to reduce duplication?
+	 */
 	protected function parseHeader() {
 		if ( $this->filename === false ) {
 			return;
@@ -52,12 +66,20 @@ class JavaFormatReader extends SimpleFormatReader {
 		$this->staticHeader = $staticHeader;
 	}
 
+	/**
+	 * Parses messages from lines key=value. Whitespace is trimmer around key and
+	 * values. New lines inside values have to be escaped as '\n'. Lines which do
+	 * not have = are ignored. Comments are designated by # at the start of the
+	 * line only. Values can have = characters, only the first one is considered
+	 * separator.
+	 */
 	public function parseMessages( StringMangler $mangler ) {
 		if ( !file_exists( $this->filename ) ) {
 			return null;
 		}
 
-		$lines = file( $this->filename );
+		# This format works nicely with line based parsing
+		$lines = array_map( 'trim', file( $this->filename ) );
 		if ( !$lines ) { return null; }
 
 		$messages = array();
@@ -65,15 +87,20 @@ class JavaFormatReader extends SimpleFormatReader {
 		foreach ( $lines as $line ) {
 			if ( $line === '' || !strpos( $line, '=' ) || $line[0] === '#' ) { continue; }
 			list( $key, $value ) = explode( '=', $line, 2 );
-			$messages[$mangler->mangle($key)] = trim($value);
+			$messages[$mangler->mangle(trim($key))] = trim($value);
 		}
 		return $messages;
 	}
 }
 
-
+/**
+ * Very simple writer for exporting messages to Java property files from wiki.
+ */
 class JavaFormatWriter extends SimpleFormatWriter {
 
+	/**
+	 * Inherited. Very simplistic header with timestamp.
+	 */
 	public function makeHeader( $handle, $code ) {
 		global $wgSitename;
 		list( $name, $native ) = $this->getLanguageNames($code);
@@ -89,9 +116,14 @@ HEADER
 		);
 	}
 
+	/**
+	 * Inherited. Exports messages as lines of format key=value.
+	 */
 	protected function exportMessages( $handle, array $messages ) {
 		foreach ( $messages as $key => $value ) {
+			# Make sure we don't slip newlines trough... it would be fatal
 			$value = str_replace( "\n", '\\n', $value );
+			# No pretty alignment here, sorry
 			fwrite( $handle, "$key=$value\n" );
 		}
 	}
