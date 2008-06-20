@@ -19,6 +19,7 @@ class FreeColMessageGroup extends MessageGroup {
 		'nl-be' => 'nl_BE',
 		'en-gb' => 'en_GB',
 		'en-us' => 'en_US',
+		'pt'    => 'pt_PT',
 		'pt-pt' => 'pt_PT',
 		'pt-br' => 'pt_BR',
 	);
