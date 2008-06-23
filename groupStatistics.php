@@ -129,11 +129,13 @@ foreach ( $languages as $code => $name ) {
 
 	foreach ( $groups as $g ) {
 		// Initialise messages
-		$collection->filter( 'optional' );
-		$collection = $g->initCollection( $code )
 
+		$collection = $g->initCollection( $code );
+		$collection->filter( 'optional' );
 		// Store the count of real messages for later calculation.
 		$total = count($collection);
+
+		$g->fillCollection( $collection );
 		$collection->filter( 'fuzzy' );
 		$fuzzy = $total - count($collection);
 

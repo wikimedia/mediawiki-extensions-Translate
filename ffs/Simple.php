@@ -39,36 +39,33 @@ class SimpleFormatReader {
 	}
 
 	protected function parseHeader() {
-		if ( $this->filename === false ) {
-			return;
-		}
-
 		$authors = array();
 		$staticHeader = '';
+		if ( $this->filename !== false ) {
+			$handle = fopen( $this->filename, "rt" );
+			$state = 0;
 
-		$handle = fopen( $this->filename, "rt" );
-		$state = 0;
+			while ( !feof($handle) ) {
+				$line = fgets($handle);
 
-		while ( !feof($handle) ) {
-			$line = fgets($handle);
+				if ( $state === 0 ) {
+					if ( $line === "\n" ) {
+						$state = 1;
+						continue;
+					}
 
-			if ( $state === 0 ) {
-				if ( $line === "\n" ) {
-					$state = 1;
-					continue;
+					$prefixLength = strlen(self::AUTHORPREFIX);
+					$prefix = substr( $line, 0, $prefixLength );
+					if ( strcasecmp( $prefix, self::AUTHORPREFIX ) === 0 ) {
+						$authors[] = substr( $line, $prefixLength );
+					}
+				} elseif ( $state === 1 ) {
+					if ( $line === self::SEPARATOR ) break; // End of static header, if any
+					$staticHeader .= $line;
 				}
-
-				$prefixLength = strlen(self::AUTHORPREFIX);
-				$prefix = substr( $line, 0, $prefixLength );
-				if ( strcasecmp( $prefix, self::AUTHORPREFIX ) === 0 ) {
-					$authors[] = substr( $line, $prefixLength );
-				}
-			} elseif ( $state === 1 ) {
-				if ( $line === self::SEPARATOR ) break; // End of static header, if any
-				$staticHeader .= $line;
 			}
+			fclose( $handle );
 		}
-		fclose( $handle );
 
 		$this->authors = $authors;
 		$this->staticHeader = $staticHeader;
@@ -264,9 +261,6 @@ class SimpleFormatWriter {
 		$mangler = $this->group->getMangler();
 		foreach( $messages as $key => $m ) {
 			$key = $mangler->unMangle( $key );
-
-			# CASE1: ignored
-			if ( $m->ignored ) continue;
 
 			$translation = $m->translation;
 			# CASE2: no translation

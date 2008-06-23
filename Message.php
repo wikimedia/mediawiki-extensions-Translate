@@ -287,8 +287,9 @@ class TMessage {
 		if ( $this->pageExists() ) {
 			return true;
 		} else {
-			return $this->translation() !== null && !$this->fuzzy() &&
-  			!($this->optional() && ($this->translation() !== $this->definition) );
+			$optionalSame = $this->optional() && ($this->translation() !== $this->definition);
+			$hasTranslation = $this->translation() !== null;
+			return $hasTranslation && !$this->fuzzy() && !$optionalSame;
 		}
 	}
 

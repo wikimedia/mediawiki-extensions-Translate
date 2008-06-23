@@ -26,41 +26,40 @@ class JavaFormatReader extends SimpleFormatReader {
 	 * FIXME: possible to refactor to reduce duplication?
 	 */
 	protected function parseHeader() {
-		if ( $this->filename === false ) {
-			return;
-		}
 		$authors = array();
 		$staticHeader = '';
 
-		$handle = fopen( $this->filename, "rt" );
-		$state = 0;
+		if ( $this->filename !== false ) {
+			$handle = fopen( $this->filename, "rt" );
+			$state = 0;
 
-		while ( !feof($handle) ) {
-			$line = fgets($handle);
+			while ( !feof($handle) ) {
+				$line = fgets($handle);
 
-			if ( $state === 0 ) {
-				if ( $line === "\n" ) {
-					$state = 1;
-					continue;
+				if ( $state === 0 ) {
+					if ( $line === "\n" ) {
+						$state = 1;
+						continue;
+					}
+
+					$formatPrefix = '# Author: ';
+
+					$prefixLength = strlen($formatPrefix);
+					$prefix = substr( $line, 0, $prefixLength );
+					if ( strcasecmp( $prefix, $formatPrefix ) === 0 ) {
+						// fgets includes the trailing newline, trim to get rid of it
+						$authors[] = trim(substr( $line, $prefixLength ));
+					}
+				} elseif ( $state === 1 ) {
+					if ( $line === "\n" || $line[0] !== '#' ) {
+						break; // End of static header, if any
+					}
+					$staticHeader .= $line;
 				}
-
-				$formatPrefix = '# Author: ';
-
-				$prefixLength = strlen($formatPrefix);
-				$prefix = substr( $line, 0, $prefixLength );
-				if ( strcasecmp( $prefix, $formatPrefix ) === 0 ) {
-					// fgets includes the trailing newline, trim to get rid of it
-					$authors[] = trim(substr( $line, $prefixLength ));
-				}
-			} elseif ( $state === 1 ) {
-				if ( $line === "\n" || $line[0] !== '#' ) {
-					break; // End of static header, if any
-				}
-				$staticHeader .= $line;
 			}
-		}
 
-		fclose( $handle );
+			fclose( $handle );
+		}
 
 		$this->authors = $authors;
 		$this->staticHeader = $staticHeader;
