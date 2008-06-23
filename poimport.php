@@ -148,8 +148,12 @@ class PoImporter {
 			}
 
 			if ( $translation !== (string) $contents[$key]->translation ) {
-				echo "Translation of $key differs:\n$translation\n\n";
-				$changes["$key/$code"] = $translation;
+				if ( $translation === '' ) {
+					echo "Skipping empty translation in the po file for $key!\n";
+				} else {
+					echo "Translation of $key differs:\n$translation\n\n";
+					$changes["$key/$code"] = $translation;
+				}
 			}
 
 		}

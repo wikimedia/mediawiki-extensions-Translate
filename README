@@ -79,6 +79,7 @@ function customMessageGroups( $id ) {
 * Content-Disposition header for po export
 * Link to Special:Translate added in Special:Version
 * Possibility to add comments when editing with Special:magic
+* poimport will no longer replace translation in database with empty string
 
 == Changes in version 7 ==
 * Released 2007-12-29
