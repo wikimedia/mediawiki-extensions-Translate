@@ -163,7 +163,7 @@ class TranslateEditAddons {
 
 		if ( $xx !== null && $code !== 'en' ) {
 			// Append translation from the file to edit area, if it's empty.
-			if ($object->firsttime && $object->textbox1 === null ) {
+			if ($object->firsttime && $object->textbox1 === '' ) {
 				$object->textbox1 = $xx;
 			}
 		}
