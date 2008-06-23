@@ -560,6 +560,7 @@ class Word2MediaWikiPlusMessageGroup extends ExtensionMessageGroup {
 }
 
 class GettextMessageGroup extends MessageGroup {
+	protected $type = 'gettext';
 	/**
 	 * Name of the array where all messages are stored, if applicable.
 	 */
@@ -569,11 +570,13 @@ class GettextMessageGroup extends MessageGroup {
 
 	protected $codeMap = array();
 
+	protected $path = '';
+	public function getPath() { return $this->path; }
+	public function setPath( $value ) { $this->path = $value; }
 
 	protected $prefix = '';
 	public function getPrefix() { return $this->prefix; }
 	public function setPrefix( $value ) { $this->prefix = $value; }
-
 
 	public function getMessageFile( $code ) {
 		if ( $code == 'en' ) {
@@ -595,7 +598,8 @@ class GettextMessageGroup extends MessageGroup {
 
 
 	public function getReader( $code ) {
-		$reader = new GettextFormatReader( $this->getPrefix() . $this->getMessageFile( $code ) );
+		$reader = new GettextFormatReader( $this->getPath() . $this->getMessageFile( $code ) );
+		$reader->setPrefix( $this->prefix );
 		if ( $code === 'en' )
 			$reader->setPotMode( true );
 		return $reader;

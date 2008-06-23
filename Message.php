@@ -309,7 +309,7 @@ class TMessage {
 	 * @return true or false
 	 */
 	public function fuzzy() {
-		if ( $this->database() !== null ) {
+		if ( $this->translation() !== null ) {
 			return strpos($this->translation(), TRANSLATE_FUZZY) !== false;
 		} else {
 			return false;

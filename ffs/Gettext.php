@@ -2,10 +2,15 @@
 if (!defined('MEDIAWIKI')) die();
 
 class GettextFormatReader extends SimpleFormatReader {
+	protected $pot = false;
 	public function setPotMode( $value ) {
 		$this->pot = $value;
 	}
-	protected $pot = false;
+
+	protected $prefix = '';
+	public function setPrefix( $value ) {
+		$this->prefix = $value;
+	}
 
 	public function parseAuthors() {
 		return array(); // Not implemented
@@ -152,7 +157,7 @@ class GettextFormatReader extends SimpleFormatReader {
 				$snippet = str_replace( ' ', '_', $snippet );
 				$snippet = trim( $snippet );
 				$snippet = $lang->truncate( $snippet, 30 );
-				$key = $hash . '-' . $snippet;
+				$key = $this->prefix . $hash . '-' . $snippet;
 			}
 
 			$changes[$key] = $item;
@@ -180,7 +185,7 @@ class GettextFormatReader extends SimpleFormatReader {
 
 }
 
-class GettextFormatWriter  extends SimpleFormatWriter {
+class GettextFormatWriter extends SimpleFormatWriter {
 	protected $data = array();
 
 	public function fileExport( array $languages, $targetDirectory ) {
@@ -271,9 +276,6 @@ class GettextFormatWriter  extends SimpleFormatWriter {
 		foreach ( $messages as $key => $m) {
 			$flags = array();
 
-			# CASE1: ignored
-			if ( $m->ignored ) $flags[] = 'x-ignored';
-
 			$translation = $m->translation;
 			# CASE2: no translation
 			if ( $translation === null ) $translation = '';
@@ -302,7 +304,7 @@ class GettextFormatWriter  extends SimpleFormatWriter {
 				$comments = $this->data[$key]['comments'];
 			}
 
-			fwrite( $handle, $this->formatcomments( $comments, $documentation, $flags ) );
+			fwrite( $handle, self::formatcomments( $comments, $documentation, $flags ) );
 
 			if ( isset($this->data[$key]['ctxt']) ) {
 				$key = $this->data[$key]['ctxt'];
@@ -321,7 +323,7 @@ class GettextFormatWriter  extends SimpleFormatWriter {
 		return $line;
 	}
 
-	protected function formatcomments( $comments, $documentation = false, $flags = false ) {
+	public static function formatcomments( $comments, $documentation = false, $flags = false ) {
 		if ( $documentation ) {
 			foreach ( explode( "\n", $documentation ) as $line ) {
 				$comments['.'][] = $line;

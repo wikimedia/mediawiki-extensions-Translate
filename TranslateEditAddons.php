@@ -154,6 +154,15 @@ class TranslateEditAddons {
 				$class = 'mw-sp-translate-edit-noinfo';
 			}
 
+			if ( $group->getType() === 'gettext' ) {
+				$reader = $group->getReader( $code );
+				if ( $reader ) {
+					$data = $reader->parseFile();
+					$help = GettextFormatWriter::formatcomments( @$data[$key]['comments'], false, @$data[$key]['flags'] );
+					$info .= "<hr /><pre>$help</pre>";
+				}
+			}
+
 			$class .= ' mw-sp-translate-message-documentation';
 
 			$boxes[] = TranslateUtils::fieldset(
