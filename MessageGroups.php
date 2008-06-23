@@ -429,6 +429,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-wikihiero',
 		'ext-oai',
 		'ext-poem',
+		'universaleditbutton',
 		'ext-fr-depreciationoversight', // used on some wikis by all users
 		'ext-fr-flaggedrevs',
 		'ext-fr-flaggedrevsaliases',

@@ -558,6 +558,8 @@ Tor Block
 Translate
 optional = translate-page-paging-links
 
+Universal Edit Button
+
 Usage Statistics
 file = UsageStatistics/SpecialUserStats.i18n.php
 
