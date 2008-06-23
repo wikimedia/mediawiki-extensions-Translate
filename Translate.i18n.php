@@ -20,11 +20,13 @@ $messages['en'] = array(
 	'translate-task-view'           => 'View all messages from',
 	'translate-task-untranslated'   => 'View all untranslated messages from',
 	'translate-task-optional'       => 'View optional messages from',
+	'translate-task-problematic'    => 'View messages that have problems',
 	'translate-task-review'         => 'Review changes to',
 	'translate-task-reviewall'      => 'Review all translated messages in',
 	'translate-task-export'         => 'Export translations from',
 	'translate-task-export-to-file' => 'Export translation to file from',
 	'translate-task-export-as-po'   => 'Export translation in Gettext format',
+	'translate-task-export-to-xliff'=> 'Export translation in Xliff format',
 
 	'translate-page-no-such-language' => 'Specified language was invalid.',
 	'translate-page-no-such-task'     => 'Specified task was invalid.',
@@ -51,6 +53,7 @@ $messages['en'] = array(
 	'translate-prev'                   => 'Previous page',
 
 	'translate-page-description-legend' => 'Information about the group',
+//	'translate-page-edit'               => 'edit',
 
 	'translate-optional' => '(optional)',
 	'translate-ignored'  => '(ignored)',

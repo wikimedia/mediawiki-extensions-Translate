@@ -45,6 +45,7 @@ $wgAutoloadClasses['GettextFormatReader'] = $dir . 'ffs/Gettext.php';
 $wgAutoloadClasses['GettextFormatWriter'] = $dir . 'ffs/Gettext.php';
 $wgAutoloadClasses['JavaFormatReader'] = $dir . 'ffs/Java.php';
 $wgAutoloadClasses['JavaFormatWriter'] = $dir . 'ffs/Java.php';
+$wgAutoloadClasses['XliffFormatWriter'] = $dir . 'ffs/Xliff.php';
 
 
 # utils

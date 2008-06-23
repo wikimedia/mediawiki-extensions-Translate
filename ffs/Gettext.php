@@ -225,7 +225,7 @@ class GettextFormatWriter  extends SimpleFormatWriter {
 	}
 
 
-	public function exportLanguage( $handle, $code, $messages ) {
+	public function exportLanguage( $handle, $code, MessageCollection $messages ) {
 		global $wgSitename, $wgServer, $wgTranslateDocumentationLanguageCode;
 
 		$this->load( $code );

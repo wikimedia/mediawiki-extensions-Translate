@@ -129,36 +129,19 @@ foreach ( $languages as $code => $name ) {
 
 	foreach ( $groups as $g ) {
 		// Initialise messages
-		$messages = $g->initCollection( $code );
-
-		foreach ( $messages->keys() as $key ) {
-			if ( $messages[$key]->optional ) {
-				unset( $messages[$key] );
-			} elseif( $messages[$key]->ignored ) {
-				unset( $messages[$key] );
-			}
-		}
+		$collection->filter( 'optional' );
+		$collection = $g->initCollection( $code )
 
 		// Store the count of real messages for later calculation.
-		$total = count( $messages );
-		$fuzzy = 0;
+		$total = count($collection);
+		$collection->filter( 'fuzzy' );
+		$fuzzy = $total - count($collection);
 
-		// Get all translations. Could this be done more efficient?
-		$g->fillCollection( $messages );
-
-		// Remove untranslated messages from the list
-		foreach ( $messages->keys() as $key ) {
-			if ( $messages[$key]->translation === null ) {
-				unset( $messages[$key] );
-			} elseif ( $messages[$key]->fuzzy ) {
-				$fuzzy++;
-				unset( $messages[$key] );
-			}
-		}
+		$collection->filter( 'translated', false );
 
 		// Count the completion percent and output it
-		$translated = count( $messages );
-		if ( $translated !== 0 ) $allZero = false;
+		$translated = count( $collection );
+		if ( $translated ) $allZero = false;
 
 		$columns[] = $out->formatPercent( $translated, $total,
 			/* Inverted color */ false, /* Decimals */ 2 );

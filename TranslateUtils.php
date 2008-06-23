@@ -243,7 +243,7 @@ class TranslateUtils {
 		wfLoadExtensionMessages( 'Translate' );
 
 		$uimsg = array();
-		foreach ( array( 'talk', 'edit', 'history', 'optional', 'ignored', 'delete' ) as $msg ) {
+		foreach ( array( 'talk', 'edit', 'history', 'optional', 'delete' ) as $msg ) {
 			$uimsg[$msg] = wfMsgHtml( self::MSG . $msg );
 		}
 
@@ -287,7 +287,6 @@ class TranslateUtils {
 
 			$extra = '';
 			if ( $m->optional ) $extra = $uimsg['optional'];
-			if ( $m->ignored )  $extra = $uimsg['ignored'];
 
 			$leftColumn = $anchor . ' ' . $page['link'] . ' ' . $extra . '<br />' .
 				implode( ' | ', $tools );

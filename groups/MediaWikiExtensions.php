@@ -107,6 +107,7 @@ class PremadeMediawikiExtensionGroups {
 		if ( !empty($info['var']) ) $group->setVariableName( $info['var'] );
 		if ( !empty($info['optional']) ) $group->setOptional( $info['optional'] );
 		if ( !empty($info['ignored']) ) $group->setIgnored( $info['ignored'] );
+		$group->setType('mediawiki');
 		return $group;
 	}
 

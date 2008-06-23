@@ -126,11 +126,13 @@ $wgTranslateTasks = array(
 	'view'           => 'ViewMessagesTask',
 	'untranslated'   => 'ViewUntranslatedTask',
 	'optional'       => 'ViewOptionalTask',
+	'problematic'    => 'ViewProblematicTask',
 	'review'         => 'ReviewMessagesTask',
 	'reviewall'      => 'ReviewAllMessagesTask',
 	'export-as-po'   => 'ExportasPoMessagesTask',
 	'export'         => 'ExportMessagesTask',
 	'export-to-file' => 'ExportToFileMessagesTask',
+	'export-to-xliff'=> 'ExportToXliffMessagesTask',
 );
 
 if ( $wgDebugComments ) {

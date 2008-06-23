@@ -1,5 +1,4 @@
 <?php
-if (!defined('MEDIAWIKI')) die();
 /**
  * Simple file format handler for testing import and export.
  *
@@ -153,16 +152,17 @@ class SimpleFormatWriter {
 		}
 	}
 
-	public function webExport( MessageCollection $MG ) {
-		global $wgTranslateExtensionDirectory;
-		$messages = $this->makeExportArray( $MG );
-		$filename = $this->group->getMessageFile( $MG->code );
+	public function webExport( MessageCollection $collection ) {
+		$code = $collection->code; // shorthand
 
+		// Open temporary stream
+		$filename = $this->group->getMessageFile( $code );
 		$tHandle = fopen( 'php://temp', 'wt' );
 
-		$this->addAuthors( $MG->getAuthors(), $MG->code );
-		$this->exportLanguage( $tHandle, $MG->code, $messages );
+		$this->addAuthors( $collection->getAuthors(), $code );
+		$this->exportLanguage( $tHandle, $code, $collection );
 
+		// Fetch data
 		rewind( $tHandle );
 		$data = stream_get_contents( $tHandle );
 		fclose( $tHandle );
@@ -170,20 +170,14 @@ class SimpleFormatWriter {
 	}
 
 	protected function getMessagesForExport( MessageGroup $group, $code ) {
-		$messages = $this->group->initCollection( $code );
-
-		foreach ( $messages->keys() as $key ) {
-			if ( $messages[$key]->ignored ) {
-				unset($messages[$key]);
-			}
-		}
-
-		$this->group->fillCollection( $messages );
-		$this->addAuthors( $messages->getAuthors(), $code );
-		return $this->makeExportArray( $messages );
+		$collection = $this->group->initCollection( $code );
+		$this->group->fillCollection( $collection );
+		$this->addAuthors( $collection->getAuthors(), $code );
+		return $collection;
 	}
 
-	protected function exportLanguage( $target, $code, $messages ) {
+	protected function exportLanguage( $target, $code, MessageCollection $collection ) {
+		$messages = $this->makeExportArray( $collection );
 		$this->load( $code );
 		$this->makeHeader( $target, $code );
 		$this->exportStaticHeader( $target );

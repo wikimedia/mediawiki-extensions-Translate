@@ -52,7 +52,7 @@ abstract class MessageGroup {
 	 * Meta groups consist of multiple groups or parts of other groups. This info
 	 * is used on many places, like when creating message index.
 	 */
-	protected $meta   = false;
+	protected $meta = false;
 	public function isMeta() { return $this->meta; }
 	public function setMeta( $value ) { $this->meta = $value; }
 
@@ -63,6 +63,11 @@ abstract class MessageGroup {
 	protected $mangler = null;
 	public function getMangler() { return $this->mangler; }
 	public function setMangler( $value ) { $this->mangler = $value; }
+
+	protected $type = 'undefined';
+	public function getType() { return $this->type; }
+	public function setType( $value ) { $this->type = $value; }
+
 
 	public $namespaces = array( NS_MEDIAWIKI, NS_MEDIAWIKI_TALK );
 
@@ -93,6 +98,15 @@ abstract class MessageGroup {
 			throw new MWException( "Unable to load definitions for " . $this->getLabel() );
 		}
 		return $defs;
+	}
+
+	/**
+	 * This function can be used for meta message groups to list their "own"
+	 * messages. For example branched message groups can exclude the messages they
+	 * share with each other.
+	 */
+	public function getUniqueDefinitions() {
+		return false;
 	}
 
 	/**
@@ -149,9 +163,22 @@ abstract class MessageGroup {
 	public function getMessageFile( $code ) { return false; }
 
 
-	public function initCollection( $code ) {
+	/**
+	 * Creates a new MessageCollection for this group.
+	 *
+	 * @param $code The langauge code for this collection.
+	 * @param $unique Bool: wether to build collection for messages unique to this
+	 *                group only.
+	 */
+	public function initCollection( $code, $unique = false ) {
 		$collection = new MessageCollection( $code );
-		$definitions = $this->getDefinitions();
+
+		if ( !$unique ) {
+			$definitions = $this->getDefinitions();
+		} else {
+			$definitions = $this->getUniqueDefinitions();
+		}
+
 		foreach ( $definitions as $key => $definition ) {
 			$collection->add( new TMessage( $key, $definition ) );
 		}
@@ -165,7 +192,7 @@ abstract class MessageGroup {
 
 		foreach ( $bools['ignored'] as $key ) {
 			if ( isset($collection[$key]) ) {
-				$collection[$key]->ignored = true;
+				unset( $collection[$key] );
 			}
 		}
 
@@ -190,6 +217,7 @@ abstract class MessageGroup {
 class CoreMessageGroup extends MessageGroup {
 	protected $label = 'MediaWiki messages';
 	protected $id    = 'core';
+	protected $type  = 'mediawiki';
 
 	public function __construct() {
 		parent::__construct();
@@ -211,6 +239,21 @@ class CoreMessageGroup extends MessageGroup {
 		$group->setLabel( $label );
 		$group->setId( $id );
 		return $group;
+	}
+
+	public function getUniqueDefinitions() {
+		if ($this->meta) {
+			$parent = new CoreMessageGroup;
+			$parentDefs = $parent->getDefinitions();
+			$ourDefs = $this->getDefinitions();
+
+			// Filter out shared messages
+			foreach ( array_keys($parentDefs) as $key ) {
+				unset( $ourDefs[$key] );
+			}
+			return $ourDefs;
+		}
+		return false;
 	}
 
 	public function getMessageFile( $code ) {
