@@ -300,7 +300,7 @@ class TMessage {
 	 * @return Translated string or null if there isn't translation.
 	 */
 	public function translation() {
-		return $this->database() ? $this->database() : $this->infile();
+		return ($this->database() !== null) ? $this->database() : $this->infile();
 	}
 
 	/**

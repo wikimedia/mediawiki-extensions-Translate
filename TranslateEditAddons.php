@@ -42,7 +42,7 @@ class TranslateEditAddons {
 
 	private static function doBox( $msg, $code, $title = false ) {
 		global $wgUser, $wgLang;
-		if (!$msg ) { return ''; }
+		if ( $msg === null ) { return ''; }
 
 		$name = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() );
 		$code = strtolower( $code );
@@ -144,12 +144,11 @@ class TranslateEditAddons {
 			$title = Title::makeTitle( NS_MEDIAWIKI, $key . '/' . $wgTranslateDocumentationLanguageCode );
 			$edit = $wgUser->getSkin()->makeKnownLinkObj( $title, wfMsgHtml( self::MSG . 'contribute' ), 'action=edit' );
 			$info = TranslateUtils::getMessageContent( $key, $wgTranslateDocumentationLanguageCode );
-			if ( !$info ) {
+			if ( $info === null ) {
 				$info = $group->getMessage( $key, $wgTranslateDocumentationLanguageCode );
 			}
 			$class = 'mw-sp-translate-edit-info';
-
-			if ( !$info ) {
+			if ( $info === null ) {
 				$info = wfMsg( self::MSG . 'no-information' );
 				$class = 'mw-sp-translate-edit-noinfo';
 			}
@@ -185,8 +184,8 @@ class TranslateEditAddons {
 
 
 		// Some syntactic checks
-		$translation = $object->textbox1 ? $object->textbox1 : $xx;
-		if ( $translation ) {
+		$translation = ($object->textbox1 !== null) ? $object->textbox1 : $xx;
+		if ( $translation !== null ) {
 			$message = new TMessage( $key, $en );
 			$message->database = $translation;
 			$checks = MessageChecks::doChecks( $message );
