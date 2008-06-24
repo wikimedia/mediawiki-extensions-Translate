@@ -13,7 +13,7 @@ $optionsWithArgs = array( 'skip', 'hours', 'format', 'target' );
 require( dirname(__FILE__) . '/cli.inc' );
 
 function showUsage() {
-	print <<<EOT
+	STDERR( <<<EOT
 Export helper, generates list of export commands for changes in some period.
 
 Usage: php autoexport.php [options...]
@@ -25,7 +25,8 @@ Options:
   --hours     Consider changes from last N hours
   --summarize Group languages by group prefix
 
-EOT;
+EOT
+);
 	exit( 1 );
 }
 
@@ -89,10 +90,10 @@ foreach ( $exports as $group => $languages ) {
 	$languages = array_keys( $languages );
 	sort($languages);
 	$languagelist = implode(', ', $languages );
-	echo str_replace(
+	STDOUT( str_replace(
 		array( '$GROUP', '$LANG', '$TARGET' ),
 		array( $group, "'$languagelist'", "'$target'" ),
-		$format ) . "\n";
+		$format ) );
 
 	if ( $summarize ) {
 		list( $group, ) = explode( '-', $group, 2 );
@@ -108,5 +109,5 @@ foreach ( $notice as $group => $languages ) {
 	$languages = array_unique( $languages );
 	sort($languages);
 	$languagelist = implode(', ', $languages );
-	echo "# Committed $group: $languagelist\n";
+	STDOUT( "# Committed $group: $languagelist" );
 }

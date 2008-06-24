@@ -1,13 +1,19 @@
 <?php
+/**
+ * Script to export translations of one message group to file(s).
+ *
+ * @author Niklas Laxstrom
+ *
+ * @copyright Copyright © 2008, Niklas Laxström
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * @file
+ */
 
 $optionsWithArgs = array( 'lang', 'target', 'group' );
-
-$dir = dirname( __FILE__ ); $IP = "$dir/../..";
-@include("$dir/../CorePath.php"); // Allow override
-require_once( "$IP/maintenance/commandLine.inc" );
+require( dirname(__FILE__) . '/cli.inc' );
 
 function showUsage() {
-	print <<<EOT
+	STDERR( <<<EOT
 Message exporter.
 
 Usage: php export.php [options...]
@@ -17,28 +23,26 @@ Options:
   --lang        Comma separated list of language codes
   --group       Group id
 
-EOT;
+EOT
+);
 	exit( 1 );
 }
 
 if ( !isset($options['target']) ) {
-	echo "You need to specify target directory\n\n";
-	showUsage();
+	STDERR( "You need to specify target directory" );
+	exit(1);
 }
-
 if ( !isset($options['lang']) ) {
-	echo "You need to specify languages to export\n\n";
-	showUsage();
+	STDERR( "You need to specify languages to export" );
+	exit(1);
 }
-
 if ( !isset($options['group']) ) {
-	echo "You need to specify group\n\n";
-	showUsage();
+	STDERR( "You need to specify group" );
+	exit(1);
 }
-
 if ( !is_writable( $options['target'] ) ) {
-	echo "Target directory is not writable\n\n";
-	showUsage();
+	STDERR( "Target directory is not writable" );
+	exit(1);
 }
 
 $langs = array_map( 'trim', explode( ',', $options['lang'] ) );
@@ -47,7 +51,7 @@ $langs = array_map( 'trim', explode( ',', $options['lang'] ) );
 $group = MessageGroups::getGroup( $options['group'] );
 
 if ( !$group instanceof MessageGroup ) {
-	echo "Invalid group\n\n";
+	STDERR( "Invalid group" );
 	exit( 1 );
 }
 

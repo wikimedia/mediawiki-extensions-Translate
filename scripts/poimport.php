@@ -12,7 +12,7 @@ $optionsWithArgs = array( 'file', 'user' );
 require( dirname(__FILE__) . '/cli.inc' );
 
 function showUsage() {
-	print <<<EOT
+	STDERR( <<<EOT
 Po file importer
 
 Usage: php poimport.php [options...]
@@ -22,17 +22,15 @@ Options:
   --user      User who makes edits to wiki
   --really    Doesn't do anything unless this is specified.
 
-EOT;
+EOT
+);
 	exit( 1 );
 }
 
-if ( isset( $options['help'] ) ) {
-	showUsage();
-}
-
+if ( isset( $options['help'] ) ) showUsage();
 if (!isset($options['file'])) {
-	echo "You need to specify input file\n\n";
-	showUsage();
+	STDERR( "You need to specify input file" );
+	exit(1);
 }
 
 /*
@@ -42,12 +40,13 @@ $p = new PoImporter( $options['file'] );
 $changes = $p->parse();
 
 if (!isset($options['user'])) {
-	echo "You need to specify user name for wiki import\n\n";
-	showUsage();
+	STDERR( "You need to specify user name for wiki import" );
+	exit(1);
 }
 
 if (!count($changes)) {
-	echo "No changes to import\n";
+	STDOUT( "No changes to import" );
+	exit(0);
 }
 
 /*
@@ -97,17 +96,17 @@ class PoImporter {
 		$matches = array();
 		if ( preg_match( '/X-Language-Code:\s+([a-zA-Z-_]+)/', $data, $matches ) ) {
 			$code = $matches[1];
-			echo "Detected language as $code\n";
+			STDOUT( "Detected language as $code" );
 		} else {
-			echo "Unable to determine language code\n";
+			STDERR( "Unable to determine language code" );
 			return false;
 		}
 
 		if ( preg_match( '/X-Message-Group:\s+([a-zA-Z0-9-_]+)/', $data, $matches ) ) {
 			$groupId = $matches[1];
-			echo "Detected message group as $groupId\n";
+			STDOUT( "Detected message group as $groupId" );
 		} else {
-			echo "Unable to determine message group\n";
+			STDERR( "Unable to determine message group" );
 			return false;
 		}
 
@@ -147,9 +146,9 @@ class PoImporter {
 
 			if ( $translation !== (string) $contents[$key]->translation ) {
 				if ( $translation === '' ) {
-					echo "Skipping empty translation in the po file for $key!\n";
+					STDOUT( "Skipping empty translation in the po file for $key!" );
 				} else {
-					echo "Translation of $key differs:\n$translation\n\n";
+					STDOUT( "Translation of $key differs:\n$translation\n" );
 					$changes["$key/$code"] = $translation;
 				}
 			}
@@ -186,7 +185,7 @@ class WikiWriter {
 		$wgUser = User::newFromName( $user );
 
 		if ( !$wgUser->idForName() ) {
-			echo "User $user does not exist.\n";
+			STDERR( "User $user does not exist." );
 			return;
 		}
 
@@ -203,7 +202,7 @@ class WikiWriter {
 		}
 
 		$count = count($this->changes);
-		echo "Going to update $count pages.\n";
+		STDOUT( "Going to update $count pages." );
 
 		foreach ( $this->changes as $title => $text ) {
 			$this->updateMessage( $title, $text );
@@ -218,14 +217,14 @@ class WikiWriter {
 		global $wgTitle, $wgArticle;
 		$wgTitle = Title::newFromText( "Mediawiki:$title" );
 
-		echo "Updating {$wgTitle->getPrefixedText()}... ";
+		STDOUT( "Updating {$wgTitle->getPrefixedText()}... ", true );
 		if ( !$wgTitle instanceof Title ) {
-			echo "INVALID TITLE!\n";
+			STDOUT( "INVALID TITLE!", false );
 			return;
 		}
 
 		if ( $this->dryrun ) {
-			echo "DRY RUN!\n";
+			STDOUT( "DRY RUN!", false );
 			return;
 		}
 
@@ -234,9 +233,9 @@ class WikiWriter {
 		$success = $wgArticle->doEdit( $text, 'Updating translation from gettext import' );
 
 		if ( $success ) {
-			echo "OK!\n";
+			STDOUT( "OK!", false );
 		} else {
-			echo "Failed!\n";
+			STDOUT( "Failed!", false );
 		}
 	}
 }

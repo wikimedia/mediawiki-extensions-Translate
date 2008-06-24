@@ -10,19 +10,30 @@
  * @file
  */
 
-
-$dir = dirname( __FILE__ ); $IP = "$dir/../..";
-@include("$dir/../CorePath.php"); // Allow override
+$dir = dirname( __FILE__ ); $IP = "$dir/../../..";
+@include("$dir/../../CorePath.php"); // Allow override
 require_once( "$IP/maintenance/commandLine.inc" );
 
-function STDOUT( $str, $forceNewLine = false ) {
+function STDOUT( $str, $singeLineItem = null ) {
+	global $options;
+	if ( isset($options['quiet']) ) return;
+
 	static $atStart = true;
-	if ( !$atStart && $forceNewLine ) echo "\n";
+	static $lastSingle = false;
 
-	$len = strlen($str);
-	if ( $len ) $atStart = ($str[$len-1] === "\n");
+	if ( !$atStart && $singeLineItem === null || !$lastSingle && !$atStart && $singeLineItem ) {
+		fwrite( STDOUT, "\n" );
+	}
+	fwrite( STDOUT, $str );
 
-	echo $str;
+	if ( $singeLineItem !== true ) {
+		fwrite( STDOUT, "\n" );
+		$atStart = true;
+		$lastSingle = false;
+	} else {
+		$lastSingle = true;
+		$atStart = false;
+	}
 }
 
 function STDERR( $message ) {

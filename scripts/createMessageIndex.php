@@ -42,9 +42,9 @@ function checkAndAdd( $g, $ignore = false ) {
 	$id = $g->getId();
 
 	if ( is_array( $messages ) ) {
-		echo "Working with $id\n";
+		STDOUT( "Working with $id" );
 	} else {
-		echo "Something wrong with $id... skipping\n";
+		STDOUT( "Something wrong with $id... skipping" );
 		continue;
 	}
 
@@ -57,7 +57,7 @@ function checkAndAdd( $g, $ignore = false ) {
 		$key = strtolower( "$namespace:$key" );
 		if ( isset($hugearray[$key]) ) {
 			if ( !$ignore )
-				echo "Key $key already belongs to $hugearray[$key], conflict with $id\n";
+				STDOUT( "Key $key already belongs to $hugearray[$key], conflict with $id" );
 		} else {
 			$hugearray[$key] = &$id;
 		}

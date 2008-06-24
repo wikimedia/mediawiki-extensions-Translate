@@ -39,7 +39,7 @@ function showUsage() {
 
 END;
 	STDERR( $msg );
-	die( 1 );
+	exit( 1 );
 }
 
 

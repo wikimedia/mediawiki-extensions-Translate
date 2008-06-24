@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Command line script to mark translations fuzzy (similar to gettext fuzzy).
  *
@@ -8,14 +7,13 @@
  * @author Niklas Laxström
  * @copyright Copyright © 2007-2008, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * @file
  */
 
-$dir = dirname( __FILE__ ); $IP = "$dir/../..";
-@include("$dir/../CorePath.php"); // Allow override
-require_once( "$IP/maintenance/commandLine.inc" );
+require( dirname(__FILE__) . '/cli.inc' );
 
 if ( count( $args ) == 0 || isset( $options['help'] ) ) {
-	print <<<EOT
+	STDERR( <<<EOT
 Fuzzy bot command line script
 
 Usage: php fuzzy.php [options...] <messages>
@@ -25,7 +23,8 @@ Options:
   --skiplanguages Skip some languages
   --comment       Comment for updating
 
-EOT;
+EOT
+);
 	exit( 1 );
 }
 
@@ -59,14 +58,14 @@ class FuzzyBot {
 		global $wgTranslateFuzzyBotName, $wgUser;
 
 		if ( !isset( $wgTranslateFuzzyBotName ) ) {
-			echo "\$wgTranslateFuzzyBotName is not set\n";
+			STDERR( "\$wgTranslateFuzzyBotName is not set" );
 			return;
 		}
 
 		$wgUser = User::newFromName( $wgTranslateFuzzyBotName );
 
 		if ( $wgUser->isAnon() ) {
-			echo "Creating user $wgTranslateFuzzyBotName\n";
+			STDOUT( "Creating user $wgTranslateFuzzyBotName" );
 			$wgUser->addToDatabase();
 		}
 
@@ -81,7 +80,7 @@ class FuzzyBot {
 
 		$msgs = $this->getPages();
 		$count = count($msgs);
-		echo "Found $count pages to update.\n";
+		STDOUT( "Found $count pages to update." );
 
 		foreach ( $msgs as $title => $text ) {
 			$this->updateMessage( $title, $text );
@@ -134,20 +133,20 @@ class FuzzyBot {
 		global $wgTitle, $wgArticle, $wgTranslateDocumentationLanguageCode;
 		$wgTitle = Title::newFromText( "Mediawiki:$title" );
 
-		echo "Updating {$wgTitle->getPrefixedText()}... ";
+		STDOUT( "Updating {$wgTitle->getPrefixedText()}... ", true );
 		if ( !$wgTitle instanceof Title ) {
-			echo "INVALID TITLE!\n";
+			STDOUT( "INVALID TITLE!", false );
 			return;
 		}
 
 		$items = explode( '/', $wgTitle->getText(), 2 );
 		if ( isset( $items[1] ) && $items[1] === $wgTranslateDocumentationLanguageCode ) {
-			echo "IGNORED!\n";
+			STDOUT( "IGNORED!", false );
 			return;
 		}
 
 		if ( $this->dryrun ) {
-			echo "DRY RUN!\n";
+			STDOUT( "DRY RUN!", false );
 			return;
 		}
 
@@ -158,9 +157,9 @@ class FuzzyBot {
 		$success = $wgArticle->doEdit( TRANSLATE_FUZZY . $text, $comment, EDIT_FORCE_BOT );
 
 		if ( $success ) {
-			echo "OK!\n";
+			STDOUT( "OK!", false );
 		} else {
-			echo "Failed!\n";
+			STDOUT( "Failed!", false );
 		}
 
 	}

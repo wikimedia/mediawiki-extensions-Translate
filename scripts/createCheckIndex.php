@@ -30,7 +30,7 @@ foreach ( $groups as $g ) {
 	STDOUT( "Working with $id: ", true );
 
 	foreach ( $codes as $code ) {
-		STDOUT( "$code " );
+		STDOUT( "$code ", true );
 
 		// Initialise messages, using unique definitions if appropriate
 		$collection = $g->initCollection( $code, $g->isMeta() );
@@ -43,7 +43,7 @@ foreach ( $groups as $g ) {
 			if ( $prob ) {
 				// Print it
 				$nsText = $wgContLang->getNsText( $namespace );
-				STDOUT( "# [[$nsText:$key/$code]]\n", true );
+				STDOUT( "# [[$nsText:$key/$code]]" );
 
 				// Add it to the array
 				$key = strtolower( "$namespace:$key" );
