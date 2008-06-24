@@ -207,6 +207,8 @@ class ViewProblematicTask extends ViewMessagesTask {
 		$code = $this->options->getLanguage();
 		if ( isset($problematic[$code]) ) {
 			foreach ( $this->collection->keys() as $key ) {
+				$namespace = $this->group->namespaces[0];
+				$key = strtolower( "$namespace:$key" );
 				if ( !in_array( $key, $problematic[$code] ) ) {
 					unset( $this->collection[$key] );
 				}
