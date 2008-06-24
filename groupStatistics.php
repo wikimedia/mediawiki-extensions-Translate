@@ -2,11 +2,9 @@
 /**
  * Statistics about message groups.
  *
- * @addtogroup Maintenance
- *
  * @author Niklas Laxstrom
  *
- * @copyright Copyright © 2007, Niklas Laxström
+ * @copyright Copyright © 2007-2008, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -16,41 +14,38 @@ $dir = dirname( __FILE__ ); $IP = "$dir/../..";
 @include("$dir/../CorePath.php"); // Allow override
 require_once( "$IP/maintenance/commandLine.inc" );
 
-function stderr( $message ) {
-	static $stderr = null;
-	if (is_null($stderr)) $stderr = fopen( "php://stderr", "wt" );
-	fwrite( $stderr, $message . "\n" );
+class TranslateStatsOutput extends WikiStatsOutput {
+	function heading() {
+		echo '{| class="sortable wikitable" border="2" cellpadding="4" cellspacing="0" style="background-color: #F9F9F9; border: 1px #AAAAAA solid; border-collapse: collapse; clear:both;" width="100%"'."\n";
+	}
 }
 
-require_once( $IP . '/maintenance/language/StatOutputs.php' );
 
-if ( isset( $options['help'] ) ) {
-	showUsage();
+function STDERR( $message ) {
+	fwrite( STDERR, $message . "\n" );
 }
 
-# Default output is WikiText
-if ( !isset( $options['output'] ) ) {
-	$options['output'] = 'wiki';
-}
+if ( isset($options['help']) ) showUsage();
+if ( !isset($options['groups']) ) showUsage();
+if ( !isset($options['output']) ) $options['output'] = 'default';
+
 
 /** Print a usage message*/
 function showUsage() {
 	$msg = <<<END
-Usage: php transstat.php [--help] [--output=csv|text|wiki] --groups
-	--help : this helpful message
-	--groups : comma separated list of groups
-	--skiplanguages : comma separated list of languages that should be skipped
+	--help : this help message
+	--groups LIST: comma separated list of groups
+	--skiplanguages LIST: comma separated list of languages that should be skipped
 	--skipzero : skip languages that don't have any localisation at all
 	--fuzzy : add column for fuzzy counts
-	--output : select an output engine one of:
+	--output TYPE: select an another output engine
 		* 'csv'      : Comma Separated Values.
-		* 'wiki'     : MediaWiki syntax (default).
+		* 'wiki'     : MediaWiki syntax.
 		* 'metawiki' : MediaWiki syntax used for Meta-Wiki.
 		* 'text'     : Text with tabs.
-Example: php maintenance/transstat.php --output=text
 
 END;
-	stderr( $msg );
+	STDERR( $msg );
 	die( 1 );
 }
 
@@ -69,36 +64,39 @@ switch ( $options['output'] ) {
 	case 'csv':
 		$out = new csvStatsOutput();
 		break;
+	case 'default':
+		$out = new TranslateStatsOutput();
+		break;
 	default:
 		showUsage();
 }
 
-if ( !isset($options['groups']) ) {
-	showUsage();
-}
-
-// Get groups from input
-$groups = array();
-$reqGroups = array_map( 'trim', explode( ',', $options['groups'] ) );
 
 $skipLanguages = array();
 if ( isset($options['skiplanguages']) ) {
 	$skipLanguages = array_map( 'trim', explode( ',', $options['skiplanguages'] ) );
 }
 
+
+// Get groups from input
+$groups = array();
+$reqGroups = array_map( 'trim', explode( ',', $options['groups'] ) );
+
 // List of all groups
 $allGroups = MessageGroups::singleton()->getGroups();
 
 // Get list of valid groups
 foreach ( $reqGroups as $id ) {
-	if ( array_key_exists( $id, $allGroups ) ) {
+	if ( isset($allGroups[$id]) ) {
 		$groups[$id] = $allGroups[$id];
 	} else {
-		stderr( "Unknown group $id" );
+		STDERR( "Unknown group: $id" );
 	}
 }
 
-// List of all customized languages.
+if (!count($groups)) showUsage();
+
+// List of all languages.
 $languages = Language::getLanguageNames( false );
 // Default sorting order by language code, users can sort wiki output by any
 // column, if it is supported.
@@ -124,24 +122,26 @@ foreach ( $languages as $code => $name ) {
 	// Skip list
 	if ( in_array( $code, $skipLanguages ) ) continue;
 
+	// Tracker for skipping languages with no localisation
 	$allZero = true;
 	$columns = array();
 
 	foreach ( $groups as $g ) {
 		// Initialise messages
-
 		$collection = $g->initCollection( $code );
 		$collection->filter( 'optional' );
 		// Store the count of real messages for later calculation.
 		$total = count($collection);
 
+		// Fill translations in for counting
 		$g->fillCollection( $collection );
+
+		// Count fuzzy first
 		$collection->filter( 'fuzzy' );
 		$fuzzy = $total - count($collection);
 
+		// Count the completion percent
 		$collection->filter( 'translated', false );
-
-		// Count the completion percent and output it
 		$translated = count( $collection );
 		if ( $translated ) $allZero = false;
 
@@ -155,14 +155,14 @@ foreach ( $languages as $code => $name ) {
 
 	}
 
+	// Skip dummy languages if requested
 	if ( $allZero && isset($options['skipzero']) ) continue;
 
+	// Output the the row
 	$out->blockstart();
 	$out->element( $code );
 	$out->element( $name );
-
 	foreach ( $columns as $c ) $out->element( $c );
-
 	$out->blockend();
 }
 
