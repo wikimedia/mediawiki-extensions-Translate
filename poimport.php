@@ -5,13 +5,11 @@
  * @author Niklas Laxström
  * @copyright Copyright © 2007-2008 Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * @file
  */
 
 $optionsWithArgs = array( 'file', 'user' );
-
-$dir = dirname( __FILE__ ); $IP = "$dir/../..";
-@include("$dir/../CorePath.php"); // Allow override
-require_once( "$IP/maintenance/commandLine.inc" );
+require( dirname(__FILE__) . '/cli.inc' );
 
 function showUsage() {
 	print <<<EOT

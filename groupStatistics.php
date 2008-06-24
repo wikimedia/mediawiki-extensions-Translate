@@ -6,23 +6,16 @@
  *
  * @copyright Copyright © 2007-2008, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * @file
  */
 
 $optionsWithArgs = array( 'groups', 'output', 'skiplanguages', );
-
-$dir = dirname( __FILE__ ); $IP = "$dir/../..";
-@include("$dir/../CorePath.php"); // Allow override
-require_once( "$IP/maintenance/commandLine.inc" );
+require( dirname(__FILE__) . '/cli.inc' );
 
 class TranslateStatsOutput extends WikiStatsOutput {
 	function heading() {
 		echo '{| class="sortable wikitable" border="2" cellpadding="4" cellspacing="0" style="background-color: #F9F9F9; border: 1px #AAAAAA solid; border-collapse: collapse; clear:both;" width="100%"'."\n";
 	}
-}
-
-
-function STDERR( $message ) {
-	fwrite( STDERR, $message . "\n" );
 }
 
 if ( isset($options['help']) ) showUsage();

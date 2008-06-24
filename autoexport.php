@@ -1,10 +1,16 @@
 <?php
+/**
+ * A script to generate export commands for changes for last X hours.
+ *
+ * @author Niklas Laxstrom
+ *
+ * @copyright Copyright © 2008, Niklas Laxström
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * @file
+ */
 
 $optionsWithArgs = array( 'skip', 'hours', 'format', 'target' );
-
-$dir = dirname( __FILE__ ); $IP = "$dir/../..";
-@include("$dir/../CorePath.php"); // Allow override
-require_once( "$IP/maintenance/commandLine.inc" );
+require( dirname(__FILE__) . '/cli.inc' );
 
 function showUsage() {
 	print <<<EOT
@@ -17,7 +23,7 @@ Options:
   --format    Format string, variables \$GROUP, \$LANG and \$TARGET
   --skip      Languages to skip, comma separated list
   --hours     Consider changes from last N hours
-	--summarize Group languages by group prefix
+  --summarize Group languages by group prefix
 
 EOT;
 	exit( 1 );

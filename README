@@ -55,6 +55,7 @@ function customMessageGroups( $id ) {
 * poimport will no longer replace translation in database with empty string
 * Support for exporting very basic Xliff files (no import yet)
 * Task for listing problematic messages
+* CreateCheckIndex.php maintenance script for creating a list of problematic messsages
 
 == Changes in version 8 ==
 * Released 2008-02-06
