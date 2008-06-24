@@ -54,6 +54,9 @@ Call
 
 Category Intersection
 
+Category On Upload
+optional = categoryonupload-none
+
 Category Stepper
 ignored = categorystepper
 
@@ -374,6 +377,8 @@ New User Message
 New User Notification
 file = NewUserNotif/NewUserNotif.i18n.php
 
+No Move Userpages
+
 Nuke
 file = Nuke/SpecialNuke.i18n.php
 
@@ -493,6 +498,8 @@ Simple Anti Spam
 Site Matrix
 
 Skin Per Page
+
+Slippy Map
 
 Smooth Gallery
 ignored = smoothgallery-pagetext
