@@ -284,13 +284,9 @@ class TMessage {
 
 	/** Determies if this message has a proper translation. */
 	public function translated() {
-		if ( $this->pageExists() ) {
-			return true;
-		} else {
-			$optionalSame = $this->optional() && ($this->translation() !== $this->definition);
-			$hasTranslation = $this->translation() !== null;
-			return $hasTranslation && !$this->fuzzy() && !$optionalSame;
-		}
+		if ( $this->fuzzy() ) return false;
+		$optionalSame = $this->optional() && ($this->translation() === $this->definition);
+		return ($this->translation() !== null) && !$optionalSame;
 	}
 
 	/**

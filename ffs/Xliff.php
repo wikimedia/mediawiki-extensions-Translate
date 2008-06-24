@@ -15,7 +15,8 @@
  */
 class XliffFormatWriter extends SimpleFormatWriter {
 	// Re-implemented
-	protected function exportLanguage( $target, $code, MessageCollection $collection ) {
+	protected function exportLanguage( $target, MessageCollection $collection ) {
+		$code = $collection->code;
 		$w = new XMLWriter();
 		$w->openMemory();
 
