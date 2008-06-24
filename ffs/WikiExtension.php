@@ -87,10 +87,12 @@ class WikiExtensionFormatWriter extends WikiFormatWriter {
 	public $variableName = 'messages';
 
 	public function fileExport( array $languages, $targetDirectory ) {
-		$filename = $targetDirectory . '/' . $this->group->getMessageFile( '' );
 
-		wfMkdirParents( dirname( $filename ) );
-		$handle = fopen( $filename, 'wt' );
+		$filename = $this->group->getMessageFile( '' );
+		$target = $targetDirectory . '/' . $filename;
+
+		wfMkdirParents( dirname( $target ) );
+		$handle = fopen( $target, 'wt' );
 		if ( $handle === false ) {
 			throw new MWException( "Unable to open target for writing" );
 		}
@@ -98,6 +100,23 @@ class WikiExtensionFormatWriter extends WikiFormatWriter {
 		$this->doExport( $handle, $languages );
 
 		fclose( $handle );
+	}
+
+	public function webExport( MessageCollection $collection ) {
+		$code = $collection->code; // shorthand
+
+		// Open temporary stream
+		$filename = $this->group->getMessageFile( $code );
+		$handle = fopen( 'php://temp', 'wt' );
+
+		$this->addAuthors( $collection->getAuthors(), $code );
+		$this->doExport( $handle, array($collection->code) );
+
+		// Fetch data
+		rewind( $handle );
+		$data = stream_get_contents( $handle );
+		fclose( $handle );
+		return $data;
 	}
 
 	protected function doExport( $handle, $languages ) {
@@ -131,6 +150,7 @@ class WikiExtensionFormatWriter extends WikiFormatWriter {
 
 	protected function writeSection( $handle, $code ) {
 		$messages = $this->getMessagesForExport( $this->group, $code );
+		$messages = $this->makeExportArray( $messages );
 		if ( count($messages) ) {
 			list( $name, $native) = $this->getLanguageNames($code);
 			$authors = $this->formatAuthors( ' * @author ', $code );
@@ -147,16 +167,6 @@ class WikiExtensionFormatWriter extends WikiFormatWriter {
 	public function parseAuthorsFromString( $string ) {
 		$count = preg_match_all( '/@author (.*)/', $string, $m );
 		return $m[1];
-	}
-
-	public function webExport( MessageCollection $MG ) {
-		$handle = fopen( 'php://temp', 'wt' );
-		$this->doExport( $handle, array( $MG->code ) );
-
-		rewind( $handle );
-		$data = stream_get_contents( $handle );
-		fclose( $handle );
-		return $data;
 	}
 
 	public function _load() {

@@ -14,7 +14,7 @@
  * writes little more than what is mandatory.
  */
 class XliffFormatWriter extends SimpleFormatWriter {
-	// Inhe
+	// Re-implemented
 	protected function exportLanguage( $target, $code, MessageCollection $collection ) {
 		$w = new XMLWriter();
 		$w->openMemory();
@@ -63,7 +63,7 @@ class XliffFormatWriter extends SimpleFormatWriter {
 			$w->writeAttribute( 'id', $key );
 			$w->writeElement( 'source', $collection[$key]->definition );
 			$translation = $collection[$key]->translation;
-			if ( $translation ) {
+			if ( $translation !== null ) {
 				$w->writeElement( 'target',  $translation );
 			}
 			$w->endElement();

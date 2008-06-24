@@ -1,13 +1,6 @@
 <?php
-if (!defined('MEDIAWIKI')) die();
 /**
  * Wike file format handler.
- *
- * Metadata items understood by this class:
- * - exportprefix: Prefix for every item exported
- * - languagename: Name of the language in English
- * - nativename: Name of the language in that language
- * - authors
  *
  * @author Niklas Laxström
  * @copyright Copyright © 2008, Niklas Laxström

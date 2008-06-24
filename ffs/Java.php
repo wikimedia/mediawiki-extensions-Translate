@@ -1,5 +1,4 @@
 <?php
-if (!defined('MEDIAWIKI')) die();
 /**
  * Java properties file format handler.
  *

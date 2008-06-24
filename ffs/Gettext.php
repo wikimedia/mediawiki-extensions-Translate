@@ -67,7 +67,7 @@ class GettextFormatReader extends SimpleFormatReader {
 			$matches = array();
 			if ( preg_match( "/^msgctxt\s($poformat)/mx", $section, $matches ) ) {
 				// Remove quoting
-				$item['ctxt'] = preg_replace( $quotePattern, '', $matches[1] );
+				$item['ctxt'] = self::formatForWiki( $matches[1] );
 			} elseif ( $useCtxtAsKey ) {
 				// Invalid message
 				continue;
@@ -75,10 +75,7 @@ class GettextFormatReader extends SimpleFormatReader {
 
 			$matches = array();
 			if ( preg_match( "/^msgid\s($poformat)/mx", $section, $matches ) ) {
-				// Remove quoting
-				$item['id'] = preg_replace( $quotePattern, '', $matches[1] );
-				// Restore new lines and remove quoting
-				//$definition = stripcslashes( $definition );
+				$item['id'] = self::formatForWiki( $matches[1] );
 			} else {
 				#echo "Definition not found!\n$section";
 				continue;
@@ -88,7 +85,7 @@ class GettextFormatReader extends SimpleFormatReader {
 			$matches = array();
 			if ( preg_match( "/^msgid_plural\s($poformat)/mx", $section, $matches ) ) {
 				$pluralMessage = true;
-				$plural = preg_replace( $quotePattern, '', $matches[1] );;
+				$plural = self::formatForWiki( $matches[1] );
 				$item['id'] = "{{PLURAL:GETTEXT|{$item['id']}|$plural}}";
 
 				var_dump( $item['id'] );
@@ -100,22 +97,18 @@ class GettextFormatReader extends SimpleFormatReader {
 				for ( $i = 0; $i < $pluralForms; $i++ ) {
 					$matches = array();
 					if ( preg_match( "/^msgstr\[$i\]\s($poformat)/mx", $section, $matches ) ) {
-						$actualForms[] = preg_replace( $quotePattern, '', $matches[1] );
+						$actualForms[] = self::formatForWiki( $matches[1] );
 					} else {
 						throw new MWException( "Plural not found, expecting $i" );
 					}
 				}
 
 				$item['str'] = '{{PLURAL:GETTEXT|' . implode( '|', $actualForms ) . '}}';
-				var_dump( $item['str'] );
 			} else {
 
 				$matches = array();
 				if ( preg_match( "/^msgstr\s($poformat)/mx", $section, $matches ) ) {
-					// Remove quoting
-					$item['str'] = preg_replace( $quotePattern, '', $matches[1] );
-					// Restore new lines and remove quoting
-					#$translation = stripcslashes( $translation );
+					$item['str'] = self::formatForWiki( $matches[1] );
 				} else {
 					#echo "Translation not found!\n";
 					continue;
@@ -168,6 +161,16 @@ class GettextFormatReader extends SimpleFormatReader {
 
 	}
 
+	public static function formatForWiki( $data ) {
+		$quotePattern = '/(^"|"$\n?)/m';
+		$data = preg_replace( $quotePattern, '', $data );
+		$data = stripcslashes( $data );
+		if ( preg_match( '/\s$/', $data ) ) {
+			$data .= '\\';
+		}
+		return $data;
+	}
+
 	public function parseMessages( StringMangler $mangler ) {
 		$defs = $this->parseFile();
 		$messages = array();
@@ -188,38 +191,6 @@ class GettextFormatReader extends SimpleFormatReader {
 class GettextFormatWriter extends SimpleFormatWriter {
 	protected $data = array();
 
-	public function fileExport( array $languages, $targetDirectory ) {
-		foreach ( $languages as $code ) {
-			$messages = $this->getMessagesForExport( $this->group, $code );
-			$filename = $this->group->getMessageFile( $code );
-			$target = $targetDirectory . '/' . $filename;
-
-			wfMkdirParents( dirname( $target ) );
-			$tHandle = fopen( $target, 'wt' );
-			if ( $tHandle === false ) {
-				throw new MWException( "Unable to open target for writing" );
-			}
-
-			$this->exportLanguage( $tHandle, $code, $messages );
-
-			fclose( $tHandle );
-		}
-	}
-
-	public function webExport( MessageCollection $MG ) {
-		global $wgTranslateExtensionDirectory;
-		$filename = $this->group->getMessageFile( $MG->code );
-
-		$tHandle = fopen( 'php://temp', 'wt' );
-
-		$this->exportLanguage( $tHandle, $MG->code, $MG );
-
-		rewind( $tHandle );
-		$data = stream_get_contents( $tHandle );
-		fclose( $tHandle );
-		return $data;
-	}
-
 	public function load( $code ) {
 		$reader = $this->group->getReader( $code );
 		if ( $reader ) {
@@ -230,9 +201,10 @@ class GettextFormatWriter extends SimpleFormatWriter {
 	}
 
 
-	public function exportLanguage( $handle, $code, MessageCollection $messages ) {
+	public function exportLanguage( $handle, MessageCollection $messages ) {
 		global $wgSitename, $wgServer, $wgTranslateDocumentationLanguageCode;
 
+		$code = $messages->code;
 		$this->load( $code );
 		$lang = Language::factory( 'en' );
 
@@ -317,7 +289,9 @@ class GettextFormatWriter extends SimpleFormatWriter {
 	}
 
 	protected function escape( $line ) {
-		#$line = addcslashes( $line, '\\"' );
+		// There may be \ as a last character, for keeping trailing whitespace
+		$line = preg_replace( '/\\\\$/', '', $line );
+		$line = addcslashes( $line, '\\"' );
 		$line = str_replace( "\n", '\n', $line );
 		$line = '"' . $line . '"';
 		return $line;

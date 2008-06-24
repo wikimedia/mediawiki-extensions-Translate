@@ -131,21 +131,20 @@ class SimpleFormatWriter {
 
 
 	public function fileExport( array $languages, $targetDirectory ) {
-		global $wgTranslateExtensionDirectory;
 		foreach ( $languages as $code ) {
 			$messages = $this->getMessagesForExport( $this->group, $code );
 			$filename = $this->group->getMessageFile( $code );
 			$target = $targetDirectory . '/' . $filename;
 
 			wfMkdirParents( dirname( $target ) );
-			$tHandle = fopen( $target, 'wt' );
-			if ( $tHandle === false ) {
+			$handle = fopen( $target, 'wt' );
+			if ( $handle === false ) {
 				throw new MWException( "Unable to open target for writing" );
 			}
 
-			$this->exportLanguage( $tHandle, $code, $messages );
+			$this->exportLanguage( $handle, $messages );
 
-			fclose( $tHandle );
+			fclose( $handle );
 		}
 	}
 
@@ -154,15 +153,15 @@ class SimpleFormatWriter {
 
 		// Open temporary stream
 		$filename = $this->group->getMessageFile( $code );
-		$tHandle = fopen( 'php://temp', 'wt' );
+		$handle = fopen( 'php://temp', 'wt' );
 
 		$this->addAuthors( $collection->getAuthors(), $code );
-		$this->exportLanguage( $tHandle, $code, $collection );
+		$this->exportLanguage( $handle, $collection );
 
 		// Fetch data
-		rewind( $tHandle );
-		$data = stream_get_contents( $tHandle );
-		fclose( $tHandle );
+		rewind( $handle );
+		$data = stream_get_contents( $handle );
+		fclose( $handle );
 		return $data;
 	}
 
@@ -173,10 +172,10 @@ class SimpleFormatWriter {
 		return $collection;
 	}
 
-	protected function exportLanguage( $target, $code, MessageCollection $collection ) {
+	protected function exportLanguage( $target, MessageCollection $collection ) {
 		$messages = $this->makeExportArray( $collection );
-		$this->load( $code );
-		$this->makeHeader( $target, $code );
+		$this->load( $collection->code );
+		$this->makeHeader( $target, $collection->code );
 		$this->exportStaticHeader( $target );
 		$this->exportMessages( $target, $messages );
 	}

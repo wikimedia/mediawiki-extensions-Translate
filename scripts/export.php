@@ -22,10 +22,13 @@ Options:
   --target      Target directory for exported files
   --lang        Comma separated list of language codes
   --group       Group id
-
 EOT
 );
 	exit( 1 );
+}
+
+if ( isset($options['help']) || $args === 1 ) {
+	showUsage();
 }
 
 if ( !isset($options['target']) ) {

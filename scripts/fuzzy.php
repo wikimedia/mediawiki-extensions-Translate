@@ -12,7 +12,7 @@
 
 require( dirname(__FILE__) . '/cli.inc' );
 
-if ( count( $args ) == 0 || isset( $options['help'] ) ) {
+if ( $args === 1 || isset( $options['help'] ) ) {
 	STDERR( <<<EOT
 Fuzzy bot command line script
 
