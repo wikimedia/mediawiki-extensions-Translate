@@ -153,30 +153,6 @@ class TranslateUtils {
 		wfProfileOut( __METHOD__ ); wfMemOut( __METHOD__ );
 	}
 
-	private static function doExistenceQuery( MessageCollection $message) {
-		wfMemIn( __METHOD__ );
-		wfProfileIn( __METHOD__ );
-
-		$dbr = wfGetDB( DB_SLAVE );
-		$rows = $dbr->select(
-			'page',
-			array( 'page_namespace', 'page_title' ),
-			array( 'page_namespace' => array( NS_MEDIAWIKI, NS_MEDIAWIKI_TALK ) ),
-			__METHOD__
-		);
-
-		foreach ( $rows as $row ) {
-			if ( $row->page_namespace === (string)NS_MEDIAWIKI ) {
-				self::$pageExists[$row->page_title] = true;
-			} elseif ( $row->page_namespace === (string)NS_MEDIAWIKI_TALK ) {
-				self::$talkExists[$row->page_title] = true;
-			}
-		}
-		$rows->free();
-		wfProfileOut( __METHOD__ );
-		wfMemOut( __METHOD__ );
-	}
-
 	public static function translationChanges( $hours = 24 ) {
 		wfMemIn( __METHOD__ );
 		global $wgTranslateMessageNamespaces;
