@@ -1,0 +1,5 @@
+Configure
+file = Configure/Configure.alias.php
+
+Translate
+file = Translate/Translate.alias.php
