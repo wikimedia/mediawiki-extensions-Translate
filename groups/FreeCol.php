@@ -25,7 +25,7 @@ class FreeColMessageGroup extends MessageGroup {
 	);
 
 	protected $optional = array(
-		'colopedia.unit.productionBonus', 'model.foundingFather.adamSmith.birthAndDeath', 'model.foundingFather.adamSmith.name',
+		'model.foundingFather.adamSmith.birthAndDeath', 'model.foundingFather.adamSmith.name',
 		'model.foundingFather.bartolomeDeLasCasas.birthAndDeath', 'model.foundingFather.bartolomeDeLasCasas.name', 'model.foundingFather.benjaminFranklin.birthAndDeath',
 		'model.foundingFather.benjaminFranklin.name', 'model.foundingFather.fatherJeanDeBrebeuf.birthAndDeath', 'model.foundingFather.fatherJeanDeBrebeuf.name',
 		'model.foundingFather.ferdinandMagellan.birthAndDeath', 'model.foundingFather.ferdinandMagellan.name', 'model.foundingFather.francisDrake.birthAndDeath',
