@@ -208,11 +208,15 @@ class ViewProblematicTask extends ViewMessagesTask {
 		if ( isset($problematic[$code]) ) {
 			foreach ( $this->collection->keys() as $key ) {
 				$namespace = $this->group->namespaces[0];
-				$key = strtolower( "$namespace:$key" );
-				if ( !in_array( $key, $problematic[$code] ) ) {
+				$ikey = strtolower( "$namespace:$key" );
+				if ( !in_array( $ikey, $problematic[$code] ) ) {
 					unset( $this->collection[$key] );
 				}
 			}
+		} else {
+			foreach ($this->collection->keys() as $key )
+				unset( $this->collection[$key] );
+			return;
 		}
 	}
 
