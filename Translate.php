@@ -11,7 +11,7 @@ if (!defined('MEDIAWIKI')) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '8.47' );
+define( 'TRANSLATE_VERSION', '8.48' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name'           => 'Translate',
@@ -37,6 +37,10 @@ $wgHooks['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';
 $wgHooks['UserToggles'][] = 'TranslatePreferences::TranslateUserToggles';
 $wgHooks['SpecialRecentChangesQuery'][] = 'TranslateRcFilter::translationFilter';
 $wgHooks['SpecialRecentChangesPanel'][] = 'TranslateRcFilter::translationFilterForm';
+$wgHooks['SpecialPage_initList'][] = 'wfTranslateRemoveAllmessages';
+function wfTranslateRemoveAllmessages( $list ) {
+	unset( $list['Allmessages'] ); return true;
+}
 
 $wgAvailableRights[] = 'translate';
 
