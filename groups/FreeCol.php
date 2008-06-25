@@ -149,7 +149,9 @@ class FreeColMessageGroup extends MessageGroup {
 		'model.nation.spanish.region.land.4', 'model.nation.spanish.region.land.5', 'model.nation.spanish.region.river.1',
 		'model.nation.spanish.region.river.2', 'model.nation.swedish.europe', 'model.nation.swedish.ruler',
 		'model.nation.swedishREF.ruler', 'model.nationType.naval.name', 'model.unit.occupation.activeNoMovesLeft',
-		'shipName.3.0',
+		'shipName.3.0', 'model.nation.spanish.region.mountain.1', 'model.nation.spanish.region.mountain.2',
+		'model.nation.spanish.region.mountain.3', 'model.nation.spanish.region.mountain.4', 'model.nation.spanish.region.mountain.5',
+		'model.nation.spanish.region.river.3', 'model.nation.spanish.region.river.4', 'model.nation.spanish.region.river.5',
 	);
 
 	public function getMessageFile( $code ) {
