@@ -82,16 +82,16 @@ If it is not possible in your language to form valid expression without changing
 
 You need to be in the translators group to save changes.
 Changes are not saved until you click save button below.',
-	'translate-magic-form'        => 'Language: $1 Module: $2 $3',
+	'translate-magic-module'      => 'Module:',
 	'translate-magic-submit'      => 'Fetch',
+	'translate-magic-cm-export'   => 'Export', // cm- should be removed
+
 	'translate-magic-cm-to-be'    => 'To-be',
 	'translate-magic-cm-current'  => 'Current',
 	'translate-magic-cm-original' => 'Original',
-	'translate-magic-cm-fallback' => 'Fallback',
 
 	'translate-magic-cm-comment' => 'Comment:',
 	'translate-magic-cm-save'    => 'Save',
-	'translate-magic-cm-export'  => 'Export',
 
 	'translate-magic-cm-updatedusing' => 'Updated using [[Special:Magic]]',
 	'translate-magic-cm-savefailed'   => 'Save failed',

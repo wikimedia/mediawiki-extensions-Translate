@@ -57,6 +57,7 @@ function customMessageGroups( $id ) {
 * Task for listing problematic messages
 * CreateCheckIndex.php maintenance script for creating a list of problematic messsages
 * Aliases for special pages
+* improvements to Special:Magic and support for translating special page aliases for extensions
 
 == Changes in version 8 ==
 * Released 2008-02-06

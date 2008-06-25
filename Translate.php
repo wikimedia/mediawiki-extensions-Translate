@@ -11,7 +11,7 @@ if (!defined('MEDIAWIKI')) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '8.49' );
+define( 'TRANSLATE_VERSION', '8.50' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name'           => 'Translate',
@@ -48,6 +48,7 @@ $wgAvailableRights[] = 'translate';
 define( 'TRANSLATE_FUZZY', '!!FUZZY!!' );
 define( 'TRANSLATE_INDEXFILE', $dir . 'messageindex.ser' );
 define( 'TRANSLATE_CHECKFILE', $dir . 'messagecheck.ser' );
+define( 'TRANSLATE_ALIASFILE', $dir . 'aliases.txt' );
 
 #
 # Configuration variables
