@@ -134,12 +134,13 @@ class WikiExtensionFormatWriter extends WikiFormatWriter {
 	}
 
 	protected function exportSection( $handle, $code, array $languages) {
-		if ( isset($this->sections[$code]) ) {
-			$authors = $this->parseAuthorsFromString( $this->sections[$code] );
-			$this->addAuthors( $authors, $code );
-		}
-
 		if ( in_array( $code, $languages ) ) {
+
+			// Parse authors only if we regenerate section
+			if ( isset($this->sections[$code]) ) {
+				$authors = $this->parseAuthorsFromString( $this->sections[$code] );
+				$this->addAuthors( $authors, $code );
+			}
 			$this->writeSection( $handle, $code );
 			unset( $this->sections[$code] );
 		} elseif ( isset( $this->sections[$code] ) ) {

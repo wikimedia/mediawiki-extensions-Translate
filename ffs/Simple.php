@@ -117,7 +117,9 @@ class SimpleFormatWriter {
 			$this->authors[$code] = array();
 		}
 
-		$this->authors[$code] = wfArrayMerge($this->authors[$code], $authors);
+		/* Assuming there is only numerical keys, array_merge does the right thing
+		 * here, and wfMergeArray() not, because it overwrites instead of appends */
+		$this->authors[$code] = array_merge($this->authors[$code], $authors);
 		$this->authors[$code] = array_unique($this->authors[$code]);
 	}
 
