@@ -500,7 +500,7 @@ Site Matrix
 Skin Per Page
 
 Slippy Map
-ignored = slippymap_license, slippymap_osmlink
+ignored = slippymap_license, slippymap_osmlink 
 
 Smooth Gallery
 ignored = smoothgallery-pagetext
@@ -614,3 +614,4 @@ YUI
 file = SocialProfile/YUI/yui.i18n.php
 
 YouTube Auth Sub
+
