@@ -7,7 +7,7 @@ class PremadeMediawikiExtensionGroups {
 		if ( $this->groups !== null ) return;
 
 		$dir = dirname( __FILE__ );
-		$defines = file_get_contents( $dir . '/defines.txt' );
+		$defines = file_get_contents( $dir . '/mediawiki-defines.txt' );
 		$sections = preg_split( "/\n\n/", $defines, -1, PREG_SPLIT_NO_EMPTY );
 
 		$groups = $fixedGroups = array();
@@ -52,7 +52,7 @@ class PremadeMediawikiExtensionGroups {
 				$groups[] = $newgroup;
 			}
 		}
-		
+
 
 		foreach ( $groups as $g ) {
 			if ( !is_array($g) ) {
