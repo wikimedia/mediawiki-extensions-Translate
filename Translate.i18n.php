@@ -889,11 +889,13 @@ $messages['de'] = array(
 	'translate-task-view'               => 'Zeige alle Systemnachrichten der',
 	'translate-task-untranslated'       => 'Zeige alle nicht übersetzten Systemnachrichten der',
 	'translate-task-optional'           => 'Zeige optionale Systemnachrichten der',
+	'translate-task-problematic'        => 'Zeige Systemnachrichten mit Problemen',
 	'translate-task-review'             => 'Prüfe Änderungen der',
 	'translate-task-reviewall'          => 'Prüfe alle Übersetzungen der',
 	'translate-task-export'             => 'Exportiere alle Übersetzungen der',
 	'translate-task-export-to-file'     => 'Exportiere alle Übersetzungen in eine Datei der',
 	'translate-task-export-as-po'       => 'Exportiere alle Übersetzungen in das Gettext-Format der',
+	'translate-task-export-to-xliff'    => 'Exportiere alle Übersetzungen in das Xliff-Formatt',
 	'translate-page-no-such-language'   => 'Die angegebene Sprache ist ungültig.',
 	'translate-page-no-such-task'       => 'Die angegebene Aufgabe ist ungültig.',
 	'translate-page-no-such-group'      => 'Die angegebene Gruppe ist ungültig.',
@@ -933,12 +935,14 @@ Spezialseiten und magische Wörter können mehrere Übersetzungen haben, sie wer
 In der Übersetzung eines Namensraumnamens hat <tt>$1 talk</tt> eine spezielle Bedeutung. <tt>$1</tt> wird durch den Projektnamen ersetzt (zum Beispiel <tt>{{SITENAME}} talk</tt>. Wenn es in Deiner Sprache nicht möglich ist, eine grammatikalisch korrekte Form davon zu bilden ohne den Projektnamen zu verändern, kontaktiere bitte einen Systemadministrator.
 
 Du musst in der Übersetzer-Gruppe sein, um Änderungen zu speichern. Änderungen werden erst beim Klick auf den Speichern-Button gespeichert.',
-	'translate-magic-form'              => 'Sprache: $1 Modul: $2 $3',
+	'translate-magic-module'            => 'Modul:',
 	'translate-magic-submit'            => 'Hole',
+	'translate-magic-cm-export'         => 'Export',
+	'translate-magic-cm-to-be'          => 'Sollte sein',
 	'translate-magic-cm-current'        => 'Aktuell',
+ 	'translate-magic-cm-original'       => 'Original',
 	'translate-magic-cm-comment'        => 'Kommentar:',
 	'translate-magic-cm-save'           => 'Speichern',
-	'translate-magic-cm-export'         => 'Exportieren',
 	'translate-magic-cm-updatedusing'   => 'Aktualisiert durch Special:Magic',
 	'translate-magic-cm-savefailed'     => 'Speichern fehlgeschlagen',
 	'translate-magic-special'           => 'Spezialseiten-Aliase',
@@ -959,6 +963,7 @@ Du musst in der Übersetzer-Gruppe sein, um Änderungen zu speichern. Änderunge
 	'translate-rc-translation-filter-no'     => 'nichts',
 	'translate-rc-translation-filter-only'   => 'Zeige nur Übersetzungen',
 	'translate-rc-translation-filter-filter' => 'Übersetzungen filtern',
+	'translate-rc-translation-filter-site'   => 'Nur Änderungen an Systemnachrichten der Site',
 );
 
 /** Lower Sorbian (Dolnoserbski)
