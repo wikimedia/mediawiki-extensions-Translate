@@ -11,7 +11,7 @@ if (!defined('MEDIAWIKI')) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '8.50' );
+define( 'TRANSLATE_VERSION', '9 (2008-06-29)' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name'           => 'Translate',
@@ -112,10 +112,16 @@ $wgTranslateMessageNamespaces = array( NS_MEDIAWIKI );
 $wgTranslateAC = array(
 'core'                      => 'CoreMessageGroup',
 'core-mostused'             => 'CoreMostUsedMessageGroup',
-'ext-0-all'                 => 'AllMediawikiExtensionsGroup',
-'ext-0-wikimedia'           => 'AllWikimediaExtensionsGroup',
-'ext-0-flaggedrevs'         => 'AllFlaggedRevsExtensionsGroup',
 'out-word2mediawikiplus'    => 'Word2MediaWikiPlusMessageGroup',
+);
+
+/**
+ * Regexps for putting groups into subgroups. Deepest groups first.
+ */
+$wgTranslateGroupStructure = array(
+	'/^core/' => array( 'core' ),
+	'/^ext-flaggedrevs/' => array( 'ext', 'flaggedrevs' ),
+	'/^ext/' => array( 'ext' ),
 );
 
 $wgTranslateAddMWExtensionGroups = false;

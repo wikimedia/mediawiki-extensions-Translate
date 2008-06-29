@@ -40,6 +40,13 @@ class SpecialTranslate extends SpecialPage {
 
 		$errors = array();
 
+		if ( $this->options['group'] === '' ) {
+			$wgOut->addHTML(
+				$this->groupInformation()
+			);
+			return;
+		}
+
 		if ( !$this->options['language'] ) {
 			$errors['language'] = wfMsgExt( self::MSG . 'no-such-language', array( 'parse' ) );
 			$this->options['language'] = $this->defaults['language'];
@@ -92,7 +99,10 @@ class SpecialTranslate extends SpecialPage {
 			header( 'Content-type: text/plain; charset=UTF-8' );
 			echo $output;
 		} else {
-			$description = $this->getGroupDescription();
+			$description = $this->getGroupDescription( $this->group );
+			if ( $description ) {
+				$description = Xml::fieldset( wfMsg( self::MSG . 'description-legend' ), $description );
+			}
 			$links = $this->doStupidLinks();
 			if ( $this->paging['count'] === 0 ) {
 				$wgOut->addHTML( $description . $links );
@@ -111,7 +121,7 @@ class SpecialTranslate extends SpecialPage {
 		/* str  */ 'task'     => 'untranslated',
 		/* str  */ 'sort'     => 'normal',
 		/* str  */ 'language' => $wgUser->getOption( 'language' ),
-		/* str  */ 'group'    => 'core',
+		/* str  */ 'group'    => '',
 		/* int  */ 'offset'   => 0,
 		/* int  */ 'limit'    => 100,
 		);
@@ -304,16 +314,103 @@ class SpecialTranslate extends SpecialPage {
 		return $link;
 	}
 
-	protected function getGroupDescription() {
-		wfMemIn( __METHOD__ );
+	protected function getGroupDescription( MessageGroup $group ) {
 		global $wgOut;
-		$description = $this->group->getDescription();
-		wfMemOut( __METHOD__ );
-		if ( !$description ) return '';
-		return
-			Xml::openElement( 'fieldset' ) .
-				Xml::element( 'legend', null, wfMsg( self::MSG . 'description-legend' ) ) .
-				$wgOut->parse( $description ) .
-			Xml::closeElement( 'fieldset' );
+
+		$description = $group->getDescription();
+		if ( $description === null ) return null;
+		$description = $wgOut->parse( $description, false );
+		return $description;
+	}
+
+	/**
+	 * Returns group strucuted into sub groups. First group in each subgroup is
+	 * considered as the main group.
+	 */
+	public function getGroupStructure() {
+		global $wgTranslateGroupStructure;
+		$groups = MessageGroups::singleton()->getGroups();
+		$structure = array();
+
+		foreach ( $groups as $id => $o ) {
+			foreach ( $wgTranslateGroupStructure as $pattern => $hypergroup ) {
+				if ( preg_match( $pattern, $id ) ) {
+					// Emulate deepArraySet, because AFAIK php doesn't have one
+					self::deepArraySet( $structure, $hypergroup, $id, $o );
+					// We need to continue the outer loop, because we have finished this item
+					continue 2;
+				}
+			}
+
+			// Does not belong to any subgroup, just shove it into main level
+			$structure[$id] = $o;
+
+		}
+
+		return $structure;
+	}
+
+	/**
+	 * Function do do $array[level1][level2]...[levelN][$key] = $value, if we have
+	 * the indexes in an array.
+	 */
+	public static function deepArraySet( &$array, array $indexes, $key, $value ) {
+		foreach ( $indexes as $index ) {
+			if ( !isset($array[$index]) ) $array[$index] = array();
+			$array = &$array[$index];
+		}
+
+		$array[$key] = $value;
+	}
+
+
+	public function groupInformation() {
+		$out = '';
+		$structure = $this->getGroupStructure();
+
+		foreach( $structure as $blocks ) {
+			$out .= $this->formatGroupInformation( $blocks );
+		}
+
+		return $out;
+	}
+
+	public function formatGroupInformation( $blocks ) {
+		global $wgUser;
+
+
+		if ( is_array($blocks) ) {
+			$block = array_shift( $blocks );
+		} else {
+			$block = $blocks;
+		}
+
+		$id = $block->getId();
+
+		$title = $this->getTitle();
+		$edit = $wgUser->getSkin()->makeKnownLinkObj( $title, wfMsgHtml( self::MSG . 'edit' ), "group=$id" );
+		$label =  htmlspecialchars($block->getLabel()) . " ($edit)";
+		$desc = $this->getGroupDescription( $block );
+		$hasSubblocks = is_array($blocks) && count($blocks);
+
+		if ( $desc !== null || $hasSubblocks ) {
+			$out = "\n<fieldset>\n";
+			$out .= Xml::tags( 'legend', null, $label );
+			$out .= $desc;
+		} else {
+			$out = "\n<ul><li>$label</li></ul><hr />";
+		}
+
+		if ( $hasSubblocks ) {
+			foreach ( $blocks as $subBlock ) {
+				$out .= $this->formatGroupInformation( $subBlock );
+			}
+		}
+
+		if ( $desc !== null || $hasSubblocks ) {
+			$out .= "\n</fieldset>\n";
+		}
+
+		return $out;
 	}
 }

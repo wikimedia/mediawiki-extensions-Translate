@@ -9,10 +9,17 @@ if (!defined('MEDIAWIKI')) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 class MessageChecks {
-	/**
-	 * Message prefix.
-	 */
-	const MSG = 'translate-checks-';
+
+	// Fastest first
+	static $checksForType = array(
+		'mediawiki' => array(
+			array( __CLASS__, 'checkPlural' ),
+			array( __CLASS__, 'checkParameters' ),
+			array( __CLASS__, 'checkBalance' ),
+			array( __CLASS__, 'checkLinks' ),
+			array( __CLASS__, 'checkXHTML' ),
+		),
+	);
 
 	/**
 	 * Entry point which runs all checks.
@@ -20,41 +27,47 @@ class MessageChecks {
 	 * @param $message Instance of TMessage.
 	 * @return Array of warning messages, html-format.
 	 */
-	public static function doChecks( TMessage $message ) {
+	public static function doChecks( TMessage $message, $type ) {
 		wfLoadExtensionMessages( 'Translate' );
 		$warnings = array();
 
-		if ( count($values = self::checkParameters( $message )) ) {
-			$warnings[] = wfMsgExt( self::MSG . 'parameters', 'parseinline', implode( ', ', $values ) );
+		$warning = '';
+		if ( self::checkParameters( $message, $warning ) ) {
+			$warnings[] = $warning;
 		}
 
-		if ( count($values = self::checkBalance( $message )) ) {
-			$warnings[] = wfMsgExt( self::MSG . 'balance', 'parseinline', wfEscapeWikiText( implode( ', ', $values ) ) );
+		$warning = '';
+		if ( self::checkBalance( $message, $warning ) ) {
+			$warnings[] = $warning;
 		}
 
-		if ( count($values = self::checkLinks( $message )) ) {
-			$warnings[] = wfMsgExt( self::MSG . 'links', 'parseinline', wfEscapeWikiText( implode( ', ', $values ) ) );
+		$warning = '';
+		if ( self::checkLinks( $message, $warning ) ) {
+			$warnings[] = $warning;
 		}
 
-		if ( count($values = self::checkXHTML( $message )) ) {
-			$warnings[] = wfMsgExt( self::MSG . 'xhtml', 'parseinline', htmlspecialchars( implode( ', ', $values ) ) );
+		$warning = '';
+		if ( self::checkXHTML( $message, $warning ) ) {
+			$warnings[] = $warning;
 		}
 
-		if ( self::checkPlural( $message ) ) {
-			$warnings[] = wfMsgExt( self::MSG . 'plural', 'parseinline' );
+		$warning = '';
+		if ( self::checkPlural( $message, $warning ) ) {
+			$warnings[] = $warning;
 		}
 
 		return $warnings;
 	}
 
-	public static function doFastChecks( TMessage $message ) {
-		if ( !$message->translation ) return false;
-		return
-			self::checkPlural( $message ) ||
-			self::checkParameters( $message ) ||
-			self::checkBalance( $message ) ||
-			self::checkLinks( $message ) ||
-			self::checkXHTML( $message );
+	public static function doFastChecks( TMessage $message, $type ) {
+		if ( $message->translation === null) return false;
+		if ( !isset(self::$checksForType[$type])) return false;
+
+		foreach ( self::$checksForType[$type] as $check ) {
+			if ( call_user_func( $check, $message ) ) return true;
+		}
+
+		return false;
 	}
 
 	/**
@@ -64,19 +77,30 @@ class MessageChecks {
 	 * @param $message Instance of TMessage.
 	 * @return Array of unused parameters.
 	 */
-	protected static function checkParameters( TMessage $message ) {
+	protected static function checkParameters( TMessage $message, &$desc = null ) {
 		$variables = array( '\$1', '\$2', '\$3', '\$4', '\$5', '\$6', '\$7', '\$8', '\$9' );
 
 		$missing = array();
 		$definition = $message->definition;
 		$translation= $message->translation;
+		if ( strpos( $definition, '$' ) === false ) return false;
+
 		for ( $i = 1; $i < 10; $i++ ) {
 			$pattern = '/\$' . $i . '/s';
 			if ( preg_match( $pattern, $definition ) && !preg_match( $pattern, $translation ) ) {
 				$missing[] = '$' . $i;
 			}
 		}
-		return $missing;
+
+		if ( $count = count($missing) ) {
+			global $wgLang;
+			$desc = array( 'translate-checks-parameters',
+				implode( ', ', $missing ),
+				$wgLang->formatNum($count) );
+			return true;
+		}
+
+		return false;
 	}
 
 	/**
@@ -87,31 +111,47 @@ class MessageChecks {
 	 * @return Array of unbalanced paranthesis pairs with difference of opening
 	 * and closing count as value.
 	 */
-	protected static function checkBalance( TMessage $message ) {
+	protected static function checkBalance( TMessage $message, &$desc = null ) {
 		$translation = preg_replace( '/[^{}[\]()]/u', '', $message->translation );
 		$counts = array( '{' => 0, '}' => 0, '[' => 0, ']' => 0, '(' => 0, ')' => 0 );
-		foreach ( preg_split('//u', $translation) as $char ) {
-			if ( !$char ) continue;
+
+		$i = 0;
+		$len = strlen($translation);
+		while ( $i < $len ) {
+			$char = $translation[$i];
 			isset($counts[$char]) ? $counts[$char]++ : var_dump( $char );
+			$i++;
 		}
 
 		$balance = array();
 		if ( $counts['['] !== $counts[']'] ) $balance[] = '[]: ' . ($counts['['] - $counts[']']);
 		if ( $counts['{'] !== $counts['}'] ) $balance[] = '{}: ' . ($counts['{'] - $counts['}']);
 		if ( $counts['('] !== $counts[')'] ) $balance[] = '(): ' . ($counts['('] - $counts[')']);
-		return $balance;
+
+		if ( $count = count($balance) ) {
+			global $wgLang;
+			$desc = array( 'translate-checks-balance',
+				implode( ', ', $balance ),
+				$wgLang->formatNum($count) );
+			return true;
+		}
+
+		return false;
 	}
 
 	/**
 	 * Checks if the translation uses links that are discouraged. Valid links are
 	 * those that link to Special: or {{ns:special}}: or project pages trough
-	 * MediaWiki messages like {{MediaWiki:helppage-url}}:.
+	 * MediaWiki messages like {{MediaWiki:helppage-url}}:. Also links in the
+	 * definition are allowed.
 	 *
 	 * @param $message Instance of TMessage.
 	 * @return Array of problematic links.
 	 */
-	protected static function checkLinks( TMessage $message ) {
+	protected static function checkLinks( TMessage $message, &$desc = null ) {
 		$translation = $message->translation;
+		if ( strpos( $translation, '[[' ) === false ) return false;
+
 		$matches = array();
 		$links = array();
 		$tc = Title::legalChars() . '#%{}';
@@ -124,7 +164,16 @@ class MessageChecks {
 
 			$links[] = "[[{$matches[1][$i]}|{$matches[2][$i]}]]";
 		}
-		return $links;
+
+		if ( $count = count($links) ) {
+			global $wgLang;
+			$desc = array( 'translate-checks-links',
+				implode( ', ', $links ),
+				$wgLang->formatNum($count) );
+			return true;
+		}
+
+		return false;
 	}
 
 	/**
@@ -134,8 +183,10 @@ class MessageChecks {
 	 * @return Array of tags in invalid syntax with correction suggestions as
 	 * value.
 	 */
-	protected static function checkXHTML( TMessage $message ) {
+	protected static function checkXHTML( TMessage $message, &$desc = null ) {
 		$translation = $message->translation;
+		if ( strpos( $translation, '<' ) === false ) return false;
+
 		$tags = array(
 			'~<hr *(\\\\)?>~suDi' => '<hr />', // Wrong syntax
 			'~<br *(\\\\)?>~suDi' => '<br />',
@@ -153,7 +204,16 @@ class MessageChecks {
 				$wrongTags[$wrongMatch] = "$wrongMatch → $correct";
 			}
 		}
-		return $wrongTags;
+
+		if ( $count = count($wrongTags) ) {
+			global $wgLang;
+			$desc = array( 'translate-checks-xhtml',
+				implode( ', ', $wrongTags ),
+				$wgLang->formatNum($count) );
+			return true;
+		}
+
+		return false;
 	}
 
 	/**
@@ -162,11 +222,12 @@ class MessageChecks {
 	 * @param $message Instance of TMessage.
 	 * @return True if plural magic word is missing.
 	 */
-	protected static function checkPlural( TMessage $message ) {
+	protected static function checkPlural( TMessage $message, &$desc = null ) {
 		$definition = $message->definition;
 		$translation = $message->translation;
 		if ( stripos( $definition, '{{plural:' ) !== false &&
 			stripos( $translation, '{{plural:' ) === false ) {
+			$desc = array( 'translate-checks-plural' );
 			return true;
 		} else {
 			return false;

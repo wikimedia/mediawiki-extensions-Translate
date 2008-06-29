@@ -53,7 +53,7 @@ $messages['en'] = array(
 	'translate-prev'                   => 'Previous page',
 
 	'translate-page-description-legend' => 'Information about the group',
-//	'translate-page-edit'               => 'edit',
+	'translate-page-edit'               => 'edit',
 
 	'translate-optional' => '(optional)',
 	'translate-ignored'  => '(ignored)',
@@ -105,10 +105,14 @@ Changes are not saved until you click save button below.',
 	'translationchanges-export' => 'export',
 	'translationchanges-change' => '$1: $2 by $3',
 
-	'translate-checks-parameters' => 'Following parameters are not used: <strong>$1</strong>',
-	'translate-checks-balance'    => 'There is uneven amount of parentheses: <strong>$1</strong>',
-	'translate-checks-links'      => 'Following links are problematic: <strong>$1</strong>',
-	'translate-checks-xhtml'      => 'Please replace the following tags with correct ones: <strong>$1</strong>',
+	'translate-checks-parameters' => 'Following {{PLURAL:$2|parameter|parameters}} are not used:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-balance'    => 'There is uneven amount of {{PLURAL:$2|parentheses|parentheses}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links'      => 'Following {{PLURAL:$2|link is|$2 links are}} problematic:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-xhtml'      => 'Please replace the following {{PLURAL:$2|tag|tags}} with correct ones:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural'     => 'Definition uses <nowiki>{{PLURAL:}}</nowiki> but translation does not.',
 
 	'tog-translate-nonewsletter' => 'Do not send me e-mail newsletters (relevant only for users with a confirmed e-mailaddress)',

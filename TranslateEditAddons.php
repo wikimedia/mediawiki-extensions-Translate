@@ -141,9 +141,9 @@ class TranslateEditAddons {
 		// User provided documentation
 		if ( $wgTranslateDocumentationLanguageCode ) {
 			global $wgUser;
-			$title = Title::makeTitle( NS_MEDIAWIKI, $key . '/' . $wgTranslateDocumentationLanguageCode );
+			$title = Title::makeTitle( $nsMain, $key . '/' . $wgTranslateDocumentationLanguageCode );
 			$edit = $wgUser->getSkin()->makeKnownLinkObj( $title, wfMsgHtml( self::MSG . 'contribute' ), 'action=edit' );
-			$info = TranslateUtils::getMessageContent( $key, $wgTranslateDocumentationLanguageCode );
+			$info = TranslateUtils::getMessageContent( $key, $wgTranslateDocumentationLanguageCode, $nsMain );
 			if ( $info === null ) {
 				$info = $group->getMessage( $key, $wgTranslateDocumentationLanguageCode );
 			}
@@ -184,13 +184,20 @@ class TranslateEditAddons {
 
 
 		// Some syntactic checks
-		$translation = ($object->textbox1 !== null) ? $object->textbox1 : $xx;
+		$translation = ($object->textbox1 !== '') ? $object->textbox1 : $xx;
 		if ( $translation !== null ) {
 			$message = new TMessage( $key, $en );
 			$message->database = $translation;
-			$checks = MessageChecks::doChecks( $message );
+			$checks = MessageChecks::doChecks( $message, $group->getType() );
 			if ( count($checks) ) {
-				$boxes[] = TranslateUtils::fieldset( wfMsgHtml( self::MSG . 'warnings' ), implode( '<hr />', $checks),
+				$checkMessages = array();
+				foreach ( $checks as $checkParams ) {
+					array_splice( $checkParams, 1, 0, 'parseinline' );
+					$checkMessages[] = call_user_func_array( 'wfMsgExt', $checkParams );
+				}
+
+				$boxes[] = TranslateUtils::fieldset(
+					wfMsgHtml( self::MSG . 'warnings' ), implode( '<hr />', $checkMessages),
 					array( 'class' => 'mw-sp-translate-edit-warnings' ) );
 			}
 		}

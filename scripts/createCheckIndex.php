@@ -11,20 +11,22 @@
 
 require( dirname(__FILE__) . '/cli.inc' );
 
-$codes = array_keys( Language::getLanguageNames( false ) );
-sort( $codes );
+$codes = Language::getLanguageNames( false );
 
 // Exclude this special language
 if ( $wgTranslateDocumentationLanguageCode )
 	unset( $codes[$wgTranslateDocumentationLanguageCode] );
+
+$codes = array_keys( $codes );
+sort( $codes );
+
 
 $supportedTypes = array('mediawiki');
 $problematic = array();
 
 $groups = MessageGroups::singleton()->getGroups();
 foreach ( $groups as $g ) {
-	# Don't bother checking groups we have no checks for!
-	if ( !in_array($g->getType(), $supportedTypes) ) continue;
+	$type = $g->getType();
 
 	$id = $g->getId();
 	STDOUT( "Working with $id: ", true );
@@ -39,7 +41,7 @@ foreach ( $groups as $g ) {
 
 		// Remove untranslated messages from the list
 		foreach ( $collection->keys() as $key ) {
-			$prob = MessageChecks::doFastChecks( $collection[$key] );
+			$prob = MessageChecks::doFastChecks( $collection[$key], $type );
 			if ( $prob ) {
 				// Print it
 				$nsText = $wgContLang->getNsText( $namespace );

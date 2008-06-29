@@ -6,8 +6,10 @@ Advanced Random
 file = AdvancedRandom/SpecialAdvancedRandom.i18n.php
 
 Ajax Query Pages
+descmsg = ajax-qp-desc
 
 Ajax Show Editors
+descmsg = ajax-se-desc
 
 Anti Bot
 
@@ -15,10 +17,12 @@ Anti Spoof
 
 APC
 file = APC/ViewAPC.i18n.php
+descmsg = viewapc-desc
 
 Asksql
 
 Assert Edit
+descmsg = assert_edit_desc
 
 Author Protect
 
@@ -36,17 +40,22 @@ optional = babel-3-n-male, babel-4-n-male, babel-5-n-male, babel-N-n-male
 
 Back and Forth
 file = BackAndForth/BackAndForth.i18n.php
+descmsg = backforth-desc
 
 Bad Image
+descmsg = badimages-desc
 
 Blahtex
+descmsg = math-desc
 
 Block Titles
+descmsg = block_title_error-desc
 
 Board Vote
 ignored = boardvote_footer
 
 Book Information
+descmsg = bookinfo-desc
 
 Breadcrumbs navigation
 file = BreadCrumbs/BreadCrumbs.i18n.php
@@ -63,7 +72,8 @@ Category Stepper
 ignored = categorystepper
 
 Category Tree
-ignored = categorytree-collapse-bullet,categorytree-expand-bullet,categorytree-page-bullet
+ignored = categorytree-collapse-bullet, categorytree-expand-bullet,
+ignored = categorytree-page-bullet
 
 Category Feed
 file = catfeed/catfeed.i18n.php
@@ -83,12 +93,14 @@ Check User
 
 Chemistry
 file = Chemistry/ChemFunctions.i18n.php
+descmsg = chemicalsource-desc
 optional = chemFunctions_SearchExplanation
 ignored = chemFunctions_EINECS, chemFunctions_CHEBI, chemFunctions_PubChem,
 ignored = chemFunctions_SMILES, chemFunctions_InChI, chemFunctions_RTECS,
 ignored = chemFunctions_KEGG, chemFunctions_DrugBank
 
 Cite
+descmsg = cite_desc
 optional = cite_reference_link_key_with_num, cite_reference_link_prefix
 optional = cite_reference_link_suffix, cite_references_link_prefix
 optional = cite_references_link_suffix, cite_reference_link
@@ -101,11 +113,13 @@ ignored = cite_references_prefix, cite_references_suffix
 Cite (special page)
 id = ext-citespecial
 file = Cite/SpecialCite.i18n.php
+descmsg = cite_article_desc
 ignored = cite_text
 
 Clean Changes
 
 Collection
+descmsg = coll-desc
 ignored = coll-collection
 
 Comment Pages
@@ -121,11 +135,14 @@ optional = configure-section-squid, configure-section-svg, configure-section-tex
 optional = configure-section-tidy
 
 Confirm Account
+descmsg = confirmedit-desc
 optional = requestaccount-info, requestaccount-footer
 
 Confirm Edit
+descmsg = captcha-desc
 
 ConfirmEdit Fancy Captcha
+desc = Captcha generator for Confirm Edit.
 file = ConfirmEdit/FancyCaptcha.i18n.php
 
 Contact Page
@@ -155,13 +172,16 @@ Crowd Authentication
 
 Data Transfer
 file = DataTransfer/languages/DT_Messages.php
+descmsg = dt-desc
 
 Deleted Contributions
 id = ext-deletedcontribs
+descmsg = deletedcontributions-desc
 
 Did You Mean
 
 Dismissable SiteNotice
+descmsg = sitenotice-desc
 ignored = sitenotice_id
 
 Double Wiki
@@ -187,6 +207,7 @@ Edit User
 Email Address Image
 
 Email Article
+descmsg = ea-desc
 
 Eval
 file = Eval/SpecialEval.i18n.php
@@ -194,50 +215,51 @@ file = Eval/SpecialEval.i18n.php
 Expand Templates
 
 Extension Distributor
+descmsg = extdist-desc
 
 Farmer
 optional = farmercreateurl
 ignored = farmerwikiurl, farmerinterwikiurl
 
 Flagged Revisions - Flagged Revs
-id = ext-fr-flaggedrevs
+id = ext-flaggedrevs-flaggedrevs
 file = FlaggedRevs/language/FlaggedRevs.i18n.php
 optional = revreview-toggle
 
 Flagged Revisions - Depreciation Oversight
-id = ext-fr-depreciationoversight
+id = ext-flaggedrevs-depreciationoversight
 file = FlaggedRevs/language/DepreciationOversight.i18n.php
 
 Flagged Revisions - Flagged Revs Aliases
-id = ext-fr-flaggedrevsaliases
+id = ext-flaggedrevs-flaggedrevsaliases
 file = FlaggedRevs/language/FlaggedRevsAliases.i18n.php
 
 Flagged Revisions - Old Reviewed Pages
-id = ext-fr-oldreviewedpages
+id = ext-flaggedrevs-oldreviewedpages
 file = FlaggedRevs/language/OldReviewedPages.i18n.php
 
 Flagged Revisions - Quality Oversight
-id = ext-fr-qualityoversight
+id = ext-flaggedrevs-qualityoversight
 file = FlaggedRevs/language/QualityOversight.i18n.php
 
 Flagged Revisions - Reviewed Pages
-id = ext-fr-reviewedpages
+id = ext-flaggedrevs-reviewedpages
 file = FlaggedRevs/language/ReviewedPages.i18n.php
 
 Flagged Revisions - Stabilization
-id = ext-fr-stabilization
+id = ext-flaggedrevs-stabilization
 file = FlaggedRevs/language/Stabilization.i18n.php
 
 Flagged Revisions - Stable Pages
-id = ext-fr-stablepages
+id = ext-flaggedrevs-stablepages
 file = FlaggedRevs/language/StablePages.i18n.php
 
 Flagged Revisions - Stable Versions
-id = ext-fr-stableversions
+id = ext-flaggedrevs-stableversions
 file = FlaggedRevs/language/StableVersions.i18n.php
 
 Flagged Revisions - Unreviewed Pages
-id = ext-fr-unreviewedpages
+id = ext-flaggedrevs-unreviewedpages
 file = FlaggedRevs/language/UnreviewedPages.i18n.php
 
 Find Spam
@@ -247,6 +269,7 @@ Fixed Image
 Force Preview
 
 Format Email
+descmsg = email-desc
 ignored = email_header
 
 Gadgets
@@ -263,6 +286,7 @@ Google Analytics
 file = googleAnalytics/googleAnalytics.i18n.php
 
 Google Maps
+desc = Easily create maps with wiki-fied markers
 var = wgGoogleMapsMessages
 
 Go To Category
@@ -276,6 +300,7 @@ file = I18nTags/I18nTags.i18n.php
 Icon
 
 Image Map
+descmsg = imagemap_desc
 ignored = imagemap_desc_types
 
 Image Tagging
@@ -306,6 +331,7 @@ ignored = invitations-uninvitedlist-item
 
 Labeled Section Transclusion
 file = LabeledSectionTransclusion/lst.i18n.php
+descmsg = lst-desc
 
 Cldr
 file = cldr/LanguageNames.i18n.php
@@ -318,6 +344,7 @@ Link Search
 
 Liquid Threads
 file = LiquidThreads/Lqt.i18n.php
+descmsg = lqt-desc
 ignored = lqt_header_warning_before_big
 
 Lookup User
