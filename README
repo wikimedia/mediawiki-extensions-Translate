@@ -32,7 +32,11 @@ function customMessageGroups( $id ) {
 }
 </code>
 
-== Chages in version 9 ==
+== Changes in version 10 ==
+
+* 2008-06-29:2 Branched core messages now load translations from trunk files too
+
+== Changes in version 9 ==
 * Released 2008-06-29
 * (bug 12955) Numbers should be localized in Translate extension
 * Support branches for core messages
