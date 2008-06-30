@@ -73,7 +73,7 @@ ignored = categorystepper
 
 Category Tree
 ignored = categorytree-collapse-bullet, categorytree-expand-bullet,
-ignored = categorytree-page-bullet
+ignored = categorytree-empty-bullet,categorytree-page-bullet
 
 Category Feed
 file = catfeed/catfeed.i18n.php
