@@ -291,6 +291,9 @@ var = wgGoogleMapsMessages
 
 Go To Category
 
+Group Permissions Manager
+file = GroupPermissionsManager/GPManager.i18n.php
+
 HTMLets
 
 Parser i18n tags
