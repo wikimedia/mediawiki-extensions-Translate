@@ -129,7 +129,7 @@ class PremadeMediawikiExtensionGroups {
 	public function factory( $id ) {
 		
 		$info = $this->groups[$id];
-		$group = ExtensionMessageGroup::factory( $info['name'] . ' (mw ext)', $id );
+		$group = ExtensionMessageGroup::factory( $info['name'], $id );
 		$group->setMessageFile( $info['file'] );
 		if ( !empty($info['var']) ) $group->setVariableName( $info['var'] );
 		if ( !empty($info['optional']) ) $group->setOptional( $info['optional'] );

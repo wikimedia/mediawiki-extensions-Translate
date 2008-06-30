@@ -15,6 +15,7 @@ class MessageChecks {
 		'mediawiki' => array(
 			array( __CLASS__, 'checkPlural' ),
 			array( __CLASS__, 'checkParameters' ),
+			array( __CLASS__, 'checkUnknownParametersParameters' ),
 			array( __CLASS__, 'checkBalance' ),
 			array( __CLASS__, 'checkLinks' ),
 			array( __CLASS__, 'checkXHTML' ),
@@ -82,6 +83,32 @@ class MessageChecks {
 		if ( $count = count($missing) ) {
 			global $wgLang;
 			$desc = array( 'translate-checks-parameters',
+				implode( ', ', $missing ),
+				$wgLang->formatNum($count) );
+			return true;
+		}
+
+		return false;
+	}
+
+	protected static function checkUnknownParameters( TMessage $message, &$desc = null ) {
+		$variables = array( '\$1', '\$2', '\$3', '\$4', '\$5', '\$6', '\$7', '\$8', '\$9' );
+
+		$missing = array();
+		$definition = $message->definition;
+		$translation= $message->translation;
+		if ( strpos( $definition, '$' ) === false ) return false;
+
+		for ( $i = 1; $i < 10; $i++ ) {
+			$pattern = '/\$' . $i . '/s';
+			if ( !preg_match( $pattern, $definition ) && preg_match( $pattern, $translation ) ) {
+				$missing[] = '$' . $i;
+			}
+		}
+
+		if ( $count = count($missing) ) {
+			global $wgLang;
+			$desc = array( 'translate-checks-parameters-unknown',
 				implode( ', ', $missing ),
 				$wgLang->formatNum($count) );
 			return true;
