@@ -15,7 +15,7 @@ class MessageChecks {
 		'mediawiki' => array(
 			array( __CLASS__, 'checkPlural' ),
 			array( __CLASS__, 'checkParameters' ),
-			array( __CLASS__, 'checkUnknownParametersParameters' ),
+			array( __CLASS__, 'checkUnknownParameters' ),
 			array( __CLASS__, 'checkBalance' ),
 			array( __CLASS__, 'checkLinks' ),
 			array( __CLASS__, 'checkXHTML' ),
