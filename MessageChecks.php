@@ -19,6 +19,10 @@ class MessageChecks {
 			array( __CLASS__, 'checkLinks' ),
 			array( __CLASS__, 'checkXHTML' ),
 		),
+		'freecol' => array(
+			array( __CLASS__, 'checkFreeColMissingVars' ),
+			array( __CLASS__, 'checkFreeColExtraVars' ),
+		),
 	);
 
 	/**
@@ -28,32 +32,15 @@ class MessageChecks {
 	 * @return Array of warning messages, html-format.
 	 */
 	public static function doChecks( TMessage $message, $type ) {
-		wfLoadExtensionMessages( 'Translate' );
+		if ( $message->translation === null) return false;
+		if ( !isset(self::$checksForType[$type])) return false;
 		$warnings = array();
 
-		$warning = '';
-		if ( self::checkParameters( $message, $warning ) ) {
-			$warnings[] = $warning;
-		}
-
-		$warning = '';
-		if ( self::checkBalance( $message, $warning ) ) {
-			$warnings[] = $warning;
-		}
-
-		$warning = '';
-		if ( self::checkLinks( $message, $warning ) ) {
-			$warnings[] = $warning;
-		}
-
-		$warning = '';
-		if ( self::checkXHTML( $message, $warning ) ) {
-			$warnings[] = $warning;
-		}
-
-		$warning = '';
-		if ( self::checkPlural( $message, $warning ) ) {
-			$warnings[] = $warning;
+		foreach ( self::$checksForType[$type] as $check ) {
+			$warning = '';
+			if ( call_user_func( $check, $message, &$warning ) ) {
+				$warnings[] = $warning;
+			}
 		}
 
 		return $warnings;
@@ -232,6 +219,58 @@ class MessageChecks {
 		} else {
 			return false;
 		}
+	}
+
+
+	protected static function checkFreeColMissingVars( TMessage $message, &$desc = null ) {
+		if ( !preg_match_all( '/%[^%]%/U', $message->definition, $defVars ) ) {
+			return false;
+		}
+		preg_match_all( '/%[^%]%/U', $message->translation, $transVars );
+
+		$missing = self::compareArrays( $defVars[0], $transVars[0] );
+
+		if ( $count = count($missing) ) {
+			global $wgLang;
+			$desc = array( 'translate-checks-parameters',
+				implode( ', ', $missing ),
+				$wgLang->formatNum($count) );
+			var_dump( $desc );
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+
+	protected static function checkFreeColExtraVars( TMessage $message, &$desc = null ) {
+		if ( !preg_match_all( '/%[^%]%/U', $message->definition, $defVars ) ) {
+			return false;
+		}
+		preg_match_all( '/%[^%]%/U', $message->translation, $transVars );
+
+		$missing = self::compareArrays( $transVars[0], $defVars[0] );
+
+		if ( $count = count($missing) ) {
+			global $wgLang;
+			$desc = array( 'translate-checks-parameters-unknown',
+				implode( ', ', $missing ),
+				$wgLang->formatNum($count) );
+			var_dump( $desc );
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	protected static function compareArrays( $defs, $trans ) {
+		$missing = array();
+		foreach ( $defs as $defVar ) {
+			if ( !in_array($defVar, $trans) ) {
+				$missing[] = $defVar;
+			}
+		}
+		return $missing;
 	}
 
 }

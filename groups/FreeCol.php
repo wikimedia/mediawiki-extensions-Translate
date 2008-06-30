@@ -3,6 +3,7 @@
 class FreeColMessageGroup extends MessageGroup {
 	protected $label = 'FreeCol (open source game)';
 	protected $id    = 'out-freecol';
+	protected $type  = 'freecol';
 
 	protected   $fileDir  = '__BUG__';
 
