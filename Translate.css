@@ -44,4 +44,15 @@
 	line-height: normal;
 }
 
+fieldset.mw-sp-translate-group {
+	border: 1px dotted black;
+}
 
+div.mw-sp-translate-group {
+	margin-left: 0.875em;
+	border-bottom: 1px dotted black;
+}
+
+.mw-sp-translate-group legend, div.mw-sp-translate-group {
+	font-weight: bold;
+}

@@ -394,11 +394,11 @@ class SpecialTranslate extends SpecialPage {
 		$hasSubblocks = is_array($blocks) && count($blocks);
 
 		if ( $desc !== null || $hasSubblocks ) {
-			$out = "\n<fieldset>\n";
+			$out = "\n<fieldset class=\"mw-sp-translate-group\">\n";
 			$out .= Xml::tags( 'legend', null, $label );
 			$out .= $desc;
 		} else {
-			$out = "\n<ul><li>$label</li></ul><hr />";
+			$out = "\n<div class=\"mw-sp-translate-group\">$label</div>";
 		}
 
 		if ( $hasSubblocks ) {
