@@ -10,21 +10,40 @@ if (!defined('MEDIAWIKI')) die();
  */
 class MessageChecks {
 
-	// Fastest first
-	static $checksForType = array(
-		'mediawiki' => array(
-			array( __CLASS__, 'checkPlural' ),
-			array( __CLASS__, 'checkParameters' ),
-			array( __CLASS__, 'checkUnknownParameters' ),
-			array( __CLASS__, 'checkBalance' ),
-			array( __CLASS__, 'checkLinks' ),
-			array( __CLASS__, 'checkXHTML' ),
-		),
-		'freecol' => array(
-			array( __CLASS__, 'checkFreeColMissingVars' ),
-			array( __CLASS__, 'checkFreeColExtraVars' ),
-		),
-	);
+	private function __construct() {
+		$file = dirname(__FILE__) . '/check-blacklist.php';
+		$this->blacklist =
+			ResourceLoader::loadVariableFromPHPFile( $file, 'checkBlacklist' );
+
+		// Fastest first
+		$this->checksForType = array(
+			'mediawiki' => array(
+				array( $this, 'checkPlural' ),
+				array( $this, 'checkParameters' ),
+				array( $this, 'checkUnknownParameters' ),
+				array( $this, 'checkBalance' ),
+				array( $this, 'checkLinks' ),
+				array( $this, 'checkXHTML' ),
+			),
+			'freecol' => array(
+				array( $this, 'checkFreeColMissingVars' ),
+				array( $this, 'checkFreeColExtraVars' ),
+			),
+		);
+	}
+
+	public static function getInstance() {
+		static $obj = null;
+		if ( $obj === null ) {
+			$obj = new MessageChecks;
+		}
+		return $obj;
+	}
+
+	public function getChecks( $type ) {
+		if ( !isset($this->checksForType[$type]) ) return array();
+		return $this->checksForType[$type];
+	}
 
 	/**
 	 * Entry point which runs all checks.
@@ -32,14 +51,14 @@ class MessageChecks {
 	 * @param $message Instance of TMessage.
 	 * @return Array of warning messages, html-format.
 	 */
-	public static function doChecks( TMessage $message, $type ) {
+	public static function doChecks( TMessage $message, $type, $code ) {
 		if ( $message->translation === null) return false;
-		if ( !isset(self::$checksForType[$type])) return false;
+		$obj = new MessageChecks;
 		$warnings = array();
 
-		foreach ( self::$checksForType[$type] as $check ) {
+		foreach ( $obj->getChecks( $type ) as $check ) {
 			$warning = '';
-			if ( call_user_func( $check, $message, &$warning ) ) {
+			if ( call_user_func( $check, $message, $code, &$warning ) ) {
 				$warnings[] = $warning;
 			}
 		}
@@ -47,12 +66,12 @@ class MessageChecks {
 		return $warnings;
 	}
 
-	public static function doFastChecks( TMessage $message, $type ) {
+	public static function doFastChecks( TMessage $message, $type, $code ) {
 		if ( $message->translation === null) return false;
-		if ( !isset(self::$checksForType[$type])) return false;
 
-		foreach ( self::$checksForType[$type] as $check ) {
-			if ( call_user_func( $check, $message ) ) return true;
+		$obj = new MessageChecks;
+		foreach ( $obj->getChecks( $type ) as $check ) {
+			if ( call_user_func( $check, $message, $code ) ) return true;
 		}
 
 		return false;
@@ -65,7 +84,7 @@ class MessageChecks {
 	 * @param $message Instance of TMessage.
 	 * @return Array of unused parameters.
 	 */
-	protected static function checkParameters( TMessage $message, &$desc = null ) {
+	protected function checkParameters( TMessage $message, $code, &$desc = null ) {
 		$variables = array( '\$1', '\$2', '\$3', '\$4', '\$5', '\$6', '\$7', '\$8', '\$9' );
 
 		$missing = array();
@@ -91,13 +110,13 @@ class MessageChecks {
 		return false;
 	}
 
-	protected static function checkUnknownParameters( TMessage $message, &$desc = null ) {
+	protected function checkUnknownParameters( TMessage $message, $code, &$desc = null ) {
 		$variables = array( '\$1', '\$2', '\$3', '\$4', '\$5', '\$6', '\$7', '\$8', '\$9' );
 
 		$missing = array();
 		$definition = $message->definition;
 		$translation= $message->translation;
-		if ( strpos( $definition, '$' ) === false ) return false;
+		if ( strpos( $translation, '$' ) === false ) return false;
 
 		for ( $i = 1; $i < 10; $i++ ) {
 			$pattern = '/\$' . $i . '/s';
@@ -125,7 +144,7 @@ class MessageChecks {
 	 * @return Array of unbalanced paranthesis pairs with difference of opening
 	 * and closing count as value.
 	 */
-	protected static function checkBalance( TMessage $message, &$desc = null ) {
+	protected function checkBalance( TMessage $message, $code, &$desc = null ) {
 		$translation = preg_replace( '/[^{}[\]()]/u', '', $message->translation );
 		$counts = array( '{' => 0, '}' => 0, '[' => 0, ']' => 0, '(' => 0, ')' => 0 );
 
@@ -162,7 +181,7 @@ class MessageChecks {
 	 * @param $message Instance of TMessage.
 	 * @return Array of problematic links.
 	 */
-	protected static function checkLinks( TMessage $message, &$desc = null ) {
+	protected function checkLinks( TMessage $message, $code, &$desc = null ) {
 		$translation = $message->translation;
 		if ( strpos( $translation, '[[' ) === false ) return false;
 
@@ -197,7 +216,7 @@ class MessageChecks {
 	 * @return Array of tags in invalid syntax with correction suggestions as
 	 * value.
 	 */
-	protected static function checkXHTML( TMessage $message, &$desc = null ) {
+	protected function checkXHTML( TMessage $message, $code, &$desc = null ) {
 		$translation = $message->translation;
 		if ( strpos( $translation, '<' ) === false ) return false;
 
@@ -236,7 +255,11 @@ class MessageChecks {
 	 * @param $message Instance of TMessage.
 	 * @return True if plural magic word is missing.
 	 */
-	protected static function checkPlural( TMessage $message, &$desc = null ) {
+	protected function checkPlural( TMessage $message, $code, &$desc = null ) {
+		if ( isset($this->blacklist[$code])
+			&& in_array( 'plural', $this->blacklist[$code] ) )
+			return false;
+
 		$definition = $message->definition;
 		$translation = $message->translation;
 		if ( stripos( $definition, '{{plural:' ) !== false &&
@@ -249,11 +272,11 @@ class MessageChecks {
 	}
 
 
-	protected static function checkFreeColMissingVars( TMessage $message, &$desc = null ) {
-		if ( !preg_match_all( '/%[^%]%/U', $message->definition, $defVars ) ) {
+	protected function checkFreeColMissingVars( TMessage $message, $code, &$desc = null ) {
+		if ( !preg_match_all( '/%[^% ]+%/U', $message->definition, $defVars ) ) {
 			return false;
 		}
-		preg_match_all( '/%[^%]%/U', $message->translation, $transVars );
+		preg_match_all( '/%[^% ]+%/U', $message->translation, $transVars );
 
 		$missing = self::compareArrays( $defVars[0], $transVars[0] );
 
@@ -262,7 +285,6 @@ class MessageChecks {
 			$desc = array( 'translate-checks-parameters',
 				implode( ', ', $missing ),
 				$wgLang->formatNum($count) );
-			var_dump( $desc );
 			return true;
 		} else {
 			return false;
@@ -270,11 +292,11 @@ class MessageChecks {
 	}
 
 
-	protected static function checkFreeColExtraVars( TMessage $message, &$desc = null ) {
-		if ( !preg_match_all( '/%[^%]%/U', $message->definition, $defVars ) ) {
+	protected function checkFreeColExtraVars( TMessage $message, $code, &$desc = null ) {
+		if ( !preg_match_all( '/%[^% ]+%/U', $message->definition, $defVars ) ) {
 			return false;
 		}
-		preg_match_all( '/%[^%]%/U', $message->translation, $transVars );
+		preg_match_all( '/%[^% ]+%/U', $message->translation, $transVars );
 
 		$missing = self::compareArrays( $transVars[0], $defVars[0] );
 
@@ -283,7 +305,6 @@ class MessageChecks {
 			$desc = array( 'translate-checks-parameters-unknown',
 				implode( ', ', $missing ),
 				$wgLang->formatNum($count) );
-			var_dump( $desc );
 			return true;
 		} else {
 			return false;

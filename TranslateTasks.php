@@ -182,7 +182,7 @@ class ViewOptionalTask extends ViewMessagesTask {
 
 }
 
-class ViewProblematicTask extends ViewMessagesTask {
+class ViewProblematicTask extends ReviewMessagesTask {
 	protected $id = 'problematic';
 
 	protected function setProcess() {
@@ -195,14 +195,15 @@ class ViewProblematicTask extends ViewMessagesTask {
 	}
 
 	protected function filterNonProblematic() {
-		// Should never happen, DO WHAT I MEAN
-		if ( !file_exists(TRANSLATE_CHECKFILE) ) {
+		$id = $this->group->getId();
+		$file =  TRANSLATE_CHECKFILE . "-$id";
+		if ( !file_exists($file) ) {
 			foreach ($this->collection->keys() as $key )
 				unset( $this->collection[$key] );
 			return;
 		}
 
-		$problematic = unserialize( file_get_contents( TRANSLATE_CHECKFILE ) );
+		$problematic = unserialize( file_get_contents($file) );
 
 		$code = $this->options->getLanguage();
 		if ( isset($problematic[$code]) ) {
@@ -437,11 +438,6 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 class TranslateTasks {
 	public static function getTasks() {
 		global $wgTranslateTasks;
-
-		// Hide problematic task from the list if there is no check file.
-		if ( !file_exists(TRANSLATE_CHECKFILE) ) {
-			unset($wgTranslateTasks['problematic']);
-		}
 
 		return array_keys( $wgTranslateTasks );
 	}

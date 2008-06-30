@@ -46,8 +46,8 @@ function wfTranslateRemoveAllmessages( $list ) {
 $wgAvailableRights[] = 'translate';
 
 define( 'TRANSLATE_FUZZY', '!!FUZZY!!' );
-define( 'TRANSLATE_INDEXFILE', $dir . 'messageindex.ser' );
-define( 'TRANSLATE_CHECKFILE', $dir . 'messagecheck.ser' );
+define( 'TRANSLATE_INDEXFILE', $dir . 'data/messageindex.ser' );
+define( 'TRANSLATE_CHECKFILE', $dir . 'data/messagecheck.ser' );
 define( 'TRANSLATE_ALIASFILE', $dir . 'aliases.txt' );
 
 #

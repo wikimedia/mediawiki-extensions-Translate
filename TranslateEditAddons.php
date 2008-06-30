@@ -169,9 +169,16 @@ class TranslateEditAddons {
 			);
 		}
 
+		// Can be either NULL or '', ARGH!
+		if ( $object->textbox1 === '' ) {
+			$editField = null;
+		} else {
+			$editField = $object->textbox1;
+		}
+
 		if ( $xx !== null && $code !== 'en' ) {
 			// Append translation from the file to edit area, if it's empty.
-			if ($object->firsttime && $object->textbox1 === '' ) {
+			if ($object->firsttime && $editField === null ) {
 				$object->textbox1 = $xx;
 			}
 		}
@@ -184,11 +191,12 @@ class TranslateEditAddons {
 
 
 		// Some syntactic checks
-		$translation = ($object->textbox1 !== '') ? $object->textbox1 : $xx;
+		$translation = ($editField !== null ) ? $editField : $xx;
 		if ( $translation !== null ) {
 			$message = new TMessage( $key, $en );
+			// Take the contents from edit field as a translation
 			$message->database = $translation;
-			$checks = MessageChecks::doChecks( $message, $group->getType() );
+			$checks = MessageChecks::doChecks( $message, $group->getType(), $code );
 			if ( count($checks) ) {
 				$checkMessages = array();
 				foreach ( $checks as $checkParams ) {

@@ -283,7 +283,8 @@ class CoreMessageGroup extends MessageGroup {
 
 	public function load( $code ) {
 		$file = $this->getFileLocation( $code );
-		$messages = $this->mangler->mangle(
+		// Can return null, convert to array
+		$messages = (array) $this->mangler->mangle(
 			ResourceLoader::loadVariableFromPHPFile( $file, 'messages' ) );
 		if ( $this->getId() !== 'core' && $code !== 'en' ) {
 			// For branches, load trunk messages that are not in database

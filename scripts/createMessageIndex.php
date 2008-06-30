@@ -33,6 +33,7 @@ foreach ( $postponed as $g ) {
 	checkAndAdd( $g, true );
 }
 
+wfMkdirParents( dirname(TRANSLATE_INDEXFILE) );
 file_put_contents( TRANSLATE_INDEXFILE, serialize( $hugearray ) );
 
 function checkAndAdd( $g, $ignore = false ) {

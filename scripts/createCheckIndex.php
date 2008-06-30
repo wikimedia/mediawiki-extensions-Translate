@@ -9,6 +9,7 @@
  * @file
  */
 
+$optionsWithArgs = array('groups' );
 require( dirname(__FILE__) . '/cli.inc' );
 
 $codes = Language::getLanguageNames( false );
@@ -20,15 +21,23 @@ if ( $wgTranslateDocumentationLanguageCode )
 $codes = array_keys( $codes );
 sort( $codes );
 
-
-$supportedTypes = array('mediawiki');
-$problematic = array();
+if ( isset($options['groups'] ) ) {
+	$reqGroups = array_map( 'trim', explode( ',', $options['groups'] ) );
+} else {
+	$reqGroups = false;
+}
 
 $groups = MessageGroups::singleton()->getGroups();
+
 foreach ( $groups as $g ) {
+	$id = $g->getId();
+
+	// Skip groups that are not requested
+	if ( $reqGroups && !in_array($id, $reqGroups) ) continue;
+
+	$problematic = array();
 	$type = $g->getType();
 
-	$id = $g->getId();
 	STDOUT( "Working with $id: ", true );
 
 	foreach ( $codes as $code ) {
@@ -39,9 +48,8 @@ foreach ( $groups as $g ) {
 		$g->fillCollection( $collection );
 		$namespace = $g->namespaces[0];
 
-		// Remove untranslated messages from the list
 		foreach ( $collection->keys() as $key ) {
-			$prob = MessageChecks::doFastChecks( $collection[$key], $type );
+			$prob = MessageChecks::doFastChecks( $collection[$key], $type, $code );
 			if ( $prob ) {
 				// Print it
 				$nsText = $wgContLang->getNsText( $namespace );
@@ -54,7 +62,9 @@ foreach ( $groups as $g ) {
 		}
 
 	}
-}
 
-// Store the results
-file_put_contents( TRANSLATE_CHECKFILE, serialize( $problematic ) );
+	// Store the results
+	$file = TRANSLATE_CHECKFILE . "-$id";
+	wfMkdirParents( dirname($file) );
+	file_put_contents( $file, serialize( $problematic ) );
+}
