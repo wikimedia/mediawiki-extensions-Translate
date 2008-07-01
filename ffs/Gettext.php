@@ -129,7 +129,7 @@ class GettextFormatReader extends SimpleFormatReader {
 			}
 
 			$matches = array();
-			if ( preg_match_all( '/^#([^ ]) (.*)$/m', $section, $matches, PREG_SET_ORDER ) ) {
+			if ( preg_match_all( '/^#([^ ] | )(.*)$/m', $section, $matches, PREG_SET_ORDER ) ) {
 				foreach( $matches as $match ) {
 					if ( $match[1] !== ',' ) {
 						$item['comments'][$match[1]][] = $match[2];
@@ -145,11 +145,10 @@ class GettextFormatReader extends SimpleFormatReader {
 				$hash = sha1( $item['ctxt'] . $item['id'] );
 				$snippet = $item['id'];
 				$snippet = preg_replace( "/[^$wgLegalTitleChars]/", ' ', $snippet );
-				$snippet = preg_replace( "/[:&%]/", ' ', $snippet );
+				$snippet = preg_replace( "/[:&%\/_]/", ' ', $snippet );
 				$snippet = preg_replace( "/ {2,}/", ' ', $snippet );
-				$snippet = str_replace( ' ', '_', $snippet );
-				$snippet = trim( $snippet );
 				$snippet = $lang->truncate( $snippet, 30 );
+				$snippet = str_replace( ' ', '_', trim($snippet) );
 				$key = $this->prefix . $hash . '-' . $snippet;
 			}
 

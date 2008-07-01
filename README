@@ -34,6 +34,10 @@ function customMessageGroups( $id ) {
 
 == Changes in version 10 ==
 
+* 2008-07-01:1
+ - Fix gettext message name snippets: filter / and trim after trailing
+ - Load normal comments from gettext files
+ - Quick links for viewing, using a private hook
 * 2008-06-30:3 Check for unknown vars for mediawiki type
 * 2008-06-30:2 Checks for missing and unknown variables for FreeCol
 * 2008-06-30:1 More contrast in the new default page for Special translate

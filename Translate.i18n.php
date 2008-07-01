@@ -67,6 +67,12 @@ If you know where or how this message is used, you can help other translators by
 	'translate-edit-committed'          => 'Current translation in software',
 	'translate-edit-warnings'           => 'Warnings about incomplete translations',
 
+	'translate-edit-goto-no-prev'       => 'No previous message',
+	'translate-edit-goto-no-next'       => 'No next message',
+	'translate-edit-goto-prev'          => 'Edit previous message',
+	'translate-edit-goto-next'          => 'Edit next message',
+	'translate-edit-goto-list'          => 'Back to the list',
+
 	'translate-magic-pagename'    => 'Extended MediaWiki translation',
 	'translate-magic-help'        => 'You can translate special pages aliases, magic words, skin names and namespace names.
 

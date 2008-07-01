@@ -11,6 +11,63 @@ if (!defined('MEDIAWIKI')) die();
 class TranslateEditAddons {
 	const MSG = 'translate-edit-';
 
+	static function addNavigation( &$article, &$out ) {
+		global $wgTranslateMessageNamespaces, $wgUser;
+		$ns = $article->mTitle->getNamespace();
+		if( !in_array($ns, $wgTranslateMessageNamespaces) ) return;
+
+		list( $key, $code ) = self::figureMessage( $article );
+
+		$group = self::getMessageGroup( $ns, $key );
+		if ( $group === null ) return;
+
+		$defs = $group->getDefinitions();
+		$next = $prev = null;
+		foreach ( array_keys($defs) as $tkey ) {
+			if ( $tkey === $key ) {
+				$next = true;
+				continue;
+			} elseif( $next === true ) {
+				$next = $tkey;
+				break;
+			}
+			$prev = $tkey;
+		}
+
+		$skin = $wgUser->getSkin();
+		$id = $group->getId();
+		wfLoadExtensionMessages( 'Translate' );
+
+		$title = Title::makeTitleSafe( $ns, "$prev/$code" );
+		$prevLink = wfMsgHtml( 'translate-edit-goto-no-prev' );
+		if ( $prev !== null ) {
+			$prevLink = $skin->makeKnownLinkObj( $title,
+				wfMsgHtml( 'translate-edit-goto-prev' ), "action=edit&loadgroup=$id" );
+		}
+
+		$title = Title::makeTitleSafe( $ns, "$next/$code" );
+		$nextLink = 'translate-edit-goto-no-next';
+		if ( $next !== null && $next !== true ) {
+			$nextLink = $skin->makeKnownLinkObj( $title,
+				wfMsgHtml( 'translate-edit-goto-next' ), "action=edit&loadgroup=$id" );
+		}
+
+		$title = SpecialPage::getTitleFor( 'translate' );
+		$list = $skin->makeKnownLinkObj( $title,
+			wfMsgHtml( 'translate-edit-goto-list' ),
+			"group=$id&language=$code#msg_$next" );
+
+		$out->addHTML(
+"<hr />
+<ul>
+<li>$prevLink</li>
+<li>$nextLink</li>
+<li>$list</li>
+</ul>" );
+
+		return true;
+	}
+
 	static function addTools( $object ) {
 		global $wgTranslateMessageNamespaces;
 		if( in_array($object->mTitle->getNamespace(), $wgTranslateMessageNamespaces) ) {
@@ -154,7 +211,7 @@ class TranslateEditAddons {
 			}
 
 			if ( $group->getType() === 'gettext' ) {
-				$reader = $group->getReader( $code );
+				$reader = $group->getReader( 'en' );
 				if ( $reader ) {
 					$data = $reader->parseFile();
 					$help = GettextFormatWriter::formatcomments( @$data[$key]['comments'], false, @$data[$key]['flags'] );
