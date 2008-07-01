@@ -14,12 +14,12 @@ class TranslateEditAddons {
 	static function addNavigation( &$article, &$out ) {
 		global $wgTranslateMessageNamespaces, $wgUser;
 		$ns = $article->mTitle->getNamespace();
-		if( !in_array($ns, $wgTranslateMessageNamespaces) ) return;
+		if( !in_array($ns, $wgTranslateMessageNamespaces) ) return true;
 
 		list( $key, $code ) = self::figureMessage( $article );
 
 		$group = self::getMessageGroup( $ns, $key );
-		if ( $group === null ) return;
+		if ( $group === null ) return true;
 
 		$defs = $group->getDefinitions();
 		$next = $prev = null;
@@ -46,7 +46,7 @@ class TranslateEditAddons {
 		}
 
 		$title = Title::makeTitleSafe( $ns, "$next/$code" );
-		$nextLink = 'translate-edit-goto-no-next';
+		$nextLink = wfMsgHtml( 'translate-edit-goto-no-next' );
 		if ( $next !== null && $next !== true ) {
 			$nextLink = $skin->makeKnownLinkObj( $title,
 				wfMsgHtml( 'translate-edit-goto-next' ), "action=edit&loadgroup=$id" );
