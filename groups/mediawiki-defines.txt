@@ -484,6 +484,8 @@ file = RandomInCategory/SpecialRandomincategory.i18n.php
 Random Root Page
 file = Randomrootpage/Randomrootpage.i18n.php
 
+Random Users With Avatars
+
 Regex Block
 file = regexBlock/regexBlock.i18n.php
 
@@ -641,6 +643,8 @@ ignored = ow_editing_policy_url
 
 Wikihiero
 file = wikihiero/wikihiero.i18n.php
+
+Wiki Text Logged In Out
 
 Woopra
 
