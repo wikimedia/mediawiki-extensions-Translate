@@ -255,9 +255,10 @@ abstract class ComplexMessages {
 			if ( $name === '' || $values === '' ) continue;
 
 			$data = array_map( 'trim', explode( ',', $values ) );
-			$array[$name] = $values;
+			$array[$name] = $data;
 
 		}
+
 
 		return $array;
 	}
@@ -444,12 +445,16 @@ abstract class ComplexMessages {
 		$text = '';
 
 		foreach ( $groups as $group => $data ) {
-			$text .= "# $group \n";
 
 			$var = $data['var'];
 			$items = $data['data'];
 
-			$text .= "\$$var = array(\n";
+			$extra = '';
+			if ( $data['code'] ) {
+				$extra = "['{$this->language}']";
+			}
+
+			$out = '';
 			$padTo = max(array_map( 'strlen', array_keys($items[self::LANG_MASTER]) )) +3;
 
 			foreach ( $this->getIterator($group) as $key ) {
@@ -464,10 +469,13 @@ abstract class ComplexMessages {
 				} else {
 					$temp .= "=> " . implode( ', ', $normalized ) . ",";
 				}
-				$text .= $temp . "\n";
+				$out .= $temp . "\n";
 			}
 
-			$text .= ");\n\n";
+			if ( $out !== '' ) {
+				$text .= "# $group \n";
+				$text .= "\$$var$extra = array(\n" . $out . ");\n\n";
+			}
 
 		}
 
