@@ -24,3 +24,14 @@ $aliases['fi'] = array(
 	'Magic'              => array( 'Laajennettu kääntäminen' ),
 	'TranslationChanges' => array( 'Käännösmuutokset' ),
 );
+
+$aliases['hu'] = array(
+	'Translate'          => array( 'Fordítás' ),
+	'TranslationChanges' => array( 'Változások a fordításokban' ),
+);
+
+$aliases['nl'] = array(
+	'Translate'          => array( 'Vertalen' ),
+	'Magic'              => array( 'VertalenUitgebreid' ),
+	'TranslationChanges' => array( 'Vertalingen' ),
+);
