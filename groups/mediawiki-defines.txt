@@ -292,7 +292,6 @@ var = wgGoogleMapsMessages
 Go To Category
 
 Group Permissions Manager
-file = GroupPermissionsManager/GPManager.i18n.php
 optional = grouppermissions-log-entry
 
 HTMLets
