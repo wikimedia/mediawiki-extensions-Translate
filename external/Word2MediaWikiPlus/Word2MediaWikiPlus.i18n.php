@@ -181,6 +181,14 @@ $messages['mhr'] = array(
 	'msg_Cancel'      => 'Чараш',
 );
 
+/** Niuean (native name missing)
+ * @author Jose77
+ */
+$messages['niu'] = array(
+	'wikiSearchTitle' => 'Kumi -',
+	'msg_Cancel'      => 'Tiaki',
+);
+
 /** Afrikaans (Afrikaans)
  * @author Arnobarnard
  */
@@ -271,6 +279,15 @@ $messages['ar'] = array(
 	'msg_Convert'                            => 'تحويل',
 	'msg_ImagesOnly'                         => 'صور فقط',
 	'msg_Cancel'                             => 'إلغاء',
+);
+
+/** Egyptian Spoken Arabic (مصرى)
+ * @author Ramsis1978
+ */
+$messages['arz'] = array(
+	'wikiSearchTitle'     => 'تدوير',
+	'wikiCategoryKeyWord' => 'تصنيف',
+	'categoryImagePreFix' => 'صور',
 );
 
 /** Kotava (Kotava)
@@ -972,6 +989,13 @@ $messages['gl'] = array(
 	'msg_Cancel'                             => 'Cancelar',
 );
 
+/** Hakka (Hak-kâ-fa)
+ * @author Hakka
+ */
+$messages['hak'] = array(
+	'wikiSearchTitle' => 'Chhìm-cháu -',
+);
+
 /** Hawaiian (Hawai`i)
  * @author Singularity
  */
@@ -1075,47 +1099,92 @@ $messages['hy'] = array(
 	'wikiSearchTitle' => 'Որոնման արդյունքներ՝',
 );
 
+/** Interlingua (Interlingua)
+ * @author McDutchie
+ */
+$messages['ia'] = array(
+	'msg_Never' => 'Nunquam',
+);
+
 /** Indonesian (Bahasa Indonesia)
  * @author Irwangatot
  * @author Rex
  */
 $messages['id'] = array(
-	'wikiSearchTitle'            => 'Pencarian -',
-	'wikiCategoryKeyWord'        => 'kategori',
-	'categoryImagePreFix'        => 'Berkas',
-	'wikiUploadTitle'            => 'Pemuatan',
-	'clickChartText'             => 'klik di sini!',
-	'unableToConvertMarker'      => '## Gagal mengkonversi ##:',
-	'txt_TitlePage'              => 'Judul',
-	'txt_PageHeader'             => 'Kepala halaman',
-	'txt_PageFooter'             => 'Kaki halaman',
-	'txt_Footnote'               => 'Catatan kaki',
-	'msg_Upload_Info'            => "Pemuatan berkas akan dimulai. Sebelum Anda memulai Anda perlu mengeset penjelajah web right:\\r\\n1. Tutup semua ''sidebar'' seperti ''favorites''.\\r\\n2. Masuk log ke wiki Anda.\\r\\n\\Jangan klik ok sebelum Anda memeriksa ini.",
-	'msg_Finished'               => "Konversi selesai. Anda dapat mempastakan isi ''clipboard'' ke editor wiki Anda.",
-	'msg_SimpleTab'              => 'Sederhana',
-	'msg_ArticleName'            => 'Nama Artikel',
-	'msg_TargetWikiFrame'        => 'Wiki Tujuan',
-	'msg_TestSystem'             => 'Uji Coba Sistem',
-	'msg_CheckURL'               => 'Periksa URL',
-	'msg_CategoryFrame'          => 'Kategori',
-	'msg_ArticleCategory'        => 'Kategori Artikel',
-	'msg_ImageCategory'          => 'Kategori Berkas',
-	'msg_ImageUpload'            => 'Pemuatan',
-	'msg_Always'                 => 'Selalu',
-	'msg_Never'                  => 'Tidak pernah',
-	'msg_ImageSizeFrame'         => 'Ukuran Berkas',
-	'msg_ImageFullSize'          => 'Gunakan ukuran penuh',
-	'msg_ImageMaxWidthFrame'     => 'Gambar lebar penuh',
-	'msg_ConvertTablesFrame'     => 'Tabel',
-	'msg_ConvertTabTables'       => 'Ubah tabel yang dibuat dari tabulasi',
-	'msg_ConvertParagraphsFrame' => 'Paragraf',
-	'msg_ConvertNewParagraphs'   => 'Jadikan paragraf baru dengan <br/>s',
-	'msg_ConvertPageHeaders'     => 'Mengubah bagian depan halaman',
-	'msg_ConvertPageFooters'     => 'Mengubah catatan kaki dari halaman',
-	'msg_ConvertTitlePage'       => 'Masukan teks Judul Halaman',
-	'msg_Convert'                => 'Mengubah',
-	'msg_ImagesOnly'             => 'Hanya Gambar',
-	'msg_Cancel'                 => 'Batalkan',
+	'wikiSearchTitle'                        => 'Pencarian -',
+	'wikiCategoryKeyWord'                    => 'kategori',
+	'categoryImagePreFix'                    => 'Berkas',
+	'wikiUploadTitle'                        => 'Pemuatan',
+	'clickChartText'                         => 'klik di sini!',
+	'unableToConvertMarker'                  => '## Gagal mengkonversi ##:',
+	'txt_TitlePage'                          => 'Judul',
+	'txt_PageHeader'                         => 'Kepala halaman',
+	'txt_PageFooter'                         => 'Kaki halaman',
+	'txt_Footnote'                           => 'Catatan kaki',
+	'msg_Upload_Info'                        => "Pemuatan berkas akan dimulai. Sebelum Anda memulai Anda perlu mengeset penjelajah web right:\\r\\n1. Tutup semua ''sidebar'' seperti ''favorites''.\\r\\n2. Masuk log ke wiki Anda.\\r\\n\\Jangan klik ok sebelum Anda memeriksa ini.",
+	'msg_Finished'                           => "Konversi selesai. Anda dapat mempastakan isi ''clipboard'' ke editor wiki Anda.",
+	'msg_NoDocumentLoaded'                   => 'Belum ada dokumen yang dimuatkan.',
+	'msg_LoadDocument'                       => 'Silakan muatkan dokumen yang akan dikonversi.',
+	'msg_CloseAll'                           => 'Silakan tutup semua dokumen kecuali yang ingin Anda konversikan! Makro akan dihentikan dulu sekarang.',
+	'msg_SimpleTab'                          => 'Sederhana',
+	'msg_ArticleName'                        => 'Nama Artikel',
+	'msg_TargetWikiFrame'                    => 'Wiki Tujuan',
+	'msg_TestSystem'                         => 'Uji Coba Sistem',
+	'msg_ProdSystem'                         => 'Sistem Produksi',
+	'msg_CheckURL'                           => 'Periksa URL',
+	'msg_CategoryFrame'                      => 'Kategori',
+	'msg_MultipleCats'                       => 'Pisahkan masing-masing kategori dengan tanda koma (,)',
+	'msg_ArticleCategory'                    => 'Kategori Artikel',
+	'msg_ImageCategory'                      => 'Kategori Berkas',
+	'msg_ImageDescription'                   => 'Tambahan teks untuk keterangan berkas',
+	'msg_ImageHandlingFrame'                 => 'Penanganan Berkas',
+	'msg_ImageExtraction'                    => 'Ekstrak Berkas',
+	'msg_ImageUseMSPhoto'                    => 'Pastakan di MS Photo Editor sebagai gambar baru',
+	'msg_ImageUpdate'                        => 'Memperbaharui berkas-berkas gambar yang telah ada',
+	'msg_ImageUpload'                        => 'Pemuatan',
+	'msg_ImageReload'                        => 'Memuatkan Kembali Berkas',
+	'msg_ImageUseFrames'                     => 'Gunakan Frame',
+	'msg_Always'                             => 'Selalu',
+	'msg_Never'                              => 'Tidak pernah',
+	'msg_AsInDocument'                       => 'Sama dengan di dokumen',
+	'msg_ImageSizeFrame'                     => 'Ukuran Berkas',
+	'msg_ImageFullSize'                      => 'Gunakan ukuran penuh',
+	'msg_ImageFullSizeToolTip'               => 'Menggunakan gambar ukuran aslinya walaupun gambar tersebut telah dikecilkan di Word',
+	'msg_ImageFullSizeMaxWidth'              => 'Gunakan ukuran penuh hingga lebar maksimum',
+	'msg_ImageFullSizeMaxWidthToolTip'       => 'Menggunakan gambar ukuran asli sampai maksimum lebar yang telah ditentukan',
+	'msg_ImageDocumentSize'                  => 'Menggunakan ukuran dokumen',
+	'msg_ImageDocumentSizeToolTip'           => 'Mengganti ukuran gambar ke ukuran yang ditampilkan di Word',
+	'msg_ImageDocumentSizeMaxWidth'          => 'Menggunakan ukuran di dokumen hingga lebar maksimum',
+	'msg_ImageDocumentSizeMaxWidthToolTip'   => 'Mengganti ukuran gambar ke ukuran yang ditampilkan di Word hingga lebar maksimum',
+	'msg_ImageMaxWidthFrame'                 => 'Gambar lebar penuh',
+	'msg_ConvertTab'                         => 'Konversi Teks Tingkat Lanjut',
+	'msg_ConvertTextFrame'                   => 'Konversi Teks',
+	'msg_ConvertWikiSyntax'                  => 'Konversikan sintaksis wiki',
+	'msg_ConvertFontSize'                    => "Konversikan ukuran ''font''",
+	'msg_ConvertNumberedLists'               => 'Beri nomor daftar secara manual, sebagaimana ditampilkan oleh Word',
+	'msg_ConvertComments'                    => "Konversikan ''comments''",
+	'msg_ConvertInternalAnchors'             => "Konversikan ''internal anchors''",
+	'msg_ConvertFootnotes'                   => "Konversikan ''footnotes'' (catatan kaki)",
+	'msg_ConvertBookmarks'                   => "Konversikan ''bookmark''",
+	'msg_ConvertTablesFrame'                 => 'Tabel',
+	'msg_ConvertTableStyle'                  => "''Style'' Tabel",
+	'msg_ConvertTableStyleNoFrames'          => "''Style'' Tabel (Tanpa Frame)",
+	'msg_ConvertTableStyleParagraphNoFrames' => "''Style'' Tabel (Paragraf - Tanpa ''Frame'')",
+	'msg_ConvertTableStyleParagraphFrames'   => "''Style'' Tabel (Paragraf - ''Frame'')",
+	'msg_ConvertTabTables'                   => 'Ubah tabel yang dibuat dari tabulasi',
+	'msg_ConvertParagraphsFrame'             => 'Paragraf',
+	'msg_ConvertFirstLineIndents'            => 'Konversikan indentasi baris pertama',
+	'msg_ConvertNewParagraphs'               => 'Jadikan paragraf baru dengan <br/>s',
+	'msg_ConvertReplacePageBreaks'           => "Konversikan ''page break'' menjadi sebuah garis",
+	'msg_ConvertJustifiedText'               => 'Konversi teks yang rata kiri-kanan',
+	'msg_ConvertHeadingsFrame'               => 'Judul bagian',
+	'msg_ConvertFirstLevelHeading'           => 'Judul tingkat pertama',
+	'msg_ConvertPageHeaders'                 => 'Mengubah bagian depan halaman',
+	'msg_ConvertPageFooters'                 => 'Mengubah catatan kaki dari halaman',
+	'msg_ConvertTitlePage'                   => 'Masukan teks Judul Halaman',
+	'msg_Convert'                            => 'Mengubah',
+	'msg_ImagesOnly'                         => 'Hanya Gambar',
+	'msg_Cancel'                             => 'Batalkan',
 );
 
 /** Iloko (Ilokano)
@@ -1377,6 +1446,13 @@ $messages['li'] = array(
 	'msg_Convert'                => 'Konvertere',
 	'msg_ImagesOnly'             => 'Allein media',
 	'msg_Cancel'                 => 'Annulere',
+);
+
+/** Lithuanian (Lietuvių)
+ * @author Tomasdd
+ */
+$messages['lt'] = array(
+	'wikiSearchTitle' => 'Ieškoti -',
 );
 
 /** Malayalam (മലയാളം)
