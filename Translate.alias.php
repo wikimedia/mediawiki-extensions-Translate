@@ -16,6 +16,12 @@ $aliases['en'] = array(
 	'TranslationChanges' => array( 'TranslationChanges' ),
 );
 
+$aliases['bcc'] = array(
+	'Translate'          => array( 'ترجمه' ),
+	'Magic'              => array( 'پیشرپتگین ترجمه' ),
+	'TranslationChanges' => array( 'تغییرات ترجمه' ),
+);
+
 /** Finnish
  * @author Nike
  */
