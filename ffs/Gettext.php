@@ -87,8 +87,6 @@ class GettextFormatReader extends SimpleFormatReader {
 				$pluralMessage = true;
 				$plural = self::formatForWiki( $matches[1] );
 				$item['id'] = "{{PLURAL:GETTEXT|{$item['id']}|$plural}}";
-
-				var_dump( $item['id'] );
 			}
 
 			if ( $pluralMessage ) {
@@ -129,7 +127,7 @@ class GettextFormatReader extends SimpleFormatReader {
 			}
 
 			$matches = array();
-			if ( preg_match_all( '/^#([^ ] | )(.*)$/m', $section, $matches, PREG_SET_ORDER ) ) {
+			if ( preg_match_all( '/^#(.?) (.*)$/m', $section, $matches, PREG_SET_ORDER ) ) {
 				foreach( $matches as $match ) {
 					if ( $match[1] !== ',' ) {
 						$item['comments'][$match[1]][] = $match[2];
@@ -192,10 +190,11 @@ class GettextFormatWriter extends SimpleFormatWriter {
 
 	public function load( $code ) {
 		$reader = $this->group->getReader( $code );
+		$readerEn = $this->group->getReader( 'en' );
 		if ( $reader ) {
 			$this->addAuthors( $reader->parseAuthors(), $code );
 			$this->staticHeader = $reader->parseStaticHeader();
-			$this->data = $reader->parseFile();
+			$this->data = $readerEn->parseFile();
 		}
 	}
 
@@ -277,10 +276,11 @@ class GettextFormatWriter extends SimpleFormatWriter {
 
 			fwrite( $handle, self::formatcomments( $comments, $documentation, $flags ) );
 
+			$ckey = '';
 			if ( isset($this->data[$key]['ctxt']) ) {
-				$key = $this->data[$key]['ctxt'];
+				$ckey = $this->data[$key]['ctxt'];
 			}
-			fwrite( $handle, $this->formatmsg( $m->definition, $translation, $key ) );
+			fwrite( $handle, $this->formatmsg( $m->definition, $translation, $ckey ) );
 
 		}
 
@@ -310,7 +310,7 @@ class GettextFormatWriter extends SimpleFormatWriter {
 		// Ensure there is always something
 		if ( !count($comments) ) $comments[':'][] = '';
 
-		$order = array( ' ', '.', ':', ',', '|' );
+		$order = array( '', '.', ':', ',', '|' );
 		$output = array();
 		foreach ( $order as $type ) {
 			if ( !isset($comments[$type]) ) continue;

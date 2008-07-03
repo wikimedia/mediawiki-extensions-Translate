@@ -22,10 +22,11 @@ class TranslateEditAddons {
 		if ( $group === null ) return true;
 
 		$defs = $group->getDefinitions();
-		$next = $prev = null;
+		$next = $prev = $def = null;
 		foreach ( array_keys($defs) as $tkey ) {
 			if ( $tkey === $key ) {
 				$next = true;
+				$def = $defs[$tkey];
 				continue;
 			} elseif( $next === true ) {
 				$next = $tkey;
@@ -41,15 +42,19 @@ class TranslateEditAddons {
 		$title = Title::makeTitleSafe( $ns, "$prev/$code" );
 		$prevLink = wfMsgHtml( 'translate-edit-goto-no-prev' );
 		if ( $prev !== null ) {
+			$params = "loadgroup=$id";
+			if ( !$title->exists() ) $params .= '&action=edit';
 			$prevLink = $skin->makeKnownLinkObj( $title,
-				wfMsgHtml( 'translate-edit-goto-prev' ), "action=edit&loadgroup=$id" );
+				wfMsgHtml( 'translate-edit-goto-prev' ), $params );
 		}
 
 		$title = Title::makeTitleSafe( $ns, "$next/$code" );
 		$nextLink = wfMsgHtml( 'translate-edit-goto-no-next' );
 		if ( $next !== null && $next !== true ) {
+			$params = "loadgroup=$id";
+			if ( !$title->exists() ) $params .= '&action=edit';
 			$nextLink = $skin->makeKnownLinkObj( $title,
-				wfMsgHtml( 'translate-edit-goto-next' ), "action=edit&loadgroup=$id" );
+				wfMsgHtml( 'translate-edit-goto-next' ), $params );
 		}
 
 		$title = SpecialPage::getTitleFor( 'translate' );
@@ -63,7 +68,8 @@ class TranslateEditAddons {
 <li>$prevLink</li>
 <li>$nextLink</li>
 <li>$list</li>
-</ul>" );
+</ul><hr />
+<pre>$def</pre>" );
 
 		return true;
 	}
