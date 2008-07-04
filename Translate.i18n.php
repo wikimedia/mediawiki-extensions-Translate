@@ -139,6 +139,25 @@ Changes are not saved until you click save button below.',
 	'translate-rc-translation-filter-site' => 'Changes to site messages only',
 );
 
+/** Faeag Rotuma (Faeag Rotuma)
+ * @author Jose77
+ */
+$messages['rtm'] = array(
+	'translate-edit'      => "a'tū'ạki",
+	'translate-talk'      => 'hạifäeaga',
+	'translate-page-edit' => "a'tū'ạki",
+);
+
+/** Tarifit (Tarifit)
+ * @author Jose77
+ */
+$messages['rif'] = array(
+	'translate-edit'      => 'arri',
+	'translate-talk'      => 'awal',
+	'translate-history'   => 'amzruy',
+	'translate-page-edit' => 'arri',
+);
+
 /** Karelian (Karjala)
  * @author Flrn
  */
@@ -1791,11 +1810,51 @@ $messages['haw'] = array(
 	'translate-history' => 'mo‘olelo',
 );
 
+/** Hebrew (עברית)
+ * @author Agbad
+ */
 $messages['he'] = array(
-	'translate'                     => 'תרגום',
-	'translate-edit-message-format' => 'המבנה של הודעה זו הוא <b>$1</b>.',
-	'translate-edit-message-in'     => 'המחרוזת הנוכחית ל־<b>$1</b> ($2):',
-	'translate-edit-message-in-fb'  => 'המחרוזת הנוכחית ל־<b>$1</b> בשפת הגיבוי ($2):',
+	'translate'                         => 'תרגום',
+	'translate-desc'                    => '[[{{ns:Special}}:Translate|דף מיוחד]] בשביל תרגום מדיה ויקי ומעבר',
+	'translate-edit'                    => 'עריכה',
+	'translate-talk'                    => 'שיחה',
+	'translate-history'                 => 'היסטוריה',
+	'translate-task-view'               => 'הצג את כל ההודעות מתוך',
+	'translate-task-untranslated'       => 'הצג את כל ההודעות הלא-מתורגמות מתוך',
+	'translate-task-problematic'        => 'הצג הודעות שיש בהם בעיות',
+	'translate-task-review'             => 'הצג שינויים בתוך',
+	'translate-task-reviewall'          => 'הצג שינויים בכל ההודעות שתורגמו בתוך',
+	'translate-task-export'             => 'יצא תרגומים מתוך',
+	'translate-task-export-to-file'     => 'ייצא תרגומים לקובץ מתוך',
+	'translate-page-task'               => 'אני רוצה ש',
+	'translate-page-group'              => 'קבוצה',
+	'translate-page-language'           => 'שפה',
+	'translate-page-limit'              => 'הגבל',
+	'translate-page-limit-option'       => 'עד {{PLURAL:$1|הודעה אחת|$1 הודעות}} בדף',
+	'translate-submit'                  => 'הצג',
+	'translate-page-navigation-legend'  => 'ניווט',
+	'translate-page-showing'            => 'מציג הודעות מ$1 עד ל$2 מתוך $3.',
+	'translate-page-showing-all'        => 'מציג {{PLURAL:$1|הודעה אחת|$1 הודעות}}.',
+	'translate-page-showing-none'       => 'אין הודעות להצגה.',
+	'translate-next'                    => 'לדף הבא',
+	'translate-prev'                    => 'לדף הקודם',
+	'translate-page-description-legend' => 'מידע על הקבוצה',
+	'translate-edit-information'        => 'מידע על ההודעה ($1)',
+	'translate-edit-goto-no-prev'       => 'אין הודעה קודמת',
+	'translate-edit-goto-no-next'       => 'אין הודעה הבאה',
+	'translate-edit-goto-prev'          => 'עריכת ההודעה הקודמת',
+	'translate-edit-goto-next'          => 'עריכת ההודעה הבאה',
+	'translate-edit-goto-list'          => 'חזרה לרשימה',
+	'translate-magic-submit'            => 'הצג לעריכה',
+	'translate-magic-cm-export'         => 'ייצא',
+	'translate-magic-cm-comment'        => 'סיבה:',
+	'translate-magic-cm-save'           => 'שמירה',
+	'translate-magic-special'           => 'שמות דפים מיוחדים',
+	'translate-magic-words'             => 'מילות קסם',
+	'translate-magic-skin'              => 'שמות רקעים',
+	'translate-magic-namespace'         => 'שמות מרחבי שם',
+	'translationchanges'                => 'שינויים בתרגום',
+	'translationchanges-export'         => 'ייצא',
 );
 
 /** Hindi (हिन्दी)
@@ -2001,17 +2060,17 @@ Dyrbiš w skupinje přełožowarjow być, zo by změny składował. Změny so nj
  */
 $messages['ht'] = array(
 	'translate'                         => 'Tradui',
-	'translate-desc'                    => '[[Special:Translate|Paj espesyal]] pou tradi MediaWiki e plis ankò.',
+	'translate-desc'                    => '[[Special:Translate|Paj espesyal]] pou tradui MediaWiki e plis ankò.',
 	'translate-edit'                    => 'edite',
 	'translate-talk'                    => 'pale',
 	'translate-history'                 => 'istwa',
 	'translate-task-view'               => 'Wè tout mesaj soti nan',
-	'translate-task-untranslated'       => 'Wè tout mesaj ki pa tradi soti nan',
+	'translate-task-untranslated'       => 'Wè tout mesaj ki pa tradui soti nan',
 	'translate-task-optional'           => 'Wè mesaj optional soti nan',
 	'translate-task-review'             => 'Revize chanjman nan',
 	'translate-task-reviewall'          => 'Revize tout tradiksyon yo nan',
-	'translate-task-export'             => 'Expòte tradiksyon yo nan',
-	'translate-task-export-to-file'     => 'Expòte tradisyon a yon fil soti nan',
+	'translate-task-export'             => 'Ekspòte tradiksyon yo nan',
+	'translate-task-export-to-file'     => 'Ekspòte tradisyon a nan yon fichye depi',
 	'translate-task-export-as-po'       => 'Ekspòte nan fòma Gettext tradiksyon pou',
 	'translate-page-no-such-language'   => 'Langaj espesifye-a envalid.',
 	'translate-page-no-such-task'       => 'Tach espesifye-a envalid.',
@@ -2041,7 +2100,7 @@ Si w konnen ki kote mesaj sa itilize, ou kapab ede lòt tradiktè pa ajoute doki
 	'translate-edit-committed'          => 'Trandiksyon kouran nan logisye',
 	'translate-edit-warnings'           => 'Kosyon konsène tradiksyon enkonplete yo',
 	'translate-magic-pagename'          => 'MediaWiki tradiksyon prolonje',
-	'translate-magic-help'              => 'Ou kapab tradi alias paj especial yo, mo majik, non po yo ak non nonespas yo.
+	'translate-magic-help'              => 'Ou kapab tradui alias paj especial yo, mo majik, non po yo ak non nonespas yo.
 
 Nan mo majik yo ou bezwen enkli tradiksyon angle oubyen yo sispann travay.
 Epi kite premye bagay la (0 or 1) kòm li ye.
@@ -3177,20 +3236,20 @@ $messages['lb'] = array(
 	'translate-edit-goto-next'               => 'Nächste Message änneren',
 	'translate-edit-goto-list'               => "Zréck op d'Lëscht",
 	'translate-magic-pagename'               => 'Erweidert MediaWiki Iwwersetzung',
-	'translate-magic-help'                   => 'Dir kënnt Spezialsäiten, magesch Wierder, Nimm vu Skins an Nummraum Nimm iwwersetzen.
+	'translate-magic-help'                   => "Dir kënnt Spezialsäiten, magesch Wierder, Nimm vu Skins an Nummraum Nimm iwwersetzen.
 
 Bäi de magesche Wierder (Magic words) musst Dir déi englesch Iwwersetzung abannen, soss fonctionéieren se net méi.
 Och den Ufank (0 oder 1) musst Dir onverännert loossen.
 
-Special page aliases and magic words can have multiple translations.
-Translations are seperated by a comma (,).
-Skin names and namespaces can have only one translation.
+Spezial Säit ''Aliasen'' a ''magesch Wierder'' kënne méi Iwwersetzungen hunn.
+Iwwersetzungen gi mat engem Komma (,) getrennt.
+Skin Nimm a Nummraim kënne nëmmen eng Iwwersetzung hunn.
 
-In namespace translations <tt>$1 talk</tt> is special. <tt>$1</tt> is replaced with sitename (for example <tt>{{SITENAME}} talk</tt>).
-If it is not possible in your language to form valid expression without changing sitename, please contact a developer.
+Am Nummraum Iwwersetzungen ass <tt>$1 Diskussioun</tt> speziell. <tt>$1</tt> gëtt duerch ''sitename'' ersat (zum Beispill <tt>{{SITENAME}} Diskussioun</tt>).
+Wann et an àrer Sprooch net méiglech ass fir e gëltegen Ausdrock ze maachen ouni ''sitename'' z'änneren, da kontaktéiert w.e.g. en Entwéckler (developer).
 
-You need to be in the translators group to save changes.
-Changes are not saved until you click save button below.',
+Dir musst am Grupp vun den Iwwersetzer si fir Ännerungen ofspäicheren ze kënnen.
+Ännerunge ginn net gespäichert bis Dir op ''Säit späicheren'' geklickt hutt.",
 	'translate-magic-module'                 => 'Modul:',
 	'translate-magic-submit'                 => 'Weisen',
 	'translate-magic-cm-export'              => 'Export',
@@ -4596,6 +4655,11 @@ $messages['te'] = array(
 	'translate-edit-in-other-languages'    => 'ఇతర భాషలలోని సందేశాలు',
 	'translate-edit-committed'             => 'సాఫ్ట్&zwnj;వేర్&zwnj;లో ప్రస్తుతమున్న అనువాదం',
 	'translate-edit-warnings'              => 'అసంపూర్తి అనువాదాల గురించి హెచ్చరికలు',
+	'translate-edit-goto-no-prev'          => 'గత సందేశాలేమీ లేవు',
+	'translate-edit-goto-no-next'          => 'తర్వాత సందేశాలు లేవు',
+	'translate-edit-goto-prev'             => 'గత సందేశానికి',
+	'translate-edit-goto-next'             => 'తర్వాతి సందేశానికి',
+	'translate-edit-goto-list'             => 'తిరిగి జాబితాకి',
 	'translate-magic-submit'               => 'తీసుకురా',
 	'translate-magic-cm-export'            => 'ఎగుమతి చేయండి',
 	'translate-magic-cm-current'           => 'ప్రస్తుత',
@@ -4607,9 +4671,15 @@ $messages['te'] = array(
 	'translationchanges'                   => 'అనువాద మార్పులు',
 	'translationchanges-export'            => 'ఎగుమతించు',
 	'translationchanges-change'            => '$1: $3 చే $2',
+	'translate-checks-parameters'          => 'ఈ {{PLURAL:$2|పారామీటరుని|పారామీటర్లని}} వాడనేలేదు:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters-unknown'  => 'ఈ {{PLURAL:$2|పారామీటరు|పారామీటర్లు}} తెలియనివి:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance'             => 'బ్రాకెట్లు సరి సంఖ్యలో లేవు: <strong>$1</strong>',
-	'translate-checks-links'               => 'ఈ లింకులు సమస్యాత్మకంగా ఉన్నాయి: <strong>$1</strong>',
-	'translate-checks-xhtml'               => 'ఈ క్రింది టాగులని సరైన వాటితో మార్చండి: <strong>$1</strong>',
+	'translate-checks-links'               => 'ఈ {{PLURAL:$2|లింకు సమస్యాత్మకంగా ఉంది|$2 లింకులు సమస్యాత్మకంగా ఉన్నాయి}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-xhtml'               => 'ఈ {{PLURAL:$2|టాగుని సరైన దానితో|టాగులని సరైన వాటితో}} మార్చండి:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural'              => 'అసలు సందేశంలో <nowiki>{{PLURAL:}}</nowiki> అనివుంది కానీ అనువాదంలో లేదు.',
 	'translate-rc-translation-filter'      => 'అనువాదాల పడపోత:',
 	'translate-rc-translation-filter-only' => 'అనువాదాలు మాత్రమే చూపించు',
