@@ -37,7 +37,7 @@ if (!isset($options['file'])) {
  * Parse the po file.
  */
 $p = new PoImporter( $options['file'] );
-$changes = $p->parse();
+list($changes, $group) = $p->parse();
 
 if (!isset($options['user'])) {
 	STDERR( "You need to specify user name for wiki import" );
@@ -52,7 +52,7 @@ if (!count($changes)) {
 /*
  * Import changes to wiki.
  */
-$w = new WikiWriter( $changes, $options['user'], !isset($options['really']) );
+$w = new WikiWriter( $changes, $group, $options['user'], !isset($options['really']) );
 $w->execute();
 
 /**
@@ -155,7 +155,7 @@ class PoImporter {
 
 		}
 
-		return $changes;
+		return array( $changes, $groupId );
 
 	}
 
@@ -170,15 +170,17 @@ class WikiWriter {
 	private $dryrun = true;
 	private $allclear = false;
 	private $user = '';
+	private $group = null;
 
 	/**
 	 * @param $changes Array of key/langcode => translation.
 	 * @param $user User who makes the edits in wiki.
 	 * @param $dryrun Don't do anything that affects the database.
 	 */
-	public function __construct( $changes, $user, $dryrun = true ) {
+	public function __construct( $changes, $groupId, $user, $dryrun = true ) {
 		$this->changes = $changes;
 		$this->dryrun = $dryrun;
+		$this->group = MessageGroups::getGroup( $groupId );
 
 		global $wgUser;
 
@@ -204,8 +206,10 @@ class WikiWriter {
 		$count = count($this->changes);
 		STDOUT( "Going to update $count pages." );
 
+		$ns = $this->group->namespaces[0];
+
 		foreach ( $this->changes as $title => $text ) {
-			$this->updateMessage( $title, $text );
+			$this->updateMessage( $ns, $title, $text );
 		}
 
 	}
@@ -213,9 +217,9 @@ class WikiWriter {
 	/**
 	 * Actually adds the new translation.
 	 */
-	private function updateMessage( $title, $text ) {
+	private function updateMessage( $namespace, $title, $text ) {
 		global $wgTitle, $wgArticle;
-		$wgTitle = Title::newFromText( "Mediawiki:$title" );
+		$wgTitle = Title::makeTitleSafe( $namespace, $title );
 
 		STDOUT( "Updating {$wgTitle->getPrefixedText()}... ", true );
 		if ( !$wgTitle instanceof Title ) {
