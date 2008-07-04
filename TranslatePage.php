@@ -166,7 +166,7 @@ class SpecialTranslate extends SpecialPage {
 		$options = array();
 		foreach ( array( 'task', 'group', 'language', 'limit' ) as $g ) {
 			$options[] = self::optionRow(
-				Xml::label( wfMsg( self::MSG . $g ), $g),
+				Xml::tags( 'label', array( 'for' => $g ), wfMsg( self::MSG . $g, 'escapenoentities' ) ),
 				$$g,
 				array_key_exists( $g, $errors ) ? $errors[$g] : null
 			);
