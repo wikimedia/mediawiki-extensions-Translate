@@ -34,6 +34,9 @@ function customMessageGroups( $id ) {
 
 == Changes in version 10 ==
 
+* 2008-07-04:2
+ - use a existing hook for quick links
+ - possible fix for Windows
 * 2008-07-04:1 poimport uses correct namespace
 * 2008-07-01:1
  - Fix gettext message name snippets: filter / and trim after trailing

@@ -8,12 +8,15 @@ class PremadeMediawikiExtensionGroups {
 
 		$dir = dirname( __FILE__ );
 		$defines = file_get_contents( $dir . '/mediawiki-defines.txt' );
-		$sections = array_map( 'trim', preg_split( "/\n\n+/", $defines, -1, PREG_SPLIT_NO_EMPTY ) );
+
+		$linefeed = '(\r\n|\n)';
+
+		$sections = array_map( 'trim', preg_split( "/$linefeed{2,}/", $defines, -1, PREG_SPLIT_NO_EMPTY ) );
 
 		$groups = $fixedGroups = array();
 
 		foreach ( $sections as $section ) {
-			$lines = array_map( 'trim', preg_split( "/\n/", $section ) );
+			$lines = array_map( 'trim', preg_split( "/$linefeed/", $section ) );
 			$newgroup = array();
 
 			foreach ( $lines as $line ) {

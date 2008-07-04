@@ -11,12 +11,12 @@ if (!defined('MEDIAWIKI')) die();
 class TranslateEditAddons {
 	const MSG = 'translate-edit-';
 
-	static function addNavigation( &$article, &$out ) {
-		global $wgTranslateMessageNamespaces, $wgUser;
-		$ns = $article->mTitle->getNamespace();
+	static function addNavigation( &$outputpage, &$text ) {
+		global $wgTranslateMessageNamespaces, $wgUser, $wgTitle;
+		$ns = $wgTitle->getNamespace();
 		if( !in_array($ns, $wgTranslateMessageNamespaces) ) return true;
 
-		list( $key, $code ) = self::figureMessage( $article );
+		list( $key, $code ) = self::figureMessage( $wgTitle);
 
 		$group = self::getMessageGroup( $ns, $key );
 		if ( $group === null ) return true;
@@ -62,14 +62,14 @@ class TranslateEditAddons {
 			wfMsgHtml( 'translate-edit-goto-list' ),
 			"group=$id&language=$code#msg_$next" );
 
-		$out->addHTML(
+		$text .=
 "<hr />
 <ul>
 <li>$prevLink</li>
 <li>$nextLink</li>
 <li>$list</li>
 </ul><hr />
-<pre>$def</pre>" );
+<pre>$def</pre>";
 
 		return true;
 	}
@@ -133,9 +133,9 @@ class TranslateEditAddons {
 	/**
 	* @return Array of the message and the language
 	*/
-	private static function figureMessage( $object ) {
+	private static function figureMessage( $title ) {
 		global $wgContLanguageCode, $wgContLang;
-		$pieces = explode('/', $wgContLang->lcfirst($object->mTitle->getDBkey()), 3);
+		$pieces = explode('/', $wgContLang->lcfirst($title->getDBkey()), 3);
 
 		$key = $pieces[0];
 
@@ -172,7 +172,7 @@ class TranslateEditAddons {
 		wfLoadExtensionMessages( 'Translate' );
 		global $wgTranslateDocumentationLanguageCode, $wgOut;
 
-		list( $key, $code ) = self::figureMessage( $object );
+		list( $key, $code ) = self::figureMessage( $object->mTitle );
 
 		$group = self::getMessageGroup( $object->mTitle->getNamespace(), $key );
 		if ( $group === null ) return;
