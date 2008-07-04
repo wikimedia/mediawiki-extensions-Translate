@@ -375,7 +375,7 @@ class SpecialTranslate extends SpecialPage {
 		return $out;
 	}
 
-	public function formatGroupInformation( $blocks ) {
+	public function formatGroupInformation( $blocks, $level = 2 ) {
 		global $wgUser;
 
 
@@ -393,23 +393,26 @@ class SpecialTranslate extends SpecialPage {
 		$desc = $this->getGroupDescription( $block );
 		$hasSubblocks = is_array($blocks) && count($blocks);
 
-		if ( $desc !== null || $hasSubblocks ) {
-			$out = "\n<fieldset class=\"mw-sp-translate-group\">\n";
-			$out .= Xml::tags( 'legend', null, $label );
-			$out .= $desc;
+		if ( $hasSubblocks || $level === 2 ) {
+			$class = 'mw-sp-translate-group';
 		} else {
-			$out = "\n<div class=\"mw-sp-translate-group\">$label</div>";
+			$class = 'mw-sp-translate-target';
+		}
+
+		$out = "\n<div class=\"$class\">\n";
+		$out .= Xml::tags( "h$level", null, $label );
+
+		if ( $desc !== null ) {
+			$out .= Xml::wrapClass( $desc, 'description', 'div' );
 		}
 
 		if ( $hasSubblocks ) {
 			foreach ( $blocks as $subBlock ) {
-				$out .= $this->formatGroupInformation( $subBlock );
+				$out .= $this->formatGroupInformation( $subBlock, $level+1 );
 			}
 		}
 
-		if ( $desc !== null || $hasSubblocks ) {
-			$out .= "\n</fieldset>\n";
-		}
+		$out .= "\n</div>\n";
 
 		return $out;
 	}

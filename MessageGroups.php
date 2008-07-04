@@ -376,6 +376,8 @@ class CoreMostUsedMessageGroup extends CoreMessageGroup {
 	protected $id    = 'core-mostused';
 	protected $meta  = true;
 
+	protected $description = 'This is a list of about 500 most often displayed messages. The list has been build from statistical data gathered from a profiling run in all Wikimedia wikies.';
+
 	public function export( MessageCollection $messages ) { return 'Not supported'; }
 	public function exportToFile( MessageCollection $messages, $authors ) { return 'Not supported'; }
 
