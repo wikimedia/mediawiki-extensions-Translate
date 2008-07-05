@@ -82,7 +82,8 @@ class FuzzyBot {
 		$count = count($msgs);
 		STDOUT( "Found $count pages to update." );
 
-		foreach ( $msgs as $title => $text ) {
+		foreach ( $msgs as  $phpIsStupid ) {
+			list( $title, $text ) = $phpIsStupid;
 			$this->updateMessage( $title, $text );
 		}
 
@@ -114,14 +115,15 @@ class FuzzyBot {
 
 		$rows = $dbr->select(
 			array( 'page', 'revision', 'text' ),
-			array( 'page_title', 'old_text', 'old_flags' ),
+			array( 'page_title', 'page_namespace', 'old_text', 'old_flags' ),
 			$conds,
 			__METHOD__
 		);
 
 		$messagesContents = array();
 		foreach ( $rows as $row ) {
-			$messagesContents[$row->page_title] = Revision::getRevisionText( $row );
+			$title = Title::makeTitle( $row->page_namespace, $row->page_title );
+			$messagesContents[] = array( $title, Revision::getRevisionText( $row ) );
 		}
 
 		$rows->free();
@@ -131,7 +133,7 @@ class FuzzyBot {
 
 	private function updateMessage( $title, $text ) {
 		global $wgTitle, $wgArticle, $wgTranslateDocumentationLanguageCode;
-		$wgTitle = Title::newFromText( "Mediawiki:$title" );
+		$wgTitle = $title;
 
 		STDOUT( "Updating {$wgTitle->getPrefixedText()}... ", true );
 		if ( !$wgTitle instanceof Title ) {
