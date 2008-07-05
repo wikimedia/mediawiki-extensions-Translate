@@ -490,6 +490,8 @@ Random Users With Avatars
 Regex Block
 file = regexBlock/regexBlock.i18n.php
 
+RegexFunctions
+
 Rename User
 file = Renameuser/SpecialRenameuser.i18n.php
 
