@@ -31,6 +31,15 @@ $aliases['fi'] = array(
 	'TranslationChanges' => array( 'Käännösmuutokset' ),
 );
 
+/** Hebrew (עברית)
+ * @author Rotem Liss
+ */
+$aliases['he'] = array(
+	'Translate'          => array( 'תרגום' ),
+	'Magic'              => array( 'תרגום_מתקדם' ),
+	'TranslationChanges' => array( 'שינויים_בתרגום' ),
+);
+
 $aliases['hu'] = array(
 	'Translate'          => array( 'Fordítás' ),
 	'TranslationChanges' => array( 'Változások a fordításokban' ),
