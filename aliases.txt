@@ -1,5 +1,5 @@
 Category Tree
-file = CategoryTree/CategoryTree.alias.php
+file = CategoryTree/CategoryTreePage.i18n.alias.php
 
 Configure
 file = Configure/Configure.alias.php
