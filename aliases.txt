@@ -1,3 +1,6 @@
+Category Tree
+file = CategoryTree/CategoryTree.alias.php
+
 Configure
 file = Configure/Configure.alias.php
 
