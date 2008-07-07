@@ -649,6 +649,10 @@ ignored = ow_editing_policy_url
 Wikihiero
 file = wikihiero/wikihiero.i18n.php
 
+Wikimedia Messages
+ignored = sitesupport-url
+optional = sidebar
+
 Wiki Text Logged In Out
 
 Woopra
