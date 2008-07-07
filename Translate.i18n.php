@@ -148,17 +148,6 @@ $messages['rtm'] = array(
 	'translate-page-edit' => "a'tū'ạki",
 );
 
-/** Tarifit (Tarifit)
- * @author Jose77
- */
-$messages['rif'] = array(
-	'translate-edit'                   => 'arri',
-	'translate-talk'                   => 'awal',
-	'translate-history'                => 'amzruy',
-	'translate-page-navigation-legend' => 'Asari',
-	'translate-page-edit'              => 'arri',
-);
-
 /** Karelian (Karjala)
  * @author Flrn
  */
@@ -177,7 +166,7 @@ $messages['mhr'] = array(
 	'tog-translate-nonewsletter' => 'Увер бюллетеньым электрон почто дене мылам колташ огыл (ушнышо-влаклан тергыме электрон почто адресышт дене гына)',
 );
 
-/** Niuean (native name missing)
+/** Niuean (ko e vagahau Niuē)
  * @author Jose77
  */
 $messages['niu'] = array(
@@ -488,7 +477,7 @@ Necesites tar nel grupu de traductores pa guardar los cambeos. Los cambeos nun s
 	'translate-checks-plural'           => 'La definición usa <nowiki>{{PLURAL:}}</nowiki> pero la traducción non.',
 );
 
-/** بلوچی مکرانی (بلوچی مکرانی)
+/** Southern Balochi (بلوچی مکرانی)
  * @author Mostafadaneshvar
  */
 $messages['bcc'] = array(
@@ -858,8 +847,8 @@ $messages['cs'] = array(
 	'translate-page-settings-legend'    => 'Nastavení',
 	'translate-page-task'               => 'Chci',
 	'translate-page-group'              => 'skupina',
-	'translate-page-language'           => 'v jazyce',
-	'translate-page-limit'              => 's omezením',
+	'translate-page-language'           => 'v&nbsp;jazyce',
+	'translate-page-limit'              => 's&nbsp;omezením',
 	'translate-page-limit-option'       => '$1 {{PLURAL:$1|zpráva|zprávy|zpráv}} na stránce',
 	'translate-submit'                  => 'Ukázat',
 	'translate-page-navigation-legend'  => 'Navigace',
@@ -961,10 +950,8 @@ $messages['de'] = array(
 	'translate-page-task'                    => 'Aufgabe',
 	'translate-page-group'                   => 'Gruppe',
 	'translate-page-language'                => 'Sprache',
-	'translate-page-limit'                   => 'Limit',
 	'translate-page-limit-option'            => '$1 {{PLURAL:$1|Systemnachricht|Systemnachrichten}} pro Seite',
 	'translate-submit'                       => 'Hole',
-	'translate-page-navigation-legend'       => 'Navigation',
 	'translate-page-showing'                 => 'Systemnachrichten $1 bis $2 von insgesamt $3.',
 	'translate-page-showing-all'             => '$1 {{PLURAL:$1|Systemnachricht|Systemnachrichten}}.',
 	'translate-page-showing-none'            => 'Keine Systemnachrichten zur Anzeige vorhanden.',
@@ -972,7 +959,6 @@ $messages['de'] = array(
 	'translate-prev'                         => 'Vorherige Seite',
 	'translate-page-description-legend'      => 'Informationen über diese Gruppe',
 	'translate-page-edit'                    => 'bearbeiten',
-	'translate-optional'                     => '(optional)',
 	'translate-ignored'                      => '(ignoriert)',
 	'translate-edit-definition'              => 'Systemnachricht im Original',
 	'translate-edit-contribute'              => 'bearbeiten',
@@ -998,10 +984,8 @@ In der Übersetzung eines Namensraumnamens hat <tt>$1 talk</tt> eine spezielle B
 Du musst in der Übersetzer-Gruppe sein, um Änderungen zu speichern. Änderungen werden erst beim Klick auf den Speichern-Button gespeichert.',
 	'translate-magic-module'                 => 'Modul:',
 	'translate-magic-submit'                 => 'Hole',
-	'translate-magic-cm-export'              => 'Export',
 	'translate-magic-cm-to-be'               => 'Sollte sein',
 	'translate-magic-cm-current'             => 'Aktuell',
- 	'translate-magic-cm-original'            => 'Original',
 	'translate-magic-cm-comment'             => 'Kommentar:',
 	'translate-magic-cm-save'                => 'Speichern',
 	'translate-magic-cm-updatedusing'        => 'Aktualisiert durch Special:Magic',
@@ -2285,15 +2269,13 @@ Alias untuk halaman istimewa dan kata magis dapat memiliki lebih dari satu terje
 Dalam terjemahan ruang nama <tt>$1 talk</tt> diperlakukan khusus. <tt>$1</tt> digantikan dengan nama situs (contohnya <tt>{{SITENAME}} talk</tt>. Jika bahasa Anda tidak memungkinkan untuk membentuk suatu ekspresi yang valid tanpa mengganti nama situs, silakan kontak salah seorang pengembang.
 
 Anda perlu menjadi anggota grup penerjemah untuk menyimpan perubahan. Perubahan tak akan disimpan hingga Anda mengklik tombol simpan di bawah.',
-	'translate-magic-form'              => 'Bahasa: $1 Modul: $2 $3',
 	'translate-magic-submit'            => 'Ambil',
+	'translate-magic-cm-export'         => 'Ekspor',
 	'translate-magic-cm-to-be'          => 'Menjadi',
 	'translate-magic-cm-current'        => 'Kini',
 	'translate-magic-cm-original'       => 'Asal',
-	'translate-magic-cm-fallback'       => 'Kembalikan',
 	'translate-magic-cm-comment'        => 'Komentar:',
 	'translate-magic-cm-save'           => 'Simpan',
-	'translate-magic-cm-export'         => 'Ekspor',
 	'translate-magic-cm-updatedusing'   => 'Diubah menggunakan Special:Magic',
 	'translate-magic-cm-savefailed'     => 'Gagal disimpan',
 	'translate-magic-special'           => 'Alias halaman istimewa',
@@ -2321,6 +2303,7 @@ $messages['ilo'] = array(
 
 /** Icelandic (Íslenska)
  * @author S.Örvarr.S
+ * @author Jóna Þórunn
  */
 $messages['is'] = array(
 	'translate'                         => 'Þýða',
@@ -2354,7 +2337,7 @@ $messages['is'] = array(
 	'translate-edit-definition'         => 'Útskýring á meldingu',
 	'translate-edit-contribute'         => 'breyta',
 	'translate-edit-no-information'     => "''Þessi melding hefur enga skjölun.
-Ef þú veist hvar eða hverning hún er notuð getur þú hjálpað öðrum þýðendum með því að bæta skjölun við meldinguna.''",
+Ef þú veist hvar eða hvernig meldingin er notuð getur þú hjálpað öðrum þýðendum með því að bæta skjölun við hana.''",
 	'translate-edit-information'        => 'Upplýsingar um þessa meldingu ($1)',
 	'translate-edit-in-other-languages' => 'Melding á öðrum tungumálum',
 	'translate-edit-committed'          => 'Núverandi þýðing í hugbúnaðinum',
@@ -3065,7 +3048,7 @@ $messages['km'] = array(
 	'translationchanges-export'         => 'នាំចេញ',
 	'translate-checks-parameters'       => 'ប៉ារ៉ាម៉ែត្រទាំងនេះមិនត្រូវបានគេប្រើទេ៖ <strong>$1</strong>',
 	'translate-checks-balance'          => 'មានវង់ក្រចក​ដែលមិន​មាន​គូ៖ <strong>$1</strong>',
-	'translate-checks-links'            => 'តំនភ្ជាប់ទាំងនេះ​មានបញ្ហា ៖ <strong>$1</strong>',
+	'translate-checks-links'            => '{{PLURAL:$2|តំនភ្ជាប់|តំនភ្ជាប់}}ខាងក្រោមនេះ​មានបញ្ហា៖ <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml'            => 'សូម​ជំនួស​ប្លាកទាំងនេះ​ដោយ​ប្លាកដែលត្រឹមត្រូវ ៖ <strong>$1</strong>',
 	'translate-checks-plural'           => 'និយមន័យ​ប្រើប្រាស់ <nowiki>{{PLURAL:}}</nowiki> ប៉ុន្តែ​បទប្រែសំរួល​មិនមាន ។',
 );
@@ -4149,6 +4132,17 @@ As alterações não serão salvas até que você clique no botão de salvar.',
 	'right-translate'                   => 'Editar usando a interface de tradução',
 );
 
+/** Tarifit (Tarifit)
+ * @author Jose77
+ */
+$messages['rif'] = array(
+	'translate-edit'                   => 'arri',
+	'translate-talk'                   => 'awal',
+	'translate-history'                => 'amzruy',
+	'translate-page-navigation-legend' => 'Asari',
+	'translate-page-edit'              => 'arri',
+);
+
 $messages['rm'] = array(
 	'translate-edit' => 'editar',
 	'translate-talk' => 'discussiun',
@@ -4908,7 +4902,6 @@ $messages['tr'] = array(
 	'translate-optional'             => '(isteğe bağlı)',
 	'translate-ignored'              => '(yok sayılan)',
 	'translate-edit-contribute'      => 'Katkıda bulun',
-	'translate-magic-form'           => 'Dil: $1 Modül: $2 $3',
 	'translate-magic-submit'         => 'Getir',
 	'translate-magic-cm-to-be'       => 'Yap',
 	'translate-magic-cm-current'     => 'Güncelle',

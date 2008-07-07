@@ -171,13 +171,6 @@ $messages['rtm'] = array(
 	'msg_Cancel' => "Mao'ạki",
 );
 
-/** Tarifit (Tarifit)
- * @author Jose77
- */
-$messages['rif'] = array(
-	'wikiSearchTitle' => 'Tarzzut -',
-);
-
 /** Karelian (Karjala)
  * @author Flrn
  */
@@ -186,7 +179,7 @@ $messages['krl'] = array(
 	'msg_Cancel'      => 'Keskevytä',
 );
 
-/** Eastern Mari (Олык Марий йылме)
+/** Eastern Mari (Олык Марий)
  * @author Сай
  */
 $messages['mhr'] = array(
@@ -195,7 +188,7 @@ $messages['mhr'] = array(
 	'msg_Cancel'      => 'Чараш',
 );
 
-/** Niuean (native name missing)
+/** Niuean (ko e vagahau Niuē)
  * @author Jose77
  */
 $messages['niu'] = array(
@@ -384,7 +377,7 @@ $messages['avk'] = array(
 	'msg_Cancel'                             => 'Waljoara',
 );
 
-/** بلوچی مکرانی (بلوچی مکرانی)
+/** Southern Balochi (بلوچی مکرانی)
  * @author Mostafadaneshvar
  */
 $messages['bcc'] = array(
@@ -2109,6 +2102,13 @@ Não aperte OK antes de ter feito isto.',
 	'msg_Cancel'                             => 'Cancelar',
 );
 
+/** Tarifit (Tarifit)
+ * @author Jose77
+ */
+$messages['rif'] = array(
+	'wikiSearchTitle' => 'Tarzzut -',
+);
+
 /** Russian (Русский)
  * @author Александр Сигачёв
  */
@@ -2644,5 +2644,12 @@ $messages['vo'] = array(
 	'msg_Always'          => 'Ai',
 	'msg_Never'           => 'Neai',
 	'msg_ImagesOnly'      => 'Te Magods',
+);
+
+/** Yiddish (ייִדיש)
+ * @author פוילישער
+ */
+$messages['yi'] = array(
+	'wikiCategoryKeyWord' => 'קאטעגאריע',
 );
 
