@@ -1011,6 +1011,7 @@ Du musst in der Übersetzer-Gruppe sein, um Änderungen zu speichern. Änderunge
 	'translate-rc-translation-filter-only'   => 'Zeige nur Übersetzungen',
 	'translate-rc-translation-filter-filter' => 'Übersetzungen filtern',
 	'translate-rc-translation-filter-site'   => 'Nur Änderungen an Systemnachrichten der Site',
+	'translate-stats-edits'                  => 'Bearbeitungen pro Tag',
 );
 
 /** Lower Sorbian (Dolnoserbski)
