@@ -129,7 +129,7 @@ Changes are not saved until you click save button below.',
 	'translate-checks-plural'
 		=> 'Definition uses <nowiki>{{PLURAL:}}</nowiki> but translation does not.',
 
-	'tog-translate-nonewsletter'=> 'Do not send me e-mail newsletters (relevant only for users with a confirmed e-mailaddress)',
+	'tog-translate-nonewsletter' => 'Do not send me e-mail newsletters (relevant only for users with a confirmed e-mail address)',
 	'right-translate'            => 'Edit using the translate interface',
 
 	'translate-rc-translation-filter' => 'Filter translations:',
