@@ -138,12 +138,9 @@ class SpecialTranslationStats extends SpecialPage {
 		$plot->SetXTickPos('none');
 		$plot->SetXLabelAngle(45);
 
-		$plot->SetTransparentColor('snow');
-		$plot->SetBackgroundColor('snow');
-
-
-
-
+		$plot->SetTransparentColor('white');
+		$plot->SetBackgroundColor('white');
+		$plot->SetFileFormat('gif');
 
 		//Draw it
 		$plot->DrawGraph();
