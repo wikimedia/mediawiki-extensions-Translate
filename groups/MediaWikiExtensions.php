@@ -221,6 +221,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 
 	protected $wmfextensions = array(
 		'ext-inputbox', // used on all wikis by all users
+		'ext-wikimediamessages',
 		'ext-cite',
 		'ext-citespecial',
 		'ext-newuserlog',

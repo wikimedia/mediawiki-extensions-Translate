@@ -115,7 +115,6 @@ $wgTranslateMessageNamespaces = array( NS_MEDIAWIKI );
 $wgTranslateAC = array(
 'core'                      => 'CoreMessageGroup',
 'core-mostused'             => 'CoreMostUsedMessageGroup',
-'out-word2mediawikiplus'    => 'Word2MediaWikiPlusMessageGroup',
 );
 
 /**

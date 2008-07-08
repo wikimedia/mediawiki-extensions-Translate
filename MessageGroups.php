@@ -395,14 +395,6 @@ class CoreMostUsedMessageGroup extends CoreMessageGroup {
 	}
 }
 
-class Word2MediaWikiPlusMessageGroup extends ExtensionMessageGroup {
-	protected $label = 'Word2MediaWiki Plus';
-	protected $id    =  'out-word2mediawikiplus';
-	protected $messageFile = 'Translate/external/Word2MediaWikiPlus/Word2MediaWikiPlus.i18n.php';
-	
-	protected $description = 'Allows converting Microsoft Word documents to MediaWiki text';
-}
-
 class GettextMessageGroup extends MessageGroup {
 	protected $type = 'gettext';
 	/**
