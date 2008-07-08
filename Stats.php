@@ -28,7 +28,7 @@ class SpecialTranslationStats extends SpecialPage {
 				$opts[$key] = $value;
 		}
 
-		$opts->validateIntBounds( 'days', 1, 180 );
+		$opts->validateIntBounds( 'days', 1, 300 );
 		$opts->validateIntBounds( 'width', 200, 1000 );
 		$opts->validateIntBounds( 'height', 200, 1000 );
 
@@ -144,9 +144,15 @@ class SpecialTranslationStats extends SpecialPage {
 		$plot->SetXTickPos('none');
 		$plot->SetXLabelAngle(45);
 
+		$max = max( $resData );
+		$yTick = 5;
+		while ( $max / $yTick > $height/20 ) $yTick *= 2;
+
+		$plot->SetYTickIncrement($yTick);
+
 		$plot->SetTransparentColor('white');
 		$plot->SetBackgroundColor('white');
-		$plot->SetFileFormat('gif');
+		//$plot->SetFileFormat('gif');
 
 		//Draw it
 		$plot->DrawGraph();
