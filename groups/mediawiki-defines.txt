@@ -650,6 +650,7 @@ Wikihiero
 file = wikihiero/wikihiero.i18n.php
 
 Wikimedia Messages
+ignored = sidebar
 
 Wiki Text Logged In Out
 
