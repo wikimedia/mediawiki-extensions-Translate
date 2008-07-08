@@ -39,7 +39,13 @@ class SpecialTranslationStats extends SpecialPage {
 
 		if ( $this->including() ) {
 			$wgOut->addHTML(
-				Xml::element( 'img', array( 'src' => $href ) )
+				Xml::element( 'img',
+					array(
+						'src' => $href,
+						'width' => $opts['width'],
+						'height' => $opts['height'],
+					)
+				)
 			);
 		} else {
 			if ( $opts['ts'] === 0 ) {
