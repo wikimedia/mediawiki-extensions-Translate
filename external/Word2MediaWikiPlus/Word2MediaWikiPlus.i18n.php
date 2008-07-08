@@ -457,6 +457,38 @@ $messages['bcc'] = array(
 	'msg_Cancel'                             => 'کنسل',
 );
 
+/** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
+ * @author Jim-by
+ * @author Red Winged Duck
+ * @author EugeneZelenko
+ */
+$messages['be-tarask'] = array(
+	'wikiSearchTitle'       => 'Вынікі пошуку —',
+	'wikiCategoryKeyWord'   => 'катэгорыя',
+	'categoryImagePreFix'   => 'Выявы',
+	'wikiUploadTitle'       => 'Загрузіць файл',
+	'clickChartText'        => 'націсьні на мяне!',
+	'unableToConvertMarker' => '## Памылка канвэртаваньня ##:',
+	'txt_TitlePage'         => 'Галоўная старонка',
+	'txt_PageHeader'        => 'Загаловак старонкі',
+	'txt_PageFooter'        => 'Ніжняя частка старонкі',
+	'txt_Footnote'          => 'Нататкі',
+	'msg_Upload_Info'       => 'Зараз пачнецца загрузка файла. Перад пачаткам неабходна дакладна наладзіць Ваш браўзэр:\\r\\n1. Зачыніце ўсе закладкі, такія як «улюбёныя».\\r\\n2. Увайдзіце ў {{GRAMMAR:вінавальны|{{SITENAME}}}}.\\r\\n\\Не націскайце кнопку «Добра», калі Вы гэтага не зрабілі.',
+	'msg_Finished'          => 'Канвэртацыя скончаная. Устаўце тэкст з буфэру абмену ў Ваш рэдактар Вікі.',
+	'msg_NoDocumentLoaded'  => 'Няма загружаных дакумэнтаў.',
+	'msg_LoadDocument'      => 'Калі ласка, загрузіце дакумэнт у канвэртар.',
+	'msg_CloseAll'          => 'Калі ласка, зачыніце ўсе дакумэнты, акрамя таго, які неабходна канвэртаваць! Макрас будзе спынены.',
+	'msg_SimpleTab'         => 'Просты',
+	'msg_ArticleName'       => 'Назва артыкула',
+	'msg_TargetWikiFrame'   => 'Мэтавая Вікі',
+	'msg_TestSystem'        => 'Тэставая сыстэма',
+	'msg_ProdSystem'        => 'Працоўная сыстэма',
+	'msg_CheckURL'          => 'Праверка URL-адрасу',
+	'msg_CategoryFrame'     => 'Катэгорыя',
+	'msg_MultipleCats'      => 'Падзяляць катэгорыі коскай (,)',
+	'msg_ArticleCategory'   => 'Катэгорыя артыкула',
+);
+
 /** Bulgarian (Български)
  * @author DCLXVI
  */
@@ -2111,6 +2143,7 @@ $messages['rif'] = array(
 
 /** Russian (Русский)
  * @author Александр Сигачёв
+ * @author EugeneZelenko
  */
 $messages['ru'] = array(
 	'wikiSearchTitle'                  => 'Результаты поиска -',
@@ -2129,7 +2162,7 @@ $messages['ru'] = array(
 Не нажимайте ОК пока не сделаете это!',
 	'msg_Finished'                     => 'Конвертация завершена.Вставте текст из буфера обмена в редактор WiKi',
 	'msg_NoDocumentLoaded'             => 'Документы не загружены.',
-	'msg_LoadDocument'                 => 'Пожалуйста загрузите документ в конвертер.',
+	'msg_LoadDocument'                 => 'Пожалуйста, загрузите документ в конвертер.',
 	'msg_CloseAll'                     => 'Пожалуйста закройте все документы кроме того который нужно сконвертировать! Макрос остановлен.',
 	'msg_SimpleTab'                    => 'Простой',
 	'msg_ArticleName'                  => 'Название статьи',

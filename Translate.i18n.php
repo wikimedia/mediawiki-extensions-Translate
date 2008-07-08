@@ -1808,6 +1808,7 @@ $messages['haw'] = array(
 
 /** Hebrew (עברית)
  * @author Agbad
+ * @author Rotemliss
  */
 $messages['he'] = array(
 	'translate'                         => 'תרגום',
@@ -1836,7 +1837,7 @@ $messages['he'] = array(
 	'translate-prev'                    => 'לדף הקודם',
 	'translate-page-description-legend' => 'מידע על הקבוצה',
 	'translate-page-edit'               => 'עריכה',
-	'translate-edit-contribute'         => 'תרום',
+	'translate-edit-contribute'         => 'תרומה',
 	'translate-edit-information'        => 'מידע על ההודעה ($1)',
 	'translate-edit-goto-no-prev'       => 'אין הודעה קודמת',
 	'translate-edit-goto-no-next'       => 'אין הודעה הבאה',
@@ -3089,7 +3090,7 @@ $messages['ksh'] = array(
 	'translate-task-export'                  => 'Donn de Övversäzzonge Äxpochteere fon',
 	'translate-task-export-to-file'          => 'Donn de Övversäzzonge en_en Datteij Äxpochteere, fon',
 	'translate-task-export-as-po'            => 'Donn de Övversäzzonge en et Jettäx Fommaat Äxpochteere, fon',
-	'translate-task-export-to-xliff'         => 'De Översetzunge em Xliff Fomaat äxpochteere',
+	'translate-task-export-to-xliff'         => 'De Översetzunge em Xliff Fomaat äxpochteere, fon',
 	'translate-page-no-such-language'        => 'De aanjejoove Shprooch känne me nit.',
 	'translate-page-no-such-task'            => 'De aanjejoove Opjav känne me nit.',
 	'translate-page-no-such-group'           => 'De aanjejoove Jrop känne me nit.',
@@ -3124,7 +3125,7 @@ $messages['ksh'] = array(
 	'translate-edit-goto-no-next'            => 'Keine Tëx donoh',
 	'translate-edit-goto-prev'               => 'Dä Tëx doför zëije',
 	'translate-edit-goto-next'               => 'Dä Tëx donoh zëije',
-	'translate-edit-goto-list'               => 'Op de Lėß joröckjonn',
+	'translate-edit-goto-list'               => 'Op de Lėß zoröckjonn',
 	'translate-magic-pagename'               => 'MediaWiki sing Extras övversäze',
 	'translate-magic-help'                   => 'Hee kanns_De Zweijtname fö Söndersigge, Zauberwööter, Name för Ovverfläshe, un de Appachtemangname översäze.
 
@@ -3657,6 +3658,7 @@ Om wijzigingen op te slaan moet u lid zijn van de groep vertalers. Wijzigingen w
 	'translate-rc-translation-filter-only'   => 'Alleen vertalingen weergeven',
 	'translate-rc-translation-filter-filter' => 'Vertalingen wegfilteren',
 	'translate-rc-translation-filter-site'   => 'Alleen wijzigingen aan plaatselijke systeemberichten',
+	'translate-stats-edits'                  => 'Bewerkingen per dag',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
@@ -3779,6 +3781,7 @@ Du må være i oversettergruppa for å lagre endringer. Endringer lagres ikke f�
 	'translate-rc-translation-filter-only'   => 'Vis bare oversettelser',
 	'translate-rc-translation-filter-filter' => 'Filtrer bort oversettelser',
 	'translate-rc-translation-filter-site'   => 'Kun endringer i {{SITENAME}}-beskjeder',
+	'translate-stats-edits'                  => 'Redigeringer per dag',
 );
 
 /** Occitan (Occitan)
@@ -3896,11 +3899,13 @@ $messages['pl'] = array(
 	'translate-task-view'                    => 'zobaczyć wszystkie komunikaty',
 	'translate-task-untranslated'            => 'zobaczyć wszystkie nieprzetłumaczone komunikaty',
 	'translate-task-optional'                => 'zobaczyć opcjonalne komunikaty',
+	'translate-task-problematic'             => 'zobaczyć problematyczne komunikaty',
 	'translate-task-review'                  => 'sprawdzić zmiany',
 	'translate-task-reviewall'               => 'przejrzeć wszystkie tłumaczenia',
 	'translate-task-export'                  => 'wyeksportować tłumaczenie',
 	'translate-task-export-to-file'          => 'wyeksportować tłumaczenie do pliku',
 	'translate-task-export-as-po'            => 'wyeksportować tłumaczenie w formacie Gettext',
+	'translate-task-export-to-xliff'         => 'wyeksportować tłumaczenie w formacie Xliff',
 	'translate-page-no-such-language'        => 'Podano nieprawidłowy język.',
 	'translate-page-no-such-task'            => 'Podano nieprawidłowe zadanie.',
 	'translate-page-no-such-group'           => 'Podano nieprawidłową grupę.',
@@ -3921,6 +3926,7 @@ $messages['pl'] = array(
 	'translate-next'                         => 'Następna strona',
 	'translate-prev'                         => 'Poprzednia strona',
 	'translate-page-description-legend'      => 'Informacje na temat grupy',
+	'translate-page-edit'                    => 'edytuj',
 	'translate-optional'                     => '(dodatkowe)',
 	'translate-ignored'                      => '(zignorowane)',
 	'translate-edit-definition'              => 'Tekst źródłowy komunikatu',
@@ -3930,6 +3936,11 @@ $messages['pl'] = array(
 	'translate-edit-in-other-languages'      => 'Komunikaty w innych językach',
 	'translate-edit-committed'               => 'Aktualne tłumaczenie oprogramowania',
 	'translate-edit-warnings'                => 'Ostrzeżenia o niedokończonych tłumaczeniach',
+	'translate-edit-goto-no-prev'            => 'Brak poprzedniego komunikatu',
+	'translate-edit-goto-no-next'            => 'Brak następnego komunikatu',
+	'translate-edit-goto-prev'               => 'Edycja poprzedniego komunikatu',
+	'translate-edit-goto-next'               => 'Edycja następnego komunikatu',
+	'translate-edit-goto-list'               => 'Powrót do listy komunikatów',
 	'translate-magic-pagename'               => 'Rozszerzone tłumaczenie MediaWiki',
 	'translate-magic-help'                   => 'Możliwe jest tłumaczenie aliasów stron specjalnych, magicznych słów, nazw motywów i nazw poszczególnych przestrzeni.
 
@@ -3944,6 +3955,7 @@ Jeśli w danym języku niemożliwe jest sformułowanie prawidłowego wpisu bez z
 
 Zapisanie zmian jest możliwe tylko dla członków grupy tłumaczy.
 Zmiany nie są zapisywane, dopóki użytkownik nie naciśnie umieszczonego poniżej przycisku „Zapisz”.',
+	'translate-magic-module'                 => 'Moduł',
 	'translate-magic-submit'                 => 'Wyświetl',
 	'translate-magic-cm-export'              => 'Eksportuj',
 	'translate-magic-cm-to-be'               => 'Przyszły',
@@ -3960,10 +3972,16 @@ Zmiany nie są zapisywane, dopóki użytkownik nie naciśnie umieszczonego poni�
 	'translationchanges'                     => 'Zmiany w tłumaczeniu',
 	'translationchanges-export'              => 'eksportuj',
 	'translationchanges-change'              => '$1: $2 przez $3',
-	'translate-checks-parameters'            => 'Następujące parametry nie są wykorzystywane: <strong>$1</strong>',
-	'translate-checks-balance'               => 'W wyrażeniu napotkano nieparzystą liczbę nawiasów: <strong>$1</strong>',
-	'translate-checks-links'                 => 'Wystąpiły problemy z następującymi linkami: <strong>$1</strong>',
-	'translate-checks-xhtml'                 => 'Zastąp następujące znaczniki prawidłowymi: <strong>$1</strong>',
+	'translate-checks-parameters'            => '{{PLURAL:$2|Następujący parametr nie jest wykorzystywany|Następujące parametry nie są wykorzystywane}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters-unknown'    => '{{PLURAL:$2|Następujący parametr nie jest zdefiniowany|Następujące parametry nie są zdefiniowane}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-balance'               => 'W wyrażeniu napotkano {{PLURAL:$2|niedomknięty nawias|nieparzystą liczbę nawiasów}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links'                 => '{{PLURAL:$2|Następujący link jest problematyczny|Następujące $2 linki są problematyczne|Następujących $2 linków jest problematycznych}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-xhtml'                 => 'Zastąp {{PLURAL:$2|następujący znacznik prawidłowym|następujące znaczniki prawidłowymi}}:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural'                => 'Definicja wykorzystuje funkcję <nowiki>{{PLURAL:}}</nowiki>, lecz w tłumaczeniu nie została ona użyta.',
 	'tog-translate-nonewsletter'             => 'Nie wysyłaj do mnie biuletynów pocztą elektroniczną (dotyczy tylko użytkowników z potwierdzonym adresem e-mail)',
 	'right-translate'                        => 'Edycja z użyciem interfejsu tłumaczeń',
@@ -3971,6 +3989,8 @@ Zmiany nie są zapisywane, dopóki użytkownik nie naciśnie umieszczonego poni�
 	'translate-rc-translation-filter-no'     => 'Nic nie rób',
 	'translate-rc-translation-filter-only'   => 'Pokaż tylko tłumaczenia',
 	'translate-rc-translation-filter-filter' => 'Pokaż wszystkie bez tłumaczeń',
+	'translate-rc-translation-filter-site'   => 'Zmiany w komunikatach wyłącznie tej witryny',
+	'translate-stats-edits'                  => 'Edycji dziennie',
 );
 
 /** Piemontèis (Piemontèis)
@@ -4523,6 +4543,7 @@ Anjeun perlu jadi anggota grup panarjamah pikeun nyimpen parobahan. Parobahan mo
  * @author Sannab
  * @author M.M.S.
  * @author Siebrand
+ * @author Boivie
  */
 $messages['sv'] = array(
 	'translate'                              => 'Översätt',
@@ -4616,6 +4637,7 @@ För att kunna spara ändringar så behöver du tillhöra översättargruppen. �
 	'translate-rc-translation-filter-only'   => 'Visa endast översättningar',
 	'translate-rc-translation-filter-filter' => 'Filtrera bort översättningar',
 	'translate-rc-translation-filter-site'   => 'Endast ändringar till {{SITENAME}}-meddelanden',
+	'translate-stats-edits'                  => 'Redigeringar per dag',
 );
 
 /** Silesian (ślůnski)
@@ -5436,48 +5458,59 @@ $messages['zh-hans'] = array(
  * @author Alexsh
  */
 $messages['zh-hant'] = array(
-	'translate'                         => '翻譯',
-	'translate-desc'                    => '翻譯MediaWiki介面訊息的[[Special:Translate|特殊頁面]]',
-	'translate-edit'                    => '編輯',
-	'translate-talk'                    => '對話',
-	'translate-history'                 => '歷史',
-	'translate-task-view'               => '檢視全部訊息',
-	'translate-task-untranslated'       => '檢視尚未翻譯的訊息',
-	'translate-task-optional'           => '檢視可選的訊息',
-	'translate-task-review'             => '檢查該處的更改',
-	'translate-task-reviewall'          => '檢查該群組的翻譯',
-	'translate-task-export'             => '匯出翻譯',
-	'translate-task-export-to-file'     => '匯出翻譯至檔案',
-	'translate-task-export-as-po'       => '以純文字格式匯出翻譯',
-	'translate-page-no-such-language'   => '選擇的語言錯誤',
-	'translate-page-no-such-task'       => '選擇的功能錯誤',
-	'translate-page-no-such-group'      => '選擇的群組錯誤',
-	'translate-page-settings-legend'    => '設定',
-	'translate-page-task'               => '選擇功能',
-	'translate-page-group'              => '群組',
-	'translate-page-language'           => '語言',
-	'translate-page-limit'              => '每頁顯示',
-	'translate-page-limit-option'       => '$1個訊息',
-	'translate-submit'                  => '擷取',
-	'translate-page-navigation-legend'  => '導航',
-	'translate-page-showing'            => '顯示第 $1 到第 $2 個訊息，總共有 $3 個',
-	'translate-page-showing-all'        => '顯示 $1 個訊息',
-	'translate-page-showing-none'       => '沒有任何訊息',
-	'translate-next'                    => '下一頁',
-	'translate-prev'                    => '上一頁',
-	'translate-page-description-legend' => '關於本群組',
-	'translate-optional'                => '(可選)',
-	'translate-ignored'                 => '(已略過)',
-	'translate-edit-definition'         => '訊息原文',
-	'translate-edit-contribute'         => '貢獻',
-	'translate-edit-no-information'     => "''本介面訊息沒有任何說明資訊
+	'translate'                              => '翻譯',
+	'translate-desc'                         => '翻譯MediaWiki介面訊息的[[Special:Translate|特殊頁面]]',
+	'translate-edit'                         => '編輯',
+	'translate-talk'                         => '對話',
+	'translate-history'                      => '歷史',
+	'translate-task-view'                    => '檢視全部訊息',
+	'translate-task-untranslated'            => '檢視尚未翻譯的訊息',
+	'translate-task-optional'                => '檢視可選的訊息',
+	'translate-task-problematic'             => '檢視有問題的訊息',
+	'translate-task-review'                  => '檢查該處的更改',
+	'translate-task-reviewall'               => '檢查該群組的翻譯',
+	'translate-task-export'                  => '匯出翻譯',
+	'translate-task-export-to-file'          => '匯出翻譯至檔案',
+	'translate-task-export-as-po'            => '以純文字格式匯出翻譯',
+	'translate-task-export-to-xliff'         => '以Xliff格式匯出翻譯',
+	'translate-page-no-such-language'        => '選擇的語言錯誤',
+	'translate-page-no-such-task'            => '選擇的功能錯誤',
+	'translate-page-no-such-group'           => '選擇的群組錯誤',
+	'translate-page-disabled'                => "翻譯至這個語言已於本群組停用，原因如下：
+
+''$1''",
+	'translate-page-settings-legend'         => '設定',
+	'translate-page-task'                    => '選擇功能',
+	'translate-page-group'                   => '群組',
+	'translate-page-language'                => '語言',
+	'translate-page-limit'                   => '每頁顯示',
+	'translate-page-limit-option'            => '$1個訊息',
+	'translate-submit'                       => '擷取',
+	'translate-page-navigation-legend'       => '導航',
+	'translate-page-showing'                 => '顯示第 $1 到第 $2 個訊息，總共有 $3 個',
+	'translate-page-showing-all'             => '顯示 $1 個訊息',
+	'translate-page-showing-none'            => '沒有任何訊息',
+	'translate-next'                         => '下一頁',
+	'translate-prev'                         => '上一頁',
+	'translate-page-description-legend'      => '關於本群組',
+	'translate-page-edit'                    => '編輯',
+	'translate-optional'                     => '(可選)',
+	'translate-ignored'                      => '(已略過)',
+	'translate-edit-definition'              => '訊息原文',
+	'translate-edit-contribute'              => '貢獻',
+	'translate-edit-no-information'          => "''本介面訊息沒有任何說明資訊
 如果您知道這個訊息是使用在哪個地方，您可以增加說明資訊以協助其他翻譯者''",
-	'translate-edit-information'        => '關於本介面訊息的資訊 ($1)',
-	'translate-edit-in-other-languages' => '其他語言的訊息',
-	'translate-edit-committed'          => '當前翻譯',
-	'translate-edit-warnings'           => '未完成翻譯的警告',
-	'translate-magic-pagename'          => '延伸的MediaWiki翻譯',
-	'translate-magic-help'              => "您可以使用本特殊頁面翻譯'''特殊頁面別名'''、'''魔術字'''、'''面板名稱'''以及'''名字空間名稱'''。
+	'translate-edit-information'             => '關於本介面訊息的資訊 ($1)',
+	'translate-edit-in-other-languages'      => '其他語言的訊息',
+	'translate-edit-committed'               => '當前翻譯',
+	'translate-edit-warnings'                => '未完成翻譯的警告',
+	'translate-edit-goto-no-prev'            => '沒有前一個訊息',
+	'translate-edit-goto-no-next'            => '沒有次一個訊息',
+	'translate-edit-goto-prev'               => '編輯前一個訊息',
+	'translate-edit-goto-next'               => '編輯次一個訊息',
+	'translate-edit-goto-list'               => '回到清單',
+	'translate-magic-pagename'               => '延伸的MediaWiki翻譯',
+	'translate-magic-help'                   => "您可以使用本特殊頁面翻譯'''特殊頁面別名'''、'''魔術字'''、'''面板名稱'''以及'''名字空間名稱'''。
 
 翻譯魔術字時，新的名稱必需含有英文，否則無法生效。第一個字元也請避免0或1這兩個字元
 
@@ -5487,26 +5520,37 @@ $messages['zh-hant'] = array(
 如果您的翻譯沒有更動網站名稱，但無法正確顯示的話，請聯絡MediaWiki開發者。
 
 您必需屬於翻譯者群組才能保存這些更改。在按下保存之前，這些更改均不會被更動。",
-	'translate-magic-submit'            => '擷取',
-	'translate-magic-cm-export'         => '匯出',
-	'translate-magic-cm-to-be'          => '翻譯',
-	'translate-magic-cm-current'        => '目前',
-	'translate-magic-cm-original'       => '原始訊息',
-	'translate-magic-cm-comment'        => '原因：',
-	'translate-magic-cm-save'           => '保存',
-	'translate-magic-cm-updatedusing'   => '已使用[[Special:Magic]]更新',
-	'translate-magic-cm-savefailed'     => '保存失敗',
-	'translate-magic-special'           => '特殊頁面別名',
-	'translate-magic-words'             => '魔術字',
-	'translate-magic-skin'              => '面板名稱',
-	'translate-magic-namespace'         => '名字空間名稱',
-	'translationchanges'                => '翻譯更改',
-	'translationchanges-export'         => '{{int:translate-magic-cm-export}}',
-	'translationchanges-change'         => '$1: $2 由$3翻譯',
-	'translate-checks-parameters'       => '以下參數沒有使用到：<strong>$1</strong>',
-	'translate-checks-balance'          => '括號的數量不一致：<strong>$1</strong>',
-	'translate-checks-links'            => '以下的連結可能有問題：<strong>$1</strong>',
-	'translate-checks-xhtml'            => '請修正以下的標籤：<strong>$1</strong>',
-	'translate-checks-plural'           => '原始訊息使用於<nowiki>{{PLURAL:}}</nowiki>中，並沒有用於翻譯。',
+	'translate-magic-module'                 => '模組：',
+	'translate-magic-submit'                 => '擷取',
+	'translate-magic-cm-export'              => '匯出',
+	'translate-magic-cm-to-be'               => '翻譯',
+	'translate-magic-cm-current'             => '目前',
+	'translate-magic-cm-original'            => '原始訊息',
+	'translate-magic-cm-comment'             => '原因：',
+	'translate-magic-cm-save'                => '保存',
+	'translate-magic-cm-updatedusing'        => '已使用[[Special:Magic]]更新',
+	'translate-magic-cm-savefailed'          => '保存失敗',
+	'translate-magic-special'                => '特殊頁面別名',
+	'translate-magic-words'                  => '魔術字',
+	'translate-magic-skin'                   => '面板名稱',
+	'translate-magic-namespace'              => '名字空間名稱',
+	'translationchanges'                     => '翻譯更改',
+	'translationchanges-export'              => '{{int:translate-magic-cm-export}}',
+	'translationchanges-change'              => '$1: $2 由$3翻譯',
+	'translate-checks-parameters'            => '以下參數沒有使用到：<strong>$1</strong>',
+	'translate-checks-parameters-unknown'    => '以下參數為未知參數：
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-balance'               => '括號的數量不一致：<strong>$1</strong>',
+	'translate-checks-links'                 => '以下的連結可能有問題：<strong>$1</strong>',
+	'translate-checks-xhtml'                 => '請修正以下的標籤：<strong>$1</strong>',
+	'translate-checks-plural'                => '原始訊息使用於<nowiki>{{PLURAL:}}</nowiki>中，並沒有用於翻譯。',
+	'tog-translate-nonewsletter'             => '不要傳送電子報 (只適用已確認過電子郵件的用戶)',
+	'right-translate'                        => '使用翻譯介面編輯',
+	'translate-rc-translation-filter'        => '篩選翻譯：',
+	'translate-rc-translation-filter-no'     => '不篩選',
+	'translate-rc-translation-filter-only'   => '只顯示翻譯',
+	'translate-rc-translation-filter-filter' => '排除',
+	'translate-rc-translation-filter-site'   => '只有網站訊息的更動',
+	'translate-stats-edits'                  => '日編輯數',
 );
 
