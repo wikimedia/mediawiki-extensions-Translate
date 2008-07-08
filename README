@@ -34,6 +34,7 @@ function customMessageGroups( $id ) {
 
 == Changes in version 10 ==
 
+* 2008-07-08:1 simple edit stats with phplot
 * 2008-07-05:1 fuzzy.php was ignoring the namespace
 * 2008-07-04:2
  - use a existing hook for quick links

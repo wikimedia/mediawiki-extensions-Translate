@@ -11,7 +11,7 @@ if (!defined('MEDIAWIKI')) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '9 (2008-07-05:1)' );
+define( 'TRANSLATE_VERSION', '9 (2008-07-08:1)' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name'           => 'Translate',
@@ -28,10 +28,12 @@ require_once( $dir . '_autoload.php' );
 
 $wgExtensionMessagesFiles['Translate'] = $dir . 'Translate.i18n.php';
 $wgExtensionAliasesFiles['Translate'] = $dir . 'Translate.alias.php';
+$wgExtensionFunctions[] = 'efTranslateInit';
 
 $wgSpecialPages['Translate'] = 'SpecialTranslate';
 $wgSpecialPages['Magic'] = 'SpecialMagic';
 $wgSpecialPages['TranslationChanges'] = 'SpecialTranslationChanges';
+$wgSpecialPages['TranslationStats'] = 'SpecialTranslationStats';
 $wgSpecialPageGroups['TranslationChanges'] = 'changes';
 
 $wgHooks['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';
@@ -148,9 +150,19 @@ $wgTranslateTasks = array(
 	'export-to-xliff'=> 'ExportToXliffMessagesTask',
 );
 
+$wgTranslatePHPlot = false;
+$wgTranslatePHPlotFont = '/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf';
+
 if ( $wgDebugComments ) {
 	require_once( "$dir/utils/MemProfile.php" );
 } else {
 	function wfMemIn() {}
 	function wfMemOut() {}
+}
+
+function efTranslateInit() {
+	global $wgTranslatePHPlot, $wgAutoloadClasses;
+	if ( $wgTranslatePHPlot ) {
+		$wgAutoloadClasses['PHPlot'] = $wgTranslatePHPlot;
+	}
 }
