@@ -105,6 +105,7 @@ class SpecialTranslationStats extends SpecialPage {
 	}
 
 	public function draw( FormOptions $opts ) {
+		wfLoadExtensionMessages( 'Translate' );
 		global $wgTranslatePHPlotFont;
 
 		$width = $opts->getValue( 'width' );
@@ -132,7 +133,7 @@ class SpecialTranslationStats extends SpecialPage {
 		$plot->setFont( 'y_label', null, 8 );
 
 		//Turn off X axis ticks and labels because they get in the way:
-		$plot->SetYTitle('Edits');
+		$plot->SetYTitle( wfMsg( 'translate-stats-edits' ) );
 		$plot->SetXTickLabelPos('none');
 		$plot->SetXTickPos('none');
 		$plot->SetXLabelAngle(45);
