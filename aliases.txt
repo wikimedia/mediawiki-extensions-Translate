@@ -10,11 +10,8 @@ file = CrossNamespaceLinks/SpecialCrossNamespaceLinks.alias.php
 DeletedContributions
 file = DeletedContributions/DeletedContributions.i18n.alias.php
 
-Makebot
-file = Makebot/Makebot.alias.php
-
-Makesysop
-file = Makesysop/SpecialMakesysop.alias.php
+ExpandTemplates
+file = ExpandTemplates/ExpandTemplates.alias.php
 
 Renameuser
 file = Renameuser/SpecialRenameuser.alias.php
