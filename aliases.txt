@@ -4,5 +4,11 @@ file = CategoryTree/CategoryTreePage.i18n.alias.php
 Configure
 file = Configure/Configure.alias.php
 
+CrossNamespaceLinks
+file = CrossNamespaceLinks/SpecialCrossNamespaceLinks.alias.php
+
+DeletedContributions
+file = DeletedContributions/DeletedContributions.i18n.alias.php
+
 Translate
 file = Translate/Translate.alias.php
