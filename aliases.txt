@@ -4,11 +4,11 @@ file = AdvancedRandom/AdvancedRandom.alias.php
 Category tree
 file = CategoryTree/CategoryTreePage.i18n.alias.php
 
-Check User
+Check user
 file = CheckUser/CheckUser.alias.php
 
 Special cite
-file = SpecialCite.i18n.alias.php
+file = Cite/SpecialCite.i18n.alias.php
 
 Configure
 file = Configure/Configure.alias.php
