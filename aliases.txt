@@ -1,61 +1,67 @@
-AdvancedRandom
+Advanced random
 file = AdvancedRandom/AdvancedRandom.alias.php
 
-Category Tree
+Category tree
 file = CategoryTree/CategoryTreePage.i18n.alias.php
 
-Cite
+Check User
+file = CheckUser/CheckUser.alias.php
+
+Special cite
 file = SpecialCite.i18n.alias.php
 
 Configure
 file = Configure/Configure.alias.php
 
-ConfirmAccount
+Confirm account
 file = ConfirmAccount/ConfirmAccount.alias.php
 
-ContactPage
+Contact page
 file = ContactPage/ContactPage.alias.php
 
-CrossNamespaceLinks
+Cross namespace links
 file = CrossNamespaceLinks/SpecialCrossNamespaceLinks.alias.php
 
-DeleteBatch
+Delete batch
 file = DeleteBatch/DeleteBatch.alias.php
 
-DeletedContributions
+Deleted contributions
 file = DeletedContributions/DeletedContributions.i18n.alias.php
 
-Editcount
+Edit count
 file = Editcount/SpecialEditcount.alias.php
 
-EditUser
+Edit user
 file = EditUser/EditUser.alias.php
 
-EmailArticle
+Email article
 file = EmailArticle/EmailArticle.alias.php
 
 Eval
 file = Eval/SpecialEval.alias.php
 
-ExpandTemplates
+Expand templates
 file = ExpandTemplates/ExpandTemplates.alias.php
 
 Gadgets
 file = Gadgets/Gadgets.i18n.alias.php
 
-GlobalBlocking
+Global blocking
 file = GlobalBlocking/GlobalBlocking.alias.php
 
-ImportUsers
+Import users
 file = ImportUsers/SpecialImportUsers.alias.php
 
-LinkSearch
+Invitations
+file = Invitations/Invitations.i18n.alias.php
+
+Link search
 file = LinkSearch/LinkSearch.alias.php
 
-Renameuser
+Rename user
 file = Renameuser/SpecialRenameuser.alias.php
 
-SiteMatrix
+Site matrix
 file = SiteMatrix/SiteMatrix.alias.php
 
 Translate
