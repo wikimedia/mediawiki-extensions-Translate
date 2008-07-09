@@ -10,5 +10,8 @@ file = CrossNamespaceLinks/SpecialCrossNamespaceLinks.alias.php
 DeletedContributions
 file = DeletedContributions/DeletedContributions.i18n.alias.php
 
+Renameuser
+file = Renameuser/SpecialRenameuser.alias.php
+
 Translate
 file = Translate/Translate.alias.php
