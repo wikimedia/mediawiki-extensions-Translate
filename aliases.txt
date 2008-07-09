@@ -25,11 +25,29 @@ file = DeleteBatch/DeleteBatch.alias.php
 DeletedContributions
 file = DeletedContributions/DeletedContributions.i18n.alias.php
 
+Editcount
+file = Editcount/SpecialEditcount.alias.php
+
+EditUser
+file = EditUser/EditUser.alias.php
+
+EmailArticle
+file = EmailArticle/EmailArticle.alias.php
+
+Eval
+file = Eval/SpecialEval.alias.php
+
 ExpandTemplates
 file = ExpandTemplates/ExpandTemplates.alias.php
 
 Gadgets
 file = Gadgets/Gadgets.i18n.alias.php
+
+GlobalBlocking
+file = GlobalBlocking/GlobalBlocking.alias.php
+
+ImportUsers
+file = ImportUsers/SpecialImportUsers.alias.php
 
 LinkSearch
 file = LinkSearch/LinkSearch.alias.php
