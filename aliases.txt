@@ -1,6 +1,9 @@
 Category Tree
 file = CategoryTree/CategoryTreePage.i18n.alias.php
 
+Cite
+file = SpecialCite.i18n.alias.php
+
 Configure
 file = Configure/Configure.alias.php
 
@@ -13,8 +16,17 @@ file = DeletedContributions/DeletedContributions.i18n.alias.php
 ExpandTemplates
 file = ExpandTemplates/ExpandTemplates.alias.php
 
+Gadgets
+file = Gadgets/Gadgets.i18n.alias.php
+
+LinkSearch
+file = LinkSearch/LinkSearch.alias.php
+
 Renameuser
 file = Renameuser/SpecialRenameuser.alias.php
+
+SiteMatrix
+file = SiteMatrix/SiteMatrix.alias.php
 
 Translate
 file = Translate/Translate.alias.php
