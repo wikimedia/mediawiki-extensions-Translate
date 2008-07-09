@@ -516,6 +516,8 @@ file = SemanticDrilldown/languages/SD_Messages.php
 Semantic Forms
 file = SemanticForms/languages/SF_Messages.php
 
+Semantic Google Maps
+
 Semantic MediaWiki
 file = SemanticMediaWiki/languages/SMW_Messages.php
 ignored = smw_ask_doculink, smw_service_online_maps, smw_uri_blacklist
