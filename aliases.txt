@@ -1,3 +1,6 @@
+AdvancedRandom
+file = AdvancedRandom/AdvancedRandom.alias.php
+
 Category Tree
 file = CategoryTree/CategoryTreePage.i18n.alias.php
 
@@ -7,8 +10,17 @@ file = SpecialCite.i18n.alias.php
 Configure
 file = Configure/Configure.alias.php
 
+ConfirmAccount
+file = ConfirmAccount/ConfirmAccount.alias.php
+
+ContactPage
+file = ContactPage/ContactPage.alias.php
+
 CrossNamespaceLinks
 file = CrossNamespaceLinks/SpecialCrossNamespaceLinks.alias.php
+
+DeleteBatch
+file = DeleteBatch/DeleteBatch.alias.php
 
 DeletedContributions
 file = DeletedContributions/DeletedContributions.i18n.alias.php
