@@ -52,13 +52,39 @@ file = GlobalBlocking/GlobalBlocking.alias.php
 Import users
 file = ImportUsers/SpecialImportUsers.alias.php
 
+<<<<<<< .mine
+Interwiki
+file = Interwiki/SpecialInterwiki.alias.php
+
+InterwikiList
+file = InterwikiList/InterwikiList.alias.php
+
+LinkSearch
+=======
 Invitations
 file = Invitations/Invitations.i18n.alias.php
 
 Link search
+>>>>>>> .r37450
 file = LinkSearch/LinkSearch.alias.php
 
+<<<<<<< .mine
+Maintenance
+file = Maintenance/Maintenance.alias.php
+
+Mibbit
+file = Mibbit/Mibbit.alias.php
+
+MultiUpload
+file = MultiUpload/SpecialMultipleUpload.alias.php
+
+NewestPages
+file = NewestPages/NewestPages.alias.php
+
+Renameuser
+=======
 Rename user
+>>>>>>> .r37450
 file = Renameuser/SpecialRenameuser.alias.php
 
 Site matrix
