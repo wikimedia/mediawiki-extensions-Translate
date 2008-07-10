@@ -736,6 +736,13 @@ Ne vo ket enrollet ar c'hemmoù e-keit ha ne vo ket bet pouezet war ar bouton di
 	'translate-checks-plural'           => 'Ober a ra an termenadur gant <nowiki>{{PLURAL:}}</nowiki> padal an droidigezh ne ra ket.',
 );
 
+/** Bosnian (Bosanski)
+ * @author CERminator
+ */
+$messages['bs'] = array(
+	'translate-prev' => 'Prethodna stranica',
+);
+
 /** Catalan (Català)
  * @author SMP
  * @author Toniher
@@ -2437,6 +2444,10 @@ Se sai dove o come è usato questo messaggio, puoi aiutare gli altri traduttori 
 	'translate-edit-in-other-languages'      => 'Messaggio in altre lingue',
 	'translate-edit-committed'               => 'Traduzione attuale nel software',
 	'translate-edit-warnings'                => 'Avvisi sulle traduzioni incomplete',
+	'translate-edit-goto-no-prev'            => 'Nessun messaggio precedente',
+	'translate-edit-goto-no-next'            => 'Nessun messaggio successivo',
+	'translate-edit-goto-prev'               => 'Modifica il messaggio precedente',
+	'translate-edit-goto-next'               => 'Modifica il messaggio successivo',
 	'translate-edit-goto-list'               => "Torna all'elenco",
 	'translate-magic-pagename'               => 'Traduzione estesa di MediaWiki',
 	'translate-magic-help'                   => 'Puoi tradurre gli alias delle pagine speciali, le parole magiche, i nomi delle skin e i nomi dei namespace.
@@ -3334,6 +3345,7 @@ Dir musst am Grupp vun den Iwwersetzer si fir Ännerungen ofspäicheren ze kënn
 	'translate-rc-translation-filter-only'   => 'Nëmmen Iwwersetzunge weisen',
 	'translate-rc-translation-filter-filter' => 'Iwwersetzunge filteren',
 	'translate-rc-translation-filter-site'   => 'Nëmmen Ännerunge vu Messagen vum Site',
+	'translate-stats-edits'                  => 'Ännerunge pro Dag',
 );
 
 /** Limburgish (Limburgs)
@@ -5320,6 +5332,36 @@ $messages['wa'] = array(
  */
 $messages['xmf'] = array(
 	'translate-page-language' => 'ნინა',
+);
+
+/** Yiddish (ייִדיש)
+ * @author פוילישער
+ */
+$messages['yi'] = array(
+	'translate'                         => 'פֿארטײַטשן',
+	'translate-desc'                    => '[[{{ns:Special}}:Translate|באזונדערער בלאט]] פֿאר פֿארטײַטשן מעדיעוויקי און ווײַטער',
+	'translate-edit'                    => 'רעדאקטירן',
+	'translate-talk'                    => 'רעדן',
+	'translate-history'                 => 'היסטאריע',
+	'translate-task-view'               => 'ווײַז אלע מעלדונגען פֿון',
+	'translate-task-untranslated'       => 'ווײַז אלע נישט פֿארטײַטשטע מעלדונגען פֿון',
+	'translate-page-task'               => 'איך וויל',
+	'translate-page-group'              => 'גרופע',
+	'translate-page-language'           => 'שפראך',
+	'translate-page-limit-option'       => '$1 {{PLURAL:$1|מעלדונג|מעלדונגען}} אין א בלאט',
+	'translate-page-navigation-legend'  => 'נאוויגאציע',
+	'translate-page-showing'            => 'ווײַזן מעלדונגען $1 ביז $2 פֿון $3.',
+	'translate-page-showing-all'        => 'ווײַזן $1 {{PLURAL:$1|מעלדונג|מעלדונגען}}.',
+	'translate-next'                    => 'קומענדיגער בלאט',
+	'translate-prev'                    => 'פֿריערדיגער בלאט',
+	'translate-page-description-legend' => 'אינפֿארמאציע וועגן דער גרופע',
+	'translate-edit-contribute'         => 'בײַשטײַערן',
+	'translate-edit-information'        => 'אינפֿארמאציע וועגן דער מעלדונג ($1)',
+	'translate-edit-goto-prev'          => 'רעדאקטירן די פֿריערדיגע מעלדונג',
+	'translate-edit-goto-next'          => 'רעדאקטירן די קומענדיגע מעלדונג',
+	'translate-edit-goto-list'          => 'צוריק צו דער ליסטע',
+	'translate-magic-cm-updatedusing'   => 'דערהײַנטיגט מיט [[Special:Magic]]',
+	'translationchanges-export'         => 'עקספארט',
 );
 
 /** Yue (粵語)
