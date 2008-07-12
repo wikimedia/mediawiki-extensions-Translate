@@ -117,8 +117,11 @@ class PremadeMediawikiExtensionGroups {
 		}
 
 		$meta = array(
-			'ext-0-all' => 'AllMediawikiExtensionsGroup',
-			'ext-0-wikimedia' => 'AllWikimediaExtensionsGroup',
+			'ext-0-all'             => 'AllMediawikiExtensionsGroup',
+			'ext-0-wikia'           => 'AllWikiaExtensionsGroup',
+			'ext-0-wikihow'         => 'AllWikihowExtensionsGroup',
+			'ext-0-wikimedia'       => 'AllWikimediaExtensionsGroup',
+			'ext-0-wikitravel'      => 'AllWikitravelExtensionsGroup',
 			'ext-flaggedrevs-0-all' => 'AllFlaggedRevsExtensionsGroup',
 		);
 
@@ -130,7 +133,7 @@ class PremadeMediawikiExtensionGroups {
 	}
 
 	public function factory( $id ) {
-		
+
 		$info = $this->groups[$id];
 		$group = ExtensionMessageGroup::factory( $info['name'], $id );
 		$group->setMessageFile( $info['file'] );
@@ -147,7 +150,6 @@ class PremadeMediawikiExtensionGroups {
 	}
 
 }
-
 
 class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
 	protected $label = 'All extensions';
@@ -209,6 +211,58 @@ class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
 			}
 		}
 		return $bools;
+	}
+}
+
+class AllWikiaExtensionsGroup extends AllMediawikiExtensionsGroup {
+	protected $label = 'Extensions used by Wikia'; // currently using 1.12.0
+	protected $id    = 'ext-0-wikia';
+	protected $meta  = true;
+
+	protected $classes = null;
+
+	protected $wikiaextensions = array(
+		'ext-inputbox', // to be completed
+	);
+
+	protected function init() {
+		if ( $this->classes === null ) {
+			$this->classes = array();
+			$classes = MessageGroups::singleton()->getGroups();
+			foreach ( $this->wikiaextensions as $key ) {
+				$this->classes[$key] = $classes[$key];
+			}
+		}
+	}
+
+	public function wikiaextensions() {
+		return $this->wikiaextensions;
+	}
+}
+
+class AllWikihowExtensionsGroup extends AllMediawikiExtensionsGroup {
+	protected $label = 'Extensions used by Wikihow'; // currently using 1.9.3
+	protected $id    = 'ext-0-wikihow';
+	protected $meta  = true;
+
+	protected $classes = null;
+
+	protected $wikihowextensions = array(
+		'ext-inputbox', // to be completed
+	);
+
+	protected function init() {
+		if ( $this->classes === null ) {
+			$this->classes = array();
+			$classes = MessageGroups::singleton()->getGroups();
+			foreach ( $this->wikihowextensions as $key ) {
+				$this->classes[$key] = $classes[$key];
+			}
+		}
+	}
+
+	public function wikihowextensions() {
+		return $this->wikihowextensions;
 	}
 }
 
@@ -293,6 +347,32 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 
 	public function wmfextensions() {
 		return $this->wmfextensions;
+	}
+}
+
+class AllWikitravelExtensionsGroup extends AllMediawikiExtensionsGroup {
+	protected $label = 'Extensions used by Wikitravel'; // currently using 1.11.2
+	protected $id    = 'ext-0-wikitravel';
+	protected $meta  = true;
+
+	protected $classes = null;
+
+	protected $wikitravelextensions = array(
+		'ext-inputbox', // to be completed
+	);
+
+	protected function init() {
+		if ( $this->classes === null ) {
+			$this->classes = array();
+			$classes = MessageGroups::singleton()->getGroups();
+			foreach ( $this->wikitravelextensions as $key ) {
+				$this->classes[$key] = $classes[$key];
+			}
+		}
+	}
+
+	public function wikitravelextensions() {
+		return $this->wikitravelextensions;
 	}
 }
 
