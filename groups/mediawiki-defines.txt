@@ -553,9 +553,13 @@ file = SocialProfile/UserBoard/UserBoard.i18n.php
 
 Social Profile User Profile
 file = SocialProfile/UserProfile/UserProfile.i18n.php
+optional = avatarlogentry, profilelogentry
 
 Social Profile User Relationship
 file = SocialProfile/UserRelationship/UserRelationship.i18n.php
+
+Social Profile User Stats
+file = SocialProfile/UserStats/UserStats.i18n.php
 
 Spam Blacklist
 
