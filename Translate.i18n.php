@@ -339,6 +339,7 @@ $messages['ar'] = array(
 	'translate-next'                         => 'الصفحة التالية',
 	'translate-prev'                         => 'الصفحة السابقة',
 	'translate-page-description-legend'      => 'معلومات حول المجموعة',
+	'translate-page-edit'                    => 'عدل',
 	'translate-optional'                     => '(اختياري)',
 	'translate-ignored'                      => '(متجاهل)',
 	'translate-edit-definition'              => 'تعريف الرسالة',
@@ -348,6 +349,11 @@ $messages['ar'] = array(
 	'translate-edit-in-other-languages'      => 'الرسالة بلغات أخرى',
 	'translate-edit-committed'               => 'الترجمة الحالية في البرنامج',
 	'translate-edit-warnings'                => 'التحذيرات حول الترجمات غير المكتملة',
+	'translate-edit-goto-no-prev'            => 'لا رسالة سابقة',
+	'translate-edit-goto-no-next'            => 'لا رسالة قادمة',
+	'translate-edit-goto-prev'               => 'عدل الرسالة السابقة',
+	'translate-edit-goto-next'               => 'عدل الرسالة القادمة',
+	'translate-edit-goto-list'               => 'الرجوع إلى القائمة',
 	'translate-magic-pagename'               => 'ترجمة الميدياويكي الممتدة',
 	'translate-magic-help'                   => 'يمكنك ترجمة أسماء الصفحات الخاصة، الكلمات السحرية، أسماء الواجهات وأسماء النطاقات.
 
@@ -361,6 +367,7 @@ $messages['ar'] = array(
 
 تحتاج إلى أن تكون في مجموعة المترجمين لحفظ التغييرات.
 التغييرات لن يتم حفظها حتى نقر زر الحفظ بالأسفل.',
+	'translate-magic-module'                 => 'النوع:',
 	'translate-magic-submit'                 => 'إيجاد',
 	'translate-magic-cm-export'              => 'تصدير',
 	'translate-magic-cm-to-be'               => 'لتصبح',
@@ -377,10 +384,16 @@ $messages['ar'] = array(
 	'translationchanges'                     => 'تغييرات الترجمة',
 	'translationchanges-export'              => 'تصدير',
 	'translationchanges-change'              => '$1: $2 بواسطة $3',
-	'translate-checks-parameters'            => 'المحددات التالية غير مستخدمة: <strong>$1</strong>',
-	'translate-checks-balance'               => 'يوجد عدد غير زوجي من الأقواس: <strong>$1</strong>',
-	'translate-checks-links'                 => 'الوصلات التالية بها مشاكل: <strong>$1</strong>',
-	'translate-checks-xhtml'                 => 'من فضلك استبدل الوسوم التالية بالبدائل الصحيحة: <strong>$1</strong>',
+	'translate-checks-parameters'            => '{{PLURAL:$2|المحدد التالي غير مستخدم|المحددات التالية غير مستخدمة}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters-unknown'    => '{{PLURAL:$2|المحدد التالي غير معروف|المحددات التالية غير معروفة}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-balance'               => 'يوجد عدد غير زوجي من {{PLURAL:$2|الأقواس|الأقواس}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links'                 => '{{PLURAL:$2|الوصلة|ال$2 وصلة}} التالية بها مشاكل:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-xhtml'                 => 'من فضلك استبدل {{PLURAL:$2|بالوسم التالي|بالوسوم التالية}} الوسوم الصحيحة:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural'                => 'التعريف يستخدم <nowiki>{{PLURAL:}}</nowiki> لكن الترجمة لا.',
 	'tog-translate-nonewsletter'             => 'لا ترسل لي إخطارات بريدية بالبريد الإلكتروني (متعلقة فقط بالمستخدمين الذين يمتلكون عنوان بريد الإلكتروني مؤكد)',
 	'right-translate'                        => 'التعديل باستخدام واجهة المترجم',
@@ -389,6 +402,7 @@ $messages['ar'] = array(
 	'translate-rc-translation-filter-only'   => 'اعرض الترجمات فقط',
 	'translate-rc-translation-filter-filter' => 'فلتر الترجمات',
 	'translate-rc-translation-filter-site'   => 'التغييرات لرسائل الموقع فقط',
+	'translate-stats-edits'                  => 'تعديل يوميا',
 );
 
 /** Araucanian (Mapudungun)
@@ -1077,9 +1091,9 @@ $messages['dsb'] = array(
 	'translate-edit-in-other-languages'      => 'Powěsć w drugich rěcach',
 	'translate-edit-committed'               => 'Aktualny pśełožk w software',
 	'translate-edit-warnings'                => 'Warnowanja wó njedopołnych pśełožkach',
-	'translate-edit-goto-no-prev'            => 'Žedna pjerwjejšna powěsć',
+	'translate-edit-goto-no-prev'            => 'Žedna pśedchadna powěsć',
 	'translate-edit-goto-no-next'            => 'Žedna pśiduca powěsć',
-	'translate-edit-goto-prev'               => 'Pjerwjejšnu powěsć wobźěłaś',
+	'translate-edit-goto-prev'               => 'Pśedchadnu powěsć wobźěłaś',
 	'translate-edit-goto-next'               => 'Pśiducu powěsć wobźěłaś',
 	'translate-edit-goto-list'               => 'Slědk k lisćinje',
 	'translate-magic-pagename'               => 'Rozšyrjony pśełožk MediaWiki',
@@ -2235,8 +2249,10 @@ $messages['hu'] = array(
  */
 $messages['ia'] = array(
 	'translate-edit'                   => 'modificar',
+	'translate-page-group'             => 'Gruppo',
 	'translate-page-navigation-legend' => 'Navigation',
 	'translate-magic-cm-comment'       => 'Commento:',
+	'translate-magic-cm-save'          => 'Immagazinar',
 );
 
 /** Indonesian (Bahasa Indonesia)
