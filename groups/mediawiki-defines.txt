@@ -213,6 +213,8 @@ Email Address Image
 Email Article
 descmsg = ea-desc
 
+Error Handler
+
 Eval
 file = Eval/SpecialEval.i18n.php
 
