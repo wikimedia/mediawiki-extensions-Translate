@@ -180,6 +180,7 @@ $messages['niu'] = array(
 /** Afrikaans (Afrikaans)
  * @author SPQRobin
  * @author Arnobarnard
+ * @author Naudefj
  */
 $messages['af'] = array(
 	'translate'                         => 'Vertaal',
@@ -192,6 +193,7 @@ $messages['af'] = array(
 	'translate-task-optional'           => 'opsionele boodskappe bekyk van',
 	'translate-task-review'             => 'Hersien wysigings aan',
 	'translate-task-reviewall'          => 'Hersien alle vertalings in',
+	'translate-page-settings-legend'    => 'Verstellings',
 	'translate-page-task'               => 'Ek wil',
 	'translate-page-group'              => 'Groep',
 	'translate-page-language'           => 'Taal',
@@ -205,6 +207,7 @@ $messages['af'] = array(
 	'translate-next'                    => 'Volgende bladsy',
 	'translate-prev'                    => 'Vorige bladsy',
 	'translate-page-description-legend' => 'Inligting oor hierdie groep',
+	'translate-page-edit'               => 'Wysig',
 	'translate-optional'                => '(opsioneel)',
 	'translate-ignored'                 => '(geïgnoreer)',
 	'translate-edit-definition'         => 'Boodskap definisie',
@@ -213,14 +216,21 @@ $messages['af'] = array(
 	'translate-edit-in-other-languages' => 'Boodskap in andere tale',
 	'translate-edit-committed'          => 'Huidige vertaling in sagteware',
 	'translate-edit-warnings'           => 'Waarskuwings oor onvoltooide vertalings',
+	'translate-edit-goto-no-prev'       => 'Geen vorige boodskap',
+	'translate-edit-goto-no-next'       => 'Geen volgende boodskap',
+	'translate-edit-goto-prev'          => 'Wysig vorige boodskap',
+	'translate-edit-goto-next'          => 'Wysig volgende boodkap',
+	'translate-edit-goto-list'          => 'Terug na die lys',
+	'translate-magic-module'            => 'Module:',
 	'translate-magic-submit'            => 'Gaan haal',
 	'translate-magic-cm-current'        => 'Huidig',
 	'translate-magic-cm-original'       => 'Oorspronklik',
-	'translate-magic-cm-comment'        => 'Opmerking:',
+	'translate-magic-cm-comment'        => 'Samenvatting:',
 	'translate-magic-cm-save'           => 'Stoor',
 	'translate-magic-cm-updatedusing'   => 'Opgedateer deur [[Special:Magic]] te gebruik',
 	'translate-magic-namespace'         => 'Naamruimtenamen',
 	'translationchanges'                => 'Vertaling wysigings',
+	'translate-stats-edits'             => 'Wysigings per dag:',
 );
 
 /** Aragonese (Aragonés)
@@ -3072,6 +3082,8 @@ $messages['km'] = array(
 	'translate-edit-in-other-languages'    => 'សារ​ជាភាសា​ដទៃទៀត',
 	'translate-edit-committed'             => 'បទប្រែសំរួល​បច្ចុប្បន្ន​ក្នុងផ្នែកទន់',
 	'translate-edit-warnings'              => 'ការព្រមាន​អំពី​បទប្រែសំរួលមិនពេញលេញ',
+	'translate-edit-goto-no-prev'          => 'គ្មានសារមុនទេ',
+	'translate-edit-goto-no-next'          => 'គ្មានសារបន្ទាប់ទេ',
 	'translate-edit-goto-prev'             => 'កែប្រែសារមុន',
 	'translate-edit-goto-next'             => 'កែប្រែសារបន្ទាប់',
 	'translate-edit-goto-list'             => 'ត្រលប់ទៅកាន់បញ្ជីវិញ',
@@ -3640,10 +3652,10 @@ $messages['nl'] = array(
 	'translate-edit'                         => 'bewerken',
 	'translate-talk'                         => 'overleg',
 	'translate-history'                      => 'geschiedenis',
-	'translate-task-view'                    => 'alle teksten bekijken',
-	'translate-task-untranslated'            => 'alle onvertaalde teksten bekijken',
+	'translate-task-view'                    => 'alle berichten bekijken',
+	'translate-task-untranslated'            => 'alle onvertaalde berichten bekijken',
 	'translate-task-optional'                => 'optionele berichten bekijken',
-	'translate-task-problematic'             => 'teksten met problemen bekijken',
+	'translate-task-problematic'             => 'vertalingen met problemen bekijken',
 	'translate-task-review'                  => 'wijzigingen controleren',
 	'translate-task-reviewall'               => 'alle vertalingen controleren',
 	'translate-task-export'                  => 'vertalingen exporteren',
@@ -4966,7 +4978,7 @@ $messages['th'] = array(
 	'translationchanges'                => 'สิ่งที่เปลี่ยนแปลงในงานแปล',
 	'translationchanges-export'         => 'ส่งออกมา (export)',
 	'translationchanges-change'         => '$1: $2 โดย $3',
-	'translate-checks-parameters'       => 'ตัวแปรต่อไปนี้ไม่ได้รับการใช้งาน: <strong>$1</strong>',
+	'translate-checks-parameters'       => '{{PLURAL:$2|ตัวแปร|ตัวแปร}}ต่อไปนี้ไม่ได้รับการใช้งาน: <strong>$1</strong>',
 	'translate-checks-balance'          => 'จับคู่วงเล็บไม่ครบคู่: <strong>$1</strong>',
 	'translate-checks-links'            => 'ลิงก์ต่อไปนี้ทำให้เกิดปัญหา: <strong>$1</strong>',
 	'translate-checks-xhtml'            => 'tag เหล่านี้ไม่ถูกต้อง กรุณาแก้ไขโดยใช้ tag ที่ถูกต้อง: <strong>$1</strong>',
@@ -5269,10 +5281,14 @@ Bạn cần phải thuộc nhóm biên dịch viên để có thể lưu các th
 	'translationchanges'                => 'Các thay đổi bản dịch',
 	'translationchanges-export'         => 'xuất',
 	'translationchanges-change'         => '$1: $2 bởi $3',
-	'translate-checks-parameters'       => 'Những tham số sau không sử dụng: <strong>$1</strong>',
-	'translate-checks-balance'          => 'Số dấu ngoặc bị lẻ: <strong>$1</strong>',
-	'translate-checks-links'            => 'Các liên kết sau có vấn đề: <strong>$1</strong>',
-	'translate-checks-xhtml'            => 'Xin thay thế các thẻ sau bằng thẻ đúng: <strong>$1</strong>',
+	'translate-checks-parameters'       => '{{PLURAL:$2|Tham số|Những tham số}} sau không sử dụng:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-balance'          => 'Số dấu ngoặc bị lẻ:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links'            => '{{PLURAL:$2|Liên kết|Các liên kết}} sau có vấn đề:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-xhtml'            => 'Xin thay thế{{PLURAL:$2|| các}} thẻ sau bằng thẻ đúng:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural'           => 'Định nghĩa sử dụng <nowiki>{{PLURAL:}}</nowiki> nhưng bản dịch không có.',
 );
 
