@@ -58,6 +58,7 @@ class WikiFormatReader extends SimpleFormatReader {
 }
 
 class WikiFormatWriter extends SimpleFormatWriter {
+	public $commaToArray = false;
 
 	public function makeHeader( $handle, $code ) {
 		list( $name, $native ) = $this->getLanguageNames($code);
@@ -156,6 +157,19 @@ HEADER
 		fwrite( $handle, str_repeat( ' ', $pad - strlen($key) ) );
 		fwrite( $handle, ' => ' );
 
+		if ( $this->commaToArray ) {
+			fwrite( $handle, 'array( ' );
+			$values = array_map( 'trim', explode( ',', $value ) );
+			$values = array_map( array( __CLASS__, 'quote' ), $values );
+			fwrite( $handle, implode( ', ', $values ) );
+			fwrite( $handle, " ),\n" );
+		} else {
+			fwrite( $handle, self::quote($value) );
+			fwrite( $handle, ",\n" );
+		}
+	}
+
+	public static function quote( $value ) {
 		# Check for the appropriate apostrophe and add the value
 		# Quote \ here, because it needs always escaping
 		$value = addcslashes( $value, '\\' );
@@ -188,7 +202,6 @@ HEADER
 			}
 		}
 
-		fwrite( $handle, $quote . $value . $quote );
-		fwrite( $handle, ",\n" );
+		return $quote . $value . $quote;
 	}
 }

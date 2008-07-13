@@ -19,6 +19,7 @@ $wgAutoloadClasses['HTMLSelector'] = $dir . 'TranslateUtils.php';
 
 $wgAutoloadClasses['MessageChecks'] = $dir . 'MessageChecks.php';
 $wgAutoloadClasses['MessageGroups'] = $dir . 'MessageGroups.php';
+$wgAutoloadClasses['AliasMessageGroup'] = $dir . 'MessageGroups.php';
 
 $wgAutoloadClasses['MessageCollection'] = $dir . 'Message.php';
 $wgAutoloadClasses['TMessage'] = $dir . 'Message.php';

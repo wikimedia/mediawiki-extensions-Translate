@@ -371,6 +371,57 @@ class ExtensionMessageGroup extends MessageGroup {
 	}
 }
 
+class AliasMessageGroup extends ExtensionMessageGroup {
+
+	public function fillCollection( MessageCollection $collection ) {
+		$this->fill( $collection );
+		$this->fillContents( $collection );
+	}
+
+
+	function fill( MessageCollection $messages ) {
+		$cache = $this->load( $messages->code );
+		foreach ( $messages->keys() as $key ) {
+			if ( isset($cache[$key]) ) {
+				if ( is_array($cache[$key]) ) {
+					$messages[$key]->infile = implode( ',', $cache[$key] );
+				} else {
+					$messages[$key]->infile = $cache[$key];
+				}
+			}
+		}
+	}
+
+	public function fillContents( MessageCollection $collection ) {
+		$data = TranslateUtils::getMessageContent( 'sp-translate-data-SpecialPageAliases', $collection->code );
+
+		if ( !$data ) return;
+
+		$lines = array_map( 'trim', explode( "\n", $data ) );
+		$array = array();
+		foreach ( $lines as $line ) {
+			if ( $line === '' || $line[0] === '#' || $line[0] === '<' ) continue;
+			if ( strpos( $line, '='  ) === false ) continue;
+
+			list( $name, $values ) = array_map( 'trim', explode( '=', $line, 2 ) );
+			if ( $name === '' || $values === '' ) continue;
+
+			if ( isset($collection[$name]) ) {
+				$collection[$name]->database = $values;
+			}
+		}
+
+	}
+
+	public function getWriter() {
+		$writer = new WikiExtensionFormatWriter( $this );
+		$writer->variableName = $this->getVariableName();
+		$writer->commaToArray = true;
+		return $writer;
+	}
+
+}
+
 class CoreMostUsedMessageGroup extends CoreMessageGroup {
 	protected $label = 'MediaWiki messages (most used)';
 	protected $id    = 'core-mostused';

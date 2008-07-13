@@ -11,7 +11,7 @@ if (!defined('MEDIAWIKI')) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '9 (2008-07-08:1)' );
+define( 'TRANSLATE_VERSION', '9 (2008-07-13:1)' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name'           => 'Translate',
@@ -25,6 +25,7 @@ $wgExtensionCredits['specialpage'][] = array(
 // Setup class autoloads
 $dir = dirname(__FILE__) . '/';
 require_once( $dir . '_autoload.php' );
+#require_once( $dir . 'MessageFunctions.php' );
 
 $wgExtensionMessagesFiles['Translate'] = $dir . 'Translate.i18n.php';
 $wgExtensionAliasesFiles['Translate'] = $dir . 'Translate.alias.php';
