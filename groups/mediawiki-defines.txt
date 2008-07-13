@@ -62,6 +62,8 @@ Breadcrumbs navigation
 file = BreadCrumbs/BreadCrumbs.i18n.php
 id = ext-breadcrumbs
 
+Bugzilla Reports
+
 Call
 
 Category Intersection
