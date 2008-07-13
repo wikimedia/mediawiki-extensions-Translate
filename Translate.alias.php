@@ -30,10 +30,23 @@ $aliases['arz'] = array(
 	'TranslationChanges' => array( 'تغييرات الترجمة' ),
 );
 
+/** Southern Balochi (بلوچی مکرانی) */
 $aliases['bcc'] = array(
 	'Translate'          => array( 'ترجمه' ),
 	'Magic'              => array( 'پیشرپتگین ترجمه' ),
 	'TranslationChanges' => array( 'تغییرات ترجمه' ),
+);
+
+/** Cebuano (Cebuano) */
+$aliases['ceb'] = array(
+	'Translate' => array( 'Hubara' ),
+);
+
+/** Lower Sorbian (Dolnoserbski) */
+$aliases['dsb'] = array(
+	'Translate'          => array( 'Přełožiś' ),
+	'Magic'              => array( 'Rozšyrjone pśełoženje' ),
+	'TranslationChanges' => array( 'Změny pśełoženja' ),
 );
 
 /** Finnish (Suomi)
@@ -50,6 +63,13 @@ $aliases['fr'] = array(
 	'Translate'          => array( 'Traduire' ),
 	'Magic'              => array( 'Traduction avancée', 'Traductionavancée', 'Traduction avancee', 'Traductionavancee' ),
 	'TranslationChanges' => array( 'Modifications des traductions', 'Modificationsdestraductions' ),
+);
+
+/** Galician (Galego) */
+$aliases['gl'] = array(
+	'Translate'          => array( 'Traducir' ),
+	'Magic'              => array( 'Tradución avanzada' ),
+	'TranslationChanges' => array( 'Cambios na tradución' ),
 );
 
 /** Hebrew (עברית)
@@ -79,10 +99,38 @@ $aliases['hu'] = array(
 	'TranslationChanges' => array( 'Változások a fordításokban' ),
 );
 
+/** Indonesian (Bahasa Indonesia) */
+$aliases['id'] = array(
+	'Translate'          => array( 'Terjemahan' ),
+	'Magic'              => array( 'Terjemahanlanjut' ),
+	'TranslationChanges' => array( 'Perubahanterjemahan' ),
+);
+
+/** Ripoarisch (Ripoarisch) */
+$aliases['ksh'] = array(
+	'Translate'          => array( 'Övversäze' ),
+	'Magic'              => array( 'Extras', 'Extras Översäze', 'ExtrasÖversäze' ),
+	'TranslationChanges' => array( 'Översaz', 'Översaz Änderonge', 'ÖversazÄnderonge' ),
+);
+
 /** Malay (Bahasa Melayu) */
 $aliases['ms'] = array(
 	'Translate'          => array( 'Terjemah' ),
 	'TranslationChanges' => array( 'Perubahan_terjemahan' ),
+);
+
+/** Maltese (Malti) */
+$aliases['mt'] = array(
+	'Translate'          => array( 'Traduċi' ),
+	'Magic'              => array( 'TraduzzjoniAvvanzata' ),
+	'TranslationChanges' => array( 'TibdilTraduzzjonali' ),
+);
+
+/** Erzya (Эрзянь) */
+$aliases['myv'] = array(
+	'Translate'          => array( 'Йутавтомс' ),
+	'Magic'              => array( 'ПревейстэЙутавтомс', 'Магия' ),
+	'TranslationChanges' => array( 'ЙутавтовксПолавтомат' ),
 );
 
 /** Dutch (Nederlands) */
@@ -92,10 +140,35 @@ $aliases['nl'] = array(
 	'TranslationChanges' => array( 'Vertalingen' ),
 );
 
+/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬) */
+$aliases['no'] = array(
+	'Translate'          => array( 'Oversett' ),
+	'Magic'              => array( 'Avansert oversettelse', 'Avansert oversetting', 'Magi' ),
+	'TranslationChanges' => array( 'Oversettelsesendringer', 'Oversettingsendringer' ),
+);
+
+/** Portuguese (Português) */
+$aliases['pt'] = array(
+	'Translate'          => array( 'Traduzir' ),
+	'Magic'              => array( 'Tradução avançada' ),
+	'TranslationChanges' => array( 'Alterações em traduções' ),
+);
+
 /** Swedish (Svenska) */
 $aliases['sv'] = array(
 	'Translate'          => array( 'Översätt' ),
 	'Magic'              => array( 'Avancerad översättning' ),
 	'TranslationChanges' => array( 'Översättningsändringar' ),
+);
+
+/** Telugu (తెలుగు) */
+$aliases['te'] = array(
+	'Translate'          => array( 'అనువాదం' ),
+	'TranslationChanges' => array( 'అనువాదమార్పులు' ),
+);
+
+/** Yiddish (ייִדיש) */
+$aliases['yi'] = array(
+	'Translate' => array( 'פֿארטײַטש' ),
 );
 
