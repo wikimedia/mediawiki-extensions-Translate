@@ -34,6 +34,7 @@ function customMessageGroups( $id ) {
 
 == Changes in version 10 ==
 
+* 2008-07-13:2 group filter for graphs
 * 2008-07-13:1 experimental alias-export for extensions
 * 2008-07-08:1 simple edit stats with phplot
 * 2008-07-05:1 fuzzy.php was ignoring the namespace
