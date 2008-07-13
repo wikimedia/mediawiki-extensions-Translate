@@ -112,10 +112,10 @@ Changes are not saved until you click save button below.',
 	'translationchanges-change' => '$1: $2 by $3',
 
 	'translate-checks-parameters'
-		=> 'Following {{PLURAL:$2|parameter|parameters}} are not used:
+		=> 'Following {{PLURAL:$2|parameter is|parameters are}} not used:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown'
-		=> 'Following {{PLURAL:$2|parameter|parameters}} are unknown:
+		=> 'Following {{PLURAL:$2|parameter is|parameters are}} unknown:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance'
 		=> 'There is uneven amount of {{PLURAL:$2|parentheses|parentheses}}:
