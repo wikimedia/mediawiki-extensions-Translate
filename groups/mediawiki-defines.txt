@@ -210,7 +210,7 @@ Edit User
 
 Email Address Image
 
-Email Article
+Email Page
 descmsg = ea-desc
 
 Error Handler
