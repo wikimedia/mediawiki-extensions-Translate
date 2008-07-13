@@ -113,9 +113,6 @@ class SpecialTranslationStats extends SpecialPage {
 		}
 
 		$labels = null;
-		if ( $opts['type'] === 'userlang' ) {
-			$labels = @array_keys($usercache);
-		}
 		$so->labels( $labels );
 
 		//var_dump( $data );
@@ -229,7 +226,7 @@ class TranslatePerLanguageStats {
 	public function indexOf( $row ) {
 		global $wgContLang;
 
-		if ( max($this->filters) === 0 ) return 0;
+		if ( !max($this->filters) ) return 0;
 		if ( strpos( $row->rc_title, '/' ) === false ) return -1;
 
 		list( $key, $code ) = explode('/', $wgContLang->lcfirst($row->rc_title), 2);
@@ -248,8 +245,7 @@ class TranslatePerLanguageStats {
 			$indexKey .= $code;
 		}
 
-
-		if ( count($this->cache) > 1 ) {
+		if ( count($this->cache) ) {
 			return isset($this->cache[$indexKey]) ? $this->cache[$indexKey] : -1;
 		} else {
 			return 0;
