@@ -113,6 +113,13 @@ $aliases['ksh'] = array(
 	'TranslationChanges' => array( 'Översaz', 'Översaz Änderonge', 'ÖversazÄnderonge' ),
 );
 
+/** Luxembourgish (Lëtzebuergesch) */
+$aliases['lb'] = array(
+	'Translate'          => array( 'Iwwersetzen' ),
+	'Magic'              => array( 'Erweidert Iwwersetzung', 'Magic' ),
+	'TranslationChanges' => array( 'Iwwersetzungsännerungen' ),
+);
+
 /** Malay (Bahasa Melayu) */
 $aliases['ms'] = array(
 	'Translate'          => array( 'Terjemah' ),
