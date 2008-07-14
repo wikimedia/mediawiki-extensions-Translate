@@ -42,6 +42,11 @@ $aliases['ceb'] = array(
 	'Translate' => array( 'Hubara' ),
 );
 
+/** Czech (Česky) */
+$aliases['cs'] = array(
+	'Translate' => array( 'Translate', 'Přeložit' ),
+);
+
 /** Lower Sorbian (Dolnoserbski) */
 $aliases['dsb'] = array(
 	'Translate'          => array( 'Přełožiś' ),
