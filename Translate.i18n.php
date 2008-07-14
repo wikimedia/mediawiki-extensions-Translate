@@ -2261,8 +2261,10 @@ $messages['ia'] = array(
 	'translate-edit'                   => 'modificar',
 	'translate-page-group'             => 'Gruppo',
 	'translate-page-navigation-legend' => 'Navigation',
+	'translate-magic-cm-export'        => 'Exportar',
 	'translate-magic-cm-comment'       => 'Commento:',
 	'translate-magic-cm-save'          => 'Immagazinar',
+	'translationchanges-export'        => 'exportar',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -3122,6 +3124,9 @@ $messages['km'] = array(
 	'translationchanges-export'            => 'នាំចេញ',
 	'translationchanges-change'            => '$1:$2 ដោយ $3',
 	'translate-checks-parameters'          => '{{PLURAL:$2|ប៉ារ៉ាម៉ែត្រ|ប៉ារ៉ាម៉ែត្រ}}ខាងក្រោមនេះមិនត្រូវបានគេប្រើទេ៖ 
+
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters-unknown'  => 'ប៉ារ៉ាម៉ែត្រចំនួន$2ខាងក្រោមនេះមិនត្រូវបានស្គាល់ទេ៖
 
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance'             => 'មាន{{PLURAL:$2|វង់ក្រចក|វង់ក្រចក}}​ដែលមិន​មាន​គូ៖ 
