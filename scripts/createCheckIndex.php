@@ -18,6 +18,9 @@ $codes = Language::getLanguageNames( false );
 if ( $wgTranslateDocumentationLanguageCode )
 	unset( $codes[$wgTranslateDocumentationLanguageCode] );
 
+// Skip source
+unset($codes['en']);
+
 $codes = array_keys( $codes );
 sort( $codes );
 
@@ -27,21 +30,31 @@ if ( isset($options['groups'] ) ) {
 	$reqGroups = false;
 }
 
+$verbose = isset($options['verbose']);
+
 $groups = MessageGroups::singleton()->getGroups();
+$checker = MessageChecks::getInstance();
 
 foreach ( $groups as $g ) {
 	$id = $g->getId();
 
 	// Skip groups that are not requested
-	if ( $reqGroups && !in_array($id, $reqGroups) ) continue;
+	if ( $reqGroups && !in_array($id, $reqGroups) ) {
+		unset($g);
+		continue;
+	}
 
 	$problematic = array();
 	$type = $g->getType();
+	if ( !$checker->hasChecks($type) ) {
+		unset($g);
+		continue;
+	}
 
-	STDOUT( "Working with $id: ", true );
+	STDOUT( "Working with $id: ", $id );
 
 	foreach ( $codes as $code ) {
-		STDOUT( "$code ", true );
+		STDOUT( "$code ", $id );
 
 		// Initialise messages, using unique definitions if appropriate
 		$collection = $g->initCollection( $code, $g->isMeta() );
@@ -49,22 +62,27 @@ foreach ( $groups as $g ) {
 		$namespace = $g->namespaces[0];
 
 		foreach ( $collection->keys() as $key ) {
-			$prob = MessageChecks::doFastChecks( $collection[$key], $type, $code );
+			$prob = $checker->doFastChecks( $collection[$key], $type, $code );
 			if ( $prob ) {
-				// Print it
-				$nsText = $wgContLang->getNsText( $namespace );
-				STDOUT( "# [[$nsText:$key/$code]]" );
+
+				if ( $verbose ) {
+					// Print it
+					$nsText = $wgContLang->getNsText( $namespace );
+					STDOUT( "# [[$nsText:$key/$code]]" );
+				}
 
 				// Add it to the array
-				$key = strtolower( "$namespace:$key" );
-				$problematic[$code][] = $key;
+				$problematic[$code][] = strtolower( "$namespace:$key" );
 			}
 		}
-
 	}
+
+	break;
 
 	// Store the results
 	$file = TRANSLATE_CHECKFILE . "-$id";
 	wfMkdirParents( dirname($file) );
 	file_put_contents( $file, serialize( $problematic ) );
 }
+
+unset( $checker );

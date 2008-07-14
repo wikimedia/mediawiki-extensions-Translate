@@ -204,12 +204,12 @@ class TMessage {
 	/**
 	 * String that uniquely identifies this message.
 	 */
-	private $key = null;
+	public $key = null;
 
 	/**
 	 * The definition of this message - usually in English.
 	 */
-	private $definition = null;
+	public $definition = null;
 
 	// Following properties are lazy declared to save memory
 
@@ -235,8 +235,6 @@ class TMessage {
 
 	// Values that can be accessed with $message->value syntax
 	protected static $callable = array(
-		// Obligatory basic values
-		'key', 'definition',
 		// Basic values
 		'infile', 'database', 'optional', 'pageExists', 'talkExists',
 		// Derived values
@@ -279,14 +277,14 @@ class TMessage {
 
 	/** Determines if this message has uncommitted changes. */
 	public function changed() {
-		return $this->pageExists() && ( $this->infile() !== $this->database() );
+		return !!@$this->pageExists && ( @$this->infile !== @$this->database );
 	}
 
 	/** Determies if this message has a proper translation. */
 	public function translated() {
-		if ( $this->fuzzy() ) return false;
-		$optionalSame = $this->optional() && ($this->translation() === $this->definition);
-		return ($this->translation() !== null) && !$optionalSame;
+		if ( @$this->translation === null || $this->fuzzy() ) return false;
+		$optionalSame = !!@$this->optional && (@$this->translation === @$this->definition);
+		return !$optionalSame;
 	}
 
 	/**
@@ -296,7 +294,7 @@ class TMessage {
 	 * @return Translated string or null if there isn't translation.
 	 */
 	public function translation() {
-		return ($this->database() !== null) ? $this->database() : $this->infile();
+		return (@$this->database !== null) ? @$this->database : @$this->infile;
 	}
 
 	/**
@@ -306,8 +304,8 @@ class TMessage {
 	 * @return true or false
 	 */
 	public function fuzzy() {
-		if ( $this->translation() !== null ) {
-			return strpos($this->translation(), TRANSLATE_FUZZY) !== false;
+		if ( @$this->translation !== null ) {
+			return strpos($this->translation, TRANSLATE_FUZZY) !== false;
 		} else {
 			return false;
 		}
@@ -342,11 +340,7 @@ class TMessage {
 	}
 
 	public function __isset( $name ) {
-		if ( property_exists( $this, $name ) ) {
-			return $this->$name !== null;
-		} else {
-			return false;
-		}
+		return @$this->$name !== null;
 	}
 
 }

@@ -14,26 +14,26 @@ $dir = dirname( __FILE__ ); $IP = "$dir/../../..";
 @include("$dir/../../CorePath.php"); // Allow override
 require_once( "$IP/maintenance/commandLine.inc" );
 
-function STDOUT( $str, $singeLineItem = null ) {
+function STDOUT( $str, $channel = null ) {
 	global $options;
 	if ( isset($options['quiet']) ) return;
 
-	static $atStart = true;
-	static $lastSingle = false;
+	static $lastChannel = null;
+	static $lineStart = true;
 
-	if ( !$atStart && $singeLineItem === null || !$lastSingle && !$atStart && $singeLineItem ) {
-		fwrite( STDOUT, "\n" );
-	}
-	fwrite( STDOUT, $str );
-
-	if ( $singeLineItem !== true ) {
-		fwrite( STDOUT, "\n" );
-		$atStart = true;
-		$lastSingle = false;
+	if ( $channel !== null && ($lineStart || $channel === $lastChannel) ) {
+		fwrite( STDOUT, $str );
 	} else {
-		$lastSingle = true;
-		$atStart = false;
+		if ( !$lineStart ) fwrite( STDOUT, "\n" );
+		fwrite( STDOUT, $str );
 	}
+
+	$lineStart = false;
+	if ( $channel === null ) {
+		fwrite( STDOUT, "\n" );
+		$lineStart = true;
+	}
+	$lastChannel = $channel;
 }
 
 function STDERR( $message ) {

@@ -259,7 +259,8 @@ class TranslateEditAddons {
 			$message = new TMessage( $key, $en );
 			// Take the contents from edit field as a translation
 			$message->database = $translation;
-			$checks = MessageChecks::doChecks( $message, $group->getType(), $code );
+			$checker = MessageChecks::getInstance();
+			$checks = $checker->doChecks( $message, $group->getType(), $code );
 			if ( count($checks) ) {
 				$checkMessages = array();
 				foreach ( $checks as $checkParams ) {

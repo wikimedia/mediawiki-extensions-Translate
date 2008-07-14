@@ -10,26 +10,26 @@ if (!defined('MEDIAWIKI')) die();
  */
 class MessageChecks {
 
+	// Fastest first
+	var $checksForType = array(
+		'mediawiki' => array(
+			'checkPlural',
+			'checkParameters',
+			'checkUnknownParameters',
+			'checkBalance',
+			'checkLinks',
+			'checkXHTML',
+		),
+		'freecol' => array(
+			'checkFreeColMissingVars',
+			'checkFreeColExtraVars',
+		),
+	);
+
 	private function __construct() {
 		$file = dirname(__FILE__) . '/check-blacklist.php';
 		$this->blacklist =
 			ResourceLoader::loadVariableFromPHPFile( $file, 'checkBlacklist' );
-
-		// Fastest first
-		$this->checksForType = array(
-			'mediawiki' => array(
-				array( $this, 'checkPlural' ),
-				array( $this, 'checkParameters' ),
-				array( $this, 'checkUnknownParameters' ),
-				array( $this, 'checkBalance' ),
-				array( $this, 'checkLinks' ),
-				array( $this, 'checkXHTML' ),
-			),
-			'freecol' => array(
-				array( $this, 'checkFreeColMissingVars' ),
-				array( $this, 'checkFreeColExtraVars' ),
-			),
-		);
 	}
 
 	public static function getInstance() {
@@ -40,9 +40,8 @@ class MessageChecks {
 		return $obj;
 	}
 
-	public function getChecks( $type ) {
-		if ( !isset($this->checksForType[$type]) ) return array();
-		return $this->checksForType[$type];
+	public function hasChecks( $type ) {
+		return isset($this->checksForType[$type]);
 	}
 
 	/**
@@ -51,14 +50,13 @@ class MessageChecks {
 	 * @param $message Instance of TMessage.
 	 * @return Array of warning messages, html-format.
 	 */
-	public static function doChecks( TMessage $message, $type, $code ) {
+	public function doChecks( TMessage $message, $type, $code ) {
 		if ( $message->translation === null) return false;
-		$obj = new MessageChecks;
 		$warnings = array();
 
-		foreach ( $obj->getChecks( $type ) as $check ) {
+		foreach ( $this->checksForType[$type] as $check ) {
 			$warning = '';
-			if ( call_user_func( $check, $message, $code, &$warning ) ) {
+			if ( call_user_func( array($this, $check), $message, $code, &$warning ) ) {
 				$warnings[] = $warning;
 			}
 		}
@@ -66,12 +64,11 @@ class MessageChecks {
 		return $warnings;
 	}
 
-	public static function doFastChecks( TMessage $message, $type, $code ) {
+	public function doFastChecks( TMessage $message, $type, $code ) {
 		if ( $message->translation === null) return false;
 
-		$obj = new MessageChecks;
-		foreach ( $obj->getChecks( $type ) as $check ) {
-			if ( call_user_func( $check, $message, $code ) ) return true;
+		foreach ( $this->checksForType[$type] as $check ) {
+			if ( call_user_func( array($this, $check), $message, $code ) ) return true;
 		}
 
 		return false;
@@ -182,18 +179,20 @@ class MessageChecks {
 	 * @return Array of problematic links.
 	 */
 	protected function checkLinks( TMessage $message, $code, &$desc = null ) {
-		$translation = $message->translation;
-		if ( strpos( $translation, '[[' ) === false ) return false;
+		if ( strpos( $message->translation, '[[' ) === false ) return false;
 
 		$matches = array();
 		$links = array();
 		$tc = Title::legalChars() . '#%{}';
-		preg_match_all( "/\[\[([{$tc}]+)(?:\\|(.+?))?]]/sDu", $translation, $matches);
+		preg_match_all( "/\[\[([{$tc}]+)(?:\\|(.+?))?]]/sDu", $message->translation, $matches);
 		for ($i = 0; $i < count($matches[0]); $i++ ) {
-			if ( preg_match( '/({{ns:)?special(}})?:.*/sDui', $matches[1][$i] ) ) continue;
-			if ( preg_match( '/{{mediawiki:.*}}/sDui', $matches[1][$i] ) ) continue;
-			if ( preg_match( '/user([ _]talk)?:.*/sDui', $matches[1][$i] ) ) continue;
-			if ( preg_match( '/:?\$[1-9]/sDu', $matches[1][$i] ) ) continue;
+			//if ( preg_match( '/({{ns:)?special(}})?:.*/sDui', $matches[1][$i] ) ) continue;
+			//if ( preg_match( '/{{mediawiki:.*}}/sDui', $matches[1][$i] ) ) continue;
+			//if ( preg_match( '/user([ _]talk)?:.*/sDui', $matches[1][$i] ) ) continue;
+			//if ( preg_match( '/:?\$[1-9]/sDu', $matches[1][$i] ) ) continue;
+
+			$backMatch = preg_quote( $matches[1][$i], '/' );
+			if ( preg_match( "/$backMatch/", $message->definition ) ) continue;
 
 			$links[] = "[[{$matches[1][$i]}|{$matches[2][$i]}]]";
 		}

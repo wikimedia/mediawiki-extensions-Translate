@@ -20,7 +20,14 @@ class TranslateUtils {
 	 */
 	public static function title( $message, $code ) {
 		global $wgContLang;
-		return $wgContLang->ucfirst( $message . '/' . strtolower( $code ) );
+
+		// Cache some amount of titles for speed
+		static $cache = array();
+		if ( count($cache)>500 ) $cache = array();
+		if ( !isset($cache[$message]) ) {
+			$cache[$message] = $wgContLang->ucfirst($message);
+		}
+		return $cache[$message] . '/' . $code;
 	}
 
 	/**
