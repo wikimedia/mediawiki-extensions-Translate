@@ -77,8 +77,6 @@ foreach ( $groups as $g ) {
 		}
 	}
 
-	break;
-
 	// Store the results
 	$file = TRANSLATE_CHECKFILE . "-$id";
 	wfMkdirParents( dirname($file) );
