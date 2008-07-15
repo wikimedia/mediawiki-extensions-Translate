@@ -260,7 +260,7 @@ class TranslateEditAddons {
 			// Take the contents from edit field as a translation
 			$message->database = $translation;
 			$checker = MessageChecks::getInstance();
-			if ( $checker->hasChecks( $type ) ) {
+			if ( $checker->hasChecks( $group->getType() ) ) {
 				$checks = $checker->doChecks( $message, $group->getType(), $code );
 				if ( count($checks) ) {
 					$checkMessages = array();
