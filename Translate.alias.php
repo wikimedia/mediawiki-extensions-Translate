@@ -111,6 +111,11 @@ $aliases['id'] = array(
 	'TranslationChanges' => array( 'Perubahanterjemahan' ),
 );
 
+/** Khmer (ភាសាខ្មែរ) */
+$aliases['km'] = array(
+	'Translate' => array( 'បកប្រែ' ),
+);
+
 /** Ripoarisch (Ripoarisch) */
 $aliases['ksh'] = array(
 	'Translate'          => array( 'Övversäze' ),
