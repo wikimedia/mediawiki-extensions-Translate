@@ -184,6 +184,11 @@ $aliases['te'] = array(
 	'TranslationChanges' => array( 'అనువాదమార్పులు' ),
 );
 
+/** Thai (ไทย) */
+$aliases['th'] = array(
+	'Translate' => array( 'แปล' ),
+);
+
 /** Yiddish (ייִדיש) */
 $aliases['yi'] = array(
 	'Translate' => array( 'פֿארטײַטש' ),
