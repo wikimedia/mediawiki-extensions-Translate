@@ -34,7 +34,8 @@ function customMessageGroups( $id ) {
 
 == Changes in version 10 ==
 
-* 2008-07-14:1
+* 2008-07-15:2 new check for unaltered namespaces in pagename messages of MediaWiki
+* 2008-07-15:1
  - improved message checks
  - can now work for meta groups too
  - fixed messages not shown in the list anymore, but script still needed to find

@@ -13,12 +13,13 @@ class MessageChecks {
 	// Fastest first
 	var $checksForType = array(
 		'mediawiki' => array(
-			'checkPlural',
+			/*'checkPlural',
 			'checkParameters',
 			'checkUnknownParameters',
 			'checkBalance',
 			'checkLinks',
-			'checkXHTML',
+			'checkXHTML',*/
+			'checkPagename',
 		),
 		'freecol' => array(
 			'checkFreeColMissingVars',
@@ -268,6 +269,28 @@ class MessageChecks {
 		} else {
 			return false;
 		}
+	}
+
+
+	/**
+	 * Checks for page names having untranslated namespace.
+	 *
+	 * @param $message Instance of TMessage.
+	 * @return True if namespace has been tampered with.
+	 */
+	protected function checkPagename( TMessage $message, $code, &$desc = null ) {
+		$definition = $message->definition;
+		$translation = $message->translation;
+
+		$namespaces = 'help|project|\{\{ns:project}}|mediawiki';
+		$matches = array();
+		if ( preg_match( "/^($namespaces):[\w\s]+$/ui", $definition, $matches ) ) {
+			if ( !preg_match( "/^{$matches[1]}:.+$/u", $translation) ) {
+				$desc = array( 'translate-checks-pagename' );
+				return true;
+			}
+		}
+		return false;
 	}
 
 
