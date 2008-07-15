@@ -232,7 +232,7 @@ ignored = farmerwikiurl, farmerinterwikiurl
 Flagged Revisions - Flagged Revs
 id = ext-flaggedrevs-flaggedrevs
 file = FlaggedRevs/language/FlaggedRevs.i18n.php
-optional = revreview-toggle
+optional = revreview-toggle, revreview-ak-review, accesskey-ca-current, accesskey-ca-stable
 
 Flagged Revisions - Depreciation Oversight
 id = ext-flaggedrevs-depreciationoversight
