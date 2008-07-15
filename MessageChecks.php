@@ -13,12 +13,12 @@ class MessageChecks {
 	// Fastest first
 	var $checksForType = array(
 		'mediawiki' => array(
-			/*'checkPlural',
+			'checkPlural',
 			'checkParameters',
 			'checkUnknownParameters',
 			'checkBalance',
 			'checkLinks',
-			'checkXHTML',*/
+			'checkXHTML',
 			'checkPagename',
 		),
 		'freecol' => array(
