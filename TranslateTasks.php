@@ -188,36 +188,25 @@ class ViewProblematicTask extends ReviewMessagesTask {
 	protected function setProcess() {
 		$this->process = array(
 			array( $this, 'preinit' ),
+			array( $this, 'postinit' ),
 			array( $this, 'filterNonProblematic' ),
 			array( $this, 'doPaging' ),
-			array( $this, 'postinit' ),
 		);
 	}
 
 	protected function filterNonProblematic() {
-		$id = $this->group->getId();
-		$file =  TRANSLATE_CHECKFILE . "-$id";
-		if ( !file_exists($file) ) {
-			foreach ($this->collection->keys() as $key )
-				unset( $this->collection[$key] );
-			return;
-		}
-
-		$problematic = unserialize( file_get_contents($file) );
-
 		$code = $this->options->getLanguage();
-		if ( isset($problematic[$code]) ) {
-			foreach ( $this->collection->keys() as $key ) {
-				$namespace = $this->group->namespaces[0];
-				$ikey = strtolower( "$namespace:$key" );
-				if ( !in_array( $ikey, $problematic[$code] ) ) {
-					unset( $this->collection[$key] );
-				}
+		$problematic = $this->group->getProblematic( $code );
+		$checker = MessageChecks::getInstance();
+		$type = $this->group->getType();
+
+		foreach ( $this->collection->keys() as $key ) {
+			$item = $this->collection[$key];
+			if ( in_array($key, $problematic) ) {
+			 if ( $checker->doFastChecks($item, $type, $code) ) continue;
 			}
-		} else {
-			foreach ($this->collection->keys() as $key )
-				unset( $this->collection[$key] );
-			return;
+
+			unset( $this->collection[$key] );
 		}
 	}
 

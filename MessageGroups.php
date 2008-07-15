@@ -31,7 +31,7 @@ abstract class MessageGroup {
 	public function setIgnored( $value ) { $this->ignored = $value; }
 
 	protected $problematic = null;
-	protected function getProblematic( $code ) {
+	public function getProblematic( $code ) {
 		if ( $this->problematic === null ) {
 			$this->problematic = array();
 			$file = TRANSLATE_CHECKFILE . '-' . $this->id;
@@ -45,7 +45,7 @@ abstract class MessageGroup {
 		return $this->problematic;
 	}
 
-	protected function setProblematic( $value ) { $this->problematic = $value ; }
+	public function setProblematic( $value ) { $this->problematic = $value ; }
 	/**
 	 * Returns a list of optional and ignored messages in 2-d array.
 	 */
