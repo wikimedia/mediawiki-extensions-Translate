@@ -34,8 +34,8 @@ file = Editcount/SpecialEditcount.alias.php
 Edit user
 file = EditUser/EditUser.alias.php
 
-Email page
-file = EmailPage/EmailPage.alias.php
+Email article
+file = EmailArticle/EmailArticle.alias.php
 
 Eval
 file = Eval/SpecialEval.alias.php

@@ -212,7 +212,7 @@ Edit User
 
 Email Address Image
 
-Email Page
+Email Article
 descmsg = ea-desc
 
 Error Handler
