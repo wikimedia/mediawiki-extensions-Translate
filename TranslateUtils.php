@@ -23,7 +23,7 @@ class TranslateUtils {
 
 		// Cache some amount of titles for speed
 		static $cache = array();
-		if ( count($cache)>5000 ) $cache = array();
+		#if ( count($cache)>5000 ) $cache = array();
 		if ( !isset($cache[$message]) ) {
 			$cache[$message] = $wgContLang->ucfirst($message);
 		}
