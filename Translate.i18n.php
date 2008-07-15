@@ -696,7 +696,9 @@ $messages['br'] = array(
 	'translate-page-no-such-language'        => "Merket ez eus bet ur c'hod yezh direizh",
 	'translate-page-no-such-task'            => 'Merket ez eus bet un ober direizh',
 	'translate-page-no-such-group'           => 'Merket ez eus bet ur strollad direizh',
-	'translate-page-disabled'                => 'Harpet eo bet an troidigezhioù er yezh-mañ evit ar strollad-mañ. Abeg :',
+	'translate-page-disabled'                => "Harpet eo bet an troidigezhioù er yezh-mañ evit ar strollad-mañ. Abeg :
+
+''$1''",
 	'translate-page-settings-legend'         => 'Dibaboù',
 	'translate-page-task'                    => "C'hoant am eus da",
 	'translate-page-group'                   => 'Strollad',
@@ -975,6 +977,7 @@ $messages['da'] = array(
 /** German (Deutsch)
  * @author Raimond Spekking
  * @author Purodha
+ * @author Siebrand
  */
 $messages['de'] = array(
 	'translate'                              => 'Übersetze',
@@ -1031,7 +1034,7 @@ Bei den magischen Wörtern muss das englische Original bestehen bleiben, auch di
 
 Spezialseiten und magische Wörter können mehrere Übersetzungen haben, sie werden jeweils durch ein Komma (,) getrennt. Skinnamen und Namensraumnamen dürfen nur je eine Übersetzung haben.
 
-In der Übersetzung eines Namensraumnamens hat <tt>$1 talk</tt> eine spezielle Bedeutung. <tt>$1</tt> wird durch den Projektnamen ersetzt (zum Beispiel <tt>{{SITENAME}} talk</tt>. Wenn es in Deiner Sprache nicht möglich ist, eine grammatikalisch korrekte Form davon zu bilden ohne den Projektnamen zu verändern, kontaktiere bitte einen Systemadministrator.
+In der Übersetzung eines Namensraumnamens hat <tt>$1 talk</tt> eine spezielle Bedeutung. <tt>$1</tt> wird durch den Projektnamen ersetzt (zum Beispiel <tt>{{SITENAME}} talk</tt>). Wenn es in Deiner Sprache nicht möglich ist, eine grammatikalisch korrekte Form davon zu bilden ohne den Projektnamen zu verändern, kontaktiere bitte einen Systemadministrator.
 
 Du musst in der Übersetzer-Gruppe sein, um Änderungen zu speichern. Änderungen werden erst beim Klick auf den Speichern-Button gespeichert.',
 	'translate-magic-module'                 => 'Modul:',
@@ -1228,7 +1231,9 @@ $messages['eo'] = array(
 	'translate-page-no-such-language'        => 'Specifita lingvo estas malvalida.',
 	'translate-page-no-such-task'            => 'Specifita tasko estis malvalida.',
 	'translate-page-no-such-group'           => 'Specifita grupo estas malvalida.',
-	'translate-page-disabled'                => 'Tradukoj al ĉi tiu lingvo en ĉi tiu grupo estis malebligita. Kialo:',
+	'translate-page-disabled'                => "Tradukoj al ĉi tiu lingvo en ĉi tiu grupo estis malebligita. Kialo:
+
+''$1''",
 	'translate-page-settings-legend'         => 'Agordoj',
 	'translate-page-task'                    => 'Mi volas',
 	'translate-page-group'                   => 'Grupo',
@@ -1878,26 +1883,26 @@ $messages['haw'] = array(
  */
 $messages['he'] = array(
 	'translate'                         => 'תרגום',
-	'translate-desc'                    => '[[{{ns:Special}}:Translate|דף מיוחד]] בשביל תרגום מדיה ויקי ומעבר',
+	'translate-desc'                    => '[[Special:Translate|דף מיוחד]] לתרגום מדיה־ויקי ומעבר לכך',
 	'translate-edit'                    => 'עריכה',
 	'translate-talk'                    => 'שיחה',
 	'translate-history'                 => 'היסטוריה',
-	'translate-task-view'               => 'הצג את כל ההודעות מתוך',
-	'translate-task-untranslated'       => 'הצג את כל ההודעות הלא-מתורגמות מתוך',
-	'translate-task-problematic'        => 'הצג הודעות שיש בהם בעיות',
-	'translate-task-review'             => 'הצג שינויים בתוך',
-	'translate-task-reviewall'          => 'הצג שינויים בכל ההודעות שתורגמו בתוך',
-	'translate-task-export'             => 'יצא תרגומים מתוך',
-	'translate-task-export-to-file'     => 'ייצא תרגומים לקובץ מתוך',
-	'translate-page-task'               => 'אני רוצה ש',
+	'translate-task-view'               => 'הצגת כל ההודעות מתוך',
+	'translate-task-untranslated'       => 'הצגת כל ההודעות שאינן מתורגמות מתוך',
+	'translate-task-problematic'        => 'הצגת הודעות עם בעיות',
+	'translate-task-review'             => 'הצגת שינויים בתוך',
+	'translate-task-reviewall'          => 'הצגת שינויים בכל ההודעות שתורגמו בתוך',
+	'translate-task-export'             => 'ייצוא תרגומים מתוך',
+	'translate-task-export-to-file'     => 'ייצוא תרגומים לקובץ מתוך',
+	'translate-page-task'               => 'תצוגה',
 	'translate-page-group'              => 'קבוצה',
 	'translate-page-language'           => 'שפה',
-	'translate-page-limit'              => 'הגבל',
+	'translate-page-limit'              => 'הגבלה',
 	'translate-page-limit-option'       => 'עד {{PLURAL:$1|הודעה אחת|$1 הודעות}} בדף',
-	'translate-submit'                  => 'הצג',
+	'translate-submit'                  => 'הצגה',
 	'translate-page-navigation-legend'  => 'ניווט',
-	'translate-page-showing'            => 'מציג הודעות מ$1 עד ל$2 מתוך $3.',
-	'translate-page-showing-all'        => 'מציג {{PLURAL:$1|הודעה אחת|$1 הודעות}}.',
+	'translate-page-showing'            => 'הצגת הודעות מ־$1 עד $2 מתוך $3.',
+	'translate-page-showing-all'        => 'הצגת {{PLURAL:$1|הודעה אחת|$1 הודעות}}.',
 	'translate-page-showing-none'       => 'אין הודעות להצגה.',
 	'translate-next'                    => 'לדף הבא',
 	'translate-prev'                    => 'לדף הקודם',
@@ -1906,12 +1911,12 @@ $messages['he'] = array(
 	'translate-edit-contribute'         => 'תרומה',
 	'translate-edit-information'        => 'מידע על ההודעה ($1)',
 	'translate-edit-goto-no-prev'       => 'אין הודעה קודמת',
-	'translate-edit-goto-no-next'       => 'אין הודעה הבאה',
+	'translate-edit-goto-no-next'       => 'אין הודעה באה',
 	'translate-edit-goto-prev'          => 'עריכת ההודעה הקודמת',
 	'translate-edit-goto-next'          => 'עריכת ההודעה הבאה',
 	'translate-edit-goto-list'          => 'חזרה לרשימה',
-	'translate-magic-submit'            => 'הצג לעריכה',
-	'translate-magic-cm-export'         => 'ייצא',
+	'translate-magic-submit'            => 'הצגה',
+	'translate-magic-cm-export'         => 'ייצוא',
 	'translate-magic-cm-to-be'          => 'עתידיים',
 	'translate-magic-cm-current'        => 'נוכחיים',
 	'translate-magic-cm-original'       => 'מקורי',
@@ -1922,7 +1927,7 @@ $messages['he'] = array(
 	'translate-magic-skin'              => 'שמות רקעים',
 	'translate-magic-namespace'         => 'שמות מרחבי שם',
 	'translationchanges'                => 'שינויים בתרגום',
-	'translationchanges-export'         => 'ייצא',
+	'translationchanges-export'         => 'ייצוא',
 );
 
 /** Hindi (हिन्दी)
@@ -2289,6 +2294,7 @@ $messages['ia'] = array(
  * @author Rex
  * @author Irwangatot
  * @author Meursault2004
+ * @author Siebrand
  */
 $messages['id'] = array(
 	'translate'                         => 'Terjemahan',
@@ -2340,7 +2346,7 @@ Untuk kata magis, Anda perlu mencantumkan pula terjemahan bahasa Inggris atau ak
 
 Alias untuk halaman istimewa dan kata magis dapat memiliki lebih dari satu terjemahan yang masing-masing dipisahkan dengan koma (,). Nama kulit dan ruang nama hanya dapat memiliki satu terjemahan.
 
-Dalam terjemahan ruang nama <tt>$1 talk</tt> diperlakukan khusus. <tt>$1</tt> digantikan dengan nama situs (contohnya <tt>{{SITENAME}} talk</tt>. Jika bahasa Anda tidak memungkinkan untuk membentuk suatu ekspresi yang valid tanpa mengganti nama situs, silakan kontak salah seorang pengembang.
+Dalam terjemahan ruang nama <tt>$1 talk</tt> diperlakukan khusus. <tt>$1</tt> digantikan dengan nama situs (contohnya <tt>{{SITENAME}} talk</tt>). Jika bahasa Anda tidak memungkinkan untuk membentuk suatu ekspresi yang valid tanpa mengganti nama situs, silakan kontak salah seorang pengembang.
 
 Anda perlu menjadi anggota grup penerjemah untuk menyimpan perubahan. Perubahan tak akan disimpan hingga Anda mengklik tombol simpan di bawah.',
 	'translate-magic-submit'            => 'Ambil',
@@ -3176,6 +3182,7 @@ $messages['krj'] = array(
 
 /** Ripoarisch (Ripoarisch)
  * @author Purodha
+ * @author Siebrand
  */
 $messages['ksh'] = array(
 	'translate'                              => 'Övversäze',
@@ -3239,7 +3246,7 @@ Dozwesche shteijt jeeweijls_e "," (Komma).
 Ovverfläshename un de Name fö_de Appachtemangs könne nur eijn Övversätzong han.
 
 Beij de Övversäzonge för de Appachtemangs ier Name hät „<tt>$1 talk</tt>“ ene shpezjälle Senn.
-Dat „<tt>$1</tt>“ shteijt doh als enne Plazhallder för dä Projäkname (zem Beijshpöll dat „<tt>{{SITENAME}}</tt>“ en: „<tt>Övver {{SITENAME}} Klaafe</tt>“.
+Dat „<tt>$1</tt>“ shteijt doh als enne Plazhallder för dä Projäkname (zem Beijshpöll dat „<tt>{{SITENAME}}</tt>“ en: „<tt>Övver {{SITENAME}} Klaafe</tt>“).
 Wann Ding Shprooch ed nit heerjitt, dat_De ene grammatesch reschtejje Forrem henkreßß, ohne an dämm Projetname ändere zo mößße, dann donn ene Äntwecklor do drop aansäzze.
 
 Do moß en de Jrop „Övversäzer“ sen, för hee Änderonge maache ze könne.
@@ -3264,7 +3271,7 @@ Do moß en de Jrop „Övversäzer“ sen, för hee Änderonge maache ze könne.
 	'translate-checks-parameters'            => '{{PLURAL:$2|Dä Parrammeeter hee eß|Di Parrammeetere hee sen|dat Jedrißße hee iß}} nit jebruch woode: <strong>$1</strong>',
 	'translate-checks-parameters-unknown'    => 'Hee {{PLURAL:$2|dä Parrammeeter|di Parrammeetere|dat Jedrißße}} kënne mer nit:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-balance'               => 'Do {{PLURAL:$|jëijd_en Klammer nit op odder|jonn ongerscheedlish fill Klammere op un|eß Dreß}} zoh: <strong>$1</strong>',
+	'translate-checks-balance'               => 'Do {{PLURAL:$2|jëijd_en Klammer nit op odder|jonn ongerscheedlish fill Klammere op un|eß Dreß}} zoh: <strong>$1</strong>',
 	'translate-checks-links'                 => 'Hee {{PLURAL:$2|dä Lengk eß|di Lengks senn|dat Jedrißße}} problemattesch: <strong>$1</strong>',
 	'translate-checks-xhtml'                 => 'Donn hee {{PLURAL:$2|dat Kommando|di Kommandose|dat Jedrißße}} ußtuusche, un schriif de reschtije do för hen: <strong>$1</strong>',
 	'translate-checks-plural'                => 'De Ojjinaal-Nohresch bruch <nowiki>{{PLURAL:}}</nowiki>, ävver de Övversäzong deijt dat nit?',
@@ -3758,6 +3765,7 @@ Om wijzigingen op te slaan moet u lid zijn van de groep vertalers. Wijzigingen w
 	'translate-checks-xhtml'                 => 'Vervang de volgende {{PLURAL:$2|tag|tags}} door de juiste:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural'                => 'De definitie bevat <nowiki>{{PLURAL:}}</nowiki>, maar de vertaling niet.',
+	'translate-checks-pagename'              => 'Afwijkende naamruimte vergeleken met de brontekst',
 	'tog-translate-nonewsletter'             => 'Mij geen nieuwsbrieven per e-mail sturen (alleen relevant voor gebruikers met een bevestigd e-mailadres)',
 	'right-translate'                        => 'Bewerken via de vertaalinterface',
 	'translate-rc-translation-filter'        => 'Vertalingen filteren:',
@@ -3915,7 +3923,9 @@ $messages['oc'] = array(
 	'translate-page-no-such-language'        => 'Un còde de lengatge invalid es estat indicat',
 	'translate-page-no-such-task'            => 'Lo prètzfach especificat es invalid.',
 	'translate-page-no-such-group'           => 'Lo grop especificat es invalid.',
-	'translate-page-disabled'                => 'Las traduccions dins aquesta lenga dins aqueste grop son estadas desactivadas. Motiu :',
+	'translate-page-disabled'                => "Las traduccions dins aquesta lenga dins aqueste grop son estadas desactivadas. Motiu :
+
+''$1''",
 	'translate-page-settings-legend'         => 'Configuracion',
 	'translate-page-task'                    => 'Vòli',
 	'translate-page-group'                   => 'Grop',
@@ -3967,7 +3977,7 @@ Vos cal aparténer al grop dels traductors per salvar los cambiaments. Los cambi
 	'translate-magic-namespace'              => 'Intitolat dels espacis de nomenatge',
 	'translationchanges'                     => 'Traduccions modificadas',
 	'translationchanges-export'              => 'exportar',
-	'translationchanges-change'              => '$1: [[Mediawiki:$2|$2]] per [[User:$3|$3]]',
+	'translationchanges-change'              => '$1: $2 per $3',
 	'translate-checks-parameters'            => 'Los paramètres seguents son pas utilizats : <strong>$1</strong',
 	'translate-checks-balance'               => 'I a un nombre incorrècte de parentèsis : <strong>$1</strong>',
 	'translate-checks-links'                 => 'Los ligams seguents son dobtoses : <strong>$1</strong',
@@ -4173,7 +4183,7 @@ $messages['ps'] = array(
  */
 $messages['pt'] = array(
 	'translate'                         => 'Traduzir',
-	'translate-desc'                    => '[[{{ns:special}}:Translate|Página especial]] para traduzir o MediaWiki e mais',
+	'translate-desc'                    => '[[Special:Translate|Página especial]] para traduzir o MediaWiki e mais',
 	'translate-edit'                    => 'editar',
 	'translate-talk'                    => 'disc',
 	'translate-history'                 => 'histórico',
@@ -4225,7 +4235,7 @@ $messages['pt'] = array(
 Os alias de páginas especiais e palavras mágicas podem receber múltiplas traduções, separadas por vírgulas (,).
 Nomes de temas e espaços nominais podem receber apenas uma tradução.
 
-Nas traduções de espaços nominais a partícula <tt>$1 talk</tt> é especial. <tt>$1</tt> é trocada pelo nome do sítio (por exemplo, <tt>{{SITENAME}} talk</tt>. Se não é possível formar em seu idioma expressões válidas sem mexer com o nome do sítio, por gentileza, procure um desenvolvedor.
+Nas traduções de espaços nominais a partícula <tt>$1 talk</tt> é especial. <tt>$1</tt> é trocada pelo nome do sítio (por exemplo, <tt>{{SITENAME}} talk</tt>). Se não é possível formar em seu idioma expressões válidas sem mexer com o nome do sítio, por gentileza, procure um desenvolvedor.
 
 É necessário pertencer ao grupo de tradutores para conseguir salvar as alterações.
 As alterações não serão salvas até que você clique no botão de salvar.',
@@ -4451,7 +4461,7 @@ V magických slovách musíte zahrnúť aj anglické preklady, inak prestanú fu
 
 Aliasy špeciálnych stránok a magických slov môžu mať viacero prekladov. Preklady sa oddeľujú čiarkami („,“). Názvy tém vzhľadu a názvy menných priestorov môžu mať iba jeden preklad.
 
-V prekladoch menných priestorov je <tt>$1 talk</tt> špeciálne. <tt>$1</tt> sa nahradí názvom webovej lokality (napr. <tt>{{SITENAME}} talk</tt>. Ak vo vašom jazyku nie je možné vytvoriť zmysluplný výraz bez zmeny názvu webovej lokality, prosím, kontaktujte vývojára.
+V prekladoch menných priestorov je <tt>$1 talk</tt> špeciálne. <tt>$1</tt> sa nahradí názvom webovej lokality (napr. <tt>{{SITENAME}} talk</tt>). Ak vo vašom jazyku nie je možné vytvoriť zmysluplný výraz bez zmeny názvu webovej lokality, prosím, kontaktujte vývojára.
 
 Aby ste mohli ukladať zmeny, musíte byť členom skupiny translators. Zmeny sa neuložia, kým nekliknete na tlačidlo Uložiť dolu.',
 	'translate-magic-module'                 => 'Modul:',
@@ -4571,6 +4581,7 @@ $messages['stq'] = array(
 /** Sundanese (Basa Sunda)
  * @author Irwangatot
  * @author Kandar
+ * @author Siebrand
  */
 $messages['su'] = array(
 	'translate'                         => 'Alih basakeun',
@@ -4621,7 +4632,8 @@ Pikeun kecap magis, Anjeun perlu nyantumkeun ogé tarjamahan basa Inggris atawa 
 
 Landian pikeun halaman husus sarta kecap magis bisa ngabogaan leuwih ti hiji tarjamahan anu lainna dipisahkan ku koma (,). Ngaran kulit sarta ngaranspasi ngan bisa ngabogaan hiji tarjamahan.
 
-Dina tarjamahan ngaranspasi <tt>$1 talk</tt> diperlakukan husus. <tt>$1</tt>  digantikeun kalawan ngaran loka (contona {{SITENAME}} talk. Lamun basa Anjeun henteu matak bisa pikeun nyieun hiji ekspresi anu valid tanpa ngaganti ngaran loka, sumangga kontak salah saurang pengembang.
+Dina tarjamahan ngaranspasi <tt>$1 talk</tt> diperlakukan husus. <tt>$1</tt>  digantikeun kalawan ngaran loka (contona {{SITENAME}} talk).
+Lamun basa Anjeun henteu matak bisa pikeun nyieun hiji ekspresi anu valid tanpa ngaganti ngaran loka, sumangga kontak salah saurang pengembang.
 
 Anjeun perlu jadi anggota grup panarjamah pikeun nyimpen parobahan. Parobahan moal disimpen nepi ka Anjeun ngaklik tombol simpen di handapeun.",
 	'translate-magic-submit'            => 'Kintun',
@@ -4729,10 +4741,12 @@ För att kunna spara ändringar så behöver du tillhöra översättargruppen. �
 	'translate-checks-parameters'            => 'Följande {{PLURAL:$2|parameter|parametrar}} används inte: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown'    => 'Följande {{PLURAL:$2|parameter är okänd|parametrar är okända}}:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-balance'               => 'Antalet påbörjade och avslutade parenteser är olika: <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-balance'               => 'Det är ett ojämnt antal {{PLURAL:$2|parenteser|parenteser}}:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links'                 => 'Följande {{PLURAL:$2|länk|länkar}} är problematiska: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml'                 => 'Följande felaktiga {{PLURAL:$2|tagg|taggar}} bör ersättas: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural'                => '<nowiki>{{PLURAL:}}</nowiki> används i definitionen, men inte i översättningen.',
+	'translate-checks-pagename'              => 'Namnrymden ändrad från definitionen',
 	'tog-translate-nonewsletter'             => 'Sänd mig inte nyhetsbrev (gäller endast användare med bekräftad e-postadress)',
 	'right-translate'                        => 'Redigera genom översättningsgränssnittet',
 	'translate-rc-translation-filter'        => 'Filtrera översättningar:',
@@ -5393,7 +5407,7 @@ $messages['xmf'] = array(
  */
 $messages['yi'] = array(
 	'translate'                         => 'פֿארטײַטשן',
-	'translate-desc'                    => '[[{{ns:Special}}:Translate|באזונדערער בלאט]] פֿאר פֿארטײַטשן מעדיעוויקי און ווײַטער',
+	'translate-desc'                    => '[[Special:Translate|באזונדערער בלאט]] פֿאר פֿארטײַטשן מעדיעוויקי און ווײַטער',
 	'translate-edit'                    => 'רעדאקטירן',
 	'translate-talk'                    => 'רעדן',
 	'translate-history'                 => 'היסטאריע',
