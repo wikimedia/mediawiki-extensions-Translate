@@ -51,15 +51,19 @@ foreach ( $groups as $g ) {
 		continue;
 	}
 
+	// Initialise messages, using unique definitions if appropriate
+	$collection_skel = $g->initCollection( 'en', $g->isMeta() );
+	if ( !count($collection_skel) ) continue;
+
 	STDOUT( "Working with $id: ", $id );
 
 	foreach ( $codes as $code ) {
 		STDOUT( "$code ", $id );
 
-		// Initialise messages, using unique definitions if appropriate
-		$collection = $g->initCollection( $code, $g->isMeta() );
+		$collection = clone $collection_skel;
+		$collection->code = $code;
+
 		$g->fillCollection( $collection );
-		$namespace = $g->namespaces[0];
 
 		foreach ( $collection->keys() as $key ) {
 			$prob = $checker->doFastChecks( $collection[$key], $type, $code );
@@ -67,7 +71,7 @@ foreach ( $groups as $g ) {
 
 				if ( $verbose ) {
 					// Print it
-					$nsText = $wgContLang->getNsText( $namespace );
+					$nsText = $wgContLang->getNsText( $g->namespaces[0] );
 					STDOUT( "# [[$nsText:$key/$code]]" );
 				}
 

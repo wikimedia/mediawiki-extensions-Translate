@@ -212,7 +212,7 @@ class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
 
 	function getBools() {
 		$this->init();
-		$bools = array();
+		$bools = parent::getBools();
 		foreach ( $this->classes as $class ) {
 			$newbools = ( $class->getBools() );
 			if ( count($newbools['optional']) || count($newbools['ignored']) ) {

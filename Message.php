@@ -17,16 +17,15 @@ if (!defined('MEDIAWIKI')) die();
  * translation target language.
  */
 class MessageCollection implements Iterator, ArrayAccess, Countable {
+	/**
+	 * Information of what type of MessageCollection this is.
+	 */
+	public $code = null;
 
 	/**
 	 * Messages are stored in an array.
 	 */
 	private $messages = array();
-
-	/**
-	 * Information of what type of MessageCollection this is.
-	 */
-	public $code = null;
 
 	/**
 	 * Creates new empty messages collection.
@@ -35,6 +34,12 @@ class MessageCollection implements Iterator, ArrayAccess, Countable {
 	 */
 	public function __construct( $code ) {
 		$this->code = $code;
+	}
+
+	public function __clone() {
+		foreach ( $this->messages as $key => $obj ) {
+			$this->messages[$key] = clone $obj;
+		}
 	}
 
 	/* Iterator methods */
