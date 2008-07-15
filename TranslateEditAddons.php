@@ -260,17 +260,19 @@ class TranslateEditAddons {
 			// Take the contents from edit field as a translation
 			$message->database = $translation;
 			$checker = MessageChecks::getInstance();
-			$checks = $checker->doChecks( $message, $group->getType(), $code );
-			if ( count($checks) ) {
-				$checkMessages = array();
-				foreach ( $checks as $checkParams ) {
-					array_splice( $checkParams, 1, 0, 'parseinline' );
-					$checkMessages[] = call_user_func_array( 'wfMsgExt', $checkParams );
-				}
+			if ( $checker->hasChecks( $type ) ) {
+				$checks = $checker->doChecks( $message, $group->getType(), $code );
+				if ( count($checks) ) {
+					$checkMessages = array();
+					foreach ( $checks as $checkParams ) {
+						array_splice( $checkParams, 1, 0, 'parseinline' );
+						$checkMessages[] = call_user_func_array( 'wfMsgExt', $checkParams );
+					}
 
-				$boxes[] = TranslateUtils::fieldset(
-					wfMsgHtml( self::MSG . 'warnings' ), implode( '<hr />', $checkMessages),
-					array( 'class' => 'mw-sp-translate-edit-warnings' ) );
+					$boxes[] = TranslateUtils::fieldset(
+						wfMsgHtml( self::MSG . 'warnings' ), implode( '<hr />', $checkMessages),
+						array( 'class' => 'mw-sp-translate-edit-warnings' ) );
+				}
 			}
 		}
 
