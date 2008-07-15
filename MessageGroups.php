@@ -30,6 +30,22 @@ abstract class MessageGroup {
 	public function getIgnored() { return $this->ignored; }
 	public function setIgnored( $value ) { $this->ignored = $value; }
 
+	protected $problematic = null;
+	protected function getProblematic( $code ) {
+		if ( $this->problematic === null ) {
+			$this->problematic = array();
+			$file = TRANSLATE_CHECKFILE . '-' . $this->id;
+			if ( file_exists($file) ) {
+				$problematic = unserialize( file_get_contents($file) );
+				if ( isset($problematic[$code]) ) {
+					$this->problematic = $problematic[$code];
+				}
+			}
+		}
+		return $this->problematic;
+	}
+
+	protected function setProblematic( $value ) { $this->problematic = $value ; }
 	/**
 	 * Returns a list of optional and ignored messages in 2-d array.
 	 */

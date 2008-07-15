@@ -51,7 +51,7 @@ class MessageChecks {
 	 * @return Array of warning messages, html-format.
 	 */
 	public function doChecks( TMessage $message, $type, $code ) {
-		if ( $message->translation === null) return false;
+		if ( $message->translation === null) return array();
 		$warnings = array();
 
 		foreach ( $this->checksForType[$type] as $check ) {

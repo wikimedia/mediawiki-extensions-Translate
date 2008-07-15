@@ -72,7 +72,7 @@ foreach ( $groups as $g ) {
 				}
 
 				// Add it to the array
-				$problematic[$code][] = strtolower( "$namespace:$key" );
+				$problematic[$code][] = $key;
 			}
 		}
 	}

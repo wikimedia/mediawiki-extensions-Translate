@@ -155,8 +155,17 @@ class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
 	protected $label = 'MediaWiki extensions';
 	protected $id    = 'ext-0-all';
 	protected $meta  = true;
-
+	protected $type  = 'mediawiki';
 	protected $classes = null;
+
+	public function getProblematic( $code ) {
+		$this->init();
+		$array = array();
+		foreach ( $this->classes as $class ) {
+			$array = wfArrayMerge( $array, $class->getProblematic( $code ) );
+		}
+		return $array;
+	}
 
 	// Don't add the (mw ext) thingie
 	public function getLabel() { return $this->label; }
@@ -189,7 +198,7 @@ class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
 		$this->init();
 		$array = array();
 		foreach ( $this->classes as $class ) {
-			$array = array_merge( $array, $class->getDefinitions() );
+			$array = wfArrayMerge( $array, $class->getDefinitions() );
 		}
 		return $array;
 	}
