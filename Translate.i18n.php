@@ -362,13 +362,15 @@ $messages['ar'] = array(
 	'translate-magic-pagename'               => 'ترجمة الميدياويكي الممتدة',
 	'translate-magic-help'                   => 'يمكنك ترجمة أسماء الصفحات الخاصة، الكلمات السحرية، أسماء الواجهات وأسماء النطاقات.
 
-في الكلمات السحرية تحتاج إلى إضافة الترجمة الإنجليزية وإلا فإنها ستتوقف عن العمل. أيضا اترك المدخل الأول (0 أو 1) كما هو.
+في الكلمات السحرية تحتاج إلى إضافة الترجمة الإنجليزية وإلا فإنها ستتوقف عن العمل.
+أيضا اترك المدخل الأول (0 أو 1) كما هو.
 
-أسماء الصفحات الخاصة والكلمات السحرية يمكن أن يكون لهم ترجمات متعددة. الترجمات مفصولة بفاصلة(,).
-
+أسماء الصفحات الخاصة والكلمات السحرية يمكن أن يكون لهم ترجمات متعددة.
+الترجمات مفصولة بفاصلة(,).
 أسماء الواجهات والنطاقات يمكن أن يكون لها ترجمة واحدة.
 
-في ترجمة النطاقات <tt>$1 talk</tt> خاص. <tt>$1</tt> تستبدل باسم الموقع (على سبيل المثال <tt>{{SITENAME}} talk</tt>. لو أنه من غير الممكن في لغتك صياغة تعبير صحيح بدون تغيير اسم الموقع، من فضلك اتصل بمطور.
+في ترجمة النطاقات <tt>$1 talk</tt> خاص. <tt>$1</tt> تستبدل باسم الموقع (على سبيل المثال <tt>{{SITENAME}} talk</tt>. 
+لو أنه من غير الممكن في لغتك صياغة تعبير صحيح بدون تغيير اسم الموقع، من فضلك اتصل بمطور.
 
 تحتاج إلى أن تكون في مجموعة المترجمين لحفظ التغييرات.
 التغييرات لن يتم حفظها حتى نقر زر الحفظ بالأسفل.',
@@ -1837,6 +1839,7 @@ Nas traducións dos espazos de nomes, <tt>$1 talk</tt> é especial. <tt>$1</tt> 
 	'translate-checks-xhtml'                 => 'Por favor, substitúa {{PLURAL:$2|a seguinte etiqueta pola correcta|as seguintes etiquetas polas correctas}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural'                => 'A definición usa <nowiki>{{PLURAL:}}</nowiki>, pero a tradución non.',
+	'translate-checks-pagename'              => 'O espazo de nomes cambiou desde a definición',
 	'tog-translate-nonewsletter'             => 'Non me enviedes follas informativas ao meu correo electrónico (só relevante para os usuarios cun enderezo de correo electrónico confirmado)',
 	'right-translate'                        => 'Editar usando a interface de tradución',
 	'translate-rc-translation-filter'        => 'Filtrar as traducións:',
@@ -2342,13 +2345,17 @@ $messages['id'] = array(
 	'translate-magic-pagename'          => 'Perluasan terjemahan Mediawiki',
 	'translate-magic-help'              => 'Anda dapat menerjemahkan alias untuk halaman istimewa, kata magis, nama kulit, dan nama ruang nama.
 
-Untuk kata magis, Anda perlu mencantumkan pula terjemahan bahasa Inggris atau akan terjadi kesalahan. Juga tetap cantumkan item pertama (0 atau 1) begitu saja.
+Untuk kata magis, Anda perlu mencantumkan pula terjemahan bahasa Inggris atau akan terjadi kesalahan. Juga biarkan item pertama (0 atau 1) tercantum apa adanya.
 
-Alias untuk halaman istimewa dan kata magis dapat memiliki lebih dari satu terjemahan yang masing-masing dipisahkan dengan koma (,). Nama kulit dan ruang nama hanya dapat memiliki satu terjemahan.
+Alias untuk halaman istimewa dan kata magis dapat memiliki lebih dari satu terjemahan.
+Masing-masing harus dipisahkan dengan sebuah tanda koma (,).
+Nama kulit dan ruang nama hanya dapat memiliki satu terjemahan.
 
-Dalam terjemahan ruang nama <tt>$1 talk</tt> diperlakukan khusus. <tt>$1</tt> digantikan dengan nama situs (contohnya <tt>{{SITENAME}} talk</tt>). Jika bahasa Anda tidak memungkinkan untuk membentuk suatu ekspresi yang valid tanpa mengganti nama situs, silakan kontak salah seorang pengembang.
+Dalam menerjemahkan, ruang nama <tt>$1 talk</tt> harus diperlakukan khusus. <tt>$1</tt> digantikan dengan nama situs (contohnya <tt>{{SITENAME}} talk</tt>).
+Jika bahasa Anda tidak memungkinkan untuk membentuk suatu ekspresi yang valid tanpa mengganti nama situs, silakan kontak salah seorang pengembang.
 
-Anda perlu menjadi anggota grup penerjemah untuk menyimpan perubahan. Perubahan tak akan disimpan hingga Anda mengklik tombol simpan di bawah.',
+Anda perlu menjadi anggota kelompok penerjemah untuk menyimpan perubahan.
+Perubahan tak akan disimpan hingga Anda mengklik tombol simpan di bawah.',
 	'translate-magic-submit'            => 'Ambil',
 	'translate-magic-cm-export'         => 'Ekspor',
 	'translate-magic-cm-to-be'          => 'Menjadi',
@@ -2365,10 +2372,14 @@ Anda perlu menjadi anggota grup penerjemah untuk menyimpan perubahan. Perubahan 
 	'translationchanges'                => 'Perubahan terjemahan',
 	'translationchanges-export'         => 'ekspor',
 	'translationchanges-change'         => '$1: $2 oleh $3',
-	'translate-checks-parameters'       => 'Parameter-parameter berikut tidak digunakan: <strong>$1</strong>',
-	'translate-checks-balance'          => 'Jumlah pengapit tak seimbang: <strong>$1</strong>',
-	'translate-checks-links'            => 'Pranala berikut bermasalah: <strong>$1</strong>',
-	'translate-checks-xhtml'            => 'Harap ganti tag-tag berikut dengan tag yang tepat: <strong>$1</strong>',
+	'translate-checks-parameters'       => '{{PLURAL:$2|Parameter|Parameter-parameter}} berikut tidak digunakan:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-balance'          => 'Jumlah {{PLURAL:$2|pengapit|pengapit-pengapit}} tak seimbang:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links'            => '{{PLURAL:$2|Pranala|Pranala-pranala}} berikut bermasalah:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-xhtml'            => 'Harap ganti {{PLURAL:$2|tag|tag-tag}} berikut dengan tag yang tepat:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural'           => 'Definisi menggunakan <nowiki>{{PLURAL:}}</nowiki> tapi terjemahannya tidak.',
 	'tog-translate-nonewsletter'        => 'Jangan kirimkan saya e-mail berita (hanya untuk pengguna dengan alamat surat-e yang sudah dikonfirmasi)',
 	'right-translate'                   => 'Sunting menggunakan antarmuka penerjemahan',
@@ -4489,6 +4500,7 @@ Aby ste mohli ukladať zmeny, musíte byť členom skupiny translators. Zmeny sa
 	'translate-checks-xhtml'                 => 'Prosím, nahraďte {{PLURAL:$2|nasledovnú značku správnou|nasledovné značky správnymi}}: 
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural'                => 'Definícia používa <nowiki>{{PLURAL:}}</nowiki>, ale preklad nie.',
+	'translate-checks-pagename'              => 'Oproti definícii sa zmenil menný priestor',
 	'tog-translate-nonewsletter'             => 'Neposielať mi novinky emailom (týka sa iba používateľov s potvrdenou emailovou adresou)',
 	'right-translate'                        => 'Vykonávať úpravy pomocou rozhrania Preložiť',
 	'translate-rc-translation-filter'        => 'Preklady filtrov:',
