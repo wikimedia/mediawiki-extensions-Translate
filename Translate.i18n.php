@@ -1191,6 +1191,7 @@ $messages['el'] = array(
 	'translate-page-limit-option'       => '$1 {{PLURAL:$1|μήνυμα|μηνύματα}} ανά σελίδα',
 	'translate-submit'                  => 'Πηγαίνετε',
 	'translate-page-navigation-legend'  => 'Πλοήγηση',
+	'translate-page-showing'            => 'Εμφάνιση μηνυμάτων από $1 έως $2 στα $3.',
 	'translate-page-showing-all'        => 'Παρουσίαση $1 {{PLURAL:$1|μηνύματος|μηνυμάτων}}.',
 	'translate-next'                    => 'Επόμενη σελίδα',
 	'translate-prev'                    => 'Προηγούμενη σελίδα',
@@ -1199,6 +1200,7 @@ $messages['el'] = array(
 	'translate-ignored'                 => '(αγνοήστε)',
 	'translate-edit-information'        => 'Πληροφορίες σχετικά με αυτό το μήνυμα ($1)',
 	'translate-edit-in-other-languages' => 'Το Μήνυμα σε άλλες γλώσσες',
+	'translate-magic-module'            => 'Ενότητα:',
 	'translate-magic-submit'            => 'Πηγαίνετε',
 	'translate-magic-cm-comment'        => 'Σχόλιο:',
 	'translate-magic-special'           => 'Πρόσθετα ψευδώνυμα σελίδων',
@@ -1629,6 +1631,7 @@ Vous devez appartenir au groupe des traducteurs pour sauvegarder les changements
 	'translate-checks-links'                 => '{{PLURAL:$2|Le lien suivant cause problèmes|Les liens suivants causent}} : <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml'                 => 'Vous êtes invité à corriger {{PLURAL:$2|la balise suivante|les balises suivantes}} : <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural'                => 'La définition utilise <nowiki>{{PLURAL:}}</nowiki> mais pas la traduction.',
+	'translate-checks-pagename'              => 'Nom d’espace modifié depuis la définition',
 	'tog-translate-nonewsletter'             => 'Ne m’envoyez pas la lettre d’information par courrier (ne concerne que les utilisateurs qui disposent d’une adresse courriel confirmée)',
 	'right-translate'                        => "Modifier en utilisant l'interface de traduction",
 	'translate-rc-translation-filter'        => 'Filtrer les traductions :',
@@ -1803,7 +1806,7 @@ $messages['gl'] = array(
 	'translate-edit-goto-prev'               => 'Editar a mensaxe previa',
 	'translate-edit-goto-next'               => 'Editar a mensaxe seguinte',
 	'translate-edit-goto-list'               => 'Voltar á lista',
-	'translate-magic-pagename'               => 'Tradución extendida de MediaWiki',
+	'translate-magic-pagename'               => 'Tradución estendida de MediaWiki',
 	'translate-magic-help'                   => 'Pode traducir os alias das páxinas especiais, as palabras máxicas, os nomes das aparencias e os nomes dos espazos de nomes.
 
 Nas páxinas máxicas ten que incluír as traducións en inglés ou non funcionarán. Deixe tamén o primeiro elemento (0 ou 1) tal e como está.
@@ -4753,7 +4756,7 @@ För att kunna spara ändringar så behöver du tillhöra översättargruppen. �
 	'translate-checks-parameters'            => 'Följande {{PLURAL:$2|parameter|parametrar}} används inte: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown'    => 'Följande {{PLURAL:$2|parameter är okänd|parametrar är okända}}:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-balance'               => 'Det är ett ojämnt antal {{PLURAL:$2|parenteser|parenteser}}:
+	'translate-checks-balance'               => 'Det är ett ojämnt antal parenteser:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links'                 => 'Följande {{PLURAL:$2|länk|länkar}} är problematiska: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml'                 => 'Följande felaktiga {{PLURAL:$2|tagg|taggar}} bör ersättas: <strong><nowiki>$1</nowiki></strong>',
