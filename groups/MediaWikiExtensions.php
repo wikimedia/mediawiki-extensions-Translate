@@ -162,7 +162,8 @@ class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
 		$this->init();
 		$array = array();
 		foreach ( $this->classes as $class ) {
-			$array = wfArrayMerge( $array, $class->getProblematic( $code ) );
+			// Use array_merge because of numeric keys
+			$array = array_merge( $array, $class->getProblematic( $code ) );
 		}
 		return $array;
 	}
@@ -198,6 +199,7 @@ class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
 		$this->init();
 		$array = array();
 		foreach ( $this->classes as $class ) {
+			// Use wfArrayMerge because of string keys
 			$array = wfArrayMerge( $array, $class->getDefinitions() );
 		}
 		return $array;
