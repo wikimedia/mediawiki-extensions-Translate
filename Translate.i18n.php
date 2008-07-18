@@ -218,6 +218,7 @@ $messages['af'] = array(
 	'translate-edit-goto-list'          => 'Terug na die lys',
 	'translate-magic-module'            => 'Module:',
 	'translate-magic-submit'            => 'Gaan haal',
+	'translate-magic-cm-export'         => 'Eksporteer',
 	'translate-magic-cm-current'        => 'Huidig',
 	'translate-magic-cm-original'       => 'Oorspronklik',
 	'translate-magic-cm-comment'        => 'Samenvatting:',
@@ -225,6 +226,7 @@ $messages['af'] = array(
 	'translate-magic-cm-updatedusing'   => 'Opgedateer deur [[Special:Magic]] te gebruik',
 	'translate-magic-namespace'         => 'Naamruimtenamen',
 	'translationchanges'                => 'Vertaling wysigings',
+	'translationchanges-export'         => 'eksporteer',
 	'translate-stats-edits'             => 'Wysigings per dag:',
 );
 
@@ -541,23 +543,27 @@ $messages['bcl'] = array(
  * @author EugeneZelenko
  */
 $messages['be-tarask'] = array(
-	'translate'                         => 'Пераклад',
-	'translate-edit'                    => 'рэдагаваць',
-	'translate-talk'                    => 'абмеркаваньне',
-	'translate-history'                 => 'гісторыя',
-	'translate-task-export'             => 'Экспартаваць пераклады',
-	'translate-task-export-to-file'     => 'Экспартаваць пераклады ў файл',
-	'translate-task-export-as-po'       => 'Экспартаваць пераклады ў фармаце gettext',
-	'translate-page-task'               => 'Я хачу',
-	'translate-page-group'              => 'Група',
-	'translate-page-language'           => 'Мова',
-	'translate-page-navigation-legend'  => 'Навігацыя',
-	'translate-next'                    => 'Наступная старонка',
-	'translate-prev'                    => 'Папярэдняя старонка',
-	'translate-page-description-legend' => 'Інфармацыя пра групу',
-	'translate-edit-information'        => 'Інфармацыя пра гэтае паведамленьне ($1)',
-	'translate-edit-in-other-languages' => 'Паведамленьне на іншых мовах',
-	'translate-magic-cm-comment'        => 'Камэнтар:',
+	'translate'                            => 'Пераклад',
+	'translate-edit'                       => 'рэдагаваць',
+	'translate-talk'                       => 'абмеркаваньне',
+	'translate-history'                    => 'гісторыя',
+	'translate-task-export'                => 'Экспартаваць пераклады',
+	'translate-task-export-to-file'        => 'Экспартаваць пераклады ў файл',
+	'translate-task-export-as-po'          => 'Экспартаваць пераклады ў фармаце gettext',
+	'translate-page-task'                  => 'Я хачу',
+	'translate-page-group'                 => 'Група',
+	'translate-page-language'              => 'Мова',
+	'translate-page-limit-option'          => '$1 {{PLURAL:$1|паведамленьне|паведамленьні|паведамленьняў}} на старонцы',
+	'translate-page-navigation-legend'     => 'Навігацыя',
+	'translate-next'                       => 'Наступная старонка',
+	'translate-prev'                       => 'Папярэдняя старонка',
+	'translate-page-description-legend'    => 'Інфармацыя пра групу',
+	'translate-edit-information'           => 'Інфармацыя пра гэтае паведамленьне ($1)',
+	'translate-edit-in-other-languages'    => 'Паведамленьне на іншых мовах',
+	'translate-edit-goto-prev'             => 'Рэдагаваць папярэдняе паведамленьне',
+	'translate-edit-goto-next'             => 'Рэдагаваць наступнае паведамленьне',
+	'translate-magic-cm-comment'           => 'Камэнтар:',
+	'translate-rc-translation-filter-only' => 'Паказваць толькі пераклады',
 );
 
 /** Bulgarian (Български)
@@ -857,10 +863,14 @@ Heu de tenir permisos de traductor per a desar els canvis, que no es guardaran f
 	'translationchanges'                => 'Canvis a la traducció',
 	'translationchanges-export'         => 'exporta',
 	'translationchanges-change'         => '$1:$2 per $3',
-	'translate-checks-parameters'       => "Els paràmetres següents no s'estan usant: <strong>$1</strong>",
-	'translate-checks-balance'          => 'El format dels parèntesis no és correcte: <strong>$1</strong>',
-	'translate-checks-links'            => 'Els enllaços següents són problemàtics: <strong>$1</strong>',
-	'translate-checks-xhtml'            => 'Reemplaceu les etiquetes següents amb les correctes: <strong>$1</strong>',
+	'translate-checks-parameters'       => "Els paràmetres següents no s'estan usant:
+<strong><nowiki>$1</nowiki></strong>",
+	'translate-checks-balance'          => 'El format dels parèntesis no és correcte:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links'            => 'Els enllaços següents són problemàtics:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-xhtml'            => 'Reemplaceu les etiquetes següents amb les correctes:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural'           => 'La definició utilitza <nowiki>{{PLURAL:}}</nowiki> i en canvi la traducció no.',
 	'tog-translate-nonewsletter'        => "No m'enviïs per correu electrònic el recull de notícies (només per a usuaris amb adreça electrònica)",
 	'right-translate'                   => 'Editar fent servir la interfície de traducció',
@@ -1206,8 +1216,10 @@ $messages['el'] = array(
 	'translate-magic-special'           => 'Πρόσθετα ψευδώνυμα σελίδων',
 	'translationchanges'                => 'Αλλαγές μετάφρασης',
 	'translationchanges-change'         => '$1: $2 από $3',
-	'translate-checks-parameters'       => 'Οι παράμετροι που ακολουθούν δεν χρησιμοποιούνται: <strong>$1</strong>',
-	'translate-checks-links'            => 'Οι Ακόλουθοι σύνδεσμοι είναι προβληματικοί: <strong>$1</strong>',
+	'translate-checks-parameters'       => 'Οι παράμετροι που ακολουθούν δεν χρησιμοποιούνται:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links'            => 'Οι Ακόλουθοι σύνδεσμοι είναι προβληματικοί:
+<strong><nowiki>$1</nowiki></strong>',
 );
 
 /** Esperanto (Esperanto)
@@ -2029,9 +2041,12 @@ $messages['hr'] = array(
 	'translate-magic-namespace'         => 'Imena imenskih prostora',
 	'translationchanges'                => 'Prevoditeljske promjene',
 	'translationchanges-export'         => 'izvedi (export)',
-	'translate-checks-parameters'       => 'Sljedeći parametri se ne koriste: <strong>$1</strong>',
-	'translate-checks-balance'          => 'Nejednak broj zagrada: <strong>$1</strong>',
-	'translate-checks-links'            => 'Sljedeće poveznice su problematične: <strong>$1</strong>',
+	'translate-checks-parameters'       => 'Sljedeći parametri se ne koriste:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-balance'          => 'Nejednak broj zagrada:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links'            => 'Sljedeće poveznice su problematične:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural'           => 'Definicija koristi <nowiki>{{PLURAL:}}</nowiki>, ali prijevod ne.',
 );
 
@@ -2589,7 +2604,7 @@ $messages['ja'] = array(
 	'translate-page-group'              => '種類',
 	'translate-page-language'           => '言語',
 	'translate-page-limit'              => '表示数',
-	'translate-page-limit-option'       => '1ページごとに $1 項目',
+	'translate-page-limit-option'       => 'ページごとに $1 項目',
 	'translate-submit'                  => '再表示',
 	'translate-page-navigation-legend'  => 'ナビゲーション',
 	'translate-page-showing'            => '全 $3 件中 $1 件目から $2 件目まで表示しています',
@@ -2633,10 +2648,14 @@ $messages['ja'] = array(
 	'translationchanges'                => '翻訳変更状況',
 	'translationchanges-export'         => 'エクスポート',
 	'translationchanges-change'         => '$1: $2 翻訳者-$3',
-	'translate-checks-parameters'       => '次のパラメータが利用されていません: <strong>$1</strong>',
-	'translate-checks-balance'          => '括弧の数が一致していません: <strong>$1</strong>',
-	'translate-checks-links'            => 'リンクに問題があります: <strong>$1</strong>',
-	'translate-checks-xhtml'            => '正しいタグに修正してください: <strong>$1</strong>',
+	'translate-checks-parameters'       => '次のパラメータが利用されていません:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-balance'          => '括弧の数が一致していません:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links'            => 'リンクに問題があります:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-xhtml'            => '正しいタグに修正してください:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural'           => '元のメッセージでは <nowiki>{{PLURAL:}}</nowiki> を使用していますが、翻訳の中にはありません。',
 );
 
@@ -3019,9 +3038,12 @@ Esim aya awdarmalarında <tt>$1_talk</tt> degen arnaýı keltiriledi. <tt>$1</tt
 	'translationchanges-export'         => 'sırtqa berw',
 	'translationchanges-change'         => '$1: $2 ($3 istegen)',
 	'translate-checks-parameters'       => 'Kelesi baptalımdar paýdalanılmağan: <strong>$1</strong>',
-	'translate-checks-balance'          => 'Mında jaqşalardıñ barlıq sanı jup emes: <strong>$1</strong>',
-	'translate-checks-links'            => 'Kelesi siltemeler jaramsız: <strong>$1</strong>',
-	'translate-checks-xhtml'            => 'Kelesi belgilemelerdi durıstarımen almastırıñız: <strong>$1</strong>',
+	'translate-checks-balance'          => 'Mında jaqşalardıñ barlıq sanı jup emes:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links'            => 'Kelesi siltemeler jaramsız:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-xhtml'            => 'Kelesi belgilemelerdi durıstarımen almastırıñız:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural'           => 'Anıqtalımda <nowiki>{{PLURAL:}}</nowiki> paýdalanılğan, biraq awdarmada bul joq.',
 );
 
@@ -3164,7 +3186,6 @@ $messages['km'] = array(
 
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown'  => 'ប៉ារ៉ាម៉ែត្រចំនួន$2ខាងក្រោមនេះមិនត្រូវបានស្គាល់ទេ៖
-
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance'             => 'មាន{{PLURAL:$2|វង់ក្រចក|វង់ក្រចក}}​ដែលមិន​មាន​គូ៖ 
 
@@ -3500,7 +3521,7 @@ Magiško žodžio vertimuose nurodykite ir vertimą į anglų kalbą, kitaip jis
 
 Specialiojo puslapio pavadinimo ir magiško žodžio vertimai gali būti keli. Vertimai yra skiriami kableliu (,). Apvalkalo ir vardų srities pavadinimas gali turėti tik vieną vertimą.
 
-Vardų sričių vertimuose <tt>$1 aptarimas</tt> yra specialus. <tt>$1</tt> yra pakeičiamas svetainės pavadinimu (Pavyzdžiui <tt>{{SITENAME}} aptarimas</tt>. Jei nėra galimybės Jūsų kalboje suformuoti teisingos išraiškos su svetainės pavadinimo pakeitimu, prašome kreiptis į kūrėjus. 
+Vardų sričių vertimuose <tt>$1 aptarimas</tt> yra specialus. <tt>$1</tt> yra pakeičiamas svetainės pavadinimu (Pavyzdžiui <tt>{{SITENAME}} aptarimas</tt>). Jei nėra galimybės Jūsų kalboje suformuoti teisingos išraiškos su svetainės pavadinimo pakeitimu, prašome kreiptis į kūrėjus. 
 
 Jūs turite priklausyti vertėjų grupei, kad galėtumėte išsaugoti pakeitimus. Pakeitimai nebus išsaugoti iki Jūs nuspausite išsaugojimo butoną apačioje.',
 	'translate-magic-submit'            => 'Išrinkti',
@@ -3590,6 +3611,7 @@ $messages['ml'] = array(
 /** Marathi (मराठी)
  * @author Mahitgar
  * @author Kaustubh
+ * @author Siebrand
  */
 $messages['mr'] = array(
 	'translate'                         => 'भाषांतर करा',
@@ -3648,8 +3670,10 @@ $messages['mr'] = array(
 	'translationchanges'                => 'भाषांतरांमधील बदल',
 	'translationchanges-export'         => 'नीर्यात',
 	'translationchanges-change'         => '$1: $2 ने $3',
-	'translate-checks-parameters'       => 'खालील पॅरॅमीटर्स वापरलेले नाहीत: <strong>$1</strong>',
-	'translate-checks-balance'          => 'चुकीची कंस संख्या: <strong>$1</strong>',
+	'translate-checks-parameters'       => 'खालील पॅरॅमीटर्स वापरलेले नाहीत:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-balance'          => 'चुकीची कंस संख्या:
+<strong><nowiki>$1</nowiki></strong>',
 );
 
 /** Neapolitan (Nnapulitano)
@@ -3995,7 +4019,8 @@ Vos cal aparténer al grop dels traductors per salvar los cambiaments. Los cambi
 	'translate-checks-parameters'            => 'Los paramètres seguents son pas utilizats : <strong>$1</strong',
 	'translate-checks-balance'               => 'I a un nombre incorrècte de parentèsis : <strong>$1</strong>',
 	'translate-checks-links'                 => 'Los ligams seguents son dobtoses : <strong>$1</strong',
-	'translate-checks-xhtml'                 => 'Sètz convidats a tornar metre en plaça las balisas seguentas amb las que son corrèctas : <strong>$1</strong>',
+	'translate-checks-xhtml'                 => 'Sètz convidats a tornar metre en plaça las balisas seguentas amb las que son corrèctas :
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural'                => 'La definicion utiliza <nowiki>{{PLURAL:}}</nowiki> mas pas la traduccion',
 	'tog-translate-nonewsletter'             => 'Me mandetz pas la letra d’informacion per corrièr (concernís pas que les utilizaires que dispausan d’una adreça de corrièr electronic confirmada)',
 	'right-translate'                        => "Modificar en utilizant l'interfàcia de traduccion",
@@ -4270,9 +4295,9 @@ As alterações não serão salvas até que você clique no botão de salvar.',
 	'translationchanges'                => 'Alterações às traduções',
 	'translationchanges-export'         => 'exportar',
 	'translationchanges-change'         => '$1: $2 por $3',
-	'translate-checks-parameters'       => 'Os seguintes parâmetros não são usados: <strong>$1</strong>',
-	'translate-checks-balance'          => 'Há um número ímpar de parênteses: <strong>$1</strong>',
-	'translate-checks-links'            => 'Os seguintes links possuem problemas: <strong>$1</strong>',
+	'translate-checks-parameters'       => 'Os seguintes parâmetros não são usados: <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-balance'          => 'Há um número ímpar de parênteses: <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links'            => 'Os seguintes links possuem problemas: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml'            => 'Por gentileza, troque {{PLURAL:$2|a seguinte tag pela correta|as seguintes tags pelas corretas}}:
 <strong>$1</strong>',
 	'translate-checks-plural'           => 'A definição usa <nowiki>{{PLURAL:}}</nowiki>, mas a tradução não.',
@@ -4386,10 +4411,14 @@ $messages['ru'] = array(
 	'translationchanges'                     => 'Изменения в переводах',
 	'translationchanges-export'              => 'выгрузить',
 	'translationchanges-change'              => '$1: $2 $3',
-	'translate-checks-parameters'            => 'Следующие параметры не используются: <strong>$1</strong>',
-	'translate-checks-balance'               => 'Непарное количество открывающих и закрывающих скобок: <strong>$1</strong>',
-	'translate-checks-links'                 => 'Следующие ссылки вызывают проблемы: <strong>$1</strong>',
-	'translate-checks-xhtml'                 => 'Пожалуйста, исправьте следующие теги: <strong>$1</strong>',
+	'translate-checks-parameters'            => 'Следующие параметры не используются:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-balance'               => 'Непарное количество открывающих и закрывающих скобок:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links'                 => 'Следующие ссылки вызывают проблемы:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-xhtml'                 => 'Пожалуйста, исправьте следующие теги:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural'                => 'Оригинал использует <nowiki>{{PLURAL:}}</nowiki>, а перевод — нет.',
 	'tog-translate-nonewsletter'             => 'Не отправлять мне информационный бюллетень по электронной почте (только для участников с подтверждёнными почтовыми адресами)',
 	'right-translate'                        => 'правка с использованием интерфейса перевода',
@@ -5064,6 +5093,15 @@ $messages['tr'] = array(
 	'translate-magic-cm-save'        => 'Kaydet',
 );
 
+/** Tatar (Cyrillic) (Tatarça/Татарча (Cyrillic))
+ * @author Himiq Dzyu
+ */
+$messages['tt-cyrl'] = array(
+	'translate'      => 'Тәрҗемә',
+	'translate-desc' => '[[Special:Translate|Махсус бит]] MediaWiki һәм башка программлар тәрҗемә итү өчен',
+	'translate-edit' => 'үзгәртү',
+);
+
 /** Uighur (Uyghurche‎ / ئۇيغۇرچە)
  * @author SPQRobin
  */
@@ -5076,6 +5114,7 @@ $messages['ug'] = array(
 /** Ukrainian (Українська)
  * @author Ahonc
  * @author AS
+ * @author Siebrand
  */
 $messages['uk'] = array(
 	'translate'                              => 'Переклад',
@@ -5163,7 +5202,8 @@ $messages['uk'] = array(
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown'    => '{{PLURAL:$2|Наступний параметр невідомий|Наступні параметри невідомі}}:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-balance'               => 'Непарна кількість відкритих і закритих дужок: <strong>$1</strong>',
+	'translate-checks-balance'               => 'Непарна кількість відкритих і закритих дужок:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links'                 => '{{PLURAL:$2|Наступне посилання проблематичне|Наступні посилання проблематичні}} : <strong>$1</strong>',
 	'translate-checks-xhtml'                 => 'Будь ласка, виправте {{PLURAL:$2|наступний тег|наступні теги}}: <strong>$1</strong>',
 	'translate-checks-plural'                => 'Оригінал використовує <nowiki>{{PLURAL:}}</nowiki>, а переклад — ні.',
@@ -5179,6 +5219,7 @@ $messages['uk'] = array(
 
 /** Vèneto (Vèneto)
  * @author Candalua
+ * @author Siebrand
  */
 $messages['vec'] = array(
 	'translate'                         => 'Tradussion',
@@ -5253,9 +5294,12 @@ I canbiamenti no i xe salvà finché no te struchi el boton qua soto.",
 	'translationchanges-export'         => 'esporta',
 	'translationchanges-change'         => '$1: $2 da $3',
 	'translate-checks-parameters'       => 'I seguenti parametri no i xe mìa doparà: <strong>$1</strong>',
-	'translate-checks-balance'          => 'Ghe xe un nùmaro dispari de paréntesi: <strong>$1</strong>',
-	'translate-checks-links'            => 'I colegamenti seguenti i pol causar problemi: <strong>$1</strong>',
-	'translate-checks-xhtml'            => 'Par piaser, sostituìssi i seguenti tag con quei giusti: <strong>$1</strong>',
+	'translate-checks-balance'          => 'Ghe xe un nùmaro dispari de paréntesi:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links'            => 'I colegamenti seguenti i pol causar problemi:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-xhtml'            => 'Par piaser, sostituìssi i seguenti tag con quei giusti:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural'           => 'La definission la dòpara <nowiki>{{PLURAL:}}</nowiki> ma la tradussion no.',
 	'tog-translate-nonewsletter'        => 'No stà mandarme notiziari par e-mail (solo utenti che gà un indirisso e-mail convalidà)',
 	'right-translate'                   => "Modifica doparando l'interfacia de tradussion",
@@ -5346,6 +5390,7 @@ Bạn cần phải thuộc nhóm biên dịch viên để có thể lưu các th
 /** Volapük (Volapük)
  * @author Smeira
  * @author Malafaya
+ * @author Siebrand
  */
 $messages['vo'] = array(
 	'translate'                         => 'Tradutön',
@@ -5385,8 +5430,10 @@ $messages['vo'] = array(
 	'translate-magic-words'             => 'Vöds magivik',
 	'translate-magic-namespace'         => 'Nems nemaspadas',
 	'translationchanges-change'         => '$1: $2 fa $3',
-	'translate-checks-parameters'       => 'Paramets sököl no pagebons: <strong>$1</strong>',
-	'translate-checks-links'            => 'Yüms sököl binons säkädiks: <strong>$1</strong>',
+	'translate-checks-parameters'       => 'Paramets sököl no pagebons:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links'            => 'Yüms sököl binons säkädiks:
+<strong><nowiki>$1</nowiki></strong>',
 );
 
 /** Walloon (Walon)
@@ -5531,6 +5578,7 @@ $messages['yue'] = array(
 
 /** Simplified Chinese (‪中文(简体)‬)
  * @author Alexsh
+ * @author Siebrand
  */
 $messages['zh-hans'] = array(
 	'translate'                         => '翻译',
@@ -5600,15 +5648,20 @@ $messages['zh-hans'] = array(
 	'translationchanges'                => '翻译更改',
 	'translationchanges-export'         => '{{int:translate-magic-cm-export}}',
 	'translationchanges-change'         => '$1: $2 由$3翻译',
-	'translate-checks-parameters'       => '以下参数没有使用到：<strong>$1</strong>',
-	'translate-checks-balance'          => '括号的数量不一致：<strong>$1</strong>',
-	'translate-checks-links'            => '以下的连结可能有问题：<strong>$1</strong>',
-	'translate-checks-xhtml'            => '请修正以下的标签：<strong>$1</strong>',
+	'translate-checks-parameters'       => '以下参数没有使用到：
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-balance'          => '括号的数量不一致：
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links'            => '以下的连结可能有问题：
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-xhtml'            => '请修正以下的标签：
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural'           => '原始信息使用于<nowiki>{{PLURAL:}}</nowiki>中，并没有用于翻译。',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
  * @author Alexsh
+ * @author Siebrand
  */
 $messages['zh-hant'] = array(
 	'translate'                              => '翻譯',
@@ -5690,7 +5743,8 @@ $messages['zh-hant'] = array(
 	'translationchanges'                     => '翻譯更改',
 	'translationchanges-export'              => '{{int:translate-magic-cm-export}}',
 	'translationchanges-change'              => '$1: $2 由$3翻譯',
-	'translate-checks-parameters'            => '以下參數沒有使用到：<strong>$1</strong>',
+	'translate-checks-parameters'            => '以下參數沒有使用到：
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown'    => '以下參數為未知參數：
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance'               => '括號的數量不一致：<strong>$1</strong>',
