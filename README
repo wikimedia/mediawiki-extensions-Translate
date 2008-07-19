@@ -34,6 +34,9 @@ function customMessageGroups( $id ) {
 
 == Changes in version 10 ==
 
+* 2008-07-17:1
+- simple form to generate graphs
+- scale and count parameters for graphs
 * 2008-07-15:2 new check for unaltered namespaces in pagename messages of MediaWiki
 * 2008-07-15:1
  - improved message checks

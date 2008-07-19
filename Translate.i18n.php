@@ -133,7 +133,25 @@ Changes are not saved until you click save button below.',
 	'translate-rc-translation-filter-filter' => 'Filter out translations',
 	'translate-rc-translation-filter-site' => 'Changes to site messages only',
 
-	'translate-stats-edits' => 'Edits per day',
+	'translationstats' => 'Translation statistics',
+
+	'translate-stats-edits' => 'Edits',
+	'translate-stats-users' => 'Translators',
+
+	'translate-statsf-intro' => 'You can generate simple statistics with this form. All values have upper and lower limits.',
+	'translate-statsf-options' => 'Graph options',
+	'translate-statsf-width' => 'Width in pixels',
+	'translate-statsf-height' => 'Height in pixels',
+	'translate-statsf-days' => 'Time period in days',
+	'translate-statsf-scale' => 'Granularity',
+	'translate-statsf-scale-days' => 'Days',
+	'translate-statsf-scale-hours' => 'Hours',
+	'translate-statsf-count' => 'Measure',
+	'translate-statsf-count-edits' => 'Number of edits',
+	'translate-statsf-count-users' => 'Active translators',
+	'translate-statsf-language' => 'Comma seperated list of language codes',
+	'translate-statsf-group' => 'Comma separated list of group codes',
+	'translate-statsf-submit' => 'Preview',
 );
 
 /** Faeag Rotuma (Faeag Rotuma)
