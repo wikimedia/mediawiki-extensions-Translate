@@ -17,6 +17,13 @@ $aliases['en'] = array(
 	'TranslationStats'   => array( 'TranslationStats' ),
 );
 
+/** Afrikaans (Afrikaans) */
+$aliases['af'] = array(
+	'Translate'          => array( 'Vertaal' ),
+	'Magic'              => array( 'GevorderdeVertaal' ),
+	'TranslationChanges' => array( 'VertaalVeranderinge' ),
+);
+
 /** Arabic (العربية) */
 $aliases['ar'] = array(
 	'Translate'          => array( 'ترجمة' ),
@@ -156,6 +163,7 @@ $aliases['nl'] = array(
 	'Translate'          => array( 'Vertalen' ),
 	'Magic'              => array( 'UitgebreidVertalen', 'VertalenUitgebreid' ),
 	'TranslationChanges' => array( 'Vertalingen' ),
+	'TranslationStats'   => array( 'VertaalStatistieken' ),
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬) */
@@ -163,6 +171,13 @@ $aliases['no'] = array(
 	'Translate'          => array( 'Oversett' ),
 	'Magic'              => array( 'Avansert oversettelse', 'Avansert oversetting', 'Magi' ),
 	'TranslationChanges' => array( 'Oversettelsesendringer', 'Oversettingsendringer' ),
+);
+
+/** Pashto (پښتو) */
+$aliases['ps'] = array(
+	'Translate'          => array( 'ژباړل' ),
+	'Magic'              => array( 'پرمختللې ژباړه، کوډګريز' ),
+	'TranslationChanges' => array( 'دژباړې بدلونونه' ),
 );
 
 /** Portuguese (Português) */
