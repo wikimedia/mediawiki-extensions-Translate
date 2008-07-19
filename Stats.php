@@ -5,7 +5,6 @@ class SpecialTranslationStats extends SpecialPage {
 	public function __construct() {
 		parent::__construct( 'TranslationStats' );
 		$this->includable( true );
-		$this->listed( false );
 	}
 
 	public function execute( $par ) {

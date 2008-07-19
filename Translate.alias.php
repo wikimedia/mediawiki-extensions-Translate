@@ -14,6 +14,7 @@ $aliases['en'] = array(
 	'Translate'          => array( 'Translate' ),
 	'Magic'              => array( 'AdvancedTranslate', 'Magic' ),
 	'TranslationChanges' => array( 'TranslationChanges' ),
+	'TranslationStats'   => array( 'TranslationStats' ),
 );
 
 /** Arabic (العربية) */
