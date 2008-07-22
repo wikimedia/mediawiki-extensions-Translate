@@ -29,6 +29,7 @@ $aliases['ar'] = array(
 	'Translate'          => array( 'ترجمة' ),
 	'Magic'              => array( 'ترجمة متقدمة', 'ماجيك' ),
 	'TranslationChanges' => array( 'تغييرات الترجمة' ),
+	'TranslationStats'   => array( 'إحصاءات الترجمة' ),
 );
 
 /** Egyptian Spoken Arabic (مصرى) */
@@ -158,6 +159,11 @@ $aliases['myv'] = array(
 	'TranslationChanges' => array( 'ЙутавтовксПолавтомат' ),
 );
 
+/** Nahuatl (Nahuatl) */
+$aliases['nah'] = array(
+	'Translate' => array( 'Tlacuepāz' ),
+);
+
 /** Dutch (Nederlands) */
 $aliases['nl'] = array(
 	'Translate'          => array( 'Vertalen' ),
@@ -185,6 +191,15 @@ $aliases['pt'] = array(
 	'Translate'          => array( 'Traduzir' ),
 	'Magic'              => array( 'Tradução avançada' ),
 	'TranslationChanges' => array( 'Alterações em traduções' ),
+	'TranslationStats'   => array( 'Estado da tradução', 'Status da tradução' ),
+);
+
+/** Brazilian Portuguese (Português do Brasil) */
+$aliases['pt-br'] = array(
+	'Translate'          => array( 'Traduzir' ),
+	'Magic'              => array( 'Tradução avançada' ),
+	'TranslationChanges' => array( 'Alterações em traduções' ),
+	'TranslationStats'   => array( 'Estado da tradução', 'Status da tradução' ),
 );
 
 /** Swedish (Svenska) */
@@ -192,6 +207,7 @@ $aliases['sv'] = array(
 	'Translate'          => array( 'Översätt' ),
 	'Magic'              => array( 'Avancerad översättning' ),
 	'TranslationChanges' => array( 'Översättningsändringar' ),
+	'TranslationStats'   => array( 'Översättningsstatistik' ),
 );
 
 /** Telugu (తెలుగు) */
