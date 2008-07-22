@@ -247,6 +247,9 @@ $messages['af'] = array(
 	'translationchanges'                => 'Vertaling wysigings',
 	'translationchanges-export'         => 'eksporteer',
 	'translate-stats-edits'             => 'Wysigings per dag:',
+	'translate-statsf-scale-days'       => 'Dae',
+	'translate-statsf-scale-hours'      => 'Ure',
+	'translate-statsf-submit'           => 'Voorskou',
 );
 
 /** Aragonese (Aragonés)
@@ -383,18 +386,18 @@ $messages['ar'] = array(
 	'translate-magic-pagename'               => 'ترجمة الميدياويكي الممتدة',
 	'translate-magic-help'                   => 'يمكنك ترجمة أسماء الصفحات الخاصة، الكلمات السحرية، أسماء الواجهات وأسماء النطاقات.
 
-في الكلمات السحرية تحتاج إلى إضافة الترجمة الإنجليزية وإلا فإنها ستتوقف عن العمل.
+في الكلمات السحرية تحتاج إلى إضافة الترجمات الإنجليزية أو فستتوقف عن العمل.
 أيضا اترك المدخل الأول (0 أو 1) كما هو.
 
-أسماء الصفحات الخاصة والكلمات السحرية يمكن أن يكون لهم ترجمات متعددة.
-الترجمات مفصولة بفاصلة(,).
-أسماء الواجهات والنطاقات يمكن أن يكون لها ترجمة واحدة.
+أسماء الصفحات الخاصة والكلمات السحرية يمكن أن يكون لها ترجمات متعددة.
+الترجمات تفصل بواسطة فاصلة (,).
+أسماء الواجهات والنطاقات يمكن أن يكون لها ترجمة واحدة فقط.
 
-في ترجمة النطاقات <tt>$1 talk</tt> خاص. <tt>$1</tt> تستبدل باسم الموقع (على سبيل المثال <tt>{{SITENAME}} talk</tt>. 
+في ترجمات النطاقات <tt>$1 talk</tt> خاص. <tt>$1</tt> يتم استبدالها باسم الموقع (على سبيل المثال <tt>{{SITENAME}} talk</tt>).
 لو أنه من غير الممكن في لغتك صياغة تعبير صحيح بدون تغيير اسم الموقع، من فضلك اتصل بمطور.
 
 تحتاج إلى أن تكون في مجموعة المترجمين لحفظ التغييرات.
-التغييرات لن يتم حفظها حتى نقر زر الحفظ بالأسفل.',
+التغييرات لن يتم حفظها حتى تضغط زر الحفظ بالأسفل.',
 	'translate-magic-module'                 => 'النوع:',
 	'translate-magic-submit'                 => 'إيجاد',
 	'translate-magic-cm-export'              => 'تصدير',
@@ -423,6 +426,7 @@ $messages['ar'] = array(
 	'translate-checks-xhtml'                 => 'من فضلك استبدل {{PLURAL:$2|بالوسم التالي|بالوسوم التالية}} الوسوم الصحيحة:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural'                => 'التعريف يستخدم <nowiki>{{PLURAL:}}</nowiki> لكن الترجمة لا.',
+	'translate-checks-pagename'              => 'النطاق تغير من التعريف',
 	'tog-translate-nonewsletter'             => 'لا ترسل لي إخطارات بريدية بالبريد الإلكتروني (متعلقة فقط بالمستخدمين الذين يمتلكون عنوان بريد الإلكتروني مؤكد)',
 	'right-translate'                        => 'التعديل باستخدام واجهة المترجم',
 	'translate-rc-translation-filter'        => 'فلتر الترجمات:',
@@ -430,7 +434,23 @@ $messages['ar'] = array(
 	'translate-rc-translation-filter-only'   => 'اعرض الترجمات فقط',
 	'translate-rc-translation-filter-filter' => 'فلتر الترجمات',
 	'translate-rc-translation-filter-site'   => 'التغييرات لرسائل الموقع فقط',
+	'translationstats'                       => 'إحصاءات الترجمة',
 	'translate-stats-edits'                  => 'تعديل يوميا',
+	'translate-stats-users'                  => 'المترجمون',
+	'translate-statsf-intro'                 => 'يمكنك توليد إحصاءات بسيطة بهذه الاستمارة. كل القيم لها حدود عليا وسفلى.',
+	'translate-statsf-options'               => 'خيارات الرسم',
+	'translate-statsf-width'                 => 'العرض بالبكسل',
+	'translate-statsf-height'                => 'الارتفاع بالبكسل',
+	'translate-statsf-days'                  => 'فترة زمنية باليوم',
+	'translate-statsf-scale'                 => 'التدريج',
+	'translate-statsf-scale-days'            => 'أيام',
+	'translate-statsf-scale-hours'           => 'ساعات',
+	'translate-statsf-count'                 => 'قياس',
+	'translate-statsf-count-edits'           => 'عدد التعديلات',
+	'translate-statsf-count-users'           => 'المترجمون النشطون',
+	'translate-statsf-language'              => 'فاصلة فصلت قائمة أكواد اللغات',
+	'translate-statsf-group'                 => 'فاصلة فصلت قائمة أكواد المجموعات',
+	'translate-statsf-submit'                => 'عرض مسبق',
 );
 
 /** Araucanian (Mapudungun)
@@ -657,10 +677,13 @@ $messages['bg'] = array(
 	'translationchanges'                     => 'Промени в преводите',
 	'translationchanges-export'              => 'изнасяне',
 	'translationchanges-change'              => '$1: $2 от $3',
-	'translate-checks-parameters'            => 'Следните параметри не се използват: <strong>$1</strong>',
-	'translate-checks-balance'               => 'Съобщението съдържа необичаен брой скоби: <strong>$1</strong>',
-	'translate-checks-links'                 => 'Следните препратки са проблемни: <strong>$1</strong>',
-	'translate-checks-xhtml'                 => 'Необходимо е заместване на посочените етикети с правилни: <strong>$1</strong>',
+	'translate-checks-parameters'            => '{{PLURAL:$2|Следният параметър не се използва|Следните параметри не се използват}}: <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters-unknown'    => '{{PLURAL:$2|Следният параметър е непознат|Следните параметри са непознати}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-balance'               => 'Съобщението съдържа необичаен брой {{PLURAL:$2|скоби|скоби}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links'                 => '{{PLURAL:$2|Следната препратка е проблемна|Следните $2 препратки са проблемни}}: <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-xhtml'                 => 'Необходимо е заместване на {{PLURAL:$2|посочения етикет с правилен|посочените етикети с правилни}}: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural'                => 'Оригиналното съобщение използва <nowiki>{{PLURAL:}}</nowiki>, а преводът — не.',
 	'tog-translate-nonewsletter'             => 'Без получаване на бюлетин по е-поща (за потребители с потвърден адрес за е-поща)',
 	'right-translate'                        => 'Редактиране чрез интерфейса за превод',
@@ -668,6 +691,22 @@ $messages['bg'] = array(
 	'translate-rc-translation-filter-no'     => 'Без действие',
 	'translate-rc-translation-filter-only'   => 'Само на преводите',
 	'translate-rc-translation-filter-filter' => 'Филтриране на преводите',
+	'translate-rc-translation-filter-site'   => 'Промени само в съобщенията за сайта',
+	'translationstats'                       => 'Статистики за преводите',
+	'translate-stats-edits'                  => 'Редакции',
+	'translate-stats-users'                  => 'Преводачи',
+	'translate-statsf-intro'                 => 'Формулярът по-долу слуижи за създаване на статистика. Всички възможности имат минимални и максимални стойности.',
+	'translate-statsf-options'               => 'Графични настройки',
+	'translate-statsf-width'                 => 'Ширина в пиксели',
+	'translate-statsf-height'                => 'Височина в пиксели',
+	'translate-statsf-days'                  => 'Времеви период в дни',
+	'translate-statsf-scale-days'            => 'Дни',
+	'translate-statsf-scale-hours'           => 'Часове',
+	'translate-statsf-count-edits'           => 'Брой редакции',
+	'translate-statsf-count-users'           => 'Активни преводачи',
+	'translate-statsf-language'              => 'Списък с езикови кодове, разделени със запетаи',
+	'translate-statsf-group'                 => 'Списък с групови кодове, разделени със запетаи',
+	'translate-statsf-submit'                => 'Преглед',
 );
 
 /** Bengali (বাংলা)
@@ -1674,6 +1713,7 @@ Vous devez appartenir au groupe des traducteurs pour sauvegarder les changements
 	'translationstats'                       => 'Statistiques de traduction',
 	'translate-stats-edits'                  => 'Éditions par jour',
 	'translate-stats-users'                  => 'Traducteurs',
+	'translate-statsf-intro'                 => 'Vous pouvez créer des statistiques simples avec ce formulaire. Toutes les valeurs ont des limites maximales et minimales.',
 	'translate-statsf-options'               => 'Options du graphique',
 	'translate-statsf-width'                 => 'Largeur en pixels',
 	'translate-statsf-height'                => 'Hauteur en pixels',
@@ -1681,6 +1721,7 @@ Vous devez appartenir au groupe des traducteurs pour sauvegarder les changements
 	'translate-statsf-scale'                 => 'Granularité',
 	'translate-statsf-scale-days'            => 'Jours',
 	'translate-statsf-scale-hours'           => 'Heures',
+	'translate-statsf-count'                 => 'Mesure',
 	'translate-statsf-count-edits'           => "Nombre d'éditions",
 	'translate-statsf-count-users'           => 'Traducteurs actifs',
 	'translate-statsf-language'              => 'Liste de codes de langues, séparés de virgules',
@@ -1896,7 +1937,23 @@ Nas traducións dos espazos de nomes, <tt>$1 talk</tt> é especial. <tt>$1</tt> 
 	'translate-rc-translation-filter-only'   => 'Amosar só as traducións',
 	'translate-rc-translation-filter-filter' => 'Amosar o que non sexan traducións',
 	'translate-rc-translation-filter-site'   => 'Amosar só os cambios nas mensaxes do sitio',
+	'translationstats'                       => 'Estatísticas das traducións',
 	'translate-stats-edits'                  => 'Edicións ao día',
+	'translate-stats-users'                  => 'Tradutores',
+	'translate-statsf-intro'                 => 'Pode xerar estatísticas de forma sinxela con este formulario. Todos os valores teñen límites máximos e mínimos.',
+	'translate-statsf-options'               => 'Opcións da gráfica',
+	'translate-statsf-width'                 => 'Ancho en píxeles',
+	'translate-statsf-height'                => 'Altura en píxeles',
+	'translate-statsf-days'                  => 'Período de tempo en días',
+	'translate-statsf-scale'                 => 'Escala',
+	'translate-statsf-scale-days'            => 'Días',
+	'translate-statsf-scale-hours'           => 'Horas',
+	'translate-statsf-count'                 => 'Medida',
+	'translate-statsf-count-edits'           => 'Número de edicións',
+	'translate-statsf-count-users'           => 'Tradutores activos',
+	'translate-statsf-language'              => 'Lista dos códigos de lingua (separados por comas)',
+	'translate-statsf-group'                 => 'Lista dos códigos dos grupos de mensaxes (separados por comas)',
+	'translate-statsf-submit'                => 'Vista previa',
 );
 
 /** Manx (Gaelg)
@@ -3741,6 +3798,16 @@ $messages['mt'] = array(
 	'translate-task-optional'     => 'Uri messaġġi opzjonali minn',
 );
 
+/** Nahuatl (Nahuatl)
+ * @author Fluence
+ */
+$messages['nah'] = array(
+	'translate-page-language' => 'Tlahtōlli',
+	'translate-next'          => 'Niman zāzanilli',
+	'translate-prev'          => 'Achto zāzanilli',
+	'translate-magic-cm-save' => 'Ticpiyāz',
+);
+
 /** Neapolitan (Nnapulitano)
  * @author SPQRobin
  */
@@ -4377,9 +4444,9 @@ As alterações não serão salvas até que você clique no botão de salvar.',
 	'translationchanges'                => 'Alterações às traduções',
 	'translationchanges-export'         => 'exportar',
 	'translationchanges-change'         => '$1: $2 por $3',
-	'translate-checks-parameters'       => 'Os seguintes parâmetros não são usados: <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-balance'          => 'Há um número ímpar de parênteses: <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links'            => 'Os seguintes links possuem problemas: <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters'       => '{{PLURAL:$2|O seguinte parâmetro não é|Os seguintes parâmetros não são usados}}: <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-balance'          => 'Há {{PLURAL:$2|um parênteses irregular|$2 parênteses irregulares}}: <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links'            => '{{PLURAL:$2|O seguinte link possui|Os $2 seguintes links possuem}} problemas: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml'            => 'Por gentileza, troque {{PLURAL:$2|a seguinte tag pela correta|as seguintes tags pelas corretas}}:
 <strong>$1</strong>',
 	'translate-checks-plural'           => 'A definição usa <nowiki>{{PLURAL:}}</nowiki>, mas a tradução não.',
@@ -4412,7 +4479,14 @@ $messages['rm'] = array(
  * @author KlaudiuMihaila
  */
 $messages['ro'] = array(
-	'translate' => 'Traducere',
+	'translate'                  => 'Traducere',
+	'translate-edit'             => 'modifică',
+	'translate-history'          => 'istoric',
+	'translate-page-group'       => 'Grup',
+	'translate-page-language'    => 'Limbă',
+	'translate-page-edit'        => 'modifică',
+	'translate-magic-cm-comment' => 'Comentariu:',
+	'translate-magic-cm-save'    => 'Salvează',
 );
 
 /** Russian (Русский)
@@ -4506,7 +4580,7 @@ $messages['ru'] = array(
 	'right-translate'                        => 'правка с использованием интерфейса перевода',
 	'translate-rc-translation-filter-only'   => 'Показать только переводы',
 	'translate-rc-translation-filter-filter' => 'Скрыть переводы',
-	'translate-stats-edits'                  => 'Правок в день',
+	'translate-stats-edits'                  => 'Правок',
 );
 
 /** Yakut (Саха тыла)
@@ -4623,7 +4697,23 @@ Aby ste mohli ukladať zmeny, musíte byť členom skupiny translators. Zmeny sa
 	'translate-rc-translation-filter-only'   => 'Iba zobraziť preklady',
 	'translate-rc-translation-filter-filter' => 'Vyfiltrovať preklady',
 	'translate-rc-translation-filter-site'   => 'Iba zmeny oznamu lokality',
+	'translationstats'                       => 'Štatistiky prekladov',
 	'translate-stats-edits'                  => 'Úprav za deň',
+	'translate-stats-users'                  => 'Prekladatelia',
+	'translate-statsf-intro'                 => 'Pomocou tohto formulára môžete tvoriť jednoduché štatistiky. Všetky hodnoty majú hornú a spodnú hranicu.',
+	'translate-statsf-options'               => 'Možnosti grafu',
+	'translate-statsf-width'                 => 'Šírka v pixeloch',
+	'translate-statsf-height'                => 'Výška v pixeloch',
+	'translate-statsf-days'                  => 'Časový interval v dňoch',
+	'translate-statsf-scale'                 => 'Granularita',
+	'translate-statsf-scale-days'            => 'Dni',
+	'translate-statsf-scale-hours'           => 'Hodiny',
+	'translate-statsf-count'                 => 'Meranie',
+	'translate-statsf-count-edits'           => 'Počet úprav',
+	'translate-statsf-count-users'           => 'Aktívni prekladatelia',
+	'translate-statsf-language'              => 'Čiarkami oddelený zoznam kódov jazykov',
+	'translate-statsf-group'                 => 'Čiarkami oddelený zoznam kódov skupín',
+	'translate-statsf-submit'                => 'Náhľad',
 );
 
 /** Somali (Soomaaliga)
@@ -4885,10 +4975,18 @@ För att kunna spara ändringar så behöver du tillhöra översättargruppen. �
 	'translate-stats-edits'                  => 'Redigeringar per dag',
 	'translate-stats-users'                  => 'Översättare',
 	'translate-statsf-intro'                 => 'Du kan generera enkel statistik genom detta formulär. Alla värden ska ha övre och nedre gränser.',
+	'translate-statsf-options'               => 'Diagramalternativ',
+	'translate-statsf-width'                 => 'Bredd i pixlar',
+	'translate-statsf-height'                => 'Höjd i pixlar',
+	'translate-statsf-days'                  => 'Tidsperiod i dagar',
+	'translate-statsf-scale'                 => 'Kornighet',
 	'translate-statsf-scale-days'            => 'Dagar',
 	'translate-statsf-scale-hours'           => 'Timmar',
+	'translate-statsf-count'                 => 'Storlek',
 	'translate-statsf-count-edits'           => 'Antal redigeringar',
 	'translate-statsf-count-users'           => 'Aktiva översättare',
+	'translate-statsf-language'              => 'Kommaseparerad lista över språkkoder',
+	'translate-statsf-group'                 => 'Kommaseparerad lista över gruppkoder',
 	'translate-statsf-submit'                => 'Förhandsgranska',
 );
 
