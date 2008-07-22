@@ -386,7 +386,6 @@ class AllFlaggedRevsExtensionsGroup extends AllMediawikiExtensionsGroup {
 
 	protected $flaggedrevsextensions = array(
 		'ext-flaggedrevs-flaggedrevs',
-		'ext-flaggedrevs-depreciationoversight',
 		'ext-flaggedrevs-flaggedrevsaliases',
 		'ext-flaggedrevs-oldreviewedpages',
 		'ext-flaggedrevs-qualityoversight',

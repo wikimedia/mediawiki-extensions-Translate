@@ -232,10 +232,6 @@ id = ext-flaggedrevs-flaggedrevs
 file = FlaggedRevs/language/FlaggedRevs.i18n.php
 optional = revreview-toggle, revreview-ak-review, accesskey-ca-current, accesskey-ca-stable
 
-Flagged Revisions - Depreciation Oversight
-id = ext-flaggedrevs-depreciationoversight
-file = FlaggedRevs/language/DepreciationOversight.i18n.php
-
 Flagged Revisions - Flagged Revs Aliases
 id = ext-flaggedrevs-flaggedrevsaliases
 file = FlaggedRevs/language/FlaggedRevsAliases.i18n.php
