@@ -389,6 +389,8 @@ class AllFlaggedRevsExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-flaggedrevs-flaggedrevsaliases',
 		'ext-flaggedrevs-oldreviewedpages',
 		'ext-flaggedrevs-qualityoversight',
+		'ext-flaggedrevs-problempages',
+		'ext-flaggedrevs-ratinghistory',
 		'ext-flaggedrevs-reviewedpages',
 		'ext-flaggedrevs-stabilization',
 		'ext-flaggedrevs-stablepages',

@@ -244,6 +244,14 @@ Flagged Revisions - Quality Oversight
 id = ext-flaggedrevs-qualityoversight
 file = FlaggedRevs/language/QualityOversight.i18n.php
 
+Flagged Revisions - Problem Pages
+id = ext-flaggedrevs-problempages
+file = FlaggedRevs/language/ProblemPages.i18n.php
+
+Flagged Revisions - Rating History
+id = ext-flaggedrevs-ratinghistory
+file = FlaggedRevs/language/RatingHistory.i18n.php
+
 Flagged Revisions - Reviewed Pages
 id = ext-flaggedrevs-reviewedpages
 file = FlaggedRevs/language/ReviewedPages.i18n.php
