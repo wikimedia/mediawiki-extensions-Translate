@@ -3802,10 +3802,22 @@ $messages['mt'] = array(
  * @author Fluence
  */
 $messages['nah'] = array(
-	'translate-page-language' => 'Tlahtōlli',
-	'translate-next'          => 'Niman zāzanilli',
-	'translate-prev'          => 'Achto zāzanilli',
-	'translate-magic-cm-save' => 'Ticpiyāz',
+	'translate-edit'                    => 'ticpatlāz',
+	'translate-talk'                    => 'tēixnāmiquiliztli',
+	'translate-history'                 => 'tlahcuilōlloh',
+	'translate-page-task'               => 'Niquiēlēhuia',
+	'translate-page-group'              => 'Olōlli',
+	'translate-page-language'           => 'Tlahtōlli',
+	'translate-next'                    => 'Niman zāzanilli',
+	'translate-prev'                    => 'Achto zāzanilli',
+	'translate-page-description-legend' => 'Olōltechopa',
+	'translate-page-edit'               => 'ticpatlāz',
+	'translate-edit-in-other-languages' => 'Tlahcuilōltzin occequīntīn tlahtōlcopa',
+	'translate-edit-goto-prev'          => 'Ticpatlāz niman tlahcuilōltzin',
+	'translate-edit-goto-next'          => 'Ticpatlāz achtopa tlahcuilōltzin',
+	'translate-magic-cm-current'        => 'Āxcān',
+	'translate-magic-cm-save'           => 'Ticpiyāz',
+	'translate-stats-edits'             => 'Tlapatlaliztli',
 );
 
 /** Neapolitan (Nnapulitano)
