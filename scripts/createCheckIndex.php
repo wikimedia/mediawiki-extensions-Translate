@@ -52,7 +52,7 @@ foreach ( $groups as $g ) {
 	}
 
 	// Initialise messages, using unique definitions if appropriate
-	$collection_skel = $g->initCollection( 'en', $g->isMeta() );
+	$collection_skel = $g->initCollection( 'en', true );
 	if ( !count($collection_skel) ) continue;
 
 	STDOUT( "Working with $id: ", $id );

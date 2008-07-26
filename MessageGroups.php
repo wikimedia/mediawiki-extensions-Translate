@@ -122,7 +122,7 @@ abstract class MessageGroup {
 	 * share with each other.
 	 */
 	public function getUniqueDefinitions() {
-		return array();
+		return $this->meta ? array() : $this->getDefinitions();
 	}
 
 	/**
@@ -249,6 +249,8 @@ class CoreMessageGroup extends MessageGroup {
 	public function getMetaDataPrefix() { return $this->metaDataPrefix; }
 	public function setMetaDataPrefix( $value ) { $this->metaDataPrefix = $value; }
 
+	public $parentId = null;
+
 	public static function factory( $label, $id ) {
 		$group = new CoreMessageGroup;
 		$group->setLabel( $label );
@@ -257,8 +259,8 @@ class CoreMessageGroup extends MessageGroup {
 	}
 
 	public function getUniqueDefinitions() {
-		if ($this->meta) {
-			$parent = new CoreMessageGroup;
+		if ($this->parentId) {
+			$parent = MessageGroups::getGroup( $this->parentId );
 			$parentDefs = $parent->getDefinitions();
 			$ourDefs = $this->getDefinitions();
 
@@ -266,9 +268,10 @@ class CoreMessageGroup extends MessageGroup {
 			foreach ( array_keys($parentDefs) as $key ) {
 				unset( $ourDefs[$key] );
 			}
+
 			return $ourDefs;
 		}
-		return false;
+		return $this->getDefinitions();
 	}
 
 	public function getMessageFile( $code ) {

@@ -33,6 +33,7 @@ function customMessageGroups( $id ) {
 </code>
 
 == Changes in version 10 ==
+* 2008-07-26:2 proper parents for branched messages
 * 2008-07-26:1
  - improved speed and memory usage
  - experimental <translate> tag for wikipage translation
