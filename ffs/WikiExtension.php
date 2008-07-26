@@ -19,7 +19,7 @@ class WikiExtensionFormatReader extends WikiFormatReader {
 
 		$headerP = "
 		.*? # Ungreedily eat header
-		\\$$var \s* = \s* array\(\);";
+		\\$$var \s* = \s* array \s* \( \s* \) \s*;";
 		/*
 		* x to have nice syntax
 		* u for utf-8
