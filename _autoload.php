@@ -19,6 +19,7 @@ $wgAutoloadClasses['HTMLSelector'] = $dir . 'TranslateUtils.php';
 
 $wgAutoloadClasses['MessageChecks'] = $dir . 'MessageChecks.php';
 $wgAutoloadClasses['MessageGroups'] = $dir . 'MessageGroups.php';
+$wgAutoloadClasses['WikiPageMessageGroup'] = $dir . 'MessageGroups.php';
 $wgAutoloadClasses['AliasMessageGroup'] = $dir . 'MessageGroups.php';
 
 $wgAutoloadClasses['MessageCollection'] = $dir . 'Message.php';
@@ -67,3 +68,6 @@ $wgAutoloadClasses['PremadeMediawikiExtensionGroups'] = $dir . 'groups/MediaWiki
 $wgAutoloadClasses['FreeColMessageGroup'] = $dir . 'groups/FreeCol.php';
 
 
+# tag
+$wgAutoloadClasses['TranslateTag'] = $dir . 'tag/Tag.php';
+$wgAutoloadClasses['FuzzyJob'] = $dir . 'tag/FuzzyJob.php';

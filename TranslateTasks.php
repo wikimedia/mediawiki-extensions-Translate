@@ -359,9 +359,6 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 			# CASE3: optional messages; accept only if different
 			if ( $m->optional ) $flags[] = 'optional';
 
-			# CASE4: don't export non-translations unless translated in wiki
-			if( !$m->pageExists && $translation === $m->definition ) $translation = '';
-
 			# Remove fuzzy markings before export
 			if ( strpos( $translation, TRANSLATE_FUZZY ) !== false ) {
 				$translation = str_replace( TRANSLATE_FUZZY, '', $translation );

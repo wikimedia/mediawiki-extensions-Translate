@@ -152,6 +152,18 @@ Changes are not saved until you click save button below.',
 	'translate-statsf-language' => 'Comma seperated list of language codes',
 	'translate-statsf-group' => 'Comma separated list of group codes',
 	'translate-statsf-submit' => 'Preview',
+
+	'translate-tag-category' => 'Translatable pages',
+	'translate-tag-page-desc' => 'Translation of the wiki page [[:$1]].',
+
+	'translate-tag-translate-link-desc' => 'Translate this page',
+	'translate-tag-legend' => 'Legend:',
+	'translate-tag-legend-fallback' => 'Translation in other language',
+	'translate-tag-legend-fuzzy' => 'Outdated translation',
+
+	'translate-tag-fuzzy-comment' => 'Definition changed by [[User:$1]] in revision $2.',
+	'translate-tag-fuzzy-reason' => 'Definition changed by user $1 with comment "$3" in $2.',
+
 );
 
 /** Faeag Rotuma (Faeag Rotuma)

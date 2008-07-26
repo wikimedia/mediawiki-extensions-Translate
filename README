@@ -33,7 +33,9 @@ function customMessageGroups( $id ) {
 </code>
 
 == Changes in version 10 ==
-
+* 2008-07-26:1
+ - improved speed and memory usage
+ - experimental <translate> tag for wikipage translation
 * 2008-07-17:1
 - simple form to generate graphs
 - scale and count parameters for graphs

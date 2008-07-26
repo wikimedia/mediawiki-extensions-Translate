@@ -12,11 +12,9 @@ class TranslateEditAddons {
 	const MSG = 'translate-edit-';
 
 	static function addNavigation( &$outputpage, &$text ) {
-		global $wgTranslateMessageNamespaces, $wgUser, $wgTitle;
+		global $wgUser, $wgTitle;
 		$ns = $wgTitle->getNamespace();
-		if( !in_array($ns, $wgTranslateMessageNamespaces) ) return true;
-
-		list( $key, $code ) = self::figureMessage( $wgTitle);
+		list( $key, $code ) = self::figureMessage($wgTitle);
 
 		$group = self::getMessageGroup( $ns, $key );
 		if ( $group === null ) return true;
@@ -75,10 +73,7 @@ class TranslateEditAddons {
 	}
 
 	static function addTools( $object ) {
-		global $wgTranslateMessageNamespaces;
-		if( in_array($object->mTitle->getNamespace(), $wgTranslateMessageNamespaces) ) {
-			$object->editFormTextTop .= self::editBoxes( $object );
-		}
+		$object->editFormTextTop .= self::editBoxes( $object );
 		return true;
 	}
 
@@ -134,14 +129,11 @@ class TranslateEditAddons {
 	* @return Array of the message and the language
 	*/
 	private static function figureMessage( $title ) {
-		global $wgContLanguageCode, $wgContLang;
-		$pieces = explode('/', $wgContLang->lcfirst($title->getDBkey()), 3);
-
-		$key = $pieces[0];
-
-		# Language the user is translating to
-		$langCode = isset($pieces[1]) ? $pieces[1] : $wgContLanguageCode;
-		return array( $key, $langCode );
+		$text = $title->getDBkey();
+		$pos = strrpos( $text, '/' );
+		$code = substr( $text, $pos+1 );
+		$key = substr( $text, 0, $pos );
+		return array( $key, $code );
 	}
 
 	/**
@@ -170,7 +162,7 @@ class TranslateEditAddons {
 
 	private static function editBoxes( $object ) {
 		wfLoadExtensionMessages( 'Translate' );
-		global $wgTranslateDocumentationLanguageCode, $wgOut;
+		global $wgTranslateDocumentationLanguageCode, $wgOut, $wgTranslateMessageNamespaces;
 
 		list( $key, $code ) = self::figureMessage( $object->mTitle );
 
@@ -211,7 +203,7 @@ class TranslateEditAddons {
 				$info = $group->getMessage( $key, $wgTranslateDocumentationLanguageCode );
 			}
 			$class = 'mw-sp-translate-edit-info';
-			if ( $info === null ) {
+			if ( $info === null && in_array($nsMain, $wgTranslateMessageNamespaces) ) {
 				$info = wfMsg( self::MSG . 'no-information' );
 				$class = 'mw-sp-translate-edit-noinfo';
 			}
@@ -227,7 +219,7 @@ class TranslateEditAddons {
 
 			$class .= ' mw-sp-translate-message-documentation';
 
-			$boxes[] = TranslateUtils::fieldset(
+			if ($info) $boxes[] = TranslateUtils::fieldset(
 				wfMsgHtml( self::MSG . 'information', $edit ), $wgOut->parse( $info ), array( 'class' => $class )
 			);
 		}

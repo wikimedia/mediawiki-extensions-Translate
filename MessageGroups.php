@@ -216,7 +216,6 @@ abstract class MessageGroup {
 	}
 
 	public function fillCollection( MessageCollection $collection ) {
-		TranslateUtils::fillExistence( $collection, $this->namespaces );
 		TranslateUtils::fillContents( $collection, $this->namespaces );
 		$this->fill( $collection );
 	}
@@ -566,6 +565,49 @@ class WikiMessageGroup extends MessageGroup {
 	}
 }
 
+
+class WikiPageMessageGroup extends WikiMessageGroup {
+	public function __construct( $id, $source ) {
+		$this->id = $id;
+		$title = Title::newFromText( $source );
+		if ( !$title ) {
+			throw new MWException( 'Invalid title' );
+		}
+		$this->title = $title;
+		$this->namespaces = array( $title->getNamespace(), $title->getNamespace() +1 );
+		
+	}
+
+	public function getDefinitions() {
+		return TranslateTag::parseSectionDefinitions( $this->title, &$this->namespaces );
+	}
+
+	public function load( $code ) {
+		if ( $code === 'en' ) return $this->getDefinitions();
+	}
+
+	/**
+	 * Returns of stored translation of message specified by the $key in language
+	 * code $code.
+	 *
+	 * @param $key Key of the message.
+	 * @param $code Language code.
+	 * @return Stored translation or null.
+	 */
+	public function getMessage( $key, $code ) {
+		if ( $code === 'en' ) {
+			$stuff = $this->load( 'en' );
+			return $stuff[$key];
+		}
+		$title = Title::makeTitleSafe( $this->namespaces[0], "$key/$code" );
+		$rev = Revision::newFromTitle( $title );
+		if ( !$rev ) return null;
+		return $rev->getText();
+	}
+
+}
+
+
 class MessageGroups {
 	public static function init() {
 		static $loaded = false;
@@ -575,6 +617,18 @@ class MessageGroups {
 		if ($wgTranslateAddMWExtensionGroups) {
 			$a = new PremadeMediawikiExtensionGroups;
 			$a->addAll();
+		}
+
+		global $wgTranslateCategory, $wgTranslateCC;
+		wfLoadExtensionMessages( 'Translate' );
+		$cat = Category::newFromName( wfMsgForContent( 'translate-tag-category' ) );
+		$titles = $cat->getMemberNames();
+		foreach ( $titles as $t ) {
+			$id = "page|$t";
+			$wgTranslateCC[$id] = new WikiPageMessageGroup( $id, $t );
+			$wgTranslateCC[$id]->setLabel( $t );
+			$wgTranslateCC[$id]->setDescription( wfMsgNoTrans( 'translate-tag-page-desc', $t ) );
+
 		}
 
 		global $wgTranslateCC;
@@ -600,6 +654,9 @@ class MessageGroups {
 				} else {
 					return $wgTranslateCC[$id];
 				}
+			} elseif( strpos( $id, 'page|' ) === 0 ) {
+				list( , $title ) = explode( '|', $id, 2 );
+				return new WikiPageMessageGroup( $id, $title );
 			} else {
 				return null;
 			}
