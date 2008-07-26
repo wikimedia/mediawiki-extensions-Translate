@@ -23,7 +23,6 @@ class TranslateUtils {
 
 		// Cache some amount of titles for speed
 		static $cache = array();
-		#if ( count($cache)>5000 ) $cache = array();
 		if ( !isset($cache[$message]) ) {
 			$cache[$message] = $wgContLang->ucfirst($message);
 		}
@@ -31,61 +30,7 @@ class TranslateUtils {
 	}
 
 	/**
-	 * Fills the page/talk exists bools according to their existence in the
-	 * database.
-	 *
-	 * @param $messages MessageCollection
-	 * @param $namespaces Array: two-item 1-d array with namespace numbers
-	 */
-	public static function fillExistence( MessageCollection $messages,
-		array $namespaces ) {
-		wfMemIn( __METHOD__ ); wfProfileIn( __METHOD__ );
-
-		// Filter the titles so that we can find the respective pages from the db
-		$code = $messages->code;
-		$titles = array();
-		foreach ( $messages->keys() as $key ) {
-			$titles[] = self::title( $key, $code );
-		}
-
-		// Quick return if nothing to search
-		if ( !count($titles) ) return;
-
-		// Fetch from database, we will get existing titles as the result
-		$dbr = wfGetDB( DB_SLAVE );
-		$rows = $dbr->select(
-			'page',
-			array( 'page_namespace', 'page_title' ),
-			array(
-				'page_namespace' => $namespaces,
-				'page_title'     => $titles,
-			),
-			__METHOD__
-		);
-
-		// Now store the pages we found...
-		foreach ( $rows as $row ) {
-			if ( $row->page_namespace == $namespaces[0] ) {
-				$pages[$row->page_title] = true;
-			} elseif ( $row->page_namespace == $namespaces[1]) {
-				$talks[$row->page_title] = true;
-			}
-		}
-		$rows->free();
-
-		// ... and loop again to populate the collection
-		foreach ( $messages->keys() as $key ) {
-			$messages[$key]->pageExists = isset( $pages[self::title( $key, $code )] );
-			$messages[$key]->talkExists = isset( $talks[self::title( $key, $code )] );
-		}
-
-		wfProfileOut( __METHOD__ ); wfMemOut( __METHOD__ );
-	}
-
-	/**
 	 * Fills the actual translation from database, if any.
-	 * TranslateUtils::fillExistence must be called before this to populate page
-	 * existences.
 	 *
 	 * @param $messages MessageCollection
 	 * @param $namespaces Array: two-item 1-d array with namespace numbers
@@ -96,10 +41,7 @@ class TranslateUtils {
 
 		$titles = array();
 		foreach ( $messages->keys() as $key ) {
-			// Only fetch messages for pages that exists
-			if ( $messages[$key]->pageExists ) {
-				$titles[] = self::title( $key, $messages->code );
-			}
+			$titles[] = self::title( $key, $messages->code );
 		}
 
 		if ( !count($titles) ) return;
@@ -219,14 +161,12 @@ class TranslateUtils {
 	public static function makeListing( MessageCollection $messages, $group,
 		$review = false, array $namespaces ) {
 
-		wfMemIn( __METHOD__ ); wfProfileIn( __METHOD__ );
-
 		global $wgUser;
 		$sk = $wgUser->getSkin();
 		wfLoadExtensionMessages( 'Translate' );
 
 		$uimsg = array();
-		foreach ( array( 'talk', 'edit', 'history', 'optional', 'delete' ) as $msg ) {
+		foreach ( array( 'edit', 'optional' ) as $msg ) {
 			$uimsg[$msg] = wfMsgHtml( self::MSG . $msg );
 		}
 
@@ -234,45 +174,32 @@ class TranslateUtils {
 
 		foreach( $messages as $key => $m ) {
 
-			$title = self::title( $key, $messages->code );
 			$tools = array();
 
-			$page['object'] = Title::makeTitle( $namespaces[0], $title );
-			$talk['object'] = Title::makeTitle( $namespaces[1], $title );
+			$title = Title::makeTitle(
+				$namespaces[0],
+				self::title( $key, $messages->code )
+			);
 
 			$original = $m->definition;
 			$message = $m->translation ? $m->translation : $original;
 
 			global $wgLang;
-			$niceTitle = $wgLang->truncate( $key, -30, '…' );
-			if( $m->pageExists ) {
-				$page['link'] = $sk->makeKnownLinkObj( $page['object'], htmlspecialchars( $niceTitle ) );
-			} else {
-				$page['link'] = $sk->makeBrokenLinkObj( $page['object'], htmlspecialchars( $niceTitle ) );
-			}
-			if( $m->talkExists ) {
-				$talk['link'] = $sk->makeKnownLinkObj( $talk['object'], $uimsg['talk'] );
-			} else {
-				$talk['link'] = $sk->makeBrokenLinkObj( $talk['object'], $uimsg['talk'] );
-			}
-			$tools[] = $talk['link'];
+			$niceTitle = htmlspecialchars( $wgLang->truncate( $key, -30, '…' ) );
 
-			if ( $wgUser->isAllowed( 'translate' ) ) {
-				$tools[] = $sk->makeKnownLinkObj( $page['object'], $uimsg['edit'], "action=edit&loadgroup=$group" );
+			if ( 1 || $wgUser->isAllowed( 'translate' ) ) {
+				$tools['edit'] = $sk->makeKnownLinkObj( $title, $niceTitle, "action=edit&loadgroup=$group" );
 			} else {
-				$tools[] = $uimsg['edit'];
+				$tools['edit'] = '';
 			}
-
-			$tools[] = $sk->makeKnownLinkObj( $page['object'], $uimsg['history'], 'action=history' );
 
 			$anchor = 'msg_' . $key;
 			$anchor = Xml::element( 'a', array( 'name' => $anchor, 'href' => "#$anchor" ), "↓" );
 
 			$extra = '';
-			if ( $m->optional ) $extra = $uimsg['optional'];
+			if ( $m->optional ) $extra = '<br />' . $uimsg['optional'];
 
-			$leftColumn = $anchor . ' ' . $page['link'] . ' ' . $extra . '<br />' .
-				implode( ' | ', $tools );
+			$leftColumn = $anchor . $tools['edit'] . $extra;
 
 			if ( $review ) {
 				$output .= Xml::tags( 'tr', array( 'class' => 'orig' ),
@@ -293,7 +220,6 @@ class TranslateUtils {
 
 		}
 
-		wfProfileOut( __METHOD__ ); wfMemOut( __METHOD__ );
 		return $output;
 	}
 
@@ -425,6 +351,15 @@ class TranslateUtils {
 		$file = dirname( __FILE__ ) . '/Translate.css';
 		$css .= "/*<![CDATA[*/\n" . htmlspecialchars( file_get_contents( $file ) ) . "\n/*]]>*/";
 		return true;
+	}
+
+	public static function snippet( &$text, $length = 10 ) {
+		global $wgLegalTitleChars, $wgContLang;
+		$snippet = preg_replace( "/[^\p{L}]/", ' ', $text );
+		$snippet = preg_replace( "/ {2,}/", ' ', $snippet );
+		$snippet = $wgContLang->truncate( $snippet, $length );
+		$snippet = str_replace( ' ', '_', trim($snippet) );
+		return $snippet;
 	}
 	
 }

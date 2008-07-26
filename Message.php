@@ -233,21 +233,16 @@ class TMessage {
 	 */
 	//private $database = null;
 
-	/**
-	 * Metadata about the message.
-	 */
-	//protected $optional, $pageExists, $talkExists;
-
 	// Values that can be accessed with $message->value syntax
 	protected static $callable = array(
 		// Basic values
-		'infile', 'database', 'optional', 'pageExists', 'talkExists',
+		'infile', 'database', 'optional',
 		// Derived values
 		'authors', 'changed', 'translated', 'translation', 'fuzzy',
 	);
 
 	protected static $writable = array(
-		'infile', 'database', 'optional', 'pageExists', 'talkExists',
+		'infile', 'database', 'optional',
 		// Ugly.. maybe I'm trying to be to clever here
 		'authors',
 	);
@@ -271,8 +266,6 @@ class TMessage {
 	public function database() { return @$this->database; }
 
 	public function optional() { return !!@$this->optional; }
-	public function pageExists() { return !!@$this->pageExists; }
-	public function talkExists() { return !!@$this->talkExists; }
 
 	// Getters for derived values
 	/** Returns authors added for this message. */
@@ -282,7 +275,7 @@ class TMessage {
 
 	/** Determines if this message has uncommitted changes. */
 	public function changed() {
-		return !!@$this->pageExists && ( @$this->infile !== @$this->database );
+		return @$this->database !== null && ( @$this->infile !== @$this->database );
 	}
 
 	/** Determies if this message has a proper translation. */

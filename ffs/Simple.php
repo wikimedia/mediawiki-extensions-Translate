@@ -273,9 +273,6 @@ class SimpleFormatWriter {
 			# CASE3: optional messages; accept only if different
 			if ( $m->optional && $translation === $m->definition ) continue;
 
-			# CASE4: don't export non-translations unless translated in wiki
-			if ( !$m->pageExists && $translation === $m->definition ) continue;
-
 			# Otherwise it's good
 			$new[$key] = $translation;
 		}
