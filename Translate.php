@@ -52,6 +52,7 @@ function wfTranslateRemoveAllmessages( $list ) {
 
 $wgHooks['ArticleSave'][]      = 'TranslateTag::save';
 $wgHooks['ParserAfterStrip'][] = 'TranslateTag::tag';
+$wgHooks['OutputPageBeforeHTML'][] = 'TranslateTag::addcss';
 
 $wgJobClasses['FuzzyJob'] = 'FuzzyJob';
 $wgAvailableRights[] = 'translate';

@@ -41,8 +41,12 @@ class TranslateTag {
 		$legend .= " <span class=\"mw-translate-fuzzy\">$legendFuzzy</span>";
 		$legend .= '<br />This page is translatable using the experimental wiki page translation feature.';
 		$legend .= "\n----\n";
-
 		return $legend;
+	}
+
+	public static function addcss( $outputpage, $text ) {
+		TranslateUtils::injectCSS();
+		return true;
 	}
 
 	const METADATA = '~\n?<!--TS(.*?)-->\n?~us';
@@ -63,7 +67,6 @@ class TranslateTag {
 		$cb = array( $obj, 'replaceTags' );
 		$text = preg_replace_callback( self::PATTERN_TAG, $cb, $text );
 
-		TranslateUtils::injectCSS();
 		$legend = self::getHeader( $parser->getTitle() );
 		$text = $legend . $text;
 
