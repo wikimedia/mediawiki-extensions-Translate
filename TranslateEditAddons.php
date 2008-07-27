@@ -22,7 +22,10 @@ class TranslateEditAddons {
 		$defs = $group->getDefinitions();
 		$next = $prev = $def = null;
 		foreach ( array_keys($defs) as $tkey ) {
-			if ( $tkey === $key ) {
+			// Keys can have mixed case, but they have to be unique in a case
+			// insensitive manner. It is therefore safe and a must to use case
+			// insensitive comparison method
+			if ( strcasecmp( $tkey, $key ) === 0 ) {
 				$next = true;
 				$def = $defs[$tkey];
 				continue;
