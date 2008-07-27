@@ -187,6 +187,7 @@ class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
 	}
 
 	public function getMessage( $key, $code ) {
+		$this->init();
 		$msg = null;
 		foreach ( $this->classes as $class ) {
 			$msg = $class->getMessage( $key, $code );
