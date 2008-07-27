@@ -584,6 +584,7 @@ Special Form
 ignored = formtemplatepattern
 
 Subst All
+optional = substall-hook
 
 Sub Page List 3
 
