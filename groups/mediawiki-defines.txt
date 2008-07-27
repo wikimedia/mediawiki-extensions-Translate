@@ -583,6 +583,8 @@ file = SpecialFileList/SpecialFilelist.i18n.php
 Special Form
 ignored = formtemplatepattern
 
+Subst All
+
 Sub Page List 3
 
 Stale Pages

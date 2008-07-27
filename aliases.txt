@@ -64,5 +64,8 @@ file = Renameuser/SpecialRenameuser.alias.php
 Site matrix
 file = SiteMatrix/SiteMatrix.alias.php
 
+Spam Regex
+file = SpamRegex/SpamRegex.alias.php
+
 Translate
 file = Translate/Translate.alias.php
