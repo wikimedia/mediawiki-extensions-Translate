@@ -582,7 +582,7 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 	}
 
 	public function getDefinitions() {
-		return TranslateTag::parseSectionDefinitions( $this->title, &$this->namespaces );
+		return TranslateTag::parseSectionDefinitions( $this->title, $this->namespaces );
 	}
 
 	public function load( $code ) {
@@ -625,7 +625,7 @@ class MessageGroups {
 		global $wgTranslateCategory, $wgTranslateCC;
 		wfLoadExtensionMessages( 'Translate' );
 		$cat = Category::newFromName( wfMsgForContent( 'translate-tag-category' ) );
-		$titles = $cat->getMemberNames();
+		$titles = $cat->getMemberNames(); # FIXME: Fatal error, method does not exist
 		foreach ( $titles as $t ) {
 			$id = "page|$t";
 			$wgTranslateCC[$id] = new WikiPageMessageGroup( $id, $t );
