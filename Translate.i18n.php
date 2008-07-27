@@ -350,20 +350,20 @@ $messages['ar'] = array(
 	'translate-edit'                         => 'عدل',
 	'translate-talk'                         => 'نقاش',
 	'translate-history'                      => 'تاريخ',
-	'translate-task-view'                    => 'عرض كل الرسائل من',
-	'translate-task-untranslated'            => 'عرض كل الرسائل غير المترجمة من',
-	'translate-task-optional'                => 'اعرض الرسائل الاختيارية من',
-	'translate-task-problematic'             => 'اعرض الرسائل التي بها مشاكل',
-	'translate-task-review'                  => 'عرض التغييرات ل',
-	'translate-task-reviewall'               => 'عرض كل الترجمات في',
-	'translate-task-export'                  => 'صدر الترجمات من',
-	'translate-task-export-to-file'          => 'صدر الترجمة لملف من',
-	'translate-task-export-as-po'            => 'صدر الترجمة بصيغة جت تكست',
-	'translate-task-export-to-xliff'         => 'صدر الترجمة في هيئة Xliff',
-	'translate-page-no-such-language'        => 'كود لغة غير صحيح تم توفيره',
+	'translate-task-view'                    => 'أرى كل الرسائل من',
+	'translate-task-untranslated'            => 'أرى كل الرسائل غير المترجمة من',
+	'translate-task-optional'                => 'أرى الرسائل الاختيارية من',
+	'translate-task-problematic'             => 'أرى الرسائل التي بها مشاكل',
+	'translate-task-review'                  => 'أراجع التغييرات ل',
+	'translate-task-reviewall'               => 'أراجع كل الرسائل المترجمة في',
+	'translate-task-export'                  => 'أصدر الترجمات من',
+	'translate-task-export-to-file'          => 'أصدر الترجمة لملف من',
+	'translate-task-export-as-po'            => 'أصدر الترجمة بصيغة جت تكست',
+	'translate-task-export-to-xliff'         => 'أصدر الترجمة بصيغة إكسليف',
+	'translate-page-no-such-language'        => 'اللغة المحددة كانت غير صحيحة.',
 	'translate-page-no-such-task'            => 'المهمة المحددة كانت غير صحيحة.',
 	'translate-page-no-such-group'           => 'المجموعة المحددة كانت غير صحيحة.',
-	'translate-page-disabled'                => "لقد عطّلت التّرجمات إلى هذه اللّغة بالنسبة لهذه المجموعة. السّبب::
+	'translate-page-disabled'                => "الترجمات إلى هذه اللغة في هذه المجموعة تم تعطيلها. السبب:
 
 ''$1''",
 	'translate-page-settings-legend'         => 'الإعدادات',
@@ -385,7 +385,8 @@ $messages['ar'] = array(
 	'translate-ignored'                      => '(متجاهل)',
 	'translate-edit-definition'              => 'تعريف الرسالة',
 	'translate-edit-contribute'              => 'ساهم',
-	'translate-edit-no-information'          => "''هذه الرسالة ليس لديها توثيق. لو كنت تعرف أين أو كيف يتم استخدام هذه الرسالة، يمكنك مساعدة المترجمين الآخرين بواسطة إضافة توثيق إلى هذه الرسالة.''",
+	'translate-edit-no-information'          => "''هذه الرسالة ليس لديها توثيق.
+لو كنت تعرف أين أو كيف يتم استخدام هذه الرسالة، يمكنك مساعدة المترجمين الآخرين بواسطة إضافة توثيق إلى هذه الرسالة.''",
 	'translate-edit-information'             => 'معلومات حول هذه الرسالة ($1)',
 	'translate-edit-in-other-languages'      => 'الرسالة بلغات أخرى',
 	'translate-edit-committed'               => 'الترجمة الحالية في البرنامج',
@@ -395,7 +396,7 @@ $messages['ar'] = array(
 	'translate-edit-goto-prev'               => 'عدل الرسالة السابقة',
 	'translate-edit-goto-next'               => 'عدل الرسالة القادمة',
 	'translate-edit-goto-list'               => 'الرجوع إلى القائمة',
-	'translate-magic-pagename'               => 'ترجمة الميدياويكي الممتدة',
+	'translate-magic-pagename'               => 'ترجمة ميدياويكي الممتدة',
 	'translate-magic-help'                   => 'يمكنك ترجمة أسماء الصفحات الخاصة، الكلمات السحرية، أسماء الواجهات وأسماء النطاقات.
 
 في الكلمات السحرية تحتاج إلى إضافة الترجمات الإنجليزية أو فستتوقف عن العمل.
@@ -439,15 +440,15 @@ $messages['ar'] = array(
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural'                => 'التعريف يستخدم <nowiki>{{PLURAL:}}</nowiki> لكن الترجمة لا.',
 	'translate-checks-pagename'              => 'النطاق تغير من التعريف',
-	'tog-translate-nonewsletter'             => 'لا ترسل لي إخطارات بريدية بالبريد الإلكتروني (متعلقة فقط بالمستخدمين الذين يمتلكون عنوان بريد الإلكتروني مؤكد)',
-	'right-translate'                        => 'التعديل باستخدام واجهة المترجم',
+	'tog-translate-nonewsletter'             => 'لا ترسل لي إخطارات بريدية بالبريد الإلكتروني (متعلقة فقط بالمستخدمين الذين يمتلكون عنوان بريد إلكتروني مؤكد)',
+	'right-translate'                        => 'التعديل باستخدام واجهة الترجمة',
 	'translate-rc-translation-filter'        => 'فلتر الترجمات:',
 	'translate-rc-translation-filter-no'     => 'لا تفعل شيئا',
 	'translate-rc-translation-filter-only'   => 'اعرض الترجمات فقط',
 	'translate-rc-translation-filter-filter' => 'فلتر الترجمات',
 	'translate-rc-translation-filter-site'   => 'التغييرات لرسائل الموقع فقط',
 	'translationstats'                       => 'إحصاءات الترجمة',
-	'translate-stats-edits'                  => 'تعديل يوميا',
+	'translate-stats-edits'                  => 'تعديلات',
 	'translate-stats-users'                  => 'المترجمون',
 	'translate-statsf-intro'                 => 'يمكنك توليد إحصاءات بسيطة بهذه الاستمارة. كل القيم لها حدود عليا وسفلى.',
 	'translate-statsf-options'               => 'خيارات الرسم',
@@ -460,9 +461,17 @@ $messages['ar'] = array(
 	'translate-statsf-count'                 => 'قياس',
 	'translate-statsf-count-edits'           => 'عدد التعديلات',
 	'translate-statsf-count-users'           => 'المترجمون النشطون',
-	'translate-statsf-language'              => 'فاصلة فصلت قائمة أكواد اللغات',
-	'translate-statsf-group'                 => 'فاصلة فصلت قائمة أكواد المجموعات',
+	'translate-statsf-language'              => 'قائمة بأكواد اللغات مفصولة بفاصلة',
+	'translate-statsf-group'                 => 'قائمة بأكواد المجموعات مفصولة بفاصلة',
 	'translate-statsf-submit'                => 'عرض مسبق',
+	'translate-tag-category'                 => 'صفحات قابلة للترجمة',
+	'translate-tag-page-desc'                => 'ترجمة صفحة الويكي [[:$1]].',
+	'translate-tag-translate-link-desc'      => 'ترجمة هذه الصفحة',
+	'translate-tag-legend'                   => 'المفتاح:',
+	'translate-tag-legend-fallback'          => 'الترجمة بلغة أخرى',
+	'translate-tag-legend-fuzzy'             => 'ترجمة قديمة',
+	'translate-tag-fuzzy-comment'            => 'التعريف تغير بواسطة [[User:$1]] في المراجعة $2.',
+	'translate-tag-fuzzy-reason'             => 'التعريف تغير بواسطة المستخدم $1 بالتعليق "$3" في $2.',
 );
 
 /** Araucanian (Mapudungun)
@@ -1739,6 +1748,14 @@ Vous devez appartenir au groupe des traducteurs pour sauvegarder les changements
 	'translate-statsf-language'              => 'Liste de codes de langues, séparés de virgules',
 	'translate-statsf-group'                 => 'Liste de codes de groupes, séparés de virgules',
 	'translate-statsf-submit'                => 'Prévisualiser',
+	'translate-tag-category'                 => 'Pages traductibles',
+	'translate-tag-page-desc'                => 'Traduction de la page wiki [[:$1]].',
+	'translate-tag-translate-link-desc'      => 'Traduire cette page',
+	'translate-tag-legend'                   => 'Légende :',
+	'translate-tag-legend-fallback'          => 'Traduction dans d’autres langues',
+	'translate-tag-legend-fuzzy'             => 'Traduction hors date',
+	'translate-tag-fuzzy-comment'            => 'Définition modifiée par l’utilisateur [[User:$1|$1]] dans la version $2.',
+	'translate-tag-fuzzy-reason'             => 'Définition modifiée par l’utilisateur $1 avec pour commentaire « $3 » dans $2.',
 );
 
 /** Cajun French (Français cadien)
@@ -1838,6 +1855,16 @@ Vos dête apartegnir a la tropa des traductors por sôvar los changements. Los c
 	'translate-checks-links'            => 'Los lims siuvents sont pas de sûr : <strong>$1</strong>',
 	'translate-checks-xhtml'            => 'Vos éte envitâ a remetre en place les balises siuventes avouéc celes que sont corrèctes : <strong>$1</strong>',
 	'translate-checks-plural'           => 'La dèfinicion utilise <nowiki>{{PLURAL:}}</nowiki> mas pas la traduccion.',
+);
+
+/** Western Frisian (Frysk)
+ * @author Snakesteuben
+ */
+$messages['fy'] = array(
+	'translate-edit'          => 'bewurkje',
+	'translate-page-group'    => 'Groep',
+	'translate-page-edit'     => 'bewurkje',
+	'translate-magic-cm-save' => 'Fêstlizze',
 );
 
 /** Irish (Gaeilge)
@@ -2398,6 +2425,7 @@ $messages['hu'] = array(
 	'translate-checks-links'            => 'A következő linkek nem megfelelőek: <strong>$1</strong>',
 	'translate-checks-xhtml'            => 'A következő tag-eket cseréld le a megfelelőekre: <strong>$1</strong>',
 	'translate-checks-plural'           => 'Az alapértelmezett változatban van <nowiki>{{PLURAL:}}</nowiki> forma, míg a fordításban nincs (magyar nyelv esetén ez nem feltétlenül probléma!).',
+	'right-translate'                   => 'szerkesztés a fordítói felületen keresztül',
 );
 
 /** Interlingua (Interlingua)
@@ -3830,8 +3858,10 @@ $messages['nah'] = array(
 	'translate-edit-in-other-languages' => 'Tlahcuilōltzin occequīntīn tlahtōlcopa',
 	'translate-edit-goto-prev'          => 'Ticpatlāz niman tlahcuilōltzin',
 	'translate-edit-goto-next'          => 'Ticpatlāz achtopa tlahcuilōltzin',
+	'translate-magic-cm-export'         => 'Ticnamacāz',
 	'translate-magic-cm-current'        => 'Āxcān',
 	'translate-magic-cm-save'           => 'Ticpiyāz',
+	'translationchanges-export'         => 'ticnamacāz',
 	'translate-stats-edits'             => 'Tlapatlaliztli',
 );
 
@@ -3988,6 +4018,14 @@ Alle waarden hebben een limiet aan de boven- en onderzijde.',
 	'translate-statsf-language'              => 'Kommagescheiden lijst van taalcodes',
 	'translate-statsf-group'                 => 'Kommagescheiden lijst van groepscodes',
 	'translate-statsf-submit'                => 'Ter controle bekijken',
+	'translate-tag-category'                 => "Vertaalbare pagina's",
+	'translate-tag-page-desc'                => 'Vertaling van de wikipagina [[:$1]].',
+	'translate-tag-translate-link-desc'      => 'Deze pagina vertalen',
+	'translate-tag-legend'                   => 'Legenda:',
+	'translate-tag-legend-fallback'          => 'Vertaling in een andere taal',
+	'translate-tag-legend-fuzzy'             => 'Verouderde vertaling',
+	'translate-tag-fuzzy-comment'            => 'Definitie gewijzigd door [[User:$1|$1]] in versie $2.',
+	'translate-tag-fuzzy-reason'             => 'Definitie gewijzigd door "$1" met opmerking "$3" in $2.',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
@@ -5015,6 +5053,14 @@ För att kunna spara ändringar så behöver du tillhöra översättargruppen. �
 	'translate-statsf-language'              => 'Kommaseparerad lista över språkkoder',
 	'translate-statsf-group'                 => 'Kommaseparerad lista över gruppkoder',
 	'translate-statsf-submit'                => 'Förhandsgranska',
+	'translate-tag-category'                 => 'Översättningsbara sidor',
+	'translate-tag-page-desc'                => 'Översättning av wikisidan [[:$1]].',
+	'translate-tag-translate-link-desc'      => 'Översätt den här sidan',
+	'translate-tag-legend'                   => 'Förklaring:',
+	'translate-tag-legend-fallback'          => 'Översättning i ett annat språk',
+	'translate-tag-legend-fuzzy'             => 'Föråldrad översättning',
+	'translate-tag-fuzzy-comment'            => 'Definition ändrad av [[User:$1]] i sidversion $2.',
+	'translate-tag-fuzzy-reason'             => 'Definition ändrad av användare $1 med kommentaren "$3" i $2.',
 );
 
 /** Silesian (Ślůnski)
