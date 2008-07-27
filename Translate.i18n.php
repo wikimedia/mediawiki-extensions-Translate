@@ -162,7 +162,7 @@ Changes are not saved until you click save button below.',
 	'translate-tag-legend-fuzzy' => 'Outdated translation',
 
 	'translate-tag-fuzzy-comment' => 'Definition changed by [[User:$1]] in revision $2.',
-	'translate-tag-fuzzy-reason' => 'Definition changed by user $1 with comment "$3" in $2.',
+	'translate-tag-fuzzy-reason' => 'Definition changed by "$1" with comment "$3" in $2.',
 
 );
 
