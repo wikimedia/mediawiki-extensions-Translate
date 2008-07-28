@@ -37,6 +37,7 @@ $aliases['arz'] = array(
 	'Translate'          => array( 'ترجمة' ),
 	'Magic'              => array( 'ترجمة متقدمة', 'ماجيك' ),
 	'TranslationChanges' => array( 'تغييرات الترجمة' ),
+	'TranslationStats'   => array( 'إحصاءات الترجمة' ),
 );
 
 /** Southern Balochi (بلوچی مکرانی) */
@@ -161,7 +162,7 @@ $aliases['myv'] = array(
 
 /** Nahuatl (Nahuatl) */
 $aliases['nah'] = array(
-	'Translate' => array( 'Tlacuepāz' ),
+	'Translate' => array( 'Tlahtōlcuepāz', 'Traducir' ),
 );
 
 /** Dutch (Nederlands) */
