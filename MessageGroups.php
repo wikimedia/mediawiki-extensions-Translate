@@ -624,18 +624,16 @@ class MessageGroups {
 
 		global $wgTranslateCategory, $wgTranslateCC;
 		wfLoadExtensionMessages( 'Translate' );
-		# FIXME: Fatal error, method Category::getMemberNames does not exist
-		/*
 		$cat = Category::newFromName( wfMsgForContent( 'translate-tag-category' ) );
-		$titles = $cat->getMemberNames();
+		$titles = $cat->getMembers();
 		foreach ( $titles as $t ) {
-			$id = "page|$t";
-			$wgTranslateCC[$id] = new WikiPageMessageGroup( $id, $t );
-			$wgTranslateCC[$id]->setLabel( $t );
-			$wgTranslateCC[$id]->setDescription( wfMsgNoTrans( 'translate-tag-page-desc', $t ) );
+			$title = $t->getPrefixedText();
+			$id = "page|$title";
+			$wgTranslateCC[$id] = new WikiPageMessageGroup( $id, $title );
+			$wgTranslateCC[$id]->setLabel( $title );
+			$wgTranslateCC[$id]->setDescription( wfMsgNoTrans( 'translate-tag-page-desc', $title ) );
 
 		}
-		*/
 
 		global $wgTranslateCC;
 		wfRunHooks('TranslatePostInitGroups', array( &$wgTranslateCC ) );
