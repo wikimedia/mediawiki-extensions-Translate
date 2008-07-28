@@ -1861,10 +1861,12 @@ Vos dête apartegnir a la tropa des traductors por sôvar los changements. Los c
  * @author Snakesteuben
  */
 $messages['fy'] = array(
-	'translate-edit'          => 'bewurkje',
-	'translate-page-group'    => 'Groep',
-	'translate-page-edit'     => 'bewurkje',
-	'translate-magic-cm-save' => 'Fêstlizze',
+	'translate-edit'            => 'bewurkje',
+	'translate-page-group'      => 'Groep',
+	'translate-page-edit'       => 'bewurkje',
+	'translate-magic-cm-export' => 'Eksportearje',
+	'translate-magic-cm-save'   => 'Fêstlizze',
+	'translationchanges-export' => 'eksportearje',
 );
 
 /** Irish (Gaeilge)
@@ -1993,6 +1995,14 @@ Nas traducións dos espazos de nomes, <tt>$1 talk</tt> é especial. <tt>$1</tt> 
 	'translate-statsf-language'              => 'Lista dos códigos de lingua (separados por comas)',
 	'translate-statsf-group'                 => 'Lista dos códigos dos grupos de mensaxes (separados por comas)',
 	'translate-statsf-submit'                => 'Vista previa',
+);
+
+/** Ancient Greek (Ἀρχαία ἑλληνικὴ)
+ * @author LeighvsOptimvsMaximvs
+ */
+$messages['grc'] = array(
+	'translate-statsf-scale-days'  => 'Ἡμέραι',
+	'translate-statsf-scale-hours' => 'Ὥραι',
 );
 
 /** Manx (Gaelg)
@@ -4141,6 +4151,7 @@ Du må være i oversettergruppa for å lagre endringer. Endringer lagres ikke f�
 	'translate-checks-xhtml'                 => 'Erstatt følgende {{PLURAL:$2|tagg|tagger}} med de korrekte:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural'                => 'Definisjonen bruker <nowiki>{{PLURAL:}}</nowiki>, men oversettelsen gjør ikke det.',
+	'translate-checks-pagename'              => 'Navnerom endret fra definisjonen',
 	'tog-translate-nonewsletter'             => 'Ikke send meg nyhetsbrev (gjelder kun brukere med bekreftet e-postadresse)',
 	'right-translate'                        => 'Redigere med oversettingsgrensesnittet',
 	'translate-rc-translation-filter'        => 'Filtrer oversettelser:',
@@ -4148,7 +4159,31 @@ Du må være i oversettergruppa for å lagre endringer. Endringer lagres ikke f�
 	'translate-rc-translation-filter-only'   => 'Vis bare oversettelser',
 	'translate-rc-translation-filter-filter' => 'Filtrer bort oversettelser',
 	'translate-rc-translation-filter-site'   => 'Kun endringer i {{SITENAME}}-beskjeder',
+	'translationstats'                       => 'Oversettelsesstatistikk',
 	'translate-stats-edits'                  => 'Redigeringer per dag',
+	'translate-stats-users'                  => 'Oversettere',
+	'translate-statsf-intro'                 => 'Du kan generere enkel statistikk med dette skjemaet. Alle verdiene har øvre og nedre grenser.',
+	'translate-statsf-options'               => 'Grafalternativer',
+	'translate-statsf-width'                 => 'Bredde i piksler',
+	'translate-statsf-height'                => 'Høyde i piksler',
+	'translate-statsf-days'                  => 'Tidsperiode i dager',
+	'translate-statsf-scale'                 => 'Kornethet',
+	'translate-statsf-scale-days'            => 'Dager',
+	'translate-statsf-scale-hours'           => 'Timer',
+	'translate-statsf-count'                 => 'Størrelse',
+	'translate-statsf-count-edits'           => 'Antall redigeringer',
+	'translate-statsf-count-users'           => 'Aktive oversettere',
+	'translate-statsf-language'              => 'Liste over språkkoder adskilt med komma',
+	'translate-statsf-group'                 => 'Liste over gruppekoder adskilt med komma',
+	'translate-statsf-submit'                => 'Forhåndsvisning',
+	'translate-tag-category'                 => 'Oversettbare sider',
+	'translate-tag-page-desc'                => 'Oversettelse av wikisiden [[:$1]].',
+	'translate-tag-translate-link-desc'      => 'Oversett denne siden',
+	'translate-tag-legend'                   => 'Forklaring:',
+	'translate-tag-legend-fallback'          => 'Oversettelse i et annet språk',
+	'translate-tag-legend-fuzzy'             => 'Utdatert oversettelse',
+	'translate-tag-fuzzy-comment'            => 'Definisjon endret av [[User:$1|$1]] i revisjon $2.',
+	'translate-tag-fuzzy-reason'             => 'Definisjon endret av brukeren $1 med kommentaren «$3» i $2.',
 );
 
 /** Occitan (Occitan)
@@ -4779,6 +4814,14 @@ Aby ste mohli ukladať zmeny, musíte byť členom skupiny translators. Zmeny sa
 	'translate-statsf-language'              => 'Čiarkami oddelený zoznam kódov jazykov',
 	'translate-statsf-group'                 => 'Čiarkami oddelený zoznam kódov skupín',
 	'translate-statsf-submit'                => 'Náhľad',
+	'translate-tag-category'                 => 'Preložiteľné stránky',
+	'translate-tag-page-desc'                => 'Preklad wiki stránky [[:$1]].',
+	'translate-tag-translate-link-desc'      => 'Preložiť túto stránku',
+	'translate-tag-legend'                   => 'Legenda:',
+	'translate-tag-legend-fallback'          => 'Preklad v inom jazyku',
+	'translate-tag-legend-fuzzy'             => 'Neaktuálny preklad',
+	'translate-tag-fuzzy-comment'            => 'Definíciu zmenil [[User:$1|$1]] v revízii $2.',
+	'translate-tag-fuzzy-reason'             => 'Definíciu zmenil „$1” v revízii $2 s komentárom „$3”.',
 );
 
 /** Somali (Soomaaliga)
