@@ -1069,6 +1069,7 @@ $messages['da'] = array(
  * @author Raimond Spekking
  * @author Purodha
  * @author Siebrand
+ * @author Raymond
  */
 $messages['de'] = array(
 	'translate'                              => 'Übersetze',
@@ -1096,8 +1097,10 @@ $messages['de'] = array(
 	'translate-page-task'                    => 'Aufgabe',
 	'translate-page-group'                   => 'Gruppe',
 	'translate-page-language'                => 'Sprache',
+	'translate-page-limit'                   => 'Limit',
 	'translate-page-limit-option'            => '$1 {{PLURAL:$1|Systemnachricht|Systemnachrichten}} pro Seite',
 	'translate-submit'                       => 'Hole',
+	'translate-page-navigation-legend'       => 'Navigation',
 	'translate-page-showing'                 => 'Systemnachrichten $1 bis $2 von insgesamt $3.',
 	'translate-page-showing-all'             => '$1 {{PLURAL:$1|Systemnachricht|Systemnachrichten}}.',
 	'translate-page-showing-none'            => 'Keine Systemnachrichten zur Anzeige vorhanden.',
@@ -1105,6 +1108,7 @@ $messages['de'] = array(
 	'translate-prev'                         => 'Vorherige Seite',
 	'translate-page-description-legend'      => 'Informationen über diese Gruppe',
 	'translate-page-edit'                    => 'bearbeiten',
+	'translate-optional'                     => '(optional)',
 	'translate-ignored'                      => '(ignoriert)',
 	'translate-edit-definition'              => 'Systemnachricht im Original',
 	'translate-edit-contribute'              => 'bearbeiten',
@@ -1130,8 +1134,10 @@ In der Übersetzung eines Namensraumnamens hat <tt>$1 talk</tt> eine spezielle B
 Du musst in der Übersetzer-Gruppe sein, um Änderungen zu speichern. Änderungen werden erst beim Klick auf den Speichern-Button gespeichert.',
 	'translate-magic-module'                 => 'Modul:',
 	'translate-magic-submit'                 => 'Hole',
+	'translate-magic-cm-export'              => 'Export',
 	'translate-magic-cm-to-be'               => 'Sollte sein',
 	'translate-magic-cm-current'             => 'Aktuell',
+	'translate-magic-cm-original'            => 'Original',
 	'translate-magic-cm-comment'             => 'Kommentar:',
 	'translate-magic-cm-save'                => 'Speichern',
 	'translate-magic-cm-updatedusing'        => 'Aktualisiert durch Special:Magic',
@@ -1149,6 +1155,7 @@ Du musst in der Übersetzer-Gruppe sein, um Änderungen zu speichern. Änderunge
 	'translate-checks-links'                 => '{{PLURAL:$2|Der folgende Link ist|Die folgenden Links sind}} sind problematisch: <strong>$1</strong>',
 	'translate-checks-xhtml'                 => 'Bitte ersetze {{PLURAL:$2|den folgenden Tag|die folgenden Tags}} durch die korrekten: <strong>$1</strong>',
 	'translate-checks-plural'                => 'Das Original benutzt <nowiki>{{PLURAL:}}</nowiki>, die Übersetzung aber nicht.',
+	'translate-checks-pagename'              => 'Namensraum geändert durch die Definition',
 	'tog-translate-nonewsletter'             => 'Sende mir keine E-Mail-Newsletter zu (nur für Benutzer für bestätigten E-Mail-Adressen relevant)',
 	'right-translate'                        => 'Benutzung des Übersetzen-Interfaces',
 	'translate-rc-translation-filter'        => 'Übersetzungen filtern:',
@@ -1156,7 +1163,31 @@ Du musst in der Übersetzer-Gruppe sein, um Änderungen zu speichern. Änderunge
 	'translate-rc-translation-filter-only'   => 'Zeige nur Übersetzungen',
 	'translate-rc-translation-filter-filter' => 'Übersetzungen filtern',
 	'translate-rc-translation-filter-site'   => 'Nur Änderungen an Systemnachrichten der Site',
+	'translationstats'                       => 'Übersetzungsstatistiken',
 	'translate-stats-edits'                  => 'Bearbeitungen pro Tag',
+	'translate-stats-users'                  => 'Übersetzer',
+	'translate-statsf-intro'                 => 'Du kannst einfache Statistiken mit diesem Formular erstellen. Alle Werte haben untere und oberere Limits.',
+	'translate-statsf-options'               => 'Zeichnungsoptionen',
+	'translate-statsf-width'                 => 'Breite in Pixel',
+	'translate-statsf-height'                => 'Höhe in Pixel',
+	'translate-statsf-days'                  => 'Zeitraum in Tagen',
+	'translate-statsf-scale'                 => 'Granularität',
+	'translate-statsf-scale-days'            => 'Tage',
+	'translate-statsf-scale-hours'           => 'Stunden',
+	'translate-statsf-count'                 => 'Maßstab',
+	'translate-statsf-count-edits'           => 'Anzahl Bearbeitungen',
+	'translate-statsf-count-users'           => 'Aktive Übersetzer',
+	'translate-statsf-language'              => 'Komma-getrennte Liste der Sprachcodes',
+	'translate-statsf-group'                 => 'Komma-getrennte Liste der Gruppencodes',
+	'translate-statsf-submit'                => 'Vorschau',
+	'translate-tag-category'                 => 'Übersetzbare Seiten',
+	'translate-tag-page-desc'                => 'Übersetzung der Wikiseite [[:$1]].',
+	'translate-tag-translate-link-desc'      => 'Diese Seite übersetzen',
+	'translate-tag-legend'                   => 'Legende:',
+	'translate-tag-legend-fallback'          => 'Übersetzung in eine andere Sprache',
+	'translate-tag-legend-fuzzy'             => 'Veraltete Übersetzung',
+	'translate-tag-fuzzy-comment'            => 'Definition verändert durch [[User:$1|$1]] in Version $2.',
+	'translate-tag-fuzzy-reason'             => 'Definition verändert durch „$1“ mit dem Kommentar „$3“ in $2.',
 );
 
 /** Lower Sorbian (Dolnoserbski)
@@ -1861,12 +1892,13 @@ Vos dête apartegnir a la tropa des traductors por sôvar los changements. Los c
  * @author Snakesteuben
  */
 $messages['fy'] = array(
-	'translate-edit'            => 'bewurkje',
-	'translate-page-group'      => 'Groep',
-	'translate-page-edit'       => 'bewurkje',
-	'translate-magic-cm-export' => 'Eksportearje',
-	'translate-magic-cm-save'   => 'Fêstlizze',
-	'translationchanges-export' => 'eksportearje',
+	'translate-edit'             => 'bewurkje',
+	'translate-page-group'       => 'Groep',
+	'translate-page-edit'        => 'bewurkje',
+	'translate-magic-cm-export'  => 'Eksportearje',
+	'translate-magic-cm-comment' => 'Oanmerking:',
+	'translate-magic-cm-save'    => 'Fêstlizze',
+	'translationchanges-export'  => 'eksportearje',
 );
 
 /** Irish (Gaeilge)
@@ -3595,7 +3627,20 @@ Dir musst am Grupp vun den Iwwersetzer si fir Ännerungen ofspäicheren ze kënn
 	'translate-rc-translation-filter-only'   => 'Nëmmen Iwwersetzunge weisen',
 	'translate-rc-translation-filter-filter' => 'Iwwersetzunge filteren',
 	'translate-rc-translation-filter-site'   => 'Nëmmen Ännerunge vu Messagen vum Site',
+	'translationstats'                       => 'Statistike vun der Iwwersetzung',
 	'translate-stats-edits'                  => 'Ännerunge pro Dag',
+	'translate-stats-users'                  => 'Iwwersetzer',
+	'translate-statsf-options'               => 'Optioune vum Graphique',
+	'translate-statsf-width'                 => 'Breet a Pixelen',
+	'translate-statsf-height'                => 'Héicht a Pixelen',
+	'translate-statsf-scale-days'            => 'Deeg',
+	'translate-statsf-scale-hours'           => 'Stonnen',
+	'translate-statsf-count-edits'           => 'Zuel vun den Ännerungen',
+	'translate-statsf-count-users'           => 'Aktiv Iwwersetzer',
+	'translate-tag-page-desc'                => 'Iwwersetzung vun der Wiki-Säit [[:$1]].',
+	'translate-tag-translate-link-desc'      => 'Dës Säit iwwersetzen',
+	'translate-tag-legend'                   => 'Erklärung:',
+	'translate-tag-legend-fallback'          => 'Iwwersetzung an aner Sproochen',
 );
 
 /** Limburgish (Limburgs)
