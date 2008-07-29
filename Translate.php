@@ -11,7 +11,7 @@ if (!defined('MEDIAWIKI')) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '9 (2008-07-29:1)' );
+define( 'TRANSLATE_VERSION', '9 (2008-07-29:2)' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name'           => 'Translate',
@@ -50,8 +50,10 @@ function wfTranslateRemoveAllmessages( $list ) {
 }
 
 $wgHooks['ArticleSave'][]      = 'TranslateTag::save';
+$wgHooks['ArticleSaveComplete'][]      = 'TranslateTag::purgeAfterSave';
 $wgHooks['ParserAfterStrip'][] = 'TranslateTag::tag';
 $wgHooks['OutputPageBeforeHTML'][] = 'TranslateTag::addcss';
+$wgHooks['PageRenderingHash'][] = 'TranslateTag::renderinghash';
 
 $wgJobClasses['FuzzyJob'] = 'FuzzyJob';
 $wgAvailableRights[] = 'translate';
