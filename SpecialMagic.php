@@ -183,9 +183,10 @@ abstract class ComplexMessages {
 	protected $variable = '__BUG__';
 	protected $data     = null;
 	protected $elementsInArray = true;
-	protected $exportPad = 10;
 	protected $databaseMsg = '__BUG__';
 	protected $chainable = false;
+	protected $firstMagic = false;
+	protected $constants = array();
 
 	protected $tableAttributes = array(
 		'class' => 'wikitable',
@@ -220,16 +221,48 @@ abstract class ComplexMessages {
 		
 	}
 
+	public function cleanData( $defs, $current ) {
+		foreach ( $current as $item => $values ) {
+			if ( !$this->elementsInArray ) break;
+			if ( !isset($defs[$item]) ) {
+				unset($current[$item]);
+				continue;
+			}
+			foreach ( $values as $index => $value )
+				if ( in_array($value, $defs[$item], true) ) unset($current[$item][$index]);
+		}
+		return $current;
+	}
+
+	public function mergeMagic( $defs, $current ) {
+		foreach ( $current as $item => &$values ) {
+			$newchain = $defs[$item];
+			array_splice( $newchain, 1, 0, $values );
+			$values = $newchain;
+
+		}
+		return $current;
+	}
+
+
 	public function getData( &$group ) {
-		$defs = self::readVariable( $group, 'en' );
+		$defs = $this->readVariable( $group, 'en' );
 		$code = $this->language;
 
-		$current = wfArrayMerge( self::readVariable( $group, $code ), $this->getSavedData() );
+		$current = wfArrayMerge( $this->readVariable( $group, $code ), $this->getSavedData() );
+
+		// Clean up duplicates to definitions from saved data
+		$current = $this->cleanData( $defs, $current );
 
 		$chain = $current;
 		while ( $this->chainable && $code = Language::getFallbackFor( $code ) ) {
-			$chain = array_merge_recursive( $chain, self::readVariable( $group, $code ) );
+			$fbdata = $this->readVariable( $group, $code );
+			if ( $this->firstMagic ) $fbdata = $this->cleanData( $defs, $fbdata );
+			$chain = array_merge_recursive( $chain, $fbdata );
 		}
+
+
+		if ( $this->firstMagic ) $chain = $this->mergeMagic( $defs, $chain );
 
 		return $group['data'] = array( $defs, $chain, $current );
 	}
@@ -287,7 +320,7 @@ abstract class ComplexMessages {
 
 	/**
 	 */
-	protected static function readVariable( $group, $code ) {
+	protected function readVariable( $group, $code ) {
 		$file = $group['file'];
 		if ( !$group['code'] ) {
 			$file = str_replace( '%CODE%', str_replace( '-', '_', ucfirst( $code ) ), $file );
@@ -297,10 +330,23 @@ abstract class ComplexMessages {
 		if ( file_exists($file) ) require( $file ); # Include
 
 		if ( $group['code'] ) {
-			return (array) @${$group['var']}[$code];
+			$data = (array) @${$group['var']}[$code];
 		} else {
-			return ${$group['var']};
+			$data = ${$group['var']};
 		}
+
+		return self::arrayMapRecursive( 'strval', $data );
+	}
+
+	public static function arrayMapRecursive( $callback, $data ) {
+		foreach ( $data as $index => $values ) {
+			if ( is_array($values) ) {
+				$data[$index] = self::arrayMapRecursive( $callback, $values );
+			} else {
+				$data[$index] = call_user_func( $callback, $values );
+			}
+		}
+		return $data;
 	}
 
 	#
@@ -314,9 +360,9 @@ abstract class ComplexMessages {
 	public function header( $title ) {
 		$colspan = array( 'colspan' => 3 );
 		$header = Xml::element( 'th', $colspan, $this->getTitle() . ' - ' . $title );
-		$subheading[] = Xml::element( 'th', null, wfMsg(self::MSG.'original') );
-		$subheading[] = Xml::element( 'th', null, wfMsg(self::MSG.'current') );
-		$subheading[] = Xml::element( 'th', null, wfMsg(self::MSG.'to-be') );
+		$subheading[] = '<th>' . wfMsgHtml('translate-magic-cm-original') . '</th>';
+		$subheading[] = '<th>' . wfMsgHtml('translate-magic-cm-current') . '</th>';
+		$subheading[] = '<th>' . wfMsgHtml('translate-magic-cm-to-be') . '</th>';
 		return '<tr>' . $header . '</tr>' .
 			'<tr>' . implode( "\n", $subheading )  . '</tr>';
 	}
@@ -338,12 +384,14 @@ abstract class ComplexMessages {
 				$rowContents = '';
 
 				$value = $this->val($group, self::LANG_MASTER, $key);
+				if ( $this->firstMagic ) array_shift( $value );
 				$value = array_map( 'htmlspecialchars', $value );
 				$rowContents .= '<td>' . $this->formatElement( $value ) . '</td>';
 
 				$value = $this->val($group, self::LANG_CHAIN, $key);
+				if ( $this->firstMagic ) array_shift( $value );
 				$value = array_map( 'htmlspecialchars', $value );
-				if ( $this->chainable  ) $value[0] = "<b>{$value[0]}</b>";
+				$value = $this->highlight( $key, $value );
 				$rowContents .= '<td>' . $this->formatElement( $value ) . '</td>';
 
 				$value = $this->val($group, self::LANG_CURRENT, $key);
@@ -446,6 +494,7 @@ abstract class ComplexMessages {
 
 		foreach ( $groups as $group => $data ) {
 
+
 			$var = $data['var'];
 			$items = $data['data'];
 
@@ -455,13 +504,28 @@ abstract class ComplexMessages {
 			}
 
 			$out = '';
-			$padTo = max(array_map( 'strlen', array_keys($items[self::LANG_MASTER]) )) +3;
+
+			$indexKeys = array();
+			foreach ( array_keys($items[self::LANG_MASTER]) as $key ) {
+				$indexKeys[$key] = isset($this->constants[$key]) ? $this->constants[$key] : $key;
+			}
+
+			$padTo = max(array_map( 'strlen', $indexKeys )) +3;
 
 			foreach ( $this->getIterator($group) as $key ) {
-				$temp = "\t'$key'";
+				$temp = "\t'{$indexKeys[$key]}'";
+
 				while ( strlen( $temp ) <= $padTo ) { $temp .= ' '; }
+
+				$from = self::LANG_CURRENT;
+				if ( $this->firstMagic && !$data['code'] ) $from = self::LANG_CHAIN;
+
+				// Check for translations
 				$val = $this->val($group, self::LANG_CURRENT, $key );
 				if ( !$val || !count( $val ) ) continue;
+
+				// Then get the data we really want
+				$val = $this->val($group, $from, $key );
 
 				$normalized = array_map( array( $this, 'normalize' ), $val );
 				if ( $this->elementsInArray ) {
@@ -487,6 +551,9 @@ abstract class ComplexMessages {
 	 */
 	protected function normalize( $data ) {
 		# Escape quotes
+		if ( !is_string($data) ) {
+			throw new MWException();
+		}
 		$data = preg_replace( "/(?<!\\\\)'/", "\'", trim($data));
 		return "'$data'";
 	}
@@ -494,6 +561,10 @@ abstract class ComplexMessages {
 	#
 	# /Export
 	#
+
+	public function highlight( $key, $values ) {
+		return $values;
+	}
 
 }
 
@@ -545,6 +616,11 @@ class SpecialPageAliasesCM extends ComplexMessages {
 		}
 	}
 
+	public function highlight( $key, $values ) {
+		if ( count($values) ) $values[0] = "<b>$values[0]</b>";
+		return $values;
+	}
+
 }
 
 class SkinNamesCM extends ComplexMessages {
@@ -564,6 +640,8 @@ class SkinNamesCM extends ComplexMessages {
 
 class MagicWordsCM extends ComplexMessages {
 	protected $id = SpecialMagic::MODULE_MAGIC;
+	protected $firstMagic = true;
+	protected $chainable = true;
 	protected $databaseMsg = 'sp-translate-data-MagicWords';
 
 	public function __construct( $code ) {
@@ -573,6 +651,11 @@ class MagicWordsCM extends ComplexMessages {
 			'file' => Language::getMessagesFileName('%CODE%'),
 			'code' => false,
 		);
+	}
+
+	public function highlight( $key, $values ) {
+		if ( count($values) && $key === 'redirect' ) $values[0] = "<b>$values[0]</b>";
+		return $values;
 	}
 
 }
@@ -591,7 +674,7 @@ class NamespaceCM extends ComplexMessages {
 		);
 	}
 
-	private static $constans = array(
+	protected $constants = array(
 		-2 => 'NS_MEDIA',
 		-1 => 'NS_SPECIAL',
 		 0 => 'NS_MAIN',
@@ -612,38 +695,4 @@ class NamespaceCM extends ComplexMessages {
 		15 => 'NS_CATEGORY_TALK',
 	);
 
-	private static $pad = 18;
-
-	/**
-	 * Re-implemented
-	 */
-	public function export() {
-		$groups = $this->getGroups();
-
-		foreach ( $groups as $group => $data ) {
-			$array = $data['data'];
-			$output = array();
-			foreach (self::$constans as $index => $constant) {
-				if ( $index === NS_PROJECT ) {
-					$output[] = "\t# NS_PROJECT set by \\\$wgMetaNamespace";
-					continue;
-				}
-
-				$value = false;
-				// Export main always (because it cannot be translated)
-				#if ( $index === NS_MAIN ) $value = '';
-
-				if ( isset($array[self::LANG_CURRENT][$index]) ) {
-					$value = $array[self::LANG_CURRENT][$index];
-				}
-
-				if ( $value === false ) continue;
-
-				$nValue = $this->normalize( $value );
-				$output[] = "\t" . str_pad( $constant, self::$pad ) . "=> $nValue,";
-			}
-
-			return "\$namespaceNames = array(\n" . implode( "\n" , $output ) . "\n);\n";
-		}
-	}
 }
