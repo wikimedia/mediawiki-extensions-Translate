@@ -178,6 +178,7 @@ $aliases['no'] = array(
 	'Translate'          => array( 'Oversett' ),
 	'Magic'              => array( 'Avansert oversettelse', 'Avansert oversetting', 'Magi' ),
 	'TranslationChanges' => array( 'Oversettelsesendringer', 'Oversettingsendringer' ),
+	'TranslationStats'   => array( 'Oversettelsesstatistikk' ),
 );
 
 /** Pashto (پښتو) */
