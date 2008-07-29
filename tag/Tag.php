@@ -131,7 +131,7 @@ class TranslateTag {
 				// Do in-place replace of variables, copy to keep $section intact for
 				// the replace later
 				$replace = $section;
-				$this->extractVariablesFromSection( $replace, true );
+				$this->extractVariablesFromSection( $replace, 'replace' );
 				$replace = '<div class="mw-translate-other">' . "\n" . $replace . "\n". '</div>';
 				$input = str_replace( $section, $replace, $input );
 				$input = str_replace( $match['holder'], '', $input );
@@ -162,7 +162,10 @@ class TranslateTag {
 			// Store array or replace, replacement for easy replace afterwards
 			$vars[$id] = array( '$' . $id, $match['value'] );
 			// If requested, subst them immediately
-			if ( $subst ) $text = str_replace( $match[0], $match['value'], $text );
+			if ( $subst === 'replace' )
+				$text = str_replace( $match[0], $match['value'], $text );
+			elseif ( $subst === 'holder' )
+				$text = str_replace( $match[0], '$' . $id, $text );
 		}
 
 		return $vars;
@@ -246,6 +249,7 @@ class TranslateTag {
 			$key = $match['id'];
 			$contents = str_replace( $match['holder'], '', $match['section'] );
 			list( , $key ) = explode( ':', $obj->getTranslationPage( $title, $key ), 2);
+			$obj->extractVariablesFromSection( $contents, 'holder' );
 			$defs[$key] = $contents;
 		}
 
