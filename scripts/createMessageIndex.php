@@ -19,6 +19,8 @@ $groups = MessageGroups::singleton()->getGroups();
 $hugearray = array();
 $postponed = array();
 
+STDOUT( "Working with", 'main' );
+
 foreach ( $groups as $g ) {
 	# Skip meta thingies
 	if ( $g->isMeta() ) {
@@ -42,12 +44,9 @@ function checkAndAdd( $g, $ignore = false ) {
 	$messages = $g->getDefinitions();
 	$id = $g->getId();
 
-	if ( is_array( $messages ) ) {
-		STDOUT( "Working with $id" );
-	} else {
-		STDOUT( "Something wrong with $id... skipping" );
-		continue;
-	}
+	if ( !is_array( $messages ) ) continue;
+
+	STDOUT( " $id", 'main' );
 
 	$namespace = $g->namespaces[0];
 
@@ -58,7 +57,7 @@ function checkAndAdd( $g, $ignore = false ) {
 		$key = strtolower( "$namespace:$key" );
 		if ( isset($hugearray[$key]) ) {
 			if ( !$ignore )
-				STDOUT( "Key $key already belongs to $hugearray[$key], conflict with $id" );
+				STDERR( "Key $key already belongs to $hugearray[$key], conflict with $id" );
 		} else {
 			$hugearray[$key] = &$id;
 		}
