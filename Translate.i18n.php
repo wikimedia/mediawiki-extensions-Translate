@@ -728,6 +728,9 @@ $messages['bg'] = array(
 	'translate-statsf-language'              => 'Списък с езикови кодове, разделени със запетаи',
 	'translate-statsf-group'                 => 'Списък с групови кодове, разделени със запетаи',
 	'translate-statsf-submit'                => 'Преглед',
+	'translate-tag-legend'                   => 'Легенда:',
+	'translate-tag-legend-fallback'          => 'Превод на друг език',
+	'translate-tag-legend-fuzzy'             => 'Остарял превод',
 );
 
 /** Bengali (বাংলা)
@@ -1796,7 +1799,7 @@ Vous devez appartenir au groupe des traducteurs pour sauvegarder les changements
 	'translate-statsf-language'              => 'Liste de codes de langues, séparés de virgules',
 	'translate-statsf-group'                 => 'Liste de codes de groupes, séparés de virgules',
 	'translate-statsf-submit'                => 'Prévisualiser',
-	'translate-tag-category'                 => 'Pages traductibles',
+	'translate-tag-category'                 => 'Pages traduisibles',
 	'translate-tag-page-desc'                => 'Traduction de la page wiki [[:$1]].',
 	'translate-tag-translate-link-desc'      => 'Traduire cette page',
 	'translate-tag-legend'                   => 'Légende :',
