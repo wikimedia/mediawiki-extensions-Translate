@@ -94,6 +94,7 @@ $aliases['he'] = array(
 	'Translate'          => array( 'תרגום' ),
 	'Magic'              => array( 'תרגום_מתקדם' ),
 	'TranslationChanges' => array( 'שינויים_בתרגום' ),
+	'TranslationStats'   => array( 'סטטיסטיקות_תרגום' ),
 );
 
 /** Croatian (Hrvatski) */
