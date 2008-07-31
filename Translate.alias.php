@@ -54,7 +54,7 @@ $aliases['ceb'] = array(
 
 /** Czech (Česky) */
 $aliases['cs'] = array(
-	'Translate' => array( 'Translate', 'Přeložit' ),
+	'Translate' => array( 'Přeložit' ),
 );
 
 /** Lower Sorbian (Dolnoserbski) */
@@ -222,6 +222,11 @@ $aliases['te'] = array(
 /** Thai (ไทย) */
 $aliases['th'] = array(
 	'Translate' => array( 'แปล' ),
+);
+
+/** Wolof (Wolof) */
+$aliases['wo'] = array(
+	'Translate' => array( 'Tekki' ),
 );
 
 /** Yiddish (ייִדיש) */
