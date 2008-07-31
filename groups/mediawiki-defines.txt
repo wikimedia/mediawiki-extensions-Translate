@@ -82,6 +82,7 @@ file = catfeed/catfeed.i18n.php
 id = ext-catfeed
 
 Central Auth
+optional = centralauth-editset-grouplink
 
 Central Notice
 
