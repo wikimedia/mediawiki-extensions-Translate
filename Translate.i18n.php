@@ -1346,10 +1346,15 @@ $messages['el'] = array(
 	'translate-magic-special'           => 'Πρόσθετα ψευδώνυμα σελίδων',
 	'translationchanges'                => 'Αλλαγές μετάφρασης',
 	'translationchanges-change'         => '$1: $2 από $3',
-	'translate-checks-parameters'       => 'Οι παράμετροι που ακολουθούν δεν χρησιμοποιούνται:
+	'translate-checks-parameters'       => '{{PLURAL:$2|Η παράμετρος|Οι παράμετροι}} που ακολουθούν δεν χρησιμοποιούνται:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links'            => 'Οι Ακόλουθοι σύνδεσμοι είναι προβληματικοί:
 <strong><nowiki>$1</nowiki></strong>',
+	'translate-stats-users'             => 'Μεταφραστές',
+	'translate-statsf-scale-days'       => 'Ημέρες',
+	'translate-statsf-scale-hours'      => 'Ώρες',
+	'translate-statsf-count-edits'      => 'Αριθμός επεξεργασιών',
+	'translate-statsf-count-users'      => 'Ενεργοί Μεταφραστές',
 );
 
 /** Esperanto (Esperanto)
@@ -2473,16 +2478,19 @@ $messages['hu'] = array(
 	'translate-magic-cm-to-be'          => 'Leendő',
 	'translate-magic-cm-current'        => 'Jelenlegi',
 	'translate-magic-cm-original'       => 'Eredeti',
+	'translate-magic-cm-comment'        => 'Megjegyzés:',
 	'translate-magic-cm-save'           => 'Mentés',
 	'translate-magic-cm-updatedusing'   => 'Frissítve a [[Special:Magic]] használatával',
 	'translate-magic-cm-savefailed'     => 'Mentés sikertelen',
 	'translate-magic-special'           => 'Speciális lapok álnevei',
+	'translate-magic-words'             => 'Varázsszavak',
 	'translate-magic-skin'              => 'Felületek nevei',
 	'translate-magic-namespace'         => 'Névterek nevei',
 	'translationchanges'                => 'Változások a fordításokban',
 	'translationchanges-export'         => 'kimentés',
 	'translationchanges-change'         => '$1: $2 $3 által',
-	'translate-checks-parameters'       => 'A következő paraméterek nincsenek használva: <strong>$1</strong>',
+	'translate-checks-parameters'       => 'A következő {{PLURAL:$2|paraméter nincs|paraméterek nincsenek}} használva:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance'          => 'Nem egyenlő számban vannak használva a nyitó- és zárójelek: <strong>$1</strong>',
 	'translate-checks-links'            => 'A következő linkek nem megfelelőek: <strong>$1</strong>',
 	'translate-checks-xhtml'            => 'A következő tag-eket cseréld le a megfelelőekre: <strong>$1</strong>',
@@ -4044,7 +4052,7 @@ Om wijzigingen op te slaan moet u lid zijn van de groep vertalers. Wijzigingen w
 	'translate-magic-cm-export'              => 'Exporteren',
 	'translate-magic-cm-to-be'               => 'Toekomstig',
 	'translate-magic-cm-current'             => 'Huidig',
-	'translate-magic-cm-original'            => 'Oorspronkelijk',
+	'translate-magic-cm-original'            => 'Brontekst',
 	'translate-magic-cm-comment'             => 'Samenvatting:',
 	'translate-magic-cm-save'                => 'Opslaan',
 	'translate-magic-cm-updatedusing'        => 'Bijgewerkt via [[Special:Magic]]',
