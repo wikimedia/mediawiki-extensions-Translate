@@ -355,8 +355,8 @@ class TranslateUtils {
 
 	public static function snippet( &$text, $length = 10 ) {
 		global $wgLegalTitleChars, $wgContLang;
-		$snippet = preg_replace( "/[^\p{L}]/", ' ', $text );
-		$snippet = preg_replace( "/ {2,}/", ' ', $snippet );
+		$snippet = preg_replace( "/[^\p{L}]/u", ' ', $text );
+		$snippet = preg_replace( "/ {2,}/u", ' ', $snippet );
 		$snippet = $wgContLang->truncate( $snippet, $length );
 		$snippet = str_replace( ' ', '_', trim($snippet) );
 		return $snippet;
