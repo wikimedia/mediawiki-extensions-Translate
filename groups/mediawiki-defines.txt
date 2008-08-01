@@ -30,6 +30,7 @@ Babel
 ignored = babel-box-cellspacing, babel-category-prefix, babel-category-suffix
 ignored = babel-portal-prefix, babel-portal-suffix, babel-template-prefix
 ignored = babel-template-suffix, babel-footer
+optional = babel-directionality
 optional = babel-0-female, babel-1-female, babel-2-female, babel-3-female
 optional = babel-4-female, babel-5-female, babel-N-female, babel-0-n-female
 optional = babel-1-n-female, babel-2-n-female, babel-3-n-female
