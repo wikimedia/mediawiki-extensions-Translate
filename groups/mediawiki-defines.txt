@@ -676,7 +676,7 @@ file = wikihiero/wikihiero.i18n.php
 
 Wikimedia Messages
 ignored = sidebar
-optional = grouppage-steward, grouppage-Global_bot, grouppage-Global_rollback, grouppage-Ombudsmen
+optional = grouppage-steward, grouppage-sysadmin, grouppage-Global_bot, grouppage-Global_rollback, grouppage-Ombudsmen
 
 Wiki Text Logged In Out
 
