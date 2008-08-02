@@ -4,6 +4,9 @@ file = AdvancedRandom/AdvancedRandom.alias.php
 Category tree
 file = CategoryTree/CategoryTreePage.i18n.alias.php
 
+CentralAuth
+file = CentralAuth/CentralAuth.alias.php
+
 Check user
 file = CheckUser/CheckUser.alias.php
 
