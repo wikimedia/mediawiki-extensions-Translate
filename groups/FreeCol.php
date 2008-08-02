@@ -155,6 +155,10 @@ class FreeColMessageGroup extends MessageGroup {
 		'model.nation.spanish.region.river.3', 'model.nation.spanish.region.river.4', 'model.nation.spanish.region.river.5',
 	);
 
+	protected $ignored = array(
+		'headerFont',
+	);
+
 	public function getMessageFile( $code ) {
 		if ( $code == 'en' ) {
 			return 'FreeColMessages.properties';
