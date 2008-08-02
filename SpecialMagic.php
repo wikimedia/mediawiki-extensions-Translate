@@ -507,13 +507,13 @@ abstract class ComplexMessages {
 
 			$indexKeys = array();
 			foreach ( array_keys($items[self::LANG_MASTER]) as $key ) {
-				$indexKeys[$key] = isset($this->constants[$key]) ? $this->constants[$key] : $key;
+				$indexKeys[$key] = isset($this->constants[$key]) ? $this->constants[$key] : "'$key'";
 			}
 
 			$padTo = max(array_map( 'strlen', $indexKeys )) +3;
 
 			foreach ( $this->getIterator($group) as $key ) {
-				$temp = "\t'{$indexKeys[$key]}'";
+				$temp = "\t{$indexKeys[$key]}";
 
 				while ( strlen( $temp ) <= $padTo ) { $temp .= ' '; }
 
