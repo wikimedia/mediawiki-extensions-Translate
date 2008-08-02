@@ -11,6 +11,7 @@ class GettextFormatReader extends SimpleFormatReader {
 	public function setPrefix( $value ) {
 		$this->prefix = $value;
 	}
+	
 
 	public function parseAuthors() {
 		return array(); // Not implemented
@@ -38,14 +39,13 @@ class GettextFormatReader extends SimpleFormatReader {
 
 		if ( preg_match( '/X-Message-Group:\s+([a-zA-Z0-9-_]+)/', $data, $matches ) ) {
 			$groupId = $matches[1];
-			$useCtxtAsKey = true;
-		} else {
-			$useCtxtAsKey = false;
 		}
 
 		if ( preg_match( '/Plural-Forms:\s+nplurals=([0-9]+)/', $data, $matches ) ) {
 			$pluralForms = $matches[1];
 		}
+
+		$useCtxtAsKey = false;
 
 		$poformat = '".*"\n?(^".*"$\n?)*';
 		$quotePattern = '/(^"|"$\n?)/m';
@@ -53,6 +53,7 @@ class GettextFormatReader extends SimpleFormatReader {
 		$sections = preg_split( '/\n{2,}/', $data );
 		array_shift( $sections ); // First isn't an actual message
 		$changes = array();
+
 		foreach ( $sections as $section ) {
 			if ( trim($section) === '' ) continue;
 
@@ -115,7 +116,7 @@ class GettextFormatReader extends SimpleFormatReader {
 
 			// Parse flags
 			$matches = array();
-			if ( preg_match( '/^#,(.*)$/m', $section, $matches ) ) {
+			if ( preg_match( '/^#,(.*)$/mu', $section, $matches ) ) {
 				$flags = array_map( 'trim', explode( ',', $matches[1] ) );
 				foreach ( $flags as $key => $flag ) {
 					if ( $flag === 'fuzzy' ) {
@@ -153,7 +154,6 @@ class GettextFormatReader extends SimpleFormatReader {
 			$changes[$key] = $item;
 
 		}
-
 		return $changes;
 
 	}
