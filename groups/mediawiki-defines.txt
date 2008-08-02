@@ -294,6 +294,9 @@ Global Usage
 
 Gnuplot
 
+Google AdSense
+ignored = googleadsense
+
 Google Analytics
 file = googleAnalytics/googleAnalytics.i18n.php
 
