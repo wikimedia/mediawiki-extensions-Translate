@@ -7,11 +7,11 @@ if (!defined('MEDIAWIKI')) die();
  *
  * @author Niklas Laxström
  * @copyright Copyright © 2006-2008, Niklas Laxström
- * @copyright Copyright © 2007, Siebrand Mazeland
+ * @copyright Copyright © 2007-2008, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '9 (2008-07-29:2)' );
+define( 'TRANSLATE_VERSION', '9 (2008-08-02:1)' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name'           => 'Translate',
@@ -44,11 +44,6 @@ $wgHooks['OutputPageBeforeHTML'][] = 'TranslateEditAddons::addNavigation';
 $wgHooks['UserToggles'][] = 'TranslatePreferences::TranslateUserToggles';
 $wgHooks['SpecialRecentChangesQuery'][] = 'TranslateRcFilter::translationFilter';
 $wgHooks['SpecialRecentChangesPanel'][] = 'TranslateRcFilter::translationFilterForm';
-$wgHooks['SpecialPage_initList'][] = 'wfTranslateRemoveAllmessages';
-function wfTranslateRemoveAllmessages( $list ) {
-	unset( $list['Allmessages'] ); return true;
-}
-
 $wgHooks['ArticleSave'][]      = 'TranslateTag::save';
 $wgHooks['ArticleSaveComplete'][]      = 'TranslateTag::purgeAfterSave';
 $wgHooks['ParserAfterStrip'][] = 'TranslateTag::tag';
