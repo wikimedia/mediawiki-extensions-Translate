@@ -618,6 +618,7 @@ $messages['be-tarask'] = array(
 	'translate-next'                       => 'Наступная старонка',
 	'translate-prev'                       => 'Папярэдняя старонка',
 	'translate-page-description-legend'    => 'Інфармацыя пра групу',
+	'translate-page-edit'                  => 'рэдагаваць',
 	'translate-edit-information'           => 'Інфармацыя пра гэтае паведамленьне ($1)',
 	'translate-edit-in-other-languages'    => 'Паведамленьне на іншых мовах',
 	'translate-edit-goto-prev'             => 'Рэдагаваць папярэдняе паведамленьне',
@@ -4133,7 +4134,6 @@ $messages['nn'] = array(
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
  * @author Jon Harald Søby
- * @author Siebrand
  */
 $messages['no'] = array(
 	'translate'                              => 'Oversett',
@@ -4144,13 +4144,13 @@ $messages['no'] = array(
 	'translate-task-view'                    => 'se alle beskjeder',
 	'translate-task-untranslated'            => 'se alle uoversatte beskjeder',
 	'translate-task-optional'                => 'se valgfrie beskjeder',
-	'translate-task-problematic'             => 'Vis beskjeder som har problemer',
+	'translate-task-problematic'             => 'se beskjeder som har problemer',
 	'translate-task-review'                  => 'gå gjennom endringer',
 	'translate-task-reviewall'               => 'gå gjennom oversettelser',
 	'translate-task-export'                  => 'eksportere oversettelser',
 	'translate-task-export-to-file'          => 'eksportere oversettelser til fil',
 	'translate-task-export-as-po'            => 'eksportere oversettelser i Gettext-format',
-	'translate-task-export-to-xliff'         => 'Eksporter oversettelser i Xliff-format',
+	'translate-task-export-to-xliff'         => 'eksportere oversettelser i Xliff-format',
 	'translate-page-no-such-language'        => 'Ugyldig språkkode angitt.',
 	'translate-page-no-such-task'            => 'Ugyldig oppgave angitt.',
 	'translate-page-no-such-group'           => 'Ugyldig gruppe angitt.',
