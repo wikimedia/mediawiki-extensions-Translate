@@ -307,11 +307,6 @@ var = wgGoogleMapsMessages
 Go To Category
 
 Group Permissions Manager
-optional = grouppermissions-log-entry
-ignored = grouppermissions-ca-article, grouppermissions-ca-discussion, grouppermissions-ca-edit
-ignored = grouppermissions-ca-watch, grouppermissions-ca-protect, grouppermissions-ca-delete
-ignored = grouppermissions-ca-history, grouppermissions-ca-move, grouppermissions-ca-newsection
-ignored = content_actions
 
 HTMLets
 
