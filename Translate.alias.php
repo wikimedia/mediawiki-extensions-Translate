@@ -27,17 +27,17 @@ $aliases['af'] = array(
 /** Arabic (العربية) */
 $aliases['ar'] = array(
 	'Translate'          => array( 'ترجمة' ),
-	'Magic'              => array( 'ترجمة متقدمة', 'ماجيك' ),
-	'TranslationChanges' => array( 'تغييرات الترجمة' ),
-	'TranslationStats'   => array( 'إحصاءات الترجمة' ),
+	'Magic'              => array( 'ترجمة_متقدمة', 'ماجيك' ),
+	'TranslationChanges' => array( 'تغييرات_الترجمة' ),
+	'TranslationStats'   => array( 'إحصاءات_الترجمة' ),
 );
 
 /** Egyptian Spoken Arabic (مصرى) */
 $aliases['arz'] = array(
 	'Translate'          => array( 'ترجمة' ),
-	'Magic'              => array( 'ترجمة متقدمة', 'ماجيك' ),
-	'TranslationChanges' => array( 'تغييرات الترجمة' ),
-	'TranslationStats'   => array( 'إحصاءات الترجمة' ),
+	'Magic'              => array( 'ترجمة_متقدمة', 'ماجيك' ),
+	'TranslationChanges' => array( 'تغييرات_الترجمة' ),
+	'TranslationStats'   => array( 'إحصاءات_الترجمة' ),
 );
 
 /** Southern Balochi (بلوچی مکرانی) */
