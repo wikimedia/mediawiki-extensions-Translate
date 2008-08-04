@@ -584,7 +584,7 @@ file = SpecialFileList/SpecialFilelist.i18n.php
 Special Form
 ignored = formtemplatepattern
 
-StalkerLog
+Stalker Log
 
 Subst All
 optional = substall-hook
