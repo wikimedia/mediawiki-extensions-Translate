@@ -36,8 +36,6 @@ $wgAutoloadClasses['SpecialMagic'] = $dir . 'SpecialMagic.php';
 $wgAutoloadClasses['SpecialTranslationChanges'] = $dir . 'SpecialTranslationChanges.php';
 $wgAutoloadClasses['SpecialTranslationStats'] = $dir . 'Stats.php';
 
-$wgAutoloadClasses['TranslatePreferences'] = $dir . 'TranslateUtils.php';
-
 $wgAutoloadClasses['SimpleFormatReader'] = $dir . 'ffs/Simple.php';
 $wgAutoloadClasses['SimpleFormatWriter'] = $dir . 'ffs/Simple.php';
 $wgAutoloadClasses['WikiFormatReader'] = $dir . 'ffs/Wiki.php';
@@ -50,11 +48,9 @@ $wgAutoloadClasses['JavaFormatReader'] = $dir . 'ffs/Java.php';
 $wgAutoloadClasses['JavaFormatWriter'] = $dir . 'ffs/Java.php';
 $wgAutoloadClasses['XliffFormatWriter'] = $dir . 'ffs/Xliff.php';
 
-
 # utils
 $wgAutoloadClasses['ResourceLoader'] = $dir . 'utils/ResourceLoader.php';
 $wgAutoloadClasses['StringMatcher'] = $dir . 'utils/StringMatcher.php';
-
 
 $wgAutoloadClasses['StringMangler'] = $dir . 'utils/StringMangler.php';
 $wgAutoloadClasses['SmItem'] = $dir . 'utils/StringMangler.php';
@@ -62,11 +58,12 @@ $wgAutoloadClasses['SmRewriter'] = $dir . 'utils/StringMangler.php';
 $wgAutoloadClasses['SmAffixRewriter'] = $dir . 'utils/StringMangler.php';
 $wgAutoloadClasses['SmRegexRewriter'] = $dir . 'utils/StringMangler.php';
 
+$wgAutoloadClasses['TranslatePreferences'] = $dir . 'utils/UserToggles.php';
+$wgAutoloadClasses['TranslateToolbox'] = $dir . 'utils/ToolBox.php';
 
 # predefined groups
 $wgAutoloadClasses['PremadeMediawikiExtensionGroups'] = $dir . 'groups/MediaWikiExtensions.php';
 $wgAutoloadClasses['FreeColMessageGroup'] = $dir . 'groups/FreeCol.php';
-
 
 # tag
 $wgAutoloadClasses['TranslateTag'] = $dir . 'tag/Tag.php';

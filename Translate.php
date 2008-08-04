@@ -49,6 +49,7 @@ $wgHooks['ArticleSaveComplete'][]      = 'TranslateTag::purgeAfterSave';
 $wgHooks['ParserAfterStrip'][] = 'TranslateTag::tag';
 $wgHooks['OutputPageBeforeHTML'][] = 'TranslateTag::addcss';
 $wgHooks['PageRenderingHash'][] = 'TranslateTag::renderinghash';
+$wgHooks['SkinTemplateToolboxEnd'][] = 'TranslateToolbox::toolboxAllTranslations';
 
 $wgJobClasses['FuzzyJob'] = 'FuzzyJob';
 $wgAvailableRights[] = 'translate';

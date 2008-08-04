@@ -361,7 +361,7 @@ class TranslateUtils {
 		$snippet = str_replace( ' ', '_', trim($snippet) );
 		return $snippet;
 	}
-	
+
 }
 
 class HTMLSelector {
@@ -391,18 +391,5 @@ class HTMLSelector {
 
 	public function getHTML() {
 		return Xml::tags( 'select', $this->attributes, implode( "\n", $this->options ) );
-	}
-
-}
-
-class TranslatePreferences {
-	static function TranslateUserToggles(&$extraToggles) {
-		wfLoadExtensionMessages( 'Translate' );
-
-		// 'tog-translate-nonewsletter' is used as opt-out for
-		// users with a confirmed e-mail address
-		$extraToggles[] = 'translate-nonewsletter';
-
-		return true;
 	}
 }
