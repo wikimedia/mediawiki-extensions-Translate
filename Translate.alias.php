@@ -24,7 +24,9 @@ $aliases['af'] = array(
 	'TranslationChanges' => array( 'VertaalVeranderinge' ),
 );
 
-/** Arabic (العربية) */
+/** Arabic (العربية)
+ * @author Meno25
+ */
 $aliases['ar'] = array(
 	'Translate'          => array( 'ترجمة' ),
 	'Magic'              => array( 'ترجمة_متقدمة', 'ماجيك' ),
@@ -32,7 +34,9 @@ $aliases['ar'] = array(
 	'TranslationStats'   => array( 'إحصاءات_الترجمة' ),
 );
 
-/** Egyptian Spoken Arabic (مصرى) */
+/** Egyptian Spoken Arabic (مصرى)
+ * @author Meno25
+ */
 $aliases['arz'] = array(
 	'Translate'          => array( 'ترجمة' ),
 	'Magic'              => array( 'ترجمة_متقدمة', 'ماجيك' ),
