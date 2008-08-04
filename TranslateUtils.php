@@ -289,7 +289,7 @@ class TranslateUtils {
 	}
 
 	public static function messageKeyToGroup( $namespace, $key ) {
-		$key = strtolower( "$namespace:$key" );
+		$key = str_replace( " ", "_", strtolower( "$namespace:$key" ) );
 		$index = self::messageIndex();
 		return @$index[$key];
 	}
