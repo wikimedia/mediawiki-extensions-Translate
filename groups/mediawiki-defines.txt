@@ -318,7 +318,7 @@ Icon
 
 Image Map
 descmsg = imagemap_desc
-ignored = imagemap_desc_types
+optional = imagemap_desc_types
 
 Image Tagging
 
