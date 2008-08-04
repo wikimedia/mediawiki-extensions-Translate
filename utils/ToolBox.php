@@ -22,7 +22,7 @@ class TranslateToolbox {
 
 			// Add the actual toolbox entry.
 			// Add newlines and tabs for nicer HTML output.
-			echo("\n\t\t\t\t<li id=\"t-alltrans\"><a href=\"$url\">$desc</li>\n");
+			echo("\n\t\t\t\t<li id=\"t-alltrans\"><a href=\"$url\">$desc</a></li>\n");
 		}
 		return true;
 	}
