@@ -342,7 +342,6 @@ $messages['ang'] = array(
 /** Arabic (العربية)
  * @author Meno25
  * @author Alnokta
- * @author Siebrand
  * @author ترجمان05
  * @author OsamaK
  */
@@ -474,6 +473,7 @@ $messages['ar'] = array(
 	'translate-tag-legend-fuzzy'             => 'ترجمة قديمة',
 	'translate-tag-fuzzy-comment'            => 'التعريف تغير بواسطة [[User:$1]] في المراجعة $2.',
 	'translate-tag-fuzzy-reason'             => 'التعريف تغير بواسطة المستخدم $1 بالتعليق "$3" في $2.',
+	'translate-sidebar-alltrans'             => 'ترجمات أخرى',
 );
 
 /** Araucanian (Mapudungun)
@@ -631,7 +631,6 @@ $messages['be-tarask'] = array(
 
 /** Bulgarian (Български)
  * @author DCLXVI
- * @author Siebrand
  */
 $messages['bg'] = array(
 	'translate'                              => 'Превеждане',
@@ -731,6 +730,8 @@ $messages['bg'] = array(
 	'translate-statsf-language'              => 'Списък с езикови кодове, разделени със запетаи',
 	'translate-statsf-group'                 => 'Списък с групови кодове, разделени със запетаи',
 	'translate-statsf-submit'                => 'Преглед',
+	'translate-tag-page-desc'                => 'Превод на страницата [[:$1]].',
+	'translate-tag-translate-link-desc'      => 'Превеждане на тази страница',
 	'translate-tag-legend'                   => 'Легенда:',
 	'translate-tag-legend-fallback'          => 'Превод на друг език',
 	'translate-tag-legend-fuzzy'             => 'Остарял превод',
@@ -1091,7 +1092,6 @@ $messages['da'] = array(
 /** German (Deutsch)
  * @author Raimond Spekking
  * @author Purodha
- * @author Siebrand
  * @author Raymond
  */
 $messages['de'] = array(
@@ -1211,6 +1211,7 @@ Du musst in der Übersetzer-Gruppe sein, um Änderungen zu speichern. Änderunge
 	'translate-tag-legend-fuzzy'             => 'Veraltete Übersetzung',
 	'translate-tag-fuzzy-comment'            => 'Definition verändert durch [[User:$1|$1]] in Version $2.',
 	'translate-tag-fuzzy-reason'             => 'Definition verändert durch „$1“ mit dem Kommentar „$3“ in $2.',
+	'translate-sidebar-alltrans'             => 'Andere Übersetzungen',
 );
 
 /** Lower Sorbian (Dolnoserbski)
@@ -1694,7 +1695,6 @@ $messages['fi'] = array(
  * @author Verdy p
  * @author Sherbrooke
  * @author Seb35
- * @author Siebrand
  * @author ChrisPtDe
  * @author Louperivois
  */
@@ -1815,6 +1815,7 @@ Vous devez appartenir au groupe des traducteurs pour sauvegarder les changements
 	'translate-tag-legend-fuzzy'             => 'Traduction hors date',
 	'translate-tag-fuzzy-comment'            => 'Définition modifiée par l’utilisateur [[User:$1|$1]] dans la version $2.',
 	'translate-tag-fuzzy-reason'             => 'Définition modifiée par l’utilisateur $1 avec pour commentaire « $3 » dans $2.',
+	'translate-sidebar-alltrans'             => 'Autres traductions',
 );
 
 /** Cajun French (Français cadien)
@@ -2133,6 +2134,20 @@ $messages['he'] = array(
 	'translate-edit-goto-prev'          => 'עריכת ההודעה הקודמת',
 	'translate-edit-goto-next'          => 'עריכת ההודעה הבאה',
 	'translate-edit-goto-list'          => 'חזרה לרשימה',
+	'translate-magic-help'              => 'באפשרותכם לתרגם שמות דפים מיוחדים, מילות קסם, שמות רקעים ושמות מרחבי שם.
+
+בעת תרגום מילות קסם, עליכם לכלול גם את החלופות האנגליות או שהן יפסיקו לעבוד.
+בנוסף, אל תשנו את הפריט הראשון (0 או 1).
+
+לשמות דפים מיוחדים ולמילות קסם יכולים להיות כמה תרגומים.
+יש להפריד את התרגומים באמצעות פסיק (,).
+לשמות רקעים ומרחבי שם יכול להיות תרגום אחד בלבד.
+
+תרגום מרחבי השם, <tt>שיחת $1</tt> הוא מקרה מיוחד: <tt>$1</tt> יוחלף בשם האתר (לדוגמה, <tt>שיחת {{SITENAME}}</tt>).
+אם אין זה אפשרי בשפתכם לתרגם את מרחב השם הזה מבלי לשנות את שם האתר, אנא צרו קשר עם מפתח.
+
+עליכם להיות בקבוצת המתרגמים כדי לשמור שינויים.
+השינויים לא יישמרו עד שתלחצו על כפתור השמירה שלמטה.',
 	'translate-magic-submit'            => 'הצגה',
 	'translate-magic-cm-export'         => 'ייצוא',
 	'translate-magic-cm-to-be'          => 'עתידיים',
@@ -3555,7 +3570,6 @@ $messages['la'] = array(
 
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
- * @author Siebrand
  */
 $messages['lb'] = array(
 	'translate'                              => 'Iwwersetzt',
@@ -3651,6 +3665,7 @@ Dir musst am Grupp vun den Iwwersetzer si fir Ännerungen ofspäicheren ze kënn
 	'translate-checks-xhtml'                 => 'Ersetzt {{PLURAL:$2|dësen Tag|dës Tagen}} w.e.g. duerch déi korrekt:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural'                => "D'Definitioun benotzt <nowiki>{{PLURAL:}}</nowiki> awer d'Iwwersetzung mécht dat net.",
+	'translate-checks-pagename'              => "Nummraum geännert duerch d'Definitioun",
 	'tog-translate-nonewsletter'             => 'Schéckt mir keng E-Mail-Newsletter. (nëmme relevant fir Benotzer mat enger confirméierter e-Mailadress)',
 	'right-translate'                        => 'Mat dem Iwwersetzungs Tool änneren',
 	'translate-rc-translation-filter'        => 'Iwwersetzunge filteren:',
@@ -3666,12 +3681,16 @@ Dir musst am Grupp vun den Iwwersetzer si fir Ännerungen ofspäicheren ze kënn
 	'translate-statsf-height'                => 'Héicht a Pixelen',
 	'translate-statsf-scale-days'            => 'Deeg',
 	'translate-statsf-scale-hours'           => 'Stonnen',
+	'translate-statsf-count'                 => 'Mooss',
 	'translate-statsf-count-edits'           => 'Zuel vun den Ännerungen',
 	'translate-statsf-count-users'           => 'Aktiv Iwwersetzer',
+	'translate-tag-category'                 => 'Sàiten déi iwwersat kënne ginn',
 	'translate-tag-page-desc'                => 'Iwwersetzung vun der Wiki-Säit [[:$1]].',
 	'translate-tag-translate-link-desc'      => 'Dës Säit iwwersetzen',
 	'translate-tag-legend'                   => 'Erklärung:',
 	'translate-tag-legend-fallback'          => 'Iwwersetzung an aner Sproochen',
+	'translate-tag-fuzzy-reason'             => 'Definitioun gouf vum "$1" mat der Bemierkung "$3" an $2 geännert.',
+	'translate-sidebar-alltrans'             => 'Aner Iwwersetzungen',
 );
 
 /** Limburgish (Limburgs)
@@ -3912,16 +3931,29 @@ $messages['mr'] = array(
 
 /** Maltese (Malti)
  * @author Chrisportelli
+ * @author Roderick Mallia
  */
 $messages['mt'] = array(
-	'translate'                   => 'Traduzzjoni',
-	'translate-desc'              => '[[Special:Translate|Pagina speciale]] biex tittraduċi MediaWiki u iktar',
-	'translate-edit'              => 'modifika',
-	'translate-talk'              => 'diskussjoni',
-	'translate-history'           => 'kronoloġija',
-	'translate-task-view'         => 'Uri l-messaġġi kollha minn',
-	'translate-task-untranslated' => 'Uri l-messaġġi kollha li għadhom ma ġewx tradotti minn',
-	'translate-task-optional'     => 'Uri messaġġi opzjonali minn',
+	'translate'                         => 'Traduzzjoni',
+	'translate-desc'                    => '[[Special:Translate|Pagina speciale]] biex tittraduċi MediaWiki u iktar',
+	'translate-edit'                    => 'modifika',
+	'translate-talk'                    => 'diskussjoni',
+	'translate-history'                 => 'kronoloġija',
+	'translate-task-view'               => 'Uri l-messaġġi kollha minn',
+	'translate-task-untranslated'       => 'Uri l-messaġġi kollha li għadhom ma ġewx tradotti minn',
+	'translate-task-optional'           => 'Uri messaġġi opzjonali minn',
+	'translate-page-language'           => 'Lingwa',
+	'translate-ignored'                 => '(injorat)',
+	'translate-edit-definition'         => 'Definizzjoni tal-messaġġ',
+	'translate-edit-contribute'         => 'ikkontribwixxi',
+	'translate-edit-no-information'     => "''Dan il-messaġġ m'għandu l-ebda dokumentazzjoni.''
+''Jekk taf fejn jew kif jiġi wżat dan il-messaġġ, tista' tgħin lit-tradutturi l-oħra billi żżid id-dokumentazzjoni ma' dan il-messaġġ.''",
+	'translate-edit-information'        => 'Informazzjoni dwar dan il-messaġġ ($1)',
+	'translate-edit-in-other-languages' => "Messaġġ f'lingwi oħra",
+	'translate-edit-committed'          => 'Traduzzjoni attwali fis-software',
+	'translate-edit-warnings'           => 'Twissijiet dwar traduzzjonijiet mhux kompluti',
+	'translate-edit-goto-no-prev'       => 'L-ebda messaġġ preċedenti',
+	'translate-edit-goto-no-next'       => 'L-ebda messaġġ suċċessiv',
 );
 
 /** Nahuatl (Nahuatl)
@@ -4112,6 +4144,7 @@ Alle waarden hebben een limiet aan de boven- en onderzijde.',
 	'translate-tag-legend-fuzzy'             => 'Verouderde vertaling',
 	'translate-tag-fuzzy-comment'            => 'Definitie gewijzigd door [[User:$1|$1]] in versie $2.',
 	'translate-tag-fuzzy-reason'             => 'Definitie gewijzigd door "$1" met opmerking "$3" in $2.',
+	'translate-sidebar-alltrans'             => 'Andere vertalingen',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
@@ -4264,7 +4297,6 @@ Du må være i oversettergruppa for å lagre endringer. Endringer lagres ikke f�
 /** Occitan (Occitan)
  * @author Cedric31
  * @author ChrisPtDe
- * @author Siebrand
  */
 $messages['oc'] = array(
 	'translate'                              => 'Traduire',
@@ -4302,6 +4334,7 @@ $messages['oc'] = array(
 	'translate-next'                         => 'Pagina seguenta',
 	'translate-prev'                         => 'Pagina precedenta',
 	'translate-page-description-legend'      => 'Entresenha a prepaus del grop',
+	'translate-page-edit'                    => 'modificar',
 	'translate-optional'                     => '(opcional)',
 	'translate-ignored'                      => '(ignorat)',
 	'translate-edit-definition'              => 'Definicion del messatge',
@@ -4311,6 +4344,11 @@ $messages['oc'] = array(
 	'translate-edit-in-other-languages'      => 'Messatge dins las autras lengas',
 	'translate-edit-committed'               => 'Traduccions actualas ja dins lo logicial',
 	'translate-edit-warnings'                => 'Avertiments concernent las traduccions incomplètas',
+	'translate-edit-goto-no-prev'            => 'Cap de messatge precedent',
+	'translate-edit-goto-no-next'            => 'Cap de messatge seguent',
+	'translate-edit-goto-prev'               => 'Editar lo messatge precedent',
+	'translate-edit-goto-next'               => 'Editar lo messatge seguent',
+	'translate-edit-goto-list'               => 'Retorn a la tièra',
 	'translate-magic-pagename'               => 'Traduccion de MediaWiki espandida',
 	'translate-magic-help'                   => "Podètz traduire los aliases de paginas especialas, los mots magics, los noms de skins e los noms d'espacis de noms.
 
@@ -4340,12 +4378,13 @@ Vos cal aparténer al grop dels traductors per salvar los cambiaments. Los cambi
 	'translationchanges'                     => 'Traduccions modificadas',
 	'translationchanges-export'              => 'exportar',
 	'translationchanges-change'              => '$1: $2 per $3',
-	'translate-checks-parameters'            => 'Los paramètres seguents son pas utilizats : <strong>$1</strong',
-	'translate-checks-balance'               => 'I a un nombre incorrècte de parentèsis : <strong>$1</strong>',
-	'translate-checks-links'                 => 'Los ligams seguents son dobtoses : <strong>$1</strong',
-	'translate-checks-xhtml'                 => 'Sètz convidats a tornar metre en plaça las balisas seguentas amb las que son corrèctas :
-<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters'            => '{{PLURAL:$2|Lo paramètre seguent es pas utilizat|Los paramètres seguents son pas utilizats}} : <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters-unknown'    => '{{PLURAL:$2|Lo paramètre seguent es desconegut|Los paramètres seguents son desconeguts}} : <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-balance'               => 'I a un nombre impar de {{PLURAL:$2|parentèsis|parentèsis}} : <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links'                 => '{{PLURAL:$2|Lo ligam seguent causa|Los ligams seguents causan}} de problèmas : <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-xhtml'                 => 'Sètz convidat(ada) a corregir {{PLURAL:$2|la balisa seguenta|las balisas seguentas}} : <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural'                => 'La definicion utiliza <nowiki>{{PLURAL:}}</nowiki> mas pas la traduccion',
+	'translate-checks-pagename'              => 'Nom d’espaci modificat dempuèi la definicion',
 	'tog-translate-nonewsletter'             => 'Me mandetz pas la letra d’informacion per corrièr (concernís pas que les utilizaires que dispausan d’una adreça de corrièr electronic confirmada)',
 	'right-translate'                        => "Modificar en utilizant l'interfàcia de traduccion",
 	'translate-rc-translation-filter'        => 'Filtrar las traduccions :',
@@ -4353,6 +4392,31 @@ Vos cal aparténer al grop dels traductors per salvar los cambiaments. Los cambi
 	'translate-rc-translation-filter-only'   => 'Afichar unicament las traduccions',
 	'translate-rc-translation-filter-filter' => 'Eliminar las traduccions',
 	'translate-rc-translation-filter-site'   => 'Solament los cambiaments de messatges del sit',
+	'translationstats'                       => 'Estatisticas de traduccion',
+	'translate-stats-edits'                  => 'Edicions per jorn',
+	'translate-stats-users'                  => 'Traductors',
+	'translate-statsf-intro'                 => "Posètz crear d'estatisticas simplas amb aqueste formulari. Totas las valors an de limits maximals e minimals.",
+	'translate-statsf-options'               => 'Opcions del grafic',
+	'translate-statsf-width'                 => 'Largor en pixels',
+	'translate-statsf-height'                => 'Nautor en pixels',
+	'translate-statsf-days'                  => 'Periòde en jorns',
+	'translate-statsf-scale'                 => 'Granularitat',
+	'translate-statsf-scale-days'            => 'Jorns',
+	'translate-statsf-scale-hours'           => 'Oras',
+	'translate-statsf-count'                 => 'Mesura',
+	'translate-statsf-count-edits'           => "Nombre d'edicions",
+	'translate-statsf-count-users'           => 'Traductors actius',
+	'translate-statsf-language'              => 'Tièra de còdes de lengas, separats per de virgulas',
+	'translate-statsf-group'                 => 'Tièra de còdes de gropes, separats per de virgulas',
+	'translate-statsf-submit'                => 'Previsualizar',
+	'translate-tag-category'                 => 'Paginas tradusiblas',
+	'translate-tag-page-desc'                => 'Traduccion de la pagina wiki [[:$1]].',
+	'translate-tag-translate-link-desc'      => 'Traduire aquesta pagina',
+	'translate-tag-legend'                   => 'Legenda :',
+	'translate-tag-legend-fallback'          => 'Traduccion dins d’autras lengas',
+	'translate-tag-legend-fuzzy'             => 'Traduccion fòra de data',
+	'translate-tag-fuzzy-comment'            => 'Definicion modificada per l’utilizaire [[User:$1|$1]] dins la version $2.',
+	'translate-tag-fuzzy-reason'             => 'Definicion modificada per l’utilizaire $1 amb per comentari « $3 » dins $2.',
 );
 
 /** Ossetic (Иронау)
@@ -5612,7 +5676,6 @@ $messages['uk'] = array(
 
 /** Vèneto (Vèneto)
  * @author Candalua
- * @author Siebrand
  */
 $messages['vec'] = array(
 	'translate'                         => 'Tradussion',
@@ -5686,12 +5749,12 @@ I canbiamenti no i xe salvà finché no te struchi el boton qua soto.",
 	'translationchanges'                => 'Modifiche a le tradussion',
 	'translationchanges-export'         => 'esporta',
 	'translationchanges-change'         => '$1: $2 da $3',
-	'translate-checks-parameters'       => 'I seguenti parametri no i xe mìa doparà: <strong>$1</strong>',
-	'translate-checks-balance'          => 'Ghe xe un nùmaro dispari de paréntesi:
+	'translate-checks-parameters'       => "{{PLURAL:$2|El seguente parametro no'l|I seguenti parametri no i}} xe mìa doparà: <strong><nowiki>$1</nowiki></strong>",
+	'translate-checks-balance'          => 'Ghe xe un nùmaro dispari de {{PLURAL:$2|paréntesi|paréntesi}}:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links'            => 'I colegamenti seguenti i pol causar problemi:
+	'translate-checks-links'            => '{{PLURAL:$2|El colegamento seguente el|I colegamenti seguenti i}} pol causar problemi:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-xhtml'            => 'Par piaser, sostituìssi i seguenti tag con quei giusti:
+	'translate-checks-xhtml'            => 'Par piaser, sostituìssi {{PLURAL:$2|el seguente tag con quel giusto|i seguenti tag con quei giusti}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural'           => 'La definission la dòpara <nowiki>{{PLURAL:}}</nowiki> ma la tradussion no.',
 	'tog-translate-nonewsletter'        => 'No stà mandarme notiziari par e-mail (solo utenti che gà un indirisso e-mail convalidà)',
