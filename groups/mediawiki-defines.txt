@@ -113,6 +113,7 @@ optional = cite_references_link_one, cite_references_link_many
 optional = cite_references_link_many_format, cite_references_link_many_format_alpha
 optional = cite_references_link_many_format_backlink_labels
 optional = cite_references_link_many_sep, cite_references_link_many_and
+optional = cite_references_prefix_alpha
 ignored = cite_references_prefix, cite_references_suffix
 
 Cite (special page)
