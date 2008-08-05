@@ -603,6 +603,7 @@ $messages['bcl'] = array(
 
 /** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
  * @author EugeneZelenko
+ * @author Red Winged Duck
  */
 $messages['be-tarask'] = array(
 	'translate'                            => 'Пераклад',
@@ -615,6 +616,7 @@ $messages['be-tarask'] = array(
 	'translate-page-task'                  => 'Я хачу',
 	'translate-page-group'                 => 'Група',
 	'translate-page-language'              => 'Мова',
+	'translate-page-limit'                 => 'Ліміт',
 	'translate-page-limit-option'          => '$1 {{PLURAL:$1|паведамленьне|паведамленьні|паведамленьняў}} на старонцы',
 	'translate-page-navigation-legend'     => 'Навігацыя',
 	'translate-next'                       => 'Наступная старонка',
@@ -625,6 +627,7 @@ $messages['be-tarask'] = array(
 	'translate-edit-in-other-languages'    => 'Паведамленьне на іншых мовах',
 	'translate-edit-goto-prev'             => 'Рэдагаваць папярэдняе паведамленьне',
 	'translate-edit-goto-next'             => 'Рэдагаваць наступнае паведамленьне',
+	'translate-magic-pagename'             => 'Пашыраны пераклад MediaWiki',
 	'translate-magic-cm-comment'           => 'Камэнтар:',
 	'translate-rc-translation-filter-only' => 'Паказваць толькі пераклады',
 );
