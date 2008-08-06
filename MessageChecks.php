@@ -57,7 +57,7 @@ class MessageChecks {
 
 		foreach ( $this->checksForType[$type] as $check ) {
 			$warning = '';
-			if ( call_user_func( array($this, $check), $message, $code, $warning ) ) {
+			if ( call_user_func( array($this, $check), $message, $code, &$warning ) ) {
 				$warnings[] = $warning;
 			}
 		}
