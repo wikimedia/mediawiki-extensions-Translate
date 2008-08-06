@@ -32,7 +32,7 @@ $messages['en'] = array(
 	'translate-page-no-such-task'     => 'Specified task was invalid.',
 	'translate-page-no-such-group'    => 'Specified group was invalid.',
 
-	'translate-page-disabled'  => "Translations to this language in this group has been disabled. Reason:
+	'translate-page-disabled'  => "Translations to this language in this group have been disabled. Reason:
 
 ''$1''",
 
