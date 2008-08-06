@@ -439,6 +439,7 @@ Ogg Handler
 optional = ogg-player-cortado, ogg-player-vlc-mozilla, ogg-player-vlc-activex
 optional = ogg-player-quicktime-mozilla, ogg-player-quicktime-activex
 optional = ogg-player-totem, ogg-player-kmplayer, ogg-player-kaffeine
+optional = ogg-player-mplayerplug-in
 
 Online Status
 ignored = onlinestatus-levels
