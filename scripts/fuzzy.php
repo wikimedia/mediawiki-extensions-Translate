@@ -64,7 +64,7 @@ class FuzzyBot {
 
 		$wgUser = User::newFromName( $wgTranslateFuzzyBotName );
 
-		if ( $wgUser->isAnon() ) {
+		if ( !$wgUser->isLoggedIn() ) {
 			STDOUT( "Creating user $wgTranslateFuzzyBotName" );
 			$wgUser->addToDatabase();
 		}

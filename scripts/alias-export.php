@@ -1,6 +1,6 @@
 <?php
 /**
- * Script to export translations of one message group to file(s).
+ * Script to export special page aliases of extensions.
  *
  * @author Niklas Laxstrom
  *
@@ -9,7 +9,7 @@
  * @file
  */
 
-$optionsWithArgs = array( 'lang', 'target', 'group' );
+$optionsWithArgs = array( 'lang', 'target' );
 require( dirname(__FILE__) . '/cli.inc' );
 
 function showUsage() {
@@ -20,8 +20,7 @@ Usage: php aliasexport.php [options...]
 
 Options:
   --target      Target directory for exported files
-  --lang        Comma separated list of language codes
-  --group       Group id
+  --lang        Comma separated list of language codes or *
 EOT
 );
 	exit( 1 );
@@ -45,7 +44,7 @@ if ( !is_writable( $options['target'] ) ) {
 	exit(1);
 }
 
-$langs = array_map( 'trim', explode( ',', $options['lang'] ) );
+$langs = Cli::parseLanguageCodes( $options['lang'] );
 
 
 if ( !file_exists(TRANSLATE_ALIASFILE) || !is_readable(TRANSLATE_ALIASFILE) ) {

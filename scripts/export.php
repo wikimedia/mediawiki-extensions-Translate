@@ -20,7 +20,7 @@ Usage: php export.php [options...]
 
 Options:
   --target      Target directory for exported files
-  --lang        Comma separated list of language codes
+  --lang        Comma separated list of language codes or *
   --group       Group id
 EOT
 );
@@ -48,8 +48,7 @@ if ( !is_writable( $options['target'] ) ) {
 	exit(1);
 }
 
-$langs = array_map( 'trim', explode( ',', $options['lang'] ) );
-
+$langs = Cli::parseLanguageCodes( $options['langs'] );
 
 $group = MessageGroups::getGroup( $options['group'] );
 

@@ -221,14 +221,14 @@ class WikiWriter {
 		global $wgTitle, $wgArticle;
 		$wgTitle = Title::makeTitleSafe( $namespace, $title );
 
-		STDOUT( "Updating {$wgTitle->getPrefixedText()}... ", true );
+		STDOUT( "Updating {$wgTitle->getPrefixedText()}... ", $title );
 		if ( !$wgTitle instanceof Title ) {
-			STDOUT( "INVALID TITLE!", false );
+			STDOUT( "INVALID TITLE!", $title );
 			return;
 		}
 
 		if ( $this->dryrun ) {
-			STDOUT( "DRY RUN!", false );
+			STDOUT( "DRY RUN!", $title );
 			return;
 		}
 
@@ -237,9 +237,9 @@ class WikiWriter {
 		$success = $wgArticle->doEdit( $text, 'Updating translation from gettext import' );
 
 		if ( $success ) {
-			STDOUT( "OK!", false );
+			STDOUT( "OK!", $title );
 		} else {
-			STDOUT( "Failed!", false );
+			STDOUT( "Failed!", $title );
 		}
 	}
 }

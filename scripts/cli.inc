@@ -41,3 +41,17 @@ function STDERR( $message, $channel = null ) {
 }
 
 register_shutdown_function('STDOUT', false);
+
+
+class Cli {
+
+	public static function parseLanguageCodes( /* string */ $codes ) {
+		$langs = array_map( 'trim', explode( ',', $codes ) );
+		if ( $langs[0] === '*' ) {
+			$languages = Language::getLanguageNames();
+			ksort($languages);
+			$langs = array_keys($languages);
+		}
+		return $langs;
+	}
+}
