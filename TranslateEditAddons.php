@@ -63,15 +63,17 @@ class TranslateEditAddons {
 			wfMsgHtml( 'translate-edit-goto-list' ),
 			"group=$id&language=$code#msg_$next" );
 
-		$text .=
-"<hr />
+		$def = TranslateUtils::convertWhiteSpaceToHTML($def);
+
+		$text .= <<<EOEO
+<hr />
 <ul>
 <li>$prevLink</li>
 <li>$nextLink</li>
 <li>$list</li>
 </ul><hr />
-<pre>$def</pre>";
-
+<div class="mw-translate-definition-preview">$def</div>
+EOEO;
 		return true;
 	}
 
