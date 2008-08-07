@@ -65,7 +65,7 @@ Import users
 file = ImportUsers/SpecialImportUsers.alias.php
 
 Interwiki
-file = Interwiki/Interwiki.alias.php
+file = Interwiki/SpecialInterwiki.i18n.php
 
 Interwiki list
 file = InterwikiList/InterwikiList.alias.php
@@ -79,8 +79,8 @@ file = LinkSearch/LinkSearch.alias.php
 Maintenance
 file = Maintenance/Maintenance.alias.php
 
-Multiple upload
-file = MultipleUpload/SpecialMultipleUpload.alias.php
+Multi upload
+file = MultiUpload/SpecialMultipleUpload.alias.php
 
 Newest pages
 file = NewestPages/NewestPages.alias.php
