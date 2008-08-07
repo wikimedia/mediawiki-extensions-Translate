@@ -65,7 +65,7 @@ Import users
 file = ImportUsers/SpecialImportUsers.alias.php
 
 Interwiki
-file = Interwiki/SpecialInterwiki.i18n.php
+file = Interwiki/SpecialInterwiki.alias.php
 
 Interwiki list
 file = InterwikiList/InterwikiList.alias.php
