@@ -90,7 +90,7 @@ Central Notice
 
 Change Author
 optional = changeauthor-rev
-ignored = changeauthor-short,changeauthor-logpagetext
+ignored = changeauthor-logpagetext
 
 CharInsert
 
@@ -126,7 +126,6 @@ Clean Changes
 
 Collection
 descmsg = coll-desc
-ignored = coll-collection
 
 Comment Pages
 ignored = commenttab-editintro, commenttab-preload

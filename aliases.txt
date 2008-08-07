@@ -1,3 +1,6 @@
+Abuse filter
+file = AbuseFilter/AbuseFilter.alias.php
+
 Advanced random
 file = AdvancedRandom/AdvancedRandom.alias.php
 
@@ -7,11 +10,17 @@ file = CategoryTree/CategoryTreePage.i18n.alias.php
 CentralAuth
 file = CentralAuth/CentralAuth.alias.php
 
+Change author
+file = ChangeAuthor/ChangeAuthor.alias.php
+
 Check user
 file = CheckUser/CheckUser.alias.php
 
 Special cite
 file = Cite/SpecialCite.i18n.alias.php
+
+Collection
+file = Collection/Collection.alias.php
 
 Configure
 file = Configure/Configure.alias.php
@@ -55,11 +64,32 @@ file = GlobalBlocking/GlobalBlocking.alias.php
 Import users
 file = ImportUsers/SpecialImportUsers.alias.php
 
+Interwiki
+file = Interwiki/Interwiki.alias.php
+
+Interwiki list
+file = InterwikiList/InterwikiList.alias.php
+
 Invitations
 file = Invitations/Invitations.i18n.alias.php
 
 Link search
 file = LinkSearch/LinkSearch.alias.php
+
+Maintenance
+file = Maintenance/Maintenance.alias.php
+
+Multiple upload
+file = MultipleUpload/SpecialMultipleUpload.alias.php
+
+Newest pages
+file = NewestPages/NewestPages.alias.php
+
+Nuke
+file = Nuke/SpecialNuke.alias.php
+
+Oversight
+file = Oversight/HideRevision.alias.php
 
 Rename user
 file = Renameuser/SpecialRenameuser.alias.php
