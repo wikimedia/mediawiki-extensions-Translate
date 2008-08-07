@@ -397,6 +397,7 @@ class AllFlaggedRevsExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-flaggedrevs-stablepages',
 		'ext-flaggedrevs-stableversions',
 		'ext-flaggedrevs-unreviewedpages',
+		'ext-flaggedrevs-validationstatistics',
 	);
 
 	protected function init() {
