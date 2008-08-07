@@ -59,9 +59,10 @@ class TranslateEditAddons {
 		}
 
 		$title = SpecialPage::getTitleFor( 'translate' );
+		$title->mFragment = "msg_$next";
 		$list = $skin->makeKnownLinkObj( $title,
 			wfMsgHtml( 'translate-edit-goto-list' ),
-			"group=$id&language=$code#msg_$next" );
+			"group=$id&language=$code" );
 
 		$def = TranslateUtils::convertWhiteSpaceToHTML($def);
 
