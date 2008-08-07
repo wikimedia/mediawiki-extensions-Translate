@@ -422,6 +422,7 @@ file = Newuserlog/Newuserlog.i18n.php
 ignored = newuserlogentry
 
 New User Message
+ignored = newusermessage-template, newusermessage-editor
 
 New User Notification
 file = NewUserNotif/NewUserNotif.i18n.php
