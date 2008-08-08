@@ -265,7 +265,6 @@ $messages['af'] = array(
 
 /** Aragonese (Aragonés)
  * @author Juanpabl
- * @author Siebrand
  */
 $messages['an'] = array(
 	'translate'                         => 'Traduzir',
@@ -396,9 +395,6 @@ $messages['ar'] = array(
 	'translate-edit-goto-list'               => 'الرجوع إلى القائمة',
 	'translate-magic-pagename'               => 'ترجمة ميدياويكي الممتدة',
 	'translate-magic-help'                   => 'يمكنك ترجمة أسماء الصفحات الخاصة، الكلمات السحرية، أسماء الواجهات وأسماء النطاقات.
-
-في الكلمات السحرية تحتاج إلى إضافة الترجمات الإنجليزية أو فستتوقف عن العمل.
-أيضا اترك المدخل الأول (0 أو 1) كما هو.
 
 أسماء الصفحات الخاصة والكلمات السحرية يمكن أن يكون لها ترجمات متعددة.
 الترجمات تفصل بواسطة فاصلة (,).
@@ -817,7 +813,6 @@ $messages['bpy'] = array(
 
 /** Breton (Brezhoneg)
  * @author Fulup
- * @author Siebrand
  */
 $messages['br'] = array(
 	'translate'                              => 'Treiñ',
@@ -929,7 +924,6 @@ $messages['bs'] = array(
 /** Catalan (Català)
  * @author SMP
  * @author Toniher
- * @author Siebrand
  */
 $messages['ca'] = array(
 	'translate'                         => 'Tradueix',
@@ -1148,7 +1142,6 @@ $messages['da'] = array(
 /** German (Deutsch)
  * @author Raimond Spekking
  * @author Purodha
- * @author Raymond
  */
 $messages['de'] = array(
 	'translate'                              => 'Übersetze',
@@ -1219,7 +1212,7 @@ Du musst in der Übersetzer-Gruppe sein, um Änderungen zu speichern. Änderunge
 	'translate-magic-cm-original'            => 'Original',
 	'translate-magic-cm-comment'             => 'Kommentar:',
 	'translate-magic-cm-save'                => 'Speichern',
-	'translate-magic-cm-updatedusing'        => 'Aktualisiert durch Special:Magic',
+	'translate-magic-cm-updatedusing'        => 'Aktualisiert durch [[Special:Magic]]',
 	'translate-magic-cm-savefailed'          => 'Speichern fehlgeschlagen',
 	'translate-magic-special'                => 'Spezialseiten-Aliase',
 	'translate-magic-words'                  => 'Magische Wörter',
@@ -1231,7 +1224,7 @@ Du musst in der Übersetzer-Gruppe sein, um Änderungen zu speichern. Änderunge
 	'translate-checks-parameters'            => '{{PLURAL:$2|Der folgende Parameter wird|Die folgenden Parameter werden}} nicht benutzt: <strong>$1</strong>',
 	'translate-checks-parameters-unknown'    => '{{PLURAL:$2|Der folgende Parameter ist|Die folgenden Parameter sind}} unbekannt: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance'               => 'Die {{PLURAL:$2|folgende Klammersetzung ist|folgenden Klammersetzungen sind}} nicht ausgeglichen: <strong>$1</strong>',
-	'translate-checks-links'                 => '{{PLURAL:$2|Der folgende Link ist|Die folgenden Links sind}} sind problematisch: <strong>$1</strong>',
+	'translate-checks-links'                 => '{{PLURAL:$2|Der folgende Link ist|Die folgenden Links sind}} problematisch: <strong>$1</strong>',
 	'translate-checks-xhtml'                 => 'Bitte ersetze {{PLURAL:$2|den folgenden Tag|die folgenden Tags}} durch die korrekten: <strong>$1</strong>',
 	'translate-checks-plural'                => 'Das Original benutzt <nowiki>{{PLURAL:}}</nowiki>, die Übersetzung aber nicht.',
 	'translate-checks-pagename'              => 'Namensraum geändert durch die Definition',
@@ -1272,7 +1265,6 @@ Du musst in der Übersetzer-Gruppe sein, um Änderungen zu speichern. Änderunge
 
 /** Lower Sorbian (Dolnoserbski)
  * @author Michawiki
- * @author Siebrand
  * @author Dundak
  */
 $messages['dsb'] = array(
@@ -1927,7 +1919,6 @@ $messages['frc'] = array(
 
 /** Franco-Provençal (Arpetan)
  * @author ChrisPtDe
- * @author Siebrand
  */
 $messages['frp'] = array(
 	'translate'                         => 'Traduire',
@@ -2026,7 +2017,6 @@ $messages['ga'] = array(
  * @author Toliño
  * @author Alma
  * @author Xosé
- * @author Siebrand
  */
 $messages['gl'] = array(
 	'translate'                              => 'Traducir',
@@ -2235,9 +2225,6 @@ $messages['he'] = array(
 	'translate-magic-pagename'               => 'תרגום מורחב של מדיה־ויקי',
 	'translate-magic-help'                   => 'באפשרותכם לתרגם שמות דפים מיוחדים, מילות קסם, שמות רקעים ושמות מרחבי שם.
 
-בעת תרגום מילות קסם, עליכם לכלול גם את החלופות האנגליות או שהן יפסיקו לעבוד.
-בנוסף, אל תשנו את הפריט הראשון (0 או 1).
-
 לשמות דפים מיוחדים ולמילות קסם יכולים להיות כמה תרגומים.
 יש להפריד את התרגומים באמצעות פסיק (,).
 לשמות רקעים ומרחבי שם יכול להיות תרגום אחד בלבד.
@@ -2395,7 +2382,6 @@ $messages['hr'] = array(
 
 /** Upper Sorbian (Hornjoserbsce)
  * @author Michawiki
- * @author Siebrand
  * @author Dundak
  */
 $messages['hsb'] = array(
@@ -3042,7 +3028,6 @@ Le modifiche non vengono salvate finché non clicchi sul bottone "Salva" sotto.'
 /** Japanese (日本語)
  * @author JtFuruhata
  * @author Marine-Blue
- * @author Siebrand
  */
 $messages['ja'] = array(
 	'translate'                         => 'ソフトウェアメッセージの翻訳',
@@ -3511,7 +3496,6 @@ Esim aya awdarmalarında <tt>$1_talk</tt> degen arnaýı keltiriledi. <tt>$1</tt
 
 /** Kazakh (Kazakhstan) (‪Қазақша (Қазақстан)‬)
  * @author AlefZet
- * @author Siebrand
  */
 $messages['kk-kz'] = array(
 	'translate'                       => 'Аудару',
@@ -3558,7 +3542,6 @@ $messages['kk-kz'] = array(
  * @author គីមស៊្រុន
  * @author Chhorran
  * @author Lovekhmer
- * @author Siebrand
  */
 $messages['km'] = array(
 	'translate'                            => 'បកប្រែ',
@@ -3679,7 +3662,6 @@ $messages['krj'] = array(
 
 /** Ripoarisch (Ripoarisch)
  * @author Purodha
- * @author Siebrand
  */
 $messages['ksh'] = array(
 	'translate'                              => 'Övversäze',
@@ -3957,7 +3939,6 @@ $messages['lo'] = array(
 /** Lithuanian (Lietuvių)
  * @author Vpovilaitis
  * @author Garas
- * @author Siebrand
  */
 $messages['lt'] = array(
 	'translate'                         => 'Vertimas',
@@ -4305,13 +4286,14 @@ $messages['nl'] = array(
 	'translate-magic-pagename'               => 'Uitgebreide MediaWiki-vertaling',
 	'translate-magic-help'                   => 'U kunt alternatieven voor speciale pagina\'s, magische woorden, skinnamen en naamruimtebenamingen vertalen.
 
-In magische woorden moet u de Engelstalige vertalingen opnemen, omdat ze anders niet meer werken. Laat ook de eerste cijfers (0 of 1) ongewijzigd.
+Alternatieven voor speciale pagina\'s en magische woorden kunnen meerdere vertalingen hebben.
+Scheid vertalingen met een komma (,). Skinnamen en naamruimtebenamingen kunnen slechts één vertaling hebben.
 
-Alternatieven voor speciale pagina\'s en magische woorden kunnen meerdere vertalingen hebben. Scheid vertalingen met een komma (,). Skinnamen en naamruimtebenamingen kunnen slechts één vertaling hebben.
+In naamruimtebenamingen is <tt>$1 talk</tt> een uitzondering. <tt>$1</tt> wordt vervangen door de sitenaam (bijvoorbeeld <tt>{{SITENAME}} talk</tt>).
+Als het in uw taal niet mogelijk is een geldige uitdrukking te vormen zonder de sitenaam te wijzigen, neem dan contact op met een ontwikkelaar.
 
-In naamruimtebenamingen is <tt>$1 talk</tt> een uitzondering. <tt>$1</tt> wordt vervangen door de sitenaam (bijvoorbeeld <tt>{{SITENAME}} talk</tt>). Als het in uw taal niet mogelijk is een geldige uitdrukking te vormen zonder de sitenaam te wijzigen, neem dan contact op met een ontwikkelaar.
-
-Om wijzigingen op te slaan moet u lid zijn van de groep vertalers. Wijzigingen worden niet bewaard totdat u op "Pagina opslaan" hebt geklikt.',
+Om wijzigingen op te slaan moet u lid zijn van de groep vertalers.
+Wijzigingen worden niet bewaard totdat u op "Pagina opslaan" hebt geklikt.',
 	'translate-magic-module'                 => 'Module:',
 	'translate-magic-submit'                 => 'Ophalen',
 	'translate-magic-cm-export'              => 'Exporteren',
@@ -4770,7 +4752,6 @@ Zmiany nie są zapisywane, dopóki użytkownik nie naciśnie umieszczonego poni�
 
 /** Piedmontese (Piemontèis)
  * @author Bèrto 'd Sèra
- * @author Siebrand
  */
 $messages['pms'] = array(
 	'translate'                       => 'Viragi',
@@ -4839,7 +4820,6 @@ $messages['ps'] = array(
 /** Portuguese (Português)
  * @author 555
  * @author Malafaya
- * @author Siebrand
  */
 $messages['pt'] = array(
 	'translate'                         => 'Traduzir',
@@ -4964,7 +4944,6 @@ $messages['ro'] = array(
 /** Russian (Русский)
  * @author Александр Сигачёв
  * @author Ahonc
- * @author Siebrand
  * @author MaxSem
  */
 $messages['ru'] = array(
@@ -5073,7 +5052,6 @@ $messages['sah'] = array(
 
 /** Slovak (Slovenčina)
  * @author Helix84
- * @author Siebrand
  */
 $messages['sk'] = array(
 	'translate'                              => 'Preložiť',
@@ -5129,13 +5107,14 @@ $messages['sk'] = array(
 	'translate-magic-pagename'               => 'Rozšírený preklad MediaWiki',
 	'translate-magic-help'                   => 'Môžete prekladať aliasy špeciálnych stránok, magické slová, názvy tém vzhľadu a názvy menných priestorov.
 
-V magických slovách musíte zahrnúť aj anglické preklady, inak prestanú fungovať. Tiež ponechajte nezmenenú prvú položku (0 alebo 1).
-
-Aliasy špeciálnych stránok a magických slov môžu mať viacero prekladov. Preklady sa oddeľujú čiarkami („,“). Názvy tém vzhľadu a názvy menných priestorov môžu mať iba jeden preklad.
+Aliasy špeciálnych stránok a magických slov môžu mať viacero prekladov.
+Preklady sa oddeľujú čiarkami („,“).
+Názvy tém vzhľadu a názvy menných priestorov môžu mať iba jeden preklad.
 
 V prekladoch menných priestorov je <tt>$1 talk</tt> špeciálne. <tt>$1</tt> sa nahradí názvom webovej lokality (napr. <tt>{{SITENAME}} talk</tt>). Ak vo vašom jazyku nie je možné vytvoriť zmysluplný výraz bez zmeny názvu webovej lokality, prosím, kontaktujte vývojára.
 
-Aby ste mohli ukladať zmeny, musíte byť členom skupiny translators. Zmeny sa neuložia, kým nekliknete na tlačidlo Uložiť dolu.',
+Aby ste mohli ukladať zmeny, musíte byť členom skupiny translators.
+Zmeny sa neuložia, kým nekliknete na tlačidlo Uložiť dolu.',
 	'translate-magic-module'                 => 'Modul:',
 	'translate-magic-submit'                 => 'Vykonať',
 	'translate-magic-cm-export'              => 'Exportovať',
@@ -5194,6 +5173,7 @@ Aby ste mohli ukladať zmeny, musíte byť členom skupiny translators. Zmeny sa
 	'translate-tag-legend-fuzzy'             => 'Neaktuálny preklad',
 	'translate-tag-fuzzy-comment'            => 'Definíciu zmenil [[User:$1|$1]] v revízii $2.',
 	'translate-tag-fuzzy-reason'             => 'Definíciu zmenil „$1” v revízii $2 s komentárom „$3”.',
+	'translate-sidebar-alltrans'             => 'Iné preklady',
 );
 
 /** Somali (Soomaaliga)
@@ -5278,7 +5258,6 @@ $messages['stq'] = array(
 /** Sundanese (Basa Sunda)
  * @author Irwangatot
  * @author Kandar
- * @author Siebrand
  */
 $messages['su'] = array(
 	'translate'                         => 'Alih basakeun',
@@ -5663,7 +5642,6 @@ $messages['tg-cyrl'] = array(
 /** Thai (ไทย)
  * @author Ans
  * @author Passawuth
- * @author Siebrand
  */
 $messages['th'] = array(
 	'translate'                              => 'แปล',
@@ -5804,7 +5782,6 @@ $messages['ug'] = array(
 /** Ukrainian (Українська)
  * @author Ahonc
  * @author AS
- * @author Siebrand
  */
 $messages['uk'] = array(
 	'translate'                              => 'Переклад',
@@ -5996,7 +5973,6 @@ I canbiamenti no i xe salvà finché no te struchi el boton qua soto.",
 
 /** Vietnamese (Tiếng Việt)
  * @author Vinhtantran
- * @author Siebrand
  * @author Minh Nguyen
  */
 $messages['vi'] = array(
@@ -6350,7 +6326,6 @@ $messages['zh-hans'] = array(
 
 /** Traditional Chinese (‪中文(繁體)‬)
  * @author Alexsh
- * @author Siebrand
  */
 $messages['zh-hant'] = array(
 	'translate'                              => '翻譯',
