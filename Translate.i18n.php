@@ -76,9 +76,6 @@ If you know where or how this message is used, you can help other translators by
 	'translate-magic-pagename'    => 'Extended MediaWiki translation',
 	'translate-magic-help'        => 'You can translate special pages aliases, magic words, skin names and namespace names.
 
-In magic words you need to include English translations or they stop working.
-Also leave the first item (0 or 1) as it is.
-
 Special page aliases and magic words can have multiple translations.
 Translations are seperated by a comma (,).
 Skin names and namespaces can have only one translation.
