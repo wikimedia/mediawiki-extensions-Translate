@@ -61,6 +61,11 @@ $aliases['cs'] = array(
 	'Translate' => array( 'Přeložit' ),
 );
 
+/** Danish (Dansk) */
+$aliases['da'] = array(
+	'Translate' => array( 'Oversæt' ),
+);
+
 /** Lower Sorbian (Dolnoserbski) */
 $aliases['dsb'] = array(
 	'Translate'          => array( 'Přełožiś' ),
@@ -165,7 +170,7 @@ $aliases['myv'] = array(
 	'TranslationChanges' => array( 'ЙутавтовксПолавтомат' ),
 );
 
-/** Nahuatl (Nahuatl) */
+/** Nahuatl (Nāhuatl) */
 $aliases['nah'] = array(
 	'Translate' => array( 'Tlahtōlcuepāz', 'Traducir' ),
 );
@@ -175,7 +180,7 @@ $aliases['nl'] = array(
 	'Translate'          => array( 'Vertalen' ),
 	'Magic'              => array( 'UitgebreidVertalen', 'VertalenUitgebreid' ),
 	'TranslationChanges' => array( 'Vertalingen' ),
-	'TranslationStats'   => array( 'VertaalStatistieken' ),
+	'TranslationStats'   => array( 'Vertaalstatistieken', 'Vertalingsstatistieken' ),
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬) */
