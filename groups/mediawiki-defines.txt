@@ -1,7 +1,7 @@
 Absentee Landlord
 
 Abuse Filter
-optional = abusefilter-history-action
+optional = abusefilter-history-action, abusefilter-edit-builder-op-bool-xor
 
 Advanced Random
 file = AdvancedRandom/SpecialAdvancedRandom.i18n.php
