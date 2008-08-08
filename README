@@ -33,7 +33,8 @@ function customMessageGroups( $id ) {
 </code>
 
 == Changes in version 10 ==
-* 2008-08-04:add "Other translations" link to Special:Prefexindex in sidebar toolbox
+* 2008-08-08:1 experimental sync-group to import external changes and keep them in sync
+* 2008-08-04:1 add "Other translations" link to Special:Prefexindex in sidebar toolbox
 * 2008-07-29:2 support for variables and purging and fallbacks in page translation
 * 2008-07-29:1 bug fixes and enhanced magic word support for AdvancedTranslate
 * 2008-07-26:2 proper parents for branched messages
