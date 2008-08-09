@@ -177,6 +177,13 @@ abstract class MessageGroup {
 	 * @return Path to the file or false if not applicable.
 	 */
 	public function getMessageFile( $code ) { return false; }
+	public function getPath() { return false; }
+	public function getMessageFileWithPath( $code ) {
+		$path = $this->getPath();
+		$file = $this->getMessageFile( $code );
+		if ( !$path || !$file ) return false;
+		return "$path/$file";
+	}
 
 
 	/**
@@ -279,12 +286,12 @@ class CoreMessageGroup extends MessageGroup {
 		return "Messages$code.php";
 	}
 
-	protected function getFileLocation( $code ) {
-		return $this->prefix . '/' . $this->getMessageFile( $code );
+	public function getPath() {
+		return $this->prefix;
 	}
 
 	public function getReader( $code ) {
-		return new WikiFormatReader( $this->getFileLocation( $code ) );
+		return new WikiFormatReader( $this->getMessageFileWithPath( $code ) );
 	}
 
 	public function getWriter() {
@@ -300,7 +307,7 @@ class CoreMessageGroup extends MessageGroup {
 	}
 
 	public function load( $code ) {
-		$file = $this->getFileLocation( $code );
+		$file = $this->getMessageFileWithPath( $code );
 		// Can return null, convert to array
 		$messages = (array) $this->mangler->mangle(
 			ResourceLoader::loadVariableFromPHPFile( $file, 'messages' ) );
@@ -329,6 +336,10 @@ class ExtensionMessageGroup extends MessageGroup {
 	protected $messageFile  = null;
 	public function getMessageFile( $code ) { return $this->messageFile; }
 	public function setMessageFile( $value ) { $this->messageFile = $value; }
+
+	public function getMessageFilePath( $code ) {
+		return $wgTranslateExtensionDirectory;
+	}
 
 	public function setDescriptionMsg( $key ) {
 		global $wgLang;
@@ -366,18 +377,13 @@ class ExtensionMessageGroup extends MessageGroup {
 		}
 	}
 
-	protected function getPath( $code ) {
+	public function getPath() {
 		global $wgTranslateExtensionDirectory;
-		if ( $this->getMessageFile( $code ) ) {
-			$fullPath = $wgTranslateExtensionDirectory . $this->getMessageFile( $code );
-		} else {
-			throw new MWException( 'Message file not defined' );
-		}
-		return $fullPath;
+		return $wgTranslateExtensionDirectory;
 	}
 
 	public function getReader( $code ) {
-		$reader = new WikiExtensionFormatReader( $this->getPath( $code ) );
+		$reader = new WikiExtensionFormatReader( $this->getMessageFileWithPath( $code ) );
 		$reader->variableName = $this->getVariableName();
 		return $reader;
 	}
@@ -503,7 +509,7 @@ class GettextMessageGroup extends MessageGroup {
 
 
 	public function getReader( $code ) {
-		$reader = new GettextFormatReader( $this->getPath() . $this->getMessageFile( $code ) );
+		$reader = new GettextFormatReader( $this->getMessageFileWithPath( $code ) );
 		$reader->setPrefix( $this->prefix );
 		if ( $code === 'en' )
 			$reader->setPotMode( true );
