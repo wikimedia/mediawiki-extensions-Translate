@@ -19,7 +19,7 @@ $groups = MessageGroups::singleton()->getGroups();
 $hugearray = array();
 $postponed = array();
 
-STDOUT( "Working with", 'main' );
+STDOUT( "Working with ", 'main' );
 
 foreach ( $groups as $g ) {
 	# Skip meta thingies
@@ -46,7 +46,7 @@ function checkAndAdd( $g, $ignore = false ) {
 
 	if ( !is_array( $messages ) ) continue;
 
-	STDOUT( " $id", 'main' );
+	STDOUT( "$id ", 'main' );
 
 	$namespace = $g->namespaces[0];
 

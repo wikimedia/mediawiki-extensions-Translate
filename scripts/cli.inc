@@ -23,7 +23,11 @@ function STDOUT( $str, $channel = null, $force = false ) {
 
 	if ( $channel !== null && ($lineStart || $channel === $lastChannel) ) {
 		fwrite( STDOUT, $str );
-	} elseif ( $str !== false ) { // false can be used for cleanup
+	} elseif ( $str === false ) {
+		// Cleanup
+		if ( !$lineStart ) fwrite( STDOUT, "\n" );
+		return;
+	} else {
 		if ( !$lineStart ) fwrite( STDOUT, "\n" );
 		fwrite( STDOUT, $str );
 	}
