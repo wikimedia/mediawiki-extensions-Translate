@@ -289,9 +289,13 @@ class TranslateUtils {
 	}
 
 	public static function messageKeyToGroup( $namespace, $key ) {
-		$key = str_replace( " ", "_", strtolower( "$namespace:$key" ) );
+		$key = self::normaliseKey( $namespace, $key );
 		$index = self::messageIndex();
 		return @$index[$key];
+	}
+
+	public static function normaliseKey( $namespace, $key ) {
+		return str_replace( " ", "_", strtolower( "$namespace:$key" ) );
 	}
 
 	public static function messageIndex() {

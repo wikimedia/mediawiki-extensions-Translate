@@ -317,9 +317,13 @@ class TranslatePerLanguageStats {
 		$filters['language'] = trim($this->opts['language']) !== '';
 		$filters['group'] = trim($this->opts['group']) !== '';
 
-		foreach ( $groups as $group )
-			foreach ( $codes as $code )
-				$this->cache[$group . " ($code)"] = count($this->cache);
+		foreach ( $groups as $group ) {
+			foreach ( $codes as $code ) {
+				if ( $code !== '' ) $key = "$group ($code)";
+				else $key = $group;
+				$this->cache[$key] = count($this->cache);
+			}
+		}
 
 		if ( $filters['language'] ) {
 			$myconds = array();
@@ -371,9 +375,9 @@ class TranslatePerLanguageStats {
 		if ( $this->filters['group'] ) {
 			if ( $this->index === null ) $this->index = TranslateUtils::messageIndex();
 
-			$key = strtolower($row->rc_namespace. ':' . $key);
+			$key = TranslateUtils::normaliseKey( $row->rc_namespace, $key );
 			$group = @$this->index[$key];
-			if ( is_null($group) ) return -1;
+			if ( $group === null ) return -1;
 			$indexKey .= $group;
 		}
 

@@ -54,7 +54,7 @@ function checkAndAdd( $g, $ignore = false ) {
 		# Force all keys to lower case, because the case doesn't matter and it is
 		# easier to do comparing when the case of first letter is unknown, because
 		# mediawiki forces it to upper case
-		$key = strtolower( "$namespace:$key" );
+		$key = TranslateUtils::normaliseKey( $namespace, $key );
 		if ( isset($hugearray[$key]) ) {
 			if ( !$ignore )
 				STDERR( "Key $key already belongs to $hugearray[$key], conflict with $id" );
