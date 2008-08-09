@@ -278,11 +278,12 @@ class TMessage {
 		return @$this->database !== null && ( @$this->infile !== @$this->database );
 	}
 
-	/** Determies if this message has a proper translation. */
+	/**
+	 * Determies if this message has a proper translation.
+	 * To check if message has translation at all, use translation !== null
+	 */
 	public function translated() {
-		if ( @$this->translation === null || $this->fuzzy() ) return false;
-		$optionalSame = !!@$this->optional && (@$this->translation === @$this->definition);
-		return !$optionalSame;
+		return @$this->translation === null || $this->fuzzy() ) return false;
 	}
 
 	/**
