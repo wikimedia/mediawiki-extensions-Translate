@@ -225,9 +225,14 @@ EOEO;
 
 			$class .= ' mw-sp-translate-message-documentation';
 
-			if ($info) $boxes[] = TranslateUtils::fieldset(
-				wfMsgHtml( self::MSG . 'information', $edit ), $wgOut->parse( $info ), array( 'class' => $class )
-			);
+			if ($info) {
+				$contents = $wgOut->parse( $info );
+				// Remove whatever block element wrapup the parser likes to add
+				$contents = preg_replace( '~^<([a-z]+)>(.*)</\1>$~us', '\2', $contents );
+				$boxes[] = TranslateUtils::fieldset(
+					wfMsgHtml( self::MSG . 'information', $edit ), $contents, array( 'class' => $class )
+				);
+			}
 		}
 
 		// Can be either NULL or '', ARGH!
