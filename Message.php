@@ -284,6 +284,7 @@ class TMessage {
 	 */
 	public function translated() {
 		if ( @$this->translation === null || $this->fuzzy() ) return false;
+		return true;
 	}
 
 	/**
