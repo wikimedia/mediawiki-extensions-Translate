@@ -29,7 +29,7 @@ class TranslateRcFilter {
 		return true;
 	}
 
-	public static function translationFilterForm( &$items, &$opts ) {
+	public static function translationFilterForm( &$items, $opts ) {
 		global $wgRequest;
 		wfLoadExtensionMessages( 'Translate' );
 		$opts->consumeValue( 'translations' );
