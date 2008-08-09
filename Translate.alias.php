@@ -28,20 +28,20 @@ $aliases['af'] = array(
  * @author Meno25
  */
 $aliases['ar'] = array(
-	'Translate'          => array( 'ترجمة' ),
-	'Magic'              => array( 'ترجمة_متقدمة', 'ماجيك' ),
+	'Translate' => array( 'ترجمة' ),
+	'Magic' => array( 'ترجمة_متقدمة', 'ماجيك' ),
 	'TranslationChanges' => array( 'تغييرات_الترجمة' ),
-	'TranslationStats'   => array( 'إحصاءات_الترجمة' ),
+	'TranslationStats' => array( 'إحصاءات_الترجمة' ),
 );
 
 /** Egyptian Spoken Arabic (مصرى)
  * @author Meno25
  */
 $aliases['arz'] = array(
-	'Translate'          => array( 'ترجمة' ),
-	'Magic'              => array( 'ترجمة_متقدمة', 'ماجيك' ),
+	'Translate' => array( 'ترجمة' ),
+	'Magic' => array( 'ترجمة_متقدمة', 'ماجيك' ),
 	'TranslationChanges' => array( 'تغييرات_الترجمة' ),
-	'TranslationStats'   => array( 'إحصاءات_الترجمة' ),
+	'TranslationStats' => array( 'إحصاءات_الترجمة' ),
 );
 
 /** Southern Balochi (بلوچی مکرانی) */
@@ -145,9 +145,10 @@ $aliases['ksh'] = array(
 
 /** Luxembourgish (Lëtzebuergesch) */
 $aliases['lb'] = array(
-	'Translate'          => array( 'Iwwersetzen' ),
-	'Magic'              => array( 'Erweidert Iwwersetzung', 'Magic' ),
+	'Translate' => array( 'Iwwersetzen' ),
+	'Magic' => array( 'Erweidert Iwwersetzung' ),
 	'TranslationChanges' => array( 'Iwwersetzungsännerungen' ),
+	'TranslationStats' => array( 'Iwwersetzungsstatistiken' ),
 );
 
 /** Malay (Bahasa Melayu) */
@@ -158,8 +159,8 @@ $aliases['ms'] = array(
 
 /** Maltese (Malti) */
 $aliases['mt'] = array(
-	'Translate'          => array( 'Traduċi' ),
-	'Magic'              => array( 'TraduzzjoniAvvanzata' ),
+	'Translate' => array( 'Traduċi' ),
+	'Magic' => array( 'TraduzzjoniAvvanzata' ),
 	'TranslationChanges' => array( 'TibdilTraduzzjonali' ),
 );
 
@@ -177,18 +178,18 @@ $aliases['nah'] = array(
 
 /** Dutch (Nederlands) */
 $aliases['nl'] = array(
-	'Translate'          => array( 'Vertalen' ),
-	'Magic'              => array( 'UitgebreidVertalen', 'VertalenUitgebreid' ),
+	'Translate' => array( 'Vertalen' ),
+	'Magic' => array( 'UitgebreidVertalen', 'VertalenUitgebreid' ),
 	'TranslationChanges' => array( 'Vertalingen' ),
-	'TranslationStats'   => array( 'Vertaalstatistieken', 'Vertalingsstatistieken' ),
+	'TranslationStats' => array( 'Vertaalstatistieken', 'Vertalingsstatistieken' ),
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬) */
 $aliases['no'] = array(
-	'Translate'          => array( 'Oversett' ),
-	'Magic'              => array( 'Avansert oversettelse', 'Avansert oversetting', 'Magi' ),
+	'Translate' => array( 'Oversett' ),
+	'Magic' => array( 'Avansert oversettelse', 'Avansert oversetting', 'Magi' ),
 	'TranslationChanges' => array( 'Oversettelsesendringer', 'Oversettingsendringer' ),
-	'TranslationStats'   => array( 'Oversettelsesstatistikk' ),
+	'TranslationStats' => array( 'Oversettelsesstatistikk' ),
 );
 
 /** Pashto (پښتو) */
