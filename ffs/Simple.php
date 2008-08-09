@@ -135,6 +135,8 @@ class SimpleFormatWriter {
 	public function fileExport( array $languages, $targetDirectory ) {
 		foreach ( $languages as $code ) {
 			$messages = $this->getMessagesForExport( $this->group, $code );
+			if (!count($messages)) continue;
+
 			$filename = $this->group->getMessageFile( $code );
 			$target = $targetDirectory . '/' . $filename;
 
@@ -170,16 +172,16 @@ class SimpleFormatWriter {
 	protected function getMessagesForExport( MessageGroup $group, $code ) {
 		$collection = $this->group->initCollection( $code );
 		$this->group->fillCollection( $collection );
+		$collection->filter( 'translated', false );
 		$this->addAuthors( $collection->getAuthors(), $code );
 		return $collection;
 	}
 
 	protected function exportLanguage( $target, MessageCollection $collection ) {
-		$messages = $this->makeExportArray( $collection );
 		$this->load( $collection->code );
 		$this->makeHeader( $target, $collection->code );
 		$this->exportStaticHeader( $target );
-		$this->exportMessages( $target, $messages );
+		$this->exportMessages( $target, $collection );
 	}
 
 	// Writing three
@@ -224,6 +226,9 @@ class SimpleFormatWriter {
 		$groupId = $this->group->getId();
 		$authors = $this->authors[$code];
 		$authors = $this->filterAuthors( $authors, $code, $groupId );
+		if ( empty($authors) ) return '';
+
+		sort( $authors );
 
 		$s = array();
 		foreach ( $authors as $a ) {
@@ -238,8 +243,11 @@ class SimpleFormatWriter {
 		}
 	}
 
-	protected function exportMessages( $handle, array $messages ) {
-		foreach ( $messages as $key => $value ) {
+	protected function exportMessages( $handle, MessageCollection $collection ) {
+		$mangler = $this->group->getMangler();
+		foreach ( $collection->keys() as $item ) {
+			$key = $mangler->unMangle($item);
+			$value = str_replace( TRANSLATE_FUZZY, '', $collection[$item]->translation );
 			fwrite( $handle, "$key\000$value\000\n" );
 		}
 	}
@@ -248,35 +256,5 @@ class SimpleFormatWriter {
 		$name = TranslateUtils::getLanguageName( $code );
 		$native = TranslateUtils::getLanguageName( $code, true );
 		return array( $name, $native );
-	}
-
-	/**
-	 * Preprocesses MessageArray to suitable format and filters things that should
-	 * not be exported.
-	 *
-	 * @param $array Reference of MessageArray.
-	 */
-	public function makeExportArray( MessageCollection $messages ) {
-		// We copy only relevant translations to this new array
-		$new = array();
-		$mangler = $this->group->getMangler();
-		foreach( $messages as $key => $m ) {
-			$key = $mangler->unMangle( $key );
-
-			$translation = $m->translation;
-			# CASE2: no translation
-			if ( $translation === null ) continue;
-
-			# Remove fuzzy markings before export
-			$translation = str_replace( TRANSLATE_FUZZY, '', $translation );
-
-			# CASE3: optional messages; accept only if different
-			if ( $m->optional && $translation === $m->definition ) continue;
-
-			# Otherwise it's good
-			$new[$key] = $translation;
-		}
-
-		return $new;
 	}
 }

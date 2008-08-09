@@ -117,8 +117,12 @@ HEADER
 	/**
 	 * Inherited. Exports messages as lines of format key=value.
 	 */
-	protected function exportMessages( $handle, array $messages ) {
-		foreach ( $messages as $key => $value ) {
+	protected function exportMessages( $handle, MessageCollection $collection ) {
+		$mangler = $this->group->getMangler();
+		foreach ( $collection->keys() as $item ) {
+			$key = $mangler->unmangle($item);
+			$value = str_replace( TRANSLATE_FUZZY, '', $collection[$item]->translation );
+
 			# Make sure we don't slip newlines trough... it would be fatal
 			$value = str_replace( "\n", '\\n', $value );
 			# No pretty alignment here, sorry

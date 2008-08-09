@@ -83,8 +83,10 @@ HEADER
 		}
 	}
 
-	protected function exportMessages( $handle, array $messages ) {
+	protected function exportMessages( $handle, MessageCollection $collection ) {
 		fwrite( $handle, "\n\$messages = array(\n" );
+
+		$messages = $this->makeExportArray( $collection );
 
 		$dir = $this->group->getMetaDataPrefix();
 		if ( !$dir ) {
@@ -124,6 +126,26 @@ HEADER
 		fwrite( $handle, ");\n" );
 	}
 
+	/**
+	 * Preprocesses MessageArray to suitable format and filters things that should
+	 * not be exported.
+	 *
+	 * @param $array Reference of MessageArray.
+	 */
+	public function makeExportArray( MessageCollection $messages ) {
+		// We copy only relevant translations to this new array
+		$new = array();
+		$mangler = $this->group->getMangler();
+		foreach( $messages as $key => $m ) {
+			$key = $mangler->unMangle( $key );
+			# Remove fuzzy markings before export
+			$translation = str_replace( TRANSLATE_FUZZY, '', $m->translation );
+			$new[$key] = $translation;
+		}
+
+		return $new;
+	}
+
 	protected function writeMessagesBlockComment( $handle, $blockComment ) {
 		# Format the block comment (if exists); check for multiple lines comments
 		if( !empty( $blockComment ) ) {
@@ -141,20 +163,17 @@ HEADER
 			return;
 		}
 
-		# Get max key length
-		$maxKeyLength = max( array_map( 'strlen', array_keys( $messages ) ) );
-
 		foreach ( $messages as $key => $value ) {
 			fwrite( $handle, $prefix );
-			$this->exportItemPad( $handle, $key, $value, $maxKeyLength );
+			$this->exportItemPad( $handle, $key, $value );
 		}
 	}
 
-	protected function exportItemPad( $handle, $key, $value, $pad ) {
+	protected function exportItemPad( $handle, $key, $value, $pad = 0 ) {
 		# Add the key name
 		fwrite( $handle, "'$key'" );
 		# Add the appropriate block whitespace
-		fwrite( $handle, str_repeat( ' ', $pad - strlen($key) ) );
+		if ($pad) fwrite( $handle, str_repeat( ' ', $pad - strlen($key) ) );
 		fwrite( $handle, ' => ' );
 
 		if ( $this->commaToArray ) {
