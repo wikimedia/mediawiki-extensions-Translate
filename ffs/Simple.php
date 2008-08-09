@@ -172,7 +172,7 @@ class SimpleFormatWriter {
 	protected function getMessagesForExport( MessageGroup $group, $code ) {
 		$collection = $this->group->initCollection( $code );
 		$this->group->fillCollection( $collection );
-		$collection->filter( 'translated', false );
+		$collection->filter( 'translation', null );
 		$this->addAuthors( $collection->getAuthors(), $code );
 		return $collection;
 	}

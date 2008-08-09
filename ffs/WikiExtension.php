@@ -134,7 +134,8 @@ class WikiExtensionFormatWriter extends WikiFormatWriter {
 	}
 
 	protected function exportSection( $handle, $code, array $languages) {
-		if ( in_array( $code, $languages ) ) {
+		// Never export en, just copy it verbatim
+		if ( in_array( $code, $languages ) && $code !== 'en' ) {
 
 			// Parse authors only if we regenerate section
 			if ( isset($this->sections[$code]) ) {

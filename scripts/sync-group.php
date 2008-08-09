@@ -292,3 +292,5 @@ class ChangeSyncer {
 	}
 
 }
+
+STDOUT( wfTimestamp( TS_RFC2822 ) );
