@@ -539,13 +539,15 @@ $messages['ast'] = array(
 	'translate-magic-pagename'               => 'Traducción estendida de MediaWiki',
 	'translate-magic-help'                   => "Pues traducir los nomes de les páxines especiales, les pallabres máxiques, los nomes de les pieles y los nomes de los espacios de nome.
 
-Nes pallabres máxiques necesites incluyir les traducciones ingleses, o dexarán de furrular. Dexa tamién el primer elementu (0 ó 1) como ta.
+Los nomes de les páxines especiales y les pallabres máxiques puen tener múltiples traducciones.
+Les traducciones sepárense con una coma (,).
+Los nomes de les pieles y los espacios de nome namái puen tener una traducción.
 
-Los nomes de les páxines especiales y les pallabres máxiques puen tener múltiples traducciones. Les traducciones sepárense con una coma (,). Los nomes de les pieles y los espacios de nome namái puen tener una traducción.
+Nes traducciones de los espacios de nome <tt>$1 talk</tt> ye especial. <tt>$1</tt> ye sustituyíu pol nome del sitiu (por exemplu <tt>{{SITENAME}} talk</tt>).
+Si na to llingua nun ye posible formar una espresión válida ensin camudar el nome del sitiu, por favor contauta con un desenrollador.
 
-Nes traducciones de los espacios de nome <tt>$1 talk</tt> ye especial <tt>$1</tt> ye sustituyíu pol nome del sitiu (por exemplu <tt>{{SITENAME}} talk</tt>). Si na to llingua nun ye posible formar una espresión válida ensin camudar el nome del sitiu, por favor contauta con un desenrollador.
-
-Necesites tar nel grupu de traductores pa guardar los cambeos. Los cambeos nun se graben hasta que calques nel botón guardar d'abaxo.",
+Necesites tar nel grupu de traductores pa guardar los cambeos.
+Los cambeos nun se graben hasta que calques nel botón guardar d'abaxo.",
 	'translate-magic-module'                 => 'Módulu:',
 	'translate-magic-submit'                 => 'Amosar',
 	'translate-magic-cm-export'              => 'Esportar',
@@ -574,6 +576,8 @@ Necesites tar nel grupu de traductores pa guardar los cambeos. Los cambeos nun s
 	'translate-checks-xhtml'                 => 'Por favor sustitúi {{PLURAL:$2|la siguiente etiqueta cola correuta|les siguientes etiquetes coles correutes}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural'                => 'La definición usa <nowiki>{{PLURAL:}}</nowiki> pero la traducción non.',
+	'translate-checks-pagename'              => 'Espaciu de nomes camudáu dende la definición',
+	'tog-translate-nonewsletter'             => 'Nun unviame avisos per corréu electrónicu (relevante namái pa usuarios con direición de corréu electrónicu confirmada)',
 	'right-translate'                        => 'Editar usando la interfaz de traducción',
 	'translate-rc-translation-filter'        => 'Filtrar traducciones:',
 	'translate-rc-translation-filter-no'     => 'Nun facer nada',
@@ -594,6 +598,8 @@ Necesites tar nel grupu de traductores pa guardar los cambeos. Los cambeos nun s
 	'translate-statsf-count'                 => 'Midida',
 	'translate-statsf-count-edits'           => "Númberu d'ediciones",
 	'translate-statsf-count-users'           => 'Traductores activos',
+	'translate-statsf-language'              => 'Llista de códigos de llingua separtaos por comes',
+	'translate-statsf-group'                 => 'Llista de códigos de grupu separtaos por comes',
 	'translate-statsf-submit'                => 'Previsualizar',
 	'translate-tag-category'                 => 'Páxines traducibles',
 	'translate-tag-page-desc'                => 'Traducción de la páxina wiki [[:$1]].',
@@ -1142,6 +1148,7 @@ $messages['da'] = array(
 /** German (Deutsch)
  * @author Raimond Spekking
  * @author Purodha
+ * @author MichaelFrey
  */
 $messages['de'] = array(
 	'translate'                              => 'Übersetze',
@@ -1197,13 +1204,13 @@ $messages['de'] = array(
 	'translate-magic-pagename'               => 'Erweiterte MediaWiki-Übersetzung',
 	'translate-magic-help'                   => 'Du kannst hier Aliase für Spezialseiten, magische Wörter, Skinnamen und Namensraumnamen übersetzen.
 
-Bei den magischen Wörtern muss das englische Original bestehen bleiben, auch die erste Zahl (0 oder 1) darf nicht verändert werden.
-
 Spezialseiten und magische Wörter können mehrere Übersetzungen haben, sie werden jeweils durch ein Komma (,) getrennt. Skinnamen und Namensraumnamen dürfen nur je eine Übersetzung haben.
 
-In der Übersetzung eines Namensraumnamens hat <tt>$1 talk</tt> eine spezielle Bedeutung. <tt>$1</tt> wird durch den Projektnamen ersetzt (zum Beispiel <tt>{{SITENAME}} talk</tt>). Wenn es in Deiner Sprache nicht möglich ist, eine grammatikalisch korrekte Form davon zu bilden ohne den Projektnamen zu verändern, kontaktiere bitte einen Systemadministrator.
+In der Übersetzung eines Namensraumnamens hat <tt>$1 talk</tt> eine spezielle Bedeutung. <tt>$1</tt> wird durch den Projektnamen ersetzt (zum Beispiel <tt>{{SITENAME}} talk</tt>).
+Wenn es in Deiner Sprache nicht möglich ist, eine grammatikalisch korrekte Form davon zu bilden ohne den Projektnamen zu verändern, kontaktiere bitte einen Systemadministrator.
 
-Du musst in der Übersetzer-Gruppe sein, um Änderungen zu speichern. Änderungen werden erst beim Klick auf den Speichern-Button gespeichert.',
+Du musst in der Übersetzer-Gruppe sein, um Änderungen zu speichern.
+Änderungen werden erst beim Klick auf den Speichern-Button gespeichert.',
 	'translate-magic-module'                 => 'Modul:',
 	'translate-magic-submit'                 => 'Hole',
 	'translate-magic-cm-export'              => 'Export',
@@ -2749,11 +2756,9 @@ $messages['id'] = array(
 	'translate-edit-goto-next'               => 'Sunting pesan berikutnya',
 	'translate-edit-goto-list'               => 'Kembali ke daftar',
 	'translate-magic-pagename'               => 'Perluasan terjemahan Mediawiki',
-	'translate-magic-help'                   => 'Anda dapat menerjemahkan alias untuk halaman istimewa, kata magis, nama kulit, dan nama ruang nama.
+	'translate-magic-help'                   => 'Anda dapat menerjemahkan alias untuk halaman istimewa, kata-kata magis, nama kulit, dan ruang-ruang nama.
 
-Untuk kata magis, Anda perlu mencantumkan pula terjemahan bahasa Inggris atau akan terjadi kesalahan. Juga biarkan item pertama (0 atau 1) tercantum apa adanya.
-
-Alias untuk halaman istimewa dan kata magis dapat memiliki lebih dari satu terjemahan.
+Alias untuk halaman istimewa dan kata-kata magis dapat memiliki lebih dari satu terjemahan.
 Masing-masing harus dipisahkan dengan sebuah tanda koma (,).
 Nama kulit dan ruang nama hanya dapat memiliki satu terjemahan.
 
@@ -2954,9 +2959,6 @@ Se sai dove o come è usato questo messaggio, puoi aiutare gli altri traduttori 
 	'translate-edit-goto-list'               => "Torna all'elenco",
 	'translate-magic-pagename'               => 'Traduzione estesa di MediaWiki',
 	'translate-magic-help'                   => 'Puoi tradurre gli alias delle pagine speciali, le parole magiche, i nomi delle skin e i nomi dei namespace.
-
-Nelle parole magiche devi includere le traduzioni inglesi o non funzioneranno.
-Lascia anche il primo elemento (0 o 1) com\'è.
 
 Gli alias delle pagine speciali e le parole magiche possono avere più traduzioni.
 Le traduzioni sono separate da una virgola (,).
@@ -4167,7 +4169,7 @@ $messages['mt'] = array(
 	'translationchanges-export'         => 'esporta',
 );
 
-/** Nahuatl (Nahuatl)
+/** Nahuatl (Nāhuatl)
  * @author Fluence
  */
 $messages['nah'] = array(
@@ -4187,6 +4189,7 @@ $messages['nah'] = array(
 	'translate-edit-in-other-languages' => 'Tlahcuilōltzin occequīntīn tlahtōlcopa',
 	'translate-edit-goto-prev'          => 'Ticpatlāz niman tlahcuilōltzin',
 	'translate-edit-goto-next'          => 'Ticpatlāz achtopa tlahcuilōltzin',
+	'translate-edit-goto-list'          => 'Ticuepāz',
 	'translate-magic-cm-export'         => 'Ticnamacāz',
 	'translate-magic-cm-current'        => 'Āxcān',
 	'translate-magic-cm-save'           => 'Ticpiyāz',
@@ -4436,13 +4439,15 @@ $messages['no'] = array(
 	'translate-magic-pagename'               => 'Utvidet MediaWiki-oversettelse',
 	'translate-magic-help'                   => 'Du kan oversette spesialsidenavn, magiske ord, utseendenavn og navneromnavn.
 
-I magiske ord må du inkludere engelskspråklige oversettelser, ellers vil de ikke fungere. La også det første punktet (0 eller 1) være som det er.
+Spesialsidenavn og magiske ord kan ha flere oversettelser.
+Oversettelsene adskilles med komma (,).
+Draktnavn og navnerom kan kun ha én oversettelse.
 
-Spesialsidenavn og magiske ord kan ha flere oversettelser. Oversettelser skilles med et komma (,). Utseendenavn og navnerom kan kun ha én oversettelse.
+I navneromoversettelsene er <tt>$1 talk</tt> spesiell. <tt>$1</tt> erstattes med sidens navn (for eksempel <tt>{{SITENAME}}</tt>).
+Om det ikke er mulig å få til et gyldig uttrykk på ditt språk her uten å endre sidenavnet, kontakt en utvikler.
 
-I navneromoversettelsene er <tt>$1 talk</tt> spesiell. <tt>$1</tt> erstattes med sidens navn (for eksempel <tt>{{SITENAME}}</tt>). Om det ikke er mulig å få til et gyldig uttrykk på ditt språk her uten å endre sidenavnet, kontakt en utvikler.
-
-Du må være i oversettergruppa for å lagre endringer. Endringer lagres ikke før du klikker på lagre-knappen nedenfor.',
+Du må være i oversettergruppa for å lagre endringer.
+Endringer lagres ikke før du klikker på lagre-knappen nedenfor.',
 	'translate-magic-module'                 => 'Modul:',
 	'translate-magic-submit'                 => 'Hent',
 	'translate-magic-cm-export'              => 'Eksporter',
@@ -5389,13 +5394,15 @@ $messages['sv'] = array(
 	'translate-magic-pagename'               => 'Utökad MediaWiki-översättning',
 	'translate-magic-help'                   => 'Du kan översätta alias för specialsidor, magiska ord, skin-namn och namnrymdsnamn.
 
-För magiska ord så måste du inkludera engelska översättningar eller så slutar de att fungera. Lämna också det första (0 eller 1) som det är.
+Alias för specialsidor och magiska ord kan ha flera översättningar.
+Översättningar skiljs åt med ett komma (,).
+Skin-namn och namnrymder kan endast ha en översättning.
 
-Alias för specialsidor och magiska ord kan ha flera översättningar. Översättningar skiljs åt av ett komma (,). Skin-namn och namnrymder kan enbart ha en översättning.
+Vid översättning av namnrymder så är <tt>$1 talk</tt> speciellt. <tt>$1</tt> ersätts med webbplatsens namn (till exempel <tt>{{SITENAME}} talk</tt>).
+Om det inte är möjligt att skapa en giltig översättning till ditt språk utan att ändra webbplatsens namn, så ta kontakt med en utvecklare.
 
-Vid översättning av namnrymder så är <tt>$1 talk</tt> speciellt. <tt>$1</tt> ersätts med webbplatsens namn (till exempel <tt>{{SITENAME}} talk</tt>). Om det inte är möjligt att skapa en giltig översättning till ditt språk utan att ändra webbplatsens namn, så ta kontakt med en utvecklare.
-
-För att kunna spara ändringar så behöver du tillhöra översättargruppen. Ändringar sparas inte förrän du klickar på spara-knappen nedan.',
+För att kunna spara ändringar så behöver du tillhöra översättargruppen.
+Ändringar sparas inte förrän du klickar på spara-knappen nedan.',
 	'translate-magic-module'                 => 'Modul:',
 	'translate-magic-submit'                 => 'Hämta',
 	'translate-magic-cm-export'              => 'Exportera',
@@ -5517,6 +5524,7 @@ $messages['te'] = array(
 	'translate-next'                       => 'తర్వాతి పేజీ',
 	'translate-prev'                       => 'క్రితం పేజీ',
 	'translate-page-description-legend'    => 'ఈ సమూహం గురించిన సమాచారం',
+	'translate-page-edit'                  => 'మార్చు',
 	'translate-optional'                   => '(ఐచ్ఛికం)',
 	'translate-ignored'                    => '(ఉపేక్షించినది)',
 	'translate-edit-definition'            => 'సందేశ నిర్వచనం',
@@ -5553,6 +5561,11 @@ $messages['te'] = array(
 	'translate-checks-plural'              => 'అసలు సందేశంలో <nowiki>{{PLURAL:}}</nowiki> అనివుంది కానీ అనువాదంలో లేదు.',
 	'translate-rc-translation-filter'      => 'అనువాదాల పడపోత:',
 	'translate-rc-translation-filter-only' => 'అనువాదాలు మాత్రమే చూపించు',
+	'translationstats'                     => 'అనువాద గణాంకాలు',
+	'translate-stats-users'                => 'అనువాదకులు',
+	'translate-statsf-scale-days'          => 'రోజులు',
+	'translate-statsf-scale-hours'         => 'గంటలు',
+	'translate-sidebar-alltrans'           => 'ఇతర అనువాదాలు',
 );
 
 /** Tetum (Tetun)
@@ -5896,6 +5909,7 @@ $messages['vec'] = array(
 	'translate-task-view'               => 'Vardar tuti i messagi de',
 	'translate-task-untranslated'       => 'Vardar tuti i messagi non tradoti de',
 	'translate-task-optional'           => 'Vardar i messagi opsionali de',
+	'translate-task-problematic'        => 'Varda i messagi che gà dei problemi',
 	'translate-task-review'             => 'Rivardar i canbiamenti a',
 	'translate-task-reviewall'          => 'Rivardar tute le tradussion in',
 	'translate-task-export'             => 'Esportar le tradussion da',
@@ -5929,10 +5943,7 @@ Se te sè dove o come sto messagio el vien doparà, te podi jutar altri tradutor
 	'translate-edit-committed'          => 'Tradussion atuale del software',
 	'translate-edit-warnings'           => 'Avertimenti su tradussion incomplete',
 	'translate-magic-pagename'          => 'Tradussion estesa de MediaWiki',
-	'translate-magic-help'              => "Te pol tradur i alias de le pagine speciali, le parole magiche, i nomi de le skin e i nomi dei namespace.
-
-In te le parole magiche te ghè da inserir le version in Inglese senò no le va più.
-Lassa inoltre el primo elemento (0 o 1) cussita come l'è.
+	'translate-magic-help'              => 'Te pol tradur i alias de le pagine speciali, le parole magiche, i nomi de le skin e i nomi dei namespace.
 
 I alias e le parole magiche le pol verghe più tradussion.
 Le tradussion le xe separà da na virgola (,).
@@ -5942,7 +5953,7 @@ In te le tradussion dei namespace <tt>$1 talk</tt> el xe speciale. <tt>$1</tt> e
 Se ne la to lengua no se riesse a scrivar na espression valida sensa canbiar el nome del sito, par piaser contata un svilupador.
 
 Te ghè da èssar nel grupo dei tradutori par salvar i canbiamenti.
-I canbiamenti no i xe salvà finché no te struchi el boton qua soto.",
+I canbiamenti no i xe salvà finché no te struchi el boton qua soto.',
 	'translate-magic-submit'            => 'Mostra',
 	'translate-magic-cm-export'         => 'Esporta',
 	'translate-magic-cm-to-be'          => 'Nova',
