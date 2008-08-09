@@ -6,7 +6,7 @@ if (!defined('MEDIAWIKI')) die();
  * @addtogroup Extensions
  *
  * @author Niklas Laxström
- * @copyright Copyright © 2007, Niklas Laxström
+ * @copyright Copyright © 2007-2008, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -111,7 +111,7 @@ class MessageCollection implements Iterator, ArrayAccess, Countable {
 	 * @param $messages Array of TMessage objects.
 	 * @throws MWException
 	 */
-	public function addMany( Array $messages ) {
+	public function addMany( array $messages ) {
 		foreach ( $messages as $message ) {
 			if ( !$message instanceof TMessage ) {
 				throw new MWException( __METHOD__ . ": Array contains something else than TMessage" );
@@ -283,7 +283,7 @@ class TMessage {
 	 * To check if message has translation at all, use translation !== null
 	 */
 	public function translated() {
-		return @$this->translation === null || $this->fuzzy() ) return false;
+		if ( @$this->translation === null || $this->fuzzy() ) return false;
 	}
 
 	/**

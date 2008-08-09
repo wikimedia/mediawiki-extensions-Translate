@@ -150,9 +150,9 @@ $wgTranslateTasks = array(
 	'review'         => 'ReviewMessagesTask',
 	'reviewall'      => 'ReviewAllMessagesTask',
 	'export-as-po'   => 'ExportasPoMessagesTask',
-	'export'         => 'ExportMessagesTask',
-	'export-to-file' => 'ExportToFileMessagesTask',
-	'export-to-xliff'=> 'ExportToXliffMessagesTask',
+//	'export'         => 'ExportMessagesTask',
+//	'export-to-file' => 'ExportToFileMessagesTask',
+//	'export-to-xliff'=> 'ExportToXliffMessagesTask',
 );
 
 $wgTranslatePHPlot = false;
