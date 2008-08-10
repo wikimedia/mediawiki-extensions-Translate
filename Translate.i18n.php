@@ -5468,7 +5468,7 @@ För att kunna spara ändringar så behöver du tillhöra översättargruppen.
 	'translate-checks-parameters' => 'Följande {{PLURAL:$2|parameter|parametrar}} används inte: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => 'Följande {{PLURAL:$2|parameter är okänd|parametrar är okända}}:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-balance' => 'Det är ett ojämnt antal parenteser:
+	'translate-checks-balance' => 'Det är ett ojämnt antal {{PLURAL:$2|paranteser|paranteser}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => 'Följande {{PLURAL:$2|länk|länkar}} är problematiska: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Följande felaktiga {{PLURAL:$2|tagg|taggar}} bör ersättas: <strong><nowiki>$1</nowiki></strong>',
