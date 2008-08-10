@@ -166,8 +166,12 @@ Changes are not saved until you click save button below.',
 );
 
 /** Message documentation (Message documentation)
+ * @author Jon Harald Søby
  * @author Lejonel
  * @author Meno25
+ * @author Nike
+ * @author SPQRobin
+ * @author Siebrand
  * @author Toliño
  * @author פוילישער
  */
@@ -1681,7 +1685,7 @@ $messages['fa'] = array(
 	'translate-task-view' => 'نمایش تمام پیغام‌ها',
 	'translate-task-untranslated' => 'نمایش تمام پیغام‌های ترجمه نشده',
 	'translate-task-optional' => 'نمایش پیغام‌های اختیاری',
-	'translate-task-problematic' => 'مشاهده پیغام‌هایی که مشکل دارند',
+	'translate-task-problematic' => 'مشاهدهٔ پیغام‌هایی که مشکل دارند',
 	'translate-task-review' => 'بازبینی تغییرها',
 	'translate-task-reviewall' => 'بازبینی تمام ترجمه‌ها',
 	'translate-task-export' => 'صدور ترجمه‌ها',
