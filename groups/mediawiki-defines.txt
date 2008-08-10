@@ -366,6 +366,8 @@ ignored = lqt_header_warning_before_big
 
 Lookup User
 
+Lua
+
 Maintenance
 ignored = maintenance-initEditCount, maintenance-runJobs, maintenance-showJobs
 ignored = maintenance-stats
