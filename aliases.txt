@@ -4,6 +4,15 @@ file = AbuseFilter/AbuseFilter.alias.php
 Advanced random
 file = AdvancedRandom/AdvancedRandom.alias.php
 
+Ask SQL
+file = Asksql/Asksql.alias.php
+
+Bad images
+file = BadImage/BadImage.alias.php
+
+Category intersection
+file = CategoryIntersection/CategoryIntersection.alias.php
+
 Category tree
 file = CategoryTree/CategoryTreePage.i18n.alias.php
 
@@ -16,7 +25,7 @@ file = ChangeAuthor/ChangeAuthor.alias.php
 Check user
 file = CheckUser/CheckUser.alias.php
 
-Special cite
+Cite special
 file = Cite/SpecialCite.i18n.alias.php
 
 Collection
@@ -30,6 +39,12 @@ file = ConfirmAccount/ConfirmAccount.alias.php
 
 Contact page
 file = ContactPage/ContactPage.alias.php
+
+Contributors
+file = Contributors/Contributors.alias.php
+
+Contribution scores
+file = ContributionScores/ContributionScores.alias.php
 
 Cross namespace links
 file = CrossNamespaceLinks/SpecialCrossNamespaceLinks.alias.php
