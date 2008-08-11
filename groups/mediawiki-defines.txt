@@ -273,6 +273,7 @@ file = FlaggedRevs/language/UnreviewedPages.i18n.php
 Flagged Revisions - Validation Statistics
 id = ext-flaggedrevs-validationstatistics
 file = FlaggedRevs/language/ValidationStatistics.i18n.php
+optional = validationstatistics-nbr
 
 Find Spam
 
