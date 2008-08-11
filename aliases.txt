@@ -103,6 +103,9 @@ file = MultiUpload/SpecialMultipleUpload.alias.php
 Newest pages
 file = NewestPages/NewestPages.alias.php
 
+News channel
+file = NewsChannel/NewsChannel.alias.php
+
 Nuke
 file = Nuke/SpecialNuke.alias.php
 
@@ -120,3 +123,6 @@ file = SpamRegex/SpamRegex.alias.php
 
 Translate
 file = Translate/Translate.alias.php
+
+Usage statistics
+file = UsageStatistics/SpecialUsageStats.alias.php

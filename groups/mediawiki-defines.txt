@@ -419,6 +419,8 @@ optional = newsextension-loggin, newsextension-outputting, newsextension-stale
 optional = newsextension-nofoundonpage, newsextension-renderedfeed
 optional = newsextension-cachingfeed, newsextension-freshfeed
 
+News Channel
+
 Newuser Log
 file = Newuserlog/Newuserlog.i18n.php
 ignored = newuserlogentry
