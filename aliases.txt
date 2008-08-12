@@ -10,6 +10,9 @@ file = Asksql/Asksql.alias.php
 Bad images
 file = BadImage/BadImage.alias.php
 
+Board vote
+file = BoardVote/BoardVote.alias.php
+
 Category intersection
 file = CategoryIntersection/CategoryIntersection.alias.php
 
