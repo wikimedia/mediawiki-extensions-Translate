@@ -66,6 +66,12 @@ $aliases['da'] = array(
 	'Translate' => array( 'Oversæt' ),
 );
 
+/** German (Deutsch) */
+$aliases['de'] = array(
+	'Translate' => array( 'Übersetzen' ),
+	'TranslationStats' => array( 'Übersetzungsstatistik' ),
+);
+
 /** Lower Sorbian (Dolnoserbski) */
 $aliases['dsb'] = array(
 	'Translate'          => array( 'Přełožiś' ),

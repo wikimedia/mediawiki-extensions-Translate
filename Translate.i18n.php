@@ -2338,6 +2338,7 @@ $messages['he'] = array(
 	'translate-statsf-submit' => 'תצוגה מקדימה',
 	'translate-tag-page-desc' => 'תרגום של דף הוויקי [[:$1]].',
 	'translate-tag-translate-link-desc' => 'תרגום דף זה',
+	'translate-tag-legend-fallback' => 'התרגום בשפות אחרות',
 	'translate-sidebar-alltrans' => 'תרגומים אחרים',
 );
 
@@ -2380,6 +2381,7 @@ $messages['hil'] = array(
 );
 
 /** Croatian (Hrvatski)
+ * @author Dalibor Bosits
  * @author Dnik
  * @author SpeedyGonsales
  */
@@ -2399,7 +2401,7 @@ $messages['hr'] = array(
 	'translate-page-no-such-language' => 'Unešen je nevaljani kod jezika',
 	'translate-page-settings-legend' => 'Postavke',
 	'translate-page-task' => 'Želim',
-	'translate-page-group' => 'Grupa',
+	'translate-page-group' => 'Skupina',
 	'translate-page-language' => 'Jezik',
 	'translate-page-limit' => 'Prikaži maks.',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|poruka|poruke|poruka}} po stranici',
@@ -2424,7 +2426,8 @@ $messages['hr'] = array(
 	'translate-magic-cm-to-be' => 'Budući',
 	'translate-magic-cm-current' => 'Trenutni',
 	'translate-magic-cm-original' => 'Izvornik',
-	'translate-magic-cm-save' => 'Snimi',
+	'translate-magic-cm-comment' => 'Komentar:',
+	'translate-magic-cm-save' => 'Spremi',
 	'translate-magic-cm-updatedusing' => 'Osvježeno uporabom [[Special:Magic]] stranice',
 	'translate-magic-cm-savefailed' => 'Snimanje nije uspjelo',
 	'translate-magic-special' => 'Alijasi posebnih stranica',
@@ -3773,9 +3776,6 @@ $messages['ksh'] = array(
 	'translate-magic-pagename' => 'MediaWiki sing Extras övversäze',
 	'translate-magic-help' => 'Hee kanns_De Zweijtname fö Söndersigge, Zauberwööter, Name för Ovverfläshe, un de Appachtemangname översäze.
 
-Beij de Zauberwööter darrfß_De dat Ojjinaal (op änglesch) nit aanpake,
-un och di Zahl am Aanfang (0 odder 1) darfß_De nit änndere, sönß sonn se nit mieh.
-
 Söndersigge ier Zweijtname, un de Zauberwööter könne mieh wi eijn Övversäzong han.
 Dozwesche shteijt jeeweijls_e "," (Komma).
 Ovverfläshename un de Name fö_de Appachtemangs könne nur eijn Övversätzong han.
@@ -3810,6 +3810,7 @@ Do moß en de Jrop „Övversäzer“ sen, för hee Änderonge maache ze könne.
 	'translate-checks-links' => 'Hee {{PLURAL:$2|dä Lengk eß|di Lengks senn|dat Jedrißße}} problemattesch: <strong>$1</strong>',
 	'translate-checks-xhtml' => 'Donn hee {{PLURAL:$2|dat Kommando|di Kommandose|dat Jedrißße}} ußtuusche, un schriif de reschtije do för hen: <strong>$1</strong>',
 	'translate-checks-plural' => 'De Ojjinaal-Nohresch bruch <nowiki>{{PLURAL:}}</nowiki>, ävver de Övversäzong deijt dat nit?',
+	'translate-checks-pagename' => 'Appachtemang jeändert ...',
 	'tog-translate-nonewsletter' => 'Donn mer keijn Rondschriive övver de eläktronesche Poß scheke (nor för Medmaacher med beschtäteschte Addräß för de e-mail)',
 	'right-translate' => 'Med dä Schnettshtäll zom Övverseze ärrbeide',
 	'translate-rc-translation-filter' => 'Övversëzonge:',
@@ -3817,6 +3818,30 @@ Do moß en de Jrop „Övversäzer“ sen, för hee Änderonge maache ze könne.
 	'translate-rc-translation-filter-only' => 'Don noor de Övversëzonge zëije',
 	'translate-rc-translation-filter-filter' => 'Don de Övversëzonge fott lohße',
 	'translate-rc-translation-filter-site' => 'Nor de Änderonge för hee dat Wiki',
+	'translationstats' => 'Statistike fun de Övversäzunge',
+	'translate-stats-edits' => 'Änderunge pro Daach',
+	'translate-stats-users' => 'Övversäzer',
+	'translate-statsf-intro' => 'Hee met kanns de eifach Övverseeschte un Statistike maache. All de Zahl sen noh bovve un onge bejrenz.',
+	'translate-statsf-options' => 'Enstellunge för et Zeischne',
+	'translate-statsf-width' => 'De Breed in Pixelle',
+	'translate-statsf-height' => 'De Hühde in Pixelle',
+	'translate-statsf-days' => 'De Duur en Daare',
+	'translate-statsf-scale' => 'De Jenouschkeit udder Oplösung',
+	'translate-statsf-scale-days' => 'Dare',
+	'translate-statsf-scale-hours' => 'Stunde',
+	'translate-statsf-count' => 'Der Maßschtab',
+	'translate-statsf-count-edits' => 'Aanzahl fun Änderunge',
+	'translate-statsf-count-users' => 'Aktive Övversezer',
+	'translate-statsf-language' => 'En Leß fun Köözelle för Shprooche, met Kommas dozwesche',
+	'translate-statsf-group' => 'En Leß fun Köözelle för Jroppe, met Kommas dozwesche',
+	'translate-statsf-submit' => 'Vör-Ansich',
+	'translate-tag-category' => 'Sigge, di mer övversäze kann',
+	'translate-tag-page-desc' => 'Övversäzung fun de Sigg „[[:$1]]“ em Wikki.',
+	'translate-tag-translate-link-desc' => 'Don di Sigg hee övversäze',
+	'translate-tag-legend-fallback' => 'Översäzung en en ander Shproch',
+	'translate-tag-legend-fuzzy' => 'Ahl Övversäzung',
+	'translate-tag-fuzzy-comment' => ' ... verändert fum „[[User:$1|$1]]“ en de Version $2.',
+	'translate-sidebar-alltrans' => 'Ander Övversäzunge',
 );
 
 /** Latin (Latina)
@@ -4065,6 +4090,127 @@ Jūs turite priklausyti vertėjų grupei, kad galėtumėte išsaugoti pakeitimus
 $messages['lv'] = array(
 	'translate-next' => 'Nākamā lapa',
 	'translate-prev' => 'Iepriekšējā lapa',
+);
+
+/** Macedonian (Македонски)
+ * @author Brest2008
+ */
+$messages['mk'] = array(
+	'translate' => 'Преведи',
+	'translate-desc' => '[[Special:Translate|Специјална страница]] за преведување на MediaWiki и други пораки',
+	'translate-edit' => 'уреди',
+	'translate-talk' => 'разговор',
+	'translate-history' => 'историја',
+	'translate-task-view' => 'Преглед на сите пораки',
+	'translate-task-untranslated' => 'Преглед на сите непреведени пораки',
+	'translate-task-optional' => 'Преглед на опциони пораки',
+	'translate-task-problematic' => 'Преглед на пораки кои имаат некој проблем',
+	'translate-task-review' => 'Преглед на промени',
+	'translate-task-reviewall' => 'Преглед на сите преведени пораки',
+	'translate-task-export' => 'Извоз на преводи',
+	'translate-task-export-to-file' => 'Извоз на превод во датотека',
+	'translate-task-export-as-po' => 'Извоз на превод во Gettext формат',
+	'translate-task-export-to-xliff' => 'Извоз на превод во Xliff формат',
+	'translate-page-no-such-language' => 'Наведениот јазик е погрешен',
+	'translate-page-no-such-task' => 'Наведената задача е погрешна',
+	'translate-page-no-such-group' => 'Погрешно наведена група',
+	'translate-page-disabled' => "Преведувањето на овој јазик во оваа група е оневозможено. Причина:
+
+''$1''",
+	'translate-page-settings-legend' => 'Нагодувања',
+	'translate-page-task' => 'Сакам да направам',
+	'translate-page-group' => 'Група',
+	'translate-page-language' => 'Јазик',
+	'translate-page-limit' => 'Ограничување',
+	'translate-page-limit-option' => '$1 {{PLURAL:$1|порака|пораки}} по страница',
+	'translate-submit' => 'Филтрирај',
+	'translate-page-navigation-legend' => 'Навигација',
+	'translate-page-showing' => 'Прикажување на пораки од $1 до $2 од $3',
+	'translate-page-showing-all' => 'Приказ на $1 {{PLURAL:$1|порака|пораки}}.',
+	'translate-page-showing-none' => 'Нема пораки за прикажување',
+	'translate-page-paging-links' => '[ $1 ] [ $2 ]',
+	'translate-next' => 'Следна страница',
+	'translate-prev' => 'Претходна страница',
+	'translate-page-description-legend' => 'Информации во врска со групата',
+	'translate-page-edit' => 'уреди',
+	'translate-optional' => '(опционо)',
+	'translate-ignored' => '(игнорирано)',
+	'translate-edit-definition' => 'Дефиниција на порака',
+	'translate-edit-contribute' => 'придонес',
+	'translate-edit-no-information' => "''Оваа порака нема опис, не е документирана.
+Ако знаете каде и како оваа порака била користена, може да помогнете на другите преведувачи да додадат опис на оваа порака.''",
+	'translate-edit-information' => 'Информација за оваа порака ($1)',
+	'translate-edit-in-other-languages' => 'Пораката на други јазици',
+	'translate-edit-committed' => 'Актуелен превод во софтверот',
+	'translate-edit-warnings' => 'Предупредувања во врска со некомплетни преводи',
+	'translate-edit-goto-no-prev' => 'Нема претходна порака',
+	'translate-edit-goto-no-next' => 'Нема следна порака',
+	'translate-edit-goto-prev' => 'Уреди претходна порака',
+	'translate-edit-goto-next' => 'Уреди следна порака',
+	'translate-edit-goto-list' => 'Прикажи листа на пораки',
+	'translate-magic-pagename' => 'Превод на MediaWiki проширувања',
+	'translate-magic-help' => "Можете да ги преведете алијасите на специјалните страници, магичните зборови, називите на маските и називите на именските простори.
+
+Алијасите на специјалните сраници и магичните зборови може да имаат повеќе преводи.
+Преводите се одделени со запирка (,).
+Називите на маските и именските простори имаат само еден превод.
+
+In namespace translations <tt>$1 talk</tt> is special. <tt>$1</tt> is replaced with sitename (for example <tt>{{SITENAME}} talk</tt>).
+If it is not possible in your language to form valid expression without changing sitename, please contact a developer.
+
+Потребно е да припаѓате на групата преведувачи и да ги зачувате измените.
+Измените нема да бидат зачувани без дапритсните на копчето '''зачувај''', прикажано подолу после просторот за уредување.",
+	'translate-magic-module' => 'Модул:',
+	'translate-magic-submit' => 'Филтрирај',
+	'translate-magic-cm-export' => 'Извоз',
+	'translate-magic-cm-to-be' => 'Нека биде',
+	'translate-magic-cm-current' => 'Тековен',
+	'translate-magic-cm-original' => 'Оригинален',
+	'translate-magic-cm-comment' => 'Коментар:',
+	'translate-magic-cm-save' => 'Зачувај',
+	'translate-magic-cm-updatedusing' => 'Ажурирано со помош на [[Special:Magic]]',
+	'translate-magic-cm-savefailed' => 'Неуспешно зачувување',
+	'translate-magic-special' => 'Алијаси на специјална страница',
+	'translate-magic-words' => 'Магични зборови',
+	'translate-magic-skin' => 'Назив на маска',
+	'translate-magic-namespace' => 'Називи на именски простор',
+	'translationchanges' => 'Промени на превод',
+	'translationchanges-export' => 'извоз',
+	'translationchanges-change' => '$1: $2 од $3',
+	'translate-checks-parameters' => '{{PLURAL:$2|Следниов параметар не се користи|Следниве параметри се користат}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Следниов параметар е непознат|Следниве параметри се непознати}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-rc-translation-filter' => 'Филтрирање на преводи:',
+	'translate-rc-translation-filter-no' => 'Не прави ништо',
+	'translate-rc-translation-filter-only' => 'Прикажи само преводи',
+	'translate-rc-translation-filter-filter' => 'Филтрирај преводи',
+	'translate-rc-translation-filter-site' => 'Changes to site messages only',
+	'translationstats' => 'Статистики на преведување',
+	'translate-stats-edits' => 'Уредувања',
+	'translate-stats-users' => 'Преведувачи',
+	'translate-statsf-intro' => 'Може да генерирате едноставни статистики со помош на оваа форма. Сите вредности имаат максимални и минимални граници.',
+	'translate-statsf-options' => 'Опции за графиконот',
+	'translate-statsf-width' => 'Ширина во пиксели',
+	'translate-statsf-height' => 'Висина во пиксели',
+	'translate-statsf-days' => 'Временски период во денови',
+	'translate-statsf-scale' => 'Грануларност',
+	'translate-statsf-scale-days' => 'Денови',
+	'translate-statsf-scale-hours' => 'Часови',
+	'translate-statsf-count' => 'Мерка',
+	'translate-statsf-count-edits' => 'Број на уредувања',
+	'translate-statsf-count-users' => 'Активни преведувачи',
+	'translate-statsf-language' => 'Листа на јазични кодови, одвоени со запирка',
+	'translate-statsf-group' => 'Листа на група на кодови, одвоени со запирка',
+	'translate-statsf-submit' => 'Преглед',
+	'translate-tag-page-desc' => 'Превод на вики страницата [[:$1]]',
+	'translate-tag-translate-link-desc' => 'Преведи ја оваа страница',
+	'translate-tag-legend' => 'Легенда:',
+	'translate-tag-legend-fallback' => 'Превод на друг јазик',
+	'translate-tag-legend-fuzzy' => 'Стар превод',
+	'translate-tag-fuzzy-comment' => 'Дефиницијата променета од страна на [[User:$1|$1]] во ревизија $2.',
+	'translate-tag-fuzzy-reason' => 'Дефиницијата променета од "$1" со коментар "$3" во $2.',
+	'translate-sidebar-alltrans' => 'Други преводи',
 );
 
 /** Malayalam (മലയാളം)
