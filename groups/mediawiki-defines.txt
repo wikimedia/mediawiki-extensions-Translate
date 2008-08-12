@@ -95,6 +95,7 @@ ignored = changeauthor-logpagetext
 CharInsert
 
 Check User
+ignored = checkuser-toollinks
 
 Chemistry
 file = Chemistry/ChemFunctions.i18n.php
