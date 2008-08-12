@@ -128,4 +128,4 @@ Translate
 file = Translate/Translate.alias.php
 
 Usage statistics
-file = UsageStatistics/SpecialUsageStats.alias.php
+file = UsageStatistics/SpecialUserStats.alias.php
