@@ -380,6 +380,7 @@ file = MathStatFunctions/MathStatFunctions.i18n.php
 Media Functions
 
 Meta Keywords
+optional = metakeywords, metadescription
 
 Metavid Wiki
 file = MetavidWiki/languages/MV_Messages.php
