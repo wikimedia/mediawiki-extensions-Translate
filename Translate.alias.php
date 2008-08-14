@@ -90,8 +90,8 @@ $aliases['fi'] = array(
 
 /** French (Français) */
 $aliases['fr'] = array(
-	'Translate'          => array( 'Traduire' ),
-	'Magic'              => array( 'Traduction avancée', 'Traductionavancée', 'Traduction avancee', 'Traductionavancee' ),
+	'Translate' => array( 'Traduire' ),
+	'Magic' => array( 'Traduction avancée', 'Traductionavancée', 'Traduction avancee', 'Traductionavancee' ),
 	'TranslationChanges' => array( 'Modifications des traductions', 'Modificationsdestraductions' ),
 );
 
@@ -132,8 +132,8 @@ $aliases['hu'] = array(
 
 /** Indonesian (Bahasa Indonesia) */
 $aliases['id'] = array(
-	'Translate'          => array( 'Terjemahan' ),
-	'Magic'              => array( 'Terjemahanlanjut' ),
+	'Translate' => array( 'Terjemahan' ),
+	'Magic' => array( 'Terjemahanlanjut' ),
 	'TranslationChanges' => array( 'Perubahanterjemahan' ),
 );
 
@@ -142,10 +142,15 @@ $aliases['km'] = array(
 	'Translate' => array( 'បកប្រែ' ),
 );
 
+/** Korean (한국어) */
+$aliases['ko'] = array(
+	'Translate' => array( '번역' ),
+);
+
 /** Ripoarisch (Ripoarisch) */
 $aliases['ksh'] = array(
-	'Translate'          => array( 'Övversäze' ),
-	'Magic'              => array( 'Extras', 'Extras Översäze', 'ExtrasÖversäze' ),
+	'Translate' => array( 'Övversäze' ),
+	'Magic' => array( 'Extras', 'Extras Översäze', 'ExtrasÖversäze' ),
 	'TranslationChanges' => array( 'Översaz', 'Översaz Änderonge', 'ÖversazÄnderonge' ),
 );
 
@@ -159,7 +164,7 @@ $aliases['lb'] = array(
 
 /** Malay (Bahasa Melayu) */
 $aliases['ms'] = array(
-	'Translate'          => array( 'Terjemah' ),
+	'Translate' => array( 'Terjemah' ),
 	'TranslationChanges' => array( 'Perubahan_terjemahan' ),
 );
 
