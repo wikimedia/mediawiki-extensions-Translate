@@ -978,6 +978,7 @@ $messages['bs'] = array(
 
 /** Catalan (Català)
  * @author SMP
+ * @author Sanbec
  * @author Toniher
  */
 $messages['ca'] = array(
@@ -1057,6 +1058,7 @@ Heu de tenir permisos de traductor per a desar els canvis, que no es guardaran f
 	'translate-checks-plural' => 'La definició utilitza <nowiki>{{PLURAL:}}</nowiki> i en canvi la traducció no.',
 	'tog-translate-nonewsletter' => "No m'enviïs per correu electrònic el recull de notícies (només per a usuaris amb adreça electrònica)",
 	'right-translate' => 'Editar fent servir la interfície de traducció',
+	'translate-sidebar-alltrans' => 'Altres traduccions',
 );
 
 /** Chamorro (Chamoru)
@@ -1595,6 +1597,7 @@ Vi devas esti en la grupo de tradukantoj por konservi ŝanĝojn. Ŝanĝoj ne est
 
 /** Spanish (Español)
  * @author Lin linao
+ * @author Sanbec
  */
 $messages['es'] = array(
 	'translate' => 'Traducir',
@@ -1635,6 +1638,7 @@ $messages['es'] = array(
 	'translate-magic-cm-save' => 'Guardar',
 	'translationchanges-export' => 'exportar',
 	'translate-checks-links' => 'Los siguientes enlaces son problemáticos: <strong>$1</strong>',
+	'translate-sidebar-alltrans' => 'Otras traducciones',
 );
 
 /** Basque (Euskara)
@@ -5069,15 +5073,19 @@ $messages['pt'] = array(
 	'translate-edit-in-other-languages' => 'Mensagem em outros idiomas',
 	'translate-edit-committed' => 'Tradução actualmente disponível no software',
 	'translate-edit-warnings' => 'Avisos sobre traduções incompletas',
+	'translate-edit-goto-no-prev' => 'Não há mensagens anteriores',
+	'translate-edit-goto-no-next' => 'Não há mensagens posteriores',
+	'translate-edit-goto-prev' => 'Editar mensagem anterior',
+	'translate-edit-goto-next' => 'Editar mensagem posterior',
+	'translate-edit-goto-list' => 'Voltar à listagem',
 	'translate-magic-pagename' => 'Tradução extra do MediaWiki',
 	'translate-magic-help' => 'Você pode traduzir alias de páginas especiais, palavras mágicas, nomes de temas (skins) e nomes de espaços nominais.
-
-É necessário incluir os termos em Inglês para as palavras mágicas, ou elas pararão de funcionar. Mantenha também o primeiro item (0 ou 1) da forma como se encontra.
 
 Os alias de páginas especiais e palavras mágicas podem receber múltiplas traduções, separadas por vírgulas (,).
 Nomes de temas e espaços nominais podem receber apenas uma tradução.
 
-Nas traduções de espaços nominais a partícula <tt>$1 talk</tt> é especial. <tt>$1</tt> é trocada pelo nome do sítio (por exemplo, <tt>{{SITENAME}} talk</tt>). Se não é possível formar em seu idioma expressões válidas sem mexer com o nome do sítio, por gentileza, procure um desenvolvedor.
+Nas traduções de espaços nominais a partícula <tt>$1 talk</tt> é especial. <tt>$1</tt> é trocada pelo nome do sítio (por exemplo, <tt>{{SITENAME}} talk</tt>).
+Se não é possível formar em seu idioma expressões válidas sem mexer com o nome do sítio, por gentileza, procure um desenvolvedor.
 
 É necessário pertencer ao grupo de tradutores para conseguir salvar as alterações.
 As alterações não serão salvas até que você clique no botão de salvar.',
@@ -5099,6 +5107,8 @@ As alterações não serão salvas até que você clique no botão de salvar.',
 	'translationchanges-export' => 'exportar',
 	'translationchanges-change' => '$1: $2 por $3',
 	'translate-checks-parameters' => '{{PLURAL:$2|O seguinte parâmetro não é|Os seguintes parâmetros não são usados}}: <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters-unknown' => '{{PLURAL:$2|O parâmetro a seguir é desconhecido|Os parâmetros a seguir são desconhecidos}}:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Há {{PLURAL:$2|um parênteses irregular|$2 parênteses irregulares}}: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '{{PLURAL:$2|O seguinte link possui|Os $2 seguintes links possuem}} problemas: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Por gentileza, troque {{PLURAL:$2|a seguinte tag pela correta|as seguintes tags pelas corretas}}:
