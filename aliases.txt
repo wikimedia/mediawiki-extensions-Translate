@@ -118,6 +118,9 @@ file = Nuke/SpecialNuke.alias.php
 Oversight
 file = Oversight/HideRevision.alias.php
 
+Purge cache
+file = PurgeCache/PurgeCache.alias.php
+
 POV watch
 file = PovWatch/PovWatch.alias.php
 
