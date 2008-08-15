@@ -130,6 +130,9 @@ file = Renameuser/SpecialRenameuser.alias.php
 Show processlist
 file = ShowProcesslist/ShowProcesslist.alias.php
 
+Sign document
+file = SignDocument/SignDocument.alias.php
+
 Site matrix
 file = SiteMatrix/SiteMatrix.alias.php
 
