@@ -127,10 +127,13 @@ file = PovWatch/PovWatch.alias.php
 Rename user
 file = Renameuser/SpecialRenameuser.alias.php
 
+Show processlist
+file = ShowProcesslist/ShowProcesslist.alias.php
+
 Site matrix
 file = SiteMatrix/SiteMatrix.alias.php
 
-Spam Regex
+Spam regex
 file = SpamRegex/SpamRegex.alias.php
 
 Translate
