@@ -442,6 +442,7 @@ file = Nuke/SpecialNuke.i18n.php
 OAI-PMH repository
 id = ext-oai
 file = OAI/OAIRepo.i18n.php
+optional = oairepository
 
 Ogg Handler
 optional = ogg-player-cortado, ogg-player-vlc-mozilla, ogg-player-vlc-activex
