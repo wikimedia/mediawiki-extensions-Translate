@@ -85,6 +85,9 @@ file = GlobalBlocking/GlobalBlocking.alias.php
 Import users
 file = ImportUsers/SpecialImportUsers.alias.php
 
+Inspect cache
+file = InspectCache/InspectCache.alias.php
+
 Interwiki
 file = Interwiki/SpecialInterwiki.alias.php
 
@@ -114,6 +117,9 @@ file = Nuke/SpecialNuke.alias.php
 
 Oversight
 file = Oversight/HideRevision.alias.php
+
+POV watch
+file = PovWatch/PovWatch.alias.php
 
 Rename user
 file = Renameuser/SpecialRenameuser.alias.php
