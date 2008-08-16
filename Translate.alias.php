@@ -187,6 +187,11 @@ $aliases['nah'] = array(
 	'Translate' => array( 'Tlahtōlcuepāz', 'Traducir' ),
 );
 
+/** Low German (Plattdüütsch) */
+$aliases['nds'] = array(
+	'Translate' => array( 'Översetten' ),
+);
+
 /** Dutch (Nederlands) */
 $aliases['nl'] = array(
 	'Translate' => array( 'Vertalen' ),

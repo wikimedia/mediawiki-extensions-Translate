@@ -3814,7 +3814,7 @@ Do moß en de Jrop „Övversäzer“ sen, för hee Änderonge maache ze könne.
 	'translate-checks-links' => 'Hee {{PLURAL:$2|dä Lengk eß|di Lengks senn|dat Jedrißße}} problemattesch: <strong>$1</strong>',
 	'translate-checks-xhtml' => 'Donn hee {{PLURAL:$2|dat Kommando|di Kommandose|dat Jedrißße}} ußtuusche, un schriif de reschtije do för hen: <strong>$1</strong>',
 	'translate-checks-plural' => 'De Ojjinaal-Nohresch bruch <nowiki>{{PLURAL:}}</nowiki>, ävver de Övversäzong deijt dat nit?',
-	'translate-checks-pagename' => 'Appachtemang jeändert ...',
+	'translate-checks-pagename' => 'Dat Appachtemang es anders wi em ojinaal Tex',
 	'tog-translate-nonewsletter' => 'Donn mer keijn Rondschriive övver de eläktronesche Poß scheke (nor för Medmaacher med beschtäteschte Addräß för de e-mail)',
 	'right-translate' => 'Med dä Schnettshtäll zom Övverseze ärrbeide',
 	'translate-rc-translation-filter' => 'Övversëzonge:',
@@ -3842,9 +3842,11 @@ Do moß en de Jrop „Övversäzer“ sen, för hee Änderonge maache ze könne.
 	'translate-tag-category' => 'Sigge, di mer övversäze kann',
 	'translate-tag-page-desc' => 'Övversäzung fun de Sigg „[[:$1]]“ em Wikki.',
 	'translate-tag-translate-link-desc' => 'Don di Sigg hee övversäze',
+	'translate-tag-legend' => 'Lejend:',
 	'translate-tag-legend-fallback' => 'Översäzung en en ander Shproch',
 	'translate-tag-legend-fuzzy' => 'Ahl Övversäzung',
-	'translate-tag-fuzzy-comment' => ' ... verändert fum „[[User:$1|$1]]“ en de Version $2.',
+	'translate-tag-fuzzy-comment' => 'Dä ojinaal-Tex wood fum „[[User:$1|$1]]“ verändert met de Version $2.',
+	'translate-tag-fuzzy-reason' => "Dä ojinaal-Tex wood fum „[[User:$1|$1]]“ verändert met de Version $2 fum MediaWiki, met dämm Kommentaa: ''$3''",
 	'translate-sidebar-alltrans' => 'Ander Övversäzunge',
 );
 
