@@ -217,9 +217,6 @@ Edit User
 
 Email Address Image
 
-Email Page
-descmsg = ea-desc
-
 Error Handler
 
 Eval
