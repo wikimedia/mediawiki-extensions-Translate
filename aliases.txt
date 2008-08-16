@@ -58,6 +58,9 @@ file = DeleteBatch/DeleteBatch.alias.php
 Deleted contributions
 file = DeletedContributions/DeletedContributions.i18n.alias.php
 
+Deleted queue
+file = DeleteQueue/DeleteQueue.alias.php
+
 Edit count
 file = Editcount/SpecialEditcount.alias.php
 
