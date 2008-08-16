@@ -185,6 +185,8 @@ Deleted Contributions
 id = ext-deletedcontribs
 descmsg = deletedcontributions-desc
 
+Delete Queue
+
 Did You Mean
 
 Dismissable SiteNotice
