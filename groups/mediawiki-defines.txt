@@ -186,8 +186,7 @@ id = ext-deletedcontribs
 descmsg = deletedcontributions-desc
 
 Delete Queue
-optional = deletequeue-speedy-reasons
-ignored = deletequeue-generic-reasons, deletequeue-prod-reasons
+optional = deletequeue-prod-reasons, deletequeue-speedy-reasons
 
 Did You Mean
 
