@@ -90,8 +90,7 @@ Central Notice
 
 Change Author
 optional = changeauthor-rev
-ignored = changeauthor-logpagetext
-ignored = changeauthor-short
+ignored = changeauthor-logpagetext, changeauthor-short
 
 CharInsert
 
