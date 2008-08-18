@@ -126,7 +126,7 @@ $aliases['ht'] = array(
 
 /** Hungarian (Magyar) */
 $aliases['hu'] = array(
-	'Translate'          => array( 'Fordítás' ),
+	'Translate' => array( 'Fordítás' ),
 	'TranslationChanges' => array( 'Változások a fordításokban' ),
 );
 

@@ -2198,6 +2198,15 @@ Nas traducións dos espazos de nomes, <tt>$1 talk</tt> é especial. <tt>$1</tt> 
 	'translate-statsf-language' => 'Lista dos códigos de lingua (separados por comas)',
 	'translate-statsf-group' => 'Lista dos códigos dos grupos de mensaxes (separados por comas)',
 	'translate-statsf-submit' => 'Vista previa',
+	'translate-tag-category' => 'Páxinas que se poden traducir',
+	'translate-tag-page-desc' => 'Tradución da páxina wiki [[:$1]].',
+	'translate-tag-translate-link-desc' => 'Traducir esta páxina',
+	'translate-tag-legend' => 'Lenda:',
+	'translate-tag-legend-fallback' => 'Tradución noutra lingua',
+	'translate-tag-legend-fuzzy' => 'Tradución obsoleta',
+	'translate-tag-fuzzy-comment' => 'A definición foi cambiada por [[User:$1|$1]] na revisión $2.',
+	'translate-tag-fuzzy-reason' => 'A definición foi cambiada por "$1" co comentario "$3" en $2.',
+	'translate-sidebar-alltrans' => 'Outras traducións',
 );
 
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
@@ -3090,6 +3099,7 @@ Le modifiche non vengono salvate finché non clicchi sul bottone "Salva" sotto.'
 );
 
 /** Japanese (日本語)
+ * @author Aotake
  * @author JtFuruhata
  * @author Marine-Blue
  */
@@ -3115,7 +3125,7 @@ $messages['ja'] = array(
 	'translate-page-group' => '種類',
 	'translate-page-language' => '言語',
 	'translate-page-limit' => '表示数',
-	'translate-page-limit-option' => 'ページごとに $1 項目',
+	'translate-page-limit-option' => 'ページごとに $1 のメッセージ',
 	'translate-submit' => '再表示',
 	'translate-page-navigation-legend' => 'ナビゲーション',
 	'translate-page-showing' => '全 $3 件中 $1 件目から $2 件目まで表示しています',
@@ -3134,11 +3144,9 @@ $messages['ja'] = array(
 	'translate-edit-committed' => '現在ソフトウェア上で採用されている翻訳メッセージ',
 	'translate-edit-warnings' => '不完全な翻訳に対する警告',
 	'translate-magic-pagename' => 'MediaWiki拡張項目の翻訳',
-	'translate-magic-help' => '特別ページへのエイリアス、マジックワード、スキン名、名前空間名も翻訳できます。
+	'translate-magic-help' => '特別ページへのエイリアス、マジックワード、スキン名、名前空間名を翻訳できます。
 
-マジックワードを翻訳する際には、英語のものも含めておく必要があることに注意してください。さもなくば、それらは動作しなくなります。また、最初の項目（0か1）はそのままにしておいてください。
-
-特別ページへのエイリアスとマジックワードは、コンマ（,）で区切ることにより、複数の翻訳メッセージを持つことができます。スキン名と名前空間名は単一の翻訳メッセージのみを持ちます。
+特別ページへのエイリアスとマジックワードには複数の翻訳を割り当てることができます。複数の翻訳がある時はコンマ（,）で区切ってください。スキン名と名前空間名には一つの翻訳しか当てることができません。
 
 名前空間を翻訳する際、<tt>$1 talk</tt> には特別な注意事項があります。それは、<tt>$1</tt> がサイト名に変更される点です（例えば<tt>{{SITENAME}} talk</tt>の様に）。あなたが翻訳しようとしている言語において、サイト名の変更なしには正しい形式で表現できない場合、開発者に相談してください。
 
@@ -3159,13 +3167,13 @@ $messages['ja'] = array(
 	'translationchanges' => '翻訳変更状況',
 	'translationchanges-export' => 'エクスポート',
 	'translationchanges-change' => '$1: $2 翻訳者-$3',
-	'translate-checks-parameters' => '次のパラメータが利用されていません:
+	'translate-checks-parameters' => '次の$2個のパラメータが利用されていません:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-balance' => '括弧の数が一致していません:
+	'translate-checks-balance' => '$2個の括弧の数が一致していません:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links' => 'リンクに問題があります:
+	'translate-checks-links' => '$2個のリンクに問題があります:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-xhtml' => '正しいタグに修正してください:
+	'translate-checks-xhtml' => '以下の$2個のタグを正しいものに修正してください:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => '元のメッセージでは <nowiki>{{PLURAL:}}</nowiki> を使用していますが、翻訳の中にはありません。',
 );
@@ -5230,13 +5238,13 @@ $messages['ru'] = array(
 	'translationchanges' => 'Изменения в переводах',
 	'translationchanges-export' => 'выгрузить',
 	'translationchanges-change' => '$1: $2 $3',
-	'translate-checks-parameters' => 'Следующие параметры не используются:
+	'translate-checks-parameters' => '{{PLURAL:$2|Следующий параметр не используется|Следующие параметры не используются}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Непарное количество открывающих и закрывающих скобок:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links' => 'Следующие ссылки вызывают проблемы:
+	'translate-checks-links' => '{{PLURAL:$2|Следующая ссылка вызывает проблемы|Следующие ссылки вызывают проблемы}}:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-xhtml' => 'Пожалуйста, исправьте следующие теги:
+	'translate-checks-xhtml' => 'Пожалуйста, исправьте {{PLURAL:$2|следующий тег|следующие теги}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Оригинал использует <nowiki>{{PLURAL:}}</nowiki>, а перевод — нет.',
 	'tog-translate-nonewsletter' => 'Не отправлять мне информационный бюллетень по электронной почте (только для участников с подтверждёнными почтовыми адресами)',
