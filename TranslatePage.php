@@ -35,7 +35,7 @@ class SpecialTranslate extends SpecialPage {
 		TranslateUtils::injectCSS();
 		global $wgOut, $wgTranslateBlacklist;
 
-		$this->setup();
+		$this->setup( $parameters );
 		$this->setHeaders();
 
 		$errors = array();
@@ -113,7 +113,7 @@ class SpecialTranslate extends SpecialPage {
 		wfMemOut( __METHOD__ );
 	}
 
-	protected function setup() {
+	protected function setup( $parameters ) {
 		wfMemIn( __METHOD__ );
 		global $wgUser, $wgRequest;
 
@@ -129,13 +129,30 @@ class SpecialTranslate extends SpecialPage {
 		// Dump everything here
 		$nondefaults = array();
 
+		$parameters = array_map( 'trim', explode( ';', $parameters ) );
+		$pars = array();
+		foreach ( $parameters as $_ ) {
+			if ( $_ === '' ) continue;
+
+			if ( strpos( $_, '=' ) !== false ) {
+				list( $key, $value ) = array_map( 'trim', explode( '=', $_, 2 ) );
+			} else {
+				$key = 'group';
+				$value = $_;
+			}
+			$pars[$key] = $value;
+		}
+
 		foreach ( $defaults as $v => $t ) {
 			if ( is_bool($t) ) {
-				$r = $wgRequest->getBool( $v, $defaults[$v] );
+				$r = isset($pars[$v]) ? (bool) $pars[$v] : $defaults[$v];
+				$r = $wgRequest->getBool( $v, $r );
 			} elseif( is_int($t) ) {
-				$r = $wgRequest->getInt( $v, $defaults[$v] );
+				$r = isset($pars[$v]) ? (int) $pars[$v] : $defaults[$v];
+				$r = $wgRequest->getInt( $v, $r );
 			} elseif( is_string($t) ) {
-				$r = $wgRequest->getText( $v, $defaults[$v] );
+				$r = isset($pars[$v]) ? (string) $pars[$v] : $defaults[$v];
+				$r = $wgRequest->getText( $v, $r );
 			}
 			wfAppendToArrayIfNotDefault( $v, $r, $defaults, $nondefaults );
 		}
