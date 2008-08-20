@@ -37,8 +37,6 @@ class TranslateTagHooks {
 		$title = $parser->getTitle();
 		list( , $code ) = TranslateTagUtils::keyAndcode( $title );
 
-		if ( !TranslateTagUtils::isTagPage( $title ) ) return true;
-
 		if ( strpos( $text, '</translate>' ) !== false ) {
 			$tag = TranslateTag::getInstance();
 			$text = $tag->renderPage( $text, $title );
