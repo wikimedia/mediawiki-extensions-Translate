@@ -13,9 +13,14 @@ class TranslateTagUtils {
 		if ( $type === self::T_SOURCE && $code !== false ) return false;
 		if ( $type === self::T_TRANSLATION && $code === false ) return false;
 
-		wfLoadExtensionMessages('Translate');
-		$cat = Category::newFromName( wfMsgForContent( 'translate-tag-category' ) );
-		$members = $cat->getMembers();
+
+		static $members = null;
+		if ( $members === null ) {
+			wfLoadExtensionMessages('Translate');
+			$cat = Category::newFromName( wfMsgForContent( 'translate-tag-category' ) );
+			$members = $cat->getMembers();
+		}
+
 		foreach ( $members as $member ) {
 			if ( $member->getNamespace() === $title->getNamespace() ) {
 				if ( $member->getDBkey() === $key ) return true;
@@ -25,16 +30,24 @@ class TranslateTagUtils {
 	}
 
 	public static function keyAndCode( Title $title ) {
-		$key = $title->getDBkey();
+		$dbkey = $title->getDBkey();
 		$code = false;
 
-		$pos = strrpos( $key, '/' );
+		$pos = strrpos( $dbkey, '/' );
 		if ( $pos !== false ) {
-			$code = substr( $key, $pos+1 );
-			$key = substr( $key, 0, $pos );
+			$code = substr( $dbkey, $pos+1 );
+			$key = substr( $dbkey, 0, $pos );
+			if ( self::isValidCode($code) ) {
+				return array( $key, $code );
+			}
 		}
 
-		return array( $key, $code );
+		return array( $dbkey, false );
+	}
+
+	public static function isValidCode( $code ) {
+		$codes = Language::getLanguageNames();
+		return isset($codes[$code]);
 	}
 
 	/**
@@ -79,6 +92,10 @@ class TranslateTagUtils {
 	}
 
 	public static function deCodefy( Title $title ) {
+		// Don't remove trail if source page
+		$type = self::T_SOURCE;
+		if ( self::isTagPage( $title, $type ) ) return $title;
+
 		list( , $code ) = self::keyAndCode( $title );
 		$namespace = $title->getNamespace();
 		$dbkey = $title->getDBkey();

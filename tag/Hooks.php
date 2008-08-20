@@ -48,6 +48,8 @@ class TranslateTagHooks {
 		} elseif ( strpos( $text, '<translate />' ) !== false ) {
 			$text = str_replace( '<translate />', '', $text );
 
+			$title = TranslateTagUtils::deCodefy( $title );
+
 			$tag = TranslateTag::getInstance();
 			$text = $tag->renderPage( $text, $title );
 			$text = $tag->getHeader( $title ) . $text;
@@ -105,6 +107,7 @@ class TranslateTagHooks {
 		$user = $wgUser->getName();
 
 		$type = TranslateTagUtils::T_SOURCE;
+
 		if ( !TranslateTagUtils::isTagPage( $source, $type ) ) return true;
 
 		$dbr = wfGetDb();

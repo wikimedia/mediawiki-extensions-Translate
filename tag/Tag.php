@@ -46,8 +46,6 @@ class TranslateTag {
 	public function getHeader( Title $title ) {
 		list( , $code ) = TranslateTagUtils::keyAndCode( $title );
 
-		$title = TranslateTagUtils::deCodefy( $title );
-
 		global $wgLang;
 		$par = array(
 			'group' => 'page|' . $title->getPrefixedText(),
