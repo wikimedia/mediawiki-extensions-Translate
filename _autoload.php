@@ -67,4 +67,7 @@ $wgAutoloadClasses['FreeColMessageGroup'] = $dir . 'groups/FreeCol.php';
 
 # tag
 $wgAutoloadClasses['TranslateTag'] = $dir . 'tag/Tag.php';
+$wgAutoloadClasses['TranslateTagHooks'] = $dir . 'tag/Hooks.php';
+$wgAutoloadClasses['TranslateTagUtils'] = $dir . 'tag/Utils.php';
 $wgAutoloadClasses['FuzzyJob'] = $dir . 'tag/FuzzyJob.php';
+$wgAutoloadClasses['RenderJob'] = $dir . 'tag/RenderJob.php';

@@ -11,102 +11,94 @@
  */
 class TranslateTag {
 
+	var $invocation = 0;
+
 	public static function getInstance() {
 		$obj = new self;
-		$obj->reset();
+		//$obj->reset();
 		return $obj;
 	}
 
-	public static function renderinghash( &$string ) {
-		global $wgRequest, $wgLang;
-		$code = $wgRequest->getText( 'pagelang', '' );
-		if ( $code === '' ) $string .= $code;
-		return true;
+	public static function newFromTitle( Title $title ) {
+		$obj = new self();
+		$obj->invocation = 0;
+		$obj->title = $title;
+
+		$text = TranslateTagUtils::getTagPageSource( $title );
+
+		$cb = array( $obj, 'parseMetadata' );
+		preg_replace_callback( self::METADATA, $cb, $text );
+		return $obj;
 	}
 
-	public static function purgeAfterSave (
-		$article, $user, $text, $summary, $isminor, $_, $_, $flags, $revision
-	) {
-		$title = $article->getTitle();
-		$namespace = $title->getNamespace();
-		$key = $title->getDBkey();
-		$group = TranslateUtils::messageKeyToGroup( $namespace, $key );
-		if ( $group instanceof WikiPageMessageGroup ) {
-			$group->title->touchLinks();
-		}
-		return true;
-	}
+	public static function newFromTagContents( &$text, $code ) {
+		$obj = new self();
+		$obj->invocation = -1;
+		$obj->title = null;
+		$obj->renderCode = $code;
 
+		$cb = array( $obj, 'parseMetadata' );
+		preg_replace_callback( self::METADATA, $cb, $text );
+		return $obj;
+	}
 
 	// Remember to to use TranslateUtils::injectCSS()
-	public static function getHeader( Title $title ) {
+	public function getHeader( Title $title ) {
+		list( , $code ) = TranslateTagUtils::keyAndCode( $title );
+
+		$title = TranslateTagUtils::deCodefy( $title );
+
 		global $wgLang;
 		$par = array(
 			'group' => 'page|' . $title->getPrefixedText(),
-			'language' => $wgLang->getCode(),
+			'language' => $code ? $code : $wgLang->getCode(),
+			'task' => 'view'
 		);
 		$translate = SpecialPage::getTitleFor( 'Translate' );
 		$link = $translate->getFullUrl( wfArrayToCgi( $par ) );
 
 		wfLoadExtensionMessages( 'Translate' );
-		$cat = wfMsgForContent( 'translate-tag-category' );
 		$linkDesc    = wfMsgNoTrans( 'translate-tag-translate-link-desc' );
 		$legendText  = wfMsgNoTrans( 'translate-tag-legend' );
 		$legendOther = wfMsgNoTrans( 'translate-tag-legend-fallback' );
 		$legendFuzzy = wfMsgNoTrans( 'translate-tag-legend-fuzzy' );
 
-		$legend  = "[[Category:$cat]]";
-		$legend .= "<div style=\"font-size: x-small\">";
-		$legend .= "<span class='plainlinks'>[$link $linkDesc]</span> | ";
-		$legend .= "$legendText <span class=\"mw-translate-other\">$legendOther</span>";
-		$legend .= " <span class=\"mw-translate-fuzzy\">$legendFuzzy</span>";
-		$legend .= '<br />This page is translatable using the experimental wiki page translation feature.</div>';
+
+		$legend  = "<div style=\"font-size: x-small\">";
+		$legend .= "<span class='plainlinks'>[$link $linkDesc]</span> ";
+		if ( $code ) {
+			$legend .= " | $legendText <span class=\"mw-translate-other\">$legendOther</span>";
+			$legend .= " <span class=\"mw-translate-fuzzy\">$legendFuzzy</span>";
+		}
+		$legend .= ' | This page is translatable using the experimental wiki page translation feature.</div>';
 		$legend .= "\n----\n";
 		return $legend;
-	}
-
-	public static function addcss( $outputpage, $text ) {
-		TranslateUtils::injectCSS();
-		return true;
 	}
 
 	const METADATA = '~\n?<!--TS(.*?)-->\n?~us';
 	const PATTERN_COMMENT = '~\n?<!--T[=:;](.*?)-->\n?~u';
 	const PATTERN_TAG = '~(<translate>)\n?(.+?)(</translate>)~us';
 
-	public static function tag( $parser, &$text, $state ) {
-		// Quick escape on normal pages
-		if ( strpos( $text, '</translate>' ) === false ) return true;
-
-
-		$obj = self::getInstance();
-		$obj->title = $parser->getTitle();
-
-		$cb = array( $obj, 'parseMetadata' );
+	public function renderPage( $text, Title $title, $code = false ) {
+		$this->renderTitle = $title;
+		$this->renderCode = $code;
+		$cb = array( $this, 'parseMetadata' );
 		preg_replace_callback( self::METADATA, $cb, $text );
 
-		$cb = array( $obj, 'replaceTags' );
-		$text = preg_replace_callback( self::PATTERN_TAG, $cb, $text );
+		$cb = array( $this, 'replaceTagCb' );
+		$text = StringUtils::delimiterReplaceCallback( '<translate>', '</translate>', $cb, $text );
 
-		$legend = self::getHeader( $parser->getTitle() );
-		$text = $legend . $text;
+		return preg_replace_callback( self::PATTERN_TAG, $cb, $text );
+	}
 
-		return true;
+	public function replaceTagCb( $matches ) {
+		return $this->replaceTag( $matches[1] );
 	}
 
 	/**
 	 * Replaces sections with translations if available, and substitutes variables
 	 */
-	public function replaceTags( $data ) {
-		global $wgContLang;
-
-		$input = $data[2];
-
-		// separate interface language from page language, but default to interface
-		global $wgRequest, $wgLang;
-		$code = $wgRequest->getText( 'pagelang', '' );
-		if ( $code === '' ) $code = $wgLang->getCode();
-
+	public function replaceTag( $input ) {
 		$regex = $this->getSectionRegex();
 		$matches = array();
 		preg_match_all( $regex, $input, $matches, PREG_SET_ORDER );
@@ -115,8 +107,9 @@ class TranslateTag {
 			$section = $match['section'];
 
 			$translation = null;
-			if ( $code !== $wgContLang )
-				$translation = $this->getContents( $this->title, $key, $code );
+			if ( $this->renderCode ) {
+				$translation = $this->getContents( $this->renderTitle, $key, $this->renderCode );
+			}
 
 			if ( $translation !== null ) {
 				$vars = $this->extractVariablesFromSection( $section );
@@ -131,8 +124,14 @@ class TranslateTag {
 				// Do in-place replace of variables, copy to keep $section intact for
 				// the replace later
 				$replace = $section;
+				// Replace with newline to avoid eating the newline after header
+				// and it doesn't hurt because surrounding is trimmed for inlines
+				$replace = preg_replace( self::PATTERN_COMMENT, "\n", $replace );
 				$this->extractVariablesFromSection( $replace, 'replace' );
-				$replace = '<div class="mw-translate-other">' . "\n" . $replace . "\n". '</div>';
+
+				if ( $this->renderCode ) {
+					$replace = $this->wrapAndClean( 'mw-translate-other', $replace );
+				}
 				$input = str_replace( $section, $replace, $input );
 				$input = str_replace( $match['holder'], '', $input );
 			}
@@ -140,7 +139,6 @@ class TranslateTag {
 
 		$input = preg_replace( self::PATTERN_PLACEHOLDER, '', $input );
 		$input = preg_replace( self::METADATA, '', $input );
-		$input = preg_replace( self::PATTERN_COMMENT, '', $input );
 
 		return trim($input);
 
@@ -172,37 +170,43 @@ class TranslateTag {
 	}
 
 	/**
-	 * Fetches translation for a section trying the full fallback chain. Returns
-	 * null if translation is not found before $wgContLang is hit. This may lead
-	 * to problems if content language is in a middle of fallback chain.
+	 * Fetches translation for a section.
 	 */
 	public function getContents( Title $title, $key, $code ) {
 		global $wgContLang;
 
-		// If we don't get exact hit, we want to know about it
-		$targetCode = $code;
-		do {
-			$sectionPageName = $this->getTranslationPage( $title, $key, $code );
-			$sectionTitle = Title::newFromText( $sectionPageName );
-			$revision = Revision::loadFromTitle( wfGetDb(), $sectionTitle );
-			if ( $revision ) {
-				$translation = $revision->getText();
-				if ( strpos( $translation, TRANSLATE_FUZZY ) !== false ) {
-					$translation = str_replace( TRANSLATE_FUZZY, '', $translation );
-					$translation = '<div class="mw-translate-fuzzy">' . "\n" . $translation . "\n". '</div>';
-				}
-				if ( $code !== $targetCode ) {
-					$translation = '<div class="mw-translate-other">' . "\n" . $translation . "\n". '</div>';
-				}
+		$namespace = $this->getNamespace( $title );
+		$sectionPageName = $this->getTranslationPage( $title, $key, $code );
+		$sectionTitle = Title::makeTitle( $namespace, $sectionPageName );
+		if ( !$sectionTitle ) throw new MWException( 'bad title' );
 
-				return $translation;
+		$revision = Revision::loadFromTitle( wfGetDb(), $sectionTitle );
+		if ( $revision ) {
+			$translation = $revision->getText();
+			if ( strpos( $translation, TRANSLATE_FUZZY ) !== false ) {
+				$translation = str_replace( TRANSLATE_FUZZY, '', $translation );
+				$translation = $this->wrapAndClean( 'mw-translate-fuzzy', $translation );
 			}
 
-			$code = Language::getFallbackFor( $code );
-
-		} while( $code && $code !== $wgContLang );
+			return $translation;
+		}
 
 		return null;
+	}
+
+	public function wrapAndClean( $class, $text ) {
+		$text = trim($text);
+
+		$tag = 'div';
+		$sep = "\n";
+		if ( strpos($text, "\n") === false && strpos($text, '==') === false ) {
+			$tag = 'span';
+			$sep = '';
+		}
+
+		$class = htmlspecialchars( $class );
+
+		return "<$tag class=\"$class\">$sep$text$sep</$tag>";
 	}
 
 	const PATTERN_SECTION = '~(<!--T:[^-]+-->)(.*?)<!--T;-->~us';
@@ -233,8 +237,6 @@ class TranslateTag {
 	public static function parseSectionDefinitions( Title $title, array &$namespaces ) {
 		$obj = self::getInstance();
 
-		$namespaces = array( $title->getNamespace(), MWNamespace::getTalk( $title->getNamespace() ) );
-
 		$defs = array();
 
 		$revision = Revision::newFromTitle( $title );
@@ -247,23 +249,44 @@ class TranslateTag {
 		preg_match_all( $obj->getSectionRegex(), $pagecontents, $matches, PREG_SET_ORDER );
 		foreach ( $matches as $match ) {
 			$key = $match['id'];
-			$contents = str_replace( $match['holder'], '', $match['section'] );
-			list( , $key ) = explode( ':', $obj->getTranslationPage( $title, $key ), 2);
+
+			$contents = preg_replace( self::PATTERN_COMMENT, "\n", $match['section'] );
+			$contents = trim($contents);
+			$key = $obj->getTranslationPage( $title, $key );
 			$obj->extractVariablesFromSection( $contents, 'holder' );
 			$defs[$key] = $contents;
 		}
+
+		$ns = $obj->getNamespace( $title );
+		$namespaces = array( $ns, $ns +1 );
 
 		return $defs;
 		
 	}
 
-	public function getTranslationPage( $title, $key, $code = false ) {
-		$format = '$NS:$PAGE/translations/$KEY-$SNIPPET';
-		$search = array( '$NS', '$PAGE', '$KEY', '$SNIPPET' );
-		$replace = array( $title->getNsText(), $title->getDBkey(), $key, $this->sections[$key]['page'] );
-		$page = str_replace( $search, $replace, $format );
-		if ( $code !== false ) $page .= "/$code";
-		return $page;
+	public function getTranslationPage( Title $title, $key, $code = false ) {
+		global $wgTranslateTagTranslationLocation;
+		list( , $format ) = $wgTranslateTagTranslationLocation;
+
+		// Some data
+		$ns = $title->getNsText();
+		$page = $title->getDBkey();
+		$fullname = $title->getPrefixedDBkey();
+		$snippet = $this->sections[$key]['page'];
+
+		$search = array( '$NS', '$PAGE', '$FULLNAME', '$KEY', '$SNIPPET' );
+		$replace = array( $ns, $page, $fullname, $key, $snippet );
+		$pagename = str_replace( $search, $replace, $format );
+		if ( $code !== false ) $pagename .= "/$code";
+
+		return $pagename;
+	}
+
+	public function getNamespace( Title $title ) {
+		global $wgTranslateTagTranslationLocation;
+		list( $nsId, ) = $wgTranslateTagTranslationLocation;
+		if ( $nsId === null ) $nsId = $title->getNamespace();
+		return $nsId;
 	}
 
 	public function onArticleSaveComplete(
@@ -271,9 +294,11 @@ class TranslateTag {
 	) {
 		if ( $revision === null || $isminor ) return true;
 
+		$namespace = $this->getNamespace( $article->getTitle() );
+
 		foreach ( $this->changed as $key ) {
 			$page = $this->getTranslationPage( $article->getTitle(), $key );
-			$title = Title::newFromText( $page );
+			$title = Title::makeTitle( $namespace, $page );
 			if ( !$title ) continue;
 
 			$summary = str_replace( '-->', '-- >', $summary );
@@ -293,6 +318,7 @@ class TranslateTag {
 		if ( strpos( $text, '</translate>' ) === false ) return true;
 
 		$obj = self::getInstance();
+		$obj->reset();
 		
 		// Parse existing section mappings
 		$obj->invocation = 0;
@@ -323,7 +349,9 @@ class TranslateTag {
 		$regex = $this->getSectionRegex(false);
 		$data = preg_replace_callback( $regex, $cb, $data );
 
-		$output  = $matches[1] . "\n" . $data . "\n";
+		// Add two newlines before metadata so that it wont be parsed as a part of
+		// the section it is after
+		$output  = $matches[1] . "\n" . $data . "\n\n";
 		$output .= $this->outputMetadata();
 		$output .= $matches[3];
 
@@ -344,6 +372,18 @@ class TranslateTag {
 
 		$this->invocation++;
 		return '';
+	}
+
+	/**
+	 * Returns list of translation sections in an array.
+	 * @param $code language code for the pages.
+	 */
+	public function getSectionPages() {
+		$pages = array();
+		foreach ( array_keys($this->sections) as $key ) {
+			$pages[] = $this->getTranslationPage( $this->title, $key );
+		}
+		return $pages;
 	}
 
 	public function outputMetadata() {

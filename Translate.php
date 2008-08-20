@@ -11,7 +11,7 @@ if (!defined('MEDIAWIKI')) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '9 (2008-08-08:1)' );
+define( 'TRANSLATE_VERSION', '9 (2008-08-20:1)' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name'           => 'Translate',
@@ -44,14 +44,21 @@ $wgHooks['OutputPageBeforeHTML'][] = 'TranslateEditAddons::addNavigation';
 $wgHooks['UserToggles'][] = 'TranslatePreferences::TranslateUserToggles';
 $wgHooks['SpecialRecentChangesQuery'][] = 'TranslateRcFilter::translationFilter';
 $wgHooks['SpecialRecentChangesPanel'][] = 'TranslateRcFilter::translationFilterForm';
-$wgHooks['ArticleSave'][]      = 'TranslateTag::save';
-$wgHooks['ArticleSaveComplete'][]      = 'TranslateTag::purgeAfterSave';
-$wgHooks['ParserAfterStrip'][] = 'TranslateTag::tag';
-$wgHooks['OutputPageBeforeHTML'][] = 'TranslateTag::addcss';
-$wgHooks['PageRenderingHash'][] = 'TranslateTag::renderinghash';
 $wgHooks['SkinTemplateToolboxEnd'][] = 'TranslateToolbox::toolboxAllTranslations';
 
+// Tag hooks
+$wgHooks['getUserPermissionsErrorsExpensive'][] = 'TranslateTagHooks::disableEdit';
+$wgHooks['ParserAfterStrip'][] = 'TranslateTagHooks::renderTagPage';
+$wgHooks['OutputPageBeforeHTML'][] = 'TranslateTagHooks::injectCss';
+$wgHooks['ArticleSaveComplete'][] = 'TranslateTagHooks::onSave';
+$wgHooks['SkinTemplateOutputPageBeforeExec'][] = 'TranslateTagHooks::addSidebar';
+$wgHooks['ArticleSave'][] = 'TranslateTag::save';
+$wgHooks['ParserFirstCallInit'][] = 'efTranslateInitTags';
+$wgHooks['BeforeParserFetchTemplateAndtitle'][] = 'TranslateTagHooks::onTemplate';
+
+
 $wgJobClasses['FuzzyJob'] = 'FuzzyJob';
+$wgJobClasses['RenderJob'] = 'RenderJob';
 $wgAvailableRights[] = 'translate';
 
 define( 'TRANSLATE_FUZZY', '!!FUZZY!!' );
@@ -130,6 +137,7 @@ $wgTranslateGroupStructure = array(
 	'/^core/' => array( 'core' ),
 	'/^ext-flaggedrevs/' => array( 'ext', 'flaggedrevs' ),
 	'/^ext/' => array( 'ext' ),
+	'/^page\|/' => array( 'page' ),
 );
 
 $wgTranslateAddMWExtensionGroups = false;
@@ -155,8 +163,30 @@ $wgTranslateTasks = array(
 //	'export-to-xliff'=> 'ExportToXliffMessagesTask',
 );
 
+/** PHPlot for nice graphs */
 $wgTranslatePHPlot = false;
 $wgTranslatePHPlotFont = '/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf';
+
+// Options for <translate> tag
+/**
+ * Can be used to define where translation of sections are stored for tag
+ * translations.
+ * Two item array, where first item is namespace and latter is page name.
+ * Namespace is either null which means the same as the current namespace, or
+ * integer denoting some fixed namespace.
+ * Page name can have following variables:
+ * - $NS: the namespace of the source page with
+ * - $PAGE: name of the page without namespace
+ * - $FULLNAME: name of the page with possible namespace
+ * - $KEY: automatically or assigned unique key for section,
+ *         without this page names may not be unique!
+ * - $SNIPPET: automatically constructed snippet of the section contents to give
+ *             more meaningful names for the pages.
+ */
+$wgTranslateTagTranslationLocation = array(
+	null, // Namespace is whatever the page is in
+	'$PAGE/translations/$KEY-$SNIPPET'
+);
 
 if ( $wgDebugComments ) {
 	require_once( "$dir/utils/MemProfile.php" );
@@ -170,4 +200,11 @@ function efTranslateInit() {
 	if ( $wgTranslatePHPlot ) {
 		$wgAutoloadClasses['PHPlot'] = $wgTranslatePHPlot;
 	}
+}
+
+
+function efTranslateInitTags( $parser ) {
+	// For nice language list in-page
+	$parser->setHook( 'languages', array('TranslateTagHooks', 'languages' ) );
+	return true;
 }

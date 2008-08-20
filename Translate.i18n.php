@@ -163,6 +163,9 @@ Changes are not saved until you click save button below.',
 
 	'translate-sidebar-alltrans'  => 'Other translations',
 
+	'translate-tag-noedit' => 'This page is automatically updated translation page. Either edit the [$1 source page] or translate it [$2 here].',
+
+
 );
 
 /** Message documentation (Message documentation)

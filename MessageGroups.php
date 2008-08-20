@@ -576,6 +576,8 @@ class WikiMessageGroup extends MessageGroup {
 
 
 class WikiPageMessageGroup extends WikiMessageGroup {
+	public $title;
+
 	public function __construct( $id, $source ) {
 		$this->id = $id;
 		$title = Title::newFromText( $source );
