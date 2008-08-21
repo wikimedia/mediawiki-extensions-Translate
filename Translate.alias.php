@@ -83,8 +83,8 @@ $aliases['dsb'] = array(
  * @author Nike
  */
 $aliases['fi'] = array(
-	'Translate'          => array( 'Käännä' ),
-	'Magic'              => array( 'Laajennettu kääntäminen' ),
+	'Translate' => array( 'Käännä' ),
+	'Magic' => array( 'Laajennettu kääntäminen' ),
 	'TranslationChanges' => array( 'Käännösmuutokset' ),
 );
 
@@ -97,8 +97,8 @@ $aliases['fr'] = array(
 
 /** Galician (Galego) */
 $aliases['gl'] = array(
-	'Translate'          => array( 'Traducir' ),
-	'Magic'              => array( 'Tradución avanzada' ),
+	'Translate' => array( 'Traducir' ),
+	'Magic' => array( 'Tradución avanzada' ),
 	'TranslationChanges' => array( 'Cambios na tradución' ),
 );
 
@@ -190,6 +190,14 @@ $aliases['nah'] = array(
 /** Low German (Plattdüütsch) */
 $aliases['nds'] = array(
 	'Translate' => array( 'Översetten' ),
+);
+
+/** Nedersaksisch (Nedersaksisch) */
+$aliases['nds-nl'] = array(
+	'Translate' => array( 'Vertalen' ),
+	'Magic' => array( 'Uut-ebreid_vertalen' ),
+	'TranslationChanges' => array( 'Vertalingen' ),
+	'TranslationStats' => array( 'Vertaalstaotestieken' ),
 );
 
 /** Dutch (Nederlands) */

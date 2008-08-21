@@ -1323,6 +1323,8 @@ Du musst in der Übersetzer-Gruppe sein, um Änderungen zu speichern.
 	'translate-tag-fuzzy-comment' => 'Definition verändert durch [[User:$1|$1]] in Version $2.',
 	'translate-tag-fuzzy-reason' => 'Definition verändert durch „$1“ mit dem Kommentar „$3“ in $2.',
 	'translate-sidebar-alltrans' => 'Andere Übersetzungen',
+	'translate-tag-noedit' => 'Diese Seite ist eine automatisch aktualisierte Übersetzungsseite.
+Du kannst die [$1 Originalseite bearbeiten] oder [$2 die Übersetzung aktualisieren].',
 );
 
 /** Lower Sorbian (Dolnoserbski)
@@ -1499,13 +1501,13 @@ $messages['eo'] = array(
 	'translate-page-disabled' => "Tradukoj al ĉi tiu lingvo en ĉi tiu grupo estis malebligita. Kialo:
 
 ''$1''",
-	'translate-page-settings-legend' => 'Agordoj',
+	'translate-page-settings-legend' => 'Preferoj',
 	'translate-page-task' => 'Mi volas',
 	'translate-page-group' => 'Grupo',
 	'translate-page-language' => 'Lingvo',
 	'translate-page-limit' => 'Nombro de mesaĝoj',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|mesaĝo|mesaĝoj}} po paĝo',
-	'translate-submit' => 'Alportu',
+	'translate-submit' => 'Alporti',
 	'translate-page-navigation-legend' => 'Navigado',
 	'translate-page-showing' => 'Estas motrataj mesaĝoj $1 ĝis $2 el $3.',
 	'translate-page-showing-all' => 'Estas montrataj $1 {{PLURAL:$1|mesaĝo|mesaĝoj}}.',
@@ -1529,19 +1531,22 @@ $messages['eo'] = array(
 	'translate-edit-goto-next' => 'Redakti postan mesaĝon',
 	'translate-edit-goto-list' => 'Reiri al la listo',
 	'translate-magic-pagename' => 'Etendita traduko de MediaWiki',
-	'translate-magic-help' => 'Vi povas traduki specialajn paĝojn, magiajn vortojn, nomojn de etosoj kaj nomojn de nomspacoj.
+	'translate-magic-help' => 'Vi povas traduki specialajn kromnomojn de paĝoj, magiajn vortojn, nomojn de etosoj kaj nomojn de nomspacoj.
 
-En la magiajn vortojn vi devas inkludi la anglajn esprimojn aŭ ili ne plu funkcios. Lasu ankaŭ la unuan enskribon (0 aŭ 1) kiel ĝi estas.
+Specialaj kromnomoj de paĝoj kaj magiaj vortoj povas havi multajn tradukojn.
+Tradukoj estas apartigitaj de komo (,).
+Nomoj de etosoj kaj nomspacoj nur povas havi unu tradukon.
 
-La kromnomoj de specialaj paĝoj povas havi plurajn tradukojn. La tradukoj estas disigataj per komo (,). Nomoj de etosoj kaj nomspacoj povas havi nur unu tradukon.
 
-En tradukoj de nomspacoj <tt>$1 diskuto</tt> estas speciala. <tt>$1</tt> estas anstataŭigata per la reteja nomo (ekzemple <tt>{{SITENAME}} diskuto</tt>). Se ne estas eble en via lingvo formi validan esprimon sen ŝanĝi la retejan nomon, bonvolu kontakti programiston.
+En nomspacaj tradukoj <tt>$1 diskuto</tt> estas speciala. <tt>$1</tt> estas anstataŭigita de la nomo de la retejo (ekz-e <tt>{{SITENAME}} diskuto</tt>.
+Se ne eblas en via lingvo formi validan esprimon sen ŝanĝi la nomon de la retejo, bonvolu kontakti programisto.
 
-Vi devas esti en la grupo de tradukantoj por konservi ŝanĝojn. Ŝanĝoj ne estos konservataj, ĝis vi alklakis la butonon Konservu malsupre.',
+Vi devas esti en la grupo de tradukantoj por konservi ŝanĝojn. 
+Ŝanĝoj ne estos konservataj, ĝis vi alklakis la jenan butonon Konservi.',
 	'translate-magic-module' => 'Modjulo:',
 	'translate-magic-submit' => 'Montri',
-	'translate-magic-cm-export' => 'Eksportu',
-	'translate-magic-cm-to-be' => 'Estu',
+	'translate-magic-cm-export' => 'Eksporti',
+	'translate-magic-cm-to-be' => 'Esti',
 	'translate-magic-cm-current' => 'Nuntempe',
 	'translate-magic-cm-original' => 'Originalo',
 	'translate-magic-cm-comment' => 'Komento:',
@@ -1553,7 +1558,7 @@ Vi devas esti en la grupo de tradukantoj por konservi ŝanĝojn. Ŝanĝoj ne est
 	'translate-magic-skin' => 'Nomoj de etosoj',
 	'translate-magic-namespace' => 'Nomoj de nomspacoj',
 	'translationchanges' => 'Tradukŝanĝoj',
-	'translationchanges-export' => 'eksportu',
+	'translationchanges-export' => 'eksporti',
 	'translationchanges-change' => '$1: $2 de $3',
 	'translate-checks-parameters' => '{{PLURAL:$2|Jenaj parametroj ne estas uzataj|Jena parametro ne estas uzata}}: <strong>$1</strong>',
 	'translate-checks-parameters-unknown' => 'Jenaj {{PLURAL:$2|parametro|parametroj}} estas nekonataj:
@@ -1564,7 +1569,7 @@ Vi devas esti en la grupo de tradukantoj por konservi ŝanĝojn. Ŝanĝoj ne est
 <strong>$1</strong>',
 	'translate-checks-plural' => 'Difino uzas <nowiki>{{PLURAL:}}</nowiki>, sed traduko ne.',
 	'translate-checks-pagename' => 'Nomspaco ŝanĝita de difino',
-	'tog-translate-nonewsletter' => 'Ne sendu al mi retpoŝtajn gazetojn (nur koncerna por uzantoj kun konfirmita retpoŝta adreso)',
+	'tog-translate-nonewsletter' => 'Ne sendi al mi retpoŝtajn gazetojn (nur koncerna por uzantoj kun konfirmita retpoŝta adreso)',
 	'right-translate' => 'Redakti per la traduka interfaco',
 	'translate-rc-translation-filter' => 'Filtri tradukojn:',
 	'translate-rc-translation-filter-no' => 'Fari nenion',
@@ -1597,6 +1602,8 @@ Vi devas esti en la grupo de tradukantoj por konservi ŝanĝojn. Ŝanĝoj ne est
 	'translate-tag-fuzzy-comment' => 'Difino ŝanĝita de [[User:$1|$1]] en revizio $2.',
 	'translate-tag-fuzzy-reason' => 'Difino ŝanĝita de "$1" kun komento "$3" en $2.',
 	'translate-sidebar-alltrans' => 'Aliaj tradukoj',
+	'translate-tag-noedit' => 'Ĉi tiu paĝo estas aŭtomate ĝisdatigita traduko-paĝo.
+Vi povas [$1 redakti la fontpaĝon] aŭ [$2 ĝisdatigi la tradukon].',
 );
 
 /** Spanish (Español)
@@ -4575,6 +4582,8 @@ Alle waarden hebben een limiet aan de boven- en onderzijde.',
 	'translate-tag-fuzzy-comment' => 'Definitie gewijzigd door [[User:$1|$1]] in versie $2.',
 	'translate-tag-fuzzy-reason' => 'Definitie gewijzigd door "$1" met opmerking "$3" in $2.',
 	'translate-sidebar-alltrans' => 'Andere vertalingen',
+	'translate-tag-noedit' => 'Dit is een automatisch bijgewerkte vertaalde pagina.
+U kunt de [$1 brontekst bewerken] of de [$2 vertaling bijwerken].',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
@@ -4725,6 +4734,8 @@ Endringer lagres ikke før du klikker på lagre-knappen nedenfor.',
 	'translate-tag-fuzzy-comment' => 'Definisjon endret av [[User:$1|$1]] i revisjon $2.',
 	'translate-tag-fuzzy-reason' => 'Definisjon endret av brukeren $1 med kommentaren «$3» i $2.',
 	'translate-sidebar-alltrans' => 'Andre oversettelser',
+	'translate-tag-noedit' => 'Denne siden er en automatisk oppdatert oversettelse.
+Du kan [$1 redigere kildesiden] eller [$2 oppdatere oversettelsen].',
 );
 
 /** Occitan (Occitan)
@@ -4785,15 +4796,15 @@ $messages['oc'] = array(
 	'translate-magic-pagename' => 'Traduccion de MediaWiki espandida',
 	'translate-magic-help' => "Podètz traduire los aliases de paginas especialas, los mots magics, los noms de skins e los noms d'espacis de noms.
 
-Dins los mots magics, vos cal enclure la traduccion en anglés o aquò foncionarà pas mai. E mai, daissatz lo primièr item (0 o 1) coma es.
-
-Los aliases de paginas especialas e los mots magics pòdon aver mantuna traduccion. Las traduccions son separadas per una virgula (,).
+Los aliases de paginas especialas e los mots magics pòdon aver mantuna traduccion.
+Las traduccions son separadas per una virgula (,).
 Los noms de skins e d'espacis de noms pòdon pas aver qu'una traduccion.
 
 Dins las traduccions d'espacis de noms, <tt>$1 talk</tt> es especial. <tt>$1</tt> es remplaçat pel nom del sit (per exemple <tt>{{SITENAME}} talk</tt>).
-Se es pas possible d'obténer una expression valida dins vòstra lenga sens cambiar lo nom del sit, contactatz un desvolopaire.
+S4es pas possible d'obténer una expression valida dins vòstra lenga sens cambiar lo nom del sit, contactatz un desvolopaire.
 
-Vos cal aparténer al grop dels traductors per salvar los cambiaments. Los cambiaments seràn pas salvats abans que cliquèssetz sul boton Salvar en bas.",
+Vos cal aparténer al grop dels traductors per salvar los cambiaments.
+Los cambiaments seràn pas salvats abans que cliquèssetz sul boton « Salvar ».",
 	'translate-magic-module' => 'Modul :',
 	'translate-magic-submit' => 'Anar',
 	'translate-magic-cm-export' => 'Exportar',
@@ -4850,6 +4861,7 @@ Vos cal aparténer al grop dels traductors per salvar los cambiaments. Los cambi
 	'translate-tag-legend-fuzzy' => 'Traduccion fòra de data',
 	'translate-tag-fuzzy-comment' => 'Definicion modificada per l’utilizaire [[User:$1|$1]] dins la version $2.',
 	'translate-tag-fuzzy-reason' => 'Definicion modificada per l’utilizaire $1 amb per comentari « $3 » dins $2.',
+	'translate-sidebar-alltrans' => 'Autras traduccions',
 );
 
 /** Ossetic (Иронау)
@@ -5120,7 +5132,7 @@ As alterações não serão salvas até que você clique no botão de salvar.',
 	'translationchanges' => 'Alterações às traduções',
 	'translationchanges-export' => 'exportar',
 	'translationchanges-change' => '$1: $2 por $3',
-	'translate-checks-parameters' => '{{PLURAL:$2|O seguinte parâmetro não é|Os seguintes parâmetros não são usados}}: <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters' => '{{PLURAL:$2|O seguinte parâmetro não é usado|Os seguintes parâmetros não são usados}}: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|O parâmetro a seguir é desconhecido|Os parâmetros a seguir são desconhecidos}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Há {{PLURAL:$2|um parênteses irregular|$2 parênteses irregulares}}: <strong><nowiki>$1</nowiki></strong>',
@@ -5398,6 +5410,8 @@ Zmeny sa neuložia, kým nekliknete na tlačidlo Uložiť dolu.',
 	'translate-tag-fuzzy-comment' => 'Definíciu zmenil [[User:$1|$1]] v revízii $2.',
 	'translate-tag-fuzzy-reason' => 'Definíciu zmenil „$1” v revízii $2 s komentárom „$3”.',
 	'translate-sidebar-alltrans' => 'Iné preklady',
+	'translate-tag-noedit' => 'Táto stránka je automaticky aktualizovaná stránka prekladu.
+Môžete [$1 upravovať zdrojovú stránku] alebo [$2 aktualizovať preklad].',
 );
 
 /** Somali (Soomaaliga)
@@ -5681,6 +5695,8 @@ För att kunna spara ändringar så behöver du tillhöra översättargruppen.
 	'translate-tag-fuzzy-comment' => 'Definition ändrad av [[User:$1]] i sidversion $2.',
 	'translate-tag-fuzzy-reason' => 'Definition ändrad av användare $1 med kommentaren "$3" i $2.',
 	'translate-sidebar-alltrans' => 'Andra översättningar',
+	'translate-tag-noedit' => 'Den här sidan är en automatisk uppdaterad översättning.
+Du kan [$1 redigera källsidan] eller [$2 uppdatera översättningen].',
 );
 
 /** Silesian (Ślůnski)
@@ -5800,7 +5816,7 @@ $messages['tet'] = array(
 	'translate-page-group' => 'Lubu',
 	'translate-page-language' => 'Lian',
 	'translate-submit' => 'Hola',
-	'translate-page-showing-all' => 'Dalan $1 mensajen.',
+	'translate-page-showing-all' => 'Dalan $1 {{PLURAL:$1|mensajen|mensajen}}.',
 	'translate-next' => 'Pájina oinmai',
 	'translate-page-description-legend' => 'Informasaun kona-ba lubu',
 	'translate-edit-in-other-languages' => 'Mensajen iha lian seluk',
