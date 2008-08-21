@@ -1,7 +1,12 @@
 <?php
 
 /**
- * Hook attachments for the <translate> tag.
+ * Code for handling pages marked with <translate> tag. This class does parsing.
+ *
+ * Section: piece of text, separated usually with two new lines, that is used as
+ * an single translation unit for change tracking and so on.
+ * Occurance: contents of <translate>..</translate>, which there can be many on
+ * one page.
  *
  * @addtogroup Extensions
  *
@@ -10,15 +15,18 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 class TranslateTag {
-
+	/** Counter for nth <translate>..</translate> invocation to know to which
+ 	 *  occurance each section belongs to, when doing save-time parsing. */
 	var $invocation = 0;
 
+	// Deprecated, TODO: write a suitable factory functions for replacement
 	public static function getInstance() {
 		$obj = new self;
 		//$obj->reset();
 		return $obj;
 	}
 
+	/** Factory for creating a new instance from Title object */
 	public static function newFromTitle( Title $title ) {
 		$obj = new self();
 		$obj->invocation = 0;
@@ -31,6 +39,7 @@ class TranslateTag {
 		return $obj;
 	}
 
+	/** Factory for creating a new instance from occurance */
 	public static function newFromTagContents( &$text, $code ) {
 		$obj = new self();
 		$obj->invocation = -1;
@@ -42,6 +51,7 @@ class TranslateTag {
 		return $obj;
 	}
 
+	// TODO: Move to hook or utils?
 	// Remember to to use TranslateUtils::injectCSS()
 	public function getHeader( Title $title ) {
 		list( , $code ) = TranslateTagUtils::keyAndCode( $title );
@@ -68,15 +78,18 @@ class TranslateTag {
 			$legend .= " | $legendText <span class=\"mw-translate-other\">$legendOther</span>";
 			$legend .= " <span class=\"mw-translate-fuzzy\">$legendFuzzy</span>";
 		}
+		// TODO: the following text will of course be removed :)
 		$legend .= ' | This page is translatable using the experimental wiki page translation feature.</div>';
 		$legend .= "\n----\n";
 		return $legend;
 	}
 
+	// Some regexps
 	const METADATA = '~\n?<!--TS(.*?)-->\n?~us';
 	const PATTERN_COMMENT = '~\n?<!--T[=:;](.*?)-->\n?~u';
 	const PATTERN_TAG = '~(<translate>)\n?(.+?)(</translate>)~us';
 
+	// Renders a translation page to given language
 	public function renderPage( $text, Title $title, $code = false ) {
 		$this->renderTitle = $title;
 		$this->renderCode = $code;
@@ -135,6 +148,7 @@ class TranslateTag {
 			}
 		}
 
+		// Clean any comments there may be left
 		$input = preg_replace( self::PATTERN_PLACEHOLDER, '', $input );
 		$input = preg_replace( self::METADATA, '', $input );
 
@@ -226,6 +240,7 @@ class TranslateTag {
 		return "~$regex~u";
 	}
 
+	// Deprecated
 	public function reset() {
 		$this->sections = array();
 		$this->placeholders = array();
@@ -262,6 +277,7 @@ class TranslateTag {
 		
 	}
 
+	/** Use this to get the location of translations */
 	public function getTranslationPage( Title $title, $key, $code = false ) {
 		global $wgTranslateTagTranslationLocation;
 		list( , $format ) = $wgTranslateTagTranslationLocation;
@@ -280,6 +296,9 @@ class TranslateTag {
 		return $pagename;
 	}
 
+	/** Use this to get the namespace for page names provided with
+	 * getTranslationPage
+	 */
 	public function getNamespace( Title $title ) {
 		global $wgTranslateTagTranslationLocation;
 		list( $nsId, ) = $wgTranslateTagTranslationLocation;
@@ -287,6 +306,7 @@ class TranslateTag {
 		return $nsId;
 	}
 
+	// Initiate fuzzyjobs on changed sections
 	public function onArticleSaveComplete(
 		$article, $user, $text, $summary, $isminor, $_, $_, $flags, $revision
 	) {
@@ -327,6 +347,10 @@ class TranslateTag {
 		$obj->invocation = 0;
 		$cb = array( $obj, 'saveCb' );
 		$text = preg_replace_callback( self::PATTERN_TAG, $cb, $text );
+
+		// Trim trailing whitespace. It is not allowed in wikitext and shows up in
+		// diffs
+		$text = rtrim( $text );
 
 		if ( count($obj->changed) ) {
 			// Register fuzzier
