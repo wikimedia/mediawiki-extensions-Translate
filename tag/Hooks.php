@@ -174,11 +174,23 @@ class TranslateTagHooks {
 		$sk = $parser->mOptions->getSkin();
 		$legend = wfMsg( 'otherlanguages' );
 
+		global $wgTranslateCssLocation;
+
 		$languages = array();
 		foreach ( $status as $code => $percent ) {
 			$name = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() );
-			$percent = $wgLang->formatNum( round( 100*$percent ) );
-			$label = "$name ($percent%)";
+
+			$percent *= 100;
+			if     ( $percent < 20 ) $image = 1;
+			elseif ( $percent < 40 ) $image = 2;
+			elseif ( $percent < 60 ) $image = 3;
+			elseif ( $percent < 80 ) $image = 4;
+			else                     $image = 5;
+
+			$percent = Xml::element( 'img', array(
+				'src' => "$wgTranslateCssLocation/images/prog-$image.png"
+			) );
+			$label = "$name $percent";
 
 			$_title = TranslateTagUtils::codefyTitle( $title, $code );
 			$languages[] = $sk->link( $_title, $label );
