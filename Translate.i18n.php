@@ -1235,11 +1235,11 @@ $messages['de'] = array(
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|Systemnachricht|Systemnachrichten}} pro Seite',
 	'translate-submit' => 'Hole',
 	'translate-page-navigation-legend' => 'Navigation',
-	'translate-page-showing' => 'Systemnachrichten $1 bis $2 von insgesamt $3.',
+	'translate-page-showing' => 'Systemnachrichten $1 bis $2 von insgesamt $3',
 	'translate-page-showing-all' => '$1 {{PLURAL:$1|Systemnachricht|Systemnachrichten}}.',
 	'translate-page-showing-none' => 'Keine Systemnachrichten zur Anzeige vorhanden.',
-	'translate-next' => 'Nächste Seite',
-	'translate-prev' => 'Vorherige Seite',
+	'translate-next' => 'nächste Seite',
+	'translate-prev' => 'vorherige Seite',
 	'translate-page-description-legend' => 'Informationen über diese Gruppe',
 	'translate-page-edit' => 'bearbeiten',
 	'translate-optional' => '(optional)',
@@ -2149,13 +2149,17 @@ $messages['gl'] = array(
 	'translate-edit-goto-next' => 'Editar a mensaxe seguinte',
 	'translate-edit-goto-list' => 'Voltar á lista',
 	'translate-magic-pagename' => 'Tradución estendida de MediaWiki',
-	'translate-magic-help' => 'Pode traducir os alias das páxinas especiais, as palabras máxicas, os nomes das aparencias e os nomes dos espazos de nomes.
+	'translate-magic-help' => 'Pode traducir os alias das páxinas especiais, as palabras máxicas, os nomes das aparencias e mais os nomes dos espazos de nomes.
 
-Nas páxinas máxicas ten que incluír as traducións en inglés ou non funcionarán. Deixe tamén o primeiro elemento (0 ou 1) tal e como está.
+Os alias das páxinas especiais e as palabras máxicas poden ter numerosas traducións.
+As traducións sepáranse mediante unha coma (,).
+Os nomes das aparencias e dos espazos de nomes só poden ter unha tradución.
 
-Os alias de páxinas especiais e as palabras máxicas poden ter varias traducións. As traducións sepáranse mediante unha vírgula (,). Os nomes das aparencias e dos espazos de nomes só poden ter unha tradución.
+Nas traducións dos espazos de nomes, <tt>$1 talk</tt> é especial. <tt>$1</tt> substitúese polo nome do sitio (por exemplo, <tt>{{SITENAME}} talk</tt>).
+Se na súa lingua non resulta posíbel formar unha expresión válida sen mudar o nome do sitio, contacte cun programador.
 
-Nas traducións dos espazos de nomes, <tt>$1 talk</tt> é especial. <tt>$1</tt> substitúese polo nome do sitio (por exemplo <tt>{{SITENAME}} talk</tt>). Se na súa lingua non resulta posíbel formar unha expresión válida sen mudar o nome do sitio, contacte cun programador.',
+Ten que estar no grupo de tradutores para gardar os cambios.
+Os cambios non se gardan ata que prema no botón "Gardar" de embaixo.',
 	'translate-magic-module' => 'Módulo:',
 	'translate-magic-submit' => 'Amosar',
 	'translate-magic-cm-export' => 'Exportar',
