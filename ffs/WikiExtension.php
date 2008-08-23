@@ -181,9 +181,6 @@ class WikiExtensionFormatWriter extends WikiFormatWriter {
 	public function _makeHeader( $handle ) {
 		if ( $this->header ) {
 			fwrite( $handle, $this->header );
-		} else {
-			// TODO: something nice
-			fwrite( $handle, 'BAA' );
 		}
 	}
 

@@ -48,11 +48,12 @@ class TranslateTagHooks {
 		} elseif ( strpos( $text, '<translate />' ) !== false ) {
 			$text = str_replace( '<translate />', '', $text );
 
+			list( , $code ) = TranslateTagUtils::keyAndCode( $title );
 			$title = TranslateTagUtils::deCodefy( $title );
 
 			$tag = TranslateTag::getInstance();
 			$text = $tag->renderPage( $text, $title );
-			$text = $tag->getHeader( $title ) . $text;
+			$text = $tag->getHeader( $title, $code ) . $text;
 
 			$lobj = Language::factory( $code );
 			$parser->mOptions->setTargetLanguage( $lobj );

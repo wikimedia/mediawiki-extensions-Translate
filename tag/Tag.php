@@ -53,9 +53,7 @@ class TranslateTag {
 
 	// TODO: Move to hook or utils?
 	// Remember to to use TranslateUtils::injectCSS()
-	public function getHeader( Title $title ) {
-		list( , $code ) = TranslateTagUtils::keyAndCode( $title );
-
+	public function getHeader( Title $title, $code = false ) {
 		global $wgLang;
 		$par = array(
 			'group' => 'page|' . $title->getPrefixedText(),
