@@ -218,8 +218,8 @@ $aliases['no'] = array(
 
 /** Pashto (پښتو) */
 $aliases['ps'] = array(
-	'Translate'          => array( 'ژباړل' ),
-	'Magic'              => array( 'پرمختللې ژباړه، کوډګريز' ),
+	'Translate' => array( 'ژباړل' ),
+	'Magic' => array( 'پرمختللې ژباړه، کوډګريز' ),
 	'TranslationChanges' => array( 'دژباړې بدلونونه' ),
 );
 
@@ -241,10 +241,10 @@ $aliases['pt-br'] = array(
 
 /** Swedish (Svenska) */
 $aliases['sv'] = array(
-	'Translate'          => array( 'Översätt' ),
-	'Magic'              => array( 'Avancerad översättning' ),
+	'Translate' => array( 'Översätt' ),
+	'Magic' => array( 'Avancerad översättning' ),
 	'TranslationChanges' => array( 'Översättningsändringar' ),
-	'TranslationStats'   => array( 'Översättningsstatistik' ),
+	'TranslationStats' => array( 'Översättningsstatistik' ),
 );
 
 /** Telugu (తెలుగు) */

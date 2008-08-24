@@ -520,6 +520,8 @@ $messages['ar'] = array(
 	'translate-tag-fuzzy-comment' => 'التعريف تغير بواسطة [[User:$1]] في المراجعة $2.',
 	'translate-tag-fuzzy-reason' => 'التعريف تغير بواسطة المستخدم $1 بالتعليق "$3" في $2.',
 	'translate-sidebar-alltrans' => 'ترجمات أخرى',
+	'translate-tag-noedit' => 'هذه الصفحة هي صفحة ترجمة محدثة تلقائيا.
+يمكنك [$1 تعديل الصفحة المصدر] أو [$2 تحديث الترجمة].',
 );
 
 /** Araucanian (Mapudungun)
@@ -663,6 +665,8 @@ Los cambeos nun se graben hasta que calques nel botón guardar d'abaxo.",
 	'translate-tag-fuzzy-comment' => 'Definición camudada por [[User:$1|$1]] na revisión $2.',
 	'translate-tag-fuzzy-reason' => 'Definición camudada por "$1" col comentariu "$3" en $2.',
 	'translate-sidebar-alltrans' => 'Otres traducciones',
+	'translate-tag-noedit' => 'Esta páxina ye una páxina de traducción actualizada automáticamente.
+Pues [$1 editar la páxina fonte] o [$2 actualizar la traducción].',
 );
 
 /** Southern Balochi (بلوچی مکرانی)
@@ -1971,6 +1975,8 @@ Ces derniers ne seront pas sauvegardés tant que vous n’aurez pas cliqué sur 
 	'translate-tag-fuzzy-comment' => 'Définition modifiée par l’utilisateur [[User:$1|$1]] dans la version $2.',
 	'translate-tag-fuzzy-reason' => 'Définition modifiée par l’utilisateur $1 avec pour commentaire « $3 » dans $2.',
 	'translate-sidebar-alltrans' => 'Autres traductions',
+	'translate-tag-noedit' => 'Cette page est un document de traduction automatiquement mise à jour.
+Vous pouvez [$1 modifier la page source] ou [$2 mettre à jour la traduction].',
 );
 
 /** Cajun French (Français cadien)
@@ -4866,6 +4872,8 @@ Los cambiaments seràn pas salvats abans que cliquèssetz sul boton « Salvar »
 	'translate-tag-fuzzy-comment' => 'Definicion modificada per l’utilizaire [[User:$1|$1]] dins la version $2.',
 	'translate-tag-fuzzy-reason' => 'Definicion modificada per l’utilizaire $1 amb per comentari « $3 » dins $2.',
 	'translate-sidebar-alltrans' => 'Autras traduccions',
+	'translate-tag-noedit' => 'Aquesta pagina es un document de traduccion automaticament mesa a jorn.
+Podètz [$1 modificar la pagina font] o [$2 metre a jorn la traduccion].',
 );
 
 /** Ossetic (Иронау)
