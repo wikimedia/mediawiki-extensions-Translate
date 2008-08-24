@@ -408,7 +408,7 @@ class AllWikitravelExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-charinsert',
 		'ext-inputbox',
 		'ext-microid',
-		'ext-newuerlog',
+		'ext-newuserlog',
 		'ext-openid',
 		'ext-parserfunctions',
 		'ext-renameuser',
