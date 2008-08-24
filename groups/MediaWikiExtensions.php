@@ -234,7 +234,33 @@ class AllWikiaExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $classes = null;
 
 	protected $wikiaextensions = array(
-		'ext-inputbox', // to be completed
+		'ext-antibot',
+		'ext-categorytree',
+		'ext-charinsert',
+		'ext-checkuser',
+		'ext-cite',
+		'ext-confirmedit',
+		'ext-deletedcontribs',
+		'ext-dismissablesitenotice',
+		'ext-dplforum',
+		'ext-editcount',
+		'ext-findspam',
+		'ext-googlemaps',
+		'ext-imagemap',
+		'ext-importfreeimages',
+		'ext-inputbox',
+		'ext-linksearch',
+		'ext-lookupuser',
+		'ext-multiupload',
+		'ext-parserdifftest',
+		'ext-parserfunctions',
+		'ext-poem',
+		'ext-randomimage',
+		'ext-spamblacklist',
+		'ext-timeline',
+		'ext-torblock',
+		'ext-universaleditbutton',
+		'ext-wikihiero',
 	);
 
 	protected function init() {
@@ -260,7 +286,22 @@ class AllWikihowExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $classes = null;
 
 	protected $wikihowextensions = array(
-		'ext-inputbox', // to be completed
+		'ext-antispoof',
+		'ext-blocktitles',
+		'ext-cite',
+		'ext-confirmedit',
+		'ext-formatemail',
+		'ext-imagemap',
+		'ext-importfreeimages',
+		'ext-multiupload',
+		'ext-newuserlog',
+		'ext-openid',
+		'ext-parserfunctions',
+		'ext-postcomment',
+		'ext-renameuser',
+		'ext-spamblacklist',
+		'ext-spamdifftool',
+		'ext-youtubeauthsub',
 	);
 
 	protected function init() {
@@ -307,19 +348,22 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-gadgets',
 		'ext-fixedimage',
 		'ext-centralauth',
-		'ext-syntaxhighlightgeshi', // limited UI use (Special:Version and errors in usage mostly)
+		'ext-charinsert', // limited UI use (Special:Version and errors in usage mostly)
+		'ext-syntaxhighlightgeshi',
 		'ext-timeline',
 		'ext-wikihiero',
 		'ext-oai',
 		'ext-poem',
 		'ext-universaleditbutton',
+		'ext-newusermessage',
 		'ext-doublewiki',
 		'ext-intersection',
 		'ext-proofreadpage',
 		'ext-quiz',
 		'ext-scanset',
 		'ext-skinperpage',
-		'ext-antispoof', // anti spam and such (usually all wikis)
+		'ext-antibit',  // anti spam and such (usually all wikis)
+		'ext-antispoof',
 		'ext-spamblacklist',
 		'ext-simpleantispam',
 		'ext-titleblacklist',
@@ -328,6 +372,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-usernameblacklist',
 		'ext-deletedcontribs', // sysop or higher only
 		'ext-checkuser',
+		'ext-globalblocking',
 		'ext-nuke',
 		'ext-oversight',
 		'ext-renameuser',
@@ -360,7 +405,13 @@ class AllWikitravelExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $classes = null;
 
 	protected $wikitravelextensions = array(
-		'ext-inputbox', // to be completed
+		'ext-charinsert',
+		'ext-inputbox',
+		'ext-microid',
+		'ext-newuerlog',
+		'ext-openid',
+		'ext-parserfunctions',
+		'ext-renameuser',
 	);
 
 	protected function init() {
