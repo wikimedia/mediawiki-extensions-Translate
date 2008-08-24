@@ -362,7 +362,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-quiz',
 		'ext-scanset',
 		'ext-skinperpage',
-		'ext-antibit',  // anti spam and such (usually all wikis)
+		'ext-antibot',  // anti spam and such (usually all wikis)
 		'ext-antispoof',
 		'ext-spamblacklist',
 		'ext-simpleantispam',
