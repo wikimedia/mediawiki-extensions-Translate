@@ -644,7 +644,6 @@ Translate
 optional = translate-page-paging-links
 
 Trusted XFF
-file = TrustedXFF/TrustedXFF.i18n.php
 
 Universal Edit Button
 
