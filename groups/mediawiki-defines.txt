@@ -235,6 +235,10 @@ id = ext-flaggedrevs-flaggedrevs
 file = FlaggedRevs/language/FlaggedRevs.i18n.php
 optional = revreview-toggle, revreview-ak-review, accesskey-ca-current, accesskey-ca-stable
 
+Flagged Revisions - Liked Pages
+id = ext-flaggedrevs-likedpages
+file = FlaggedRevs/language/LikedPages.i18n.php
+
 Flagged Revisions - Old Reviewed Pages
 id = ext-flaggedrevs-oldreviewedpages
 file = FlaggedRevs/language/OldReviewedPages.i18n.php
