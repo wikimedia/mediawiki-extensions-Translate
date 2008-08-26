@@ -44,6 +44,11 @@ $aliases['arz'] = array(
 	'TranslationStats' => array( 'إحصاءات_الترجمة' ),
 );
 
+/** Assamese (অসমীয়া) */
+$aliases['as'] = array(
+	'Translate' => array( 'অনুবাদ কৰক' ),
+);
+
 /** Southern Balochi (بلوچی مکرانی) */
 $aliases['bcc'] = array(
 	'Translate'          => array( 'ترجمه' ),
