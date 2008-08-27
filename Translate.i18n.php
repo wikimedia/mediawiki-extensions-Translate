@@ -985,6 +985,7 @@ $messages['bs'] = array(
 );
 
 /** Catalan (Català)
+ * @author Jordi Roqué
  * @author SMP
  * @author Sanbec
  * @author Toniher
@@ -998,6 +999,7 @@ $messages['ca'] = array(
 	'translate-task-view' => 'veure tots els missatges de',
 	'translate-task-untranslated' => 'veure els missatges no traduïts de',
 	'translate-task-optional' => 'veure els missatges opcionals de',
+	'translate-task-problematic' => 'Veure missatges amb problemes',
 	'translate-task-review' => 'revisar els canvis a',
 	'translate-task-reviewall' => 'revisar les traduccions de',
 	'translate-task-export' => 'exportar les traduccions de',
@@ -1006,6 +1008,9 @@ $messages['ca'] = array(
 	'translate-page-no-such-language' => 'La llengua especificada no és vàlida.',
 	'translate-page-no-such-task' => 'La tasca especificada no és vàlida.',
 	'translate-page-no-such-group' => 'El grup especificat no és vàlid.',
+	'translate-page-disabled' => "Les traduccions a aquest idioma en aquest grup han estat suspeses. Motiu:
+
+''$1''",
 	'translate-page-settings-legend' => 'Preferències',
 	'translate-page-task' => 'Vull',
 	'translate-page-group' => 'Grup',
@@ -1029,10 +1034,13 @@ $messages['ca'] = array(
 	'translate-edit-in-other-languages' => 'Missatge en altres llengües',
 	'translate-edit-committed' => 'Traducció utilitzada actualment pel programa',
 	'translate-edit-warnings' => 'Avisos de traducció incompleta',
+	'translate-edit-goto-no-prev' => 'Cap missatge previ',
+	'translate-edit-goto-no-next' => 'Cap missatge posterior',
+	'translate-edit-goto-prev' => 'Editar el missatge anterior',
+	'translate-edit-goto-next' => 'Editar el missatge següent',
+	'translate-edit-goto-list' => 'Tornar a la llista',
 	'translate-magic-pagename' => 'Traducció ampliada del MediaWiki',
 	'translate-magic-help' => "Aquí podeu traduir els noms de les pàgines especials, les paraules màgiques, els noms dels estils de pell (''skins'') i els títols dels diferents espais de noms (''namespaces'').
-
-A les paraules màgiques cal que hi incloeu les traduccions en anglès per a que continuïn funcionant. També cal que deixeu el primer ítem (0 o 1) igual que a l'original.
 
 Els títols de les pàgines especials i les paraules màgiques poden tenir múltiples traduccions. Separeu-les per una coma (,) i un espai. Els estils i els espais de noms només poden tenir una traducció.
 
@@ -1055,17 +1063,30 @@ Heu de tenir permisos de traductor per a desar els canvis, que no es guardaran f
 	'translationchanges' => 'Canvis a la traducció',
 	'translationchanges-export' => 'exporta',
 	'translationchanges-change' => '$1:$2 per $3',
-	'translate-checks-parameters' => "Els paràmetres següents no s'estan usant:
+	'translate-checks-parameters' => "{{PLURAL:$2|El paràmetre següent no s'està|Els paràmetres següents no s'estan}} usant:
 <strong><nowiki>$1</nowiki></strong>",
-	'translate-checks-balance' => 'El format dels parèntesis no és correcte:
+	'translate-checks-parameters-unknown' => '{{PLURAL:$2|El paràmetre següent és desconegut|Els paràmetres següent són desconeguts}}:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links' => 'Els enllaços següents són problemàtics:
+	'translate-checks-balance' => 'Hi ha un nombre senar de {{PLURAL:$2|parèntesis, claus i/o claudàtors|parèntesis, claus i/o claudàtors}}:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-xhtml' => 'Reemplaceu les etiquetes següents amb les correctes:
-<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links' => "{{PLURAL:$2|L'enllaç següent és problemàtic|Els enllaços següents són problemàtics}}:
+<strong><nowiki>$1</nowiki></strong>",
+	'translate-checks-xhtml' => "{{PLURAL:$2|Reemplaceu l'etiqueta següent per la correcta|Reemplaceu les etiquetes següents per les correctes}}:
+<strong><nowiki>$1</nowiki></strong>",
 	'translate-checks-plural' => 'La definició utilitza <nowiki>{{PLURAL:}}</nowiki> i en canvi la traducció no.',
 	'tog-translate-nonewsletter' => "No m'enviïs per correu electrònic el recull de notícies (només per a usuaris amb adreça electrònica)",
 	'right-translate' => 'Editar fent servir la interfície de traducció',
+	'translate-stats-edits' => 'Edicions',
+	'translate-stats-users' => 'Traductors',
+	'translate-statsf-width' => 'Amplada en píxels',
+	'translate-statsf-height' => 'Alçada en píxels',
+	'translate-statsf-scale-days' => 'Dies',
+	'translate-statsf-scale-hours' => 'Hores',
+	'translate-statsf-count-edits' => "Nombre d'edicions",
+	'translate-statsf-count-users' => 'Traductors actius',
+	'translate-statsf-submit' => 'Previsualització',
+	'translate-tag-translate-link-desc' => 'Traduir aquesta pàgina',
+	'translate-tag-legend-fallback' => 'Traducció en un altre idioma',
 	'translate-sidebar-alltrans' => 'Altres traduccions',
 );
 
@@ -2537,11 +2558,11 @@ $messages['hsb'] = array(
 	'translate-magic-pagename' => 'Rozšěrjeny přełožk MediaWiki',
 	'translate-magic-help' => 'Móžěs aliasy specialnych stronow, magiske słowa, mjena šatow a mjena mjenowych rumow přełožić.
 
-W magiskich słowach dyrbiš jendźelske přełožki zapřijeć abo hižo njebudu fungować. Wostaj tež prěni zapisk (0 abo 1) kaž je.
+Aliasy specialnych stronow a magiske słowow móža wjacore přełožki měć.
+Přełožki su přež komu (,) wotdźěleja.
+Mjena šatow a mjenowych rumow móže jenož jedyn přełožk měć.
 
-Aliasy specialnych stronow a magiske słowa móža wjacore přełožki měć. Přełožki so přez komy (,) wotdźěleja. Mjeno šatow a mjenowe rumy móže jenož jedyn přełožk měć.
-
-W přełožkach mjenowych rumow <tt>$1 diskusija</tt> je specialna. <tt>$1</tt> so přez mjeno strony, na př. <tt>{{SITENAME}} diskusija</tt> naruna. Jeli w twojej rěči njeje móžno płaćiwy wuraz tworić, bjeztoho zo by so mjeno strony změniło, skontaktuj prošu wuwiwarja.
+W přełožkach mjenowych rumow <tt>$1 diskusija</tt> je specialna. <tt>$1</tt> so přez mjeno mjeno sydła, na př. <tt>{{SITENAME}} diskusija</tt> naruna. Jeli w twojej rěči njeje móžno płaćiwy wuraz tworić, bjeztoho zo by so mjeno strony změniło, skontaktuj prošu wuwiwarja.
 
 Dyrbiš w skupinje přełožowarjow być, zo by změny składował. Změny so njeskładuja, doniž  składowanske tłóčatko njekliknješ.',
 	'translate-magic-module' => 'Modul:',
@@ -2574,7 +2595,26 @@ Dyrbiš w skupinje přełožowarjow być, zo by změny składował. Změny so nj
 	'translate-rc-translation-filter-only' => 'Jenož přełožki pokazać',
 	'translate-rc-translation-filter-filter' => 'Přełožki wufiltrować',
 	'translate-rc-translation-filter-site' => 'Jenož změny sydłowych zdźělenkow',
+	'translationstats' => 'Statistiki přełožkow',
 	'translate-stats-edits' => 'Změny na dźeń',
+	'translate-stats-users' => 'Přełožowarjo',
+	'translate-statsf-width' => 'Šěrokosć w pikselach',
+	'translate-statsf-height' => 'Wysokosć w pikselach',
+	'translate-statsf-days' => 'Doba w dnjach',
+	'translate-statsf-scale-days' => 'Dny',
+	'translate-statsf-scale-hours' => 'Hodźiny',
+	'translate-statsf-count' => 'Měra',
+	'translate-statsf-count-edits' => 'Ličba změnow',
+	'translate-statsf-count-users' => 'Aktiwni přełožowarjo',
+	'translate-statsf-language' => 'Lisćina přez komu wotdźělenych rěčnych kodow',
+	'translate-statsf-submit' => 'Přehlad',
+	'translate-tag-category' => 'Přełožujomne strony',
+	'translate-tag-page-desc' => 'Přełožk wikijoweje strony [[:$1]].',
+	'translate-tag-translate-link-desc' => 'Tutu stronu přełožić',
+	'translate-tag-legend' => 'Legenda',
+	'translate-tag-legend-fallback' => 'Přełožk w druhej rěči',
+	'translate-tag-legend-fuzzy' => 'Zestarjeny přełožk',
+	'translate-sidebar-alltrans' => 'Druhe přełožki',
 );
 
 /** Haitian (Kreyòl ayisyen)
@@ -3949,18 +3989,15 @@ $messages['lb'] = array(
 	'translate-magic-pagename' => 'Erweidert MediaWiki Iwwersetzung',
 	'translate-magic-help' => "Dir kënnt Spezialsäiten, magesch Wierder, Nimm vu Skins an Nummraum Nimm iwwersetzen.
 
-Bäi de magesche Wierder (Magic words) musst Dir déi englesch Iwwersetzung abannen, soss fonctionéieren se net méi.
-Och den Ufank (0 oder 1) musst Dir onverännert loossen.
-
 Spezial Säit ''Aliasen'' a ''magesch Wierder'' kënne méi Iwwersetzungen hunn.
 Iwwersetzungen gi mat engem Komma (,) getrennt.
 Skin Nimm a Nummraim kënne nëmmen eng Iwwersetzung hunn.
 
 Am Nummraum Iwwersetzungen ass <tt>$1 Diskussioun</tt> speziell. <tt>$1</tt> gëtt duerch ''sitename'' ersat (zum Beispill <tt>{{SITENAME}} Diskussioun</tt>).
-Wann et an àrer Sprooch net méiglech ass fir e gëltegen Ausdrock ze maachen ouni ''sitename'' z'änneren, da kontaktéiert w.e.g. en Entwéckler (developer).
+Wann et an ärer Sprooch net méiglech ass fir e gëltegen Ausdrock ze maachen ouni ''sitename'' z'änneren, da kontaktéiert w.e.g. en Entwéckler (developer).
 
 Dir musst am Grupp vun den Iwwersetzer si fir Ännerungen ofspäicheren ze kënnen.
-Ännerunge ginn net gespäichert bis Dir op ''Säit späicheren'' geklickt hutt.",
+Ännerunge ginn net gespäichert bis Dir de knäppchen hei ënndrënner geklickt hutt.",
 	'translate-magic-module' => 'Modul:',
 	'translate-magic-submit' => 'Weisen',
 	'translate-magic-cm-export' => 'Export',
@@ -4003,16 +4040,19 @@ Dir musst am Grupp vun den Iwwersetzer si fir Ännerungen ofspäicheren ze kënn
 	'translate-statsf-options' => 'Optioune vum Graphique',
 	'translate-statsf-width' => 'Breet a Pixelen',
 	'translate-statsf-height' => 'Héicht a Pixelen',
+	'translate-statsf-days' => 'Zäitraum an Deeg',
 	'translate-statsf-scale-days' => 'Deeg',
 	'translate-statsf-scale-hours' => 'Stonnen',
 	'translate-statsf-count' => 'Mooss',
 	'translate-statsf-count-edits' => 'Zuel vun den Ännerungen',
 	'translate-statsf-count-users' => 'Aktiv Iwwersetzer',
+	'translate-statsf-submit' => 'Kucken ouni ofzespäicheren',
 	'translate-tag-category' => 'Sàiten déi iwwersat kënne ginn',
 	'translate-tag-page-desc' => 'Iwwersetzung vun der Wiki-Säit [[:$1]].',
 	'translate-tag-translate-link-desc' => 'Dës Säit iwwersetzen',
 	'translate-tag-legend' => 'Erklärung:',
 	'translate-tag-legend-fallback' => 'Iwwersetzung an aner Sproochen',
+	'translate-tag-legend-fuzzy' => 'Iwwerlieften Iwwersetzung',
 	'translate-tag-fuzzy-reason' => 'Definitioun gouf vum "$1" mat der Bemierkung "$3" an $2 geännert.',
 	'translate-sidebar-alltrans' => 'Aner Iwwersetzungen',
 );

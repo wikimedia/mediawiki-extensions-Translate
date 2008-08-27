@@ -182,9 +182,10 @@ $aliases['mt'] = array(
 
 /** Erzya (Эрзянь) */
 $aliases['myv'] = array(
-	'Translate'          => array( 'Йутавтомс' ),
-	'Magic'              => array( 'ПревейстэЙутавтомс', 'Магия' ),
+	'Translate' => array( 'Йутавтомс' ),
+	'Magic' => array( 'ПревейстэЙутавтомс', 'Магия' ),
 	'TranslationChanges' => array( 'ЙутавтовксПолавтомат' ),
+	'TranslationStats' => array( 'ЙутавтомадоСтатистика' ),
 );
 
 /** Nahuatl (Nāhuatl) */
