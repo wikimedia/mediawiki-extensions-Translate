@@ -1352,6 +1352,13 @@ Du musst in der Übersetzer-Gruppe sein, um Änderungen zu speichern.
 Du kannst die [$1 Originalseite bearbeiten] oder [$2 die Übersetzung aktualisieren].',
 );
 
+/** German (formal address) (Deutsch (Sie-Form))
+ * @author MichaelFrey
+ */
+$messages['de-formal'] = array(
+	'translate-edit-no-information' => "''Diese Systemnachricht hat noch keine Dokumentation. Wenn Sie wissen, wo und welchem Zusammenhang sie benutzt wird, können Sie anderen Übersetzern helfen, indem Sie eine Dokumentation hinzufügen.''",
+);
+
 /** Lower Sorbian (Dolnoserbski)
  * @author Dundak
  * @author Michawiki
@@ -1637,6 +1644,7 @@ Vi povas [$1 redakti la fontpaĝon] aŭ [$2 ĝisdatigi la tradukon].',
  */
 $messages['es'] = array(
 	'translate' => 'Traducir',
+	'translate-desc' => '[[Special:Translate|Página especial]] para traducir el software MediaWiki y otros',
 	'translate-edit' => 'editar',
 	'translate-talk' => 'discusión',
 	'translate-history' => 'historial',
@@ -1649,12 +1657,17 @@ $messages['es'] = array(
 	'translate-task-export' => 'Exportar traducciones desde',
 	'translate-task-export-as-po' => 'Exportar traducción en formato Gettext',
 	'translate-task-export-to-xliff' => 'Exportar traducción en formato Xliff',
+	'translate-page-no-such-language' => 'No se especificó un idioma válido',
+	'translate-page-disabled' => "Se han deshabilitado las traducciones a este idioma en este grupo de mensajes. Razón:
+
+''$1''",
 	'translate-page-settings-legend' => 'Preferencias',
 	'translate-page-task' => 'Deseo',
 	'translate-page-group' => 'Grupo',
 	'translate-page-language' => 'Idioma',
 	'translate-page-limit' => 'Límite',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|mensaje|mensajes}} por página',
+	'translate-submit' => 'Buscar',
 	'translate-page-navigation-legend' => 'Navegación',
 	'translate-page-showing' => 'Mostrando mensajes del $1 al $2 de $3',
 	'translate-page-showing-all' => 'Mostrando $1 {{PLURAL:$1|mensaje|mensajes}}.',
@@ -1662,18 +1675,55 @@ $messages['es'] = array(
 	'translate-next' => 'Página siguiente',
 	'translate-prev' => 'Página anterior',
 	'translate-page-description-legend' => 'Información acerca del grupo',
+	'translate-page-edit' => 'editar',
 	'translate-optional' => '(opcional)',
+	'translate-edit-definition' => 'Mensaje original',
+	'translate-edit-contribute' => 'contribuye',
 	'translate-edit-no-information' => "''No hay datos para este mensaje. Si sabes dónde o cómo se usa, puedes ayudar a otros traductores añadiéndole datos.''",
 	'translate-edit-information' => 'Información acerca de este mensaje ($1)',
 	'translate-edit-in-other-languages' => 'Mensaje en otros idiomas',
 	'translate-edit-warnings' => 'Advertencias acerca de traducciones incompletas',
+	'translate-edit-goto-no-prev' => 'No hay mensaje anterior',
+	'translate-edit-goto-no-next' => 'No hay mensaje posterior',
+	'translate-edit-goto-prev' => 'Editar el mensaje anterior',
+	'translate-edit-goto-next' => 'Editar el mensaje posterior',
 	'translate-edit-goto-list' => 'Volver a la lista',
+	'translate-magic-pagename' => 'Traducción extendida de MediaWiki',
 	'translate-magic-cm-export' => 'Exportar',
 	'translate-magic-cm-current' => 'Actual',
 	'translate-magic-cm-original' => 'Original',
 	'translate-magic-cm-save' => 'Guardar',
 	'translationchanges-export' => 'exportar',
-	'translate-checks-links' => 'Los siguientes enlaces son problemáticos: <strong>$1</strong>',
+	'translate-checks-parameters' => '{{PLURAL:$2|El siguiente parámetro no se está|Los siguientes parámetros no se están}} usando:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters-unknown' => '{{PLURAL:$2|El siguiente parámetro es desconocidp|Los siguientes parámetros son desconocidos}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-balance' => 'Hay algún signo de agrupación de {{PLURAL:$2|la siguiente clase|las siguientes clases}} sin emparejar:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links' => '{{PLURAL:$2|El siguiente enlace es problemático|Los siguientes $2 enlaces son problemáticos}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-xhtml' => 'Por favor, sustituye {{PLURAL:$2|la siguiente etiqueta por la correcta|las siguientes etiquetas por las correctas}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-plural' => 'El mensaje original usa <nowiki>{{PLURAL:}}</nowiki> pero no así la traducción.',
+	'right-translate' => 'Editar usando el interfaz de traducción',
+	'translate-rc-translation-filter' => 'Filtrar traducciones:',
+	'translate-rc-translation-filter-no' => 'No filtrar nada',
+	'translate-rc-translation-filter-only' => 'Mostrar sólo traducciones',
+	'translate-rc-translation-filter-filter' => 'No mostrar traducciones',
+	'translate-rc-translation-filter-site' => 'Sólo cambios en mensajes del sitio',
+	'translationstats' => 'Estadísticas de traducción',
+	'translate-stats-edits' => 'Ediciones',
+	'translate-stats-users' => 'Traductores',
+	'translate-statsf-width' => 'Anchura en píxeles',
+	'translate-statsf-height' => 'Altura en píxeles',
+	'translate-statsf-scale-days' => 'Días',
+	'translate-statsf-scale-hours' => 'Horas',
+	'translate-statsf-count-edits' => 'Número de ediciones',
+	'translate-statsf-count-users' => 'Traductores activos',
+	'translate-statsf-language' => 'Lista de códigos de idioma separados por comas',
+	'translate-statsf-group' => 'Lista de códigos de grupo separados por comas',
+	'translate-statsf-submit' => 'Vista previa',
+	'translate-tag-translate-link-desc' => 'Traducir esta página',
 	'translate-sidebar-alltrans' => 'Otras traducciones',
 );
 
@@ -4037,6 +4087,7 @@ Dir musst am Grupp vun den Iwwersetzer si fir Ännerungen ofspäicheren ze kënn
 	'translationstats' => 'Statistike vun der Iwwersetzung',
 	'translate-stats-edits' => 'Ännerunge pro Dag',
 	'translate-stats-users' => 'Iwwersetzer',
+	'translate-statsf-intro' => 'Dir kënnt einfach Statistike mat dësem Formulaire generéieren. All Werter hunn eng enescht an eng iewescht Limit.',
 	'translate-statsf-options' => 'Optioune vum Graphique',
 	'translate-statsf-width' => 'Breet a Pixelen',
 	'translate-statsf-height' => 'Héicht a Pixelen',
@@ -4053,6 +4104,7 @@ Dir musst am Grupp vun den Iwwersetzer si fir Ännerungen ofspäicheren ze kënn
 	'translate-tag-legend' => 'Erklärung:',
 	'translate-tag-legend-fallback' => 'Iwwersetzung an aner Sproochen',
 	'translate-tag-legend-fuzzy' => 'Iwwerlieften Iwwersetzung',
+	'translate-tag-fuzzy-comment' => 'Definitioun déi vum [[User:$1|$1]] an der Versioun $2 geännert gouf.',
 	'translate-tag-fuzzy-reason' => 'Definitioun gouf vum "$1" mat der Bemierkung "$3" an $2 geännert.',
 	'translate-sidebar-alltrans' => 'Aner Iwwersetzungen',
 );

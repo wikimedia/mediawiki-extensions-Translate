@@ -19,8 +19,8 @@ $aliases['en'] = array(
 
 /** Afrikaans (Afrikaans) */
 $aliases['af'] = array(
-	'Translate'          => array( 'Vertaal' ),
-	'Magic'              => array( 'GevorderdeVertaal' ),
+	'Translate' => array( 'Vertaal' ),
+	'Magic' => array( 'GevorderdeVertaal' ),
 	'TranslationChanges' => array( 'VertaalVeranderinge' ),
 );
 
@@ -51,8 +51,8 @@ $aliases['as'] = array(
 
 /** Southern Balochi (بلوچی مکرانی) */
 $aliases['bcc'] = array(
-	'Translate'          => array( 'ترجمه' ),
-	'Magic'              => array( 'پیشرپتگین ترجمه' ),
+	'Translate' => array( 'ترجمه' ),
+	'Magic' => array( 'پیشرپتگین ترجمه' ),
 	'TranslationChanges' => array( 'تغییرات ترجمه' ),
 );
 
@@ -79,8 +79,8 @@ $aliases['de'] = array(
 
 /** Lower Sorbian (Dolnoserbski) */
 $aliases['dsb'] = array(
-	'Translate'          => array( 'Přełožiś' ),
-	'Magic'              => array( 'Rozšyrjone pśełoženje' ),
+	'Translate' => array( 'Přełožiś' ),
+	'Magic' => array( 'Rozšyrjone pśełoženje' ),
 	'TranslationChanges' => array( 'Změny pśełoženja' ),
 );
 
@@ -124,8 +124,8 @@ $aliases['hr'] = array(
 
 /** Haitian (Kreyòl ayisyen) */
 $aliases['ht'] = array(
-	'Translate'          => array( 'Tradi' ),
-	'Magic'              => array( 'TradisyonAvanse', 'Magik' ),
+	'Translate' => array( 'Tradi' ),
+	'Magic' => array( 'TradisyonAvanse', 'Magik' ),
 	'TranslationChanges' => array( 'TradisyonChanjman' ),
 );
 
@@ -231,18 +231,18 @@ $aliases['ps'] = array(
 
 /** Portuguese (Português) */
 $aliases['pt'] = array(
-	'Translate'          => array( 'Traduzir' ),
-	'Magic'              => array( 'Tradução avançada' ),
+	'Translate' => array( 'Traduzir' ),
+	'Magic' => array( 'Tradução avançada' ),
 	'TranslationChanges' => array( 'Alterações em traduções' ),
-	'TranslationStats'   => array( 'Estado da tradução', 'Status da tradução' ),
+	'TranslationStats' => array( 'Estado da tradução', 'Status da tradução' ),
 );
 
 /** Brazilian Portuguese (Português do Brasil) */
 $aliases['pt-br'] = array(
-	'Translate'          => array( 'Traduzir' ),
-	'Magic'              => array( 'Tradução avançada' ),
+	'Translate' => array( 'Traduzir' ),
+	'Magic' => array( 'Tradução avançada' ),
 	'TranslationChanges' => array( 'Alterações em traduções' ),
-	'TranslationStats'   => array( 'Estado da tradução', 'Status da tradução' ),
+	'TranslationStats' => array( 'Estado da tradução', 'Status da tradução' ),
 );
 
 /** Swedish (Svenska) */
@@ -255,7 +255,7 @@ $aliases['sv'] = array(
 
 /** Telugu (తెలుగు) */
 $aliases['te'] = array(
-	'Translate'          => array( 'అనువాదం' ),
+	'Translate' => array( 'అనువాదం' ),
 	'TranslationChanges' => array( 'అనువాదమార్పులు' ),
 );
 
