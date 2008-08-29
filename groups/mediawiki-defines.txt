@@ -234,6 +234,7 @@ Flagged Revisions - Flagged Revs
 id = ext-flaggedrevs-flaggedrevs
 file = FlaggedRevs/language/FlaggedRevs.i18n.php
 optional = revreview-toggle, revreview-ak-review, accesskey-ca-current, accesskey-ca-stable
+descmsg = flaggedrevs-desc
 
 Flagged Revisions - Liked Pages
 id = ext-flaggedrevs-likedpages
@@ -313,6 +314,7 @@ var = wgGoogleMapsMessages
 Go To Category
 
 Group Permissions Manager
+descmsg = grouppermissions-desc
 
 HTMLets
 
@@ -373,6 +375,7 @@ ignored = lqt_header_warning_before_big
 Lookup User
 
 Lua
+descmsg = lua_desc
 
 Maintenance
 ignored = maintenance-initEditCount, maintenance-runJobs, maintenance-showJobs
@@ -380,6 +383,7 @@ ignored = maintenance-stats
 
 Math Stat
 file = MathStatFunctions/MathStatFunctions.i18n.php
+descmsg = msfunc_desc
 
 Media Functions
 
@@ -396,8 +400,10 @@ Mibbit
 MicroID
 
 Mini Donation
+descmsg = donationform-desc
 
 Minimum Name Length
+descmsg = minnamelength-desc
 
 Mini Preview
 
@@ -406,6 +412,7 @@ ignored = multiboilerplate, multiboilerplate-label
 
 Multi Upload
 file = MultiUpload/SpecialMultipleUpload.i18n.php
+descmsg = multipleupload-desc
 
 MediaWiki Search
 id = ext-mwsearch
@@ -425,6 +432,7 @@ optional = newsextension-checkok1, newsextension-gotcached, newsextension-purge
 optional = newsextension-loggin, newsextension-outputting, newsextension-stale
 optional = newsextension-nofoundonpage, newsextension-renderedfeed
 optional = newsextension-cachingfeed, newsextension-freshfeed
+descmsg = newsextension-desc
 
 News Channel
 
@@ -437,6 +445,7 @@ ignored = newusermessage-template, newusermessage-editor
 
 New User Notification
 file = NewUserNotif/NewUserNotif.i18n.php
+descmsg = newusernotif-desc
 
 No Move Userpages
 
@@ -453,6 +462,7 @@ optional = ogg-player-cortado, ogg-player-vlc-mozilla, ogg-player-vlc-activex
 optional = ogg-player-quicktime-mozilla, ogg-player-quicktime-activex
 optional = ogg-player-totem, ogg-player-kmplayer, ogg-player-kaffeine
 optional = ogg-player-mplayerplug-in
+descmsg = ogg-desc
 
 Online Status
 ignored = onlinestatus-levels
@@ -463,18 +473,23 @@ Open Search Xml
 
 Oversight
 file = Oversight/HideRevision.i18n.php
+descmsg = hiderevision-desc
 
 Page By
 
 Password Reset
 
 Parser Diff Test
+descmsg = pdtest-desc
 
 Parser Functions
+descmsg = pfunc_desc
 
 Patroller
+descmsg = patrol-desc
 
 Pdf Handler
+descmsg = pdf-desc
 
 Piwik
 optional = piwik
@@ -488,17 +503,22 @@ Poem
 
 Post Comment
 file = Postcomment/SpecialPostcomment.i18n.php
+descmsg = postcomment_desc
 
 POV Watch
 file = PovWatch/PovWatch.i18n.php
+descmsg = povwatch_desc
 
 Preloader
 
 Profile Monitor
+descmsg = profiling-desc
 
 Proofread Page
+descmsg = proofreadpage_desc
 
 Protect Section
+descmsg = protectsection_desc
 
 PSI NoTocNum
 
@@ -507,6 +527,7 @@ Purge
 Purge Cache
 
 Quiz
+descmsg = quiz_desc
 
 Random Image
 
@@ -517,6 +538,7 @@ Random Root Page
 file = Randomrootpage/Randomrootpage.i18n.php
 
 Random Users With Avatars
+descmsg = random-users-avatars-desc
 
 Regex Block
 file = regexBlock/regexBlock.i18n.php
@@ -559,6 +581,7 @@ optional = smw_rss_description, smw_browse_more, specialpages-group-smw_group
 Show Processlist
 
 Sign Document
+descmsg = signature-desc
 
 Sign Document Special Create
 file = SignDocument/SpecialCreateSignDocument.i18n.php
@@ -574,6 +597,7 @@ Skin Per Page
 
 Slippy Map
 ignored = slippymap_license, slippymap_osmlink
+descmsg = slippymap_desc
 
 Smooth Gallery
 ignored = smoothgallery-pagetext
@@ -592,6 +616,7 @@ Social Profile User Stats
 file = SocialProfile/UserStats/UserStats.i18n.php
 
 Spam Blacklist
+descmsg = spam-blacklist-desc
 
 Spam Diff Tool
 
@@ -599,9 +624,11 @@ Spam Regex
 
 Special File List
 file = SpecialFileList/SpecialFilelist.i18n.php
+descmsg = filelist-desc
 
 Special Form
 ignored = formtemplatepattern
+descmsg = form-desc
 
 Stalker Log
 
@@ -609,11 +636,13 @@ Subst All
 optional = substall-hook
 
 Sub Page List 3
+descmsg = spl3_desc
 
 Stale Pages
 
 Syntax Highlight GeSHi
 file = SyntaxHighlight_GeSHi/SyntaxHighlight_GeSHi.i18n.php
+descmsg = syntaxhighlight-desc
 
 Tab0
 
@@ -622,12 +651,15 @@ ignored = talkhere-title, talkhere-headtext, talkhere-afterinput
 ignored = talkhere-afterform
 
 Template Link
-
-TidyTab
-file = TidyTab/Tidy.i18n.php
+descmsg = templatelink_desc
 
 Throttle
 file = Throttle/UserThrottle.i18n.php
+descmsg = acct_creation_global_soft_throttle_hit-desc
+
+TidyTab
+file = TidyTab/Tidy.i18n.php
+descmsg = tidy-desc
 
 Timeline
 file = timeline/Timeline.i18n.php
@@ -641,6 +673,7 @@ file = Todo/SpecialTodo.i18n.php
 
 Todo Tasks
 file = TodoTasks/SpecialTaskList.i18n.php
+descmsg = tasklist-parser-desc
 
 Tooltip
 
@@ -660,6 +693,7 @@ file = UsageStatistics/SpecialUserStats.i18n.php
 
 User Contact Links
 file = UserContactLinks/UserSignature.i18n.php
+descmsg = usercontactlink-desc
 
 User Images
 
