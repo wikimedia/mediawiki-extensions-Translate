@@ -651,6 +651,8 @@ optional = translate-page-paging-links
 
 Trusted XFF
 
+Unicode Converter
+
 Universal Edit Button
 
 Usage Statistics
