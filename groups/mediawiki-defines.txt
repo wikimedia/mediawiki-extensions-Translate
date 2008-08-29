@@ -459,6 +459,8 @@ ignored = onlinestatus-levels
 
 OpenID
 
+Open Search XML
+
 Oversight
 file = Oversight/HideRevision.i18n.php
 
