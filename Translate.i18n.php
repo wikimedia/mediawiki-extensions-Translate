@@ -867,7 +867,7 @@ $messages['bn'] = array(
 	'translate-ignored' => '(উপেক্ষিত)',
 );
 
-/** Bishnupriya (ইমার ঠার/বিষ্ণুপ্রিয়া মণিপুরী)
+/** Bishnupria Manipuri (ইমার ঠার/বিষ্ণুপ্রিয়া মণিপুরী)
  * @author Usingha
  */
 $messages['bpy'] = array(
@@ -2154,6 +2154,7 @@ Vos dête apartegnir a la tropa des traductors por sôvar los changements. Los c
 $messages['fy'] = array(
 	'translate-edit' => 'bewurkje',
 	'translate-page-group' => 'Groep',
+	'translate-next' => 'Folgjende side',
 	'translate-page-edit' => 'bewurkje',
 	'translate-magic-cm-export' => 'Eksportearje',
 	'translate-magic-cm-comment' => 'Oanmerking:',
@@ -2299,6 +2300,13 @@ Os cambios non se gardan ata que prema no botón "Gardar" de embaixo.',
 	'translate-tag-fuzzy-comment' => 'A definición foi cambiada por [[User:$1|$1]] na revisión $2.',
 	'translate-tag-fuzzy-reason' => 'A definición foi cambiada por "$1" co comentario "$3" en $2.',
 	'translate-sidebar-alltrans' => 'Outras traducións',
+);
+
+/** Gothic (������������������������������������)
+ * @author Jocke Pirat
+ */
+$messages['got'] = array(
+	'translate-edit' => 'máidjan',
 );
 
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
@@ -3850,12 +3858,20 @@ $messages['km'] = array(
 );
 
 /** Korean (한국어)
+ * @author Ficell
  * @author ToePeu
  */
 $messages['ko'] = array(
 	'translate-edit' => '편집',
 	'translate-talk' => '토론',
 	'translate-history' => '역사',
+	'translate-edit-contribute' => '편집하기',
+	'translate-edit-no-information' => '이 메시지에 관한 도움말이 없습니다.
+만약 이 메시지가 어디에 어떻게 사용되는지 알고 계시다면 도움말을 작성해주세요.',
+	'translate-edit-information' => '이 메시지에 관한 도움말 ($1)',
+	'translate-edit-goto-prev' => '이전 메시지 수정',
+	'translate-edit-goto-next' => '다음 메시지 수정',
+	'translate-edit-goto-list' => '목록으로 돌아가기',
 );
 
 /** Kinaray-a (Kinaray-a)
