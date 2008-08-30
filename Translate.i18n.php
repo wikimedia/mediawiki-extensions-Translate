@@ -3740,6 +3740,7 @@ $messages['km'] = array(
 	'translate-task-export' => 'នាំចេញ​បទប្រែសំរួលពី',
 	'translate-task-export-to-file' => 'នាំចេញបទប្រែសំរួលជាឯកសារពី',
 	'translate-task-export-as-po' => 'នាំចេញ​បទប្រែសំរួល​ជា​ទំរង់ អក្សរសុទ្ធ',
+	'translate-task-export-to-xliff' => 'នាំចេញការប្រែសំរួលក្នុងទំរង់ជា Xliff',
 	'translate-page-no-such-language' => 'ភាសាដែលបានសំដៅ គ្មានសុពលភាព ។',
 	'translate-page-no-such-task' => 'កិច្ចការដែលបានសំដៅ គ្មានសុពលភាព ។',
 	'translate-page-no-such-group' => 'ក្រុមដែលបានសំដៅ គ្មានសុពលភាព ។',
@@ -3818,10 +3819,34 @@ $messages['km'] = array(
 
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '{{PLURAL:$2|តំនភ្ជាប់|តំនភ្ជាប់}}ខាងក្រោមនេះ​មានបញ្ហា៖ <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-xhtml' => 'សូម​ជំនួស​ប្លាកទាំងនេះ​ដោយ​ប្លាកដែលត្រឹមត្រូវ ៖ <strong>$1</strong>',
+	'translate-checks-xhtml' => 'សូម​ជំនួស​$2​ប្លាកខាងក្រោមដោយប្លាកដែលត្រឹមត្រូវ៖ 
+
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'និយមន័យ​ប្រើប្រាស់ <nowiki>{{PLURAL:}}</nowiki> ប៉ុន្តែ​បទប្រែសំរួល​មិនមាន ។',
+	'translate-rc-translation-filter-no' => 'កុំធ្វើអ្វីទាំងអស់',
 	'translate-rc-translation-filter-only' => 'បង្ហាញតែការបកប្រែប៉ុណ្ណោះ',
+	'translationstats' => 'ស្ថិតិបកប្រែ',
 	'translate-stats-edits' => 'ចំនួនកំនែប្រែក្នុងមួយថ្ងៃ',
+	'translate-stats-users' => 'អ្នកបកប្រែ',
+	'translate-statsf-width' => 'ទទឹងគិតជាភីកសែល',
+	'translate-statsf-height' => 'កំពស់គិតជាភីកសែល',
+	'translate-statsf-days' => 'រយៈពេលគិតជាថ្ងៃ',
+	'translate-statsf-scale-days' => 'ថ្ងៃ',
+	'translate-statsf-scale-hours' => 'ម៉ោង',
+	'translate-statsf-count' => 'វាស់',
+	'translate-statsf-count-edits' => 'ចំនួនកំនែប្រែ',
+	'translate-statsf-count-users' => 'អ្នកបកប្រែសកម្ម',
+	'translate-statsf-submit' => 'ការមើលមុន',
+	'translate-tag-category' => 'ទំព័រដែលអាចបកប្រែបាន',
+	'translate-tag-page-desc' => 'ការបកប្រែរបស់ទំព័រវិគី [[:$1]]។',
+	'translate-tag-translate-link-desc' => 'បកប្រែទំព័រនេះ',
+	'translate-tag-legend' => 'ពាក្យតំណាង៖',
+	'translate-tag-legend-fallback' => 'ការបកប្រែជាភាសាដទៃ',
+	'translate-tag-legend-fuzzy' => 'ការបកប្រែហួសសម័យ',
+	'translate-sidebar-alltrans' => 'បំនកប្រែផ្សេងទៀត',
+	'translate-tag-noedit' => 'ទំព័រនេះជាទំព័របកប្រែដែលត្រូវបានបន្ទាន់សម័យដោយស្វ័យប្រវត្តិ។
+
+អ្នកអាច [$1 កែប្រែទំព័រប្រភព] ឬ [$2 បន្ទាន់សម័យបំនកប្រែ]។',
 );
 
 /** Korean (한국어)
@@ -4107,6 +4132,8 @@ Dir musst am Grupp vun den Iwwersetzer si fir Ännerungen ofspäicheren ze kënn
 	'translate-tag-fuzzy-comment' => 'Definitioun déi vum [[User:$1|$1]] an der Versioun $2 geännert gouf.',
 	'translate-tag-fuzzy-reason' => 'Definitioun gouf vum "$1" mat der Bemierkung "$3" an $2 geännert.',
 	'translate-sidebar-alltrans' => 'Aner Iwwersetzungen',
+	'translate-tag-noedit' => "Dës Säit ass een Iwwersetzungs-Dokument dat automatesch aktualiséiert gëtt.
+Dir kënnt [$1 d'Original Säit änneren] oder [$2 d'Iwwersetzung aktualiséieren].",
 );
 
 /** Limburgish (Limburgs)
@@ -6331,14 +6358,19 @@ $messages['vi'] = array(
 	'translate-task-view' => 'Xem tất cả các thông điệp từ',
 	'translate-task-untranslated' => 'Xem tất cả các thông điệp chưa dịch từ',
 	'translate-task-optional' => 'Xem các thông điệp tùy chọn từ',
+	'translate-task-problematic' => 'Xem các thông báo có vấn đề',
 	'translate-task-review' => 'Kiểm lại các thay đổi trong',
 	'translate-task-reviewall' => 'Kiểm lại tất cả các bản dịch trong',
 	'translate-task-export' => 'Xuất các bản dịch từ',
 	'translate-task-export-to-file' => 'Xuất bản dịch ra tập tin từ',
 	'translate-task-export-as-po' => 'Xuất bản dịch theo dạng Gettext',
+	'translate-task-export-to-xliff' => 'Xuất bản dịch theo định dạng Xliff',
 	'translate-page-no-such-language' => 'Ngôn ngữ chỉ định không đúng.',
 	'translate-page-no-such-task' => 'Tác vụ chỉ định không đúng.',
 	'translate-page-no-such-group' => 'Nhóm chỉ định không đúng.',
+	'translate-page-disabled' => "Các bản dịch trong ngôn ngữ này trong nhóm đã bị tắt. Lý do:
+
+''$1''",
 	'translate-page-settings-legend' => 'Thiết lập',
 	'translate-page-task' => 'Tôi muốn',
 	'translate-page-group' => 'Nhóm',
@@ -6353,6 +6385,7 @@ $messages['vi'] = array(
 	'translate-next' => 'Trang sau',
 	'translate-prev' => 'Trang trước',
 	'translate-page-description-legend' => 'Thông tin về nhóm',
+	'translate-page-edit' => 'sửa',
 	'translate-optional' => '(tùy chọn)',
 	'translate-ignored' => '(đã bỏ)',
 	'translate-edit-definition' => 'Định nghĩa thông điệp',
@@ -6362,16 +6395,24 @@ $messages['vi'] = array(
 	'translate-edit-in-other-languages' => 'Thông điệp bằng thứ tiếng khác',
 	'translate-edit-committed' => 'Bản dịch hiện tại trong phần mềm',
 	'translate-edit-warnings' => 'Các cảnh báo về các bản dịch chưa hoàn thành',
+	'translate-edit-goto-no-prev' => 'Không có thông báo trước',
+	'translate-edit-goto-no-next' => 'Không có thông báo kế',
+	'translate-edit-goto-prev' => 'Sửa thông báo trước',
+	'translate-edit-goto-next' => 'Sửa thông báo kế',
+	'translate-edit-goto-list' => 'Quay về danh sách',
 	'translate-magic-pagename' => 'Bản dịch MediaWiki mở rộng',
 	'translate-magic-help' => 'Bạn có thể dịch bí danh của các trang đặc biệt, thần chú, tên hình dạng giao diện và tên của không gian tên.
 
-Trong các từ thần chú bạn cần phải ghi kèm các bản dịch tiếng Anh, nếu không chúng sẽ không hoạt động. Cũng nhớ giữ nguyên, đừng thay đổi mục đầu tiên (0 hoặc 1).
+Bí danh của các trang đặc biệt và từ thần chú có thể có nhiều bản dịch.
+Các bản dịch phân cách nhau bằng dấu phẩy (,).
+Tên hình dạng giao diện và không gian tên chỉ có thể có một bản dịch.
 
-Bí danh của các trang đặc biệt và từ thần chú có thể có nhiều bản dịch. Các bản dịch phân cách nhau bằng dấu phẩy (,). Tên hình dạng giao diện và không gian tên chỉ có thể có một bản dịch.
+Trong các bản dịch không gian tên, <tt>$1 talk</tt> có đặc biệt hơn. <tt>$1</tt> được thay thế bằng tên trang (ví dụ <tt>{{SITENAME}} talk</tt>).
+Nếu ngôn ngữ của bạn không thể hiển thị đúng nếu không đổi tên trang (SITENAME), xin hãy liên hệ với một lập trình viên.
 
-Trong các bản dịch không gian tên, <tt>$1 talk</tt> có đặc biệt hơn. <tt>$1</tt> được thay thế bằng tên trang (ví dụ <tt>{{SITENAME}} talk</tt>). Nếu ngôn ngữ của bạn không thể hiển thị đúng nếu không đổi tên trang (SITENAME), xin hãy liên hệ với một lập trình viên.
-
-Bạn cần phải thuộc nhóm biên dịch viên để có thể lưu các thay đổi. Các thay đổi sẽ không được lưu lại đến khi nào bạn nhấn vào nút lưu ở dưới.',
+Bạn cần phải thuộc nhóm biên dịch viên để có thể lưu các thay đổi.
+Các thay đổi sẽ không được lưu lại đến khi nào bạn nhấn vào nút lưu ở dưới.',
+	'translate-magic-module' => 'Gói:',
 	'translate-magic-submit' => 'Xem',
 	'translate-magic-cm-export' => 'Xuất',
 	'translate-magic-cm-to-be' => 'Trở thành',
@@ -6390,6 +6431,8 @@ Bạn cần phải thuộc nhóm biên dịch viên để có thể lưu các th
 	'translationchanges-change' => '$1: $2 bởi $3',
 	'translate-checks-parameters' => '{{PLURAL:$2|Tham số|Những tham số}} sau không sử dụng:
 <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters-unknown' => '{{PLURAL:$2||Các}} tham số sau không rõ:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Số dấu ngoặc bị lẻ:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '{{PLURAL:$2|Liên kết|Các liên kết}} sau có vấn đề:
@@ -6397,6 +6440,25 @@ Bạn cần phải thuộc nhóm biên dịch viên để có thể lưu các th
 	'translate-checks-xhtml' => 'Xin thay thế{{PLURAL:$2|| các}} thẻ sau bằng thẻ đúng:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Định nghĩa sử dụng <nowiki>{{PLURAL:}}</nowiki> nhưng bản dịch không có.',
+	'translate-checks-pagename' => 'Không gian tên đã thay đổi so với định nghĩa',
+	'tog-translate-nonewsletter' => 'Đừng gửi cho tôi bản tin qua thư điện tử (chỉ thích hợp cho thành viên có địa chỉ thư điện tử đã được xác nhận)',
+	'right-translate' => 'Sửa đổi sử dụng giao diện biên dịch',
+	'translate-rc-translation-filter' => 'Lọc bản dịch:',
+	'translate-rc-translation-filter-no' => 'Không lọc',
+	'translate-rc-translation-filter-only' => 'Chỉ hiển thị bản dịch',
+	'translate-rc-translation-filter-filter' => 'Lọc bản dịch',
+	'translate-rc-translation-filter-site' => 'Chỉ hiện thay đổi đến thông báo trang',
+	'translationstats' => 'Thống kê biên dịch',
+	'translate-stats-edits' => 'Sửa đổi',
+	'translate-stats-users' => 'Biên dịch viên',
+	'translate-statsf-intro' => 'Bạn có thể tạo ra thông kê đơn giản bằng mẫu này. Tất cả các giá trị đều có giới hạn trên và dưới.',
+	'translate-statsf-options' => 'Tùy chọn đồ thị',
+	'translate-statsf-width' => 'Chiều rộng (pixel)',
+	'translate-statsf-height' => 'Chiều cao (pixel)',
+	'translate-statsf-days' => 'Thời điểm trong ngày',
+	'translate-statsf-scale' => 'Dạng hạt',
+	'translate-statsf-scale-days' => 'Ngày',
+	'translate-statsf-scale-hours' => 'Giờ',
 );
 
 /** Volapük (Volapük)

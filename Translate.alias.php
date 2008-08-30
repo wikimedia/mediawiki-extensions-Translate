@@ -138,8 +138,9 @@ $aliases['hu'] = array(
 /** Indonesian (Bahasa Indonesia) */
 $aliases['id'] = array(
 	'Translate' => array( 'Terjemahan' ),
-	'Magic' => array( 'Terjemahanlanjut' ),
-	'TranslationChanges' => array( 'Perubahanterjemahan' ),
+	'Magic' => array( 'Terjemahan lanjut', 'Terjemahanlanjut' ),
+	'TranslationChanges' => array( 'Perubahan terjemahan', 'Perubahanterjemahan' ),
+	'TranslationStats' => array( 'Statistik terjemahan' ),
 );
 
 /** Khmer (ភាសាខ្មែរ) */
