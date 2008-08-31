@@ -197,6 +197,7 @@ $messages['qqq'] = array(
 	'translate-page-edit' => '{{Identical|Edit}}',
 	'translate-optional' => '{{Identical|Optional}}',
 	'translate-edit-no-information' => 'Message is used as a hint to translators that documentation for a message without documentation is needed.',
+	'translate-edit-in-other-languages' => 'Caption for box which contains translation of message in other languages',
 	'translate-magic-help' => 'Description of [[Special:AdvancedTranslate]].',
 	'translate-magic-submit' => '{{Identical|Fetch}}',
 	'translate-magic-cm-export' => '{{Identical|Export}}',
@@ -1833,13 +1834,13 @@ $messages['fa'] = array(
 	'translationchanges' => 'تغییرهای ترجمه',
 	'translationchanges-export' => 'صدور',
 	'translationchanges-change' => '$1: $2 توسط $3',
-	'translate-checks-parameters' => 'این پارامترها استفاده نشده‌اند:
+	'translate-checks-parameters' => 'این {{PLURAL:$2|پارامتر استفاده نشده‌است|پارامترها استفاده نشده‌اند}}:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-balance' => 'تعداد پرانتزها زوج نیست:
+	'translate-checks-balance' => 'تعداد {{PLURAL:$2|پرانتزها|پرانتزها}} زوج نیست:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links' => 'پیوندهایی که در ادامه می‌آیند مشکل‌ساز هستند:
+	'translate-checks-links' => '{{PLURAL:$2|پیوندهایی که در ادامه می‌آیند مشکل‌ساز هستند|پیوندی که در ادامه می‌آید مشکل ساز است}}:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-xhtml' => 'لطفاً این برچسب‌ها را با موارد درست جایگزین کنید:
+	'translate-checks-xhtml' => 'لطفاً این {{PLURAL:$2|برچسب|برچسب‌ها}} را با موارد درست جایگزین کنید:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'تعریف از <nowiki>{{PLURAL:}}</nowiki> استفاده می‌کند اما ترجمه از آن استفاده نمی‌کند.',
 );
@@ -2302,7 +2303,7 @@ Os cambios non se gardan ata que prema no botón "Gardar" de embaixo.',
 	'translate-sidebar-alltrans' => 'Outras traducións',
 );
 
-/** Gothic (������������������������������������)
+/** Gothic
  * @author Jocke Pirat
  */
 $messages['got'] = array(
@@ -3182,6 +3183,7 @@ Le modifiche non vengono salvate finché non clicchi sul bottone "Salva" sotto.'
 	'translate-checks-links' => '{{PLURAL:$2|Il seguente collegamento è problematico|I seguenti $2 collegamenti sono problematici}}: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Per favore sostituisci {{PLURAL:$2|il tag seguente|i tag seguenti}} con quelli corretti: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'La definizione usa <nowiki>{{PLURAL:}}</nowiki> ma la traduzione no.',
+	'translate-checks-pagename' => 'Namespace cambiato dalla definizione',
 	'tog-translate-nonewsletter' => 'Non mandarmi le newsletter per e-mail (importante solo per gli utenti con un indirizzo e-mail confermato)',
 	'right-translate' => "Modifica usando l'interfaccia di traduzione",
 	'translate-rc-translation-filter' => 'Filtra le traduzioni:',
@@ -3215,6 +3217,8 @@ Le modifiche non vengono salvate finché non clicchi sul bottone "Salva" sotto.'
 	'translate-tag-fuzzy-comment' => 'Definizione cambiata da [[User:$1|$1]] nella revisione $2.',
 	'translate-tag-fuzzy-reason' => 'Definizione cambiata da "$1" con commento "$3" in $2.',
 	'translate-sidebar-alltrans' => 'Altre traduzioni',
+	'translate-tag-noedit' => 'Questa pagina è una pagina di traduzione aggiornata automaticamente.
+Puoi [$1 modificare la pagina sorgente] o [$2 aggiornare la traduzione].',
 );
 
 /** Japanese (日本語)
@@ -6574,8 +6578,10 @@ $messages['yi'] = array(
 	'translate-next' => 'קומענדיגער בלאט',
 	'translate-prev' => 'פֿריערדיגער בלאט',
 	'translate-page-description-legend' => 'אינפֿארמאציע וועגן דער גרופע',
+	'translate-page-edit' => 'רעדאקטירן',
 	'translate-edit-contribute' => 'בײַשטײַערן',
 	'translate-edit-information' => 'אינפֿארמאציע וועגן דער מעלדונג ($1)',
+	'translate-edit-in-other-languages' => 'מעלדונג אין אנדערע שפראכן',
 	'translate-edit-goto-prev' => 'רעדאקטירן די פֿריערדיגע מעלדונג',
 	'translate-edit-goto-next' => 'רעדאקטירן די קומענדיגע מעלדונג',
 	'translate-edit-goto-list' => 'צוריק צו דער ליסטע',
