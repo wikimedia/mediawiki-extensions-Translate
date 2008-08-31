@@ -124,6 +124,9 @@ ignored = cite_text
 
 Clean Changes
 
+Close Wikis
+optional = closewikis-closed
+
 Collection
 descmsg = coll-desc
 
