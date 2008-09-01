@@ -229,6 +229,8 @@ Expand Templates
 Extension Distributor
 descmsg = extdist-desc
 
+External Image Whitelist
+optional = externalimagewhitelist
 Farmer
 optional = farmercreateurl
 ignored = farmerwikiurl, farmerinterwikiurl
