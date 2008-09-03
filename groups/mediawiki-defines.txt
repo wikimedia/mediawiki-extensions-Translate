@@ -83,6 +83,8 @@ Category Feed
 file = catfeed/catfeed.i18n.php
 id = ext-catfeed
 
+Category Watch
+
 Central Auth
 optional = centralauth-editset-grouplink
 
