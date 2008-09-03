@@ -2371,6 +2371,7 @@ $messages['he'] = array(
 	'translate-page-disabled' => "התרגומים לשפה זו בקבוצה זו בוטלו מהסיבה הבאה:
 
 '''$1'''",
+	'translate-page-settings-legend' => 'הגדרות',
 	'translate-page-task' => 'תצוגה',
 	'translate-page-group' => 'קבוצה',
 	'translate-page-language' => 'שפה',
@@ -4542,6 +4543,56 @@ $messages['mt'] = array(
 	'translationchanges-export' => 'esporta',
 );
 
+/** Erzya (Эрзянь)
+ * @author Botuzhaleny-sodamo
+ */
+$messages['myv'] = array(
+	'translate' => 'Ютавтомонзо',
+	'translate-edit' => 'витнемензэ-петнемензэ',
+	'translate-talk' => 'кортнеме',
+	'translate-history' => 'путовксонзо-юронзо',
+	'translate-page-no-such-language' => 'Аравтозь келесь а маштови.',
+	'translate-page-settings-legend' => 'Аравтнемкат',
+	'translate-page-task' => 'Ули мелем',
+	'translate-page-group' => 'Куро',
+	'translate-page-language' => 'Кель',
+	'translate-submit' => 'Кандомс',
+	'translate-page-showing-all' => '{{PLURAL:$1|Невтеви 1 пачтямнэ|Невтевить $1 пачтямнэть}}.',
+	'translate-page-showing-none' => 'Пачтямнэть невтемс арасть',
+	'translate-next' => 'Седе тов ве лопа',
+	'translate-prev' => 'Седе икелень лопась',
+	'translate-page-description-legend' => 'Куродо кить-мезть',
+	'translate-page-edit' => 'витнемензэ-петнемензэ',
+	'translate-edit-contribute' => 'эсеть путовкс путомс',
+	'translate-edit-in-other-languages' => 'Пачтямнэсь лия кельсэ',
+	'translate-edit-goto-no-prev' => 'Седе икелень пачтямнэ арась',
+	'translate-edit-goto-no-next' => 'Седе тов пачтямнэ арась',
+	'translate-edit-goto-prev' => 'Седе икелень пачтямнэнть витнеме-петнеме',
+	'translate-edit-goto-next' => 'Седе тов ве лопань витнеме-петнеме',
+	'translate-edit-goto-list' => 'Мекев спискантень',
+	'translate-magic-pagename' => 'МедиаВикинь келейгавтонь ютавтома',
+	'translate-magic-submit' => 'Кандомс',
+	'translate-magic-cm-save' => 'Ванстомс',
+	'translate-magic-cm-savefailed' => 'Ванстома тевесь эзь лисе',
+	'translate-magic-namespace' => 'Лем потмо лемть',
+	'translationchanges' => 'Ютавтомасо полавтнемат',
+	'translate-rc-translation-filter' => 'Сувтнемс ютавтовкстнэнь',
+	'translate-rc-translation-filter-only' => 'Ськамост ютавтовкстнэнь невтемс',
+	'translate-rc-translation-filter-filter' => 'Панемс ютавтовкстнэнь сувтемань пачк',
+	'translationstats' => 'Ютавтомадо статистика',
+	'translate-stats-edits' => 'Витнемат-петнемат',
+	'translate-stats-users' => 'Ютавтыцят',
+	'translate-statsf-width' => 'Пикселсэ келезэ',
+	'translate-statsf-height' => 'Пикселсэ сэрезэ',
+	'translate-statsf-scale-days' => 'Чить',
+	'translate-statsf-scale-hours' => 'Цяст',
+	'translate-statsf-count' => 'Онкс',
+	'translate-statsf-count-edits' => 'Зяроксть витнезь-петнезь',
+	'translate-statsf-count-users' => 'Зяро ютавтыцятнеде',
+	'translate-statsf-submit' => 'Васнянь неевтезэ',
+	'translate-tag-page-desc' => '"[[:$1]]" вики лопась ютавтозь.',
+);
+
 /** Nahuatl (Nāhuatl)
  * @author Fluence
  */
@@ -5293,6 +5344,30 @@ As alterações não serão salvas até que você clique no botão de salvar.',
 	'translate-checks-plural' => 'A definição usa <nowiki>{{PLURAL:}}</nowiki>, mas a tradução não.',
 	'tog-translate-nonewsletter' => 'Não me enviar newsletters por e-mail (relevante apenas para utilizadores com um endereço de e-mail confirmado)',
 	'right-translate' => 'Editar usando a interface de tradução',
+	'translate-rc-translation-filter' => 'Filtrar traduções:',
+	'translate-rc-translation-filter-no' => 'Não fazer nada',
+	'translate-rc-translation-filter-only' => 'Mostrar apenas traduções',
+	'translate-rc-translation-filter-filter' => 'Ocultar traduções',
+	'translate-rc-translation-filter-site' => 'Apenas alterações a mensagens do sítio',
+	'translationstats' => 'Estatísticas de tradução',
+	'translate-stats-edits' => 'Edições',
+	'translate-stats-users' => 'Tradutores',
+	'translate-statsf-options' => 'Opções do gráfico',
+	'translate-statsf-width' => 'Largura em pixels',
+	'translate-statsf-height' => 'Altura em pixels',
+	'translate-statsf-days' => 'Período de tempo em dias',
+	'translate-statsf-scale' => 'Granularidade',
+	'translate-statsf-scale-days' => 'Dias',
+	'translate-statsf-scale-hours' => 'Horas',
+	'translate-statsf-count-edits' => 'Número de edições',
+	'translate-statsf-count-users' => 'Tradutores activos',
+	'translate-statsf-submit' => 'Prever',
+	'translate-tag-category' => 'Páginas traduzíveis',
+	'translate-tag-translate-link-desc' => 'Traduzir esta página',
+	'translate-tag-legend' => 'Legenda:',
+	'translate-tag-legend-fallback' => 'Tradução noutra língua',
+	'translate-tag-legend-fuzzy' => 'Tradução desactualizada',
+	'translate-sidebar-alltrans' => 'Outras traduções',
 );
 
 /** Tarifit (Tarifit)
@@ -6509,6 +6584,7 @@ $messages['vo'] = array(
 	'translate-next' => 'Pad sököl',
 	'translate-prev' => 'Pad büik',
 	'translate-page-description-legend' => 'Nüns tefü grup',
+	'translate-page-edit' => 'redakön',
 	'translate-ignored' => '(penedemöl)',
 	'translate-edit-definition' => 'Miedet nuna',
 	'translate-edit-contribute' => 'keblünön',
@@ -6523,10 +6599,18 @@ $messages['vo'] = array(
 	'translate-magic-words' => 'Vöds magivik',
 	'translate-magic-namespace' => 'Nems nemaspadas',
 	'translationchanges-change' => '$1: $2 fa $3',
-	'translate-checks-parameters' => 'Paramets sököl no pagebons:
+	'translate-checks-parameters' => '{{PLURAL:$2|Paramet|Paramets}} sököl no {{PLURAL:$2|pagebon|pagebons}}:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links' => 'Yüms sököl binons säkädiks:
+	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Paramet|Paramets}} sököl {{PLURAL:$2|binon nesevädik|binons nesevädiks}}:
 <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links' => '{{PLURAL:$2|Yüm|Yüms}} sököl {{PLURAL:$2|binon säkädik|binons säkädiks}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-stats-edits' => 'Redakams',
+	'translate-stats-users' => 'Tradutans',
+	'translate-statsf-scale-days' => 'Dels',
+	'translate-statsf-scale-hours' => 'Düps',
+	'translate-tag-legend-fallback' => 'Tradutod in pük votik',
+	'translate-sidebar-alltrans' => 'Tradutods votik',
 );
 
 /** Walloon (Walon)
