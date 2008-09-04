@@ -136,8 +136,14 @@ file = LinkSearch/LinkSearch.alias.php
 Liquid threads
 file = LiquidThreads/Lqt.alias.php
 
+Lookup user
+file = LookupUser/LookupUser.alias.php
+
 Maintenance
 file = Maintenance/Maintenance.alias.php
+
+Metavid Wiki
+file = MetavidWiki/languages/MV_Aliases.php
 
 Multi upload
 file = MultiUpload/SpecialMultipleUpload.alias.php
@@ -154,6 +160,9 @@ file = Nuke/SpecialNuke.alias.php
 Oversight
 file = Oversight/HideRevision.alias.php
 
+Password reset
+file = PasswordReset/PasswordReset.alias.php
+
 Purge cache
 file = PurgeCache/PurgeCache.alias.php
 
@@ -163,6 +172,9 @@ file = PovWatch/PovWatch.alias.php
 Rename user
 file = Renameuser/SpecialRenameuser.alias.php
 
+Semantic MediaWiki
+file = SemanticMediaWiki/languages/SMW_Aliases.php
+
 Show processlist
 file = ShowProcesslist/ShowProcesslist.alias.php
 
@@ -171,6 +183,9 @@ file = SignDocument/SignDocument.alias.php
 
 Site matrix
 file = SiteMatrix/SiteMatrix.alias.php
+
+Social profile
+file = SocialProfile/SocialProfile.alias.php
 
 Spam regex
 file = SpamRegex/SpamRegex.alias.php
