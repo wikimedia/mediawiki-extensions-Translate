@@ -4,6 +4,9 @@ file = AbuseFilter/AbuseFilter.alias.php
 Advanced random
 file = AdvancedRandom/AdvancedRandom.alias.php
 
+APC
+file = APC/ViewAPC.alias.php
+
 Ask SQL
 file = Asksql/Asksql.alias.php
 
@@ -12,6 +15,9 @@ file = BadImage/BadImage.alias.php
 
 Board vote
 file = BoardVote/BoardVote.alias.php
+
+Call
+file = Call/Call.alias.php
 
 Category intersection
 file = CategoryIntersection/CategoryIntersection.alias.php
@@ -28,8 +34,14 @@ file = ChangeAuthor/ChangeAuthor.alias.php
 Check user
 file = CheckUser/CheckUser.alias.php
 
+Chemistry
+file = Chemistry/Chemicalsources.alias.php
+
 Cite special
 file = Cite/SpecialCite.i18n.alias.php
+
+Close Wikis
+file = CloseWikis/CloseWikis.alias.php
 
 Collection
 file = Collection/Collection.alias.php
@@ -52,6 +64,12 @@ file = ContributionScores/ContributionScores.alias.php
 Cross namespace links
 file = CrossNamespaceLinks/SpecialCrossNamespaceLinks.alias.php
 
+Count edits
+file = CountEdits/CountEdits.alias.php
+
+Data transfer
+file = DataTransfer/languages/DT_Aliases.php
+
 Delete batch
 file = DeleteBatch/DeleteBatch.alias.php
 
@@ -73,6 +91,9 @@ file = Eval/SpecialEval.alias.php
 Expand templates
 file = ExpandTemplates/ExpandTemplates.alias.php
 
+Find spam
+file = FindSpam/FindSpam.alias.php
+
 Flagged revisions
 file = FlaggedRevs/language/FlaggedRevs.i18n.alias.php
 
@@ -81,6 +102,18 @@ file = Gadgets/Gadgets.i18n.alias.php
 
 Global blocking
 file = GlobalBlocking/GlobalBlocking.alias.php
+
+Global usage
+file = GlobalUsage/GlobalUsage.alias.php
+
+Group permissions manager
+file = GroupPermissionsManager/GroupPermissionsManager.alias.php
+
+Image tagging
+file = ImageTagging/ImageTagging.alias.php
+
+Import free images
+file = ImportFreeImages/ImportFreeImages.alias.php
 
 Import users
 file = ImportUsers/SpecialImportUsers.alias.php
@@ -99,6 +132,9 @@ file = Invitations/Invitations.i18n.alias.php
 
 Link search
 file = LinkSearch/LinkSearch.alias.php
+
+Liquid threads
+file = LiquidThreads/Lqt.alias.php
 
 Maintenance
 file = Maintenance/Maintenance.alias.php
