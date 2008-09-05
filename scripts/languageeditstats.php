@@ -2,9 +2,9 @@
 /**
  * Shows a top list of language codes with edits in a given time period
  *
- * @author Niklas Laxström
+ * @author Niklas LaxstrÃ¶m
  * @author Siebrand Mazeland
- * @copyright Copyright © 2008 Niklas Laxström, Siebrand Mazeland
+ * @copyright Copyright Â© 2008 Niklas LaxstrÃ¶m, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  * @file
  */
