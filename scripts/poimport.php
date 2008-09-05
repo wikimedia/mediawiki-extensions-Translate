@@ -102,7 +102,7 @@ class PoImporter {
 			return false;
 		}
 
-		if ( preg_match( '/X-Message-Group:\s+([a-zA-Z0-9-_]+)/', $data, $matches ) ) {
+		if ( preg_match( '/X-Message-Group:\s+([a-zA-Z0-9-._]+)/', $data, $matches ) ) {
 			$groupId = $matches[1];
 			STDOUT( "Detected message group as $groupId" );
 		} else {
