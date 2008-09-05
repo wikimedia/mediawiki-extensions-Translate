@@ -20,7 +20,7 @@ Usage: php poimport.php [options...]
 Options:
   --file      Po file to import
   --user      User who makes edits to wiki
-  --really    Doesn't do anything unless this is specified.
+  --really    Does not do anything unless this is specified.
 
 EOT
 );
