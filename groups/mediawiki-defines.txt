@@ -548,6 +548,8 @@ file = Randomrootpage/Randomrootpage.i18n.php
 Random Users With Avatars
 descmsg = random-users-avatars-desc
 
+Refresh Special
+
 Regex Block
 file = regexBlock/regexBlock.i18n.php
 

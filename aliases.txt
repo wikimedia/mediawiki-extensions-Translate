@@ -163,14 +163,41 @@ file = Oversight/HideRevision.alias.php
 Password reset
 file = PasswordReset/PasswordReset.alias.php
 
+Patroller
+file = Patroller/Patroller.alias.php
+
+Piwik
+file = Piwik/Piwik.alias.php
+
+Player
+file = Player/Player.alias.php
+
+Profile monitor
+file = ProfileMonitor/ProfileMonitor.alias.php
+
 Purge cache
 file = PurgeCache/PurgeCache.alias.php
 
 POV watch
 file = PovWatch/PovWatch.alias.php
 
+Random in category
+file = RandomInCategory/SpecialRandomInCategory.alias.php
+
+Refresh special
+file = RefreshSpecial/RefreshSpecial.alias.php
+
 Rename user
 file = Renameuser/SpecialRenameuser.alias.php
+
+Replace text
+file = ReplaceText/ReplaceText.alias.php
+
+Semantic drilldown
+file = SemanticDrilldown/languages/SD_Aliases.php
+
+Semantic forms
+file = SemanticForms/languages/SF_Aliases.php
 
 Semantic MediaWiki
 file = SemanticMediaWiki/languages/SMW_Aliases.php
@@ -190,8 +217,41 @@ file = SocialProfile/SocialProfile.alias.php
 Spam regex
 file = SpamRegex/SpamRegex.alias.php
 
+Special form
+file = SpecialForm/SpecialForm.alias.php
+
+Stale pages
+file = StalePages/StalePages.alias.php
+
+Template link
+file = TemplateLink/TemplateLink.alias.php
+
+Todo tasks
+file = TodoTasks/SpecialTaskList.alias.php
+
 Translate
 file = Translate/Translate.alias.php
 
 Usage statistics
 file = UsageStatistics/SpecialUserStats.alias.php
+
+User merge
+file = UserMerge/UserMerge.alias.php
+
+Vote
+file = Vote/Vote.alias.php
+
+Watch subpages
+file = WatchSubpages/WatchSubpages.alias.php
+
+What is my IP
+file = WhatIsMyIP/WhatIsMyIP.alias.php
+
+White list
+file = WhiteList/SpecialWhitelistEdit.alias.php
+
+Who is watching
+file = WhoIsWatching/SpecialWhoIsWatching.alias.php
+
+Who is online
+file = WhosOnline/WhosOnline.alias.php
