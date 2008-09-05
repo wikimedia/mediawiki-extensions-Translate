@@ -182,7 +182,7 @@ POV watch
 file = PovWatch/PovWatch.alias.php
 
 Random in category
-file = RandomInCategory/SpecialRandomInCategory.alias.php
+file = RandomInCategory/SpecialRandomincategory.alias.php
 
 Refresh special
 file = RefreshSpecial/RefreshSpecial.alias.php
