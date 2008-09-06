@@ -538,6 +538,139 @@ $messages['arn'] = array(
 	'translate-magic-cm-savefailed' => 'elkünun weda',
 );
 
+/** Egyptian Spoken Arabic (مصرى)
+ * @author Meno25
+ */
+$messages['arz'] = array(
+	'translate' => 'ترجمة',
+	'translate-desc' => '[[Special:Translate|صفحة خاصة]] لترجمة الميدياويكى وما بعده',
+	'translate-edit' => 'عدل',
+	'translate-talk' => 'نقاش',
+	'translate-history' => 'تاريخ',
+	'translate-task-view' => 'أرى كل الرسائل من',
+	'translate-task-untranslated' => 'أرى كل الرسائل غير المترجمة من',
+	'translate-task-optional' => 'أرى الرسائل الاختيارية من',
+	'translate-task-problematic' => 'أرى الرسائل التى بها مشاكل',
+	'translate-task-review' => 'أراجع التغييرات ل',
+	'translate-task-reviewall' => 'أراجع كل الرسائل المترجمة في',
+	'translate-task-export' => 'أصدر الترجمات من',
+	'translate-task-export-to-file' => 'أصدر الترجمة لملف من',
+	'translate-task-export-as-po' => 'أصدر الترجمة بصيغة جت تكست',
+	'translate-task-export-to-xliff' => 'أصدر الترجمة بصيغة إكسليف',
+	'translate-page-no-such-language' => 'اللغة المحددة كانت غير صحيحة.',
+	'translate-page-no-such-task' => 'المهمة المحددة كانت غير صحيحة.',
+	'translate-page-no-such-group' => 'المجموعة المحددة كانت غير صحيحة.',
+	'translate-page-disabled' => "الترجمات إلى هذه اللغة فى هذه المجموعة تم تعطيلها. السبب:
+
+''$1''",
+	'translate-page-settings-legend' => 'الإعدادات',
+	'translate-page-task' => 'أريد',
+	'translate-page-group' => 'المجموعة',
+	'translate-page-language' => 'اللغة',
+	'translate-page-limit' => 'الحد',
+	'translate-page-limit-option' => '$1 {{PLURAL:$1|رسالة|رسالة}} للصفحة',
+	'translate-submit' => 'إيجاد',
+	'translate-page-navigation-legend' => 'الإبحار',
+	'translate-page-showing' => 'عرض الرسائل من $1 إلى $2 ل $3.',
+	'translate-page-showing-all' => 'عرض $1 {{PLURAL:$1|رسالة|رسالة}}.',
+	'translate-page-showing-none' => 'لا رسائل للعرض.',
+	'translate-next' => 'الصفحة التالية',
+	'translate-prev' => 'الصفحة السابقة',
+	'translate-page-description-legend' => 'معلومات حول المجموعة',
+	'translate-page-edit' => 'عدل',
+	'translate-optional' => '(اختياري)',
+	'translate-ignored' => '(متجاهل)',
+	'translate-edit-definition' => 'تعريف الرسالة',
+	'translate-edit-contribute' => 'ساهم',
+	'translate-edit-no-information' => "''هذه الرسالة ليس لديها توثيق.
+لو كنت تعرف أين أو كيف يتم استخدام هذه الرسالة، يمكنك مساعدة المترجمين الآخرين بواسطة إضافة توثيق إلى هذه الرسالة.''",
+	'translate-edit-information' => 'معلومات حول هذه الرسالة ($1)',
+	'translate-edit-in-other-languages' => 'الرسالة بلغات أخرى',
+	'translate-edit-committed' => 'الترجمة الحالية فى البرنامج',
+	'translate-edit-warnings' => 'التحذيرات حول الترجمات غير المكتملة',
+	'translate-edit-goto-no-prev' => 'لا رسالة سابقة',
+	'translate-edit-goto-no-next' => 'لا رسالة قادمة',
+	'translate-edit-goto-prev' => 'عدل الرسالة السابقة',
+	'translate-edit-goto-next' => 'عدل الرسالة القادمة',
+	'translate-edit-goto-list' => 'الرجوع إلى القائمة',
+	'translate-magic-pagename' => 'ترجمة ميدياويكى الممتدة',
+	'translate-magic-help' => 'يمكنك ترجمة أسماء الصفحات الخاصة، الكلمات السحرية، أسماء الواجهات وأسماء النطاقات.
+
+أسماء الصفحات الخاصة والكلمات السحرية يمكن أن يكون لها ترجمات متعددة.
+الترجمات تفصل بواسطة فاصلة (,).
+أسماء الواجهات والنطاقات يمكن أن يكون لها ترجمة واحدة فقط.
+
+فى ترجمات النطاقات <tt>$1 talk</tt> خاص. <tt>$1</tt> يتم استبدالها باسم الموقع (على سبيل المثال <tt>{{SITENAME}} talk</tt>).
+لو أنه من غير الممكن فى لغتك صياغة تعبير صحيح بدون تغيير اسم الموقع، من فضلك اتصل بمطور.
+
+تحتاج إلى أن تكون فى مجموعة المترجمين لحفظ التغييرات.
+التغييرات لن يتم حفظها حتى تضغط زر الحفظ بالأسفل.',
+	'translate-magic-module' => 'النوع:',
+	'translate-magic-submit' => 'إيجاد',
+	'translate-magic-cm-export' => 'تصدير',
+	'translate-magic-cm-to-be' => 'لتصبح',
+	'translate-magic-cm-current' => 'الحالي',
+	'translate-magic-cm-original' => 'الأصلي',
+	'translate-magic-cm-comment' => 'تعليق:',
+	'translate-magic-cm-save' => 'حفظ',
+	'translate-magic-cm-updatedusing' => 'حدث باستخدام [[Special:Magic]]',
+	'translate-magic-cm-savefailed' => 'الحفظ فشل',
+	'translate-magic-special' => 'أسماء الصفحات الخاصة',
+	'translate-magic-words' => 'كلمات سحرية',
+	'translate-magic-skin' => 'أسماء الواجهات',
+	'translate-magic-namespace' => 'أسماء النطاقات',
+	'translationchanges' => 'تغييرات الترجمة',
+	'translationchanges-export' => 'تصدير',
+	'translationchanges-change' => '$1: $2 بواسطة $3',
+	'translate-checks-parameters' => '{{PLURAL:$2|المحدد التالى غير مستخدم|المحددات التالية غير مستخدمة}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters-unknown' => '{{PLURAL:$2|المحدد التالى غير معروف|المحددات التالية غير معروفة}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-balance' => 'يوجد عدد غير زوجى من {{PLURAL:$2|الأقواس|الأقواس}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links' => '{{PLURAL:$2|الوصلة|ال$2 وصلة}} التالية بها مشاكل:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-xhtml' => 'من فضلك استبدل {{PLURAL:$2|بالوسم التالي|بالوسوم التالية}} الوسوم الصحيحة:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-plural' => 'التعريف يستخدم <nowiki>{{PLURAL:}}</nowiki> لكن الترجمة لا.',
+	'translate-checks-pagename' => 'النطاق تغير من التعريف',
+	'tog-translate-nonewsletter' => 'لا ترسل لى إخطارات بريدية بالبريد الإلكترونى (متعلقة فقط بالمستخدمين الذين يمتلكون عنوان بريد إلكترونى مؤكد)',
+	'right-translate' => 'التعديل باستخدام واجهة الترجمة',
+	'translate-rc-translation-filter' => 'فلتر الترجمات:',
+	'translate-rc-translation-filter-no' => 'لا تفعل شيئا',
+	'translate-rc-translation-filter-only' => 'اعرض الترجمات فقط',
+	'translate-rc-translation-filter-filter' => 'فلتر الترجمات',
+	'translate-rc-translation-filter-site' => 'التغييرات لرسائل الموقع فقط',
+	'translationstats' => 'إحصاءات الترجمة',
+	'translate-stats-edits' => 'تعديلات',
+	'translate-stats-users' => 'المترجمون',
+	'translate-statsf-intro' => 'يمكنك توليد إحصاءات بسيطة بهذه الاستمارة. كل القيم لها حدود عليا وسفلى.',
+	'translate-statsf-options' => 'خيارات الرسم',
+	'translate-statsf-width' => 'العرض بالبكسل',
+	'translate-statsf-height' => 'الارتفاع بالبكسل',
+	'translate-statsf-days' => 'فترة زمنية باليوم',
+	'translate-statsf-scale' => 'التدريج',
+	'translate-statsf-scale-days' => 'أيام',
+	'translate-statsf-scale-hours' => 'ساعات',
+	'translate-statsf-count' => 'قياس',
+	'translate-statsf-count-edits' => 'عدد التعديلات',
+	'translate-statsf-count-users' => 'المترجمون النشطون',
+	'translate-statsf-language' => 'قائمة بأكواد اللغات مفصولة بفاصلة',
+	'translate-statsf-group' => 'قائمة بأكواد المجموعات مفصولة بفاصلة',
+	'translate-statsf-submit' => 'عرض مسبق',
+	'translate-tag-category' => 'صفحات قابلة للترجمة',
+	'translate-tag-page-desc' => 'ترجمة صفحة الويكى [[:$1]].',
+	'translate-tag-translate-link-desc' => 'ترجمة هذه الصفحة',
+	'translate-tag-legend' => 'المفتاح:',
+	'translate-tag-legend-fallback' => 'الترجمة بلغة أخرى',
+	'translate-tag-legend-fuzzy' => 'ترجمة قديمة',
+	'translate-tag-fuzzy-comment' => 'التعريف تغير بواسطة [[User:$1]] فى المراجعة $2.',
+	'translate-tag-fuzzy-reason' => 'التعريف تغير بواسطة المستخدم $1 بالتعليق "$3" فى $2.',
+	'translate-sidebar-alltrans' => 'ترجمات أخرى',
+	'translate-tag-noedit' => 'هذه الصفحة هى صفحة ترجمة محدثة تلقائيا.
+يمكنك [$1 تعديل الصفحة المصدر] أو [$2 تحديث الترجمة].',
+);
+
 /** Asturian (Asturianu)
  * @author Esbardu
  */
@@ -1460,17 +1593,30 @@ Musyš w kupce pśełožowarjow byś, aby změny cyniś mógł. Změny se njesk�
 
 /** Greek (Ελληνικά)
  * @author Consta
+ * @author Dead3y3
  */
 $messages['el'] = array(
 	'translate' => 'Μεταφράστε',
+	'translate-desc' => '[[Special:Translate|Ειδική σελίδα]] για την μετάφραση του Mediawiki και ακόμη παραπέρα',
 	'translate-edit' => 'επεξεργασία',
-	'translate-talk' => 'Συζήτηση',
-	'translate-history' => 'Ιστορικό',
-	'translate-task-view' => 'όλα τα μηνύματα από το',
-	'translate-task-untranslated' => 'όλα τα αμετάφραστα μηνύματα από το',
-	'translate-task-optional' => 'τα προαιρετικά μηνύματα από το',
-	'translate-task-review' => 'τις αλλαγές των επεξεργασιών από το',
-	'translate-task-reviewall' => 'όλες τις αλλαγές των μεταφράσεων στο',
+	'translate-talk' => 'συζήτηση',
+	'translate-history' => 'ιστορικό',
+	'translate-task-view' => 'όλα τα μηνύματα από την',
+	'translate-task-untranslated' => 'όλα τα αμετάφραστα μηνύματα από την',
+	'translate-task-optional' => 'τα προαιρετικά μηνύματα από την',
+	'translate-task-problematic' => 'μηνύματα που έχουν προβλήματα',
+	'translate-task-review' => 'τις αλλαγές των επεξεργασιών από την',
+	'translate-task-reviewall' => 'την προεπισκόπηση όλων των μεταφρασμένων μηνυμάτων στην',
+	'translate-task-export' => 'Εξαγωγή μεταφράσεων από',
+	'translate-task-export-to-file' => 'την εξαγωγή της μετάφρασης σε αρχείο από την',
+	'translate-task-export-as-po' => 'την εξαγωγή της μετάφρασης σε μορφή Gettext',
+	'translate-task-export-to-xliff' => 'την εξαγωγή της μετάφρασης σε μορφή Xliff',
+	'translate-page-no-such-language' => 'Η καθορισμένη γλώσσα ήταν άκυρη.',
+	'translate-page-no-such-task' => 'Το καθορισμένο έργο ήταν άκυρο.',
+	'translate-page-no-such-group' => 'Η καθορισμένη ομάδα ήταν άκυρη.',
+	'translate-page-disabled' => "Οι μεταφράσεις σε αυτή τη γλώσσα αυτής της ομάδας έχουν απενεργοποιηθεί. Ο λόγος είναι:
+
+''$1''",
 	'translate-page-settings-legend' => 'Ρυθμίσεις',
 	'translate-page-task' => 'Θέλω',
 	'translate-page-group' => 'Ομάδα',
@@ -1481,30 +1627,102 @@ $messages['el'] = array(
 	'translate-page-navigation-legend' => 'Πλοήγηση',
 	'translate-page-showing' => 'Εμφάνιση μηνυμάτων από $1 έως $2 στα $3.',
 	'translate-page-showing-all' => 'Παρουσίαση $1 {{PLURAL:$1|μηνύματος|μηνυμάτων}}.',
+	'translate-page-showing-none' => 'Δεν υπάρχουν μηνύματα για εμφάνιση.',
+	'translate-page-paging-links' => '[ $1 ] [ $2 ]',
 	'translate-next' => 'Επόμενη σελίδα',
 	'translate-prev' => 'Προηγούμενη σελίδα',
 	'translate-page-description-legend' => 'Πληροφορίες σχετικά με την ομάδα',
+	'translate-page-edit' => 'επεξεργασία',
 	'translate-optional' => '(προαιρετικά)',
 	'translate-ignored' => '(αγνοήστε)',
+	'translate-edit-definition' => 'Ορισμός μηνύματος',
+	'translate-edit-contribute' => 'συμβάλλετε',
+	'translate-edit-no-information' => "''Αυτό το μήνυμα δεν έχει τεκμηρίωση. Αν γνωρίζετε που ή πως χρησιμοποιείται αυτό το μήνυμα, μπορείτε να βοηθήσετε άλλους μεταφραστές προσθέτοντας τεκμηρίωση σε αυτό.''",
 	'translate-edit-information' => 'Πληροφορίες σχετικά με αυτό το μήνυμα ($1)',
-	'translate-edit-in-other-languages' => 'Το Μήνυμα σε άλλες γλώσσες',
+	'translate-edit-in-other-languages' => 'Το μήνυμα σε άλλες γλώσσες',
+	'translate-edit-committed' => 'Τρέχουσα μετάφραση στο λογισμικό',
+	'translate-edit-warnings' => 'Προειδοποιήσεις για ημιτελείς μεταφράσεις',
+	'translate-edit-goto-no-prev' => 'Κανένα προηγούμενο μήνυμα',
+	'translate-edit-goto-no-next' => 'Κανένα επόμενο μήνυμα',
+	'translate-edit-goto-prev' => 'Επεξεργασία προηγούμενου μηνύματος',
+	'translate-edit-goto-next' => 'Επεξεργασία επόμενου μηνύματος',
+	'translate-edit-goto-list' => 'Πίσω στη λίστα',
+	'translate-magic-pagename' => 'Μετάφραση εκτεταμένου Mediawiki',
+	'translate-magic-help' => 'Μπορείτε να μεταφράσετε ψευδώνυμα ειδικών σελίδων, μαγικές λέξεις, ονόματα skins και ονόματα namespaces.
+
+Τα ψευδώνυμα ειδικών σελίδων και οι μαγικές λέξεις μπορούν να έχουν πολλαπλές μεταφράσεις.
+Οι μεταφράσεις χωρίζονται με ένα κόμμα (,).
+Τα ονόματα skins και τα namespaces μπορούν να έχουν μόνο μία μετάφραση.
+
+Στις μεταφράσεις namespaces η <tt>$1 talk</tt> είναι ειδική. Η <tt>$1</tt> αντικαθίσταται με το όνομα του ιστοτόπου (για παράδειγμα <tt>{{SITENAME}} talk</tt>).
+Αν δεν είναι δυνατόν στη γλώσσα σας να σχηματίσετε έγκυρη έκφραση χωρίς να αλλάξετε το όνομα του ιστοτόπου, παρακαλούμε επικοινωνήστε με έναν developer.
+
+Πρέπει να είστε στην ομάδα των μεταφραστών για να αποθηκεύσετε αλλαγές.
+Οι αλλαγές δεν αποθηκεύονται μέχρι να κάνετε κλικ στο κουμπί την αποθήκευσης παρακάτω.',
 	'translate-magic-module' => 'Ενότητα:',
-	'translate-magic-submit' => 'Πηγαίνετε',
+	'translate-magic-submit' => 'Προσκόμισε',
+	'translate-magic-cm-export' => 'Εξαγωγή',
+	'translate-magic-cm-to-be' => 'Θα είναι',
+	'translate-magic-cm-current' => 'Τρέχον',
+	'translate-magic-cm-original' => 'Πρωτότυπο',
 	'translate-magic-cm-comment' => 'Σχόλιο:',
 	'translate-magic-cm-save' => 'Αποθηκεύστε',
-	'translate-magic-special' => 'Πρόσθετα ψευδώνυμα σελίδων',
+	'translate-magic-cm-updatedusing' => 'Ενημερώθηκε χρησιμοποιόντας την σελίδα [[Special:Magic]]',
+	'translate-magic-cm-savefailed' => 'Η αποθήκευση απέτυχε',
+	'translate-magic-special' => 'Ψευδώνυμα ειδικών σελίδων',
 	'translate-magic-words' => 'Μαγικές λέξεις',
+	'translate-magic-skin' => 'Όνομα skins',
+	'translate-magic-namespace' => 'Ονόματα namespaces',
 	'translationchanges' => 'Αλλαγές μετάφρασης',
+	'translationchanges-export' => 'εξαγωγή',
 	'translationchanges-change' => '$1: $2 από $3',
 	'translate-checks-parameters' => '{{PLURAL:$2|Η παράμετρος|Οι παράμετροι}} που ακολουθούν δεν χρησιμοποιούνται:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links' => 'Οι Ακόλουθοι σύνδεσμοι είναι προβληματικοί:
+	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Η ακόλουθη παράμετρος|Οι ακόλουθες παράμετροι}} είναι {{PLURAL:$2|άγνωστη|άγνωστες}}:
 <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-balance' => 'Υπάρχει ακανόνιστη ποσότητα {{PLURAL:$2|παρενθέσεων|παρενθέσεων}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links' => '{{PLURAL:$2|Ο ακόλουθος σύνδεσμος|$2 Οι ακόλουθοι σύνδεσμοι}} είναι {{PLURAL:$2|προβληματικός|$2 προβληματικοί}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-xhtml' => 'Παρακαλώ αντικαταστήστε {{PLURAL:$2|την ακόλουθη ετικέτα|τις ακόλουθες ετικέτες}} με {{PLURAL:$2|την σωστή|τις σωστές}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-plural' => 'Ο ορισμός χρησιμοποιεί την συνάρτηση <nowiki>{{PLURAL:}}</nowiki> αλλά η μετάφραση όχι.',
+	'translate-checks-pagename' => 'Το namespace άλλαξε από τον ορισμό',
+	'tog-translate-nonewsletter' => 'Μην μου στέλνετε e-mail newsletters (σχετικό μόνο για χρήστες με μια επιβεβαιωμένη διεύθυνση e-mail)',
+	'right-translate' => 'Επεξεργασία χρησιμοποιώντας την διεπαφή μετάφρασης',
+	'translate-rc-translation-filter' => 'Φιλτράρισμα μεταφράσεων:',
+	'translate-rc-translation-filter-no' => 'Μην κάνεις τίποτα',
+	'translate-rc-translation-filter-only' => 'Εμφάνιση μεταφράσεων μόνο',
+	'translate-rc-translation-filter-filter' => 'Φίλτραρε εκτός τις μεταφράσεις',
+	'translate-rc-translation-filter-site' => 'Αλλαγές στα μηνύματα ιστοτόπου μόνο',
+	'translationstats' => 'Στατιστικά μετάφρασης',
+	'translate-stats-edits' => 'Επεξεργασίες',
 	'translate-stats-users' => 'Μεταφραστές',
+	'translate-statsf-intro' => 'Μπορείτε να δημιουργήσετε απλά στατιστικά με αυτή τη φόρμα. Όλες οι τιμές έχουν πάνω και κάτω όρια.',
+	'translate-statsf-options' => 'Επιλογές γραφήματος',
+	'translate-statsf-width' => 'Πλάτος σε πίξελς',
+	'translate-statsf-height' => 'Ύψος σε πίξελς',
+	'translate-statsf-days' => 'Χρονική περίοδος σε ημέρες',
+	'translate-statsf-scale' => 'Λεπτομέρεια',
 	'translate-statsf-scale-days' => 'Ημέρες',
 	'translate-statsf-scale-hours' => 'Ώρες',
+	'translate-statsf-count' => 'Μονάδα μέτρησης',
 	'translate-statsf-count-edits' => 'Αριθμός επεξεργασιών',
-	'translate-statsf-count-users' => 'Ενεργοί Μεταφραστές',
+	'translate-statsf-count-users' => 'Ενεργοί μεταφραστές',
+	'translate-statsf-language' => 'Λίστα κωδικών γλωσσών χωρισμένη με κόμματα',
+	'translate-statsf-group' => 'Λίστα κωδικών ομάδων χωρισμένη με κόμματα',
+	'translate-statsf-submit' => 'Προεπισκόπηση',
+	'translate-tag-category' => 'Μεταφράσιμες σελίδες',
+	'translate-tag-page-desc' => 'Μετάφραση της σελίδας wiki [[:$1]].',
+	'translate-tag-translate-link-desc' => 'Μεταφράστε αυτή τη σελίδα',
+	'translate-tag-legend' => 'Ετικέτα:',
+	'translate-tag-legend-fallback' => 'Μετάφραση σε άλλη γλώσσα',
+	'translate-tag-legend-fuzzy' => 'Παρωχημένη μετάφραση',
+	'translate-tag-fuzzy-comment' => 'Ο ορισμός αλλάχθηκε από [[User:$1|$1]] στην αναθεώρηση $2.',
+	'translate-tag-fuzzy-reason' => 'Ο ορισμός αλλάχθηκε από τον/την "$1" με σχόλιο "$3" στις $2.',
+	'translate-sidebar-alltrans' => 'Άλλες μεταφράσεις',
+	'translate-tag-noedit' => 'Αυτή είναι μια αυτόματα ενημερώσιμη σελίδα μετάφρασης.
+Μπορείτε να [$1 επεξεργαστείτε την πηγαία σελίδα] ή να [$2 ενημερώσετε την μετάφραση].',
 );
 
 /** Esperanto (Esperanto)
@@ -2316,6 +2534,13 @@ $messages['got'] = array(
 $messages['grc'] = array(
 	'translate-statsf-scale-days' => 'Ἡμέραι',
 	'translate-statsf-scale-hours' => 'Ὥραι',
+);
+
+/** Swiss German (Alemannisch)
+ * @author J. 'mach' wust
+ */
+$messages['gsw'] = array(
+	'translate-statsf-submit' => 'Vorschou',
 );
 
 /** Manx (Gaelg)
@@ -4013,6 +4238,8 @@ Do moß en de Jrop „Övversäzer“ sen, för hee Änderonge maache ze könne.
 	'translate-tag-fuzzy-comment' => 'Dä ojinaal-Tex wood fum „[[User:$1|$1]]“ verändert met de Version $2.',
 	'translate-tag-fuzzy-reason' => "Dä ojinaal-Tex wood fum „[[User:$1|$1]]“ verändert met de Version $2 fum MediaWiki, met dämm Kommentaa: ''$3''",
 	'translate-sidebar-alltrans' => 'Ander Övversäzunge',
+	'translate-tag-noedit' => 'Die Sigg es en Övversäzongß_Sigg, die automattejj_op der neuste Shtant jebraat weed. 
+Do kanns de [$1 Ojinaal-Sigg ändere] ov de [$2 Övversäzong op der neuste Shtand bränge].',
 );
 
 /** Latin (Latina)
