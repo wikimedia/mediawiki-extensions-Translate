@@ -77,8 +77,11 @@ class SpecialTranslationChanges extends SpecialPage {
 			}
 
 			switch ($group) {
-				case 'core': $class = 'core'; break;
+				case 'core': $class = 'mediawiki'; break;
 				case 'out-freecol': $class = 'freecol'; break;
+				case 'out-mantis': $class = 'mantis'; break;
+				case 'out-voctrain': $class = 'voctrain'; break;
+				case 'out-zabbix': $class = 'zabbix'; break;
 				default: $class = 'extension'; break;
 			}
 

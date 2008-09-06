@@ -46,6 +46,8 @@ $wgAutoloadClasses['GettextFormatReader'] = $dir . 'ffs/Gettext.php';
 $wgAutoloadClasses['GettextFormatWriter'] = $dir . 'ffs/Gettext.php';
 $wgAutoloadClasses['JavaFormatReader'] = $dir . 'ffs/Java.php';
 $wgAutoloadClasses['JavaFormatWriter'] = $dir . 'ffs/Java.php';
+$wgAutoloadClasses['PhpVariablesFormatReader'] = $dir . 'ffs/PhpVariables.php';
+$wgAutoloadClasses['PhpVariablesFormatWriter'] = $dir . 'ffs/PhpVariables.php';
 $wgAutoloadClasses['XliffFormatWriter'] = $dir . 'ffs/Xliff.php';
 
 # utils
@@ -64,6 +66,7 @@ $wgAutoloadClasses['TranslateToolbox'] = $dir . 'utils/ToolBox.php';
 # predefined groups
 $wgAutoloadClasses['PremadeMediawikiExtensionGroups'] = $dir . 'groups/MediaWikiExtensions.php';
 $wgAutoloadClasses['FreeColMessageGroup'] = $dir . 'groups/FreeCol.php';
+$wgAutoloadClasses['MantisMessageGroup'] = $dir . 'groups/Mantis.php';
 
 # tag
 $wgAutoloadClasses['TranslateTag'] = $dir . 'tag/Tag.php';
