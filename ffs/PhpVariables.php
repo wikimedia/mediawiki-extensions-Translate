@@ -19,6 +19,24 @@
 class PhpVariablesFormatReader extends SimpleFormatReader {
 
 	/**
+	 * Reads all \@author tags from the file and returns array of authors.
+	 *
+	 * @param $filename From which file to get the authors.
+	 * @return Array of authors.
+	 *
+	 * FIXME: possible to refactor to reduce duplication? (copy from Wiki.php)
+	 */
+	public function parseAuthors() {
+		if ( $this->filename === false ) {
+			return array();
+		}
+		$contents = file_get_contents( $this->filename );
+		$m = array();
+		$count = preg_match_all( '/@author (.*)/', $contents, $m );
+		return $m[1];
+	}
+
+	/**
  	 * Inherited from SimpleFormatReader, which parses whole header in one pass.
 	 * Basically the same, with different author prefix and separator between
 	 * headers and messages.
@@ -98,19 +116,44 @@ class PhpVariablesFormatReader extends SimpleFormatReader {
  */
 class PhpVariablesFormatWriter extends SimpleFormatWriter {
 
-	/**
-	 * Inherited. Very simplistic header with timestamp.
-	 */
+	// Ugly. Should be in Mantis.php or something
 	public function makeHeader( $handle, $code ) {
-		global $wgSitename;
 		list( $name, $native ) = $this->getLanguageNames($code);
-		$authors = $this->formatAuthors( '# Author: ', $code );
-		$when = wfTimestamp(TS_ISO_8601);
+		$authors = $this->formatAuthors( ' * @author ', $code );
 
 		fwrite( $handle, <<<HEADER
-# Messages for $name ($native)
-# Exported from $wgSitename at $when
-$authors
+<?php
+/** Mantis - a php based bugtracking system
+ *
+ * Copyright (C) 2000 - 2002  Kenzaburo Ito - kenito@300baud.org
+ * Copyright (C) 2002 - 2008  Mantis Team   - mantisbt-dev@lists.sourceforge.net
+ *
+ * Mantis is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * Mantis is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Mantis.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * \$Revision$
+ * \$Author$
+ * \$Date$
+ * \$Id$
+ */
+
+/** $name ($native)
+ *
+ * @ingroup Language
+ * @file
+ *
+$authors */
+
 
 HEADER
 		);
