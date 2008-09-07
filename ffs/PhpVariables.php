@@ -170,7 +170,6 @@ HEADER
 			$key = stripcslashes( $key );
 
 			$value = $collection[$item]->translation;
-			if ( $value === null ) $value = $collection[$item]->definition;
 			$value = str_replace( TRANSLATE_FUZZY, '', $value );
 			$value = addcslashes( $value, "'" );
 
