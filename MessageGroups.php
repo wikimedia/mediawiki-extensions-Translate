@@ -311,10 +311,12 @@ class CoreMessageGroup extends MessageGroup {
 		// Can return null, convert to array
 		$messages = (array) $this->mangler->mangle(
 			ResourceLoader::loadVariableFromPHPFile( $file, 'messages' ) );
-		if ( $this->getId() !== 'core' && $code !== 'en' ) {
-			// For branches, load trunk messages that are not in database
-				$trunk = MessageGroups::getGroup( 'core' );
-				$messages += $trunk->load( $code );
+		if ( $this->parentId ) {
+			if ( $code !== 'en' ) {
+				// For branches, load newer compatible messages for missing entries, if any
+				$trunk = MessageGroups::getGroup( $this->parentId );
+				$messages += $trunk->mangler->unmangle( $trunk->load( $code ) );
+			}
 		}
 
 		return $messages;
