@@ -98,7 +98,7 @@ class PhpVariablesFormatReader extends SimpleFormatReader {
 		$data = file_get_contents( $this->filename );
 
 		$matches = array();
-		$regex = '/^\$(.*?)\s*=\s*[\'"](.*?)[\'"];(\s*#.*?)?$/mus';
+		$regex = '/^\$(.*?)\s*=\s*[\'"](.*?)[\'"];.*?$/mus';
 		preg_match_all( $regex, $data, $matches, PREG_SET_ORDER );
 		$messages = array();
 		foreach ( $matches as $_ ) {
@@ -165,12 +165,12 @@ HEADER
 	protected function exportMessages( $handle, MessageCollection $collection ) {
 		$mangler = $this->group->getMangler();
 		foreach ( $collection->keys() as $item ) {
-			$value = $collection[$item]->translation;
-			if ( $value === null ) continue;
 
 			$key = $mangler->unmangle($item);
 			$key = stripcslashes( $key );
 
+			$value = $collection[$item]->translation;
+			if ( $value === null ) $value = $collection[$item]->definition;
 			$value = str_replace( TRANSLATE_FUZZY, '', $value );
 			$value = addcslashes( $value, "'" );
 
