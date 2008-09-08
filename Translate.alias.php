@@ -47,6 +47,8 @@ $aliases['arz'] = array(
 /** Assamese (অসমীয়া) */
 $aliases['as'] = array(
 	'Translate' => array( 'অনুবাদ কৰক' ),
+	'TranslationChanges' => array( 'অনুবাদিত সলনিবোৰ' ),
+	'TranslationStats' => array( 'অনুবাদ পৰিসংখ্যা' ),
 );
 
 /** Southern Balochi (بلوچی مکرانی) */
@@ -91,6 +93,7 @@ $aliases['fi'] = array(
 	'Translate' => array( 'Käännä' ),
 	'Magic' => array( 'Laajennettu kääntäminen' ),
 	'TranslationChanges' => array( 'Käännösmuutokset' ),
+	'TranslationStats' => array( 'Käännöstilastot' ),
 );
 
 /** French (Français) */
