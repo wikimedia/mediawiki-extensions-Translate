@@ -573,6 +573,7 @@ Select Category
 
 Semantic Calendar
 file = SemanticCalendar/languages/SC_Messages.php
+descmsg = sc_desc
 
 Semantic Drilldown
 file = SemanticDrilldown/languages/SD_Messages.php
@@ -598,6 +599,7 @@ file = SignDocument/SpecialCreateSignDocument.i18n.php
 
 Sign Document Special
 file = SignDocument/SpecialSignDocument.i18n.php
+descmsg = signature-desc
 
 Simple Anti Spam
 
