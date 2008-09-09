@@ -25,6 +25,11 @@ class MessageChecks {
 			'checkFreeColMissingVars',
 			'checkFreeColExtraVars',
 		),
+		'mantis' => array(
+			'checkPrintfMissingVars',
+			'checkPrintfExtraVars',
+			'checkBalance',
+		),
 	);
 
 	private function __construct() {
@@ -271,7 +276,6 @@ class MessageChecks {
 		}
 	}
 
-
 	/**
 	 * Checks for page names having untranslated namespace.
 	 *
@@ -293,7 +297,13 @@ class MessageChecks {
 		return false;
 	}
 
-
+	/**
+	 * Checks for messages not containing vars %XX% that are in the
+	 * source message.
+	 *
+	 * @param $message Instance of TMessage.
+	 * @return True if namespace has been tampered with.
+	 */
 	protected function checkFreeColMissingVars( TMessage $message, $code, &$desc = null ) {
 		if ( !preg_match_all( '/%[^% ]+%/U', $message->definition, $defVars ) ) {
 			return false;
@@ -313,12 +323,66 @@ class MessageChecks {
 		}
 	}
 
-
+	/**
+	 * Checks for messages containing vars %XX% that are not in the
+	 * source message.
+	 *
+	 * @param $message Instance of TMessage.
+	 * @return True if namespace has been tampered with.
+	 */
 	protected function checkFreeColExtraVars( TMessage $message, $code, &$desc = null ) {
-		if ( !preg_match_all( '/%[^% ]+%/U', $message->definition, $defVars ) ) {
+		preg_match_all( '/%[^% ]+%/U', $message->definition, $defVars );
+		preg_match_all( '/%[^% ]+%/U', $message->translation, $transVars );
+
+		$missing = self::compareArrays( $transVars[0], $defVars[0] );
+
+		if ( $count = count($missing) ) {
+			global $wgLang;
+			$desc = array( 'translate-checks-parameters-unknown',
+				implode( ', ', $missing ),
+				$wgLang->formatNum($count) );
+			return true;
+		} else {
 			return false;
 		}
-		preg_match_all( '/%[^% ]+%/U', $message->translation, $transVars );
+	}
+
+	/**
+	 * Checks for messages not containing vars %d or %s that are in the
+	 * source message.
+	 *
+	 * @param $message Instance of TMessage.
+	 * @return True if namespace has been tampered with.
+	 */
+	protected function checkPrintfMissingVars( TMessage $message, $code, &$desc = null ) {
+		if ( !preg_match_all( '/%[sd]/U', $message->definition, $defVars ) ) {
+			return false;
+		}
+		preg_match_all( '/%[sd]/U', $message->translation, $transVars );
+
+		$missing = self::compareArrays( $defVars[0], $transVars[0] );
+
+		if ( $count = count($missing) ) {
+			global $wgLang;
+			$desc = array( 'translate-checks-parameters',
+				implode( ', ', $missing ),
+				$wgLang->formatNum($count) );
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	/**
+	 * Checks for messages containing vars %d or %s that are not in the
+	 * source message.
+	 *
+	 * @param $message Instance of TMessage.
+	 * @return True if namespace has been tampered with.
+	 */
+	protected function checkPrintfExtraVars( TMessage $message, $code, &$desc = null ) {
+		preg_match_all( '/%[sd]/U', $message->definition, $defVars );
+		preg_match_all( '/%[sd]/U', $message->translation, $transVars );
 
 		$missing = self::compareArrays( $transVars[0], $defVars[0] );
 
@@ -342,5 +406,4 @@ class MessageChecks {
 		}
 		return $missing;
 	}
-
 }
