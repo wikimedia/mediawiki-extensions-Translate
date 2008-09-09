@@ -11,6 +11,8 @@ class MantisMessageGroup extends MessageGroup {
 	public function setPath( $value ) { $this->fileDir = $value; }
 
 	protected $codeMap = array(
+		'ar' => 'arabic',
+		'arz' => 'arabicegyptianspoken',
 		'bg' => 'bulgarian',
 		'ca' => 'catalan',
 		'cs' => 'czech',
