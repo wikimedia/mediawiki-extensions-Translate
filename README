@@ -33,6 +33,10 @@ function customMessageGroups( $id ) {
 </code>
 
 == Changes in version 10 ==
+* 2008-09-09:1 add message checks for Mantis
+* 2008-09-07   add support for Mantis
+* 2008-09-05   add languageeditstats.php to provide a top list of edits per language
+* 2008-09-05   add import for groups containing "." like core-1.13
 * 2008-08-08:1 experimental sync-group to import external changes and keep them in sync
 * 2008-08-04:1 add "Other translations" link to Special:Prefexindex in sidebar toolbox
 * 2008-07-29:2 support for variables and purging and fallbacks in page translation
