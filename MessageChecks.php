@@ -298,8 +298,8 @@ class MessageChecks {
 	}
 
 	/**
-	 * Checks for messages not containing vars %XX% that are in the
-	 * source message.
+	 * Checks for translations not containing vars %xx% that are in the
+	 * definition.
 	 *
 	 * @param $message Instance of TMessage.
 	 * @return True if namespace has been tampered with.
@@ -324,8 +324,8 @@ class MessageChecks {
 	}
 
 	/**
-	 * Checks for messages containing vars %XX% that are not in the
-	 * source message.
+	 * Checks for translations containing vars %xx% that are not in the
+	 * definition.
 	 *
 	 * @param $message Instance of TMessage.
 	 * @return True if namespace has been tampered with.
@@ -348,8 +348,8 @@ class MessageChecks {
 	}
 
 	/**
-	 * Checks for messages not containing vars %d or %s that are in the
-	 * source message.
+	 * Checks for translations not containing vars %d or %s that are in the
+	 * definition.
 	 *
 	 * @param $message Instance of TMessage.
 	 * @return True if namespace has been tampered with.
@@ -374,8 +374,8 @@ class MessageChecks {
 	}
 
 	/**
-	 * Checks for messages containing vars %d or %s that are not in the
-	 * source message.
+	 * Checks for translations containing vars %d or %s that are not in the
+	 * definition.
 	 *
 	 * @param $message Instance of TMessage.
 	 * @return True if namespace has been tampered with.
