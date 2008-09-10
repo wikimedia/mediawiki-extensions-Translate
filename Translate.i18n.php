@@ -313,10 +313,13 @@ $messages['af'] = array(
 	'translate-magic-namespace' => 'Naamruimtenamen',
 	'translationchanges' => 'Vertaling wysigings',
 	'translationchanges-export' => 'eksporteer',
+	'translate-rc-translation-filter-no' => 'Doen niks nie',
 	'translate-stats-edits' => 'Wysigings per dag:',
 	'translate-statsf-scale-days' => 'Dae',
 	'translate-statsf-scale-hours' => 'Ure',
 	'translate-statsf-submit' => 'Voorskou',
+	'translate-tag-translate-link-desc' => 'Vertaal die bladsy',
+	'translate-sidebar-alltrans' => 'Ander vertalings',
 );
 
 /** Aragonese (Aragonés)
@@ -1549,15 +1552,13 @@ $messages['dsb'] = array(
 	'translate-edit-goto-next' => 'Pśiducu powěsć wobźěłaś',
 	'translate-edit-goto-list' => 'Slědk k lisćinje',
 	'translate-magic-pagename' => 'Rozšyrjony pśełožk MediaWiki',
-	'translate-magic-help' => 'Móžoš aliasy specialnych bokow, magiske słowa, mjenja šatow a mjenja mjenjowych rumow pśełožyś.
+	'translate-magic-help' => 'Móžoš pśełožyś aliasy specialnych bokow, magiske słowa, mjenja šatow a mjenja mjenjowych rumow.
 
-Pla magiskich słow dejš engelske wurazy zapśimjeś, howac juž njefunkcioněruju. Wóstaj teke prědny zapisk (0 abo 1) kaž jo.
+Aliasy specialnych bokow a magiske słowa mógu měś někotare pśełožki. Pśełožki źěle se pśez komu (,). Mjenja šatow a mjenjowe rumy mógu jano jaden pśełožk měś.
 
-Aliasy specialnych bokow a magiske słowa mógu někotare pśełožki měś. Pśełožki se pśez komu (,) źěle. Mjenja šatow a mjenjowe rumy mógu jano jaden pśełožk měś.
+W pśełožkach mjenjowych rumow <tt>$1 diskusija</tt> jo wósebna. <tt>$1</tt> se pśez mjenjom sedła wuměnja (na pśikład <tt>{{SITENAME}} diskusija</tt>). Jolic w twójej rěcy njejo móžno płaśiwy wuraz tworiś, mimo až dejš mě sedła změniš, staj se pšosym z wuwiwarjom do zwiska.
 
-Mjazy pśełožkami mjenjowych rumow <tt>$1 diskusija</tt> jo wósebny. <tt>$1</tt> se pśez mjenjom sedła wuměnja (na pśikład <tt>{{SITENAME}} diskusija</tt>). Jolic w twójej rěcy njejo móžno płaśiwy wuraz formowaś, mimo až dejš mě sedła změniš, staj se pšosym z wuwiwarjom do zwiska.
-
-Musyš w kupce pśełožowarjow byś, aby změny cyniś mógł. Změny se njeskładuju, až njekliknjoš tłocanko "Składowaś" dołojce.',
+Musyš w kupce pśełožowarjow byś, aby mogł změny cyniś. Změny se njeskładuju, až njekliknjoš tłocanko "Składowaś" dołojce.',
 	'translate-magic-module' => 'Modul:',
 	'translate-magic-submit' => 'Pokazaś',
 	'translate-magic-cm-export' => 'Eksportěrowaś',
@@ -1588,7 +1589,28 @@ Musyš w kupce pśełožowarjow byś, aby změny cyniś mógł. Změny se njesk�
 	'translate-rc-translation-filter-only' => 'Jano pśełožki pokazaś',
 	'translate-rc-translation-filter-filter' => 'Pśełožki wufiltrowaś',
 	'translate-rc-translation-filter-site' => 'Jano změny sedłowych powěsćow',
+	'translationstats' => 'Statistika pśełožkow',
 	'translate-stats-edits' => 'Změny na źeń',
+	'translate-stats-users' => 'Pśełožowarje',
+	'translate-statsf-width' => 'Šyrokosć w pikselach',
+	'translate-statsf-height' => 'Wusokosć w pikselach',
+	'translate-statsf-days' => 'Cas w dnjach',
+	'translate-statsf-scale' => 'Granularita',
+	'translate-statsf-scale-days' => 'Dny',
+	'translate-statsf-scale-hours' => 'Goźiny',
+	'translate-statsf-count' => 'Měra',
+	'translate-statsf-count-edits' => 'Licba změnow',
+	'translate-statsf-count-users' => 'Aktiwne pśełožowarje',
+	'translate-statsf-submit' => 'Pśeglěd',
+	'translate-tag-category' => 'Pśełožujobne boki',
+	'translate-tag-page-desc' => 'Pśełožk wikijowego boka [[:$1]].',
+	'translate-tag-translate-link-desc' => 'Toś ten bok pśełožyś',
+	'translate-tag-legend' => 'Legenda:',
+	'translate-tag-legend-fallback' => 'Pśełožk do drugeje rěcy',
+	'translate-tag-legend-fuzzy' => 'Zestarjety pśełožk',
+	'translate-tag-fuzzy-comment' => 'Definicija wót [[User:$1|$1]] we wersiji $2 změnjona.',
+	'translate-tag-fuzzy-reason' => 'Definicija wót "$1" z komentarom w $2 změnjona.',
+	'translate-sidebar-alltrans' => 'Druge pśełožki',
 );
 
 /** Greek (Ελληνικά)
@@ -2425,7 +2447,7 @@ $messages['gl'] = array(
 	'translate-page-navigation-legend' => 'Navegación',
 	'translate-page-showing' => 'Amosando as mensaxes da $1 á $2, dun total de $3.',
 	'translate-page-showing-all' => 'Amosando {{PLURAL:$1|unha mensaxe|$1 mensaxes}}.',
-	'translate-page-showing-none' => 'Non hai mensaxes para amosar.',
+	'translate-page-showing-none' => 'Non hai ningunha mensaxe que amosar.',
 	'translate-next' => 'Páxina seguinte',
 	'translate-prev' => 'Páxina anterior',
 	'translate-page-description-legend' => 'Información acerca do grupo',
@@ -2519,6 +2541,8 @@ Os cambios non se gardan ata que prema no botón "Gardar" de embaixo.',
 	'translate-tag-fuzzy-comment' => 'A definición foi cambiada por [[User:$1|$1]] na revisión $2.',
 	'translate-tag-fuzzy-reason' => 'A definición foi cambiada por "$1" co comentario "$3" en $2.',
 	'translate-sidebar-alltrans' => 'Outras traducións',
+	'translate-tag-noedit' => 'Esta páxina é unha páxina de tradución actualizada automaticamente.
+Pode [$1 editar a páxina coa fonte] ou [$2 actualizar a tradución].',
 );
 
 /** Gothic
@@ -2540,6 +2564,7 @@ $messages['grc'] = array(
  * @author J. 'mach' wust
  */
 $messages['gsw'] = array(
+	'translate-prev' => 'vorderi Syte',
 	'translate-statsf-submit' => 'Vorschou',
 );
 
@@ -4748,6 +4773,18 @@ $messages['mr'] = array(
 <strong><nowiki>$1</nowiki></strong>',
 );
 
+/** Malay (Bahasa Melayu)
+ * @author Emrrans
+ */
+$messages['ms'] = array(
+	'translate' => 'Terjemah',
+	'translate-magic-pagename' => 'Terjemahan tambahan MediaWiki',
+	'translationchanges' => 'Perubahan terjemahan',
+	'translate-rc-translation-filter' => 'Tapis terjemahan:',
+	'translationstats' => 'Statistik terjemahan',
+	'translate-sidebar-alltrans' => 'Terjemahan lain',
+);
+
 /** Maltese (Malti)
  * @author Chrisportelli
  * @author Roderick Mallia
@@ -6576,7 +6613,7 @@ $messages['uk'] = array(
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Наступний параметр невідомий|Наступні параметри невідомі}}:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-balance' => 'Непарна кількість відкритих і закритих дужок:
+	'translate-checks-balance' => 'Непарна кількість {{PLURAL:$2|відкритих і закритих дужок}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '{{PLURAL:$2|Наступне посилання проблематичне|Наступні посилання проблематичні}} : <strong>$1</strong>',
 	'translate-checks-xhtml' => 'Будь ласка, виправте {{PLURAL:$2|наступний тег|наступні теги}}: <strong>$1</strong>',
