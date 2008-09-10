@@ -30,6 +30,11 @@ class MessageChecks {
 			'checkPrintfExtraVars',
 			'checkBalance',
 		),
+		'voctrain' => array(
+			'checkI18nSprintMissingVars',
+			'checkI18nSprintExtraVars',
+			'checkBalance',
+		),
 	);
 
 	private function __construct() {
@@ -383,6 +388,56 @@ class MessageChecks {
 	protected function checkPrintfExtraVars( TMessage $message, $code, &$desc = null ) {
 		preg_match_all( '/%[sd]/U', $message->definition, $defVars );
 		preg_match_all( '/%[sd]/U', $message->translation, $transVars );
+
+		$missing = self::compareArrays( $transVars[0], $defVars[0] );
+
+		if ( $count = count($missing) ) {
+			global $wgLang;
+			$desc = array( 'translate-checks-parameters-unknown',
+				implode( ', ', $missing ),
+				$wgLang->formatNum($count) );
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	/**
+	 * Checks for translations not containing vars %xx that are in the
+	 * definition.
+	 *
+	 * @param $message Instance of TMessage.
+	 * @return True if namespace has been tampered with.
+	 */
+	protected function checkI18nSprintMissingVars( TMessage $message, $code, &$desc = null ) {
+		if ( !preg_match_all( '/%[^% ]+/U', $message->definition, $defVars ) ) {
+			return false;
+		}
+		preg_match_all( '/%[^% ]+/U', $message->translation, $transVars );
+
+		$missing = self::compareArrays( $defVars[0], $transVars[0] );
+
+		if ( $count = count($missing) ) {
+			global $wgLang;
+			$desc = array( 'translate-checks-parameters',
+				implode( ', ', $missing ),
+				$wgLang->formatNum($count) );
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	/**
+	 * Checks for translations containing vars %xx that are not in the
+	 * definition.
+	 *
+	 * @param $message Instance of TMessage.
+	 * @return True if namespace has been tampered with.
+	 */
+	protected function checkI18nSprintExtraVars( TMessage $message, $code, &$desc = null ) {
+		preg_match_all( '/%[^% ]+/U', $message->definition, $defVars );
+		preg_match_all( '/%[^% ]+/U', $message->translation, $transVars );
 
 		$missing = self::compareArrays( $transVars[0], $defVars[0] );
 
