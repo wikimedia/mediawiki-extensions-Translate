@@ -244,6 +244,7 @@ $messages['krl'] = array(
  */
 $messages['mhr'] = array(
 	'translate-talk' => 'каҥашымаш',
+	'translate-history' => 'историй',
 	'translate-magic-cm-save' => 'Аралаш',
 	'tog-translate-nonewsletter' => 'Увер бюллетеньым электрон почто дене мылам колташ огыл (ушнышо-влаклан тергыме электрон почто адресышт дене гына)',
 );
@@ -1582,6 +1583,7 @@ Musyš w kupce pśełožowarjow byś, aby mogł změny cyniś. Změny se njeskł
 	'translate-checks-links' => '{{PLURAL:$2|Slědujucy wótkaz jo problematiski|Slědujucej wótkaza stej problematiskej|Slědujuce wótkaze su problematiske|Slědujucych wótkazow jo problematiske}}: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Wuměń pšosym {{PLURAL:$2|Slědujucy tag|slědujucej taga|slědujuce tagi|slědujuce tagi}} pśez {{PLURAL:$2|korektny|korektnej|korektne|korektne}}: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Definicija <nowiki>{{PLURAL:}}</nowiki> wužywa, pśełožk pak nic.',
+	'translate-checks-pagename' => 'Mjenjowy rum pśez definiciju změnjony',
 	'tog-translate-nonewsletter' => 'Njesćelśo mě emailowy list nowosćow (jano za wužywarjow z wobkšuśoneju emailoweju adresu relewantny)',
 	'right-translate' => 'Z pomocu pśełožowańskego pówjercha wobźěłaś',
 	'translate-rc-translation-filter' => 'Pśełožki filtrowaś:',
@@ -4052,19 +4054,19 @@ $messages['km'] = array(
 	'translate-magic-help' => "អ្នកអាចប្រែសំរួលឈ្មោះផ្សេងៗទៀតនៃទំព័រពិសេស ពាក្យទិព្វ ឈ្មោះសំបក និងឈ្មោះនៃលំហឈ្មោះ។
 
 
-ក្នុងពាក្យទិព្វ អ្នកចាំបាច់ត្រូវដាក់រួមទាំងបទប្រែសំរួលជាភាសាអង់គ្លេស បើមិនដូច្នោះវាលែងដំណើរការ។ 
-ដាក់ផងដែរនូវលេខរៀងដំបូង(0 ឬ 1)តាមដែលវាមាន។
+ឈ្មោះផ្សេងៗទៀតនៃទំព័រពិសេស​និង​ពាក្យទិព្វអាចមានបទប្រែសំរួលច្រើន។ 
 
+ការបកប្រែជាច្រើននោះត្រូវខ័ណ្ឌដោយសញ្ញាក្បៀស(,)។
 
-ឈ្មោះផ្សេងទៀតនៃទំព័រពិសេស និងពាក្យទិព្វ អាចមានច្រើនបទប្រែសំរួល ។ បទប្រែសំរួលត្រូវបានខណ្ឌដោយសញ្ញាក្បៀស(,)។ ឈ្មោះសំបក និងលំហឈ្មោះអាចមានត្រឹមតែ មួយបទប្រែសំរួលប៉ុណ្ណោះ ។
+ឈ្មោះសំបកនិងលំហឈ្មោះអាចមានត្រឹមតែមួយបទប្រែសំរួលប៉ុណ្ណោះ ។
 
 
 ក្នុងការបកប្រែលំហឈ្មោះ <tt>ការពិភាក្សាអំពី$1</tt> ជាករណីពិសេស។ <tt>$1</tt> ត្រូវបានជំនួសដោយឈ្មោះវិបសាយ(ឧទាហរណ៍៖ <tt>ការពិភាក្សាអំពី{{SITENAME}}</tt>)។ 
 
-ប្រសិនបើភាសារបស់អ្នកមិនបានបង្ហាញត្រឹមត្រូវដោយមិនប្តូរឈ្មោះវិបសាយទេ សូមទាក់ទងអ្នកអភិវឌ្ឍ(អ្នករចនាវិបសាយ)។
+ប្រសិនបើ​ភាសារបស់អ្នក​មិនបានបង្ហាញត្រឹមត្រូវដោយមិនប្តូរឈ្មោះវិបសាយទេ សូមទាក់ទងអ្នកអភិវឌ្ឍន៍(អ្នករចនាវិបសាយ)។
 
 
-អ្នកចាំបាច់ត្រូវតែស្ថិតក្នុងក្រុមអ្នកប្រែសំរួល ទើបអាចរក្សាទុកបំលាស់ប្តូរបាន។ បំលាស់ប្តូរនឹងមិនត្រូវបានរក្សាទុកទេ លើកលែងតែអ្នកបានចុចប្រអប់ 'រក្សាទំព័រទុក' ខាងក្រោម ។",
+អ្នកចាំបាច់ត្រូវតែស្ថិតក្នុងក្រុមអ្នកប្រែសំរួល ទើបអាចរក្សាទុកបំលាស់ប្តូរបាន។ បំលាស់ប្តូរនឹងមិនត្រូវបានរក្សាទុកទេ​លើកលែងតែអ្នកបានចុចប៊ូតុង'រក្សាទំព័រទុក'ខាងក្រោម ។",
 	'translate-magic-module' => 'ម៉ូឌុល:',
 	'translate-magic-submit' => 'នាំមក​បង្ហាញ',
 	'translate-magic-cm-export' => 'នាំចេញ',
@@ -4095,6 +4097,8 @@ $messages['km'] = array(
 
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'និយមន័យ​ប្រើប្រាស់ <nowiki>{{PLURAL:}}</nowiki> ប៉ុន្តែ​បទប្រែសំរួល​មិនមាន ។',
+	'right-translate' => 'កែប្រែដោយប្រើអន្តរមុខបកប្រែ',
+	'translate-rc-translation-filter' => 'ការបកប្រែតម្រង៖',
 	'translate-rc-translation-filter-no' => 'កុំធ្វើអ្វីទាំងអស់',
 	'translate-rc-translation-filter-only' => 'បង្ហាញតែការបកប្រែប៉ុណ្ណោះ',
 	'translationstats' => 'ស្ថិតិបកប្រែ',
@@ -5349,6 +5353,7 @@ $messages['os'] = array(
 );
 
 /** Polish (Polski)
+ * @author Derbeth
  * @author Dodek
  * @author McMonster
  * @author Sp5uhe
@@ -5455,6 +5460,7 @@ Zmiany nie są zapisywane, dopóki użytkownik nie naciśnie umieszczonego poni�
 	'translate-rc-translation-filter-filter' => 'Pokaż wszystkie bez tłumaczeń',
 	'translate-rc-translation-filter-site' => 'Zmiany w komunikatach wyłącznie tej witryny',
 	'translate-stats-edits' => 'Edycji dziennie',
+	'translate-statsf-submit' => 'Podgląd',
 );
 
 /** Piedmontese (Piemontèis)
@@ -6613,7 +6619,7 @@ $messages['uk'] = array(
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Наступний параметр невідомий|Наступні параметри невідомі}}:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-balance' => 'Непарна кількість {{PLURAL:$2|відкритих і закритих дужок}}:
+	'translate-checks-balance' => 'Непарна кількість відкритих і закритих дужок:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '{{PLURAL:$2|Наступне посилання проблематичне|Наступні посилання проблематичні}} : <strong>$1</strong>',
 	'translate-checks-xhtml' => 'Будь ласка, виправте {{PLURAL:$2|наступний тег|наступні теги}}: <strong>$1</strong>',
