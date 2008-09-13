@@ -444,10 +444,6 @@ descmsg = newsextension-desc
 
 News Channel
 
-Newuser Log
-file = Newuserlog/Newuserlog.i18n.php
-ignored = newuserlogentry
-
 New User Message
 ignored = newusermessage-template, newusermessage-editor
 
