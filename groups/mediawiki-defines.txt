@@ -372,8 +372,6 @@ Language Selector
 
 Latex Doc
 
-Link Search
-
 Liquid Threads
 file = LiquidThreads/Lqt.i18n.php
 descmsg = lqt-desc

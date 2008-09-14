@@ -130,9 +130,6 @@ file = InterwikiList/InterwikiList.alias.php
 Invitations
 file = Invitations/Invitations.i18n.alias.php
 
-Link search
-file = LinkSearch/LinkSearch.alias.php
-
 Liquid threads
 file = LiquidThreads/Lqt.alias.php
 
