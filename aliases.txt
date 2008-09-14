@@ -241,6 +241,9 @@ file = UserMerge/UserMerge.alias.php
 Vote
 file = Vote/Vote.alias.php
 
+Watchers
+file = Watchers/Watchers.alias.php
+
 Watch subpages
 file = WatchSubpages/WatchSubpages.alias.php
 
