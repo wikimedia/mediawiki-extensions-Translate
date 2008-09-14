@@ -5355,6 +5355,7 @@ $messages['os'] = array(
 /** Polish (Polski)
  * @author Derbeth
  * @author Dodek
+ * @author Jwitos
  * @author McMonster
  * @author Sp5uhe
  * @author Wpedzich
@@ -5460,7 +5461,14 @@ Zmiany nie są zapisywane, dopóki użytkownik nie naciśnie umieszczonego poni�
 	'translate-rc-translation-filter-filter' => 'Pokaż wszystkie bez tłumaczeń',
 	'translate-rc-translation-filter-site' => 'Zmiany w komunikatach wyłącznie tej witryny',
 	'translate-stats-edits' => 'Edycji dziennie',
+	'translate-statsf-width' => 'Szerokość w pikselach',
+	'translate-statsf-height' => 'Wysokość w pikselach',
+	'translate-statsf-scale-days' => 'Dni',
+	'translate-statsf-scale-hours' => 'Godzin',
+	'translate-statsf-count-edits' => 'Liczba edycji',
 	'translate-statsf-submit' => 'Podgląd',
+	'translate-tag-translate-link-desc' => 'Przetłumacz tą stronę',
+	'translate-sidebar-alltrans' => 'Inne tłumaczenia',
 );
 
 /** Piedmontese (Piemontèis)
