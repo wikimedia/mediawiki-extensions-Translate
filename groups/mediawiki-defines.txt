@@ -555,6 +555,7 @@ RegexFunctions
 
 Rename User
 file = Renameuser/SpecialRenameuser.i18n.php
+ignored = renameuser-summary
 
 Replace Text
 
