@@ -77,7 +77,7 @@ If you know where or how this message is used, you can help other translators by
 	'translate-magic-help'        => 'You can translate special pages aliases, magic words, skin names and namespace names.
 
 Special page aliases and magic words can have multiple translations.
-Translations are seperated by a comma (,).
+Translations are separated by a comma (,).
 Skin names and namespaces can have only one translation.
 
 In namespace translations <tt>$1 talk</tt> is special. <tt>$1</tt> is replaced with sitename (for example <tt>{{SITENAME}} talk</tt>).
@@ -146,8 +146,8 @@ Changes are not saved until you click save button below.',
 	'translate-statsf-count' => 'Measure',
 	'translate-statsf-count-edits' => 'Number of edits',
 	'translate-statsf-count-users' => 'Active translators',
-	'translate-statsf-language' => 'Comma seperated list of language codes',
-	'translate-statsf-group' => 'Comma separated list of group codes',
+	'translate-statsf-language' => 'Comma-separated list of language codes',
+	'translate-statsf-group' => 'Comma-separated list of group codes',
 	'translate-statsf-submit' => 'Preview',
 
 	'translate-tag-category' => 'Translatable pages',
