@@ -309,7 +309,7 @@ class TranslatePerLanguageStats {
 	}
 
 	public function preQuery( &$tables, &$fields, &$conds, &$type, &$options ) {
-		$db = wfGetDb();
+		$db = wfGetDB( DB_SLAVE );
 
 		$groups = explode(',', $this->opts['group']);
 		$codes = explode(',', $this->opts['language']);
