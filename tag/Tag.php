@@ -190,7 +190,7 @@ class TranslateTag {
 		$sectionTitle = Title::makeTitle( $namespace, $sectionPageName );
 		if ( !$sectionTitle ) throw new MWException( 'bad title' );
 
-		$revision = Revision::loadFromTitle( wfGetDb(), $sectionTitle );
+		$revision = Revision::loadFromTitle( wfGetDB( DB_SLAVE ), $sectionTitle );
 		if ( $revision ) {
 			$translation = $revision->getText();
 			if ( strpos( $translation, TRANSLATE_FUZZY ) !== false ) {

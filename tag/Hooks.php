@@ -111,7 +111,7 @@ class TranslateTagHooks {
 
 		if ( !TranslateTagUtils::isTagPage( $source, $type ) ) return true;
 
-		$dbr = wfGetDb();
+		$dbr = wfGetDB( DB_SLAVE );
 		$likePattern = $dbr->escapeLike( $source->getDBkey() ) . '/%%';
 		$res = $dbr->select(
 			'page',

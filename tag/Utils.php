@@ -137,7 +137,7 @@ class TranslateTagUtils {
 		if ( is_array($cache) ) return $cache;
 
 		// Fetch the available translation pages from database
-		$dbr = wfGetDb();
+		$dbr = wfGetDB( DB_SLAVE );
 		$likePattern = $dbr->escapeLike( $title->getDBkey() ) . '/%%';
 		$res = $dbr->select(
 			'page',
