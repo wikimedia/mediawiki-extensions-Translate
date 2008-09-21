@@ -1425,7 +1425,7 @@ $messages['de'] = array(
 Spezialseiten und magische Wörter können mehrere Übersetzungen haben, sie werden jeweils durch ein Komma (,) getrennt. Skinnamen und Namensraumnamen dürfen nur je eine Übersetzung haben.
 
 In der Übersetzung eines Namensraumnamens hat <tt>$1 talk</tt> eine spezielle Bedeutung. <tt>$1</tt> wird durch den Projektnamen ersetzt (zum Beispiel <tt>{{SITENAME}} talk</tt>).
-Wenn es in Deiner Sprache nicht möglich ist, eine grammatikalisch korrekte Form davon zu bilden ohne den Projektnamen zu verändern, kontaktiere bitte einen Systemadministrator.
+Wenn es in Deiner Sprache nicht möglich ist, eine grammatikalisch korrekte Form davon zu bilden ohne den Projektnamen zu verändern, kontaktiere bitte einen Softwareentwickler.
 
 Du musst in der Übersetzer-Gruppe sein, um Änderungen zu speichern.
 Änderungen werden erst beim Klick auf den Speichern-Button gespeichert.',
@@ -1495,6 +1495,18 @@ Du kannst die [$1 Originalseite bearbeiten] oder [$2 die Übersetzung aktualisie
  */
 $messages['de-formal'] = array(
 	'translate-edit-no-information' => "''Diese Systemnachricht hat noch keine Dokumentation. Wenn Sie wissen, wo und welchem Zusammenhang sie benutzt wird, können Sie anderen Übersetzern helfen, indem Sie eine Dokumentation hinzufügen.''",
+	'translate-magic-help' => 'Sie können hier Aliase für Spezialseiten, magische Wörter, Skinnamen und Namensraumnamen übersetzen.
+
+Spezialseiten und magische Wörter können mehrere Übersetzungen haben, sie werden jeweils durch ein Komma (,) getrennt. Skinnamen und Namensraumnamen dürfen nur je eine Übersetzung haben.
+
+In der Übersetzung eines Namensraumnamens hat <tt>$1 talk</tt> eine spezielle Bedeutung. <tt>$1</tt> wird durch den Projektnamen ersetzt (zum Beispiel <tt>{{SITENAME}} talk</tt>).
+Wenn es in Ihrer Sprache nicht möglich ist, eine grammatikalisch korrekte Form davon zu bilden ohne den Projektnamen zu verändern, kontaktiere bitte einen Softwareentwickler.
+
+Sie müssen in der Übersetzer-Gruppe sein, um Änderungen zu speichern.
+Änderungen werden erst beim Klick auf den Speichern-Button gespeichert.',
+	'translate-statsf-intro' => 'Sie können einfache Statistiken mit diesem Formular erstellen. Alle Werte haben untere und oberere Limits.',
+	'translate-tag-noedit' => 'Diese Seite ist eine automatisch aktualisierte Übersetzungsseite.
+Sie können die [$1 Originalseite bearbeiten] oder [$2 die Übersetzung aktualisieren].',
 );
 
 /** Lower Sorbian (Dolnoserbski)
@@ -2164,6 +2176,7 @@ $messages['fi'] = array(
  * @author Grondin
  * @author IAlex
  * @author Louperivois
+ * @author McDutchie
  * @author Seb35
  * @author Sherbrooke
  * @author Urhixidur
@@ -2252,7 +2265,7 @@ Ces derniers ne seront pas sauvegardés tant que vous n’aurez pas cliqué sur 
 	'translate-checks-parameters' => '{{PLURAL:$2|La paramètre suivant n’est pas utilisé|Les paramètres suivants ne sont pas utilisés}} : <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|La paramètre suivant est inconnu|Les paramètres suivants sont inconnus}} : <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Il y a un nombre non pair de {{PLURAL:$2|parenthèses|parenthèses}} : <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links' => '{{PLURAL:$2|Le lien suivant cause problèmes|Les liens suivants causent}} : <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links' => '{{PLURAL:$2|Le lien suivant cause|Les liens suivants causent}} problèmes : <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Vous êtes invité à corriger {{PLURAL:$2|la balise suivante|les balises suivantes}} : <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'La définition utilise <nowiki>{{PLURAL:}}</nowiki> mais pas la traduction.',
 	'translate-checks-pagename' => 'Nom d’espace modifié depuis la définition',
@@ -2555,9 +2568,11 @@ $messages['got'] = array(
 );
 
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
+ * @author Crazymadlover
  * @author LeighvsOptimvsMaximvs
  */
 $messages['grc'] = array(
+	'translate-page-language' => 'Γλῶττα',
 	'translate-statsf-scale-days' => 'Ἡμέραι',
 	'translate-statsf-scale-hours' => 'Ὥραι',
 );
@@ -3141,14 +3156,133 @@ $messages['hu'] = array(
  * @author McDutchie
  */
 $messages['ia'] = array(
+	'translate' => 'Traducer',
+	'translate-desc' => '[[Special:Translate|Pagina special]] pro traducer MediaWiki e ultra',
 	'translate-edit' => 'modificar',
+	'translate-talk' => 'discussion',
 	'translate-history' => 'historia',
+	'translate-task-view' => 'Vider tote le messages del',
+	'translate-task-untranslated' => 'Vider tote le messages non traducite del',
+	'translate-task-optional' => 'Vider le messages optional del',
+	'translate-task-problematic' => 'Vider le messages que ha problemas',
+	'translate-task-review' => 'Revider le modificationes al',
+	'translate-task-reviewall' => 'Revider tote le messages traducite in',
+	'translate-task-export' => 'Exportar traductiones ab',
+	'translate-task-export-to-file' => 'Exportar le traduction verso un file ab',
+	'translate-task-export-as-po' => 'Exportar traduction in formato Gettext',
+	'translate-task-export-to-xliff' => 'Exportar traduction in formato Xliff',
+	'translate-page-no-such-language' => 'Le lingua specificate esseva invalide.',
+	'translate-page-no-such-task' => 'Le action specificate esseva invalide.',
+	'translate-page-no-such-group' => 'Le gruppo specificate esseva invalide.',
+	'translate-page-disabled' => "Le traductiones in iste lingua in iste gruppo ha essite disactivate. Motivo:
+
+''$1''",
+	'translate-page-settings-legend' => 'Configurationes',
+	'translate-page-task' => 'Io vole',
 	'translate-page-group' => 'Gruppo',
+	'translate-page-language' => 'Lingua',
+	'translate-page-limit' => 'Limite',
+	'translate-page-limit-option' => '$1 {{PLURAL:$1|message|messages}} per pagina',
+	'translate-submit' => 'Obtener',
 	'translate-page-navigation-legend' => 'Navigation',
+	'translate-page-showing' => 'Presentation de messages de $1 a $2 ex $3.',
+	'translate-page-showing-all' => 'Presentation de $1 {{PLURAL:$1|message|messages}}.',
+	'translate-page-showing-none' => 'Nulle messages a presentar.',
+	'translate-next' => 'Pagina sequente',
+	'translate-prev' => 'Pagina precedente',
+	'translate-page-description-legend' => 'Information super le gruppo',
+	'translate-page-edit' => 'modificar',
+	'translate-optional' => '(optional)',
+	'translate-ignored' => '(ignorate)',
+	'translate-edit-definition' => 'Definition del message',
+	'translate-edit-contribute' => 'contribuer',
+	'translate-edit-no-information' => "''Iste message non ha documentation.
+Si tu sape ubi o como iste message es usate, tu pote adjutar le altere traductores per adder documentation a iste message.''",
+	'translate-edit-information' => 'Information super iste message ($1)',
+	'translate-edit-in-other-languages' => 'Le message in altere linguas',
+	'translate-edit-committed' => 'Traduction actual in software',
+	'translate-edit-warnings' => 'Advertimentos super traductiones incomplete',
+	'translate-edit-goto-no-prev' => 'Nulle message precedente',
+	'translate-edit-goto-no-next' => 'Nulle message sequente',
+	'translate-edit-goto-prev' => 'Modificar le message precedente',
+	'translate-edit-goto-next' => 'Modificar le message sequente',
+	'translate-edit-goto-list' => 'Retornar al lista',
+	'translate-magic-pagename' => 'Traduction extendite de MediaWiki',
+	'translate-magic-help' => 'Tu pote traducer le aliases de paginas special, le parolas magic, le nomines de stilos e le nomines de spatios de nomines.
+
+Le aliases de paginas special e le parolas magic pote haber plure traductiones.
+Le traductiones es separate per un comma (,).
+Le nomines de stilos e de spatios de nomines pote haber solmente un traduction.
+
+In le traductiones de spatios de nomines, <tt>$1 talk</tt> es special. <tt>$1</tt> es reimplaciate per le nomine del sito (per exemplo <tt>{{SITENAME}} talk</tt>).
+Si non es possibile in tu lingua formar un expression valide sin cambiar le nomine del sito, per favor contacta un disveloppator.
+
+Es necessari appertiner al gruppo de traductores pro publicar le modificationes.
+Le modificationes non es immagazinate usque tu clicca super le button Publicar infra.',
+	'translate-magic-module' => 'Modulo:',
+	'translate-magic-submit' => 'Obtener',
 	'translate-magic-cm-export' => 'Exportar',
+	'translate-magic-cm-to-be' => 'Futur',
+	'translate-magic-cm-current' => 'Actual',
+	'translate-magic-cm-original' => 'Original',
 	'translate-magic-cm-comment' => 'Commento:',
 	'translate-magic-cm-save' => 'Immagazinar',
+	'translate-magic-cm-updatedusing' => 'Actualisate con [[Special:Magic]]',
+	'translate-magic-cm-savefailed' => 'Impossibile immagazinar',
+	'translate-magic-special' => 'Aliases de paginas special',
+	'translate-magic-words' => 'Parolas magic',
+	'translate-magic-skin' => 'Nomines de stilos',
+	'translate-magic-namespace' => 'Nomines de spatios de nomines',
+	'translationchanges' => 'Modificationes in traductiones',
 	'translationchanges-export' => 'exportar',
+	'translationchanges-change' => '$1: $2 per $3',
+	'translate-checks-parameters' => 'Le sequente {{PLURAL:$2|parametro|parametros}} non es usate:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters-unknown' => 'Le sequente {{PLURAL:$2|parametro|parametros}} es incognite:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-balance' => 'Il ha un numero impar de {{PLURAL:$2|parentheses|parentheses}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links' => 'Le sequente {{PLURAL:$2|ligamine|ligamines}} es problematic:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-xhtml' => 'Per favor corrige le sequente {{PLURAL:$2|etiquetta|etiquettas}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-plural' => 'Le definition usa <nowiki>{{PLURAL:}}</nowiki> sed non le traduction.',
+	'translate-checks-pagename' => 'Spatio de nomines cambiate ab le definition',
+	'tog-translate-nonewsletter' => 'Non inviar me bulletines in e-mail (concerne solmente usatores con un adresse de e-mail confirmate)',
+	'right-translate' => 'Modificar con le interfacie de traduction',
+	'translate-rc-translation-filter' => 'Filtrar traductiones:',
+	'translate-rc-translation-filter-no' => 'Facer nihil',
+	'translate-rc-translation-filter-only' => 'Monstrar solmente traductiones',
+	'translate-rc-translation-filter-filter' => 'Non monstrar traductiones',
+	'translate-rc-translation-filter-site' => 'Solmente modificationes in messages del sito',
+	'translationstats' => 'Statisticas de traduction',
+	'translate-stats-edits' => 'Modificationes',
+	'translate-stats-users' => 'Traductores',
+	'translate-statsf-intro' => 'Tu pote generar statisticas simple con iste formulario. Tote le valores ha limites maxime e minime.',
+	'translate-statsf-options' => 'Optiones de graphico',
+	'translate-statsf-width' => 'Latitude in pixeles',
+	'translate-statsf-height' => 'Altitude in pixeles',
+	'translate-statsf-days' => 'Periodo de tempore in dies',
+	'translate-statsf-scale' => 'Granularitate',
+	'translate-statsf-scale-days' => 'Dies',
+	'translate-statsf-scale-hours' => 'Horas',
+	'translate-statsf-count' => 'Mesura',
+	'translate-statsf-count-edits' => 'Numero de modifiationes',
+	'translate-statsf-count-users' => 'Traductores active',
+	'translate-statsf-language' => 'Lista de codices de lingua separate per commas',
+	'translate-statsf-group' => 'Lista de codices de gruppo separate per commas',
+	'translate-statsf-submit' => 'Previsualisar',
+	'translate-tag-category' => 'Paginas traducibile',
+	'translate-tag-page-desc' => 'Traduction del pagina wiki [[:$1]].',
+	'translate-tag-translate-link-desc' => 'Traducer iste pagina',
+	'translate-tag-legend' => 'Legenda:',
+	'translate-tag-legend-fallback' => 'Traduction in altere lingua',
+	'translate-tag-legend-fuzzy' => 'Traduction obsolete',
+	'translate-tag-fuzzy-comment' => 'Definition cambiate per [[User:$1|$1]] in version $2.',
+	'translate-tag-fuzzy-reason' => 'Definition cambiate per "$1" con commento "$3" in $2.',
+	'translate-sidebar-alltrans' => 'Altere traductiones',
+	'translate-tag-noedit' => 'Iste pagina es un traduction automaticamente actualisate.
+Tu pote [$1 modificar le pagina de origine] o [$2 actualisar le traduction].',
 );
 
 /** Indonesian (Bahasa Indonesia)
