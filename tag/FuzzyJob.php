@@ -16,7 +16,7 @@ class FuzzyJob extends Job {
 	static $user;
 
 	public static function fuzzyPages( $reason, $comment, Title $prefix ) {
-		$dbr = wfGetDB();
+		$dbr = wfGetDB( DB_SLAVE );
 		$likePattern = $dbr->escapeLike( $prefix->getDBkey() ) . '/%%';
 
 		$res = $dbr->select(

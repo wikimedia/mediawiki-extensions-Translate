@@ -55,7 +55,7 @@ class TranslateTagUtils {
 	 * Revision::getRevisionText( $row ).
 	 */
 	public static function getPageContent( $namespace, $pages ) {
-		$dbr = wfGetDB();
+		$dbr = wfGetDB( DB_SLAVE );
 		$rows = $dbr->select( array( 'page', 'revision', 'text' ),
 			array( 'page_title', 'old_text', 'old_flags' ),
 			array(
