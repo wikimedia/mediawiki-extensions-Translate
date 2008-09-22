@@ -740,7 +740,7 @@ Wikihiero
 file = wikihiero/wikihiero.i18n.php
 
 Wikimedia Messages
-ignored = sidebar
+ignored = sidebar, robots.txt
 optional = grouppage-steward, grouppage-sysadmin, grouppage-Global_bot, grouppage-Global_rollback, grouppage-Ombudsmen
 
 Wiki Text Logged In Out
