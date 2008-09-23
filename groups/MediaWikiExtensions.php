@@ -240,7 +240,6 @@ class AllWikiaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-checkuser',
 		'ext-cite',
 		'ext-confirmedit',
-		'ext-deletedcontribs',
 		'ext-dismissablesitenotice',
 		'ext-dplforum',
 		'ext-editcount',
@@ -367,8 +366,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-titlekey',
 		'ext-torblock',
 		'ext-usernameblacklist',
-		'ext-deletedcontribs', // sysop or higher only
-		'ext-checkuser',
+		'ext-checkuser', // sysop or higher only
 		'ext-globalblocking',
 		'ext-nuke',
 		'ext-oversight',
