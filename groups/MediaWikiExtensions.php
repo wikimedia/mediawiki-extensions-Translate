@@ -360,6 +360,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-trustedxff',
 		'ext-antibot',  // anti spam and such (usually all wikis)
 		'ext-antispoof',
+		'ext-opensearchxml',
 		'ext-spamblacklist',
 		'ext-simpleantispam',
 		'ext-titleblacklist',
