@@ -186,10 +186,6 @@ descmsg = dt-desc
 
 Delete Batch
 
-Deleted Contributions
-id = ext-deletedcontribs
-descmsg = deletedcontributions-desc
-
 Delete Queue
 optional = deletequeue-prod-reasons, deletequeue-speedy-reasons
 
