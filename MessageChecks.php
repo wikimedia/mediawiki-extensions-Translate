@@ -1,5 +1,5 @@
 <?php
-if (!defined('MEDIAWIKI')) die();
+if ( !defined( 'MEDIAWIKI' ) ) die();
 
 /**
  * Some checks for common mistakes in translations.
@@ -38,7 +38,7 @@ class MessageChecks {
 	);
 
 	private function __construct() {
-		$file = dirname(__FILE__) . '/check-blacklist.php';
+		$file = dirname( __FILE__ ) . '/check-blacklist.php';
 		$this->blacklist =
 			ResourceLoader::loadVariableFromPHPFile( $file, 'checkBlacklist' );
 	}
@@ -52,7 +52,7 @@ class MessageChecks {
 	}
 
 	public function hasChecks( $type ) {
-		return isset($this->checksForType[$type]);
+		return isset( $this->checksForType[$type] );
 	}
 
 	/**
@@ -62,7 +62,7 @@ class MessageChecks {
 	 * @return Array of warning messages, html-format.
 	 */
 	public function doChecks( TMessage $message, $type, $code ) {
-		if ( $message->translation === null) return array();
+		if ( $message->translation === null ) return array();
 		$warnings = array();
 
 		foreach ( $this->checksForType[$type] as $check ) {
@@ -76,7 +76,7 @@ class MessageChecks {
 	}
 
 	public function doFastChecks( TMessage $message, $type, $code ) {
-		if ( $message->translation === null) return false;
+		if ( $message->translation === null ) return false;
 
 		foreach ( $this->checksForType[$type] as $check ) {
 			if ( $this->$check( $message, $code ) ) return true;
@@ -97,7 +97,7 @@ class MessageChecks {
 
 		$missing = array();
 		$definition = $message->definition;
-		$translation= $message->translation;
+		$translation = $message->translation;
 		if ( strpos( $definition, '$' ) === false ) return false;
 
 		for ( $i = 1; $i < 10; $i++ ) {
@@ -107,11 +107,11 @@ class MessageChecks {
 			}
 		}
 
-		if ( $count = count($missing) ) {
+		if ( $count = count( $missing ) ) {
 			global $wgLang;
 			$desc = array( 'translate-checks-parameters',
 				implode( ', ', $missing ),
-				$wgLang->formatNum($count) );
+				$wgLang->formatNum( $count ) );
 			return true;
 		}
 
@@ -123,7 +123,7 @@ class MessageChecks {
 
 		$missing = array();
 		$definition = $message->definition;
-		$translation= $message->translation;
+		$translation = $message->translation;
 		if ( strpos( $translation, '$' ) === false ) return false;
 
 		for ( $i = 1; $i < 10; $i++ ) {
@@ -133,11 +133,11 @@ class MessageChecks {
 			}
 		}
 
-		if ( $count = count($missing) ) {
+		if ( $count = count( $missing ) ) {
 			global $wgLang;
 			$desc = array( 'translate-checks-parameters-unknown',
 				implode( ', ', $missing ),
-				$wgLang->formatNum($count) );
+				$wgLang->formatNum( $count ) );
 			return true;
 		}
 
@@ -157,23 +157,23 @@ class MessageChecks {
 		$counts = array( '{' => 0, '}' => 0, '[' => 0, ']' => 0, '(' => 0, ')' => 0 );
 
 		$i = 0;
-		$len = strlen($translation);
+		$len = strlen( $translation );
 		while ( $i < $len ) {
 			$char = $translation[$i];
-			isset($counts[$char]) ? $counts[$char]++ : var_dump( $char );
+			isset( $counts[$char] ) ? $counts[$char]++ : var_dump( $char );
 			$i++;
 		}
 
 		$balance = array();
-		if ( $counts['['] !== $counts[']'] ) $balance[] = '[]: ' . ($counts['['] - $counts[']']);
-		if ( $counts['{'] !== $counts['}'] ) $balance[] = '{}: ' . ($counts['{'] - $counts['}']);
-		if ( $counts['('] !== $counts[')'] ) $balance[] = '(): ' . ($counts['('] - $counts[')']);
+		if ( $counts['['] !== $counts[']'] ) $balance[] = '[]: ' . ( $counts['['] - $counts[']'] );
+		if ( $counts['{'] !== $counts['}'] ) $balance[] = '{}: ' . ( $counts['{'] - $counts['}'] );
+		if ( $counts['('] !== $counts[')'] ) $balance[] = '(): ' . ( $counts['('] - $counts[')'] );
 
-		if ( $count = count($balance) ) {
+		if ( $count = count( $balance ) ) {
 			global $wgLang;
 			$desc = array( 'translate-checks-balance',
 				implode( ', ', $balance ),
-				$wgLang->formatNum($count) );
+				$wgLang->formatNum( $count ) );
 			return true;
 		}
 
@@ -195,12 +195,12 @@ class MessageChecks {
 		$matches = array();
 		$links = array();
 		$tc = Title::legalChars() . '#%{}';
-		preg_match_all( "/\[\[([{$tc}]+)(?:\\|(.+?))?]]/sDu", $message->translation, $matches);
-		for ($i = 0; $i < count($matches[0]); $i++ ) {
-			//if ( preg_match( '/({{ns:)?special(}})?:.*/sDui', $matches[1][$i] ) ) continue;
-			//if ( preg_match( '/{{mediawiki:.*}}/sDui', $matches[1][$i] ) ) continue;
-			//if ( preg_match( '/user([ _]talk)?:.*/sDui', $matches[1][$i] ) ) continue;
-			//if ( preg_match( '/:?\$[1-9]/sDu', $matches[1][$i] ) ) continue;
+		preg_match_all( "/\[\[([{$tc}]+)(?:\\|(.+?))?]]/sDu", $message->translation, $matches );
+		for ( $i = 0; $i < count( $matches[0] ); $i++ ) {
+			// if ( preg_match( '/({{ns:)?special(}})?:.*/sDui', $matches[1][$i] ) ) continue;
+			// if ( preg_match( '/{{mediawiki:.*}}/sDui', $matches[1][$i] ) ) continue;
+			// if ( preg_match( '/user([ _]talk)?:.*/sDui', $matches[1][$i] ) ) continue;
+			// if ( preg_match( '/:?\$[1-9]/sDu', $matches[1][$i] ) ) continue;
 
 			$backMatch = preg_quote( $matches[1][$i], '/' );
 			if ( preg_match( "/$backMatch/", $message->definition ) ) continue;
@@ -208,11 +208,11 @@ class MessageChecks {
 			$links[] = "[[{$matches[1][$i]}|{$matches[2][$i]}]]";
 		}
 
-		if ( $count = count($links) ) {
+		if ( $count = count( $links ) ) {
 			global $wgLang;
 			$desc = array( 'translate-checks-links',
 				implode( ', ', $links ),
-				$wgLang->formatNum($count) );
+				$wgLang->formatNum( $count ) );
 			return true;
 		}
 
@@ -242,17 +242,17 @@ class MessageChecks {
 		$wrongTags = array();
 		foreach ( $tags as $wrong => $correct ) {
 			$matches = array();
-			preg_match_all( $wrong, $translation, $matches, PREG_PATTERN_ORDER);
+			preg_match_all( $wrong, $translation, $matches, PREG_PATTERN_ORDER );
 			foreach ( $matches[0] as $wrongMatch ) {
 				$wrongTags[$wrongMatch] = "$wrongMatch → $correct";
 			}
 		}
 
-		if ( $count = count($wrongTags) ) {
+		if ( $count = count( $wrongTags ) ) {
 			global $wgLang;
 			$desc = array( 'translate-checks-xhtml',
 				implode( ', ', $wrongTags ),
-				$wgLang->formatNum($count) );
+				$wgLang->formatNum( $count ) );
 			return true;
 		}
 
@@ -266,7 +266,7 @@ class MessageChecks {
 	 * @return True if plural magic word is missing.
 	 */
 	protected function checkPlural( TMessage $message, $code, &$desc = null ) {
-		if ( isset($this->blacklist[$code])
+		if ( isset( $this->blacklist[$code] )
 			&& in_array( 'plural', $this->blacklist[$code] ) )
 			return false;
 
@@ -294,7 +294,7 @@ class MessageChecks {
 		$namespaces = 'help|project|\{\{ns:project}}|mediawiki';
 		$matches = array();
 		if ( preg_match( "/^($namespaces):[\w\s]+$/ui", $definition, $matches ) ) {
-			if ( !preg_match( "/^{$matches[1]}:.+$/u", $translation) ) {
+			if ( !preg_match( "/^{$matches[1]}:.+$/u", $translation ) ) {
 				$desc = array( 'translate-checks-pagename' );
 				return true;
 			}
@@ -317,11 +317,11 @@ class MessageChecks {
 
 		$missing = self::compareArrays( $defVars[0], $transVars[0] );
 
-		if ( $count = count($missing) ) {
+		if ( $count = count( $missing ) ) {
 			global $wgLang;
 			$desc = array( 'translate-checks-parameters',
 				implode( ', ', $missing ),
-				$wgLang->formatNum($count) );
+				$wgLang->formatNum( $count ) );
 			return true;
 		} else {
 			return false;
@@ -341,11 +341,11 @@ class MessageChecks {
 
 		$missing = self::compareArrays( $transVars[0], $defVars[0] );
 
-		if ( $count = count($missing) ) {
+		if ( $count = count( $missing ) ) {
 			global $wgLang;
 			$desc = array( 'translate-checks-parameters-unknown',
 				implode( ', ', $missing ),
-				$wgLang->formatNum($count) );
+				$wgLang->formatNum( $count ) );
 			return true;
 		} else {
 			return false;
@@ -367,11 +367,11 @@ class MessageChecks {
 
 		$missing = self::compareArrays( $defVars[0], $transVars[0] );
 
-		if ( $count = count($missing) ) {
+		if ( $count = count( $missing ) ) {
 			global $wgLang;
 			$desc = array( 'translate-checks-parameters',
 				implode( ', ', $missing ),
-				$wgLang->formatNum($count) );
+				$wgLang->formatNum( $count ) );
 			return true;
 		} else {
 			return false;
@@ -391,11 +391,11 @@ class MessageChecks {
 
 		$missing = self::compareArrays( $transVars[0], $defVars[0] );
 
-		if ( $count = count($missing) ) {
+		if ( $count = count( $missing ) ) {
 			global $wgLang;
 			$desc = array( 'translate-checks-parameters-unknown',
 				implode( ', ', $missing ),
-				$wgLang->formatNum($count) );
+				$wgLang->formatNum( $count ) );
 			return true;
 		} else {
 			return false;
@@ -417,11 +417,11 @@ class MessageChecks {
 
 		$missing = self::compareArrays( $defVars[0], $transVars[0] );
 
-		if ( $count = count($missing) ) {
+		if ( $count = count( $missing ) ) {
 			global $wgLang;
 			$desc = array( 'translate-checks-parameters',
 				implode( ', ', $missing ),
-				$wgLang->formatNum($count) );
+				$wgLang->formatNum( $count ) );
 			return true;
 		} else {
 			return false;
@@ -441,11 +441,11 @@ class MessageChecks {
 
 		$missing = self::compareArrays( $transVars[0], $defVars[0] );
 
-		if ( $count = count($missing) ) {
+		if ( $count = count( $missing ) ) {
 			global $wgLang;
 			$desc = array( 'translate-checks-parameters-unknown',
 				implode( ', ', $missing ),
-				$wgLang->formatNum($count) );
+				$wgLang->formatNum( $count ) );
 			return true;
 		} else {
 			return false;
@@ -455,7 +455,7 @@ class MessageChecks {
 	protected static function compareArrays( $defs, $trans ) {
 		$missing = array();
 		foreach ( $defs as $defVar ) {
-			if ( !in_array($defVar, $trans) ) {
+			if ( !in_array( $defVar, $trans ) ) {
 				$missing[] = $defVar;
 			}
 		}

@@ -21,7 +21,7 @@ class RenderJob extends Job {
 		) );
 
 		if ( $now ) $job->run();
-		else Job::batchInsert( array($job) );
+		else Job::batchInsert( array( $job ) );
 	}
 
 	function __construct( $title, $params = false, $id = 0 ) {
@@ -35,7 +35,7 @@ class RenderJob extends Job {
 
 		$source  = $this->params['source'];
 		$target  = $this->params['target'];
-		$user    = User::newFromName($this->params['user']);
+		$user    = User::newFromName( $this->params['user'] );
 		$summary = $this->params['summary'];
 		$flags   = $this->params['flags'];
 

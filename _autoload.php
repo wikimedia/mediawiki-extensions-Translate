@@ -1,5 +1,5 @@
 <?php
-if (!defined('MEDIAWIKI')) die();
+if ( !defined( 'MEDIAWIKI' ) ) die();
 /**
  * Autoload definitions.
  *
@@ -9,7 +9,7 @@ if (!defined('MEDIAWIKI')) die();
  * @file
  */
 
-$dir = dirname(__FILE__) . '/';
+$dir = dirname( __FILE__ ) . '/';
 
 $wgAutoloadClasses['TranslateTasks'] = $dir . 'TranslateTasks.php';
 $wgAutoloadClasses['TaskOptions'] = $dir . 'TranslateTasks.php';

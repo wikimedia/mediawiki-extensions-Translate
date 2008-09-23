@@ -1,7 +1,7 @@
 <?php
 
 $optionsWithArgs = array( 'group', 'lang', 'start', 'end' );
-require( dirname(__FILE__) . '/cli.inc' );
+require( dirname( __FILE__ ) . '/cli.inc' );
 
 function showUsage() {
 	STDERR( <<<EOT
@@ -22,9 +22,9 @@ EOT
 if ( isset( $options['help'] ) ) showUsage();
 
 
-if (!isset($options['group'])) {
+if ( !isset( $options['group'] ) ) {
 	STDERR( "ESG1: Message group id must be supplied with group parameter." );
-	exit(1);
+	exit( 1 );
 }
 
 $group = MessageGroups::getGroup( $options['group'] );
@@ -34,19 +34,19 @@ if ( $group === null ) {
 		$groups = $mg->getGroups();
 	} else {
 		STDERR( "ESG2: Invalid message group was given." );
-		exit(1);
+		exit( 1 );
 	}
 } else {
 	$groups = array( $group );
 }
 
-if (!isset($options['lang'])) {
+if ( !isset( $options['lang'] ) ) {
 	STDERR( "ESG3: List of language codes must be supplied with lang parameter." );
-	exit(1);
+	exit( 1 );
 }
 
-$start = isset($options['start']) ? strtotime($options['start']) : false;
-$end = isset($options['end']) ? strtotime($options['end']) : false;
+$start = isset( $options['start'] ) ? strtotime( $options['start'] ) : false;
+$end = isset( $options['end'] ) ? strtotime( $options['end'] ) : false;
 
 STDOUT( "Conflict times: " . wfTimestamp( TS_ISO_8601, $start ) . " - " . wfTimestamp( TS_ISO_8601, $end ) );
 
@@ -55,11 +55,11 @@ $codes = array_filter( array_map( 'trim', explode( ',', $options['lang'] ) ) );
 if ( $codes[0] === '*' ) {
 	$langs = Language::getLanguageNames();
 	ksort( $langs );
-	$codes = array_keys($langs);
+	$codes = array_keys( $langs );
 }
 
 foreach ( $groups as &$group ) {
-	if ($group->isMeta()) continue;
+	if ( $group->isMeta() ) continue;
 
 	STDOUT( "{$group->getLabel()} ", $group );
 
@@ -71,9 +71,9 @@ foreach ( $groups as &$group ) {
 		if ( !file_exists( $file ) ) continue;
 
 		$cs = new ChangeSyncer( $group );
-		if ( isset($options['norc']) ) $cs->norc = true;
-		if ( isset($options['noask']) ) $cs->interactive = false;
-		if ( isset($options['nocolor']) ) $cs->nocolor = true;
+		if ( isset( $options['norc'] ) ) $cs->norc = true;
+		if ( isset( $options['noask'] ) ) $cs->interactive = false;
+		if ( isset( $options['nocolor'] ) ) $cs->nocolor = true;
 
 		$ts = $cs->getTimestampsFromSvn( $file );
 		if ( !$ts ) $ts = $cs->getTimestampsFromFs( $file );
@@ -111,28 +111,28 @@ class ChangeSyncer {
 		// PHP (for being an ass)!
 		$regex = '^Last Changed Date: (.*) \(';
 		$ok = preg_match( "~$regex~m", $output, $matches );
-		if ($ok) return strtotime( $matches[1] );
+		if ( $ok ) return strtotime( $matches[1] );
 
 		return false;
 	}
 
 	public function getTimestampsFromFs( $file ) {
 		if ( !file_exists( $file ) ) return false;
-		$stat = stat($file);
+		$stat = stat( $file );
 		return $stat['mtime'];
 	}
 
 	public function checkConflicts( $code, $startTs = false, $endTs = false, $changeTs = false ) {
 		$messages = $this->group->load( $code );
-		if ( !count($messages) ) return;
+		if ( !count( $messages ) ) return;
 
 		$collection = $this->group->initCollection( $code );
 		$this->group->fillCollection( $collection );
 
 		foreach ( $messages as $key => $translation ) {
 
-			if ( !isset($collection[$key]) ) {
-				//STDOUT( "Unknown key $key" );
+			if ( !isset( $collection[$key] ) ) {
+				// STDOUT( "Unknown key $key" );
 				continue;
 			}
 
@@ -142,8 +142,8 @@ class ChangeSyncer {
 
 			$page = $title->getPrefixedText();
 
-			if ( $collection[$key]->database === null) {
-				STDOUT("Importing $page as a new translation");
+			if ( $collection[$key]->database === null ) {
+				STDOUT( "Importing $page as a new translation" );
 				$this->import( $title, $translation, 'Importing a new translation' );
 				continue;
 			}
@@ -152,7 +152,7 @@ class ChangeSyncer {
 			$translation = str_replace( TRANSLATE_FUZZY, '', $translation );
 			if ( $translation === $current ) continue;
 
-			STDOUT("Conflict in " . $this->color('bold', $page). "!", $page);
+			STDOUT( "Conflict in " . $this->color( 'bold', $page ) . "!", $page );
 
 			global $wgLang;
 			$iso = 'xnY-xnm-xnd"T"xnH:xni:xns';
@@ -190,10 +190,10 @@ class ChangeSyncer {
 
 			if ( $changeTs ) {
 				if ( $wikiTs > $startTs && $changeTs <= $endTs ) {
-					STDOUT(" →Changed in wiki after export: IGNORE", $page);
+					STDOUT( " →Changed in wiki after export: IGNORE", $page );
 					continue;
-				} elseif ( !$wikiTs || ($changeTs > $endTs && $wikiTs < $startTs) ) {
-					STDOUT(" →Changed in source after export: IMPORT", $page);
+				} elseif ( !$wikiTs || ( $changeTs > $endTs && $wikiTs < $startTs ) ) {
+					STDOUT( " →Changed in source after export: IMPORT", $page );
 					$this->import( $title, $translation, 'Updating translation from external source' );
 					continue;
 				}
@@ -201,15 +201,15 @@ class ChangeSyncer {
 			}
 
 			if ( !$this->interactive ) continue;
-			STDOUT(" →Needs manual resolution", $page);
+			STDOUT( " →Needs manual resolution", $page );
 
-			STDOUT("Source translation at $changeDate:");
-			STDOUT($this->color('blue', $translation) . "\n");
-			STDOUT("Wiki translation at $wikiDate:");
-			STDOUT($this->color('green', $current) . "\n");
+			STDOUT( "Source translation at $changeDate:" );
+			STDOUT( $this->color( 'blue', $translation ) . "\n" );
+			STDOUT( "Wiki translation at $wikiDate:" );
+			STDOUT( $this->color( 'green', $current ) . "\n" );
 
 			do {
-				STDOUT("Resolution: [S]kip [I]mport [C]onflict: ", 'foo' );
+				STDOUT( "Resolution: [S]kip [I]mport [C]onflict: ", 'foo' );
 				$action = fgets( STDIN );
 				$action = strtoupper( trim( $action ) );
 				if ( $action === 'S' ) break;
@@ -221,13 +221,13 @@ class ChangeSyncer {
 					$this->import( $title, TRANSLATE_FUZZY . $translation, 'Edit conflict between wiki and source' );
 					break;
 				}
-			} while( true );
+			} while ( true );
 
 		}
 	}
 
 	public function color( $color, $text ) {
-		switch ($color) {
+		switch ( $color ) {
 			case 'blue':
 				return "\033[1;34m$text\033[0m";
 			case 'green':
@@ -253,7 +253,7 @@ class ChangeSyncer {
 				continue;
 			}
 
-			$wikiTs = wfTimestamp( TS_UNIX, $revision->getTimestamp());
+			$wikiTs = wfTimestamp( TS_UNIX, $revision->getTimestamp() );
 			break;
 		}
 

@@ -1,5 +1,5 @@
 <?php
-if (!defined('MEDIAWIKI')) die();
+if ( !defined( 'MEDIAWIKI' ) ) die();
 /**
  * An extension to ease the translation of Mediawiki
  *
@@ -44,21 +44,21 @@ class MessageCollection implements Iterator, ArrayAccess, Countable {
 
 	/* Iterator methods */
 	public function rewind() {
-		reset($this->messages);
+		reset( $this->messages );
 	}
 
 	public function current() {
-		$messages = current($this->messages);
+		$messages = current( $this->messages );
 		return $messages;
 	}
 
 	public function key() {
-		$messages = key($this->messages);
+		$messages = key( $this->messages );
 		return $messages;
 	}
 
 	public function next() {
-		$messages = next($this->messages);
+		$messages = next( $this->messages );
 		return $messages;
 	}
 
@@ -69,7 +69,7 @@ class MessageCollection implements Iterator, ArrayAccess, Countable {
 
 	/* ArrayAccess methods */
 	public function offsetExists( $offset ) {
-		return isset($this->messages[$offset]);
+		return isset( $this->messages[$offset] );
 	}
 
 	public function offsetGet( $offset ) {
@@ -169,10 +169,10 @@ class MessageCollection implements Iterator, ArrayAccess, Countable {
 		foreach ( $this->keys() as $key ) {
 			// Check if there is authors
 			$_authors = $this->messages[$key]->authors;
-			if ( !count($_authors) ) continue;
+			if ( !count( $_authors ) ) continue;
 
 			foreach ( $_authors as $author ) {
-				if ( !isset($authors[$author]) ) {
+				if ( !isset( $authors[$author] ) ) {
 					$authors[$author] = 1;
 				} else {
 					$authors[$author]++;
@@ -186,7 +186,7 @@ class MessageCollection implements Iterator, ArrayAccess, Countable {
 				$filteredAuthors[] = $author;
 			}
 		}
-		return isset($filteredAuthors) ? $filteredAuthors : array();
+		return isset( $filteredAuthors ) ? $filteredAuthors : array();
 	}
 
 	/**
@@ -221,17 +221,17 @@ class TMessage {
 	/**
 	 * Authors who have taken part in translating this message.
 	 */
-	//protected $authors;
+	// protected $authors;
 
 	/**
 	 * External translation.
 	 */
-	//protected $infile   = null;
+	// protected $infile   = null;
 
 	/**
 	 * Translation in local database, may differ from above.
 	 */
-	//private $database = null;
+	// private $database = null;
 
 	// Values that can be accessed with $message->value syntax
 	protected static $callable = array(
@@ -294,7 +294,7 @@ class TMessage {
 	 * @return Translated string or null if there isn't translation.
 	 */
 	public function translation() {
-		return (@$this->database !== null) ? @$this->database : @$this->infile;
+		return ( @$this->database !== null ) ? @$this->database : @$this->infile;
 	}
 
 	/**
@@ -305,7 +305,7 @@ class TMessage {
 	 */
 	public function fuzzy() {
 		if ( @$this->translation !== null ) {
-			return strpos($this->translation, TRANSLATE_FUZZY) !== false;
+			return strpos( $this->translation, TRANSLATE_FUZZY ) !== false;
 		} else {
 			return false;
 		}
@@ -328,10 +328,10 @@ class TMessage {
 
 	public function __set( $name, $value ) {
 		if ( in_array( $name, self::$writable ) ) {
-			if ( gettype($this->$name) === gettype($value) || $this->$name === null && is_string($value) ) {
+			if ( gettype( $this->$name ) === gettype( $value ) || $this->$name === null && is_string( $value ) ) {
 				$this->$name = $value;
 			} else {
-				$type = gettype($value);
+				$type = gettype( $value );
 				throw new MWException( __METHOD__ . ": Trying to set the value of property $name to illegal data type $type" );
 			}
 		} else {

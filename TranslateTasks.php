@@ -84,14 +84,14 @@ abstract class TranslateTask {
 	}
 
 	protected function doPaging() {
-		$total = count($this->collection);
+		$total = count( $this->collection );
 
 		$this->collection->slice(
 			$this->options->getOffset(),
 			$this->options->getLimit()
 		);
 
-		$left = count($this->collection);
+		$left = count( $this->collection );
 
 		$callback = $this->options->getPagingCB();
 		call_user_func( $callback, $this->options->getOffset(), $left, $total );
@@ -202,8 +202,8 @@ class ViewProblematicTask extends ReviewMessagesTask {
 
 		foreach ( $this->collection->keys() as $key ) {
 			$item = $this->collection[$key];
-			if ( in_array($key, $problematic) ) {
-			 if ( $checker->doFastChecks($item, $type, $code) ) continue;
+			if ( in_array( $key, $problematic ) ) {
+			 if ( $checker->doFastChecks( $item, $type, $code ) ) continue;
 			}
 
 			unset( $this->collection[$key] );
@@ -341,7 +341,7 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 		$headers['X-Language-Code'] = $this->options->getLanguage();
 		$headers['X-Message-Group'] = $this->group->getId();
 
-		$headerlines = array('');
+		$headerlines = array( '' );
 		foreach ( $headers as $key => $value ) {
 			$headerlines[] = "$key: $value\n";
 		}
@@ -349,7 +349,7 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 		$out .= "# Translation of $label to $languageName\n";
 		$out .= self::formatmsg( '', $headerlines  );
 
-		foreach ( $this->collection as $key => $m) {
+		foreach ( $this->collection as $key => $m ) {
 			$flags = array();
 
 			$translation = $m->translation;

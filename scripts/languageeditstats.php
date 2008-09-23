@@ -10,7 +10,7 @@
  */
 
 $optionsWithArgs = array( 'top', 'days' );
-require( dirname(__FILE__) . '/cli.inc' );
+require( dirname( __FILE__ ) . '/cli.inc' );
 
 function showUsage() {
 	STDERR( <<<EOT
@@ -33,9 +33,9 @@ EOT
 if ( isset( $options['help'] ) ) showUsage();
 
 if ( isset( $options['days'] ) )
-	$hours = $options['days']*24; // no day change cutoff
+	$hours = $options['days'] * 24; // no day change cutoff
 else
-	$hours = 7*24;
+	$hours = 7 * 24;
 
 if ( isset( $options['top'] ) )
 	$top = $options['top'];
@@ -44,7 +44,7 @@ else
 
 function figureMessage( $text ) {
 	$pos = strrpos( $text, '/' );
-	$code = substr( $text, $pos+1 );
+	$code = substr( $text, $pos + 1 );
 	$key = substr( $text, 0, $pos );
 	return array( $key, $code );
 }
@@ -61,15 +61,15 @@ foreach ( $rows as $_ ) {
 	// Filter out edits by $wgTranslateFuzzyBotName
 	if ( $_->rc_user_text === $wgTranslateFuzzyBotName ) continue;
 
-	list( , $code ) = figureMessage($_->rc_title);
+	list( , $code ) = figureMessage( $_->rc_title );
 
-	if ( !isset($codes[$code]) ) $codes[$code] = 0;
+	if ( !isset( $codes[$code] ) ) $codes[$code] = 0;
 	$codes[$code]++;
 }
 
 /** Sort counts and report descending up to $top rows.
  */
-arsort($codes);
+arsort( $codes );
 $i = 0;
 foreach ( $codes as $code => $num  ) {
 	if ( $i++ === $top ) break;

@@ -51,8 +51,8 @@ class PhpVariablesFormatReader extends SimpleFormatReader {
 			$handle = fopen( $this->filename, "rt" );
 			$state = 0;
 
-			while ( !feof($handle) ) {
-				$line = fgets($handle);
+			while ( !feof( $handle ) ) {
+				$line = fgets( $handle );
 
 				if ( $state === 0 ) {
 					if ( $line === "\n" ) {
@@ -62,11 +62,11 @@ class PhpVariablesFormatReader extends SimpleFormatReader {
 
 					$formatPrefix = '# Author: ';
 
-					$prefixLength = strlen($formatPrefix);
+					$prefixLength = strlen( $formatPrefix );
 					$prefix = substr( $line, 0, $prefixLength );
 					if ( strcasecmp( $prefix, $formatPrefix ) === 0 ) {
 						// fgets includes the trailing newline, trim to get rid of it
-						$authors[] = trim(substr( $line, $prefixLength ));
+						$authors[] = trim( substr( $line, $prefixLength ) );
 					}
 				} elseif ( $state === 1 ) {
 					if ( $line === "\n" || $line[0] !== '#' ) {
@@ -118,7 +118,7 @@ class PhpVariablesFormatWriter extends SimpleFormatWriter {
 
 	// Ugly. Should be in Mantis.php or something
 	public function makeHeader( $handle, $code ) {
-		list( $name, $native ) = $this->getLanguageNames($code);
+		list( $name, $native ) = $this->getLanguageNames( $code );
 		$authors = $this->formatAuthors( ' * @author ', $code );
 
 		fwrite( $handle, <<<HEADER
@@ -166,7 +166,7 @@ HEADER
 		$mangler = $this->group->getMangler();
 		foreach ( $collection->keys() as $item ) {
 
-			$key = $mangler->unmangle($item);
+			$key = $mangler->unmangle( $item );
 			$key = stripcslashes( $key );
 
 			$value = $collection[$item]->translation;

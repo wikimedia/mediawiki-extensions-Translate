@@ -1,5 +1,5 @@
 <?php
-if (!defined('MEDIAWIKI')) die();
+if ( !defined( 'MEDIAWIKI' ) ) die();
 
 /**
  * This class contains some static helper functions for other classes.
@@ -23,8 +23,8 @@ class TranslateUtils {
 
 		// Cache some amount of titles for speed
 		static $cache = array();
-		if ( !isset($cache[$message]) ) {
-			$cache[$message] = $wgContLang->ucfirst($message);
+		if ( !isset( $cache[$message] ) ) {
+			$cache[$message] = $wgContLang->ucfirst( $message );
 		}
 		return $cache[$message] . '/' . $code;
 	}
@@ -44,14 +44,14 @@ class TranslateUtils {
 			$titles[] = self::title( $key, $messages->code );
 		}
 
-		if ( !count($titles) ) return;
+		if ( !count( $titles ) ) return;
 
 		// Fetch contents
 		$titles = self::getContents( $titles, $namespaces[0] );
 
 		foreach ( $messages->keys() as $key ) {
 			$title = self::title( $key, $messages->code );
-			if ( isset($titles[$title]) ) {
+			if ( isset( $titles[$title] ) ) {
 				$messages[$key]->database = $titles[$title][0];
 				$messages[$key]->addAuthor( $titles[$title][1] );
 			}
@@ -64,8 +64,8 @@ class TranslateUtils {
 		$namespace = NS_MEDIAWIKI ) {
 
 		$title = self::title( $key, $language );
-		$data = self::getContents( array($title), $namespace );
-		return isset($data[$title][0]) ? $data[$title][0] : null;
+		$data = self::getContents( array( $title ), $namespace );
+		return isset( $data[$title][0] ) ? $data[$title][0] : null;
 	}
 
 	/**
@@ -110,7 +110,7 @@ class TranslateUtils {
 		$recentchanges = $dbr->tableName( 'recentchanges' );
 		$hours = intval( $hours );
 		$cutoff_unixtime = time() - ( $hours * 3600 );
-		#$cutoff_unixtime = $cutoff_unixtime - ($cutoff_unixtime % 86400);
+		# $cutoff_unixtime = $cutoff_unixtime - ($cutoff_unixtime % 86400);
 		$cutoff = $dbr->timestamp( $cutoff_unixtime );
 
 		$namespaces = $dbr->makeList( $wgTranslateMessageNamespaces );
@@ -126,7 +126,7 @@ class TranslateUtils {
 
 		// Fetch results, prepare a batch link existence check query
 		$rows = array();
-		while( $row = $dbr->fetchObject( $res ) ){
+		while ( $row = $dbr->fetchObject( $res ) ) {
 			$rows[] = $row;
 		}
 		$dbr->freeResult( $res );
@@ -140,20 +140,20 @@ class TranslateUtils {
 		$tableheader = Xml::openElement( 'table', array(
 			'class'   => 'mw-sp-translate-table',
 			'border'  => '1',
-			'cellspacing' => '0')
+			'cellspacing' => '0' )
 		);
 
-		$tableheader .= Xml::openElement('tr');
-		$tableheader .= Xml::element('th',
-			array( 'rowspan' => '2'),
-			$title ? $title : wfMsgHtml('allmessagesname')
+		$tableheader .= Xml::openElement( 'tr' );
+		$tableheader .= Xml::element( 'th',
+			array( 'rowspan' => '2' ),
+			$title ? $title : wfMsgHtml( 'allmessagesname' )
 		);
-		$tableheader .= Xml::element('th', null, wfMsgHtml('allmessagesdefault') );
-		$tableheader .= Xml::closeElement('tr');
+		$tableheader .= Xml::element( 'th', null, wfMsgHtml( 'allmessagesdefault' ) );
+		$tableheader .= Xml::closeElement( 'tr' );
 
-		$tableheader .= Xml::openElement('tr');
-		$tableheader .= Xml::element('th', null, wfMsgHtml('allmessagescurrent') );
-		$tableheader .= Xml::closeElement('tr');
+		$tableheader .= Xml::openElement( 'tr' );
+		$tableheader .= Xml::element( 'th', null, wfMsgHtml( 'allmessagescurrent' ) );
+		$tableheader .= Xml::closeElement( 'tr' );
 
 		return $tableheader;
 	}
@@ -172,7 +172,7 @@ class TranslateUtils {
 
 		$output =  '';
 
-		foreach( $messages as $key => $m ) {
+		foreach ( $messages as $key => $m ) {
 
 			$tools = array();
 
@@ -185,7 +185,7 @@ class TranslateUtils {
 			$message = $m->translation ? $m->translation : $original;
 
 			global $wgLang;
-			$niceTitle = htmlspecialchars( $wgLang->truncate( $key, -30, '…' ) );
+			$niceTitle = htmlspecialchars( $wgLang->truncate( $key, - 30, '…' ) );
 
 			if ( 1 || $wgUser->isAllowed( 'translate' ) ) {
 				$tools['edit'] = $sk->makeKnownLinkObj( $title, $niceTitle, "action=edit&loadgroup=$group" );
@@ -203,7 +203,7 @@ class TranslateUtils {
 
 			if ( $review ) {
 				$output .= Xml::tags( 'tr', array( 'class' => 'orig' ),
-					Xml::tags( 'td', array( 'rowspan' => '2'), $leftColumn ) .
+					Xml::tags( 'td', array( 'rowspan' => '2' ), $leftColumn ) .
 					Xml::tags( 'td', null, TranslateUtils::convertWhiteSpaceToHTML( $original ) )
 				);
 
@@ -240,7 +240,7 @@ class TranslateUtils {
 
 	public static function getLanguageName( $code, $native = false, $language = 'en' ) {
 		wfMemIn( __METHOD__ );
-		if ( !$native && is_callable(array( 'LanguageNames', 'getNames' )) ) {
+		if ( !$native && is_callable( array( 'LanguageNames', 'getNames' ) ) ) {
 			$languages = LanguageNames::getNames( $language ,
 				LanguageNames::FALLBACK_NORMAL,
 				LanguageNames::LIST_MW_AND_CLDR
@@ -263,13 +263,13 @@ class TranslateUtils {
 		}
 		$code = implode( '-', $parts );
 		wfMemOut( __METHOD__ );
-		return isset($languages[$code]) ? $languages[$code] . $suffix : false;
+		return isset( $languages[$code] ) ? $languages[$code] . $suffix : false;
 	}
 
 	public static function languageSelector( $language, $selectedId ) {
 		wfMemIn( __METHOD__ );
 		global $wgLang;
-		if ( is_callable(array( 'LanguageNames', 'getNames' )) ) {
+		if ( is_callable( array( 'LanguageNames', 'getNames' ) ) ) {
 			$languages = LanguageNames::getNames( $language,
 				LanguageNames::FALLBACK_NORMAL,
 				LanguageNames::LIST_MW_AND_CLDR
@@ -281,7 +281,7 @@ class TranslateUtils {
 		ksort( $languages );
 
 		$selector = new HTMLSelector( 'language', 'language', $selectedId );
-		foreach( $languages as $code => $name ) {
+		foreach ( $languages as $code => $name ) {
 			$selector->addOption( "$code - $name", $code );
 		}
 		wfMemOut( __METHOD__ );
@@ -301,8 +301,8 @@ class TranslateUtils {
 	public static function messageIndex() {
 		wfMemIn( __METHOD__ );
 		$keyToGroup = array();
-		if ( file_exists(TRANSLATE_INDEXFILE) ) {
-			$keyToGroup = unserialize( file_get_contents(TRANSLATE_INDEXFILE) );
+		if ( file_exists( TRANSLATE_INDEXFILE ) ) {
+			$keyToGroup = unserialize( file_get_contents( TRANSLATE_INDEXFILE ) );
 		} else {
 			wfDebug( __METHOD__ . ": Message index missing." );
 		}
@@ -362,7 +362,7 @@ class TranslateUtils {
 		$snippet = preg_replace( "/[^\p{L}]/u", ' ', $text );
 		$snippet = preg_replace( "/ {2,}/u", ' ', $snippet );
 		$snippet = $wgContLang->truncate( $snippet, $length );
-		$snippet = str_replace( ' ', '_', trim($snippet) );
+		$snippet = str_replace( ' ', '_', trim( $snippet ) );
 		return $snippet;
 	}
 
@@ -387,7 +387,7 @@ class HTMLSelector {
 		$this->attributes[$name] = $value;
 	}
 
-	public function addOption( $name, $value = false, $selected = false) {
+	public function addOption( $name, $value = false, $selected = false ) {
 		$selected = $selected ? $selected : $this->selected;
 		$value = $value ? $value : $name;
 		$this->options[] = Xml::option( $name, $value, $value === $selected );

@@ -9,7 +9,7 @@
  */
 
 $optionsWithArgs = array( 'file', 'user' );
-require( dirname(__FILE__) . '/cli.inc' );
+require( dirname( __FILE__ ) . '/cli.inc' );
 
 function showUsage() {
 	STDERR( <<<EOT
@@ -28,31 +28,31 @@ EOT
 }
 
 if ( isset( $options['help'] ) ) showUsage();
-if (!isset($options['file'])) {
+if ( !isset( $options['file'] ) ) {
 	STDERR( "You need to specify input file" );
-	exit(1);
+	exit( 1 );
 }
 
 /*
  * Parse the po file.
  */
 $p = new PoImporter( $options['file'] );
-list($changes, $group) = $p->parse();
+list( $changes, $group ) = $p->parse();
 
-if (!isset($options['user'])) {
+if ( !isset( $options['user'] ) ) {
 	STDERR( "You need to specify user name for wiki import" );
-	exit(1);
+	exit( 1 );
 }
 
-if (!count($changes)) {
+if ( !count( $changes ) ) {
 	STDOUT( "No changes to import" );
-	exit(0);
+	exit( 0 );
 }
 
 /*
  * Import changes to wiki.
  */
-$w = new WikiWriter( $changes, $group, $options['user'], !isset($options['really']) );
+$w = new WikiWriter( $changes, $group, $options['user'], !isset( $options['really'] ) );
 $w->execute();
 
 /**
@@ -125,7 +125,7 @@ class PoImporter {
 				// Remove quoting
 				$key = preg_replace( $quotePattern, '', $matches[1] );
 				// Ignore unknown keys
-				if ( !isset($contents[$key]) ) continue;
+				if ( !isset( $contents[$key] ) ) continue;
 			} else {
 				continue;
 			}
@@ -203,7 +203,7 @@ class WikiWriter {
 			return;
 		}
 
-		$count = count($this->changes);
+		$count = count( $this->changes );
 		STDOUT( "Going to update $count pages." );
 
 		$ns = $this->group->namespaces[0];

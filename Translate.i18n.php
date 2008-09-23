@@ -26,7 +26,7 @@ $messages['en'] = array(
 	'translate-task-export'         => 'Export translations from',
 	'translate-task-export-to-file' => 'Export translation to file from',
 	'translate-task-export-as-po'   => 'Export translation in Gettext format',
-	'translate-task-export-to-xliff'=> 'Export translation in Xliff format',
+	'translate-task-export-to-xliff' => 'Export translation in Xliff format',
 
 	'translate-page-no-such-language' => 'Specified language was invalid.',
 	'translate-page-no-such-task'     => 'Specified task was invalid.',

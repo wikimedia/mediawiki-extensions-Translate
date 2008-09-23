@@ -11,7 +11,7 @@ class PremadeMediawikiExtensionGroups {
 
 		$linefeed = '(\r\n|\n)';
 
-		$sections = array_map( 'trim', preg_split( "/$linefeed{2,}/", $defines, -1, PREG_SPLIT_NO_EMPTY ) );
+		$sections = array_map( 'trim', preg_split( "/$linefeed{2,}/", $defines, - 1, PREG_SPLIT_NO_EMPTY ) );
 
 		$groups = $fixedGroups = array();
 
@@ -23,14 +23,14 @@ class PremadeMediawikiExtensionGroups {
 				if ( $line === '' ) continue;
 
 				if ( strpos( $line, '=' ) === false ) {
-					if ( empty($newgroup['name']) ) {
+					if ( empty( $newgroup['name'] ) ) {
 						$newgroup['name'] = $line;
 					} else {
 						throw new MWException( "Trying to define name twice: " . $line );
 					}
 				} else {
 					list( $key, $value ) = array_map( 'trim', explode( '=', $line, 2 ) );
-					switch ($key) {
+					switch ( $key ) {
 					case 'file':
 					case 'var':
 					case 'id':
@@ -41,7 +41,7 @@ class PremadeMediawikiExtensionGroups {
 					case 'optional':
 					case 'ignored':
 						$values = array_map( 'trim', explode( ',', $value ) );
-						if ( !isset($newgroup[$key]) ) {
+						if ( !isset( $newgroup[$key] ) ) {
 							$newgroup[$key] = array();
 						}
 						$newgroup[$key] = array_merge( $newgroup[$key], $values );
@@ -52,9 +52,9 @@ class PremadeMediawikiExtensionGroups {
 				}
 			}
 
-			if ( count($newgroup) ) {
-				if ( empty($newgroup['name']) ) {
-					throw new MWException( "Name missing\n" . print_r($newgroup, true) );
+			if ( count( $newgroup ) ) {
+				if ( empty( $newgroup['name'] ) ) {
+					throw new MWException( "Name missing\n" . print_r( $newgroup, true ) );
 				}
 				$groups[] = $newgroup;
 			}
@@ -62,28 +62,28 @@ class PremadeMediawikiExtensionGroups {
 
 
 		foreach ( $groups as $g ) {
-			if ( !is_array($g) ) {
-				$g = array($g);
+			if ( !is_array( $g ) ) {
+				$g = array( $g );
 			}
 
 			$name = $g['name'];
 
-			if ( isset($g['id']) ) {
+			if ( isset( $g['id'] ) ) {
 				$id = $g['id'];
 			} else {
 				$id = 'ext-' . preg_replace( '/\s+/', '', strtolower( $name ) );
 			}
 
-			if ( isset($g['file']) ) {
+			if ( isset( $g['file'] ) ) {
 				$file = $g['file'];
 			} else {
 				$file = preg_replace( '/\s+/', '', "$name/$name.i18n.php" );
 			}
 
-			if ( isset($g['descmsg']) ) {
+			if ( isset( $g['descmsg'] ) ) {
 				$descmsg = $g['descmsg'];
 			} else {
-				$descmsg = str_replace( 'ext-', '', $id) . '-desc';
+				$descmsg = str_replace( 'ext-', '', $id ) . '-desc';
 			}
 
 			$newgroup = array(
@@ -94,7 +94,7 @@ class PremadeMediawikiExtensionGroups {
 
 			$copyvars = array( 'ignored', 'optional', 'var', 'desc' );
 			foreach ( $copyvars as $var ) {
-				if ( isset($g[$var]) ) {
+				if ( isset( $g[$var] ) ) {
 					$newgroup[$var] = $g[$var];
 				}
 			}
@@ -109,7 +109,7 @@ class PremadeMediawikiExtensionGroups {
 		global $wgTranslateAC, $wgTranslateEC;
 		$this->init();
 
-		if ( !count($this->groups) ) return;
+		if ( !count( $this->groups ) ) return;
 
 		foreach ( $this->groups as $id => $g ) {
 			$wgTranslateAC[$id] = array( $this, 'factory' );
@@ -137,15 +137,15 @@ class PremadeMediawikiExtensionGroups {
 		$info = $this->groups[$id];
 		$group = ExtensionMessageGroup::factory( $info['name'], $id );
 		$group->setMessageFile( $info['file'] );
-		if ( !empty($info['var']) ) $group->setVariableName( $info['var'] );
-		if ( !empty($info['optional']) ) $group->setOptional( $info['optional'] );
-		if ( !empty($info['ignored']) ) $group->setIgnored( $info['ignored'] );
-		if ( isset($info['desc']) ) {
+		if ( !empty( $info['var'] ) ) $group->setVariableName( $info['var'] );
+		if ( !empty( $info['optional'] ) ) $group->setOptional( $info['optional'] );
+		if ( !empty( $info['ignored'] ) ) $group->setIgnored( $info['ignored'] );
+		if ( isset( $info['desc'] ) ) {
 			$group->setDescription( $info['desc'] );
 		} else {
 			$group->setDescriptionMsg( $info['descmsg'] );
 		}
-		$group->setType('mediawiki');
+		$group->setType( 'mediawiki' );
 		return $group;
 	}
 
@@ -175,7 +175,7 @@ class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
 		if ( $this->classes === null ) {
 			$this->classes = MessageGroups::singleton()->getGroups();
 			foreach ( $this->classes as $index => $class ) {
-				if ( (strpos( $class->getId(), 'ext-' ) !== 0) || $class->isMeta() ) {
+				if ( ( strpos( $class->getId(), 'ext-' ) !== 0 ) || $class->isMeta() ) {
 					unset( $this->classes[$index] );
 				}
 			}
@@ -218,7 +218,7 @@ class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
 		$bools = parent::getBools();
 		foreach ( $this->classes as $class ) {
 			$newbools = ( $class->getBools() );
-			if ( count($newbools['optional']) || count($newbools['ignored']) ) {
+			if ( count( $newbools['optional'] ) || count( $newbools['ignored'] ) ) {
 				$bools = array_merge_recursive( $bools, $class->getBools() );
 			}
 		}

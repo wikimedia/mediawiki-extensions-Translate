@@ -12,7 +12,7 @@
  * @file
  */
 
-require( dirname(__FILE__) . '/cli.inc' );
+require( dirname( __FILE__ ) . '/cli.inc' );
 
 $groups = MessageGroups::singleton()->getGroups();
 
@@ -35,7 +35,7 @@ foreach ( $postponed as $g ) {
 	checkAndAdd( $g, true );
 }
 
-wfMkdirParents( dirname(TRANSLATE_INDEXFILE) );
+wfMkdirParents( dirname( TRANSLATE_INDEXFILE ) );
 file_put_contents( TRANSLATE_INDEXFILE, serialize( $hugearray ) );
 
 function checkAndAdd( $g, $ignore = false ) {
@@ -55,13 +55,13 @@ function checkAndAdd( $g, $ignore = false ) {
 		# easier to do comparing when the case of first letter is unknown, because
 		# mediawiki forces it to upper case
 		$key = TranslateUtils::normaliseKey( $namespace, $key );
-		if ( isset($hugearray[$key]) ) {
+		if ( isset( $hugearray[$key] ) ) {
 			if ( !$ignore )
 				STDERR( "Key $key already belongs to $hugearray[$key], conflict with $id" );
 		} else {
 			$hugearray[$key] = &$id;
 		}
 	}
-	unset($id); // Disconnect the previous references to this $id
+	unset( $id ); // Disconnect the previous references to this $id
 
 }

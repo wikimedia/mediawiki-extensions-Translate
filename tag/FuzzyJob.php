@@ -22,7 +22,7 @@ class FuzzyJob extends Job {
 		$res = $dbr->select(
 			'page',
 			array( 'page_namespace', 'page_title' ),
-			array( 
+			array(
 				'page_namespace' => $prefix->getNamespace(),
 				"page_title LIKE '$likePattern'"
 			), __METHOD__ );
@@ -35,7 +35,7 @@ class FuzzyJob extends Job {
 			// Should not happen, but who knows
 			if ( !$title ) continue;
 
-			$jobs[] = new self( $title, array( 
+			$jobs[] = new self( $title, array(
 				'reason' => $reason,
 				'comment' => $comment ) );
 		}
@@ -52,7 +52,7 @@ class FuzzyJob extends Job {
 	function run() {
 		$targetRev = Revision::newFromTitle( $this->title );
 		if ( !$targetRev ) {
-			wfDebug( __METHOD__.": target page deleted, ignoring\n" );
+			wfDebug( __METHOD__ . ": target page deleted, ignoring\n" );
 			return true;
 		}
 		$text = $targetRev->getText();

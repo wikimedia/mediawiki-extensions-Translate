@@ -22,7 +22,7 @@ class TranslateTag {
 	// Deprecated, TODO: write a suitable factory functions for replacement
 	public static function getInstance() {
 		$obj = new self;
-		//$obj->reset();
+		// $obj->reset();
 		return $obj;
 	}
 
@@ -42,7 +42,7 @@ class TranslateTag {
 	/** Factory for creating a new instance from occurance */
 	public static function newFromTagContents( &$text, $code ) {
 		$obj = new self();
-		$obj->invocation = -1;
+		$obj->invocation = - 1;
 		$obj->title = null;
 		$obj->renderCode = $code;
 
@@ -122,7 +122,7 @@ class TranslateTag {
 
 			if ( $translation !== null ) {
 				$vars = $this->extractVariablesFromSection( $section );
-				foreach( $vars as $v ) {
+				foreach ( $vars as $v ) {
 					list( $search, $replace ) = $v;
 					$translation = str_replace( $search, $replace, $translation );
 				}
@@ -150,7 +150,7 @@ class TranslateTag {
 		$input = preg_replace( self::PATTERN_PLACEHOLDER, '', $input );
 		$input = preg_replace( self::METADATA, '', $input );
 
-		return trim($input);
+		return trim( $input );
 
 	}
 	
@@ -165,7 +165,7 @@ class TranslateTag {
 		foreach ( $matches as $match ) {
 			$id = $match['id']; // Default to provided id
 			// But if it isn't provided, autonumber them from one onwards
-			if ( $id === '' ) $id = count($vars) ? max(array_keys($vars)) + 1 : 1;
+			if ( $id === '' ) $id = count( $vars ) ? max( array_keys( $vars ) ) + 1 : 1;
 			// Index by id, for above to work.
 			// Store array or replace, replacement for easy replace afterwards
 			$vars[$id] = array( '$' . $id, $match['value'] );
@@ -205,11 +205,11 @@ class TranslateTag {
 	}
 
 	public function wrapAndClean( $class, $text ) {
-		$text = trim($text);
+		$text = trim( $text );
 
 		$tag = 'div';
 		$sep = "\n";
-		if ( strpos($text, "\n") === false && strpos($text, '==') === false ) {
+		if ( strpos( $text, "\n" ) === false && strpos( $text, '==' ) === false ) {
 			$tag = 'span';
 			$sep = '';
 		}
@@ -232,7 +232,7 @@ class TranslateTag {
 			$regex = "(?P<section>$header?$id$text?)$end";
 		} else {
 			$regex = "(?P<section>$header?$id?$text?)$end";
-			//$regex = $text;
+			// $regex = $text;
 		}
 
 		return "~$regex~u";
@@ -262,14 +262,14 @@ class TranslateTag {
 			$key = $match['id'];
 
 			$contents = preg_replace( self::PATTERN_COMMENT, "\n", $match['section'] );
-			$contents = trim($contents);
+			$contents = trim( $contents );
 			$key = $obj->getTranslationPage( $title, $key );
 			$obj->extractVariablesFromSection( $contents, 'holder' );
 			$defs[$key] = $contents;
 		}
 
 		$ns = $obj->getNamespace( $title );
-		$namespaces = array( $ns, $ns +1 );
+		$namespaces = array( $ns, $ns + 1 );
 
 		return $defs;
 		
@@ -350,7 +350,7 @@ class TranslateTag {
 		// diffs
 		$text = rtrim( $text );
 
-		if ( count($obj->changed) ) {
+		if ( count( $obj->changed ) ) {
 			// Register fuzzier
 			// We need to do it later, so that we know the revision number
 			global $wgHooks;
@@ -366,7 +366,7 @@ class TranslateTag {
 
 		// Add sections to unsectioned data
 		$cb = array( $this, 'saveCbSectionCb' );
-		$regex = $this->getSectionRegex(false);
+		$regex = $this->getSectionRegex( false );
 		$data = preg_replace_callback( $regex, $cb, $data );
 
 		// Add two newlines before metadata so that it wont be parsed as a part of
@@ -400,7 +400,7 @@ class TranslateTag {
 	 */
 	public function getSectionPages() {
 		$pages = array();
-		foreach ( array_keys($this->sections) as $key ) {
+		foreach ( array_keys( $this->sections ) as $key ) {
 			$pages[] = $this->getTranslationPage( $this->title, $key );
 		}
 		return $pages;
@@ -418,14 +418,14 @@ class TranslateTag {
 
 	public function saveCbSectionCb( array $matches ) {
 		// Have to do rematch, because this is stupid
-		preg_match( $this->getSectionRegex(false), $matches[0], $match );
+		preg_match( $this->getSectionRegex( false ), $matches[0], $match );
 		$section = $match['section'];
 
-		if ( trim($match[0]) === '' ) return $match[0];
+		if ( trim( $match[0] ) === '' ) return $match[0];
 
 		if ( $match['holder'] !== '' ) {
 			$key = $match['id'];
-			$newhash = self::hash($match['section']);
+			$newhash = self::hash( $match['section'] );
 			$oldhash = $this->sections[$key]['hash'];
 
 
@@ -449,11 +449,11 @@ class TranslateTag {
 			return $match[0];
 		}
 
-		if ( empty($this->sections) ) $key = 0;
-		else $key = max( array_keys($this->sections) );
+		if ( empty( $this->sections ) ) $key = 0;
+		else $key = max( array_keys( $this->sections ) );
 
 		$this->sections[++$key] = array(
-			'hash' => self::hash($section),
+			'hash' => self::hash( $section ),
 			'page' => TranslateUtils::snippet( $section, 30 ),
 			'invo' => $this->invocation,
 		);
@@ -470,7 +470,7 @@ class TranslateTag {
 	}
 
 	public static function hash( $contents ) {
-		return sha1( trim($contents) );
+		return sha1( trim( $contents ) );
 	}
 
 }

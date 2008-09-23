@@ -137,11 +137,11 @@ class TranslateTagHooks {
 		global $wgLang;
 
 		// Sort by translation percentage
-		arsort($status, SORT_NUMERIC);
+		arsort( $status, SORT_NUMERIC );
 
 		foreach ( $status as $code => $percent ) {
 			$name = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() );
-			$percent = $wgLang->formatNum( round( 100*$percent ) );
+			$percent = $wgLang->formatNum( round( 100 * $percent ) );
 			$label = "$name ($percent%)";
 
 			$_title = TranslateTagUtils::codefyTitle( $title, $code );
@@ -169,9 +169,9 @@ class TranslateTagHooks {
 		global $wgLang;
 
 		// Sort by language code
-		ksort($status);
+		ksort( $status );
 
-		//$lobj = $parser->getFunctionLang();
+		// $lobj = $parser->getFunctionLang();
 		$sk = $parser->mOptions->getSkin();
 		$legend = wfMsg( 'otherlanguages' );
 
@@ -214,7 +214,7 @@ FOO;
 	public static function onTemplate( $parser, &$title, &$skip, &$id  ) {
 		global $wgLang;
 		$type = TranslateTagUtils::T_SOURCE;
-		if( TranslateTagUtils::isTagPage( $title, $type ) ) {
+		if ( TranslateTagUtils::isTagPage( $title, $type ) ) {
 			$newtitle = TranslateTagUtils::codefyTitle( $title, $wgLang->getCode() );
 			if ( $newtitle->exists() ) $title = $newtitle;
 		}

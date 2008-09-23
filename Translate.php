@@ -1,5 +1,5 @@
 <?php
-if (!defined('MEDIAWIKI')) die();
+if ( !defined( 'MEDIAWIKI' ) ) die();
 /**
  * An extension to ease the translation of Mediawiki and other projects.
  *
@@ -23,7 +23,7 @@ $wgExtensionCredits['specialpage'][] = array(
 );
 
 // Setup class autoloads
-$dir = dirname(__FILE__) . '/';
+$dir = dirname( __FILE__ ) . '/';
 require_once( $dir . '_autoload.php' );
 
 $wgExtensionMessagesFiles['Translate'] = $dir . 'Translate.i18n.php';
@@ -191,8 +191,8 @@ $wgTranslateTagTranslationLocation = array(
 if ( $wgDebugComments ) {
 	require_once( "$dir/utils/MemProfile.php" );
 } else {
-	function wfMemIn() {}
-	function wfMemOut() {}
+	function wfMemIn() { }
+	function wfMemOut() { }
 }
 
 function efTranslateInit() {
@@ -205,6 +205,6 @@ function efTranslateInit() {
 
 function efTranslateInitTags( $parser ) {
 	// For nice language list in-page
-	$parser->setHook( 'languages', array('TranslateTagHooks', 'languages' ) );
+	$parser->setHook( 'languages', array( 'TranslateTagHooks', 'languages' ) );
 	return true;
 }

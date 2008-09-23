@@ -16,7 +16,7 @@ class TranslateTagUtils {
 
 		static $members = null;
 		if ( $members === null ) {
-			wfLoadExtensionMessages('Translate');
+			wfLoadExtensionMessages( 'Translate' );
 			$cat = Category::newFromName( wfMsgForContent( 'translate-tag-category' ) );
 			$members = $cat->getMembers();
 		}
@@ -35,9 +35,9 @@ class TranslateTagUtils {
 
 		$pos = strrpos( $dbkey, '/' );
 		if ( $pos !== false ) {
-			$code = substr( $dbkey, $pos+1 );
+			$code = substr( $dbkey, $pos + 1 );
 			$key = substr( $dbkey, 0, $pos );
-			if ( self::isValidCode($code) ) {
+			if ( self::isValidCode( $code ) ) {
 				return array( $key, $code );
 			}
 		}
@@ -47,7 +47,7 @@ class TranslateTagUtils {
 
 	public static function isValidCode( $code ) {
 		$codes = Language::getLanguageNames();
-		return isset($codes[$code]);
+		return isset( $codes[$code] );
 	}
 
 	/**
@@ -100,21 +100,21 @@ class TranslateTagUtils {
 		$namespace = $title->getNamespace();
 		$dbkey = $title->getDBkey();
 		$suflen = strlen( $code );
-		if ( $suflen ) $dbkey = substr( $dbkey, 0, -($suflen + 1) );
+		if ( $suflen ) $dbkey = substr( $dbkey, 0, - ( $suflen + 1 ) );
 		return Title::makeTitle( $namespace, $dbkey );
 	}
 
 	public static function getTranslationPercent( $pages, $code, $namespace ) {
 		$pages = self::mapAppend( $pages, "/$code" );
-		$n = count($pages);
-		$sectionSize = 1/$n;
+		$n = count( $pages );
+		$sectionSize = 1 / $n;
 		$total = 0;
 
 		$res = self::getPageContent( $namespace, $pages );
 		foreach ( $res as $_ ) {
 			$text = Revision::getRevisionText( $_ );
-			if ( strpos($text, TRANSLATE_FUZZY) !== false ) {
-				$total += $sectionSize/2;
+			if ( strpos( $text, TRANSLATE_FUZZY ) !== false ) {
+				$total += $sectionSize / 2;
 			} else {
 				$total += $sectionSize;
 			}
@@ -134,7 +134,7 @@ class TranslateTagUtils {
 		global $wgMemc;
 		$memcKey = wfMemcKey( 'translate', 'status', $title->getPrefixedText() );
 		$cache = $wgMemc->get( $memcKey );
-		if ( is_array($cache) ) return $cache;
+		if ( is_array( $cache ) ) return $cache;
 
 		// Fetch the available translation pages from database
 		$dbr = wfGetDB( DB_SLAVE );
@@ -173,7 +173,7 @@ class TranslateTagUtils {
 	}
 
 	public static function mapAppend( array $array, $suffix ) {
-		$function = create_function('$_', "return \$_ . '$suffix';" );
+		$function = create_function( '$_', "return \$_ . '$suffix';" );
 		return array_map( $function, $array );
 	}
 

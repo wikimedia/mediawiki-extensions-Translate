@@ -1,5 +1,5 @@
 <?php
-if (!defined('MEDIAWIKI')) die();
+if ( !defined( 'MEDIAWIKI' ) ) die();
 
 class TranslateToolbox {
 	/**
@@ -7,22 +7,22 @@ class TranslateToolbox {
 	 * available translations for a message. Only shown when it
 	 * actually is a translatable/translated message.
 	 */
-	static function toolboxAllTranslations(&$skin) {
+	static function toolboxAllTranslations( &$skin ) {
 		global $wgTitle;
 
 		$inMessageGroup = TranslateUtils::messageKeyToGroup( $wgTitle->getNamespace(), $wgTitle->getBaseText() );
 
-		if( $inMessageGroup ) {
+		if ( $inMessageGroup ) {
 			wfLoadExtensionMessages( 'Translate' );
 
 			// Add a slash at the end, to not have basename in the result of Special:Prefixindex
-			$prefix = $wgTitle->getNsText().":".$wgTitle->getBaseText()."/";
+			$prefix = $wgTitle->getNsText() . ":" . $wgTitle->getBaseText() . "/";
 			$desc = wfMsg( 'translate-sidebar-alltrans' );
-			$url = htmlspecialchars( SpecialPage::getTitleFor( 'Prefixindex' )->getLocalURL('from='.$prefix) );
+			$url = htmlspecialchars( SpecialPage::getTitleFor( 'Prefixindex' )->getLocalURL( 'from=' . $prefix ) );
 
 			// Add the actual toolbox entry.
 			// Add newlines and tabs for nicer HTML output.
-			echo("\n\t\t\t\t<li id=\"t-alltrans\"><a href=\"$url\">$desc</a></li>\n");
+			echo( "\n\t\t\t\t<li id=\"t-alltrans\"><a href=\"$url\">$desc</a></li>\n" );
 		}
 		return true;
 	}

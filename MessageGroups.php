@@ -35,9 +35,9 @@ abstract class MessageGroup {
 		if ( $this->problematic === null ) {
 			$this->problematic = array();
 			$file = TRANSLATE_CHECKFILE . '-' . $this->id;
-			if ( file_exists($file) ) {
-				$problematic = unserialize( file_get_contents($file) );
-				if ( isset($problematic[$code]) ) {
+			if ( file_exists( $file ) ) {
+				$problematic = unserialize( file_get_contents( $file ) );
+				if ( isset( $problematic[$code] ) ) {
 					$this->problematic = $problematic[$code];
 				}
 			}
@@ -109,8 +109,8 @@ abstract class MessageGroup {
 	 * @return Array of messages definitions indexed by key.
 	 */
 	public function getDefinitions() {
-		$defs = $this->load('en');
-		if ( !is_array($defs) ) {
+		$defs = $this->load( 'en' );
+		if ( !is_array( $defs ) ) {
 			throw new MWException( "Unable to load definitions for " . $this->getLabel() );
 		}
 		return $defs;
@@ -134,17 +134,17 @@ abstract class MessageGroup {
 	 * @return Stored translation or null.
 	 */
 	public function getMessage( $key, $code ) {
-		if( !isset( $this->messages[$code] ) ) {
-			$this->messages[$code] = self::normaliseKeys($this->load( $code ));
+		if ( !isset( $this->messages[$code] ) ) {
+			$this->messages[$code] = self::normaliseKeys( $this->load( $code ) );
 		}
 		$key = strtolower( str_replace( ' ', '_', $key ) );
 		return isset( $this->messages[$code][$key] ) ? $this->messages[$code][$key] : null;
 	}
 
 	public static function normaliseKeys( $array ) {
-		if ( !is_array($array) ) return null;
+		if ( !is_array( $array ) ) return null;
 		$new = array();
-		foreach( $array as $key => $v ) {
+		foreach ( $array as $key => $v ) {
 			$key = strtolower( str_replace( ' ', '_', $key ) );
 			$new[$key] = $v;
 		}
@@ -165,7 +165,7 @@ abstract class MessageGroup {
 	function fill( MessageCollection $messages ) {
 		$cache = $this->load( $messages->code );
 		foreach ( $messages->keys() as $key ) {
-			if ( isset($cache[$key]) ) {
+			if ( isset( $cache[$key] ) ) {
 				$messages[$key]->infile = $cache[$key];
 			}
 		}
@@ -208,13 +208,13 @@ abstract class MessageGroup {
 
 		$bools = $this->getBools();
 		foreach ( $bools['optional'] as $key ) {
-			if ( isset($collection[$key]) ) {
+			if ( isset( $collection[$key] ) ) {
 				$collection[$key]->optional = true;
 			}
 		}
 
 		foreach ( $bools['ignored'] as $key ) {
-			if ( isset($collection[$key]) ) {
+			if ( isset( $collection[$key] ) ) {
 				unset( $collection[$key] );
 			}
 		}
@@ -266,13 +266,13 @@ class CoreMessageGroup extends MessageGroup {
 	}
 
 	public function getUniqueDefinitions() {
-		if ($this->parentId) {
+		if ( $this->parentId ) {
 			$parent = MessageGroups::getGroup( $this->parentId );
 			$parentDefs = $parent->getDefinitions();
 			$ourDefs = $this->getDefinitions();
 
 			// Filter out shared messages
-			foreach ( array_keys($parentDefs) as $key ) {
+			foreach ( array_keys( $parentDefs ) as $key ) {
 				unset( $ourDefs[$key] );
 			}
 
@@ -372,7 +372,7 @@ class ExtensionMessageGroup extends MessageGroup {
 		if ( $cache === null ) {
 			throw new MWException( "Unable to load messages for $code in {$this->label}" );
 		}
-		if ( isset($cache[$code]) ) {
+		if ( isset( $cache[$code] ) ) {
 			return $cache[$code];
 		} else {
 			return null;
@@ -408,8 +408,8 @@ class AliasMessageGroup extends ExtensionMessageGroup {
 	function fill( MessageCollection $messages ) {
 		$cache = $this->load( $messages->code );
 		foreach ( $messages->keys() as $key ) {
-			if ( isset($cache[$key]) ) {
-				if ( is_array($cache[$key]) ) {
+			if ( isset( $cache[$key] ) ) {
+				if ( is_array( $cache[$key] ) ) {
 					$messages[$key]->infile = implode( ',', $cache[$key] );
 				} else {
 					$messages[$key]->infile = $cache[$key];
@@ -432,7 +432,7 @@ class AliasMessageGroup extends ExtensionMessageGroup {
 			list( $name, $values ) = array_map( 'trim', explode( '=', $line, 2 ) );
 			if ( $name === '' || $values === '' ) continue;
 
-			if ( isset($collection[$name]) ) {
+			if ( isset( $collection[$name] ) ) {
 				$collection[$name]->database = $values;
 			}
 		}
@@ -459,12 +459,12 @@ class CoreMostUsedMessageGroup extends CoreMessageGroup {
 	public function exportToFile( MessageCollection $messages, $authors ) { return 'Not supported'; }
 
 	function getDefinitions() {
-		$data = file_get_contents( dirname(__FILE__) . '/wikimedia-mostused.txt' );
+		$data = file_get_contents( dirname( __FILE__ ) . '/wikimedia-mostused.txt' );
 		$messages = explode( "\n", $data );
 		$contents = Language::getMessagesFor( 'en' );
 		$definitions = array();
 		foreach ( $messages as $key ) {
-			if ( isset($contents[$key]) ) {
+			if ( isset( $contents[$key] ) ) {
 				$definitions[$key] = $contents[$key];
 			}
 		}
@@ -495,7 +495,7 @@ class GettextMessageGroup extends MessageGroup {
 		if ( $code == 'en' ) {
 			return $this->getPotFile();
 		} else {
-			if ( isset($this->codeMap[$code]) ) {
+			if ( isset( $this->codeMap[$code] ) ) {
 				$code = $this->codeMap[$code];
 			}
 			return "$code.po";
@@ -587,7 +587,7 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 			throw new MWException( 'Invalid title' );
 		}
 		$this->title = $title;
-		$this->namespaces = array( $title->getNamespace(), $title->getNamespace() +1 );
+		$this->namespaces = array( $title->getNamespace(), $title->getNamespace() + 1 );
 		
 	}
 
@@ -627,7 +627,7 @@ class MessageGroups {
 		if ( $loaded ) return;
 
 		global $wgTranslateAddMWExtensionGroups;
-		if ($wgTranslateAddMWExtensionGroups) {
+		if ( $wgTranslateAddMWExtensionGroups ) {
 			$a = new PremadeMediawikiExtensionGroups;
 			$a->addAll();
 		}
@@ -646,7 +646,7 @@ class MessageGroups {
 		}
 
 		global $wgTranslateCC;
-		wfRunHooks('TranslatePostInitGroups', array( &$wgTranslateCC ) );
+		wfRunHooks( 'TranslatePostInitGroups', array( &$wgTranslateCC ) );
 		$loaded = true;
 	}
 
@@ -668,7 +668,7 @@ class MessageGroups {
 				} else {
 					return $wgTranslateCC[$id];
 				}
-			} elseif( strpos( $id, 'page|' ) === 0 ) {
+			} elseif ( strpos( $id, 'page|' ) === 0 ) {
 				list( , $title ) = explode( '|', $id, 2 );
 				return new WikiPageMessageGroup( $id, $title );
 			} else {

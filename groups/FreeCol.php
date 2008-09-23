@@ -163,7 +163,7 @@ class FreeColMessageGroup extends MessageGroup {
 		if ( $code == 'en' ) {
 			return 'FreeColMessages.properties';
 		} else {
-			if ( isset($this->codeMap[$code]) ) {
+			if ( isset( $this->codeMap[$code] ) ) {
 				$code = $this->codeMap[$code];
 			}
 			return "FreeColMessages_$code.properties";

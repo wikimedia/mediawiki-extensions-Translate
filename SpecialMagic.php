@@ -1,5 +1,5 @@
 <?php
-if (!defined('MEDIAWIKI')) die();
+if ( !defined( 'MEDIAWIKI' ) ) die();
 
 /**
  * This special page helps with the translations of MediaWiki features that are
@@ -35,7 +35,7 @@ class SpecialMagic extends SpecialPage {
 	 * @see SpecialPage::getDescription
 	 */
 	function getDescription() {
-		return wfMsg( self::MSG.'pagename' );
+		return wfMsg( self::MSG . 'pagename' );
 	}
 
 	/**
@@ -60,8 +60,8 @@ class SpecialMagic extends SpecialPage {
 			'</td><td>' .
 				$this->moduleSelector( $this->options['module'] ) .
 			'</td></tr><tr><td colspan="2">' .
-				Xml::submitButton( wfMsg( self::MSG.'submit' ) ) . ' ' .
-				Xml::submitButton( wfMsg('translate-magic-cm-export'), array( 'name' => 'export') ) .
+				Xml::submitButton( wfMsg( self::MSG . 'submit' ) ) . ' ' .
+				Xml::submitButton( wfMsg( 'translate-magic-cm-export' ), array( 'name' => 'export' ) ) .
 			'</td></tr></table>' .
 			Xml::hidden( 'title', $wgTitle->getPrefixedText() )
 			
@@ -77,7 +77,7 @@ class SpecialMagic extends SpecialPage {
 	 */
 	protected function moduleSelector( $selectedId ) {
 		$selector = new HTMLSelector( 'module', 'module', $selectedId );
-		foreach( $this->aModules as $code ) {
+		foreach ( $this->aModules as $code ) {
 			$selector->addOption( wfMsg( self::MSG . $code ), $code );
 		}
 		return $selector->getHTML();
@@ -99,11 +99,11 @@ class SpecialMagic extends SpecialPage {
 		// Temporary store possible values parsed from parameters
 		$options = $defaults;
 		foreach ( $options as $v => $t ) {
-			if ( is_bool($t) ) {
+			if ( is_bool( $t ) ) {
 				$r = $wgRequest->getBool( $v, $options[$v] );
-			} elseif( is_int($t) ) {
+			} elseif ( is_int( $t ) ) {
 				$r = $wgRequest->getInt( $v, $options[$v] );
-			} elseif( is_string($t) ) {
+			} elseif ( is_string( $t ) ) {
 				$r = $wgRequest->getText( $v, $options[$v] );
 			}
 			wfAppendToArrayIfNotDefault( $v, $r, $defaults, $nondefaults );
@@ -126,9 +126,9 @@ class SpecialMagic extends SpecialPage {
 		$this->setHeaders();
 
 		$wgOut->addHTML( $this->getForm() );
-		$wgOut->addWikitext( wfMsg(self::MSG.'help') );
+		$wgOut->addWikitext( wfMsg( self::MSG . 'help' ) );
 
-		if (!$this->options['module'] ) { return; }
+		if ( !$this->options['module'] ) { return; }
 		$o = null;
 		switch ( $this->options['module'] ) {
 			case 'alias':
@@ -211,7 +211,7 @@ abstract class ComplexMessages {
 	protected $init = false;
 	public function getGroups() {
 		if ( !$this->init ) {
-			foreach ( $this->data as &$group) {
+			foreach ( $this->data as &$group ) {
 				$this->getData( $group );
 			}
 			$this->init = true;
@@ -224,12 +224,12 @@ abstract class ComplexMessages {
 	public function cleanData( $defs, $current ) {
 		foreach ( $current as $item => $values ) {
 			if ( !$this->elementsInArray ) break;
-			if ( !isset($defs[$item]) ) {
-				unset($current[$item]);
+			if ( !isset( $defs[$item] ) ) {
+				unset( $current[$item] );
 				continue;
 			}
 			foreach ( $values as $index => $value )
-				if ( in_array($value, $defs[$item], true) ) unset($current[$item][$index]);
+				if ( in_array( $value, $defs[$item], true ) ) unset( $current[$item][$index] );
 		}
 		return $current;
 	}
@@ -302,7 +302,7 @@ abstract class ComplexMessages {
 	 */
 	protected function getIterator( $group ) {
 		$groups = $this->getGroups();
-		return array_keys($groups[$group]['data'][self::LANG_MASTER]);
+		return array_keys( $groups[$group]['data'][self::LANG_MASTER] );
 	}
 
 	protected function val( $group, $type, $key ) {
@@ -326,13 +326,13 @@ abstract class ComplexMessages {
 			$file = str_replace( '%CODE%', str_replace( '-', '_', ucfirst( $code ) ), $file );
 		}
 
-		${$group['var']} = array(); # Initialize
-		if ( file_exists($file) ) require( $file ); # Include
+		$ { $group['var'] } = array(); # Initialize
+		if ( file_exists( $file ) ) require( $file ); # Include
 
 		if ( $group['code'] ) {
-			$data = (array) @${$group['var']}[$code];
+			$data = (array) @$ { $group['var'] } [$code];
 		} else {
-			$data = ${$group['var']};
+			$data = $ { $group['var'] } ;
 		}
 
 		return self::arrayMapRecursive( 'strval', $data );
@@ -340,7 +340,7 @@ abstract class ComplexMessages {
 
 	public static function arrayMapRecursive( $callback, $data ) {
 		foreach ( $data as $index => $values ) {
-			if ( is_array($values) ) {
+			if ( is_array( $values ) ) {
 				$data[$index] = self::arrayMapRecursive( $callback, $values );
 			} else {
 				$data[$index] = call_user_func( $callback, $values );
@@ -360,9 +360,9 @@ abstract class ComplexMessages {
 	public function header( $title ) {
 		$colspan = array( 'colspan' => 3 );
 		$header = Xml::element( 'th', $colspan, $this->getTitle() . ' - ' . $title );
-		$subheading[] = '<th>' . wfMsgHtml('translate-magic-cm-original') . '</th>';
-		$subheading[] = '<th>' . wfMsgHtml('translate-magic-cm-current') . '</th>';
-		$subheading[] = '<th>' . wfMsgHtml('translate-magic-cm-to-be') . '</th>';
+		$subheading[] = '<th>' . wfMsgHtml( 'translate-magic-cm-original' ) . '</th>';
+		$subheading[] = '<th>' . wfMsgHtml( 'translate-magic-cm-current' ) . '</th>';
+		$subheading[] = '<th>' . wfMsgHtml( 'translate-magic-cm-to-be' ) . '</th>';
 		return '<tr>' . $header . '</tr>' .
 			'<tr>' . implode( "\n", $subheading )  . '</tr>';
 	}
@@ -377,24 +377,24 @@ abstract class ComplexMessages {
 
 		$s = Xml::openElement( 'table', $this->tableAttributes );
 
-		foreach ( array_keys($this->data) as $group ) {
+		foreach ( array_keys( $this->data ) as $group ) {
 			$s .= $this->header( $group );
 			
-			foreach ( $this->getIterator($group) as $key ) {
+			foreach ( $this->getIterator( $group ) as $key ) {
 				$rowContents = '';
 
-				$value = $this->val($group, self::LANG_MASTER, $key);
+				$value = $this->val( $group, self::LANG_MASTER, $key );
 				if ( $this->firstMagic ) array_shift( $value );
 				$value = array_map( 'htmlspecialchars', $value );
 				$rowContents .= '<td>' . $this->formatElement( $value ) . '</td>';
 
-				$value = $this->val($group, self::LANG_CHAIN, $key);
+				$value = $this->val( $group, self::LANG_CHAIN, $key );
 				if ( $this->firstMagic ) array_shift( $value );
 				$value = array_map( 'htmlspecialchars', $value );
 				$value = $this->highlight( $key, $value );
 				$rowContents .= '<td>' . $this->formatElement( $value ) . '</td>';
 
-				$value = $this->val($group, self::LANG_CURRENT, $key);
+				$value = $this->val( $group, self::LANG_CURRENT, $key );
 				$rowContents .= '<td>' . $this->editElement( $key, $this->formatElement( $value ) ) . '</td>';
 
 				$s .= '<tr>' . $rowContents . '</tr>';
@@ -416,17 +416,17 @@ abstract class ComplexMessages {
 
 	public function getButtons() {
 		return
-			Xml::inputLabel( wfMsg(self::MSG.'comment'), 'comment', 'sp-translate-magic-comment' ) .
-			Xml::submitButton( wfMsg(self::MSG.'save'), array( 'name' => 'savetodb' ) );
+			Xml::inputLabel( wfMsg( self::MSG . 'comment' ), 'comment', 'sp-translate-magic-comment' ) .
+			Xml::submitButton( wfMsg( self::MSG . 'save' ), array( 'name' => 'savetodb' ) );
 	}
 
 	public function formatElement( $element ) {
-		if (!count( $element ) ) return '';
-		if ( is_array($element) ) {
+		if ( !count( $element ) ) return '';
+		if ( is_array( $element ) ) {
 			$element = array_map( 'trim', $element );
 			$element = implode( ', ', $element );
 		}
-		return trim($element);
+		return trim( $element );
 	}
 
 	function getKeyForEdit( $key ) {
@@ -452,9 +452,9 @@ abstract class ComplexMessages {
 	function formatForSave( $request ) {
 		$text = '';
 		foreach ( array_keys( $this->data ) as $group ) {
-			foreach ( $this->getIterator($group) as $key ) {
+			foreach ( $this->getIterator( $group ) as $key ) {
 				$data = $request->getText( $this->getKeyForEdit( $key ) );
-				$data = implode(', ', array_map( 'trim', explode( ',', $data ) ) );
+				$data = implode( ', ', array_map( 'trim', explode( ',', $data ) ) );
 				if ( $data !== '' )
 					$text .= "$key = $data\n" ;
 			}
@@ -468,11 +468,11 @@ abstract class ComplexMessages {
 
 		$data = "# DO NOT EDIT THIS PAGE DIRECTLY! Use [[Special:Magic]].\n<pre>\n" . $this->formatForSave( $request ) . "\n</pre>";
 
-		$comment = $request->getText( 'comment', wfMsgForContent(self::MSG.'updatedusing'));
+		$comment = $request->getText( 'comment', wfMsgForContent( self::MSG . 'updatedusing' ) );
 		$success = $article->doEdit( $data, $comment, 0 );
 
 		if ( !$success ) {
-			throw new MWException( wfMsgHtml(self::MSG.'savefailed') );
+			throw new MWException( wfMsgHtml( self::MSG . 'savefailed' ) );
 		}
 
 		/* Reset outdated array */
@@ -506,13 +506,13 @@ abstract class ComplexMessages {
 			$out = '';
 
 			$indexKeys = array();
-			foreach ( array_keys($items[self::LANG_MASTER]) as $key ) {
-				$indexKeys[$key] = isset($this->constants[$key]) ? $this->constants[$key] : "'$key'";
+			foreach ( array_keys( $items[self::LANG_MASTER] ) as $key ) {
+				$indexKeys[$key] = isset( $this->constants[$key] ) ? $this->constants[$key] : "'$key'";
 			}
 
-			$padTo = max(array_map( 'strlen', $indexKeys )) +3;
+			$padTo = max( array_map( 'strlen', $indexKeys ) ) + 3;
 
-			foreach ( $this->getIterator($group) as $key ) {
+			foreach ( $this->getIterator( $group ) as $key ) {
 				$temp = "\t{$indexKeys[$key]}";
 
 				while ( strlen( $temp ) <= $padTo ) { $temp .= ' '; }
@@ -521,15 +521,15 @@ abstract class ComplexMessages {
 				if ( $this->firstMagic && !$data['code'] ) $from = self::LANG_CHAIN;
 
 				// Check for translations
-				$val = $this->val($group, self::LANG_CURRENT, $key );
+				$val = $this->val( $group, self::LANG_CURRENT, $key );
 				if ( !$val || !count( $val ) ) continue;
 
 				// Then get the data we really want
-				$val = $this->val($group, $from, $key );
+				$val = $this->val( $group, $from, $key );
 
 				$normalized = array_map( array( $this, 'normalize' ), $val );
 				if ( $this->elementsInArray ) {
-					$temp .= "=> array( ". implode( ', ', $normalized )." ),";
+					$temp .= "=> array( " . implode( ', ', $normalized ) . " ),";
 				} else {
 					$temp .= "=> " . implode( ', ', $normalized ) . ",";
 				}
@@ -551,10 +551,10 @@ abstract class ComplexMessages {
 	 */
 	protected function normalize( $data ) {
 		# Escape quotes
-		if ( !is_string($data) ) {
+		if ( !is_string( $data ) ) {
 			throw new MWException();
 		}
-		$data = preg_replace( "/(?<!\\\\)'/", "\'", trim($data));
+		$data = preg_replace( "/(?<!\\\\)'/", "\'", trim( $data ) );
 		return "'$data'";
 	}
 
@@ -577,17 +577,17 @@ class SpecialPageAliasesCM extends ComplexMessages {
 		parent::__construct( $code );
 		$this->data['Mediawiki Core'] = array(
 			'var' => 'specialPageAliases',
-			'file' => Language::getMessagesFileName('%CODE%'),
+			'file' => Language::getMessagesFileName( '%CODE%' ),
 			'code' => false,
 		);
 
 		global $wgTranslateExtensionDirectory;
 
-		if ( !file_exists(TRANSLATE_ALIASFILE) || !is_readable(TRANSLATE_ALIASFILE) )
+		if ( !file_exists( TRANSLATE_ALIASFILE ) || !is_readable( TRANSLATE_ALIASFILE ) )
 			return;
 
 		$defines = file_get_contents( TRANSLATE_ALIASFILE );
-		$sections = preg_split( "/\n\n/", $defines, -1, PREG_SPLIT_NO_EMPTY );
+		$sections = preg_split( "/\n\n/", $defines, - 1, PREG_SPLIT_NO_EMPTY );
 
 		foreach ( $sections as $section ) {
 			$lines = array_map( 'trim', preg_split( "/\n/", $section ) );
@@ -617,7 +617,7 @@ class SpecialPageAliasesCM extends ComplexMessages {
 	}
 
 	public function highlight( $key, $values ) {
-		if ( count($values) ) $values[0] = "<b>$values[0]</b>";
+		if ( count( $values ) ) $values[0] = "<b>$values[0]</b>";
 		return $values;
 	}
 
@@ -632,7 +632,7 @@ class SkinNamesCM extends ComplexMessages {
 		parent::__construct( $code );
 		$this->data['Mediawiki Core'] = array(
 			'var' => 'skinNames',
-			'file' => Language::getMessagesFileName('%CODE%'),
+			'file' => Language::getMessagesFileName( '%CODE%' ),
 			'code' => false,
 		);
 	}
@@ -648,13 +648,13 @@ class MagicWordsCM extends ComplexMessages {
 		parent::__construct( $code );
 		$this->data['Mediawiki Core'] = array(
 			'var' => 'magicWords',
-			'file' => Language::getMessagesFileName('%CODE%'),
+			'file' => Language::getMessagesFileName( '%CODE%' ),
 			'code' => false,
 		);
 	}
 
 	public function highlight( $key, $values ) {
-		if ( count($values) && $key === 'redirect' ) $values[0] = "<b>$values[0]</b>";
+		if ( count( $values ) && $key === 'redirect' ) $values[0] = "<b>$values[0]</b>";
 		return $values;
 	}
 
@@ -669,14 +669,14 @@ class NamespaceCM extends ComplexMessages {
 		parent::__construct( $code );
 		$this->data['Mediawiki Core'] = array(
 			'var' => 'namespaceNames',
-			'file' => Language::getMessagesFileName('%CODE%'),
+			'file' => Language::getMessagesFileName( '%CODE%' ),
 			'code' => false,
 		);
 	}
 
 	protected $constants = array(
-		-2 => 'NS_MEDIA',
-		-1 => 'NS_SPECIAL',
+		- 2 => 'NS_MEDIA',
+		- 1 => 'NS_SPECIAL',
 		 0 => 'NS_MAIN',
 		 1 => 'NS_TALK',
 		 2 => 'NS_USER',
