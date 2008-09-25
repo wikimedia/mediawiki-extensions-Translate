@@ -234,9 +234,9 @@ class WikiWriter {
 
 		$wgArticle = new Article( $wgTitle );
 
-		$success = $wgArticle->doEdit( $text, 'Updating translation from gettext import' );
+		$status = $wgArticle->doEdit( $text, 'Updating translation from gettext import' );
 
-		if ( $success ) {
+		if ( $status === true || ( is_object( $status ) && $status->isOK() ) ) {
 			STDOUT( "OK!", $title );
 		} else {
 			STDOUT( "Failed!", $title );

@@ -469,9 +469,9 @@ abstract class ComplexMessages {
 		$data = "# DO NOT EDIT THIS PAGE DIRECTLY! Use [[Special:Magic]].\n<pre>\n" . $this->formatForSave( $request ) . "\n</pre>";
 
 		$comment = $request->getText( 'comment', wfMsgForContent( self::MSG . 'updatedusing' ) );
-		$success = $article->doEdit( $data, $comment, 0 );
+		$status = $article->doEdit( $data, $comment, 0 );
 
-		if ( !$success ) {
+		if ( $status === false || ( is_object( $status ) && !$status->isOK() ) ) {
 			throw new MWException( wfMsgHtml( self::MSG . 'savefailed' ) );
 		}
 

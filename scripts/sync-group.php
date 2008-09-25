@@ -285,7 +285,8 @@ class ChangeSyncer {
 
 		$article = new Article( $title );
 		STDOUT( "Importing {$title->getPrefixedText()}: ", $title );
-		$success = $article->doEdit( $translation, $comment, $flags );
+		$status = $article->doEdit( $translation, $comment, $flags );
+		$success = $status === true || ( is_object( $status ) && $status->isOK() );
 		STDOUT( $success ? 'OK' : 'FAILED', $title );
 
 		$wgUser = $old;

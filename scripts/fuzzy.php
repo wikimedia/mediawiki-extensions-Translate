@@ -156,9 +156,9 @@ class FuzzyBot {
 
 		$comment = $this->comment ? $this->comment : 'Marking as fuzzy';
 
-		$success = $wgArticle->doEdit( TRANSLATE_FUZZY . $text, $comment, EDIT_FORCE_BOT );
+		$status = $wgArticle->doEdit( TRANSLATE_FUZZY . $text, $comment, EDIT_FORCE_BOT );
 
-		if ( $success ) {
+		if ( $status === true || ( is_object( $status ) && $status->isOK() ) ) {
 			STDOUT( "OK!", false );
 		} else {
 			STDOUT( "Failed!", false );
