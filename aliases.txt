@@ -73,9 +73,6 @@ file = DataTransfer/languages/DT_Aliases.php
 Delete batch
 file = DeleteBatch/DeleteBatch.alias.php
 
-Deleted contributions
-file = DeletedContributions/DeletedContributions.i18n.alias.php
-
 Delete queue
 file = DeleteQueue/DeleteQueue.alias.php
 
