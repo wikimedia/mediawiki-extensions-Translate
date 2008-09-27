@@ -174,6 +174,7 @@ You can [$1 edit the source page] or [$2 update the translation].',
  * @author Lejonel
  * @author Meno25
  * @author Nike
+ * @author Purodha
  * @author SPQRobin
  * @author Siebrand
  * @author Toliño
@@ -181,6 +182,7 @@ You can [$1 edit the source page] or [$2 update the translation].',
  */
 $messages['qqq'] = array(
 	'translate' => 'Part of the "Translate" extension. This message is the page title of the special page [[Special:Translate]]. It is the verb "to translate" and should be in the infinitive mood.',
+	'translate-desc' => 'Short description of the Translate extension, shown in [[Special:Version]]. Do not translate or change links.',
 	'translate-edit' => '{{Identical|Edit}}',
 	'translate-talk' => '{{Identical|Talk}}',
 	'translate-history' => '{{Identical|History}}',
@@ -1944,10 +1946,20 @@ $messages['es'] = array(
 	'translate-edit-goto-next' => 'Editar el mensaje posterior',
 	'translate-edit-goto-list' => 'Volver a la lista',
 	'translate-magic-pagename' => 'Traducción extendida de MediaWiki',
+	'translate-magic-help' => 'Puedes traducir los nombres de las páginas especiales, las palabras mágicas, los nombres de pieles y los de los espacios de nombre
+
+Los nombres de las páginas especiales y las palabras mágicas pueden tener varias traducciones, que se separan por comas (,). 
+los nombres de pieles y espacios de nombre sólo pueden tener una traducción
+
+En las traducciones de espacios de nombre <tt>$1 talk</tt> es especial. <tt>$1</tt> se reemplaza por el nombre del sitio (por ejemplo <tt>{{SITENAME}} talk</tt>). Si en tu idioma no es posible formar una expresión válidad sin cambiar el nombre del sitio, contacta con un desarrollador, por favor.
+
+Para guardar los cambios debes pertenecer al grupo de traductores
+Los cambios no se salvan hasta que no pulses el boton de guardar de abajo.',
 	'translate-magic-cm-export' => 'Exportar',
 	'translate-magic-cm-current' => 'Actual',
 	'translate-magic-cm-original' => 'Original',
 	'translate-magic-cm-save' => 'Guardar',
+	'translate-magic-special' => 'Nombres de páginas especiales',
 	'translationchanges-export' => 'exportar',
 	'translate-checks-parameters' => '{{PLURAL:$2|El siguiente parámetro no se está|Los siguientes parámetros no se están}} usando:
 <strong><nowiki>$1</nowiki></strong>',
@@ -4274,6 +4286,7 @@ $messages['ko'] = array(
 	'translate-edit-goto-prev' => '이전 메시지 수정',
 	'translate-edit-goto-next' => '다음 메시지 수정',
 	'translate-edit-goto-list' => '목록으로 돌아가기',
+	'translate-sidebar-alltrans' => '다른 번역',
 );
 
 /** Kinaray-a (Kinaray-a)
