@@ -4289,6 +4289,15 @@ $messages['ko'] = array(
 	'translate-sidebar-alltrans' => '다른 번역',
 );
 
+/** Krio (Krio)
+ * @author Jose77
+ */
+$messages['kri'] = array(
+	'translate-edit' => 'chenj',
+	'translate-history' => 'istri',
+	'translate-page-edit' => 'chenj',
+);
+
 /** Kinaray-a (Kinaray-a)
  * @author Jose77
  */
