@@ -318,6 +318,7 @@ Go To Category
 
 Group Permissions Manager
 descmsg = grouppermissions-desc
+optional = grouppermissions-display
 
 HTMLets
 
