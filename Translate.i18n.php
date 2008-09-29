@@ -4689,6 +4689,7 @@ $messages['lv'] = array(
 );
 
 /** Macedonian (Македонски)
+ * @author Brest
  * @author Brest2008
  */
 $messages['mk'] = array(
@@ -4776,6 +4777,8 @@ If it is not possible in your language to form valid expression without changing
 	'translate-checks-parameters' => '{{PLURAL:$2|Следниов параметар не се користи|Следниве параметри се користат}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Следниов параметар е непознат|Следниве параметри се непознати}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-balance' => 'Непарен број на загради, {{PLURAL:$2|заграда|загради}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-rc-translation-filter' => 'Филтрирање на преводи:',
 	'translate-rc-translation-filter-no' => 'Не прави ништо',
