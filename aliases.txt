@@ -43,6 +43,9 @@ file = Cite/SpecialCite.i18n.alias.php
 Close Wikis
 file = CloseWikis/CloseWikis.alias.php
 
+Code review
+file = CodeReview/CodeReview.alias.php
+
 Collection
 file = Collection/Collection.alias.php
 
