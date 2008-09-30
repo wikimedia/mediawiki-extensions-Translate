@@ -129,6 +129,8 @@ Clean Changes
 Close Wikis
 optional = closewikis-closed
 
+Code Review
+
 Collection
 descmsg = coll-desc
 
