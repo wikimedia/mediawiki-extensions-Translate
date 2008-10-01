@@ -112,7 +112,7 @@ Changes are not saved until you click save button below.',
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => 'Following {{PLURAL:$2|parameter is|parameters are}} unknown:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-balance'            => 'There is uneven amount of {{PLURAL:$2|parentheses|parentheses}}:
+	'translate-checks-balance'            => 'There is an uneven amount of {{PLURAL:$2|parentheses|parentheses}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links'              => 'Following {{PLURAL:$2|link is|$2 links are}} problematic:
 <strong><nowiki>$1</nowiki></strong>',
