@@ -443,6 +443,7 @@ class AllFlaggedRevsExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-flaggedrevs-stablepages',
 		'ext-flaggedrevs-stableversions',
 		'ext-flaggedrevs-unreviewedpages',
+		'ext-flaggedrevs-unstablepages',
 		'ext-flaggedrevs-validationstatistics',
 	);
 

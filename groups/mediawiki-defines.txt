@@ -281,6 +281,10 @@ Flagged Revisions - Unreviewed Pages
 id = ext-flaggedrevs-unreviewedpages
 file = FlaggedRevs/language/UnreviewedPages.i18n.php
 
+Flagged Revisions - Unstable Pages
+id = ext-flaggedrevs-unstablepages
+file = FlaggedRevs/language/UnstablePages.i18n.php
+
 Flagged Revisions - Validation Statistics
 id = ext-flaggedrevs-validationstatistics
 file = FlaggedRevs/language/ValidationStatistics.i18n.php
