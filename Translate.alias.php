@@ -86,6 +86,11 @@ $aliases['dsb'] = array(
 	'TranslationChanges' => array( 'Změny pśełoženja' ),
 );
 
+/** Persian (فارسی) */
+$aliases['fa'] = array(
+	'Translate' => array( 'ترجمه' ),
+);
+
 /** Finnish (Suomi)
  * @author Nike
  */
