@@ -130,6 +130,7 @@ Close Wikis
 optional = closewikis-closed
 
 Code Review
+descmsg = code-desc
 
 Collection
 descmsg = coll-desc
