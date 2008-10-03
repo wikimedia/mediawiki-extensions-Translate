@@ -153,6 +153,7 @@ class FreeColMessageGroup extends MessageGroup {
 		'shipName.3.0', 'model.nation.spanish.region.mountain.1', 'model.nation.spanish.region.mountain.2',
 		'model.nation.spanish.region.mountain.3', 'model.nation.spanish.region.mountain.4', 'model.nation.spanish.region.mountain.5',
 		'model.nation.spanish.region.river.3', 'model.nation.spanish.region.river.4', 'model.nation.spanish.region.river.5',
+		'model.region.default',
 	);
 
 	protected $ignored = array(
