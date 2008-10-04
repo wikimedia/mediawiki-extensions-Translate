@@ -369,7 +369,6 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-usernameblacklist',
 		'ext-checkuser', // sysop or higher only
 		'ext-globalblocking',
-		'ext-nuke',
 		'ext-oversight',
 		'ext-renameuser',
 		'ext-assertedit', // bots

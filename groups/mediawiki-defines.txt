@@ -455,9 +455,6 @@ descmsg = newusernotif-desc
 
 No Move Userpages
 
-Nuke
-file = Nuke/SpecialNuke.i18n.php
-
 OAI-PMH repository
 id = ext-oai
 file = OAI/OAIRepo.i18n.php
