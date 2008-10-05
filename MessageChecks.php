@@ -310,10 +310,12 @@ class MessageChecks {
 	 * @return True if namespace has been tampered with.
 	 */
 	protected function checkFreeColMissingVars( TMessage $message, $code, &$desc = null ) {
-		if ( !preg_match_all( '/%[^% ]+%/U', $message->definition, $defVars ) ) {
+		$varPattern = '%[a-zA-Z_]+%';
+
+		if ( !preg_match_all( "/$varPattern/U", $message->definition, $defVars ) ) {
 			return false;
 		}
-		preg_match_all( '/%[^% ]+%/U', $message->translation, $transVars );
+		preg_match_all( "/$varPattern/U", $message->translation, $transVars );
 
 		$missing = self::compareArrays( $defVars[0], $transVars[0] );
 
@@ -336,8 +338,10 @@ class MessageChecks {
 	 * @return True if namespace has been tampered with.
 	 */
 	protected function checkFreeColExtraVars( TMessage $message, $code, &$desc = null ) {
-		preg_match_all( '/%[^% ]+%/U', $message->definition, $defVars );
-		preg_match_all( '/%[^% ]+%/U', $message->translation, $transVars );
+		$varPattern = '%[a-zA-Z_]+%';
+
+		preg_match_all( "/$varPattern/U", $message->definition, $defVars );
+		preg_match_all( "/$varPattern/U", $message->translation, $transVars );
 
 		$missing = self::compareArrays( $transVars[0], $defVars[0] );
 
