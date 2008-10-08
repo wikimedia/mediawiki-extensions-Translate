@@ -116,7 +116,7 @@ class SpecialMagic extends SpecialPage {
 
 	/**
 	 * The special page running code
-	 * GLOBALS: $wgWebRequest, $wgOut, $wgUser, $wgLang
+	 * GLOBALS: $wgRequest, $wgOut, $wgUser, $wgLang
 	 */
 	public function execute( $parameters ) {
 		global $wgUser, $wgOut, $wgRequest, $wgLang;
