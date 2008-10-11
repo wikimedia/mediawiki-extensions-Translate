@@ -196,6 +196,10 @@ Did You Mean
 
 Discussion Threading
 
+Dismissable SiteNotice
+descmsg = sitenotice-desc
+ignored = sitenotice_id
+
 Double Wiki
 
 DPL Forum
