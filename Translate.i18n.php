@@ -247,6 +247,8 @@ $messages['krl'] = array(
 $messages['mhr'] = array(
 	'translate-talk' => 'каҥашымаш',
 	'translate-history' => 'историй',
+	'translate-next' => 'Вес лаштык',
+	'translate-prev' => 'Ончычсо лаштык',
 	'translate-magic-cm-save' => 'Аралаш',
 	'tog-translate-nonewsletter' => 'Увер бюллетеньым электрон почто дене мылам колташ огыл (ушнышо-влаклан тергыме электрон почто адресышт дене гына)',
 );
