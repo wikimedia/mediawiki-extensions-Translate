@@ -1350,6 +1350,7 @@ $messages['cu'] = array(
  */
 $messages['cy'] = array(
 	'translate-edit' => 'golygu',
+	'translate-page-edit' => 'golygu',
 );
 
 /** Danish (Dansk)
@@ -1627,7 +1628,7 @@ Musyš w kupce pśełožowarjow byś, aby mogł změny cyniś. Změny se njeskł
 	'translate-tag-legend-fallback' => 'Pśełožk do drugeje rěcy',
 	'translate-tag-legend-fuzzy' => 'Zestarjety pśełožk',
 	'translate-tag-fuzzy-comment' => 'Definicija wót [[User:$1|$1]] we wersiji $2 změnjona.',
-	'translate-tag-fuzzy-reason' => 'Definicija wót "$1" z komentarom w $2 změnjona.',
+	'translate-tag-fuzzy-reason' => 'Definicija wót "$1" z komentarom "$3" w $2 změnjona.',
 	'translate-sidebar-alltrans' => 'Druge pśełožki',
 );
 
@@ -2116,6 +2117,7 @@ $messages['fa'] = array(
 /** Finnish (Suomi)
  * @author Crt
  * @author Nike
+ * @author Silvonen
  */
 $messages['fi'] = array(
 	'translate' => 'Käännä',
@@ -2126,6 +2128,7 @@ $messages['fi'] = array(
 	'translate-task-view' => 'nähdä kaikki viestit',
 	'translate-task-untranslated' => 'nähdä kaikki kääntämättömät viestit',
 	'translate-task-optional' => 'nähdä valinnaiset viestit',
+	'translate-task-problematic' => 'nähdä viestit, joissa on ongelmia',
 	'translate-task-review' => 'tarkistaa muutokset',
 	'translate-task-reviewall' => 'tarkistaa kaikki käännökset',
 	'translate-task-export' => 'viedä käännökset',
@@ -2182,6 +2185,8 @@ $messages['fi'] = array(
 	'translate-rc-translation-filter-filter' => 'piilota käännökset',
 	'translate-rc-translation-filter-site' => 'vain muutokset sivuston viesteihin',
 	'translate-stats-edits' => 'Muokkauksia',
+	'translate-statsf-width' => 'Leveys pikseleinä',
+	'translate-statsf-height' => 'Korkeus pikseleinä',
 );
 
 /** French (Français)
