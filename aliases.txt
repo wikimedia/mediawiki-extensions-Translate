@@ -151,6 +151,9 @@ file = NewestPages/NewestPages.alias.php
 News channel
 file = NewsChannel/NewsChannel.alias.php
 
+Nuke
+file = Nuke/SpecialNuke.alias.php
+
 Oversight
 file = Oversight/HideRevision.alias.php
 
