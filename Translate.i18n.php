@@ -942,6 +942,7 @@ $messages['bg'] = array(
 	'translate-magic-cm-save' => 'Съхранение',
 	'translate-magic-cm-updatedusing' => 'Обновено чрез [[Special:Magic]]',
 	'translate-magic-cm-savefailed' => 'Съхраняването беше неуспешно',
+	'translate-magic-special' => 'Имена на специални страници',
 	'translate-magic-words' => 'Вълшебни думички',
 	'translate-magic-skin' => 'Имена на облици',
 	'translate-magic-namespace' => 'Имена на именни пространства',
@@ -1404,7 +1405,7 @@ $messages['de'] = array(
 	'translate-submit' => 'Hole',
 	'translate-page-navigation-legend' => 'Navigation',
 	'translate-page-showing' => 'Systemnachrichten $1 bis $2 von insgesamt $3',
-	'translate-page-showing-all' => '$1 {{PLURAL:$1|Systemnachricht|Systemnachrichten}}.',
+	'translate-page-showing-all' => '$1 {{PLURAL:$1|Systemnachricht|Systemnachrichten}}',
 	'translate-page-showing-none' => 'Keine Systemnachrichten zur Anzeige vorhanden.',
 	'translate-next' => 'nächste Seite',
 	'translate-prev' => 'vorherige Seite',
@@ -2167,6 +2168,7 @@ $messages['fi'] = array(
 	'translate-edit-goto-next' => 'Muokkaa seuraavaa viestiä',
 	'translate-edit-goto-list' => 'Takaisin listaan',
 	'translate-magic-pagename' => 'Laajennettu MediaWikin kääntäminen',
+	'translate-magic-submit' => 'Hae',
 	'translate-magic-cm-export' => 'Vie',
 	'translate-magic-cm-current' => 'Nykyinen',
 	'translate-magic-cm-original' => 'Alkuperäinen',
@@ -2187,6 +2189,7 @@ $messages['fi'] = array(
 	'translate-stats-edits' => 'Muokkauksia',
 	'translate-statsf-width' => 'Leveys pikseleinä',
 	'translate-statsf-height' => 'Korkeus pikseleinä',
+	'translate-tag-translate-link-desc' => 'Käännä tämä sivu',
 );
 
 /** French (Français)
@@ -5037,6 +5040,7 @@ $messages['myv'] = array(
 	'translate-prev' => 'Седе икелень лопась',
 	'translate-page-description-legend' => 'Куродо кить-мезть',
 	'translate-page-edit' => 'витнемензэ-петнемензэ',
+	'translate-ignored' => '(менстязь)',
 	'translate-edit-contribute' => 'эсеть путовкс путомс',
 	'translate-edit-in-other-languages' => 'Пачтямнэсь лия кельсэ',
 	'translate-edit-goto-no-prev' => 'Седе икелень пачтямнэ арась',
@@ -5065,6 +5069,10 @@ $messages['myv'] = array(
 	'translate-statsf-count-users' => 'Зяро ютавтыцятнеде',
 	'translate-statsf-submit' => 'Васнянь неевтезэ',
 	'translate-tag-page-desc' => '"[[:$1]]" вики лопась ютавтозь.',
+	'translate-tag-translate-link-desc' => 'Йутавтык те лопанть',
+	'translate-tag-legend-fallback' => 'Лия кельс йутавтома',
+	'translate-tag-legend-fuzzy' => 'Таштомозь йутавтома',
+	'translate-sidebar-alltrans' => 'Лия йутавтомат',
 );
 
 /** Nahuatl (Nāhuatl)
