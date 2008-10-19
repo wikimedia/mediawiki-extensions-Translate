@@ -2636,6 +2636,7 @@ $messages['haw'] = array(
 /** Hebrew (עברית)
  * @author Agbad
  * @author Rotemliss
+ * @author YaronSh
  */
 $messages['he'] = array(
 	'translate' => 'תרגום',
@@ -2653,6 +2654,9 @@ $messages['he'] = array(
 	'translate-task-export-to-file' => 'ייצוא תרגומים לקובץ מתוך',
 	'translate-task-export-as-po' => 'ייצוא תרגומים בפורמט Gettext',
 	'translate-task-export-to-xliff' => 'ייצוא תרגומים בפורמט Xliff',
+	'translate-page-no-such-language' => 'השפה שצויינה שגויה.',
+	'translate-page-no-such-task' => 'המשימה שצויינה שגויה.',
+	'translate-page-no-such-group' => 'הקבוצה שצויינה שגויה.',
 	'translate-page-disabled' => "התרגומים לשפה זו בקבוצה זו בוטלו מהסיבה הבאה:
 
 '''$1'''",
@@ -2667,11 +2671,13 @@ $messages['he'] = array(
 	'translate-page-showing' => 'הצגת הודעות מ־$1 עד $2 מתוך $3.',
 	'translate-page-showing-all' => 'הצגת {{PLURAL:$1|הודעה אחת|$1 הודעות}}.',
 	'translate-page-showing-none' => 'אין הודעות להצגה.',
+	'translate-page-paging-links' => '[ $1 ] [ $2 ]',
 	'translate-next' => 'לדף הבא',
 	'translate-prev' => 'לדף הקודם',
 	'translate-page-description-legend' => 'מידע על הקבוצה',
 	'translate-page-edit' => 'עריכה',
 	'translate-optional' => '(אופציונאלי)',
+	'translate-ignored' => '(בהתעלמות)',
 	'translate-edit-definition' => 'הגדרת ההודעה',
 	'translate-edit-contribute' => 'תרומה',
 	'translate-edit-no-information' => "'''להודעה זו אין תיעוד.
@@ -2681,7 +2687,7 @@ $messages['he'] = array(
 	'translate-edit-committed' => 'התרגום הנוכחי בתוכנה',
 	'translate-edit-warnings' => 'אזהרות על תרגומים חלקיים',
 	'translate-edit-goto-no-prev' => 'אין הודעה קודמת',
-	'translate-edit-goto-no-next' => 'אין הודעה באה',
+	'translate-edit-goto-no-next' => 'אין הודעה לאחר זו',
 	'translate-edit-goto-prev' => 'עריכת ההודעה הקודמת',
 	'translate-edit-goto-next' => 'עריכת ההודעה הבאה',
 	'translate-edit-goto-list' => 'חזרה לרשימה',
@@ -2697,13 +2703,16 @@ $messages['he'] = array(
 
 עליכם להיות בקבוצת המתרגמים כדי לשמור שינויים.
 השינויים לא יישמרו עד שתלחצו על כפתור השמירה שלמטה.',
+	'translate-magic-module' => 'מודול:',
 	'translate-magic-submit' => 'הצגה',
 	'translate-magic-cm-export' => 'ייצוא',
 	'translate-magic-cm-to-be' => 'עתידיים',
 	'translate-magic-cm-current' => 'נוכחיים',
-	'translate-magic-cm-original' => 'מקורי',
+	'translate-magic-cm-original' => 'מקוריים',
 	'translate-magic-cm-comment' => 'סיבה:',
 	'translate-magic-cm-save' => 'שמירה',
+	'translate-magic-cm-updatedusing' => 'עודכן באמצעות [[Special:Magic]]',
+	'translate-magic-cm-savefailed' => 'השמירה נכשלה',
 	'translate-magic-special' => 'שמות דפים מיוחדים',
 	'translate-magic-words' => 'מילות קסם',
 	'translate-magic-skin' => 'שמות רקעים',
@@ -2711,6 +2720,7 @@ $messages['he'] = array(
 	'translationchanges' => 'שינויים בתרגום',
 	'translationchanges-export' => 'ייצוא',
 	'translationchanges-change' => '$1: $2 על ידי $3',
+	'translate-checks-plural' => 'ההגדרה משתמשת ב־<nowiki>{{PLURAL:}}</nowiki> אך התרגום לא.',
 	'translate-checks-pagename' => 'מרחבי שם ששונו מהגדרתם',
 	'tog-translate-nonewsletter' => 'אל תשלחו אלי הודעות בדואר האלקטרוני (רלוונטי רק למשתמשים עם כתובת דואר אלקטרוני מאושרת)',
 	'right-translate' => 'עריכה באמצעות ממשק התרגום',
@@ -2736,10 +2746,17 @@ $messages['he'] = array(
 	'translate-statsf-language' => 'רשימת קודי שפה (מופרדים בפסיק)',
 	'translate-statsf-group' => 'רשימת קודי קבוצות (מופרדים בפסיק)',
 	'translate-statsf-submit' => 'תצוגה מקדימה',
+	'translate-tag-category' => 'דפים הניתנים לתירגום',
 	'translate-tag-page-desc' => 'תרגום של דף הוויקי [[:$1]].',
 	'translate-tag-translate-link-desc' => 'תרגום דף זה',
-	'translate-tag-legend-fallback' => 'התרגום בשפות אחרות',
+	'translate-tag-legend' => 'מקרא:',
+	'translate-tag-legend-fallback' => 'התרגום בשפה אחרת',
+	'translate-tag-legend-fuzzy' => 'תרגום לא עדכני',
+	'translate-tag-fuzzy-comment' => 'ההגדרה שונתה בידי [[User:$1|$1]] במהדורה $2.',
+	'translate-tag-fuzzy-reason' => 'ההגדרה שונתה על ידי "$1" עם ההערה "$3" תחת $2.',
 	'translate-sidebar-alltrans' => 'תרגומים אחרים',
+	'translate-tag-noedit' => 'עמוד זה הינו עמוד תרגום המתעדכן אוטומטית.
+תוכל [$1 לערוך את דף המקור] או [$2 לעדכן את התרגום].',
 );
 
 /** Hindi (हिन्दी)
