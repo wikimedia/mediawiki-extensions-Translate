@@ -241,18 +241,6 @@ $messages['krl'] = array(
 	'translate-page-navigation-legend' => 'Valličy',
 );
 
-/** Eastern Mari (Олык Марий)
- * @author Сай
- */
-$messages['mhr'] = array(
-	'translate-talk' => 'каҥашымаш',
-	'translate-history' => 'историй',
-	'translate-next' => 'Вес лаштык',
-	'translate-prev' => 'Ончычсо лаштык',
-	'translate-magic-cm-save' => 'Аралаш',
-	'tog-translate-nonewsletter' => 'Увер бюллетеньым электрон почто дене мылам колташ огыл (ушнышо-влаклан тергыме электрон почто адресышт дене гына)',
-);
-
 /** Niuean (ko e vagahau Niuē)
  * @author Jose77
  */
@@ -1612,6 +1600,8 @@ Musyš w kupce pśełožowarjow byś, aby mogł změny cyniś. Změny se njeskł
 	'translationstats' => 'Statistika pśełožkow',
 	'translate-stats-edits' => 'Změny na źeń',
 	'translate-stats-users' => 'Pśełožowarje',
+	'translate-statsf-intro' => 'Z toś tym formularom móžoš napóraś jadnoru statistiku, Wše gódnoty maju  górjejcnu a dołojcnu granicu.',
+	'translate-statsf-options' => 'Opcije grafa',
 	'translate-statsf-width' => 'Šyrokosć w pikselach',
 	'translate-statsf-height' => 'Wusokosć w pikselach',
 	'translate-statsf-days' => 'Cas w dnjach',
@@ -1621,6 +1611,8 @@ Musyš w kupce pśełožowarjow byś, aby mogł změny cyniś. Změny se njeskł
 	'translate-statsf-count' => 'Měra',
 	'translate-statsf-count-edits' => 'Licba změnow',
 	'translate-statsf-count-users' => 'Aktiwne pśełožowarje',
+	'translate-statsf-language' => 'Lisćina rěcnych kodow wótźělonych pśez komu',
+	'translate-statsf-group' => 'Lisćina kupkowych kodow wótźělonych pśez komu',
 	'translate-statsf-submit' => 'Pśeglěd',
 	'translate-tag-category' => 'Pśełožujobne boki',
 	'translate-tag-page-desc' => 'Pśełožk wikijowego boka [[:$1]].',
@@ -1631,6 +1623,8 @@ Musyš w kupce pśełožowarjow byś, aby mogł změny cyniś. Změny se njeskł
 	'translate-tag-fuzzy-comment' => 'Definicija wót [[User:$1|$1]] we wersiji $2 změnjona.',
 	'translate-tag-fuzzy-reason' => 'Definicija wót "$1" z komentarom "$3" w $2 změnjona.',
 	'translate-sidebar-alltrans' => 'Druge pśełožki',
+	'translate-tag-noedit' => 'Toś ten bok jo awtomatiski zaktualizěrowany pśełožkowy bok.
+Móžoš [$1 žrědłowy bok wobźěłaś] abo [$2 pśełožk aktualizěrowaś].',
 );
 
 /** Greek (Ελληνικά)
@@ -1959,6 +1953,8 @@ En las traducciones de espacios de nombre <tt>$1 talk</tt> es especial. <tt>$1</
 
 Para guardar los cambios debes pertenecer al grupo de traductores
 Los cambios no se salvan hasta que no pulses el boton de guardar de abajo.',
+	'translate-magic-module' => 'Módulo:',
+	'translate-magic-submit' => 'Buscar',
 	'translate-magic-cm-export' => 'Exportar',
 	'translate-magic-cm-current' => 'Actual',
 	'translate-magic-cm-original' => 'Original',
@@ -3864,6 +3860,13 @@ $messages['kaa'] = array(
 	'right-translate' => "Awdarma interfeysi ja'rdeminde o'zgertiw",
 );
 
+/** Kongo (Kongo)
+ * @author Rkupsala
+ */
+$messages['kg'] = array(
+	'translate-talk' => 'disolo',
+);
+
 /** Kazakh (Arabic script) (‫قازاقشا (تٴوتە)‬)
  * @author AlefZet
  */
@@ -4590,6 +4593,7 @@ Dir kënnt [$1 d'Original Säit änneren] oder [$2 d'Iwwersetzung aktualiséiere
 
 /** Limburgish (Limburgs)
  * @author Ooswesthoesbes
+ * @author Pahles
  */
 $messages['li'] = array(
 	'translate' => 'Vertale',
@@ -4597,22 +4601,22 @@ $messages['li'] = array(
 	'translate-talk' => 'euverlèk',
 	'translate-history' => 'gesjiedenis',
 	'translate-task-view' => 'Laot alle berichter zeen van',
-	'translate-task-untranslated' => 'Laot alle ónvertäölde berichter zeen van',
+	'translate-task-untranslated' => 'Laot alle onvertaolde berichte zeen van',
 	'translate-task-optional' => 'optioneel berich bekieke',
-	'translate-task-review' => 'verangeringe keterlieëre',
-	'translate-task-reviewall' => 'alle vertalinge keterlieëre',
-	'translate-task-export' => 'vertalinge exportieëre',
-	'translate-task-export-to-file' => 'vertalinge nao bestandj exportieëre',
-	'translate-task-export-as-po' => 'vertalinge nao Gettext-formaat exportieëre',
+	'translate-task-review' => 'verangeringe kontrolere',
+	'translate-task-reviewall' => 'alle vertalinge kontrolere',
+	'translate-task-export' => 'vertaolinge exportere',
+	'translate-task-export-to-file' => 'vertaolinge nao bestand exportere',
+	'translate-task-export-as-po' => 'vertaolinge nao Gettext-formaat exportere',
 	'translate-page-task' => 'Ich wil',
 	'translate-page-group' => 'Groep',
 	'translate-page-language' => 'Taal',
 	'translate-page-limit' => 'Maximaal',
 	'translate-submit' => 'Ophaole',
 	'translate-next' => 'Volgende pazjena',
-	'translate-prev' => 'Vörge pazjena',
+	'translate-prev' => 'Veurige pazjena',
 	'translate-optional' => '(optioneel)',
-	'translationchanges-export' => 'exportieëre',
+	'translationchanges-export' => 'exportere',
 );
 
 /** Lao (ລາວ)
@@ -4696,6 +4700,18 @@ Jūs turite priklausyti vertėjų grupei, kad galėtumėte išsaugoti pakeitimus
 $messages['lv'] = array(
 	'translate-next' => 'Nākamā lapa',
 	'translate-prev' => 'Iepriekšējā lapa',
+);
+
+/** Eastern Mari (Олык Марий)
+ * @author Сай
+ */
+$messages['mhr'] = array(
+	'translate-talk' => 'каҥашымаш',
+	'translate-history' => 'историй',
+	'translate-next' => 'Вес лаштык',
+	'translate-prev' => 'Ончычсо лаштык',
+	'translate-magic-cm-save' => 'Аралаш',
+	'tog-translate-nonewsletter' => 'Увер бюллетеньым электрон почто дене мылам колташ огыл (ушнышо-влаклан тергыме электрон почто адресышт дене гына)',
 );
 
 /** Macedonian (Македонски)
