@@ -15,6 +15,7 @@ descmsg = ajax-se-desc
 Anti Bot
 
 Anti Spoof
+ignored = antispoof-conflict-item
 
 APC
 file = APC/ViewAPC.i18n.php
