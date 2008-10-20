@@ -89,6 +89,9 @@ $aliases['dsb'] = array(
 /** Persian (فارسی) */
 $aliases['fa'] = array(
 	'Translate' => array( 'ترجمه' ),
+	'Magic' => array( 'ترجمه_پیشرفته' ),
+	'TranslationChanges' => array( 'تغییرات_ترجمه' ),
+	'TranslationStats' => array( 'آمار_ترجمه' ),
 );
 
 /** Finnish (Suomi)
@@ -229,6 +232,13 @@ $aliases['no'] = array(
 	'Magic' => array( 'Avansert oversettelse', 'Avansert oversetting', 'Magi' ),
 	'TranslationChanges' => array( 'Oversettelsesendringer', 'Oversettingsendringer' ),
 	'TranslationStats' => array( 'Oversettelsesstatistikk' ),
+);
+
+/** Occitan (Occitan) */
+$aliases['oc'] = array(
+	'Translate' => array( 'Traduire', 'Tradusir' ),
+	'Magic' => array( 'Traduccion avançada', 'Traduccionavançada', 'Traduccion avancada', 'Traduccionavancada' ),
+	'TranslationChanges' => array( 'Modificacions de las traduccions', 'Modificacionsdelastraduccions' ),
 );
 
 /** Pashto (پښتو) */
