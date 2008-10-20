@@ -133,6 +133,9 @@ file = Invitations/Invitations.i18n.alias.php
 Liquid threads
 file = LiquidThreads/Lqt.alias.php
 
+Log entry
+file = LogEntry/LogEntry.alias.php
+
 Lookup user
 file = LookupUser/LookupUser.alias.php
 

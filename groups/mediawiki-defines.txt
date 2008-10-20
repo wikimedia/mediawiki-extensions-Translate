@@ -385,6 +385,9 @@ descmsg = lqt-desc
 optional = lqt_rc_ellipsis
 ignored = lqt_header_warning_before_big
 
+Log Entry
+descmsg = logentry-parserhook-desc
+
 Lookup User
 
 Lua
