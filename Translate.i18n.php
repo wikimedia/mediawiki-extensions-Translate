@@ -2671,7 +2671,6 @@ $messages['he'] = array(
 	'translate-page-showing' => 'הצגת הודעות מ־$1 עד $2 מתוך $3.',
 	'translate-page-showing-all' => 'הצגת {{PLURAL:$1|הודעה אחת|$1 הודעות}}.',
 	'translate-page-showing-none' => 'אין הודעות להצגה.',
-	'translate-page-paging-links' => '[ $1 ] [ $2 ]',
 	'translate-next' => 'לדף הבא',
 	'translate-prev' => 'לדף הקודם',
 	'translate-page-description-legend' => 'מידע על הקבוצה',
