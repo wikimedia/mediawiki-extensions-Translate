@@ -267,6 +267,12 @@ $messages['af'] = array(
 	'translate-task-problematic' => 'boodskappe met probleme bekyk',
 	'translate-task-review' => 'Hersien wysigings aan',
 	'translate-task-reviewall' => 'Hersien alle vertalings in',
+	'translate-page-no-such-language' => 'Gespesifiseerde taal is ongeldig.',
+	'translate-page-no-such-task' => 'Die gevraagde funksie bestaan nie.',
+	'translate-page-no-such-group' => 'Die gevraagde groep bestaan nie.',
+	'translate-page-disabled' => "Vertalings in die taal vir hierdie groep is gedeaktiveer. Rede:
+
+''$1''",
 	'translate-page-settings-legend' => 'Verstellings',
 	'translate-page-task' => 'Ek wil',
 	'translate-page-group' => 'Groep',
@@ -286,6 +292,8 @@ $messages['af'] = array(
 	'translate-ignored' => '(geïgnoreer)',
 	'translate-edit-definition' => 'Boodskap definisie',
 	'translate-edit-contribute' => 'wysig',
+	'translate-edit-no-information' => "''Die boodskap het geen dokumentasie nie.''
+''As u weet waar die boodskap gebruik word, kan u ander gebruikers help deur dokumentasie by te voeg.''",
 	'translate-edit-information' => 'Inligting oor hierdie boodskap ($1)',
 	'translate-edit-in-other-languages' => 'Boodskap in andere tale',
 	'translate-edit-committed' => 'Huidige vertaling in sagteware',
@@ -295,23 +303,48 @@ $messages['af'] = array(
 	'translate-edit-goto-prev' => 'Wysig vorige boodskap',
 	'translate-edit-goto-next' => 'Wysig volgende boodkap',
 	'translate-edit-goto-list' => 'Terug na die lys',
+	'translate-magic-pagename' => 'Uitgebreide MediaWiki-vertaling',
 	'translate-magic-module' => 'Module:',
 	'translate-magic-submit' => 'Gaan haal',
 	'translate-magic-cm-export' => 'Eksporteer',
+	'translate-magic-cm-to-be' => 'Toekomstig',
 	'translate-magic-cm-current' => 'Huidig',
 	'translate-magic-cm-original' => 'Oorspronklik',
 	'translate-magic-cm-comment' => 'Samevatting:',
 	'translate-magic-cm-save' => 'Stoor',
 	'translate-magic-cm-updatedusing' => 'Opgedateer deur [[Special:Magic]] te gebruik',
-	'translate-magic-namespace' => 'Naamruimtenamen',
+	'translate-magic-cm-savefailed' => 'Stoor het gefaal',
+	'translate-magic-special' => 'Alternatiewe spesiale bladsye',
+	'translate-magic-words' => 'Magiese woorde',
+	'translate-magic-skin' => 'Omslagname',
+	'translate-magic-namespace' => 'Naamruimtename',
 	'translationchanges' => 'Vertaling wysigings',
 	'translationchanges-export' => 'eksporteer',
+	'translationchanges-change' => '$1: $2 deur $3',
+	'right-translate' => 'Wysig via die vertaalkoppelvlak',
 	'translate-rc-translation-filter-no' => 'Doen niks nie',
+	'translationstats' => 'Vertaalstatistieke',
 	'translate-stats-edits' => 'Wysigings per dag:',
+	'translate-stats-users' => 'Vertalers',
+	'translate-statsf-options' => 'Grafiekopsies',
+	'translate-statsf-width' => 'Breedte in pixels',
+	'translate-statsf-height' => 'Hoogte in pixels',
+	'translate-statsf-days' => 'Periode in dae',
+	'translate-statsf-scale' => 'Granulariteit',
 	'translate-statsf-scale-days' => 'Dae',
 	'translate-statsf-scale-hours' => 'Ure',
+	'translate-statsf-count' => 'Eenheid',
+	'translate-statsf-count-edits' => 'Aantal wysigings',
+	'translate-statsf-count-users' => 'Aktiewe vertalers',
+	'translate-statsf-group' => 'Kommageskeide lys van groepkodes',
 	'translate-statsf-submit' => 'Voorskou',
+	'translate-tag-category' => 'Vertaalbare bladsye',
+	'translate-tag-page-desc' => 'Vertaling van die wikibladsy [[:$1]].',
 	'translate-tag-translate-link-desc' => 'Vertaal die bladsy',
+	'translate-tag-legend-fallback' => "Vertaling in 'n ander taal",
+	'translate-tag-legend-fuzzy' => 'Verouderde vertaling',
+	'translate-tag-fuzzy-comment' => 'Definisie gewysig deur [[User:$1|$1]] in weergawe $2.',
+	'translate-tag-fuzzy-reason' => 'Definisie gewysig deur "$1" met opmerking "$3" in $2.',
 	'translate-sidebar-alltrans' => 'Ander vertalings',
 );
 
@@ -2164,6 +2197,7 @@ $messages['fi'] = array(
 	'translate-edit-goto-next' => 'Muokkaa seuraavaa viestiä',
 	'translate-edit-goto-list' => 'Takaisin listaan',
 	'translate-magic-pagename' => 'Laajennettu MediaWikin kääntäminen',
+	'translate-magic-module' => 'Moduuli:',
 	'translate-magic-submit' => 'Hae',
 	'translate-magic-cm-export' => 'Vie',
 	'translate-magic-cm-current' => 'Nykyinen',
@@ -2185,7 +2219,11 @@ $messages['fi'] = array(
 	'translate-stats-edits' => 'Muokkauksia',
 	'translate-statsf-width' => 'Leveys pikseleinä',
 	'translate-statsf-height' => 'Korkeus pikseleinä',
+	'translate-statsf-submit' => 'Esikatselu',
 	'translate-tag-translate-link-desc' => 'Käännä tämä sivu',
+	'translate-tag-legend-fuzzy' => 'Vanhentunut käännös',
+	'translate-tag-noedit' => 'Tämä sivu on automaattisesti päivittyvä käännössivu.
+Voit [$1 muokata lähdesivua] tai [$2 päivittää käännöksen].',
 );
 
 /** French (Français)
@@ -2654,9 +2692,9 @@ $messages['he'] = array(
 	'translate-task-export-to-file' => 'ייצוא תרגומים לקובץ מתוך',
 	'translate-task-export-as-po' => 'ייצוא תרגומים בפורמט Gettext',
 	'translate-task-export-to-xliff' => 'ייצוא תרגומים בפורמט Xliff',
-	'translate-page-no-such-language' => 'השפה שצויינה שגויה.',
-	'translate-page-no-such-task' => 'המשימה שצויינה שגויה.',
-	'translate-page-no-such-group' => 'הקבוצה שצויינה שגויה.',
+	'translate-page-no-such-language' => 'השפה שצוינה שגויה.',
+	'translate-page-no-such-task' => 'המשימה שצוינה שגויה.',
+	'translate-page-no-such-group' => 'הקבוצה שצוינה שגויה.',
 	'translate-page-disabled' => "התרגומים לשפה זו בקבוצה זו בוטלו מהסיבה הבאה:
 
 '''$1'''",
@@ -2676,7 +2714,7 @@ $messages['he'] = array(
 	'translate-page-description-legend' => 'מידע על הקבוצה',
 	'translate-page-edit' => 'עריכה',
 	'translate-optional' => '(אופציונאלי)',
-	'translate-ignored' => '(בהתעלמות)',
+	'translate-ignored' => '(לא לתרגום)',
 	'translate-edit-definition' => 'הגדרת ההודעה',
 	'translate-edit-contribute' => 'תרומה',
 	'translate-edit-no-information' => "'''להודעה זו אין תיעוד.
@@ -2702,7 +2740,7 @@ $messages['he'] = array(
 
 עליכם להיות בקבוצת המתרגמים כדי לשמור שינויים.
 השינויים לא יישמרו עד שתלחצו על כפתור השמירה שלמטה.',
-	'translate-magic-module' => 'מודול:',
+	'translate-magic-module' => 'מידע לתרגום:',
 	'translate-magic-submit' => 'הצגה',
 	'translate-magic-cm-export' => 'ייצוא',
 	'translate-magic-cm-to-be' => 'עתידיים',
@@ -2719,7 +2757,7 @@ $messages['he'] = array(
 	'translationchanges' => 'שינויים בתרגום',
 	'translationchanges-export' => 'ייצוא',
 	'translationchanges-change' => '$1: $2 על ידי $3',
-	'translate-checks-plural' => 'ההגדרה משתמשת ב־<nowiki>{{PLURAL:}}</nowiki> אך התרגום לא.',
+	'translate-checks-plural' => 'ההגדרה משתמשת ב־<nowiki>{{PLURAL:}}</nowiki>, אך התרגום אינו משתמש בו.',
 	'translate-checks-pagename' => 'מרחבי שם ששונו מהגדרתם',
 	'tog-translate-nonewsletter' => 'אל תשלחו אלי הודעות בדואר האלקטרוני (רלוונטי רק למשתמשים עם כתובת דואר אלקטרוני מאושרת)',
 	'right-translate' => 'עריכה באמצעות ממשק התרגום',
@@ -2751,11 +2789,11 @@ $messages['he'] = array(
 	'translate-tag-legend' => 'מקרא:',
 	'translate-tag-legend-fallback' => 'התרגום בשפה אחרת',
 	'translate-tag-legend-fuzzy' => 'תרגום לא עדכני',
-	'translate-tag-fuzzy-comment' => 'ההגדרה שונתה בידי [[User:$1|$1]] במהדורה $2.',
-	'translate-tag-fuzzy-reason' => 'ההגדרה שונתה על ידי "$1" עם ההערה "$3" תחת $2.',
+	'translate-tag-fuzzy-comment' => 'ההגדרה שונתה בידי [[User:$1|$1]] בגרסה $2.',
+	'translate-tag-fuzzy-reason' => 'ההגדרה שונתה על ידי "$1" עם תקציר העריכה "$3" ב־$2.',
 	'translate-sidebar-alltrans' => 'תרגומים אחרים',
-	'translate-tag-noedit' => 'עמוד זה הינו עמוד תרגום המתעדכן אוטומטית.
-תוכל [$1 לערוך את דף המקור] או [$2 לעדכן את התרגום].',
+	'translate-tag-noedit' => 'דף זה הינו דף תרגום המתעדכן אוטומטית.
+ניתן [$1 לערוך את דף המקור] או [$2 לעדכן את התרגום].',
 );
 
 /** Hindi (हिन्दी)
@@ -5651,13 +5689,10 @@ $messages['pl'] = array(
 	'translate-magic-pagename' => 'Rozszerzone tłumaczenie MediaWiki',
 	'translate-magic-help' => 'Możliwe jest tłumaczenie aliasów stron specjalnych, magicznych słów, nazw motywów i nazw poszczególnych przestrzeni.
 
-Do magicznych słów należy dołączyć wersje angielskie, gdyż w przeciwnym razie przestaną one działać.
-Pierwszy wpis należy pozostawić w takim stanie, w jakim on występuje (0 lub 1).
-
 Aliasy stron specjalnych i magiczne słowa mogą mieć wiele tłumaczeń, które oddziela się przecinkiem (,).
 Nazwy motywów i przestrzeni mogą mieć tylko po jednym tłumaczeniu.
 
-Podczas tłumaczenia nazw specjalne znaczenie ma zapis <tt>Dyskusja $1</tt>, gdzie <tt>$1</tt> zamieniane jest w nazwę serwisu – na przykład <tt>Dyskusja {{SITENAME}}</tt>.
+Podczas tłumaczenia nazw przestrzeni specjalne znaczenie ma zapis <tt>Dyskusja $1</tt>, gdzie <tt>$1</tt> zamieniane jest w nazwę serwisu – na przykład <tt>Dyskusja {{SITENAME}}</tt>.
 Jeśli w danym języku niemożliwe jest sformułowanie prawidłowego wpisu bez zmiany nazwy serwisu, należy skontaktować się z deweloperem.
 
 Zapisanie zmian jest możliwe tylko dla członków grupy tłumaczy.
@@ -6857,11 +6892,8 @@ $messages['uk'] = array(
 	'translate-magic-pagename' => 'Поглиблений переклад MediaWiki',
 	'translate-magic-help' => "Ви можете перекладати псевдоніми спеціальних сторінок, магічні слова, назви тем оформлення і просторів назв.
 
-Для магічних слів треба включати англомовні версії, інакше магічні слова не працюватимуть.
-Також не змінюйте перші елементи (0 чи 1).
-
 Псевдоніми спеціальних сторінок і магічні слова можуть мати декілька варіантів перекладу, які розділяються комою (,).
-Назви тем оформлення та простори назв мажуть мати тільки один переклад.
+Назви тем оформлення та простори назв можуть мати тільки один переклад.
 
 У перекладах просторів назв рядок <tt>Обговорення $1</tt> обробляється по-особливому. <tt>$1</tt> буде замінено на назву сайта (наприклад <tt>Обговорення {{SITENAME}}</tt>). Зв'яжіться з розробниками, якщо подібна граматична конструкція невірна для вашої мови.
 
@@ -6900,7 +6932,32 @@ $messages['uk'] = array(
 	'translate-rc-translation-filter-only' => 'Показати тільки переклади',
 	'translate-rc-translation-filter-filter' => 'Без перекладів',
 	'translate-rc-translation-filter-site' => 'Повідомлення сайта',
+	'translationstats' => 'Статистика перекладів',
 	'translate-stats-edits' => 'Редагувань за день',
+	'translate-stats-users' => 'Перекладачі',
+	'translate-statsf-intro' => 'Ця форма допоможе вам створити зручний графік. Для всіх значень можна задати верхню і нижню межі.',
+	'translate-statsf-options' => 'Параметри графіка',
+	'translate-statsf-width' => 'Ширина в пікселях',
+	'translate-statsf-height' => 'Висота в пікселях',
+	'translate-statsf-days' => 'Час у днях',
+	'translate-statsf-scale-days' => 'Дні',
+	'translate-statsf-scale-hours' => 'Години',
+	'translate-statsf-count-edits' => 'Кількість редагувань',
+	'translate-statsf-count-users' => 'Активні перекладачі',
+	'translate-statsf-language' => 'Список кодів мови, розділених комами',
+	'translate-statsf-group' => 'Список кодів групи мов, розділених комами',
+	'translate-statsf-submit' => 'Перегляд',
+	'translate-tag-category' => 'Сторінки, що можуть бути перекладені',
+	'translate-tag-page-desc' => 'Переклад сторінки [[:$1]].',
+	'translate-tag-translate-link-desc' => 'Перекласти цю сторінку',
+	'translate-tag-legend' => 'Легенда:',
+	'translate-tag-legend-fallback' => 'Переклад на іншу мову',
+	'translate-tag-legend-fuzzy' => 'Застарілий переклад',
+	'translate-tag-fuzzy-comment' => 'Змінено у версії $2 користувачем [[User:$1|$1]].',
+	'translate-tag-fuzzy-reason' => 'Змінено у версії $2 користувачем $1 з коментарем «$3».',
+	'translate-sidebar-alltrans' => 'Інші переклади',
+	'translate-tag-noedit' => 'Це автоматично оновлювана сторінка з перекладом.
+Ви можете [$1 відредагувати початкову сторінку] або [$2 оновити переклад].',
 );
 
 /** Vèneto (Vèneto)
