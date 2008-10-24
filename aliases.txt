@@ -79,6 +79,9 @@ file = DeleteBatch/DeleteBatch.alias.php
 Delete queue
 file = DeleteQueue/DeleteQueue.alias.php
 
+Drafts
+file = Drafts/Drafts.alias.php
+
 Edit count
 file = Editcount/SpecialEditcount.alias.php
 
