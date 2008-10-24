@@ -206,6 +206,8 @@ Double Wiki
 DPL Forum
 file = DPLforum/DPLforum.i18n.php
 
+Drafts
+
 Duplicator
 
 Edit Count
