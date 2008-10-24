@@ -343,6 +343,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-gadgets',
 		'ext-fixedimage',
 		'ext-centralauth',
+		'ext-collection', // wikibooks
 		'ext-charinsert', // limited UI use (Special:Version and errors in usage mostly)
 		'ext-syntaxhighlightgeshi',
 		'ext-timeline',
@@ -374,6 +375,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-renameuser',
 		'ext-assertedit', // bots
 		'ext-centralnotice', // used rarely
+		'ext-codereview', // only on mediawiki.org
 		'ext-parserdifftest', // used rarely (still needed?)
 		'ext-boardvote', // used rarely
 	);
