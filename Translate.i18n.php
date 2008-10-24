@@ -101,7 +101,7 @@ Changes are not saved until you click save button below.',
 
 	'translate-magic-special'   => 'Special page aliases',
 	'translate-magic-words'     => 'Magic words',
-	'translate-magic-skin'      => 'Skins name',
+	'translate-magic-skin'      => 'Skin names',
 	'translate-magic-namespace' => 'Namespace names',
 
 	'translationchanges'        => 'Translation changes',
