@@ -133,6 +133,13 @@ $aliases['hr'] = array(
 	'Translate' => array( 'Prevedi' ),
 );
 
+/** Upper Sorbian (Hornjoserbsce) */
+$aliases['hsb'] = array(
+	'Translate' => array( 'Přełožić' ),
+	'Magic' => array( 'Rozšěrjene přełožowanje', 'Magiske' ),
+	'TranslationStats' => array( 'Statistika přełožkow' ),
+);
+
 /** Haitian (Kreyòl ayisyen) */
 $aliases['ht'] = array(
 	'Translate' => array( 'Tradi' ),
