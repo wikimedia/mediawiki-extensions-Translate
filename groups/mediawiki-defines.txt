@@ -463,6 +463,8 @@ descmsg = newusernotif-desc
 
 No Move Userpages
 
+Nss MySQL Auth
+
 Nuke
 file = Nuke/SpecialNuke.i18n.php
 

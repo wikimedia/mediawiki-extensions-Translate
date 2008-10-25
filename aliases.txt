@@ -157,6 +157,9 @@ file = NewestPages/NewestPages.alias.php
 News channel
 file = NewsChannel/NewsChannel.alias.php
 
+Nss MySQL authentication
+file = NssMySQLAuth/NssMySQLAuth.alias.php
+
 Nuke
 file = Nuke/SpecialNuke.alias.php
 
