@@ -208,6 +208,9 @@ file = SemanticForms/languages/SF_Aliases.php
 Semantic MediaWiki
 file = SemanticMediaWiki/languages/SMW_Aliases.php
 
+Shared user rights
+file = SharedUserRights/SharedUserRights.alias.php
+
 Show processlist
 file = ShowProcesslist/ShowProcesslist.alias.php
 
