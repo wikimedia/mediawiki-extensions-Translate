@@ -464,6 +464,7 @@ descmsg = newusernotif-desc
 No Move Userpages
 
 Nss MySQL Auth
+descmsg = nss-desc
 
 Nuke
 file = Nuke/SpecialNuke.i18n.php
@@ -601,6 +602,7 @@ optional = smw_rss_link, smw_decseparator, smw_kiloseparator
 optional = smw_rss_description, smw_browse_more, specialpages-group-smw_group
 
 Shared User Rights
+descmsg = gblrights-desc
 
 Show Processlist
 
