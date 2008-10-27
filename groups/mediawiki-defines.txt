@@ -184,6 +184,8 @@ file = Crosswiki/Block/CrosswikiBlock.i18n.php
 
 Crowd Authentication
 
+CSS
+
 Data Transfer
 file = DataTransfer/languages/DT_Messages.php
 descmsg = dt-desc
