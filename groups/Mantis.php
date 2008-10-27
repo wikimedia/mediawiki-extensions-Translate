@@ -35,6 +35,7 @@ class MantisMessageGroup extends MessageGroup {
 		'lv' => 'latvian',
 		'nl' => 'dutch',
 		'no' => 'norwegian',
+		'oc' => 'occitan',
 		'pl' => 'polish',
 		'pt' => 'portuguese_standard',
 		'pt-br' => 'portuguese_brazil',
