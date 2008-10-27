@@ -669,6 +669,8 @@ descmsg = spl3_desc
 
 Stale Pages
 
+String Functions
+
 Syntax Highlight GeSHi
 file = SyntaxHighlight_GeSHi/SyntaxHighlight_GeSHi.i18n.php
 descmsg = syntaxhighlight-desc
