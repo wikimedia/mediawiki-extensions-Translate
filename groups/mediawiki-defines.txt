@@ -355,7 +355,6 @@ file = ImportUsers/SpecialImportUsers.i18n.php
 IM Status
 
 Input Box
-file = Inputbox/InputBox.i18n.php
 
 Inspect Cache
 
