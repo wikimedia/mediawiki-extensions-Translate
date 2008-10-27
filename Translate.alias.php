@@ -176,6 +176,7 @@ $aliases['ksh'] = array(
 	'Translate' => array( 'Övversäze' ),
 	'Magic' => array( 'Extras', 'Extras Översäze', 'ExtrasÖversäze' ),
 	'TranslationChanges' => array( 'Översaz', 'Översaz Änderonge', 'ÖversazÄnderonge' ),
+	'TranslationStats' => array( 'Statistik vun fun de Övversäzung', 'Övversäzungszahle', 'Statistik vun fun de Övversäzong', 'Övversäzongszahle' ),
 );
 
 /** Luxembourgish (Lëtzebuergesch) */
@@ -189,7 +190,7 @@ $aliases['lb'] = array(
 /** Malay (Bahasa Melayu) */
 $aliases['ms'] = array(
 	'Translate' => array( 'Terjemah' ),
-	'TranslationChanges' => array( 'Perubahan_terjemahan' ),
+	'TranslationChanges' => array( 'Perubahan terjemahan' ),
 );
 
 /** Maltese (Malti) */
