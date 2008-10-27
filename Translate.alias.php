@@ -187,6 +187,13 @@ $aliases['lb'] = array(
 	'TranslationStats' => array( 'Iwwersetzungsstatistiken' ),
 );
 
+/** Macedonian (Македонски) */
+$aliases['mk'] = array(
+	'Translate' => array( 'Преведување' ),
+	'Magic' => array( 'НапредноПреведување' ),
+	'TranslationStats' => array( 'СтатистикиЗаПреведување' ),
+);
+
 /** Malay (Bahasa Melayu) */
 $aliases['ms'] = array(
 	'Translate' => array( 'Terjemah' ),
