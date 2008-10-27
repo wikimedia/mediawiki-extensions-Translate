@@ -40,6 +40,7 @@ optional = babel-4-n-female, babel-5-n-female, babel-N-n-female, babel-0-male
 optional = babel-1-male, babel-2-male, babel-3-male, babel-4-male, babel-5-male
 optional = babel-N-male, babel-0-n-male, babel-1-n-male, babel-2-n-male
 optional = babel-3-n-male, babel-4-n-male, babel-5-n-male, babel-N-n-male
+optional = babel-autocreate-user
 
 Back and Forth
 file = BackAndForth/BackAndForth.i18n.php
