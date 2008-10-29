@@ -252,12 +252,11 @@ class AllWikiaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-multiupload',
 		'ext-parserdifftest',
 		'ext-parserfunctions',
-		'ext-poem',
 		'ext-randomimage',
 		'ext-spamblacklist',
+		'ext-stringfunctions',
 		'ext-timeline',
 		'ext-torblock',
-		'ext-universaleditbutton',
 		'ext-wikihiero',
 	);
 
@@ -349,8 +348,6 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-timeline',
 		'ext-wikihiero',
 		'ext-oai',
-		'ext-poem',
-		'ext-universaleditbutton',
 		'ext-newusermessage',
 		'ext-doublewiki',
 		'ext-intersection',

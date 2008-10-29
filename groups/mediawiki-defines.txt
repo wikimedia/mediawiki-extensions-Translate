@@ -463,8 +463,6 @@ New User Notification
 file = NewUserNotif/NewUserNotif.i18n.php
 descmsg = newusernotif-desc
 
-No Move Userpages
-
 Nss MySQL Auth
 descmsg = nss-desc
 
@@ -519,8 +517,6 @@ Player
 ignored = player-pagetext, player-imagepage-header
 
 PNG Handler
-
-Poem
 
 Post Comment
 file = Postcomment/SpecialPostcomment.i18n.php
@@ -716,8 +712,6 @@ optional = translate-page-paging-links
 Trusted XFF
 
 Unicode Converter
-
-Universal Edit Button
 
 Usage Statistics
 file = UsageStatistics/SpecialUserStats.i18n.php
