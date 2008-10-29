@@ -1,3 +1,7 @@
+ABC
+descmsg = abcdesc
+optional = abcsep, abcabc, abcpdf, abcps, abcmidi, abcvorbis
+
 Absentee Landlord
 
 Abuse Filter
