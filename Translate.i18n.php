@@ -2222,6 +2222,7 @@ $messages['fi'] = array(
 	'translate-statsf-submit' => 'Esikatselu',
 	'translate-tag-translate-link-desc' => 'Käännä tämä sivu',
 	'translate-tag-legend-fuzzy' => 'Vanhentunut käännös',
+	'translate-sidebar-alltrans' => 'Muut käännökset',
 	'translate-tag-noedit' => 'Tämä sivu on automaattisesti päivittyvä käännössivu.
 Voit [$1 muokata lähdesivua] tai [$2 päivittää käännöksen].',
 );
@@ -5964,6 +5965,7 @@ $messages['ro'] = array(
 
 /** Russian (Русский)
  * @author Ahonc
+ * @author Ferrer
  * @author Kaganer
  * @author MaxSem
  * @author Александр Сигачёв
@@ -6071,6 +6073,8 @@ $messages['ru'] = array(
 	'translate-stats-edits' => 'Правок',
 	'translate-stats-users' => 'Переводчики',
 	'translate-statsf-intro' => 'Эта форма поможет вам создать удобный график. Для всех значений можно задать верхнюю и нижнюю границу.',
+	'translate-statsf-scale-days' => 'Дни',
+	'translate-statsf-scale-hours' => 'Часы',
 	'translate-tag-legend-fuzzy' => 'Устаревший перевод',
 	'translate-tag-fuzzy-comment' => 'Изменено в редакции $2 участником [[User:$1|$1]].',
 	'translate-tag-fuzzy-reason' => 'Изменено в редакции $2 участником $1 с комментарием «$3».',
