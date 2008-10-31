@@ -190,8 +190,8 @@ file = PovWatch/PovWatch.alias.php
 Random in category
 file = RandomInCategory/SpecialRandomincategory.alias.php
 
-Record Administration
-file = RecordAdmin/SpecialRecordAdmin.alias.php
+Record admin
+file = RecordAdmin/RecordAdmin.alias.php
 
 Refresh special
 file = RefreshSpecial/RefreshSpecial.alias.php
