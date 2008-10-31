@@ -1145,6 +1145,7 @@ Ne vo ket enrollet ar c'hemmoù e-keit ha ne vo ket bet pouezet war ar bouton di
  * @author CERminator
  */
 $messages['bs'] = array(
+	'translate-page-language' => 'Jezik',
 	'translate-prev' => 'Prethodna stranica',
 );
 
@@ -6167,7 +6168,7 @@ Zmeny sa neuložia, kým nekliknete na tlačidlo Uložiť dolu.',
 	'translate-magic-module' => 'Modul:',
 	'translate-magic-submit' => 'Vykonať',
 	'translate-magic-cm-export' => 'Exportovať',
-	'translate-magic-cm-to-be' => 'Byť',
+	'translate-magic-cm-to-be' => 'Má byť',
 	'translate-magic-cm-current' => 'Aktuálna',
 	'translate-magic-cm-original' => 'Pôvodná',
 	'translate-magic-cm-comment' => 'Komentár:',
