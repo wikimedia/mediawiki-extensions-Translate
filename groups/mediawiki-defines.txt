@@ -562,6 +562,9 @@ file = Randomrootpage/Randomrootpage.i18n.php
 Random Users With Avatars
 descmsg = random-users-avatars-desc
 
+Record Administration
+file = RecordAdmin/SpecialRecordAdmin.18n.php
+
 Refresh Special
 
 Regex Block
