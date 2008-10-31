@@ -214,6 +214,7 @@ DPL Forum
 file = DPLforum/DPLforum.i18n.php
 
 Drafts
+ignored = accesskey-drafts-save
 
 Duplicator
 
