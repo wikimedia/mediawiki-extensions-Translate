@@ -684,6 +684,11 @@ Talk Here
 ignored = talkhere-title, talkhere-headtext, talkhere-afterinput
 ignored = talkhere-afterform
 
+Tasks
+ignored = tasks_search_limit
+optional = tasks_help_page_link, tasks_help_separator, tasks_creation_tasks
+descmsg = tasks_desc
+
 Template Link
 descmsg = templatelink_desc
 
