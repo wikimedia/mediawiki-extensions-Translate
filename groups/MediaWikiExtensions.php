@@ -250,7 +250,6 @@ class AllWikiaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-inputbox',
 		'ext-lookupuser',
 		'ext-multiupload',
-		'ext-parserdifftest',
 		'ext-parserfunctions',
 		'ext-randomimage',
 		'ext-spamblacklist',
@@ -373,7 +372,6 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-assertedit', // bots
 		'ext-centralnotice', // used rarely
 		'ext-codereview', // only on mediawiki.org
-		'ext-parserdifftest', // used rarely (still needed?)
 		'ext-boardvote', // used rarely
 	);
 
