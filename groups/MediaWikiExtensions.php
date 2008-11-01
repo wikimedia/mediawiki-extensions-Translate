@@ -337,6 +337,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-imagemap',
 		'ext-labeledsectiontransclusion',
 		'ext-mwsearch',
+		'ext-contributionreporting', // temporary for fundraiser
 		'ext-sitematrix',
 		'ext-gadgets',
 		'ext-fixedimage',
