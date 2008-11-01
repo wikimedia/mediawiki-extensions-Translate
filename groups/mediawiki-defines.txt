@@ -503,9 +503,6 @@ Page By
 
 Password Reset
 
-Parser Diff Test
-descmsg = pdtest-desc
-
 Parser Functions
 descmsg = pfunc_desc
 
