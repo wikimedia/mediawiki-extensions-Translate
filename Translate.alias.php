@@ -296,6 +296,7 @@ $aliases['te'] = array(
 /** Thai (ไทย) */
 $aliases['th'] = array(
 	'Translate' => array( 'แปล' ),
+	'TranslationStats' => array( 'สถิติการแปล' ),
 );
 
 /** Wolof (Wolof) */

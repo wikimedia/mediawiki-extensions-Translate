@@ -1095,9 +1095,6 @@ $messages['br'] = array(
 	'translate-magic-pagename' => 'Troidigezh Mediawiki astennet',
 	'translate-magic-help' => "Gallout a rit treiñ aliasoù ar pajennoù dibar, ar gerioù burzhudus, anvioù an etrefasoù hag anvioù an esaouennoù anv.
 
-Evit ar pezh a sell ouzh ar gerioù burzhudus e vo ret deoc'h ouzhpennañ an droidigezh saoznek pe ne'z aint ket en-dro ken. 
-Dalc'hit ivez an elfenn gentañ (0 pe 1) evel m'emañ.
-
 Aliasoù ar pajennoù dibar hag ar gerioù burzhudus a c'hall kaout meur a droidigezh. 
 Dispartiet eo an troidigezhioù dre skejoù (,). 
 N'hall anvioù an etrefasoù ha re an esaouennoù anv nemet kaout un droidigezh hepken.
@@ -1131,6 +1128,7 @@ Ne vo ket enrollet ar c'hemmoù e-keit ha ne vo ket bet pouezet war ar bouton di
 	'translate-checks-links' => 'Kudennek eo al {{PLURAL:$2|liammoù|liammoù}} da-heul : <strong>$1</strong>',
 	'translate-checks-xhtml' => "Erlec'hiit ar {{PLURAL:$2|valizenn|balizennoù}} da-heul gant ar re a zegouezh mar plij : <strong>$1</strong>",
 	'translate-checks-plural' => 'Ober a ra an termenadur gant <nowiki>{{PLURAL:}}</nowiki> padal an droidigezh ne ra ket.',
+	'translate-checks-pagename' => 'Anv esaouenn kemmet abaoe an termenadur',
 	'tog-translate-nonewsletter' => "Arabat kas din kelc'hlizheroù dre bostel (ne den nemet d'ar re o deus kadarnaet o chomlec'h postel)",
 	'right-translate' => 'Kemmañ en ur ober gant an etrefas treiñ',
 	'translate-rc-translation-filter' => 'Silañ an troidigezhioù :',
@@ -1138,7 +1136,34 @@ Ne vo ket enrollet ar c'hemmoù e-keit ha ne vo ket bet pouezet war ar bouton di
 	'translate-rc-translation-filter-only' => 'Diskouez an troidigezhioù hepken',
 	'translate-rc-translation-filter-filter' => 'Lakaat an troidigezhioù er-maez',
 	'translate-rc-translation-filter-site' => "Kemmoù da gemennoù al lec'hienn hepken",
+	'translationstats' => 'Stadegoù treiñ',
 	'translate-stats-edits' => 'Kemmoù dre zevezh',
+	'translate-stats-users' => 'Troerien',
+	'translate-statsf-intro' => "Stadegoù eeun a c'hallit krouiñ gant ar furmskrid-mañ. Bevennoù izel hag uhel zo d'an holl dalvoudoù.",
+	'translate-statsf-options' => 'Dibarzhioù ar grafik',
+	'translate-statsf-width' => 'Ledander e piksel',
+	'translate-statsf-height' => 'Uhelder e piksel',
+	'translate-statsf-days' => 'Marevezh e devezhioù',
+	'translate-statsf-scale' => 'Greunerezh',
+	'translate-statsf-scale-days' => 'Deizioù',
+	'translate-statsf-scale-hours' => 'Eurioù',
+	'translate-statsf-count' => 'Muzul',
+	'translate-statsf-count-edits' => 'Niver a aozadennoù',
+	'translate-statsf-count-users' => 'Troerien oberiant',
+	'translate-statsf-language' => 'Roll kodoù yezh, dispartiet gant skejoù',
+	'translate-statsf-group' => 'Roll kodoù strolladoù, dispartiet gant skejoù',
+	'translate-statsf-submit' => 'Rakwelet',
+	'translate-tag-category' => 'Pajennoù da dreiñ',
+	'translate-tag-page-desc' => 'Troidigezh ar bajenn wiki [[:$1]].',
+	'translate-tag-translate-link-desc' => 'Treiñ ar bajenn-mañ',
+	'translate-tag-legend' => "Alc'hwez :",
+	'translate-tag-legend-fallback' => 'Troidigezh e yezhoù all',
+	'translate-tag-legend-fuzzy' => 'Troidigezh dispredet',
+	'translate-tag-fuzzy-comment' => 'Termenadur kemmet gant an implijer [[User:$1|$1]] er stumm $2.',
+	'translate-tag-fuzzy-reason' => 'Termenadur kemmet gant an implijer "$1" stag outañ an evezhiadenn "$3" e $2.',
+	'translate-sidebar-alltrans' => 'Troidigezhioù all',
+	'translate-tag-noedit' => 'Un teul treiñ hizivaet ent emgefre eo ar bajenn-mañ.
+Gallout a rit [$1 kemmañ ar bajenn orin] pe [$2 freskaat an droidigezh].',
 );
 
 /** Bosnian (Bosanski)
@@ -5154,7 +5179,7 @@ $messages['nah'] = array(
 	'translate-edit' => 'ticpatlāz',
 	'translate-talk' => 'tēixnāmiquiliztli',
 	'translate-history' => 'tlahcuilōlloh',
-	'translate-page-task' => 'Niquiēlēhuia',
+	'translate-page-task' => 'Nitlanequi',
 	'translate-page-group' => 'Olōlli',
 	'translate-page-language' => 'Tlahtōlli',
 	'translate-page-navigation-legend' => 'Ācalpapanōliztli',
