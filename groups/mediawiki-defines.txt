@@ -100,7 +100,7 @@ Change Author
 optional = changeauthor-rev
 ignored = changeauthor-logpagetext, changeauthor-short
 
-CharInsert
+Char Insert
 
 Check User
 ignored = checkuser-toollinks
@@ -165,6 +165,8 @@ desc = Captcha generator for Confirm Edit.
 file = ConfirmEdit/FancyCaptcha.i18n.php
 
 Contact Page
+
+Contribution Reporting
 
 Contribution Scores
 
