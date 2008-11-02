@@ -58,6 +58,11 @@ $aliases['bcc'] = array(
 	'TranslationChanges' => array( 'تغییرات ترجمه' ),
 );
 
+/** Breton (Brezhoneg) */
+$aliases['br'] = array(
+	'Translate' => array( 'Treiñ' ),
+);
+
 /** Cebuano (Cebuano) */
 $aliases['ceb'] = array(
 	'Translate' => array( 'Hubara' ),

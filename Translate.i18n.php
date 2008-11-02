@@ -2242,6 +2242,7 @@ $messages['fi'] = array(
 	'translate-rc-translation-filter-only' => 'näytä vain käännökset',
 	'translate-rc-translation-filter-filter' => 'piilota käännökset',
 	'translate-rc-translation-filter-site' => 'vain muutokset sivuston viesteihin',
+	'translationstats' => 'Käännöstilastot',
 	'translate-stats-edits' => 'Muokkauksia',
 	'translate-statsf-width' => 'Leveys pikseleinä',
 	'translate-statsf-height' => 'Korkeus pikseleinä',
