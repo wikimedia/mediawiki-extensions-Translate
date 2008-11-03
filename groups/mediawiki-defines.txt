@@ -170,6 +170,8 @@ Contribution Reporting
 
 Contribution Scores
 
+Contribution Tracking
+
 Contributions Edit Count
 file = Contributionseditcount/Contributionseditcount.i18n.php
 
