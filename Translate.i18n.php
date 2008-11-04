@@ -1170,8 +1170,22 @@ Gallout a rit [$1 kemmañ ar bajenn orin] pe [$2 freskaat an droidigezh].',
  * @author CERminator
  */
 $messages['bs'] = array(
+	'translate-page-group' => 'Grupa',
 	'translate-page-language' => 'Jezik',
 	'translate-prev' => 'Prethodna stranica',
+);
+
+/** Buginese (ᨅᨔ ᨕᨘᨁᨗ)
+ * @author Kurniasan
+ */
+$messages['bug'] = array(
+	'translate' => "Tare'juma",
+	'translate-edit' => 'padécéŋ',
+	'translate-talk' => 'bicara',
+	'translate-history' => 'sejara',
+	'translate-page-task' => "Élloka'",
+	'translate-submit' => 'Ala',
+	'translate-statsf-submit' => 'Pribiu',
 );
 
 /** Catalan (Català)
@@ -5518,6 +5532,30 @@ Endringer lagres ikke før du klikker på lagre-knappen nedenfor.',
 Du kan [$1 redigere kildesiden] eller [$2 oppdatere oversettelsen].',
 );
 
+/** Northern Sotho (Sesotho sa Leboa)
+ * @author Mohau
+ */
+$messages['nso'] = array(
+	'translate-task-view' => 'Botšha melaetša kamoka go',
+	'translate-task-problematic' => 'Botšha melaetša ya goba le mathata',
+	'translate-page-task' => 'Ke nyaka go',
+	'translate-page-group' => 'Sehlopha',
+	'translate-page-language' => 'Polelo',
+	'translate-page-limit-option' => '$1 {{PLURAL:$1|ya molaetša|ya melaetša}} ka letlakala',
+	'translate-submit' => 'Lata',
+	'translate-page-showing' => 'Go bontšhwa melaetša go tloga go $1 go fihla go $2 ya $3.',
+	'translate-page-showing-all' => 'Go botšhwa  $1 {{PLURAL:$1|ya molaetša|ya melaetša}}.',
+	'translate-page-description-legend' => 'Tsebo ka sehlopha',
+	'translate-edit-goto-prev' => 'Fetola molaetša wago feta',
+	'translate-edit-goto-next' => 'Fetola molaetša wago latela',
+	'translate-edit-goto-list' => 'Boela go lenano',
+	'translate-magic-cm-save' => 'Boloka',
+	'translationchanges-change' => '$1: $2 ka $3',
+	'translate-statsf-scale-days' => 'Matšatši',
+	'translate-statsf-scale-hours' => 'Diiri',
+	'translate-statsf-count-edits' => 'Palo ya diphetogo',
+);
+
 /** Occitan (Occitan)
  * @author Cedric31
  * @author ChrisPtDe
@@ -7190,6 +7228,15 @@ Các thay đổi sẽ không được lưu lại đến khi nào bạn nhấn v�
 	'translate-statsf-scale' => 'Dạng hạt',
 	'translate-statsf-scale-days' => 'Ngày',
 	'translate-statsf-scale-hours' => 'Giờ',
+	'translate-statsf-count-edits' => 'Số lần sửa đổi',
+	'translate-statsf-count-users' => 'Dịch giả tích cực',
+	'translate-statsf-submit' => 'Xem trước',
+	'translate-tag-category' => 'Các trang dịch được',
+	'translate-tag-page-desc' => 'Bản dịch trang wiki [[:$1]].',
+	'translate-tag-translate-link-desc' => 'Dịch trang này',
+	'translate-tag-legend-fallback' => 'Bản dịch ra ngôn ngữ khác',
+	'translate-tag-legend-fuzzy' => 'Bản dịch lỗi thời',
+	'translate-sidebar-alltrans' => 'Bản dịch khác',
 );
 
 /** Volapük (Volapük)
