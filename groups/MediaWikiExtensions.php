@@ -339,6 +339,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-mwsearch',
 		'ext-contributionreporting', // temporary for fundraiser
 		'ext-contributiontracking', // temporary for fundraiser
+		'ext-contributionstatistics', // temporary for fundraiser
 		'ext-sitematrix',
 		'ext-gadgets',
 		'ext-fixedimage',
