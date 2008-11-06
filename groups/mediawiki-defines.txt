@@ -170,10 +170,6 @@ Contribution Reporting
 
 Contribution Scores
 
-Contribution Statistics
-file = ContributionReporting/ContributionStatistics.i18n.php
-descmsg = contribstats-desc
-
 Contribution Tracking
 
 Contributions Edit Count
