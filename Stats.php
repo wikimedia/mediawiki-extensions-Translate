@@ -176,7 +176,7 @@ class SpecialTranslationStats extends SpecialPage {
 
 	protected function getData( FormOptions $opts ) {
 		global $wgLang, $wgTranslateMessageNamespaces;
-		$dbr = wfGetDb( DB_SLAVE );
+		$dbr = wfGetDB( DB_SLAVE );
 
 		$now = time();
 		$cutoff = $now - ( 3600 * 24 * $opts->getValue( 'days' ) - 1 );
