@@ -63,6 +63,13 @@ $aliases['br'] = array(
 	'Translate' => array( 'Treiñ' ),
 );
 
+/** Bosnian (Bosanski) */
+$aliases['bs'] = array(
+	'Translate' => array( 'Prevedi' ),
+	'Magic' => array( 'NaprednoPrevodjenje' ),
+	'TranslationStats' => array( 'StatistikePrevoda' ),
+);
+
 /** Cebuano (Cebuano) */
 $aliases['ceb'] = array(
 	'Translate' => array( 'Hubara' ),

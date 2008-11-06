@@ -1183,9 +1183,17 @@ $messages['bug'] = array(
 	'translate-edit' => 'padécéŋ',
 	'translate-talk' => 'bicara',
 	'translate-history' => 'sejara',
+	'translate-task-view' => 'Ita sininna méséje polé',
+	'translate-task-untranslated' => "Ita manéŋ méséje deppa ritare'juma polé",
+	'translate-task-optional' => 'Ita méséje opsional polé',
 	'translate-page-task' => "Élloka'",
 	'translate-submit' => 'Ala',
+	'translate-page-edit' => 'padeccéŋ',
+	'translate-edit-no-information' => "''Iyyedé méséjeë degaga dokuméntasina. Rékko idi isseŋi kotégaï na pakogaï ripaké, weddiŋi idi maŋinriŋ patare'juma laiŋë menambahkan dokumentasina.''",
+	'translate-edit-information' => 'Informasina iyyéde leppa ($1)',
+	'translate-magic-cm-save' => 'Taro',
 	'translate-statsf-submit' => 'Pribiu',
+	'translate-tag-translate-link-desc' => "Tare'juma iyyedé leppa",
 );
 
 /** Catalan (Català)
@@ -5697,6 +5705,7 @@ $messages['os'] = array(
  * @author Derbeth
  * @author Dodek
  * @author Jwitos
+ * @author Maikking
  * @author McMonster
  * @author Sp5uhe
  * @author Wpedzich
@@ -5798,14 +5807,18 @@ Zmiany nie są zapisywane, dopóki użytkownik nie naciśnie umieszczonego poni�
 	'translate-rc-translation-filter-only' => 'Pokaż tylko tłumaczenia',
 	'translate-rc-translation-filter-filter' => 'Pokaż wszystkie bez tłumaczeń',
 	'translate-rc-translation-filter-site' => 'Zmiany w komunikatach wyłącznie tej witryny',
+	'translationstats' => 'Statystyki tłumaczenia',
 	'translate-stats-edits' => 'Edycji dziennie',
+	'translate-stats-users' => 'Tłumacze',
 	'translate-statsf-width' => 'Szerokość w pikselach',
 	'translate-statsf-height' => 'Wysokość w pikselach',
 	'translate-statsf-scale-days' => 'Dni',
 	'translate-statsf-scale-hours' => 'Godzin',
 	'translate-statsf-count-edits' => 'Liczba edycji',
+	'translate-statsf-count-users' => 'Aktywni tłumacze',
 	'translate-statsf-submit' => 'Podgląd',
 	'translate-tag-translate-link-desc' => 'Przetłumacz tą stronę',
+	'translate-tag-legend-fallback' => 'Tłumaczenie w innych językach',
 	'translate-sidebar-alltrans' => 'Inne tłumaczenia',
 );
 
