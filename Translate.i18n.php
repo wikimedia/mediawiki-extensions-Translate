@@ -181,7 +181,9 @@ You can [$1 edit the source page] or [$2 update the translation].',
  * @author פוילישער
  */
 $messages['qqq'] = array(
-	'translate' => 'Part of the "Translate" extension. This message is the page title of the special page [[Special:Translate]]. It is the verb "to translate" and should be in the infinitive mood.',
+	'translate' => 'Part of the "Translate" extension. This message is the page title of the special page [[Special:Translate]]. It is the verb "to translate" and should be in the infinitive mood.
+
+{{Identical|Translate}}',
 	'translate-desc' => 'Short description of the Translate extension, shown in [[Special:Version]]. Do not translate or change links.',
 	'translate-edit' => '{{Identical|Edit}}',
 	'translate-talk' => '{{Identical|Talk}}',
@@ -1170,9 +1172,13 @@ Gallout a rit [$1 kemmañ ar bajenn orin] pe [$2 freskaat an droidigezh].',
  * @author CERminator
  */
 $messages['bs'] = array(
+	'translate' => 'Prijevod',
+	'translate-talk' => 'razgovor',
+	'translate-history' => 'historija',
 	'translate-page-group' => 'Grupa',
 	'translate-page-language' => 'Jezik',
 	'translate-prev' => 'Prethodna stranica',
+	'translate-sidebar-alltrans' => 'Ostali prijevodi',
 );
 
 /** Buginese (ᨅᨔ ᨕᨘᨁᨗ)
@@ -5705,6 +5711,7 @@ $messages['os'] = array(
  * @author Derbeth
  * @author Dodek
  * @author Jwitos
+ * @author Leinad
  * @author Maikking
  * @author McMonster
  * @author Sp5uhe
@@ -5800,6 +5807,7 @@ Zmiany nie są zapisywane, dopóki użytkownik nie naciśnie umieszczonego poni�
 	'translate-checks-xhtml' => 'Zastąp {{PLURAL:$2|następujący znacznik prawidłowym|następujące znaczniki prawidłowymi}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Definicja wykorzystuje funkcję <nowiki>{{PLURAL:}}</nowiki>, lecz w tłumaczeniu nie została ona użyta.',
+	'translate-checks-pagename' => 'Przestrzeń nazw zmieniona z definicji',
 	'tog-translate-nonewsletter' => 'Nie wysyłaj do mnie biuletynów pocztą elektroniczną (dotyczy tylko użytkowników z potwierdzonym adresem e-mail)',
 	'right-translate' => 'Edycja z użyciem interfejsu tłumaczeń',
 	'translate-rc-translation-filter' => 'Filtruj tłumaczenia:',
@@ -5810,16 +5818,31 @@ Zmiany nie są zapisywane, dopóki użytkownik nie naciśnie umieszczonego poni�
 	'translationstats' => 'Statystyki tłumaczenia',
 	'translate-stats-edits' => 'Edycji dziennie',
 	'translate-stats-users' => 'Tłumacze',
+	'translate-statsf-intro' => 'Za pomocą tego formularza możesz wygenerować proste statystyki. Wszystkie wartości posiadają dolne i górne limity.',
+	'translate-statsf-options' => 'Opcje wykresu',
 	'translate-statsf-width' => 'Szerokość w pikselach',
 	'translate-statsf-height' => 'Wysokość w pikselach',
+	'translate-statsf-days' => 'Przedział czasu w dniach',
+	'translate-statsf-scale' => 'Szczegółowość zachodzenia zmian',
 	'translate-statsf-scale-days' => 'Dni',
-	'translate-statsf-scale-hours' => 'Godzin',
+	'translate-statsf-scale-hours' => 'Godziny',
+	'translate-statsf-count' => 'Pomiar',
 	'translate-statsf-count-edits' => 'Liczba edycji',
 	'translate-statsf-count-users' => 'Aktywni tłumacze',
+	'translate-statsf-language' => 'Kody języków oddzielone przecinkami',
+	'translate-statsf-group' => 'Kody grup oddzielone przecinkami',
 	'translate-statsf-submit' => 'Podgląd',
+	'translate-tag-category' => 'Strony do przetłumaczenia',
+	'translate-tag-page-desc' => 'Tłumaczenie wiki strony [[:$1]].',
 	'translate-tag-translate-link-desc' => 'Przetłumacz tą stronę',
+	'translate-tag-legend' => 'Legenda:',
 	'translate-tag-legend-fallback' => 'Tłumaczenie w innych językach',
+	'translate-tag-legend-fuzzy' => 'Zdezaktualizowane tłumaczenie',
+	'translate-tag-fuzzy-comment' => 'Definicja zmieniona przez [[User:$1|$1]] w wersji $2.',
+	'translate-tag-fuzzy-reason' => 'Definicja zmieniona przez „$1” z komentarzem „$3” w $2.',
 	'translate-sidebar-alltrans' => 'Inne tłumaczenia',
+	'translate-tag-noedit' => 'Ta strona jest automatycznie aktualizowaną stroną tłumaczenia.
+Możesz [$1 edytować źródło strony] lub [$2 zaktualizować tłumaczenie].',
 );
 
 /** Piedmontese (Piemontèis)
@@ -7361,8 +7384,12 @@ $messages['yi'] = array(
 	'translate-page-description-legend' => 'אינפֿארמאציע וועגן דער גרופע',
 	'translate-page-edit' => 'רעדאקטירן',
 	'translate-edit-contribute' => 'בײַשטײַערן',
+	'translate-edit-no-information' => "'''די מעלדונג פעלט דאקומענטאציע.
+אויב איר ווייסט וואו אדער ווי די מעלדונג ווערט געניצט, קענט איר העלפֿן אנדערע פארטייטשערס דורך צולייגן דאקומענטאציע צו דער מעלדונג.'''",
 	'translate-edit-information' => 'אינפֿארמאציע וועגן דער מעלדונג ($1)',
 	'translate-edit-in-other-languages' => 'מעלדונג אין אנדערע שפראכן',
+	'translate-edit-goto-no-prev' => 'נישטא קיין פֿריערדיגע מעלדונג',
+	'translate-edit-goto-no-next' => 'נישטא קיין קומענדיגע מעלדונג',
 	'translate-edit-goto-prev' => 'רעדאקטירן די פֿריערדיגע מעלדונג',
 	'translate-edit-goto-next' => 'רעדאקטירן די קומענדיגע מעלדונג',
 	'translate-edit-goto-list' => 'צוריק צו דער ליסטע',

@@ -268,6 +268,14 @@ $aliases['oc'] = array(
 	'TranslationChanges' => array( 'Modificacions de las traduccions', 'Modificacionsdelastraduccions' ),
 );
 
+/** Polish (Polski) */
+$aliases['pl'] = array(
+	'Translate' => array( 'Przetłumacz' ),
+	'Magic' => array( 'Rozszerzone tłumaczenie MediaWiki' ),
+	'TranslationChanges' => array( 'Zmiany w tłumaczeniu' ),
+	'TranslationStats' => array( 'Statystyki tłumaczenia' ),
+);
+
 /** Pashto (پښتو) */
 $aliases['ps'] = array(
 	'Translate' => array( 'ژباړل' ),
