@@ -758,8 +758,7 @@ Web Store
 What Is My IP
 
 White List
-var = allMessages
-file = WhiteList/SpecialWhitelistEdit.i18n.php
+file = WhiteList/WhiteListEdit.i18n.php
 
 Who Is Watching
 file = WhoIsWatching/SpecialWhoIsWatching.i18n.php

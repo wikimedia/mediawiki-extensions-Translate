@@ -269,7 +269,7 @@ What is my IP
 file = WhatIsMyIP/WhatIsMyIP.alias.php
 
 White list
-file = WhiteList/SpecialWhitelistEdit.alias.php
+file = WhiteList/WhiteListEdit.alias.php
 
 Who is watching
 file = WhoIsWatching/SpecialWhoIsWatching.alias.php
