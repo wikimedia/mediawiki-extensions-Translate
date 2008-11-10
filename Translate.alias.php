@@ -128,6 +128,7 @@ $aliases['gl'] = array(
 	'Translate' => array( 'Traducir' ),
 	'Magic' => array( 'Tradución avanzada' ),
 	'TranslationChanges' => array( 'Cambios na tradución' ),
+	'TranslationStats' => array( 'Estatísticas da tradución' ),
 );
 
 /** Hebrew (עברית)

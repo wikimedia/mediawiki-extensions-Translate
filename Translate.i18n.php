@@ -172,6 +172,7 @@ You can [$1 edit the source page] or [$2 update the translation].',
 /** Message documentation (Message documentation)
  * @author Jon Harald Søby
  * @author Lejonel
+ * @author Lloffiwr
  * @author Meno25
  * @author Nike
  * @author Purodha
@@ -214,6 +215,7 @@ $messages['qqq'] = array(
 
 * Parameter $1 is a list of the unbalanced brackets, for example "\'\'\'[]: 1\'\'\'" which means that there is one missing closing square brackets.
 * Parameter $2 is the number of types of parentheses that are unbalanced.',
+	'tog-translate-nonewsletter' => "Option in [[Special:Preferences]], 'Misc' tab.",
 	'right-translate' => '{{doc-right}}',
 	'translate-rc-translation-filter' => 'Name of filter in [[Special:RecentChanges]]. Gives a user the option to filter out translations, show translations only, or do nothing (default).',
 	'translate-rc-translation-filter-no' => 'Option for filter in [[Special:RecentChanges]]. Selecting this option results in the filter not doing anything. It is the default value.',
@@ -1173,11 +1175,13 @@ Gallout a rit [$1 kemmañ ar bajenn orin] pe [$2 freskaat an droidigezh].',
  */
 $messages['bs'] = array(
 	'translate' => 'Prijevod',
+	'translate-edit' => 'uredi',
 	'translate-talk' => 'razgovor',
 	'translate-history' => 'historija',
 	'translate-page-group' => 'Grupa',
 	'translate-page-language' => 'Jezik',
 	'translate-prev' => 'Prethodna stranica',
+	'translate-page-edit' => 'uredi',
 	'translate-sidebar-alltrans' => 'Ostali prijevodi',
 );
 
@@ -1427,6 +1431,7 @@ $messages['cu'] = array(
 $messages['cy'] = array(
 	'translate-edit' => 'golygu',
 	'translate-page-edit' => 'golygu',
+	'tog-translate-nonewsletter' => 'Peidier ag anfon cylchlythyron e-bost ataf (dim ond yn berthnasol pan fo cyfeiriad e-bost defnyddiwr wedi ei gadarnhau)',
 );
 
 /** Danish (Dansk)
