@@ -94,6 +94,9 @@ file = Editcount/SpecialEditcount.alias.php
 Edit user
 file = EditUser/EditUser.alias.php
 
+Emergency DeSysop
+file = EmergencyDeSysop/EmergencyDeSysop.alias.php
+
 Eval
 file = Eval/SpecialEval.alias.php
 

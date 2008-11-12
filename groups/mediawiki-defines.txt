@@ -237,6 +237,8 @@ Edit User
 
 Email Address Image
 
+Emergency DeSysop
+
 Error Handler
 
 Eval
