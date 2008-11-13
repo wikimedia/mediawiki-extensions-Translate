@@ -2064,6 +2064,7 @@ Los cambios no se salvan hasta que no pulses el boton de guardar de abajo.',
 	'translate-checks-xhtml' => 'Por favor, sustituye {{PLURAL:$2|la siguiente etiqueta por la correcta|las siguientes etiquetas por las correctas}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'El mensaje original usa <nowiki>{{PLURAL:}}</nowiki> pero no así la traducción.',
+	'tog-translate-nonewsletter' => 'No quiero recibir correos de noticias (sólo aplica a usuarios con dirección de correo electrónico confirmada)',
 	'right-translate' => 'Editar usando el interfaz de traducción',
 	'translate-rc-translation-filter' => 'Filtrar traducciones:',
 	'translate-rc-translation-filter-no' => 'No filtrar nada',
@@ -2720,6 +2721,7 @@ $messages['gv'] = array(
  */
 $messages['hak'] = array(
 	'translate-edit' => 'phiên-chho',
+	'translate-page-edit' => 'piên-sip',
 );
 
 /** Hawaiian (Hawai`i)
@@ -3752,6 +3754,7 @@ Puoi [$1 modificare la pagina sorgente] o [$2 aggiornare la traduzione].',
 
 /** Japanese (日本語)
  * @author Aotake
+ * @author Hosiryuhosi
  * @author JtFuruhata
  * @author Marine-Blue
  */
@@ -3786,6 +3789,7 @@ $messages['ja'] = array(
 	'translate-next' => '次のページ',
 	'translate-prev' => '前のページ',
 	'translate-page-description-legend' => 'このグループについて',
+	'translate-page-edit' => '編集',
 	'translate-optional' => '（任意翻訳）',
 	'translate-ignored' => '（翻訳無効）',
 	'translate-edit-definition' => '元のメッセージ',
@@ -3803,6 +3807,7 @@ $messages['ja'] = array(
 名前空間を翻訳する際、<tt>$1 talk</tt> には特別な注意事項があります。それは、<tt>$1</tt> がサイト名に変更される点です（例えば<tt>{{SITENAME}} talk</tt>の様に）。あなたが翻訳しようとしている言語において、サイト名の変更なしには正しい形式で表現できない場合、開発者に相談してください。
 
 変更を保存できるのは、翻訳者グループに属する利用者のみです。{{int:translate-magic-cm-save}}ボタンを押すまで変更は保存されません。',
+	'translate-magic-module' => 'モジュール:',
 	'translate-magic-submit' => '再表示',
 	'translate-magic-cm-export' => 'エクスポート',
 	'translate-magic-cm-to-be' => '変更後',
@@ -3828,6 +3833,11 @@ $messages['ja'] = array(
 	'translate-checks-xhtml' => '以下の$2個のタグを正しいものに修正してください:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => '元のメッセージでは <nowiki>{{PLURAL:}}</nowiki> を使用していますが、翻訳の中にはありません。',
+	'translate-stats-edits' => '編集',
+	'translate-stats-users' => '翻訳者',
+	'translate-statsf-scale-days' => '日',
+	'translate-statsf-scale-hours' => '時間',
+	'translate-statsf-submit' => 'プレビュー',
 );
 
 /** Javanese (Basa Jawa)
@@ -5400,23 +5410,137 @@ U kunt de [$1 brontekst bewerken] of de [$2 vertaling bijwerken].',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
+ * @author Frokor
  * @author Jon Harald Søby
  */
 $messages['nn'] = array(
+	'translate' => 'Set om',
+	'translate-desc' => '[[Special:Translate|Spesialside]] for omsetjing av MediaWiki o.a.',
 	'translate-edit' => 'endre',
 	'translate-talk' => 'diskusjon',
 	'translate-history' => 'historikk',
+	'translate-task-view' => 'Sjå alle meldingar frå',
+	'translate-task-untranslated' => 'Sjå alle uomsette meldingar frå',
+	'translate-task-optional' => 'Sjå valfri meldingar frå',
+	'translate-task-problematic' => 'Sjå meldingar som har problem',
+	'translate-task-review' => 'Gå gjennom endringar av',
+	'translate-task-reviewall' => 'Gå gjennom alle omsette meldingar av',
+	'translate-task-export' => 'Eksporter omsetjingar frå',
+	'translate-task-export-to-file' => 'Eksporter omsetjingar til fil frå',
+	'translate-task-export-as-po' => 'Eksportere omsetjingar i Gettext-format',
+	'translate-task-export-to-xliff' => 'Eksportere omsetjingar i Xliff-format',
+	'translate-page-no-such-language' => 'Ikkje gyldig språkkode.',
+	'translate-page-no-such-task' => 'Ikkje gyldig oppgåve',
+	'translate-page-no-such-group' => 'Ikkje gyldig gruppe.',
+	'translate-page-disabled' => "Omsetjingar til dette språket i denne gruppa er slått av. Årsak:
+
+''$1''",
+	'translate-page-settings-legend' => 'Innstillingar',
+	'translate-page-task' => 'Eg vil',
 	'translate-page-group' => 'Gruppe',
 	'translate-page-language' => 'Språk',
+	'translate-page-limit' => 'Grense',
+	'translate-page-limit-option' => '$1 {{PLURAL:$1|melding|meldingar}} per side',
+	'translate-submit' => 'Hent',
 	'translate-page-navigation-legend' => 'Navigering',
+	'translate-page-showing' => 'Viser meldingar frå $1 til $2 av $3.',
+	'translate-page-showing-all' => 'Viser {{PLURAL:$1|éi melding|$1 meldingar}}.',
+	'translate-page-showing-none' => 'Ingen meldingar å vise.',
+	'translate-page-paging-links' => '[ $1 ] [ $2 ]',
 	'translate-next' => 'Neste side',
 	'translate-prev' => 'Førre side',
+	'translate-page-description-legend' => 'Informasjon om gruppa',
+	'translate-page-edit' => 'endre',
 	'translate-optional' => '(valfri)',
+	'translate-ignored' => '(ignorert)',
+	'translate-edit-definition' => 'Melding som skal setjast om',
+	'translate-edit-contribute' => 'bidra',
+	'translate-edit-no-information' => "''Denne meldinga har ikkje dokumentasjon. Om du veit kvar eller korleis denne meldinga vert nytta, kan du hjelpe andre omsetjarar ved å legge inn dokumentasjon til denne meldinga.''",
+	'translate-edit-information' => 'Informasjon om denne meldinga ($1)',
+	'translate-edit-in-other-languages' => 'Meldingar på andre språk',
+	'translate-edit-committed' => 'Noverande omsetjing i programvaren',
+	'translate-edit-warnings' => 'Åtvaringar om ufullstendige omsetjingar',
+	'translate-edit-goto-no-prev' => 'Ingen tidlegare meldingar',
+	'translate-edit-goto-no-next' => 'Ingen meldingar etter denne',
+	'translate-edit-goto-prev' => 'Endre førre melding',
+	'translate-edit-goto-next' => 'Endre neste melding',
+	'translate-edit-goto-list' => 'Tilbake til lista',
+	'translate-magic-pagename' => 'Utvida MediaWiki-omsetjing',
+	'translate-magic-help' => 'Du kan setje om spesialsidenamn, magiske ord, utsjåandenamn og namneromnamn.
+
+Spesialsidenamn og magiske ord kan ha fleire omsetjingar.
+Omsetjingane vert fråskilde med komma (,).
+Draktnamn og namnerom kan berre ha éi omsetjing. 
+
+I namneromomsetjingane er <tt>$1 talk</tt> spesiell. <tt>$1</tt> vert erstatta med namnet på sida (til dømes <tt>{{SITENAME}}</tt>).
+Om det ikkje er mogeleg å få til eit gyldig uttrykk på ditt språk her utan å endre sidenamnet, kontakt ein utviklar. 
+
+Du må vere i omsetjargruppar for å lagre endringar.
+Endringar vert ikkje lagra før du klikker på lagre-knappen nedanfor.',
+	'translate-magic-module' => 'Modul:',
+	'translate-magic-submit' => 'Hent',
 	'translate-magic-cm-export' => 'Eksporter',
+	'translate-magic-cm-to-be' => 'Framtidig',
 	'translate-magic-cm-current' => 'Noverande',
+	'translate-magic-cm-original' => 'Original',
 	'translate-magic-cm-comment' => 'Kommentar:',
 	'translate-magic-cm-save' => 'Lagre',
+	'translate-magic-cm-updatedusing' => 'Oppdatert vha. [[Special:Magic]]',
+	'translate-magic-cm-savefailed' => 'Lagringa var mislukka',
+	'translate-magic-special' => 'Spesialsidenamn',
+	'translate-magic-words' => 'Magiske ord',
+	'translate-magic-skin' => 'Utsjåandenamn',
+	'translate-magic-namespace' => 'Namneromnamn',
+	'translationchanges' => 'Omsetjingsendringar',
 	'translationchanges-export' => 'eksporter',
+	'translationchanges-change' => '$1: $2 av $3',
+	'translate-checks-parameters' => 'Følgjande {{PLURAL:$2|parameter|parametrar}} vert ikkje nytta:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters-unknown' => 'Følgjande {{PLURAL:$2|parameter er ukjend|parametrar er ukjende}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-balance' => '{{PLURAL:$2|Det|Det}} er eit ujamt tal parentesar:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links' => 'Følgjande {{PLURAL:$1|lenke er problematisk|$2 lenker er problematiske}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-xhtml' => 'Erstatt følgjande {{PLURAL:$2|tagg|taggar}} med dei riktige:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-plural' => 'Definisjonen nyttar <nowiki>{{PLURAL:}}</nowiki>, men omsetjinga gjer det ikkje.',
+	'translate-checks-pagename' => 'Namnerom endra frå definisjonen',
+	'tog-translate-nonewsletter' => 'Ikkje send meg nyhendebrev (gjeld berre brukarar med stadfesta e-postadresse)',
+	'right-translate' => 'Redigere med omsetjingsgrensesnittet',
+	'translate-rc-translation-filter' => 'Filtrer omsetjingar:',
+	'translate-rc-translation-filter-no' => 'Ikkje gjer noko',
+	'translate-rc-translation-filter-only' => 'Vis berre omsetjingar',
+	'translate-rc-translation-filter-filter' => 'Filtrer bort omsetjingar',
+	'translate-rc-translation-filter-site' => 'Berre endringar i {{SITENAME}}-meldingar',
+	'translationstats' => 'Omsetjingsstatistikk',
+	'translate-stats-edits' => 'Endringar per dag',
+	'translate-stats-users' => 'Omsetjarar',
+	'translate-statsf-intro' => 'Du kan generere enkel statistikk med dette skjemaet. Alle verdiane har øvre og nedre grenser.',
+	'translate-statsf-options' => 'Grafalternativ',
+	'translate-statsf-width' => 'Breidde i pikslar',
+	'translate-statsf-height' => 'Høgd i pikslar',
+	'translate-statsf-days' => 'Tidsperiode i dagar',
+	'translate-statsf-scale' => 'Kornigleik',
+	'translate-statsf-scale-days' => 'Dagar',
+	'translate-statsf-scale-hours' => 'Timar',
+	'translate-statsf-count' => 'Storleik',
+	'translate-statsf-count-edits' => 'Tal på endringar',
+	'translate-statsf-count-users' => 'Aktive omsetjarar',
+	'translate-statsf-language' => 'Liste over språkkodar fråskild med komma',
+	'translate-statsf-group' => 'Liste over gruppekodar fråskild med komma',
+	'translate-statsf-submit' => 'Førehandsvis',
+	'translate-tag-category' => 'Sider som kan setjast om',
+	'translate-tag-page-desc' => 'Omsetjing av wikisida [[:$1]].',
+	'translate-tag-translate-link-desc' => 'Set om denne sida',
+	'translate-tag-legend' => 'Forklaring:',
+	'translate-tag-legend-fallback' => 'Omsetjing i eit anna språk',
+	'translate-tag-legend-fuzzy' => 'Utdatert omsetjing',
+	'translate-tag-fuzzy-comment' => 'Definisjon endra av [[User:$1|$1]] i versjon $2.',
+	'translate-tag-fuzzy-reason' => 'Definisjon endra av brukaren $1 med kommentaren «$3» i $2.',
+	'translate-sidebar-alltrans' => 'Andre omsetjingar',
+	'translate-tag-noedit' => 'Denne sida er ei automatisk oppdatert omsetjing.
+Du kan [$1 endre kjeldesida] eller [$2 oppdatere omsetjinga].',
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
@@ -5919,6 +6043,7 @@ $messages['ps'] = array(
 
 /** Portuguese (Português)
  * @author 555
+ * @author Lijealso
  * @author Malafaya
  */
 $messages['pt'] = array(
@@ -6033,6 +6158,8 @@ As alterações não serão salvas até que você clique no botão de salvar.',
 	'translate-tag-legend' => 'Legenda:',
 	'translate-tag-legend-fallback' => 'Tradução noutra língua',
 	'translate-tag-legend-fuzzy' => 'Tradução desactualizada',
+	'translate-tag-fuzzy-comment' => 'Definição medada por [[User:$1|$1]] na revisão $2.',
+	'translate-tag-fuzzy-reason' => 'Definição mudada por "$1" com comentário "$3" em $2.',
 	'translate-sidebar-alltrans' => 'Outras traduções',
 );
 

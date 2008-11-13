@@ -163,7 +163,9 @@ $aliases['ht'] = array(
 /** Hungarian (Magyar) */
 $aliases['hu'] = array(
 	'Translate' => array( 'Fordítás' ),
+	'Magic' => array( 'Fejlettebb fordító' ),
 	'TranslationChanges' => array( 'Változások a fordításokban' ),
+	'TranslationStats' => array( 'Fordítási Statisztikák' ),
 );
 
 /** Indonesian (Bahasa Indonesia) */
