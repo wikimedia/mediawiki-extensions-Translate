@@ -1182,6 +1182,8 @@ $messages['bs'] = array(
 	'translate-page-language' => 'Jezik',
 	'translate-prev' => 'Prethodna stranica',
 	'translate-page-edit' => 'uredi',
+	'translate-magic-cm-export' => 'Izvoz',
+	'translationchanges-export' => 'izvoz',
 	'translate-sidebar-alltrans' => 'Ostali prijevodi',
 );
 
@@ -3842,6 +3844,7 @@ $messages['ja'] = array(
 
 /** Javanese (Basa Jawa)
  * @author Meursault2004
+ * @author Pras
  */
 $messages['jv'] = array(
 	'translate' => 'Pertalna/Terjemahna',
@@ -3852,6 +3855,7 @@ $messages['jv'] = array(
 	'translate-task-view' => 'Tuduhna kabèh pesen saka',
 	'translate-task-untranslated' => 'Tuduhna kabèh pesen sing durung dipertal saka',
 	'translate-task-optional' => 'Tuduhna pesen opsional saka',
+	'translate-task-problematic' => 'Tampilaké pesen-pesen sing nduwèni masalah',
 	'translate-task-review' => 'Tinjo owah-owahan saka',
 	'translate-task-reviewall' => 'Tinjo kabèh owah-owahan ing',
 	'translate-task-export' => 'Èkspor pertalan saka',
@@ -3874,6 +3878,7 @@ $messages['jv'] = array(
 	'translate-next' => 'Kaca sabanjuré',
 	'translate-prev' => 'Kaca sadurungé',
 	'translate-page-description-legend' => 'Informasi ngenani grup utawa kelompok',
+	'translate-page-edit' => 'sunting',
 	'translate-optional' => '(opsional)',
 	'translate-ignored' => '(dilirwakaké)',
 	'translate-edit-definition' => 'Définisi pesen',
@@ -3883,6 +3888,11 @@ $messages['jv'] = array(
 	'translate-edit-in-other-languages' => 'Pesen ing basa liya',
 	'translate-edit-committed' => 'Pertalan saiki ing perangkat lunak',
 	'translate-edit-warnings' => 'Pèngetan perkara pertalan sing ora pepak',
+	'translate-edit-goto-no-prev' => 'Ora ana pesen/warta sadurungé',
+	'translate-edit-goto-no-next' => 'Ora ana pesen/warta sabanjuré',
+	'translate-edit-goto-prev' => 'Sunting pesen/warta sadurungé',
+	'translate-edit-goto-next' => 'Sunting pesen/warta sabanjuré',
+	'translate-edit-goto-list' => 'Bali menyang dhaptar',
 	'translate-magic-pagename' => 'Pangambanan pertalan MediaWiki',
 	'translate-magic-submit' => 'Jupuk',
 	'translate-magic-cm-export' => 'Èkspor',
@@ -5773,7 +5783,7 @@ Los cambiaments seràn pas salvats abans que cliquèssetz sul boton « Salvar »
 	'translate-magic-cm-current' => 'Actual',
 	'translate-magic-cm-original' => 'Original',
 	'translate-magic-cm-comment' => 'Comentari :',
-	'translate-magic-cm-save' => 'Salvagadar',
+	'translate-magic-cm-save' => 'Salvar',
 	'translate-magic-cm-updatedusing' => 'Mesa a jorn en utilizant [[Special:Magic]]',
 	'translate-magic-cm-savefailed' => 'Lo salvament a pas capitat',
 	'translate-magic-special' => 'Pagina especiala d’aliases',

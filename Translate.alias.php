@@ -67,6 +67,7 @@ $aliases['br'] = array(
 $aliases['bs'] = array(
 	'Translate' => array( 'Prevedi' ),
 	'Magic' => array( 'NaprednoPrevodjenje' ),
+	'TranslationChanges' => array( 'PromjenePrevoda' ),
 	'TranslationStats' => array( 'StatistikePrevoda' ),
 );
 
@@ -300,6 +301,11 @@ $aliases['pt-br'] = array(
 	'Magic' => array( 'Tradução avançada' ),
 	'TranslationChanges' => array( 'Alterações em traduções' ),
 	'TranslationStats' => array( 'Estado da tradução', 'Status da tradução' ),
+);
+
+/** Romanian (Română) */
+$aliases['ro'] = array(
+	'Translate' => array( 'Tradu' ),
 );
 
 /** Swedish (Svenska) */
