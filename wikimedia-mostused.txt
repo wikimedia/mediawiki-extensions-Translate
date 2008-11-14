@@ -264,6 +264,7 @@ template-semiprotected
 histlast
 histfirst
 histlegend
+history-fieldset-title
 tooltip-ca-unwatch
 nstab-project
 recentchanges-feed-description
@@ -287,6 +288,8 @@ newmessageslink
 month
 monthsall
 year
+pager-newer-n
+pager-older-n
 uctop
 newarticle
 delete
@@ -304,6 +307,9 @@ revertmove
 blocklogentry
 allpagesfrom
 sp-contributions-blocklog
+sp-contributions-search
+sp-contributions-newbies
+sp-contributions-username
 nstab-template
 tooltip-ca-nstab-template
 uploadlogpage
