@@ -146,6 +146,13 @@ ignored = commenttab-editintro, commenttab-preload
 
 Comment Spammer
 
+Configure
+optional = configure-section-html, configure-section-ajax
+optional = configure-section-djvu, configure-section-imagemagick
+optional = configure-section-interwiki, configure-section-memcached
+optional = configure-section-squid, configure-section-svg, configure-section-tex
+optional = configure-section-tidy
+
 Confirm Account
 descmsg = confirmedit-desc
 optional = requestaccount-info, requestaccount-footer
