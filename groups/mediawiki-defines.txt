@@ -526,6 +526,8 @@ ignored = player-pagetext, player-imagepage-header
 
 PNG Handler
 
+Poem
+
 Post Comment
 file = Postcomment/SpecialPostcomment.i18n.php
 descmsg = postcomment_desc
