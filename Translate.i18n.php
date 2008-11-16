@@ -2822,6 +2822,16 @@ $messages['he'] = array(
 	'translationchanges' => 'שינויים בתרגום',
 	'translationchanges-export' => 'ייצוא',
 	'translationchanges-change' => '$1: $2 על ידי $3',
+	'translate-checks-parameters' => 'ה{{PLURAL:$2|פרמטר הבא אינו|פרמטרים הבאים אינם}} בשימוש:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters-unknown' => 'ה{{PLURAL:$2|פרמטר הבא אינו|פרמטרים הבאים אינם}} ידועים:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-balance' => 'מספר ה{{PLURAL:$2|סוגריים|סוגריים}} אינו מאוזן:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links' => '{{PLURAL:$2|הקישור הבא הינו|$2 הקישורים הבאים הינם}} בעייתיים:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-xhtml' => 'נא החליפו את ה{{PLURAL:$2|תגית הבאה בתגית הנכונה|תגיות הבאות בתגיות הנכונות}}:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'ההגדרה משתמשת ב־<nowiki>{{PLURAL:}}</nowiki>, אך התרגום אינו משתמש בו.',
 	'translate-checks-pagename' => 'מרחבי שם ששונו מהגדרתם',
 	'tog-translate-nonewsletter' => 'אל תשלחו אלי הודעות בדואר האלקטרוני (רלוונטי רק למשתמשים עם כתובת דואר אלקטרוני מאושרת)',
@@ -3835,8 +3845,8 @@ $messages['ja'] = array(
 	'translate-checks-xhtml' => '以下の$2個のタグを正しいものに修正してください:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => '元のメッセージでは <nowiki>{{PLURAL:}}</nowiki> を使用していますが、翻訳の中にはありません。',
-	'translate-stats-edits' => '編集',
-	'translate-stats-users' => '翻訳者',
+	'translate-stats-edits' => 'Edits',
+	'translate-stats-users' => 'Translators',
 	'translate-statsf-scale-days' => '日',
 	'translate-statsf-scale-hours' => '時間',
 	'translate-statsf-submit' => 'プレビュー',
@@ -3861,9 +3871,13 @@ $messages['jv'] = array(
 	'translate-task-export' => 'Èkspor pertalan saka',
 	'translate-task-export-to-file' => 'Èkspor pertalan menyang berkas saka',
 	'translate-task-export-as-po' => 'Èkspor pertalan ing format Gettext',
+	'translate-task-export-to-xliff' => 'Èkspor terjemahan ing format Xliff',
 	'translate-page-no-such-language' => 'Basa sing dipilih ora absah.',
 	'translate-page-no-such-task' => 'Operasi sing dipilih ora absah.',
 	'translate-page-no-such-group' => 'Grup sing dipilih ora absah.',
+	'translate-page-disabled' => "Penerjemahan jroning basa iki wis dinon-aktifaké. Alesan:
+
+''$1''",
 	'translate-page-settings-legend' => 'Pangaturan',
 	'translate-page-task' => 'Aku kepéngin',
 	'translate-page-group' => 'Kelompok',
@@ -3894,22 +3908,81 @@ $messages['jv'] = array(
 	'translate-edit-goto-next' => 'Sunting pesen/warta sabanjuré',
 	'translate-edit-goto-list' => 'Bali menyang dhaptar',
 	'translate-magic-pagename' => 'Pangambanan pertalan MediaWiki',
+	'translate-magic-help' => 'Panjenengan bisa nerjemahaké alias kanggo kaca istiméwa, tembung magis, jeneng kulit, lan jeneng bilik jeneng.
+
+Alias kanggo kaca istiméwa lan tembung magis bisa nduwèni luwih saka siji terjemahan.
+Siji lan sijiné kudu dipisahaké nganggo tandha koma (,).
+Jeneng kulit lan bilik jeneng mung bisa duwé siji terjemahan.
+
+Jroning nerjemahaké, bilik jeneng <tt>$1 talk</tt> kuwi istiméwa. <tt>$1</tt> digantèkaké nganggo jeneng situs (conto <tt>{{SITENAME}} talk</tt>).
+Yèn basa panjenengan ora mungkinaké gawé èksprèsi sing sah tanpa ngganti jeneng situs, mangga hubungi salah siji pangembang.
+
+Panjenengan perlu dadi anggota klompok penerjemah kanggo nyimpen owah-owahan.
+Owah-owahan ora bakal disimpen nganti panjenengan ngeklik tombol simpen ing ngisor.',
+	'translate-magic-module' => 'Modul:',
 	'translate-magic-submit' => 'Jupuk',
 	'translate-magic-cm-export' => 'Èkspor',
+	'translate-magic-cm-to-be' => 'Dadi',
 	'translate-magic-cm-current' => 'Saiki',
 	'translate-magic-cm-original' => 'Asli',
 	'translate-magic-cm-comment' => 'Komentar:',
 	'translate-magic-cm-save' => 'Simpen',
 	'translate-magic-cm-updatedusing' => 'Dimutakiraké nganggo [[Special:Magic]]',
 	'translate-magic-cm-savefailed' => 'Gagal disimpen',
+	'translate-magic-special' => 'Sesinglon kaca istiméwa',
 	'translate-magic-words' => 'Tembung-tembung magis',
 	'translate-magic-skin' => 'Jeneng kulit',
 	'translate-magic-namespace' => 'Jeneng bilik nama',
+	'translationchanges' => 'Owah-owahan terjemahan',
 	'translationchanges-export' => 'èkspor',
 	'translationchanges-change' => '$1: $2 déning $3',
-	'translate-checks-parameters' => 'Paramèter-paramèter ing ngisor iki ora dienggo: <strong>$1</strong>',
+	'translate-checks-parameters' => '{{PLURAL:$2|parameter|parameter-parameter}} iki ora dianggo:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Parameter|Parameter-parameter}} iki ora dikenal:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-balance' => 'Cacahing {{PLURAL:$2|pangapit|pangapit-pangapit}} ora seimbang:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links' => '{{PLURAL:$2|Pranala|Pranala-pranala}} iki nduwèni masalah:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-xhtml' => 'Mangga ganti {{PLURAL:$2|tag|tag-tag}} iki nganggo tag sing cocog:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-plural' => 'Dhéfinisi migunakaké <nowiki>{{PLURAL:}}</nowiki> nanging terjemahané ora.',
+	'translate-checks-pagename' => 'Bilik jeneng owah saka dhéfinisiné',
 	'tog-translate-nonewsletter' => 'Aja ngirimi aku jurnal warta e-mail (namung rélévan kanggo para panganggo sing wis konfirmasi alamat e-mailé)',
 	'right-translate' => 'Nyunting nganggo antarmuka pertalan',
+	'translate-rc-translation-filter' => 'Filter terjemahan:',
+	'translate-rc-translation-filter-no' => 'Ora difilter',
+	'translate-rc-translation-filter-only' => 'Tampilaké mung terjemahan waé',
+	'translate-rc-translation-filter-filter' => 'Tampilaké saliyané terjemahan',
+	'translate-rc-translation-filter-site' => 'Mung owah-owahan ing pesen situs waé',
+	'translationstats' => 'Statistik penerjemahan',
+	'translate-stats-edits' => 'Cacahing suntingan saben dina',
+	'translate-stats-users' => 'Penerjemah',
+	'translate-statsf-intro' => 'Pajenengan bisa nggawé statistik prasaja migunakaké formulir iki. Kabèh angka nduwèni wates ndhuwur lan ngisor.',
+	'translate-statsf-options' => 'Opsi grafik',
+	'translate-statsf-width' => 'Jembar jroning piksel',
+	'translate-statsf-height' => 'Dhuwur jroning piksel',
+	'translate-statsf-days' => 'Période wektu jroning dina',
+	'translate-statsf-scale' => 'Granularitas',
+	'translate-statsf-scale-days' => 'Dina',
+	'translate-statsf-scale-hours' => 'Jam',
+	'translate-statsf-count' => 'Ukuran',
+	'translate-statsf-count-edits' => 'Cacahing suntingan',
+	'translate-statsf-count-users' => 'Penerjemah aktif',
+	'translate-statsf-language' => 'Dhaptar kodhe basa diwatesi nganggo koma',
+	'translate-statsf-group' => 'Dhaptar kodhe klompok sing diwatesi nganggo koma',
+	'translate-statsf-submit' => 'Pratayang',
+	'translate-tag-category' => 'Kaca sing bisa diterjemahaké',
+	'translate-tag-page-desc' => 'Terjemahan saka kaca wiki [[:$1]].',
+	'translate-tag-translate-link-desc' => 'Terjemahaké kaca iki',
+	'translate-tag-legend' => 'Katrangan:',
+	'translate-tag-legend-fallback' => 'Terjemahan jroning basa liya',
+	'translate-tag-legend-fuzzy' => 'Terjemahan lungsé',
+	'translate-tag-fuzzy-comment' => 'Dhéfinisi diowahi déning [[User:$1|$1]] ing révisi $2.',
+	'translate-tag-fuzzy-reason' => 'Dhéfinisi diowahi déning "$1" kanthi komentar "$3" ing $2.',
+	'translate-sidebar-alltrans' => 'Terjemahan liya',
+	'translate-tag-noedit' => 'Kaca iki minangka kaca terjemahan otomatis pungkasan.
+Panjenengan bisa [$1 nyunting sumber kaca] utawa [$2 mutakiraké terjemahan].',
 );
 
 /** Georgian (ქართული)
@@ -4421,12 +4494,15 @@ $messages['km'] = array(
 
 /** Korean (한국어)
  * @author Ficell
+ * @author Kwj2772
  * @author ToePeu
  */
 $messages['ko'] = array(
+	'translate' => '번역하기',
 	'translate-edit' => '편집',
 	'translate-talk' => '토론',
 	'translate-history' => '역사',
+	'translate-page-language' => '언어',
 	'translate-edit-contribute' => '편집하기',
 	'translate-edit-no-information' => '이 메시지에 관한 도움말이 없습니다.
 만약 이 메시지가 어디에 어떻게 사용되는지 알고 계시다면 도움말을 작성해주세요.',
