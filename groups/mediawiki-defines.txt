@@ -153,6 +153,11 @@ optional = configure-section-interwiki, configure-section-memcached
 optional = configure-section-squid, configure-section-svg, configure-section-tex
 optional = configure-section-tidy
 
+Configure Settings
+file = Configure/Configure.settings.i18n.php
+descmsg = configure-setting-desc
+ignored = configure-setting-desc
+
 Confirm Account
 descmsg = confirmedit-desc
 optional = requestaccount-info, requestaccount-footer
