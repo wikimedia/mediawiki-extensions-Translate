@@ -156,7 +156,7 @@ optional = configure-section-tidy
 Configure Settings
 file = Configure/Configure.settings.i18n.php
 descmsg = configure-setting-desc
-ignored = configure-setting-desc
+optional = configure-setting-desc
 
 Confirm Account
 descmsg = confirmedit-desc
