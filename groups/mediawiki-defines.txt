@@ -140,6 +140,7 @@ descmsg = code-desc
 
 Collection
 descmsg = coll-desc
+ignored = coll-template_blacklist_title
 
 Comment Pages
 ignored = commenttab-editintro, commenttab-preload
