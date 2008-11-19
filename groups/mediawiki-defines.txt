@@ -738,6 +738,66 @@ Trusted XFF
 
 Unicode Converter
 
+Uniwiki - Authors
+id = ext-uniwiki-authors
+file = uniwiki/Authors/Authors.i18n.php
+descmsg = authors-desc
+
+Uniwiki - AutoCreateCategoryPages
+id = ext-uniwiki-autocreatecategorypages
+file = uniwiki/AutoCreateCategoryPages/AutoCreateCategoryPages.i18n.php
+descmsg = autocreatecategorypages-desc
+
+Uniwiki - CatBoxAtTop
+id = ext-uniwiki-catboxattop
+file = uniwiki/CatBoxAtTop/CatBoxAtTop.i18n.php
+descmsg = catboxattop-desc
+
+Uniwiki - CreatePage
+id = ext-uniwiki-createpage
+file = uniwiki/CreatePage/CreatePage.i18n.php
+descmsg = createpage-desc
+
+Uniwiki - CssHooks
+id = ext-uniwiki-csshooks
+file = uniwiki/CssHooks/CssHooks.i18n.php
+descmsg = csshooks-desc
+
+Uniwiki - CustomToolbar
+id = ext-uniwiki-customtoolbar
+file = uniwiki/CustomToolbar/CustomToolbar.i18n.php
+descmsg = customtoolbar-desc
+
+Uniwiki - FormatChanges
+id = ext-uniwiki-formatchanges
+file = uniwiki/FormatChanges/FormatChanges.i18n.php
+descmsg = formatchanges-desc
+
+Uniwiki - FormatSearch
+id = ext-uniwiki-formatsearch
+file = uniwiki/FormatSearch/FormatSearch.i18n.php
+descmsg = formatsearch-desc
+
+Uniwiki - GenericEditPage
+id = ext-uniwiki-genericeditpage
+file = uniwiki/GenericEditPage/GenericEditPage.i18n.php
+descmsg = genericeditpage-desc
+
+Uniwiki - Javascript
+id = ext-uniwiki-javascript
+file = uniwiki/Javascript/Javascript.i18n.php
+descmsg = javascript-desc
+
+Uniwiki - Layouts
+id = ext-uniwiki-layouts
+file = uniwiki/Layouts/Layouts.i18n.php
+descmsg = layouts-desc
+
+Uniwiki - MooTools12core
+id = ext-uniwiki-mootools12core
+file = uniwiki/MooTools12core/MooTools12core.i18n.php
+descmsg = mootools12core-desc
+
 Usage Statistics
 file = UsageStatistics/SpecialUserStats.i18n.php
 

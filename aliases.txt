@@ -253,6 +253,9 @@ file = TodoTasks/SpecialTaskList.alias.php
 Translate
 file = Translate/Translate.alias.php
 
+Uniwiki Create page
+file = uniwiki/CreatePage/CreatePage.alias.php
+
 Usage statistics
 file = UsageStatistics/SpecialUserStats.alias.php
 

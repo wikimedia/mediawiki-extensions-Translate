@@ -123,6 +123,7 @@ class PremadeMediawikiExtensionGroups {
 			'ext-0-wikimedia'       => 'AllWikimediaExtensionsGroup',
 			'ext-0-wikitravel'      => 'AllWikitravelExtensionsGroup',
 			'ext-flaggedrevs-0-all' => 'AllFlaggedRevsExtensionsGroup',
+			'ext-uniwiki-0-all' => 'AllUniwikiExtensionsGroup',
 		);
 
 		foreach ( $meta as $id => $g ) {
@@ -451,6 +452,39 @@ class AllFlaggedRevsExtensionsGroup extends AllMediawikiExtensionsGroup {
 			$this->classes = array();
 			$classes = MessageGroups::singleton()->getGroups();
 			foreach ( $this->flaggedrevsextensions as $key ) {
+				$this->classes[$key] = $classes[$key];
+			}
+		}
+	}
+}
+
+class AllUniwikiExtensionsGroup extends AllMediawikiExtensionsGroup {
+	protected $label = 'All Uniwiki messages';
+	protected $id    = 'ext-uniwiki-0-all';
+	protected $meta  = true;
+
+	protected $classes = null;
+
+	protected $uniwikiextensions = array(
+		'ext-uniwiki-authors',
+		'ext-uniwiki-autocreatecategorypages',
+		'ext-uniwiki-catboxattop',
+		'ext-uniwiki-createpage',
+		'ext-uniwiki-csshooks',
+		'ext-uniwiki-customtoolbar',
+		'ext-uniwiki-formatchanges',
+		'ext-uniwiki-formatsearch',
+		'ext-uniwiki-genericeditpage',
+		'ext-uniwiki-javascript',
+		'ext-uniwiki-layouts',
+		'ext-uniwiki-mootools12core',
+	);
+
+	protected function init() {
+		if ( $this->classes === null ) {
+			$this->classes = array();
+			$classes = MessageGroups::singleton()->getGroups();
+			foreach ( $this->uniwikiextensions as $key ) {
 				$this->classes[$key] = $classes[$key];
 			}
 		}
