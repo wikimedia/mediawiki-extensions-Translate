@@ -743,47 +743,47 @@ id = ext-uniwiki-authors
 file = uniwiki/Authors/Authors.i18n.php
 descmsg = authors-desc
 
-Uniwiki - AutoCreateCategoryPages
+Uniwiki - Auto Create Category Pages
 id = ext-uniwiki-autocreatecategorypages
 file = uniwiki/AutoCreateCategoryPages/AutoCreateCategoryPages.i18n.php
 descmsg = autocreatecategorypages-desc
 
-Uniwiki - CatBoxAtTop
+Uniwiki - Cat Box At Top
 id = ext-uniwiki-catboxattop
 file = uniwiki/CatBoxAtTop/CatBoxAtTop.i18n.php
 descmsg = catboxattop-desc
 
-Uniwiki - CreatePage
+Uniwiki - Create Page
 id = ext-uniwiki-createpage
 file = uniwiki/CreatePage/CreatePage.i18n.php
 descmsg = createpage-desc
 
-Uniwiki - CssHooks
+Uniwiki - Css Hooks
 id = ext-uniwiki-csshooks
 file = uniwiki/CssHooks/CssHooks.i18n.php
 descmsg = csshooks-desc
 
-Uniwiki - CustomToolbar
+Uniwiki - Custom Toolbar
 id = ext-uniwiki-customtoolbar
 file = uniwiki/CustomToolbar/CustomToolbar.i18n.php
 var = wgCustomToolbarMessages
-descmsg = customtoolbar-desc
+descmsg = ct-desc
 optional = ct_external_sample
 
-Uniwiki - FormatChanges
+Uniwiki - Format Changes
 id = ext-uniwiki-formatchanges
 file = uniwiki/FormatChanges/FormatChanges.i18n.php
 descmsg = formatchanges-desc
 
-Uniwiki - FormatSearch
+Uniwiki - Format Search
 id = ext-uniwiki-formatsearch
 file = uniwiki/FormatSearch/FormatSearch.i18n.php
 descmsg = formatsearch-desc
 
-Uniwiki - GenericEditPage
+Uniwiki - Generic Edit Page
 id = ext-uniwiki-genericeditpage
 file = uniwiki/GenericEditPage/GenericEditPage.i18n.php
-descmsg = genericeditpage-desc
+descmsg = gep-desc
 
 Uniwiki - Javascript
 id = ext-uniwiki-javascript
@@ -795,7 +795,7 @@ id = ext-uniwiki-layouts
 file = uniwiki/Layouts/Layouts.i18n.php
 descmsg = layouts-desc
 
-Uniwiki - MooTools12core
+Uniwiki - Moo Tools 12 core
 id = ext-uniwiki-mootools12core
 file = uniwiki/MooTools12core/MooTools12core.i18n.php
 descmsg = mootools12core-desc
