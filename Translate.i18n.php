@@ -1980,7 +1980,7 @@ Vi devas esti en la grupo de tradukantoj por konservi ŝanĝojn.
 	'translate-tag-legend' => 'Legendo:',
 	'translate-tag-legend-fallback' => 'Traduko en alia lingvo',
 	'translate-tag-legend-fuzzy' => 'Malfreŝa traduko',
-	'translate-tag-fuzzy-comment' => 'Difino ŝanĝita de [[User:$1|$1]] en revizio $2.',
+	'translate-tag-fuzzy-comment' => 'Difino ŝanĝita de [[User:$1|$1]] en versio $2.',
 	'translate-tag-fuzzy-reason' => 'Difino ŝanĝita de "$1" kun komento "$3" en $2.',
 	'translate-sidebar-alltrans' => 'Aliaj tradukoj',
 	'translate-tag-noedit' => 'Ĉi tiu paĝo estas aŭtomate ĝisdatigita traduko-paĝo.
@@ -4502,6 +4502,12 @@ $messages['ko'] = array(
 	'translate-edit' => '편집',
 	'translate-talk' => '토론',
 	'translate-history' => '역사',
+	'translate-task-view' => '모든 메시지를 보기',
+	'translate-task-untranslated' => '번역되지 않은 모든 메시지 보기',
+	'translate-task-problematic' => '문제가 있는 메시지 보기',
+	'translate-page-disabled' => '이 그룹에서 이 언어로의 번역이 비활성화되어 있습니다. 이유:
+
+$1',
 	'translate-page-language' => '언어',
 	'translate-edit-contribute' => '편집하기',
 	'translate-edit-no-information' => '이 메시지에 관한 도움말이 없습니다.
@@ -4510,6 +4516,11 @@ $messages['ko'] = array(
 	'translate-edit-goto-prev' => '이전 메시지 수정',
 	'translate-edit-goto-next' => '다음 메시지 수정',
 	'translate-edit-goto-list' => '목록으로 돌아가기',
+	'translate-magic-cm-save' => '저장',
+	'right-translate' => '시스템 메시지를 번역',
+	'translationstats' => '번역 통계',
+	'translate-tag-translate-link-desc' => '이 문서 번역하기',
+	'translate-tag-legend-fuzzy' => '오래 된 번역',
 	'translate-sidebar-alltrans' => '다른 번역',
 );
 
@@ -6277,9 +6288,12 @@ $messages['ro'] = array(
 	'translate-history' => 'istoric',
 	'translate-page-group' => 'Grup',
 	'translate-page-language' => 'Limbă',
+	'translate-next' => 'Pagina următoare',
+	'translate-prev' => 'Pagina anterioară',
 	'translate-page-edit' => 'modifică',
 	'translate-magic-cm-comment' => 'Comentariu:',
 	'translate-magic-cm-save' => 'Salvează',
+	'translate-tag-legend' => 'Legendă:',
 );
 
 /** Russian (Русский)
