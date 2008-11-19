@@ -89,6 +89,7 @@ $aliases['da'] = array(
 /** German (Deutsch) */
 $aliases['de'] = array(
 	'Translate' => array( 'Übersetzen' ),
+	'Magic' => array( 'Erweitertes Übersetzen' ),
 	'TranslationStats' => array( 'Übersetzungsstatistik' ),
 );
 

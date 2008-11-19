@@ -2693,6 +2693,8 @@ $messages['got'] = array(
  */
 $messages['grc'] = array(
 	'translate-page-language' => 'Γλῶττα',
+	'translate-optional' => '(προαιρετικόν)',
+	'translate-magic-cm-comment' => 'Σχόλιον:',
 	'translate-statsf-scale-days' => 'Ἡμέραι',
 	'translate-statsf-scale-hours' => 'Ὥραι',
 );
@@ -7083,7 +7085,7 @@ $messages['th'] = array(
 	'translate-edit-goto-prev' => 'แก้ไขข้อความก่อนหน้านี้',
 	'translate-edit-goto-next' => 'แก้ไขข้อความถัดไป',
 	'translate-edit-goto-list' => 'กลับไปที่รายชื่อ',
-	'translate-magic-pagename' => 'ส่วนขยายการแปลในมีเดียวิกิ',
+	'translate-magic-pagename' => 'ส่วนเพิ่มเติมของการแปลมีเดียวิกิ',
 	'translate-magic-help' => 'คุณสามารถแปลชื่อหน้าพิเศษต่าง ๆ, ตัวแปรพิเศษ, ชื่อแบบหน้าตา และ ชื่อเนมสเปซ
 
 ในตัวแปรพิเศษ กรุณาใส่คำแปลภาษาอังกฤษไปด้วยเช่นเดียวกัน มิฉะนั้นมันจะหยุดทำงาน กรุณาเว้นอันแรก (0 หรือ 1) อย่างที่มันเป็น
