@@ -766,6 +766,7 @@ descmsg = csshooks-desc
 Uniwiki - CustomToolbar
 id = ext-uniwiki-customtoolbar
 file = uniwiki/CustomToolbar/CustomToolbar.i18n.php
+var = wgCustomToolbarMessages
 descmsg = customtoolbar-desc
 
 Uniwiki - FormatChanges
