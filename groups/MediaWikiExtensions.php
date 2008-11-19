@@ -117,13 +117,14 @@ class PremadeMediawikiExtensionGroups {
 		}
 
 		$meta = array(
-			'ext-0-all'             => 'AllMediawikiExtensionsGroup',
-			'ext-0-wikia'           => 'AllWikiaExtensionsGroup',
-			'ext-0-wikihow'         => 'AllWikihowExtensionsGroup',
-			'ext-0-wikimedia'       => 'AllWikimediaExtensionsGroup',
-			'ext-0-wikitravel'      => 'AllWikitravelExtensionsGroup',
-			'ext-flaggedrevs-0-all' => 'AllFlaggedRevsExtensionsGroup',
-			'ext-uniwiki-0-all' => 'AllUniwikiExtensionsGroup',
+			'ext-0-all'               => 'AllMediawikiExtensionsGroup',
+			'ext-0-wikia'             => 'AllWikiaExtensionsGroup',
+			'ext-0-wikihow'           => 'AllWikihowExtensionsGroup',
+			'ext-0-wikimedia'         => 'AllWikimediaExtensionsGroup',
+			'ext-0-wikitravel'        => 'AllWikitravelExtensionsGroup',
+			'ext-flaggedrevs-0-all'   => 'AllFlaggedRevsExtensionsGroup',
+			'ext-socialprofile-0-all' => 'AllSocialProfileExtensionsGroup',
+			'ext-uniwiki-0-all'       => 'AllUniwikiExtensionsGroup',
 		);
 
 		foreach ( $meta as $id => $g ) {
@@ -452,6 +453,31 @@ class AllFlaggedRevsExtensionsGroup extends AllMediawikiExtensionsGroup {
 			$this->classes = array();
 			$classes = MessageGroups::singleton()->getGroups();
 			foreach ( $this->flaggedrevsextensions as $key ) {
+				$this->classes[$key] = $classes[$key];
+			}
+		}
+	}
+}
+
+class AllSocialProfileExtensionsGroup extends AllMediawikiExtensionsGroup {
+	protected $label = 'All Social Profile messages';
+	protected $id    = 'ext-socialprofile-0-all';
+	protected $meta  = true;
+
+	protected $classes = null;
+
+	protected $socialprofileextensions = array(
+		'ext-socialprofile-userboard',
+		'ext-socialprofile-userprofile',
+		'ext-socialprofile-userrelationship',
+		'ext-socialprofile-userstats',
+	);
+
+	protected function init() {
+		if ( $this->classes === null ) {
+			$this->classes = array();
+			$classes = MessageGroups::singleton()->getGroups();
+			foreach ( $this->socialprofileextensions as $key ) {
 				$this->classes[$key] = $classes[$key];
 			}
 		}

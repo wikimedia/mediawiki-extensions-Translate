@@ -647,17 +647,21 @@ descmsg = slippymap_desc
 Smooth Gallery
 ignored = smoothgallery-pagetext
 
-Social Profile User Board
+Social Profile - User Board
+id = ext-socialprofile-userboard
 file = SocialProfile/UserBoard/UserBoard.i18n.php
 
-Social Profile User Profile
+Social Profile - User Profile
+id = ext-socialprofile-userprofile
 file = SocialProfile/UserProfile/UserProfile.i18n.php
 optional = avatarlogentry, profilelogentry
 
-Social Profile User Relationship
+Social Profile - User Relationship
+id = ext-socialprofile-userrelationship
 file = SocialProfile/UserRelationship/UserRelationship.i18n.php
 
-Social Profile User Stats
+Social Profile - User Stats
+id = ext-socialprofile-userstats
 file = SocialProfile/UserStats/UserStats.i18n.php
 
 Spam Blacklist

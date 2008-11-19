@@ -136,6 +136,7 @@ $wgTranslateAC = array(
 $wgTranslateGroupStructure = array(
 	'/^core/' => array( 'core' ),
 	'/^ext-flaggedrevs/' => array( 'ext', 'flaggedrevs' ),
+	'/^ext-socialprofile/' => array( 'ext', 'uniwiki' ),
 	'/^ext-uniwiki/' => array( 'ext', 'uniwiki' ),
 	'/^ext/' => array( 'ext' ),
 	'/^page\|/' => array( 'page' ),
