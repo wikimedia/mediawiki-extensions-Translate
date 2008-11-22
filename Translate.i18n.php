@@ -1201,6 +1201,7 @@ $messages['bs'] = array(
 	'translate-page-language' => 'Jezik',
 	'translate-page-limit' => 'Ograničenja',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|poruka|poruke|poruka}} po stranici',
+	'translate-page-navigation-legend' => 'Navigacija',
 	'translate-page-showing' => 'Prikazane su poruke od $1 do $2 iz $3.',
 	'translate-page-showing-all' => 'Prikaz $1 {{PLURAL:$1|poruke|poruke|poruka}}.',
 	'translate-page-showing-none' => 'Nema poruka za prikaz.',
@@ -1933,7 +1934,7 @@ $messages['eo'] = array(
 	'translate-page-language' => 'Lingvo',
 	'translate-page-limit' => 'Nombro de mesaĝoj',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|mesaĝo|mesaĝoj}} po paĝo',
-	'translate-submit' => 'Alporti',
+	'translate-submit' => 'Mendi',
 	'translate-page-navigation-legend' => 'Navigado',
 	'translate-page-showing' => 'Estas motrataj mesaĝoj $1 ĝis $2 el $3.',
 	'translate-page-showing-all' => 'Estas montrataj $1 {{PLURAL:$1|mesaĝo|mesaĝoj}}.',
@@ -2735,8 +2736,10 @@ $messages['got'] = array(
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
  * @author Crazymadlover
  * @author LeighvsOptimvsMaximvs
+ * @author Omnipaedista
  */
 $messages['grc'] = array(
+	'translate' => 'Μεταγλωττίζειν',
 	'translate-edit' => 'μεταγράφειν',
 	'translate-talk' => 'διαλέγεσθαι',
 	'translate-history' => 'αἱ προτέραι',
@@ -2745,6 +2748,7 @@ $messages['grc'] = array(
 	'translate-page-edit' => 'μεταγράφειν',
 	'translate-optional' => '(προαιρετικόν)',
 	'translate-magic-cm-comment' => 'Σχόλιον:',
+	'translationchanges-export' => 'ἐξάγειν',
 	'translate-statsf-scale-days' => 'Ἡμέραι',
 	'translate-statsf-scale-hours' => 'Ὥραι',
 );
@@ -5982,6 +5986,7 @@ Podètz [$1 modificar la pagina font] o [$2 metre a jorn la traduccion].',
 $messages['os'] = array(
 	'translate-edit' => 'баив æй',
 	'translate-page-language' => 'Æвзаг',
+	'translate-page-edit' => 'баив æй',
 	'translate-magic-cm-current' => 'Нырыккон',
 );
 
@@ -6346,6 +6351,15 @@ $messages['ro'] = array(
 	'translate-magic-cm-comment' => 'Comentariu:',
 	'translate-magic-cm-save' => 'Salvează',
 	'translate-tag-legend' => 'Legendă:',
+);
+
+/** Tarandíne (Tarandíne)
+ * @author Joetaras
+ */
+$messages['roa-tara'] = array(
+	'translate-magic-cm-original' => 'Origginale',
+	'translate-magic-cm-comment' => 'Commende:',
+	'translate-magic-cm-save' => 'Reggistre',
 );
 
 /** Russian (Русский)
@@ -7284,7 +7298,7 @@ $messages['uk'] = array(
 Псевдоніми спеціальних сторінок і магічні слова можуть мати декілька варіантів перекладу, які розділяються комою (,).
 Назви тем оформлення та простори назв можуть мати тільки один переклад.
 
-У перекладах просторів назв рядок <tt>Обговорення $1</tt> обробляється по-особливому. <tt>$1</tt> буде замінено на назву сайта (наприклад <tt>Обговорення {{SITENAME}}</tt>). Зв'яжіться з розробниками, якщо подібна граматична конструкція невірна для вашої мови.
+У перекладах просторів назв рядок <tt>Обговорення $1</tt> обробляється по-особливому. <tt>$1</tt> буде замінено на назву сайту (наприклад <tt>Обговорення {{SITENAME}}</tt>). Зв'яжіться з розробниками, якщо подібна граматична конструкція невірна для вашої мови.
 
 Щоб зберегти зміни, ви повинні належати до групи перекладачів.
 Зміни не будуть збережені, поки ви не натиснете кнопку нижче.",
@@ -7320,7 +7334,7 @@ $messages['uk'] = array(
 	'translate-rc-translation-filter-no' => 'Немає',
 	'translate-rc-translation-filter-only' => 'Показати тільки переклади',
 	'translate-rc-translation-filter-filter' => 'Без перекладів',
-	'translate-rc-translation-filter-site' => 'Повідомлення сайта',
+	'translate-rc-translation-filter-site' => 'Повідомлення сайту',
 	'translationstats' => 'Статистика перекладів',
 	'translate-stats-edits' => 'Редагувань за день',
 	'translate-stats-users' => 'Перекладачі',
