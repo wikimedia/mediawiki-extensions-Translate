@@ -98,13 +98,13 @@ class SpecialTranslations extends SpecialAllpages {
 
 		$wgOut->addHTML( $this->namespaceMessageForm( $namespace, $message ) );
 
-		/* if( !$inMessageGroup ) {
+		if( !$inMessageGroup ) {
 			if( $namespace ) {
 				$out = wfMsg( 'translate-translations-no-message', $title->getPrefixedText() );
 			} else {
 				$out = wfMsg( 'translate-translations-no-message', $message );
 			}
-		} else { */
+		} else {
 			$dbr = wfGetDB( DB_SLAVE );
 
 			$res = $dbr->select( 'page',
