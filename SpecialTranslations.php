@@ -161,7 +161,7 @@ class SpecialTranslations extends SpecialAllpages {
 				}
 			}
 
-		#}
+		}
 		$wgOut->addHTML( $out );
 	}
 }
