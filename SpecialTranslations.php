@@ -44,7 +44,6 @@ class SpecialTranslations extends SpecialAllpages {
 			# GET values
 			$message = $wgRequest->getVal( 'message' );
 			$namespace = $wgRequest->getInt( 'namespace' );
-			$namespaces = $wgContLang->getNamespaces();
 
 			if( isset( $message ) && $message != '' ){
 				$this->showTranslations( $namespace, $message );
