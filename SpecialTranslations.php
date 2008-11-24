@@ -132,7 +132,7 @@ class SpecialTranslations extends SpecialAllpages {
 					$t = Title::makeTitle( $s->page_namespace, $key );
 
 					$niceTitle = htmlspecialchars( $wgLang->truncate( $key, - 30, '…' ) );
-					print $niceTitle . "<br />";
+
 					if ( 1 || $wgUser->isAllowed( 'translate' ) ) {
 						$tools['edit'] = $sk->makeKnownLinkObj( $t, $niceTitle, "action=edit&loadgroup=$inMessageGroup" );
 					} else {
