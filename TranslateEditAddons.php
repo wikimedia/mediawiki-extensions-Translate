@@ -104,7 +104,7 @@ EOEO;
 		return $fallbacks;
 	}
 
-	private static function doBox( $msg, $code, $title = false ) {
+	private static function doBox( $msg, $code, $title = false, $makelink = false ) {
 		global $wgUser, $wgLang;
 		if ( $msg === null ) { return ''; }
 
@@ -128,6 +128,11 @@ EOEO;
 		if ( !$title ) $title = "$name ($code)";
 		$title = htmlspecialchars( $title );
 
+		if( $makelink ) {
+			$skin = $wgUser->getSkin();
+			$linkTitle = Title::newFromText( $makelink);
+			$title = $skin->link( $linkTitle, $title );
+		}
 		return TranslateUtils::fieldset( $title, Xml::tags( 'code', null, $msg ), $attributes );
 	}
 
@@ -181,9 +186,9 @@ EOEO;
 		$xx = $group->getMessage( $key, $code );
 
 		$boxes = array();
-
 		// In other languages (if any)
 		$inOtherLanguages = array();
+		$namespace = $object->mTitle->getNsText();
 		foreach ( self::getFallbacks( $code ) as $fbcode ) {
 			$fb = $group->getMessage( $key, $fbcode );
 			/* For fallback, even uncommitted translation may be useful */
@@ -191,7 +196,8 @@ EOEO;
 				$fb = TranslateUtils::getMessageContent( $key, $fbcode );
 			}
 			if ( $fb !== null ) {
-				$inOtherLanguages[] = self::dobox( $fb, $fbcode );
+				/* add a link for editing the fallback messages */
+				$inOtherLanguages[] = self::dobox( $fb, $fbcode, false, $namespace . ':' . $key . '/' . $fbcode );
 			}
 		}
 		if ( count( $inOtherLanguages ) ) {
