@@ -24,21 +24,33 @@ class SpecialTranslations extends SpecialAllpages {
 	 * @param $par String: becomes "FOO" when called like Special:Translations/MediaWiki:Allmessages (default null)
 	 */
 	function execute( $par ) {
-		global $wgRequest, $wgOut, $wgContLang;
+		global $wgRequest, $wgOut;
 
 		wfLoadExtensionMessages( 'Translate' );
 		$this->setHeaders();
 		$this->outputHeader();
 
-		# GET values
-		$message = $wgRequest->getVal( 'message' );
-		$namespace = $wgRequest->getInt( 'namespace' );
-		$namespaces = $wgContLang->getNamespaces();
+		if( $this->including() ){
+			$title = Title::newFromText( $par );
+			if( $title instanceof Title ){
+				$message = $title->getText();
+				$namespace = $title->getNamespace();
 
-		if( isset( $message ) && $message != '' ){
-			$this->showTranslations( $namespace, $message );
+				$this->showTranslations( $namespace, $message );
+			} else {
+				$wgOut->addWikiMsg( 'translate-translations-including-no-param' );
+			}
 		} else {
-			$wgOut->addHTML( $this->namespaceMessageForm( $namespace, null ) );
+			# GET values
+			$message = $wgRequest->getVal( 'message' );
+			$namespace = $wgRequest->getInt( 'namespace' );
+			$namespaces = $wgContLang->getNamespaces();
+
+			if( isset( $message ) && $message != '' ){
+				$this->showTranslations( $namespace, $message );
+			} else {
+				$wgOut->addHTML( $this->namespaceMessageForm( $namespace, null ) );
+			}
 		}
 	}
 
@@ -96,7 +108,8 @@ class SpecialTranslations extends SpecialAllpages {
 
 		$inMessageGroup = TranslateUtils::messageKeyToGroup( $title->getNamespace(), $title->getBaseText() );
 
-		$wgOut->addHTML( $this->namespaceMessageForm( $namespace, $message ) );
+		if( !$this->including() )
+			$wgOut->addHTML( $this->namespaceMessageForm( $namespace, $message ) );
 
 		if( !$inMessageGroup ) {
 			if( $namespace ) {

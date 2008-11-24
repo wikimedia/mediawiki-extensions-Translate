@@ -173,6 +173,7 @@ You can [$1 edit the source page] or [$2 update the translation].',
 	'translate-translations-none' => 'There are no translations for "$1"',
 	'translate-translations-fieldset-title' => 'All translations',
 	'translate-translations-messagename' => 'Message:',
+	'translate-translations-including-no-param' => 'Please specify a valid page name in the subpage parameter',
 
 );
 
