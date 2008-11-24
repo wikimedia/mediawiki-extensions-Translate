@@ -131,7 +131,7 @@ EOEO;
 		if( $makelink ) {
 			$skin = $wgUser->getSkin();
 			$linkTitle = Title::newFromText( $makelink);
-			$title = $skin->link( $linkTitle, $title );
+			$title = $skin->makeKnownLinkObj( $linkTitle, $title, 'action=edit' );
 		}
 		return TranslateUtils::fieldset( $title, Xml::tags( 'code', null, $msg ), $attributes );
 	}
