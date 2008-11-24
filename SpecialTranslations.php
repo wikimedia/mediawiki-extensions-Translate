@@ -21,7 +21,8 @@ class SpecialTranslations extends SpecialAllpages {
 
 	/**
 	 * Entry point : initialise variables and call subfunctions.
-	 * @param $par String: becomes "FOO" when called like Special:Translations/MediaWiki:Allmessages (default null)
+	 * @param $par String: becomes "MediaWiki:Allmessages" when called like
+	 *             Special:Translations/MediaWiki:Allmessages (default null)
 	 */
 	function execute( $par ) {
 		global $wgRequest, $wgOut;
@@ -48,7 +49,15 @@ class SpecialTranslations extends SpecialAllpages {
 			if( isset( $message ) && $message != '' ){
 				$this->showTranslations( $namespace, $message );
 			} else {
-				$wgOut->addHTML( $this->namespaceMessageForm( $namespace, null ) );
+				$title = Title::newFromText( $par );
+				if( $title instanceof Title ){
+					$message = $title->getText();
+					$namespace = $title->getNamespace();
+	
+					$this->showTranslations( $namespace, $message );
+				} else {
+					$wgOut->addHTML( $this->namespaceMessageForm( $namespace, null ) );
+				}
 			}
 		}
 	}
