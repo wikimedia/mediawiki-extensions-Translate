@@ -16,9 +16,9 @@ class TranslateToolbox {
 			wfLoadExtensionMessages( 'Translate' );
 
 			// Add a slash at the end, to not have basename in the result of Special:Prefixindex
-			$prefix = $wgTitle->getNsText() . ":" . $wgTitle->getBaseText() . "/";
+			$message = $wgTitle->getNsText() . ":" . $wgTitle->getBaseText();
 			$desc = wfMsg( 'translate-sidebar-alltrans' );
-			$url = htmlspecialchars( SpecialPage::getTitleFor( 'Prefixindex' )->getLocalURL( 'from=' . $prefix ) );
+			$url = htmlspecialchars( SpecialPage::getTitleFor( 'Translations' )->getLocalURL( 'message=' . $message ) );
 
 			// Add the actual toolbox entry.
 			// Add newlines and tabs for nicer HTML output.

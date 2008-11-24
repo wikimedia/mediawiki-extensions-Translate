@@ -166,6 +166,13 @@ Changes are not saved until you click save button below.',
 	'translate-tag-noedit' => 'This page is automatically updated translation page.
 You can [$1 edit the source page] or [$2 update the translation].',
 
+	# Special:Translations
+	'translations' => 'All translations',
+	'translations-summary' => 'Enter a message name below to show all available translations.',
+	'translate-translations-no-message' => '"$1" is not a translatable message',
+	'translate-translations-none' => 'There are no translations for "$1"',
+	'translate-translations-fieldset-title' => 'All translations',
+	'translate-translations-messagename' => 'Message:',
 
 );
 

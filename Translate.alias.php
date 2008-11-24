@@ -15,6 +15,7 @@ $aliases['en'] = array(
 	'Magic'              => array( 'AdvancedTranslate', 'Magic' ),
 	'TranslationChanges' => array( 'TranslationChanges' ),
 	'TranslationStats'   => array( 'TranslationStats' ),
+	'Translations'       => array( 'Translations' ),
 );
 
 /** Afrikaans (Afrikaans) */

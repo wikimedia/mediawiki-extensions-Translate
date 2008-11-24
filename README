@@ -33,6 +33,7 @@ function customMessageGroups( $id ) {
 </code>
 
 == Changes in version 10 ==
+* 2008-11-24:1 added Special:Translations to show all translations of a message
 * 2008-09-09:1 add message checks for Mantis
 * 2008-09-07   add support for Mantis
 * 2008-09-05   add languageeditstats.php to provide a top list of edits per language
