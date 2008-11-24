@@ -152,6 +152,7 @@ class SpecialTranslations extends SpecialAllpages {
 						Xml::tags( 'td', null, TranslateUtils::convertWhiteSpaceToHTML( $pageInfo[$key][0] ) )
 					);
 				}
+				TranslateUtils::injectCSS();
 
 				$out .= Xml::closeElement( 'table' );
 			} else {
