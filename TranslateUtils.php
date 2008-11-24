@@ -74,7 +74,7 @@ class TranslateUtils {
 	 * @param $titles Mixed: string or array of titles.
 	 * @param $namespace Mixed: the number of the namespace to look in for.
 	 */
-	private static function getContents( $titles, $namespace ) {
+	public static function getContents( $titles, $namespace ) {
 		wfMemIn( __METHOD__ ); wfProfileIn( __METHOD__ );
 		$dbr = wfGetDB( DB_SLAVE );
 		$rows = $dbr->select( array( 'page', 'revision', 'text' ),

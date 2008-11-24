@@ -120,13 +120,14 @@ class SpecialTranslations extends SpecialAllpages {
 				)
 			);
 
+			# FIXME: there probably is some smart way to get everything needed
+			#        using TranslateUtils::getContents() only once.
+
 			$n = 0;
 			if( $res->numRows() > 0 ) {
 				// Adapted version of TranslateUtils:makeListing() by Nikerabbit
 				$out = TranslateUtils::tableHeader();
-				
-				# FIXME: there probably is some smart way to get everything that we need
-				#        here using some stripping and TranslateUtits::getContents().
+
 				while( ( $n < $this->maxPerPage ) && ( $s = $res->fetchObject() ) ) {
 					$key = $s->page_title;
 					$t = Title::makeTitle( $s->page_namespace, $key );
@@ -145,10 +146,10 @@ class SpecialTranslations extends SpecialAllpages {
 					$extra = '';
 
 					$leftColumn = $anchor . $tools['edit'] . $extra;
-
+					$pageInfo = TranslateUtils::getContents( array( $key ), $namespace );
 					$out .= Xml::tags( 'tr', array( 'class' => 'def' ),
 						Xml::tags( 'td', null, $leftColumn ) .
-						Xml::tags( 'td', null, '&nbsp;' ) # FIXME: need to get the page content here.
+						Xml::tags( 'td', null, TranslateUtils::convertWhiteSpaceToHTML( $pageInfo[$key][0] ) )
 					);
 				}
 
