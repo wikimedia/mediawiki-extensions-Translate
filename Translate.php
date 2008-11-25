@@ -37,6 +37,7 @@ $wgSpecialPages['TranslationChanges'] = 'SpecialTranslationChanges';
 $wgSpecialPages['TranslationStats'] = 'SpecialTranslationStats';
 $wgSpecialPageGroups['Magic'] = 'wiki';
 $wgSpecialPageGroups['Translate'] = 'wiki';
+$wgSpecialPageGroups['Translations'] = 'pages';
 $wgSpecialPageGroups['TranslationChanges'] = 'changes';
 $wgSpecialPageGroups['TranslationStats'] = 'wiki';
 
