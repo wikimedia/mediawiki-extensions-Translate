@@ -179,6 +179,15 @@ $aliases['id'] = array(
 	'TranslationStats' => array( 'Statistik terjemahan' ),
 );
 
+/** Japanese (日本語) */
+$aliases['ja'] = array(
+	'Translate' => array( '翻訳' ),
+	'Magic' => array( '高度な翻訳' ),
+	'TranslationChanges' => array( '翻訳変更' ),
+	'TranslationStats' => array( '翻訳統計' ),
+	'Translations' => array( '翻訳結果' ),
+);
+
 /** Khmer (ភាសាខ្មែរ) */
 $aliases['km'] = array(
 	'Translate' => array( 'បកប្រែ' ),
@@ -255,8 +264,9 @@ $aliases['nds-nl'] = array(
 $aliases['nl'] = array(
 	'Translate' => array( 'Vertalen' ),
 	'Magic' => array( 'UitgebreidVertalen', 'VertalenUitgebreid' ),
-	'TranslationChanges' => array( 'Vertalingen' ),
+	'TranslationChanges' => array( 'RecenteVertalingen' ),
 	'TranslationStats' => array( 'Vertaalstatistieken', 'Vertalingsstatistieken' ),
+	'Translations' => array( 'Vertalingen' ),
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬) */
