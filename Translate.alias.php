@@ -290,6 +290,7 @@ $aliases['pl'] = array(
 	'Magic' => array( 'Rozszerzone tłumaczenie MediaWiki' ),
 	'TranslationChanges' => array( 'Zmiany w tłumaczeniu' ),
 	'TranslationStats' => array( 'Statystyki tłumaczenia' ),
+	'Translations' => array( 'Tłumaczenia' ),
 );
 
 /** Pashto (پښتو) */
@@ -326,6 +327,15 @@ $aliases['sv'] = array(
 	'Magic' => array( 'Avancerad översättning' ),
 	'TranslationChanges' => array( 'Översättningsändringar' ),
 	'TranslationStats' => array( 'Översättningsstatistik' ),
+);
+
+/** Swahili (Kiswahili) */
+$aliases['sw'] = array(
+	'Translate' => array( 'Tafsiri' ),
+	'Magic' => array( 'TasfiriyaJuu', 'Uchawi' ),
+	'TranslationChanges' => array( 'MabadilikoyaTafsiri' ),
+	'TranslationStats' => array( 'TakwimuzaTafsiri' ),
+	'Translations' => array( 'Tafsiri' ),
 );
 
 /** Telugu (తెలుగు) */

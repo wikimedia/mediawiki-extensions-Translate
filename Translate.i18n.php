@@ -1018,6 +1018,10 @@ $messages['bg'] = array(
 	'translate-tag-legend-fallback' => 'Превод на друг език',
 	'translate-tag-legend-fuzzy' => 'Остарял превод',
 	'translate-sidebar-alltrans' => 'Други преводи',
+	'translations' => 'Всички преводи',
+	'translate-translations-none' => 'Не съществуват преводи за „$1“',
+	'translate-translations-fieldset-title' => 'Всички преводи',
+	'translate-translations-messagename' => 'Съобщение:',
 );
 
 /** Bengali (বাংলা)
@@ -1220,6 +1224,8 @@ $messages['bs'] = array(
 	'translate-page-edit' => 'uredi',
 	'translate-ignored' => '(zanemareno)',
 	'translate-edit-definition' => 'Definicija poruke',
+	'translate-edit-no-information' => "''Ova poruka nema pripadajuće dokumentacije. Ako znate gdje ili kako se ova poruka koristi, možete pomoći drugim prevodiocima tako što ćete dodati dokumentaciju za ovu poruku.''",
+	'translate-edit-information' => 'Informacije o ovoj poruci ($1)',
 	'translate-edit-in-other-languages' => 'Poruka na ostalim jezicima',
 	'translate-edit-committed' => 'Trenutni prijevodi softvera',
 	'translate-edit-warnings' => 'Upozorenja o nepotpunim prijevodima',
@@ -1233,6 +1239,7 @@ $messages['bs'] = array(
 	'translate-magic-cm-current' => 'Trenutno',
 	'translate-magic-cm-original' => 'Originalno',
 	'translate-magic-cm-comment' => 'Komentar:',
+	'translate-magic-cm-save' => 'Sačuvaj',
 	'translate-magic-words' => 'Magične riječi',
 	'translate-magic-namespace' => 'Nazivi imenskih prostora',
 	'translationchanges-export' => 'izvoz',
@@ -3945,7 +3952,8 @@ $messages['ja'] = array(
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => '以下の$2個のタグを正しいものに修正してください:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-plural' => '元のメッセージでは <nowiki>{{PLURAL:}}</nowiki> を使用していますが、翻訳の中にはありません。',
+	'translate-checks-plural' => '元のメッセージにある <nowiki>{{PLURAL:}}</nowiki> が翻訳の中にありません。
+（日本語訳では、ほとんどの場合、<nowiki>{{PLURAL:}}</nowiki>を用いずに訳しています。その場合、この警告は無視してかまいません。）',
 	'translate-checks-pagename' => 'もとの定義から名前空間が変更されています',
 	'tog-translate-nonewsletter' => '電子メールのニュースレターを受け取らない（電子メールアドレス確認済みの利用者のみ）',
 	'right-translate' => '翻訳用インターフェースを使って編集する',
@@ -6090,6 +6098,7 @@ $messages['os'] = array(
  * @author Leinad
  * @author Maikking
  * @author McMonster
+ * @author Qblik
  * @author Sp5uhe
  * @author Wpedzich
  */
@@ -6219,6 +6228,13 @@ Zmiany nie są zapisywane, dopóki użytkownik nie naciśnie umieszczonego poni�
 	'translate-sidebar-alltrans' => 'Inne tłumaczenia',
 	'translate-tag-noedit' => 'Ta strona jest automatycznie aktualizowaną stroną tłumaczenia.
 Możesz [$1 edytować źródło strony] lub [$2 zaktualizować tłumaczenie].',
+	'translations' => 'Wszystkie tłumaczenia',
+	'translations-summary' => 'Wprowadź poniżej nazwę komunikatu, aby zobaczyć wszystkie dostępne tłumaczenia.',
+	'translate-translations-no-message' => 'komunikatu „$1” nie można przetłumaczyć',
+	'translate-translations-none' => 'Nie istnieją tłumaczenia dla „$1”',
+	'translate-translations-fieldset-title' => 'Wszystkie tłumaczenia',
+	'translate-translations-messagename' => 'Komunikat:',
+	'translate-translations-including-no-param' => 'Proszę podaj prawidłową nazwę strony w parametrze podstrony',
 );
 
 /** Piedmontese (Piemontèis)
@@ -6723,6 +6739,7 @@ Môžete [$1 upravovať zdrojovú stránku] alebo [$2 aktualizovať preklad].',
 	'translate-translations-none' => 'Neexistujú žiadne preklady správy „$1“',
 	'translate-translations-fieldset-title' => 'Všetky preklady',
 	'translate-translations-messagename' => 'Správa:',
+	'translate-translations-including-no-param' => 'Prosím, v parametri subpage uvete platný názov stránky',
 );
 
 /** Somali (Soomaaliga)
