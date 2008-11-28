@@ -491,6 +491,8 @@ class GettextMessageGroup extends MessageGroup {
 	public function getPrefix() { return $this->prefix; }
 	public function setPrefix( $value ) { $this->prefix = $value; }
 
+	public $filePattern = '%CODE%.po';
+
 	public function getMessageFile( $code ) {
 		if ( $code == 'en' ) {
 			return $this->getPotFile();
@@ -498,8 +500,12 @@ class GettextMessageGroup extends MessageGroup {
 			if ( isset( $this->codeMap[$code] ) ) {
 				$code = $this->codeMap[$code];
 			}
-			return "$code.po";
+			return $this->replaceVariables( $this->filePattern, $code );
 		}
+	}
+
+	public function replaceVariables( $string, $code ) {
+		return str_replace( '%CODE%', $code, $string );
 	}
 
 	public static function factory( $label, $id ) {
