@@ -107,7 +107,7 @@ class JavaFormatWriter extends SimpleFormatWriter {
 
 		fwrite( $handle, <<<HEADER
 # Messages for $name ($native)
-# Exported from $wgSitename at $when
+# Exported from $wgSitename
 $authors
 
 HEADER
