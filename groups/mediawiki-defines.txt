@@ -16,6 +16,12 @@ descmsg = ajax-qp-desc
 Ajax Show Editors
 descmsg = ajax-se-desc
 
+Amazon Plus
+optional = amazonplus-status, amazonplus-status-sep, amazonplus-currency
+optional = amazonplus-usd, amazonplus-cad, amazonplus-gbp, amazonplus-eur
+optional = amazonplus-jpy
+ignored = amazonplus-english
+
 Anti Bot
 
 Anti Spoof
