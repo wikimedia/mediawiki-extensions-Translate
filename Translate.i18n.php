@@ -6086,6 +6086,7 @@ Podètz [$1 modificar la pagina font] o [$2 metre a jorn la traduccion].',
  */
 $messages['os'] = array(
 	'translate-edit' => 'баив æй',
+	'translate-history' => 'истори',
 	'translate-page-language' => 'Æвзаг',
 	'translate-page-edit' => 'баив æй',
 	'translate-magic-cm-current' => 'Нырыккон',
