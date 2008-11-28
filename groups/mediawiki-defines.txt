@@ -18,8 +18,8 @@ descmsg = ajax-se-desc
 
 Amazon Plus
 optional = amazonplus-status, amazonplus-status-sep, amazonplus-currency
-optional = amazonplus-usd, amazonplus-cad, amazonplus-gbp, amazonplus-eur
-optional = amazonplus-jpy
+optional = amazonplus-cp-usd, amazonplus-cp-cad, amazonplus-cp-gbp, amazonplus-cp-eur
+optional = amazonplus-cp-jpy
 ignored = amazonplus-english
 
 Anti Bot
