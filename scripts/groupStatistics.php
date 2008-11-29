@@ -22,14 +22,13 @@ if ( isset( $options['help'] ) ) showUsage();
 if ( !isset( $options['groups'] ) ) showUsage();
 if ( !isset( $options['output'] ) ) $options['output'] = 'default';
 
-
 /** Print a usage message*/
 function showUsage() {
 	$msg = <<<END
 	--help : this help message
 	--groups LIST: comma separated list of groups
 	--skiplanguages LIST: comma separated list of languages that should be skipped
-	--skipzero : skip languages that don't have any localisation at all
+	--skipzero : skip languages that do not have any localisation at all
 	--fuzzy : add column for fuzzy counts
 	--output TYPE: select an another output engine
 		* 'csv'      : Comma Separated Values.
@@ -41,7 +40,6 @@ END;
 	STDERR( $msg );
 	exit( 1 );
 }
-
 
 # Select an output engine
 switch ( $options['output'] ) {
@@ -64,12 +62,10 @@ switch ( $options['output'] ) {
 		showUsage();
 }
 
-
 $skipLanguages = array();
 if ( isset( $options['skiplanguages'] ) ) {
 	$skipLanguages = array_map( 'trim', explode( ',', $options['skiplanguages'] ) );
 }
-
 
 // Get groups from input
 $groups = array();
@@ -109,7 +105,6 @@ foreach ( $groups as $g ) {
 }
 $out->blockend();
 
-
 // Perform the statistic calculations on every language
 foreach ( $languages as $code => $name ) {
 	// Skip list
@@ -145,7 +140,6 @@ foreach ( $languages as $code => $name ) {
 			$columns[] = $out->formatPercent( $fuzzy, $total,
 				/* Inverted color */ true, /* Decimals */ 2 );
 		}
-
 	}
 
 	// Skip dummy languages if requested
