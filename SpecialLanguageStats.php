@@ -12,8 +12,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-#class SpecialLanguageStats extends IncludableSpecialPage {
-class SpecialLanguageStats extends UnlistedSpecialPage {
+class SpecialLanguageStats extends IncludableSpecialPage {
 	function __construct() {
 		parent::__construct( 'LanguageStats' );
 	}
@@ -26,27 +25,33 @@ class SpecialLanguageStats extends UnlistedSpecialPage {
 		$this->setHeaders();
 		$this->outputHeader();
 
-		$par = $wgRequest->getVal( 'code', $par );
+		# check for input
+		$code = $wgRequest->getVal( 'code', $par );
+		$suppressComplete = $wgRequest->getVal( 'suppresscomplete', $par );
 
+		# no UI when including()
 		if( !$this->including() ) {
-			$wgOut->addHTML( $this->languageForm( $par ) );
+			$wgOut->addHTML( $this->languageForm( $code, $suppressComplete ) );
 		}
 
 		$out = '';
 
-		if( array_key_exists( $par, Language::getLanguageNames() ) ) {
-			$out .= $this->getGroupStats( $par );
+		if( array_key_exists( $code, Language::getLanguageNames() ) ) {
+			$out .= $this->getGroupStats( $code, $suppressComplete );
 		} else {
 			$wgOut->addWikiMsg( 'translate-page-no-such-language' );
 		}
+
 		$wgOut->addHTML( $out );
 	}
 
 	/**
 	* HTML for the top form
 	* @param integer $code A language code (default empty, example: 'en').
+	* @param bool $suppressComplete If completely translated groups should be suppressed
+	* @return string HTML
 	*/
-	function languageForm( $code = '' ) {
+	function languageForm( $code = '', $suppressComplete = false ) {
 		global $wgScript;
 		$t = $this->getTitle();
 
@@ -62,8 +67,11 @@ class SpecialLanguageStats extends UnlistedSpecialPage {
 				"</td>
 				<td class='mw-input'>" .
 					Xml::input( 'code', 30, str_replace('_',' ',$code), array( 'id' => 'code' ) ) .
-				"</td>
-				<td class='mw-input'>" .
+				"</td>" . 
+				Xml::checkLabel( wfMsg( 'translate-suppress-complete' ), 'suppresscomplete', 'suppresscomplete', $suppressComplete ) .
+			"</tr>" .
+			"<tr>" .
+				"<td class='mw-input'>" .
 					Xml::submitButton( wfMsg( 'allpagessubmit' ) ) .
 				"</td>
 			</tr>";
@@ -129,7 +137,7 @@ class SpecialLanguageStats extends UnlistedSpecialPage {
 		$v = @round(255 * $subset / $total);
 
 		if ( $fuzzy ) {
-			# weight fuzzy with factor 20
+			# weigh fuzzy with factor 20
 			$v = $v * 20;
 			if( $v > 255 ) $v = 255;
 			$v = 255 - $v;
@@ -149,16 +157,23 @@ class SpecialLanguageStats extends UnlistedSpecialPage {
 		return $red . $green . $blue;
 	}
 
-	// copied and adaped from groupStatistics.php by Nikerabbit
-	function getGroupStats( $code ) {
+	/**
+	 * HTML for language statistics
+	 * Copied and adaped from groupStatistics.php by Nikerabbit
+	 * @param integer $code A language code (default empty, example: 'en').
+	 * @param bool $suppressComplete If completely translated groups should be suppressed
+	 * @return string HTML
+	 */
+	function getGroupStats( $code, $suppressComplete = false ) {
 		global $wgUser;
 
 		$out = '';
 
+		# FIXME: provide some sensible header for what is being displayed.
 		$out .= '<!-- ' . $code . " -->\n";
 		$out .= '<!-- ' . TranslateUtils::getLanguageName( $code, false ) . " -->\n";
 
-		# Create header
+		# Create table header
 		$out .= $this->heading();
 		$out .= $this->blockstart();
 		$out .= $this->element( wfMsg( 'translate-page-group', true ) );
@@ -166,18 +181,11 @@ class SpecialLanguageStats extends UnlistedSpecialPage {
 		$out .= $this->element( wfMsg( 'translate-percentage-fuzzy', true ) );
 		$out .= $this->blockend();
 
-		# fetch groups stats have to be displayed for
+		# Fetch groups stats have to be displayed for
 		$groups = $this->getGroups();
 
 		# Get statistics for the message groups
 		foreach ( $groups as $g ) {
-			$out .= $this->blockstart();
-
-			$translateTitle = SpecialPage::getTitleFor( 'Translate' );
-			$pageParameters = "group=" . $g->getId() . "&language=" . $code;
-			$translateGroupLink = $wgUser->getSkin()->makeKnownLinkObj( $translateTitle, $g->getLabel(), $pageParameters );
-
-			$out .= $this->element( $translateGroupLink );
 
 			// Initialise messages
 			$collection = $g->initCollection( $code );
@@ -196,9 +204,25 @@ class SpecialLanguageStats extends UnlistedSpecialPage {
 			$collection->filter( 'translated', false );
 			$translated = count( $collection );
 
+			// FIXME: avoid division by 0. Should not happen, but core-mostused has this on Windows at the moment
+			if( !$total ) {
+				continue;
+			}
+
+			// Skip if $suppressComplete and complete
+			if( $suppressComplete && !$fuzzy && $translated == $total ) {
+				continue;
+			}
+
 			$translatedPercentage = @sprintf( '%.2f%%', 100 * $translated / $total );
 			$fuzzyPercentage = @sprintf( '%.2f%%', 100 * $fuzzy / $total );
 
+			$translateTitle = SpecialPage::getTitleFor( 'Translate' );
+			$pageParameters = "group=" . $g->getId() . "&language=" . $code;
+			$translateGroupLink = $wgUser->getSkin()->makeKnownLinkObj( $translateTitle, $g->getLabel(), $pageParameters );
+
+			$out .= $this->blockstart();
+			$out .= $this->element( $translateGroupLink );
 			$out .= $this->element( $translatedPercentage, false, $this->getBackgroundColour( $translated, $total ) );
 			$out .= $this->element( $fuzzyPercentage, false, $this->getBackgroundColour( $fuzzy, $total, true ) );
 			$out .= $this->blockend();
