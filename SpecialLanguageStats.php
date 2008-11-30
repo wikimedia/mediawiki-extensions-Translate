@@ -34,14 +34,11 @@ class SpecialLanguageStats extends UnlistedSpecialPage {
 
 		$out = '';
 
-		#if( $this->including() ) {
-#			if( isset( Language::getLanguageNames( true ) ) ) {
-			if( 1 ) {
-				$out .= $this->getGroupStats( $par );
-			} else {
-				$wgOut->addWikiMsg( 'translate-page-no-such-language' );
-			}
-		#}
+		if( array_key_exists( $par, Language::getLanguageNames() ) ) {
+			$out .= $this->getGroupStats( $par );
+		} else {
+			$wgOut->addWikiMsg( 'translate-page-no-such-language' );
+		}
 		$wgOut->addHTML( $out );
 	}
 
