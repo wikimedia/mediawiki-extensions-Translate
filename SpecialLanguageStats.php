@@ -180,6 +180,8 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		# Create table header
 		$out .= $this->heading();
 		$out .= $this->blockstart();
+		$out .= $this->element( wfMsg( 'translate-total', true ) );
+		$out .= $this->element( wfMsg( 'translate-translated', true ) );
 		$out .= $this->element( wfMsg( 'translate-page-group', true ) );
 		$out .= $this->element( wfMsg( 'translate-percentage-complete', true ) );
 		$out .= $this->element( wfMsg( 'translate-percentage-fuzzy', true ) );
@@ -227,6 +229,8 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 			$out .= $this->blockstart();
 			$out .= $this->element( $translateGroupLink );
+			$out .= $this->element( $total );
+			$out .= $this->element( $translated );
 			$out .= $this->element( $translatedPercentage, false, $this->getBackgroundColour( $translated, $total ) );
 			$out .= $this->element( $fuzzyPercentage, false, $this->getBackgroundColour( $fuzzy, $total, true ) );
 			$out .= $this->blockend();

@@ -9,6 +9,7 @@ $messages = array();
 
 /** English
  * @author Nike
+ * @author Siebrand
  */
 $messages['en'] = array(
 	'translate'         => 'Translate',
@@ -182,6 +183,8 @@ You can [$1 edit the source page] or [$2 update the translation].',
 	'translate-language-code-field-name' => 'Language code:',
 	'translate-suppress-complete' => 'Suppress completely translated message groups',
 	'translate-language' => 'Language',
+	'translate-total' => 'Messages',
+	'translate-translated' => 'Translated',
 	'translate-percentage-complete' => 'Completion',
 	'translate-percentage-fuzzy' => 'Outdated',
 	'translate-languagestats-groups' => ' # Add message group IDs, one per line to restrict the message groups that
