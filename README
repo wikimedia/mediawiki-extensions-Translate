@@ -33,6 +33,7 @@ function customMessageGroups( $id ) {
 </code>
 
 == Changes in version 10 ==
+* 2008-11-30:1 added Special:LanguageStats for real-time translation statistics
 * 2008-11-24:2 fallback messages in the edit screen now have an edit link
 * 2008-11-24:1 added Special:Translations to show all translations of a message
 * 2008-09-09:1 add message checks for Mantis

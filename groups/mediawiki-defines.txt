@@ -742,7 +742,7 @@ Tooltip
 Tor Block
 
 Translate
-optional = translate-page-paging-links
+optional = translate-page-paging-links, translate-languagestats-groups
 
 Trusted XFF
 

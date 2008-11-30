@@ -175,6 +175,17 @@ You can [$1 edit the source page] or [$2 update the translation].',
 	'translate-translations-messagename' => 'Message:',
 	'translate-translations-including-no-param' => 'Please specify a valid page name in the subpage parameter',
 
+	# Special:LanguageStats
+	'languagestats' => 'Language statistics',
+	'languagestats-summary' => 'This page shows translation statistics for all ([[MediaWiki:Translate-languagestats-groups|configured]]) message groups for a language.',
+	'translate-language-code' => 'Language code',
+	'translate-language-code-field-name' => 'Language code:',
+	'translate-language' => 'Language',
+	'translate-percentage-complete' => 'Completion',
+	'translate-percentage-fuzzy' => 'Outdated',
+	'translate-languagestats-groups' => ' # Add message group IDs, one per line to restrict the message groups that
+ # are shown on Special:LanguageStats. Non-existing message group IDs will
+ # be ignored.', # do not duplicate this message to other languages
 );
 
 /** Message documentation (Message documentation)
@@ -1111,14 +1122,14 @@ $messages['br'] = array(
 	'translate-magic-pagename' => 'Troidigezh Mediawiki astennet',
 	'translate-magic-help' => "Gallout a rit treiñ aliasoù ar pajennoù dibar, ar gerioù burzhudus, anvioù an etrefasoù hag anvioù an esaouennoù anv.
 
-Aliasoù ar pajennoù dibar hag ar gerioù burzhudus a c'hall kaout meur a droidigezh. 
-Dispartiet eo an troidigezhioù dre skejoù (,). 
+Aliasoù ar pajennoù dibar hag ar gerioù burzhudus a c'hall kaout meur a droidigezh.
+Dispartiet eo an troidigezhioù dre skejoù (,).
 N'hall anvioù an etrefasoù ha re an esaouennoù anv nemet kaout un droidigezh hepken.
 
-E troidigezhioù an esaouennoù anv eo dibar <tt>$1 talk</tt>. Erlec'hiet eo <tt>$1</tt> gant anv al lec'hienn (da skouer <tt>{{SITENAME}} talk</tt>). 
+E troidigezhioù an esaouennoù anv eo dibar <tt>$1 talk</tt>. Erlec'hiet eo <tt>$1</tt> gant anv al lec'hienn (da skouer <tt>{{SITENAME}} talk</tt>).
 Ma n'haller ket sevel lavarennoù reizh en ho yezh hep kemmañ anv al lec'hienn, kit e darempred gant un diorroer.
 
-Ret eo deoc'h bezañ ezel eus ur strollad troerien evit enrollañ ar c'hemmoù. 
+Ret eo deoc'h bezañ ezel eus ur strollad troerien evit enrollañ ar c'hemmoù.
 Ne vo ket enrollet ar c'hemmoù e-keit ha ne vo ket bet pouezet war ar bouton dindan.",
 	'translate-magic-module' => 'Modulenn :',
 	'translate-magic-submit' => 'Mont',
@@ -1988,7 +1999,7 @@ Nomoj de etosoj kaj nomspacoj nur povas havi unu tradukon.
 En nomspacaj tradukoj <tt>$1 diskuto</tt> estas speciala. <tt>$1</tt> estas anstataŭigita de la nomo de la retejo (ekz-e <tt>{{SITENAME}} diskuto</tt>.
 Se ne eblas en via lingvo formi validan esprimon sen ŝanĝi la nomon de la retejo, bonvolu kontakti programisto.
 
-Vi devas esti en la grupo de tradukantoj por konservi ŝanĝojn. 
+Vi devas esti en la grupo de tradukantoj por konservi ŝanĝojn.
 Ŝanĝoj ne estos konservataj, ĝis vi alklakis la jenan butonon Konservi.',
 	'translate-magic-module' => 'Modjulo:',
 	'translate-magic-submit' => 'Montri',
@@ -2012,7 +2023,7 @@ Vi devas esti en la grupo de tradukantoj por konservi ŝanĝojn.
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Estas nepara nombro de {{PLURAL:$2|krampo|krampoj}}: <strong>$1</strong>',
 	'translate-checks-links' => '{{PLURAL:$2|Jenaj ligiloj estas problemaj|Jena ligilo estas problema}}: <strong>$1</strong>',
-	'translate-checks-xhtml' => 'Bonvolu anstataŭigi {{PLURAL:$2|jena etikedo|jenajn etikedojn}} per la korektaj: 
+	'translate-checks-xhtml' => 'Bonvolu anstataŭigi {{PLURAL:$2|jena etikedo|jenajn etikedojn}} per la korektaj:
 <strong>$1</strong>',
 	'translate-checks-plural' => 'Difino uzas <nowiki>{{PLURAL:}}</nowiki>, sed traduko ne.',
 	'translate-checks-pagename' => 'Nomspaco ŝanĝita de difino',
@@ -2112,7 +2123,7 @@ $messages['es'] = array(
 	'translate-magic-pagename' => 'Traducción extendida de MediaWiki',
 	'translate-magic-help' => 'Puedes traducir los nombres de las páginas especiales, las palabras mágicas, los nombres de pieles y los de los espacios de nombre
 
-Los nombres de las páginas especiales y las palabras mágicas pueden tener varias traducciones, que se separan por comas (,). 
+Los nombres de las páginas especiales y las palabras mágicas pueden tener varias traducciones, que se separan por comas (,).
 los nombres de pieles y espacios de nombre sólo pueden tener una traducción
 
 En las traducciones de espacios de nombre <tt>$1 talk</tt> es especial. <tt>$1</tt> se reemplaza por el nombre del sitio (por ejemplo <tt>{{SITENAME}} talk</tt>). Si en tu idioma no es posible formar una expresión válidad sin cambiar el nombre del sitio, contacta con un desarrollador, por favor.
@@ -4564,14 +4575,14 @@ $messages['km'] = array(
 	'translate-magic-help' => "អ្នកអាចប្រែសំរួលឈ្មោះផ្សេងៗទៀតនៃទំព័រពិសេស ពាក្យទិព្វ ឈ្មោះសំបក និងឈ្មោះនៃលំហឈ្មោះ។
 
 
-ឈ្មោះផ្សេងៗទៀតនៃទំព័រពិសេស​និង​ពាក្យទិព្វអាចមានបទប្រែសំរួលច្រើន។ 
+ឈ្មោះផ្សេងៗទៀតនៃទំព័រពិសេស​និង​ពាក្យទិព្វអាចមានបទប្រែសំរួលច្រើន។
 
 ការបកប្រែជាច្រើននោះត្រូវខ័ណ្ឌដោយសញ្ញាក្បៀស(,)។
 
 ឈ្មោះសំបកនិងលំហឈ្មោះអាចមានត្រឹមតែមួយបទប្រែសំរួលប៉ុណ្ណោះ ។
 
 
-ក្នុងការបកប្រែលំហឈ្មោះ <tt>ការពិភាក្សាអំពី$1</tt> ជាករណីពិសេស។ <tt>$1</tt> ត្រូវបានជំនួសដោយឈ្មោះវិបសាយ(ឧទាហរណ៍៖ <tt>ការពិភាក្សាអំពី{{SITENAME}}</tt>)។ 
+ក្នុងការបកប្រែលំហឈ្មោះ <tt>ការពិភាក្សាអំពី$1</tt> ជាករណីពិសេស។ <tt>$1</tt> ត្រូវបានជំនួសដោយឈ្មោះវិបសាយ(ឧទាហរណ៍៖ <tt>ការពិភាក្សាអំពី{{SITENAME}}</tt>)។
 
 ប្រសិនបើ​ភាសារបស់អ្នក​មិនបានបង្ហាញត្រឹមត្រូវដោយមិនប្តូរឈ្មោះវិបសាយទេ សូមទាក់ទងអ្នកអភិវឌ្ឍន៍(អ្នករចនាវិបសាយ)។
 
@@ -4594,16 +4605,16 @@ $messages['km'] = array(
 	'translationchanges' => 'បំលាស់ប្តូរនៃការបកប្រែ',
 	'translationchanges-export' => 'នាំចេញ',
 	'translationchanges-change' => '$1:$2 ដោយ $3',
-	'translate-checks-parameters' => '{{PLURAL:$2|ប៉ារ៉ាម៉ែត្រ|ប៉ារ៉ាម៉ែត្រ}}ខាងក្រោមនេះមិនត្រូវបានគេប្រើទេ៖ 
+	'translate-checks-parameters' => '{{PLURAL:$2|ប៉ារ៉ាម៉ែត្រ|ប៉ារ៉ាម៉ែត្រ}}ខាងក្រោមនេះមិនត្រូវបានគេប្រើទេ៖
 
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => 'ប៉ារ៉ាម៉ែត្រចំនួន$2ខាងក្រោមនេះមិនត្រូវបានស្គាល់ទេ៖
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-balance' => 'មាន{{PLURAL:$2|វង់ក្រចក|វង់ក្រចក}}​ដែលមិន​មាន​គូ៖ 
+	'translate-checks-balance' => 'មាន{{PLURAL:$2|វង់ក្រចក|វង់ក្រចក}}​ដែលមិន​មាន​គូ៖
 
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '{{PLURAL:$2|តំនភ្ជាប់|តំនភ្ជាប់}}ខាងក្រោមនេះ​មានបញ្ហា៖ <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-xhtml' => 'សូម​ជំនួស​$2​ប្លាកខាងក្រោមដោយប្លាកដែលត្រឹមត្រូវ៖ 
+	'translate-checks-xhtml' => 'សូម​ជំនួស​$2​ប្លាកខាងក្រោមដោយប្លាកដែលត្រឹមត្រូវ៖
 
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'និយមន័យ​ប្រើប្រាស់ <nowiki>{{PLURAL:}}</nowiki> ប៉ុន្តែ​បទប្រែសំរួល​មិនមាន ។',
@@ -4810,7 +4821,7 @@ Do moß en de Jrop „Övversäzer“ sen, för hee Änderonge maache ze könne.
 	'translate-tag-fuzzy-comment' => 'Dä ojinaal-Tex wood fum „[[User:$1|$1]]“ verändert met de Version $2.',
 	'translate-tag-fuzzy-reason' => "Dä ojinaal-Tex wood fum „[[User:$1|$1]]“ verändert met de Version $2 fum MediaWiki, met dämm Kommentaa: ''$3''",
 	'translate-sidebar-alltrans' => 'Ander Övversäzunge',
-	'translate-tag-noedit' => 'Die Sigg es en Övversäzongß_Sigg, die automattejj_op der neuste Shtant jebraat weed. 
+	'translate-tag-noedit' => 'Die Sigg es en Övversäzongß_Sigg, die automattejj_op der neuste Shtant jebraat weed.
 Do kanns de [$1 Ojinaal-Sigg ändere] ov de [$2 Övversäzong op der neuste Shtand bränge].',
 );
 
@@ -4916,7 +4927,7 @@ Dir musst am Grupp vun den Iwwersetzer si fir Ännerungen ofspäicheren ze kënn
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Et gëtt eng ongerued Zuel vu {{PLURAL:$2|Klammere|Klammere}} benotzt:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links' => '{{PLURAL:$2|Dëse Link ass|Dës Linke si}} problematesch: 
+	'translate-checks-links' => '{{PLURAL:$2|Dëse Link ass|Dës Linke si}} problematesch:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Ersetzt {{PLURAL:$2|dësen Tag|dës Tagen}} w.e.g. duerch déi korrekt:
 <strong><nowiki>$1</nowiki></strong>',
@@ -5044,7 +5055,7 @@ Magiško žodžio vertimuose nurodykite ir vertimą į anglų kalbą, kitaip jis
 
 Specialiojo puslapio pavadinimo ir magiško žodžio vertimai gali būti keli. Vertimai yra skiriami kableliu (,). Apvalkalo ir vardų srities pavadinimas gali turėti tik vieną vertimą.
 
-Vardų sričių vertimuose <tt>$1 aptarimas</tt> yra specialus. <tt>$1</tt> yra pakeičiamas svetainės pavadinimu (Pavyzdžiui <tt>{{SITENAME}} aptarimas</tt>). Jei nėra galimybės Jūsų kalboje suformuoti teisingos išraiškos su svetainės pavadinimo pakeitimu, prašome kreiptis į kūrėjus. 
+Vardų sričių vertimuose <tt>$1 aptarimas</tt> yra specialus. <tt>$1</tt> yra pakeičiamas svetainės pavadinimu (Pavyzdžiui <tt>{{SITENAME}} aptarimas</tt>). Jei nėra galimybės Jūsų kalboje suformuoti teisingos išraiškos su svetainės pavadinimo pakeitimu, prašome kreiptis į kūrėjus.
 
 Jūs turite priklausyti vertėjų grupei, kad galėtumėte išsaugoti pakeitimus. Pakeitimai nebus išsaugoti iki Jūs nuspausite išsaugojimo butoną apačioje.',
 	'translate-magic-submit' => 'Išrinkti',
@@ -5724,10 +5735,10 @@ $messages['nn'] = array(
 
 Spesialsidenamn og magiske ord kan ha fleire omsetjingar.
 Omsetjingane vert fråskilde med komma (,).
-Draktnamn og namnerom kan berre ha éi omsetjing. 
+Draktnamn og namnerom kan berre ha éi omsetjing.
 
 I namneromomsetjingane er <tt>$1 talk</tt> spesiell. <tt>$1</tt> vert erstatta med namnet på sida (til dømes <tt>{{SITENAME}}</tt>).
-Om det ikkje er mogeleg å få til eit gyldig uttrykk på ditt språk her utan å endre sidenamnet, kontakt ein utviklar. 
+Om det ikkje er mogeleg å få til eit gyldig uttrykk på ditt språk her utan å endre sidenamnet, kontakt ein utviklar.
 
 Du må vere i omsetjargruppar for å lagre endringar.
 Endringar vert ikkje lagra før du klikker på lagre-knappen nedanfor.',
@@ -6533,15 +6544,15 @@ $messages['ru'] = array(
 	'translate-magic-pagename' => 'Углублённый перевод MediaWiki',
 	'translate-magic-help' => 'Вы можете переводить псевдонимы служебных страниц, магические слова, названия тем оформления и пространств имён.
 
-При редактировании магических слов, желательно оставить английский вариант, иначе он не будет работать. 
+При редактировании магических слов, желательно оставить английский вариант, иначе он не будет работать.
 Также стоит оставить первое значение (цифра 0 или 1) таким, какое оно есть.
 
-Псевдонимы служебных страниц и магические слова могут иметь несколько вариантов перевода, они разделяются запятой (,). 
+Псевдонимы служебных страниц и магические слова могут иметь несколько вариантов перевода, они разделяются запятой (,).
 Названия тем оформления и пространств имён могут иметь только один вариант перевода.
 
 В переводах пространств имён строка «Обсуждение $1» обрабатывается особо, «$1» будет заменено на имя сайта (например «Обсуждение {{SITENAME}}»). Свяжитесь с разработчиками, если подобная грамматическая конструкция неверна для вашего языка.
 
-Чтобы сохранить изменения вы должны входить в группу переводчиков. 
+Чтобы сохранить изменения вы должны входить в группу переводчиков.
 Изменения не будут сохранены, пока вы не нажмёте кнопку ниже.',
 	'translate-magic-module' => 'Модуль:',
 	'translate-magic-submit' => 'Вывести',
@@ -6695,7 +6706,7 @@ Zmeny sa neuložia, kým nekliknete na tlačidlo Uložiť dolu.',
 	'translate-checks-balance' => 'Nevyvážené počty {{PLURAL:$2|zátvoriek|zátvoriek}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '{{PLURAL:$2|Nasledovný odkaz je problematický|Nasledovné odkazy sú problematické}}: <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-xhtml' => 'Prosím, nahraďte {{PLURAL:$2|nasledovnú značku správnou|nasledovné značky správnymi}}: 
+	'translate-checks-xhtml' => 'Prosím, nahraďte {{PLURAL:$2|nasledovnú značku správnou|nasledovné značky správnymi}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Definícia používa <nowiki>{{PLURAL:}}</nowiki>, ale preklad nie.',
 	'translate-checks-pagename' => 'Oproti definícii sa zmenil menný priestor',
@@ -7197,7 +7208,7 @@ $messages['tg-cyrl'] = array(
 	'translate-ignored' => '(нодида гирифташуда)',
 	'translate-edit-definition' => 'Таърифи пайғом',
 	'translate-edit-contribute' => 'ҳиссагузорӣ',
-	'translate-edit-no-information' => "''Ин пайғом дорои тавзеҳот нест. 
+	'translate-edit-no-information' => "''Ин пайғом дорои тавзеҳот нест.
 Агар шумо медонед ин пағом чигуна ё дар куҷо истифода мешавад, шумо метавонед бо изофа кардани тавзеҳот ба ин пайғом ба дигар тарҷумакунандагон кӯмак кунед.''",
 	'translate-edit-information' => 'Иттилоот дар мавриди ин пайғом ($1)',
 	'translate-edit-in-other-languages' => 'Ҳамин пайғом дар дигар забонҳо',
@@ -7278,14 +7289,14 @@ $messages['th'] = array(
 
 ในตัวแปรพิเศษ กรุณาใส่คำแปลภาษาอังกฤษไปด้วยเช่นเดียวกัน มิฉะนั้นมันจะหยุดทำงาน กรุณาเว้นอันแรก (0 หรือ 1) อย่างที่มันเป็น
 
-ชื่อหน้าพิเศษและตัวแปรพิเศษสามารถมีคำแปลได้หลายอย่าง 
-คำแปลจะแยกโดยการใช้ จุลภาค (,) 
+ชื่อหน้าพิเศษและตัวแปรพิเศษสามารถมีคำแปลได้หลายอย่าง
+คำแปลจะแยกโดยการใช้ จุลภาค (,)
 ชื่อแบบหน้าตาและเนมสเปซสามารถมีคำแปลได้แค่คำเดียว
 
-ในคำแปลชื่อเนมสเปซ <tt>คุยเรื่อง$1</tt> ต้องระวังเป็นพิเศษ <tt>$1</tt> จะถูกแทนที่โดยชื่อเว็บไซต์ (เช่น <tt>คุยเรื่อง{{SITENAME}}</tt>) 
+ในคำแปลชื่อเนมสเปซ <tt>คุยเรื่อง$1</tt> ต้องระวังเป็นพิเศษ <tt>$1</tt> จะถูกแทนที่โดยชื่อเว็บไซต์ (เช่น <tt>คุยเรื่อง{{SITENAME}}</tt>)
 ถ้าไม่สามารถกระทำการดังกล่าวได้ในภาษาของคุณ, กรุณาติดต่อผู้ดูแลระบบขั้นสูง
 
-คุณต้องอยู่ในกลุ่มคนแปลเพื่อที่จะบันทึกข้อมูลได้ 
+คุณต้องอยู่ในกลุ่มคนแปลเพื่อที่จะบันทึกข้อมูลได้
 ข้อมูลจะไม่ถูกบันทึกตราบใดที่คุณยังไม่กด "บันทึก"',
 	'translate-magic-module' => 'โมดูล:',
 	'translate-magic-submit' => 'ดึงข้อมูล',

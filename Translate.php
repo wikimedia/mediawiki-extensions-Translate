@@ -35,11 +35,13 @@ $wgSpecialPages['Translations'] = 'SpecialTranslations';
 $wgSpecialPages['Magic'] = 'SpecialMagic';
 $wgSpecialPages['TranslationChanges'] = 'SpecialTranslationChanges';
 $wgSpecialPages['TranslationStats'] = 'SpecialTranslationStats';
+$wgSpecialPages['LanguageStats'] = 'SpecialLanguageStats';
 $wgSpecialPageGroups['Magic'] = 'wiki';
 $wgSpecialPageGroups['Translate'] = 'wiki';
 $wgSpecialPageGroups['Translations'] = 'pages';
 $wgSpecialPageGroups['TranslationChanges'] = 'changes';
 $wgSpecialPageGroups['TranslationStats'] = 'wiki';
+$wgSpecialPageGroups['LanguageStats'] = 'wiki';
 
 $wgHooks['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';
 $wgHooks['OutputPageBeforeHTML'][] = 'TranslateEditAddons::addNavigation';
