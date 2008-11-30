@@ -1,11 +1,13 @@
 <?php
 if ( !defined( 'MEDIAWIKI' ) ) die();
 /**
- * Implements a special page which givens translation statistics for a given set
- * of message groups. Message group names can be entered (pipe separated) into
- * the form, or added as a parameter in the URL.
+ * Implements a special page which givens translation statistics for a given
+ * set of message groups. Message group names can be entered (pipe separated)
+ * into the form, or added as a parameter in the URL.
  *
- * Some of the code is based on the statistics code in phase3/maintenance/language
+ * Loosely based on the statistics code in phase3/maintenance/language
+ *
+ * Use {{Special:LanguageStats/nl/1}} to show for 'nl' and suppres complete.
  *
  * @author Siebrand Mazeland
  * @copyright Copyright © 2008 Siebrand Mazeland
@@ -25,13 +27,15 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$this->setHeaders();
 		$this->outputHeader();
 
-		# check for input
-		$code = $wgRequest->getVal( 'code', $par );
-		$suppressComplete = $wgRequest->getVal( 'suppresscomplete', $par );
-
 		# no UI when including()
 		if( !$this->including() ) {
+			$code = $wgRequest->getVal( 'code', $par );
+			$suppressComplete = $wgRequest->getVal( 'suppresscomplete', $par );
 			$wgOut->addHTML( $this->languageForm( $code, $suppressComplete ) );
+		} else {
+			$paramArray = explode( '/', $par, 2 );
+			$code = $paramArray[0];
+			$suppressComplete = isset( $paramArray[1] ) && (bool)$paramArray[1];
 		}
 
 		$out = '';
@@ -67,7 +71,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 				"</td>
 				<td class='mw-input'>" .
 					Xml::input( 'code', 30, str_replace('_',' ',$code), array( 'id' => 'code' ) ) .
-				"</td>" . 
+				"</td>" .
 				Xml::checkLabel( wfMsg( 'translate-suppress-complete' ), 'suppresscomplete', 'suppresscomplete', $suppressComplete ) .
 			"</tr>" .
 			"<tr>" .
