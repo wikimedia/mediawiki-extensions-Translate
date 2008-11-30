@@ -26,6 +26,8 @@ class SpecialLanguageStats extends UnlistedSpecialPage {
 		$this->setHeaders();
 		$this->outputHeader();
 
+		$par = $wgRequest->getVal( 'code', $par );
+
 		if( !$this->including() ) {
 			$wgOut->addHTML( $this->languageForm( $par ) );
 		}
