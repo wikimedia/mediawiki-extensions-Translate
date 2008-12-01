@@ -193,6 +193,7 @@ You can [$1 edit the source page] or [$2 update the translation].',
 );
 
 /** Message documentation (Message documentation)
+ * @author Darth Kule
  * @author Jon Harald Søby
  * @author Lejonel
  * @author Lloffiwr
@@ -248,6 +249,19 @@ $messages['qqq'] = array(
 For example MediaWiki:Common.css, but not MediaWiki:Common.css/fr or other messages for specific languages.
 These messages will not be submitted to svn, but will only affect the interface on Betawiki.',
 	'translate-statsf-submit' => '{{Identical|Preview}}',
+	'translations' => 'Title of [[Special:Translations]].',
+	'translations-summary' => 'Used in [[Special:Translations]].',
+	'translate-translations-no-message' => 'Error message used in [[Special:Translations]].',
+	'translate-translations-fieldset-title' => 'Name of fieldset in [[Special:Translations]].',
+	'translate-translations-messagename' => 'Used in [[Special:Translations]].',
+	'languagestats' => 'Title of [[Special:LanguageStats]].',
+	'languagestats-summary' => 'Used in [[Special:LanguageStats]].',
+	'translate-language-code' => 'Name of fieldset in [[Special:LanguageStats]].',
+	'translate-language-code-field-name' => 'Used in [[Special:LanguageStats]].',
+	'translate-suppress-complete' => 'Used in [[Special:LanguageStats]].',
+	'translate-language' => '{{Identical|Language}}',
+	'translate-percentage-complete' => 'Used in [[Special:LanguageStats]].',
+	'translate-percentage-fuzzy' => 'Used in [[Special:LanguageStats]].',
 );
 
 /** Faeag Rotuma (Faeag Rotuma)
@@ -1195,6 +1209,7 @@ Ne vo ket enrollet ar c'hemmoù e-keit ha ne vo ket bet pouezet war ar bouton di
 	'translate-sidebar-alltrans' => 'Troidigezhioù all',
 	'translate-tag-noedit' => 'Un teul treiñ hizivaet ent emgefre eo ar bajenn-mañ.
 Gallout a rit [$1 kemmañ ar bajenn orin] pe [$2 freskaat an droidigezh].',
+	'translate-language' => 'Yezh :',
 );
 
 /** Bosnian (Bosanski)
@@ -1657,6 +1672,17 @@ Du musst in der Übersetzer-Gruppe sein, um Änderungen zu speichern.
 	'translate-sidebar-alltrans' => 'Andere Übersetzungen',
 	'translate-tag-noedit' => 'Diese Seite ist eine automatisch aktualisierte Übersetzungsseite.
 Du kannst die [$1 Originalseite bearbeiten] oder [$2 die Übersetzung aktualisieren].',
+	'translations' => 'Alle Übersetzungen',
+	'translate-translations-fieldset-title' => 'Alle Übersetzungen',
+	'translate-translations-messagename' => 'Systemnachricht:',
+	'languagestats' => 'Sprachstatistiken',
+	'translate-language-code' => 'Sprachcode',
+	'translate-language-code-field-name' => 'Sprachcode:',
+	'translate-language' => 'Sprache',
+	'translate-total' => 'Systemnachrichten',
+	'translate-untranslated' => 'Nicht übersetzt',
+	'translate-percentage-complete' => 'Vollständig',
+	'translate-percentage-fuzzy' => 'Veraltet',
 );
 
 /** German (formal address) (Deutsch (Sie-Form))
@@ -2072,6 +2098,11 @@ Vi povas [$1 redakti la fontpaĝon] aŭ [$2 ĝisdatigi la tradukon].',
 	'translate-translations-none' => 'Estas neniuj tradukoj por "$1"',
 	'translate-translations-fieldset-title' => 'Ĉiuj tradukoj',
 	'translate-translations-messagename' => 'Mesaĝo:',
+	'languagestats' => 'Lingvaj statistikoj',
+	'translate-language-code' => 'Lingva kodo',
+	'translate-language-code-field-name' => 'Lingva kodo:',
+	'translate-language' => 'Lingvo',
+	'translate-total' => 'Mesaĝoj',
 );
 
 /** Spanish (Español)
@@ -2379,6 +2410,7 @@ Voit [$1 muokata lähdesivua] tai [$2 päivittää käännöksen].',
 
 /** French (Français)
  * @author ChrisPtDe
+ * @author Crochet.david
  * @author Dereckson
  * @author Grondin
  * @author IAlex
@@ -2518,6 +2550,16 @@ Vous pouvez [$1 modifier la page source] ou [$2 mettre à jour la traduction].',
 	'translate-translations-fieldset-title' => 'Toutes les traductions',
 	'translate-translations-messagename' => 'Message :',
 	'translate-translations-including-no-param' => 'Spécifiez une nom de page valide dans le paramètre de sous-page',
+	'languagestats' => 'Statistiques de langue',
+	'languagestats-summary' => 'Cette page affiche les statistiques de traduction pour tous les groupes de messages ([[MediaWiki:Translate-languagestats-groups|configurés]]) pour une langue.',
+	'translate-language-code' => 'Code de langue',
+	'translate-language-code-field-name' => 'Code de langue :',
+	'translate-suppress-complete' => 'Ne pas afficher les groupes de messages traduits en totalité',
+	'translate-language' => 'Langue',
+	'translate-total' => 'Messages',
+	'translate-untranslated' => 'Non traduits',
+	'translate-percentage-complete' => 'Achèvement',
+	'translate-percentage-fuzzy' => 'Dépassés',
 );
 
 /** Cajun French (Français cadien)
@@ -3873,6 +3915,21 @@ Le modifiche non vengono salvate finché non clicchi sul bottone "Salva" sotto.'
 	'translate-sidebar-alltrans' => 'Altre traduzioni',
 	'translate-tag-noedit' => 'Questa pagina è una pagina di traduzione aggiornata automaticamente.
 Puoi [$1 modificare la pagina sorgente] o [$2 aggiornare la traduzione].',
+	'translations' => 'Tutte le traduzioni',
+	'translations-summary' => 'Inserire di seguito il nome di un messaggio per mostrare tutte le traduzioni presenti.',
+	'translate-translations-no-message' => '"$1" non è un messaggio traducibile',
+	'translate-translations-none' => 'Non sono presenti traduzioni per "$1"',
+	'translate-translations-fieldset-title' => 'Tutte le traduzioni',
+	'translate-translations-messagename' => 'Messaggio:',
+	'translate-translations-including-no-param' => 'Specificare il nome di una pagina valida nel parametro sottopagina',
+	'languagestats' => 'Statistiche delle lingue',
+	'languagestats-summary' => 'Questa pagina mostra le statistiche delle traduzioni per tutti ([[MediaWiki:Translate-languagestats-groups|configurati]]) i gruppi di messaggi di una lingua.',
+	'translate-language-code' => 'Codice lingua',
+	'translate-language-code-field-name' => 'Codice lingua:',
+	'translate-suppress-complete' => 'Nascondi gruppi di messaggi completamente tradotti',
+	'translate-language' => 'Lingua',
+	'translate-percentage-complete' => 'Completati',
+	'translate-percentage-fuzzy' => 'Da aggiornare',
 );
 
 /** Japanese (日本語)
@@ -3890,7 +3947,7 @@ $messages['ja'] = array(
 	'translate-task-view' => 'すべてのメッセージ',
 	'translate-task-untranslated' => '未翻訳メッセージ',
 	'translate-task-optional' => '任意翻訳のメッセージ',
-	'translate-task-problematic' => '問題のあるメッセージを閲覧',
+	'translate-task-problematic' => '問題のあるメッセージ',
 	'translate-task-review' => '更新反映待ちのメッセージ',
 	'translate-task-reviewall' => '翻訳済みメッセージ',
 	'translate-task-export' => '翻訳された PHP コードをテキストエリアに出力',
@@ -3999,7 +4056,7 @@ $messages['ja'] = array(
 	'translate-tag-legend-fallback' => '他言語での翻訳結果',
 	'translate-tag-legend-fuzzy' => '更新の必要な翻訳',
 	'translate-tag-fuzzy-comment' => '[[User:$1|$1]]によって版 $2 にて定義が変更されました。',
-	'translate-tag-fuzzy-reason' => '[[User:$1|$1]]によって版 $2 にて定義が変更されました（コメント：$3）。',
+	'translate-tag-fuzzy-reason' => '$1によって版$2にて定義が変更されました（コメント：$3）。',
 	'translate-sidebar-alltrans' => '他言語での翻訳',
 	'translate-tag-noedit' => 'このページは自動的に更新される翻訳用ページです。[$1 ソースの編集] または [$2 翻訳の更新]ができます。',
 	'translations' => '全ての翻訳結果',
@@ -4952,11 +5009,14 @@ Dir musst am Grupp vun den Iwwersetzer si fir Ännerungen ofspäicheren ze kënn
 	'translate-statsf-width' => 'Breet a Pixelen',
 	'translate-statsf-height' => 'Héicht a Pixelen',
 	'translate-statsf-days' => 'Zäitraum an Deeg',
+	'translate-statsf-scale' => 'Granularitéit',
 	'translate-statsf-scale-days' => 'Deeg',
 	'translate-statsf-scale-hours' => 'Stonnen',
 	'translate-statsf-count' => 'Mooss',
 	'translate-statsf-count-edits' => 'Zuel vun den Ännerungen',
 	'translate-statsf-count-users' => 'Aktiv Iwwersetzer',
+	'translate-statsf-language' => 'Komma-getrennte Lëscht vun de Sproochcoden',
+	'translate-statsf-group' => 'Komma-getrennte Lëscht vun de Gruppecoden',
 	'translate-statsf-submit' => 'Kucken ouni ofzespäicheren',
 	'translate-tag-category' => 'Sàiten déi iwwersat kënne ginn',
 	'translate-tag-page-desc' => 'Iwwersetzung vun der Wiki-Säit [[:$1]].',
@@ -4976,6 +5036,16 @@ Dir kënnt [$1 d'Original Säit änneren] oder [$2 d'Iwwersetzung aktualiséiere
 	'translate-translations-fieldset-title' => 'All Iwwersetzungen',
 	'translate-translations-messagename' => 'Message:',
 	'translate-translations-including-no-param' => 'Gitt w.e.g. e gëltege Säitennumm beim Parameter vun der Ënnersäit unn',
+	'languagestats' => 'Sproochstatistiken',
+	'languagestats-summary' => "Dës Säit weist d'Statistike vun der Iwwersetzung fir all ([[MediaWiki:Translate-languagestats-groups|agestallte]]) Gruppe vu Message fir eng Sprooch.",
+	'translate-language-code' => 'Sproochecode',
+	'translate-language-code-field-name' => 'Sproochecode:',
+	'translate-suppress-complete' => 'Gruppe vu Messagen. déi komplett iwwersat sinn, net weisen',
+	'translate-language' => 'Sprooch',
+	'translate-total' => 'Messagen',
+	'translate-untranslated' => 'Net iwwersat',
+	'translate-percentage-complete' => 'Fäerdeg zu',
+	'translate-percentage-fuzzy' => 'Net à jour',
 );
 
 /** Limburgish (Limburgs)
@@ -5676,6 +5746,16 @@ U kunt de [$1 brontekst bewerken] of de [$2 vertaling bijwerken].',
 	'translate-translations-fieldset-title' => 'Alle vertalingen',
 	'translate-translations-messagename' => 'Bericht:',
 	'translate-translations-including-no-param' => 'Geef een geldige paginanaam op als subpaginaparameter',
+	'languagestats' => 'Taalstatistieken',
+	'languagestats-summary' => 'Op deze pagina worden vertaalstatistieken weergegeven voor alle ([[MediaWiki:Translate-languagestats-groups|ingestelde]]) berichtengroepen voor een taal.',
+	'translate-language-code' => 'Taalcode',
+	'translate-language-code-field-name' => 'Taalcode:',
+	'translate-suppress-complete' => 'Volledig vertaalde berichtengroepen onderdrukken',
+	'translate-language' => 'Taal:',
+	'translate-total' => 'Berichten',
+	'translate-untranslated' => 'Te vertalen',
+	'translate-percentage-complete' => 'Vertaald',
+	'translate-percentage-fuzzy' => 'Verouderd',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
@@ -6094,6 +6174,21 @@ Los cambiaments seràn pas salvats abans que cliquèssetz sul boton « Salvar »
 	'translate-sidebar-alltrans' => 'Autras traduccions',
 	'translate-tag-noedit' => 'Aquesta pagina es un document de traduccion automaticament mesa a jorn.
 Podètz [$1 modificar la pagina font] o [$2 metre a jorn la traduccion].',
+	'translations' => 'Totas las traduccions',
+	'translations-summary' => 'Picatz un nom de messatge en dejós per mostrar totas las traduccions disponiblas.',
+	'translate-translations-no-message' => '« $1 » es pas un messatge traductible',
+	'translate-translations-none' => 'I a pas cap de traduccion per « $1 »',
+	'translate-translations-fieldset-title' => 'Totas las traduccions',
+	'translate-translations-messagename' => 'Messatge :',
+	'translate-translations-including-no-param' => 'Especificatz un nom de pagina valid dins lo paramètre de sospagina',
+	'languagestats' => 'Estatisticas de lenga',
+	'languagestats-summary' => 'Aquesta pagina aficha las estatisticas de traduccion per totes los gropes de messatges ([[MediaWiki:Translate-languagestats-groups|configurats]]) per una lenga.',
+	'translate-language-code' => 'Còde de lenga',
+	'translate-language-code-field-name' => 'Còde de lenga :',
+	'translate-suppress-complete' => 'Suprimir completament los gropes de messatges traduches',
+	'translate-language' => 'Lenga :',
+	'translate-percentage-complete' => 'Acabament',
+	'translate-percentage-fuzzy' => 'Despassats',
 );
 
 /** Ossetic (Иронау)
@@ -6756,6 +6851,7 @@ Môžete [$1 upravovať zdrojovú stránku] alebo [$2 aktualizovať preklad].',
 	'translate-translations-fieldset-title' => 'Všetky preklady',
 	'translate-translations-messagename' => 'Správa:',
 	'translate-translations-including-no-param' => 'Prosím, v parametri subpage uvete platný názov stránky',
+	'translate-language' => 'Jazyk:',
 );
 
 /** Somali (Soomaaliga)
@@ -7048,6 +7144,16 @@ Du kan [$1 redigera källsidan] eller [$2 uppdatera översättningen].',
 	'translate-translations-none' => 'Det finns inga översättningar för "$1"',
 	'translate-translations-fieldset-title' => 'Alla översättningar',
 	'translate-translations-messagename' => 'Meddelande:',
+	'languagestats' => 'Språkstatistik',
+	'languagestats-summary' => 'Den här sidan visar översättningsstatistik för alla ([[MediaWiki:Translate-languagestats-groups|konfigurerade]]) meddelandegrupper för ett språk.',
+	'translate-language-code' => 'Språkkod',
+	'translate-language-code-field-name' => 'Språkkod:',
+	'translate-suppress-complete' => 'Visa inte helt översatta meddelandegrupper',
+	'translate-language' => 'Språk',
+	'translate-total' => 'Meddelanden',
+	'translate-untranslated' => 'Oöversatta',
+	'translate-percentage-complete' => 'Avklarat',
+	'translate-percentage-fuzzy' => 'Föråldrat',
 );
 
 /** Silesian (Ślůnski)

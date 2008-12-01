@@ -187,6 +187,7 @@ $aliases['ja'] = array(
 	'TranslationChanges' => array( '翻訳変更' ),
 	'TranslationStats' => array( '翻訳統計' ),
 	'Translations' => array( '翻訳結果' ),
+	'LanguageStats' => array( '言語統計' ),
 );
 
 /** Khmer (ភាសាខ្មែរ) */
@@ -268,6 +269,7 @@ $aliases['nl'] = array(
 	'TranslationChanges' => array( 'RecenteVertalingen' ),
 	'TranslationStats' => array( 'Vertaalstatistieken', 'Vertalingsstatistieken' ),
 	'Translations' => array( 'Vertalingen' ),
+	'LanguageStats' => array( 'Taalstatistieken' ),
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬) */
