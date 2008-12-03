@@ -607,9 +607,8 @@ Scan Set
 
 Select Category
 
-Semantic Calendar
-file = SemanticCalendar/languages/SC_Messages.php
-descmsg = sc_desc
+Semantic Result Formats
+file = SemanticResultFormats/SRF_Messages.php
 
 Semantic Drilldown
 file = SemanticDrilldown/languages/SD_Messages.php
