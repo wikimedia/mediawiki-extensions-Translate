@@ -136,6 +136,9 @@ file = Cite/SpecialCite.i18n.php
 descmsg = cite_article_desc
 ignored = cite_text
 
+Cldr
+file = cldr/LanguageNames.i18n.php
+
 Clean Changes
 
 Close Wikis
@@ -399,12 +402,12 @@ Labeled Section Transclusion
 file = LabeledSectionTransclusion/lst.i18n.php
 descmsg = lst-desc
 
-Cldr
-file = cldr/LanguageNames.i18n.php
-
 Language Selector
 
 Latex Doc
+
+Link OpenID
+optional = linkopenid-prefstext-xrdsurl
 
 Liquid Threads
 file = LiquidThreads/Lqt.i18n.php
