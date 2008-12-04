@@ -1551,6 +1551,7 @@ $messages['da'] = array(
  * @author MichaelFrey
  * @author Purodha
  * @author Raimond Spekking
+ * @author Umherirrender
  */
 $messages['de'] = array(
 	'translate' => 'Übersetze',
@@ -1673,11 +1674,17 @@ Du musst in der Übersetzer-Gruppe sein, um Änderungen zu speichern.
 	'translate-tag-noedit' => 'Diese Seite ist eine automatisch aktualisierte Übersetzungsseite.
 Du kannst die [$1 Originalseite bearbeiten] oder [$2 die Übersetzung aktualisieren].',
 	'translations' => 'Alle Übersetzungen',
+	'translations-summary' => 'Gebe einen Nachrichtennamen nachstehend an, um alle verfügbaren Übersetzungen anzeigen zu lassen.',
+	'translate-translations-no-message' => '„$1“ ist keine übersetzbare Nachricht',
+	'translate-translations-none' => 'Keine Übersetzungen für „$1“ verfügbar',
 	'translate-translations-fieldset-title' => 'Alle Übersetzungen',
 	'translate-translations-messagename' => 'Systemnachricht:',
+	'translate-translations-including-no-param' => 'Bitte gebe einen gültigen Seitennamen als Unterseitenparameter an',
 	'languagestats' => 'Sprachstatistiken',
+	'languagestats-summary' => 'Diese Seite zeigt Übersetzungsstatistiken für alle ([[MediaWiki:Translate-languagestats-groups|konfigurierten]]) Nachrichtengruppen einer Sprache.',
 	'translate-language-code' => 'Sprachcode',
 	'translate-language-code-field-name' => 'Sprachcode:',
+	'translate-suppress-complete' => 'Unterdrücke komplett übersetzte Nachrichtengruppen',
 	'translate-language' => 'Sprache',
 	'translate-total' => 'Systemnachrichten',
 	'translate-untranslated' => 'Nicht übersetzt',
@@ -1826,6 +1833,23 @@ Musyš w kupce pśełožowarjow byś, aby mogł změny cyniś. Změny se njeskł
 	'translate-sidebar-alltrans' => 'Druge pśełožki',
 	'translate-tag-noedit' => 'Toś ten bok jo awtomatiski zaktualizěrowany pśełožkowy bok.
 Móžoš [$1 žrědłowy bok wobźěłaś] abo [$2 pśełožk aktualizěrowaś].',
+	'translations' => 'Wšykne pśełožki',
+	'translations-summary' => 'Zapódaj dołojce zdźěleńske mě, aby wšykne k dispozciji stojece pśełožki pokazał.',
+	'translate-translations-no-message' => '"$1" njejo zdźělenje, kótarež dajo se pśełožowaś.',
+	'translate-translations-none' => 'Njejsu pśełožki za "$1"',
+	'translate-translations-fieldset-title' => 'Wšykne pśełožki',
+	'translate-translations-messagename' => 'Zdźělenje:',
+	'translate-translations-including-no-param' => 'Pódaj pšosym płaśiwe bokowe mě w parametrje pódboka',
+	'languagestats' => 'Rěcna statistika',
+	'languagestats-summary' => 'Toś ten bok pokazujo pśełožkowu statistiku za wšykne ([[MediaWiki:Translate-languagestats-groups|konfigurěrowane]]) zdźěleńske kupki za rěc.',
+	'translate-language-code' => 'Rěcny kod',
+	'translate-language-code-field-name' => 'Rěcny kod:',
+	'translate-suppress-complete' => 'Dopołnje pśełožone zdźěleńske kupki pódtłocyś',
+	'translate-language' => 'Rěc:',
+	'translate-total' => 'Zdźělenja',
+	'translate-untranslated' => 'Njepśełožony',
+	'translate-percentage-complete' => 'Dopołnjenje',
+	'translate-percentage-fuzzy' => 'Zestarjony',
 );
 
 /** Greek (Ελληνικά)
@@ -3021,6 +3045,23 @@ $messages['he'] = array(
 	'translate-sidebar-alltrans' => 'תרגומים אחרים',
 	'translate-tag-noedit' => 'דף זה הינו דף תרגום המתעדכן אוטומטית.
 ניתן [$1 לערוך את דף המקור] או [$2 לעדכן את התרגום].',
+	'translations' => 'כל התרגומים',
+	'translations-summary' => 'הקלידו את שם ההודעה להלן כדי להציג את כל התרגומים הזמינים.',
+	'translate-translations-no-message' => '"$1" אינה הודעה הניתנת לתרגום',
+	'translate-translations-none' => 'לא קיימים תרגומים עבור "$1"',
+	'translate-translations-fieldset-title' => 'כל התרגומים',
+	'translate-translations-messagename' => 'הודעה:',
+	'translate-translations-including-no-param' => 'אנא ציינו שם דף תקני במשתנה התת־דף',
+	'languagestats' => 'סטטיסטיקת השפה',
+	'languagestats-summary' => 'דף זה מציג את סטטיסטיקת התרגומים עבור כל קבוצות ההודעות ([[MediaWiki:Translate-languagestats-groups|המוגדרות]]) עבור שפה.',
+	'translate-language-code' => 'קוד השפה',
+	'translate-language-code-field-name' => 'קוד השפה:',
+	'translate-suppress-complete' => 'השמטת קבוצות הודעות המתורגמות לחלוטין',
+	'translate-language' => 'שפה',
+	'translate-total' => 'הודעות',
+	'translate-untranslated' => 'ללא תרגום',
+	'translate-percentage-complete' => 'השלמה',
+	'translate-percentage-fuzzy' => 'פג התוקף',
 );
 
 /** Hindi (हिन्दी)
@@ -3250,6 +3291,23 @@ Dyrbiš w skupinje přełožowarjow być, zo by změny składował. Změny so nj
 	'translate-sidebar-alltrans' => 'Druhe přełožki',
 	'translate-tag-noedit' => 'Tuta strona je awtomatisce nahrata přełožowanska strona.
 Móžeš [$1 originalnu stronu wobdźěłać] abo [$2 přełožk aktualizować].',
+	'translations' => 'Wšě přełožki',
+	'translations-summary' => 'Zapodaj deleka zdźělenske mjeno, zo by wšě k dispoziciji stejce přełožki pokazał.',
+	'translate-translations-no-message' => '"$1" přełožujomna zdźělenka njeje',
+	'translate-translations-none' => 'Přełožki za "$1" njejsu',
+	'translate-translations-fieldset-title' => 'Wšě přełožki',
+	'translate-translations-messagename' => 'Zdźělenka:',
+	'translate-translations-including-no-param' => 'Prošu podaj płaćiwe mjeno za parameter podstrona',
+	'languagestats' => 'Rěčna statistika',
+	'languagestats-summary' => 'Strona pokazuje přełožowansku statistiku za wšě ([[MediaWiki:Translate-languagestats-groups|konfigurowane]]) zdźělenske skupiny za rěč.',
+	'translate-language-code' => 'Rěčny kod',
+	'translate-language-code-field-name' => 'Rěčny kod:',
+	'translate-suppress-complete' => 'Dospołnje přełožene zdźělenske skupiny potłóčić',
+	'translate-language' => 'Rěč:',
+	'translate-total' => 'Zdźělenki',
+	'translate-untranslated' => 'Njepřełoženy',
+	'translate-percentage-complete' => 'Dospołny',
+	'translate-percentage-fuzzy' => 'Zestarjeny',
 );
 
 /** Haitian (Kreyòl ayisyen)
@@ -4723,11 +4781,14 @@ $messages['ko'] = array(
 	'translate-page-disabled' => '이 그룹에서 이 언어로의 번역이 비활성화되어 있습니다. 이유:
 
 $1',
+	'translate-page-settings-legend' => '설정',
 	'translate-page-language' => '언어',
 	'translate-edit-contribute' => '편집하기',
 	'translate-edit-no-information' => '이 메시지에 관한 도움말이 없습니다.
 만약 이 메시지가 어디에 어떻게 사용되는지 알고 계시다면 도움말을 작성해주세요.',
 	'translate-edit-information' => '이 메시지에 관한 도움말 ($1)',
+	'translate-edit-goto-no-prev' => '이전 메시지가 없습니다.',
+	'translate-edit-goto-no-next' => '다음 메시지가 없습니다.',
 	'translate-edit-goto-prev' => '이전 메시지 수정',
 	'translate-edit-goto-next' => '다음 메시지 수정',
 	'translate-edit-goto-list' => '목록으로 돌아가기',
@@ -6187,6 +6248,8 @@ Podètz [$1 modificar la pagina font] o [$2 metre a jorn la traduccion].',
 	'translate-language-code-field-name' => 'Còde de lenga :',
 	'translate-suppress-complete' => 'Suprimir completament los gropes de messatges traduches',
 	'translate-language' => 'Lenga :',
+	'translate-total' => 'Messatges',
+	'translate-untranslated' => 'Pas traduches',
 	'translate-percentage-complete' => 'Acabament',
 	'translate-percentage-fuzzy' => 'Despassats',
 );
@@ -6341,11 +6404,21 @@ Zmiany nie są zapisywane, dopóki użytkownik nie naciśnie umieszczonego poni�
 Możesz [$1 edytować źródło strony] lub [$2 zaktualizować tłumaczenie].',
 	'translations' => 'Wszystkie tłumaczenia',
 	'translations-summary' => 'Wprowadź poniżej nazwę komunikatu, aby zobaczyć wszystkie dostępne tłumaczenia.',
-	'translate-translations-no-message' => 'komunikatu „$1” nie można przetłumaczyć',
+	'translate-translations-no-message' => 'Komunikatu „$1” nie można przetłumaczyć',
 	'translate-translations-none' => 'Nie istnieją tłumaczenia dla „$1”',
 	'translate-translations-fieldset-title' => 'Wszystkie tłumaczenia',
 	'translate-translations-messagename' => 'Komunikat:',
 	'translate-translations-including-no-param' => 'Proszę podaj prawidłową nazwę strony w parametrze podstrony',
+	'languagestats' => 'Statystyka językowa',
+	'languagestats-summary' => 'Strona pokazuje statystykę tłumaczenia dla wszystkich ([[MediaWiki:Translate-languagestats-groups|skonfigurowanych]]) grup komunikatów we wskazanym języku.',
+	'translate-language-code' => 'Kod języka',
+	'translate-language-code-field-name' => 'Kod języka:',
+	'translate-suppress-complete' => 'Pomiń grupy komunikatów całkowicie przetłumaczone',
+	'translate-language' => 'Język',
+	'translate-total' => 'Komunikaty',
+	'translate-untranslated' => 'Nieprzetłumaczone',
+	'translate-percentage-complete' => 'Przetłumaczonych',
+	'translate-percentage-fuzzy' => 'Zdezaktualizowanych',
 );
 
 /** Piedmontese (Piemontèis)
@@ -6850,8 +6923,20 @@ Môžete [$1 upravovať zdrojovú stránku] alebo [$2 aktualizovať preklad].',
 	'translate-translations-none' => 'Neexistujú žiadne preklady správy „$1“',
 	'translate-translations-fieldset-title' => 'Všetky preklady',
 	'translate-translations-messagename' => 'Správa:',
-	'translate-translations-including-no-param' => 'Prosím, v parametri subpage uvete platný názov stránky',
+	'translate-translations-including-no-param' => 'Prosím, v parametri subpage uveďte platný názov stránky',
+	'languagestats' => 'Štatistika jazykov',
+	'languagestats-summary' => 'Táto stránka zobrazuje štatistuku prekladov všetkých ([[MediaWiki:Translate-languagestats-groups|nastavených]]) skupín správ jazyka.',
+	'translate-language-code' => 'Kód jazyka',
+	'translate-language-code-field-name' => 'Kód jazyka:',
+	'translate-suppress-complete' => 'Nevypisovať kompletne preložené skupiny správ',
 	'translate-language' => 'Jazyk:',
+	'translate-total' => 'Správy',
+	'translate-untranslated' => 'Nepreložené',
+	'translate-percentage-complete' => 'Dokončené',
+	'translate-percentage-fuzzy' => 'Zastaralé',
+	'translate-languagestats-groups' => ' # Pridajte ID skupín správ, po jednom na riadok, čím obmedzíte skupiny správ
+ # zobrazované na Special:LanguageStats. Neexistujúce ID skupín správ budú
+ # ignorované.',
 );
 
 /** Somali (Soomaaliga)

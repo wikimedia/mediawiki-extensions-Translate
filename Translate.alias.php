@@ -294,6 +294,7 @@ $aliases['pl'] = array(
 	'TranslationChanges' => array( 'Zmiany w tłumaczeniu' ),
 	'TranslationStats' => array( 'Statystyki tłumaczenia' ),
 	'Translations' => array( 'Tłumaczenia' ),
+	'LanguageStats' => array( 'Statystyka językowa' ),
 );
 
 /** Pashto (پښتو) */
