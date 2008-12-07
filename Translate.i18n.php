@@ -2543,6 +2543,7 @@ Ces derniers ne seront pas sauvegardés tant que vous n’aurez pas cliqué sur 
 	'translate-checks-xhtml' => 'Vous êtes invité à corriger {{PLURAL:$2|la balise suivante|les balises suivantes}} : <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'La définition utilise <nowiki>{{PLURAL:}}</nowiki> mais pas la traduction.',
 	'translate-checks-pagename' => 'Nom d’espace modifié depuis la définition',
+	'translate-checks-format' => 'Cette traduction ne suit pas la définition ou a une syntaxe invalide : $1',
 	'tog-translate-nonewsletter' => 'Ne m’envoyez pas la lettre d’information par courrier (ne concerne que les utilisateurs qui disposent d’une adresse courriel confirmée)',
 	'right-translate' => "Modifier en utilisant l'interface de traduction",
 	'translate-rc-translation-filter' => 'Filtrer les traductions :',
