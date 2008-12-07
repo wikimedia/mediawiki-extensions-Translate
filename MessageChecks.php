@@ -20,6 +20,7 @@ class MessageChecks {
 			'checkLinks',
 			'checkXHTML',
 			'checkPagename',
+			'miscMWChecks',
 		),
 		'freecol' => array(
 			'checkFreeColMissingVars',
@@ -297,6 +298,32 @@ class MessageChecks {
 			if ( !preg_match( "/^{$matches[1]}:.+$/u", $translation ) ) {
 				$desc = array( 'translate-checks-pagename' );
 				return true;
+			}
+		}
+		return false;
+	}
+
+	/**
+	 * Checks for some micellangelous messages with special syntax.
+	 *
+	 * @param $message Instance of TMessage.
+	 * @return True if namespace has been tampered with.
+	 */
+	protected function miscMWChecks( TMessage $message, $code, &$desc = null ) {
+		$timeList = array( 'Protect-expiry-options', 'Ipboptions' );
+		if ( in_array( $message->key, $timeList, true ) ) {
+			$defArray = explode( ',', $message->definition );
+			$traArray = explode( ',', $message->translation );
+			if ( count($defArray) !== count($traArray) ) {
+				$desc = array( 'translate-checks-format', 'Parameter count' );
+				return true;
+			}
+			for ( $i = 0; $i < count($defArray); $i++ ) {
+				$defItems = array_map( 'trim', explode( ':', $defArray[$_] ) );
+				if ( !isset($traArray[$_]) ) return true;
+				$traItems = array_map( 'trim', explode( ':', $traArray[$_] ) );
+				if ( count($traItems) !== 2 ) return true;
+				if ( $traItems[1] !== $defItems[1] ) return true;
 			}
 		}
 		return false;

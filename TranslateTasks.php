@@ -294,6 +294,7 @@ class ExportToFileMessagesTask extends ExportMessagesTask {
 
 	public function output() {
 		$writer = $this->group->getWriter();
+		$this->collection->filter( 'translation', null );
 		return $writer->webExport( $this->collection );
 	}
 }

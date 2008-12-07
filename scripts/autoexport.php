@@ -37,7 +37,11 @@ if ( isset( $options['format'] ) ) {
 }
 
 if ( isset( $options['hours'] ) ) {
-	$hours = $options['hours'];
+	$hours = intval($options['hours']);
+	if ( !$hours ) {
+		STDERR( "Invalid duration given, defaulting to 24 hours" );
+		$hours = 24;
+	}
 } else {
 	showUsage();
 }
