@@ -68,8 +68,13 @@ class SpecialTranslations extends SpecialAllpages {
 	* @param string $from dbKey we are starting listing at.
 	*/
 	function namespaceMessageForm( $namespace = NS_MAIN, $message = '' ) {
-		global $wgScript;
+		global $wgContLang, $wgScript, $wgTranslateMessageNamespaces;
 		$t = $this->getTitle();
+
+		$namespaces = new XmlSelect( 'namespace' );
+		foreach ($wgTranslateMessageNamespaces as $ns ) {
+			$namespaces->addOption( $wgContLang->getFormattedNsText( $ns ), $ns );
+		}
 
 		$out  = Xml::openElement( 'div', array( 'class' => 'namespaceoptions' ) );
 		$out .= Xml::openElement( 'form', array( 'method' => 'get', 'action' => $wgScript ) );
@@ -90,7 +95,7 @@ class SpecialTranslations extends SpecialAllpages {
 					Xml::label( wfMsg( 'namespace' ), 'namespace' ) .
 				"</td>
 				<td class='mw-input'>" .
-					Xml::namespaceSelector( $namespace, null ) . ' ' .
+					$namespaces->getHTML() . ' ' .
 					Xml::submitButton( wfMsg( 'allpagessubmit' ) ) .
 				"</td>
 				</tr>";
@@ -141,15 +146,15 @@ class SpecialTranslations extends SpecialAllpages {
 				)
 			);
 
-			# FIXME: there probably is some smart way to get everything needed
-			#        using TranslateUtils::getContents() only once.
+			if( $res->numRows() ) {
+				$titles = array();
+				foreach ( $res as $s ) { $titles[] = $s->page_title; }
+				$pageInfo = TranslateUtils::getContents( $titles, $namespace );
 
-			$n = 0;
-			if( $res->numRows() > 0 ) {
 				// Adapted version of TranslateUtils:makeListing() by Nikerabbit
 				$out = TranslateUtils::tableHeader();
 
-				while( ( $n < $this->maxPerPage ) && ( $s = $res->fetchObject() ) ) {
+				foreach ( $res as $s ) {
 					$key = $s->page_title;
 					$t = Title::makeTitle( $s->page_namespace, $key );
 
@@ -167,7 +172,6 @@ class SpecialTranslations extends SpecialAllpages {
 					$extra = '';
 
 					$leftColumn = $anchor . $tools['edit'] . $extra;
-					$pageInfo = TranslateUtils::getContents( array( $key ), $namespace );
 					$out .= Xml::tags( 'tr', array( 'class' => 'def' ),
 						Xml::tags( 'td', null, $leftColumn ) .
 						Xml::tags( 'td', null, TranslateUtils::convertWhiteSpaceToHTML( $pageInfo[$key][0] ) )
