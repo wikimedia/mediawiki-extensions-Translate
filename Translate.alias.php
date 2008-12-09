@@ -260,6 +260,7 @@ $aliases['nds-nl'] = array(
 	'Magic' => array( 'Uut-ebreid_vertalen' ),
 	'TranslationChanges' => array( 'Vertalingen' ),
 	'TranslationStats' => array( 'Vertaalstaotestieken' ),
+	'LanguageStats' => array( 'Taalstaotestieken' ),
 );
 
 /** Dutch (Nederlands) */
