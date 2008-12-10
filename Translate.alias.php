@@ -135,6 +135,16 @@ $aliases['gl'] = array(
 	'TranslationStats' => array( 'Estatísticas da tradución' ),
 );
 
+/** Swiss German (Alemannisch) */
+$aliases['gsw'] = array(
+	'Translate' => array( 'Ibersetze' ),
+	'Magic' => array( 'Usgwytets Ibersetze' ),
+	'TranslationChanges' => array( 'Ibersetzigsänderige' ),
+	'TranslationStats' => array( 'Ibersetzigsstatischtik' ),
+	'Translations' => array( 'Ibersetzige' ),
+	'LanguageStats' => array( 'Sprochstatitschtik' ),
+);
+
 /** Hebrew (עברית)
  * @author Rotem Liss
  */
@@ -238,10 +248,10 @@ $aliases['mt'] = array(
 
 /** Erzya (Эрзянь) */
 $aliases['myv'] = array(
-	'Translate' => array( 'Йутавтомс' ),
-	'Magic' => array( 'ПревейстэЙутавтомс', 'Магия' ),
-	'TranslationChanges' => array( 'ЙутавтовксПолавтомат' ),
-	'TranslationStats' => array( 'ЙутавтомадоСтатистика' ),
+	'Translate' => array( 'Ютавтомс' ),
+	'Magic' => array( 'ПревейстэЮтавтомс', 'Магия' ),
+	'TranslationChanges' => array( 'ЮтавтовксПолавтомат' ),
+	'TranslationStats' => array( 'ЮтавтомадоСтатистика' ),
 );
 
 /** Nahuatl (Nāhuatl) */

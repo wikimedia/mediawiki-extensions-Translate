@@ -4112,13 +4112,14 @@ $messages['ja'] = array(
 	'translate-checks-plural' => '元のメッセージにある <nowiki>{{PLURAL:}}</nowiki> が翻訳の中にありません。
 （日本語訳では、ほとんどの場合、<nowiki>{{PLURAL:}}</nowiki>を用いずに訳しています。その場合、この警告は無視してかまいません。）',
 	'translate-checks-pagename' => 'もとの定義から名前空間が変更されています',
+	'translate-checks-format' => 'この翻訳は定義に沿っていない、または不正な構文を使用しています: $1',
 	'tog-translate-nonewsletter' => '電子メールのニュースレターを受け取らない（電子メールアドレス確認済みの利用者のみ）',
 	'right-translate' => '翻訳用インターフェースを使って編集する',
-	'translate-rc-translation-filter' => '翻訳を抽出する:',
-	'translate-rc-translation-filter-no' => '何もしない',
-	'translate-rc-translation-filter-only' => '翻訳のみを表示',
-	'translate-rc-translation-filter-filter' => '翻訳を抽出する',
-	'translate-rc-translation-filter-site' => '表示メッセージの変更のみ',
+	'translate-rc-translation-filter' => '絞込み:',
+	'translate-rc-translation-filter-no' => '絞り込まない',
+	'translate-rc-translation-filter-only' => '翻訳のみ',
+	'translate-rc-translation-filter-filter' => '翻訳以外',
+	'translate-rc-translation-filter-site' => 'Betawiki表示メッセージの変更',
 	'translationstats' => '翻訳の統計',
 	'translate-stats-edits' => 'Edits',
 	'translate-stats-users' => 'Translators',
@@ -4150,6 +4151,19 @@ $messages['ja'] = array(
 	'translate-translations-none' => '「$1」には翻訳がありません',
 	'translate-translations-fieldset-title' => '全翻訳結果',
 	'translate-translations-messagename' => 'メッセージ:',
+	'languagestats' => '言語別翻訳状況',
+	'languagestats-summary' => 'このページでは指定した言語におけるメッセージの翻訳状況をメッセージグループごとに表示しています ([[MediaWiki:Translate-languagestats-groups|表示するメッセージグループの設定]]) 。',
+	'translate-language-code' => '言語コード',
+	'translate-language-code-field-name' => '言語コード:',
+	'translate-suppress-complete' => '翻訳が完了したグループを表示しない',
+	'translate-language' => '言語',
+	'translate-total' => 'メッセージ',
+	'translate-untranslated' => '未翻訳',
+	'translate-percentage-complete' => '完了',
+	'translate-percentage-fuzzy' => '要修正',
+	'translate-languagestats-groups' => ' # Special:LanguageStatsに表示するメッセージグループを制限するには
+ # メッセージグループのIDを1行1つずつ記入します。
+ # 無効なIDは無視されます。',
 );
 
 /** Javanese (Basa Jawa)
@@ -4664,35 +4678,36 @@ $messages['kk-kz'] = array(
 /** Khmer (ភាសាខ្មែរ)
  * @author Chhorran
  * @author Lovekhmer
+ * @author Thearith
  * @author គីមស៊្រុន
  */
 $messages['km'] = array(
 	'translate' => 'បកប្រែ',
-	'translate-desc' => '[[Special:Translate|ទំព័រ​ពិសេស]] សំរាប់ប្រែសំរួល​មេឌាវិគី​ និង របស់​ផ្សេងទៀត',
+	'translate-desc' => '[[Special:Translate|ទំព័រ​ពិសេស]] សម្រាប់ប្រែសម្រួល​មេឌាវិគី​ និង របស់​ផ្សេងទៀត',
 	'translate-edit' => 'កែប្រែ',
 	'translate-talk' => 'ពិភាក្សា',
 	'translate-history' => 'ប្រវត្តិ',
 	'translate-task-view' => 'មើល​គ្រប់សារពី',
-	'translate-task-untranslated' => 'មើល​គ្រប់​សារដែល​មិនទាន់ប្រែសំរួលពី',
+	'translate-task-untranslated' => 'មើល​គ្រប់​សារដែល​មិនទាន់ប្រែសម្រួលពី',
 	'translate-task-optional' => 'មើល​សារដែលបានជ្រើសរើសពី',
 	'translate-task-problematic' => 'មើលសារដែលមានបញ្ហា',
 	'translate-task-review' => 'មើល​ឡើងវិញ​នូវបំលាស់ប្តូរ​នានា​ចំពោះ',
-	'translate-task-reviewall' => 'មើល​ឡើងវិញ​បទប្រែសំរួល​ទាំងអស់​ក្នុង',
-	'translate-task-export' => 'នាំចេញ​បទប្រែសំរួលពី',
-	'translate-task-export-to-file' => 'នាំចេញបទប្រែសំរួលជាឯកសារពី',
-	'translate-task-export-as-po' => 'នាំចេញ​បទប្រែសំរួល​ជា​ទំរង់ អក្សរសុទ្ធ',
-	'translate-task-export-to-xliff' => 'នាំចេញការប្រែសំរួលក្នុងទំរង់ជា Xliff',
+	'translate-task-reviewall' => 'មើល​ឡើងវិញ​បទប្រែសម្រួល​ទាំងអស់​ក្នុង',
+	'translate-task-export' => 'នាំចេញ​បទប្រែសម្រួលពី',
+	'translate-task-export-to-file' => 'នាំចេញបទប្រែសម្រួលជាឯកសារពី',
+	'translate-task-export-as-po' => 'នាំចេញ​បទប្រែសម្រួល​ជា​ទម្រង់ អក្សរសុទ្ធ',
+	'translate-task-export-to-xliff' => 'នាំចេញការប្រែសម្រួលក្នុងទម្រង់ជា Xliff',
 	'translate-page-no-such-language' => 'ភាសាដែលបានសំដៅ គ្មានសុពលភាព ។',
 	'translate-page-no-such-task' => 'កិច្ចការដែលបានសំដៅ គ្មានសុពលភាព ។',
 	'translate-page-no-such-group' => 'ក្រុមដែលបានសំដៅ គ្មានសុពលភាព ។',
-	'translate-page-disabled' => "ការបកប្រែសំរាប់ភាសានេះក្នុងក្រុមនេះមិនត្រូវបានអនុញ្ញាតទេ។ មូលហេតុ:
+	'translate-page-disabled' => "ការបកប្រែសម្រាប់ភាសានេះក្នុងក្រុមនេះមិនត្រូវបានអនុញ្ញាតទេ។ មូលហេតុ:
 
 ''$1''",
-	'translate-page-settings-legend' => 'ការកំនត់យក',
+	'translate-page-settings-legend' => 'ការកំណត់យក',
 	'translate-page-task' => 'ខ្ញុំចង់',
 	'translate-page-group' => 'ក្រុម',
 	'translate-page-language' => 'ភាសា',
-	'translate-page-limit' => 'កំរិត',
+	'translate-page-limit' => 'កម្រិត',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|សារ}} ក្នុងមួយទំព័រ',
 	'translate-submit' => 'នាំមក​បង្ហាញ',
 	'translate-page-navigation-legend' => 'ទិសដៅ',
@@ -4701,39 +4716,39 @@ $messages['km'] = array(
 	'translate-page-showing-none' => 'មិនមានសារ​ត្រូវបង្ហាញទេ។',
 	'translate-next' => 'ទំព័របន្ទាប់',
 	'translate-prev' => 'ទំព័រមុន',
-	'translate-page-description-legend' => 'ពត៌មាន​អំពី​ក្រុម',
+	'translate-page-description-legend' => 'ព័ត៌មាន​អំពី​ក្រុម',
 	'translate-page-edit' => 'កែប្រែ',
-	'translate-optional' => '(ជំរើស)',
+	'translate-optional' => '(ជម្រើស)',
 	'translate-ignored' => '(បានបោះបង់)',
 	'translate-edit-definition' => 'និយមន័យ​របស់​សារ',
-	'translate-edit-contribute' => 'រួមចំនែក',
-	'translate-edit-no-information' => "''សារនេះមិនមានពត៌មានបន្ថែមទេ។ ប្រសិនបើអ្នកដឹងពីទីកន្លែងនិងរបៀបប្រើប្រាស់សារនេះ អ្នកអាចជួយអ្នកបកប្រែផ្សេងទៀតតាមរយៈការដាក់បន្ថែមពត៌មានទាំងនោះមកអោយសារនេះ។",
-	'translate-edit-information' => 'ពត៌មាន​អំពី​សារនេះ ($1)',
+	'translate-edit-contribute' => 'រួមចំណែក',
+	'translate-edit-no-information' => "''សារ​នេះ​មិន​មាន​ព័ត៌មាន​បន្ថែម​ទេ​។ ប្រសិនបើ​អ្នក​ដឹង​ពី​ទីកន្លែង និង​របៀប​ប្រើប្រាស់​សារ​នេះ អ្នក​អាច​ជួយ​អ្នក​បកប្រែ​ផ្សេងទៀត​តាមរយៈ​ការ​ដាក់​បន្ថែម​ព័ត៌មាន​ទាំងនោះ​មក​ឱ្យ​សារ​នេះ​។",
+	'translate-edit-information' => 'ព័ត៌មាន​អំពី​សារនេះ ($1)',
 	'translate-edit-in-other-languages' => 'សារ​ជាភាសា​ដទៃទៀត',
-	'translate-edit-committed' => 'បទប្រែសំរួល​បច្ចុប្បន្ន​ក្នុងផ្នែកទន់',
-	'translate-edit-warnings' => 'ការព្រមាន​អំពី​បទប្រែសំរួលមិនពេញលេញ',
+	'translate-edit-committed' => 'បទប្រែសម្រួល​បច្ចុប្បន្ន​ក្នុងផ្នែកទន់',
+	'translate-edit-warnings' => 'ការព្រមាន​អំពី​បទប្រែសម្រួលមិនពេញលេញ',
 	'translate-edit-goto-no-prev' => 'គ្មានសារមុនទេ',
 	'translate-edit-goto-no-next' => 'គ្មានសារបន្ទាប់ទេ',
 	'translate-edit-goto-prev' => 'កែប្រែសារមុន',
 	'translate-edit-goto-next' => 'កែប្រែសារបន្ទាប់',
-	'translate-edit-goto-list' => 'ត្រលប់ទៅកាន់បញ្ជីវិញ',
+	'translate-edit-goto-list' => 'ត្រឡប់ទៅកាន់បញ្ជីវិញ',
 	'translate-magic-pagename' => 'ការបកប្រែ​មេឌាវិគី​បន្ថែម',
-	'translate-magic-help' => "អ្នកអាចប្រែសំរួលឈ្មោះផ្សេងៗទៀតនៃទំព័រពិសេស ពាក្យទិព្វ ឈ្មោះសំបក និងឈ្មោះនៃលំហឈ្មោះ។
+	'translate-magic-help' => "អ្នកអាចប្រែសម្រួលឈ្មោះផ្សេងៗទៀតនៃទំព័រពិសេស ពាក្យទិព្វ ឈ្មោះសំបក និងឈ្មោះនៃលំហឈ្មោះ។
 
 
-ឈ្មោះផ្សេងៗទៀតនៃទំព័រពិសេស​និង​ពាក្យទិព្វអាចមានបទប្រែសំរួលច្រើន។
+ឈ្មោះផ្សេងៗទៀតនៃទំព័រពិសេស​និង​ពាក្យទិព្វអាចមានបទប្រែសម្រួលច្រើន។
 
-ការបកប្រែជាច្រើននោះត្រូវខ័ណ្ឌដោយសញ្ញាក្បៀស(,)។
+ការបកប្រែជាច្រើននោះត្រូវខណ្ឌដោយសញ្ញាក្បៀស(,)។
 
-ឈ្មោះសំបកនិងលំហឈ្មោះអាចមានត្រឹមតែមួយបទប្រែសំរួលប៉ុណ្ណោះ ។
+ឈ្មោះសំបកនិងលំហឈ្មោះអាចមានត្រឹមតែមួយបទប្រែសម្រួលប៉ុណ្ណោះ ។
 
 
 ក្នុងការបកប្រែលំហឈ្មោះ <tt>ការពិភាក្សាអំពី$1</tt> ជាករណីពិសេស។ <tt>$1</tt> ត្រូវបានជំនួសដោយឈ្មោះវិបសាយ(ឧទាហរណ៍៖ <tt>ការពិភាក្សាអំពី{{SITENAME}}</tt>)។
 
-ប្រសិនបើ​ភាសារបស់អ្នក​មិនបានបង្ហាញត្រឹមត្រូវដោយមិនប្តូរឈ្មោះវិបសាយទេ សូមទាក់ទងអ្នកអភិវឌ្ឍន៍(អ្នករចនាវិបសាយ)។
+ប្រសិនបើ​ភាសារបស់អ្នក​មិនបានបង្ហាញត្រឹមត្រូវដោយមិនប្តូរឈ្មោះវិបសាយទេ សូមទាក់ទងអ្នកអភិវឌ្ឍ(អ្នករចនាវិបសាយ)។
 
 
-អ្នកចាំបាច់ត្រូវតែស្ថិតក្នុងក្រុមអ្នកប្រែសំរួល ទើបអាចរក្សាទុកបំលាស់ប្តូរបាន។ បំលាស់ប្តូរនឹងមិនត្រូវបានរក្សាទុកទេ​លើកលែងតែអ្នកបានចុចប៊ូតុង'រក្សាទំព័រទុក'ខាងក្រោម ។",
+អ្នកចាំបាច់ត្រូវតែស្ថិតក្នុងក្រុមអ្នកប្រែសម្រួល ទើបអាចរក្សាទុកបំលាស់ប្តូរបាន។ បំលាស់ប្តូរនឹងមិនត្រូវបានរក្សាទុកទេ​លើកលែងតែអ្នកបានចុចប៊ូតុង'រក្សាទំព័រទុក'ខាងក្រោម ។",
 	'translate-magic-module' => 'ម៉ូឌុល:',
 	'translate-magic-submit' => 'នាំមក​បង្ហាញ',
 	'translate-magic-cm-export' => 'នាំចេញ',
@@ -4743,7 +4758,7 @@ $messages['km'] = array(
 	'translate-magic-cm-comment' => 'យោបល់៖',
 	'translate-magic-cm-save' => 'រក្សាទុក',
 	'translate-magic-cm-updatedusing' => 'បានបន្ទាន់សម័យ​ដោយប្រើប្រាស់ [[Special:Magic]]',
-	'translate-magic-cm-savefailed' => 'រក្សាទុកមិនបានសំរេច',
+	'translate-magic-cm-savefailed' => 'រក្សាទុកមិនបានសម្រេច',
 	'translate-magic-special' => 'ឈ្មោះផ្សេងទៀតនៃទំព័រពិសេស',
 	'translate-magic-words' => 'ពាក្យទិព្វ',
 	'translate-magic-skin' => 'ឈ្មោះសំបក',
@@ -4759,25 +4774,25 @@ $messages['km'] = array(
 	'translate-checks-balance' => 'មាន{{PLURAL:$2|វង់ក្រចក|វង់ក្រចក}}​ដែលមិន​មាន​គូ៖
 
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links' => '{{PLURAL:$2|តំនភ្ជាប់|តំនភ្ជាប់}}ខាងក្រោមនេះ​មានបញ្ហា៖ <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links' => '{{PLURAL:$2|តំណភ្ជាប់|តំណភ្ជាប់}}ខាងក្រោមនេះ​មានបញ្ហា៖ <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'សូម​ជំនួស​$2​ប្លាកខាងក្រោមដោយប្លាកដែលត្រឹមត្រូវ៖
 
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-plural' => 'និយមន័យ​ប្រើប្រាស់ <nowiki>{{PLURAL:}}</nowiki> ប៉ុន្តែ​បទប្រែសំរួល​មិនមាន ។',
+	'translate-checks-plural' => 'និយមន័យ​ប្រើប្រាស់ <nowiki>{{PLURAL:}}</nowiki> ប៉ុន្តែ​បទប្រែសម្រួល​មិនមាន ។',
 	'right-translate' => 'កែប្រែដោយប្រើអន្តរមុខបកប្រែ',
 	'translate-rc-translation-filter' => 'ការបកប្រែតម្រង៖',
 	'translate-rc-translation-filter-no' => 'កុំធ្វើអ្វីទាំងអស់',
 	'translate-rc-translation-filter-only' => 'បង្ហាញតែការបកប្រែប៉ុណ្ណោះ',
 	'translationstats' => 'ស្ថិតិបកប្រែ',
-	'translate-stats-edits' => 'ចំនួនកំនែប្រែក្នុងមួយថ្ងៃ',
+	'translate-stats-edits' => 'ចំនួនកំណែប្រែក្នុងមួយថ្ងៃ',
 	'translate-stats-users' => 'អ្នកបកប្រែ',
 	'translate-statsf-width' => 'ទទឹងគិតជាភីកសែល',
-	'translate-statsf-height' => 'កំពស់គិតជាភីកសែល',
+	'translate-statsf-height' => 'កម្ពស់គិតជាភីកសែល',
 	'translate-statsf-days' => 'រយៈពេលគិតជាថ្ងៃ',
 	'translate-statsf-scale-days' => 'ថ្ងៃ',
 	'translate-statsf-scale-hours' => 'ម៉ោង',
 	'translate-statsf-count' => 'វាស់',
-	'translate-statsf-count-edits' => 'ចំនួនកំនែប្រែ',
+	'translate-statsf-count-edits' => 'ចំនួនកំណែប្រែ',
 	'translate-statsf-count-users' => 'អ្នកបកប្រែសកម្ម',
 	'translate-statsf-submit' => 'ការមើលមុន',
 	'translate-tag-category' => 'ទំព័រដែលអាចបកប្រែបាន',
@@ -4786,10 +4801,10 @@ $messages['km'] = array(
 	'translate-tag-legend' => 'ពាក្យតំណាង៖',
 	'translate-tag-legend-fallback' => 'ការបកប្រែជាភាសាដទៃ',
 	'translate-tag-legend-fuzzy' => 'ការបកប្រែហួសសម័យ',
-	'translate-sidebar-alltrans' => 'បំនកប្រែផ្សេងទៀត',
+	'translate-sidebar-alltrans' => 'បំណកប្រែផ្សេងទៀត',
 	'translate-tag-noedit' => 'ទំព័រនេះជាទំព័របកប្រែដែលត្រូវបានបន្ទាន់សម័យដោយស្វ័យប្រវត្តិ។
 
-អ្នកអាច [$1 កែប្រែទំព័រប្រភព] ឬ [$2 បន្ទាន់សម័យបំនកប្រែ]។',
+អ្នកអាច [$1 កែប្រែទំព័រប្រភព] ឬ [$2 បន្ទាន់សម័យបំណកប្រែ]។',
 );
 
 /** Korean (한국어)
