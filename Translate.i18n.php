@@ -939,6 +939,7 @@ $messages['be-tarask'] = array(
 	'translate-magic-pagename' => 'Пашыраны пераклад MediaWiki',
 	'translate-magic-cm-comment' => 'Камэнтар:',
 	'translate-rc-translation-filter-only' => 'Паказваць толькі пераклады',
+	'translate-statsf-submit' => 'Папярэдні прагляд',
 );
 
 /** Bulgarian (Български)
@@ -2892,10 +2893,13 @@ $messages['grc'] = array(
 	'translate-page-navigation-legend' => 'Πλοήγησις',
 	'translate-page-edit' => 'μεταγράφειν',
 	'translate-optional' => '(προαιρετικόν)',
+	'translate-magic-cm-export' => 'ἐξάγειν',
+	'translate-magic-cm-current' => 'Τρέχουσα',
 	'translate-magic-cm-comment' => 'Σχόλιον:',
 	'translationchanges-export' => 'ἐξάγειν',
 	'translate-statsf-scale-days' => 'Ἡμέραι',
 	'translate-statsf-scale-hours' => 'Ὥραι',
+	'translate-statsf-submit' => 'Προθεωρεῖν',
 );
 
 /** Swiss German (Alemannisch)
@@ -3035,6 +3039,7 @@ $messages['he'] = array(
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'ההגדרה משתמשת ב־<nowiki>{{PLURAL:}}</nowiki>, אך התרגום אינו משתמש בו.',
 	'translate-checks-pagename' => 'מרחבי שם ששונו מהגדרתם',
+	'translate-checks-format' => 'תרגום זה אינו תואם להגדרות או שהוא בעל תחביר שגוי: $1',
 	'tog-translate-nonewsletter' => 'אל תשלחו אלי הודעות בדואר האלקטרוני (רלוונטי רק למשתמשים עם כתובת דואר אלקטרוני מאושרת)',
 	'right-translate' => 'עריכה באמצעות ממשק התרגום',
 	'translate-rc-translation-filter' => 'סינון תרגומים:',

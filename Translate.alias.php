@@ -179,7 +179,9 @@ $aliases['hu'] = array(
 	'Translate' => array( 'Fordítás' ),
 	'Magic' => array( 'Fejlettebb fordító' ),
 	'TranslationChanges' => array( 'Változások a fordításokban' ),
-	'TranslationStats' => array( 'Fordítási Statisztikák' ),
+	'TranslationStats' => array( 'Fordítási statisztika' ),
+	'Translations' => array( 'Fordítások' ),
+	'LanguageStats' => array( 'Nyelvi statisztika' ),
 );
 
 /** Indonesian (Bahasa Indonesia) */
@@ -244,6 +246,14 @@ $aliases['mt'] = array(
 	'Translate' => array( 'Traduċi' ),
 	'Magic' => array( 'TraduzzjoniAvvanzata' ),
 	'TranslationChanges' => array( 'TibdilTraduzzjonali' ),
+);
+
+/** Mirandese (Mirandés) */
+$aliases['mwl'] = array(
+	'Translate' => array( 'Traduzir' ),
+	'Magic' => array( 'Traduçon Abançada' ),
+	'TranslationStats' => array( 'Stado de la traduçon' ),
+	'Translations' => array( 'Traduçones' ),
 );
 
 /** Erzya (Эрзянь) */
