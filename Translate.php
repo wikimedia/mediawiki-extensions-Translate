@@ -157,16 +157,17 @@ $wgTranslateCC = array();
 
 /** Tasks */
 $wgTranslateTasks = array(
-	'view'           => 'ViewMessagesTask',
-	'untranslated'   => 'ViewUntranslatedTask',
-	'optional'       => 'ViewOptionalTask',
-	'problematic'    => 'ViewProblematicTask',
-	'review'         => 'ReviewMessagesTask',
-	'reviewall'      => 'ReviewAllMessagesTask',
-	'export-as-po'   => 'ExportasPoMessagesTask',
-//	'export'         => 'ExportMessagesTask',
-	'export-to-file' => 'ExportToFileMessagesTask',
-//	'export-to-xliff'=> 'ExportToXliffMessagesTask',
+	'view'                 => 'ViewMessagesTask',
+	'untranslated'         => 'ViewUntranslatedTask',
+	'optional'             => 'ViewOptionalTask',
+	'untranslatedoptional' => 'ViewUntranslatedOptionalTask',
+	'problematic'          => 'ViewProblematicTask',
+	'review'               => 'ReviewMessagesTask',
+	'reviewall'            => 'ReviewAllMessagesTask',
+	'export-as-po'         => 'ExportasPoMessagesTask',
+//	'export'               => 'ExportMessagesTask',
+	'export-to-file'       => 'ExportToFileMessagesTask',
+//	'export-to-xliff'      => 'ExportToXliffMessagesTask',
 );
 
 /** PHPlot for nice graphs */

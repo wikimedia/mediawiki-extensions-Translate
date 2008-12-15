@@ -182,6 +182,25 @@ class ViewOptionalTask extends ViewMessagesTask {
 
 }
 
+class ViewUntranslatedOptionalTask extends ViewOptionalTask {
+	protected $id = 'untranslatedoptional';
+
+	protected function setProcess() {
+		$this->process = array(
+			array( $this, 'preinit' ),
+			array( $this, 'filterNonOptional' ),
+			array( $this, 'postinit' ),
+			array( $this, 'filterTranslated' ),
+			array( $this, 'doPaging' ),
+		);
+	}
+
+	protected function filterTranslated() {
+		$this->collection->filter( 'translated' );
+	}
+
+}
+
 class ViewProblematicTask extends ReviewMessagesTask {
 	protected $id = 'problematic';
 
