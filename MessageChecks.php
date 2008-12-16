@@ -304,26 +304,34 @@ class MessageChecks {
 	}
 
 	/**
-	 * Checks for some micellangelous messages with special syntax.
+	 * Checks for some miscellaneous messages with special syntax.
 	 *
 	 * @param $message Instance of TMessage.
 	 * @return True if namespace has been tampered with.
 	 */
 	protected function miscMWChecks( TMessage $message, $code, &$desc = null ) {
-		$timeList = array( 'Protect-expiry-options', 'Ipboptions' );
-		if ( in_array( $message->key, $timeList, true ) ) {
+		$timeList = array( 'protect-expiry-options', 'ipboptions' );
+		if ( in_array( strtolower($message->key), $timeList, true ) ) {
 			$defArray = explode( ',', $message->definition );
 			$traArray = explode( ',', $message->translation );
-			if ( count($defArray) !== count($traArray) ) {
-				$desc = array( 'translate-checks-format', 'Parameter count' );
+
+			$defCount = count($defArray);
+			$traCount = count($traArray);
+			if ( $defCount !== $traCount ) {
+				$desc = array( 'translate-checks-format', "Parameter count is $traCount; should be $defCount" );
 				return true;
 			}
 			for ( $i = 0; $i < count($defArray); $i++ ) {
-				$defItems = array_map( 'trim', explode( ':', $defArray[$_] ) );
-				if ( !isset($traArray[$_]) ) return true;
-				$traItems = array_map( 'trim', explode( ':', $traArray[$_] ) );
-				if ( count($traItems) !== 2 ) return true;
-				if ( $traItems[1] !== $defItems[1] ) return true;
+				$defItems = array_map( 'trim', explode( ':', $defArray[$i] ) );
+				$traItems = array_map( 'trim', explode( ':', $traArray[$i] ) );
+				if ( count($traItems) !== 2 ) {
+					$desc = array( 'translate-checks-format', "<nowiki>$traArray[$i]</nowiki> is malformed" );
+					return true;
+				}
+				if ( $traItems[1] !== $defItems[1] ) {
+					$desc = array( 'translate-checks-format', "<tt><nowiki>$traItems[1] !== $defItems[1]</nowiki></tt>" );
+					return true;
+				}
 			}
 		}
 		return false;
