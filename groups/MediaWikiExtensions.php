@@ -343,7 +343,6 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-contributiontracking', // temporary for fundraiser
 		'ext-sitematrix',
 		'ext-gadgets',
-		'ext-fixedimage',
 		'ext-centralauth',
 		'ext-collection', // wikibooks
 		'ext-charinsert', // limited UI use (Special:Version and errors in usage mostly)
