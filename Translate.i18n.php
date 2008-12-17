@@ -1055,6 +1055,10 @@ $messages['bg'] = array(
 	'translate-translations-none' => 'Не съществуват преводи за „$1“',
 	'translate-translations-fieldset-title' => 'Всички преводи',
 	'translate-translations-messagename' => 'Съобщение:',
+	'translate-language-code' => 'Езиков код',
+	'translate-language-code-field-name' => 'Езиков код:',
+	'translate-language' => 'Език',
+	'translate-total' => 'Съобщения',
 );
 
 /** Bengali (বাংলা)
@@ -2958,6 +2962,8 @@ $messages['haw'] = array(
 	'translate' => 'Unuhi',
 	'translate-edit' => 'e ho‘opololei',
 	'translate-history' => 'mo‘olelo',
+	'translate-page-language' => 'ʻŌlelo',
+	'translate-language' => 'ʻŌlelo',
 );
 
 /** Hebrew (עברית)
@@ -4046,6 +4052,7 @@ Puoi [$1 modificare la pagina sorgente] o [$2 aggiornare la traduzione].',
 
 /** Japanese (日本語)
  * @author Aotake
+ * @author Fryed-peach
  * @author Hosiryuhosi
  * @author JtFuruhata
  * @author Marine-Blue
@@ -4059,6 +4066,7 @@ $messages['ja'] = array(
 	'translate-task-view' => 'すべてのメッセージ',
 	'translate-task-untranslated' => '未翻訳メッセージ',
 	'translate-task-optional' => '任意翻訳のメッセージ',
+	'translate-task-untranslatedoptional' => '未翻訳の任意翻訳メッセージ',
 	'translate-task-problematic' => '問題のあるメッセージ',
 	'translate-task-review' => '更新反映待ちのメッセージ',
 	'translate-task-reviewall' => '翻訳済みメッセージ',
@@ -4101,7 +4109,7 @@ $messages['ja'] = array(
 	'translate-edit-goto-prev' => 'この前のメッセージを編集する',
 	'translate-edit-goto-next' => '次のメッセージを編集する',
 	'translate-edit-goto-list' => '一覧へ戻る',
-	'translate-magic-pagename' => 'MediaWiki拡張項目の翻訳',
+	'translate-magic-pagename' => 'MediaWiki拡張翻訳',
 	'translate-magic-help' => '特別ページへのエイリアス、マジックワード、スキン名、名前空間名を翻訳できます。
 
 特別ページへのエイリアスとマジックワードには複数の翻訳を割り当てることができます。複数の翻訳がある時はコンマ（,）で区切ってください。スキン名と名前空間名には一つの翻訳しか当てることができません。
@@ -5970,7 +5978,7 @@ U kunt de [$1 brontekst bewerken] of de [$2 vertaling bijwerken].',
 	'languagestats-summary' => 'Op deze pagina worden vertaalstatistieken weergegeven voor alle ([[MediaWiki:Translate-languagestats-groups|ingestelde]]) berichtengroepen voor een taal.',
 	'translate-language-code' => 'Taalcode',
 	'translate-language-code-field-name' => 'Taalcode:',
-	'translate-suppress-complete' => 'Volledig vertaalde berichtengroepen onderdrukken',
+	'translate-suppress-complete' => 'Volledig vertaalde berichtengroepen verbergen',
 	'translate-language' => 'Taal:',
 	'translate-total' => 'Berichten',
 	'translate-untranslated' => 'Te vertalen',
@@ -6671,6 +6679,7 @@ $messages['ps'] = array(
  * @author 555
  * @author Lijealso
  * @author Malafaya
+ * @author Waldir
  */
 $messages['pt'] = array(
 	'translate' => 'Traduzir',
@@ -6681,6 +6690,7 @@ $messages['pt'] = array(
 	'translate-task-view' => 'Ver todas as mensagens de',
 	'translate-task-untranslated' => 'Ver todas as mensagens não traduzidas de',
 	'translate-task-optional' => 'Ver mensagens opcionais de',
+	'translate-task-untranslatedoptional' => 'Ver mensagens opcionais não traduzidas de',
 	'translate-task-problematic' => 'Ver mensagens com problemas',
 	'translate-task-review' => 'Rever alterações em',
 	'translate-task-reviewall' => 'Rever todas as traduções em',
@@ -6759,6 +6769,7 @@ As alterações não serão salvas até que você clique no botão de salvar.',
 	'translate-checks-xhtml' => 'Por gentileza, troque {{PLURAL:$2|a seguinte tag pela correta|as seguintes tags pelas corretas}}:
 <strong>$1</strong>',
 	'translate-checks-plural' => 'A definição usa <nowiki>{{PLURAL:}}</nowiki>, mas a tradução não.',
+	'translate-checks-format' => 'Esta tradução não segue a definição ou tem uma sintaxe inválida: $1',
 	'tog-translate-nonewsletter' => 'Não me enviar newsletters por e-mail (relevante apenas para utilizadores com um endereço de e-mail confirmado)',
 	'right-translate' => 'Editar usando a interface de tradução',
 	'translate-rc-translation-filter' => 'Filtrar traduções:',
@@ -6769,6 +6780,7 @@ As alterações não serão salvas até que você clique no botão de salvar.',
 	'translationstats' => 'Estatísticas de tradução',
 	'translate-stats-edits' => 'Edições',
 	'translate-stats-users' => 'Tradutores',
+	'translate-statsf-intro' => 'Você pode gerar estatísticas simples com este formulário. Todos os valores têm limites máximos e mínimos.',
 	'translate-statsf-options' => 'Opções do gráfico',
 	'translate-statsf-width' => 'Largura em pixels',
 	'translate-statsf-height' => 'Altura em pixels',
@@ -6778,8 +6790,11 @@ As alterações não serão salvas até que você clique no botão de salvar.',
 	'translate-statsf-scale-hours' => 'Horas',
 	'translate-statsf-count-edits' => 'Número de edições',
 	'translate-statsf-count-users' => 'Tradutores activos',
+	'translate-statsf-language' => 'List separada por vírgulas de códigos de língua',
+	'translate-statsf-group' => 'Lista separada por vírgulas de códigos de grupo',
 	'translate-statsf-submit' => 'Prever',
 	'translate-tag-category' => 'Páginas traduzíveis',
+	'translate-tag-page-desc' => 'Tradução da página wiki [[:$1]].',
 	'translate-tag-translate-link-desc' => 'Traduzir esta página',
 	'translate-tag-legend' => 'Legenda:',
 	'translate-tag-legend-fallback' => 'Tradução noutra língua',
@@ -6787,6 +6802,25 @@ As alterações não serão salvas até que você clique no botão de salvar.',
 	'translate-tag-fuzzy-comment' => 'Definição medada por [[User:$1|$1]] na revisão $2.',
 	'translate-tag-fuzzy-reason' => 'Definição mudada por "$1" com comentário "$3" em $2.',
 	'translate-sidebar-alltrans' => 'Outras traduções',
+	'translate-tag-noedit' => 'Esta página de tradução é actualizada automaticamente.
+Você pode [$1 editar a página de origem] ou [$2 actualizar a tradução].',
+	'translations' => 'Todas as traduções',
+	'translations-summary' => 'Introduza o título de uma mensagem abaixo para mostrar todas as traduções disponíveis.',
+	'translate-translations-no-message' => '"$1" não é uma mensagem traduzível',
+	'translate-translations-none' => 'Não existem traduções para "$1"',
+	'translate-translations-fieldset-title' => 'Todas as traduções',
+	'translate-translations-messagename' => 'Mensagem:',
+	'translate-translations-including-no-param' => 'Por favor especifique um nome de página válido no parâmetro subpágina',
+	'languagestats' => 'Estatísticas da língua',
+	'languagestats-summary' => 'Esta página mostra estatísticas de tradução para todos os grupos de mensagens ([[MediaWiki:Translate-languagestats-groups|configurados]]) para uma língua.',
+	'translate-language-code' => 'Código de língua',
+	'translate-language-code-field-name' => 'Código de língua:',
+	'translate-suppress-complete' => 'Ocultar grupos de mensagens completamente traduzidos',
+	'translate-language' => 'Língua',
+	'translate-total' => 'Mensagens (total)',
+	'translate-untranslated' => 'Não traduzidas',
+	'translate-percentage-complete' => 'Progresso',
+	'translate-percentage-fuzzy' => 'Obsoletas',
 );
 
 /** Tarifit (Tarifit)

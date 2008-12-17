@@ -142,7 +142,7 @@ $aliases['gsw'] = array(
 	'TranslationChanges' => array( 'Ibersetzigsänderige' ),
 	'TranslationStats' => array( 'Ibersetzigsstatischtik' ),
 	'Translations' => array( 'Ibersetzige' ),
-	'LanguageStats' => array( 'Sprochstatitschtik' ),
+	'LanguageStats' => array( 'Sprochstatischtik' ),
 );
 
 /** Hebrew (עברית)
