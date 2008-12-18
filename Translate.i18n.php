@@ -1684,7 +1684,7 @@ Du musst in der Übersetzer-Gruppe sein, um Änderungen zu speichern.
 	'translate-tag-noedit' => 'Diese Seite ist eine automatisch aktualisierte Übersetzungsseite.
 Du kannst die [$1 Originalseite bearbeiten] oder [$2 die Übersetzung aktualisieren].',
 	'translations' => 'Alle Übersetzungen',
-	'translations-summary' => 'Gebe einen Nachrichtennamen nachstehend an, um alle verfügbaren Übersetzungen anzeigen zu lassen.',
+	'translations-summary' => 'Gib einen Nachrichtennamen ein, um alle verfügbaren Übersetzungen anzuzeigen.',
 	'translate-translations-no-message' => '„$1“ ist keine übersetzbare Nachricht',
 	'translate-translations-none' => 'Keine Übersetzungen für „$1“ verfügbar',
 	'translate-translations-fieldset-title' => 'Alle Übersetzungen',
@@ -2735,10 +2735,23 @@ $messages['fy'] = array(
 );
 
 /** Irish (Gaeilge)
+ * @author Alison
  * @author Moilleadóir
  */
 $messages['ga'] = array(
+	'translate-talk' => 'plé',
+	'translate-history' => 'stair',
+	'translate-page-settings-legend' => 'Sainroghanna',
+	'translate-page-group' => 'Ghrúpa',
+	'translate-page-language' => 'Teanga',
+	'translate-submit' => 'Faigh',
 	'translate-page-navigation-legend' => 'Nascleanúint',
+	'translate-edit-in-other-languages' => 'Teachtaireachtaí i dteangacha eile',
+	'translate-magic-skin' => 'Ainmneacha craicinn',
+	'translationchanges-export' => 'Easpórtaigh',
+	'translate-statsf-scale-days' => 'Lae',
+	'translate-statsf-scale-hours' => 'Uaire',
+	'translate-language' => 'Teanga',
 );
 
 /** Galician (Galego)
@@ -4156,15 +4169,17 @@ $messages['ja'] = array(
 	'translate-rc-translation-filter-filter' => '翻訳以外',
 	'translate-rc-translation-filter-site' => 'Betawiki表示メッセージの変更',
 	'translationstats' => '翻訳の統計',
-	'translate-stats-edits' => 'Edits',
+	'translate-stats-edits' => '編集',
 	'translate-stats-users' => 'Translators',
 	'translate-statsf-intro' => 'このフォームを使って簡単な統計を生成できます。数値には全て上限と下限があります。',
 	'translate-statsf-options' => 'グラフのオプション',
 	'translate-statsf-width' => 'ピクセル幅',
 	'translate-statsf-height' => 'ピクセル高',
 	'translate-statsf-days' => '時期（日数）',
+	'translate-statsf-scale' => '粒度',
 	'translate-statsf-scale-days' => '日',
 	'translate-statsf-scale-hours' => '時間',
+	'translate-statsf-count' => '尺度',
 	'translate-statsf-count-edits' => '編集回数',
 	'translate-statsf-count-users' => '活動中の翻訳者',
 	'translate-statsf-language' => 'カンマ区切りの言語コードの一覧',
@@ -4186,6 +4201,7 @@ $messages['ja'] = array(
 	'translate-translations-none' => '「$1」には翻訳がありません',
 	'translate-translations-fieldset-title' => '全翻訳結果',
 	'translate-translations-messagename' => 'メッセージ:',
+	'translate-translations-including-no-param' => 'サブページ引数に有効なページ名を指定してください',
 	'languagestats' => '言語別翻訳状況',
 	'languagestats-summary' => 'このページでは指定した言語におけるメッセージの翻訳状況をメッセージグループごとに表示しています ([[MediaWiki:Translate-languagestats-groups|表示するメッセージグループの設定]]) 。',
 	'translate-language-code' => '言語コード',
@@ -5081,6 +5097,7 @@ $messages['lb'] = array(
 	'translate-task-view' => 'All Systemmessagen uweisen',
 	'translate-task-untranslated' => 'All net iwwersate Systemmessagen uweisen',
 	'translate-task-optional' => 'Optional Messagen uweisen',
+	'translate-task-untranslatedoptional' => 'Weis déi net-iwwersaten optional Systemmessagen vu(n)',
 	'translate-task-problematic' => 'Systemmessage weisen wou et Problemer gëtt',
 	'translate-task-review' => 'Ännerungen uweisen',
 	'translate-task-reviewall' => 'All Iwwersetzungen nokucken',
