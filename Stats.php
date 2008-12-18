@@ -21,6 +21,7 @@ class SpecialTranslationStats extends SpecialPage {
 		$opts->add( 'width', 600 );
 		$opts->add( 'height', 400 );
 		$opts->add( 'group', '' );
+		$opts->add( 'uselang', '');
 		$opts->fetchValuesFromRequest( $wgRequest );
 
 		$pars = explode( ';', $par );
