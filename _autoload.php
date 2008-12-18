@@ -55,6 +55,7 @@ $wgAutoloadClasses['XliffFormatWriter'] = $dir . 'ffs/Xliff.php';
 # utils
 $wgAutoloadClasses['ResourceLoader'] = $dir . 'utils/ResourceLoader.php';
 $wgAutoloadClasses['StringMatcher'] = $dir . 'utils/StringMatcher.php';
+$wgAutoloadClasses['FCFontFinder'] = $dir . 'utils/Font.php';
 
 $wgAutoloadClasses['StringMangler'] = $dir . 'utils/StringMangler.php';
 $wgAutoloadClasses['SmItem'] = $dir . 'utils/StringMangler.php';

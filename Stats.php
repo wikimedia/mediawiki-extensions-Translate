@@ -239,7 +239,7 @@ class SpecialTranslationStats extends SpecialPage {
 
 	public function draw( FormOptions $opts ) {
 		wfLoadExtensionMessages( 'Translate' );
-		global $wgTranslatePHPlotFont;
+		global $wgTranslatePHPlotFont, $wgLang;
 
 		$width = $opts->getValue( 'width' );
 		$height = $opts->getValue( 'height' );
@@ -262,8 +262,12 @@ class SpecialTranslationStats extends SpecialPage {
 			$i--;
 		}
 
-		$plot->SetDefaultTTFont( $wgTranslatePHPlotFont );
-
+		$font = FCFontFinder::find( $wgLang->getCode() );
+		if ( $font ) {
+			$plot->SetDefaultTTFont( $font );
+		} else {
+			$plot->SetDefaultTTFont( $wgTranslatePHPlotFont );
+		}
 		$plot->SetDataValues( $data );
 
 		if ( $legend !== null )
