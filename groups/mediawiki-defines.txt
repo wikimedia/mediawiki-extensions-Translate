@@ -182,6 +182,7 @@ file = ConfirmEdit/FancyCaptcha.i18n.php
 Contact Page
 
 Contribution Reporting
+optional = contribstats-percentage
 
 Contribution Scores
 
