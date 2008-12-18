@@ -619,6 +619,8 @@ file = SemanticDrilldown/languages/SD_Messages.php
 Semantic Forms
 file = SemanticForms/languages/SF_Messages.php
 
+Semantic Gallery
+
 Semantic Google Maps
 
 Semantic MediaWiki
