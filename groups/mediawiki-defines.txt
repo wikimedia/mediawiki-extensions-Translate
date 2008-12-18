@@ -695,7 +695,7 @@ Subst All
 optional = substall-hook
 
 Sub Page List 3
-descmsg = spl3_desc
+descmsg = spl3-desc
 
 Stale Pages
 
