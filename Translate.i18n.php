@@ -2993,7 +2993,7 @@ $messages['he'] = array(
 	'translate-task-view' => 'הצגת כל ההודעות מתוך',
 	'translate-task-untranslated' => 'הצגת כל ההודעות שאינן מתורגמות מתוך',
 	'translate-task-optional' => 'הצגת הודעות אופציונאליות מתוך',
-	'translate-task-untranslatedoptional' => 'הצג הודעות לא מתורגמות אופציונאליות מ־',
+	'translate-task-untranslatedoptional' => 'הצגת הודעות אופציונאליות שאינן מתורגמות מ־',
 	'translate-task-problematic' => 'הצגת הודעות עם בעיות',
 	'translate-task-review' => 'הצגת שינויים בתוך',
 	'translate-task-reviewall' => 'הצגת שינויים בכל ההודעות שתורגמו בתוך',
@@ -3175,6 +3175,7 @@ $messages['hil'] = array(
  * @author Dalibor Bosits
  * @author Dnik
  * @author SpeedyGonsales
+ * @author Suradnik13
  */
 $messages['hr'] = array(
 	'translate' => 'Prijevodi sistemskih poruka',
@@ -3184,6 +3185,8 @@ $messages['hr'] = array(
 	'translate-task-view' => 'Vidjeti sve poruke u prostoru',
 	'translate-task-untranslated' => 'Vidjeti sve neprevedene poruke u prostoru',
 	'translate-task-optional' => 'Vidjeti dodatne (optional) poruke u prostoru',
+	'translate-task-untranslatedoptional' => 'Vidjeti neprevedene dodatne poruke od',
+	'translate-task-problematic' => 'Vidjeti poruke koje imaju problem',
 	'translate-task-review' => 'Vidjeti promjene u prostoru',
 	'translate-task-reviewall' => 'Vidjeti sve prijevode u prostoru',
 	'translate-task-export' => 'Izvesti (export) prijevode iz prostora',
@@ -3204,6 +3207,7 @@ $messages['hr'] = array(
 	'translate-next' => 'Slijedeća stranica',
 	'translate-prev' => 'Prethodna stranica',
 	'translate-page-description-legend' => 'Podaci o grupi',
+	'translate-page-edit' => 'uredi',
 	'translate-optional' => '(opcionalno)',
 	'translate-ignored' => '(zanemareno)',
 	'translate-edit-definition' => 'Definicija poruke',
@@ -3212,6 +3216,11 @@ $messages['hr'] = array(
 	'translate-edit-information' => 'Informacije o ovoj poruci ($1)',
 	'translate-edit-in-other-languages' => 'Poruka u drugim jezicima',
 	'translate-edit-warnings' => 'Upozorenja o nepotpunim prijevodima',
+	'translate-edit-goto-no-prev' => 'Nema prethodne poruke',
+	'translate-edit-goto-no-next' => 'Nema sljedeće poruke',
+	'translate-edit-goto-prev' => 'Uredi prethodnu poruku',
+	'translate-edit-goto-next' => 'Uredi sljedeću poruku',
+	'translate-edit-goto-list' => 'Povratak na popis',
 	'translate-magic-submit' => 'Dohvati',
 	'translate-magic-cm-export' => 'Izvezi',
 	'translate-magic-cm-to-be' => 'Budući',
@@ -3234,6 +3243,29 @@ $messages['hr'] = array(
 	'translate-checks-links' => 'Sljedeće poveznice su problematične:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Definicija koristi <nowiki>{{PLURAL:}}</nowiki>, ali prijevod ne.',
+	'translate-stats-users' => 'Prevoditelji',
+	'translate-statsf-options' => 'Opcije grafa',
+	'translate-statsf-width' => 'Širina u pikselima',
+	'translate-statsf-height' => 'Visina u pikselima',
+	'translate-statsf-scale-days' => 'Dani',
+	'translate-statsf-scale-hours' => 'Sati',
+	'translate-statsf-count-edits' => 'Broj uređivanja',
+	'translate-statsf-count-users' => 'Aktivni prevoditelji',
+	'translate-statsf-submit' => 'Prikaži',
+	'translate-tag-page-desc' => 'Prijevod wiki stranice [[:$1]].',
+	'translate-tag-translate-link-desc' => 'Prevedi ovu stranicu',
+	'translate-sidebar-alltrans' => 'Drugi prijevodi',
+	'translations' => 'Svi prijevodi',
+	'translate-translations-no-message' => '"$1" nije poruka koja se prevodi',
+	'translate-translations-none' => 'Ne postoje prijevodi za "$1"',
+	'translate-translations-fieldset-title' => 'Svi prijevodi',
+	'translate-translations-messagename' => 'Poruka:',
+	'languagestats' => 'Statistika jezika',
+	'translate-language-code' => 'Jezični kôd',
+	'translate-language-code-field-name' => 'Jezični kôd:',
+	'translate-language' => 'Jezik',
+	'translate-total' => 'Poruke',
+	'translate-untranslated' => 'Neprevedeno',
 );
 
 /** Upper Sorbian (Hornjoserbsce)
@@ -4170,7 +4202,7 @@ $messages['ja'] = array(
 	'translate-rc-translation-filter-site' => 'Betawiki表示メッセージの変更',
 	'translationstats' => '翻訳の統計',
 	'translate-stats-edits' => '編集',
-	'translate-stats-users' => 'Translators',
+	'translate-stats-users' => '翻訳者',
 	'translate-statsf-intro' => 'このフォームを使って簡単な統計を生成できます。数値には全て上限と下限があります。',
 	'translate-statsf-options' => 'グラフのオプション',
 	'translate-statsf-width' => 'ピクセル幅',
