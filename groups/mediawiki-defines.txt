@@ -609,6 +609,8 @@ See also
 
 Scan Set
 
+Secure Passwords
+
 Select Category
 
 Semantic Result Formats
