@@ -342,7 +342,7 @@ ignored = globalblocking-expiry-options
 
 Global Usage
 
-Global User Rights
+Global User rights
 desc = gur-desc
 
 Gnuplot
