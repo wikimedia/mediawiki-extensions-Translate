@@ -118,6 +118,9 @@ file = GlobalBlocking/GlobalBlocking.alias.php
 Global usage
 file = GlobalUsage/GlobalUsage.alias.php
 
+Global user rights
+file = GlobalUserrights/GlobalUserrights.alias.php
+
 Group permissions manager
 file = GroupPermissionsManager/GroupPermissionsManager.alias.php
 
