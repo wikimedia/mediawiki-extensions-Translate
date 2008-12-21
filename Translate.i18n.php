@@ -596,6 +596,7 @@ $messages['ar'] = array(
 	'translate-sidebar-alltrans' => 'ترجمات أخرى',
 	'translate-tag-noedit' => 'هذه الصفحة هي صفحة ترجمة محدثة تلقائيا.
 يمكنك [$1 تعديل الصفحة المصدر] أو [$2 تحديث الترجمة].',
+	'translate-language' => 'اللغة:',
 );
 
 /** Araucanian (Mapudungun)
@@ -2620,6 +2621,9 @@ Vous pouvez [$1 modifier la page source] ou [$2 mettre à jour la traduction].',
 	'translate-untranslated' => 'Non traduits',
 	'translate-percentage-complete' => 'Achèvement',
 	'translate-percentage-fuzzy' => 'Dépassés',
+	'translate-languagestats-groups' => ' # Ajoutez des ID de groupes de messages, un par ligne pour limiter les groupes
+ # qui sont affichés sur Special:LanguageStats. Les groupes inexistants seront
+ # ignorés.',
 );
 
 /** Cajun French (Français cadien)
@@ -2642,6 +2646,7 @@ $messages['frc'] = array(
 	'translate-optional' => '(de choix)',
 	'translate-ignored' => '(ignoré)',
 	'translationchanges' => 'Modification des traductions',
+	'translate-language' => 'Langue:',
 );
 
 /** Franco-Provençal (Arpetan)
@@ -4774,6 +4779,7 @@ $messages['kk-kz'] = array(
 	'translate-magic-skin' => 'Безендіру мәнері атаулары',
 	'translate-magic-namespace' => 'Есім ая атаулары',
 	'translationchanges' => 'Аударма өзгерістері',
+	'translate-language' => 'Тілі:',
 );
 
 /** Khmer (ភាសាខ្មែរ)
@@ -6336,6 +6342,7 @@ Endringer lagres ikke før du klikker på lagre-knappen nedenfor.',
 	'translate-sidebar-alltrans' => 'Andre oversettelser',
 	'translate-tag-noedit' => 'Denne siden er en automatisk oppdatert oversettelse.
 Du kan [$1 redigere kildesiden] eller [$2 oppdatere oversettelsen].',
+	'translate-language' => 'Språk:',
 );
 
 /** Northern Sotho (Sesotho sa Leboa)
@@ -6375,6 +6382,7 @@ $messages['oc'] = array(
 	'translate-task-view' => 'Veire totes los messatges dempuèi',
 	'translate-task-untranslated' => 'Veire totes los messatges pas tradusits dempuèi',
 	'translate-task-optional' => 'Veire totes los messatges facultatius dempuèi',
+	'translate-task-untranslatedoptional' => 'Veire los messatges facultatius pas traduches del',
 	'translate-task-problematic' => "Veire los messatges qu'an de problèmas",
 	'translate-task-review' => 'Tornar veire mos cambiaments dempuèi',
 	'translate-task-reviewall' => 'Tornar veire totas las traduccions dins',
@@ -6453,6 +6461,7 @@ Los cambiaments seràn pas salvats abans que cliquèssetz sul boton « Salvar »
 	'translate-checks-xhtml' => 'Sètz convidat(ada) a corregir {{PLURAL:$2|la balisa seguenta|las balisas seguentas}} : <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'La definicion utiliza <nowiki>{{PLURAL:}}</nowiki> mas pas la traduccion',
 	'translate-checks-pagename' => 'Nom d’espaci modificat dempuèi la definicion',
+	'translate-checks-format' => 'Aquesta traduccion seguís pas la definicion o a una sintaxi invalida : $1',
 	'tog-translate-nonewsletter' => 'Me mandetz pas la letra d’informacion per corrièr (concernís pas que les utilizaires que dispausan d’una adreça de corrièr electronic confirmada)',
 	'right-translate' => "Modificar en utilizant l'interfàcia de traduccion",
 	'translate-rc-translation-filter' => 'Filtrar las traduccions :',
@@ -6516,6 +6525,7 @@ $messages['os'] = array(
 	'translate-page-language' => 'Æвзаг',
 	'translate-page-edit' => 'баив æй',
 	'translate-magic-cm-current' => 'Нырыккон',
+	'translate-statsf-submit' => 'Разæркаст',
 );
 
 /** Polish (Polski)
@@ -6710,6 +6720,7 @@ $messages['pms'] = array(
 	'translate-magic-skin' => 'Nòm dle facie',
 	'translate-magic-namespace' => 'Nòm djë spassi nominaj',
 	'translationchanges' => 'Modìfiche ëd viragi',
+	'translate-language' => 'Lenga:',
 );
 
 /** Pashto (پښتو)
@@ -7095,6 +7106,7 @@ $messages['sah'] = array(
 	'translate-submit' => 'Тал',
 	'translate-next' => 'Аныгыскы сирэй',
 	'translate-prev' => 'Иннинээҕи сирэй',
+	'translate-language' => 'Ханнык тылынан:',
 );
 
 /** Slovak (Slovenčina)
@@ -7252,6 +7264,7 @@ Môžete [$1 upravovať zdrojovú stránku] alebo [$2 aktualizovať preklad].',
  */
 $messages['so'] = array(
 	'translate' => 'Tarjun',
+	'translate-language' => 'Luqad:',
 );
 
 /** Albanian (Shqip)
@@ -7398,6 +7411,7 @@ Anjeun perlu jadi anggota grup panarjamah pikeun nyimpen parobahan. Parobahan mo
 	'translationchanges-change' => '$1: $2 ku $3',
 	'translate-checks-xhtml' => 'Sok ganti tag-tag ieu kalawan tag anu pas:<strong>$1</strong>',
 	'right-translate' => 'Édit migunakeun antarmuka panarjamah',
+	'translate-language' => 'Basa:',
 );
 
 /** Swedish (Svenska)
@@ -7742,6 +7756,7 @@ $messages['tg-cyrl'] = array(
 
 /** Thai (ไทย)
  * @author Ans
+ * @author Manop
  * @author Passawuth
  */
 $messages['th'] = array(
@@ -7759,12 +7774,12 @@ $messages['th'] = array(
 	'translate-task-export' => 'ส่งงานแปลออกมา (export) จาก',
 	'translate-task-export-to-file' => 'ส่งงานแปลออกมา (export) เป็นไฟล์ จาก',
 	'translate-task-export-as-po' => 'ส่งงานแปลออกมา (export) ในรูปแบบ Gettext จาก',
-	'translate-page-no-such-language' => 'ใส่รหัสภาษา (language) ไม่ถูกต้อง',
-	'translate-page-no-such-task' => 'ใส่ชื่อ task ไม่ถูกต้อง',
-	'translate-page-no-such-group' => 'ใส่ชื่อกลุ่ม (group) ไม่ถูกต้อง',
+	'translate-page-no-such-language' => 'ใส่รหัสภาษาไม่ถูกต้อง',
+	'translate-page-no-such-task' => 'ใส่ชื่องานไม่ถูกต้อง',
+	'translate-page-no-such-group' => 'ใส่ชื่อกลุ่มไม่ถูกต้อง',
 	'translate-page-settings-legend' => 'กำหนดค่า',
 	'translate-page-task' => 'ต้องการ',
-	'translate-page-group' => 'กลุ่มของ',
+	'translate-page-group' => 'กลุ่ม',
 	'translate-page-language' => 'ภาษา',
 	'translate-page-limit' => 'ไม่เกิน',
 	'translate-page-limit-option' => '$1 ข้อความต่อหน้า',
@@ -7831,7 +7846,24 @@ $messages['th'] = array(
 	'translate-rc-translation-filter-no' => 'ไม่ทำอะไรทั้งสิ้น',
 	'translate-rc-translation-filter-only' => 'แสดงงานแปลเท่านั้น',
 	'translate-rc-translation-filter-filter' => 'เอางานแปลออก',
+	'translationstats' => 'สถิติการแปล',
 	'translate-stats-edits' => 'การแก้ไขต่อหนึ่งวัน',
+	'translate-stats-users' => 'ผู้แปล',
+	'translate-statsf-width' => 'ความกว้างในหน่วยพิกเซล',
+	'translate-statsf-height' => 'ความสูงในหน่วยพิกเซล',
+	'translate-statsf-scale-days' => 'วัน',
+	'translate-statsf-scale-hours' => 'ชั่วโมง',
+	'translate-statsf-count-edits' => 'จำนวนการแก้ไข',
+	'translate-translations-fieldset-title' => 'การแปลทั้งหมด',
+	'translate-translations-messagename' => 'ข้อความ:',
+	'languagestats' => 'สถิติภาษา',
+	'translate-language-code' => 'รหัสภาษา',
+	'translate-language-code-field-name' => 'รหัสภาษา:',
+	'translate-language' => 'ภาษา',
+	'translate-total' => 'ข้อความ',
+	'translate-untranslated' => 'ไม่ได้แปล',
+	'translate-percentage-complete' => 'สมบูรณ์',
+	'translate-percentage-fuzzy' => 'ล้าสมัย',
 );
 
 /** Turkish (Türkçe)
