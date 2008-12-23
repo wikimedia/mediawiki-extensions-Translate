@@ -1056,8 +1056,11 @@ $messages['bg'] = array(
 	'translate-translations-none' => 'Не съществуват преводи за „$1“',
 	'translate-translations-fieldset-title' => 'Всички преводи',
 	'translate-translations-messagename' => 'Съобщение:',
+	'languagestats' => 'Езикови статистики',
+	'languagestats-summary' => 'Тази страница показва статистиките за преводите на всички ([[MediaWiki:Translate-languagestats-groups|конфигурирани]]) групи съобщения за езика.',
 	'translate-language-code' => 'Езиков код',
 	'translate-language-code-field-name' => 'Езиков код:',
+	'translate-suppress-complete' => 'Скриване на изцяло преведените групи съобщения',
 	'translate-language' => 'Език',
 	'translate-total' => 'Съобщения',
 );
@@ -2063,7 +2066,7 @@ Tradukoj estas apartigitaj de komo (,).
 Nomoj de etosoj kaj nomspacoj nur povas havi unu tradukon.
 
 
-En nomspacaj tradukoj <tt>$1 diskuto</tt> estas speciala. <tt>$1</tt> estas anstataŭigita de la nomo de la retejo (ekz-e <tt>{{SITENAME}} diskuto</tt>.
+En nomspacaj tradukoj <tt>$1 diskuto</tt> estas speciala. <tt>$1</tt> estas anstataŭigita de la nomo de la retejo (ekz-e <tt>{{SITENAME}}) diskuto</tt>.
 Se ne eblas en via lingvo formi validan esprimon sen ŝanĝi la nomon de la retejo, bonvolu kontakti programisto.
 
 Vi devas esti en la grupo de tradukantoj por konservi ŝanĝojn.
@@ -2140,6 +2143,7 @@ Vi povas [$1 redakti la fontpaĝon] aŭ [$2 ĝisdatigi la tradukon].',
 	'translate-language-code-field-name' => 'Lingva kodo:',
 	'translate-language' => 'Lingvo',
 	'translate-total' => 'Mesaĝoj',
+	'translate-percentage-fuzzy' => 'Malfreŝdata',
 );
 
 /** Spanish (Español)
@@ -4877,13 +4881,13 @@ $messages['km'] = array(
 	'translate-checks-parameters' => '{{PLURAL:$2|ប៉ារ៉ាម៉ែត្រ|ប៉ារ៉ាម៉ែត្រ}}ខាងក្រោមនេះមិនត្រូវបានគេប្រើទេ៖
 
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-parameters-unknown' => 'ប៉ារ៉ាម៉ែត្រចំនួន$2ខាងក្រោមនេះមិនត្រូវបានស្គាល់ទេ៖
+	'translate-checks-parameters-unknown' => '{{PLURAL:$2|parameter is|ប៉ារ៉ាម៉ែត្រ}}ខាងក្រោមនេះមិនត្រូវបានស្គាល់ទេ៖
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'មាន{{PLURAL:$2|វង់ក្រចក|វង់ក្រចក}}​ដែលមិន​មាន​គូ៖
 
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '{{PLURAL:$2|តំណភ្ជាប់|តំណភ្ជាប់}}ខាងក្រោមនេះ​មានបញ្ហា៖ <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-xhtml' => 'សូម​ជំនួស​$2​ប្លាកខាងក្រោមដោយប្លាកដែលត្រឹមត្រូវ៖
+	'translate-checks-xhtml' => 'សូម​ជំនួស​{{PLURAL:$2|tag|ប្លាក}}​ខាងក្រោមដោយប្លាកដែលត្រឹមត្រូវ៖
 
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'និយមន័យ​ប្រើប្រាស់ <nowiki>{{PLURAL:}}</nowiki> ប៉ុន្តែ​បទប្រែសម្រួល​មិនមាន ។',
@@ -5122,7 +5126,7 @@ Do moß en de Jrop „Övversäzer“ sen, för hee Änderonge maache ze könne.
 	'translate-tag-legend-fallback' => 'Översäzung en en ander Shproch',
 	'translate-tag-legend-fuzzy' => 'Ahl Övversäzung',
 	'translate-tag-fuzzy-comment' => 'Dä ojinaal-Tex wood fum „[[User:$1|$1]]“ verändert met de Version $2.',
-	'translate-tag-fuzzy-reason' => "Dä ojinaal-Tex wood fum „[[User:$1|$1]]“ verändert met de Version $2 fum MediaWiki, met dämm Kommentaa: ''$3''",
+	'translate-tag-fuzzy-reason' => 'Dä ojinaal-Tex wood fum „$1“ verändert met de Version $2 fum MediaWiki, met dämm Kommentaa: "$3"',
 	'translate-sidebar-alltrans' => 'Ander Övversäzunge',
 	'translate-tag-noedit' => 'Die Sigg es en Övversäzongß_Sigg, die automattejj_op der neuste Shtant jebraat weed.
 Do kanns de [$1 Ojinaal-Sigg ändere] ov de [$2 Övversäzong op der neuste Shtand bränge].',
@@ -6927,11 +6931,25 @@ $messages['ro'] = array(
 	'translate' => 'Traducere',
 	'translate-edit' => 'modifică',
 	'translate-history' => 'istoric',
+	'translate-task-view' => 'Vizualizez toate mesajele de la',
+	'translate-task-untranslated' => 'Vizualizez toate mesajele netraduse de la',
+	'translate-task-optional' => 'Vizualizez mesajele opţionale de la',
+	'translate-task-untranslatedoptional' => 'Vizualizez mesajele opţionale netraduse de la',
+	'translate-task-problematic' => 'Vizualizez mesajele care au probleme',
+	'translate-task-export' => 'Exportă traducerile de la',
+	'translate-page-no-such-language' => 'Limba specificată este incorectă.',
+	'translate-page-no-such-group' => 'Grupul specificat este incorect.',
+	'translate-page-task' => 'Doresc să',
 	'translate-page-group' => 'Grup',
 	'translate-page-language' => 'Limbă',
+	'translate-page-limit' => 'Limită',
+	'translate-page-limit-option' => '$1 {{PLURAL:$1|mesaj|mesaje}} pe pagină',
 	'translate-next' => 'Pagina următoare',
 	'translate-prev' => 'Pagina anterioară',
 	'translate-page-edit' => 'modifică',
+	'translate-optional' => '(opţional)',
+	'translate-ignored' => '(ignorat)',
+	'translate-edit-goto-list' => 'Înapoi la listă',
 	'translate-magic-cm-comment' => 'Comentariu:',
 	'translate-magic-cm-save' => 'Salvează',
 	'translate-statsf-width' => 'Lăţime în pixeli',

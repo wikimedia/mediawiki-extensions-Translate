@@ -125,6 +125,7 @@ $aliases['fr'] = array(
 	'Translate' => array( 'Traduire' ),
 	'Magic' => array( 'Traduction avancée', 'Traductionavancée', 'Traduction avancee', 'Traductionavancee' ),
 	'TranslationChanges' => array( 'Modifications des traductions', 'Modificationsdestraductions' ),
+	'Translations' => array( 'Traductions' ),
 );
 
 /** Galician (Galego) */
@@ -226,6 +227,8 @@ $aliases['lb'] = array(
 	'Magic' => array( 'Erweidert Iwwersetzung' ),
 	'TranslationChanges' => array( 'Iwwersetzungsännerungen' ),
 	'TranslationStats' => array( 'Iwwersetzungsstatistiken' ),
+	'Translations' => array( 'Iwwersetzungen' ),
+	'LanguageStats' => array( 'Sproochestatistiken' ),
 );
 
 /** Macedonian (Македонски) */
@@ -233,6 +236,8 @@ $aliases['mk'] = array(
 	'Translate' => array( 'Преведување' ),
 	'Magic' => array( 'НапредноПреведување' ),
 	'TranslationStats' => array( 'СтатистикиЗаПреведување' ),
+	'Translations' => array( 'Преводи' ),
+	'LanguageStats' => array( 'СтатистикаЗаЈазик' ),
 );
 
 /** Malay (Bahasa Melayu) */
