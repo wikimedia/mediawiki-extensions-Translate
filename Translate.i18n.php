@@ -1702,7 +1702,7 @@ Du kannst die [$1 Originalseite bearbeiten] oder [$2 die Übersetzung aktualisie
 	'translate-language' => 'Sprache',
 	'translate-total' => 'Systemnachrichten',
 	'translate-untranslated' => 'Nicht übersetzt',
-	'translate-percentage-complete' => 'Vollständig',
+	'translate-percentage-complete' => 'Vollständigkeit',
 	'translate-percentage-fuzzy' => 'Veraltet',
 );
 
@@ -5015,6 +5015,7 @@ $messages['ksh'] = array(
 	'translate-task-view' => 'Zeijsh all de Nohreschte fon',
 	'translate-task-untranslated' => 'Zeijsh all de nit övversäzte Nohreschte fon',
 	'translate-task-optional' => "Zeijsh all de 'nit esu nüüdijje' Nohreschte fon",
+	'translate-task-untranslatedoptional' => "Zeijsh de nit övversazte 'nut esu nüdeje' Nohrechte fon",
 	'translate-task-problematic' => 'Zeijsh de probleemattesche Nohreschte fon',
 	'translate-task-review' => 'Donn de Ännderonge prööfe fon',
 	'translate-task-reviewall' => 'Donn de Övversäzzonge prööfe fon',
@@ -5039,6 +5040,7 @@ $messages['ksh'] = array(
 	'translate-page-showing' => 'De Nohreshte fon Nommer $1 aff, beß $2, fon ennßjesammp $3.',
 	'translate-page-showing-all' => '{{PLURAL:$1|Eijn_Nohresch|$1 Nohreschte|Keijn_esu_e_Nohreschte}}.',
 	'translate-page-showing-none' => 'Nix för Aan_ze_zeije.',
+	'translate-page-paging-links' => '[ $1 ] [ $2 ]',
 	'translate-next' => 'Näx Sigk',
 	'translate-prev' => 'Förrije Sigk',
 	'translate-page-description-legend' => 'Enfommazjohne övver di Jrop',
@@ -5095,6 +5097,7 @@ Do moß en de Jrop „Övversäzer“ sen, för hee Änderonge maache ze könne.
 	'translate-checks-xhtml' => 'Donn hee {{PLURAL:$2|dat Kommando|di Kommandose|dat Jedrißße}} ußtuusche, un schriif de reschtije do för hen: <strong>$1</strong>',
 	'translate-checks-plural' => 'De Ojjinaal-Nohresch bruch <nowiki>{{PLURAL:}}</nowiki>, ävver de Övversäzong deijt dat nit?',
 	'translate-checks-pagename' => 'Dat Appachtemang es anders wi em ojinaal Tex',
+	'translate-checks-format' => 'De Övversätzung paß nit zor Definitjuhn odder dä ier Syntax es nit en Odenung: $1',
 	'tog-translate-nonewsletter' => 'Donn mer keijn Rondschriive övver de eläktronesche Poß scheke (nor för Medmaacher med beschtäteschte Addräß för de e-mail)',
 	'right-translate' => 'Med dä Schnettshtäll zom Övverseze ärrbeide',
 	'translate-rc-translation-filter' => 'Övversëzonge:',
@@ -5130,6 +5133,27 @@ Do moß en de Jrop „Övversäzer“ sen, för hee Änderonge maache ze könne.
 	'translate-sidebar-alltrans' => 'Ander Övversäzunge',
 	'translate-tag-noedit' => 'Die Sigg es en Övversäzongß_Sigg, die automattejj_op der neuste Shtant jebraat weed.
 Do kanns de [$1 Ojinaal-Sigg ändere] ov de [$2 Övversäzong op der neuste Shtand bränge].',
+	'translations' => 'Alle Övversätzunge',
+	'translations-summary' => '
+Jif ene Name för en Nohresch enn, öm all de Övversätzunge aanzezeije.',
+	'translate-translations-no-message' => 'De Nohresch „$1“ es nit för ze övversetze',
+	'translate-translations-none' => 'Mer han kei Övversätzunge för „$1“',
+	'translate-translations-fieldset-title' => 'Alle Övversätzunge',
+	'translate-translations-messagename' => 'Nohrich:',
+	'translate-translations-including-no-param' => 'Jif ene jöltijje Siggename als Parrammeeter för di Ongersigg aan.',
+	'languagestats' => 'Statistike övver de Sprooche',
+	'languagestats-summary' => 'Di Sigg hee zeich Statistike vun de Övversetzung för all ([[MediaWiki:Translate-languagestats-groups|enjeshtalle]]) Nohrechtejroppe fun ener Shprooch.',
+	'translate-language-code' => 'Sproochekood',
+	'translate-language-code-field-name' => 'Shproochekood:',
+	'translate-suppress-complete' => 'Komplät ovversazte Nohrechtejroppe övverjonn',
+	'translate-language' => 'Shprooch',
+	'translate-total' => 'Nohreschte',
+	'translate-untranslated' => 'Nit övversaz',
+	'translate-percentage-complete' => 'Fädesch',
+	'translate-percentage-fuzzy' => 'Övverhollt',
+	'translate-languagestats-groups' => ' # Jif dä Nohreschtejroppe ier Nommere hee en, öm de Nohreschtejroppe en dä
+ # Aanzeije op Special:LanguageStats enzeschrängke. Nohreschtejroppe, woh et
+ # de Nommere nit jit, donn nix.',
 );
 
 /** Latin (Latina)
@@ -6949,9 +6973,22 @@ $messages['ro'] = array(
 	'translate-page-edit' => 'modifică',
 	'translate-optional' => '(opţional)',
 	'translate-ignored' => '(ignorat)',
+	'translate-edit-goto-no-prev' => 'Nici un mesaj anterior',
+	'translate-edit-goto-no-next' => 'Nici un mesaj următor',
+	'translate-edit-goto-prev' => 'Modifică mesajul anterior',
+	'translate-edit-goto-next' => 'Modifică mesajul următor',
 	'translate-edit-goto-list' => 'Înapoi la listă',
+	'translate-magic-module' => 'Modul:',
 	'translate-magic-cm-comment' => 'Comentariu:',
 	'translate-magic-cm-save' => 'Salvează',
+	'translate-magic-words' => 'Cuvinte magice',
+	'translate-magic-namespace' => 'Nume de spaţii de nume',
+	'translate-rc-translation-filter' => 'Filtrează traducerile:',
+	'translate-rc-translation-filter-no' => 'Nu fă nimic',
+	'translate-rc-translation-filter-only' => 'Arată doar traduceri',
+	'translate-rc-translation-filter-filter' => 'Fără traduceri',
+	'translate-rc-translation-filter-site' => 'Doar schimbări la mesajele sitului',
+	'translate-stats-edits' => 'Modificări',
 	'translate-statsf-width' => 'Lăţime în pixeli',
 	'translate-statsf-height' => 'Înălţime în pixeli',
 	'translate-statsf-days' => 'Perioadă de timp în zile',
@@ -6970,8 +7007,14 @@ $messages['ro'] = array(
 	'translate-translations-no-message' => '"$1" nu este un mesaj care poate fi tradus',
 	'translate-translations-fieldset-title' => 'Toate traducerile',
 	'translate-translations-messagename' => 'Mesaj:',
+	'translate-language-code' => 'Codul limbii',
+	'translate-language-code-field-name' => 'Codul limbii:',
+	'translate-suppress-complete' => 'Ascunde grupurile de mesaje traduse complet',
 	'translate-language' => 'Limbă',
 	'translate-total' => 'Mesaje',
+	'translate-untranslated' => 'Netraduse',
+	'translate-percentage-complete' => 'Completare',
+	'translate-percentage-fuzzy' => 'Învechite',
 );
 
 /** Tarandíne (Tarandíne)
