@@ -2391,6 +2391,7 @@ $messages['fa'] = array(
  * @author Crt
  * @author Nike
  * @author Silvonen
+ * @author Str4nd
  */
 $messages['fi'] = array(
 	'translate' => 'Käännä',
@@ -2407,9 +2408,13 @@ $messages['fi'] = array(
 	'translate-task-export' => 'viedä käännökset',
 	'translate-task-export-to-file' => 'viedä käännökset tiedostoon',
 	'translate-task-export-as-po' => 'viedä käännökset Gettext-muodossa',
+	'translate-task-export-to-xliff' => 'Vie käännökset Xliff-muodossa',
 	'translate-page-no-such-language' => 'Määritelty kieli ei ollut kelvollinen.',
 	'translate-page-no-such-task' => 'Määritelty tehtävä ei ollut kelvollinen.',
 	'translate-page-no-such-group' => 'Määritelty ryhmä ei ollut kelvollinen.',
+	'translate-page-disabled' => "Käännökset tälle kielelle tässä ryhmässä on estetty. Syy:
+
+''$1''",
 	'translate-page-settings-legend' => 'Asetukset',
 	'translate-page-task' => 'Haluan',
 	'translate-page-group' => 'Ryhmä',
@@ -2449,6 +2454,7 @@ $messages['fi'] = array(
 	'translate-magic-cm-save' => 'Tallenna',
 	'translate-magic-cm-savefailed' => 'Tallennus epäonnistui',
 	'translate-magic-special' => 'Toimintosivujen nimet',
+	'translate-magic-words' => 'Taikasanat',
 	'translate-magic-skin' => 'Ulkoasujen nimet',
 	'translate-magic-namespace' => 'Nimiavaruuksien nimet',
 	'translationchanges' => 'Käännösmuutokset',
@@ -2461,6 +2467,7 @@ $messages['fi'] = array(
 	'translate-rc-translation-filter-site' => 'vain muutokset sivuston viesteihin',
 	'translationstats' => 'Käännöstilastot',
 	'translate-stats-edits' => 'Muokkauksia',
+	'translate-stats-users' => 'Kääntäjät',
 	'translate-statsf-width' => 'Leveys pikseleinä',
 	'translate-statsf-height' => 'Korkeus pikseleinä',
 	'translate-statsf-submit' => 'Esikatselu',
@@ -2565,8 +2572,10 @@ Ces derniers ne seront pas sauvegardés tant que vous n’aurez pas cliqué sur 
 	'translationchanges' => 'Traductions modifiées',
 	'translationchanges-export' => 'exporter',
 	'translationchanges-change' => '$1: $2 par $3',
-	'translate-checks-parameters' => '{{PLURAL:$2|La paramètre suivant n’est pas utilisé|Les paramètres suivants ne sont pas utilisés}} : <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-parameters-unknown' => '{{PLURAL:$2|La paramètre suivant est inconnu|Les paramètres suivants sont inconnus}} : <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters' => '{{PLURAL:$2|Le paramètre suivant n’est pas utilisé|Les paramètres suivants ne sont pas utilisés}} :
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Le paramètre suivant est inconnu|Les paramètres suivants sont inconnus}} :
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Il y a un nombre non pair de {{PLURAL:$2|parenthèses|parenthèses}} : <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '{{PLURAL:$2|Le lien suivant cause|Les liens suivants causent}} problèmes : <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Vous êtes invité à corriger {{PLURAL:$2|la balise suivante|les balises suivantes}} : <strong><nowiki>$1</nowiki></strong>',
@@ -2604,7 +2613,7 @@ Ces derniers ne seront pas sauvegardés tant que vous n’aurez pas cliqué sur 
 	'translate-tag-legend-fallback' => 'Traduction dans d’autres langues',
 	'translate-tag-legend-fuzzy' => 'Traduction hors date',
 	'translate-tag-fuzzy-comment' => 'Définition modifiée par l’utilisateur [[User:$1|$1]] dans la version $2.',
-	'translate-tag-fuzzy-reason' => 'Définition modifiée par l’utilisateur $1 avec pour commentaire « $3 » dans $2.',
+	'translate-tag-fuzzy-reason' => 'Définition modifiée par l’utilisateur « $1 » avec pour commentaire « $3 » dans $2.',
 	'translate-sidebar-alltrans' => 'Autres traductions',
 	'translate-tag-noedit' => 'Cette page est un document de traduction automatiquement mise à jour.
 Vous pouvez [$1 modifier la page source] ou [$2 mettre à jour la traduction].',
@@ -5015,7 +5024,7 @@ $messages['ksh'] = array(
 	'translate-task-view' => 'Zeijsh all de Nohreschte fon',
 	'translate-task-untranslated' => 'Zeijsh all de nit övversäzte Nohreschte fon',
 	'translate-task-optional' => "Zeijsh all de 'nit esu nüüdijje' Nohreschte fon",
-	'translate-task-untranslatedoptional' => "Zeijsh de nit övversazte 'nut esu nüdeje' Nohrechte fon",
+	'translate-task-untranslatedoptional' => "Zeijsh de nit övversazte 'nit esu nüdeje' Nohrechte fon",
 	'translate-task-problematic' => 'Zeijsh de probleemattesche Nohreschte fon',
 	'translate-task-review' => 'Donn de Ännderonge prööfe fon',
 	'translate-task-reviewall' => 'Donn de Övversäzzonge prööfe fon',
@@ -5145,7 +5154,7 @@ Jif ene Name för en Nohresch enn, öm all de Övversätzunge aanzezeije.',
 	'languagestats-summary' => 'Di Sigg hee zeich Statistike vun de Övversetzung för all ([[MediaWiki:Translate-languagestats-groups|enjeshtalle]]) Nohrechtejroppe fun ener Shprooch.',
 	'translate-language-code' => 'Sproochekood',
 	'translate-language-code-field-name' => 'Shproochekood:',
-	'translate-suppress-complete' => 'Komplät ovversazte Nohrechtejroppe övverjonn',
+	'translate-suppress-complete' => 'Komplät ovversazte Nohrechtejroppe nit aanzeije',
 	'translate-language' => 'Shprooch',
 	'translate-total' => 'Nohreschte',
 	'translate-untranslated' => 'Nit övversaz',
@@ -8427,8 +8436,13 @@ $messages['yi'] = array(
 	'translate-edit-goto-next' => 'רעדאקטירן די קומענדיגע מעלדונג',
 	'translate-edit-goto-list' => 'צוריק צו דער ליסטע',
 	'translate-magic-submit' => 'ווייזן',
+	'translate-magic-cm-comment' => 'הערה:',
+	'translate-magic-cm-save' => 'אויפֿהיטן',
 	'translate-magic-cm-updatedusing' => 'דערהײַנטיגט מיט [[Special:Magic]]',
 	'translationchanges-export' => 'עקספארט',
+	'translate-language-code' => 'שפראך קאד',
+	'translate-language-code-field-name' => 'שפראך קאד:',
+	'translate-language' => 'שפראך',
 );
 
 /** Yue (粵語)
