@@ -1236,6 +1236,7 @@ $messages['bs'] = array(
 	'translate-task-view' => 'Pogledaj sve poruke iz',
 	'translate-task-untranslated' => 'vidim sve neprevedene poruke iz',
 	'translate-task-optional' => 'vidim moguće poruke iz',
+	'translate-task-untranslatedoptional' => 'Vidi neprevedene moguće poruke iz',
 	'translate-task-problematic' => 'vidim poruke koje imaju probleme',
 	'translate-task-review' => 'pregledam promjene u',
 	'translate-task-reviewall' => 'pregledam sve prevedene poruke u',
@@ -1264,8 +1265,10 @@ $messages['bs'] = array(
 	'translate-prev' => 'Prethodna stranica',
 	'translate-page-description-legend' => 'Informacije o ovoj grupi',
 	'translate-page-edit' => 'uredi',
+	'translate-optional' => '(optionalno)',
 	'translate-ignored' => '(zanemareno)',
 	'translate-edit-definition' => 'Definicija poruke',
+	'translate-edit-contribute' => 'doprinesi',
 	'translate-edit-no-information' => "''Ova poruka nema pripadajuće dokumentacije. Ako znate gdje ili kako se ova poruka koristi, možete pomoći drugim prevodiocima tako što ćete dodati dokumentaciju za ovu poruku.''",
 	'translate-edit-information' => 'Informacije o ovoj poruci ($1)',
 	'translate-edit-in-other-languages' => 'Poruka na ostalim jezicima',
@@ -1276,23 +1279,92 @@ $messages['bs'] = array(
 	'translate-edit-goto-prev' => 'Uredi prethodnu poruku',
 	'translate-edit-goto-next' => 'Uredi slijedeću poruku',
 	'translate-edit-goto-list' => 'Nazad na spisak',
+	'translate-magic-pagename' => 'Prošireni MediaWiki prijevod',
+	'translate-magic-help' => 'Možete prevoditi skraćenice posebnih stranica, magične riječi, imena koža i imena imenskih prostora.
+
+Skraćenice posebnih stranica i magične riječi mogu imati dvostruke prijevode.
+Prijevodi su odvojeni zarezom (,).
+Imena koža i imenskih prostora mogu imati samo jedan prijevod.
+
+U prijevodima imenskih prostora <tt>$1 razgovor</tt> je poseban. <tt>$1</tt> je zamijeneno sa imenom sajta (naprimjer <tt>{{SITENAME}} razgovor</tt>).
+Ako nije moguće na Vašem jeziku da se obrazuje validan izraz bez promjene imena sajta, molimo da kontaktirate razvojnog programera..
+
+Morate pripadati grupi prevodioca da bi spremili promjene.
+Promjene nisu spremljene sve dok ne kliknete dugme spremi koje se nalazi ispod.',
+	'translate-magic-module' => 'Modul:',
 	'translate-magic-submit' => 'Pronađi',
 	'translate-magic-cm-export' => 'Izvoz',
+	'translate-magic-cm-to-be' => 'Treba biti',
 	'translate-magic-cm-current' => 'Trenutno',
 	'translate-magic-cm-original' => 'Originalno',
 	'translate-magic-cm-comment' => 'Komentar:',
 	'translate-magic-cm-save' => 'Sačuvaj',
+	'translate-magic-cm-updatedusing' => 'Ažurirano putem [[Special:Magic]]',
+	'translate-magic-cm-savefailed' => 'Spremanje nije uspjelo',
+	'translate-magic-special' => 'Skraćenice posebnih stranica',
 	'translate-magic-words' => 'Magične riječi',
+	'translate-magic-skin' => 'Nazivi koža',
 	'translate-magic-namespace' => 'Nazivi imenskih prostora',
+	'translationchanges' => 'Promjene u prijevodima',
 	'translationchanges-export' => 'izvoz',
+	'translationchanges-change' => '$1: $2 od $3',
+	'translate-checks-parameters' => 'Slijedeći {{PLURAL:$2|parametar nije iskorišten|parametri nisu iskorišteni}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters-unknown' => 'Slijedeći {{PLURAL:$2|parametar je nepoznat|parametri su nepoznati}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-balance' => 'Postoji nejednak broj vrsta {{PLURAL:$2|zagrade|zagrada}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links' => '{{PLURAL:$2|Slijedeći link je problematičan|Slijedeća $2 linka su problematični|Slijedećih $2 linkova je problematično}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-xhtml' => 'Molimo Vas da zamijenite {{PLURAL:$2|slijedeću oznaku|slijedeće oznake}} sa ispravnim:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-plural' => 'Definicija poruke koristi <nowiki>{{PLURAL:}}</nowiki> ali ga nema u prijevodu.',
+	'translate-checks-pagename' => 'Imenski prostor je promijenjen u odnosu na definiciju',
+	'translate-checks-format' => 'Ovaj prijevod nije usklađen sa definicijom ili nema validnu sintaksu: $1',
+	'tog-translate-nonewsletter' => 'Ne šalji mi pismo o vijestima putem e-maila (koriste samo korisnici sa potvrđenom e-mail adresom)',
+	'right-translate' => 'Uređivanje korištenjem prevodilačkog interfejsa',
+	'translate-rc-translation-filter' => 'Izdvoji prevode:',
 	'translate-rc-translation-filter-no' => 'Ne čini ništa',
+	'translate-rc-translation-filter-only' => 'Prikaži samo prijevode',
+	'translate-rc-translation-filter-filter' => 'Ne prikazuj prijevode',
+	'translate-rc-translation-filter-site' => 'Promjene samo na porukama sajta',
+	'translationstats' => 'Statistike prijevoda',
+	'translate-stats-edits' => 'uređivanja',
 	'translate-stats-users' => 'Prevodioci',
+	'translate-statsf-options' => 'Postavke grafikona',
+	'translate-statsf-width' => 'Širina u pikselima',
+	'translate-statsf-height' => 'Visina u pikselima',
+	'translate-statsf-days' => 'Vremenski period u danima',
+	'translate-statsf-scale' => 'Granularnost',
 	'translate-statsf-scale-days' => 'dani',
 	'translate-statsf-scale-hours' => 'sati',
+	'translate-statsf-count' => 'Mjerenje',
 	'translate-statsf-count-edits' => 'Broj izmjena',
+	'translate-statsf-count-users' => 'Aktivni prevodioci',
+	'translate-statsf-language' => 'Spisak jezičnih kodova razdvojenih zarezom',
+	'translate-statsf-group' => 'Spisak kodova grupa razdvojenih zarezima',
+	'translate-statsf-submit' => 'Pregled',
 	'translate-tag-category' => 'Stranice koje se mogu prevesti',
+	'translate-tag-page-desc' => 'Prijevod wiki stranice [[:$1]].',
+	'translate-tag-translate-link-desc' => 'Prevedi ovu stranicu',
+	'translate-tag-legend' => 'Objašnjenje:',
 	'translate-tag-legend-fallback' => 'Prijevod na drugi jezik',
+	'translate-tag-legend-fuzzy' => 'Zastarijeli prijevod',
 	'translate-sidebar-alltrans' => 'Ostali prijevodi',
+	'translations' => 'Svi prijevodi',
+	'translations-summary' => 'Unesite naziv poruke ispod da bi prikazali sve dostupne prijevode.',
+	'translate-translations-no-message' => '"$1" je poruka koja se ne može prevoditi',
+	'translate-translations-none' => 'Ne postoje prijevodi za "$1"',
+	'translate-translations-fieldset-title' => 'Svi prijevodi',
+	'translate-translations-messagename' => 'Poruka:',
+	'languagestats' => 'Statistike jezika',
+	'translate-language-code' => 'Kod jezika',
+	'translate-language-code-field-name' => 'Kod jezika:',
+	'translate-language' => 'Jezik',
+	'translate-total' => 'Poruke',
+	'translate-untranslated' => 'Neprevedeno',
+	'translate-percentage-complete' => 'Završeno',
+	'translate-percentage-fuzzy' => 'Zastarijelo',
 );
 
 /** Buginese (ᨅᨔ ᨕᨘᨁᨗ)
@@ -2219,6 +2291,7 @@ Los cambios no se salvan hasta que no pulses el boton de guardar de abajo.',
 	'translate-magic-cm-original' => 'Original',
 	'translate-magic-cm-save' => 'Guardar',
 	'translate-magic-special' => 'Nombres de páginas especiales',
+	'translate-magic-namespace' => 'Nombres de los espacios de nombres',
 	'translationchanges-export' => 'exportar',
 	'translate-checks-parameters' => '{{PLURAL:$2|El siguiente parámetro no se está|Los siguientes parámetros no se están}} usando:
 <strong><nowiki>$1</nowiki></strong>',
@@ -2243,6 +2316,7 @@ Los cambios no se salvan hasta que no pulses el boton de guardar de abajo.',
 	'translate-stats-users' => 'Traductores',
 	'translate-statsf-width' => 'Anchura en píxeles',
 	'translate-statsf-height' => 'Altura en píxeles',
+	'translate-statsf-days' => 'Periodo en días',
 	'translate-statsf-scale-days' => 'Días',
 	'translate-statsf-scale-hours' => 'Horas',
 	'translate-statsf-count-edits' => 'Número de ediciones',
@@ -2445,6 +2519,17 @@ $messages['fi'] = array(
 	'translate-edit-goto-next' => 'Muokkaa seuraavaa viestiä',
 	'translate-edit-goto-list' => 'Takaisin listaan',
 	'translate-magic-pagename' => 'Laajennettu MediaWikin kääntäminen',
+	'translate-magic-help' => 'Voit kääntää toimintosivujen vaihtoehtoisia nimiä, taikasanoja, ulkoasujen nimiä ja nimiavaruuksien nimiä.
+
+Toimintosivujen vaihtoehtoisilla nimillä ja taikasanoilla voi olla useita käännöksiä.
+Käännökset erotetaan pilkulla (,).
+Ulkoasujen nimillä ja nimiavaruuksilla voi olla vain yksi käännös.
+
+Nimiavaruuksien käännöksissä <tt>$1 talk</tt> on erikoistapaus. <tt>$1</tt> korvataan sivuston nimellä (esimerkiksi <tt>{{SITENAME}} talk</tt>).
+Jos kielessäsi on mahdotonta muotoilla oikeaa käännöstä ilman sivuston nimen muuttamista, ota yhteyttä kehittäjään.
+
+Sinun tulee olla translators-ryhmässä tallentaaksesi muutokset.
+Muutoksia ei tallenneta, ennen kuin painat tallenna-painiketta.',
 	'translate-magic-module' => 'Moduuli:',
 	'translate-magic-submit' => 'Hae',
 	'translate-magic-cm-export' => 'Vie',
@@ -2460,6 +2545,8 @@ $messages['fi'] = array(
 	'translationchanges' => 'Käännösmuutokset',
 	'translationchanges-export' => 'vie',
 	'translationchanges-change' => '$1: Käyttäjä $3 muutti sivua $2',
+	'translate-checks-plural' => 'Määritelmä käyttää <nowiki>{{PLURAL:}}</nowiki>-koodia, mutta käännös ei.',
+	'tog-translate-nonewsletter' => 'Älä lähetä minulle uutiskirjeitä (olennainen vain sähköpostiosoitteensa varmistaneille käyttäjille)',
 	'translate-rc-translation-filter' => 'Käännösten suodatus',
 	'translate-rc-translation-filter-no' => 'ei toimenpidettä',
 	'translate-rc-translation-filter-only' => 'näytä vain käännökset',
@@ -2468,14 +2555,22 @@ $messages['fi'] = array(
 	'translationstats' => 'Käännöstilastot',
 	'translate-stats-edits' => 'Muokkauksia',
 	'translate-stats-users' => 'Kääntäjät',
+	'translate-statsf-options' => 'Kuvaajan valinnat',
 	'translate-statsf-width' => 'Leveys pikseleinä',
 	'translate-statsf-height' => 'Korkeus pikseleinä',
+	'translate-statsf-days' => 'Aikaväli päivissä',
+	'translate-statsf-count-edits' => 'Muokkausmäärä',
+	'translate-statsf-count-users' => 'Aktiiviset kääntäjät',
 	'translate-statsf-submit' => 'Esikatselu',
 	'translate-tag-translate-link-desc' => 'Käännä tämä sivu',
 	'translate-tag-legend-fuzzy' => 'Vanhentunut käännös',
 	'translate-sidebar-alltrans' => 'Muut käännökset',
 	'translate-tag-noedit' => 'Tämä sivu on automaattisesti päivittyvä käännössivu.
 Voit [$1 muokata lähdesivua] tai [$2 päivittää käännöksen].',
+	'translations' => 'Kaikki käännökset',
+	'languagestats' => 'Kielitilastot',
+	'translate-untranslated' => 'Kääntämätön',
+	'translate-percentage-fuzzy' => 'Vanhentunut',
 );
 
 /** French (Français)
@@ -7734,10 +7829,36 @@ $messages['te'] = array(
 	'translate-rc-translation-filter' => 'అనువాదాల పడపోత:',
 	'translate-rc-translation-filter-only' => 'అనువాదాలు మాత్రమే చూపించు',
 	'translationstats' => 'అనువాద గణాంకాలు',
+	'translate-stats-edits' => 'మార్పులు',
 	'translate-stats-users' => 'అనువాదకులు',
+	'translate-statsf-intro' => 'ఈ ఫారాన్ని ఉపయోగించి సరళమైన గణాంకాలను పొందవచ్చు. అన్ని విలువలకీ ఎగువ మరియు దిగువ పరిమితులు ఉంటాయి.',
+	'translate-statsf-options' => 'గ్రాఫు ఎంపికలు',
+	'translate-statsf-width' => 'వెడల్పు పిక్సెళ్ళలో',
+	'translate-statsf-height' => 'ఎత్తు పిక్సెళ్ళలో',
 	'translate-statsf-scale-days' => 'రోజులు',
 	'translate-statsf-scale-hours' => 'గంటలు',
+	'translate-statsf-count-edits' => 'మార్పుల సంఖ్య',
+	'translate-statsf-count-users' => 'క్రియాశీల అనువాదకులు',
+	'translate-statsf-submit' => 'మునుజూపు',
+	'translate-tag-category' => 'అనువదించదగ్గ పేజీలు',
+	'translate-tag-page-desc' => '[[:$1]] వికీ పేజీ యొక్క అనువాదం.',
+	'translate-tag-translate-link-desc' => 'ఈ పేజీని అనువదించండి',
+	'translate-tag-legend-fallback' => 'మరో భాషలో అనువాదం',
+	'translate-tag-legend-fuzzy' => 'పాతబడిన అనువాదం',
 	'translate-sidebar-alltrans' => 'ఇతర అనువాదాలు',
+	'translations' => 'అన్ని అనువాదాలు',
+	'translate-translations-no-message' => '"$1" అనేది అనువదించదగ్గ సందేశం కాదు',
+	'translate-translations-none' => '"$1"కి అనువాదాలేమీ లేవు',
+	'translate-translations-fieldset-title' => 'అన్ని అనువాదాలు',
+	'translate-translations-messagename' => 'సందేశం:',
+	'languagestats' => 'భాష గణాంకాలు',
+	'translate-language-code' => 'భాష సంకేతం',
+	'translate-language-code-field-name' => 'భాష సంకేతం:',
+	'translate-suppress-complete' => 'పూర్తిగా అనువాదమైన సందేశాల సమూహాలను దాచు',
+	'translate-language' => 'భాష',
+	'translate-total' => 'సందేశాలు',
+	'translate-untranslated' => 'అనువాదంకానివి',
+	'translate-percentage-complete' => 'పూర్తైనవి',
 );
 
 /** Tetum (Tetun)
