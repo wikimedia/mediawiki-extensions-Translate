@@ -749,7 +749,7 @@ $messages['arz'] = array(
  */
 $messages['ast'] = array(
 	'translate' => 'Traducir',
-	'translate-desc' => '[[Special:Translate|Páxina especial]] pa traducir Mediawiki y más',
+	'translate-desc' => '[[Special:Translate|Páxina especial]] pa traducir MediaWiki y más',
 	'translate-edit' => 'editar',
 	'translate-talk' => 'alderique',
 	'translate-history' => 'historial',
@@ -948,7 +948,7 @@ $messages['be-tarask'] = array(
  */
 $messages['bg'] = array(
 	'translate' => 'Превеждане',
-	'translate-desc' => '[[Special:Translate|Специална страница]] за превеждане на Mediawiki и др.',
+	'translate-desc' => '[[Special:Translate|Специална страница]] за превеждане на MediaWiki и др.',
 	'translate-edit' => 'редактиране',
 	'translate-talk' => 'беседа',
 	'translate-history' => 'история',
@@ -1099,7 +1099,7 @@ $messages['bpy'] = array(
  */
 $messages['br'] = array(
 	'translate' => 'Treiñ',
-	'translate-desc' => "[[Special:Translate|Pajenn zibar]] evit treiñ Mediawiki ha pelloc'h",
+	'translate-desc' => "[[Special:Translate|Pajenn zibar]] evit treiñ MediaWiki ha pelloc'h",
 	'translate-edit' => 'kemmañ',
 	'translate-talk' => 'kaozeal',
 	'translate-history' => 'istor',
@@ -1330,6 +1330,7 @@ Promjene nisu spremljene sve dok ne kliknete dugme spremi koje se nalazi ispod.'
 	'translationstats' => 'Statistike prijevoda',
 	'translate-stats-edits' => 'uređivanja',
 	'translate-stats-users' => 'Prevodioci',
+	'translate-statsf-intro' => 'Možete generisati jednostavnu statistiku uz pomoć ovog obrasca. Sve vrijednosti imaju gornja i donja ograničenja.',
 	'translate-statsf-options' => 'Postavke grafikona',
 	'translate-statsf-width' => 'Širina u pikselima',
 	'translate-statsf-height' => 'Visina u pikselima',
@@ -1349,16 +1350,23 @@ Promjene nisu spremljene sve dok ne kliknete dugme spremi koje se nalazi ispod.'
 	'translate-tag-legend' => 'Objašnjenje:',
 	'translate-tag-legend-fallback' => 'Prijevod na drugi jezik',
 	'translate-tag-legend-fuzzy' => 'Zastarijeli prijevod',
+	'translate-tag-fuzzy-comment' => 'Definiciju je promijenio korisnik [[User:$1|$1]] u reviziji $2.',
+	'translate-tag-fuzzy-reason' => 'Definiciju promijenio "$1" sa komentarom "$3" u $2.',
 	'translate-sidebar-alltrans' => 'Ostali prijevodi',
+	'translate-tag-noedit' => 'Ova stranica je automatski ažuriran prijevod stranice.
+Možete [$1 urediti izvornu stranicu] ili [$2 ažurirati prijevod].',
 	'translations' => 'Svi prijevodi',
 	'translations-summary' => 'Unesite naziv poruke ispod da bi prikazali sve dostupne prijevode.',
 	'translate-translations-no-message' => '"$1" je poruka koja se ne može prevoditi',
 	'translate-translations-none' => 'Ne postoje prijevodi za "$1"',
 	'translate-translations-fieldset-title' => 'Svi prijevodi',
 	'translate-translations-messagename' => 'Poruka:',
+	'translate-translations-including-no-param' => 'Molimo odredite validno ime stranice u parametru podstranice',
 	'languagestats' => 'Statistike jezika',
+	'languagestats-summary' => 'Ova stranica prikazuje statistike prijevoda za sve ([[MediaWiki:Translate-languagestats-groups|konfigurisane]]) grupe poruka na određenom jeziku.',
 	'translate-language-code' => 'Kod jezika',
 	'translate-language-code-field-name' => 'Kod jezika:',
+	'translate-suppress-complete' => 'Sakrij potpuno prevedene grupe poruka',
 	'translate-language' => 'Jezik',
 	'translate-total' => 'Poruke',
 	'translate-untranslated' => 'Neprevedeno',
@@ -1395,7 +1403,7 @@ $messages['bug'] = array(
  */
 $messages['ca'] = array(
 	'translate' => 'Tradueix',
-	'translate-desc' => '[[Special:Translate|Pàgina especial]] per a traduir el Mediawiki i altres coses',
+	'translate-desc' => '[[Special:Translate|Pàgina especial]] per a traduir el MediaWiki i altres coses',
 	'translate-edit' => 'edita',
 	'translate-talk' => 'discussió',
 	'translate-history' => 'historial',
@@ -1802,7 +1810,7 @@ Sie können die [$1 Originalseite bearbeiten] oder [$2 die Übersetzung aktualis
  */
 $messages['dsb'] = array(
 	'translate' => 'Pśełožyś',
-	'translate-desc' => '[[Special:Translate|Specialny bok]] za pśełožowanje Mediawiki a druge',
+	'translate-desc' => '[[Special:Translate|Specialny bok]] za pśełožowanje MediaWiki a druge',
 	'translate-edit' => 'wobźěłaś',
 	'translate-talk' => 'Diskusija',
 	'translate-history' => 'Wersije',
@@ -1945,7 +1953,7 @@ Móžoš [$1 žrědłowy bok wobźěłaś] abo [$2 pśełožk aktualizěrowaś].
  */
 $messages['el'] = array(
 	'translate' => 'Μεταφράστε',
-	'translate-desc' => '[[Special:Translate|Ειδική σελίδα]] για την μετάφραση του Mediawiki και ακόμη παραπέρα',
+	'translate-desc' => '[[Special:Translate|Ειδική σελίδα]] για την μετάφραση του MediaWiki και ακόμη παραπέρα',
 	'translate-edit' => 'επεξεργασία',
 	'translate-talk' => 'συζήτηση',
 	'translate-history' => 'ιστορικό',
@@ -2080,7 +2088,7 @@ $messages['el'] = array(
  */
 $messages['eo'] = array(
 	'translate' => 'Tradukado',
-	'translate-desc' => '[[Special:Translate|Speciala paĝo]] por traduki Mediawiki kaj alia',
+	'translate-desc' => '[[Special:Translate|Speciala paĝo]] por traduki MediaWiki kaj alia',
 	'translate-edit' => 'redakti',
 	'translate-talk' => 'diskuto',
 	'translate-history' => 'historio',
@@ -2587,7 +2595,7 @@ Voit [$1 muokata lähdesivua] tai [$2 päivittää käännöksen].',
  */
 $messages['fr'] = array(
 	'translate' => 'Traduire',
-	'translate-desc' => '[[Special:Translate|Page spéciale]] pour traduire Mediawiki et même plus encore.',
+	'translate-desc' => '[[Special:Translate|Page spéciale]] pour traduire MediaWiki et même plus encore.',
 	'translate-edit' => 'éditer',
 	'translate-talk' => 'discuter',
 	'translate-history' => 'historique',
@@ -3404,7 +3412,7 @@ $messages['hr'] = array(
  */
 $messages['hsb'] = array(
 	'translate' => 'Přełožić',
-	'translate-desc' => '[[Special:Translate|Specialna strona]] za přełožowanje Mediawiki a druheho',
+	'translate-desc' => '[[Special:Translate|Specialna strona]] za přełožowanje MediaWiki a druheho',
 	'translate-edit' => 'wobdźěłać',
 	'translate-talk' => 'diskusija',
 	'translate-history' => 'stawizny',
@@ -3884,7 +3892,7 @@ Tu pote [$1 modificar le pagina de origine] o [$2 actualisar le traduction].',
  */
 $messages['id'] = array(
 	'translate' => 'Terjemahan',
-	'translate-desc' => '[[Special:Translate|Halaman istimewa]] untuk menerjemahkan Mediawiki',
+	'translate-desc' => '[[Special:Translate|Halaman istimewa]] untuk menerjemahkan MediaWiki',
 	'translate-edit' => 'sunting',
 	'translate-talk' => 'bicara',
 	'translate-history' => 'versi',
@@ -4385,7 +4393,7 @@ $messages['ja'] = array(
  */
 $messages['jv'] = array(
 	'translate' => 'Pertalna/Terjemahna',
-	'translate-desc' => '[[Special:Translate|Kaca astaméwa]] kanggo mertal Mediawiki lan liyané',
+	'translate-desc' => '[[Special:Translate|Kaca astaméwa]] kanggo mertal MediaWiki lan liyané',
 	'translate-edit' => 'sunting',
 	'translate-talk' => 'wicara',
 	'translate-history' => 'sajarah/vèrsi',
@@ -6506,7 +6514,7 @@ $messages['nso'] = array(
  */
 $messages['oc'] = array(
 	'translate' => 'Traduire',
-	'translate-desc' => '[[Special:Translate|Pagina especiala]] per traduire Mediawiki e quitament mai encara.',
+	'translate-desc' => '[[Special:Translate|Pagina especiala]] per traduire MediaWiki e quitament mai encara.',
 	'translate-edit' => 'Edicion',
 	'translate-talk' => 'Discussion',
 	'translate-history' => 'Istoric',
@@ -7138,7 +7146,7 @@ $messages['roa-tara'] = array(
  */
 $messages['ru'] = array(
 	'translate' => 'Перевод',
-	'translate-desc' => '[[Special:Translate|Служебная страница]] для перевода Mediawiki и прочих программ',
+	'translate-desc' => '[[Special:Translate|Служебная страница]] для перевода MediaWiki и прочих программ',
 	'translate-edit' => 'править',
 	'translate-talk' => 'обсуждение',
 	'translate-history' => 'история',
@@ -7509,7 +7517,7 @@ $messages['stq'] = array(
  */
 $messages['su'] = array(
 	'translate' => 'Alih basakeun',
-	'translate-desc' => '[[Special:Translate|Kaca husus]] keur narjamahkeun Mediawiki',
+	'translate-desc' => '[[Special:Translate|Kaca husus]] keur narjamahkeun MediaWiki',
 	'translate-edit' => 'édit',
 	'translate-talk' => 'sawala',
 	'translate-history' => 'Jujutan',
@@ -7587,7 +7595,7 @@ Anjeun perlu jadi anggota grup panarjamah pikeun nyimpen parobahan. Parobahan mo
  */
 $messages['sv'] = array(
 	'translate' => 'Översätt',
-	'translate-desc' => '[[Special:Translate|Specialsida]] för översättning av Mediawiki och annat',
+	'translate-desc' => '[[Special:Translate|Specialsida]] för översättning av MediaWiki och annat',
 	'translate-edit' => 'redigera',
 	'translate-talk' => 'diskussion',
 	'translate-history' => 'historik',
@@ -7819,7 +7827,8 @@ $messages['te'] = array(
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => 'ఈ {{PLURAL:$2|పారామీటరు|పారామీటర్లు}} తెలియనివి:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-balance' => 'బ్రాకెట్లు సరి సంఖ్యలో లేవు: <strong>$1</strong>',
+	'translate-checks-balance' => '{{PLURAL:$2|బ్రాకెట్లు|బ్రాకెట్లు}} సరి సమాన సంఖ్యలో లేవు:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => 'ఈ {{PLURAL:$2|లింకు సమస్యాత్మకంగా ఉంది|$2 లింకులు సమస్యాత్మకంగా ఉన్నాయి}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'ఈ {{PLURAL:$2|టాగుని సరైన దానితో|టాగులని సరైన వాటితో}} మార్చండి:
@@ -8106,7 +8115,7 @@ $messages['ug'] = array(
  */
 $messages['uk'] = array(
 	'translate' => 'Переклад',
-	'translate-desc' => '[[Special:Translate|Спеціальна сторінка]] для перекладу Mediawiki та інших програм',
+	'translate-desc' => '[[Special:Translate|Спеціальна сторінка]] для перекладу MediaWiki та інших програм',
 	'translate-edit' => 'редагувати',
 	'translate-talk' => 'обговорення',
 	'translate-history' => 'історія',
@@ -8318,7 +8327,7 @@ I canbiamenti no i xe salvà finché no te struchi el boton qua soto.',
  */
 $messages['vi'] = array(
 	'translate' => 'Biên dịch',
-	'translate-desc' => '[[Special:Translate|Trang đặc biệt]] dùng để dịch Mediawiki và các thứ khác',
+	'translate-desc' => '[[Special:Translate|Trang đặc biệt]] dùng để dịch MediaWiki và các thứ khác',
 	'translate-edit' => 'sửa đổi',
 	'translate-talk' => 'thảo luận',
 	'translate-history' => 'lịch sử',
