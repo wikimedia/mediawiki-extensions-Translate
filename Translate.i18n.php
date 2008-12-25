@@ -76,11 +76,11 @@ If you know where or how this message is used, you can help other translators by
 	'translate-edit-goto-list'          => 'Back to the list',
 
 	'translate-magic-pagename'    => 'Extended MediaWiki translation',
-	'translate-magic-help'        => 'You can translate special pages aliases, magic words, skin names and namespace names.
+	'translate-magic-help'        => 'You can translate special pages aliases, magic words and namespace names.
 
 Special page aliases and magic words can have multiple translations.
 Translations are separated by a comma (,).
-Skin names and namespaces can have only one translation.
+Namespaces can have only one translation.
 
 In namespace translations <tt>$1 talk</tt> is special. <tt>$1</tt> is replaced with sitename (for example <tt>{{SITENAME}} talk</tt>).
 If it is not possible in your language to form valid expression without changing sitename, please contact a developer.
@@ -103,7 +103,6 @@ Changes are not saved until you click save button below.',
 
 	'translate-magic-special'   => 'Special page aliases',
 	'translate-magic-words'     => 'Magic words',
-	'translate-magic-skin'      => 'Skin names',
 	'translate-magic-namespace' => 'Namespace names',
 
 	'translationchanges'        => 'Translation changes',

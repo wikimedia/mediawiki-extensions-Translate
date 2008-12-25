@@ -9,7 +9,6 @@ class SpecialMagic extends SpecialPage {
 	/** Message prefix for translations */
 	const MSG = 'translate-magic-';
 
-	const MODULE_SKIN      = 'skin';
 	const MODULE_MAGIC     = 'words';
 	const MODULE_SPECIAL   = 'special';
 	const MODULE_NAMESPACE = 'namespace';
@@ -17,7 +16,6 @@ class SpecialMagic extends SpecialPage {
 	/** List of supported modules */
 	private $aModules = array(
 		self::MODULE_SPECIAL,
-		self::MODULE_SKIN,
 		self::MODULE_NAMESPACE,
 		self::MODULE_MAGIC
 	);
@@ -137,9 +135,6 @@ class SpecialMagic extends SpecialPage {
 				break;
 			case self::MODULE_MAGIC:
 				$o = new MagicWordsCM( $this->options['language'] );
-				break;
-			case self::MODULE_SKIN:
-				$o = new SkinNamesCM( $this->options['language'] );
 				break;
 			case self::MODULE_NAMESPACE:
 				$o = new NamespaceCM( $this->options['language'] );
@@ -621,21 +616,6 @@ class SpecialPageAliasesCM extends ComplexMessages {
 		return $values;
 	}
 
-}
-
-class SkinNamesCM extends ComplexMessages {
-	protected $id = SpecialMagic::MODULE_SKIN;
-	protected $elementsInArray = false;
-	protected $databaseMsg = 'sp-translate-data-SkinNames';
-
-	public function __construct( $code ) {
-		parent::__construct( $code );
-		$this->data['Mediawiki Core'] = array(
-			'var' => 'skinNames',
-			'file' => Language::getMessagesFileName( '%CODE%' ),
-			'code' => false,
-		);
-	}
 }
 
 class MagicWordsCM extends ComplexMessages {
