@@ -102,6 +102,12 @@ $aliases['dsb'] = array(
 	'TranslationChanges' => array( 'Změny pśełoženja' ),
 );
 
+/** Divehi (ދިވެހިބަސް) */
+$aliases['dv'] = array(
+	'Translate' => array( 'ތަރުޖަމާކުރައްވާ' ),
+	'Translations' => array( 'ތަރުޖަމާތައް' ),
+);
+
 /** Persian (فارسی) */
 $aliases['fa'] = array(
 	'Translate' => array( 'ترجمه' ),
