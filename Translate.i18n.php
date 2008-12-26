@@ -398,6 +398,7 @@ $messages['am'] = array(
 	'translate-edit' => 'አርም',
 	'translate-history' => 'ታሪክ',
 	'translate-page-edit' => 'አርም',
+	'translate-magic-cm-comment' => 'ማጠቃለያ፦',
 );
 
 /** Aragonese (Aragonés)
@@ -473,6 +474,7 @@ $messages['ang'] = array(
  * @author Alnokta
  * @author Meno25
  * @author OsamaK
+ * @author Ouda
  * @author ترجمان05
  */
 $messages['ar'] = array(
@@ -498,7 +500,7 @@ $messages['ar'] = array(
 
 ''$1''",
 	'translate-page-settings-legend' => 'الإعدادات',
-	'translate-page-task' => 'أريد',
+	'translate-page-task' => 'أريد أن',
 	'translate-page-group' => 'المجموعة',
 	'translate-page-language' => 'اللغة',
 	'translate-page-limit' => 'الحد',
@@ -528,11 +530,11 @@ $messages['ar'] = array(
 	'translate-edit-goto-next' => 'عدل الرسالة القادمة',
 	'translate-edit-goto-list' => 'الرجوع إلى القائمة',
 	'translate-magic-pagename' => 'ترجمة ميدياويكي الممتدة',
-	'translate-magic-help' => 'يمكنك ترجمة أسماء الصفحات الخاصة، الكلمات السحرية، أسماء الواجهات وأسماء النطاقات.
+	'translate-magic-help' => 'يمكنك ترجمة أسماء الصفحات الخاصة، والكلمات السحرية، وأسماء النطاقات.
 
 أسماء الصفحات الخاصة والكلمات السحرية يمكن أن يكون لها ترجمات متعددة.
 الترجمات تفصل بواسطة فاصلة (,).
-أسماء الواجهات والنطاقات يمكن أن يكون لها ترجمة واحدة فقط.
+أسماء النطاقات يمكن أن يكون لها ترجمة واحدة فقط.
 
 في ترجمات النطاقات <tt>$1 talk</tt> خاص. <tt>$1</tt> يتم استبدالها باسم الموقع (على سبيل المثال <tt>{{SITENAME}} talk</tt>).
 لو أنه من غير الممكن في لغتك صياغة تعبير صحيح بدون تغيير اسم الموقع، من فضلك اتصل بمطور.
@@ -602,7 +604,20 @@ $messages['ar'] = array(
 	'translate-sidebar-alltrans' => 'ترجمات أخرى',
 	'translate-tag-noedit' => 'هذه الصفحة هي صفحة ترجمة محدثة تلقائيا.
 يمكنك [$1 تعديل الصفحة المصدر] أو [$2 تحديث الترجمة].',
+	'translations' => 'كل الترجمات',
+	'translations-summary' => 'أدخل اسم رسالة أسفله لعرض كل الترجمات المتوفرة.',
+	'translate-translations-none' => 'لا يوجد ترجمات ل"$1"',
+	'translate-translations-fieldset-title' => 'كل الترجمات',
+	'translate-translations-messagename' => 'الرسالة:',
+	'translate-translations-including-no-param' => 'من فضلك حدد اسم صفحة صحيح في معامل الصفحة الفرعية',
+	'languagestats' => 'إحصاءات اللغة',
+	'translate-language-code' => 'رمز اللغة',
+	'translate-language-code-field-name' => 'رمز اللغة:',
 	'translate-language' => 'اللغة:',
+	'translate-total' => 'الرسائل',
+	'translate-untranslated' => 'غير المترجمة',
+	'translate-percentage-complete' => 'إكمال',
+	'translate-percentage-fuzzy' => 'غير محدث',
 );
 
 /** Araucanian (Mapudungun)
@@ -1283,11 +1298,11 @@ $messages['bs'] = array(
 	'translate-edit-goto-next' => 'Uredi slijedeću poruku',
 	'translate-edit-goto-list' => 'Nazad na spisak',
 	'translate-magic-pagename' => 'Prošireni MediaWiki prijevod',
-	'translate-magic-help' => 'Možete prevoditi skraćenice posebnih stranica, magične riječi, imena koža i imena imenskih prostora.
+	'translate-magic-help' => 'Možete prevoditi skraćenice posebnih stranica, magične riječi i imena imenskih prostora.
 
-Skraćenice posebnih stranica i magične riječi mogu imati dvostruke prijevode.
+Skraćenice posebnih stranica i magične riječi mogu imati višestruke prijevode.
 Prijevodi su odvojeni zarezom (,).
-Imena koža i imenskih prostora mogu imati samo jedan prijevod.
+Imenski prostori mogu imati samo jedan prijevod.
 
 U prijevodima imenskih prostora <tt>$1 razgovor</tt> je poseban. <tt>$1</tt> je zamijeneno sa imenom sajta (naprimjer <tt>{{SITENAME}} razgovor</tt>).
 Ako nije moguće na Vašem jeziku da se obrazuje validan izraz bez promjene imena sajta, molimo da kontaktirate razvojnog programera..
@@ -2473,6 +2488,7 @@ $messages['fa'] = array(
  * @author Nike
  * @author Silvonen
  * @author Str4nd
+ * @author Vililikku
  */
 $messages['fi'] = array(
 	'translate' => 'Käännä',
@@ -2555,6 +2571,8 @@ Muutoksia ei tallenneta, ennen kuin painat tallenna-painiketta.',
 	'translationchanges-export' => 'vie',
 	'translationchanges-change' => '$1: Käyttäjä $3 muutti sivua $2',
 	'translate-checks-plural' => 'Määritelmä käyttää <nowiki>{{PLURAL:}}</nowiki>-koodia, mutta käännös ei.',
+	'translate-checks-pagename' => 'Nimiavaruus muuttui määritellystä',
+	'translate-checks-format' => 'Tämä käännös ei noudata alkuperäistä tekstiä tai sillä on virheellinen syntaksi: $1',
 	'tog-translate-nonewsletter' => 'Älä lähetä minulle uutiskirjeitä (vain sähköpostiosoitteensa varmistaneille käyttäjille)',
 	'translate-rc-translation-filter' => 'Käännösten suodatus',
 	'translate-rc-translation-filter-no' => 'ei toimenpidettä',
@@ -2564,6 +2582,7 @@ Muutoksia ei tallenneta, ennen kuin painat tallenna-painiketta.',
 	'translationstats' => 'Käännöstilastot',
 	'translate-stats-edits' => 'Muokkauksia',
 	'translate-stats-users' => 'Kääntäjät',
+	'translate-statsf-intro' => 'Voit luoda yksinkertaisia tilastoja tällä lomakkeella. Kaikilla arvoilla on ylä- ja alarajat.',
 	'translate-statsf-options' => 'Kuvaajan asetukset',
 	'translate-statsf-width' => 'Leveys pikseleinä',
 	'translate-statsf-height' => 'Korkeus pikseleinä',
@@ -2577,14 +2596,24 @@ Muutoksia ei tallenneta, ennen kuin painat tallenna-painiketta.',
 	'translate-statsf-language' => 'Pilkuin erotettu lista kielikoodeista',
 	'translate-statsf-group' => 'Pilkuin erotettu lista ryhmäkoodeista',
 	'translate-statsf-submit' => 'Esikatselu',
+	'translate-tag-category' => 'Käännettävät sivut',
+	'translate-tag-page-desc' => 'Wiki-sivun [[:$1]] käännös.',
 	'translate-tag-translate-link-desc' => 'Käännä tämä sivu',
+	'translate-tag-legend-fallback' => 'Muun kielinen käännös',
 	'translate-tag-legend-fuzzy' => 'Vanhentunut käännös',
 	'translate-sidebar-alltrans' => 'Muut käännökset',
 	'translate-tag-noedit' => 'Tämä sivu on automaattisesti päivittyvä käännössivu.
 Voit [$1 muokata lähdesivua] tai [$2 päivittää käännöksen].',
 	'translations' => 'Kaikki käännökset',
+	'translate-translations-no-message' => '”$1” ei ole käännettävä viesti',
+	'translate-translations-none' => 'Kohteelle ”$1” ei ole käännöksiä',
+	'translate-translations-fieldset-title' => 'Kaikki käännökset',
+	'translate-translations-messagename' => 'Viesti',
 	'languagestats' => 'Kielitilastot',
+	'translate-language' => 'Kieli',
+	'translate-total' => 'Viestit',
 	'translate-untranslated' => 'Kääntämätön',
+	'translate-percentage-complete' => 'Käännösten kattavuus',
 	'translate-percentage-fuzzy' => 'Vanhentunut',
 );
 
@@ -5071,12 +5100,18 @@ $messages['ko'] = array(
 	'translate-task-view' => '모든 메시지를 보기',
 	'translate-task-untranslated' => '번역되지 않은 모든 메시지 보기',
 	'translate-task-problematic' => '문제가 있는 메시지 보기',
+	'translate-page-no-such-language' => '선택한 언어가 잘못되었습니다.',
 	'translate-page-disabled' => '이 그룹에서 이 언어로의 번역이 비활성화되어 있습니다. 이유:
 
 $1',
 	'translate-page-settings-legend' => '설정',
 	'translate-page-language' => '언어',
+	'translate-page-limit-option' => '페이지당 $1개의 메시지 보기',
+	'translate-submit' => '불러오기',
+	'translate-next' => '다음 페이지',
+	'translate-prev' => '이전 페이지',
 	'translate-page-edit' => '편집',
+	'translate-edit-definition' => '메시지 정의',
 	'translate-edit-contribute' => '편집하기',
 	'translate-edit-no-information' => '이 메시지에 관한 도움말이 없습니다.
 만약 이 메시지가 어디에 어떻게 사용되는지 알고 계시다면 도움말을 작성해주세요.',
@@ -5185,11 +5220,11 @@ $messages['ksh'] = array(
 	'translate-edit-goto-next' => 'Dä Tëx donoh zëije',
 	'translate-edit-goto-list' => 'Op de Lėß zoröckjonn',
 	'translate-magic-pagename' => 'MediaWiki sing Extras övversäze',
-	'translate-magic-help' => 'Hee kanns_De Zweijtname fö Söndersigge, Zauberwööter, Name för Ovverfläshe, un de Appachtemangname översäze.
+	'translate-magic-help' => 'Hee kanns_De Zweijtname fö Söndersigge, Zauberwööter, un de Appachtemangname översäze.
 
 Söndersigge ier Zweijtname, un de Zauberwööter könne mieh wi eijn Övversäzong han.
 Dozwesche shteijt jeeweijls_e "," (Komma).
-Ovverfläshename un de Name fö_de Appachtemangs könne nur eijn Övversätzong han.
+De Name fö_de Appachtemangs könne nur eijn Övversätzong han.
 
 Beij de Övversäzonge för de Appachtemangs ier Name hät „<tt>$1 talk</tt>“ ene shpezjälle Senn.
 Dat „<tt>$1</tt>“ shteijt doh als enne Plazhallder för dä Projäkname (zem Beijshpöll dat „<tt>{{SITENAME}}</tt>“ en: „<tt>Övver {{SITENAME}} Klaafe</tt>“).
@@ -5349,7 +5384,7 @@ $messages['lb'] = array(
 	'translate-edit-goto-next' => 'Nächste Message änneren',
 	'translate-edit-goto-list' => "Zréck op d'Lëscht",
 	'translate-magic-pagename' => 'Erweidert MediaWiki Iwwersetzung',
-	'translate-magic-help' => "Dir kënnt Spezialsäiten, magesch Wierder, Nimm vu Skins an Nummraum Nimm iwwersetzen.
+	'translate-magic-help' => "Dir kënnt d'Aliase vu Spezialsäiten, magesch Wierder an Nummraum Nimm iwwersetzen.
 
 Spezial Säit ''Aliasen'' a ''magesch Wierder'' kënne méi Iwwersetzungen hunn.
 Iwwersetzungen gi mat engem Komma (,) getrennt.
@@ -5998,6 +6033,7 @@ $messages['myv'] = array(
  * @author Fluence
  */
 $messages['nah'] = array(
+	'translate' => 'Tictlahtōlcuepāz',
 	'translate-edit' => 'ticpatlāz',
 	'translate-talk' => 'tēixnāmiquiliztli',
 	'translate-history' => 'tlahcuilōlloh',
@@ -6007,19 +6043,33 @@ $messages['nah'] = array(
 	'translate-page-navigation-legend' => 'Ācalpapanōliztli',
 	'translate-page-showing' => 'Tiquintta tlahcuilōltzin īhuīcpa $1 oc $2 īmpan $3.',
 	'translate-page-showing-all' => '{{PLURAL:$1|Tiquintta|Tiquintta}} $1 tlahcuilōltzin.',
+	'translate-page-showing-none' => 'Ahtlein ic tlatta.',
 	'translate-next' => 'Niman zāzanilli',
 	'translate-prev' => 'Achto zāzanilli',
 	'translate-page-description-legend' => 'Olōltechopa',
 	'translate-page-edit' => 'ticpatlāz',
+	'translate-edit-contribute' => 'titlapalēhuīz',
 	'translate-edit-in-other-languages' => 'Tlahcuilōltzin occequīntīn tlahtōlcopa',
 	'translate-edit-goto-prev' => 'Ticpatlāz niman tlahcuilōltzin',
 	'translate-edit-goto-next' => 'Ticpatlāz achtopa tlahcuilōltzin',
 	'translate-edit-goto-list' => 'Ticuepāz',
 	'translate-magic-cm-export' => 'Ticnamacāz',
+	'translate-magic-cm-to-be' => 'Yez',
 	'translate-magic-cm-current' => 'Āxcān',
+	'translate-magic-cm-original' => 'Achto',
 	'translate-magic-cm-save' => 'Ticpiyāz',
+	'translate-magic-namespace' => 'Tōcātzintli ītōca',
 	'translationchanges-export' => 'ticnamacāz',
+	'translationchanges-change' => '$1: $2 īpal $3',
+	'translate-rc-translation-filter-no' => 'Ahtlein titlachīhuāz',
+	'translationstats' => 'Tlahtōlcuepaliztli tlapōhualli',
 	'translate-stats-edits' => 'Tlapatlaliztli',
+	'translate-stats-users' => 'Tlahtōlcuepalōnih',
+	'translate-statsf-scale-days' => 'Tōnaltin',
+	'translate-statsf-submit' => 'Achtochīhualiztli',
+	'translate-tag-page-desc' => 'Huiquizāzanilli ītlahtōlcuepaliz [[:$1]].',
+	'translate-tag-translate-link-desc' => 'Tictlahtōlcuepāz inīn zāzanilli',
+	'translate-sidebar-alltrans' => 'Occequīntīn tlahtōlcuepaliztli',
 );
 
 /** Neapolitan (Nnapulitano) */
@@ -7087,6 +7137,7 @@ $messages['ro'] = array(
 	'translate-page-limit' => 'Limită',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|mesaj|mesaje}} pe pagină',
 	'translate-page-navigation-legend' => 'Navigare',
+	'translate-page-showing' => 'Mesajele de la $1 la $2 din $3.',
 	'translate-page-showing-none' => 'Nici un mesaj de arătat.',
 	'translate-next' => 'Pagina următoare',
 	'translate-prev' => 'Pagina anterioară',
@@ -7094,6 +7145,8 @@ $messages['ro'] = array(
 	'translate-page-edit' => 'modifică',
 	'translate-optional' => '(opţional)',
 	'translate-ignored' => '(ignorat)',
+	'translate-edit-definition' => 'Definiţia mesajului',
+	'translate-edit-contribute' => 'contribuiţi',
 	'translate-edit-no-information' => "''Acest mesaj nu are documentaţie.
 Dacă ştiţi unde sau cum este folosit acest mesaj, îi puteţi ajuta pe ceilalţi traducători prin adăugarea documentaţiei acestui mesaj.''",
 	'translate-edit-information' => 'Informaţii despre acest mesaj ($1)',
@@ -7118,6 +7171,7 @@ Dacă ştiţi unde sau cum este folosit acest mesaj, îi puteţi ajuta pe ceilal
 	'translate-rc-translation-filter-filter' => 'Fără traduceri',
 	'translate-rc-translation-filter-site' => 'Doar schimbări la mesajele sitului',
 	'translate-stats-edits' => 'Modificări',
+	'translate-stats-users' => 'Traducători',
 	'translate-statsf-width' => 'Lăţime în pixeli',
 	'translate-statsf-height' => 'Înălţime în pixeli',
 	'translate-statsf-days' => 'Perioadă de timp în zile',
@@ -7126,14 +7180,18 @@ Dacă ştiţi unde sau cum este folosit acest mesaj, îi puteţi ajuta pe ceilal
 	'translate-statsf-scale-hours' => 'Ore',
 	'translate-statsf-count' => 'Măsură',
 	'translate-statsf-count-edits' => 'Număr de modificări',
+	'translate-statsf-count-users' => 'Traducători activi',
 	'translate-statsf-submit' => 'Previzualizare',
 	'translate-tag-page-desc' => 'Traducere a paginii wiki [[:$1]].',
 	'translate-tag-translate-link-desc' => 'Tradu această pagină',
 	'translate-tag-legend' => 'Legendă:',
+	'translate-tag-legend-fallback' => 'Traducere în altă limbă',
+	'translate-tag-legend-fuzzy' => 'Traducere învechită',
 	'translate-sidebar-alltrans' => 'Alte traduceri',
 	'translations' => 'Toate traducerile',
 	'translations-summary' => 'Introduceţi un nume de mesaj mai jos pentru a arăta toate traducerile disponibile.',
 	'translate-translations-no-message' => '"$1" nu este un mesaj care poate fi tradus',
+	'translate-translations-none' => 'Nu există traduceri pentru "$1"',
 	'translate-translations-fieldset-title' => 'Toate traducerile',
 	'translate-translations-messagename' => 'Mesaj:',
 	'translate-language-code' => 'Codul limbii',
@@ -7793,12 +7851,17 @@ $messages['te'] = array(
 	'translate-task-view' => 'అన్ని సందేశాలు చూడాలనుకుంటున్నాను',
 	'translate-task-untranslated' => 'అన్ని అనువాదంకాని సందేశాలు చూడాలనుకుంటున్నాను',
 	'translate-task-optional' => 'ఐచ్చిక సందేశాలు చూడాలనుకుంటున్నాను',
+	'translate-task-untranslatedoptional' => 'అనువాదంకాని ఐచ్చిక సందేశాలను చూడాలనుకుంటున్నాను',
+	'translate-task-problematic' => 'సమస్యాత్మక సందేశాలను చూడాలనుకుంటున్నాను',
 	'translate-task-review' => 'మార్పులని సమీక్షించాలనుకుంటున్నాను',
 	'translate-task-reviewall' => 'అన్ని అనువాదాలనూ సమీక్షించాలనుకుంటున్నాను',
 	'translate-task-export' => 'అనువాదాలని ఎగుమతి చేయాలి',
 	'translate-page-no-such-language' => 'ఎంచుకున్న భాష సరైనది కాదు.',
 	'translate-page-no-such-task' => 'ఎంచుకున్న పని సరైనది కాదు.',
 	'translate-page-no-such-group' => 'ఇచ్చిన సమూహం సరైనది కాదు.',
+	'translate-page-disabled' => "ఈ భాషకి ఈ సమూహంలో అనువాదాలని అచేతనం చేసారు. కారణం:
+
+''$1''",
 	'translate-page-settings-legend' => 'అమరికలు',
 	'translate-page-task' => 'నేను',
 	'translate-page-group' => 'సమూహం',
@@ -7817,6 +7880,7 @@ $messages['te'] = array(
 	'translate-optional' => '(ఐచ్ఛికం)',
 	'translate-ignored' => '(ఉపేక్షించినది)',
 	'translate-edit-definition' => 'సందేశ నిర్వచనం',
+	'translate-edit-contribute' => 'తోడ్పడండి',
 	'translate-edit-no-information' => "''ఈ సందేశానికి సహాయ సమాచారం లేదు. ఈ సందేశాన్ని ఎక్కడ లేదా ఎలా ఉపయోగిస్తారో మీకు తెలిస్తే, దీనికి తగిన సమాచారం చేర్చి ఇతర అనువాదకులకు తొడ్పడవచ్చు.''",
 	'translate-edit-information' => 'ఈ సందేశం గురించి సమాచారం ($1)',
 	'translate-edit-in-other-languages' => 'ఇతర భాషలలోని సందేశాలు',
@@ -7836,6 +7900,7 @@ $messages['te'] = array(
 	'translate-magic-cm-savefailed' => 'భద్రపరచడం విఫలమైంది',
 	'translate-magic-special' => 'ప్రత్యేక పేజీల మారుపేర్లు',
 	'translate-magic-words' => 'మాయా పదాలు',
+	'translate-magic-namespace' => 'పేరుబరుల పేర్లు',
 	'translationchanges' => 'అనువాద మార్పులు',
 	'translationchanges-export' => 'ఎగుమతించు',
 	'translationchanges-change' => '$1: $3 చే $2',
@@ -7850,7 +7915,9 @@ $messages['te'] = array(
 	'translate-checks-xhtml' => 'ఈ {{PLURAL:$2|టాగుని సరైన దానితో|టాగులని సరైన వాటితో}} మార్చండి:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'అసలు సందేశంలో <nowiki>{{PLURAL:}}</nowiki> అనివుంది కానీ అనువాదంలో లేదు.',
+	'tog-translate-nonewsletter' => 'నాకు ఈ-మెయిలు వార్తాలేఖలు పంపించవద్దు (ఈ-మెయిలు చిరునామాని నిర్ధారించిన వాడుకరులకు మాత్రమే)',
 	'translate-rc-translation-filter' => 'అనువాదాల పడపోత:',
+	'translate-rc-translation-filter-no' => 'ఏమీ చేయకు',
 	'translate-rc-translation-filter-only' => 'అనువాదాలు మాత్రమే చూపించు',
 	'translationstats' => 'అనువాద గణాంకాలు',
 	'translate-stats-edits' => 'మార్పులు',
@@ -7865,6 +7932,7 @@ $messages['te'] = array(
 	'translate-statsf-count-edits' => 'మార్పుల సంఖ్య',
 	'translate-statsf-count-users' => 'క్రియాశీల అనువాదకులు',
 	'translate-statsf-language' => 'కామాతో వేరుపరచిన భాషా సంకేతాల జాబితా',
+	'translate-statsf-group' => 'కామాలతో వేరుపరచిన సమూహ సంకేతాల జాబితా',
 	'translate-statsf-submit' => 'మునుజూపు',
 	'translate-tag-category' => 'అనువదించదగ్గ పేజీలు',
 	'translate-tag-page-desc' => '[[:$1]] వికీ పేజీ యొక్క అనువాదం.',
@@ -7885,6 +7953,7 @@ $messages['te'] = array(
 	'translate-total' => 'సందేశాలు',
 	'translate-untranslated' => 'అనువాదంకానివి',
 	'translate-percentage-complete' => 'పూర్తైనవి',
+	'translate-percentage-fuzzy' => 'పాతబడినవి',
 );
 
 /** Tetum (Tetun)
@@ -8671,6 +8740,7 @@ $messages['yue'] = array(
 
 /** Simplified Chinese (‪中文(简体)‬)
  * @author Alexsh
+ * @author Gzdavidwong
  */
 $messages['zh-hans'] = array(
 	'translate' => '翻译',
@@ -8748,10 +8818,23 @@ $messages['zh-hans'] = array(
 	'translate-checks-xhtml' => '请修正以下的标签：
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => '原始信息使用于<nowiki>{{PLURAL:}}</nowiki>中，并没有用于翻译。',
+	'translationstats' => '翻译统计',
+	'translate-stats-users' => '翻译者',
+	'translate-statsf-submit' => '预览',
+	'translate-tag-category' => '可翻译的页面',
+	'translate-tag-translate-link-desc' => '翻译本页',
+	'translate-sidebar-alltrans' => '其他翻译',
+	'translate-translations-fieldset-title' => '所有翻译',
+	'languagestats' => '语言统计',
+	'translate-language-code' => '语言代码',
+	'translate-language-code-field-name' => '语言代码：',
+	'translate-language' => '语言',
+	'translate-untranslated' => '未翻译',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
  * @author Alexsh
+ * @author Gzdavidwong
  * @author Wrightbus
  */
 $messages['zh-hant'] = array(
@@ -8858,7 +8941,7 @@ $messages['zh-hant'] = array(
 	'translate-translations-fieldset-title' => '所有翻譯',
 	'languagestats' => '語言統計',
 	'translate-language-code' => '語言代碼',
-	'translate-language-code-field-name' => '語言代碼:',
+	'translate-language-code-field-name' => '語言代碼：',
 	'translate-language' => '語言',
 	'translate-untranslated' => '未翻譯',
 );
