@@ -397,7 +397,9 @@ $messages['af'] = array(
 $messages['am'] = array(
 	'translate-edit' => 'አርም',
 	'translate-history' => 'ታሪክ',
+	'translate-next' => 'የሚቀጥለው ገጽ',
 	'translate-page-edit' => 'አርም',
+	'translate-magic-cm-current' => 'ያሁኑኑ',
 	'translate-magic-cm-comment' => 'ማጠቃለያ፦',
 );
 
@@ -2242,6 +2244,7 @@ Vi povas [$1 redakti la fontpaĝon] aŭ [$2 ĝisdatigi la tradukon].',
 );
 
 /** Spanish (Español)
+ * @author Imre
  * @author Lin linao
  * @author Sanbec
  */
@@ -2312,6 +2315,7 @@ Los cambios no se salvan hasta que no pulses el boton de guardar de abajo.',
 	'translate-magic-cm-to-be' => 'Será',
 	'translate-magic-cm-current' => 'Actual',
 	'translate-magic-cm-original' => 'Original',
+	'translate-magic-cm-comment' => 'Comentario:',
 	'translate-magic-cm-save' => 'Guardar',
 	'translate-magic-special' => 'Nombres de páginas especiales',
 	'translate-magic-namespace' => 'Nombres de los espacios de nombres',
@@ -2570,10 +2574,19 @@ Muutoksia ei tallenneta, ennen kuin painat tallenna-painiketta.',
 	'translationchanges' => 'Käännösmuutokset',
 	'translationchanges-export' => 'vie',
 	'translationchanges-change' => '$1: Käyttäjä $3 muutti sivua $2',
+	'translate-checks-parameters' => '{{PLURAL:$2|Seuraavaa parametriä|Seuraavia parametrejä}} ei käytetä:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Seuraava parametri on tuntematon|Seuraavat parametrit ovat tuntemattomia}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links' => '{{PLURAL:$2|Seuraava linkki on ongelmallinen|$2 Seuraavat linkit ovat ongelmallisia}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-xhtml' => 'Korvaa {{PLURAL:$2|seuraava elementti oikealla|seuraavat elementit oikeilla}}:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Määritelmä käyttää <nowiki>{{PLURAL:}}</nowiki>-koodia, mutta käännös ei.',
 	'translate-checks-pagename' => 'Nimiavaruus muuttui määritellystä',
 	'translate-checks-format' => 'Tämä käännös ei noudata alkuperäistä tekstiä tai sillä on virheellinen syntaksi: $1',
 	'tog-translate-nonewsletter' => 'Älä lähetä minulle uutiskirjeitä (vain sähköpostiosoitteensa varmistaneille käyttäjille)',
+	'right-translate' => 'Muokkaa käyttäen käännöskäyttöliittymää',
 	'translate-rc-translation-filter' => 'Käännösten suodatus',
 	'translate-rc-translation-filter-no' => 'ei toimenpidettä',
 	'translate-rc-translation-filter-only' => 'näytä vain käännökset',
@@ -5000,7 +5013,7 @@ $messages['km'] = array(
 	'translate-edit-goto-next' => 'កែប្រែសារបន្ទាប់',
 	'translate-edit-goto-list' => 'ត្រឡប់ទៅកាន់បញ្ជីវិញ',
 	'translate-magic-pagename' => 'ការបកប្រែ​មេឌាវិគី​បន្ថែម',
-	'translate-magic-help' => "អ្នកអាចប្រែសម្រួលឈ្មោះផ្សេងៗទៀតនៃទំព័រពិសេស ពាក្យទិព្វ ឈ្មោះសំបក និងឈ្មោះនៃលំហឈ្មោះ។
+	'translate-magic-help' => 'អ្នកអាចប្រែសម្រួលឈ្មោះផ្សេងៗទៀតនៃទំព័រពិសេស ពាក្យទិព្វ ឈ្មោះសំបក និងឈ្មោះនៃលំហឈ្មោះ។
 
 
 ឈ្មោះផ្សេងៗទៀតនៃទំព័រពិសេស​និង​ពាក្យទិព្វអាចមានបទប្រែសម្រួលច្រើន។
@@ -5010,12 +5023,12 @@ $messages['km'] = array(
 ឈ្មោះសំបកនិងលំហឈ្មោះអាចមានត្រឹមតែមួយបទប្រែសម្រួលប៉ុណ្ណោះ ។
 
 
-ក្នុងការបកប្រែលំហឈ្មោះ <tt>ការពិភាក្សាអំពី$1</tt> ជាករណីពិសេស។ <tt>$1</tt> ត្រូវបានជំនួសដោយឈ្មោះវិបសាយ(ឧទាហរណ៍៖ <tt>ការពិភាក្សាអំពី{{SITENAME}}</tt>)។
+ក្នុងការបកប្រែលំហឈ្មោះ <tt>ការពិភាក្សាអំពី $1</tt> ជាករណីពិសេស។ <tt>$1</tt> ត្រូវបានជំនួសដោយឈ្មោះវិបសាយ(ឧទាហរណ៍៖ <tt>ការពិភាក្សាអំពី{{SITENAME}}</tt>)។
 
 ប្រសិនបើ​ភាសារបស់អ្នក​មិនបានបង្ហាញត្រឹមត្រូវដោយមិនប្តូរឈ្មោះវិបសាយទេ សូមទាក់ទងអ្នកអភិវឌ្ឍ(អ្នករចនាវិបសាយ)។
 
 
-អ្នកចាំបាច់ត្រូវតែស្ថិតក្នុងក្រុមអ្នកប្រែសម្រួល ទើបអាចរក្សាទុកបំលាស់ប្តូរបាន។ បំលាស់ប្តូរនឹងមិនត្រូវបានរក្សាទុកទេ​លើកលែងតែអ្នកបានចុចប៊ូតុង'រក្សាទំព័រទុក'ខាងក្រោម ។",
+អ្នកចាំបាច់ត្រូវតែស្ថិតក្នុងក្រុមអ្នកប្រែសម្រួល ទើបអាចរក្សាទុកបំលាស់ប្តូរបាន។ បំលាស់ប្តូរនឹងមិនត្រូវបានរក្សាទុកទេ​លើកលែងតែអ្នកបានចុចប៊ូតុង​រក្សាទំព័រទុក​ខាងក្រោម ។',
 	'translate-magic-module' => 'ម៉ូឌុល:',
 	'translate-magic-submit' => 'នាំមក​បង្ហាញ',
 	'translate-magic-cm-export' => 'នាំចេញ',
@@ -6070,6 +6083,9 @@ $messages['nah'] = array(
 	'translate-tag-page-desc' => 'Huiquizāzanilli ītlahtōlcuepaliz [[:$1]].',
 	'translate-tag-translate-link-desc' => 'Tictlahtōlcuepāz inīn zāzanilli',
 	'translate-sidebar-alltrans' => 'Occequīntīn tlahtōlcuepaliztli',
+	'translations' => 'Mochi tlahtōlcuepaliztli',
+	'translate-translations-none' => 'Ayāc tlahtōlcuepaliztli ic "$1"',
+	'translate-translations-fieldset-title' => 'Mochi tlahtōlcuepaliztli',
 );
 
 /** Neapolitan (Nnapulitano) */
@@ -6920,6 +6936,24 @@ $messages['pms'] = array(
 	'translate-language' => 'Lenga:',
 );
 
+/** Western Punjabi (پنجابی)
+ * @author Khalid Mahmood
+ */
+$messages['pnb'] = array(
+	'translate' => 'ترجمعہ',
+	'translate-edit' => 'لکھو',
+	'translate-talk' => 'گل بات',
+	'translate-page-settings-legend' => 'ترتیب',
+	'translate-page-task' => 'میں چانداں واں',
+	'translate-page-group' => 'ٹولی',
+	'translate-page-language' => 'بولی',
+	'translate-submit' => 'لے کے آؤ',
+	'translate-page-navigation-legend' => 'کھوج',
+	'translate-page-showing-none' => 'وکھانے آسطے کوئی سنیعا نئیں۔',
+	'translate-next' => 'اگلا صفحہ',
+	'translate-page-description-legend' => 'ٹولی دے بارے چ معلومات',
+);
+
 /** Pashto (پښتو)
  * @author Ahmed-Najib-Biabani-Ibrahimkhel
  */
@@ -7182,6 +7216,7 @@ Dacă ştiţi unde sau cum este folosit acest mesaj, îi puteţi ajuta pe ceilal
 	'translate-statsf-count-edits' => 'Număr de modificări',
 	'translate-statsf-count-users' => 'Traducători activi',
 	'translate-statsf-submit' => 'Previzualizare',
+	'translate-tag-category' => 'Pagini traductibile',
 	'translate-tag-page-desc' => 'Traducere a paginii wiki [[:$1]].',
 	'translate-tag-translate-link-desc' => 'Tradu această pagină',
 	'translate-tag-legend' => 'Legendă:',
@@ -8208,6 +8243,7 @@ $messages['uk'] = array(
 	'translate-task-view' => 'Переглянути всі повідомлення',
 	'translate-task-untranslated' => 'Переглянути неперекладені повідомлення',
 	'translate-task-optional' => "Переглянути необов'язкові повідомлення",
+	'translate-task-untranslatedoptional' => "Переглянути неперекладені необов'язкові повідомлення",
 	'translate-task-problematic' => 'Переглянути проблемні повідомлення',
 	'translate-task-review' => 'Перевірити зміни',
 	'translate-task-reviewall' => 'Перевірити всі переклади',
