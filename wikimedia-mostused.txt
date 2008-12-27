@@ -375,8 +375,6 @@ speciallogtitlelabel
 specialloguserlabel
 qbfind
 history-feed-item-nocomment
-bugreports
-bugreportspage
 page_last
 page_first
 ipblocklist
