@@ -809,6 +809,7 @@ Uniwiki - Layouts
 id = ext-uniwiki-layouts
 file = uniwiki/Layouts/Layouts.i18n.php
 descmsg = layouts-desc
+optional = layouts-layoutcategorypage
 
 Uniwiki - Moo Tools 12 core
 id = ext-uniwiki-mootools12core
