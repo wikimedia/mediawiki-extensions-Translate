@@ -1185,7 +1185,7 @@ $messages['br'] = array(
 	'translate-edit-goto-prev' => "Mont d'ar gemennadenn a-raok",
 	'translate-edit-goto-next' => "Mont d'ar gemennadenn war-lerc'h",
 	'translate-edit-goto-list' => "Distreiñ d'ar roll :",
-	'translate-magic-pagename' => 'Troidigezh Mediawiki astennet',
+	'translate-magic-pagename' => 'Troidigezh MediaWiki astennet',
 	'translate-magic-help' => "Gallout a rit treiñ aliasoù ar pajennoù dibar, ar gerioù burzhudus, anvioù an etrefasoù hag anvioù an esaouennoù anv.
 
 Aliasoù ar pajennoù dibar hag ar gerioù burzhudus a c'hall kaout meur a droidigezh.
@@ -1603,7 +1603,7 @@ $messages['cs'] = array(
 	'translate-edit-goto-prev' => 'Editovat předchozí zprávu',
 	'translate-edit-goto-next' => 'Editovat následující zprávu',
 	'translate-edit-goto-list' => 'Zpět na seznam',
-	'translate-magic-pagename' => 'Rozšířená možnost překladu Mediawiki',
+	'translate-magic-pagename' => 'Rozšířená možnost překladu MediaWiki',
 	'translate-magic-help' => "Můžete překládat aliasy speciálních stránek, kouzelná slova, názvy vzhledů a názvy jmenných prostorů.
 
 Aliasy speciálních stránek a kouzelných slov mohou mít více překladů.
@@ -2093,7 +2093,7 @@ $messages['el'] = array(
 	'translate-edit-goto-prev' => 'Επεξεργασία προηγούμενου μηνύματος',
 	'translate-edit-goto-next' => 'Επεξεργασία επόμενου μηνύματος',
 	'translate-edit-goto-list' => 'Πίσω στη λίστα',
-	'translate-magic-pagename' => 'Μετάφραση εκτεταμένου Mediawiki',
+	'translate-magic-pagename' => 'Μετάφραση εκτεταμένου MediaWiki',
 	'translate-magic-help' => 'Μπορείτε να μεταφράσετε ψευδώνυμα ειδικών σελίδων, μαγικές λέξεις, ονόματα skins και ονόματα namespaces.
 
 Τα ψευδώνυμα ειδικών σελίδων και οι μαγικές λέξεις μπορούν να έχουν πολλαπλές μεταφράσεις.
@@ -4079,7 +4079,7 @@ $messages['id'] = array(
 	'translate-edit-goto-prev' => 'Sunting pesan sebelumnya',
 	'translate-edit-goto-next' => 'Sunting pesan berikutnya',
 	'translate-edit-goto-list' => 'Kembali ke daftar',
-	'translate-magic-pagename' => 'Perluasan terjemahan Mediawiki',
+	'translate-magic-pagename' => 'Perluasan terjemahan MediaWiki',
 	'translate-magic-help' => 'Anda dapat menerjemahkan alias untuk halaman istimewa, kata-kata magis, nama kulit, dan ruang-ruang nama.
 
 Alias untuk halaman istimewa dan kata-kata magis dapat memiliki lebih dari satu terjemahan.
@@ -7758,7 +7758,7 @@ $messages['su'] = array(
 	'translate-edit-in-other-languages' => 'Talatah dina basa séjén',
 	'translate-edit-committed' => 'Parobahan anu aya di pakakas',
 	'translate-edit-warnings' => 'Panginget ngeunaan tarjamahan anu teu pepek',
-	'translate-magic-pagename' => 'Landian tarjamahan Mediawiki',
+	'translate-magic-pagename' => 'Landian tarjamahan MediaWiki',
 	'translate-magic-help' => "Anjeun bisa narjamahkuen landian pikeun kaca husus, kecap magis, ngaran kulit, sarta ngaran ''ngaranspasi''.
 
 Pikeun kecap magis, Anjeun perlu nyantumkeun ogé tarjamahan basa Inggris atawa baris lumangsung kasalahan. Ogé tetep nyantumkeun item kahiji (0 atawa 1) kitu waé.
