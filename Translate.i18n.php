@@ -752,6 +752,7 @@ $messages['arz'] = array(
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'التعريف يستخدم <nowiki>{{PLURAL:}}</nowiki> لكن الترجمة لا.',
 	'translate-checks-pagename' => 'النطاق تغير من التعريف',
+	'translate-checks-format' => 'هذه الترجمة لا تتبع التعريف أو لديها صياغة خاطئة: $1',
 	'tog-translate-nonewsletter' => 'لا ترسل لى إخطارات بريدية بالبريد الإلكترونى (متعلقة فقط بالمستخدمين الذين يمتلكون عنوان بريد إلكترونى مؤكد)',
 	'right-translate' => 'التعديل باستخدام واجهة الترجمة',
 	'translate-rc-translation-filter' => 'فلتر الترجمات:',
@@ -787,7 +788,17 @@ $messages['arz'] = array(
 	'translate-sidebar-alltrans' => 'ترجمات أخرى',
 	'translate-tag-noedit' => 'هذه الصفحة هى صفحة ترجمة محدثة تلقائيا.
 يمكنك [$1 تعديل الصفحة المصدر] أو [$2 تحديث الترجمة].',
+	'translations' => 'كل الترجمات',
+	'translations-summary' => 'أدخل اسم رسالة أسفله لعرض كل الترجمات المتوفرة.',
+	'translate-translations-fieldset-title' => 'كل الترجمات',
+	'translate-translations-messagename' => ':الرسالة',
+	'languagestats' => 'إحصاءات اللغة',
+	'translate-language-code' => 'رمز اللغة',
+	'translate-language-code-field-name' => 'رمز اللغة:',
 	'translate-language' => ':اللغة',
+	'translate-total' => 'الرسائل',
+	'translate-untranslated' => 'غير المترجمة',
+	'translate-percentage-fuzzy' => 'غير محدث',
 );
 
 /** Asturian (Asturianu)
@@ -2573,6 +2584,7 @@ $messages['fa'] = array(
 
 /** Finnish (Suomi)
  * @author Crt
+ * @author Mobe
  * @author Nike
  * @author Silvonen
  * @author Str4nd
@@ -2662,6 +2674,8 @@ Muutoksia ei tallenneta, ennen kuin painat tallenna-painiketta.',
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Seuraava parametri on tuntematon|Seuraavat parametrit ovat tuntemattomia}}:
 <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-balance' => 'Pariton määrä {{PLURAL:$2|sulkeita|sulkeita}}:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '{{PLURAL:$2|Seuraava linkki on ongelmallinen|Seuraavat linkit ovat ongelmallisia}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Korvaa {{PLURAL:$2|seuraava tägti oikealla|seuraavat tägi oikeilla}}:
@@ -2694,18 +2708,23 @@ Muutoksia ei tallenneta, ennen kuin painat tallenna-painiketta.',
 	'translate-statsf-group' => 'Pilkuin erotettu lista ryhmäkoodeista',
 	'translate-statsf-submit' => 'Esikatselu',
 	'translate-tag-category' => 'Käännettävät sivut',
-	'translate-tag-page-desc' => 'Wiki-sivun [[:$1]] käännös.',
+	'translate-tag-page-desc' => 'Wikisivun [[:$1]] käännös.',
 	'translate-tag-translate-link-desc' => 'Käännä tämä sivu',
+	'translate-tag-legend' => 'Selite:',
 	'translate-tag-legend-fallback' => 'Muun kielinen käännös',
 	'translate-tag-legend-fuzzy' => 'Vanhentunut käännös',
+	'translate-tag-fuzzy-comment' => 'Määritystä on muuttanut [[User:$1|$1]] versiossa $2.',
+	'translate-tag-fuzzy-reason' => 'Määritystä on muuttanut "$1" kommentilla "$3" versiossa $2.',
 	'translate-sidebar-alltrans' => 'Muut käännökset',
 	'translate-tag-noedit' => 'Tämä sivu on automaattisesti päivittyvä käännössivu.
 Voit [$1 muokata lähdesivua] tai [$2 päivittää käännöksen].',
 	'translations' => 'Kaikki käännökset',
+	'translations-summary' => 'Näet kaikki käännökset kun kirjoita alle viestin nimen',
 	'translate-translations-no-message' => '”$1” ei ole käännettävä viesti',
 	'translate-translations-none' => 'Kohteelle ”$1” ei ole käännöksiä',
 	'translate-translations-fieldset-title' => 'Kaikki käännökset',
 	'translate-translations-messagename' => 'Viesti',
+	'translate-translations-including-no-param' => 'Määrittele oikea sivun nimi alasivuparametriin',
 	'languagestats' => 'Kielitilastot',
 	'languagestats-summary' => 'Tämä sivu näyttää käännöstilastot kaikille ([[MediaWiki:Translate-languagestats-groups|asetetuille]]) kielen viestiryhmille.',
 	'translate-language-code' => 'Kielikoodi',
@@ -6386,7 +6405,7 @@ $messages['nn'] = array(
 	'translate-history' => 'historikk',
 	'translate-task-view' => 'Sjå alle meldingar frå',
 	'translate-task-untranslated' => 'Sjå alle uomsette meldingar frå',
-	'translate-task-optional' => 'Sjå valfri meldingar frå',
+	'translate-task-optional' => 'Sjå valfrie meldingar frå',
 	'translate-task-problematic' => 'Sjå meldingar som har problem',
 	'translate-task-review' => 'Gå gjennom endringar av',
 	'translate-task-reviewall' => 'Gå gjennom alle omsette meldingar av',
@@ -7211,6 +7230,7 @@ As alterações não serão salvas até que você clique no botão de salvar.',
 	'translate-statsf-scale' => 'Escala',
 	'translate-statsf-scale-days' => 'Dias',
 	'translate-statsf-scale-hours' => 'Horas',
+	'translate-statsf-count' => 'Medida',
 	'translate-statsf-count-edits' => 'Número de edições',
 	'translate-statsf-count-users' => 'Tradutores activos',
 	'translate-statsf-language' => 'List separada por vírgulas de códigos de língua',
@@ -7358,9 +7378,23 @@ Dacă ştiţi unde sau cum este folosit acest mesaj, îi puteţi ajuta pe ceilal
  * @author Joetaras
  */
 $messages['roa-tara'] = array(
+	'translate-magic-cm-export' => 'Esporte',
 	'translate-magic-cm-original' => 'Origginale',
 	'translate-magic-cm-comment' => 'Commende:',
 	'translate-magic-cm-save' => 'Reggistre',
+	'translate-magic-cm-savefailed' => 'Reggistrazione fallite',
+	'translate-magic-words' => 'Parole maggeche',
+	'translate-magic-namespace' => 'Nome de le namespace',
+	'translationchanges' => 'Cangiaminde de le traduziune',
+	'translationchanges-export' => 'esporte',
+	'translationchanges-change' => '$1: $2 da $3',
+	'translate-statsf-submit' => 'Andeprime',
+	'translate-tag-legend' => 'Leggende:',
+	'translations' => 'Tutte le traduziune',
+	'translations-summary' => "Mitte 'nu messagge sotte pe fa vedè tutte le traduziune disponibbele.",
+	'translate-translations-messagename' => 'Messagge:',
+	'translate-language' => 'Lènghe',
+	'translate-total' => 'Le Messagge',
 );
 
 /** Russian (Русский)
@@ -8115,9 +8149,11 @@ $messages['tet'] = array(
 	'translate-talk' => 'diskusaun',
 	'translate-history' => 'istória',
 	'translate-task-view' => 'Haree mensajen hotu husi',
+	'translate-page-settings-legend' => 'Preferénsia',
 	'translate-page-task' => "Ha'u hakarak",
 	'translate-page-group' => 'Lubu',
 	'translate-page-language' => 'Lian',
+	'translate-page-limit-option' => '$1 {{PLURAL:$1|mensajen|mensajen}} iha pájina ida',
 	'translate-submit' => 'Hola',
 	'translate-page-showing-all' => 'Dalan $1 {{PLURAL:$1|mensajen|mensajen}}.',
 	'translate-next' => 'Pájina oinmai',
@@ -8301,6 +8337,13 @@ $messages['th'] = array(
 	'translate-untranslated' => 'ไม่ได้แปล',
 	'translate-percentage-complete' => 'สมบูรณ์',
 	'translate-percentage-fuzzy' => 'ล้าสมัย',
+);
+
+/** Turkmen (Türkmen)
+ * @author Runningfridgesrule
+ */
+$messages['tk'] = array(
+	'translate-history' => 'geçmiş',
 );
 
 /** Tagalog (Tagalog)
@@ -9051,6 +9094,7 @@ $messages['yue'] = array(
 
 /** Simplified Chinese (‪中文(简体)‬)
  * @author Alexsh
+ * @author Gaoxuewei
  * @author Gzdavidwong
  */
 $messages['zh-hans'] = array(
@@ -9062,6 +9106,7 @@ $messages['zh-hans'] = array(
 	'translate-task-view' => '查看全部信息',
 	'translate-task-untranslated' => '查看尚未翻译的信息',
 	'translate-task-optional' => '查看可选的信息',
+	'translate-task-untranslatedoptional' => '查看未翻译的可选信息',
 	'translate-task-review' => '检查该处的更改',
 	'translate-task-reviewall' => '检查该群组的翻译',
 	'translate-task-export' => '导出翻译',
@@ -9131,6 +9176,7 @@ $messages['zh-hans'] = array(
 	'translate-checks-plural' => '原始信息使用于<nowiki>{{PLURAL:}}</nowiki>中，并没有用于翻译。',
 	'translationstats' => '翻译统计',
 	'translate-stats-users' => '翻译者',
+	'translate-statsf-count-users' => '活跃的翻译者',
 	'translate-statsf-submit' => '预览',
 	'translate-tag-category' => '可翻译的页面',
 	'translate-tag-translate-link-desc' => '翻译本页',
