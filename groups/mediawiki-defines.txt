@@ -668,6 +668,7 @@ Social Profile - User Profile
 id = ext-socialprofile-userprofile
 file = SocialProfile/UserProfile/UserProfile.i18n.php
 optional = avatarlogentry, profilelogentry
+ignored = userprofile-country-list
 
 Social Profile - User Relationship
 id = ext-socialprofile-userrelationship
