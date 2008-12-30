@@ -2713,13 +2713,13 @@ Muutoksia ei tallenneta, ennen kuin painat tallenna-painiketta.',
 	'translate-tag-legend' => 'Selite:',
 	'translate-tag-legend-fallback' => 'Muun kielinen käännös',
 	'translate-tag-legend-fuzzy' => 'Vanhentunut käännös',
-	'translate-tag-fuzzy-comment' => 'Määritystä on muuttanut [[User:$1|$1]] versiossa $2.',
-	'translate-tag-fuzzy-reason' => 'Määritystä on muuttanut "$1" kommentilla "$3" versiossa $2.',
+	'translate-tag-fuzzy-comment' => '[[User:$1|$1]] muutti alkuperäistä tekstiä versiossa $2.',
+	'translate-tag-fuzzy-reason' => '"$1" muutti alkuperäistä tekstiä kommentilla "$3" versiossa $2.',
 	'translate-sidebar-alltrans' => 'Muut käännökset',
 	'translate-tag-noedit' => 'Tämä sivu on automaattisesti päivittyvä käännössivu.
 Voit [$1 muokata lähdesivua] tai [$2 päivittää käännöksen].',
 	'translations' => 'Kaikki käännökset',
-	'translations-summary' => 'Näet kaikki käännökset kun kirjoita alle viestin nimen',
+	'translations-summary' => 'Kirjoita alle sen viestin nimi, jonka kaikki käännökset haluat nähdä.',
 	'translate-translations-no-message' => '”$1” ei ole käännettävä viesti',
 	'translate-translations-none' => 'Kohteelle ”$1” ei ole käännöksiä',
 	'translate-translations-fieldset-title' => 'Kaikki käännökset',
@@ -6406,6 +6406,7 @@ $messages['nn'] = array(
 	'translate-task-view' => 'Sjå alle meldingar frå',
 	'translate-task-untranslated' => 'Sjå alle uomsette meldingar frå',
 	'translate-task-optional' => 'Sjå valfrie meldingar frå',
+	'translate-task-untranslatedoptional' => 'Sjå uomsette valfrie meldingar frå',
 	'translate-task-problematic' => 'Sjå meldingar som har problem',
 	'translate-task-review' => 'Gå gjennom endringar av',
 	'translate-task-reviewall' => 'Gå gjennom alle omsette meldingar av',
@@ -6940,12 +6941,13 @@ $messages['pl'] = array(
 	'translate-edit-goto-next' => 'Edycja następnego komunikatu',
 	'translate-edit-goto-list' => 'Powrót do listy komunikatów',
 	'translate-magic-pagename' => 'Rozszerzone tłumaczenie MediaWiki',
-	'translate-magic-help' => 'Możliwe jest tłumaczenie aliasów stron specjalnych, magicznych słów, nazw motywów i nazw poszczególnych przestrzeni.
+	'translate-magic-help' => 'Możliwe jest tłumaczenie aliasów stron specjalnych, magicznych słów i nazw poszczególnych przestrzeni nazw.
 
-Aliasy stron specjalnych i magiczne słowa mogą mieć wiele tłumaczeń, które oddziela się przecinkiem (,).
-Nazwy motywów i przestrzeni mogą mieć tylko po jednym tłumaczeniu.
+Aliasy stron specjalnych i magiczne słowa mogą mieć wiele tłumaczeń.
+Tłumaczenia oddziela się przecinkiem (,).
+Przestrzenie nazw mogą mieć tylko jedno tłumaczenie.
 
-Podczas tłumaczenia nazw przestrzeni specjalne znaczenie ma zapis <tt>Dyskusja $1</tt>, gdzie <tt>$1</tt> zamieniane jest w nazwę serwisu – na przykład <tt>Dyskusja {{SITENAME}}</tt>.
+Podczas tłumaczenia przestrzeni nazw specjalne znaczenie ma zapis <tt>Dyskusja $1</tt>, gdzie <tt>$1</tt> zamieniane jest w nazwę serwisu – na przykład <tt>Dyskusja {{SITENAME}}</tt>.
 Jeśli w danym języku niemożliwe jest sformułowanie prawidłowego wpisu bez zmiany nazwy serwisu, należy skontaktować się z deweloperem.
 
 Zapisanie zmian jest możliwe tylko dla członków grupy tłumaczy.
@@ -7488,7 +7490,7 @@ $messages['ru'] = array(
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Неизвестный параметр|Неизвестные параметры}}:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-balance' => 'Непарное количество открывающих и закрывающих скобок:
+	'translate-checks-balance' => 'Непарное количество открывающих и закрывающих {{PLURAL:$2|скобок|скобок}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '{{PLURAL:$2|Следующая ссылка вызывает проблемы|Следующие ссылки вызывают проблемы}}:
 <strong><nowiki>$1</nowiki></strong>',
@@ -7600,13 +7602,13 @@ $messages['sk'] = array(
 	'translate-magic-help' => 'Môžete prekladať aliasy špeciálnych stránok, magické slová, názvy tém vzhľadu a názvy menných priestorov.
 
 Aliasy špeciálnych stránok a magických slov môžu mať viacero prekladov.
-Preklady sa oddeľujú čiarkou (,).
-Názvy menných priestorov môžu mať iba jeden preklad.
+Preklady sa oddeľujú čiarkami („,“).
+Názvy tém vzhľadu a názvy menných priestorov môžu mať iba jeden preklad.
 
-V prekladoch menných priestorov je <tt>$1 talk</tt> špeciálne. <tt>$1</tt> sa nahradí názvom stránky (napr. <tt>{{SITENAME}} talk</tt>). Ak vo vašom jazyku nie je možné vytvoriť zmysluplný výraz bez zmeny názvu stránky, prosím, kontaktujte vývojára.
+V prekladoch menných priestorov je <tt>$1 talk</tt> špeciálne. <tt>$1</tt> sa nahradí názvom webovej lokality (napr. <tt>{{SITENAME}} talk</tt>). Ak vo vašom jazyku nie je možné vytvoriť zmysluplný výraz bez zmeny názvu webovej lokality, prosím, kontaktujte vývojára.
 
-Aby ste mohli ukladať zmeny, musíte byť členom skupiny prekladatelia.
-Zmeny sa neuložia, kým nekliknete na dolné tlačidlo Uložiť stránku.',
+Aby ste mohli ukladať zmeny, musíte byť členom skupiny translators.
+Zmeny sa neuložia, kým nekliknete na tlačidlo Uložiť dolu.',
 	'translate-magic-module' => 'Modul:',
 	'translate-magic-submit' => 'Vykonať',
 	'translate-magic-cm-export' => 'Exportovať',
@@ -8157,7 +8159,9 @@ $messages['tet'] = array(
 	'translate-submit' => 'Hola',
 	'translate-page-showing-all' => 'Dalan $1 {{PLURAL:$1|mensajen|mensajen}}.',
 	'translate-next' => 'Pájina oinmai',
+	'translate-prev' => 'Pájina molok',
 	'translate-page-description-legend' => 'Informasaun kona-ba lubu',
+	'translate-page-edit' => 'edita',
 	'translate-edit-in-other-languages' => 'Mensajen iha lian seluk',
 	'translate-magic-submit' => 'Hola',
 	'translate-language' => 'Lian',
@@ -8669,9 +8673,12 @@ $messages['uk'] = array(
 	'translate-tag-noedit' => 'Це автоматично оновлювана сторінка з перекладом.
 Ви можете [$1 відредагувати початкову сторінку] або [$2 оновити переклад].',
 	'translations' => 'Всі переклади',
+	'translate-language-code' => 'Код мови',
+	'translate-language-code-field-name' => 'Код мови:',
+	'translate-suppress-complete' => 'Приховати повністю перекладені групи повідомлень',
 	'translate-language' => 'Мова',
 	'translate-total' => 'Повідомлення',
-	'translate-untranslated' => 'Непереведені',
+	'translate-untranslated' => 'Неперекладені',
 );
 
 /** Vèneto (Vèneto)
