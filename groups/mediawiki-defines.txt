@@ -396,6 +396,8 @@ Interwiki List
 Invitations
 ignored = invitations-uninvitedlist-item
 
+JS Kit
+
 Labeled Section Transclusion
 file = LabeledSectionTransclusion/lst.i18n.php
 descmsg = lst-desc
