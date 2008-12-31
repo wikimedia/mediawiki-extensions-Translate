@@ -71,7 +71,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 				"</td>
 				<td class='mw-input'>" .
 					Xml::input( 'code', 30, str_replace('_',' ',$code), array( 'id' => 'code' ) ) .
-				"</td></tr><tr><td colspan='2'>'" .
+				"</td></tr><tr><td colspan='2'>" .
 				Xml::checkLabel( wfMsg( 'translate-suppress-complete' ), 'suppresscomplete', 'suppresscomplete', $suppressComplete ) .
 				"</td>" .
 			"</tr>" .
