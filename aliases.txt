@@ -136,9 +136,6 @@ file = ImportUsers/SpecialImportUsers.alias.php
 Inspect cache
 file = InspectCache/InspectCache.alias.php
 
-Interwiki
-file = Interwiki/SpecialInterwiki.alias.php
-
 Interwiki list
 file = InterwikiList/InterwikiList.alias.php
 
