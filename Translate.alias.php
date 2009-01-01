@@ -34,6 +34,8 @@ $aliases['ar'] = array(
 	'Magic' => array( 'ترجمة_متقدمة', 'ماجيك' ),
 	'TranslationChanges' => array( 'تغييرات_الترجمة' ),
 	'TranslationStats' => array( 'إحصاءات_الترجمة' ),
+	'Translations' => array( 'ترجمات' ),
+	'LanguageStats' => array( 'إحصاءات_اللغات' ),
 );
 
 /** Egyptian Spoken Arabic (مصرى)
