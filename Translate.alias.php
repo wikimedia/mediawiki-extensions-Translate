@@ -46,6 +46,8 @@ $aliases['arz'] = array(
 	'Magic' => array( 'ترجمة_متقدمة', 'ماجيك' ),
 	'TranslationChanges' => array( 'تغييرات_الترجمة' ),
 	'TranslationStats' => array( 'إحصاءات_الترجمة' ),
+	'Translations' => array( 'ترجمات' ),
+	'LanguageStats' => array( 'إحصاءات_اللغات' ),
 );
 
 /** Assamese (অসমীয়া) */
@@ -204,11 +206,16 @@ $aliases['id'] = array(
 /** Japanese (日本語) */
 $aliases['ja'] = array(
 	'Translate' => array( '翻訳' ),
-	'Magic' => array( '上級翻訳' ),
+	'Magic' => array( '高度な翻訳' ),
 	'TranslationChanges' => array( '翻訳変更' ),
 	'TranslationStats' => array( '翻訳統計' ),
 	'Translations' => array( '翻訳結果' ),
 	'LanguageStats' => array( '言語統計' ),
+);
+
+/** Georgian (ქართული) */
+$aliases['ka'] = array(
+	'Translate' => array( 'თარგმნა' ),
 );
 
 /** Khmer (ភាសាខ្មែរ) */
