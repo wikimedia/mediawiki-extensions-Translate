@@ -2486,6 +2486,7 @@ Los cambios no se salvan hasta que no pulses el boton de guardar de abajo.',
 
 /** Basque (Euskara)
  * @author An13sa
+ * @author Kobazulo
  * @author Theklan
  */
 $messages['eu'] = array(
@@ -2512,14 +2513,16 @@ $messages['eu'] = array(
 	'translate-submit' => 'Bilatu',
 	'translate-page-navigation-legend' => 'Nabigazioa',
 	'translate-page-showing' => '$1-tik $2-rako mezuak ikusgai $3-tik.',
-	'translate-page-showing-all' => ' $1 {{PLURAL:$1|mezu|mezu}} erakusten.',
+	'translate-page-showing-all' => '{{PLURAL:$1|Mezu $1|$1 mezu}} erakusten.',
 	'translate-page-showing-none' => 'Ez dago mezurik erakusteko.',
 	'translate-next' => 'Hurrengo orria',
 	'translate-prev' => 'Aurreko orria',
 	'translate-page-description-legend' => 'Taldeari buruzko informazioa',
 	'translate-page-edit' => 'aldatu',
 	'translate-optional' => '(hautazkoa)',
+	'translate-edit-definition' => 'Mezuaren definizioa',
 	'translate-edit-contribute' => 'lagundu',
+	'translate-edit-information' => 'Mezu honi ($1) buruzko informazioa',
 	'translate-edit-in-other-languages' => 'Mezua beste hizkuntzetan',
 	'translate-edit-goto-no-prev' => 'Ez dago aurreko mezurik',
 	'translate-edit-goto-no-next' => 'Ez dago hurrengo mezurik',
@@ -2532,6 +2535,7 @@ $messages['eu'] = array(
 	'translate-magic-cm-current' => 'Oraingoa',
 	'translate-magic-cm-original' => 'Jatorrizkoa',
 	'translate-magic-cm-save' => 'Gorde',
+	'translate-magic-words' => 'Hitz magikoak',
 	'translationchanges' => 'Itzulpenaren aldaketak',
 	'translationchanges-export' => 'esportatu',
 	'translate-rc-translation-filter-no' => 'Ezer ez egin',
@@ -2560,6 +2564,7 @@ $messages['eu'] = array(
 	'translate-language-code-field-name' => 'Hizkuntza kodea:',
 	'translate-language' => 'Hizkuntza',
 	'translate-total' => 'Mezuak',
+	'translate-untranslated' => 'Itzuli gabe',
 	'translate-percentage-complete' => 'Bukatzea',
 );
 
@@ -4779,8 +4784,14 @@ $messages['ka'] = array(
 	'translate-edit' => 'რედაქტირება',
 	'translate-talk' => 'განხილვა',
 	'translate-history' => 'ისტორია',
+	'translate-page-task' => 'მე მინდა',
 	'translate-page-group' => 'ჯგუფი',
 	'translate-page-language' => 'ენა',
+	'translate-page-edit' => 'რედაქტირება',
+	'translate-stats-users' => 'მთარგმნელები',
+	'translate-sidebar-alltrans' => 'სხვა თარგმანები',
+	'languagestats' => 'ენის სტატისტიკა',
+	'translate-language' => 'ენა',
 );
 
 /** Kara-Kalpak (Qaraqalpaqsha)
@@ -6863,11 +6874,11 @@ $messages['oc'] = array(
 	'translate-edit-goto-next' => 'Editar lo messatge seguent',
 	'translate-edit-goto-list' => 'Retorn a la tièra',
 	'translate-magic-pagename' => 'Traduccion de MediaWiki espandida',
-	'translate-magic-help' => "Podètz traduire los aliases de paginas especialas, los mots magics, los noms de skins e los noms d'espacis de noms.
+	'translate-magic-help' => "Podètz traduire los aliases de paginas especialas, los mots magics, e los noms d'espacis de noms.
 
 Los aliases de paginas especialas e los mots magics pòdon aver mantuna traduccion.
 Las traduccions son separadas per una virgula (,).
-Los noms de skins e d'espacis de noms pòdon pas aver qu'una traduccion.
+Los espacis de noms pòdon pas aver qu'una traduccion.
 
 Dins las traduccions d'espacis de noms, <tt>$1 talk</tt> es especial. <tt>$1</tt> es remplaçat pel nom del sit (per exemple <tt>{{SITENAME}} talk</tt>).
 S4es pas possible d'obténer una expression valida dins vòstra lenga sens cambiar lo nom del sit, contactatz un desvolopaire.
@@ -9075,6 +9086,7 @@ $messages['yi'] = array(
 	'translate-history' => 'היסטאריע',
 	'translate-task-view' => 'ווײַז אלע מעלדונגען פֿון',
 	'translate-task-untranslated' => 'ווײַז אלע נישט פֿארטײַטשטע מעלדונגען פֿון',
+	'translate-page-no-such-group' => 'ספעציפֿירטע גרופע נישט גילטיק.',
 	'translate-page-task' => 'איך וויל',
 	'translate-page-group' => 'גרופע',
 	'translate-page-language' => 'שפראך',
@@ -9083,6 +9095,7 @@ $messages['yi'] = array(
 	'translate-page-navigation-legend' => 'נאוויגאציע',
 	'translate-page-showing' => 'ווײַזן מעלדונגען $1 ביז $2 פֿון $3.',
 	'translate-page-showing-all' => 'ווײַזן $1 {{PLURAL:$1|מעלדונג|מעלדונגען}}.',
+	'translate-page-showing-none' => 'נישטא קיין מעלדונגען צו ווײַזן.',
 	'translate-next' => 'קומענדיגער בלאט',
 	'translate-prev' => 'פֿריערדיגער בלאט',
 	'translate-page-description-legend' => 'אינפֿארמאציע וועגן דער גרופע',
@@ -9098,13 +9111,32 @@ $messages['yi'] = array(
 	'translate-edit-goto-next' => 'רעדאקטירן די קומענדיגע מעלדונג',
 	'translate-edit-goto-list' => 'צוריק צו דער ליסטע',
 	'translate-magic-submit' => 'ווייזן',
+	'translate-magic-cm-export' => 'עקספארט',
 	'translate-magic-cm-comment' => 'הערה:',
 	'translate-magic-cm-save' => 'אויפֿהיטן',
 	'translate-magic-cm-updatedusing' => 'דערהײַנטיגט מיט [[Special:Magic]]',
 	'translationchanges-export' => 'עקספארט',
+	'translationstats' => 'פֿארטײַטשן סטאטיסטיק',
+	'translate-statsf-scale-days' => 'טעג',
+	'translate-statsf-scale-hours' => "שעה'ן",
+	'translate-statsf-count-edits' => 'צאל רעדאקטירונגען',
+	'translate-tag-page-desc' => 'אפטײַטש פֿונעם וויקי בלאַט [[:$1]].',
+	'translate-tag-translate-link-desc' => 'פֿארטײַטשט דעם בלאט',
+	'translate-tag-legend-fallback' => 'אפטײַטש אין אן אנדער שפראך',
+	'translate-tag-legend-fuzzy' => 'פֿארעלטערטער אפטײַטש',
+	'translate-sidebar-alltrans' => 'אנדערע אפטײַטשן',
+	'translations' => 'אלע אפטײַטשן',
+	'translate-translations-fieldset-title' => 'אלע אפטײַטשן',
+	'translate-translations-messagename' => 'מעלדונג:',
+	'languagestats' => 'שפראַך סטאַטיסטיק',
+	'languagestats-summary' => 'דער דאזיגער בלאַט ווײַזט פֿאַרטײַטשן סטאַטיסטיק פֿאַר אַלע ([[MediaWiki:Translate-languagestats-groups|קאנפֿיגורירטע]]) מעלדונג גרופעס פֿאַר א שפראַך.',
 	'translate-language-code' => 'שפראך קאד',
 	'translate-language-code-field-name' => 'שפראך קאד:',
 	'translate-language' => 'שפראך',
+	'translate-total' => 'מעלדונגען',
+	'translate-untranslated' => 'נישט פֿאַרטײַטשט',
+	'translate-percentage-complete' => 'פֿאַרענדיקונג',
+	'translate-percentage-fuzzy' => 'פֿאַרעלטערט',
 );
 
 /** Yue (粵語)
