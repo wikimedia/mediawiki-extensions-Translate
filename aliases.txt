@@ -205,6 +205,9 @@ file = RandomInCategory/SpecialRandomincategory.alias.php
 Record admin
 file = RecordAdmin/RecordAdmin.alias.php
 
+Regex Block
+file = regexBlock/regexBlock.alias.php
+
 Refresh special
 file = RefreshSpecial/RefreshSpecial.alias.php
 
