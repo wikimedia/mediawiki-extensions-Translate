@@ -175,6 +175,9 @@ file = NssMySQLAuth/NssMySQLAuth.alias.php
 Nuke
 file = Nuke/SpecialNuke.alias.php
 
+OpenID
+file = OpenID/OpenID.alias.php
+
 Oversight
 file = Oversight/HideRevision.alias.php
 
