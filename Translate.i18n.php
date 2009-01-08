@@ -2357,7 +2357,9 @@ Vi povas [$1 redakti la fontpaĝon] aŭ [$2 ĝisdatigi la tradukon].',
 );
 
 /** Spanish (Español)
+ * @author Crazymadlover
  * @author Imre
+ * @author Kobazulo
  * @author Lin linao
  * @author Sanbec
  */
@@ -2413,15 +2415,15 @@ $messages['es'] = array(
 	'translate-edit-goto-next' => 'Editar el mensaje posterior',
 	'translate-edit-goto-list' => 'Volver a la lista',
 	'translate-magic-pagename' => 'Traducción extendida de MediaWiki',
-	'translate-magic-help' => 'Puedes traducir los nombres de las páginas especiales, las palabras mágicas, los nombres de pieles y los de los espacios de nombre
+	'translate-magic-help' => 'Puedes traducir los nombres de las páginas especiales, las palabras mágicas, y los de los espacios de nombre
 
 Los nombres de las páginas especiales y las palabras mágicas pueden tener varias traducciones, que se separan por comas (,).
-los nombres de pieles y espacios de nombre sólo pueden tener una traducción
+los nombres de espacios de nombre sólo pueden tener una traducción
 
 En las traducciones de espacios de nombre <tt>$1 talk</tt> es especial. <tt>$1</tt> se reemplaza por el nombre del sitio (por ejemplo <tt>{{SITENAME}} talk</tt>). Si en tu idioma no es posible formar una expresión válidad sin cambiar el nombre del sitio, contacta con un desarrollador, por favor.
 
 Para guardar los cambios debes pertenecer al grupo de traductores
-Los cambios no se salvan hasta que no pulses el boton de guardar de abajo.',
+Los cambios no se graban hasta que no pulses el boton de guardar de abajo.',
 	'translate-magic-module' => 'Módulo:',
 	'translate-magic-submit' => 'Buscar',
 	'translate-magic-cm-export' => 'Exportar',
@@ -2465,6 +2467,7 @@ Los cambios no se salvan hasta que no pulses el boton de guardar de abajo.',
 	'translate-statsf-group' => 'Lista de códigos de grupo separados por comas',
 	'translate-statsf-submit' => 'Vista previa',
 	'translate-tag-translate-link-desc' => 'Traducir esta página',
+	'translate-tag-legend' => 'Leyenda:',
 	'translate-tag-legend-fallback' => 'Traducción en otro idioma',
 	'translate-tag-legend-fuzzy' => 'Traducción desactualizada',
 	'translate-sidebar-alltrans' => 'Otras traducciones',
@@ -2534,6 +2537,7 @@ $messages['eu'] = array(
 	'translate-magic-cm-export' => 'Espotatu',
 	'translate-magic-cm-current' => 'Oraingoa',
 	'translate-magic-cm-original' => 'Jatorrizkoa',
+	'translate-magic-cm-comment' => 'Iruzkina:',
 	'translate-magic-cm-save' => 'Gorde',
 	'translate-magic-words' => 'Hitz magikoak',
 	'translationchanges' => 'Itzulpenaren aldaketak',
@@ -2554,18 +2558,25 @@ $messages['eu'] = array(
 	'translate-statsf-submit' => 'Aurreikuspena',
 	'translate-tag-category' => 'Orri itzulgarriak',
 	'translate-tag-translate-link-desc' => 'Itzuli orri hau',
+	'translate-tag-legend' => 'Legenda:',
 	'translate-tag-legend-fallback' => 'Itzulpena beste hizkuntzetan',
+	'translate-tag-legend-fuzzy' => 'Itzulpen zaharkitua',
 	'translate-sidebar-alltrans' => 'Beste itzulpenak',
 	'translations' => 'Itzulpen guztiak',
+	'translate-translations-no-message' => '"$1" itzulezina den mezua da. (ezin da euskaratu)',
+	'translate-translations-none' => '"$1"-ek ez du itzulpenik',
 	'translate-translations-fieldset-title' => 'Itzulpen guztiak',
 	'translate-translations-messagename' => 'Mezu:',
 	'languagestats' => 'Hizkuntza estatistikak',
+	'languagestats-summary' => 'Orrialde honetan hizkuntza baten ([[MediaWiki:Translate-languagestats-groups|konfiguratutako]]) mezu-taldeen estatistikak ikus daitezke.',
 	'translate-language-code' => 'Hizkuntza kodea',
 	'translate-language-code-field-name' => 'Hizkuntza kodea:',
+	'translate-suppress-complete' => 'Guztiz itzulitako mezu-taldeak bistatik kendu',
 	'translate-language' => 'Hizkuntza',
 	'translate-total' => 'Mezuak',
 	'translate-untranslated' => 'Itzuli gabe',
-	'translate-percentage-complete' => 'Bukatzea',
+	'translate-percentage-complete' => 'Bukatuak',
+	'translate-percentage-fuzzy' => 'Zaharkituak',
 );
 
 /** Extremaduran (Estremeñu)
@@ -4781,17 +4792,44 @@ Panjenengan bisa [$1 nyunting sumber kaca] utawa [$2 mutakiraké terjemahan].',
  * @author Sopho
  */
 $messages['ka'] = array(
+	'translate' => 'თარგმნა',
 	'translate-edit' => 'რედაქტირება',
 	'translate-talk' => 'განხილვა',
 	'translate-history' => 'ისტორია',
 	'translate-page-task' => 'მე მინდა',
 	'translate-page-group' => 'ჯგუფი',
 	'translate-page-language' => 'ენა',
+	'translate-next' => 'შემდეგი გვერდი',
+	'translate-prev' => 'წინა გვერდი',
+	'translate-page-description-legend' => 'ინფორმაცია ჯგუფის შესახებ',
 	'translate-page-edit' => 'რედაქტირება',
+	'translate-edit-in-other-languages' => 'შეტყობინება სხვა ენებზე',
+	'translate-edit-goto-prev' => 'წინა შეტყობინების რედაქტირება',
+	'translate-edit-goto-next' => 'შემდეგი შეტყობინების რედაქტირება',
+	'translate-edit-goto-list' => 'სიაზე დაბრუნება',
+	'translate-magic-module' => 'მოდული:',
+	'translate-magic-cm-comment' => 'კომენტარი:',
+	'translate-magic-cm-save' => 'შენახვა',
+	'translate-magic-words' => 'მაგიური სიტყვები',
+	'translate-rc-translation-filter-only' => 'აჩვენე მხოლოდ თარგმანები',
+	'translationstats' => 'თარგმანის სტატისტიკა',
 	'translate-stats-users' => 'მთარგმნელები',
+	'translate-statsf-scale-days' => 'დღეები',
+	'translate-statsf-scale-hours' => 'საათები',
+	'translate-statsf-count-users' => 'აქტიური მთარგმნელები',
+	'translate-statsf-submit' => 'წინასწარი გადახედვა',
+	'translate-tag-legend-fallback' => 'თარგმანი სხვა ენაზე',
 	'translate-sidebar-alltrans' => 'სხვა თარგმანები',
+	'translations' => 'ყველა თარგმანი',
+	'translate-translations-no-message' => 'შეტყობინება "$1" არ ითარგმნება',
+	'translate-translations-fieldset-title' => 'ყველა თარგმანი',
+	'translate-translations-messagename' => 'შეტყობინება:',
 	'languagestats' => 'ენის სტატისტიკა',
+	'translate-language-code' => 'ენის კოდი',
+	'translate-language-code-field-name' => 'ენის კოდი:',
+	'translate-suppress-complete' => 'გამოტოვე მთლიანად თარგმნილი შეტყობინებათა ჯგუფები',
 	'translate-language' => 'ენა',
+	'translate-total' => 'შეტყობინებები',
 );
 
 /** Kara-Kalpak (Qaraqalpaqsha)
@@ -7360,7 +7398,7 @@ Você pode [$1 editar a página de origem] ou [$2 actualizar a tradução].',
 	'languagestats-summary' => 'Esta página mostra estatísticas de tradução para todos os grupos de mensagens ([[MediaWiki:Translate-languagestats-groups|configurados]]) para uma língua.',
 	'translate-language-code' => 'Código de língua',
 	'translate-language-code-field-name' => 'Código de língua:',
-	'translate-suppress-complete' => 'Ocultar grupos de mensagens completamente traduzidos',
+	'translate-suppress-complete' => 'Suprimir grupos de mensagens completamente traduzidos',
 	'translate-language' => 'Língua',
 	'translate-total' => 'Mensagens (total)',
 	'translate-untranslated' => 'Não traduzidas',
@@ -9026,12 +9064,15 @@ $messages['vo'] = array(
 	'translate-edit-information' => 'Plän nuna at ($1)',
 	'translate-edit-in-other-languages' => 'Nun in püks votik',
 	'translate-edit-warnings' => 'Nüneds tefü tradutods no lölöfiks',
+	'translate-magic-cm-export' => 'Seveigön',
 	'translate-magic-cm-to-be' => 'Ovedon',
 	'translate-magic-cm-original' => 'Rigik',
+	'translate-magic-cm-comment' => 'Küpet:',
 	'translate-magic-cm-save' => 'Dakipön',
 	'translate-magic-cm-savefailed' => 'Dakip no eplöpon',
 	'translate-magic-words' => 'Vöds magivik',
 	'translate-magic-namespace' => 'Nems nemaspadas',
+	'translationchanges-export' => 'seveigön',
 	'translationchanges-change' => '$1: $2 fa $3',
 	'translate-checks-parameters' => '{{PLURAL:$2|Paramet|Paramets}} sököl no {{PLURAL:$2|pagebon|pagebons}}:
 <strong><nowiki>$1</nowiki></strong>',
@@ -9039,12 +9080,37 @@ $messages['vo'] = array(
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '{{PLURAL:$2|Yüm|Yüms}} sököl {{PLURAL:$2|binon säkädik|binons säkädiks}}:
 <strong><nowiki>$1</nowiki></strong>',
+	'translate-rc-translation-filter-no' => 'Dunön nosi',
+	'translate-rc-translation-filter-only' => 'Jonön te tradutodis',
+	'translationstats' => 'Tradutamastatits',
 	'translate-stats-edits' => 'Redakams',
 	'translate-stats-users' => 'Tradutans',
+	'translate-statsf-width' => 'Vidot (pixels)',
+	'translate-statsf-height' => 'Geilot (pixels)',
 	'translate-statsf-scale-days' => 'Dels',
 	'translate-statsf-scale-hours' => 'Düps',
+	'translate-statsf-count-edits' => 'Num redakamas',
+	'translate-statsf-count-users' => 'Tradutans jäfedik',
+	'translate-statsf-submit' => 'Büologed',
+	'translate-tag-category' => 'Pads tradutovik',
+	'translate-tag-page-desc' => 'Tradutod vükapada: [[:$1]].',
+	'translate-tag-translate-link-desc' => 'Tradutön padi at',
 	'translate-tag-legend-fallback' => 'Tradutod in pük votik',
 	'translate-sidebar-alltrans' => 'Tradutods votik',
+	'translations' => 'Tradutods valik',
+	'translations-summary' => 'Penolös dono nunanemi ad logön tradutodis gebidik valik.',
+	'translate-translations-no-message' => '„$1“ no binon nun tradutovik',
+	'translate-translations-none' => 'No dabinons tradutods pro „$1“',
+	'translate-translations-fieldset-title' => 'Tradutods valik',
+	'translate-translations-messagename' => 'Nun:',
+	'translate-translations-including-no-param' => 'Penolös padanemi lonöföl lä paramet: donapad',
+	'languagestats' => 'Pükastatits',
+	'translate-language-code' => 'Pükakot',
+	'translate-language-code-field-name' => 'Pükakot:',
+	'translate-language' => 'Pük',
+	'translate-total' => 'Nuns',
+	'translate-untranslated' => 'No petradutöl',
+	'translate-percentage-complete' => 'Lölöfükam',
 );
 
 /** Walloon (Walon)
