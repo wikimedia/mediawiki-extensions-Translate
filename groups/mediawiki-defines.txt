@@ -590,6 +590,9 @@ descmsg = random-users-avatars-desc
 
 Record Admin
 
+Redirect
+ignored = redirect-addnewaccount, redirect-userlogincomplete, redirect-userlogoutcomplete
+
 Refresh Special
 
 Regex Block
