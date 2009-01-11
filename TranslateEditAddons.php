@@ -20,8 +20,11 @@ class TranslateEditAddons {
 		if ( $group === null ) return true;
 
 		$defs = $group->getDefinitions();
+		$skip = array_merge( $group->getIgnored(), $group->getOptional() );
+
 		$next = $prev = $def = null;
 		foreach ( array_keys( $defs ) as $tkey ) {
+			if ( in_array( $tkey, $skip ) ) continue;
 			// Keys can have mixed case, but they have to be unique in a case
 			// insensitive manner. It is therefore safe and a must to use case
 			// insensitive comparison method
