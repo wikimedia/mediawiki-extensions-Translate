@@ -3,6 +3,9 @@
 $optionsWithArgs = array( 'group', 'lang', 'start', 'end' );
 require( dirname( __FILE__ ) . '/cli.inc' );
 
+# Override the memory limit for wfShellExec, 100 MB seems to be too little for svn
+$wgMaxShellMemory = 1024 * 200;
+
 function showUsage() {
 	STDERR( <<<EOT
 Options:
