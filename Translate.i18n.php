@@ -122,6 +122,7 @@ Changes are not saved until you click save button below.',
 	'translate-checks-plural'             => 'Definition uses <nowiki>{{PLURAL:}}</nowiki> but translation does not.',
 	'translate-checks-pagename'           => 'Namespace changed from the definition',
 	'translate-checks-format'             => 'This translation does not follow the definition or has invalid syntax: $1',
+	'translate-checks-escape'             => 'The following escapes may be accidental: <strong>$1</strong>',
 
 	'tog-translate-nonewsletter' => 'Do not send me e-mail newsletters (relevant only for users with a confirmed e-mail address)',
 	'right-translate'            => 'Edit using the translate interface',

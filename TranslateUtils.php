@@ -29,6 +29,13 @@ class TranslateUtils {
 		return $cache[$message] . '/' . $code;
 	}
 
+	public static function figureMessage( $text ) {
+		$pos = strrpos( $text, '/' );
+		$code = substr( $text, $pos + 1 );
+		$key = substr( $text, 0, $pos );
+		return array( $key, $code );
+	}
+
 	/**
 	 * Fills the actual translation from database, if any.
 	 *

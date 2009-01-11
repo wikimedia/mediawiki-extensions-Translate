@@ -25,6 +25,7 @@ class MessageChecks {
 		'freecol' => array(
 			'checkFreeColMissingVars',
 			'checkFreeColExtraVars',
+			'checkFreeColEscapes',
 		),
 		'mantis' => array(
 			'checkPrintfMissingVars',
@@ -385,6 +386,19 @@ class MessageChecks {
 			$desc = array( 'translate-checks-parameters-unknown',
 				implode( ', ', $missing ),
 				$wgLang->formatNum( $count ) );
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	protected function checkFreeColEscapes( TMessage $message, $code, &$desc = null ) {
+		$varPattern = '\\\\[^nt\'"]';
+		preg_match_all( "/$varPattern/U", $message->translation, $transVars );
+
+		if ( $count = count( $transVars[0] ) ) {
+			$desc = array( 'translate-checks-escape',
+				'<tt><nowiki>' . implode( ', ', $transVars[0] ) . '</nowiki></tt>' );
 			return true;
 		} else {
 			return false;
