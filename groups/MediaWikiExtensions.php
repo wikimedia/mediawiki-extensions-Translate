@@ -324,58 +324,60 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $classes = null;
 
 	protected $wmfextensions = array(
-		'ext-inputbox', // used on all wikis by all users
-		'ext-wikimediamessages',
-		'ext-cite',
-		'ext-citespecial',
-		'ext-confirmedit',
-		'ext-confirmeditfancycaptcha',
-		'ext-categorytree',
-		'ext-dismissablesitenotice',
-		'ext-expandtemplates',
-		'ext-parserfunctions',
-		'ext-crossnamespacelinks',
-		'ext-ogghandler',
-		'ext-imagemap',
-		'ext-labeledsectiontransclusion',
-		'ext-mwsearch',
-		'ext-contributionreporting', // temporary for fundraiser
-		'ext-contributiontracking', // temporary for fundraiser
-		'ext-sitematrix',
-		'ext-gadgets',
-		'ext-centralauth',
-		'ext-collection', // wikibooks
-		'ext-charinsert', // limited UI use (Special:Version and errors in usage mostly)
-		'ext-syntaxhighlightgeshi',
-		'ext-timeline',
-		'ext-wikihiero',
-		'ext-oai',
-		'ext-newusermessage',
-		'ext-doublewiki',
-		'ext-intersection',
-		'ext-proofreadpage',
-		'ext-quiz',
-		'ext-scanset',
-		'ext-skinperpage',
-		'ext-trustedxff',
 		'ext-antibot',  // anti spam and such (usually all wikis)
 		'ext-antispoof',
+		'ext-assertedit', // bots
+		'ext-boardvote', // used rarely
+		'ext-categorytree',
+		'ext-centralauth',
+		'ext-centralnotice', // used rarely
+		'ext-charinsert',
+		'ext-checkuser',
+		'ext-cite',
+		'ext-citespecial',
+		'ext-codereview', // MediaWiki.org
+		'ext-collection', // Wikibooks
+		'ext-confirmedit',
+		'ext-confirmeditfancycaptcha',
+		'ext-contributionreporting', // temporary for fundraiser
+		'ext-contributiontracking', // temporary for fundraiser
+		'ext-crossnamespacelinks',
+		'ext-dismissablesitenotice',
+		'ext-doublewiki', // Wikisource
+		'ext-drafts', // Betatest on test.wikipedia.org
+		'ext-expandtemplates',
+		'ext-extensiondistributor', // MediaWiki.org
+		'ext-gadgets',
+		'ext-globalblocking',
+		'ext-imagemap',
+		'ext-inputbox',
+		'ext-intersection',
+		'ext-labeledsectiontransclusion', // Wikisource
+		'ext-mwsearch',
+		'ext-newusermessage',
+		'ext-nuke',
+		'ext-oai',
+		'ext-ogghandler',
 		'ext-opensearchxml',
-		'ext-spamblacklist',
+		'ext-oversight',
+		'ext-parserfunctions',
+		'ext-proofreadpage', // Wikisource
+		'ext-quiz',
+		'ext-renameuser',
 		'ext-simpleantispam',
+		'ext-sitematrix',
+		'ext-scanset',
+		'ext-skinperpage', // Wikimediafoundation.org
+		'ext-spamblacklist',
+		'ext-syntaxhighlightgeshi',
+		'ext-timeline',
 		'ext-titleblacklist',
 		'ext-titlekey',
 		'ext-torblock',
+		'ext-trustedxff',
 		'ext-usernameblacklist',
-		'ext-checkuser', // sysop or higher only
-		'ext-globalblocking',
-		'ext-nuke',
-		'ext-oversight',
-		'ext-renameuser',
-		'ext-assertedit', // bots
-		'ext-centralnotice', // used rarely
-		'ext-codereview', // only on mediawiki.org
-		'ext-boardvote', // used rarely
+		'ext-wikihiero',
+		'ext-wikimediamessages',
 	);
 
 	protected function init() {
