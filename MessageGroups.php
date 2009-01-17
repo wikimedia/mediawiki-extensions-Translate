@@ -639,7 +639,7 @@ class MessageGroups {
 		}
 
 		global $wgTranslateCategory, $wgTranslateCC;
-		wfLoadExtensionMessages( 'Translate' );
+/*		wfLoadExtensionMessages( 'Translate' );
 		$cat = Category::newFromName( wfMsgForContent( 'translate-tag-category' ) );
 		$titles = $cat->getMembers();
 		foreach ( $titles as $t ) {
@@ -649,7 +649,7 @@ class MessageGroups {
 			$wgTranslateCC[$id]->setLabel( $title );
 			$wgTranslateCC[$id]->setDescription( wfMsgNoTrans( 'translate-tag-page-desc', $title ) );
 
-		}
+		}*/
 
 		global $wgTranslateCC;
 		wfRunHooks( 'TranslatePostInitGroups', array( &$wgTranslateCC ) );
