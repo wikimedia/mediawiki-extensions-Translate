@@ -354,7 +354,7 @@ Google Analytics
 file = googleAnalytics/googleAnalytics.i18n.php
 
 Google Maps
-desc = Easily create maps with wiki-fied markers
+descmsg = gm-desc
 var = wgGoogleMapsMessages
 
 Go To Category
