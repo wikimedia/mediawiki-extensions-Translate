@@ -22,8 +22,10 @@ class GettextFormatReader extends SimpleFormatReader {
 			return '';
 		}
 		$data = file_get_contents( $this->filename );
-		$length = strpos( $data, "msgid" );
-		return substr( $data, 0, $length );
+		$start = (int) strpos( $data, '# --');
+		if ( $start ) $start += 5;
+		$end = (int) strpos( $data, "msgid" );
+		return substr( $data, $start, $end-$start );
 	}
 
 	public function parseFile() {
