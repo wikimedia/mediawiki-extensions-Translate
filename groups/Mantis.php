@@ -46,9 +46,11 @@ class MantisMessageGroup extends MessageGroup {
 		'sl' => 'slovene',
 		'sr-ec' => 'serbian',
 		'sv' => 'swedish',
+		'tl' => 'tagalog',
 		'tr' => 'turkish',
 		'uk' => 'ukrainian',
 		'ur' => 'urdu',
+		'vo' => 'volapuk',
 		'zh-hans' => 'chinese_simplified',
 		'zh-hant' => 'chinese_traditional',
 	);
@@ -56,6 +58,7 @@ class MantisMessageGroup extends MessageGroup {
 	protected $optional = array(
 		's_sponsorship_process_url', 's_charset', 's_p',
 		's_priority_abbreviation', 's_attachment_alt', 's_phpmailer_language',
+		's_word_separator',
 	);
 
 	public function getMessageFile( $code ) {
