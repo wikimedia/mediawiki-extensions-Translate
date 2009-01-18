@@ -264,6 +264,7 @@ These messages will not be submitted to svn, but will only affect the interface 
 	'translate-language-code-field-name' => 'Used in [[Special:LanguageStats]].',
 	'translate-suppress-complete' => 'Used in [[Special:LanguageStats]].',
 	'translate-language' => '{{Identical|Language}}',
+	'translate-untranslated' => 'Column header in [[Special:LanguageStats]] for number of untranslated messages in a message group.',
 	'translate-percentage-complete' => 'Used in [[Special:LanguageStats]].',
 	'translate-percentage-fuzzy' => 'Used in [[Special:LanguageStats]].',
 );
@@ -2953,7 +2954,7 @@ Voit [$1 muokata lähdesivua] tai [$2 päivittää käännöksen].',
 	'translate-suppress-complete' => 'Älä näytä kokonaan käännettyjä viestiryhmiä',
 	'translate-language' => 'Kieli',
 	'translate-total' => 'Viestit',
-	'translate-untranslated' => 'Kääntämätön',
+	'translate-untranslated' => 'Kääntämättömiä',
 	'translate-percentage-complete' => 'Käännösten kattavuus',
 	'translate-percentage-fuzzy' => 'Vanhentunut',
 );
@@ -3418,13 +3419,6 @@ Pode [$1 editar a páxina coa fonte] ou [$2 actualizar a tradución].',
 	'translate-untranslated' => 'Sen traducir',
 	'translate-percentage-complete' => 'Completadas',
 	'translate-percentage-fuzzy' => 'Anticuadas',
-);
-
-/** Gothic
- * @author Jocke Pirat
- */
-$messages['got'] = array(
-	'translate-edit' => 'máidjan',
 );
 
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
@@ -5829,6 +5823,7 @@ Dir musst am Grupp vun den Iwwersetzer si fir Ännerungen ofspäicheren ze kënn
 	'translate-checks-plural' => "D'Definitioun benotzt <nowiki>{{PLURAL:}}</nowiki> awer d'Iwwersetzung mécht dat net.",
 	'translate-checks-pagename' => "Nummraum geännert duerch d'Definitioun",
 	'translate-checks-format' => 'Dës Iwwersetzung translation entsprecht net der Definitioun oder huet eng Syntax déi net gëlteg ass: $1',
+	'translate-checks-escape' => 'Dës Escape-Sequenzen kënnen ongewollt sinn: <strong>$1</strong>',
 	'tog-translate-nonewsletter' => 'Schéckt mir keng E-Mail-Newsletter. (nëmme relevant fir Benotzer mat enger confirméierter e-Mailadress)',
 	'right-translate' => 'Mat dem Iwwersetzungs Tool änneren',
 	'translate-rc-translation-filter' => 'Iwwersetzunge filteren:',
@@ -7156,6 +7151,7 @@ $messages['or'] = array(
 $messages['os'] = array(
 	'translate-edit' => 'баив æй',
 	'translate-history' => 'истори',
+	'translate-page-group' => 'Къорд',
 	'translate-page-language' => 'Æвзаг',
 	'translate-page-edit' => 'баив æй',
 	'translate-magic-cm-current' => 'Нырыккон',
