@@ -96,7 +96,7 @@ foreach ( $rows as $row ) {
 	if ( strpos( $row->rc_title, '/' ) !== false ) {
 		$code = $row->lang;
 	}
-	if ( $group && in_array( $group, $groupsFilter ) ) {
+	if ( $group && ( !count($groupsFilter) || in_array( $group, $groupsFilter ) ) ) {
 		if ( $code && !in_array( $code, $skip ) ) {
 			$exports[$group][$code] = true;
 		}
