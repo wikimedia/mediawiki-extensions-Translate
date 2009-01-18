@@ -96,7 +96,10 @@ $aliases['da'] = array(
 $aliases['de'] = array(
 	'Translate' => array( 'Übersetzen' ),
 	'Magic' => array( 'Erweitertes Übersetzen' ),
+	'TranslationChanges' => array( 'Übersetzungsänderungen' ),
 	'TranslationStats' => array( 'Übersetzungsstatistik' ),
+	'Translations' => array( 'Übersetzungen' ),
+	'LanguageStats' => array( 'Sprachstatistiken' ),
 );
 
 /** Lower Sorbian (Dolnoserbski) */
@@ -144,6 +147,8 @@ $aliases['gl'] = array(
 	'Magic' => array( 'Tradución avanzada' ),
 	'TranslationChanges' => array( 'Cambios na tradución' ),
 	'TranslationStats' => array( 'Estatísticas da tradución' ),
+	'Translations' => array( 'Traducións' ),
+	'LanguageStats' => array( 'Estatísticas da lingua' ),
 );
 
 /** Swiss German (Alemannisch) */
@@ -234,6 +239,8 @@ $aliases['ksh'] = array(
 	'Magic' => array( 'Extras', 'Extras Översäze', 'ExtrasÖversäze' ),
 	'TranslationChanges' => array( 'Översaz', 'Översaz Änderonge', 'ÖversazÄnderonge' ),
 	'TranslationStats' => array( 'Statistik vun fun de Övversäzung', 'Övversäzungszahle', 'Statistik vun fun de Övversäzong', 'Övversäzongszahle' ),
+	'Translations' => array( 'Övversätzunge' ),
+	'LanguageStats' => array( 'Shtatistike_vu_de_Shprooche' ),
 );
 
 /** Luxembourgish (Lëtzebuergesch) */
@@ -343,6 +350,7 @@ $aliases['ps'] = array(
 	'Translate' => array( 'ژباړل' ),
 	'Magic' => array( 'پرمختللې ژباړه، کوډګريز' ),
 	'TranslationChanges' => array( 'دژباړې بدلونونه' ),
+	'Translations' => array( 'ژباړې', 'Translations' ),
 );
 
 /** Portuguese (Português) */
@@ -366,6 +374,16 @@ $aliases['ro'] = array(
 	'Translate' => array( 'Tradu' ),
 );
 
+/** Sanskrit (संस्कृत) */
+$aliases['sa'] = array(
+	'Translate' => array( 'भाषांतर' ),
+	'Magic' => array( 'प्रगतभाषांतरमाया' ),
+	'TranslationChanges' => array( 'भाषांतरपरिवर्त' ),
+	'TranslationStats' => array( 'भाषांतरसांख्यिकी' ),
+	'Translations' => array( 'भाषांतर' ),
+	'LanguageStats' => array( 'भाषासांख्यिकी' ),
+);
+
 /** Swedish (Svenska) */
 $aliases['sv'] = array(
 	'Translate' => array( 'Översätt' ),
@@ -387,6 +405,7 @@ $aliases['sw'] = array(
 $aliases['te'] = array(
 	'Translate' => array( 'అనువాదం' ),
 	'TranslationChanges' => array( 'అనువాదమార్పులు' ),
+	'Translations' => array( 'అనువాదాలు' ),
 );
 
 /** Thai (ไทย) */
