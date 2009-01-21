@@ -468,7 +468,9 @@ class AllSocialProfileExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $classes = null;
 
 	protected $socialprofileextensions = array(
+		'ext-socialprofile-systemgifts',
 		'ext-socialprofile-userboard',
+		'ext-socialprofile-usergifts',
 		'ext-socialprofile-userprofile',
 		'ext-socialprofile-userrelationship',
 		'ext-socialprofile-userstats',

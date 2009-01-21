@@ -670,9 +670,17 @@ descmsg = slippymap_desc
 Smooth Gallery
 ignored = smoothgallery-pagetext
 
+Social Profile - System Gifts
+id = ext-socialprofile-systemgifts
+file = SocialProfile/SystemGifts/SystemGift.i18n.php
+
 Social Profile - User Board
 id = ext-socialprofile-userboard
 file = SocialProfile/UserBoard/UserBoard.i18n.php
+
+Social Profile - User Gifts
+id = ext-socialprofile-usergifts
+file = SocialProfile/UserGifts/UserGifts.i18n.php
 
 Social Profile - User Profile
 id = ext-socialprofile-userprofile
