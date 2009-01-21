@@ -390,6 +390,8 @@ $aliases['sv'] = array(
 	'Magic' => array( 'Avancerad översättning' ),
 	'TranslationChanges' => array( 'Översättningsändringar' ),
 	'TranslationStats' => array( 'Översättningsstatistik' ),
+	'Translations' => array( 'Översättningar' ),
+	'LanguageStats' => array( 'Språkstatistik' ),
 );
 
 /** Swahili (Kiswahili) */
