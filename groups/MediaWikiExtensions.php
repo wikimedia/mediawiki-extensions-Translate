@@ -474,6 +474,7 @@ class AllSocialProfileExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-socialprofile-userprofile',
 		'ext-socialprofile-userrelationship',
 		'ext-socialprofile-userstats',
+		'ext-socialprofile-userwelcome',
 	);
 
 	protected function init() {

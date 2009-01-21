@@ -696,6 +696,10 @@ Social Profile - User Stats
 id = ext-socialprofile-userstats
 file = SocialProfile/UserStats/UserStats.i18n.php
 
+Social Profile - User Welcome
+id = ext-socialprofile-userwelcome
+file = SocialProfile/UserWelcome/UserWelcome.i18n.php
+
 Spam Blacklist
 descmsg = spam-blacklist-desc
 
@@ -853,8 +857,6 @@ Username Blacklist
 User Rights Notification
 id = ext-userrightsnotif
 file = UserRightsNotif/UserRightsNotif.i18n.php
-
-User Welcome
 
 Vote
 
