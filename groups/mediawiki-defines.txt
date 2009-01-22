@@ -589,6 +589,7 @@ Random Users With Avatars
 descmsg = random-users-avatars-desc
 
 Record Admin
+ignored = recordadmin-title
 
 Redirect
 ignored = redirect-addnewaccount, redirect-userlogincomplete, redirect-userlogoutcomplete
