@@ -825,6 +825,7 @@ Uniwiki - Generic Edit Page
 id = ext-uniwiki-genericeditpage
 file = uniwiki/GenericEditPage/GenericEditPage.i18n.php
 descmsg = gep-desc
+optional = gep-categorypage
 
 Uniwiki - Javascript
 id = ext-uniwiki-javascript
