@@ -384,6 +384,11 @@ $aliases['sa'] = array(
 	'LanguageStats' => array( 'भाषासांख्यिकी' ),
 );
 
+/** Albanian (Shqip) */
+$aliases['sq'] = array(
+	'Translate' => array( 'Përkthe' ),
+);
+
 /** Swedish (Svenska) */
 $aliases['sv'] = array(
 	'Translate' => array( 'Översätt' ),

@@ -4372,6 +4372,7 @@ Le modificationes non es immagazinate usque tu clicca super le button Publicar i
 	'translate-checks-plural' => 'Le definition usa <nowiki>{{PLURAL:}}</nowiki> sed non le traduction.',
 	'translate-checks-pagename' => 'Spatio de nomines cambiate ab le definition',
 	'translate-checks-format' => 'Iste traduction non seque le definition o ha un syntaxe invalide: $1',
+	'translate-checks-escape' => 'Le sequente escappamentos pote esser accidental: <strong>$1</strong>',
 	'tog-translate-nonewsletter' => 'Non inviar me bulletines in e-mail (concerne solmente usatores con un adresse de e-mail confirmate)',
 	'right-translate' => 'Modificar con le interfacie de traduction',
 	'translate-rc-translation-filter' => 'Filtrar traductiones:',
@@ -4889,7 +4890,7 @@ $messages['ja'] = array(
 	'translate-statsf-options' => 'グラフのオプション',
 	'translate-statsf-width' => 'ピクセル幅',
 	'translate-statsf-height' => 'ピクセル高',
-	'translate-statsf-days' => '時期（日数）',
+	'translate-statsf-days' => '時期 (日数)',
 	'translate-statsf-scale' => '粒度',
 	'translate-statsf-scale-days' => '日',
 	'translate-statsf-scale-hours' => '時間',
@@ -8135,9 +8136,33 @@ $messages['so'] = array(
 
 /** Albanian (Shqip)
  * @author Dori
+ * @author Puntori
  */
 $messages['sq'] = array(
 	'translate' => 'Përkthime',
+	'translate-edit' => 'redaktoni',
+	'translate-talk' => 'diskuto',
+	'translate-history' => 'historiku',
+	'translate-page-task' => 'Dua të',
+	'translate-page-group' => 'Grupi',
+	'translate-page-language' => 'Gjuha',
+	'translate-page-edit' => 'redakto',
+	'translate-edit-contribute' => 'kontribute',
+	'translate-magic-module' => 'Moduli:',
+	'translate-magic-cm-export' => 'Eksporto',
+	'translate-magic-cm-original' => 'Origjinali',
+	'translate-magic-cm-comment' => 'Komenti:',
+	'translate-magic-cm-save' => 'Ruaje',
+	'translate-magic-cm-savefailed' => 'Ruajtja dështoi',
+	'translate-stats-edits' => 'Redaktime',
+	'translate-stats-users' => 'Përkthyes',
+	'translate-statsf-width' => 'Gjerësia në piksel',
+	'translate-statsf-height' => 'Lartësia në piksel',
+	'translate-statsf-days' => 'Periudha kohore në ditë',
+	'translate-statsf-scale-days' => 'Ditë',
+	'translate-statsf-scale-hours' => 'Orë',
+	'translate-statsf-count-users' => 'Përkthyesit aktiv',
+	'translate-statsf-submit' => 'Parapamja',
 );
 
 /** Serbian Cyrillic ekavian (ћирилица)
