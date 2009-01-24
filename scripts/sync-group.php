@@ -103,7 +103,7 @@ class ChangeSyncer {
 	public function getTimestampsFromSvn( $file ) {
 		$file = escapeshellarg( $file );
 		$retval = 0;
-		$output = wfShellExec( "svn info $file", $retval );
+		$output = wfShellExec( "svn info $file 2>/dev/null", $retval );
 		if ( $retval ) return false;
 
 
