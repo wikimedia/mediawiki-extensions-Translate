@@ -46,6 +46,18 @@ class PremadeMediawikiExtensionGroups {
 						}
 						$newgroup[$key] = array_merge( $newgroup[$key], $values );
 						break;
+					case 'prefix':
+						list( $prefix, $messages ) = array_map( 'trim', explode( '|', $value, 2 ) );
+						if ( isset( $newgroup['prefix'] ) && $newgroup['prefix'] !== $prefix ) {
+							throw new MWException( "Only one prefix supported: {$newgroup['prefix']} !== $prefix" );
+						}
+						$newgroup['prefix'] = $prefix;
+
+						if ( !isset( $newgroup['mangle'] ) ) $newgroup['mangle'] = array();
+
+						$messages = array_map( 'trim', explode( ',', $messages ) );
+						$newgroup['mangle'] = array_merge( $newgroup['mangle'], $messages );
+						break;
 					default:
 						throw new MWException( "Unknown key:" . $key );
 					}
@@ -92,7 +104,7 @@ class PremadeMediawikiExtensionGroups {
 				'descmsg' => $descmsg,
 			);
 
-			$copyvars = array( 'ignored', 'optional', 'var', 'desc' );
+			$copyvars = array( 'ignored', 'optional', 'var', 'desc', 'prefix', 'mangle' );
 			foreach ( $copyvars as $var ) {
 				if ( isset( $g[$var] ) ) {
 					$newgroup[$var] = $g[$var];
@@ -139,6 +151,15 @@ class PremadeMediawikiExtensionGroups {
 		$info = $this->groups[$id];
 		$group = ExtensionMessageGroup::factory( $info['name'], $id );
 		$group->setMessageFile( $info['file'] );
+
+		if ( isset( $info['prefix'] ) ) {
+			$mangler = new StringMatcher( $info['prefix'], $info['mangle'] );
+			$group->setMangler( $mangler );
+			$info['ignored'] = $mangler->mangle( $info['ignored'] );
+			$info['optional'] = $mangler->mangle( $info['optional'] );
+		}
+
+
 		if ( !empty( $info['var'] ) ) $group->setVariableName( $info['var'] );
 		if ( !empty( $info['optional'] ) ) $group->setOptional( $info['optional'] );
 		if ( !empty( $info['ignored'] ) ) $group->setIgnored( $info['ignored'] );
@@ -147,6 +168,8 @@ class PremadeMediawikiExtensionGroups {
 		} else {
 			$group->setDescriptionMsg( $info['descmsg'] );
 		}
+			
+
 		$group->setType( 'mediawiki' );
 		return $group;
 	}

@@ -6,12 +6,12 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
  * @addtogroup Extensions
  *
  * @author Niklas Laxström
- * @copyright Copyright © 2006-2008, Niklas Laxström
+ * @copyright Copyright © 2006-2009, Niklas Laxström
  * @copyright Copyright © 2007-2008, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '9 (2009-01-11)' );
+define( 'TRANSLATE_VERSION', '2009-01-25' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name'           => 'Translate',
@@ -194,6 +194,8 @@ $wgTranslateTagTranslationLocation = array(
 	null, // Namespace is whatever the page is in
 	'$PAGE/translations/$KEY-$SNIPPET'
 );
+
+#$wgContentTranslation = true;
 
 if ( $wgDebugComments ) {
 	require_once( "$dir/utils/MemProfile.php" );
