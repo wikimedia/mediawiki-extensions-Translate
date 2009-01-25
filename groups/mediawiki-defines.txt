@@ -17,7 +17,7 @@ Ajax Show Editors
 descmsg = ajax-se-desc
 
 Amazon Plus
-optional = amazonplus-status, amazonplus-status-sep, amazonplus-currency
+optional = amazonplus-status, amazonplus-currency
 optional = amazonplus-cp-usd, amazonplus-cp-cad, amazonplus-cp-gbp, amazonplus-cp-eur
 optional = amazonplus-cp-jpy
 ignored = amazonplus-english
