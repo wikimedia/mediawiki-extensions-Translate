@@ -89,7 +89,7 @@ class SpecialTranslations extends SpecialAllpages {
 			</tr>
 			<tr>
 				<td class='mw-label'>" .
-					Xml::label( wfMsg( 'namespace' ), 'namespace' ) .
+					Xml::label( wfMsg( 'translate-translations-project' ), 'namespace' ) .
 				"</td>
 				<td class='mw-input'>" .
 					$namespaces->getHTML() . ' ' .

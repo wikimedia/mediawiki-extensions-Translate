@@ -174,9 +174,10 @@ You can [$1 edit the source page] or [$2 update the translation].',
 	'translations-summary' => 'Enter a message name below to show all available translations.',
 	'translate-translations-no-message' => '"$1" is not a translatable message',
 	'translate-translations-none' => 'There are no translations for "$1"',
-	'translate-translations-fieldset-title' => 'All translations',
-	'translate-translations-messagename' => 'Message:',
-	'translate-translations-including-no-param' => 'Please specify a valid page name in the subpage parameter',
+	'translate-translations-fieldset-title' => 'Message',
+	'translate-translations-messagename' => 'Name:',
+	'translate-translations-project' => 'Project',
+	'translate-translations-including-no-param' => 'Please specify a valid message key in the subpage parameter',
 
 	# Special:LanguageStats
 	'languagestats' => 'Language statistics',
