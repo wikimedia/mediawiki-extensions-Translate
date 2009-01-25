@@ -888,6 +888,7 @@ Wikimedia Messages
 ignored = sidebar, robots.txt
 optional = grouppage-steward, grouppage-sysadmin, grouppage-Global_bot
 optional = grouppage-Global_rollback, grouppage-Ombudsmen, grouppage-coder
+optional = grouppage-Staff
 
 Wiki Text Logged In Out
 
