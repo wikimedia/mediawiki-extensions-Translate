@@ -168,12 +168,11 @@ class PremadeMediawikiExtensionGroups {
 		} else {
 			$group->setDescriptionMsg( $info['descmsg'] );
 		}
-			
+
 
 		$group->setType( 'mediawiki' );
 		return $group;
 	}
-
 }
 
 class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
@@ -347,6 +346,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $classes = null;
 
 	protected $wmfextensions = array(
+		'ext-abusefilter', // test.wikimedia.org
 		'ext-antibot',  // anti spam and such (usually all wikis)
 		'ext-antispoof',
 		'ext-assertedit', // bots
@@ -367,7 +367,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-crossnamespacelinks',
 		'ext-dismissablesitenotice',
 		'ext-doublewiki', // Wikisource
-		'ext-drafts', // Betatest on test.wikipedia.org
+		'ext-drafts', // test.wikipedia.org
 		'ext-expandtemplates',
 		'ext-extensiondistributor', // MediaWiki.org
 		'ext-gadgets',
