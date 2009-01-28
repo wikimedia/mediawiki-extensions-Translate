@@ -176,7 +176,7 @@ You can [$1 edit the source page] or [$2 update the translation].',
 	'translate-translations-none' => 'There are no translations for "$1"',
 	'translate-translations-fieldset-title' => 'Message',
 	'translate-translations-messagename' => 'Name:',
-	'translate-translations-project' => 'Project',
+	'translate-translations-project' => 'Project:',
 	'translate-translations-including-no-param' => 'Please specify a valid message key in the subpage parameter',
 
 	# Special:LanguageStats
