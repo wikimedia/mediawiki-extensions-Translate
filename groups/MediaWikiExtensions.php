@@ -275,6 +275,7 @@ class AllWikiaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-lookupuser',
 		'ext-multiupload',
 		'ext-parserfunctions',
+		'ext-poem',
 		'ext-randomimage',
 		'ext-spamblacklist',
 		'ext-stringfunctions',
@@ -308,6 +309,7 @@ class AllWikihowExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $wikihowextensions = array(
 		'ext-antispoof',
 		'ext-blocktitles',
+		'ext-checkuser',
 		'ext-cite',
 		'ext-confirmedit',
 		'ext-formatemail',
@@ -320,6 +322,7 @@ class AllWikihowExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-renameuser',
 		'ext-spamblacklist',
 		'ext-spamdifftool',
+		'ext-syntaxhighlightgeshi',
 		'ext-youtubeauthsub',
 	);
 
@@ -346,7 +349,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $classes = null;
 
 	protected $wmfextensions = array(
-		'ext-abusefilter', // test.wikimedia.org
+		'ext-abusefilter', // test.wikipedia.org
 		'ext-antibot',  // anti spam and such (usually all wikis)
 		'ext-antispoof',
 		'ext-assertedit', // bots
@@ -384,6 +387,8 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-opensearchxml',
 		'ext-oversight',
 		'ext-parserfunctions',
+		'ext-poem',
+		'ext-povwatch', // test.wikipedia.org
 		'ext-proofreadpage', // Wikisource
 		'ext-quiz',
 		'ext-renameuser',
@@ -432,6 +437,7 @@ class AllWikitravelExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-openid',
 		'ext-parserfunctions',
 		'ext-renameuser',
+		'ext-stringfunctions',
 	);
 
 	protected function init() {
