@@ -459,7 +459,7 @@ class CoreMostUsedMessageGroup extends CoreMessageGroup {
 	public function exportToFile( MessageCollection $messages, $authors ) { return 'Not supported'; }
 
 	function getDefinitions() {
-		$data = file_get_contents( dirname( __FILE__ ) . '/wikimedia-mostused.txt' );
+		$data = file_get_contents( dirname( __FILE__ ) . '/wikimedia-mostused-2009.txt' );
 		$messages = explode( "\n", $data );
 		$contents = Language::getMessagesFor( 'en' );
 		$definitions = array();
