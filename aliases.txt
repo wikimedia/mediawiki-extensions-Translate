@@ -103,6 +103,9 @@ file = Eval/SpecialEval.alias.php
 Expand templates
 file = ExpandTemplates/ExpandTemplates.alias.php
 
+Farmer
+file = Farmer/Farmer.alias.php
+
 Find spam
 file = FindSpam/FindSpam.alias.php
 
