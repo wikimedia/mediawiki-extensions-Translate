@@ -105,8 +105,11 @@ $aliases['de'] = array(
 /** Lower Sorbian (Dolnoserbski) */
 $aliases['dsb'] = array(
 	'Translate' => array( 'Přełožiś' ),
-	'Magic' => array( 'Rozšyrjone pśełoženje' ),
-	'TranslationChanges' => array( 'Změny pśełoženja' ),
+	'Magic' => array( 'Rozšyrjone pśełožowanje' ),
+	'TranslationChanges' => array( 'Změny pśełožkow' ),
+	'TranslationStats' => array( 'Statistika pśełožkow' ),
+	'Translations' => array( 'Pśełožki' ),
+	'LanguageStats' => array( 'Rěcne statistiki' ),
 );
 
 /** Divehi (ދިވެހިބަސް) */
@@ -180,7 +183,10 @@ $aliases['hr'] = array(
 $aliases['hsb'] = array(
 	'Translate' => array( 'Přełožić' ),
 	'Magic' => array( 'Rozšěrjene přełožowanje', 'Magiske' ),
+	'TranslationChanges' => array( 'Změny přełožkow' ),
 	'TranslationStats' => array( 'Statistika přełožkow' ),
+	'Translations' => array( 'Přełožki' ),
+	'LanguageStats' => array( 'Rěčne statistiki' ),
 );
 
 /** Haitian (Kreyòl ayisyen) */
@@ -326,6 +332,8 @@ $aliases['no'] = array(
 	'Magic' => array( 'Avansert oversettelse', 'Avansert oversetting', 'Magi' ),
 	'TranslationChanges' => array( 'Oversettelsesendringer', 'Oversettingsendringer' ),
 	'TranslationStats' => array( 'Oversettelsesstatistikk' ),
+	'Translations' => array( 'Oversettelser' ),
+	'LanguageStats' => array( 'Språkstatistikk' ),
 );
 
 /** Occitan (Occitan) */
@@ -350,7 +358,7 @@ $aliases['ps'] = array(
 	'Translate' => array( 'ژباړل' ),
 	'Magic' => array( 'پرمختللې ژباړه، کوډګريز' ),
 	'TranslationChanges' => array( 'دژباړې بدلونونه' ),
-	'Translations' => array( 'ژباړې', 'Translations' ),
+	'Translations' => array( 'ژباړې' ),
 );
 
 /** Portuguese (Português) */
