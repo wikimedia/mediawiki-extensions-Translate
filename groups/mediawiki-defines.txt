@@ -879,7 +879,7 @@ file = WhoIsWatching/SpecialWhoIsWatching.i18n.php
 Wikidata Language Manager
 var = wdMessages
 file = Wikidata/SpecialLanguages.i18n.php
-optional = ow_URL
+optional = ow_URL, ow_ID
 ignored = ow_editing_policy_url
 
 Wikihiero
