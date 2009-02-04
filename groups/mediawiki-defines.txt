@@ -873,6 +873,8 @@ What Is My IP
 White List
 file = WhiteList/WhiteListEdit.i18n.php
 
+Whos Online
+
 Who Is Watching
 file = WhoIsWatching/SpecialWhoIsWatching.i18n.php
 
