@@ -34,7 +34,8 @@ $messages['en'] = array(
 	'translate-page-no-such-task'     => 'Specified task was invalid.',
 	'translate-page-no-such-group'    => 'Specified group was invalid.',
 
-	'translate-page-disabled'  => "Translations to this language in this group have been disabled. Reason:
+	'translate-page-disabled'  => "Translations to this language in this group have been disabled.
+Reason:
 
 ''$1''",
 
@@ -138,7 +139,8 @@ Changes are not saved until you click save button below.',
 	'translate-stats-edits' => 'Edits',
 	'translate-stats-users' => 'Translators',
 
-	'translate-statsf-intro' => 'You can generate simple statistics with this form. All values have upper and lower limits.',
+	'translate-statsf-intro' => 'You can generate simple statistics with this form.
+All values have upper and lower limits.',
 	'translate-statsf-options' => 'Graph options',
 	'translate-statsf-width' => 'Width in pixels',
 	'translate-statsf-height' => 'Height in pixels',
