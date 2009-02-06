@@ -854,8 +854,6 @@ User Images
 
 User Merge
 
-Username Blacklist
-
 User Rights Notification
 id = ext-userrightsnotif
 file = UserRightsNotif/UserRightsNotif.i18n.php
