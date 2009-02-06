@@ -403,7 +403,6 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-titlekey',
 		'ext-torblock',
 		'ext-trustedxff',
-		'ext-usernameblacklist',
 		'ext-wikihiero',
 		'ext-wikimediamessages',
 	);
