@@ -334,6 +334,12 @@ Format Email
 descmsg = email-desc
 ignored = email_header
 
+Framed Video
+optional = framedvideo_position
+ignored = framedvideo_default_width, framedvideo_force_default_size, framedvideo_max_width, framedvideo_frames
+ignored = framedvideo_max_height, framedvideo_allow_full_screen, framedvideo_force_allow_full_screen, framedvideo_force_frames
+ignore = framedvideo_force_position
+
 Gadgets
 ignored = gadgets-definition
 
