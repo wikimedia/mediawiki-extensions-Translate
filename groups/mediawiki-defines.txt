@@ -630,6 +630,7 @@ Select Category
 
 Semantic Result Formats
 file = SemanticResultFormats/SRF_Messages.php
+optional = srf_icalendar_link, srf_vcard_link
 
 Semantic Drilldown
 file = SemanticDrilldown/languages/SD_Messages.php
@@ -646,7 +647,7 @@ file = SemanticMediaWiki/languages/SMW_Messages.php
 ignored = smw_ask_doculink, smw_service_online_maps, smw_uri_blacklist
 optional = smw_rss_link, smw_decseparator, smw_kiloseparator
 optional = smw_rss_description, smw_browse_more, specialpages-group-smw_group
-optional = smw_csv_link, smw_icalendar_link, smw_vcard_link
+optional = smw_csv_link
 optional = smw_json_link
 
 Shared User Rights
