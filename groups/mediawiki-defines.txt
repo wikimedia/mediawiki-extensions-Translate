@@ -265,6 +265,8 @@ Expand Templates
 Extension Distributor
 descmsg = extdist-desc
 
+External Data
+
 Farmer
 optional = farmercreateurl
 ignored = farmerwikiurl, farmerinterwikiurl
