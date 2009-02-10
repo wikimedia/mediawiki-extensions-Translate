@@ -429,6 +429,11 @@ $aliases['th'] = array(
 	'TranslationStats' => array( 'สถิติการแปล' ),
 );
 
+/** Turkish (Türkçe) */
+$aliases['tr'] = array(
+	'Translate' => array( 'Çeviri' ),
+);
+
 /** Wolof (Wolof) */
 $aliases['wo'] = array(
 	'Translate' => array( 'Tekki' ),

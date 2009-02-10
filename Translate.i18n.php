@@ -696,7 +696,7 @@ $messages['arz'] = array(
 	'translate-task-view' => 'أرى كل الرسائل من',
 	'translate-task-untranslated' => 'أرى كل الرسائل غير المترجمة من',
 	'translate-task-optional' => 'أرى الرسائل الاختيارية من',
-	'translate-task-untranslatedoptional' => 'اعرض الرسايل الاختيارية اللي مش متترجمة من',
+	'translate-task-untranslatedoptional' => 'اعرض الرسايل الاختيارية اللى مش متترجمة من',
 	'translate-task-problematic' => 'أرى الرسائل التى بها مشاكل',
 	'translate-task-review' => 'أراجع التغييرات ل',
 	'translate-task-reviewall' => 'أراجع كل الرسائل المترجمة في',
@@ -818,14 +818,14 @@ $messages['arz'] = array(
 يمكنك [$1 تعديل الصفحة المصدر] أو [$2 تحديث الترجمة].',
 	'translations' => 'كل الترجمات',
 	'translations-summary' => 'أدخل اسم رسالة أسفله لعرض كل الترجمات المتوفرة.',
-	'translate-translations-no-message' => '"$1" الرساله دي مش ممكن تترجم',
+	'translate-translations-no-message' => '"$1" الرساله دى مش ممكن تترجم',
 	'translate-translations-none' => 'مافيش ترجمات ل"$1"',
 	'translate-translations-fieldset-title' => 'الرسالة',
 	'translate-translations-messagename' => 'الاسم:',
 	'translate-translations-project' => 'المشروع:',
 	'translate-translations-including-no-param' => 'من فضلك حدد مفتاح رسالة صحيح فى معامل الصفحة الفرعية',
 	'languagestats' => 'إحصاءات اللغة',
-	'languagestats-summary' => 'الصفحه دي بتعرض احصائيات الترجمه لكل مجموعات الرسايل ([[MediaWiki:Translate-languagestats-groups|المؤكدة]]) للغه.',
+	'languagestats-summary' => 'الصفحه دى بتعرض احصائيات الترجمه لكل مجموعات الرسايل ([[MediaWiki:Translate-languagestats-groups|المؤكدة]]) للغه.',
 	'translate-language-code' => 'رمز اللغة',
 	'translate-language-code-field-name' => 'رمز اللغة:',
 	'translate-suppress-complete' => 'اتخطا مجموعات الرسايل المتترجمة بالكامل',
@@ -3528,6 +3528,7 @@ $messages['grc'] = array(
 	'translate-statsf-scale-days' => 'Ἡμέραι',
 	'translate-statsf-scale-hours' => 'Ὥραι',
 	'translate-statsf-submit' => 'Προθεωρεῖν',
+	'translate-language' => 'Γλῶττα',
 );
 
 /** Swiss German (Alemannisch)
