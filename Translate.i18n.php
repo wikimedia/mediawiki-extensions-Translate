@@ -6938,6 +6938,7 @@ U kunt de [$1 brontekst bewerken] of de [$2 vertaling bijwerken].',
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
  * @author Frokor
+ * @author Gunnernett
  * @author Harald Khan
  * @author Jon Harald Søby
  */
@@ -7035,6 +7036,7 @@ Endringar vert ikkje lagra før du klikkar på lagre-knappen nedanfor.',
 	'translate-checks-plural' => 'Definisjonen nyttar <nowiki>{{PLURAL:}}</nowiki>, men omsetjinga gjer det ikkje.',
 	'translate-checks-pagename' => 'Namnerom endra frå definisjonen',
 	'translate-checks-format' => 'Denne omsetjinga følgjer ikkje definisjonen eller har ugyldig syntaks: $1',
+	'translate-checks-escape' => 'Dei fylgjande hendingane kan vera tilfeldige: <strong>$1</strong>',
 	'tog-translate-nonewsletter' => 'Ikkje send meg nyhendebrev (gjeld berre brukarar med stadfesta e-postadresse)',
 	'right-translate' => 'Redigere med omsetjingsgrensesnittet',
 	'translate-rc-translation-filter' => 'Filtrer omsetjingar:',
