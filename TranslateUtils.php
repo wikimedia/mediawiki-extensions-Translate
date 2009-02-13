@@ -192,7 +192,7 @@ class TranslateUtils {
 			$message = $m->translation ? $m->translation : $original;
 
 			global $wgLang;
-			$niceTitle = htmlspecialchars( $wgLang->truncate( $key, - 30, '…' ) );
+			$niceTitle = htmlspecialchars( $wgLang->truncate( $key, - 30 ) );
 
 			if ( 1 || $wgUser->isAllowed( 'translate' ) ) {
 				$tools['edit'] = $sk->makeKnownLinkObj( $title, $niceTitle, "action=edit&loadgroup=$group" );
@@ -368,7 +368,7 @@ class TranslateUtils {
 		global $wgLegalTitleChars, $wgContLang;
 		$snippet = preg_replace( "/[^\p{L}]/u", ' ', $text );
 		$snippet = preg_replace( "/ {2,}/u", ' ', $snippet );
-		$snippet = $wgContLang->truncate( $snippet, $length );
+		$snippet = $wgContLang->truncate( $snippet, $length, '' );
 		$snippet = str_replace( ' ', '_', trim( $snippet ) );
 		return $snippet;
 	}

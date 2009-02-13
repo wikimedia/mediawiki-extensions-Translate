@@ -148,7 +148,7 @@ class GettextFormatReader extends SimpleFormatReader {
 				$snippet = preg_replace( "/[^$wgLegalTitleChars]/", ' ', $snippet );
 				$snippet = preg_replace( "/[:&%\/_]/", ' ', $snippet );
 				$snippet = preg_replace( "/ {2,}/", ' ', $snippet );
-				$snippet = $lang->truncate( $snippet, 30 );
+				$snippet = $lang->truncate( $snippet, 30, '' );
 				$snippet = str_replace( ' ', '_', trim( $snippet ) );
 				$key = $this->prefix . $hash . '-' . $snippet;
 			}
