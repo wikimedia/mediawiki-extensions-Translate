@@ -1265,8 +1265,8 @@ $messages['bg'] = array(
 	'translate-sidebar-alltrans' => 'Други преводи',
 	'translations' => 'Всички преводи',
 	'translate-translations-none' => 'Не съществуват преводи за „$1“',
-	'translate-translations-fieldset-title' => 'Всички преводи',
-	'translate-translations-messagename' => 'Съобщение:',
+	'translate-translations-fieldset-title' => 'Съобщение',
+	'translate-translations-messagename' => 'Име:',
 	'languagestats' => 'Езикови статистики',
 	'languagestats-summary' => 'Тази страница показва статистиките за преводите на всички ([[MediaWiki:Translate-languagestats-groups|конфигурирани]]) групи съобщения за езика.',
 	'translate-language-code' => 'Езиков код',
@@ -2267,6 +2267,7 @@ Móžoš [$1 žrědłowy bok wobźěłaś] abo [$2 pśełožk aktualizěrowaś].
 /** Greek (Ελληνικά)
  * @author Consta
  * @author Dead3y3
+ * @author Omnipaedista
  */
 $messages['el'] = array(
 	'translate' => 'Μεταφράστε',
@@ -2321,11 +2322,11 @@ $messages['el'] = array(
 	'translate-edit-goto-next' => 'Επεξεργασία επόμενου μηνύματος',
 	'translate-edit-goto-list' => 'Πίσω στη λίστα',
 	'translate-magic-pagename' => 'Μετάφραση εκτεταμένου MediaWiki',
-	'translate-magic-help' => 'Μπορείτε να μεταφράσετε ψευδώνυμα ειδικών σελίδων, μαγικές λέξεις, ονόματα skins και ονόματα namespaces.
+	'translate-magic-help' => 'Μπορείτε να μεταφράσετε ψευδώνυμα ειδικών σελίδων, μαγικές λέξεις και ονόματα namespaces.
 
 Τα ψευδώνυμα ειδικών σελίδων και οι μαγικές λέξεις μπορούν να έχουν πολλαπλές μεταφράσεις.
 Οι μεταφράσεις χωρίζονται με ένα κόμμα (,).
-Τα ονόματα skins και τα namespaces μπορούν να έχουν μόνο μία μετάφραση.
+Τα namespaces μπορούν να έχουν μόνο μία μετάφραση.
 
 Στις μεταφράσεις namespaces η <tt>$1 talk</tt> είναι ειδική. Η <tt>$1</tt> αντικαθίσταται με το όνομα του ιστοτόπου (για παράδειγμα <tt>{{SITENAME}} talk</tt>).
 Αν δεν είναι δυνατόν στη γλώσσα σας να σχηματίσετε έγκυρη έκφραση χωρίς να αλλάξετε το όνομα του ιστοτόπου, παρακαλούμε επικοινωνήστε με έναν developer.
@@ -2395,6 +2396,9 @@ $messages['el'] = array(
 	'translate-sidebar-alltrans' => 'Άλλες μεταφράσεις',
 	'translate-tag-noedit' => 'Αυτή είναι μια αυτόματα ενημερώσιμη σελίδα μετάφρασης.
 Μπορείτε να [$1 επεξεργαστείτε την πηγαία σελίδα] ή να [$2 ενημερώσετε την μετάφραση].',
+	'translate-translations-fieldset-title' => 'Μήνυμα',
+	'translate-translations-messagename' => 'Όνομα:',
+	'translate-translations-project' => 'Εγχείρημα:',
 );
 
 /** Esperanto (Esperanto)
@@ -2629,6 +2633,7 @@ Los cambios no se graban hasta que no pulses el boton de guardar de abajo.',
 	'translate-magic-namespace' => 'Nombres de los espacios de nombres',
 	'translationchanges' => 'Cambios de traducción',
 	'translationchanges-export' => 'exportar',
+	'translationchanges-change' => '$1: $2 por $3',
 	'translate-checks-parameters' => '{{PLURAL:$2|El siguiente parámetro no se está|Los siguientes parámetros no se están}} usando:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|El siguiente parámetro es desconocidp|Los siguientes parámetros son desconocidos}}:
@@ -9297,7 +9302,7 @@ Bütün değerlerin alt ve üst sınırları vardır.',
 	'translate-statsf-options' => 'Grafik seçenekleri',
 	'translate-statsf-width' => 'Piksel olarak genişlik',
 	'translate-statsf-height' => 'Piksel olarak yükseklik',
-	'translate-statsf-submit' => 'Önizleme',
+	'translate-statsf-submit' => 'Ön izleme',
 	'translate-tag-category' => 'Çevirilebilir sayfalar',
 	'translate-tag-page-desc' => '[[:$1]] viki sayfasının çevirisi.',
 	'translate-tag-translate-link-desc' => 'Bu sayfayı çevir',
