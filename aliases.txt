@@ -49,6 +49,9 @@ file = CodeReview/CodeReview.alias.php
 Collection
 file = Collection/Collection.alias.php
 
+CommunityVoice
+file = CommunityVoice/CommunityVoice.alias.php
+
 Configure
 file = Configure/Configure.alias.php
 

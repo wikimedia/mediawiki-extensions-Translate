@@ -156,6 +156,8 @@ ignored = commenttab-editintro, commenttab-preload
 
 Comment Spammer
 
+Community Voice
+
 Configure
 optional = configure-section-html, configure-section-ajax
 optional = configure-section-djvu, configure-section-imagemagick
