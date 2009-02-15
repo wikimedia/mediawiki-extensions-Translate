@@ -341,6 +341,7 @@ $aliases['oc'] = array(
 	'Translate' => array( 'Traduire', 'Tradusir' ),
 	'Magic' => array( 'Traduccion avançada', 'Traduccionavançada', 'Traduccion avancada', 'Traduccionavancada' ),
 	'TranslationChanges' => array( 'Modificacions de las traduccions', 'Modificacionsdelastraduccions' ),
+	'Translations' => array( 'Traduccions', 'Reviradas' ),
 );
 
 /** Polish (Polski) */
@@ -429,9 +430,25 @@ $aliases['th'] = array(
 	'TranslationStats' => array( 'สถิติการแปล' ),
 );
 
+/** Tagalog (Tagalog) */
+$aliases['tl'] = array(
+	'Translate' => array( 'Isalinwika' ),
+	'Magic' => array( 'Mas masulong na pagsasalinwika', 'Salamangka' ),
+	'TranslationChanges' => array( 'Mga pagbabago sa salinwika' ),
+	'TranslationStats' => array( 'Mga estadistika ng salinwika' ),
+	'Translations' => array( 'Mga salinwika' ),
+	'LanguageStats' => array( 'Mga estadistika ng wika' ),
+);
+
 /** Turkish (Türkçe) */
 $aliases['tr'] = array(
 	'Translate' => array( 'Çeviri' ),
+);
+
+/** Vèneto (Vèneto) */
+$aliases['vec'] = array(
+	'Translate' => array( 'Tradusi' ),
+	'Translations' => array( 'Tradussioni' ),
 );
 
 /** Wolof (Wolof) */

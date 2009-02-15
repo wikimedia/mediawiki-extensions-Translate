@@ -666,6 +666,9 @@ $messages['ar'] = array(
 	'translate-untranslated' => 'غير المترجمة',
 	'translate-percentage-complete' => 'إكمال',
 	'translate-percentage-fuzzy' => 'غير محدث',
+	'translate-languagestats-groups' => ' # أضف أرقام مجموعات الرسائل, واحدا لكل سطر لتحديد مجموعات الرسائل التي
+ # تعرض في Special:LanguageStats.أرقام مجموعات الرسائل غير الموجودة سوف 
+ # يتم تجاهلها.',
 );
 
 /** Araucanian (Mapudungun)
@@ -891,11 +894,11 @@ $messages['ast'] = array(
 	'translate-edit-goto-next' => 'Editar mensaxe siguiente',
 	'translate-edit-goto-list' => 'Tornar a la llista',
 	'translate-magic-pagename' => 'Traducción estendida de MediaWiki',
-	'translate-magic-help' => "Pues traducir los nomes de les páxines especiales, les pallabres máxiques, los nomes de les pieles y los nomes de los espacios de nome.
+	'translate-magic-help' => "Pues traducir los nomes de les páxines especiales, les pallabres máxiques y los nomes de los espacios de nome.
 
 Los nomes de les páxines especiales y les pallabres máxiques puen tener múltiples traducciones.
-Les traducciones sepárense con una coma (,).
-Los nomes de les pieles y los espacios de nome namái puen tener una traducción.
+Les traducciones sepártense con una coma (,).
+Los espacios de nome namái puen tener una traducción.
 
 Nes traducciones de los espacios de nome <tt>$1 talk</tt> ye especial. <tt>$1</tt> ye sustituyíu pol nome del sitiu (por exemplu <tt>{{SITENAME}} talk</tt>).
 Si na to llingua nun ye posible formar una espresión válida ensin camudar el nome del sitiu, por favor contauta con un desenrollador.
@@ -965,6 +968,17 @@ Los cambeos nun se graben hasta que calques nel botón guardar d'abaxo.",
 	'translate-sidebar-alltrans' => 'Otres traducciones',
 	'translate-tag-noedit' => 'Esta páxina ye una páxina de traducción actualizada automáticamente.
 Pues [$1 editar la páxina fonte] o [$2 actualizar la traducción].',
+	'translations' => 'Toles traducciones',
+	'translate-translations-no-message' => '"$1" nun ye un mensaxe traducible',
+	'translate-translations-none' => 'Nun hai traducciones pa "$1"',
+	'translate-translations-fieldset-title' => 'Mensaxe',
+	'translate-translations-messagename' => 'Nome:',
+	'translate-translations-project' => 'Proyeutu:',
+	'languagestats' => 'Estadístiques de llingua',
+	'translate-language-code' => 'Códigu de llingua',
+	'translate-language-code-field-name' => 'Códigu de llingua:',
+	'translate-language' => 'Llingua',
+	'translate-total' => 'Mensaxes',
 );
 
 /** Southern Balochi (بلوچی مکرانی)
