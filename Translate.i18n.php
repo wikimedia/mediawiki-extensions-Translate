@@ -3995,11 +3995,11 @@ $messages['hr'] = array(
 	'translate-magic-namespace' => 'Imena imenskih prostora',
 	'translationchanges' => 'Prevoditeljske promjene',
 	'translationchanges-export' => 'izvedi (export)',
-	'translate-checks-parameters' => 'Sljedeći parametri se ne koriste:
+	'translate-checks-parameters' => 'Sljedeći {{PLURAL:$2|parametar se ne koristi|parametri se ne koriste}}:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-balance' => 'Nejednak broj zagrada:
+	'translate-checks-balance' => 'Nejednak broj {{PLURAL:$2|zagrada|zagrada}}:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links' => 'Sljedeće poveznice su problematične:
+	'translate-checks-links' => '{{PLURAL:$2|Sljedeća poveznica je problematična|$2 sljedećih poveznica su problematične}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Definicija koristi <nowiki>{{PLURAL:}}</nowiki>, ali prijevod ne.',
 	'right-translate' => 'Uređivanje koristeći sučelje za prevođenje',
@@ -4021,8 +4021,9 @@ $messages['hr'] = array(
 	'translations' => 'Svi prijevodi',
 	'translate-translations-no-message' => '"$1" nije poruka koja se prevodi',
 	'translate-translations-none' => 'Ne postoje prijevodi za "$1"',
-	'translate-translations-fieldset-title' => 'Svi prijevodi',
-	'translate-translations-messagename' => 'Poruka:',
+	'translate-translations-fieldset-title' => 'Poruka',
+	'translate-translations-messagename' => 'Ime:',
+	'translate-translations-project' => 'Projekt:',
 	'languagestats' => 'Statistika jezika',
 	'languagestats-summary' => 'Ova stranica prikazuje statistiku prijevoda za sve  ([[MediaWiki:Translate-languagestats-groups|podešene]]) grupe poruka za jezik.',
 	'translate-language-code' => 'Jezični kôd',
@@ -4673,6 +4674,29 @@ $messages['ilo'] = array(
 	'translate' => 'Ipatarus',
 );
 
+/** Ido (Ido)
+ * @author Malafaya
+ */
+$messages['io'] = array(
+	'translate-edit' => 'redaktar',
+	'translate-history' => 'versionaro',
+	'translate-page-task' => 'Me volas',
+	'translate-page-group' => 'Grupo',
+	'translate-page-language' => 'Linguo',
+	'translate-page-limit' => 'Limito',
+	'translate-page-edit' => 'redaktar',
+	'translate-magic-cm-comment' => 'Komento:',
+	'translate-magic-cm-save' => 'Registragar',
+	'translationchanges-change' => '$1: $2 per $3',
+	'translate-stats-edits' => 'Editi',
+	'translate-stats-users' => 'Tradukisti',
+	'translate-statsf-scale-days' => 'Dii',
+	'translate-statsf-scale-hours' => 'Hori',
+	'translate-statsf-submit' => 'Previdar',
+	'translate-sidebar-alltrans' => 'Altra tradukuri',
+	'translations' => 'Omna tradukuri',
+);
+
 /** Icelandic (Íslenska)
  * @author Jóna Þórunn
  * @author S.Örvarr.S
@@ -4920,7 +4944,7 @@ $messages['ja'] = array(
 	'translate-page-language' => '言語',
 	'translate-page-limit' => '表示数',
 	'translate-page-limit-option' => 'ページごとに $1個のメッセージ',
-	'translate-submit' => '再表示',
+	'translate-submit' => '表示を更新',
 	'translate-page-navigation-legend' => '案内',
 	'translate-page-showing' => '全 $3 件中 $1 件目から $2 件目まで表示しています',
 	'translate-page-showing-all' => '全 $1 件を表示しています',
@@ -4952,7 +4976,7 @@ $messages['ja'] = array(
 
 変更を保存できるのは、翻訳者グループに属する利用者のみです。以下の{{int:translate-magic-cm-save}}ボタンを押すまで変更は保存されません。',
 	'translate-magic-module' => 'モジュール:',
-	'translate-magic-submit' => '再表示',
+	'translate-magic-submit' => '表示を更新',
 	'translate-magic-cm-export' => 'エクスポート',
 	'translate-magic-cm-to-be' => '変更後',
 	'translate-magic-cm-current' => '変更前',
@@ -5770,6 +5794,7 @@ $messages['ko'] = array(
 
 $1',
 	'translate-page-settings-legend' => '설정',
+	'translate-page-task' => '할 일',
 	'translate-page-group' => '그룹',
 	'translate-page-language' => '언어',
 	'translate-page-limit' => '제한',
@@ -7248,8 +7273,10 @@ Du kan [$1 redigere kildesiden] eller [$2 oppdatere oversettelsen].',
 	'translations-summary' => 'Skriv et meldingsnavn nedenfor for å vise alle tilgjengelige oversettelser.',
 	'translate-translations-no-message' => '«$1» er ikke en melding som kan oversettes',
 	'translate-translations-none' => 'Det finnes ingen oversettelser for «$1»',
-	'translate-translations-fieldset-title' => 'Alle oversettelser',
-	'translate-translations-messagename' => 'Melding:',
+	'translate-translations-fieldset-title' => 'Melding',
+	'translate-translations-messagename' => 'Navn:',
+	'translate-translations-project' => 'Prosjekt:',
+	'translate-translations-including-no-param' => 'Spesifiser en gyldig meldingsnøkkel i undersideparameteren.',
 	'languagestats' => 'Språkstatistikk',
 	'languagestats-summary' => 'Denne siden viser oversettelsesstatistikk for alle ([[MediaWiki:Translate-languagestats-groups|konfigurerte]]) meldingsgrupper for et språk.',
 	'translate-language-code' => 'Språkkode',
@@ -8750,7 +8777,7 @@ Du kan [$1 redigera källsidan] eller [$2 uppdatera översättningen].',
 	'translate-translations-fieldset-title' => 'Meddelande',
 	'translate-translations-messagename' => 'Namn:',
 	'translate-translations-project' => 'Projekt:',
-	'translate-translations-including-no-param' => 'Var god specifiera ett giltigt sidnamn i undersideparametern',
+	'translate-translations-including-no-param' => 'Var god specifiera en giltig meddelandenyckel i undersideparametern',
 	'languagestats' => 'Språkstatistik',
 	'languagestats-summary' => 'Den här sidan visar översättningsstatistik för alla ([[MediaWiki:Translate-languagestats-groups|konfigurerade]]) meddelandegrupper för ett språk.',
 	'translate-language-code' => 'Språkkod',
