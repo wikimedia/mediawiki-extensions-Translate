@@ -206,6 +206,16 @@ $aliases['hu'] = array(
 	'LanguageStats' => array( 'Nyelvi statisztika' ),
 );
 
+/** Interlingua (Interlingua) */
+$aliases['ia'] = array(
+	'Translate' => array( 'Traducer' ),
+	'Magic' => array( 'Traduction avantiate', 'Magia' ),
+	'TranslationChanges' => array( 'Cambios de traduction' ),
+	'TranslationStats' => array( 'Statisticas de traduction' ),
+	'Translations' => array( 'Traductiones' ),
+	'LanguageStats' => array( 'Statisticas de linguas' ),
+);
+
 /** Indonesian (Bahasa Indonesia) */
 $aliases['id'] = array(
 	'Translate' => array( 'Terjemahan' ),
@@ -396,6 +406,16 @@ $aliases['sa'] = array(
 /** Albanian (Shqip) */
 $aliases['sq'] = array(
 	'Translate' => array( 'Përkthe' ),
+);
+
+/** Sundanese (Basa Sunda) */
+$aliases['su'] = array(
+	'Translate' => array( 'Tarjamah' ),
+	'Magic' => array( 'TarjamahTeleb' ),
+	'TranslationChanges' => array( 'ParobahanTarjamah' ),
+	'TranslationStats' => array( 'StatTarjamah' ),
+	'Translations' => array( 'Tarjamahan' ),
+	'LanguageStats' => array( 'StatBasa' ),
 );
 
 /** Swedish (Svenska) */
