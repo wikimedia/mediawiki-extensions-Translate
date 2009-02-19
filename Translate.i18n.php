@@ -816,7 +816,7 @@ $messages['arz'] = array(
 	'translate-tag-legend-fuzzy' => 'ترجمة قديمة',
 	'translate-tag-fuzzy-comment' => 'التعريف تغير بواسطة [[User:$1]] فى المراجعة $2.',
 	'translate-tag-fuzzy-reason' => 'التعريف اتغير بواسطة اليوزر $1 بالتعليق "$3" فى $2.',
-	'translate-sidebar-alltrans' => 'ترجمات أخرى',
+	'translate-sidebar-alltrans' => 'ترجمات تانيه',
 	'translate-tag-noedit' => 'هذه الصفحة هى صفحة ترجمة محدثة تلقائيا.
 يمكنك [$1 تعديل الصفحة المصدر] أو [$2 تحديث الترجمة].',
 	'translations' => 'كل الترجمات',
@@ -1800,7 +1800,7 @@ $messages['cs'] = array(
 	'translate-page-settings-legend' => 'Nastavení',
 	'translate-page-task' => 'Chci',
 	'translate-page-group' => 'skupina',
-	'translate-page-language' => 'v&nbsp;jazyce',
+	'translate-page-language' => 'Jazyk',
 	'translate-page-limit' => 's&nbsp;omezením',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|zpráva|zprávy|zpráv}} na stránce',
 	'translate-submit' => 'Ukázat',
@@ -2339,14 +2339,14 @@ $messages['el'] = array(
 	'translate-magic-pagename' => 'Μετάφραση εκτεταμένου MediaWiki',
 	'translate-magic-help' => 'Μπορείτε να μεταφράσετε ψευδώνυμα ειδικών σελίδων, μαγικές λέξεις και ονομασίες περιοχών ονομάτων.
 
-Τα ψευδώνυμα ειδικών σελίδων και οι μαγικές λέξεις μπορούν να έχουν πολλαπλές μεταφράσεις.<br />
-Οι μεταφράσεις χωρίζονται με ένα κόμμα (,).<br />
+Τα ψευδώνυμα ειδικών σελίδων και οι μαγικές λέξεις μπορούν να έχουν πολλαπλές μεταφράσεις.
+Οι μεταφράσεις χωρίζονται με ένα κόμμα (,).
 Οι περιοχές ονομάτων μπορούν να έχουν μόνο μία μετάφραση.
 
-Στις μεταφράσεις περιοχών ονομάτων η σελίδα <tt>$1 talk</tt> είναι ειδική. Η μεταβλητή <tt>$1</tt> αντικαθίσταται με το όνομα του ιστοτόπου (για παράδειγμα <tt>{{SITENAME}} talk</tt>).<br />
+Στις μεταφράσεις περιοχών ονομάτων η σελίδα <tt>$1 talk</tt> είναι ειδική. Η μεταβλητή <tt>$1</tt> αντικαθίσταται με το όνομα του ιστοτόπου (για παράδειγμα <tt>{{SITENAME}} talk</tt>).
 Αν δεν είναι δυνατόν στη γλώσσα σας να σχηματίσετε έγκυρη έκφραση χωρίς να αλλάξετε το όνομα του ιστοτόπου, παρακαλούμε επικοινωνήστε με έναν developer.
 
-Πρέπει να είστε στην ομάδα των μεταφραστών για να αποθηκεύσετε αλλαγές.<br />
+Πρέπει να είστε στην ομάδα των μεταφραστών για να αποθηκεύσετε αλλαγές.
 Οι αλλαγές δεν αποθηκεύονται μέχρι να κάνετε κλικ στο κουμπί την αποθήκευσης παρακάτω.',
 	'translate-magic-module' => 'Ενότητα:',
 	'translate-magic-submit' => 'Προσκόμισε',
@@ -4709,6 +4709,7 @@ $messages['io'] = array(
 	'translate-magic-cm-comment' => 'Komento:',
 	'translate-magic-cm-save' => 'Registragar',
 	'translationchanges-change' => '$1: $2 per $3',
+	'translate-rc-translation-filter-only' => 'Montrez nur tradukuri',
 	'translate-stats-edits' => 'Editi',
 	'translate-stats-users' => 'Tradukisti',
 	'translate-statsf-scale-days' => 'Dii',
@@ -7914,12 +7915,43 @@ $messages['rif'] = array(
 	'translate-page-edit' => 'arri',
 );
 
-/** Rhaeto-Romance (Rumantsch) */
+/** Rhaeto-Romance (Rumantsch)
+ * @author Gion
+ */
 $messages['rm'] = array(
 	'translate-edit' => 'editar',
 	'translate-talk' => 'discussiun',
 	'translate-history' => 'versiuns',
+	'translate-page-settings-legend' => 'Parameters',
+	'translate-page-task' => 'Jau vi',
+	'translate-page-group' => 'Gruppa',
+	'translate-page-language' => 'Lingua',
+	'translate-page-limit' => 'Limita',
+	'translate-page-limit-option' => '$1 {{PLURAL:$1|messadi|messadis}} per pagina',
+	'translate-submit' => 'Mussar',
+	'translate-page-navigation-legend' => 'Navigaziun',
+	'translate-page-showing' => 'Mussa ils messadis $1 fin $2 da $3.',
+	'translate-page-showing-all' => 'Mussa $1 {{PLURAL:$1|messadi|messadis}}.',
+	'translate-page-showing-none' => 'Nagins messadis.',
 	'translate-next' => 'Proxima pagina',
+	'translate-prev' => 'Pagina precedenta',
+	'translate-page-description-legend' => 'Infurmaziun davart la gruppa',
+	'translate-page-edit' => 'editar',
+	'translate-optional' => '(opziunal)',
+	'translate-ignored' => '(ignorar)',
+	'translate-edit-definition' => 'Definiziun dal messadi',
+	'translate-edit-contribute' => 'contribuir',
+	'translate-edit-no-information' => "''Tar quai messadi na datti nagina documentaziun.
+Sche vus savais nua e co che quai messadi vegn duvrà, pudais vus gidar auters translaturs cun agiuntar ina documentaziun tar quai messadi.''",
+	'translate-edit-information' => 'Infurmaziuns davart quest messadi ($1)',
+	'translate-edit-in-other-languages' => 'Messadis en autras linguas',
+	'translate-edit-committed' => 'Translaziun actuala da la software',
+	'translate-edit-warnings' => 'Avertiment davart translaziuns nuncumplettas',
+	'translate-edit-goto-no-prev' => 'Nagins messadis precedents',
+	'translate-edit-goto-no-next' => 'I na suonda nagins messadis pli',
+	'translate-edit-goto-prev' => 'Editar messadi precedent',
+	'translate-edit-goto-next' => 'Editar proxim messadi',
+	'translate-edit-goto-list' => 'Enavos tar la glista',
 );
 
 /** Romanian (Română)
@@ -9397,6 +9429,15 @@ $messages['ug'] = array(
 	'translate-edit' => 'uzgartish',
 	'translate-talk' => 'monazire',
 	'translate-history' => 'tarih',
+);
+
+/** ئۇيغۇرچە (ئۇيغۇرچە)
+ * @author Alfredie
+ */
+$messages['ug-arab'] = array(
+	'translate-talk' => 'مۇنازىرە',
+	'translate-page-language' => 'تىل',
+	'translate-language' => 'تىل',
 );
 
 /** Ukrainian (Українська)
