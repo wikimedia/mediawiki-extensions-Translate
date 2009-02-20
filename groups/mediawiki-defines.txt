@@ -540,6 +540,9 @@ Page By
 
 Password Reset
 
+Password Strength
+descmsg = passwordstr-desc
+
 Parser Functions
 descmsg = pfunc_desc
 
