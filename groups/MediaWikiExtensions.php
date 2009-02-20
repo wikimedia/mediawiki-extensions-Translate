@@ -365,6 +365,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-collection', // Wikibooks
 		'ext-confirmedit',
 		'ext-confirmeditfancycaptcha',
+		'ext-contactpage', // on nl.wp and wikimediafoundation.org
 		'ext-contributionreporting', // temporary for fundraiser
 		'ext-contributiontracking', // temporary for fundraiser
 		'ext-crossnamespacelinks',
