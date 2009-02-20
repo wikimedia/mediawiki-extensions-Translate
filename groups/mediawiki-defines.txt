@@ -452,12 +452,6 @@ Media Functions
 Meta Keywords
 optional = metakeywords, metadescription
 
-# Emergency deactivation due to a lot of dupe message keys in r47580
-#Metavid Wiki
-#file = MetavidWiki/languages/MV_Messages.php
-#optional = ao_file_64Kb_MPEG4, ao_file_256Kb_MPEG4, ao_file_MPEG1, ao_file_MPEG2
-#optional = ao_file_flash_flv, ao_file_512Kb_MPEG4, ao_file_Ogg_Video
-
 Mibbit
 
 MicroID
