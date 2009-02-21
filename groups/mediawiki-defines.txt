@@ -749,7 +749,7 @@ ignored = talkhere-title, talkhere-headtext, talkhere-afterinput
 ignored = talkhere-afterform
 
 Tasks
-ignored = tasks_search_limit, tasks_help_separator, tasks_creation_tasks
+ignored = tasks_search_limit, tasks_help_separator, tasks_creation_tasks, tasks_significance_order
 optional = tasks_help_page_link
 descmsg = tasks_desc
 
