@@ -1410,7 +1410,7 @@ Ne vo ket enrollet ar c'hemmoù e-keit ha ne vo ket bet pouezet war ar bouton di
 	'translate-checks-xhtml' => "Erlec'hiit ar {{PLURAL:$2|valizenn|balizennoù}} da-heul gant ar re a zegouezh mar plij : <strong>$1</strong>",
 	'translate-checks-plural' => 'Ober a ra an termenadur gant <nowiki>{{PLURAL:}}</nowiki> padal an droidigezh ne ra ket.',
 	'translate-checks-pagename' => 'Anv esaouenn kemmet abaoe an termenadur',
-	'tog-translate-nonewsletter' => "Arabat kas din kelc'hlizheroù dre bostel (ne den nemet d'ar re o deus kadarnaet o chomlec'h postel)",
+	'tog-translate-nonewsletter' => "Arabat kas din kelc'hlizheroù dre bostel (ne denn nemet d'ar re o deus kadarnaet o chomlec'h postel)",
 	'right-translate' => 'Kemmañ en ur ober gant an etrefas treiñ',
 	'translate-rc-translation-filter' => 'Silañ an troidigezhioù :',
 	'translate-rc-translation-filter-no' => 'Na ober seurt ebet',
@@ -2736,6 +2736,7 @@ Usted puede [$1 editar la página fuente] o [$2 actualizar la traducción].',
  */
 $messages['et'] = array(
 	'translate-page-settings-legend' => 'Seadistused',
+	'translate-page-task' => 'Soovin',
 );
 
 /** Basque (Euskara)
@@ -9452,6 +9453,19 @@ $messages['ug-arab'] = array(
 	'translate-talk' => 'مۇنازىرە',
 	'translate-page-language' => 'تىل',
 	'translate-language' => 'تىل',
+);
+
+/** Uighur (Latin) (Uyghurche‎ / ئۇيغۇرچە (Latin))
+ * @author Jose77
+ */
+$messages['ug-latn'] = array(
+	'translate-edit' => 'uzgartish',
+	'translate-talk' => 'monazire',
+	'translate-history' => 'tarih',
+	'translate-page-language' => 'Til',
+	'translate-next' => 'Kéyinki bet',
+	'translate-prev' => 'Aldinqi bet',
+	'translate-language' => 'Til',
 );
 
 /** Ukrainian (Українська)
