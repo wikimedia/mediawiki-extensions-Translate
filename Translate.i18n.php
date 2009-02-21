@@ -83,7 +83,7 @@ Special page aliases and magic words can have multiple translations.
 Translations are separated by a comma (,).
 Namespaces can have only one translation.
 
-In namespace translations <tt>$1 talk</tt> is special. <tt>$1</tt> is replaced with sitename (for example <tt>{{SITENAME}} talk</tt>).
+In namespace translations <tt>$1 talk</tt> is special. <tt>$1</tt> is replaced with sitename (for example <tt>{{ns:project_talk}}</tt>).
 If it is not possible in your language to form valid expression without changing sitename, please contact a developer.
 
 You need to be in the translators group to save changes.
