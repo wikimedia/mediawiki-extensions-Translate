@@ -1,6 +1,6 @@
 ABC
 descmsg = abcdesc
-optional = abcsep, abcabc, abcpdf, abcps, abcmidi, abcvorbis
+optional = abcabc, abcpdf, abcps, abcmidi, abcvorbis
 
 Absentee Landlord
 
