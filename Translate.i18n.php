@@ -1080,7 +1080,7 @@ $messages['be-tarask'] = array(
 Псэўданімы спэцыяльных старонак і магічныя словы могуць мець некалькі перакладаў, якія разьдзяляюцца коскай (,).
 Прасторы назваў могуць мець толькі адзін пераклад.
 
-У перакладах прастораў назваў радок <tt>абмеркаваньне $1</tt> мае спэцыяльнае значэньне. <tt>$1</tt> будзе замененае на назву сайта (напрыклад <tt>абмеркаваньне {{SITENAME}}</tt>).
+У перакладах прастораў назваў радок <tt>абмеркаваньне $1</tt> мае спэцыяльнае значэньне. <tt>$1</tt> будзе замененае на назву сайта (напрыклад, <tt>{{ns:project_talk}}</tt>).
 Калі для Вашай мовы немагчыма стварыць адпаведны выраз бязь зьмены назвы сайта, калі ласка, зьвяжыцеся з распрацоўшчыкамі.
 
 Вам неабходна ўваходзіць у групу перакладчыкаў, каб захаваць зьмены.
@@ -1381,7 +1381,7 @@ Aliasoù ar pajennoù dibar hag ar gerioù burzhudus a c'hall kaout meur a droid
 Dispartiet eo an troidigezhioù dre skejoù (,).
 N'hall anvioù an etrefasoù ha re an esaouennoù anv nemet kaout un droidigezh hepken.
 
-E troidigezhioù an esaouennoù anv eo dibar <tt>$1 talk</tt>. Erlec'hiet eo <tt>$1</tt> gant anv al lec'hienn (da skouer <tt>{{SITENAME}} talk</tt>).
+E troidigezhioù an esaouennoù anv eo dibar <tt>$1 talk</tt>. Erlec'hiet eo <tt>$1</tt> gant anv al lec'hienn (da skouer <tt>{{ns:project_talk}}</tt>).
 Ma n'haller ket sevel lavarennoù reizh en ho yezh hep kemmañ anv al lec'hienn, kit e darempred gant un diorroer.
 
 Ret eo deoc'h bezañ ezel eus ur strollad troerien evit enrollañ ar c'hemmoù.
@@ -1445,7 +1445,19 @@ Ne vo ket enrollet ar c'hemmoù e-keit ha ne vo ket bet pouezet war ar bouton di
 	'translate-sidebar-alltrans' => 'Troidigezhioù all',
 	'translate-tag-noedit' => 'Un teul treiñ hizivaet ent emgefre eo ar bajenn-mañ.
 Gallout a rit [$1 kemmañ ar bajenn orin] pe [$2 freskaat an droidigezh].',
+	'translations' => 'An holl droidigezhioù',
+	'translate-translations-none' => 'N\'eus troidigezh ebet evit "$1"',
+	'translate-translations-fieldset-title' => 'Kemenn',
+	'translate-translations-messagename' => 'Anv :',
+	'translate-translations-project' => 'Raktres :',
+	'languagestats' => 'Stadegoù yezh',
+	'translate-language-code' => 'Kod yezh',
+	'translate-language-code-field-name' => 'Kod yezh :',
 	'translate-language' => 'Yezh :',
+	'translate-total' => 'Kemennoù',
+	'translate-untranslated' => 'Didro',
+	'translate-percentage-complete' => 'Echu',
+	'translate-percentage-fuzzy' => 'Dispredet',
 );
 
 /** Bosnian (Bosanski)
@@ -1833,7 +1845,7 @@ Aliasy speciálních stránek a kouzelných slov mohou mít více překladů.
 Překlady se oddělují čárkou (,).
 Názvy jmenných prostorů mohou mít jen jeden překlad.
 
-V překladech jmenných prostorů je <tt>$1 talk</tt> speciální. <tt>$1</tt> se nahradí názvem stránky (např. <tt>{{SITENAME}} talk</tt>).
+V překladech jmenných prostorů je <tt>$1 talk</tt> speciální. <tt>$1</tt> se nahradí názvem stránky (např. <tt>{{ns:project_talk}}</tt>).
 Pokud není ve vašem jazyku možné vytvořit smysluplný výraz bez změny názvu stránky, prosím, kontaktujte vývojáře.
 
 Abyste mohli ukládat změny, musíte být členem skupiny ''překladatelé''.
@@ -2191,9 +2203,9 @@ $messages['dsb'] = array(
 	'translate-edit-goto-next' => 'Pśiducu powěsć wobźěłaś',
 	'translate-edit-goto-list' => 'Slědk k lisćinje',
 	'translate-magic-pagename' => 'Rozšyrjony pśełožk MediaWiki',
-	'translate-magic-help' => 'Móžoš pśełožyś aliasy specialnych bokow, magiske słowa a mjenja mjenjowych rumow.
+	'translate-magic-help' => 'Móžoš aliasy specialnych bokow, magiske słowa a mjenja mjenjowych rumow pśełožyś.
 
-Aliasy specialnych bokow a magiske słowa mógu měś někotare pśełožki. Pśełožki źěle se pśez komu (,). Mjenjowe rumy mógu jano jaden pśełožk měś.
+Aliasy specialnych bokow a magiske słowa mógu měś někotare pśełožki. Pśełožki wótźěluju se pśez komu (,). Mjenjowe rumy mógu jano jaden pśełožk měś.
 
 W pśełožkach mjenjowych rumow <tt>$1 diskusija</tt> jo wósebna. <tt>$1</tt> se pśez mjenjom sedła wuměnja (na pśikład <tt>{{SITENAME}} diskusija</tt>). Jolic w twójej rěcy njejo móžno płaśiwy wuraz tworiś, mimo až dejš mě sedła změniš, staj se pšosym z wuwiwarjom do zwiska.
 
@@ -2735,8 +2747,34 @@ Usted puede [$1 editar la página fuente] o [$2 actualizar la traducción].',
  * @author Ker
  */
 $messages['et'] = array(
+	'translate' => 'Tõlkimine',
+	'translate-desc' => '[[Special:Translate|Erileht]] MediaWiki ja muude sõnumite tõlkimiseks',
+	'translate-edit' => 'redigeeri',
+	'translate-talk' => 'arutelu',
+	'translate-history' => 'ajalugu',
+	'translate-task-view' => 'Näita kõiki sõnumeid',
+	'translate-task-untranslated' => 'Näita kõiki tõlkimata sõnumeid',
+	'translate-task-problematic' => 'Näita probleemseid sõnumeid',
+	'translate-task-review' => 'Muudatuste ülevaatus',
+	'translate-task-reviewall' => 'Kõigi tõlgitud sõnumite ülevaatus',
+	'translate-task-export' => 'Ekspordi tõlked',
+	'translate-task-export-to-file' => 'Tõlgete eksportimine faili',
+	'translate-task-export-as-po' => 'Tõlgete eksport Gettexti formaadis',
+	'translate-task-export-to-xliff' => 'Tõlgete eksportimine Xliffi formaadis',
+	'translate-page-no-such-language' => 'Keelevalik oli kõlbmatu.',
 	'translate-page-settings-legend' => 'Seadistused',
-	'translate-page-task' => 'Soovin',
+	'translate-page-task' => 'Tegevus',
+	'translate-page-group' => 'Grupp',
+	'translate-page-language' => 'Keel',
+	'translate-page-limit' => 'Limiit',
+	'translate-prev' => 'Redigeeri eelmist',
+	'translate-edit-goto-next' => 'Redigeeri järgmist',
+	'translate-edit-goto-list' => 'Tagasi nimekirja juurde',
+	'translate-tag-legend-fuzzy' => 'Iganenud tõlge',
+	'translations' => 'Kõik tõlked',
+	'translate-translations-fieldset-title' => 'Sõnum',
+	'translate-total' => 'Sõnumit',
+	'translate-percentage-fuzzy' => 'Iganenud',
 );
 
 /** Basque (Euskara)
@@ -4129,7 +4167,7 @@ Aliasy specialnych stronow a magiske słowow móža wjacore přełožki měć.
 Přełožki so přež komu (,) wotdźěleja.
 Mjena mjenowych rumow móža jenož jedyn přełožk měć.
 
-W přełožkach mjenowych rumow <tt>$1 diskusija</tt> je wosebita. <tt>$1</tt> so přez mjeno sydła, na př. <tt>{{SITENAME}} diskusija</tt> naruna. Jeli w twojej rěči njeje móžno płaćiwy wuraz tworić, bjeztoho zo by so mjeno strony změniło, skontaktuj prošu wuwiwarja.
+W přełožkach mjenowych rumow <tt>$1 diskusija</tt> je wosebita. <tt>$1</tt> so přez mjeno sydła, na př. <tt>{{ns:project_talk}}</tt> naruna. Jeli w twojej rěči njeje móžno płaćiwy wuraz tworić, bjeztoho zo by so mjeno strony změniło, skontaktuj prošu wuwiwarja.
 
 Dyrbiš w skupinje přełožowarjow być, zo by změny składował. Změny so njeskładuja, doniž  składowanske tłóčatko njekliknješ.',
 	'translate-magic-module' => 'Modul:',
@@ -4630,7 +4668,7 @@ Alias untuk halaman istimewa dan kata-kata magis dapat memiliki lebih dari satu 
 Masing-masing harus dipisahkan dengan sebuah tanda koma (,).
 Nama kulit dan ruang nama hanya dapat memiliki satu terjemahan.
 
-Dalam menerjemahkan, ruang nama <tt>$1 talk</tt> harus diperlakukan khusus. <tt>$1</tt> digantikan dengan nama situs (contohnya <tt>{{SITENAME}} talk</tt>).
+Dalam menerjemahkan, ruang nama <tt>$1 talk</tt> harus diperlakukan khusus. <tt>$1</tt> digantikan dengan nama situs (contohnya <tt>{{ns:project_talk}}</tt>).
 Jika bahasa Anda tidak memungkinkan untuk membentuk suatu ekspresi yang valid tanpa mengganti nama situs, silakan kontak salah seorang pengembang.
 
 Anda perlu menjadi anggota kelompok penerjemah untuk menyimpan perubahan.
@@ -4664,7 +4702,7 @@ Perubahan tak akan disimpan hingga Anda mengklik tombol simpan di bawah.',
 	'translate-checks-plural' => 'Definisi menggunakan <nowiki>{{PLURAL:}}</nowiki> tapi terjemahannya tidak.',
 	'translate-checks-pagename' => 'Ruang nama berubah dari definisinya',
 	'tog-translate-nonewsletter' => 'Jangan kirimkan saya e-mail berita (hanya untuk pengguna dengan alamat surat-e yang sudah dikonfirmasi)',
-	'right-translate' => 'Sunting menggunakan antarmuka penerjemahan',
+	'right-translate' => 'Menyunting menggunakan antarmuka penerjemahan',
 	'translate-rc-translation-filter' => 'Filter terjemahan:',
 	'translate-rc-translation-filter-no' => 'Tidak difilter',
 	'translate-rc-translation-filter-only' => 'Tampilkan hanya terjemahan',
@@ -5933,10 +5971,10 @@ $messages['ksh'] = array(
 	'translate-task-export-to-file' => 'Donn de Övversäzzonge en_en Datteij Äxpochteere, fon',
 	'translate-task-export-as-po' => 'Donn de Övversäzzonge en et Jettäx Fommaat Äxpochteere, fon',
 	'translate-task-export-to-xliff' => 'De Översetzunge em Xliff Fomaat äxpochteere, fon',
-	'translate-page-no-such-language' => 'De aanjejoove Shprooch känne me nit.',
-	'translate-page-no-such-task' => 'De aanjejoove Opjav känne me nit.',
-	'translate-page-no-such-group' => 'De aanjejoove Jrop känne me nit.',
-	'translate-page-disabled' => "Övversezonge sen affjeschalldt för di Jropp un Shprooch, weil:
+	'translate-page-no-such-language' => 'De aanjejoove {{int:translate-page-language}} känne me nit.',
+	'translate-page-no-such-task' => 'De aanjejoove {{int:translate-page-task}} känne me nit.',
+	'translate-page-no-such-group' => 'De aanjejoove {{int:translate-page-group}} känne me nit.',
+	'translate-page-disabled' => "Övversezonge sen affjeschalldt för di {{int:translate-page-group}} un {{int:translate-page-language}}, weil:
 
 ''$1''",
 	'translate-page-settings-legend' => 'Ennshtellonge',
@@ -5953,7 +5991,7 @@ $messages['ksh'] = array(
 	'translate-page-paging-links' => '[ $1 ] [ $2 ]',
 	'translate-next' => 'Näx Sigk',
 	'translate-prev' => 'Förrije Sigk',
-	'translate-page-description-legend' => 'Enfommazjohne övver di Jrop',
+	'translate-page-description-legend' => 'Enfommazjohne övver di {{int:translate-page-group}}',
 	'translate-page-edit' => 'Änndere',
 	'translate-optional' => '(nit esu nüüdesch)',
 	'translate-ignored' => '(övverjange)',
@@ -5978,10 +6016,10 @@ De Name fö_de Appachtemangs könne nur eijn Övversätzong han.
 
 Beij de Övversäzonge för de Appachtemangs ier Name hät „<tt>$1 talk</tt>“ ene shpezjälle Senn.
 Dat „<tt>$1</tt>“ shteijt doh als enne Plazhallder för dä Projäkname (zem Beijshpöll dat „<tt>{{SITENAME}}</tt>“ en: „<tt>Övver {{SITENAME}} Klaafe</tt>“).
-Wann Ding Shprooch ed nit heerjitt, dat_De ene grammatesch reschtejje Forrem henkreßß, ohne an dämm Projetname ändere zo mößße, dann donn ene Äntwecklor do drop aansäzze.
+Wann Ding Shprooch ed nit heerjitt, dat_De ene grammatesch reschtejje Forrem henkreßß, ohne an dämm Projek singem Name ändere zo mößße, dann donn ene Äntwecklor do drop aansäzze.
 
 Do moß en de Jrop „Övversäzer“ sen, för hee Änderonge maache ze könne.
-Änderongen weede ehts bem Klicke op dä Knopp förr_et Seschere faßjehallde.',
+Änderongen weede ehts bem Klicke op unge dä Knopp förr_et Seschere faßjehallde.',
 	'translate-magic-module' => 'Dat Modul:',
 	'translate-magic-submit' => 'Loß jonn!',
 	'translate-magic-cm-export' => 'Äxpocht aanfange',
@@ -6004,7 +6042,7 @@ Do moß en de Jrop „Övversäzer“ sen, för hee Änderonge maache ze könne.
 	'translate-checks-balance' => 'Do {{PLURAL:$2|jëijd_en Klammer nit op odder|jonn ongerscheedlish fill Klammere op un|eß Dreß}} zoh: <strong>$1</strong>',
 	'translate-checks-links' => 'Hee {{PLURAL:$2|dä Lengk eß|di Lengks senn|dat Jedrißße}} problemattesch: <strong>$1</strong>',
 	'translate-checks-xhtml' => 'Donn hee {{PLURAL:$2|dat Kommando|di Kommandose|dat Jedrißße}} ußtuusche, un schriif de reschtije do för hen: <strong>$1</strong>',
-	'translate-checks-plural' => 'De Ojjinaal-Nohresch bruch <nowiki>{{PLURAL:}}</nowiki>, ävver de Övversäzong deijt dat nit?',
+	'translate-checks-plural' => 'De Ojjinaal-Nohresch bruch <code><nowiki>{{PLURAL:}}</nowiki></code>, ävver de Övversäzong deijt dat nit?',
 	'translate-checks-pagename' => 'Dat Appachtemang es anders wi em ojinaal Tex',
 	'translate-checks-format' => 'De Övversätzung paß nit zor Definitjuhn odder dä ier Syntax es nit en Odenung: $1',
 	'translate-checks-escape' => 'He de <i lang="en">escapes</i> künnte esu nit jewollt sin: <strong>$1</strong>',
@@ -6018,7 +6056,7 @@ Do moß en de Jrop „Övversäzer“ sen, för hee Änderonge maache ze könne.
 	'translationstats' => 'Statistike fun de Övversäzunge',
 	'translate-stats-edits' => 'Änderunge pro Daach',
 	'translate-stats-users' => 'Övversäzer',
-	'translate-statsf-intro' => 'Hee met kanns de eifach Övverseeschte un Statistike maache. All de Zahl sen noh bovve un onge bejrenz.',
+	'translate-statsf-intro' => 'Hee met kanns de eifach Övverseeschte un Statistike maache. All de Zahle sen noh bovve un onge bejrenz.',
 	'translate-statsf-options' => 'Enstellunge för et Zeischne',
 	'translate-statsf-width' => 'De Breed in Pixelle',
 	'translate-statsf-height' => 'De Hühde in Pixelle',
@@ -6140,9 +6178,9 @@ $messages['lb'] = array(
 
 Spezial Säit ''Aliasen'' a ''magesch Wierder'' kënne méi Iwwersetzungen hunn.
 Iwwersetzungen gi mat engem Komma (,) getrennt.
-Skin Nimm a Nummraim kënne nëmmen eng Iwwersetzung hunn.
+Nummraim kënne nëmmen eng Iwwersetzung hunn.
 
-Am Nummraum Iwwersetzungen ass <tt>$1 Diskussioun</tt> speziell. <tt>$1</tt> gëtt duerch ''sitename'' ersat (zum Beispill <tt>{{SITENAME}} Diskussioun</tt>).
+Am Nummraum Iwwersetzungen ass <tt>$1 Diskussioun</tt> speziell. <tt>$1</tt> gëtt duerch ''sitename'' ersat (zum Beispill <tt>{{ns:project_talk}}</tt>).
 Wann et an ärer Sprooch net méiglech ass fir e gëltegen Ausdrock ze maachen ouni ''sitename'' z'änneren, da kontaktéiert w.e.g. en Entwéckler (developer).
 
 Dir musst am Grupp vun den Iwwersetzer si fir Ännerungen ofspäicheren ze kënnen.
@@ -7084,11 +7122,11 @@ Spesialsidenamn og magiske ord kan ha fleire omsetjingar.
 Omsetjingane vert fråskilde med komma (,).
 Namnerom kan berre ha éi omsetjing.
 
-I namneromomsetjingane er <tt>$1 talk</tt> spesiell. <tt>$1</tt> vert erstatta med namnet på sida (til dømes <tt>{{SITENAME}}</tt>).
+I namneromomsetjingane er <tt>$1 talk</tt> spesiell. <tt>$1</tt> vert erstatta med namnet på sida (til dømes <tt>{{ns:project_talk}}</tt>).
 Om det ikkje er mogeleg å få til eit gyldig uttrykk på ditt språk her utan å endre sidenamnet, kontakt ein utviklar.
 
 Du må vere i omsetjargruppar for å lagre endringar.
-Endringar vert ikkje lagra før du klikkar på lagre-knappen nedanfor.',
+Endringar vert ikkje lagra før du klikkar på lagreknappen nedanfor.',
 	'translate-magic-module' => 'Modul:',
 	'translate-magic-submit' => 'Hent',
 	'translate-magic-cm-export' => 'Eksporter',
@@ -8244,11 +8282,14 @@ $messages['ru'] = array(
  */
 $messages['sah'] = array(
 	'translate' => 'Тылбаас',
+	'translate-desc' => 'MediaWiki движогу уонна атын бырагырааммалары тылбаастыырга [[Special:Translate|аналлаах сирэй]]',
 	'translate-edit' => 'көннөрүү',
 	'translate-talk' => 'ырытыы',
 	'translate-history' => 'историята',
 	'translate-task-view' => 'Этиилэрин барытын',
 	'translate-task-untranslated' => 'Тылбаастамматах этиилэрин',
+	'translate-task-optional' => 'Булгуччута суох этиилэри көрүү',
+	'translate-task-untranslatedoptional' => 'Тылбаастамматах булгуччута суох этиилэри көрүү',
 	'translate-submit' => 'Тал',
 	'translate-next' => 'Аныгыскы сирэй',
 	'translate-prev' => 'Иннинээҕи сирэй',
@@ -9269,17 +9310,17 @@ Kung alam mo kung saan o paano ginagamit ang mensaheng ito, makakatulong ka sa i
 	'translate-edit-goto-next' => 'Baguhin ang susunod na mensahe',
 	'translate-edit-goto-list' => 'Magbalik sa talaan',
 	'translate-magic-pagename' => 'Dinugtungang salinwika ng MediaWiki',
-	'translate-magic-help' => 'Maaari mong isalinwika ang mga bansag ng natatanging mga pahina, mga salitang pangsalamangka at mga pangalan ng mga espasyong pampangalan.
+	'translate-magic-help' => 'Maaari mong isalinwika ang mga bansag ng natatanging mga pahina, mga salitang pangsalamangka at mga pangalan ng mga espasyo ng pangalan.
 
-Maaaring magkaroon ng maraming mga salinwika ang mga bansag na pangnatatanging mga pahina at mga salitang pangsalamangka.
+Maaaring magkaroon ng maramihang mga salinwika ang mga bansag ng natatanging mga pahina at mga salitang pangsalamangka.
 Pinaghihiwalay-hiwalay ng mga kuwit (,) ang mga salinwika.
 May iisang salinwika lamang ang mga espasyo ng pangalan.
 
-Sa loob ng mga salinwika ng espasyo ng pangalan ang <tt>$1 usapan</tt> ay natatangi. Ang <tt>$1</tt> ay pinapalitan ng pangalan ng sayt/sityo (halimbawa na ang <tt>usapang {{SITENAME}} </tt>).
-Kung hindi maaari sa inyong wika ang makahubog ng isang tanggap na pagpapahayag/pagsasaad na hindi binabago ang pangalan ng sayt, makipagugnayan lamang sa isang tagapagunlad.
+Sa loob ng mga salinwika ng espasyo ng pangalan ang <tt>$1 usapan</tt> ay natatangi. Ang <tt>$1</tt> ay pinapalitan ng pangalan ng sityo (halimbawa na ang <tt>usapang {{SITENAME}} </tt>).
+Kung hindi maaari sa inyong wika ang makahubog ng isang tanggap na pagsasaad na hindi binabago ang pangalan ng sayt, makipag-ugnayan lamang sa isang tagapagunlad.
 
 Kinakailangan mong mapabilang sa pangkat ng mga tagapagsalinwika upang makapagsagip ng mga pagbabago.
-Hindi sinasagip ang mga pagbabago maliban na lamang kapag pinindot mo na ang pindutang pansagip sa ibaba.',
+Hindi sinasagip ang mga pagbabago maliban na lamang kapag pinindot mo na ang pindutang pansagip na nasa ibaba.',
 	'translate-magic-module' => 'Modulo:',
 	'translate-magic-submit' => 'Salukin (kuhanin)',
 	'translate-magic-cm-export' => 'Iluwas',
