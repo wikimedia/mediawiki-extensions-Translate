@@ -45,6 +45,8 @@ $wgSpecialPageGroups['LanguageStats'] = 'wiki';
 
 $wgHooks['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';
 $wgHooks['OutputPageBeforeHTML'][] = 'TranslateEditAddons::addNavigation';
+$wgHooks['AlternateEdit'][] = 'TranslateEditAddons::intro';
+
 $wgHooks['UserToggles'][] = 'TranslatePreferences::TranslateUserToggles';
 $wgHooks['SpecialRecentChangesQuery'][] = 'TranslateRcFilter::translationFilter';
 $wgHooks['SpecialRecentChangesPanel'][] = 'TranslateRcFilter::translationFilterForm';

@@ -81,6 +81,12 @@ EOEO;
 		return true;
 	}
 
+	static function intro( $object ) {
+		$object->suppressIntro = true;
+		return true;
+	}
+
+
 	static function addTools( $object ) {
 		$object->editFormTextTop .= self::editBoxes( $object );
 		return true;
