@@ -273,7 +273,7 @@ EOEO;
 
 		// Some syntactic checks
 		$translation = ( $editField !== null ) ? $editField : $xx;
-		if ( $translation !== null ) {
+		if ( $translation !== null && $code !== $wgTranslateDocumentationLanguageCode) {
 			$message = new TMessage( $key, $en );
 			// Take the contents from edit field as a translation
 			$message->database = $translation;
