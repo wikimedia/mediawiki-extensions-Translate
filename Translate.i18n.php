@@ -1522,7 +1522,7 @@ Skraćenice posebnih stranica i magične riječi mogu imati višestruke prijevod
 Prijevodi su odvojeni zarezom (,).
 Imenski prostori mogu imati samo jedan prijevod.
 
-U prijevodima imenskih prostora <tt>$1 razgovor</tt> je poseban. <tt>$1</tt> je zamijeneno sa imenom sajta (naprimjer <tt>{{SITENAME}} razgovor</tt>).
+U prijevodima imenskih prostora <tt>$1 razgovor</tt> je poseban. <tt>$1</tt> je zamijeneno sa imenom sajta (naprimjer <tt>{{ns:project_talk}}</tt>).
 Ako nije moguće na Vašem jeziku da se obrazuje validan izraz bez promjene imena sajta, molimo da kontaktirate razvojnog programera..
 
 Morate pripadati grupi prevodioca da bi spremili promjene.
@@ -6064,8 +6064,8 @@ Do moß en de Jrop „Övversäzer“ sen, för hee Änderonge maache ze könne.
 	'translate-statsf-scale' => 'De Jenouschkeit udder Oplösung',
 	'translate-statsf-scale-days' => 'Dare',
 	'translate-statsf-scale-hours' => 'Stunde',
-	'translate-statsf-count' => 'Der Maßschtab',
-	'translate-statsf-count-edits' => 'Aanzahl fun Änderunge',
+	'translate-statsf-count' => 'Der Maaßschtaab',
+	'translate-statsf-count-edits' => 'Aanzahl Änderunge',
 	'translate-statsf-count-users' => 'Aktive Övversezer',
 	'translate-statsf-language' => 'En Leß fun Köözelle för Shprooche, met Kommas dozwesche',
 	'translate-statsf-group' => 'En Leß fun Köözelle för Jroppe, met Kommas dozwesche',
@@ -6082,8 +6082,7 @@ Do moß en de Jrop „Övversäzer“ sen, för hee Änderonge maache ze könne.
 	'translate-tag-noedit' => 'Die Sigg es en Övversäzongß_Sigg, die automattejj_op der neuste Shtant jebraat weed.
 Do kanns de [$1 Ojinaal-Sigg ändere] ov de [$2 Övversäzong op der neuste Shtand bränge].',
 	'translations' => 'All Övversätzunge',
-	'translations-summary' => '
-Jif ene Name för en Nohresch enn, öm all de Övversätzunge aanzezeije.',
+	'translations-summary' => 'Jif ene Name för en Nohresch enn, öm all de Övversätzunge aanzezeije.',
 	'translate-translations-no-message' => 'Mer han kein Nohresch „$1“ för ze övversetze',
 	'translate-translations-none' => 'Mer han kei Övversätzunge för „$1“',
 	'translate-translations-fieldset-title' => 'Nohrich',
@@ -7622,13 +7621,13 @@ $messages['pl'] = array(
 	'translate-edit-goto-next' => 'Edycja następnego komunikatu',
 	'translate-edit-goto-list' => 'Powrót do listy komunikatów',
 	'translate-magic-pagename' => 'Rozszerzone tłumaczenie MediaWiki',
-	'translate-magic-help' => 'Możliwe jest tłumaczenie aliasów stron specjalnych, magicznych słów i nazw poszczególnych przestrzeni nazw.
+	'translate-magic-help' => 'Istnieje możliwość tłumaczenia aliasów stron specjalnych, magicznych słów i nazw poszczególnych przestrzeni nazw.
 
 Aliasy stron specjalnych i magiczne słowa mogą mieć wiele tłumaczeń.
-Tłumaczenia oddziela się przecinkiem (,).
+Tłumaczenia rozdziela się przecinkiem (,).
 Przestrzenie nazw mogą mieć tylko jedno tłumaczenie.
 
-Podczas tłumaczenia przestrzeni nazw specjalne znaczenie ma zapis <tt>Dyskusja $1</tt>, gdzie <tt>$1</tt> zamieniane jest w nazwę serwisu – na przykład <tt>Dyskusja {{SITENAME}}</tt>.
+Podczas tłumaczenia przestrzeni nazw specjalne znaczenie ma zapis <tt>Dyskusja $1</tt>, gdzie <tt>$1</tt> zamieniane jest w nazwę serwisu – na przykład <tt>{{ns:project_talk}}</tt>.
 Jeśli w danym języku niemożliwe jest sformułowanie prawidłowego wpisu bez zmiany nazwy serwisu, należy skontaktować się z deweloperem.
 
 Zapisanie zmian jest możliwe tylko dla członków grupy tłumaczy.
@@ -7662,6 +7661,7 @@ Zmiany nie są zapisywane, dopóki użytkownik nie naciśnie umieszczonego poni�
 	'translate-checks-plural' => 'Definicja wykorzystuje funkcję <nowiki>{{PLURAL:}}</nowiki>, lecz w tłumaczeniu nie została ona użyta.',
 	'translate-checks-pagename' => 'Przestrzeń nazw zmieniona z definicji',
 	'translate-checks-format' => 'To tłumaczenie jest niezgodne z definicją lub ma nieprawidłową składnię: $1',
+	'translate-checks-escape' => 'Następujące wyjścia z procesu tłumaczenia mogą być przypadkowe: <strong>$1</strong>',
 	'tog-translate-nonewsletter' => 'Nie wysyłaj do mnie biuletynów pocztą elektroniczną (dotyczy tylko użytkowników z potwierdzonym adresem e-mail)',
 	'right-translate' => 'Edycja z użyciem interfejsu tłumaczeń',
 	'translate-rc-translation-filter' => 'Filtruj tłumaczenia',
