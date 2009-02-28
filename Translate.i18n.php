@@ -6058,7 +6058,7 @@ Do moß en de Jrop „Övversäzer“ sen, för hee Änderonge maache ze könne.
 	'translate-checks-format' => 'De Övversätzung paß nit zor Definitjuhn odder dä ier Syntax es nit en Odenung: $1',
 	'translate-checks-escape' => 'He de <i lang="en">escapes</i> künnte esu nit jewollt sin: <strong>$1</strong>',
 	'tog-translate-nonewsletter' => 'Donn mer keijn Rondschriive övver de eläktronesche Poß scheke (nor för Medmaacher med beschtäteschte Addräß för de e-mail)',
-	'right-translate' => 'Med dä Schnettshtäll zom Övverseze ärrbeide',
+	'right-translate' => 'Met dä Schnettshtäll zom Övverseze ärrbeide',
 	'translate-rc-translation-filter' => 'Övversëzonge:',
 	'translate-rc-translation-filter-no' => 'Alles aanzeije',
 	'translate-rc-translation-filter-only' => 'Don noor de Övversëzonge zëije',
