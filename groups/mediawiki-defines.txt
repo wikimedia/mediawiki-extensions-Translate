@@ -534,8 +534,6 @@ descmsg = hiderevision-desc
 
 Page By
 
-Password Reset
-
 Parser Functions
 descmsg = pfunc_desc
 
