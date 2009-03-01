@@ -4758,7 +4758,9 @@ $messages['ilo'] = array(
  * @author Malafaya
  */
 $messages['io'] = array(
+	'translate' => 'Traduko',
 	'translate-edit' => 'redaktar',
+	'translate-talk' => 'diskutez',
 	'translate-history' => 'versionaro',
 	'translate-page-task' => 'Me volas',
 	'translate-page-group' => 'Grupo',
@@ -4770,8 +4772,10 @@ $messages['io'] = array(
 	'translate-edit-contribute' => 'kontributez',
 	'translate-edit-information' => 'Informo pri ca mesajo ($1)',
 	'translate-edit-in-other-languages' => 'Mesajo en altra lingui',
+	'translate-magic-cm-current' => 'Aktuala',
 	'translate-magic-cm-comment' => 'Komento:',
 	'translate-magic-cm-save' => 'Registragar',
+	'translate-magic-namespace' => 'Nomi di la nomari',
 	'translationchanges-change' => '$1: $2 per $3',
 	'translate-rc-translation-filter-only' => 'Montrez nur tradukuri',
 	'translate-stats-edits' => 'Editi',
@@ -4779,9 +4783,11 @@ $messages['io'] = array(
 	'translate-statsf-scale-days' => 'Dii',
 	'translate-statsf-scale-hours' => 'Hori',
 	'translate-statsf-submit' => 'Previdar',
+	'translate-tag-legend-fallback' => 'Tradukuro en altra linguo',
 	'translate-sidebar-alltrans' => 'Altra tradukuri',
 	'translations' => 'Omna tradukuri',
 	'translate-translations-messagename' => 'Nomo:',
+	'translate-language' => 'Linguo',
 );
 
 /** Icelandic (Íslenska)
@@ -9435,7 +9441,7 @@ Hindi sinasagip ang mga pagbabago maliban na lamang kapag pinindot mo na ang pin
 	'translate-rc-translation-filter-no' => 'Walang gagawin',
 	'translate-rc-translation-filter-only' => 'Mga salinwika lamang ang ipakita',
 	'translate-rc-translation-filter-filter' => 'Salaing hindi isinasama ang mga salinwika',
-	'translate-rc-translation-filter-site' => 'Mga pagbabago sa mga mensahe ng sityo/sayt lamang',
+	'translate-rc-translation-filter-site' => 'Mga pagbabago sa mga mensahe ng sayt lamang',
 	'translationstats' => 'Mga estadistikang pangsalinwika',
 	'translate-stats-edits' => 'Mga pagbabago',
 	'translate-stats-users' => 'Mga tagapagsalinwika',
