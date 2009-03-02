@@ -184,7 +184,6 @@ file = ConfirmEdit/FancyCaptcha.i18n.php
 Contact Page
 
 Contribution Reporting
-optional = contribstats-percentage
 
 Contribution Scores
 
@@ -326,7 +325,6 @@ file = FlaggedRevs/language/UnstablePages.i18n.php
 Flagged Revisions - Validation Statistics
 id = ext-flaggedrevs-validationstatistics
 file = FlaggedRevs/language/ValidationStatistics.i18n.php
-optional = validationstatistics-nbr
 
 Find Spam
 
