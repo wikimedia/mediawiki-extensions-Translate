@@ -3897,7 +3897,7 @@ $messages['he'] = array(
 יש להפריד את התרגומים באמצעות פסיק (,).
 למרחבי שם יכול להיות תרגום אחד בלבד.
 
-בתרגום מרחבי השם, <tt>שיחת $1</tt> הוא מקרה מיוחד. <tt>$1</tt> יוחלף בשם האתר (לדוגמה, <tt>שיחת {{SITENAME}}</tt>).
+בתרגום מרחבי השם, <tt>שיחת $1</tt> הוא מקרה מיוחד. <tt>$1</tt> יוחלף בשם האתר (לדוגמה, <tt>{{ns:project_talk}}</tt>).
 אם אין זה אפשרי בשפתכם לתרגם את מרחב השם הזה מבלי לשנות את שם האתר, אנא צרו קשר עם מפתח.
 
 עליכם להיות בקבוצת המתרגמים כדי לשמור שינויים.
@@ -8163,6 +8163,7 @@ $messages['roa-tara'] = array(
 	'translate-page-language' => 'Lènghe',
 	'translate-page-limit' => 'Limite',
 	'translate-page-navigation-legend' => 'Navigazzione',
+	'translate-page-description-legend' => "'Mbormazione sus a 'u gruppe",
 	'translate-page-edit' => 'cange',
 	'translate-magic-module' => 'Module:',
 	'translate-magic-cm-export' => 'Esporte',
@@ -8176,8 +8177,12 @@ $messages['roa-tara'] = array(
 	'translationchanges-export' => 'esporte',
 	'translationchanges-change' => '$1: $2 da $3',
 	'translate-rc-translation-filter-no' => 'No fà ninde',
+	'translationstats' => 'Statisteche de le traduziune',
+	'translate-stats-edits' => 'Cangiaminde',
+	'translate-stats-users' => 'Tradutture',
 	'translate-statsf-scale-days' => 'Giurne',
 	'translate-statsf-scale-hours' => 'Ore',
+	'translate-statsf-count-edits' => 'Numere de cangiaminde',
 	'translate-statsf-submit' => 'Andeprime',
 	'translate-tag-translate-link-desc' => 'Traduce sta vosce',
 	'translate-tag-legend' => 'Leggende:',
@@ -8370,6 +8375,7 @@ $messages['sah'] = array(
 	'translate-submit' => 'Тал',
 	'translate-next' => 'Аныгыскы сирэй',
 	'translate-prev' => 'Иннинээҕи сирэй',
+	'translate-sidebar-alltrans' => 'Атын тылбаастар',
 	'translate-language' => 'Ханнык тылынан:',
 );
 
