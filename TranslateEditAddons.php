@@ -89,6 +89,26 @@ EOEO;
 
 	static function addTools( $object ) {
 		$object->editFormTextTop .= self::editBoxes( $object );
+		global $wgMessageCache, $wgLang;
+		$wgMessageCache->addMessage( 'savearticle', "Save as {$wgLang->getCode()}", $wgLang->getCode() );
+		return true;
+	}
+
+	static function buttonHack( $editpage, &$buttons, $tabindex ) {
+		global $wgLang;
+		list( , $code ) = self::figureMessage( $editpage->mTitle );
+		if ( $code !== 'qqq' ) return true;
+		$name = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() );
+		$temp = array(
+			'id'        => 'wpSave',
+			'name'      => 'wpSave',
+			'type'      => 'submit',
+			'tabindex'  => ++$tabindex,
+			'value'     => wfMsg( 'translate-save', $name ),
+			'accesskey' => wfMsg( 'accesskey-save' ),
+			'title'     => wfMsg( 'tooltip-save' ).' ['.wfMsg( 'accesskey-save' ).']',
+		);
+		$buttons['save'] = Xml::element('input', $temp, '');
 		return true;
 	}
 

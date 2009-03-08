@@ -195,6 +195,8 @@ You can [$1 edit the source page] or [$2 update the translation].',
 	'translate-languagestats-groups' => ' # Add message group IDs, one per line to restrict the message groups that
  # are shown on Special:LanguageStats. Non-existing message group IDs will
  # be ignored.', # do not duplicate this message to other languages
+
+	'translate-save' => 'Save ($1)',
 );
 
 /** Message documentation (Message documentation)
