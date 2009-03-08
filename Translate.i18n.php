@@ -3831,6 +3831,7 @@ $messages['haw'] = array(
 	'translate-edit' => 'e ho‘opololei',
 	'translate-history' => 'mo‘olelo',
 	'translate-page-language' => 'ʻŌlelo',
+	'translate-page-navigation-legend' => 'Ka hoʻokele ʻana',
 	'translate-language' => 'ʻŌlelo',
 );
 
