@@ -1177,6 +1177,7 @@ $messages['be-tarask'] = array(
 	'translate-untranslated' => 'Неперакладзеныя',
 	'translate-percentage-complete' => 'Перакладзеныя',
 	'translate-percentage-fuzzy' => 'Састарэлыя',
+	'translate-save' => 'Захаваць ($1)',
 );
 
 /** Bulgarian (Български)
@@ -1290,6 +1291,7 @@ $messages['bg'] = array(
 	'translate-translations-none' => 'Не съществуват преводи за „$1“',
 	'translate-translations-fieldset-title' => 'Съобщение',
 	'translate-translations-messagename' => 'Име:',
+	'translate-translations-project' => 'Проект:',
 	'languagestats' => 'Езикови статистики',
 	'languagestats-summary' => 'Тази страница показва статистиките за преводите на всички ([[MediaWiki:Translate-languagestats-groups|конфигурирани]]) групи съобщения за езика.',
 	'translate-language-code' => 'Езиков код',
@@ -1705,7 +1707,7 @@ $messages['ca'] = array(
 
 Els títols de les pàgines especials i les paraules màgiques poden tenir múltiples traduccions. Separeu-les per una coma (,) i un espai. Els espais de noms només poden tenir una traducció.
 
-Dins les traduccions dels espais de noms, la <tt>$1 talk</tt> és especial. <tt>$1</tt> es substitueix pel nom del projecte (per exemple <tt>{{SITENAME}} talk</tt>). Si no és possible fer-ho així en el vostre idioma sense canviar la forma gramatical del nom del projecte, contacteu amb un programador.
+Dins les traduccions dels espais de noms, la <tt>$1 talk</tt> és especial. <tt>$1</tt> es substitueix pel nom del projecte (per exemple <tt>{{ns:project_talk}}</tt>). Si no és possible fer-ho així en el vostre idioma sense canviar la forma gramatical del nom del projecte, contacteu amb un programador.
 
 Heu de tenir permisos de traductor per a desar els canvis, que no es guardaran fins que no cliqueu el botó corresponent.",
 	'translate-magic-module' => 'Mòdul:',
@@ -1735,8 +1737,16 @@ Heu de tenir permisos de traductor per a desar els canvis, que no es guardaran f
 	'translate-checks-xhtml' => "{{PLURAL:$2|Reemplaceu l'etiqueta següent per la correcta|Reemplaceu les etiquetes següents per les correctes}}:
 <strong><nowiki>$1</nowiki></strong>",
 	'translate-checks-plural' => 'La definició utilitza <nowiki>{{PLURAL:}}</nowiki> i en canvi la traducció no.',
+	'translate-checks-pagename' => "S'ha canviat l'espai de noms (''namespace'') de la definició",
+	'translate-checks-format' => 'Aquesta traducció no segueix la definició o té una sintaxi invàlida: $1',
+	'translate-checks-escape' => "Les següents seqüències d'escapament poden ser accidentals: <strong>$1</strong>",
 	'tog-translate-nonewsletter' => "No m'enviïs per correu electrònic el recull de notícies (només per a usuaris amb adreça electrònica)",
 	'right-translate' => 'Editar fent servir la interfície de traducció',
+	'translate-rc-translation-filter' => 'Filtra traduccions:',
+	'translate-rc-translation-filter-no' => 'No facis res',
+	'translate-rc-translation-filter-only' => 'Mostra només traduccions',
+	'translate-rc-translation-filter-filter' => 'No mostris traduccions',
+	'translate-rc-translation-filter-site' => "Només canvis als missatges d'aquest lloc",
 	'translationstats' => 'Estadístiques de traducció',
 	'translate-stats-edits' => 'Edicions',
 	'translate-stats-users' => 'Traductors',
@@ -1754,13 +1764,19 @@ Heu de tenir permisos de traductor per a desar els canvis, que no es guardaran f
 	'translate-statsf-language' => "Codis d'idiomes separats per comes",
 	'translate-statsf-group' => 'Codis de grups separats per comes',
 	'translate-statsf-submit' => 'Previsualització',
+	'translate-tag-category' => 'Pàgines traduïbles',
+	'translate-tag-page-desc' => 'Traducció de la pàgina wiki [[:$1]].',
 	'translate-tag-translate-link-desc' => 'Traduir aquesta pàgina',
 	'translate-tag-legend' => 'Llegenda:',
 	'translate-tag-legend-fallback' => 'Traducció en un altre idioma',
 	'translate-tag-legend-fuzzy' => 'Traducció desfasada',
 	'translate-tag-fuzzy-comment' => "Definició canviada per [[User:$1|$1]] a l'edició $2.",
+	'translate-tag-fuzzy-reason' => 'Definició canviada per «$1» amb el comentari «$3» a $2.',
 	'translate-sidebar-alltrans' => 'Altres traduccions',
+	'translate-tag-noedit' => 'Aquesta és una pàgina de traducció actualitzada automàticament.
+Podeu [$1 editar la pàgina font] o [$2 actualitzar la traducció].',
 	'translations' => 'Totes les traduccions',
+	'translations-summary' => 'Entreu a continuació un nom de missatge per a mostrar-ne totes les traduccions disponibles.',
 	'translate-translations-no-message' => '«$1» no és un missatge a traduir.',
 	'translate-translations-none' => 'No hi ha traduccions per a «$1»',
 	'translate-translations-fieldset-title' => 'Missatge',
@@ -1777,6 +1793,7 @@ Heu de tenir permisos de traductor per a desar els canvis, que no es guardaran f
 	'translate-untranslated' => 'Sense traduir',
 	'translate-percentage-complete' => 'Completesa',
 	'translate-percentage-fuzzy' => 'Desfasats',
+	'translate-save' => 'Desa ($1)',
 );
 
 /** Chamorro (Chamoru)
@@ -2297,6 +2314,7 @@ Móžoš [$1 žrědłowy bok wobźěłaś] abo [$2 pśełožk aktualizěrowaś].
 	'translate-untranslated' => 'Njepśełožony',
 	'translate-percentage-complete' => 'Dopołnjenje',
 	'translate-percentage-fuzzy' => 'Zestarjony',
+	'translate-save' => 'Składowaś ($1)',
 );
 
 /** Greek (Ελληνικά)
@@ -3179,7 +3197,7 @@ Voit [$1 muokata lähdesivua] tai [$2 päivittää käännöksen].',
  */
 $messages['fr'] = array(
 	'translate' => 'Traduire',
-	'translate-desc' => '[[Special:Translate|Page spéciale]] pour traduire MediaWiki et même plus encore.',
+	'translate-desc' => '[[Special:Translate|Page spéciale]] pour traduire MediaWiki et au-delà',
 	'translate-edit' => 'modifier',
 	'translate-talk' => 'discuter',
 	'translate-history' => 'historique',
@@ -3188,7 +3206,7 @@ $messages['fr'] = array(
 	'translate-task-optional' => 'Voir les messages facultatifs du',
 	'translate-task-untranslatedoptional' => 'Voir les messages facultatifs non traduits du',
 	'translate-task-problematic' => 'Voir les messages ayant des problèmes',
-	'translate-task-review' => 'Revoir mes changements au',
+	'translate-task-review' => 'Revoir les modifications au',
 	'translate-task-reviewall' => 'Revoir tous les messages traduits du',
 	'translate-task-export' => 'Exporter les traductions du',
 	'translate-task-export-to-file' => 'Exporter dans un fichier les traductions du',
@@ -3255,7 +3273,7 @@ Les modifications ne sont pas enregistrées tant que vous n’avez pas cliqué s
 	'translate-magic-namespace' => 'Noms des espaces de noms',
 	'translationchanges' => 'Traductions modifiées',
 	'translationchanges-export' => 'exporter',
-	'translationchanges-change' => '$1: $2 par $3',
+	'translationchanges-change' => '$1 : $2 par $3',
 	'translate-checks-parameters' => '{{PLURAL:$2|Le paramètre suivant n’est pas utilisé|Les paramètres suivants ne sont pas utilisés}} :
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Le paramètre suivant est inconnu|Les paramètres suivants sont inconnus}} :
@@ -3301,7 +3319,7 @@ Toutes les valeurs ont des limites supérieure et inférieure.',
 	'translate-tag-legend' => 'Légende :',
 	'translate-tag-legend-fallback' => 'Traduction dans une autre langue',
 	'translate-tag-legend-fuzzy' => 'Traduction obsolète',
-	'translate-tag-fuzzy-comment' => 'Définition modifiée par l’utilisateur [[User:$1|$1]] dans la version $2.',
+	'translate-tag-fuzzy-comment' => 'Définition modifiée par l’utilisateur [[User:$1|$1]] dans la révision $2.',
 	'translate-tag-fuzzy-reason' => 'Définition modifiée par l’utilisateur « $1 » avec pour commentaire « $3 » dans $2.',
 	'translate-sidebar-alltrans' => 'Autres traductions',
 	'translate-tag-noedit' => 'Ceci est une page de traduction mise à jour automatiquement.
@@ -3327,6 +3345,7 @@ Vous pouvez [$1 modifier la page source] ou [$2 mettre à jour la traduction].',
 	'translate-languagestats-groups' => ' # Ajoutez des ID de groupes de messages, un par ligne pour limiter les groupes
  # qui sont affichés sur Special:LanguageStats. Les groupes inexistants seront
  # ignorés.',
+	'translate-save' => 'Publier ($1)',
 );
 
 /** Cajun French (Français cadien)
@@ -3541,7 +3560,7 @@ Os alias das páxinas especiais e as palabras máxicas poden ter numerosas tradu
 As traducións sepáranse mediante unha coma (,).
 Os nomes dos espazos de nomes só poden ter unha tradución.
 
-Nas traducións dos espazos de nomes, <tt>$1 talk</tt> é especial. <tt>$1</tt> substitúese polo nome do sitio (por exemplo, <tt>{{SITENAME}} talk</tt>).
+Nas traducións dos espazos de nomes, <tt>$1 talk</tt> é especial. <tt>$1</tt> substitúese polo nome do sitio (por exemplo, <tt>{{ns:project_talk}}</tt>).
 Se na súa lingua non resulta posíbel formar unha expresión válida sen mudar o nome do sitio, contacte cun desenvolvedor.
 
 Ten que estar no grupo de tradutores para gardar os cambios.
@@ -3629,6 +3648,7 @@ Pode [$1 editar a páxina coa fonte] ou [$2 actualizar a tradución].',
 	'translate-untranslated' => 'Sen traducir',
 	'translate-percentage-complete' => 'Completadas',
 	'translate-percentage-fuzzy' => 'Anticuadas',
+	'translate-save' => 'Gardar ($1)',
 );
 
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
@@ -3716,7 +3736,7 @@ $messages['gsw'] = array(
 
 Spezialsyten un magischi Werter chenne mehreri Ibersetzige haa, si wäre jewyyls dur e Komma (,) trännt. Namensruumnäme derfe nume je ei Ibersetzig haa.
 
-In dr Ibersetzig vun eme Namensruumnamen het <tt>$1 talk</tt> e spezielli Bedytig. <tt>$1</tt> wird dur dr Projäktname ersetzt (zum Byspil <tt>{{SITENAME}} talk</tt>).
+In dr Ibersetzig vun eme Namensruumnamen het <tt>$1 talk</tt> e spezielli Bedytig. <tt>$1</tt> wird dur dr Projäktname ersetzt (zum Byspil <tt>{{ns:project_talk}}</tt>).
 Wänn s in Dyynere Sproch nit megli isch, e grammatikalisch korrekti Form dervu z bilde ohni dr Projäktname z verändere, no nimm bitte Kontakt uf mit eme Softwareentwickler.
 
 Du muesch in dr Ibersetzer-Gruppe syy go Änderige z spychere.
@@ -3799,6 +3819,7 @@ Du chasch d [$1 Originalsyte bearbeite] oder [$2 d Ibersetzig aktualisiere].',
 	'translate-untranslated' => 'Nit ibersetzt',
 	'translate-percentage-complete' => 'Vollständigkeit',
 	'translate-percentage-fuzzy' => 'Veraltet',
+	'translate-save' => 'Spychere ($1)',
 );
 
 /** Manx (Gaelg)
@@ -3829,7 +3850,7 @@ $messages['hak'] = array(
 $messages['haw'] = array(
 	'translate' => 'Unuhi',
 	'translate-edit' => 'e ho‘opololei',
-	'translate-history' => 'mo‘olelo',
+	'translate-history' => 'mōʻaukala',
 	'translate-page-language' => 'ʻŌlelo',
 	'translate-page-navigation-legend' => 'Ka hoʻokele ʻana',
 	'translate-language' => 'ʻŌlelo',
@@ -4286,6 +4307,7 @@ Móžeš [$1 originalnu stronu wobdźěłać] abo [$2 přełožk aktualizować].
 	'translate-untranslated' => 'Njepřełoženy',
 	'translate-percentage-complete' => 'Dospołny',
 	'translate-percentage-fuzzy' => 'Zestarjeny',
+	'translate-save' => 'Składować ($1)',
 );
 
 /** Haitian (Kreyòl ayisyen)
@@ -5092,7 +5114,7 @@ $messages['ja'] = array(
 
 特別ページへのエイリアスとマジックワードには複数の翻訳を割り当てることができます。複数の翻訳がある時はコンマ（,）で区切ってください。名前空間名には一つの翻訳しか当てることができません。
 
-名前空間を翻訳する際、<tt>$1 talk</tt> には特別な注意事項があります。それは、<tt>$1</tt> がサイト名に変更される点です（例えば<tt>{{SITENAME}} talk</tt>の様に）。あなたが翻訳しようとしている言語において、サイト名の変更なしには正しい形式で表現できない場合、開発者に相談してください。
+名前空間を翻訳する際、<tt>$1 talk</tt> には特別な注意事項があります。それは、<tt>$1</tt> がサイト名に変更される点です（例えば<tt>{{ns:project_talk}}</tt>の様に）。あなたが翻訳しようとしている言語において、サイト名の変更なしには正しい形式で表現できない場合、開発者に相談してください。
 
 変更を保存できるのは、翻訳者グループに属する利用者のみです。以下の{{int:translate-magic-cm-save}}ボタンを押すまで変更は保存されません。',
 	'translate-magic-module' => 'モジュール:',
@@ -5181,6 +5203,7 @@ $messages['ja'] = array(
 	'translate-languagestats-groups' => ' # Special:LanguageStatsに表示するメッセージグループを制限するには
  # メッセージグループのIDを1行1つずつ記入します。
  # 無効なIDは無視されます。',
+	'translate-save' => '保存 ($1)',
 );
 
 /** Javanese (Basa Jawa)
@@ -5318,6 +5341,7 @@ Panjenengan bisa [$1 nyunting sumber kaca] utawa [$2 mutakiraké terjemahan].',
 /** Georgian (ქართული)
  * @author Malafaya
  * @author Sopho
+ * @author Temuri rajavi
  */
 $messages['ka'] = array(
 	'translate' => 'თარგმნა',
@@ -5366,6 +5390,7 @@ $messages['ka'] = array(
 	'translate-statsf-count-edits' => 'რედაქციების რიცხვი',
 	'translate-statsf-count-users' => 'აქტიური მთარგმნელები',
 	'translate-statsf-submit' => 'წინასწარი გადახედვა',
+	'translate-tag-legend' => 'ლეგენდა:',
 	'translate-tag-legend-fallback' => 'თარგმანი სხვა ენაზე',
 	'translate-sidebar-alltrans' => 'სხვა თარგმანები',
 	'translations' => 'ყველა თარგმანი',
@@ -6146,6 +6171,7 @@ Do kanns de [$1 Ojinaal-Sigg ändere] ov de [$2 Övversäzong op der neuste Shta
 	'translate-languagestats-groups' => ' # Jif dä Nohreschtejroppe ier Nommere hee en, öm de Nohreschtejroppe en dä
  # Aanzeije op Special:LanguageStats enzeschrängke. Nohreschtejroppe, woh et
  # de Nommere nit jit, donn nix.',
+	'translate-save' => 'Save ($1)',
 );
 
 /** Latin (Latina)
@@ -7008,7 +7034,7 @@ Alternatieven voor speciale pagina\'s en magische woorden kunnen meerdere vertal
 Scheid vertalingen met een komma (,).
 Naamruimtebenamingen kunnen slechts één vertaling hebben.
 
-In naamruimtebenamingen is <tt>$1 talk</tt> een uitzondering. <tt>$1</tt> wordt vervangen door de sitenaam (bijvoorbeeld <tt>{{SITENAME}} talk</tt>).
+In naamruimtebenamingen is <tt>$1 talk</tt> een uitzondering. <tt>$1</tt> wordt vervangen door de sitenaam (bijvoorbeeld <tt>{{ns:project_talk}}</tt>).
 Als het in uw taal niet mogelijk is een geldige uitdrukking te vormen zonder de sitenaam te wijzigen, neem dan contact op met een ontwikkelaar.
 
 Om wijzigingen op te slaan moet u lid zijn van de groep vertalers.
@@ -7097,6 +7123,7 @@ U kunt de [$1 brontekst bewerken] of de [$2 vertaling bijwerken].',
 	'translate-untranslated' => 'Te vertalen',
 	'translate-percentage-complete' => 'Vertaald',
 	'translate-percentage-fuzzy' => 'Verouderd',
+	'translate-save' => 'Opslaan ($1)',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
@@ -7253,6 +7280,7 @@ Du kan [$1 endre kjeldesida] eller [$2 oppdatere omsetjinga].',
 	'translate-untranslated' => 'Uomsett',
 	'translate-percentage-complete' => 'Ferdiggjort',
 	'translate-percentage-fuzzy' => 'Utdatert',
+	'translate-save' => 'Lagra ($1)',
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
@@ -7495,7 +7523,7 @@ Los aliases de paginas especialas e los mots magics pòdon aver mantuna traducci
 Las traduccions son separadas per una virgula (,).
 Los espacis de noms pòdon pas aver qu'una traduccion.
 
-Dins las traduccions d'espacis de noms, <tt>$1 talk</tt> es especial. <tt>$1</tt> es remplaçat pel nom del sit (per exemple <tt>{{SITENAME}} talk</tt>).
+Dins las traduccions d'espacis de noms, <tt>$1 talk</tt> es especial. <tt>$1</tt> es remplaçat pel nom del sit (per exemple <tt>{{ns:project_talk}}</tt>).
 S4es pas possible d'obténer una expression valida dins vòstra lenga sens cambiar lo nom del sit, contactatz un desvolopaire.
 
 Vos cal aparténer al grop dels traductors per salvar los cambiaments.
@@ -7578,6 +7606,7 @@ Podètz [$1 modificar la pagina font] o [$2 metre a jorn la traduccion].',
 	'translate-untranslated' => 'Pas traduches',
 	'translate-percentage-complete' => 'Acabament',
 	'translate-percentage-fuzzy' => 'Despassats',
+	'translate-save' => 'Publicar ($1)',
 );
 
 /** Oriya (ଓଡ଼ିଆ)
@@ -7916,7 +7945,7 @@ Os nomes alternativos de páginas especiais e palavras mágicas podem receber m�
 As traduções são separadas por vírgulas (,).
 Nomes de espaços nominais podem receber apenas uma tradução.
 
-Nas traduções de espaços nominais, a partícula <tt>$1 talk</tt> é especial. <tt>$1</tt> é substituído pelo nome do sítio (por exemplo, <tt>{{SITENAME}} talk</tt>).
+Nas traduções de espaços nominais, a partícula <tt>$1 talk</tt> é especial. <tt>$1</tt> é substituído pelo nome do sítio (por exemplo, <tt>{{ns:project_talk}}</tt>).
 Se não é possível formar no seu idioma expressões válidas sem alterar o nome do sítio, por favor, contacte um desenvolvedor.
 
 É necessário pertencer ao grupo de tradutores para conseguir gravar as alterações.
@@ -8001,6 +8030,7 @@ Você pode [$1 editar a página de origem] ou [$2 actualizar a tradução].',
 	'translate-untranslated' => 'Não traduzidas',
 	'translate-percentage-complete' => 'Progresso',
 	'translate-percentage-fuzzy' => 'Obsoletas',
+	'translate-save' => 'Gravar ($1)',
 );
 
 /** Tarifit (Tarifit)
@@ -8377,14 +8407,49 @@ $messages['sah'] = array(
 	'translate-task-untranslated' => 'Тылбаастамматах этиилэрин',
 	'translate-task-optional' => 'Булгуччута суох этиилэри көрүү',
 	'translate-task-untranslatedoptional' => 'Тылбаастамматах булгуччута суох этиилэри көрүү',
+	'translate-task-problematic' => 'Моһуоктаах этиилэри/биллэриилэри көрөргө',
+	'translate-task-review' => 'Уларытыылары тургутуу',
+	'translate-task-reviewall' => 'Туох баар тылбаастары көрүү',
+	'translate-task-export' => 'Тылбаастары таһаарыы (экспортааһын)',
+	'translate-task-export-to-file' => 'Тылбаастары билэҕэ таһаарыы (экспортааһын)',
+	'translate-task-export-as-po' => 'Тылбаастары gettext формаакка таһаарыы',
+	'translate-task-export-to-xliff' => 'Тылбааһы Xliff формааттаах таһаарыы',
+	'translate-page-no-such-language' => 'Тыл куода сыыһа суруллубут',
+	'translate-page-no-such-task' => 'Сорук сыыһа турбут.',
+	'translate-page-no-such-group' => 'Бөлөх сыыһа ыйыллыбыт.',
+	'translate-page-disabled' => "Бу салааҕа бэйэтин тылыгар тылбаастар араарыллыбыттар. Төрүөтэ:
+
+''$1''",
 	'translate-page-settings-legend' => 'Туруоруулар',
 	'translate-page-task' => 'Баҕарабын',
 	'translate-page-group' => 'Бөлөх',
 	'translate-page-language' => 'Тыла',
 	'translate-page-limit' => 'Хааччах',
+	'translate-page-limit-option' => '$1 {{PLURAL:$1|этиилээх гын|этиилэрдээх гын}} биир сирэйгэ',
 	'translate-submit' => 'Тал',
+	'translate-page-navigation-legend' => 'Навигация',
+	'translate-page-showing' => '$3 этиилэртэн мантан $1 маныаха дылы $2 этиилэр таһаарыллыбыттар.',
+	'translate-page-showing-all' => '$1 {{PLURAL:$1|этии|этиилэр}} таһаарыллыбыттар.',
+	'translate-page-showing-none' => 'Көрдөрүүгэ этиилэр суохтар.',
 	'translate-next' => 'Аныгыскы сирэй',
 	'translate-prev' => 'Иннинээҕи сирэй',
+	'translate-page-description-legend' => 'Бөлөх туһунан',
+	'translate-page-edit' => 'Уларыт',
+	'translate-optional' => '(булгуччута суох)',
+	'translate-ignored' => '(ааххайыллыбат)',
+	'translate-edit-definition' => 'Этии ис хоһооно, суолтата',
+	'translate-edit-contribute' => 'уларытыыны киллэр',
+	'translate-edit-no-information' => "''Бу этии туһунан туох да суох. Ханна, хаһан бу этии туттулларын билэр буоллаххына, атын тылбаасчыттарга көмөлөһөн, ол туһунан суруйуоххун сөп.''",
+	'translate-edit-information' => 'Бу туһунан ($1)',
+	'translate-edit-in-other-languages' => 'Атын тылынан',
+	'translate-edit-committed' => 'Билигин баар тылбаас',
+	'translate-edit-warnings' => 'Ситэтэ суох тылбаас туһунан сэрэтии',
+	'translate-edit-goto-no-prev' => 'Бу бастакы этии',
+	'translate-edit-goto-no-next' => 'Бу бүтэһик этии',
+	'translate-edit-goto-prev' => 'Иннинээҕи этиини көрүү',
+	'translate-edit-goto-next' => 'Аныгыскы этиини көрүү',
+	'translate-edit-goto-list' => 'Тиһиккэ төннүү',
+	'translate-magic-pagename' => 'MediaWiki дириҥэтиллибит тылбааһа',
 	'translate-sidebar-alltrans' => 'Атын тылбаастар',
 	'translate-language' => 'Ханнык тылынан:',
 );
@@ -8452,7 +8517,7 @@ Aliasy špeciálnych stránok a magických slov môžu mať viacero prekladov.
 Preklady sa oddeľujú čiarkami („,“).
 Názvy tém vzhľadu a názvy menných priestorov môžu mať iba jeden preklad.
 
-V prekladoch menných priestorov je <tt>$1 talk</tt> špeciálne. <tt>$1</tt> sa nahradí názvom webovej lokality (napr. <tt>{{SITENAME}} talk</tt>). Ak vo vašom jazyku nie je možné vytvoriť zmysluplný výraz bez zmeny názvu webovej lokality, prosím, kontaktujte vývojára.
+V prekladoch menných priestorov je <tt>$1 talk</tt> špeciálne. <tt>$1</tt> sa nahradí názvom webovej lokality (napr. <tt>{{ns:project_talk}}</tt>). Ak vo vašom jazyku nie je možné vytvoriť zmysluplný výraz bez zmeny názvu webovej lokality, prosím, kontaktujte vývojára.
 
 Aby ste mohli ukladať zmeny, musíte byť členom skupiny translators.
 Zmeny sa neuložia, kým nekliknete na tlačidlo Uložiť dolu.',
@@ -8539,6 +8604,7 @@ Môžete [$1 upravovať zdrojovú stránku] alebo [$2 aktualizovať preklad].',
 	'translate-languagestats-groups' => ' # Pridajte ID skupín správ, po jednom na riadok, čím obmedzíte skupiny správ
  # zobrazované na Special:LanguageStats. Neexistujúce ID skupín správ budú
  # ignorované.',
+	'translate-save' => 'Uložiť ($1)',
 );
 
 /** Somali (Soomaaliga)
@@ -8907,7 +8973,7 @@ Alias för specialsidor och magiska ord kan ha flera översättningar.
 Översättningar skiljs åt med ett komma (,).
 Namnrymder kan endast ha en översättning.
 
-Vid översättning av namnrymder så är <tt>$1 talk</tt> speciellt. <tt>$1</tt> ersätts med webbplatsens namn (till exempel <tt>{{SITENAME}} talk</tt>).
+Vid översättning av namnrymder så är <tt>$1 talk</tt> speciellt. <tt>$1</tt> ersätts med webbplatsens namn (till exempel <tt>{{ns:project_talk}}</tt>).
 Om det inte är möjligt att skapa en giltig översättning till ditt språk utan att ändra webbplatsens namn, så ta kontakt med en utvecklare.
 
 För att kunna spara ändringar så behöver du tillhöra översättargruppen.
@@ -8991,6 +9057,7 @@ Du kan [$1 redigera källsidan] eller [$2 uppdatera översättningen].',
 	'translate-untranslated' => 'Oöversatta',
 	'translate-percentage-complete' => 'Avklarat',
 	'translate-percentage-fuzzy' => 'Föråldrat',
+	'translate-save' => 'Spara ($1)',
 );
 
 /** Silesian (Ślůnski)
@@ -9540,6 +9607,7 @@ Maaari mong [$1 baguhin ang pinagmulang pahina] o [$2 isapanahon ang salinwika].
 	'translate-untranslated' => 'Hindi pa naisasalinwika',
 	'translate-percentage-complete' => 'Panahon ng pagtatapos (pagkakabuo)',
 	'translate-percentage-fuzzy' => 'Wala na sa panahon',
+	'translate-save' => 'Sagipin ($1)',
 );
 
 /** Turkish (Türkçe)
