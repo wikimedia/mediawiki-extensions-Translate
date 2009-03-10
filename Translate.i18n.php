@@ -2057,7 +2057,7 @@ $messages['de'] = array(
 
 Spezialseiten und magische Wörter können mehrere Übersetzungen haben, sie werden jeweils durch ein Komma (,) getrennt. Namensraumnamen dürfen nur je eine Übersetzung haben.
 
-In der Übersetzung eines Namensraumnamens hat <tt>$1 talk</tt> eine spezielle Bedeutung. <tt>$1</tt> wird durch den Projektnamen ersetzt (zum Beispiel <tt>{{SITENAME}} talk</tt>).
+In der Übersetzung eines Namensraumnamens hat <tt>$1 talk</tt> eine spezielle Bedeutung. <tt>$1</tt> wird durch den Projektnamen ersetzt (zum Beispiel <tt>{{ns:project_talk}}</tt>).
 Wenn es in deiner Sprache nicht möglich ist, eine grammatikalisch korrekte Form davon zu bilden ohne den Projektnamen zu verändern, kontaktiere bitte einen Softwareentwickler.
 
 Du musst in der Übersetzer-Gruppe sein, um Änderungen zu speichern.
@@ -2143,6 +2143,7 @@ Du kannst die [$1 Originalseite bearbeiten] oder [$2 die Übersetzung aktualisie
 	'translate-languagestats-groups' => ' # Ergänze die ID einer Systemnachrichtengruppe (eine per Zeile) um die Gruppen von 
  # Special:LanguageStats auszuschließen. Nicht existerende IDs
  # werden ignoriert.',
+	'translate-save' => 'Speichern ($1)',
 );
 
 /** Swiss High German (Schweizer Hochdeutsch)
@@ -3266,8 +3267,8 @@ Les modifications ne sont pas enregistrées tant que vous n’avez pas cliqué s
 	'translate-magic-cm-original' => 'Original',
 	'translate-magic-cm-comment' => 'Commentaire :',
 	'translate-magic-cm-save' => 'Publier',
-	'translate-magic-cm-updatedusing' => 'Mis à jour en utilisant [[Special:Magic]]',
-	'translate-magic-cm-savefailed' => 'L’enregistrement a échoué.',
+	'translate-magic-cm-updatedusing' => 'Mis à jour via [[Special:Magic]]',
+	'translate-magic-cm-savefailed' => 'La publication a échoué.',
 	'translate-magic-special' => 'Alias des pages spéciales',
 	'translate-magic-words' => 'Mots magiques',
 	'translate-magic-namespace' => 'Noms des espaces de noms',
@@ -3280,7 +3281,7 @@ Les modifications ne sont pas enregistrées tant que vous n’avez pas cliqué s
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Il y a un nombre impair de parenthèse{{PLURAL:$2||s}} :
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links' => '{{PLURAL:$2|Le lien suivant pose|Les liens suivants posent}} problème :
+	'translate-checks-links' => '{{PLURAL:$2|Le lien suivant pose|Les $2 liens suivants posent}} problème :
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Veuillez corriger {{PLURAL:$2|la balise suivante|les balises suivantes}} :
 <strong><nowiki>$1</nowiki></strong>',
@@ -3294,7 +3295,7 @@ Les modifications ne sont pas enregistrées tant que vous n’avez pas cliqué s
 	'translate-rc-translation-filter-no' => 'Ne rien faire',
 	'translate-rc-translation-filter-only' => 'Afficher uniquement les traductions',
 	'translate-rc-translation-filter-filter' => 'Exclure les traductions',
-	'translate-rc-translation-filter-site' => 'Seulement les changements de messages du site',
+	'translate-rc-translation-filter-site' => 'Uniquement les modifications de messages du site',
 	'translationstats' => 'Statistiques de traduction',
 	'translate-stats-edits' => 'Modifications',
 	'translate-stats-users' => 'Traducteurs',
@@ -8391,6 +8392,7 @@ $messages['ru'] = array(
 	'translate-untranslated' => 'Непереведённые',
 	'translate-percentage-complete' => 'Выполнено',
 	'translate-percentage-fuzzy' => 'Устарело',
+	'translate-save' => 'Сохранить ($1)',
 );
 
 /** Yakut (Саха тыла)
@@ -8450,6 +8452,34 @@ $messages['sah'] = array(
 	'translate-edit-goto-next' => 'Аныгыскы этиини көрүү',
 	'translate-edit-goto-list' => 'Тиһиккэ төннүү',
 	'translate-magic-pagename' => 'MediaWiki дириҥэтиллибит тылбааһа',
+	'translate-magic-submit' => 'Таһаар (көрдөр)',
+	'translate-magic-cm-export' => 'Экспортаа',
+	'translate-magic-cm-to-be' => 'Буолуохтаах',
+	'translate-magic-cm-current' => 'Билиҥҥи',
+	'translate-magic-cm-original' => 'Маҥнайгы барыла',
+	'translate-magic-cm-comment' => 'Быһаарыы:',
+	'translate-magic-cm-save' => 'Бигэргэт',
+	'translate-magic-cm-updatedusing' => 'Бу көмөтүнэн саҥардылынна: [[Special:Magic]]',
+	'translate-magic-cm-savefailed' => 'Бигэргэтэр табыллыбата',
+	'translate-magic-special' => 'Анал сирэйдэр псевдонимнара',
+	'translate-magic-words' => 'Аптаах тыллар',
+	'translate-magic-namespace' => 'Аат даллара',
+	'translationchanges' => 'Тылбаас уларыйыыта',
+	'translationchanges-export' => 'экспортааһын',
+	'translationchanges-change' => '$1: $2 $3',
+	'translate-checks-parameters' => '{{PLURAL:$2|Биир туруоруу туттуллубатах|Бу туруоруулар туттуллубатахтар}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Биллибэт туруоруу (параметр)|Биллибэт туруоруулар (параметрдар)}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-balance' => 'Сабар дуу аһар дуу {{PLURAL:$2|ускуопка тиийбэт|ускуопкалар тиийбэттэр}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links' => '{{PLURAL:$2|Бу сигэ сыыһалаах|Бу сигэлэр сыыһалаахтар}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-xhtml' => 'Бука диэн бу {{PLURAL:$2|анал бэлиэни|анал бэлиэлэри}} көннөр:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-plural' => 'Оригинал <nowiki>{{PLURAL:}}</nowiki> туттар, оттон тылбааһа — туттубат.',
+	'translate-checks-pagename' => 'Аат далын быһаарыыта уларыйбыт',
+	'translate-checks-format' => 'Тылбаас өйдөбүлүгэр сөп түбэспэт эбэтэр синтаксыгар сыыһалаах: $1',
 	'translate-sidebar-alltrans' => 'Атын тылбаастар',
 	'translate-language' => 'Ханнык тылынан:',
 );
@@ -10025,7 +10055,7 @@ Bí danh của các trang đặc biệt và câu thần chú có thể có nhi�
 Các bản dịch phân cách nhau bằng dấu phẩy (,).
 Tên hình dạng giao diện và không gian tên chỉ có thể có một bản dịch.
 
-Trong các bản dịch không gian tên, <tt>$1 talk</tt> có đặc biệt hơn. <tt>$1</tt> được thay thế bằng tên trang (ví dụ <tt>{{SITENAME}} talk</tt>).
+Trong các bản dịch không gian tên, <tt>$1 talk</tt> có đặc biệt hơn. <tt>$1</tt> được thay thế bằng tên trang (ví dụ <tt>{{ns:project_talk}}</tt>).
 Nếu ngôn ngữ của bạn không thể hiển thị đúng nếu không đổi tên trang (SITENAME), xin hãy liên hệ với một lập trình viên.
 
 Bạn cần phải thuộc nhóm biên dịch viên để có thể lưu các thay đổi.
@@ -10116,6 +10146,7 @@ Bạn có thể [$1 sửa mã trang] hoặc [$2 cập nhật bản dịch].',
 	'translate-languagestats-groups' => ' # Thêm mã nhóm thông điệp, mỗi mã một dòng để ngăn các nhóm thông điệp
  # được hiển thị ở Special:LanguageStats. Các mã nhóm thông điệp không tồn tại
  # sẽ bị bỏ qua.',
+	'translate-save' => 'Lưu ($1)',
 );
 
 /** Volapük (Volapük)
