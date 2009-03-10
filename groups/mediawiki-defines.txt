@@ -301,7 +301,7 @@ file = FlaggedRevs/language/RatingHistory.i18n.php
 Flagged Revisions - Reviewed Pages
 id = ext-flaggedrevs-reviewedpages
 file = FlaggedRevs/language/ReviewedPages.i18n.php
-ignored = reviewedpages-lev-0, reviewedpages-lev-1, reviewedpages-lev-2
+optional = reviewedpages-lev-0, reviewedpages-lev-1, reviewedpages-lev-2
 
 Flagged Revisions - Stabilization
 id = ext-flaggedrevs-stabilization
@@ -543,6 +543,8 @@ descmsg = patrol-desc
 
 Pdf Handler
 descmsg = pdf-desc
+
+Pipe Escape
 
 Piwik
 optional = piwik
