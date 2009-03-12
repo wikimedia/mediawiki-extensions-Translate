@@ -587,7 +587,7 @@ $messages['ar'] = array(
 الترجمات تفصل بواسطة فاصلة (,).
 أسماء النطاقات يمكن أن يكون لها ترجمة واحدة فقط.
 
-في ترجمات النطاقات <tt>$1 talk</tt> خاص. <tt>$1</tt> يتم استبدالها باسم الموقع (على سبيل المثال <tt>{{SITENAME}} talk</tt>).
+في ترجمات النطاقات <tt>$1 talk</tt> خاص. <tt>$1</tt> يتم استبدالها باسم الموقع (على سبيل المثال <tt>{{ns:project_talk}}</tt>).
 لو أنه من غير الممكن في لغتك صياغة تعبير صحيح بدون تغيير اسم الموقع، من فضلك اتصل بمطور.
 
 تحتاج إلى أن تكون في مجموعة المترجمين لحفظ التغييرات.
@@ -678,6 +678,7 @@ $messages['ar'] = array(
 	'translate-languagestats-groups' => ' # أضف أرقام مجموعات الرسائل, واحدا لكل سطر لتحديد مجموعات الرسائل التي
  # تعرض في Special:LanguageStats.أرقام مجموعات الرسائل غير الموجودة سوف 
  # يتم تجاهلها.',
+	'translate-save' => 'حفظ ($1)',
 );
 
 /** Araucanian (Mapudungun)
@@ -3093,7 +3094,7 @@ Toimintosivujen vaihtoehtoisilla nimillä ja taikasanoilla voi olla useita kää
 Käännökset erotetaan pilkulla (,).
 Nimiavaruuksilla voi olla vain yksi käännös.
 
-Nimiavaruuksien käännöksissä <tt>$1 talk</tt> on erikoistapaus. <tt>$1</tt> korvataan sivuston nimellä (esimerkiksi <tt>{{SITENAME}} talk</tt>).
+Nimiavaruuksien käännöksissä <tt>$1 talk</tt> on erikoistapaus. <tt>$1</tt> korvataan sivuston nimellä (esimerkiksi <tt>{{ns:project_talk}}</tt>).
 Jos kielessäsi on mahdotonta muotoilla oikeaa käännöstä ilman sivuston nimen muuttamista, ota yhteyttä kehittäjään.
 
 Sinun tulee olla kääntäjä, jotta voisit tallentaa muutokset.
