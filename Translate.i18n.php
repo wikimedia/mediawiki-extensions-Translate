@@ -1344,6 +1344,7 @@ $messages['br'] = array(
 	'translate-task-view' => 'Welet an holl gemennadennoù evit',
 	'translate-task-untranslated' => 'Welet an holl gemennadennoù didro evit',
 	'translate-task-optional' => 'Welet an holl gemennadennoù diret evit',
+	'translate-task-untranslatedoptional' => "Gwelet an c'hemennoù diret n'int ket bet troet evit",
 	'translate-task-problematic' => "Gwelet ar c'hemennoù kudennek",
 	'translate-task-review' => "Adwelet ma c'hemmoù evit",
 	'translate-task-reviewall' => 'Adwelet an holl droidigezhioù evit',
@@ -1387,17 +1388,17 @@ $messages['br'] = array(
 	'translate-edit-goto-next' => "Mont d'ar gemennadenn war-lerc'h",
 	'translate-edit-goto-list' => "Distreiñ d'ar roll :",
 	'translate-magic-pagename' => 'Troidigezh MediaWiki astennet',
-	'translate-magic-help' => "Gallout a rit treiñ aliasoù ar pajennoù dibar, ar gerioù burzhudus, anvioù an etrefasoù hag anvioù an esaouennoù anv.
+	'translate-magic-help' => "Gallout a rit treiñ aliasoù ar pajennoù dibar, ar gerioù burzhudus hag anvioù an esaouennoù anv.
 
 Aliasoù ar pajennoù dibar hag ar gerioù burzhudus a c'hall kaout meur a droidigezh.
 Dispartiet eo an troidigezhioù dre skejoù (,).
-N'hall anvioù an etrefasoù ha re an esaouennoù anv nemet kaout un droidigezh hepken.
+N'hall anvioù an esaouennoù anv kaout nemet un droidigezh.
 
 E troidigezhioù an esaouennoù anv eo dibar <tt>$1 talk</tt>. Erlec'hiet eo <tt>$1</tt> gant anv al lec'hienn (da skouer <tt>{{ns:project_talk}}</tt>).
 Ma n'haller ket sevel lavarennoù reizh en ho yezh hep kemmañ anv al lec'hienn, kit e darempred gant un diorroer.
 
-Ret eo deoc'h bezañ ezel eus ur strollad troerien evit enrollañ ar c'hemmoù.
-Ne vo ket enrollet ar c'hemmoù e-keit ha ne vo ket bet pouezet war ar bouton dindan.",
+Ret eo deoc'h bezañ ezel eus ar strollad troerien evit enrollañ ar c'hemmoù.
+Ne vo ket enrollet ar c'hemmoù e-keit ha ne vo ket bet pouezet war ar bouton enrollañ dindan.",
 	'translate-magic-module' => 'Modulenn :',
 	'translate-magic-submit' => 'Mont',
 	'translate-magic-cm-export' => 'Ezporzhiañ',
@@ -1422,6 +1423,8 @@ Ne vo ket enrollet ar c'hemmoù e-keit ha ne vo ket bet pouezet war ar bouton di
 	'translate-checks-xhtml' => "Erlec'hiit ar {{PLURAL:$2|valizenn|balizennoù}} da-heul gant ar re a zegouezh mar plij : <strong>$1</strong>",
 	'translate-checks-plural' => 'Ober a ra an termenadur gant <nowiki>{{PLURAL:}}</nowiki> padal an droidigezh ne ra ket.',
 	'translate-checks-pagename' => 'Anv esaouenn kemmet abaoe an termenadur',
+	'translate-checks-format' => 'Ne glot ket an droidigezh-mañ gant an termenadur pe faziek eo an ereadurezh anezhi : $1',
+	'translate-checks-escape' => "Dre fazi e c'hall bezañ an diflipadennoù da-heul : <strong>$1</strong>",
 	'tog-translate-nonewsletter' => "Arabat kas din kelc'hlizheroù dre bostel (ne denn nemet d'ar re o deus kadarnaet o chomlec'h postel)",
 	'right-translate' => 'Kemmañ en ur ober gant an etrefas treiñ',
 	'translate-rc-translation-filter' => 'Silañ an troidigezhioù :',
@@ -1458,18 +1461,24 @@ Ne vo ket enrollet ar c'hemmoù e-keit ha ne vo ket bet pouezet war ar bouton di
 	'translate-tag-noedit' => 'Un teul treiñ hizivaet ent emgefre eo ar bajenn-mañ.
 Gallout a rit [$1 kemmañ ar bajenn orin] pe [$2 freskaat an droidigezh].',
 	'translations' => 'An holl droidigezhioù',
+	'translations-summary' => "Merkit anv ur c'hemenn bennak amañ evit gwelet an holl droidigezhioù hegerz.",
+	'translate-translations-no-message' => 'N\'haller ket treiñ "$1"',
 	'translate-translations-none' => 'N\'eus troidigezh ebet evit "$1"',
 	'translate-translations-fieldset-title' => 'Kemenn',
 	'translate-translations-messagename' => 'Anv :',
 	'translate-translations-project' => 'Raktres :',
+	'translate-translations-including-no-param' => "Merkit un alc'hwez kemenn reizh en arventenn ''ispajenn''",
 	'languagestats' => 'Stadegoù yezh',
+	'languagestats-summary' => 'Diskouez a ra ar bajenn-mañ ar stadegoù treiñ evit holl strolladoù kemennoù ([[MediaWiki:Translate-languagestats-groups|kefluniet]]) ur yezh bennak.',
 	'translate-language-code' => 'Kod yezh',
 	'translate-language-code-field-name' => 'Kod yezh :',
+	'translate-suppress-complete' => 'Arabat diskouez ar strolladoù kemennoù bet troet penn-da-benn.',
 	'translate-language' => 'Yezh :',
 	'translate-total' => 'Kemennoù',
 	'translate-untranslated' => 'Didro',
 	'translate-percentage-complete' => 'Echu',
 	'translate-percentage-fuzzy' => 'Dispredet',
+	'translate-save' => 'Enrollañ ($1)',
 );
 
 /** Bosnian (Bosanski)
@@ -7631,6 +7640,7 @@ $messages['os'] = array(
 	'translate-prev' => 'Раздæры фарс',
 	'translate-page-edit' => 'баив æй',
 	'translate-magic-cm-current' => 'Нырыккон',
+	'translate-magic-cm-save' => 'Афтæ уæд',
 	'translate-statsf-submit' => 'Разæркаст',
 );
 
@@ -7792,6 +7802,7 @@ Możesz [$1 edytować źródło strony] lub [$2 zaktualizować tłumaczenie].',
 	'translate-untranslated' => 'Nieprzetłumaczone',
 	'translate-percentage-complete' => 'Przetłumaczonych',
 	'translate-percentage-fuzzy' => 'Zdezaktualizowanych',
+	'translate-save' => 'Zapisz ($1)',
 );
 
 /** Piedmontese (Piemontèis)
