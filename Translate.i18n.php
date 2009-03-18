@@ -1300,6 +1300,7 @@ $messages['bg'] = array(
 	'translate-suppress-complete' => 'Скриване на изцяло преведените групи съобщения',
 	'translate-language' => 'Език',
 	'translate-total' => 'Съобщения',
+	'translate-save' => 'Съхраняване ($1)',
 );
 
 /** Bengali (বাংলা)
@@ -1631,6 +1632,7 @@ Možete [$1 urediti izvornu stranicu] ili [$2 ažurirati prijevod].',
 	'translate-untranslated' => 'Neprevedeno',
 	'translate-percentage-complete' => 'Završeno',
 	'translate-percentage-fuzzy' => 'Zastarijelo',
+	'translate-save' => 'Spremi ($1)',
 );
 
 /** Buginese (ᨅᨔ ᨕᨘᨁᨗ)
@@ -2328,6 +2330,13 @@ Móžoš [$1 žrědłowy bok wobźěłaś] abo [$2 pśełožk aktualizěrowaś].
 	'translate-save' => 'Składowaś ($1)',
 );
 
+/** Ewe (Eʋegbe)
+ * @author Natsubee
+ */
+$messages['ee'] = array(
+	'translate-statsf-submit' => 'Kpɔe do ŋgɔ',
+);
+
 /** Greek (Ελληνικά)
  * @author Consta
  * @author Dead3y3
@@ -2541,18 +2550,17 @@ $messages['eo'] = array(
 	'translate-edit-goto-next' => 'Redakti postan mesaĝon',
 	'translate-edit-goto-list' => 'Reiri al la listo',
 	'translate-magic-pagename' => 'Etendita traduko de MediaWiki',
-	'translate-magic-help' => 'Vi povas traduki specialajn kromnomojn de paĝoj, magiajn vortojn, nomojn de etosoj kaj nomojn de nomspacoj.
+	'translate-magic-help' => 'Vi povas traduki specialajn kromnomojn de paĝoj, magiajn vortojn, kaj nomojn de nomspacoj.
 
 Specialaj kromnomoj de paĝoj kaj magiaj vortoj povas havi multajn tradukojn.
 Tradukoj estas apartigitaj de komo (,).
-Nomoj de etosoj kaj nomspacoj nur povas havi unu tradukon.
+Nomoj de nomspacoj nur povas havi unu tradukon.
 
-
-En nomspacaj tradukoj <tt>$1 diskuto</tt> estas speciala. <tt>$1</tt> estas anstataŭigita de la nomo de la retejo (ekz-e <tt>{{SITENAME}}) diskuto</tt>.
-Se ne eblas en via lingvo formi validan esprimon sen ŝanĝi la nomon de la retejo, bonvolu kontakti programisto.
+En nomspacaj tradukoj <tt>$1 diskuto</tt> estas speciala. <tt>$1</tt> estas anstataŭigita de la nomo de la retejo (ekz-e <tt>{{ns:project_talk}})</tt>.
+Se ne eblas per via lingvo formi validan esprimon sen ŝanĝi la nomon de la retejo, bonvolu kontakti programisto.
 
 Vi devas esti en la grupo de tradukantoj por konservi ŝanĝojn.
-Ŝanĝoj ne estos konservataj, ĝis vi alklakis la jenan butonon Konservi.',
+Ŝanĝoj ne estos konservataj, ĝis vi alklakis la jenan butonon "Konservi ŝanĝojn".',
 	'translate-magic-module' => 'Modjulo:',
 	'translate-magic-submit' => 'Montri',
 	'translate-magic-cm-export' => 'Eksporti',
@@ -4912,13 +4920,14 @@ Ef þú veist hvar eða hvernig meldingin er notuð getur þú hjálpað öðrum
 );
 
 /** Italian (Italiano)
+ * @author BrokenArrow
  * @author Darth Kule
  * @author Melos
  * @author Pietrodn
  */
 $messages['it'] = array(
 	'translate' => 'Traduzione',
-	'translate-desc' => '[[Special:Translate|Pagina speciale]] per tradurre MediaWiki e oltre',
+	'translate-desc' => '[[Special:Translate|Pagina speciale]] per tradurre MediaWiki e non solo',
 	'translate-edit' => 'modifica',
 	'translate-talk' => 'discussione',
 	'translate-history' => 'cronologia',
@@ -4936,7 +4945,7 @@ $messages['it'] = array(
 	'translate-page-no-such-language' => 'Il linguaggio specificato non è valido.',
 	'translate-page-no-such-task' => "L'azione specificata non è valida.",
 	'translate-page-no-such-group' => 'Il gruppo specificato non è valido.',
-	'translate-page-disabled' => "Le traduzioni in questa lingua in questo gruppo sono state disabilitate. Motivo:
+	'translate-page-disabled' => "Le traduzioni in questa lingua per questo gruppo sono state disabilitate. Motivo:
 
 ''$1''",
 	'translate-page-settings-legend' => 'Impostazioni',
@@ -4976,7 +4985,7 @@ Gli alias delle pagine speciali e le parole magiche possono avere più traduzion
 Le traduzioni sono separate da una virgola (,).
 I namespace possono avere solo una traduzione.
 
-Nelle traduzioni dei namespace <tt>$1 talk</tt> è speciale. <tt>$1</tt> viene rimpiazzato con il nome del sito (per esempio <tt>{{SITENAME}} talk</tt>).
+Nelle traduzioni dei namespace <tt>$1 talk</tt> è speciale. <tt>$1</tt> viene rimpiazzato con il nome del sito (per esempio <tt>{{ns:project_talk}}</tt>).
 Se non è possibile formare un\'espressione valida nella tua lingua senza cambiare il nome del sito, per favore contatta uno sviluppatore.
 
 Devi essere nel gruppo dei traduttori per salvare le modifiche.
@@ -4996,6 +5005,7 @@ Le modifiche non vengono salvate finché non clicchi sul bottone "Salva" sotto.'
 	'translate-magic-namespace' => 'Nomi dei namespace',
 	'translationchanges' => 'Cambiamenti delle traduzioni',
 	'translationchanges-export' => 'esporta',
+	'translationchanges-change' => '$1: $2 da parte di $3',
 	'translate-checks-parameters' => '{{PLURAL:$2|Il seguente parametro non è usato|I seguenti parametri non sono usati}}: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Il seguente parametro è sconosciuto|I seguenti parametri sono sconosciuti}}:
 <strong><nowiki>$1</nowiki></strong>',
@@ -5059,6 +5069,7 @@ Puoi [$1 modificare la pagina sorgente] o [$2 aggiornare la traduzione].',
 	'translate-untranslated' => 'Non tradotti',
 	'translate-percentage-complete' => 'Completati',
 	'translate-percentage-fuzzy' => 'Da aggiornare',
+	'translate-save' => 'Salva ($1)',
 );
 
 /** Japanese (日本語)
@@ -6348,6 +6359,7 @@ Dir kënnt [$1 d'Original Säit änneren] oder [$2 d'Iwwersetzung aktualiséiere
 	'translate-untranslated' => 'Net iwwersat',
 	'translate-percentage-complete' => 'Fäerdeg zu',
 	'translate-percentage-fuzzy' => 'Net à jour',
+	'translate-save' => 'Späicher ($1)',
 );
 
 /** Limburgish (Limburgs)
