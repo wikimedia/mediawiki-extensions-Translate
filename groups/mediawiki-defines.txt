@@ -424,7 +424,7 @@ Language Selector
 Latex Doc
 
 Link OpenID
-optional = linkopenid-prefstext-xrdsurl
+optional = linkopenid-prefs, linkopenid-prefstext-xrdsurl
 
 Liquid Threads
 file = LiquidThreads/Lqt.i18n.php
