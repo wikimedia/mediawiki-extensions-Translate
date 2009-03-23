@@ -259,6 +259,11 @@ $aliases['ksh'] = array(
 	'LanguageStats' => array( 'Shtatistike_vu_de_Shprooche' ),
 );
 
+/** Cornish (Kernewek) */
+$aliases['kw'] = array(
+	'Translations' => array( 'Treylyansow' ),
+);
+
 /** Luxembourgish (Lëtzebuergesch) */
 $aliases['lb'] = array(
 	'Translate' => array( 'Iwwersetzen' ),
