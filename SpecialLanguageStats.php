@@ -222,7 +222,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			}
 
 			$translatedPercentage = wfMsg( 'percent', $wgLang->formatNum( round( 100 * $translated / $total, 2 ) ) );
-			$fuzzyPercentage = wfMsg( 'percent', $wgLang->formatNum( round( 100 * $fuzzy / $total ) ) );
+			$fuzzyPercentage = wfMsg( 'percent', $wgLang->formatNum( round( 100 * $fuzzy / $total, 2 ) ) );
 
 			$translateTitle = SpecialPage::getTitleFor( 'Translate' );
 			$pageParameters = "group=" . $g->getId() . "&language=" . $code;
