@@ -672,7 +672,7 @@ optional = sign-emailto
 Simple Anti Spam
 
 Simple Security
-ignored = security-logentry
+ignored = security-logentry, protect-unchain
 
 Site Matrix
 
