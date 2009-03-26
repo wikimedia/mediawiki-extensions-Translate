@@ -6622,9 +6622,10 @@ $messages['mk'] = array(
 	'translations-summary' => 'Подолу внеси име на порака за приказ на сите достапни преводи.',
 	'translate-translations-no-message' => '"$1" не е порака која се преведува',
 	'translate-translations-none' => 'Нема преводи за "$1"',
-	'translate-translations-fieldset-title' => 'Сите преводи',
-	'translate-translations-messagename' => 'Порака:',
-	'translate-translations-including-no-param' => 'Наведете валидно име на страница во параметарот за подстраница',
+	'translate-translations-fieldset-title' => 'Порака',
+	'translate-translations-messagename' => 'Име:',
+	'translate-translations-project' => 'Проект:',
+	'translate-translations-including-no-param' => 'Наведете валидно клучно име на пораката во параметарот на подстраницата',
 	'languagestats' => 'Статистики за јазик',
 	'languagestats-summary' => 'Оваа страница прикажува статистики на превод за сите ([[MediaWiki:Translate-languagestats-groups|конфигурирани]]) групи на пораки за одреден јазик.',
 	'translate-language-code' => 'Код на јазик',
@@ -6635,6 +6636,7 @@ $messages['mk'] = array(
 	'translate-untranslated' => 'Непреведени',
 	'translate-percentage-complete' => 'Комплетираност',
 	'translate-percentage-fuzzy' => 'Застарени',
+	'translate-save' => 'Зачувај ($1)',
 );
 
 /** Malayalam (മലയാളം)
