@@ -671,6 +671,9 @@ optional = sign-emailto
 
 Simple Anti Spam
 
+Simple Security
+ignored = security-logentry
+
 Site Matrix
 
 Skin Per Page
