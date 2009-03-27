@@ -10,6 +10,8 @@ optional = abusefilter-edit-builder-op-bool-xor
 Advanced Random
 file = AdvancedRandom/SpecialAdvancedRandom.i18n.php
 
+Ajax Login
+
 Ajax Query Pages
 descmsg = ajax-qp-desc
 
