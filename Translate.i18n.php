@@ -166,7 +166,7 @@ All values have upper and lower limits.',
 	'translate-tag-fuzzy-comment' => 'Definition changed by [[User:$1|$1]] in revision $2.',
 	'translate-tag-fuzzy-reason'  => 'Definition changed by "$1" with comment "$3" in $2.',
 
-	'translate-sidebar-alltrans'  => 'Other translations',
+	'translate-sidebar-alltrans'  => 'In other languages',
 
 	'translate-tag-noedit' => 'This page is automatically updated translation page.
 You can [$1 edit the source page] or [$2 update the translation].',
