@@ -373,6 +373,7 @@ descmsg = grouppermissions-desc
 optional = grouppermissions-display
 
 Honeypot Integration
+descmsg = honeypot-desc
 
 HTMLets
 
@@ -673,6 +674,7 @@ Simple Anti Spam
 
 Simple Security
 ignored = security-logentry, protect-unchain
+descmsg = security-desc
 
 Site Matrix
 
@@ -891,6 +893,7 @@ Who Is Watching
 file = WhoIsWatching/SpecialWhoIsWatching.i18n.php
 
 Wikidata Language Manager
+descmsg = langman-desc
 var = wdMessages
 file = Wikidata/SpecialLanguages.i18n.php
 optional = ow_URL, ow_ID
