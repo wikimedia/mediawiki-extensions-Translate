@@ -393,6 +393,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-proofreadpage', // Wikisource
 		'ext-quiz',
 		'ext-renameuser',
+		'ext-securepoll',
 		'ext-simpleantispam',
 		'ext-sitematrix',
 		'ext-scanset',
