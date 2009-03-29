@@ -632,6 +632,8 @@ Scan Set
 
 Secure Passwords
 
+Secure Poll
+
 Select Category
 
 Semantic Result Formats

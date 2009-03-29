@@ -226,6 +226,9 @@ file = Renameuser/SpecialRenameuser.alias.php
 Replace text
 file = ReplaceText/ReplaceText.alias.php
 
+Secure poll
+file = SecurePoll/SecurePoll.alias.php
+
 Semantic drilldown
 file = SemanticDrilldown/languages/SD_Aliases.php
 
