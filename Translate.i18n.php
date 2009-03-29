@@ -192,6 +192,8 @@ You can [$1 edit the source page] or [$2 update the translation].',
 	'translate-untranslated' => 'Untranslated',
 	'translate-percentage-complete' => 'Completion',
 	'translate-percentage-fuzzy' => 'Outdated',
+	'translate-nothing-to-do' => 'All possible translations appear to have been made.
+You are encouraged to review messages through [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-groups' => ' # Add message group IDs, one per line to restrict the message groups that
  # are shown on Special:LanguageStats. Non-existing message group IDs will
  # be ignored.', # do not duplicate this message to other languages

@@ -162,20 +162,9 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		return $red . $green . $blue;
 	}
 
-	/**
-	 * HTML for language statistics
-	 * Copied and adaped from groupStatistics.php by Nikerabbit
-	 * @param integer $code A language code (default empty, example: 'en').
-	 * @param bool $suppressComplete If completely translated groups should be suppressed
-	 * @return string HTML
-	 */
-	function getGroupStats( $code, $suppressComplete = false ) {
-		global $wgUser, $wgLang;
-
-		$out = '';
-
+	function createHeader( $code ) {
 		# FIXME: provide some sensible header for what is being displayed.
-		$out .= '<!-- ' . $code . " -->\n";
+		$out = '<!-- ' . $code . " -->\n";
 		$out .= '<!-- ' . TranslateUtils::getLanguageName( $code, false ) . " -->\n";
 
 		# Create table header
@@ -187,6 +176,21 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$out .= $this->element( wfMsg( 'translate-percentage-complete', true ) );
 		$out .= $this->element( wfMsg( 'translate-percentage-fuzzy', true ) );
 		$out .= $this->blockend();
+
+		return $out;
+	}
+
+	/**
+	 * HTML for language statistics
+	 * Copied and adaped from groupStatistics.php by Nikerabbit
+	 * @param integer $code A language code (default empty, example: 'en').
+	 * @param bool $suppressComplete If completely translated groups should be suppressed
+	 * @return string HTML
+	 */
+	function getGroupStats( $code, $suppressComplete = false ) {
+		global $wgUser, $wgLang;
+
+		$out = '';
 
 		# Fetch groups stats have to be displayed for
 		$groups = $this->getGroups();
@@ -237,7 +241,12 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			$out .= $this->blockend();
 		}
 
-		$out .= $this->footer();
+		if( $out ) {
+			$out = $this->createHeader( $code ) . $out;
+			$out .= $this->footer();
+		} else {
+			$out = wfMsgExt( 'translate-nothing-to-do', 'parse' );
+		}
 
 		return $out;
 	}
