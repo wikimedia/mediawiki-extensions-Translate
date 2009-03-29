@@ -1952,7 +1952,7 @@ Změny se neuloží, pokud nekliknete na tlačítko „Uložit změny“ pod edi
 	'translate-tag-legend-fuzzy' => 'Zastaralý překlad',
 	'translate-tag-fuzzy-comment' => 'Definici změnil [[User:$1|$1]] v revizi $2.',
 	'translate-tag-fuzzy-reason' => 'Definici změnil „$1“ v revizi $2 s komentářem „$3“.',
-	'translate-sidebar-alltrans' => 'Ostatní překlady',
+	'translate-sidebar-alltrans' => 'V jiných jazycích',
 	'translate-tag-noedit' => 'Tato stránka je automaticky aktualizovaná stránka překladu.
 Můžete [$1 upravit zdrojovou stránku] nebo [$2 aktualizovat překlad].',
 	'translations' => 'Všechny překlady',
@@ -1973,6 +1973,9 @@ Můžete [$1 upravit zdrojovou stránku] nebo [$2 aktualizovat překlad].',
 	'translate-untranslated' => 'Nepřeložené',
 	'translate-percentage-complete' => 'Dokončené',
 	'translate-percentage-fuzzy' => 'Zastaralé',
+	'translate-nothing-to-do' => 'Vypadá to, že všechny možné překlady jsou hotové.
+Teď doporučujeme zkontrolovat hlášení pomocí stránky [[Special:Translate|{{int:translate}}]].',
+	'translate-save' => 'Uložit ($1)',
 );
 
 /** Church Slavic (Словѣ́ньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ)
@@ -2154,6 +2157,8 @@ Du kannst die [$1 Originalseite bearbeiten] oder [$2 die Übersetzung aktualisie
 	'translate-untranslated' => 'Nicht übersetzt',
 	'translate-percentage-complete' => 'Vollständigkeit',
 	'translate-percentage-fuzzy' => 'Veraltet',
+	'translate-nothing-to-do' => 'Alle möglichen Übersetzungen sind offenbar schon erledigt.
+Es wird empfohlen, Systemnachrichten mit der Spezialseite [[Special:Translate|{{int:translate}}]] zu überprüfen.',
 	'translate-languagestats-groups' => ' # Ergänze die ID einer Systemnachrichtengruppe (eine per Zeile) um die Gruppen von 
  # Special:LanguageStats auszuschließen. Nicht existerende IDs
  # werden ignoriert.',
@@ -2329,6 +2334,8 @@ Móžoš [$1 žrědłowy bok wobźěłaś] abo [$2 pśełožk aktualizěrowaś].
 	'translate-untranslated' => 'Njepśełožony',
 	'translate-percentage-complete' => 'Dopołnjenje',
 	'translate-percentage-fuzzy' => 'Zestarjony',
+	'translate-nothing-to-do' => 'Zda se, až móžne pśełožki su cynjone.
+Pśiraźijo se, až pśeglědujoš powěźeńki pśez [[Special:Translate|{{int:translate}}]].',
 	'translate-save' => 'Składowaś ($1)',
 );
 
@@ -2623,15 +2630,17 @@ Vi devas esti en la grupo de tradukantoj por konservi ŝanĝojn.
 	'translate-tag-legend-fuzzy' => 'Malfreŝa traduko',
 	'translate-tag-fuzzy-comment' => 'Difino ŝanĝita de [[User:$1|$1]] en versio $2.',
 	'translate-tag-fuzzy-reason' => 'Difino ŝanĝita de "$1" kun komento "$3" en $2.',
-	'translate-sidebar-alltrans' => 'Aliaj tradukoj',
+	'translate-sidebar-alltrans' => 'En aliaj lingvoj',
 	'translate-tag-noedit' => 'Ĉi tiu paĝo estas aŭtomate ĝisdatigita traduko-paĝo.
 Vi povas [$1 redakti la fontpaĝon] aŭ [$2 ĝisdatigi la tradukon].',
 	'translations' => 'Ĉiuj tradukoj',
 	'translations-summary' => 'Enigu mesaĝan nomon suben por montri ĉiujn haveblajn tradukojn.',
 	'translate-translations-no-message' => '"$1" ne estas tradukebla mesaĝo',
 	'translate-translations-none' => 'Estas neniuj tradukoj por "$1"',
-	'translate-translations-fieldset-title' => 'Ĉiuj tradukoj',
-	'translate-translations-messagename' => 'Mesaĝo:',
+	'translate-translations-fieldset-title' => 'Mesaĝo',
+	'translate-translations-messagename' => 'Nomo:',
+	'translate-translations-project' => 'Projekto:',
+	'translate-translations-including-no-param' => 'Bonvolu specifigi validan mesaĝan ŝlosilon en la subpaĝa parametro',
 	'languagestats' => 'Lingvaj statistikoj',
 	'translate-language-code' => 'Lingva kodo',
 	'translate-language-code-field-name' => 'Lingva kodo:',
@@ -2640,6 +2649,7 @@ Vi povas [$1 redakti la fontpaĝon] aŭ [$2 ĝisdatigi la tradukon].',
 	'translate-untranslated' => 'Netradukita',
 	'translate-percentage-complete' => 'Kompletigo',
 	'translate-percentage-fuzzy' => 'Malfreŝdata',
+	'translate-save' => 'Konservi ($1)',
 );
 
 /** Spanish (Español)
@@ -3391,6 +3401,8 @@ Vous pouvez [$1 modifier la page source] ou [$2 mettre à jour la traduction].',
 	'translate-untranslated' => 'Non traduits',
 	'translate-percentage-complete' => 'Achèvement',
 	'translate-percentage-fuzzy' => 'Obsolètes',
+	'translate-nothing-to-do' => 'Toutes les traductions possibles semblent avoir été effectuées.
+Vous êtes encouragé à revoir les message depuis [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-groups' => ' # Ajoutez des ID de groupes de messages, un par ligne pour limiter les groupes
  # qui sont affichés sur Special:LanguageStats. Les groupes inexistants seront
  # ignorés.',
@@ -3716,6 +3728,8 @@ $messages['grc'] = array(
 	'translate-page-language' => 'Γλῶττα',
 	'translate-submit' => 'Φόρτισις',
 	'translate-page-navigation-legend' => 'Πλοήγησις',
+	'translate-next' => 'ἡ δέλτος ἡ ἑπομένη',
+	'translate-prev' => 'ἡ δέλτος ἡ προτέρα',
 	'translate-page-edit' => 'μεταγράφειν',
 	'translate-optional' => '(προαιρετικόν)',
 	'translate-magic-module' => 'Ἄρθρον:',
@@ -4380,6 +4394,8 @@ Móžeš [$1 originalnu stronu wobdźěłać] abo [$2 přełožk aktualizować].
 	'translate-untranslated' => 'Njepřełoženy',
 	'translate-percentage-complete' => 'Dospołny',
 	'translate-percentage-fuzzy' => 'Zestarjeny',
+	'translate-nothing-to-do' => 'Zda so, zo wšě móžne přełožki su sčinjene.
+Poruča so zdźělenki přez [[Special:Translate|{{int:translate}}]] přepruwować.',
 	'translate-save' => 'Składować ($1)',
 );
 
@@ -5277,6 +5293,7 @@ $messages['ja'] = array(
 	'translate-untranslated' => '未翻訳',
 	'translate-percentage-complete' => '完了',
 	'translate-percentage-fuzzy' => '要修正',
+	'translate-nothing-to-do' => '翻訳の可能なものはすべて翻訳されています。[[Special:Translate|{{int:translate}}]]を使ってメッセージを見直すことが推奨されます。',
 	'translate-languagestats-groups' => ' # Special:LanguageStatsに表示するメッセージグループを制限するには
  # メッセージグループのIDを1行1つずつ記入します。
  # 無効なIDは無視されます。',
@@ -7207,6 +7224,8 @@ U kunt de [$1 brontekst bewerken] of de [$2 vertaling bijwerken].',
 	'translate-untranslated' => 'Te vertalen',
 	'translate-percentage-complete' => 'Vertaald',
 	'translate-percentage-fuzzy' => 'Verouderd',
+	'translate-nothing-to-do' => 'Alle mogelijke vertalingen lijken te zijn gemaakt.
+U wordt aangemoedigd om via [[Special:Translate|{{int:translate}}]] vertalingen te controleren.',
 	'translate-save' => 'Opslaan ($1)',
 );
 
@@ -9269,6 +9288,7 @@ För att kunna spara ändringar så behöver du tillhöra översättargruppen.
 	'translate-checks-plural' => '<nowiki>{{PLURAL:}}</nowiki> används i definitionen, men inte i översättningen.',
 	'translate-checks-pagename' => 'Namnrymden ändrad från definitionen',
 	'translate-checks-format' => 'Den här översättningen följer inte definitionen eller har ogiltig syntax: $1',
+	'translate-checks-escape' => 'De följande läckorna kan vara tillfälliga: <strong>$1</strong>',
 	'tog-translate-nonewsletter' => 'Sänd mig inte nyhetsbrev (gäller endast användare med bekräftad e-postadress)',
 	'right-translate' => 'Redigera genom översättningsgränssnittet',
 	'translate-rc-translation-filter' => 'Filtrera översättningar:',
@@ -9301,7 +9321,7 @@ För att kunna spara ändringar så behöver du tillhöra översättargruppen.
 	'translate-tag-legend-fuzzy' => 'Föråldrad översättning',
 	'translate-tag-fuzzy-comment' => 'Definition ändrad av [[User:$1]] i sidversion $2.',
 	'translate-tag-fuzzy-reason' => 'Definition ändrad av användare $1 med kommentaren "$3" i $2.',
-	'translate-sidebar-alltrans' => 'Andra översättningar',
+	'translate-sidebar-alltrans' => 'På andra språk',
 	'translate-tag-noedit' => 'Den här sidan är en automatisk uppdaterad översättning.
 Du kan [$1 redigera källsidan] eller [$2 uppdatera översättningen].',
 	'translations' => 'Alla översättningar',
@@ -9322,6 +9342,8 @@ Du kan [$1 redigera källsidan] eller [$2 uppdatera översättningen].',
 	'translate-untranslated' => 'Oöversatta',
 	'translate-percentage-complete' => 'Avklarat',
 	'translate-percentage-fuzzy' => 'Föråldrat',
+	'translate-nothing-to-do' => 'Alla möjliga översättningar verkar ha gjorts.
+Du uppmuntras att granska meddelanden genom [[Special:Translate|{{int:translate}}]].',
 	'translate-save' => 'Spara ($1)',
 );
 
