@@ -2805,6 +2805,8 @@ Usted puede [$1 editar la página fuente] o [$2 actualizar la traducción].',
 	'translate-untranslated' => 'Sin traducir',
 	'translate-percentage-complete' => 'Completados',
 	'translate-percentage-fuzzy' => 'Desactualizados',
+	'translate-nothing-to-do' => 'Todas las posibles traducciones parecen habver sido hechas.
+Se te anima a revisar los mensajes a través de [[Special:Translate|{{int:translate}}]].',
 	'translate-save' => 'Grabar($1)',
 );
 
@@ -3709,6 +3711,8 @@ Pode [$1 editar a páxina coa fonte] ou [$2 actualizar a tradución].',
 	'translate-untranslated' => 'Sen traducir',
 	'translate-percentage-complete' => 'Completadas',
 	'translate-percentage-fuzzy' => 'Anticuadas',
+	'translate-nothing-to-do' => 'Parece que todas as traducións posibles foron feitas.
+Animámolo a que revise as mensaxes existentes mediante a páxina especial [[Special:Translate|{{int:translate}}]].',
 	'translate-save' => 'Gardar ($1)',
 );
 
@@ -3732,6 +3736,7 @@ $messages['grc'] = array(
 	'translate-prev' => 'ἡ δέλτος ἡ προτέρα',
 	'translate-page-edit' => 'μεταγράφειν',
 	'translate-optional' => '(προαιρετικόν)',
+	'translate-edit-in-other-languages' => 'Μήνυμα ἀλλογλωσσιστί',
 	'translate-magic-module' => 'Ἄρθρον:',
 	'translate-magic-submit' => 'Φόρτισις',
 	'translate-magic-cm-export' => 'ἐξάγειν',
@@ -3759,6 +3764,7 @@ $messages['grc'] = array(
 	'translate-language' => 'Γλῶττα',
 	'translate-total' => 'Μηνύματα',
 	'translate-percentage-complete' => 'Πλήρωσις',
+	'translate-percentage-fuzzy' => 'Ἀπηρχαιωμένη',
 	'translate-save' => 'Γράφειν ($1)',
 );
 
@@ -3885,7 +3891,7 @@ Du muesch in dr Ibersetzer-Gruppe syy go Änderige z spychere.
 	'translate-tag-legend-fuzzy' => 'Veralteti Ibersetzig',
 	'translate-tag-fuzzy-comment' => 'Definition veränderet dur [[User:$1|$1]] in Version $2.',
 	'translate-tag-fuzzy-reason' => 'Definition veränderet dur „$1“ mit em Kommentar „$3“ in $2.',
-	'translate-sidebar-alltrans' => 'Anderi Ibersetzige',
+	'translate-sidebar-alltrans' => 'In andere Sproche',
 	'translate-tag-noedit' => 'Die Syte isch e automatisch aktualisierti Ibersetzigssyte.
 Du chasch d [$1 Originalsyte bearbeite] oder [$2 d Ibersetzig aktualisiere].',
 	'translations' => 'Alli Ibersetzige',
@@ -3906,6 +3912,8 @@ Du chasch d [$1 Originalsyte bearbeite] oder [$2 d Ibersetzig aktualisiere].',
 	'translate-untranslated' => 'Nit ibersetzt',
 	'translate-percentage-complete' => 'Vollständigkeit',
 	'translate-percentage-fuzzy' => 'Veraltet',
+	'translate-nothing-to-do' => 'Alli meglige Ibersetzige sin schyns scho gmacht.
+S wird empfohle, Syschtemnochrichte mit dr Spezialsyte [[Special:Translate|{{int:translate}}]] z iberpriefe.',
 	'translate-save' => 'Spychere ($1)',
 );
 
@@ -4074,7 +4082,7 @@ $messages['he'] = array(
 	'translate-tag-legend-fuzzy' => 'תרגום לא עדכני',
 	'translate-tag-fuzzy-comment' => 'ההגדרה שונתה בידי [[User:$1|$1]] בגרסה $2.',
 	'translate-tag-fuzzy-reason' => 'ההגדרה שונתה על ידי "$1" עם תקציר העריכה "$3" ב־$2.',
-	'translate-sidebar-alltrans' => 'תרגומים אחרים',
+	'translate-sidebar-alltrans' => 'בשפות אחרות',
 	'translate-tag-noedit' => 'דף זה הינו דף תרגום המתעדכן אוטומטית.
 ניתן [$1 לערוך את דף המקור] או [$2 לעדכן את התרגום].',
 	'translations' => 'כל התרגומים',
@@ -4095,6 +4103,9 @@ $messages['he'] = array(
 	'translate-untranslated' => 'ללא תרגום',
 	'translate-percentage-complete' => 'השלמה',
 	'translate-percentage-fuzzy' => 'לא מעודכנות',
+	'translate-nothing-to-do' => 'נראה כי כל הפריטים כבר תורגמו.
+עם זאת, אתם מוזמנים לבדוק את ההודעות דרך [[Special:Translate|{{int:translate}}]].',
+	'translate-save' => 'שמירה ($1)',
 );
 
 /** Hindi (हिन्दी)
@@ -6081,7 +6092,7 @@ $1',
 	'translate-tag-translate-link-desc' => '이 문서 번역하기',
 	'translate-tag-legend-fallback' => '다른 언어의 번역',
 	'translate-tag-legend-fuzzy' => '오래 된 번역',
-	'translate-sidebar-alltrans' => '다른 번역',
+	'translate-sidebar-alltrans' => '다른 언어',
 	'translations' => '모든 번역',
 	'translate-translations-none' => '$1로 번역된 메시지가 없습니다.',
 	'translate-translations-fieldset-title' => '메시지',
@@ -6264,6 +6275,9 @@ Do kanns de [$1 Ojinaal-Sigg ändere] ov de [$2 Övversäzong op der neuste Shta
 	'translate-untranslated' => 'Nit övversaz',
 	'translate-percentage-complete' => 'Fädesch',
 	'translate-percentage-fuzzy' => 'Övverhollt',
+	'translate-nothing-to-do' => 'Et süht donoh uß, wi wenn all müjjeliche Övversetzunge ald jemaat wöre.
+Et künnt en joode Idee sin, dem Süsteem sing Nohreschte un Texte övver
+de Söndersigg [[Special:Translate|{{int:translate}}]] norrens ze prööfe.',
 	'translate-languagestats-groups' => ' # Jif dä Nohreschtejroppe ier Nommere hee en, öm de Nohreschtejroppe en dä
  # Aanzeije op Special:LanguageStats enzeschrängke. Nohreschtejroppe, woh et
  # de Nommere nit jit, donn nix.',
@@ -6435,6 +6449,8 @@ Dir kënnt [$1 d'Original Säit änneren] oder [$2 d'Iwwersetzung aktualiséiere
 	'translate-untranslated' => 'Net iwwersat',
 	'translate-percentage-complete' => 'Fäerdeg zu',
 	'translate-percentage-fuzzy' => 'Net à jour',
+	'translate-nothing-to-do' => "All méiglech Iwwersetzunge sinn anscheinend scho gemaach.
+Dir sidd awer häerzlech Invitéiert fir d'Systemmessagn op [[Special:Translate|{{int:translate}}]] nozekucken.",
 	'translate-save' => 'Späicher ($1)',
 );
 
@@ -7383,6 +7399,8 @@ Du kan [$1 endre kjeldesida] eller [$2 oppdatere omsetjinga].',
 	'translate-untranslated' => 'Uomsett',
 	'translate-percentage-complete' => 'Ferdiggjort',
 	'translate-percentage-fuzzy' => 'Utdatert',
+	'translate-nothing-to-do' => 'Det ser ut til at alle moglege omsetjingar er vortne gjorde.
+Sjå gjerne over meldingar gjennom [[Special:Translate|{{int:translate}}]].',
 	'translate-save' => 'Lagra ($1)',
 );
 
@@ -7709,6 +7727,8 @@ Podètz [$1 modificar la pagina font] o [$2 metre a jorn la traduccion].',
 	'translate-untranslated' => 'Pas traduches',
 	'translate-percentage-complete' => 'Acabament',
 	'translate-percentage-fuzzy' => 'Despassats',
+	'translate-nothing-to-do' => 'Totas las traduccions possiblas semblan que son estadas efectuadas.
+Sètz encoratjat(ada) a repassar los messatges dempuèi [[Special:Translate|{{int:translate}}]].',
 	'translate-save' => 'Publicar ($1)',
 );
 
@@ -8264,7 +8284,7 @@ As alterações não serão gravadas até que você clique abaixo no botão de g
 	'translate-tag-legend-fuzzy' => 'Tradução desatualizada',
 	'translate-tag-fuzzy-comment' => 'Definição modificada por [[User:$1|$1]] na revisão $2.',
 	'translate-tag-fuzzy-reason' => 'Definição mudada por "$1" com comentário "$3" em $2.',
-	'translate-sidebar-alltrans' => 'Outras traduções',
+	'translate-sidebar-alltrans' => 'Em outras línguas',
 	'translate-tag-noedit' => 'Esta página de tradução é atualizada automaticamente.
 Você pode [$1 editar a página de origem] ou [$2 atualizar a tradução].',
 	'translations' => 'Todas as traduções',
@@ -8285,6 +8305,8 @@ Você pode [$1 editar a página de origem] ou [$2 atualizar a tradução].',
 	'translate-untranslated' => 'Não traduzidas',
 	'translate-percentage-complete' => 'Progresso',
 	'translate-percentage-fuzzy' => 'Obsoletas',
+	'translate-nothing-to-do' => 'Aparentemente todas as traduções possíveis foram feitas.
+Você é encorajado a revisar mensagens através de [[Special:Translate|{{int:translate}}]].',
 	'translate-save' => 'Gravar ($1)',
 );
 
@@ -8885,6 +8907,8 @@ Môžete [$1 upravovať zdrojovú stránku] alebo [$2 aktualizovať preklad].',
 	'translate-untranslated' => 'Nepreložené',
 	'translate-percentage-complete' => 'Dokončené',
 	'translate-percentage-fuzzy' => 'Zastaralé',
+	'translate-nothing-to-do' => 'Zdá sa, že všetky možné preklady sú hotové.
+Ďalej sa odporúča aby ste skontrolovali správy prostredníctvom [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-groups' => ' # Pridajte ID skupín správ, po jednom na riadok, čím obmedzíte skupiny správ
  # zobrazované na Special:LanguageStats. Neexistujúce ID skupín správ budú
  # ignorované.',
@@ -10469,6 +10493,8 @@ Bạn có thể [$1 sửa mã trang] hoặc [$2 cập nhật bản dịch].',
 	'translate-untranslated' => 'Chưa dịch',
 	'translate-percentage-complete' => 'Mức hoàn thành',
 	'translate-percentage-fuzzy' => 'Lỗi thời',
+	'translate-nothing-to-do' => 'Dường như tất cả những gì có thể dịch được đều đã được thực hiện.
+Bạn được khuyến khích xem lại các thông điệp tại [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-groups' => ' # Thêm mã nhóm thông điệp, mỗi mã một dòng để ngăn các nhóm thông điệp
  # được hiển thị ở Special:LanguageStats. Các mã nhóm thông điệp không tồn tại
  # sẽ bị bỏ qua.',
