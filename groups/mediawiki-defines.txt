@@ -633,6 +633,8 @@ Scan Set
 Secure Passwords
 
 Secure Poll
+optional = securepoll-header-ip, securepoll-header-xff, securepoll-header-token-match
+optional = securepoll-header-authority, securepoll-header-id
 
 Select Category
 
