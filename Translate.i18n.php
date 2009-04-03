@@ -4940,7 +4940,7 @@ $messages['io'] = array(
 	'translate-statsf-scale-hours' => 'Hori',
 	'translate-statsf-submit' => 'Previdar',
 	'translate-tag-legend-fallback' => 'Tradukuro en altra linguo',
-	'translate-sidebar-alltrans' => 'Altra tradukuri',
+	'translate-sidebar-alltrans' => 'En altra lingui',
 	'translations' => 'Omna tradukuri',
 	'translate-translations-messagename' => 'Nomo:',
 	'translate-language' => 'Linguo',
@@ -8140,7 +8140,7 @@ As alterações não serão gravadas até que você clique abaixo no botão de g
 	'translate-tag-legend-fuzzy' => 'Tradução desactualizada',
 	'translate-tag-fuzzy-comment' => 'Definição medada por [[User:$1|$1]] na revisão $2.',
 	'translate-tag-fuzzy-reason' => 'Definição mudada por "$1" com comentário "$3" em $2.',
-	'translate-sidebar-alltrans' => 'Outras traduções',
+	'translate-sidebar-alltrans' => 'Noutras línguas',
 	'translate-tag-noedit' => 'Esta página de tradução é actualizada automaticamente.
 Você pode [$1 editar a página de origem] ou [$2 actualizar a tradução].',
 	'translations' => 'Todas as traduções',
@@ -8161,6 +8161,8 @@ Você pode [$1 editar a página de origem] ou [$2 actualizar a tradução].',
 	'translate-untranslated' => 'Não traduzidas',
 	'translate-percentage-complete' => 'Progresso',
 	'translate-percentage-fuzzy' => 'Obsoletas',
+	'translate-nothing-to-do' => 'Todas as traduções possíveis parecem já ter sido feitas.
+Encorajamo-lo a rever mensagens através de [[Special:Translate|{{int:translate}}]].',
 	'translate-save' => 'Gravar ($1)',
 );
 
