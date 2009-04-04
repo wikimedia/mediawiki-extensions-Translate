@@ -4,10 +4,9 @@
  *
  * @addtogroup Extensions
  *
- * @copyright Copyright © 2008-2009, Translatewiki.net developers
+ * @copyright Copyright Â© 2008-2009, Translatewiki.net developers
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
-// Support MantisBT: http://www.mantisbt.org
 
 class MantisMessageGroup extends MessageGroup {
 	protected $label = 'Mantis (web-based bugtracking system)';

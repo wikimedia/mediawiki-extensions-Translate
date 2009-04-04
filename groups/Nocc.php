@@ -5,7 +5,7 @@
  * @addtogroup Extensions
  *
  * @author Siebrand Mazeland
- * @copyright Copyright © 2009, Siebrand Mazeland
+ * @copyright Copyright Â© 2009, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
