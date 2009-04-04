@@ -71,6 +71,7 @@ $wgAutoloadClasses['PremadeMediawikiExtensionGroups'] = $dir . 'groups/MediaWiki
 $wgAutoloadClasses['CommonistMessageGroup'] = $dir . 'groups/Commonist.php';
 $wgAutoloadClasses['FreeColMessageGroup'] = $dir . 'groups/FreeCol.php';
 $wgAutoloadClasses['MantisMessageGroup'] = $dir . 'groups/Mantis.php';
+$wgAutoloadClasses['NoccMessageGroup'] = $dir . 'groups/Nocc.php';
 
 # tag
 $wgAutoloadClasses['TranslateTag'] = $dir . 'tag/Tag.php';

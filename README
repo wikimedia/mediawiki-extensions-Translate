@@ -33,6 +33,9 @@ function customMessageGroups( $id ) {
 </code>
 
 == Changes in version 11 ==
+* 2009-04-04:2 Experimental support added for NOCC
+* 2009-04-04:1 PhpVariables Mantis header inconsistency fixed
+* 2009-03-29   Table header on Special:LanguageStats suppressed when all translations are complete
 
 == Changes in version 10 ==
 * 2009-03-24   Also 2 decimals for fuzzy in Special:LanguageStats

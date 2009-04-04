@@ -32,6 +32,11 @@ class MessageChecks {
 			'checkPrintfExtraVars',
 			'checkBalance',
 		),
+		'nocc' => array(
+			'checkPrintfMissingVars',
+			'checkPrintfExtraVars',
+			'checkBalance',
+		),
 		'voctrain' => array(
 			'checkI18nSprintMissingVars',
 			'checkI18nSprintExtraVars',
