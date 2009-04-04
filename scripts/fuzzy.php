@@ -135,20 +135,20 @@ class FuzzyBot {
 		global $wgTitle, $wgArticle, $wgTranslateDocumentationLanguageCode;
 		$wgTitle = $title;
 
-		STDOUT( "Updating {$wgTitle->getPrefixedText()}... ", true );
+		STDOUT( "Updating {$wgTitle->getPrefixedText()}... ", $title );
 		if ( !$wgTitle instanceof Title ) {
-			STDOUT( "INVALID TITLE!", false );
+			STDOUT( "INVALID TITLE!", $title );
 			return;
 		}
 
 		$items = explode( '/', $wgTitle->getText(), 2 );
 		if ( isset( $items[1] ) && $items[1] === $wgTranslateDocumentationLanguageCode ) {
-			STDOUT( "IGNORED!", false );
+			STDOUT( "IGNORED!", $title );
 			return;
 		}
 
 		if ( $this->dryrun ) {
-			STDOUT( "DRY RUN!", false );
+			STDOUT( "DRY RUN!", $title );
 			return;
 		}
 
@@ -159,9 +159,9 @@ class FuzzyBot {
 		$status = $wgArticle->doEdit( TRANSLATE_FUZZY . $text, $comment, EDIT_FORCE_BOT );
 
 		if ( $status === true || ( is_object( $status ) && $status->isOK() ) ) {
-			STDOUT( "OK!", false );
+			STDOUT( "OK!", $title );
 		} else {
-			STDOUT( "Failed!", false );
+			STDOUT( "Failed!", $title );
 		}
 
 	}
