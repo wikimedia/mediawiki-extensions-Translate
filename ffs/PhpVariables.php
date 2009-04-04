@@ -116,7 +116,6 @@ class PhpVariablesFormatReader extends SimpleFormatReader {
  */
 class PhpVariablesFormatWriter extends SimpleFormatWriter {
 
-	// Ugly. Should be in Mantis.php or something
 	public function makeHeader( $handle, $code ) {
 		list( $name, $native ) = $this->getLanguageNames( $code );
 		$authors = $this->formatAuthors( ' * @author ', $code );
