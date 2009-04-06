@@ -134,6 +134,7 @@ class PremadeMediawikiExtensionGroups {
 			'ext-0-wikihow'           => 'AllWikihowExtensionsGroup',
 			'ext-0-wikimedia'         => 'AllWikimediaExtensionsGroup',
 			'ext-0-wikitravel'        => 'AllWikitravelExtensionsGroup',
+			'ext-collection-0-all'    => 'AllCollectionExtensionsGroup',
 			'ext-flaggedrevs-0-all'   => 'AllFlaggedRevsExtensionsGroup',
 			'ext-socialprofile-0-all' => 'AllSocialProfileExtensionsGroup',
 			'ext-uniwiki-0-all'       => 'AllUniwikiExtensionsGroup',
@@ -453,6 +454,29 @@ class AllWikitravelExtensionsGroup extends AllMediawikiExtensionsGroup {
 
 	public function wikitravelextensions() {
 		return $this->wikitravelextensions;
+	}
+}
+
+class AllCollectionExtensionsGroup extends AllMediawikiExtensionsGroup {
+	protected $label = 'All Collection messages';
+	protected $id    = 'ext-collection-0-all';
+	protected $meta  = true;
+
+	protected $classes = null;
+
+	protected $flaggedrevsextensions = array(
+		'ext-collection',
+		'ext-collectioncore',
+	);
+
+	protected function init() {
+		if ( $this->classes === null ) {
+			$this->classes = array();
+			$classes = MessageGroups::singleton()->getGroups();
+			foreach ( $this->collectionextensions as $key ) {
+				$this->classes[$key] = $classes[$key];
+			}
+		}
 	}
 }
 

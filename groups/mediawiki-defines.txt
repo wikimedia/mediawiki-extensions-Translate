@@ -153,6 +153,9 @@ Collection
 descmsg = coll-desc
 ignored = coll-template_blacklist_title, coll-license_url
 
+Collection core
+file = Collection/CollectionCore.i18n.php
+
 Comment Pages
 ignored = commenttab-editintro, commenttab-preload
 
