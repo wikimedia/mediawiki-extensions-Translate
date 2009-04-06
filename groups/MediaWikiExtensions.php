@@ -465,9 +465,9 @@ class AllCollectionExtensionsGroup extends AllMediawikiExtensionsGroup {
 
 	protected $classes = null;
 
-	protected $flaggedrevsextensions = array(
-		'ext-collection',
-		'ext-collectioncore',
+	protected $collectionextensions = array(
+		'ext-collection-core',
+		'ext-collection-other',
 	);
 
 	protected function init() {
