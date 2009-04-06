@@ -363,7 +363,8 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-cite',
 		'ext-citespecial',
 		'ext-codereview', // MediaWiki.org
-		'ext-collection', // Wikibooks
+		'ext-collection-core',
+		'ext-collection-other',
 		'ext-confirmedit',
 		'ext-confirmeditfancycaptcha',
 		'ext-contactpage', // on nl.wp and wikimediafoundation.org
