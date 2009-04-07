@@ -61,7 +61,7 @@ class SpecialMagic extends SpecialPage {
 				Xml::submitButton( wfMsg( self::MSG . 'submit' ) ) . ' ' .
 				Xml::submitButton( wfMsg( 'translate-magic-cm-export' ), array( 'name' => 'export' ) ) .
 			'</td></tr></table>' .
-			Xml::hidden( 'title', $this->getTitle() )
+			Xml::hidden( 'title', $this->getTitle()->getPrefixedText() )
 			
 		);
 		return $form;

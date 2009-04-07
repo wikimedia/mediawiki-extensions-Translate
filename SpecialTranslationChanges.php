@@ -43,7 +43,7 @@ class SpecialTranslationChanges extends SpecialPage {
 				'action' => $wgScript,
 				'method' => 'get'
 			),
-			Xml::hidden( 'title', $this->getTitle() ) . $limit . $button
+			Xml::hidden( 'title', $this->getTitle()->getPrefixedText() ) . $limit . $button
 		);
 		return $form;
 	}

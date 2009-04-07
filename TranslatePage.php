@@ -193,7 +193,7 @@ class SpecialTranslate extends SpecialPage {
 			Xml::openElement( 'fieldset', array( 'class' => 'mw-sp-translate-settings' ) ) .
 				Xml::element( 'legend', null, wfMsg( self::MSG . 'settings-legend' ) ) .
 				Xml::openElement( 'form', array( 'action' => $wgScript, 'method' => 'get' ) ) .
-					Xml::hidden( 'title', $this->getTitle() ) .
+					Xml::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
 					Xml::openElement( 'table' ) .
 						implode( "", $options ) .
 						self::optionRow( $button, ' ' ) .
