@@ -30,10 +30,10 @@ class SpecialTranslationChanges extends SpecialPage {
 	}
 
 	/**
-	 * GLOBALS: $wgTitle, $wgScript
+	 * GLOBALS: $wgScript
 	 */
 	protected function settingsForm() {
-		global $wgTitle, $wgScript;
+		global $wgScript;
 
 		$limit = self::timeLimitSelector( $this->hours );
 		$button = Xml::submitButton( wfMsg( TranslateUtils::MSG . 'submit' ) );
@@ -43,7 +43,7 @@ class SpecialTranslationChanges extends SpecialPage {
 				'action' => $wgScript,
 				'method' => 'get'
 			),
-			Xml::hidden( 'title', $wgTitle->getPrefixedText() ) . $limit . $button
+			Xml::hidden( 'title', SpecialPage::getTitleFor( 'TranslationChanges' )->getPrefixedText() ) . $limit . $button
 		);
 		return $form;
 	}

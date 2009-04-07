@@ -167,11 +167,11 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	/**
-	 * GLOBALS: $wgTitle, $wgScript
+	 * GLOBALS: $wgScript
 	 */
 	protected function settingsForm( $errors ) {
 		wfMemIn( __METHOD__ );
-		global $wgTitle, $wgScript;
+		global $wgScript;
 
 		$task = $this->taskSelector();
 		$group = $this->groupSelector();
@@ -193,7 +193,7 @@ class SpecialTranslate extends SpecialPage {
 			Xml::openElement( 'fieldset', array( 'class' => 'mw-sp-translate-settings' ) ) .
 				Xml::element( 'legend', null, wfMsg( self::MSG . 'settings-legend' ) ) .
 				Xml::openElement( 'form', array( 'action' => $wgScript, 'method' => 'get' ) ) .
-					Xml::hidden( 'title', $wgTitle->getPrefixedText() ) .
+					Xml::hidden( 'title', SpecialPage::getTitleFor( 'Translate' )->getPrefixedText() ) .
 					Xml::openElement( 'table' ) .
 						implode( "", $options ) .
 						self::optionRow( $button, ' ' ) .

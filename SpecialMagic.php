@@ -38,10 +38,10 @@ class SpecialMagic extends SpecialPage {
 
 	/**
 	 * Returns xhtml output of the form
-	 * GLOBALS: $wgLang, $wgTitle
+	 * GLOBALS: $wgLang
 	 */
 	protected function getForm() {
-		global $wgLang, $wgTitle, $wgScript;
+		global $wgLang, $wgScript;
 
 		$form = Xml::tags( 'form',
 			array(
@@ -61,7 +61,7 @@ class SpecialMagic extends SpecialPage {
 				Xml::submitButton( wfMsg( self::MSG . 'submit' ) ) . ' ' .
 				Xml::submitButton( wfMsg( 'translate-magic-cm-export' ), array( 'name' => 'export' ) ) .
 			'</td></tr></table>' .
-			Xml::hidden( 'title', $wgTitle->getPrefixedText() )
+			Xml::hidden( 'title', SpecialPage::getTitleFor( 'AdvancedTranslate' )->getPrefixedText();
 			
 		);
 		return $form;
