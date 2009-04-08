@@ -656,7 +656,7 @@ $messages['ar'] = array(
 	'translate-tag-legend-fuzzy' => 'ترجمة قديمة',
 	'translate-tag-fuzzy-comment' => 'التعريف تغير بواسطة [[User:$1]] في المراجعة $2.',
 	'translate-tag-fuzzy-reason' => 'التعريف تغير بواسطة المستخدم $1 بالتعليق "$3" في $2.',
-	'translate-sidebar-alltrans' => 'ترجمات أخرى',
+	'translate-sidebar-alltrans' => 'بلغات أخرى',
 	'translate-tag-noedit' => 'هذه الصفحة هي صفحة ترجمة محدثة تلقائيا.
 يمكنك [$1 تعديل الصفحة المصدر] أو [$2 تحديث الترجمة].',
 	'translations' => 'كل الترجمات',
@@ -677,6 +677,8 @@ $messages['ar'] = array(
 	'translate-untranslated' => 'غير المترجمة',
 	'translate-percentage-complete' => 'إكمال',
 	'translate-percentage-fuzzy' => 'غير محدث',
+	'translate-nothing-to-do' => 'كل الترجمات المحتملة يبدو أنه قد تم عملها.
+من الأفضل أن تراجع الرسائل من خلال [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-groups' => ' # أضف أرقام مجموعات الرسائل, واحدا لكل سطر لتحديد مجموعات الرسائل التي
  # تعرض في Special:LanguageStats.أرقام مجموعات الرسائل غير الموجودة سوف 
  # يتم تجاهلها.',
@@ -3357,7 +3359,7 @@ Les modifications ne sont pas enregistrées tant que vous n’avez pas cliqué s
 	'translate-checks-pagename' => 'Espace de noms modifié depuis la définition',
 	'translate-checks-format' => 'Cette traduction ne suit pas la définition ou a une syntaxe incorrecte : $1',
 	'translate-checks-escape' => 'Les échappements suivants peuvent être accidentels : <strong>$1</strong>',
-	'tog-translate-nonewsletter' => "Ne pas m'envoyer les courriels d'informations (ne concerne que les utilisateurs qui disposent d’une adresse de courriel confirmée)",
+	'tog-translate-nonewsletter' => 'Ne pas m’envoyer les courriels d’informations (ne concerne que les utilisateurs qui disposent d’une adresse de courriel confirmée)',
 	'right-translate' => 'Modifier avec l’interface de traduction',
 	'translate-rc-translation-filter' => 'Filtrer les traductions :',
 	'translate-rc-translation-filter-no' => 'Ne rien faire',
