@@ -239,7 +239,7 @@ $messages['qqq'] = array(
 	'translate-page-edit' => '{{Identical|Edit}}',
 	'translate-optional' => '{{Identical|Optional}}',
 	'translate-edit-no-information' => 'Message is used as a hint to translators that documentation for a message without documentation is needed.',
-	'translate-edit-information'        => 'Caption for box which contains information about the message. $2 is the message name. $1 is {{msg-mw|translate-edit-contribute}}.',
+	'translate-edit-information' => 'Caption for box which contains information about the message. $2 is the message name. $1 is {{msg-mw|translate-edit-contribute}}.',
 	'translate-edit-in-other-languages' => 'Caption for box which contains translation of message in other languages. $1 is the message name.',
 	'translate-edit-warnings' => 'Title of the warnings box when editing a message.
 This box list the problems found in the translation.',
@@ -1080,8 +1080,8 @@ $messages['be-tarask'] = array(
 	'translate-edit-contribute' => 'рэдагаваць',
 	'translate-edit-no-information' => "''Гэтае паведамленьне ня мае дакумэнтацыі.
 Калі Вы ведаеце дзе ці як выкарыстоўваецца гэтае паведамленьне, то Вы можаце дапамагчы іншым перакладчыкам дадаўшы дакумэнтацыю да гэтага паведамленьня.''",
-	'translate-edit-information' => 'Інфармацыя пра гэтае паведамленьне ($1)',
-	'translate-edit-in-other-languages' => 'Паведамленьне на іншых мовах',
+	'translate-edit-information' => 'Інфармацыя пра паведамленьне «$2» ($1)',
+	'translate-edit-in-other-languages' => 'Паведамленьне «$1» на іншых мовах',
 	'translate-edit-committed' => 'Цяперашні пераклад у праграме',
 	'translate-edit-warnings' => 'Папярэджаньне аб няпоўных перакладах',
 	'translate-edit-goto-no-prev' => 'Няма папярэдняга паведамленьня',
@@ -6196,8 +6196,8 @@ $messages['ksh'] = array(
 	'translate-edit-definition' => 'De Ojinaal Nohresch',
 	'translate-edit-contribute' => 'beijdraare',
 	'translate-edit-no-information' => "''Mer han kein Beschrievong oddo Dokementazjohn för dat Täxshtöck. Wann De weijß, wann un woh dit Shtöck jenou jebruch weed, dann kanns De de Anndere hellefe, un en Äklierong för_et ennjävve.''",
-	'translate-edit-information' => 'Ennfommazjohne övver hee di Nohresch  ($1)',
-	'translate-edit-in-other-languages' => 'Di Noresch in annder Shprooche',
+	'translate-edit-information' => 'Ennfommazjohne övver de Nohresch „$2“ ($1)',
+	'translate-edit-in-other-languages' => 'Di Nohresch „$1“ in annder Shprooche',
 	'translate-edit-committed' => 'Es aktowäll övversaz met',
 	'translate-edit-warnings' => 'Warnonge wääje unkomplätte Övversäzonge',
 	'translate-edit-goto-no-prev' => 'Keine Tëx doför',
@@ -9693,14 +9693,12 @@ $messages['th'] = array(
 	'translate-magic-pagename' => 'ส่วนเพิ่มเติมของการแปลมีเดียวิกิ',
 	'translate-magic-help' => 'คุณสามารถแปลชื่อหน้าพิเศษต่าง ๆ, ตัวแปรพิเศษ, ชื่อแบบหน้าตา และ ชื่อเนมสเปซ
 
-ในตัวแปรพิเศษ กรุณาใส่คำแปลภาษาอังกฤษไปด้วยเช่นเดียวกัน มิฉะนั้นมันจะหยุดทำงาน กรุณาเว้นอันแรก (0 หรือ 1) อย่างที่มันเป็น
-
 ชื่อหน้าพิเศษและตัวแปรพิเศษสามารถมีคำแปลได้หลายอย่าง
 คำแปลจะแยกโดยการใช้ จุลภาค (,)
 ชื่อแบบหน้าตาและเนมสเปซสามารถมีคำแปลได้แค่คำเดียว
 
-ในคำแปลชื่อเนมสเปซ <tt>คุยเรื่อง$1</tt> ต้องระวังเป็นพิเศษ <tt>$1</tt> จะถูกแทนที่โดยชื่อเว็บไซต์ (เช่น <tt>คุยเรื่อง{{SITENAME}}</tt>)
-ถ้าไม่สามารถกระทำการดังกล่าวได้ในภาษาของคุณ, กรุณาติดต่อผู้ดูแลระบบขั้นสูง
+ในคำแปลชื่อเนมสเปซ <tt>คุยเรื่อง$1</tt> ต้องระวังเป็นพิเศษ <tt>$1</tt> จะถูกแทนที่โดยชื่อเว็บไซต์ (เช่น <tt>{{ns:project_talk}}</tt>)
+ถ้าไม่สามารถกระทำการดังกล่าวได้ในภาษาของคุณ กรุณาติดต่อผู้ดูแลระบบขั้นสูง
 
 คุณต้องอยู่ในกลุ่มคนแปลเพื่อที่จะบันทึกข้อมูลได้
 ข้อมูลจะไม่ถูกบันทึกตราบใดที่คุณยังไม่กด "บันทึก"',
@@ -9733,6 +9731,7 @@ $messages['th'] = array(
 	'translate-checks-pagename' => 'namespace ไม่ตรงกับนิยาม (definition) ต้นฉบับ',
 	'translate-checks-format' => 'คำแปลนี้ไม่ตรงกับนิยามในต้นฉบับ (definition) หรือ มีไวยากรณ์ (syntax) ที่ไม่ถูกต้อง: $1',
 	'translate-checks-escape' => 'เครื่องหมายหลบ (escape) ต่อไปนี้ อาจจะเกิดจากความไม่ตั้งใจ: <strong>$1</strong>',
+	'tog-translate-nonewsletter' => 'ไม่รับอีเมลประจำเดือนของเว็บไซต์ (สำหรับผู้ใช้ที่ยืนยันอีเมลแล้วเท่านั้น)',
 	'right-translate' => 'แก้ไขในส่วนที่ใช้สำหรับแปล',
 	'translate-rc-translation-filter' => 'กรองงานแปล:',
 	'translate-rc-translation-filter-no' => 'ไม่ทำอะไรทั้งสิ้น',
@@ -9742,6 +9741,7 @@ $messages['th'] = array(
 	'translationstats' => 'สถิติการแปล',
 	'translate-stats-edits' => 'การแก้ไขต่อหนึ่งวัน',
 	'translate-stats-users' => 'ผู้แปล',
+	'translate-statsf-options' => 'ตัวปรับแต่งกราฟ',
 	'translate-statsf-width' => 'ความกว้างในหน่วยพิกเซล',
 	'translate-statsf-height' => 'ความสูงในหน่วยพิกเซล',
 	'translate-statsf-days' => 'ช่วงเวลานับเป็นวัน',
@@ -9760,7 +9760,7 @@ $messages['th'] = array(
 	'translate-tag-legend-fuzzy' => 'คำแปลที่ล้าสมัยแล้ว',
 	'translate-tag-fuzzy-comment' => '[[User:$1|$1]] ได้เปลี่ยนนิยามต้นฉบับ (definition) ในรุ่น $2',
 	'translate-tag-fuzzy-reason' => '"$1" ได้เปลี่ยนนิยามต้นฉบับ (definition) ใน $2 โดยให้คำอธิบายไว้ว่า "$3"',
-	'translate-sidebar-alltrans' => 'คำแปลในภาษาอื่นๆ',
+	'translate-sidebar-alltrans' => 'คำแปลในภาษาอื่น ๆ',
 	'translate-tag-noedit' => 'หน้านี้เป็นหน้าคำแปลที่ได้รับการแก้ไขอัตโนมัติ
 คุณสามารถ[$1 แก้ไขหน้าต้นฉบับ] หรือ [$2 แก้ไขคำแปล]',
 	'translations' => 'คำแปลทั้งหมด',
@@ -9781,6 +9781,9 @@ $messages['th'] = array(
 	'translate-untranslated' => 'ไม่ได้แปล',
 	'translate-percentage-complete' => 'เสร็จสมบูรณ์',
 	'translate-percentage-fuzzy' => 'ล้าสมัย',
+	'translate-nothing-to-do' => 'การแปลทุกอย่างเสร็จสิ้นแล้ว
+อย่างไรก็ดีกรุณาพึงตรวจสอบข้อความต่าง ๆ ผ่านทาง[[Special:Translate|{{int:translate}}]]',
+	'translate-save' => 'บันทึก ($1)',
 );
 
 /** Turkmen (Türkmen)
@@ -10949,6 +10952,7 @@ $messages['zh-hant'] = array(
 	'translate-task-view' => '檢視全部訊息',
 	'translate-task-untranslated' => '檢視尚未翻譯的訊息',
 	'translate-task-optional' => '檢視可選的訊息',
+	'translate-task-untranslatedoptional' => '檢視尚未翻譯的可選訊息',
 	'translate-task-problematic' => '檢視有問題的訊息',
 	'translate-task-review' => '檢查該處的更改',
 	'translate-task-reviewall' => '檢查該群組的翻譯',
@@ -11037,15 +11041,27 @@ $messages['zh-hant'] = array(
 	'translationstats' => '翻譯統計',
 	'translate-stats-edits' => '日編輯數',
 	'translate-stats-users' => '翻譯者',
+	'translate-statsf-options' => '製圖選項',
+	'translate-statsf-width' => '寬度',
+	'translate-statsf-height' => '高度',
+	'translate-statsf-scale-days' => '日',
+	'translate-statsf-scale-hours' => '小時',
+	'translate-statsf-count' => '測量',
+	'translate-statsf-count-edits' => '編輯次數',
 	'translate-statsf-submit' => '預覽',
 	'translate-tag-category' => '可翻譯的頁面',
 	'translate-tag-translate-link-desc' => '翻譯本頁',
 	'translate-sidebar-alltrans' => '其他翻譯',
+	'translate-translations-no-message' => '"$1"不是可翻譯的訊息',
+	'translate-translations-none' => '沒有"$1"的翻譯',
 	'translate-translations-fieldset-title' => '所有翻譯',
+	'translate-translations-messagename' => '消息：',
+	'translate-translations-project' => '計畫:',
 	'languagestats' => '語言統計',
 	'translate-language-code' => '語言代碼',
 	'translate-language-code-field-name' => '語言代碼：',
 	'translate-language' => '語言',
 	'translate-untranslated' => '未翻譯',
+	'translate-save' => '儲存 ($1)',
 );
 

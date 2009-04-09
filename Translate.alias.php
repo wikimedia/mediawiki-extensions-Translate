@@ -452,7 +452,10 @@ $aliases['te'] = array(
 /** Thai (ไทย) */
 $aliases['th'] = array(
 	'Translate' => array( 'แปล' ),
+	'Magic' => array( 'การแปลขั้นสูง' ),
 	'TranslationStats' => array( 'สถิติการแปล' ),
+	'Translations' => array( 'การแปล' ),
+	'LanguageStats' => array( 'สถิติภาษา' ),
 );
 
 /** Tagalog (Tagalog) */
