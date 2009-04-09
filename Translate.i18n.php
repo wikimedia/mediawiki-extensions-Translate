@@ -65,8 +65,8 @@ Reason:
 	'translate-edit-contribute'         => 'contribute',
 	'translate-edit-no-information'     => "''This message has no documentation.
 If you know where or how this message is used, you can help other translators by adding documentation to this message.''",
-	'translate-edit-information'        => 'Information about this message ($1)',
-	'translate-edit-in-other-languages' => 'Message in other languages',
+	'translate-edit-information'        => 'Information about message "$2" ($1)',
+	'translate-edit-in-other-languages' => 'Message "$1" in other languages',
 	'translate-edit-committed'          => 'Current translation in software',
 	'translate-edit-warnings'           => 'Warnings about incomplete translations',
 
@@ -239,7 +239,8 @@ $messages['qqq'] = array(
 	'translate-page-edit' => '{{Identical|Edit}}',
 	'translate-optional' => '{{Identical|Optional}}',
 	'translate-edit-no-information' => 'Message is used as a hint to translators that documentation for a message without documentation is needed.',
-	'translate-edit-in-other-languages' => 'Caption for box which contains translation of message in other languages',
+	'translate-edit-information'        => 'Caption for box which contains information about the message. $2 is the message name. $1 is {{msg-mw|translate-edit-contribute}}.',
+	'translate-edit-in-other-languages' => 'Caption for box which contains translation of message in other languages. $1 is the message name.',
 	'translate-edit-warnings' => 'Title of the warnings box when editing a message.
 This box list the problems found in the translation.',
 	'translate-magic-help' => 'Description of [[Special:AdvancedTranslate]].',

@@ -71,7 +71,7 @@ class TranslateEditAddons {
 
 		$text .= <<<EOEO
 <hr />
-<ul>
+<ul class="mw-translate-nav-prev-next-list">
 <li>$prevLink</li>
 <li>$nextLink</li>
 <li>$list</li>
@@ -230,7 +230,7 @@ EOEO;
 			}
 		}
 		if ( count( $inOtherLanguages ) ) {
-			$boxes[] = TranslateUtils::fieldset( wfMsgHtml( self::MSG . 'in-other-languages' ),
+			$boxes[] = TranslateUtils::fieldset( wfMsgHtml( self::MSG . 'in-other-languages' , $key ),
 				implode( "\n", $inOtherLanguages ), array( 'class' => 'mw-sp-translate-edit-inother' ) );
 		}
 
@@ -265,7 +265,7 @@ EOEO;
 				// Remove whatever block element wrapup the parser likes to add
 				$contents = preg_replace( '~^<([a-z]+)>(.*)</\1>$~us', '\2', $contents );
 				$boxes[] = TranslateUtils::fieldset(
-					wfMsgHtml( self::MSG . 'information', $edit ), $contents, array( 'class' => $class )
+					wfMsgHtml( self::MSG . 'information', $edit , $key ), $contents, array( 'class' => $class )
 				);
 			}
 		}
