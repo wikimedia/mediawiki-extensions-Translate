@@ -319,9 +319,9 @@ class SpecialTranslate extends SpecialPage {
 
 	private function makeOffsetLink( $label, $offset ) {
 		wfMemIn( __METHOD__ );
-		global $wgTitle, $wgUser;
+		global $wgUser;
 		$skin = $wgUser->getSkin();
-		$link = $skin->makeLinkObj( $wgTitle, $label,
+		$link = $skin->makeLinkObj( $this->getTitle(), $label,
 			wfArrayToCGI(
 				array( 'offset' => $offset ),
 				$this->nondefaults
