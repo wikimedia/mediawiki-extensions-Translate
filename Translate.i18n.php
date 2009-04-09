@@ -496,7 +496,7 @@ En as palabras machicas, ha d'encluyir a traduzión en anglés, porque si no lo 
 
 Os alias d'as pachinas espezials y as parabras machicas pueden tener barias traduzions. As traduzions se deseparan por una coma (,). Os nombres d'as aparenzias y d'os espazios de nombres no pueden tener que una unica traduzión.
 
-En as traduzions d'os espazios de nombres <tt>\$1 talk</tt> ye espezial. <tt>\$1</tt> ye escambiata por o nombre d'o sitio (por exemplo <tt>{{SITENAME}} talk</tt>). Si no ye posible en a suya luenga formar una esprisión correuta sin cambiar o nombre d'o sitio, contaute con un programador.
+En as traduzions d'os espazios de nombres <tt>\$1 talk</tt> ye espezial. <tt>\$1</tt> ye escambiata por o nombre d'o sitio (por exemplo <tt>{{ns:project_talk}}</tt>). Si no ye posible en a suya luenga formar una esprisión correuta sin cambiar o nombre d'o sitio, contaute con un programador.
 
 Ha de pertenexer á la colla de tradutors ta alzar os cambeos. Ístos no quedan rechistratos dica que no se puncha en o botón \"Alzar pachina\" que ye en o cobaxo d'a pachina.",
 	'translate-magic-submit' => 'Ir á escar',
@@ -2191,7 +2191,7 @@ $messages['de-formal'] = array(
 
 Spezialseiten und magische Wörter können mehrere Übersetzungen haben, sie werden jeweils durch ein Komma (,) getrennt. Namensraumnamen dürfen nur je eine Übersetzung haben.
 
-In der Übersetzung eines Namensraumnamens hat <tt>$1 talk</tt> eine spezielle Bedeutung. <tt>$1</tt> wird durch den Projektnamen ersetzt (zum Beispiel <tt>{{SITENAME}} talk</tt>).
+In der Übersetzung eines Namensraumnamens hat <tt>$1 talk</tt> eine spezielle Bedeutung. <tt>$1</tt> wird durch den Projektnamen ersetzt (zum Beispiel <tt>{{ns:project_talk}}</tt>).
 Wenn es in Ihrer Sprache nicht möglich ist, eine grammatikalisch korrekte Form davon zu bilden ohne den Projektnamen zu verändern, kontaktieren Sie bitte einen Softwareentwickler.
 
 Sie müssen in der Übersetzer-Gruppe sein, um Änderungen zu speichern.
@@ -3068,7 +3068,7 @@ $messages['fa'] = array(
 
 نام‌های مستعار صفحه‌های ویژه و واژه‌های جادویی می‌توانند بیش از یک ترجمه داشته باشند. ترجمه‌ها با یک کامای انگلیسی (,) از هم جدا می‌شوند. نام پوسته‌ها و فضاهای نام تنها می‌تواند یک ترجمه داشته باشد.
 
-در ترجمهٔ نام فضاهای نام <tt>$1 talk</tt> خاص است. <tt>$1</tt> توسط نام وبگاه جایگزین می‌شود (مانند <tt>{{SITENAME}} talk</tt>). اگر در زبان شما امکان ایجاد چنین عبارتی بدون تغییر دادن نام وبگاه وجود ندارد، لطفاً با یکی از توسعه‌دهندگان نرم‌افزار تماس بگیرید.
+در ترجمهٔ نام فضاهای نام <tt>$1 talk</tt> خاص است. <tt>$1</tt> توسط نام وبگاه جایگزین می‌شود (مانند <tt>{{ns:project_talk}}</tt>). اگر در زبان شما امکان ایجاد چنین عبارتی بدون تغییر دادن نام وبگاه وجود ندارد، لطفاً با یکی از توسعه‌دهندگان نرم‌افزار تماس بگیرید.
 
 برای ذخیره کردن تغییرها باید عضو گروه ترجمه‌کنندگان باشید. تغییرات زمانی ذخیره می‌شوند که دکمهٔ ذخیره را در پایین صفحه فشار دهید.',
 	'translate-magic-submit' => 'بیاور',
@@ -3495,7 +3495,7 @@ Dens los mots magicos, vos dête encllure la traduccion en anglès ou cen foncci
 
 Los noms de les pâges spèciâles et los mots magicos pôvont avêr plusiors traduccions. Les traduccions sont sèparâs per una virgula (,). Los noms de les entèrfaces et los titros des èspâços de nom pôvont avêr ren que yona traduccion.
 
-Dens les traduccions des èspâços de nom, <tt>$1 talk</tt> est spèciâl. <tt>$1</tt> est remplaciê per lo nom du seto (per ègzemplo <tt>{{SITENAME}} talk</tt>). S’o est pas possiblo d’obtegnir una èxprèssion valida dens voutra lengoua sen changiér lo nom du seto, volyéd vos veriér vers un dèvelopior.
+Dens les traduccions des èspâços de nom, <tt>$1 talk</tt> est spèciâl. <tt>$1</tt> est remplaciê per lo nom du seto (per ègzemplo <tt>{{ns:project_talk}}</tt>). S’o est pas possiblo d’obtegnir una èxprèssion valida dens voutra lengoua sen changiér lo nom du seto, volyéd vos veriér vers un dèvelopior.
 
 Vos dête apartegnir a la tropa des traductors por sôvar los changements. Los changements seront pas sôvâs devant que vos clicâd sur lo boton « Sôvar » d’avâl.',
 	'translate-magic-submit' => 'Alar',
@@ -7960,7 +7960,7 @@ $messages['pms'] = array(
 	'translate-optional' => '(opsional)',
 	'translate-ignored' => '(ignorà)',
 	'translate-magic-pagename' => 'Viragi estèis ëd MediaWiki',
-	'translate-magic-help' => "A peul viré j'àlias dle pàgine speciaj, le paròle màgiche, ij nòm dle facie e coj djë spassi nominaj. Con le paròle màgiche a venta ch'a buta ëdcò ël viragi n'anglèis, che dësnò a travajo pa pì. Ch'a vardo ëdcò dë lassé ël prim element (0 or 1) tanme ch'a lo treuva. J'àlias dle pàgine soeciaj e le paròle màgiche a peulo avej pì che un viragi. Ij viragi a son separà da vìrgole (,). Ij nòm dle facie e djë spassi nominaj a peulo avej mach un viragi. Ant ël viragi djë spassi nominaj ël cas ëd <tt>$1 talk</tt> a l'é special. <tt>$1</tt> a ven arpiassà col nòm dël sit (pr'esempi <tt>{{SITENAME}} talk</tt>). Se sòn as peul nen fesse an soa lenga për rivé a n'espression bon-a sensa cambié ël nòm dël sit, për piasì, ch'as buta an contat con un programista. A venta ch'a sia ant la partìa dij tradutor për podej salvé soe modìfiche. Le modìfiche as salvo nen fin ch'a-i da nen un colp ansima al al boton ambelessì sota.",
+	'translate-magic-help' => "A peul viré j'àlias dle pàgine speciaj, le paròle màgiche, ij nòm dle facie e coj djë spassi nominaj. Con le paròle màgiche a venta ch'a buta ëdcò ël viragi n'anglèis, che dësnò a travajo pa pì. Ch'a vardo ëdcò dë lassé ël prim element (0 or 1) tanme ch'a lo treuva. J'àlias dle pàgine soeciaj e le paròle màgiche a peulo avej pì che un viragi. Ij viragi a son separà da vìrgole (,). Ij nòm dle facie e djë spassi nominaj a peulo avej mach un viragi. Ant ël viragi djë spassi nominaj ël cas ëd <tt>$1 talk</tt> a l'é special. <tt>$1</tt> a ven arpiassà col nòm dël sit (pr'esempi <tt>{{ns:project_talk}}</tt>). Se sòn as peul nen fesse an soa lenga për rivé a n'espression bon-a sensa cambié ël nòm dël sit, për piasì, ch'as buta an contat con un programista. A venta ch'a sia ant la partìa dij tradutor për podej salvé soe modìfiche. Le modìfiche as salvo nen fin ch'a-i da nen un colp ansima al al boton ambelessì sota.",
 	'translate-magic-submit' => 'Smon-e',
 	'translate-magic-cm-export' => 'Esporté',
 	'translate-magic-cm-to-be' => 'da esse',
@@ -9218,7 +9218,7 @@ Pikeun kecap magis, Anjeun perlu nyantumkeun ogé tarjamahan basa Inggris atawa 
 
 Landian pikeun halaman husus sarta kecap magis bisa ngabogaan leuwih ti hiji tarjamahan anu lainna dipisahkan ku koma (,). Ngaran kulit sarta ngaranspasi ngan bisa ngabogaan hiji tarjamahan.
 
-Dina tarjamahan ngaranspasi <tt>$1 talk</tt> diperlakukan husus. <tt>$1</tt>  digantikeun kalawan ngaran loka (contona {{SITENAME}} talk).
+Dina tarjamahan ngaranspasi <tt>$1 talk</tt> diperlakukan husus. <tt>$1</tt>  digantikeun kalawan ngaran loka (contona {{ns:project_talk}}).
 Lamun basa Anjeun henteu matak bisa pikeun nyieun hiji ekspresi anu valid tanpa ngaganti ngaran loka, sumangga kontak salah saurang pengembang.
 
 Anjeun perlu jadi anggota grup panarjamah pikeun nyimpen parobahan. Parobahan moal disimpen nepi ka Anjeun ngaklik tombol simpen di handapeun.",
@@ -9786,7 +9786,7 @@ $messages['th'] = array(
 	'translate-save' => 'บันทึก ($1)',
 );
 
-/** Turkmen (Türkmen)
+/** Turkmen (Türkmençe)
  * @author Runningfridgesrule
  */
 $messages['tk'] = array(
@@ -10266,7 +10266,7 @@ I alias e le parole magiche le pol verghe più tradussion.
 Le tradussion le xe separà da na virgola (,).
 I nomi dei namespace i pol verghe na tradussion sola.
 
-In te le tradussion dei namespace <tt>$1 talk</tt> el xe speciale. <tt>$1</tt> el vien sostituìo col nome del sito (par esenpio <tt>{{SITENAME}} talk</tt>).
+In te le tradussion dei namespace <tt>$1 talk</tt> el xe speciale. <tt>$1</tt> el vien sostituìo col nome del sito (par esenpio <tt>{{ns:project_talk}}</tt>).
 Se ne la to lengua no se riesse a scrivar na espression valida sensa canbiar el nome del sito, par piaser contata un svilupador.
 
 Te ghè da èssar nel grupo dei tradutori par salvar i canbiamenti.
@@ -10800,7 +10800,7 @@ $messages['yue'] = array(
 翻譯係以逗號 (,) 分隔。
 皮名同埋空間名只可以有一項翻譯。
 
-響空間名翻譯度， <tt>$1 talk</tt> 係特別嘅。 <tt>$1</tt> 會由網名代替咗（例如<tt>{{SITENAME}} talk</tt>）。
+響空間名翻譯度， <tt>$1 talk</tt> 係特別嘅。 <tt>$1</tt> 會由網名代替咗（例如<tt>{{ns:project_talk}}</tt>）。
 如果你嘅語言組合唔能夠響網站名唔改嘅情況之下去組合成你嘅意思，請聯絡技術員。
 
 你需要係翻譯組嘅組員去儲存嘅啲信息。
