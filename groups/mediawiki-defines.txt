@@ -904,7 +904,7 @@ Whos Online
 Who Is Watching
 file = WhoIsWatching/SpecialWhoIsWatching.i18n.php
 
-WikiArticleFeeds
+Wiki Article Feeds
 
 Wikidata Language Manager
 descmsg = langman-desc
