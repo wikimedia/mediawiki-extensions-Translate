@@ -224,6 +224,15 @@ $aliases['id'] = array(
 	'TranslationStats' => array( 'Statistik terjemahan' ),
 );
 
+/** Italian (Italiano) */
+$aliases['it'] = array(
+	'Translate' => array( 'Traduci' ),
+	'TranslationChanges' => array( 'ModificheTraduzione' ),
+	'TranslationStats' => array( 'StatisticheTraduzione' ),
+	'Translations' => array( 'Traduzioni' ),
+	'LanguageStats' => array( 'StatisticheLingua' ),
+);
+
 /** Japanese (日本語) */
 $aliases['ja'] = array(
 	'Translate' => array( '翻訳' ),
