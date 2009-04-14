@@ -3103,6 +3103,7 @@ $messages['fa'] = array(
  * @author Nike
  * @author Silvonen
  * @author Str4nd
+ * @author Usp
  * @author Vililikku
  */
 $messages['fi'] = array(
@@ -3239,6 +3240,7 @@ Voit [$1 muokata lähdesivua] tai [$2 päivittää käännöksen].',
 	'translate-translations-none' => 'Kohteelle ”$1” ei ole käännöksiä',
 	'translate-translations-fieldset-title' => 'Viesti',
 	'translate-translations-messagename' => 'Nimi',
+	'translate-translations-project' => 'Projekti:',
 	'translate-translations-including-no-param' => 'Määrittele oikea sivun nimi alasivuparametriin',
 	'languagestats' => 'Kielitilastot',
 	'languagestats-summary' => 'Tämä sivu näyttää käännöstilastot kaikille ([[MediaWiki:Translate-languagestats-groups|asetetuille]]) kielen viestiryhmille.',
@@ -3250,6 +3252,9 @@ Voit [$1 muokata lähdesivua] tai [$2 päivittää käännöksen].',
 	'translate-untranslated' => 'Kääntämättömiä',
 	'translate-percentage-complete' => 'Käännösten kattavuus',
 	'translate-percentage-fuzzy' => 'Vanhentunut',
+	'translate-nothing-to-do' => 'Kaikki mahdolliset käännökset on merkitty tehdyiksi.
+Voit tarkistaa käännöksiä: [[Special:Translate|{{int:translate}}]].',
+	'translate-save' => 'Tallenna ($1)',
 );
 
 /** French (Français)
@@ -3310,8 +3315,8 @@ $messages['fr'] = array(
 	'translate-edit-definition' => 'Définition du message',
 	'translate-edit-contribute' => 'contribuer',
 	'translate-edit-no-information' => "''Ce message n’est pas documenté. Si vous savez où ou comment il est utilisé, vous pouvez aider les autres traducteurs en créant la documentation de ce message.''",
-	'translate-edit-information' => 'Informations concernant ce message ($1)',
-	'translate-edit-in-other-languages' => 'Message dans d’autres langues',
+	'translate-edit-information' => 'Informations concernant le message « $2 » ($1)',
+	'translate-edit-in-other-languages' => 'Message « $1 » dans d’autres langues',
 	'translate-edit-committed' => 'Traduction actuelle dans le logiciel',
 	'translate-edit-warnings' => 'Avertissements sur les traductions incomplètes',
 	'translate-edit-goto-no-prev' => 'Pas de message précédent',
@@ -8682,7 +8687,7 @@ $messages['ru'] = array(
 	'translate-tag-legend-fuzzy' => 'Устаревший перевод',
 	'translate-tag-fuzzy-comment' => 'Изменено в редакции $2 участником [[User:$1|$1]].',
 	'translate-tag-fuzzy-reason' => 'Изменено в редакции $2 участником $1 с комментарием «$3».',
-	'translate-sidebar-alltrans' => 'Другие переводы',
+	'translate-sidebar-alltrans' => 'На других языках',
 	'translate-tag-noedit' => 'Это автоматически обновляемая страница с переводом.
 Вы можете [$1 отредактировать исходную страницу] или [$2 обновить перевод].',
 	'translations' => 'Все переводы',
