@@ -463,9 +463,11 @@ Meta Keywords
 optional = metakeywords, metadescription
 
 Metavid Wiki
-file = MetavidWiki/languages/MV_Messages.php
+file = MetavidWiki/languages/mv_Messages.php
 optional = ao_file_64Kb_MPEG4, ao_file_256Kb_MPEG4, ao_file_MPEG1, ao_file_MPEG2
 optional = ao_file_flash_flv, ao_file_512Kb_MPEG4, ao_file_Ogg_Video
+optional = mv_ogg-player-vlc-mozilla, mv_ogg-player-vlc-activex, mv_ogg-player-oggPlay, mv_ogg-player-quicktime-mozilla
+optional = mv_ogg-player-quicktime-activex, mv_ogg-player-cortado, mv_ogg-player-flowplayer
 ignored = mv_welcome_to_sequencer
 
 Mibbit
