@@ -3240,7 +3240,7 @@ Voit [$1 muokata lähdesivua] tai [$2 päivittää käännöksen].',
 	'translate-translations-none' => 'Kohteelle ”$1” ei ole käännöksiä',
 	'translate-translations-fieldset-title' => 'Viesti',
 	'translate-translations-messagename' => 'Nimi',
-	'translate-translations-project' => 'Projekti:',
+	'translate-translations-project' => 'Projekti',
 	'translate-translations-including-no-param' => 'Määrittele oikea sivun nimi alasivuparametriin',
 	'languagestats' => 'Kielitilastot',
 	'languagestats-summary' => 'Tämä sivu näyttää käännöstilastot kaikille ([[MediaWiki:Translate-languagestats-groups|asetetuille]]) kielen viestiryhmille.',
@@ -3253,7 +3253,7 @@ Voit [$1 muokata lähdesivua] tai [$2 päivittää käännöksen].',
 	'translate-percentage-complete' => 'Käännösten kattavuus',
 	'translate-percentage-fuzzy' => 'Vanhentunut',
 	'translate-nothing-to-do' => 'Kaikki mahdolliset käännökset on merkitty tehdyiksi.
-Voit tarkistaa käännöksiä: [[Special:Translate|{{int:translate}}]].',
+Voit tarkistaa käännöksiä toimintosivulla [[Special:Translate|{{int:translate}}]].',
 	'translate-save' => 'Tallenna ($1)',
 );
 
