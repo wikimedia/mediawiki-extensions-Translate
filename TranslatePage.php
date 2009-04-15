@@ -420,7 +420,7 @@ class SpecialTranslate extends SpecialPage {
 			$class = 'mw-sp-translate-target';
 		}
 
-		$out = "\n<div class=\"$class\">\n";
+		$out = "\n<div class=\"$class mw-sp-translate-$id\">\n";
 		$out .= Xml::tags( "h$level", null, $label );
 
 		if ( $desc !== null ) {
