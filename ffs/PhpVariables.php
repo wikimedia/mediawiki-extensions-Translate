@@ -125,7 +125,7 @@ class PhpVariablesFormatWriter extends SimpleFormatWriter {
 
 /** $name ($native)
  *
- * See MessagesQqq.php for message documentation incl. usage of parameters
+ * See the qqq 'language' for message documentation incl. usage of parameters
  * To improve a translation please visit http://translatewiki.net
  *
  * @ingroup Language
