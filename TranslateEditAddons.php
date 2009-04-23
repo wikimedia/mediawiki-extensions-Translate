@@ -171,7 +171,7 @@ EOEO;
 			$userLang = $wgLang->getCode();
 			$groupId = $group->getId();
 			$linkTitle = SpecialPage::getTitleFor( 'Translate' );
-			$title = $skin->makeKnownLinkObj( $linkTitle, $title, 'group=$groupId&language=$userLang' );
+			$title = $skin->makeKnownLinkObj( $linkTitle, $title, "group=$groupId&language=$userLang" );
 		}
 		return TranslateUtils::fieldset( $title, Xml::tags( 'code', null, $msg ), $attributes );
 	}
