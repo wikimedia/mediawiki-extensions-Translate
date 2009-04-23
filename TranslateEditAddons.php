@@ -5,7 +5,8 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
  * Tools for edit page view to aid translators.
  *
  * @author Niklas Laxström
- * @copyright Copyright © 2007-2008 Niklas Laxström
+ * @author Siebrand Mazeland
+ * @copyright Copyright © 2007-2009 Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 class TranslateEditAddons {
@@ -133,7 +134,7 @@ EOEO;
 		return $fallbacks;
 	}
 
-	private static function doBox( $msg, $code, $title = false, $makelink = false ) {
+	private static function doBox( $msg, $code, $title = false, $makelink = false, $group = false ) {
 		global $wgUser, $wgLang;
 		if ( $msg === null ) { return ''; }
 
@@ -159,8 +160,16 @@ EOEO;
 
 		if( $makelink ) {
 			$skin = $wgUser->getSkin();
-			$linkTitle = Title::newFromText( $makelink);
+			$linkTitle = Title::newFromText( $makelink );
 			$title = $skin->makeKnownLinkObj( $linkTitle, $title, 'action=edit' );
+		}
+
+		if( $group && $attributes['class'] == 'mw-sp-translate-edit-definition' ) {
+			global $wgLang;
+
+			$skin = $wgUser->getSkin();
+			$linkTitle = 'Special:' . SpecialPage::getLocalNameFor( 'Translate' );
+			$title = $skin->makeKnownLinkObj( $linkTitle, $title, 'group=' . $group->getId() . '&language=' . $wgLang );
 		}
 		return TranslateUtils::fieldset( $title, Xml::tags( 'code', null, $msg ), $attributes );
 	}
@@ -287,7 +296,7 @@ EOEO;
 		// Definition
 		if ( $en !== null ) {
 			$label = " ({$group->getLabel()})";
-			$boxes[] = self::doBox( $en, 'en', wfMsg( self::MSG . 'definition' ) . $label );
+			$boxes[] = self::doBox( $en, 'en', wfMsg( self::MSG . 'definition' ) . $label, false, $group );
 		}
 
 
@@ -317,6 +326,4 @@ EOEO;
 		TranslateUtils::injectCSS();
 		return Xml::tags( 'div', array( 'class' => 'mw-sp-translate-edit-fields' ), implode( "\n\n", $boxes ) );
 	}
-
-
 }
