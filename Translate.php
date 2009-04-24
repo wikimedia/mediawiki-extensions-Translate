@@ -11,7 +11,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '11:2009-04-15' );
+define( 'TRANSLATE_VERSION', '11:2009-04-24' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name'           => 'Translate',
@@ -48,7 +48,7 @@ $wgHooks['OutputPageBeforeHTML'][] = 'TranslateEditAddons::addNavigation';
 $wgHooks['AlternateEdit'][] = 'TranslateEditAddons::intro';
 $wgHooks['EditPageBeforeEditButtons'][] = 'TranslateEditAddons::buttonHack';
 
-$wgHooks['UserToggles'][] = 'TranslatePreferences::TranslateUserToggles';
+$wgHooks['GetPreferences'][] = 'TranslatePreferences::onGetPreferences';
 $wgHooks['SpecialRecentChangesQuery'][] = 'TranslateRcFilter::translationFilter';
 $wgHooks['SpecialRecentChangesPanel'][] = 'TranslateRcFilter::translationFilterForm';
 $wgHooks['SkinTemplateToolboxEnd'][] = 'TranslateToolbox::toolboxAllTranslations';

@@ -33,6 +33,7 @@ function customMessageGroups( $id ) {
 </code>
 
 == Changes in version 11 ==
+* 2009-04-24   Updates preferences handling to work with MediaWiki 1.15a r49790 and up
 * 2009-04-15   Added class 'mw-sp-translate-[id]' to all message groups on Special:Translate
 * 2009-04-04:2 Support added for NOCC
 * 2009-04-04:1 PhpVariables Mantis header inconsistency fixed
