@@ -144,6 +144,16 @@ $aliases['fr'] = array(
 	'Translations' => array( 'Traductions' ),
 );
 
+/** Franco-Provençal (Arpetan) */
+$aliases['frp'] = array(
+	'Translate' => array( 'Traduire' ),
+	'Magic' => array( 'Traduccion avanciê', 'TraduccionAavanciê' ),
+	'TranslationChanges' => array( 'Changements de les traduccions', 'ChangementsDeLesTraduccions' ),
+	'TranslationStats' => array( 'Statistiques de traduccion', 'StatistiquesDeTraduccion' ),
+	'Translations' => array( 'Traduccions' ),
+	'LanguageStats' => array( 'Statistiques de les lengoues', 'StatistiquesDeLesLengoues' ),
+);
+
 /** Galician (Galego) */
 $aliases['gl'] = array(
 	'Translate' => array( 'Traducir' ),

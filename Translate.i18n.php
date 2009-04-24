@@ -6296,7 +6296,7 @@ Do kanns de [$1 Ojinaal-Sigg ändere] ov de [$2 Övversäzong op der neuste Shta
 	'languagestats-summary' => 'Di Sigg hee zeich Statistike vun de Övversetzung för all ([[MediaWiki:Translate-languagestats-groups|enjeshtalle]]) Nohrechtejroppe fun ener Shprooch.',
 	'translate-language-code' => 'Sproochekood',
 	'translate-language-code-field-name' => 'Shproochekood:',
-	'translate-suppress-complete' => 'Komplät ovversazte Nohrechtejroppe nit aanzeije',
+	'translate-suppress-complete' => 'Komplät övversatz Nohrechtejroppe nit aanzeije',
 	'translate-language' => 'Shprooch',
 	'translate-total' => 'Nohreschte',
 	'translate-untranslated' => 'Nit övversaz',
