@@ -835,11 +835,6 @@ id = ext-uniwiki-catboxattop
 file = uniwiki/CatBoxAtTop/CatBoxAtTop.i18n.php
 descmsg = catboxattop-desc
 
-Uniwiki - Create Page
-id = ext-uniwiki-createpage
-file = uniwiki/CreatePage/CreatePage.i18n.php
-descmsg = createpage-desc
-
 Uniwiki - Css Hooks
 id = ext-uniwiki-csshooks
 file = uniwiki/CssHooks/CssHooks.i18n.php
