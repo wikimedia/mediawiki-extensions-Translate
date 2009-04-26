@@ -14,6 +14,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
 define( 'TRANSLATE_VERSION', '11:2009-04-24' );
 
 $wgExtensionCredits['specialpage'][] = array(
+	'path'           => __FILE__,
 	'name'           => 'Translate',
 	'version'        => TRANSLATE_VERSION,
 	'author'         => array( 'Niklas Laxström', 'Siebrand Mazeland' ),
