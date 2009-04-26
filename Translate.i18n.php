@@ -6556,15 +6556,16 @@ $messages['lt'] = array(
 	'translate-edit-no-information' => "''Šis pranešimas dar neturi dokumentacijos. Jei žinote kur ar kaip šis pranešimas naudojamas, jūs galite padėti kitiems vertėjams pridėdami dokumentacijos į šį pranešimą.''",
 	'translate-edit-information' => 'Informacija apie šį pranešimą ($1)',
 	'translate-magic-pagename' => 'MediaWiki išplėtimų vertimas',
-	'translate-magic-help' => 'Jūs galite išversti specialių puslapių pavadinimus, magiškus žodžius, apvalkalų pavadinimus ir vardų sričių pavadinimus.
+	'translate-magic-help' => 'Jūs galite išversti specialių puslapių pavadinimus, magiškus žodžius ir vardų sričių pavadinimus.
 
-Magiško žodžio vertimuose nurodykite ir vertimą į anglų kalbą, kitaip jis nustos veikti. Taip pat palikite pirmąjį elementą (0 arba 1) tokį koks jis yra.
+Specialiojo puslapio pavadinimo ir magiško žodžio vertimai gali būti keli.
+Vertimai yra atskiriami kableliu (,).
+Vardų srities pavadinimas gali turėti tik vieną vertimą.
 
-Specialiojo puslapio pavadinimo ir magiško žodžio vertimai gali būti keli. Vertimai yra skiriami kableliu (,). Apvalkalo ir vardų srities pavadinimas gali turėti tik vieną vertimą.
+Vardų sričių vertimuose <tt>$1 aptarimas</tt> yra specialus. <tt>$1</tt> yra pakeičiamas svetainės pavadinimu (pavyzdžiui <tt>{{SITENAME}} aptarimas</tt>). Jei nėra galimybės Jūsų kalboje suformuoti teisingos išraiškos su svetainės pavadinimo pakeitimu, prašome kreiptis į kūrėjus.
 
-Vardų sričių vertimuose <tt>$1 aptarimas</tt> yra specialus. <tt>$1</tt> yra pakeičiamas svetainės pavadinimu (Pavyzdžiui <tt>{{SITENAME}} aptarimas</tt>). Jei nėra galimybės Jūsų kalboje suformuoti teisingos išraiškos su svetainės pavadinimo pakeitimu, prašome kreiptis į kūrėjus.
-
-Jūs turite priklausyti vertėjų grupei, kad galėtumėte išsaugoti pakeitimus. Pakeitimai nebus išsaugoti iki Jūs nuspausite išsaugojimo butoną apačioje.',
+Jūs turite priklausyti vertėjų grupei, kad galėtumėte įrašyti pakeitimus.
+Pakeitimai nebus įrašyti iki Jūs nuspausite išsaugojimo mygtuką apačioje.',
 	'translate-magic-submit' => 'Išrinkti',
 	'translate-magic-cm-export' => 'Eksportuoti',
 	'translate-magic-cm-to-be' => 'Turi būti',
