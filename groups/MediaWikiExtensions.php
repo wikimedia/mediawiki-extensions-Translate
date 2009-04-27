@@ -554,6 +554,7 @@ class AllUniwikiExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-uniwiki-authors',
 		'ext-uniwiki-autocreatecategorypages',
 		'ext-uniwiki-catboxattop',
+		'ext-uniwiki-createpage',
 		'ext-uniwiki-csshooks',
 		'ext-uniwiki-customtoolbar',
 		'ext-uniwiki-formatchanges',
