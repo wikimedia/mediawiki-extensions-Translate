@@ -67,7 +67,7 @@ class MantisMessageGroup extends MessageGroup {
 	protected $optional = array(
 		's_sponsorship_process_url', 's_charset', 's_p',
 		's_priority_abbreviation', 's_attachment_alt', 's_phpmailer_language',
-		's_word_separator',
+		's_word_separator', 's_directionality',
 	);
 
 	public $header = '<?php
