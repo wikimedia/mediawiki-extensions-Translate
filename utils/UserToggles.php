@@ -6,14 +6,22 @@ class TranslatePreferences {
 	 * Add preferences for Translate
 	 */
 	public static function onGetPreferences( $user, &$preferences ) {
-		// 'translate-pref-nonewsletter' is used as opt-out for
-		// users with a confirmed e-mail address
-		$preferences['translate'] =
-			array(
-				'type' => 'toggle',
-				'section' => 'misc',
-				'label-message' => 'translate-pref-nonewsletter',
+		global $wgEnableEmail, $wgUser;
+
+		if ( $wgEnableEmail && $wgUser->isEmailConfirmed() ) {
+			// 'translate-pref-nonewsletter' is used as opt-out for
+			// users with a confirmed e-mail address
+			$prefs = array(
+				'translate' => array(
+					'type' => 'toggle',
+					'section' => 'personal',
+					'label-message' => 'translate-pref-nonewsletter'
+				)
 			);
+
+			// Add setting after 'enotifrevealaddr'
+			$preferences = wfArrayInsertAfter( $preferences, $prefs, 'enotifrevealaddr' );
+		}
 
 		return true;
 	}

@@ -125,7 +125,7 @@ Changes are not saved until you click save button below.',
 	'translate-checks-format'             => 'This translation does not follow the definition or has invalid syntax: $1',
 	'translate-checks-escape'             => 'The following escapes may be accidental: <strong>$1</strong>',
 
-	'translate-pref-nonewsletter' => 'Do not send me e-mail newsletters (relevant only for users with a confirmed e-mail address)',
+	'translate-pref-nonewsletter' => 'Do not send me e-mail newsletters',
 	'right-translate'            => 'Edit using the translate interface',
 
 	'translate-rc-translation-filter' => 'Filter translations:',
