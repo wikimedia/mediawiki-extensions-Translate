@@ -14,7 +14,7 @@ class TranslatePreferences {
 			$prefs = array(
 				'translate' => array(
 					'type' => 'toggle',
-					'section' => 'personal/e-mail',
+					'section' => 'personal/email',
 					'label-message' => 'translate-pref-nonewsletter'
 				)
 			);
