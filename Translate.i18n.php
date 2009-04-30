@@ -1888,17 +1888,17 @@ $messages['cs'] = array(
 	'translate-edit-goto-next' => 'Editovat následující zprávu',
 	'translate-edit-goto-list' => 'Zpět na seznam',
 	'translate-magic-pagename' => 'Rozšířená možnost překladu MediaWiki',
-	'translate-magic-help' => "Můžete překládat aliasy speciálních stránek, kouzelná slova, názvy vzhledů a názvy jmenných prostorů.
+	'translate-magic-help' => "Můžete překládat aliasy speciálních stránek, kouzelná slova a názvy jmenných prostorů.
 
-Aliasy speciálních stránek a kouzelných slov mohou mít více překladů.
+Aliasy speciálních stránek a kouzelná slova mohou mít více překladů.
 Překlady se oddělují čárkou (,).
 Názvy jmenných prostorů mohou mít jen jeden překlad.
 
-V překladech jmenných prostorů je <tt>$1 talk</tt> speciální. <tt>$1</tt> se nahradí názvem stránky (např. <tt>{{ns:project_talk}}</tt>).
-Pokud není ve vašem jazyku možné vytvořit smysluplný výraz bez změny názvu stránky, prosím, kontaktujte vývojáře.
+V překladech jmenných prostorů se <tt>$1 talk</tt> chová zvláštně. <tt>$1</tt> se nahradí názvem projektu (např. <tt>{{ns:project_talk}}</tt>).
+Pokud není ve vašem jazyce možné vytvořit smysluplný výraz bez změny názvu projektu, kontaktujte vývojáře.
 
 Abyste mohli ukládat změny, musíte být členem skupiny ''překladatelé''.
-Změny se neuloží, pokud nekliknete na tlačítko „Uložit změny“ pod editačním okínkem.",
+Změny se neuloží, dokud nekliknete na tlačítko „Uložit změny“ pod editačním okínkem.",
 	'translate-magic-module' => 'Modul:',
 	'translate-magic-submit' => 'Zobrazit',
 	'translate-magic-cm-export' => 'Exportovat',
@@ -1957,7 +1957,7 @@ Změny se neuloží, pokud nekliknete na tlačítko „Uložit změny“ pod edi
 	'translate-tag-page-desc' => 'Překlad wiki stránky [[:$1]].',
 	'translate-tag-translate-link-desc' => 'Přeložit tuto stránku',
 	'translate-tag-legend' => 'Legenda:',
-	'translate-tag-legend-fallback' => 'Překlad v jiném jazyku',
+	'translate-tag-legend-fallback' => 'Překlad v jiném jazyce',
 	'translate-tag-legend-fuzzy' => 'Zastaralý překlad',
 	'translate-tag-fuzzy-comment' => 'Definici změnil [[User:$1|$1]] v revizi $2.',
 	'translate-tag-fuzzy-reason' => 'Definici změnil „$1“ v revizi $2 s komentářem „$3“.',
@@ -1973,9 +1973,9 @@ Můžete [$1 upravit zdrojovou stránku] nebo [$2 aktualizovat překlad].',
 	'translate-translations-project' => 'Projekt:',
 	'translate-translations-including-no-param' => 'V parametru musíte určit platný název zprávy',
 	'languagestats' => 'Statistika jazyků',
-	'languagestats-summary' => 'Tato stránka zobrazuje statistiku překladů všech ([[MediaWiki:Translate-languagestats-groups|nastavených]]) skupin zpráv jazyku.',
-	'translate-language-code' => 'Kód jazyku',
-	'translate-language-code-field-name' => 'Kód jazyku:',
+	'languagestats-summary' => 'Tato stránka zobrazuje statistiku překladů všech ([[MediaWiki:Translate-languagestats-groups|nastavených]]) skupin zpráv v daném jazyce.',
+	'translate-language-code' => 'Kód jazyka',
+	'translate-language-code-field-name' => 'Kód jazyka:',
 	'translate-suppress-complete' => 'Nevypisovat úplně přeložené skupiny zpráv',
 	'translate-language' => 'Jazyk',
 	'translate-total' => 'Zprávy',
