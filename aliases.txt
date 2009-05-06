@@ -295,6 +295,9 @@ file = WhatIsMyIP/WhatIsMyIP.alias.php
 White list
 file = WhiteList/WhiteListEdit.alias.php
 
+Wikimedia Incubator
+file = WikimediaIncubator/WikimediaIncubator.alias.php
+
 Who is watching
 file = WhoIsWatching/SpecialWhoIsWatching.alias.php
 

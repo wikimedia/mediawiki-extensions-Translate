@@ -933,6 +933,9 @@ ignored = ow_editing_policy_url
 Wikihiero
 file = wikihiero/wikihiero.i18n.php
 
+Wikimedia Incubator
+descmsg = wminc-desc
+
 Wikimedia Messages
 ignored = sidebar, robots.txt
 optional = grouppage-steward, grouppage-sysadmin, grouppage-Global_bot
