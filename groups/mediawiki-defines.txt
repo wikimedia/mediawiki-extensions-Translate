@@ -254,6 +254,8 @@ Edit Messages
 
 Edit Own
 
+Edit Section Hilite Link
+
 Edit Similar
 
 Edit Subpages
