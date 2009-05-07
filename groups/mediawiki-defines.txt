@@ -592,6 +592,7 @@ descmsg = profiling-desc
 
 Proofread Page
 descmsg = proofreadpage_desc
+ignored = proofreadpage_default_header, proofreadpage_default_footer
 
 Protect Section
 descmsg = protectsection_desc
