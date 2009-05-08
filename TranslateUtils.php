@@ -203,7 +203,8 @@ class TranslateUtils {
 					array(
 						'action' => 'edit',
 						'loadgroup' => $group
-					)
+					),
+					'known'
 				);
 			} else {
 				$tools['edit'] = '';

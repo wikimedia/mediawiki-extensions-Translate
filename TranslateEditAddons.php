@@ -175,7 +175,12 @@ EOEO;
 		if( $makelink ) {
 			$skin = $wgUser->getSkin();
 			$linkTitle = Title::newFromText( $makelink );
-			$title = $skin->link( $linkTitle, $title, array(), array( 'action' => 'edit' ) );
+			$title = $skin->link(
+				$linkTitle,
+				$title,
+				array(),
+				array( 'action' => 'edit' )
+			);
 		}
 
 		if( $group && $attributes['class'] == 'mw-sp-translate-edit-definition' ) {
