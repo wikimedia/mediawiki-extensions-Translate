@@ -194,8 +194,17 @@ class TranslateUtils {
 			global $wgLang;
 			$niceTitle = htmlspecialchars( $wgLang->truncate( $key, - 30 ) );
 
+			// FIXME: always true, else{} obsolete?
 			if ( 1 || $wgUser->isAllowed( 'translate' ) ) {
-				$tools['edit'] = $sk->makeKnownLinkObj( $title, $niceTitle, "action=edit&loadgroup=$group" );
+				$tools['edit'] = $sk->link(
+					$title,
+					$niceTitle,
+					array(),
+					array(
+						'action' => 'edit',
+						'loadgroup' => $group
+					)
+				);
 			} else {
 				$tools['edit'] = '';
 			}

@@ -46,27 +46,41 @@ class TranslateEditAddons {
 
 		$title = Title::makeTitleSafe( $ns, "$prev/$code" );
 		$prevLink = wfMsgHtml( 'translate-edit-goto-no-prev' );
+
+		$params = array();
+
 		if ( $prev !== null ) {
-			$params = "loadgroup=$id";
-			if ( !$title->exists() ) $params .= '&action=edit';
-			$prevLink = $skin->makeKnownLinkObj( $title,
-				wfMsgHtml( 'translate-edit-goto-prev' ), $params );
+			$params[] = array( 'loadgroup' => $id );
+			if ( !$title->exists() ) {
+				$params[] = array( 'action' => 'edit' );
+			}
+			$prevLink = $skin->link( $title,
+				wfMsgHtml( 'translate-edit-goto-prev' ), array(), $params );
 		}
 
 		$title = Title::makeTitleSafe( $ns, "$next/$code" );
 		$nextLink = wfMsgHtml( 'translate-edit-goto-no-next' );
 		if ( $next !== null && $next !== true ) {
-			$params = "loadgroup=$id";
-			if ( !$title->exists() ) $params .= '&action=edit';
-			$nextLink = $skin->makeKnownLinkObj( $title,
-				wfMsgHtml( 'translate-edit-goto-next' ), $params );
+			$params[] = array( 'loadgroup' => $id );
+
+			if ( !$title->exists() ) {
+				$params[] = array( 'action' => 'edit' );
+			}
+
+			$nextLink = $skin->link( $title,
+				wfMsgHtml( 'translate-edit-goto-next' ), array(), $params );
 		}
 
 		$title = SpecialPage::getTitleFor( 'translate' );
 		$title->mFragment = "msg_$next";
-		$list = $skin->makeKnownLinkObj( $title,
+		$list = $skin->link(
+			$title,
 			wfMsgHtml( 'translate-edit-goto-list' ),
-			"group=$id&language=$code" );
+			array(
+				'group' => $id,
+				'language' => $code
+			)
+		);
 
 		$def = TranslateUtils::convertWhiteSpaceToHTML( $def );
 
@@ -161,7 +175,7 @@ EOEO;
 		if( $makelink ) {
 			$skin = $wgUser->getSkin();
 			$linkTitle = Title::newFromText( $makelink );
-			$title = $skin->makeKnownLinkObj( $linkTitle, $title, 'action=edit' );
+			$title = $skin->link( $linkTitle, $title, array(), array( 'action' => 'edit' ) );
 		}
 
 		if( $group && $attributes['class'] == 'mw-sp-translate-edit-definition' ) {
@@ -171,7 +185,15 @@ EOEO;
 			$userLang = $wgLang->getCode();
 			$groupId = $group->getId();
 			$linkTitle = SpecialPage::getTitleFor( 'Translate' );
-			$title = $skin->makeKnownLinkObj( $linkTitle, $title, "group=$groupId&language=$userLang" );
+			$title = $skin->link(
+				$linkTitle,
+				$title,
+				array(),
+				array(
+					'group' => $groupId,
+					'language' => $userLang
+				)
+			);
 		}
 		return TranslateUtils::fieldset( $title, Xml::tags( 'code', null, $msg ), $attributes );
 	}
@@ -249,7 +271,12 @@ EOEO;
 		if ( $wgTranslateDocumentationLanguageCode ) {
 			global $wgUser;
 			$title = Title::makeTitle( $nsMain, $key . '/' . $wgTranslateDocumentationLanguageCode );
-			$edit = $wgUser->getSkin()->makeKnownLinkObj( $title, wfMsgHtml( self::MSG . 'contribute' ), 'action=edit' );
+			$edit = $wgUser->getSkin()->link(
+				$title,
+				wfMsgHtml( self::MSG . 'contribute' ),
+				array(),
+				array( 'action' => 'edit' )
+			);
 			$info = TranslateUtils::getMessageContent( $key, $wgTranslateDocumentationLanguageCode, $nsMain );
 			if ( $info === null ) {
 				$info = $group->getMessage( $key, $wgTranslateDocumentationLanguageCode );

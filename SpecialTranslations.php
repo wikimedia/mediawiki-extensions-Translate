@@ -166,9 +166,17 @@ class SpecialTranslations extends SpecialAllpages {
 			$niceTitle = htmlspecialchars( $this->getTheCode( $s->page_title ) );
 
 			if ( !$wgUser->isAllowed( 'translate' ) ) {
-				$tools['edit'] = $sk->makeKnownLinkObj( $t, $niceTitle, "action=edit&loadgroup=$inMessageGroup" );
+				$tools['edit'] = $sk->link(
+					$t,
+					$niceTitle,
+					array(),
+					array(
+						'action' => 'edit',
+						'loadgroup' => $inMessageGroup
+					)
+				);
 			} else {
-				$tools['edit'] = $sk->makeKnownLinkObj( $t, $niceTitle );
+				$tools['edit'] = $sk->link( $t, $niceTitle );
 			}
 
 			$anchor = 'msg_' . $key;

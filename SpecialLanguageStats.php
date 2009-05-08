@@ -229,8 +229,17 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			$fuzzyPercentage = wfMsg( 'percent', $wgLang->formatNum( round( 100 * $fuzzy / $total, 2 ) ) );
 
 			$translateTitle = SpecialPage::getTitleFor( 'Translate' );
-			$pageParameters = "group=" . $g->getId() . "&language=" . $code;
-			$translateGroupLink = $wgUser->getSkin()->makeKnownLinkObj( $translateTitle, $g->getLabel(), $pageParameters );
+			$queryParameters = array(
+				'group' => $g->getId(),
+				'language' => $code
+			);
+
+			$translateGroupLink = $wgUser->getSkin()->link(
+				$translateTitle,
+				$g->getLabel(),
+				array(),
+				$queryParameters
+			);
 
 			$out .= $this->blockstart();
 			$out .= $this->element( $translateGroupLink );

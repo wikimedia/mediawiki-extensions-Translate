@@ -113,7 +113,7 @@ class SpecialTranslationChanges extends SpecialPage {
 	protected function output( Array $rows ) {
 		$groupObjects = MessageGroups::singleton()->getGroups();
 		global $wgLang, $wgUser;
-		$index = - 1;
+		$index = -1;
 		$output = '';
 		$skin = $wgUser->getSkin();
 
@@ -140,14 +140,26 @@ class SpecialTranslationChanges extends SpecialPage {
 					Xml::tags( 'span', array( 'id' => $rcl, 'style' => 'display: none;' ),
 						Xml::tags( 'a', array( 'href' => $toggleLink ), $this->downArrow() ) );
 
-					$nchanges = wfMsgExt( 'nchanges', array( 'parsemag', 'escape' ),
-						$wgLang->formatNum( count( $rows ) ) );
+					$nchanges = wfMsgExt(
+						'nchanges',
+						array( 'parsemag', 'escape' ),
+						$wgLang->formatNum( count( $rows ) )
+					);
 
 					$exportLabel = wfMsg( self::MSG . 'export' );
 
-					$titleText = 'Special:' . SpecialPage::getLocalNameFor( 'Translate' );
-					$export = $skin->makeKnownLink( $titleText, $exportLabel,
-						"task=export-to-file&language=$language&group=$group" );
+					$titleText = SpecialPage::getTitleFor( 'translate' );
+
+					$export = $skin->link(
+						$titleText,
+						$exportLabel,
+						array(),
+						array(
+							'task' => 'export-to-file',
+							'language' => $language,
+							'group' => $group
+						)
+					);
 
 					$languageName = TranslateUtils::getLanguageName( $language );
 					if ( !$languageName ) $languageName = $language;
@@ -158,14 +170,17 @@ class SpecialTranslationChanges extends SpecialPage {
 
 					foreach ( $rows as $row ) {
 						$date = $wgLang->timeAndDate( $row->rc_timestamp, /* adj */ true, /* format */ true );
-						$msg = wfMsgExt( self::MSG . 'change', array( 'parsemag' ),
-							$date, wfEscapeWikiText( $row->rc_title ), wfEscapeWikiText( $row->rc_user_text )
+						$msg = wfMsgExt(
+							self::MSG . 'change',
+							array( 'parsemag' ),
+							$date,
+							wfEscapeWikiText( $row->rc_title ),
+							wfEscapeWikiText( $row->rc_user_text )
 						);
 						$output .= Xml::tags( 'li', null, $msg );
 					}
 
 					$output .= Xml::closeElement( 'ul' );
-
 				}
 			}
 		}

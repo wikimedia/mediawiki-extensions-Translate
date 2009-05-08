@@ -407,9 +407,17 @@ class SpecialTranslate extends SpecialPage {
 		$title = $this->getTitle();
 
 		$code =  $this->options['language'];
-		$extra = "group=$id&language=$code" ;
+		$queryParams = array(
+			'group' => $id,
+			'language' => $code
+		);
 
-		$edit = $wgUser->getSkin()->makeKnownLinkObj( $title, wfMsgHtml( self::MSG . 'edit' ), $extra );
+		$edit = $wgUser->getSkin()->link(
+			$title,
+			wfMsgHtml( self::MSG . 'edit' ),
+			array(),
+			$queryParams
+		);
 		$label =  htmlspecialchars( $block->getLabel() ) . " ($edit)";
 		$desc = $this->getGroupDescription( $block );
 		$hasSubblocks = is_array( $blocks ) && count( $blocks );
