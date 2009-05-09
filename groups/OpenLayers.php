@@ -23,7 +23,7 @@ class OpenLayersMessageGroup extends MessageGroup {
 		'da' => 'da-DK',
 		'pt-br' => 'pt-BR',
 		'sv' => 'sv-SE',
-		'zh-cn' => 'zh-CN',
+		'zh-hans' => 'zh-CN',
 		'zh-tw' => 'zh-TW',
 	);
 
