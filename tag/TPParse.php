@@ -99,13 +99,13 @@ class TPParse {
 		$text = $this->template; // The source
 
 		// For finding the messages
-		$prefix = $prefix = $this->title->getPrefixedText() . '/';
+		$prefix = $this->title->getPrefixedDBKey() . '/';
 
 		foreach ( $this->sections as $ph => $s ) {
 			if ( isset($collection[$prefix.$s->id]) ) {
 				$msg = $collection[$prefix.$s->id];
 				if ( $msg->translation() === null ) {
-					// Just use 
+					// Just use the orignal string
 					$text = str_replace( $ph, $s->getTextForTrans(), $text );
 				} else {
 					$sectiontext = $msg->translation();
@@ -114,7 +114,7 @@ class TPParse {
 						$sectiontext = str_replace( $key, $value, $sectiontext );
 					}
 					if ( $msg->fuzzy() ) {
-						$sectiontext = "<div class=\"mw-translate-fuzzy\">$\n$sectiontext\n</div>";
+						$sectiontext = "<div class=\"mw-translate-fuzzy\">\n$sectiontext\n</div>";
 					}
 					$text = str_replace( $ph, $sectiontext, $text );
 				}

@@ -37,8 +37,6 @@ class PageTranslationHooks {
 		if ( $title->getNamespace() != NS_TRANSLATIONS ) return true;
 		// Do not trigger renders for fuzzybot or fuzzy
 		if ( strpos( $text, TRANSLATE_FUZZY ) !== false ) return true;
-		// For null revisions, don't do anything
-		if ( $revision === null ) return true;
 
 		// Figure out the group
 		$groupKey = MessageIndex::titleToGroup( $title );
@@ -49,7 +47,9 @@ class PageTranslationHooks {
 		$page = TranslatablePage::newFromTitle( $group->title );
 
 		// Add a tracking mark
-		self::addSectionTag( $title, $revision->getId(), $page->getMarkedTag() );
+		if ( $revision !== null ) {
+			self::addSectionTag( $title, $revision->getId(), $page->getMarkedTag() );
+		}
 
 		// Update the target translation page
 		list(, $code ) = TranslateUtils::figureMessage( $title->getDBkey() );
@@ -60,7 +60,6 @@ class PageTranslationHooks {
 
 	protected static function addSectionTag( Title $title, $revision, $pageRevision ) {
 		if ( $pageRevision === null ) throw new MWException( 'Page revision is null' );
-		if ( $revision === null ) throw new MWException( 'Revision is null' );
 
 		$dbw = wfGetDB( DB_MASTER );
 

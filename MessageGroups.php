@@ -605,7 +605,7 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		$res = $dbr->select( $tables, $vars, $conds, __METHOD__ );
 		
 		$defs = array();
-		$prefix = $this->title->getPrefixedText() . '/';
+		$prefix = $this->title->getPrefixedDBKey() . '/';
 		$re = '~<tvar\|([^>]+)>(.*?)</>~u';
 		foreach ( $res as $r ) {
 			//TODO: use getTextForTrans?
