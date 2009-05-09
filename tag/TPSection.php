@@ -42,7 +42,7 @@ class TPSection {
 		preg_match_all( $re, $this->text, $matches, PREG_SET_ORDER );
 		$vars = array();
 		foreach( $matches as $m ) {
-			$vars[$m[1]] = $m[2];
+			$vars['$'.$m[1]] = $m[2];
 		}
 		return $vars;
 	}
