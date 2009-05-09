@@ -9,7 +9,7 @@
  */
 
 class OpenLayersMessageGroup extends MessageGroup {
-	protected $label = 'OpenLayers (slippy map)';
+	protected $label = 'OpenLayers (slippy maps)';
 	protected $id    = 'out-openlayers';
 	protected $type  = 'openlayers';
 
@@ -19,9 +19,16 @@ class OpenLayersMessageGroup extends MessageGroup {
 	public function setPath( $value ) { $this->fileDir = $value; }
 
 	protected $codeMap = array(
+		'cs' => 'cs-CZ',
+		'da' => 'da-DK',
+		'pt-br' => 'pt-BR',
+		'sv' => 'sv-SE',
+		'zh-cn' => 'zh-CN',
+		'zh-tw' => 'zh-TW',
 	);
 
 	protected $optional = array(
+		'end'
 	);
 
 	public function getMessageFile( $code ) {
