@@ -76,6 +76,7 @@ class TranslateEditAddons {
 		$list = $skin->link(
 			$title,
 			wfMsgHtml( 'translate-edit-goto-list' ),
+			array(),
 			array(
 				'group' => $id,
 				'language' => $code
