@@ -137,7 +137,16 @@ class PageTranslationHooks {
 
 	public static function languages( $data, $params, $parser ) {
 		$title = $parser->getTitle();
+
+		// Check if this is a source page or a translation page
 		$page = TranslatablePage::newFromTitle( $title );
+		if ( $page->getMarkedTag() === false ) {
+			$title = Title::makeTitle( $title->getNamespace(), $title->getBaseText() );
+			$page = TranslatablePage::newFromTitle( $title );
+		}
+		if ( $page->getMarkedTag() === false )  return '';
+
+
 		$status = $page->getTranslationPercentages();
 		if ( !$status ) return '';
 
@@ -157,7 +166,7 @@ class PageTranslationHooks {
 			$name = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() );
 
 			$percent *= 100;
-			if     ( $percent < 10 ) continue;
+			if     ( $percent < 10 ) continue; // Hide.. not very useful
 			if     ( $percent < 20 ) $image = 1;
 			elseif ( $percent < 40 ) $image = 2;
 			elseif ( $percent < 60 ) $image = 3;
@@ -215,7 +224,7 @@ FOO;
 
 		// Add the ready tag
 		$page = TranslatablePage::newFromTitle( $article->getTitle() );
-		$page->addReadyTag(  $revision->getId() );
+		$page->addReadyTag( $revision->getId() );
 
 		return true;
 	}
@@ -290,15 +299,15 @@ FOO;
 
 		$sk = $wgUser->getSkin();
 
-		$page = TranslatablePage::newFromText( $title, '' );
+		$page = TranslatablePage::newFromTitle( $title );
 
 		$marked = $page->getMarkedTag();
 		$ready = $page->getReadyTag();
+
 		if ( $marked === false && $ready === false ) return '';
 
 		$latest = $title->getLatestRevId();
 		$canmark = $ready === $latest && $marked !== $latest;
-
 		wfLoadExtensionMessages( 'PageTranslation' );
 
 		$actions = array();

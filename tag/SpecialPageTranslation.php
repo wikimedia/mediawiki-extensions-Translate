@@ -308,21 +308,26 @@ class SpecialPageTranslation extends SpecialPage {
 		}
 		
 		$inserts = array();
+		$changed = array();
 		foreach ( $sections as $s ) {
+			if ( $s->type === 'changed' ) $changed[] = $s->name;
 			$inserts[] = array(
 				'trs_page' => $page->getTitle()->getArticleId(),
 				'trs_key' => $s->name,
 				'trs_text' => $s->getText(),
 			);
 		}
+		// Don't add empty rows
+		if ( !count($changed) ) $changed = null;
 
 		$dbw = wfGetDB( DB_MASTER );
 		$dbw->delete( 'translate_sections', array( 'trs_page' => $page->getTitle()->getArticleId() ), __METHOD__ );
 		$ok = $dbw->insert( 'translate_sections', $inserts, __METHOD__ );
 		if ( $ok === false ) return array( 'tpt-insert-failed' );
 
-		$page->addMarkedTag( $newrevision );
+		$page->addMarkedTag( $newrevision, $changed );
 
+		MessageIndex::cache( NS_TRANSLATIONS );
 		return false;
 	}
 

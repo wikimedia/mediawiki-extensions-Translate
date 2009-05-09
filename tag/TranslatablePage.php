@@ -181,15 +181,15 @@ class TranslatablePage {
 		return $section;
 	}
 
-	public function addMarkedTag( $revision ) {
-		$this->addTag( 'tp:mark', $revision );
+	public function addMarkedTag( $revision, $value = null ) {
+		$this->addTag( 'tp:mark', $revision, $value );
 	}
 
 	public function addReadyTag( $revision ) {
 		$this->addTag( 'tp:tag', $revision );
 	}
 
-	protected function addTag( $tag, $revision ) {
+	protected function addTag( $tag, $revision, $value = null ) {
 		$dbw = wfGetDB( DB_MASTER );
 
 		// Can this be done in one query?
@@ -202,6 +202,7 @@ class TranslatablePage {
 			'rt_revision' => $revision
 		);
 		$dbw->delete( 'revtag', $conds, __METHOD__ );
+		if ( $value !== null ) $conds['rt_value'] = serialize($value);
 		$dbw->insert( 'revtag', $conds, __METHOD__ );
 	}
 
@@ -215,16 +216,14 @@ class TranslatablePage {
 	protected function getTag( $tag, $dbt = DB_SLAVE ) {
 		$db = wfGetDB( $dbt );
 
-		// Can this be done in one query?
-		$id = $db->selectField( 'revtag_type', 'rtt_id',
-			array( 'rtt_name' => $tag ), __METHOD__ );
+		$id = $this->getTagId( $tag );
 
 		$fields = 'rt_revision';
 		$conds = array(
 			'rt_page' => $this->getTitle()->getArticleId(),
 			'rt_type' => $id,
 		);
-		$options = array( 'ORDER BY', 'rt_revision DESC' );
+		$options = array( 'ORDER BY' => 'rt_revision DESC' );
 		return $db->selectField( 'revtag', $fields, $conds, __METHOD__, $options );
 	}
 
@@ -251,7 +250,7 @@ class TranslatablePage {
 			'rt_page' => $this->getTitle()->getArticleId(),
 			'rt_type' => $id,
 		);
-		$options = array( 'ORDER BY', 'rt_revision DESC' );
+		$options = array( 'ORDER BY' => 'rt_revision DESC' );
 		return $db->select( 'revtag', $fields, $conds, __METHOD__, $options );
 	}
 
@@ -315,7 +314,16 @@ class TranslatablePage {
 			$rev = $this->getTransrev( $key .'/' . $collection->code );
 			foreach ( $markedRevs as $r ) {
 				if ( $rev === $r->rt_revision ) break;
-				$score *= 0.8;
+				$changed = unserialize($r->rt_value);
+
+				// Get a suitable section key
+				$parts = explode( '/', $key );
+				$ikey = $parts[count($parts)-1];
+
+				// If the section was changed, reduce the score
+				if ( in_array($ikey, $changed, true) ) {
+					$score *= 0.8;
+				}
 			}
 			$total += $score;
 		}
@@ -324,9 +332,7 @@ class TranslatablePage {
 
 	protected function getTransRev( $suffix ) {
 		$id = $this->getTagId( 'tp:transver' );
-		$title = Title::makeTitle( NS_TRANSLATIONS,
-			$this->getTitle()->getPrefixedText() . '/' . $suffix
-		);
+		$title = Title::makeTitle( NS_TRANSLATIONS, $suffix );
 
 		$db = wfGetDB( DB_SLAVE );
 		$fields = 'rt_value';
@@ -334,14 +340,14 @@ class TranslatablePage {
 			'rt_page' => $title->getArticleId(),
 			'rt_type' => $id,
 		);
-		$options = array( 'ORDER BY', 'rt_revision DESC' );
+		$options = array( 'ORDER BY' => 'rt_revision DESC' );
 		return $db->selectField( 'revtag', $fields, $conds, __METHOD__, $options );
 			
 	}
 
 	protected function getTagId( $tag ) {
 		static $tagcache = array();
-		if ( !isset( $tagcache[$tag] ) ) {
+		if ( !isset($tagcache[$tag]) ) {
 			$db = wfGetDB( DB_SLAVE );
 			$tagcache[$tag] = $db->selectField(
 				'revtag_type', // Table
