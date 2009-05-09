@@ -136,6 +136,7 @@ class PremadeMediawikiExtensionGroups {
 			'ext-0-wikitravel'        => 'AllWikitravelExtensionsGroup',
 			'ext-collection-0-all'    => 'AllCollectionExtensionsGroup',
 			'ext-flaggedrevs-0-all'   => 'AllFlaggedRevsExtensionsGroup',
+			'ext-translate-0-all'     => 'AllTranslateExtensionsGroup',
 			'ext-socialprofile-0-all' => 'AllSocialProfileExtensionsGroup',
 			'ext-uniwiki-0-all'       => 'AllUniwikiExtensionsGroup',
 		);
@@ -144,7 +145,6 @@ class PremadeMediawikiExtensionGroups {
 			$wgTranslateAC[$id] = $g;
 			$wgTranslateEC[] = $id;
 		}
-
 	}
 
 	public function factory( $id ) {
@@ -537,6 +537,29 @@ class AllSocialProfileExtensionsGroup extends AllMediawikiExtensionsGroup {
 			$this->classes = array();
 			$classes = MessageGroups::singleton()->getGroups();
 			foreach ( $this->socialprofileextensions as $key ) {
+				$this->classes[$key] = $classes[$key];
+			}
+		}
+	}
+}
+
+class AllTranslateExtensionsGroup extends AllMediawikiExtensionsGroup {
+	protected $label = 'All Translate messages';
+	protected $id    = 'ext-translate-0-all';
+	protected $meta  = true;
+
+	protected $classes = null;
+
+	protected $translateprofileextensions = array(
+		'ext-translate-core',
+		'ext-translate-pagetranslation',
+	);
+
+	protected function init() {
+		if ( $this->classes === null ) {
+			$this->classes = array();
+			$classes = MessageGroups::singleton()->getGroups();
+			foreach ( $this->translateprofileextensions as $key ) {
 				$this->classes[$key] = $classes[$key];
 			}
 		}

@@ -11,7 +11,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '12:2009-05-09' );
+define( 'TRANSLATE_VERSION', '11:2009-05-09' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'path'           => __FILE__,
@@ -141,6 +141,7 @@ $wgTranslateGroupStructure = array(
 	'/^ext-collection/' => array( 'ext', 'collection' ),
 	'/^ext-flaggedrevs/' => array( 'ext', 'flaggedrevs' ),
 	'/^ext-socialprofile/' => array( 'ext', 'socialprofile' ),
+	'/^ext-translate/' => array( 'ext', 'translate' ),
 	'/^ext-uniwiki/' => array( 'ext', 'uniwiki' ),
 	'/^ext/' => array( 'ext' ),
 	'/^page\|/' => array( 'page' ),

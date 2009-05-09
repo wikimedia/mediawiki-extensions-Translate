@@ -816,8 +816,16 @@ Tooltip
 
 Tor Block
 
-Translate
+Translate - Core
+id = ext-translate-core
+descmsg = translate-desc
+file = Translate/Translate.i18n.php
 optional = translate-page-paging-links, translate-languagestats-groups
+
+Translate - Page Translation
+id = ext-translate-pagetranslation
+file = Translate/PageTranslation.i18n.php
+descmsg = tpt-desc
 
 Trusted XFF
 
