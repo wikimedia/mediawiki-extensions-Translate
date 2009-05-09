@@ -57,6 +57,7 @@ class TranslatablePage {
 		}
 
 		if ( !is_string($this->text) ) throw new MWException( 'We have no text' );
+		$this->init = true;
 		return $this->text;
 	}
 
@@ -65,6 +66,12 @@ class TranslatablePage {
 	 */
 	public function getRevision() {
 		return $this->revision;
+	}
+
+	public function setRevision( $revision ) {
+		$this->revision = $revision;
+		$this->source = 'revision';
+		$this->init = false;
 	}
 
 	// Public functions //
@@ -202,7 +209,7 @@ class TranslatablePage {
 			'rt_revision' => $revision
 		);
 		$dbw->delete( 'revtag', $conds, __METHOD__ );
-		if ( $value !== null ) $conds['rt_value'] = serialize($value);
+		if ( $value !== null ) $conds['rt_value'] = serialize(implode('|',$value));
 		$dbw->insert( 'revtag', $conds, __METHOD__ );
 	}
 
@@ -314,7 +321,7 @@ class TranslatablePage {
 			$rev = $this->getTransrev( $key .'/' . $collection->code );
 			foreach ( $markedRevs as $r ) {
 				if ( $rev === $r->rt_revision ) break;
-				$changed = unserialize($r->rt_value);
+				$changed = explode( '|', unserialize($r->rt_value) );
 
 				// Get a suitable section key
 				$parts = explode( '/', $key );
@@ -330,7 +337,7 @@ class TranslatablePage {
 		return $total/$count;
 	}
 
-	protected function getTransRev( $suffix ) {
+	public function getTransRev( $suffix ) {
 		$id = $this->getTagId( 'tp:transver' );
 		$title = Title::makeTitle( NS_TRANSLATIONS, $suffix );
 

@@ -327,6 +327,38 @@ EOEO;
 			}
 		}
 
+		global $wgEnablePageTranslation;
+		if ( $wgEnablePageTranslation && $group instanceof WikiPageMessageGroup ) {
+			// TODO: encapsulate somewhere
+			$page = TranslatablePage::newFromTitle( $group->title );
+			$rev = $page->getTransRev( "$key/$code" );
+			$latest = $page->getMarkedTag();
+			if ( $rev !== $latest ) {
+				$oldpage = TranslatablePage::newFromRevision( $group->title, $rev );
+				$oldtext = null;
+				$newtext = null;
+				foreach ( $oldpage->getParse()->getSectionsForSave() as $section ) {
+					if ( $group->title->getPrefixedText() .'/'. $section->id === $key ) {
+						$oldtext = $section->getTextForTrans();
+					}
+				}
+
+				foreach ( $page->getParse()->getSectionsForSave() as $section ) {
+					if ( $group->title->getPrefixedText() .'/'. $section->id === $key ) {
+						$newtext = $section->getTextForTrans();
+					}
+				}
+
+				if ( $oldtext !== $newtext ) {
+					wfLoadExtensionMessages( 'PageTranslation' );
+					$diff = new DifferenceEngine;
+					$diff->setText( $oldtext, $newtext );
+					$boxes[] = $diff->getDiff( wfMsgHtml('tpt-diff-old'), wfMsgHtml('tpt-diff-new') );
+					$diff->showDiffStyle();
+				}
+			}
+		}
+
 		// Definition
 		if ( $en !== null ) {
 			$label = " ({$group->getLabel()})";
