@@ -12,7 +12,7 @@ $messages = array();
  */
 $messages['en'] = array(
 	'pagetranslation' => 'Page translation',
-	'right-pagetranslate' => 'Mark versions of pages for translation',
+	'right-pagetranslation' => 'Mark versions of pages for translation',
 	'tpt-section' => 'Section:',
 	'tpt-section-new' => 'New section:',
 
