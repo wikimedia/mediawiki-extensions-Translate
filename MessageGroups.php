@@ -606,8 +606,12 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		
 		$defs = array();
 		$prefix = $this->title->getPrefixedText() . '/';
+		$re = '~<tvar\|([^>]+)>(.*?)</>~u';
 		foreach ( $res as $r ) {
-			$defs[$r->trs_key] = $r->trs_text;
+			//TODO: use getTextForTrans?
+			$text = $r->trs_text;
+			$text = preg_replace( $re, '$\1', $text );
+			$defs[$r->trs_key] = $text;
 		}
 		// Some hacks to get nice order for the messages
 		ksort( $defs );
