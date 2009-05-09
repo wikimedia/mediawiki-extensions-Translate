@@ -31,8 +31,8 @@ class TPParse {
 
 		$sections = $this->sections;
 		$highest = 0;
-		if ( count($this->dbSections) ) {
-			$highest = call_user_func_array( 'max', array_keys( $this->dbSections ) );
+		foreach ( array_keys( $this->dbSections ) as $key ) {
+			$highest = max( $highest, $key );
 		}
 
 		foreach ( $sections as $_ ) $highest = max( $_->id, $highest );
