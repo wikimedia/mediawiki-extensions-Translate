@@ -50,9 +50,9 @@ class TranslateEditAddons {
 		$params = array();
 
 		if ( $prev !== null ) {
-			$params[] = array( 'loadgroup' => $id );
+			$params['loadgroup'] = $id;
 			if ( !$title->exists() ) {
-				$params[] = array( 'action' => 'edit' );
+				$params['action'] = 'edit';
 			}
 			$prevLink = $skin->link( $title,
 				wfMsgHtml( 'translate-edit-goto-prev' ), array(), $params );
@@ -61,10 +61,10 @@ class TranslateEditAddons {
 		$title = Title::makeTitleSafe( $ns, "$next/$code" );
 		$nextLink = wfMsgHtml( 'translate-edit-goto-no-next' );
 		if ( $next !== null && $next !== true ) {
-			$params[] = array( 'loadgroup' => $id );
+			$params['loadgroup'] = $id;
 
 			if ( !$title->exists() ) {
-				$params[] = array( 'action' => 'edit' );
+				$params['action'] = 'edit';
 			}
 
 			$nextLink = $skin->link( $title,
