@@ -59,3 +59,25 @@ This page is a translation of page [[$1]] and the translation can be updated usi
 	'tpt-unknown-page' => 'This namespace is reserved for content page translations.
 The page you are trying to edit does not seem to correspond any page marked for translation.'
 );
+
+/** Dutch (Nederlands)
+ * @author Siebrand
+ */
+$messages['nl'] = array(
+	'pagetranslation' => 'Paginavertaling',
+	'tpt-section' => 'Sectie:',
+	'tpt-section-new' => 'Nieuwe sectie:',
+	'tpt-diff-old' => 'Vorige tekst',
+	'tpt-diff-new' => 'Nieuwe tekst',
+	'tpt-rev-latest' => 'meest recente versie',
+	'translate-tag-translate-link-desc' => 'Deze pagina vertalen',
+	'translate-tag-legend' => 'Legenda:',
+	'translate-tag-legend-fallback' => 'Vertaling in een andere taal',
+	'translate-tag-legend-fuzzy' => 'Verouderde vertaling',
+	'tpt-target-page' => 'Deze pagina kan niet handmatig worden bijgewerkt manually.
+Deze pagina is een vertaling van de pagina [[$1]].
+De vertaling kan bijgewerkt worden via de [$2 vertaalhulpmiddellen].',
+	'tpt-unknown-page' => "Deze naamruimte is gereserveerd voor de vertalingen van van pagina's.
+De pagina die u probeert te bewerken lijkt niet overeen te komen met een te vertalen pagina.",
+);
+
