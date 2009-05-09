@@ -34,6 +34,7 @@ $messages['en'] = array(
 	'tpt-already-marked' => 'The latest version of this page is already marked for translation.',
 
 	# Page list on the special page
+	'tpt-list-nopages' => 'No pages are marked for translation nor ready to be marked for translation.',
 	'tpt-old-pages' => 'Some version of these pages have been marked for translation.',
 	'tpt-new-pages' => 'These pages contain text with translation tags, but no version of these pages are currently marked for translation.',
 	'tpt-rev-latest' => 'latest version',
