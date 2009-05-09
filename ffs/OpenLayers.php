@@ -1,15 +1,14 @@
 <?php
 
 /**
- * *INCOMPLETE* OpenLayers JavaScript language class file format handler.
+ * OpenLayers JavaScript language class file format handler.
  *
  * @author Robert Leverington
  * @copyright Copyright © 2009 Robert Leverington
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
- * @file
  */
 
-class JavaScriptFormatReader extends SimpleFormatReader {
+class OpenLayersFormatReader extends SimpleFormatReader {
 
 	private function leftTrim( $string ) {
 		$string = ltrim( $string );
@@ -24,9 +23,10 @@ class JavaScriptFormatReader extends SimpleFormatReader {
 	 *     quotation marks, and for messages to be enclosed in double.
 	 *   - The last key-value pair must have a comma at the end.
 	 *   - Uses seperate $this->leftTrim() function, this is undersired.
+	 * @params $mangler StringMangler
+	 * @return Array: Messages from file.
 	 */
-	protected function parseMessages() {
-		$this->filename = dirname( __FILE__ ) . '/en.js';
+	public function parseMessages( StringMangler $mangler ) {
 		$data = file_get_contents( $this->filename );
 
 		// Just get relevant data.
@@ -64,7 +64,67 @@ class JavaScriptFormatReader extends SimpleFormatReader {
 			$messages[ $key ] = $value;
 		}
 
+		// Remove extraneous key that is sometimes present.
+		unset( $messages[ 0 ] );
+
 		return $messages;
+	}
+
+}
+
+class OpenLayersFormatWriter extends SimpleFormatWriter {
+
+	/**
+	 * Export a languages messages.
+	 * @param $target File handler.
+	 * @param $collection MessageCollection.
+	 */
+	protected function exportLanguage( $target, MessageCollection $collection ) {
+		$code = $collection->code;
+		$names = Language::getLanguageNames();
+		$name = $names[ $code ];
+
+		// Generate list of authors for comment.
+		$authors = $collection->getAuthors();
+		$authorList = '';
+		foreach( $authors as $author ) {
+			$authorList .= " *  - $author\n";
+		}
+
+		// Generate header and write.
+		$header = <<<EOT
+/* Copyright (c) 2006-2008 MetaCarta, Inc., published under the Clear BSD
+ * license.  See http://svn.openlayers.org/trunk/openlayers/license.txt for the
+ * full text of the license. */
+
+/* Translators (post 2008):
+$authorList */
+
+/**
+ * @requires OpenLayers/Lang.js
+ */
+
+/**
+ * Namespace: OpenLayers.Lang["$code"]
+ * Dictionary for $name.  Keys for entries are used in calls to
+ *     <OpenLayers.Lang.translate>.  Entry bodies are normal strings or
+ *     strings formatted for use with <OpenLayers.String.format> calls.
+ */
+OpenLayers.Lang.$code = {
+
+
+EOT;
+		fwrite( $target, $header );
+
+		// Get and write messages.
+		foreach( $collection as $message ) {
+			$message->infile = str_replace( '"', '\"', $message->infile );
+			$line = "    '{$message->key}': \"{$message->infile}\",\n\n";
+			fwrite( $target, $line );
+		}
+
+		// File terminator.
+		fwrite( $target, '};' );
 	}
 
 }
