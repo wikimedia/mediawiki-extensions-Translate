@@ -38,6 +38,7 @@ $wgAutoloadClasses['SpecialTranslationStats'] = $dir . 'Stats.php';
 $wgAutoloadClasses['SpecialTranslations'] = $dir . 'SpecialTranslations.php';
 $wgAutoloadClasses['SpecialLanguageStats'] = $dir . 'SpecialLanguageStats.php';
 
+
 $wgAutoloadClasses['SimpleFormatReader'] = $dir . 'ffs/Simple.php';
 $wgAutoloadClasses['SimpleFormatWriter'] = $dir . 'ffs/Simple.php';
 $wgAutoloadClasses['WikiFormatReader'] = $dir . 'ffs/Wiki.php';
@@ -66,6 +67,8 @@ $wgAutoloadClasses['SmRegexRewriter'] = $dir . 'utils/StringMangler.php';
 $wgAutoloadClasses['TranslatePreferences'] = $dir . 'utils/UserToggles.php';
 $wgAutoloadClasses['TranslateToolbox'] = $dir . 'utils/ToolBox.php';
 
+$wgAutoloadClasses['MessageIndex'] = $dir . 'utils/MessageIndex.php';
+
 # predefined groups
 $wgAutoloadClasses['PremadeMediawikiExtensionGroups'] = $dir . 'groups/MediaWikiExtensions.php';
 $wgAutoloadClasses['CommonistMessageGroup'] = $dir . 'groups/Commonist.php';
@@ -74,8 +77,11 @@ $wgAutoloadClasses['MantisMessageGroup'] = $dir . 'groups/Mantis.php';
 $wgAutoloadClasses['NoccMessageGroup'] = $dir . 'groups/Nocc.php';
 
 # tag
-$wgAutoloadClasses['TranslateTag'] = $dir . 'tag/Tag.php';
-$wgAutoloadClasses['TranslateTagHooks'] = $dir . 'tag/Hooks.php';
-$wgAutoloadClasses['TranslateTagUtils'] = $dir . 'tag/Utils.php';
-$wgAutoloadClasses['FuzzyJob'] = $dir . 'tag/FuzzyJob.php';
-$wgAutoloadClasses['RenderJob'] = $dir . 'tag/RenderJob.php';
+#$wgAutoloadClasses['RenderJob'] = $dir . 'tag/RenderJob.php';
+# page translation
+$wgAutoloadClasses['PageTranslationHooks'] = $dir . 'tag/PageTranslationHooks.php';
+$wgAutoloadClasses['TranslatablePage'] = $dir . 'tag/TranslatablePage.php';
+$wgAutoloadClasses['TPException'] = $dir . 'tag/TranslatablePage.php';
+$wgAutoloadClasses['TPParse'] = $dir . 'tag/TPParse.php';
+$wgAutoloadClasses['TPSection'] = $dir . 'tag/TPSection.php';
+$wgAutoloadClasses['SpecialPageTranslation'] = $dir . 'tag/SpecialPageTranslation.php';

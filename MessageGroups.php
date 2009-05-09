@@ -593,12 +593,28 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 			throw new MWException( 'Invalid title' );
 		}
 		$this->title = $title;
-		$this->namespaces = array( $title->getNamespace(), $title->getNamespace() + 1 );
+		$this->namespaces = array( NS_TRANSLATIONS, NS_TRANSLATIONS_TALK );
 		
 	}
 
 	public function getDefinitions() {
-		return TranslateTag::parseSectionDefinitions( $this->title, $this->namespaces );
+		$dbr = wfGetDB( DB_SLAVE );
+		$tables = 'translate_sections';
+		$vars = array( 'trs_key', 'trs_text' );
+		$conds = array( 'trs_page' => $this->title->getArticleId() );
+		$res = $dbr->select( $tables, $vars, $conds, __METHOD__ );
+		
+		$defs = array();
+		$prefix = $this->title->getPrefixedText() . '/';
+		foreach ( $res as $r ) {
+			$defs[$r->trs_key] = $r->trs_text;
+		}
+		// Some hacks to get nice order for the messages
+		ksort( $defs );
+		$new_defs = array();
+		foreach ( $defs as $k => $v ) $new_defs[$prefix.$k] = $v;
+		
+		return $new_defs;
 	}
 
 	public function load( $code ) {
@@ -638,20 +654,26 @@ class MessageGroups {
 			$a->addAll();
 		}
 
-		global $wgTranslateCategory, $wgTranslateCC;
-/*		wfLoadExtensionMessages( 'Translate' );
-		$cat = Category::newFromName( wfMsgForContent( 'translate-tag-category' ) );
-		$titles = $cat->getMembers();
-		foreach ( $titles as $t ) {
-			$title = $t->getPrefixedText();
-			$id = "page|$title";
-			$wgTranslateCC[$id] = new WikiPageMessageGroup( $id, $title );
-			$wgTranslateCC[$id]->setLabel( $title );
-			$wgTranslateCC[$id]->setDescription( wfMsgNoTrans( 'translate-tag-page-desc', $title ) );
-
-		}*/
-
 		global $wgTranslateCC;
+
+		global $wgEnablePageTranslation;
+		if ( $wgEnablePageTranslation ) {
+			$dbr = wfGetDB( DB_SLAVE );
+			
+			$tables = array( 'page', 'revtag', 'revtag_type' );
+			$vars   = array( 'page_id', 'page_namespace', 'page_title', 'rt_revision' );
+			$conds  = array( 'page_id=rt_page', 'rtt_id=rt_type', 'rtt_name' => 'tp:mark' );
+			$options = array( 'GROUP BY' => 'page_id' );
+			$res = $dbr->select( $tables, $vars, $conds, __METHOD__ );
+			foreach ( $res as $r ) {
+				$title = Title::makeTitle( $r->page_namespace, $r->page_title )->getPrefixedText();
+				$id = "page|$title";
+				$wgTranslateCC[$id] = new WikiPageMessageGroup( $id, $title );
+				$wgTranslateCC[$id]->setLabel( $title );
+				$wgTranslateCC[$id]->setDescription( wfMsgNoTrans( 'translate-tag-page-desc', $title ) );
+			}
+		}
+
 		wfRunHooks( 'TranslatePostInitGroups', array( &$wgTranslateCC ) );
 		$loaded = true;
 	}

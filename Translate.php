@@ -11,7 +11,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '11:2009-04-27' );
+define( 'TRANSLATE_VERSION', '12:2009-05-09' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'path'           => __FILE__,
@@ -28,6 +28,7 @@ $dir = dirname( __FILE__ ) . '/';
 require_once( $dir . '_autoload.php' );
 
 $wgExtensionMessagesFiles['Translate'] = $dir . 'Translate.i18n.php';
+$wgExtensionMessagesFiles['PageTranslation'] = $dir . 'PageTranslation.i18n.php';
 $wgExtensionAliasesFiles['Translate'] = $dir . 'Translate.alias.php';
 $wgExtensionFunctions[] = 'efTranslateInit';
 
@@ -43,6 +44,7 @@ $wgSpecialPageGroups['Translations'] = 'pages';
 $wgSpecialPageGroups['TranslationChanges'] = 'changes';
 $wgSpecialPageGroups['TranslationStats'] = 'wiki';
 $wgSpecialPageGroups['LanguageStats'] = 'wiki';
+$wgSpecialPageGroups['PageTranslation'] = 'pagetools';
 
 $wgHooks['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';
 $wgHooks['OutputPageBeforeHTML'][] = 'TranslateEditAddons::addNavigation';
@@ -56,19 +58,10 @@ $wgHooks['SpecialRecentChangesQuery'][] = 'TranslateRcFilter::translationFilter'
 $wgHooks['SpecialRecentChangesPanel'][] = 'TranslateRcFilter::translationFilterForm';
 $wgHooks['SkinTemplateToolboxEnd'][] = 'TranslateToolbox::toolboxAllTranslations';
 
-// Tag hooks
-$wgHooks['getUserPermissionsErrorsExpensive'][] = 'TranslateTagHooks::disableEdit';
-$wgHooks['ParserAfterStrip'][] = 'TranslateTagHooks::renderTagPage';
-$wgHooks['OutputPageBeforeHTML'][] = 'TranslateTagHooks::injectCss';
-$wgHooks['ArticleSaveComplete'][] = 'TranslateTagHooks::onSave';
-$wgHooks['SkinTemplateOutputPageBeforeExec'][] = 'TranslateTagHooks::addSidebar';
-$wgHooks['ArticleSave'][] = 'TranslateTag::save';
-$wgHooks['ParserFirstCallInit'][] = 'efTranslateInitTags';
-$wgHooks['BeforeParserFetchTemplateAndtitle'][] = 'TranslateTagHooks::onTemplate';
+$wgEnablePageTranslation = false;
+$wgPageTranslationNamespace = 1198;
 
-
-$wgJobClasses['FuzzyJob'] = 'FuzzyJob';
-$wgJobClasses['RenderJob'] = 'RenderJob';
+//$wgJobClasses['RenderJob'] = 'RenderJob';
 $wgAvailableRights[] = 'translate';
 
 define( 'TRANSLATE_FUZZY', '!!FUZZY!!' );
@@ -181,46 +174,86 @@ $wgTranslateTasks = array(
 $wgTranslatePHPlot = false;
 $wgTranslatePHPlotFont = '/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf';
 
-// Options for <translate> tag
-/**
- * Can be used to define where translation of sections are stored for tag
- * translations.
- * Two item array, where first item is namespace and latter is page name.
- * Namespace is either null which means the same as the current namespace, or
- * integer denoting some fixed namespace.
- * Page name can have following variables:
- * - $NS: the namespace of the source page with
- * - $PAGE: name of the page without namespace
- * - $FULLNAME: name of the page with possible namespace
- * - $KEY: automatically or assigned unique key for section,
- *         without this page names may not be unique!
- * - $SNIPPET: automatically constructed snippet of the section contents to give
- *             more meaningful names for the pages.
- */
-$wgTranslateTagTranslationLocation = array(
-	null, // Namespace is whatever the page is in
-	'$PAGE/translations/$KEY-$SNIPPET'
-);
 
-#$wgContentTranslation = true;
-
-if ( $wgDebugComments ) {
-	require_once( "$dir/utils/MemProfile.php" );
-} else {
-	function wfMemIn() { }
-	function wfMemOut() { }
-}
+function wfMemIn() { }
+function wfMemOut() { }
 
 function efTranslateInit() {
 	global $wgTranslatePHPlot, $wgAutoloadClasses;
 	if ( $wgTranslatePHPlot ) {
 		$wgAutoloadClasses['PHPlot'] = $wgTranslatePHPlot;
 	}
-}
 
+	global $wgEnablePageTranslation;
+	if ( $wgEnablePageTranslation ) {
+
+		// Special page + the right to use it
+		global $wgSpecialPages, $wgAvailableRights;
+		$wgSpecialPages['PageTranslation'] = 'SpecialPageTranslation';
+		$wgAvailableRights[] = 'pagetranslation';
+
+		// Namespaces
+		global $wgPageTranslationNamespace, $wgExtraNamespaces;
+		global $wgNamespacesWithSubpages, $wgNamespaceProtection;
+		global $wgTranslateMessageNamespaces;
+		// Defines for nice usage
+		define ( 'NS_TRANSLATIONS', $wgPageTranslationNamespace );
+		define ( 'NS_TRANSLATIONS_TALK', $wgPageTranslationNamespace +1 );
+		// Register them as namespaces
+		$wgExtraNamespaces[NS_TRANSLATIONS]      = 'Translations';
+		$wgExtraNamespaces[NS_TRANSLATIONS_TALK] = 'Translations_talk';
+		$wgNamespacesWithSubpages[NS_TRANSLATIONS]      = true;
+		$wgNamespacesWithSubpages[NS_TRANSLATIONS_TALK] = true;
+		// Standard protection and register it for filtering
+		$wgNamespaceProtection[NS_TRANSLATIONS] = array( 'translate' );
+		$wgTranslateMessageNamespaces[] = NS_TRANSLATIONS;
+
+		// Page translation hooks
+		global $wgHooks;
+
+		// Register our css, is there a better place for this?
+		$wgHooks['OutputPageBeforeHTML'][] = 'PageTranslationHooks::injectCss';
+
+		// Add transver tags and update translation target pages
+		$wgHooks['ArticleSaveComplete'][] = 'PageTranslationHooks::onSectionSave';
+
+		// Foo
+		#$wgHooks['SkinTemplateOutputPageBeforeExec'][] = 'TranslateTagHooks::addSidebar';
+
+		// Register <languages/>
+		$wgHooks['ParserFirstCallInit'][] = 'efTranslateInitTags';
+
+		// Strip <translate> tags etc. from source pages when rendering
+		$wgHooks['ParserBeforeStrip'][] = 'PageTranslationHooks::renderTagPage';
+
+		// Check syntax for <translate>
+		$wgHooks['ArticleSave'][] = 'PageTranslationHooks::tpSyntaxCheck';
+
+		// Add transtag to page props for discovery
+		$wgHooks['ArticleSaveComplete'][] = 'PageTranslationHooks::addTranstag';
+
+		// Prevent editing of unknown pages in Translations namespace
+		$wgHooks['getUserPermissionsErrorsExpensive'][] = 'PageTranslationHooks::translationsCheck';
+
+		$wgHooks['ArticleViewHeader'][] = 'PageTranslationHooks::test';
+
+		// Database schema
+		$wgHooks['LoadExtensionSchemaUpdates'][] = 'PageTranslationHooks::onLoadExtensionSchemaUpdates';
+
+	}
+
+}
 
 function efTranslateInitTags( $parser ) {
 	// For nice language list in-page
-	$parser->setHook( 'languages', array( 'TranslateTagHooks', 'languages' ) );
+	$parser->setHook( 'languages', array( 'PageTranslationHooks', 'languages' ) );
 	return true;
 }
+
+
+if ( !defined('TRANSLATE_CLI') ) {
+	function STDOUT() {}
+	function STDERR() {}
+}
+
+$wgGroupPermissions['staff'        ]['pagetranslation'] = true;

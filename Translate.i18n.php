@@ -158,11 +158,6 @@ All values have upper and lower limits.',
 	'translate-tag-category' => 'Translatable pages',
 	'translate-tag-page-desc' => 'Translation of the wiki page [[:$1]].',
 
-	'translate-tag-translate-link-desc' => 'Translate this page',
-	'translate-tag-legend' => 'Legend:',
-	'translate-tag-legend-fallback' => 'Translation in other language',
-	'translate-tag-legend-fuzzy' => 'Outdated translation',
-
 	'translate-tag-fuzzy-comment' => 'Definition changed by [[User:$1|$1]] in revision $2.',
 	'translate-tag-fuzzy-reason'  => 'Definition changed by "$1" with comment "$3" in $2.',
 
