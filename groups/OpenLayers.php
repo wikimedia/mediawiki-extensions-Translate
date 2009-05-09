@@ -4,7 +4,7 @@
  * Support for OpenLayers.
  *
  * @author Robert Leverington <robert@rhl.me.uk>
- * @copyright Copyright © 2009 Robert Leverington
+ * @copyright Copyright Â© 2009 Robert Leverington
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 

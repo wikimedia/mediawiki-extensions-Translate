@@ -4,7 +4,7 @@
  * OpenLayers JavaScript language class file format handler.
  *
  * @author Robert Leverington
- * @copyright Copyright © 2009 Robert Leverington
+ * @copyright Copyright Â© 2009 Robert Leverington
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
