@@ -50,9 +50,10 @@ Before marking this version for translation, check that the changes to sections 
 	# Source and translation page headers
 	'translate-tag-translate-link-desc' => 'Translate this page',
 	'translate-tag-markthis' => 'Mark this page for translation',
-	'translate-tag-legend' => 'Legend:',
-	'translate-tag-legend-fallback' => 'Translation in other language',
-	'translate-tag-legend-fuzzy' => 'Outdated translation',
+	'tpt-translation-intro' => 'This page is a <span class="plainlinks">[$1 translated version]</span> of a page [[$2]] and the translation is $3% complete and up to date.
+<span class="mw-translate-fuzzy">Out-dated translation are marked like this.</span>',
+
+	'tpt-languages-legend' => 'Other languages:',
 
 	'tpt-target-page' => 'This page cannot be updated manually.
 This page is a translation of page [[$1]] and the translation can be updated using [$2 the translation tool].',

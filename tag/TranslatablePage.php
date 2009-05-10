@@ -235,7 +235,7 @@ class TranslatablePage {
 	}
 
 
-	public function getTranslationUrl( $code ) {
+	public function getTranslationUrl( $code = false ) {
 		$translate = SpecialPage::getTitleFor( 'Translate' );
 		$params = array(
 			'group' => 'page|' . $this->getTitle()->getPrefixedText(),
@@ -293,7 +293,11 @@ class TranslatablePage {
 			if ( $t->getSubpageText() === $t->getText() ) continue;
 			$collection = $group->initCollection( $t->getSubpageText() );
 			$group->fillCollection( $collection );
-			$temp[$collection->code] = $this->getPercentageInternal( $collection, $markedRevs );
+
+			$percent = $this->getPercentageInternal( $collection, $markedRevs );
+			// To avoid storing 40 decimals of inaccuracy, truncate to two decimals
+			$temp[$collection->code] = sprintf( '%.2f', $percent );
+				
 		}
 		// English is always up-to-date
 		$temp['en'] = 1.00;
@@ -314,7 +318,7 @@ class TranslatablePage {
 
 			$score = 1;
 
-			// Fuzzy halves
+			// Fuzzy halves score
 			if ( $message->fuzzy() ) $score *= 0.5; 
 
 			// Reduce 20% for every newer revision than what is translated against
@@ -334,6 +338,8 @@ class TranslatablePage {
 			}
 			$total += $score;
 		}
+
+		// Divide score by count to get completion percentage
 		return $total/$count;
 	}
 
@@ -364,6 +370,20 @@ class TranslatablePage {
 			);
 		}
 		return $tagcache[$tag];
+	}
+
+	public static function isTranslationPage( Title $title ) {
+		if ( $title->getText() === $title->getBaseText() ) return false;
+	
+		$page = TranslatablePage::newFromTitle(
+			self::changeTitleText( $title, $title->getBaseText() ) );
+
+		if ( $page->getMarkedTag() === null ) return false;
+		return $page;
+	}
+
+	public static function changeTitleText( Title $title, $text ) {
+		return Title::makeTitleSafe( $title->getNamespace(), $text );
 	}
 }
 

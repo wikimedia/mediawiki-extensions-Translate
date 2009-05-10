@@ -28,14 +28,13 @@ class PageTranslationHooks {
 
 	public static function onSectionSave( $article, $user, $text, $summary, $minor,
 		$_, $_, $flags, $revision ) {
-		global $wgTranslateFuzzyBotName;
 		$title = $article->getTitle();
 
 		// Some checks
 
 		// We are only interested in the translations namespace
 		if ( $title->getNamespace() != NS_TRANSLATIONS ) return true;
-		// Do not trigger renders for fuzzybot or fuzzy
+		// Do not trigger renders for fuzzy
 		if ( strpos( $text, TRANSLATE_FUZZY ) !== false ) return true;
 
 		// Figure out the group
@@ -149,23 +148,25 @@ class PageTranslationHooks {
 		$status = $page->getTranslationPercentages();
 		if ( !$status ) return '';
 
-		global $wgLang;
-
-		// Sort by language code
+		// Sort by language code, which seems to be the only sane method
 		ksort( $status );
 
-		// $lobj = $parser->getFunctionLang();
 		$sk = $parser->mOptions->getSkin();
-		$legend = wfMsg( 'otherlanguages' );
 
-		global $wgTranslateCssLocation;
+		/* We rely on $wgLang, which should not matter as
+		 * languages are cached per language. However it
+		 * would be nicer to use $parser->getFunctionLang();
+		 * but that needs to be set correct first. */
+		// $lobj = $parser->getFunctionLang();
+		global $wgTranslateCssLocation, $wgLang;
 
 		$languages = array();
 		foreach ( $status as $code => $percent ) {
 			$name = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() );
 
+			/* Percentages are too accurate and take more
+			 * space than plain images */
 			$percent *= 100;
-			if     ( $percent < 10 ) continue; // Hide.. not very useful
 			if     ( $percent < 20 ) $image = 1;
 			elseif ( $percent < 40 ) $image = 2;
 			elseif ( $percent < 60 ) $image = 3;
@@ -173,15 +174,26 @@ class PageTranslationHooks {
 			else                     $image = 5;
 
 			$percent = Xml::element( 'img', array(
-				'src' => "$wgTranslateCssLocation/images/prog-$image.png"
+				'src'   => "$wgTranslateCssLocation/images/prog-$image.png",
+				'alt'   => "$percent%",
+				'title' => "$percent%",
 			) );
 			$label = "$name $percent";
 
+			// Add links to other languages
 			$suffix = ( $code === 'en' ) ? '' : "/$code";
 			$_title = Title::makeTitle( $title->getNamespace(), $title->getDBKey() . $suffix );
-			$languages[] = $sk->link( $_title, $label );
+
+			// For some reason self-links are not done automatically
+			if ( $parser->getTitle()->getText() === $_title->getText() ) {
+				$languages[] = "<b>$label</b>";
+			} else {
+				$languages[] = $sk->link( $_title, $label );
+			}
 		}
 
+		wfLoadExtensionMessages( 'PageTranslation' );
+		$legend = wfMsg( 'tpt-languages-legend' );
 		$languages = implode( '&nbsp;• ', $languages );
 
 		return <<<FOO
@@ -189,7 +201,7 @@ class PageTranslationHooks {
 <table><tbody>
 
 <tr valign="top">
-<td class="mw-pt-languages-label"><b>$legend:</b></td>
+<td class="mw-pt-languages-label"><b>$legend</b></td>
 <td class="mw-pt-languages-list">$languages</td></tr>
 
 </tbody></table>
@@ -197,6 +209,7 @@ class PageTranslationHooks {
 FOO;
 	}
 
+	// When attempting to save
 	public static function tpSyntaxCheck( $article, $user, $text, $summary,
 			$minor, $_, $_, $flags, $status ) {
 		// Quick escape on normal pages
@@ -204,6 +217,8 @@ FOO;
 
 		$page = TranslatablePage::newFromText( $article->getTitle(), $text );
 		try {
+			/* This does not catch all problems yet,
+			 * like markup spanning between sections. */
 			$page->getParse();
 		} catch ( TPException $e ) {
 			call_user_func_array( array( $status, 'fatal' ), $ret );
@@ -246,18 +261,24 @@ FOO;
 		} elseif( $title->getBaseText() != $title->getText() ) {
 			$newtitle = Title::makeTitle( $title->getNamespace(), $title->getBaseText() );
 
-			if ( $newtitle && $newtitle->exists() ) {
-				$page = TranslatablePage::newFromTitle( $newtitle );
+			// Base page does not exists, cannot be translatable page
+			if ( !$newtitle || !$newtitle->exists() ) return true;
 
-				if ( $page->getMarkedTag() && !self::$allowTargetEdit) {
-					wfLoadExtensionMessages( 'PageTranslation' );
-					$result = array(
-						'tpt-target-page',
-						$newtitle->getPrefixedText(),
-						$page->getTranslationUrl( $title->getSubpageText() ) 
-					);
-					return false;
-				}
+			// Local override of fuzzybot is allowed
+			global $wgTranslateFuzzyBotName;
+			if ( self::$allowTargetEdit ||
+			     $user->getName() === $wgTranslateFuzzyBotName ) return true;
+
+			// Proceed to check whether we need to block
+			$page = TranslatablePage::newFromTitle( $newtitle );
+			if ( $page->getMarkedTag() ) {
+				wfLoadExtensionMessages( 'PageTranslation' );
+				$result = array(
+					'tpt-target-page',
+					$newtitle->getPrefixedText(),
+					$page->getTranslationUrl( $title->getSubpageText() ) 
+				);
+				return false;
 			}
 		}
 
@@ -276,6 +297,7 @@ FOO;
 
 		$dbw = wfGetDB( DB_MASTER );
 		foreach ( $tags as $tag ) {
+			// TODO: use insert ignore
 			$field = array( 'rtt_name' => $tag );
 			$ret = $dbw->selectField( 'revtag_type', 'rtt_name', $field, __METHOD__ );
 			if ( $ret !== $tag ) $dbw->insert( 'revtag_type', $field, __METHOD__ );
@@ -283,38 +305,48 @@ FOO;
 		return true;
 	}
 
+	// TODO: fix the name
 	public static function test(&$article, &$outputDone, &$pcache) {
 		global $wgOut;
 		if ( !$article->getOldID() ) {
-			$wgOut->addHTML( self::getHeader( $article->getTitle() ) );
-		} else {
-			echo "foo";
+			self::header( $article->getTitle() );
 		}
 		return true;
 	}
 
-	public static function getHeader( Title $title, $code = false ) {
+	public static function header( Title $title ) {
 		global $wgLang, $wgUser;
 
-		$sk = $wgUser->getSkin();
 
 		$page = TranslatablePage::newFromTitle( $title );
-
 		$marked = $page->getMarkedTag();
 		$ready = $page->getReadyTag();
 
-		if ( $marked === false && $ready === false ) return '';
+		if ( $marked || $ready ) {
+			self::sourcePageHeader( $page, $marked, $ready );
+		} else  {
+			self::translationPageHeader( $title );
+		}
+	}
+
+	protected static function sourcePageHeader( TranslatablePage $page,
+		$marked, $ready ) {
+
+		global $wgUser, $wgLang;
+		wfLoadExtensionMessages( 'PageTranslation' );
+
+		$title = $page->getTitle();
+		$sk = $wgUser->getSkin();
 
 		$latest = $title->getLatestRevId();
 		$canmark = $ready === $latest && $marked !== $latest;
-		wfLoadExtensionMessages( 'PageTranslation' );
 
 		$actions = array();
 
 		if ( $marked && $wgUser->isAllowed('translate') ) {
 			$par = array(
 				'group' => 'page|' . $title->getPrefixedText(),
-				'language' => $code ? $code : $wgLang->getCode(),
+				'language' => $wgLang->getCode(),
 				'task' => 'view'
 			);
 			$translate = SpecialPage::getTitleFor( 'Translate' );
@@ -331,21 +363,34 @@ FOO;
 			$actions[] = $sk->link( $translate, $linkDesc, array(), $par);
 		}
 
-	
-		if ( $code ) {
-			$legendText  = wfMsgHtml( 'translate-tag-legend' );
-			$legendOther = wfMsgHtml( 'translate-tag-legend-fallback' );
-			$legendFuzzy = wfMsgHtml( 'translate-tag-legend-fuzzy' );
-
-			$actions[] = "$legendText <span class=\"mw-translate-other\">$legendOther</span>" .
-			" <span class=\"mw-translate-fuzzy\">$legendFuzzy</span>";
-		}
-
-		if ( !count($actions) ) return '';
+		if ( !count($actions) ) return;
 		$legend  = "<div style=\"font-size: x-small; text-align: center\">";
 		$legend .= $wgLang->semicolonList( $actions );
 		$legend .= '</div><hr />';
-		return $legend;
+		
+		global $wgOut;
+		$wgOut->addHTML( $legend );
+
+	}
+
+	protected static function translationPageHeader( Title $title ) {
+		global $wgOut;
+
+		// Check if applicable
+		$page = TranslatablePage::isTranslationPage( $title );
+		if ( $page === false ) return;
+
+		// Get the translation percentage
+		$pers = $page->getTranslationPercentages();
+		$per = $pers[$title->getSubpageText()] * 100;
+		$titleText = $page->getTitle()->getText();
+		$url = $page->getTranslationUrl( $title->getSubpageText() );
+
+		// Output
+		wfLoadExtensionMessages( 'PageTranslation' );
+		$wrap = '<div style="font-size: x-small; text-align: center">$1</div><hr />';
+		$wgOut->wrapWikiMsg( $wrap, array( 'tpt-translation-intro', $url, $titleText, $per)  );
+
 	}
 
 }
