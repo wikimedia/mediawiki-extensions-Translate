@@ -60,9 +60,11 @@ class MessageIndex {
 			self::checkAndAdd( $hugearray, $g, true );
 		}
 
+		global $wgMemc;
 		foreach ( $hugearray as $ns => $array ) {
-			wfMkdirParents( dirname( self::file($ns) ) );
-			file_put_contents( self::file($ns), serialize( $array ) );
+			$memcKey = wfMemcKey( 'messageindex', $ns );
+			$wgMemc->set( $memcKey, serialize( $array ), 60*60*12 );
+			$cache = $wgMemc->get( $memcKey );
 		}
 	}
 
@@ -92,32 +94,22 @@ class MessageIndex {
 
 	}
 
-	protected static function file( $namespace ) {
-		$dir = realpath( dirname( __FILE__ ) . '/../data' );
-		$namepace = MWNamespace::getCanonicalName( $namespace );
-		return "$dir/messageindex-$namespace.ser";
-	}
-
 	protected static function normaliseKey( $key ) {
-		return str_replace( " ", "_", strtolower( $key ) );
+		global $wgContLang;
+		return $wgContLang->ucfirst( str_replace( " ", "_", $key ) );
 	}
 
 	protected static function index( $namespace ) {
-		if ( !isset(self::$cache[$namespace]) ) {
+		global $wgMemc;
+		$memcKey = wfMemcKey( 'messageindex', $namespace );
+		$cache = unserialize( $wgMemc->get($memcKey) );
 
-			$file = self::file( $namespace );
-			if ( !file_exists( $file ) ) {
-				self::cache( $namespace );
-			}
+		// Missing? Update it
+		if ( !is_array($cache) ) self::cache( $namespace );
+		$cache = unserialize( $wgMemc->get($memcKey) );
+		if ( !is_array($cache) ) throw new MWException( "Caching failed" );
 
-			if ( file_exists( $file ) ) {
-				self::$cache[$namespace] = unserialize( file_get_contents( $file ) );
-			} else {
-				self::$cache[$namespace] = array();
-				wfDebug( __METHOD__ . ": Message index missing." );
-			}
-		}
+		return $cache;
 
-		return self::$cache[$namespace];
 	}
 }
