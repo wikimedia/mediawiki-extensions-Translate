@@ -133,7 +133,7 @@ class SpecialPageTranslation extends SpecialPage {
 		foreach( array_keys($old) as $k ) unset($new[$k]);
 
 		if ( count($old) ) {
-			$wgOut->addWikiMsg( 'tpt-old-pages' );
+			$wgOut->addWikiMsg( 'tpt-old-pages', count($old) );
 			$wgOut->addHTML( '<ol>' );
 			foreach ( $old as $o ) {
 				list( $rev, $title ) = $o;
