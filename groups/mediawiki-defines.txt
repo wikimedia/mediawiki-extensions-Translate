@@ -690,6 +690,7 @@ optional = semanticgooglemaps_printername
 
 Semantic MediaWiki
 file = SemanticMediaWiki/languages/SMW_Messages.php
+descmsg = smw-desc
 ignored = smw_ask_doculink, smw_service_online_maps, smw_uri_blacklist
 optional = smw_rss_link, smw_decseparator, smw_kiloseparator
 optional = smw_rss_description, smw_browse_more, specialpages-group-smw_group
