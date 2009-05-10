@@ -464,7 +464,7 @@ class AllWikitravelExtensionsGroup extends AllMediawikiExtensionsGroup {
 }
 
 class AllCollectionExtensionsGroup extends AllMediawikiExtensionsGroup {
-	protected $label = 'All Collection messages';
+	protected $label = 'Collection';
 	protected $id    = 'ext-collection-0-all';
 	protected $meta  = true;
 
@@ -488,7 +488,7 @@ class AllCollectionExtensionsGroup extends AllMediawikiExtensionsGroup {
 }
 
 class AllFlaggedRevsExtensionsGroup extends AllMediawikiExtensionsGroup {
-	protected $label = 'All FlaggedRevs messages';
+	protected $label = 'FlaggedRevs';
 	protected $id    = 'ext-flaggedrevs-0-all';
 	protected $meta  = true;
 
@@ -523,7 +523,7 @@ class AllFlaggedRevsExtensionsGroup extends AllMediawikiExtensionsGroup {
 }
 
 class AllSocialProfileExtensionsGroup extends AllMediawikiExtensionsGroup {
-	protected $label = 'All Social Profile messages';
+	protected $label = 'Social Profile';
 	protected $id    = 'ext-socialprofile-0-all';
 	protected $meta  = true;
 
@@ -552,7 +552,7 @@ class AllSocialProfileExtensionsGroup extends AllMediawikiExtensionsGroup {
 }
 
 class AllTranslateExtensionsGroup extends AllMediawikiExtensionsGroup {
-	protected $label = 'All Translate messages';
+	protected $label = 'Translate';
 	protected $id    = 'ext-translate-0-all';
 	protected $meta  = true;
 
@@ -576,7 +576,7 @@ class AllTranslateExtensionsGroup extends AllMediawikiExtensionsGroup {
 }
 
 class AllUniwikiExtensionsGroup extends AllMediawikiExtensionsGroup {
-	protected $label = 'All Uniwiki messages';
+	protected $label = 'Uniwiki';
 	protected $id    = 'ext-uniwiki-0-all';
 	protected $meta  = true;
 

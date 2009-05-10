@@ -236,7 +236,7 @@ abstract class MessageGroup {
 }
 
 class CoreMessageGroup extends MessageGroup {
-	protected $label       = 'MediaWiki messages';
+	protected $label       = 'MediaWiki';
 	protected $id          = 'core';
 	protected $type        = 'mediawiki';
 	protected $description = '{{int:translate-group-desc-mediawikicore}}';
