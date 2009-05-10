@@ -30,8 +30,8 @@ Make sure it has <nowiki><translate></nowiki> tags and has a valid syntax.',
 	'tpt-saveok' => 'The page "$1" has been marked up for translation with $2 translatable sections.
 The page can now be <span class="plainlinks">[$3 translated]</span>.',
 	'tpt-badsect' => '"$1" is not a valid name for section $2.',
-	'tpt-deletedsections' => 'The following sections will no longer be used',
-	'tpt-showpage-intro' => 'Below are listed new, existing and deleted sections.
+	'tpt-deletedsections' => 'The following sections will no longer be used:',
+	'tpt-showpage-intro' => 'Below new, existing and deleted sections are listed.
 Before marking this version for translation, check that the changes to sections are minimised to avoid unnecessary work for translators.',
 	'tpt-mark-summary' => 'Marked this version for translation',
 	'tpt-edit-failed' => 'Could not update the page: $1',
