@@ -252,7 +252,7 @@ class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
 }
 
 class AllWikiaExtensionsGroup extends AllMediawikiExtensionsGroup {
-	protected $label = 'MediaWiki extensions used by Wikia'; // currently using 1.12.0
+	protected $label = 'MediaWiki extensions used by Wikia'; // currently using 1.14.0
 	protected $id    = 'ext-0-wikia';
 	protected $meta  = true;
 
@@ -301,7 +301,7 @@ class AllWikiaExtensionsGroup extends AllMediawikiExtensionsGroup {
 }
 
 class AllWikihowExtensionsGroup extends AllMediawikiExtensionsGroup {
-	protected $label = 'MediaWiki extensions used by Wikihow'; // currently using 1.9.3
+	protected $label = 'MediaWiki extensions used by Wikihow'; // currently using 1.12.0
 	protected $id    = 'ext-0-wikihow';
 	protected $meta  = true;
 
