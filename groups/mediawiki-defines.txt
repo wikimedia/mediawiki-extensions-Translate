@@ -573,6 +573,8 @@ optional = piwik
 Player
 ignored = player-pagetext, player-imagepage-header
 
+Plotters
+
 PNG Handler
 
 Poem

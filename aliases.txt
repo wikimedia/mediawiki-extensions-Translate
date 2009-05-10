@@ -199,6 +199,9 @@ file = Piwik/Piwik.alias.php
 Player
 file = Player/Player.alias.php
 
+Plotters
+file = Plotters/Plotters.alias.php
+
 Profile monitor
 file = ProfileMonitor/ProfileMonitor.alias.php
 
