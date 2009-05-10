@@ -41,7 +41,7 @@ Before marking this version for translation, check that the changes to sections 
 	# Page list on the special page
 	'tpt-list-nopages' => 'No pages are marked for translation nor ready to be marked for translation.',
 	'tpt-old-pages' => 'Some version of {{PLURAL:$1|this page has|these pages have}} been marked for translation.',
-	'tpt-new-pages' => 'These pages contain text with translation tags, but no version of these pages are currently marked for translation.',
+	'tpt-new-pages' => '{{PLURAL:$1|This page contains|These pages contain}} text with translation tags, but no version of {{PLURAL:$1|this page is|these pages are}} currently marked for translation.',
 	'tpt-rev-latest' => 'latest version',
 	'tpt-rev-old' => 'version $1',
 	'tpt-rev-mark-new' => 'mark this version for translation',

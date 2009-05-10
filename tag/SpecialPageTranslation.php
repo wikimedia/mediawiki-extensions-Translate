@@ -145,7 +145,7 @@ class SpecialPageTranslation extends SpecialPage {
 		}
 
 		if ( count($new) ) {
-			$wgOut->addWikiMsg( 'tpt-new-pages' );
+			$wgOut->addWikiMsg( 'tpt-new-pages', count( $new ) );
 			$wgOut->addHTML( '<ol>' );
 			foreach ( $new as $n ) {
 				list( $rev, $title ) = $n;
