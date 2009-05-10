@@ -675,6 +675,7 @@ Select Category
 
 Semantic Result Formats
 file = SemanticResultFormats/SRF_Messages.php
+descmsg = srf-desc
 optional = srf_icalendar_link, srf_vcard_link, srf_bibtex_link
 
 Semantic Drilldown
