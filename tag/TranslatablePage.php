@@ -267,7 +267,7 @@ class TranslatablePage {
 		global $wgMemc;
 		$memcKey = wfMemcKey( 'pt', 'status', $this->getTitle()->getPrefixedText() );
 		$cache = $wgMemc->get( $memcKey );
-		#if ( is_array( $cache ) ) return $cache;
+		if ( is_array( $cache ) ) return $cache;
 
 		// Fetch the available translation pages from database
 		$dbr = wfGetDB( DB_SLAVE );

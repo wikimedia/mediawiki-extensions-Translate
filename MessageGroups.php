@@ -656,7 +656,6 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 				continue;
 			}
 			foreach ( $markedRevs as $r ) {
-				var_dump( $rev );
 				if ( $rev === $r->rt_revision ) break;
 				$changed = explode( '|', unserialize($r->rt_value) );
 
