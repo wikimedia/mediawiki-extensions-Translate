@@ -253,7 +253,7 @@ class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
 }
 
 class AllWikiaExtensionsGroup extends AllMediawikiExtensionsGroup {
-	protected $label = 'MediaWiki extensions used by Wikia'; // currently using 1.14.0
+	protected $label = 'Extensions used by Wikia'; // currently using 1.14.0
 	protected $id    = 'ext-0-wikia';
 	protected $meta  = true;
 
@@ -303,7 +303,7 @@ class AllWikiaExtensionsGroup extends AllMediawikiExtensionsGroup {
 }
 
 class AllWikihowExtensionsGroup extends AllMediawikiExtensionsGroup {
-	protected $label = 'MediaWiki extensions used by Wikihow'; // currently using 1.12.0
+	protected $label = 'Extensions used by Wikihow'; // currently using 1.12.0
 	protected $id    = 'ext-0-wikihow';
 	protected $meta  = true;
 
@@ -346,7 +346,7 @@ class AllWikihowExtensionsGroup extends AllMediawikiExtensionsGroup {
 }
 
 class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
-	protected $label = 'MediaWiki extensions used by Wikimedia';
+	protected $label = 'Extensions used by Wikimedia';
 	protected $id    = 'ext-0-wikimedia';
 	protected $meta  = true;
 
@@ -431,7 +431,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 }
 
 class AllWikitravelExtensionsGroup extends AllMediawikiExtensionsGroup {
-	protected $label = 'MediaWiki extensions used by Wikitravel'; // currently using 1.11.2
+	protected $label = 'Extensions used by Wikitravel'; // currently using 1.11.2
 	protected $id    = 'ext-0-wikitravel';
 	protected $meta  = true;
 

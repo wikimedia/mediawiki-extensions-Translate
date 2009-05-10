@@ -291,51 +291,63 @@ descmsg = flaggedrevs-desc
 Flagged Revisions - Liked Pages
 id = ext-flaggedrevs-likedpages
 file = FlaggedRevs/language/LikedPages.i18n.php
+descmsg = likedpages
 
 Flagged Revisions - Old Reviewed Pages
 id = ext-flaggedrevs-oldreviewedpages
 file = FlaggedRevs/language/OldReviewedPages.i18n.php
-
-Flagged Revisions - Quality Oversight
-id = ext-flaggedrevs-qualityoversight
-file = FlaggedRevs/language/QualityOversight.i18n.php
+descmsg = oldreviewedpages-legend
 
 Flagged Revisions - Problem Pages
 id = ext-flaggedrevs-problempages
 file = FlaggedRevs/language/ProblemPages.i18n.php
+descmsg = problempages
+
+Flagged Revisions - Quality Oversight
+id = ext-flaggedrevs-qualityoversight
+file = FlaggedRevs/language/QualityOversight.i18n.php
+descmsg = qualityoversight
 
 Flagged Revisions - Rating History
 id = ext-flaggedrevs-ratinghistory
 file = FlaggedRevs/language/RatingHistory.i18n.php
+descmsg = ratinghistory
 
 Flagged Revisions - Reviewed Pages
 id = ext-flaggedrevs-reviewedpages
 file = FlaggedRevs/language/ReviewedPages.i18n.php
 optional = reviewedpages-lev-0, reviewedpages-lev-1, reviewedpages-lev-2
+descmsg = reviewedpages-leg
 
 Flagged Revisions - Stabilization
 id = ext-flaggedrevs-stabilization
 file = FlaggedRevs/language/Stabilization.i18n.php
+descmsg = stabilization
 
 Flagged Revisions - Stable Pages
 id = ext-flaggedrevs-stablepages
 file = FlaggedRevs/language/StablePages.i18n.php
+descmsg = stablepages
 
 Flagged Revisions - Stable Versions
 id = ext-flaggedrevs-stableversions
 file = FlaggedRevs/language/StableVersions.i18n.php
+descmsg = stableversions-leg1
 
 Flagged Revisions - Unreviewed Pages
 id = ext-flaggedrevs-unreviewedpages
 file = FlaggedRevs/language/UnreviewedPages.i18n.php
+descmsg = right-unreviewedpages
 
 Flagged Revisions - Unstable Pages
 id = ext-flaggedrevs-unstablepages
 file = FlaggedRevs/language/UnstablePages.i18n.php
+descmsg = unstablepages
 
 Flagged Revisions - Validation Statistics
 id = ext-flaggedrevs-validationstatistics
 file = FlaggedRevs/language/ValidationStatistics.i18n.php
+descmsg = validationstatistics
 
 Find Spam
 
@@ -720,32 +732,39 @@ ignored = smoothgallery-pagetext
 Social Profile - System Gifts
 id = ext-socialprofile-systemgifts
 file = SocialProfile/SystemGifts/SystemGift.i18n.php
+descmsg = systemgiftmanager
 
 Social Profile - User Board
 id = ext-socialprofile-userboard
 file = SocialProfile/UserBoard/UserBoard.i18n.php
+descmsg = boardblasttitle
 
 Social Profile - User Gifts
 id = ext-socialprofile-usergifts
 file = SocialProfile/UserGifts/UserGifts.i18n.php
+descmsg = g-give-no-user-message
 
 Social Profile - User Profile
 id = ext-socialprofile-userprofile
 file = SocialProfile/UserProfile/UserProfile.i18n.php
+descmsg = edit-profile-title
 optional = avatarlogentry, profilelogentry
 ignored = userprofile-country-list
 
 Social Profile - User Relationship
 id = ext-socialprofile-userrelationship
 file = SocialProfile/UserRelationship/UserRelationship.i18n.php
+descmsg = ur-requests-title
 
 Social Profile - User Stats
 id = ext-socialprofile-userstats
 file = SocialProfile/UserStats/UserStats.i18n.php
+descmsg = topusers
 
 Social Profile - User Welcome
 id = ext-socialprofile-userwelcome
 file = SocialProfile/UserWelcome/UserWelcome.i18n.php
+descmsg = userwelcome-desc
 
 Spam Blacklist
 descmsg = spam-blacklist-desc
