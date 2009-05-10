@@ -152,7 +152,7 @@ descmsg = code-desc
 Collection - Core
 id = ext-collection-core
 file = Collection/CollectionCore.i18n.php
-descmsg = coll-desc
+descmsg = coll-create_a_book
 
 Collection - Other
 id = ext-collection-other
@@ -710,10 +710,11 @@ descmsg = signature-desc
 
 Sign Document Special Create
 file = SignDocument/SpecialCreateSignDocument.i18n.php
+descmsg = createsigndocument
 
 Sign Document Special
 file = SignDocument/SpecialSignDocument.i18n.php
-descmsg = signature-desc
+descmsg = signdocument
 optional = sign-emailto
 
 Simple Anti Spam
