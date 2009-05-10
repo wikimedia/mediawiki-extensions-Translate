@@ -182,6 +182,7 @@ class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
 	protected $meta  = true;
 	protected $type  = 'mediawiki';
 	protected $classes = null;
+	protected $description = '{{int:translate-group-desc-mediawikiextensions}}';
 
 	public function getProblematic( $code ) {
 		$this->init();
@@ -257,6 +258,7 @@ class AllWikiaExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $meta  = true;
 
 	protected $classes = null;
+	protected $description = '{{int:translate-group-desc-wikiaextensions}}';
 
 	protected $wikiaextensions = array(
 		'ext-antibot',
@@ -306,6 +308,7 @@ class AllWikihowExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $meta  = true;
 
 	protected $classes = null;
+	protected $description = '{{int:translate-group-desc-wikihowextensions}}';
 
 	protected $wikihowextensions = array(
 		'ext-antispoof',
@@ -348,6 +351,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $meta  = true;
 
 	protected $classes = null;
+	protected $description = '{{int:translate-group-desc-wikimediaextensions}}';
 
 	protected $wmfextensions = array(
 		'ext-abusefilter', // test.wikipedia.org
@@ -432,6 +436,7 @@ class AllWikitravelExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $meta  = true;
 
 	protected $classes = null;
+	protected $description = '{{int:translate-group-desc-wikitravelextensions}}';
 
 	protected $wikitravelextensions = array(
 		'ext-charinsert',
@@ -464,6 +469,7 @@ class AllCollectionExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $meta  = true;
 
 	protected $classes = null;
+	protected $description = '{{int:translate-group-desc-collection}}';
 
 	protected $collectionextensions = array(
 		'ext-collection-core',
@@ -487,6 +493,7 @@ class AllFlaggedRevsExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $meta  = true;
 
 	protected $classes = null;
+	protected $description = '{{int:translate-group-desc-flaggedrevs}}';
 
 	protected $flaggedrevsextensions = array(
 		'ext-flaggedrevs-flaggedrevs',
@@ -521,6 +528,7 @@ class AllSocialProfileExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $meta  = true;
 
 	protected $classes = null;
+	protected $description = '{{int:translate-group-desc-socialprofile}}';
 
 	protected $socialprofileextensions = array(
 		'ext-socialprofile-systemgifts',
@@ -549,6 +557,7 @@ class AllTranslateExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $meta  = true;
 
 	protected $classes = null;
+	protected $description = '{{int:translate-group-desc-translate}}';
 
 	protected $translateprofileextensions = array(
 		'ext-translate-core',
@@ -572,6 +581,7 @@ class AllUniwikiExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $meta  = true;
 
 	protected $classes = null;
+	protected $description = '{{int:translate-group-desc-uniwiki}}';
 
 	protected $uniwikiextensions = array(
 		'ext-uniwiki-authors',
