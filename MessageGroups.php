@@ -185,7 +185,6 @@ abstract class MessageGroup {
 		return "$path/$file";
 	}
 
-
 	/**
 	 * Creates a new MessageCollection for this group.
 	 *
@@ -436,7 +435,6 @@ class AliasMessageGroup extends ExtensionMessageGroup {
 				$collection[$name]->database = $values;
 			}
 		}
-
 	}
 
 	public function getWriter() {
@@ -445,7 +443,6 @@ class AliasMessageGroup extends ExtensionMessageGroup {
 		$writer->commaToArray = true;
 		return $writer;
 	}
-
 }
 
 class CoreMostUsedMessageGroup extends CoreMessageGroup {
@@ -582,7 +579,6 @@ class WikiMessageGroup extends MessageGroup {
 	}
 }
 
-
 class WikiPageMessageGroup extends WikiMessageGroup {
 	public $title;
 
@@ -594,7 +590,7 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		}
 		$this->title = $title;
 		$this->namespaces = array( NS_TRANSLATIONS, NS_TRANSLATIONS_TALK );
-		
+
 	}
 
 	public function getDefinitions() {
@@ -603,7 +599,7 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		$vars = array( 'trs_key', 'trs_text' );
 		$conds = array( 'trs_page' => $this->title->getArticleId() );
 		$res = $dbr->select( $tables, $vars, $conds, __METHOD__ );
-		
+
 		$defs = array();
 		$prefix = $this->title->getPrefixedDBKey() . '/';
 		$re = '~<tvar\|([^>]+)>(.*?)</>~u';
@@ -617,7 +613,7 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		ksort( $defs );
 		$new_defs = array();
 		foreach ( $defs as $k => $v ) $new_defs[$prefix.$k] = $v;
-		
+
 		return $new_defs;
 	}
 
@@ -671,9 +667,7 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 			}
 		}
 	}
-
 }
-
 
 class MessageGroups {
 	public static function init() {
@@ -691,7 +685,7 @@ class MessageGroups {
 		global $wgEnablePageTranslation;
 		if ( $wgEnablePageTranslation ) {
 			$dbr = wfGetDB( DB_SLAVE );
-			
+
 			$tables = array( 'page', 'revtag', 'revtag_type' );
 			$vars   = array( 'page_id', 'page_namespace', 'page_title', 'rt_revision' );
 			$conds  = array( 'page_id=rt_page', 'rtt_id=rt_type', 'rtt_name' => 'tp:mark' );
