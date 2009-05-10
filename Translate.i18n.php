@@ -1693,10 +1693,10 @@ $messages['ca'] = array(
 	'translate-optional' => '(opcional)',
 	'translate-ignored' => '(ignorat)',
 	'translate-edit-definition' => 'Definició del missatge',
-	'translate-edit-contribute' => 'contribueix',
+	'translate-edit-contribute' => 'contribuiu',
 	'translate-edit-no-information' => "''Aquest missatge no té documentació. Si sabeu on o com és usat aquest missatge podeu ajudar la resta de traductors afegint-hi la documentació.''",
-	'translate-edit-information' => 'Informació sobre el missatge ($1)',
-	'translate-edit-in-other-languages' => 'Missatge en altres llengües',
+	'translate-edit-information' => 'Informació sobre el missatge «$2» ($1)',
+	'translate-edit-in-other-languages' => 'Missatge «$1» en altres idiomes',
 	'translate-edit-committed' => 'Traducció utilitzada actualment pel programa',
 	'translate-edit-warnings' => 'Avisos de traducció incompleta',
 	'translate-edit-goto-no-prev' => 'Cap missatge previ',
@@ -2141,6 +2141,18 @@ Es wird empfohlen, Systemnachrichten mit der Spezialseite [[Special:Translate|{{
  # Special:LanguageStats auszuschließen. Nicht existerende IDs
  # werden ignoriert.',
 	'translate-save' => 'Speichern ($1)',
+	'translate-group-desc-mediawikicore' => 'Diese Gruppe beinhaltet alle Nachrichten der aktuellen alpha-Version von MediaWiki ({{CURRENTVERSION}})',
+	'translate-group-desc-mediawikimostused' => 'Diese Gruppe beinhaltet die [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 am häufigsten genutzten Nachrichten] in MediaWiki',
+	'translate-group-desc-mediawikiextensions' => 'Diese Hauptgruppe beinhaltet alle Systemnachrichten der von MediaWiki unterstützten Erweiterungen',
+	'translate-group-desc-collection' => 'Diese Hauptgruppe beinhaltet alle Systemnachrichten für die MediaWiki-Erweiterung [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
+	'translate-group-desc-flaggedrevs' => 'Diese Hauptgruppe beinhaltet alle Systemnachrichten für die MediaWiki-Erweiterung [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
+	'translate-group-desc-socialprofile' => 'Diese Hauptgruppe beinhaltet alle Systemnachrichten für verwandte Erweiterungen der MediaWiki-Erweiterung [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
+	'translate-group-desc-translate' => 'Diese Hauptgruppe beinhaltet alle Systemnachrichten für die MediaWiki-Erweiterung [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
+	'translate-group-desc-wikiaextensions' => 'Diese Hauptgruppe beinhaltet alle Systemnachrichten der unterstützten MediaWiki-Erweiterungen, die von [http://www.wikia.com Wikia] genutzt werden',
+	'translate-group-desc-wikihowextensions' => 'Diese Hauptgruppe beinhaltet alle Systemnachrichten der unterstützten MediaWiki-Erweiterungen, die von [http://www.wikihow.com wikiHow] genutzt werden',
+	'translate-group-desc-wikimediaextensions' => 'Diese Hauptgruppe beinhaltet alle Systemnachrichten der unterstützten MediaWiki-Erweiterungen, die von der [http://wikimedia.org/ Wikimedia Foundation] genutzt werden',
+	'translate-group-desc-wikitravelextensions' => 'Diese Hauptgruppe beinhaltet alle Systemnachrichten der unterstützten MediaWiki-Erweiterungen, die von [http://wikitravel.org Wikitravel] genutzt werden',
+	'translate-group-desc-uniwiki' => 'Diese Hauptgruppe beinhaltet alle Systemnachrichten für verwandte Erweiterungen von [http://unicefinnovation.org/wiki.php Uniwiki]',
 );
 
 /** Swiss High German (Schweizer Hochdeutsch)
@@ -3099,8 +3111,8 @@ $messages['fi'] = array(
 	'translate-edit-definition' => 'Viestin määritelmä',
 	'translate-edit-contribute' => 'auta dokumentoinnissa',
 	'translate-edit-no-information' => "''Tätä viestiä ei ole dokumentoitu. Jos tiedät missä tai miten tätä viestiä käytetään, voit auttaa muita kääntäjiä lisäämällä kommentteja tähän viestiin.''",
-	'translate-edit-information' => 'Tietoja viestistä ($1)',
-	'translate-edit-in-other-languages' => 'Viesti muilla kielillä',
+	'translate-edit-information' => 'Tietoja viestistä $2 ($1)',
+	'translate-edit-in-other-languages' => 'Viesti $1 muilla kielillä',
 	'translate-edit-committed' => 'Nykyinen ohjelmiston käyttämä käännös',
 	'translate-edit-warnings' => 'Varoituksia virheellisestä käännöksestä',
 	'translate-edit-goto-no-prev' => 'Ei edellistä viestiä',
@@ -3454,35 +3466,103 @@ Rêson :
 	'translate-edit-goto-next' => 'Vêre lo mèssâjo aprés',
 	'translate-edit-goto-list' => 'Tornar a la lista',
 	'translate-magic-pagename' => 'Traduccion ètendua de MediaWiki',
-	'translate-magic-help' => 'Vos pouede traduire los noms de les pâges spèciâles, los mots magicos, los noms de les entèrfaces et los titros des èspâços de nom.
+	'translate-magic-help' => 'Vos pouede traduire los noms paralèlos de les pâges spèciâles, los mots magicos et los noms des èspâços de nom.
 
-Dens los mots magicos, vos dête encllure la traduccion en anglès ou cen fonccionerat pas més. Et pués, lèssiéd lo premiér èlèment (0 ou ben 1) coment il est.
+Los noms paralèlos de les pâges spèciâles et los mots magicos pôvont avêr plusiors traduccions.
+Les traduccions sont sèparâs per una virgula (,).
+Los èspâços de nom pôvont avêr ren que yona traduccion.
 
-Los noms de les pâges spèciâles et los mots magicos pôvont avêr plusiors traduccions. Les traduccions sont sèparâs per una virgula (,). Los noms de les entèrfaces et los titros des èspâços de nom pôvont avêr ren que yona traduccion.
+Dens les traduccions des èspâços de nom, <tt>$1 talk</tt> est spèciâl. <tt>$1</tt> est remplaciê per lo nom du seto (per ègzemplo <tt>{{ns:project_talk}}</tt>).
+S’o est pas possiblo d’obtegnir una èxprèssion valida dens voutra lengoua sen changiér lo nom du seto, volyéd vos veriér vers un dèvelopor.
 
-Dens les traduccions des èspâços de nom, <tt>$1 talk</tt> est spèciâl. <tt>$1</tt> est remplaciê per lo nom du seto (per ègzemplo <tt>{{ns:project_talk}}</tt>). S’o est pas possiblo d’obtegnir una èxprèssion valida dens voutra lengoua sen changiér lo nom du seto, volyéd vos veriér vers un dèvelopior.
-
-Vos dête apartegnir a la tropa des traductors por sôvar los changements. Los changements seront pas sôvâs devant que vos clicâd sur lo boton « Sôvar » d’avâl.',
-	'translate-magic-submit' => 'Alar',
+Vos dête apartegnir a la tropa des traductors por sôvar los changements.
+Los changements sont pas sôvâs tant que vos éd pas clicâ sur lo boton « Sôvar ».',
+	'translate-magic-module' => 'Modulo :',
+	'translate-magic-submit' => 'Listar',
 	'translate-magic-cm-export' => 'Èxportar',
 	'translate-magic-cm-to-be' => 'Vint',
 	'translate-magic-cm-current' => 'Ora',
 	'translate-magic-cm-original' => 'Originâl',
 	'translate-magic-cm-comment' => 'Comentèro :',
 	'translate-magic-cm-save' => 'Sôvar',
-	'translate-magic-cm-updatedusing' => 'Betâ a jorn en utilisent [[Special:Magic]]',
+	'translate-magic-cm-updatedusing' => 'Betâ a jorn avouéc [[Special:Magic]]',
 	'translate-magic-cm-savefailed' => 'Falyita de la sôvegouârda',
-	'translate-magic-special' => 'Noms de les pâges spèciâles',
+	'translate-magic-special' => 'Noms paralèlos de les pâges spèciâles',
 	'translate-magic-words' => 'Mots magicos',
-	'translate-magic-namespace' => 'Titros des èspâços de nom',
-	'translationchanges' => 'Traduccions modifiâs',
+	'translate-magic-namespace' => 'Noms des èspâços de nom',
+	'translationchanges' => 'Traduccions changiês',
 	'translationchanges-export' => 'èxportar',
 	'translationchanges-change' => '$1 : $2 per $3',
-	'translate-checks-parameters' => 'Los paramètres siuvents sont pas utilisâs : <strong>$1</strong>',
-	'translate-checks-balance' => 'Y at un nombro fôx de parentèses : <strong>$1</strong>',
-	'translate-checks-links' => 'Los lims siuvents sont pas de sûr : <strong>$1</strong>',
-	'translate-checks-xhtml' => 'Vos éte envitâ a remetre en place les balises siuventes avouéc celes que sont corrèctes : <strong>$1</strong>',
-	'translate-checks-plural' => 'La dèfinicion utilise <nowiki>{{PLURAL:}}</nowiki> mas pas la traduccion.',
+	'translate-checks-parameters' => '{{PLURAL:$2|Ceti paramètre est pas utilisâ|Cetos paramètres sont pas utilisâs}} :
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Ceti paramètre est encognu|Cetos paramètres sont encognus}} :
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-balance' => 'Y at un nombro mâl-par de {{PLURAL:$2|parentèsa|parentèses}} :
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links' => '{{PLURAL:$2|Ceti lim est|Cetos $2 lims sont}} pas de sûr :
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-xhtml' => 'Volyéd corregiér {{PLURAL:$2|ceta balisa|cetes balises}} :
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-plural' => 'La dèfinicion utilise <nowiki>{{PLURAL:}}</nowiki> mas pas sa traduccion.',
+	'translate-checks-pagename' => 'Èspâço de nom changiê dês la dèfinicion',
+	'translate-checks-format' => 'Ceta traduccion siut pas la dèfinicion ou ben at una sintaxa fôssa : $1',
+	'translate-checks-escape' => 'Cetos èchapements pôvont étre emprèvus : <strong>$1</strong>',
+	'translate-pref-nonewsletter' => 'Pas m’emmandar per mèl les lètres de novèles',
+	'right-translate' => 'Changiér avouéc l’entèrface de traduccion',
+	'translate-rc-translation-filter' => 'Filtrar les traduccions :',
+	'translate-rc-translation-filter-no' => 'Pas fâre ren',
+	'translate-rc-translation-filter-only' => 'Fâre vêre ren que les traduccions',
+	'translate-rc-translation-filter-filter' => 'Èxcllure les traduccions',
+	'translate-rc-translation-filter-site' => 'Ren que los changements de mèssâjos du seto',
+	'translationstats' => 'Statistiques de traduccion',
+	'translate-stats-edits' => 'Changements',
+	'translate-stats-users' => 'Traductors',
+	'translate-statsf-intro' => 'Vos pouede fâre des statistiques simples avouéc ceti formulèro.
+Totes les valors ont des limites de d’amont et de desot.',
+	'translate-statsf-options' => 'Chouèx du diagramo',
+	'translate-statsf-width' => 'Largior en pixèls',
+	'translate-statsf-height' => 'Hôtior en pixèls',
+	'translate-statsf-days' => 'Temps en jorns',
+	'translate-statsf-scale' => 'Granularitât',
+	'translate-statsf-scale-days' => 'Jorns',
+	'translate-statsf-scale-hours' => 'Hores',
+	'translate-statsf-count' => 'Mesera',
+	'translate-statsf-count-edits' => 'Nombro de changements',
+	'translate-statsf-count-users' => 'Traductors actifs',
+	'translate-statsf-language' => 'Lista de codes lengoues sèparâs per des virgules',
+	'translate-statsf-group' => 'Lista de codes de tropes sèparâs per des virgules',
+	'translate-statsf-submit' => 'Prèvisualisar',
+	'translate-tag-category' => 'Pâges traduisibles',
+	'translate-tag-page-desc' => 'Traduccion de la pâge vouiqui [[:$1]].',
+	'translate-tag-fuzzy-comment' => 'Dèfinicion changiê per l’utilisator [[User:$1|$1]] dens la vèrsion $2.',
+	'translate-tag-fuzzy-reason' => 'Dèfinicion changiê per l’utilisator « $1 » avouéc por comentèro « $3 » dens $2.',
+	'translate-sidebar-alltrans' => 'Dens les ôtres lengoues',
+	'translate-tag-noedit' => 'Cen est una pâge de traduccion betâ a jorn ôtomaticament.
+Vos pouede [$1 changiér la pâge sôrsa] ou ben [$2 betar a jorn la traduccion].',
+	'translations' => 'Totes les traduccions',
+	'translations-summary' => 'Buchiéd un nom de mèssâjo ce-desot por visualisar totes les traduccions disponibles.',
+	'translate-translations-no-message' => '« $1 » est pas un mèssâjo traduisiblo',
+	'translate-translations-none' => 'Y at pas de traduccion por « $1 »',
+	'translate-translations-fieldset-title' => 'Mèssâjo',
+	'translate-translations-messagename' => 'Nom :',
+	'translate-translations-project' => 'Projèt :',
+	'translate-translations-including-no-param' => "Volyéd spècefiar una cllâf de mèssâjo valida dens lo paramètre ''sot-pâge''",
+	'languagestats' => 'Statistiques de les lengoues',
+	'languagestats-summary' => 'Ceta pâge montre les statistiques de traduccion de totes les tropes de mèssâjos ([[MediaWiki:Translate-languagestats-groups|configurâs]]) dens una lengoua balyê.',
+	'translate-language-code' => 'Code lengoua',
+	'translate-language-code-field-name' => 'Code lengoua :',
+	'translate-suppress-complete' => 'Pas fâre vêre les tropes de mèssâjos complètament traduits',
+	'translate-language' => 'Lengoua',
+	'translate-total' => 'Mèssâjos',
+	'translate-untranslated' => 'Pas traduits',
+	'translate-percentage-complete' => 'Avance',
+	'translate-percentage-fuzzy' => 'Dèpassâs',
+	'translate-nothing-to-do' => 'Totes les traduccions possibles semblont avêr étâ fêtes.
+Vos éte encoragiê a revêre los mèssâjos dês [[Special:Translate|{{int:translate}}]].',
+	'translate-languagestats-groups' => ' # Apondéd des ID de tropes de mèssâjos, yon per legne por limitar les tropes
+ # que sont montrâs dessus Special:LanguageStats. Les tropes pas ègzistentes seront
+ # ignorâs.',
+	'translate-save' => 'Sôvar ($1)',
 );
 
 /** Friulian (Furlan)
@@ -3976,8 +4056,8 @@ $messages['he'] = array(
 	'translate-edit-contribute' => 'תרומה',
 	'translate-edit-no-information' => "'''להודעה זו אין תיעוד.
 אם אתם יודעים היכן או כיצד משתמשים בהודעה זו, באפשרותכם לעזור למתרגמים אחרים באמצעות הוספת תיעוד להודעה זו.'''",
-	'translate-edit-information' => 'מידע על ההודעה ($1)',
-	'translate-edit-in-other-languages' => 'ההודעה בשפות אחרות',
+	'translate-edit-information' => 'מידע על ההודעה "$2" ($1)',
+	'translate-edit-in-other-languages' => 'ההודעה "$1" בשפות אחרות',
 	'translate-edit-committed' => 'התרגום הנוכחי בתוכנה',
 	'translate-edit-warnings' => 'אזהרות על תרגומים חלקיים',
 	'translate-edit-goto-no-prev' => 'אין הודעה קודמת',
@@ -4349,10 +4429,6 @@ Dyrbiš w skupinje přełožowarjow być, zo by změny składował. Změny so nj
 	'translate-statsf-submit' => 'Přehlad',
 	'translate-tag-category' => 'Přełožujomne strony',
 	'translate-tag-page-desc' => 'Přełožk wikijoweje strony [[:$1]].',
-	'translate-tag-translate-link-desc' => 'Tutu stronu přełožić',
-	'translate-tag-legend' => 'Legenda',
-	'translate-tag-legend-fallback' => 'Přełožk w druhej rěči',
-	'translate-tag-legend-fuzzy' => 'Zestarjeny přełožk',
 	'translate-tag-fuzzy-comment' => 'Definicija wot [[User:$1|$1]] we wersiji $2 změnjena.',
 	'translate-tag-fuzzy-reason' => 'Definicija wot "$1" z komentarom "$3" w $2 změnjena.',
 	'translate-sidebar-alltrans' => 'W druhich rěčach',
@@ -4379,6 +4455,18 @@ Móžeš [$1 originalnu stronu wobdźěłać] abo [$2 přełožk aktualizować].
 	'translate-nothing-to-do' => 'Zda so, zo wšě móžne přełožki su sčinjene.
 Poruča so zdźělenki přez [[Special:Translate|{{int:translate}}]] přepruwować.',
 	'translate-save' => 'Składować ($1)',
+	'translate-group-desc-mediawikicore' => 'Tuta skupina zdźělenkow wobsahuje zdźělenki, kotrež so w aktualnej alfa-wersiji MediaWiki ({{CURRENTVERSION}}) wužiwaja',
+	'translate-group-desc-mediawikimostused' => 'Tuta skupina zdźělenkow wobsahuje [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 najhusćišo wužiwanych zdźělenkow] w MediaWiki',
+	'translate-group-desc-mediawikiextensions' => 'Hłowna skupina, kotraž wšě zdźělenki za podpěrane rozšěrjenja za MediaWiki wobsahuje.',
+	'translate-group-desc-collection' => 'Hłowna skupina, kotraž wšě zdźělenki za rozšěrjenje MediaWiki [http://www.mediawiki.org/wiki/Extension:Collection Collection] wobsahuje',
+	'translate-group-desc-flaggedrevs' => 'Hłowna skupina, kotraž wšě zdźělenki za rozšěrjenje MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs] wobsahuje',
+	'translate-group-desc-socialprofile' => 'Hłowna skupina, kotraž wšě zdźělenki za rozšěrjenja wobsahuje, kotrež su z rozšěrjenjom [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile] přiwuzne',
+	'translate-group-desc-translate' => 'Hłowna skupina, kotraž wšě zdźělenki za rozšěrjenje MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate] wobsahuje',
+	'translate-group-desc-wikiaextensions' => 'Hłowna skupina, kotraž wšě zdźělenki za podpěrowane rozšěrjenja MediaWiki wobsahuje, kotrež so wot [http://www.wikia.com Wikia] wužiwaja',
+	'translate-group-desc-wikihowextensions' => 'Hłowna skupina, kotraž wšě zdźělenki za podpěrowane rozšěrjenja MediaWiki wobsahuje, kotrež so přez [http://www.wikihow.com wikiHow] wužiwaja',
+	'translate-group-desc-wikimediaextensions' => 'Hłowna skupina, kotraž wšě zdźělenki za podpěrowane rozšěrjenja MediaWiki wobsahuje, kotrež so přez [http://wikimedia.org/ Wikimedia Foundation] wužiwaja',
+	'translate-group-desc-wikitravelextensions' => 'Hłowna skupina, kotraž wšě zdźělenki za podpěrowane rozšěrjenja MediaWiki, kotrež so přez [http://wikitravel.org Wikitravel] wužiwaja',
+	'translate-group-desc-uniwiki' => 'Hłowna skupina, kotraž wšě zdźělenki za rozšěrjenja wobsahuje, kotrež su z [http://unicefinnovation.org/wiki.php Uniwiki] přiwuzne',
 );
 
 /** Haitian (Kreyòl ayisyen)
@@ -4728,6 +4816,18 @@ Es recommendate revider le messages per medio del pagina [[Special:Translate|{{i
  # gruppos monstrate in Special:LanguageStats. Le gruppos non existente
  # essera ignorate.',
 	'translate-save' => 'Immagazinar ($1)',
+	'translate-group-desc-mediawikicore' => 'Iste gruppo contine le messages usate in le version alpha actual de MediaWiki ({{CURRENTVERSION}})',
+	'translate-group-desc-mediawikimostused' => 'Iste gruppo contine le [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 messages usate le plus frequentemente] in MediaWiki',
+	'translate-group-desc-mediawikiextensions' => 'Metagruppo con tote le messages pro le extensiones supportate pro MediaWiki',
+	'translate-group-desc-collection' => 'Metagruppo con tote le messages pro le extension de MediaWiki [http://www.mediawiki.org/wiki/Extension:Collection Collection].',
+	'translate-group-desc-flaggedrevs' => 'Metagruppo con tote le messages pro le extension de MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs Marcaversiones].',
+	'translate-group-desc-socialprofile' => 'Metagruppo con tote le messages pro le extensiones connexe al extension de MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Profilo social]',
+	'translate-group-desc-translate' => 'Metagruppo con tote le messages pro le extension de MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Traducer].',
+	'translate-group-desc-wikiaextensions' => 'Metagruppo con tote le messages pro le extensiones supportate de MediaWiki usate per [http://www.wikia.com Wikia]',
+	'translate-group-desc-wikihowextensions' => 'Metagruppo con tote le messages pro le extensiones supportate de MediaWiki usate per [http://www.wikihow.com wikiHow]',
+	'translate-group-desc-wikimediaextensions' => 'Metagruppo con tote le messages pro le extensiones supportate de MediaWiki usate per le [http://wikimedia.org/ Fundation Wikimedia]',
+	'translate-group-desc-wikitravelextensions' => 'Metagruppo con tote le messages pro le extensiones supportate de MediaWiki usate per [http://wikitravel.org Wikitravel]',
+	'translate-group-desc-uniwiki' => 'Metagruppo con tote le messages pro le extensiones connexe a [http://unicefinnovation.org/wiki.php Uniwiki]',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -7179,6 +7279,18 @@ U kunt de [$1 brontekst bewerken] of de [$2 vertaling bijwerken].',
 	'translate-nothing-to-do' => 'Alle mogelijke vertalingen lijken te zijn gemaakt.
 U wordt aangemoedigd om via [[Special:Translate|{{int:translate}}]] vertalingen te controleren.',
 	'translate-save' => 'Opslaan ($1)',
+	'translate-group-desc-mediawikicore' => 'Deze berichtengroep bevat de berichten die in de huidige alpha-versie van MediaWiki gebruikt worden - {{CURRENTVERSION}}',
+	'translate-group-desc-mediawikimostused' => 'Deze berichtengroep bevat de [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 meest gebruikte berichten] in MediaWiki',
+	'translate-group-desc-mediawikiextensions' => 'Metaberichtengroep die alle berichten bevat voor ondersteunde extensies voor MediaWiki',
+	'translate-group-desc-collection' => 'Metaberichtengroep die alle berichten bevat voor de MediaWiki-uitbreiding [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
+	'translate-group-desc-flaggedrevs' => 'Metaberichtengroep die alle berichten bevat voor de MediaWiki-uitbreiding [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
+	'translate-group-desc-socialprofile' => 'Metaberichtengroep die alle berichten bevat voor uitbreidingen gerelateerd aan [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
+	'translate-group-desc-translate' => 'Metaberichtengroep die alle berichten bevat voor de MediaWiki-uitbreiding [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
+	'translate-group-desc-wikiaextensions' => 'Metaberichtengroep die alle berichten bevat voor ondersteunde MediaWiki-uitbreidingen gebruikt door [http://www.wikia.com Wikia]',
+	'translate-group-desc-wikihowextensions' => 'Metaberichtengroep die alle berichten bevat voor ondersteunde MediaWiki-uitbreidingen gebruikt door [http://www.wikihow.com wikiHow]',
+	'translate-group-desc-wikimediaextensions' => 'Metaberichtengroep die alle berichten bevat voor ondersteunde MediaWiki-uitbreidingen gebruikt door de [http://wikimedia.org/ Wikimedia Foundation]',
+	'translate-group-desc-wikitravelextensions' => 'Metaberichtengroep die alle berichten bevat voor ondersteunde MediaWiki-uitbreidingen gebruikt door [http://wikitravel.org Wikitravel]',
+	'translate-group-desc-uniwiki' => 'Metaberichtengroep die alle berichten bevat voor uitbreidingen gerelateerd aan [http://unicefinnovation.org/wiki.php Uniwiki]',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)

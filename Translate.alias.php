@@ -360,6 +360,7 @@ $aliases['nl'] = array(
 	'TranslationStats' => array( 'Vertaalstatistieken', 'Vertalingsstatistieken' ),
 	'Translations' => array( 'Vertalingen' ),
 	'LanguageStats' => array( 'Taalstatistieken' ),
+	'PageTranslation' => array( 'Paginavertaling' ),
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬) */
