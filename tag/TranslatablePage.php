@@ -220,6 +220,7 @@ class TranslatablePage {
 		return $this->getTag( 'tp:tag' );
 	}
 
+	// Returns false if not found
 	protected function getTag( $tag, $dbt = DB_SLAVE ) {
 		$db = wfGetDB( $dbt );
 
@@ -378,7 +379,7 @@ class TranslatablePage {
 		$page = TranslatablePage::newFromTitle(
 			self::changeTitleText( $title, $title->getBaseText() ) );
 
-		if ( $page->getMarkedTag() === null ) return false;
+		if ( $page->getMarkedTag() === false ) return false;
 		return $page;
 	}
 
