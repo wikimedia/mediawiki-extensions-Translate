@@ -327,7 +327,10 @@ class SpecialPageTranslation extends SpecialPage {
 
 		$page->addMarkedTag( $newrevision, $changed );
 
+		// Re-generate caches
 		MessageIndex::cache( NS_TRANSLATIONS );
+		$page->getTranslationPercentages( true );
+
 		return false;
 	}
 

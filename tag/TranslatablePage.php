@@ -262,12 +262,12 @@ class TranslatablePage {
 		return $db->select( 'revtag', $fields, $conds, __METHOD__, $options );
 	}
 
-	public function getTranslationPercentages() {
+	public function getTranslationPercentages( $force = false ) {
 		// Check the memory cache, as this is very slow to calculate
 		global $wgMemc;
 		$memcKey = wfMemcKey( 'pt', 'status', $this->getTitle()->getPrefixedText() );
 		$cache = $wgMemc->get( $memcKey );
-		if ( is_array( $cache ) ) return $cache;
+		if ( !$force && is_array( $cache ) ) return $cache;
 
 		// Fetch the available translation pages from database
 		$dbr = wfGetDB( DB_SLAVE );
@@ -303,7 +303,6 @@ class TranslatablePage {
 		// English is always up-to-date
 		$temp['en'] = 1.00;
 
-		// TODO: Ideally there would be some kind of purging here
 		$wgMemc->set( $memcKey, $temp, 60*60*12 );
 		return $temp;
 	}
@@ -376,9 +375,10 @@ class TranslatablePage {
 
 	public static function isTranslationPage( Title $title ) {
 		if ( $title->getText() === $title->getBaseText() ) return false;
-	
-		$page = TranslatablePage::newFromTitle(
-			self::changeTitleText( $title, $title->getBaseText() ) );
+
+		$newtitle = self::changeTitleText( $title, $title->getBaseText() );
+		if ( !$newtitle ) throw new MWException( $title->getPrefixedText() );
+		$page = TranslatablePage::newFromTitle( $newtitle );
 
 		if ( $page->getMarkedTag() === false ) return false;
 		return $page;

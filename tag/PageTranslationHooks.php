@@ -384,7 +384,7 @@ FOO;
 		$pers = $page->getTranslationPercentages();
 		$per = @$pers[$title->getSubpageText()];
 		$per = ($per === null) ? 0 : $per * 100;
-		$titleText = $page->getTitle()->getText();
+		$titleText = $page->getTitle()->getPrefixedText();
 		$url = $page->getTranslationUrl( $title->getSubpageText() );
 
 		// Output
