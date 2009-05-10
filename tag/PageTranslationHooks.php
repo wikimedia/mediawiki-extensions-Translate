@@ -101,6 +101,9 @@ class PageTranslationHooks {
 		self::$allowTargetEdit = true;
 		$article->doEdit( $text, $summary, $flags );
 		self::$allowTargetEdit = false;
+
+		// purge cache
+		$page->getTranslationPercentages( true );
 	}
 
 	public static function addSidebar( $out, $tpl ) {
