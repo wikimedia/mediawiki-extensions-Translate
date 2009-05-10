@@ -152,11 +152,12 @@ descmsg = code-desc
 Collection - Core
 id = ext-collection-core
 file = Collection/CollectionCore.i18n.php
+descmsg = coll-desc
 
 Collection - Other
-descmsg = coll-desc
 id = ext-collection-other
 file = Collection/Collection.i18n.php
+descmsg = coll-desc
 ignored = coll-template_blacklist_title, coll-license_url
 
 Comment Pages

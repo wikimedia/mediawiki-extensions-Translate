@@ -236,9 +236,10 @@ abstract class MessageGroup {
 }
 
 class CoreMessageGroup extends MessageGroup {
-	protected $label = 'MediaWiki messages';
-	protected $id    = 'core';
-	protected $type  = 'mediawiki';
+	protected $label       = 'MediaWiki messages';
+	protected $id          = 'core';
+	protected $type        = 'mediawiki';
+	protected $description = '{{int:translate-group-desc-mediawikicore}}';
 
 	public function __construct() {
 		parent::__construct();
@@ -450,7 +451,7 @@ class CoreMostUsedMessageGroup extends CoreMessageGroup {
 	protected $id    = 'core-mostused';
 	protected $meta  = true;
 
-	protected $description = 'This is a list of about 500 most often displayed messages. The list has been build from data gathered from a profiling run on all Wikimedia wikis.';
+	protected $description = '{{int:translate-group-desc-mediawikimostused}}';
 
 	public function export( MessageCollection $messages ) { return 'Not supported'; }
 	public function exportToFile( MessageCollection $messages, $authors ) { return 'Not supported'; }

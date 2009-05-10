@@ -196,6 +196,8 @@ You are encouraged to review messages through [[Special:Translate|{{int:translat
 	'translate-save' => 'Save ($1)',
 
 	# Meta message group descriptions
+	'translate-group-desc-mediawikicore' => 'This message group contains the messages used in the current alpha version of MediaWiki ({{CURRENTVERSION}})',
+	'translate-group-desc-mediawikimostused' => 'This message group contains the [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 most often used messages] in MediaWiki',
 	'translate-group-desc-mediawikiextensions' => 'Meta message group containing all messages for supported extensions for MediaWiki',
 	'translate-group-desc-collection' => 'Meta message group containing all messages for the MediaWiki extension [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
 	'translate-group-desc-flaggedrevs' => 'Meta message group containing all messages for the MediaWiki extension [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
