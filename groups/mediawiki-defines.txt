@@ -187,8 +187,9 @@ Confirm Edit
 descmsg = captcha-desc
 
 ConfirmEdit Fancy Captcha
-desc = Captcha generator for Confirm Edit
 file = ConfirmEdit/FancyCaptcha.i18n.php
+descmsg = fancycaptcha-desc
+optional = fancycaptcha-desc
 
 Contact Page
 
