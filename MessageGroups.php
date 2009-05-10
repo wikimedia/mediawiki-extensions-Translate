@@ -644,6 +644,35 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		return $rev->getText();
 	}
 
+	public function fillCollection( MessageCollection $messages ) {
+		parent::fillCollection( $messages );
+		$page = TranslatablePage::newFromTitle( $this->title );
+		$markedRevs = $page->getMarkedRevs( 'tp:mark' );
+
+		foreach ( $messages as $key => $m ) {
+			$rev = $page->getTransrev( $key .'/' . $messages->code );
+			if ( $rev === false ) {
+				$m->database = TRANSLATE_FUZZY . $m->database;
+				continue;
+			}
+			foreach ( $markedRevs as $r ) {
+				var_dump( $rev );
+				if ( $rev === $r->rt_revision ) break;
+				$changed = explode( '|', unserialize($r->rt_value) );
+
+				// Get a suitable section key
+				$parts = explode( '/', $key );
+				$ikey = $parts[count($parts)-1];
+
+				// If the section was changed, reduce the score
+				if ( in_array($ikey, $changed, true) ) {
+					$m->database = TRANSLATE_FUZZY . $m->database;
+					continue 2;
+				}
+			}
+		}
+	}
+
 }
 
 

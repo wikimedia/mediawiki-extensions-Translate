@@ -246,7 +246,7 @@ class TranslatablePage {
 		return $translate->getFullURL( $params );
 	}
 
-	protected function getMarkedRevs( $tag ) {
+	public function getMarkedRevs( $tag ) {
 		$db = wfGetDB( DB_SLAVE );
 
 		// Can this be done in one query?
@@ -315,7 +315,8 @@ class TranslatablePage {
 		$total = 0;
 
 		foreach ( $collection as $key => $message ) {
-			if ( !$message->translated() ) continue; // No score
+
+			if ( $message->translation() === null ) continue; // No score
 
 			$score = 1;
 
