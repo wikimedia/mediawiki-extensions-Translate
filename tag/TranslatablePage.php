@@ -377,7 +377,7 @@ class TranslatablePage {
 		if ( $title->getText() === $title->getBaseText() ) return false;
 
 		$newtitle = self::changeTitleText( $title, $title->getBaseText() );
-		if ( !$newtitle ) throw new MWException( $title->getPrefixedText() );
+		if ( !$newtitle ) return false;
 		$page = TranslatablePage::newFromTitle( $newtitle );
 
 		if ( $page->getMarkedTag() === false ) return false;
