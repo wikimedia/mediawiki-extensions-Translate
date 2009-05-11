@@ -594,6 +594,10 @@ PNG Handler
 
 Poem
 
+Poll
+file = Poll/Poll.i18n.php
+descmsg = poll-desc
+
 Post Comment
 file = Postcomment/SpecialPostcomment.i18n.php
 descmsg = postcomment_desc
