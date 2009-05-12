@@ -200,7 +200,7 @@ class SpecialPageTranslation extends SpecialPage {
 		global $wgLang;
 		if ( method_exists( $wgLang, 'semicolonList' ) ) {
 			// BC for <1.15
-			$actionText .= $wgLang->semicolonList( $actions );
+			$actionText = $wgLang->semicolonList( $actions );
 		} else {
 			$actionText = implode( '; ', $actions );
 		}
