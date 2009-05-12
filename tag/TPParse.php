@@ -109,6 +109,10 @@ class TPParse {
 					$text = str_replace( $ph, $s->getTextForTrans(), $text );
 				} else {
 					$sectiontext = $msg->translation();
+
+					// Ideally we should not have fuzzy here, but old texts do
+					$sectiontext = str_replace( TRANSLATE_FUZZY, '', $sectiontext );
+
 					$vars = $s->getVariables();
 					foreach ( $vars as $key => $value ) {
 						$sectiontext = str_replace( $key, $value, $sectiontext );

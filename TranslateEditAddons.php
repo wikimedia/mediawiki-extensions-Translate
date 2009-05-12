@@ -106,7 +106,6 @@ EOEO;
 	static function addTools( $object ) {
 		$object->editFormTextTop .= self::editBoxes( $object );
 		global $wgMessageCache, $wgLang;
-		$wgMessageCache->addMessage( 'savearticle', "Save as {$wgLang->getCode()}", $wgLang->getCode() );
 		return true;
 	}
 
