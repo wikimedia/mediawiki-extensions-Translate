@@ -23,7 +23,7 @@ $messages['en'] = array(
 	
 	# Specific page on the special page
 	'tpt-badtitle' => 'Page name given ($1) is not a valid title',
-	'tpt-oldrevision' => '$2 is not the latest version of the page $1.
+	'tpt-oldrevision' => '$2 is not the latest version of the page [[$1]].
 Only latest versions can be marked for translation.',
 	'tpt-notsuitable' => 'Page $1 is not suitable for translation.
 Make sure it has <nowiki><translate></nowiki> tags and has a valid syntax.',
@@ -35,7 +35,6 @@ The page can now be <span class="plainlinks">[$3 translated]</span>.',
 Before marking this version for translation, check that the changes to sections are minimised to avoid unnecessary work for translators.',
 	'tpt-mark-summary' => 'Marked this version for translation',
 	'tpt-edit-failed' => 'Could not update the page: $1',
-	'tpt-insert-failed' => 'Could not add sections to the database.',
 	'tpt-already-marked' => 'The latest version of this page has already been marked for translation.',
 
 	# Page list on the special page
@@ -58,7 +57,10 @@ Before marking this version for translation, check that the changes to sections 
 	'tpt-target-page' => 'This page cannot be updated manually.
 This page is a translation of page [[$1]] and the translation can be updated using [$2 the translation tool].',
 	'tpt-unknown-page' => 'This namespace is reserved for content page translations.
-The page you are trying to edit does not seem to correspond any page marked for translation.'
+The page you are trying to edit does not seem to correspond any page marked for translation.',
+
+	'tpt-install' => 'Run php maintenance/update.php or web install to enable page translation feature.',
+	'tpt-install-ok' => 'Add <tt>$wgPageTranslationNoCheck = true;</tt> to your LocalSettings.php.'
 );
 
 /** Arabic (العربية)

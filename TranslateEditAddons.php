@@ -13,8 +13,11 @@ class TranslateEditAddons {
 	const MSG = 'translate-edit-';
 
 	static function addNavigation( &$outputpage, &$text ) {
-		global $wgUser, $wgTitle;
+		global $wgUser, $wgTitle, $wgTranslateMessageNamespaces;
 		$ns = $wgTitle->getNamespace();
+
+		if ( !in_array( $ns, $wgTranslateMessageNamespaces) ) return true;
+
 		list( $key, $code ) = self::figureMessage( $wgTitle );
 
 		$group = self::getMessageGroup( $ns, $key );
@@ -104,6 +107,10 @@ EOEO;
 
 
 	static function addTools( $object ) {
+		global $wgTranslateMessageNamespaces;
+		$ns = $object->mTitle->getNamespace();
+		if ( !in_array( $ns, $wgTranslateMessageNamespaces) ) return true;
+
 		$object->editFormTextTop .= self::editBoxes( $object );
 		global $wgMessageCache, $wgLang;
 		return true;

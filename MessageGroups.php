@@ -649,7 +649,10 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		foreach ( $messages as $key => $m ) {
 			$rev = $page->getTransrev( $key .'/' . $messages->code );
 			if ( $rev === false ) {
-				$m->database = TRANSLATE_FUZZY . $m->database;
+				if ( !$m->database === null ) {
+					//TODO: fixme, ugly ugly ugly
+					$m->database = TRANSLATE_FUZZY . $m->database;
+				}
 				continue;
 			}
 			foreach ( $markedRevs as $r ) {

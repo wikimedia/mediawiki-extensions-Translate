@@ -67,7 +67,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 		// This will modify the sections to include name property
 		$error = false;
-		$sections = $this->checkInput( $page, &$error );
+		$sections = $this->checkInput( $page, $error );
 		// Non-fatal error which prevents saving
 		if ( $error === false && $wgRequest->wasPosted() ) {
 			$err = $this->markForTranslation( $page, $sections );
@@ -198,7 +198,13 @@ class SpecialPageTranslation extends SpecialPage {
 		}
 
 		global $wgLang;
-		return $wgLang->semicolonList( $actions );
+		if ( method_exists( $wgLang, 'semicolonList' ) ) {
+			// BC for <1.15
+			$actionText .= $wgLang->semicolonList( $actions );
+		} else {
+			$actionText = implode( '; ', $actions );
+		}
+		return $actionText;
 	}
 
 	public function checkInput( TranslatablePage $page, &$error = false ) {
@@ -302,6 +308,13 @@ class SpecialPageTranslation extends SpecialPage {
 		if ( !$status->isOK() ) return array( 'tpt-edit-failed', $status->getWikiText() );
 
 		$newrevision = $status->value['revision'];
+
+		// In theory it is either null or Revision object,
+		// never revision object with null id, but who knows
+		if ( $newrevision instanceof Revision ) {
+			$newrevision = $newrevision->getId();
+		}
+
 		if ( $newrevision === null ) {
 			// Probably a no-change edit, so no new revision was assigned
 			$newrevision = $page->getTitle()->getLatestRevId();
@@ -323,10 +336,8 @@ class SpecialPageTranslation extends SpecialPage {
 		$dbw = wfGetDB( DB_MASTER );
 		$dbw->delete( 'translate_sections', array( 'trs_page' => $page->getTitle()->getArticleId() ), __METHOD__ );
 		$ok = $dbw->insert( 'translate_sections', $inserts, __METHOD__ );
-		if ( $ok === false ) return array( 'tpt-insert-failed' );
 
 		$page->addMarkedTag( $newrevision, $changed );
-
 		// Re-generate caches
 		MessageIndex::cache( NS_TRANSLATIONS );
 		$page->getTranslationPercentages( true );

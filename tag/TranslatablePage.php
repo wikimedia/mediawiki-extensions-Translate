@@ -105,7 +105,7 @@ class TranslatablePage {
 			$len   = strlen($matches[2][0][0]); // len of the content
 			$end   = $start + $len;
 
-			$ret = $this->sectionise( &$sections, substr( $contents, $start, $len ) );
+			$ret = $this->sectionise( $sections, substr( $contents, $start, $len ) );
 
 			$tagPlaceHolders[$ph] =
 				self::index_replace( $contents, $ret, $start, $end );
@@ -142,7 +142,7 @@ class TranslatablePage {
 		return substr( $string, 0, $start ) . $rep . substr( $string, $end );
 	}
 
-	protected function sectionise( $sections, $text ) {
+	protected function sectionise( &$sections, $text ) {
 		$flags = PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE;
 		$parts = preg_split( '~(\s*\n\n\s*|\s*$)~', $text, -1, $flags );
 		
@@ -197,11 +197,12 @@ class TranslatablePage {
 	}
 
 	protected function addTag( $tag, $revision, $value = null ) {
+
 		$dbw = wfGetDB( DB_MASTER );
 
-		// Can this be done in one query?
-		$id = $dbw->selectField( 'revtag_type', 'rtt_id',
-			array( 'rtt_name' => $tag ), __METHOD__ );
+		$id = $this->getTagId( $tag );
+
+		if ( is_object($revision) ) throw new MWException('Got object, excepted id');
 
 		$conds = array(
 			'rt_page' => $this->getTitle()->getArticleId(),

@@ -25,7 +25,7 @@ class TPSection {
 		$rep    = "\\1 $header\n";
 		$count  = 0;
 
-		$text = preg_replace( $re, $rep, $this->text, 1, &$count );
+		$text = preg_replace( $re, $rep, $this->text, 1, $count );
 		if ( $count === 0 ) {
 			$text = $header . "\n" . $this->text;
 		}

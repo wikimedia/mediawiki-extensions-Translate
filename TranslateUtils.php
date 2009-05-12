@@ -296,9 +296,16 @@ class TranslateUtils {
 	}
 
 	public static function messageKeyToGroup( $namespace, $key ) {
-		$key = self::normaliseKey( $namespace, $key );
+		$normkey = self::normaliseKey( $namespace, $key );
 		$index = self::messageIndex();
-		return @$index[$key];
+		$group = @$index[$normkey];
+
+		global $wgEnablePageTranslation;
+		if ( $wgEnablePageTranslation && !$group ) {
+			$group = MessageIndex::messageToGroup( $namespace, $key );
+		}
+		return $group;
+
 	}
 
 	public static function normaliseKey( $namespace, $key ) {

@@ -30,10 +30,8 @@ class MessageIndex {
 	}
 
 	public static function cache( $namespace = null ) {
-		if ( $namespace !== null ) {
-			$namepace = MWNamespace::getCanonicalName( $namespace );
-			if ( $namespace === false ) return null;
-		}
+		$namespace = self::checkNs( $namespace );
+		if ( $namespace === null ) return null;
 
 		$groups = MessageGroups::singleton()->getGroups();
 
@@ -100,6 +98,9 @@ class MessageIndex {
 	}
 
 	protected static function index( $namespace ) {
+		$namespace = self::checkNs( $namespace );
+		if ( $namespace === null ) return null;
+
 		global $wgMemc;
 		$memcKey = wfMemcKey( 'messageindex', $namespace );
 		$cache = unserialize( $wgMemc->get($memcKey) );
@@ -107,9 +108,17 @@ class MessageIndex {
 		// Missing? Update it
 		if ( !is_array($cache) ) self::cache( $namespace );
 		$cache = unserialize( $wgMemc->get($memcKey) );
-		if ( !is_array($cache) ) throw new MWException( "Caching failed" );
+		if ( !is_array($cache) ) throw new MWException( "Caching failed: $namespace" );
 
 		return $cache;
 
+	}
+
+	protected static function checkNs( $namespace ) {
+		if ( $namespace !== null ) {
+			$namepace = MWNamespace::getCanonicalName( $namespace );
+			if ( $namespace === false ) return null;
+		}
+		return $namespace;
 	}
 }

@@ -212,6 +212,16 @@ function efTranslateInit() {
 		// Page translation hooks
 		global $wgHooks;
 
+		// Database schema
+		$wgHooks['LoadExtensionSchemaUpdates'][] = 'PageTranslationHooks::schemaUpdates';
+
+		// Do not activate hooks if not setup properly
+		if ( !efTranslateCheckPT() ) {
+			$wgEnablePageTranslation = false;
+			return true;
+		}
+
+
 		// Register our css, is there a better place for this?
 		$wgHooks['OutputPageBeforeHTML'][] = 'PageTranslationHooks::injectCss';
 
@@ -238,11 +248,52 @@ function efTranslateInit() {
 
 		$wgHooks['ArticleViewHeader'][] = 'PageTranslationHooks::test';
 
-		// Database schema
-		$wgHooks['LoadExtensionSchemaUpdates'][] = 'PageTranslationHooks::onLoadExtensionSchemaUpdates';
-
 	}
 
+}
+
+
+function efTranslateCheckPT() {
+	global $wgHooks, $wgMemc;
+
+	$version = 2;
+	global $wgMemc;
+	$memcKey = wfMemcKey( 'pt' );
+	$ok = $wgMemc->get( $memcKey );
+	
+	wfLoadExtensionMessages( 'PageTranslation' );
+	if ( $ok === $version ) {
+		return true;
+	}
+
+
+	// Add our tags if they are not registered yet
+	// tp:tag is called also the ready tag
+	$tags = array( 'tp:mark', 'tp:tag', 'tp:transver' );
+
+	$dbw = wfGetDB( DB_MASTER );
+	if ( !$dbw->tableExists('revtag_type') ) {
+		$wgHooks['SiteNoticeAfter'][] = array('efTranslateCheckWarn', wfMsg( 'tpt-install' ) );
+		return false;
+	}
+		
+	foreach ( $tags as $tag ) {
+		// TODO: use insert ignore
+		$field = array( 'rtt_name' => $tag );
+		$ret = $dbw->selectField( 'revtag_type', 'rtt_name', $field, __METHOD__ );
+		if ( $ret !== $tag ) $dbw->insert( 'revtag_type', $field, __METHOD__ );
+	}
+
+	$wgMemc->set( $memcKey, $version );
+
+	return true;
+}
+
+function efTranslateCheckWarn( $msg, &$sitenotice ) {
+	global $wgOut;
+	$sitenotice = $msg;
+	$wgOut->enableClientCache( false );
+	return true;
 }
 
 function efTranslateInitTags( $parser ) {
@@ -256,5 +307,3 @@ if ( !defined('TRANSLATE_CLI') ) {
 	function STDOUT() {}
 	function STDERR() {}
 }
-
-$wgGroupPermissions['staff'        ]['pagetranslation'] = true;

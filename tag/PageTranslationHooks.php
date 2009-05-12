@@ -288,23 +288,12 @@ FOO;
 		return true;
 	}
 
-	public static function onLoadExtensionSchemaUpdates() {
+	public static function schemaUpdates() {
 		global $wgExtNewTables;
 		$dir = dirname( __FILE__ ) . '/..';
 		$wgExtNewTables[] = array( 'translate_sections', "$dir/translate.sql" );
 		$wgExtNewTables[] = array( 'revtag_type', "$dir/revtags.sql" );
 
-		// Add our tags if they are not registered yet
-		// tp:tag is called also the ready tag
-		$tags = array( 'tp:mark', 'tp:tag', 'tp:transver' );
-
-		$dbw = wfGetDB( DB_MASTER );
-		foreach ( $tags as $tag ) {
-			// TODO: use insert ignore
-			$field = array( 'rtt_name' => $tag );
-			$ret = $dbw->selectField( 'revtag_type', 'rtt_name', $field, __METHOD__ );
-			if ( $ret !== $tag ) $dbw->insert( 'revtag_type', $field, __METHOD__ );
-		}
 		return true;
 	}
 
@@ -368,7 +357,12 @@ FOO;
 
 		if ( !count($actions) ) return;
 		$legend  = "<div style=\"font-size: x-small; text-align: center\">";
-		$legend .= $wgLang->semicolonList( $actions );
+		if ( method_exists( $wgLang, 'semicolonList' ) ) {
+			// BC for <1.15
+			$legend .= $wgLang->semicolonList( $actions );
+		} else {
+			$legend .= implode( '; ', $actions );
+		}
 		$legend .= '</div><hr />';
 		
 		global $wgOut;
