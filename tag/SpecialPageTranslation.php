@@ -89,7 +89,7 @@ class SpecialPageTranslation extends SpecialPage {
 		$num = $wgLang->formatNum( $page->getParse()->countSections() );
 		$link = SpecialPage::getTitleFor( 'Translate' )->getFullUrl(
 			array( 'group' => 'page|' . $page->getTitle()->getPrefixedText() ) );
-		$wgOut->addWikiMsg( 'tpt-saveok', $titleText, $num, $link );
+		$wgOut->addHTML( wfMsgExt( 'tpt-saveok', array('parse'), $titleText, $num, $link ) );
 	}
 
 	public function loadPagesFromDB() {
@@ -276,8 +276,8 @@ class SpecialPageTranslation extends SpecialPage {
 		}
 
 		$deletedSections = $page->getParse()->getDeletedSections();
-		if ( count($deletedSections) ) {
-			$wgOut->addWikiMsg( 'tpt-deletedsections' );
+		if ( $num = count($deletedSections) ) {
+			$wgOut->addiHTML( wfMsgExt( 'tpt-deletedsections', array('parse'), $num ) );
 			foreach ( $deletedSections as $s ) {
 				$name = htmlspecialchars( $s->id );
 				$wgOut->addHTML(

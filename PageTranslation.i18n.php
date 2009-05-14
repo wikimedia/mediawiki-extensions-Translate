@@ -27,10 +27,10 @@ $messages['en'] = array(
 Only latest versions can be marked for translation.',
 	'tpt-notsuitable' => 'Page $1 is not suitable for translation.
 Make sure it has <nowiki><translate></nowiki> tags and has a valid syntax.',
-	'tpt-saveok' => 'The page "$1" has been marked up for translation with $2 translatable sections.
+	'tpt-saveok' => 'The page "$1" has been marked up for translation with $2 translatable {{PLURAL:$2|section|sections}}.
 The page can now be <span class="plainlinks">[$3 translated]</span>.',
 	'tpt-badsect' => '"$1" is not a valid name for section $2.',
-	'tpt-deletedsections' => 'The following sections will no longer be used:',
+	'tpt-deletedsections' => 'The following {{PLURAL:$1|section|sections}} will no longer be used:',
 	'tpt-showpage-intro' => 'Below new, existing and deleted sections are listed.
 Before marking this version for translation, check that the changes to sections are minimised to avoid unnecessary work for translators.',
 	'tpt-mark-summary' => 'Marked this version for translation',
@@ -70,6 +70,10 @@ $messages['qqq'] = array(
 	'tpt-desc' => 'Short description of this extension, shown on [[Special:Version]]. Do not translate or change links.',
 	'tpt-old-pages' => 'The words "some version" refer to "one version of the page", or "a single version of each of the pages", respectively. Each page can have either one or none of its versions marked for translaton.',
 	'tpt-rev-old' => '{{Identical|Version}}',
+	'tpt-saveok' => '$1 is a page title,
+$2 is a count of sections which can be used with PLURAL,
+$3 is an URL.',
+	'tpt-deletedsections' => '$1 is a count of sections.',
 );
 
 /** Arabic (العربية)
