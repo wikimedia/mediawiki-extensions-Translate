@@ -27,7 +27,7 @@ class OpenLayersMessageGroup extends MessageGroup {
 		'zh-tw' => 'zh-TW',
 	);
 
-	protected $optional = array(
+	protected $ignored = array(
 		'end'
 	);
 
