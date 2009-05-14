@@ -1,6 +1,9 @@
 Abuse filter
 file = AbuseFilter/AbuseFilter.alias.php
 
+Admin Links
+file = AdminLinks/AdminLinks.alias.php
+
 Advanced random
 file = AdvancedRandom/AdvancedRandom.alias.php
 
