@@ -7,6 +7,8 @@ Absentee Landlord
 Abuse Filter
 optional = abusefilter-edit-builder-op-bool-xor
 
+Admin Links
+
 Advanced Random
 file = AdvancedRandom/SpecialAdvancedRandom.i18n.php
 
