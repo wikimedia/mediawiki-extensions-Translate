@@ -68,12 +68,12 @@ The page you are trying to edit does not seem to correspond any page marked for 
  */
 $messages['qqq'] = array(
 	'tpt-desc' => 'Short description of this extension, shown on [[Special:Version]]. Do not translate or change links.',
-	'tpt-old-pages' => 'The words "some version" refer to "one version of the page", or "a single version of each of the pages", respectively. Each page can have either one or none of its versions marked for translaton.',
-	'tpt-rev-old' => '{{Identical|Version}}',
 	'tpt-saveok' => '$1 is a page title,
 $2 is a count of sections which can be used with PLURAL,
 $3 is an URL.',
 	'tpt-deletedsections' => '$1 is a count of sections.',
+	'tpt-old-pages' => 'The words "some version" refer to "one version of the page", or "a single version of each of the pages", respectively. Each page can have either one or none of its versions marked for translaton.',
+	'tpt-rev-old' => '{{Identical|Version}}',
 );
 
 /** Arabic (العربية)
@@ -108,10 +108,10 @@ $messages['be-tarask'] = array(
 Толькі апошнія вэрсіі могуць пазначацца для перакладу.',
 	'tpt-notsuitable' => 'Старонка $1 ня можа быць перакладзеная.
 Упэўніцеся, што яна ўтрымлівае тэгі <nowiki><translate></nowiki> і мае слушны сынтаксіс.',
-	'tpt-saveok' => 'Старонка «$1» была пазначаная для перакладу з $2 сэкцыямі.
+	'tpt-saveok' => 'Старонка «$1» была пазначаная для перакладу з $2 {{PLURAL:$2|сэкцыяй|сэкцыямі|сэкцыямі}}.
 Зараз старонка можа быць <span class="plainlinks">[$3 перакладзеная]</span>.',
 	'tpt-badsect' => '«$1» не зьяўляецца слушнай назвай для сэкцыі $2.',
-	'tpt-deletedsections' => 'Наступныя сэкцыі ня будуць болей выкарыстоўвацца:',
+	'tpt-deletedsections' => '{{PLURAL:$1|Наступная сэкцыя ня будзе|Наступныя сэкцыі ня будуць}} болей выкарыстоўвацца:',
 	'tpt-showpage-intro' => 'Ніжэй знаходзяцца новыя, існуючыя і выдаленыя сэкцыі.
 Перад пазначэньнем гэтай вэрсіі для перакладу, праверце зьмены ў сэкцыях для таго, каб пазьбегнуць непатрэбнай працы для перакладчыкаў.',
 	'tpt-mark-summary' => 'Пазначыў гэтую вэрсію для перакладу',
@@ -133,6 +133,7 @@ $messages['be-tarask'] = array(
 Гэта старонка зьяўляецца перакладам старонкі [[$1]], пераклад можа быць абноўлены з выкарыстаньнем [$2 інструмэнта перакладу].',
 	'tpt-unknown-page' => 'Гэта прастора назваў зарэзэрваваная для перакладаў старонак зьместу.
 Старонка, якую Вы спрабуеце рэдагаваць, верагодна не зьвязана зь якой-небудзь старонкай пазначанай для перакладу.',
+	'tpt-install' => 'Запусьціце php maintenance/update.php альбо усталюйце праз вэб-інтэрфэйс для актывізацыі інструмэнтаў перакладу старонак.',
 );
 
 /** Bosnian (Bosanski)
@@ -148,10 +149,15 @@ $messages['bs'] = array(
 	'tpt-diff-new' => 'Novi tekst',
 	'tpt-submit' => 'Označi ovu verziju za prevođenje',
 	'tpt-badtitle' => 'Zadano ime stranice ($1) nije valjan naslov',
+	'tpt-oldrevision' => '$2 nije posljednja verzija stranice [[$1]].
+Jedino posljednje verzije se mogu označiti za prevođenje.',
 	'tpt-notsuitable' => 'Stranica $1 nije pogodna za prevođenje.
 Provjerite da postoje oznake <nowiki><translate></nowiki> i da ima valjanu sintaksu.',
+	'tpt-badsect' => '"$1" nije valjano ime za sekciju $2.',
+	'tpt-mark-summary' => 'Ova vezija označena za prevođenje',
 	'tpt-edit-failed' => 'Nije moguće ažurirati stranicu: $1',
 	'tpt-already-marked' => 'Posljednja verzija ove stranice je već označena za prevođenje.',
+	'tpt-old-pages' => 'Neke verzije {{PLURAL:$1|ove stranice|ovih stranica}} su označene za prevođenje.',
 	'tpt-rev-latest' => 'posljednja verzija',
 	'tpt-rev-old' => 'verzija $1',
 	'tpt-translate-this' => 'prevedi ovu stranicu',
@@ -194,10 +200,10 @@ $messages['de'] = array(
 Nur die letzte Version kann zur Übersetzung markiert werden.',
 	'tpt-notsuitable' => 'Die Seite $1 ist nicht zum Übersetzen geeignet.
 Stelle sicher, das ein <nowiki><translate></nowiki>-Tag und gültige Syntax verwendet wird.',
-	'tpt-saveok' => 'Die Seite „$1“ mit $2 übersetzbaren Abschnitten wurde für die Übersetzung markiert.
+	'tpt-saveok' => 'Die Seite „$1“ mit $2 {{PLURAL:$2|übersetzbarem Abschnitt|übersetzbaren Abschnitten}} wurde für die Übersetzung markiert.
 Diese Seite kann nun <span class="plainlinks">[$3 übersetzt]</span> werden.',
 	'tpt-badsect' => '„$1“ ist kein gültiger Name für Abschnitt $2.',
-	'tpt-deletedsections' => 'Die folgenden Abschnitte werden nicht länger genutzt:',
+	'tpt-deletedsections' => '{{PLURAL:$1|Der folgende Abschnitt wird|Die folgenden Abschnitte werden}} nicht länger genutzt:',
 	'tpt-mark-summary' => 'Diese Seite wurde zum Übersetzen markiert',
 	'tpt-edit-failed' => 'Seite kann nicht aktualisiert werden: $1',
 	'tpt-already-marked' => 'Die letzte Version dieser Seite wurde bereits zur Übersetzung markiert.',
@@ -237,7 +243,7 @@ Jano aktualne wersije daju se za pśełožowanje markěrowaś.',
 Zawěsć, až ma toflicki <nowiki><translate></nowiki> a płaśiwu syntaksu.',
 	'tpt-saveok' => 'Bok "$1" jo se markěrował za pśełožowanje z $2 {{PLURAL:$2|pśełožujobnym wótrězkom|pśełožujobnyma wótrězkoma|pśełožujobnymi wótrězkami|pśełožujobnymi wótrězkami}}. Bok móže se něnto <span class="plainlinks">[$3 pśełožowaś]</span>.',
 	'tpt-badsect' => '"$1" njejo płaśiwe mě za wótrězk $2.',
-	'tpt-deletedsections' => 'Slědujuce wótrězki se južo njewužywaju:',
+	'tpt-deletedsections' => '{{PLURAL:$1|Slědujucy wótrězk južo njebuźo|Slědujucej wótrězka južo njebuźotej|Slědujuce wótrězki se južo njebudu|Slědujuce wótrězki se južo njebudu}} se wužywaś:',
 	'tpt-showpage-intro' => 'Dołojce su nowe, eksistěrujuce a wulašowane wótrězki nalicone.
 Nježli až markěrujoš toś tu wersiju za pśełožowanje, pśekontrolěruj, lěc změny na wótrězkach su zminiměrowane, aby se wobinuł njetrěbne źěło za pśełožowarjow.',
 	'tpt-mark-summary' => 'Jo toś tu wersiju za pśełožowanje markěrował',
@@ -262,6 +268,37 @@ Zda se, až bok, kótaryž wopytujoš wobźěłaś, njewótpowědujo bokoju, kó
 	'tpt-install' => 'Wuwjeź php maintenance/update.php abo webinstalaciju, aby zmóžnił funkciju pśełožowanja bokow.',
 );
 
+/** Spanish (Español)
+ * @author Crazymadlover
+ * @author Sanbec
+ */
+$messages['es'] = array(
+	'pagetranslation' => 'Traducción de página',
+	'right-pagetranslation' => 'Marcar versiones de páginas para traducción',
+	'tpt-desc' => 'Extensiones para traducir páginas de contenido',
+	'tpt-section' => 'Sección:',
+	'tpt-section-new' => 'Nueva sección:',
+	'tpt-diff-old' => 'Texto previo',
+	'tpt-diff-new' => 'Nuevo texto',
+	'tpt-submit' => 'Marcar esta versión para traducción',
+	'tpt-badtitle' => 'Nombre de página dado ($1) no es un título válido',
+	'tpt-oldrevision' => '$2 no es la última versión de la página [[$1]].
+Solamente las últimas versiones pueden ser marcadas para traducción',
+	'tpt-badsect' => '"$1" no es un nombre válido para la sección $2.',
+	'tpt-deletedsections' => 'Las siguientes secciones no serán más usadas:',
+	'tpt-mark-summary' => 'Marcada esta sección para traducción',
+	'tpt-edit-failed' => 'No pudo actualizar la página : $1',
+	'tpt-already-marked' => 'La última versión de esta página ya ha sido marcada para traducción.',
+	'tpt-old-pages' => 'Alguna versión de {{PLURAL:$1|esta página|estas páginas han}} sido marcadas para traducción.',
+	'tpt-rev-latest' => 'última versión',
+	'tpt-rev-old' => 'versión $1',
+	'tpt-rev-mark-new' => 'marcar esta versión para traducción',
+	'tpt-translate-this' => 'traducir esta página',
+	'translate-tag-translate-link-desc' => 'Traducir esta página',
+	'translate-tag-markthis' => 'Marcar esta página para traducción',
+	'tpt-languages-legend' => 'Otros idiomas:',
+);
+
 /** French (Français)
  * @author Crochet.david
  * @author Grondin
@@ -281,10 +318,10 @@ $messages['fr'] = array(
 Seule la dernière version de la page peut être marquée pour être traduite.",
 	'tpt-notsuitable' => "La page $1 n'est pas convenable pour être traduite.
 Soyez sûr qu'elle contient la balise <nowiki><translate></nowiki> et qu'elle a une syntaxe correcte.",
-	'tpt-saveok' => 'La page « $1 » a été marqué pour être traduite avec $2 sections traduisibles.
+	'tpt-saveok' => 'La page « $1 » a été marqué pour être traduite avec $2 {{PLURAL:$2|section traduisible|sections traduisibles}}.
 La page peut être <span class="plainlinks">[$3 traduite]</span> dès maintenant.',
 	'tpt-badsect' => "« $1 » n'est pas un nom valide pour la section $2.",
-	'tpt-deletedsections' => 'Les sections suivantes ne seront plus utilisées :',
+	'tpt-deletedsections' => '{{PLURAL:$1|La section suivante ne sera plus utilisée|Les sections suivantes ne seront plus utilisées}} :',
 	'tpt-showpage-intro' => 'Ci-dessous, les nouvelles traductions, celles existantes et supprimées.
 Avant de marquer ces versions pour être traduites, vérifier que les modifications aux sections sont minimisées pour éviter du travail inutile aux traducteurs.',
 	'tpt-mark-summary' => 'Cette version a été marqué pour être traduite',
@@ -326,10 +363,10 @@ $messages['frp'] = array(
 Solament la dèrriére vèrsion de la pâge pôt étre marcâ por étre traduita.',
 	'tpt-notsuitable' => 'La pâge $1 est pas convegnâbla por étre traduita.
 Seyâd de sûr que contint la balisa <nowiki><translate></nowiki> et qu’at una sintaxa justa.',
-	'tpt-saveok' => 'La pâge « $1 » at étâ marcâ por étre traduita avouéc $2 sèccions traduisibles.
+	'tpt-saveok' => 'La pâge « $1 » at étâ marcâ por étre traduita avouéc $2 {{PLURAL:$2|sèccion traduisibla|sèccions traduisibles}}.
 La pâge pôt étre <span class="plainlinks">[$3 traduita]</span> dês ora.',
 	'tpt-badsect' => '« $1 » est pas un nom valido por la sèccion $2.',
-	'tpt-deletedsections' => 'Cetes sèccions seront pas més utilisâs :',
+	'tpt-deletedsections' => '{{PLURAL:$1|Ceta sèccion serat|Cetes sèccions seront}} pas més utilisâ{{PLURAL:$1||s}} :',
 	'tpt-showpage-intro' => 'Ce-desot, les novèles traduccions, celes ègzistentes et suprimâs.
 Devant que marcar cetes vèrsions por étre traduites, controlâd que los changements a les sèccions sont petiôts por èvitar de travâly inutilo ux traductors.',
 	'tpt-mark-summary' => 'Ceta vèrsion at étâ marcâ por étre traduita',
@@ -337,6 +374,7 @@ Devant que marcar cetes vèrsions por étre traduites, controlâd que los change
 	'tpt-already-marked' => 'La dèrriére vèrsion de ceta pâge at ja étâ marcâ por étre traduita.',
 	'tpt-list-nopages' => 'Niona pâge at étâ marcâ por étre traduita ou ben prèsta por l’étre.',
 	'tpt-old-pages' => 'Des vèrsions de {{PLURAL:$1|ceta pâge|cetes pâges}} ont étâ marcâs por étre traduites.',
+	'tpt-new-pages' => '{{PLURAL:$1|Ceta pâge contint|Cetes pâges contegnont}} de tèxte avouéc des balises de traduccion, mas niona vèrsion de {{PLURAL:$1|ceta pâge est marcâ por étre traduita|cetes pâges sont marcâs por étre traduites}}.',
 	'tpt-rev-latest' => 'dèrriére vèrsion',
 	'tpt-rev-old' => 'vèrsion $1',
 	'tpt-rev-mark-new' => 'marcar ceta vèrsion por étre traduita',
@@ -348,6 +386,9 @@ Devant que marcar cetes vèrsions por étre traduites, controlâd que los change
 	'tpt-languages-legend' => 'Ôtres lengoues :',
 	'tpt-target-page' => 'Ceta pâge pôt pas étre betâ a jorn a la man.
 El est una vèrsion traduita de [[$1]] et la traduccion pôt étre betâ a jorn en utilisent [$2 l’outil de traduccion].',
+	'tpt-unknown-page' => 'Ceti èspâço de nom est resèrvâ por la traduccion de pâges.
+La pâge que vos tâchiéd de changiér semble pas corrèspondre a gins de pâge marcâ por étre traduita.',
+	'tpt-install' => 'Lanciéd php maintenance/update.php ou ben l’enstalacion Vouèbe por activar la fonccionalitât de traduccion de pâges.',
 );
 
 /** Galician (Galego)
@@ -367,10 +408,10 @@ $messages['gl'] = array(
 Só as últimas versións poden ser marcadas para seren traducidas.',
 	'tpt-notsuitable' => 'A páxina "$1" non é válida para ser traducida.
 Comprobe que teña as etiquetas <nowiki><translate></nowiki> e mais unha sintaxe válida.',
-	'tpt-saveok' => 'A páxina "$1" foi marcada para ser traducida, con $2 seccións traducibles.
+	'tpt-saveok' => 'A páxina "$1" foi marcada para ser traducida, {{PLURAL:$2|cunha sección traducible|con $2 seccións traducibles}}.
 A páxina agora pode ser <span class="plainlinks">[$3 traducida]</span>.',
 	'tpt-badsect' => '"$1" non é un nome válido para a sección $2.',
-	'tpt-deletedsections' => 'As seguintes seccións deixarán de ser utilizadas:',
+	'tpt-deletedsections' => '{{PLURAL:$1|A seguinte sección deixará|As seguintes seccións deixarán}} de ser {{PLURAL:$1|utilizada|utilizadas}}:',
 	'tpt-showpage-intro' => 'A continuación están listadas as seccións existentes e borradas.
 Antes de marcar esta versión para ser traducida, comprobe que as modificacións feitas ás seccións foron minimizadas para evitarlles traballo innecesario aos tradutores.',
 	'tpt-mark-summary' => 'Marcou esta versión para ser traducida',
@@ -412,10 +453,10 @@ $messages['gsw'] = array(
 Nume di letschte Versione chenne zum Iberseze markiert wäre.',
 	'tpt-notsuitable' => 'D Syte $1 cha nit iberstez wäre.
 Stell sicher, ass si <nowiki><translate></nowiki>-Markierige un e giltige Syntax het.',
-	'tpt-saveok' => 'D Syte "$1" isch zum Ibersetze markiert wore mit $2 Abschnit, wu chenne ibersetzt wäre.
+	'tpt-saveok' => 'D Syte "$1" isch zum Ibersetze markiert wore mit $2 {{PLURAL:$2|Abschnit, wu cha ibersetzt wäre|Abschnit, wu chenne ibersetzt wäre}}.
 D Syte cha jetz <span class="plainlinks">[$3 ibersetzt]</span> wäre.',
 	'tpt-badsect' => '"$1" isch kei giltige Name fir dr Abschnitt $2.',
-	'tpt-deletedsections' => 'Die Abschnitt wäre nit lenger brucht:',
+	'tpt-deletedsections' => '{{PLURAL:$1|Dää Abschnitt wird|Die Abschnitt wäre}} nit lenger brucht:',
 	'tpt-showpage-intro' => 'Unte sin Abschnitt ufglischtet, wu nej sin, sonigi wu s git un sonigi wu s nit git.
 Voreb Du die Versione zum Ibersetze markiersch, iberprief, ass d Änderige an dr Abschnitt gring ghalte sin go uunetigi Arbed bi dr Ibersetzig vermyde.',
 	'tpt-mark-summary' => 'het die Versione zum Ibersetze markiert',
@@ -460,7 +501,7 @@ Zaswěsć, zo ma taflički <nowiki><translate></nowiki> a płaćiwu syntaksu.',
 	'tpt-saveok' => 'Strona "$1" je so za přełožowanje z $2 {{PLURAL:$2|přełožujomnym wotrězkom|přełožujomnymaj wotrězkomaj|přełožujomnymi wotrězkami|přełožujomnymi wotrězkami}} markěrowała.
 Strona hodźi so nětko <span class="plainlinks">[$3 přełožować]</span>.',
 	'tpt-badsect' => '"$1" płaćiwe mjeno za wotrězk $2 njeje.',
-	'tpt-deletedsections' => 'Slědowace wotrězki hižo njebudu so wužiwać:',
+	'tpt-deletedsections' => '{{PLURAL:$1|Slědowacy wotrězk hižo njebudźe|Slědowacej wotrězkaj hižo njebudźetej|Slědowace wotrězki njebudu|Slědowace wotrězki njebudu}} so wužiwać:',
 	'tpt-showpage-intro' => 'Deleka su nowe, eksistowace a wušmórnjene wotrězki nalistowane.
 Prjedy hač tutu wersiju za přełožowanje markěruješ, skontroluj, hač změny wotrězkow su miniměrowane, zo by njetrěbne dźěło za přełožowarjow wobešoł.',
 	'tpt-mark-summary' => 'Je tutu wersiju za přełožowanje markěrował',
@@ -502,10 +543,10 @@ $messages['ia'] = array(
 Solmente le versiones le plus recente pote esser marcate pro traduction.',
 	'tpt-notsuitable' => 'Le pagina $1 non es traducibile.
 Assecura que illo contine etiquettas <nowiki><translate></nowiki> e ha un syntaxe valide.',
-	'tpt-saveok' => 'Le pagina "$1" ha essite marcate pro traduction con $2 sectiones traducibile.
+	'tpt-saveok' => 'Le pagina "$1" ha essite marcate pro traduction con $2 {{PLURAL:$2|section|sectiones}} traducibile.
 Le pagina pote ora esser <span class="plainlinks">[$3 traducite]</span>.',
 	'tpt-badsect' => '"$1" non es un nomine valide pro le section $2.',
-	'tpt-deletedsections' => 'Le sequente sectiones non essera plus usate:',
+	'tpt-deletedsections' => 'Le sequente {{PLURAL:$1|section|sectiones}} non essera plus usate:',
 	'tpt-showpage-intro' => 'In basso es listate sectiones nove, existente e delite.
 Ante de marcar iste version pro traduction, assecura que le modificationes al sectiones sia minimisate pro evitar labor innecessari pro traductores.',
 	'tpt-mark-summary' => 'Marcava iste version pro traduction',
@@ -546,7 +587,7 @@ $messages['ja'] = array(
 	'tpt-badtitle' => '指定したページ名 ($1) は無効なタイトルです',
 	'tpt-oldrevision' => '$2 はページ [[$1]] の最新版ではありません。翻訳対象に指定できるのは最新版のみです。',
 	'tpt-notsuitable' => 'ページ $1 は翻訳に対応していません。<nowiki><translate></nowiki>が含まれていること、またマークアップが正しいことを確認してください。',
-	'tpt-saveok' => 'ページ "$1" は翻訳対象に指定されており、 $2 の翻訳可能なセクションを含んでいます。このページを<span class="plainlinks">[$3 翻訳]</span>することができます。',
+	'tpt-saveok' => 'ページ「$1」は翻訳対象に指定されており、$2個の翻訳可能なセクションを含んでいます。このページを<span class="plainlinks">[$3 翻訳]</span>することができます。',
 	'tpt-badsect' => '「$1」はセクション $2 の名前として無効です。',
 	'tpt-deletedsections' => '以下のセクションはすでに使われていません:',
 	'tpt-showpage-intro' => '以下には新しいセクション、既存のセクション、そして削除されたセクションが一覧されています。この版を翻訳対象に指定する前に、セクションの変更を最小限にすることで不要な翻訳作業を回避できないか確認してください。',
@@ -579,6 +620,14 @@ $messages['km'] = array(
 	'translate-tag-translate-link-desc' => 'បកប្រែទំព័រនេះ',
 );
 
+/** Korean (한국어)
+ * @author Kwj2772
+ */
+$messages['ko'] = array(
+	'translate-tag-translate-link-desc' => '이 문서 번역하기',
+	'tpt-languages-legend' => '다른 언어:',
+);
+
 /** Ripoarisch (Ripoarisch)
  * @author Purodha
  */
@@ -596,7 +645,7 @@ $messages['ksh'] = array(
 	'tpt-notsuitable' => 'Di Sigg „$1“ paß nit för et Övversäze. Maach <code><nowiki><translate></nowiki></code>-Makeerunge erin, un looer dat de Süntax shtemmp.',
 	'tpt-saveok' => 'De Sigg „$1“ es för zem Övversäze makeet woode. Se hät {{PLURAL:$2|eine Afschnet|$2 Afschnedde|keine Afschnet}} för zem Övversäze. Di Sigg kann jäz <span class="plainlinks">[$3 övversaz weede]</span>.',
 	'tpt-badsect' => '„$1“ es kein jöltejje Name för dä Afschnett $2.',
-	'tpt-deletedsections' => 'Hee di Afschnedde wähde jiz nit mieh jebruch:',
+	'tpt-deletedsections' => 'Hee {{PLURAL:$1|dä Affschnett|di Afschnedde|di kei Afschnedde}} wähde jiz nit mieh jebruch:',
 	'tpt-showpage-intro' => 'Hee dronger sin Afschnedde opjeleß, di eruß jenumme woode, un di noch doh sin. Ih dat De hee di Version för ze Övversäze makeere deihß, loor drop, dat esu winnisch wi müjjelesch Änderonge aan Afschnedde doh sin, öm dä Övversäzere et Levve leisch ze maache.',
 	'tpt-mark-summary' => 'Han di Version för ze Övversäze makeet',
 	'tpt-edit-failed' => 'Kunnt de Sigg „$1“ nit ändere',
@@ -634,11 +683,12 @@ $messages['lb'] = array(
 Nëmmen déi lescht Versioune kënne fir d'Iwwersetzung markéiert ginn.",
 	'tpt-notsuitable' => "D'Säit $1 ass net geeegent fir iwwersat ze ginn.
 Vergewëssert Iech ob se <nowiki><translate></nowiki>-Taggen  an eng valabel Syntax huet.",
-	'tpt-deletedsections' => 'Dës Abschnitter ginn net méi benotzt:',
+	'tpt-deletedsections' => '{{PLURAL:$1|Dësen Abschnitt gëtt|Dës Abschnitter ginn}} net méi benotzt:',
 	'tpt-mark-summary' => "huet dës Versioun fir d'Iwwersetzung markéiert",
 	'tpt-edit-failed' => "D'Säit $1 konnt net aktualiséiert ginn",
 	'tpt-already-marked' => "Déilescht Versioun vun dëser Säit gouf scho fir d'Iwwersetzung markéiert.",
 	'tpt-list-nopages' => "Et si keng Säite fir d'Iwwersetzung markéiert respektiv fäerdeg fir fir d'Iwersetzung markéiert ze ginn.",
+	'tpt-old-pages' => "Eng Versioun vun {{PLURAL:$1|dëser Säit|dëse Säite}} gouf fir d'Iwwersetze markéiert.",
 	'tpt-rev-latest' => 'lescht Versioun',
 	'tpt-rev-old' => 'Versioun $1',
 	'tpt-rev-mark-new' => "dës Versioun fir d'Iwwersetzung markéieren",
@@ -696,13 +746,58 @@ De pagina die u probeert te bewerken lijkt niet overeen te komen met een te vert
 	'tpt-install' => 'Voer php maintenance/update.php of de webinstallatie uit om de paginavertaling te activeren.',
 );
 
+/** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
+ * @author Frokor
+ * @author Gunnernett
+ */
+$messages['nn'] = array(
+	'tpt-diff-new' => 'Ny tekst',
+	'translate-tag-translate-link-desc' => 'Set om denne sida',
+);
+
 /** Occitan (Occitan)
  * @author Cedric31
  */
 $messages['oc'] = array(
 	'pagetranslation' => 'Traduccion de paginas',
 	'right-pagetranslation' => 'Marcar de versions de paginas per èsser traduchas',
+	'tpt-desc' => 'Extension per traduire de paginas de contengut',
+	'tpt-section' => 'Seccion:',
+	'tpt-section-new' => 'Seccion novèla :',
+	'tpt-diff-old' => 'Tèxte precedent',
+	'tpt-diff-new' => 'Tèxte novèl',
+	'tpt-submit' => 'Marcar aquesta version per èsser traducha',
+	'tpt-badtitle' => 'Lo nom de pagina donada ($1) es pas un títol valid',
+	'tpt-oldrevision' => '$2 es pas la darrièra version de la pagina [[$1]].
+Sola la darrièra version de la pagina pòt èsser marcada per èsser traducha.',
+	'tpt-notsuitable' => "La pagina $1 conven pas per èsser traducha.
+Siatz segur(a) que conten la balisa <nowiki><translate></nowiki> e qu'a una sintaxi corrècta.",
+	'tpt-saveok' => 'La pagina « $1 » es estada marcada per èsser traducha amb $2 seccions tradusiblas.
+La pagina pòt èsser <span class="plainlinks">[$3 traducha]</span> tre ara.',
+	'tpt-badsect' => '« $1 » es pas un nom valid per la seccion $2.',
+	'tpt-deletedsections' => 'Las seccions seguentas seràn pas pus utilizadas :',
+	'tpt-showpage-intro' => "Çaijós, las traduccions novèlas, las qu'existisson e las suprimidas.
+Abans de marcar aquestas versions per èsser traduchas, verificatz que las modificacions a las seccions son minimizadas per evitar de trabalh inutil als traductors.",
+	'tpt-mark-summary' => 'Aquesta version es estada marcada per èsser traducha',
+	'tpt-edit-failed' => 'Impossible de metre a jorn la pagina $1',
+	'tpt-already-marked' => "La darrièra version d'aquesta pagina ja es estada marcada per èsser traducha.",
+	'tpt-list-nopages' => "Cap de pagina es pas estada marcada per èsser traducha o prèsta per l'èsser.",
+	'tpt-old-pages' => "De versions d'{{PLURAL:$1|aquesta pagina|aquestas paginas}} son estadas marcadas per èsser traduchas.",
+	'tpt-new-pages' => "{{PLURAL:$1|Aquesta pagina conten|Aquestas paginas contenon}} de tèxte amb de balisas de traduccion, mas cap de version d'{{PLURAL:$1|aquesta pagina es pas marcada per èsser traducha|aquestas paginas son pas marcadas per èsser traduchas}}.",
+	'tpt-rev-latest' => 'darrièra version',
+	'tpt-rev-old' => 'version $1',
+	'tpt-rev-mark-new' => 'marcar aquesta version per èsser traducha',
+	'tpt-translate-this' => 'traduire aquesta pagina',
 	'translate-tag-translate-link-desc' => 'Traduire aquesta pagina',
+	'translate-tag-markthis' => 'Marcar aquesta pagina per èsser traducha',
+	'tpt-translation-intro' => 'Aquesta pagina es una <span class="plainlinks">[$1 traduccion]</span> de la pagina [[$2]] e la traduccion es completada a $3 % e a jorn.
+<span class="mw-translate-fuzzy">Las traduccions pas a jorn son marcadas coma aquò.</span>',
+	'tpt-languages-legend' => 'Autras lengas :',
+	'tpt-target-page' => "Aquesta pagina pòt pas èsser mesa a jorn manualament.
+Es una version traducha de [[$1]] e la traduccion pòt èsser mesa a jorn en utilizant [$2 l'esplech de traduccion].",
+	'tpt-unknown-page' => "Aqueste espaci de noms es reservat per la traduccion de paginas.
+La pagina qu'ensajatz de modificar sembla pas correspondre a cap de pagina marcada per èsser traducha.",
+	'tpt-install' => "Aviatz php maintenance/update.php o l'installacion web per activar la foncionalitat de traduccion de paginas.",
 );
 
 /** Portuguese (Português)
@@ -834,10 +929,10 @@ $messages['sk'] = array(
 Na preklad je možné označiť iba posledné verzie stránok.',
 	'tpt-notsuitable' => 'Stránka $1 nie je vhodná na preklad.
 Uistite sa, že obsahuje značky <nowiki><translate></nowiki> a má platnú syntax.',
-	'tpt-saveok' => 'Stránka „$1“ bola označená na preklad s $2 sekciami, ktoré možno preložiť.
+	'tpt-saveok' => 'Stránka „$1“ bola označená na preklad s $2 {{PLURAL:$2|sekciou|sekciami}}, ktoré možno preložiť.
 Túto stránku je teraz možné <span class="plainlinks">[$3 preložiť]</span>.',
 	'tpt-badsect' => '„$1“ nie je platný názov sekcie $2.',
-	'tpt-deletedsections' => 'Nasledovné sekcie už nebudú využité:',
+	'tpt-deletedsections' => '{{PLURAL:$1|Nasledovná sekcia už nebude využitá|Nasledovné sekcie už nebudú využité}}:',
 	'tpt-showpage-intro' => 'Dolu sú uvedené nové, súčasné a zmazané sekcie,
 Predtým než túto verziu označíte na preklad skontrolujte, že zmeny sekcií sú minimálne aby ste zabránili zbytočnej práci prekladateľov.',
 	'tpt-mark-summary' => 'Táto verzia je označená na preklad',
@@ -874,5 +969,17 @@ $messages['sv'] = array(
 	'tpt-section-new' => 'Nytt avsnitt:',
 	'tpt-diff-old' => 'Föregående text',
 	'translate-tag-translate-link-desc' => 'Översätt den här sidan',
+);
+
+/** Telugu (తెలుగు)
+ * @author Veeven
+ */
+$messages['te'] = array(
+	'tpt-section' => 'విభాగం:',
+	'tpt-section-new' => 'కొత్త విభాగం:',
+	'tpt-diff-new' => 'కొత్త పాఠ్యం',
+	'tpt-translate-this' => 'ఈ పేజీని అనువదించండి',
+	'translate-tag-translate-link-desc' => 'ఈ పేజీని అనువదించండి',
+	'tpt-languages-legend' => 'ఇతర భాషలు:',
 );
 

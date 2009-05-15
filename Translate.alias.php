@@ -226,6 +226,7 @@ $aliases['ia'] = array(
 	'TranslationStats' => array( 'Statisticas de traduction' ),
 	'Translations' => array( 'Traductiones' ),
 	'LanguageStats' => array( 'Statisticas de linguas' ),
+	'PageTranslation' => array( 'Traduction de paginas' ),
 );
 
 /** Indonesian (Bahasa Indonesia) */
@@ -253,6 +254,7 @@ $aliases['ja'] = array(
 	'TranslationStats' => array( '翻訳統計' ),
 	'Translations' => array( '翻訳結果' ),
 	'LanguageStats' => array( '言語統計' ),
+	'PageTranslation' => array( 'ページ翻訳' ),
 );
 
 /** Georgian (ქართული) */
