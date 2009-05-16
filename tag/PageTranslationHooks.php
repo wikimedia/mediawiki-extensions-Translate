@@ -150,6 +150,9 @@ class PageTranslationHooks {
 		$status = $page->getTranslationPercentages();
 		if ( !$status ) return '';
 
+		// Fix title
+		$title = $page->getTitle();
+
 		// Sort by language code, which seems to be the only sane method
 		ksort( $status );
 
