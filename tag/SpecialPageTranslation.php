@@ -11,10 +11,6 @@ class SpecialPageTranslation extends SpecialPage {
 		SpecialPage::SpecialPage( 'PageTranslation' );
 	}
 
-	/**
-	 * Access point for this special page.
-	 * GLOBALS: $wgHooks, $wgOut.
-	 */
 	public function execute( $parameters ) {
 		wfLoadExtensionMessages( 'PageTranslation' );
 		$this->setHeaders();
@@ -89,7 +85,7 @@ class SpecialPageTranslation extends SpecialPage {
 		$num = $wgLang->formatNum( $page->getParse()->countSections() );
 		$link = SpecialPage::getTitleFor( 'Translate' )->getFullUrl(
 			array( 'group' => 'page|' . $page->getTitle()->getPrefixedText() ) );
-		$wgOut->addHTML( wfMsgExt( 'tpt-saveok', array('parse'), $titleText, $num, $link ) );
+		$wgOut->addWikiMsg( 'tpt-saveok',$titleText, $num, $link );
 	}
 
 	public function loadPagesFromDB() {
@@ -239,23 +235,34 @@ class SpecialPageTranslation extends SpecialPage {
 	}
 
 	public function showPage( TranslatablePage $page, $sections ) {
-		global $wgOut, $wgScript;
+		global $wgOut, $wgScript, $wgLang;
 
+		$wgOut->setSubtitle( $this->user->getSkin()->link( $page->getTitle() ) );
+		TranslateUtils::injectCSS();
 	
 		$wgOut->addWikiMsg( 'tpt-showpage-intro' );
 
+		$formParams = array(
+			'method' => 'post',
+			'action' => $this->getTitle()->getFullURL(),
+			'class'  => 'mw-tpt-sp-markform'
+		);
+
 		$wgOut->addHTML(
-			Xml::openElement( 'form', array( 'method' => 'post', 'action' => $this->getTitle()->getFullURL() ) ) .
+			Xml::openElement( 'form', $formParams ) .
 			Xml::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
 			Xml::hidden( 'revision', $page->getRevision() ) .
 			Xml::hidden( 'target', $page->getTitle()->getPrefixedtext() )
 		);
 
+		$wgOut->wrapWikiMsg( '==$1==', 'tpt-sections-oldnew' );
+
 		foreach ( $sections as $s ) {
 			if ( $s->type === 'new' ) {
-				$name = wfMsgHtml('tpt-section-new') . ' ' . Xml::input( 'tpt-sect-' . $s->id, 10, $s->name );
+				$input = Xml::input( 'tpt-sect-' . $s->id, 10, $s->name );
+				$name = wfMsgHtml( 'tpt-section-new', $input );
 			} else {
-				$name = wfMsgHtml('tpt-section') . ' ' . htmlspecialchars( $s->name );
+				$name = wfMsgHtml( 'tpt-section', htmlspecialchars($s->name) );
 			}
 
 			if ( $s->type === 'changed' ) {
@@ -267,32 +274,60 @@ class SpecialPageTranslation extends SpecialPage {
 				$text = TranslateUtils::convertWhiteSpaceToHTML( $s->getText() );
 			}
 
-			$wgOut->addHTML(
-				Xml::openElement( 'fieldset' ) .
-				Xml::tags( 'legend', null,  $name ) .
-				$text .
-				Xml::closeElement( 'fieldset' )
-			);
+			$this->makeSectionElement( $name, $s->type, $text );
 		}
 
 		$deletedSections = $page->getParse()->getDeletedSections();
-		if ( $num = count($deletedSections) ) {
-			$wgOut->addiHTML( wfMsgExt( 'tpt-deletedsections', array('parse'), $num ) );
+		if ( count($deletedSections) ) {
+			$wgOut->wrapWikiMsg( '==$1==', 'tpt-sections-deleted' );
 			foreach ( $deletedSections as $s ) {
-				$name = htmlspecialchars( $s->id );
-				$wgOut->addHTML(
-					Xml::openElement( 'fieldset' ) .
-					Xml::tags( 'legend', null, wfMsgHtml('tpt-section') . ' ' . $name ) .
-					TranslateUtils::convertWhiteSpaceToHTML( $s->getText() ) .
-					Xml::closeElement( 'fieldset' )
-				);
+				$name = wfMsgHtml( 'tpt-section-deleted', htmlspecialchars($s->id) );
+				$text = TranslateUtils::convertWhiteSpaceToHTML( $s->getText() );
+				$this->makeSectionElement( $name, $s->type, $text );
 			}
 		}
+
+		// Display template changes if applicable
+		if ( $page->getMarkedTag() !== false ) {
+
+			$newTemplate = $page->getParse()->getTemplatePretty();
+			$oldPage = TranslatablePage::newFromRevision( $page->getTitle(), $page->getMarkedTag() );
+			$oldTemplate = $oldPage->getParse()->getTemplatePretty();
+
+			if ( $oldTemplate !== $newTemplate ) {
+				$wgOut->wrapWikiMsg( '==$1==', 'tpt-sections-template' );
+
+				$diff = new DifferenceEngine;
+				$diff->setText( $oldTemplate, $newTemplate );
+				$text = $diff->getDiff( wfMsgHtml('tpt-diff-old'), wfMsgHtml('tpt-diff-new') );
+				$diff->showDiffStyle();
+
+				$contentParams = array( 'class' => 'mw-tpt-sp-content' );
+				$wgOut->addHTML( Xml::tags( 'div', $contentParams, $text ) );
+			}
+		}
+
 		$wgOut->addHTML(
 			Xml::submitButton( wfMsg( 'tpt-submit' ) ) .
 			Xml::closeElement( 'form' )
 		);
 	}
+
+		protected function makeSectionElement( $legend, $type, $content ) {
+			global $wgOut;
+
+			$containerParams = array( 'class' => "mw-tpt-sp-section mw-tpt-sp-section-type-{$type}" );
+			$legendParams = array( 'class' => 'mw-tpt-sp-legend' );
+			$contentParams = array( 'class' => 'mw-tpt-sp-content' );
+
+			$wgOut->addHTML(
+				Xml::tags( 'div', $containerParams,
+					Xml::tags( 'div', $legendParams, $legend ) .
+					Xml::tags( 'div', $contentParams, $content )
+				)
+			);
+		}
+
 
 	public function markForTranslation( TranslatablePage $page, $sections ) {
 		$text = $page->getParse()->getSourcePageText();

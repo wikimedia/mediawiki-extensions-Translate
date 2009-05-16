@@ -26,6 +26,16 @@ class TPParse {
 		return $this->template;
 	}
 
+	public function getTemplatePretty() {
+		$text = $this->template;
+		$sections = $this->getSectionsForSave();
+		foreach ( $sections as $ph => $s ) {
+			$text = str_replace( $ph, "<!--T:{$s->id}-->", $text );
+		}
+		return $text;
+
+	}
+
 	public function getSectionsForSave() {
 		$this->loadFromDatabase();
 

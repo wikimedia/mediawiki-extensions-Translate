@@ -176,7 +176,7 @@ class PremadeMediawikiExtensionGroups {
 	}
 }
 
-class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
+class AllMediawikiExtensionsGroup extends MessageGroup {
 	protected $label = 'MediaWiki extensions';
 	protected $id    = 'ext-0-all';
 	protected $meta  = true;
@@ -201,7 +201,7 @@ class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
 		if ( $this->classes === null ) {
 			$this->classes = MessageGroups::singleton()->getGroups();
 			foreach ( $this->classes as $index => $class ) {
-				if ( ( strpos( $class->getId(), 'ext-' ) !== 0 ) || $class->isMeta() ) {
+				if ( ( strpos( $class->getId(), 'ext-' ) !== 0 ) || $class->isMeta() || !$class->exists() ) {
 					unset( $this->classes[$index] );
 				}
 			}
@@ -249,6 +249,14 @@ class AllMediawikiExtensionsGroup extends ExtensionMessageGroup {
 			}
 		}
 		return $bools;
+	}
+
+	public function exists() {
+		$this->init();
+		foreach ( $this->classes as $class ) {
+			if ( $class->exists() ) return true;
+		}
+		return false;
 	}
 }
 

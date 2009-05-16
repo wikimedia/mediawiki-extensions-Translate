@@ -221,7 +221,9 @@ class SpecialTranslate extends SpecialPage {
 		$groups = MessageGroups::singleton()->getGroups();
 		$selector = new HTMLSelector( 'group', 'group', $this->options['group'] );
 		foreach ( $groups as $id => $class ) {
-			$selector->addOption( $class->getLabel(), $id );
+			if ( MessageGroups::getGroup( $id )->exists() ) {
+				$selector->addOption( $class->getLabel(), $id );
+			}
 		}
 		wfMemOut( __METHOD__ );
 		return $selector->getHTML();
@@ -350,6 +352,7 @@ class SpecialTranslate extends SpecialPage {
 		$structure = array();
 
 		foreach ( $groups as $id => $o ) {
+			if ( !MessageGroups::getGroup( $id )->exists() ) continue;
 			foreach ( $wgTranslateGroupStructure as $pattern => $hypergroup ) {
 				if ( preg_match( $pattern, $id ) ) {
 					// Emulate deepArraySet, because AFAIK php doesn't have one
@@ -394,7 +397,6 @@ class SpecialTranslate extends SpecialPage {
 
 	public function formatGroupInformation( $blocks, $level = 2 ) {
 		global $wgUser;
-
 
 		if ( is_array( $blocks ) ) {
 			$block = array_shift( $blocks );

@@ -133,7 +133,8 @@ class ViewMessagesTask extends TranslateTask {
 				$this->collection,
 				$this->group->getId(),
 				false,
-				$this->group->namespaces
+				$this->group->namespaces,
+				$this->getId()
 			) .
 			$tablefooter;
 	}
@@ -258,7 +259,8 @@ class ReviewMessagesTask extends ViewMessagesTask {
 				$this->collection,
 				$this->group->getId(),
 				true, /* Review mode */
-				$this->group->namespaces
+				$this->group->namespaces,
+				$this->getId()
 			) .
 			$tablefooter;
 	}

@@ -142,10 +142,9 @@ class PageTranslationHooks {
 		// Check if this is a source page or a translation page
 		$page = TranslatablePage::newFromTitle( $title );
 		if ( $page->getMarkedTag() === false ) {
-			$title = Title::makeTitle( $title->getNamespace(), $title->getBaseText() );
-			$page = TranslatablePage::newFromTitle( $title );
+			$page = TranslatablePage::isTranslationPage( $title );
 		}
-		if ( $page->getMarkedTag() === false )  return '';
+		if ( $page === false || $page->getMarkedTag() === false )  return '';
 
 
 		$status = $page->getTranslationPercentages();
@@ -248,7 +247,6 @@ FOO;
 
 	// Here we disable editing of some existing or unknown pages
 	public static function translationsCheck( $title, $user, $action, &$result ) {
-
 		// Case 1: Unknown section translations
 		if ( $title->getNamespace() == NS_TRANSLATIONS && $action === 'edit' ) {
 			$group = MessageIndex::titleToGroup( $title );
@@ -260,13 +258,13 @@ FOO;
 				return false;
 			}
 
+			return true;
+		}
+
+
 		// Case 2: Target pages
-		} elseif( $title->getBaseText() != $title->getText() ) {
-			$newtitle = Title::makeTitle( $title->getNamespace(), $title->getBaseText() );
-
-			// Base page does not exists, cannot be translatable page
-			if ( !$newtitle || !$newtitle->exists() ) return true;
-
+		$page = TranslatablePage::isTranslationPage( $title );
+		if ( $page !== false ) {
 			// Local override of fuzzybot is allowed
 			global $wgTranslateFuzzyBotName;
 			if ( self::$allowTargetEdit ||
@@ -346,13 +344,23 @@ FOO;
 			$actions[] = $sk->link( $translate, $linkDesc, array(), $par);
 		}
 
-		if ( $canmark && $wgUser->isAllowed('pagetranslation') ) {
-			$par = array(
-				'target' => $title->getPrefixedText()
-			);
+		if ( $canmark ) {
+			$diffUrl = $title->getFullUrl( array( 'diff' => $ready ) );
+			$par = array( 'target' => $title->getPrefixedText() );
 			$translate = SpecialPage::getTitleFor( 'PageTranslation' );
-			$linkDesc  = wfMsgHtml( 'translate-tag-markthis' );
-			$actions[] = $sk->link( $translate, $linkDesc, array(), $par);
+
+			if ( $wgUser->isAllowed('pagetranslation') ) {
+				// This page has never been marked
+				if ( $marked === false ) {
+					$linkDesc  = wfMsgHtml( 'translate-tag-markthis' );
+					$actions[] = $sk->link( $translate, $linkDesc, array(), $par);
+				} else {
+					$markUrl = $translate->getFullUrl( $par );
+					$actions[] = wfMsgExt( 'translate-tag-markthisagain', 'parseinline', $diffUrl, $markUrl );	
+				}
+			} else {
+				$actions[] = wfMsgExt( 'translate-tag-hasnew', 'parseinline', $diffUrl );
+			}
 		}
 
 		if ( !count($actions) ) return;
@@ -377,17 +385,26 @@ FOO;
 		$page = TranslatablePage::isTranslationPage( $title );
 		if ( $page === false ) return;
 
+		list( , $code ) = TranslateUtils::figureMessage( $title->getText() );
+
 		// Get the translation percentage
 		$pers = $page->getTranslationPercentages();
-		$per = @$pers[$title->getSubpageText()];
+		$per = @$pers[$code];
 		$per = ($per === null) ? 0 : $per * 100;
 		$titleText = $page->getTitle()->getPrefixedText();
-		$url = $page->getTranslationUrl( $title->getSubpageText() );
+		$url = $page->getTranslationUrl( $code );
 
 		// Output
 		wfLoadExtensionMessages( 'PageTranslation' );
-		$wrap = '<div style="font-size: x-small; text-align: center">$1</div><hr />';
-		$wgOut->wrapWikiMsg( $wrap, array( 'tpt-translation-intro', $url, $titleText, $per)  );
+		$wrap = '<div style="font-size: x-small; text-align: center">$1</div>';
+		
+		$wgOut->wrapWikiMsg( $wrap, array( 'tpt-translation-intro', $url, $titleText, $per) );
+
+		if ( ((int) $per) < 100 ) {
+			$wrap = '<div style="font-size: x-small; text-align: center" class="mw-translate-fuzzy">$1</div>';
+			$wgOut->wrapWikiMsg( $wrap, array( 'tpt-translation-intro-fuzzy' ) );
+		}
+		$wgOut->addHTML( '<hr />' );
 
 	}
 

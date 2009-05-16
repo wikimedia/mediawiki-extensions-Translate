@@ -50,6 +50,8 @@ $wgHooks['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';
 $wgHooks['OutputPageBeforeHTML'][] = 'TranslateEditAddons::addNavigation';
 $wgHooks['AlternateEdit'][] = 'TranslateEditAddons::intro';
 $wgHooks['EditPageBeforeEditButtons'][] = 'TranslateEditAddons::buttonHack';
+$wgHooks['EditPage::showEditForm:fields'][] = 'TranslateEditAddons::keepFields';
+$wgHooks['SkinTemplateTabs'][] = 'TranslateEditAddons::tabs';
 
 $wgDefaultUserOptions['translate'] = 0;
 $wgHooks['GetPreferences'][] = 'TranslatePreferences::onGetPreferences';
@@ -57,6 +59,7 @@ $wgHooks['GetPreferences'][] = 'TranslatePreferences::onGetPreferences';
 $wgHooks['SpecialRecentChangesQuery'][] = 'TranslateRcFilter::translationFilter';
 $wgHooks['SpecialRecentChangesPanel'][] = 'TranslateRcFilter::translationFilterForm';
 $wgHooks['SkinTemplateToolboxEnd'][] = 'TranslateToolbox::toolboxAllTranslations';
+
 
 $wgEnablePageTranslation = false;
 $wgPageTranslationNamespace = 1198;
@@ -256,7 +259,7 @@ function efTranslateInit() {
 function efTranslateCheckPT() {
 	global $wgHooks, $wgMemc;
 
-	$version = 2;
+	$version = "2"; // Must be a string
 	global $wgMemc;
 	$memcKey = wfMemcKey( 'pt' );
 	$ok = $wgMemc->get( $memcKey );

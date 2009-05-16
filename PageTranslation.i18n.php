@@ -14,12 +14,19 @@ $messages['en'] = array(
 	'pagetranslation' => 'Page translation',
 	'right-pagetranslation' => 'Mark versions of pages for translation',
 	'tpt-desc' => 'Extension for translating content pages',
-	'tpt-section' => 'Section:',
-	'tpt-section-new' => 'New section:',
+	'tpt-section' => 'Translation unit $1',
+	'tpt-section-new' => 'New translation unit. Name: $1',
+	'tpt-section-deleted' => 'Translation unit $1',
+	'tpt-template' => 'Page template',
+	'tpt-templatediff' => 'The page template has changed.',
 
 	'tpt-diff-old' => 'Previous text',
 	'tpt-diff-new' => 'New text',
 	'tpt-submit' => 'Mark this version for translation',
+
+	'tpt-sections-oldnew' => 'New and existing translation units',
+	'tpt-sections-deleted' => 'Deleted translation units',
+	'tpt-sections-template' => 'Translation page template',
 	
 	# Specific page on the special page
 	'tpt-badtitle' => 'Page name given ($1) is not a valid title',
@@ -27,10 +34,9 @@ $messages['en'] = array(
 Only latest versions can be marked for translation.',
 	'tpt-notsuitable' => 'Page $1 is not suitable for translation.
 Make sure it has <nowiki><translate></nowiki> tags and has a valid syntax.',
-	'tpt-saveok' => 'The page "$1" has been marked up for translation with $2 translatable {{PLURAL:$2|section|sections}}.
+	'tpt-saveok' => 'The page [[$1]] has been marked up for translation with $2 {{PLURAL:$2|translation unit|translation units}}.
 The page can now be <span class="plainlinks">[$3 translated]</span>.',
-	'tpt-badsect' => '"$1" is not a valid name for section $2.',
-	'tpt-deletedsections' => 'The following {{PLURAL:$1|section|sections}} will no longer be used:',
+	'tpt-badsect' => '"$1" is not a valid name for a translation unit $2.',
 	'tpt-showpage-intro' => 'Below new, existing and deleted sections are listed.
 Before marking this version for translation, check that the changes to sections are minimised to avoid unnecessary work for translators.',
 	'tpt-mark-summary' => 'Marked this version for translation',
@@ -42,15 +48,17 @@ Before marking this version for translation, check that the changes to sections 
 	'tpt-old-pages' => 'Some version of {{PLURAL:$1|this page has|these pages have}} been marked for translation.',
 	'tpt-new-pages' => '{{PLURAL:$1|This page contains|These pages contain}} text with translation tags, but no version of {{PLURAL:$1|this page is|these pages are}} currently marked for translation.',
 	'tpt-rev-latest' => 'latest version',
-	'tpt-rev-old' => 'version $1',
+	'tpt-rev-old' => 'difference to previous marked version',
 	'tpt-rev-mark-new' => 'mark this version for translation',
 	'tpt-translate-this' => 'translate this page',
 
 	# Source and translation page headers
 	'translate-tag-translate-link-desc' => 'Translate this page',
 	'translate-tag-markthis' => 'Mark this page for translation',
-	'tpt-translation-intro' => 'This page is a <span class="plainlinks">[$1 translated version]</span> of a page [[$2]] and the translation is $3% complete and up to date.
-<span class="mw-translate-fuzzy">Outdated translations are marked like this.</span>',
+	'translate-tag-markthisagain' => 'This page has <span class="plainlinks">[$1 changes]</span> since it was last <span class="plainlinks">[$2 marked for translation]</span>.',
+	'translate-tag-hasnew' => 'This page contains <span class="plainlinks">[$1 changes]</span> which are not marked for translation.',
+	'tpt-translation-intro' => 'This page is a <span class="plainlinks">[$1 translated version]</span> of a page [[$2]] and the translation is $3% complete and up to date.',
+	'tpt-translation-intro-fuzzy' => 'Outdated translations are marked like this.',
 
 	'tpt-languages-legend' => 'Other languages:',
 
@@ -71,7 +79,6 @@ $messages['qqq'] = array(
 	'tpt-saveok' => '$1 is a page title,
 $2 is a count of sections which can be used with PLURAL,
 $3 is an URL.',
-	'tpt-deletedsections' => '$1 is a count of sections.',
 	'tpt-old-pages' => 'The words "some version" refer to "one version of the page", or "a single version of each of the pages", respectively. Each page can have either one or none of its versions marked for translaton.',
 	'tpt-rev-old' => '{{Identical|Version}}',
 );

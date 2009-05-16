@@ -233,6 +233,11 @@ abstract class MessageGroup {
 	public static function factory( $label, $id ) {
 		return null;
 	}
+
+	// Can be overwritten to retun false if something is wrong
+	public function exists() {
+		return true;
+	}
 }
 
 class CoreMessageGroup extends MessageGroup {
@@ -394,6 +399,10 @@ class ExtensionMessageGroup extends MessageGroup {
 		$writer = new WikiExtensionFormatWriter( $this );
 		$writer->variableName = $this->getVariableName();
 		return $writer;
+	}
+
+	public function exists() {
+		return is_readable( $this->getMessageFileWithPath( 'en' ) );
 	}
 }
 
@@ -614,7 +623,6 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		ksort( $defs );
 		$new_defs = array();
 		foreach ( $defs as $k => $v ) $new_defs[$prefix.$k] = $v;
-
 		return $new_defs;
 	}
 

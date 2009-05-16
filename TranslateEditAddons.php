@@ -399,4 +399,25 @@ EOEO;
 		TranslateUtils::injectCSS();
 		return Xml::tags( 'div', array( 'class' => 'mw-sp-translate-edit-fields' ), implode( "\n\n", $boxes ) );
 	}
+
+	public static function tabs( $skin, &$tabs ) {
+		global $wgTranslateMessageNamespaces;
+		$ns = $skin->mTitle->getNamespace();
+
+		if ( !in_array( $ns, $wgTranslateMessageNamespaces) ) return true;
+
+		unset( $tabs['protect'] );
+
+		return true;
+	}
+
+	public static function keepFields( $edit, $out ) {
+		global $wgRequest;
+		$out->addHTML( "\n" .
+			Xml::hidden( 'loadgroup', $wgRequest->getText( 'loadgroup' ) ) .
+			Xml::hidden( 'loadtask', $wgRequest->getText( 'loadtask' ) ) .
+			"\n"
+		);
+		return true;
+	}
 }

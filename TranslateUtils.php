@@ -159,8 +159,9 @@ class TranslateUtils {
 		return $tableheader;
 	}
 
+	// Todo: extract to own class
 	public static function makeListing( MessageCollection $messages, $group,
-		$review = false, array $namespaces ) {
+		$review = false, array $namespaces, $task = '' ) {
 
 		global $wgUser;
 		$sk = $wgUser->getSkin();
@@ -196,7 +197,8 @@ class TranslateUtils {
 					array(),
 					array(
 						'action' => 'edit',
-						'loadgroup' => $group
+						'loadgroup' => $group,
+						'loadtask' => $task
 					),
 					'known'
 				);

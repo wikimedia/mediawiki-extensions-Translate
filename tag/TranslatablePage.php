@@ -301,8 +301,9 @@ class TranslatablePage {
 			$temp[$collection->code] = sprintf( '%.2f', $percent );
 				
 		}
-		// English is always up-to-date
-		$temp['en'] = 1.00;
+		// Content language is always up-to-date
+		global $wgContLang;
+		$temp[$wgContLang->getCode()] = 1.00;
 
 		$wgMemc->set( $memcKey, $temp, 60*60*12 );
 		return $temp;
@@ -361,23 +362,33 @@ class TranslatablePage {
 	}
 
 	protected function getTagId( $tag ) {
+		$validTags = array( 'tp:mark', 'tp:tag', 'tp:transver' );
+		if ( !in_array( $tag, $validTags ) ) {
+			throw new MWException( "Invalid tag $tag requested");
+		}
+
+		// Simple static cache
 		static $tagcache = array();
-		if ( !isset($tagcache[$tag]) ) {
+
+		if ( !count($tagcache) ) {
 			$db = wfGetDB( DB_SLAVE );
-			$tagcache[$tag] = $db->selectField(
+			$res = $db->select(
 				'revtag_type', // Table
-				'rtt_id', // Field
-				array( 'rtt_name' => $tag ), // Conds
+				array( 'rtt_name', 'rtt_id' ),
+				array( 'rtt_name' => $validTags ),
 				__METHOD__
 			);
+			foreach ( $res as $r ) {
+				$tagcache[$r->rtt_name] = $r->rtt_id;
+			}
 		}
 		return $tagcache[$tag];
 	}
 
 	public static function isTranslationPage( Title $title ) {
-		if ( $title->getText() === $title->getBaseText() ) return false;
-
-		$newtitle = self::changeTitleText( $title, $title->getBaseText() );
+		list( $key, $code ) = TranslateUtils::figureMessage( $title->getText() );
+		if ( $key === '' || $code === '' ) return false;
+		$newtitle = self::changeTitleText( $title, $key );
 		if ( !$newtitle ) return false;
 		$page = TranslatablePage::newFromTitle( $newtitle );
 
