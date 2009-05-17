@@ -214,7 +214,8 @@ class TranslateUtils {
 	}
 
 	public static function messageIndex() {
-		$keyToGroup = array();
+		static $keyToGroup = null;
+		if ( $keyToGroup !== null ) return $keyToGroup;
 		if ( file_exists( TRANSLATE_INDEXFILE ) ) {
 			$keyToGroup = unserialize( file_get_contents( TRANSLATE_INDEXFILE ) );
 		} else {
