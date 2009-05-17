@@ -76,6 +76,7 @@ The page you are trying to edit does not seem to correspond any page marked for 
  */
 $messages['qqq'] = array(
 	'tpt-desc' => 'Short description of this extension, shown on [[Special:Version]]. Do not translate or change links.',
+	'tpt-sections-oldnew' => '"New and existing" refers to the sum of: (a) new translation units, that were added, plus (b) the already existing ones, which were retained.',
 	'tpt-saveok' => '$1 is a page title,
 $2 is a count of sections which can be used with PLURAL,
 $3 is an URL.',
@@ -118,7 +119,6 @@ $messages['be-tarask'] = array(
 	'tpt-saveok' => 'Старонка «$1» была пазначаная для перакладу з $2 {{PLURAL:$2|сэкцыяй|сэкцыямі|сэкцыямі}}.
 Зараз старонка можа быць <span class="plainlinks">[$3 перакладзеная]</span>.',
 	'tpt-badsect' => '«$1» не зьяўляецца слушнай назвай для сэкцыі $2.',
-	'tpt-deletedsections' => '{{PLURAL:$1|Наступная сэкцыя ня будзе|Наступныя сэкцыі ня будуць}} болей выкарыстоўвацца:',
 	'tpt-showpage-intro' => 'Ніжэй знаходзяцца новыя, існуючыя і выдаленыя сэкцыі.
 Перад пазначэньнем гэтай вэрсіі для перакладу, праверце зьмены ў сэкцыях для таго, каб пазьбегнуць непатрэбнай працы для перакладчыкаў.',
 	'tpt-mark-summary' => 'Пазначыў гэтую вэрсію для перакладу',
@@ -133,8 +133,7 @@ $messages['be-tarask'] = array(
 	'tpt-translate-this' => 'перакласьці гэту старонку',
 	'translate-tag-translate-link-desc' => 'Перакласьці гэту старонку',
 	'translate-tag-markthis' => 'Пазначыць гэту старонку для перакладу',
-	'tpt-translation-intro' => 'Гэта старонка <span class="plainlinks">[$1 перакладзеная вэрсія]</span> старонкі [[$2]], пераклад завершаны на $3%.
-<span class="mw-translate-fuzzy">Састарэлыя пераклады пазначаныя такім чынам.</span>',
+	'tpt-translation-intro' => 'Гэта старонка <span class="plainlinks">[$1 перакладзеная вэрсія]</span> старонкі [[$2]], пераклад завершаны на $3%.',
 	'tpt-languages-legend' => 'Іншыя мовы:',
 	'tpt-target-page' => 'Гэта старонка ня можа быць абноўлена ўручную.
 Гэта старонка зьяўляецца перакладам старонкі [[$1]], пераклад можа быць абноўлены з выкарыстаньнем [$2 інструмэнта перакладу].',
@@ -199,6 +198,8 @@ $messages['de'] = array(
 	'tpt-desc' => 'Erweiterung zur Übersetzung von Wikiseiten',
 	'tpt-section' => 'Abschnitt:',
 	'tpt-section-new' => 'Neuer Abschnitt:',
+	'tpt-template' => 'Seitenvorlage',
+	'tpt-templatediff' => 'Die Seitenvorlage hat sich geändert.',
 	'tpt-diff-old' => 'Vorheriger Text',
 	'tpt-diff-new' => 'Neuer Text',
 	'tpt-submit' => 'Diese Version zur Übersetzung markieren',
@@ -210,7 +211,6 @@ Stelle sicher, das ein <nowiki><translate></nowiki>-Tag und gültige Syntax verw
 	'tpt-saveok' => 'Die Seite „$1“ mit $2 {{PLURAL:$2|übersetzbarem Abschnitt|übersetzbaren Abschnitten}} wurde für die Übersetzung markiert.
 Diese Seite kann nun <span class="plainlinks">[$3 übersetzt]</span> werden.',
 	'tpt-badsect' => '„$1“ ist kein gültiger Name für Abschnitt $2.',
-	'tpt-deletedsections' => '{{PLURAL:$1|Der folgende Abschnitt wird|Die folgenden Abschnitte werden}} nicht länger genutzt:',
 	'tpt-mark-summary' => 'Diese Seite wurde zum Übersetzen markiert',
 	'tpt-edit-failed' => 'Seite kann nicht aktualisiert werden: $1',
 	'tpt-already-marked' => 'Die letzte Version dieser Seite wurde bereits zur Übersetzung markiert.',
@@ -222,8 +222,8 @@ Diese Seite kann nun <span class="plainlinks">[$3 übersetzt]</span> werden.',
 	'tpt-translate-this' => 'diese Seite übersetzen',
 	'translate-tag-translate-link-desc' => 'Diese Seite übersetzen',
 	'translate-tag-markthis' => 'Diese Seite zur Übersetzung markieren',
-	'tpt-translation-intro' => 'Diese Seite ist eine <span class="plainlinks">[$1 übersetzte Version]</span> der Seite [[$2]] und die Übersetzung ist zu $3 % abgeschlossen und aktuell.
-<span class="mw-translate-fuzzy">Nicht aktuelle Übersetzungen werden wie dieser Text markiert.</span>',
+	'tpt-translation-intro' => 'Diese Seite ist eine <span class="plainlinks">[$1 übersetzte Version]</span> der Seite [[$2]] und die Übersetzung ist zu $3 % abgeschlossen und aktuell.',
+	'tpt-translation-intro-fuzzy' => 'Nicht aktuelle Übersetzungen werden wie dieser Text markiert.',
 	'tpt-languages-legend' => 'Andere Sprachen:',
 	'tpt-target-page' => 'Diese Seite kann nicht manuell aktualisiert werden.
 Diese Seite ist eine Übersetzung der Seite [[$1]] und die Übersetzung kann mithilfe des [$2 Übersetzungswerkzeuges] aktualisiert werden.',
@@ -238,19 +238,24 @@ $messages['dsb'] = array(
 	'pagetranslation' => 'Pśełožowanje bokow',
 	'right-pagetranslation' => 'Wersije bokow za pśełožowanje markěrowaś',
 	'tpt-desc' => 'Rozšyrjenje za pśełožowanje wopśimjeśowych bokow',
-	'tpt-section' => 'Wótrězk:',
-	'tpt-section-new' => 'Nowy wótrězk:',
+	'tpt-section' => 'Pśełožowańska jadnotka $1',
+	'tpt-section-new' => 'Nowa pśełožowańska jadnotka. Mě: $1',
+	'tpt-section-deleted' => 'Pśełožowańska jadnotka $1',
+	'tpt-template' => 'Bokowa pśedłoga',
+	'tpt-templatediff' => 'Bokowa pśedłoga jo se změniła.',
 	'tpt-diff-old' => 'Pśedchadny tekst',
 	'tpt-diff-new' => 'Nowy tekst',
 	'tpt-submit' => 'Toś tu wersiju za pśełožowanje markěrowaś',
+	'tpt-sections-oldnew' => 'Nowe a eksistowace pśełožowańske jadnotki',
+	'tpt-sections-deleted' => 'Wulašowane pśełožowańske jadnotki',
+	'tpt-sections-template' => 'Pśedłoga pśełožowańskego boka',
 	'tpt-badtitle' => 'Pódane bokowe mě ($1) njejo płaśiwy titel',
 	'tpt-oldrevision' => '$2 njejo aktualna wersija boka [[$1]].
 Jano aktualne wersije daju se za pśełožowanje markěrowaś.',
 	'tpt-notsuitable' => 'Bok $1 njejo gódny za pśełožowanje.
 Zawěsć, až ma toflicki <nowiki><translate></nowiki> a płaśiwu syntaksu.',
-	'tpt-saveok' => 'Bok "$1" jo se markěrował za pśełožowanje z $2 {{PLURAL:$2|pśełožujobnym wótrězkom|pśełožujobnyma wótrězkoma|pśełožujobnymi wótrězkami|pśełožujobnymi wótrězkami}}. Bok móže se něnto <span class="plainlinks">[$3 pśełožowaś]</span>.',
-	'tpt-badsect' => '"$1" njejo płaśiwe mě za wótrězk $2.',
-	'tpt-deletedsections' => '{{PLURAL:$1|Slědujucy wótrězk južo njebuźo|Slědujucej wótrězka južo njebuźotej|Slědujuce wótrězki se južo njebudu|Slědujuce wótrězki se južo njebudu}} se wužywaś:',
+	'tpt-saveok' => 'Bok [[$1]] jo se markěrował za pśełožowanje z $2 {{PLURAL:$2|pśełožujobneju jadnotku|pśełožujobnyma jadnotkoma|pśełožujobnymi jadnotkami|pśełožujobnymi jadnotkami}}. Bok móže se něnto <span class="plainlinks">[$3 pśełožowaś]</span>.',
+	'tpt-badsect' => '"$1" njejo płaśiwe mě za pśełožowańsku jadnotku $2.',
 	'tpt-showpage-intro' => 'Dołojce su nowe, eksistěrujuce a wulašowane wótrězki nalicone.
 Nježli až markěrujoš toś tu wersiju za pśełožowanje, pśekontrolěruj, lěc změny na wótrězkach su zminiměrowane, aby se wobinuł njetrěbne źěło za pśełožowarjow.',
 	'tpt-mark-summary' => 'Jo toś tu wersiju za pśełožowanje markěrował',
@@ -260,13 +265,15 @@ Nježli až markěrujoš toś tu wersiju za pśełožowanje, pśekontrolěruj, l
 	'tpt-old-pages' => 'Někaka wersija {{PLURAL:$1|toś togo boka|toś teju bokowu|toś tych bokow|toś tych bokow}} jo se za pśełožowanje markěrowała.',
 	'tpt-new-pages' => '{{PLURAL:$1|Toś ten bok wopśimujo|Toś tej boka wopśumujotej|Toś te boki wopśimuju|Toś te boki wopśimuju}} tekst z pśełožowańskimi toflickami, ale žedna wersija {{PLURAL:$1|toś togo boka|toś teju bokowu|toś tych bokow|toś tych bokow}} njejo tuchylu za pśełožowanje markěrowana.',
 	'tpt-rev-latest' => 'aktualna wersija',
-	'tpt-rev-old' => 'wersija $1',
+	'tpt-rev-old' => 'rozdźěl k pjerwjejšnej markěrowanej wersiji',
 	'tpt-rev-mark-new' => 'toś tu wersiju za pśełožowanje markěrowaś',
 	'tpt-translate-this' => 'toś ten bok pśełožyś',
 	'translate-tag-translate-link-desc' => 'Toś ten bok pśełožyś',
 	'translate-tag-markthis' => 'Toś ten bok za pśełožowanje markěrowaś',
-	'tpt-translation-intro' => 'Toś ten bok jo <span class="plainlinks">[$1 pśełožona wersija]</span> boka [[$2]] a $3 % pśełožka jo dogótowane a pśełožk jo aktualne.
-<span class="mw-translate-fuzzy">Zestarjone pśełožki se ako toś ten markěruju.</span>',
+	'translate-tag-markthisagain' => 'Toś ten bok ma <span class="plainlinks">[$1 {{PLURAL:$1|změnu|změnje|změny|změnow}}]</span>, wót togo casa, ako jo se slědny raz <span class="plainlinks">[$2 za pśełožowanje markěrował]</span>.',
+	'translate-tag-hasnew' => 'Toś ten bok wopśimujo <span class="plainlinks">[$1 {{PLURAL:$1|změnu, kótaraž njejo markěrowana|změnje, kótarejž njejstej markěrowanej|změny, kótare njejsu markěrowane|změnow, kótarež njejsu markěrowane}}]</span> za pśełožowanje.',
+	'tpt-translation-intro' => 'Toś ten bok jo <span class="plainlinks">[$1 pśełožona wersija]</span> boka [[$2]] a $3 % pśełožka jo dogótowane a pśełožk jo aktualne.',
+	'tpt-translation-intro-fuzzy' => 'Zestarjone pśełožki su kaž toś ten markěrowany.',
 	'tpt-languages-legend' => 'Druge rěcy:',
 	'tpt-target-page' => 'Toś ten bok njedajo se manuelnje aktualizěrowaś.
 Toś ten bok jo pśełožk boka [[$1]] a pśełožk dajo se z pomocu [$2 Pśełožyś] aktualizěrowaś.',
@@ -291,19 +298,31 @@ $messages['es'] = array(
 	'tpt-badtitle' => 'Nombre de página dado ($1) no es un título válido',
 	'tpt-oldrevision' => '$2 no es la última versión de la página [[$1]].
 Solamente las últimas versiones pueden ser marcadas para traducción',
+	'tpt-notsuitable' => 'La página $1 no es adecuada para traducción.
+Asegúrate que tiene etiquetas <nowiki><translate></nowiki> y tiene una sintaxis válida.',
+	'tpt-saveok' => 'La página "$1" ha sido marcada para traducción con $2 {{PLURAL:$2|sección|secciones}} traducibles.
+La página puede ser ahora <span class="plainlinks">[$3 traducida]</span>.',
 	'tpt-badsect' => '"$1" no es un nombre válido para la sección $2.',
-	'tpt-deletedsections' => 'Las siguientes secciones no serán más usadas:',
+	'tpt-showpage-intro' => 'Debajo secciones nuevas, existentes y borradas están listadas.
+Antes de marcar esta versión para traducción, verifica que los cambios a las secciones son mínimos para evitar trabajo innecesario a los traductores.',
 	'tpt-mark-summary' => 'Marcada esta sección para traducción',
 	'tpt-edit-failed' => 'No pudo actualizar la página : $1',
 	'tpt-already-marked' => 'La última versión de esta página ya ha sido marcada para traducción.',
+	'tpt-list-nopages' => 'Ninguna página está marcada para traducción ni lista para ser marcada para traducción.',
 	'tpt-old-pages' => 'Alguna versión de {{PLURAL:$1|esta página|estas páginas han}} sido marcadas para traducción.',
+	'tpt-new-pages' => '{{PLURAL:$1|Esta página contiene|Estas páginas contienen}} texto con etiquetas de traducción, pero ninguna versión de {{PLURAL:$1|esta página est|estas páginas están}} actualmente marcadas para traducción.',
 	'tpt-rev-latest' => 'última versión',
 	'tpt-rev-old' => 'versión $1',
 	'tpt-rev-mark-new' => 'marcar esta versión para traducción',
 	'tpt-translate-this' => 'traducir esta página',
 	'translate-tag-translate-link-desc' => 'Traducir esta página',
 	'translate-tag-markthis' => 'Marcar esta página para traducción',
+	'tpt-translation-intro' => 'Esta página es una <span class="plainlinks">[$1 versión traducida]</span> de una página [[$2]] y la traducción está $3% completa y actualizada.',
 	'tpt-languages-legend' => 'Otros idiomas:',
+	'tpt-target-page' => 'Esta página no puede ser actualizada manualmente.
+Esta página es una traducción de la página [[$1]] y la traducción puede ser actualizada usando [$2 la herramienta de traducción].',
+	'tpt-unknown-page' => 'Este espacio de nombre está reservado para traducciones de páginas de contenido.
+La página que estás tratando de editar no parece corresponder con alguna página marcada para traducción.',
 );
 
 /** French (Français)
@@ -328,7 +347,6 @@ Soyez sûr qu'elle contient la balise <nowiki><translate></nowiki> et qu'elle a 
 	'tpt-saveok' => 'La page « $1 » a été marqué pour être traduite avec $2 {{PLURAL:$2|section traduisible|sections traduisibles}}.
 La page peut être <span class="plainlinks">[$3 traduite]</span> dès maintenant.',
 	'tpt-badsect' => "« $1 » n'est pas un nom valide pour la section $2.",
-	'tpt-deletedsections' => '{{PLURAL:$1|La section suivante ne sera plus utilisée|Les sections suivantes ne seront plus utilisées}} :',
 	'tpt-showpage-intro' => 'Ci-dessous, les nouvelles traductions, celles existantes et supprimées.
 Avant de marquer ces versions pour être traduites, vérifier que les modifications aux sections sont minimisées pour éviter du travail inutile aux traducteurs.',
 	'tpt-mark-summary' => 'Cette version a été marqué pour être traduite',
@@ -343,8 +361,7 @@ Avant de marquer ces versions pour être traduites, vérifier que les modificati
 	'tpt-translate-this' => 'traduire cette page',
 	'translate-tag-translate-link-desc' => 'Traduire cette page',
 	'translate-tag-markthis' => 'Marquer cette page pour être traduite',
-	'tpt-translation-intro' => 'Cette page est une <span class="plainlinks">[$1 traduction]</span> de la page [[$2]] et la traduction est complétée à $3 % et à jour.
-<span class="mw-translate-fuzzy">Les traductions non à jour sont marqué comme ceci.</span>',
+	'tpt-translation-intro' => 'Cette page est une <span class="plainlinks">[$1 traduction]</span> de la page [[$2]] et la traduction est complétée à $3 % et à jour.',
 	'tpt-languages-legend' => 'Autres langues :',
 	'tpt-target-page' => "Cette page ne peut pas être mise à jour manuellement.
 Elle est une version traduite de [[$1]] et la traduction peut être mise à jour en utilisant [$2 l'outil de traduction].",
@@ -373,7 +390,6 @@ Seyâd de sûr que contint la balisa <nowiki><translate></nowiki> et qu’at una
 	'tpt-saveok' => 'La pâge « $1 » at étâ marcâ por étre traduita avouéc $2 {{PLURAL:$2|sèccion traduisibla|sèccions traduisibles}}.
 La pâge pôt étre <span class="plainlinks">[$3 traduita]</span> dês ora.',
 	'tpt-badsect' => '« $1 » est pas un nom valido por la sèccion $2.',
-	'tpt-deletedsections' => '{{PLURAL:$1|Ceta sèccion serat|Cetes sèccions seront}} pas més utilisâ{{PLURAL:$1||s}} :',
 	'tpt-showpage-intro' => 'Ce-desot, les novèles traduccions, celes ègzistentes et suprimâs.
 Devant que marcar cetes vèrsions por étre traduites, controlâd que los changements a les sèccions sont petiôts por èvitar de travâly inutilo ux traductors.',
 	'tpt-mark-summary' => 'Ceta vèrsion at étâ marcâ por étre traduita',
@@ -388,8 +404,7 @@ Devant que marcar cetes vèrsions por étre traduites, controlâd que los change
 	'tpt-translate-this' => 'traduire ceta pâge',
 	'translate-tag-translate-link-desc' => 'Traduire ceta pâge',
 	'translate-tag-markthis' => 'Marcar ceta pâge por étre traduita',
-	'tpt-translation-intro' => 'Ceta pâge est una <span class="plainlinks">[$1 traduccion]</span> de la pâge [[$2]] et la traduccion est complètâ a $3 % et a jorn.
-<span class="mw-translate-fuzzy">Les traduccions dèpassâs sont marcâs d’ense.</span>',
+	'tpt-translation-intro' => 'Ceta pâge est una <span class="plainlinks">[$1 traduccion]</span> de la pâge [[$2]] et la traduccion est complètâ a $3 % et a jorn.',
 	'tpt-languages-legend' => 'Ôtres lengoues :',
 	'tpt-target-page' => 'Ceta pâge pôt pas étre betâ a jorn a la man.
 El est una vèrsion traduita de [[$1]] et la traduccion pôt étre betâ a jorn en utilisent [$2 l’outil de traduccion].',
@@ -418,7 +433,6 @@ Comprobe que teña as etiquetas <nowiki><translate></nowiki> e mais unha sintaxe
 	'tpt-saveok' => 'A páxina "$1" foi marcada para ser traducida, {{PLURAL:$2|cunha sección traducible|con $2 seccións traducibles}}.
 A páxina agora pode ser <span class="plainlinks">[$3 traducida]</span>.',
 	'tpt-badsect' => '"$1" non é un nome válido para a sección $2.',
-	'tpt-deletedsections' => '{{PLURAL:$1|A seguinte sección deixará|As seguintes seccións deixarán}} de ser {{PLURAL:$1|utilizada|utilizadas}}:',
 	'tpt-showpage-intro' => 'A continuación están listadas as seccións existentes e borradas.
 Antes de marcar esta versión para ser traducida, comprobe que as modificacións feitas ás seccións foron minimizadas para evitarlles traballo innecesario aos tradutores.',
 	'tpt-mark-summary' => 'Marcou esta versión para ser traducida',
@@ -433,8 +447,7 @@ Antes de marcar esta versión para ser traducida, comprobe que as modificacións
 	'tpt-translate-this' => 'traducir esta páxina',
 	'translate-tag-translate-link-desc' => 'Traducir esta páxina',
 	'translate-tag-markthis' => 'Marcar esta páxina para ser traducida',
-	'tpt-translation-intro' => 'Esta páxina é unha <span class="plainlinks">[$1 versión traducida]</span> da páxina "[[$2]]" e a tradución está completada e actualizada ao $3%.
-<span class="mw-translate-fuzzy">As traducións desfasadas están marcadas coma este texto.</span>',
+	'tpt-translation-intro' => 'Esta páxina é unha <span class="plainlinks">[$1 versión traducida]</span> da páxina "[[$2]]" e a tradución está completada e actualizada ao $3%.',
 	'tpt-languages-legend' => 'Outras linguas:',
 	'tpt-target-page' => 'Esta páxina non pode ser actualizada manualmente.
 Esta páxina é unha tradución da páxina "[[$1]]" e a tradución pode ser actualizada usando [$2 a ferramenta de tradución].',
@@ -450,20 +463,25 @@ $messages['gsw'] = array(
 	'pagetranslation' => 'Sytenibersetzig',
 	'right-pagetranslation' => 'D Syte, wu sotte ibersetzt wäre, markiere',
 	'tpt-desc' => 'Erwyterig fir d Iberstzig vu Inhaltssyte',
-	'tpt-section' => 'Abschnitt:',
-	'tpt-section-new' => 'Neje Abschnitt:',
+	'tpt-section' => 'Iberstzigs-Abschnitt $1',
+	'tpt-section-new' => 'Neje Iberstzigs-Abschnitt. Name: $1',
+	'tpt-section-deleted' => 'Ibersetzigs-Abschnitt $1',
+	'tpt-template' => 'Sytevorlag',
+	'tpt-templatediff' => 'D Sytevorlag het sich gänderet.',
 	'tpt-diff-old' => 'Vorige Tekscht',
 	'tpt-diff-new' => 'Neje Tekscht',
 	'tpt-submit' => 'Die Version zum Ibersetze markiere',
+	'tpt-sections-oldnew' => 'Neji un vorhandeni Ibersetzigs-Abschnitt',
+	'tpt-sections-deleted' => 'Gleschti Ibersetzigs-Abschnitt',
+	'tpt-sections-template' => 'Ibersetzigs-Sytevorlag',
 	'tpt-badtitle' => 'Dr Sytename, wu Du aagee hesch ($1), isch kei giltige Sytename',
 	'tpt-oldrevision' => '$2 isch nit di letscht Version vu dr Syte [[$1]].
 Nume di letschte Versione chenne zum Iberseze markiert wäre.',
 	'tpt-notsuitable' => 'D Syte $1 cha nit iberstez wäre.
 Stell sicher, ass si <nowiki><translate></nowiki>-Markierige un e giltige Syntax het.',
-	'tpt-saveok' => 'D Syte "$1" isch zum Ibersetze markiert wore mit $2 {{PLURAL:$2|Abschnit, wu cha ibersetzt wäre|Abschnit, wu chenne ibersetzt wäre}}.
+	'tpt-saveok' => 'D Syte [[$1]] isch zum Ibersetze markiert wore mit $2 {{PLURAL:$2|Ibersetzigs-Abschnitt|Ibersetzigs-Abschnitt}}.
 D Syte cha jetz <span class="plainlinks">[$3 ibersetzt]</span> wäre.',
-	'tpt-badsect' => '"$1" isch kei giltige Name fir dr Abschnitt $2.',
-	'tpt-deletedsections' => '{{PLURAL:$1|Dää Abschnitt wird|Die Abschnitt wäre}} nit lenger brucht:',
+	'tpt-badsect' => '"$1" isch kei giltige Name fir dr Iberstzigs-Abschnitt $2.',
 	'tpt-showpage-intro' => 'Unte sin Abschnitt ufglischtet, wu nej sin, sonigi wu s git un sonigi wu s nit git.
 Voreb Du die Versione zum Ibersetze markiersch, iberprief, ass d Änderige an dr Abschnitt gring ghalte sin go uunetigi Arbed bi dr Ibersetzig vermyde.',
 	'tpt-mark-summary' => 'het die Versione zum Ibersetze markiert',
@@ -473,13 +491,15 @@ Voreb Du die Versione zum Ibersetze markiersch, iberprief, ass d Änderige an dr
 	'tpt-old-pages' => '{{PLURAL:$1|E Version vu däre Syte isch|E paar Versione vu däne Syte sin}} zum Ibersetze markiert wore',
 	'tpt-new-pages' => '{{PLURAL:$1|In däre Syte|In däne Syte}} het s Tekscht mit Ibersetzigs-Markierige, aber zur Zyt isch kei Version {{PLURAL:$1|däre Syte|däne Syte}} zum Ibersetze markiert.',
 	'tpt-rev-latest' => 'letschti Version',
-	'tpt-rev-old' => 'Version $1',
+	'tpt-rev-old' => 'Unterschid zue dr letschte markierte Version',
 	'tpt-rev-mark-new' => 'die Version zum Ibersetze markiere',
 	'tpt-translate-this' => 'die Syte ibersetze',
 	'translate-tag-translate-link-desc' => 'Die Syte ibersetze',
 	'translate-tag-markthis' => 'Die Syte zum ibersetze markiere',
-	'tpt-translation-intro' => 'Die Syte isch e <span class="plainlinks">[$1 ibersetzti Version]</span> vun ere Syte [[$2]] un d Ibersetzig isch zue $3% vollständig un aktuäll.
-<span class="mw-translate-fuzzy">Veralteti Ibersetzige sin eso markiert.</span>',
+	'translate-tag-markthisagain' => 'An däre Syte het s <span class="plainlinks">[$1 Änderige]</span> gee, syt si s lescht Mol <span class="plainlinks">[$2 zum Ibersetze markiert wore isch]</span>.',
+	'translate-tag-hasnew' => 'In däre Syte het s <span class="plainlinks">[$1 Änderige]</span>, wu nit zum Ibersetze markiert sin.',
+	'tpt-translation-intro' => 'Die Syte isch e <span class="plainlinks">[$1 ibersetzti Version]</span> vun ere Syte [[$2]] un d Ibersetzig isch zue $3% vollständig un aktuäll.',
+	'tpt-translation-intro-fuzzy' => 'Nit aktuälli Ibersetzige wäre wie dää Tekscht markiert.',
 	'tpt-languages-legend' => 'Anderi Sproche:',
 	'tpt-target-page' => 'Die Syte cha nit vu Hand aktualisiert wäre.
 Die Syte isch e Ibersetzig vu dr Syte [[$1]] un d Ibersetzig cha aktualisert wäre mit em [$2 Ibersetzigstool].',
@@ -495,20 +515,25 @@ $messages['hsb'] = array(
 	'pagetranslation' => 'Přełožowanje strony',
 	'right-pagetranslation' => 'Wersije strony za přełožowanje markěrować',
 	'tpt-desc' => 'Rozšěrjenje za přełožowanje wobsahowych stronow',
-	'tpt-section' => 'Wotrězk:',
-	'tpt-section-new' => 'Nowy wotrězk:',
+	'tpt-section' => 'Přełožowanska jednotka $1',
+	'tpt-section-new' => 'Nowa přełožowanska jednotka. Mjeno: $1',
+	'tpt-section-deleted' => 'Přełožowanska jednotka $1',
+	'tpt-template' => 'Předłoha strony',
+	'tpt-templatediff' => 'Předłoha strony je so změniła.',
 	'tpt-diff-old' => 'Předchadny tekst',
 	'tpt-diff-new' => 'Nowy tekst',
 	'tpt-submit' => 'Tutu wersiju za přełožowanje markěrować',
+	'tpt-sections-oldnew' => 'Nowe a eksistowace přełožowanske jednotki',
+	'tpt-sections-deleted' => 'Wušmórnjene přełožowanske jednotki',
+	'tpt-sections-template' => 'Předłoha přełožowanskeje strony',
 	'tpt-badtitle' => 'Podate mjeno strony ($1) płaćiwy titul njeje',
 	'tpt-oldrevision' => '$2 aktualna wersija strony [[$1]] njeje.
 Jenož aktualne wersije hodźa so za přełožowanje markěrować.',
 	'tpt-notsuitable' => 'Strona $1 za přełožowanje přihódna njeje.
 Zaswěsć, zo ma taflički <nowiki><translate></nowiki> a płaćiwu syntaksu.',
-	'tpt-saveok' => 'Strona "$1" je so za přełožowanje z $2 {{PLURAL:$2|přełožujomnym wotrězkom|přełožujomnymaj wotrězkomaj|přełožujomnymi wotrězkami|přełožujomnymi wotrězkami}} markěrowała.
+	'tpt-saveok' => 'Strona [[$1]] je so za přełožowanje z $2 {{PLURAL:$2|přełožujomnej jednotku|přełožujomnej jednotkomaj|přełožujomnymi jednotkami|přełožujomnymi jednotkami}} markěrowała.
 Strona hodźi so nětko <span class="plainlinks">[$3 přełožować]</span>.',
-	'tpt-badsect' => '"$1" płaćiwe mjeno za wotrězk $2 njeje.',
-	'tpt-deletedsections' => '{{PLURAL:$1|Slědowacy wotrězk hižo njebudźe|Slědowacej wotrězkaj hižo njebudźetej|Slědowace wotrězki njebudu|Slědowace wotrězki njebudu}} so wužiwać:',
+	'tpt-badsect' => '"$1" płaćiwe mjeno za přełožowansku jednotku $2 njeje.',
 	'tpt-showpage-intro' => 'Deleka su nowe, eksistowace a wušmórnjene wotrězki nalistowane.
 Prjedy hač tutu wersiju za přełožowanje markěruješ, skontroluj, hač změny wotrězkow su miniměrowane, zo by njetrěbne dźěło za přełožowarjow wobešoł.',
 	'tpt-mark-summary' => 'Je tutu wersiju za přełožowanje markěrował',
@@ -518,13 +543,15 @@ Prjedy hač tutu wersiju za přełožowanje markěruješ, skontroluj, hač změn
 	'tpt-old-pages' => 'Někajka wersija {{PLURAL:$1|tuteje strony|tuteju stronow|tutych stronow|tutych stronow}} je so za přełožowanje markěrowała.',
 	'tpt-new-pages' => '{{PLURAL:$1|Tuta strona wobsahuje|Tutej stronje|Tute strony wobsahuja|Tute strony wobsahuja}} tekst z přełožowanskimi tafličkimi, ale žana wersija {{PLURAL:$1|tuteje strony|tuteju stronow|tutych stronow|tutych stronow}} njeje tuchwilu za přełožowanje markěrowana.',
 	'tpt-rev-latest' => 'aktualna wersija',
-	'tpt-rev-old' => 'wersija $1',
+	'tpt-rev-old' => 'rozdźěl k předchadnej markěrowanej wersiji',
 	'tpt-rev-mark-new' => 'tutu wersiju za přełožowanje markěrować',
 	'tpt-translate-this' => 'tutu stronu přełožić',
 	'translate-tag-translate-link-desc' => 'Tutu stronu přełožić',
 	'translate-tag-markthis' => 'Tutu stronu za přełožowanje markěrować',
-	'tpt-translation-intro' => 'Tuta strona je <span class="plainlinks">[$1 přełožena wersija]</span> strony [[$2]], $3 % přełožka je dokónčene a přełožk je aktualny.
-<span class="mw-translate-fuzzy">Zestarjene přełožki so kaž tutón markěruja.</span>',
+	'translate-tag-markthisagain' => 'Tuta strona ma <span class="plainlinks">[$1 {{PLURAL:$1|změnu|změnje|změny|změnow}}]</span>, wot toho zo, bu posledni raz <span class="plainlinks">[$2 za přełožowanje markěrowana]</span>.',
+	'translate-tag-hasnew' => 'Tuta strona wobsahuje <span class="plainlinks">[$1 {{PLURAL:$1|změna, kotraž njeje markěrowana|změnje, kotrejž njejstej markěrowanej|změny, kotrež njejsu markěrowane|změnow, kotrež njejsu markěrowane}}]</span> za přełožowanje.',
+	'tpt-translation-intro' => 'Tuta strona je <span class="plainlinks">[$1 přełožena wersija]</span> strony [[$2]] a $3 % přełožka je dokónčene a přełožk je aktualny.',
+	'tpt-translation-intro-fuzzy' => 'Zestarjene přełožki su kaž tutón markěrowane.',
 	'tpt-languages-legend' => 'Druhe rěče:',
 	'tpt-target-page' => 'Tuta strona njeda so manulenje aktualizować.
 Tuta strona je přełožk strony [[$1]] a přełožk hodźi so z pomocu [$2 Přełožić] aktualizować.',
@@ -553,7 +580,6 @@ Assecura que illo contine etiquettas <nowiki><translate></nowiki> e ha un syntax
 	'tpt-saveok' => 'Le pagina "$1" ha essite marcate pro traduction con $2 {{PLURAL:$2|section|sectiones}} traducibile.
 Le pagina pote ora esser <span class="plainlinks">[$3 traducite]</span>.',
 	'tpt-badsect' => '"$1" non es un nomine valide pro le section $2.',
-	'tpt-deletedsections' => 'Le sequente {{PLURAL:$1|section|sectiones}} non essera plus usate:',
 	'tpt-showpage-intro' => 'In basso es listate sectiones nove, existente e delite.
 Ante de marcar iste version pro traduction, assecura que le modificationes al sectiones sia minimisate pro evitar labor innecessari pro traductores.',
 	'tpt-mark-summary' => 'Marcava iste version pro traduction',
@@ -568,8 +594,7 @@ Ante de marcar iste version pro traduction, assecura que le modificationes al se
 	'tpt-translate-this' => 'traducer iste pagina',
 	'translate-tag-translate-link-desc' => 'Traducer iste pagina',
 	'translate-tag-markthis' => 'Marcar iste pagina pro traduction',
-	'tpt-translation-intro' => 'Iste pagina es un <span class="plainlinks">[$1 version traducite]</span> de un pagina [[$2]] e le traduction es complete e actual a $3%.
-<span class="mw-translate-fuzzy">Le traductiones obsolete es marcate assi.</span>',
+	'tpt-translation-intro' => 'Iste pagina es un <span class="plainlinks">[$1 version traducite]</span> de un pagina [[$2]] e le traduction es complete e actual a $3%.',
 	'tpt-languages-legend' => 'Altere linguas:',
 	'tpt-target-page' => 'Iste pagina non pote esser actualisate manualmente.
 Iste pagina es un traduction del pagina [[$1]] e le traduction pote esser actualisate con le [$2 instrumento de traduction].',
@@ -596,7 +621,6 @@ $messages['ja'] = array(
 	'tpt-notsuitable' => 'ページ $1 は翻訳に対応していません。<nowiki><translate></nowiki>が含まれていること、またマークアップが正しいことを確認してください。',
 	'tpt-saveok' => 'ページ「$1」は翻訳対象に指定されており、$2個の翻訳可能なセクションを含んでいます。このページを<span class="plainlinks">[$3 翻訳]</span>することができます。',
 	'tpt-badsect' => '「$1」はセクション $2 の名前として無効です。',
-	'tpt-deletedsections' => '以下のセクションはすでに使われていません:',
 	'tpt-showpage-intro' => '以下には新しいセクション、既存のセクション、そして削除されたセクションが一覧されています。この版を翻訳対象に指定する前に、セクションの変更を最小限にすることで不要な翻訳作業を回避できないか確認してください。',
 	'tpt-mark-summary' => 'この版を翻訳対象に指定しました',
 	'tpt-edit-failed' => 'ページを更新できませんでした: $1',
@@ -610,7 +634,7 @@ $messages['ja'] = array(
 	'tpt-translate-this' => 'このページを翻訳する',
 	'translate-tag-translate-link-desc' => 'このページを翻訳する',
 	'translate-tag-markthis' => 'このページを翻訳対象に指定する',
-	'tpt-translation-intro' => 'このページはページ [[$2]] の<span class="plainlinks">[$1 翻訳版]</span> です。翻訳は $3% 完了しており、最新の状態を反映しています。<span class="mw-translate-fuzzy">更新が必要な翻訳はこのようにハイライトされます。</span>',
+	'tpt-translation-intro' => 'このページはページ [[$2]] の<span class="plainlinks">[$1 翻訳版]</span> です。翻訳は $3% 完了しており、最新の状態を反映しています。',
 	'tpt-languages-legend' => '他言語での翻訳:',
 	'tpt-target-page' => 'このページは手動で更新できません。このページはページ [[$1]] の翻訳で、[$2 翻訳ツール]を使用して更新します。',
 	'tpt-unknown-page' => 'この名前空間はコンテンツページの翻訳のために使用します。あなたが編集しようとしているページに対応する翻訳対象ページが存在しないようです。',
@@ -642,17 +666,22 @@ $messages['ksh'] = array(
 	'pagetranslation' => 'Sigge Övversäze',
 	'right-pagetranslation' => 'Donn Versione vun Sigge för et Övversäze makeere',
 	'tpt-desc' => 'Projrammzohsatz för Sigge vum Enhalt vum Wiki ze övversäze.',
-	'tpt-section' => 'Afschnett:',
-	'tpt-section-new' => 'Ene neue Afschnett:',
+	'tpt-section' => 'Knubbel $1 för ze Övversäze',
+	'tpt-section-new' => 'Ene neue Knubbel för ze Övversäze: $1',
+	'tpt-section-deleted' => 'Knubbel $1 för ze Övversäze',
+	'tpt-template' => 'Siggeschabloon',
+	'tpt-templatediff' => 'De Siggeschabloon hät sesch jeändert.',
 	'tpt-diff-old' => 'Dä vörrijje Täx',
 	'tpt-diff-new' => 'Dä neue Täx',
 	'tpt-submit' => 'Donn hee di Version för et Övversäze makeere',
+	'tpt-sections-oldnew' => 'De Knubbelle för ze Övversäze (Jez neu, un de älldere, zosamme)',
+	'tpt-sections-deleted' => 'Fottjeschmeße Knubbelle för et Övversäze',
+	'tpt-sections-template' => 'Övversäzungßsiggschabloon',
 	'tpt-badtitle' => 'Dä Name „$1“ es keine jöltijje Tittel för en Sigg',
 	'tpt-oldrevision' => '„$2“ es nit de neuste Version fun dä Sigg „[[$1]]“, ävver bloß de neuste kam_mer för et Övversäze makeere.',
 	'tpt-notsuitable' => 'Di Sigg „$1“ paß nit för et Övversäze. Maach <code><nowiki><translate></nowiki></code>-Makeerunge erin, un looer dat de Süntax shtemmp.',
-	'tpt-saveok' => 'De Sigg „$1“ es för zem Övversäze makeet woode. Se hät {{PLURAL:$2|eine Afschnet|$2 Afschnedde|keine Afschnet}} för zem Övversäze. Di Sigg kann jäz <span class="plainlinks">[$3 övversaz weede]</span>.',
-	'tpt-badsect' => '„$1“ es kein jöltejje Name för dä Afschnett $2.',
-	'tpt-deletedsections' => 'Hee {{PLURAL:$1|dä Affschnett|di Afschnedde|di kei Afschnedde}} wähde jiz nit mieh jebruch:',
+	'tpt-saveok' => 'De Sigg „$1“ es för ze Övversäze makeet. Doh dren {{PLURAL:$2|es eine Knubbel|sinn_er $2 Knubbelle|es ävver keine Knubbel}} för ze Övversäze. Di Sigg kam_mer <span class="plainlinks">[$3 jäz övversäze]</span>.',
+	'tpt-badsect' => '„$1“ es kein jöltejje Name för dä Knubbel zom Övversäze $2.',
 	'tpt-showpage-intro' => 'Hee dronger sin Afschnedde opjeleß, di eruß jenumme woode, un di noch doh sin. Ih dat De hee di Version för ze Övversäze makeere deihß, loor drop, dat esu winnisch wi müjjelesch Änderonge aan Afschnedde doh sin, öm dä Övversäzere et Levve leisch ze maache.',
 	'tpt-mark-summary' => 'Han di Version för ze Övversäze makeet',
 	'tpt-edit-failed' => 'Kunnt de Sigg „$1“ nit ändere',
@@ -661,12 +690,15 @@ $messages['ksh'] = array(
 	'tpt-old-pages' => 'En Version vun hee dä {{PLURAL:$1|Sigg|Sigge|-}} es för zem Övversäze makeet.',
 	'tpt-new-pages' => '{{PLURAL:$1|Di Sigg hät|Di Sigge han|Kein Sigg hät}} ene <code lang="en">translation</code>-Befähl en sesch, ävve kei Version dofun es för ze Övversäze makeet.',
 	'tpt-rev-latest' => 'Neuste Version',
-	'tpt-rev-old' => 'Version $1',
+	'tpt-rev-old' => 'Ongerscheid zor vörijje makeete Version',
 	'tpt-rev-mark-new' => 'donn di Version för et Övversäze makeere',
 	'tpt-translate-this' => 'donn di Sigg övversäze',
 	'translate-tag-translate-link-desc' => 'Don di Sigg hee övversäze',
 	'translate-tag-markthis' => 'Donn hee di Sigg för et Övversäze makeere',
-	'tpt-translation-intro' => 'Hee di Sigg es en <span class="plainlinks">[$1 övversaz Version]</span> vun dä Sigg [[$2]] un es zoh $3% jedonn un om aktoälle Shtandt. <span class="mw-translate-fuzzy">Övverhollte Översäzunge sin esu wi dat hee  makeet.</span>',
+	'translate-tag-markthisagain' => 'En dä Sigg <span class="plainlinks">[{{PLURAL:$3|es ein Änderung|sinn_er $1 Änderung|es kei Änderung}}]</span> jemaat woode zick se et läz <span class="plainlinks">[$2 för ze Övversäze]</span> makeet wood.',
+	'translate-tag-hasnew' => 'Aan dä Sigg <span class="plainlinks">[{{PLURAL:$3|es ein Änderung|sinn_er $1 Änderunge|es kei Änderung}}]</span> jemaat woode{{PLURAL:$3|, di ävver nit för ze Övversäze makeet wood.|, di ävver nit för ze Övversäze makeet woodte.|.}}',
+	'tpt-translation-intro' => 'Hee di Sigg es en <span class="plainlinks">[$1 övversaz Version]</span> vun dä Sigg [[$2]] un es zoh $3% jedonn un om aktoälle Shtandt.',
+	'tpt-translation-intro-fuzzy' => 'Övverhollte Övversäzunge wäde su makeet, wi hee dä Täx.',
 	'tpt-languages-legend' => 'Ander Shprooche:',
 	'tpt-target-page' => 'Hee di Sigg kam_mer nit vun Hand ändere. Dat hee es en Översäzungß_Sigg vun dä Sigg [[$1]]. De Övversäzung kam_mer övver däm Wiki sing [$2 Övversäzungß_Wärkzüsch] op der neußte Shtand bränge.',
 	'tpt-unknown-page' => 'Dat Appachtemang hee es för Sigge vum Enhallt vum Wiki ze Övversäze jedaach. Di Sigg, di de jraad ze ändere versöhks, schingk ävver nit met ööhnds en Sigg ze donn ze han, di för zem Övversäze makeet es.',
@@ -680,24 +712,29 @@ $messages['lb'] = array(
 	'pagetranslation' => 'Iwwersetzung vun der Säit',
 	'right-pagetranslation' => 'Versioune vu Säite fir Iwwersetzung markéieren',
 	'tpt-desc' => "Erweiderung fir ihaltlech Säiten z'iwwersetzen",
-	'tpt-section' => 'Abschnitt:',
-	'tpt-section-new' => 'Neien Abschnitt:',
+	'tpt-section' => 'Iwwersetzungseenheet $1',
+	'tpt-section-new' => 'Numm: $1',
+	'tpt-section-deleted' => 'Iwwersetzungseenheet $1',
+	'tpt-template' => 'Säiteschabloun',
+	'tpt-templatediff' => "D'Säiteschabloun gouf geännert.",
 	'tpt-diff-old' => 'Viregen Text',
 	'tpt-diff-new' => 'Neien Text',
 	'tpt-submit' => "Dës Versioun fir d'Iwwersetze markéieren",
+	'tpt-sections-oldnew' => 'Nei an Iwwersetzungseeenheeten déi et scho gëtt',
+	'tpt-sections-deleted' => 'Geläschten Iwwersetzungseenheeten',
+	'tpt-sections-template' => 'Iwwersetzung Säiteschabloun',
 	'tpt-badtitle' => 'De Säitennumm deen ugi gouf ($1) ass kee valabelen Titel',
 	'tpt-oldrevision' => "$2 ass net déi lescht Versioun vun der Säit [[$1]].
 Nëmmen déi lescht Versioune kënne fir d'Iwwersetzung markéiert ginn.",
 	'tpt-notsuitable' => "D'Säit $1 ass net geeegent fir iwwersat ze ginn.
 Vergewëssert Iech ob se <nowiki><translate></nowiki>-Taggen  an eng valabel Syntax huet.",
-	'tpt-deletedsections' => '{{PLURAL:$1|Dësen Abschnitt gëtt|Dës Abschnitter ginn}} net méi benotzt:',
 	'tpt-mark-summary' => "huet dës Versioun fir d'Iwwersetzung markéiert",
 	'tpt-edit-failed' => "D'Säit $1 konnt net aktualiséiert ginn",
 	'tpt-already-marked' => "Déilescht Versioun vun dëser Säit gouf scho fir d'Iwwersetzung markéiert.",
 	'tpt-list-nopages' => "Et si keng Säite fir d'Iwwersetzung markéiert respektiv fäerdeg fir fir d'Iwersetzung markéiert ze ginn.",
 	'tpt-old-pages' => "Eng Versioun vun {{PLURAL:$1|dëser Säit|dëse Säite}} gouf fir d'Iwwersetze markéiert.",
 	'tpt-rev-latest' => 'lescht Versioun',
-	'tpt-rev-old' => 'Versioun $1',
+	'tpt-rev-old' => 'Ënnerscheed zu der vireger markéierter Versioun',
 	'tpt-rev-mark-new' => "dës Versioun fir d'Iwwersetzung markéieren",
 	'tpt-translate-this' => 'dës Säit iwwersetzen',
 	'translate-tag-translate-link-desc' => 'Dës Säit iwwersetzen',
@@ -714,20 +751,26 @@ $messages['nl'] = array(
 	'pagetranslation' => 'Paginavertaling',
 	'right-pagetranslation' => "Versies van pagina's voor de vertaling markeren",
 	'tpt-desc' => "Uitbreiding voor het vertalen van wikipagina's",
-	'tpt-section' => 'Sectie:',
-	'tpt-section-new' => 'Nieuwe sectie:',
+	'tpt-section' => 'Vertaaleenheid $1',
+	'tpt-section-new' => 'Nieuwe vertaaleenheid.
+Naam: $1',
+	'tpt-section-deleted' => 'Vertaaleenheid $1',
+	'tpt-template' => 'Paginasjabloon',
+	'tpt-templatediff' => 'Het paginasjabloon is gewijzigd.',
 	'tpt-diff-old' => 'Vorige tekst',
 	'tpt-diff-new' => 'Nieuwe tekst',
 	'tpt-submit' => 'Deze versie voor vertaling markeren',
+	'tpt-sections-oldnew' => 'Nieuwe en bestaande vertaaleenheden',
+	'tpt-sections-deleted' => 'Verwijderde vertaaleenheden',
+	'tpt-sections-template' => 'Vertaalpaginasjabloon',
 	'tpt-badtitle' => 'De opgegeven paginanaam ($1) is geen geldige paginanaam',
 	'tpt-oldrevision' => '$2 is niet de meest recente versie van de pagina "[[$1]]".
 Alleen de meest recente versie kan voor vertaling gemarkeerd worden.',
 	'tpt-notsuitable' => 'De pagina "$1" kan niet voor vertaling gemarkeerd worden.
 Zorg ervoor dat de labels <nowiki><translate></nowiki> geplaatst zijn en dat deze juist zijn toegevoegd.',
-	'tpt-saveok' => 'De pagina "$1" is gemarkeerd voor vertaling met $2 te vertalen secties.
+	'tpt-saveok' => 'De pagina [[$1]] is gemarkeerd voor vertaling met $2 te vertalen {{PLURAL:$2|vertaaleenheid|vertaaleenheden}}.
 De pagina kan nu  <span class="plainlinks">[$3 vertaald]</span> worden.',
-	'tpt-badsect' => '"$1" is geen geldige naam voor sectie $2.',
-	'tpt-deletedsections' => 'De volgende secties worden niet langer gebruikt:',
+	'tpt-badsect' => '"$1" is geen geldige naam voor vertaaleenheid $2.',
 	'tpt-showpage-intro' => 'Hieronder zijn nieuwe, bestaande en verwijderde secties opgenomen.
 Controleer voordat u deze versie voor vertaling markeert of de wijzigingen aan de secties zo klein mogelijk zijn om onnodig werk voor vertalers te voorkomen.',
 	'tpt-mark-summary' => 'Heeft deze versie voor vertaling gemarkeerd',
@@ -737,13 +780,15 @@ Controleer voordat u deze versie voor vertaling markeert of de wijzigingen aan d
 	'tpt-old-pages' => "Er is al een versie van deze {{PLURAL:$1|pagina|pagina's}} gemarkeerd voor vertaling.",
 	'tpt-new-pages' => "Deze {{PLURAL:$1|pagina bevat|pagina's bevatten}} tekst met vertalingslabels, maar van deze {{PLURAL:$1|pagina|pagina's}} is geen versie gemarkeerd voor vertaling.",
 	'tpt-rev-latest' => 'meest recente versie',
-	'tpt-rev-old' => 'versie $1',
+	'tpt-rev-old' => 'verschil met de vorige gemarkeerde versie',
 	'tpt-rev-mark-new' => 'deze versie voor vertaling markeren',
 	'tpt-translate-this' => 'deze pagina vertalen',
 	'translate-tag-translate-link-desc' => 'Deze pagina vertalen',
 	'translate-tag-markthis' => 'Deze pagina voor vertaling markeren',
-	'tpt-translation-intro' => 'Deze pagina is een <span class="plainlinks">[$1 vertaalde versie]</span> van de pagina [[$2]] en de vertaling is $3% compleet en bijgewerkt.
-<span class="mw-translate-fuzzy">Verouderde vertalingen worden zo gemarkeerd.</span>',
+	'translate-tag-markthisagain' => 'Deze pagina is <span class="plainlinks">[$1 gewijzigd]</span> sinds deze voor het laatst <span class="plainlinks">[$2 voor vertaling gemarkeerd]</span> is geweest.',
+	'translate-tag-hasnew' => 'Aan deze pagina zijn <span class="plainlinks">[$1 wijzigingen]</span> gemaakt die niet voor vertaling zijn gemarkeerd.',
+	'tpt-translation-intro' => 'Deze pagina is een <span class="plainlinks">[$1 vertaalde versie]</span> van de pagina [[$2]] en de vertaling is $3% compleet en bijgewerkt.',
+	'tpt-translation-intro-fuzzy' => 'Verouderde vertaling worden zo weergegeven.',
 	'tpt-languages-legend' => 'Andere talen:',
 	'tpt-target-page' => 'Deze pagina kan niet handmatig worden bijgewerkt manually.
 Deze pagina is een vertaling van de pagina [[$1]].
@@ -782,7 +827,6 @@ Siatz segur(a) que conten la balisa <nowiki><translate></nowiki> e qu'a una sint
 	'tpt-saveok' => 'La pagina « $1 » es estada marcada per èsser traducha amb $2 seccions tradusiblas.
 La pagina pòt èsser <span class="plainlinks">[$3 traducha]</span> tre ara.',
 	'tpt-badsect' => '« $1 » es pas un nom valid per la seccion $2.',
-	'tpt-deletedsections' => 'Las seccions seguentas seràn pas pus utilizadas :',
 	'tpt-showpage-intro' => "Çaijós, las traduccions novèlas, las qu'existisson e las suprimidas.
 Abans de marcar aquestas versions per èsser traduchas, verificatz que las modificacions a las seccions son minimizadas per evitar de trabalh inutil als traductors.",
 	'tpt-mark-summary' => 'Aquesta version es estada marcada per èsser traducha',
@@ -797,8 +841,7 @@ Abans de marcar aquestas versions per èsser traduchas, verificatz que las modif
 	'tpt-translate-this' => 'traduire aquesta pagina',
 	'translate-tag-translate-link-desc' => 'Traduire aquesta pagina',
 	'translate-tag-markthis' => 'Marcar aquesta pagina per èsser traducha',
-	'tpt-translation-intro' => 'Aquesta pagina es una <span class="plainlinks">[$1 traduccion]</span> de la pagina [[$2]] e la traduccion es completada a $3 % e a jorn.
-<span class="mw-translate-fuzzy">Las traduccions pas a jorn son marcadas coma aquò.</span>',
+	'tpt-translation-intro' => 'Aquesta pagina es una <span class="plainlinks">[$1 traduccion]</span> de la pagina [[$2]] e la traduccion es completada a $3 % e a jorn.',
 	'tpt-languages-legend' => 'Autras lengas :',
 	'tpt-target-page' => "Aquesta pagina pòt pas èsser mesa a jorn manualament.
 Es una version traducha de [[$1]] e la traduccion pòt èsser mesa a jorn en utilizant [$2 l'esplech de traduccion].",
@@ -828,7 +871,6 @@ Certifique-se que a mesma contém tags <nowiki><translate></nowiki> e possui uma
 	'tpt-saveok' => 'A página "$1" foi marcada para tradução com $2 seccções traduzíveis.
 A página pode agora ser <span class="plainlinks">[$3 traduzida]</span>.',
 	'tpt-badsect' => '"$1" não é um nome válido para a secção $2.',
-	'tpt-deletedsections' => 'As seções seguintes deixarão de ser utilizadas:',
 	'tpt-showpage-intro' => 'Abaixo estão listadas secções novas, existentes e apagadas.
 Antes de marcar esta versão para tradução, verifique que as alterações às secções são minimizadas para evitar trabalho desnecessário para os tradutores.',
 	'tpt-mark-summary' => 'Marcada esta versão para tradução',
@@ -842,8 +884,7 @@ Antes de marcar esta versão para tradução, verifique que as alterações às 
 	'tpt-translate-this' => 'traduzir esta página',
 	'translate-tag-translate-link-desc' => 'Traduzir esta página',
 	'translate-tag-markthis' => 'Marcar esta página para tradução',
-	'tpt-translation-intro' => 'Esta página é uma <span class="plainlinks">[$1 versão traduzida]</span> de uma página [[$2]], e a tradução está $3% completa e atualizada.
-<span class="mw-translate-fuzzy">Traduções obsoletas são marcadas desta forma.</span>',
+	'tpt-translation-intro' => 'Esta página é uma <span class="plainlinks">[$1 versão traduzida]</span> de uma página [[$2]], e a tradução está $3% completa e atualizada.',
 	'tpt-languages-legend' => 'Outras línguas:',
 	'tpt-target-page' => 'Esta página não pode ser atualizada manualmente.
 Esta página é uma tradução da página [[$1]], e a tradução pode ser atualizada utilizando [$2 a ferramenta de tradução].',
@@ -871,7 +912,6 @@ Tenha certeza que ela tem marcas <nowiki><translate></nowiki> e tem a sintaxe v�
 	'tpt-saveok' => 'A página "$1" foi marcada para tradução com $2 seções traduzíveis.
 A página pode ser <span class="plainlinks">[$3 traduzida]</span> agora.',
 	'tpt-badsect' => '"$1" não é um nome válido para a seção $2.',
-	'tpt-deletedsections' => 'As seguintes seção não mais serão utilizadas',
 	'tpt-showpage-intro' => 'Abaixo estão listadas seções novas, existentes e removidas.
 Antes de marcar esta versão para tradução, verifique se as mudanças nas seções foram minimizadas para evitar trabalho desnecessário para os tradutores.',
 	'tpt-mark-summary' => 'Marcou esta versão para tradução',
@@ -939,7 +979,6 @@ Uistite sa, že obsahuje značky <nowiki><translate></nowiki> a má platnú synt
 	'tpt-saveok' => 'Stránka „$1“ bola označená na preklad s $2 {{PLURAL:$2|sekciou|sekciami}}, ktoré možno preložiť.
 Túto stránku je teraz možné <span class="plainlinks">[$3 preložiť]</span>.',
 	'tpt-badsect' => '„$1“ nie je platný názov sekcie $2.',
-	'tpt-deletedsections' => '{{PLURAL:$1|Nasledovná sekcia už nebude využitá|Nasledovné sekcie už nebudú využité}}:',
 	'tpt-showpage-intro' => 'Dolu sú uvedené nové, súčasné a zmazané sekcie,
 Predtým než túto verziu označíte na preklad skontrolujte, že zmeny sekcií sú minimálne aby ste zabránili zbytočnej práci prekladateľov.',
 	'tpt-mark-summary' => 'Táto verzia je označená na preklad',
@@ -954,8 +993,7 @@ Predtým než túto verziu označíte na preklad skontrolujte, že zmeny sekcií
 	'tpt-translate-this' => 'preložiť túto stránku',
 	'translate-tag-translate-link-desc' => 'Preložiť túto stránku',
 	'translate-tag-markthis' => 'Označiť túto stránku na preklad',
-	'tpt-translation-intro' => 'Táto stránka je <span class="plainlinks">[$1 preloženou verziou]</span> stránky [[$2]] a preklad je hotový a aktuálny na $3 %.
-<span class="mw-translate-fuzzy">Zastaralé preklady sú označené takto.</span>',
+	'tpt-translation-intro' => 'Táto stránka je <span class="plainlinks">[$1 preloženou verziou]</span> stránky [[$2]] a preklad je hotový a aktuálny na $3 %.',
 	'tpt-languages-legend' => 'Iné jazyky:',
 	'tpt-target-page' => 'Túto stránku nemožno aktualizovať ručne.
 Táto stránka je prekladom stránky [[$1]] a preklad možno aktualizovať pomocou [$2 nástroja na preklad].',
