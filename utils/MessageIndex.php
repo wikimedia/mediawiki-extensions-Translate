@@ -115,10 +115,11 @@ class MessageIndex {
 	}
 
 	protected static function checkNs( $namespace ) {
-		if ( $namespace !== null ) {
+		if ( $namespace !== null && $namespace == NS_TRANSLATIONS ) {
 			$namepace = MWNamespace::getCanonicalName( $namespace );
 			if ( $namespace === false ) return null;
+			return $namespace;
 		}
-		return $namespace;
+		return null;
 	}
 }
