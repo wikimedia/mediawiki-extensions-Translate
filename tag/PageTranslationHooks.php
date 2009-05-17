@@ -52,7 +52,7 @@ class PageTranslationHooks {
 
 		// Update the target translation page
 		list(, $code ) = TranslateUtils::figureMessage( $title->getDBkey() );
-		self::updateTranslationPage( $page, $group, $code, $user, $flags, $summary );
+		self::updateTranslationPage( $page, $code, $user, $flags, $summary );
 
 		return true;
 	}
@@ -79,31 +79,17 @@ class PageTranslationHooks {
 	}
 
 	public static function updateTranslationPage( TranslatablePage $page,
-		MessageGroup $group, $code, $user, $flags, $summary ) {
+		$code, $user, $flags, $summary ) {
 
 		$source = $page->getTitle();
 		$target = Title::makeTitle( $source->getNamespace(), $source->getDBkey() . "/$code" );
-
-		$collection = $group->initCollection( $code );
-		$group->fillCollection( $collection );
-
-		$text = $page->getParse()->getTranslationPageText( $collection );
-
-		// Same as in renderSourcePage
-		$cb = array( __CLASS__, 'replaceTagCb' );
-		$text = preg_replace_callback( '~(\n?<translate>\s*?)(.*?)(\s*?</translate>)~s', $cb, $text );
-
-		#$flags |= EDIT_SUPPRESS_RC; // We can filter using CleanChanges
 		$flags &= ~EDIT_NEW & ~EDIT_UPDATE; // We don't know
 
-		$article = new Article( $target );
-
-		self::$allowTargetEdit = true;
-		$article->doEdit( $text, $summary, $flags );
-		self::$allowTargetEdit = false;
-
-		// purge cache
-		$page->getTranslationPercentages( true );
+		$job = RenderJob::newJob( $target );
+		$job->setUser( $user );
+		$job->setSummary( $summary );
+		$job->setFlags( $flags );
+		$job->run();
 	}
 
 	public static function addSidebar( $out, $tpl ) {
@@ -268,10 +254,7 @@ FOO;
 		// Case 2: Target pages
 		$page = TranslatablePage::isTranslationPage( $title );
 		if ( $page !== false ) {
-			// Local override of fuzzybot is allowed
-			global $wgTranslateFuzzyBotName;
-			if ( self::$allowTargetEdit ||
-			     $user->getName() === $wgTranslateFuzzyBotName ) return true;
+			if ( self::$allowTargetEdit ) return true;
 
 			if ( $page->getMarkedTag() ) {
 				list( , $code ) = TranslateUtils::figureMessage( $title->getText() );

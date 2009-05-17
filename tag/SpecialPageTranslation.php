@@ -1,6 +1,7 @@
 <?php
 /**
  * A special page for marking revisions of pages for translation.
+ * There are two modes 1) list of all pages 2) review mode for one page.
  *
  * @author Niklas Laxström
  * @copyright Copyright © 2009 Niklas Laxström
@@ -40,9 +41,12 @@ class SpecialPageTranslation extends SpecialPage {
 
 		// We are processing some specific page
 		if ( $revision === '0' ) {
+			// Get the latest revision
 			$revision = $title->getLatestRevID();
 		} elseif ( $revision !== $title->getLatestRevID() ) {
+			// We do want to notify the reviewer if the underlying page changes during review
 			$wgOut->addWikiMsg( 'tpt-oldrevision', $title->getPrefixedText(), $revision );
+			$this->listPages();
 			return;
 		}
 
@@ -238,7 +242,8 @@ class SpecialPageTranslation extends SpecialPage {
 		return $sections;
 	}
 
-	public function showPage( TranslatablePage $page, $sections ) {
+	/** Displays the sections and changes for the user to review */
+	public function showPage( TranslatablePage $page, Array $sections ) {
 		global $wgOut, $wgScript, $wgLang;
 
 		$wgOut->setSubtitle( $this->user->getSkin()->link( $page->getTitle() ) );
@@ -317,31 +322,38 @@ class SpecialPageTranslation extends SpecialPage {
 		);
 	}
 
-		protected function makeSectionElement( $legend, $type, $content ) {
-			global $wgOut;
+	protected function makeSectionElement( $legend, $type, $content ) {
+		global $wgOut;
 
-			$containerParams = array( 'class' => "mw-tpt-sp-section mw-tpt-sp-section-type-{$type}" );
-			$legendParams = array( 'class' => 'mw-tpt-sp-legend' );
-			$contentParams = array( 'class' => 'mw-tpt-sp-content' );
+		$containerParams = array( 'class' => "mw-tpt-sp-section mw-tpt-sp-section-type-{$type}" );
+		$legendParams = array( 'class' => 'mw-tpt-sp-legend' );
+		$contentParams = array( 'class' => 'mw-tpt-sp-content' );
 
-			$wgOut->addHTML(
-				Xml::tags( 'div', $containerParams,
-					Xml::tags( 'div', $legendParams, $legend ) .
-					Xml::tags( 'div', $contentParams, $content )
-				)
-			);
-		}
+		$wgOut->addHTML(
+			Xml::tags( 'div', $containerParams,
+				Xml::tags( 'div', $legendParams, $legend ) .
+				Xml::tags( 'div', $contentParams, $content )
+			)
+		);
+	}
 
+	/**
+	 * This function does the heavy duty of marking a page.
+	 * - Updates the source page with section markers.
+	 * - Updates translate_sections table
+	 * - Updates revtags table
+	 * - Setups renderjobs to update the translation pages
+	 * - Invalidates caches
+	 */
+	public function markForTranslation( TranslatablePage $page, Array $sections ) {
 
-	public function markForTranslation( TranslatablePage $page, $sections ) {
-		$text = $page->getParse()->getSourcePageText();
-
+		// Add the section markers to the source page
 		$article = new Article( $page->getTitle() );
 		$status = $article->doEdit(
-			$text,
-			wfMsgForContent( 'tpt-mark-summary' ),
-			EDIT_FORCE_BOT | EDIT_UPDATE,
-			$page->getRevision()
+			$page->getParse()->getSourcePageText(), // Content
+			wfMsgForContent( 'tpt-mark-summary' ),  // Summary
+			EDIT_FORCE_BOT | EDIT_UPDATE,           // Flags
+			$page->getRevision()                    // Based-on revision
 		);
 
 		if ( !$status->isOK() ) return array( 'tpt-edit-failed', $status->getWikiText() );
@@ -355,10 +367,11 @@ class SpecialPageTranslation extends SpecialPage {
 		}
 
 		if ( $newrevision === null ) {
-			// Probably a no-change edit, so no new revision was assigned
+			// Probably a no-change edit, so no new revision was assigned.
+			// Get the latest revision manually
 			$newrevision = $page->getTitle()->getLatestRevId();
 		}
-		
+
 		$inserts = array();
 		$changed = array();
 		foreach ( $sections as $s ) {
@@ -369,19 +382,40 @@ class SpecialPageTranslation extends SpecialPage {
 				'trs_text' => $s->getText(),
 			);
 		}
-		// Don't add empty rows
+
+		// Don't add stuff is no changes, use the plain null instead for prettiness
 		if ( !count($changed) ) $changed = null;
 
 		$dbw = wfGetDB( DB_MASTER );
 		$dbw->delete( 'translate_sections', array( 'trs_page' => $page->getTitle()->getArticleId() ), __METHOD__ );
 		$ok = $dbw->insert( 'translate_sections', $inserts, __METHOD__ );
 
+		// Store changed sections in the database for easy access.
+		// Used when determinen the up-to-datedness for section translations.
 		$page->addMarkedTag( $newrevision, $changed );
+
+		$this->setupRenderJobs( $page );
+
 		// Re-generate caches
 		MessageIndex::cache( NS_TRANSLATIONS );
-		$page->getTranslationPercentages( true );
+		$page->getTranslationPercentages( /*re-generate*/ true );
 
 		return false;
+	}
+
+	public function setupRenderJobs( TranslatablePage $page ) {
+		$titles = $page->getTranslationPages();
+		$jobs = array();
+		foreach ( $titles as $t ) {
+			$jobs[] = RenderJob::newJob( $t );
+		}
+
+		if ( count($jobs) < 10 ) {
+			foreach ( $jobs as $j ) $j->run();
+		} else {
+			// Use the job queue
+			Job::batchInsert( $jobs );
+		}
 	}
 
 }

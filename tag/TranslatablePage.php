@@ -263,13 +263,7 @@ class TranslatablePage {
 		return $db->select( 'revtag', $fields, $conds, __METHOD__, $options );
 	}
 
-	public function getTranslationPercentages( $force = false ) {
-		// Check the memory cache, as this is very slow to calculate
-		global $wgMemc;
-		$memcKey = wfMemcKey( 'pt', 'status', $this->getTitle()->getPrefixedText() );
-		$cache = $wgMemc->get( $memcKey );
-		if ( !$force && is_array( $cache ) ) return $cache;
-
+	public function getTranslationPages() {
 		// Fetch the available translation pages from database
 		$dbr = wfGetDB( DB_SLAVE );
 		$likePattern = $dbr->escapeLike( $this->getTitle()->getDBkey() ) . '/%%';
@@ -282,6 +276,19 @@ class TranslatablePage {
 			), __METHOD__ );
 
 		$titles = TitleArray::newFromResult( $res );
+		return $titles;
+	}
+
+	public function getTranslationPercentages( $force = false ) {
+		// Check the memory cache, as this is very slow to calculate
+		global $wgMemc, $wgRequest;
+		$memcKey = wfMemcKey( 'pt', 'status', $this->getTitle()->getPrefixedText() );
+		$cache = $wgMemc->get( $memcKey );
+		if ( !$force && $wgRequest->getText( 'action' ) !== 'purge' ) {
+			if ( is_array($cache) ) return $cache;
+		}
+
+		$titles = $this->getTranslationPages();
 
 		// Calculate percentages for the available translations
 		$group = MessageGroups::getGroup( 'page|' . $this->getTitle()->getPrefixedText() );
@@ -292,8 +299,8 @@ class TranslatablePage {
 
 		$temp = array();
 		foreach ( $titles as $t ) {
-			if ( $t->getSubpageText() === $t->getText() ) continue;
-			$collection = $group->initCollection( $t->getSubpageText() );
+			list( , $code ) = TranslateUtils::figureMessage( $t->getText() );
+			$collection = $group->initCollection( $code );
 			$group->fillCollection( $collection );
 
 			$percent = $this->getPercentageInternal( $collection, $markedRevs );

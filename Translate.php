@@ -64,7 +64,7 @@ $wgHooks['SkinTemplateToolboxEnd'][] = 'TranslateToolbox::toolboxAllTranslations
 $wgEnablePageTranslation = false;
 $wgPageTranslationNamespace = 1198;
 
-//$wgJobClasses['RenderJob'] = 'RenderJob';
+$wgJobClasses['RenderJob'] = 'RenderJob';
 $wgAvailableRights[] = 'translate';
 
 define( 'TRANSLATE_FUZZY', '!!FUZZY!!' );

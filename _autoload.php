@@ -80,8 +80,6 @@ $wgAutoloadClasses['MantisMessageGroup'] = $dir . 'groups/Mantis.php';
 $wgAutoloadClasses['NoccMessageGroup'] = $dir . 'groups/Nocc.php';
 $wgAutoloadClasses['OpenLayersMessageGroup'] = $dir . 'groups/OpenLayers.php';
 
-# tag
-#$wgAutoloadClasses['RenderJob'] = $dir . 'tag/RenderJob.php';
 # page translation
 $wgAutoloadClasses['PageTranslationHooks'] = $dir . 'tag/PageTranslationHooks.php';
 $wgAutoloadClasses['TranslatablePage'] = $dir . 'tag/TranslatablePage.php';
@@ -89,3 +87,4 @@ $wgAutoloadClasses['TPException'] = $dir . 'tag/TranslatablePage.php';
 $wgAutoloadClasses['TPParse'] = $dir . 'tag/TPParse.php';
 $wgAutoloadClasses['TPSection'] = $dir . 'tag/TPSection.php';
 $wgAutoloadClasses['SpecialPageTranslation'] = $dir . 'tag/SpecialPageTranslation.php';
+$wgAutoloadClasses['RenderJob'] = $dir . 'tag/RenderJob.php';

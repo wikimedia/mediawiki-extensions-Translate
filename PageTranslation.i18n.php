@@ -68,6 +68,8 @@ This page is a translation of page [[$1]] and the translation can be updated usi
 The page you are trying to edit does not seem to correspond any page marked for translation.',
 
 	'tpt-install' => 'Run php maintenance/update.php or web install to enable page translation feature.',
+
+	'tpt-render-summary' => 'Updating to match new version of source page',
 );
 
 /** Message documentation (Message documentation)
