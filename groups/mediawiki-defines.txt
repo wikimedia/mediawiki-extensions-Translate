@@ -286,6 +286,8 @@ Farmer
 optional = farmercreateurl
 ignored = farmerwikiurl, farmerinterwikiurl
 
+FCK editor
+
 Flagged Revisions - Flagged Revs
 id = ext-flaggedrevs-flaggedrevs
 file = FlaggedRevs/language/FlaggedRevs.i18n.php
