@@ -489,6 +489,9 @@ class GettextMessageGroup extends MessageGroup {
 	public function setPotFile( $value ) { $this->potFile = $value; }
 
 	protected $codeMap = array();
+	public function setCodeMap( $map ) {
+		$this->codeMap = $map;
+	}
 
 	protected $path = '';
 	public function getPath() { return $this->path; }
