@@ -91,13 +91,16 @@ class SpecialPageTranslation extends SpecialPage {
 	public function loadPagesFromDB() {
 		$dbr = wfGetDB( DB_SLAVE );
 		$tables = array( 'page', 'revtag_type', 'revtag' );
-		$vars = array( 'page_id', 'page_title', 'page_namespace', 'page_latest', 'rt_revision', 'rtt_name' );
+		$vars = array( 'page_id', 'page_title', 'page_namespace', 'page_latest', 'MAX(rt_revision) as rt_revision', 'rtt_name' );
 		$conds = array(
 			'page_id=rt_page',
 			'rt_type=rtt_id',
 			'rtt_name' => array( 'tp:mark', 'tp:tag' ),
 		);
-		$options = array( 'ORDER BY' => 'page_namespace, page_title' );
+		$options = array(
+			'ORDER BY' => 'page_namespace, page_title',
+			'GROUP BY' => 'page_id, rtt_id',
+		);
 		$res = $dbr->select( $tables, $vars, $conds, __METHOD__, $options );
 		return $res;
 	}
