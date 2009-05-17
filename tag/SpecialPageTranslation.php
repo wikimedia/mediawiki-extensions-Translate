@@ -97,7 +97,8 @@ class SpecialPageTranslation extends SpecialPage {
 			'rt_type=rtt_id',
 			'rtt_name' => array( 'tp:mark', 'tp:tag' ),
 		);
-		$res = $dbr->select( $tables, $vars, $conds, __METHOD__ );
+		$options = array( 'ORDER BY' => 'page_namespace, page_title' );
+		$res = $dbr->select( $tables, $vars, $conds, __METHOD__, $options );
 		return $res;
 	}
 

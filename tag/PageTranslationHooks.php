@@ -273,14 +273,13 @@ FOO;
 			if ( self::$allowTargetEdit ||
 			     $user->getName() === $wgTranslateFuzzyBotName ) return true;
 
-			// Proceed to check whether we need to block
-			$page = TranslatablePage::newFromTitle( $newtitle );
 			if ( $page->getMarkedTag() ) {
+				list( , $code ) = TranslateUtils::figureMessage( $title->getText() );
 				wfLoadExtensionMessages( 'PageTranslation' );
 				$result = array(
 					'tpt-target-page',
-					$newtitle->getPrefixedText(),
-					$page->getTranslationUrl( $title->getSubpageText() ) 
+					$page->getTitle()->getPrefixedText(),
+					$page->getTranslationUrl( $code ) 
 				);
 				return false;
 			}
