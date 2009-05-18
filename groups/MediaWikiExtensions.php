@@ -362,11 +362,10 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $description = '{{int:translate-group-desc-wikimediaextensions}}';
 
 	protected $wmfextensions = array(
-		'ext-abusefilter', // test.wikipedia.org
+		'ext-abusefilter',
 		'ext-antibot',  // anti spam and such (usually all wikis)
 		'ext-antispoof',
 		'ext-assertedit', // bots
-		'ext-boardvote', // used rarely
 		'ext-categorytree',
 		'ext-centralauth',
 		'ext-centralnotice', // used rarely
@@ -377,6 +376,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-codereview', // MediaWiki.org
 		'ext-collection-core',
 		'ext-collection-other',
+		'ext-communityvoice', // usability.wikimedia.org
 		'ext-confirmedit',
 		'ext-confirmeditfancycaptcha',
 		'ext-contactpage', // on nl.wp and wikimediafoundation.org
