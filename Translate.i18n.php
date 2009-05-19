@@ -2828,6 +2828,18 @@ Usted puede [$1 editar la página fuente] o [$2 actualizar la traducción].',
 	'translate-nothing-to-do' => 'Todas las posibles traducciones parecen haber sido hechas.
 Se te anima a revisar los mensajes a través de [[Special:Translate|{{int:translate}}]].',
 	'translate-save' => 'Grabar($1)',
+	'translate-group-desc-mediawikicore' => 'Este grupo de mensajes contiene los mensajes usados en la actual versión alpha de MediaWiki ({{CURRENTVERSION}})',
+	'translate-group-desc-mediawikimostused' => 'Este grupo de mensajes contiene los [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 mensajes más comunmente usados] en MediaWiki',
+	'translate-group-desc-mediawikiextensions' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones soportadas por MediaWiki',
+	'translate-group-desc-collection' => 'Grupo de mensajes Meta conteniendo todos los mensajes para la extensión MediaWiki [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
+	'translate-group-desc-flaggedrevs' => 'Grupo de mensajes Meta conteniendo todos los mensajes para la extensión MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
+	'translate-group-desc-socialprofile' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones relacionadas a la extensión MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
+	'translate-group-desc-translate' => 'Grupo de mensajes Meta conteniendo todos los mensajes para la extensión MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
+	'translate-group-desc-wikiaextensions' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones MediaWiki soportadas usadas por [http://www.wikia.com Wikia]',
+	'translate-group-desc-wikihowextensions' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones MediaWiki soportadas usadas por [http://www.wikihow.com wikiHow]',
+	'translate-group-desc-wikimediaextensions' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones MediaWiki soportadas usadas por [http://wikimedia.org/ Wikimedia Foundation]',
+	'translate-group-desc-wikitravelextensions' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones MediaWiki soportadas usadas por [http://wikitravel.org Wikitravel]',
+	'translate-group-desc-uniwiki' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones relacionadas a [http://unicefinnovation.org/wiki.php Uniwiki]',
 );
 
 /** Estonian (Eesti)
@@ -6609,6 +6621,14 @@ Dir sidd awer häerzlech Invitéiert fir d'Systemmessagn op [[Special:Translate|
 	'translate-group-desc-mediawikicore' => "An dësem Grupp mat Message sinn d'Messagen aus der aktueller alpha-Versioun vu MediaWiki ({{CURRENTVERSION}}) drann",
 	'translate-group-desc-mediawikimostused' => 'An dësem Grupp sinn déi [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 am dackste gebrauchte Systemmessagen] vu MediaWiki',
 	'translate-group-desc-mediawikiextensions' => 'An dësem Grupp sinn all Systemmessagen vun den ënnerstetzten Erweiderunge vu MediaWiki',
+	'translate-group-desc-collection' => "An dësem Grupp sinn all Systemmessagen fir d'MediaWiki-Erweiderung [http://www.mediawiki.org/wiki/Extension:Collection Sammlung]",
+	'translate-group-desc-flaggedrevs' => "An dësem Grupp sinn all Systemmessage fir d'MediaWiki-Erweiderung [http://www.mediawiki.org/wiki/Extension:FlaggedRevs Markéiert Versiounen]",
+	'translate-group-desc-socialprofile' => 'An dësem Grupp stinn all Systemmessage fir Erweiderungen a Verbindung matt der MediaWiki-Erweiderung [http://www.mediawiki.org/wiki/Extension:SocialProfile Soziale Profil]',
+	'translate-group-desc-translate' => "An dësem Grupp sinn all Systemmessage fir d'MediaWiki-Erweiderung [http://www.mediawiki.org/wiki/Extension:Translate Iwwersetzen]",
+	'translate-group-desc-wikiaextensions' => 'An dësem Grupp sinn all Systemmessage vun den ënnerstetzten MediaWiki-Erweiderungen, déi vun [http://www.wikia.com Wikia] genotzt ginn',
+	'translate-group-desc-wikihowextensions' => 'An dësem Grupp sinn all Systemmessagen vun den ënnerstetzte MediaWiki-Erweiderungen, déi vun [http://www.wikihow.com wikiHow] genotzt ginn',
+	'translate-group-desc-wikimediaextensions' => 'an dësem Grupp ainn all Systemmessagen vun den ënnerstetzte MediaWiki-Erweiderungen, déi vun der [http://wikimedia.org/ Wikimedia Foundation] genotzt ginn',
+	'translate-group-desc-wikitravelextensions' => 'an dëser Grupp sinn all Systemmessagen vun den ënnerstetzte MediaWiki-Erweiderungen, déi vu [http://wikitravel.org Wikitravel] genotzt ginn',
 	'translate-group-desc-uniwiki' => 'Meta-Grupp vun alle Systemmessagen fir Erweiderungen am Zesummenhang mat [http://unicefinnovation.org/wiki.php Uniwiki]',
 );
 
@@ -10826,6 +10846,18 @@ Bạn được khuyến khích xem lại các thông điệp tại [[Special:Tra
  # được hiển thị ở Special:LanguageStats. Các mã nhóm thông điệp không tồn tại
  # sẽ bị bỏ qua.',
 	'translate-save' => 'Lưu ($1)',
+	'translate-group-desc-mediawikicore' => 'Nhóm thông báo này chứa các thông báo dùng trong phiên bản alpha hiện hành của MediaWiki ({{CURRENTVERSION}})',
+	'translate-group-desc-mediawikimostused' => 'Nhóm thông báo này chứa [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 thông báo dùng nhiều nhất] trong MediaWiki',
+	'translate-group-desc-mediawikiextensions' => 'Nhóm thông báo “mẹ”, chứa các thông báo trong các phần mở rộng MediaWiki được hỗ trợ tại đây',
+	'translate-group-desc-collection' => 'Nhóm thông báo “mẹ”, chứa các thông báo của phần mở rộng [http://www.mediawiki.org/wiki/Extension:Collection Collection] cho MediaWiki',
+	'translate-group-desc-flaggedrevs' => 'Nhóm thông báo “mẹ”, chứa các thông báo của phần mở rộng [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs] cho MediaWiki',
+	'translate-group-desc-socialprofile' => 'Nhóm thông báo “mẹ”, chứa thông báo của các phần mở rộng có liên quan đến phần mở rộng [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile] cho MediaWiki',
+	'translate-group-desc-translate' => 'Nhóm thông báo “mẹ”, chứa các thông báo của phần mở rộng [http://www.mediawiki.org/wiki/Extension:Translate Translate] cho MediaWiki',
+	'translate-group-desc-wikiaextensions' => 'Nhóm thông báo “mẹ”, chứa thông báo của các phần mở rộng MediaWiki được sử dụng tại [http://www.wikia.com Wikia]',
+	'translate-group-desc-wikihowextensions' => 'Nhóm thông báo “mẹ”, chứa thông báo của các phần mở rộng MediaWiki được sử dụng tại [http://www.wikihow.com wikiHow]',
+	'translate-group-desc-wikimediaextensions' => 'Nhóm thông báo “mẹ”, chứa thông báo của các phần mở rộng MediaWiki được [http://wikimedia.org/ Quỹ Wikimedia] sử dụng',
+	'translate-group-desc-wikitravelextensions' => 'Nhóm thông báo “mẹ”, chứa thông báo của các phần mở rộng MediaWiki được sử dụng tại [http://wikitravel.org Wikitravel]',
+	'translate-group-desc-uniwiki' => 'Nhóm thông báo “mẹ”, chứa thông báo của các phần mở rộng có liên quan đến [http://unicefinnovation.org/wiki.php Uniwiki]',
 );
 
 /** Volapük (Volapük)
