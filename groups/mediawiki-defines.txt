@@ -680,10 +680,7 @@ optional = securepoll-header-url, securepoll-header-id, securepoll-header-trans-
 
 Select Category
 
-Semantic Result Formats
-file = SemanticResultFormats/SRF_Messages.php
-descmsg = srf-desc
-optional = srf_icalendar_link, srf_vcard_link, srf_bibtex_link
+Semantic Compound Queries
 
 Semantic Drilldown
 file = SemanticDrilldown/languages/SD_Messages.php
@@ -704,6 +701,11 @@ optional = smw_rss_link, smw_decseparator, smw_kiloseparator
 optional = smw_rss_description, smw_browse_more, specialpages-group-smw_group
 optional = smw_csv_link
 optional = smw_json_link
+
+Semantic Result Formats
+file = SemanticResultFormats/SRF_Messages.php
+descmsg = srf-desc
+optional = srf_icalendar_link, srf_vcard_link, srf_bibtex_link
 
 Semantic Tasks
 
