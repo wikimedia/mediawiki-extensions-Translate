@@ -814,6 +814,8 @@ Vergewëssert Iech ob se <nowiki><translate></nowiki>-Taggen  an eng valabel Syn
 	'tpt-languages-legend' => 'aner Sproochen:',
 	'tpt-target-page' => "Dës Säit kann net manuell aktualiséiert ginn.
 Dës Säit ass eng Iwwersetzung vun der Säit [[$1]] an d'Iwwersetzung ka mat Hëllef vun der [$2 Iwwersetzungs-Fonctioun] aktulaiséiert ginn.",
+	'tpt-unknown-page' => "Dëse Nummraum ass fir d'Iwwersetze vu Säitemat Inhalt reservéiert.
+D'Säit, déi Dir versicht z'änneren schéngt net mat enger Säit déi fir d'iwwersetzung markéiert ass ze korrespondéieren.",
 	'tpt-render-summary' => 'Aktualiséieren fir matt der nier Versioun vun der Quellsäit iwwereneenzestëmmen',
 );
 
