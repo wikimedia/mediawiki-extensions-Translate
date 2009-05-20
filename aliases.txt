@@ -286,6 +286,9 @@ file = UsageStatistics/SpecialUserStats.alias.php
 User merge
 file = UserMerge/UserMerge.alias.php
 
+User option stats
+file = UserOptionStats/UserOptionStats.alias.php
+
 Vote
 file = Vote/Vote.alias.php
 

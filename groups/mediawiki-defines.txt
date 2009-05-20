@@ -941,6 +941,8 @@ User Images
 
 User Merge
 
+User Option Stats
+
 User Rights Notification
 id = ext-userrightsnotif
 file = UserRightsNotif/UserRightsNotif.i18n.php
