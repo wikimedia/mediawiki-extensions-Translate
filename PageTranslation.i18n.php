@@ -403,6 +403,7 @@ Elle est une version traduite de [[$1]] et la traduction peut être mise à jour
 	'tpt-unknown-page' => 'Cet espace de noms est réservé pour la traduction de pages.
 La page que vous essayé de modifier ne semble pas correspondre à aucune page marqué pour être traduite.',
 	'tpt-install' => "Lancez php maintenance/update.php ou l'installation web pour activer la fonctionnalité de traduction de pages.",
+	'tpt-render-summary' => 'Mise à jour pour être en accord avec la nouvelle version de la source de la page',
 );
 
 /** Franco-Provençal (Arpetan)
@@ -816,6 +817,7 @@ Vergewëssert Iech ob se <nowiki><translate></nowiki>-Taggen  an eng valabel Syn
 Dës Säit ass eng Iwwersetzung vun der Säit [[$1]] an d'Iwwersetzung ka mat Hëllef vun der [$2 Iwwersetzungs-Fonctioun] aktulaiséiert ginn.",
 	'tpt-unknown-page' => "Dëse Nummraum ass fir d'Iwwersetze vu Säitemat Inhalt reservéiert.
 D'Säit, déi Dir versicht z'änneren schéngt net mat enger Säit déi fir d'iwwersetzung markéiert ass ze korrespondéieren.",
+	'tpt-install' => "Lancéiert php maintenance/update.php oder web install fir d'Fonctioun vun der Säiteniwwersetzung anzeschalten.",
 	'tpt-render-summary' => 'Aktualiséieren fir matt der nier Versioun vun der Quellsäit iwwereneenzestëmmen',
 );
 
@@ -890,19 +892,25 @@ $messages['oc'] = array(
 	'pagetranslation' => 'Traduccion de paginas',
 	'right-pagetranslation' => 'Marcar de versions de paginas per èsser traduchas',
 	'tpt-desc' => 'Extension per traduire de paginas de contengut',
-	'tpt-section' => 'Seccion:',
-	'tpt-section-new' => 'Seccion novèla :',
+	'tpt-section' => 'Unitat de traduccion $1',
+	'tpt-section-new' => 'Unitat de traduccion novèla. Nom : $1',
+	'tpt-section-deleted' => 'Unitat de traduccion $1',
+	'tpt-template' => 'Modèl de pagina',
+	'tpt-templatediff' => 'Lo modèl de pagina a cambiat.',
 	'tpt-diff-old' => 'Tèxte precedent',
 	'tpt-diff-new' => 'Tèxte novèl',
 	'tpt-submit' => 'Marcar aquesta version per èsser traducha',
+	'tpt-sections-oldnew' => 'Unitats de traduccion novèlas e existentas',
+	'tpt-sections-deleted' => 'Unitats de traduccion suprimidas',
+	'tpt-sections-template' => 'Modèl de pagina de traduccion',
 	'tpt-badtitle' => 'Lo nom de pagina donada ($1) es pas un títol valid',
 	'tpt-oldrevision' => '$2 es pas la darrièra version de la pagina [[$1]].
 Sola la darrièra version de la pagina pòt èsser marcada per èsser traducha.',
 	'tpt-notsuitable' => "La pagina $1 conven pas per èsser traducha.
 Siatz segur(a) que conten la balisa <nowiki><translate></nowiki> e qu'a una sintaxi corrècta.",
-	'tpt-saveok' => 'La pagina « $1 » es estada marcada per èsser traducha amb $2 seccions tradusiblas.
+	'tpt-saveok' => 'La pagina « $1 » es estada marcada per èsser traducha amb $2 {{PLURAL:$2|unitat de traduccion|unitats de traduccion}}.
 La pagina pòt èsser <span class="plainlinks">[$3 traducha]</span> tre ara.',
-	'tpt-badsect' => '« $1 » es pas un nom valid per la seccion $2.',
+	'tpt-badsect' => '« $1 » es pas un nom valid per una unitat de traduccion $2.',
 	'tpt-showpage-intro' => "Çaijós, las traduccions novèlas, las qu'existisson e las suprimidas.
 Abans de marcar aquestas versions per èsser traduchas, verificatz que las modificacions a las seccions son minimizadas per evitar de trabalh inutil als traductors.",
 	'tpt-mark-summary' => 'Aquesta version es estada marcada per èsser traducha',
@@ -912,18 +920,22 @@ Abans de marcar aquestas versions per èsser traduchas, verificatz que las modif
 	'tpt-old-pages' => "De versions d'{{PLURAL:$1|aquesta pagina|aquestas paginas}} son estadas marcadas per èsser traduchas.",
 	'tpt-new-pages' => "{{PLURAL:$1|Aquesta pagina conten|Aquestas paginas contenon}} de tèxte amb de balisas de traduccion, mas cap de version d'{{PLURAL:$1|aquesta pagina es pas marcada per èsser traducha|aquestas paginas son pas marcadas per èsser traduchas}}.",
 	'tpt-rev-latest' => 'darrièra version',
-	'tpt-rev-old' => 'version $1',
+	'tpt-rev-old' => 'diferéncia amb la version marcada precedenta',
 	'tpt-rev-mark-new' => 'marcar aquesta version per èsser traducha',
 	'tpt-translate-this' => 'traduire aquesta pagina',
 	'translate-tag-translate-link-desc' => 'Traduire aquesta pagina',
 	'translate-tag-markthis' => 'Marcar aquesta pagina per èsser traducha',
+	'translate-tag-markthisagain' => 'Aquesta pagina a agut <span class="plainlinks">[$1 de modificacions]</span> dempuèi qu’es estada darrièrament <span class="plainlinks">[$2 marcada per èsser traducha]</span>.',
+	'translate-tag-hasnew' => 'Aquesta pagina conten <span class="plainlinks">[$1 de modificacions]</span> que son pas marcadas per la traduccion.',
 	'tpt-translation-intro' => 'Aquesta pagina es una <span class="plainlinks">[$1 traduccion]</span> de la pagina [[$2]] e la traduccion es completada a $3 % e a jorn.',
+	'tpt-translation-intro-fuzzy' => 'Las traduccions obsolètas son marcadas atal.',
 	'tpt-languages-legend' => 'Autras lengas :',
 	'tpt-target-page' => "Aquesta pagina pòt pas èsser mesa a jorn manualament.
 Es una version traducha de [[$1]] e la traduccion pòt èsser mesa a jorn en utilizant [$2 l'esplech de traduccion].",
 	'tpt-unknown-page' => "Aqueste espaci de noms es reservat per la traduccion de paginas.
 La pagina qu'ensajatz de modificar sembla pas correspondre a cap de pagina marcada per èsser traducha.",
 	'tpt-install' => "Aviatz php maintenance/update.php o l'installacion web per activar la foncionalitat de traduccion de paginas.",
+	'tpt-render-summary' => 'Mesa a jorn per èsser en acòrd amb la version novèla de la font de la pagina',
 );
 
 /** Portuguese (Português)
