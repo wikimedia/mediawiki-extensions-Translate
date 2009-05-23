@@ -7583,6 +7583,7 @@ Sjå gjerne over meldingar gjennom [[Special:Translate|{{int:translate}}]].',
  * @author Harald Khan
  * @author Jon Harald Søby
  * @author Laaknor
+ * @author Nghtwlkr
  */
 $messages['no'] = array(
 	'translate' => 'Oversett',
@@ -7627,9 +7628,9 @@ $messages['no'] = array(
 	'translate-edit-definition' => 'Beskjeden som skal oversettes',
 	'translate-edit-contribute' => 'bidra',
 	'translate-edit-no-information' => "''Denne beskjeden har ikke dokumentasjon. Om du vet hvor eller hvordan denne beskjeden brukes, kan du hjelpe andre oversettere ved å legge inn dokumentasjon til denne beskjeden.''",
-	'translate-edit-information' => 'Informasjon om denne beskjeden ($1)',
-	'translate-edit-in-other-languages' => 'Beskjeden på andre språk',
-	'translate-edit-committed' => 'Nåværende oversettelse',
+	'translate-edit-information' => 'Informasjon om meldingen «$2» ($1)',
+	'translate-edit-in-other-languages' => 'Beskjeden «$1» på andre språk',
+	'translate-edit-committed' => 'Nåværende oversettelse i programvaren',
 	'translate-edit-warnings' => 'Advarsler om ufullstendige oversettelser',
 	'translate-edit-goto-no-prev' => 'Ingen beskjeder før denne',
 	'translate-edit-goto-no-next' => 'Ingen beskjeder etter denne',
@@ -7637,14 +7638,14 @@ $messages['no'] = array(
 	'translate-edit-goto-next' => 'Rediger neste beskjed',
 	'translate-edit-goto-list' => 'Tilbake til listen',
 	'translate-magic-pagename' => 'Utvidet MediaWiki-oversettelse',
-	'translate-magic-help' => 'Du kan oversette spesialsidenavn, magiske ord, utseendenavn og navneromnavn.
+	'translate-magic-help' => 'Du kan oversette spesialsidenavn, magiske ord og navneromnavn.
 
 Spesialsidenavn og magiske ord kan ha flere oversettelser.
-Oversettelsene adskilles med komma (,).
-Draktnavn og navnerom kan kun ha én oversettelse.
+Oversettelsene er skilt med komma (,).
+Navnerom kan ha kun én oversettelse.
 
-I navneromoversettelsene er <tt>$1 talk</tt> spesiell. <tt>$1</tt> erstattes med sidens navn (for eksempel <tt>{{SITENAME}}</tt>).
-Om det ikke er mulig å få til et gyldig uttrykk på ditt språk her uten å endre sidenavnet, kontakt en utvikler.
+I navneromoversettelsene er <tt>$1 talk</tt> spesiell. <tt>$1</tt> erstattes med sidens navn (for eksempel <tt>{{ns:project_talk}}</tt>).
+Om det ikke er mulig å få til et gyldig uttrykk på ditt språk uten å endre sidenavnet, vennligst kontakt en utvikler.
 
 Du må være i oversettergruppa for å lagre endringer.
 Endringer lagres ikke før du klikker på lagre-knappen nedenfor.',
@@ -7677,6 +7678,7 @@ Endringer lagres ikke før du klikker på lagre-knappen nedenfor.',
 	'translate-checks-plural' => 'Definisjonen bruker <nowiki>{{PLURAL:}}</nowiki>, men oversettelsen gjør ikke det.',
 	'translate-checks-pagename' => 'Navnerom endret fra definisjonen',
 	'translate-checks-format' => 'Denne oversettelsen følger ikke definisjonen eller har ugyldig syntaks: $1',
+	'translate-checks-escape' => 'De følgende lekkasjene kan være tilfeldige: <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'Ikke send meg nyhetsbrev',
 	'right-translate' => 'Redigere med oversettingsgrensesnittet',
 	'translate-rc-translation-filter' => 'Filtrer oversettelser:',
@@ -7705,7 +7707,7 @@ Endringer lagres ikke før du klikker på lagre-knappen nedenfor.',
 	'translate-tag-page-desc' => 'Oversettelse av wikisiden [[:$1]].',
 	'translate-tag-fuzzy-comment' => 'Definisjon endret av [[User:$1|$1]] i revisjon $2.',
 	'translate-tag-fuzzy-reason' => 'Definisjon endret av brukeren $1 med kommentaren «$3» i $2.',
-	'translate-sidebar-alltrans' => 'Andre oversettelser',
+	'translate-sidebar-alltrans' => 'På andre språk',
 	'translate-tag-noedit' => 'Denne siden er en automatisk oppdatert oversettelse.
 Du kan [$1 redigere kildesiden] eller [$2 oppdatere oversettelsen].',
 	'translations' => 'Alle oversettelser',
@@ -7726,6 +7728,21 @@ Du kan [$1 redigere kildesiden] eller [$2 oppdatere oversettelsen].',
 	'translate-untranslated' => 'Uoversatte',
 	'translate-percentage-complete' => 'Ferdigstilt',
 	'translate-percentage-fuzzy' => 'Utdatert',
+	'translate-nothing-to-do' => 'Det ser ut til at alle mulige oversettelser har blitt gjort.
+Du oppfordres til å se over meldinger gjennom [[Special:Translate|{{int:translate}}]].',
+	'translate-save' => 'Lagre ($1)',
+	'translate-group-desc-mediawikicore' => 'Denne meldingsgruppen inneholder meldinger brukt i den gjeldende alfaversjonen av MediaWiki ({{CURRENTVERSION}})',
+	'translate-group-desc-mediawikimostused' => 'Denne meldingsgruppen inneholder [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki de 500 mest brukte meldingene] i MediaWiki',
+	'translate-group-desc-mediawikiextensions' => 'Metameldingsgruppen inneholder alle meldinger for støttede utvidelser for MediaWiki',
+	'translate-group-desc-collection' => 'Metameldingsgruppen inneholder alle meldinger for MediaWiki-utvidelsen [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
+	'translate-group-desc-flaggedrevs' => 'Metameldingsgruppen inneholder alle meldinger for MediaWiki-utvidelsen [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
+	'translate-group-desc-socialprofile' => 'Metameldingsgruppen inneholder alle meldinger for utvidelser relatert til MediaWiki-utvidelsen [http://www.mediawiki.org/wiki/Extension:SocialProfile SocialProfile]',
+	'translate-group-desc-translate' => 'Metameldingsgruppen inneholder alle meldinger for MediaWiki-utvidelsen [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
+	'translate-group-desc-wikiaextensions' => 'Metameldingsgruppen inneholder alle meldinger for støttede MediaWiki-utvidelser brukt av [http://www.wikia.com Wikia]',
+	'translate-group-desc-wikihowextensions' => 'Metameldingsgruppen inneholder alle meldinger for støttede MediaWiki-utvidelser brukt av [http://www.wikihow.com wikiHow]',
+	'translate-group-desc-wikimediaextensions' => 'Metameldingsgruppen inneholder alle meldinger for støttede MediaWiki-utvidelser brukt av [http://wikimedia.org/ Wikimedia Foundation]',
+	'translate-group-desc-wikitravelextensions' => 'Metameldingsgruppen inneholder alle meldinger for støttede MediaWiki-utvidelser brukt av [http://wikitravel.org Wikitravel]',
+	'translate-group-desc-uniwiki' => 'Metameldingsgruppen inneholder alle meldinger for utvidelser relatert til [http://unicefinnovation.org/wiki.php Uniwiki]',
 );
 
 /** Northern Sotho (Sesotho sa Leboa)
@@ -10301,6 +10318,7 @@ Bütün değerlerin alt ve üst sınırları vardır.',
 	'translate-statsf-options' => 'Grafik seçenekleri',
 	'translate-statsf-width' => 'Piksel olarak genişlik',
 	'translate-statsf-height' => 'Piksel olarak yükseklik',
+	'translate-statsf-scale' => 'Veri',
 	'translate-statsf-scale-days' => 'Günler',
 	'translate-statsf-scale-hours' => 'Saatler',
 	'translate-statsf-count-users' => 'Aktif çevirmenler',

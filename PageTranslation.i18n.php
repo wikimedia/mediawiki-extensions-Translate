@@ -83,6 +83,8 @@ $messages['qqq'] = array(
 $2 is a count of sections which can be used with PLURAL,
 $3 is an URL.',
 	'tpt-old-pages' => 'The words "some version" refer to "one version of the page", or "a single version of each of the pages", respectively. Each page can have either one or none of its versions marked for translaton.',
+	'translate-tag-markthisagain' => '"has changes" is to be understood as "has been altered/edited"',
+	'translate-tag-hasnew' => '"has changes" is to be understood as "has been altered/edited"',
 );
 
 /** Arabic (العربية)
@@ -763,8 +765,8 @@ $messages['ksh'] = array(
 	'tpt-translate-this' => 'donn di Sigg övversäze',
 	'translate-tag-translate-link-desc' => 'Don di Sigg hee övversäze',
 	'translate-tag-markthis' => 'Donn hee di Sigg för et Övversäze makeere',
-	'translate-tag-markthisagain' => 'En dä Sigg <span class="plainlinks">[{{PLURAL:$3|es ein Änderung|sinn_er $1 Änderung|es kei Änderung}}]</span> jemaat woode zick se et läz <span class="plainlinks">[$2 för ze Övversäze]</span> makeet wood.',
-	'translate-tag-hasnew' => 'Aan dä Sigg <span class="plainlinks">[{{PLURAL:$3|es ein Änderung|sinn_er $1 Änderunge|es kei Änderung}}]</span> jemaat woode{{PLURAL:$3|, di ävver nit för ze Övversäze makeet wood.|, di ävver nit för ze Övversäze makeet woodte.|.}}',
+	'translate-tag-markthisagain' => 'Hee di Sigg es <span class="plainlinks">[$1 jeändert woode]</span> zick se et läz <span class="plainlinks">[$2 för ze Övversäze]</span> makeet woode es.',
+	'translate-tag-hasnew' => 'Hee di Sigg <span class="plainlinks">[$1 es jeändert woode]</span>, es ävver nit för ze Övversäze makeet woode.',
 	'tpt-translation-intro' => 'Hee di Sigg es en <span class="plainlinks">[$1 övversaz Version]</span> vun dä Sigg [[$2]] un es zoh $3% jedonn un om aktoälle Shtandt.',
 	'tpt-translation-intro-fuzzy' => 'Övverhollte Övversäzunge wäde su makeet, wi hee dä Täx.',
 	'tpt-languages-legend' => 'Ander Shprooche:',
@@ -797,6 +799,7 @@ $messages['lb'] = array(
 Nëmmen déi lescht Versioune kënne fir d'Iwwersetzung markéiert ginn.",
 	'tpt-notsuitable' => "D'Säit $1 ass net geeegent fir iwwersat ze ginn.
 Vergewëssert Iech ob se <nowiki><translate></nowiki>-Taggen  an eng valabel Syntax huet.",
+	'tpt-badsect' => '"$1" ass kee valbelen Numm fir d\'Iwwersetzungseenheet $2.',
 	'tpt-mark-summary' => "huet dës Versioun fir d'Iwwersetzung markéiert",
 	'tpt-edit-failed' => "D'Säit $1 konnt net aktualiséiert ginn",
 	'tpt-already-marked' => "Déilescht Versioun vun dëser Säit gouf scho fir d'Iwwersetzung markéiert.",
@@ -881,8 +884,12 @@ De pagina die u probeert te bewerken lijkt niet overeen te komen met een te vert
  * @author Gunnernett
  */
 $messages['nn'] = array(
+	'pagetranslation' => 'Sideomsetjing',
 	'tpt-diff-new' => 'Ny tekst',
+	'tpt-mark-summary' => 'Markerte denne versjonen for omsetjing',
+	'tpt-translate-this' => 'set om denne sida',
 	'translate-tag-translate-link-desc' => 'Set om denne sida',
+	'tpt-languages-legend' => 'Andre språk:',
 );
 
 /** Occitan (Occitan)
@@ -1125,6 +1132,18 @@ $messages['te'] = array(
 	'tpt-translate-this' => 'ఈ పేజీని అనువదించండి',
 	'translate-tag-translate-link-desc' => 'ఈ పేజీని అనువదించండి',
 	'tpt-languages-legend' => 'ఇతర భాషలు:',
+);
+
+/** Turkish (Türkçe)
+ * @author Joseph
+ * @author Karduelis
+ */
+$messages['tr'] = array(
+	'pagetranslation' => 'Çeviri sayfası',
+	'tpt-diff-new' => 'Yeni metin',
+	'tpt-translate-this' => 'Bu sayfayı çevir',
+	'translate-tag-translate-link-desc' => 'Bu sayfayı çevir',
+	'tpt-languages-legend' => 'Diğer diller:',
 );
 
 /** Vietnamese (Tiếng Việt)
