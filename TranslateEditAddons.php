@@ -74,7 +74,7 @@ class TranslateEditAddons {
 				wfMsgHtml( 'translate-edit-goto-next' ), array(), $params );
 		}
 
-		$title = SpecialPage::getTitleFor( 'translate' );
+		$title = SpecialPage::getTitleFor( 'Translate' );
 		$title->mFragment = "msg_$next";
 		$list = $skin->link(
 			$title,
