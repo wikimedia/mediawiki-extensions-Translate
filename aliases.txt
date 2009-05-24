@@ -26,7 +26,7 @@ Category intersection
 file = CategoryIntersection/CategoryIntersection.alias.php
 
 Category tree
-file = CategoryTree/CategoryTreePage.i18n.alias.php
+file = CategoryTree/CategoryTree.alias.php
 
 CentralAuth
 file = CentralAuth/CentralAuth.alias.php
@@ -41,7 +41,7 @@ Chemistry
 file = Chemistry/Chemicalsources.alias.php
 
 Cite special
-file = Cite/SpecialCite.i18n.alias.php
+file = Cite/SpecialCite.alias.php
 
 Close Wikis
 file = CloseWikis/CloseWikis.alias.php
@@ -60,6 +60,9 @@ file = Configure/Configure.alias.php
 
 Confirm account
 file = ConfirmAccount/ConfirmAccount.alias.php
+
+Confirm edit
+file = ConfirmEdit/ConfirmEdit.alias.php
 
 Contact page
 file = ContactPage/ContactPage.alias.php
@@ -116,10 +119,10 @@ Find spam
 file = FindSpam/FindSpam.alias.php
 
 Flagged revisions
-file = FlaggedRevs/language/FlaggedRevs.i18n.alias.php
+file = FlaggedRevs/language/FlaggedRevs.alias.php
 
 Gadgets
-file = Gadgets/Gadgets.i18n.alias.php
+file = Gadgets/Gadgets.alias.php
 
 Global blocking
 file = GlobalBlocking/GlobalBlocking.alias.php
@@ -152,7 +155,7 @@ Interwiki list
 file = InterwikiList/InterwikiList.alias.php
 
 Invitations
-file = Invitations/Invitations.i18n.alias.php
+file = Invitations/Invitations.alias.php
 
 Liquid threads
 file = LiquidThreads/Lqt.alias.php
@@ -168,6 +171,9 @@ file = Maintenance/Maintenance.alias.php
 
 Metavid Wiki
 file = MetavidWiki/languages/MV_Aliases.php
+
+Mibbit
+file = Mibbit/Mibbit.alias.php
 
 Multi upload
 file = MultiUpload/SpecialMultipleUpload.alias.php
