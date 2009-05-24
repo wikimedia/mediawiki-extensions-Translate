@@ -633,7 +633,7 @@ class SpecialPageAliasesCM extends ComplexMessages {
 						continue;
 					} else {
 						$text = $title->getText();
-						$dbkey = $title->getDBKey();
+						$dbkey = $title->getDBkey();
 						if( $text !== $_ && $dbkey !== $_ ) {
 							$errors[] = "$_ is not in normalised form, which is $text or $dbkey";
 						}

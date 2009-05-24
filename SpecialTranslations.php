@@ -109,7 +109,7 @@ class SpecialTranslations extends SpecialAllpages {
 		$sk = $wgUser->getSkin();
 
 		$namespace = $title->getNamespace();
-		$message = $title->getDBKey();
+		$message = $title->getDBkey();
 
 		$inMessageGroup = TranslateUtils::messageKeyToGroup( $title->getNamespace(), $title->getBaseText() );
 

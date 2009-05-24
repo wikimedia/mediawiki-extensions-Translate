@@ -173,7 +173,7 @@ class PageTranslationHooks {
 
 			// Add links to other languages
 			$suffix = ( $code === 'en' ) ? '' : "/$code";
-			$_title = Title::makeTitle( $title->getNamespace(), $title->getDBKey() . $suffix );
+			$_title = Title::makeTitle( $title->getNamespace(), $title->getDBkey() . $suffix );
 
 			// For some reason self-links are not done automatically
 			if ( $parser->getTitle()->getText() === $_title->getText() ) {
