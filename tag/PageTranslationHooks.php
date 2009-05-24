@@ -330,7 +330,7 @@ FOO;
 		}
 
 		if ( $canmark ) {
-			$diffUrl = $title->getFullUrl( array( 'diff' => $ready ) );
+			$diffUrl = $title->getFullUrl( array( 'oldid' => $marked, 'diff' => $latest ) );
 			$par = array( 'target' => $title->getPrefixedText() );
 			$translate = SpecialPage::getTitleFor( 'PageTranslation' );
 
