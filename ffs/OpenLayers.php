@@ -97,7 +97,7 @@ class OpenLayersFormatWriter extends SimpleFormatWriter {
  * license.  See http://svn.openlayers.org/trunk/openlayers/license.txt for the
  * full text of the license. */
 
-/* Translators (post 2008):
+/* Translators (2009 onwards):
 $authorList */
 
 /**
@@ -110,7 +110,7 @@ $authorList */
  *     <OpenLayers.Lang.translate>.  Entry bodies are normal strings or
  *     strings formatted for use with <OpenLayers.String.format> calls.
  */
-OpenLayers.Lang.$code = {
+OpenLayers.Lang["$code"] = OpenLayers.Util.applyDefaults({
 
 
 EOT;
