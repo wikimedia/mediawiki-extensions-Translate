@@ -33,6 +33,7 @@ class MantisMessageGroup extends MessageGroup {
 		'fi' => 'finnish',
 		'fr' => 'french',
 		'gl' => 'galician',
+		'gsw' => 'swissgerman',
 		'he' => 'hebrew',
 		'hr' => 'croatian',
 		'hu' => 'hungarian',
