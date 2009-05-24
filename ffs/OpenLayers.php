@@ -118,8 +118,8 @@ EOT;
 
 		// Get and write messages.
 		foreach( $collection as $message ) {
-			$message->infile = str_replace( '"', '\"', $message->infile );
-			$line = "    '{$message->key}': \"{$message->infile}\",\n\n";
+			$value = str_replace( '"', '\"', $message->database );
+			$line = "    '{$message->key}': \"{$message->value}\",\n\n";
 			fwrite( $target, $line );
 		}
 
