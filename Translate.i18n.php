@@ -6705,7 +6705,7 @@ $messages['lt'] = array(
 	'translate-edit-definition' => 'Pranešimo aprašymas',
 	'translate-edit-contribute' => 'papildyti',
 	'translate-edit-no-information' => "''Šis pranešimas dar neturi dokumentacijos. Jei žinote kur ar kaip šis pranešimas naudojamas, jūs galite padėti kitiems vertėjams pridėdami dokumentacijos į šį pranešimą.''",
-	'translate-edit-information' => 'Informacija apie šį pranešimą ($1)',
+	'translate-edit-information' => 'Informacija apie pranešimą „$2“ ($1)',
 	'translate-magic-pagename' => 'MediaWiki išplėtimų vertimas',
 	'translate-magic-help' => 'Jūs galite išversti specialių puslapių pavadinimus, magiškus žodžius ir vardų sričių pavadinimus.
 
@@ -6731,7 +6731,8 @@ Pakeitimai nebus įrašyti iki Jūs nuspausite išsaugojimo mygtuką apačioje.'
 	'translationchanges' => 'Vertimo pakeitimai',
 	'translationchanges-export' => 'eksportuoti',
 	'translationchanges-change' => '$1: $2 pagal $3',
-	'translate-checks-parameters' => 'Šie parametrai nepanaudoti: <strong>$1</strong>',
+	'translate-checks-parameters' => '{{PLURAL:$2|Šis $2 parametras nepanaudotas|Šie $2 parametrai nepanaudoti|Šie $2 parametrų nepanaudoti}}:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Aprašymas naudoja <nowiki>{{PLURAL:}}</nowiki>, bet vertimas ne.',
 );
 

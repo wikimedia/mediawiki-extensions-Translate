@@ -73,15 +73,20 @@ The page you are trying to edit does not seem to correspond any page marked for 
 );
 
 /** Message documentation (Message documentation)
+ * @author Darth Kule
  * @author EugeneZelenko
  * @author Purodha
+ * @author Siebrand
  */
 $messages['qqq'] = array(
+	'pagetranslation' => 'Title of [[Special:PageTranslation]] and its name in [[Special:SpecialPages]].',
+	'right-pagetranslation' => '{{doc-right}}',
 	'tpt-desc' => 'Short description of this extension, shown on [[Special:Version]]. Do not translate or change links.',
 	'tpt-sections-oldnew' => '"New and existing" refers to the sum of: (a) new translation units, that were added, plus (b) the already existing ones, which were retained.',
 	'tpt-saveok' => '$1 is a page title,
 $2 is a count of sections which can be used with PLURAL,
 $3 is an URL.',
+	'tpt-mark-summary' => 'This message is used as an edit summary.',
 	'tpt-old-pages' => 'The words "some version" refer to "one version of the page", or "a single version of each of the pages", respectively. Each page can have either one or none of its versions marked for translaton.',
 	'translate-tag-markthisagain' => '"has changes" is to be understood as "has been altered/edited"',
 	'translate-tag-hasnew' => '"has changes" is to be understood as "has been altered/edited"',
@@ -663,6 +668,30 @@ Le pagina que tu vole modificar non pare corresponder con alcun pagina marcate p
 	'tpt-render-summary' => 'Actualisation a un nove version del pagina de origine',
 );
 
+/** Italian (Italiano)
+ * @author Darth Kule
+ */
+$messages['it'] = array(
+	'pagetranslation' => 'Traduzione pagine',
+	'right-pagetranslation' => 'Segna versione di pagine per la traduzione',
+	'tpt-desc' => 'Estensione per la traduzione di pagine di contenuti',
+	'tpt-diff-old' => 'Testo precedente',
+	'tpt-diff-new' => 'Testo successivo',
+	'tpt-submit' => 'Segna questa versione per la traduzione',
+	'tpt-badtitle' => 'Il nome fornito per la pagina ($1) non è un titolo valido',
+	'tpt-oldrevision' => "$2 non è l'ultima versione della pagina [[$1]].
+Solo le ultime versioni possono essere segnate per la traduzione.",
+	'tpt-notsuitable' => 'La pagina $1 non è adatta per la traduzione.
+Assicurarsi che abbia i tag <nowiki><translate></nowiki> e una sintassi valida.',
+	'tpt-showpage-intro' => 'Di seguito sono elencate le sezioni nuove, esistenti e cancellate.
+Prima di segnare questa versione per la traduzione, controllare che i cambiamenti per le sezioni siano ridotti al minimo per evitare lavoro non necessario ai traduttori.',
+	'tpt-edit-failed' => 'Impossibile aggiornare la pagina: $1',
+	'tpt-already-marked' => "L'ultima versione di questa pagina è già stata segnata per la traduzione.",
+	'tpt-list-nopages' => 'Nessuna pagina è segnata per la traduzione oppure è pronta per essere segnata per la traduzione.',
+	'tpt-old-pages' => 'Alcune versioni di {{PLURAL:$1|questa pagina|queste pagine}} sono state segnate per la traduzione.',
+	'translate-tag-translate-link-desc' => 'Traduci questa pagina',
+);
+
 /** Japanese (日本語)
  * @author Aotake
  * @author Fryed-peach
@@ -767,7 +796,7 @@ $messages['ksh'] = array(
 	'translate-tag-markthis' => 'Donn hee di Sigg för et Övversäze makeere',
 	'translate-tag-markthisagain' => 'Hee di Sigg es <span class="plainlinks">[$1 jeändert woode]</span> zick se et läz <span class="plainlinks">[$2 för ze Övversäze]</span> makeet woode es.',
 	'translate-tag-hasnew' => 'Hee di Sigg <span class="plainlinks">[$1 es jeändert woode]</span>, es ävver nit för ze Övversäze makeet woode.',
-	'tpt-translation-intro' => 'Hee di Sigg es en <span class="plainlinks">[$1 övversaz Version]</span> vun dä Sigg [[$2]] un es zoh $3% jedonn un om aktoälle Shtandt.',
+	'tpt-translation-intro' => 'Hee di Sigg es en <span class="plainlinks">[$1 övversaz Version]</span> vun dä Sigg „[[$2]]“ un es zoh $3% jedonn un om aktoälle Shtandt.',
 	'tpt-translation-intro-fuzzy' => 'Övverhollte Övversäzunge wäde su makeet, wi hee dä Täx.',
 	'tpt-languages-legend' => 'Ander Shprooche:',
 	'tpt-target-page' => 'Hee di Sigg kam_mer nit vun Hand ändere. Dat hee es en Översäzungß_Sigg vun dä Sigg [[$1]]. De Övversäzung kam_mer övver däm Wiki sing [$2 Övversäzungß_Wärkzüsch] op der neußte Shtand bränge.',
@@ -890,6 +919,20 @@ $messages['nn'] = array(
 	'tpt-translate-this' => 'set om denne sida',
 	'translate-tag-translate-link-desc' => 'Set om denne sida',
 	'tpt-languages-legend' => 'Andre språk:',
+);
+
+/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
+ * @author Jon Harald Søby
+ * @author Nghtwlkr
+ */
+$messages['no'] = array(
+	'pagetranslation' => 'Sideoversetting',
+	'right-pagetranslation' => 'Merk versjoner av sider for oversettelse',
+	'tpt-desc' => 'Utvidelse for oversetting av innholdssider',
+	'tpt-section' => 'Oversettelsesenhet $1',
+	'tpt-section-new' => 'Ny oversettelsesenhet. Navn: $1',
+	'tpt-section-deleted' => 'Oversettelsesenhet $1',
+	'translate-tag-translate-link-desc' => 'Oversett denne siden',
 );
 
 /** Occitan (Occitan)
