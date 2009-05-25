@@ -183,10 +183,23 @@ function wfMemIn() { }
 function wfMemOut() { }
 
 function efTranslateInit() {
-	global $wgTranslatePHPlot, $wgAutoloadClasses;
+	global $wgTranslatePHPlot, $wgAutoloadClasses, $wgHooks;
 	if ( $wgTranslatePHPlot ) {
 		$wgAutoloadClasses['PHPlot'] = $wgTranslatePHPlot;
 	}
+
+	// Database schema
+	$wgHooks['LoadExtensionSchemaUpdates'][] = 'PageTranslationHooks::schemaUpdates';
+
+	// Do not activate hooks if not setup properly
+	if ( !efTranslateCheckPT() ) {
+		$wgEnablePageTranslation = false;
+		return true;
+	}
+
+	// Fuzzy tags for speed
+	$wgHooks['ArticleSaveComplete'][] = 'efTranslateAddFuzzy';
+
 
 	global $wgEnablePageTranslation;
 	if ( $wgEnablePageTranslation ) {
@@ -213,18 +226,6 @@ function efTranslateInit() {
 		$wgTranslateMessageNamespaces[] = NS_TRANSLATIONS;
 
 		// Page translation hooks
-		global $wgHooks;
-
-		// Database schema
-		$wgHooks['LoadExtensionSchemaUpdates'][] = 'PageTranslationHooks::schemaUpdates';
-
-		// Do not activate hooks if not setup properly
-		if ( !efTranslateCheckPT() ) {
-			$wgEnablePageTranslation = false;
-			return true;
-		}
-
-
 		// Register our css, is there a better place for this?
 		$wgHooks['OutputPageBeforeHTML'][] = 'PageTranslationHooks::injectCss';
 
@@ -259,7 +260,7 @@ function efTranslateInit() {
 function efTranslateCheckPT() {
 	global $wgHooks, $wgMemc;
 
-	$version = "2"; // Must be a string
+	$version = "3"; // Must be a string
 	global $wgMemc;
 	$memcKey = wfMemcKey( 'pt' );
 	$ok = $wgMemc->get( $memcKey );
@@ -272,7 +273,7 @@ function efTranslateCheckPT() {
 
 	// Add our tags if they are not registered yet
 	// tp:tag is called also the ready tag
-	$tags = array( 'tp:mark', 'tp:tag', 'tp:transver' );
+	$tags = array( 'tp:mark', 'tp:tag', 'tp:transver', 'fuzzy' );
 
 	$dbw = wfGetDB( DB_MASTER );
 	if ( !$dbw->tableExists('revtag_type') ) {
@@ -309,4 +310,35 @@ function efTranslateInitTags( $parser ) {
 if ( !defined('TRANSLATE_CLI') ) {
 	function STDOUT() {}
 	function STDERR() {}
+}
+
+function efTranslateAddFuzzy( $article, $user, $text, $summary,
+		$minor, $_, $_, $flags, $revision ) {
+
+	global $wgTranslateMessageNamespaces;
+
+	$ns = $article->getTitle()->getNamespace();
+	if ( !in_array( $ns, $wgTranslateMessageNamespaces) ) return true;
+
+	// We are not interested in null revisions
+	if ( $revision === null ) {
+		$rev = $article->getTitle()->getLatestRevId();
+	} else {
+		$rev = $revision->getID();
+	}
+
+	// Add the ready tag
+	$dbw = wfGetDB( DB_MASTER );
+
+	$id = $dbw->selectField( 'revtag_type', 'rtt_id', array( 'rtt_name' => 'fuzzy' ), __METHOD__ );
+
+	$conds = array(
+		'rt_page' => $article->getTitle()->getArticleId(),
+		'rt_type' => $id,
+		'rt_revision' => $rev
+	);
+	$dbw->delete( 'revtag', $conds, __METHOD__ );
+	$dbw->insert( 'revtag', $conds, __METHOD__ );
+
+	return true;
 }

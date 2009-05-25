@@ -21,7 +21,7 @@ CREATE TABLE /*$wgDBprefix*/revtag (
   rt_value blob null
 ) /*$wgDBTableOptions*/;
 -- Index for finding all revisions in a page with a given tag
-CREATE INDEX /*i*/rt_type_page_revision ON /*$wgDBprefix*/revtag
+CREATE UNIQUE INDEX /*i*/rt_type_page_revision ON /*$wgDBprefix*/revtag
 (rt_type, rt_page, rt_revision);
 -- Index for finding the tags on a given revision
 CREATE INDEX /*i*/rt_revision_type ON /*$wgDBprefix*/revtag (rt_revision, rt_type);
