@@ -320,7 +320,9 @@ function efTranslateAddFuzzy( $article, $user, $text, $summary,
 	$ns = $article->getTitle()->getNamespace();
 	if ( !in_array( $ns, $wgTranslateMessageNamespaces) ) return true;
 
-	// We are not interested in null revisions
+	// No fuzzy - no tag
+	if ( strpos( $text, TRANSLATE_FUZZY ) === false ) return true;
+
 	if ( $revision === null ) {
 		$rev = $article->getTitle()->getLatestRevId();
 	} else {

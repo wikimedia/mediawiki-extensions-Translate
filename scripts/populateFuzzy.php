@@ -34,11 +34,10 @@ $conds = array(
 	'page_namespace' => $wgTranslateMessageNamespaces,
 );
 
-$insert = array();
-
 $limit = max(1000,intval($count/100));
 $offset = 0;
 while (true) {
+	$insert = array();
 	echo "$offset/$count\n";
 	$options = array( 'LIMIT' => $limit, 'OFFSET' => $offset );
 	$res = $db->select( $tables, $fields, $conds, __METHOD__, $options );
@@ -58,6 +57,3 @@ while (true) {
 	$db->replace( 'revtag', 'rt_type_page_revision', $inserts, __METHOD__ );
 }
 
-
-
-echo $db->affectedRows() . "\n";
