@@ -143,7 +143,9 @@ $aliases['fr'] = array(
 	'Translate' => array( 'Traduire' ),
 	'Magic' => array( 'Traduction avancée', 'Traductionavancée', 'Traduction avancee', 'Traductionavancee' ),
 	'TranslationChanges' => array( 'Modifications des traductions', 'Modificationsdestraductions' ),
+	'TranslationStats' => array( 'StatistiquesDesTraductions', 'Statistiques des traductions' ),
 	'Translations' => array( 'Traductions' ),
+	'LanguageStats' => array( 'StatistiquesDesLangues', 'Statistiques des langues' ),
 );
 
 /** Franco-Provençal (Arpetan) */

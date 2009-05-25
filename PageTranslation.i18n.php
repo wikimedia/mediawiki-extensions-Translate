@@ -94,16 +94,24 @@ $3 is an URL.',
 
 /** Arabic (العربية)
  * @author Meno25
+ * @author ترجمان05
  */
 $messages['ar'] = array(
 	'pagetranslation' => 'ترجمة صفحة',
 	'tpt-section' => 'القسم:',
 	'tpt-section-new' => 'قسم جديد:',
+	'tpt-template' => 'قالب صفحة',
 	'tpt-diff-old' => 'نص سابق',
 	'tpt-diff-new' => 'نص جديد',
+	'tpt-sections-template' => 'قالب صفحة ترجمة',
+	'tpt-badtitle' => 'اسم الصّفحة المعطى ($1) ليس عنوانا صحيحا',
+	'tpt-oldrevision' => '$2 ليست آخر نسخة للصّفحة [[$1]].
+فقط آخر النسخ يمكن أن تؤشّر للترجمة.',
 	'tpt-rev-latest' => 'آخر نسخة',
 	'tpt-rev-old' => 'النسخة $1',
+	'tpt-translate-this' => 'ترجم هذه الصّفحة',
 	'translate-tag-translate-link-desc' => 'ترجمة هذه الصفحة',
+	'tpt-languages-legend' => 'لغات أخرى:',
 );
 
 /** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
@@ -171,6 +179,7 @@ $messages['bs'] = array(
 	'tpt-section-new' => 'Nova jedinica prevođenja. Naziv: $1',
 	'tpt-section-deleted' => 'Jedinica prevođenja $1',
 	'tpt-template' => 'Šablon stranice',
+	'tpt-templatediff' => 'Šablon stranice se izmijenio.',
 	'tpt-diff-old' => 'Prethodni tekst',
 	'tpt-diff-new' => 'Novi tekst',
 	'tpt-submit' => 'Označi ovu verziju za prevođenje',
@@ -189,6 +198,7 @@ Provjerite da postoje oznake <nowiki><translate></nowiki> i da ima valjanu sinta
 	'tpt-translate-this' => 'prevedi ovu stranicu',
 	'translate-tag-translate-link-desc' => 'Prevedi ovu stranicu',
 	'translate-tag-markthis' => 'Označi ovu stranicu za prevođenje',
+	'tpt-translation-intro-fuzzy' => 'Zastarijeli prijevodi su označeni ovako.',
 	'tpt-languages-legend' => 'Drugi jezici:',
 );
 
@@ -828,6 +838,8 @@ $messages['lb'] = array(
 Nëmmen déi lescht Versioune kënne fir d'Iwwersetzung markéiert ginn.",
 	'tpt-notsuitable' => "D'Säit $1 ass net geeegent fir iwwersat ze ginn.
 Vergewëssert Iech ob se <nowiki><translate></nowiki>-Taggen  an eng valabel Syntax huet.",
+	'tpt-saveok' => 'D\'Säit [[$1]] gouf fir d\'Iwwersetzung mat $2 {{PLURAL:$2|Iwwersetzungseenheet|Iwwersetzungseenheete}} markéiert.
+D\'Säit kann elo <span class="plainlinks">[$3 iwwersat]</span> ginn.',
 	'tpt-badsect' => '"$1" ass kee valbelen Numm fir d\'Iwwersetzungseenheet $2.',
 	'tpt-mark-summary' => "huet dës Versioun fir d'Iwwersetzung markéiert",
 	'tpt-edit-failed' => "D'Säit $1 konnt net aktualiséiert ginn",
@@ -899,9 +911,9 @@ Controleer voordat u deze versie voor vertaling markeert of de wijzigingen aan d
 	'tpt-translation-intro' => 'Deze pagina is een <span class="plainlinks">[$1 vertaalde versie]</span> van de pagina [[$2]] en de vertaling is $3% compleet en bijgewerkt.',
 	'tpt-translation-intro-fuzzy' => 'Verouderde vertaling worden zo weergegeven.',
 	'tpt-languages-legend' => 'Andere talen:',
-	'tpt-target-page' => 'Deze pagina kan niet handmatig worden bijgewerkt manually.
+	'tpt-target-page' => 'Deze pagina kan niet handmatig worden bijgewerkt.
 Deze pagina is een vertaling van de pagina [[$1]].
-De vertaling kan bijgewerkt worden via de [$2 vertaalhulpmiddellen].',
+De vertaling kan bijgewerkt worden via de [$2 vertaalhulpmiddelen].',
 	'tpt-unknown-page' => "Deze naamruimte is gereserveerd voor de vertalingen van van pagina's.
 De pagina die u probeert te bewerken lijkt niet overeen te komen met een te vertalen pagina.",
 	'tpt-install' => 'Voer php maintenance/update.php of de webinstallatie uit om de paginavertaling te activeren.',
@@ -911,11 +923,17 @@ De pagina die u probeert te bewerken lijkt niet overeen te komen met een te vert
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
  * @author Frokor
  * @author Gunnernett
+ * @author Harald Khan
  */
 $messages['nn'] = array(
 	'pagetranslation' => 'Sideomsetjing',
+	'tpt-desc' => 'Utviding for omsetjing av innhaldssider',
+	'tpt-diff-old' => 'Førre tekst',
 	'tpt-diff-new' => 'Ny tekst',
+	'tpt-badtitle' => 'Det gjevne sidenamnet ($1) er ikkje ein gyldig tittel',
 	'tpt-mark-summary' => 'Markerte denne versjonen for omsetjing',
+	'tpt-edit-failed' => 'Kunne ikkje oppdatera sida: $1',
+	'tpt-rev-latest' => 'siste versjon',
 	'tpt-translate-this' => 'set om denne sida',
 	'translate-tag-translate-link-desc' => 'Set om denne sida',
 	'tpt-languages-legend' => 'Andre språk:',
@@ -1076,21 +1094,21 @@ Esta página que você está tentando editar não aparenta corresponder a nenhum
  * @author Александр Сигачёв
  */
 $messages['ru'] = array(
-	'right-pagetranslation' => 'Отметка версий страниц для перевода',
+	'right-pagetranslation' => 'отметка версий страниц для перевода',
 	'tpt-desc' => 'Расширение для перевода содержимого страниц',
-	'tpt-section' => 'Раздел:',
-	'tpt-section-new' => 'Новый раздел:',
+	'tpt-section' => 'Блок перевода $1',
+	'tpt-section-new' => 'Новый блок перевода. Название: $1',
 	'tpt-diff-old' => 'Предыдущий текст',
 	'tpt-diff-new' => 'Новый текст',
 	'tpt-submit' => 'Отметить эту версию для перевода',
-	'tpt-badtitle' => 'Указанное название страницы ($1) не является верным названием',
+	'tpt-badtitle' => 'Указанное название страницы ($1) не является допустимым',
 	'tpt-oldrevision' => '$2 не является последней версией страницы [[$1]].
 Только последние версии могут быть отмечены для перевода.',
 	'tpt-notsuitable' => 'Страницы $1 является неподходящей для перевода.
 Убедитесь, что она имеет теги <nowiki><translate></nowiki> и правильный синтаксис.',
-	'tpt-badsect' => '«$1» не является верным названием для раздела $2.',
+	'tpt-badsect' => '«$1» не является допустимым названием для блока перевода $2.',
 	'tpt-rev-latest' => 'последняя версия',
-	'tpt-rev-old' => 'версия $1',
+	'tpt-rev-old' => 'различия с предыдущей отмеченной версией',
 	'tpt-rev-mark-new' => 'отметить эту версию для перевода',
 	'tpt-translate-this' => 'перевести эту страницу',
 	'translate-tag-translate-link-desc' => 'Перевести эту страницу',
@@ -1159,9 +1177,16 @@ $messages['sv'] = array(
 	'pagetranslation' => 'Sidöversättning',
 	'right-pagetranslation' => 'Märk versioner av sidor för översättning',
 	'tpt-desc' => 'Programtillägg för översättning av innehållssidor',
-	'tpt-section' => 'Avsnitt:',
-	'tpt-section-new' => 'Nytt avsnitt:',
+	'tpt-section' => 'Översättningsenhet $1',
+	'tpt-section-new' => 'Ny översättningsenhet. Namn: $1',
+	'tpt-section-deleted' => 'Översättningsenhet $1',
+	'tpt-template' => 'Sidmall',
+	'tpt-templatediff' => 'Sidmallen har ändrats.',
 	'tpt-diff-old' => 'Föregående text',
+	'tpt-diff-new' => 'Ny text',
+	'tpt-submit' => 'Märk den här versionen för översättning',
+	'tpt-sections-oldnew' => 'Nya och existerande översättningsenheter',
+	'tpt-sections-deleted' => 'Raderade översättningsenheter',
 	'translate-tag-translate-link-desc' => 'Översätt den här sidan',
 );
 
