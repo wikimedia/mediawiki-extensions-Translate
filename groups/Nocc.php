@@ -20,16 +20,16 @@ class NoccMessageGroup extends MessageGroup {
 	public function setPath( $value ) { $this->fileDir = $value; }
 
 	protected $codeMap = array(
-		'fa' => 'farsi',
 		'sr-el' => 'sr',
-		'ko' => 'kr',
-		'zh-hans' => 'zh-gb',
-		'zh-hant' => 'zh-tw',
 	);
 
-/*	protected $optional = array(
-		'key',
-	); */
+	protected $optional = array(
+		'lang_locale', 'lang_dir',
+	);
+
+	protected $ignored = array(
+		'charset',
+	);
 
 	public $header = '<?php
 /**
