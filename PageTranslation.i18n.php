@@ -395,11 +395,11 @@ $messages['fr'] = array(
 	'tpt-badtitle' => 'Le nom de page donné ($1) n’est pas un titre valide',
 	'tpt-oldrevision' => '$2 n’est pas la dernière version de la page [[$1]].
 Seule la dernière version de la page peut être marquée pour être traduite.',
-	'tpt-notsuitable' => "La page $1 n'est pas convenable pour être traduite.
-Soyez sûr qu'elle contient la balise <nowiki><translate></nowiki> et qu'elle a une syntaxe correcte.",
+	'tpt-notsuitable' => 'La page $1 n’est pas convenable pour être traduite.
+Soyez sûr qu’elle contient la balise <nowiki><translate></nowiki> et qu’elle a une syntaxe correcte.',
 	'tpt-saveok' => 'La page « $1 » a été marqué pour être traduite avec $2 {{PLURAL:$2|unité de traduction|unités de traduction}}.
 La page peut être <span class="plainlinks">[$3 traduite]</span> dès maintenant.',
-	'tpt-badsect' => "« $1 » n'est pas un nom valide pour une unité de traduction $2.",
+	'tpt-badsect' => '« $1 » n’est pas un nom valide pour une unité de traduction $2.',
 	'tpt-showpage-intro' => 'Ci-dessous, les nouvelles traductions, celles existantes et supprimées.
 Avant de marquer ces versions pour être traduites, vérifier que les modifications aux sections sont minimisées pour éviter du travail inutile aux traducteurs.',
 	'tpt-mark-summary' => 'Cette version a été marqué pour être traduite',
@@ -932,8 +932,12 @@ De pagina die u probeert te bewerken lijkt niet overeen te komen met een te vert
 $messages['nn'] = array(
 	'pagetranslation' => 'Sideomsetjing',
 	'tpt-desc' => 'Utviding for omsetjing av innhaldssider',
+	'tpt-template' => 'Sidemal',
+	'tpt-templatediff' => 'Sidemalen har vorte endra.',
 	'tpt-diff-old' => 'Førre tekst',
 	'tpt-diff-new' => 'Ny tekst',
+	'tpt-submit' => 'Merk denne versjonen for omsetjing',
+	'tpt-sections-template' => 'Mal for omsetjingsside',
 	'tpt-badtitle' => 'Det gjevne sidenamnet ($1) er ikkje ein gyldig tittel',
 	'tpt-mark-summary' => 'Markerte denne versjonen for omsetjing',
 	'tpt-edit-failed' => 'Kunne ikkje oppdatera sida: $1',
@@ -941,6 +945,7 @@ $messages['nn'] = array(
 	'tpt-translate-this' => 'set om denne sida',
 	'translate-tag-translate-link-desc' => 'Set om denne sida',
 	'tpt-languages-legend' => 'Andre språk:',
+	'tpt-render-summary' => 'Oppdatering for å svara til ny versjon av kjeldesida',
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
