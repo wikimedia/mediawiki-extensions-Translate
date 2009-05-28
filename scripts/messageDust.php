@@ -27,14 +27,14 @@ foreach ( $rows as $row ) {
 	$mg = TranslateUtils::messageKeyToGroup( $row->page_namespace, $key );
 	$ns = $wgContLang->getNsText( $row->page_namespace );
 	if ( is_null($mg) ) {
-		$keys["$ns:$pieces"][] = $code;
+		$keys["$ns:$key"][] = $code;
 		$owner = 'xx-unknown';
 	} else {
 		$owner = $mg;
 	}
 
 	if ( !isset($codes[$code]) ) {
-		$invalid[$code][] = "[[$ns:$pieces/$code]]";
+		$invalid[$code][] = "[[$ns:$key/$code]]";
 	}
 
 	if ( !isset($owners[$owner]) ) $owners[$owner] = 0;

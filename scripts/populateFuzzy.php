@@ -37,7 +37,7 @@ $conds = array(
 $limit = max(1000,intval($count/100));
 $offset = 0;
 while (true) {
-	$insert = array();
+	$inserts = array();
 	echo "$offset/$count\n";
 	$options = array( 'LIMIT' => $limit, 'OFFSET' => $offset );
 	$res = $db->select( $tables, $fields, $conds, __METHOD__, $options );
