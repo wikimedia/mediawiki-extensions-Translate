@@ -146,7 +146,7 @@ class SpecialTranslationChanges extends SpecialPage {
 						$wgLang->formatNum( count( $rows ) )
 					);
 
-					$exportLabel = wfMsg( self::MSG . 'export' );
+					$exportLabel = wfMsgHtml( self::MSG . 'export' );
 
 					$titleText = SpecialPage::getTitleFor( 'translate' );
 
@@ -172,7 +172,7 @@ class SpecialTranslationChanges extends SpecialPage {
 						$date = $wgLang->timeAndDate( $row->rc_timestamp, /* adj */ true, /* format */ true );
 						$msg = wfMsgExt(
 							self::MSG . 'change',
-							array( 'parsemag' ),
+							array( 'parsemag', 'escape' ),
 							$date,
 							wfEscapeWikiText( $row->rc_title ),
 							wfEscapeWikiText( $row->rc_user_text )
