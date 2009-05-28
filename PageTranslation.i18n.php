@@ -226,6 +226,7 @@ Assegureu-vos que té les etiquetes <nowiki><translate></nowiki> i una sintaxi v
 );
 
 /** German (Deutsch)
+ * @author ChrisiPK
  * @author Purodha
  * @author Umherirrender
  */
@@ -233,32 +234,41 @@ $messages['de'] = array(
 	'pagetranslation' => 'Übersetzung von Seiten',
 	'right-pagetranslation' => 'Seitenversionen für die Übersetzung markieren',
 	'tpt-desc' => 'Erweiterung zur Übersetzung von Wikiseiten',
-	'tpt-section' => 'Abschnitt:',
-	'tpt-section-new' => 'Neuer Abschnitt:',
+	'tpt-section' => 'Übersetzungseinheit $1',
+	'tpt-section-new' => 'Neue Übersetzungseinheit. Name: $1',
+	'tpt-section-deleted' => 'Übersetzungseinheit $1',
 	'tpt-template' => 'Seitenvorlage',
 	'tpt-templatediff' => 'Die Seitenvorlage hat sich geändert.',
 	'tpt-diff-old' => 'Vorheriger Text',
 	'tpt-diff-new' => 'Neuer Text',
 	'tpt-submit' => 'Diese Version zur Übersetzung markieren',
+	'tpt-sections-oldnew' => 'Neue und vorhandene Übersetzungseinheiten',
+	'tpt-sections-deleted' => 'Gelöschte Übersetzungseinheiten',
+	'tpt-sections-template' => 'Übersetzungsseitenvorlage',
 	'tpt-badtitle' => 'Der angegebene Seitenname „$1“ ist kein gültiger Titel',
 	'tpt-oldrevision' => '$2 ist nicht die letzte Version der Seite [[$1]].
 Nur die letzte Version kann zur Übersetzung markiert werden.',
 	'tpt-notsuitable' => 'Die Seite $1 ist nicht zum Übersetzen geeignet.
 Stelle sicher, das ein <nowiki><translate></nowiki>-Tag und gültige Syntax verwendet wird.',
-	'tpt-saveok' => 'Die Seite „$1“ mit $2 {{PLURAL:$2|übersetzbarem Abschnitt|übersetzbaren Abschnitten}} wurde für die Übersetzung markiert.
+	'tpt-saveok' => 'Die Seite [[$1]] wurde mit $2 {{PLURAL:$2|übersetzbarem Abschnitt|übersetzbaren Abschnitten}} für die Übersetzung markiert.
 Diese Seite kann nun <span class="plainlinks">[$3 übersetzt]</span> werden.',
-	'tpt-badsect' => '„$1“ ist kein gültiger Name für Abschnitt $2.',
+	'tpt-badsect' => '„$1“ ist kein gültiger Name für Übersetzungseinheit $2.',
+	'tpt-showpage-intro' => 'Untenstehend sind neue, vorhandene und gelöschte Abschnitte aufgelistet.
+Bevor du diese Version zur Übersetzung markierst, stelle sicher, dass die Änderungen an den Abschnitten minimal sind, um unnötige Arbeit für Übersetzer zu verhindern.',
 	'tpt-mark-summary' => 'Diese Seite wurde zum Übersetzen markiert',
 	'tpt-edit-failed' => 'Seite kann nicht aktualisiert werden: $1',
 	'tpt-already-marked' => 'Die letzte Version dieser Seite wurde bereits zur Übersetzung markiert.',
+	'tpt-list-nopages' => 'Es sind keine Seiten zur Übersetzung markiert und auch keine bereit, zur Übersetzung markiert zu werden.',
 	'tpt-old-pages' => 'Eine Version dieser {{PLURAL:$1|Seite|Seiten}} wurde zur Übersetzung markiert.',
 	'tpt-new-pages' => '{{PLURAL:$1|Diese Seite beinhaltet|Diese Seiten beinhalten}} Text zum Übersetzen, aber es wurde noch keine Version dieser {{PLURAL:$1|Seite|Seiten}} zur Übersetzung markiert.',
 	'tpt-rev-latest' => 'Letzte Version',
-	'tpt-rev-old' => 'Version $1',
+	'tpt-rev-old' => 'Unterschied zu vorheriger markierter Version',
 	'tpt-rev-mark-new' => 'diese Version zur Übersetzung markieren',
 	'tpt-translate-this' => 'diese Seite übersetzen',
 	'translate-tag-translate-link-desc' => 'Diese Seite übersetzen',
 	'translate-tag-markthis' => 'Diese Seite zur Übersetzung markieren',
+	'translate-tag-markthisagain' => 'Diese Seite wurde <span class="plainlinks">[$1 bearbeitet]</span>, nachdem sie zuletzt <span class="plainlinks">[$2 zur Übersetzung markiert]</span> wurde.',
+	'translate-tag-hasnew' => 'Diese Seite enthält <span class="plainlinks">[$1 Bearbeitungen]</span>, die nicht zur Übersetzung markiert sind.',
 	'tpt-translation-intro' => 'Diese Seite ist eine <span class="plainlinks">[$1 übersetzte Version]</span> der Seite [[$2]] und die Übersetzung ist zu $3 % abgeschlossen und aktuell.',
 	'tpt-translation-intro-fuzzy' => 'Nicht aktuelle Übersetzungen werden wie dieser Text markiert.',
 	'tpt-languages-legend' => 'Andere Sprachen:',
@@ -266,6 +276,16 @@ Diese Seite kann nun <span class="plainlinks">[$3 übersetzt]</span> werden.',
 Diese Seite ist eine Übersetzung der Seite [[$1]] und die Übersetzung kann mithilfe des [$2 Übersetzungswerkzeuges] aktualisiert werden.',
 	'tpt-unknown-page' => 'Dieser Namensraum ist für das Übersetzen von Wikiseiten reserviert.
 Die Seite, die gerade bearbeitet wird, hat keine Verbindung zu einer übersetzbaren Seite.',
+	'tpt-install' => 'Bitte <tt>maintenance/update.php</tt> oder Webinstallation ausführen, um die Seitenübersetzung zu aktivieren.',
+	'tpt-render-summary' => 'Übernehme Bearbeitung einer neuen Version der Quellseite',
+);
+
+/** German (formal address) (Deutsch (Sie-Form))
+ * @author Umherirrender
+ */
+$messages['de-formal'] = array(
+	'tpt-showpage-intro' => 'Untenstehend sind neue, vorhandene und gelöschte Abschnitte aufgelistet.
+Bevor Sie diese Version zur Übersetzung markieren, stellen Sie bitte sicher, dass die Änderungen an den Abschnitten minimal sind, um unnötige Arbeit für Übersetzer zu verhindern.',
 );
 
 /** Lower Sorbian (Dolnoserbski)
@@ -744,7 +764,7 @@ $messages['ja'] = array(
 	'translate-tag-translate-link-desc' => 'このページを翻訳する',
 	'translate-tag-markthis' => 'このページを翻訳対象に指定する',
 	'translate-tag-markthisagain' => 'このページには最後に<span class="plainlinks">[$2 翻訳が指定]</span>されて以降の<span class="plainlinks">[$1 変更]</span>があります。',
-	'translate-tag-hasnew' => 'このページには翻訳が指定されていない<span class="plainlinks">[$1 変更]</span>があります。',
+	'translate-tag-hasnew' => 'このページには翻訳対象に指定されていない<span class="plainlinks">[$1 変更]</span>があります。',
 	'tpt-translation-intro' => 'このページはページ [[$2]] の<span class="plainlinks">[$1 翻訳版]</span> です。翻訳は $3% 完了しており、最新の状態を反映しています。',
 	'tpt-translation-intro-fuzzy' => '古くなった翻訳はこのような印が付いています。',
 	'tpt-languages-legend' => '他言語での翻訳:',

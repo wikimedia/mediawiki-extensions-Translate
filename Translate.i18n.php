@@ -7093,15 +7093,27 @@ $messages['mt'] = array(
 	'translate-edit-no-information' => "''Dan il-messaġġ m'għandu l-ebda dokumentazzjoni.''
 ''Jekk taf fejn jew kif jiġi wżat dan il-messaġġ, tista' tgħin lit-tradutturi l-oħra billi żżid id-dokumentazzjoni ma' dan il-messaġġ.''",
 	'translate-edit-information' => 'Informazzjoni dwar dan il-messaġġ ($1)',
-	'translate-edit-in-other-languages' => "Messaġġ f'lingwi oħra",
+	'translate-edit-in-other-languages' => 'Messaġġ "$1" f\'lingwi oħra',
 	'translate-edit-committed' => 'Traduzzjoni attwali fis-software',
 	'translate-edit-warnings' => 'Twissijiet dwar traduzzjonijiet mhux kompluti',
 	'translate-edit-goto-no-prev' => 'L-ebda messaġġ preċedenti',
 	'translate-edit-goto-no-next' => 'L-ebda messaġġ suċċessiv',
+	'translate-magic-help' => "Tista' tittraduċi t-titli tal-paġni speċjali, frażijiet maġiċi u ismijiet tal-ispazju tal-isem.
+
+It-titli tal-paġni speċjali u l-frażijiet maġiċi jista' jkollhom aktar minn traduzzjoni waħda.
+It-traduzzjonijiet għandhom jiġu separati minn virgoletta (,).
+L-ispazji tal-isem irid ikollhom traduzzjoni waħda biss.
+
+Fit-traduzzjoni tal-ispazji tal-isem, <tt>$1 talk</tt> hi speċjali. <tt>$1</tt> hi mibdula mal-isem tas-sit (per eżempju <tt>{{ns:project_talk}}</tt>).
+Jekk mhuwiex possibbli li fil-lingwa tiegħek tiġi formulata espressjonali valida mingħajr ma tbiddel l-isem tas-sit, jekk jogħġbok ikkuntatja lil żviluppatur.
+
+Biex issalva t-tibdil, trid tkun parti mill-grupp tat-tradutturi.
+It-tibdil ma jiġix salvat sakemm ma tagħfasx il-buttuna t'isfel biex issalva.",
 	'translate-magic-cm-export' => 'Esporta',
 	'translate-magic-cm-original' => 'Oriġinali',
 	'translate-magic-cm-comment' => 'Kumment:',
 	'translationchanges-export' => 'esporta',
+	'languagestats' => 'Statistika tal-lingwi',
 );
 
 /** Erzya (Эрзянь)
