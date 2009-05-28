@@ -402,6 +402,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-opensearchxml',
 		'ext-oversight',
 		'ext-parserfunctions',
+		'ext-pdfhandler', // usability.wikimedia.org
 		'ext-poem',
 		'ext-povwatch', // test.wikipedia.org
 		'ext-proofreadpage', // Wikisource
