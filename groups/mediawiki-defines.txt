@@ -69,10 +69,6 @@ descmsg = math-desc
 Block Titles
 descmsg = block_title_error-desc
 
-Board Vote
-ignored = boardvote_footer
-optional = boardvote_ip
-
 Book Information
 descmsg = bookinfo-desc
 
