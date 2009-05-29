@@ -316,9 +316,13 @@ $aliases['ms'] = array(
 
 /** Maltese (Malti) */
 $aliases['mt'] = array(
-	'Translate' => array( 'Traduċi' ),
+	'Translate' => array( 'Traduzzjoni' ),
 	'Magic' => array( 'TraduzzjoniAvvanzata' ),
-	'TranslationChanges' => array( 'TibdilTraduzzjonali' ),
+	'TranslationChanges' => array( 'TibdilTraduzzjoni' ),
+	'TranslationStats' => array( 'StatistikaTraduzzjoni' ),
+	'Translations' => array( 'Traduzzjonijiet' ),
+	'LanguageStats' => array( 'StatistikaLingwa' ),
+	'PageTranslation' => array( 'TraduzzjoniPaġna' ),
 );
 
 /** Mirandese (Mirandés) */
