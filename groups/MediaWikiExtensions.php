@@ -209,7 +209,7 @@ class AllMediawikiExtensionsGroup extends MessageGroup {
 	}
 
 	public function load( $code ) {
-		return null; // no-op
+		return array(); // no-op
 	}
 
 	public function getMessage( $key, $code ) {

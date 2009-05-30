@@ -100,6 +100,7 @@ abstract class MessageGroup {
 		if ( $reader ) {
 			return $reader->parseMessages( $this->mangler );
 		}
+		return array();
 	}
 
 	/**
@@ -349,7 +350,7 @@ class ExtensionMessageGroup extends MessageGroup {
 		if ( isset( $cache[$code] ) ) {
 			return $cache[$code];
 		} else {
-			return null;
+			return array();
 		}
 	}
 
