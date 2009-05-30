@@ -206,11 +206,6 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 			}
 
-			// FIXME: avoid division by 0. Should not happen, but core-mostused has this on Windows at the moment
-			if( !$total ) {
-				continue;
-			}
-
 			// Skip if $suppressComplete and complete
 			if( $suppressComplete && !$fuzzy && $translated == $total ) {
 				continue;
