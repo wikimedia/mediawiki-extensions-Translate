@@ -339,6 +339,7 @@ EOEO;
 			$page = TranslatablePage::newFromTitle( $group->title );
 			$rev = $page->getTransRev( "$key/$code" );
 			$latest = $page->getMarkedTag();
+			var_dump( "$rev !== $latest" );
 			if ( $rev !== $latest ) {
 				$oldpage = TranslatablePage::newFromRevision( $group->title, $rev );
 				$oldtext = null;
@@ -442,9 +443,10 @@ EOEO;
 		// Check for problems
 		global $wgTranslateDocumentationLanguageCode;
 		if ( !$fuzzy && $code !== $wgTranslateDocumentationLanguageCode ) {
+			$en = $group->getMessage( $key, 'en' );
 			$message = new FatMessage( $key, $en );
 			// Take the contents from edit field as a translation
-			$message->setTranslation( $translation );
+			$message->setTranslation( $text );
 			$checker = MessageChecks::getInstance();
 			if ( $checker->hasChecks( $group->getType() ) ) {
 				$checks = $checker->doChecks( $message, $group->getType(), $code );

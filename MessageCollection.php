@@ -196,18 +196,13 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 		if ( $condition === false ) $origKeys = $keys;
 
-		$fuzzy = array();
 		$flipKeys = array_flip( $keys );
 		foreach ( $this->dbInfo as $row ) {
 			if ( $row->rt_type !== null ) {
 				if ( !isset($flipKeys[$row->page_title]) ) continue;
 				unset($keys[$flipKeys[$row->page_title]]);
-				$fuzzy[] = $flipKeys[$row->page_title];
 			}
 		}
-
-		if ( !isset($this->tags['fuzzy']) )
-			$this->setTags( 'fuzzy', $fuzzy );
 
 		if ( $condition === false ) $keys = array_diff( $origKeys, $keys );
 
@@ -327,14 +322,24 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			$messages[$key] = new ThinMessage( $key, $this->definitions->messages[$key] );
 		}
 
+		$flipKeys = array_flip( $this->keys );
+
 		// Copy rows if any
 		if ( $this->dbData !== null ) {
-			$flipKeys = array_flip( $this->keys );
 			foreach ( $this->dbData as $row ) {
 				if ( !isset($flipKeys[$row->page_title]) ) continue;
 				$key = $flipKeys[$row->page_title];
 				$messages[$key]->setRow( $row );
 			}
+		}
+
+		if ( $this->dbInfo !== null ) {
+			$fuzzy = array();
+			foreach ( $this->dbInfo as $row ) {
+				if ( !isset($flipKeys[$row->page_title]) ) continue;
+				if ( $row->rt_type !== null ) $fuzzy[] = $flipKeys[$row->page_title];
+			}
+			$this->setTags( 'fuzzy', $fuzzy );
 		}
 
 		// Copy tags if any

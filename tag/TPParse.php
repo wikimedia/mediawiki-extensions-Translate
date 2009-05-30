@@ -111,6 +111,7 @@ class TPParse {
 		// For finding the messages
 		$prefix = $this->title->getPrefixedDBKey() . '/';
 
+		$collection->filter( 'hastranslation', false );
 		$collection->loadTranslations();
 
 		foreach ( $this->sections as $ph => $s ) {
@@ -129,7 +130,8 @@ class TPParse {
 					foreach ( $vars as $key => $value ) {
 						$sectiontext = str_replace( $key, $value, $sectiontext );
 					}
-					if ( $msg->fuzzy() ) {
+
+					if ( $msg->hasTag('fuzzy') ) {
 						$sectiontext = "<div class=\"mw-translate-fuzzy\">\n$sectiontext\n</div>";
 					}
 					$text = str_replace( $ph, $sectiontext, $text );

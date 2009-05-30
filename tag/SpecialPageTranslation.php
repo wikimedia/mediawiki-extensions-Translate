@@ -405,13 +405,14 @@ class SpecialPageTranslation extends SpecialPage {
 	}
 
 	public function addFuzzyTags( $page, $changed ) {
+		if ( !count($changed) ) return;
 		$titles = array();
-		$prefix = $page->getTitle->getPrefixedText();
+		$prefix = $page->getTitle()->getPrefixedText();
 		$db = wfGetDB( DB_MASTER );
 		foreach ( $changed as $c ) {
 			$title = Title::makeTitleSafe( NS_TRANSLATIONS, "$prefix/$c" );
 			if ( $title ) {
-				$titles[] = 'page_title like \'' . $db->escapeLike( $title->getPrefixedDBkey() ) . '/%\'';
+				$titles[] = 'page_title like \'' . $db->escapeLike( $title->getDBkey() ) . '/%\'';
 			}
 		}
 
@@ -432,7 +433,9 @@ class SpecialPageTranslation extends SpecialPage {
 				'rt_revision' => $r->page_latest,
 			);
 		}
-		$db->replace( 'revtag', array( 'rt_type_page_revision' ), $inserts, __METHOD__ );
+		if ( count($inserts) ) {
+			$db->replace( 'revtag', array( 'rt_type_page_revision' ), $inserts, __METHOD__ );
+		}
 	}
 
 	public function setupRenderJobs( TranslatablePage $page ) {

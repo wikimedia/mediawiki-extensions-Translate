@@ -176,10 +176,6 @@ $wgTranslateTasks = array(
 $wgTranslatePHPlot = false;
 $wgTranslatePHPlotFont = '/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf';
 
-
-function wfMemIn() { }
-function wfMemOut() { }
-
 function efTranslateInit() {
 	global $wgTranslatePHPlot, $wgAutoloadClasses, $wgHooks;
 	if ( $wgTranslatePHPlot ) {
@@ -301,4 +297,9 @@ function efTranslateInitTags( $parser ) {
 	// For nice language list in-page
 	$parser->setHook( 'languages', array( 'PageTranslationHooks', 'languages' ) );
 	return true;
+}
+
+if ( !defined('TRANSLATE_CLI') ) {
+	function STDOUT() {}
+	function STDERR() {}
 }
