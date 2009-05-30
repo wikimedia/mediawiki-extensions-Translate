@@ -119,25 +119,6 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		return "\t\t" . $element . "\n";
 	}
 
-	function getGroups() {
-		$groups = wfMsgForContent( 'translate-languagestats-groups' );
-
-		if( $groups ) {
-			// Make the group names clean
-			// Should contain one valid group name per line
-			// All invalid group names should be ignored
-			// Return all group names if there are no valid group names at all
-			// FIXME: implement the above here
-			$cleanGroups = '';
-
-			if( $cleanGroups ) {
-				return $cleanGroups;
-			}
-		}
-
-		return MessageGroups::singleton()->getGroups();
-	}
-
 	function getBackgroundColour( $subset, $total, $fuzzy = false ) {
 		$v = @round(255 * $subset / $total);
 
@@ -195,7 +176,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$cache = new ArrayMemoryCache( 'groupstats' );
 
 		# Fetch groups stats have to be displayed for
-		$groups = $this->getGroups();
+		$groups = MessageGroups::singleton()->getGroups();
 
 		# Get statistics for the message groups
 		foreach ( $groups as $groupName => $g ) {

@@ -178,7 +178,7 @@ You can [$1 edit the source page] or [$2 update the translation].',
 
 	# Special:LanguageStats
 	'languagestats' => 'Language statistics',
-	'languagestats-summary' => 'This page shows translation statistics for all ([[MediaWiki:Translate-languagestats-groups|configured]]) message groups for a language.',
+	'languagestats-summary' => 'This page shows translation statistics for all message groups for a language.',
 	'translate-language-code' => 'Language code',
 	'translate-language-code-field-name' => 'Language code:',
 	'translate-suppress-complete' => 'Suppress completely translated message groups',
