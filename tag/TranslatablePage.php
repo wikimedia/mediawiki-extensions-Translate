@@ -301,7 +301,6 @@ class TranslatablePage {
 		foreach ( $titles as $t ) {
 			list( , $code ) = TranslateUtils::figureMessage( $t->getText() );
 			$collection = $group->initCollection( $code );
-			$group->fillCollection( $collection );
 
 			$percent = $this->getPercentageInternal( $collection, $markedRevs );
 			// To avoid storing 40 decimals of inaccuracy, truncate to two decimals
@@ -320,16 +319,17 @@ class TranslatablePage {
 		$count = count($collection);
 		if ( $count === 0 ) return 0;
 
+		// We want to get fuzzy though
+		$collection->filter( 'hastranslation', false );
+		$collection->initMessages();
+
 		$total = 0;
 
 		foreach ( $collection as $key => $message ) {
-
-			if ( $message->translation() === null ) continue; // No score
-
 			$score = 1;
 
 			// Fuzzy halves score
-			if ( $message->fuzzy() ) $score *= 0.5; 
+			if ( $message->hasTag('fuzzy') ) $score *= 0.5; 
 
 			// Reduce 20% for every newer revision than what is translated against
 			$rev = $this->getTransrev( $key .'/' . $collection->code );

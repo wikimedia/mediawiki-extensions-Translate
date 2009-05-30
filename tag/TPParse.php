@@ -111,6 +111,8 @@ class TPParse {
 		// For finding the messages
 		$prefix = $this->title->getPrefixedDBKey() . '/';
 
+		$collection->loadTranslations();
+
 		foreach ( $this->sections as $ph => $s ) {
 			if ( isset($collection[$prefix.$s->id]) ) {
 				$msg = $collection[$prefix.$s->id];

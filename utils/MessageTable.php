@@ -83,21 +83,23 @@ class MessageTable {
 		global $wgUser;
 		$sk = $wgUser->getSkin();
 		wfLoadExtensionMessages( 'Translate' );
+		$optional = wfMsgHtml( 'translate-optional' );
 
-		$uimsg = array();
-		foreach ( array( 'optional' ) as $msg ) {
-			$uimsg[$msg] = wfMsgHtml( 'translate-'.$msg );
+		$batch = new LinkBatch();
+		$ns = $this->group->namespaces[0];
+		foreach ( $this->collection->keys() as $key ) {
+			$batch->add( $ns, $key );
 		}
+		$batch->execute();
 
 		$output =  '';
-
+		$this->collection->initMessages(); // Just to be sure
 		foreach ( $this->collection as $key => $m ) {
-
 			$tools = array();
 			$title = $this->keyToTitle( $key );
 
-			$original = $m->definition;
-			$message = $m->translation ? $m->translation : $original;
+			$original = $m->definition();
+			$message = $m->translation() ? $m->translation() : $original;
 
 			global $wgLang;
 			$niceTitle = htmlspecialchars( $wgLang->truncate( $key, - 30 ) );
@@ -114,11 +116,11 @@ class MessageTable {
 			$anchor = Xml::element( 'a', array( 'name' => $anchor, 'href' => "#$anchor" ), "↓" );
 
 			$extra = '';
-			if ( $m->optional ) $extra = '<br />' . $uimsg['optional'];
+			if ( $m->hasTag( 'optional' ) ) $extra = '<br />' . $optional;
 
 			$leftColumn = $anchor . $tools['edit'] . $extra;
 
-			if ( $this->reviewMode ) {
+			if ( $this->reviewMode && $original !== $message ) {
 				$output .= Xml::tags( 'tr', array( 'class' => 'orig' ),
 					Xml::tags( 'td', array( 'rowspan' => '2' ), $leftColumn ) .
 					Xml::tags( 'td', null, TranslateUtils::convertWhiteSpaceToHTML( $original ) )

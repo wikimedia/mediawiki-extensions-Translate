@@ -130,7 +130,7 @@ class ChangeSyncer {
 		if ( !count( $messages ) ) return;
 
 		$collection = $this->group->initCollection( $code );
-		$this->group->fillCollection( $collection );
+		$collection->loadTranslations();
 
 		foreach ( $messages as $key => $translation ) {
 
@@ -145,13 +145,13 @@ class ChangeSyncer {
 
 			$page = $title->getPrefixedText();
 
-			if ( $collection[$key]->database === null ) {
+			if ( $collection[$key]->translation() === null ) {
 				STDOUT( "Importing $page as a new translation" );
 				$this->import( $title, $translation, 'Importing a new translation' );
 				continue;
 			}
 
-			$current = str_replace( TRANSLATE_FUZZY, '', $collection[$key]->translation );
+			$current = str_replace( TRANSLATE_FUZZY, '', $collection[$key]->translation() );
 			$translation = str_replace( TRANSLATE_FUZZY, '', $translation );
 			if ( $translation === $current ) continue;
 

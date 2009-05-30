@@ -11,7 +11,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '11:2009-05-09' );
+define( 'TRANSLATE_VERSION', '12bb:2009-05-28' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'path'           => __FILE__,
@@ -164,12 +164,10 @@ $wgTranslateTasks = array(
 	'view'                 => 'ViewMessagesTask',
 	'untranslated'         => 'ViewUntranslatedTask',
 	'optional'             => 'ViewOptionalTask',
-	'untranslatedoptional' => 'ViewUntranslatedOptionalTask',
-	'problematic'          => 'ViewProblematicTask',
+//	'untranslatedoptional' => 'ViewUntranslatedOptionalTask',
 	'review'               => 'ReviewMessagesTask',
 	'reviewall'            => 'ReviewAllMessagesTask',
 	'export-as-po'         => 'ExportasPoMessagesTask',
-//	'export'               => 'ExportMessagesTask',
 	'export-to-file'       => 'ExportToFileMessagesTask',
 //	'export-to-xliff'      => 'ExportToXliffMessagesTask',
 );
@@ -198,8 +196,7 @@ function efTranslateInit() {
 	}
 
 	// Fuzzy tags for speed
-	$wgHooks['ArticleSaveComplete'][] = 'efTranslateAddFuzzy';
-
+	$wgHooks['ArticleSaveComplete'][] = 'TranslateEditAddons::onSave';
 
 	global $wgEnablePageTranslation;
 	if ( $wgEnablePageTranslation ) {
@@ -265,7 +262,6 @@ function efTranslateCheckPT() {
 	$memcKey = wfMemcKey( 'pt' );
 	$ok = $wgMemc->get( $memcKey );
 	
-	wfLoadExtensionMessages( 'PageTranslation' );
 	if ( $ok === $version ) {
 		return true;
 	}
@@ -277,7 +273,7 @@ function efTranslateCheckPT() {
 
 	$dbw = wfGetDB( DB_MASTER );
 	if ( !$dbw->tableExists('revtag_type') ) {
-		$wgHooks['SiteNoticeAfter'][] = array('efTranslateCheckWarn', wfMsg( 'tpt-install' ) );
+		$wgHooks['SiteNoticeAfter'][] = array('efTranslateCheckWarn', 'tpt-install' );
 		return false;
 	}
 		
@@ -295,7 +291,8 @@ function efTranslateCheckPT() {
 
 function efTranslateCheckWarn( $msg, &$sitenotice ) {
 	global $wgOut;
-	$sitenotice = $msg;
+	wfLoadExtensionMessages( 'PageTranslation' );
+	$sitenotice = wfMsg($msg);
 	$wgOut->enableClientCache( false );
 	return true;
 }
@@ -303,44 +300,5 @@ function efTranslateCheckWarn( $msg, &$sitenotice ) {
 function efTranslateInitTags( $parser ) {
 	// For nice language list in-page
 	$parser->setHook( 'languages', array( 'PageTranslationHooks', 'languages' ) );
-	return true;
-}
-
-
-if ( !defined('TRANSLATE_CLI') ) {
-	function STDOUT() {}
-	function STDERR() {}
-}
-
-function efTranslateAddFuzzy( $article, $user, $text, $summary,
-		$minor, $_, $_, $flags, $revision ) {
-
-	global $wgTranslateMessageNamespaces;
-
-	$ns = $article->getTitle()->getNamespace();
-	if ( !in_array( $ns, $wgTranslateMessageNamespaces) ) return true;
-
-	// No fuzzy - no tag
-	if ( strpos( $text, TRANSLATE_FUZZY ) === false ) return true;
-
-	if ( $revision === null ) {
-		$rev = $article->getTitle()->getLatestRevId();
-	} else {
-		$rev = $revision->getID();
-	}
-
-	// Add the ready tag
-	$dbw = wfGetDB( DB_MASTER );
-
-	$id = $dbw->selectField( 'revtag_type', 'rtt_id', array( 'rtt_name' => 'fuzzy' ), __METHOD__ );
-
-	$conds = array(
-		'rt_page' => $article->getTitle()->getArticleId(),
-		'rt_type' => $id,
-		'rt_revision' => $rev
-	);
-	$dbw->delete( 'revtag', $conds, __METHOD__ );
-	$dbw->insert( 'revtag', $conds, __METHOD__ );
-
 	return true;
 }

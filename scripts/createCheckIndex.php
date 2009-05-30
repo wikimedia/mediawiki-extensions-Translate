@@ -60,13 +60,11 @@ foreach ( $groups as $g ) {
 	foreach ( $codes as $code ) {
 		STDOUT( "$code ", $id );
 
-		$collection = clone $collection_skel;
-		$collection->code = $code;
+		$collection->reset( $code );
+		$collection->loadTranslations();
 
-		$g->fillCollection( $collection );
-
-		foreach ( $collection->keys() as $key ) {
-			$prob = $checker->doFastChecks( $collection[$key], $type, $code );
+		foreach ( $collection as $key => $message ) {
+			$prob = $checker->doFastChecks( $message, $type, $code );
 			if ( $prob ) {
 
 				if ( $verbose ) {

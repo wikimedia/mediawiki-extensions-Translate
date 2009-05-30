@@ -248,12 +248,12 @@ class GettextFormatWriter extends SimpleFormatWriter {
 		foreach ( $messages as $key => $m ) {
 			$flags = array();
 
-			$translation = $m->translation;
+			$translation = $m->translation();
 			# CASE2: no translation
 			if ( $translation === null ) $translation = '';
 
 			# CASE3: optional messages; accept only if different
-			if ( $m->optional ) $flags[] = 'x-optional';
+			if ( $m->hasTag( 'optional') ) $flags[] = 'x-optional';
 
 			# Remove fuzzy markings before export
 			$flags = array();
@@ -282,7 +282,7 @@ class GettextFormatWriter extends SimpleFormatWriter {
 			if ( isset( $this->data[$key]['ctxt'] ) ) {
 				$ckey = $this->data[$key]['ctxt'];
 			}
-			fwrite( $handle, $this->formatmsg( $m->definition, $translation, $ckey ) );
+			fwrite( $handle, $this->formatmsg( $m->definition(), $translation, $ckey ) );
 
 		}
 

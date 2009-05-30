@@ -142,7 +142,7 @@ HEADER
 		foreach ( $messages as $key => $m ) {
 			$key = $mangler->unMangle( $key );
 			# Remove fuzzy markings before export
-			$translation = str_replace( TRANSLATE_FUZZY, '', $m->translation );
+			$translation = str_replace( TRANSLATE_FUZZY, '', $m->translation() );
 			$new[$key] = $translation;
 		}
 

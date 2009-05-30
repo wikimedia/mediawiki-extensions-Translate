@@ -111,6 +111,8 @@ foreach ( $exports as $group => $languages ) {
 	sort( $languages );
 	$languages = checkThreshold( $group, $languages, $threshold );
 
+	if ( !count($languages) ) continue;
+
 	$languagelist = implode( ', ', $languages );
 	STDOUT( str_replace(
 		array( '$GROUP', '$LANG', '$TARGET' ),
@@ -135,17 +137,10 @@ function checkThreshold( $group, $languages, $threshold ) {
 	foreach ( $languages as $code ) {
 		// Initialise messages
 		$collection = $g->initCollection( $code );
+		$collection->filter( 'ignored' );
 		$collection->filter( 'optional' );
 		// Store the count of real messages for later calculation.
 		$total = count( $collection );
-
-		// Fill translations in for counting
-		$g->fillCollection( $collection );
-
-		// Count fuzzy first
-		$collection->filter( 'fuzzy' );
-
-		// Count the completion percent
 		$collection->filter( 'translated', false );
 		$translated = count( $collection );
 

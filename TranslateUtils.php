@@ -36,35 +36,6 @@ class TranslateUtils {
 		return array( $key, $code );
 	}
 
-	/**
-	 * Fills the actual translation from database, if any.
-	 *
-	 * @param $messages MessageCollection
-	 * @param $namespaces Array: two-item 1-d array with namespace numbers
-	 */
-	public static function fillContents( MessageCollection $messages,
-		array $namespaces ) {
-
-		$titles = array();
-		foreach ( $messages->keys() as $key ) {
-			$titles[] = self::title( $key, $messages->code );
-		}
-
-		if ( !count( $titles ) ) return;
-
-		// Fetch contents
-		$titles = self::getContents( $titles, $namespaces[0] );
-
-		foreach ( $messages->keys() as $key ) {
-			$title = self::title( $key, $messages->code );
-			if ( isset( $titles[$title] ) ) {
-				$messages[$key]->database = $titles[$title][0];
-				$messages[$key]->addAuthor( $titles[$title][1] );
-			}
-		}
-
-	}
-
 	public static function getMessageContent( $key, $language,
 		$namespace = NS_MEDIAWIKI ) {
 

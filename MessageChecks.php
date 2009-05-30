@@ -69,7 +69,7 @@ class MessageChecks {
 	 * @return Array of warning messages, html-format.
 	 */
 	public function doChecks( TMessage $message, $type, $code ) {
-		if ( $message->translation === null ) return array();
+		if ( $message->translation() === null ) return array();
 		$warnings = array();
 
 		foreach ( $this->checksForType[$type] as $check ) {
@@ -83,7 +83,7 @@ class MessageChecks {
 	}
 
 	public function doFastChecks( TMessage $message, $type, $code ) {
-		if ( $message->translation === null ) return false;
+		if ( $message->translation() === null ) return false;
 
 		foreach ( $this->checksForType[$type] as $check ) {
 			if ( $this->$check( $message, $code ) ) return true;
@@ -103,8 +103,8 @@ class MessageChecks {
 		$variables = array( '\$1', '\$2', '\$3', '\$4', '\$5', '\$6', '\$7', '\$8', '\$9' );
 
 		$missing = array();
-		$definition = $message->definition;
-		$translation = $message->translation;
+		$definition = $message->definition();
+		$translation = $message->translation();
 		if ( strpos( $definition, '$' ) === false ) return false;
 
 		for ( $i = 1; $i < 10; $i++ ) {
@@ -129,8 +129,8 @@ class MessageChecks {
 		$variables = array( '\$1', '\$2', '\$3', '\$4', '\$5', '\$6', '\$7', '\$8', '\$9' );
 
 		$missing = array();
-		$definition = $message->definition;
-		$translation = $message->translation;
+		$definition = $message->definition();
+		$translation = $message->translation();
 		if ( strpos( $translation, '$' ) === false ) return false;
 
 		for ( $i = 1; $i < 10; $i++ ) {
@@ -160,7 +160,7 @@ class MessageChecks {
 	 * and closing count as value.
 	 */
 	protected function checkBalance( TMessage $message, $code, &$desc = null ) {
-		$translation = preg_replace( '/[^{}[\]()]/u', '', $message->translation );
+		$translation = preg_replace( '/[^{}[\]()]/u', '', $message->translation() );
 		$counts = array( '{' => 0, '}' => 0, '[' => 0, ']' => 0, '(' => 0, ')' => 0 );
 
 		$i = 0;
@@ -197,12 +197,12 @@ class MessageChecks {
 	 * @return Array of problematic links.
 	 */
 	protected function checkLinks( TMessage $message, $code, &$desc = null ) {
-		if ( strpos( $message->translation, '[[' ) === false ) return false;
+		if ( strpos( $message->translation(), '[[' ) === false ) return false;
 
 		$matches = array();
 		$links = array();
 		$tc = Title::legalChars() . '#%{}';
-		preg_match_all( "/\[\[([{$tc}]+)(?:\\|(.+?))?]]/sDu", $message->translation, $matches );
+		preg_match_all( "/\[\[([{$tc}]+)(?:\\|(.+?))?]]/sDu", $message->translation(), $matches );
 		for ( $i = 0; $i < count( $matches[0] ); $i++ ) {
 			// if ( preg_match( '/({{ns:)?special(}})?:.*/sDui', $matches[1][$i] ) ) continue;
 			// if ( preg_match( '/{{mediawiki:.*}}/sDui', $matches[1][$i] ) ) continue;
@@ -210,7 +210,7 @@ class MessageChecks {
 			// if ( preg_match( '/:?\$[1-9]/sDu', $matches[1][$i] ) ) continue;
 
 			$backMatch = preg_quote( $matches[1][$i], '/' );
-			if ( preg_match( "/$backMatch/", $message->definition ) ) continue;
+			if ( preg_match( "/$backMatch/", $message->definition() ) ) continue;
 
 			$links[] = "[[{$matches[1][$i]}|{$matches[2][$i]}]]";
 		}
@@ -234,7 +234,7 @@ class MessageChecks {
 	 * value.
 	 */
 	protected function checkXHTML( TMessage $message, $code, &$desc = null ) {
-		$translation = $message->translation;
+		$translation = $message->translation();
 		if ( strpos( $translation, '<' ) === false ) return false;
 
 		$tags = array(
@@ -277,8 +277,8 @@ class MessageChecks {
 			&& in_array( 'plural', $this->blacklist[$code] ) )
 			return false;
 
-		$definition = $message->definition;
-		$translation = $message->translation;
+		$definition = $message->definition();
+		$translation = $message->translation();
 		if ( stripos( $definition, '{{plural:' ) !== false &&
 			stripos( $translation, '{{plural:' ) === false ) {
 			$desc = array( 'translate-checks-plural' );
@@ -295,8 +295,8 @@ class MessageChecks {
 	 * @return True if namespace has been tampered with.
 	 */
 	protected function checkPagename( TMessage $message, $code, &$desc = null ) {
-		$definition = $message->definition;
-		$translation = $message->translation;
+		$definition = $message->definition();
+		$translation = $message->translation();
 
 		$namespaces = 'help|project|\{\{ns:project}}|mediawiki';
 		$matches = array();
@@ -317,9 +317,9 @@ class MessageChecks {
 	 */
 	protected function miscMWChecks( TMessage $message, $code, &$desc = null ) {
 		$timeList = array( 'protect-expiry-options', 'ipboptions' );
-		if ( in_array( strtolower($message->key), $timeList, true ) ) {
-			$defArray = explode( ',', $message->definition );
-			$traArray = explode( ',', $message->translation );
+		if ( in_array( strtolower($message->key()), $timeList, true ) ) {
+			$defArray = explode( ',', $message->definition() );
+			$traArray = explode( ',', $message->translation() );
 
 			$defCount = count($defArray);
 			$traCount = count($traArray);
@@ -353,10 +353,10 @@ class MessageChecks {
 	protected function checkFreeColMissingVars( TMessage $message, $code, &$desc = null ) {
 		$varPattern = '%[a-zA-Z_]+%';
 
-		if ( !preg_match_all( "/$varPattern/U", $message->definition, $defVars ) ) {
+		if ( !preg_match_all( "/$varPattern/U", $message->definition(), $defVars ) ) {
 			return false;
 		}
-		preg_match_all( "/$varPattern/U", $message->translation, $transVars );
+		preg_match_all( "/$varPattern/U", $message->translation(), $transVars );
 
 		$missing = self::compareArrays( $defVars[0], $transVars[0] );
 
@@ -381,8 +381,8 @@ class MessageChecks {
 	protected function checkFreeColExtraVars( TMessage $message, $code, &$desc = null ) {
 		$varPattern = '%[a-zA-Z_]+%';
 
-		preg_match_all( "/$varPattern/U", $message->definition, $defVars );
-		preg_match_all( "/$varPattern/U", $message->translation, $transVars );
+		preg_match_all( "/$varPattern/U", $message->definition(), $defVars );
+		preg_match_all( "/$varPattern/U", $message->translation(), $transVars );
 
 		$missing = self::compareArrays( $transVars[0], $defVars[0] );
 
@@ -399,7 +399,7 @@ class MessageChecks {
 
 	protected function checkFreeColEscapes( TMessage $message, $code, &$desc = null ) {
 		$varPattern = '\\\\[^nt\'"]';
-		preg_match_all( "/$varPattern/U", $message->translation, $transVars );
+		preg_match_all( "/$varPattern/U", $message->translation(), $transVars );
 
 		if ( $count = count( $transVars[0] ) ) {
 			global $wgLang;
@@ -419,10 +419,10 @@ class MessageChecks {
 	 * @return True if namespace has been tampered with.
 	 */
 	protected function checkPrintfMissingVars( TMessage $message, $code, &$desc = null ) {
-		if ( !preg_match_all( '/%[sd]/U', $message->definition, $defVars ) ) {
+		if ( !preg_match_all( '/%[sd]/U', $message->definition(), $defVars ) ) {
 			return false;
 		}
-		preg_match_all( '/%[sd]/U', $message->translation, $transVars );
+		preg_match_all( '/%[sd]/U', $message->translation(), $transVars );
 
 		$missing = self::compareArrays( $defVars[0], $transVars[0] );
 
@@ -445,8 +445,8 @@ class MessageChecks {
 	 * @return True if namespace has been tampered with.
 	 */
 	protected function checkPrintfExtraVars( TMessage $message, $code, &$desc = null ) {
-		preg_match_all( '/%[sd]/U', $message->definition, $defVars );
-		preg_match_all( '/%[sd]/U', $message->translation, $transVars );
+		preg_match_all( '/%[sd]/U', $message->definition(), $defVars );
+		preg_match_all( '/%[sd]/U', $message->translation(), $transVars );
 
 		$missing = self::compareArrays( $transVars[0], $defVars[0] );
 
@@ -469,10 +469,10 @@ class MessageChecks {
 	 * @return True if namespace has been tampered with.
 	 */
 	protected function checkI18nSprintMissingVars( TMessage $message, $code, &$desc = null ) {
-		if ( !preg_match_all( '/%[^% ]+/U', $message->definition, $defVars ) ) {
+		if ( !preg_match_all( '/%[^% ]+/U', $message->definition(), $defVars ) ) {
 			return false;
 		}
-		preg_match_all( '/%[^% ]+/U', $message->translation, $transVars );
+		preg_match_all( '/%[^% ]+/U', $message->translation(), $transVars );
 
 		$missing = self::compareArrays( $defVars[0], $transVars[0] );
 
@@ -495,8 +495,8 @@ class MessageChecks {
 	 * @return True if namespace has been tampered with.
 	 */
 	protected function checkI18nSprintExtraVars( TMessage $message, $code, &$desc = null ) {
-		preg_match_all( '/%[^% ]+/U', $message->definition, $defVars );
-		preg_match_all( '/%[^% ]+/U', $message->translation, $transVars );
+		preg_match_all( '/%[^% ]+/U', $message->definition(), $defVars );
+		preg_match_all( '/%[^% ]+/U', $message->translation(), $transVars );
 
 		$missing = self::compareArrays( $transVars[0], $defVars[0] );
 

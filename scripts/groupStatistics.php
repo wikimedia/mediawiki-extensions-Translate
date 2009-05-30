@@ -105,41 +105,68 @@ foreach ( $groups as $g ) {
 }
 $out->blockend();
 
-// Perform the statistic calculations on every language
+$rows = array();
+foreach ( $languages as $code => $name ) {
+	// Skip list
+	if ( in_array( $code, $skipLanguages ) ) continue;
+	$rows[$code] = array();
+}
+
+$cache = new ArrayMemoryCache( 'groupstats' );
+
+foreach ( $groups as $groupName => $g ) {
+	// Initialise messages
+	$collection = $g->initCollection( 'en' );
+
+	// Perform the statistic calculations on every language
+	foreach ( $languages as $code => $name ) {
+		// Skip list
+		if ( in_array( $code, $skipLanguages ) ) continue;
+
+		$incache = $cache->get( $groupName, $code );
+		if ( $incache !== false ) {
+			list( $fuzzy, $translated, $total ) = $incache;
+		} else {
+
+			$collection->resetForNewLanguage( $code );
+			$collection->filter( 'ignored' );
+			$collection->filter( 'optional' );
+			// Store the count of real messages for later calculation.
+			$total = count( $collection );
+
+			// Count fuzzy first
+			$collection->filter( 'fuzzy' );
+			$fuzzy = $total - count( $collection );
+
+			// Count the completion percent
+			$collection->filter( 'hastranslation', false );
+			$translated = count( $collection );
+
+			$cache->set( $groupName, $code, array( $fuzzy, $translated, $total ) );
+		}
+
+		$rows[$code][] = array( $translated, $total );
+
+		if ( isset( $options['fuzzy'] ) ) {
+			$rows[$code][] = array( $fuzzy, $total );
+		}
+
+	}
+
+	$cache->commit(); // Don't keep open too long... to avoid concurrent access
+
+	unset($collection);
+}
+
 foreach ( $languages as $code => $name ) {
 	// Skip list
 	if ( in_array( $code, $skipLanguages ) ) continue;
 
-	// Tracker for skipping languages with no localisation
+	$columns = $rows[$code];
+
 	$allZero = true;
-	$columns = array();
-
-	foreach ( $groups as $g ) {
-		// Initialise messages
-		$collection = $g->initCollection( $code );
-		$collection->filter( 'optional' );
-		// Store the count of real messages for later calculation.
-		$total = count( $collection );
-
-		// Fill translations in for counting
-		$g->fillCollection( $collection );
-
-		// Count fuzzy first
-		$collection->filter( 'fuzzy' );
-		$fuzzy = $total - count( $collection );
-
-		// Count the completion percent
-		$collection->filter( 'translated', false );
-		$translated = count( $collection );
-		if ( $translated ) $allZero = false;
-
-		$columns[] = $out->formatPercent( $translated, $total,
-			/* Inverted color */ false, /* Decimals */ 2 );
-
-		if ( isset( $options['fuzzy'] ) ) {
-			$columns[] = $out->formatPercent( $fuzzy, $total,
-				/* Inverted color */ true, /* Decimals */ 2 );
-		}
+	foreach ( $columns as $fields ) {
+		if ( $fields[0] !== 0 ) $allZero = false;
 	}
 
 	// Skip dummy languages if requested
@@ -149,7 +176,11 @@ foreach ( $languages as $code => $name ) {
 	$out->blockstart();
 	$out->element( $code );
 	$out->element( $name );
-	foreach ( $columns as $c ) $out->element( $c );
+	foreach ( $columns as $fields ) {
+		list( $upper, $total ) = $fields;
+		$c = $out->formatPercent( $upper, $total, /* Inverted color */ false, /* Decimals */ 2 );
+		$out->element( $c );
+	}
 	$out->blockend();
 }
 

@@ -118,7 +118,9 @@ EOT;
 
 		// Get and write messages.
 		foreach( $collection as $message ) {
-			$value = str_replace( '"', '\"', $message->database() );
+			$key = Xml::escapeJsString( $message->key() );
+			$value = Xml::escapeJsString( $message->translation() );
+			
 			$line = "    '{$message->key()}': \"{$value}\",\n\n";
 			fwrite( $target, $line );
 		}

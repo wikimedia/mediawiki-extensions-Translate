@@ -22,8 +22,11 @@ $wgAutoloadClasses['MessageGroups'] = $dir . 'MessageGroups.php';
 $wgAutoloadClasses['WikiPageMessageGroup'] = $dir . 'MessageGroups.php';
 $wgAutoloadClasses['AliasMessageGroup'] = $dir . 'MessageGroups.php';
 
-$wgAutoloadClasses['MessageCollection'] = $dir . 'Message.php';
+$wgAutoloadClasses['MessageCollection'] = $dir . 'MessageCollection.php';
+$wgAutoloadClasses['MessageDefinitions'] = $dir . 'MessageCollection.php';
 $wgAutoloadClasses['TMessage'] = $dir . 'Message.php';
+$wgAutoloadClasses['ThinMessage'] = $dir . 'Message.php';
+$wgAutoloadClasses['FatMessage'] = $dir . 'Message.php';
 
 $wgAutoloadClasses['TranslateEditAddons'] = $dir . 'TranslateEditAddons.php';
 $wgAutoloadClasses['languages'] = $IP . '/maintenance/language/languages.inc';
@@ -59,6 +62,8 @@ $wgAutoloadClasses['XliffFormatWriter'] = $dir . 'ffs/Xliff.php';
 $wgAutoloadClasses['ResourceLoader'] = $dir . 'utils/ResourceLoader.php';
 $wgAutoloadClasses['StringMatcher'] = $dir . 'utils/StringMatcher.php';
 $wgAutoloadClasses['FCFontFinder'] = $dir . 'utils/Font.php';
+
+$wgAutoloadClasses['ArrayMemoryCache'] = $dir . 'utils/MemoryCache.php';
 
 $wgAutoloadClasses['StringMangler'] = $dir . 'utils/StringMangler.php';
 $wgAutoloadClasses['SmItem'] = $dir . 'utils/StringMangler.php';

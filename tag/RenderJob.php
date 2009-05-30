@@ -35,9 +35,13 @@ class RenderJob extends Job {
 
 		// Return the actual translation page...
 		$page = TranslatablePage::isTranslationPage( $title );
+		if ( $page ) {
+			var_dump( $params );
+			throw new MWException( "Oops, this should not happen!");
+		}
+
 		$group = MessageGroups::getGroup( "page|$key" );
 		$collection = $group->initCollection( $code );
-		$group->fillCollection( $collection );
 
 		// Muck up the text
 		$text = $page->getParse()->getTranslationPageText( $collection );

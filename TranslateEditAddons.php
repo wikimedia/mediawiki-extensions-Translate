@@ -18,9 +18,8 @@ class TranslateEditAddons {
 
 		if ( !in_array( $ns, $wgTranslateMessageNamespaces) ) return true;
 
-		list( $key, $code ) = self::figureMessage( $wgTitle );
 
-		$group = self::getMessageGroup( $ns, $key );
+		list( $key, $code, $group) = self::getKeyCodeGroup( $wgTitle );
 		if ( $group === null ) return true;
 
 		$defs = $group->getDefinitions();
@@ -213,12 +212,18 @@ EOEO;
 	/**
 	* @return Array of the message and the language
 	*/
-	private static function figureMessage( $title ) {
+	private static function figureMessage( Title $title ) {
 		$text = $title->getDBkey();
 		$pos = strrpos( $text, '/' );
 		$code = substr( $text, $pos + 1 );
 		$key = substr( $text, 0, $pos );
 		return array( $key, $code );
+	}
+
+	public static function getKeyCodeGroup( Title $title ) {
+		list( $key, $code ) = self::figureMessage( $title );
+		$group = self::getMessageGroup( $title->getNamespace(), $key );
+		return array( $key, $code, $group );
 	}
 
 	/**
@@ -249,9 +254,7 @@ EOEO;
 		wfLoadExtensionMessages( 'Translate' );
 		global $wgTranslateDocumentationLanguageCode, $wgOut, $wgTranslateMessageNamespaces;
 
-		list( $key, $code ) = self::figureMessage( $object->mTitle );
-
-		$group = self::getMessageGroup( $object->mTitle->getNamespace(), $key );
+		list( $key, $code, $group ) = self::getKeyCodeGroup( $object->mTitle );
 		if ( $group === null ) return;
 
 		list( $nsMain, /* $nsTalk */ ) = $group->namespaces;
@@ -264,11 +267,7 @@ EOEO;
 		$inOtherLanguages = array();
 		$namespace = $object->mTitle->getNsText();
 		foreach ( self::getFallbacks( $code ) as $fbcode ) {
-			$fb = $group->getMessage( $key, $fbcode );
-			/* For fallback, even uncommitted translation may be useful */
-			if ( $fb === null ) {
-				$fb = TranslateUtils::getMessageContent( $key, $fbcode );
-			}
+			$fb = TranslateUtils::getMessageContent( $key, $fbcode, $nsMain );
 			if ( $fb !== null ) {
 				/* add a link for editing the fallback messages */
 				$inOtherLanguages[] = self::dobox( $fb, $fbcode, false, $namespace . ':' . $key . '/' . $fbcode );
@@ -376,9 +375,9 @@ EOEO;
 		// Some syntactic checks
 		$translation = ( $editField !== null ) ? $editField : $xx;
 		if ( $translation !== null && $code !== $wgTranslateDocumentationLanguageCode) {
-			$message = new TMessage( $key, $en );
+			$message = new FatMessage( $key, $en );
 			// Take the contents from edit field as a translation
-			$message->database = $translation;
+			$message->setTranslation( $translation );
 			$checker = MessageChecks::getInstance();
 			if ( $checker->hasChecks( $group->getType() ) ) {
 				$checks = $checker->doChecks( $message, $group->getType(), $code );
@@ -420,4 +419,63 @@ EOEO;
 		);
 		return true;
 	}
+
+	public static function onSave( $article, $user, $text, $summary,
+			$minor, $_, $_, $flags, $revision ) {
+
+		global $wgTranslateMessageNamespaces;
+
+		$title = $article->getTitle();
+
+		$ns = $title->getNamespace();
+		if ( !in_array( $ns, $wgTranslateMessageNamespaces) ) return true;
+
+		list( $key, $code, $group ) = self::getKeyCodeGroup( $title );
+		$cache = new ArrayMemoryCache( 'groupstats' );
+		$cache->clear( $group->getId(), $code );
+
+		$fuzzy = false;
+
+		// Check for explicit tag
+		if ( strpos( $text, TRANSLATE_FUZZY ) !== false ) $fuzzy = true;
+
+		// Check for problems
+		global $wgTranslateDocumentationLanguageCode;
+		if ( !$fuzzy && $code !== $wgTranslateDocumentationLanguageCode ) {
+			$message = new FatMessage( $key, $en );
+			// Take the contents from edit field as a translation
+			$message->setTranslation( $translation );
+			$checker = MessageChecks::getInstance();
+			if ( $checker->hasChecks( $group->getType() ) ) {
+				$checks = $checker->doChecks( $message, $group->getType(), $code );
+				if ( count( $checks ) ) $fuzzy = true;
+			}
+		}
+
+		if ( $fuzzy === false ) return true;
+
+		// Update it
+		if ( $revision === null ) {
+			$rev = $article->getTitle()->getLatestRevId();
+		} else {
+			$rev = $revision->getID();
+		}
+
+		// Add the ready tag
+		$dbw = wfGetDB( DB_MASTER );
+
+		$id = $dbw->selectField( 'revtag_type', 'rtt_id', array( 'rtt_name' => 'fuzzy' ), __METHOD__ );
+
+		$conds = array(
+			'rt_page' => $article->getTitle()->getArticleId(),
+			'rt_type' => $id,
+			'rt_revision' => $rev
+		);
+		$dbw->delete( 'revtag', $conds, __METHOD__ );
+		$dbw->insert( 'revtag', $conds, __METHOD__ );
+
+		return true;
+	}
+
 }
+

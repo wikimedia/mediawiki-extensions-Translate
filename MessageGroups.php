@@ -157,21 +157,6 @@ abstract class MessageGroup {
 	private $messages = array();
 
 	/**
-	 * In this function message group should add translations from the stored file
-	 * for language code $code and it's fallback language, if used.
-	 *
-	 * @param $messages MessageCollection
-	 */
-	function fill( MessageCollection $messages ) {
-		$cache = $this->load( $messages->code );
-		foreach ( $messages->keys() as $key ) {
-			if ( isset( $cache[$key] ) ) {
-				$messages[$key]->infile = $cache[$key];
-			}
-		}
-	}
-
-	/**
 	 * Returns path to the file where translation of language code $code are.
 	 *
 	 * @return Path to the file or false if not applicable.
@@ -193,7 +178,6 @@ abstract class MessageGroup {
 	 *                group only.
 	 */
 	public function initCollection( $code, $unique = false ) {
-		$collection = new MessageCollection( $code );
 
 		if ( !$unique ) {
 			$definitions = $this->getDefinitions();
@@ -201,29 +185,14 @@ abstract class MessageGroup {
 			$definitions = $this->getUniqueDefinitions();
 		}
 
-		foreach ( $definitions as $key => $definition ) {
-			$collection->add( new TMessage( $key, $definition ) );
-		}
+		$defs = new MessageDefinitions( $this->namespaces[0], $definitions );
+		$collection = MessageCollection::newFromDefinitions( $defs, $code );
 
 		$bools = $this->getBools();
-		foreach ( $bools['optional'] as $key ) {
-			if ( isset( $collection[$key] ) ) {
-				$collection[$key]->optional = true;
-			}
-		}
-
-		foreach ( $bools['ignored'] as $key ) {
-			if ( isset( $collection[$key] ) ) {
-				unset( $collection[$key] );
-			}
-		}
+		$collection->setTags( 'ignored',  $bools['ignored']  );
+		$collection->setTags( 'optional', $bools['optional'] );
 
 		return $collection;
-	}
-
-	public function fillCollection( MessageCollection $collection ) {
-		TranslateUtils::fillContents( $collection, $this->namespaces );
-		$this->fill( $collection );
 	}
 
 	public function __construct() {
@@ -554,10 +523,6 @@ class WikiMessageGroup extends MessageGroup {
 		$this->source = $source;
 	}
 
-	public function fill( MessageCollection $messages ) {
-		return; // no-op
-	}
-
 	/* Fetch definitions from database */
 	public function getDefinitions() {
 		$definitions = array();
@@ -593,6 +558,8 @@ class WikiMessageGroup extends MessageGroup {
 }
 
 class WikiPageMessageGroup extends WikiMessageGroup {
+	protected $type = 'mediawiki';
+
 	public $title;
 
 	public function __construct( $id, $source ) {
@@ -631,6 +598,7 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 
 	public function load( $code ) {
 		if ( $code === 'en' ) return $this->getDefinitions();
+		else return array();
 	}
 
 	/**
@@ -650,37 +618,6 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		$rev = Revision::newFromTitle( $title );
 		if ( !$rev ) return null;
 		return $rev->getText();
-	}
-
-	public function fillCollection( MessageCollection $messages ) {
-		parent::fillCollection( $messages );
-		$page = TranslatablePage::newFromTitle( $this->title );
-		$markedRevs = $page->getMarkedRevs( 'tp:mark' );
-
-		foreach ( $messages as $key => $m ) {
-			$rev = $page->getTransrev( $key .'/' . $messages->code );
-			if ( $rev === false ) {
-				if ( !$m->database === null ) {
-					//TODO: fixme, ugly ugly ugly
-					$m->database = TRANSLATE_FUZZY . $m->database;
-				}
-				continue;
-			}
-			foreach ( $markedRevs as $r ) {
-				if ( $rev === $r->rt_revision ) break;
-				$changed = explode( '|', unserialize($r->rt_value) );
-
-				// Get a suitable section key
-				$parts = explode( '/', $key );
-				$ikey = $parts[count($parts)-1];
-
-				// If the section was changed, reduce the score
-				if ( in_array($ikey, $changed, true) ) {
-					$m->database = TRANSLATE_FUZZY . $m->database;
-					continue 2;
-				}
-			}
-		}
 	}
 }
 

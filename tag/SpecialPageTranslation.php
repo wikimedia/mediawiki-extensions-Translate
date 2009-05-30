@@ -393,6 +393,7 @@ class SpecialPageTranslation extends SpecialPage {
 		// Store changed sections in the database for easy access.
 		// Used when determinen the up-to-datedness for section translations.
 		$page->addMarkedTag( $newrevision, $changed );
+		$this->addFuzzyTags( $page, $changed );
 
 		$this->setupRenderJobs( $page );
 
@@ -401,6 +402,37 @@ class SpecialPageTranslation extends SpecialPage {
 		$page->getTranslationPercentages( /*re-generate*/ true );
 
 		return false;
+	}
+
+	public function addFuzzyTags( $page, $changed ) {
+		$titles = array();
+		$prefix = $page->getTitle->getPrefixedText();
+		$db = wfGetDB( DB_MASTER );
+		foreach ( $changed as $c ) {
+			$title = Title::makeTitleSafe( NS_TRANSLATIONS, "$prefix/$c" );
+			if ( $title ) {
+				$titles[] = 'page_title like \'' . $db->escapeLike( $title->getPrefixedDBkey() ) . '/%\'';
+			}
+		}
+
+		$titleCond = $db->makeList( $titles, LIST_OR );
+
+		$id = $db->selectField( 'revtag_type', 'rtt_id', array( 'rtt_name' => 'fuzzy' ), __METHOD__ );
+
+		$fields = array( 'page_id', 'page_latest' );
+		$conds = array( 'page_namespace' => NS_TRANSLATIONS, $titleCond );
+		$res = $db->select( 'page', $fields, $conds, __METHOD__ );
+
+		$inserts = array();
+
+		foreach( $res as $r ) {
+			$inserts[] = array(
+				'rt_page' => $r->page_id,
+				'rt_type' => $id,
+				'rt_revision' => $r->page_latest,
+			);
+		}
+		$db->replace( 'revtag', array( 'rt_type_page_revision' ), $inserts, __METHOD__ );
 	}
 
 	public function setupRenderJobs( TranslatablePage $page ) {

@@ -143,12 +143,12 @@ HEADER
 	 */
 	protected function exportMessages( $handle, MessageCollection $collection ) {
 		$mangler = $this->group->getMangler();
-		foreach ( $collection->keys() as $item ) {
+		foreach ( $collection as $item ) {
 
-			$key = $mangler->unmangle( $item );
+			$key = $mangler->unmangle( $item->key() );
 			$key = stripcslashes( $key );
 
-			$value = $collection[$item]->translation;
+			$value = $item->translation();
 			$value = str_replace( TRANSLATE_FUZZY, '', $value );
 			$value = addcslashes( $value, "'" );
 

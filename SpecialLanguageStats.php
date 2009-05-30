@@ -192,28 +192,37 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 		$out = '';
 
+		$cache = new ArrayMemoryCache( 'groupstats' );
+
 		# Fetch groups stats have to be displayed for
 		$groups = $this->getGroups();
 
 		# Get statistics for the message groups
-		foreach ( $groups as $g ) {
+		foreach ( $groups as $groupName => $g ) {
 
-			// Initialise messages
-			$collection = $g->initCollection( $code );
-			$collection->filter( 'optional' );
-			// Store the count of real messages for later calculation.
-			$total = count( $collection );
+			$incache = $cache->get( $groupName, $code );
+			if ( $incache !== false ) {
+				list( $fuzzy, $translated, $total ) = $incache;
+			} else {
 
-			// Fill translations in for counting
-			$g->fillCollection( $collection );
+				// Initialise messages
+				$collection = $g->initCollection( $code );
+				$collection->filter( 'ignored' );
+				$collection->filter( 'optional' );
+				// Store the count of real messages for later calculation.
+				$total = count( $collection );
 
-			// Count fuzzy first
-			$collection->filter( 'fuzzy' );
-			$fuzzy = $total - count( $collection );
+				// Count fuzzy first
+				$collection->filter( 'fuzzy' );
+				$fuzzy = $total - count( $collection );
 
-			// Count the completion percent
-			$collection->filter( 'translated', false );
-			$translated = count( $collection );
+				// Count the completion percent
+				$collection->filter( 'hastranslation', false );
+				$translated = count( $collection );
+
+				$cache->set( $groupName, $code, array( $fuzzy, $translated, $total ) );
+
+			}
 
 			// FIXME: avoid division by 0. Should not happen, but core-mostused has this on Windows at the moment
 			if( !$total ) {
