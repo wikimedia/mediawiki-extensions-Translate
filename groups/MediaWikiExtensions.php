@@ -209,7 +209,13 @@ class AllMediawikiExtensionsGroup extends MessageGroup {
 	}
 
 	public function load( $code ) {
-		return array(); // no-op
+		$this->init();
+		$array = array();
+		foreach ( $this->classes as $class ) {
+			// Use wfArrayMerge because of string keys
+			$array = wfArrayMerge( $array, $class->load( $code ) );
+		}
+		return $array;
 	}
 
 	public function getMessage( $key, $code ) {

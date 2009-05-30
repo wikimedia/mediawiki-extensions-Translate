@@ -269,6 +269,8 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	protected function loadInfo( array $keys ) {
 		if ( $this->dbInfo !== null ) return;
+
+		$this->dbInfo = array(); // Something iterable
 		if ( !count($keys) ) return;
 
 		$dbr = wfGetDB( DB_SLAVE );
@@ -295,6 +297,8 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	protected function loadData( $keys ) {
 		if ( $this->dbData !== null ) return;
+		
+		$this->dbData = array(); // Something iterable
 		if ( !count($keys) ) return;
 
 		$dbr = wfGetDB( DB_SLAVE );

@@ -207,6 +207,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 				// Initialise messages
 				$collection = $g->initCollection( $code );
+				$collection->setInFile( $g->load( $code ) );
 				$collection->filter( 'ignored' );
 				$collection->filter( 'optional' );
 				// Store the count of real messages for later calculation.
@@ -234,8 +235,17 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 				continue;
 			}
 
-			$translatedPercentage = wfMsg( 'percent', $wgLang->formatNum( round( 100 * $translated / $total, 2 ) ) );
-			$fuzzyPercentage = wfMsg( 'percent', $wgLang->formatNum( round( 100 * $fuzzy / $total, 2 ) ) );
+			$translatedPercentage = $wgLang->formatNum( round( 100 * $translated / $total, 2 ) );
+			$fuzzyPercentage = $wgLang->formatNum( round( 100 * $fuzzy / $total, 2 ) );
+
+			if ( !wfEmptyMsg( 'percent', wfMsgNoTrans('percent')) ) {
+				$translatedPercentage = wfMsg( 'percent', $translatedPercentage );
+				$fuzzyPercentage = wfMsg( 'percent', $fuzzyPercentage );
+			} else {
+				// For 1.14 compatability
+				$translatedPercentage = "$translatedPercentage%";
+				$fuzzyPercentage = "$fuzzyPercentage%";
+			}
 
 			$translateTitle = SpecialPage::getTitleFor( 'Translate' );
 			$queryParameters = array(
