@@ -232,13 +232,6 @@ class AllMediawikiExtensionsGroup extends MessageGroup {
 		return $array;
 	}
 
-	function fill( MessageCollection $messages ) {
-		$this->init();
-		foreach ( $this->classes as $class ) {
-			$class->fill( $messages );
-		}
-	}
-
 	function getBools() {
 		$this->init();
 		$bools = parent::getBools();

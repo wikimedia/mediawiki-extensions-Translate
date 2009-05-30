@@ -31,8 +31,10 @@ class ArrayMemoryCache {
 
 	public function clear( $group, $code ) {
 		$this->load();
-		unset($this->cache[$group][$code]);
-		if ( !count($this->cache[$group]) ) unset($this->cache[$group]);
+		if ( isset($this->cache[$group][$code]) )
+			unset($this->cache[$group][$code]);
+		if ( isset($this->cache[$group]) && !count($this->cache[$group]) )
+			unset($this->cache[$group]);
 	}
 
 	public function commit() {
