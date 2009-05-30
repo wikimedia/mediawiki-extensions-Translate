@@ -9,7 +9,7 @@
  */
 
 class MantisMessageGroup extends MessageGroup {
-	protected $label = 'Mantis (web-based bugtracking system)';
+	protected $label = 'MantisBT (web-based bugtracking system)';
 	protected $id    = 'out-mantis';
 	protected $type  = 'mantis';
 
