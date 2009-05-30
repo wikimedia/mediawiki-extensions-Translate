@@ -159,17 +159,19 @@ class SpecialTranslations extends SpecialAllpages {
 		// Adapted version of TranslateUtils:makeListing() by Nikerabbit
 		$out = $tableheader;
 
+		$canTranslate = $wgUser->isAllowed( 'translate' );
+
 		foreach ( $res as $s ) {
 			$key = $s->page_title;
 			$t = Title::makeTitle( $s->page_namespace, $key );
 
 			$niceTitle = htmlspecialchars( $this->getTheCode( $s->page_title ) );
 
-			if ( !$wgUser->isAllowed( 'translate' ) ) {
+			if ( $canTranslate ) ) {
 				$tools['edit'] = $sk->link(
 					$t,
 					$niceTitle,
-					array(),
+					array( 'action'),
 					array(
 						'action' => 'edit',
 						'loadgroup' => $inMessageGroup
