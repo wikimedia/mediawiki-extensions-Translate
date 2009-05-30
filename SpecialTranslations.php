@@ -167,7 +167,7 @@ class SpecialTranslations extends SpecialAllpages {
 
 			$niceTitle = htmlspecialchars( $this->getTheCode( $s->page_title ) );
 
-			if ( $canTranslate ) ) {
+			if ( $canTranslate ) {
 				$tools['edit'] = $sk->link(
 					$t,
 					$niceTitle,
