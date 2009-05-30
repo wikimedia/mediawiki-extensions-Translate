@@ -98,7 +98,8 @@ abstract class MessageGroup {
 	public function load( $code ) {
 		$reader = $this->getReader( $code );
 		if ( $reader ) {
-			return $reader->parseMessages( $this->mangler );
+			$messages = $reader->parseMessages( $this->mangler );
+			return $messages ? $messages : array();
 		}
 		return array();
 	}
