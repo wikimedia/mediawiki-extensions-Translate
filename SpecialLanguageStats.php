@@ -144,7 +144,6 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	}
 
 	function createHeader( $code ) {
-		# FIXME: provide some sensible header for what is being displayed.
 		$out = '<!-- ' . $code . " -->\n";
 		$out .= '<!-- ' . TranslateUtils::getLanguageName( $code, false ) . " -->\n";
 
