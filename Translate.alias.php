@@ -136,6 +136,9 @@ $aliases['fi'] = array(
 	'Magic' => array( 'Laajennettu kääntäminen' ),
 	'TranslationChanges' => array( 'Käännösmuutokset' ),
 	'TranslationStats' => array( 'Käännöstilastot' ),
+	'Translations' => array( 'Käännökset' ),
+	'LanguageStats' => array( 'Kielitilastot' ),
+	'PageTranslation' => array( 'Sivujen kääntäminen' ),
 );
 
 /** French (Français) */
