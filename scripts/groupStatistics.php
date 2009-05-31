@@ -145,10 +145,10 @@ foreach ( $groups as $groupName => $g ) {
 			$cache->set( $groupName, $code, array( $fuzzy, $translated, $total ) );
 		}
 
-		$rows[$code][] = array( $translated, $total );
+		$rows[$code][] = array( false, $translated, $total );
 
 		if ( isset( $options['fuzzy'] ) ) {
-			$rows[$code][] = array( $fuzzy, $total );
+			$rows[$code][] = array( true, $fuzzy, $total );
 		}
 
 	}
@@ -177,8 +177,8 @@ foreach ( $languages as $code => $name ) {
 	$out->element( $code );
 	$out->element( $name );
 	foreach ( $columns as $fields ) {
-		list( $upper, $total ) = $fields;
-		$c = $out->formatPercent( $upper, $total, /* Inverted color */ false, /* Decimals */ 2 );
+		list( $invert, $upper, $total ) = $fields;
+		$c = $out->formatPercent( $upper, $total, $invert, /* Decimals */ 2 );
 		$out->element( $c );
 	}
 	$out->blockend();

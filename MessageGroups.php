@@ -30,22 +30,6 @@ abstract class MessageGroup {
 	public function getIgnored() { return $this->ignored; }
 	public function setIgnored( $value ) { $this->ignored = $value; }
 
-	protected $problematic = null;
-	public function getProblematic( $code ) {
-		if ( $this->problematic === null ) {
-			$this->problematic = array();
-			$file = TRANSLATE_CHECKFILE . '-' . $this->id;
-			if ( file_exists( $file ) ) {
-				$problematic = unserialize( file_get_contents( $file ) );
-				if ( isset( $problematic[$code] ) ) {
-					$this->problematic = $problematic[$code];
-				}
-			}
-		}
-		return $this->problematic;
-	}
-
-	public function setProblematic( $value ) { $this->problematic = $value ; }
 	/**
 	 * Returns a list of optional and ignored messages in 2-d array.
 	 */
@@ -438,6 +422,7 @@ class CoreMostUsedMessageGroup extends CoreMessageGroup {
 
 	function getDefinitions() {
 		$data = file_get_contents( dirname( __FILE__ ) . '/wikimedia-mostused-2009.txt' );
+		$data = str_replace( "\r", '', $data );
 		$messages = explode( "\n", $data );
 		$contents = Language::getMessagesFor( 'en' );
 		$definitions = array();
