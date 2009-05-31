@@ -370,13 +370,14 @@ class AliasMessageGroup extends ExtensionMessageGroup {
 			$collection[$key] = new FatMessage( $key, implode( ", ", $value ) );
 		}
 
-		$this->fillCollection( $collection );
-		return $collection;
-	}
-
-	public function fillCollection( MessageCollection $collection ) {
 		$this->fill( $collection );
 		$this->fillContents( $collection );
+
+		foreach ( array_keys($collection->keys()) as $key ) {
+			if ( $collection[$key]->translation() === null ) unset($collection[$key]);
+		}
+
+		return $collection;
 	}
 
 
