@@ -14,9 +14,9 @@ require( dirname( __FILE__ ) . '/cli.inc' );
 
 function showUsage() {
 	STDERR( <<<EOT
-Alias exporter.
+Core special features exporter.
 
-Usage: php aliasexport.php [options...]
+Usage: php mwcore-export.php [options...]
 
 Options:
   --target      Target directory for exported files

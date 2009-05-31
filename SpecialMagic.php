@@ -124,7 +124,7 @@ class SpecialMagic extends SpecialPage {
 		$this->setHeaders();
 
 		$wgOut->addHTML( $this->getForm() );
-		$wgOut->addWikMsg( self::MSG . 'help' );
+		$wgOut->addWikiMsg( self::MSG . 'help' );
 
 		if ( !$this->options['module'] ) { return; }
 		$o = null;
