@@ -339,7 +339,6 @@ EOEO;
 			$page = TranslatablePage::newFromTitle( $group->title );
 			$rev = $page->getTransRev( "$key/$code" );
 			$latest = $page->getMarkedTag();
-			var_dump( "$rev !== $latest" );
 			if ( $rev !== $latest ) {
 				$oldpage = TranslatablePage::newFromRevision( $group->title, $rev );
 				$oldtext = null;
