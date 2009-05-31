@@ -40,7 +40,6 @@ if ( !isset( $options['lang'] ) ) {
 	exit( 1 );
 }
 
-
 if ( !isset( $options['type'] ) ) {
 	STDERR( "Type must be one of the following: special magic namespace" );
 	exit( 1 );
@@ -109,7 +108,7 @@ foreach ( $langs as $l ) {
 	if ( $count ) {
 		file_put_contents( $outFile, $data );
 	} else {
-		STDERR( "Addind new entry to $outFile, please double check location", $l );
+		STDERR( "Adding new entry to $outFile, please double check location", $l );
 		$pos = strpos( $data, "*/" );
 		if ( $pos === false ) {
 			STDERR( ". FAILED! Totally new file? No header?", $l );
@@ -122,8 +121,3 @@ foreach ( $langs as $l ) {
 		file_put_contents( $outFile, $data );
 	}
 }
-
-
-
-
-
