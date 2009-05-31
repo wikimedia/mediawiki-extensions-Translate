@@ -173,6 +173,7 @@ class SimpleFormatWriter {
 		$collection = $this->group->initCollection( $code );
 		$collection->filter( 'ignored' );
 		$collection->filter( 'hastranslation', false );
+		$collection->setInfile( $this->group->load( $code ) );
 		$collection->loadTranslations();
 		$this->addAuthors( $collection->getAuthors(), $code );
 		return $collection;

@@ -134,6 +134,7 @@ class ReviewMessagesTask extends ViewMessagesTask {
 		$this->collection = $this->group->initCollection( $code );
 		$this->collection->setInfile( $this->group->load( $code ) );
 		$this->collection->filter( 'ignored' );
+		$this->collection->filter( 'hastranslation', false );
 		$this->collection->filter( 'changed', false );
 	}
 

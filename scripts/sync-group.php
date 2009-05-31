@@ -130,6 +130,7 @@ class ChangeSyncer {
 		if ( !count( $messages ) ) return;
 
 		$collection = $this->group->initCollection( $code );
+		$collection->filter( 'ignored' );
 		$collection->loadTranslations();
 
 		foreach ( $messages as $key => $translation ) {
