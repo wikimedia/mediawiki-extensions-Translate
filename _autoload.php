@@ -85,6 +85,12 @@ $wgAutoloadClasses['MantisMessageGroup'] = $dir . 'groups/Mantis.php';
 $wgAutoloadClasses['NoccMessageGroup'] = $dir . 'groups/Nocc.php';
 $wgAutoloadClasses['OpenLayersMessageGroup'] = $dir . 'groups/OpenLayers.php';
 
+# complex messages
+$wgAutoloadClasses['ComplexMessages'] = $dir . 'groups/ComplexMessages.php';
+$wgAutoloadClasses['SpecialPageAliasesCM'] = $dir . 'groups/ComplexMessages.php';
+$wgAutoloadClasses['MagicWordsCM'] = $dir . 'groups/ComplexMessages.php';
+$wgAutoloadClasses['NamespaceCM'] = $dir . 'groups/ComplexMessages.php';
+
 # page translation
 $wgAutoloadClasses['PageTranslationHooks'] = $dir . 'tag/PageTranslationHooks.php';
 $wgAutoloadClasses['TranslatablePage'] = $dir . 'tag/TranslatablePage.php';
