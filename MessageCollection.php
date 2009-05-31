@@ -377,7 +377,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	}
 
 	public function offsetSet( $offset, $value ) {
-		throw new MWException( "Cannot add or modify elements" );
+		$this->messages[$offset] = $value;
 	}
 
 	public function offsetUnset( $offset ) {

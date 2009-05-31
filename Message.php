@@ -18,6 +18,7 @@ abstract class TMessage {
 	public function key() { return $this->key; }
 	public function definition() { return $this->definition; }
 	abstract public function translation();
+	abstract public function author();
 }
 
 class ThinMessage extends TMessage {
@@ -72,4 +73,6 @@ class FatMessage extends TMessage {
 	public function translation() {
 		return $this->translation;
 	}
+
+	public function author() {}
 }

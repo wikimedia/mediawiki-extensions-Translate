@@ -76,7 +76,7 @@ foreach ( $groups as $g ) {
 				}
 
 				// Add it to the array
-				$problematic[] = array( $g->namespaces[0], $key );
+				$problematic[] = array( $g->namespaces[0], "$key/$code" );
 			}
 		}
 
@@ -87,6 +87,7 @@ foreach ( $groups as $g ) {
 
 function tagFuzzy( $problematic ) {
 	if ( !count($problematic) ) return;
+
 
 	$db = wfGetDB( DB_MASTER );
 	$id = $db->selectField( 'revtag_type', 'rtt_id', array( 'rtt_name' => 'fuzzy' ), __METHOD__ );

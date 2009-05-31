@@ -362,8 +362,9 @@ class ExtensionMessageGroup extends MessageGroup {
 }
 
 class AliasMessageGroup extends ExtensionMessageGroup {
-	public function initCollection( $code ) {
-		$collection = array();
+	public function initCollection( $code, $unique = false ) {
+		$collection = parent::initCollection( $code, $unique );
+		
 		$defs = $this->load( 'en' );
 		foreach ( $defs as $key => $value ) {
 			$collection[$key] = new FatMessage( $key, implode( ", ", $value ) );
@@ -373,20 +374,20 @@ class AliasMessageGroup extends ExtensionMessageGroup {
 		return $collection;
 	}
 
-	public function fillCollection( $collection ) {
+	public function fillCollection( MessageCollection $collection ) {
 		$this->fill( $collection );
 		$this->fillContents( $collection );
 	}
 
 
-	function fill( $messages ) {
+	function fill( MessageCollection $messages ) {
 		$cache = $this->load( $messages->code );
 		foreach ( $messages->keys() as $key ) {
 			if ( isset( $cache[$key] ) ) {
 				if ( is_array( $cache[$key] ) ) {
-					$messages[$key]->infile = implode( ',', $cache[$key] );
+					$messages[$key]->setInfile( implode( ',', $cache[$key] ) );
 				} else {
-					$messages[$key]->infile = $cache[$key];
+					$messages[$key]->setInfile( $cache[$key] );
 				}
 			}
 		}
@@ -407,7 +408,7 @@ class AliasMessageGroup extends ExtensionMessageGroup {
 			if ( $name === '' || $values === '' ) continue;
 
 			if ( isset( $collection[$name] ) ) {
-				$collection[$name]->database = $values;
+				$collection[$name]->setTranslation( $values );
 			}
 		}
 	}
