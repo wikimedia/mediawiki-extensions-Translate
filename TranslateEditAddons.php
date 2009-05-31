@@ -431,6 +431,10 @@ EOEO;
 		if ( !in_array( $ns, $wgTranslateMessageNamespaces) ) return true;
 
 		list( $key, $code, $group ) = self::getKeyCodeGroup( $title );
+
+		// Unknown message, do not handle
+		if ( !$group ) return true;
+
 		$cache = new ArrayMemoryCache( 'groupstats' );
 		$cache->clear( $group->getId(), $code );
 
