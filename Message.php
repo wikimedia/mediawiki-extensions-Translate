@@ -78,6 +78,10 @@ class FatMessage extends TMessage {
 
 	public function author() {}
 
+	public function setInfile( $text ) {
+		$this->infile = $text;
+	}
+
 	public function infile() {
 		return $this->infile;
 	}
