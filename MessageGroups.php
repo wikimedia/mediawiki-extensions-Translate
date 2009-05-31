@@ -362,14 +362,24 @@ class ExtensionMessageGroup extends MessageGroup {
 }
 
 class AliasMessageGroup extends ExtensionMessageGroup {
+	public function initCollection( $code ) {
+		$collection = array();
+		$defs = $this->load( 'en' );
+		foreach ( $defs as $key => $value ) {
+			$collection[$key] = new FatMessage( $key, implode( ", ", $value ) );
+		}
 
-	public function fillCollection( MessageCollection $collection ) {
+		$this->fillCollection( $collection );
+		return $collection;
+	}
+
+	public function fillCollection( $collection ) {
 		$this->fill( $collection );
 		$this->fillContents( $collection );
 	}
 
 
-	function fill( MessageCollection $messages ) {
+	function fill( $messages ) {
 		$cache = $this->load( $messages->code );
 		foreach ( $messages->keys() as $key ) {
 			if ( isset( $cache[$key] ) ) {
