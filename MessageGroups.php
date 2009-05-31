@@ -383,7 +383,7 @@ class AliasMessageGroup extends ExtensionMessageGroup {
 
 	function fill( MessageCollection $messages ) {
 		$cache = $this->load( $messages->code );
-		foreach ( $messages->keys() as $key ) {
+		foreach ( array_keys($messages->keys()) as $key ) {
 			if ( isset( $cache[$key] ) ) {
 				if ( is_array( $cache[$key] ) ) {
 					$messages[$key]->setInfile( implode( ',', $cache[$key] ) );
