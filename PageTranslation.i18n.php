@@ -75,6 +75,8 @@ The page you are trying to edit does not seem to correspond any page marked for 
 /** Message documentation (Message documentation)
  * @author Darth Kule
  * @author EugeneZelenko
+ * @author Fryed-peach
+ * @author Mormegil
  * @author Purodha
  * @author Siebrand
  */
@@ -88,8 +90,10 @@ $2 is a count of sections which can be used with PLURAL,
 $3 is an URL.',
 	'tpt-mark-summary' => 'This message is used as an edit summary.',
 	'tpt-old-pages' => 'The words "some version" refer to "one version of the page", or "a single version of each of the pages", respectively. Each page can have either one or none of its versions marked for translaton.',
+	'tpt-rev-old' => '',
 	'translate-tag-markthisagain' => '"has changes" is to be understood as "has been altered/edited"',
 	'translate-tag-hasnew' => '"has changes" is to be understood as "has been altered/edited"',
+	'tpt-languages-legend' => 'The caption of a language selector displayed using <code>&lt;languages /&gt;</code>, e.g. on [[Project list]].',
 );
 
 /** Arabic (العربية)
@@ -223,6 +227,19 @@ Assegureu-vos que té les etiquetes <nowiki><translate></nowiki> i una sintaxi v
 	'tpt-rev-latest' => 'última versió',
 	'translate-tag-translate-link-desc' => 'Traduir aquesta pàgina',
 	'tpt-languages-legend' => 'Altres idiomes:',
+);
+
+/** Czech (Česky)
+ * @author Matěj Grabovský
+ * @author Mormegil
+ */
+$messages['cs'] = array(
+	'pagetranslation' => 'Překlad stránek',
+	'translate-tag-translate-link-desc' => 'Přeložit tuto stránku',
+	'translate-tag-hasnew' => 'Tato stránka obsahuje <span class="plainlinks">[$1 změny]</span>, které nebyly označeny pro překlad.',
+	'tpt-translation-intro' => 'Toto je <span class="plainlinks">[$1 přeložená verze]</span> stránky [[$2]], překlad je úplný a aktuální na $3 %.',
+	'tpt-translation-intro-fuzzy' => 'Takto jsou označeny zastaralé části překladu.',
+	'tpt-languages-legend' => 'Jiné jazyky:',
 );
 
 /** German (Deutsch)
@@ -1147,6 +1164,7 @@ $messages['ru'] = array(
 
 /** Slovak (Slovenčina)
  * @author Helix84
+ * @author Mormegil
  */
 $messages['sk'] = array(
 	'pagetranslation' => 'Preklad stránky',
@@ -1186,7 +1204,7 @@ Predtým než túto verziu označíte na preklad skontrolujte, že zmeny sekcií
 	'translate-tag-translate-link-desc' => 'Preložiť túto stránku',
 	'translate-tag-markthis' => 'Označiť túto stránku na preklad',
 	'translate-tag-markthisagain' => 'Táto stránka obsahuje <span class="plainlinks">[$1 {{PLURAL:$1|zmenu|zmeny|zmien}}]</span> odkedy bola naposledy <span class="plainlinks">[$2 označená na preklad]</span>.',
-	'translate-tag-hasnew' => 'Táto stránka obsahuje <span class="plainlinks">[$1 {{PLURAL:$1|zmenu|zmeny|zmien}}]</span>, {{PLURAL:$1|ktorá nie je označená|ktoré nie sú označené}} na preklad.',
+	'translate-tag-hasnew' => 'Táto stránka obsahuje <span class="plainlinks">[$1 zmeny]</span>, ktoré nie sú označené na preklad.',
 	'tpt-translation-intro' => 'Táto stránka je <span class="plainlinks">[$1 preloženou verziou]</span> stránky [[$2]] a preklad je hotový a aktuálny na $3 %.',
 	'tpt-translation-intro-fuzzy' => 'Zastaralé preklady sú označené takto.',
 	'tpt-languages-legend' => 'Iné jazyky:',
