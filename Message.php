@@ -46,11 +46,11 @@ class ThinMessage extends TMessage {
 		return $this->definition;
 	}
 	public function translation() {
-		if ( !isset($this->row) ) return null;
+		if ( !isset($this->row) ) return $this->infile();
 		return Revision::getRevisionText( $this->row );
 	}
 	public function author() {
-		if ( !isset($this->row) ) return $this->infile();
+		if ( !isset($this->row) ) return null;
 		return $this->row->rev_user_text;
 	}
 
