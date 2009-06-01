@@ -206,6 +206,7 @@ Provjerite da postoje oznake <nowiki><translate></nowiki> i da ima valjanu sinta
 	'tpt-translate-this' => 'prevedi ovu stranicu',
 	'translate-tag-translate-link-desc' => 'Prevedi ovu stranicu',
 	'translate-tag-markthis' => 'Označi ovu stranicu za prevođenje',
+	'translate-tag-hasnew' => 'Ova stranica sadrži <span class="plainlinks">[$1 izmjena]</span> koje nisu označene za prevođenje.',
 	'tpt-translation-intro-fuzzy' => 'Zastarijeli prijevodi su označeni ovako.',
 	'tpt-languages-legend' => 'Drugi jezici:',
 );
@@ -1198,7 +1199,7 @@ Predtým než túto verziu označíte na preklad skontrolujte, že zmeny sekcií
 	'tpt-old-pages' => 'Niektoré verzie {{PLURAL:$1|tejto stránky|týchto stránok}} boli označené na preklad.',
 	'tpt-new-pages' => '{{PLURAL:$1|Táto stránka obsahuje|Tieto stránky obsahujú}} text so značkami na preklad, ale žiadna verzia {{PLURAL:$1|tejto stránky|týchto stránok}} nie je označená na preklad.',
 	'tpt-rev-latest' => 'najnovšia verzia',
-	'tpt-rev-old' => 'rozdiel oproti predošlej označenej verzii $1',
+	'tpt-rev-old' => 'rozdiel oproti predošlej označenej verzii',
 	'tpt-rev-mark-new' => 'označiť túto verziu na preklad',
 	'tpt-translate-this' => 'preložiť túto stránku',
 	'translate-tag-translate-link-desc' => 'Preložiť túto stránku',
