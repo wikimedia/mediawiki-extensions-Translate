@@ -531,7 +531,7 @@ descmsg = newsextension-desc
 News Channel
 
 New User Message
-ignored = newusermessage-template, newusermessage-editor
+ignored = newusermessage-template, newusermessage-editor, newusermessage-substitute
 
 New User Notification
 file = NewUserNotif/NewUserNotif.i18n.php
