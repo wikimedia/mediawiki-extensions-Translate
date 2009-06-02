@@ -1114,7 +1114,7 @@ $messages['be-tarask'] = array(
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Невядомы парамэтар|Невядомыя парамэтры}}:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-balance' => 'Няпарная колькасьць дужак:
+	'translate-checks-balance' => 'Няпарная колькасьць {{PLURAL:$2|дужкі|дужак|дужак}}::
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '{{PLURAL:$2|Праблематычная спасылка|Праблематычныя спасылкі}}:
 <strong><nowiki>$1</nowiki></strong>',
@@ -1824,6 +1824,28 @@ $messages['ch'] = array(
 	'translate-edit' => 'tulaika',
 	'translate-talk' => 'kuentusi',
 	'translate-page-navigation-legend' => 'Nabegasion',
+);
+
+/** Sorani (Arabic script) (‫کوردی (عەرەبی)‬)
+ * @author رزگار
+ */
+$messages['ckb-arab'] = array(
+	'translate' => 'وەرگێڕانه وە',
+	'translate-talk' => 'وتار',
+	'translate-history' => 'مێژو',
+	'translate-page-language' => 'زمانەکان',
+	'translate-submit' => 'گەڕان',
+	'translate-next' => 'پەڕەی دووایی',
+	'translate-prev' => 'پەڕەی پێشوو',
+	'translate-edit-goto-list' => '<<< بگەڕێرۆ بۆ لیست >>>',
+	'translate-rc-translation-filter' => 'پاڵاوتنی وەرگێڕاوەکان:',
+	'translate-rc-translation-filter-no' => 'هیچ شتێک مەکە',
+	'translate-rc-translation-filter-only' => 'هەر وەرگێڕاوەکان نیشان بده',
+	'translate-stats-users' => 'وەرگێڕاوەکان',
+	'translate-statsf-submit' => 'پێش دیتن',
+	'translate-sidebar-alltrans' => 'له زمانه‌کانی ترا',
+	'translate-translations-messagename' => 'ناو:',
+	'translate-language' => 'زمان',
 );
 
 /** Czech (Česky)
@@ -3515,7 +3537,7 @@ Rêson :
 	'translate-edit-definition' => 'Dèfinicion du mèssâjo',
 	'translate-edit-contribute' => 'édiér',
 	'translate-edit-no-information' => "''Ceti mèssâjo est pas documentâ.''
-''Se vos sâde yô ou coment il est utilisâ, vos pouede édiér los ôtros traductors en fassent la documentacion de ceti mèssâjo.''",
+''Se vos sâde yô ou ben coment il est utilisâ, vos pouede édiér los ôtros traductors en fassent la documentacion de ceti mèssâjo.''",
 	'translate-edit-information' => 'Enformacions sur lo mèssâjo « $2 » ($1)',
 	'translate-edit-in-other-languages' => 'Mèssâjo « $1 » dens d’ôtres lengoues',
 	'translate-edit-committed' => 'Traduccion d’ora dens la programeria',
@@ -3533,9 +3555,9 @@ Les traduccions sont sèparâs per una virgula (,).
 Los èspâços de nom pôvont avêr ren que yona traduccion.
 
 Dens les traduccions des èspâços de nom, <tt>$1 talk</tt> est spèciâl. <tt>$1</tt> est remplaciê per lo nom du seto (per ègzemplo <tt>{{ns:project_talk}}</tt>).
-S’o est pas possiblo d’obtegnir una èxprèssion valida dens voutra lengoua sen changiér lo nom du seto, volyéd vos veriér vers un dèvelopor.
+S’o est pas possiblo d’obtegnir una èxprèssion valida dens voutra lengoua sen changiér lo nom du seto, vos volyéd veriér vers un dèvelopor.
 
-Vos dête apartegnir a la tropa des traductors por sôvar los changements.
+Vos dête apartegnir a la tropa ux traductors por sôvar los changements.
 Los changements sont pas sôvâs tant que vos éd pas clicâ sur lo boton « Sôvar ».',
 	'translate-magic-module' => 'Modulo :',
 	'translate-magic-submit' => 'Listar',
@@ -3546,7 +3568,7 @@ Los changements sont pas sôvâs tant que vos éd pas clicâ sur lo boton « Sô
 	'translate-magic-cm-comment' => 'Comentèro :',
 	'translate-magic-cm-save' => 'Sôvar',
 	'translate-magic-cm-updatedusing' => 'Betâ a jorn avouéc [[Special:Magic]]',
-	'translate-magic-cm-savefailed' => 'Falyita de la sôvegouârda',
+	'translate-magic-cm-savefailed' => 'La sôvegouârda at pas reussia.',
 	'translate-magic-special' => 'Noms paralèlos de les pâges spèciâles',
 	'translate-magic-words' => 'Mots magicos',
 	'translate-magic-namespace' => 'Noms des èspâços de nom',
@@ -3570,7 +3592,7 @@ Los changements sont pas sôvâs tant que vos éd pas clicâ sur lo boton « Sô
 	'translate-pref-nonewsletter' => 'Pas mè mandar per mèl les lètres de novèles',
 	'right-translate' => 'Changiér avouéc l’entèrface de traduccion',
 	'translate-rc-translation-filter' => 'Filtrar les traduccions :',
-	'translate-rc-translation-filter-no' => 'Pas fâre ren',
+	'translate-rc-translation-filter-no' => 'Pas ren fâre',
 	'translate-rc-translation-filter-only' => 'Fâre vêre ren que les traduccions',
 	'translate-rc-translation-filter-filter' => 'Èxcllure les traduccions',
 	'translate-rc-translation-filter-site' => 'Ren que los changements de mèssâjos du seto',
@@ -3578,7 +3600,7 @@ Los changements sont pas sôvâs tant que vos éd pas clicâ sur lo boton « Sô
 	'translate-stats-edits' => 'Changements',
 	'translate-stats-users' => 'Traductors',
 	'translate-statsf-intro' => 'Vos pouede fâre des statistiques simples avouéc ceti formulèro.
-Totes les valors ont des limites de d’amont et de desot.',
+Totes les valors ont des limites d’amont et desot.',
 	'translate-statsf-options' => 'Chouèx du diagramo',
 	'translate-statsf-width' => 'Largior en pixèls',
 	'translate-statsf-height' => 'Hôtior en pixèls',
@@ -3625,7 +3647,7 @@ Vos éte encoragiê a revêre los mèssâjos dês [[Special:Translate|{{int:tran
 	'translate-save' => 'Sôvar ($1)',
 	'translate-group-desc-mediawikicore' => 'Ceta tropa de mèssâjos contint los mèssâjos utilisâs dens la vèrsion alfa d’ora de MediaWiki ({{CURRENTVERSION}}).',
 	'translate-group-desc-mediawikimostused' => 'Ceta tropa de mèssâjos contint los [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 mèssâjos los ples sovent utilisâs] dens MediaWiki.',
-	'translate-group-desc-mediawikiextensions' => 'Tropa de mèssâjos mèta que contint tôs los mèssâjos de les èxtensions sotegnues por MediaWiki.',
+	'translate-group-desc-mediawikiextensions' => 'Tropa de mèssâjos mèta que contint tôs los mèssâjos de les èxtensions recognues por MediaWiki.',
 	'translate-group-desc-collection' => 'Tropa de mèssâjos mèta que contint tôs los mèssâjos de l’èxtension MediaWiki [http://www.mediawiki.org/wiki/Extension:Collection Collection].',
 	'translate-group-desc-flaggedrevs' => 'Tropa de mèssâjos mèta que contint tôs los mèssâjos de l’èxtension MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs].',
 	'translate-group-desc-socialprofile' => 'Tropa de mèssâjos mèta que contint tôs los mèssâjos de les èxtensions liyês a l’èxtension MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile].',
@@ -10809,7 +10831,7 @@ Các thay đổi sẽ không được lưu lại đến khi nào bạn nhấn v�
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2||Các}} tham số sau không rõ:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-balance' => 'Số dấu ngoặc bị lẻ:
+	'translate-checks-balance' => 'Số {{PLURAL:$2|dấu ngoặc|dấu ngoặc}} bị lẻ:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '{{PLURAL:$2|Liên kết|Các liên kết}} sau có vấn đề:
 <strong><nowiki>$1</nowiki></strong>',

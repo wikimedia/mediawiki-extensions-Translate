@@ -230,6 +230,14 @@ Assegureu-vos que té les etiquetes <nowiki><translate></nowiki> i una sintaxi v
 	'tpt-languages-legend' => 'Altres idiomes:',
 );
 
+/** Sorani (Arabic script) (‫کوردی (عەرەبی)‬)
+ * @author رزگار
+ */
+$messages['ckb-arab'] = array(
+	'translate-tag-translate-link-desc' => 'وەرگێڕانی ئەم پەرە',
+	'tpt-languages-legend' => 'زمانەکانی‌تر:',
+);
+
 /** Czech (Česky)
  * @author Matěj Grabovský
  * @author Mormegil
@@ -472,19 +480,25 @@ $messages['frp'] = array(
 	'pagetranslation' => 'Traduccion de pâges',
 	'right-pagetranslation' => 'Marcar des vèrsions de pâges por étre traduites',
 	'tpt-desc' => 'Èxtension por traduire des pâges de contegnu.',
-	'tpt-section' => 'Sèccion :',
-	'tpt-section-new' => 'Novèla sèccion :',
-	'tpt-diff-old' => 'Tèxte devant',
-	'tpt-diff-new' => 'Novél tèxte',
+	'tpt-section' => 'Unitât de traduccion $1',
+	'tpt-section-new' => 'Unitât de traduccion novèla. Nom : $1',
+	'tpt-section-deleted' => 'Unitât de traduccion $1',
+	'tpt-template' => 'Modèlo de pâge',
+	'tpt-templatediff' => 'Lo modèlo de pâge at changiê.',
+	'tpt-diff-old' => 'Tèxto devant',
+	'tpt-diff-new' => 'Novél tèxto',
 	'tpt-submit' => 'Marcar ceta vèrsion por étre traduita',
+	'tpt-sections-oldnew' => 'Unitâts de traduccion novèles et ègzistentes',
+	'tpt-sections-deleted' => 'Unitâts de traduccion suprimâs',
+	'tpt-sections-template' => 'Modèlo de pâge de traduccion',
 	'tpt-badtitle' => 'Lo nom de pâge balyê ($1) est pas un titro valido',
 	'tpt-oldrevision' => '$2 est pas la dèrriére vèrsion de la pâge [[$1]].
 Solament la dèrriére vèrsion de la pâge pôt étre marcâ por étre traduita.',
 	'tpt-notsuitable' => 'La pâge $1 est pas convegnâbla por étre traduita.
 Seyâd de sûr que contint la balisa <nowiki><translate></nowiki> et qu’at una sintaxa justa.',
-	'tpt-saveok' => 'La pâge « $1 » at étâ marcâ por étre traduita avouéc $2 {{PLURAL:$2|sèccion traduisibla|sèccions traduisibles}}.
+	'tpt-saveok' => 'La pâge « $1 » at étâ marcâ por étre traduita avouéc $2 {{PLURAL:$2|unitât de traduccion|unitâts de traduccion}}.
 La pâge pôt étre <span class="plainlinks">[$3 traduita]</span> dês ora.',
-	'tpt-badsect' => '« $1 » est pas un nom valido por la sèccion $2.',
+	'tpt-badsect' => '« $1 » est pas un nom valido por una unitât de traduccion $2.',
 	'tpt-showpage-intro' => 'Ce-desot, les novèles traduccions, celes ègzistentes et suprimâs.
 Devant que marcar cetes vèrsions por étre traduites, controlâd que los changements a les sèccions sont petiôts por èvitar de travâly inutilo ux traductors.',
 	'tpt-mark-summary' => 'Ceta vèrsion at étâ marcâ por étre traduita',
@@ -492,20 +506,24 @@ Devant que marcar cetes vèrsions por étre traduites, controlâd que los change
 	'tpt-already-marked' => 'La dèrriére vèrsion de ceta pâge at ja étâ marcâ por étre traduita.',
 	'tpt-list-nopages' => 'Niona pâge at étâ marcâ por étre traduita ou ben prèsta por l’étre.',
 	'tpt-old-pages' => 'Des vèrsions de {{PLURAL:$1|ceta pâge|cetes pâges}} ont étâ marcâs por étre traduites.',
-	'tpt-new-pages' => '{{PLURAL:$1|Ceta pâge contint|Cetes pâges contegnont}} de tèxte avouéc des balises de traduccion, mas niona vèrsion de {{PLURAL:$1|ceta pâge est marcâ por étre traduita|cetes pâges sont marcâs por étre traduites}}.',
+	'tpt-new-pages' => '{{PLURAL:$1|Ceta pâge contint|Cetes pâges contegnont}} de tèxto avouéc des balises de traduccion, mas niona vèrsion de {{PLURAL:$1|ceta pâge est marcâ por étre traduita|cetes pâges sont marcâs por étre traduites}}.',
 	'tpt-rev-latest' => 'dèrriére vèrsion',
-	'tpt-rev-old' => 'vèrsion $1',
+	'tpt-rev-old' => 'difèrence avouéc cela vèrsion marcâ',
 	'tpt-rev-mark-new' => 'marcar ceta vèrsion por étre traduita',
 	'tpt-translate-this' => 'traduire ceta pâge',
 	'translate-tag-translate-link-desc' => 'Traduire ceta pâge',
 	'translate-tag-markthis' => 'Marcar ceta pâge por étre traduita',
+	'translate-tag-markthisagain' => 'Ceta pâge at avu des <span class="plainlinks">[$1 changements]</span> dês qu’at étâ <span class="plainlinks">[$2 marcâ por étre traduita]</span> dèrriérement.',
+	'translate-tag-hasnew' => 'Ceta pâge contint des <span class="plainlinks">[$1 changements]</span> que sont pas marcâs por la traduccion.',
 	'tpt-translation-intro' => 'Ceta pâge est una <span class="plainlinks">[$1 traduccion]</span> de la pâge [[$2]] et la traduccion est complètâ a $3 % et a jorn.',
+	'tpt-translation-intro-fuzzy' => 'Les traduccions dèpassâs sont marcâs d’ense.',
 	'tpt-languages-legend' => 'Ôtres lengoues :',
 	'tpt-target-page' => 'Ceta pâge pôt pas étre betâ a jorn a la man.
-El est una vèrsion traduita de [[$1]] et la traduccion pôt étre betâ a jorn en utilisent [$2 l’outil de traduccion].',
+El est una vèrsion traduita de [[$1]] et la traduccion pôt étre betâ a jorn en utilisent l’[$2 outil de traduccion].',
 	'tpt-unknown-page' => 'Ceti èspâço de nom est resèrvâ por la traduccion de pâges.
 La pâge que vos tâchiéd de changiér semble pas corrèspondre a gins de pâge marcâ por étre traduita.',
-	'tpt-install' => 'Lanciéd php maintenance/update.php ou ben l’enstalacion Vouèbe por activar la fonccionalitât de traduccion de pâges.',
+	'tpt-install' => 'Lanciéd « php maintenance/update.php » ou ben l’enstalacion Vouèbe por activar la fonccionalitât de traduccion de pâges.',
+	'tpt-render-summary' => 'Misa a jorn por étre en acôrd avouéc la novèla vèrsion de la sôrsa de la pâge',
 );
 
 /** Galician (Galego)
