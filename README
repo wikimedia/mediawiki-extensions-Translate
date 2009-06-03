@@ -32,6 +32,12 @@ function customMessageGroups( $id ) {
 }
 </code>
 
+== Changes in version 12 ==
+- Page translation
+- New fuzzy system, should be faster now
+- Edit are consistently filled when starting translation
+- ???
+
 == Changes in version 11 ==
 * 2009-05-09
 - Support added for OpenLayers

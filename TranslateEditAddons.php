@@ -13,10 +13,9 @@ class TranslateEditAddons {
 	const MSG = 'translate-edit-';
 
 	static function addNavigation( &$outputpage, &$text ) {
-		global $wgUser, $wgTitle, $wgTranslateMessageNamespaces;
-		$ns = $wgTitle->getNamespace();
+		global $wgUser, $wgTitle;
 
-		if ( !in_array( $ns, $wgTranslateMessageNamespaces) ) return true;
+		if ( !self::isMessageNamespace( $wgTitle ) ) return true;
 
 
 		list( $key, $code, $group) = self::getKeyCodeGroup( $wgTitle );
@@ -46,6 +45,7 @@ class TranslateEditAddons {
 		$id = $group->getId();
 		wfLoadExtensionMessages( 'Translate' );
 
+		$ns = $wgTitle->getNamespace();
 		$title = Title::makeTitleSafe( $ns, "$prev/$code" );
 		$prevLink = wfMsgHtml( 'translate-edit-goto-no-prev' );
 
@@ -106,16 +106,16 @@ EOEO;
 
 
 	static function addTools( $object ) {
-		global $wgTranslateMessageNamespaces;
-		$ns = $object->mTitle->getNamespace();
-		if ( !in_array( $ns, $wgTranslateMessageNamespaces) ) return true;
+		if ( !self::isMessageNamespace( $object->mTitle ) ) return true;
 
 		$object->editFormTextTop .= self::editBoxes( $object );
-		global $wgMessageCache, $wgLang;
+
 		return true;
 	}
 
 	static function buttonHack( $editpage, &$buttons, $tabindex ) {
+		if ( !self::isMessageNamespace( $editpage->mTitle ) ) return true;
+
 		global $wgLang;
 		list( , $code ) = self::figureMessage( $editpage->mTitle );
 		if ( $code !== 'qqq' ) return true;
@@ -252,7 +252,7 @@ EOEO;
 
 	private static function editBoxes( $object ) {
 		wfLoadExtensionMessages( 'Translate' );
-		global $wgTranslateDocumentationLanguageCode, $wgOut, $wgTranslateMessageNamespaces;
+		global $wgTranslateDocumentationLanguageCode, $wgOut;
 
 		list( $key, $code, $group ) = self::getKeyCodeGroup( $object->mTitle );
 		if ( $group === null ) return;
@@ -293,7 +293,7 @@ EOEO;
 				$info = $group->getMessage( $key, $wgTranslateDocumentationLanguageCode );
 			}
 			$class = 'mw-sp-translate-edit-info';
-			if ( $info === null && in_array( $nsMain, $wgTranslateMessageNamespaces ) ) {
+			if ( $info === null ) {
 				$info = wfMsg( self::MSG . 'no-information' );
 				$class = 'mw-sp-translate-edit-noinfo';
 			}
@@ -316,20 +316,6 @@ EOEO;
 				$boxes[] = TranslateUtils::fieldset(
 					wfMsgHtml( self::MSG . 'information', $edit , $key ), $contents, array( 'class' => $class )
 				);
-			}
-		}
-
-		// Can be either NULL or '', ARGH!
-		if ( $object->textbox1 === '' ) {
-			$editField = null;
-		} else {
-			$editField = $object->textbox1;
-		}
-
-		if ( $xx !== null && $code !== 'en' ) {
-			// Append translation from the file to edit area, if it's empty.
-			if ( $object->firsttime && $editField === null ) {
-				$object->textbox1 = $xx;
 			}
 		}
 
@@ -372,8 +358,23 @@ EOEO;
 		}
 
 
+		// Set-up the content area contents properly and not randomly as in
+		// MediaWiki core. $translation is also used for checks later on. Also
+		// add the fuzzy string if necessary.
+		$translation = TranslateUtils::getMessageContent( $key, $code, $nsMain );
+		if ( $translation !== null ) {
+			if ( !self::hasFuzzyString( $translation) && self::isFuzzy( $object->mTitle ) ) {
+				$translation = TRANSLATE_FUZZY . $translation;
+			}
+		} else {
+			$translation = $xx;
+		}
+
+		if ( $object->firsttime ) {
+			$object->textbox1 = $translation;
+		}
+
 		// Some syntactic checks
-		$translation = ( $editField !== null ) ? $editField : $xx;
 		if ( $translation !== null && $code !== $wgTranslateDocumentationLanguageCode) {
 			$message = new FatMessage( $key, $en );
 			// Take the contents from edit field as a translation
@@ -399,11 +400,36 @@ EOEO;
 		return Xml::tags( 'div', array( 'class' => 'mw-sp-translate-edit-fields' ), implode( "\n\n", $boxes ) );
 	}
 
-	public static function tabs( $skin, &$tabs ) {
-		global $wgTranslateMessageNamespaces;
-		$ns = $skin->mTitle->getNamespace();
+	public static function hasFuzzyString( $text ) {
+		return strpos( $text, TRANSLATE_FUZZY ) !== false;
+	}
 
-		if ( !in_array( $ns, $wgTranslateMessageNamespaces) ) return true;
+	public static function isFuzzy( Title $title ) {
+		$dbr = wfGetDB( DB_SLAVE );
+		$id = $dbr->selectField( 'revtag_type', 'rtt_id', array( 'rtt_name' => 'fuzzy' ), __METHOD__ );
+
+		$tables = array( 'page', 'revtag' );
+		$fields = array( 'page_title', 'rt_type' );
+		$conds  = array(
+			'page_namespace' => $title->getNamespace(),
+			'page_title' => $title->getDBkey(),
+			'rt_type' => $id,
+			'page_id=rt_page',
+			'page_latest=rt_revision'
+		);
+
+		$res = $dbr->selectField( $tables, $fields, $conds, __METHOD__ );
+		return $res !== null;
+	}
+
+	public static function isMessageNamespace( Title $title ) {
+		global $wgTranslateMessageNamespaces;;
+		$namespace = $title->getNamespace();
+		return in_array( $namespace, $wgTranslateMessageNamespaces, true);
+	}
+
+	public static function tabs( $skin, &$tabs ) {
+		if ( !self::isMessageNamespace( $skin->mTitle ) ) return true;
 
 		unset( $tabs['protect'] );
 
@@ -423,12 +449,9 @@ EOEO;
 	public static function onSave( $article, $user, $text, $summary,
 			$minor, $_, $_, $flags, $revision ) {
 
-		global $wgTranslateMessageNamespaces;
-
 		$title = $article->getTitle();
 
-		$ns = $title->getNamespace();
-		if ( !in_array( $ns, $wgTranslateMessageNamespaces) ) return true;
+		if ( !self::isMessageNamespace( $title ) ) return true;
 
 		list( $key, $code, $group ) = self::getKeyCodeGroup( $title );
 
@@ -438,12 +461,10 @@ EOEO;
 		$cache = new ArrayMemoryCache( 'groupstats' );
 		$cache->clear( $group->getId(), $code );
 
-		$fuzzy = false;
-
 		// Check for explicit tag
-		if ( strpos( $text, TRANSLATE_FUZZY ) !== false ) $fuzzy = true;
+		$fuzzy = self::hasFuzzyString( $text );
 
-		// Check for problems
+		// Check for problems, but only if not fuzzy already
 		global $wgTranslateDocumentationLanguageCode;
 		if ( !$fuzzy && $code !== $wgTranslateDocumentationLanguageCode ) {
 			$en = $group->getMessage( $key, 'en' );
