@@ -172,6 +172,15 @@ $messages['be-tarask'] = array(
 	'tpt-render-summary' => 'Абнаўленьне для адпаведнасьці новай вэрсіі крынічнай старонкі',
 );
 
+/** Bulgarian (Български)
+ * @author DCLXVI
+ */
+$messages['bg'] = array(
+	'tpt-rev-mark-new' => 'отбелязване на тази версия за превеждане',
+	'tpt-translate-this' => 'превеждане на тази страница',
+	'translate-tag-translate-link-desc' => 'Превеждане на тази страница',
+);
+
 /** Bosnian (Bosanski)
  * @author CERminator
  */
@@ -1159,6 +1168,7 @@ Esta página que você está tentando editar não aparenta corresponder a nenhum
  * @author Александр Сигачёв
  */
 $messages['ru'] = array(
+	'pagetranslation' => 'Перевод страниц',
 	'right-pagetranslation' => 'отметка версий страниц для перевода',
 	'tpt-desc' => 'Расширение для перевода содержимого страниц',
 	'tpt-section' => 'Блок перевода $1',

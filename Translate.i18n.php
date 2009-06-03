@@ -1114,7 +1114,7 @@ $messages['be-tarask'] = array(
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Невядомы парамэтар|Невядомыя парамэтры}}:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-balance' => 'Няпарная колькасьць {{PLURAL:$2|дужкі|дужак|дужак}}::
+	'translate-checks-balance' => 'Няпарная колькасьць дужак:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '{{PLURAL:$2|Праблематычная спасылка|Праблематычныя спасылкі}}:
 <strong><nowiki>$1</nowiki></strong>',
@@ -1235,8 +1235,8 @@ $messages['bg'] = array(
 	'translate-edit-definition' => 'Оригинално съобщение',
 	'translate-edit-contribute' => 'добавяне на документация',
 	'translate-edit-no-information' => 'За това съобщение няма документация. Ако знаете къде и как се използва, можете да помогнете на останалите преводачи като добавите документация за това съобщение.',
-	'translate-edit-information' => 'Информация за това съобщение ($1)',
-	'translate-edit-in-other-languages' => 'Това съобщение на други езици',
+	'translate-edit-information' => 'Информация за съобщението „$2“ ($1)',
+	'translate-edit-in-other-languages' => 'Съобщението „$1“ на други езици',
 	'translate-edit-committed' => 'Текущ превод в софтуера',
 	'translate-edit-warnings' => 'Забележки за непълни преводи',
 	'translate-edit-goto-no-prev' => 'Няма предишно съобщение',
