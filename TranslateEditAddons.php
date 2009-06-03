@@ -409,7 +409,7 @@ EOEO;
 		$id = $dbr->selectField( 'revtag_type', 'rtt_id', array( 'rtt_name' => 'fuzzy' ), __METHOD__ );
 
 		$tables = array( 'page', 'revtag' );
-		$fields = array( 'page_title', 'rt_type' );
+		$fields = array( 'rt_type' );
 		$conds  = array(
 			'page_namespace' => $title->getNamespace(),
 			'page_title' => $title->getDBkey(),
@@ -419,7 +419,7 @@ EOEO;
 		);
 
 		$res = $dbr->selectField( $tables, $fields, $conds, __METHOD__ );
-		return $res !== null;
+		return $res === $id;
 	}
 
 	public static function isMessageNamespace( Title $title ) {
