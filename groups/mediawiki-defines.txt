@@ -793,6 +793,8 @@ descmsg = form-desc
 
 Stalker Log
 
+Stock Charts
+
 Subst All
 optional = substall-hook
 
