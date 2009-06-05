@@ -996,6 +996,7 @@ De pagina die u probeert te bewerken lijkt niet overeen te komen met een te vert
  */
 $messages['nn'] = array(
 	'pagetranslation' => 'Sideomsetjing',
+	'right-pagetranslation' => 'Merk versjonar av sider for omsetjing',
 	'tpt-desc' => 'Utviding for omsetjing av innhaldssider',
 	'tpt-template' => 'Sidemal',
 	'tpt-templatediff' => 'Sidemalen har vorte endra.',
@@ -1014,6 +1015,7 @@ $messages['nn'] = array(
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
+ * @author Audun
  * @author Jon Harald Søby
  * @author Nghtwlkr
  */
@@ -1024,6 +1026,14 @@ $messages['no'] = array(
 	'tpt-section' => 'Oversettelsesenhet $1',
 	'tpt-section-new' => 'Ny oversettelsesenhet. Navn: $1',
 	'tpt-section-deleted' => 'Oversettelsesenhet $1',
+	'tpt-template' => 'Sidemal',
+	'tpt-templatediff' => 'Sidemalen har blitt endret.',
+	'tpt-diff-old' => 'Forrige tekst',
+	'tpt-diff-new' => 'Ny tekst',
+	'tpt-submit' => 'Marker denne versjonen for oversetting',
+	'tpt-sections-oldnew' => 'Nye og eksisterende oversettelsesenheter',
+	'tpt-sections-deleted' => 'Slettede oversettelsesenheter',
+	'tpt-sections-template' => 'Mal for oversettelsesside',
 	'translate-tag-translate-link-desc' => 'Oversett denne siden',
 );
 
