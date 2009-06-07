@@ -311,6 +311,17 @@ $aliases['mk'] = array(
 	'LanguageStats' => array( 'СтатистикаЗаЈазик' ),
 );
 
+/** Marathi (मराठी) */
+$aliases['mr'] = array(
+	'Translate' => array( 'भाषांतर' ),
+	'Magic' => array( 'प्रगतभाषांतर', 'जादुई' ),
+	'TranslationChanges' => array( 'भाषांतरबदल' ),
+	'TranslationStats' => array( 'भाषांतरसांख्यिकी' ),
+	'Translations' => array( 'भाषांतरणे' ),
+	'LanguageStats' => array( 'भाषासांख्यिकी' ),
+	'PageTranslation' => array( 'पृष्ठभाषांतर' ),
+);
+
 /** Malay (Bahasa Melayu) */
 $aliases['ms'] = array(
 	'Translate' => array( 'Terjemah' ),

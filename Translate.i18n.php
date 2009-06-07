@@ -3527,7 +3527,7 @@ Rêson :
 	'translate-page-navigation-legend' => 'Navigacion',
 	'translate-page-showing' => 'Visualisacion des mèssâjos de $1 a $2 sur $3.',
 	'translate-page-showing-all' => 'Visualisacion de $1 mèssâjo{{PLURAL:$1||s}}.',
-	'translate-page-showing-none' => 'Nion mèssâjo a visualisar.',
+	'translate-page-showing-none' => 'Nion mèssâjo a fâre vêre.',
 	'translate-next' => 'Pâge aprés',
 	'translate-prev' => 'Pâge devant',
 	'translate-page-description-legend' => 'Enformacions a propôs de la tropa',
@@ -3550,14 +3550,14 @@ Rêson :
 	'translate-magic-pagename' => 'Traduccion ètendua de MediaWiki',
 	'translate-magic-help' => 'Vos pouede traduire los noms paralèlos de les pâges spèciâles, los mots magicos et los noms des èspâços de nom.
 
-Los noms paralèlos de les pâges spèciâles et los mots magicos pôvont avêr plusiors traduccions.
+Los noms paralèlos de les pâges spèciâles et los mots magicos pôvont avêr un mouél de traduccions.
 Les traduccions sont sèparâs per una virgula (,).
 Los èspâços de nom pôvont avêr ren que yona traduccion.
 
 Dens les traduccions des èspâços de nom, <tt>$1 talk</tt> est spèciâl. <tt>$1</tt> est remplaciê per lo nom du seto (per ègzemplo <tt>{{ns:project_talk}}</tt>).
-S’o est pas possiblo d’obtegnir una èxprèssion valida dens voutra lengoua sen changiér lo nom du seto, vos volyéd veriér vers un dèvelopor.
+S’o est pas possiblo d’avêr una èxprèssion valida dens voutra lengoua sen changiér lo nom du seto, vos volyéd veriér vers un dèvelopor.
 
-Vos dête apartegnir a la tropa ux traductors por sôvar los changements.
+Vos dête étre a la tropa ux traductors por sôvar los changements.
 Los changements sont pas sôvâs tant que vos éd pas clicâ sur lo boton « Sôvar ».',
 	'translate-magic-module' => 'Modulo :',
 	'translate-magic-submit' => 'Listar',
@@ -3620,9 +3620,9 @@ Totes les valors ont des limites d’amont et desot.',
 	'translate-tag-fuzzy-reason' => 'Dèfinicion changiê per l’utilisator « $1 » avouéc por comentèro « $3 » dens $2.',
 	'translate-sidebar-alltrans' => 'Dens les ôtres lengoues',
 	'translate-tag-noedit' => 'Cen est una pâge de traduccion betâ a jorn ôtomaticament.
-Vos pouede [$1 changiér la pâge sôrsa] ou ben [$2 betar a jorn la traduccion].',
+Vos pouede [$1 changiér la pâge d’origina] ou ben [$2 betar a jorn la traduccion].',
 	'translations' => 'Totes les traduccions',
-	'translations-summary' => 'Buchiéd un nom de mèssâjo ce-desot por visualisar totes les traduccions disponibles.',
+	'translations-summary' => 'Buchiéd un nom de mèssâjo ce-desot por fâre vêre totes les traduccions disponibles.',
 	'translate-translations-no-message' => '« $1 » est pas un mèssâjo traduisiblo',
 	'translate-translations-none' => 'Y at pas de traduccion por « $1 »',
 	'translate-translations-fieldset-title' => 'Mèssâjo',
@@ -3641,7 +3641,7 @@ Vos pouede [$1 changiér la pâge sôrsa] ou ben [$2 betar a jorn la traduccion]
 	'translate-percentage-fuzzy' => 'Dèpassâs',
 	'translate-nothing-to-do' => 'Totes les traduccions possibles semblont avêr étâ fêtes.
 Vos éte encoragiê a revêre los mèssâjos dês [[Special:Translate|{{int:translate}}]].',
-	'translate-languagestats-groups' => ' # Apondéd des ID de tropes de mèssâjos, yon per legne por limitar les tropes
+	'translate-languagestats-groups' => ' # Apondéd des identifiants de tropes de mèssâjos, yon per legne por limitar les tropes
  # que sont montrâs dessus Special:LanguageStats. Les tropes pas ègzistentes seront
  # ignorâs.',
 	'translate-save' => 'Sôvar ($1)',

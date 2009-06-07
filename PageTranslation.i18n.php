@@ -529,10 +529,10 @@ Devant que marcar cetes vèrsions por étre traduites, controlâd que los change
 	'tpt-languages-legend' => 'Ôtres lengoues :',
 	'tpt-target-page' => 'Ceta pâge pôt pas étre betâ a jorn a la man.
 El est una vèrsion traduita de [[$1]] et la traduccion pôt étre betâ a jorn en utilisent l’[$2 outil de traduccion].',
-	'tpt-unknown-page' => 'Ceti èspâço de nom est resèrvâ por la traduccion de pâges.
+	'tpt-unknown-page' => 'Ceti èspâço de nom est resèrvâ por la traduccion de pâges de contegnu.
 La pâge que vos tâchiéd de changiér semble pas corrèspondre a gins de pâge marcâ por étre traduita.',
 	'tpt-install' => 'Lanciéd « php maintenance/update.php » ou ben l’enstalacion Vouèbe por activar la fonccionalitât de traduccion de pâges.',
-	'tpt-render-summary' => 'Misa a jorn por étre en acôrd avouéc la novèla vèrsion de la sôrsa de la pâge',
+	'tpt-render-summary' => 'Misa a jorn por étre en acôrd avouéc la novèla vèrsion de la pâge d’origina',
 );
 
 /** Galician (Galego)
