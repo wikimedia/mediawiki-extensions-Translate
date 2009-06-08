@@ -1017,6 +1017,7 @@ $messages['nn'] = array(
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
  * @author Audun
  * @author Jon Harald Søby
+ * @author Laaknor
  * @author Nghtwlkr
  */
 $messages['no'] = array(
@@ -1034,6 +1035,9 @@ $messages['no'] = array(
 	'tpt-sections-oldnew' => 'Nye og eksisterende oversettelsesenheter',
 	'tpt-sections-deleted' => 'Slettede oversettelsesenheter',
 	'tpt-sections-template' => 'Mal for oversettelsesside',
+	'tpt-badtitle' => 'Det angitte sidenavnet ($1) er ikke en gyldig tittel',
+	'tpt-oldrevision' => '$2 er ikke den siste versjonen av siden [[$1]].
+Kun siste versjoner kan bli markert for oversettelse.',
 	'translate-tag-translate-link-desc' => 'Oversett denne siden',
 );
 
@@ -1280,8 +1284,10 @@ $messages['sv'] = array(
  * @author Veeven
  */
 $messages['te'] = array(
+	'pagetranslation' => 'పేజీ అనువాదం',
 	'tpt-section' => 'విభాగం:',
 	'tpt-section-new' => 'కొత్త విభాగం:',
+	'tpt-template' => 'పేజీ మూస',
 	'tpt-diff-new' => 'కొత్త పాఠ్యం',
 	'tpt-translate-this' => 'ఈ పేజీని అనువదించండి',
 	'translate-tag-translate-link-desc' => 'ఈ పేజీని అనువదించండి',
