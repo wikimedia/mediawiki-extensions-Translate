@@ -84,6 +84,7 @@ $wgAutoloadClasses['FreeColMessageGroup'] = $dir . 'groups/FreeCol.php';
 $wgAutoloadClasses['MantisMessageGroup'] = $dir . 'groups/Mantis.php';
 $wgAutoloadClasses['NoccMessageGroup'] = $dir . 'groups/Nocc.php';
 $wgAutoloadClasses['OpenLayersMessageGroup'] = $dir . 'groups/OpenLayers.php';
+$wgAutoloadClasses['WikiblameMessageGroup'] = $dir . 'groups/Wikiblame.php';
 
 # complex messages
 $wgAutoloadClasses['ComplexMessages'] = $dir . 'groups/ComplexMessages.php';
