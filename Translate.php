@@ -11,7 +11,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '12c:2009-06-03' );
+define( 'TRANSLATE_VERSION', '12c:2009-06-09' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'path'           => __FILE__,
@@ -246,9 +246,7 @@ function efTranslateInit() {
 		$wgHooks['ArticleViewHeader'][] = 'PageTranslationHooks::test';
 
 	}
-
 }
-
 
 function efTranslateCheckPT() {
 	global $wgHooks, $wgMemc;
@@ -261,7 +259,6 @@ function efTranslateCheckPT() {
 	if ( $ok === $version ) {
 		return true;
 	}
-
 
 	// Add our tags if they are not registered yet
 	// tp:tag is called also the ready tag

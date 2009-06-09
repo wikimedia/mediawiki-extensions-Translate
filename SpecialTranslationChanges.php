@@ -78,11 +78,13 @@ class SpecialTranslationChanges extends SpecialPage {
 
 			switch ( $group ) {
 				case 'core': $class = 'mediawiki'; break;
+				case 'out-commonist': $class = 'commonist'; break;
 				case 'out-freecol': $class = 'freecol'; break;
 				case 'out-mantis': $class = 'mantis'; break;
 				case 'out-nocc': $class = 'nocc'; break;
+				case 'out-openlayers': $class = 'openlayers'; break;
 				case 'out-voctrain': $class = 'voctrain'; break;
-				case 'out-zabbix': $class = 'zabbix'; break;
+				case 'out-mwlibrl': $class = 'mwlibrl'; break;
 				default: $class = 'extension'; break;
 			}
 
@@ -98,10 +100,10 @@ class SpecialTranslationChanges extends SpecialPage {
 			$batch->add( NS_MEDIAWIKI,      $row->rc_title );
 			}
 			$batch->add( NS_MEDIAWIKI_TALK, $row->rc_title );
-
-
 		}
+
 		ksort( $sorted );
+
 		if ( isset( $sorted['extension'] ) ) {
 			ksort( $sorted['extension'] );
 		}
