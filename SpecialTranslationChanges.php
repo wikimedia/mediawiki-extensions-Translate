@@ -81,10 +81,11 @@ class SpecialTranslationChanges extends SpecialPage {
 				case 'out-commonist': $class = 'commonist'; break;
 				case 'out-freecol': $class = 'freecol'; break;
 				case 'out-mantis': $class = 'mantis'; break;
+				case 'out-mwlibrl': $class = 'mwlibrl'; break;
 				case 'out-nocc': $class = 'nocc'; break;
 				case 'out-openlayers': $class = 'openlayers'; break;
 				case 'out-voctrain': $class = 'voctrain'; break;
-				case 'out-mwlibrl': $class = 'mwlibrl'; break;
+				case 'out-wikiblame': $class = 'wikiblame'; break;
 				default: $class = 'extension'; break;
 			}
 
