@@ -3528,7 +3528,7 @@ Rêson :
 	'translate-page-navigation-legend' => 'Navigacion',
 	'translate-page-showing' => 'Visualisacion des mèssâjos de $1 a $2 sur $3.',
 	'translate-page-showing-all' => 'Visualisacion de $1 mèssâjo{{PLURAL:$1||s}}.',
-	'translate-page-showing-none' => 'Nion mèssâjo a fâre vêre.',
+	'translate-page-showing-none' => 'Gins de mèssâjo a fâre vêre.',
 	'translate-next' => 'Pâge aprés',
 	'translate-prev' => 'Pâge devant',
 	'translate-page-description-legend' => 'Enformacions a propôs de la tropa',
@@ -3543,8 +3543,8 @@ Rêson :
 	'translate-edit-in-other-languages' => 'Mèssâjo « $1 » dens d’ôtres lengoues',
 	'translate-edit-committed' => 'Traduccion d’ora dens la programeria',
 	'translate-edit-warnings' => 'Avèrtissements sur les traduccions encomplètes',
-	'translate-edit-goto-no-prev' => 'Pas de mèssâjo devant',
-	'translate-edit-goto-no-next' => 'Pas de mèssâjo aprés',
+	'translate-edit-goto-no-prev' => 'Gins de mèssâjo devant',
+	'translate-edit-goto-no-next' => 'Gins de mèssâjo aprés',
 	'translate-edit-goto-prev' => 'Vêre lo mèssâjo devant',
 	'translate-edit-goto-next' => 'Vêre lo mèssâjo aprés',
 	'translate-edit-goto-list' => 'Tornar a la lista',
@@ -3625,7 +3625,7 @@ Vos pouede [$1 changiér la pâge d’origina] ou ben [$2 betar a jorn la traduc
 	'translations' => 'Totes les traduccions',
 	'translations-summary' => 'Buchiéd un nom de mèssâjo ce-desot por fâre vêre totes les traduccions disponibles.',
 	'translate-translations-no-message' => '« $1 » est pas un mèssâjo traduisiblo',
-	'translate-translations-none' => 'Y at pas de traduccion por « $1 »',
+	'translate-translations-none' => 'Y at gins de traduccion por « $1 »',
 	'translate-translations-fieldset-title' => 'Mèssâjo',
 	'translate-translations-messagename' => 'Nom :',
 	'translate-translations-project' => 'Projèt :',
@@ -3658,6 +3658,7 @@ Vos éte encoragiê a revêre los mèssâjos dês [[Special:Translate|{{int:tran
 	'translate-group-desc-wikimediaextensions' => 'Tropa de mèssâjos mèta que contint tôs los mèssâjos de les èxtensions MediaWiki utilisâs per [http://wikimedia.org/ Wikimedia Foundation].',
 	'translate-group-desc-wikitravelextensions' => 'Tropa de mèssâjos mèta que contint tôs los mèssâjos de les èxtensions MediaWiki utilisâs per [http://wikitravel.org Wikitravel].',
 	'translate-group-desc-uniwiki' => 'Tropa de mèssâjos mèta que contint tôs los mèssâjos de les èxtensions liyês a [http://unicefinnovation.org/wiki.php Uniwiki].',
+	'translate-group-desc-ui' => 'Tropa de mèssâjos mèta que contint tôs los mèssâjos de les èxtensions liyês a la [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative].',
 );
 
 /** Friulian (Furlan)
@@ -4090,6 +4091,32 @@ S wird empfohle, Syschtemnochrichte mit dr Spezialsyte [[Special:Translate|{{int
 	'translate-group-desc-wikimediaextensions' => 'In däre Hauptgruppe het s alli Syschtemnochrichte vu dr unterstitzte MediaWiki-Erwyterige, wu vu dr [http://wikimedia.org/ Wikimedia Foundation] brucht wäre',
 	'translate-group-desc-wikitravelextensions' => 'In däre Hauptgruppe het s alli Syschtemnochrichte vu dr unterstitzte MediaWiki-Erwyterige, wu vu [http://wikitravel.org Wikitravel] brucht wäre',
 	'translate-group-desc-uniwiki' => 'In däre Hauptgruppe het s alli Syschtemnochrichte fir verwandti Erwyterige vu [http://unicefinnovation.org/wiki.php Uniwiki]',
+);
+
+/** Gujarati (ગુજરાતી)
+ * @author Ashok modhvadia
+ */
+$messages['gu'] = array(
+	'translate' => 'ભાષાંતર',
+	'translate-desc' => 'મીડિયાવિકિ અને આગળ ભાષાંતરણ માટે [[Special:Translate|ખાસ પાનું]]',
+	'translate-edit' => 'સંપાદન કરો',
+	'translate-talk' => 'ચર્ચા',
+	'translate-history' => 'ઈતિહાસ',
+	'translate-task-view' => 'કે બધા સંદેશાઓ બતાવો',
+	'translate-task-untranslated' => 'કે બધા અભાષાંતરીત સંદેશાઓ બતાવો',
+	'translate-page-task' => 'હું ઇચ્છું છું',
+	'translate-page-group' => 'જૂથ',
+	'translate-page-language' => 'ભાષા',
+	'translate-page-limit' => 'અવધિ',
+	'translate-page-limit-option' => '$1 {{PLURAL:$1|સંદેશા|સંદેશાઓ}} પ્રતિ પાના',
+	'translate-submit' => 'મેળવો',
+	'translate-page-navigation-legend' => 'સંચાલન',
+	'translate-page-showing' => '$3 માંથી $1 થી $2 સંદેશાઓ બતાવ્યા છે.',
+	'translate-page-showing-none' => 'બતાવવા માટે કોઇ સંદેશાઓ નથી.',
+	'translate-next' => 'પછીનું પાનું',
+	'translate-prev' => 'પહેલાંનું પાનું',
+	'translate-page-description-legend' => 'જૂથ વિશે માહિતી',
+	'translate-page-edit' => 'સંપાદન',
 );
 
 /** Manx (Gaelg)
@@ -5008,17 +5035,17 @@ $messages['id'] = array(
 	'translate-edit-goto-next' => 'Sunting pesan berikutnya',
 	'translate-edit-goto-list' => 'Kembali ke daftar',
 	'translate-magic-pagename' => 'Perluasan terjemahan MediaWiki',
-	'translate-magic-help' => 'Anda dapat menerjemahkan alias untuk halaman istimewa, kata-kata magis, nama kulit, dan ruang-ruang nama.
+	'translate-magic-help' => 'Anda dapat menerjemahkan alias untuk halaman istimewa, kata-kata magis, dan ruang-ruang nama.
 
 Alias untuk halaman istimewa dan kata-kata magis dapat memiliki lebih dari satu terjemahan.
-Masing-masing harus dipisahkan dengan sebuah tanda koma (,).
-Nama kulit dan ruang nama hanya dapat memiliki satu terjemahan.
+Setiap terjemahan harus dipisahkan dengan sebuah tanda koma (,).
+Ruang nama hanya dapat memiliki satu terjemahan.
 
 Dalam menerjemahkan, ruang nama <tt>$1 talk</tt> harus diperlakukan khusus. <tt>$1</tt> digantikan dengan nama situs (contohnya <tt>{{ns:project_talk}}</tt>).
 Jika bahasa Anda tidak memungkinkan untuk membentuk suatu ekspresi yang valid tanpa mengganti nama situs, silakan kontak salah seorang pengembang.
 
-Anda perlu menjadi anggota kelompok penerjemah untuk menyimpan perubahan.
-Perubahan tak akan disimpan hingga Anda mengklik tombol simpan di bawah.',
+Anda perlu menjadi anggota kelompok penerjemah untuk dapat menyimpan terjemahan.
+Perubahan tidak akan disimpan hingga Anda mengklik tombol simpan di bawah.',
 	'translate-magic-module' => 'Modul:',
 	'translate-magic-submit' => 'Ambil',
 	'translate-magic-cm-export' => 'Ekspor',
@@ -5073,13 +5100,12 @@ Perubahan tak akan disimpan hingga Anda mengklik tombol simpan di bawah.',
 	'translate-statsf-submit' => 'Pratayang',
 	'translate-tag-category' => 'Halaman yang dapat diterjemahkan',
 	'translate-tag-page-desc' => 'Terjemahan atas halaman wiki [[:$1]].',
-	'translate-tag-translate-link-desc' => 'Terjemahkan halaman ini',
-	'translate-tag-legend' => 'Keterangan:',
-	'translate-tag-legend-fallback' => 'Terjemahan dalam bahasa lain',
-	'translate-tag-legend-fuzzy' => 'Terjemahan usang',
 	'translate-tag-fuzzy-comment' => 'Definisi diubah oleh [[User:$1|$1]] pada revisi $2.',
 	'translate-tag-fuzzy-reason' => 'Definisi diubah oleh "$1" dengan komentar "$3" pada $2.',
-	'translate-sidebar-alltrans' => 'Terjemahan lain',
+	'translate-sidebar-alltrans' => 'Dalam bahasa lain',
+	'translate-group-desc-mediawikimostused' => 'Grup ini berisikan [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 pesan sistem yang paling sering digunakan] di MediaWiki',
+	'translate-group-desc-mediawikiextensions' => 'Grup pesan meta yang berisikan semua pesan sistem untuk ekstensi MediaWiki yang didukung',
+	'translate-group-desc-wikimediaextensions' => 'Grup pesan meta yang berisikan semua pesan sistem untuk ekstensi MediaWiki yang didukung yang digunakan oleh [http://wikimedia.org Wikimedia Foundation]',
 );
 
 /** Iloko (Ilokano)
@@ -5502,6 +5528,7 @@ $messages['ja'] = array(
 	'translate-group-desc-wikimediaextensions' => '[http://wikimedia.org/ ウィキメディア財団]で使われている、サポート対象の MediaWiki 拡張機能のすべてのメッセージを含んだメタメッセージグループ',
 	'translate-group-desc-wikitravelextensions' => '[http://wikitravel.org Wikitravel] で使われている、サポート対象の MediaWiki 拡張機能のすべてのメッセージを含んだメタメッセージグループ',
 	'translate-group-desc-uniwiki' => '[http://unicefinnovation.org/wiki.php Uniwiki] に関連する拡張機能のすべてのメッセージを含んだメタメッセージグループ',
+	'translate-group-desc-ui' => '[http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative] に関連した拡張機能のすべてのメッセージを含んだメタメッセージグループ',
 );
 
 /** Javanese (Basa Jawa)
@@ -6345,7 +6372,7 @@ $messages['ksh'] = array(
 	'translate-page-showing' => 'De Nohreshte fon Nommer $1 aff, beß $2, fon ennßjesammp $3.',
 	'translate-page-showing-all' => '{{PLURAL:$1|Eijn_Nohresch|$1 Nohreschte|Keijn_esu_e_Nohreschte}}.',
 	'translate-page-showing-none' => 'Nix för Aan_ze_zeije.',
-	'translate-page-paging-links' => '[ $1 ] [ $2 ]',
+	'translate-page-paging-links' => '[ $1 ] ↔ [ $2 ]',
 	'translate-next' => 'Näx Sigk',
 	'translate-prev' => 'Förrije Sigk',
 	'translate-page-description-legend' => 'Enfommazjohne övver di {{int:translate-page-group}}',
@@ -6354,7 +6381,8 @@ $messages['ksh'] = array(
 	'translate-ignored' => '(övverjange)',
 	'translate-edit-definition' => 'De Ojinaal Nohresch',
 	'translate-edit-contribute' => 'beijdraare',
-	'translate-edit-no-information' => "''Mer han kein Beschrievong oddo Dokementazjohn för dat Täxshtöck. Wann De weijß, wann un woh dit Shtöck jenou jebruch weed, dann kanns De de Anndere hellefe, un en Äklierong för_et ennjävve.''",
+	'translate-edit-no-information' => "''Mer han kein Dokementazjohn för dat Täxshtöck.
+Wann De weijß, wann un woh dit Shtöck jenou jebruch weed, dann kanns De de Anndere hellefe, un jet för_et ennjävve.''",
 	'translate-edit-information' => 'Ennfommazjohne övver de Nohresch „$2“ ($1)',
 	'translate-edit-in-other-languages' => 'Di Nohresch „$1“ in annder Shprooche',
 	'translate-edit-committed' => 'Es aktowäll övversaz met',
@@ -6522,7 +6550,7 @@ $messages['lb'] = array(
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|Message|Message}} pro Säit',
 	'translate-submit' => 'Uweisen',
 	'translate-page-navigation-legend' => 'Navigatioun',
-	'translate-page-showing' => "D'Message vun $1 bis $2 vun am Ganzen $3 gi gewisen.",
+	'translate-page-showing' => "D'Message vu(n) $1 bis $2 vun am Ganze(n) $3 gi gewisen.",
 	'translate-page-showing-all' => '$1 {{PLURAL:$1|Message gëtt|Message gi}} gewisen',
 	'translate-page-showing-none' => 'Kee Message fir ze weisen',
 	'translate-next' => 'Nächst Säit',
@@ -7454,6 +7482,7 @@ U wordt aangemoedigd om via [[Special:Translate|{{int:translate}}]] vertalingen 
 	'translate-group-desc-wikimediaextensions' => 'Metaberichtengroep die alle berichten bevat voor ondersteunde MediaWiki-uitbreidingen gebruikt door de [http://wikimedia.org/ Wikimedia Foundation]',
 	'translate-group-desc-wikitravelextensions' => 'Metaberichtengroep die alle berichten bevat voor ondersteunde MediaWiki-uitbreidingen gebruikt door [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Metaberichtengroep die alle berichten bevat voor uitbreidingen gerelateerd aan [http://unicefinnovation.org/wiki.php Uniwiki]',
+	'translate-group-desc-ui' => 'Metaberichtengroep die alle berichten bevat voor uitbreidingen gerelateerd aan het [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Bruikbaarheidsinitiatief]',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)

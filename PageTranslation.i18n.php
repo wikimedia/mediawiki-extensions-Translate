@@ -747,6 +747,16 @@ Le pagina que tu vole modificar non pare corresponder con alcun pagina marcate p
 	'tpt-render-summary' => 'Actualisation a un nove version del pagina de origine',
 );
 
+/** Indonesian (Bahasa Indonesia)
+ * @author Rex
+ */
+$messages['id'] = array(
+	'tpt-new-pages' => '{{PLURAL:$1|Halaman ini berisikan|Halaman-halaman ini berisikan}} teks dengan tag terjemahan, tetapi tidak ada versi {{PLURAL:$1|halaman ini|halaman-halaman ini}} yang sudah ditandai untuk diterjemahkan.',
+	'translate-tag-translate-link-desc' => 'Terjemahkan halaman ini',
+	'translate-tag-hasnew' => 'Halaman ini berisikan <span class="plainlinks">[$1 perubahan]</span> yang tidak ditandai untuk diterjemahkan.',
+	'tpt-languages-legend' => 'Bahasa lain:',
+);
+
 /** Italian (Italiano)
  * @author Darth Kule
  */
