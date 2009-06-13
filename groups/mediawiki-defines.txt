@@ -950,7 +950,7 @@ file = UsabilityInitiative/EditWarning/EditWarning.i18n.php
 descmsg = editwarning-desc
 
 Usability Initiative - Pref Stats
-id = ext-ui-editprefs
+id = ext-ui-prefstats
 file = UsabilityInitiative/PrefStats/PrefStats.i18n.php
 descmsg = prefstats-desc
 

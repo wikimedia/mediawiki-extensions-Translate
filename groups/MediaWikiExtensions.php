@@ -631,7 +631,7 @@ class AllUsabilityInitiativeExtensionsGroup extends AllMediawikiExtensionsGroup 
 		'ext-ui-usabilityinitiative',
 		'ext-ui-edittoolbar',
 		'ext-ui-editwarning',
-		'ext-ui-editprefs',
+		'ext-ui-prefstats',
 	);
 
 	protected function init() {
