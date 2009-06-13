@@ -6,12 +6,13 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
  * @addtogroup Extensions
  *
  * @author Niklas Laxström
+ * @author Siebrand Mazeland
  * @copyright Copyright © 2006-2009, Niklas Laxström
- * @copyright Copyright © 2007-2008, Siebrand Mazeland
+ * @copyright Copyright © 2007-2009, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '12c:2009-06-09' );
+define( 'TRANSLATE_VERSION', '12:2009-06-13' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'path'           => __FILE__,
@@ -146,6 +147,7 @@ $wgTranslateGroupStructure = array(
 	'/^ext-socialprofile/' => array( 'ext', 'socialprofile' ),
 	'/^ext-translate/' => array( 'ext', 'translate' ),
 	'/^ext-uniwiki/' => array( 'ext', 'uniwiki' ),
+	'/^ext-ui/' => array( 'ext', 'usabilityinitiative' ),
 	'/^ext/' => array( 'ext' ),
 	'/^page\|/' => array( 'page' ),
 );

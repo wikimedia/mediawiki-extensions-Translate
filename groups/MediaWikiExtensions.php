@@ -139,6 +139,7 @@ class PremadeMediawikiExtensionGroups {
 			'ext-translate-0-all'     => 'AllTranslateExtensionsGroup',
 			'ext-socialprofile-0-all' => 'AllSocialProfileExtensionsGroup',
 			'ext-uniwiki-0-all'       => 'AllUniwikiExtensionsGroup',
+			'ext-ui-0-all'            => 'AllUsabilityInitiativeExtensionsGroup',
 		);
 
 		foreach ( $meta as $id => $g ) {
@@ -546,6 +547,7 @@ class AllSocialProfileExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-socialprofile-userrelationship',
 		'ext-socialprofile-userstats',
 		'ext-socialprofile-userwelcome',
+		'ext-yui',
 	);
 
 	protected function init() {
@@ -611,6 +613,32 @@ class AllUniwikiExtensionsGroup extends AllMediawikiExtensionsGroup {
 			$this->classes = array();
 			$classes = MessageGroups::singleton()->getGroups();
 			foreach ( $this->uniwikiextensions as $key ) {
+				$this->classes[$key] = $classes[$key];
+			}
+		}
+	}
+}
+
+class AllUsabilityInitiativeExtensionsGroup extends AllMediawikiExtensionsGroup {
+	protected $label = 'Usability Initiative';
+	protected $id    = 'ext-ui-0-all';
+	protected $meta  = true;
+
+	protected $classes = null;
+	protected $description = '{{int:translate-group-desc-ui}}';
+
+	protected $usabilityinitiativeextensions = array(
+		'ext-ui-usabilityinitiative',
+		'ext-ui-edittoolbar',
+		'ext-ui-editwarning',
+		'ext-ui-editprefs',
+	);
+
+	protected function init() {
+		if ( $this->classes === null ) {
+			$this->classes = array();
+			$classes = MessageGroups::singleton()->getGroups();
+			foreach ( $this->usabilityinitiativeextensions as $key ) {
 				$this->classes[$key] = $classes[$key];
 			}
 		}

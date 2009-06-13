@@ -932,6 +932,26 @@ id = ext-uniwiki-mootools12core
 file = uniwiki/MooTools12core/MooTools12core.i18n.php
 descmsg = mootools12core-desc
 
+Usability Initiative - Usability Initiative
+id = ext-ui-usabilityinitiative
+file = UsabilityInitiative/UsabilityInitiative.i18n.php
+descmsg = usabilityinitiative-desc
+
+Usability Initiative - Edit Toolbar
+id = ext-ui-edittoolbar
+file = UsabilityInitiative/EditToolbar/EditToolbar.i18n.php
+descmsg = edittoolbar-desc
+
+Usability Initiative - Edit Warning
+id = ext-ui-editwarning
+file = UsabilityInitiative/EditWarning/EditWarning.i18n.php
+descmsg = editwarning-desc
+
+Usability Initiative - Pref Stats
+id = ext-ui-editprefs
+file = UsabilityInitiative/PrefStats/PrefStats.i18n.php
+descmsg = prefstats-desc
+
 Usage Statistics
 file = UsageStatistics/SpecialUserStats.i18n.php
 
