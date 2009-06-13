@@ -302,11 +302,15 @@ class SpecialTranslate extends SpecialPage {
 	private function makeOffsetLink( $label, $offset ) {
 		global $wgUser;
 		$skin = $wgUser->getSkin();
-		$link = $skin->makeLinkObj( $this->getTitle(), $label,
-			wfArrayToCGI(
-				array( 'offset' => $offset ),
-				$this->nondefaults
-			)
+		$query = array_merge(
+			'offset' => $offset,
+			$this->nondefaults
+		);
+		$link = $skin->link(
+			$this->getTitle(),
+			$label,
+			array(),
+			$query
 		);
 		return $link;
 	}

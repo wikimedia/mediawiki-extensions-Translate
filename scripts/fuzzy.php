@@ -19,8 +19,8 @@ Fuzzy bot command line script
 Usage: php fuzzy.php [options...] <messages>
 
 Options:
-  --really        Don't just run dry-run
-  --skiplanguages Skip some languages
+  --really        Really fuzzy, no dry-run
+  --skiplanguages Skip some languages (comma separated)
   --comment       Comment for updating
 
 EOT
