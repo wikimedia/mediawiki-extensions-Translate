@@ -989,6 +989,8 @@ Whos Online
 Who Is Watching
 file = WhoIsWatching/SpecialWhoIsWatching.i18n.php
 
+Widgets
+
 Wiki Article Feeds
 
 Wikidata Language Manager
