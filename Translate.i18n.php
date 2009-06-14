@@ -2208,6 +2208,7 @@ Es wird empfohlen, Systemnachrichten mit der Spezialseite [[Special:Translate|{{
 	'translate-group-desc-wikimediaextensions' => 'Diese Hauptgruppe beinhaltet alle Systemnachrichten der unterstützten MediaWiki-Erweiterungen, die von der [http://wikimedia.org/ Wikimedia Foundation] genutzt werden',
 	'translate-group-desc-wikitravelextensions' => 'Diese Hauptgruppe beinhaltet alle Systemnachrichten der unterstützten MediaWiki-Erweiterungen, die von [http://wikitravel.org Wikitravel] genutzt werden',
 	'translate-group-desc-uniwiki' => 'Diese Hauptgruppe beinhaltet alle Systemnachrichten für verwandte Erweiterungen von [http://unicefinnovation.org/wiki.php Uniwiki]',
+	'translate-group-desc-ui' => 'Diese Hauptgruppe beinhaltet alle Systemnachrichten der [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 );
 
 /** Swiss High German (Schweizer Hochdeutsch)
@@ -3466,6 +3467,7 @@ Vous êtes encouragé à revoir les message depuis [[Special:Translate|{{int:tra
 	'translate-group-desc-wikimediaextensions' => 'Meta groupe de messages contenant tous les messages pour les extensions utilisées par la [http://wikimedia.org/ Wikimedia Foundation]',
 	'translate-group-desc-wikitravelextensions' => 'Meta groupe de messages contenant tous les messages pour les extensions utilisées sur [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Meta groupe de messages contenant tous les messages pour les extensions apparentées à [http://unicefinnovation.org/wiki.php Uniwiki]',
+	'translate-group-desc-ui' => 'Groupe de messages Meta contenant tous les messages des extensions liées à [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 );
 
 /** Cajun French (Français cadien)
@@ -3658,7 +3660,7 @@ Vos éte encoragiê a revêre los mèssâjos dês [[Special:Translate|{{int:tran
 	'translate-group-desc-wikimediaextensions' => 'Tropa de mèssâjos mèta que contint tôs los mèssâjos de les èxtensions MediaWiki utilisâs per [http://wikimedia.org/ Wikimedia Foundation].',
 	'translate-group-desc-wikitravelextensions' => 'Tropa de mèssâjos mèta que contint tôs los mèssâjos de les èxtensions MediaWiki utilisâs per [http://wikitravel.org Wikitravel].',
 	'translate-group-desc-uniwiki' => 'Tropa de mèssâjos mèta que contint tôs los mèssâjos de les èxtensions liyês a [http://unicefinnovation.org/wiki.php Uniwiki].',
-	'translate-group-desc-ui' => 'Tropa de mèssâjos mèta que contint tôs los mèssâjos de les èxtensions liyês a la [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative].',
+	'translate-group-desc-ui' => 'Tropa de mèssâjos mèta que contint tôs los mèssâjos de les èxtensions liyês a l’[http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative iniciativa d’utilisabilitât de Vouiquipèdia].',
 );
 
 /** Friulian (Furlan)
@@ -4104,6 +4106,11 @@ $messages['gu'] = array(
 	'translate-history' => 'ઈતિહાસ',
 	'translate-task-view' => 'કે બધા સંદેશાઓ બતાવો',
 	'translate-task-untranslated' => 'કે બધા અભાષાંતરીત સંદેશાઓ બતાવો',
+	'translate-task-optional' => 'કે વૈકલ્પિક સંદેશાઓ બતાવો',
+	'translate-task-untranslatedoptional' => 'કે અભાષાંતરીત વૈકલ્પિક સંદેશાઓ બતાવો',
+	'translate-task-problematic' => 'કે સમસ્યાગ્રસ્ત સંદેશાઓ બતાવો',
+	'translate-task-review' => 'કે ફેરફારો તપાસો',
+	'translate-task-reviewall' => 'કે બધા ભાષાંતરીત સંદેશાઓ તપાસો',
 	'translate-page-task' => 'હું ઇચ્છું છું',
 	'translate-page-group' => 'જૂથ',
 	'translate-page-language' => 'ભાષા',
@@ -4117,6 +4124,9 @@ $messages['gu'] = array(
 	'translate-prev' => 'પહેલાંનું પાનું',
 	'translate-page-description-legend' => 'જૂથ વિશે માહિતી',
 	'translate-page-edit' => 'સંપાદન',
+	'translate-magic-submit' => 'મેળવો',
+	'translate-magic-cm-export' => 'નિકાસ',
+	'translate-stats-users' => 'ભાષાંતરકારો',
 );
 
 /** Manx (Gaelg)
@@ -4613,6 +4623,7 @@ Poruča so zdźělenki přez [[Special:Translate|{{int:translate}}]] přepruwowa
 	'translate-group-desc-wikimediaextensions' => 'Hłowna skupina, kotraž wšě zdźělenki za podpěrowane rozšěrjenja MediaWiki wobsahuje, kotrež so přez [http://wikimedia.org/ Wikimedia Foundation] wužiwaja',
 	'translate-group-desc-wikitravelextensions' => 'Hłowna skupina, kotraž wšě zdźělenki za podpěrowane rozšěrjenja MediaWiki, kotrež so přez [http://wikitravel.org Wikitravel] wužiwaja',
 	'translate-group-desc-uniwiki' => 'Hłowna skupina, kotraž wšě zdźělenki za rozšěrjenja wobsahuje, kotrež su z [http://unicefinnovation.org/wiki.php Uniwiki] přiwuzne',
+	'translate-group-desc-ui' => 'Metaskupina zdźělenkow, kotraž wšě zdźělenki za rozšěrjenja wobsahuje, kotrež so na [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative iniciatiwu wužiwajomnosć Wikipedije] poćahuja.',
 );
 
 /** Haitian (Kreyòl ayisyen)
