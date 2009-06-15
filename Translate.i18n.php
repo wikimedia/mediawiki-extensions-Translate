@@ -2393,6 +2393,7 @@ Pśiraźijo se, až pśeglědujoš powěźeńki pśez [[Special:Translate|{{int:
 	'translate-group-desc-wikimediaextensions' => 'Toś ta głowna kupka wopśimujo wše powěźeńki za pódpěrane rozšyrjenja MediaWiki, kótarež wužywaju se pśez [http://wikimedia.org/ Wikimedia Foundation]',
 	'translate-group-desc-wikitravelextensions' => 'Toś ta głowna kupka wopśimujo wše powěźeńki za pódpěrane rozšyrjenja MediaWiki, kótarež wužywaju se pśez [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Toś ta głowna kupka wopśimujo wše powěźeńki za rozšyrjenja, kótarež su pśiswójźbne z [http://unicefinnovation.org/wiki.php Uniwiki]',
+	'translate-group-desc-ui' => 'Metakupka powěźeńkow, kótaraž wopśimujo wše powěźeńki za rozšyrjenja, kótarež póśěguju se na [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative iniciatiwu wužywajobnosći Wikipedije]',
 );
 
 /** Ewe (Eʋegbe)
@@ -3878,6 +3879,7 @@ Animámolo a que revise as mensaxes existentes mediante a páxina especial [[Spe
 	'translate-group-desc-wikimediaextensions' => 'Grupo de mensaxes que contén todas as mensaxes das extensións soportadas por MediaWiki usadas pola [http://wikimedia.org/ Fundación Wikimedia]',
 	'translate-group-desc-wikitravelextensions' => 'Grupo de mensaxes que contén todas as mensaxes das extensións soportadas por MediaWiki usadas por [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Grupo de mensaxes que contén todas as mensaxes das extensións relacionadas con [http://unicefinnovation.org/wiki.php Uniwiki]',
+	'translate-group-desc-ui' => 'Grupo de mensaxes meta que contén todas as mensaxes das extensións relacionadas coa [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Iniciativa de usabilidade da Wikipedia]',
 );
 
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
@@ -9240,6 +9242,7 @@ Môžete [$1 upravovať zdrojovú stránku] alebo [$2 aktualizovať preklad].',
 	'translate-group-desc-wikimediaextensions' => 'Metaskupina správ obsahujúca všetky správy rozšírenia MediaWiki, ktoré používa [http://wikimedia.org/ Wikimedia Foundation]',
 	'translate-group-desc-wikitravelextensions' => 'Metaskupina správ obsahujúca všetky správy rozšírenia MediaWiki, ktoré používa [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Metaskupina správ obsahujúca všetky správy rozšírenia MediaWiki súvisiace s [http://unicefinnovation.org/wiki.php Uniwiki]',
+	'translate-group-desc-ui' => 'Metaskupina správ obsahujúca všetky správy rozšírení týkajúcich sa [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Iniciatívy použiteľnosti Wikipédie]',
 );
 
 /** Somali (Soomaaliga)
