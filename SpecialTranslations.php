@@ -43,11 +43,11 @@ class SpecialTranslations extends SpecialAllpages {
 
 		# GET values
 		$message = $wgRequest->getText( 'message' );
-		$namespace = $wgRequest->getInt( 'namespace' );
+		$namespace = $wgRequest->getInt( 'namespace', NS_MAIN );
 		if ( $message !== '' ) {
 			$title = Title::newFromText( $message, $namespace );
 		} else {
-			$title = Title::newFromText( $par );
+			$title = Title::newFromText( $par, $namespace );
 		}
 
 		if ( !$title ) {
