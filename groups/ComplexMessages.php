@@ -361,9 +361,14 @@ abstract class ComplexMessages {
 
 				// Then get the data we really want
 				$val = $this->val( $group, $from, $key );
+
 				// Remove duplicated entries, causes problems with magic words
 				// TODO: prevent or fix silently on save already
 				$val = array_unique( $val /*FIXME:SORT_REGULAR*/ );
+				// So do empty elements...
+				foreach ( $val as $k => $v ) if ( $v === '' ) unset($val[$k]);
+				// Another check 
+				if ( !count( $val ) ) continue;
 
 				$normalized = array_map( array( $this, 'normalize' ), $val );
 				if ( $this->elementsInArray ) {
