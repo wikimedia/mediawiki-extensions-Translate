@@ -1645,6 +1645,7 @@ Savjetujemo Vam da izvršite pregled poruke preko [[Special:Translate|{{int:tran
 	'translate-group-desc-wikimediaextensions' => 'Grupa meta poruka koja sadrži sve poruke za podržana MediaWiki proširenja korištena od strane [http://wikimedia.org/ Wikimedia Foundation]',
 	'translate-group-desc-wikitravelextensions' => 'Grupa meta poruka koja sadrži sve poruke za podržana MediaWiki proširenja korištena u [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Grupa meta poruka koja sadrži sve poruke za proširenja vezana za [http://unicefinnovation.org/wiki.php Uniwiki]',
+	'translate-group-desc-ui' => 'Grupa meta poruka koja sadrži sve poruke za proširenja vezana za [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia inicijativu upotrebljivosti]',
 );
 
 /** Buginese (ᨅᨔ ᨕᨘᨁᨗ)
@@ -2013,6 +2014,7 @@ Teď doporučujeme zkontrolovat hlášení pomocí stránky [[Special:Translate|
 	'translate-group-desc-wikimediaextensions' => 'Nadskupina zpráv obsahující všechny zprávy používané v rozšířeních MediaWiki používaných na wiki [http://wikimedia.org/ nadace Wikimedia Foundation]',
 	'translate-group-desc-wikitravelextensions' => 'Nadskupina zpráv obsahující všechny zprávy používané v podporovaných rozšířeních MediaWiki používaných na [http://www.wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Nadskupina zpráv obsahující všechny zprávy používané v podporovaných rozšířeních MediaWiki používaných na [http://www.unicefinnovation.org/wiki.php Uniwiki]',
+	'translate-group-desc-ui' => 'Nadskupina zpráv obsahující všechny zprávy používané v rozšířeních MediaWiki souvisejících s akcí [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 );
 
 /** Church Slavic (Словѣ́ньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ)
@@ -4111,6 +4113,15 @@ $messages['gu'] = array(
 	'translate-task-problematic' => 'કે સમસ્યાગ્રસ્ત સંદેશાઓ બતાવો',
 	'translate-task-review' => 'કે ફેરફારો તપાસો',
 	'translate-task-reviewall' => 'કે બધા ભાષાંતરીત સંદેશાઓ તપાસો',
+	'translate-page-no-such-language' => 'નિર્દેશિત ભાષા અમાન્ય છે.',
+	'translate-page-no-such-task' => 'નિર્દેશિત કાર્ય અમાન્ય છે.',
+	'translate-page-no-such-group' => 'નિર્દેશિત સમુહ અમાન્ય છે.',
+	'translate-page-disabled' => "આ સમુહમાં આ ભાષાનો અનુવાદ નિષ્ક્રિય કરી દેવાયો છે.
+
+કારણ:
+
+''$1''",
+	'translate-page-settings-legend' => 'ગોઠવણ',
 	'translate-page-task' => 'હું ઇચ્છું છું',
 	'translate-page-group' => 'જૂથ',
 	'translate-page-language' => 'ભાષા',
@@ -4119,14 +4130,25 @@ $messages['gu'] = array(
 	'translate-submit' => 'મેળવો',
 	'translate-page-navigation-legend' => 'સંચાલન',
 	'translate-page-showing' => '$3 માંથી $1 થી $2 સંદેશાઓ બતાવ્યા છે.',
+	'translate-page-showing-all' => 'રજૂઆત $1 {{PLURAL:$1|સંદેશ|સંદેશાઓ}}',
 	'translate-page-showing-none' => 'બતાવવા માટે કોઇ સંદેશાઓ નથી.',
 	'translate-next' => 'પછીનું પાનું',
 	'translate-prev' => 'પહેલાંનું પાનું',
 	'translate-page-description-legend' => 'જૂથ વિશે માહિતી',
 	'translate-page-edit' => 'સંપાદન',
+	'translate-optional' => 'વૈકલ્પિક',
+	'translate-ignored' => 'ઉપેક્ષીત',
+	'translate-edit-definition' => 'સંદેશ વ્યાખ્યા',
+	'translate-edit-contribute' => 'યોગદાન',
 	'translate-magic-submit' => 'મેળવો',
 	'translate-magic-cm-export' => 'નિકાસ',
+	'translationstats' => 'ભાષાંતર અંક વિવરણ',
 	'translate-stats-users' => 'ભાષાંતરકારો',
+	'translate-translations-fieldset-title' => 'સંદેશ',
+	'translate-translations-messagename' => 'નામ:',
+	'translate-translations-project' => 'યોજના',
+	'translate-language-code' => 'ભાષાસંહિતા',
+	'translate-language-code-field-name' => 'ભાષાસંહિતા:',
 );
 
 /** Manx (Gaelg)
@@ -6501,15 +6523,16 @@ de Söndersigg [[Special:Translate|{{int:translate}}]] norrens ze prööfe.',
 	'translate-group-desc-mediawikicore' => 'En dä Jropp hee sin all de Täxte un Nohreeschte uß däm MediaWiki singe aktoälle <i lang="de">alpha</i>-Version ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'En dä Jropp hee sin dem MediaWiki sing [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 am mihßte jebruchte Täxte un Nohreeschte]',
 	'translate-group-desc-mediawikiextensions' => 'Hee di Sammeljropp hät de janze Täxte un Nohreschte vun alle Zohsatzprojramme vum MediaWiki',
-	'translate-group-desc-collection' => 'Hee di Sammeljropp hät de janze Täxte un Nohreschte vun alle Aandeile vum MediaWiki singem Zohsatzprojramm <code lang="en">[http://www.mediawiki.org/wiki/Extension:Collection Collection]</code>',
-	'translate-group-desc-flaggedrevs' => 'Hee di Sammeljropp hät de janze Täxte un Nohreschte vun alle Aandeile vum MediaWiki singem Zohsatzprojramm <code lang="en">[http://www.mediawiki.org/wiki/Extension:FlaggedRevs Flagged Revsisions]</code>',
-	'translate-group-desc-socialprofile' => 'Hee di Sammeljropp hät de janze Täxte un Nohreschte vum MediaWiki singe Zohsatzprojramme, di met däm Zohsatzprojramm <code lang="en">[http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]</code> zosamme hange',
-	'translate-group-desc-translate' => 'Hee di Sammeljropp hät de janze Täxte un Nohreschte vun alle Aandeile vum MediaWiki singem Zohsatzprojramm <code lang="en">[http://www.mediawiki.org/wiki/Extension:Translate Translate]</code>',
+	'translate-group-desc-collection' => 'Hee di Sammeljropp hät de janze Täxte un Nohreschte vun alle Aandeile vum MediaWiki singem Zohsatzprojramm-Pöngel <code lang="en">[http://www.mediawiki.org/wiki/Extension:Collection Collection]</code>',
+	'translate-group-desc-flaggedrevs' => 'Hee di Sammeljropp hät de janze Täxte un Nohreschte vun alle Aandeile vum MediaWiki singem Zohsatzprojramm-Pöngel <code lang="en">[http://www.mediawiki.org/wiki/Extension:FlaggedRevs Flagged Revsisions]</code>',
+	'translate-group-desc-socialprofile' => 'Hee di Sammeljropp hät de janze Täxte un Nohreschte vum MediaWiki singe Zohsatzprojramme, di en däm Zohsatzprojramm-Pakkät <code lang="en">[http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]</code> dren hange',
+	'translate-group-desc-translate' => 'Hee di Sammeljropp hät de janze Täxte un Nohreschte vun alle Aandeile vum MediaWiki singem Pöngel Zohsatzprojramme mem Name <code lang="en">[http://www.mediawiki.org/wiki/Extension:Translate Translate]</code>',
 	'translate-group-desc-wikiaextensions' => 'Hee di Sammeljropp hät de Täxte un Nohreschte vun alle Zohsatzprojramme vum MediaWiki, di mer hee ongershtöze donn, un di bei [http://www.wikia.com Wikia] jebruch wäde',
 	'translate-group-desc-wikihowextensions' => 'Hee di Sammeljropp hät de Täxte un Nohreschte vun alle Zohsatzprojramme vum MediaWiki, di mer hee ongershtöze donn, un di bei <i lang="en">[http://www.wikihow.com wikiHow]</i> jebruch wäde',
 	'translate-group-desc-wikimediaextensions' => 'Hee di Sammeljropp hät de Täxte un Nohreschte vun alle Zohsatzprojramme vum MediaWiki, di mer hee ongershtöze donn, un di en en Wikis vun de  <i lang="en">[http://wikimedia.org/ Wikimedia Foundation]</i> jebruch wäde',
 	'translate-group-desc-wikitravelextensions' => 'Hee di Sammeljropp hät de Täxte un Nohreschte vun alle Zohsatzprojramme vum MediaWiki, di mer hee ongershtöze donn, un di em <i lang="en">[http://wikitravel.org Wikitravel]</i> jebruch wäde',
 	'translate-group-desc-uniwiki' => 'Hee di Sammeljropp hät de Täxte un Nohreschte vun alle Zohsatzprojramme vum MediaWiki, di mem <i lang="en">[http://unicefinnovation.org/wiki.php Uniwiki]</i> ze donn han',
+	'translate-group-desc-ui' => 'Hee di Sammeljropp hät all de Textnohreeschte uß de divärse Zohsazprojramme vun dä [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 );
 
 /** Latin (Latina)
