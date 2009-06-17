@@ -302,6 +302,12 @@ $aliases['lb'] = array(
 	'LanguageStats' => array( 'Sproochestatistiken' ),
 );
 
+/** Lithuanian (Lietuvių) */
+$aliases['lt'] = array(
+	'Translate' => array( 'Vertimas' ),
+	'PageTranslation' => array( 'Puslapio vertimas' ),
+);
+
 /** Macedonian (Македонски) */
 $aliases['mk'] = array(
 	'Translate' => array( 'Преведување' ),

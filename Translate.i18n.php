@@ -1100,6 +1100,7 @@ $messages['be-tarask'] = array(
 	'translate-magic-module' => 'Модуль:',
 	'translate-magic-submit' => 'Паказаць',
 	'translate-magic-cm-export' => 'Экспартаваць',
+	'translate-magic-nothing-to-export' => 'Няма нічога на экспарт.',
 	'translate-magic-cm-to-be' => 'Павінна быць',
 	'translate-magic-cm-current' => 'Цяперашняе',
 	'translate-magic-cm-original' => 'Арыгінальнае',
@@ -1191,6 +1192,7 @@ $messages['be-tarask'] = array(
 	'translate-group-desc-wikimediaextensions' => 'Мэта-група паведамленьняў, якая ўтрымлівае ўсе паведамленьні для падтрымліваемых пашырэньняў MediaWiki, выкарыстоўваемых [http://wikimedia.org/ фундацыяй «Вікімэдыя»]',
 	'translate-group-desc-wikitravelextensions' => 'Мэта-група паведамленьняў, якая ўтрымлівае ўсе паведамленьні для падтрымліваемых пашырэньняў MediaWiki выкарыстоўваемых [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Мэта-група паведамленьняў, якая ўтрымлівае ўсе паведамленьні для пашырэньняў зьвязаных з [http://unicefinnovation.org/wiki.php Uniwiki]',
+	'translate-group-desc-ui' => 'Група мэта-паведамленьняў, якая ўтрымлівае ўсе паведамленьні для пашырэньняў, якія адносяцца да [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 );
 
 /** Bulgarian (Български)
@@ -2123,6 +2125,7 @@ Du musst in der Übersetzer-Gruppe sein, um Änderungen zu speichern.
 	'translate-magic-module' => 'Modul:',
 	'translate-magic-submit' => 'Hole',
 	'translate-magic-cm-export' => 'Export',
+	'translate-magic-nothing-to-export' => 'Es gibt nichts zum exportieren.',
 	'translate-magic-cm-to-be' => 'Sollte sein',
 	'translate-magic-cm-current' => 'Aktuell',
 	'translate-magic-cm-original' => 'Original',
@@ -2309,6 +2312,7 @@ Musyš w kupce pśełožowarjow byś, aby mogł změny cyniś. Změny se njeskł
 	'translate-magic-module' => 'Modul:',
 	'translate-magic-submit' => 'Pokazaś',
 	'translate-magic-cm-export' => 'Eksportěrowaś',
+	'translate-magic-nothing-to-export' => 'Njedajo nic eksportěrowaś.',
 	'translate-magic-cm-to-be' => 'Ma byś',
 	'translate-magic-cm-current' => 'aktualne',
 	'translate-magic-cm-original' => 'Original',
@@ -3790,6 +3794,7 @@ Os cambios non se gardan ata que prema no botón "Gardar" de embaixo.',
 	'translate-magic-module' => 'Módulo:',
 	'translate-magic-submit' => 'Amosar',
 	'translate-magic-cm-export' => 'Exportar',
+	'translate-magic-nothing-to-export' => 'Non hai nada que exportar.',
 	'translate-magic-cm-to-be' => 'Será',
 	'translate-magic-cm-current' => 'Actual',
 	'translate-magic-cm-original' => 'Orixinal',
@@ -4013,6 +4018,7 @@ Du muesch in dr Ibersetzer-Gruppe syy go Änderige z spychere.
 	'translate-magic-module' => 'Modul:',
 	'translate-magic-submit' => 'Hol',
 	'translate-magic-cm-export' => 'Export',
+	'translate-magic-nothing-to-export' => 'S het nyt, wu sott exportiert wäre.',
 	'translate-magic-cm-to-be' => 'Sott syy',
 	'translate-magic-cm-current' => 'Aktuäll',
 	'translate-magic-cm-original' => 'Original',
@@ -4099,6 +4105,7 @@ S wird empfohle, Syschtemnochrichte mit dr Spezialsyte [[Special:Translate|{{int
 	'translate-group-desc-wikimediaextensions' => 'In däre Hauptgruppe het s alli Syschtemnochrichte vu dr unterstitzte MediaWiki-Erwyterige, wu vu dr [http://wikimedia.org/ Wikimedia Foundation] brucht wäre',
 	'translate-group-desc-wikitravelextensions' => 'In däre Hauptgruppe het s alli Syschtemnochrichte vu dr unterstitzte MediaWiki-Erwyterige, wu vu [http://wikitravel.org Wikitravel] brucht wäre',
 	'translate-group-desc-uniwiki' => 'In däre Hauptgruppe het s alli Syschtemnochrichte fir verwandti Erwyterige vu [http://unicefinnovation.org/wiki.php Uniwiki]',
+	'translate-group-desc-ui' => 'In däre Hauptgruppe het s alli Syschtemnochrichte vu dr [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Benutzerfrejndligkeits-Initiative]',
 );
 
 /** Gujarati (ગુજરાતી)
@@ -4563,6 +4570,7 @@ Dyrbiš w skupinje přełožowarjow być, zo by změny składował. Změny so nj
 	'translate-magic-module' => 'Modul:',
 	'translate-magic-submit' => 'Pokazać',
 	'translate-magic-cm-export' => 'Eksportować',
+	'translate-magic-nothing-to-export' => 'Njejo ničo eksportować.',
 	'translate-magic-cm-to-be' => 'Ma być:',
 	'translate-magic-cm-current' => 'Tuchwilu',
 	'translate-magic-cm-original' => 'Original',
@@ -5029,6 +5037,7 @@ $messages['id'] = array(
 	'translate-task-view' => 'Tampilkan semua pesan dari',
 	'translate-task-untranslated' => 'Tampilkan semua pesan yang belum diterjemahkan dari',
 	'translate-task-optional' => 'Tampilkan pesan opsional dari',
+	'translate-task-untranslatedoptional' => 'Tampilkan pesan opsional yang belum diterjemahkan dari',
 	'translate-task-problematic' => 'Tampilkan pesan-pesan bermasalah',
 	'translate-task-review' => 'Tinjau perubahan dari',
 	'translate-task-reviewall' => 'Tinjau semua perubahan pada',
@@ -5111,7 +5120,8 @@ Perubahan tidak akan disimpan hingga Anda mengklik tombol simpan di bawah.',
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Definisi menggunakan <nowiki>{{PLURAL:}}</nowiki> tapi terjemahannya tidak.',
 	'translate-checks-pagename' => 'Ruang nama berubah dari definisinya',
-	'translate-pref-nonewsletter' => 'Jangan kirimkan saya e-mail berita',
+	'translate-checks-format' => 'Terjemahan ini tidak mengikuti definisi atau memiliki sintaksis yang tidak valid: $1',
+	'translate-pref-nonewsletter' => 'Jangan kirimi saya surat-e nawala',
 	'right-translate' => 'Menyunting menggunakan antarmuka penerjemahan',
 	'translate-rc-translation-filter' => 'Filter terjemahan:',
 	'translate-rc-translation-filter-no' => 'Tidak difilter',
@@ -5140,9 +5150,42 @@ Perubahan tidak akan disimpan hingga Anda mengklik tombol simpan di bawah.',
 	'translate-tag-fuzzy-comment' => 'Definisi diubah oleh [[User:$1|$1]] pada revisi $2.',
 	'translate-tag-fuzzy-reason' => 'Definisi diubah oleh "$1" dengan komentar "$3" pada $2.',
 	'translate-sidebar-alltrans' => 'Dalam bahasa lain',
+	'translate-tag-noedit' => 'Halaman ini secara otomatis memperbarui halaman penerjemahan.
+Anda dapat [$1 menyunting halaman sumber] atau [$2 memperbarui terjemahannya].',
+	'translations' => 'Semua terjemahan',
+	'translations-summary' => 'Masukkan sebuah nama pesan di bawah ini untuk menampilkan semua terjemahan yang tersedia.',
+	'translate-translations-no-message' => '"$1" bukan pesan yang dapat diterjemahkan',
+	'translate-translations-none' => 'Tidak ada terjemahan untuk "$1"',
+	'translate-translations-fieldset-title' => 'Pesan',
+	'translate-translations-messagename' => 'Nama:',
+	'translate-translations-project' => 'Proyek:',
+	'translate-translations-including-no-param' => 'Harap gunakan sebuah kunci pesan yang valid dalam parameter subhalaman',
+	'languagestats' => 'Statistik bahasa',
+	'languagestats-summary' => 'Halaman ini menampilkan statistik penerjemahan untuk semua kelompok pesan dalam suatu bahasa tertentu.',
+	'translate-language-code' => 'Kode bahasa',
+	'translate-language-code-field-name' => 'Kode bahasa:',
+	'translate-suppress-complete' => 'Sembunyikan grup yang telah diterjemahkan sepenuhnya',
+	'translate-language' => 'Bahasa',
+	'translate-total' => 'Pesan',
+	'translate-untranslated' => 'Belum diterjemahkan',
+	'translate-percentage-complete' => 'Selesai',
+	'translate-percentage-fuzzy' => 'Usang',
+	'translate-nothing-to-do' => 'Semua terjemahan yang mungkin tampaknya telah dibuat.
+Silakan meninjau pesan-pesan melalui [[Special:Translate|{{int:translate}}]].',
+	'translate-save' => 'Simpan ($1)',
+	'translate-group-desc-mediawikicore' => 'Grup pesan ini berisikan pesan-pesan sistem yang digunakan dalam MediaWiki versi alfa terbaru ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'Grup ini berisikan [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 pesan sistem yang paling sering digunakan] di MediaWiki',
 	'translate-group-desc-mediawikiextensions' => 'Grup pesan meta yang berisikan semua pesan sistem untuk ekstensi MediaWiki yang didukung',
+	'translate-group-desc-collection' => 'Grup pesan meta yang berisikan semua pesan sistem untuk ekstensi MediaWiki [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
+	'translate-group-desc-flaggedrevs' => 'Grup pesan meta yang berisikan semua pesan untuk ekstensi MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
+	'translate-group-desc-socialprofile' => 'Grup pesan meta yang berisikan semua pesan untuk ekstensi yang berkaitan dengan ekstensi MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
+	'translate-group-desc-translate' => 'Grup pesan meta yang berisikan semua pesan untuk ekstensi MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
+	'translate-group-desc-wikiaextensions' => 'Grup pesan meta yang berisikan semua pesan untuk ekstensi MediaWiki yang didukung yang digunakan oleh [http://www.wikia.com Wikia]',
+	'translate-group-desc-wikihowextensions' => 'Grup pesan meta yang berisikan semua pesan untuk ekstensi MediaWiki yang didukung yang digunakan oleh [http://www.wikihow.com wikiHow]',
 	'translate-group-desc-wikimediaextensions' => 'Grup pesan meta yang berisikan semua pesan sistem untuk ekstensi MediaWiki yang didukung yang digunakan oleh [http://wikimedia.org Wikimedia Foundation]',
+	'translate-group-desc-wikitravelextensions' => 'Grup pesan meta yang berisikan semua pesan untuk ekstensi MediaWiki yang didukung yang digunakan oleh [http://wikitravel.org Wikitravel]',
+	'translate-group-desc-uniwiki' => 'Grup pesan meta yang berisikan semua pesan untuk ekstensi yang berkaitan dengan [http://unicefinnovation.org/wiki.php Uniwiki]',
+	'translate-group-desc-ui' => 'Grup pesan meta yang berisikan semua pesan untuk ekstensi yang berkaitan dengan [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 );
 
 /** Iloko (Ilokano)
@@ -6536,7 +6579,7 @@ de Söndersigg [[Special:Translate|{{int:translate}}]] norrens ze prööfe.',
 	'translate-group-desc-wikimediaextensions' => 'Hee di Sammeljropp hät de Täxte un Nohreschte vun alle Zohsatzprojramme vum MediaWiki, di mer hee ongershtöze donn, un di en en Wikis vun de  <i lang="en">[http://wikimedia.org/ Wikimedia Foundation]</i> jebruch wäde',
 	'translate-group-desc-wikitravelextensions' => 'Hee di Sammeljropp hät de Täxte un Nohreschte vun alle Zohsatzprojramme vum MediaWiki, di mer hee ongershtöze donn, un di em <i lang="en">[http://wikitravel.org Wikitravel]</i> jebruch wäde',
 	'translate-group-desc-uniwiki' => 'Hee di Sammeljropp hät de Täxte un Nohreschte vun alle Zohsatzprojramme vum MediaWiki, di mem <i lang="en">[http://unicefinnovation.org/wiki.php Uniwiki]</i> ze donn han',
-	'translate-group-desc-ui' => 'Hee di Sammeljropp hät all de Textnohreeschte uß de divärse Zohsazprojramme vun dä [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
+	'translate-group-desc-ui' => 'Hee di Sammeljropp hät all de Texnohreeschte uß de divärse Zohsazprojramme vun dä [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative „<i lang="en">Wikipedia Usability Initiative</i>“].',
 );
 
 /** Latin (Latina)
@@ -6715,6 +6758,7 @@ Dir sidd awer häerzlech Invitéiert fir d'Systemmessagn op [[Special:Translate|
 	'translate-group-desc-wikimediaextensions' => 'an dësem Grupp ainn all Systemmessage vun den ënnerstetzte MediaWiki-Erweiderungen, déi vun der [http://wikimedia.org/ Wikimedia Foundation] genotzt ginn',
 	'translate-group-desc-wikitravelextensions' => 'An dëser Grupp sinn all Systemmessage vun den ënnerstetzte MediaWiki-Erweiderungen, déi vu [http://wikitravel.org Wikitravel] genotzt ginn',
 	'translate-group-desc-uniwiki' => 'Meta-Grupp vun alle Systemmessagen fir Erweiderungen am Zesummenhang mat [http://unicefinnovation.org/wiki.php Uniwiki]',
+	'translate-group-desc-ui' => 'Grupp vu Systemmessage vun den Erweiderungen déi mat der [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Benotzerfrëndlechkeets-Initiative] a Verbindung stinn',
 );
 
 /** Limburgish (Limburgs)
@@ -7939,6 +7983,7 @@ Los cambiaments seràn pas salvats abans que cliquèssetz sul boton « Salvar »
 	'translate-magic-module' => 'Modul :',
 	'translate-magic-submit' => 'Anar',
 	'translate-magic-cm-export' => 'Exportar',
+	'translate-magic-nothing-to-export' => "I a pas res d'exportar",
 	'translate-magic-cm-to-be' => 'Desven',
 	'translate-magic-cm-current' => 'Actual',
 	'translate-magic-cm-original' => 'Original',
@@ -8025,6 +8070,7 @@ Sètz encoratjat(ada) a repassar los messatges dempuèi [[Special:Translate|{{in
 	'translate-group-desc-wikimediaextensions' => 'Meta grop de messatges que contenon totes los messatges per las extensions utilizadas per la [http://wikimedia.org/ Wikimedia Foundation]',
 	'translate-group-desc-wikitravelextensions' => 'Meta grop de messatges que contenon totes los messatges per las extensions utilizadas sus [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Meta grop de messatges que contenon totes los messatges per las extensions aparentadas a [http://unicefinnovation.org/wiki.php Uniwiki]',
+	'translate-group-desc-ui' => 'Grop de messatges Meta que contenon totes los messatges de las extensions ligadas a [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 );
 
 /** Oriya (ଓଡ଼ିଆ)
@@ -8979,6 +9025,8 @@ $messages['ru'] = array(
 	'translate-untranslated' => 'Непереведённые',
 	'translate-percentage-complete' => 'Выполнено',
 	'translate-percentage-fuzzy' => 'Устарело',
+	'translate-nothing-to-do' => 'По всей видимости, все возможные переводы уже сделаны.
+Вы можете проверить сообщения с помощью [[Special:Translate|{{int:translate}}]].',
 	'translate-save' => 'Сохранить ($1)',
 	'translate-group-desc-mediawikicore' => 'Эта группа сообщений содержит сообщения, используемые в текущей альфа-версии MediaWiki ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'Эта группа сообщений содержит [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 наиболее часто используемых сообщений] в MediaWiki',
@@ -8992,6 +9040,7 @@ $messages['ru'] = array(
 	'translate-group-desc-wikimediaextensions' => 'Мета-группа сообщений, содержащая все сообщения поддерживаемых расширений MediaWiki, используемых [http://wikimedia.org/ Фондом Викимедиа]',
 	'translate-group-desc-wikitravelextensions' => 'Мета-группа сообщений, содержащая все сообщения поддерживаемых расширений MediaWiki, используемых [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Мета-группа сообщений, содержащая все сообщения расширений, связанных с [http://unicefinnovation.org/wiki.php Uniwiki]',
+	'translate-group-desc-ui' => 'Мета-группа сообщений, содержащая все сообщения расширений, относящихся к [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Инициативе юзабилити Википедии]',
 );
 
 /** Yakut (Саха тыла)
@@ -9153,6 +9202,7 @@ Zmeny sa neuložia, kým nekliknete na tlačidlo Uložiť dolu.',
 	'translate-magic-module' => 'Modul:',
 	'translate-magic-submit' => 'Vykonať',
 	'translate-magic-cm-export' => 'Exportovať',
+	'translate-magic-nothing-to-export' => 'Niet čo exportovať.',
 	'translate-magic-cm-to-be' => 'Má byť',
 	'translate-magic-cm-current' => 'Aktuálna',
 	'translate-magic-cm-original' => 'Pôvodná',

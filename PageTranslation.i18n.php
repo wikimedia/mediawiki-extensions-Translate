@@ -427,6 +427,57 @@ Esta página es una traducción de la página [[$1]] y la traducción puede ser 
 La página que estás tratando de editar no parece corresponder con alguna página marcada para traducción.',
 );
 
+/** Finnish (Suomi)
+ * @author Cimon Avaro
+ * @author Crt
+ * @author Silvonen
+ */
+$messages['fi'] = array(
+	'pagetranslation' => 'Sivun kääntäminen',
+	'right-pagetranslation' => 'Merkitä versiot, jotka otetaan käännettäviksi',
+	'tpt-desc' => 'Laajennus sisältösivujen kääntämiseen.',
+	'tpt-section' => 'Käännösosio $1',
+	'tpt-section-new' => 'Uusi käännösosio. Nimi: $1',
+	'tpt-section-deleted' => 'Käännösosio $1',
+	'tpt-template' => 'Sivun mallipohja',
+	'tpt-templatediff' => 'Sivun mallipohja on muuttunut.',
+	'tpt-diff-old' => 'Aikaisempi teksti',
+	'tpt-diff-new' => 'Uusi teksti',
+	'tpt-submit' => 'Merkitse tämä versio käännettäväksi',
+	'tpt-sections-oldnew' => 'Uudet ja jo olemassa olevat käännösosiot',
+	'tpt-sections-deleted' => 'Poistetut käännösosiot',
+	'tpt-sections-template' => 'Käännössivun mallipohja',
+	'tpt-badtitle' => 'Sivun nimi ($1) jota tarjottiin ei ole kelvollinen otsikko',
+	'tpt-oldrevision' => '$2 ei ole uusin versio sivusta [[$1]]. 
+Ainoastaan uusimmat versiot voidaan merkitä käännettäviksi.',
+	'tpt-notsuitable' => 'Sivu $1 ei sovellu käännettäväksi.
+Varmista, että siinä on <nowiki><translate></nowiki>-merkinnät ja että sillä on toimiva syntaksi.',
+	'tpt-saveok' => 'Sivu [[$1]] on merkitty käännettäväksi $2 {{PLURAL:$2|käännösosiolla|käännösosioilla}}.
+Sivu voidaan nyt <span class="plainlinks">[$3 kääntää]</span>.',
+	'tpt-badsect' => '"$1" ei ole kelvollinen nimi käännösosiolle $2.',
+	'tpt-showpage-intro' => 'Alempana listattu uusia, nykyisiä ja poistettavia osioita. Ennen kuin merkitset tämän version käännettäväksi, tarkista, että muutokset osioihin on minimoitu, jotta vältämme turhan työn kääntäjille.',
+	'tpt-mark-summary' => 'Merkitty tämä versio käännettäväksi',
+	'tpt-edit-failed' => 'Ei voitu tallentaa muutosta sivulle: $1',
+	'tpt-already-marked' => 'Uusin versio tästä sivusta on jo merkitty käännettäväksi.',
+	'tpt-list-nopages' => 'Sivuja ei ole merkitty käännettäväksi eikä valmiina käännettäväksi merkintää varten.',
+	'tpt-old-pages' => 'Joku versio {{PLURAL:$1|tästä sivusta on|näistä sivuista on}} on merkitty käännettäväksi.',
+	'tpt-rev-latest' => 'uusin versio',
+	'tpt-rev-old' => 'eroavaisuudet edelliseen merkittyyn versioon',
+	'tpt-rev-mark-new' => 'merkitse tämä versio käännettäväksi',
+	'tpt-translate-this' => 'käännä tämä sivu',
+	'translate-tag-translate-link-desc' => 'Käännä tämä sivu',
+	'translate-tag-markthis' => 'Merkitse tämä sivu käännettäväksi',
+	'translate-tag-markthisagain' => 'Tähän sivuun on tehty <span class="plainlinks">[$1 muutoksia]</span> sen jälkeen kun se viimeksi <span class="plainlinks">[$2 merkittiin käännettäväksi]</span>.',
+	'translate-tag-hasnew' => 'Tämä sivu sisältää <span class="plainlinks">[$1 muutoksia],</span> joita ei ole merkitty käännettäväksi.',
+	'tpt-translation-intro' => 'Tämä sivu on <span class="plainlinks">[$1 käännetty versio]</span> sivusta [[$2]] ja käännös on $3% täydellinen ja ajan tasalla.',
+	'tpt-translation-intro-fuzzy' => 'Vanhentuneet käännökset, joiden lähdeteksti on muuttunut merkitään näin.',
+	'tpt-languages-legend' => 'Muut kielet:',
+	'tpt-target-page' => 'Tätä sivua ei voi päivittää manuaalisesti. Tämä sivu on käännös sivusta [[$1]] ja käännös voidaan päivittää käyttämällä [$2 käännöstyökalua].',
+	'tpt-unknown-page' => 'Nimiavaruus on varattu sisältösivujen käännöksille. Sivu, jota yrität muokata, ei näytä vastaavan mitään sivua joka on merkitty käännettäväksi.',
+	'tpt-install' => 'Suorita maintenance/update.php tai verkkoasennus, jotta sivun käännösominaisuus toimii.',
+	'tpt-render-summary' => 'Päivittäminen vastaamaan uutta versiota lähdesivusta',
+);
+
 /** French (Français)
  * @author Crochet.david
  * @author Grondin
@@ -751,10 +802,53 @@ Le pagina que tu vole modificar non pare corresponder con alcun pagina marcate p
  * @author Rex
  */
 $messages['id'] = array(
+	'pagetranslation' => 'Penerjemahan halaman',
+	'right-pagetranslation' => 'Menandai revisi-revisi halaman untuk diterjemahkan',
+	'tpt-desc' => 'Ekstensi untuk menerjemahkan halaman-halaman isi',
+	'tpt-section' => 'Unit penerjemahan $1',
+	'tpt-section-new' => 'Unit penerjemahan baru. Nama: $1',
+	'tpt-section-deleted' => 'Unit penerjemahan $1',
+	'tpt-template' => 'Templat halaman',
+	'tpt-templatediff' => 'Templat halaman telah diubah.',
+	'tpt-diff-old' => 'Teks sebelumnya',
+	'tpt-diff-new' => 'Teks baru',
+	'tpt-submit' => 'Tandai revisi ini untuk diterjemahkan',
+	'tpt-sections-oldnew' => 'Unit-unit penerjemahan baru dan yang telah ada',
+	'tpt-sections-deleted' => 'Unit penerjemahan yang dihapus',
+	'tpt-sections-template' => 'Templat halaman penerjemahan',
+	'tpt-badtitle' => 'Nama halaman yang diberikan ($1) tidak valid',
+	'tpt-oldrevision' => '$2 bukan revisi terakhir dari halaman [[$1]].
+Hanya revisi terakhir yang dapat ditandai untuk diterjemahkan.',
+	'tpt-notsuitable' => 'Halaman $1 tidak dapat diterjemahkan.
+Pastikan bahwa halaman ini memiliki tag <nowiki><translate></nowiki> dan memiliki sintaksis yang valid.',
+	'tpt-saveok' => 'Halaman [[$1]] telah ditandai untuk diterjemahkan dengan $2 {{PLURAL:$2|unit penerjemahan|unit penerjemahan}}.
+Halaman ini sekarang dapat <span class="plainlinks"[$3 diterjemahkan]</span>.',
+	'tpt-badsect' => '"$1" bukanlah nama yang valid untuk unit penerjemahan $2.',
+	'tpt-showpage-intro' => 'Berikut adalah daftar bagian baru, bagian yang telah ada, dan bagian yang dihapus.
+Sebelum menandai revisi ini untuk diterjemahkan, harap periksa agar perubahan ke bagian-bagian dapat diminimalisasi guna menghindarkan para penerjemah dari melakukan pekerjaan yang tidak diperlukan.',
+	'tpt-mark-summary' => 'Menandai revisi ini untuk diterjemahkan',
+	'tpt-edit-failed' => 'Tidak dapat memperbarui halaman: $1',
+	'tpt-already-marked' => 'Revisi terakhir halaman ini telah ditandai untuk diterjemahkan.',
+	'tpt-list-nopages' => 'Tidak ada halaman yang ditandai untuk diterjemahkan atau siap ditandai untuk diterjemahkan.',
+	'tpt-old-pages' => 'Beberapa revisi dari {{PLURAL:$1|halaman ini|halaman-halaman ini}} telah ditandai untuk diterjemahkan.',
 	'tpt-new-pages' => '{{PLURAL:$1|Halaman ini berisikan|Halaman-halaman ini berisikan}} teks dengan tag terjemahan, tetapi tidak ada versi {{PLURAL:$1|halaman ini|halaman-halaman ini}} yang sudah ditandai untuk diterjemahkan.',
+	'tpt-rev-latest' => 'revisi terakhir',
+	'tpt-rev-old' => 'beda dengan revisi terakhir yang ditandai',
+	'tpt-rev-mark-new' => 'tandai revisi ini untuk diterjemahkan',
+	'tpt-translate-this' => 'terjemahkan halaman ini',
 	'translate-tag-translate-link-desc' => 'Terjemahkan halaman ini',
-	'translate-tag-hasnew' => 'Halaman ini berisikan <span class="plainlinks">[$1 perubahan]</span> yang tidak ditandai untuk diterjemahkan.',
+	'translate-tag-markthis' => 'Tandai halaman ini untuk diterjemahkan',
+	'translate-tag-markthisagain' => 'Halaman ini telah diubah <span class="plainlinks">[$1 kali]</span> sejak terakhir <span class="plainlinks">[$2 ditandai untuk diterjemahkan]</span>.',
+	'translate-tag-hasnew' => 'Halaman ini berisikan <span class="plainlinks">[$1 revisi]</span> yang tidak ditandai untuk diterjemahkan.',
+	'tpt-translation-intro' => 'Halaman ini adalah sebuah <span class="plainlinks">[$1 versi terjemahan]</span> dari halaman [[$2]] dan terjemahannya telah selesai $3% dari sumber terkini.',
+	'tpt-translation-intro-fuzzy' => 'Terjemahan usang ditandai seperti ini.',
 	'tpt-languages-legend' => 'Bahasa lain:',
+	'tpt-target-page' => 'Halaman ini tidak dapat diperbarui secara manual.
+Halaman ini adalah terjemahan dari halaman [[$1]] dan terjemahannya dapat diperbarui menggunakan [$2 peralatan penerjemahan].',
+	'tpt-unknown-page' => 'Ruang nama ini dicadangkan untuk terjemahan halaman isi.
+Halaman yang ingin Anda sunting ini tampaknya tidak memiliki hubungan dengan halaman manapun yang ditandai untuk diterjemahkan.',
+	'tpt-install' => 'Jalankan php maintenance/update.php atau instalasi web untuk mengaktifkan fitur terjemahan halaman.',
+	'tpt-render-summary' => 'Memperbarui ke revisi terbaru halaman sumber',
 );
 
 /** Italian (Italiano)
@@ -1063,6 +1157,9 @@ $messages['no'] = array(
 	'tpt-badtitle' => 'Det angitte sidenavnet ($1) er ikke en gyldig tittel',
 	'tpt-oldrevision' => '$2 er ikke den siste versjonen av siden [[$1]].
 Kun siste versjoner kan bli markert for oversettelse.',
+	'tpt-edit-failed' => 'Kunne ikke oppdatere siden: $1',
+	'tpt-already-marked' => 'Den siste versjonen av denne siden har allerede blitt markert for oversettelse.',
+	'tpt-list-nopages' => 'Ingen sider er marker for oversettelse, eller er klare for å bli markert for oversettelse.',
 	'translate-tag-translate-link-desc' => 'Oversett denne siden',
 );
 
@@ -1226,16 +1323,34 @@ $messages['ru'] = array(
 Только последние версии могут быть отмечены для перевода.',
 	'tpt-notsuitable' => 'Страницы $1 является неподходящей для перевода.
 Убедитесь, что она имеет теги <nowiki><translate></nowiki> и правильный синтаксис.',
+	'tpt-saveok' => 'Страница [[$1]] был отмечена для перевода, она содержит $2 {{PLURAL:$2|блок перевода|блока перевода|блоков переводов}}.
+Теперь страницу можно <span class="plainlinks">[$3 переводить]</span>.',
 	'tpt-badsect' => '«$1» не является допустимым названием для блока перевода $2.',
+	'tpt-showpage-intro' => 'Ниже приведены новые, существующие и удалённые разделы.
+Перед отметкой этой версии для перевода, убедитесь, что изменения в разделе будут минимальны, это позволит сократить объём работы переводчиков.',
 	'tpt-mark-summary' => 'Отметить эту версию для перевода',
 	'tpt-edit-failed' => 'Невозможно обновить эту страницу: $1',
+	'tpt-already-marked' => 'Последняя версия этой страницы уже была отмечена для перевода.',
+	'tpt-list-nopages' => 'Нет страниц, отмеченных для перевода, а также нет страниц готовых к отметке.',
+	'tpt-old-pages' => 'Некоторые версии {{PLURAL:$1|этой страницы|этих страниц}} были отмечены для перевода.',
+	'tpt-new-pages' => '{{PLURAL:$1|Эта страница содержит|Эти страницы содержат}} текст с тегами перевода, но ни одна из версий {{PLURAL:$1|этой страницы|этих страниц}} не отмечена для перевода.',
 	'tpt-rev-latest' => 'последняя версия',
 	'tpt-rev-old' => 'различия с предыдущей отмеченной версией',
 	'tpt-rev-mark-new' => 'отметить эту версию для перевода',
 	'tpt-translate-this' => 'перевести эту страницу',
 	'translate-tag-translate-link-desc' => 'Перевести эту страницу',
 	'translate-tag-markthis' => 'Отметить эту страницу для перевода',
+	'translate-tag-markthisagain' => 'На этой странице было произведено <span class="plainlinks">[$1 изменений]</span> с момента последней <span class="plainlinks">[$2 отметки о переводе]</span>.',
+	'translate-tag-hasnew' => 'На этой странице было произведено <span class="plainlinks">[$1 изменений]</span>, которые не отмечены для перевода.',
+	'tpt-translation-intro' => 'Эта страница является <span class="plainlinks">[$1 переводом]</span> страницы [[$2]]. Перевод актуален и выполнен на $3%.',
+	'tpt-translation-intro-fuzzy' => 'Устаревшие переводы отмечены следующим образом.',
 	'tpt-languages-legend' => 'Другие языки:',
+	'tpt-target-page' => 'Эта страница не может быть обновлена вручную.
+Эта страница является переводом страницы [[$1]], перевод может быть обновлен с помощью специального [$2 инструмента перевода].',
+	'tpt-unknown-page' => 'Это пространство имён зарезервировано для переводов текстов страниц.
+Страница, которую вы пытаетесь изменить, не соответствует какой-либо странице, отмеченной для перевода.',
+	'tpt-install' => 'Запустите php-скрипт maintenance/update.php или веб-установку, чтобы включить возможность перевода страниц.',
+	'tpt-render-summary' => 'Обновление для соответствия новой версии исходной страницы.',
 );
 
 /** Slovak (Slovenčina)
