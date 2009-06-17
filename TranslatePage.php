@@ -303,8 +303,8 @@ class SpecialTranslate extends SpecialPage {
 		global $wgUser;
 		$skin = $wgUser->getSkin();
 		$query = array_merge(
-			array( 'offset' => $offset ),
-			$this->nondefaults
+			$this->nondefaults,
+			array( 'offset' => $offset )
 		);
 		$link = $skin->link(
 			$this->getTitle(),
