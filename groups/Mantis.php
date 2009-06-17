@@ -40,6 +40,7 @@ class MantisMessageGroup extends MessageGroup {
 		'is' => 'icelandic',
 		'it' => 'italian',
 		'ja' => 'japanese',
+		'ksh' => 'ripoarisch',
 		'ko' => 'korean',
 		'lt' => 'lithuanian',
 		'lv' => 'latvian',
