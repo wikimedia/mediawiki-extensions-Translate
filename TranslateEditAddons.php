@@ -252,7 +252,7 @@ EOEO;
 
 	private static function editBoxes( $object ) {
 		wfLoadExtensionMessages( 'Translate' );
-		global $wgTranslateDocumentationLanguageCode, $wgOut;
+		global $wgTranslateDocumentationLanguageCode, $wgOut, $wgRequest;
 
 		list( $key, $code, $group ) = self::getKeyCodeGroup( $object->mTitle );
 		if ( $group === null ) return;
@@ -370,7 +370,7 @@ EOEO;
 			$translation = $xx;
 		}
 
-		if ( $object->firsttime ) {
+		if ( $object->firsttime && !$wgRequest->getCheck( 'oldid' ) ) {
 			$object->textbox1 = $translation;
 		}
 
