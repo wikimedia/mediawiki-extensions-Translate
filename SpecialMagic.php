@@ -123,9 +123,6 @@ class SpecialMagic extends SpecialPage {
 		$this->setup( $parameters );
 		$this->setHeaders();
 
-		$wgOut->addHTML( $this->getForm() );
-		$wgOut->addWikiMsg( self::MSG . 'help' );
-
 		if ( !$this->options['module'] ) { return; }
 		$o = null;
 		switch ( $this->options['module'] ) {
@@ -139,24 +136,31 @@ class SpecialMagic extends SpecialPage {
 			case self::MODULE_NAMESPACE:
 				$o = new NamespaceCM( $this->options['language'] );
 				break;
-
 			default:
-				return;
+				// OOps.
 		}
+
+		$wgOut->addHTML( $this->getForm() );
 
 		if ( $wgRequest->wasPosted() && $this->options['savetodb'] ) {
 			if ( !$wgUser->isAllowed( 'translate' ) ) {
 				$wgOut->permissionRequired( 'translate' );
-				return;
+			} else {
+				$o->save( $wgRequest );
 			}
-
-			$o->save( $wgRequest );
 		}
 
 		if ( $o instanceof ComplexMessages ) {
 			if ( $this->options['export'] ) {
-				$result = Xml::element( 'textarea', array( 'rows' => '30' ) , $o->export() );
+				$output = $o->export();
+				if ( $output === '' ) {
+					$wgOut->addWikiMsg( 'translate-magic-nothing-to-export' );
+					return;
+				}
+				$result = Xml::element( 'textarea', array( 'rows' => '30' ), $output );
 			} else {
+
+				$wgOut->addWikiMsg( self::MSG . 'help' );
 				$result = $o->output();
 			}
 		}

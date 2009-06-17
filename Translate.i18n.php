@@ -92,6 +92,8 @@ Changes are not saved until you click save button below.',
 	'translate-magic-submit'      => 'Fetch',
 	'translate-magic-cm-export'   => 'Export', // cm- should be removed
 
+	'translate-magic-nothing-to-export' => 'There is nothing to export.',
+
 	'translate-magic-cm-to-be'    => 'To-be',
 	'translate-magic-cm-current'  => 'Current',
 	'translate-magic-cm-original' => 'Original',
