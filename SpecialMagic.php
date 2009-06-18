@@ -123,6 +123,8 @@ class SpecialMagic extends SpecialPage {
 		$this->setup( $parameters );
 		$this->setHeaders();
 
+		$wgOut->addHTML( $this->getForm() );
+
 		if ( !$this->options['module'] ) { return; }
 		$o = null;
 		switch ( $this->options['module'] ) {
@@ -139,8 +141,6 @@ class SpecialMagic extends SpecialPage {
 			default:
 				// OOps.
 		}
-
-		$wgOut->addHTML( $this->getForm() );
 
 		if ( $wgRequest->wasPosted() && $this->options['savetodb'] ) {
 			if ( !$wgUser->isAllowed( 'translate' ) ) {
