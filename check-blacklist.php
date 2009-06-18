@@ -9,6 +9,13 @@ array(
 		'tet','th','wuu','xmf','yue','zh','zh-classical','zh-cn','zh-hans',
 		'zh-hant','zh-hk','zh-sg','zh-tw','zh-yue'
 	),
-)
+),
+array(
+	'group' => 'core',
+	'check' => 'variable',
+	'message' => array(
+		'currentrev-asof'
+	),
+),
 
 );
