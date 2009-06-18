@@ -222,6 +222,7 @@ class MessageChecker {
 			$translation = $message->translation();
 			$translation = preg_replace( '/[^{}[\]()]/u', '', $translation );
 
+			$subcheck = 'brace';
 			$counts = array(
 				'{' => 0, '}' => 0,
 				'[' => 0, ']' => 0,
@@ -241,7 +242,7 @@ class MessageChecker {
 
 			if ( count($balance) ) {
 				$warnings[$key][] = array(
-					array( 'printf', $subcheck, $key, $code ),
+					array( 'balance', $subcheck, $key, $code ),
 					'translate-checks-balance',
 					array( 'PARAMS', $balance ),
 					array( 'COUNT', count($balance) ),

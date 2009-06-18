@@ -126,7 +126,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 
 			if ( count($wrongTags) ) {
 				$warnings[$key][] = array(
-					array( 'links', $subcheck, $key, $code ),
+					array( 'xhtml', $subcheck, $key, $code ),
 					'translate-checks-xhtml',
 					array( 'PARAMS', $wrongTags ),
 					array( 'COUNT', count($wrongTags) ),
