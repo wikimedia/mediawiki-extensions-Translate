@@ -110,6 +110,7 @@ class ViewMessagesTask extends TranslateTask {
 	protected function preinit() {
 		$code = $this->options->getLanguage();
 		$this->collection = $this->group->initCollection( $code );
+		$this->collection->setInfile( $this->group->load( $code ) );
 		$this->collection->filter( 'ignored' );
 		$this->collection->filter( 'optional' );
 	}
