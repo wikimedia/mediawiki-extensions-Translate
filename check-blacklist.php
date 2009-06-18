@@ -14,15 +14,29 @@ array(
 	'group' => 'core',
 	'check' => 'variable',
 	'message' => array(
-		'currentrev-asof',
-		'filehist-thumbtext',
-		'lastmodifiedatby',
-		'protect-expiring',
-		'rcnotefrom',
-		'revisionasof',
-		'confirmemail_body',
-		'history-feed-item-nocomment',
+		'confirmemail_body', // Optional time parameters
+		'currentrev-asof', // Optional time parameters
+		'filehist-thumbtext', // Optional time parameters
+		'history-feed-item-nocomment', // Optional time parameters
+		'lastmodifiedatby', // Optional time parameters
+		'protect-expiring', // Optional time parameters
+		'rcnotefrom', // Optional time parameters
+		'revision-info', // Optional time parameters
+		'revisionasof', // Optional time parameters
 	),
 ),
-
+array(
+	'group' => 'ext-abusefilter',
+	'check' => 'variable',
+	'message' => array(
+		 'abusefilter-reautoconfirm-none', // Optional username parameter for GENDER
+	)
+),
+array(
+	'group' => 'ext-advancedrandom',
+	'check' => 'links',
+	'message' => array(
+		 'advancedrandom-desc', // Contains link parts that may need translations
+	)
+)
 );
