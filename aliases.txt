@@ -155,7 +155,7 @@ Invitations
 file = Invitations/Invitations.alias.php
 
 Liquid threads
-file = LiquidThreads/Lqt.alias.php
+file = LiquidThreads/i18n/Lqt.alias.php
 
 Log entry
 file = LogEntry/LogEntry.alias.php

@@ -454,7 +454,7 @@ Link OpenID
 optional = linkopenid-prefs, linkopenid-prefstext-xrdsurl
 
 Liquid Threads
-file = LiquidThreads/Lqt.i18n.php
+file = LiquidThreads/i18n/Lqt.i18n.php
 descmsg = lqt-desc
 optional = lqt_rc_ellipsis
 ignored = lqt_header_warning_before_big
