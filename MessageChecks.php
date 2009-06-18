@@ -96,7 +96,6 @@ class MessageChecker {
 			// ... each which have array of warnings
 			foreach ( $warnings as $wkey => $warning ) {
 				$check = array_shift( $warning );
-				var_dump( $check );
 				foreach( self::$globalBlacklist as $pattern ) {
 					if ( !$this->match( $pattern['group'], $groupId ) ) continue;
 					if ( !$this->match( $pattern['check'], $check[0] ) ) continue;
