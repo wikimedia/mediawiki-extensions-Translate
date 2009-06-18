@@ -14,6 +14,12 @@ class PageTranslationHooks {
 			# Replace variable markers
 			$text = preg_replace_callback( '~(<tvar[^<>]+>)(.*)(</>)~s', $cb, $text );
 		}
+
+		// For translation pages, parse plural, grammar etc with correct language
+		if ( $page = TranslatablePage::isTranslationPage( $title ) ) {
+			list(, $code ) = TranslateUtils::figureMessage( $title->getText() );
+			$parser->mOptions->setTargetLanguage( Language::factory( $code ) );
+		}
 		return true;
 	}
 
