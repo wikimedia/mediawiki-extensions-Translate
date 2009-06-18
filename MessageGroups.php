@@ -377,6 +377,21 @@ class ExtensionMessageGroup extends MessageGroup {
 	public function exists() {
 		return is_readable( $this->getMessageFileWithPath( 'en' ) );
 	}
+
+	public function getChecker() {
+		$checker = new MediaWikiMessageChecker( $this );
+		$checker->setChecks( array(
+			array( $checker, 'pluralCheck' ),
+			array( $checker, 'wikiParameterCheck' ),
+			array( $checker, 'wikiLinksCheck' ),
+			array( $checker, 'XhtmlCheck' ),
+			array( $checker, 'braceBalanceCheck' ),
+			array( $checker, 'pagenameMessagesCheck' ),
+			array( $checker, 'miscMWChecks' )
+		) );
+		return $checker;
+	}
+
 }
 
 class AliasMessageGroup extends ExtensionMessageGroup {
@@ -437,20 +452,6 @@ class AliasMessageGroup extends ExtensionMessageGroup {
 		$writer->variableName = $this->getVariableName();
 		$writer->commaToArray = true;
 		return $writer;
-	}
-
-	public function getChecker() {
-		$checker = new MediaWikiMessageChecker( $this );
-		$checker->setChecks( array(
-			array( $checker, 'pluralCheck' ),
-			array( $checker, 'wikiParameterCheck' ),
-			array( $checker, 'wikiLinksCheck' ),
-			array( $checker, 'XhtmlCheck' ),
-			array( $checker, 'braceBalanceCheck' ),
-			array( $checker, 'pagenameMessagesCheck' ),
-			array( $checker, 'miscMWChecks' )
-		) );
-		return $checker;
 	}
 }
 
