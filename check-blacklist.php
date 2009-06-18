@@ -14,7 +14,14 @@ array(
 	'group' => 'core',
 	'check' => 'variable',
 	'message' => array(
-		'currentrev-asof'
+		'currentrev-asof',
+		'filehist-thumbtext',
+		'lastmodifiedatby',
+		'protect-expiring',
+		'rcnotefrom',
+		'revisionasof',
+		'confirmemail_body',
+		'history-feed-item-nocomment',
 	),
 ),
 
