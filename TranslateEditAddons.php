@@ -468,7 +468,7 @@ EOEO;
 
 		// Check for problems, but only if not fuzzy already
 		global $wgTranslateDocumentationLanguageCode;
-		if ( !$fuzzy && $code !== $wgTranslateDocumentationLanguageCode ) {
+		if ( $code !== $wgTranslateDocumentationLanguageCode ) {
 			$en = $group->getMessage( $key, 'en' );
 			$message = new FatMessage( $key, $en );
 			// Take the contents from edit field as a translation
@@ -479,8 +479,6 @@ EOEO;
 				if ( count( $checks ) ) $fuzzy = true;
 			}
 		}
-
-		if ( $fuzzy === false ) return true;
 
 		// Update it
 		if ( $revision === null ) {
@@ -499,8 +497,13 @@ EOEO;
 			'rt_type' => $id,
 			'rt_revision' => $rev
 		);
+		// Remove any existing fuzzy tags for this revision
 		$dbw->delete( 'revtag', $conds, __METHOD__ );
-		$dbw->insert( 'revtag', $conds, __METHOD__ );
+
+		// Add the fuzzy tag if needed
+		if ( $fuzzy !== false ) {
+			$dbw->insert( 'revtag', $conds, __METHOD__ );
+		}
 
 		return true;
 	}
