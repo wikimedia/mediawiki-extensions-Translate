@@ -149,6 +149,7 @@ $wgTranslateGroupStructure = array(
 	'/^ext-uniwiki/' => array( 'ext', 'uniwiki' ),
 	'/^ext-ui/' => array( 'ext', 'usabilityinitiative' ),
 	'/^ext/' => array( 'ext' ),
+	'/^out-mantis/' => array( 'mantis' ),
 	'/^page\|/' => array( 'page' ),
 );
 
