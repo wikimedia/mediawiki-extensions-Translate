@@ -33,7 +33,6 @@ if ( isset( $options['groups'] ) ) {
 $verbose = isset( $options['verbose'] );
 
 $groups = MessageGroups::singleton()->getGroups();
-$checker = MessageChecks::getInstance();
 
 foreach ( $groups as $g ) {
 	
@@ -45,8 +44,8 @@ foreach ( $groups as $g ) {
 		continue;
 	}
 
-	$type = $g->getType();
-	if ( !$checker->hasChecks( $type ) ) {
+	$checker = $g->getChecker();
+	if ( !$checker ) {
 		unset( $g );
 		continue;
 	}
@@ -66,7 +65,7 @@ foreach ( $groups as $g ) {
 		$collection->loadTranslations();
 
 		foreach ( $collection as $key => $message ) {
-			$prob = $checker->doFastChecks( $message, $type, $code );
+			$prob = $checker->checkMessageFast( $message,  $code );
 			if ( $prob ) {
 
 				if ( $verbose ) {

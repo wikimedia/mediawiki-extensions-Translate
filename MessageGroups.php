@@ -193,6 +193,10 @@ abstract class MessageGroup {
 	public function exists() {
 		return true;
 	}
+
+	public function getChecker() {
+		return null;
+	}
 }
 
 class CoreMessageGroup extends MessageGroup {
@@ -280,6 +284,20 @@ class CoreMessageGroup extends MessageGroup {
 		}
 
 		return $messages;
+	}
+
+	public function getChecker() {
+		$checker = new MediaWikiMessageChecker( $this );
+		$checker->setChecks( array(
+			array( $checker, 'pluralCheck' ),
+			array( $checker, 'wikiParameterCheck' ),
+			array( $checker, 'wikiLinksCheck' ),
+			array( $checker, 'XhtmlCheck' ),
+			array( $checker, 'braceBalanceCheck' ),
+			array( $checker, 'pagenameMessagesCheck' ),
+			array( $checker, 'miscMWChecks' )
+		) );
+		return $checker;
 	}
 }
 
@@ -419,6 +437,20 @@ class AliasMessageGroup extends ExtensionMessageGroup {
 		$writer->variableName = $this->getVariableName();
 		$writer->commaToArray = true;
 		return $writer;
+	}
+
+	public function getChecker() {
+		$checker = new MediaWikiMessageChecker( $this );
+		$checker->setChecks( array(
+			array( $checker, 'pluralCheck' ),
+			array( $checker, 'wikiParameterCheck' ),
+			array( $checker, 'wikiLinksCheck' ),
+			array( $checker, 'XhtmlCheck' ),
+			array( $checker, 'braceBalanceCheck' ),
+			array( $checker, 'pagenameMessagesCheck' ),
+			array( $checker, 'miscMWChecks' )
+		) );
+		return $checker;
 	}
 }
 
@@ -617,6 +649,20 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		$rev = Revision::newFromTitle( $title );
 		if ( !$rev ) return null;
 		return $rev->getText();
+	}
+
+	public function getChecker() {
+		$checker = new MediaWikiMessageChecker( $this );
+		$checker->setChecks( array(
+			array( $checker, 'pluralCheck' ),
+			array( $checker, 'wikiParameterCheck' ),
+			array( $checker, 'wikiLinksCheck' ),
+			array( $checker, 'XhtmlCheck' ),
+			array( $checker, 'braceBalanceCheck' ),
+			array( $checker, 'pagenameMessagesCheck' ),
+			array( $checker, 'miscMWChecks' )
+		) );
+		return $checker;
 	}
 }
 

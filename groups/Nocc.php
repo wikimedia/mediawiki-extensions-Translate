@@ -66,4 +66,13 @@ class NoccMessageGroup extends MessageGroup {
 	public function getWriter() {
 		return new PhpVariablesFormatWriter( $this );
 	}
+
+	public function getChecker() {
+		$checker = new MessageChecker( $this );
+		$checker->setChecks( array(
+			array( $checker, 'printfCheck' ),
+			array( $checker, 'braceBalanceCheck' ),
+		) );
+		return $checker;
+	}
 }

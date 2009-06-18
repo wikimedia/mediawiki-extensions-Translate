@@ -120,6 +120,8 @@ Changes are not saved until you click save button below.',
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links'              => 'Following {{PLURAL:$2|link is|$2 links are}} problematic:
 <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links-missing'      => 'Following {{PLURAL:$2|link is|$2 links are}} missing:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml'              => 'Please replace the following {{PLURAL:$2|tag|tags}} with correct ones:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural'             => 'Definition uses <nowiki>{{PLURAL:}}</nowiki> but translation does not.',

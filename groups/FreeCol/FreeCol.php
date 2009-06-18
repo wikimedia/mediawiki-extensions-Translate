@@ -1,13 +1,4 @@
 <?php
-/**
- * Support FreeCol: http://www.freecol.org/.
- *
- * @addtogroup Extensions
- *
- * @author Niklas Laxström
- * @copyright Copyright © 2008-2009, Niklas Laxström
- * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
- */
 
 class FreeColMessageGroup extends MessageGroup {
 	protected $label = 'FreeCol (open source game)';
@@ -385,5 +376,14 @@ class FreeColMessageGroup extends MessageGroup {
 
 	public function getWriter() {
 		return new JavaFormatWriter( $this );
+	}
+
+	public function getChecker() {
+		$checker = new FreeColMessageChecker( $this );
+		$checker->setChecks( array(
+			array( $checker, 'FreeColEscapesCheck' ),
+			array( $checker, 'FreeColVariablesCheck' ),
+		) );
+		return $checker;
 	}
 }

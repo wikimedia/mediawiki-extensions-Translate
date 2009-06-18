@@ -372,6 +372,8 @@ EOEO;
 
 		if ( $object->firsttime && !$wgRequest->getCheck( 'oldid' ) ) {
 			$object->textbox1 = $translation;
+		} else {
+			$translation = $object->textbox1;
 		}
 
 		// Some syntactic checks
@@ -379,9 +381,9 @@ EOEO;
 			$message = new FatMessage( $key, $en );
 			// Take the contents from edit field as a translation
 			$message->setTranslation( $translation );
-			$checker = MessageChecks::getInstance();
-			if ( $checker->hasChecks( $group->getType() ) ) {
-				$checks = $checker->doChecks( $message, $group->getType(), $code );
+			$checker = $group->getChecker();
+			if ( $checker ) {
+				$checks = $checker->checkMessage( $message, $code );
 				if ( count( $checks ) ) {
 					$checkMessages = array();
 					foreach ( $checks as $checkParams ) {
@@ -471,9 +473,9 @@ EOEO;
 			$message = new FatMessage( $key, $en );
 			// Take the contents from edit field as a translation
 			$message->setTranslation( $text );
-			$checker = MessageChecks::getInstance();
-			if ( $checker->hasChecks( $group->getType() ) ) {
-				$checks = $checker->doChecks( $message, $group->getType(), $code );
+			$checker = $group->getChecker();
+			if ( $checker ) {
+				$checks = $checker->checkMessage( $message, $code );
 				if ( count( $checks ) ) $fuzzy = true;
 			}
 		}
