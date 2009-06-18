@@ -17,7 +17,13 @@ class MessageChecker {
 			$keys = array( 'group', 'check', 'subcheck', 'code', 'message' );
 			foreach( $list as $key => $pattern ) {
 				foreach ( $keys as $checkKey ) {
-					if ( !isset($pattern[$checkKey]) ) $list[$key][$checkKey] = '#';
+					if ( !isset($pattern[$checkKey]) ) {
+						$list[$key][$checkKey] = '#';
+					} elseif ( is_array($pattern[$checkKey]) ) {
+						$list[$key][$checkKey] = array_map( 'strtolower', $pattern[$checkKey] );
+					} else {
+						$list[$key][$checkKey] = strtolower( $pattern[$checkKey] );
+					}
 				}
 			}
 
@@ -118,9 +124,9 @@ class MessageChecker {
 		if ( $pattern === '#' ) {
 			return true;
 		} elseif( is_array( $pattern ) ) {
-			return in_array( $value, $pattern, true );
+			return in_array( strtolower($value), $pattern, true );
 		} else {
-			return $value === $pattern;
+			return strtolower($value) === $pattern;
 		}
 	}
 
