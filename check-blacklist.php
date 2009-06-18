@@ -39,4 +39,27 @@ array(
 		 'advancedrandom-desc', // Contains link parts that may need translations
 	)
 )
+array(
+	'group' => 'ext-blahtext',
+	'check' => 'balance',
+	'message' => array(
+		 'math_MissingOpenBraceAfter', // Contains unbalanced {
+		 'math_MissingOpenBraceAtEnd', // Contains unbalanced {
+		 'math_MissingOpenBraceBefore', // Contains unbalanced {
+	)
+)
+array(
+	'group' => 'ext-centralauth',
+	'check' => 'links',
+	'message' => array(
+		 'centralauth-readmore-text', // Contains link to page that may be available in a translated version
+	)
+)
+array(
+	'group' => 'ext-newusernotification',
+	'check' => 'variable',
+	'message' => array(
+		 'newusernotifbody', // Optional time parameters
+	)
+)
 );
