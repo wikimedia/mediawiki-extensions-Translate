@@ -20,9 +20,10 @@ class MessageChecker {
 					if ( !isset($pattern[$checkKey]) ) {
 						$list[$key][$checkKey] = '#';
 					} elseif ( is_array($pattern[$checkKey]) ) {
-						$list[$key][$checkKey] = array_map( 'strtolower', $pattern[$checkKey] );
+						$list[$key][$checkKey] =
+							array_map( array( $this, 'foldValue' ), $pattern[$checkKey] );
 					} else {
-						$list[$key][$checkKey] = strtolower( $pattern[$checkKey] );
+						$list[$key][$checkKey] = $this->foldValue( $pattern[$checkKey] );
 					}
 				}
 			}
@@ -31,6 +32,10 @@ class MessageChecker {
 		}
 
 		$this->group = $group;
+	}
+
+	protected function foldValue( $value ) {
+		return str_replace( ' ', '_', strtolower( $value ) );
 	}
 
 	/**

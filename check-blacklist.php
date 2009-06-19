@@ -41,7 +41,7 @@ array(
 	)
 ),
 array(
-	'group' => 'ext-blahtext',
+	'group' => 'ext-blahtex',
 	'check' => 'balance',
 	'message' => array(
 		'math_MissingOpenBraceAfter', // Contains unbalanced {
