@@ -1160,7 +1160,21 @@ Kun siste versjoner kan bli markert for oversettelse.',
 	'tpt-edit-failed' => 'Kunne ikke oppdatere siden: $1',
 	'tpt-already-marked' => 'Den siste versjonen av denne siden har allerede blitt markert for oversettelse.',
 	'tpt-list-nopages' => 'Ingen sider er marker for oversettelse, eller er klare for å bli markert for oversettelse.',
+	'tpt-old-pages' => 'En versjon av {{PLURAL:$1|denne siden|disse sidene}} har blitt markert for oversettelse.',
+	'tpt-rev-latest' => 'siste versjon',
+	'tpt-rev-old' => 'forskjell fra forrige markerte versjon',
+	'tpt-rev-mark-new' => 'merk denne versjonen for oversettelse',
+	'tpt-translate-this' => 'oversett denne siden',
 	'translate-tag-translate-link-desc' => 'Oversett denne siden',
+	'translate-tag-markthisagain' => 'Denne siden har hatt <span class="plainlinks">[$1 endringer]</span> siden den sist ble <span class="plainlinks">[$2 markert for oversettelse]</span>.',
+	'translate-tag-hasnew' => 'Denne siden inneholder <span class="plainlinks">[$1 endringer]</span> som ikke har blitt markert for oversettelse.',
+	'tpt-translation-intro' => 'Denne siden er en <span class="plainlinks">[$1 oversatt versjon]</span> av en side [[$2]] og oversettelsen er $3% ferdig og oppdatert.',
+	'tpt-translation-intro-fuzzy' => 'Utdaterte oversettelser er markert på denne måten.',
+	'tpt-languages-legend' => 'Andre språk:',
+	'tpt-target-page' => 'Denne siden kan ikke oppdateres manuelt.
+Denne siden er en oversettelse av siden [[$1]] og oversettelsen kan bli oppdatert ved å bruke [$2 oversettelsesverktøyet].',
+	'tpt-unknown-page' => 'Dette navnerommet er reservert for oversettelser av innholdssider.
+Denne siden som du prøver å redigere virker ikke å samsvare med noen av sidene som er markert for oversettelse.',
 );
 
 /** Occitan (Occitan)

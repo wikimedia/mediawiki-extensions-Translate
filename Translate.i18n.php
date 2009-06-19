@@ -1124,6 +1124,8 @@ $messages['be-tarask'] = array(
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '{{PLURAL:$2|Праблематычная спасылка|Праблематычныя спасылкі}}:
 <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links-missing' => '{{PLURAL:$2|Адсутнічае наступная $2 спасылка|Адсутнічаюць наступныя $2 спасылкі|Адсутнічаюць наступныя $2 спасылак}}:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Калі ласка, выпраўце {{PLURAL:$2|наступны тэг|наступныя тэгі}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Крынічны тэкст выкарыстоўвае <nowiki>{{PLURAL:}}</nowiki>, а пераклад — не.',
@@ -1560,6 +1562,7 @@ Promjene nisu spremljene sve dok ne kliknete dugme spremi koje se nalazi ispod.'
 	'translate-magic-module' => 'Modul:',
 	'translate-magic-submit' => 'Pronađi',
 	'translate-magic-cm-export' => 'Izvoz',
+	'translate-magic-nothing-to-export' => 'Nema ništa za izvoz.',
 	'translate-magic-cm-to-be' => 'Treba biti',
 	'translate-magic-cm-current' => 'Trenutno',
 	'translate-magic-cm-original' => 'Originalno',
@@ -1580,6 +1583,8 @@ Promjene nisu spremljene sve dok ne kliknete dugme spremi koje se nalazi ispod.'
 	'translate-checks-balance' => 'Postoji nejednak broj vrsta {{PLURAL:$2|zagrade|zagrada}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '{{PLURAL:$2|Slijedeći link je problematičan|Slijedeća $2 linka su problematični|Slijedećih $2 linkova je problematično}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links-missing' => '{{PLURAL:$2|Slijedeći link|Slijedeća $2 linka|Slijedeći $2 linkova}} nedostaje:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Molimo Vas da zamijenite {{PLURAL:$2|slijedeću oznaku|slijedeće oznake}} sa ispravnim:
 <strong><nowiki>$1</nowiki></strong>',
@@ -2127,7 +2132,7 @@ Du musst in der Übersetzer-Gruppe sein, um Änderungen zu speichern.
 	'translate-magic-module' => 'Modul:',
 	'translate-magic-submit' => 'Hole',
 	'translate-magic-cm-export' => 'Export',
-	'translate-magic-nothing-to-export' => 'Es gibt nichts zum exportieren.',
+	'translate-magic-nothing-to-export' => 'Es gibt nichts zum Exportieren.',
 	'translate-magic-cm-to-be' => 'Sollte sein',
 	'translate-magic-cm-current' => 'Aktuell',
 	'translate-magic-cm-original' => 'Original',
@@ -2145,6 +2150,8 @@ Du musst in der Übersetzer-Gruppe sein, um Änderungen zu speichern.
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Der folgende Parameter ist|Die folgenden Parameter sind}} unbekannt: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Die {{PLURAL:$2|folgende Klammersetzung ist|folgenden Klammersetzungen sind}} nicht ausgeglichen: <strong>$1</strong>',
 	'translate-checks-links' => '{{PLURAL:$2|Der folgende Link ist|Die folgenden Links sind}} problematisch: <strong>$1</strong>',
+	'translate-checks-links-missing' => '{{PLURAL:$2|Folgender Link fehlt|Folgende Links fehlen}}:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Bitte ersetze {{PLURAL:$2|den folgenden Tag|die folgenden Tags}} durch die korrekten: <strong>$1</strong>',
 	'translate-checks-plural' => 'Das Original benutzt <nowiki>{{PLURAL:}}</nowiki>, die Übersetzung aber nicht.',
 	'translate-checks-pagename' => 'Namensraum geändert durch die Definition',
@@ -2332,6 +2339,7 @@ Musyš w kupce pśełožowarjow byś, aby mogł změny cyniś. Změny se njeskł
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Slědujucy parameter jo njeznaty|Slědujucej parametra stej njeznatej|Slědujuce parametry su njeznate|Slědujucych parametrow jo njeznate}}: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Jo njerowna licba {{PLURAL:$2|spinka|spinkow}}: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '{{PLURAL:$2|Slědujucy wótkaz jo problematiski|Slědujucej wótkaza stej problematiskej|Slědujuce wótkaze su problematiske|Slědujucych wótkazow jo problematiske}}: <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links-missing' => '{{PLURAL:$2|Slědujucy wótkaz felujo|Slědujucej $2 wótkaza felujotej|Slědujuce $2 wótkaze feluju|Slědujucych $2 wótkazow felujo}}: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Wuměń pšosym {{PLURAL:$2|Slědujucy tag|slědujucej taga|slědujuce tagi|slědujuce tagi}} pśez {{PLURAL:$2|korektny|korektnej|korektne|korektne}}: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Definicija <nowiki>{{PLURAL:}}</nowiki> wužywa, pśełožk pak nic.',
 	'translate-checks-pagename' => 'Mjenjowy rum pśez definiciju změnjony',
@@ -3147,6 +3155,7 @@ $messages['fa'] = array(
 );
 
 /** Finnish (Suomi)
+ * @author Cimon Avaro
  * @author Crt
  * @author Mobe
  * @author Nike
@@ -3248,6 +3257,7 @@ Muutoksia ei tallenneta, ennen kuin painat tallenna-painiketta.',
 	'translate-checks-plural' => 'Määritelmä käyttää <nowiki>{{PLURAL:}}</nowiki>-koodia, mutta käännös ei.',
 	'translate-checks-pagename' => 'Nimiavaruus muuttui määritellystä',
 	'translate-checks-format' => 'Tämä käännös ei noudata alkuperäistä tekstiä tai sillä on virheellinen syntaksi: $1',
+	'translate-checks-escape' => 'Seuraavat escape-merkkijonot saattavat olla tahattomia: <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'Älä lähetä minulle uutiskirjeitä',
 	'right-translate' => 'Kääntää käännöstyökalulla',
 	'translate-rc-translation-filter' => 'Käännösten suodatus',
@@ -3286,7 +3296,7 @@ Voit [$1 muokata lähdesivua] tai [$2 päivittää käännöksen].',
 	'translate-translations-fieldset-title' => 'Viesti',
 	'translate-translations-messagename' => 'Nimi',
 	'translate-translations-project' => 'Projekti',
-	'translate-translations-including-no-param' => 'Määrittele oikea sivun nimi alasivuparametriin',
+	'translate-translations-including-no-param' => 'Määrittele toimiva viestiavain alasivuparametriin',
 	'languagestats' => 'Kielitilastot',
 	'languagestats-summary' => 'Tämä sivu näyttää käännöstilastot kaikille kielen viestiryhmille.',
 	'translate-language-code' => 'Kielikoodi',
@@ -3300,6 +3310,7 @@ Voit [$1 muokata lähdesivua] tai [$2 päivittää käännöksen].',
 	'translate-nothing-to-do' => 'Kaikki mahdolliset käännökset on merkitty tehdyiksi.
 Voit tarkistaa käännöksiä toimintosivulla [[Special:Translate|{{int:translate}}]].',
 	'translate-save' => 'Tallenna ($1)',
+	'translate-group-desc-mediawikiextensions' => 'Kokoava metaviestiryhmä, joka sisältää kaikki viestit MediaWikin tukemille ohjelmalaajennuksille',
 );
 
 /** French (Français)
@@ -3383,6 +3394,7 @@ Les modifications ne sont pas enregistrées tant que vous n’avez pas cliqué s
 	'translate-magic-module' => 'Module :',
 	'translate-magic-submit' => 'Lister',
 	'translate-magic-cm-export' => 'Exporter',
+	'translate-magic-nothing-to-export' => 'Il n’y a rien à exporter.',
 	'translate-magic-cm-to-be' => 'Devient',
 	'translate-magic-cm-current' => 'Actuel',
 	'translate-magic-cm-original' => 'Original',
@@ -3403,6 +3415,8 @@ Les modifications ne sont pas enregistrées tant que vous n’avez pas cliqué s
 	'translate-checks-balance' => 'Il y a un nombre impair de parenthèse{{PLURAL:$2||s}} :
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '{{PLURAL:$2|Le lien suivant pose|Les $2 liens suivants posent}} problème :
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links-missing' => '{{PLURAL:$2|Le lien suivant est manquant|Les $2 liens suivants sont manquants}} :
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Veuillez corriger {{PLURAL:$2|la balise suivante|les balises suivantes}} :
 <strong><nowiki>$1</nowiki></strong>',
@@ -3576,6 +3590,7 @@ Los changements sont pas sôvâs tant que vos éd pas clicâ sur lo boton « Sô
 	'translate-magic-module' => 'Modulo :',
 	'translate-magic-submit' => 'Listar',
 	'translate-magic-cm-export' => 'Èxportar',
+	'translate-magic-nothing-to-export' => 'Y at ren a èxportar.',
 	'translate-magic-cm-to-be' => 'Vint',
 	'translate-magic-cm-current' => 'Ora',
 	'translate-magic-cm-original' => 'Originâl',
@@ -3596,6 +3611,8 @@ Los changements sont pas sôvâs tant que vos éd pas clicâ sur lo boton « Sô
 	'translate-checks-balance' => 'Y at un nombro mâl-par de {{PLURAL:$2|parentèsa|parentèses}} :
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '{{PLURAL:$2|Ceti lim est|Cetos $2 lims sont}} pas de sûr :
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links-missing' => '{{PLURAL:$2|Ceti lim est manquent|Cetos $2 lims sont manquents}} :
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Volyéd corregiér {{PLURAL:$2|ceta balisa|cetes balises}} :
 <strong><nowiki>$1</nowiki></strong>',
@@ -3818,6 +3835,8 @@ Os cambios non se gardan ata que prema no botón "Gardar" de embaixo.',
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '{{PLURAL:$2|A seguinte ligazón é problemática|As seguintes ligazóns son problemáticas}}:
 <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links-missing' => '{{PLURAL:$2|Falta a seguinte ligazón|Faltan as seguintes $2 ligazóns}}:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Por favor, substitúa {{PLURAL:$2|a seguinte etiqueta pola correcta|as seguintes etiquetas polas correctas}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'A definición usa <nowiki>{{PLURAL:}}</nowiki>, pero a tradución non.',
@@ -4038,6 +4057,8 @@ Du muesch in dr Ibersetzer-Gruppe syy go Änderige z spychere.
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Dää Parameter isch|Die Parameter sin}} nit bekannt: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Die {{PLURAL:$2|Chlammeresetzig isch|Chlammersetzige sin}} nit uusgliche: <strong>$1</strong>',
 	'translate-checks-links' => '{{PLURAL:$2|Des Gleich isch|Die Gleicher sin}} problematisch: <strong>$1</strong>',
+	'translate-checks-links-missing' => '{{PLURAL:$2|Des Gleich (Link) wird|Die $2 Gleicher (Links) wäre}} vermisst:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Bitte ersetz {{PLURAL:$2|dää Tag|die Tag}} dur di korrekte: <strong>$1</strong>',
 	'translate-checks-plural' => 'S Original bruucht <nowiki>{{PLURAL:}}</nowiki>, d Ibersetzig aber nit.',
 	'translate-checks-pagename' => 'Namensruum gänderet dur d Definition',
@@ -4590,6 +4611,7 @@ Dyrbiš w skupinje přełožowarjow być, zo by změny składował. Změny so nj
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Slědowacy parameter je njeznaty|Slědowacej parametraj stej njeznatej|Slědowace parametry su njeznate|Slědowacych parametrow je njeznate}}: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Je njeruna ličba {{PLURAL:$2|spinka|spinkow|spinkow|spinkow}}: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '{{PLURAL:$2|Slědowacy wotkaz je problematiski|Slědowacej wotkazaj stej problematiskej|Slědowace wotkazy wotkazy su problematiske|Slědowacych wotkazow je problematiske}}: <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links-missing' => '{{PLURAL:$2|Slědowacy wotkaz pobrachuje|Slědowacej $2 wotkazaj pobrachujetej|Slědowace $2 wotkazy pobrachuja|Slědowacych $2 wotkazow pobrachuje}}: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Narunaj prošu {{PLURAL:$2|slědowacu tafličku|slědowacej tafličce|slědowace taflički|slědowacych tafličkow}} přez {{PLURAL:$2|korektnu|korektnej|korektne|korektne}}: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Definicija wužiwa <nowiki>{{PLURAL:}}</nowiki>, přełožk pak nic.',
 	'translate-checks-pagename' => 'Mjenowy rum z definicije změnjeny',
@@ -5097,6 +5119,7 @@ Perubahan tidak akan disimpan hingga Anda mengklik tombol simpan di bawah.',
 	'translate-magic-module' => 'Modul:',
 	'translate-magic-submit' => 'Ambil',
 	'translate-magic-cm-export' => 'Ekspor',
+	'translate-magic-nothing-to-export' => 'Tidak ada yang dapat diekspor.',
 	'translate-magic-cm-to-be' => 'Menjadi',
 	'translate-magic-cm-current' => 'Kini',
 	'translate-magic-cm-original' => 'Asal',
@@ -5123,6 +5146,7 @@ Perubahan tidak akan disimpan hingga Anda mengklik tombol simpan di bawah.',
 	'translate-checks-plural' => 'Definisi menggunakan <nowiki>{{PLURAL:}}</nowiki> tapi terjemahannya tidak.',
 	'translate-checks-pagename' => 'Ruang nama berubah dari definisinya',
 	'translate-checks-format' => 'Terjemahan ini tidak mengikuti definisi atau memiliki sintaksis yang tidak valid: $1',
+	'translate-checks-escape' => "Rangkaian kontrol (''escape sequence'') berikut mungkin tidak disengaja: <strong>$1</strong>",
 	'translate-pref-nonewsletter' => 'Jangan kirimi saya surat-e nawala',
 	'right-translate' => 'Menyunting menggunakan antarmuka penerjemahan',
 	'translate-rc-translation-filter' => 'Filter terjemahan:',
@@ -5517,6 +5541,7 @@ $messages['ja'] = array(
 	'translate-magic-module' => 'モジュール:',
 	'translate-magic-submit' => '表示を更新',
 	'translate-magic-cm-export' => 'エクスポート',
+	'translate-magic-nothing-to-export' => 'エクスポートできるものはありません。',
 	'translate-magic-cm-to-be' => '変更後',
 	'translate-magic-cm-current' => '変更前',
 	'translate-magic-cm-original' => '元の内容',
@@ -5537,6 +5562,8 @@ $messages['ja'] = array(
 	'translate-checks-balance' => '$2個の括弧の数が一致していません:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '$2個のリンクに問題があります:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links-missing' => '以下の{{PLURAL:$2|$2個の}}リンクが欠けています:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => '以下の$2個のタグを正しいものに修正してください:
 <strong><nowiki>$1</nowiki></strong>',
@@ -6490,6 +6517,7 @@ Do moß en de Jrop „Övversäzer“ sen, för hee Änderonge maache ze könne.
 	'translate-magic-module' => 'Dat Modul:',
 	'translate-magic-submit' => 'Loß jonn!',
 	'translate-magic-cm-export' => 'Äxpocht aanfange',
+	'translate-magic-nothing-to-export' => 'Et jit nix ze expoteeere.',
 	'translate-magic-cm-to-be' => 'Soll wääde',
 	'translate-magic-cm-current' => 'Eß jäz',
 	'translate-magic-cm-original' => 'Orrijinaal',
@@ -6508,6 +6536,7 @@ Do moß en de Jrop „Övversäzer“ sen, för hee Änderonge maache ze könne.
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Do {{PLURAL:$2|jëijd_en Klammer nit op odder|jonn ongerscheedlish fill Klammere op un|eß Dreß}} zoh: <strong>$1</strong>',
 	'translate-checks-links' => 'Hee {{PLURAL:$2|dä Lengk eß|di Lengks senn|dat Jedrißße}} problemattesch: <strong>$1</strong>',
+	'translate-checks-links-missing' => 'Hee {{PLURAL:$2|dä Lengk fäählt:|di $2 Lenks fäähle:|fäähle kei Lengks.}} <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Donn hee {{PLURAL:$2|dat Kommando|di Kommandose|dat Jedrißße}} ußtuusche, un schriif de reschtije do för hen: <strong>$1</strong>',
 	'translate-checks-plural' => 'De Ojjinaal-Nohresch bruch <code><nowiki>{{PLURAL:}}</nowiki></code>, ävver de Övversäzong deijt dat nit?',
 	'translate-checks-pagename' => 'Dat Appachtemang es anders wi em ojinaal Tex',
@@ -7474,6 +7503,7 @@ Wijzigingen worden niet bewaard totdat u op "Pagina opslaan" hebt geklikt.',
 	'translate-magic-module' => 'Module:',
 	'translate-magic-submit' => 'Ophalen',
 	'translate-magic-cm-export' => 'Exporteren',
+	'translate-magic-nothing-to-export' => 'Er is niets om te exporteren.',
 	'translate-magic-cm-to-be' => 'Toekomstig',
 	'translate-magic-cm-current' => 'Huidig',
 	'translate-magic-cm-original' => 'Brontekst',
@@ -7494,6 +7524,8 @@ Wijzigingen worden niet bewaard totdat u op "Pagina opslaan" hebt geklikt.',
 	'translate-checks-balance' => 'Er wordt een oneven {{PLURAL:$2|aantal haakjes|aantal haakjes}} gebruikt:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => 'De volgende {{PLURAL:$2|verwijzing is|verwijzingen zijn}} problematisch:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links-missing' => 'De volgende {{PLURAL:$2|verwijzing mist|$2 verwijzingen missen}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Vervang de volgende {{PLURAL:$2|tag|tags}} door de juiste:
 <strong><nowiki>$1</nowiki></strong>',
@@ -8003,6 +8035,8 @@ Los cambiaments seràn pas salvats abans que cliquèssetz sul boton « Salvar »
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Lo paramètre seguent es desconegut|Los paramètres seguents son desconeguts}} : <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'I a un nombre impar de {{PLURAL:$2|parentèsis|parentèsis}} : <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '{{PLURAL:$2|Lo ligam seguent causa|Los ligams seguents causan}} de problèmas : <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links-missing' => '{{PLURAL:$2|Lo ligam seguent es mancant|Los $2 ligams seguents son mancants}} :
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Sètz convidat(ada) a corregir {{PLURAL:$2|la balisa seguenta|las balisas seguentas}} : <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'La definicion utiliza <nowiki>{{PLURAL:}}</nowiki> mas pas la traduccion',
 	'translate-checks-pagename' => 'Nom d’espaci modificat dempuèi la definicion',
@@ -8107,7 +8141,11 @@ $messages['pdc'] = array(
 	'translate-talk' => 'Gschwetz',
 	'translate-history' => 'Gschicht',
 	'translate-page-navigation-legend' => 'Faahre-Gnepp',
+	'translate-next' => 'neegscht Blatt',
+	'translate-prev' => 'letscht Blatt',
 	'translate-page-edit' => 'ennere',
+	'translate-magic-cm-comment' => 'Comment:',
+	'translate-translations-messagename' => 'Naame:',
 );
 
 /** Polish (Polski)
@@ -8951,6 +8989,7 @@ $messages['ru'] = array(
 	'translate-magic-module' => 'Модуль:',
 	'translate-magic-submit' => 'Вывести',
 	'translate-magic-cm-export' => 'Выгрузить',
+	'translate-magic-nothing-to-export' => 'Нечего экспортировать.',
 	'translate-magic-cm-to-be' => 'Должно быть',
 	'translate-magic-cm-current' => 'Текущее',
 	'translate-magic-cm-original' => 'Исходное',
@@ -8971,6 +9010,8 @@ $messages['ru'] = array(
 	'translate-checks-balance' => 'Непарное количество открывающих и закрывающих {{PLURAL:$2|скобок|скобок}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '{{PLURAL:$2|Следующая ссылка вызывает проблемы|Следующие ссылки вызывают проблемы}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links-missing' => '{{PLURAL:$2|Отсутствует $2 ссылка|Отсутствуют $2 ссылки|Отсутствуют $2 ссылок}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Пожалуйста, исправьте {{PLURAL:$2|следующий тег|следующие теги}}:
 <strong><nowiki>$1</nowiki></strong>',
