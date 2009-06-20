@@ -154,7 +154,6 @@ class SpecialTranslations extends SpecialAllpages {
 		$tableheader .= Xml::element( 'th', null, wfMsg( 'allmessagescurrent' ) );
 		$tableheader .= Xml::closeElement( 'tr' );
 
-
 		// Adapted version of TranslateUtils:makeListing() by Nikerabbit
 		$out = $tableheader;
 
@@ -185,7 +184,7 @@ class SpecialTranslations extends SpecialAllpages {
 
 			$extra = '';
 
-			if( $key->hasTag( 'fuzzy' ) ) {
+			if( TranslateEditAddons::isFuzzy( $t ) ) {
 				$class = 'orig';
 			} else {
 				$class = 'def';
