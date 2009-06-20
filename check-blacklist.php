@@ -99,14 +99,7 @@ array(
 	'group' => 'ext-farmer',
 	'check' => 'links',
 	'message' => array(
-		'farmer-confirmsetting-tex', // Contains links that are translated
-	)
-),
-array(
-	'group' => 'ext-farmer',
-	'check' => 'variable',
-	'message' => array(
-		'farmer-confirmsetting-tex', // Contains links that are translated
+		'farmer-confirmsetting-text', // Contains links that are translated
 	)
 ),
 array(
