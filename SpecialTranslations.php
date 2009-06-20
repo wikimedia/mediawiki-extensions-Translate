@@ -143,7 +143,6 @@ class SpecialTranslations extends SpecialAllpages {
 		foreach ( $res as $s ) { $titles[] = $s->page_title; }
 		$pageInfo = TranslateUtils::getContents( $titles, $namespace );
 
-
 		$tableheader = Xml::openElement( 'table', array(
 			'class'   => 'mw-sp-translate-table',
 			'border'  => '1',
@@ -186,8 +185,14 @@ class SpecialTranslations extends SpecialAllpages {
 
 			$extra = '';
 
+			if( $key->hasTag( 'fuzzy' ) ) {
+				$class = 'orig';
+			} else {
+				$class = 'def';
+			}
+			
 			$leftColumn = $anchor . $tools['edit'] . $extra;
-			$out .= Xml::tags( 'tr', array( 'class' => 'def' ),
+			$out .= Xml::tags( 'tr', array( 'class' => $class ),
 				Xml::tags( 'td', null, $leftColumn ) .
 				Xml::tags( 'td', null, TranslateUtils::convertWhiteSpaceToHTML( $pageInfo[$key][0] ) )
 			);
