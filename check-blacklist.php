@@ -103,6 +103,13 @@ array(
 	)
 ),
 array(
+	'group' => 'ext-farmer',
+	'check' => 'variable',
+	'message' => array(
+		'farmer-confirmsetting-tex', // Contains links that are translated
+	)
+),
+array(
 	'group' => 'ext-flaggedrevs-stabilization',
 	'check' => 'variable',
 	'message' => array(
