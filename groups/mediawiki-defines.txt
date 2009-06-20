@@ -300,6 +300,11 @@ id = ext-flaggedrevs-oldreviewedpages
 file = FlaggedRevs/language/OldReviewedPages.i18n.php
 descmsg = oldreviewedpages-legend
 
+Flagged Revisions - Problem Changes
+id = ext-flaggedrevs-problemchanges
+file = FlaggedRevs/language/ProblemChanges.i18n.php
+descmsg = problemchanges
+
 Flagged Revisions - Problem Pages
 id = ext-flaggedrevs-problempages
 file = FlaggedRevs/language/ProblemPages.i18n.php
