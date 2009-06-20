@@ -954,6 +954,16 @@ id = ext-ui-editwarning
 file = UsabilityInitiative/EditWarning/EditWarning.i18n.php
 descmsg = editwarning-desc
 
+Usability Initiative - Navigable TOC
+id = ext-ui-navigabletoc
+file = UsabilityInitiative/NavigableTOC/NavigableTOC.i18n.php
+descmsg = navigabletoc-desc
+
+Usability Initiative - Opt In
+id = ext-ui-optin
+file = UsabilityInitiative/OptIn/OptIn.i18n.php
+descmsg = optin-desc
+
 Usability Initiative - Pref Stats
 id = ext-ui-prefstats
 file = UsabilityInitiative/PrefStats/PrefStats.i18n.php

@@ -420,6 +420,11 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-titlekey',
 		'ext-torblock',
 		'ext-trustedxff',
+		'ext-ui-usabilityinitiative',
+		'ext-ui-edittoolbar',
+		'ext-ui-editwarning',
+		'ext-ui-optin',
+		'ext-ui-prefstats',
 		'ext-wikihiero',
 		'ext-wikimediamessages',
 	);
@@ -632,6 +637,7 @@ class AllUsabilityInitiativeExtensionsGroup extends AllMediawikiExtensionsGroup 
 		'ext-ui-usabilityinitiative',
 		'ext-ui-edittoolbar',
 		'ext-ui-editwarning',
+		'ext-ui-optin',
 		'ext-ui-prefstats',
 	);
 

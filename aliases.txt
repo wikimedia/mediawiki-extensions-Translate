@@ -283,6 +283,12 @@ file = Translate/Translate.alias.php
 Uniwiki Create page
 file = uniwiki/CreatePage/CreatePage.alias.php
 
+Usability Initiative Opt in
+file = UsabilityInitiative/OptIn/OptIn.alias.php
+
+Usability Initiative Pref stats
+file = UsabilityInitiative/PrefStats/PrefStats.alias.php
+
 Usage statistics
 file = UsageStatistics/SpecialUserStats.alias.php
 
