@@ -2150,7 +2150,7 @@ Du musst in der Übersetzer-Gruppe sein, um Änderungen zu speichern.
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Der folgende Parameter ist|Die folgenden Parameter sind}} unbekannt: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Die {{PLURAL:$2|folgende Klammersetzung ist|folgenden Klammersetzungen sind}} nicht ausgeglichen: <strong>$1</strong>',
 	'translate-checks-links' => '{{PLURAL:$2|Der folgende Link ist|Die folgenden Links sind}} problematisch: <strong>$1</strong>',
-	'translate-checks-links-missing' => '{{PLURAL:$2|Folgender Link fehlt|Folgende Links fehlen}}:
+	'translate-checks-links-missing' => '{{PLURAL:$2|Folgender Link fehlt|Folgende $2 Links fehlen}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Bitte ersetze {{PLURAL:$2|den folgenden Tag|die folgenden Tags}} durch die korrekten: <strong>$1</strong>',
 	'translate-checks-plural' => 'Das Original benutzt <nowiki>{{PLURAL:}}</nowiki>, die Übersetzung aber nicht.',
@@ -4459,7 +4459,7 @@ $messages['hr'] = array(
 	'translate-edit-definition' => 'Definicija poruke',
 	'translate-edit-contribute' => 'dodaj',
 	'translate-edit-no-information' => "''Ova poruka nema dokumentacije. Ako znate gdje ili kako se koristi poruka, možete pomoći drugim prevoditeljima dodavajući dokumentaciju ovoj poruci.''",
-	'translate-edit-information' => 'Informacije o ovoj poruci ($1)',
+	'translate-edit-information' => 'Informacije o poruci "$2" ($1)',
 	'translate-edit-in-other-languages' => 'Poruka u drugim jezicima',
 	'translate-edit-committed' => 'Trenutačni prijevod u softveru',
 	'translate-edit-warnings' => 'Upozorenja o nepotpunim prijevodima',
@@ -5506,11 +5506,11 @@ $messages['ja'] = array(
 	'translate-page-group' => '種類',
 	'translate-page-language' => '言語',
 	'translate-page-limit' => '表示数',
-	'translate-page-limit-option' => 'ページごとに $1個のメッセージ',
+	'translate-page-limit-option' => 'ページごとに $1{{PLURAL:$1|個}}のメッセージ',
 	'translate-submit' => '表示を更新',
 	'translate-page-navigation-legend' => '案内',
 	'translate-page-showing' => '全 $3 件中 $1 件目から $2 件目まで表示しています',
-	'translate-page-showing-all' => '全 $1 件を表示しています',
+	'translate-page-showing-all' => '全 $1 {{PLURAL:$1|件}}を表示しています',
 	'translate-page-showing-none' => '該当する項目はありません。',
 	'translate-next' => '次のページ',
 	'translate-prev' => '前のページ',
@@ -5555,17 +5555,17 @@ $messages['ja'] = array(
 	'translationchanges' => '翻訳変更状況',
 	'translationchanges-export' => 'エクスポート',
 	'translationchanges-change' => '$1: $2 翻訳者-$3',
-	'translate-checks-parameters' => '次の$2個のパラメータが利用されていません:
+	'translate-checks-parameters' => '次の{{PLURAL:$2|パラメータ}}が利用されていません:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-parameters-unknown' => '次のパラメーターがみつかりません:
+	'translate-checks-parameters-unknown' => '次の{{PLURAL:$2|パラメータ}}が未定義です:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-balance' => '$2個の括弧の数が一致していません:
+	'translate-checks-balance' => '{{PLURAL:$2|括弧}}の数が一致していません:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links' => '$2個のリンクに問題があります:
+	'translate-checks-links' => '次の{{PLURAL:$2|リンク}}に問題があります:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links-missing' => '以下の{{PLURAL:$2|$2個の}}リンクが欠けています:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-xhtml' => '以下の$2個のタグを正しいものに修正してください:
+	'translate-checks-xhtml' => '次の{{PLURAL:$2|タグ}}を正しいものに修正してください:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => '元のメッセージにある <nowiki>{{PLURAL:}}</nowiki> が翻訳の中にありません。<br />
 （日本語訳では、ほとんどの場合、<nowiki>{{PLURAL:}}</nowiki> を用いずに訳しています。その場合、この警告は無視してかまいません。）',
@@ -9264,6 +9264,8 @@ Zmeny sa neuložia, kým nekliknete na tlačidlo Uložiť dolu.',
 	'translate-checks-balance' => 'Nevyvážené počty {{PLURAL:$2|zátvoriek|zátvoriek}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '{{PLURAL:$2|Nasledovný odkaz je problematický|Nasledovné odkazy sú problematické}}: <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links-missing' => '{{PLURAL:$2|Nasledovný odkaz chýba|Nasledovné $2 odkazy chýbajú|Nasledovných $2 odkazov chýba}}:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Prosím, nahraďte {{PLURAL:$2|nasledovnú značku správnou|nasledovné značky správnymi}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Definícia používa <nowiki>{{PLURAL:}}</nowiki>, ale preklad nie.',
