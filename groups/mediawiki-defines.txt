@@ -566,7 +566,7 @@ Online Status
 ignored = onlinestatus-levels
 
 OpenID
-optional = prefs-openid
+optional = prefs-openid, openid-urls-url
 
 Open Search Xml
 
