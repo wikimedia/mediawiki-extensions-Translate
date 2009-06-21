@@ -968,6 +968,7 @@ Usability Initiative - Pref Stats
 id = ext-ui-prefstats
 file = UsabilityInitiative/PrefStats/PrefStats.i18n.php
 descmsg = prefstats-desc
+ignored = prefstats-list-elem
 
 Usage Statistics
 file = UsageStatistics/SpecialUserStats.i18n.php
