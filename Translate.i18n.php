@@ -5141,6 +5141,8 @@ Perubahan tidak akan disimpan hingga Anda mengklik tombol simpan di bawah.',
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '{{PLURAL:$2|Pranala|Pranala-pranala}} berikut bermasalah:
 <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links-missing' => '{{PLURAL:$2|Pranala|Pranala-pranala}} berikut hilang:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Harap ganti {{PLURAL:$2|tag|tag-tag}} berikut dengan tag yang tepat:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Definisi menggunakan <nowiki>{{PLURAL:}}</nowiki> tapi terjemahannya tidak.',
