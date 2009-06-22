@@ -5213,7 +5213,7 @@ Silakan meninjau pesan-pesan melalui [[Special:Translate|{{int:translate}}]].',
 	'translate-group-desc-wikimediaextensions' => 'Grup pesan meta yang berisikan semua pesan sistem untuk ekstensi MediaWiki yang didukung yang digunakan oleh [http://wikimedia.org Wikimedia Foundation]',
 	'translate-group-desc-wikitravelextensions' => 'Grup pesan meta yang berisikan semua pesan untuk ekstensi MediaWiki yang didukung yang digunakan oleh [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Grup pesan meta yang berisikan semua pesan untuk ekstensi yang berkaitan dengan [http://unicefinnovation.org/wiki.php Uniwiki]',
-	'translate-group-desc-ui' => 'Grup pesan meta yang berisikan semua pesan untuk ekstensi yang berkaitan dengan [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
+	'translate-group-desc-ui' => 'Grup pesan meta yang berisikan semua pesan untuk ekstensi yang berkaitan dengan [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Proyek Inisiatif Kebergunaan Wikipedia]',
 );
 
 /** Iloko (Ilokano)
@@ -11226,6 +11226,7 @@ $messages['yi'] = array(
 	'translate-history' => 'היסטאריע',
 	'translate-task-view' => 'ווײַז אלע מעלדונגען פֿון',
 	'translate-task-untranslated' => 'ווײַז אלע נישט פֿארטײַטשטע מעלדונגען פֿון',
+	'translate-task-optional' => 'באקוקן ברירהדיקן מעלדונגען פון',
 	'translate-task-untranslatedoptional' => 'באַקוקן נישט־פֿאַרטײַטשטע ברירהדיקע מעלדונגען פֿון',
 	'translate-page-no-such-group' => 'ספעציפֿירטע גרופע נישט גילטיק.',
 	'translate-page-task' => 'איך וויל',
