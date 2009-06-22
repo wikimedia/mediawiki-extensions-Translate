@@ -193,9 +193,11 @@ class GettextFormatWriter extends SimpleFormatWriter {
 	public function load( $code ) {
 		$reader = $this->group->getReader( $code );
 		$readerEn = $this->group->getReader( 'en' );
-		if ( $reader ) {
+		if ( $reader instanceof GettextFormatReader ) {
 			$this->addAuthors( $reader->parseAuthors(), $code );
 			$this->staticHeader = $reader->parseStaticHeader();
+		}
+		if ( $readerEn instanceof GettextFormatReader ) {
 			$this->data = $readerEn->parseFile();
 		}
 	}
