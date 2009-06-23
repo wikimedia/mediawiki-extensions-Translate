@@ -330,13 +330,13 @@ EOEO;
 				$oldtext = null;
 				$newtext = null;
 				foreach ( $oldpage->getParse()->getSectionsForSave() as $section ) {
-					if ( $group->title->getPrefixedText() .'/'. $section->id === $key ) {
+					if ( $group->title->getPrefixedDBKey() .'/'. $section->id === $key ) {
 						$oldtext = $section->getTextForTrans();
 					}
 				}
 
 				foreach ( $page->getParse()->getSectionsForSave() as $section ) {
-					if ( $group->title->getPrefixedText() .'/'. $section->id === $key ) {
+					if ( $group->title->getPrefixedDBKey() .'/'. $section->id === $key ) {
 						$newtext = $section->getTextForTrans();
 					}
 				}
