@@ -44,7 +44,8 @@ class SpecialTranslate extends SpecialPage {
 			return;
 		}
 
-		if ( !$this->options['language'] ) {
+		$codes = Language::getLanguageNames( false );
+		if ( !$this->options['language'] || !isset($codes['code']) ) {
 			$errors['language'] = wfMsgExt( self::MSG . 'no-such-language', array( 'parse' ) );
 			$this->options['language'] = $this->defaults['language'];
 		}
