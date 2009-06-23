@@ -227,6 +227,8 @@ class TranslatablePage {
 
 		$id = $this->getTagId( $tag );
 
+		if ( !$this->getTitle()->exists() ) return false;
+
 		$fields = 'rt_revision';
 		$conds = array(
 			'rt_page' => $this->getTitle()->getArticleId(),

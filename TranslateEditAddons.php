@@ -310,6 +310,7 @@ EOEO;
 			$suggestions = Http::get( $url, $timeout );
 			if ( $suggestions !== false ) {
 				$suggestions = json_decode( $suggestions, true );
+				$suggestions = array_slice( $suggestions, 0, 3 );
 				foreach ( $suggestions as $s ) {
 					if ( $s['target'] === $translation ) continue;
 					$sugboxes[] = TranslateUtils::fieldset( 
