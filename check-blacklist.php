@@ -14,11 +14,13 @@ array(
 	'group' => 'core',
 	'check' => 'variable',
 	'message' => array(
+		'activeusers-count', // Optional GENDER parameter
 		'confirmemail_body', // Optional time parameters
 		'currentrev-asof', // Optional time parameters
 		'filehist-thumbtext', // Optional time parameters
 		'history-feed-item-nocomment', // Optional time parameters
 		'lastmodifiedatby', // Optional time parameters
+		'listusers-blocked', // Optional GENDER parameter
 		'protect-expiring', // Optional time parameters
 		'rcnotefrom', // Optional time parameters
 		'revision-info', // Optional time parameters
@@ -78,6 +80,13 @@ array(
 		'configure-condition-description-4', // Optional parameter for PLURAL
 		'configure-edit-old', // Optional time parameters
 		'configure-viewconfig-line', // Optional time parameters
+	)
+),
+array(
+	'group' => 'ext-contributionseditcount',
+	'check' => 'variable',
+	'message' => array(
+		'contributionseditcount', // Optional GENDER parameter
 	)
 ),
 array(
