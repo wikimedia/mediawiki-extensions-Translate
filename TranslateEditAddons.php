@@ -262,6 +262,25 @@ EOEO;
 		$en = $group->getMessage( $key, 'en' );
 		$xx = $group->getMessage( $key, $code );
 
+
+		// Set-up the content area contents properly and not randomly as in
+		// MediaWiki core. $translation is also used for checks later on. Also
+		// add the fuzzy string if necessary.
+		$translation = TranslateUtils::getMessageContent( $key, $code, $nsMain );
+		if ( $translation !== null ) {
+			if ( !self::hasFuzzyString( $translation) && self::isFuzzy( $object->mTitle ) ) {
+				$translation = TRANSLATE_FUZZY . $translation;
+			}
+		} else {
+			$translation = $xx;
+		}
+
+		if ( $object->firsttime && !$wgRequest->getCheck( 'oldid' ) ) {
+			$object->textbox1 = $translation;
+		} else {
+			$translation = $object->textbox1;
+		}
+
 		$boxes = array();
 		// In other languages (if any)
 		$inOtherLanguages = array();
@@ -276,6 +295,36 @@ EOEO;
 		if ( count( $inOtherLanguages ) ) {
 			$boxes[] = TranslateUtils::fieldset( wfMsgHtml( self::MSG . 'in-other-languages' , $key ),
 				implode( "\n", $inOtherLanguages ), array( 'class' => 'mw-sp-translate-edit-inother' ) );
+		}
+
+		global $wgTranslateTM;
+		if ( $wgTranslateTM !== false ) {
+			$sugboxes = array();
+
+			$server = $wgTranslateTM['server'];
+			$port   = $wgTranslateTM['port'];
+			$timeout= $wgTranslateTM['timeout'];
+
+			$def = rawurlencode( $en );
+			$url = "$server:$port/tmserver/en/$code/unit/$def";
+			$suggestions = Http::get( $url, $timeout );
+			if ( $suggestions !== false ) {
+				$suggestions = json_decode( $suggestions, true );
+				foreach ( $suggestions as $s ) {
+					if ( $s['target'] === $translation ) continue;
+					$sugboxes[] = TranslateUtils::fieldset( 
+						wfMsgHtml( 'translate-edit-tmsug' , sprintf( '%.2f', $s['quality'] ) ),
+						$s['target'],
+						array( 'class' => 'mw-sp-translate-edit-tmsug' )
+					);
+				}
+			}
+			if ( count($sugboxes) > 1 ) {
+				$boxes[] = TranslateUtils::fieldset( wfMsgHtml( 'translate-edit-tmsugs' ),
+					implode( "\n", $sugboxes ), array( 'class' => 'mw-sp-translate-edit-tmsugs' ) );
+			} elseif( count($sugboxes) ) {
+				$boxes[] = $sugboxes[0];
+			}
 		}
 
 		// User provided documentation
@@ -355,25 +404,6 @@ EOEO;
 		if ( $en !== null ) {
 			$label = " ({$group->getLabel()})";
 			$boxes[] = self::doBox( $en, 'en', wfMsg( self::MSG . 'definition' ) . $label, false, $group );
-		}
-
-
-		// Set-up the content area contents properly and not randomly as in
-		// MediaWiki core. $translation is also used for checks later on. Also
-		// add the fuzzy string if necessary.
-		$translation = TranslateUtils::getMessageContent( $key, $code, $nsMain );
-		if ( $translation !== null ) {
-			if ( !self::hasFuzzyString( $translation) && self::isFuzzy( $object->mTitle ) ) {
-				$translation = TRANSLATE_FUZZY . $translation;
-			}
-		} else {
-			$translation = $xx;
-		}
-
-		if ( $object->firsttime && !$wgRequest->getCheck( 'oldid' ) ) {
-			$object->textbox1 = $translation;
-		} else {
-			$translation = $object->textbox1;
 		}
 
 		// Some syntactic checks

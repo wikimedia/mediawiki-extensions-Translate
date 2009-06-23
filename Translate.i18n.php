@@ -69,6 +69,8 @@ If you know where or how this message is used, you can help other translators by
 	'translate-edit-in-other-languages' => 'Message "$1" in other languages',
 	'translate-edit-committed'          => 'Current translation in software',
 	'translate-edit-warnings'           => 'Warnings about incomplete translations',
+	'translate-edit-tmsugs'             => 'Suggestions from translation memory',
+	'translate-edit-tmsug'              => '$1% match in translation memory',
 
 	'translate-edit-goto-no-prev'       => 'No previous message',
 	'translate-edit-goto-no-next'       => 'No next message',

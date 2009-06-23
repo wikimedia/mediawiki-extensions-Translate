@@ -303,3 +303,5 @@ if ( !defined('TRANSLATE_CLI') ) {
 	function STDOUT() {}
 	function STDERR() {}
 }
+
+$wgTranslateTM = false;

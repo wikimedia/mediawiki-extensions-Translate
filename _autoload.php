@@ -18,6 +18,7 @@ $wgAutoloadClasses['TranslateUtils'] = $dir . 'TranslateUtils.php';
 $wgAutoloadClasses['HTMLSelector'] = $dir . 'TranslateUtils.php';
 
 $wgAutoloadClasses['MessageChecker'] = $dir . 'MessageChecks.php';
+$wgAutoloadClasses['MessageGroup'] = $dir . 'MessageGroups.php';
 $wgAutoloadClasses['MessageGroups'] = $dir . 'MessageGroups.php';
 $wgAutoloadClasses['WikiPageMessageGroup'] = $dir . 'MessageGroups.php';
 $wgAutoloadClasses['AliasMessageGroup'] = $dir . 'MessageGroups.php';
@@ -84,6 +85,8 @@ $wgAutoloadClasses['MantisMessageGroup'] = $dir . 'groups/Mantis.php';
 $wgAutoloadClasses['NoccMessageGroup'] = $dir . 'groups/Nocc.php';
 $wgAutoloadClasses['OpenLayersMessageGroup'] = $dir . 'groups/OpenLayers.php';
 $wgAutoloadClasses['WikiblameMessageGroup'] = $dir . 'groups/Wikiblame.php';
+$wgAutoloadClasses['MediaWikiMessageChecker'] = $dir . 'groups/MediaWiki/Checker.php';
+
 
 # complex messages
 $wgAutoloadClasses['ComplexMessages'] = $dir . 'groups/ComplexMessages.php';
