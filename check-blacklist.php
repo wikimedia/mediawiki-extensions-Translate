@@ -43,6 +43,27 @@ array(
 	)
 ),
 array(
+	'group' => 'ext-babel',
+	'check' => 'variable',
+	'message' => array(
+		'babal', // Optional GENDER parameter
+		'babal-0', // Optional GENDER parameter
+		'babal-1', // Optional GENDER parameter
+		'babal-2', // Optional GENDER parameter
+		'babal-3', // Optional GENDER parameter
+		'babal-4', // Optional GENDER parameter
+		'babal-5', // Optional GENDER parameter
+		'babal-N', // Optional GENDER parameter
+		'babal-0-n', // Optional GENDER parameter
+		'babal-1-n', // Optional GENDER parameter
+		'babal-2-n', // Optional GENDER parameter
+		'babal-3-n', // Optional GENDER parameter
+		'babal-4-n', // Optional GENDER parameter
+		'babal-5-n', // Optional GENDER parameter
+		'babal-N-n', // Optional GENDER parameter
+	)
+),
+array(
 	'group' => 'ext-blahtex',
 	'check' => 'balance',
 	'message' => array(
@@ -56,6 +77,13 @@ array(
 	'check' => 'links',
 	'message' => array(
 		'call-text', // Contains links that are translated
+	)
+),
+array(
+	'group' => 'ext-categorytree',
+	'check' => 'variable',
+	'message' => array(
+		'Categorytree-member-counts', // Optional counts: $4, and $5
 	)
 ),
 array(
@@ -130,6 +158,13 @@ array(
 	'check' => 'variable',
 	'message' => array(
 		'newusernotifbody', // Optional time parameters
+	)
+),
+array(
+	'group' => 'ext-socialprofile-usergifts',
+	'check' => 'variable',
+	'message' => array(
+		'g-created-by', // Optional GENDER parameter
 	)
 ),
 array(
