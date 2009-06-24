@@ -46,21 +46,21 @@ array(
 	'group' => 'ext-babel',
 	'check' => 'variable',
 	'message' => array(
-		'babal', // Optional GENDER parameter
-		'babal-0', // Optional GENDER parameter
-		'babal-1', // Optional GENDER parameter
-		'babal-2', // Optional GENDER parameter
-		'babal-3', // Optional GENDER parameter
-		'babal-4', // Optional GENDER parameter
-		'babal-5', // Optional GENDER parameter
-		'babal-N', // Optional GENDER parameter
-		'babal-0-n', // Optional GENDER parameter
-		'babal-1-n', // Optional GENDER parameter
-		'babal-2-n', // Optional GENDER parameter
-		'babal-3-n', // Optional GENDER parameter
-		'babal-4-n', // Optional GENDER parameter
-		'babal-5-n', // Optional GENDER parameter
-		'babal-N-n', // Optional GENDER parameter
+		'babel', // Optional GENDER parameter
+		'babel-0', // Optional GENDER parameter
+		'babel-1', // Optional GENDER parameter
+		'babel-2', // Optional GENDER parameter
+		'babel-3', // Optional GENDER parameter
+		'babel-4', // Optional GENDER parameter
+		'babel-5', // Optional GENDER parameter
+		'babel-N', // Optional GENDER parameter
+		'babel-0-n', // Optional GENDER parameter
+		'babel-1-n', // Optional GENDER parameter
+		'babel-2-n', // Optional GENDER parameter
+		'babel-3-n', // Optional GENDER parameter
+		'babel-4-n', // Optional GENDER parameter
+		'babel-5-n', // Optional GENDER parameter
+		'babel-N-n', // Optional GENDER parameter
 	)
 ),
 array(
