@@ -259,9 +259,6 @@ file = SignDocument/SignDocument.alias.php
 Site matrix
 file = SiteMatrix/SiteMatrix.alias.php
 
-Slippy map
-file = SlippyMap/SlippyMap.alias.php
-
 Social profile
 file = SocialProfile/SocialProfile.alias.php
 
