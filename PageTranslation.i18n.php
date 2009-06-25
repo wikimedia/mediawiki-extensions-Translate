@@ -580,7 +580,7 @@ Devant que marcar cetes vèrsions por étre traduites, controlâd que los change
 	'tpt-languages-legend' => 'Ôtres lengoues :',
 	'tpt-target-page' => 'Ceta pâge pôt pas étre betâ a jorn a la man.
 El est una vèrsion traduita de [[$1]] et la traduccion pôt étre betâ a jorn en utilisent l’[$2 outil de traduccion].',
-	'tpt-unknown-page' => 'Ceti èspâço de nom est resèrvâ por la traduccion de pâges de contegnu.
+	'tpt-unknown-page' => 'Ceti èspâço de noms est resèrvâ por la traduccion de pâges de contegnu.
 La pâge que vos tâchiéd de changiér semble pas corrèspondre a gins de pâge marcâ por étre traduita.',
 	'tpt-install' => 'Lanciéd « php maintenance/update.php » ou ben l’enstalacion Vouèbe por activar la fonccionalitât de traduccion de pâges.',
 	'tpt-render-summary' => 'Misa a jorn por étre en acôrd avouéc la novèla vèrsion de la pâge d’origina',
@@ -1118,12 +1118,14 @@ $messages['nn'] = array(
 Berre siste versjonar kan verta markert for omsetjing.',
 	'tpt-notsuitable' => 'Side $1 er ikkje høveleg for omsetjing.
 Sjekk at sida er merka med <nowiki><translate></nowiki> merke og har ein gyldig syntaks.',
+	'tpt-saveok' => 'Sida [[$1]] er vorten merkt for omsetjing med {{PLURAL:$2|éi omsetjingseining|$2 omsetjingseiningar}}. Ho kan no verta <span class="plainlinks">[$3 sett om]</span>.',
 	'tpt-badsect' => '«$1» er ikkje eit gyldig namn for omsetjingseininga $2.',
 	'tpt-mark-summary' => 'Markerte denne versjonen for omsetjing',
 	'tpt-edit-failed' => 'Kunne ikkje oppdatera sida: $1',
 	'tpt-already-marked' => 'Den siste versjonen av denne sida har allereie vorte markert for omsetjing.',
 	'tpt-list-nopages' => 'Ingen sider er markerte for omsetjing, eller klar til å verta markert for omsetjing.',
 	'tpt-rev-latest' => 'siste versjon',
+	'tpt-rev-old' => 'skilnad frå den førre markerte versjonen',
 	'tpt-rev-mark-new' => 'marker denne versjonen for omsetjing',
 	'tpt-translate-this' => 'set om denne sida',
 	'translate-tag-translate-link-desc' => 'Set om denne sida',
@@ -1157,15 +1159,25 @@ $messages['no'] = array(
 	'tpt-badtitle' => 'Det angitte sidenavnet ($1) er ikke en gyldig tittel',
 	'tpt-oldrevision' => '$2 er ikke den siste versjonen av siden [[$1]].
 Kun siste versjoner kan bli markert for oversettelse.',
+	'tpt-notsuitable' => 'Side $1 er ikke egnet for oversettelse.
+Sjekk at siden er merket med <nowiki><translate></nowiki>-merke og har en gyldig syntaks.',
+	'tpt-saveok' => 'Siden [[$1]] har blitt markert for oversettelse med {{PLURAL:$2|én oversettelse|$2 oversettelser}}.
+Den kan nå bli <span class="plainlinks">[$3 oversatt]</span>.',
+	'tpt-badsect' => '«$1» er ikke et gyldig navn for oversettelsen $2.',
+	'tpt-showpage-intro' => 'Under er nye, eksisterende og slettede seksjoner listet opp.
+Før denne versjonen merkes for oversettelse, sjekk at endringene i seksjonene er minimert for å unngå unødvendig arbeid for oversetterne.',
+	'tpt-mark-summary' => 'Markerte denne versjonen for oversettelse',
 	'tpt-edit-failed' => 'Kunne ikke oppdatere siden: $1',
 	'tpt-already-marked' => 'Den siste versjonen av denne siden har allerede blitt markert for oversettelse.',
 	'tpt-list-nopages' => 'Ingen sider er marker for oversettelse, eller er klare for å bli markert for oversettelse.',
 	'tpt-old-pages' => 'En versjon av {{PLURAL:$1|denne siden|disse sidene}} har blitt markert for oversettelse.',
+	'tpt-new-pages' => '{{PLURAL:$1|Denne siden|Disse sidene}} inneholder tekst med oversettelsesmerker, men ingen versjon av {{PLURAL:$1|denne siden|disse sidene}} er for tiden markert for oversettelse.',
 	'tpt-rev-latest' => 'siste versjon',
 	'tpt-rev-old' => 'forskjell fra forrige markerte versjon',
 	'tpt-rev-mark-new' => 'merk denne versjonen for oversettelse',
 	'tpt-translate-this' => 'oversett denne siden',
 	'translate-tag-translate-link-desc' => 'Oversett denne siden',
+	'translate-tag-markthis' => 'Merk denne siden for oversettelse',
 	'translate-tag-markthisagain' => 'Denne siden har hatt <span class="plainlinks">[$1 endringer]</span> siden den sist ble <span class="plainlinks">[$2 markert for oversettelse]</span>.',
 	'translate-tag-hasnew' => 'Denne siden inneholder <span class="plainlinks">[$1 endringer]</span> som ikke har blitt markert for oversettelse.',
 	'tpt-translation-intro' => 'Denne siden er en <span class="plainlinks">[$1 oversatt versjon]</span> av en side [[$2]] og oversettelsen er $3% ferdig og oppdatert.',
@@ -1175,6 +1187,8 @@ Kun siste versjoner kan bli markert for oversettelse.',
 Denne siden er en oversettelse av siden [[$1]] og oversettelsen kan bli oppdatert ved å bruke [$2 oversettelsesverktøyet].',
 	'tpt-unknown-page' => 'Dette navnerommet er reservert for oversettelser av innholdssider.
 Denne siden som du prøver å redigere virker ikke å samsvare med noen av sidene som er markert for oversettelse.',
+	'tpt-install' => 'Kjør php maintenance/update.php eller webinnstallering for å muliggjøre sideoversettelsesegenskapen.',
+	'tpt-render-summary' => 'Oppdaterer for å samsvare ny versjon av kildesiden',
 );
 
 /** Occitan (Occitan)
@@ -1311,6 +1325,14 @@ Antes de marcar esta versão para tradução, verifique se as mudanças nas seç
 Esta página é uma tradução da página [[$1]] e a tradução pode ser atualizada usando [$2 a ferramenta de tradução].',
 	'tpt-unknown-page' => 'Este domínio é reservado para traduções de páginas de conteúdo.
 Esta página que você está tentando editar não aparenta corresponder a nenhuma página marcada para tradução.',
+);
+
+/** Romanian (Română)
+ * @author KlaudiuMihaila
+ */
+$messages['ro'] = array(
+	'translate-tag-translate-link-desc' => 'Tradu această pagină',
+	'tpt-languages-legend' => 'Alte limbi:',
 );
 
 /** Russian (Русский)

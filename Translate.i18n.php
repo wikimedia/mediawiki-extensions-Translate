@@ -1085,6 +1085,8 @@ $messages['be-tarask'] = array(
 	'translate-edit-in-other-languages' => 'Паведамленьне «$1» на іншых мовах',
 	'translate-edit-committed' => 'Цяперашні пераклад у праграме',
 	'translate-edit-warnings' => 'Папярэджаньне аб няпоўных перакладах',
+	'translate-edit-tmsugs' => 'Прапановы з памяці перакладу',
+	'translate-edit-tmsug' => '$1% супадзеньне у памяці перакладу',
 	'translate-edit-goto-no-prev' => 'Няма папярэдняга паведамленьня',
 	'translate-edit-goto-no-next' => 'Няма наступнага паведамленьня',
 	'translate-edit-goto-prev' => 'Рэдагаваць папярэдняе паведамленьне',
@@ -1916,6 +1918,8 @@ $messages['cs'] = array(
 	'translate-edit-in-other-languages' => 'Zpráva „$1“ v jiných jazycích',
 	'translate-edit-committed' => 'Současný překlad v úložišti',
 	'translate-edit-warnings' => 'Upozornění na neúplný překlad',
+	'translate-edit-tmsugs' => 'Návrhy z překladové paměti',
+	'translate-edit-tmsug' => '$1% shoda s překladovou pamětí',
 	'translate-edit-goto-no-prev' => 'Toto je první zpráva',
 	'translate-edit-goto-no-next' => 'Toto je poslední zpráva',
 	'translate-edit-goto-prev' => 'Editovat předchozí zprávu',
@@ -1936,6 +1940,7 @@ Změny se neuloží, dokud nekliknete na tlačítko „Uložit změny“ pod edi
 	'translate-magic-module' => 'Modul:',
 	'translate-magic-submit' => 'Zobrazit',
 	'translate-magic-cm-export' => 'Exportovat',
+	'translate-magic-nothing-to-export' => 'Není co exportovat.',
 	'translate-magic-cm-to-be' => 'nové',
 	'translate-magic-cm-current' => 'současné',
 	'translate-magic-cm-original' => 'původní',
@@ -1956,6 +1961,8 @@ Změny se neuloží, dokud nekliknete na tlačítko „Uložit změny“ pod edi
 	'translate-checks-balance' => 'Následující {{PLURAL:$2|typ závorek není správně spárován|typy závorek nejsou správně spárovány}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => 'Následující {{PLURAL:$2|odkaz je problematický|odkazy jsou problematické}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links-missing' => '{{PLURAL:$2|Následující odkaz|Následující $2 odkazy|Následujících $2 odkazů}} chybí:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Opravte následující {{PLURAL:$2|značku|značky}}:
 <strong><nowiki>$1</nowiki></strong>',
@@ -2307,6 +2314,8 @@ $messages['dsb'] = array(
 	'translate-edit-in-other-languages' => 'Powěsć "$1" w drugich rěcach',
 	'translate-edit-committed' => 'Aktualny pśełožk w software',
 	'translate-edit-warnings' => 'Warnowanja wó njedopołnych pśełožkach',
+	'translate-edit-tmsugs' => 'Naraźenja z pśełožowańskego spomnjeśa',
+	'translate-edit-tmsug' => '$1% pśitrjefijo pśełožowańske spomnjeśe',
 	'translate-edit-goto-no-prev' => 'Žedna pśedchadna powěsć',
 	'translate-edit-goto-no-next' => 'Žedna pśiduca powěsć',
 	'translate-edit-goto-prev' => 'Pśedchadnu powěsć wobźěłaś',
@@ -3377,6 +3386,8 @@ $messages['fr'] = array(
 	'translate-edit-in-other-languages' => 'Message « $1 » dans d’autres langues',
 	'translate-edit-committed' => 'Traduction actuelle dans le logiciel',
 	'translate-edit-warnings' => 'Avertissements sur les traductions incomplètes',
+	'translate-edit-tmsugs' => 'Suggestions de la mémoire de traduction',
+	'translate-edit-tmsug' => '$1 % de correspondance de la mémoire de traduction',
 	'translate-edit-goto-no-prev' => 'Pas de message précédent',
 	'translate-edit-goto-no-next' => 'Pas de message suivant',
 	'translate-edit-goto-prev' => 'Voir le message précédent',
@@ -3578,13 +3589,13 @@ Rêson :
 	'translate-edit-goto-next' => 'Vêre lo mèssâjo aprés',
 	'translate-edit-goto-list' => 'Tornar a la lista',
 	'translate-magic-pagename' => 'Traduccion ètendua de MediaWiki',
-	'translate-magic-help' => 'Vos pouede traduire los noms paralèlos de les pâges spèciâles, los mots magicos et los noms des èspâços de nom.
+	'translate-magic-help' => 'Vos pouede traduire los noms paralèlos de les pâges spèciâles, los mots magicos et los noms des èspâços de noms.
 
 Los noms paralèlos de les pâges spèciâles et los mots magicos pôvont avêr un mouél de traduccions.
 Les traduccions sont sèparâs per una virgula (,).
-Los èspâços de nom pôvont avêr ren que yona traduccion.
+Los èspâços de noms pôvont avêr ren que yona traduccion.
 
-Dens les traduccions des èspâços de nom, <tt>$1 talk</tt> est spèciâl. <tt>$1</tt> est remplaciê per lo nom du seto (per ègzemplo <tt>{{ns:project_talk}}</tt>).
+Dens les traduccions des èspâços de noms, <tt>$1 talk</tt> est spèciâl. <tt>$1</tt> est remplaciê per lo nom du seto (per ègzemplo <tt>{{ns:project_talk}}</tt>).
 S’o est pas possiblo d’avêr una èxprèssion valida dens voutra lengoua sen changiér lo nom du seto, vos volyéd veriér vers un dèvelopor.
 
 Vos dête étre a la tropa ux traductors por sôvar los changements.
@@ -3602,7 +3613,7 @@ Los changements sont pas sôvâs tant que vos éd pas clicâ sur lo boton « Sô
 	'translate-magic-cm-savefailed' => 'La sôvegouârda at pas reussia.',
 	'translate-magic-special' => 'Noms paralèlos de les pâges spèciâles',
 	'translate-magic-words' => 'Mots magicos',
-	'translate-magic-namespace' => 'Noms des èspâços de nom',
+	'translate-magic-namespace' => 'Noms des èspâços de noms',
 	'translationchanges' => 'Traduccions changiês',
 	'translationchanges-export' => 'èxportar',
 	'translationchanges-change' => '$1 : $2 per $3',
@@ -3619,7 +3630,7 @@ Los changements sont pas sôvâs tant que vos éd pas clicâ sur lo boton « Sô
 	'translate-checks-xhtml' => 'Volyéd corregiér {{PLURAL:$2|ceta balisa|cetes balises}} :
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'La dèfinicion utilise <nowiki>{{PLURAL:}}</nowiki> mas pas sa traduccion.',
-	'translate-checks-pagename' => 'Èspâço de nom changiê dês la dèfinicion',
+	'translate-checks-pagename' => 'Èspâço de noms changiê dês la dèfinicion',
 	'translate-checks-format' => 'Ceta traduccion siut pas la dèfinicion ou ben at una sintaxa fôssa : $1',
 	'translate-checks-escape' => 'Cetos èchapements pôvont étre emprèvus : <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'Pas mè mandar per mèl les lètres de novèles',
@@ -3795,6 +3806,8 @@ $messages['gl'] = array(
 	'translate-edit-in-other-languages' => 'Mensaxe "$1" noutras linguas',
 	'translate-edit-committed' => 'Tradución actual no software',
 	'translate-edit-warnings' => 'Avisos acerca de traducións incompletas',
+	'translate-edit-tmsugs' => 'Suxestións da memoria de tradución',
+	'translate-edit-tmsug' => 'Coincide nun $1% cun texto da memoria de tradución',
 	'translate-edit-goto-no-prev' => 'Non hai mensaxe previa',
 	'translate-edit-goto-no-next' => 'Non hai mensaxe seguinte',
 	'translate-edit-goto-prev' => 'Editar a mensaxe previa',
@@ -4579,6 +4592,8 @@ $messages['hsb'] = array(
 	'translate-edit-in-other-languages' => 'Zdźělenka "$1" w druhich rěčach',
 	'translate-edit-committed' => 'Aktualny přełožk w softwarje',
 	'translate-edit-warnings' => 'Warnowanja wo njedospołnych přełožkach',
+	'translate-edit-tmsugs' => 'Namjety z přełožowanskeho pomjatka',
+	'translate-edit-tmsug' => '$1% hodźi so na přełožowanski pomjatk',
 	'translate-edit-goto-no-prev' => 'Žana předchadna zdźělenka',
 	'translate-edit-goto-no-next' => 'Žana přichodna zdźělenka',
 	'translate-edit-goto-prev' => 'Předchadnu zdźělenku wobdźěłać',
@@ -5378,6 +5393,8 @@ Se sai dove o come è usato questo messaggio, puoi aiutare gli altri traduttori 
 	'translate-edit-in-other-languages' => 'Messaggio "$1" in altre lingue',
 	'translate-edit-committed' => 'Traduzione attuale nel software',
 	'translate-edit-warnings' => 'Avvisi sulle traduzioni incomplete',
+	'translate-edit-tmsugs' => 'Suggerimenti dalla memoria delle traduzioni',
+	'translate-edit-tmsug' => '$1% corrisponde nella memoria delle traduzioni',
 	'translate-edit-goto-no-prev' => 'Nessun messaggio precedente',
 	'translate-edit-goto-no-next' => 'Nessun messaggio successivo',
 	'translate-edit-goto-prev' => 'Modifica il messaggio precedente',
@@ -5398,6 +5415,7 @@ Le modifiche non vengono salvate finché non clicchi sul bottone "Salva" sotto.'
 	'translate-magic-module' => 'Modulo:',
 	'translate-magic-submit' => 'Ottieni',
 	'translate-magic-cm-export' => 'Esporta',
+	'translate-magic-nothing-to-export' => "Non c'è nulla da esportare.",
 	'translate-magic-cm-to-be' => 'Nuovo',
 	'translate-magic-cm-current' => 'Attuale',
 	'translate-magic-cm-original' => 'Originale',
@@ -5416,6 +5434,8 @@ Le modifiche non vengono salvate finché non clicchi sul bottone "Salva" sotto.'
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => "C'è un numero di {{PLURAL:$2|parentesi|parentesi}} dispari: <strong><nowiki>$1</nowiki></strong>",
 	'translate-checks-links' => '{{PLURAL:$2|Il seguente collegamento è problematico|I seguenti $2 collegamenti sono problematici}}: <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links-missing' => '{{PLURAL:$2|Il seguente collegamento è mancante|I seguenti collegamenti sono mancanti}}:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Per favore sostituisci {{PLURAL:$2|il tag seguente|i tag seguenti}} con quelli corretti: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'La definizione usa <nowiki>{{PLURAL:}}</nowiki> ma la traduzione no.',
 	'translate-checks-pagename' => 'Namespace cambiato dalla definizione',
@@ -5475,6 +5495,17 @@ Si consiglia di ricontrollare i messaggi attraverso [[Special:Translate|{{int:tr
 	'translate-save' => 'Salva ($1)',
 	'translate-group-desc-mediawikicore' => "Questo gruppo di messaggi contiene i messaggi usati nell'attuale versione alfa di MediaWiki ({{CURRENTVERSION}})",
 	'translate-group-desc-mediawikimostused' => 'Questo gruppo di messaggi contiene i [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 messaggi più usati] in MediaWiki',
+	'translate-group-desc-mediawikiextensions' => 'Meta gruppo di messaggi contenente tutti i messaggi per le estensioni di MediaWiki supportate',
+	'translate-group-desc-collection' => "Meta gruppo di messaggi contenente tutti i messaggi dell'estensione MediaWiki [http://www.mediawiki.org/wiki/Extension:Collection Collection]",
+	'translate-group-desc-flaggedrevs' => "Meta gruppo di messaggi contenente tutti i messaggi dell'estensione MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]",
+	'translate-group-desc-socialprofile' => "Meta gruppo di messaggi contenente tutti i messaggi delle estensioni relative all'estensione MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]",
+	'translate-group-desc-translate' => "Meta gruppo di messaggi contenente tutti i messaggi dell'estensione MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]",
+	'translate-group-desc-wikiaextensions' => 'Meta gruppo di messaggi contenente tutti i messaggi per le estensioni di MediaWiki supportate usate da [http://www.wikia.com Wikia]',
+	'translate-group-desc-wikihowextensions' => 'Meta gruppo di messaggi contenente tutti i messaggi per le estensioni di MediaWiki supportate utilizzate da [http://www.wikihow.com wikiHow]',
+	'translate-group-desc-wikimediaextensions' => 'Meta gruppo di messaggi contenente tutti i messaggi per le estensioni di MediaWiki supportate utilizzate dalla [http://wikimedia.org/ Wikimedia Foundation]',
+	'translate-group-desc-wikitravelextensions' => 'Meta gruppo di messaggi contenente tutti i messaggi per le estensioni di MediaWiki supportate utilizzate da [http://wikitravel.org Wikitravel]',
+	'translate-group-desc-uniwiki' => 'Meta gruppo di messaggi contenente tutti i messaggi delle estensioni relative a [http://unicefinnovation.org/wiki.php Uniwiki]',
+	'translate-group-desc-ui' => 'Meta gruppo di messaggi contenente tutti i messaggi delle estensioni relative alla [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 );
 
 /** Japanese (日本語)
@@ -5531,6 +5562,8 @@ $messages['ja'] = array(
 	'translate-edit-in-other-languages' => '他言語におけるメッセージ「$1」',
 	'translate-edit-committed' => '現在ソフトウェア上で採用されている翻訳メッセージ',
 	'translate-edit-warnings' => '不完全な翻訳に対する警告',
+	'translate-edit-tmsugs' => '翻訳メモリーからの提案',
+	'translate-edit-tmsug' => '翻訳メモリー中で $1% の一致',
 	'translate-edit-goto-no-prev' => 'これより前のメッセージはありません',
 	'translate-edit-goto-no-next' => '次のメッセージはありません',
 	'translate-edit-goto-prev' => 'この前のメッセージを編集する',
@@ -6460,7 +6493,7 @@ $messages['ksh'] = array(
 	'translate-talk' => 'Klaaf',
 	'translate-history' => 'Versione',
 	'translate-task-view' => 'Zeijsh all de Nohreschte fon',
-	'translate-task-untranslated' => 'Zeijsh all de nit övversäzte Nohreschte fon',
+	'translate-task-untranslated' => 'Zeijsh all de onnövversaz Nohreschte fon',
 	'translate-task-optional' => "Zeijsh all de 'nit esu nüüdijje' Nohreschte fon",
 	'translate-task-untranslatedoptional' => "Zeijsh de nit övversazte 'nit esu nüdeje' Nohrechte fon",
 	'translate-task-problematic' => 'Zeijsh de probleemattesche Nohreschte fon',
@@ -6502,6 +6535,8 @@ Wann De weijß, wann un woh dit Shtöck jenou jebruch weed, dann kanns De de Ann
 	'translate-edit-in-other-languages' => 'Di Nohresch „$1“ in annder Shprooche',
 	'translate-edit-committed' => 'Es aktowäll övversaz met',
 	'translate-edit-warnings' => 'Warnonge wääje unkomplätte Övversäzonge',
+	'translate-edit-tmsugs' => 'Vörschlääsch vum elläktrohnesche Övversäzongs-Jedähschneß',
+	'translate-edit-tmsug' => 'Met $1% Wascheinleschkeit jetroffe em elläktrohnesche Övversäzongs-Jedähschneß',
 	'translate-edit-goto-no-prev' => 'Keine Tëx doför',
 	'translate-edit-goto-no-next' => 'Keine Tëx donoh',
 	'translate-edit-goto-prev' => 'Dä Tëx doför zëije',
@@ -6605,7 +6640,7 @@ de Söndersigg [[Special:Translate|{{int:translate}}]] norrens ze prööfe.',
  # de Nommere nit jit, donn nix.',
 	'translate-save' => 'Save ($1)',
 	'translate-group-desc-mediawikicore' => 'En dä Jropp hee sin all de Täxte un Nohreeschte uß däm MediaWiki singe aktoälle <i lang="de">alpha</i>-Version ({{CURRENTVERSION}})',
-	'translate-group-desc-mediawikimostused' => 'En dä Jropp hee sin dem MediaWiki sing [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 am mihßte jebruchte Täxte un Nohreeschte]',
+	'translate-group-desc-mediawikimostused' => 'En dä Jropp hee sin dem MediaWiki sing [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 am mihßte jebruch Täxte un Nohreeschte]',
 	'translate-group-desc-mediawikiextensions' => 'Hee di Sammeljropp hät de janze Täxte un Nohreschte vun alle Zohsatzprojramme vum MediaWiki',
 	'translate-group-desc-collection' => 'Hee di Sammeljropp hät de janze Täxte un Nohreschte vun alle Aandeile vum MediaWiki singem Zohsatzprojramm-Pöngel <code lang="en">[http://www.mediawiki.org/wiki/Extension:Collection Collection]</code>',
 	'translate-group-desc-flaggedrevs' => 'Hee di Sammeljropp hät de janze Täxte un Nohreschte vun alle Aandeile vum MediaWiki singem Zohsatzprojramm-Pöngel <code lang="en">[http://www.mediawiki.org/wiki/Extension:FlaggedRevs Flagged Revsisions]</code>',
@@ -6684,6 +6719,8 @@ $messages['lb'] = array(
 	'translate-edit-in-other-languages' => 'Message "$1" an anere Sproochen',
 	'translate-edit-committed' => 'Aktuell Iwwersetzung an der Software',
 	'translate-edit-warnings' => 'Warnunge virun onkompletten Iwwersetzungen',
+	'translate-edit-tmsugs' => 'Automatesch Virschléi aus aneren Iwwersetzungen',
+	'translate-edit-tmsug' => '$1% Iwwereneestëmmung mat aneren Iwwersetzungen',
 	'translate-edit-goto-no-prev' => 'Kee virege Message',
 	'translate-edit-goto-no-next' => 'Keen nächste Message',
 	'translate-edit-goto-prev' => 'Virege Message änneren',
@@ -6704,6 +6741,7 @@ Dir musst am Grupp vun den Iwwersetzer si fir Ännerungen ofspäicheren ze kënn
 	'translate-magic-module' => 'Modul:',
 	'translate-magic-submit' => 'Weisen',
 	'translate-magic-cm-export' => 'Export',
+	'translate-magic-nothing-to-export' => "Et gëtt näischt z'exportéieren.",
 	'translate-magic-cm-to-be' => 'Gëtt',
 	'translate-magic-cm-current' => 'Aktuell',
 	'translate-magic-cm-original' => 'Original',
@@ -6724,6 +6762,8 @@ Dir musst am Grupp vun den Iwwersetzer si fir Ännerungen ofspäicheren ze kënn
 	'translate-checks-balance' => 'Et gëtt eng ongerued Zuel vu {{PLURAL:$2|Klammere|Klammere}} benotzt:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '{{PLURAL:$2|Dëse Link ass|Dës Linke si}} problematesch:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links-missing' => '{{PLURAL:$2|Dëse Link feelt|Dës $2 Linke feelen}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Ersetzt {{PLURAL:$2|dësen Tag|dës Tagen}} w.e.g. duerch déi korrekt:
 <strong><nowiki>$1</nowiki></strong>',
@@ -7663,6 +7703,8 @@ $messages['nn'] = array(
 	'translate-edit-in-other-languages' => 'Meldinga «$1» på andre språk',
 	'translate-edit-committed' => 'Noverande omsetjing i programvaren',
 	'translate-edit-warnings' => 'Åtvaringar om ufullstendige omsetjingar',
+	'translate-edit-tmsugs' => 'Framlegg frå omsetjingsminnet',
+	'translate-edit-tmsug' => '$1 % treff i omsetjingsminnet',
 	'translate-edit-goto-no-prev' => 'Ingen tidlegare meldingar',
 	'translate-edit-goto-no-next' => 'Ingen meldingar etter denne',
 	'translate-edit-goto-prev' => 'Endre førre melding',
@@ -7817,6 +7859,8 @@ $messages['no'] = array(
 	'translate-edit-in-other-languages' => 'Beskjeden «$1» på andre språk',
 	'translate-edit-committed' => 'Nåværende oversettelse i programvaren',
 	'translate-edit-warnings' => 'Advarsler om ufullstendige oversettelser',
+	'translate-edit-tmsugs' => 'Forslag fra oversettelsesminnet',
+	'translate-edit-tmsug' => '$1% treff i oversettelsesminnet',
 	'translate-edit-goto-no-prev' => 'Ingen beskjeder før denne',
 	'translate-edit-goto-no-next' => 'Ingen beskjeder etter denne',
 	'translate-edit-goto-prev' => 'Rediger forrige beskjed',
@@ -7837,6 +7881,7 @@ Endringer lagres ikke før du klikker på lagre-knappen nedenfor.',
 	'translate-magic-module' => 'Modul:',
 	'translate-magic-submit' => 'Hent',
 	'translate-magic-cm-export' => 'Eksporter',
+	'translate-magic-nothing-to-export' => 'Det er ingenting å eksportere.',
 	'translate-magic-cm-to-be' => 'Framtidig',
 	'translate-magic-cm-current' => 'Nåværende',
 	'translate-magic-cm-original' => 'Opprinnelig',
@@ -7857,6 +7902,8 @@ Endringer lagres ikke før du klikker på lagre-knappen nedenfor.',
 	'translate-checks-balance' => '{{PLURAL:$2|Det|Det}} er et ujevnt antall parenteser:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => 'Følgende {{PLURAL:$1|lenke er problematisk|$2 lenker er problematiske}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links-missing' => 'Følgende {{PLURAL:$2|lenke|lenker}} mangler:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Erstatt følgende {{PLURAL:$2|tagg|tagger}} med de korrekte:
 <strong><nowiki>$1</nowiki></strong>',
@@ -7928,6 +7975,7 @@ Du oppfordres til å se over meldinger gjennom [[Special:Translate|{{int:transla
 	'translate-group-desc-wikimediaextensions' => 'Metameldingsgruppen inneholder alle meldinger for støttede MediaWiki-utvidelser brukt av [http://wikimedia.org/ Wikimedia Foundation]',
 	'translate-group-desc-wikitravelextensions' => 'Metameldingsgruppen inneholder alle meldinger for støttede MediaWiki-utvidelser brukt av [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Metameldingsgruppen inneholder alle meldinger for utvidelser relatert til [http://unicefinnovation.org/wiki.php Uniwiki]',
+	'translate-group-desc-ui' => 'Metameldingsgruppe som inneholder alle meldinger for utvidelser relatert til [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 );
 
 /** Northern Sotho (Sesotho sa Leboa)
@@ -8005,6 +8053,8 @@ $messages['oc'] = array(
 	'translate-edit-in-other-languages' => "Messatge « $1 » dins d'autras lengas",
 	'translate-edit-committed' => 'Traduccions actualas ja dins lo logicial',
 	'translate-edit-warnings' => 'Avertiments concernent las traduccions incomplètas',
+	'translate-edit-tmsugs' => 'Suggestions de la memòria de traduccion',
+	'translate-edit-tmsug' => '$1 % de correspondéncia de la memòria de traduccion',
 	'translate-edit-goto-no-prev' => 'Cap de messatge precedent',
 	'translate-edit-goto-no-next' => 'Cap de messatge seguent',
 	'translate-edit-goto-prev' => 'Editar lo messatge precedent',
@@ -8806,8 +8856,8 @@ $messages['ro'] = array(
 	'translate-edit-contribute' => 'contribuiţi',
 	'translate-edit-no-information' => "''Acest mesaj nu are documentaţie.
 Dacă ştiţi unde sau cum este folosit acest mesaj, îi puteţi ajuta pe ceilalţi traducători prin adăugarea documentaţiei acestui mesaj.''",
-	'translate-edit-information' => 'Informaţii despre acest mesaj ($1)',
-	'translate-edit-in-other-languages' => 'Mesajul în alte limbi',
+	'translate-edit-information' => 'Informaţii despre mesajul "$2" ($1)',
+	'translate-edit-in-other-languages' => 'Mesajul "$1" în alte limbi',
 	'translate-edit-goto-no-prev' => 'Nici un mesaj anterior',
 	'translate-edit-goto-no-next' => 'Nici un mesaj următor',
 	'translate-edit-goto-prev' => 'Modifică mesajul anterior',
@@ -9236,6 +9286,8 @@ $messages['sk'] = array(
 	'translate-edit-in-other-languages' => 'Správa „$1“ v iných jazykoch',
 	'translate-edit-committed' => 'Aktuálny preklad v softvéri',
 	'translate-edit-warnings' => 'Upozornenia na neúplné preklady',
+	'translate-edit-tmsugs' => 'Návrhy z kompendia',
+	'translate-edit-tmsug' => '$1% zhoda z kompendia',
 	'translate-edit-goto-no-prev' => 'Žiadna predošlá správa',
 	'translate-edit-goto-no-next' => 'Žiadna ďalšia správa',
 	'translate-edit-goto-prev' => 'Upraviť predošlú správu',

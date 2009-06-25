@@ -300,6 +300,7 @@ $aliases['lb'] = array(
 	'TranslationStats' => array( 'Iwwersetzungsstatistiken' ),
 	'Translations' => array( 'Iwwersetzungen' ),
 	'LanguageStats' => array( 'Sproochestatistiken' ),
+	'PageTranslation' => array( 'Säiten-Iwwersetzung' ),
 );
 
 /** Lithuanian (Lietuvių) */
