@@ -81,7 +81,8 @@ class PoImporter {
 		$group = MessageGroups::getGroup( $id );
 
 		$messages = $group->initCollection( $code );
-		$group->fillCollection( $messages );
+		$messages->setInfile( $group->load( $code ) );
+		$messages->loadTranslations();
 
 		return $messages;
 	}
@@ -144,11 +145,17 @@ class PoImporter {
 				$translation = TRANSLATE_FUZZY . $translation;
 			}
 
-			if ( $translation !== (string) $contents[$key]->translation ) {
+			$oldtranslation = (string) $contents[$key]->translation();
+
+			if ( $translation !== $oldtranslation ) {
 				if ( $translation === '' ) {
 					STDOUT( "Skipping empty translation in the po file for $key!" );
 				} else {
-					STDOUT( "Translation of $key differs:\n$translation\n" );
+					if ( $oldtranslation === '' ) {
+						STDOUT( "New translation for $key" );
+					} else {
+						STDOUT( "Translation of $key differs:\n$translation\n" );
+					}
 					$changes["$key/$code"] = $translation;
 				}
 			}
