@@ -373,6 +373,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-checkuser',
 		'ext-cite',
 		'ext-citespecial',
+		'ext-clientside', // usability.wikimedia.org
 		'ext-codereview', // MediaWiki.org
 		'ext-collection-core',
 		'ext-collection-other',

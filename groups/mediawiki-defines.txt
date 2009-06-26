@@ -141,6 +141,8 @@ file = cldr/LanguageNames.i18n.php
 
 Clean Changes
 
+Client Side
+
 Close Wikis
 optional = closewikis-closed
 
