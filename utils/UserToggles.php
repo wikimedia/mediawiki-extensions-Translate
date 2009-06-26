@@ -1,5 +1,4 @@
 <?php
-if ( !defined( 'MEDIAWIKI' ) ) die();
 
 class TranslatePreferences {
 	/**
@@ -24,5 +23,47 @@ class TranslatePreferences {
 		}
 
 		return true;
+	}
+
+
+	public static function translationAssistLanguages( $user, &$preferences ) {
+		$select = self::languageSelector();
+		$select->setTargetId( 'mw-input-translate-edit-lang' );
+
+
+		$languages = Language::getLanguageNames( false );
+
+		$preferences['translate-editlangs'] = array(
+			'class' => 'HTMLJsSelectToInputField',
+			'section' => 'editing/translate',
+			'label-message' => 'translate-pref-editassistlang',
+			'help-message' => 'translate-pref-editassistlang-help',
+			'select' => $select,
+			'valid-values' => array_keys( $languages ),
+		);
+
+		return true;
+	}
+
+	protected static  function languageSelector() {
+		global $wgLang;
+		if ( is_callable( array( 'LanguageNames', 'getNames' ) ) ) {
+			$languages = LanguageNames::getNames( $wgLang->getCode(),
+				LanguageNames::FALLBACK_NORMAL
+			);
+		} else {
+			$languages = Language::getLanguageNames( false );
+		}
+
+		ksort( $languages );
+
+		$selector = new XmlSelect( 'mw-language-selector', 'mw-language-selector'  );
+		foreach ( $languages as $code => $name ) {
+			$selector->addOption( "$code - $name", $code );
+		}
+
+		$jsSelect = new JsSelectToInput( $selector );
+		$jsSelect->setSourceId( 'mw-language-selector' );
+		return $jsSelect;
 	}
 }

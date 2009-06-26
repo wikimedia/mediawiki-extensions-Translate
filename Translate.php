@@ -55,7 +55,9 @@ $wgHooks['EditPage::showEditForm:fields'][] = 'TranslateEditAddons::keepFields';
 $wgHooks['SkinTemplateTabs'][] = 'TranslateEditAddons::tabs';
 
 $wgDefaultUserOptions['translate'] = 0;
+$wgDefaultUserOptions['translate-editlangs'] = 'default';
 $wgHooks['GetPreferences'][] = 'TranslatePreferences::onGetPreferences';
+$wgHooks['GetPreferences'][] = 'TranslatePreferences::translationAssistLanguages';
 
 $wgHooks['SpecialRecentChangesQuery'][] = 'TranslateRcFilter::translationFilter';
 $wgHooks['SpecialRecentChangesPanel'][] = 'TranslateRcFilter::translationFilterForm';

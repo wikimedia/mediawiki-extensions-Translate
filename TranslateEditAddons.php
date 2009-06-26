@@ -134,7 +134,12 @@ EOEO;
 	}
 
 	private static function getFallbacks( $code ) {
-		global $wgTranslateLanguageFallbacks, $wgTranslateDocumentationLanguageCode;
+		global $wgUser, $wgTranslateLanguageFallbacks;
+
+		$preference = $wgUser->getOption( 'translate-editlangs' );
+		if ( $preference !== 'default' ) {
+			return array_map( 'trim', explode( ',', $preference ) );
+		}
 
 		$fallbacks = array();
 		if ( isset( $wgTranslateLanguageFallbacks[$code] ) ) {
@@ -287,6 +292,8 @@ EOEO;
 		$namespace = $object->mTitle->getNsText();
 		foreach ( self::getFallbacks( $code ) as $fbcode ) {
 			$fb = TranslateUtils::getMessageContent( $key, $fbcode, $nsMain );
+			// Try harder TODO: fixme with the new localisation cache
+			if ( $fb === null ) $fb = $group->getMessage( $key, $fbcode );
 			if ( $fb !== null ) {
 				/* add a link for editing the fallback messages */
 				$inOtherLanguages[] = self::dobox( $fb, $fbcode, false, $namespace . ':' . $key . '/' . $fbcode );

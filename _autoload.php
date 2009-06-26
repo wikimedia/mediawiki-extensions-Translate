@@ -78,6 +78,8 @@ $wgAutoloadClasses['TranslateToolbox'] = $dir . 'utils/ToolBox.php';
 $wgAutoloadClasses['MessageIndex'] = $dir . 'utils/MessageIndex.php';
 $wgAutoloadClasses['MessageTable'] = $dir . 'utils/MessageTable.php';
 $wgAutoloadClasses['JsSelectToInput'] = $dir . 'utils/JsSelectToInput.php';
+$wgAutoloadClasses['HTMLJsSelectToInputField'] = $dir . 'utils/HTMLJsSelectToInputField.php';
+
 
 # predefined groups
 $wgAutoloadClasses['PremadeMediawikiExtensionGroups'] = $dir . 'groups/MediaWikiExtensions.php';
