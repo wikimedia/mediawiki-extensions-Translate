@@ -201,6 +201,8 @@ You are encouraged to review messages through [[Special:Translate|{{int:translat
 
 	'translate-save' => 'Save ($1)',
 
+	'translate-jssti-add' => 'Add to list',
+
 	# Meta message group descriptions
 	'translate-group-desc-mediawikicore' => 'This message group contains the messages used in the current alpha version of MediaWiki ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'This message group contains the [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 most often used messages] in MediaWiki',

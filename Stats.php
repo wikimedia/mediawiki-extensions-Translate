@@ -92,8 +92,8 @@ class SpecialTranslationStats extends SpecialPage {
 			$this->eRadio( 'scale', $opts, array( 'days', 'hours' ) ) .
 			$this->eRadio( 'count', $opts, array( 'edits', 'users' ) ) .
 			'<tr><td colspan="2"><hr /></td></tr>' .
-			$this->eInput( 'language', $opts ) .
-			$this->eInput( 'group', $opts ) .
+			$this->eLanguage( 'language', $opts ) .
+			$this->eGroup( 'group', $opts ) .
 			'<tr><td colspan="2"><hr /></td></tr>' .
 			'<tr><td colspan="2">' . $submit . '</td></tr>'
 		);
@@ -160,6 +160,75 @@ class SpecialTranslationStats extends SpecialPage {
 
 		$s .= '</td></tr>' . "\n";
 		return $s;
+	}
+
+	protected function eLanguage( $name, FormOptions $opts ) {
+		global $wgLang;
+		$value = $opts[$name];
+
+		$select = $this->languageSelector();
+		$select->setTargetId( 'language' );
+
+		return
+			'<tr><td>' . $this->eLabel( $name ) . '</td><td>' .
+			Xml::input( $name, 20, $value, array( 'id' => $name ) ) .
+			$select->getHtmlAndPrepareJs() .
+			'</td></tr>' . "\n";
+	}
+
+	protected function languageSelector() {
+		global $wgLang;
+		if ( is_callable( array( 'LanguageNames', 'getNames' ) ) ) {
+			$languages = LanguageNames::getNames( $wgLang->getCode(),
+				LanguageNames::FALLBACK_NORMAL,
+				LanguageNames::LIST_MW_AND_CLDR
+			);
+		} else {
+			$languages = Language::getLanguageNames( false );
+		}
+
+		ksort( $languages );
+
+		$selector = new XmlSelect( 'mw-language-selector', 'mw-language-selector'  );
+		foreach ( $languages as $code => $name ) {
+			$selector->addOption( "$code - $name", $code );
+		}
+
+		$jsSelect = new JsSelectToInput( $selector );
+		$jsSelect->setSourceId( 'mw-language-selector' );
+		return $jsSelect;
+	}
+
+	protected function eGroup( $name, FormOptions $opts ) {
+		global $wgLang;
+		$value = $opts[$name];
+
+		$select = $this->groupSelector();
+		$select->setTargetId( 'group' );
+
+		return
+			'<tr><td>' . $this->eLabel( $name ) . '</td><td>' .
+			Xml::input( $name, 20, $value, array( 'id' => $name ) ) .
+			$select->getHtmlAndPrepareJs() .
+			'</td></tr>' . "\n";
+	}
+
+	protected function groupSelector() {
+		$groups = MessageGroups::singleton()->getGroups();
+		foreach ( $groups as $key => $group ) {
+			if ( !$group->exists() ) unset($groups[$key]);
+		}
+
+		ksort( $groups );
+
+		$selector = new XmlSelect( 'mw-group-selector', 'mw-group-selector'  );
+		foreach ( $groups as $code => $name ) {
+			$selector->addOption( $name->getLabel(), $code );
+		}
+
+		$jsSelect = new JsSelectToInput( $selector );
+		$jsSelect->setSourceId( 'mw-group-selector' );
+		return $jsSelect;
 	}
 
 	protected function image( $opts ) {
