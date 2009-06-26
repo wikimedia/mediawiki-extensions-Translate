@@ -503,6 +503,8 @@ MicroID
 Mini Donation
 descmsg = donationform-desc
 
+Minify
+
 Minimum Name Length
 descmsg = minnamelength-desc
 
