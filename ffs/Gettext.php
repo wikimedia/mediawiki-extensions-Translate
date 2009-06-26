@@ -43,8 +43,8 @@ class GettextFormatReader extends SimpleFormatReader {
 			$groupId = $matches[1];
 		}
 
-		if ( preg_match( '/Plural-Forms:\s+nplurals=([0-9]+)/', $data, $matches ) ) {
-			$pluralForms = $matches[1];
+		if ( preg_match( '/Plural-Forms:\s+nplurals=([0-9]+).*;/', $data, $matches ) ) {
+			$pluralForms = $matches;
 		}
 
 		$useCtxtAsKey = false;
@@ -95,7 +95,7 @@ class GettextFormatReader extends SimpleFormatReader {
 			if ( $pluralMessage ) {
 
 				$actualForms = array();
-				for ( $i = 0; $i < $pluralForms; $i++ ) {
+				for ( $i = 0; $i < $pluralForms[1]; $i++ ) {
 					$matches = array();
 					if ( preg_match( "/^msgstr\[$i\]\s($poformat)/mx", $section, $matches ) ) {
 						$actualForms[] = self::formatForWiki( $matches[1] );
@@ -156,8 +156,8 @@ class GettextFormatReader extends SimpleFormatReader {
 			$changes[$key] = $item;
 
 		}
+		$changes['PLURAL'] = $pluralForms;
 		return $changes;
-
 	}
 
 	public static function formatForWiki( $data ) {
@@ -172,6 +172,7 @@ class GettextFormatReader extends SimpleFormatReader {
 
 	public function parseMessages( StringMangler $mangler ) {
 		$defs = $this->parseFile();
+		unset($defs['PLURAL']);
 		$messages = array();
 		foreach ( $defs as $key => $def ) {
 			if ( $this->pot ) {
@@ -189,6 +190,7 @@ class GettextFormatReader extends SimpleFormatReader {
 
 class GettextFormatWriter extends SimpleFormatWriter {
 	protected $data = array();
+	protected $plural = array(false, 0);
 
 	public function load( $code ) {
 		$reader = $this->group->getReader( $code );
@@ -196,6 +198,8 @@ class GettextFormatWriter extends SimpleFormatWriter {
 		if ( $reader instanceof GettextFormatReader ) {
 			$this->addAuthors( $reader->parseAuthors(), $code );
 			$this->staticHeader = $reader->parseStaticHeader();
+			$data = $reader->parseFile();
+			$this->plural = $data['PLURAL'];
 		}
 		if ( $readerEn instanceof GettextFormatReader ) {
 			$this->data = $readerEn->parseFile();
@@ -232,6 +236,10 @@ class GettextFormatWriter extends SimpleFormatWriter {
 		$headers['X-Translation-Project'] = "$wgSitename at $wgServer";
 		$headers['X-Language-Code'] = $code;
 		$headers['X-Message-Group'] = $this->group->getId();
+		if( $this->plural[0] ) {
+			list( $header, $rest ) = explode( ':', $this->plural[0] );
+			$headers[$header] = trim($rest);
+		}
 
 		$headerlines = array( '' );
 		foreach ( $headers as $key => $value ) {
@@ -328,20 +336,60 @@ class GettextFormatWriter extends SimpleFormatWriter {
 
 	protected function formatmsg( $msgid, $msgstr, $msgctxt = false ) {
 		$output = array();
-
+		
 		if ( $msgctxt ) {
 			$output[] = 'msgctxt ' . $this->escape( $msgctxt );
 		}
 
-		if ( !is_array( $msgid ) ) { $msgid = array( $msgid ); }
-		if ( !is_array( $msgstr ) ) { $msgstr = array( $msgstr ); }
+		if ( preg_match( '/{{PLURAL:GETTEXT/i', $msgid ) ) {
+			$forms = $this->splitPlural( $msgid, 2 );
+			$output[] = 'msgid ' . $this->escape( $forms[0] );
+			$output[] = 'msgid_plural ' . $this->escape( $forms[1] );
 
-		$cb = array( $this, 'escape' );
-		$output[] = 'msgid ' . implode( "\n", array_map( $cb, $msgid ) );
-		$output[] = 'msgstr ' . implode( "\n", array_map( $cb, $msgstr ) );
+			$forms = $this->splitPlural( $msgstr, $this->plural[1] );
+			foreach( $forms as $index => $form ) {
+				$output[] = "msgstr[$index] " . $this->escape( $form );
+			}
+		} else {
+			$output[] = 'msgid ' . $this->escape( $msgid );
+
+			// Special case for the header
+			if ( is_array( $msgstr ) ) {
+				$output[] = 'msgstr ""';
+				foreach ( $msgstr as $line )
+					$output[] = $this->escape( $line );
+			} else {
+				$output[] = 'msgstr ' . $this->escape( $msgstr );
+			}
+		}
 
 		$out = implode( "\n", $output ) . "\n\n";
 		return $out;
 
+	}
+
+	protected function splitPlural( $text, $forms ) {
+		if ( $forms === 1 ) {
+			return $text;
+		} elseif( !$forms ) {
+			$forms = (int) $forms;
+			throw new MWException( "Don't know how to split $text into $forms forms" );
+		}
+
+		$splitPlurals = array();
+		for ( $i = 0; $i < $forms; $i++ ) {
+			$plurals = array();
+			$match = preg_match_all( '/{{PLURAL:GETTEXT\|(.*)}}/iU', $text, $plurals );
+			if ( !$match ) throw new MWException( "Failed to parse plural for: $text" );
+			$pluralForm = $text;
+			foreach ( $plurals[0] as $index => $definition ) {
+				$parsedFormsArray = explode( '|', $plurals[1][$index] );
+				if ( !isset($parsedFormsArray[$i]) ) throw new MWException( "Too few plural forms in: $text" );
+				$pluralForm = str_replace( $pluralForm, $definition, $parsedFormsArray[$i] );
+			}
+			$splitPlurals[$i] = $pluralForm;
+		}
+
+		return $splitPlurals;
 	}
 }
