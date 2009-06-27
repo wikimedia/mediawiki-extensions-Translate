@@ -2367,6 +2367,13 @@ Musyš w kupce pśełožowarjow byś, aby mogł změny cyniś. Změny se njeskł
 	'translate-checks-format' => 'Toś ten pśełožk njeslědujo definiciji abo ma njepłaśiwu syntaksu: $1',
 	'translate-checks-escape' => 'Slědujuce eskapowe sekwence mógu pśipadne byś: <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'Njesćelśo mě emailowy list nowosćow',
+	'translate-pref-editassistlang' => 'Pomocne rěcy',
+	'prefs-translate' => 'Pśełožowańske opcije',
+	'translate-pref-editassistlang-help' => 'Lisćina rěcnych kodow z komu ako źěleńske znamuško.
+Pśełožowanje powěźeńki w toś tych rěcach se pokazuju, gaž pśełožujoš.
+Standardna lisćina rěcow wótwisujo wót swójeje rěcy.',
+	'translate-pref-editassistlang-bad' => 'Njepłaśiwy rěcny kod w lisćinje:
+<nowiki>$1</nowiki>.',
 	'right-translate' => 'Z pomocu pśełožowańskego pówjercha wobźěłaś',
 	'translate-rc-translation-filter' => 'Pśełožki filtrowaś:',
 	'translate-rc-translation-filter-no' => 'Njecyń nic',
@@ -3451,6 +3458,13 @@ Les modifications ne sont pas enregistrées tant que vous n’avez pas cliqué s
 	'translate-checks-format' => 'Cette traduction ne suit pas la définition ou a une syntaxe incorrecte : $1',
 	'translate-checks-escape' => 'Les échappements suivants peuvent être accidentels : <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'Ne pas m’envoyer les courriels d’informations',
+	'translate-pref-editassistlang' => 'Assistant de langues',
+	'prefs-translate' => 'Options de traduction',
+	'translate-pref-editassistlang-help' => 'Une virgules a séparé une liste de code langue.
+La traduction d’un message dans ces langues sont visualisé quant vous êtes en train de traduire.
+La liste par défaut des langues varie en fonction de votre langue.',
+	'translate-pref-editassistlang-bad' => 'Code langue invalide dans la liste :
+<nowiki>$1</nowiki>.',
 	'right-translate' => 'Modifier avec l’interface de traduction',
 	'translate-rc-translation-filter' => 'Filtrer les traductions :',
 	'translate-rc-translation-filter-no' => 'Ne rien faire',
@@ -4506,7 +4520,7 @@ $messages['hr'] = array(
 	'translate-edit-contribute' => 'dodaj',
 	'translate-edit-no-information' => "''Ova poruka nema dokumentacije. Ako znate gdje ili kako se koristi poruka, možete pomoći drugim prevoditeljima dodavajući dokumentaciju ovoj poruci.''",
 	'translate-edit-information' => 'Informacije o poruci "$2" ($1)',
-	'translate-edit-in-other-languages' => 'Poruka u drugim jezicima',
+	'translate-edit-in-other-languages' => 'Poruka "$1" u drugim jezicima',
 	'translate-edit-committed' => 'Trenutačni prijevod u softveru',
 	'translate-edit-warnings' => 'Upozorenja o nepotpunim prijevodima',
 	'translate-edit-goto-no-prev' => 'Nema prethodne poruke',
@@ -4551,7 +4565,7 @@ $messages['hr'] = array(
 	'translate-statsf-count-users' => 'Aktivni prevoditelji',
 	'translate-statsf-submit' => 'Prikaži',
 	'translate-tag-page-desc' => 'Prijevod wiki stranice [[:$1]].',
-	'translate-sidebar-alltrans' => 'Drugi prijevodi',
+	'translate-sidebar-alltrans' => 'Na drugim jezicima',
 	'translations' => 'Svi prijevodi',
 	'translate-translations-no-message' => '"$1" nije poruka koja se prevodi',
 	'translate-translations-none' => 'Ne postoje prijevodi za "$1"',
@@ -4568,6 +4582,9 @@ $messages['hr'] = array(
 	'translate-untranslated' => 'Neprevedeno',
 	'translate-percentage-complete' => 'Dovršeno',
 	'translate-percentage-fuzzy' => 'Zastarjelo',
+	'translate-save' => 'Sačuvaj ($1)',
+	'translate-jssti-add' => 'Dodaj na popis',
+	'translate-group-desc-mediawikicore' => 'Ova skupina poruka sadrži poruke koje se rabe u trenutačnoj alpha inačici MediaWikija ({{CURRENTVERSION}}))',
 );
 
 /** Upper Sorbian (Hornjoserbsce)
@@ -4666,6 +4683,13 @@ Dyrbiš w skupinje přełožowarjow być, zo by změny składował. Změny so nj
 	'translate-checks-format' => 'Tutón přełožk njeslěduje definiciji abo ma njepłaćiwu syntaksu: $1',
 	'translate-checks-escape' => 'Slědowace eskapowe sekwency móža připadne być: <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'Njepósćel mi žadyn e-mejlowy dopis nowinkow',
+	'translate-pref-editassistlang' => 'Pomocne rěče',
+	'prefs-translate' => 'Přełožowanske opcije',
+	'translate-pref-editassistlang-help' => 'Lisćina rěčnych kodow z komu jako dźělatko.
+Přełožk powěsće w tutych rěčach pokazuja so, hdyž přełožuješ.
+Standardna lisćina rěčow wotwisuje wot twojeje rěče.',
+	'translate-pref-editassistlang-bad' => 'Njepłaćiwy rěčny kod w lisćinje:
+<nowiki>$1</nowiki>',
 	'right-translate' => 'Z pomocu powjercha přełožowanja wobdźěłać',
 	'translate-rc-translation-filter' => 'Přełožki filtrować:',
 	'translate-rc-translation-filter-no' => 'Ničo nječinić',
@@ -4979,6 +5003,8 @@ Si tu sape ubi o como iste message es usate, tu pote adjutar le altere traductor
 	'translate-edit-in-other-languages' => 'Le message "$1" in altere linguas',
 	'translate-edit-committed' => 'Traduction actual in software',
 	'translate-edit-warnings' => 'Advertimentos super traductiones incomplete',
+	'translate-edit-tmsugs' => 'Suggestiones ab le memoria de traductiones',
+	'translate-edit-tmsug' => '$1% corresponde in le memoria de traductiones',
 	'translate-edit-goto-no-prev' => 'Nulle message precedente',
 	'translate-edit-goto-no-next' => 'Nulle message sequente',
 	'translate-edit-goto-prev' => 'Modificar le message precedente',
@@ -4999,6 +5025,7 @@ Le modificationes non es immagazinate usque tu clicca super le button Publicar i
 	'translate-magic-module' => 'Modulo:',
 	'translate-magic-submit' => 'Obtener',
 	'translate-magic-cm-export' => 'Exportar',
+	'translate-magic-nothing-to-export' => 'Il ha nihil a exportar.',
 	'translate-magic-cm-to-be' => 'Futur',
 	'translate-magic-cm-current' => 'Actual',
 	'translate-magic-cm-original' => 'Original',
@@ -5020,6 +5047,8 @@ Le modificationes non es immagazinate usque tu clicca super le button Publicar i
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => 'Le sequente {{PLURAL:$2|ligamine|ligamines}} es problematic:
 <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links-missing' => 'Le sequente {{PLURAL:$2|ligamine|$2 ligamines}} es mancante:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Per favor corrige le sequente {{PLURAL:$2|etiquetta|etiquettas}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Le definition usa <nowiki>{{PLURAL:}}</nowiki> sed non le traduction.',
@@ -5027,6 +5056,13 @@ Le modificationes non es immagazinate usque tu clicca super le button Publicar i
 	'translate-checks-format' => 'Iste traduction non seque le definition o ha un syntaxe invalide: $1',
 	'translate-checks-escape' => 'Le sequente escappamentos pote esser accidental: <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'Non inviar me bulletines in e-mail',
+	'translate-pref-editassistlang' => 'Linguas assistente',
+	'prefs-translate' => 'Optiones de traduction',
+	'translate-pref-editassistlang-help' => 'Lista de codices de linguas separate per commas.
+Le traductiones de un message in iste linguas es monstrate quando tu traduce.
+Le lista predefinite de linguas depende de tu lingua.',
+	'translate-pref-editassistlang-bad' => 'Codice de lingua invalide in le lista:
+<nowiki>$1</nowiki>.',
 	'right-translate' => 'Modificar con le interfacie de traduction',
 	'translate-rc-translation-filter' => 'Filtrar traductiones:',
 	'translate-rc-translation-filter-no' => 'Facer nihil',
@@ -5081,6 +5117,7 @@ Es recommendate revider le messages per medio del pagina [[Special:Translate|{{i
  # gruppos monstrate in Special:LanguageStats. Le gruppos non existente
  # essera ignorate.',
 	'translate-save' => 'Immagazinar ($1)',
+	'translate-jssti-add' => 'Adder al lista',
 	'translate-group-desc-mediawikicore' => 'Iste gruppo contine le messages usate in le version alpha actual de MediaWiki ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'Iste gruppo contine le [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 messages usate le plus frequentemente] in MediaWiki',
 	'translate-group-desc-mediawikiextensions' => 'Metagruppo con tote le messages pro le extensiones supportate pro MediaWiki',
@@ -5093,6 +5130,7 @@ Es recommendate revider le messages per medio del pagina [[Special:Translate|{{i
 	'translate-group-desc-wikimediaextensions' => 'Metagruppo con tote le messages pro le extensiones supportate de MediaWiki usate per le [http://wikimedia.org/ Fundation Wikimedia]',
 	'translate-group-desc-wikitravelextensions' => 'Metagruppo con tote le messages pro le extensiones supportate de MediaWiki usate per [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Metagruppo con tote le messages pro le extensiones connexe a [http://unicefinnovation.org/wiki.php Uniwiki]',
+	'translate-group-desc-ui' => 'Metagruppo de messages continente tote le messages pro extensiones connexe al [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Initiativa de Usabilitate de Wikipedia]',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -5291,7 +5329,7 @@ $messages['io'] = array(
 	'translate-page-edit' => 'redaktar',
 	'translate-edit-contribute' => 'kontributez',
 	'translate-edit-information' => 'Informo pri mesajo "$2" ($1)',
-	'translate-edit-in-other-languages' => 'Mesajo en altra lingui',
+	'translate-edit-in-other-languages' => 'Mesajo "$1" en altra lingui',
 	'translate-magic-cm-current' => 'Aktuala',
 	'translate-magic-cm-comment' => 'Komento:',
 	'translate-magic-cm-save' => 'Registragar',
@@ -5307,6 +5345,7 @@ $messages['io'] = array(
 	'translations' => 'Omna tradukuri',
 	'translate-translations-messagename' => 'Nomo:',
 	'translate-language' => 'Linguo',
+	'translate-total' => 'Mesaji',
 );
 
 /** Icelandic (Íslenska)
@@ -5373,6 +5412,7 @@ Ef þú veist hvar eða hvernig meldingin er notuð getur þú hjálpað öðrum
 /** Italian (Italiano)
  * @author BrokenArrow
  * @author Darth Kule
+ * @author McDutchie
  * @author Melos
  * @author Pietrodn
  */
@@ -5465,7 +5505,7 @@ Le modifiche non vengono salvate finché non clicchi sul bottone "Salva" sotto.'
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => "C'è un numero di {{PLURAL:$2|parentesi|parentesi}} dispari: <strong><nowiki>$1</nowiki></strong>",
 	'translate-checks-links' => '{{PLURAL:$2|Il seguente collegamento è problematico|I seguenti $2 collegamenti sono problematici}}: <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links-missing' => '{{PLURAL:$2|Il seguente collegamento è mancante|I seguenti collegamenti sono mancanti}}:
+	'translate-checks-links-missing' => '{{PLURAL:$2|Il seguente collegamento è mancante|I seguenti $2 collegamenti sono mancanti}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Per favore sostituisci {{PLURAL:$2|il tag seguente|i tag seguenti}} con quelli corretti: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'La definizione usa <nowiki>{{PLURAL:}}</nowiki> ma la traduzione no.',
@@ -5545,6 +5585,7 @@ Si consiglia di ricontrollare i messaggi attraverso [[Special:Translate|{{int:tr
  * @author Hosiryuhosi
  * @author JtFuruhata
  * @author Marine-Blue
+ * @author 青子守歌
  */
 $messages['ja'] = array(
 	'translate' => 'ソフトウェアメッセージの翻訳',
@@ -5643,6 +5684,13 @@ $messages['ja'] = array(
 	'translate-checks-format' => 'この翻訳は定義に沿っていない、または不正な構文を使用しています: $1',
 	'translate-checks-escape' => '以下のエスケープは偶発のものであるかもしれません: <strong>$1</strong>',
 	'translate-pref-nonewsletter' => '電子メールのニュースレターを受け取らない',
+	'translate-pref-editassistlang' => '言語アシスタント',
+	'prefs-translate' => '翻訳設定',
+	'translate-pref-editassistlang-help' => 'カンマ区切りの言語コード一覧。
+これらの言語でのメッセージの翻訳は、あなたが翻訳している時に表示されます。
+標準の言語一覧はあなたの言語によって変化します。',
+	'translate-pref-editassistlang-bad' => 'リスト中の不正な言語コード：
+<nowiki>$1</nowiki>',
 	'right-translate' => '翻訳用インターフェースを使って編集する',
 	'translate-rc-translation-filter' => '絞込み:',
 	'translate-rc-translation-filter-no' => '絞り込まない',
@@ -5695,6 +5743,7 @@ $messages['ja'] = array(
  # メッセージグループのIDを1行1つずつ記入します。
  # 無効なIDは無視されます。',
 	'translate-save' => '保存 ($1)',
+	'translate-jssti-add' => '一覧に追加',
 	'translate-group-desc-mediawikicore' => 'このメッセージグループには MediaWiki の現アルファ版 ({{CURRENTVERSION}}) で使われているメッセージが含まれています',
 	'translate-group-desc-mediawikimostused' => 'このメッセージグループには MediaWiki で[http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki もっともよく使われている500のメッセージ]が含まれています',
 	'translate-group-desc-mediawikiextensions' => 'サポート対象の MediaWiki 拡張機能のすべてのメッセージを含んだメタメッセージグループ',
@@ -6810,6 +6859,7 @@ Dir musst am Grupp vun den Iwwersetzer si fir Ännerungen ofspäicheren ze kënn
 	'translate-checks-format' => 'Dës Iwwersetzung translation entsprecht net der Definitioun oder huet eng Syntax déi net gëlteg ass: $1',
 	'translate-checks-escape' => 'Dës Escape-Sequenzen kënnen ongewollt sinn: <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'Schéckt mir keng E-Mail-Newsletter.',
+	'translate-pref-editassistlang' => 'Sproochen-Assistent',
 	'prefs-translate' => 'Optiouen vund der Iwwersetzung',
 	'translate-pref-editassistlang-help' => "Mat Komma getrennte Lëscht vun de Sproochcoden.
 Iwwersetzung vun engem Message an dës Sprooche gëtt gewisen wann Dir iwwersetzt.
@@ -9136,6 +9186,9 @@ $messages['ru'] = array(
 	'translate-pref-nonewsletter' => 'Не отправлять мне информационный бюллетень по электронной почте',
 	'translate-pref-editassistlang' => 'Языковой помощник',
 	'prefs-translate' => 'Настройки перевода',
+	'translate-pref-editassistlang-help' => 'Разделённый запятыми список кодов языков.
+Переводы на эти языки будут показаны при правке сообщений.
+Список по умолчанию зависит от вашего языка.',
 	'translate-pref-editassistlang-bad' => 'Неверный языковой код в списке:
 <nowiki>$1</nowiki>.',
 	'right-translate' => 'правка с использованием интерфейса перевода',
@@ -9394,6 +9447,13 @@ Zmeny sa neuložia, kým nekliknete na tlačidlo Uložiť dolu.',
 	'translate-checks-format' => 'Tento preklad nezodpovedá definícii alebo má neplatnú syntax: $1',
 	'translate-checks-escape' => 'Nasledové únikové klauzuly sú možno uvedené omylom: <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'Neposielať mi novinky emailom',
+	'translate-pref-editassistlang' => 'Pomocné jazyky',
+	'prefs-translate' => 'Možnosti prekladu',
+	'translate-pref-editassistlang-help' => 'Čiarkami oddelený zoznam kódov jazykov.
+Preklady správ v týchto jazykoch sa zobrazujú, keď prekladáte.
+Predvoleny zoznam jazykov závisí na vašom jazyku.',
+	'translate-pref-editassistlang-bad' => 'Neplatný kód jazyka v zozname:
+<nowiki>$1</nowiki>.',
 	'right-translate' => 'Vykonávať úpravy pomocou rozhrania Preložiť',
 	'translate-rc-translation-filter' => 'Preklady filtrov:',
 	'translate-rc-translation-filter-no' => 'Nevykonávať nič',
@@ -9448,6 +9508,7 @@ Môžete [$1 upravovať zdrojovú stránku] alebo [$2 aktualizovať preklad].',
  # zobrazované na Special:LanguageStats. Neexistujúce ID skupín správ budú
  # ignorované.',
 	'translate-save' => 'Uložiť ($1)',
+	'translate-jssti-add' => 'Pridať do zoznamu',
 	'translate-group-desc-mediawikicore' => 'Táto skupina správ obsahuje správy použité v aktuálnej alfa verzii MediaWiki ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'Táto skupina správ obsahuje [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 najpoužívanejších správ] v MediaWiki',
 	'translate-group-desc-mediawikiextensions' => 'Metaskupina správ obsahujúca všetky správy podporovaných rozšírení MediaWiki',
