@@ -285,6 +285,7 @@ This box list the problems found in the translation.',
 
 This warning indicates that the namespace in the translation does not match the namespace appearing in the message definition (original English message).',
 	'translate-pref-nonewsletter' => "Option in [[Special:Preferences]], 'Misc' tab.",
+	'prefs-translate' => 'Caption of a section at [[Special:Preferences#prefsection-3|Special:Preferences]]',
 	'right-translate' => '{{doc-right}}',
 	'translate-rc-translation-filter' => 'Name of filter in [[Special:RecentChanges]]. Gives a user the option to filter out translations, show translations only, or do nothing (default).',
 	'translate-rc-translation-filter-no' => 'Option for filter in [[Special:RecentChanges]]. Selecting this option results in the filter not doing anything. It is the default value.',
@@ -1147,6 +1148,9 @@ $messages['be-tarask'] = array(
 	'translate-checks-format' => 'Гэты пераклад няслушна перакладае крынічны тэкст альбо ўтрымлівае сынтаксычныя памылкі: $1',
 	'translate-checks-escape' => 'Наступнае выдзяленьне можа быць выпадковым: <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'Не дасылаць мне інфармацыйныя лісты па электроннай пошце',
+	'prefs-translate' => 'Устаноўкі перакладу',
+	'translate-pref-editassistlang-bad' => 'Няслушны код мовы ў сьпісе:
+<nowiki>$1</nowiki>.',
 	'right-translate' => 'Рэдагаваньне з выкарыстаньнем інтэрфэйсу перакладу',
 	'translate-rc-translation-filter' => 'Фільтраваць пераклады:',
 	'translate-rc-translation-filter-no' => 'Не',
@@ -1198,6 +1202,7 @@ $messages['be-tarask'] = array(
 	'translate-nothing-to-do' => 'Былі зроблены ўсе магчымыя пераклады.
 Вы можаце праверыць пераклады з дапамогай [[Special:Translate|{{int:translate}}]].',
 	'translate-save' => 'Захаваць ($1)',
+	'translate-jssti-add' => 'Дадаць у сьпіс',
 	'translate-group-desc-mediawikicore' => 'Гэта група паведамленьняў утрымлівае паведамленьні, якія выкарыстоўваюцца ў цяперашняй альфа-вэрсіі MediaWiki ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'Гэта група паведамленьняў, якая ўтрымлівае [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 паведамленьняў, якія найчасьцей выкарыстоўваюцца] ў MediaWiki',
 	'translate-group-desc-mediawikiextensions' => 'Мэта-група паведамленьняў, якая ўтрымлівае ўсе паведамленьні падтрымліваемых пашырэньняў для MediaWiki',
@@ -1981,6 +1986,13 @@ Změny se neuloží, dokud nekliknete na tlačítko „Uložit změny“ pod edi
 	'translate-checks-format' => 'Tento překlad neodpovídá definici nebo má neplatnou syntaxi: $1',
 	'translate-checks-escape' => 'Následující escape sekvence možná nebyly zamýšleny: <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'Neposílat mi novinky emailem',
+	'translate-pref-editassistlang' => 'Pomocné jazyky',
+	'prefs-translate' => 'Nastavení pro překládání',
+	'translate-pref-editassistlang-help' => "Seznam kódů jazyků oddělených čárkami.
+Překlady zvolené zprávy do těchto jazyků jsou zobrazeny při překládání.
+Implicitní seznam (''default'') závisí na vašem jazyce.",
+	'translate-pref-editassistlang-bad' => 'Seznam obsahuje neplatný kód jazyka:
+<nowiki>$1</nowiki>',
 	'right-translate' => "Editace překladu pomocí rozhraní ''Přeložit''",
 	'translate-rc-translation-filter' => 'Filtr překladů:',
 	'translate-rc-translation-filter-no' => 'Nijak nefiltrovat',
@@ -2032,6 +2044,7 @@ Můžete [$1 upravit zdrojovou stránku] nebo [$2 aktualizovat překlad].',
 	'translate-nothing-to-do' => 'Vypadá to, že všechny možné překlady jsou hotové.
 Teď doporučujeme zkontrolovat hlášení pomocí stránky [[Special:Translate|{{int:translate}}]].',
 	'translate-save' => 'Uložit ($1)',
+	'translate-jssti-add' => 'Přidat do seznamu',
 	'translate-group-desc-mediawikicore' => 'Tato skupina zpráv obsahuje zprávy používané v současné alfaverzi MediaWiki ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'Tato skupina zpráv obsahuje [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 nejpoužívanějších zpráv] v MediaWiki',
 	'translate-group-desc-mediawikiextensions' => 'Nadskupina zpráv obsahující všechny zprávy ve všech podporovaných rozšířeních MediaWiki',
@@ -3520,6 +3533,7 @@ Vous êtes encouragé à revoir les message depuis [[Special:Translate|{{int:tra
  # qui sont affichés sur Special:LanguageStats. Les groupes inexistants seront
  # ignorés.',
 	'translate-save' => 'Publier ($1)',
+	'translate-jssti-add' => 'Ajouter à la liste',
 	'translate-group-desc-mediawikicore' => 'Ce groupe de message contient les messages utilisés dans la version alpha actuelle de MediaWiki ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'Ce groupe de message contient les [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 messages les plus souvent utilisés] dans MediaWiki',
 	'translate-group-desc-mediawikiextensions' => 'Groupe des messages contenant tous les messages des extensions supportées pour MediaWiki',
@@ -6923,7 +6937,7 @@ Dir sidd awer häerzlech Invitéiert fir d'Systemmessagn op [[Special:Translate|
 	'translate-group-desc-mediawikiextensions' => 'An dësem Grupp sinn all Systemmessage vun den ënnerstetzten Erweiderunge vu MediaWiki',
 	'translate-group-desc-collection' => "An dësem Grupp sinn all Systemmessagen fir d'MediaWiki-Erweiderung [http://www.mediawiki.org/wiki/Extension:Collection Sammlung]",
 	'translate-group-desc-flaggedrevs' => "An dësem Grupp sinn all Systemmessage fir d'MediaWiki-Erweiderung [http://www.mediawiki.org/wiki/Extension:FlaggedRevs Markéiert Versiounen]",
-	'translate-group-desc-socialprofile' => 'An dësem Grupp stinn all Systemmessage fir Erweiderungen a Verbindung matt der MediaWiki-Erweiderung [http://www.mediawiki.org/wiki/Extension:SocialProfile Soziale Profil]',
+	'translate-group-desc-socialprofile' => 'An dësem Grupp stinn all Systemmessage fir Erweiderungen a Verbindung mat der MediaWiki-Erweiderung [http://www.mediawiki.org/wiki/Extension:SocialProfile Soziale Profil]',
 	'translate-group-desc-translate' => "An dësem Grupp sinn all Systemmessage fir d'MediaWiki-Erweiderung [http://www.mediawiki.org/wiki/Extension:Translate Iwwersetzen]",
 	'translate-group-desc-wikiaextensions' => 'An dësem Grupp sinn all Systemmessage vun den ënnerstetzten MediaWiki-Erweiderungen, déi vun [http://www.wikia.com Wikia] genotzt ginn',
 	'translate-group-desc-wikihowextensions' => 'An dësem Grupp sinn all Systemmessage vun den ënnerstetzte MediaWiki-Erweiderungen, déi vun [http://www.wikihow.com wikiHow] genotzt ginn',
@@ -8141,7 +8155,7 @@ $messages['oc'] = array(
 	'translate-submit' => 'Aténher',
 	'translate-page-navigation-legend' => 'Navigacion',
 	'translate-page-showing' => 'Visualizacion dels messatges de $1 a $2 sus $3.',
-	'translate-page-showing-all' => 'Visualizacion de $1 {{PLURAL:$1|messatge|messatges}}.',
+	'translate-page-showing-all' => "Visualizacion {{PLURAL:$1|d'$1 messatge|de $1 messatges}}.",
 	'translate-page-showing-none' => 'Cap de messatge de visualizar.',
 	'translate-next' => 'Pagina seguenta',
 	'translate-prev' => 'Pagina precedenta',
@@ -8204,6 +8218,13 @@ Los cambiaments seràn pas salvats abans que cliquèssetz sul boton « Salvar »
 	'translate-checks-format' => 'Aquesta traduccion seguís pas la definicion o a una sintaxi invalida : $1',
 	'translate-checks-escape' => 'Los escapaments seguents pòdon èsser accidentals : <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'Me mandetz pas la letra d’informacion per corrièr',
+	'translate-pref-editassistlang' => 'Assistent de lengas',
+	'prefs-translate' => 'Opcions de traduccion',
+	'translate-pref-editassistlang-help' => 'Una virgulas a separat una lista de còde lenga.
+La traduccion d’un messatge dins aquelas lengas son visualizadas quand sètz a traduire.
+La lista per defaut de las lengas varia en foncion de vòstra lenga.',
+	'translate-pref-editassistlang-bad' => 'Còde lenga invalid dins la lista :
+<nowiki>$1</nowiki>.',
 	'right-translate' => "Modificar en utilizant l'interfàcia de traduccion",
 	'translate-rc-translation-filter' => 'Filtrar las traduccions :',
 	'translate-rc-translation-filter-no' => 'Far pas res',
@@ -8235,7 +8256,7 @@ Los cambiaments seràn pas salvats abans que cliquèssetz sul boton « Salvar »
 	'translate-tag-noedit' => 'Aquesta pagina es un document de traduccion automaticament mesa a jorn.
 Podètz [$1 modificar la pagina font] o [$2 metre a jorn la traduccion].',
 	'translations' => 'Totas las traduccions',
-	'translations-summary' => 'Picatz un nom de messatge en dejós per mostrar totas las traduccions disponiblas.',
+	'translations-summary' => 'Picatz un nom de messatge en dejós per far veire totas las traduccions disponiblas.',
 	'translate-translations-no-message' => '« $1 » es pas un messatge traductible',
 	'translate-translations-none' => 'I a pas cap de traduccion per « $1 »',
 	'translate-translations-fieldset-title' => 'Messatge',
@@ -8255,6 +8276,7 @@ Podètz [$1 modificar la pagina font] o [$2 metre a jorn la traduccion].',
 	'translate-nothing-to-do' => 'Totas las traduccions possiblas semblan que son estadas efectuadas.
 Sètz encoratjat(ada) a repassar los messatges dempuèi [[Special:Translate|{{int:translate}}]].',
 	'translate-save' => 'Publicar ($1)',
+	'translate-jssti-add' => 'Apondre a la lista',
 	'translate-group-desc-mediawikicore' => 'Aqueste grop de messatges conten los messatges utilizats dins la version alfà actuala de MediaWiki ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'Aqueste grop de messatges conten los [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 messatges utilizats lo mai sovent] dins MediaWiki',
 	'translate-group-desc-mediawikiextensions' => 'Grop dels messatges que contenon totes los messatges de las extensions suportadas per MediaWiki',
