@@ -96,6 +96,13 @@ $3 is an URL.',
 	'tpt-languages-legend' => 'The caption of a language selector displayed using <code>&lt;languages /&gt;</code>, e.g. on [[Project list]].',
 );
 
+/** Afrikaans (Afrikaans)
+ * @author Naudefj
+ */
+$messages['af'] = array(
+	'translate-tag-translate-link-desc' => 'Vertaal die bladsy',
+);
+
 /** Arabic (العربية)
  * @author Meno25
  * @author ترجمان05
@@ -116,6 +123,20 @@ $messages['ar'] = array(
 	'tpt-translate-this' => 'ترجم هذه الصّفحة',
 	'translate-tag-translate-link-desc' => 'ترجمة هذه الصفحة',
 	'tpt-languages-legend' => 'لغات أخرى:',
+);
+
+/** Egyptian Spoken Arabic (مصرى)
+ * @author Meno25
+ */
+$messages['arz'] = array(
+	'translate-tag-translate-link-desc' => 'ترجمة هذه الصفحة',
+);
+
+/** Asturian (Asturianu)
+ * @author Esbardu
+ */
+$messages['ast'] = array(
+	'translate-tag-translate-link-desc' => 'Traducir esta páxina',
 );
 
 /** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
@@ -181,6 +202,13 @@ $messages['bg'] = array(
 	'translate-tag-translate-link-desc' => 'Превеждане на тази страница',
 );
 
+/** Breton (Brezhoneg)
+ * @author Fulup
+ */
+$messages['br'] = array(
+	'translate-tag-translate-link-desc' => 'Treiñ ar bajenn-mañ',
+);
+
 /** Bosnian (Bosanski)
  * @author CERminator
  */
@@ -218,6 +246,13 @@ Provjerite da postoje oznake <nowiki><translate></nowiki> i da ima valjanu sinta
 	'translate-tag-hasnew' => 'Ova stranica sadrži <span class="plainlinks">[$1 izmjena]</span> koje nisu označene za prevođenje.',
 	'tpt-translation-intro-fuzzy' => 'Zastarijeli prijevodi su označeni ovako.',
 	'tpt-languages-legend' => 'Drugi jezici:',
+);
+
+/** Buginese (ᨅᨔ ᨕᨘᨁᨗ)
+ * @author Kurniasan
+ */
+$messages['bug'] = array(
+	'translate-tag-translate-link-desc' => "Tare'juma iyyedé leppa",
 );
 
 /** Catalan (Català)
@@ -375,6 +410,20 @@ Zda se, až bok, kótaryž wopytujoš wobźěłaś, njewótpowědujo bokoju, kó
 	'tpt-render-summary' => 'Aktualizacija pó nowej wersiji žrědłowego boka',
 );
 
+/** Greek (Ελληνικά)
+ * @author Dead3y3
+ */
+$messages['el'] = array(
+	'translate-tag-translate-link-desc' => 'Μεταφράστε αυτή τη σελίδα',
+);
+
+/** Esperanto (Esperanto)
+ * @author Yekrats
+ */
+$messages['eo'] = array(
+	'translate-tag-translate-link-desc' => 'Traduki ĉi tiun paĝon',
+);
+
 /** Spanish (Español)
  * @author Crazymadlover
  * @author Sanbec
@@ -425,6 +474,20 @@ Antes de marcar esta versión para traducción, verifica que los cambios a las s
 Esta página es una traducción de la página [[$1]] y la traducción puede ser actualizada usando [$2 la herramienta de traducción].',
 	'tpt-unknown-page' => 'Este espacio de nombre está reservado para traducciones de páginas de contenido.
 La página que estás tratando de editar no parece corresponder con alguna página marcada para traducción.',
+);
+
+/** Estonian (Eesti)
+ * @author Ker
+ */
+$messages['et'] = array(
+	'translate-tag-translate-link-desc' => 'Tõlgi see leht',
+);
+
+/** Basque (Euskara)
+ * @author An13sa
+ */
+$messages['eu'] = array(
+	'translate-tag-translate-link-desc' => 'Itzuli orri hau',
 );
 
 /** Finnish (Suomi)
@@ -692,6 +755,20 @@ D Syte, wu Du witt bearbeite, ghert schyns zue keire Syte, wu zum Ibersetze mark
 	'tpt-render-summary' => 'Aktualisiere zum e neji Version vu dr Quällsyte z finde',
 );
 
+/** Hebrew (עברית)
+ * @author Rotemliss
+ */
+$messages['he'] = array(
+	'translate-tag-translate-link-desc' => 'תרגום דף זה',
+);
+
+/** Croatian (Hrvatski)
+ * @author Suradnik13
+ */
+$messages['hr'] = array(
+	'translate-tag-translate-link-desc' => 'Prevedi ovu stranicu',
+);
+
 /** Upper Sorbian (Hornjoserbsce)
  * @author Michawiki
  */
@@ -743,6 +820,13 @@ Tuta strona je přełožk strony [[$1]] a přełožk hodźi so z pomocu [$2 Pře
 Strona, kotruž pospytuješ wobdźěłać, po wšěm zdaću stronje markěrowanej za přełožowanje njewotpowěduje.',
 	'tpt-install' => 'Wuwjedź php maintenance/update.php ab webinstalaciju, zo by funkcija přełožowanje stronow zmóžnił.',
 	'tpt-render-summary' => 'Aktualizacija po nowej wersiji žórłoweje strony',
+);
+
+/** Hungarian (Magyar)
+ * @author Dani
+ */
+$messages['hu'] = array(
+	'translate-tag-translate-link-desc' => 'A lap fordítása',
 );
 
 /** Interlingua (Interlingua)
@@ -923,6 +1007,13 @@ $messages['ja'] = array(
 	'tpt-render-summary' => '翻訳元ページの新版に適合するように更新中',
 );
 
+/** Javanese (Basa Jawa)
+ * @author Pras
+ */
+$messages['jv'] = array(
+	'translate-tag-translate-link-desc' => 'Terjemahaké kaca iki',
+);
+
 /** Khmer (ភាសាខ្មែរ)
  * @author គីមស៊្រុន
  * @author វ័ណថារិទ្ធ
@@ -1036,6 +1127,27 @@ Dës Säit ass eng Iwwersetzung vun der Säit [[$1]] an d'Iwwersetzung ka mat H�
 D'Säit, déi Dir versicht z'änneren schéngt net mat enger Säit déi fir d'iwwersetzung markéiert ass ze korrespondéieren.",
 	'tpt-install' => "Lancéiert php maintenance/update.php oder web install fir d'Fonctioun vun der Säiteniwwersetzung anzeschalten.",
 	'tpt-render-summary' => 'Aktualiséieren fir mat der neier Versioun vun der Quellsäit iwwereneenzestëmmen',
+);
+
+/** Macedonian (Македонски)
+ * @author Brest
+ */
+$messages['mk'] = array(
+	'translate-tag-translate-link-desc' => 'Преведи ја оваа страница',
+);
+
+/** Erzya (Эрзянь)
+ * @author Botuzhaleny-sodamo
+ */
+$messages['myv'] = array(
+	'translate-tag-translate-link-desc' => 'Йутавтык те лопанть',
+);
+
+/** Nahuatl (Nāhuatl)
+ * @author Fluence
+ */
+$messages['nah'] = array(
+	'translate-tag-translate-link-desc' => 'Tictlahtōlcuepāz inīn zāzanilli',
 );
 
 /** Dutch (Nederlands)
@@ -1244,6 +1356,13 @@ La pagina qu'ensajatz de modificar sembla pas correspondre a cap de pagina marca
 	'tpt-render-summary' => 'Mesa a jorn per èsser en acòrd amb la version novèla de la font de la pagina',
 );
 
+/** Polish (Polski)
+ * @author Leinad
+ */
+$messages['pl'] = array(
+	'translate-tag-translate-link-desc' => 'Przetłumacz tę stronę',
+);
+
 /** Portuguese (Português)
  * @author Malafaya
  * @author Waldir
@@ -1333,6 +1452,13 @@ Esta página que você está tentando editar não aparenta corresponder a nenhum
 $messages['ro'] = array(
 	'translate-tag-translate-link-desc' => 'Tradu această pagină',
 	'tpt-languages-legend' => 'Alte limbi:',
+);
+
+/** Tarandíne (Tarandíne)
+ * @author Joetaras
+ */
+$messages['roa-tara'] = array(
+	'translate-tag-translate-link-desc' => 'Traduce sta vosce',
 );
 
 /** Russian (Русский)
@@ -1443,6 +1569,20 @@ Zdá sa, že stránka, ktorú sa pokúšate upravovať nezodpovedá žiadnej str
 	'tpt-render-summary' => 'Aktualizácia na novú verziu zdrojovej stránky',
 );
 
+/** Serbian Cyrillic ekavian (ћирилица)
+ * @author Михајло Анђелковић
+ */
+$messages['sr-ec'] = array(
+	'translate-tag-translate-link-desc' => 'Преведите ову страну',
+);
+
+/** Seeltersk (Seeltersk)
+ * @author Pyt
+ */
+$messages['stq'] = array(
+	'translate-tag-translate-link-desc' => 'Disse Siede uursätte',
+);
+
 /** Swedish (Svenska)
  * @author M.M.S.
  * @author Najami
@@ -1476,6 +1616,20 @@ $messages['te'] = array(
 	'tpt-translate-this' => 'ఈ పేజీని అనువదించండి',
 	'translate-tag-translate-link-desc' => 'ఈ పేజీని అనువదించండి',
 	'tpt-languages-legend' => 'ఇతర భాషలు:',
+);
+
+/** Thai (ไทย)
+ * @author Ans
+ */
+$messages['th'] = array(
+	'translate-tag-translate-link-desc' => 'แปลหน้านี้',
+);
+
+/** Tagalog (Tagalog)
+ * @author AnakngAraw
+ */
+$messages['tl'] = array(
+	'translate-tag-translate-link-desc' => 'Isalinwika ang pahinang ito',
 );
 
 /** Turkish (Türkçe)
@@ -1514,6 +1668,20 @@ $messages['uk'] = array(
 	'tpt-languages-legend' => 'Інші мови:',
 );
 
+/** Vèneto (Vèneto)
+ * @author Candalua
+ */
+$messages['vec'] = array(
+	'translate-tag-translate-link-desc' => 'Tradusi sta pagina',
+);
+
+/** Veps (Vepsan kel')
+ * @author Игорь Бродский
+ */
+$messages['vep'] = array(
+	'translate-tag-translate-link-desc' => "Käta nece lehtpol'",
+);
+
 /** Vietnamese (Tiếng Việt)
  * @author Minh Nguyen
  */
@@ -1530,5 +1698,33 @@ $messages['vi'] = array(
 	'translate-tag-markthis' => 'Đánh dấu trang này là cần dịch',
 	'tpt-languages-legend' => 'Ngôn ngữ khác:',
 	'tpt-render-summary' => 'Cập nhật đến phiên bản mới của trang nguồn',
+);
+
+/** Volapük (Volapük)
+ * @author Smeira
+ */
+$messages['vo'] = array(
+	'translate-tag-translate-link-desc' => 'Tradutön padi at',
+);
+
+/** Yiddish (ייִדיש)
+ * @author פוילישער
+ */
+$messages['yi'] = array(
+	'translate-tag-translate-link-desc' => 'פֿארטײַטשט דעם בלאט',
+);
+
+/** Simplified Chinese (‪中文(简体)‬)
+ * @author Gzdavidwong
+ */
+$messages['zh-hans'] = array(
+	'translate-tag-translate-link-desc' => '翻译本页',
+);
+
+/** Traditional Chinese (‪中文(繁體)‬)
+ * @author Wrightbus
+ */
+$messages['zh-hant'] = array(
+	'translate-tag-translate-link-desc' => '翻譯本頁',
 );
 

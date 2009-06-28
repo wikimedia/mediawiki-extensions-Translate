@@ -3974,6 +3974,13 @@ Animámolo a que revise as mensaxes existentes mediante a páxina especial [[Spe
 	'translate-group-desc-ui' => 'Grupo de mensaxes meta que contén todas as mensaxes das extensións relacionadas coa [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Iniciativa de usabilidade da Wikipedia]',
 );
 
+/** Gothic
+ * @author Jocke Pirat
+ */
+$messages['got'] = array(
+	'translate-edit' => 'máidjan',
+);
+
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
  * @author Crazymadlover
  * @author LeighvsOptimvsMaximvs
@@ -9080,9 +9087,6 @@ $messages['roa-tara'] = array(
 	'translate-statsf-scale-hours' => 'Ore',
 	'translate-statsf-count-edits' => 'Numere de cangiaminde',
 	'translate-statsf-submit' => 'Andeprime',
-	'translate-tag-translate-link-desc' => 'Traduce sta vosce',
-	'translate-tag-legend' => 'Leggende:',
-	'translate-tag-legend-fuzzy' => 'Traduziune non aggiornete',
 	'translations' => 'Tutte le traduziune',
 	'translations-summary' => "Mitte 'nu messagge sotte pe fa vedè tutte le traduziune disponibbele.",
 	'translate-translations-none' => 'Non ge stonne traduziune pe "$1"',
@@ -11015,9 +11019,6 @@ I canbiamenti no i xe salvà finché no te struchi el boton qua soto.',
 	'translate-statsf-submit' => 'Anteprima',
 	'translate-tag-category' => 'Pagine che se pol tradur',
 	'translate-tag-page-desc' => 'Tradussion de la pagina wiki [[:$1]].',
-	'translate-tag-translate-link-desc' => 'Tradusi sta pagina',
-	'translate-tag-legend' => 'Legenda:',
-	'translate-tag-legend-fallback' => 'Tradussion in altre lengoe',
 	'translate-sidebar-alltrans' => 'In altre lengoe',
 	'translations' => 'Tute le tradussion',
 	'translate-translations-fieldset-title' => 'Messajo',
