@@ -99,6 +99,8 @@ array(
 	'check' => 'variable',
 	'message' => array(
 		'requestaccount-email-body', // Optional time parameters
+		'confirmaccount-reject', // Optional time parameters
+		'confirmaccount-held', // Optional time parameters
 	)
 ),
 array(
