@@ -138,7 +138,9 @@ EOEO;
 
 		$preference = $wgUser->getOption( 'translate-editlangs' );
 		if ( $preference !== 'default' ) {
-			return array_map( 'trim', explode( ',', $preference ) );
+			$fallbacks = array_map( 'trim', explode( ',', $preference ) );
+			foreach( $fallbacks as $k => $v ) if ( $v === $code ) unset($fallbacks[$k]);
+			return $fallbacks;
 		}
 
 		$fallbacks = array();
