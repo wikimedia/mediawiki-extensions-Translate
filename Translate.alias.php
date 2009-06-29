@@ -236,10 +236,13 @@ $aliases['ia'] = array(
 
 /** Indonesian (Bahasa Indonesia) */
 $aliases['id'] = array(
-	'Translate' => array( 'Terjemahan' ),
-	'Magic' => array( 'Terjemahan lanjut', 'Terjemahanlanjut' ),
-	'TranslationChanges' => array( 'Perubahan terjemahan', 'Perubahanterjemahan' ),
-	'TranslationStats' => array( 'Statistik terjemahan' ),
+	'Translate' => array( 'Terjemahkan' ),
+	'Magic' => array( 'Terjemahkan lanjut', 'TerjemahkanLanjut' ),
+	'TranslationChanges' => array( 'Perubahan terjemahan', 'PerubahanTerjemahan' ),
+	'TranslationStats' => array( 'Statistik terjemahan', 'StatistikTerjemahan' ),
+	'Translations' => array( 'Terjemahan' ),
+	'LanguageStats' => array( 'Statistik bahasa', 'StatistikBahasa' ),
+	'PageTranslation' => array( 'Terjemahan halaman', 'TerjemahanHalaman' ),
 );
 
 /** Italian (Italiano) */

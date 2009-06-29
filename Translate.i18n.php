@@ -286,6 +286,7 @@ This box list the problems found in the translation.',
 This warning indicates that the namespace in the translation does not match the namespace appearing in the message definition (original English message).',
 	'translate-pref-nonewsletter' => "Option in [[Special:Preferences]], 'Misc' tab.",
 	'prefs-translate' => 'Caption of a section at [[Special:Preferences#prefsection-3|Special:Preferences]]',
+	'translate-pref-editassistlang-help' => 'Used in [[Special:Preferences]], tab Editing.',
 	'right-translate' => '{{doc-right}}',
 	'translate-rc-translation-filter' => 'Name of filter in [[Special:RecentChanges]]. Gives a user the option to filter out translations, show translations only, or do nothing (default).',
 	'translate-rc-translation-filter-no' => 'Option for filter in [[Special:RecentChanges]]. Selecting this option results in the filter not doing anything. It is the default value.',
@@ -317,6 +318,7 @@ These messages will not be submitted to svn, but will only affect the interface 
 	'translate-percentage-complete' => 'Used in [[Special:LanguageStats]].',
 	'translate-percentage-fuzzy' => 'Used in [[Special:LanguageStats]].',
 	'translate-languagestats-groups' => "You can translate the text, including 'Leave this line exactly as it is'. The lines of this messages have one (1) leading space.",
+	'translate-jssti-add' => 'Name of button in [[Special:Preferences]], tab Editing.',
 );
 
 /** Faeag Rotuma (Faeag Rotuma)
@@ -704,6 +706,27 @@ $messages['ar'] = array(
  # تعرض في Special:LanguageStats.أرقام مجموعات الرسائل غير الموجودة سوف 
  # يتم تجاهلها.',
 	'translate-save' => 'حفظ ($1)',
+);
+
+/** Aramaic (ܐܪܡܝܐ)
+ * @author Basharh
+ */
+$messages['arc'] = array(
+	'translate' => 'ܬܪܓܡ',
+	'translate-edit' => 'ܫܚܠܦ',
+	'translate-talk' => 'ܡܡܠܠܐ',
+	'translate-history' => 'ܬܫܥܝܬܐ',
+	'translate-task-view' => 'ܚܘܝ ܟܠ ܐܓܪ̈ܬܐ ܕ',
+	'translate-task-untranslated' => 'ܚܘܝ ܟܠ ܐܓܪ̈ܬܐ ܠܐ ܬܘܪ̈ܓܡܐ ܕ',
+	'translate-task-optional' => 'ܚܘܝ ܟܠ ܐܓܪ̈ܬܐ ܨܒܝܢܝ̈ܐ ܕ',
+	'translate-task-untranslatedoptional' => 'ܚܘܝ ܟܠ ܐܓܪ̈ܬܐ ܨܒܝܢܝ̈ܐ ܠܐ ܬܘܪ̈ܓܡܐ ܕ',
+	'translate-task-review' => 'ܬܢܝ ܫܘܚܠܦ̈ܐ ܕ',
+	'translate-task-reviewall' => 'ܬܢܝ ܟܠ ܐܓܪ̈ܬܐ ܬܘܪ̈ܓܡܐ ܕ',
+	'translate-page-task' => 'ܒܥܐ ܐܢܐ',
+	'translate-page-group' => 'ܟܢܘܫܝܐ',
+	'translate-page-language' => 'ܠܫܢܐ',
+	'translate-submit' => 'ܒܨܝܐ',
+	'translate-page-navigation-legend' => 'ܐܠܦܪܘܬܐ',
 );
 
 /** Araucanian (Mapudungun)
@@ -1148,7 +1171,11 @@ $messages['be-tarask'] = array(
 	'translate-checks-format' => 'Гэты пераклад няслушна перакладае крынічны тэкст альбо ўтрымлівае сынтаксычныя памылкі: $1',
 	'translate-checks-escape' => 'Наступнае выдзяленьне можа быць выпадковым: <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'Не дасылаць мне інфармацыйныя лісты па электроннай пошце',
+	'translate-pref-editassistlang' => 'Дапаможныя мовы',
 	'prefs-translate' => 'Устаноўкі перакладу',
+	'translate-pref-editassistlang-help' => 'Падзелены коскамі сьпіс кодаў моў.
+Пераклады паведамленьняў на гэтыя мовы паказваюцца пад час Вашых перакладаў.
+Сьпіс моў па змоўчваньні залежыць ад Вашай мовы.',
 	'translate-pref-editassistlang-bad' => 'Няслушны код мовы ў сьпісе:
 <nowiki>$1</nowiki>.',
 	'right-translate' => 'Рэдагаваньне з выкарыстаньнем інтэрфэйсу перакладу',
@@ -1951,7 +1978,7 @@ V překladech jmenných prostorů se <tt>$1 talk</tt> chová zvláštně. <tt>$1
 Pokud není ve vašem jazyce možné vytvořit smysluplný výraz bez změny názvu projektu, kontaktujte vývojáře.
 
 Abyste mohli ukládat změny, musíte být členem skupiny ''překladatelé''.
-Změny se neuloží, dokud nekliknete na tlačítko „Uložit změny“ pod editačním okínkem.",
+Změny se neuloží, dokud nekliknete na tlačítko „Uložit změny“ pod editačním okénkem.",
 	'translate-magic-module' => 'Modul:',
 	'translate-magic-submit' => 'Zobrazit',
 	'translate-magic-cm-export' => 'Exportovat',
@@ -3471,10 +3498,10 @@ Les modifications ne sont pas enregistrées tant que vous n’avez pas cliqué s
 	'translate-checks-format' => 'Cette traduction ne suit pas la définition ou a une syntaxe incorrecte : $1',
 	'translate-checks-escape' => 'Les échappements suivants peuvent être accidentels : <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'Ne pas m’envoyer les courriels d’informations',
-	'translate-pref-editassistlang' => 'Assistant de langues',
+	'translate-pref-editassistlang' => "Langues d'assistance",
 	'prefs-translate' => 'Options de traduction',
-	'translate-pref-editassistlang-help' => 'Une virgules a séparé une liste de code langue.
-La traduction d’un message dans ces langues sont visualisé quant vous êtes en train de traduire.
+	'translate-pref-editassistlang-help' => 'Liste de code de langues séparée par une virgule.
+La traduction d’un message dans ces langues est affiché quand vous êtes en train de le traduire.
 La liste par défaut des langues varie en fonction de votre langue.',
 	'translate-pref-editassistlang-bad' => 'Code langue invalide dans la liste :
 <nowiki>$1</nowiki>.',
@@ -4565,6 +4592,7 @@ $messages['hr'] = array(
 	'translate-magic-namespace' => 'Imena imenskih prostora',
 	'translationchanges' => 'Prevoditeljske promjene',
 	'translationchanges-export' => 'izvedi (export)',
+	'translationchanges-change' => '$1: $2 po $3',
 	'translate-checks-parameters' => 'Sljedeći {{PLURAL:$2|parametar se ne koristi|parametri se ne koriste}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Nejednak broj {{PLURAL:$2|zagrada|zagrada}}:
@@ -5534,6 +5562,13 @@ Le modifiche non vengono salvate finché non clicchi sul bottone "Salva" sotto.'
 	'translate-checks-format' => 'Questa traduzione non segue la definizione o ha una sintassi non valida: $1',
 	'translate-checks-escape' => 'I seguenti escape potrebbero essere accidentali: <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'Non mandarmi le newsletter per e-mail',
+	'translate-pref-editassistlang' => 'Assistente lingue',
+	'prefs-translate' => 'Opzioni di traduzione',
+	'translate-pref-editassistlang-help' => "Codici delle lingue separati da virgola.
+Le traduzioni di un messaggio in queste lingue sono mostrate durante la traduzione.
+L'elenco predefinito (default) delle lingue dipende dalla propria lingua.",
+	'translate-pref-editassistlang-bad' => "Codice lingua non valido nell'elenco:
+<nowiki>$1</nowiki>.",
 	'right-translate' => "Modifica usando l'interfaccia di traduzione",
 	'translate-rc-translation-filter' => 'Filtra le traduzioni:',
 	'translate-rc-translation-filter-no' => 'Non fare niente',
@@ -5585,6 +5620,7 @@ Puoi [$1 modificare la pagina sorgente] o [$2 aggiornare la traduzione].',
 	'translate-nothing-to-do' => 'Sembra che siano state fatte tutte le traduzioni possibili.
 Si consiglia di ricontrollare i messaggi attraverso [[Special:Translate|{{int:translate}}]].',
 	'translate-save' => 'Salva ($1)',
+	'translate-jssti-add' => "Aggiungi all'elenco",
 	'translate-group-desc-mediawikicore' => "Questo gruppo di messaggi contiene i messaggi usati nell'attuale versione alfa di MediaWiki ({{CURRENTVERSION}})",
 	'translate-group-desc-mediawikimostused' => 'Questo gruppo di messaggi contiene i [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 messaggi più usati] in MediaWiki',
 	'translate-group-desc-mediawikiextensions' => 'Meta gruppo di messaggi contenente tutti i messaggi per le estensioni di MediaWiki supportate',
@@ -5705,12 +5741,10 @@ $messages['ja'] = array(
 	'translate-checks-format' => 'この翻訳は定義に沿っていない、または不正な構文を使用しています: $1',
 	'translate-checks-escape' => '以下のエスケープは偶発のものであるかもしれません: <strong>$1</strong>',
 	'translate-pref-nonewsletter' => '電子メールのニュースレターを受け取らない',
-	'translate-pref-editassistlang' => '言語アシスタント',
+	'translate-pref-editassistlang' => '補助言語',
 	'prefs-translate' => '翻訳設定',
-	'translate-pref-editassistlang-help' => 'カンマ区切りの言語コード一覧。
-これらの言語でのメッセージの翻訳は、あなたが翻訳している時に表示されます。
-標準の言語一覧はあなたの言語によって変化します。',
-	'translate-pref-editassistlang-bad' => 'リスト中の不正な言語コード：
+	'translate-pref-editassistlang-help' => 'カンマ区切りの言語コード一覧。これらの言語でのメッセージの翻訳文が、あなたが翻訳している時に表示されます。標準の言語一覧はあなたの言語によって変化します。',
+	'translate-pref-editassistlang-bad' => 'リスト中の不正な言語コード:
 <nowiki>$1</nowiki>',
 	'right-translate' => '翻訳用インターフェースを使って編集する',
 	'translate-rc-translation-filter' => '絞込み:',
@@ -5826,8 +5860,8 @@ $messages['jv'] = array(
 	'translate-edit-definition' => 'Définisi pesen',
 	'translate-edit-contribute' => 'awèh kontribusi',
 	'translate-edit-no-information' => "''Pesen iki ora nduwé dokumèntasi. Menawa panjenengan ngerti kepriyé pesen iki dienggo, mangga panjenengan bisa nulungi para panerjemah liyané mawa nambahaké dokumentasi ing pesen iki.''",
-	'translate-edit-information' => 'Informasi perkara pesen iki ($1)',
-	'translate-edit-in-other-languages' => 'Pesen ing basa liya',
+	'translate-edit-information' => 'Informasi ngenani pesen "$2" ($1)',
+	'translate-edit-in-other-languages' => 'Pesen "$1" ing basa liya',
 	'translate-edit-committed' => 'Pertalan saiki ing perangkat lunak',
 	'translate-edit-warnings' => 'Pèngetan perkara pertalan sing ora pepak',
 	'translate-edit-goto-no-prev' => 'Ora ana pesen/warta sadurungé',
@@ -5836,13 +5870,13 @@ $messages['jv'] = array(
 	'translate-edit-goto-next' => 'Sunting pesen/warta sabanjuré',
 	'translate-edit-goto-list' => 'Bali menyang dhaptar',
 	'translate-magic-pagename' => 'Pangambanan pertalan MediaWiki',
-	'translate-magic-help' => 'Panjenengan bisa nerjemahaké alias kanggo kaca istiméwa, tembung magis, jeneng kulit, lan jeneng bilik jeneng.
+	'translate-magic-help' => 'Panjenengan bisa nerjemahaké alias kanggo kaca istiméwa, tembung magis, lan jeneng bilik-jeneng.
 
 Alias kanggo kaca istiméwa lan tembung magis bisa nduwèni luwih saka siji terjemahan.
 Siji lan sijiné kudu dipisahaké nganggo tandha koma (,).
-Jeneng kulit lan bilik jeneng mung bisa duwé siji terjemahan.
+Bilik jeneng mung bisa duwé siji terjemahan.
 
-Jroning nerjemahaké, bilik jeneng <tt>$1 talk</tt> kuwi istiméwa. <tt>$1</tt> digantèkaké nganggo jeneng situs (conto <tt>{{ns:project_talk}}</tt>).
+Jroning nerjemahaké bilik-jeneng <tt>$1 talk</tt> kuwi istiméwa. <tt>$1</tt> digantèkaké nganggo jeneng situs (conto <tt>{{ns:project_talk}}</tt>).
 Yèn basa panjenengan ora mungkinaké gawé èksprèsi sing sah tanpa ngganti jeneng situs, mangga hubungi salah siji pangembang.
 
 Panjenengan perlu dadi anggota klompok penerjemah kanggo nyimpen owah-owahan.
@@ -5903,7 +5937,7 @@ Owah-owahan ora bakal disimpen nganti panjenengan ngeklik tombol simpen ing ngis
 	'translate-tag-page-desc' => 'Terjemahan saka kaca wiki [[:$1]].',
 	'translate-tag-fuzzy-comment' => 'Dhéfinisi diowahi déning [[User:$1|$1]] ing révisi $2.',
 	'translate-tag-fuzzy-reason' => 'Dhéfinisi diowahi déning "$1" kanthi komentar "$3" ing $2.',
-	'translate-sidebar-alltrans' => 'Terjemahan liya',
+	'translate-sidebar-alltrans' => 'Jroning basa liya',
 	'translate-tag-noedit' => 'Kaca iki minangka kaca terjemahan otomatis pungkasan.
 Panjenengan bisa [$1 nyunting sumber kaca] utawa [$2 mutakiraké terjemahan].',
 );
