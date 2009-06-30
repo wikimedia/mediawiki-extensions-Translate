@@ -1447,10 +1447,12 @@ Esta página que você está tentando editar não aparenta corresponder a nenhum
 );
 
 /** Romanian (Română)
+ * @author Firilacroco
  * @author KlaudiuMihaila
  */
 $messages['ro'] = array(
 	'translate-tag-translate-link-desc' => 'Tradu această pagină',
+	'tpt-translation-intro-fuzzy' => 'Traducerile învechite sunt marcate în acest fel.',
 	'tpt-languages-legend' => 'Alte limbi:',
 );
 
