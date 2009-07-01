@@ -2830,6 +2830,7 @@ Vi povas [$1 redakti la fontpaĝon] aŭ [$2 ĝisdatigi la tradukon].',
  * @author Imre
  * @author Kobazulo
  * @author Lin linao
+ * @author Locos epraix
  * @author Sanbec
  */
 $messages['es'] = array(
@@ -2977,6 +2978,7 @@ Usted puede [$1 editar la página fuente] o [$2 actualizar la traducción].',
 	'translate-nothing-to-do' => 'Todas las posibles traducciones parecen haber sido hechas.
 Se te anima a revisar los mensajes a través de [[Special:Translate|{{int:translate}}]].',
 	'translate-save' => 'Grabar($1)',
+	'translate-jssti-add' => 'Añadir a la lista',
 	'translate-group-desc-mediawikicore' => 'Este grupo de mensajes contiene los mensajes usados en la actual versión alpha de MediaWiki ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'Este grupo de mensajes contiene los [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 mensajes más comunmente usados] en MediaWiki',
 	'translate-group-desc-mediawikiextensions' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones soportadas por MediaWiki',
@@ -3287,9 +3289,9 @@ $messages['fi'] = array(
 	'translate-task-export-to-file' => 'viedä käännökset tiedostoon',
 	'translate-task-export-as-po' => 'viedä käännökset Gettext-muodossa',
 	'translate-task-export-to-xliff' => 'Vie käännökset Xliff-muodossa',
-	'translate-page-no-such-language' => 'Määritelty kieli ei ollut kelvollinen.',
-	'translate-page-no-such-task' => 'Määritelty tehtävä ei ollut kelvollinen.',
-	'translate-page-no-such-group' => 'Määritelty ryhmä ei ollut kelvollinen.',
+	'translate-page-no-such-language' => 'Määritelty kieli oli asiaankuulumaton.',
+	'translate-page-no-such-task' => 'Asiaankuulumaton toiminto.',
+	'translate-page-no-such-group' => 'Valittu ryhmä ei ole asiaankuuluva.',
 	'translate-page-disabled' => "Käännökset tälle kielelle tässä ryhmässä on estetty. Syy:
 
 ''$1''",
@@ -3339,6 +3341,7 @@ Muutoksia ei tallenneta, ennen kuin painat tallenna-painiketta.',
 	'translate-magic-module' => 'Moduuli:',
 	'translate-magic-submit' => 'Hae',
 	'translate-magic-cm-export' => 'Vie',
+	'translate-magic-nothing-to-export' => 'Vientiä varten ei ole valittu mitään.',
 	'translate-magic-cm-to-be' => 'Tuleva',
 	'translate-magic-cm-current' => 'Nykyinen',
 	'translate-magic-cm-original' => 'Alkuperäinen',
@@ -3360,6 +3363,7 @@ Muutoksia ei tallenneta, ennen kuin painat tallenna-painiketta.',
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '{{PLURAL:$2|Seuraava linkki on ongelmallinen|Seuraavat linkit ovat ongelmallisia}}:
 <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links-missing' => '{{PLURAL:$2|Tätä linkkiä|$2 Näitä linkkejä}} ei ole käytetty käännöksessä: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Korvaa {{PLURAL:$2|seuraava tägti oikealla|seuraavat tägi oikeilla}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Määritelmä käyttää <nowiki>{{PLURAL:}}</nowiki>-koodia, mutta käännös ei.',
@@ -3367,6 +3371,12 @@ Muutoksia ei tallenneta, ennen kuin painat tallenna-painiketta.',
 	'translate-checks-format' => 'Tämä käännös ei noudata alkuperäistä tekstiä tai sillä on virheellinen syntaksi: $1',
 	'translate-checks-escape' => 'Seuraavat escape-merkkijonot saattavat olla tahattomia: <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'Älä lähetä minulle uutiskirjeitä',
+	'translate-pref-editassistlang' => 'Avustavat kielet',
+	'prefs-translate' => 'Käännöstyökalun valinnaiset ominaisuudet',
+	'translate-pref-editassistlang-help' => 'Pilkuin eroteltu lista kielikoodeista.
+Viestin käännökset näillä kielillä näkyvät kääntäessäsi.
+Asetuksen oletusarvoiset kielet riippuvat kielestä jolle olet kääntämässä.',
+	'translate-pref-editassistlang-bad' => 'Asiaankuulumaton kielikoodi listassa: <nowiki>$1</nowiki>.',
 	'right-translate' => 'Kääntää käännöstyökalulla',
 	'translate-rc-translation-filter' => 'Käännösten suodatus',
 	'translate-rc-translation-filter-no' => 'ei toimenpidettä',
@@ -3418,7 +3428,17 @@ Voit [$1 muokata lähdesivua] tai [$2 päivittää käännöksen].',
 	'translate-nothing-to-do' => 'Kaikki mahdolliset käännökset on merkitty tehdyiksi.
 Voit tarkistaa käännöksiä toimintosivulla [[Special:Translate|{{int:translate}}]].',
 	'translate-save' => 'Tallenna ($1)',
+	'translate-jssti-add' => 'Lisää listaan',
+	'translate-group-desc-mediawikicore' => 'Tämä viestiryhmä sisältää viestit joita käytetään nykyisessä MediaWikin alfa-versiossa ({{CurrentVersion}})',
+	'translate-group-desc-mediawikimostused' => 'Tämä viestiryhmä sisältää [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki MediaWikin 500 useimmin käytettyä viestiä]',
 	'translate-group-desc-mediawikiextensions' => 'Kokoava metaviestiryhmä, joka sisältää kaikki viestit MediaWikin tukemille ohjelmalaajennuksille',
+	'translate-group-desc-collection' => 'Tämä kattava metaviestiryhmä sisältää kaikki viestit joita käytetään MediaWikin ohjelmalaajennuksessa [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
+	'translate-group-desc-flaggedrevs' => 'Tämä kattava metaviestiryhmä sisältää kaikki viestit MediaWikin [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs ohjelmalaajennusta] varten',
+	'translate-group-desc-socialprofile' => 'Tämä kattava metaviestiryhmä sisältää kaikki viestit jotka liittyvä MediaWikin [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile -ohjelmalaajennukseen]',
+	'translate-group-desc-translate' => 'Tämä kattava metaviestiryhmä sisältää kaikki viestit MediaWikin [http://www.mediawiki.org/wiki/Extension:Translate Käännöstyökalu-laajennusta] varten',
+	'translate-group-desc-wikiaextensions' => 'Tämä kattava metaviestiryhmä sisältää kaikki ne ohjelmatukea saavien MediaWikin laajennusohjelmien viestit joita [http://www.wikia.com Wikia] käyttää',
+	'translate-group-desc-wikihowextensions' => 'Tämä kattava metaviestiryhmä sisältää kaikki ohjelmatukea saavien MediaWikin laajennuksien viestit joita [http://www.wikihow.com wikiHow] käyttää',
+	'translate-group-desc-wikimediaextensions' => 'Tämä kattava metaviestiryhmä sisältää kaikki ohjelmatukea saavien MediaWikin laajennuksien viestit joita [http://wikimedia.org/ Wikimedia-säätiö] käyttää',
 );
 
 /** French (Français)
@@ -6598,6 +6618,7 @@ $1',
 만약 이 메시지가 어디에 어떻게 사용되는지 알고 계시다면 도움말을 작성해주세요.',
 	'translate-edit-information' => '이 메시지 "$2"에 관한 도움말 ($1)',
 	'translate-edit-committed' => '소프트웨어의 현재 번역',
+	'translate-edit-warnings' => '불완전한 번역에 대한 경고',
 	'translate-edit-goto-no-prev' => '이전 메시지가 없습니다.',
 	'translate-edit-goto-no-next' => '다음 메시지가 없습니다.',
 	'translate-edit-goto-prev' => '이전 메시지 수정',
@@ -7424,6 +7445,7 @@ $messages['mr'] = array(
 );
 
 /** Malay (Bahasa Melayu)
+ * @author Aurora
  * @author Emrrans
  * @author Kurniasan
  */
@@ -7450,8 +7472,8 @@ $messages['ms'] = array(
 	'translate-edit-definition' => 'Takrifan pesanan',
 	'translate-edit-contribute' => 'sumbangkan',
 	'translate-edit-no-information' => "''Pesanan in tidak mempunyai dokumentasi. Jika anda tahu di mana atau bagaimana pesanan ini digunakan, anda boleh membantu para penterjemah dengan menambahkannya kepada pesanan ini.''",
-	'translate-edit-information' => 'Maklumat mengenai pesanan ini ($1)',
-	'translate-edit-in-other-languages' => 'Pesanan di dalam bahasa lain',
+	'translate-edit-information' => 'Maklumat mengenai pesanan "$2" ($1)',
+	'translate-edit-in-other-languages' => 'Pesanan "$1" di dalam bahasa lain',
 	'translate-edit-committed' => 'Penterjemahan terkini di dalam perisian',
 	'translate-edit-warnings' => 'Amaran-amaran tentang penterjemahan yang tidak lengkap',
 	'translate-edit-goto-no-prev' => 'Tiada pesanan sebelumnya',
@@ -7463,7 +7485,7 @@ $messages['ms'] = array(
 	'translationchanges' => 'Perubahan terjemahan',
 	'translate-rc-translation-filter' => 'Tapis terjemahan:',
 	'translationstats' => 'Statistik terjemahan',
-	'translate-sidebar-alltrans' => 'Terjemahan lain',
+	'translate-sidebar-alltrans' => 'Dalam bahasa lain',
 );
 
 /** Maltese (Malti)
