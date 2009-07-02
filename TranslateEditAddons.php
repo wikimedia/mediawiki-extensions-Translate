@@ -325,7 +325,7 @@ EOEO;
 					$sugboxes[] = TranslateUtils::fieldset( 
 						wfMsgHtml( 'translate-edit-tmsug' , sprintf( '%.2f', $s['quality'] ) ),
 						$s['target'],
-						array( 'class' => 'mw-sp-translate-edit-tmsug' )
+						array( 'class' => 'mw-sp-translate-edit-tmsug', 'title' => $s['source'] )
 					);
 				}
 			}
