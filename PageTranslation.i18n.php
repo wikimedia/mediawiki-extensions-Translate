@@ -125,6 +125,13 @@ $messages['ar'] = array(
 	'tpt-languages-legend' => 'لغات أخرى:',
 );
 
+/** Aramaic (ܐܪܡܝܐ)
+ * @author Basharh
+ */
+$messages['arc'] = array(
+	'pagetranslation' => 'ܬܘܪܓܡܐ ܕܦܐܬܐ',
+);
+
 /** Egyptian Spoken Arabic (مصرى)
  * @author Meno25
  */
