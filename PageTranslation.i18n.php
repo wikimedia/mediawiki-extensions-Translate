@@ -765,9 +765,21 @@ D Syte, wu Du witt bearbeite, ghert schyns zue keire Syte, wu zum Ibersetze mark
 
 /** Hebrew (עברית)
  * @author Rotemliss
+ * @author YaronSh
  */
 $messages['he'] = array(
+	'pagetranslation' => 'תרגום דף',
+	'tpt-template' => 'תבנית הדף',
+	'tpt-templatediff' => 'תבנית הדף שונתה.',
+	'tpt-diff-old' => 'הטקסט הקודם',
+	'tpt-diff-new' => 'טקסט חדש',
+	'tpt-edit-failed' => 'לא ניתן לעדכן את הדף: $1',
+	'tpt-rev-latest' => 'הגרסה האחרונה',
+	'tpt-rev-mark-new' => 'סימון גרסה זו לתרגום',
+	'tpt-translate-this' => 'תרגום דף זה',
 	'translate-tag-translate-link-desc' => 'תרגום דף זה',
+	'translate-tag-markthis' => 'סימון דף זה לתרגום',
+	'tpt-translation-intro-fuzzy' => 'תרגומים שפג תוקפם מסומנים כך.',
 );
 
 /** Croatian (Hrvatski)
@@ -1028,8 +1040,22 @@ $messages['jv'] = array(
  */
 $messages['km'] = array(
 	'pagetranslation' => 'ការ​បក​ប្រែ​ទំព័រ​',
+	'tpt-template' => 'គំរូទំព័រ',
+	'tpt-templatediff' => 'គំរូ​ទំព័រ​បានផ្លាស់ប្តូរ​។',
+	'tpt-diff-old' => 'អត្ថបទ​​ពីមុន​',
+	'tpt-diff-new' => 'អត្ថបទ​ថ្មី​',
+	'tpt-submit' => 'សម្គាល់​កំណែ​នេះ​សម្រាប់​ការបកប្រែ​',
+	'tpt-sections-template' => 'គំរូ​ទំព័រ​បកប្រែ​',
+	'tpt-badtitle' => 'ឈ្មោះ​ទំព័រ​សម្រាប់ ($1) គឺមិនមែន​ជា​ចំនងជើង​ត្រឹមត្រូវ​',
+	'tpt-mark-summary' => 'បាន​សម្គាល់​កំណែ​នេះ​សម្រាប់​បកប្រែ​',
+	'tpt-edit-failed' => 'មិនអាច​បន្ទាន់សម័យ​ទំព័រ​៖ $1',
+	'tpt-already-marked' => 'កំណែ​ចុងក្រោយ​នៃទំព័រ​នេះ​ត្រូវបាន​សម្គាល់​ទុកសម្រាប់​បកប្រែ​។',
 	'tpt-rev-latest' => 'កំណែ (version) ចុង​ក្រោយ​គេ​',
+	'tpt-rev-mark-new' => 'សម្គាល់កំណែ​នេះសម្រាប់បកប្រែ​',
+	'tpt-translate-this' => 'បកប្រែទំព័រនេះ',
 	'translate-tag-translate-link-desc' => 'បកប្រែទំព័រនេះ',
+	'translate-tag-markthis' => 'សម្គាល់​ទំព័រ​​នេះ​សម្រាប់​ការបកប្រែ​',
+	'tpt-languages-legend' => 'ជាភាសាដទៃទៀត៖',
 );
 
 /** Korean (한국어)

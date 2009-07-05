@@ -731,7 +731,7 @@ $messages['arc'] = array(
 	'translate-page-language' => 'ܠܫܢܐ',
 	'translate-page-limit' => 'ܦܣܝܩܐ',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|ܐܓܪܬܐ|ܐܓܪ̈ܬܐ}} ܠܟܠ ܦܐܬܐ',
-	'translate-submit' => 'ܒܨܝܐ',
+	'translate-submit' => 'ܐܫܟܚ',
 	'translate-page-navigation-legend' => 'ܐܠܦܪܘܬܐ',
 	'translate-page-showing' => 'ܚܘܘܝܐ ܕܐܓܪ̈ܬܐ ܡܢ $1 ܥܕܡܐ ܠ $2 ܡܢ $3.',
 	'translate-page-showing-all' => 'ܚܘܘܝܐ ܕ $1 {{PLURAL:$1|ܐܓܪܬܐ|ܐܓܪ̈ܬܐ}}.',
@@ -4494,6 +4494,8 @@ $messages['he'] = array(
 	'translate-checks-pagename' => 'מרחבי שם ששונו מהגדרתם',
 	'translate-checks-format' => 'תרגום זה אינו תואם להגדרות או שהוא בעל תחביר שגוי: $1',
 	'translate-pref-nonewsletter' => 'אל תשלחו אלי הודעות בדואר האלקטרוני',
+	'translate-pref-editassistlang-bad' => 'קוד שפה שגוי ברשימה:
+<nowiki>$1</nowiki>.',
 	'right-translate' => 'עריכה באמצעות ממשק התרגום',
 	'translate-rc-translation-filter' => 'סינון תרגומים:',
 	'translate-rc-translation-filter-no' => 'ללא סינון',
@@ -4545,6 +4547,7 @@ $messages['he'] = array(
 	'translate-nothing-to-do' => 'נראה כי כל הפריטים כבר תורגמו.
 עם זאת, אתם מוזמנים לבדוק את ההודעות דרך [[Special:Translate|{{int:translate}}]].',
 	'translate-save' => 'שמירה ($1)',
+	'translate-jssti-add' => 'הוספת לרשימה',
 );
 
 /** Hindi (हिन्दी)
@@ -6484,7 +6487,7 @@ $messages['km'] = array(
 	'translate-edit-definition' => 'និយមន័យ​របស់​សារ',
 	'translate-edit-contribute' => 'រួមចំណែក',
 	'translate-edit-no-information' => "''សារ​នេះ​មិន​មាន​ព័ត៌មាន​បន្ថែម​ទេ​។ ប្រសិនបើ​អ្នក​ដឹង​ពី​ទីកន្លែង និង​របៀប​ប្រើប្រាស់​សារ​នេះ អ្នក​អាច​ជួយ​អ្នក​បកប្រែ​ផ្សេងទៀត​តាមរយៈ​ការ​ដាក់​បន្ថែម​ព័ត៌មាន​ទាំងនោះ​មក​ឱ្យ​សារ​នេះ​។",
-	'translate-edit-information' => 'ព័ត៌មាន​អំពី​សារ "$2"($1)',
+	'translate-edit-information' => 'ព័ត៌មាន​អំពី​សារ "$2" ($1)',
 	'translate-edit-in-other-languages' => 'សារ "$1" ​ជាភាសា​ដទៃទៀត',
 	'translate-edit-committed' => 'បទប្រែសម្រួល​បច្ចុប្បន្ន​ក្នុងផ្នែកទន់',
 	'translate-edit-warnings' => 'ការព្រមាន​អំពី​បទប្រែសម្រួលមិនពេញលេញ',
