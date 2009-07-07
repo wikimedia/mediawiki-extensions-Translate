@@ -139,33 +139,61 @@ class SpecialMagic extends SpecialPage {
 				$o = new NamespaceCM( $this->options['language'] );
 				break;
 			default:
-				// OOps.
+				throw new MWException( "Unknown module {$this->options['module']}" );
 		}
 
 		if ( $wgRequest->wasPosted() && $this->options['savetodb'] ) {
 			if ( !$wgUser->isAllowed( 'translate' ) ) {
 				$wgOut->permissionRequired( 'translate' );
 			} else {
-				$o->save( $wgRequest );
-			}
-		}
-
-		if ( $o instanceof ComplexMessages ) {
-			if ( $this->options['export'] ) {
-				$output = $o->export();
-				if ( $output === '' ) {
-					$wgOut->addWikiMsg( 'translate-magic-nothing-to-export' );
+				$errors = array();
+				$o->loadFromRequest( $wgRequest );
+				$o->validate( $errors );
+				if ( $errors ) {
+					$wgOut->wrapWikiMsg( '<div class="error">$1</div>',
+						'translate-magic-notsaved' );
+					$this->outputErrors( $errors );
+					$wgOut->addHTML( $o->output() );
+					return;
+				} else {
+					$o->save( $wgRequest );
+					$wgOut->wrapWikiMsg( '<big><b>$1</b></big>', 'translate-magic-saved' );
+					$wgOut->addHTML( $o->output() );
 					return;
 				}
-				$result = Xml::element( 'textarea', array( 'rows' => '30' ), $output );
-			} else {
-
-				$wgOut->addWikiMsg( self::MSG . 'help' );
-				$result = $o->output();
 			}
 		}
 
-		$wgOut->addHTML( $result );
+
+		if ( $this->options['export'] ) {
+			$output = $o->export();
+			if ( $output === '' ) {
+				$wgOut->addWikiMsg( 'translate-magic-nothing-to-export' );
+				return;
+			}
+			$result = Xml::element( 'textarea', array( 'rows' => '30' ), $output );
+			$wgOut->addHTML( $result );
+			return;
+		}
+
+		$wgOut->addWikiMsg( self::MSG . 'help' );
+		$errors = array();
+		$o->validate( $errors );
+		if ( $errors ) $this->outputErrors( $errors );
+		$wgOut->addHTML( $o->output() );
+
+
+	}
+
+	protected function outputErrors( $errors ) {
+		global $wgLang, $wgOut;
+		$count = $wgLang->formatNum( count($errors) );
+		$wgOut->addWikiMsg( 'translate-magic-errors', $count );
+		$wgOut->addHTML( '<ol>' );
+		foreach ( $errors as $error ) {
+			$wgOut->addHTML( "<li>$error</li>" );
+		}
+		$wgOut->addHTML( '</ol>' );
 	}
 
 }

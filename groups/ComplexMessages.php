@@ -40,8 +40,9 @@ abstract class ComplexMessages {
 	protected $init = false;
 	public function getGroups() {
 		if ( !$this->init ) {
+			$saved = $this->getSavedData();
 			foreach ( $this->data as &$group ) {
-				$this->getData( $group );
+				$this->getData( $group, $saved );
 			}
 			$this->init = true;
 		}
@@ -74,11 +75,11 @@ abstract class ComplexMessages {
 	}
 
 
-	public function getData( &$group ) {
+	public function getData( &$group, $savedData ) {
 		$defs = $this->readVariable( $group, 'en' );
 		$code = $this->language;
 
-		$current = wfArrayMerge( $this->readVariable( $group, $code ), $this->getSavedData() );
+		$current = wfArrayMerge( $this->readVariable( $group, $code ), $savedData );
 
 		// Clean up duplicates to definitions from saved data
 		$current = $this->cleanData( $defs, $current );
@@ -97,6 +98,17 @@ abstract class ComplexMessages {
 	}
 
 	/**
+	 * Gets data from request. Needs to be run before the form is displayed and
+	 * validation. Not needed for export, which uses request directly.
+	 */
+	public function loadFromRequest( WebRequest $request ) {
+		$saved = $this->parse( $this->formatForSave( $request ) );
+		foreach ( $this->data as &$group ) {
+			$this->getData( $group, $saved );
+		}
+	}
+
+	/**
 	 * Gets saved data from Mediawiki namespace
 	 * @return Array
 	 */
@@ -105,8 +117,12 @@ abstract class ComplexMessages {
 
 		if ( !$data ) {
 			return array();
+		} else {
+			return $this->parse( $data );
 		}
+	}
 
+	protected function parse( $data ) {
 		$lines = array_map( 'trim', explode( "\n", $data ) );
 		$array = array();
 		foreach ( $lines as $line ) {
@@ -120,7 +136,6 @@ abstract class ComplexMessages {
 			$array[$name] = $data;
 
 		}
-
 
 		return $array;
 	}
@@ -226,7 +241,7 @@ abstract class ComplexMessages {
 				$value = $this->val( $group, self::LANG_CURRENT, $key );
 				$rowContents .= '<td>' . $this->editElement( $key, $this->formatElement( $value ) ) . '</td>';
 
-				$s .= '<tr>' . $rowContents . '</tr>';
+				$s .= Xml::tags( 'tr', array( 'id' => "mw-sp-magic-$key" ), $rowContents );
 			}
 
 		}
@@ -316,77 +331,103 @@ abstract class ComplexMessages {
 	#
 	# Export
 	#
-	public function validate( &$errors = array() ) {  }
+	public function validate( &$errors = array(), $filter = false ) {
+		$used = array();
+		foreach ( array_keys($this->data) as $group ) {
+			if (  $filter !== false && !in_array( $group, (array) $filter, true ) ) continue;
+			$this->validateEach( $errors, $group, $used );
+		}
+	}
+
+	protected function validateEach( &$errors = array(), $group, &$used ) {
+		foreach ( $this->getIterator( $group ) as $key ) {
+			$values = $this->val( $group, self::LANG_CURRENT, $key );
+
+			if ( count($values) !== count(array_filter($values)) ) {
+				$link = Xml::element( 'a', array( 'href' => "#mw-sp-magic-$key" ), $key );
+				$errors[] = "There is empty value in $link.";
+			}
+
+			foreach( $values as $v ) {
+				if ( isset($used[$v]) ) {
+					$otherkey = $used[$v];
+					$first = Xml::element( 'a', array( 'href' => "#mw-sp-magic-$otherkey" ), $otherkey );
+					$errors[] = "Translation <b>$v</b> is used more than once for $first and $link.";
+				} else {
+					$used[$v] = $key;
+				}
+			}
+		}
+	}
 
 	public function export( $filter = false ) {
-		$errors = array();
-		$this->validate( $errors );
-		$groups = $this->getGroups();
 		$text = '';
-
+		$errors = array();
+		$this->validate( $errors, $filter );
 		foreach( $errors as $_ ) $text .= "#!!# $_\n";
 
-		foreach ( $groups as $group => $data ) {
-
+		foreach ( $groups = $this->getGroups() as $group => $data ) {
 			if (  $filter !== false && !in_array( $group, (array) $filter, true ) ) continue;
-
-			$var = $data['var'];
-			$items = $data['data'];
-
-			$extra = '';
-			if ( $data['code'] ) {
-				$extra = "['{$this->language}']";
-			}
-
-			$out = '';
-
-			$indexKeys = array();
-			foreach ( array_keys( $items[self::LANG_MASTER] ) as $key ) {
-				$indexKeys[$key] = isset( $this->constants[$key] ) ? $this->constants[$key] : "'$key'";
-			}
-
-			$padTo = max( array_map( 'strlen', $indexKeys ) ) + 3;
-
-			foreach ( $this->getIterator( $group ) as $key ) {
-				$temp = "\t{$indexKeys[$key]}";
-
-				while ( strlen( $temp ) <= $padTo ) { $temp .= ' '; }
-
-				$from = self::LANG_CURRENT;
-				if ( $this->firstMagic && !$data['code'] ) $from = self::LANG_CHAIN;
-
-				// Check for translations
-				$val = $this->val( $group, self::LANG_CURRENT, $key );
-				if ( !$val || !count( $val ) ) continue;
-
-				// Then get the data we really want
-				$val = $this->val( $group, $from, $key );
-
-				// Remove duplicated entries, causes problems with magic words
-				// TODO: prevent or fix silently on save already
-				$val = array_unique( $val /*FIXME:SORT_REGULAR*/ );
-				// So do empty elements...
-				foreach ( $val as $k => $v ) if ( $v === '' ) unset($val[$k]);
-				// Another check 
-				if ( !count( $val ) ) continue;
-
-				$normalized = array_map( array( $this, 'normalize' ), $val );
-				if ( $this->elementsInArray ) {
-					$temp .= "=> array( " . implode( ', ', $normalized ) . " ),";
-				} else {
-					$temp .= "=> " . implode( ', ', $normalized ) . ",";
-				}
-				$out .= $temp . "\n";
-			}
-
-			if ( $out !== '' ) {
-				$text .= "# $group \n";
-				$text .= "\$$var$extra = array(\n" . $out . ");\n\n";
-			}
-
+			$text .= $this->exportEach( $group, $data );
 		}
 
 		return $text;
+	}
+
+	protected function exportEach( $group, $data ) {
+		$var = $data['var'];
+		$items = $data['data'];
+
+		$extra = $data['code'] ? "['{$this->language}']" : '';
+
+		$out = '';
+
+		$indexKeys = array();
+		foreach ( array_keys( $items[self::LANG_MASTER] ) as $key ) {
+			$indexKeys[$key] = isset( $this->constants[$key] ) ? $this->constants[$key] : "'$key'";
+		}
+
+		$padTo = max( array_map( 'strlen', $indexKeys ) ) + 3;
+
+		foreach ( $this->getIterator( $group ) as $key ) {
+			$temp = "\t{$indexKeys[$key]}";
+
+			while ( strlen( $temp ) <= $padTo ) { $temp .= ' '; }
+
+			$from = self::LANG_CURRENT;
+			if ( $this->firstMagic && !$data['code'] ) $from = self::LANG_CHAIN;
+
+			// Check for translations
+			$val = $this->val( $group, self::LANG_CURRENT, $key );
+			if ( !$val || !count( $val ) ) continue;
+
+			// Then get the data we really want
+			$val = $this->val( $group, $from, $key );
+
+			// Remove duplicated entries, causes problems with magic words
+			// Just to be sure, it should not be possible to save invalid data anymore
+			$val = array_unique( $val /*FIXME:SORT_REGULAR*/ );
+			// So do empty elements...
+			foreach ( $val as $k => $v ) if ( $v === '' ) unset($val[$k]);
+			// Another check 
+			if ( !count( $val ) ) continue;
+
+			$normalized = array_map( array( $this, 'normalize' ), $val );
+			if ( $this->elementsInArray ) {
+				$temp .= "=> array( " . implode( ', ', $normalized ) . " ),";
+			} else {
+				$temp .= "=> " . implode( ', ', $normalized ) . ",";
+			}
+			$out .= $temp . "\n";
+		}
+
+		if ( $out !== '' ) {
+			$text = "# $group \n";
+			$text .= "\$$var$extra = array(\n" . $out . ");\n\n";
+			return $text;
+		} else {
+			return '';
+		}
 	}
 
 	/**
@@ -464,27 +505,24 @@ class SpecialPageAliasesCM extends ComplexMessages {
 		return $values;
 	}
 
-	public function validate( &$errors = array() ) {
-		$used = array();
-		foreach ( array_keys( $this->data ) as $group ) {
-			foreach ( $this->getIterator( $group ) as $key ) {
-				$values = $this->val( $group, self::LANG_CURRENT, $key );
-				foreach ( $values as $i => $_ ) {
-					$title = Title::makeTitleSafe( NS_SPECIAL, $_ );
-					if ( $title === null ) {
-						$errors[] = "$_ is invalid title in $key";
-						continue;
-					} else {
-						$text = $title->getText();
-						$dbkey = $title->getDBkey();
-						if( $text !== $_ && $dbkey !== $_ ) {
-							$errors[] = "$_ is not in normalised form, which is $text or $dbkey";
-						}
-						if ( isset($used[$dbkey]) ) {
-							$errors[] = "$_ is used twice for $used[$dbkey] and $key";
-							continue;
-						}
-						$used[$dbkey] = $key;
+	protected function validateEach( &$errors = array(), $group, &$used ) {
+		parent::validateEach( $errors, $group, $used );
+		foreach ( $this->getIterator( $group ) as $key ) {
+			$values = $this->val( $group, self::LANG_CURRENT, $key );
+
+			foreach ( $values as $i => $_ ) {
+				$title = Title::makeTitleSafe( NS_SPECIAL, $_ );
+				$link = Xml::element( 'a', array( 'href' => "#mw-sp-magic-$key" ), $key );
+				if ( $title === null ) {
+					if ( $_ !== '' ) {
+						// Empty values checked elsewhere
+						$errors[] = "Translation <b>$_</b> is invalid title in $link.";
+					}
+				} else {
+					$text = $title->getText();
+					$dbkey = $title->getDBkey();
+					if( $text !== $_ && $dbkey !== $_ ) {
+						$errors[] = "Translation <b>$_</b> for $link is not in normalised form, which is <b>$text</b>";
 					}
 				}
 			}
@@ -549,5 +587,17 @@ class NamespaceCM extends ComplexMessages {
 		14 => 'NS_CATEGORY',
 		15 => 'NS_CATEGORY_TALK',
 	);
+
+	protected function validateEach( &$errors = array(), $group, &$used ) {
+		parent::validateEach( $errors, $group, $used );
+		foreach ( $this->getIterator( $group ) as $key ) {
+			$values = $this->val( $group, self::LANG_CURRENT, $key );
+
+			if ( count($values) >1 ) {
+				$link = Xml::element( 'a', array( 'href' => "#mw-sp-magic-$key" ), $key );
+				$errors[] = "Namespace $link can have only one translation. Replace the translation with a new one, and notify staff about the change.";
+			}
+		}
+	}
 
 }
