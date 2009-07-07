@@ -244,6 +244,7 @@ Provjerite da postoje oznake <nowiki><translate></nowiki> i da ima valjanu sinta
 	'tpt-edit-failed' => 'Nije moguće ažurirati stranicu: $1',
 	'tpt-already-marked' => 'Posljednja verzija ove stranice je već označena za prevođenje.',
 	'tpt-old-pages' => 'Neke verzije {{PLURAL:$1|ove stranice|ovih stranica}} su označene za prevođenje.',
+	'tpt-new-pages' => '{{PLURAL:$1|Ova stranica sadrži|Ove stranice sadrže}} tekst sa oznakama prijevoda, ali nijedna od verzija {{PLURAL:$1|ove stranice|ovih stranica}} nije trenutno označena za prevođenje.',
 	'tpt-rev-latest' => 'posljednja verzija',
 	'tpt-rev-old' => 'razlika od ranije označene verzije',
 	'tpt-rev-mark-new' => 'označi ovu verziju za prevođenje',
@@ -524,7 +525,7 @@ Ainoastaan uusimmat versiot voidaan merkitä käännettäviksi.',
 Varmista, että siinä on <nowiki><translate></nowiki>-merkinnät ja että sillä on toimiva syntaksi.',
 	'tpt-saveok' => 'Sivu [[$1]] on merkitty käännettäväksi $2 {{PLURAL:$2|käännösosiolla|käännösosioilla}}.
 Sivu voidaan nyt <span class="plainlinks">[$3 kääntää]</span>.',
-	'tpt-badsect' => '"$1" on asiaankuuulumaton nimi käännösosiolle $2.',
+	'tpt-badsect' => '”$1” on epäkelpo nimi käännösosiolle $2.',
 	'tpt-showpage-intro' => 'Alempana listattu uusia, nykyisiä ja poistettavia osioita. Ennen kuin merkitset tämän version käännettäväksi, tarkista, että muutokset osioihin on minimoitu, jotta vältämme turhan työn kääntäjille.',
 	'tpt-mark-summary' => 'Merkitty tämä versio käännettäväksi',
 	'tpt-edit-failed' => 'Ei voitu tallentaa muutosta sivulle: $1',
@@ -780,6 +781,7 @@ $messages['he'] = array(
 	'translate-tag-translate-link-desc' => 'תרגום דף זה',
 	'translate-tag-markthis' => 'סימון דף זה לתרגום',
 	'tpt-translation-intro-fuzzy' => 'תרגומים שפג תוקפם מסומנים כך.',
+	'tpt-languages-legend' => 'שפות אחרות:',
 );
 
 /** Croatian (Hrvatski)
