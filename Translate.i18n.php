@@ -111,7 +111,7 @@ Changes are not saved until you click save button below.',
 	'translate-magic-namespace' => 'Namespace names',
 
 	'translate-magic-notsaved' => 'Your edit was not saved!',
-	'translate-magic-errors' => 'Please fix following errors {{PLURAL:$1|was following error|were following errors}} in translations:',
+	'translate-magic-errors' => 'Please fix following {{PLURAL:$1|error|errors}} in translations:',
 	'translate-magic-saved'  => 'Your changes were saved succesfully.',
 
 	'translationchanges'        => 'Translation changes',
