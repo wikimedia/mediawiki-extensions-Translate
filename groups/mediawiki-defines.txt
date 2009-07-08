@@ -226,6 +226,9 @@ Data Transfer
 file = DataTransfer/languages/DT_Messages.php
 descmsg = dt-desc
 
+Delayed Definition
+descmsg = delaydef-desc
+
 Delete Batch
 
 Delete Queue
