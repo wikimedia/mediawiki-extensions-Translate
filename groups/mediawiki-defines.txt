@@ -610,6 +610,9 @@ PNG Handler
 
 Poem
 
+Pool Counter
+file = PoolCounter/PoolCounterClient.i18n.php
+
 Post Comment
 file = Postcomment/SpecialPostcomment.i18n.php
 descmsg = postcomment_desc
