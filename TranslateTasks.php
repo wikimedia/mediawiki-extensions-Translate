@@ -300,7 +300,7 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 		header( "Content-Disposition: attachment; filename=\"$filename\"" );
 
 		$headers = array();
-		$headers['Project-Id-Version'] = 'MediaWiki ' . SpecialVersion::getVersion();
+		$headers['Project-Id-Version'] = 'MediaWiki ' . SpecialVersion::getVersion( 'nodb' );
 		// TODO: make this customisable or something
 		$headers['Report-Msgid-Bugs-To'] = $wgServer;
 		// TODO: sprintfDate doesn't support any time zone flags
