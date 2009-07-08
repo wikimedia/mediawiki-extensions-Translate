@@ -342,9 +342,9 @@ abstract class ComplexMessages {
 	protected function validateEach( &$errors = array(), $group, &$used ) {
 		foreach ( $this->getIterator( $group ) as $key ) {
 			$values = $this->val( $group, self::LANG_CURRENT, $key );
+			$link = Xml::element( 'a', array( 'href' => "#mw-sp-magic-$key" ), $key );
 
 			if ( count($values) !== count(array_filter($values)) ) {
-				$link = Xml::element( 'a', array( 'href' => "#mw-sp-magic-$key" ), $key );
 				$errors[] = "There is empty value in $link.";
 			}
 
