@@ -752,6 +752,7 @@ Skin Per Page
 Slippy Map
 ignored = slippymap_license, slippymap_osmlink
 descmsg = slippymap_desc
+optional = slippymap_tagname, slippymap_extname
 
 Smooth Gallery
 ignored = smoothgallery-pagetext
