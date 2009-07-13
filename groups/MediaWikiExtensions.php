@@ -6,6 +6,16 @@ class PremadeMediawikiExtensionGroups {
 	public function init() {
 		if ( $this->groups !== null ) return;
 
+		global $wgAutoloadClasses, $IP;
+		$wgAutoloadClasses['TxtDef'] = "$IP/extensions/Configure/TxtDef.php";
+		if ( class_exists( 'TxtDef' ) ) {
+			$tmp = TxtDef::loadFromFile( "$IP/extensions/Configure/Configure.settings-ext.txt" );
+			$configureData = array_combine( array_map( array( __CLASS__, 'foldId' ), array_keys($tmp)), array_values($tmp) );
+		} else {
+			$configureData = array();
+		}
+
+
 		$dir = dirname( __FILE__ );
 		$defines = file_get_contents( $dir . '/mediawiki-defines.txt' );
 
@@ -98,10 +108,18 @@ class PremadeMediawikiExtensionGroups {
 				$descmsg = str_replace( 'ext-', '', $id ) . '-desc';
 			}
 
+			$configureId = self::foldId( $name );
+			if ( isset( $configureData[$configureId]['url'] ) ) {
+				$url = $configureData[$configureId]['url'];
+			} else {
+				$url = false;
+			}
+
 			$newgroup = array(
 				'name' => $name,
 				'file' => $file,
 				'descmsg' => $descmsg,
+				'url' => $url,
 			);
 
 			$copyvars = array( 'ignored', 'optional', 'var', 'desc', 'prefix', 'mangle' );
@@ -115,6 +133,10 @@ class PremadeMediawikiExtensionGroups {
 		}
 
 		$this->groups = $fixedGroups;
+	}
+
+	static function foldId( $name ) {
+		return preg_replace( '/\s+/', '', strtolower( $name ) );
 	}
 
 	public function addAll() {
@@ -168,7 +190,7 @@ class PremadeMediawikiExtensionGroups {
 		if ( isset( $info['desc'] ) ) {
 			$group->setDescription( $info['desc'] );
 		} else {
-			$group->setDescriptionMsg( $info['descmsg'] );
+			$group->setDescriptionMsg( $info['descmsg'], $info['url'] );
 		}
 
 

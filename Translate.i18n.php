@@ -57,6 +57,7 @@ Reason:
 
 	'translate-page-description-legend' => 'Information about the group',
 	'translate-page-edit'               => 'edit',
+	'translate-ext-url'                 => '<hr />Website: $1',
 
 	'translate-optional' => '(optional)',
 	'translate-ignored'  => '(ignored)',

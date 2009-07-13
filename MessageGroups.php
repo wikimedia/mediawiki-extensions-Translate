@@ -321,7 +321,7 @@ class ExtensionMessageGroup extends MessageGroup {
 		return $wgTranslateExtensionDirectory;
 	}
 
-	public function setDescriptionMsg( $key ) {
+	public function setDescriptionMsg( $key, $url ) {
 		global $wgLang;
 
 		$desc = $this->getMessage( $key, $wgLang->getCode() );
@@ -329,6 +329,9 @@ class ExtensionMessageGroup extends MessageGroup {
 			$desc = $this->getMessage( $key, 'en' );
 		if ( $desc !== null )
 			$this->description = $desc;
+
+		if ( $url )
+			$this->description .= wfMsgNoTrans( 'translate-ext-url', $url );
 	}
 
 	public static function factory( $label, $id ) {
