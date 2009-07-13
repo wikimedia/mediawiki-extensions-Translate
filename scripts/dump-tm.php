@@ -51,7 +51,7 @@ foreach ( $groups as $g ) {
 	$collection = $g->initCollection( $code );
 	$collection->setInfile( $g->load( $code ) );
 	$collection->filter( 'ignored' );
-	$collection->loadTranslations();
+	$collection->filter( 'translated', false );
 	$output = $writer->webExport( $collection );
 	$data .= preg_replace( "/^.*\n\n/Us", '', $output );
 }
