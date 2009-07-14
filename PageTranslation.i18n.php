@@ -243,6 +243,7 @@ Provjerite da postoje oznake <nowiki><translate></nowiki> i da ima valjanu sinta
 	'tpt-mark-summary' => 'Ova vezija označena za prevođenje',
 	'tpt-edit-failed' => 'Nije moguće ažurirati stranicu: $1',
 	'tpt-already-marked' => 'Posljednja verzija ove stranice je već označena za prevođenje.',
+	'tpt-list-nopages' => 'Nijedna stranica nije označena za prevođenje niti je spremna za označavanje.',
 	'tpt-old-pages' => 'Neke verzije {{PLURAL:$1|ove stranice|ovih stranica}} su označene za prevođenje.',
 	'tpt-new-pages' => '{{PLURAL:$1|Ova stranica sadrži|Ove stranice sadrže}} tekst sa oznakama prijevoda, ali nijedna od verzija {{PLURAL:$1|ove stranice|ovih stranica}} nije trenutno označena za prevođenje.',
 	'tpt-rev-latest' => 'posljednja verzija',
@@ -254,6 +255,8 @@ Provjerite da postoje oznake <nowiki><translate></nowiki> i da ima valjanu sinta
 	'translate-tag-hasnew' => 'Ova stranica sadrži <span class="plainlinks">[$1 izmjena]</span> koje nisu označene za prevođenje.',
 	'tpt-translation-intro-fuzzy' => 'Zastarijeli prijevodi su označeni ovako.',
 	'tpt-languages-legend' => 'Drugi jezici:',
+	'tpt-target-page' => 'Ova stranica ne može biti ručno ažurirana.
+Ova stranica je prijevod stranice [[$1]] a prevodi se mogu ažurirati putem [$2 alata za prevođenje].',
 );
 
 /** Buginese (ᨅᨔ ᨕᨘᨁᨗ)
@@ -495,7 +498,10 @@ $messages['et'] = array(
  * @author An13sa
  */
 $messages['eu'] = array(
+	'tpt-diff-old' => 'Aurreko testua',
+	'tpt-diff-new' => 'Testu berria',
 	'translate-tag-translate-link-desc' => 'Itzuli orri hau',
+	'tpt-languages-legend' => 'Beste hizkuntzak:',
 );
 
 /** Finnish (Suomi)
@@ -1646,14 +1652,20 @@ $messages['sv'] = array(
 );
 
 /** Telugu (తెలుగు)
+ * @author Kiranmayee
  * @author Veeven
  */
 $messages['te'] = array(
 	'pagetranslation' => 'పేజీ అనువాదం',
-	'tpt-section' => 'విభాగం:',
-	'tpt-section-new' => 'కొత్త విభాగం:',
+	'right-pagetranslation' => 'పేజీల కూర్పులను అనువాదానికై గుర్తించడం',
+	'tpt-desc' => 'విషయపు పేజీలను అనువదించడానికై పొడగింత',
+	'tpt-section' => 'అనువాద విభాగం $1',
+	'tpt-section-new' => 'కొత్త అనువాద విభాగం. పేరు: $1',
+	'tpt-section-deleted' => 'అనువాద విభాగము $1',
 	'tpt-template' => 'పేజీ మూస',
+	'tpt-diff-old' => 'గత పాఠ్యం',
 	'tpt-diff-new' => 'కొత్త పాఠ్యం',
+	'tpt-sections-template' => 'అనువాద పేజీ మూస',
 	'tpt-translate-this' => 'ఈ పేజీని అనువదించండి',
 	'translate-tag-translate-link-desc' => 'ఈ పేజీని అనువదించండి',
 	'tpt-languages-legend' => 'ఇతర భాషలు:',
