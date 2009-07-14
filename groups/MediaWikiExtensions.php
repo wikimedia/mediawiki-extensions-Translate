@@ -412,6 +412,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-drafts', // test.wikipedia.org
 		'ext-expandtemplates',
 		'ext-extensiondistributor', // MediaWiki.org
+		'ext-fundraiserportal', // 2009-07-14: not yet live but expected soon/Raymond
 		'ext-gadgets',
 		'ext-globalblocking',
 		'ext-imagemap',
