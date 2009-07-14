@@ -142,6 +142,9 @@ file = ImportFreeImages/ImportFreeImages.alias.php
 Import users
 file = ImportUsers/SpecialImportUsers.alias.php
 
+Index Function
+file = ImportUsers/IndexFunction.alias.php
+
 Inspect cache
 file = InspectCache/InspectCache.alias.php
 
