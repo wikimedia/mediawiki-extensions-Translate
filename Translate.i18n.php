@@ -222,6 +222,7 @@ You are encouraged to review messages through [[Special:Translate|{{int:translat
 	'translate-group-desc-mediawikiextensions' => 'Meta message group containing all messages for supported extensions for MediaWiki',
 	'translate-group-desc-collection' => 'Meta message group containing all messages for the MediaWiki extension [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
 	'translate-group-desc-flaggedrevs' => 'Meta message group containing all messages for the MediaWiki extension [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
+	'translate-group-desc-readerfeedback' => 'Meta message group containing all messages for the MediaWiki extension [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
 	'translate-group-desc-socialprofile' => 'Meta message group containing all messages for extensions related to the MediaWiki extension [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
 	'translate-group-desc-translate' => 'Meta message group containing all messages for the MediaWiki extension [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-wikiaextensions' => 'Meta message group containing all messages for supported MediaWiki extensions used by [http://www.wikia.com Wikia]',

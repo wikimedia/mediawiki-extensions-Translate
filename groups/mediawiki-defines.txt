@@ -295,11 +295,6 @@ file = FlaggedRevs/language/FlaggedRevs.i18n.php
 optional = revreview-toggle, revreview-ak-review, accesskey-ca-current, accesskey-ca-stable
 descmsg = flaggedrevs-desc
 
-Flagged Revisions - Liked Pages
-id = ext-flaggedrevs-likedpages
-file = FlaggedRevs/language/LikedPages.i18n.php
-descmsg = likedpages
-
 Flagged Revisions - Old Reviewed Pages
 id = ext-flaggedrevs-oldreviewedpages
 file = FlaggedRevs/language/OldReviewedPages.i18n.php
@@ -310,20 +305,10 @@ id = ext-flaggedrevs-problemchanges
 file = FlaggedRevs/language/ProblemChanges.i18n.php
 descmsg = problemchanges
 
-Flagged Revisions - Problem Pages
-id = ext-flaggedrevs-problempages
-file = FlaggedRevs/language/ProblemPages.i18n.php
-descmsg = problempages
-
 Flagged Revisions - Quality Oversight
 id = ext-flaggedrevs-qualityoversight
 file = FlaggedRevs/language/QualityOversight.i18n.php
 descmsg = qualityoversight
-
-Flagged Revisions - Rating History
-id = ext-flaggedrevs-ratinghistory
-file = FlaggedRevs/language/RatingHistory.i18n.php
-descmsg = ratinghistory
 
 Flagged Revisions - Reviewed Pages
 id = ext-flaggedrevs-reviewedpages
@@ -652,6 +637,26 @@ file = Randomrootpage/Randomrootpage.i18n.php
 
 Random Users With Avatars
 descmsg = random-users-avatars-desc
+
+Reader Feedback
+id = ext-readerfeedback-readerfeedback
+file = ReaderFeedback/language/ReaderFeedback.i18n.php
+descmsg = readerfeedback
+
+Reader Feedback - Liked Pages
+id = ext-readerfeedback-likedpages
+file = ReaderFeedback/language/LikedPages.i18n.php
+descmsg = likedpages
+
+Reader Feedback - Problem Pages
+id = ext-readerfeedback-problempages
+file = ReaderFeedback/language/ProblemPages.i18n.php
+descmsg = problempages
+
+Reader Feedback - Rating History
+id = ext-readerfeedback-ratinghistory
+file = ReaderFeedback/language/RatingHistory.i18n.php
+descmsg = ratinghistory
 
 Record Admin
 ignored = recordadmin-title

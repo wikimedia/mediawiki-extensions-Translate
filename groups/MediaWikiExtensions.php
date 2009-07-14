@@ -158,6 +158,7 @@ class PremadeMediawikiExtensionGroups {
 			'ext-0-wikitravel'        => 'AllWikitravelExtensionsGroup',
 			'ext-collection-0-all'    => 'AllCollectionExtensionsGroup',
 			'ext-flaggedrevs-0-all'   => 'AllFlaggedRevsExtensionsGroup',
+			'ext-readerfeedback-0-all'=> 'AllReaderFeedbackExtensionsGroup',
 			'ext-translate-0-all'     => 'AllTranslateExtensionsGroup',
 			'ext-socialprofile-0-all' => 'AllSocialProfileExtensionsGroup',
 			'ext-uniwiki-0-all'       => 'AllUniwikiExtensionsGroup',
@@ -534,12 +535,9 @@ class AllFlaggedRevsExtensionsGroup extends AllMediawikiExtensionsGroup {
 
 	protected $flaggedrevsextensions = array(
 		'ext-flaggedrevs-flaggedrevs',
-		'ext-flaggedrevs-likedpages',
 		'ext-flaggedrevs-oldreviewedpages',
 		'ext-flaggedrevs-problemchanges',
-		'ext-flaggedrevs-problempages',
 		'ext-flaggedrevs-qualityoversight',
-		'ext-flaggedrevs-ratinghistory',
 		'ext-flaggedrevs-reviewedpages',
 		'ext-flaggedrevs-stabilization',
 		'ext-flaggedrevs-stablepages',
@@ -547,6 +545,32 @@ class AllFlaggedRevsExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-flaggedrevs-unreviewedpages',
 		'ext-flaggedrevs-unstablepages',
 		'ext-flaggedrevs-validationstatistics',
+	);
+
+	protected function init() {
+		if ( $this->classes === null ) {
+			$this->classes = array();
+			$classes = MessageGroups::singleton()->getGroups();
+			foreach ( $this->flaggedrevsextensions as $key ) {
+				$this->classes[$key] = $classes[$key];
+			}
+		}
+	}
+}
+
+class AllReaderFeedbackExtensionsGroup extends AllMediawikiExtensionsGroup {
+	protected $label = 'ReaderFeedback';
+	protected $id    = 'ext-readerfeedback-0-all';
+	protected $meta  = true;
+
+	protected $classes = null;
+	protected $description = '{{int:translate-group-desc-readerfeedback}}';
+
+	protected $flaggedrevsextensions = array(
+		'ext-readerfeedback-readerfeedback',
+		'ext-readerfeedback-likedpages',
+		'ext-readerfeedback-problempages',
+		'ext-readerfeedback-ratinghistory',
 	);
 
 	protected function init() {

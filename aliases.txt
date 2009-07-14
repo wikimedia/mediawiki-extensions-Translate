@@ -220,6 +220,9 @@ file = PovWatch/PovWatch.alias.php
 Random in category
 file = RandomInCategory/SpecialRandomincategory.alias.php
 
+Reader Feedback
+file = ReaderFeedback/language/ReaderFeedback.alias.php
+
 Record admin
 file = RecordAdmin/RecordAdmin.alias.php
 
