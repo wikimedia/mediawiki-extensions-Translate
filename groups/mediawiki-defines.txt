@@ -417,6 +417,10 @@ file = ImportUsers/SpecialImportUsers.i18n.php
 
 IM Status
 
+Index Function
+descmsg = indexfunc-desc
+ignored = index-exclude-categories
+
 Input Box
 
 Inspect Cache
