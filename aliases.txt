@@ -118,6 +118,9 @@ file = FindSpam/FindSpam.alias.php
 Flagged revisions
 file = FlaggedRevs/language/FlaggedRevs.alias.php
 
+Freenode Chat
+file = freenodeChat/freenodeChat.alias.php
+
 Gadgets
 file = Gadgets/Gadgets.alias.php
 
