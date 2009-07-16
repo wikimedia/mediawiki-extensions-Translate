@@ -6,10 +6,13 @@ class PremadeMediawikiExtensionGroups {
 	public function init() {
 		if ( $this->groups !== null ) return;
 
-		global $wgAutoloadClasses, $IP;
-		$wgAutoloadClasses['TxtDef'] = "$IP/extensions/Configure/TxtDef.php";
+		global $wgAutoloadClasses, $IP, $wgConfigureExtDir;
+		if( !isset( $wgConfigureExtDir ) ) {
+			$wgConfigureExtDir = "$IP/extensions/";
+		}
+		$wgAutoloadClasses['TxtDef'] = $wgConfigureExtDir . "Configure/TxtDef.php";
 		if ( class_exists( 'TxtDef' ) ) {
-			$tmp = TxtDef::loadFromFile( "$IP/extensions/Configure/Configure.settings-ext.txt" );
+			$tmp = TxtDef::loadFromFile( $wgConfigureExtDir . "Configure/Configure.settings-ext.txt" );
 			$configureData = array_combine( array_map( array( __CLASS__, 'foldId' ), array_keys($tmp)), array_values($tmp) );
 		} else {
 			$configureData = array();
