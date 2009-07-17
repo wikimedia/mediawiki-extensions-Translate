@@ -239,7 +239,11 @@ $messages['bs'] = array(
 Jedino posljednje verzije se mogu označiti za prevođenje.',
 	'tpt-notsuitable' => 'Stranica $1 nije pogodna za prevođenje.
 Provjerite da postoje oznake <nowiki><translate></nowiki> i da ima valjanu sintaksu.',
+	'tpt-saveok' => 'Stranica [[$1]] je označena za prevođenje sa $2 {{PLURAL:$2|prevodilačkom jedinicom|prevodilačke jedinice|prevodilačkih jedinica}}.
+Stranica se sad može <span class="plainlinks">[$3 prevoditi]</span>.',
 	'tpt-badsect' => '"$1" nije valjano ime za jedinicu prevođenja $2.',
+	'tpt-showpage-intro' => 'Ispod su navedene nove, postojeće i obrisane sekcije.
+Prije nego što označite ovu verziju za prevođenje, provjerite da su izmjene sekcija minimizirane da bi se spriječio nepotrebni rad prevodioca.',
 	'tpt-mark-summary' => 'Ova vezija označena za prevođenje',
 	'tpt-edit-failed' => 'Nije moguće ažurirati stranicu: $1',
 	'tpt-already-marked' => 'Posljednja verzija ove stranice je već označena za prevođenje.',
@@ -252,11 +256,17 @@ Provjerite da postoje oznake <nowiki><translate></nowiki> i da ima valjanu sinta
 	'tpt-translate-this' => 'prevedi ovu stranicu',
 	'translate-tag-translate-link-desc' => 'Prevedi ovu stranicu',
 	'translate-tag-markthis' => 'Označi ovu stranicu za prevođenje',
+	'translate-tag-markthisagain' => 'Ova stranica ima <span class="plainlinks">[$1 izmjena]</span> od kako je posljednji put <span class="plainlinks">[$2 označena za prevođenje]</span>.',
 	'translate-tag-hasnew' => 'Ova stranica sadrži <span class="plainlinks">[$1 izmjena]</span> koje nisu označene za prevođenje.',
+	'tpt-translation-intro' => 'Ova stranica je <span class="plainlinks">[$1 prevedena verzija]</span> stranice [[$2]] a prijevod je $3% dovršen i ažuriran.',
 	'tpt-translation-intro-fuzzy' => 'Zastarijeli prijevodi su označeni ovako.',
 	'tpt-languages-legend' => 'Drugi jezici:',
 	'tpt-target-page' => 'Ova stranica ne može biti ručno ažurirana.
 Ova stranica je prijevod stranice [[$1]] a prevodi se mogu ažurirati putem [$2 alata za prevođenje].',
+	'tpt-unknown-page' => 'Ovaj imenski prostor je rezervisan za prevode stranica sadržaja.
+Stranica koju pokušavate uređivati ne odgovara nekoj od stranica koje su označene za prevođenje.',
+	'tpt-install' => 'Pokrenite php maintenance/update.php ili web install da biste omogućili osobinu prevođenja stranica.',
+	'tpt-render-summary' => 'Ažuriram na novu verziju izvorne stranice',
 );
 
 /** Buginese (ᨅᨔ ᨕᨘᨁᨗ)
@@ -985,6 +995,7 @@ Prima di segnare questa versione per la traduzione, controllare che i cambiament
 	'tpt-list-nopages' => 'Nessuna pagina è segnata per la traduzione oppure è pronta per essere segnata per la traduzione.',
 	'tpt-old-pages' => 'Alcune versioni di {{PLURAL:$1|questa pagina|queste pagine}} sono state segnate per la traduzione.',
 	'translate-tag-translate-link-desc' => 'Traduci questa pagina',
+	'tpt-languages-legend' => 'Altre lingue:',
 );
 
 /** Japanese (日本語)
