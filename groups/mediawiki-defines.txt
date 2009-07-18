@@ -508,6 +508,9 @@ descmsg = minnamelength-desc
 
 Mini Preview
 
+Most Revisors
+ignored = mostrevisors-users, mostrevisors-limit-few-revisors
+
 Multi Boilerplate
 ignored = multiboilerplate, multiboilerplate-label
 

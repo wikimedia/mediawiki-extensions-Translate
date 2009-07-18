@@ -178,6 +178,9 @@ file = MetavidWiki/languages/MV_Aliases.php
 Mibbit
 file = Mibbit/Mibbit.alias.php
 
+Most revisors
+file = MostRevisors/MostRevisors.alias.php
+
 Multi upload
 file = MultiUpload/SpecialMultipleUpload.alias.php
 
