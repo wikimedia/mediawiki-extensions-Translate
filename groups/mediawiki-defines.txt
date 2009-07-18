@@ -1001,6 +1001,11 @@ file = UsabilityInitiative/PrefStats/PrefStats.i18n.php
 descmsg = prefstats-desc
 ignored = prefstats-list-elem
 
+Usability Initiative - Simple Search
+id = ext-ui-simplesearch
+file = UsabilityInitiative/SimpleSearch/SimpleSearch.i18n.php
+descmsg = simplesearch-desc
+
 Usage Statistics
 file = UsageStatistics/SpecialUserStats.i18n.php
 

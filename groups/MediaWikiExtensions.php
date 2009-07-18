@@ -453,6 +453,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-ui-editwarning',
 		'ext-ui-optin',
 		'ext-ui-prefstats',
+		'ext-ui-simplesearch',
 		'ext-wikihiero',
 		'ext-wikimediamessages',
 	);
@@ -690,6 +691,7 @@ class AllUsabilityInitiativeExtensionsGroup extends AllMediawikiExtensionsGroup 
 		'ext-ui-editwarning',
 		'ext-ui-optin',
 		'ext-ui-prefstats',
+		'ext-ui-simplesearch',
 	);
 
 	protected function init() {
