@@ -210,8 +210,9 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 				continue;
 			}
 
-			$translatedPercentage = $wgLang->formatNum( round( 100 * $translated / $total, 2 ) );
-			$fuzzyPercentage = $wgLang->formatNum( round( 100 * $fuzzy / $total, 2 ) );
+			// Division by 0 should not be possible, but does ooccur. Caching issue?
+			$translatedPercentage = $total ? $wgLang->formatNum( round( 100 * $translated / $total, 2 ) ) : '&lt;error&gt;';
+			$fuzzyPercentage = $total ? $wgLang->formatNum( round( 100 * $fuzzy / $total, 2 ) ) : '&lt;error&gt;';
 
 			if ( !wfEmptyMsg( 'percent', wfMsgNoTrans('percent')) ) {
 				$translatedPercentage = wfMsg( 'percent', $translatedPercentage );
