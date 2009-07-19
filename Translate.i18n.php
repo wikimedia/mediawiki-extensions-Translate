@@ -1950,25 +1950,46 @@ $messages['ch'] = array(
 );
 
 /** Sorani (Arabic script) (‫کوردی (عەرەبی)‬)
+ * @author Marmzok
  * @author رزگار
  */
 $messages['ckb-arab'] = array(
 	'translate' => 'وەرگێڕانه وە',
 	'translate-talk' => 'وتار',
 	'translate-history' => 'مێژو',
+	'translate-task-view' => 'دیتنی هەموو پەیامەکانی',
+	'translate-task-problematic' => 'دیتنی ئەو پەیامانەی کێشەیان هەیە',
 	'translate-page-language' => 'زمانەکان',
 	'translate-submit' => 'گەڕان',
 	'translate-next' => 'پەڕەی دووایی',
 	'translate-prev' => 'پەڕەی پێشوو',
+	'translate-edit-goto-no-prev' => 'پێش ئەمە پەیام نیە',
+	'translate-edit-goto-no-next' => 'پاش ئەمە پەیام نیە',
+	'translate-edit-goto-prev' => 'دەستکاری پەیامی پێشوو',
+	'translate-edit-goto-next' => 'دەستکاری پەیامی دواتر',
 	'translate-edit-goto-list' => '<<< بگەڕێرۆ بۆ لیست >>>',
+	'translate-magic-cm-export' => 'هەناردن',
+	'translate-magic-nothing-to-export' => 'هیچ شتێک نیە بۆ هەناردن.',
+	'translate-magic-cm-save' => 'پاشەکەوت کردن',
+	'translate-magic-cm-savefailed' => 'پاشەکەوت‌کردن سەرکەوتوو نەبوو',
+	'translate-magic-saved' => 'گۆڕانکاریەکانت بە سەرکەوتووی پاشەکەوت کرا.',
+	'translationchanges-export' => 'هەناردن',
+	'translate-pref-nonewsletter' => 'ئی‌مێڵی هەواڵ‌نامە بۆ من مەنێرە',
+	'prefs-translate' => 'هەڵبژاردەکانی وەرگێڕان',
 	'translate-rc-translation-filter' => 'پاڵاوتنی وەرگێڕاوەکان:',
 	'translate-rc-translation-filter-no' => 'هیچ شتێک مەکە',
 	'translate-rc-translation-filter-only' => 'هەر وەرگێڕاوەکان نیشان بده',
+	'translate-stats-edits' => 'دەستکاریەکان',
 	'translate-stats-users' => 'وەرگێڕاوەکان',
 	'translate-statsf-submit' => 'پێش دیتن',
+	'translate-tag-category' => 'ئەو لاپەڕانەی توانای وەرگێڕانیان هەیە',
 	'translate-sidebar-alltrans' => 'له زمانه‌کانی ترا',
+	'translate-translations-fieldset-title' => 'پەیام',
 	'translate-translations-messagename' => 'ناو:',
+	'translate-language-code' => 'کۆدی زمان',
 	'translate-language' => 'زمان',
+	'translate-total' => 'پەیامەکان',
+	'translate-untranslated' => 'وەرنەگێڕاو',
 );
 
 /** Czech (Česky)
@@ -2433,6 +2454,7 @@ $messages['dsb'] = array(
 	'translate-prev' => 'Slědny bok',
 	'translate-page-description-legend' => 'Informacije wó kupce',
 	'translate-page-edit' => 'wobźěłaś',
+	'translate-ext-url' => '<hr />Websedło: $1',
 	'translate-optional' => '(opcionalny)',
 	'translate-ignored' => '(ignorěrowany)',
 	'translate-edit-definition' => 'Definicija powěsći',
@@ -2471,6 +2493,9 @@ Musyš w kupce pśełožowarjow byś, aby mogł změny cyniś. Změny se njeskł
 	'translate-magic-special' => 'Aliasy specialnych bokow',
 	'translate-magic-words' => 'Magiske słowa',
 	'translate-magic-namespace' => 'Mjenja mjenjowych rumow',
+	'translate-magic-notsaved' => 'Twója změna njejo se składła!',
+	'translate-magic-errors' => 'Pšosym skorigěruj {{PLURAL:$1|slědujucu zmólku|slědujucej zmólce|slědujuce zmólki|slědujuce zmólki}} w pśełožkach:',
+	'translate-magic-saved' => 'Twóje změny su se wuspěšnje składli.',
 	'translationchanges' => 'Změny pśełožka',
 	'translationchanges-export' => 'eksportěrowaś',
 	'translationchanges-change' => '$1: $2 pśez $3',
@@ -2549,6 +2574,8 @@ Pśiraźijo se, až pśeglědujoš powěźeńki pśez [[Special:Translate|{{int:
 	'translate-group-desc-mediawikiextensions' => 'Toś ta głowna kupka wopśimujo wše powěźeńki za pódpěrane rozšyrjenja MediaWiki',
 	'translate-group-desc-collection' => 'Toś ta głowna kupka wopśimujo wše powěźeńki za rozšyrjenje MediaWiki [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
 	'translate-group-desc-flaggedrevs' => 'Toś ta głowna kupka wopśimujo wše powěźeńki za rozšyrjenje MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
+	'translate-group-desc-readerfeedback' => 'Metakupka powěźeńkow, kótaraž wopśimujo wše powěźeńki za rozšyrjenje MediaWiki
+[http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
 	'translate-group-desc-socialprofile' => 'Toś ta głowna kupka wopśimujo wše powěźeńki za rozšyrjenja, kótarež su pśiswójźbne z rozšyrjenim MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
 	'translate-group-desc-translate' => 'Toś ta głowna kupka wopśimujo wše powěźeńki za rozšyrjenje MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-wikiaextensions' => 'Toś ta głowna kupka wopśimujo wše powěźeńki za pódpěrane rozšyrjenja MediaWiki, kótarež wužywaju se pśez [http://www.wikia.com Wikia]',
@@ -3489,7 +3516,7 @@ Voit tarkistaa käännöksiä toimintosivulla [[Special:Translate|{{int:translat
 	'translate-group-desc-translate' => 'Tämä metaviestiryhmä sisältää kaikki viestit MediaWikin [http://www.mediawiki.org/wiki/Extension:Translate Käännöstyökalu-laajennusta] varten',
 	'translate-group-desc-wikiaextensions' => 'Tämä metaviestiryhmä sisältää kaikki ne tuetut MediaWikin laajennuksien viestit, joita [http://www.wikia.com Wikia] käyttää',
 	'translate-group-desc-wikihowextensions' => 'Tämä metaviestiryhmä sisältää kaikki tuetut MediaWikin laajennuksien viestit, joita [http://www.wikihow.com wikiHow] käyttää',
-	'translate-group-desc-wikimediaextensions' => 'Tämä metaviestiryhmä sisältää kaikki tuetut MediaWikin laajennuksien viestit, joita [http://wikimedia.org/ Wikimedia-säätiö] käyttää',
+	'translate-group-desc-wikimediaextensions' => 'Tämä metaviestiryhmä sisältää kaikki tuetut MediaWikin laajennuksien viestit, joita [http://wikimedia.org/ Wikimedia Foundation] käyttää',
 	'translate-group-desc-wikitravelextensions' => 'Tämä metaviestiryhmä sisältää kaikki tuetut MediaWikin laajennuksien viestit, joita [http://wikitravel.org Wikitravel] käyttää',
 );
 

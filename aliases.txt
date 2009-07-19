@@ -149,7 +149,7 @@ Import users
 file = ImportUsers/SpecialImportUsers.alias.php
 
 Index Function
-file = ImportUsers/IndexFunction.alias.php
+file = IndexFunction/IndexFunction.alias.php
 
 Inspect cache
 file = InspectCache/InspectCache.alias.php

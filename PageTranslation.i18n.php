@@ -296,10 +296,22 @@ Assegureu-vos que té les etiquetes <nowiki><translate></nowiki> i una sintaxi v
 );
 
 /** Sorani (Arabic script) (‫کوردی (عەرەبی)‬)
+ * @author Marmzok
  * @author رزگار
  */
 $messages['ckb-arab'] = array(
+	'pagetranslation' => 'وەرگێڕانی لاپەڕە',
+	'tpt-template' => 'داڕێژەی لاپەڕە',
+	'tpt-templatediff' => 'داڕێژەی لاپەڕەکە گۆڕاوە.',
+	'tpt-diff-old' => 'دەقی پێشوو',
+	'tpt-diff-new' => 'دەقی نوێ',
+	'tpt-submit' => 'نیشان‌کردنی ئەم وەشانە بۆ وەرگێڕان',
+	'tpt-sections-template' => 'داڕێژی لاپەڕەی وەرگێڕان',
+	'tpt-already-marked' => 'دوایین وەشانی ئەم لاپەڕەیە لە پێش‌دا بۆ وەرگێڕان نیشان کراوە.',
+	'tpt-rev-latest' => 'دوایین وەشان',
+	'tpt-translate-this' => 'وەرگێڕانی ئەم لاپەڕەیە',
 	'translate-tag-translate-link-desc' => 'وەرگێڕانی ئەم پەرە',
+	'translate-tag-markthis' => 'نیشان‌کردنی ئەم لاپەڕەیە بۆ وەرگێڕان',
 	'tpt-languages-legend' => 'زمانەکانی‌تر:',
 );
 
