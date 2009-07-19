@@ -208,6 +208,9 @@ Contributors Add-on
 id = ext-contributorsaddon
 file = ContributorsAddon/ContributorsAddon.i18n.php
 
+Cooperation Statistics
+ignored = cooperationstatistics-users, cooperationstatistics-limit-few-revisors, cooperationstatistics-limit-many-revisors
+
 Count Edits
 
 Create Box

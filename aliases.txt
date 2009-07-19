@@ -76,6 +76,9 @@ file = ContributionScores/ContributionScores.alias.php
 Contribution tracking
 file = ContributionTracking/ContributionTracking.alias.php
 
+Cooperation statistics
+file = CooperationStatistics/CooperationStatistics.alias.php
+
 Cross namespace links
 file = CrossNamespaceLinks/SpecialCrossNamespaceLinks.alias.php
 
