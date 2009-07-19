@@ -191,6 +191,11 @@ file = ConfirmEdit/FancyCaptcha.i18n.php
 descmsg = fancycaptcha-desc
 optional = fancycaptcha-desc
 
+ConfirmEdit Questy Captcha
+file = ConfirmEdit/QuestyCaptcha.i18n.php
+descmsg = questycaptcha-desc
+optional = questycaptcha-desc
+
 Contact Page
 
 Contribution Reporting
