@@ -1058,7 +1058,6 @@ Wiki Article Feeds
 
 Wikidata Language Manager
 descmsg = langman-desc
-var = wdMessages
 file = Wikidata/SpecialLanguages.i18n.php
 optional = ow_URL, ow_ID
 ignored = ow_editing_policy_url
