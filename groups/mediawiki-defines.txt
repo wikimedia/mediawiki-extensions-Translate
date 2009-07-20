@@ -1059,7 +1059,7 @@ Wiki Article Feeds
 Wikidata Language Manager
 descmsg = langman-desc
 file = Wikidata/SpecialLanguages.i18n.php
-optional = ow_URL, ow_ID
+optional = ow_URL, ow_ID, prefs-omegawiki
 ignored = ow_editing_policy_url
 
 Wikihiero
