@@ -15,12 +15,15 @@ $messages['en'] = array(
 	'categoryImagePreFix'                    => 'Images ',
 	'wikiUploadTitle'                        => 'Upload',
 	'clickChartText'                         => 'click me!',
-	'unableToConvertMarker'                  => '## Error converting ##: ',
+	'unableToConvertMarker'                  => '## Error converting ##:',
 	'txt_TitlePage'                          => 'Title page',
 	'txt_PageHeader'                         => 'Page header',
 	'txt_PageFooter'                         => 'Page footer',
 	'txt_Footnote'                           => 'Footnotes',
-	'msg_Upload_Info'                        => 'Now the image file upload will begin. Before you start you need to set your browser right:\\r\\n1. Close all sidebars like favorites.\\r\\n2. Sign in into your wiki.\\r\\n\\Do not click ok before you checked this.',
+	'msg_Upload_Info'                        => 'Now the image file upload will begin. Before you start you need to set your browser right:
+:1. Close all sidebars like favorites.
+:2. Sign in into your wiki.
+Do not click ok before you checked this.',
 	'msg_Finished'                           => 'Converting finished. Paste your clipboard contents into your wiki editor.',
 	'msg_NoDocumentLoaded'                   => 'No document was loaded.',
 	'msg_LoadDocument'                       => 'Please load the document to convert.',
@@ -222,7 +225,10 @@ $messages['ar'] = array(
 	'txt_PageHeader'                         => 'رأس الصفحة',
 	'txt_PageFooter'                         => 'ذيل الصفحة',
 	'txt_Footnote'                           => 'ملاحظات',
-	'msg_Upload_Info'                        => 'الآن رفع ملف الصورة سيبدأ. قبل أن تبدأ تحتاج إلى ضبط متصفحك:\\r\\n1. أغلق كل الأشرطة الجانبية مثل المفضلة.\\r\\n2. سجل الدخول إلى الويكي الخاص بك.\\r\\n\\لا تضغط موافق قبل أن تتحقق من هذه.',
+	'msg_Upload_Info'                        => 'الآن رفع ملف الصورة سيبدأ. قبل أن تبدأ تحتاج إلى ضبط متصفحك:
+:1. أغلق كل الأشرطة الجانبية مثل المفضلة.
+:2. سجل الدخول إلى الويكي الخاص بك.
+لا تضغط موافق قبل أن تتحقق من هذه.',
 	'msg_Finished'                           => 'التحويل انتهى. الصق محتويات الحافظة إلى محرر الويكي الخاص بك.',
 	'msg_NoDocumentLoaded'                   => 'لا وثيقة تم تحميلها',
 	'msg_LoadDocument'                       => 'من فضلك حمل الوثيقة للتحويل.',
@@ -311,7 +317,10 @@ $messages['avk'] = array(
 	'txt_PageHeader'                         => 'Bukroj',
 	'txt_PageFooter'                         => 'Buvolkroj',
 	'txt_Footnote'                           => 'Titestraga',
-	'msg_Upload_Info'                        => "Ewaviyeltak fu zo kalvajar. Abdion, va rinafi exulesiki goplekul:\\r\\n1. Va kotar dilk budel.\\r\\n2. Ko rinafi wiki va int pilkomodal.\\r\\n\\Va 'OK' me vulegal abdi da va batcoba al stujel.",
+	'msg_Upload_Info'                        => "Ewaviyeltak fu zo kalvajar. Abdion, va rinafi exulesiki goplekul:
+:1. Va kotar dilk budel.
+:2. Ko rinafi wiki va int pilkomodal.
+Va 'OK' me vulegal abdi da va batcoba al stujel.",
 	'msg_Finished'                           => 'Deweldera tenuyuna. Ko wiki piskusiki va kitacek krul !',
 	'msg_NoDocumentLoaded'                   => 'Mek valdig vajayan',
 	'msg_LoadDocument'                       => 'Va godewelden valdig vay vajal !',
@@ -391,7 +400,10 @@ $messages['bcc'] = array(
 	'txt_PageHeader'                         => 'سربرگ صفحه',
 	'txt_PageFooter'                         => 'ته برگ صفحه',
 	'txt_Footnote'                           => 'جهل نوشتآن',
-	'msg_Upload_Info'                        => 'هنو آپلود فایل شروع بیت. پیش چه شی که شما شروع کنیت بایدن وتی بروزرء شر تنظیم کینت:\\r\\n1. کل نوار کشی گان بند په داب فوریتس.\\r\\n2. ته وتی وی کی وارد بیت.\\r\\n\\ پیش چه شی که شی ا چک کنیت هوبت کلیک مکنیت.',
+	'msg_Upload_Info'                        => 'هنو آپلود فایل شروع بیت. پیش چه شی که شما شروع کنیت بایدن وتی بروزرء شر تنظیم کینت:
+:1. کل نوار کشی گان بند په داب فوریتس.
+:2. ته وتی وی کی وارد بیت.
+ پیش چه شی که شی ا چک کنیت هوبت کلیک مکنیت.',
 	'msg_Finished'                           => 'تبدیل تمام بوت. وتی کلیپبورد محتواء ته اصلاح گر وتی ویکی وارد کنیت.',
 	'msg_NoDocumentLoaded'                   => 'هچ سندی بار نه بوتت.',
 	'msg_LoadDocument'                       => 'لطفا سندء بار کنیت به تبدیل کتن',
@@ -473,7 +485,10 @@ $messages['be-tarask'] = array(
 	'txt_PageHeader'        => 'Загаловак старонкі',
 	'txt_PageFooter'        => 'Ніжняя частка старонкі',
 	'txt_Footnote'          => 'Нататкі',
-	'msg_Upload_Info'       => 'Зараз пачнецца загрузка файла. Перад пачаткам неабходна дакладна наладзіць Ваш браўзэр:\\r\\n1. Зачыніце ўсе закладкі, такія як «улюбёныя».\\r\\n2. Увайдзіце ў {{GRAMMAR:вінавальны|{{SITENAME}}}}.\\r\\n\\Не націскайце кнопку «Добра», калі Вы гэтага не зрабілі.',
+	'msg_Upload_Info'       => 'Зараз пачнецца загрузка файла. Перад пачаткам неабходна дакладна наладзіць Ваш браўзэр:
+:1. Зачыніце ўсе закладкі, такія як «улюбёныя».
+:2. Увайдзіце ў {{GRAMMAR:вінавальны|{{SITENAME}}}}.
+Не націскайце кнопку «Добра», калі Вы гэтага не зрабілі.',
 	'msg_Finished'          => 'Канвэртацыя скончаная. Устаўце тэкст з буфэру абмену ў Ваш рэдактар Вікі.',
 	'msg_NoDocumentLoaded'  => 'Няма загружаных дакумэнтаў.',
 	'msg_LoadDocument'      => 'Калі ласка, загрузіце дакумэнт у канвэртар.',
@@ -583,8 +598,8 @@ $messages['de'] = array(
 	'txt_PageFooter'           => 'Fußzeile',
 	'txt_Footnote'             => 'Fußnoten',
 	'msg_Upload_Info'          => 'Jetzt werden die Bilder hochgeladen. Vorher muss der Browser korrekt eingestellt sein, damit es funktioniert:
-1. Schließe alle Seitenleisten wie z.B. die Favoriten.
-2. Melde dich an deinem Wiki an.
+:1. Schließe alle Seitenleisten wie z.B. die Favoriten.
+:2. Melde dich an deinem Wiki an.
 Klicke erst OK, wenn du dies durchgeführt habst.',
 	'msg_Finished'             => 'Konvertierung beendet. Füge die Daten aus der Zwischenablage in dein Wiki ein.',
 	'msg_NoDocumentLoaded'     => 'Es wurde kein Dokument geladen.',
@@ -627,8 +642,8 @@ Klicke erst OK, wenn du dies durchgeführt habst.',
 /** Deutsch - formal address (Deutsch - förmliche Anrede) */
 $messages['de-formal'] = array(
 	'msg_Upload_Info'       => 'Jetzt werden die Bilder hochgeladen. Vorher muss der Browser korrekt eingestellt sein, damit es funktioniert:
-1. Schließen Sie alle Seitenleisten wie z.B. die Favoriten.
-2. Melden Sie sich an Ihrem Wiki an.
+:1. Schließen Sie alle Seitenleisten wie z.B. die Favoriten.
+:2. Melden Sie sich an Ihrem Wiki an.
 Klicken Sie erst OK, wenn Sie dies durchgeführt haben.',
 	'msg_Finished'          => 'Konvertierung beendet. Fügen Sie die Daten aus der Zwischenablage in Ihr Wiki ein.',
 	'msg_LoadDocument'      => 'Bitte laden Sie das zu konvertierende Dokument.',
@@ -666,7 +681,10 @@ $messages['eo'] = array(
 	'txt_PageHeader'                         => 'Ĉefa paĝtitolo',
 	'txt_PageFooter'                         => 'Paĝa subtitolo',
 	'txt_Footnote'                           => 'Piednotoj',
-	'msg_Upload_Info'                        => 'Nun la alŝutado de la bildo komencos. Antaŭ vi komencas, vi devas konfiguri vian retumilon ĝuste:\\r\\n1. Fermu ĉiujn flankstriojn kiel favoritaĵojn.\\r\\n2. Ensaluti vian vikion.\\r\\n\\Ne kalku OK antaŭ vi markis ĉi tion.',
+	'msg_Upload_Info'                        => 'Nun la alŝutado de la bildo komencos. Antaŭ vi komencas, vi devas konfiguri vian retumilon ĝuste:
+:1. Fermu ĉiujn flankstriojn kiel favoritaĵojn.
+:2. Ensaluti vian vikion.
+Ne kalku OK antaŭ vi markis ĉi tion.',
 	'msg_Finished'                           => 'Konvertado estas finita. Elpoŝigu vian bufron en vian vikian redaktilon.',
 	'msg_NoDocumentLoaded'                   => 'Neniu dokumento estis ŝarĝita.',
 	'msg_LoadDocument'                       => 'Bonvolu ŝarĝi la dokumenton por konverti.',
@@ -745,8 +763,8 @@ $messages['es'] = array(
 	'txt_PageFooter'        => 'Pie de página',
 	'txt_Footnote'          => 'Nota al pie',
 	'msg_Upload_Info'       => 'Ahora el upload del archivo de la imagen comenzará. Antes de que te comiences necesidad de fijar la tu derecha del browser:
-1. Cerrar todo barras laterales como marcadores.
-2. Registrarse a su wiki.
+:1. Cerrar todo barras laterales como marcadores.
+:2. Registrarse a su wiki.
 No tecleo acepter antes de comprobar esto.',
 	'msg_Finished'          => 'Convertier Listo. Pegar su contentido portapapeles en su editor de wiki.',
 	'msg_NoDocumentLoaded'  => 'No se cargó ningún documento.',
@@ -768,7 +786,10 @@ $messages['fa'] = array(
 	'txt_PageHeader'                         => 'سرآغاز صفحه',
 	'txt_PageFooter'                         => 'پایین صفحه',
 	'txt_Footnote'                           => 'پانویس‌ها',
-	'msg_Upload_Info'                        => 'اکنون بارگذاری پرونده تصویر آغاز می‌شود. قبل از شروع، شما باید مرورگرتان را به درستی تنظیم کنیم:\\r\\n1. تمامی نوارهای جانبی (sidebarها) نظیر برگزیده‌ها (favorites) را ببندید.\\r\\n2. به حساب کاربری خودتان در ویکی وارد شوید.\\r\\nدکمهٔ تایید را قبل از انجام این مراحل فشار ندهید.',
+	'msg_Upload_Info'                        => 'اکنون بارگذاری پرونده تصویر آغاز می‌شود. قبل از شروع، شما باید مرورگرتان را به درستی تنظیم کنیم:
+:1. تمامی نوارهای جانبی (sidebarها) نظیر برگزیده‌ها (favorites) را ببندید.
+:2. به حساب کاربری خودتان در ویکی وارد شوید.
+دکمهٔ تایید را قبل از انجام این مراحل فشار ندهید.',
 	'msg_Finished'                           => 'تبدیل به پایان رسید. محتوای clipboard خود را درون جعبهٔ ویرایش ویکی بچسبانید (paste کنید).',
 	'msg_NoDocumentLoaded'                   => 'هیچ پرونده‌ای بارگیری نشد.',
 	'msg_LoadDocument'                       => 'لطفاً پرونده‌ای که می‌خواهید تبدیل کنید را بارگیری کنید.',
@@ -864,8 +885,8 @@ $messages['fr'] = array(
 	'txt_PageFooter'                         => 'Pied de page',
 	'txt_Footnote'                           => 'Notes de bas de page',
 	'msg_Upload_Info'                        => "Maintenant le fichier image va être téléchargé. Avant de commencer, vous devez organiser correctement votre navigateur :
-1. Fermez toutes les fenêtres latérales comme celle des favoris.
-2. Identifiez vous dans votre wiki.
+:1. Fermez toutes les fenêtres latérales comme celle des favoris.
+:2. Identifiez vous dans votre wiki.
 Ne cliquez pas sur OK avant d'avoir vérifé tout cela.",
 	'msg_Finished'                           => "Conversion terminée. Collez le contenu du bloc-note dans l'éditeur du wiki.",
 	'msg_NoDocumentLoaded'                   => "Aucun document n'a été chargé.",
@@ -962,7 +983,10 @@ $messages['gl'] = array(
 	'txt_PageHeader'                         => 'Cabeceira da páxina',
 	'txt_PageFooter'                         => 'Pé da páxina',
 	'txt_Footnote'                           => 'Notas ao pé',
-	'msg_Upload_Info'                        => 'Agora a carga do ficheiro da imaxe comezará. Antes de empezar necesita pór ben o seu navegador:\\r\\n1. Peche todos os "sidebars" (columnas á esquerda) como o de "favoritos".\\r\\n2. Acceda ao sistema do seu wiki.\\r\\n\\Non faga clic antes de verificar isto.',
+	'msg_Upload_Info'                        => 'Agora a carga do ficheiro da imaxe comezará. Antes de empezar necesita pór ben o seu navegador:
+:1. Peche todos os "sidebars" (columnas á esquerda) como o de "favoritos".
+:2. Acceda ao sistema do seu wiki.
+Non faga clic antes de verificar isto.',
 	'msg_Finished'                           => 'A conversión rematou. Pegue os contidos do seu portapapeis no seu editor do seu wiki.',
 	'msg_NoDocumentLoaded'                   => 'Non foi cargado ningún documento.',
 	'msg_LoadDocument'                       => 'Por favor, cargue o documento a converter.',
@@ -1057,7 +1081,10 @@ $messages['hi'] = array(
 	'txt_PageHeader'                         => 'पन्ने का हेडर',
 	'txt_PageFooter'                         => 'पन्ने का फूटर',
 	'txt_Footnote'                           => 'फूटनोट्स',
-	'msg_Upload_Info'                        => 'अभी चित्र का फ़ाइल अपलोड होगा। शुरू करने से पहले नीचे दी हुई चीजें जाँचें:\\r\\n1. फेवरिट जैसे सभी साईडबार बंद करें।\\r\\n2. आपके विकिपर लॉग इन करें।\\r\\n\\यह जाँचने के बाद ओके पर क्लिक करें।',
+	'msg_Upload_Info'                        => 'अभी चित्र का फ़ाइल अपलोड होगा। शुरू करने से पहले नीचे दी हुई चीजें जाँचें:
+:1. फेवरिट जैसे सभी साईडबार बंद करें।
+:2. आपके विकिपर लॉग इन करें।
+यह जाँचने के बाद ओके पर क्लिक करें।',
 	'msg_Finished'                           => 'बदल दिया। आपके क्लिपबोर्ड पर उपलब्ध पाठ आपके विकि एडीटर में चिपकायें।',
 	'msg_NoDocumentLoaded'                   => 'कोईभी डॉक्यूमेंट लोड नहीं हुआ हैं।',
 	'msg_LoadDocument'                       => 'बदलने के लिये डॉक्यूमेंट लोड करें।',
@@ -1160,7 +1187,10 @@ $messages['id'] = array(
 	'txt_PageHeader'                         => 'Kepala halaman',
 	'txt_PageFooter'                         => 'Kaki halaman',
 	'txt_Footnote'                           => 'Catatan kaki',
-	'msg_Upload_Info'                        => "Pemuatan berkas akan dimulai. Sebelum Anda memulai Anda perlu mengeset penjelajah web right:\\r\\n1. Tutup semua ''sidebar'' seperti ''favorites''.\\r\\n2. Masuk log ke wiki Anda.\\r\\n\\Jangan klik ok sebelum Anda memeriksa ini.",
+	'msg_Upload_Info'                        => "Pemuatan berkas akan dimulai. Sebelum Anda memulai Anda perlu mengeset penjelajah web right:
+:1. Tutup semua ''sidebar'' seperti ''favorites''.
+:2. Masuk log ke wiki Anda.
+Jangan klik ok sebelum Anda memeriksa ini.",
 	'msg_Finished'                           => "Konversi selesai. Anda dapat mempastakan isi ''clipboard'' ke editor wiki Anda.",
 	'msg_NoDocumentLoaded'                   => 'Belum ada dokumen yang dimuatkan.',
 	'msg_LoadDocument'                       => 'Silakan muatkan dokumen yang akan dikonversi.',
@@ -1543,7 +1573,10 @@ $messages['mr'] = array(
 	'txt_PageHeader'                         => 'पानाच्या वरील मजकूर',
 	'txt_PageFooter'                         => 'पानाच्या खालील मजकूर',
 	'txt_Footnote'                           => 'तळटीपा',
-	'msg_Upload_Info'                        => 'आता चित्र संचिका चढविण्यास सुरुवात होईल. सुरु करायच्या आधी खालील गोष्टी तपासून पहा:\\r\\n1. फेवरिट सारखे सर्व साईडबार बंद करा.\\r\\n2. तुमच्या विकिवर प्रवेश करा.\\r\\n\\हे सर्व तपासल्या नंतर ओके वर क्लिक करा.',
+	'msg_Upload_Info'                        => 'आता चित्र संचिका चढविण्यास सुरुवात होईल. सुरु करायच्या आधी खालील गोष्टी तपासून पहा:
+:1. फेवरिट सारखे सर्व साईडबार बंद करा.
+:2. तुमच्या विकिवर प्रवेश करा.
+हे सर्व तपासल्या नंतर ओके वर क्लिक करा.',
 	'msg_Finished'                           => 'बदलले. तुमच्या क्लिपबोर्ड वरील मजकूर तुमच्या विकि संपादकामध्ये चिकटवा.',
 	'msg_NoDocumentLoaded'                   => 'कुठलेही डॉक्यूमेंट लोड झालेले नाही.',
 	'msg_LoadDocument'                       => 'बदलण्यासाठीचे डॉक्यूमेंट लोड करा.',
@@ -1623,7 +1656,10 @@ $messages['nds'] = array(
 	'txt_PageHeader'                         => 'Koppreeg',
 	'txt_PageFooter'                         => 'Footreeg',
 	'txt_Footnote'                           => 'Footnoten',
-	'msg_Upload_Info'                        => 'Dat Hoochladen vun de Biller geiht nu los. Ehrdat dat losgahn kann, musst du dien Nettkieker instellen:\\r\\n1. Maak all Siedenliesten, so as Favoriten, dicht.\\r\\n2. Mell di bi dat Wiki an.\\r\\nKlick nich OK, solang du dat noch nich daan hest.',
+	'msg_Upload_Info'                        => 'Dat Hoochladen vun de Biller geiht nu los. Ehrdat dat losgahn kann, musst du dien Nettkieker instellen:
+:1. Maak all Siedenliesten, so as Favoriten, dicht.
+:2. Mell di bi dat Wiki an.
+Klick nich OK, solang du dat noch nich daan hest.',
 	'msg_Finished'                           => 'Ümwanneln trech. Föög de Daten ut diene Twischenaflaag in dat Wiki in.',
 	'msg_NoDocumentLoaded'                   => 'Keen Dokment laadt.',
 	'msg_LoadDocument'                       => 'Maak dat Dokment op, dat ümwannelt warrn schall.',
@@ -1705,8 +1741,8 @@ $messages['nl'] = array(
 	'txt_PageFooter'                         => 'Voettekst',
 	'txt_Footnote'                           => 'Voetnoten',
 	'msg_Upload_Info'                        => 'Nu zal de afbeeldingupload beginnen. Voordat u begint moet u uw internetbrowser goed zetten:
-1. Sluit alle zijbalken zoals bladwijzers of favorieten.
-2. Meld u aan bij uw wiki.
+:1. Sluit alle zijbalken zoals bladwijzers of favorieten.
+:2. Meld u aan bij uw wiki.
 Klik niet op OK voordat u dit gecontroleerd hebt.',
 	'msg_Finished'                           => 'De conversie is afgerond. U kunt nu de inhoud van uw klembord in uw wiki-editor plakken.',
 	'msg_NoDocumentLoaded'                   => 'Het document is niet geladen.',
@@ -1787,7 +1823,10 @@ $messages['no'] = array(
 	'txt_PageHeader'                         => 'Sidetopp',
 	'txt_PageFooter'                         => 'Sidebunn',
 	'txt_Footnote'                           => 'Fotnoter',
-	'msg_Upload_Info'                        => 'Opplastingen begynner nå. Før du starter må du fikse innstillingene i nettleseren.\\r\\n1. Steng alle sidemenyer, som favoritter eller logg.\\r\\n2. Logg inn på wikien.\\r\\nIkke klikk OK før du har gjort dette.',
+	'msg_Upload_Info'                        => 'Opplastingen begynner nå. Før du starter må du fikse innstillingene i nettleseren.
+:1. Steng alle sidemenyer, som favoritter eller logg.
+:2. Logg inn på wikien.
+Ikke klikk OK før du har gjort dette.',
 	'msg_Finished'                           => 'Konvertering fullført. Lim inn innholdet fra utklippstavlen til wikiredigeringen.',
 	'msg_NoDocumentLoaded'                   => 'Ingen dokumenter lastet.',
 	'msg_LoadDocument'                       => 'Last dokumentet for å konvertere det.',
@@ -1868,8 +1907,8 @@ $messages['oc'] = array(
 	'txt_PageFooter'                         => 'Pè de pagina',
 	'txt_Footnote'                           => 'Nòtas de bas de pagina',
 	'msg_Upload_Info'                        => "Ara lo fichièr imatge va èsser telecargat. Abans de començar, vos cal organizar corrèctament vòstre navigador :
-1. Tampatz totas las fenèstras lateralas coma la dels favorits.
-2. Identificatz-vos dins vòstre wiki.
+:1. Tampatz totas las fenèstras lateralas coma la dels favorits.
+:2. Identificatz-vos dins vòstre wiki.
 Cliquetz pas sus D'ACÒRDI abans d'aver verificat tot aquò.",
 	'msg_Finished'                           => "Conversion acabada. Empegatz lo contengut del blòt de nòtas dins l'editor del wiki.",
 	'msg_NoDocumentLoaded'                   => 'Cap de document es pas estat cargat.',
@@ -1957,7 +1996,10 @@ $messages['pl'] = array(
 	'txt_PageHeader'                         => 'Nagłówek strony',
 	'txt_PageFooter'                         => 'Stopka strony',
 	'txt_Footnote'                           => 'Przypisy',
-	'msg_Upload_Info'                        => 'Plik zostanie teraz przesłany na serwer. Jednak zanim się się to stanie musisz przygotować przeglądarkę:\\r\\n1. Zamknij wszystkie paski narzędzi – jak „Łącza” lub „Ulubione”.\\r\\n2. Zaloguj się do wiki.\\r\\nNie klikaj OK zanim nie wykonasz tych czynności.',
+	'msg_Upload_Info'                        => 'Plik zostanie teraz przesłany na serwer. Jednak zanim się się to stanie musisz przygotować przeglądarkę:
+:1. Zamknij wszystkie paski narzędzi – jak „Łącza” lub „Ulubione”.
+:2. Zaloguj się do wiki.
+Nie klikaj OK zanim nie wykonasz tych czynności.',
 	'msg_Finished'                           => 'Konwersja zakończona. Wklej zawartość schowka do swojego edytora wiki.',
 	'msg_NoDocumentLoaded'                   => 'Nie ma obecnie załadowanego żadnego dokumentu.',
 	'msg_LoadDocument'                       => 'Załaduj dokument, który ma zostać skonwertowany.',
@@ -2066,8 +2108,8 @@ $messages['pt'] = array(
 	'txt_PageFooter'                         => 'Rodapé da página',
 	'txt_Footnote'                           => 'Notas de rodapé',
 	'msg_Upload_Info'                        => 'Agora o carregamento de imagens vai começar. Primeiro você precisa ajustar o seu navegador:
-1. Feche todas as barras laterais (por exemplo, favoritos).
-2. Autentique-se na sua wiki.
+:1. Feche todas as barras laterais (por exemplo, favoritos).
+:2. Autentique-se na sua wiki.
 Não aperte OK antes de ter feito isto.',
 	'msg_Finished'                           => 'Conversão concluída. Cole o conteúdo da área de transferência no editor da sua wiki.',
 	'msg_NoDocumentLoaded'                   => 'Não foi carregado nenhum documento.',
@@ -2157,8 +2199,8 @@ $messages['ru'] = array(
 	'txt_PageFooter'                   => 'Подвал страницы',
 	'txt_Footnote'                     => 'Примечания',
 	'msg_Upload_Info'                  => 'Сейчас начнется загрузка сообщений. Перед началом правильно настройте окно проводника Интернет:
-1. Закройте все панели вроде Закладки.
-2. Войдите под своим логином в Wiki.
+:1. Закройте все панели вроде Закладки.
+:2. Войдите под своим логином в Wiki.
 Не нажимайте ОК пока не сделаете это!',
 	'msg_Finished'                     => 'Конвертация завершена.Вставте текст из буфера обмена в редактор WiKi',
 	'msg_NoDocumentLoaded'             => 'Документы не загружены.',
@@ -2209,7 +2251,10 @@ $messages['sk'] = array(
 	'txt_PageHeader'                         => 'Hlavička stránky',
 	'txt_PageFooter'                         => 'Päta stránky',
 	'txt_Footnote'                           => 'Poznámky pod čiarou',
-	'msg_Upload_Info'                        => 'Teraz sa začne nahrávanie súboru. Pred začatím musíte správne nastaviť svoj prehliadač:\\r\\n1. Zatvorte všetky bočné panely ako Obľúbené.\\r\\n2. Prihláste sa na svoju wiki.\\r\\nNeklikajte na OK predtým, než tak urobíte.',
+	'msg_Upload_Info'                        => 'Teraz sa začne nahrávanie súboru. Pred začatím musíte správne nastaviť svoj prehliadač:
+:1. Zatvorte všetky bočné panely ako Obľúbené.
+:2. Prihláste sa na svoju wiki.
+Neklikajte na OK predtým, než tak urobíte.',
 	'msg_Finished'                           => 'Konverzia dokončená. Vložte obsah schránky do poľa pre úpravy na wiki.',
 	'msg_NoDocumentLoaded'                   => 'Nebol načítaný žiadny dokument.',
 	'msg_LoadDocument'                       => 'Prosím, načítajte dokument, ktorý sa má konvertovať.',
@@ -2289,7 +2334,10 @@ $messages['sr-ec'] = array(
 	'txt_PageHeader'        => 'Заглавље',
 	'txt_PageFooter'        => 'Подножје',
 	'txt_Footnote'          => 'Фуснота',
-	'msg_Upload_Info'       => 'Сада почиње слање слике. Пре него што почнете, морате подесити ваз браузер:\\r\\n1. Затворите све навигације као што су букмаркс.\\r\\n2. Пријавите се на вашу вики.\\r\\n\\Не стискајте Ок пре него што проверите ово.',
+	'msg_Upload_Info'       => 'Сада почиње слање слике. Пре него што почнете, морате подесити ваз браузер:
+:1. Затворите све навигације као што су букмаркс.
+:2. Пријавите се на вашу вики.
+Не стискајте Ок пре него што проверите ово.',
 	'msg_Finished'          => 'Конвертовање завршено. Пребаците садржај на вашу Вики.',
 	'msg_NoDocumentLoaded'  => 'Ни један документ није учитан.',
 	'msg_LoadDocument'      => 'Молимо Вас учитајте докмент за конвертовање.',
@@ -2332,7 +2380,10 @@ $messages['su'] = array(
 	'txt_PageHeader'                         => 'Hulu kaca',
 	'txt_PageFooter'                         => 'Suku kaca',
 	'txt_Footnote'                           => 'Catetan',
-	'msg_Upload_Info'                        => "Ayeuna ngamuat gambar baris di mimiti. Saméméh mitembeyanana anjeun perlu mengatur panyungsi kalawan bener:\\r\\n1. Tutup kabéh sidebar kawas favorites.\\r\\n2. Asup log wiki anjeun.\\r\\n\\Tong! clik ''ok'' saméméh anjeun mariksa ieu.",
+	'msg_Upload_Info'                        => "Ayeuna ngamuat gambar baris di mimiti. Saméméh mitembeyanana anjeun perlu mengatur panyungsi kalawan bener:
+:1. Tutup kabéh sidebar kawas favorites.
+:2. Asup log wiki anjeun.
+Tong! clik ''ok'' saméméh anjeun mariksa ieu.",
 	'msg_Finished'                           => 'Ngarobah rengse. tindihkeun eusi tuliseun anjeun ka wiki pangédit.',
 	'msg_NoDocumentLoaded'                   => 'Euweuh dokumén anu dimuatkeun.',
 	'msg_SimpleTab'                          => 'Basajan',
@@ -2387,7 +2438,10 @@ $messages['sv'] = array(
 	'txt_PageHeader'                         => 'Sidhuvud',
 	'txt_PageFooter'                         => 'Sidfot',
 	'txt_Footnote'                           => 'Fotnoter',
-	'msg_Upload_Info'                        => 'Nu börjar bildfilen att laddas upp. Före du startat behöver du ange din webbläsares högerfält:\\r\\n1. Stäng alla sidpaneler som favoriter.\\r\\n2. Logga in på din wiki.\\r\\n\\Klicka inte OK förän du har gjort det här.',
+	'msg_Upload_Info'                        => 'Nu börjar bildfilen att laddas upp. Före du startat behöver du ange din webbläsares högerfält:
+:1. Stäng alla sidpaneler som favoriter.
+:2. Logga in på din wiki.
+Klicka inte OK förän du har gjort det här.',
 	'msg_Finished'                           => 'Konvertering klar. Klistra in dina skrivunderläggsinnehåll till din wikiredigerare.',
 	'msg_NoDocumentLoaded'                   => 'Inget dokument laddades.',
 	'msg_LoadDocument'                       => 'Var god ladda dokumentet till konverteringen.',
@@ -2522,7 +2576,10 @@ $messages['vec'] = array(
 	'txt_PageHeader'                         => 'Intestassion',
 	'txt_PageFooter'                         => 'Pié de pagina',
 	'txt_Footnote'                           => 'Note a pié de pagina',
-	'msg_Upload_Info'                        => 'Desso tacarà el caricamento de le imagini. Prima de partir, bisogna che te sistemi el to browser in sta maniera::\\r\\n1. Sara tute le barre laterali come i preferiti.\\r\\n2. Fà el login su la to wiki.\\r\\n\\No stà macar ok prima de ver controlà ste robe qua.',
+	'msg_Upload_Info'                        => 'Desso tacarà el caricamento de le imagini. Prima de partir, bisogna che te sistemi el to browser in sta maniera::
+:1. Sara tute le barre laterali come i preferiti.
+:2. Fà el login su la to wiki.
+No stà macar ok prima de ver controlà ste robe qua.',
 	'msg_Finished'                           => 'Conversion terminà. Incòla el contenuto dei apunti sul to editor wiki.',
 	'msg_NoDocumentLoaded'                   => 'No xe stà cargà nissun documento.',
 	'msg_LoadDocument'                       => 'Par piaser, carga el documento da convertir.',
@@ -2602,7 +2659,10 @@ $messages['vi'] = array(
 	'txt_PageHeader'                         => 'Đầu đề trang',
 	'txt_PageFooter'                         => 'Đoạn cuối trang',
 	'txt_Footnote'                           => 'Chú thích cuối trang',
-	'msg_Upload_Info'                        => 'Bây giờ việc tải tập tin hình lên sẽ bắt đầu. Trước bắt đầu bạn cần thiết lập quyền trình duyệt của mình:\\r\\n1. Đóng tất cả các thanh bên như trang ưa thích.\\r\\n2. Đăng nhập vào wiki của bạn.\\r\\n\\Xin đừng nhấn ok trước khi bạn đã làm hết những điều này.',
+	'msg_Upload_Info'                        => 'Bây giờ việc tải tập tin hình lên sẽ bắt đầu. Trước bắt đầu bạn cần thiết lập quyền trình duyệt của mình:
+:1. Đóng tất cả các thanh bên như trang ưa thích.
+:2. Đăng nhập vào wiki của bạn.
+Xin đừng nhấn ok trước khi bạn đã làm hết những điều này.',
 	'msg_Finished'                           => 'Hoàn thành chuyển đổi. Hãy dán nội dung trong clipboard vào cửa sổ soạn thảo wiki.',
 	'msg_NoDocumentLoaded'                   => 'Không có tài liệu nào được mở.',
 	'msg_LoadDocument'                       => 'Xin hãy mở tài liệu để chuyển đổi.',
