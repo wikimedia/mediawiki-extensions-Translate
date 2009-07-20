@@ -21,6 +21,7 @@ array(
 		'history-feed-item-nocomment', // Optional time parameters
 		'lastmodifiedatby', // Optional time parameters
 		'listusers-blocked', // Optional GENDER parameter
+		'prefs-registration-date-time', // Optional time parameters
 		'protect-expiring', // Optional time parameters
 		'rcnotefrom', // Optional time parameters
 		'revision-info', // Optional time parameters
