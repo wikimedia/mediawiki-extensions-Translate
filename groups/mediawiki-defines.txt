@@ -1056,9 +1056,9 @@ Widgets
 
 Wiki Article Feeds
 
-Wikidata Language Manager
-descmsg = langman-desc
-file = Wikidata/SpecialLanguages.i18n.php
+Wikidata
+descmsg = wikidata-desc
+file = Wikidata/Wikidata.i18n.php
 optional = ow_URL, ow_ID, prefs-omegawiki
 ignored = ow_editing_policy_url
 
