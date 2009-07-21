@@ -1,6 +1,6 @@
 <?php
 
-abstract class MessageGroup {
+abstract class MessageGroupOld implements MessageGroup {
 	/**
 	 * Human-readable name of this group
 	 */
@@ -58,7 +58,7 @@ abstract class MessageGroup {
 
 	/**
 	 * To avoid key conflicts between groups or separated changed messages between
-	 * brances one can set a message key mangler.
+	 * branches one can set a message key mangler.
 	 */
 	protected $mangler = null;
 	public function getMangler() { return $this->mangler; }
@@ -197,9 +197,19 @@ abstract class MessageGroup {
 	public function getChecker() {
 		return null;
 	}
+
+	public function setConfiguration( $conf ) {}
+	public function getConfiguration() {}
+	public function getNamespace() {
+		return $this->namespaces[0];
+	}
+
+	public function getFFS() {
+		return null;
+	}
 }
 
-class CoreMessageGroup extends MessageGroup {
+class CoreMessageGroup extends MessageGroupOld {
 	protected $label       = 'MediaWiki';
 	protected $id          = 'core';
 	protected $type        = 'mediawiki';
@@ -301,7 +311,7 @@ class CoreMessageGroup extends MessageGroup {
 	}
 }
 
-class ExtensionMessageGroup extends MessageGroup {
+class ExtensionMessageGroup extends MessageGroupOld {
 	/**
 	 * Name of the array where all messages are stored, if applicable.
 	 */
@@ -483,7 +493,7 @@ class CoreMostUsedMessageGroup extends CoreMessageGroup {
 	}
 }
 
-class GettextMessageGroup extends MessageGroup {
+class GettextMessageGroup extends MessageGroupOld {
 	protected $type = 'gettext';
 	/**
 	 * Name of the array where all messages are stored, if applicable.
@@ -543,7 +553,7 @@ class GettextMessageGroup extends MessageGroup {
 	}
 }
 
-class WikiMessageGroup extends MessageGroup {
+class WikiMessageGroup extends MessageGroupOld {
 	protected $source = null;
 
 	/**
@@ -701,7 +711,16 @@ class MessageGroups {
 			}
 		}
 
+
 		wfRunHooks( 'TranslatePostInitGroups', array( &$wgTranslateCC ) );
+
+		global $wgTranslateFiles;
+		foreach ( $wgTranslateGroupFiles as $file ) {
+			$conf = TranslateSpyc::load($file);
+			$group = MessageGroupBase::factory( $conf );
+			$wgTranslateCC[$group->getId()] = $group;
+		}
+
 		$loaded = true;
 	}
 
