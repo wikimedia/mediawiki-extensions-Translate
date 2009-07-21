@@ -9,6 +9,6 @@ class TranslateSpyc {
 
 	public static function dump( $text ) {
 		require_once( dirname(__FILE__).'/spyc.php' );
-		return spyc_dump( $text );
+		return Spyc::YAMLDump( $text );
 	}
 }
