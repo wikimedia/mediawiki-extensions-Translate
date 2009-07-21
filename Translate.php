@@ -12,7 +12,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '12:2009-06-13' );
+define( 'TRANSLATE_VERSION', '2009-07-21' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'path'           => __FILE__,
@@ -157,6 +157,8 @@ $wgTranslateGroupStructure = array(
 );
 
 $wgTranslateAddMWExtensionGroups = false;
+$wgTranslateGroupRoot = '/var/www/externals';
+$wgTranslateGroupFiles = array();
 
 /** EC = Enabled classes */
 $wgTranslateEC = array();

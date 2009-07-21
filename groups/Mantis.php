@@ -8,7 +8,7 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-class MantisMessageGroup extends MessageGroup {
+class MantisMessageGroup extends MessageGroupOld {
 	protected $label = 'MantisBT (web-based bugtracking system)';
 	protected $id    = 'out-mantis';
 	protected $type  = 'mantis';

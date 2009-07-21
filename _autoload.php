@@ -18,7 +18,12 @@ $wgAutoloadClasses['TranslateUtils'] = $dir . 'TranslateUtils.php';
 $wgAutoloadClasses['HTMLSelector'] = $dir . 'TranslateUtils.php';
 
 $wgAutoloadClasses['MessageChecker'] = $dir . 'MessageChecks.php';
-$wgAutoloadClasses['MessageGroup'] = $dir . 'MessageGroups.php';
+
+$wgAutoloadClasses['MessageGroup'] = $dir . 'Groups.php';
+$wgAutoloadClasses['MessageGroupBase'] = $dir . 'Groups.php';
+$wgAutoloadClasses['FileBasedMessageGroup'] = $dir . 'Groups.php';
+
+$wgAutoloadClasses['MessageGroupOld'] = $dir . 'MessageGroups.php';
 $wgAutoloadClasses['MessageGroups'] = $dir . 'MessageGroups.php';
 $wgAutoloadClasses['WikiPageMessageGroup'] = $dir . 'MessageGroups.php';
 $wgAutoloadClasses['AliasMessageGroup'] = $dir . 'MessageGroups.php';
@@ -61,16 +66,11 @@ $wgAutoloadClasses['XliffFormatWriter'] = $dir . 'ffs/Xliff.php';
 
 # utils
 $wgAutoloadClasses['ResourceLoader'] = $dir . 'utils/ResourceLoader.php';
+$wgAutoloadClasses['StringMangler'] = $dir . 'utils/StringMatcher.php';
 $wgAutoloadClasses['StringMatcher'] = $dir . 'utils/StringMatcher.php';
 $wgAutoloadClasses['FCFontFinder'] = $dir . 'utils/Font.php';
 
 $wgAutoloadClasses['ArrayMemoryCache'] = $dir . 'utils/MemoryCache.php';
-
-$wgAutoloadClasses['StringMangler'] = $dir . 'utils/StringMangler.php';
-$wgAutoloadClasses['SmItem'] = $dir . 'utils/StringMangler.php';
-$wgAutoloadClasses['SmRewriter'] = $dir . 'utils/StringMangler.php';
-$wgAutoloadClasses['SmAffixRewriter'] = $dir . 'utils/StringMangler.php';
-$wgAutoloadClasses['SmRegexRewriter'] = $dir . 'utils/StringMangler.php';
 
 $wgAutoloadClasses['TranslatePreferences'] = $dir . 'utils/UserToggles.php';
 $wgAutoloadClasses['TranslateToolbox'] = $dir . 'utils/ToolBox.php';
@@ -105,3 +105,11 @@ $wgAutoloadClasses['TPParse'] = $dir . 'tag/TPParse.php';
 $wgAutoloadClasses['TPSection'] = $dir . 'tag/TPSection.php';
 $wgAutoloadClasses['SpecialPageTranslation'] = $dir . 'tag/SpecialPageTranslation.php';
 $wgAutoloadClasses['RenderJob'] = $dir . 'tag/RenderJob.php';
+
+$wgAutoloadClasses['TranslateSpyc'] = $dir . 'spyc/loader.php';
+$wgAutoloadClasses['SpecialManageGroups'] = $dir . 'SpecialManageGroups.php';
+$wgAutoloadClasses['MessageGroupCache'] = $dir . 'utils/MessageGroupCache.php';
+
+$wgAutoloadClasses['FFS'] = $dir . 'FFS.php';
+$wgAutoloadClasses['SimpleFFS'] = $dir . 'FFS.php';
+$wgAutoloadClasses['JavaFFS'] = $dir . 'FFS.php';

@@ -9,7 +9,7 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-class NoccMessageGroup extends MessageGroup {
+class NoccMessageGroup extends MessageGroupOld {
 	protected $label = 'NOCC (webmail client)';
 	protected $id    = 'out-nocc';
 	protected $type  = 'nocc';

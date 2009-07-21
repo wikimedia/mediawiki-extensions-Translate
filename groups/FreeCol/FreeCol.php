@@ -1,6 +1,6 @@
 <?php
 
-class FreeColMessageGroup extends MessageGroup {
+class FreeColMessageGroup extends MessageGroupOld {
 	protected $label = 'FreeCol (open source game)';
 	protected $id    = 'out-freecol';
 	protected $type  = 'freecol';

@@ -203,7 +203,7 @@ class PremadeMediawikiExtensionGroups {
 	}
 }
 
-class AllMediawikiExtensionsGroup extends MessageGroup {
+class AllMediawikiExtensionsGroup extends MessageGroupOld {
 	protected $label = 'MediaWiki extensions';
 	protected $id    = 'ext-0-all';
 	protected $meta  = true;

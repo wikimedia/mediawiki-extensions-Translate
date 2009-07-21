@@ -1,7 +1,15 @@
 <?php
-if ( !defined( 'MEDIAWIKI' ) ) die();
+interface StringMangler {
+	public static function EmptyMatcher();
 
-class StringMatcher extends StringMangler {
+	// String or array
+	public function match( $string );
+	public function mangle( $data );
+	public function unMangle( $data );
+}
+
+
+class StringMatcher implements StringMangler {
 	protected $sPrefix = '';
 	protected $aExact  = array();
 	protected $aPrefix = array();
@@ -11,9 +19,20 @@ class StringMatcher extends StringMangler {
 		return new StringMatcher( '', array() );
 	}
 
-	public function __construct( $prefix, Array $strings ) {
+	public function __construct( $conf ) {
+		$prefix = '';
+		$patterns = array();
+
+		if ( isset($conf['prefix']) && is_string($conf['prefix']) ) {
+			$prefix = $conf['prefix'];
+		}
+
+		if ( isset($conf['patterns']) && is_array($conf['patterns']) ) {
+			$patterns = $conf['patterns'];
+		}
+
 		$this->sPrefix = $prefix;
-		$this->init( $strings );
+		$this->init( $patterns );
 	}
 
 	protected function init( Array $strings ) {

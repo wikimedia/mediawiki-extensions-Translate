@@ -63,6 +63,12 @@ class MessageChecker {
 		$this->checks = $checks;
 	}
 
+	public function addCheck( $check ) {
+		if ( is_callable($check) ) {
+			$this->checks[] = $check;
+		}
+	}
+
 	/**
 	 * Checks one message, returns array of warnings that can be passed to
 	 * OutputPage::addWikiMsg or similar.

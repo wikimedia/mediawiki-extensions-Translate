@@ -86,7 +86,7 @@ class MessageTable {
 		$optional = wfMsgHtml( 'translate-optional' );
 
 		$batch = new LinkBatch();
-		$ns = $this->group->namespaces[0];
+		$ns = $this->group->getNamespace();
 		foreach ( $this->collection->keys() as $key ) {
 			$batch->add( $ns, $key );
 		}
@@ -163,7 +163,7 @@ class MessageTable {
 
 	protected function keyToTitle( $key ) {
 		$titleText = TranslateUtils::title( $key, $this->collection->code );
-		$namespace = $this->group->namespaces[0];
+		$namespace = $this->group->getNamespace();
 		return Title::makeTitle( $namespace, $titleText );
 	}
 

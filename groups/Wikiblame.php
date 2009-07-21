@@ -9,7 +9,7 @@
  *
  */
 
-class WikiblameMessageGroup extends MessageGroup {
+class WikiblameMessageGroup extends MessageGroupOld {
 	protected $label = 'Wikiblame';
 	protected $id    = 'out-wikiblame';
 	protected $type  = 'wikiblame';

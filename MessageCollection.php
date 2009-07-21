@@ -68,7 +68,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 		$this->loadTranslations();
 
-		$authors = array();
+		$authors = (array) $this->authors;
 		foreach ( $this->messages as $m ) {
 			// Check if there is authors
 			$author = $m->author();
@@ -87,6 +87,20 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			}
 		}
 		return isset( $filteredAuthors ) ? $filteredAuthors : array();
+	}
+
+	public function addCollectionAuthors( /*list*/$authors, $mode = 'append' ) {
+		switch( $mode ) {
+		case 'append':
+			$authors = array_merge( $this->authors, $authors );
+			break;
+		case 'set':
+			break;
+		default:
+			throw new MWException( "Invalid mode $mode" );
+		}
+
+		$this->authors = array_unique( $authors );
 	}
 
 	// Data modifiers
