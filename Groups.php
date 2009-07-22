@@ -211,7 +211,11 @@ class FileBasedMessageGroup extends MessageGroupBase {
 	}
 
 	protected function mapCode( $code ) {
-		return $code;
+		if ( isset($this->conf['FILES']['codeMap'][$code]) ) {
+			return $this->conf['FILES']['codeMap'][$code];
+		} else {
+			return $code;
+		}
 	}
 }
 
@@ -221,7 +225,7 @@ class FileBasedMessageGroup extends MessageGroupBase {
 
 class MediaWikiMessageGroup extends FileBasedMessageGroup {
 	protected function mapCode( $code ) {
-		return ucfirst( str_replace( '-', '_', $code ) );
+		return ucfirst( str_replace( '-', '_', parent::mapCode($code) ) );
 	}
 
 	protected function setTags( MessageCollection $collection ) {

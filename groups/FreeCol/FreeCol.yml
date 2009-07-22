@@ -23,7 +23,6 @@ FILES:
     en-gb: en_GB
     en-us: en_US
     pt:    pt_PT
-    pt-pt: pt_PT
     pt-br: pt_BR
 
 CHECKER:

@@ -158,6 +158,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$this->dbData   = null;
 		$this->messages = null;
 		$this->infile   = array();
+		$this->authors  = array();
 		unset($this->tags['fuzzy']);
 	}
 
