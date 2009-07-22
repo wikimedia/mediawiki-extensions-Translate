@@ -113,3 +113,4 @@ $wgAutoloadClasses['MessageGroupCache'] = $dir . 'utils/MessageGroupCache.php';
 $wgAutoloadClasses['FFS'] = $dir . 'FFS.php';
 $wgAutoloadClasses['SimpleFFS'] = $dir . 'FFS.php';
 $wgAutoloadClasses['JavaFFS'] = $dir . 'FFS.php';
+$wgAutoloadClasses['JavaScriptFFS'] = $dir . 'FFS.php';

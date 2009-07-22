@@ -264,3 +264,110 @@ class JavaFFS extends SimpleFFS {
 	}
 
 }
+
+class JavaScriptFFS extends SimpleFFS {
+
+	private function leftTrim( $string ) {
+		$string = ltrim( $string );
+		$string = ltrim( $string, '"' );
+		return $string;
+	}
+
+	public function readFromVariable( $data ) {
+		// Just get relevant data.
+		$dataStart = strpos( $data, '{' );
+		$dataEnd   = strrpos( $data, '}' );
+		$data = substr( $data, $dataStart + 1, $dataEnd - $dataStart - 1);
+		// Strip comments.
+		$data = preg_replace( '#^(\s*?)//(.*?)$#m', '', $data );
+		// Break in to message segements for further parsing.
+		$data = explode( '",', $data );
+
+		$messages = array();
+		// Process each segment.
+		foreach( $data as $segment ) {
+			// Remove excess quote mark at beginning.
+			$segment = substr( $segment, 1 );
+			// Add back trailing quote.
+			$segment .= '"';
+			// Concatenate seperate strings.
+			$segment = explode( '" +', $segment );
+			$segment = array_map( array( $this, 'leftTrim' ), $segment );
+			$segment = implode( $segment );
+			#$segment = preg_replace( '#\" \+(.*?)\"#m', '', $segment );
+			// Break in to key and message.
+			$segments = explode( '\':', $segment );
+			$key = $segments[ 0 ];
+			unset( $segments[ 0 ] );
+			$value = implode( $segments );
+			// Strip excess whitespace from both.
+			$key = trim( $key );
+			$value = trim( $value );
+			// Remove quotation marks and syntax.
+			$key = substr( $key, 1 );
+			$value = substr( $value, 1, -1 );
+			$messages[ $key ] = $value;
+
+			// Hack.
+			if( $key === 'filterEvaluateNotImplemented' ) {
+				$messages[ $key ] = substr( $value, 0, -2 );
+			}
+		}
+
+		// Remove extraneous key that is sometimes present.
+		unset( $messages[ 0 ] );
+
+		return array( 'MESSAGES' => $messages );
+	}
+
+	// Quick shortcut for getting the plain exported data
+	public function writeIntoVariable( MessageCollection $collection ) {
+		$code = $collection->code;
+		$names = Language::getLanguageNames();
+		$name = $names[ $code ];
+
+		// Generate list of authors for comment.
+		$authors = $collection->getAuthors();
+		$authorList = '';
+		foreach( $authors as $author ) {
+			$authorList .= " *  - $author\n";
+		}
+
+		// Generate header and write.
+		$r = <<<EOT
+/* Copyright (c) 2006-2008 MetaCarta, Inc., published under the Clear BSD
+ * license.  See http://svn.openlayers.org/trunk/openlayers/license.txt for the
+ * full text of the license. */
+
+/* Translators (2009 onwards):
+$authorList */
+
+/**
+ * @requires OpenLayers/Lang.js
+ */
+
+/**
+ * Namespace: OpenLayers.Lang["$code"]
+ * Dictionary for $name.  Keys for entries are used in calls to
+ *     <OpenLayers.Lang.translate>.  Entry bodies are normal strings or
+ *     strings formatted for use with <OpenLayers.String.format> calls.
+ */
+OpenLayers.Lang["$code"] = OpenLayers.Util.applyDefaults({
+
+
+EOT;
+
+		// Get and write messages.
+		foreach( $collection as $message ) {
+			$key = Xml::escapeJsString( $message->key() );
+			$value = Xml::escapeJsString( $message->translation() );
+			
+			$line = "    '{$message->key()}': \"{$value}\",\n\n";
+			$r .= $line;
+		}
+
+		// File terminator.
+		return $r . '};';
+	}
+
+}
