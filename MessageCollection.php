@@ -30,6 +30,8 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	// Tags, copied to thin messages
 	private $tags = array(); // tagtype => keys
+
+	protected $authors = array();
 	
 	// Constructors etc.
 	//
@@ -68,7 +70,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 		$this->loadTranslations();
 
-		$authors = (array) $this->authors;
+		$authors = array_flip( $this->authors );
 		foreach ( $this->messages as $m ) {
 			// Check if there is authors
 			$author = $m->author();
@@ -80,7 +82,8 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			}
 		}
 
-		arsort( $authors, SORT_NUMERIC );
+		#arsort( $authors, SORT_NUMERIC );
+		ksort( $authors );
 		foreach ( $authors as $author => $edits ) {
 			if ( $author !== $wgTranslateFuzzyBotName ) {
 				$filteredAuthors[] = $author;
@@ -107,6 +110,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	public function loadTranslations() {
 		$this->loadData( $this->keys );
+		$this->loadInfo( $this->keys );
 		$this->initMessages();
 	}
 
@@ -333,7 +337,6 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	public function initMessages() {
 		if ( $this->messages !== null ) return;
-		
 		$messages = array();
 
 		foreach ( array_keys($this->keys) as $key ) {

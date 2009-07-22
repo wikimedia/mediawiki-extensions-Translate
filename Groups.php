@@ -170,6 +170,19 @@ class FileBasedMessageGroup extends MessageGroupBase {
 		return (bool) count($data['MESSAGES']);
 	}
 
+	public function load( $code ) {
+		$cache = new MessageGroupCache( $this->getId() );
+		if ( $cache->exists() ) {
+			return parent::load( $code );
+		} else {
+			// Short-circuit cache
+			$ffs = $this->getFFS();
+			if ( !$ffs ) throw new MWException( 'No FFS defined' );
+			$data = $ffs->read( $code );
+			return $data['MESSAGES'];
+		}
+	}
+
 	public function getSourceFilePath( $code ) {
 		if ( $code === 'en' ) {
 			$pattern = $this->getFromConf( 'FILES', 'definitionFile' );

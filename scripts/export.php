@@ -56,6 +56,15 @@ if ( !$group instanceof MessageGroup ) {
 	STDERR( "Invalid group" );
 	exit( 1 );
 }
-
-$writer = $group->getWriter();
-$writer->fileExport( $langs, $options['target'] );
+if ( $group instanceof FileBasedMessageGroup ) {
+	$ffs = $group->getFFS();
+	$ffs->setWritePath( $options['target'] );
+	$collection = $group->initCollection( 'en' );
+	foreach ( $langs as $lang ) {
+		$collection->resetForNewLanguage( $lang );
+		$ffs->write( $collection );
+	}
+} else {
+	$writer = $group->getWriter();
+	$writer->fileExport( $langs, $options['target'] );
+}

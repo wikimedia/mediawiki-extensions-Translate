@@ -83,28 +83,26 @@ class SimpleFFS implements FFS {
 		if ( !file_exists($writePath) ) throw new MWException( "Write path '$writePath' does not exists" );
 		if ( !is_writable($writePath) ) throw new MWException( "Write path '$writePath' is not writable" );
 
-		$targetFile = $writePath . '/' . $this->group->getTargetFilename( $code );
+		$targetFile = $writePath . '/' . $this->group->getTargetFilename( $collection->code );
 
-		if ( !file_exists($targetFile) ) {
-			// May be null
-			$sourceFile = $this->group->geSourceFilePath( $code );
+		if ( file_exists($targetFile) ) {
+			$this->tryReadSource( $targetFile, $collection );
 		} else {
-			$sourceFile = $targetFile;
+			$sourceFile = $this->group->getSourceFilePath( $collection->code );
+			$this->tryReadSource( $sourceFile, $collection );
 		}
 
-		$sourceText = $this->tryReadFile( $sourceFile );
-		if ( $sourceText !== false ) {
-			$sourceData = $this->readFromVariable( $sourceText );
-			if ( isset( $sourceData['AUTHORS'] ) ) {
-				$collection->addCollectionAuthors( $sourceData['AUTHORS'] );
-			}
-		}
-
-		$output = $this->writeIntoVariable( $collection );
-		file_put_contents( $filename, $output );
+		$output = $this->writeReal( $collection );
+		file_put_contents( $targetFile, $output );
 	}
 
 	public function writeIntoVariable( MessageCollection $collection ) {
+		$sourceFile = $this->group->getSourceFilePath( $collection->code );
+		$this->tryReadSource( $sourceFile, $collection );
+		return $this->writeReal( $collection );
+	}
+
+	protected function writeReal( MessageCollection $collection ) {
 		$output = '';
 
 		$authors = $collection->getAuthors();
@@ -120,6 +118,16 @@ class SimpleFFS implements FFS {
 		}
 
 		return $output;
+	}
+
+	protected function tryReadSource( $filename, $collection ) {
+		$sourceText = $this->tryReadFile( $filename );
+		if ( $sourceText !== false ) {
+			$sourceData = $this->readFromVariable( $sourceText );
+			if ( isset( $sourceData['AUTHORS'] ) ) {
+				$collection->addCollectionAuthors( $sourceData['AUTHORS'] );
+			}
+		}
 	}
 
 	protected function tryReadFile( $filename ) {
@@ -206,9 +214,11 @@ class JavaFFS extends SimpleFFS {
 	// WRITE
 	//
 
-	public function writeIntoVariable( MessageCollection $collection ) {
+	protected function writeReal( MessageCollection $collection ) {
+
 		$output  = $this->doHeader( $collection );
 		$output .= $this->doAuthors( $collection );
+		$output .= "\n";
 
 		$mangler = $this->group->getMangler();
 		foreach ( $collection as $key => $m ) {
@@ -228,12 +238,15 @@ class JavaFFS extends SimpleFFS {
 	}
 
 	protected function doHeader( MessageCollection $collection ) {
-		$code = $collection->code;
-		$name = TranslateUtils::getLanguageName( $code );
-		$native = TranslateUtils::getLanguageName( $code, true );
-		$output  = "# Messages for $name ($native)\n";
 		if ( isset($this->extra['header']) ) {
-			$output .= $this->extra['header'];
+			$output = $this->extra['header'];
+		} else {
+			global $wgSitename;
+			$code = $collection->code;
+			$name = TranslateUtils::getLanguageName( $code );
+			$native = TranslateUtils::getLanguageName( $code, true );
+			$output  = "# Messages for $name ($native)\n";
+			$output .= "# Exported from $wgSitename\n";
 		}
 		return $output;
 	}
@@ -243,7 +256,7 @@ class JavaFFS extends SimpleFFS {
 		$authors = $collection->getAuthors();
 		$authors = $this->filterAuthors( $authors, $collection->code );
 		foreach ( $authors as $author ) {
-			$output .= "# $author\n";
+			$output .= "# Author: $author\n";
 		}
 		return $output;
 	}

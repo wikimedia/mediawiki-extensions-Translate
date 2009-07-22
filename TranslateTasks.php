@@ -246,8 +246,13 @@ class ExportMessagesTask extends ViewMessagesTask {
 
 
 	public function output() {
-		$writer = $this->group->getWriter();
-		$data = $writer->webExport( $this->collection );
+		if ( $this->group instanceof FileBasedMessageGroup ) {
+			$ffs = $this->group->getFFS();
+			$data = $ffs->writeIntoVariable( $this->collection );
+		} else {
+			$writer = $this->group->getWriter();
+			$data = $writer->webExport( $this->collection );
+		}
 		
 		return Xml::openElement( 'textarea', array( 'id' => 'wpTextbox1', 'rows' => '50' ) ) .
 			$data .
@@ -263,9 +268,15 @@ class ExportToFileMessagesTask extends ExportMessagesTask {
 	}
 
 	public function output() {
-		$writer = $this->group->getWriter();
 		$this->collection->filter( 'translated', false );
-		return $writer->webExport( $this->collection );
+		if ( $this->group instanceof FileBasedMessageGroup ) {
+			$ffs = $this->group->getFFS();
+			$data = $ffs->writeIntoVariable( $this->collection );
+		} else {
+			$writer = $this->group->getWriter();
+			$data = $writer->webExport( $this->collection );
+		}
+		return $data;
 	}
 }
 
