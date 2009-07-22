@@ -134,9 +134,10 @@ function checkThreshold( $group, $languages, $threshold ) {
 	$qualify = array();
 
 	$g = MessageGroups::singleton()->getGroup( $group );
+	$collection = $g->initCollection( 'en' );
 	foreach ( $languages as $code ) {
+		$collection->resetForNewLanguage( $code );
 		// Initialise messages
-		$collection = $g->initCollection( $code );
 		$collection->filter( 'ignored' );
 		$collection->filter( 'optional' );
 		// Store the count of real messages for later calculation.
