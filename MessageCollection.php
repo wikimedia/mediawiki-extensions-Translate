@@ -186,9 +186,14 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		} elseif( $filter === 'changed' ) {
 			$keys = $this->filterChanged( $keys, $condition );
 		} else { // Filter based on tags
-			if ( !isset($this->tags[$filter]) ) throw new MWException( "No tagged messages for filter $filter" );
-			$taggedKeys = array_flip( $this->tags[$filter] );
-			$keys = $this->filterOnCondition( $keys, $taggedKeys, $condition );
+			if ( !isset($this->tags[$filter]) ) {
+				if ( $filter !== 'optional' && $filter !== 'ignored' ) {
+					throw new MWException( "No tagged messages for custom filter $filter" );
+				}
+			} else {
+				$taggedKeys = array_flip( $this->tags[$filter] );
+				$keys = $this->filterOnCondition( $keys, $taggedKeys, $condition );
+			}
 		}
 		$this->keys = $keys;
 	}

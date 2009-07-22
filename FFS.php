@@ -42,7 +42,9 @@ class SimpleFFS implements FFS {
 
 	public function read( $code ) {
 		$filename = $this->group->getSourceFilePath( $code );
-		if ( $filename === null ) return array();
+		if ( $filename === null ) return false;
+
+		if ( !file_exists($filename) ) return false;
 
 		$input = file_get_contents( $filename );
 		if ( $input === false ) throw new MWException( "Unable to read file $filename" );

@@ -167,7 +167,7 @@ class FileBasedMessageGroup extends MessageGroupBase {
 		$ffs = $this->getFFS();
 		if ( !$ffs ) throw new MWException( 'No FFS defined' );
 		$data = $ffs->read( 'en' );
-		return (bool) count($data['MESSAGES']);
+		return $data && count($data['MESSAGES']);
 	}
 
 	public function load( $code ) {
@@ -179,7 +179,8 @@ class FileBasedMessageGroup extends MessageGroupBase {
 			$ffs = $this->getFFS();
 			if ( !$ffs ) throw new MWException( 'No FFS defined' );
 			$data = $ffs->read( $code );
-			return $data['MESSAGES'];
+			
+			return $data ? $data['MESSAGES'] : array();
 		}
 	}
 
