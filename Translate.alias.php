@@ -462,6 +462,17 @@ $aliases['sa'] = array(
 	'LanguageStats' => array( 'भाषासांख्यिकी' ),
 );
 
+/** Slovak (Slovenčina) */
+$aliases['sk'] = array(
+	'Translate' => array( 'Preložiť' ),
+	'Magic' => array( 'RozšírenéPreložiť' ),
+	'TranslationChanges' => array( 'ZmenyPrekladov' ),
+	'TranslationStats' => array( 'ŠtatistikyPrekladov' ),
+	'Translations' => array( 'Preklady' ),
+	'LanguageStats' => array( 'ŠtatistikyJazykov' ),
+	'PageTranslation' => array( 'PrekladStránky' ),
+);
+
 /** Albanian (Shqip) */
 $aliases['sq'] = array(
 	'Translate' => array( 'Përkthe' ),
