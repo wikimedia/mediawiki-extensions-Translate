@@ -83,7 +83,7 @@ The page you are trying to edit does not seem to correspond any page marked for 
 $messages['qqq'] = array(
 	'pagetranslation' => 'Title of [[Special:PageTranslation]] and its name in [[Special:SpecialPages]].',
 	'right-pagetranslation' => '{{doc-right}}',
-	'tpt-desc' => 'Short description of this extension, shown on [[Special:Version]]. Do not translate or change links.',
+	'tpt-desc' => '{{desc}}',
 	'tpt-sections-oldnew' => '"New and existing" refers to the sum of: (a) new translation units, that were added, plus (b) the already existing ones, which were retained.',
 	'tpt-saveok' => '$1 is a page title,
 $2 is a count of sections which can be used with PLURAL,
