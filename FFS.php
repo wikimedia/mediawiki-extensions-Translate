@@ -371,3 +371,72 @@ EOT;
 	}
 
 }
+
+class YamlFFS extends SimpleFFS {
+
+	//
+	// READ
+	//
+
+	public function readFromVariable( $data ) {
+		$authors = $messages = array();
+
+		# Authors first
+		$matches = array();
+		preg_match_all( '/^#\s*Author:\s*(.*)$/m', $data, $matches );
+		$authors = $matches[1];
+
+		# Then messages
+		$messages = TranslateSpyc::loadString( $data );
+		$messages = $this->group->getMangler()->mangle( $messages );
+
+		return array(
+			'AUTHORS' => $authors,
+			'MESSAGES' => $messages,
+		);
+	}
+
+	//
+	// WRITE
+	//
+
+	protected function writeReal( MessageCollection $collection ) {
+		$output  = $this->doHeader( $collection );
+		$output .= $this->doAuthors( $collection );
+
+		$mangler = $this->group->getMangler();
+
+		$messages = array();
+		foreach ( $collection as $key => $m ) {
+			$key = $mangler->unmangle( $key );
+			$value = $m->translation();
+			$value = str_replace( TRANSLATE_FUZZY, '', $value );
+			if ( $value === '' ) continue;
+
+			$messages[$key] = $value;
+		}
+		$output .= TranslateSpyc::dump( $messages );
+		return $output;
+	}
+
+	protected function doHeader( MessageCollection $collection ) {
+		global $wgSitename;
+		$code = $collection->code;
+		$name = TranslateUtils::getLanguageName( $code );
+		$native = TranslateUtils::getLanguageName( $code, true );
+		$output  = "# Messages for $name ($native)\n";
+		$output .= "# Exported from $wgSitename\n";
+		return $output;
+	}
+
+	protected function doAuthors( MessageCollection $collection ) {
+		$output = '';
+		$authors = $collection->getAuthors();
+		$authors = $this->filterAuthors( $authors, $collection->code );
+		foreach ( $authors as $author ) {
+			$output .= "# Author: $author\n";
+		}
+		return $output;
+	}
+
+}

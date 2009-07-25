@@ -1,6 +1,11 @@
 <?php
 class TranslateSpyc {
 
+	public static function loadString( $text ) {
+		require_once( dirname(__FILE__).'/spyc.php' );
+		return spyc_load( $text );
+	}
+
 	public static function load( $file ) {
 		require_once( dirname(__FILE__).'/spyc.php' );
 		$text = file_get_contents( $file );
