@@ -1,6 +1,7 @@
 <?php
 interface StringMangler {
 	public static function EmptyMatcher();
+	public function setConf( $configuration );
 
 	// String or array
 	public function match( $string );
@@ -19,20 +20,14 @@ class StringMatcher implements StringMangler {
 		return new StringMatcher( '', array() );
 	}
 
-	public function __construct( $conf ) {
-		$prefix = '';
-		$patterns = array();
-
-		if ( isset($conf['prefix']) && is_string($conf['prefix']) ) {
-			$prefix = $conf['prefix'];
-		}
-
-		if ( isset($conf['patterns']) && is_array($conf['patterns']) ) {
-			$patterns = $conf['patterns'];
-		}
-
+	public function __construct( $prefix, $patterns = array() ) {
 		$this->sPrefix = $prefix;
 		$this->init( $patterns );
+	}
+
+	public function setConf( $conf ) {
+		$this->sPrefix = $conf['prefix'];
+		$this->init( $conf['patterns'] );
 	}
 
 	protected function init( Array $strings ) {

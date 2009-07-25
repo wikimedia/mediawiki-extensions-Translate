@@ -327,10 +327,6 @@ class ExtensionMessageGroup extends MessageGroupOld {
 	public function getMessageFile( $code ) { return $this->messageFile; }
 	public function setMessageFile( $value ) { $this->messageFile = $value; }
 
-	public function getMessageFilePath( $code ) {
-		return $wgTranslateExtensionDirectory;
-	}
-
 	public function setDescriptionMsg( $key, $url ) {
 		global $wgLang;
 

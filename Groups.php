@@ -81,7 +81,8 @@ abstract class MessageGroupBase implements MessageGroup {
 
 			// TODO: branch handling, merge with upper branch keys
 			$class = $this->getFromConf( 'MANGLER','class' );
-			$this->mangler = new $class($this->conf['MANGLER']);
+			$this->mangler = new $class();
+			$this->mangler->setConf( $this->conf['MANGLER'] );
 		}
 
 		return $this->mangler;
@@ -95,20 +96,6 @@ abstract class MessageGroupBase implements MessageGroup {
 		$collection->setInfile( $this->load( $code ) );
 		$this->setTags( $collection );
 		return $collection;
-	}
-
-	public function load( $code ) {
-		if ( $this->exists() ) {
-			$cache = new MessageGroupCache( $this->getId() );
-			if ( !$cache->exists($code) ) return array();
-			$messages = array();
-			foreach ( $cache->getKeys($code) as $key ) {
-				$messages[$key] = $cache->get($key);
-			}
-			return $messages;
-		} else {
-			throw new MWException( 'Not configured properly' );
-		}
 	}
 
 	protected function setTags( MessageCollection $collection ) {
@@ -165,23 +152,14 @@ abstract class MessageGroupBase implements MessageGroup {
 class FileBasedMessageGroup extends MessageGroupBase {
 	public function exists() {
 		$ffs = $this->getFFS();
-		if ( !$ffs ) throw new MWException( 'No FFS defined' );
 		$data = $ffs->read( 'en' );
 		return $data && count($data['MESSAGES']);
 	}
 
 	public function load( $code ) {
-		$cache = new MessageGroupCache( $this->getId() );
-		if ( $cache->exists() ) {
-			return parent::load( $code );
-		} else {
-			// Short-circuit cache
-			$ffs = $this->getFFS();
-			if ( !$ffs ) throw new MWException( 'No FFS defined' );
-			$data = $ffs->read( $code );
-			
-			return $data ? $data['MESSAGES'] : array();
-		}
+		$ffs = $this->getFFS();
+		$data = $ffs->read( $code );
+		return $data ? $data['MESSAGES'] : array();
 	}
 
 	public function getSourceFilePath( $code ) {
@@ -219,10 +197,6 @@ class FileBasedMessageGroup extends MessageGroupBase {
 		}
 	}
 }
-
-/*class CollectionMessageGroup extends MessageGroupBase {
-	
-}*/
 
 class MediaWikiMessageGroup extends FileBasedMessageGroup {
 	protected function mapCode( $code ) {
