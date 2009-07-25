@@ -111,7 +111,7 @@ class SpecialTranslations extends SpecialAllpages {
 		$namespace = $title->getNamespace();
 		$message = $title->getDBkey();
 
-		$inMessageGroup = TranslateUtils::messageKeyToGroup( $title->getNamespace(), $title->getBaseText() );
+		$inMessageGroup = TranslateUtils::messageKeyToGroup( $title->getNamespace(), $title->getText() );
 
 		if( !$inMessageGroup ) {
 			$wgOut->addWikiMsg( 'translate-translations-no-message', $title->getPrefixedText() );
