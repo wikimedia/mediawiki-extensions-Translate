@@ -1997,6 +1997,7 @@ $messages['ch'] = array(
 );
 
 /** Sorani (Arabic script) (‫کوردی (عەرەبی)‬)
+ * @author Asoxor
  * @author Marmzok
  * @author رزگار
  */
@@ -2008,7 +2009,7 @@ $messages['ckb-arab'] = array(
 	'translate-task-problematic' => 'دیتنی ئەو پەیامانەی کێشەیان هەیە',
 	'translate-page-language' => 'زمانەکان',
 	'translate-submit' => 'گەڕان',
-	'translate-next' => 'پەڕەی دووایی',
+	'translate-next' => 'پەڕەی بەرتر',
 	'translate-prev' => 'پەڕەی پێشوو',
 	'translate-edit-goto-no-prev' => 'پێش ئەمە پەیام نیە',
 	'translate-edit-goto-no-next' => 'پاش ئەمە پەیام نیە',
@@ -9861,6 +9862,47 @@ Môžete [$1 upravovať zdrojovú stránku] alebo [$2 aktualizovať preklad].',
 	'translate-group-desc-wikitravelextensions' => 'Metaskupina správ obsahujúca všetky správy rozšírenia MediaWiki, ktoré používa [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Metaskupina správ obsahujúca všetky správy rozšírenia MediaWiki súvisiace s [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Metaskupina správ obsahujúca všetky správy rozšírení týkajúcich sa [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Iniciatívy použiteľnosti Wikipédie]',
+	'translate-manage-groups' => 'Správa skupín',
+	'translate-manage-listgroups' => 'Nastavené skupiny',
+	'translate-manage-listgroups-old' => 'Skupiny starého typu',
+	'translate-managegroups' => 'Správa skupín',
+	'translate-manage-newgroup' => 'Táto skupina správ nebola doteraz importovaná.',
+	'translate-manage-cacheat' => 'Importovaná $1 $2',
+	'translate-manage-return-to-group' => 'Späť na stránku podrobností skupiny',
+	'translate-manage-modlangs' => 'Prosím, skontrolujte možné zmeny v {{PLURAL:$1|nasledovnom jazyku|nasledovných jazykoch}}:',
+	'translate-manage-modlang-new' => '$1 (nová)',
+	'translate-manage-import-diff' => 'Správa $1 | Operácie: $2',
+	'translate-manage-import-new' => 'Nová správa $1',
+	'translate-manage-import-deleted' => 'Zmazaná správa $1',
+	'translate-manage-action-import' => 'Importovať',
+	'translate-manage-action-conflict' => 'Importovať a označiť ako neúplné',
+	'translate-manage-action-ignore' => 'Ignorovať',
+	'translate-manage-action-fuzzy' => 'Importovať a označiť preklady ako neúplné',
+	'translate-manage-submit' => 'Vykonať',
+	'translate-manage-nochanges' => 'V definícii správ tejto skupiny nenastali žiadne zmeny.',
+	'translate-manage-nochanges-other' => 'V tomto jazyku nenastali žiadne zmeny.
+Dolu uvedeným odkazom sa vrátite na zobrazenie podrobností skupiny.',
+	'translate-manage-inconsistent' => 'Zistená nekonzistencia v požiadavku.
+Prosím, skontrolujte zmeny a skúste to znova. Podrobnosti: $1.',
+	'translate-manage-toolong' => 'Maximálny čas spracovania $1 {{PLURAL:$1|sekunda|sekundy|sekúnd}} bol prekročený.
+V spracovaní môžete pokračovať opätovným odoslaním formulára.',
+	'translate-manage-import-ok' => 'Importovaná nová verzia stránky $1.',
+	'translate-manage-import-noks' => 'Nepodarilo sa importovať novú verziu stránky $1: $2',
+	'translate-manage-import-ignore' => 'Preskakuje sa správa $1.',
+	'translate-manage-import-summary' => 'Importuje sa nová verzia z externého zdroja',
+	'translate-manage-conflict-summary' => 'Importuje sa nová verzia z externého zdroja. Prosím, skontrolujte ju.',
+	'translate-manage-import-fuzzy' => 'Importuje sa a označuje sa ako neúplné: $1',
+	'translate-manage-import-done' => 'Hotovo!',
+	'translate-manage-import-rebuild' => 'Znovuzostavenie vyrovnávacej pamäte.',
+	'translate-manage-intro-en' => 'Toto je zoznam zmien správ v tejto skupine.
+Prosím, skontrolujte zmeny a vyberte operáciu pri každej správe.
+Potom ako aktualizujete definície správ, skontrolujte či nastali externé zmeny v ostatných jazykoch.
+Tiež pamätajte, že operácia <code>ignorovať</code> je iba dočasná.',
+	'translate-manage-intro-other' => 'Nižšie je zoznam zmien v prekladoch v jazyku $1.
+Prosím, skontrolujte zmeny a vyberte operáciu pre každý z prekladov.
+Ak sa rozhodnete ignorovať zmeny, prepíšu sa pri ďalšom exporte.',
+	'translate-manage-subtitle' => 'Spravovať',
+	'translate-manage-import-rebuild-all' => 'Znovu zostaviť všetky jazyky a ignorovať všetky zmeny',
 );
 
 /** Somali (Soomaaliga)
