@@ -30,10 +30,22 @@ class SpecialTranslate extends SpecialPage {
 	public function execute( $parameters ) {
 		wfLoadExtensionMessages( 'Translate' );
 		TranslateUtils::injectCSS();
-		global $wgOut, $wgTranslateBlacklist;
+		global $wgOut, $wgTranslateBlacklist, $wgUser;
+
+		$this->setHeaders();
+		if ( $parameters === 'manage' ) {
+			$this->restriction( 'translate-manage' );
+			if ( !$this->userCanExecute( $wgUser ) ) {
+				$this->displayRestrictionError();
+				return;
+			}
+
+			$manage = new SpecialManageGroups();
+			$manage->execute();
+			return;
+		}
 
 		$this->setup( $parameters );
-		$this->setHeaders();
 
 		$errors = array();
 

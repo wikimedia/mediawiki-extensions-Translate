@@ -279,6 +279,7 @@ class SpecialPageTranslation extends SpecialPage {
 				$diff->setText( $s->getOldText(), $s->getText() );
 				$text = $diff->getDiff( wfMsgHtml('tpt-diff-old'), wfMsgHtml('tpt-diff-new') );
 				$diff->showDiffStyle();
+				$diff->setReducedLineNumbers();
 			} else {
 				$text = TranslateUtils::convertWhiteSpaceToHTML( $s->getText() );
 			}
@@ -310,6 +311,7 @@ class SpecialPageTranslation extends SpecialPage {
 				$diff->setText( $oldTemplate, $newTemplate );
 				$text = $diff->getDiff( wfMsgHtml('tpt-diff-old'), wfMsgHtml('tpt-diff-new') );
 				$diff->showDiffStyle();
+				$diff->setReducedLineNumbers();
 
 				$contentParams = array( 'class' => 'mw-tpt-sp-content' );
 				$wgOut->addHTML( Xml::tags( 'div', $contentParams, $text ) );

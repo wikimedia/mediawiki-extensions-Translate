@@ -231,6 +231,52 @@ You are encouraged to review messages through [[Special:Translate|{{int:translat
 	'translate-group-desc-wikitravelextensions' => 'Meta message group containing all messages for supported MediaWiki extensions used by [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Meta message group containing all messages for extensions related to [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Meta message group containing all messages for extensions related to the [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
+
+	'translate-manage-groups' => 'Group management',
+	'translate-manage-listgroups' => 'Configured groups',
+	'translate-manage-listgroups-old' => 'Old style groups',
+	'translate-managegroups' => 'Group management',
+	'translate-manage-newgroup' => 'This message group has not been imported previously.',
+	'translate-manage-cacheat' => 'Imported on $1 at $2',
+	'translate-manage-return-to-group' => 'Return to group details page',
+	'translate-manage-modlangs' => 'Please check for possible modifications in the following {{PLURAL:$1|language|languages}}:',
+	'translate-manage-modlang-new' => '$1 (new)',
+	'translate-manage-import-diff' => 'Message $1 | Actions: $2',
+	'translate-manage-import-new' => 'New message $1',
+	'translate-manage-import-deleted' => 'Deleted message $1',
+	'translate-manage-action-import' => 'Import',
+	'translate-manage-action-conflict' => 'Import and fuzzy',
+	'translate-manage-action-ignore' => 'Ignore',
+	'translate-manage-action-fuzzy' => 'Import and fuzzy translations',
+	'translate-manage-submit' => 'Execute',
+	'translate-manage-nochanges' => 'There is no changes in message definitions for this group.',
+	'translate-manage-nochanges-other' => 'There was no changes for this language.
+Use the link below to return the group details view.',
+
+	'translate-manage-inconsistent' => 'Detected inconsistency in the request.
+Please check for changes and try again. Details: $1.',
+	'translate-manage-toolong' => 'The maximum processing time of $1 seconds exceeded.
+Please resubmit the form to continue processing.',
+	'translate-manage-import-ok' => 'Imported new version of page $1.',
+	'translate-manage-import-noks' => 'Failed to import new version of page $1: $2',
+	'translate-manage-import-ignore' => 'Skipping message $1.',
+	'translate-manage-import-summary' => 'Importing a new version from external source',
+	'translate-manage-conflict-summary' => 'Importing a new version from external source. Please check.',
+	'translate-manage-import-fuzzy' => 'Importing and fuzzying: $1',
+
+	'translate-manage-import-done' => 'All done!',
+	'translate-manage-import-rebuild' => 'Cache rebuild.',
+
+	'translate-manage-intro-en' => 'Below is list of message changes in this group.
+Please review the changes and choose an action you want to do for each message.
+Once you have updated the message definitions, check for external changes in other languages, if any.
+Also note that <code>ignore</code> action is only temporary.',
+
+	'translate-manage-intro-other' => 'Below is list of translation changes in $1 language.
+Please review the changes and choose an action you want to do for each translation.
+If you choose to ignore changes, they will be overridden on next export.',
+
+	'translate-manage-subtitle' => 'Manage',
 );
 
 /** Message documentation (Message documentation)
