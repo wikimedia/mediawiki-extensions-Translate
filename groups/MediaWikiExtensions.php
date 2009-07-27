@@ -448,6 +448,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-titlekey',
 		'ext-torblock',
 		'ext-trustedxff',
+		'ext-uploadblacklist',
 		'ext-ui-usabilityinitiative',
 		'ext-ui-edittoolbar',
 		'ext-ui-editwarning',
