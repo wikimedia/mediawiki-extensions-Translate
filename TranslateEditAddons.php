@@ -21,8 +21,17 @@ class TranslateEditAddons {
 		list( $key, $code, $group) = self::getKeyCodeGroup( $wgTitle );
 		if ( $group === null ) return true;
 
-		$defs = $group->getDefinitions();
-		$skip = array_merge( $group->getIgnored(), $group->getOptional() );
+		if ( $group instanceof MessageGroupBase ) {
+			$cache = new MessageGroupCache($group);
+			if ( !$cache->exists() ) return true;
+			$keys = $cache->getKeys();
+			$defs = array();
+			foreach ( $keys as $key ) $defs[$key] = $cache->get( $key );
+			$skip = array_merge( $group->getTags( 'ignored' ), $group->getTags( 'optional' ) );
+		} else {
+			$defs = $group->getDefinitions();
+			$skip = array_merge( $group->getIgnored(), $group->getOptional() );
+		}
 
 		$next = $prev = $def = null;
 		foreach ( array_keys( $defs ) as $tkey ) {
@@ -264,7 +273,7 @@ EOEO;
 		list( $key, $code, $group ) = self::getKeyCodeGroup( $object->mTitle );
 		if ( $group === null ) return;
 
-		list( $nsMain, /* $nsTalk */ ) = $group->namespaces;
+		$nsMain = $group->getNamespace();
 
 		$en = $group->getMessage( $key, 'en' );
 		$xx = $group->getMessage( $key, $code );
@@ -357,7 +366,7 @@ EOEO;
 				$class = 'mw-sp-translate-edit-noinfo';
 			}
 
-			if ( $group->getType() === 'gettext' ) {
+			if ( $group instanceof GettextMessageGroup ) {
 				$reader = $group->getReader( 'en' );
 				if ( $reader ) {
 					$data = $reader->parseFile();
@@ -404,6 +413,7 @@ EOEO;
 					wfLoadExtensionMessages( 'PageTranslation' );
 					$diff = new DifferenceEngine;
 					$diff->setText( $oldtext, $newtext );
+					$diff->setReducedLineNumbers();
 					$boxes[] = $diff->getDiff( wfMsgHtml('tpt-diff-old'), wfMsgHtml('tpt-diff-new') );
 					$diff->showDiffStyle();
 				}
@@ -498,7 +508,7 @@ EOEO;
 		list( $key, $code, $group ) = self::getKeyCodeGroup( $title );
 
 		// Unknown message, do not handle
-		if ( !$group ) return true;
+		if ( !$group || !$code ) return true;
 
 		$cache = new ArrayMemoryCache( 'groupstats' );
 		$cache->clear( $group->getId(), $code );
@@ -509,12 +519,13 @@ EOEO;
 		// Check for problems, but only if not fuzzy already
 		global $wgTranslateDocumentationLanguageCode;
 		if ( $code !== $wgTranslateDocumentationLanguageCode ) {
-			$en = $group->getMessage( $key, 'en' );
-			$message = new FatMessage( $key, $en );
-			// Take the contents from edit field as a translation
-			$message->setTranslation( $text );
 			$checker = $group->getChecker();
 			if ( $checker ) {
+				$en = $group->getMessage( $key, 'en' );
+				$message = new FatMessage( $key, $en );
+				// Take the contents from edit field as a translation
+				$message->setTranslation( $text );
+
 				$checks = $checker->checkMessage( $message, $code );
 				if ( count( $checks ) ) $fuzzy = true;
 			}

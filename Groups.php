@@ -17,6 +17,8 @@ interface MessageGroup {
 
 	public function initCollection( $code );
 	public function load( $code );
+	public function getTags( $type = null );
+	public function getMessage( $key, $code );
 }
 
 abstract class MessageGroupBase implements MessageGroup {
@@ -57,7 +59,7 @@ abstract class MessageGroupBase implements MessageGroup {
 		if ( $class === null ) return null;
 		if ( !class_exists($class) ) throw new MWException( "Checker class $class does not exists" );
 
-		$checker = new $class();
+		$checker = new $class($this);
 		$checks = $this->getFromConf( 'CHECKER','checks' );
 		if ( !is_array($checks) ) throw new MWException( "Checker class $class not supplied with proper checks" );
 
@@ -78,7 +80,6 @@ abstract class MessageGroupBase implements MessageGroup {
 			}
 
 			if ( !class_exists($class) ) throw new MWException( "Mangler class $class does not exists" );
-
 			// TODO: branch handling, merge with upper branch keys
 			$class = $this->getFromConf( 'MANGLER','class' );
 			$this->mangler = new $class();
@@ -98,40 +99,65 @@ abstract class MessageGroupBase implements MessageGroup {
 		return $collection;
 	}
 
-	protected function setTags( MessageCollection $collection ) {
-		if ( isset($this->conf['TAGS']) ) {
-			$tags = $this->conf['TAGS'];
-			if ( !is_array($tags) ) throw new MWException( 'Tags is not an array' );
-
-			$cache = new MessageGroupCache( $this->getId() );
-			$messageKeys = $cache->getKeys();
-
-			// Loop trough all tag types
-			foreach ( $tags as $type => $patterns ) {
-				$matches = array();
-
-				// Collect exact keys, no point running them trough string matcher
-				foreach ( $patterns as $index => $pattern ) {
-					if ( strpos( $pattern, '*' ) === false ) {
-						$matches[] = $pattern;
-						unset($patterns[$index]);
+	public function getMessage( $key, $code ) {
+		$cache = new MessageGroupCache( $this );
+		if ( $cache->exists($code) ) {
+			$msg = $cache->get( $key, $code );
+			if ( $msg === false ) { // Try harder
+				$nkey = str_replace( ' ', '_', strtolower( $key ) );
+				$keys = $cache->getKeys($code);
+				foreach ( $keys as $k ) {
+					if ( $nkey === str_replace( ' ', '_', strtolower( $k ) ) ) {
+						return $cache->get($k);
 					}
 				}
-
-				if ( count($patterns) ) {
-					// Rest of the keys contain wildcards
-					$conf = array( 'patterns' => $patterns );
-					$mangler = new StringMatcher( $conf );
-
-					// Use mangler to find messages that match
-					foreach ( $messageKeys as $key ) {
-						if ( $mangler->match($key) ) $matches[] = $key;
-					}
-				}
-
-				// Add the combined matches
-				$collection->setTags( $type, $matches );
 			}
+			return null;
+		} else {
+			return null;
+		}
+	}
+
+	public function getTags( $type = null ) {
+		if ( !isset($this->conf['TAGS']) ) return array();
+		
+		$tags = $this->conf['TAGS'];
+		if ( !$type ) return $tags;
+
+		if ( isset($tags[$type]) ) return $tags[$type];
+		return array();
+	}
+
+	protected function setTags( MessageCollection $collection ) {
+		$tags = $this->getTags();
+
+		$cache = new MessageGroupCache( $this->getId() );
+		$messageKeys = $cache->getKeys();
+
+		// Loop trough all tag types
+		foreach ( $tags as $type => $patterns ) {
+			$matches = array();
+
+			// Collect exact keys, no point running them trough string matcher
+			foreach ( $patterns as $index => $pattern ) {
+				if ( strpos( $pattern, '*' ) === false ) {
+					$matches[] = $pattern;
+					unset($patterns[$index]);
+				}
+			}
+
+			if ( count($patterns) ) {
+				// Rest of the keys contain wildcards
+				$mangler = new StringMatcher( '', $patterns );
+
+				// Use mangler to find messages that match
+				foreach ( $messageKeys as $key ) {
+					if ( $mangler->match($key) ) $matches[] = $key;
+				}
+			}
+
+			// Add the combined matches
+			$collection->setTags( $type, $matches );
 		}
 	}
 

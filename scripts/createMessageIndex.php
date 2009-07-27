@@ -41,14 +41,18 @@ file_put_contents( TRANSLATE_INDEXFILE, serialize( $hugearray ) );
 function checkAndAdd( $g, $ignore = false ) {
 	global $hugearray;
 
-	$messages = $g->getDefinitions();
+	if ( $g instanceof MessageGroupBase ) {
+		$messages = $g->load( 'en' );
+	} else {
+		$messages = $g->getDefinitions();
+	}
 	$id = $g->getId();
 
 	if ( !is_array( $messages ) ) continue;
 
 	STDOUT( "$id ", 'main' );
 
-	$namespace = $g->namespaces[0];
+	$namespace = $g->getNamespace();
 
 	foreach ( $messages as $key => $data ) {
 		# Force all keys to lower case, because the case doesn't matter and it is

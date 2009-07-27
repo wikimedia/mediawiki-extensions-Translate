@@ -200,12 +200,12 @@ abstract class MessageGroupOld implements MessageGroup {
 
 	public function setConfiguration( $conf ) {}
 	public function getConfiguration() {}
-	public function getNamespace() {
-		return $this->namespaces[0];
-	}
-
-	public function getFFS() {
-		return null;
+	public function getNamespace() { return $this->namespaces[0]; }
+	public function getFFS() { return null; }
+	public function getTags( $type = null ) {
+		$tags = $this->getBools();
+		if ( !$type ) return $tags;
+		return isset($tags[$type]) ? $tags[$type] : array();
 	}
 }
 

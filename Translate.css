@@ -110,7 +110,7 @@
 	padding: 0.5em;
 }
 
-.mw-tpt-sp-legend {
+.mw-tpt-sp-legend, .mw-translate-manage-legend {
 	font-weight: bold;
 }
 
@@ -118,10 +118,5 @@
 	font-size: small;
 	padding-left: 2em;
 	padding-right: 2em;
-	padding-bottom: 1ex;
-}
-
-.mw-tpt-sp-markform .diff-lineno, .mw-sp-translate-edit-fields .diff-lineno {
-	/* Ideally there should be no line numbers in the first place */
-	display:none;
+	padding-bottom: 2ex;
 }
