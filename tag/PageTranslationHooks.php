@@ -399,4 +399,11 @@ FOO;
 
 	}
 
+	public static function parserTestTables( &$tables ) {
+		$tables[] = 'revtag_type';
+		$tables[] = 'revtag';
+
+		return true;
+	}
+
 }

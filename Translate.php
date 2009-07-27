@@ -253,6 +253,7 @@ function efTranslateInit() {
 
 		$wgHooks['ArticleViewHeader'][] = 'PageTranslationHooks::test';
 
+		$wgHooks['ParserTestTables'][] = 'PageTranslationHooks::parserTestTables';
 	}
 }
 
