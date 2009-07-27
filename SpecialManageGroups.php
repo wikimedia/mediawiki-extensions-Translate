@@ -259,6 +259,8 @@ class SpecialManageGroups {
 			}
 		}
 
+		$this->out->addHTML( '</form>' );
+
 		if ( $code === 'en' ) {
 			$this->doModLangs( $cache, $group );
 		} else {
@@ -271,7 +273,6 @@ class SpecialManageGroups {
 			) . '</p>' );
 		}
 
-		$this->out->addHTML( '</form>' );
 	}
 
 	public function doModLangs( $cache, $group ) {

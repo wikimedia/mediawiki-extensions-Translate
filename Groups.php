@@ -91,10 +91,15 @@ abstract class MessageGroupBase implements MessageGroup {
 
 	public function initCollection( $code ) {
 		$namespace = $this->getNamespace();
-		$messages = $this->load( 'en' );
+		$messages = array();
+
+		$cache = new MessageGroupCache( $this );
+		foreach ( $cache->getKeys() as $key ) {
+			$messages[$key] = $cache->get( $key );
+		}
+
 		$definitions = new MessageDefinitions( $namespace, $messages );
 		$collection = MessageCollection::newFromDefinitions( $definitions, $code );
-		$collection->setInfile( $this->load( $code ) );
 		$this->setTags( $collection );
 		return $collection;
 	}
