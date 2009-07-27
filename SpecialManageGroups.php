@@ -20,30 +20,27 @@ class SpecialManageGroups {
 
 
 		$group = $wgRequest->getText( 'group' );
-		// group action
-		$gaction = $wgRequest->getText( 'gaction', 'details' );
-
 		$group = MessageGroups::getGroup( $group );
 
 		if ( $group ) {
-			$languages = array_keys( Language::getLanguageNames(false) );
-			if ( $gaction === 'import' ) {
+
+			if ( $wgRequest->getBool( 'rebuildall', false ) &&
+				$wgRequest->wasPosted() && 
+				$this->user->isAllowed( 'translate-manage' ) &&
+				$this->user->matchEditToken( $wgRequest->getVal( 'token' ) ) ) {
+
 				$cache = new MessageGroupCache( $group );
+				$languages = explode( ',', $wgRequest->getText( 'codes' ) );
 				foreach ( $languages as $code ) {
-					$small = $group->load($code);
-					if ( count($small) ) $cache->create( $small, $code );
-				}
-				
-			} elseif ( $gaction === 'details' ) {
-				$cache = new MessageGroupCache( $group );
-				if ( !$cache->exists() ) {
-					$this->actionDetailsNew( $group );
-					return;
-				} else {
-					$code = $wgRequest->getText( 'language', 'en' );
-					$this->importForm( $cache, $group, $code );
+					$messages = $group->load($code);
+					if ( count($messages) ) $cache->create( $messages, $code );
 				}
 			}
+
+
+			$cache = new MessageGroupCache( $group );
+			$code = $wgRequest->getText( 'language', 'en' );
+			$this->importForm( $cache, $group, $code );
 		} else {
 
 			global $wgLang, $wgOut;
@@ -96,17 +93,6 @@ class SpecialManageGroups {
 		return SpecialPage::getTitleFor( 'Translate', 'manage' );
 	}
 
-	public function actionDetailsNew( MessageGroup $group ) {
-		$this->out->addWikiMsg( 'translate-manage-newgroup' );
-		$messages = $group->load( 'en' );
-
-		foreach ( $messages as $key => $value ) {
-			$name = wfMsgHtml( 'tpt-section-new', htmlspecialchars($key) );
-			$text = TranslateUtils::convertWhiteSpaceToHTML( $value );
-			$wgOut->addHTML( $this->makeSectionElement( $name, 'new', $text ) );
-		}
-	}
-
 	public function importForm( $cache, $group, $code ) {
 		$this->setSubtitle( $group, $code );
 
@@ -118,6 +104,7 @@ class SpecialManageGroups {
 
 		global $wgRequest;
 		if ( $wgRequest->wasPosted() &&
+			$wgRequest->getBool( 'process', false ) && 
 			$this->user->isAllowed( 'translate-manage' ) &&
 			$this->user->matchEditToken( $wgRequest->getVal( 'token' ) ) ) {
 			$process = true;
@@ -129,20 +116,20 @@ class SpecialManageGroups {
 			Xml::openElement( 'form', $formParams ) .
 			Xml::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
 			Xml::hidden( 'token', $this->user->editToken() ) .
-			Xml::hidden( 'group', $group->getId() )
+			Xml::hidden( 'group', $group->getId() ) .
+			Xml::hidden( 'process', 1 )
 		);
 
 		// BEGIN
 		$messages = $group->load( $code );
 
-		$compareToDB = $code !== 'en';
-
-		if ( $compareToDB ) {
-			$collection = $group->initCollection( $code );
-			$collection->loadTranslations();
-		} else {
-			$cache = new MessageGroupCache( $group );
+		if ( !$cache->exists() && $code === 'en' ) {
+			$cache->create( $messages );
 		}
+
+		$collection = $group->initCollection( $code );
+		$collection->loadTranslations();
+
 
 		$diff = new DifferenceEngine;
 		$diff->showDiffStyle();
@@ -153,14 +140,10 @@ class SpecialManageGroups {
 		
 
 			$fuzzy = false;
-			if ( $compareToDB ) {
-				$old = $collection[$key]->translation();
-				$fuzzy = TranslateEditAddons::hasFuzzyString( $old ) ||
-				         TranslateEditAddons::isFuzzy( self::makeTitle( $group, $key, $code ) );
-				$old = str_replace( TRANSLATE_FUZZY, '', $old );
-			} else {
-				$old = $cache->get($key, $code);
-			}
+			$old = $collection[$key]->translation();
+			$fuzzy = TranslateEditAddons::hasFuzzyString( $old ) ||
+			         TranslateEditAddons::isFuzzy( self::makeTitle( $group, $key, $code ) );
+			$old = str_replace( TRANSLATE_FUZZY, '', $old );
 
 			// No changes at all, ignore
 			if ( $old === $value ) continue;
@@ -207,7 +190,7 @@ class SpecialManageGroups {
 					}
 				}
 
-				if ( $compareToDB ) {
+				if ( $code !== 'en' ) {
 					$actions = array( 'import', 'conflict', 'ignore' );
 				} else {
 					$actions = array( 'import', 'fuzzy', 'ignore' );
@@ -231,12 +214,8 @@ class SpecialManageGroups {
 
 
 		if ( !$process ) {
-			if ( $compareToDB ) {
-				$collection->filter( 'hastranslation', false );
-				$keys = array_keys($collection->keys());
-			} else {
-				$keys = $cache->getKeys($code);
-			}
+			$collection->filter( 'hastranslation', false );
+			$keys = array_keys($collection->keys());
 
 			$diff = array_diff( $keys, array_keys($messages) );
 
@@ -298,7 +277,7 @@ class SpecialManageGroups {
 	public function doModLangs( $cache, $group ) {
 		global $wgLang;
 		$languages = array_keys( Language::getLanguageNames(false) );
-		$modified = array();
+		$modified = $codes = array();
 		foreach ( $languages as $code ) {
 			$filename = $group->getSourceFilePath( $code );
 			$mtime = file_exists( $filename ) ? filemtime( $filename ) : false;
@@ -317,6 +296,8 @@ class SpecialManageGroups {
 			} elseif ( $mtime > $cachetime  ) {
 				$modified[] = $link;
 			}
+
+			$codes[] = $code;
 		}
 
 		if ( count($modified) ) {
@@ -327,6 +308,32 @@ class SpecialManageGroups {
 			$this->out->addHTML(
 				'<ul><li>' . implode( "</li>\n<li>", $modified ) . '</li></ul>'
 			);
+
+			$formParams = array(
+				'method' => 'post',
+				'action' => $this->getTitle()->getFullURL( array( 'group' => $group->getId() ) ),
+			);
+
+			global $wgRequest;
+			if ( $wgRequest->wasPosted() &&
+				$this->user->isAllowed( 'translate-manage' ) &&
+				$this->user->matchEditToken( $wgRequest->getVal( 'token' ) ) ) {
+				$process = true;
+			} else {
+				$process = false;
+			}
+
+			$this->out->addHTML(
+				Xml::openElement( 'form', $formParams ) .
+				Xml::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
+				Xml::hidden( 'token', $this->user->editToken() ) .
+				Xml::hidden( 'group', $group->getId() ) .
+				Xml::hidden( 'codes', implode( ',', $codes ) ) .
+				Xml::hidden( 'rebuildall', 1 ) .
+				Xml::submitButton( wfMsg( 'translate-manage-import-rebuild-all' ) ) .
+				Xml::closeElement( 'form' )
+			);
+
 		}
 	}
 

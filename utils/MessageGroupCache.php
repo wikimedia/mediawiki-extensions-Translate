@@ -36,7 +36,7 @@ class MessageGroupCache {
 	}
 
 	public function create( $messages, $code = 'en' ) {
-		unset($this->cache); // Needed?
+		$this->cache = null; // Needed?
 
 		$cache = CdbWriter::open( $this->getCacheFileName( $code ) );
 

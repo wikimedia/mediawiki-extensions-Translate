@@ -277,6 +277,7 @@ Please review the changes and choose an action you want to do for each translati
 If you choose to ignore changes, they will be overridden on next export.',
 
 	'translate-manage-subtitle' => 'Manage',
+	'translate-manage-import-rebuild-all' => 'Rebuild all languages and ignore any changes',
 );
 
 /** Message documentation (Message documentation)
