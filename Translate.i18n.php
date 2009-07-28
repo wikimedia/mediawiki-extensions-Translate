@@ -255,7 +255,7 @@ Use the link below to return the group details view.',
 
 	'translate-manage-inconsistent' => 'Detected inconsistency in the request.
 Please check for changes and try again. Details: $1.',
-	'translate-manage-toolong' => 'The maximum processing time of $1 seconds exceeded.
+	'translate-manage-toolong' => 'The maximum processing time of $1 {{PLURAL:$1|second|seconds}} exceeded.
 Please resubmit the form to continue processing.',
 	'translate-manage-import-ok' => 'Imported new version of page $1.',
 	'translate-manage-import-noks' => 'Failed to import new version of page $1: $2',
