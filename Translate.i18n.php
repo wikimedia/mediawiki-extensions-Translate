@@ -137,7 +137,7 @@ Changes are not saved until you click save button below.',
 	'translate-checks-escape'             => 'The following escapes may be accidental: <strong>$1</strong>',
 
 	'translate-pref-nonewsletter' => 'Do not send me e-mail newsletters',
-	'translate-pref-editassistlang' => 'Assistant languages',
+	'translate-pref-editassistlang' => 'Assistant languages:',
 	'prefs-translate' => 'Translation options',
 	'translate-pref-editassistlang-help' => 'Comma separated list of language codes.
 Translation of a message in these languages are shown when you are translating.
