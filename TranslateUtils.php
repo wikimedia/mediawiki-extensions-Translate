@@ -171,13 +171,19 @@ class TranslateUtils {
 		$normkey = self::normaliseKey( $namespace, $key );
 		$index = self::messageIndex();
 		$group = @$index[$normkey];
+		if ( is_array($group) ) $group = $group[0];
 
 		global $wgEnablePageTranslation;
 		if ( $wgEnablePageTranslation && !$group ) {
 			$group = MessageIndex::messageToGroup( $namespace, $key );
 		}
 		return $group;
+	}
 
+	public static function messageKeyToGroups( $namespace, $key ) {
+		$normkey = self::normaliseKey( $namespace, $key );
+		$index = self::messageIndex();
+		return (array) @$index[$normkey];
 	}
 
 	public static function normaliseKey( $namespace, $key ) {

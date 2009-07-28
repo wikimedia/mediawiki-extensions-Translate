@@ -80,7 +80,6 @@ if ( isset( $options['threshold'] ) ) {
 
 
 $rows = TranslateUtils::translationChanges( $hours );
-$index = TranslateUtils::messageIndex();
 $exports = array();
 foreach ( $rows as $row ) {
 	$group = false;
@@ -88,9 +87,7 @@ foreach ( $rows as $row ) {
 
 	list( $pieces, ) = explode( '/', $wgContLang->lcfirst( $row->rc_title ), 2 );
 
-	$key = strtolower( $row->rc_namespace . ':' . $pieces );
-
-	$mg = @$index[$key];
+	$mg = TranslateUtils::messageKeyToGroup(  $row->rc_namespace . ':' . $pieces );
 	if ( !is_null( $mg ) ) $group = $mg;
 
 	if ( strpos( $row->rc_title, '/' ) !== false ) {

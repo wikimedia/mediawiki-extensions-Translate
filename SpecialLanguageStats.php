@@ -184,7 +184,6 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			if ( $incache !== false ) {
 				list( $fuzzy, $translated, $total ) = $incache;
 			} else {
-
 				// Initialise messages
 				$collection = $g->initCollection( $code );
 				$collection->setInFile( $g->load( $code ) );

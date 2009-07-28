@@ -510,8 +510,9 @@ EOEO;
 		// Unknown message, do not handle
 		if ( !$group || !$code ) return true;
 
+		$groups = TranslateUtils::messageKeyToGroups( $title->getNamespace(), $key );
 		$cache = new ArrayMemoryCache( 'groupstats' );
-		$cache->clear( $group->getId(), $code );
+		foreach ( $groups as $g ) $cache->clear( $g, $code );
 
 		// Check for explicit tag
 		$fuzzy = self::hasFuzzyString( $text );

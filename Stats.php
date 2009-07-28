@@ -447,10 +447,7 @@ class TranslatePerLanguageStats {
 		$indexKey = '';
 
 		if ( $this->filters['group'] ) {
-			if ( $this->index === null ) $this->index = TranslateUtils::messageIndex();
-
-			$key = TranslateUtils::normaliseKey( $row->rc_namespace, $key );
-			$group = @$this->index[$key];
+			$group = TranslateUtils::messageKeyToGroup( $row->rc_namespace, $key );
 			if ( $group === null ) return - 1;
 			$indexKey .= $group;
 		}

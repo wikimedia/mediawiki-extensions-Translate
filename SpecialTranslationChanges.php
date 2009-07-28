@@ -61,14 +61,12 @@ class SpecialTranslationChanges extends SpecialPage {
 	protected function sort( Array $rows ) {
 		global $wgContLang;
 		$sorted = array();
-		$index = TranslateUtils::messageIndex();
 		$batch = new LinkBatch;
 		foreach ( $rows as $row ) {
 			list( $pieces, ) = explode( '/', $wgContLang->lcfirst( $row->rc_title ), 2 );
 
-			$key = strtolower( $row->rc_namespace . ':' . $pieces );
 			$group = 'Unknown';
-			$mg = @$index[$key];
+			$mg = TranslateUtils::messageKeyToGroup(  $row->rc_namespace . ':' . $pieces );
 			if ( !is_null( $mg ) ) $group = $mg;
 
 			$lang = 'site';

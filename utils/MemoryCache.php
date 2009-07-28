@@ -38,7 +38,6 @@ class ArrayMemoryCache {
 	}
 
 	public function commit() {
-		$this->load();
 		$this->save();
 	}
 
@@ -51,6 +50,8 @@ class ArrayMemoryCache {
 	}
 
 	protected function save() {
-		$this->memc->set( $this->key, $this->cache );
+		if ( $this->cache !== null ) {
+			$this->memc->set( $this->key, $this->cache );
+		}
 	}
 }
