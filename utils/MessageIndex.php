@@ -42,7 +42,7 @@ class MessageIndex {
 
 		foreach ( $groups as $g ) {
 			# the cache is split per namespace for efficieny
-			if ( $namespace !== null && $g->namespaces[0] !== $namespace )
+			if ( $namespace !== null && $g->getNamespace() !== $namespace )
 				continue;
 
 			# Skip meta thingies
@@ -74,7 +74,7 @@ class MessageIndex {
 
 		STDOUT( "$id ", 'main' );
 
-		$namespace = $g->namespaces[0];
+		$namespace = $g->getNamespace();
 
 		foreach ( $messages as $key => $data ) {
 			# Force all keys to lower case, because the case doesn't matter and it is

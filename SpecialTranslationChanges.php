@@ -66,7 +66,7 @@ class SpecialTranslationChanges extends SpecialPage {
 			list( $pieces, ) = explode( '/', $wgContLang->lcfirst( $row->rc_title ), 2 );
 
 			$group = 'Unknown';
-			$mg = TranslateUtils::messageKeyToGroup(  $row->rc_namespace . ':' . $pieces );
+			$mg = TranslateUtils::messageKeyToGroup(  $row->rc_namespace, ':' . $pieces );
 			if ( !is_null( $mg ) ) $group = $mg;
 
 			$lang = 'site';
