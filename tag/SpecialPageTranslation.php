@@ -400,7 +400,7 @@ class SpecialPageTranslation extends SpecialPage {
 		$this->setupRenderJobs( $page );
 
 		// Re-generate caches
-		MessageIndex::cache( NS_TRANSLATIONS );
+		MessageIndexRebuilder::execute();
 		$page->getTranslationPercentages( /*re-generate*/ true );
 
 		return false;

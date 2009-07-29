@@ -32,6 +32,13 @@ class PageTranslationHooks {
 		return true;
 	}
 
+	public static function titleToGroup( Title $title ) {
+		$namespace = $title->getNamespace();
+		$text = $title->getDBkey();
+		list( $key, ) = TranslateUtils::figureMessage( $text );
+		return TranslateUtils::messageKeyToGroup( $namespace, $key );
+	}
+
 	public static function onSectionSave( $article, $user, $text, $summary, $minor,
 		$_, $_, $flags, $revision ) {
 		$title = $article->getTitle();
@@ -44,7 +51,7 @@ class PageTranslationHooks {
 		if ( strpos( $text, TRANSLATE_FUZZY ) !== false ) return true;
 
 		// Figure out the group
-		$groupKey = MessageIndex::titleToGroup( $title );
+		$groupKey = self::titleToGroup( $title );
 		$group = MessageGroups::getGroup( $groupKey );
 		if ( !$group instanceof WikiPageMessageGroup ) return;
 
@@ -244,7 +251,7 @@ FOO;
 	public static function translationsCheck( $title, $user, $action, &$result ) {
 		// Case 1: Unknown section translations
 		if ( $title->getNamespace() == NS_TRANSLATIONS && $action === 'edit' ) {
-			$group = MessageIndex::titleToGroup( $title );
+			$group = self::titleToGroup( $title );
 			if ( $group === null ) {
 				// No group means that the page is currently not 
 				// registered to any page translation message groups

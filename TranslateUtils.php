@@ -172,11 +172,6 @@ class TranslateUtils {
 		$index = self::messageIndex();
 		$group = @$index[$normkey];
 		if ( is_array($group) ) $group = $group[0];
-
-		global $wgEnablePageTranslation;
-		if ( $wgEnablePageTranslation && !$group ) {
-			$group = MessageIndex::messageToGroup( $namespace, $key );
-		}
 		return $group;
 	}
 
@@ -193,9 +188,16 @@ class TranslateUtils {
 	public static function messageIndex() {
 		static $keyToGroup = null;
 		if ( $keyToGroup !== null ) return $keyToGroup;
-		if ( file_exists( TRANSLATE_INDEXFILE ) ) {
-			$keyToGroup = unserialize( file_get_contents( TRANSLATE_INDEXFILE ) );
+
+		global $wgCacheDirectory;
+		$filename = "$wgCacheDirectory/translate_messageindex.cdb";
+		if ( !file_exists($filename) ) MessageIndexRebuilder::execute();
+
+		if ( file_exists($filename) ) {
+			$reader = CdbReader::open( $filename );
+			$keyToGroup = unserialize( $reader->get( 'map' ) );
 		} else {
+			$keyToGroup = false;
 			wfDebug( __METHOD__ . ": Message index missing." );
 		}
 

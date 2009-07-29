@@ -75,10 +75,11 @@ $wgAutoloadClasses['ArrayMemoryCache'] = $dir . 'utils/MemoryCache.php';
 $wgAutoloadClasses['TranslatePreferences'] = $dir . 'utils/UserToggles.php';
 $wgAutoloadClasses['TranslateToolbox'] = $dir . 'utils/ToolBox.php';
 
-$wgAutoloadClasses['MessageIndex'] = $dir . 'utils/MessageIndex.php';
+$wgAutoloadClasses['MessageIndexRebuilder'] = $dir . 'utils/MessageIndexRebuilder.php';
 $wgAutoloadClasses['MessageTable'] = $dir . 'utils/MessageTable.php';
 $wgAutoloadClasses['JsSelectToInput'] = $dir . 'utils/JsSelectToInput.php';
 $wgAutoloadClasses['HTMLJsSelectToInputField'] = $dir . 'utils/HTMLJsSelectToInputField.php';
+$wgAutoloadClasses['MessageGroupCache'] = $dir . 'utils/MessageGroupCache.php';
 
 
 # predefined groups
@@ -108,7 +109,6 @@ $wgAutoloadClasses['RenderJob'] = $dir . 'tag/RenderJob.php';
 
 $wgAutoloadClasses['TranslateSpyc'] = $dir . 'spyc/loader.php';
 $wgAutoloadClasses['SpecialManageGroups'] = $dir . 'SpecialManageGroups.php';
-$wgAutoloadClasses['MessageGroupCache'] = $dir . 'utils/MessageGroupCache.php';
 
 $wgAutoloadClasses['FFS'] = $dir . 'FFS.php';
 $wgAutoloadClasses['SimpleFFS'] = $dir . 'FFS.php';
