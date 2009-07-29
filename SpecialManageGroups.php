@@ -139,11 +139,13 @@ class SpecialManageGroups {
 		foreach ( $messages as $key => $value ) {
 		
 
-			$fuzzy = false;
-			$old = $collection[$key]->translation();
-			$fuzzy = TranslateEditAddons::hasFuzzyString( $old ) ||
-			         TranslateEditAddons::isFuzzy( self::makeTitle( $group, $key, $code ) );
-			$old = str_replace( TRANSLATE_FUZZY, '', $old );
+			$fuzzy = $old = false;
+			if ( isset($collection[$key]) ) {
+				$old = $collection[$key]->translation();
+				$fuzzy = TranslateEditAddons::hasFuzzyString( $old ) ||
+						TranslateEditAddons::isFuzzy( self::makeTitle( $group, $key, $code ) );
+				$old = str_replace( TRANSLATE_FUZZY, '', $old );
+			}
 
 			// No changes at all, ignore
 			if ( $old === $value ) continue;
@@ -280,6 +282,7 @@ class SpecialManageGroups {
 		$languages = array_keys( Language::getLanguageNames(false) );
 		$modified = $codes = array();
 		foreach ( $languages as $code ) {
+			if ( $code === 'en' ) continue;
 			$filename = $group->getSourceFilePath( $code );
 			$mtime = file_exists( $filename ) ? filemtime( $filename ) : false;
 			$cachetime = $cache->exists($code) ? $cache->getTimestamp($code) : false;
