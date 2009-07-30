@@ -333,3 +333,6 @@ file = WhoIsWatching/SpecialWhoIsWatching.alias.php
 
 Who is online
 file = WhosOnline/WhosOnline.alias.php
+
+Wiki At Home
+file = WikiAtHome/WikiAtHome.alias.php

@@ -1064,6 +1064,10 @@ Widgets
 
 Wiki Article Feeds
 
+Wiki At Home
+descmsg = wah-desc
+ignored = specialwikiathome
+
 Wikidata
 descmsg = wikidata-desc
 file = Wikidata/Wikidata.i18n.php
