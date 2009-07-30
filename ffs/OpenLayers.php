@@ -126,7 +126,7 @@ EOT;
 
 
 		// Strip last comma.
-		$lines = substr( $r, 0, -3 );
+		$lines = substr( $lines, 0, -3 );
 		$lines .= "\n\n";
 		fwrite( $target, $lines );
 
