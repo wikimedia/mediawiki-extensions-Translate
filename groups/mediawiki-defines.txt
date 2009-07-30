@@ -486,7 +486,7 @@ ignored = maintenance-stats
 
 Maps
 descmsg = maps_desc
-optional = maps_desc
+optional = maps_name
 
 Math Stat
 file = MathStatFunctions/MathStatFunctions.i18n.php
