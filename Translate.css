@@ -46,6 +46,7 @@
 
 .mw-sp-translate-edit-fields fieldset {
 	line-height: normal;
+	margin: 0px !important;
 }
 
 .mw-sp-translate-group {
