@@ -117,16 +117,21 @@ EOT;
 		fwrite( $target, $header );
 
 		// Get and write messages.
+		$lines = '';
 		foreach( $collection as $message ) {
 			$key = Xml::escapeJsString( $message->key() );
 			$value = Xml::escapeJsString( $message->translation() );
-			
-			$line = "    '{$message->key()}': \"{$value}\",\n\n";
-			fwrite( $target, $line );
+			$lines .= "    '{$message->key()}': \"{$value}\",\n\n";
 		}
 
+
+		// Strip last comma.
+		$lines = substr( $r, 0, -3 );
+		$lines .= "\n\n";
+		fwrite( $target, $lines );
+
 		// File terminator.
-		fwrite( $target, '};' );
+		fwrite( $target, '});' );
 	}
 
 }
