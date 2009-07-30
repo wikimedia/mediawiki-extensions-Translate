@@ -370,8 +370,6 @@ ignored = framedvideo_default_width, framedvideo_force_default_size, framedvideo
 ignored = framedvideo_max_height, framedvideo_allow_full_screen, framedvideo_force_allow_full_screen, framedvideo_force_frames
 ignored = framedvideo_force_position
 
-Freenode Chat
-
 Fundraiser Portal
 
 Gadgets
@@ -505,8 +503,6 @@ optional = ao_file_flash_flv, ao_file_512Kb_MPEG4, ao_file_Ogg_Video
 optional = mv_ogg-player-vlc-mozilla, mv_ogg-player-vlc-activex, mv_ogg-player-oggPlay, mv_ogg-player-quicktime-mozilla
 optional = mv_ogg-player-quicktime-activex, mv_ogg-player-cortado, mv_ogg-player-flowplayer
 ignored = mv_welcome_to_sequencer
-
-Mibbit
 
 MicroID
 
@@ -1047,6 +1043,8 @@ Vote
 Watchers
 
 Watch Subpages
+
+Web Chat
 
 Web Store
 
