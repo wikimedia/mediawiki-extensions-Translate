@@ -730,6 +730,10 @@ file = SemanticForms/languages/SF_Messages.php
 
 Semantic Gallery
 
+Semantic Maps
+descmsg = semanticmaps_desc
+optional = sm_googlemaps_printername, sm_yahoomaps_printername, sm_openlayers_printername
+
 Semantic MediaWiki
 file = SemanticMediaWiki/languages/SMW_Messages.php
 descmsg = smw-desc
