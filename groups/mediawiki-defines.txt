@@ -484,6 +484,10 @@ Maintenance
 ignored = maintenance-initEditCount, maintenance-runJobs, maintenance-showJobs
 ignored = maintenance-stats
 
+Maps
+descmsg = maps_desc
+optional = maps_desc
+
 Math Stat
 file = MathStatFunctions/MathStatFunctions.i18n.php
 descmsg = msfunc_desc
@@ -732,7 +736,7 @@ Semantic Gallery
 
 Semantic Maps
 descmsg = semanticmaps_desc
-optional = sm_googlemaps_printername, sm_yahoomaps_printername, sm_openlayers_printername
+optional = semanticmaps_name, sm_googlemaps_printername, sm_yahoomaps_printername, sm_openlayers_printername
 
 Semantic MediaWiki
 file = SemanticMediaWiki/languages/SMW_Messages.php
