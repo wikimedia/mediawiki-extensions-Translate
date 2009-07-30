@@ -366,8 +366,12 @@ EOT;
 			$r .= $line;
 		}
 
+		// Strip last comma.
+		$r = substr( $r, 0, -3 );
+		$r .= "\n\n";
+
 		// File terminator.
-		return $r . '};';
+		return $r . '});';
 	}
 
 }
