@@ -283,6 +283,7 @@ If you choose to ignore changes, they will be overridden on next export.',
 /** Message documentation (Message documentation)
  * @author Ans
  * @author Darth Kule
+ * @author EugeneZelenko
  * @author Jon Harald Søby
  * @author Lejonel
  * @author Lloffiwr
@@ -338,6 +339,7 @@ This box list the problems found in the translation.',
 
 This warning indicates that the namespace in the translation does not match the namespace appearing in the message definition (original English message).',
 	'translate-pref-nonewsletter' => "Option in [[Special:Preferences]], 'Misc' tab.",
+	'translate-pref-editassistlang' => 'Used in [[Special:Preferences]] under the {{msg-mw|prefs-editing}} tab.',
 	'prefs-translate' => 'Caption of a section at [[Special:Preferences#prefsection-3|Special:Preferences]]',
 	'translate-pref-editassistlang-help' => 'Used in [[Special:Preferences]], tab Editing.',
 	'right-translate' => '{{doc-right}}',
@@ -372,6 +374,11 @@ These messages will not be submitted to svn, but will only affect the interface 
 	'translate-percentage-fuzzy' => 'Used in [[Special:LanguageStats]].',
 	'translate-languagestats-groups' => "You can translate the text, including 'Leave this line exactly as it is'. The lines of this messages have one (1) leading space.",
 	'translate-jssti-add' => 'Name of button in [[Special:Preferences]], tab Editing.',
+	'translate-manage-modlang-new' => '{{Identical|New}}
+
+"new" means that the translations for that languages has never been imported/cached yet. $1 is a link to that page to do that.',
+	'translate-manage-action-import' => '{{Identical|Import}}',
+	'translate-manage-intro-en' => 'If your language and its grammar permit, you can refer to <code>ignore</code> as <code>{<nowiki />{int:{{msg-mw|translate-manage-action-ignore}}}}</code>.',
 );
 
 /** Faeag Rotuma (Faeag Rotuma)
@@ -1266,7 +1273,7 @@ $messages['be-tarask'] = array(
 	'translate-checks-format' => 'Гэты пераклад няслушна перакладае крынічны тэкст альбо ўтрымлівае сынтаксычныя памылкі: $1',
 	'translate-checks-escape' => 'Наступнае выдзяленьне можа быць выпадковым: <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'Не дасылаць мне інфармацыйныя лісты па электроннай пошце',
-	'translate-pref-editassistlang' => 'Дапаможныя мовы',
+	'translate-pref-editassistlang' => 'Дапаможныя мовы:',
 	'prefs-translate' => 'Устаноўкі перакладу',
 	'translate-pref-editassistlang-help' => 'Падзелены коскамі сьпіс кодаў моў.
 Пераклады паведамленьняў на гэтыя мовы паказваюцца пад час Вашых перакладаў.
@@ -1339,6 +1346,47 @@ $messages['be-tarask'] = array(
 	'translate-group-desc-wikitravelextensions' => 'Мэта-група паведамленьняў, якая ўтрымлівае ўсе паведамленьні для падтрымліваемых пашырэньняў MediaWiki выкарыстоўваемых [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Мэта-група паведамленьняў, якая ўтрымлівае ўсе паведамленьні для пашырэньняў зьвязаных з [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Група мэта-паведамленьняў, якая ўтрымлівае ўсе паведамленьні для пашырэньняў, якія адносяцца да [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
+	'translate-manage-groups' => 'Кіраваньне групамі',
+	'translate-manage-listgroups' => 'Сканфігураваныя групы',
+	'translate-manage-listgroups-old' => 'Групы старога стылю',
+	'translate-managegroups' => 'Кіраваньне групамі',
+	'translate-manage-newgroup' => 'Гэта група паведамленьняў раней не імпартавалася.',
+	'translate-manage-cacheat' => 'Імпартавана $1 $2',
+	'translate-manage-return-to-group' => 'Вярнуцца да старонкі падрабязнасьцяў групы',
+	'translate-manage-modlangs' => 'Калі ласка, праверце магчымая зьмены ў {{PLURAL:$1|наступнай мове|наступных мовах}}:',
+	'translate-manage-modlang-new' => '$1 (новае)',
+	'translate-manage-import-diff' => 'Паведамленьне $1 | Дзеяньні: $2',
+	'translate-manage-import-new' => 'Новае паведамленьне $1',
+	'translate-manage-import-deleted' => 'Выдаленае паведамленьне $1',
+	'translate-manage-action-import' => 'Імпарт',
+	'translate-manage-action-conflict' => 'Імпарт і недакладнасьць',
+	'translate-manage-action-ignore' => 'Ігнараваньне',
+	'translate-manage-action-fuzzy' => 'Імпарт і недакладныя пераклады',
+	'translate-manage-submit' => 'Выканаць',
+	'translate-manage-nochanges' => 'Няма ніякіх зьменаў у вызначэньнях паведамленьняў для гэтай групы.',
+	'translate-manage-nochanges-other' => 'Няма ніякіх зьменаў для гэтай мовы.
+Выкарыстоўвайце спасылкай ніжэй для вяртаньня да прагляду падрабязнасьцяў групы.',
+	'translate-manage-inconsistent' => 'Выяўлена несупадзеньне ў запыце.
+Калі ласка, праверце зьмены і паспрабуйце зноў. Падрабязнасьці: $1.',
+	'translate-manage-toolong' => 'Перавышаны максымальны час апрацоўкі у $1 {{PLURAL:$1|сэкунду|сэкунды|сэкундаў}}.
+Калі ласка, адпраўце форму ізноў для працягу апрацоўкі.',
+	'translate-manage-import-ok' => 'Імпартаваная новая вэрсія старонкі $1.',
+	'translate-manage-import-noks' => 'Памылка імпарту новай вэрсіі старонкі $1: $2',
+	'translate-manage-import-ignore' => 'Пропуск паведамленьня $1.',
+	'translate-manage-import-summary' => 'Імпартаваньне новай вэрсіі з вонкавай крыніцы',
+	'translate-manage-conflict-summary' => 'Імпартаваньне новай вэрсіі з вонкавай крыніцы. Калі ласка, праверце яе.',
+	'translate-manage-import-fuzzy' => 'Імпартаваньне і пазначэньне недакладнасьцяў: $1',
+	'translate-manage-import-done' => 'Усё выканана!',
+	'translate-manage-import-rebuild' => 'Перабудаваць кэш.',
+	'translate-manage-intro-en' => 'Ніжэй пададзены сьпіс паведамленьняў у гэтай групе.
+Калі ласка, праверце зьмены і выберыце дзеяньне, якое Вы жадаеце выканаць для кожнага паведамленьня.
+Калі Вы абнавілі вызначэньні паведамленьняў, праверце вонкавыя зьмены ў іншых мовах, калі яны адбыліся.
+Таксама заўважце, што дзеяньне <code>ігнараваць</code> толькі часовае.',
+	'translate-manage-intro-other' => 'Ніжэй пададзены сьпіс зьменаў у перакладах для мовы «$1».
+Калі ласка, праглядзіце зьмены і выберыце пажаданае дзеяньне для кожнага перакладу.
+Калі Вы праігнаруеце зьмены, яны будуць перазапісаныя ў наступны экспарт.',
+	'translate-manage-subtitle' => 'Кіраваньне',
+	'translate-manage-import-rebuild-all' => 'Перабудаваць усе мовы і ігнараваць усе зьмены',
 );
 
 /** Bulgarian (Български)
@@ -1741,7 +1789,7 @@ Promjene nisu spremljene sve dok ne kliknete dugme spremi koje se nalazi ispod.'
 	'translate-checks-format' => 'Ovaj prijevod nije usklađen sa definicijom ili nema validnu sintaksu: $1',
 	'translate-checks-escape' => 'Slijedeće escape-sekvence mogle bi biti slučajne: <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'Ne šalji mi pismo o vijestima putem e-maila',
-	'translate-pref-editassistlang' => 'Jezična podrška',
+	'translate-pref-editassistlang' => 'Pomoćni jezici:',
 	'prefs-translate' => 'Opcije prevođenja',
 	'translate-pref-editassistlang-help' => 'Spisak kodova jezika razdvojenih zarezom.
 Prevod poruka u ovim jezicima će biti prikazan dok prevodite.
@@ -1814,6 +1862,15 @@ Savjetujemo Vam da izvršite pregled poruke preko [[Special:Translate|{{int:tran
 	'translate-group-desc-wikitravelextensions' => 'Grupa meta poruka koja sadrži sve poruke za podržana MediaWiki proširenja korištena u [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Grupa meta poruka koja sadrži sve poruke za proširenja vezana za [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Grupa meta poruka koja sadrži sve poruke za proširenja vezana za [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia inicijativu upotrebljivosti]',
+	'translate-manage-listgroups-old' => 'Grupe starijeg stila',
+	'translate-managegroups' => 'Upravljanje grupama',
+	'translate-manage-modlang-new' => '$1 (novo)',
+	'translate-manage-import-diff' => 'Poruka $1 | Akcije: $2',
+	'translate-manage-action-import' => 'Uvezi',
+	'translate-manage-action-ignore' => 'Zanemeri',
+	'translate-manage-import-ignore' => 'Preskaćem poruku $1.',
+	'translate-manage-conflict-summary' => 'Uvozi se nova verzija iz vanjskog izvora. Molimo provjerite.',
+	'translate-manage-import-done' => 'Sve završeno!',
 );
 
 /** Buginese (ᨅᨔ ᨕᨘᨁᨗ)
@@ -2151,7 +2208,7 @@ Změny se neuloží, dokud nekliknete na tlačítko „Uložit změny“ pod edi
 	'translate-checks-format' => 'Tento překlad neodpovídá definici nebo má neplatnou syntaxi: $1',
 	'translate-checks-escape' => 'Následující escape sekvence možná nebyly zamýšleny: <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'Neposílat mi novinky emailem',
-	'translate-pref-editassistlang' => 'Pomocné jazyky',
+	'translate-pref-editassistlang' => 'Pomocné jazyky:',
 	'prefs-translate' => 'Nastavení pro překládání',
 	'translate-pref-editassistlang-help' => "Seznam kódů jazyků oddělených čárkami.
 Překlady zvolené zprávy do těchto jazyků jsou zobrazeny při překládání.
@@ -2360,7 +2417,7 @@ Du musst in der Übersetzer-Gruppe sein, um Änderungen zu speichern.
 	'translate-checks-format' => 'Diese Übersetzung entspricht nicht der Definition oder hat eine ungültige Syntax: $1',
 	'translate-checks-escape' => 'Die folgenden Escape-Sequenzen können versehentlich vorhanden sein: <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'Sende mir keinen E-Mail-Newsletter zu',
-	'translate-pref-editassistlang' => 'Sprachunterstützung',
+	'translate-pref-editassistlang' => 'Sprachunterstützung:',
 	'prefs-translate' => 'Übersetzungsoptionen',
 	'translate-pref-editassistlang-help' => 'Mit Komma getrennte Liste von Sprachcodes.
 Die Übersetzungen der Systemnachrichten in der gewählten Sprachen werden beim Übersetzen angezeigt.
@@ -2563,7 +2620,7 @@ Musyš w kupce pśełožowarjow byś, aby mogł změny cyniś. Změny se njeskł
 	'translate-checks-format' => 'Toś ten pśełožk njeslědujo definiciji abo ma njepłaśiwu syntaksu: $1',
 	'translate-checks-escape' => 'Slědujuce eskapowe sekwence mógu pśipadne byś: <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'Njesćelśo mě emailowy list nowosćow',
-	'translate-pref-editassistlang' => 'Pomocne rěcy',
+	'translate-pref-editassistlang' => 'Pomocne rěcy:',
 	'prefs-translate' => 'Pśełožowańske opcije',
 	'translate-pref-editassistlang-help' => 'Lisćina rěcnych kodow z komu ako źěleńske znamuško.
 Pśełožowanje powěźeńki w toś tych rěcach se pokazuju, gaž pśełožujoš.
@@ -3440,6 +3497,7 @@ $messages['fi'] = array(
 	'translate-prev' => 'Edellinen sivu',
 	'translate-page-description-legend' => 'Tietoja ryhmästä',
 	'translate-page-edit' => 'muokkaa',
+	'translate-ext-url' => '<hr />Verkkosivu: $1',
 	'translate-optional' => '(valinnainen)',
 	'translate-ignored' => '(ei-käännettävä)',
 	'translate-edit-definition' => 'Viestin määritelmä',
@@ -3482,6 +3540,8 @@ Muutoksia ei tallenneta, ennen kuin painat tallenna-painiketta.',
 	'translate-magic-special' => 'Toimintosivujen nimet',
 	'translate-magic-words' => 'Taikasanat',
 	'translate-magic-namespace' => 'Nimiavaruuksien nimet',
+	'translate-magic-notsaved' => 'Muokkaustasi ei tallennettu.',
+	'translate-magic-saved' => 'Muutoksesi tallennettiin onnistuneesti.',
 	'translationchanges' => 'Käännösmuutokset',
 	'translationchanges-export' => 'vie',
 	'translationchanges-change' => '$1: Käyttäjä $3 muutti sivua $2',
@@ -3571,6 +3631,14 @@ Voit tarkistaa käännöksiä toimintosivulla [[Special:Translate|{{int:translat
 	'translate-group-desc-wikihowextensions' => 'Tämä metaviestiryhmä sisältää kaikki tuetut MediaWikin laajennuksien viestit, joita [http://www.wikihow.com wikiHow] käyttää',
 	'translate-group-desc-wikimediaextensions' => 'Tämä metaviestiryhmä sisältää kaikki tuetut MediaWikin laajennuksien viestit, joita [http://wikimedia.org/ Wikimedia Foundation] käyttää',
 	'translate-group-desc-wikitravelextensions' => 'Tämä metaviestiryhmä sisältää kaikki tuetut MediaWikin laajennuksien viestit, joita [http://wikitravel.org Wikitravel] käyttää',
+	'translate-manage-groups' => 'Käännösryhmien hallinta',
+	'translate-manage-listgroups' => 'Asetetut ryhmät',
+	'translate-manage-modlang-new' => '$1 (uusi)',
+	'translate-manage-import-new' => 'Uusi viesti $1',
+	'translate-manage-import-deleted' => 'Poistettu viesti $1',
+	'translate-manage-import-ok' => 'Tuotiin uusi versio sivusta $1.',
+	'translate-manage-import-done' => 'Kaikki tehty.',
+	'translate-manage-subtitle' => 'Hallitse',
 );
 
 /** French (Français)
@@ -3691,7 +3759,7 @@ Les modifications ne sont pas enregistrées tant que vous n’avez pas cliqué s
 	'translate-checks-format' => 'Cette traduction ne suit pas la définition ou a une syntaxe incorrecte : $1',
 	'translate-checks-escape' => 'Les échappements suivants peuvent être accidentels : <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'Ne pas m’envoyer les courriels d’informations',
-	'translate-pref-editassistlang' => "Langues d'assistance",
+	'translate-pref-editassistlang' => "Langues d'assistance :",
 	'prefs-translate' => 'Options de traduction',
 	'translate-pref-editassistlang-help' => 'Liste de code de langues séparée par une virgule.
 La traduction d’un message dans ces langues est affiché quand vous êtes en train de le traduire.
@@ -3768,6 +3836,29 @@ Vous êtes encouragé à revoir les message depuis [[Special:Translate|{{int:tra
 	'translate-group-desc-wikitravelextensions' => 'Meta groupe de messages contenant tous les messages pour les extensions utilisées sur [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Meta groupe de messages contenant tous les messages pour les extensions apparentées à [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Groupe de messages Meta contenant tous les messages des extensions liées à [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
+	'translate-manage-groups' => 'Gestion du groupe',
+	'translate-manage-listgroups' => 'Groupes configurés',
+	'translate-managegroups' => 'Gestion du groupe',
+	'translate-manage-cacheat' => 'Importés dans $1 le $2',
+	'translate-manage-return-to-group' => 'Retour à la page d’informations du groupe',
+	'translate-manage-modlangs' => 'Vérifier les éventuelles modifications dans les langue{{PLURAL:$1||s}} :',
+	'translate-manage-modlang-new' => '$1 (nouveau)',
+	'translate-manage-import-diff' => 'Message $1 | Actions : $2',
+	'translate-manage-import-new' => 'Nouveau message $1',
+	'translate-manage-import-deleted' => 'Message supprimé $1',
+	'translate-manage-action-import' => 'Importation',
+	'translate-manage-action-ignore' => 'Ignorer',
+	'translate-manage-submit' => 'Exécuter',
+	'translate-manage-toolong' => 'La durée maximale du temps de traitement de $1 seconde{{PLURAL:$1||s}} a été dépassé.
+Renvoyez le formulaire pour continuer le traitement.',
+	'translate-manage-import-ok' => 'Une nouvelle version de la page $1 a été importée.',
+	'translate-manage-import-noks' => 'Impossible d’importer la nouvelle version de la page $1 : $2',
+	'translate-manage-import-ignore' => 'Le message $1 a été sauté.',
+	'translate-manage-import-summary' => "Importation d'une nouvelle version depuis une source externe.",
+	'translate-manage-conflict-summary' => "Importation d'une nouvelle version depuis une source externe. Vérifiez s'il vous plait.",
+	'translate-manage-import-done' => 'Tout a été fait !',
+	'translate-manage-import-rebuild' => 'Le cache a été reconstruit.',
+	'translate-manage-subtitle' => 'Gérer',
 );
 
 /** Cajun French (Français cadien)
@@ -4125,7 +4216,7 @@ Os cambios non se gardan ata que prema no botón "Gardar" de embaixo.',
 	'translate-checks-format' => 'Esta tradución non segue a definición ou ten unha sintaxe inválida: $1',
 	'translate-checks-escape' => 'As seguintes secuencias de escape poden ser accidentais: <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'Non me enviedes follas informativas ao meu correo electrónico',
-	'translate-pref-editassistlang' => 'Linguas axudantes',
+	'translate-pref-editassistlang' => 'Linguas axudantes:',
 	'prefs-translate' => 'Opcións de tradución',
 	'translate-pref-editassistlang-help' => 'Lista de códigos de linguas separados por comas.
 Móstranse as traducións dunha mensaxe nestas linguas cando a traduce.
@@ -4198,6 +4289,47 @@ Animámolo a que revise as mensaxes existentes mediante a páxina especial [[Spe
 	'translate-group-desc-wikitravelextensions' => 'Grupo de mensaxes que contén todas as mensaxes das extensións soportadas por MediaWiki usadas por [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Grupo de mensaxes que contén todas as mensaxes das extensións relacionadas con [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Grupo de mensaxes meta que contén todas as mensaxes das extensións relacionadas coa [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Iniciativa de usabilidade da Wikipedia]',
+	'translate-manage-groups' => 'Xestión do grupo',
+	'translate-manage-listgroups' => 'Grupos configurados',
+	'translate-manage-listgroups-old' => 'Grupos de estilo vello',
+	'translate-managegroups' => 'Xestión do grupo',
+	'translate-manage-newgroup' => 'Este grupo de mensaxes non foi previamente importado.',
+	'translate-manage-cacheat' => 'Importados o $1 ás $2',
+	'translate-manage-return-to-group' => 'Voltar á páxina de detalles do grupo',
+	'translate-manage-modlangs' => 'Por favor, comprobe as posibles modificacións {{PLURAL:$1|na seguinte lingua|nas seguintes linguas}}:',
+	'translate-manage-modlang-new' => '$1 (novo)',
+	'translate-manage-import-diff' => 'Mensaxe $1 | Accións: $2',
+	'translate-manage-import-new' => 'Nova mensaxe $1',
+	'translate-manage-import-deleted' => 'Mensaxe borrada $1',
+	'translate-manage-action-import' => 'Importar',
+	'translate-manage-action-conflict' => 'Importar e incluír a marca fuzzy',
+	'translate-manage-action-ignore' => 'Ignorar',
+	'translate-manage-action-fuzzy' => 'Importar e incluír a marca fuzzy nas traducións',
+	'translate-manage-submit' => 'Executar',
+	'translate-manage-nochanges' => 'Non hai cambios nas definicións das mensaxes neste grupo.',
+	'translate-manage-nochanges-other' => 'Non houbo cambios nesta lingua.
+Use a ligazón de embaixo para voltar á vista dos detalles do grupo.',
+	'translate-manage-inconsistent' => 'Detectouse unha inconsistencia na solicitude.
+Por favor, comprobe os cambios e inténteo de novo. Detalles: $1.',
+	'translate-manage-toolong' => 'Excedeuse do máximo tempo de procesamento de $1 {{PLURAL:$1|segundo|segundos}}.
+Por favor, reenvíe o formulario para continuar procesando.',
+	'translate-manage-import-ok' => 'Importou unha nova versión da páxina $1.',
+	'translate-manage-import-noks' => 'Non se puido importar a nova versión da páxina $1: $2',
+	'translate-manage-import-ignore' => 'Saltando a mensaxe $1.',
+	'translate-manage-import-summary' => 'Importando unha nova versión desde unha fonte externa',
+	'translate-manage-conflict-summary' => 'Importando unha nova versión desde unha fonte externa. Por favor, compróbea.',
+	'translate-manage-import-fuzzy' => 'Importando e incluíndo a marca fuzzy: $1',
+	'translate-manage-import-done' => 'Todo listo!',
+	'translate-manage-import-rebuild' => 'A caché foi reconstruída.',
+	'translate-manage-intro-en' => 'A continuación está a lista de cambios nas mensaxes deste grupo.
+Por favor, revise os cambios e escolla a acción que pretende facer para cada mensaxe.
+Unha vez que actualice as definicións das mensaxes, verifique se hai cambios externos noutras linguas, se os houbese.
+Teña en conta tamén que a acción <code>ignorar</code> é só temporal.',
+	'translate-manage-intro-other' => 'A continuación está a lista de cambios nas traducións da lingua $1.
+Por favor, revise os cambios e escolla a acción que pretende facer para cada tradución.
+Se opta por ignorar as modificacións, estas serán sobreescritas na vindeira exportación.',
+	'translate-manage-subtitle' => 'Xestionar',
+	'translate-manage-import-rebuild-all' => 'Reconstruír todas as linguas e ignorar calquera cambio',
 );
 
 /** Gothic
@@ -4368,7 +4500,7 @@ Du muesch in dr Ibersetzer-Gruppe syy go Änderige z spychere.
 	'translate-checks-format' => 'Die Ibersetzig entspricht nit dr Definition oder het e uugiltigi Syntax: $1',
 	'translate-checks-escape' => 'Die Escape-Sequenze chenne us Versäh vorhande syy: <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'Schick mir kei E-Mail-Newsletter zue',
-	'translate-pref-editassistlang' => 'Hilfssproch',
+	'translate-pref-editassistlang' => 'Hilfssproche:',
 	'prefs-translate' => 'Ibersetzigoptione',
 	'translate-pref-editassistlang-help' => 'Dur Komma trännti Lischt vu Sprochcodes.
 Ibersetzige vun ere Nochricht in däne Sproche wäre aazeigt, wänn du am Ibersetze bisch.
@@ -4441,6 +4573,47 @@ S wird empfohle, Syschtemnochrichte mit dr Spezialsyte [[Special:Translate|{{int
 	'translate-group-desc-wikitravelextensions' => 'In däre Hauptgruppe het s alli Syschtemnochrichte vu dr unterstitzte MediaWiki-Erwyterige, wu vu [http://wikitravel.org Wikitravel] brucht wäre',
 	'translate-group-desc-uniwiki' => 'In däre Hauptgruppe het s alli Syschtemnochrichte fir verwandti Erwyterige vu [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'In däre Hauptgruppe het s alli Syschtemnochrichte vu dr [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Benutzerfrejndligkeits-Initiative]',
+	'translate-manage-groups' => 'Gruppeverwaltig',
+	'translate-manage-listgroups' => 'Konfigurierti Gruppe',
+	'translate-manage-listgroups-old' => 'Gruppe in altem Stil',
+	'translate-managegroups' => 'Gruppeverwaltig',
+	'translate-manage-newgroup' => 'Die Nochricht isch vorhär nit importiert wore.',
+	'translate-manage-cacheat' => 'Importiert am $1 am $2',
+	'translate-manage-return-to-group' => 'Zruck zue dr Gruppedetail-Syte',
+	'translate-manage-modlangs' => 'Bitte lueg no meglige Veränderige in {{PLURAL:$1|däre Sproch|däne Sproche}}:',
+	'translate-manage-modlang-new' => '$1 (nej)',
+	'translate-manage-import-diff' => 'Nochricht $1 | Aktione: $2',
+	'translate-manage-import-new' => 'Neji Nochricht $1',
+	'translate-manage-import-deleted' => 'Gleschti Nochricht $1',
+	'translate-manage-action-import' => 'Importiere',
+	'translate-manage-action-conflict' => 'Importiere un mit „FUZZY“ markiere',
+	'translate-manage-action-ignore' => 'Ignoriere',
+	'translate-manage-action-fuzzy' => 'Importiere un Ibersetzige mit „FUZZY“ markiere',
+	'translate-manage-submit' => 'Uusfiere',
+	'translate-manage-nochanges' => 'S het kei Änderige in dr Nochrichtedefinitione vu däre Gruppe.',
+	'translate-manage-nochanges-other' => 'S het kei Änderige in däre Sproch.
+Druck uf dr Link unte go zue dr Gruppedetailaasicht zruckgoh.',
+	'translate-manage-inconsistent' => 'Inskonsischtänz in dr Aafrog entdeckt.
+Bitte iberprief d Änderige un versuech s nonemol. Detail: $1.',
+	'translate-manage-toolong' => 'Di maximal Arbetsablauf-Zyt vu $1 Sekunde isch iberschritte wore.
+Bitte schick s Format nonemol ab go mit em Arbetsablauf wytermache.',
+	'translate-manage-import-ok' => 'Het e neji Version vu dr Syte $1 importiert.',
+	'translate-manage-import-noks' => 'Dr Import isch fählgschlaa vun ere neje Version vu dr Syte $1: $2',
+	'translate-manage-import-ignore' => 'Am Ibergumpe vu dr Nochricht $1.',
+	'translate-manage-import-summary' => 'Am Importiere vun ere neje Version us ere extärne Quälle',
+	'translate-manage-conflict-summary' => 'Am Importiere vun ere neje Version us ere extärne Quälle. Bitte iberpriefe.',
+	'translate-manage-import-fuzzy' => 'Am Importiere un mit „FUZZY“ markiere: $1',
+	'translate-manage-import-done' => 'Alles gmacht!',
+	'translate-manage-import-rebuild' => 'Cache nej ufböue.',
+	'translate-manage-intro-en' => 'Unte het s e Lischt vu Nopchrichte-Änderige in däre Gruppe.
+Bitte prief d Änderige un wehl e Aktion uus, wu Du witt uiusfiere fir jedi Nochricht.
+Wänn Du d Nochrichtedefinitione emol aktualisiert hesch, iberprief extärni Änderige in andere Sproche, wänn s het.
+Gib Acht, ass d <code>ignore</code>-Aktion zytlig begränzt isch.',
+	'translate-manage-intro-other' => 'Unte het s Lischt vu Ibersetzigsänderige in dr Sproch $1.
+Bitte prief d Änderige un wehl e Aktion uus, wu Du witt uusfiere fir jedi Ibersetzig.
+Wänn Du Änderige witt ignoriere, wäre si bim negschte Export ußer Chraft gsetzt.',
+	'translate-manage-subtitle' => 'Verwalte',
+	'translate-manage-import-rebuild-all' => 'Alli Sproche nej ufböue un alli Änderige ignoriere',
 );
 
 /** Gujarati (ગુજરાતી)
@@ -4950,7 +5123,7 @@ Dyrbiš w skupinje přełožowarjow być, zo by změny składował. Změny so nj
 	'translate-checks-format' => 'Tutón přełožk njeslěduje definiciji abo ma njepłaćiwu syntaksu: $1',
 	'translate-checks-escape' => 'Slědowace eskapowe sekwency móža připadne być: <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'Njepósćel mi žadyn e-mejlowy dopis nowinkow',
-	'translate-pref-editassistlang' => 'Pomocne rěče',
+	'translate-pref-editassistlang' => 'Pomocne rěče:',
 	'prefs-translate' => 'Přełožowanske opcije',
 	'translate-pref-editassistlang-help' => 'Lisćina rěčnych kodow z komu jako dźělatko.
 Přełožk powěsće w tutych rěčach pokazuja so, hdyž přełožuješ.
@@ -5328,7 +5501,7 @@ Le modificationes non es immagazinate usque tu clicca super le button Publicar i
 	'translate-checks-format' => 'Iste traduction non seque le definition o ha un syntaxe invalide: $1',
 	'translate-checks-escape' => 'Le sequente escappamentos pote esser accidental: <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'Non inviar me bulletines in e-mail',
-	'translate-pref-editassistlang' => 'Linguas assistente',
+	'translate-pref-editassistlang' => 'Linguas assistente:',
 	'prefs-translate' => 'Optiones de traduction',
 	'translate-pref-editassistlang-help' => 'Lista de codices de linguas separate per commas.
 Le traductiones de un message in iste linguas es monstrate quando tu traduce.
@@ -5404,6 +5577,7 @@ Es recommendate revider le messages per medio del pagina [[Special:Translate|{{i
 	'translate-group-desc-wikitravelextensions' => 'Metagruppo con tote le messages pro le extensiones supportate de MediaWiki usate per [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Metagruppo con tote le messages pro le extensiones connexe a [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Metagruppo de messages continente tote le messages pro extensiones connexe al [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Initiativa de Usabilitate de Wikipedia]',
+	'translate-manage-groups' => 'Gestion de gruppos',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -5790,7 +5964,7 @@ Le modifiche non vengono salvate finché non clicchi sul bottone "Salva" sotto.'
 	'translate-checks-format' => 'Questa traduzione non segue la definizione o ha una sintassi non valida: $1',
 	'translate-checks-escape' => 'I seguenti escape potrebbero essere accidentali: <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'Non mandarmi le newsletter per e-mail',
-	'translate-pref-editassistlang' => 'Assistente lingue',
+	'translate-pref-editassistlang' => 'Assistente lingue:',
 	'prefs-translate' => 'Opzioni di traduzione',
 	'translate-pref-editassistlang-help' => "Codici delle lingue separati da virgola.
 Le traduzioni di un messaggio in queste lingue sono mostrate durante la traduzione.
@@ -6913,7 +7087,7 @@ Wann De weijß, wann un woh dit Shtöck jenou jebruch weed, dann kanns De de Ann
 	'translate-edit-goto-no-next' => 'Keine Tëx donoh',
 	'translate-edit-goto-prev' => 'Dä Tëx doför zëije',
 	'translate-edit-goto-next' => 'Dä Tëx donoh zëije',
-	'translate-edit-goto-list' => 'Op de Lėß zoröckjonn',
+	'translate-edit-goto-list' => 'Op de Lėß jonn',
 	'translate-magic-pagename' => 'MediaWiki sing Extras övversäze',
 	'translate-magic-help' => 'Hee kanns_De Zweijtname fö Söndersigge, Zauberwööter, un de Appachtemangname översäze.
 
@@ -6959,7 +7133,7 @@ Do moß en de Jrop „Övversäzer“ sen, för hee Änderonge maache ze könne.
 	'translate-checks-format' => 'De Övversätzung paß nit zor Definitjuhn odder dä ier Syntax es nit en Odenung: $1',
 	'translate-checks-escape' => 'He de <i lang="en">escapes</i> künnte esu nit jewollt sin: <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'Donn mer keijn Rondschriive övver de eläktronesche Poß scheke',
-	'translate-pref-editassistlang' => 'Shprooche för ze Hellfe',
+	'translate-pref-editassistlang' => 'Shprooche för ze Hellfe:',
 	'prefs-translate' => 'Enshtällunge för et Övversäze',
 	'translate-pref-editassistlang-help' => 'En Leß met Köözelle för Shprooche.
 De Övversäzunge en di Shprooche wääde Der jezeich, wann De aam Övversäze bes.
@@ -7035,6 +7209,44 @@ de Söndersigg [[Special:Translate|{{int:translate}}]] norrens ze prööfe.',
 	'translate-group-desc-wikitravelextensions' => 'Hee di Sammeljropp hät de Täxte un Nohreschte vun alle Zohsatzprojramme vum MediaWiki, di mer hee ongershtöze donn, un di em <i lang="en">[http://wikitravel.org Wikitravel]</i> jebruch wäde',
 	'translate-group-desc-uniwiki' => 'Hee di Sammeljropp hät de Täxte un Nohreschte vun alle Zohsatzprojramme vum MediaWiki, di mem <i lang="en">[http://unicefinnovation.org/wiki.php Uniwiki]</i> ze donn han',
 	'translate-group-desc-ui' => 'Hee di Sammeljropp hät all de Texnohreeschte uß de divärse Zohsazprojramme vun dä [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative „<i lang="en">Wikipedia Usability Initiative</i>“].',
+	'translate-manage-groups' => 'Jroppeverwalldong',
+	'translate-manage-listgroups' => 'Enjeschtallte Jroppe',
+	'translate-manage-listgroups-old' => 'Jroppe em ahle Shtiil',
+	'translate-managegroups' => 'Jroppe Verwallde',
+	'translate-manage-newgroup' => 'Heh di Jropp vun Täxte of Nohreeschte es vörher noch nit empotteed woode.',
+	'translate-manage-cacheat' => 'Empotteet aam $1 öm $2 Uhr',
+	'translate-manage-return-to-group' => 'Jangk retuur op de Sigg met de Einzelheite vun dä Jropp',
+	'translate-manage-modlangs' => 'Bes esu joot, un donn op müjjelesche Änderunge en dä foljende {{PLURAL:$1|Shprooch|Shprooche|jaa kei Shprooch}} prööfe:',
+	'translate-manage-modlang-new' => '$1 (neu)',
+	'translate-manage-import-diff' => 'Nohreesch $1 | Akßjuhne: $2',
+	'translate-manage-import-new' => 'Neu Nohreesch $1',
+	'translate-manage-import-deleted' => 'Fottjeschmeße Nohreesch $1',
+	'translate-manage-action-import' => 'Empotteere',
+	'translate-manage-action-conflict' => 'Empotteere un met „!!<nowiki />FUZZY!!“ zom Beärbeide makeere',
+	'translate-manage-action-ignore' => 'Övverjonn',
+	'translate-manage-action-fuzzy' => 'Empotteere un Översäzunge met „!!<nowiki />FUZZY!!“ zom Beärbeide makeere',
+	'translate-manage-submit' => 'Lohß Jonn!',
+	'translate-manage-nochanges' => 'Mer han kei Änderunge aan de faßjelaate Nohreeschte för heh di Jropp.',
+	'translate-manage-nochanges-other' => 'Mer hatte kei Änderunge för heh di Shprooch.
+Met dämm Lengk onge jeihß De retuur op di Sigg met de Einzelheite vun dä Jropp.',
+	'translate-manage-inconsistent' => 'Doh paß jät nit zosamme. Bes esu joot un looer noh Änderunge,
+dann versöhke et noch ens. De Einzelheite: $1',
+	'translate-manage-toolong' => 'De hühßte müjjelesche Zick för et Beärbeide vun {{PLURAL:$1|ein Sekund|$1 Sekunde|nit ens en Sekund}} es afjeloufe.
+Bes esu joot, un donn dat Fomulaa noch ens affschecke, för hee wigger ze maache.',
+	'translate-manage-import-ok' => 'Mer han en neu Version fun dä Sigg „$1“ empotteet.',
+	'translate-manage-import-noks' => 'Mer han kei neu Version fun dä Sigg „$1“ empotteere künne: $2',
+	'translate-manage-import-ignore' => 'Mer sin de Nohreesch $1 aam övverjonn.',
+	'translate-manage-import-summary' => 'Mer sin en neu Version vun Ußerhallef aam Empoteere',
+	'translate-manage-conflict-summary' => 'Mer sin en neu Version vun Ußerhallef aam Empoteere. Beß esu joot, un donn se prööfe.',
+	'translate-manage-import-fuzzy' => 'Ben aam empotteere un met „!!<nowiki />FUZZY!!“ zom Beärbeide aam makeere: $1',
+	'translate-manage-import-done' => 'Alle jedonn!',
+	'translate-manage-import-rebuild' => 'Dä Zwescheshpeisher es neu opjebout.',
+	'translate-manage-intro-en' => 'He noh kütt en Leß met Änderunge aan Nohreeschte en dä Jropp. Donn se dorschjonn, un söhk Der för jeede en Akßjuhn uß, wat De domet jemaat han wells. Wann De de Noheeschte ier Ojinaale op dä neuste Shtand jebraat häs, dann looer och noh Änderunge vun Ußerhallef en annder Shprooche, wann_er doh sin. De moß och drop aach jävve, dat de Wahl „<code>{{int:translate-manage-action-ignore}}</code>“ nur för der Momang jeldt.',
+	'translate-manage-intro-other' => 'He noh kütt en Leß met Änderunge aan Övversäzunge en dä Shprooch $1.
+Donn se dorschjonn, un söhk Der för jeede en Akßjuhn uß, wat De domet jemaat han wells.
+Wann De entscheids, Änderunge ze övverjonn, dann wääde di Änderunge beim nähxte Expoot och övverjange.',
+	'translate-manage-subtitle' => 'Verwallde',
+	'translate-manage-import-rebuild-all' => 'Donn alle Shprooche neu opboue un dobei alle Änderunge övverjonn',
 );
 
 /** Latin (Latina)
@@ -7053,6 +7265,7 @@ $messages['la'] = array(
 );
 
 /** Luxembourgish (Lëtzebuergesch)
+ * @author Les Meloures
  * @author Robby
  */
 $messages['lb'] = array(
@@ -7075,7 +7288,7 @@ $messages['lb'] = array(
 	'translate-page-no-such-language' => 'Ongëltege Sproochcode benotzt',
 	'translate-page-no-such-task' => 'Déi gefroten Aufgab gëtt et net.',
 	'translate-page-no-such-group' => 'Déi Gefrote Grupp gëtt et net.',
-	'translate-page-disabled' => "Iwwersetzungen an dës Sprooch goufen an dësem Grupp ausgeschalt. Grond:
+	'translate-page-disabled' => "Iwwersetzungen an dës Sprooch goufen an dëser Grupp ausgeschalt. Grond:
 
 ''$1''",
 	'translate-page-settings-legend' => 'Astellungen',
@@ -7159,7 +7372,7 @@ Dir musst am Grupp vun den Iwwersetzer si fir Ännerungen ofspäicheren ze kënn
 	'translate-checks-format' => 'Dës Iwwersetzung translation entsprecht net der Definitioun oder huet eng Syntax déi net gëlteg ass: $1',
 	'translate-checks-escape' => 'Dës Escape-Sequenzen kënnen ongewollt sinn: <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'Schéckt mir keng E-Mail-Newsletter.',
-	'translate-pref-editassistlang' => 'Sproochen-Assistent',
+	'translate-pref-editassistlang' => 'Sproochen déi ënnerstetzen:',
 	'prefs-translate' => 'Optiouen vund der Iwwersetzung',
 	'translate-pref-editassistlang-help' => "Mat Komma getrennte Lëscht vun de Sproochcoden.
 Iwwersetzung vun engem Message an dës Sprooche gëtt gewisen wann Dir iwwersetzt.
@@ -7218,7 +7431,7 @@ Dir kënnt [$1 d'Original Säit änneren] oder [$2 d'Iwwersetzung aktualiséiere
 Dir sidd awer häerzlech Invitéiert fir d'Systemmessagn op [[Special:Translate|{{int:translate}}]] nozekucken.",
 	'translate-save' => 'Späicher ($1)',
 	'translate-jssti-add' => "Op d'Lëscht derbäisetzen",
-	'translate-group-desc-mediawikicore' => "An dësem Grupp mat Message sinn d'Messagen aus der aktueller alpha-Versioun vu MediaWiki ({{CURRENTVERSION}}) drann",
+	'translate-group-desc-mediawikicore' => "An dëser Grupp mat Message sinn d'Messagen aus der aktueller alpha-Versioun vu MediaWiki ({{CURRENTVERSION}}) dran",
 	'translate-group-desc-mediawikimostused' => 'An dësem Grupp sinn déi [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 am dackste gebrauchte Systemmessagen] vu MediaWiki',
 	'translate-group-desc-mediawikiextensions' => 'An dësem Grupp sinn all Systemmessage vun den ënnerstetzten Erweiderunge vu MediaWiki',
 	'translate-group-desc-collection' => "An dësem Grupp sinn all Systemmessagen fir d'MediaWiki-Erweiderung [http://www.mediawiki.org/wiki/Extension:Collection Sammlung]",
@@ -7232,6 +7445,39 @@ Dir sidd awer häerzlech Invitéiert fir d'Systemmessagn op [[Special:Translate|
 	'translate-group-desc-wikitravelextensions' => 'An dëser Grupp sinn all Systemmessage vun den ënnerstetzte MediaWiki-Erweiderungen, déi vu [http://wikitravel.org Wikitravel] genotzt ginn',
 	'translate-group-desc-uniwiki' => 'Meta-Grupp vun alle Systemmessagen fir Erweiderungen am Zesummenhang mat [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Grupp vu Systemmessage vun den Erweiderungen déi mat der [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Benotzerfrëndlechkeets-Initiative] a Verbindung stinn',
+	'translate-manage-groups' => 'Gestioun vum Grupp',
+	'translate-manage-listgroups' => 'Agestallte Gruppen',
+	'translate-managegroups' => 'Gestioun vum Grupp',
+	'translate-manage-newgroup' => 'Dëse Grupp vu Message ass virdrun net importéiert ginn.',
+	'translate-manage-cacheat' => 'Den $1 ëm $2 importéiert',
+	'translate-manage-return-to-group' => "Zréck op d'Säit mat den Detailer vum Grupp",
+	'translate-manage-modlangs' => 'Kuckt w.e.g. fir méiglech Ännerungen an {{PLURAL:$1|dëser Sprooch|dëse Sproochen}}:',
+	'translate-manage-modlang-new' => '$1 (nei)',
+	'translate-manage-import-diff' => 'Message $1 | Aktiounen: $2',
+	'translate-manage-import-new' => 'Neie Message $1',
+	'translate-manage-import-deleted' => 'Geläschte Message $1',
+	'translate-manage-action-import' => 'Importéieren',
+	'translate-manage-action-conflict' => "Importéieren a mat 'FUZZY' markéieren",
+	'translate-manage-action-ignore' => 'Ignoréieren',
+	'translate-manage-action-fuzzy' => "Iwwersetzungen importéieren a mat 'FUZZY' markéieren",
+	'translate-manage-submit' => 'Maachen',
+	'translate-manage-nochanges' => 'Et gi keng Ännerungen an den Definitioune vun de Message vun dësem Grupp.',
+	'translate-manage-nochanges-other' => "Et gouf keng Ännerunge fir dës Sprooch.
+Benotzt de Link ënnendrënner fir zréck op d'Säit mat den Detailer vum Grupp ze goen.",
+	'translate-manage-inconsistent' => 'Inkonsistenz an der Ufro fonnt.
+Kuckt w.e.g. no fir Ännerungen a probéiert nach eng Kéier. Detailer: $1',
+	'translate-manage-import-ok' => 'Nei Versioun vun der Säit $1 gouf importéiert.',
+	'translate-manage-import-noks' => 'Déi nei Versioun $2 vun der Säit $1 konnt net importéiert ginn',
+	'translate-manage-import-ignore' => 'Message $1 iwwersprangen.',
+	'translate-manage-import-summary' => 'Eng nei Versioun vun enger externer Quell gëtt importéiert',
+	'translate-manage-conflict-summary' => 'En nei Versioun gëtt vun enger externer Quell imortéiert. W.e.g. nokucken.',
+	'translate-manage-import-fuzzy' => 'Importéieren a mat Fuzzy markéieren: $1',
+	'translate-manage-import-done' => 'Fäerdeg!',
+	'translate-manage-intro-other' => "Ënnendrënner ass eng Lëscht vun den Ännerungen vun den Iwwersetzungen an der Sprooch $1.
+Kuckt d'Ännerunge w.e.g. no a wielt déi Aktioun déi Dir fir déi jeweileg Iwwersetzung wëllt.
+Wann dir decidéiert fir Ännerungen z'ignoréieren, da gi si beim nächsten Export iwwerschriwwen.",
+	'translate-manage-subtitle' => 'Geréieren',
+	'translate-manage-import-rebuild-all' => 'All Sproochen zrécksetzen an all Ännerungen ignoréieren',
 );
 
 /** Limburgish (Limburgs)
@@ -7987,7 +8233,7 @@ Wijzigingen worden niet bewaard totdat u op "Pagina opslaan" hebt geklikt.',
 	'translate-checks-format' => 'Deze vertaling wijkt af van het bronbericht of heeft een ongeldige opmaak: $1',
 	'translate-checks-escape' => 'De volgende escapes zijn waarschijnlijk per ongeluk toegepast: <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'Mij geen nieuwsbrieven per e-mail sturen',
-	'translate-pref-editassistlang' => 'Hulptalen',
+	'translate-pref-editassistlang' => 'Hulptalen:',
 	'prefs-translate' => 'Vertaalinstellingen',
 	'translate-pref-editassistlang-help' => 'Kommagescheiden lijst van taalcodes.
 De vertaling van berichten in deze talen worden weergegeven tijdens het vertalen.
@@ -8061,6 +8307,27 @@ U wordt aangemoedigd om via [[Special:Translate|{{int:translate}}]] vertalingen 
 	'translate-group-desc-wikitravelextensions' => 'Metaberichtengroep die alle berichten bevat voor ondersteunde MediaWiki-uitbreidingen gebruikt door [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Metaberichtengroep die alle berichten bevat voor uitbreidingen gerelateerd aan [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Metaberichtengroep die alle berichten bevat voor uitbreidingen gerelateerd aan het [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Bruikbaarheidsinitiatief]',
+	'translate-manage-groups' => 'Groepsbeheer',
+	'translate-manage-listgroups' => 'Ingestelde groepen',
+	'translate-manage-listgroups-old' => "Groupen 'oude stijl'",
+	'translate-managegroups' => 'Groepsbeheer',
+	'translate-manage-newgroup' => 'Deze berichtengroep is nog niet eerder geïmporteerd.',
+	'translate-manage-cacheat' => 'Geïmporteerd op $1 om $2',
+	'translate-manage-modlang-new' => '$1 (nieuw)',
+	'translate-manage-import-diff' => 'Bericht $1 | Handelingen: $2',
+	'translate-manage-import-new' => 'Nieuw bericht $1',
+	'translate-manage-import-deleted' => 'Verwijderd bericht $1',
+	'translate-manage-action-import' => 'Importeren',
+	'translate-manage-action-conflict' => 'Importeren en fuzzy markeren',
+	'translate-manage-action-ignore' => 'Negeren',
+	'translate-manage-action-fuzzy' => 'Importeren en vertalingen als fuzzy markeren',
+	'translate-manage-submit' => 'Uitvoeren',
+	'translate-manage-nochanges' => 'Er zijn geen veranderingen in de berichtdefinities voor deze groep.',
+	'translate-manage-import-ignore' => 'Bericht $1 wordt overgeslagen.',
+	'translate-manage-import-fuzzy' => 'Bezig met importeren en fuzzy markeren: $1',
+	'translate-manage-import-done' => 'Klaar!',
+	'translate-manage-import-rebuild' => 'Cache herbouwen.',
+	'translate-manage-subtitle' => 'Beheer',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
@@ -8482,8 +8749,8 @@ Los aliases de paginas especialas e los mots magics pòdon aver mantuna traducci
 Las traduccions son separadas per una virgula (,).
 Los espacis de noms pòdon pas aver qu'una traduccion.
 
-Dins las traduccions d'espacis de noms, <tt>$1 talk</tt> es especial. <tt>$1</tt> es remplaçat pel nom del sit (per exemple <tt>{{ns:project_talk}}</tt>).
-S4es pas possible d'obténer una expression valida dins vòstra lenga sens cambiar lo nom del sit, contactatz un desvolopaire.
+Dins las traduccions d'espacis de noms, <tt>$1 talk</tt> es especial. <tt>$1</tt> es remplaçat pel nom del site (per exemple <tt>{{ns:project_talk}}</tt>).
+S'es pas possible d'obténer una expression valida dins vòstra lenga sens cambiar lo nom del site, contactatz un desvolopaire.
 
 Vos cal aparténer al grop dels traductors per salvar los cambiaments.
 Los cambiaments seràn pas salvats abans que cliquèssetz sul boton « Salvar ».",
@@ -8519,7 +8786,7 @@ Los cambiaments seràn pas salvats abans que cliquèssetz sul boton « Salvar »
 	'translate-checks-format' => 'Aquesta traduccion seguís pas la definicion o a una sintaxi invalida : $1',
 	'translate-checks-escape' => 'Los escapaments seguents pòdon èsser accidentals : <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'Me mandetz pas la letra d’informacion per corrièr',
-	'translate-pref-editassistlang' => 'Assistent de lengas',
+	'translate-pref-editassistlang' => 'Assistent de lengas :',
 	'prefs-translate' => 'Opcions de traduccion',
 	'translate-pref-editassistlang-help' => 'Una virgulas a separat una lista de còde lenga.
 La traduccion d’un messatge dins aquelas lengas son visualizadas quand sètz a traduire.
@@ -8592,6 +8859,29 @@ Sètz encoratjat(ada) a repassar los messatges dempuèi [[Special:Translate|{{in
 	'translate-group-desc-wikitravelextensions' => 'Meta grop de messatges que contenon totes los messatges per las extensions utilizadas sus [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Meta grop de messatges que contenon totes los messatges per las extensions aparentadas a [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Grop de messatges Meta que contenon totes los messatges de las extensions ligadas a [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
+	'translate-manage-groups' => 'Gestion del grop',
+	'translate-manage-listgroups' => 'Gropes configurats',
+	'translate-managegroups' => 'Gestion del grop',
+	'translate-manage-cacheat' => 'Importats dins $1 lo $2',
+	'translate-manage-return-to-group' => 'Retorn a la pagina d’informacions del grop',
+	'translate-manage-modlangs' => 'Verificatz las modificacions eventualas dins las lenga{{PLURAL:$1||s}} :',
+	'translate-manage-modlang-new' => '$1 (novèl)',
+	'translate-manage-import-diff' => 'Messatge $1 | Accions : $2',
+	'translate-manage-import-new' => 'Messatge novèl $1',
+	'translate-manage-import-deleted' => 'Messatge suprimit $1',
+	'translate-manage-action-import' => 'Importacion',
+	'translate-manage-action-ignore' => 'Ignorar',
+	'translate-manage-submit' => 'Executar',
+	'translate-manage-toolong' => 'La durada maximala del temps de tractament de $1 segonda{{PLURAL:$1||s}} es estat depassat.
+Renviatz lo formulari per contuhar lo tractament.',
+	'translate-manage-import-ok' => 'Una version novèla de la pagina $1 es estada importada.',
+	'translate-manage-import-noks' => 'Impossible d’importar la version novèla de la pagina $1 : $2',
+	'translate-manage-import-ignore' => 'Lo messatge $1 es estat sautat.',
+	'translate-manage-import-summary' => "Importacion d'una version novèla dempuèi una font extèrna.",
+	'translate-manage-conflict-summary' => "Importacion d'una version novèla dempuèi una font extèrna. Verificatz se vos plai.",
+	'translate-manage-import-done' => 'Tot es estat fach !',
+	'translate-manage-import-rebuild' => "L'amagatal es estat reconstruch.",
+	'translate-manage-subtitle' => 'Gerir',
 );
 
 /** Oriya (ଓଡ଼ିଆ)
@@ -9514,7 +9804,7 @@ $messages['ru'] = array(
 	'translate-checks-format' => 'Этот перевод не соответствует определению или содержит синтаксическую ошибку: $1',
 	'translate-checks-escape' => 'Следующие экранирующие последовательности могут быть случайны: <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'Не отправлять мне информационный бюллетень по электронной почте',
-	'translate-pref-editassistlang' => 'Языковой помощник',
+	'translate-pref-editassistlang' => 'Вспомогательные языки:',
 	'prefs-translate' => 'Настройки перевода',
 	'translate-pref-editassistlang-help' => 'Разделённый запятыми список кодов языков.
 Переводы на эти языки будут показаны при правке сообщений.
@@ -9587,6 +9877,47 @@ $messages['ru'] = array(
 	'translate-group-desc-wikitravelextensions' => 'Мета-группа сообщений, содержащая все сообщения поддерживаемых расширений MediaWiki, используемых [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Мета-группа сообщений, содержащая все сообщения расширений, связанных с [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Мета-группа сообщений, содержащая все сообщения расширений, относящихся к [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Инициативе юзабилити Википедии]',
+	'translate-manage-groups' => 'Управление группами',
+	'translate-manage-listgroups' => 'Настроенные группы',
+	'translate-manage-listgroups-old' => 'Старый стиль групп',
+	'translate-managegroups' => 'Управление группами',
+	'translate-manage-newgroup' => 'Эту группу сообщений ранее не импортировали.',
+	'translate-manage-cacheat' => 'Импортировано $1 $2',
+	'translate-manage-return-to-group' => 'Вернуться к странице подробностей группы',
+	'translate-manage-modlangs' => 'Пожалуйста, проверьте возможные изменения в {{PLURAL:$1|следующем языке|следующих языках}}:',
+	'translate-manage-modlang-new' => '$1 (новое)',
+	'translate-manage-import-diff' => 'Сообщение $1 | Действия: $2',
+	'translate-manage-import-new' => 'Новое сообщение $1',
+	'translate-manage-import-deleted' => 'Удалённое сообщение $1',
+	'translate-manage-action-import' => 'Импорт',
+	'translate-manage-action-conflict' => 'Импортирование и неточность',
+	'translate-manage-action-ignore' => 'Игнорировать',
+	'translate-manage-action-fuzzy' => 'Импортирование и неточные переводы',
+	'translate-manage-submit' => 'Выполнить',
+	'translate-manage-nochanges' => 'Нет никаких изменений в определении сообщений для этой группы.',
+	'translate-manage-nochanges-other' => 'Нет никаких изменений для этого языка.
+Используйте ссылку ниже для возвращения к просмотру подробностей группы.',
+	'translate-manage-inconsistent' => 'Обнаружено несоответствие в запросе.
+Пожалуйста, проверьте изменения и попробуйте ещё раз. Подробности: $1.',
+	'translate-manage-toolong' => 'Превышено максимальное время обработки в $1 {{PLURAL:$1|секунду|секунды|секунд}}.
+Пожалуйста, повторите отправку данных для продолжения обработки.',
+	'translate-manage-import-ok' => 'Импортирована новая версия страницы $1.',
+	'translate-manage-import-noks' => 'Ошибка при импорте новой версии страницы $1: $2',
+	'translate-manage-import-ignore' => 'Пропуск сообщения $1.',
+	'translate-manage-import-summary' => 'Импортирована новая версия из внешнего источника',
+	'translate-manage-conflict-summary' => 'Импортирована новая версия из внешнего источника. Пожалуйста, проверьте её.',
+	'translate-manage-import-fuzzy' => 'Импортирование и неточность: $1',
+	'translate-manage-import-done' => 'Всё выполнено!',
+	'translate-manage-import-rebuild' => 'Перестроить кеш.',
+	'translate-manage-intro-en' => 'Ниже находится список изменений сообщений в этой группе.
+Пожалуйста, проверьте изменения и выберите действие, которое вы хотите выполнить для каждого сообщения.
+Обновив определения сообщений, проверьте внешние изменения на других языках, если они присутствуют.
+Также обратите внимание, что действие <code>игнорировать</code> только временное.',
+	'translate-manage-intro-other' => 'Ниже приведён список изменений переводе на язык: $1.
+Пожалуйста, просмотрите изменения и выберите желаемое действие для каждого перевода.
+Если вы проигнорируете изменения, то они будут переопределены в следующей экспорт.',
+	'translate-manage-subtitle' => 'Управление',
+	'translate-manage-import-rebuild-all' => 'Перестроить все языки и игнорировать любые изменения',
 );
 
 /** Yakut (Саха тыла)
@@ -9786,7 +10117,7 @@ Zmeny sa neuložia, kým nekliknete na tlačidlo Uložiť dolu.',
 	'translate-checks-format' => 'Tento preklad nezodpovedá definícii alebo má neplatnú syntax: $1',
 	'translate-checks-escape' => 'Nasledové únikové klauzuly sú možno uvedené omylom: <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'Neposielať mi novinky emailom',
-	'translate-pref-editassistlang' => 'Pomocné jazyky',
+	'translate-pref-editassistlang' => 'Pomocné jazyky:',
 	'prefs-translate' => 'Možnosti prekladu',
 	'translate-pref-editassistlang-help' => 'Čiarkami oddelený zoznam kódov jazykov.
 Preklady správ v týchto jazykoch sa zobrazujú, keď prekladáte.
@@ -10570,8 +10901,10 @@ $messages['te'] = array(
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'అసలు సందేశంలో <nowiki>{{PLURAL:}}</nowiki> అనివుంది కానీ అనువాదంలో లేదు.',
 	'translate-pref-nonewsletter' => 'నాకు ఈ-మెయిలు వార్తాలేఖలు పంపించవద్దు',
-	'translate-pref-editassistlang' => 'సహాయిక భాషలు',
+	'translate-pref-editassistlang' => 'సహాయిక భాషలు:',
 	'prefs-translate' => 'అనువాద ఎంపికలు',
+	'translate-pref-editassistlang-bad' => 'జాబితాలో తప్పుడు భాషా సంకేతం:
+<nowiki>$1</nowiki>.',
 	'translate-rc-translation-filter' => 'అనువాదాల పడపోత:',
 	'translate-rc-translation-filter-no' => 'ఏమీ చేయకు',
 	'translate-rc-translation-filter-only' => 'అనువాదాలు మాత్రమే చూపించు',
@@ -10614,6 +10947,8 @@ $messages['te'] = array(
 	'translate-percentage-fuzzy' => 'పాతబడినవి',
 	'translate-save' => 'భద్రపరచు ($1)',
 	'translate-jssti-add' => 'జాబితాకి చేర్చు',
+	'translate-manage-modlang-new' => '$1 (కొత్తవి)',
+	'translate-manage-import-done' => 'అంతా పూర్తయ్యింది!',
 );
 
 /** Tetum (Tetun)
@@ -10752,8 +11087,8 @@ $messages['th'] = array(
 	'translate-edit-definition' => 'นิยามข้อความต้นฉบับ',
 	'translate-edit-contribute' => 'ช่วยเขียน',
 	'translate-edit-no-information' => "''ข้อความนี้ไม่มีคำอธิบายการใช้งาน ถ้าคุณทราบว่าข้อความนี้ใช้ตรงส่วนไหนหรือใช้อย่างไร คุณสามารถช่วยเพิ่มคำอธิบายการใช้งานของข้อความนี้ เพื่อเป็นประโยชน์แก่ผู้แปลคนอื่นได้''",
-	'translate-edit-information' => 'ข้อมูลเกี่ยวกับข้อความนี้ ($1)',
-	'translate-edit-in-other-languages' => 'ข้อความนี้ในภาษาอื่นๆ',
+	'translate-edit-information' => 'ข้อมูลเกี่ยวกับข้อความ "$2" ($1)',
+	'translate-edit-in-other-languages' => 'ข้อความ "$1" ในภาษาอื่นๆ',
 	'translate-edit-committed' => 'คำแปลปัจจุบันที่ฝังอยู่ในตัวโปรแกรม',
 	'translate-edit-warnings' => 'คำเตือนเกี่ยวกับคำแปลที่ยังไม่สมบูรณ์หรือมีปัญหา',
 	'translate-edit-goto-no-prev' => 'ไม่มีข้อความก่อนหน้านี้',
@@ -10786,6 +11121,7 @@ $messages['th'] = array(
 	'translate-magic-special' => 'ชื่อ alias ของหน้าพิเศษ',
 	'translate-magic-words' => 'ตัวแปรพิเศษ',
 	'translate-magic-namespace' => 'ชื่อเนมสเปซ',
+	'translate-magic-notsaved' => 'การแก้ไขของคุณยังไม่ได้รับการบันทึก!',
 	'translationchanges' => 'สิ่งที่เปลี่ยนแปลงในงานแปล',
 	'translationchanges-export' => 'ส่งออกมา (export)',
 	'translationchanges-change' => '$1: $2 โดย $3',
