@@ -292,6 +292,8 @@ $aliases['ksh'] = array(
 
 /** Cornish (Kernewek) */
 $aliases['kw'] = array(
+	'Translate' => array( 'Treylya' ),
+	'Magic' => array( 'TreylyaAvoncys' ),
 	'Translations' => array( 'Treylyansow' ),
 );
 
@@ -304,6 +306,12 @@ $aliases['lb'] = array(
 	'Translations' => array( 'Iwwersetzungen' ),
 	'LanguageStats' => array( 'Sproochestatistiken' ),
 	'PageTranslation' => array( 'Säiten-Iwwersetzung' ),
+);
+
+/** Lumbaart (Lumbaart) */
+$aliases['lmo'] = array(
+	'Translate' => array( 'Volta' ),
+	'Translations' => array( 'Tradüzion' ),
 );
 
 /** Lithuanian (Lietuvių) */
