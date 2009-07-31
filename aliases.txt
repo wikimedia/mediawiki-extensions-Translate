@@ -322,6 +322,9 @@ file = Watchers/Watchers.alias.php
 Watch subpages
 file = WatchSubpages/WatchSubpages.alias.php
 
+Web Chat
+file = WebChat/WebChat.alias.php
+
 What is my IP
 file = WhatIsMyIP/WhatIsMyIP.alias.php
 
