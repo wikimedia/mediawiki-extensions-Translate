@@ -312,6 +312,8 @@ class CoreMessageGroup extends MessageGroupOld {
 }
 
 class ExtensionMessageGroup extends MessageGroupOld {
+	protected $magicFile, $aliasFile;
+
 	/**
 	 * Name of the array where all messages are stored, if applicable.
 	 */
@@ -401,9 +403,21 @@ class ExtensionMessageGroup extends MessageGroupOld {
 		return $checker;
 	}
 
+	public function getAliasFile() { return $this->aliasFile; }
+	public function setAliasFile( $file ) { $this->aliasFile = $file; }
+
+	public function getMagicFile() { return $this->magicFile; }
+	public function setMagicFile( $file ) { $this->magicFile = $file; }
+
 }
 
 class AliasMessageGroup extends ExtensionMessageGroup {
+	protected $dataSource;
+
+	public function setDataSource( $page ) {
+		$this->dataSource = $page;
+	}
+
 	public function initCollection( $code, $unique = false ) {
 		$collection = parent::initCollection( $code, $unique );
 		
@@ -437,7 +451,7 @@ class AliasMessageGroup extends ExtensionMessageGroup {
 	}
 
 	public function fillContents( MessageCollection $collection ) {
-		$data = TranslateUtils::getMessageContent( 'sp-translate-data-SpecialPageAliases', $collection->code );
+		$data = TranslateUtils::getMessageContent( $this->dataSource, $collection->code );
 
 		if ( !$data ) return;
 

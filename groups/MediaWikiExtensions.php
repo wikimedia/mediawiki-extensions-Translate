@@ -49,6 +49,8 @@ class PremadeMediawikiExtensionGroups {
 					case 'id':
 					case 'descmsg':
 					case 'desc':
+					case 'magicfile':
+					case 'aliasfile':
 						$newgroup[$key] = $value;
 						break;
 					case 'optional':
@@ -125,7 +127,7 @@ class PremadeMediawikiExtensionGroups {
 				'url' => $url,
 			);
 
-			$copyvars = array( 'ignored', 'optional', 'var', 'desc', 'prefix', 'mangle' );
+			$copyvars = array( 'ignored', 'optional', 'var', 'desc', 'prefix', 'mangle', 'magicfile', 'aliasfile' );
 			foreach ( $copyvars as $var ) {
 				if ( isset( $g[$var] ) ) {
 					$newgroup[$var] = $g[$var];
@@ -197,6 +199,10 @@ class PremadeMediawikiExtensionGroups {
 			$group->setDescriptionMsg( $info['descmsg'], $info['url'] );
 		}
 
+		global $wgTranslateExtensionDirectory;
+
+		if ( isset($info['aliasfile']) ) $group->setAliasFile( $info['aliasfile'] );
+		if ( isset($info['magicfile']) ) $group->setMagicFile( $info['magicfile'] );
 
 		$group->setType( 'mediawiki' );
 		return $group;

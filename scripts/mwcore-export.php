@@ -72,7 +72,7 @@ foreach ( $langs as $l ) {
 		exit( 1 );
 	}
 
-	$export = $o->export( 'MediaWiki Core' );
+	$export = $o->export( 'core' );
 	if ( $export === '' ) continue;
 
 	$matches = array();

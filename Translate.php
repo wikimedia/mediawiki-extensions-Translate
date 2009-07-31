@@ -194,7 +194,7 @@ function efTranslateInit() {
 	$wgHooks['LoadExtensionSchemaUpdates'][] = 'PageTranslationHooks::schemaUpdates';
 
 	// Do not activate hooks if not setup properly
-	if ( !efTranslateCheckPT() ) {
+	if ( false && !efTranslateCheckPT() ) {
 		$wgEnablePageTranslation = false;
 		return true;
 	}

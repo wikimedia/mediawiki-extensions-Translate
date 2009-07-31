@@ -222,7 +222,7 @@ abstract class ComplexMessages {
 		$s = Xml::openElement( 'table', $this->tableAttributes );
 
 		foreach ( array_keys( $this->data ) as $group ) {
-			$s .= $this->header( $group );
+			$s .= $this->header( $this->data[$group]['label'] );
 			
 			foreach ( $this->getIterator( $group ) as $key ) {
 				$rowContents = '';
@@ -395,7 +395,8 @@ abstract class ComplexMessages {
 			while ( strlen( $temp ) <= $padTo ) { $temp .= ' '; }
 
 			$from = self::LANG_CURRENT;
-			if ( $this->firstMagic && !$data['code'] ) $from = self::LANG_CHAIN;
+			// Abuse of the firstMagic property, should use something proper
+			if ( $this->firstMagic ) $from = self::LANG_CHAIN;
 
 			// Check for translations
 			$val = $this->val( $group, self::LANG_CURRENT, $key );
@@ -422,7 +423,7 @@ abstract class ComplexMessages {
 		}
 
 		if ( $out !== '' ) {
-			$text = "# $group \n";
+			$text = "# {$data['label']} \n";
 			$text .= "\$$var$extra = array(\n" . $out . ");\n\n";
 			return $text;
 		} else {
@@ -456,45 +457,32 @@ class SpecialPageAliasesCM extends ComplexMessages {
 	protected $id = SpecialMagic::MODULE_SPECIAL;
 	protected $databaseMsg = 'sp-translate-data-SpecialPageAliases';
 	protected $chainable = true;
+	protected $groupFile = TRANSLATE_ALIASFILE;
+
 
 	public function __construct( $code ) {
 		parent::__construct( $code );
-		$this->data['MediaWiki Core'] = array(
+		$this->data['core'] = array(
+			'label' => 'MediaWiki Core',
 			'var' => 'specialPageAliases',
 			'file' => Language::getMessagesFileName( '%CODE%' ),
 			'code' => false,
 		);
 
 		global $wgTranslateExtensionDirectory;
+		$groups = MessageGroups::singleton()->getGroups();
+		foreach( $groups as $g ) {
+			if ( !$g instanceof ExtensionMessageGroup ) continue;
+			$file = $g->getAliasFile();
+			if ( $file === null ) continue;
 
-		if ( !file_exists( TRANSLATE_ALIASFILE ) || !is_readable( TRANSLATE_ALIASFILE ) )
-			return;
-
-		$defines = file_get_contents( TRANSLATE_ALIASFILE );
-		$sections = preg_split( "/\n\n/", $defines, - 1, PREG_SPLIT_NO_EMPTY );
-
-		foreach ( $sections as $section ) {
-			$lines = array_map( 'trim', preg_split( "/\n/", $section ) );
-			$name = '';
-			foreach ( $lines as $line ) {
-				if ( $line === '' ) continue;
-				if ( strpos( $line, '=' ) === false ) {
-					if ( $name === '' ) {
-						$name = $line;
-					} else {
-						throw new MWException( "Trying to define name twice: " . $line );
-					}
-				} else {
-					list( $key, $value ) = array_map( 'trim', explode( '=', $line, 2 ) );
-					if ( $key === 'file' ) $file = $value;
-				}
-			}
-
-			if ( $name !== '' ) {
-				$this->data[$name] = array(
-					'var' => 'aliases',
-					'file' => $wgTranslateExtensionDirectory . '/' . $file,
-					'code' => true,
+			$file = "$wgTranslateExtensionDirectory/$file";
+			if ( file_exists($file) ) {
+				$this->data[$g->getId()] = array(
+					'label'=> $g->getLabel(),
+					'var'  => 'aliases',
+					'file' => $file,
+					'code' => $code,
 				);
 			}
 		}
@@ -539,11 +527,30 @@ class MagicWordsCM extends ComplexMessages {
 
 	public function __construct( $code ) {
 		parent::__construct( $code );
-		$this->data['MediaWiki Core'] = array(
+		$this->data['core'] = array(
+			'label'=> 'MediaWiki Core',
 			'var' => 'magicWords',
 			'file' => Language::getMessagesFileName( '%CODE%' ),
 			'code' => false,
 		);
+
+		global $wgTranslateExtensionDirectory;
+		$groups = MessageGroups::singleton()->getGroups();
+		foreach( $groups as $g ) {
+			if ( !$g instanceof ExtensionMessageGroup ) continue;
+			$file = $g->getMagicFile();
+			if ( $file === null ) continue;
+
+			$file = "$wgTranslateExtensionDirectory/$file";
+			if ( file_exists($file) ) {
+				$this->data[$g->getId()] = array(
+					'label'=> $g->getLabel(),
+					'var'  => 'magicWords',
+					'file' => $file,
+					'code' => $code,
+				);
+			}
+		}
 	}
 
 	public function highlight( $key, $values ) {
