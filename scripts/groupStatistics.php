@@ -166,7 +166,7 @@ foreach ( $languages as $code => $name ) {
 
 	$allZero = true;
 	foreach ( $columns as $fields ) {
-		if ( $fields[1] !== 0 ) $allZero = false;
+		if ( intval($fields[1]) !== 0 ) $allZero = false;
 	}
 
 	// Skip dummy languages if requested
