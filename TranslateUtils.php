@@ -167,18 +167,28 @@ class TranslateUtils {
 		return $selector->getHTML();
 	}
 
+	static $mi = null;
+
 	public static function messageKeyToGroup( $namespace, $key ) {
-		$normkey = self::normaliseKey( $namespace, $key );
-		$index = self::messageIndex();
-		$group = @$index[$normkey];
+		if ( self::$mi === null ) self::messageIndex();
+
+		# Performance hotspot
+		#$normkey = self::normaliseKey( $namespace, $key );
+		$normkey = str_replace( " ", "_", strtolower( "$namespace:$key" ) );
+
+		$group = @self::$mi[$normkey];
 		if ( is_array($group) ) $group = $group[0];
 		return $group;
 	}
 
 	public static function messageKeyToGroups( $namespace, $key ) {
-		$normkey = self::normaliseKey( $namespace, $key );
-		$index = self::messageIndex();
-		return (array) @$index[$normkey];
+		if ( self::$mi === null ) self::messageIndex();
+
+		# Performance hotspot
+		#$normkey = self::normaliseKey( $namespace, $key );
+		$normkey = str_replace( " ", "_", strtolower( "$namespace:$key" ) );
+
+		return (array) @self::$mi[$normkey];
 	}
 
 	public static function normaliseKey( $namespace, $key ) {
@@ -186,9 +196,6 @@ class TranslateUtils {
 	}
 
 	public static function messageIndex() {
-		static $keyToGroup = null;
-		if ( $keyToGroup !== null ) return $keyToGroup;
-
 		global $wgCacheDirectory;
 		$filename = "$wgCacheDirectory/translate_messageindex.cdb";
 		if ( !file_exists($filename) ) MessageIndexRebuilder::execute();
@@ -201,6 +208,7 @@ class TranslateUtils {
 			wfDebug( __METHOD__ . ": Message index missing." );
 		}
 
+		self::$mi = $keyToGroup;
 		return $keyToGroup;
 	}
 

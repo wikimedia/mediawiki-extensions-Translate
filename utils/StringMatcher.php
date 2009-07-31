@@ -17,10 +17,10 @@ class StringMatcher implements StringMangler {
 	protected $aRegex  = array();
 
 	public static function EmptyMatcher() {
-		return new StringMatcher( '', array() );
+		return new StringMatcher;
 	}
 
-	public function __construct( $prefix, $patterns = array() ) {
+	public function __construct( $prefix = '', $patterns = array() ) {
 		$this->sPrefix = $prefix;
 		$this->init( $patterns );
 	}
