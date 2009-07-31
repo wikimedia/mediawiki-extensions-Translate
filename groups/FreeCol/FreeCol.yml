@@ -38,6 +38,7 @@ TAGS:
     - model.goods.goodsAmount
     - model.nation.*.ruler
     - model.nation.Portuguese.Europe
+    - model.nation.Swedish.Europe
     - model.nation.*.settlementName.*
     - model.nation.*.region.land.*
     - model.nation.*.region.mountain.*
