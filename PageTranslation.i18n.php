@@ -792,6 +792,16 @@ D Syte, wu Du witt bearbeite, ghert schyns zue keire Syte, wu zum Ibersetze mark
 	'tpt-render-summary' => 'Aktualisiere zum e neji Version vu dr Quällsyte z finde',
 );
 
+/** Gujarati (ગુજરાતી)
+ * @author Ashok modhvadia
+ */
+$messages['gu'] = array(
+	'pagetranslation' => 'પાનું ભાષાંતરણ',
+	'right-pagetranslation' => 'ભાષાંતર માટેનાં પાનાઓનાં સંસ્કરણો ચિહ્નિત કરો',
+	'tpt-section' => 'ભાષાંતર એકમ $1',
+	'tpt-section-new' => 'નવું ભાષાંતર એકમ. નામ: $1',
+);
+
 /** Hebrew (עברית)
  * @author Rotemliss
  * @author YaronSh

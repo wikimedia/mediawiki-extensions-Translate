@@ -3182,6 +3182,7 @@ Se te anima a revisar los mensajes a través de [[Special:Translate|{{int:transl
 
 /** Estonian (Eesti)
  * @author Ker
+ * @author Pikne
  */
 $messages['et'] = array(
 	'translate' => 'Tõlkimine',
@@ -3203,7 +3204,7 @@ $messages['et'] = array(
 	'translate-page-no-such-language' => 'Keelevalik oli kõlbmatu.',
 	'translate-page-settings-legend' => 'Seadistused',
 	'translate-page-task' => 'Tegevus',
-	'translate-page-group' => 'Grupp',
+	'translate-page-group' => 'Rühm',
 	'translate-page-language' => 'Keel',
 	'translate-page-limit' => 'Limiit',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|sõnum|sõnumit}} lehel',
@@ -3214,11 +3215,11 @@ $messages['et'] = array(
 	'translate-page-showing-none' => 'Ei ole ühtki sõnumit, mida näidata.',
 	'translate-next' => 'Järgmine leht',
 	'translate-prev' => 'Redigeeri eelmist',
-	'translate-page-description-legend' => 'Info selle sõnumigrupi kohta',
+	'translate-page-description-legend' => 'Selle sõnumirühma teave',
 	'translate-page-edit' => 'muuda',
 	'translate-edit-definition' => 'Sõnumi kuju',
 	'translate-edit-contribute' => 'täienda',
-	'translate-edit-information' => 'Info selle sõnumi kohta ($1)',
+	'translate-edit-information' => 'Selle sõnumi teave ($1)',
 	'translate-edit-in-other-languages' => 'Sõnum teistes keeltes',
 	'translate-edit-committed' => 'Kehtiv tõlge tarkvaras',
 	'translate-edit-goto-no-prev' => 'Eelmist sõnumit pole',
@@ -3244,10 +3245,10 @@ $messages['et'] = array(
 	'translate-translations-messagename' => 'Nimi:',
 	'translate-translations-project' => 'Projekt:',
 	'languagestats' => 'Keele statistika',
-	'languagestats-summary' => 'Sel lehel esitatakse tõlkimise statistika kõigi sõnumigruppide jaoks antud keeles.',
+	'languagestats-summary' => 'Sel lehel esitatakse tõlkimise statistika kõigi sõnumirühmade jaoks antud keeles.',
 	'translate-language-code' => 'Keele kood',
 	'translate-language-code-field-name' => 'Keele kood:',
-	'translate-suppress-complete' => 'Peida täielikult tõlgitud sõnumigrupid',
+	'translate-suppress-complete' => 'Peida täielikult tõlgitud sõnumirühmad',
 	'translate-language' => 'Keel',
 	'translate-total' => 'Sõnumeid',
 	'translate-untranslated' => 'Tõlkimata',
@@ -3838,7 +3839,9 @@ Vous êtes encouragé à revoir les message depuis [[Special:Translate|{{int:tra
 	'translate-group-desc-ui' => 'Groupe de messages Meta contenant tous les messages des extensions liées à [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 	'translate-manage-groups' => 'Gestion du groupe',
 	'translate-manage-listgroups' => 'Groupes configurés',
+	'translate-manage-listgroups-old' => 'Ancien style des groupes',
 	'translate-managegroups' => 'Gestion du groupe',
+	'translate-manage-newgroup' => "Ce groupe de messages n'a pas été importé auparavant.",
 	'translate-manage-cacheat' => 'Importés dans $1 le $2',
 	'translate-manage-return-to-group' => 'Retour à la page d’informations du groupe',
 	'translate-manage-modlangs' => 'Vérifier les éventuelles modifications dans les langue{{PLURAL:$1||s}} :',
@@ -3847,8 +3850,15 @@ Vous êtes encouragé à revoir les message depuis [[Special:Translate|{{int:tra
 	'translate-manage-import-new' => 'Nouveau message $1',
 	'translate-manage-import-deleted' => 'Message supprimé $1',
 	'translate-manage-action-import' => 'Importation',
+	'translate-manage-action-conflict' => 'Importer et marquer comme flou',
 	'translate-manage-action-ignore' => 'Ignorer',
+	'translate-manage-action-fuzzy' => 'Importer et marquer les traductions comme floues',
 	'translate-manage-submit' => 'Exécuter',
+	'translate-manage-nochanges' => "Il n'y a pas de modification dans les définitions des messages de ce groupe.",
+	'translate-manage-nochanges-other' => "Il n'y a eu aucune modification pour cette langue.
+Utilisez le lien ci-dessous pour revenir à la vue de détail du groupe.",
+	'translate-manage-inconsistent' => "Une inconsistance a été détectée dans la requête.
+Vérifiez s'il y a eu des modifications entre temps et ressayez. Détails : $1.",
 	'translate-manage-toolong' => 'La durée maximale du temps de traitement de $1 seconde{{PLURAL:$1||s}} a été dépassé.
 Renvoyez le formulaire pour continuer le traitement.',
 	'translate-manage-import-ok' => 'Une nouvelle version de la page $1 a été importée.',
@@ -3856,9 +3866,18 @@ Renvoyez le formulaire pour continuer le traitement.',
 	'translate-manage-import-ignore' => 'Le message $1 a été sauté.',
 	'translate-manage-import-summary' => "Importation d'une nouvelle version depuis une source externe.",
 	'translate-manage-conflict-summary' => "Importation d'une nouvelle version depuis une source externe. Vérifiez s'il vous plait.",
+	'translate-manage-import-fuzzy' => 'Importé et marqué comme flou : $1',
 	'translate-manage-import-done' => 'Tout a été fait !',
 	'translate-manage-import-rebuild' => 'Le cache a été reconstruit.',
+	'translate-manage-intro-en' => "Ci-dessous figure une liste des modifications dans ce groupe.
+Revoyez les modifications et choisissez une action à faire pour chaque message.
+Une fois que vous avez mis à jour les définitions des messages, vérifiez s'il y a eu des modifications externes dans d'autres langues.
+Notez aussi que l'action <code>ignorer</code> est seulement temporaire.",
+	'translate-manage-intro-other' => "Ci-dessous figure une liste des modifications en $1.
+Revoyez les modifications et choisissez une action à effectuer pour chaque traduction.
+Si vous décidez d'ignorer les modifications, ils seront écrasés lors du prochain export.",
 	'translate-manage-subtitle' => 'Gérer',
+	'translate-manage-import-rebuild-all' => 'Reconstruire toutes les langues et ignorer les modifications',
 );
 
 /** Cajun French (Français cadien)
@@ -6855,6 +6874,7 @@ $messages['km'] = array(
 	'translate-magic-module' => 'ម៉ូឌុល៖',
 	'translate-magic-submit' => 'នាំមក​បង្ហាញ',
 	'translate-magic-cm-export' => 'នាំចេញ',
+	'translate-magic-nothing-to-export' => 'គ្មានអ្វីសំរាប់នាំចេញទេ។',
 	'translate-magic-cm-to-be' => 'ទៅជា',
 	'translate-magic-cm-current' => 'បច្ចុប្បន្ន',
 	'translate-magic-cm-original' => 'ដើម',
@@ -6865,6 +6885,9 @@ $messages['km'] = array(
 	'translate-magic-special' => 'ឈ្មោះផ្សេងទៀតនៃទំព័រពិសេស',
 	'translate-magic-words' => 'ពាក្យទិព្វ',
 	'translate-magic-namespace' => 'ឈ្មោះនៃលំហឈ្មោះ',
+	'translate-magic-notsaved' => 'កំណែប្រែរបស់អ្នកមិនត្រូវបានរក្សាទុកទេ!',
+	'translate-magic-errors' => 'សូមកែប្រែ{{PLURAL:$1|កំហុសឆ្គង|កំហុសឆ្គង}}ទាំងនេះ ដែលមានក្នុងការកែប្រែ៖',
+	'translate-magic-saved' => 'ការកែប្រែរបស់អ្នក​ត្រូវបានរក្សាទុកដោយជោគជ័យ។',
 	'translationchanges' => 'បំលាស់ប្តូរនៃការបកប្រែ',
 	'translationchanges-export' => 'នាំចេញ',
 	'translationchanges-change' => '$1:$2 ដោយ $3',
@@ -6906,7 +6929,7 @@ $messages['km'] = array(
 	'translate-tag-page-desc' => 'ការបកប្រែរបស់ទំព័រវិគី [[:$1]]។',
 	'translate-tag-fuzzy-comment' => 'និយមន័យ​ត្រូវ​វបាន​ផ្លាស់ប្ដូរ​ដោយ [[User:$1|$1]] នៅក្នុង​ការពិនិត្យឡើងវិញ $2 ។',
 	'translate-tag-fuzzy-reason' => 'និយមន័យ​ត្រូវ​វបាន​ផ្លាស់ប្ដូរ​ដោយ "$1" ជាមួយ​ការ​អធិប្បាយ "$3" នៅក្នុង $2.',
-	'translate-sidebar-alltrans' => 'បំណកប្រែផ្សេងទៀត',
+	'translate-sidebar-alltrans' => 'ជាភាសាដទៃទៀត',
 	'translate-tag-noedit' => 'ទំព័រនេះជាទំព័របកប្រែដែលត្រូវបានបន្ទាន់សម័យដោយស្វ័យប្រវត្តិ។
 
 អ្នកអាច [$1 កែប្រែទំព័រប្រភព] ឬ [$2 បន្ទាន់សម័យបំណកប្រែ]។',
@@ -6916,6 +6939,7 @@ $messages['km'] = array(
 	'translate-translations-none' => 'មិនមាន​ការបកប្រែ​សម្រាប់ "$1"',
 	'translate-translations-fieldset-title' => 'សារ',
 	'translate-translations-messagename' => 'ឈ្មោះ​៖',
+	'translate-translations-project' => 'គំរោង៖',
 	'translate-translations-including-no-param' => 'សូម​បញ្ជាក់​នូវ​កូនសោ​សារ​ត្រឹមត្រូវ នៅក្នុង​ប៉ារ៉ាម៉ែត្រ​ទំព័ររង',
 	'languagestats' => 'ស្ថិតិ​ភាសា',
 	'languagestats-summary' => 'ទំព័រ​នេះ​បង្ហាញ​ស្ថិតិ​នៃ​ការប្រែសម្រួល​​គ្រប់ក្រុម​សារ​ទាំងអស់​សម្រាប់​ភាសា​មួយ​។',
@@ -6926,6 +6950,13 @@ $messages['km'] = array(
 	'translate-untranslated' => 'មិនបកប្រែ',
 	'translate-percentage-complete' => 'ជាស្ថាពរ',
 	'translate-percentage-fuzzy' => 'ហួសសម័យ',
+	'translate-save' => 'រក្សាទុក ($1)',
+	'translate-manage-modlang-new' => '$1 (ថ្មី)',
+	'translate-manage-import-diff' => 'សារ $1 | សកម្មភាព៖ $2',
+	'translate-manage-import-new' => 'សារថ្មី $1',
+	'translate-manage-import-deleted' => 'សារលុបចោល $1',
+	'translate-manage-action-import' => 'នាំចូល',
+	'translate-manage-import-done' => 'ធ្វើចប់អស់ហើយ!',
 );
 
 /** Korean (한국어)
@@ -7440,9 +7471,9 @@ Dir sidd awer häerzlech Invitéiert fir d'Systemmessagn op [[Special:Translate|
 	'translate-group-desc-socialprofile' => 'An dësem Grupp stinn all Systemmessage fir Erweiderungen a Verbindung mat der MediaWiki-Erweiderung [http://www.mediawiki.org/wiki/Extension:SocialProfile Soziale Profil]',
 	'translate-group-desc-translate' => "An dësem Grupp sinn all Systemmessage fir d'MediaWiki-Erweiderung [http://www.mediawiki.org/wiki/Extension:Translate Iwwersetzen]",
 	'translate-group-desc-wikiaextensions' => 'An dësem Grupp sinn all Systemmessage vun den ënnerstetzten MediaWiki-Erweiderungen, déi vun [http://www.wikia.com Wikia] genotzt ginn',
-	'translate-group-desc-wikihowextensions' => 'An dësem Grupp sinn all Systemmessage vun den ënnerstetzte MediaWiki-Erweiderungen, déi vun [http://www.wikihow.com wikiHow] genotzt ginn',
-	'translate-group-desc-wikimediaextensions' => 'an dësem Grupp ainn all Systemmessage vun den ënnerstetzte MediaWiki-Erweiderungen, déi vun der [http://wikimedia.org/ Wikimedia Foundation] genotzt ginn',
-	'translate-group-desc-wikitravelextensions' => 'An dëser Grupp sinn all Systemmessage vun den ënnerstetzte MediaWiki-Erweiderungen, déi vu [http://wikitravel.org Wikitravel] genotzt ginn',
+	'translate-group-desc-wikihowextensions' => 'An dëser Grupp sinn all Systemmessage vun den ënnerstëtzte MediaWiki-Erweiderungen, déi vu [http://www.wikihow.com wikiHow] benotzt ginn',
+	'translate-group-desc-wikimediaextensions' => 'an dëser Grupp sinn all Systemmessage vun den ënnerstëtzte MediaWiki-Erweiderungen, déi vun der [http://wikimedia.org/ Wikimedia Foundation] benotzt ginn',
+	'translate-group-desc-wikitravelextensions' => 'An dëser Grupp sinn all Systemmessage vun den ënnerstëtzte MediaWiki-Erweiderungen, déi vu [http://wikitravel.org Wikitravel] benotzt ginn',
 	'translate-group-desc-uniwiki' => 'Meta-Grupp vun alle Systemmessagen fir Erweiderungen am Zesummenhang mat [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Grupp vu Systemmessage vun den Erweiderungen déi mat der [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Benotzerfrëndlechkeets-Initiative] a Verbindung stinn',
 	'translate-manage-groups' => 'Gestioun vum Grupp',
