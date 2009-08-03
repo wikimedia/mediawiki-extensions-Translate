@@ -12,7 +12,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '2009-07-21' );
+define( 'TRANSLATE_VERSION', '2009-08-03' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'path'           => __FILE__,
@@ -54,11 +54,13 @@ $wgHooks['EditPageBeforeEditButtons'][] = 'TranslateEditAddons::buttonHack';
 $wgHooks['EditPage::showEditForm:fields'][] = 'TranslateEditAddons::keepFields';
 $wgHooks['SkinTemplateTabs'][] = 'TranslateEditAddons::tabs';
 
+# Custom preferences
 $wgDefaultUserOptions['translate'] = 0;
 $wgDefaultUserOptions['translate-editlangs'] = 'default';
 $wgHooks['GetPreferences'][] = 'TranslatePreferences::onGetPreferences';
 $wgHooks['GetPreferences'][] = 'TranslatePreferences::translationAssistLanguages';
 
+# Recent changes filters
 $wgHooks['SpecialRecentChangesQuery'][] = 'TranslateRcFilter::translationFilter';
 $wgHooks['SpecialRecentChangesPanel'][] = 'TranslateRcFilter::translationFilterForm';
 $wgHooks['SkinTemplateToolboxEnd'][] = 'TranslateToolbox::toolboxAllTranslations';
@@ -71,9 +73,6 @@ $wgJobClasses['RenderJob'] = 'RenderJob';
 $wgAvailableRights[] = 'translate';
 
 define( 'TRANSLATE_FUZZY', '!!FUZZY!!' );
-define( 'TRANSLATE_INDEXFILE', $dir . 'data/messageindex.ser' );
-define( 'TRANSLATE_CHECKFILE', $dir . 'data/messagecheck.ser' );
-define( 'TRANSLATE_ALIASFILE', $dir . 'aliases.txt' );
 
 #
 # Configuration variables
@@ -194,7 +193,7 @@ function efTranslateInit() {
 	$wgHooks['LoadExtensionSchemaUpdates'][] = 'PageTranslationHooks::schemaUpdates';
 
 	// Do not activate hooks if not setup properly
-	if ( false && !efTranslateCheckPT() ) {
+	if ( !efTranslateCheckPT() ) {
 		$wgEnablePageTranslation = false;
 		return true;
 	}
@@ -260,7 +259,10 @@ function efTranslateInit() {
 }
 
 function efTranslateCheckPT() {
-	global $wgHooks, $wgMemc;
+	global $wgHooks, $wgMemc, $wgCommandLineMode;
+
+	// Short circuit tests on cli, useless db trip and no reporting.
+	if ( $wgCommandLineMode ) return true;
 
 	$version = "3"; // Must be a string
 	global $wgMemc;

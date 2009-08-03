@@ -457,7 +457,6 @@ class SpecialPageAliasesCM extends ComplexMessages {
 	protected $id = SpecialMagic::MODULE_SPECIAL;
 	protected $databaseMsg = 'sp-translate-data-SpecialPageAliases';
 	protected $chainable = true;
-	protected $groupFile = TRANSLATE_ALIASFILE;
 
 
 	public function __construct( $code ) {
