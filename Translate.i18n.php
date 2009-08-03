@@ -1866,6 +1866,8 @@ Savjetujemo Vam da izvršite pregled poruke preko [[Special:Translate|{{int:tran
 	'translate-managegroups' => 'Upravljanje grupama',
 	'translate-manage-modlang-new' => '$1 (novo)',
 	'translate-manage-import-diff' => 'Poruka $1 | Akcije: $2',
+	'translate-manage-import-new' => 'Nova poruka $1',
+	'translate-manage-import-deleted' => 'Obrisana poruka $1',
 	'translate-manage-action-import' => 'Uvezi',
 	'translate-manage-action-ignore' => 'Zanemeri',
 	'translate-manage-import-ignore' => 'Preskaćem poruku $1.',
@@ -3178,6 +3180,7 @@ Se te anima a revisar los mensajes a través de [[Special:Translate|{{int:transl
 	'translate-group-desc-wikimediaextensions' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones MediaWiki soportadas usadas por [http://wikimedia.org/ Wikimedia Foundation]',
 	'translate-group-desc-wikitravelextensions' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones MediaWiki soportadas usadas por [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones relacionadas a [http://unicefinnovation.org/wiki.php Uniwiki]',
+	'translate-manage-import-new' => 'Nuevo mensaje $1',
 );
 
 /** Estonian (Eesti)
@@ -3294,6 +3297,7 @@ $messages['eu'] = array(
 	'translate-prev' => 'Aurreko orria',
 	'translate-page-description-legend' => 'Taldeari buruzko informazioa',
 	'translate-page-edit' => 'aldatu',
+	'translate-ext-url' => '<hr />Webgunea: $1',
 	'translate-optional' => '(hautazkoa)',
 	'translate-edit-definition' => 'Mezuaren definizioa',
 	'translate-edit-contribute' => 'lagundu',
@@ -3314,6 +3318,7 @@ $messages['eu'] = array(
 	'translate-magic-words' => 'Hitz magikoak',
 	'translationchanges' => 'Itzulpenaren aldaketak',
 	'translationchanges-export' => 'esportatu',
+	'prefs-translate' => 'Itzulpen aukerak',
 	'translate-rc-translation-filter-no' => 'Ezer ez egin',
 	'translate-rc-translation-filter-only' => 'Itzulpenak bakarrik erakutsi',
 	'translationstats' => 'Itzulpenaren estatistikak',
@@ -3346,6 +3351,10 @@ $messages['eu'] = array(
 	'translate-untranslated' => 'Itzuli gabe',
 	'translate-percentage-complete' => 'Bukatuak',
 	'translate-percentage-fuzzy' => 'Zaharkituak',
+	'translate-jssti-add' => 'Zerrendara gehitu',
+	'translate-manage-import-new' => 'Mezu berria $1',
+	'translate-manage-import-deleted' => 'Mezu ezabatua $1',
+	'translate-manage-submit' => 'Exekutatu',
 );
 
 /** Extremaduran (Estremeñu)
@@ -4678,10 +4687,37 @@ $messages['gu'] = array(
 	'translate-ignored' => 'ઉપેક્ષીત',
 	'translate-edit-definition' => 'સંદેશ વ્યાખ્યા',
 	'translate-edit-contribute' => 'યોગદાન',
+	'translate-edit-information' => 'સંદેશ "$2" ($1) વિશે માહિતી',
+	'translate-edit-in-other-languages' => 'સંદેશ "$1" અન્ય ભાષાઓમાં',
+	'translate-edit-committed' => 'સોફ્ટવેરમાં વર્તમાન ભાષાંતર',
+	'translate-edit-warnings' => 'અધુરા ભાષાંતરો વિશે ચેતવણી',
+	'translate-edit-tmsugs' => 'ભાષાંતર સ્મૃતિમાંથી સુચનો',
+	'translate-edit-tmsug' => 'ભાષાંતર સ્મૃતિ શાથે $1% મળે છે',
+	'translate-edit-goto-no-prev' => 'પહેલાનો કોઇ સંદેશ નથી',
+	'translate-edit-goto-no-next' => 'પછીનો કોઇ સંદેશ નથી',
+	'translate-edit-goto-prev' => 'આગલા સંદેશમાં ફેરફાર કરો',
+	'translate-edit-goto-next' => 'પછીના સંદેશમાં ફેરફાર કરો',
+	'translate-edit-goto-list' => 'યાદી પર પરત જાઓ',
+	'translate-magic-pagename' => 'વિસ્તારિત મિડિયાવિકિ ભાષાંતર',
+	'translate-magic-module' => 'નમૂનો:',
 	'translate-magic-submit' => 'મેળવો',
 	'translate-magic-cm-export' => 'નિકાસ',
+	'translate-magic-nothing-to-export' => 'નિકાસ કરવા માટે કશું નથી.',
+	'translate-magic-cm-current' => 'વર્તમાન',
+	'translate-magic-cm-original' => 'મૂળ',
+	'translate-magic-cm-comment' => 'ટિપ્પણી:',
+	'translate-magic-cm-save' => 'સાચવો',
+	'translate-magic-cm-savefailed' => 'સાચવો નિષ્ફળ',
+	'translationchanges-export' => 'નિકાસ',
+	'translate-pref-nonewsletter' => 'મને ઇ-મેઇલ પત્રિકા મોકલશો નહીં',
+	'translate-pref-editassistlang' => 'સહાયક ભાષાઓ:',
+	'prefs-translate' => 'ભાષાંતર વિકલ્પો',
+	'translate-pref-editassistlang-bad' => 'યાદી <nowiki>$1</nowiki> માં અમાન્ય ભાષાસંકેત.',
+	'translate-rc-translation-filter-only' => 'ફક્ત ભાષાંતરો બતાવો',
 	'translationstats' => 'ભાષાંતર અંક વિવરણ',
+	'translate-stats-edits' => 'સંપાદનો',
 	'translate-stats-users' => 'ભાષાંતરકારો',
+	'translate-statsf-options' => 'આલેખ વિકલ્પો',
 	'translate-translations-fieldset-title' => 'સંદેશ',
 	'translate-translations-messagename' => 'નામ:',
 	'translate-translations-project' => 'યોજના',
@@ -7542,6 +7578,37 @@ $messages['li'] = array(
 	'translationchanges-export' => 'exportere',
 );
 
+/** Lumbaart (Lumbaart)
+ * @author Dakrismeno
+ * @author Insübrich
+ */
+$messages['lmo'] = array(
+	'translate-task-view' => 'Vardà tücc i messagg dal',
+	'translate-task-untranslated' => 'Vardà tücc i messagg mía vultaa dal',
+	'translate-task-optional' => 'Vardà i messagg upziunaj dal',
+	'translate-task-untranslatedoptional' => 'Varda i messagg upziunaj mía vultaa dal',
+	'translate-task-problematic' => "Varda i messagg ch'i gh'hann di prublema",
+	'translate-task-review' => 'Cuntrola i mudifegh al',
+	'translate-task-reviewall' => "Cuntrola tücc i messagg mía vultaa int 'l",
+	'translate-task-export' => 'Esporta i tradüzión dal',
+	'translate-task-export-to-file' => 'Esporta i tradüzión int un file dal',
+	'translate-task-export-as-po' => "Esporta i tradüzión int 'l furmaa Gettext",
+	'translate-prev' => 'Pagina precedent',
+	'translate-edit-goto-prev' => "Mudifega 'l messagg che'l vegn prima",
+	'translate-edit-goto-next' => "Mudifega 'l messagg che 'l vegn dop",
+	'translate-edit-goto-list' => 'Va indree a la lista',
+	'translate-magic-pagename' => 'Tradüzión estendüda de MediaWiki',
+	'translate-pref-editassistlang' => 'Assistent di lenguv:',
+	'prefs-translate' => 'Opzión di tradüzión',
+	'translate-statsf-submit' => 'Fà vidè prima',
+	'translate-tag-category' => 'Paginn che se poden vultà',
+	'translate-tag-page-desc' => 'Tradüzión de la pagina wiki [[:$1]].',
+	'translate-tag-fuzzy-comment' => 'Definizión cambiada del [[User:$1|$1]] in de la revisión $2.',
+	'translate-tag-fuzzy-reason' => 'Definizión cambiada de "$1" cun cument "$3" in $2.',
+	'translate-sidebar-alltrans' => 'In alter lenguv',
+	'translations' => 'Tüt i tradüzión',
+);
+
 /** Lao (ລາວ)
  * @author Passawuth
  */
@@ -8892,7 +8959,9 @@ Sètz encoratjat(ada) a repassar los messatges dempuèi [[Special:Translate|{{in
 	'translate-group-desc-ui' => 'Grop de messatges Meta que contenon totes los messatges de las extensions ligadas a [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 	'translate-manage-groups' => 'Gestion del grop',
 	'translate-manage-listgroups' => 'Gropes configurats',
+	'translate-manage-listgroups-old' => 'Estil dels gropes ancian',
 	'translate-managegroups' => 'Gestion del grop',
+	'translate-manage-newgroup' => 'Aqueste grop de messatges es pas estat importat deperabans.',
 	'translate-manage-cacheat' => 'Importats dins $1 lo $2',
 	'translate-manage-return-to-group' => 'Retorn a la pagina d’informacions del grop',
 	'translate-manage-modlangs' => 'Verificatz las modificacions eventualas dins las lenga{{PLURAL:$1||s}} :',
@@ -8901,8 +8970,15 @@ Sètz encoratjat(ada) a repassar los messatges dempuèi [[Special:Translate|{{in
 	'translate-manage-import-new' => 'Messatge novèl $1',
 	'translate-manage-import-deleted' => 'Messatge suprimit $1',
 	'translate-manage-action-import' => 'Importacion',
+	'translate-manage-action-conflict' => 'Importar e marcar coma fosc',
 	'translate-manage-action-ignore' => 'Ignorar',
+	'translate-manage-action-fuzzy' => 'Importar e marcar las traduccions coma foscas',
 	'translate-manage-submit' => 'Executar',
+	'translate-manage-nochanges' => "I a pas de modificacion dins las definicions dels messatges d'aqueste grop.",
+	'translate-manage-nochanges-other' => 'I a pas agut cap de modificacion per aquesta lenga.
+Utilizatz lo ligam çaijós per tornar a la vista de detalh del grop.',
+	'translate-manage-inconsistent' => 'Una inconsisténcia es estada detectada dins la requèsta.
+Verificatz se i a agut de modificacions entre temps e tornatz ensajar. Detalhs : $1.',
 	'translate-manage-toolong' => 'La durada maximala del temps de tractament de $1 segonda{{PLURAL:$1||s}} es estat depassat.
 Renviatz lo formulari per contuhar lo tractament.',
 	'translate-manage-import-ok' => 'Una version novèla de la pagina $1 es estada importada.',
@@ -8910,9 +8986,18 @@ Renviatz lo formulari per contuhar lo tractament.',
 	'translate-manage-import-ignore' => 'Lo messatge $1 es estat sautat.',
 	'translate-manage-import-summary' => "Importacion d'una version novèla dempuèi una font extèrna.",
 	'translate-manage-conflict-summary' => "Importacion d'una version novèla dempuèi una font extèrna. Verificatz se vos plai.",
+	'translate-manage-import-fuzzy' => 'Importat e marcat coma fosc : $1',
 	'translate-manage-import-done' => 'Tot es estat fach !',
 	'translate-manage-import-rebuild' => "L'amagatal es estat reconstruch.",
+	'translate-manage-intro-en' => "Çaijós figura una lista de las modificacions dins aqueste grop.
+Tornatz veire las modificacions e causissètz una accion de far per cada messatge.
+Un còp qu'avètz mes a jorn las definicions dels messatges, verificatz se i a agut de modificacions extèrnas dins d'autras lengas.
+Notatz tanben que l'accion <code>ignorar</code> es solament temporària.",
+	'translate-manage-intro-other' => "Çaijós figura una lista de las modificacions en $1.
+Tornatz veire las modificacions e causissètz una accion d'efectuar per cada traduccion.
+Se decidètz d'ignorar las modificacions, seràn espotits al moment de l'expòrt venent.",
 	'translate-manage-subtitle' => 'Gerir',
+	'translate-manage-import-rebuild-all' => 'Reconstruire totas las lengas e ignorar las modificacions',
 );
 
 /** Oriya (ଓଡ଼ିଆ)
@@ -10356,7 +10441,7 @@ $messages['sr-ec'] = array(
 	'translate-edit-no-information' => "''Ова порука нема пратећу документацију.
 Ако знате где се и како користи, можете помоћи осталим преводиоцима додавањем њеног описа.''",
 	'translate-edit-information' => 'Информације о поруци "$2" ($1)',
-	'translate-edit-in-other-languages' => 'Порука на другим језицима',
+	'translate-edit-in-other-languages' => 'Порука „$1“ на другим језицима',
 	'translate-edit-committed' => 'Тренутни превод у софтверу',
 	'translate-edit-warnings' => 'Напомене о некомплетним преводима',
 	'translate-edit-goto-no-prev' => 'Нема претходне поруке',
@@ -10414,7 +10499,7 @@ $messages['sr-ec'] = array(
 	'translate-tag-category' => 'Преводљиве стране',
 	'translate-tag-page-desc' => 'Превод следеће вики стране [[:$1]].',
 	'translate-tag-fuzzy-comment' => 'Дефиницију променио [[User:$1|$1]] у измени $2.',
-	'translate-tag-fuzzy-reason' => 'Дефиницију променио "$1" са коментаром "$2" у $2.',
+	'translate-tag-fuzzy-reason' => 'Дефиницију променио „$1“ са коментаром „$3“ у $2.',
 	'translate-sidebar-alltrans' => 'На другим језицима',
 	'translate-tag-noedit' => 'Ова страна је аутоматски актуализована страна са преводима.
 Можете [$1 изменити изворну страну] или [$2 актуализовати превод].',

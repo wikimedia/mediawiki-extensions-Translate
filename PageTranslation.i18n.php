@@ -802,6 +802,37 @@ $messages['gu'] = array(
 	'right-pagetranslation' => 'ભાષાંતર માટેનાં પાનાઓનાં સંસ્કરણો ચિહ્નિત કરો',
 	'tpt-section' => 'ભાષાંતર એકમ $1',
 	'tpt-section-new' => 'નવું ભાષાંતર એકમ. નામ: $1',
+	'tpt-section-deleted' => 'ભાષાંતર એકમ $1',
+	'tpt-template' => 'પાનાં ઢાંચો',
+	'tpt-templatediff' => 'પાનાંનો ઢાંચો બદલાયો છે.',
+	'tpt-diff-old' => 'પહેલાંનું લખાણ',
+	'tpt-diff-new' => 'નવું લખાણ',
+	'tpt-submit' => 'આ સંસ્કરણને ભાષાંતર માટે ચિહ્નિત કરો',
+	'tpt-sections-oldnew' => 'નવાં અને વિદ્યમાન ભાષાંતર એકમો',
+	'tpt-sections-deleted' => 'રદ કરાયેલા ભાષાંતર એકમો',
+	'tpt-sections-template' => 'ભાષાંતર પાના ઢાંચો',
+	'tpt-badtitle' => 'પાનાને અપાયેલું ($1) નામ પ્રમાણભૂત મથાળું નથી',
+	'tpt-oldrevision' => '$2 એ પાનાં [[$1]] નું આધુનિક સંસ્કરણ નથી.
+
+ફક્ત આધુનિક સંસ્કરણનેજ ભાષાંતર માટે ચિહ્નિત કરી શકાશે.',
+	'tpt-notsuitable' => 'પાનું $1 ભાષાંતર માટે યોગ્ય નથી.
+
+ખાતરી કરો કે તે <nowiki><ભાષાંતર></nowiki> ટેગ અને પ્રમાણભૂત વાક્યરચના ધરાવે છે.',
+	'tpt-badsect' => '"$1" એ ભાષાંતર એકમ $2 માટેનું પ્રમાણભૂત નામ નથી.',
+	'tpt-mark-summary' => 'આ સંસ્કરણને ભાષાંતર માટે ચિહ્નિત કરાયું',
+	'tpt-edit-failed' => 'પાનાં: $1 ને અદ્યતન બનાવી શકાયું નહીં.',
+	'tpt-already-marked' => 'આ પાનાનું આધુનિક સંસ્કરણ અગાઉથીજ ભાષાંતર માટે ચિહ્નિત થઇ ચુક્યું છે.',
+	'tpt-list-nopages' => 'ન પાનાંઓ ભાષાંતર માટે ચિહ્નિત કરેલા છે કે ન ભાષાંતર માટે ચિહ્નિત થવા તૈયાર છે.',
+	'tpt-old-pages' => '{{PLURAL:$1|આ પાનાં|આ પાનાંઓ}}નાં કેટલાક સંસ્કરણ ભાષાંતર માટે ચિહ્નિત કરાયેલા છે.',
+	'tpt-new-pages' => '{{PLURAL:$1|આ પાના|આ પાનાઓ}} ભાષાંતર ટેગ શાથેનું લખાણ ધરાવે છે, પરંતુ {{PLURAL:$1|આ પાના|આ પાનાઓ}}નું હાલનું સંસ્કરણ ભાષાંતર માટે ચિહ્નિત કરાયેલ નથી.',
+	'tpt-rev-latest' => 'આધુનિકતમ સંસ્કરણ',
+	'tpt-rev-old' => 'અગાઉના ચિહ્નિત સંસ્કરણની ભિન્નતા',
+	'tpt-rev-mark-new' => 'આ સંસ્કરણને ભાષાંતર માટે ચિહ્નિત કરો',
+	'tpt-translate-this' => 'આ પાનાનું ભાષાંતર કરો',
+	'translate-tag-translate-link-desc' => 'આ પાનાનું ભાષાંતર કરો',
+	'translate-tag-markthis' => 'આ પાનાંને ભાષાંતર માટે ચિહ્નિત કરો',
+	'tpt-translation-intro-fuzzy' => 'કાલગ્રસ્ત ભાષાંતરણો આ રીતે ચિહ્નિત થયેલાં.',
+	'tpt-languages-legend' => 'અન્ય ભાષાઓ:',
 );
 
 /** Hebrew (עברית)
@@ -1154,6 +1185,7 @@ $messages['ksh'] = array(
 	'tpt-unknown-page' => 'Dat Appachtemang hee es för Sigge vum Enhallt vum Wiki ze Övversäze jedaach. Di Sigg, di de jraad ze ändere versöhks, schingk ävver nit met ööhnds en Sigg ze donn ze han, di för zem Övversäze makeet es.',
 	'tpt-install' => 'Lohß op Dingem Wiki singem ßööver dat Skrip <code>php maintenance/update.php</code> loufe, udder schmiiß dat Enreeschdungsprojramm övver et Web aan, öm de Müjjeleschkeit för Sigge ze övversäze en däm Wiki aan et Loufe ze bränge.',
 	'tpt-render-summary' => 'Ändere, öm op de neue Version fun de Ojinaal_Sigg ze kumme',
+	'tpt-download-page' => 'Sigge met Övversäzunge expotteere',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
@@ -1595,6 +1627,7 @@ $messages['ru'] = array(
 Страница, которую вы пытаетесь изменить, не соответствует какой-либо странице, отмеченной для перевода.',
 	'tpt-install' => 'Запустите php-скрипт maintenance/update.php или веб-установку, чтобы включить возможность перевода страниц.',
 	'tpt-render-summary' => 'Обновление для соответствия новой версии исходной страницы.',
+	'tpt-download-page' => 'Экспортировать страницу с переводами',
 );
 
 /** Slovak (Slovenčina)
