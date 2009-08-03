@@ -64,6 +64,8 @@ foreach ( $groups as $group ) {
 
 	$file = "$wgTranslateExtensionDirectory/$filename";
 	if ( !file_exists($file) ) continue;
+	STDOUT( "Processing {$group->getLabel()}... ", $group->getId() );
+
 	$input = file_get_contents( $file );
 
 	$headerEnd = strpos( $input, "\n);\n" );
@@ -92,6 +94,7 @@ foreach ( $groups as $group ) {
 
 		$output .= $export;
 
+		STDOUT( "$l ", $group->getId() );
 	}
 
 	wfMkdirParents( dirname($options['target'] . "/$filename") );
