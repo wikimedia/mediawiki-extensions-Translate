@@ -254,6 +254,8 @@ function efTranslateInit() {
 		$wgHooks['ArticleViewHeader'][] = 'PageTranslationHooks::test';
 
 		$wgHooks['ParserTestTables'][] = 'PageTranslationHooks::parserTestTables';
+
+		$wgHooks['SkinTemplateToolboxEnd'][] = 'PageTranslationHooks::exportToolbox';
 	}
 }
 

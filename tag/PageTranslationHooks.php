@@ -181,6 +181,8 @@ class PageTranslationHooks {
 				'src'   => "$wgTranslateCssLocation/images/prog-$image.png",
 				'alt'   => "$percent%",
 				'title' => "$percent%",
+				'width' => '9',
+				'height'=> '9',
 			) );
 			$label = "$name $percent";
 
@@ -305,7 +307,6 @@ FOO;
 	public static function header( Title $title ) {
 		global $wgLang, $wgUser;
 
-
 		$page = TranslatablePage::newFromTitle( $title );
 		$marked = $page->getMarkedTag();
 		$ready = $page->getReadyTag();
@@ -410,6 +411,31 @@ FOO;
 		$tables[] = 'revtag_type';
 		$tables[] = 'revtag';
 
+		return true;
+	}
+
+	public static function exportToolbox( $skin ) {
+		$title = $skin->skin->mTitle;
+
+		// Check if this is a source page or a translation page
+		$page = TranslatablePage::newFromTitle( $title );
+		if ( $page->getMarkedTag() === false ) {
+			$page = TranslatablePage::isTranslationPage( $title );
+		}
+		if ( $page === false || $page->getMarkedTag() === false )  return true;
+
+		$export = array( $page->getTitle()->getPrefixedText() ); // Source page
+		$titles = $page->getTranslationPages();
+		foreach ( $titles as $title ) {
+			$export[] = $title->getPrefixedText();
+		}
+
+		$params = array( 'pages' => implode( "\n", $export ) );
+
+		$href = SpecialPage::getTitleFor( 'Export' )->getLocalUrl( $params );
+		$linkText = wfMsgHtml( 'tpt-download-page' );
+
+		print "<li id=\"t-download-as-pdf\"><a href=\"$href\" rel=\"nofollow\">$linkText</a></li>";
 		return true;
 	}
 
