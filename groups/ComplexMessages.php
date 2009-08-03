@@ -489,7 +489,10 @@ class SpecialPageAliasesCM extends ComplexMessages {
 	}
 
 	public function highlight( $key, $values ) {
-		if ( count( $values ) ) $values[0] = "<b>$values[0]</b>";
+		if ( count( $values ) ) {
+			if ( !isset($values[0]) ) throw new MWException( "Something missing from values: " .  print_rt( $values, true ) );
+			$values[0] = "<b>$values[0]</b>";
+		}
 		return $values;
 	}
 
@@ -567,8 +570,9 @@ class NamespaceCM extends ComplexMessages {
 
 	public function __construct( $code ) {
 		parent::__construct( $code );
-		$this->data['MediaWiki Core'] = array(
-			'var' => 'namespaceNames',
+		$this->data['core'] = array(
+			'label'=> 'MediaWiki Core',
+			'var'  => 'namespaceNames',
 			'file' => Language::getMessagesFileName( '%CODE%' ),
 			'code' => false,
 		);
