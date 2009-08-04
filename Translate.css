@@ -49,6 +49,10 @@
 	margin: 0px !important;
 }
 
+.mw-sp-translate-edit-extra {
+	border-bottom: 1px solid black;
+}
+
 .mw-sp-translate-group {
 	border: 0;
 	margin: 0 3em 3em 3em;

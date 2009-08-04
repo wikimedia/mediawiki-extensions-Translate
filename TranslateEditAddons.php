@@ -333,7 +333,7 @@ EOEO;
 					if ( $s['target'] === $translation ) continue;
 					$sugboxes[] = TranslateUtils::fieldset( 
 						wfMsgHtml( 'translate-edit-tmsug' , sprintf( '%.2f', $s['quality'] ) ),
-						$s['target'],
+						TranslateUtils::convertWhiteSpaceToHTML( $s['target'] ),
 						array( 'class' => 'mw-sp-translate-edit-tmsug', 'title' => $s['source'] )
 					);
 				}
@@ -345,6 +345,11 @@ EOEO;
 				$boxes[] = $sugboxes[0];
 			}
 		}
+
+		// Make the non-mandatory boxes a different group, for easy access
+		$boxes = array(
+			Xml::tags( 'div', array( 'class' => 'mw-sp-translate-edit-extra' ), implode( "\n\n", $boxes ) )
+		);
 
 		// User provided documentation
 		if ( $wgTranslateDocumentationLanguageCode ) {
