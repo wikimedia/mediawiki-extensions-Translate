@@ -170,7 +170,7 @@ id = ext-collection-core
 file = Collection/CollectionCore.i18n.php
 aliasfile = Collection/Collection.alias.php
 descmsg = coll-create_a_book
-ignored = coll-create_a_book_box_style
+ignored = coll-book_mode_box_style
 
 Collection - Other
 id = ext-collection-other
