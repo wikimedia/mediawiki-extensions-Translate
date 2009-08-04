@@ -291,7 +291,7 @@ EOEO;
 			$translation = $xx;
 		}
 
-		if ( $object->firsttime && !$wgRequest->getCheck( 'oldid' ) ) {
+		if ( $object->firsttime && !$wgRequest->getCheck( 'oldid' ) && !$wgRequest->getCheck( 'undo' ) ) {
 			$object->textbox1 = $translation;
 		} else {
 			$translation = $object->textbox1;
