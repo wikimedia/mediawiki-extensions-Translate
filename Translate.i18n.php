@@ -5358,6 +5358,7 @@ Chanjman yo pa sove tou pandan ou pa klike sou bouton sove anba.',
 
 /** Hungarian (Magyar)
  * @author Dani
+ * @author Glanthor Reviol
  * @author Tgr
  */
 $messages['hu'] = array(
@@ -5403,7 +5404,7 @@ $messages['hu'] = array(
 	'translate-edit-contribute' => 'szerkesztés',
 	'translate-edit-no-information' => "''Ehhez az üzenethez még nincs leírás. Ha tudod, hogy hogyan kell használni, akkor segítheted a többi fordítót a dokumentálásával.''",
 	'translate-edit-information' => '„$2” leírása ($1)',
-	'translate-edit-in-other-languages' => 'Az üzenet más nyelveken',
+	'translate-edit-in-other-languages' => 'A(z) „$1” üzenet más nyelveken',
 	'translate-edit-committed' => 'Jelenlegi fordítás',
 	'translate-edit-warnings' => 'Hiányosságok a fordításban',
 	'translate-edit-goto-no-prev' => 'Nincs előző üzenet',
@@ -5424,6 +5425,7 @@ $messages['hu'] = array(
 	'translate-magic-special' => 'Speciális lapok álnevei',
 	'translate-magic-words' => 'Varázsszavak',
 	'translate-magic-namespace' => 'Névterek nevei',
+	'translate-magic-notsaved' => 'A szerkesztésed nem lett elmentve!',
 	'translationchanges' => 'Változások a fordításokban',
 	'translationchanges-export' => 'kimentés',
 	'translationchanges-change' => '$1: $2 $3 által',
@@ -5465,6 +5467,11 @@ $messages['hu'] = array(
 	'translate-tag-category' => 'Lefordítható lapok',
 	'translate-tag-page-desc' => 'A(z) [[:$1]] lap fordítása',
 	'translate-sidebar-alltrans' => 'Más nyelveken',
+	'translate-translations-fieldset-title' => 'Üzenet',
+	'translate-translations-messagename' => 'Név:',
+	'translate-language-code' => 'Nyelvkód',
+	'translate-language-code-field-name' => 'Nyelvkód:',
+	'translate-language' => 'Nyelv',
 );
 
 /** Interlingua (Interlingua)
@@ -6222,7 +6229,7 @@ $messages['ja'] = array(
 	'translate-checks-format' => 'この翻訳は定義に沿っていない、または不正な構文を使用しています: $1',
 	'translate-checks-escape' => '以下のエスケープは偶発のものであるかもしれません: <strong>$1</strong>',
 	'translate-pref-nonewsletter' => '電子メールのニュースレターを受け取らない',
-	'translate-pref-editassistlang' => '補助言語',
+	'translate-pref-editassistlang' => '補助言語：',
 	'prefs-translate' => '翻訳設定',
 	'translate-pref-editassistlang-help' => 'カンマ区切りの言語コード一覧。これらの言語でのメッセージの翻訳文が、あなたが翻訳している時に表示されます。標準の言語一覧はあなたの言語によって変化します。',
 	'translate-pref-editassistlang-bad' => 'リスト中の不正な言語コード:
@@ -6294,6 +6301,50 @@ $messages['ja'] = array(
 	'translate-group-desc-wikitravelextensions' => '[http://wikitravel.org Wikitravel] で使われている、サポート対象の MediaWiki 拡張機能のすべてのメッセージを含んだメタメッセージグループ',
 	'translate-group-desc-uniwiki' => '[http://unicefinnovation.org/wiki.php Uniwiki] に関連する拡張機能のすべてのメッセージを含んだメタメッセージグループ',
 	'translate-group-desc-ui' => '[http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative] に関連した拡張機能のすべてのメッセージを含んだメタメッセージグループ',
+	'translate-manage-groups' => 'グループの管理',
+	'translate-manage-listgroups' => '設定済みのグループ',
+	'translate-manage-listgroups-old' => '古いスタイルのグループ',
+	'translate-managegroups' => 'グループ管理',
+	'translate-manage-newgroup' => 'このメッセージグループは以前にインポートされたことがありません。',
+	'translate-manage-cacheat' => '$1 $2にインポート済み',
+	'translate-manage-return-to-group' => 'グループの詳細ページに戻る',
+	'translate-manage-modlangs' => '以下の{{PLURAL:$1|言語}}において変更が必要ないか確認してください。',
+	'translate-manage-modlang-new' => '$1 (新)',
+	'translate-manage-import-diff' => 'メッセージ $1 | 操作: $2',
+	'translate-manage-import-new' => '新しいメッセージ $1',
+	'translate-manage-import-deleted' => '削除されたメッセージ $1',
+	'translate-manage-action-import' => 'インポート',
+	'translate-manage-action-conflict' => 'インポートと fuzzy',
+	'translate-manage-action-ignore' => '無視',
+	'translate-manage-action-fuzzy' => 'インポートと翻訳の fuzzy',
+	'translate-manage-submit' => '実行',
+	'translate-manage-nochanges' => 'このグループのメッセージには定義変更はありません。',
+	'translate-manage-nochanges-other' => 'この言語が対応すべき変更はありませんでした。下のリンクをクリックするとグループの詳細画面に戻ります。',
+	'translate-manage-inconsistent' => 'リクエスト内に矛盾を発見しました。変更を確認した後に再度実施してください。詳細: $1.',
+	'translate-manage-toolong' => '処理時間の最大値である$1秒を超過しました。処理を続行するにはフォームを再投稿してください。',
+	'translate-manage-import-ok' => 'ページ$1の新しい版をインポートしました。',
+	'translate-manage-import-noks' => 'ページ$1の新しい版のインポートに失敗しました: $2',
+	'translate-manage-import-ignore' => 'メッセージ $1 をスキップします。',
+	'translate-manage-import-summary' => '外部ソースから新しい版をインポート中',
+	'translate-manage-conflict-summary' => '外部ソースから新しい版をインポートインポート中。確認してください。',
+	'translate-manage-import-fuzzy' => 'インポートおよび fuzzy 中: $1',
+	'translate-manage-import-done' => '全て完了しました！',
+	'translate-manage-import-rebuild' => 'キャッシュの再構築',
+	'translate-manage-intro-en' => '以下はこのグループにおけるメッセージの変更の一覧です。変更を精査し、それぞれのメッセージに対して行いたい操作を選択してください。メッセージ定義を更新した際には、もしあれば、他の言語における外部の変更も点検してください。また、操作 <code>ignore</code> は一時的なものにしかすぎないことに注意してください。',
+	'translate-manage-intro-other' => '以下は$1における翻訳の変更の一覧です。変更を精査し、それぞれのメッセージに対して行いたい操作を選択してください。変更を無視することを選んだ場合、次回のインポートでそれは上書きされます。',
+	'translate-manage-subtitle' => '管理',
+	'translate-manage-import-rebuild-all' => 'すべての言語を再構築し、変更はすべて無視する',
+	'importtranslations' => '翻訳の取り込み',
+	'translate-import-from-url' => 'ファイルの URL:',
+	'translate-import-from-wiki' => 'このウィキ内のファイル:',
+	'translate-import-from-local' => 'ローカルファイルのアップロード:',
+	'translate-import-load' => 'ファイル読み込み',
+	'translate-import-err-type-not-supported' => 'ファイルを読み込めませんでした: メソッド <tt>$1</tt> には対応していません。',
+	'translate-import-err-dl-failed' => 'ファイルを取得できませんでした:
+$1',
+	'translate-import-err-ul-failed' => 'ファイルのアップロードが失敗しました',
+	'translate-import-err-invalid-title' => '与えられたファイル名 <nowiki>$1</nowiki> が不正です。',
+	'translate-import-err-no-such-file' => 'ファイル <nowiki>$1</nowiki> は存在しないか、ローカルにアップロードされていません。',
 );
 
 /** Javanese (Basa Jawa)
@@ -8430,6 +8481,7 @@ U wordt aangemoedigd om via [[Special:Translate|{{int:translate}}]] vertalingen 
 	'translate-managegroups' => 'Groepsbeheer',
 	'translate-manage-newgroup' => 'Deze berichtengroep is nog niet eerder geïmporteerd.',
 	'translate-manage-cacheat' => 'Geïmporteerd op $1 om $2',
+	'translate-manage-return-to-group' => 'Terug naar groepspagina met details',
 	'translate-manage-modlang-new' => '$1 (nieuw)',
 	'translate-manage-import-diff' => 'Bericht $1 | Handelingen: $2',
 	'translate-manage-import-new' => 'Nieuw bericht $1',
@@ -8440,6 +8492,7 @@ U wordt aangemoedigd om via [[Special:Translate|{{int:translate}}]] vertalingen 
 	'translate-manage-action-fuzzy' => 'Importeren en vertalingen als fuzzy markeren',
 	'translate-manage-submit' => 'Uitvoeren',
 	'translate-manage-nochanges' => 'Er zijn geen veranderingen in de berichtdefinities voor deze groep.',
+	'translate-manage-import-ok' => 'Nieuwe versie van de pagina $1 geïmporteerd.',
 	'translate-manage-import-ignore' => 'Bericht $1 wordt overgeslagen.',
 	'translate-manage-import-fuzzy' => 'Bezig met importeren en fuzzy markeren: $1',
 	'translate-manage-import-done' => 'Klaar!',
@@ -12450,13 +12503,14 @@ $messages['yue'] = array(
  * @author Alexsh
  * @author Gaoxuewei
  * @author Gzdavidwong
+ * @author PhiLiP
  * @author Wmr89502270
  */
 $messages['zh-hans'] = array(
 	'translate' => '翻译',
 	'translate-desc' => '翻译MediaWiki介面信息的[[Special:Translate|特殊页面]]',
 	'translate-edit' => '编辑',
-	'translate-talk' => '对话',
+	'translate-talk' => '讨论',
 	'translate-history' => '历史',
 	'translate-task-view' => '查看全部信息',
 	'translate-task-untranslated' => '查看尚未翻译的信息',
@@ -12476,7 +12530,7 @@ $messages['zh-hans'] = array(
 	'translate-page-language' => '语言',
 	'translate-page-limit' => '每页显示',
 	'translate-page-limit-option' => '$1个信息',
-	'translate-submit' => '撷取',
+	'translate-submit' => '获取',
 	'translate-page-navigation-legend' => '导航',
 	'translate-page-showing' => '显示第 $1 到第 $2 个信息，总共有 $3 个',
 	'translate-page-showing-all' => '显示 $1 个信息',
@@ -12490,11 +12544,11 @@ $messages['zh-hans'] = array(
 	'translate-edit-contribute' => '贡献',
 	'translate-edit-no-information' => "''本介面信息没有任何说明信息
 如果您知道这个信息是使用在哪个地方，您可以增加说明信息以协助其他翻译者''",
-	'translate-edit-information' => '关于本介面信息的信息 ($1)',
+	'translate-edit-information' => '关于介面信息“$2”的信息（$1）',
 	'translate-edit-in-other-languages' => '其他语言的信息',
 	'translate-edit-committed' => '当前翻译',
 	'translate-edit-warnings' => '未完成翻译的警告',
-	'translate-magic-pagename' => '延伸的MediaWiki翻译',
+	'translate-magic-pagename' => '扩展的MediaWiki翻译',
 	'translate-magic-help' => "您可以使用本特殊页面翻译'''特殊页面别名'''、'''魔术字'''、'''面板名称'''以及'''名字空间名称'''。
 
 翻译魔术字时，新的名称必需含有英文，否则无法生效。第一个字元也请避免0或1这两个字元
@@ -12505,7 +12559,7 @@ $messages['zh-hans'] = array(
 如果您的翻译没有更动网站名称，但无法正确显示的话，请联络MediaWiki开发者。
 
 您必需属于翻译者群组才能保存这些更改。在按下保存之前，这些更改均不会被更动。",
-	'translate-magic-submit' => '撷取',
+	'translate-magic-submit' => '获取',
 	'translate-magic-cm-export' => '导出',
 	'translate-magic-cm-to-be' => '翻译',
 	'translate-magic-cm-current' => '目前',

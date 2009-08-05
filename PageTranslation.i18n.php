@@ -200,6 +200,7 @@ $messages['be-tarask'] = array(
 Старонка, якую Вы спрабуеце рэдагаваць, верагодна не зьвязана зь якой-небудзь старонкай пазначанай для перакладу.',
 	'tpt-install' => 'Запусьціце php maintenance/update.php альбо усталюйце праз вэб-інтэрфэйс для актывізацыі інструмэнтаў перакладу старонак.',
 	'tpt-render-summary' => 'Абнаўленьне для адпаведнасьці новай вэрсіі крынічнай старонкі',
+	'tpt-download-page' => 'Экспартаваць старонку з перакладамі',
 );
 
 /** Bulgarian (Български)
@@ -443,6 +444,7 @@ Toś ten bok jo pśełožk boka [[$1]] a pśełožk dajo se z pomocu [$2 Pśeło
 Zda se, až bok, kótaryž wopytujoš wobźěłaś, njewótpowědujo bokoju, kótaryž jo za pśełožowanje markěrowany.',
 	'tpt-install' => 'Wuwjeź php maintenance/update.php abo webinstalaciju, aby zmóžnił funkciju pśełožowanja bokow.',
 	'tpt-render-summary' => 'Aktualizacija pó nowej wersiji žrědłowego boka',
+	'tpt-download-page' => 'Bok z pśełožkami eksportěrowaś',
 );
 
 /** Greek (Ελληνικά)
@@ -633,6 +635,7 @@ Elle est une version traduite de [[$1]] et la traduction peut être mise à jour
 La page que vous essayé de modifier ne semble pas correspondre à aucune page marqué pour être traduite.',
 	'tpt-install' => 'Lancez « php maintenance/update.php » ou l’installation web pour activer la fonctionnalité de traduction de pages.',
 	'tpt-render-summary' => 'Mise à jour pour être en accord avec la nouvelle version de la source de la page',
+	'tpt-download-page' => 'Exporter la page avec ses traductions',
 );
 
 /** Franco-Provençal (Arpetan)
@@ -913,6 +916,7 @@ Tuta strona je přełožk strony [[$1]] a přełožk hodźi so z pomocu [$2 Pře
 Strona, kotruž pospytuješ wobdźěłać, po wšěm zdaću stronje markěrowanej za přełožowanje njewotpowěduje.',
 	'tpt-install' => 'Wuwjedź php maintenance/update.php ab webinstalaciju, zo by funkcija přełožowanje stronow zmóžnił.',
 	'tpt-render-summary' => 'Aktualizacija po nowej wersiji žórłoweje strony',
+	'tpt-download-page' => 'Stronu z přełožkami eksportować',
 );
 
 /** Hungarian (Magyar)
@@ -1099,6 +1103,7 @@ $messages['ja'] = array(
 	'tpt-unknown-page' => 'この名前空間はコンテンツページの翻訳のために使用します。あなたが編集しようとしているページに対応する翻訳対象ページが存在しないようです。',
 	'tpt-install' => 'ページ翻訳機能を有効にするために、php maintenance/update.php またはウェブ・インストーラーを実行する。',
 	'tpt-render-summary' => '翻訳元ページの新版に適合するように更新中',
+	'tpt-download-page' => '翻訳付きでページを書き出し',
 );
 
 /** Javanese (Basa Jawa)
