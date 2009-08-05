@@ -231,13 +231,10 @@ EOEO;
 	private static function figureMessage( Title $title ) {
 		$text = $title->getDBkey();
 		$pos = strrpos( $text, '/' );
-		if ( $pos === FALSE )
-		{
+		if ( $pos === false ) {
 			$code = '';
 			$key = $text;
-		}
-		else
-		{
+		} else {
 			$code = substr( $text, $pos + 1 );
 			$key = substr( $text, 0, $pos );
 		}
