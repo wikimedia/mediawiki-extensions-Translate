@@ -231,8 +231,15 @@ EOEO;
 	private static function figureMessage( Title $title ) {
 		$text = $title->getDBkey();
 		$pos = strrpos( $text, '/' );
-		$code = substr( $text, $pos + 1 );
-		$key = substr( $text, 0, $pos );
+		{
+			$code = '';
+			$key = $text;
+		}
+		else
+		{
+			$code = substr( $text, $pos + 1 );
+			$key = substr( $text, 0, $pos );
+		}
 		return array( $key, $code );
 	}
 
@@ -243,7 +250,7 @@ EOEO;
 	}
 
 	/**
-	 * Tries to determine from which group this message belongs. It tries to get
+	 * Tries to determine to which group this message belongs. It tries to get
 	 * group id from loadgroup GET-paramater, but fallbacks to messageIndex file
 	 * if no valid group was provided, or the group provided is a meta group.
 	 * @param $key The message key we are interested in.
