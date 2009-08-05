@@ -278,6 +278,25 @@ If you choose to ignore changes, they will be overridden on next export.',
 
 	'translate-manage-subtitle' => 'Manage',
 	'translate-manage-import-rebuild-all' => 'Rebuild all languages and ignore any changes',
+
+	'importtranslations' => 'Import translations',
+	'translate-import-from-url' => 'URL to the file:',
+	'translate-import-from-wiki' => 'File in this wiki:',
+	'translate-import-from-local' => 'Local file upload:',
+	'translate-import-load' => 'Load file',
+
+	'translate-import-err-type-not-supported' => 'Unable to load the file: method <tt>$1</tt> is not supported.',
+	'translate-import-err-dl-failed' => 'Unable to fetch the file:
+$1',
+	'translate-import-err-ul-failed' => 'File upload was not succesful',
+	'translate-import-err-invalid-title' => 'Provided file name <nowiki>$1</nowiki> was invalid.',
+	'translate-import-err-no-such-file' => 'File <nowiki>$1</nowiki> does not exist or is not uploaded locally.',
+
+	'translate-import-err-no-language-code' => 'File is not a well formed Gettext file in Translate extension format:
+Unable to determine language code.',
+	'translate-import-err-no-language-code' => 'File is not a well formed Gettext file in Translate extension format:
+Unable to determine group id.',
+	
 );
 
 /** Message documentation (Message documentation)

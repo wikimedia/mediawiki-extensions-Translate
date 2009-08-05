@@ -39,6 +39,7 @@ $wgSpecialPages['Magic'] = 'SpecialMagic';
 $wgSpecialPages['TranslationChanges'] = 'SpecialTranslationChanges';
 $wgSpecialPages['TranslationStats'] = 'SpecialTranslationStats';
 $wgSpecialPages['LanguageStats'] = 'SpecialLanguageStats';
+$wgSpecialPages['ImportTranslations'] = 'SpecialImportTranslations';
 $wgSpecialPageGroups['Magic'] = 'wiki';
 $wgSpecialPageGroups['Translate'] = 'wiki';
 $wgSpecialPageGroups['Translations'] = 'pages';
@@ -64,6 +65,8 @@ $wgHooks['GetPreferences'][] = 'TranslatePreferences::translationAssistLanguages
 $wgHooks['SpecialRecentChangesQuery'][] = 'TranslateRcFilter::translationFilter';
 $wgHooks['SpecialRecentChangesPanel'][] = 'TranslateRcFilter::translationFilterForm';
 $wgHooks['SkinTemplateToolboxEnd'][] = 'TranslateToolbox::toolboxAllTranslations';
+
+$wgJSAutoloadClasses['translate-import'] = "$dir/js/import.js"; 
 
 
 $wgEnablePageTranslation = false;

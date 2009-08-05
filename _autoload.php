@@ -46,6 +46,7 @@ $wgAutoloadClasses['SpecialTranslationChanges'] = $dir . 'SpecialTranslationChan
 $wgAutoloadClasses['SpecialTranslationStats'] = $dir . 'Stats.php';
 $wgAutoloadClasses['SpecialTranslations'] = $dir . 'SpecialTranslations.php';
 $wgAutoloadClasses['SpecialLanguageStats'] = $dir . 'SpecialLanguageStats.php';
+$wgAutoloadClasses['SpecialImportTranslations'] = $dir . 'SpecialImportTranslations.php';
 
 
 $wgAutoloadClasses['SimpleFormatReader'] = $dir . 'ffs/Simple.php';
