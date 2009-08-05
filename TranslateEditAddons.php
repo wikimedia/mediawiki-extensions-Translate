@@ -162,7 +162,7 @@ EOEO;
 			}
 		}
 
-		$realFallback = Language::getFallbackFor( $code );
+		$realFallback = $code ? Language::getFallbackFor( $code ) : 'en';
 		if ( $realFallback && $realFallback !== 'en' ) {
 			$fallbacks = array_merge( array( $realFallback ), $fallbacks );
 		}
