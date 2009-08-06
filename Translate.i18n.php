@@ -285,18 +285,18 @@ If you choose to ignore changes, they will be overridden on next export.',
 	'translate-import-from-local' => 'Local file upload:',
 	'translate-import-load' => 'Load file',
 
-	'translate-import-err-type-not-supported' => 'Unable to load the file: method <tt>$1</tt> is not supported.',
+	'translate-import-err-type-not-supported' => 'Unable to load the file:
+Method <tt>$1</tt> is not supported.',
 	'translate-import-err-dl-failed' => 'Unable to fetch the file:
 $1',
 	'translate-import-err-ul-failed' => 'File upload was not succesful',
 	'translate-import-err-invalid-title' => 'Provided file name <nowiki>$1</nowiki> was invalid.',
-	'translate-import-err-no-such-file' => 'File <nowiki>$1</nowiki> does not exist or is not uploaded locally.',
+	'translate-import-err-no-such-file' => 'File <nowiki>$1</nowiki> does not exist or has not been uploaded locally.',
 
 	'translate-import-err-no-language-code' => 'File is not a well formed Gettext file in Translate extension format:
 Unable to determine language code.',
 	'translate-import-err-no-language-code' => 'File is not a well formed Gettext file in Translate extension format:
-Unable to determine group id.',
-	
+Unable to determine group ID.',
 );
 
 /** Message documentation (Message documentation)
@@ -543,7 +543,7 @@ $messages['am'] = array(
 	'translate-page-edit' => 'አርም',
 	'translate-edit-definition' => 'የመልዕክቱ ትርጉም',
 	'translate-edit-contribute' => 'ለመሣተፍ',
-	'translate-edit-no-information' => "''ይኸው መልእክት ምንም መረጃ የለውም። 
+	'translate-edit-no-information' => "''ይኸው መልእክት ምንም መረጃ የለውም።
 መልዕክቱ በየት ወይም እንዴት እንደሚጠቀም ዕውቀት ካለዎ፣ መረጃ በመጨምር ሌሎች አስተርጓሚዎች ሊረዱ ይችላሉ።''",
 	'translate-edit-information' => 'መረጃ ስለዚሁ መልእክት ($1)',
 	'translate-edit-in-other-languages' => 'መልዕክቱ በሌሎች ልሳናት',
@@ -782,7 +782,7 @@ $messages['ar'] = array(
 	'translate-nothing-to-do' => 'كل الترجمات المحتملة يبدو أنه قد تم عملها.
 من الأفضل أن تراجع الرسائل من خلال [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-groups' => ' # أضف أرقام مجموعات الرسائل, واحدا لكل سطر لتحديد مجموعات الرسائل التي
- # تعرض في Special:LanguageStats.أرقام مجموعات الرسائل غير الموجودة سوف 
+ # تعرض في Special:LanguageStats.أرقام مجموعات الرسائل غير الموجودة سوف
  # يتم تجاهلها.',
 	'translate-save' => 'حفظ ($1)',
 );
@@ -2495,7 +2495,7 @@ Du kannst die [$1 Originalseite bearbeiten] oder [$2 die Übersetzung aktualisie
 	'translate-percentage-fuzzy' => 'Veraltet',
 	'translate-nothing-to-do' => 'Alle möglichen Übersetzungen sind offenbar schon erledigt.
 Es wird empfohlen, Systemnachrichten mit der Spezialseite [[Special:Translate|{{int:translate}}]] zu überprüfen.',
-	'translate-languagestats-groups' => ' # Ergänze die ID einer Systemnachrichtengruppe (eine per Zeile) um die Gruppen von 
+	'translate-languagestats-groups' => ' # Ergänze die ID einer Systemnachrichtengruppe (eine per Zeile) um die Gruppen von
  # Special:LanguageStats auszuschließen. Nicht existerende IDs
  # werden ignoriert.',
 	'translate-save' => 'Speichern ($1)',
