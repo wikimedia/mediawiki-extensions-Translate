@@ -2,7 +2,7 @@
 BASIC:
   id: out-wikimediamobile
   label: Wikimedia Mobile Interface
-  description: Wikimedia mobile can be found at http://m.wikipedia.org and aims to bring Wikipedia to supported smartphones around the world.
+  description: "{{int:bw-desc-wikimediamobile}}"
   namespace: NS_MEDIAWIKI
   display: out/wikimediamobile/
   class: FileBasedMessageGroup
