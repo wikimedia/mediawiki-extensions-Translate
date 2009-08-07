@@ -15,7 +15,8 @@ $messages['en'] = array(
 	'right-pagetranslation' => 'Mark versions of pages for translation',
 	'tpt-desc' => 'Extension for translating content pages',
 	'tpt-section' => 'Translation unit $1',
-	'tpt-section-new' => 'New translation unit. Name: $1',
+	'tpt-section-new' => 'New translation unit.
+Name: $1',
 	'tpt-section-deleted' => 'Translation unit $1',
 	'tpt-template' => 'Page template',
 	'tpt-templatediff' => 'The page template has changed.',

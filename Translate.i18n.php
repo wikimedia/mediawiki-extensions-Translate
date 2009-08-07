@@ -254,14 +254,16 @@ You are encouraged to review messages through [[Special:Translate|{{int:translat
 Use the link below to return the group details view.',
 
 	'translate-manage-inconsistent' => 'Detected inconsistency in the request.
-Please check for changes and try again. Details: $1.',
+Please check for changes and try again.
+Details: $1.',
 	'translate-manage-toolong' => 'The maximum processing time of $1 {{PLURAL:$1|second|seconds}} exceeded.
 Please resubmit the form to continue processing.',
 	'translate-manage-import-ok' => 'Imported new version of page $1.',
 	'translate-manage-import-noks' => 'Failed to import new version of page $1: $2',
 	'translate-manage-import-ignore' => 'Skipping message $1.',
 	'translate-manage-import-summary' => 'Importing a new version from external source',
-	'translate-manage-conflict-summary' => 'Importing a new version from external source. Please check.',
+	'translate-manage-conflict-summary' => 'Importing a new version from external source.
+Please check.',
 	'translate-manage-import-fuzzy' => 'Importing and fuzzying: $1',
 
 	'translate-manage-import-done' => 'All done!',
