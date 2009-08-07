@@ -217,7 +217,26 @@ $messages['bg'] = array(
  * @author Fulup
  */
 $messages['br'] = array(
+	'pagetranslation' => 'Troidigezh ur bajenn',
+	'tpt-template' => 'Patrom pajenn',
+	'tpt-diff-old' => 'Testenn gent',
+	'tpt-diff-new' => 'Testenn nevez',
+	'tpt-sections-template' => 'Patrom pajenn dreiñ',
+	'tpt-badtitle' => "N'eo ket reizh titl anv ar bajenn ($1) zo bet lakaet",
+	'tpt-oldrevision' => "N'eo ket $2 stumm diwezhañ ar bajenn [[$1]].
+N'eus nemet ar stummoù diwezhañ a c'hall bezañ merket evit bezañ troet.",
+	'tpt-notsuitable' => "N'haller ket treiñ ar bajenn $1.
+Gwiria ez eus balizennoù <nowiki><translate></nowiki> enni hag ez eo reizh an ereadurezh anezhi.",
+	'tpt-saveok' => 'Merket eo bet ar bajenn [[$1]] evit bezañ troet gant $2 {{PLURAL:$2|unanenn dreiñ|unanenn dreiñ}}.
+Gallout a ra ar bajenn bezañ <span class="plainlinks">[$3 troet]</span> bremañ.',
+	'tpt-badsect' => 'Direizh eo an anv "$1" evit un unanenn dreiñ $2.',
+	'tpt-showpage-intro' => "A-is emañ rollet an troidigezhioù nevez, ar re zo anezho hag ar re bet diverket.
+Kent merkañ ar stumm-mañ evit an treiñ, gwiriait mat n'eus ket bet nemeur a gemmoù er rannbennadoù kuit da bourchas labour aner d'an droourien.",
+	'tpt-rev-latest' => 'stumm diwezhañ',
+	'tpt-translate-this' => 'Treiñ ar bajenn-mañ',
 	'translate-tag-translate-link-desc' => 'Treiñ ar bajenn-mañ',
+	'translate-tag-markthis' => 'Merkañ ar bajenn-mañ evit an treiñ',
+	'tpt-languages-legend' => 'Yezhoù all :',
 );
 
 /** Bosnian (Bosanski)
@@ -523,10 +542,14 @@ $messages['et'] = array(
 
 /** Basque (Euskara)
  * @author An13sa
+ * @author Kobazulo
  */
 $messages['eu'] = array(
+	'pagetranslation' => 'Orrialdearen itzulpena',
 	'tpt-diff-old' => 'Aurreko testua',
 	'tpt-diff-new' => 'Testu berria',
+	'tpt-edit-failed' => 'Ezin izan da orrialdea eguneratu: $1',
+	'tpt-translate-this' => 'Itzuli orrialde hau',
 	'translate-tag-translate-link-desc' => 'Itzuli orri hau',
 	'tpt-languages-legend' => 'Beste hizkuntzak:',
 );
@@ -1321,6 +1344,7 @@ De vertaling kan bijgewerkt worden via de [$2 vertaalhulpmiddelen].',
 De pagina die u probeert te bewerken lijkt niet overeen te komen met een te vertalen pagina.",
 	'tpt-install' => 'Voer php maintenance/update.php of de webinstallatie uit om de paginavertaling te activeren.',
 	'tpt-render-summary' => 'Bezig met bijwerken vanwege een nieuwe basisversie van de bronpagina',
+	'tpt-download-page' => 'Pagina met vertalingen exporteren',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
@@ -1472,6 +1496,7 @@ Es una version traducha de [[$1]] e la traduccion pòt èsser mesa a jorn en uti
 La pagina qu'ensajatz de modificar sembla pas correspondre a cap de pagina marcada per èsser traducha.",
 	'tpt-install' => "Aviatz php maintenance/update.php o l'installacion web per activar la foncionalitat de traduccion de paginas.",
 	'tpt-render-summary' => 'Mesa a jorn per èsser en acòrd amb la version novèla de la font de la pagina',
+	'tpt-download-page' => 'Exportar la pagina amb sas traduccions',
 );
 
 /** Polish (Polski)
@@ -1634,6 +1659,30 @@ $messages['ru'] = array(
 	'tpt-install' => 'Запустите php-скрипт maintenance/update.php или веб-установку, чтобы включить возможность перевода страниц.',
 	'tpt-render-summary' => 'Обновление для соответствия новой версии исходной страницы.',
 	'tpt-download-page' => 'Экспортировать страницу с переводами',
+);
+
+/** Yakut (Саха тыла)
+ * @author HalanTul
+ */
+$messages['sah'] = array(
+	'pagetranslation' => 'Сирэйдэри тылбаастааһын',
+	'right-pagetranslation' => 'Тылбаастанар сирэйдэр барылларын бэлиэтээһин',
+	'tpt-desc' => 'Сирэй ис хоһоонун тылбаастыырга кэҥэтии',
+	'tpt-section' => 'Тылбаас единицата $1',
+	'tpt-section-new' => 'Тылбаас саҥа единицата. 
+Аата: $1',
+	'tpt-section-deleted' => 'Тылбаас элэмиэнэ $1',
+	'tpt-template' => 'Сирэй халыыба',
+	'tpt-templatediff' => 'Бу сирэй халыыба уларытыллыбыт (уларытылынна).',
+	'tpt-diff-old' => 'Бу иннинээҕи тиэкис',
+	'tpt-diff-new' => 'Саҥа тиэкис',
+	'tpt-submit' => 'Бу барылы тылбаастыырга бэлиэтээһин',
+	'tpt-sections-oldnew' => 'Тылбаас саҥа уонна уруккуттан баар элэмиэннэрэ',
+	'tpt-sections-deleted' => 'Тылбаас сотуллубут элэмиэннэрэ',
+	'tpt-sections-template' => 'Тылбаас сирэйин халыыба',
+	'tpt-badtitle' => 'Сирэй ыйыллыбыт аата ($1) аат буолар кыаҕа суох',
+	'tpt-oldrevision' => '$2 [[$1]] сирэй бүтэһик барыла буолбатах.
+Сирэйдэр бүтэһик эрэ барыллара тылбааска бэлиэтэниэхтэрин сөп.',
 );
 
 /** Slovak (Slovenčina)
