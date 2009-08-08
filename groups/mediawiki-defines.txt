@@ -1109,7 +1109,7 @@ optional = optin-survey-answer-browser-ie5, optin-survey-answer-browser-ie6, opt
 optional = optin-survey-answer-browser-ff1, optin-survey-answer-browser-ff2, optin-survey-answer-browser-ff3, optin-survey-answer-browser-cb
 optional = optin-survey-answer-browser-c1, optin-survey-answer-browser-c2, optin-survey-answer-browser-s3, optin-survey-answer-browser-s4
 optional = optin-survey-answer-browser-o9, optin-survey-answer-browser-o9.5, optin-survey-answer-browser-o10, optin-survey-answer-os-windows
-optional = optin-survey-answer-os-macos, optin-survey-answer-os-linux
+optional = optin-survey-answer-os-macos, optin-survey-answer-os-linux, optin-survey-answer-os-windowsmobile, optin-survey-answer-os-iphoneos
 
 Usability Initiative - Pref Stats
 id = ext-ui-prefstats
