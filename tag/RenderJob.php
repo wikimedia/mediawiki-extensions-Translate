@@ -18,7 +18,7 @@ class RenderJob extends Job {
 		$job = new self( $target );
 		$job->setUser( $wgTranslateFuzzyBotName );
 		$job->setFlags( EDIT_FORCE_BOT );
-		$job->setSummary( wfMsg( 'tpt-render-summary' ) );
+		$job->setSummary( wfMsgForContent( 'tpt-render-summary' ) );
 		return $job;
 	}
 
