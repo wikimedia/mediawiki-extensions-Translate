@@ -734,7 +734,7 @@ $messages['ar'] = array(
 	'translate-checks-escape' => 'عمليات الهروب التالية ربما تكون حدثت بالصدفة: <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'لا ترسل لي إخطارات بريدية بالبريد الإلكتروني',
 	'right-translate' => 'التعديل باستخدام واجهة الترجمة',
-	'translate-rc-translation-filter' => 'فلتر الترجمات:',
+	'translate-rc-translation-filter' => 'مُرشّح الترجمات:',
 	'translate-rc-translation-filter-no' => 'لا تفعل شيئا',
 	'translate-rc-translation-filter-only' => 'اعرض الترجمات فقط',
 	'translate-rc-translation-filter-filter' => 'مُرشّح الترجمات',
@@ -784,7 +784,7 @@ $messages['ar'] = array(
 	'translate-nothing-to-do' => 'كل الترجمات المحتملة يبدو أنه قد تم عملها.
 من الأفضل أن تراجع الرسائل من خلال [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-groups' => ' # أضف أرقام مجموعات الرسائل, واحدا لكل سطر لتحديد مجموعات الرسائل التي
- # تعرض في Special:LanguageStats.أرقام مجموعات الرسائل غير الموجودة سوف
+ # تعرض في Special:LanguageStats.أرقام مجموعات الرسائل غير الموجودة سوف 
  # يتم تجاهلها.',
 	'translate-save' => 'حفظ ($1)',
 );
@@ -1419,7 +1419,7 @@ $1',
 	'translate-import-err-ul-failed' => 'Загрузка файла не атрымалася',
 	'translate-import-err-invalid-title' => 'Пададзеная назва файла <nowiki>$1</nowiki> — няслушная.',
 	'translate-import-err-no-such-file' => 'Файл <nowiki>$1</nowiki> не існуе альбо не загружаны лякальна.',
-	'translate-import-err-no-language-code' => 'Файл не зьяўляецца дакладным Gettext-файлам у фармаце пашырэньня Translate:
+	'translate-import-err-no-language-code' => 'Файл не зьяўляецца слушным Gettext-файлам у фармаце пашырэньня Translate:
 Немагчыма вызначыць ідэнтыфікатар групы.',
 );
 
@@ -1732,6 +1732,7 @@ Gallout a rit [$1 kemmañ ar bajenn orin] pe [$2 freskaat an droidigezh].',
 	'translate-manage-nochanges-other' => "N'eus bet kemm ebet gant ar yezh-mañ.
 Grit gant al liamm a-is da zistreiñ d'ar gwel dre ar munud evit ar strollad",
 	'translate-manage-import-done' => 'Tout eo bet graet !',
+	'translate-import-from-wiki' => 'Restr er wiki-mañ :',
 );
 
 /** Bosnian (Bosanski)
@@ -2528,7 +2529,7 @@ Du kannst die [$1 Originalseite bearbeiten] oder [$2 die Übersetzung aktualisie
 	'translate-percentage-fuzzy' => 'Veraltet',
 	'translate-nothing-to-do' => 'Alle möglichen Übersetzungen sind offenbar schon erledigt.
 Es wird empfohlen, Systemnachrichten mit der Spezialseite [[Special:Translate|{{int:translate}}]] zu überprüfen.',
-	'translate-languagestats-groups' => ' # Ergänze die ID einer Systemnachrichtengruppe (eine per Zeile) um die Gruppen von
+	'translate-languagestats-groups' => ' # Ergänze die ID einer Systemnachrichtengruppe (eine per Zeile) um die Gruppen von 
  # Special:LanguageStats auszuschließen. Nicht existerende IDs
  # werden ignoriert.',
 	'translate-save' => 'Speichern ($1)',
@@ -2547,6 +2548,37 @@ Es wird empfohlen, Systemnachrichten mit der Spezialseite [[Special:Translate|{{
 	'translate-group-desc-wikitravelextensions' => 'Diese Hauptgruppe beinhaltet alle Systemnachrichten der unterstützten MediaWiki-Erweiterungen, die von [http://wikitravel.org Wikitravel] genutzt werden',
 	'translate-group-desc-uniwiki' => 'Diese Hauptgruppe beinhaltet alle Systemnachrichten für verwandte Erweiterungen von [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Diese Hauptgruppe beinhaltet alle Systemnachrichten der [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
+	'translate-manage-groups' => 'Gruppenmanagement',
+	'translate-manage-listgroups' => 'Konfigurierte Gruppen',
+	'translate-manage-listgroups-old' => 'Gruppen im alten Stil',
+	'translate-managegroups' => 'Gruppenmanagement',
+	'translate-manage-newgroup' => 'Diese Systemnachrichtengruppe wurde bisher nicht importiert.',
+	'translate-manage-cacheat' => 'Importiert am $1 um $2 Uhr',
+	'translate-manage-return-to-group' => 'Zurück zur Gruppendetailseite',
+	'translate-manage-modlangs' => 'Bitte überprüfe, ob es Änderungen in {{PLURAL:$1|der folgenden Sprache|den folgenden Sprachen}} gibt:',
+	'translate-manage-modlang-new' => '$1 (neu)',
+	'translate-manage-import-diff' => 'Systemnachricht $1 | Aktionen: $2',
+	'translate-manage-import-new' => 'Neue Systemnachricht $1',
+	'translate-manage-import-deleted' => 'Gelöschte Systemnachricht $1',
+	'translate-manage-action-import' => 'Importieren',
+	'translate-manage-action-ignore' => 'Ignorieren',
+	'translate-manage-submit' => 'Ausführen',
+	'translate-manage-nochanges' => 'Es gibt keine Änderung der Systemnachrichtdefinition für diese Gruppe.',
+	'translate-manage-nochanges-other' => 'Es gibt keine Änderungen für diese Sprache.
+Verwende den Verweis unten, um zur Gruppendetailübersicht zurück zu gehen.',
+	'translate-manage-inconsistent' => 'Es wurden Inkonsistenzen in der Anfrage festgestellt.
+Bitte überprüfe deine Änderungen und versuche es erneut.
+Details: $1',
+	'translate-manage-toolong' => 'Die maximale Verarbeitungszeit von $1 {{PLURAL:$1|Sekunde|Sekunden}} ist abgelaufen.
+Bitte schicke das Formular noch einmal ab, um die Verarbeitung fortzusetzen.',
+	'translate-manage-import-ok' => 'Neue Version der Seite $1 importiert.',
+	'translate-manage-import-noks' => 'Fehler beim Importieren einer neuen Version der Seite $1: $2',
+	'translate-manage-import-ignore' => 'Überspringe Systemnachricht $1.',
+	'translate-manage-import-summary' => 'Neue Version von externer Quelle importiert',
+	'translate-manage-conflict-summary' => 'Neue Version von externer Quelle importiert.
+Bitte überprüfen.',
+	'translate-manage-import-done' => 'Alles erledigt!',
+	'translate-manage-import-rebuild' => 'Cache wieder aufbauen.',
 );
 
 /** Swiss High German (Schweizer Hochdeutsch)
@@ -3368,17 +3400,22 @@ $messages['eu'] = array(
 	'translate-magic-cm-comment' => 'Iruzkina:',
 	'translate-magic-cm-save' => 'Gorde',
 	'translate-magic-words' => 'Hitz magikoak',
+	'translate-magic-notsaved' => 'Zure edizioa ez da gorde!',
+	'translate-magic-saved' => 'Zure aldaketak ongi gorde dira.',
 	'translationchanges' => 'Itzulpenaren aldaketak',
 	'translationchanges-export' => 'esportatu',
+	'translate-pref-nonewsletter' => 'Ez iezadazu e-posta bidezko buletinik bidal',
 	'prefs-translate' => 'Itzulpen aukerak',
 	'translate-rc-translation-filter-no' => 'Ezer ez egin',
 	'translate-rc-translation-filter-only' => 'Itzulpenak bakarrik erakutsi',
 	'translationstats' => 'Itzulpenaren estatistikak',
 	'translate-stats-edits' => 'Aldaketak',
 	'translate-stats-users' => 'Itzultzaileak',
+	'translate-statsf-options' => 'Aukera grafikoak',
 	'translate-statsf-width' => 'Zabalera pixeletan',
 	'translate-statsf-height' => 'Altuera pixeletan',
 	'translate-statsf-days' => 'Denbora-tartea egunetan',
+	'translate-statsf-scale' => 'Pikortasuna',
 	'translate-statsf-scale-days' => 'Egunak',
 	'translate-statsf-scale-hours' => 'Orduak',
 	'translate-statsf-count' => 'Neurria',
@@ -3403,6 +3440,7 @@ $messages['eu'] = array(
 	'translate-untranslated' => 'Itzuli gabe',
 	'translate-percentage-complete' => 'Bukatuak',
 	'translate-percentage-fuzzy' => 'Zaharkituak',
+	'translate-save' => 'Gorde ($1)',
 	'translate-jssti-add' => 'Zerrendara gehitu',
 	'translate-manage-return-to-group' => 'Taldearen xehetasunen orrialdera itzuli',
 	'translate-manage-modlang-new' => '$1 (berria)',
@@ -6416,6 +6454,7 @@ $1',
 	'translate-import-err-ul-failed' => 'ファイルのアップロードが失敗しました',
 	'translate-import-err-invalid-title' => '与えられたファイル名 <nowiki>$1</nowiki> が不正です。',
 	'translate-import-err-no-such-file' => 'ファイル <nowiki>$1</nowiki> は存在しないか、ローカルにアップロードされていません。',
+	'translate-import-err-no-language-code' => 'このファイルは Translate 拡張機能の形式に正しく適応した Gettext ファイルではありません。グループIDを認識できませんでした。',
 );
 
 /** Javanese (Basa Jawa)
@@ -10572,6 +10611,20 @@ Prosím, skontrolujte zmeny a vyberte operáciu pre každý z prekladov.
 Ak sa rozhodnete ignorovať zmeny, prepíšu sa pri ďalšom exporte.',
 	'translate-manage-subtitle' => 'Spravovať',
 	'translate-manage-import-rebuild-all' => 'Znovu zostaviť všetky jazyky a ignorovať všetky zmeny',
+	'importtranslations' => 'Importovať preklady',
+	'translate-import-from-url' => 'URL k súboru:',
+	'translate-import-from-wiki' => 'Súbor na tejto wiki:',
+	'translate-import-from-local' => 'Nahranie lokálneho súboru:',
+	'translate-import-load' => 'Nahrať súbor',
+	'translate-import-err-type-not-supported' => 'Nepodarilo sa nahrať súbor:
+Metóda <tt>$1</tt> nie je podporovaná.',
+	'translate-import-err-dl-failed' => 'Nepodarilo sa získať súbor:
+$1',
+	'translate-import-err-ul-failed' => 'Nahranie súboru neprebehlo úspešne',
+	'translate-import-err-invalid-title' => 'Poskytnutý názov súboru „<nowiki>$1</nowiki>“ bol neplatný.',
+	'translate-import-err-no-such-file' => 'Súbor „<nowiki>$1</nowiki>“ neexistuje alebo nebol lokálne nahraný.',
+	'translate-import-err-no-language-code' => 'Súbor nie je platný súbor Gettext vo formáte rozšírenia Translate:
+Nepodarilo sa určiť ID skupiny.',
 );
 
 /** Somali (Soomaaliga)

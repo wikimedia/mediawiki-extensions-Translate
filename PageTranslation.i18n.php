@@ -218,6 +218,7 @@ $messages['bg'] = array(
  */
 $messages['br'] = array(
 	'pagetranslation' => 'Troidigezh ur bajenn',
+	'tpt-section-deleted' => 'Unanenn dreiñ $1',
 	'tpt-template' => 'Patrom pajenn',
 	'tpt-diff-old' => 'Testenn gent',
 	'tpt-diff-new' => 'Testenn nevez',
@@ -404,6 +405,7 @@ Diese Seite ist eine Übersetzung der Seite [[$1]] und die Übersetzung kann mit
 Die Seite, die gerade bearbeitet wird, hat keine Verbindung zu einer übersetzbaren Seite.',
 	'tpt-install' => 'Bitte <tt>maintenance/update.php</tt> oder Webinstallation ausführen, um die Seitenübersetzung zu aktivieren.',
 	'tpt-render-summary' => 'Übernehme Bearbeitung einer neuen Version der Quellseite',
+	'tpt-download-page' => 'Seite mit Übersetzungen exportieren',
 );
 
 /** German (formal address) (Deutsch (Sie-Form))
@@ -549,6 +551,7 @@ $messages['eu'] = array(
 	'tpt-diff-old' => 'Aurreko testua',
 	'tpt-diff-new' => 'Testu berria',
 	'tpt-edit-failed' => 'Ezin izan da orrialdea eguneratu: $1',
+	'tpt-rev-latest' => 'azkenengo bertsioa',
 	'tpt-translate-this' => 'Itzuli orrialde hau',
 	'translate-tag-translate-link-desc' => 'Itzuli orri hau',
 	'tpt-languages-legend' => 'Beste hizkuntzak:',
@@ -1737,6 +1740,7 @@ Táto stránka je prekladom stránky [[$1]] a preklad možno aktualizovať pomoc
 Zdá sa, že stránka, ktorú sa pokúšate upravovať nezodpovedá žiadnej stránke označenej na preklad.',
 	'tpt-install' => 'Funkciu prekladu webových stránok zapnete spustením php maintenance/update.php alebo webovej inštalácie.',
 	'tpt-render-summary' => 'Aktualizácia na novú verziu zdrojovej stránky',
+	'tpt-download-page' => 'Exportovať stránky s prekladmi',
 );
 
 /** Serbian Cyrillic ekavian (ћирилица)
