@@ -103,17 +103,43 @@ $3 is an URL.',
  * @author Naudefj
  */
 $messages['af'] = array(
+	'pagetranslation' => 'Bladsyvertaling',
+	'right-pagetranslation' => 'Merk weergawes van bladsye vir vertaling',
+	'tpt-section' => 'Vertaaleenheid $1',
+	'tpt-section-new' => 'Nuwe vertaaleenheid.
+Naam: $1',
+	'tpt-section-deleted' => 'Vertaaleenheid $1',
+	'tpt-template' => 'Bladsysjabloon',
+	'tpt-templatediff' => 'Die bladsysjabloon was gewysig.',
+	'tpt-diff-old' => 'Vorige teks',
+	'tpt-diff-new' => 'Nuwe teks',
+	'tpt-submit' => 'Merk die weergawe vir vertaling',
+	'tpt-sections-oldnew' => 'Nuwe en bestaande vertaaleenhede',
+	'tpt-sections-deleted' => 'Verwyderde vertaaleenhede',
+	'tpt-sections-template' => 'Vertaalbladsjabloon',
+	'tpt-badtitle' => "Die naam verskaf ($1) is nie 'n geldige bladsynaam nie",
+	'tpt-mark-summary' => 'Merk die weergawe vir vertaling',
+	'tpt-edit-failed' => 'Die bladsy "$1" kon nie bygewerk word nie.',
+	'tpt-rev-latest' => 'nuutste weergawe',
+	'tpt-rev-old' => 'verskil met die vorige gemerkte weergawe',
+	'tpt-rev-mark-new' => 'merk die weergawe vir vertaling',
+	'tpt-translate-this' => 'vertaal die bladsy',
 	'translate-tag-translate-link-desc' => 'Vertaal die bladsy',
+	'translate-tag-markthis' => 'Merk die bladsy vir vertaling',
+	'tpt-translation-intro-fuzzy' => 'Verouderde vertalings word so weergegee.',
+	'tpt-languages-legend' => 'Ander tale:',
 );
 
 /** Arabic (العربية)
  * @author Meno25
+ * @author OsamaK
  * @author ترجمان05
  */
 $messages['ar'] = array(
 	'pagetranslation' => 'ترجمة صفحة',
-	'tpt-section' => 'القسم:',
-	'tpt-section-new' => 'قسم جديد:',
+	'tpt-section' => 'وحدة الترجمة $1',
+	'tpt-section-new' => 'وحدة ترجمة جديدة.
+الاسم: $1',
 	'tpt-template' => 'قالب صفحة',
 	'tpt-diff-old' => 'نص سابق',
 	'tpt-diff-new' => 'نص جديد',
@@ -122,10 +148,11 @@ $messages['ar'] = array(
 	'tpt-oldrevision' => '$2 ليست آخر نسخة للصّفحة [[$1]].
 فقط آخر النسخ يمكن أن تؤشّر للترجمة.',
 	'tpt-rev-latest' => 'آخر نسخة',
-	'tpt-rev-old' => 'النسخة $1',
+	'tpt-rev-old' => 'الفرق مقابل النسخة المعلّمة السابقة',
 	'tpt-translate-this' => 'ترجم هذه الصّفحة',
 	'translate-tag-translate-link-desc' => 'ترجمة هذه الصفحة',
 	'tpt-languages-legend' => 'لغات أخرى:',
+	'tpt-download-page' => 'صدّر الصفحة مع الترجمات',
 );
 
 /** Aramaic (ܐܪܡܝܐ)
@@ -607,6 +634,7 @@ Sivu voidaan nyt <span class="plainlinks">[$3 kääntää]</span>.',
 	'tpt-unknown-page' => 'Nimiavaruus on varattu sisältösivujen käännöksille. Sivu, jota yrität muokata, ei näytä vastaavan mitään sivua joka on merkitty käännettäväksi.',
 	'tpt-install' => 'Suorita maintenance/update.php tai verkkoasennus, jotta sivun käännösominaisuus toimii.',
 	'tpt-render-summary' => 'Päivittäminen vastaamaan uutta versiota lähdesivusta',
+	'tpt-download-page' => 'Sivun vienti käännösten kera',
 );
 
 /** French (Français)
@@ -1004,6 +1032,7 @@ Iste pagina es un traduction del pagina [[$1]] e le traduction pote esser actual
 Le pagina que tu vole modificar non pare corresponder con alcun pagina marcate pro traduction.',
 	'tpt-install' => 'Executa maintenance/update.php o le installation web pro activar le traduction de paginas.',
 	'tpt-render-summary' => 'Actualisation a un nove version del pagina de origine',
+	'tpt-download-page' => 'Exportar pagina con traductiones',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -1146,11 +1175,17 @@ $messages['jv'] = array(
  */
 $messages['km'] = array(
 	'pagetranslation' => 'ការ​បក​ប្រែ​ទំព័រ​',
+	'tpt-section' => 'ឯកតាបកប្រែ $1',
+	'tpt-section-new' => 'ឯកតាបកប្រែថ្មី។
+ឈ្មោះ៖ $1',
+	'tpt-section-deleted' => 'ឯកតាបកប្រែ $1',
 	'tpt-template' => 'គំរូទំព័រ',
 	'tpt-templatediff' => 'គំរូ​ទំព័រ​បានផ្លាស់ប្តូរ​។',
 	'tpt-diff-old' => 'អត្ថបទ​​ពីមុន​',
 	'tpt-diff-new' => 'អត្ថបទ​ថ្មី​',
 	'tpt-submit' => 'សម្គាល់​កំណែ​នេះ​សម្រាប់​ការបកប្រែ​',
+	'tpt-sections-oldnew' => 'ឯកតាបកប្រែថ្មីនិងចាស់',
+	'tpt-sections-deleted' => 'ឯកតាបកប្រែដែលត្រូវបានលុប',
 	'tpt-sections-template' => 'គំរូ​ទំព័រ​បកប្រែ​',
 	'tpt-badtitle' => 'ឈ្មោះ​ទំព័រ​សម្រាប់ ($1) គឺមិនមែន​ជា​ចំនងជើង​ត្រឹមត្រូវ​',
 	'tpt-mark-summary' => 'បាន​សម្គាល់​កំណែ​នេះ​សម្រាប់​បកប្រែ​',
@@ -1502,11 +1537,30 @@ La pagina qu'ensajatz de modificar sembla pas correspondre a cap de pagina marca
 	'tpt-download-page' => 'Exportar la pagina amb sas traduccions',
 );
 
+/** Deitsch (Deitsch)
+ * @author Xqt
+ */
+$messages['pdc'] = array(
+	'pagetranslation' => 'Iwwersetzing vun Bledder',
+	'tpt-translate-this' => 'des Blatt iwwersetze',
+	'translate-tag-translate-link-desc' => 'Des Blatt iwwersetze',
+	'tpt-languages-legend' => 'Annre Schprooche:',
+);
+
 /** Polish (Polski)
  * @author Leinad
  */
 $messages['pl'] = array(
 	'translate-tag-translate-link-desc' => 'Przetłumacz tę stronę',
+);
+
+/** Pashto (پښتو)
+ * @author Ahmed-Najib-Biabani-Ibrahimkhel
+ */
+$messages['ps'] = array(
+	'pagetranslation' => 'د مخ ژباړه',
+	'tpt-template' => 'د مخ کينډۍ',
+	'tpt-diff-new' => 'نوی متن',
 );
 
 /** Portuguese (Português)
@@ -1597,6 +1651,12 @@ Esta página que você está tentando editar não aparenta corresponder a nenhum
  * @author KlaudiuMihaila
  */
 $messages['ro'] = array(
+	'pagetranslation' => 'Traducerea paginii',
+	'tpt-section' => 'Unitate de traducere $1',
+	'tpt-section-deleted' => 'Unitate de traducere $1',
+	'tpt-template' => 'Şablon pagină',
+	'tpt-diff-old' => 'Text precedent',
+	'tpt-diff-new' => 'Text nou',
 	'translate-tag-translate-link-desc' => 'Tradu această pagină',
 	'tpt-translation-intro-fuzzy' => 'Traducerile învechite sunt marcate în acest fel.',
 	'tpt-languages-legend' => 'Alte limbi:',
@@ -1758,6 +1818,7 @@ $messages['stq'] = array(
 );
 
 /** Swedish (Svenska)
+ * @author Fluff
  * @author M.M.S.
  * @author Najami
  */
@@ -1775,7 +1836,33 @@ $messages['sv'] = array(
 	'tpt-submit' => 'Märk den här versionen för översättning',
 	'tpt-sections-oldnew' => 'Nya och existerande översättningsenheter',
 	'tpt-sections-deleted' => 'Raderade översättningsenheter',
+	'tpt-sections-template' => 'Mall för översättningssida',
+	'tpt-badtitle' => 'Det angivna sidnammet ($1) är inte en giltlig titel',
+	'tpt-oldrevision' => '$2 är inte den senaste versionen av sidan [[$1]].
+Endast den senaste versionen kan märkas för översättning.',
+	'tpt-notsuitable' => 'Sidan $1 är inte redo för översättning.
+Se till att sidan har <nowiki><translate></nowiki>-taggar och att syntaxen är giltlig.',
+	'tpt-saveok' => 'Sidan [[$1]] har märkts för översättning med {{PLURAL:$2|en översättning|$2 översättningar}}. Sidan kan nu <span class="plainlinks">[$3 översättas]</span>.',
+	'tpt-badsect' => '"$1" är inte ett giltligt namn för översättningen $2.',
+	'tpt-showpage-intro' => 'Här nedanför finns nya, existerande och raderade sektioner uppradade.
+Innan den här versionen märks för översättning, kontrollera att förändringarna i texten är minimala för att undvika extra arbete för översättarna.',
+	'tpt-mark-summary' => 'Den här versionen är märkt för översättning',
+	'tpt-edit-failed' => 'Sidan "$1" kunde inte uppdateras.',
+	'tpt-already-marked' => 'Den senaste versionen av den här sidan har redan märkts för översättning.',
+	'tpt-list-nopages' => 'Det finns inga sidor som är märkta för översättning eller är klara att märkas för översättning.',
+	'tpt-old-pages' => 'En version av {{PLURAL$1|den här sidan|de här sidorna}} har märkts för översättning.',
+	'tpt-new-pages' => '{{PLURAL:$1|Den här sidan|De här sidorna}} innehåller text med översättningstaggar, men ingen version av {{PLURAL:$1|den här sidan|de här sidorna}} är märkt för översättning.',
+	'tpt-rev-latest' => 'senaste versionen',
+	'tpt-rev-old' => 'skillnad mot föregående markerad version',
+	'tpt-rev-mark-new' => 'märk den här versionen för översättning',
+	'tpt-translate-this' => 'översätt den här sidan',
 	'translate-tag-translate-link-desc' => 'Översätt den här sidan',
+	'translate-tag-markthis' => 'Märk den här sidan för översättning',
+	'translate-tag-markthisagain' => 'Den här sidan har <span class="plainlinks">[$1 förändringar]</span> sedan den senast <span class="plainlinks">[$2 märktes för översättning]</span>.',
+	'translate-tag-hasnew' => 'Den här sidan innehåller <span class="plainlinks">[$1 förändringar]</span> som inte är märkta för översättning.',
+	'tpt-translation-intro-fuzzy' => 'Föråldrade översättningar visas på det här sättet.',
+	'tpt-languages-legend' => 'Andra språk:',
+	'tpt-target-page' => 'Den här sidan kan inte uppdateras manuellt. Den här sidan är en översättning av [[$1]] och översättningen kan uppdateras genom att använda [$2 översättningsverktyget].',
 );
 
 /** Telugu (తెలుగు)
