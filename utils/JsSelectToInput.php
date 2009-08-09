@@ -68,7 +68,11 @@ class JsSelectToInput {
 		if ( $done ) return;
 
 		global $wgOut, $wgScriptPath;
-		$wgOut->addScriptFile( "$wgScriptPath/extensions/Translate/utils/JsSelectToInput.js" );
+		if ( method_exists( $wgOut, 'addScriptClass' ) ) {
+			$wgOut->addScriptClass( 'JsSelectToInput' );
+		} else {
+			$wgOut->addScriptFile( "$wgScriptPath/extensions/Translate/utils/JsSelectToInput.js" );
+		}
 	}
 
 }

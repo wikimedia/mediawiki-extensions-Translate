@@ -67,6 +67,7 @@ $wgHooks['SpecialRecentChangesPanel'][] = 'TranslateRcFilter::translationFilterF
 $wgHooks['SkinTemplateToolboxEnd'][] = 'TranslateToolbox::toolboxAllTranslations';
 
 $wgJSAutoloadClasses['TranslateImport'] = "extensions/Translate/js/import.js"; 
+$wgJSAutoloadClasses['JsSelectToInput'] = "extensions/Translate/utils/JsSelectToInput.js"; 
 
 
 $wgEnablePageTranslation = false;
