@@ -272,7 +272,6 @@ EOEO;
 	}
 
 	private static function editBoxes( $object ) {
-		wfLoadExtensionMessages( 'Translate' );
 		global $wgTranslateDocumentationLanguageCode, $wgOut, $wgRequest;
 
 		list( $key, $code, $group ) = self::getKeyCodeGroup( $object->mTitle );

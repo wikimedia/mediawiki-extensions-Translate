@@ -26,7 +26,11 @@ class TranslateUtils {
 		if ( !isset( $cache[$message] ) ) {
 			$cache[$message] = $wgContLang->ucfirst( $message );
 		}
-		return $cache[$message] . '/' . $code;
+		if ( $code ) {
+			return $cache[$message] . '/' . $code;
+		} else {
+			return $cache[$message];
+		}
 	}
 
 	public static function figureMessage( $text ) {
