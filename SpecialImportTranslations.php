@@ -11,6 +11,9 @@
 
 class SpecialImportTranslations extends SpecialPage {
 
+	/**
+	 * Set up and fill some dependencies.
+	*/
 	public function __construct() {
 		parent::__construct( 'ImportTranslations', 'translate-import' );
 		global $wgUser, $wgOut, $wgRequest;
@@ -19,11 +22,16 @@ class SpecialImportTranslations extends SpecialPage {
 		$this->request = $wgRequest;
 	}
 
+	// Dependencies
 	protected $user, $out, $request;
 
+	/**
+	 * Special page entry point.
+	 */
 	public function execute( $parameters ) {
 		$this->setHeaders();
 
+		// Security and validity checks
 		if ( !$this->userCanExecute( $this->user ) ) {
 			$this->displayRestrictionError();
 			return;
@@ -40,6 +48,7 @@ class SpecialImportTranslations extends SpecialPage {
 			return;
 		}
 
+		// Proceed to loading and parsing if possible
 		$file = null;
 		$msg = $this->loadFile( $file );
 		if ( $this->checkError( $msg ) ) return;
@@ -49,6 +58,11 @@ class SpecialImportTranslations extends SpecialPage {
 
 	}
 
+	/**
+	 * Checks for error state from the return value of loadFile and parseFile
+	 * functions. Prints the error and the form and returns true if there is an
+	 * error. Returns false and does nothing if there is no error.
+	 */
 	protected function checkError( $msg ) {
 		if ( $msg[0] !== 'ok' ) {
 			$errorWrap = "<div class='error'>\n$1\n</div>";
@@ -60,9 +74,11 @@ class SpecialImportTranslations extends SpecialPage {
 		return false;
 	}
 
+	/**
+	 * Constructs and outputs file input form with supported methods.
+	 */
 	protected function outputForm() {
-		global $wgScriptPath;
-		$this->out->addScriptFile( "$wgScriptPath/extensions/Translate/js/import.js" );
+		$this->out->addScriptClass( 'TranslateImport' );
 
 		$this->out->addHTML(
 
@@ -115,6 +131,9 @@ class SpecialImportTranslations extends SpecialPage {
 
 	}
 
+	/**
+	 * Try to get the file data from any of the supported methods.
+	 */
 	protected function loadFile( &$filedata ) {
 		$source = $this->request->getText( 'upload-type' );
 
