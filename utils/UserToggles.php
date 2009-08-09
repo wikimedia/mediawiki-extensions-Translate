@@ -11,7 +11,7 @@ class TranslatePreferences {
 			// 'translate-pref-nonewsletter' is used as opt-out for
 			// users with a confirmed e-mail address
 			$prefs = array(
-				'translate' => array(
+				'translate-nonewsletter' => array(
 					'type' => 'toggle',
 					'section' => 'personal/email',
 					'label-message' => 'translate-pref-nonewsletter'
