@@ -1,0 +1,64 @@
+---
+BASIC:
+  id: out-fudforum
+  label: FUDforum
+  description: "{{int:bw-desc-fudforum}}"
+  namespace: NS_FUDFORUM
+  display: out/fudforum/
+  class: FileBasedMessageGroup
+
+FILES:
+  class: JavaFFS
+  keySeparator: ":"
+  sourcePattern: %GROUPROOT%/fudforum/install/forum_data/thm/default/i18n/%CODE%/msg
+  targetPattern: %CODE%/msg
+  codeMap:
+    af:      afrikaans
+    ar:      arabic
+    arz:     arabicegyptianspoken
+    bg:      bulgarian
+    ca:      catalan
+    cs:      czech
+    da:      danish
+    de:      german
+    de-formal: german_formal
+    el:      greek
+    en:      english
+    es:      spanish
+    et:      estonian
+    fi:      finnish
+    fr:      french
+    gl:      galician
+    gsw:     swissgerman
+    he:      hebrew
+    hr:      croatian
+    hu:      hungarian
+    id:      indonesian
+    is:      icelandic
+    it:      italian
+    ja:      japanese
+    ko:      korean
+    ksh:     ripoarisch
+    lt:      lithuanian
+    lv:      latvian
+    nl:      dutch
+    nn:      norwegian_nynorsk
+    no:      norwegian_bokmal
+    oc:      occitan
+    pl:      polish
+    pt-br:   portuguese_br
+    pt:      portuguese
+    ro:      romanian
+    ru:      russian
+    sk:      slovak
+    sl:      slovene
+    sr-ec:   serbian
+    sv:      swedish
+    tl:      tagalog
+    tr:      turkish
+    uk:      ukrainian
+    ur:      urdu
+    vi:      vietnamese
+    vo:      volapuk
+    zh-hans: chinese_simplified
+    zh-hant: chinese_traditional

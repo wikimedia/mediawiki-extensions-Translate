@@ -1,0 +1,7 @@
+# Read-only repository setup
+cd %GROUPROOT%
+mkdir fudforum
+cd fudforum
+cvs -z3 -d :pserver:anonymous@cvs.prohost.org:/forum21 checkout install/forum_data/thm/default/i18n
+
+# TODO: commits
