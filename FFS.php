@@ -173,6 +173,13 @@ class SimpleFFS implements FFS {
 }
 
 class JavaFFS extends SimpleFFS {
+	protected $keySeparator = '=';
+
+	public function __construct( FileBasedMessageGroup $group ) {
+		parent::__construct( $group );
+		if ( isset( $this->extra['keySeparator'] ) ) 
+			$this->keySeparator = $this->extra['keySeparator'];
+	}
 
 	//
 	// READ
@@ -192,16 +199,16 @@ class JavaFFS extends SimpleFFS {
 				continue;
 			}
 
-			if ( strpos( $line, '=' ) === false ) {
-				throw new MWException( "Line without '=': $line" );
+			if ( strpos( $line, $this->keySeparator ) === false ) {
+				throw new MWException( "Line without '{$this->keySeparator}': $line" );
 			}
 
-			list( $key, $value ) = explode( '=', $line, 2 );
+			list( $key, $value ) = explode( $this->keySeparator, $line, 2 );
 			if ( $key === '' ) throw new MWException( "Empty key in line $line" );
 
 			$value = str_replace( '\n', "\n", $value );
 
-			$messages[$key] = $value;
+			$messages[$key] = ltrim($value);
 		}
 
 		$messages = $this->group->getMangler()->mangle( $messages );
@@ -234,7 +241,7 @@ class JavaFFS extends SimpleFFS {
 			$value = str_replace( "\n", '\\n', $value );
 			# Just to give an overview of translation quality
 			if ( $m->hasTag( 'fuzzy' ) ) $output .= "# Fuzzy\n";
-			$output .= "$key=$value\n";
+			$output .= "$key{$this->keySeparator}$value\n";
 		}
 		return $output;
 	}
