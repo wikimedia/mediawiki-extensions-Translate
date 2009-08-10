@@ -81,6 +81,7 @@ $wgAutoloadClasses['MessageTable'] = $dir . 'utils/MessageTable.php';
 $wgAutoloadClasses['JsSelectToInput'] = $dir . 'utils/JsSelectToInput.php';
 $wgAutoloadClasses['HTMLJsSelectToInputField'] = $dir . 'utils/HTMLJsSelectToInputField.php';
 $wgAutoloadClasses['MessageGroupCache'] = $dir . 'utils/MessageGroupCache.php';
+$wgAutoloadClasses['MessageWebImporter'] = $dir . 'utils/MessageWebImporter.php';
 
 
 # predefined groups

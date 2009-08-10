@@ -48,13 +48,37 @@ class SpecialImportTranslations extends SpecialPage {
 			return;
 		}
 
-		// Proceed to loading and parsing if possible
-		$file = null;
-		$msg = $this->loadFile( $file );
-		if ( $this->checkError( $msg ) ) return;
+		if ( $this->request->getCheck( 'process' ) ) {
+			$data = $this->getCachedData();
+			if (!$data) {
+				$this->out->addWikiMsg( 'session_fail_preview' ); // Core... bad
+				$this->outputForm();
+				return;
+			}
 
-		$msg = $this->parseFile( $file );
-		if ( $this->checkError( $msg ) ) return;
+		} else {
+			// Proceed to loading and parsing if possible
+			// TODO: use a Status object instead?
+			$file = null;
+			$msg = $this->loadFile( $file );
+			if ( $this->checkError( $msg ) ) return;
+
+			$msg = $this->parseFile( $file );
+			if ( $this->checkError( $msg ) ) return;
+
+			$data = $msg[1];
+			$this->setCachedData( $data );
+		}
+
+		$messages = $data['MESSAGES'];
+		$group = $data['METADATA']['group'];
+		$code = $data['METADATA']['code'];
+
+		$importer = new MessageWebImporter( $this->getTitle(), $group, $code );
+		$alldone = $importer->execute( $messages );
+		if ( $alldone ) {
+			$this->deleteCachedData();
+		}
 
 	}
 
@@ -80,8 +104,8 @@ class SpecialImportTranslations extends SpecialPage {
 	protected function outputForm() {
 		$this->out->addScriptClass( 'TranslateImport' );
 
+		// Ugly but necessary form building ahead, ohoy
 		$this->out->addHTML(
-
 			Xml::openElement( 'form', array(
 				'action' => $this->getTitle()->getLocalUrl(),
 				'method' => 'post',
@@ -143,7 +167,6 @@ class SpecialImportTranslations extends SpecialPage {
 
 			$url = $this->request->getText( 'upload-url' );
 			$status = Http::doDownload( $url, false );
-			var_dump( $status );
 			if ( $status->isOk() ) {
 				$filedata = $status->value;
 				return array( 'ok' );
@@ -170,19 +193,62 @@ class SpecialImportTranslations extends SpecialPage {
 		}
 	}
 
+	/**
+	 * Try parsing file.
+	 */
 	protected function parseFile( $data ) {
-		$matches = array();
-		if ( preg_match( '/X-Language-Code:\s+([a-zA-Z-_]+)/', $data, $matches ) ) {
-			$code = $matches[1];
-		} else {
-			return array( 'no-language-code' );
+		// Construct a dummy group for us...
+		// Time to rethink the interface again?
+		$group = MessageGroupBase::factory(
+			array(
+				'FILES' => array(
+					'class' => 'GettextFFS',
+					'CtxtAsKey' => true,
+				),
+				'BASIC' => array(
+					'class' => 'FileBasedMessageGroup',
+					'namespace' => -1,
+				)
+			)
+		);
+
+		$ffs = new GettextFFS( $group );
+		$data = $ffs->readFromVariable( $data );
+
+		// Special data added by GettextFFS
+		$metadata = $data['METADATA'];
+
+		// This should catch everything that is not a po file exported form us
+		if ( !isset($metadata['code']) || !isset($metadata['group']) ) {
+			return array( 'no-headers' );
 		}
 
-		if ( preg_match( '/X-Message-Group:\s+([a-zA-Z0-9-._]+)/', $data, $matches ) ) {
-			$groupId = $matches[1];
-		} else {
-			return array( 'no-group-id' );
+		// And check for stupid editors which like to drop msgctxt..
+		// which unfortunately breaks submission
+		if ( isset($metadata['warnings']) ) {
+			global $wgLang;
+			return array( 'warnings', $wgLang->commaList( $metadata['warnings'] ) );
 		}
+
+		return array( 'ok', $data );
+	}
+
+	protected function setCachedData( $data ) {
+		global $wgMemc;
+		$key = wfMemcKey( 'translate', 'webimport', $this->user->getId() );
+		$wgMemc->set( $key, $data, 60*15 ); // 15 minutes
+	}
+
+	protected function getCachedData() {
+		global $wgMemc;
+		$key = wfMemcKey( 'translate', 'webimport', $this->user->getId() );
+		return $wgMemc->get( $key );
+	}
+
+	protected function deleteCachedData() {
+		global $wgMemc;
+		$key = wfMemcKey( 'translate', 'webimport', $this->user->getId() );
+		return $wgMemc->delete( $key );
 	}
 
 }

@@ -295,10 +295,11 @@ $1',
 	'translate-import-err-invalid-title' => 'Provided file name <nowiki>$1</nowiki> was invalid.',
 	'translate-import-err-no-such-file' => 'File <nowiki>$1</nowiki> does not exist or has not been uploaded locally.',
 
-	'translate-import-err-no-language-code' => 'File is not a well formed Gettext file in Translate extension format:
-Unable to determine language code.',
-	'translate-import-err-no-language-code' => 'File is not a well formed Gettext file in Translate extension format:
-Unable to determine group ID.',
+	'translate-import-err-no-headers' => 'File is not a well formed Gettext file in Translate extension format:
+Unable to determine group and language from file headers.',
+	'translate-import-err-warnings' => 'The file is not well formed.
+Make sure your editor does not remove msgctxt fields.
+Details: $1',
 );
 
 /** Message documentation (Message documentation)
