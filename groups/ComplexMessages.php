@@ -489,7 +489,7 @@ class SpecialPageAliasesCM extends ComplexMessages {
 
 	public function highlight( $key, $values ) {
 		if ( count( $values ) ) {
-			if ( !isset($values[0]) ) throw new MWException( "Something missing from values: " .  print_rt( $values, true ) );
+			if ( !isset($values[0]) ) throw new MWException( "Something missing from values: " .  print_r( $values, true ) );
 			$values[0] = "<b>$values[0]</b>";
 		}
 		return $values;
