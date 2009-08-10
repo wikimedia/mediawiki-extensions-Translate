@@ -70,7 +70,7 @@ class GettextFormatReader extends SimpleFormatReader {
 			$matches = array();
 			if ( preg_match( "/^msgctxt\s($poformat)/mx", $section, $matches ) ) {
 				// Remove quoting
-				$item['ctxt'] = self::formatForWiki( $matches[1] );
+				$item['ctxt'] = GettextFFS::formatForWiki( $matches[1] );
 			} elseif ( $useCtxtAsKey ) {
 				// Invalid message
 				continue;
@@ -78,7 +78,7 @@ class GettextFormatReader extends SimpleFormatReader {
 
 			$matches = array();
 			if ( preg_match( "/^msgid\s($poformat)/mx", $section, $matches ) ) {
-				$item['id'] = self::formatForWiki( $matches[1] );
+				$item['id'] = GettextFFS::formatForWiki( $matches[1] );
 			} else {
 				# echo "Definition not found!\n$section";
 				continue;
@@ -88,7 +88,7 @@ class GettextFormatReader extends SimpleFormatReader {
 			$matches = array();
 			if ( preg_match( "/^msgid_plural\s($poformat)/mx", $section, $matches ) ) {
 				$pluralMessage = true;
-				$plural = self::formatForWiki( $matches[1] );
+				$plural = GettextFFS::formatForWiki( $matches[1] );
 				$item['id'] = "{{PLURAL:GETTEXT|{$item['id']}|$plural}}";
 			}
 
@@ -98,7 +98,7 @@ class GettextFormatReader extends SimpleFormatReader {
 				for ( $i = 0; $i < $pluralForms[1]; $i++ ) {
 					$matches = array();
 					if ( preg_match( "/^msgstr\[$i\]\s($poformat)/mx", $section, $matches ) ) {
-						$actualForms[] = self::formatForWiki( $matches[1] );
+						$actualForms[] = GettextFFS::formatForWiki( $matches[1] );
 					} else {
 						throw new MWException( "Plural not found, expecting $i" );
 					}
@@ -109,7 +109,7 @@ class GettextFormatReader extends SimpleFormatReader {
 
 				$matches = array();
 				if ( preg_match( "/^msgstr\s($poformat)/mx", $section, $matches ) ) {
-					$item['str'] = self::formatForWiki( $matches[1] );
+					$item['str'] = GettextFFS::formatForWiki( $matches[1] );
 				} else {
 					# echo "Translation not found!\n";
 					continue;
@@ -142,15 +142,7 @@ class GettextFormatReader extends SimpleFormatReader {
 			if ( $useCtxtAsKey ) {
 				$key = $item['ctxt'];
 			} else {
-				global $wgLegalTitleChars;
-				$hash = sha1( $item['ctxt'] . $item['id'] );
-				$snippet = $item['id'];
-				$snippet = preg_replace( "/[^$wgLegalTitleChars]/", ' ', $snippet );
-				$snippet = preg_replace( "/[:&%\/_]/", ' ', $snippet );
-				$snippet = preg_replace( "/ {2,}/", ' ', $snippet );
-				$snippet = $lang->truncate( $snippet, 30, '' );
-				$snippet = str_replace( ' ', '_', trim( $snippet ) );
-				$key = $this->prefix . $hash . '-' . $snippet;
+				$key = GettextFFS::generateKeyFromItem( $item );
 			}
 
 			$changes[$key] = $item;
@@ -160,15 +152,6 @@ class GettextFormatReader extends SimpleFormatReader {
 		return $changes;
 	}
 
-	public static function formatForWiki( $data ) {
-		$quotePattern = '/(^"|"$\n?)/m';
-		$data = preg_replace( $quotePattern, '', $data );
-		$data = stripcslashes( $data );
-		if ( preg_match( '/\s$/', $data ) ) {
-			$data .= '\\';
-		}
-		return $data;
-	}
 
 	public function parseMessages( StringMangler $mangler ) {
 		$defs = $this->parseFile();
@@ -392,4 +375,219 @@ class GettextFormatWriter extends SimpleFormatWriter {
 
 		return $splitPlurals;
 	}
+}
+
+class GettextFFS extends SimpleFFS {
+
+	//
+	// READ
+	//
+
+	public function readFromVariable( $data ) {
+		$authors = $messages = array();
+
+		# Authors first
+		$matches = array();
+		preg_match_all( '/^#\s*Author:\s*(.*)$/m', $data, $matches );
+		$authors = $matches[1];
+
+		# Then messages and everything else
+		$parsedData = $this->parseGettext( $data );
+		$parsedData['MESSAGES'] = $this->group->getMangler()->mangle( $parsedData['MESSAGES'] );
+		$parsedData['AUTHORS'] = $authors;
+
+		return $parsedData;
+	}
+
+	public function parseGettext( $data ) {
+		$data = str_replace( "\r\n", "\n", $data );
+		$messages = $template = $metadata = array();
+
+		// Defined only once. Be sure to *not* use it without match, or you might get old data
+		$matches = array();
+
+		if ( preg_match( '/X-Language-Code:\s+([a-zA-Z-_]+)/', $data, $matches ) ) {
+			$metadata['code'] = $matches[1];
+		} 
+
+		if ( preg_match( '/X-Message-Group:\s+([a-zA-Z0-9-_]+)/', $data, $matches ) ) {
+			$metadata['group'] = $matches[1];
+		}
+
+		$pluralForms = false;
+		if ( preg_match( '/Plural-Forms:\s+nplurals=([0-9]+).*;/', $data, $matches ) ) {
+			$metadata['plurals'] = $matches;
+			$pluralForms = $matches;
+		}
+
+		$useCtxtAsKey = isset($this->extra['CtxtAsKey']) && $this->extra['CtxtAsKey'];
+
+		$poformat = '".*"\n?(^".*"$\n?)*';
+		$quotePattern = '/(^"|"$\n?)/m';
+
+		$sections = preg_split( '/\n{2,}/', $data );
+		array_shift( $sections ); // First isn't an actual message
+
+		foreach ( $sections as $section ) {
+			if ( trim( $section ) === '' ) continue;
+
+			$item = array(
+				'ctxt'  => '',
+				'id'    => '',
+				'str'   => '',
+				'flags' => array(),
+				'comments' => array(),
+			);
+
+			$matches = array();
+			if ( preg_match( "/^msgid\s($poformat)/mx", $section, $matches ) ) {
+				$item['id'] = self::formatForWiki( $matches[1] );
+			} else {
+				throw new MWException( "Unable to parse msgid:\n\n$section" );
+			}
+
+			if ( preg_match( "/^msgctxt\s($poformat)/mx", $section, $matches ) ) {
+				$item['ctxt'] = self::formatForWiki( $matches[1] );
+			} elseif ( $useCtxtAsKey ) { // Invalid message
+				$metadata['warnings'][] = "Ctxt missing for {$item['id']}";
+			}
+
+
+			$pluralMessage = false;
+			if ( preg_match( "/^msgid_plural\s($poformat)/mx", $section, $matches ) ) {
+				$pluralMessage = true;
+				$plural = self::formatForWiki( $matches[1] );
+				$item['id'] = "{{PLURAL:GETTEXT|{$item['id']}|$plural}}";
+			}
+
+			if ( $pluralMessage ) {
+
+				$actualForms = array();
+				for ( $i = 0; $i < $pluralForms[1]; $i++ ) {
+					if ( preg_match( "/^msgstr\[$i\]\s($poformat)/mx", $section, $matches ) ) {
+						$actualForms[] = self::formatForWiki( $matches[1] );
+					} else {
+						throw new MWException( "Plural not found, expecting $i" );
+					}
+				}
+
+				$item['str'] = '{{PLURAL:GETTEXT|' . implode( '|', $actualForms ) . '}}';
+			} else {
+
+				$matches = array();
+				if ( preg_match( "/^msgstr\s($poformat)/mx", $section, $matches ) ) {
+					$item['str'] = self::formatForWiki( $matches[1] );
+				} else {
+					throw new MWException( "Unable to parse msgstr:\n\n$section" );
+				}
+			}
+
+			// Parse flags
+			$matches = array();
+			if ( preg_match( '/^#,(.*)$/mu', $section, $matches ) ) {
+				$flags = array_map( 'trim', explode( ',', $matches[1] ) );
+				foreach ( $flags as $key => $flag ) {
+					if ( $flag === 'fuzzy' ) {
+						$item['str'] = TRANSLATE_FUZZY . $item['str'];
+						unset( $flags[$key] );
+					}
+				}
+				$item['flags'] = $flags;
+			}
+
+			// Rest of the comments
+			$matches = array();
+			if ( preg_match_all( '/^#(.?) (.*)$/m', $section, $matches, PREG_SET_ORDER ) ) {
+				foreach ( $matches as $match ) {
+					if ( $match[1] !== ',' ) {
+						$item['comments'][$match[1]][] = $match[2];
+					}
+				}
+			}
+
+			if ( $useCtxtAsKey ) {
+				$key = $item['ctxt'];
+			} else {
+				$key = self::generateKeyFromItem( $item );
+			}
+
+			$messages[$key] = $item['str'];
+			$template[$key] = $item;
+
+		}
+
+		return array(
+			'MESSAGES' => $messages,
+			'TEMPLATE' => $template,
+			'METADATA' => $metadata,
+		);
+	}
+
+	public static function generateKeyFromItem( $item ) {
+		$lang = Language::factory( 'en' );
+		global $wgLegalTitleChars;
+		$hash = sha1( $item['ctxt'] . $item['id'] );
+		$snippet = $item['id'];
+		$snippet = preg_replace( "/[^$wgLegalTitleChars]/", ' ', $snippet );
+		$snippet = preg_replace( "/[:&%\/_]/", ' ', $snippet );
+		$snippet = preg_replace( "/ {2,}/", ' ', $snippet );
+		$snippet = $lang->truncate( $snippet, 30, '' );
+		$snippet = str_replace( ' ', '_', trim( $snippet ) );
+		return "$hash-$snippet";
+	}
+
+	public static function formatForWiki( $data ) {
+		$quotePattern = '/(^"|"$\n?)/m';
+		$data = preg_replace( $quotePattern, '', $data );
+		$data = stripcslashes( $data );
+		if ( preg_match( '/\s$/', $data ) ) {
+			$data .= '\\';
+		}
+		return $data;
+	}
+
+	//
+	// WRITE
+	//
+
+	protected function writeReal( MessageCollection $collection ) {
+		throw new MWException( 'Not implemented' );
+		$output  = $this->doHeader( $collection );
+		$output .= $this->doAuthors( $collection );
+
+		$mangler = $this->group->getMangler();
+
+		$messages = array();
+		foreach ( $collection as $key => $m ) {
+			$key = $mangler->unmangle( $key );
+			$value = $m->translation();
+			$value = str_replace( TRANSLATE_FUZZY, '', $value );
+			if ( $value === '' ) continue;
+
+			$messages[$key] = $value;
+		}
+		$output .= TranslateSpyc::dump( $messages );
+		return $output;
+	}
+
+	protected function doHeader( MessageCollection $collection ) {
+		global $wgSitename;
+		$code = $collection->code;
+		$name = TranslateUtils::getLanguageName( $code );
+		$native = TranslateUtils::getLanguageName( $code, true );
+		$output  = "# Messages for $name ($native)\n";
+		$output .= "# Exported from $wgSitename\n";
+		return $output;
+	}
+
+	protected function doAuthors( MessageCollection $collection ) {
+		$output = '';
+		$authors = $collection->getAuthors();
+		$authors = $this->filterAuthors( $authors, $collection->code );
+		foreach ( $authors as $author ) {
+			$output .= "# Author: $author\n";
+		}
+		return $output;
+	}
+
 }

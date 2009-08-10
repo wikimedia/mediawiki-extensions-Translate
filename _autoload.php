@@ -116,3 +116,4 @@ $wgAutoloadClasses['SimpleFFS'] = $dir . 'FFS.php';
 $wgAutoloadClasses['JavaFFS'] = $dir . 'FFS.php';
 $wgAutoloadClasses['YamlFFS'] = $dir . 'FFS.php';
 $wgAutoloadClasses['JavaScriptFFS'] = $dir . 'FFS.php';
+$wgAutoloadClasses['GettextFFS'] = $dir . '/ffs/Gettext.php';
