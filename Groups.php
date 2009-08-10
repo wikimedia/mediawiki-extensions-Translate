@@ -182,9 +182,7 @@ abstract class MessageGroupBase implements MessageGroup {
 
 class FileBasedMessageGroup extends MessageGroupBase {
 	public function exists() {
-		$ffs = $this->getFFS();
-		$data = $ffs->read( 'en' );
-		return $data && count($data['MESSAGES']);
+		return (bool) count($this->load('en'));
 	}
 
 	public function load( $code ) {
