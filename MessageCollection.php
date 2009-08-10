@@ -286,6 +286,10 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$code = $this->code;
 		foreach( $keys as $key ) {
 			$title = Title::makeTitleSafe( $namespace, $key. '/' . $code );
+			if ( !$title ) {
+				wfWarn( "Invalid title $namespace:$key/$code" );
+				continue;
+			}
 			$newkeys[$key] = $title->getDBKey();
 		}
 		return $newkeys;
