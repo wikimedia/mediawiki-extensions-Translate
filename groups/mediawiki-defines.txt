@@ -521,6 +521,7 @@ optional = linkopenid-prefs, linkopenid-prefstext-xrdsurl
 Liquid Threads
 file = LiquidThreads/i18n/Lqt.i18n.php
 aliasfile = LiquidThreads/i18n/Lqt.alias.php
+magicfile = LiquidThreads/i18n/LiquidThreads.magic.php
 descmsg = lqt-desc
 optional = lqt_rc_ellipsis
 ignored = lqt_header_warning_before_big
