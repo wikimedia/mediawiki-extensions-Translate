@@ -137,6 +137,7 @@ Naam: $1',
  */
 $messages['ar'] = array(
 	'pagetranslation' => 'ترجمة صفحة',
+	'right-pagetranslation' => 'عّلم نسخًا م هذه الصفحة للترجمة',
 	'tpt-desc' => 'امتداد لترجمة محتويات الصفحات',
 	'tpt-section' => 'وحدة الترجمة $1',
 	'tpt-section-new' => 'وحدة ترجمة جديدة.
@@ -153,9 +154,16 @@ $messages['ar'] = array(
 	'tpt-badtitle' => 'اسم الصّفحة المعطى ($1) ليس عنوانا صحيحا',
 	'tpt-oldrevision' => '$2 ليست آخر نسخة للصّفحة [[$1]].
 فقط آخر النسخ يمكن أن تؤشّر للترجمة.',
+	'tpt-notsuitable' => 'الصفحة $1 غير مناسبة للترجمة.
+تأكد أن لها وسم <nowiki><translate></nowiki> وأن لها صياغة صحيحة.',
 	'tpt-badsect' => '"$1" ليس اسمًا صحيحًا لوحدة الترجمة $2.',
+	'tpt-showpage-intro' => 'أدناه تُسرد الأقسام الجديدة والموجودة والمحذوفة.
+قبل تعليم هذه النسخة للترجمة، تحقق من أن التغييرات على الأقسام مُقلّلة لتفادي العمل غير الضروري من المترجمين.',
 	'tpt-mark-summary' => 'علَّم هذه النسخة للترجمة',
 	'tpt-edit-failed' => 'تعذّر تحديث الصفحة: $1',
+	'tpt-already-marked' => 'آخر نسخة من هذه الصفحة مُعلّمة بالفعل للترجمة.',
+	'tpt-list-nopages' => 'لا صفحات مُعلّمة للترجمة أو جاهزة للتعليم للترجمة.',
+	'tpt-old-pages' => 'إحدى نسخ {{PLURAL:$1||هذه الصفحة|هاتان الصفحتان|هذه الصفحات}} عُلّمت للترجمة.',
 	'tpt-rev-latest' => 'آخر نسخة',
 	'tpt-rev-old' => 'الفرق مقابل النسخة المعلّمة السابقة',
 	'tpt-rev-mark-new' => 'علّم هذه النسخة للترجمة',
@@ -164,6 +172,8 @@ $messages['ar'] = array(
 	'translate-tag-markthis' => 'علّم هذه الصفحة للترجمة',
 	'tpt-translation-intro-fuzzy' => 'الترجمات غير المُحدّثة مُعلّمة هكذا.',
 	'tpt-languages-legend' => 'لغات أخرى:',
+	'tpt-target-page' => 'لا يمكن تحديث هذه الصفحة يدويًا.
+هذه الصفحة ترجمة لصفحة [[$1]] ويمكن تحديث الترجمة باستخدام [$2 أداة الترجمة].',
 	'tpt-render-summary' => 'تحديث لمطابقة نسخة صفحة المصدر الجديدة',
 	'tpt-download-page' => 'صدّر الصفحة مع الترجمات',
 );
@@ -536,6 +546,8 @@ $messages['el'] = array(
  * @author Yekrats
  */
 $messages['eo'] = array(
+	'tpt-template' => 'Paĝa ŝablono',
+	'tpt-diff-new' => 'Nova teksto',
 	'translate-tag-translate-link-desc' => 'Traduki ĉi tiun paĝon',
 );
 
@@ -1359,12 +1371,18 @@ Dës Säit ass eng Iwwersetzung vun der Säit [[$1]] an d'Iwwersetzung ka mat H�
 D'Säit, déi Dir versicht z'änneren schéngt net mat enger Säit déi fir d'iwwersetzung markéiert ass ze korrespondéieren.",
 	'tpt-install' => "Lancéiert php maintenance/update.php oder web install fir d'Fonctioun vun der Säiteniwwersetzung anzeschalten.",
 	'tpt-render-summary' => 'Aktualiséieren fir mat der neier Versioun vun der Quellsäit iwwereneenzestëmmen',
+	'tpt-download-page' => 'Säit mat Iwwersetzungen exportéieren',
 );
 
 /** Macedonian (Македонски)
+ * @author Bjankuloski06
  * @author Brest
  */
 $messages['mk'] = array(
+	'pagetranslation' => 'Превод на страница',
+	'tpt-diff-old' => 'Претходен текст.',
+	'tpt-diff-new' => 'Нов текст',
+	'tpt-rev-latest' => 'најнова верзија',
 	'translate-tag-translate-link-desc' => 'Преведи ја оваа страница',
 );
 
@@ -1705,6 +1723,7 @@ Esta página que você está tentando editar não aparenta corresponder a nenhum
  */
 $messages['ro'] = array(
 	'pagetranslation' => 'Traducerea paginii',
+	'tpt-desc' => 'Extensie pentru traducerea conţinutului paginilor',
 	'tpt-section' => 'Unitate de traducere $1',
 	'tpt-section-new' => 'Unitate de traducere nouă.
 Nume: $1',
@@ -1972,9 +1991,43 @@ $messages['te'] = array(
 
 /** Thai (ไทย)
  * @author Ans
+ * @author Woraponboonkerd
  */
 $messages['th'] = array(
+	'pagetranslation' => 'การแปลภาษา',
+	'right-pagetranslation' => 'กำหนดให้รุ่นปรับปรุงนี้เพื่อการแปลภาษา',
+	'tpt-desc' => 'ส่วนเพิ่มเติมสำหรับหน้าที่มีการแปลเนื้อหา',
+	'tpt-section' => 'หน่วยการแปล $1',
+	'tpt-section-new' => 'หน่วยการแปลใหม่
+
+ชื่อ: $1',
+	'tpt-section-deleted' => 'หน่วยการแปล $1',
+	'tpt-template' => 'แม่แบบของหน้า',
+	'tpt-templatediff' => 'แม่แบบของหน้านี้ได้ถูกเปลี่ยนแปลงแล้ว',
+	'tpt-diff-old' => 'อักษรก่อนหน้า',
+	'tpt-submit' => 'กำหนดให้รุ่นนี้เพื่อการแปลภาษา',
+	'tpt-sections-oldnew' => 'หน่วยการแปลใหม่และที่มีอยู่เดิมแล้ว',
+	'tpt-sections-deleted' => 'หน่วยการแปลที่ถูกลบแล้ว',
+	'tpt-sections-template' => 'แม่แบบหน้าการแปลภาษา',
+	'tpt-badtitle' => 'ชื่อหน้าที่กำหนดมานั้น ($1) ไม่ใช่ชื่อหน้าที่ถูกต้อง',
+	'tpt-oldrevision' => '$2 ไม่ใช่รุ่นปรับปรุงล่าสุดของหน้าชื่อ[[$1]]
+
+เฉพาะรุ่นปรับปรุงล่าสุดเท่านั้นที่สา่มารถกำหนดเพื่อการแปลภาษา',
+	'tpt-notsuitable' => 'หน้า $1 นั้นไม่เมาะสมในการแปลภาษา
+
+ตรวจสอบให้แน่ใจว่ามีแท็ก <nowiki><translate></nowiki> อยู่และมีประโยคของโค้ดที่ถูกต้อง',
+	'tpt-saveok' => 'หน้า [[$1]] ได้ถูกกำหนดไว้สำหรับการแปลภาษากับหน่วยการแปลภาษา $2 หน่วย
+
+หน้านี้สามารถ<span class="plainlinks">[$3 เริ่มแปลภาษาได้แล้ว]</span>',
+	'tpt-badsect' => '"$1" ไม่ใช่ชื่อที่ถูกต้องสำหรับหน่วยการแปลภาษา $2',
+	'tpt-edit-failed' => 'ไม่สามารถปรับปรุงหน้า: $1 ได้',
+	'tpt-translate-this' => 'แปลหน้านี้',
 	'translate-tag-translate-link-desc' => 'แปลหน้านี้',
+	'tpt-translation-intro-fuzzy' => 'การแปลภาษาที่ตกรุ่นแล้วจะถูกกำหนดในลักษณะนี้',
+	'tpt-languages-legend' => 'ภาษาอื่นๆ:',
+	'tpt-target-page' => 'หน้านี้ไม่สามารถถูกปรับปรุงตามปกติได้
+
+หน้านี้เป็นหน้าการแปลของหน้า[[$1]] และสามารถปรับปรุงการแปลได้โดยใช้[เครื่องมือการแปล $2]',
 );
 
 /** Tagalog (Tagalog)
