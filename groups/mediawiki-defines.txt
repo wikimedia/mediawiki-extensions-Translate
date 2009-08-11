@@ -550,9 +550,9 @@ Maps
 descmsg = maps_desc
 optional = maps_name
 
-Math Stat
-file = MathStatFunctions/MathStatFunctions.i18n.php
+Math Stat Functions
 descmsg = msfunc_desc
+magicfile = MathStatFunctions/MathStatFunctions.i18n.magic.php
 
 Media Functions
 
