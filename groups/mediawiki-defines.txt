@@ -94,6 +94,9 @@ optional = categoryonupload-none
 Category Stepper
 ignored = categorystepper
 
+Category Tests
+magicfile = CategoryTests/CategoryTests.i18n.magic.php
+
 Category Tree
 aliasfile = CategoryTree/CategoryTree.alias.php
 ignored = categorytree-collapse-bullet, categorytree-expand-bullet,
