@@ -548,7 +548,17 @@ $messages['el'] = array(
 $messages['eo'] = array(
 	'tpt-template' => 'Paĝa ŝablono',
 	'tpt-diff-new' => 'Nova teksto',
+	'tpt-notsuitable' => 'Paĝo $1 ne taŭgas por traduki.
+Certigu ke ĝi havas etikedojn <nowiki><translate></nowiki> kaj havas validan sintakson.',
+	'tpt-mark-summary' => 'Markis ĉi tiun version por traduki.',
+	'tpt-edit-failed' => 'Ne eblis ĝisdatigi la paĝon: $1',
+	'tpt-rev-latest' => 'lasta versio',
+	'tpt-rev-old' => 'diferenco de la antaŭa markita versio',
+	'tpt-rev-mark-new' => 'marki ĉi tiun version por esti tradukita',
+	'tpt-translate-this' => 'traduki ĉi tiun paĝon',
 	'translate-tag-translate-link-desc' => 'Traduki ĉi tiun paĝon',
+	'tpt-languages-legend' => 'Aliaj lingvoj:',
+	'tpt-download-page' => 'Eksporti paĝon kun tradukoj',
 );
 
 /** Spanish (Español)
@@ -2005,6 +2015,7 @@ $messages['th'] = array(
 	'tpt-template' => 'แม่แบบของหน้า',
 	'tpt-templatediff' => 'แม่แบบของหน้านี้ได้ถูกเปลี่ยนแปลงแล้ว',
 	'tpt-diff-old' => 'อักษรก่อนหน้า',
+	'tpt-diff-new' => 'คำใหม่',
 	'tpt-submit' => 'กำหนดให้รุ่นนี้เพื่อการแปลภาษา',
 	'tpt-sections-oldnew' => 'หน่วยการแปลใหม่และที่มีอยู่เดิมแล้ว',
 	'tpt-sections-deleted' => 'หน่วยการแปลที่ถูกลบแล้ว',
@@ -2020,14 +2031,31 @@ $messages['th'] = array(
 
 หน้านี้สามารถ<span class="plainlinks">[$3 เริ่มแปลภาษาได้แล้ว]</span>',
 	'tpt-badsect' => '"$1" ไม่ใช่ชื่อที่ถูกต้องสำหรับหน่วยการแปลภาษา $2',
+	'tpt-showpage-intro' => 'ส่วนที่มีการเพิ่มใหม่, มีอยู่เดิม และที่ถูกลบไปแล้วนั้นปรากฎด้านล่างนี้
+ก่อนที่จะทำให้รุ่นปรับปรุงนี้สำหรับการแปลภาษา ตรวจสอบให้แน่ใจว่าการเปลี่ยนแปลงของส่วนต่างๆ ได้ถูกลดลงมาเพื่อเป็นการหลีกเลี่ยงงานที่ไม่จำเป็นของผู้แปลภาษา',
+	'tpt-mark-summary' => 'กำหนดให้รุ่นปรับปรุงนี้สำหรับการแปลภาษา',
 	'tpt-edit-failed' => 'ไม่สามารถปรับปรุงหน้า: $1 ได้',
+	'tpt-already-marked' => 'รุ่นปรับปรุงล่าสุดของหน้านี้ได้ถูกกำหนดเพื่อการแปลภาษาแล้ว',
+	'tpt-list-nopages' => 'ไม่มีหน้าใดๆ ที่ถูกกำหนดเพื่อการแปลภาษา หรือพร้อมที่จะถูกกำหนดเพื่อการแปลภาษา',
+	'tpt-old-pages' => 'รุ่นปรับปรุงบางรุ่นของ{{PLURAL:$1|หน้านี้|หน้าต่างๆ เหล่านี้}} ได้ถูกกำหนดเพื่อการแปลภาษาแล้ว',
+	'tpt-new-pages' => '{{PLURAL:$1|หน้านี้|หน้าเหล่านี้}} มีที่คั่นสำหรับการแปลภาษาอยู่ แต่ไม่มีรุ่นปรับปรุงใดๆ เลยของ{{PLURAL:$1|หน้านี้|หน้าแหล่านี้}} ที่ได้ถูกกำหนดเพื่อการแปลภาษา',
+	'tpt-rev-latest' => 'รุ่นปรับปรุงล่าสุด',
+	'tpt-rev-old' => 'เทียบความแตกต่างไปยังรุ่นที่กำหนดก่อนหน้านี้',
+	'tpt-rev-mark-new' => 'กำหนดให้รุ่นปรับปรุงนี้เพื่อการแปลภาษา',
 	'tpt-translate-this' => 'แปลหน้านี้',
 	'translate-tag-translate-link-desc' => 'แปลหน้านี้',
+	'translate-tag-markthis' => 'กำหนดให้หน้านี้เพื่อการแปลภาษา',
+	'translate-tag-markthisagain' => 'หน้านี้มี<span class="plainlinks">[$1 ความเปลี่ยนแปลง]</span> นับตั้งแต่ครั้งสุดท้ายที่<span class="plainlinks">[$2 ถูกกำหนดเพื่อการแปลภาษา]</span>.',
+	'translate-tag-hasnew' => 'หน้านี้มี<span class="plainlinks">[$1 ความเปลี่ยนแปลง]</span> ที่ไม่ได้ถูกกำหนดเพื่อการแปลภาษา',
+	'tpt-translation-intro' => 'หน้านี้คือ<span class="plainlinks">[$1 รุ่นปรับปรุงที่เริ่มแปลแล้ว]</span> ของ [[$2]] และการแปลภาษาเสร็จสิ้นแล้ว $3 เปอร์เซ็นต์ของทั้งหมดและเป็นรุ่นล่าสุด',
 	'tpt-translation-intro-fuzzy' => 'การแปลภาษาที่ตกรุ่นแล้วจะถูกกำหนดในลักษณะนี้',
 	'tpt-languages-legend' => 'ภาษาอื่นๆ:',
 	'tpt-target-page' => 'หน้านี้ไม่สามารถถูกปรับปรุงตามปกติได้
 
 หน้านี้เป็นหน้าการแปลของหน้า[[$1]] และสามารถปรับปรุงการแปลได้โดยใช้[เครื่องมือการแปล $2]',
+	'tpt-install' => 'เข้าไปที่ maintenance/update.php ใน PHP หรือเข้าไปที่ตัวติดตั้งในเว็บเพื่อเปิดคุณสมบัติการแปลภาษา',
+	'tpt-render-summary' => 'กำลังอัพเดตเพื่อทำให้ตรงกันกับรุ่นปรับปรุงใหม่ของหน้่าโค้ดหลัก',
+	'tpt-download-page' => 'ส่งหน้าออกไปพร้อมการแปลภาษา',
 );
 
 /** Tagalog (Tagalog)
@@ -2130,6 +2158,10 @@ $messages['zh-hans'] = array(
  * @author Wrightbus
  */
 $messages['zh-hant'] = array(
+	'pagetranslation' => '頁面翻譯',
+	'tpt-template' => '頁面模板',
+	'tpt-translate-this' => '翻譯本頁',
 	'translate-tag-translate-link-desc' => '翻譯本頁',
+	'tpt-languages-legend' => '其它語言：',
 );
 
