@@ -493,6 +493,9 @@ Input Box
 Inspect Cache
 aliasfile = InspectCache/InspectCache.alias.php
 
+Interlanguage
+magicfile = Interlanguage/Interlanguage.i18n.magic.php
+
 Intersection
 file = intersection/DynamicPageList.i18n.php
 
