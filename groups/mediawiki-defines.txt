@@ -670,6 +670,7 @@ aliasfile = PasswordReset/PasswordReset.alias.php
 
 Parser Functions
 descmsg = pfunc_desc
+magicfile = ParserFunctions/ParserFunctions.i18n.magic.php
 
 Patroller
 aliasfile = Patroller/Patroller.alias.php
