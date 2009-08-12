@@ -1181,6 +1181,7 @@ file = WhoIsWatching/SpecialWhoIsWatching.i18n.php
 aliasfile = WhoIsWatching/SpecialWhoIsWatching.alias.php
 
 Widgets
+magicfile = Widgets/Widgets.i18n.magic.php
 
 Wiki Article Feeds
 
