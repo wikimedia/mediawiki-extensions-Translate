@@ -332,6 +332,7 @@ Extension Distributor
 descmsg = extdist-desc
 
 External Data
+magicfile = ExternalData/ExternalData.i18n.magic.php
 
 Farmer
 aliasfile = Farmer/Farmer.alias.php
