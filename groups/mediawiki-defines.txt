@@ -818,6 +818,7 @@ ignored = securepoll-custom-unqualified
 Select Category
 
 Semantic Compound Queries
+magicfile = SemanticCompoundQueries/SemanticCompoundQueries.i18n.magic.php
 
 Semantic Drilldown
 file = SemanticDrilldown/languages/SD_Messages.php
