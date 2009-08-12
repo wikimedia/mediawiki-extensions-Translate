@@ -525,12 +525,23 @@ Zda se, až bok, kótaryž wopytujoš wobźěłaś, njewótpowědujo bokoju, kó
  */
 $messages['el'] = array(
 	'pagetranslation' => 'Μετάφραση σελίδων',
+	'tpt-section' => 'Μονάδα μετάφρασης $1',
+	'tpt-section-new' => 'Νέα μονάδα μετάφρασης.
+Όνομα: $1',
+	'tpt-section-deleted' => 'Μονάδα μετάφρασης $1',
 	'tpt-template' => 'Πρότυπο σελίδας',
 	'tpt-templatediff' => 'Το πρότυπο σελίδας έχει αλλάξει.',
 	'tpt-diff-old' => 'Προηγούμενο κείμενο',
 	'tpt-diff-new' => 'Νέο κείμενο',
 	'tpt-submit' => 'Σήμανση αυτής της έκδοσης για μετάφραση',
+	'tpt-sections-oldnew' => 'Νέες και υπάρχοντες μονάδες μετάφρασης',
+	'tpt-sections-deleted' => 'Διαγραμμένες μονάδες μετάφρασης',
 	'tpt-sections-template' => 'Πρότυπο μετάφρασης σελίδας',
+	'tpt-badtitle' => 'Ο τίτλος σελίδας που δώθηκε ($1) δεν είναι έγκυρος τίτλος',
+	'tpt-notsuitable' => 'Η σελίδα $1 δεν είναι κατάλληλη για μετάφραση.
+Σιγουρέψτε ότι έχει τις ετικέτες <nowiki><translate></nowiki> και έχει εγκυρη σύνταξη.',
+	'tpt-badsect' => 'Το "$1" δεν είναι έγκυρο όνομα για τη μονάδα μετάφρασης $2.',
+	'tpt-mark-summary' => 'Αυτή η έκδοση σημάνθηκε για μετάφραση',
 	'tpt-edit-failed' => 'Δεν ήταν δυνατό να ενημερωθεί η σελίδα: $1',
 	'tpt-rev-latest' => 'τελευταία έκδοση',
 	'tpt-rev-old' => 'διαφορά από την προηγούμενη παραμένουσα αναθεώρηση',
@@ -1641,7 +1652,14 @@ $messages['pl'] = array(
 $messages['ps'] = array(
 	'pagetranslation' => 'د مخ ژباړه',
 	'tpt-template' => 'د مخ کينډۍ',
+	'tpt-templatediff' => 'د مخ کينډۍ بدلون موندلی.',
+	'tpt-diff-old' => 'پخوانی متن',
 	'tpt-diff-new' => 'نوی متن',
+	'tpt-sections-template' => 'د ژباړې د مخ کينډۍ',
+	'tpt-translate-this' => 'همدا مخ ژباړل',
+	'translate-tag-translate-link-desc' => 'همدا مخ ژباړل',
+	'translate-tag-markthis' => 'همدا مخ د ژباړې لپاره په نښه کول',
+	'tpt-languages-legend' => 'نورې ژبې:',
 );
 
 /** Portuguese (Português)
@@ -1689,13 +1707,18 @@ A página que você está a tentar editar não parece corresponder a qualquer p�
 
 /** Brazilian Portuguese (Português do Brasil)
  * @author Eduardo.mps
+ * @author Heldergeovane
  */
 $messages['pt-br'] = array(
 	'pagetranslation' => 'Tradução de páginas',
 	'right-pagetranslation' => 'Marca versões de páginas para tradução',
 	'tpt-desc' => 'Extensão para traduzir páginas de conteúdo',
-	'tpt-section' => 'Seção:',
-	'tpt-section-new' => 'Nova Seção:',
+	'tpt-section' => 'Unidade de tradução $1',
+	'tpt-section-new' => 'Nova unidade de tradução.
+Nome: $1',
+	'tpt-section-deleted' => 'Unidade de tradução $1',
+	'tpt-template' => 'Modelo de página',
+	'tpt-templatediff' => 'O modelo de página foi modificado.',
 	'tpt-diff-old' => 'Texto anterior',
 	'tpt-diff-new' => 'Novo texto',
 	'tpt-submit' => 'Marca esta versão para tradução',
@@ -1721,6 +1744,8 @@ Antes de marcar esta versão para tradução, verifique se as mudanças nas seç
 	'tpt-translate-this' => 'traduzir esta página',
 	'translate-tag-translate-link-desc' => 'Traduzir esta página',
 	'translate-tag-markthis' => 'Marcar esta página para tradução',
+	'tpt-translation-intro-fuzzy' => 'Traduções desatualizadas estão marcadas assim.',
+	'tpt-languages-legend' => 'Outros idiomas:',
 	'tpt-target-page' => 'Esta página não pode ser atualizada manualmente.
 Esta página é uma tradução da página [[$1]] e a tradução pode ser atualizada usando [$2 a ferramenta de tradução].',
 	'tpt-unknown-page' => 'Este domínio é reservado para traduções de páginas de conteúdo.
@@ -1904,6 +1929,37 @@ Zdá sa, že stránka, ktorú sa pokúšate upravovať nezodpovedá žiadnej str
 	'tpt-install' => 'Funkciu prekladu webových stránok zapnete spustením php maintenance/update.php alebo webovej inštalácie.',
 	'tpt-render-summary' => 'Aktualizácia na novú verziu zdrojovej stránky',
 	'tpt-download-page' => 'Exportovať stránky s prekladmi',
+);
+
+/** Slovenian (Slovenščina)
+ * @author Smihael
+ */
+$messages['sl'] = array(
+	'pagetranslation' => 'Prevajanje strani',
+	'right-pagetranslation' => 'Označi različice strani za prevajanje',
+	'tpt-desc' => 'Razširitev za prevajanje vsebine strani',
+	'tpt-section' => 'Prevajalna enota $1',
+	'tpt-section-new' => 'Nove prevajalska enota.
+Ime: $1',
+	'tpt-section-deleted' => 'Prevajalna enota $1',
+	'tpt-templatediff' => 'Predloga te strani se je spremenila.',
+	'tpt-diff-old' => 'Prejšnje besedilo',
+	'tpt-diff-new' => 'Novo besedilo',
+	'tpt-submit' => 'Označi to različico za prevajanje',
+	'tpt-sections-oldnew' => 'Nove in obstoječe prevajalske enote',
+	'tpt-sections-deleted' => 'Izbrisane prevajalske enote',
+	'tpt-sections-template' => 'Prevod predloge strani',
+	'tpt-oldrevision' => '$2 ni najnovejša različics strani [[$1]].
+Samo zadnje različice se lahko označi za prevod.',
+	'tpt-notsuitable' => 'Stran $1 ni primerna za prevod.
+Prepričajte se, da ima oznake <nowiki><translate></nowiki> in veljavno sintakso.',
+	'tpt-rev-latest' => 'najnovejša različica',
+	'tpt-rev-old' => 'razlika s prejšnjimi označeni različici',
+	'tpt-rev-mark-new' => 'označi to različico za prevajanje',
+	'tpt-translate-this' => 'prevedi to stran',
+	'translate-tag-translate-link-desc' => 'Prevedi to stran',
+	'translate-tag-markthis' => 'Označi to stran za prevajanje',
+	'tpt-languages-legend' => 'Ostali jeziki:',
 );
 
 /** Serbian Cyrillic ekavian (ћирилица)
@@ -2163,5 +2219,6 @@ $messages['zh-hant'] = array(
 	'tpt-translate-this' => '翻譯本頁',
 	'translate-tag-translate-link-desc' => '翻譯本頁',
 	'tpt-languages-legend' => '其它語言：',
+	'tpt-download-page' => '匯出含翻譯的頁面',
 );
 

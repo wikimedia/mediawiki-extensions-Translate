@@ -872,6 +872,7 @@ $messages['ar'] = array(
 	'translate-manage-listgroups' => 'مجموعات مضبوطة',
 	'translate-manage-listgroups-old' => 'مجموعات ذات النمط القديم',
 	'translate-managegroups' => 'إدارة المجموعات',
+	'translate-manage-newgroup' => 'مجموعة الرسائل هذه لم يتم استيرادها من قبل.',
 	'translate-manage-cacheat' => 'أستورد في  $1 عند $2',
 	'translate-manage-return-to-group' => 'ارجع لصفحة تفاصيل المجموعة',
 	'translate-manage-modlangs' => 'من فضلك التمس التعديلات الممكنة {{PLURAL:$1||للغة التالية|للغتين التاليتين|للغات التالية}}:',
@@ -1859,6 +1860,20 @@ Gallout a rit [$1 kemmañ ar bajenn orin] pe [$2 freskaat an droidigezh].',
 Broudet oc'h da adwelet ar c'hemennadennoù adal [[Special:Translate|{{int:translate}}]].",
 	'translate-save' => 'Enrollañ ($1)',
 	'translate-jssti-add' => "Ouzhpennañ d'ar roll",
+	'translate-group-desc-mediawikicore' => "Er strollad kemennadennoù-mañ emañ ar c'hemennadennoù implijet e stumm red MediaWiki ({{CURRENTVERSION}})",
+	'translate-group-desc-mediawikimostused' => 'Er strollad kemennadennoù-mañ emañ [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 kemmennadenn implijetañ] MediaWiki',
+	'translate-group-desc-mediawikiextensions' => 'Meta-strollad kemennadennoù ennañ holl gemmennadennoù an astennoù skoret evit MediaWiki',
+	'translate-group-desc-collection' => 'Meta-strollad kemennadennoù ennañ holl gemmennadennoù an astenn MediaWiki [http://www.mediawiki.org/wiki/Extension:Collection Dastumad]',
+	'translate-group-desc-flaggedrevs' => 'Meta-strollad kemennadennoù ennañ holl gemmennadennoù an astenn MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
+	'translate-group-desc-readerfeedback' => 'Meta-strollad kemennadennoù ennañ holl gemmennadennoù an astenn MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
+	'translate-group-desc-socialprofile' => 'Meta-strollad kemennadennoù ennañ holl gemmennadennoù an astenn MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
+	'translate-group-desc-translate' => 'Meta-strollad kemennadennoù ennañ holl gemmennadennoù an astenn MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Treiñ]',
+	'translate-group-desc-wikiaextensions' => 'Meta-strollad kemennadennoù ennañ holl gemmennadennoù an astennoù MediaWiki implijet gant [http://www.wikia.com Wikia]',
+	'translate-group-desc-wikihowextensions' => 'Meta-strollad kemennadennoù ennañ holl gemmennadennoù an astennoù MediaWiki implijet gant [http://www.wikihow.com wikiHow]',
+	'translate-group-desc-wikimediaextensions' => 'Meta-strollad kemennadennoù ennañ holl gemmennadennoù an astennoù MediaWiki implijet gant [http://wikimedia.org/ Wikimedia Foundation]',
+	'translate-group-desc-wikitravelextensions' => 'Meta-strollad kemennadennoù ennañ holl gemmennadennoù an astennoù MediaWiki implijet gant [http://wikitravel.org Wikitravel]',
+	'translate-group-desc-uniwiki' => 'Meta-strollad kemennadennoù ennañ holl gemmennadennoù an astennoù stag ouzh [http://unicefinnovation.org/wiki.php Uniwiki]',
+	'translate-group-desc-ui' => 'Meta-strollad kemennadennoù ennañ holl gemmennadennoù an astennoù stag ouzh [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 	'translate-manage-listgroups-old' => 'Stiloù kozh ar strolladoù',
 	'translate-managegroups' => 'Merañ ar strollad',
 	'translate-manage-newgroup' => "N'eo ket bet enporzhiet ar stroll kemennadennoù-mañ en a-raok.",
@@ -3032,6 +3047,7 @@ $messages['el'] = array(
 	'translate-edit-in-other-languages' => 'Το μήνυμα "$1" σε άλλες γλώσσες',
 	'translate-edit-committed' => 'Τρέχουσα μετάφραση στο λογισμικό',
 	'translate-edit-warnings' => 'Προειδοποιήσεις για ημιτελείς μεταφράσεις',
+	'translate-edit-tmsugs' => 'Προτάσεις από τη μνήμη μετάφρασης',
 	'translate-edit-tmsug' => '$1% ταιριαστό στη μνήμη μετάφρασης',
 	'translate-edit-goto-no-prev' => 'Κανένα προηγούμενο μήνυμα',
 	'translate-edit-goto-no-next' => 'Κανένα επόμενο μήνυμα',
@@ -3153,6 +3169,7 @@ $messages['el'] = array(
 	'translate-manage-submit' => 'Εκτέλεση',
 	'translate-manage-import-ok' => 'Εισήχθηκε νέα έκδοση της σελίδας $1.',
 	'translate-manage-import-ignore' => 'Παράκαμψη του μηνύματος $1.',
+	'translate-manage-import-fuzzy' => 'Εισαγωγή και ασαφοποίηση: $1',
 	'translate-manage-import-done' => 'Όλα έχουν γίνει!',
 	'translate-manage-subtitle' => 'Διαχείριση',
 	'importtranslations' => 'Εισαγωγή μεταφράσεων',
@@ -3551,6 +3568,7 @@ $messages['et'] = array(
 	'translate-edit-information' => 'Selle sõnumi teave ($1)',
 	'translate-edit-in-other-languages' => 'Sõnum teistes keeltes',
 	'translate-edit-committed' => 'Kehtiv tõlge tarkvaras',
+	'translate-edit-warnings' => 'Hoiatused puuduliku tõlke kohta',
 	'translate-edit-goto-no-prev' => 'Eelmist sõnumit pole',
 	'translate-edit-goto-no-next' => 'Järgmist sõnumit pole',
 	'translate-edit-goto-prev' => 'Redigeeri eelmist',
@@ -3564,6 +3582,8 @@ $messages['et'] = array(
 	'translate-magic-cm-savefailed' => 'Salvestamine ebaõnnestus',
 	'translationchanges' => 'Tõlkemuudatused',
 	'translationchanges-export' => 'ekspordi',
+	'translate-checks-parameters' => '{{PLURAL:$2|Järgnev parameeter|Järgnevad parameetrid}} on kasutamata:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-pref-nonewsletter' => 'Ära saada saada mulle sõnumilehti',
 	'translate-pref-editassistlang' => 'Tugikeeled:',
 	'prefs-translate' => 'Tõlkesätted',
@@ -4312,6 +4332,7 @@ $messages['frc'] = array(
 );
 
 /** Franco-Provençal (Arpetan)
+ * @author Cedric31
  * @author ChrisPtDe
  */
 $messages['frp'] = array(
@@ -4482,6 +4503,9 @@ Vos éte encoragiê a revêre los mèssâjos dês [[Special:Translate|{{int:tran
 	'translate-group-desc-wikitravelextensions' => 'Tropa de mèssâjos mèta que contint tôs los mèssâjos de les èxtensions MediaWiki utilisâs per [http://wikitravel.org Wikitravel].',
 	'translate-group-desc-uniwiki' => 'Tropa de mèssâjos mèta que contint tôs los mèssâjos de les èxtensions liyês a [http://unicefinnovation.org/wiki.php Uniwiki].',
 	'translate-group-desc-ui' => 'Tropa de mèssâjos mèta que contint tôs los mèssâjos de les èxtensions liyês a l’[http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative iniciativa d’utilisabilitât de Vouiquipèdia].',
+	'translate-manage-import-new' => 'Mèssâjo novél $1',
+	'translate-manage-action-import' => 'Importacion',
+	'translate-import-load' => 'Tèlèchargiér lo fichiér',
 );
 
 /** Friulian (Furlan)
@@ -5054,6 +5078,11 @@ $1',
 	'translate-import-err-ul-failed' => 'S Uffelade vu dr Datei isch nit erfolgryych gsi',
 	'translate-import-err-invalid-title' => 'Dr Dateiname <nowiki>$1</nowiki>, wu Du aagee hesch, isch nit giltig gsi.',
 	'translate-import-err-no-such-file' => 'D Datei <nowiki>$1</nowiki> git s nit oder isch nit lokal uffeglade wore.',
+	'translate-import-err-no-headers' => 'D Datei isch kei Datei im Gettext-Format vu dr Erwyterig „Translate“:
+D Gruppen un Sproche hän nit us em Dateichopf chenne ermittlet wäre.',
+	'translate-import-err-warnings' => 'D Datei entspricht nit em erwartete Format.
+Stell sicher, ass dr Editor kei <tt>msgctxt</tt>-Fälder usenimmt.
+Detail: $1',
 );
 
 /** Gujarati (ગુજરાતી)
@@ -7678,6 +7707,7 @@ $messages['km'] = array(
 	'translate-manage-import-done' => 'ធ្វើចប់អស់ហើយ!',
 	'translate-manage-subtitle' => 'គ្រប់គ្រង​',
 	'importtranslations' => 'នាំចូល​ការបកប្រែ​',
+	'translate-import-from-url' => 'URL ទៅ​កាន់​ឯកសារ​៖',
 	'translate-import-from-wiki' => 'ឯកសារ​នៅ​ក្នុង​វិគីនេះ​៖',
 	'translate-import-load' => 'ផ្ទុក​ឯកសារ​',
 	'translate-import-err-type-not-supported' => 'មិន​អាចផ្ទុក​ឯកសារ​៖
@@ -8256,6 +8286,8 @@ Dir sidd awer häerzlech Invitéiert fir d'Systemmessagn op [[Special:Translate|
 Benotzt de Link ënnendrënner fir zréck op d'Säit mat den Detailer vum Grupp ze goen.",
 	'translate-manage-inconsistent' => 'Inkonsistenz an der Ufro fonnt.
 Kuckt w.e.g. no fir Ännerungen a probéiert nach eng Kéier. Detailer: $1',
+	'translate-manage-toolong' => 'Déi maximal Zäit vun der Beaarbechtung vun $1 {{PLURAL:$1|Sekonn|Sekonne}} gouf iwwerschratt.
+Schéckt de Formulaire w.e.g. nach emol fir mat der Beaarbechtung weiderzefueren.',
 	'translate-manage-import-ok' => 'Nei Versioun vun der Säit $1 gouf importéiert.',
 	'translate-manage-import-noks' => 'Déi nei Versioun $2 vun der Säit $1 konnt net importéiert ginn',
 	'translate-manage-import-ignore' => 'Message $1 iwwersprangen.',
@@ -8281,6 +8313,9 @@ $1',
 	'translate-import-err-ul-failed' => "D'Eropluede vum Fichier huet net geklappt",
 	'translate-import-err-invalid-title' => 'Den Numm vum Fichier <nowiki>$1</nowiki> deen ugi gouf ass net valabel.',
 	'translate-import-err-no-such-file' => 'De Fichier <nowiki>$1</nowiki> gëtt et net oder gouf lokal net eropgelueden.',
+	'translate-import-err-warnings' => 'De Fichier ass net richteg forméiert.
+Vergewëssert Iech datt Ären Editeursprogramm keng msgctxt Felder ewechhëllt.
+Detailler: $1',
 );
 
 /** Limburgish (Limburgs)
@@ -8304,7 +8339,7 @@ $messages['li'] = array(
 	'translate-task-export-as-po' => 'euverzèttinge nao Gettext-formaat exportere',
 	'translate-page-settings-legend' => 'Insjtellinge',
 	'translate-page-task' => 'Ich wil',
-	'translate-page-group' => 'Groep',
+	'translate-page-group' => 'Gróp',
 	'translate-page-language' => 'Taal',
 	'translate-page-limit' => 'Maximaal',
 	'translate-submit' => 'Ophaole',
@@ -8478,7 +8513,7 @@ $messages['mk'] = array(
 
 ''$1''",
 	'translate-page-settings-legend' => 'Нагодувања',
-	'translate-page-task' => 'Сакам да направам',
+	'translate-page-task' => 'Сакам',
 	'translate-page-group' => 'Група',
 	'translate-page-language' => 'Јазик',
 	'translate-page-limit' => 'Ограничување',
@@ -8551,7 +8586,7 @@ $messages['mk'] = array(
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '{{PLURAL:$2|Следната врска е|Следните $2 врски се}} проблематични:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-xhtml' => 'Заменете {{PLURAL:$2|го следниов приврзок со коректен|ги следниве приврзоци со коректни}}:
+	'translate-checks-xhtml' => 'Заменете {{PLURAL:$2|го следнава ознака со коректен|ги следниве ознаки со коректни}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Дефиницијата користи <nowiki>{{PLURAL:}}</nowiki> но преводот не.',
 	'translate-checks-pagename' => 'Именски простор променет од дефиницијата',
@@ -8616,6 +8651,7 @@ $messages['mk'] = array(
 Ви препорачуваме да ги прегледате пораките преку [[Special:Translate|{{int:translate}}]].',
 	'translate-save' => 'Зачувај ($1)',
 	'translate-jssti-add' => 'Додај на листата',
+	'translate-group-desc-mediawikimostused' => 'Во оваа група пораки се наведени [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 најчесто користени пораки] на МедијаВики',
 	'translate-manage-modlang-new' => '$1 (нов)',
 	'translate-manage-import-new' => 'Нова порака $1',
 	'translate-manage-import-deleted' => 'Избришана порака $1',
@@ -10141,8 +10177,8 @@ $messages['ps'] = array(
 	'translate-page-description-legend' => 'د ډلې په اړه مالومات',
 	'translate-page-edit' => 'سمول',
 	'translate-edit-contribute' => 'ونډه اخيستل',
-	'translate-edit-information' => 'د همدې پيغام په اړه مالومات ($1)',
-	'translate-edit-in-other-languages' => 'پيغام په نورو ژبو کې',
+	'translate-edit-information' => 'د "$2" پيغام په اړه مالومات ($1)',
+	'translate-edit-in-other-languages' => 'د "$1" پيغام په نورو ژبو کې',
 	'translate-magic-help' => 'دلته تاسې د ځانګړو مخونو مستعار نومونه، کوډګريز وييونه او د نوم-تشيالونو نومونه ژباړلی شی.
 
 د ځانګړو مخونو مستعار نومونه او کوډګريز وييونه په ګڼ شمېر نومونو ژباړلی شی.
@@ -10159,9 +10195,20 @@ Changes are not saved until you click save button below.',
 	'translate-magic-cm-original' => 'آرنی',
 	'translate-magic-cm-save' => 'خوندي کول',
 	'translate-magic-words' => 'کوډګريز وييونه',
+	'translate-magic-namespace' => 'د نوم-تشيالونو نومونه',
+	'translate-magic-saved' => 'بدلونونه مو په برياليتوب سره خوندي شول.',
 	'translationchanges' => 'د ژباړې بدلونونه',
+	'prefs-translate' => 'د ژباړې خوښنې',
+	'translate-rc-translation-filter-no' => 'هېڅ مه کړه',
+	'translate-translations-none' => 'د "$1" لپاره کومه ژباړه نه شته',
+	'translate-translations-fieldset-title' => 'پيغام',
+	'translate-translations-messagename' => 'نوم:',
 	'translate-language' => 'ژبه',
 	'translate-total' => 'پيغامونه',
+	'translate-untranslated' => 'ناژباړلي',
+	'translate-jssti-add' => 'لړليک کې ګډول',
+	'translate-manage-import-new' => 'نوی پيغام $1',
+	'translate-manage-import-deleted' => 'ړنګ شوی پيغام $1',
 );
 
 /** Portuguese (Português)
@@ -10331,6 +10378,7 @@ Encorajamo-lo a rever mensagens através de [[Special:Translate|{{int:translate}
 
 /** Brazilian Portuguese (Português do Brasil)
  * @author Eduardo.mps
+ * @author Heldergeovane
  */
 $messages['pt-br'] = array(
 	'translate' => 'Traduzir',
@@ -10370,6 +10418,7 @@ $messages['pt-br'] = array(
 	'translate-prev' => 'Página anterior',
 	'translate-page-description-legend' => 'Informação sobre o grupo',
 	'translate-page-edit' => 'editar',
+	'translate-ext-url' => "<hr />Página ''web'': $1",
 	'translate-optional' => '(opcional)',
 	'translate-ignored' => '(ignorada)',
 	'translate-edit-definition' => 'Definição da mensagem',
@@ -10379,6 +10428,8 @@ $messages['pt-br'] = array(
 	'translate-edit-in-other-languages' => 'Mensagem "$1" em outros idiomas',
 	'translate-edit-committed' => 'Tradução atualmente disponível no software',
 	'translate-edit-warnings' => 'Avisos sobre traduções incompletas',
+	'translate-edit-tmsugs' => 'Sugestões da memória de traduções',
+	'translate-edit-tmsug' => '$1% de coincidências na memória de traduções',
 	'translate-edit-goto-no-prev' => 'Não há mensagens anteriores',
 	'translate-edit-goto-no-next' => 'Não há mensagens posteriores',
 	'translate-edit-goto-prev' => 'Editar mensagem anterior',
@@ -10399,6 +10450,7 @@ As alterações não serão gravadas até que você clique abaixo no botão de g
 	'translate-magic-module' => 'Módulo:',
 	'translate-magic-submit' => 'Trazer',
 	'translate-magic-cm-export' => 'Exportar',
+	'translate-magic-nothing-to-export' => 'Não há o que exportar.',
 	'translate-magic-cm-to-be' => 'Novo',
 	'translate-magic-cm-current' => 'Atual',
 	'translate-magic-cm-original' => 'Original',
@@ -10409,6 +10461,9 @@ As alterações não serão gravadas até que você clique abaixo no botão de g
 	'translate-magic-special' => 'Nomes alternativos de páginas especiais',
 	'translate-magic-words' => 'Palavras mágicas',
 	'translate-magic-namespace' => 'Nomes de espaços nominais',
+	'translate-magic-notsaved' => 'Sua edição não foi salva!',
+	'translate-magic-errors' => 'Por favor, corrija {{PLURAL:$1|o seguinte erro|os seguintes erros}} na tradução:',
+	'translate-magic-saved' => 'Suas alterações foram salvas com sucesso.',
 	'translationchanges' => 'Alterações às traduções',
 	'translationchanges-export' => 'exportar',
 	'translationchanges-change' => '$1: $2 por $3',
@@ -10417,6 +10472,8 @@ As alterações não serão gravadas até que você clique abaixo no botão de g
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Há {{PLURAL:$2|um parênteses irregular|$2 parênteses irregulares}}: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '{{PLURAL:$2|A seguinte ligação possui|As $2 seguintes ligações possuem}} problemas: <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links-missing' => '{{PLURAL:$2|A seguinte|As $2 ligações seguintes}} estão faltando:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Por gentileza, troque {{PLURAL:$2|a seguinte etiqueta pela correta|as seguintes etiquetas pelas corretas}}:
 <strong>$1</strong>',
 	'translate-checks-plural' => 'A definição usa <nowiki>{{PLURAL:}}</nowiki>, mas a tradução não.',
@@ -10424,6 +10481,13 @@ As alterações não serão gravadas até que você clique abaixo no botão de g
 	'translate-checks-format' => 'Esta tradução não segue a definição ou tem uma sintaxe inválida: $1',
 	'translate-checks-escape' => 'As seguintes sequências de escape podem ter sido acidentais: <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'Não me enviar newsletters por e-mail',
+	'translate-pref-editassistlang' => 'Idiomas de ajuda:',
+	'prefs-translate' => 'Opções de tradução',
+	'translate-pref-editassistlang-help' => 'Lista de idiomas separados por vírgulas
+São exibidas as traduções de uma mensagem nestes idiomas quando você está traduzindo.
+A lista padrão de idiomas depende do seu idioma.',
+	'translate-pref-editassistlang-bad' => 'Código de idioma inválido na lista:
+<nowiki>$1</nowiki>.',
 	'right-translate' => 'Editar usando a interface de tradução',
 	'translate-rc-translation-filter' => 'Filtrar traduções:',
 	'translate-rc-translation-filter-no' => 'Não fazer nada',
@@ -10475,6 +10539,26 @@ Você pode [$1 editar a página de origem] ou [$2 atualizar a tradução].',
 	'translate-nothing-to-do' => 'Aparentemente todas as traduções possíveis foram feitas.
 Você é encorajado a revisar mensagens através de [[Special:Translate|{{int:translate}}]].',
 	'translate-save' => 'Gravar ($1)',
+	'translate-jssti-add' => 'Adicionar à lista',
+	'translate-group-desc-mediawikicore' => 'Este grupo de mensagens contém as mensagens utilizadas na atual versão alfa do MediaWiki ({{CURRENTVERSION}})',
+	'translate-manage-groups' => 'Gestão de grupos',
+	'translate-manage-listgroups' => 'Grupos configurados',
+	'translate-manage-listgroups-old' => 'Antigo estilo dos grupos',
+	'translate-managegroups' => 'Gestão de grupos',
+	'translate-manage-newgroup' => 'Este grupo de mensagens não foi importado anteriormente.',
+	'translate-manage-cacheat' => 'Importado em $1 às $2',
+	'translate-manage-return-to-group' => 'Retornar à página de detalhes do grupo',
+	'translate-manage-modlangs' => 'Por favor verifique possíveis modificações {{PLURAL:$1|no seguinte idioma|nos seguintes idiomas}}:',
+	'translate-manage-modlang-new' => '$1 (novo)',
+	'translate-manage-import-diff' => 'Mensagem $1 | Ações: $2',
+	'translate-manage-import-new' => 'Nova mensagem $1',
+	'translate-manage-import-deleted' => 'Mensagem apagada $1',
+	'translate-manage-action-import' => 'Importar',
+	'translate-manage-action-conflict' => 'Importar e marcar traduções para revisão',
+	'translate-manage-action-ignore' => 'Ignorar',
+	'translate-manage-action-fuzzy' => 'Importar e marcar traduções para revisão',
+	'translate-manage-submit' => 'Executar',
+	'translate-manage-import-done' => 'Tudo feito!',
 );
 
 /** Tarifit (Tarifit)
@@ -11348,8 +11432,30 @@ $1',
 	'translate-import-err-ul-failed' => 'Nahranie súboru neprebehlo úspešne',
 	'translate-import-err-invalid-title' => 'Poskytnutý názov súboru „<nowiki>$1</nowiki>“ bol neplatný.',
 	'translate-import-err-no-such-file' => 'Súbor „<nowiki>$1</nowiki>“ neexistuje alebo nebol lokálne nahraný.',
-	'translate-import-err-no-language-code' => 'Súbor nie je platný súbor Gettext vo formáte rozšírenia Translate:
-Nepodarilo sa určiť ID skupiny.',
+	'translate-import-err-no-headers' => 'Súbor nie v platný súbor Gettext vo formáte rozšírenia Translate:
+Nebolo možné určiť skupinu a jazyk z hlavičiek súboru.',
+	'translate-import-err-warnings' => 'Tento súbor nie je platný.
+Uistite sa, že váš editor neodstraňuje polia msgctxt.
+Podrobnosti: $1',
+);
+
+/** Slovenian (Slovenščina)
+ * @author Smihael
+ */
+$messages['sl'] = array(
+	'translate' => 'Prevedi',
+	'translate-desc' => '[[Special:Translate|Posebna stran]] za prevajanje MediaWiki in razširitev',
+	'translate-edit' => 'uredi',
+	'translate-talk' => 'pogovor',
+	'translate-history' => 'zgodovina',
+	'translate-task-view' => 'Prikaži vsa sporočila',
+	'translate-task-untranslated' => 'Prikaži vsa neprevedena sporočila',
+	'translate-task-optional' => 'Prikaži neobvezna sporočila',
+	'translate-task-untranslatedoptional' => 'Prikaži neprevedena neobvezna sporočila',
+	'translate-task-problematic' => 'Oglejte si sporočila, ki imajo težave',
+	'translate-task-review' => 'Pregled sprememb',
+	'translate-task-reviewall' => 'Pregled vseh prevedenih sporočil v',
+	'translate-task-export-to-file' => 'Izvoz v datoteko s prevodom',
 );
 
 /** Somali (Soomaaliga)
@@ -12343,6 +12449,7 @@ $messages['tg-cyrl'] = array(
  * @author Ans
  * @author Manop
  * @author Passawuth
+ * @author Woraponboonkerd
  */
 $messages['th'] = array(
 	'translate' => 'แปล',
@@ -12383,6 +12490,7 @@ $messages['th'] = array(
 	'translate-prev' => 'หน้าก่อน',
 	'translate-page-description-legend' => 'ข้อมูลเกี่ยวกับกลุ่มข้อความ',
 	'translate-page-edit' => 'แก้ไข',
+	'translate-ext-url' => '<hr />เว็บไซต์: $1',
 	'translate-optional' => '(สามารถเลือกได้)',
 	'translate-ignored' => '(เพิกเฉย)',
 	'translate-edit-definition' => 'นิยามข้อความต้นฉบับ',
@@ -12392,6 +12500,8 @@ $messages['th'] = array(
 	'translate-edit-in-other-languages' => 'ข้อความ "$1" ในภาษาอื่นๆ',
 	'translate-edit-committed' => 'คำแปลปัจจุบันที่ฝังอยู่ในตัวโปรแกรม',
 	'translate-edit-warnings' => 'คำเตือนเกี่ยวกับคำแปลที่ยังไม่สมบูรณ์หรือมีปัญหา',
+	'translate-edit-tmsugs' => 'คำแนะนำจากคำแปลที่ผ่านมา',
+	'translate-edit-tmsug' => 'มีความคล้ายคลึงกันกับคำแปลที่ผ่านมา $1%',
 	'translate-edit-goto-no-prev' => 'ไม่มีข้อความก่อนหน้านี้',
 	'translate-edit-goto-no-next' => 'ไม่มีข้อความถัดไป',
 	'translate-edit-goto-prev' => 'แก้ไขข้อความก่อนหน้านี้',
@@ -12423,6 +12533,8 @@ $messages['th'] = array(
 	'translate-magic-words' => 'ตัวแปรพิเศษ',
 	'translate-magic-namespace' => 'ชื่อเนมสเปซ',
 	'translate-magic-notsaved' => 'การแก้ไขของคุณยังไม่ได้รับการบันทึก!',
+	'translate-magic-errors' => 'กรุณาแก้ไขความผิดพลาด{{PLURAL:$1|นี้|เหล่านี้}} ในการแปลภาษา:',
+	'translate-magic-saved' => 'การเปลี่ยนแปลงของคุณได้ถูกบันทึกแล้ว',
 	'translationchanges' => 'สิ่งที่เปลี่ยนแปลงในงานแปล',
 	'translationchanges-export' => 'ส่งออกมา (export)',
 	'translationchanges-change' => '$1: $2 โดย $3',
@@ -12488,6 +12600,18 @@ $messages['th'] = array(
 	'translate-nothing-to-do' => 'การแปลทุกอย่างเสร็จสิ้นแล้ว
 อย่างไรก็ดีกรุณาพึงตรวจสอบข้อความต่าง ๆ ผ่านทาง[[Special:Translate|{{int:translate}}]]',
 	'translate-save' => 'บันทึก ($1)',
+	'translate-group-desc-mediawikiextensions' => 'เป็นกลุ่มของข้อความทั้งหมดในเมต้า สำหรับส่วนที่เพิ่มเติมของมีเดียวิกิ',
+	'translate-group-desc-collection' => 'เป็นกลุ่มของข้อความทั้งหมดในเมต้า สำหรับ[http://www.mediawiki.org/wiki/Extension:Collection แหล่งรวบรวม]ส่วนเพิ่มเติมของมีเดียวิกิ',
+	'translate-group-desc-flaggedrevs' => 'เป็นกลุ่มของข้อความทั้งหมดในเมต้า สำหรับ[http://www.mediawiki.org/wiki/Extension:FlaggedRevs ส่วนเพิ่มเติมที่ทบทวนใหม่และถูกคั่นไว้]ของมีเดียวิกิ',
+	'translate-group-desc-readerfeedback' => 'เป็นกลุ่มของข้อความทั้งหมดในเมต้า สำหรับ[http://www.mediawiki.org/wiki/Extension:ReaderFeedback ส่วนเพิ่มเติมการตอบรับจากผู้อ่าน]ของมีเดียวิกิ',
+	'translate-group-desc-socialprofile' => 'เป็นกลุ่มของข้อความทั้งหมดในเมต้า สำหรับส่วนที่เกี่ยวข้องกับ[http://www.mediawiki.org/wiki/Extension:SocialProfile โปรไฟล์ทางสังคม]ของมีเดียวิกิ',
+	'translate-group-desc-translate' => 'เป็นกลุ่มของข้อความทั้งหมดในเมต้า สำหรับส่วนเพิ่มเติม[http://www.mediawiki.org/wiki/Extension:Translate การแปล]ของมีเดียวิกิ',
+	'translate-group-desc-wikiaextensions' => 'เป็นกลุ่มของข้อความทั้งหมดในเมต้า สำหรับส่วนเพิ่มเติมมีเดียวิกิที่ถูกใช้โดย [http://www.wikia.com Wikia]',
+	'translate-group-desc-wikihowextensions' => 'เป็นกลุ่มของข้อความทั้งหมดในเมต้า สำหรับส่วนเพิ่มเติมมีเดียวิกิที่ถูกใช้โดย [http://www.wikihow.com wikiHow]',
+	'translate-group-desc-wikimediaextensions' => 'เป็นกลุ่มของข้อความทั้งหมดในเมต้า สำหรับส่วนเพิ่มเติมมีเดียวิกิที่ถูกใช้โดย [http://wikimedia.org/ มูลนิธิวิกิมีเดีย]',
+	'translate-group-desc-wikitravelextensions' => 'เป็นกลุ่มของข้อความทั้งหมดในเมต้า สำหรับส่วนเพิ่มเติมมีเดียวิกิที่ถูกใช้โดย [http://wikitravel.org Wikitravel]',
+	'translate-group-desc-uniwiki' => 'เป็นกลุ่มของข้อความทั้งหมดในเมต้า สำหรับส่วนเพิ่มเติมที่เกี่ยวข้องกับ [http://unicefinnovation.org/wiki.php Uniwiki]',
+	'translate-group-desc-ui' => 'เป็นกลุ่มของข้อความทั้งหมดในเมต้า สำหรับส่วนเพิ่มเติมที่เกี่ยวข้องกับ [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 );
 
 /** Turkmen (Türkmençe)
@@ -13805,6 +13929,7 @@ $messages['zh-hant'] = array(
 	'translate-magic-special' => '特殊頁面別名',
 	'translate-magic-words' => '魔術字',
 	'translate-magic-namespace' => '名字空間名稱',
+	'translate-magic-notsaved' => '您的編輯尚未被保存！',
 	'translationchanges' => '翻譯更改',
 	'translationchanges-export' => '{{int:translate-magic-cm-export}}',
 	'translationchanges-change' => '$1: $2 由$3翻譯',
@@ -13849,9 +13974,12 @@ $messages['zh-hant'] = array(
 	'translate-language-code' => '語言代碼',
 	'translate-language-code-field-name' => '語言代碼：',
 	'translate-language' => '語言',
+	'translate-total' => '訊息',
 	'translate-untranslated' => '未翻譯',
+	'translate-percentage-complete' => '完成度',
 	'translate-percentage-fuzzy' => '已過時',
 	'translate-save' => '儲存 ($1)',
+	'translate-jssti-add' => '新增至清單',
 	'translate-manage-action-import' => '匯入',
 	'translate-manage-submit' => '執行',
 	'translate-manage-import-done' => '全部完成！',
