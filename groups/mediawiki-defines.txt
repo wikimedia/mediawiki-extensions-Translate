@@ -830,6 +830,7 @@ optional = semanticmaps_name, sm_googlemaps_printername, sm_yahoomaps_printernam
 Semantic MediaWiki
 file = SemanticMediaWiki/languages/SMW_Messages.php
 aliasfile = SemanticMediaWiki/languages/SMW_Aliases.php
+magicfile = SemanticMediaWiki/languages/SMW_Magic.php
 descmsg = smw-desc
 ignored = smw_ask_doculink, smw_service_online_maps, smw_uri_blacklist
 optional = smw_rss_link, smw_decseparator, smw_kiloseparator
