@@ -691,6 +691,7 @@ ignored = player-pagetext, player-imagepage-header
 
 Plotters
 aliasfile = Plotters/Plotters.alias.php
+magicfile = Plotters/Plotters.i18n.magic.php
 
 PNG Handler
 
