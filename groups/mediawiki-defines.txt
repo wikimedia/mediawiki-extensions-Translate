@@ -791,6 +791,9 @@ file = Renameuser/SpecialRenameuser.i18n.php
 aliasfile = Renameuser/SpecialRenameuser.alias.php
 ignored = renameuser-summary
 
+Replace Set
+magicfile = ReplaceSet/ReplaceSet.i18n.magic.php
+
 Replace Text
 aliasfile = ReplaceText/ReplaceText.alias.php
 
