@@ -465,6 +465,7 @@ file = I18nTags/I18nTags.i18n.php
 magicfile = I18nTags/I18nTags.magic.php
 
 Icon
+magicfile = Icon/Icon.i18n.magic.php
 
 Image Map
 descmsg = imagemap_desc
