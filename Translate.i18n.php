@@ -1874,12 +1874,16 @@ Broudet oc'h da adwelet ar c'hemennadennoù adal [[Special:Translate|{{int:trans
 	'translate-group-desc-wikitravelextensions' => 'Meta-strollad kemennadennoù ennañ holl gemmennadennoù an astennoù MediaWiki implijet gant [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Meta-strollad kemennadennoù ennañ holl gemmennadennoù an astennoù stag ouzh [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Meta-strollad kemennadennoù ennañ holl gemmennadennoù an astennoù stag ouzh [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
+	'translate-manage-groups' => 'Merañ ar strollad',
+	'translate-manage-listgroups' => 'Strolladoù savet',
 	'translate-manage-listgroups-old' => 'Stiloù kozh ar strolladoù',
 	'translate-managegroups' => 'Merañ ar strollad',
 	'translate-manage-newgroup' => "N'eo ket bet enporzhiet ar stroll kemennadennoù-mañ en a-raok.",
 	'translate-manage-cacheat' => "Enporzhiet d'an $1 da $2",
 	'translate-manage-return-to-group' => 'Distreiñ da bajenn ditouriñ ar strollad',
+	'translate-manage-modlangs' => 'Gwiriit mar plij ha kemmoù zo bet evit ar {{PLURAL:$1|yezh|yezhoù}} da-heul :',
 	'translate-manage-modlang-new' => '$1 (nevez)',
+	'translate-manage-import-diff' => 'Kemennadenn $1 | Oberoù : $2',
 	'translate-manage-import-new' => 'Kemennadenn nevez $1',
 	'translate-manage-import-deleted' => 'Kemennadennoù diverket $1',
 	'translate-manage-action-import' => 'Enporzhiañ',
@@ -1890,18 +1894,46 @@ Broudet oc'h da adwelet ar c'hemennadennoù adal [[Special:Translate|{{int:trans
 	'translate-manage-nochanges' => "N'eus bet kemm ebet e termenadurioù kemennadennoù ar strollad-mañ",
 	'translate-manage-nochanges-other' => "N'eus bet kemm ebet gant ar yezh-mañ.
 Grit gant al liamm a-is da zistreiñ d'ar gwel dre ar munud evit ar strollad",
+	'translate-manage-inconsistent' => "Merzet ez eus bet un disdalc'h er reked.
+Gwiriit ha kemmoù zo bet ha klaskit en-dro.
+Munudoù : $1.",
+	'translate-manage-toolong' => "Aet eur dreist d'an termen pellañ a $1 {{PLURAL:$1|eilenn|eilenn}}.
+Adkasit ar furmskrid evit kenderc'hel gant an tretiñ.",
 	'translate-manage-import-ok' => 'Enporzhiet ez eus bet ur stumm nevez eus ar bajenn $1',
+	'translate-manage-import-noks' => "C'hwitet eo bet enporzhiadenn stumm nevez ar bajenn $1 : $2",
+	'translate-manage-import-ignore' => 'Lezel ar gemennadenn $1 a-gostez.',
+	'translate-manage-import-summary' => 'Enporzhiañ ur stumm nevez adalek ur vammenn diavaez.',
+	'translate-manage-conflict-summary' => 'Enporzhiañ ur stumm nevez adalek ur vammenn ziavaez. 
+Gwiriit mar plij.',
 	'translate-manage-import-fuzzy' => "Oc'h enporzhiañ hag o strafuilhañ : $1",
 	'translate-manage-import-done' => 'Tout eo bet graet !',
+	'translate-manage-import-rebuild' => 'Adsavet eo bet ar grubuilh.',
+	'translate-manage-intro-en' => "Dindan ez eus ur roll eus ar c'hemmoù bet er strollad-mañ.
+Gwiriit anezho mar plij ha dibabit ar pezh a fell deoc'h ober evit pep kemennadenn.
+Ur wezh nevesaet termenadurioù ar c'hemennadennoù, gwiriit ha n'eus ket bet bet kemmoù diavaez e yezhoù all.
+Merzit mat ivez n'eo nemet berrbad an ober <code>lezel a-gostez</code>.",
+	'translate-manage-intro-other' => "A-is emañ roll ar c'hemmoù treiñ e $1.
+Gwiriit anezho ha dibabit ar pezh a fell deoc'h ober evit pep troidigezh.
+Ma tibabit chom hep kemer ar c'hemmoù e kont e vint riñset-lip kentañ tro ma vo un ezporzhiadenn nevez.",
 	'translate-manage-subtitle' => 'Merañ',
+	'translate-manage-import-rebuild-all' => "Adsevel an holl yezhoù ha lezel ar c'hemmoù a-gostez",
 	'importtranslations' => 'Enporzhiañ an troidigehzioù',
 	'translate-import-from-url' => 'URL war-du ar restr :',
 	'translate-import-from-wiki' => 'Restr er wiki-mañ :',
 	'translate-import-from-local' => "Enporzhiañ ur restr lec'hel :",
 	'translate-import-load' => 'Kargañ ar restr',
+	'translate-import-err-type-not-supported' => "Dibosupl kargañ ar restr :
+N'eo ket skoret an hentenn <tt>$1</tt>.",
 	'translate-import-err-dl-failed' => "Dibosupl kerc'hat ar restr :
 $1",
+	'translate-import-err-ul-failed' => "C'hwitet eo bet enporzhiañ ar restr",
+	'translate-import-err-invalid-title' => 'Direizh e oa anv ar restr spisaet <nowiki>$1</nowiki>.',
 	'translate-import-err-no-such-file' => "N'eus ket eus ar restr <nowiki>$1</nowiki> pe neuze n'eo ket bet enporzhiet ent lec'hel.",
+	'translate-import-err-no-headers' => "N'eo ket ar restr ur restr ''Gettext'' stummet mat er furmad gortozet gant an astenn ''Translate'' :
+Dibosupl eo didermeniñ ar strollad hag ar yezh adalek talbennoù ar restr.",
+	'translate-import-err-warnings' => 'Ne oa ket stummet mat ar restr-mañ.
+Bezit sur ne lam ket ho skridaozer ar maeziennoù msgctxt kuit.
+Munudoù : $1',
 );
 
 /** Bosnian (Bosanski)
@@ -2119,6 +2151,7 @@ $messages['bug'] = array(
 
 /** Catalan (Català)
  * @author Jordi Roqué
+ * @author Paucabot
  * @author SMP
  * @author Sanbec
  * @author Toniher
@@ -2265,6 +2298,11 @@ Podeu [$1 editar la pàgina font] o [$2 actualitzar la traducció].',
 	'translate-nothing-to-do' => 'Totes les possibles traduccions han estat realitzades.
 Us animem a revisar missatges a través de [[Special:Translate|{{int:translate}}]].',
 	'translate-save' => 'Desa ($1)',
+	'translate-manage-modlang-new' => '$1 (nou)',
+	'translate-manage-import-diff' => 'Missatge $1 | Accions: $2',
+	'translate-manage-import-new' => 'Nou missatge $1',
+	'translate-manage-action-import' => 'Importa',
+	'translate-manage-action-ignore' => 'Ignora',
 );
 
 /** Chamorro (Chamoru)
@@ -3390,6 +3428,7 @@ $messages['es'] = array(
 	'translate-prev' => 'Página anterior',
 	'translate-page-description-legend' => 'Información acerca del grupo',
 	'translate-page-edit' => 'editar',
+	'translate-ext-url' => '<hr />Página web: $1',
 	'translate-optional' => '(opcional)',
 	'translate-ignored' => '(ignorado)',
 	'translate-edit-definition' => 'Mensaje original',
@@ -3524,6 +3563,8 @@ Se te anima a revisar los mensajes a través de [[Special:Translate|{{int:transl
 	'translate-manage-action-import' => 'Importar',
 	'translate-manage-action-ignore' => 'Ignorar',
 	'translate-manage-submit' => 'Ejecutar',
+	'translate-manage-subtitle' => 'Administrar',
+	'translate-import-load' => 'Subir archivo',
 );
 
 /** Estonian (Eesti)
@@ -7719,6 +7760,7 @@ $messages['km'] = array(
  * @author Nayvik
  */
 $messages['kn'] = array(
+	'translate-history' => 'ಇತಿಹಾಸ',
 	'translate-page-language' => 'ಭಾಷೆ',
 	'translate-language' => 'ಭಾಷೆ',
 );
@@ -8064,8 +8106,8 @@ $1',
 	'translate-import-err-ul-failed' => 'Di Datei huhzelaade es donevve jejange',
 	'translate-import-err-invalid-title' => 'Dä aanjejovve Name vun dä Dattei „<nowiki>$1</nowiki>“ es nit jöltesch.',
 	'translate-import-err-no-such-file' => 'Di Datei „<nowiki>$1</nowiki>“ jidd_et nit, udder se es nit heh en et Wiki huhjelaade.',
-	'translate-import-err-no-language-code' => 'Di Dattei es kein öhndlesch opjeboute <code lang="en">Gettext</code>-Dattei em Fomaat för et Zohsazpjrojramm <code lang="en">Translate</code>:
-Kann de Kännong för de Jropp nit erußfenge.',
+	'translate-import-err-no-headers' => 'Di Dattei es nit em Jettäx Fommaat vum Zohsazprojramm <code lang="en">Translate</code>: Kunnt de Jropp un Shprooch nit uß de Koppdaate eruß krijje.',
+	'translate-import-err-warnings' => 'Di Dattei es nit em reschteje Fommaat. Beß sescher, dat kein vun Dinge Projramme de <code lang="en">msgctxt</code> Felder fott määt. De Einzelheite: $1',
 );
 
 /** Latin (Latina)
@@ -10541,6 +10583,11 @@ Você é encorajado a revisar mensagens através de [[Special:Translate|{{int:tr
 	'translate-save' => 'Gravar ($1)',
 	'translate-jssti-add' => 'Adicionar à lista',
 	'translate-group-desc-mediawikicore' => 'Este grupo de mensagens contém as mensagens utilizadas na atual versão alfa do MediaWiki ({{CURRENTVERSION}})',
+	'translate-group-desc-mediawikimostused' => 'Este grupo de mensagens contém as [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 mensagens utilizadas com mais frequência] no MediaWiki',
+	'translate-group-desc-mediawikiextensions' => 'Meta-grupo de mensagens contendo todas as mensagens para extensões do MediaWiki suportadas',
+	'translate-group-desc-collection' => 'Meta-grupo de mensagens contendo todas as mensagens para a extensão MediaWiki [http://www.mediawiki.org/wiki/Extension:Collection Colecção]',
+	'translate-group-desc-flaggedrevs' => 'Meta-grupo de mensagens contendo todas as mensagens para a extensão MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs Edições Analisadas]',
+	'translate-group-desc-readerfeedback' => 'Meta-grupo de mensagens contendo todas as mensagens para a extensão MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs ReaderFeedback]',
 	'translate-manage-groups' => 'Gestão de grupos',
 	'translate-manage-listgroups' => 'Grupos configurados',
 	'translate-manage-listgroups-old' => 'Antigo estilo dos grupos',
@@ -10558,7 +10605,34 @@ Você é encorajado a revisar mensagens através de [[Special:Translate|{{int:tr
 	'translate-manage-action-ignore' => 'Ignorar',
 	'translate-manage-action-fuzzy' => 'Importar e marcar traduções para revisão',
 	'translate-manage-submit' => 'Executar',
+	'translate-manage-nochanges' => 'Não há alterações nas definições das mensagens deste grupo.',
+	'translate-manage-nochanges-other' => 'Não houve alterações para este idioma.
+Use a ligação abaixo para retornar à visualização de detalhes do grupo.',
+	'translate-manage-inconsistent' => 'Detectada inconsistência na solicitação.
+Por favor, confira as alterações e tente novamente.
+Detalhes: $1.',
+	'translate-manage-toolong' => 'O tempo máximo de $1 {{PLURAL:$1|segundo|segundos}} de processamento foi excedido.
+Por favor reenvie o formulário para continuar processando.',
+	'translate-manage-import-ok' => 'Importada nova versão da página $1.',
+	'translate-manage-import-noks' => 'Falhou ao importar nova versão da página $1: $2',
+	'translate-manage-import-ignore' => 'Pulando menssagem $1.',
+	'translate-manage-import-summary' => 'Importando uma nova versão de um fonte externa',
+	'translate-manage-conflict-summary' => 'Importando uma nova versão de uma fonte externa.
+Por favor, confira.',
+	'translate-manage-import-fuzzy' => 'Importando e marcando traduções para revisão: $1',
 	'translate-manage-import-done' => 'Tudo feito!',
+	'translate-manage-subtitle' => 'Gerenciar',
+	'translate-manage-import-rebuild-all' => 'Refazer todos os idiomas e ignorar quaisquer alterações',
+	'importtranslations' => 'Importar traduções',
+	'translate-import-from-url' => 'URL para o arquivo:',
+	'translate-import-from-wiki' => 'Arquivo nesta wiki:',
+	'translate-import-from-local' => 'Carregamento de arquivo local:',
+	'translate-import-load' => 'Carregar arquivo',
+	'translate-import-err-type-not-supported' => 'Impossível carregar o arquivo:
+O método <tt>$1</tt> não é suportado.',
+	'translate-import-err-ul-failed' => 'Carregamento de arquivo sem sucesso',
+	'translate-import-err-invalid-title' => 'O nome <nowiki>$1</nowiki> fornecido para o arquivo era inválido.',
+	'translate-import-err-no-such-file' => 'O arquivo <nowiki>$1</nowiki> não existe ou não foi carregado localmente.',
 );
 
 /** Tarifit (Tarifit)
