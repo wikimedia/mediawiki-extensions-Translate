@@ -996,6 +996,7 @@ file = Todo/SpecialTodo.i18n.php
 Todo Tasks
 file = TodoTasks/SpecialTaskList.i18n.php
 aliasfile = TodoTasks/SpecialTaskList.alias.php
+magicfile = TodoTasks/TodoTasks.i18n.magic.php
 descmsg = tasklist-parser-desc
 
 Tooltip
