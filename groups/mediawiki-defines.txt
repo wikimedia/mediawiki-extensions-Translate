@@ -1186,6 +1186,7 @@ Widgets
 magicfile = Widgets/Widgets.i18n.magic.php
 
 Wiki Article Feeds
+magicfile = WikiArticleFeeds/WikiArticleFeeds.i18n.magic.php
 
 Wiki At Home
 descmsg = wah-desc
