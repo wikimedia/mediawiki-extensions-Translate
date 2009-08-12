@@ -826,6 +826,7 @@ aliasfile = SemanticDrilldown/languages/SD_Aliases.php
 Semantic Forms
 file = SemanticForms/languages/SF_Messages.php
 aliasfile = SemanticForms/languages/SF_Aliases.php
+magicfile = SemanticForms/languages/SF_Magic.php
 
 Semantic Gallery
 
