@@ -605,6 +605,9 @@ file = MWSearch/MWSearch.i18n.php
 
 Navigation Popups
 
+Negref
+magicfile = Negref/Negref.i18n.magic.php
+
 Network Auth
 optional = networkauth-name, networkauth-purltext
 
