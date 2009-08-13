@@ -400,7 +400,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-assertedit', // bots
 		'ext-categorytree',
 		'ext-centralauth',
-		'ext-centralnotice', // used rarely
+		'ext-centralnotice',
 		'ext-charinsert',
 		'ext-checkuser',
 		'ext-cite',
@@ -424,6 +424,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-fundraiserportal', // 2009-07-14: not yet live but expected soon/Raymond
 		'ext-gadgets',
 		'ext-globalblocking',
+		'ext-honeypotintegration', // 2009-08-13: test.wikipedia.org
 		'ext-imagemap',
 		'ext-inputbox',
 		'ext-intersection',
