@@ -71,7 +71,7 @@ If you know where or how this message is used, you can help other translators by
 	'translate-edit-committed'          => 'Current translation in software',
 	'translate-edit-warnings'           => 'Warnings about incomplete translations',
 	'translate-edit-tmsugs'             => 'Suggestions from translation memory',
-	'translate-edit-tmsug'              => '$1% match in translation memory',
+	'translate-edit-tmmatch'            => '$1% match',
 
 	'translate-edit-goto-no-prev'       => 'No previous message',
 	'translate-edit-goto-no-next'       => 'No next message',
@@ -144,8 +144,11 @@ Translation of a message in these languages are shown when you are translating.
 The default list of languages depends on your language.',
 	'translate-pref-editassistlang-bad' => 'Invalid language code in the list:
 <nowiki>$1</nowiki>.',
+	'translate-pref-jsedit' => 'Enhanced translation editor (JavaScript)',
 
-	'right-translate'            => 'Edit using the translate interface',
+	'right-translate' => 'Edit using the translate interface',
+	'right-translate-manage' => 'Manage translation groups',
+	'right-translate-import' => 'Import offline translations',
 
 	'translate-rc-translation-filter' => 'Filter translations:',
 	'translate-rc-translation-filter-no' => 'Do nothing',

@@ -45,6 +45,16 @@ class TranslatePreferences {
 		return true;
 	}
 
+	public static function translationJsedit( $user, &$preferences ) {
+		$preferences['translate-jsedit'] = array(
+			'class' => 'HTMLCheckField',
+			'section' => 'editing/translate',
+			'label-message' => 'translate-pref-jsedit',
+		);
+
+		return true;
+	}
+
 	protected static  function languageSelector() {
 		global $wgLang;
 		if ( is_callable( array( 'LanguageNames', 'getNames' ) ) ) {

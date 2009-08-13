@@ -44,14 +44,48 @@
 	font-weight: bold;
 }
 
+/* Edit page */
+
 .mw-sp-translate-edit-fields fieldset {
 	line-height: normal;
-	margin: 0px !important;
+	margin: 0px;
 }
 
-.mw-sp-translate-edit-extra {
+.mw-translate-edit-extra {
 	border-bottom: 1px solid black;
 }
+
+.ltr .mw-translate-legend {
+	float: right;
+	border-left: 1px solid black;
+	font-weight: bold;
+	margin-left: 5pt;
+	padding-left: 5pt;
+}
+
+.rtl .mw-translate-legend {
+	float: left;
+	border-left: 1px solid black;
+	font-weight: bold;
+	margin-right: 5pt;
+	padding-right: 5pt;
+}
+
+.mw-translate-sep {
+	margin-bottom:1ex;
+	margin-top:0.5ex;
+}
+
+.mw-translate-edit-deftext {
+	font-family: monospace;
+}
+
+.mw-translate-edit-area {
+	padding: 0;
+}
+
+/* End edit page */
+
 
 .mw-sp-translate-group {
 	border: 0;

@@ -25,12 +25,10 @@ class SpecialTranslate extends SpecialPage {
 
 	/**
 	 * Access point for this special page.
-	 * GLOBALS: $wgHooks, $wgOut.
 	 */
 	public function execute( $parameters ) {
-		wfLoadExtensionMessages( 'Translate' );
+		global $wgOut, $wgTranslateBlacklist, $wgUser, $wgRequest;
 		TranslateUtils::injectCSS();
-		global $wgOut, $wgTranslateBlacklist, $wgUser;
 
 		$this->setHeaders();
 		if ( $parameters === 'manage' ) {
@@ -43,6 +41,12 @@ class SpecialTranslate extends SpecialPage {
 			$manage = new SpecialManageGroups();
 			$manage->execute();
 			return;
+		} elseif ( $parameters === 'editpage' ) {
+			$editpage = TranslationEditPage::newFromRequest( $wgRequest );
+			if ( $editpage ) {
+				$editpage->execute();
+				return;
+			}
 		}
 
 		$this->setup( $parameters );

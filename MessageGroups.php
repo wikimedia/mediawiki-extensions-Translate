@@ -694,6 +694,7 @@ class MessageGroups {
 	public static function init() {
 		static $loaded = false;
 		if ( $loaded ) return;
+		wfDebug( __METHOD__ . "\n" );
 
 		global $wgTranslateAddMWExtensionGroups;
 		if ( $wgTranslateAddMWExtensionGroups ) {
@@ -708,10 +709,10 @@ class MessageGroups {
 			$dbr = wfGetDB( DB_SLAVE );
 
 			$tables = array( 'page', 'revtag', 'revtag_type' );
-			$vars   = array( 'page_id', 'page_namespace', 'page_title', 'rt_revision' );
+			$vars   = array( 'page_id', 'page_namespace', 'page_title', );
 			$conds  = array( 'page_id=rt_page', 'rtt_id=rt_type', 'rtt_name' => 'tp:mark' );
 			$options = array( 'GROUP BY' => 'page_id' );
-			$res = $dbr->select( $tables, $vars, $conds, __METHOD__ );
+			$res = $dbr->select( $tables, $vars, $conds, __METHOD__, $options );
 			foreach ( $res as $r ) {
 				$title = Title::makeTitle( $r->page_namespace, $r->page_title )->getPrefixedText();
 				$id = "page|$title";
@@ -726,6 +727,7 @@ class MessageGroups {
 
 		global $wgTranslateGroupFiles;
 		foreach ( $wgTranslateGroupFiles as $file ) {
+			wfDebug( $file."\n" );
 			$conf = TranslateSpyc::load($file);
 			$group = MessageGroupBase::factory( $conf );
 			$wgTranslateCC[$group->getId()] = $group;
@@ -765,7 +767,6 @@ class MessageGroups {
 	private function __construct() {
 		self::init();
 		global $wgTranslateEC, $wgTranslateCC;
-
 		$all = array_merge( $wgTranslateEC, array_keys( $wgTranslateCC ) );
 		sort( $all );
 		foreach ( $all as $id ) {

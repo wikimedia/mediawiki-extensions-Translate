@@ -58,8 +58,10 @@ $wgHooks['SkinTemplateTabs'][] = 'TranslateEditAddons::tabs';
 # Custom preferences
 $wgDefaultUserOptions['translate'] = 0;
 $wgDefaultUserOptions['translate-editlangs'] = 'default';
+$wgDefaultUserOptions['translate-jsedit'] = 0;
 $wgHooks['GetPreferences'][] = 'TranslatePreferences::onGetPreferences';
 $wgHooks['GetPreferences'][] = 'TranslatePreferences::translationAssistLanguages';
+$wgHooks['GetPreferences'][] = 'TranslatePreferences::translationJsedit';
 
 # Recent changes filters
 $wgHooks['SpecialRecentChangesQuery'][] = 'TranslateRcFilter::translationFilter';
@@ -67,7 +69,9 @@ $wgHooks['SpecialRecentChangesPanel'][] = 'TranslateRcFilter::translationFilterF
 $wgHooks['SkinTemplateToolboxEnd'][] = 'TranslateToolbox::toolboxAllTranslations';
 
 $wgJSAutoloadClasses['TranslateImport'] = "extensions/Translate/js/import.js"; 
-$wgJSAutoloadClasses['JsSelectToInput'] = "extensions/Translate/utils/JsSelectToInput.js"; 
+$wgJSAutoloadClasses['JsSelectToInput'] = "extensions/Translate/utils/JsSelectToInput.js";  
+$wgJSAutoloadClasses['JsEdit'] = "extensions/Translate/js/quickedit.js"; 
+$wgJSAutoloadClasses['j.form'] = "extensions/Translate/js/jquery.form.js";
 
 
 $wgEnablePageTranslation = false;
@@ -75,6 +79,8 @@ $wgPageTranslationNamespace = 1198;
 
 $wgJobClasses['RenderJob'] = 'RenderJob';
 $wgAvailableRights[] = 'translate';
+$wgAvailableRights[] = 'translate-import';
+$wgAvailableRights[] = 'translate-manage';
 
 define( 'TRANSLATE_FUZZY', '!!FUZZY!!' );
 

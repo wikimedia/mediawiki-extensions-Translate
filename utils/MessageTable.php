@@ -48,6 +48,21 @@ class MessageTable {
 		$this->headers[$type] = array( 'raw', htmlspecialchars($value) );
 	}
 
+	public function setCSSJS() {
+		global $wgOut, $wgScriptPath;
+		// Our class
+		$wgOut->addScriptClass( 'JsEdit' );
+		// Core jQuery
+		$wgOut->addScriptClass( 'j.ui' );
+		$wgOut->addScriptClass( 'j.ui.dialog' );
+		$wgOut->addScriptClass( 'j.ui.draggable' );
+		$wgOut->addScriptClass( 'j.ui.resizable' );
+		// Additional jQuery
+		$wgOut->addScriptClass( 'j.form' );
+		// TODO: this can't be a good way...
+		$wgOut->addExtensionStyle( "$wgScriptPath/js2/mwEmbed/jquery/jquery.ui-1.7.1/themes/base/ui.all.css" );
+	}
+
 
 	public function header() {
 		$tableheader = Xml::openElement( 'table', array(
@@ -79,10 +94,9 @@ class MessageTable {
 	}
 
 	public function contents() {
-
 		global $wgUser;
 		$sk = $wgUser->getSkin();
-		wfLoadExtensionMessages( 'Translate' );
+
 		$optional = wfMsgHtml( 'translate-optional' );
 
 		$batch = new LinkBatch();
@@ -107,7 +121,7 @@ class MessageTable {
 			$tools['edit'] = $sk->link(
 				$title,
 				$niceTitle,
-				array(),
+				TranslationEditPage::jsEdit( $title ),
 				array( 'action' => 'edit' ) + $this->editLinkParams,
 				'known'
 			);
@@ -143,6 +157,7 @@ class MessageTable {
 	}
 
 	public function fullTable() {
+		$this->setCSSJS();
 		return $this->header() . $this->contents() . '</table>';
 	}
 
