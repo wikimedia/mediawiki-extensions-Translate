@@ -27,7 +27,7 @@ function trlOpenJsEdit( page ) {
 				} else if ( json.edit.result == "Failure" ) {
 					alert( "Extension error. Copy your text and try normal edit." );
 				} else if ( json.edit.result == "Success" ) {
-					alert( "Saved!" );
+					//alert( "Saved!" );
 					dialog.dialog("close");
 					dialog.dialog("destroy");
 				} else {
