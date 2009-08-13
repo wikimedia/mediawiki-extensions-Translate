@@ -405,6 +405,16 @@ These messages will not be submitted to svn, but will only affect the interface 
 	'translate-manage-action-fuzzy' => 'fuzzy = mark translations for review',
 	'translate-manage-import-fuzzy' => 'fuzzy = mark translations for review',
 	'translate-manage-intro-en' => 'If your language and its grammar permit, you can refer to <code>ignore</code> as <code>{<nowiki />{int:{{msg-mw|translate-manage-action-ignore}}}}</code>.',
+	'importtranslations' => 'Used in [[Special:ImportTranslations]]. {{doc-screenshot|Manage-1.png|twn}}',
+	'translate-import-from-url' => 'Used in [[Special:ImportTranslations]]. {{doc-screenshot|Manage-1.png|twn}}',
+	'translate-import-from-wiki' => 'Used in [[Special:ImportTranslations]]. {{doc-screenshot|Manage-1.png|twn}}',
+	'translate-import-from-local' => 'Used in [[Special:ImportTranslations]]. {{doc-screenshot|Manage-1.png|twn}}',
+	'translate-import-load' => 'Used in [[Special:ImportTranslations]]. {{doc-screenshot|Manage-1.png|twn}}',
+	'translate-import-err-type-not-supported' => 'Used in [[Special:ImportTranslations]].',
+	'translate-import-err-dl-failed' => 'Used in [[Special:ImportTranslations]].',
+	'translate-import-err-ul-failed' => 'Used in [[Special:ImportTranslations]].',
+	'translate-import-err-invalid-title' => 'Used in [[Special:ImportTranslations]].',
+	'translate-import-err-no-such-file' => 'Used in [[Special:ImportTranslations]].',
 );
 
 /** Faeag Rotuma (Faeag Rotuma)
@@ -2303,6 +2313,18 @@ Us animem a revisar missatges a través de [[Special:Translate|{{int:translate}}
 	'translate-manage-import-new' => 'Nou missatge $1',
 	'translate-manage-action-import' => 'Importa',
 	'translate-manage-action-ignore' => 'Ignora',
+	'translate-manage-submit' => 'Executa',
+	'importtranslations' => 'Importa traduccions',
+	'translate-import-from-url' => 'URL del fitxer:',
+	'translate-import-from-wiki' => 'Fitxer en aquest wiki:',
+	'translate-import-from-local' => 'Càrrega de fitxer local:',
+	'translate-import-load' => 'Carrega fitxer',
+	'translate-import-err-type-not-supported' => "No s'ha pogut carregar el fitxer:
+El mètode <tt>$1</tt> no està suportat.",
+	'translate-import-err-dl-failed' => "No s'ha pogut obtenir el fitxer:
+$1",
+	'translate-import-err-ul-failed' => "La càrrega del fitxer no s'ha completat",
+	'translate-import-err-invalid-title' => 'El nom del fitxer <nowiki>$1</nowiki> no és vàlid.',
 );
 
 /** Chamorro (Chamoru)
@@ -2561,18 +2583,113 @@ $messages['cy'] = array(
 );
 
 /** Danish (Dansk)
+ * @author Byrial
  * @author Jon Harald Søby
  */
 $messages['da'] = array(
+	'translate' => 'Oversæt',
+	'translate-desc' => '[[Special:Translate|Specialside]] for oversættelse af MediaWiki og andet',
 	'translate-edit' => 'redigér',
 	'translate-talk' => 'dsikussion',
 	'translate-history' => 'historik',
+	'translate-task-view' => 'Se alle beskeder fra',
+	'translate-task-untranslated' => 'Se alle uoversatte beskeder fra',
+	'translate-task-optional' => 'Se valgfrie beskeder fra',
+	'translate-task-untranslatedoptional' => 'Se uoversatte valgfrie beskeder fra',
+	'translate-task-problematic' => 'Se beskeder som har problemer',
+	'translate-task-review' => 'Gennemgå ændringer af',
+	'translate-task-reviewall' => 'Gennemgå alle oversatte beskeder i',
+	'translate-task-export' => 'Eksportér oversættelser fra',
+	'translate-task-export-to-file' => 'Eksportér oversættelser til fil fra',
+	'translate-task-export-as-po' => 'Eksportér oversættelser i Gettext-format',
+	'translate-task-export-to-xliff' => 'Eksportér oversættelser i Xliff-format',
+	'translate-page-no-such-language' => 'Det angivne sprog er ugyldigt.',
+	'translate-page-no-such-task' => 'Den angivne opgave er ugyldig.',
+	'translate-page-no-such-group' => 'Den angivne gruppe er ugyldig.',
+	'translate-page-disabled' => "Oversættelser til dette sprog i denne gruppe er slået fra.
+Årsag:
+
+''$1''",
+	'translate-page-settings-legend' => 'Indstillinger',
+	'translate-page-task' => 'Jeg vil',
 	'translate-page-group' => 'Gruppe',
 	'translate-page-language' => 'Sprog',
+	'translate-page-limit' => 'Antal',
+	'translate-page-limit-option' => '$1 {{PLURAL:$1|besked|beskeder}} per side',
+	'translate-submit' => 'Hent',
 	'translate-page-navigation-legend' => 'Navigation',
+	'translate-page-showing' => 'Viser besked nr. $1 til $2 af i alt $3.',
+	'translate-page-showing-all' => 'Viser $1 {{PLURAL:$1|besked|beskeder}}.',
+	'translate-page-showing-none' => 'Ingen beskeder at vise.',
 	'translate-next' => 'Næste side',
 	'translate-prev' => 'Forrige side',
+	'translate-page-description-legend' => 'Information om gruppen',
+	'translate-page-edit' => 'redigér',
+	'translate-ext-url' => '<hr />Webside: $1',
+	'translate-optional' => '(valgfri)',
+	'translate-ignored' => '(ignoreres)',
+	'translate-edit-definition' => 'Beskeden som skal oversættes',
+	'translate-edit-contribute' => 'bidrag',
+	'translate-edit-no-information' => "''Denne besked har ingen dokumentation.
+Hvis du ved hvor eller hvordan denne besked bruges, kan du hjælpe andre oversættere ved at tilføje dokumentation til beskeden.''",
+	'translate-edit-information' => 'Information om beskeden "$2" ($1)',
+	'translate-edit-in-other-languages' => 'Beskeden "$1" på andre sprog',
+	'translate-edit-committed' => 'Nuværende oversættelse i programmet',
+	'translate-edit-warnings' => 'Advarsler om ufuldstændige oversætelser',
+	'translate-edit-tmsugs' => 'Forslag fra oversættelseshukommelsen',
+	'translate-edit-tmsug' => '$1% overensstemmelse i oversættelseshukommelsen',
+	'translate-edit-goto-no-prev' => 'Ingen forrige besked',
+	'translate-edit-goto-no-next' => 'Ingen næste besked',
+	'translate-edit-goto-prev' => 'Redigér forrige besked',
+	'translate-edit-goto-next' => 'Redigér næste besked',
+	'translate-edit-goto-list' => 'Tilbage til listen',
+	'translate-magic-pagename' => 'Udvidet MediaWiki-oversættelse',
+	'translate-magic-help' => 'Du kan oversætte specialside-aliaser, magiske ord og navnerumsnavne.
+
+Specialside-aliaser og magiske ord kan have flere oversættelser.
+Oversættelserne adskilles med komma (,).
+Navnerum kan kun have én oversættelse.
+
+Ved navnerumsoversættelser er <tt>$1 talk</tt> speciel. <tt>$1</tt> erstattes med sidens navn (for eksempel <tt>{{ns:project_talk}}</tt>).
+Hvis det ikke er muligt i dit sprog at danne et gyldigt udtryk uden at ændre sidenavnet, bedes du venligst kontakte en udvikler.
+
+Du skal være i oversættergruppen for at gemme ændringer.
+Ændringerne gemmes ikke før du klikker på gem-knappen nedenfor.',
+	'translate-magic-module' => 'Modul:',
+	'translate-magic-submit' => 'Hent',
+	'translate-magic-cm-export' => 'Eksportér',
+	'translate-magic-nothing-to-export' => 'Der er intet at eksportere.',
+	'translate-magic-cm-to-be' => 'Skal være',
 	'translate-magic-cm-current' => 'Nuværende',
+	'translate-magic-cm-original' => 'Original',
+	'translate-magic-cm-comment' => 'Kommentar:',
+	'translate-magic-cm-save' => 'Gem',
+	'translate-magic-cm-updatedusing' => 'Opdateret med [[Special:Magic]]',
+	'translate-magic-cm-savefailed' => 'Gemning mislykkedes',
+	'translate-magic-special' => 'Specialside-aliaser',
+	'translate-magic-words' => 'Magiske ord',
+	'translate-magic-namespace' => 'Navnerumsnavne',
+	'translate-magic-notsaved' => 'Din redigering er ikke gemt!',
+	'translate-magic-errors' => 'Ret venligst følgende {{PLURAL:$1|fejl|fejl}} i oversættelserne:',
+	'translate-magic-saved' => 'Dine ændringer er gemt.',
+	'translationchanges' => 'Oversættelsesændringer',
+	'translationchanges-export' => 'Eksportér',
+	'translationchanges-change' => '$1: $2 af $3',
+	'translate-checks-parameters' => 'Følgende {{PLURAL:$2|parameter|parametre}} bruges ikke:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters-unknown' => 'Følgende {{PLURAL:$2|parameter er ukendt|parametre er ukendte}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-balance' => 'Der er et ulige antal {{PLURAL:$2|parenteser|parenteser}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links' => 'Følgende {{PLURAL:$2|henvisning er problematisk|$2 henvisninger er problematiske}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links-missing' => 'Følgende {{PLURAL:$2|henvisning|$2 henvisninger}} mangler:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-xhtml' => 'Erstat venligst følgende {{PLURAL:$2|tag|$2 tags}} med de korrekte:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-plural' => 'Originalen bruger <nowiki>{{PLURAL:}}</nowiki>, men oversættelsen gør det ikke.',
+	'translate-checks-pagename' => 'Navnerum er anderledes end i originalen',
+	'translate-checks-format' => 'Denne oversættelse følger ikke originalen eller har ugyldig syntaks: $1',
 );
 
 /** German (Deutsch)
@@ -3631,6 +3748,7 @@ $messages['et'] = array(
 	'translate-pref-editassistlang-help' => 'Komaga eraldatud keelte loetelu.
 Tõlkimisel kuvatakse sõnumi tõlge nendes keeltes.
 Vaikeloetelu sõltub kasutaja keelest.',
+	'right-translate' => 'Kasutada tõlkeliidest',
 	'translate-rc-translation-filter' => 'Filtreeri tõlkeid:',
 	'translate-rc-translation-filter-no' => 'Ära filtri',
 	'translate-rc-translation-filter-only' => 'Näita ainult tõlkeid',
@@ -4545,8 +4663,8 @@ Vos éte encoragiê a revêre los mèssâjos dês [[Special:Translate|{{int:tran
 	'translate-group-desc-uniwiki' => 'Tropa de mèssâjos mèta que contint tôs los mèssâjos de les èxtensions liyês a [http://unicefinnovation.org/wiki.php Uniwiki].',
 	'translate-group-desc-ui' => 'Tropa de mèssâjos mèta que contint tôs los mèssâjos de les èxtensions liyês a l’[http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative iniciativa d’utilisabilitât de Vouiquipèdia].',
 	'translate-manage-import-new' => 'Mèssâjo novél $1',
-	'translate-manage-action-import' => 'Importacion',
-	'translate-import-load' => 'Tèlèchargiér lo fichiér',
+	'translate-manage-action-import' => 'Importar',
+	'translate-import-load' => 'Chargiér lo fichiér',
 );
 
 /** Friulian (Furlan)
@@ -7762,6 +7880,7 @@ $messages['km'] = array(
 $messages['kn'] = array(
 	'translate-history' => 'ಇತಿಹಾಸ',
 	'translate-page-language' => 'ಭಾಷೆ',
+	'translate-statsf-submit' => 'ಮುನ್ನೋಟ',
 	'translate-language' => 'ಭಾಷೆ',
 );
 
@@ -8098,7 +8217,7 @@ Wann De entscheids, Änderunge ze övverjonn, dann wääde di Änderunge beim n�
 	'importtranslations' => 'Övversäzonge Empotteere',
 	'translate-import-from-url' => 'Dä <i lang="en">URL</i> för di Datei:',
 	'translate-import-from-wiki' => 'De Datei heh em Wiki:',
-	'translate-import-from-local' => 'Heh en et Wiki huhleaade:',
+	'translate-import-from-local' => 'Heh en et Wiki huhlaade:',
 	'translate-import-load' => 'Datei laade',
 	'translate-import-err-type-not-supported' => 'Mer künne di Datei nit laade, weil et Verfahre <tt lang="en">$1</tt> nit ongerschtöz weedt.',
 	'translate-import-err-dl-failed' => 'Kunnt de Datei nit jriife:
@@ -8503,6 +8622,7 @@ Pakeitimai nebus įrašyti iki Jūs nuspausite išsaugojimo mygtuką apačioje.'
  * @author Yyy
  */
 $messages['lv'] = array(
+	'translate-talk' => 'diskusija',
 	'translate-next' => 'Nākamā lapa',
 	'translate-prev' => 'Iepriekšējā lapa',
 	'translate-pref-nonewsletter' => 'Nevēlos pa e-pastu saņemt lapas jaunumus',
@@ -8577,8 +8697,8 @@ $messages['mk'] = array(
 	'translate-edit-contribute' => 'придонес',
 	'translate-edit-no-information' => "''Оваа порака нема опис, не е документирана.
 Ако знаете каде и како оваа порака била користена, може да помогнете на другите преведувачи да додадат опис на оваа порака.''",
-	'translate-edit-information' => 'Информации за оваа порака ($1)',
-	'translate-edit-in-other-languages' => 'Пораката на други јазици',
+	'translate-edit-information' => 'Информации за пораката „$2“ ($1)',
+	'translate-edit-in-other-languages' => 'Пораката „$1“ на други јазици',
 	'translate-edit-committed' => 'Актуелен превод во софтверот',
 	'translate-edit-warnings' => 'Предупредувања во врска со некомплетни преводи',
 	'translate-edit-tmsugs' => 'Предлози од претходни преводи',
@@ -8639,7 +8759,7 @@ $messages['mk'] = array(
 	'translate-pref-editassistlang-help' => 'Листа на јазични кодови одделени со запирка.
 Преводите на пораките на овие јазици се прикажуваат кога преведувате.
 Листата на јазици зададена по основно зависи од вашиот јазик.',
-	'translate-pref-editassistlang-bad' => 'Погрешен јазички код на листата:
+	'translate-pref-editassistlang-bad' => 'Погрешен јазичен код на листата:
 <nowiki>$1</nowiki>.',
 	'right-translate' => 'Уредување со користење на интерфејсот за преведување',
 	'translate-rc-translation-filter' => 'Филтрирање на преводи:',
@@ -8668,7 +8788,7 @@ $messages['mk'] = array(
 	'translate-tag-page-desc' => 'Превод на вики страницата [[:$1]]',
 	'translate-tag-fuzzy-comment' => 'Дефиницијата променета од страна на [[User:$1|$1]] во ревизија $2.',
 	'translate-tag-fuzzy-reason' => 'Дефиницијата променета од "$1" со коментар "$3" во $2.',
-	'translate-sidebar-alltrans' => 'Други преводи',
+	'translate-sidebar-alltrans' => 'На други јазици',
 	'translate-tag-noedit' => 'Оваа страница е автоматски ажуирана страница за превод.
 Можете [$1 да ја уредувате изворната страница] или [$2 да го ажурирате преводот]',
 	'translations' => 'Сите преводи',
@@ -9323,6 +9443,7 @@ Details: $1',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
+ * @author Byrial
  * @author Frokor
  * @author Gunnernett
  * @author Harald Khan
@@ -9417,7 +9538,7 @@ Endringar vert ikkje lagra før du klikkar på lagreknappen nedanfor.',
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => '{{PLURAL:$2|Det|Det}} er eit ujamt tal parentesar:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links' => 'Følgjande {{PLURAL:$1|lenke er problematisk|$2 lenker er problematiske}}:
+	'translate-checks-links' => 'Følgjande {{PLURAL:$2|lenke er problematisk|$2 lenker er problematiske}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Erstatt følgjande {{PLURAL:$2|tagg|taggar}} med dei riktige:
 <strong><nowiki>$1</nowiki></strong>',
@@ -9480,6 +9601,7 @@ Sjå gjerne over meldingar gjennom [[Special:Translate|{{int:translate}}]].',
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
+ * @author Byrial
  * @author Harald Khan
  * @author Jon Harald Søby
  * @author Laaknor
@@ -9577,7 +9699,7 @@ Endringer lagres ikke før du klikker på lagre-knappen nedenfor.',
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => '{{PLURAL:$2|Det|Det}} er et ujevnt antall parenteser:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links' => 'Følgende {{PLURAL:$1|lenke er problematisk|$2 lenker er problematiske}}:
+	'translate-checks-links' => 'Følgende {{PLURAL:$2|lenke er problematisk|$2 lenker er problematiske}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links-missing' => 'Følgende {{PLURAL:$2|lenke|lenker}} mangler:
 <strong><nowiki>$1</nowiki></strong>',
@@ -9843,7 +9965,7 @@ Podètz [$1 modificar la pagina font] o [$2 metre a jorn la traduccion].',
 	'translate-total' => 'Messatges',
 	'translate-untranslated' => 'Pas traduches',
 	'translate-percentage-complete' => 'Acabament',
-	'translate-percentage-fuzzy' => 'Despassats',
+	'translate-percentage-fuzzy' => 'Depassats',
 	'translate-nothing-to-do' => 'Totas las traduccions possiblas semblan que son estadas efectuadas.
 Sètz encoratjat(ada) a repassar los messatges dempuèi [[Special:Translate|{{int:translate}}]].',
 	'translate-save' => 'Publicar ($1)',
@@ -11506,7 +11628,7 @@ $1',
 	'translate-import-err-ul-failed' => 'Nahranie súboru neprebehlo úspešne',
 	'translate-import-err-invalid-title' => 'Poskytnutý názov súboru „<nowiki>$1</nowiki>“ bol neplatný.',
 	'translate-import-err-no-such-file' => 'Súbor „<nowiki>$1</nowiki>“ neexistuje alebo nebol lokálne nahraný.',
-	'translate-import-err-no-headers' => 'Súbor nie v platný súbor Gettext vo formáte rozšírenia Translate:
+	'translate-import-err-no-headers' => 'Súbor nie je správne vytvorený Gettext súbor vo formáte rozšírenia Translate:
 Nebolo možné určiť skupinu a jazyk z hlavičiek súboru.',
 	'translate-import-err-warnings' => 'Tento súbor nie je platný.
 Uistite sa, že váš editor neodstraňuje polia msgctxt.
