@@ -29,7 +29,6 @@ function trlOpenJsEdit( page ) {
 				} else if ( json.edit.result == "Success" ) {
 					//alert( "Saved!" );
 					dialog.dialog("close");
-					dialog.dialog("destroy");
 				} else {
 					alert( "Unknown error." );
 				}
