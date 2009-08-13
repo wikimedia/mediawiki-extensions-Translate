@@ -279,12 +279,7 @@ class TranslationHelpers {
 		$ns = $this->title->getNamespace();
 
 		$title = Title::makeTitle( $ns, $page . '/' . $wgTranslateDocumentationLanguageCode );
-		$edit = $wgUser->getSkin()->link(
-			$title,
-			wfMsgHtml( 'translate-edit-contribute' ),
-			array(),
-			array( 'action' => 'edit' )
-		);
+		$edit = self::editLink( $title, wfMsgHtml( 'translate-edit-contribute' ), array( 'action' => 'edit' ) );
 		$info = TranslateUtils::getMessageContent( $page, $wgTranslateDocumentationLanguageCode, $ns );
 
 		$class = 'mw-sp-translate-edit-info';
