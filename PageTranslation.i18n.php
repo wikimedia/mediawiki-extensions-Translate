@@ -1411,7 +1411,10 @@ $messages['mk'] = array(
  * @author Botuzhaleny-sodamo
  */
 $messages['myv'] = array(
+	'tpt-diff-old' => 'Икелень текст',
+	'tpt-diff-new' => 'Од текст',
 	'translate-tag-translate-link-desc' => 'Йутавтык те лопанть',
+	'tpt-languages-legend' => 'Лия кельтне:',
 );
 
 /** Nahuatl (Nāhuatl)
