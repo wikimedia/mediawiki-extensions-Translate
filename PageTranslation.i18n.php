@@ -105,6 +105,7 @@ $3 is an URL.',
 $messages['af'] = array(
 	'pagetranslation' => 'Bladsyvertaling',
 	'right-pagetranslation' => 'Merk weergawes van bladsye vir vertaling',
+	'tpt-desc' => 'Uitbreiding vir die vertaal van wikibladsye',
 	'tpt-section' => 'Vertaaleenheid $1',
 	'tpt-section-new' => 'Nuwe vertaaleenheid.
 Naam: $1',
@@ -118,16 +119,26 @@ Naam: $1',
 	'tpt-sections-deleted' => 'Verwyderde vertaaleenhede',
 	'tpt-sections-template' => 'Vertaalbladsjabloon',
 	'tpt-badtitle' => "Die naam verskaf ($1) is nie 'n geldige bladsynaam nie",
+	'tpt-oldrevision' => '$2 is nie die nuutste weergawe van die bladsy [[$1]] nie.
+Slegs die nuutste weergawe kan vir vertaling gemerk word.',
+	'tpt-notsuitable' => 'Die bladsy $1 is nie geskik om vir vertaling gemerk te word nie.
+Sorg dat dit die etiket <nowiki><translate></nowiki> bevat en dat die sintaks daarvan korrek is.',
+	'tpt-badsect' => '"$1" is nie \'n geldige naam vir vertaaleenheid $2 nie.',
 	'tpt-mark-summary' => 'Merk die weergawe vir vertaling',
 	'tpt-edit-failed' => 'Die bladsy "$1" kon nie bygewerk word nie.',
+	'tpt-already-marked' => 'Die nuutste weergawe van die bladsy is reeds gemerk vir vertaling.',
+	'tpt-list-nopages' => 'Geen bladsye is vir vertaling gemerk of is reg om vir vertaling gemerk te word nie.',
+	'tpt-old-pages' => "'n Weergawe van die {PLURAL:$1|bladsy|bladsye}} is reeds vir vertaling gemerk.",
 	'tpt-rev-latest' => 'nuutste weergawe',
 	'tpt-rev-old' => 'verskil met die vorige gemerkte weergawe',
 	'tpt-rev-mark-new' => 'merk die weergawe vir vertaling',
 	'tpt-translate-this' => 'vertaal die bladsy',
 	'translate-tag-translate-link-desc' => 'Vertaal die bladsy',
 	'translate-tag-markthis' => 'Merk die bladsy vir vertaling',
+	'translate-tag-hasnew' => 'Daar is <span class="plainlinks">[$1 wysigings]</span> aan die bladsy gemaak wat nie vir vertaling gemerk is nie.',
 	'tpt-translation-intro-fuzzy' => 'Verouderde vertalings word so weergegee.',
 	'tpt-languages-legend' => 'Ander tale:',
+	'tpt-download-page' => 'Eksporteer bladsy met vertalings',
 );
 
 /** Arabic (العربية)
@@ -404,6 +415,7 @@ $messages['cs'] = array(
 
 /** German (Deutsch)
  * @author ChrisiPK
+ * @author Imre
  * @author Purodha
  * @author Umherirrender
  */
@@ -426,7 +438,7 @@ $messages['de'] = array(
 	'tpt-oldrevision' => '$2 ist nicht die letzte Version der Seite [[$1]].
 Nur die letzte Version kann zur Übersetzung markiert werden.',
 	'tpt-notsuitable' => 'Die Seite $1 ist nicht zum Übersetzen geeignet.
-Stelle sicher, das ein <nowiki><translate></nowiki>-Tag und gültige Syntax verwendet wird.',
+Stelle sicher, dass ein <nowiki><translate></nowiki>-Tag und gültige Syntax verwendet wird.',
 	'tpt-saveok' => 'Die Seite [[$1]] wurde mit $2 {{PLURAL:$2|übersetzbarem Abschnitt|übersetzbaren Abschnitten}} für die Übersetzung markiert.
 Diese Seite kann nun <span class="plainlinks">[$3 übersetzt]</span> werden.',
 	'tpt-badsect' => '„$1“ ist kein gültiger Name für Übersetzungseinheit $2.',
@@ -459,9 +471,12 @@ Die Seite, die gerade bearbeitet wird, hat keine Verbindung zu einer übersetzba
 );
 
 /** German (formal address) (Deutsch (Sie-Form))
+ * @author Imre
  * @author Umherirrender
  */
 $messages['de-formal'] = array(
+	'tpt-notsuitable' => 'Die Seite $1 ist nicht zum Übersetzen geeignet.
+Stellen Sie sicher, dass ein <nowiki><translate></nowiki>-Tag und gültige Syntax verwendet wird.',
 	'tpt-showpage-intro' => 'Untenstehend sind neue, vorhandene und gelöschte Abschnitte aufgelistet.
 Bevor Sie diese Version zur Übersetzung markieren, stellen Sie bitte sicher, dass die Änderungen an den Abschnitten minimal sind, um unnötige Arbeit für Übersetzer zu verhindern.',
 );
@@ -1405,6 +1420,7 @@ $messages['mk'] = array(
 	'tpt-diff-new' => 'Нов текст',
 	'tpt-rev-latest' => 'најнова верзија',
 	'translate-tag-translate-link-desc' => 'Преведи ја оваа страница',
+	'tpt-languages-legend' => 'Други јазици:',
 );
 
 /** Erzya (Эрзянь)
