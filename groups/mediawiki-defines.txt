@@ -45,6 +45,9 @@ aliasfile = Asksql/Asksql.alias.php
 Assert Edit
 descmsg = assert_edit_desc
 
+Autoincrement
+magicfile = Autoincrement/Autoincrement.i18n.magic.php
+
 Author Protect
 
 Babel
@@ -557,6 +560,7 @@ ignored = maintenance-initEditCount, maintenance-runJobs, maintenance-showJobs
 ignored = maintenance-stats
 
 Maps
+magicfile = Maps/Maps.i18n.magic.php
 descmsg = maps_desc
 optional = maps_name
 
@@ -661,6 +665,7 @@ optional = ogg-player-mplayerplug-in
 descmsg = ogg-desc
 
 Online Status
+magicfile = OnlineStatus/OnlineStatus.i18n.magic.php
 ignored = onlinestatus-levels
 
 OpenID
@@ -736,6 +741,7 @@ Protect Section
 descmsg = protectsection_desc
 
 PSI NoTocNum
+magicfile = PSINoTocNum/PSINoTocNum.i18n.magic.php
 
 Purge
 
