@@ -903,7 +903,6 @@ optional = slippymap_tagname, slippymap_extname
 
 Smooth Gallery
 magicfile = SmoothGallery/SmoothGallery.i18n.magic.php
-
 ignored = smoothgallery-pagetext
 
 Social Profile - System Gifts
