@@ -48,9 +48,7 @@ descmsg = assert_edit_desc
 Author Protect
 
 Babel
-ignored = babel-box-cellspacing, babel-category-prefix, babel-category-suffix
-ignored = babel-portal-prefix, babel-portal-suffix, babel-template-prefix
-ignored = babel-template-suffix, babel-footer
+magicfile = Babel/Babel.i18n.magic.php
 optional = babel-directionality
 optional = babel-0-female, babel-1-female, babel-2-female, babel-3-female
 optional = babel-4-female, babel-5-female, babel-N-female, babel-0-n-female
@@ -60,6 +58,9 @@ optional = babel-1-male, babel-2-male, babel-3-male, babel-4-male, babel-5-male
 optional = babel-N-male, babel-0-n-male, babel-1-n-male, babel-2-n-male
 optional = babel-3-n-male, babel-4-n-male, babel-5-n-male, babel-N-n-male
 optional = babel-autocreate-user
+ignored = babel-box-cellspacing, babel-category-prefix, babel-category-suffix
+ignored = babel-portal-prefix, babel-portal-suffix, babel-template-prefix
+ignored = babel-template-suffix, babel-footer
 
 Back and Forth
 file = BackAndForth/BackAndForth.i18n.php
@@ -99,6 +100,7 @@ magicfile = CategoryTests/CategoryTests.i18n.magic.php
 
 Category Tree
 aliasfile = CategoryTree/CategoryTree.alias.php
+magicfile = CategoryTree/CategoryTree.i18n.magic.php
 ignored = categorytree-collapse-bullet, categorytree-expand-bullet,
 ignored = categorytree-empty-bullet,categorytree-page-bullet
 ignored = categorytree-member-num
@@ -546,6 +548,9 @@ aliasfile = LookupUser/LookupUser.alias.php
 Lua
 descmsg = lua_desc
 
+Magic No Numbered Headings
+magicfile = MagicNoNumberedHeadings/MagicNoNumberedHeadings.i18n.magic.php
+
 Maintenance
 aliasfile = Maintenance/Maintenance.alias.php
 ignored = maintenance-initEditCount, maintenance-runJobs, maintenance-showJobs
@@ -786,7 +791,8 @@ Regex Block
 file = regexBlock/regexBlock.i18n.php
 aliasfile = regexBlock/regexBlock.alias.php
 
-RegexFunctions
+Regex Functions
+magicfile = RegexFunctions/RegexFunctions.i8n.magic.phh
 
 Rename User
 file = Renameuser/SpecialRenameuser.i18n.php
@@ -896,6 +902,8 @@ descmsg = slippymap_desc
 optional = slippymap_tagname, slippymap_extname
 
 Smooth Gallery
+magicfile = SmoothGallery/SmoothGallery.i18n.magic.php
+
 ignored = smoothgallery-pagetext
 
 Social Profile - System Gifts
