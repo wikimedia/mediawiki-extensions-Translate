@@ -391,7 +391,7 @@ class SpecialManageGroups {
 			"page_title LIKE '{$dbw->escapeLike( $titleText )}/%%'"
 		);
 
-		$rows = $dbr->select(
+		$rows = $dbw->select(
 			array( 'page', 'revision', 'text' ),
 			array( 'page_title', 'page_namespace', 'old_text', 'old_flags' ),
 			$conds,
