@@ -343,7 +343,6 @@ class SpecialManageGroups {
 
 	protected function doAction( $action, $group, $key, $code, $message, $comment = '' ) {
 		if ( $action === 'import' || $action === 'conflict' ) {
-
 			if ( $action === 'import' ) {
 				$comment = wfMsgForContentNoTrans( 'translate-manage-import-summary' );
 			} else {
@@ -356,6 +355,7 @@ class SpecialManageGroups {
 		} elseif ( $action === 'ignore' ) {
 			return array( 'translate-manage-import-ignore', $key );
 		} elseif ( $action === 'fuzzy' ) {
+			$title = self::makeTitle( $group, $key, $code );
 			return $this->doFuzzy( $title, $message, $comment );
 		} else {
 			throw new MWException( "Unhandled action $action" );
