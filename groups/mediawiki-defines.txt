@@ -658,11 +658,12 @@ file = OAI/OAIRepo.i18n.php
 optional = oairepository
 
 Ogg Handler
+magicfile = OggHandler/OggHandler.i18n.magic.php
+descmsg = ogg-desc
 optional = ogg-player-cortado, ogg-player-vlc-mozilla, ogg-player-vlc-activex
 optional = ogg-player-quicktime-mozilla, ogg-player-quicktime-activex
 optional = ogg-player-totem, ogg-player-kmplayer, ogg-player-kaffeine
 optional = ogg-player-mplayerplug-in
-descmsg = ogg-desc
 
 Online Status
 magicfile = OnlineStatus/OnlineStatus.i18n.magic.php
