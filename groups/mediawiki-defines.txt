@@ -766,6 +766,7 @@ Reader Feedback
 id = ext-readerfeedback-readerfeedback
 file = ReaderFeedback/language/ReaderFeedback.i18n.php
 aliasfile = ReaderFeedback/language/ReaderFeedback.alias.php
+descmsg = readerfeedback-desc
 
 Reader Feedback - Liked Pages
 id = ext-readerfeedback-likedpages
