@@ -82,9 +82,7 @@ descmsg = block_title_error-desc
 Book Information
 descmsg = bookinfo-desc
 
-Breadcrumbs navigation
-file = BreadCrumbs/BreadCrumbs.i18n.php
-id = ext-breadcrumbs
+Bread Crumbs
 
 Call
 aliasfile = Call/Call.alias.php
@@ -151,7 +149,7 @@ optional = cite_references_link_many_format_backlink_labels
 optional = cite_references_link_many_sep, cite_references_link_many_and
 ignored = cite_references_prefix, cite_references_suffix
 
-Cite (special page)
+Special Cite
 id = ext-citespecial
 file = Cite/SpecialCite.i18n.php
 aliasfile = Cite/SpecialCite.alias.php
