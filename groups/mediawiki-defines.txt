@@ -1173,9 +1173,7 @@ aliasfile = UserMerge/UserMerge.alias.php
 User Option Stats
 aliasfile = UserOptionStats/UserOptionStats.alias.php
 
-User Rights Notification
-id = ext-userrightsnotif
-file = UserRightsNotif/UserRightsNotif.i18n.php
+User Rights Notif
 
 Vote
 aliasfile = Vote/Vote.alias.php
