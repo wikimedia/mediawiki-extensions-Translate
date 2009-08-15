@@ -156,7 +156,7 @@ aliasfile = Cite/SpecialCite.alias.php
 descmsg = cite_article_desc
 ignored = cite_text
 
-Cldr
+CLDR
 file = cldr/LanguageNames.i18n.php
 
 Clean Changes
