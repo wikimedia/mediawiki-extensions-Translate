@@ -1,3 +1,27 @@
+/**
+ * JavaScript that implements the Ajax translation interface, which was at the
+ * time of writing this probably the biggest usability problem in the extension.
+ * Most importantly, it speeds up translating and keeps the list of translatable
+ * messages open. It also allows multiple translation dialogs, for doing quick
+ * updates to other messages or documentation, or translating multiple languages
+ * simultaneously together with the "In other languages" display included in
+ * translation helpers and implemented by utils/TranslationhHelpers.php.
+ * The form itself is implemented by utils/TranslationEditPage.php, which is
+ * called from Special:Translate/editpage?page=Namespace:pagename.
+ *
+ * TODO list:
+ * * On succesful save, update the MessageTable display too.
+ * * I18n for the messages
+ * * Integrate the (new) edittoolbar
+ * * Autoload ui classes
+ * * Instead of hc'd onscript, give them a class and use necessary triggers
+ * * Live-update the checks assistant
+ *
+ * @author Niklas Laxström
+ * @copyright Copyright © 2009 Niklas Laxström
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ */
+
 function trlOpenJsEdit( page ) {
 	var url = wgScript + "?title=Special:Translate/editpage&page=" + page + "&uselang=" + wgUserLanguage;
 	var id = "jsedit" +  page.replace( /[^a-zA-Z0-9_]/g, '_' );
@@ -9,8 +33,7 @@ function trlOpenJsEdit( page ) {
 		return false;
 	}
 
-	var div = jQuery('<div id=' + id + '></div>');
-	div.appendTo(document.body);
+	jQuery('<div></div>').attr('id', id).appendTo(jQuery('body'));
 
 	var dialog = jQuery("#"+id);
 
@@ -18,6 +41,9 @@ function trlOpenJsEdit( page ) {
 		var form = jQuery("#"+ id + " form");
 		var textarea = form.find( ".mw-translate-edit-area" );
 		textarea.width(textarea.width()-4);
+		//textarea.wikiEditor();
+		textarea.focus();
+
 		form.ajaxForm({
 			datatype: "json",
 			success: function(json) {
@@ -49,3 +75,16 @@ function trlOpenJsEdit( page ) {
 function trlVpWidth() {
 	return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 }
+
+/*
+mvJsLoader.doLoadDepMode([
+	[ '$j.ui'
+	],[
+		'$j.ui.resizable',
+		'$j.ui.draggable',
+		'$j.ui.dialog',
+	]
+], function(){
+	$j('link_target').dialog( dialogConfig)
+});
+*/
