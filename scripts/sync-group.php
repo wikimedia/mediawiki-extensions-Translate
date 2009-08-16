@@ -68,7 +68,11 @@ foreach ( $groups as &$group ) {
 
 	foreach ( $codes as $code ) {
 
-		$file = $group->getMessageFileWithPath( $code );
+		if ( $group instanceof FileBasedMessageGroup ) {
+			$file = $group->getSourceFilePath( $code );
+		} else {
+			$file = $group->getMessageFileWithPath( $code );
+		}
 		if ( !$file ) continue;
 
 		if ( !file_exists( $file ) ) continue;
