@@ -184,6 +184,9 @@ file = Collection/Collection.i18n.php
 descmsg = coll-desc
 ignored = coll-template_blacklist_title, coll-license_url
 
+Commentbox
+ignored = commentbox-prefill
+
 Comment Pages
 ignored = commenttab-editintro, commenttab-preload
 
