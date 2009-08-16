@@ -418,7 +418,7 @@ class SpecialManageGroups {
 
 		if ( count($changed) === $rows->numRows() ) {
 			$comment = "[{$wgUser->getName()}] " . wfMsgForContentNoTrans( 'translate-manage-import-summary' );
-			$title = Title::makeTitleSafe( $title->getNamespace, $title->getPrefixedDbKey() . '/en' );
+			$title = Title::makeTitleSafe( $title->getNamespace(), $title->getPrefixedDbKey() . '/en' );
 			$changed[] = $this->doImport( $title, $message, $comment, $fuzzybot );
 		}
 
