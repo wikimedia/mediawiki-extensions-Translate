@@ -725,10 +725,17 @@ class MessageGroups {
 
 		wfRunHooks( 'TranslatePostInitGroups', array( &$wgTranslateCC ) );
 
-		global $wgTranslateGroupFiles;
+		global $wgTranslateGroupFiles, $wgAutoloadClasses;
 		foreach ( $wgTranslateGroupFiles as $file ) {
 			wfDebug( $file."\n" );
 			$conf = TranslateSpyc::load($file);
+			if ( !empty($conf['AUTOLOAD']) && is_array($conf['AUTOLOAD']) ) {
+				$dir = dirname($file);
+				foreach( $conf['AUTOLOAD'] as $class => $file ) {
+					$wgAutoloadClasses[$class] = "$dir/$file";
+				}
+			}
+
 			$group = MessageGroupBase::factory( $conf );
 			$wgTranslateCC[$group->getId()] = $group;
 		}

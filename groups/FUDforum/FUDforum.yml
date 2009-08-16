@@ -11,7 +11,7 @@ FILES:
   class: JavaFFS
   keySeparator: ":"
   sourcePattern: %GROUPROOT%/fudforum/install/forum_data/thm/default/i18n/%CODE%/msg
-  targetPattern: %CODE%/msg
+  targetPattern: i18n/%CODE%/msg
   codeMap:
     af:      afrikaans
     ar:      arabic
@@ -43,7 +43,7 @@ FILES:
     lv:      latvian
     nl:      dutch
     nn:      norwegian_nynorsk
-    no:      norwegian_bokmal
+    no:      norwegian # BC
     oc:      occitan
     pl:      polish
     pt-br:   portuguese_br
@@ -60,5 +60,15 @@ FILES:
     ur:      urdu
     vi:      vietnamese
     vo:      volapuk
-    zh-hans: chinese_simplified
+    zh-hans: chinese # BC
     zh-hant: chinese_traditional
+
+
+CHECKER:
+  class: FUDforumMessageChecker
+  checks:
+    - FUDforumVariablesCheck
+    - braceBalanceCheck
+
+AUTOLOAD:
+  FUDforumMessageChecker: Checker.php

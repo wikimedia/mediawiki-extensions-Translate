@@ -95,7 +95,10 @@ class SimpleFFS implements FFS {
 		}
 
 		$output = $this->writeReal( $collection );
-		file_put_contents( $targetFile, $output );
+		if ( $output ) {
+			wfMkdirParents( dirname( $targetFile ), null, __METHOD__ );
+			file_put_contents( $targetFile, $output );
+		}
 	}
 
 	public function writeIntoVariable( MessageCollection $collection ) {
@@ -224,11 +227,11 @@ class JavaFFS extends SimpleFFS {
 	//
 
 	protected function writeReal( MessageCollection $collection ) {
-
-		$output  = $this->doHeader( $collection );
-		$output .= $this->doAuthors( $collection );
-		$output .= "\n";
-
+		$header  = $this->doHeader( $collection );
+		$header .= $this->doAuthors( $collection );
+		$header .= "\n";
+		
+		$output = '';
 		$mangler = $this->group->getMangler();
 		foreach ( $collection as $key => $m ) {
 			$key = $mangler->unmangle( $key );
@@ -243,7 +246,10 @@ class JavaFFS extends SimpleFFS {
 			if ( $m->hasTag( 'fuzzy' ) ) $output .= "# Fuzzy\n";
 			$output .= "$key{$this->keySeparator}$value\n";
 		}
-		return $output;
+
+		if ( $output ) {
+			return $header.$output;
+		}
 	}
 
 	protected function doHeader( MessageCollection $collection ) {
