@@ -267,6 +267,7 @@ Please resubmit the form to continue processing.',
 	'translate-manage-import-summary' => 'Importing a new version from external source',
 	'translate-manage-conflict-summary' => 'Importing a new version from external source.
 Please check.',
+	'translate-manage-fuzzy-summary' => 'The definition has changed',
 	'translate-manage-import-fuzzy' => 'Importing and fuzzying: $1',
 
 	'translate-manage-import-done' => 'All done!',

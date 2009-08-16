@@ -355,7 +355,8 @@ class SpecialManageGroups {
 		} elseif ( $action === 'ignore' ) {
 			return array( 'translate-manage-import-ignore', $key );
 		} elseif ( $action === 'fuzzy' ) {
-			$title = self::makeTitle( $group, $key, $code );
+			$title = Title::makeTitleSafe( $group->getNamespace(), $key );
+			$comment = wfMsgForContentNoTrans( 'translate-manage-fuzzy-summary' );
 			return $this->doFuzzy( $title, $message, $comment );
 		} else {
 			throw new MWException( "Unhandled action $action" );
@@ -368,8 +369,8 @@ class SpecialManageGroups {
 
 	protected function doImport( $title, $message, $comment, $user = null ) {
 		$flags = EDIT_FORCE_BOT;
-		$article = new Article( $title );		 
-		$status = $article->doEdit( $message, $comment, $flags );
+		$article = new Article( $title );
+		$status = $article->doEdit( $message, $comment, $flags, false, $user );
 		$success = $status->isOK();
 
 		if ( $success ) {
@@ -382,9 +383,11 @@ class SpecialManageGroups {
 	}
 
 	protected function doFuzzy( $title, $message, $comment ) {
+		global $wgUser;
+
 		$dbw = wfGetDB( DB_MASTER );
 		$titleText = $title->getDBKey();
-		$condArray = array(
+		$conds = array(
 			'page_namespace'    => $title->getNamespace(),
 			'page_latest=rev_id',
 			'rev_text_id=old_id',
@@ -403,26 +406,26 @@ class SpecialManageGroups {
 		foreach ( $rows as $row ) {
 			$ttitle = Title::makeTitle( $row->page_namespace, $row->page_title );
 
-			$changed[] = $this->doImport(
-				$ttitle,
-				TRANSLATE_FUZZY . Revision::getRevisionText( $row ),
-				$comment,
-				$fuzzybot
-			);
+			// Avoid double-fuzzying
+			$text = Revision::getRevisionText( $row );
+			$text = str_replace( TRANSLATE_FUZZY, '', $text );
+			$text = TRANSLATE_FUZZY . $text;
 
+			$changed[] = $this->doImport( $ttitle, $text, "[{$wgUser->getName()}] " . $comment, $fuzzybot );
 			if ( $this->checkProcessTime() ) break;
 
 		}
 
-		if ( count($changed) === count($rows) ) {
-			$comment = wfMsgForContentNoTrans( 'translate-manage-import-summary' );
-			$changed[] = $this->doImport( $title, $message, $comment );
+		if ( count($changed) === $rows->numRows() ) {
+			$comment = "[{$wgUser->getName()}] " . wfMsgForContentNoTrans( 'translate-manage-import-summary' );
+			$title = Title::makeTitleSafe( $title->getNamespace, $title->getPrefixedDbKey() . '/en' );
+			$changed[] = $this->doImport( $title, $message, $comment, $fuzzybot );
 		}
 
 		$text = '';
 		foreach ( $changed as $c ) {
 			$key = array_shift( $c );
-			$text = "* " . wfMsgExt( $key, array(), $c );
+			$text .= "* " . wfMsgExt( $key, array(), $c ) . "\n";
 		}
 
 		return array( 'translate-manage-import-fuzzy',
