@@ -108,13 +108,14 @@ abstract class MessageGroupBase implements MessageGroup {
 		$cache = new MessageGroupCache( $this );
 		if ( $cache->exists($code) ) {
 			$msg = $cache->get( $key, $code );
-			if ( $msg === false ) { // Try harder
-				$nkey = str_replace( ' ', '_', strtolower( $key ) );
-				$keys = $cache->getKeys($code);
-				foreach ( $keys as $k ) {
-					if ( $nkey === str_replace( ' ', '_', strtolower( $k ) ) ) {
-						return $cache->get($k);
-					}
+
+			if ( $msg !== false ) return $msg;
+			// Try harder
+			$nkey = str_replace( ' ', '_', strtolower( $key ) );
+			$keys = $cache->getKeys($code);
+			foreach ( $keys as $k ) {
+				if ( $nkey === str_replace( ' ', '_', strtolower( $k ) ) ) {
+					return $cache->get($k);
 				}
 			}
 			return null;
