@@ -63,7 +63,6 @@ FILES:
     zh-hans: chinese # BC
     zh-hant: chinese_traditional
 
-
 CHECKER:
   class: FUDforumMessageChecker
   checks:
@@ -72,3 +71,9 @@ CHECKER:
 
 AUTOLOAD:
   FUDforumMessageChecker: Checker.php
+
+TAGS:
+  optional:
+    - msg_title
+    - thread_title
+    - tree_title
