@@ -146,7 +146,7 @@ class ChangeSyncer {
 
 
 
-			$title = Title::makeTitleSafe( $this->group->namespaces[0], "$key/$code" );
+			$title = Title::makeTitleSafe( $this->group->getNamespace(), "$key/$code" );
 
 			$page = $title->getPrefixedText();
 

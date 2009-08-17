@@ -1,7 +1,12 @@
 <?php
 
 /**
+ * This class together with some javascript implements the ajax translation
+ * page.
  *
+ * @author Niklas Laxström
+ * @copyright Copyright © 2009 Niklas Laxström
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 class TranslationEditPage {
 	/// Instance of an Title object
@@ -25,6 +30,10 @@ class TranslationEditPage {
 	public function setTitle( Title $title ) { $this->title = $title; }
 	public function getTitle() { return $this->title; }
 
+	/**
+	 * Generates the html snippet for ajax edit. Echoes it to the output and 
+	 * disabled all other output.
+	 */
 	public function execute() {
 		$data = $this->getEditInfo();
 		$helpers = new TranslationHelpers( $this->getTitle() );
@@ -39,7 +48,7 @@ class TranslationEditPage {
 			'class' => 'mw-translate-edit-area',
 			'rows' =>  $short ? 2: 10,
 		);
-		$textarea = Html::element( 'textarea', $textareaParams, $translation );
+		$textarea = Html::element( 'textarea', $textareaParams, htmlspecialchars($translation) );
 
 		$hidden = array();
 		$hidden[] = Xml::hidden( 'title', $this->getTitle()->getPrefixedDbKey() );
@@ -53,10 +62,12 @@ class TranslationEditPage {
 		$summary = Xml::inputLabel( wfMsg( 'summary' ), 'summary', 'summary', 40 );
 		$save = Html::input( 'submit', wfMsg( 'savearticle' ), 'submit' );
 
+		// Use the api to submit edits
 		$formParams = array(
 			'action' => "{$wgServer}{$wgScriptPath}/api.php",
 			'method' => 'post',
 		);
+
 		$form = Html::element( 'form', $formParams,
 			implode( "\n", $hidden ) . "\n" .
 			$helpers->getBoxes() . "\n" .
@@ -66,6 +77,11 @@ class TranslationEditPage {
 		echo $form;
 	}
 
+	/**
+	 * Gets the edit token and timestamps in some ugly array structure. Needs to
+	 * be cleaned up.
+	 * @return Array
+	 */
 	protected function getEditInfo() {
 		$params = new FauxRequest( array(
 			'action' => 'query',
