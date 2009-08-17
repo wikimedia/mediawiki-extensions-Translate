@@ -113,7 +113,7 @@ Changes are not saved until you click save button below.',
 
 	'translate-magic-notsaved' => 'Your edit was not saved!',
 	'translate-magic-errors' => 'Please fix following {{PLURAL:$1|error|errors}} in translations:',
-	'translate-magic-saved'  => 'Your changes were saved succesfully.',
+	'translate-magic-saved'  => 'Your changes were saved successfully.',
 
 	'translationchanges'        => 'Translation changes',
 	'translationchanges-export' => 'export',
@@ -295,7 +295,7 @@ If you choose to ignore changes, they will be overridden on next export.',
 Method <tt>$1</tt> is not supported.',
 	'translate-import-err-dl-failed' => 'Unable to fetch the file:
 $1',
-	'translate-import-err-ul-failed' => 'File upload was not succesful',
+	'translate-import-err-ul-failed' => 'File upload was not successful',
 	'translate-import-err-invalid-title' => 'Provided file name <nowiki>$1</nowiki> was invalid.',
 	'translate-import-err-no-such-file' => 'File <nowiki>$1</nowiki> does not exist or has not been uploaded locally.',
 
