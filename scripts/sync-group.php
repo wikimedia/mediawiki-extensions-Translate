@@ -88,8 +88,8 @@ foreach ( $groups as &$group ) {
 		STDOUT( "Modify time for $code: " . wfTimestamp( TS_ISO_8601, $ts ) );
 
 		$count = $cs->checkConflicts( $code, $start, $end, $ts );
-
 	}
+
 	unset( $group );
 }
 
@@ -143,8 +143,6 @@ class ChangeSyncer {
 				// STDOUT( "Unknown key $key" );
 				continue;
 			}
-
-
 
 			$title = Title::makeTitleSafe( $this->group->getNamespace(), "$key/$code" );
 
@@ -210,7 +208,6 @@ class ChangeSyncer {
 
 			if ( !$this->interactive ) continue;
 			STDOUT( " →Needs manual resolution", $page );
-
 			STDOUT( "Source translation at $changeDate:" );
 			STDOUT( $this->color( 'blue', $translation ) . "\n" );
 			STDOUT( "Wiki translation at $wikiDate:" );
@@ -230,7 +227,6 @@ class ChangeSyncer {
 					break;
 				}
 			} while ( true );
-
 		}
 	}
 
@@ -299,7 +295,6 @@ class ChangeSyncer {
 
 		$wgUser = $old;
 	}
-
 }
 
 STDOUT( wfTimestamp( TS_RFC2822 ) );
