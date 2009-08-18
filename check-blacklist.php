@@ -111,6 +111,7 @@ array(
 	'message' => array(
 		'configure-condition-description-4', // Optional parameter for PLURAL
 		'configure-edit-old', // Optional time parameters
+		'configure-old-summary-datetime', // Optional time parameters
 		'configure-viewconfig-line', // Optional time parameters
 	)
 ),
