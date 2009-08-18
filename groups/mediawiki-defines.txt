@@ -1041,6 +1041,10 @@ id = ext-translate-pagetranslation
 file = Translate/PageTranslation.i18n.php
 descmsg = tpt-desc
 
+Transliterator
+magicfile = Transliterator/Transliterator.i18n.magic.php
+optional = transliterator-prefix
+
 Trusted XFF
 
 TSPoll
