@@ -123,21 +123,35 @@ Naam: $1',
 Slegs die nuutste weergawe kan vir vertaling gemerk word.',
 	'tpt-notsuitable' => 'Die bladsy $1 is nie geskik om vir vertaling gemerk te word nie.
 Sorg dat dit die etiket <nowiki><translate></nowiki> bevat en dat die sintaks daarvan korrek is.',
+	'tpt-saveok' => 'Die bladsy [[$1]] is gemerk vir vertaling met $2 uitstaande {{PLURAL:$2|vertaaleenheid|vertaaleenhede}}.
+Die bladsy kan nou <span class="plainlinks">[$3 vertaal]</span> word.',
 	'tpt-badsect' => '"$1" is nie \'n geldige naam vir vertaaleenheid $2 nie.',
+	'tpt-showpage-intro' => 'Hieronder word nuwe, bestaande en verwyderde afdelings gelys.
+Alvorens u die weergawe vir vertaling merk, maak seker dat die veranderinge geminimeer word om onnodig werk vir vertalers te voorkom.',
 	'tpt-mark-summary' => 'Merk die weergawe vir vertaling',
 	'tpt-edit-failed' => 'Die bladsy "$1" kon nie bygewerk word nie.',
 	'tpt-already-marked' => 'Die nuutste weergawe van die bladsy is reeds gemerk vir vertaling.',
 	'tpt-list-nopages' => 'Geen bladsye is vir vertaling gemerk of is reg om vir vertaling gemerk te word nie.',
-	'tpt-old-pages' => "'n Weergawe van die {PLURAL:$1|bladsy|bladsye}} is reeds vir vertaling gemerk.",
+	'tpt-old-pages' => "'n Weergawe van die {{PLURAL:$1|bladsy|bladsye}} is reeds vir vertaling gemerk.",
+	'tpt-new-pages' => 'Hierdie {{PLURAL:$1|bladsy bevat|bladsye bevat}} teks met vertalings-etikette, maar geen weergawe van die {{PLURAL:$1|bladsy|bladsye}} is vir vertaling gemerk nie.',
 	'tpt-rev-latest' => 'nuutste weergawe',
 	'tpt-rev-old' => 'verskil met die vorige gemerkte weergawe',
 	'tpt-rev-mark-new' => 'merk die weergawe vir vertaling',
 	'tpt-translate-this' => 'vertaal die bladsy',
 	'translate-tag-translate-link-desc' => 'Vertaal die bladsy',
 	'translate-tag-markthis' => 'Merk die bladsy vir vertaling',
+	'translate-tag-markthisagain' => 'Hierdie bladsy is <span class="plainlinks">[$1 kere gewysig]</span> sedert dit laas <span class="plainlinks">[$2 vir vertaling gemerk was]</span>.',
 	'translate-tag-hasnew' => 'Daar is <span class="plainlinks">[$1 wysigings]</span> aan die bladsy gemaak wat nie vir vertaling gemerk is nie.',
+	'tpt-translation-intro' => 'Die bladsy is \'n <span class="plainlinks">[$1 vertaalde weergawe]</span> van bladsy [[$2]]. Die vertaling van die bladsy is $3% voltooi.',
 	'tpt-translation-intro-fuzzy' => 'Verouderde vertalings word so weergegee.',
 	'tpt-languages-legend' => 'Ander tale:',
+	'tpt-target-page' => "Hierdie bladsy kan nie handmatig gewysig word nie.
+Die bladsy is 'n vertaling van die bladsy [[$1]].
+Die vertaling kan bygewerk word via die [$2 vertaalgereedskap].",
+	'tpt-unknown-page' => 'Hierdie naamruimte is gereserveer vir die vertalings van bladsye.
+Die bladsy wat u probeer wysig kom nie ooreen met een wat vir vertaling gemerk is nie.',
+	'tpt-install' => 'Voer php maintenance/update.php of die webinstallasie uit om die bladsyvertaling te aktiveer.',
+	'tpt-render-summary' => "Besig met bewerkings vanweë 'n nuwe basisweergawe van die bronblad",
 	'tpt-download-page' => 'Eksporteer bladsy met vertalings',
 );
 
@@ -577,8 +591,17 @@ $messages['el'] = array(
  * @author Yekrats
  */
 $messages['eo'] = array(
+	'pagetranslation' => 'Paĝa traduko',
+	'tpt-section' => 'Tradukada unuo $1',
+	'tpt-section-new' => 'Nova tradukada unuo.
+Nomo: $1',
+	'tpt-section-deleted' => 'Tradukada unuo $1',
 	'tpt-template' => 'Paĝa ŝablono',
+	'tpt-templatediff' => 'La paĝa ŝablono estis ŝanĝita.',
+	'tpt-diff-old' => 'Antaŭa teksto',
 	'tpt-diff-new' => 'Nova teksto',
+	'tpt-submit' => 'Marki ĉi tiun version por traduki',
+	'tpt-sections-deleted' => 'Forigitaj tradukadaj unuoj',
 	'tpt-notsuitable' => 'Paĝo $1 ne taŭgas por traduki.
 Certigu ke ĝi havas etikedojn <nowiki><translate></nowiki> kaj havas validan sintakson.',
 	'tpt-mark-summary' => 'Markis ĉi tiun version por traduki.',
@@ -1708,15 +1731,16 @@ $messages['pdc'] = array(
 
 /** Polish (Polski)
  * @author Leinad
+ * @author Sp5uhe
  * @author ToSter
  */
 $messages['pl'] = array(
 	'pagetranslation' => 'Tłumaczenie strony',
-	'right-pagetranslation' => 'Oznacz wersje stron do przetłumaczenia',
-	'tpt-desc' => 'Rozszerzenie do tłumaczenia stron z zawartością',
+	'right-pagetranslation' => 'Oznaczanie wersji stron do przetłumaczenia',
+	'tpt-desc' => 'Rozszerzenie pozwalające tłumaczyć strony treści',
 	'tpt-section' => 'Jednostka tłumaczenia $1',
 	'tpt-section-new' => 'Nowa jednostka tłumaczenia.
-Nazwa: $1',
+Nazwa – $1',
 	'tpt-section-deleted' => 'Jednostka tłumaczenia $1',
 	'tpt-template' => 'Szablon strony',
 	'tpt-templatediff' => 'Szablon strony został zmieniony.',
@@ -1730,18 +1754,18 @@ Nazwa: $1',
 	'tpt-oldrevision' => '$2 nie jest najnowszą wersją strony [[$1]].
 Tylko najnowsze wersje mogą być oznaczane do tłumaczenia.',
 	'tpt-notsuitable' => 'Strona $1 nie nadaje się do tłumaczenia.
-Upewnij się, że ma znaczniki <nowiki><translate></nowiki> i dozwoloną składnię.',
+Upewnij się, że ma znaczniki <nowiki><translate></nowiki> i właściwą składnię.',
 	'tpt-saveok' => 'Strona [[$1]] została oznaczona do tłumaczenia razem z $2 {{PLURAL:$2|jednostką|jednostkami}} tłumaczenia.
-Strona może teraz zostać <span class="plainlinks">[$3 przetłumaczona]</span>.',
-	'tpt-badsect' => '"$1" nie jest dozwoloną nazwą jednostki tłumaczenia $2.',
+Można ją teraz <span class="plainlinks">[$3 przetłumaczyć]</span>.',
+	'tpt-badsect' => '„$1” nie jest dozwoloną nazwą jednostki tłumaczenia $2.',
 	'tpt-showpage-intro' => 'Poniżej wypisane są nowe, istniejące i usunięte sekcje.
-Przed oznaczeniem tej wersji do tłumaczenia sprawdź, czy zmiany w sekcjach są zminimalizowane, aby uniknąć niepotrzebnej pracy dla tłumaczy.',
+Przed oznaczeniem tej wersji do tłumaczenia, aby uniknąć niepotrzebnej pracy tłumaczy, sprawdź czy zmiany w sekcjach zostały zminimalizowane.',
 	'tpt-mark-summary' => 'Oznaczono tę wersję do tłumaczenia',
-	'tpt-edit-failed' => 'Nie udało się zaktualizować strony: $1',
+	'tpt-edit-failed' => 'Nie udało się zaktualizować strony $1',
 	'tpt-already-marked' => 'Najnowsza wersja tej strony już wcześniej została oznaczona do tłumaczenia.',
 	'tpt-list-nopages' => 'Nie oznaczono stron do tłumaczenia i nie ma stron gotowych do oznaczenia do tłumaczenia.',
-	'tpt-old-pages' => '{{PLURAL:$1|Pewna wersja tej strony została oznaczona|Pewne wersje tych stron zostały oznaczone}} do tłumaczenia.',
-	'tpt-new-pages' => '{{PLURAL:$1|Ta strona zawiera|Te strony zawierają}} tekst ze znacznikami tłumaczenia, ale żadna wersja {{PLURAL:$1|tej strony|tych ston}} nie jest aktualnie oznaczona do tłumaczenia.',
+	'tpt-old-pages' => 'Niektóre wersje {{PLURAL:$1|tej strony|tych stron}} zostały oznaczone do tłumaczenia.',
+	'tpt-new-pages' => '{{PLURAL:$1|Ta strona zawiera|Te strony zawierają}} tekst ze znacznikami tłumaczenia, ale żadna wersja {{PLURAL:$1|tej strony|tych stron}} nie jest aktualnie oznaczona do tłumaczenia.',
 	'tpt-rev-latest' => 'ostatnia wersja',
 	'tpt-rev-old' => 'zmiana w stosunku do ostatniej oznaczonej wersji',
 	'tpt-rev-mark-new' => 'oznacz tę wersję do tłumaczenia',
@@ -1750,11 +1774,11 @@ Przed oznaczeniem tej wersji do tłumaczenia sprawdź, czy zmiany w sekcjach są
 	'translate-tag-markthis' => 'Oznacz tę stronę do tłumaczenia',
 	'translate-tag-markthisagain' => 'Ta strona została <span class="plainlinks">[zmieniona $1 razy]</span>, od kiedy ostatnio była <span class="plainlinks">[$2 oznaczona do tłumaczenia]</span>.',
 	'translate-tag-hasnew' => 'Ta strona została <span class="plainlinks">[zmieniona $1 razy]</span> i nie została oznaczona do tłumaczenia.',
-	'tpt-translation-intro' => 'Ta strona to <span class="plainlinks">[$1 przetłumaczona wersja]</span> strony [[$2]], a tłumaczenie jest skończone w $3% i aktualne.',
-	'tpt-translation-intro-fuzzy' => 'Tak są oznaczone nieaktualne tłumaczenia.',
+	'tpt-translation-intro' => 'Ta strona to <span class="plainlinks">[$1 przetłumaczona wersja]</span> strony [[$2]], a tłumaczenie jest ukończone lub aktualne w $3%.',
+	'tpt-translation-intro-fuzzy' => 'Tak są oznaczane nieaktualne tłumaczenia.',
 	'tpt-languages-legend' => 'Inne języki:',
 	'tpt-target-page' => 'Ta strona nie może zostać zaktualizowana ręcznie.
-Ta strona jest tłumaczeniem strony [[$1]], a tłumaczenie może zostać zmienione za pomocą [$2 narzędzia tłumacza].',
+Jest ona tłumaczeniem strony [[$1]], a tłumaczenie może zostać zmienione za pomocą [$2 narzędzia tłumacza].',
 	'tpt-unknown-page' => 'Ta przestrzeń nazw jest zarezerwowana dla tłumaczeń stron z zawartością.
 Strona, którą próbujesz edytować, prawdopodobnie nie odpowiada żadnej stronie oznaczonej do tłumaczenia.',
 	'tpt-install' => 'Uruchom php maintenance/update.php lub przeprowadź instalację webową, aby włączyć opcję tłumaczenia stron.',
@@ -2258,6 +2282,15 @@ $messages['tr'] = array(
 	'tpt-languages-legend' => 'Diğer diller:',
 );
 
+/** Tatar (Cyrillic) (Татарча/Tatarça (Cyrillic))
+ * @author Yildiz
+ */
+$messages['tt-cyrl'] = array(
+	'pagetranslation' => 'Битләр тәрҗемәсе',
+	'tpt-translate-this' => 'бу битне тәрҗемә итү',
+	'translate-tag-translate-link-desc' => 'Бу битне тәрҗемә итү',
+);
+
 /** Ukrainian (Українська)
  * @author AS
  * @author Ahonc
@@ -2330,8 +2363,20 @@ $messages['yi'] = array(
 
 /** Simplified Chinese (‪中文(简体)‬)
  * @author Gzdavidwong
+ * @author Liangent
  */
 $messages['zh-hans'] = array(
+	'pagetranslation' => '页面翻译',
+	'right-pagetranslation' => '为翻译标记页面的版本',
+	'tpt-desc' => '用于翻译内容页面的扩展',
+	'tpt-section' => '翻译单元$1',
+	'tpt-section-new' => '新翻译单元。
+名字：$1',
+	'tpt-section-deleted' => '翻译单元$1',
+	'tpt-template' => '页面模板',
+	'tpt-templatediff' => '页面模板已改变。',
+	'tpt-diff-old' => '上一个文字',
+	'tpt-diff-new' => '下一个文字',
 	'translate-tag-translate-link-desc' => '翻译本页',
 );
 
