@@ -613,6 +613,8 @@ MediaWiki Search
 id = ext-mwsearch
 file = MWSearch/MWSearch.i18n.php
 
+MW Releases
+
 Navigation Popups
 
 Negref
