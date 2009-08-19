@@ -3697,6 +3697,7 @@ $1',
 );
 
 /** Spanish (Español)
+ * @author Antur
  * @author Crazymadlover
  * @author Imre
  * @author Kobazulo
@@ -3806,7 +3807,9 @@ Los cambios no se graban hasta que no pulses el boton de guardar de abajo.',
 	'prefs-translate' => 'Opciones de traducción',
 	'translate-pref-editassistlang-bad' => 'Código de lenguaje invalido en la lista:
 <nowiki>$1</nowiki>.',
+	'translate-pref-jsedit' => 'Editor de traducción mejorado (JavaScript)',
 	'right-translate' => 'Editar usando el interfaz de traducción',
+	'right-translate-import' => 'Importar traducciones offline',
 	'translate-rc-translation-filter' => 'Filtrar traducciones:',
 	'translate-rc-translation-filter-no' => 'No filtrar nada',
 	'translate-rc-translation-filter-only' => 'Mostrar sólo traducciones',
@@ -3871,16 +3874,45 @@ Se te anima a revisar los mensajes a través de [[Special:Translate|{{int:transl
 	'translate-group-desc-wikimediaextensions' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones MediaWiki soportadas usadas por [http://wikimedia.org/ Wikimedia Foundation]',
 	'translate-group-desc-wikitravelextensions' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones MediaWiki soportadas usadas por [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones relacionadas a [http://unicefinnovation.org/wiki.php Uniwiki]',
+	'translate-manage-listgroups' => 'Grupos configurados',
+	'translate-manage-listgroups-old' => 'Grupos en estilo antiguo',
+	'translate-manage-newgroup' => 'Este grupo de mensajes no ha sido importado previamente',
+	'translate-manage-return-to-group' => 'Regresar a la página de detalles de grupo',
 	'translate-manage-modlang-new' => '$1 (nuevo)',
 	'translate-manage-import-diff' => 'Mensaje $1 | Acciónes: $2',
 	'translate-manage-import-new' => 'Nuevo mensaje $1',
 	'translate-manage-action-import' => 'Importar',
 	'translate-manage-action-ignore' => 'Ignorar',
 	'translate-manage-submit' => 'Ejecutar',
+	'translate-manage-import-ok' => 'Se importó nueva versión de página $1.',
+	'translate-manage-import-noks' => 'Error al importar nueva versión de página $1: $2',
+	'translate-manage-import-ignore' => 'Salteando mensaje $1.',
+	'translate-manage-import-summary' => 'Importando nueva versión desde fuente externa',
+	'translate-manage-conflict-summary' => 'Importando nueva versión desde fuente externa.
+Por favor verifique.',
+	'translate-manage-fuzzy-summary' => 'La definición ha cambiado',
+	'translate-manage-import-fuzzy' => 'Importando y combinando: $1',
 	'translate-manage-import-done' => '¡Ya está!',
+	'translate-manage-import-rebuild' => 'Reconstruye Caché.',
+	'translate-manage-intro-en' => 'A continuación está la lista de modificaciones de mensajes en este grupo.
+Por favor revise los cambios y elija la acción a tomar para cada mensaje.
+Una vez que Ud. ha actualizado las definiciones de mensajes, controle los cambios externos en otros idiomas, si existen.
+Tenga en cuenta que el comando <code>ignore</code> es solo temporario.',
+	'translate-manage-intro-other' => 'A continuación esta la lista de modificaciones de traducción en idioma $1.
+Por favor revíselos y elija la acción apropiada para cada uno.
+Si prefiere ignorar los cambios, se sobrescribirán en la próxima exportación.',
 	'translate-manage-subtitle' => 'Administrar',
+	'translate-manage-import-rebuild-all' => 'Reconstruye todos los lenguajes e ignora cualquier cambio',
 	'importtranslations' => 'Importar traducciónes',
+	'translate-import-from-url' => 'URL al archivo:',
+	'translate-import-from-wiki' => 'Archivo en esta wiki:',
 	'translate-import-load' => 'Subir archivo',
+	'translate-import-err-ul-failed' => 'La carga del archivo no fue exitosa.',
+	'translate-import-err-invalid-title' => 'El nombre del archivo <nowiki>$1</nowiki> es inválido.',
+	'translate-import-err-no-such-file' => 'El archivo <nowiki>$1</nowiki> no existe o no ha sido guardado localmente.',
+	'translate-import-err-warnings' => 'El archivo no está bien constituído.
+Asegúrese de que su editor no quita los campos msgctxt.
+Detalle: $1',
 );
 
 /** Estonian (Eesti)

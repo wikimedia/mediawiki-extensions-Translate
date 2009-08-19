@@ -616,6 +616,7 @@ Certigu ke ĝi havas etikedojn <nowiki><translate></nowiki> kaj havas validan si
 );
 
 /** Spanish (Español)
+ * @author Antur
  * @author Crazymadlover
  * @author Sanbec
  */
@@ -665,6 +666,8 @@ Antes de marcar esta versión para traducción, verifica que los cambios a las s
 Esta página es una traducción de la página [[$1]] y la traducción puede ser actualizada usando [$2 la herramienta de traducción].',
 	'tpt-unknown-page' => 'Este espacio de nombre está reservado para traducciones de páginas de contenido.
 La página que estás tratando de editar no parece corresponder con alguna página marcada para traducción.',
+	'tpt-render-summary' => 'Actualizando para hallar una nueva versión de la página fuente',
+	'tpt-download-page' => 'Exportar página con traducciones',
 );
 
 /** Estonian (Eesti)
