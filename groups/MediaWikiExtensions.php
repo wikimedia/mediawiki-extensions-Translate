@@ -457,6 +457,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-trustedxff',
 		'ext-uploadblacklist',
 		'ext-ui-usabilityinitiative',
+		'ext-ui-clicktracking',
 		'ext-ui-edittoolbar',
 		'ext-ui-editwarning',
 		'ext-ui-optin',
@@ -695,6 +696,7 @@ class AllUsabilityInitiativeExtensionsGroup extends AllMediawikiExtensionsGroup 
 
 	protected $usabilityinitiativeextensions = array(
 		'ext-ui-usabilityinitiative',
+		'ext-ui-clicktracking',
 		'ext-ui-edittoolbar',
 		'ext-ui-editwarning',
 		'ext-ui-optin',
