@@ -60,7 +60,7 @@ class MessageTable {
 		// Additional jQuery
 		$wgOut->addScriptClass( 'j.form' );
 		// TODO: this can't be a good way...
-		$wgOut->addExtensionStyle( "$wgScriptPath/js2/mwEmbed/jquery/jquery.ui-1.7.1/themes/base/ui.all.css" );
+		$wgOut->addExtensionStyle( "$wgScriptPath/js2/mwEmbed/jquery/jquery.ui/themes/base/ui.all.css" );
 	}
 
 
