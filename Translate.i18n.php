@@ -3820,6 +3820,7 @@ Los cambios no se graban hasta que no pulses el boton de guardar de abajo.',
 	'translate-magic-words' => 'Palabras mágicas',
 	'translate-magic-namespace' => 'Nombres de los espacios de nombres',
 	'translate-magic-notsaved' => 'Tu edición no fue grabada!',
+	'translate-magic-errors' => 'Por favor corrija {{PLURAL:$1|el siguiente error|los siguientes errores}} en la traducción:',
 	'translate-magic-saved' => 'Tus cambios fueron grabados exitosamente.',
 	'translationchanges' => 'Cambios de traducción',
 	'translationchanges-export' => 'exportar',
@@ -3832,6 +3833,8 @@ Los cambios no se graban hasta que no pulses el boton de guardar de abajo.',
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '{{PLURAL:$2|El siguiente enlace es problemático|Los siguientes $2 enlaces son problemáticos}}:
 <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links-missing' => '{{PLURAL:$2|Falta el siguiente enlace|Faltan los siguientes $2 enlaces}}:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Por favor, sustituye {{PLURAL:$2|la siguiente etiqueta por la correcta|las siguientes etiquetas por las correctas}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'El mensaje original usa <nowiki>{{PLURAL:}}</nowiki> pero no así la traducción.',
@@ -3841,6 +3844,9 @@ Los cambios no se graban hasta que no pulses el boton de guardar de abajo.',
 	'translate-pref-nonewsletter' => 'No quiero recibir correos de noticias',
 	'translate-pref-editassistlang' => 'Idiomas soportados:',
 	'prefs-translate' => 'Opciones de traducción',
+	'translate-pref-editassistlang-help' => 'Lista separada por comas de códigos de idioma.
+La traducción de un mensaje en estos idiomas se muestra cuando Ud. traduce.
+La lista de idiomas por defecto depende de su idioma.',
 	'translate-pref-editassistlang-bad' => 'Código de lenguaje invalido en la lista:
 <nowiki>$1</nowiki>.',
 	'translate-pref-jsedit' => 'Editor de traducción mejorado (JavaScript)',
@@ -3914,13 +3920,24 @@ Se te anima a revisar los mensajes a través de [[Special:Translate|{{int:transl
 	'translate-manage-listgroups-old' => 'Grupos en estilo antiguo',
 	'translate-manage-newgroup' => 'Este grupo de mensajes no ha sido importado previamente',
 	'translate-manage-return-to-group' => 'Regresar a la página de detalles de grupo',
+	'translate-manage-modlangs' => 'Por favor revise posibles cambios en {{PLURAL:$1|el siguiente idioma|los siguientes idiomas}}:',
 	'translate-manage-modlang-new' => '$1 (nuevo)',
 	'translate-manage-import-diff' => 'Mensaje $1 | Acciónes: $2',
 	'translate-manage-import-new' => 'Nuevo mensaje $1',
 	'translate-manage-import-deleted' => 'Mensaje $1 borrado',
 	'translate-manage-action-import' => 'Importar',
+	'translate-manage-action-conflict' => 'Importar y combinar',
 	'translate-manage-action-ignore' => 'Ignorar',
+	'translate-manage-action-fuzzy' => 'Importar y combinar traducciones',
 	'translate-manage-submit' => 'Ejecutar',
+	'translate-manage-nochanges' => 'No hay cambios en las definiciones de mensajes para este grupo.',
+	'translate-manage-nochanges-other' => 'No han habido cambios para este idioma.
+Use el enlace siguiente para volver a la vista de grupo.',
+	'translate-manage-inconsistent' => 'Se detectaron inconsistencias en la solicitud.
+Por favor revise y pruebe nuevamente.
+Detalles: $1.',
+	'translate-manage-toolong' => 'Se excedió el tiempo máximo de procesamiento de $1 {{PLURAL:$1|segundo|segundos}}.
+Por favor reenvíe el formulario para continuar procesando.',
 	'translate-manage-import-ok' => 'Se importó nueva versión de página $1.',
 	'translate-manage-import-noks' => 'Error al importar nueva versión de página $1: $2',
 	'translate-manage-import-ignore' => 'Salteando mensaje $1.',
