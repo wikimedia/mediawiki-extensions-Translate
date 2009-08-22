@@ -114,7 +114,7 @@ class TranslationHelpers {
 		}
 
 		if ( count($boxes) ) {
-			return Html::element( 'div', array( 'class' => 'mw-sp-translate-edit-fields' ), implode( "\n\n", $boxes ) );
+			return Html::rawElement( 'div', array( 'class' => 'mw-sp-translate-edit-fields' ), implode( "\n\n", $boxes ) );
 		} else {
 			throw new MWException( "no boxes" );
 		}
@@ -152,7 +152,7 @@ class TranslationHelpers {
 
 				$text = TranslateUtils::convertWhiteSpaceToHTML( $text );
 				$params = array( 'class' => 'mw-sp-translate-edit-tmsug', 'title' => $s['source'] );
-				$boxes[] = Html::element( 'div', $params, self::legend( $label ) . $text . self::clear() );
+				$boxes[] = Html::rawElement( 'div', $params, self::legend( $label ) . $text . self::clear() );
 			}
 		}
 
@@ -187,7 +187,7 @@ class TranslationHelpers {
 			wfMsg( 'word-separator') .
 			wfMsg( 'parentheses', $title );
 
-		$msg = Html::element( 'span',
+		$msg = Html::rawElement( 'span',
 			array( 'class' => 'mw-translate-edit-deftext' ),
 			TranslateUtils::convertWhiteSpaceToHTML( $en )
 		);
@@ -255,7 +255,7 @@ class TranslationHelpers {
 
 			$text = TranslateUtils::convertWhiteSpaceToHTML( $text );
 			$params = array( 'class' => 'mw-translate-edit-item' );
-			$boxes[] = Html::element( 'div', $params, self::legend( $label ) . $text . self::clear() );
+			$boxes[] = Html::rawElement( 'div', $params, self::legend( $label ) . $text . self::clear() );
 		}
 
 		if ( count($boxes) ) {
@@ -309,7 +309,7 @@ class TranslationHelpers {
 	}
 
 	protected static function legend( $label ) {
-		return Html::element( 'div', array( 'class' => 'mw-translate-legend' ), $label );
+		return Html::rawElement( 'div', array( 'class' => 'mw-translate-legend' ), $label );
 	}
 
 	protected static function clear() {

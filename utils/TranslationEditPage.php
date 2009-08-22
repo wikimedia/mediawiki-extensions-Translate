@@ -48,7 +48,7 @@ class TranslationEditPage {
 			'class' => 'mw-translate-edit-area',
 			'rows' =>  $short ? 2: 10,
 		);
-		$textarea = Html::element( 'textarea', $textareaParams, htmlspecialchars($translation) );
+		$textarea = Html::element( 'textarea', $textareaParams, $translation );
 
 		$hidden = array();
 		$hidden[] = Xml::hidden( 'title', $this->getTitle()->getPrefixedDbKey() );
@@ -68,7 +68,7 @@ class TranslationEditPage {
 			'method' => 'post',
 		);
 
-		$form = Html::element( 'form', $formParams,
+		$form = Html::rawElement( 'form', $formParams,
 			implode( "\n", $hidden ) . "\n" .
 			$helpers->getBoxes() . "\n" .
 			"$textarea\n$summary$save"
