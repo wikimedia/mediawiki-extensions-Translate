@@ -366,6 +366,7 @@ Ova stranica je prijevod stranice [[$1]] a prevodi se mogu ažurirati putem [$2 
 Stranica koju pokušavate uređivati ne odgovara nekoj od stranica koje su označene za prevođenje.',
 	'tpt-install' => 'Pokrenite php maintenance/update.php ili web install da biste omogućili osobinu prevođenja stranica.',
 	'tpt-render-summary' => 'Ažuriram na novu verziju izvorne stranice',
+	'tpt-download-page' => 'Izvezi stranicu sa prijevodima',
 );
 
 /** Buginese (ᨅᨔ ᨕᨘᨁᨗ)
@@ -2115,14 +2116,14 @@ Prepričajte se, da ima oznake <nowiki><translate></nowiki> in veljavno sintakso
 	'tpt-languages-legend' => 'Ostali jeziki:',
 );
 
-/** Serbian Cyrillic ekavian (ћирилица)
+/** Serbian Cyrillic ekavian (Српски (ћирилица))
  * @author Михајло Анђелковић
  */
 $messages['sr-ec'] = array(
 	'translate-tag-translate-link-desc' => 'Преведите ову страну',
 );
 
-/** latinica (latinica)
+/** Serbian Latin ekavian (Srpski (latinica))
  * @author Michaello
  */
 $messages['sr-el'] = array(

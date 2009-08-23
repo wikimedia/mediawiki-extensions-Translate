@@ -5233,7 +5233,7 @@ Se opta por ignorar as modificacións, estas serán sobreescritas na vindeira ex
 	'translate-manage-import-rebuild-all' => 'Reconstruír todas as linguas e ignorar calquera cambio',
 );
 
-/** Gothic
+/** Gothic (Gothic)
  * @author Jocke Pirat
  */
 $messages['got'] = array(
@@ -13670,7 +13670,7 @@ Bütün değerlerin alt ve üst sınırları vardır.',
 	'translate-percentage-complete' => 'Tamamlanma',
 );
 
-/** Tatar (Cyrillic) (Tatarça/Татарча (Cyrillic))
+/** Tatar (Cyrillic) (Татарча/Tatarça (Cyrillic))
  * @author Himiq Dzyu
  */
 $messages['tt-cyrl'] = array(
@@ -14424,7 +14424,7 @@ $messages['yi'] = array(
 	'translate-edit-contribute' => 'בײַשטײַערן',
 	'translate-edit-no-information' => "'''די מעלדונג פעלט דאקומענטאציע.
 אויב איר ווייסט וואו אדער ווי די מעלדונג ווערט געניצט, קענט איר העלפֿן אנדערע פארטייטשערס דורך צולייגן דאקומענטאציע צו דער מעלדונג.'''",
-	'translate-edit-information' => 'אינפֿארמאציע וועגן דער מעלדונג ($1)',
+	'translate-edit-information' => 'אינפֿארמאציע וועגן מעלדונג "$2" ($1)',
 	'translate-edit-in-other-languages' => '"$1" מעלדונג אין אַנדערע שפּראַכן',
 	'translate-edit-goto-no-prev' => 'נישטא קיין פֿריערדיגע מעלדונג',
 	'translate-edit-goto-no-next' => 'נישטא קיין קומענדיגע מעלדונג',
@@ -14439,6 +14439,8 @@ $messages['yi'] = array(
 	'translate-magic-cm-save' => 'אויפֿהיטן',
 	'translate-magic-cm-updatedusing' => 'דערהײַנטיגט מיט [[Special:Magic]]',
 	'translationchanges-export' => 'עקספארט',
+	'translate-checks-parameters' => '{{PLURAL:$2|דער פֿאלגנדער פאראמעטער ווערט|די פֿאלגנדע פאראמעטערס ווערן}} נישט געניצט:
+<strong><nowiki>$1</nowiki></strong>',
 	'translationstats' => 'פֿארטײַטשן סטאטיסטיק',
 	'translate-statsf-scale-days' => 'טעג',
 	'translate-statsf-scale-hours' => "שעה'ן",
