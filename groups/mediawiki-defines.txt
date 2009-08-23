@@ -1137,7 +1137,7 @@ Usability Initiative - Edit Toolbar
 id = ext-ui-edittoolbar
 file = UsabilityInitiative/EditToolbar/EditToolbar.i18n.php
 descmsg = edittoolbar-desc
-optional = edittoolbar-help-content-rereference-syntax, edittoolbar-tool-table-example, edittoolbar-help-content-showreferences-syntax
+optional = edittoolbar-help-content-rereference-syntax, edittoolbar-help-content-showreferences-syntax
 ignored = edittoolbar-help-content-signaturetimestamp-syntax, edittoolbar-help-content-signature-syntax, edittoolbar-tool-file-pre
 
 Usability Initiative - Edit Warning
