@@ -63,7 +63,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 			preg_match_all( "/\[\[([{$tc}]+)(\\|(.+?))?]]/sDu", $translation, $matches );
 			for ( $i = 0; $i < count( $matches[0] ); $i++ ) {
 				$backMatch = preg_quote( $matches[1][$i], '/' );
-				if ( preg_match( "/$backMatch/", $definition ) ) continue;
+				if ( preg_match( "/\[\[$backMatch/", $definition ) ) continue;
 				$links[] = "[[{$matches[1][$i]}{$matches[2][$i]}]]";
 			}
 
@@ -81,7 +81,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 			preg_match_all( "/\[\[([{$tc}]+)(\\|(.+?))?]]/sDu", $definition, $matches );
 			for ( $i = 0; $i < count( $matches[0] ); $i++ ) {
 				$backMatch = preg_quote( $matches[1][$i], '/' );
-				if ( preg_match( "/$backMatch/", $translation ) ) continue;
+				if ( preg_match( "/\[\[$backMatch/", $translation ) ) continue;
 				$links[] = "[[{$matches[1][$i]}{$matches[2][$i]}]]";
 			}
 
