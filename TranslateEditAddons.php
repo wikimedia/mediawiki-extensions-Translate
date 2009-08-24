@@ -26,12 +26,14 @@ class TranslateEditAddons {
 			if ( !$cache->exists() ) return true;
 			$keys = $cache->getKeys();
 			$defs = array();
-			foreach ( $keys as $key ) $defs[$key] = $cache->get( $key );
+			foreach ( $keys as $_ ) $defs[$_] = $cache->get( $_ );
 			$skip = array_merge( $group->getTags( 'ignored' ), $group->getTags( 'optional' ) );
 		} else {
 			$defs = $group->getDefinitions();
 			$skip = array_merge( $group->getIgnored(), $group->getOptional() );
 		}
+
+		$key = strtolower( strtr( $key, ' ', '_' ) );
 
 		$next = $prev = $def = null;
 		foreach ( array_keys( $defs ) as $tkey ) {
@@ -39,7 +41,7 @@ class TranslateEditAddons {
 			// Keys can have mixed case, but they have to be unique in a case
 			// insensitive manner. It is therefore safe and a must to use case
 			// insensitive comparison method
-			if ( strcasecmp( $tkey, $key ) === 0 ) {
+			if ( $key === strtolower( strtr( $tkey, ' ', '_' ) ) ) {
 				$next = true;
 				$def = $defs[$tkey];
 				continue;
