@@ -162,6 +162,7 @@ $wgTranslateGroupStructure = array(
 	'/^ext-ui/' => array( 'ext', 'usabilityinitiative' ),
 	'/^ext/' => array( 'ext' ),
 	'/^out-mantis/' => array( 'mantis' ),
+	'/^out-okawix/' => array( 'okawix' ),
 	'/^page\|/' => array( 'page' ),
 );
 
