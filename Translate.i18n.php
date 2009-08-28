@@ -338,6 +338,7 @@ $messages['qqq'] = array(
 	'translate-page-no-such-language' => "Shown when someone requests a language that doesn't exists. [{{FULLURL:Special:Translate|language=}} Example].",
 	'translate-page-no-such-task' => "Shown when someone requests a task that doesn't exists. [{{FULLURL:Special:Translate|task=invalidtask&group=core}} Example].",
 	'translate-page-no-such-group' => "Shown when someone requests a group that doesn't exists. [{{FULLURL:Special:Translate|group=invalidgroup}} Example].",
+	'translate-page-settings-legend' => '{{Identical|Settings}}',
 	'translate-page-group' => '{{Identical|Group}}',
 	'translate-page-language' => '{{Identical|Language}}',
 	'translate-submit' => '{{Identical|Fetch}}',
@@ -563,7 +564,7 @@ Vertaling van 'n boodskap in heirdie tale word vertoon wanneer jy vertaal.
 Die versteklys van tale hang af van jou taal.",
 	'translate-pref-editassistlang-bad' => 'Ongeldige taalkode in die lys:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Gebruik verbeterde teksverwerker vir vertalings (vereis JavaScript)',
+	'translate-pref-jsedit' => 'Gebruik verbeterde teksverwerker vir vertalings (benodig JavaScript)',
 	'right-translate' => 'Wysig via die vertaalkoppelvlak',
 	'right-translate-manage' => 'Boodskapgroepe beheer',
 	'right-translate-import' => 'Vertalings van buite die stelsel importeer',
@@ -2133,7 +2134,10 @@ Prevod poruka u ovim jezicima će biti prikazan dok prevodite.
 Pretpostavljeni spisak jezika zavisi od postavki Vašeg jezika.',
 	'translate-pref-editassistlang-bad' => 'Nevaljan kod jezika u spisku:
 <nowiki>$1</nowiki>.',
+	'translate-pref-jsedit' => 'Napredni uređivač za prevođenje (JavaScript)',
 	'right-translate' => 'Uređivanje korištenjem prevodilačkog interfejsa',
+	'right-translate-manage' => 'Upravljanje grupama prijevoda',
+	'right-translate-import' => 'Uvoz vanmrežnih prijevoda',
 	'translate-rc-translation-filter' => 'Izdvoji prevode:',
 	'translate-rc-translation-filter-no' => 'Ne čini ništa',
 	'translate-rc-translation-filter-only' => 'Prikaži samo prijevode',
@@ -2203,20 +2207,33 @@ Savjetujemo Vam da izvršite pregled poruke preko [[Special:Translate|{{int:tran
 	'translate-manage-listgroups' => 'Uređene grupe',
 	'translate-manage-listgroups-old' => 'Grupe starijeg stila',
 	'translate-managegroups' => 'Upravljanje grupama',
+	'translate-manage-newgroup' => 'Ova grupa poruka nije prethodno uvezena.',
+	'translate-manage-cacheat' => 'Uvezeno dana $1 u $2',
 	'translate-manage-return-to-group' => 'Nazad na stranicu detalja grupe',
 	'translate-manage-modlang-new' => '$1 (novo)',
 	'translate-manage-import-diff' => 'Poruka $1 | Akcije: $2',
 	'translate-manage-import-new' => 'Nova poruka $1',
 	'translate-manage-import-deleted' => 'Obrisana poruka $1',
 	'translate-manage-action-import' => 'Uvezi',
+	'translate-manage-action-conflict' => 'Uvezi i označi za provjeru',
 	'translate-manage-action-ignore' => 'Zanemeri',
+	'translate-manage-action-fuzzy' => 'Uvezi prijevode i označi ih za provjeru',
 	'translate-manage-submit' => 'Izvrši',
+	'translate-manage-nochanges' => 'Nema promjena u definicijama poruka u ovoj grupi.',
+	'translate-manage-nochanges-other' => 'Nema promjena za ovaj jezik.
+Upotrijebite link ispod za povratak na pregled detalja grupe.',
+	'translate-manage-import-ok' => 'Uvezena nova verzija stranice $1.',
 	'translate-manage-import-ignore' => 'Preskaćem poruku $1.',
 	'translate-manage-conflict-summary' => 'Uvozi se nova verzija iz vanjskog izvora. Molimo provjerite.',
 	'translate-manage-fuzzy-summary' => 'Definicija je izmijenjena',
 	'translate-manage-import-done' => 'Sve završeno!',
+	'translate-manage-subtitle' => 'Upravljanje',
+	'importtranslations' => 'Uvoz prijevoda',
 	'translate-import-from-url' => 'URL do datoteke:',
+	'translate-import-from-wiki' => 'Datoteke u ovoj wiki:',
 	'translate-import-load' => 'Učitaj datoteku',
+	'translate-import-err-type-not-supported' => 'Ne može se učitati datoteka:
+Metod <tt>$1</tt> nije podržan.',
 	'translate-import-err-warnings' => 'Datoteka nije dobro formirana.
 Provjerite da li je Vaš uređivač uklonio msgctxt polja.
 Detalji: $1',
@@ -3255,6 +3272,7 @@ Standardna lisćina rěcow wótwisujo wót swójeje rěcy.',
 	'translate-pref-jsedit' => 'Pólěpšony pśełožowański editor (JavaScript)',
 	'right-translate' => 'Z pomocu pśełožowańskego pówjercha wobźěłaś',
 	'right-translate-manage' => 'Pśełožowańske kupki zastojaś',
+	'right-translate-import' => 'Pśełožki offline importěrowaś',
 	'translate-rc-translation-filter' => 'Pśełožki filtrowaś:',
 	'translate-rc-translation-filter-no' => 'Njecyń nic',
 	'translate-rc-translation-filter-only' => 'Jano pśełožki pokazaś',
@@ -3334,23 +3352,45 @@ Pśiraźijo se, až pśeglědujoš powěźeńki pśez [[Special:Translate|{{int:
 	'translate-manage-import-new' => 'Nowa powěźeńka $1',
 	'translate-manage-import-deleted' => 'Wulašowana powěźeńka $1',
 	'translate-manage-action-import' => 'Importěrowaś',
+	'translate-manage-action-conflict' => 'Importěrowaś a ako "fuzzy" markěrowaś',
 	'translate-manage-action-ignore' => 'Ignorěrowaś',
+	'translate-manage-action-fuzzy' => 'Pśełožki importěrowaś a ako "fuzzy" markěrowaś',
+	'translate-manage-submit' => 'Wuwjasć',
+	'translate-manage-nochanges' => 'Njejsu změny w definicijach powěźeńkow za toś tu kupku.',
+	'translate-manage-nochanges-other' => 'Njejsu žedne změny za toś tu rěc byli.
+Wužyj slědujucy wótkaz, aby se k naglědoju kupkowych drobnostkow wrośił.',
+	'translate-manage-inconsistent' => 'Nadejźona inkonsistenca w napšašowanju.
+Pšosym pśeglědaj za změny a wopytaj hyšći raz.
+Drobnostki: $1',
 	'translate-manage-import-ok' => 'Nowa wersija boka $1 importěrowany.',
+	'translate-manage-import-noks' => 'Importěrowanje noweje wersije boka $1 je so njeraźiło: $2',
 	'translate-manage-import-ignore' => 'Powěźeńka $1 se pśeskokujo.',
 	'translate-manage-import-summary' => 'Nowa wersija importěrujo se z eksternego žrědła',
 	'translate-manage-conflict-summary' => 'Nowa wersija importěrujo se z eksternego žrědła.
 Pšosym pśeglědaś.',
 	'translate-manage-fuzzy-summary' => 'Definicija jo se změniła',
+	'translate-manage-import-fuzzy' => 'Importěrujo se a markěrujo se ako "fuzzy": $1',
 	'translate-manage-import-done' => 'Wšykno cynjone!',
+	'translate-manage-import-rebuild' => 'Cache zasej natwarjony.',
+	'translate-manage-intro-en' => 'Dołojce jo lisćina změnow powěźeńkow w toś tej kupce.
+Pšosym pséglědaj změny a wubjeŕ akciju, kótaruž coš za kuždu powěźeńku cyniś.
+Gaž sy definicije powěźeńkow aktualizěrował, pśeglědaj za eksterne změny w drugich rěcach, jolic take su.
+Spomni teke, až <code>ignorěrowańska</code> akcija jo jano tuchylu.',
 	'translate-manage-subtitle' => 'Zastojaś',
+	'translate-manage-import-rebuild-all' => 'Wše rěcy zasej natwariś a změny ignorěrowaś',
 	'importtranslations' => 'Pśełožki importěrowaś',
 	'translate-import-from-url' => 'URL k dataji:',
 	'translate-import-from-wiki' => 'Dataja w toś tom wikiju:',
 	'translate-import-from-local' => 'Nagraśe lokalneje dataje:',
 	'translate-import-load' => 'Dataju zacytaś',
+	'translate-import-err-type-not-supported' => 'Njemóžno dataju zacytaś:
+Metoda <tt>$1</tt> se njepódpěra.',
 	'translate-import-err-ul-failed' => 'Nagraśe dataje njejo wuspěšne było',
 	'translate-import-err-invalid-title' => 'Pódane datajowe mě <nowiki>$1</nowiki> jo njepłaśiwe było.',
 	'translate-import-err-no-such-file' => 'Dataja <nowiki>$1</nowiki> njeeksistěrujo abo jnejo se lokalnje nagrała.',
+	'translate-import-err-warnings' => 'Dataja njejo derje wuformowana.
+Zawěsć, až twój editor njewótpórujo póla msgctxt.
+Drobnostki: $1',
 );
 
 /** Ewe (Eʋegbe)
@@ -10333,7 +10373,7 @@ $messages['oc'] = array(
 	'translate-edit-information' => 'Entresenhas a prepaus del messatge « $2 » ($1)',
 	'translate-edit-in-other-languages' => "Messatge « $1 » dins d'autras lengas",
 	'translate-edit-committed' => 'Traduccions actualas ja dins lo logicial',
-	'translate-edit-warnings' => 'Avertiments concernent las traduccions incomplètas',
+	'translate-edit-warnings' => 'Avertiments que concernisson las traduccions incompletas',
 	'translate-edit-tmsugs' => 'Suggestions de la memòria de traduccion',
 	'translate-edit-tmmatch' => '$1 % de correspondéncia',
 	'translate-edit-goto-no-prev' => 'Cap de messatge precedent',
