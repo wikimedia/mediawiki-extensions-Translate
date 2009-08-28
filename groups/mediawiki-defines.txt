@@ -510,7 +510,7 @@ id = ext-interwiki
 file = Interwiki/SpecialInterwiki.i18n.php
 aliasfile = Interwiki/SpecialInterwiki.alias.php
 optional = interwiki_defaulturl, interwiki_url
-ignored = interwiki_logentry
+ignored = interwiki_logentry, interwiki_defaulturl
 
 Interwiki List
 aliasfile = InterwikiList/InterwikiList.alias.php
@@ -1089,7 +1089,7 @@ id = ext-uniwiki-customtoolbar
 file = uniwiki/CustomToolbar/CustomToolbar.i18n.php
 var = wgCustomToolbarMessages
 descmsg = ct-desc
-optional = ct_external_sample
+ignored = ct_external_sample
 
 Uniwiki - Format Changes
 id = ext-uniwiki-formatchanges
