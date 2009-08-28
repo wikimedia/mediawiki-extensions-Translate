@@ -58,7 +58,7 @@ $wgHooks['SkinTemplateTabs'][] = 'TranslateEditAddons::tabs';
 # Custom preferences
 $wgDefaultUserOptions['translate'] = 0;
 $wgDefaultUserOptions['translate-editlangs'] = 'default';
-$wgDefaultUserOptions['translate-jsedit'] = 0;
+$wgDefaultUserOptions['translate-jsedit'] = 1;
 $wgHooks['GetPreferences'][] = 'TranslatePreferences::onGetPreferences';
 $wgHooks['GetPreferences'][] = 'TranslatePreferences::translationAssistLanguages';
 $wgHooks['GetPreferences'][] = 'TranslatePreferences::translationJsedit';
