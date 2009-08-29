@@ -34,6 +34,8 @@ class OkawixDtdFFS extends SimpleFFS {
 	}
 
 	protected function writeReal( MessageCollection $collection ) {
+		global $wgSitename;
+
 		$collection->loadTranslations();
 
 		$output = "<!--\n";
