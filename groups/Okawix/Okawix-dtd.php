@@ -36,16 +36,17 @@ class OkawixDtdFFS extends SimpleFFS {
 	protected function writeReal( MessageCollection $collection ) {
 		$collection->loadTranslations();
 
-		$output = '';
+		$output = "<!--\n";
+		$output .= "COMMENT: Exported from $wgSitename\n\n";
 
 		$authors = $collection->getAuthors();
 		if (count($authors) > 0) {
-			$output .= "<!--\n";
+
 			foreach ( $authors as $author ) {
 				$output .= "AUTHOR: $author\n";
 			}
-			$output .= "-->\n";
 		}
+		$output .= "-->\n";
 
 		$mangler = $this->group->getMangler();
 		foreach ( $collection as $key => $m ) {
