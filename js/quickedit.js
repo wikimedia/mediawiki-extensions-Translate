@@ -39,6 +39,16 @@ function trlOpenJsEdit( page ) {
 
 	dialog = dialog.load(url, false, function() {
 		var form = jQuery("#"+ id + " form");
+
+		var fb = form.find( ".mw-translate-fb" );
+		fb.click( function() {
+			var queryString = form.formSerialize();
+			// FIXME: forward contents of the text area
+			var newWindow = window.open( wgScript + "?title=" + page + "&action=edit&from=xjs" );
+			dialog.dialog("close");
+			return false;
+		} );
+
 		var textarea = form.find( ".mw-translate-edit-area" );
 		textarea.width(textarea.width()-4);
 		//textarea.wikiEditor();

@@ -305,6 +305,8 @@ Unable to determine group and language from file headers.',
 	'translate-import-err-warnings' => 'The file is not well formed.
 Make sure your editor does not remove msgctxt fields.
 Details: $1',
+
+	'translate-js-fb' => 'Normal edit',
 );
 
 /** Message documentation (Message documentation)
