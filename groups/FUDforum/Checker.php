@@ -19,7 +19,7 @@ class FUDforumMessageChecker extends MessageChecker {
 			$definition = $message->definition();
 			$translation = $message->translation();
 
-			$varPattern = '{.*}';
+			$varPattern = '{(?!PLURAL).*}';
 			preg_match_all( "/$varPattern/U", $definition, $defVars );
 			preg_match_all( "/$varPattern/U", $translation, $transVars );
 
