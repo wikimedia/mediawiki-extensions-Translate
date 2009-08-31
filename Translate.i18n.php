@@ -1498,6 +1498,7 @@ $messages['be-tarask'] = array(
 	'translate-checks-pagename' => 'Прастора назваў зьменена ў крынічным тэксьце',
 	'translate-checks-format' => 'Гэты пераклад няслушна перакладае крынічны тэкст альбо ўтрымлівае сынтаксычныя памылкі: $1',
 	'translate-checks-escape' => 'Наступнае выдзяленьне можа быць выпадковым: <strong>$1</strong>',
+	'translate-checks-fudforum-syntax' => 'Выкарыстоўваць <nowiki>$1</nowiki> замест <nowiki>$2</nowiki> у гэтым праекце.',
 	'translate-pref-nonewsletter' => 'Не дасылаць мне інфармацыйныя лісты па электроннай пошце',
 	'translate-pref-editassistlang' => 'Дапаможныя мовы:',
 	'prefs-translate' => 'Устаноўкі перакладу',
@@ -1633,6 +1634,7 @@ $1',
 	'translate-import-err-warnings' => 'Няслушны файл.
 Упэўніцеся што Ваш рэдактар не выдаляе палі msgctxt.
 Падрабязнасьці: $1',
+	'translate-js-fb' => 'Звычайнае рэдагаваньне',
 );
 
 /** Bulgarian (Български)
@@ -1788,15 +1790,15 @@ $messages['bpy'] = array(
  */
 $messages['br'] = array(
 	'translate' => 'Treiñ',
-	'translate-desc' => "[[Special:Translate|Pajenn zibar]] evit treiñ MediaWiki ha pelloc'h",
+	'translate-desc' => "[[Special:Translate|Pajenn dibar]] evit treiñ MediaWiki ha pelloc'h",
 	'translate-edit' => 'kemmañ',
 	'translate-talk' => 'kaozeal',
 	'translate-history' => 'istor',
 	'translate-task-view' => 'Welet an holl gemennadennoù evit',
 	'translate-task-untranslated' => 'Welet an holl gemennadennoù didro evit',
 	'translate-task-optional' => 'Welet an holl gemennadennoù diret evit',
-	'translate-task-untranslatedoptional' => "Gwelet an c'hemennoù diret n'int ket bet troet evit",
-	'translate-task-problematic' => "Gwelet ar c'hemennoù kudennek",
+	'translate-task-untranslatedoptional' => "Gwelet ar c'hemennadennoù diret n'int ket bet troet evit",
+	'translate-task-problematic' => "Gwelet ar c'hemennadennoù kudennek",
 	'translate-task-review' => "Adwelet ma c'hemmoù evit",
 	'translate-task-reviewall' => 'Adwelet an holl droidigezhioù evit',
 	'translate-task-export' => 'Ezporzhiañ an troidigezhioù evit',
@@ -1804,9 +1806,10 @@ $messages['br'] = array(
 	'translate-task-export-as-po' => 'Ezporzhiañ an troidigezhioù er furmad Gettext',
 	'translate-task-export-to-xliff' => 'Ezporzhiañ an troidigezhioù er furmad Xliff',
 	'translate-page-no-such-language' => "Merket ez eus bet ur c'hod yezh direizh",
-	'translate-page-no-such-task' => 'Merket ez eus bet un ober direizh',
-	'translate-page-no-such-group' => 'Merket ez eus bet ur strollad direizh',
-	'translate-page-disabled' => "Harpet eo bet an troidigezhioù er yezh-mañ evit ar strollad-mañ. Abeg :
+	'translate-page-no-such-task' => 'Merket ez eus bet un ober direizh.',
+	'translate-page-no-such-group' => 'Merket ez eus bet ur strollad direizh.',
+	'translate-page-disabled' => "Harpet eo bet an troidigezhioù er yezh-mañ evit ar strollad-mañ. 
+Abeg :
 
 ''$1''",
 	'translate-page-settings-legend' => 'Dibaboù',
@@ -1815,7 +1818,7 @@ $messages['br'] = array(
 	'translate-page-language' => 'Yezh',
 	'translate-page-limit' => 'Bevenn',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|gemennadenn|kemennadenn}} dre bajenn',
-	'translate-submit' => 'Mont',
+	'translate-submit' => 'Klask',
 	'translate-page-navigation-legend' => 'Merdeiñ',
 	'translate-page-showing' => 'O tiskouez kemennadennoù adal $1 betek $2 diwar $3.',
 	'translate-page-showing-all' => 'War wel $1 {{PLURAL:$1|gemennadenn|kemennadenn}}',
@@ -1832,7 +1835,7 @@ $messages['br'] = array(
 	'translate-edit-no-information' => "''N'eus tamm titour ebet diwar-benn ar gemennadenn-mañ. Ma ouzit pelec'h pe benaos emañ da vezañ implijet e c'hallit harpañ troourien all en ur ouzhpennañ titouroù diwar he fenn.''",
 	'translate-edit-information' => 'Titouroù diwar-benn ar gemennadenn "$2" ($1)',
 	'translate-edit-in-other-languages' => 'Kemennadenn "$1"  e yezhoù all',
-	'translate-edit-committed' => 'Troidigezh zo er meziant bremañ',
+	'translate-edit-committed' => 'Troidigezh er meziant evit poent',
 	'translate-edit-warnings' => 'Kemennoù diwall diwar-benn an troidigezhioù diglok',
 	'translate-edit-tmsugs' => 'Kinnig a-berzh ar memor treiñ',
 	'translate-edit-tmmatch' => '$1% kenglotañ',
@@ -1840,7 +1843,7 @@ $messages['br'] = array(
 	'translate-edit-goto-no-next' => "Kemennadenn ebet war-lerc'h",
 	'translate-edit-goto-prev' => "Mont d'ar gemennadenn a-raok",
 	'translate-edit-goto-next' => "Mont d'ar gemennadenn war-lerc'h",
-	'translate-edit-goto-list' => "Distreiñ d'ar roll :",
+	'translate-edit-goto-list' => "Distreiñ d'ar roll",
 	'translate-magic-pagename' => 'Troidigezh MediaWiki astennet',
 	'translate-magic-help' => "Gallout a rit treiñ aliasoù ar pajennoù dibar, ar gerioù burzhudus hag anvioù an esaouennoù anv.
 
@@ -1854,7 +1857,7 @@ Ma n'haller ket sevel lavarennoù reizh en ho yezh hep kemmañ anv al lec'hienn,
 Ret eo deoc'h bezañ ezel eus ar strollad troerien evit enrollañ ar c'hemmoù.
 Ne vo ket enrollet ar c'hemmoù e-keit ha ne vo ket bet pouezet war ar bouton enrollañ dindan.",
 	'translate-magic-module' => 'Modulenn :',
-	'translate-magic-submit' => 'Mont',
+	'translate-magic-submit' => 'Klask',
 	'translate-magic-cm-export' => 'Ezporzhiañ',
 	'translate-magic-nothing-to-export' => "N'eus ket netra da ezporzhiañ.",
 	'translate-magic-cm-to-be' => 'A zeu da vezañ',
@@ -1864,46 +1867,49 @@ Ne vo ket enrollet ar c'hemmoù e-keit ha ne vo ket bet pouezet war ar bouton en
 	'translate-magic-cm-save' => 'Enrollañ',
 	'translate-magic-cm-updatedusing' => 'Hizivaet en ur implijout [[Special:Magic]]',
 	'translate-magic-cm-savefailed' => "C'hwitet enrollañ",
-	'translate-magic-special' => 'Aliasoù pajenn zibar',
+	'translate-magic-special' => 'Aliasoù ar pajennoù dibar',
 	'translate-magic-words' => 'Gerioù burzhudus',
 	'translate-magic-namespace' => 'Anv an esaouennoù anv',
 	'translate-magic-notsaved' => "N'eo ket bet enrollet ho tegasadenn !",
 	'translate-magic-errors' => 'Reizhit ar {{PLURAL:$1|fazi|fazi}} da-heul en troidigezhioù :',
-	'translate-magic-saved' => 'Enrollet eo bet mat ho kemmoù.',
-	'translationchanges' => 'Troidigezhioù bet adwelet',
+	'translate-magic-saved' => 'Enrollet-mat eo bet ho kemmoù.',
+	'translationchanges' => 'Troidigezhioù bet cheñchet',
 	'translationchanges-export' => 'Ezporzhiañ',
 	'translationchanges-change' => '$1: $2 gant $3',
 	'translate-checks-parameters' => 'Ne vez ket graet gant an {{PLURAL:$2|arventenn|arventennoù}} da-heul : <strong>$1</strong>',
 	'translate-checks-parameters-unknown' => 'Dianav eo an {{PLURAL:$2|arventenn|arventennoù}} da-heul :
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Ampar eo an niver a {{PLURAL:$2|grommelloù|grommelloù}} : <strong>$1</strong>',
-	'translate-checks-links' => 'Kudennek eo al {{PLURAL:$2|liammoù|liammoù}} da-heul : <strong>$1</strong>',
+	'translate-checks-links' => 'Kudennek eo al {{PLURAL:$2|liamm|liammoù}} da-heul : <strong>$1</strong>',
 	'translate-checks-links-missing' => 'Mankout a ra {{PLURAL:$2|al liamm|an $2 liamm}} da-heul :
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => "Erlec'hiit ar {{PLURAL:$2|valizenn|balizennoù}} da-heul gant ar re a zegouezh mar plij : <strong>$1</strong>",
 	'translate-checks-plural' => 'Ober a ra an termenadur gant <nowiki>{{PLURAL:}}</nowiki> padal an droidigezh ne ra ket.',
-	'translate-checks-pagename' => 'Anv esaouenn kemmet abaoe an termenadur',
+	'translate-checks-pagename' => 'Anv esaouenn kemmet adalek an termenadur',
 	'translate-checks-format' => 'Ne glot ket an droidigezh-mañ gant an termenadur pe faziek eo an ereadurezh anezhi : $1',
 	'translate-checks-escape' => "Dre fazi e c'hall bezañ an diflipadennoù da-heul : <strong>$1</strong>",
 	'translate-pref-nonewsletter' => "Arabat kas din kelc'hlizheroù dre bostel",
 	'translate-pref-editassistlang' => 'Yezhoù skoazell :',
 	'prefs-translate' => 'Dibarzhioù treiñ',
 	'translate-pref-editassistlang-help' => 'Roll kodoù yezh dispartiet dre ur skej.
-Diskwelet eo an droidigezh er yezhoù-se pa vezit o treiñ ur gemmennadenn.
+Diskwelet eo an droidigezh er yezhoù-se pa vezit o treiñ ur gemennadenn.
 Cheñch a ra roll dre ziouer ar yezhoù-se diouzh ar yezh a rit ganti.',
 	'translate-pref-editassistlang-bad' => 'Kod yezh direizh el listenn :
 <nowiki>$1</nowiki>.',
+	'translate-pref-jsedit' => 'Aozer troidigezhioù gwellaet (JavaScript)',
 	'right-translate' => 'Kemmañ en ur ober gant an etrefas treiñ',
 	'right-translate-manage' => 'Merañ strolladoù treiñ',
+	'right-translate-import' => 'Enporzhiañ an troidigezhioù ezlinenn',
 	'translate-rc-translation-filter' => 'Silañ an troidigezhioù :',
 	'translate-rc-translation-filter-no' => 'Na ober seurt ebet',
 	'translate-rc-translation-filter-only' => 'Diskouez an troidigezhioù hepken',
 	'translate-rc-translation-filter-filter' => 'Lakaat an troidigezhioù er-maez',
 	'translate-rc-translation-filter-site' => "Kemmoù da gemennoù al lec'hienn hepken",
 	'translationstats' => 'Stadegoù treiñ',
-	'translate-stats-edits' => 'Kemmoù dre zevezh',
+	'translate-stats-edits' => 'Kemmoù',
 	'translate-stats-users' => 'Troerien',
-	'translate-statsf-intro' => "Stadegoù eeun a c'hallit krouiñ gant ar furmskrid-mañ. Bevennoù izel hag uhel zo d'an holl dalvoudoù.",
+	'translate-statsf-intro' => "Stadegoù eeun a c'hallit krouiñ gant ar furmskrid-mañ. 
+Bevennoù izel hag uhel zo d'an holl dalvoudoù.",
 	'translate-statsf-options' => 'Dibarzhioù ar grafik',
 	'translate-statsf-width' => 'Ledander e piksel :',
 	'translate-statsf-height' => 'Uhelder e piksel',
@@ -1912,7 +1918,7 @@ Cheñch a ra roll dre ziouer ar yezhoù-se diouzh ar yezh a rit ganti.',
 	'translate-statsf-scale-days' => 'Deizioù',
 	'translate-statsf-scale-hours' => 'Eurioù',
 	'translate-statsf-count' => 'Muzul :',
-	'translate-statsf-count-edits' => 'Niver a aozadennoù',
+	'translate-statsf-count-edits' => 'Niver a gemmoù',
 	'translate-statsf-count-users' => 'Troerien oberiant',
 	'translate-statsf-language' => 'Roll kodoù yezh, dispartiet gant skejoù :',
 	'translate-statsf-group' => 'Roll kodoù strolladoù, dispartiet gant skejoù :',
@@ -1921,7 +1927,7 @@ Cheñch a ra roll dre ziouer ar yezhoù-se diouzh ar yezh a rit ganti.',
 	'translate-tag-page-desc' => 'Troidigezh ar bajenn wiki [[:$1]].',
 	'translate-tag-fuzzy-comment' => 'Termenadur kemmet gant an implijer [[User:$1|$1]] er stumm $2.',
 	'translate-tag-fuzzy-reason' => 'Termenadur kemmet gant an implijer "$1" stag outañ an evezhiadenn "$3" e $2.',
-	'translate-sidebar-alltrans' => 'Er yezhoù all',
+	'translate-sidebar-alltrans' => 'E yezhoù all',
 	'translate-tag-noedit' => 'Un teul treiñ hizivaet ent emgefre eo ar bajenn-mañ.
 Gallout a rit [$1 kemmañ ar bajenn orin] pe [$2 freskaat an droidigezh].',
 	'translations' => 'An holl droidigezhioù',
@@ -1933,12 +1939,12 @@ Gallout a rit [$1 kemmañ ar bajenn orin] pe [$2 freskaat an droidigezh].',
 	'translate-translations-project' => 'Raktres :',
 	'translate-translations-including-no-param' => "Merkit un alc'hwez kemenn reizh en arventenn ''ispajenn''",
 	'languagestats' => 'Stadegoù yezh',
-	'languagestats-summary' => 'Diskouez a ra ar bajenn-mañ ar stadegoù treiñ evit holl strolladoù kemennoù ur yezh bennak.',
+	'languagestats-summary' => 'Diskouez a ra ar bajenn-mañ ar stadegoù treiñ evit an holl strolladoù kemennadennoù en ur yezh bennak.',
 	'translate-language-code' => 'Kod yezh',
 	'translate-language-code-field-name' => 'Kod yezh :',
-	'translate-suppress-complete' => 'Arabat diskouez ar strolladoù kemennoù bet troet penn-da-benn.',
+	'translate-suppress-complete' => 'Arabat diskouez ar strolladoù kemennadennoù zo bet troet penn-da-benn.',
 	'translate-language' => 'Yezh :',
-	'translate-total' => 'Kemennoù',
+	'translate-total' => 'Kemennadennoù',
 	'translate-untranslated' => 'Didro',
 	'translate-percentage-complete' => 'Echu',
 	'translate-percentage-fuzzy' => 'Dispredet',
@@ -1947,19 +1953,19 @@ Broudet oc'h da adwelet ar c'hemennadennoù adal [[Special:Translate|{{int:trans
 	'translate-save' => 'Enrollañ ($1)',
 	'translate-jssti-add' => "Ouzhpennañ d'ar roll",
 	'translate-group-desc-mediawikicore' => "Er strollad kemennadennoù-mañ emañ ar c'hemennadennoù implijet e stumm red MediaWiki ({{CURRENTVERSION}})",
-	'translate-group-desc-mediawikimostused' => 'Er strollad kemennadennoù-mañ emañ [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 kemmennadenn implijetañ] MediaWiki',
+	'translate-group-desc-mediawikimostused' => 'Er strollad kemennadennoù-mañ emañ [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 kemennadenn implijetañ] MediaWiki',
 	'translate-group-desc-mediawikiextensions' => 'Meta-strollad kemennadennoù ennañ holl gemmennadennoù an astennoù skoret evit MediaWiki',
-	'translate-group-desc-collection' => 'Meta-strollad kemennadennoù ennañ holl gemmennadennoù an astenn MediaWiki [http://www.mediawiki.org/wiki/Extension:Collection Dastumad]',
+	'translate-group-desc-collection' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astenn MediaWiki [http://www.mediawiki.org/wiki/Extension:Collection Dastumad]',
 	'translate-group-desc-flaggedrevs' => 'Meta-strollad kemennadennoù ennañ holl gemmennadennoù an astenn MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
-	'translate-group-desc-readerfeedback' => 'Meta-strollad kemennadennoù ennañ holl gemmennadennoù an astenn MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
-	'translate-group-desc-socialprofile' => 'Meta-strollad kemennadennoù ennañ holl gemmennadennoù an astenn MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
-	'translate-group-desc-translate' => 'Meta-strollad kemennadennoù ennañ holl gemmennadennoù an astenn MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Treiñ]',
-	'translate-group-desc-wikiaextensions' => 'Meta-strollad kemennadennoù ennañ holl gemmennadennoù an astennoù MediaWiki implijet gant [http://www.wikia.com Wikia]',
-	'translate-group-desc-wikihowextensions' => 'Meta-strollad kemennadennoù ennañ holl gemmennadennoù an astennoù MediaWiki implijet gant [http://www.wikihow.com wikiHow]',
-	'translate-group-desc-wikimediaextensions' => 'Meta-strollad kemennadennoù ennañ holl gemmennadennoù an astennoù MediaWiki implijet gant [http://wikimedia.org/ Wikimedia Foundation]',
+	'translate-group-desc-readerfeedback' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astenn MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
+	'translate-group-desc-socialprofile' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astenn MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
+	'translate-group-desc-translate' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astenn MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Treiñ]',
+	'translate-group-desc-wikiaextensions' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astennoù MediaWiki implijet gant [http://www.wikia.com Wikia]',
+	'translate-group-desc-wikihowextensions' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astennoù MediaWiki implijet gant [http://www.wikihow.com wikiHow]',
+	'translate-group-desc-wikimediaextensions' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astennoù MediaWiki implijet gant [http://wikimedia.org/ Wikimedia Foundation]',
 	'translate-group-desc-wikitravelextensions' => 'Meta-strollad kemennadennoù ennañ holl gemmennadennoù an astennoù MediaWiki implijet gant [http://wikitravel.org Wikitravel]',
-	'translate-group-desc-uniwiki' => 'Meta-strollad kemennadennoù ennañ holl gemmennadennoù an astennoù stag ouzh [http://unicefinnovation.org/wiki.php Uniwiki]',
-	'translate-group-desc-ui' => 'Meta-strollad kemennadennoù ennañ holl gemmennadennoù an astennoù stag ouzh [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
+	'translate-group-desc-uniwiki' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astennoù stag ouzh [http://unicefinnovation.org/wiki.php Uniwiki]',
+	'translate-group-desc-ui' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astennoù stag ouzh [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 	'translate-manage-groups' => 'Merañ ar strollad',
 	'translate-manage-listgroups' => 'Strolladoù savet',
 	'translate-manage-listgroups-old' => 'Stiloù kozh ar strolladoù',
@@ -1975,7 +1981,7 @@ Broudet oc'h da adwelet ar c'hemennadennoù adal [[Special:Translate|{{int:trans
 	'translate-manage-action-import' => 'Enporzhiañ',
 	'translate-manage-action-conflict' => 'Enporzhiañ ha merkañ evel strafuilhet',
 	'translate-manage-action-ignore' => 'Lezel a-gostez',
-	'translate-manage-action-fuzzy' => 'Enporzhiañ an troidigezhioù hag o merkañ evel dispis.',
+	'translate-manage-action-fuzzy' => 'Enporzhiañ an troidigezhioù hag o merkañ evel strafuilhet.',
 	'translate-manage-submit' => 'Erounit',
 	'translate-manage-nochanges' => "N'eus bet kemm ebet e termenadurioù kemennadennoù ar strollad-mañ",
 	'translate-manage-nochanges-other' => "N'eus bet kemm ebet gant ar yezh-mañ.
@@ -1988,7 +1994,7 @@ Adkasit ar furmskrid evit kenderc'hel gant an tretiñ.",
 	'translate-manage-import-ok' => 'Enporzhiet ez eus bet ur stumm nevez eus ar bajenn $1',
 	'translate-manage-import-noks' => "C'hwitet eo bet enporzhiadenn stumm nevez ar bajenn $1 : $2",
 	'translate-manage-import-ignore' => 'Lezel ar gemennadenn $1 a-gostez.',
-	'translate-manage-import-summary' => 'Enporzhiañ ur stumm nevez adalek ur vammenn diavaez.',
+	'translate-manage-import-summary' => 'Enporzhiañ ur stumm nevez adalek ur vammenn ziavaez.',
 	'translate-manage-conflict-summary' => 'Enporzhiañ ur stumm nevez adalek ur vammenn ziavaez. 
 Gwiriit mar plij.',
 	'translate-manage-fuzzy-summary' => 'Cheñchet eo an termenadur',
@@ -1997,7 +2003,7 @@ Gwiriit mar plij.',
 	'translate-manage-import-rebuild' => 'Adsavet eo bet ar grubuilh.',
 	'translate-manage-intro-en' => "Dindan ez eus ur roll eus ar c'hemmoù bet er strollad-mañ.
 Gwiriit anezho mar plij ha dibabit ar pezh a fell deoc'h ober evit pep kemennadenn.
-Ur wezh nevesaet termenadurioù ar c'hemennadennoù, gwiriit ha n'eus ket bet bet kemmoù diavaez e yezhoù all.
+Ur wezh nevesaet termenadurioù ar c'hemennadennoù, gwiriit ha n'eus ket bet kemmoù diavaez e yezhoù all.
 Merzit mat ivez n'eo nemet berrbad an ober <code>lezel a-gostez</code>.",
 	'translate-manage-intro-other' => "A-is emañ roll ar c'hemmoù treiñ e $1.
 Gwiriit anezho ha dibabit ar pezh a fell deoc'h ober evit pep troidigezh.
@@ -2360,6 +2366,7 @@ Heu de tenir permisos de traductor per a desar els canvis, que no es guardaran f
 	'translate-checks-format' => 'Aquesta traducció no segueix la definició o té una sintaxi invàlida: $1',
 	'translate-checks-escape' => "Les següents seqüències d'escapament poden ser accidentals: <strong>$1</strong>",
 	'translate-pref-nonewsletter' => "No m'enviïs per correu electrònic el recull de notícies",
+	'prefs-translate' => 'Opcions de traducció',
 	'right-translate' => 'Editar fent servir la interfície de traducció',
 	'translate-rc-translation-filter' => 'Filtra traduccions:',
 	'translate-rc-translation-filter-no' => 'No facis res',
@@ -2411,12 +2418,14 @@ Podeu [$1 editar la pàgina font] o [$2 actualitzar la traducció].',
 	'translate-nothing-to-do' => 'Totes les possibles traduccions han estat realitzades.
 Us animem a revisar missatges a través de [[Special:Translate|{{int:translate}}]].',
 	'translate-save' => 'Desa ($1)',
+	'translate-jssti-add' => 'Afegeix a la llista',
 	'translate-manage-modlang-new' => '$1 (nou)',
 	'translate-manage-import-diff' => 'Missatge $1 | Accions: $2',
 	'translate-manage-import-new' => 'Nou missatge $1',
 	'translate-manage-action-import' => 'Importa',
 	'translate-manage-action-ignore' => 'Ignora',
 	'translate-manage-submit' => 'Executa',
+	'translate-manage-import-done' => 'Fet!',
 	'importtranslations' => 'Importa traduccions',
 	'translate-import-from-url' => 'URL del fitxer:',
 	'translate-import-from-wiki' => 'Fitxer en aquest wiki:',
@@ -2983,6 +2992,7 @@ Du musst in der Übersetzer-Gruppe sein, um Änderungen zu speichern.
 	'translate-checks-pagename' => 'Namensraum geändert durch die Definition',
 	'translate-checks-format' => 'Diese Übersetzung entspricht nicht der Definition oder hat eine ungültige Syntax: $1',
 	'translate-checks-escape' => 'Die folgenden Escape-Sequenzen können versehentlich vorhanden sein: <strong>$1</strong>',
+	'translate-checks-fudforum-syntax' => 'Bitte benutze <nowiki>$1</nowiki> anstatt <nowiki>$2</nowiki> in diesem Projekt.',
 	'translate-pref-nonewsletter' => 'Sende mir keinen E-Mail-Newsletter zu',
 	'translate-pref-editassistlang' => 'Sprachunterstützung:',
 	'prefs-translate' => 'Übersetzungsoptionen',
@@ -3094,6 +3104,7 @@ Bitte schicke das Formular noch einmal ab, um die Verarbeitung fortzusetzen.',
 	'translate-manage-import-summary' => 'Neue Version von externer Quelle importiert',
 	'translate-manage-conflict-summary' => 'Neue Version von externer Quelle importiert.
 Bitte überprüfen.',
+	'translate-manage-fuzzy-summary' => 'Die Definition hat sich geändert',
 	'translate-manage-import-fuzzy' => 'Importiert und als „zu kontrollieren“ markiert: $1',
 	'translate-manage-import-done' => 'Alles erledigt!',
 	'translate-manage-import-rebuild' => 'Cache wieder aufbauen.',
@@ -3123,6 +3134,7 @@ Die Gruppen und Sprache konnte nicht aus dem Dateikopf ermittelt werden.',
 	'translate-import-err-warnings' => 'Die Datei entspricht nicht dem erwarteten Format.
 Stelle sicher, dass der Editor keine <tt>msgctxt</tt>-Felder entfernt.
 Details: $1',
+	'translate-js-fb' => 'Normale Bearbeitenseite',
 );
 
 /** Swiss High German (Schweizer Hochdeutsch)
@@ -3221,6 +3233,7 @@ $messages['dsb'] = array(
 	'translate-edit-committed' => 'Aktualny pśełožk w software',
 	'translate-edit-warnings' => 'Warnowanja wó njedopołnych pśełožkach',
 	'translate-edit-tmsugs' => 'Naraźenja z pśełožowańskego spomnjeśa',
+	'translate-edit-tmmatch' => '$1 % makanja',
 	'translate-edit-goto-no-prev' => 'Žedna pśedchadna powěsć',
 	'translate-edit-goto-no-next' => 'Žedna pśiduca powěsć',
 	'translate-edit-goto-prev' => 'Pśedchadnu powěsć wobźěłaś',
@@ -3264,6 +3277,7 @@ Musyš w kupce pśełožowarjow byś, aby mogł změny cyniś. Změny se njeskł
 	'translate-checks-pagename' => 'Mjenjowy rum pśez definiciju změnjony',
 	'translate-checks-format' => 'Toś ten pśełožk njeslědujo definiciji abo ma njepłaśiwu syntaksu: $1',
 	'translate-checks-escape' => 'Slědujuce eskapowe sekwence mógu pśipadne byś: <strong>$1</strong>',
+	'translate-checks-fudforum-syntax' => '<nowiki>$1</nowiki> město <nowiki>$2</nowiki> w toś tom projekśe wužywaś.',
 	'translate-pref-nonewsletter' => 'Njesćelśo mě emailowy list nowosćow',
 	'translate-pref-editassistlang' => 'Pomocne rěcy:',
 	'prefs-translate' => 'Pśełožowańske opcije',
@@ -3365,6 +3379,8 @@ Wužyj slědujucy wótkaz, aby se k naglědoju kupkowych drobnostkow wrośił.',
 	'translate-manage-inconsistent' => 'Nadejźona inkonsistenca w napšašowanju.
 Pšosym pśeglědaj za změny a wopytaj hyšći raz.
 Drobnostki: $1',
+	'translate-manage-toolong' => 'Maksimalny pśeźěłowański cas $1 {{PLURAL:$1|sekundy|sekundowu|sekundow|sekundow}} jo pśebyty.
+Pšosym wótpósćel formular znowego, aby z pśeźěłanim pókšacował.',
 	'translate-manage-import-ok' => 'Nowa wersija boka $1 importěrowany.',
 	'translate-manage-import-noks' => 'Importěrowanje noweje wersije boka $1 je so njeraźiło: $2',
 	'translate-manage-import-ignore' => 'Powěźeńka $1 se pśeskokujo.',
@@ -3379,6 +3395,9 @@ Pšosym pśeglědaś.',
 Pšosym pséglědaj změny a wubjeŕ akciju, kótaruž coš za kuždu powěźeńku cyniś.
 Gaž sy definicije powěźeńkow aktualizěrował, pśeglědaj za eksterne změny w drugich rěcach, jolic take su.
 Spomni teke, až <code>ignorěrowańska</code> akcija jo jano tuchylu.',
+	'translate-manage-intro-other' => 'Dołojce jo lisćina pśełožkowych změnow w rěcy $1.
+Pšosym pśeglědaj změny a wubjeŕ akciju, kótaruž coš za kuždy pśełožk cyniś.
+Jolic ignorěrujoš změny, pśepišu se pśi pśiducem eksporśe.',
 	'translate-manage-subtitle' => 'Zastojaś',
 	'translate-manage-import-rebuild-all' => 'Wše rěcy zasej natwariś a změny ignorěrowaś',
 	'importtranslations' => 'Pśełožki importěrowaś',
@@ -3388,12 +3407,17 @@ Spomni teke, až <code>ignorěrowańska</code> akcija jo jano tuchylu.',
 	'translate-import-load' => 'Dataju zacytaś',
 	'translate-import-err-type-not-supported' => 'Njemóžno dataju zacytaś:
 Metoda <tt>$1</tt> se njepódpěra.',
+	'translate-import-err-dl-failed' => 'Njemóžno dataju wótwołaś:
+$1',
 	'translate-import-err-ul-failed' => 'Nagraśe dataje njejo wuspěšne było',
 	'translate-import-err-invalid-title' => 'Pódane datajowe mě <nowiki>$1</nowiki> jo njepłaśiwe było.',
 	'translate-import-err-no-such-file' => 'Dataja <nowiki>$1</nowiki> njeeksistěrujo abo jnejo se lokalnje nagrała.',
+	'translate-import-err-no-headers' => 'Dataja mjejp derje wuformowana dataja gettext we formaśe pśełožowańskego formata:
+Njemóžno kupku a rěc z datajowych głowow zwěsćiś.',
 	'translate-import-err-warnings' => 'Dataja njejo derje wuformowana.
 Zawěsć, až twój editor njewótpórujo póla msgctxt.
 Drobnostki: $1',
+	'translate-js-fb' => 'Normalne wobźěłanje',
 );
 
 /** Ewe (Eʋegbe)
@@ -3906,6 +3930,7 @@ Los cambios no se graban hasta que no pulses el boton de guardar de abajo.',
 	'translate-checks-pagename' => 'Nombre de espacio cambiada desde la definición',
 	'translate-checks-format' => 'Esta traducción no sigue la definición o tiene sintaxis inválida: $1',
 	'translate-checks-escape' => 'Los siguientes escapes pueden ser accidentales: <strong>$1</strong>',
+	'translate-checks-fudforum-syntax' => 'Usar <nowiki>$1</nowiki> en lugar de <nowiki>$2</nowiki> en este proyecto.',
 	'translate-pref-nonewsletter' => 'No quiero recibir correos de noticias',
 	'translate-pref-editassistlang' => 'Idiomas soportados:',
 	'prefs-translate' => 'Opciones de traducción',
@@ -3916,6 +3941,7 @@ La lista de idiomas por defecto depende de su idioma.',
 <nowiki>$1</nowiki>.',
 	'translate-pref-jsedit' => 'Editor de traducción mejorado (JavaScript)',
 	'right-translate' => 'Editar usando el interfaz de traducción',
+	'right-translate-manage' => 'Gestionar grupos de traducción',
 	'right-translate-import' => 'Importar traducciones offline',
 	'translate-rc-translation-filter' => 'Filtrar traducciones:',
 	'translate-rc-translation-filter-no' => 'No filtrar nada',
@@ -3981,9 +4007,12 @@ Se te anima a revisar los mensajes a través de [[Special:Translate|{{int:transl
 	'translate-group-desc-wikimediaextensions' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones MediaWiki soportadas usadas por [http://wikimedia.org/ Wikimedia Foundation]',
 	'translate-group-desc-wikitravelextensions' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones MediaWiki soportadas usadas por [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones relacionadas a [http://unicefinnovation.org/wiki.php Uniwiki]',
+	'translate-manage-groups' => 'Gestión de grupo',
 	'translate-manage-listgroups' => 'Grupos configurados',
 	'translate-manage-listgroups-old' => 'Grupos en estilo antiguo',
+	'translate-managegroups' => 'Gestión de grupo',
 	'translate-manage-newgroup' => 'Este grupo de mensajes no ha sido importado previamente',
+	'translate-manage-cacheat' => 'Importado en $1 en $2',
 	'translate-manage-return-to-group' => 'Regresar a la página de detalles de grupo',
 	'translate-manage-modlangs' => 'Por favor revise posibles cambios en {{PLURAL:$1|el siguiente idioma|los siguientes idiomas}}:',
 	'translate-manage-modlang-new' => '$1 (nuevo)',
@@ -4025,7 +4054,10 @@ Si prefiere ignorar los cambios, se sobrescribirán en la próxima exportación.
 	'importtranslations' => 'Importar traducciónes',
 	'translate-import-from-url' => 'URL al archivo:',
 	'translate-import-from-wiki' => 'Archivo en esta wiki:',
+	'translate-import-from-local' => 'Importación de archivo local:',
 	'translate-import-load' => 'Subir archivo',
+	'translate-import-err-type-not-supported' => 'Incapaz de cargar el archivo:
+Método <tt>$1</tt> no está soportado.',
 	'translate-import-err-dl-failed' => 'Imposible buscar el archivo:
 $1',
 	'translate-import-err-ul-failed' => 'La carga del archivo no fue exitosa.',
@@ -4034,6 +4066,7 @@ $1',
 	'translate-import-err-warnings' => 'El archivo no está bien constituído.
 Asegúrese de que su editor no quita los campos msgctxt.
 Detalle: $1',
+	'translate-js-fb' => 'Edición normal',
 );
 
 /** Estonian (Eesti)
@@ -4630,7 +4663,7 @@ $messages['fr'] = array(
 	'translate-edit-committed' => 'Traduction actuelle dans le logiciel',
 	'translate-edit-warnings' => 'Avertissements sur les traductions incomplètes',
 	'translate-edit-tmsugs' => 'Suggestions de la mémoire de traduction',
-	'translate-edit-tmmatch' => '$1 % de correspodance',
+	'translate-edit-tmmatch' => '$1 % de correspondance',
 	'translate-edit-goto-no-prev' => 'Pas de message précédent',
 	'translate-edit-goto-no-next' => 'Pas de message suivant',
 	'translate-edit-goto-prev' => 'Voir le message précédent',
@@ -4683,6 +4716,7 @@ Les modifications ne sont pas enregistrées tant que vous n’avez pas cliqué s
 	'translate-checks-pagename' => 'Espace de noms modifié depuis la définition',
 	'translate-checks-format' => 'Cette traduction ne suit pas la définition ou a une syntaxe incorrecte : $1',
 	'translate-checks-escape' => 'Les échappements suivants peuvent être accidentels : <strong>$1</strong>',
+	'translate-checks-fudforum-syntax' => 'Utiliser <nowiki>$1</nowiki> au lieu de <nowiki>$2</nowiki> dans ce projet.',
 	'translate-pref-nonewsletter' => 'Ne pas m’envoyer les courriels d’informations',
 	'translate-pref-editassistlang' => "Langues d'assistance :",
 	'prefs-translate' => 'Options de traduction',
@@ -4822,6 +4856,7 @@ il est impossible de déterminer le groupe et la langue depuis les entêtes du f
 	'translate-import-err-warnings' => 'Le fichier n’est pas bien formé.
 Assurez-vous que votre outil de traduction ne supprime pas les champs « msgctxt ».
 Détails : $1',
+	'translate-js-fb' => 'Modification normale',
 );
 
 /** Cajun French (Français cadien)
@@ -5182,6 +5217,7 @@ Os cambios non se gardan ata que prema no botón "Gardar" de embaixo.',
 	'translate-checks-pagename' => 'O espazo de nomes cambiou desde a definición',
 	'translate-checks-format' => 'Esta tradución non segue a definición ou ten unha sintaxe inválida: $1',
 	'translate-checks-escape' => 'As seguintes secuencias de escape poden ser accidentais: <strong>$1</strong>',
+	'translate-checks-fudforum-syntax' => 'Use <nowiki>$1</nowiki> no canto de <nowiki>$2</nowiki> neste proxecto.',
 	'translate-pref-nonewsletter' => 'Non me enviedes follas informativas ao meu correo electrónico',
 	'translate-pref-editassistlang' => 'Linguas axudantes:',
 	'prefs-translate' => 'Opcións de tradución',
@@ -5318,6 +5354,7 @@ non se poden determinar o grupo e a lingua a partir das cabeceiras do ficheiro.'
 	'translate-import-err-warnings' => 'O ficheiro non está ben formado.
 Asegúrese de que o seu editor non elimina campos msgctxt.
 Detalles: $1',
+	'translate-js-fb' => 'Edición normal',
 );
 
 /** Gothic (Gothic)
@@ -5488,6 +5525,7 @@ Du muesch in dr Ibersetzer-Gruppe syy go Änderige z spychere.
 	'translate-checks-pagename' => 'Namensruum gänderet dur d Definition',
 	'translate-checks-format' => 'Die Ibersetzig entspricht nit dr Definition oder het e uugiltigi Syntax: $1',
 	'translate-checks-escape' => 'Die Escape-Sequenze chenne us Versäh vorhande syy: <strong>$1</strong>',
+	'translate-checks-fudforum-syntax' => 'Bitte bruch <nowiki>$1</nowiki> statt <nowiki>$2</nowiki> in däm Projäkt.',
 	'translate-pref-nonewsletter' => 'Schick mir kei E-Mail-Newsletter zue',
 	'translate-pref-editassistlang' => 'Hilfssproche:',
 	'prefs-translate' => 'Ibersetzigoptione',
@@ -5624,6 +5662,7 @@ D Gruppen un Sproche hän nit us em Dateichopf chenne ermittlet wäre.',
 	'translate-import-err-warnings' => 'D Datei entspricht nit em erwartete Format.
 Stell sicher, ass dr Editor kei <tt>msgctxt</tt>-Fälder usenimmt.
 Detail: $1',
+	'translate-js-fb' => 'Normali Bearbeitig',
 );
 
 /** Gujarati (ગુજરાતી)
@@ -6262,6 +6301,7 @@ Dyrbiš w skupinje přełožowarjow być, zo by změny składował. Změny so nj
 	'translate-checks-pagename' => 'Mjenowy rum z definicije změnjeny',
 	'translate-checks-format' => 'Tutón přełožk njeslěduje definiciji abo ma njepłaćiwu syntaksu: $1',
 	'translate-checks-escape' => 'Slědowace eskapowe sekwency móža připadne być: <strong>$1</strong>',
+	'translate-checks-fudforum-syntax' => '<nowiki>$1</nowiki> město <nowiki>$2</nowiki> w tutym projekće wužiwać.',
 	'translate-pref-nonewsletter' => 'Njepósćel mi žadyn e-mejlowy dopis nowinkow',
 	'translate-pref-editassistlang' => 'Pomocne rěče:',
 	'prefs-translate' => 'Přełožowanske opcije',
@@ -6400,6 +6440,7 @@ Njeje móžno skupinu a rěč z hłowy dataje zwěsćić.',
 	'translate-import-err-warnings' => 'Dataja derje sformowana njeje.
 Zawěsć, zo twój editor pola <tt>msgctxt</tt> njewotstronja.
 Podrobnosće: $1',
+	'translate-js-fb' => 'Normalne wobdźěłanje',
 );
 
 /** Haitian (Kreyòl ayisyen)
@@ -7411,6 +7452,7 @@ $messages['ja'] = array(
 	'translate-checks-pagename' => 'もとの定義から名前空間が変更されています',
 	'translate-checks-format' => 'この翻訳は定義に沿っていない、または不正な構文を使用しています: $1',
 	'translate-checks-escape' => '以下のエスケープは偶発のものであるかもしれません: <strong>$1</strong>',
+	'translate-checks-fudforum-syntax' => 'このプロジェクトは<nowiki>$2</nowiki>の代わりに<nowiki>$1</nowiki>を使用する。',
 	'translate-pref-nonewsletter' => '電子メールのニュースレターを受け取らない',
 	'translate-pref-editassistlang' => '補助言語：',
 	'prefs-translate' => '翻訳設定',
@@ -7534,6 +7576,7 @@ $1',
 	'translate-import-err-no-such-file' => 'ファイル <nowiki>$1</nowiki> は存在しないか、ローカルにアップロードされていません。',
 	'translate-import-err-no-headers' => 'ファイルが Translate 拡張機能の形式に正しく適応した gettext ファイルではありません。ファイルヘッダーからグループと言語を確定することができませんでした。',
 	'translate-import-err-warnings' => 'このファイルは形式が正しくありません。あなたの使ったエディターが msgctxt フィールドを除去していないか確認してください。詳細: $1',
+	'translate-js-fb' => '通常の編集',
 );
 
 /** Javanese (Basa Jawa)
@@ -8511,6 +8554,7 @@ Do moß en de Jrop „Övversäzer“ sen, för hee Änderonge maache ze könne.
 	'translate-checks-pagename' => 'Dat Appachtemang es anders wi em ojinaal Tex',
 	'translate-checks-format' => 'De Övversätzung paß nit zor Definitjuhn odder dä ier Syntax es nit en Odenung: $1',
 	'translate-checks-escape' => 'He de <i lang="en">escapes</i> künnte esu nit jewollt sin: <strong>$1</strong>',
+	'translate-checks-fudforum-syntax' => 'Nemm <nowiki>$1</nowiki> aanshtatt vun <nowiki>$2</nowiki> en heh dämm Projäk.',
 	'translate-pref-nonewsletter' => 'Donn mer keijn Rondschriive övver de eläktronesche Poß scheke',
 	'translate-pref-editassistlang' => 'Shprooche för ze Hellfe:',
 	'prefs-translate' => 'Enshtällunge för et Övversäze',
@@ -8643,6 +8687,7 @@ $1',
 	'translate-import-err-no-such-file' => 'Di Datei „<nowiki>$1</nowiki>“ jidd_et nit, udder se es nit heh en et Wiki huhjelaade.',
 	'translate-import-err-no-headers' => 'Di Dattei es nit em Jettäx Fommaat vum Zohsazprojramm <code lang="en">Translate</code>: Kunnt de Jropp un Shprooch nit uß de Koppdaate eruß krijje.',
 	'translate-import-err-warnings' => 'Di Dattei es nit em reschteje Fommaat. Beß sescher, dat kein vun Dinge Projramme de <code lang="en">msgctxt</code> Felder fott määt. De Einzelheite: $1',
+	'translate-js-fb' => 'Nomaal Änderung',
 );
 
 /** Latin (Latina)
@@ -11711,6 +11756,7 @@ $messages['ru'] = array(
 	'translate-checks-pagename' => 'Изменилось определение пространства имён',
 	'translate-checks-format' => 'Этот перевод не соответствует определению или содержит синтаксическую ошибку: $1',
 	'translate-checks-escape' => 'Следующие экранирующие последовательности могут быть случайны: <strong>$1</strong>',
+	'translate-checks-fudforum-syntax' => 'Использовать в этом проекте <nowiki>$1</nowiki> вместо <nowiki>$2</nowiki>.',
 	'translate-pref-nonewsletter' => 'Не отправлять мне информационный бюллетень по электронной почте',
 	'translate-pref-editassistlang' => 'Вспомогательные языки:',
 	'prefs-translate' => 'Настройки перевода',
@@ -11846,6 +11892,7 @@ $1',
 	'translate-import-err-warnings' => 'Файл не является правильно построенным.
 Убедитесь, что ваш редактор не удаляет поля msgctxt.
 Подробнее: $1',
+	'translate-js-fb' => 'Обычное редактирование',
 );
 
 /** Yakut (Саха тыла)
