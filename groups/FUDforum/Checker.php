@@ -49,4 +49,21 @@ class FUDforumMessageChecker extends MessageChecker {
 		}
 	}
 
+	protected function FUDforumSyntaxCheck( $messages, $code, &$warnings ) {
+		foreach( $messages as $message ) {
+			$key = $message->key();
+			$translation = $message->translation();
+			$error = strpos( $translation, '{{PLURAL' ) !== false;
+
+			if ( $error ) {
+				$warnings[$key][] = array(
+					array( 'syntax', 'plural', $key, $code ),
+					'translate-checks-fudforum-syntax',
+					'{PLURAL:',
+					'{{PLURAL:',
+				);
+			}
+		}
+	}
+
 }

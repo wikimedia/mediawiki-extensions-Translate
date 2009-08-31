@@ -66,6 +66,7 @@ FILES:
 CHECKER:
   class: FUDforumMessageChecker
   checks:
+    - FUDforumSyntaxCheck
     - FUDforumVariablesCheck
     - braceBalanceCheck
 

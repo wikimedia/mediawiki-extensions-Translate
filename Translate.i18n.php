@@ -135,6 +135,7 @@ Changes are not saved until you click save button below.',
 	'translate-checks-pagename'           => 'Namespace changed from the definition',
 	'translate-checks-format'             => 'This translation does not follow the definition or has invalid syntax: $1',
 	'translate-checks-escape'             => 'The following escapes may be accidental: <strong>$1</strong>',
+	'translate-checks-fudforum-syntax'    => 'Use <nowiki>$1</nowiki> instead of <nowiki>$2</nowiki> in this project.',
 
 	'translate-pref-nonewsletter' => 'Do not send me e-mail newsletters',
 	'translate-pref-editassistlang' => 'Assistant languages:',

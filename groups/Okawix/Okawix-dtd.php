@@ -54,6 +54,9 @@ class OkawixDtdFFS extends SimpleFFS {
 		foreach ( $collection as $key => $m ) {
 			$key = $mangler->unmangle( $key );
 			$trans = $m->translation();
+			$trans = str_replace( TRANSLATE_FUZZY, '', $trans );
+			if ( $trans === '' ) continue;
+
 			$trans = str_replace('"', '&quot;', $trans);
 			$output .= "<!ENTITY $key \"$trans\">\n";
 		}
