@@ -635,7 +635,7 @@ Alle waardes het hoër en laer limiete.',
 	'translate-manage-import-ok' => 'Nuwe weergawe van die bladsy $1 is gelaai.',
 	'translate-manage-import-noks' => 'Die laai van die nuwe weergawe van bladsy $1 het gefaal: $2',
 	'translate-manage-import-ignore' => 'Slaan boodskap $1 oor.',
-	'translate-manage-fuzzy-summary' => 'Dei definisie is gewysig',
+	'translate-manage-fuzzy-summary' => 'Die definisie is gewysig',
 	'translate-manage-import-done' => 'Klaar!',
 	'translate-manage-import-rebuild' => 'Herbou kas.',
 	'translate-manage-subtitle' => 'Beheer',
@@ -2233,6 +2233,7 @@ Savjetujemo Vam da izvršite pregled poruke preko [[Special:Translate|{{int:tran
 Upotrijebite link ispod za povratak na pregled detalja grupe.',
 	'translate-manage-import-ok' => 'Uvezena nova verzija stranice $1.',
 	'translate-manage-import-ignore' => 'Preskaćem poruku $1.',
+	'translate-manage-import-summary' => 'Uvozim novu verziju iz vanjskog izvora',
 	'translate-manage-conflict-summary' => 'Uvozi se nova verzija iz vanjskog izvora. Molimo provjerite.',
 	'translate-manage-fuzzy-summary' => 'Definicija je izmijenjena',
 	'translate-manage-import-done' => 'Sve završeno!',
@@ -2243,9 +2244,12 @@ Upotrijebite link ispod za povratak na pregled detalja grupe.',
 	'translate-import-load' => 'Učitaj datoteku',
 	'translate-import-err-type-not-supported' => 'Ne može se učitati datoteka:
 Metod <tt>$1</tt> nije podržan.',
+	'translate-import-err-ul-failed' => 'Postavljanje datoteke nije uspjelo',
+	'translate-import-err-no-such-file' => 'Datoteka <nowiki>$1</nowiki> ne postoji ili nije postavljena lokalno.',
 	'translate-import-err-warnings' => 'Datoteka nije dobro formirana.
 Provjerite da li je Vaš uređivač uklonio msgctxt polja.
 Detalji: $1',
+	'translate-js-fb' => 'Obično uređivanje',
 );
 
 /** Buginese (ᨅᨔ ᨕᨘᨁᨗ)
@@ -6698,6 +6702,7 @@ Si tu sape ubi o como iste message es usate, tu pote adjutar le altere traductor
 	'translate-edit-committed' => 'Traduction actual in software',
 	'translate-edit-warnings' => 'Advertimentos super traductiones incomplete',
 	'translate-edit-tmsugs' => 'Suggestiones ab le memoria de traductiones',
+	'translate-edit-tmmatch' => '$1% de correspondentia',
 	'translate-edit-goto-no-prev' => 'Nulle message precedente',
 	'translate-edit-goto-no-next' => 'Nulle message sequente',
 	'translate-edit-goto-prev' => 'Modificar le message precedente',
@@ -6751,6 +6756,7 @@ Le modificationes non es immagazinate usque tu clicca super le button Publicar i
 	'translate-checks-pagename' => 'Spatio de nomines cambiate ab le definition',
 	'translate-checks-format' => 'Iste traduction non seque le definition o ha un syntaxe invalide: $1',
 	'translate-checks-escape' => 'Le sequente escappamentos pote esser accidental: <strong>$1</strong>',
+	'translate-checks-fudforum-syntax' => 'Usar <nowiki>$1</nowiki> in loco de <nowiki>$2</nowiki> in iste projecto.',
 	'translate-pref-nonewsletter' => 'Non inviar me bulletines in e-mail',
 	'translate-pref-editassistlang' => 'Linguas assistente:',
 	'prefs-translate' => 'Optiones de traduction',
@@ -6759,7 +6765,10 @@ Le traductiones de un message in iste linguas es monstrate quando tu traduce.
 Le lista predefinite de linguas depende de tu lingua.',
 	'translate-pref-editassistlang-bad' => 'Codice de lingua invalide in le lista:
 <nowiki>$1</nowiki>.',
+	'translate-pref-jsedit' => 'Editor de traduction meliorate (JavaScript)',
 	'right-translate' => 'Modificar con le interfacie de traduction',
+	'right-translate-manage' => 'Gerer gruppos de traduction',
+	'right-translate-import' => 'Importar traductiones foras de linea',
 	'translate-rc-translation-filter' => 'Filtrar traductiones:',
 	'translate-rc-translation-filter-no' => 'Facer nihil',
 	'translate-rc-translation-filter-only' => 'Monstrar solmente traductiones',
@@ -6859,6 +6868,7 @@ Resubmitte per favor le formulario pro continuar le processamento.',
 	'translate-manage-import-summary' => 'Un nove version es importate ex un fonte externe',
 	'translate-manage-conflict-summary' => 'Un nove version es importate ex un fonte externe.
 Per favor verifica.',
+	'translate-manage-fuzzy-summary' => 'Le definition ha cambiate',
 	'translate-manage-import-fuzzy' => 'Es importate e marcate como "fuzzy": $1',
 	'translate-manage-import-done' => 'Toto finite!',
 	'translate-manage-import-rebuild' => 'Reconstruction del cache.',
@@ -6883,6 +6893,12 @@ $1',
 	'translate-import-err-ul-failed' => 'Le cargamento del file non ha succedite',
 	'translate-import-err-invalid-title' => 'Le nomine de file <nowiki>$1</nowiki> es invalide.',
 	'translate-import-err-no-such-file' => 'Le file <nowiki>$1</nowiki> non existe o non ha essite cargate localmente.',
+	'translate-import-err-no-headers' => 'Le file non es un file Gettext ben formate in le formato del extension Translate:
+Non pote determinar le gruppo e lingua ex le capites del file.',
+	'translate-import-err-warnings' => 'Le file non es ben formate.
+Assecura te que tu editor non remove le campos msgctxt.
+Detalios: $1',
+	'translate-js-fb' => 'Modification normal',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -6930,6 +6946,7 @@ $messages['id'] = array(
 	'translate-prev' => 'Halaman sebelumnya',
 	'translate-page-description-legend' => 'Informasi mengenai grup',
 	'translate-page-edit' => 'sunting',
+	'translate-ext-url' => '<hr />SitusWeb: $1',
 	'translate-optional' => '(opsional)',
 	'translate-ignored' => '(diabaikan)',
 	'translate-edit-definition' => 'Definisi pesan',
@@ -6939,6 +6956,8 @@ $messages['id'] = array(
 	'translate-edit-in-other-languages' => 'Pesan "$1" dalam bahasa lain',
 	'translate-edit-committed' => 'Terjemahan terkini yang ada di perangkat lunak',
 	'translate-edit-warnings' => 'Peringatan mengenai terjemahan yang tak lengkap',
+	'translate-edit-tmsugs' => 'Saran dari memori terjemahan',
+	'translate-edit-tmmatch' => '$1% sesuai',
 	'translate-edit-goto-no-prev' => 'Tidak ada pesan sebelumnya',
 	'translate-edit-goto-no-next' => 'Tidak ada pesan berikutnya',
 	'translate-edit-goto-prev' => 'Sunting pesan sebelumnya',
@@ -6970,6 +6989,9 @@ Perubahan tidak akan disimpan hingga Anda mengklik tombol simpan di bawah.',
 	'translate-magic-special' => 'Alias halaman istimewa',
 	'translate-magic-words' => 'Kata magis',
 	'translate-magic-namespace' => 'Nama ruang nama',
+	'translate-magic-notsaved' => 'Suntingan anda tidak tersimpan!',
+	'translate-magic-errors' => 'Mohon perbaiki {{PLURAL:$1|kesalahan|kesalahan}} ini pada penterjemah:',
+	'translate-magic-saved' => 'Perubahan anda berhasil tersimpan',
 	'translationchanges' => 'Perubahan terjemahan',
 	'translationchanges-export' => 'ekspor',
 	'translationchanges-change' => '$1: $2 oleh $3',
@@ -6989,8 +7011,18 @@ Perubahan tidak akan disimpan hingga Anda mengklik tombol simpan di bawah.',
 	'translate-checks-pagename' => 'Ruang nama berubah dari definisinya',
 	'translate-checks-format' => 'Terjemahan ini tidak mengikuti definisi atau memiliki sintaksis yang tidak valid: $1',
 	'translate-checks-escape' => "Rangkaian kontrol (''escape sequence'') berikut mungkin tidak disengaja: <strong>$1</strong>",
+	'translate-checks-fudforum-syntax' => 'Gunakan <nowiki>$1</nowiki> bukan <nowiki>$2</nowiki> pada proyek ini.',
 	'translate-pref-nonewsletter' => 'Jangan kirimi saya surat-e nawala',
+	'translate-pref-editassistlang' => 'Bahasa penunjang:',
+	'prefs-translate' => 'Pilihan penterjamahan',
+	'translate-pref-editassistlang-help' => '	
+Daftar kode bahasa dipisahkan koma .
+Menterjemahkan pesan dalam bahasa ini tampil saat Anda menerjemahkan.
+Daftar bahasa tergantung pada bahasa Anda.',
+	'translate-pref-editassistlang-bad' => 'Kode bahasa tidak sah pada daftar:
+<nowiki>$1</nowiki>.',
 	'right-translate' => 'Menyunting menggunakan antarmuka penerjemahan',
+	'right-translate-manage' => 'Kelola kelompok terjemahan',
 	'translate-rc-translation-filter' => 'Filter terjemahan:',
 	'translate-rc-translation-filter-no' => 'Tidak difilter',
 	'translate-rc-translation-filter-only' => 'Tampilkan hanya terjemahan',
@@ -7041,11 +7073,13 @@ Anda dapat [$1 menyunting halaman sumber] atau [$2 memperbarui terjemahannya].',
 	'translate-nothing-to-do' => 'Semua terjemahan yang mungkin tampaknya telah dibuat.
 Silakan meninjau pesan-pesan melalui [[Special:Translate|{{int:translate}}]].',
 	'translate-save' => 'Simpan ($1)',
+	'translate-jssti-add' => 'Tambahkan pada daftar',
 	'translate-group-desc-mediawikicore' => 'Grup pesan ini berisikan pesan-pesan sistem yang digunakan dalam MediaWiki versi alfa terbaru ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'Grup ini berisikan [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 pesan sistem yang paling sering digunakan] di MediaWiki',
 	'translate-group-desc-mediawikiextensions' => 'Grup pesan meta yang berisikan semua pesan sistem untuk ekstensi MediaWiki yang didukung',
 	'translate-group-desc-collection' => 'Grup pesan meta yang berisikan semua pesan sistem untuk ekstensi MediaWiki [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
 	'translate-group-desc-flaggedrevs' => 'Grup pesan meta yang berisikan semua pesan untuk ekstensi MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
+	'translate-group-desc-readerfeedback' => 'Kelompok pesan meta yang berisi semua pesan untuk ekstensi MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
 	'translate-group-desc-socialprofile' => 'Grup pesan meta yang berisikan semua pesan untuk ekstensi yang berkaitan dengan ekstensi MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
 	'translate-group-desc-translate' => 'Grup pesan meta yang berisikan semua pesan untuk ekstensi MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-wikiaextensions' => 'Grup pesan meta yang berisikan semua pesan untuk ekstensi MediaWiki yang didukung yang digunakan oleh [http://www.wikia.com Wikia]',
@@ -7054,7 +7088,37 @@ Silakan meninjau pesan-pesan melalui [[Special:Translate|{{int:translate}}]].',
 	'translate-group-desc-wikitravelextensions' => 'Grup pesan meta yang berisikan semua pesan untuk ekstensi MediaWiki yang didukung yang digunakan oleh [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Grup pesan meta yang berisikan semua pesan untuk ekstensi yang berkaitan dengan [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Grup pesan meta yang berisikan semua pesan untuk ekstensi yang berkaitan dengan [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Proyek Inisiatif Kebergunaan Wikipedia]',
+	'translate-manage-groups' => 'Pengelolaan kelompok',
+	'translate-manage-listgroups' => 'Konfigurasi kelompok',
+	'translate-manage-listgroups-old' => 'Kelompok gaya lama',
+	'translate-managegroups' => 'Manajemen kelompok',
+	'translate-manage-newgroup' => 'Grup pesan ini belum di impor sebelumnya.',
+	'translate-manage-cacheat' => 'Impor di $1 pada $2',
+	'translate-manage-return-to-group' => 'Kembali ke halaman kelompok',
 	'translate-manage-modlang-new' => '$1 (baru)',
+	'translate-manage-import-diff' => 'Pesan $1 | Aksi: $2',
+	'translate-manage-import-new' => 'Pesan baru $1',
+	'translate-manage-import-deleted' => 'Hapus pesan $1',
+	'translate-manage-action-import' => 'Impor',
+	'translate-manage-action-conflict' => 'Impor dan takjelas',
+	'translate-manage-action-ignore' => 'Abaikan',
+	'translate-manage-action-fuzzy' => 'Impor dan terjemahan takjelas',
+	'translate-manage-import-ok' => 'Impor versi baru dari halaman $1.',
+	'translate-manage-import-noks' => 'Gagal mengimpor versi baru dari halaman $1: $2',
+	'translate-manage-import-ignore' => 'Lewati pesan $1',
+	'translate-manage-import-summary' => 'Impor versi baru dari sumber luar',
+	'translate-manage-conflict-summary' => 'Mengimpor versi baru dari sumber luar.
+Silahkan periksa.',
+	'translate-manage-fuzzy-summary' => 'Definisi telah berubah',
+	'translate-manage-import-done' => 'Semua selesai!',
+	'translate-manage-subtitle' => 'Kelola',
+	'translate-manage-import-rebuild-all' => 'Bangun kembali semua bahasa dan abaikan perubahan',
+	'importtranslations' => 'Impor terjemahan',
+	'translate-import-from-url' => 'URL ke berkas:',
+	'translate-import-from-wiki' => 'Berkas pada wiki ini:',
+	'translate-import-err-ul-failed' => 'Pemuatan berkas tidak berhasil',
+	'translate-import-err-invalid-title' => 'Nama berkas <nowiki>$1</nowiki> yang diberikan tidak sah.',
+	'translate-js-fb' => 'Penyuntingan normal',
 );
 
 /** Iloko (Ilokano)
@@ -7452,7 +7516,7 @@ $messages['ja'] = array(
 	'translate-checks-pagename' => 'もとの定義から名前空間が変更されています',
 	'translate-checks-format' => 'この翻訳は定義に沿っていない、または不正な構文を使用しています: $1',
 	'translate-checks-escape' => '以下のエスケープは偶発のものであるかもしれません: <strong>$1</strong>',
-	'translate-checks-fudforum-syntax' => 'このプロジェクトは<nowiki>$2</nowiki>の代わりに<nowiki>$1</nowiki>を使用する。',
+	'translate-checks-fudforum-syntax' => 'このプロジェクトでは <nowiki>$2</nowiki> の代わりに <nowiki>$1</nowiki> を使用します。',
 	'translate-pref-nonewsletter' => '電子メールのニュースレターを受け取らない',
 	'translate-pref-editassistlang' => '補助言語：',
 	'prefs-translate' => '翻訳設定',
@@ -8812,6 +8876,7 @@ Dir musst am Grupp vun den Iwwersetzer si fir Ännerungen ofspäicheren ze kënn
 	'translate-checks-pagename' => "Nummraum geännert duerch d'Definitioun",
 	'translate-checks-format' => 'Dës Iwwersetzung translation entsprecht net der Definitioun oder huet eng Syntax déi net gëlteg ass: $1',
 	'translate-checks-escape' => 'Dës Escape-Sequenzen kënnen ongewollt sinn: <strong>$1</strong>',
+	'translate-checks-fudforum-syntax' => '<nowiki>$1</nowiki>  aplaz vu(n) <nowiki>$2</nowiki>  an dësem Projet benotzen.',
 	'translate-pref-nonewsletter' => 'Schéckt mir keng E-Mail-Newsletter.',
 	'translate-pref-editassistlang' => 'Sproochen déi ënnerstetzen:',
 	'prefs-translate' => 'Optiouen vund der Iwwersetzung',
@@ -8942,6 +9007,7 @@ $1',
 	'translate-import-err-warnings' => 'De Fichier ass net richteg forméiert.
 Vergewëssert Iech datt Ären Editeursprogramm keng msgctxt Felder ewechhëllt.
 Detailler: $1',
+	'translate-js-fb' => 'Normal Ännerung',
 );
 
 /** Limburgish (Limburgs)
@@ -9856,6 +9922,7 @@ Wijzigingen worden niet bewaard totdat u op "Pagina opslaan" hebt geklikt.',
 	'translate-checks-pagename' => 'Afwijkende naamruimte vergeleken met de brontekst',
 	'translate-checks-format' => 'Deze vertaling wijkt af van het bronbericht of heeft een ongeldige opmaak: $1',
 	'translate-checks-escape' => 'De volgende escapes zijn waarschijnlijk per ongeluk toegepast: <strong>$1</strong>',
+	'translate-checks-fudforum-syntax' => 'Gebruik <nowiki>$1</nowiki> in plaats van <nowiki>$2</nowiki> voor dit project.',
 	'translate-pref-nonewsletter' => 'Mij geen nieuwsbrieven per e-mail sturen',
 	'translate-pref-editassistlang' => 'Hulptalen:',
 	'prefs-translate' => 'Vertaalinstellingen',
@@ -9994,6 +10061,7 @@ het was niet mogelijk de groep en taal te bepalen uit het bestand.',
 	'translate-import-err-warnings' => 'Het bestand is niet juist gevormd.
 Zorg dat uw tekstverwerker het veld msgctxt niet verwijderd.
 Details: $1',
+	'translate-js-fb' => 'Regulier bewerken',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
@@ -10777,6 +10845,7 @@ Zmiany nie są zapisywane, dopóki użytkownik nie naciśnie umieszczonego poni�
 	'translate-checks-pagename' => 'Przestrzeń nazw zmieniona z definicji',
 	'translate-checks-format' => 'To tłumaczenie jest niezgodne z definicją lub ma nieprawidłową składnię: $1',
 	'translate-checks-escape' => 'Następujące wyjścia z procesu tłumaczenia mogą być przypadkowe: <strong>$1</strong>',
+	'translate-checks-fudforum-syntax' => 'Użyj w tym projekcie <nowiki>$1</nowiki> zamiast <nowiki>$2</nowiki>.',
 	'translate-pref-nonewsletter' => 'Nie wysyłaj do mnie biuletynów pocztą elektroniczną',
 	'translate-pref-editassistlang' => 'Języki pomocnicze:',
 	'prefs-translate' => 'Opcje tłumaczenia',
@@ -10912,6 +10981,7 @@ Jeśli polecisz zignorować zmiany, zostaną one nadpisane przy następnym ekspo
 	'translate-import-err-warnings' => 'Plik nie ma prawidłowego formatu.
 Sprawdź, czy edytor którym się posługujesz nie usuwa pól msgctxt.
 Szczegóły – $1',
+	'translate-js-fb' => 'Edytuj zwyczajnie',
 );
 
 /** Piedmontese (Piemontèis)

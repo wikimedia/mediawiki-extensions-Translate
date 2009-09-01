@@ -2337,12 +2337,29 @@ $messages['vep'] = array(
 
 /** Vietnamese (Tiếng Việt)
  * @author Minh Nguyen
+ * @author Vinhtantran
  */
 $messages['vi'] = array(
+	'pagetranslation' => 'Dịch trang',
+	'right-pagetranslation' => 'Đánh dấu các phiên bản của trang là cần dịch',
+	'tpt-desc' => 'Bộ mở rộng để dịch trang nội dung',
+	'tpt-section' => 'Đơn vị dịch thuật $1',
+	'tpt-section-new' => 'Đơn vị dịch thuật mới.
+Tên: $1',
+	'tpt-section-deleted' => 'Đơn vị dịch thuật $1',
 	'tpt-template' => 'Mẫu trang',
 	'tpt-templatediff' => 'Mẫu trang đã thay đổi.',
 	'tpt-diff-old' => 'Văn bản trước',
 	'tpt-diff-new' => 'Văn bản mới',
+	'tpt-submit' => 'Đánh dấu phiên bản này là cần dịch',
+	'tpt-sections-oldnew' => 'Các đơn vị dịch thuật mới và hiện có',
+	'tpt-sections-deleted' => 'Các đơn vị dịch thuật đã bị xóa',
+	'tpt-sections-template' => 'Tiêu bản trang dịch',
+	'tpt-badtitle' => 'Tên trang cung cấp ($1) không phải là tên đúng',
+	'tpt-oldrevision' => '$2 không phải là phiên bản mới của trang [[$1]]/
+Chỉ có các phiên bản mới nhất mới có thể đánh dấu cần dịch được.',
+	'tpt-notsuitable' => 'Trang $1 không phù hợp để dịch thuật.
+Hãy đảm bảo là nó có thẻ <nowiki><translate></nowiki> và có cú pháp đúng.',
 	'tpt-rev-latest' => 'phiên bản mới nhất',
 	'tpt-rev-old' => 'khác biệt với phiên bản đánh dấu trước',
 	'tpt-rev-mark-new' => 'đánh dấu phiên bản này là cần dịch',
