@@ -461,6 +461,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-ui-edittoolbar',
 		'ext-ui-editwarning',
 		'ext-ui-optin',
+		'ext-ui-optinlink',
 		'ext-ui-prefstats',
 		'ext-ui-simplesearch',
 		'ext-wikihiero',
@@ -700,6 +701,7 @@ class AllUsabilityInitiativeExtensionsGroup extends AllMediawikiExtensionsGroup 
 		'ext-ui-edittoolbar',
 		'ext-ui-editwarning',
 		'ext-ui-optin',
+		'ext-ui-optinlink',
 		'ext-ui-prefstats',
 		'ext-ui-simplesearch',
 	);

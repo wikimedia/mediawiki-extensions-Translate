@@ -1162,6 +1162,10 @@ optional = optin-survey-answer-browser-s3, optin-survey-answer-browser-s4
 optional = optin-survey-answer-browser-o9, optin-survey-answer-browser-o9.5, optin-survey-answer-browser-o10, optin-survey-answer-os-windows
 optional = optin-survey-answer-os-macos, optin-survey-answer-os-linux, optin-survey-answer-os-windowsmobile, optin-survey-answer-os-iphoneos
 
+Usability Initiative - Opt In Link
+id = ext-ui-optinlink
+file = UsabilityInitiative/OptIn/OptInLink.i18n.php
+
 Usability Initiative - Pref Stats
 id = ext-ui-prefstats
 file = UsabilityInitiative/PrefStats/PrefStats.i18n.php
