@@ -1128,9 +1128,10 @@ id = ext-ui-usabilityinitiative
 file = UsabilityInitiative/UsabilityInitiative.i18n.php
 descmsg = usabilityinitiative-desc
 
-Usability Initiative - ClickTracking
+Usability Initiative - Click Tracking
 id = ext-ui-clicktracking
 file = UsabilityInitiative/ClickTracking/ClickTracking.i18n.php
+aliasfile = UsabilityInitiative/ClickTracking/ClickTracking.alias.php
 descmsg = clicktracking-desc
 
 Usability Initiative - Edit Toolbar
