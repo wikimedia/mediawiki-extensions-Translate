@@ -559,6 +559,7 @@ $messages['af'] = array(
 	'translate-checks-plural' => 'Die definisie bevat <nowiki>{{PLURAL:}}</nowiki>, maar die vertaling nie.',
 	'translate-checks-pagename' => 'Naamspasie het verander van die definisie',
 	'translate-checks-format' => "Hierdie vertaling wyk af van die bronboodskap of het 'n ongeldige sintaks: $1",
+	'translate-checks-fudforum-syntax' => 'Gebruik <nowiki>$1</nowiki> i.p.v. <nowiki>$2</nowiki> vir hierdie projek.',
 	'translate-pref-nonewsletter' => 'Moenie aan my nuusbriewe per e-pos stuur nie',
 	'translate-pref-editassistlang' => 'Hulptale:',
 	'prefs-translate' => 'Vertalings opsies',
@@ -1888,6 +1889,7 @@ Ne vo ket enrollet ar c'hemmoù e-keit ha ne vo ket bet pouezet war ar bouton en
 	'translate-checks-pagename' => 'Anv esaouenn kemmet adalek an termenadur',
 	'translate-checks-format' => 'Ne glot ket an droidigezh-mañ gant an termenadur pe faziek eo an ereadurezh anezhi : $1',
 	'translate-checks-escape' => "Dre fazi e c'hall bezañ an diflipadennoù da-heul : <strong>$1</strong>",
+	'translate-checks-fudforum-syntax' => "Ober gant <nowiki>$1</nowiki> e-lec'h <nowiki>$2</nowiki> er raktres-mañ.",
 	'translate-pref-nonewsletter' => "Arabat kas din kelc'hlizheroù dre bostel",
 	'translate-pref-editassistlang' => 'Yezhoù skoazell :',
 	'prefs-translate' => 'Dibarzhioù treiñ',
@@ -2027,6 +2029,7 @@ Dibosupl eo didermeniñ ar strollad hag ar yezh adalek talbennoù ar restr.",
 	'translate-import-err-warnings' => 'Ne oa ket stummet mat ar restr-mañ.
 Bezit sur ne lam ket ho skridaozer ar maeziennoù msgctxt kuit.
 Munudoù : $1',
+	'translate-js-fb' => 'Kemm normal',
 );
 
 /** Bosnian (Bosanski)
@@ -3593,7 +3596,7 @@ $messages['el'] = array(
 	'translate-language' => 'Γλώσσα',
 	'translate-total' => 'Μηνύματα',
 	'translate-untranslated' => 'Αμετάφραστα',
-	'translate-percentage-complete' => 'Ολοκλἠρωση',
+	'translate-percentage-complete' => 'Ολοκλήρωση',
 	'translate-percentage-fuzzy' => 'Μη ενήμερα',
 	'translate-nothing-to-do' => 'Όλες οι πιθανές μεταφράσεις εμφανίζονται να έχουν γίνει.
 Είσαι ευπρόσδεκτος στην επιθεώρηση αυτών των μηνυμάτων μέσω του [[Special:Translate|{{int:translate}}]].',
@@ -3619,6 +3622,7 @@ $messages['el'] = array(
 	'translate-manage-nochanges' => 'Δεν υπάρχουν αλλαγές στους ορισμούς μηνυμάτων για αυτή την ομάδα.',
 	'translate-manage-import-ok' => 'Εισήχθηκε νέα έκδοση της σελίδας $1.',
 	'translate-manage-import-ignore' => 'Παράκαμψη του μηνύματος $1.',
+	'translate-manage-fuzzy-summary' => 'Ο ορισμός άλλαξε',
 	'translate-manage-import-fuzzy' => 'Εισαγωγή και ασαφοποίηση: $1',
 	'translate-manage-import-done' => 'Όλα έχουν γίνει!',
 	'translate-manage-import-rebuild' => 'Επανάκτιση λανθάνουσας μνήμης.',
@@ -4004,6 +4008,7 @@ Se te anima a revisar los mensajes a través de [[Special:Translate|{{int:transl
 	'translate-group-desc-mediawikiextensions' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones soportadas por MediaWiki',
 	'translate-group-desc-collection' => 'Grupo de mensajes Meta conteniendo todos los mensajes para la extensión MediaWiki [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
 	'translate-group-desc-flaggedrevs' => 'Grupo de mensajes Meta conteniendo todos los mensajes para la extensión MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
+	'translate-group-desc-readerfeedback' => 'Grupo de mensajes Meta conteniendo todos los mensajes para la extensión MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
 	'translate-group-desc-socialprofile' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones relacionadas a la extensión MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
 	'translate-group-desc-translate' => 'Grupo de mensajes Meta conteniendo todos los mensajes para la extensión MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-wikiaextensions' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones MediaWiki soportadas usadas por [http://www.wikia.com Wikia]',
@@ -4011,6 +4016,7 @@ Se te anima a revisar los mensajes a través de [[Special:Translate|{{int:transl
 	'translate-group-desc-wikimediaextensions' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones MediaWiki soportadas usadas por [http://wikimedia.org/ Wikimedia Foundation]',
 	'translate-group-desc-wikitravelextensions' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones MediaWiki soportadas usadas por [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones relacionadas a [http://unicefinnovation.org/wiki.php Uniwiki]',
+	'translate-group-desc-ui' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones relacionadas a la [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Iniciativa de usabilidad de Wikipedia]',
 	'translate-manage-groups' => 'Gestión de grupo',
 	'translate-manage-listgroups' => 'Grupos configurados',
 	'translate-manage-listgroups-old' => 'Grupos en estilo antiguo',
@@ -5837,10 +5843,11 @@ $messages['hak'] = array(
  */
 $messages['haw'] = array(
 	'translate' => 'Unuhi',
-	'translate-edit' => 'e ho‘opololei',
+	'translate-edit' => 'e hoʻololi',
 	'translate-history' => 'mōʻaukala',
 	'translate-page-language' => 'ʻŌlelo',
 	'translate-page-navigation-legend' => 'Ka hoʻokele ʻana',
+	'translate-page-edit' => 'e hoʻololi',
 	'translate-language' => 'ʻŌlelo',
 );
 
@@ -6573,6 +6580,7 @@ $messages['hu'] = array(
 	'translate-prev' => 'előző',
 	'translate-page-description-legend' => 'Információk a csoportról',
 	'translate-page-edit' => 'szerkesztés',
+	'translate-ext-url' => '<hr />Weboldal: $1',
 	'translate-optional' => '(nem kötelező)',
 	'translate-ignored' => '(figyelmen kívül hagyva)',
 	'translate-edit-definition' => 'Alapértelmezett érték',
@@ -6582,11 +6590,25 @@ $messages['hu'] = array(
 	'translate-edit-in-other-languages' => 'A(z) „$1” üzenet más nyelveken',
 	'translate-edit-committed' => 'Jelenlegi fordítás',
 	'translate-edit-warnings' => 'Hiányosságok a fordításban',
+	'translate-edit-tmsugs' => 'Javaslatok a fordítómemóriából',
+	'translate-edit-tmmatch' => '$1%-os egyezés',
 	'translate-edit-goto-no-prev' => 'Nincs előző üzenet',
 	'translate-edit-goto-no-next' => 'Nincs következő üzenet',
 	'translate-edit-goto-prev' => 'Előző üzenet szerkesztése',
 	'translate-edit-goto-next' => 'Következő üzenet szerkesztése',
 	'translate-edit-goto-list' => 'Vissza a listához',
+	'translate-magic-pagename' => 'Kibővített MediaWiki-fordítás',
+	'translate-magic-help' => 'Lefordíthatod a speciális lapok álneveit, a varázsszavakat és a névterek neveit.
+
+A speciális lapoknak és a varázsszavaknak több fordítása is lehet.
+A fordításokat vesszővel (,) kell elválasztani.
+A névterek csak egyetlen fordítása lehet.
+
+A névterek fordításánál a <tt>$1 talk</tt> speciális, a <tt>$1</tt> az oldal nevére lesz lecserélve (pl. <tt>{{ns:project_talk}}</tt>).
+Ha a te nyelveden nem lehet az oldal nevének változtatása nélkül értelmes kifejezést összehozni, értesítsd a fejlesztőt.
+
+A változtatások mentését csak az tudja elvégezni, aki tagja a fordítók csoportjának.
+A változtatások nem mentődnek, míg alul a mentés gombra nem kattintasz.',
 	'translate-magic-module' => 'Modul:',
 	'translate-magic-submit' => 'Lekérés',
 	'translate-magic-cm-export' => 'Exportálás',
@@ -6611,6 +6633,8 @@ $messages['hu'] = array(
 	'translate-checks-balance' => 'Nem egyenlő számban vannak használva a nyitó- és zárójelek:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => 'A következő {{PLURAL:$2|link problémás|linkek problémásak}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links-missing' => 'A következő {{PLURAL:$2|hivatkozás hiányzik|hivatkozások hiányoznak}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'A következő {{PLURAL:$2|elemet|elemeket}} cseréld le a megfelelőekre:
 <strong><nowiki>$1</nowiki></strong>',
@@ -7021,6 +7045,7 @@ Menterjemahkan pesan dalam bahasa ini tampil saat Anda menerjemahkan.
 Daftar bahasa tergantung pada bahasa Anda.',
 	'translate-pref-editassistlang-bad' => 'Kode bahasa tidak sah pada daftar:
 <nowiki>$1</nowiki>.',
+	'translate-pref-jsedit' => 'Tingkatkan penyunting terjemahan (JavaScript)',
 	'right-translate' => 'Menyunting menggunakan antarmuka penerjemahan',
 	'right-translate-manage' => 'Kelola kelompok terjemahan',
 	'translate-rc-translation-filter' => 'Filter terjemahan:',
@@ -7116,6 +7141,9 @@ Silahkan periksa.',
 	'importtranslations' => 'Impor terjemahan',
 	'translate-import-from-url' => 'URL ke berkas:',
 	'translate-import-from-wiki' => 'Berkas pada wiki ini:',
+	'translate-import-load' => 'Muatkan berkas',
+	'translate-import-err-type-not-supported' => 'Tidak dapat memuat berkas:
+Metode <tt>$1</tt> tidak didukung.',
 	'translate-import-err-ul-failed' => 'Pemuatan berkas tidak berhasil',
 	'translate-import-err-invalid-title' => 'Nama berkas <nowiki>$1</nowiki> yang diberikan tidak sah.',
 	'translate-js-fb' => 'Penyuntingan normal',
@@ -10540,6 +10568,7 @@ Los cambiaments seràn pas salvats abans que cliquèssetz sul boton « Salvar »
 	'translate-checks-pagename' => 'Nom d’espaci modificat dempuèi la definicion',
 	'translate-checks-format' => 'Aquesta traduccion seguís pas la definicion o a una sintaxi invalida : $1',
 	'translate-checks-escape' => 'Los escapaments seguents pòdon èsser accidentals : <strong>$1</strong>',
+	'translate-checks-fudforum-syntax' => 'Utilizar <nowiki>$1</nowiki> al luòc de <nowiki>$2</nowiki> dins aqueste projècte.',
 	'translate-pref-nonewsletter' => 'Me mandetz pas la letra d’informacion per corrièr',
 	'translate-pref-editassistlang' => 'Assistent de lengas :',
 	'prefs-translate' => 'Opcions de traduccion',
@@ -10675,6 +10704,7 @@ es impossible de determinar lo grop e la lenga dempuèi las entèstas del fichi�
 	'translate-import-err-warnings' => 'Lo fichièr es pas format coma cal.
 Asseguratz-vos que vòstre esplech de traduccion suprimís pas los camps « msgctxt ».
 Detalhs : $1',
+	'translate-js-fb' => 'Modificacion normala',
 );
 
 /** Oriya (ଓଡ଼ିଆ)
@@ -12222,6 +12252,7 @@ Zmeny sa neuložia, kým nekliknete na tlačidlo Uložiť dolu.',
 	'translate-checks-pagename' => 'Oproti definícii sa zmenil menný priestor',
 	'translate-checks-format' => 'Tento preklad nezodpovedá definícii alebo má neplatnú syntax: $1',
 	'translate-checks-escape' => 'Nasledové únikové klauzuly sú možno uvedené omylom: <strong>$1</strong>',
+	'translate-checks-fudforum-syntax' => 'V tomto projekte používať <nowiki>$1</nowiki> namiesto <nowiki>$2</nowiki>.',
 	'translate-pref-nonewsletter' => 'Neposielať mi novinky emailom',
 	'translate-pref-editassistlang' => 'Pomocné jazyky:',
 	'prefs-translate' => 'Možnosti prekladu',
@@ -12361,6 +12392,7 @@ Nebolo možné určiť skupinu a jazyk z hlavičiek súboru.',
 	'translate-import-err-warnings' => 'Tento súbor nie je platný.
 Uistite sa, že váš editor neodstraňuje polia msgctxt.
 Podrobnosti: $1',
+	'translate-js-fb' => 'Bežná úprava',
 );
 
 /** Slovenian (Slovenščina)
