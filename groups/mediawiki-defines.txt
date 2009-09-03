@@ -563,7 +563,7 @@ ignored = maintenance-stats
 Maps
 magicfile = Maps/Maps.i18n.magic.php
 descmsg = maps_desc
-optional = maps_name
+optional = maps_name, maps_googlemaps, maps_yahoomaps, maps_openlayers
 
 Math Stat Functions
 descmsg = msfunc_desc
