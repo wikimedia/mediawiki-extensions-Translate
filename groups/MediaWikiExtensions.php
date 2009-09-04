@@ -439,7 +439,6 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-parserfunctions',
 		'ext-pdfhandler', // usability.wikimedia.org
 		'ext-poem',
-		'ext-povwatch', // test.wikipedia.org
 		'ext-proofreadpage', // Wikisource
 		'ext-quiz',
 		'ext-renameuser',
