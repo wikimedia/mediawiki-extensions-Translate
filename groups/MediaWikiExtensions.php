@@ -413,8 +413,8 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-confirmedit',
 		'ext-confirmeditfancycaptcha',
 		'ext-contactpage', // on nl.wp and wikimediafoundation.org
-		'ext-contributionreporting', // temporary for fundraiser
-		'ext-contributiontracking', // temporary for fundraiser
+		'ext-contributionreporting', // wikimediafoundation.org
+		'ext-contributiontracking', // wikimediafoundation.org
 		'ext-crossnamespacelinks',
 		'ext-dismissablesitenotice',
 		'ext-doublewiki', // Wikisource
@@ -437,7 +437,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-opensearchxml',
 		'ext-oversight',
 		'ext-parserfunctions',
-		'ext-pdfhandler', // usability.wikimedia.org
+		'ext-pdfhandler',
 		'ext-poem',
 		'ext-proofreadpage', // Wikisource
 		'ext-quiz',
