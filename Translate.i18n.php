@@ -3645,6 +3645,7 @@ $messages['el'] = array(
 	'translate-import-err-ul-failed' => 'Η επιφόρτωση του αρχείου δεν ήταν επιτυχής',
 	'translate-import-err-invalid-title' => 'Το όνομα του αρχείου <nowiki>$1</nowiki> δεν ήταν έγκυρο.',
 	'translate-import-err-no-such-file' => 'Το αρχείο <nowiki>$1</nowiki> δεν υπάρχει ή δεν έχει φορτωθεί τοπικά.',
+	'translate-js-fb' => 'Κανονική επεξεργασία',
 );
 
 /** Esperanto (Esperanto)
