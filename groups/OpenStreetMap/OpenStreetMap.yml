@@ -1,0 +1,17 @@
+---
+BASIC:
+  id: out-osm
+  label: Open Street Map
+  description: "{{int:bw-desc-osm}}"
+  namespace: NS_OSM
+  display: out/osm/
+  class: FileBasedMessageGroup
+
+FILES:
+  class: YamlFFS
+  sourcePattern: %GROUPROOT%/osm/%CODE%.yml
+  targetPattern: %CODE%.yml
+  codeMap:
+    pt-BR:      arabic
+    zh-CN:     arabicegyptianspoken
+    zh-TW:      afrikaans

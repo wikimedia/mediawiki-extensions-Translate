@@ -1,0 +1,7 @@
+# Read-only repository setup
+cd %GROUPROOT%
+mkdir osm
+cd osm
+svn co http://svn.openstreetmap.org/sites/rails_port/config/locales .
+
+# TODO: commits
