@@ -39,8 +39,8 @@ class OkawixDtdFFS extends SimpleFFS {
 		$collection->loadTranslations();
 
 		$header = "<!--\n";
-		$header .= SimpleFFS::doHeader( $collection );
-		$header .= SimpleFFS::doAuthors( $collection );
+		$header .= $this->doHeader( $collection );
+		$header .= $this->doAuthors( $collection );
 		$header = "-->\n";
 
 		$output = '';
@@ -56,6 +56,32 @@ class OkawixDtdFFS extends SimpleFFS {
 			$trans = str_replace('"', '&quot;', $trans);
 			$output .= "<!ENTITY $key \"$trans\">\n";
 		}
+
 		return $output ? $header.$output : false;
+	}
+
+	protected function doHeader( MessageCollection $collection ) {
+		global $wgSitename;
+
+		$code = $collection->code;
+		$name = TranslateUtils::getLanguageName( $code );
+		$native = TranslateUtils::getLanguageName( $code, true );
+
+		$output  = "# Messages for $name ($native)\n";
+		$output .= "# Exported from $wgSitename\n\n";
+
+		return $output;
+	}
+
+	protected function doAuthors( MessageCollection $collection ) {
+		$output = '';
+		$authors = $collection->getAuthors();
+		$authors = $this->filterAuthors( $authors, $collection->code );
+
+		foreach ( $authors as $author ) {
+			$output .= "# Author: $author\n";
+		}
+
+		return $output;
 	}
 }
