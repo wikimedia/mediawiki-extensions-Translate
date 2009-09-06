@@ -36,13 +36,11 @@ class OkawixDtdFFS extends SimpleFFS {
 	}
 
 	protected function writeReal( MessageCollection $collection ) {
-		global $wgSitename;
-
 		$collection->loadTranslations();
 
 		$header = "<!--\n";
-		$header .= $this->doHeader( $collection );
-		$header .= $this->doAuthors( $collection );
+		$header .= SimpleFFS::doHeader( $collection );
+		$header .= SimpleFFS::doAuthors( $collection );
 		$header = "-->\n";
 
 		$output = '';
