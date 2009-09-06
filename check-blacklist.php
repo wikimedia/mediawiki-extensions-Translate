@@ -145,7 +145,7 @@ array(
 	)
 ),
 array(
-	'group' => 'ext-flaggedrevs-reviewedpages-list',
+	'group' => 'ext-flaggedrevs-reviewedpages',
 	'check' => 'variable',
 	'message' => array(
 		'reviewedpages-list', // Parameter only used when required for plural
