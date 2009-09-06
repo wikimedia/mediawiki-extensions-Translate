@@ -22,6 +22,7 @@ class MantisMessageGroup extends MessageGroupOld {
 		'ar' => 'arabic',
 		'arz' => 'arabicegyptianspoken',
 		'bg' => 'bulgarian',
+		'br' => 'breton',
 		'ca' => 'catalan',
 		'cs' => 'czech',
 		'da' => 'danish',
