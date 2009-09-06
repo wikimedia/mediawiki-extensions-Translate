@@ -38,18 +38,19 @@ class OkawixDtdFFS extends SimpleFFS {
 
 		$collection->loadTranslations();
 
-		$output = "<!--\n";
-		$output .= "COMMENT: Exported from $wgSitename\n\n";
+		$header = "<!--\n";
+		$header .= "COMMENT: Exported from $wgSitename\n\n";
 
 		$authors = $collection->getAuthors();
 		if (count($authors) > 0) {
 
 			foreach ( $authors as $author ) {
-				$output .= "AUTHOR: $author\n";
+				$header .= "AUTHOR: $author\n";
 			}
 		}
-		$output .= "-->\n";
+		$header .= "-->\n";
 
+		$output = '';
 		$mangler = $this->group->getMangler();
 		foreach ( $collection as $key => $m ) {
 			$key = $mangler->unmangle( $key );
@@ -60,6 +61,6 @@ class OkawixDtdFFS extends SimpleFFS {
 			$trans = str_replace('"', '&quot;', $trans);
 			$output .= "<!ENTITY $key \"$trans\">\n";
 		}
-		return $output;
+		return $output ? $header.$output : false;
 	}
 }
