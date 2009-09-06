@@ -1,13 +1,14 @@
 <?php
-
- /**
+/**
  * @copyright Copyright © 2009, Guillaume Duhamel
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
+
 class OkawixDtdFFS extends SimpleFFS {
 	public function readFromVariable( $data ) {
 		preg_match_all( ',AUTHOR: ([^\n]+)\n,', $data, $matches );
 		$authors = array();
+
 		for($i = 0;$i < count($matches[1]);$i++) {
 			$authors[] = $matches[1][$i];
 		}
@@ -18,6 +19,7 @@ class OkawixDtdFFS extends SimpleFFS {
 		$values = $matches[2];
 
 		$messages = array();
+
 		for($i = 0;$i < count($matches[1]);$i++) {
 			$messages[$keys[$i]] = str_replace(
 				array('&quot;', '&#34;', '&#39;'),
@@ -39,23 +41,18 @@ class OkawixDtdFFS extends SimpleFFS {
 		$collection->loadTranslations();
 
 		$header = "<!--\n";
-		$header .= "COMMENT: Exported from $wgSitename\n\n";
-
-		$authors = $collection->getAuthors();
-		if (count($authors) > 0) {
-
-			foreach ( $authors as $author ) {
-				$header .= "AUTHOR: $author\n";
-			}
-		}
-		$header .= "-->\n";
+		$header .= $this->doHeader( $collection );
+		$header .= $this->doAuthors( $collection );
+		$header = "-->\n";
 
 		$output = '';
 		$mangler = $this->group->getMangler();
+
 		foreach ( $collection as $key => $m ) {
 			$key = $mangler->unmangle( $key );
 			$trans = $m->translation();
 			$trans = str_replace( TRANSLATE_FUZZY, '', $trans );
+
 			if ( $trans === '' ) continue;
 
 			$trans = str_replace('"', '&quot;', $trans);
