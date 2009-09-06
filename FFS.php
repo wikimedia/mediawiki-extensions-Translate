@@ -252,7 +252,7 @@ class JavaFFS extends SimpleFFS {
 		}
 	}
 
-	public function doHeader( MessageCollection $collection ) {
+	protected function doHeader( MessageCollection $collection ) {
 		if ( isset($this->extra['header']) ) {
 			$output = $this->extra['header'];
 		} else {
@@ -266,7 +266,7 @@ class JavaFFS extends SimpleFFS {
 		return $output;
 	}
 
-	public function doAuthors( MessageCollection $collection ) {
+	protected function doAuthors( MessageCollection $collection ) {
 		$output = '';
 		$authors = $collection->getAuthors();
 		$authors = $this->filterAuthors( $authors, $collection->code );
@@ -275,7 +275,6 @@ class JavaFFS extends SimpleFFS {
 		}
 		return $output;
 	}
-
 }
 
 class JavaScriptFFS extends SimpleFFS {
