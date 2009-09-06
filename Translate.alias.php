@@ -291,7 +291,7 @@ $aliases['ksh'] = array(
 	'LanguageStats' => array( 'Shtatistike_vu_de_Shprooche' ),
 );
 
-/** Cornish (Kernewek) */
+/** Cornish (Kernowek) */
 $aliases['kw'] = array(
 	'Translate' => array( 'Treylya' ),
 	'Magic' => array( 'TreylyaAvoncys' ),
