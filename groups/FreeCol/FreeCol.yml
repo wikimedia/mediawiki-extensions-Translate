@@ -46,5 +46,6 @@ TAGS:
     - model.unit.occupation.activeNoMovesLeft
     - shipName.3.0
     - model.region.default
+    - selectDestination.destinationTurns
   ignored:
     - HeaderFont
