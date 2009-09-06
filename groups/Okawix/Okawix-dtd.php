@@ -41,7 +41,7 @@ class OkawixDtdFFS extends SimpleFFS {
 		$header = "<!--\n";
 		$header .= $this->doHeader( $collection );
 		$header .= $this->doAuthors( $collection );
-		$header = "-->\n";
+		$header .= "-->\n";
 
 		$output = '';
 		$mangler = $this->group->getMangler();
