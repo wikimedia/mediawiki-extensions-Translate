@@ -1267,7 +1267,7 @@ $messages['ja'] = array(
 	'tpt-sections-oldnew' => '新規および既存の翻訳単位',
 	'tpt-sections-deleted' => '削除された翻訳単位',
 	'tpt-sections-template' => '翻訳ページの雛型',
-	'tpt-badtitle' => '指定したページ名 （$1） は無効なタイトルです',
+	'tpt-badtitle' => '指定したページ名 ($1) は無効なタイトルです',
 	'tpt-oldrevision' => '$2 はページ [[$1]] の最新版ではありません。翻訳対象に指定できるのは最新版のみです。',
 	'tpt-notsuitable' => 'ページ $1 は翻訳に対応していません。<nowiki><translate></nowiki>が含まれていること、またマークアップが正しいことを確認してください。',
 	'tpt-saveok' => 'ページ [[$1]] は翻訳対象に指定されており、$2{{PLURAL:$2|個}}の翻訳単位を含んでいます。このページを<span class="plainlinks">[$3 翻訳]</span>することができます。',
