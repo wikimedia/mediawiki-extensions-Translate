@@ -179,6 +179,13 @@ class SpecialTranslations extends SpecialAllpages {
 				$tools['edit'] = $sk->link( $t, $niceTitle );
 			}
 
+			$tools['history'] = $sk->link(
+				$t,
+				"&nbsp;<sup>h</sup>&nbsp;",
+				array( 'action'),
+				array( 'action' => 'history' )
+			);
+
 			$anchor = 'msg_' . $key;
 			$anchor = Xml::element( 'a', array( 'name' => $anchor, 'href' => "#$anchor" ), "↓" );
 
@@ -190,7 +197,7 @@ class SpecialTranslations extends SpecialAllpages {
 				$class = 'def';
 			}
 			
-			$leftColumn = $anchor . $tools['edit'] . $extra;
+			$leftColumn = $anchor . $tools['history'] . $tools['edit'] . $extra;
 			$out .= Xml::tags( 'tr', array( 'class' => $class ),
 				Xml::tags( 'td', null, $leftColumn ) .
 				Xml::tags( 'td', null, TranslateUtils::convertWhiteSpaceToHTML( $pageInfo[$key][0] ) )
