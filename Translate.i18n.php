@@ -1775,10 +1775,19 @@ $messages['bn'] = array(
 	'translate-task-export-to-file' => 'অনুবাদসমূহ ফাইলে প্রেরণ',
 	'translate-page-task' => 'আমি চাই',
 	'translate-submit' => 'বের করো',
+	'translate-page-showing' => '$3 বার্তার মধ্যে $1 থেকে $2 বার্তা দেখাও',
 	'translate-next' => 'পরবর্তী পাতা',
 	'translate-prev' => 'পূর্ববর্তী পাতা',
+	'translate-page-edit' => 'সম্পাদনা',
 	'translate-optional' => '(ঐচ্ছিক)',
 	'translate-ignored' => '(উপেক্ষিত)',
+	'translate-edit-contribute' => 'অবদান',
+	'translate-language-code-field-name' => 'ভাষার কোড:',
+	'translate-language' => 'ভাষা',
+	'translate-total' => 'বার্তা',
+	'translate-untranslated' => 'অনুবাদ হয়নি',
+	'translate-save' => 'সংরক্ষণ ($1)',
+	'translate-jssti-add' => 'তালিকায় যোগ করো',
 );
 
 /** Bishnupria Manipuri (ইমার ঠার/বিষ্ণুপ্রিয়া মণিপুরী)
@@ -13714,10 +13723,14 @@ $messages['th'] = array(
 );
 
 /** Turkmen (Türkmençe)
+ * @author Hanberke
  * @author Runningfridgesrule
  */
 $messages['tk'] = array(
 	'translate-history' => 'geçmiş',
+	'translate-task-view' => 'Ähli habarlaşyklary görjek',
+	'translate-task-untranslated' => 'Terjime edilmedik ähli habarlaşyklary görjek',
+	'translate-page-task' => 'Men',
 );
 
 /** Tagalog (Tagalog)

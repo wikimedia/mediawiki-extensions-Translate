@@ -288,6 +288,17 @@ $messages['bg'] = array(
 	'translate-tag-translate-link-desc' => 'Превеждане на тази страница',
 );
 
+/** Bengali (বাংলা)
+ * @author Bellayet
+ */
+$messages['bn'] = array(
+	'tpt-rev-latest' => 'সাম্প্রতিকতম সংস্করণ',
+	'tpt-translate-this' => 'এই পাতা অনুবাদ করুন',
+	'translate-tag-translate-link-desc' => 'এই পাতা অনুবাদ করুন',
+	'translate-tag-markthis' => 'অনুবাদের জন্য এই পাতা চিহ্নিত করুন',
+	'tpt-languages-legend' => 'অন্য ভাষা:',
+);
+
 /** Breton (Brezhoneg)
  * @author Fulup
  */
