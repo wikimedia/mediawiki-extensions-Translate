@@ -97,7 +97,7 @@ class TranslateUtils {
 		$sql = "SELECT $fields, substring_index(rc_title, '/', -1) as lang FROM $recentchanges " .
 		"WHERE rc_timestamp >= '{$cutoff}' " .
 		"AND rc_namespace in ($namespaces) " .
-		$bots ? '' : 'AND rc_bot = 0' .
+		( $bots ? '' : 'AND rc_bot = 0 ' ) .
 		"ORDER BY lang ASC, rc_timestamp DESC";
 
 		$res = $dbr->query( $sql, __METHOD__ );
