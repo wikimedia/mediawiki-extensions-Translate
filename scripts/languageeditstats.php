@@ -22,6 +22,7 @@ Usage: php languageeditstats.php [options...]
 Options:
   --top       Show given number of language codes (default: 10)
   --days      Calculate for given number of days (default: 7)
+  --bots      Include bot edits (default: false)
 
 EOT
 );
@@ -42,6 +43,11 @@ if ( isset( $options['top'] ) )
 else
 	$top = 10;
 
+if ( isset( $options['bots'] ) )
+	$bots = true;
+else
+	$bots = false;
+
 function figureMessage( $text ) {
 	$pos = strrpos( $text, '/' );
 	$code = substr( $text, $pos + 1 );
@@ -51,7 +57,7 @@ function figureMessage( $text ) {
 
 /** Select set of edits to report on
  */
-$rows = TranslateUtils::translationChanges( $hours );
+$rows = TranslateUtils::translationChanges( $hours, $bots );
 
 /** Get counts for edits per language code after filtering out edits by
  *  $wgTranslateFuzzyBotName
