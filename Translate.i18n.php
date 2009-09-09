@@ -412,6 +412,7 @@ These messages will not be submitted to svn, but will only affect the interface 
 	'translate-percentage-complete' => 'Used in [[Special:LanguageStats]].',
 	'translate-percentage-fuzzy' => 'Used in [[Special:LanguageStats]].',
 	'translate-languagestats-groups' => "You can translate the text, including 'Leave this line exactly as it is'. The lines of this messages have one (1) leading space.",
+	'translate-save' => '{{Identical|Save}}',
 	'translate-jssti-add' => 'Name of button in [[Special:Preferences]], tab Editing.',
 	'translate-manage-modlang-new' => '{{Identical|New}}
 
@@ -620,6 +621,7 @@ Alle waardes het hoër en laer limiete.',
 	'translate-percentage-fuzzy' => 'Verouderd',
 	'translate-save' => 'Stoor ($1)',
 	'translate-jssti-add' => 'Voeg by lys',
+	'translate-desc-mwembed' => "[http://www.mediawiki.org/wiki/MwEmbed MwEmbed] is 'n biblioteek vir die inbedding van MediaWiki-koppelvlakke",
 	'translate-manage-groups' => 'Groepsbeheer',
 	'translate-manage-listgroups' => 'Ingestelde groepe',
 	'translate-manage-listgroups-old' => 'Ou-styl groepe',
@@ -5311,7 +5313,7 @@ Pode [$1 editar a páxina coa fonte] ou [$2 actualizar a tradución].',
 	'translate-untranslated' => 'Sen traducir',
 	'translate-percentage-complete' => 'Completadas',
 	'translate-percentage-fuzzy' => 'Anticuadas',
-	'translate-nothing-to-do' => 'Parece que todas as traducións posibles foron feitas.
+	'translate-nothing-to-do' => 'Semella que todas as traducións posibles foron feitas.
 Animámolo a que revise as mensaxes existentes mediante a páxina especial [[Special:Translate|{{int:translate}}]].',
 	'translate-save' => 'Gardar ($1)',
 	'translate-jssti-add' => 'Engadir á lista',
@@ -5987,7 +5989,9 @@ $messages['he'] = array(
 	'prefs-translate' => 'אפשרויות תרגום',
 	'translate-pref-editassistlang-bad' => 'קוד שפה שגוי ברשימה:
 <nowiki>$1</nowiki>.',
+	'translate-pref-jsedit' => 'עורך תרגומים מורחב (JavaScript)',
 	'right-translate' => 'עריכה באמצעות ממשק התרגום',
+	'right-translate-manage' => 'ניהול קבוצות תרגום',
 	'translate-rc-translation-filter' => 'סינון תרגומים:',
 	'translate-rc-translation-filter-no' => 'ללא סינון',
 	'translate-rc-translation-filter-only' => 'הצגת תרגומים בלבד',
@@ -6067,6 +6071,7 @@ $1',
 	'translate-import-err-ul-failed' => 'העלאת הקובץ לא הצליחה',
 	'translate-import-err-invalid-title' => 'שם הקובץ שצוין, <nowiki>$1</nowiki>, אינו תקין.',
 	'translate-import-err-no-such-file' => 'הקובץ <nowiki>$1</nowiki> אינו קיים או שהוא לא הועלה באופן מקומי.',
+	'translate-js-fb' => 'עריכה רגילה',
 );
 
 /** Hindi (हिन्दी)
