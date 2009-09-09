@@ -20,7 +20,6 @@ interface FFS {
 
 	// Quick shortcut for getting the plain exported data
 	public function writeIntoVariable( MessageCollection $collection );
-
 }
 
 class SimpleFFS implements FFS {
@@ -44,7 +43,7 @@ class SimpleFFS implements FFS {
 		$filename = $this->group->getSourceFilePath( $code );
 		if ( $filename === null ) return false;
 
-		if ( !file_exists($filename) ) return false;
+		if ( !file_exists( $filename ) ) return false;
 
 		$input = file_get_contents( $filename );
 		if ( $input === false ) throw new MWException( "Unable to read file $filename" );
@@ -55,7 +54,7 @@ class SimpleFFS implements FFS {
 	public function readFromVariable( $data ) {
 		$parts = explode( "\0\0\0\0", $data );
 
-		if ( count($parts) !== 2 ) throw new MWException( 'Wrong number of parts' );
+		if ( count( $parts ) !== 2 ) throw new MWException( 'Wrong number of parts' );
 
 		list( $authorsPart, $messagesPart ) = $parts;
 		$authors = explode( "\0", $authorsPart );
@@ -64,7 +63,7 @@ class SimpleFFS implements FFS {
 			if ( $line === '' ) continue;
 			$lineParts = explode( '=', $line, 2 );
 
-			if ( count($lineParts) !== 2 ) throw new MWException( "Wrong number of parts in line $line" );
+			if ( count( $lineParts ) !== 2 ) throw new MWException( "Wrong number of parts in line $line" );
 
 			list( $key, $message ) = $lineParts;
 			$messages[$key] = $message;
@@ -82,12 +81,12 @@ class SimpleFFS implements FFS {
 		$writePath = $this->writePath;
 
 		if ( $writePath === null ) throw new MWException( "Write path is not set" );
-		if ( !file_exists($writePath) ) throw new MWException( "Write path '$writePath' does not exists" );
-		if ( !is_writable($writePath) ) throw new MWException( "Write path '$writePath' is not writable" );
+		if ( !file_exists( $writePath ) ) throw new MWException( "Write path '$writePath' does not exists" );
+		if ( !is_writable( $writePath ) ) throw new MWException( "Write path '$writePath' is not writable" );
 
 		$targetFile = $writePath . '/' . $this->group->getTargetFilename( $collection->code );
 
-		if ( file_exists($targetFile) ) {
+		if ( file_exists( $targetFile ) ) {
 			$this->tryReadSource( $targetFile, $collection );
 		} else {
 			$sourceFile = $this->group->getSourceFilePath( $collection->code );
@@ -137,9 +136,9 @@ class SimpleFFS implements FFS {
 
 	protected function tryReadFile( $filename ) {
 		if ( !$filename ) return false;
-		if ( !file_exists($filename) ) return false;
-		if ( !is_readable($filename) ) throw new MWException( "File $filename is not readable" );
-		$data = file_get_contents($filename);
+		if ( !file_exists( $filename ) ) return false;
+		if ( !is_readable( $filename ) ) throw new MWException( "File $filename is not readable" );
+		$data = file_get_contents( $filename );
 		if ( $data == false ) throw new MWException( "Unable to read file $filename" );
 		return $data;
 	}
@@ -180,7 +179,7 @@ class JavaFFS extends SimpleFFS {
 
 	public function __construct( FileBasedMessageGroup $group ) {
 		parent::__construct( $group );
-		if ( isset( $this->extra['keySeparator'] ) ) 
+		if ( isset( $this->extra['keySeparator'] ) )
 			$this->keySeparator = $this->extra['keySeparator'];
 	}
 
@@ -192,26 +191,39 @@ class JavaFFS extends SimpleFFS {
 		$data = self::fixNewLines( $data );
 		$lines = array_map( 'ltrim', explode( "\n", $data ) );
 		$authors = $messages = array();
-		
+		$linecontinuation = false;
+
 		foreach ( $lines as $line ) {
-			if ( $line === '' ) continue;
-			if ( $line[0] === '#' ) {
-				$match = array();
-				$ok = preg_match( '/#\s*Author:\s*(.*)/', $line, $match );
-				if ( $ok ) $authors[] = $match[1];
-				continue;
+			if ( $linecontinuation ) {
+				$linecontinuation = false;
+				$valuecont = $line;
+				$valuecont = str_replace( '\n', "\n", $valuecont );
+				$value .= $valuecont;
+			} else {
+				if ( $line === '' ) continue;
+				if ( $line[0] === '#' ) {
+					$match = array();
+					$ok = preg_match( '/#\s*Author:\s*(.*)/', $line, $match );
+					if ( $ok ) $authors[] = $match[1];
+					continue;
+				}
+
+				if ( strpos( $line, $this->keySeparator ) === false ) {
+					throw new MWException( "Line without '{$this->keySeparator}': $line" );
+				}
+
+				list( $key, $value ) = explode( $this->keySeparator, $line, 2 );
+				if ( $key === '' ) throw new MWException( "Empty key in line $line" );
+
+				$value = str_replace( '\n', "\n", $value );
 			}
 
-			if ( strpos( $line, $this->keySeparator ) === false ) {
-				throw new MWException( "Line without '{$this->keySeparator}': $line" );
+			if ( $value[strlen( $value ) - 1] === "\\" ) {
+				$value = substr( $value, 0, strlen( $value ) - 1 );
+				$linecontinuation = true;
+			} else {
+				$messages[$key] = ltrim( $value );
 			}
-
-			list( $key, $value ) = explode( $this->keySeparator, $line, 2 );
-			if ( $key === '' ) throw new MWException( "Empty key in line $line" );
-
-			$value = str_replace( '\n', "\n", $value );
-
-			$messages[$key] = ltrim($value);
 		}
 
 		$messages = $this->group->getMangler()->mangle( $messages );
@@ -225,12 +237,11 @@ class JavaFFS extends SimpleFFS {
 	//
 	// WRITE
 	//
-
 	protected function writeReal( MessageCollection $collection ) {
 		$header  = $this->doHeader( $collection );
 		$header .= $this->doAuthors( $collection );
 		$header .= "\n";
-		
+
 		$output = '';
 		$mangler = $this->group->getMangler();
 		foreach ( $collection as $key => $m ) {
@@ -248,12 +259,12 @@ class JavaFFS extends SimpleFFS {
 		}
 
 		if ( $output ) {
-			return $header.$output;
+			return $header . $output;
 		}
 	}
 
 	protected function doHeader( MessageCollection $collection ) {
-		if ( isset($this->extra['header']) ) {
+		if ( isset( $this->extra['header'] ) ) {
 			$output = $this->extra['header'];
 		} else {
 			global $wgSitename;
@@ -278,7 +289,6 @@ class JavaFFS extends SimpleFFS {
 }
 
 class JavaScriptFFS extends SimpleFFS {
-
 	private function leftTrim( $string ) {
 		$string = ltrim( $string );
 		$string = ltrim( $string, '"' );
@@ -289,7 +299,7 @@ class JavaScriptFFS extends SimpleFFS {
 		// Just get relevant data.
 		$dataStart = strpos( $data, '{' );
 		$dataEnd   = strrpos( $data, '}' );
-		$data = substr( $data, $dataStart + 1, $dataEnd - $dataStart - 1);
+		$data = substr( $data, $dataStart + 1, $dataEnd - $dataStart - 1 );
 		// Strip comments.
 		$data = preg_replace( '#^(\s*?)//(.*?)$#m', '', $data );
 		// Break in to message segements for further parsing.
@@ -297,7 +307,7 @@ class JavaScriptFFS extends SimpleFFS {
 
 		$messages = array();
 		// Process each segment.
-		foreach( $data as $segment ) {
+		foreach ( $data as $segment ) {
 			// Remove excess quote mark at beginning.
 			$segment = substr( $segment, 1 );
 			// Add back trailing quote.
@@ -306,7 +316,7 @@ class JavaScriptFFS extends SimpleFFS {
 			$segment = explode( '" +', $segment );
 			$segment = array_map( array( $this, 'leftTrim' ), $segment );
 			$segment = implode( $segment );
-			#$segment = preg_replace( '#\" \+(.*?)\"#m', '', $segment );
+			# $segment = preg_replace( '#\" \+(.*?)\"#m', '', $segment );
 			// Break in to key and message.
 			$segments = explode( '\':', $segment );
 			$key = $segments[ 0 ];
@@ -317,12 +327,12 @@ class JavaScriptFFS extends SimpleFFS {
 			$value = trim( $value );
 			// Remove quotation marks and syntax.
 			$key = substr( $key, 1 );
-			$value = substr( $value, 1, -1 );
+			$value = substr( $value, 1, - 1 );
 			$messages[ $key ] = $value;
 
 			// Hack.
-			if( $key === 'filterEvaluateNotImplemented' ) {
-				$messages[ $key ] = substr( $value, 0, -2 );
+			if ( $key === 'filterEvaluateNotImplemented' ) {
+				$messages[ $key ] = substr( $value, 0, - 2 );
 			}
 		}
 
@@ -341,7 +351,7 @@ class JavaScriptFFS extends SimpleFFS {
 		// Generate list of authors for comment.
 		$authors = $collection->getAuthors();
 		$authorList = '';
-		foreach( $authors as $author ) {
+		foreach ( $authors as $author ) {
 			$authorList .= " *  - $author\n";
 		}
 
@@ -370,30 +380,27 @@ OpenLayers.Lang["$code"] = OpenLayers.Util.applyDefaults({
 EOT;
 
 		// Get and write messages.
-		foreach( $collection as $message ) {
+		foreach ( $collection as $message ) {
 			$key = Xml::escapeJsString( $message->key() );
 			$value = Xml::escapeJsString( $message->translation() );
-			
+
 			$line = "    '{$message->key()}': \"{$value}\",\n\n";
 			$r .= $line;
 		}
 
 		// Strip last comma.
-		$r = substr( $r, 0, -3 );
+		$r = substr( $r, 0, - 3 );
 		$r .= "\n\n";
 
 		// File terminator.
 		return $r . '});';
 	}
-
 }
 
 class YamlFFS extends SimpleFFS {
-
 	//
 	// READ
 	//
-
 	public function readFromVariable( $data ) {
 		$authors = $messages = array();
 
@@ -415,7 +422,6 @@ class YamlFFS extends SimpleFFS {
 	//
 	// WRITE
 	//
-
 	protected function writeReal( MessageCollection $collection ) {
 		$output  = $this->doHeader( $collection );
 		$output .= $this->doAuthors( $collection );
@@ -454,5 +460,4 @@ class YamlFFS extends SimpleFFS {
 		}
 		return $output;
 	}
-
 }
