@@ -5989,7 +5989,7 @@ $messages['he'] = array(
 	'prefs-translate' => 'אפשרויות תרגום',
 	'translate-pref-editassistlang-bad' => 'קוד שפה שגוי ברשימה:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'עורך תרגומים מורחב (JavaScript)',
+	'translate-pref-jsedit' => 'עורך תרגומים משופר (JavaScript)',
 	'right-translate' => 'עריכה באמצעות ממשק התרגום',
 	'right-translate-manage' => 'ניהול קבוצות תרגום',
 	'translate-rc-translation-filter' => 'סינון תרגומים:',
@@ -6051,6 +6051,8 @@ $messages['he'] = array(
 	'translate-managegroups' => 'ניהול קבוצות',
 	'translate-manage-newgroup' => 'קבוצת הודעות זו לא יובאה בעבר.',
 	'translate-manage-return-to-group' => 'חזרה לדף פרטי הקבוצה',
+	'translate-manage-modlang-new' => '$1 (חדש)',
+	'translate-manage-import-diff' => 'הודעה $1 | פעולות: $2',
 	'translate-manage-action-import' => 'ייבוא',
 	'translate-manage-action-ignore' => 'התעלמות',
 	'translate-manage-submit' => 'הפעלה',
