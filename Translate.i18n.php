@@ -2230,6 +2230,7 @@ Savjetujemo Vam da izvršite pregled poruke preko [[Special:Translate|{{int:tran
 	'translate-group-desc-wikitravelextensions' => 'Grupa meta poruka koja sadrži sve poruke za podržana MediaWiki proširenja korištena u [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Grupa meta poruka koja sadrži sve poruke za proširenja vezana za [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Grupa meta poruka koja sadrži sve poruke za proširenja vezana za [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia inicijativu upotrebljivosti]',
+	'translate-desc-mwembed' => '[http://www.mediawiki.org/wiki/MwEmbed MwEmbed] je biblioteka za uklapanje MediaWiki interfejsa',
 	'translate-manage-groups' => 'Upravljanje grupom',
 	'translate-manage-listgroups' => 'Uređene grupe',
 	'translate-manage-listgroups-old' => 'Grupe starijeg stila',
@@ -5370,8 +5371,8 @@ Por favor, revise os cambios e escolla a acción que pretende facer para cada me
 Unha vez que actualice as definicións das mensaxes, verifique se hai cambios externos noutras linguas, se os houbese.
 Teña en conta tamén que a acción <code>ignorar</code> é só temporal.',
 	'translate-manage-intro-other' => 'A continuación está a lista de cambios nas traducións da lingua $1.
-Por favor, revise os cambios e escolla a acción que pretende facer para cada tradución.
-Se opta por ignorar as modificacións, estas serán sobreescritas na vindeira exportación.',
+Por favor, revise os cambios e escolla a acción que quere facer para cada tradución.
+Se opta por ignorar as modificacións, estas serán sobrescritas na vindeira exportación.',
 	'translate-manage-subtitle' => 'Xestionar',
 	'translate-manage-import-rebuild-all' => 'Reconstruír todas as linguas e ignorar calquera cambio',
 	'importtranslations' => 'Importar as traducións',

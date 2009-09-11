@@ -439,6 +439,61 @@ $messages['cs'] = array(
 	'tpt-languages-legend' => 'Jiné jazyky:',
 );
 
+/** Danish (Dansk)
+ * @author Byrial
+ */
+$messages['da'] = array(
+	'pagetranslation' => 'Sideoversættelse',
+	'right-pagetranslation' => 'Markere versioner af sider for oversættelse',
+	'tpt-desc' => 'Udvidelse til oversættelse af indholdssider',
+	'tpt-section' => 'Oversættelsesenhed $1',
+	'tpt-section-new' => 'Ny oversættelsesenhed.
+Navn: $1',
+	'tpt-section-deleted' => 'Oversættelsesenhed $1',
+	'tpt-template' => 'Sideskabelon',
+	'tpt-templatediff' => 'Sideskabelonen er blevet ændret.',
+	'tpt-diff-old' => 'Forrige tekst',
+	'tpt-diff-new' => 'Ny tekst',
+	'tpt-submit' => 'Markér denne version for oversættelse',
+	'tpt-sections-oldnew' => 'Nye og eksisterende oversættelsesenheder',
+	'tpt-sections-deleted' => 'Slettede oversættelsesenheder',
+	'tpt-sections-template' => 'Skabelon til oversættelsesside',
+	'tpt-badtitle' => 'Det angivne sidenavn ($1) er ikke en gyldig titel',
+	'tpt-oldrevision' => '$2 er ikke den seneste version af siden [[$1]].
+Kun den seneste version kan markeres for oversættelse.',
+	'tpt-notsuitable' => 'Siden $1 er ikke parat til oversættelse.
+Sørg for at den har <nowiki><translate></nowiki>-tags og en gyldig syntaks.',
+	'tpt-saveok' => 'Siden [[$1]] har blevet markeret for oversættelse med $2 {{PLURAL:$2|oversættelsesenhed|oversættelsesenheder}}.
+Siden kan nu <span class="plainlinks">[$3 oversættes]</span>.',
+	'tpt-badsect' => '"$1" er ikke et gyldig navn for oversættelsesenhed $2.',
+	'tpt-showpage-intro' => 'Herunder er nye, eksisterende og slettede sektioner oplistet.
+kontrollér før denne version markeres for oversættelse, at ændringerne i sektionene er så små som muligt for at undgå unødigt arbejde for oversætterne.',
+	'tpt-mark-summary' => 'Markerede denne version for oversættelse',
+	'tpt-edit-failed' => 'Kunne ikke opdatere siden: $1',
+	'tpt-already-marked' => 'Den seneste version af denne side er allerede markeret for oversættelse.',
+	'tpt-list-nopages' => 'Ingen sider er markeret for oversættelse eller parate til at blive markeret for oversættelse.',
+	'tpt-old-pages' => 'En version af {{PLURAL:$1|denne side|disse sider}} er markeret for oversættelse.',
+	'tpt-new-pages' => '{{PLURAL:$1|Denne side|Disse sider}} indeholder tekst med oversættelsestags, men ingen version af {{PLURAL:$1|siden|siderne}} er i øjeblikket markeret for oversættelse.',
+	'tpt-rev-latest' => 'seneste version',
+	'tpt-rev-old' => 'forskel fra forrige markerede version',
+	'tpt-rev-mark-new' => 'markér denne version for oversættelse',
+	'tpt-translate-this' => 'oversæt denne side',
+	'translate-tag-translate-link-desc' => 'Oversæt denne side',
+	'translate-tag-markthis' => 'Markér denne side for oversættelse',
+	'translate-tag-markthisagain' => 'Denne side er <span class="plainlinks">[$1 ændret]</span> siden den sidst blev <span class="plainlinks">[$2 markeret for oversættelse]</span>.',
+	'translate-tag-hasnew' => 'Denne side indeholder <span class="plainlinks">[$1 ændringer]</span> som ikke er markeret for oversættelse.',
+	'tpt-translation-intro' => 'Denne side er en <span class="plainlinks">[$1 oversat version]</span> af en side [[$2]] og oversættelsen er $3 % komplet og opdateret.',
+	'tpt-translation-intro-fuzzy' => 'Forældede oversættelser er markeret sådan her.',
+	'tpt-languages-legend' => 'Andre sprog:',
+	'tpt-target-page' => 'Denne side kan ikke opdateres manuelt.
+Siden er en oversættelse af siden [[$1]] og oversættelsen kan opdateres ved at bruge [$2 oversættelsesværktøjet].',
+	'tpt-unknown-page' => 'Dette navnerum er reserveret til oversættelser af indholdssider.
+Siden som du prøver at redigere, ser ikke ud til at svare til nogen side markeret for oversættelse.',
+	'tpt-install' => 'Kør php maintenance/update.php eller webinstallering for at slå sideoversættelsesfunktionen til.',
+	'tpt-render-summary' => 'Opdaterer for at passe til en ny version af kildesiden',
+	'tpt-download-page' => 'Eksportér side med oversættelser',
+);
+
 /** German (Deutsch)
  * @author ChrisiPK
  * @author Imre
