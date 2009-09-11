@@ -68,9 +68,9 @@ $wgHooks['SpecialRecentChangesQuery'][] = 'TranslateRcFilter::translationFilter'
 $wgHooks['SpecialRecentChangesPanel'][] = 'TranslateRcFilter::translationFilterForm';
 $wgHooks['SkinTemplateToolboxEnd'][] = 'TranslateToolbox::toolboxAllTranslations';
 
-$wgJSAutoloadClasses['TranslateImport'] = "extensions/Translate/js/import.js"; 
-$wgJSAutoloadClasses['JsSelectToInput'] = "extensions/Translate/utils/JsSelectToInput.js";  
-$wgJSAutoloadClasses['JsEdit'] = "extensions/Translate/js/quickedit.js"; 
+$wgJSAutoloadClasses['TranslateImport'] = "extensions/Translate/js/import.js";
+$wgJSAutoloadClasses['JsSelectToInput'] = "extensions/Translate/utils/JsSelectToInput.js";
+$wgJSAutoloadClasses['JsEdit'] = "extensions/Translate/js/quickedit.js";
 $wgJSAutoloadClasses['j.form'] = "extensions/Translate/js/jquery.form.js";
 
 
@@ -279,7 +279,7 @@ function efTranslateCheckPT() {
 	global $wgMemc;
 	$memcKey = wfMemcKey( 'pt' );
 	$ok = $wgMemc->get( $memcKey );
-	
+
 	if ( $ok === $version ) {
 		return true;
 	}
@@ -293,7 +293,7 @@ function efTranslateCheckPT() {
 		$wgHooks['SiteNoticeAfter'][] = array('efTranslateCheckWarn', 'tpt-install' );
 		return false;
 	}
-		
+
 	foreach ( $tags as $tag ) {
 		// TODO: use insert ignore
 		$field = array( 'rtt_name' => $tag );
