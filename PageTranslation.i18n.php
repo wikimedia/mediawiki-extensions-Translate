@@ -2399,7 +2399,10 @@ $messages['vec'] = array(
  * @author Игорь Бродский
  */
 $messages['vep'] = array(
+	'tpt-rev-latest' => "jäl'gmäine versii",
+	'tpt-translate-this' => "kända nece lehtpol'",
 	'translate-tag-translate-link-desc' => "Käta nece lehtpol'",
+	'tpt-languages-legend' => 'Toižed keled:',
 );
 
 /** Vietnamese (Tiếng Việt)

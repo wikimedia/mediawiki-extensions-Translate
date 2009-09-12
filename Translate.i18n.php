@@ -417,9 +417,17 @@ These messages will not be submitted to svn, but will only affect the interface 
 	'translate-manage-modlang-new' => '{{Identical|New}}
 
 "new" means that the translations for that languages has never been imported/cached yet. $1 is a link to that page to do that.',
-	'translate-manage-action-import' => '{{Identical|Import}}',
-	'translate-manage-action-conflict' => 'fuzzy = mark translations for review',
-	'translate-manage-action-fuzzy' => 'fuzzy = mark translations for review',
+	'translate-manage-action-import' => '{{Identical|Import}}
+
+Used in the group management interface. {{doc-screenshot|Manage-4.png|twn}}',
+	'translate-manage-action-conflict' => 'Used in the group management interface. {{doc-screenshot|Manage-4.png|twn}}
+
+fuzzy = mark translations for review',
+	'translate-manage-action-ignore' => 'Used in the group management interface. {{doc-screenshot|Manage-4.png|twn}}',
+	'translate-manage-action-fuzzy' => 'Used in the group management interface. {{doc-screenshot|Manage-4.png|twn}}
+
+fuzzy = mark translations for review',
+	'translate-manage-submit' => 'Used in the group management interface. {{doc-screenshot|Manage-4.png|twn}}',
 	'translate-manage-import-fuzzy' => 'fuzzy = mark translations for review',
 	'translate-manage-intro-en' => 'If your language and its grammar permit, you can refer to <code>ignore</code> as <code>{<nowiki />{int:{{msg-mw|translate-manage-action-ignore}}}}</code>.',
 	'importtranslations' => 'Used in [[Special:ImportTranslations]]. {{doc-screenshot|Manage-1.png|twn}}',
@@ -3103,6 +3111,7 @@ Es wird empfohlen, Systemnachrichten mit der Spezialseite [[Special:Translate|{{
 	'translate-group-desc-wikitravelextensions' => 'Diese Hauptgruppe beinhaltet alle Systemnachrichten der unterstützten MediaWiki-Erweiterungen, die von [http://wikitravel.org Wikitravel] genutzt werden',
 	'translate-group-desc-uniwiki' => 'Diese Hauptgruppe beinhaltet alle Systemnachrichten für verwandte Erweiterungen von [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Diese Hauptgruppe beinhaltet alle Systemnachrichten der [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
+	'translate-desc-mwembed' => '[http://www.mediawiki.org/wiki/MwEmbed MwEmbed] ist eine Programmbibliothek zum Einbinden von Schnittstellen zu MediaWiki',
 	'translate-manage-groups' => 'Gruppenmanagement',
 	'translate-manage-listgroups' => 'Konfigurierte Gruppen',
 	'translate-manage-listgroups-old' => 'Gruppen im alten Stil',
@@ -5641,6 +5650,7 @@ S wird empfohle, Syschtemnochrichte mit dr Spezialsyte [[Special:Translate|{{int
 	'translate-group-desc-wikitravelextensions' => 'In däre Hauptgruppe het s alli Syschtemnochrichte vu dr unterstitzte MediaWiki-Erwyterige, wu vu [http://wikitravel.org Wikitravel] brucht wäre',
 	'translate-group-desc-uniwiki' => 'In däre Hauptgruppe het s alli Syschtemnochrichte fir verwandti Erwyterige vu [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'In däre Hauptgruppe het s alli Syschtemnochrichte vu dr [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Benutzerfrejndligkeits-Initiative]',
+	'translate-desc-mwembed' => '[http://www.mediawiki.org/wiki/MwEmbed MwEmbed] isch e Bibliothek fir s Yybette vu MediaWiki-Schnittstelle',
 	'translate-manage-groups' => 'Gruppeverwaltig',
 	'translate-manage-listgroups' => 'Konfigurierti Gruppe',
 	'translate-manage-listgroups-old' => 'Gruppe in altem Stil',
@@ -9069,6 +9079,10 @@ Schéckt de Formulaire w.e.g. nach emol fir mat der Beaarbechtung weiderzefueren
 	'translate-manage-import-fuzzy' => 'Importéieren a mat Fuzzy markéieren: $1',
 	'translate-manage-import-done' => 'Fäerdeg!',
 	'translate-manage-import-rebuild' => 'Tëschespäicher (Cache) nees opbauen.',
+	'translate-manage-intro-en' => "Hei ass eng Lëscht vun Ännerunge vu Messagen an dësem Grupp.
+Kuckt d'ännerunge w.e.g. no a sicht eng Aktioun eraus, déi Dir fir jidfer Message maache wëllt.
+Wann Dir d'Definitioun vum Message aktulaiséiert hutt, kuckt no op et keng extern Ännerungen an anere Sprooche gëtt, wann et dat gëtt.
+Denkt drun, datt <code>Ignoréieren</code> nëmmen temporaire ass.",
 	'translate-manage-intro-other' => "Ënnendrënner ass eng Lëscht vun den Ännerungen vun den Iwwersetzungen an der Sprooch $1.
 Kuckt d'Ännerunge w.e.g. no a wielt déi Aktioun déi Dir fir déi jeweileg Iwwersetzung wëllt.
 Wann dir decidéiert fir Ännerungen z'ignoréieren, da gi si beim nächsten Export iwwerschriwwen.",
@@ -10776,6 +10790,7 @@ $messages['or'] = array(
 $messages['os'] = array(
 	'translate-edit' => 'баив æй',
 	'translate-history' => 'истори',
+	'translate-page-task' => 'Мæн фæнды',
 	'translate-page-group' => 'Къорд',
 	'translate-page-language' => 'Æвзаг',
 	'translate-next' => 'Фæдылдзог фарс',
@@ -12390,6 +12405,7 @@ Môžete [$1 upravovať zdrojovú stránku] alebo [$2 aktualizovať preklad].',
 	'translate-group-desc-wikitravelextensions' => 'Metaskupina správ obsahujúca všetky správy rozšírenia MediaWiki, ktoré používa [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Metaskupina správ obsahujúca všetky správy rozšírenia MediaWiki súvisiace s [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Metaskupina správ obsahujúca všetky správy rozšírení týkajúcich sa [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Iniciatívy použiteľnosti Wikipédie]',
+	'translate-desc-mwembed' => '[http://www.mediawiki.org/wiki/MwEmbed MwEmbed] je knižnica na vkladanie rozhraní MediaWiki',
 	'translate-manage-groups' => 'Správa skupín',
 	'translate-manage-listgroups' => 'Nastavené skupiny',
 	'translate-manage-listgroups-old' => 'Skupiny starého typu',
@@ -14361,6 +14377,7 @@ $messages['vep'] = array(
 	'translate-edit-warnings' => 'Varutused täutmatomiš kändusiš',
 	'translate-edit-goto-no-prev' => 'Nece tedotuz om ezmäine',
 	'translate-edit-goto-no-next' => "Nece tedotuz om jäl'gmäine.",
+	'translate-edit-goto-list' => 'Tagaze nimikirjutesennoks',
 	'translate-magic-module' => "Modul':",
 	'translate-magic-submit' => 'Ozutada',
 	'translate-magic-cm-export' => 'Eksport',
@@ -14397,6 +14414,7 @@ $messages['vep'] = array(
 	'translate-translations-fieldset-title' => 'Tedotuz',
 	'translate-translations-messagename' => 'Nimi:',
 	'translate-translations-project' => 'Proekt:',
+	'languagestats' => "Kel'statistik",
 	'translate-language-code' => 'Kelenkod',
 	'translate-language-code-field-name' => 'Kelenkod:',
 	'translate-language' => "Kel'",
@@ -14408,6 +14426,9 @@ $messages['vep'] = array(
 	'translate-jssti-add' => 'Ližata nimikirjuteshe',
 	'translate-manage-import-new' => "Uz' tedotuz $1",
 	'translate-manage-import-deleted' => 'Čutud poiš tedotuz $1',
+	'translate-manage-import-done' => 'Kaik om tehtud!',
+	'translate-import-from-url' => 'Necen failan URL:',
+	'translate-js-fb' => 'Normaline redaktiruind',
 );
 
 /** Vietnamese (Tiếng Việt)
