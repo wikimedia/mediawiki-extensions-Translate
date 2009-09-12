@@ -165,6 +165,7 @@ class FuzzyBot {
 			STDOUT( "Failed!", $title );
 		}
 
+		unset( $status );
 	}
 
 }
