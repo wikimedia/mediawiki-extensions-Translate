@@ -195,6 +195,8 @@ Comment Spammer
 Community Voice
 aliasfile = CommunityVoice/CommunityVoice.alias.php
 
+Conditional Show Section
+
 Configure
 aliasfile = Configure/Configure.alias.php
 optional = configure-section-html, configure-section-ajax
