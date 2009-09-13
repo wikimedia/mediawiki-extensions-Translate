@@ -1258,6 +1258,10 @@ optional = grouppage-Global_rollback, grouppage-Ombudsmen, grouppage-coder
 optional = grouppage-Staff, shared-repo-name-shared
 prefix = wmf- | sidebar, grouppage-Staff, group-Staff, group-Staff-member
 
+Wikimedia License Texts
+file = WikimediaMessages/WikimediaLicenseTexts.i18n.php
+descmsg = wikimedialicensetexts-desc
+
 Wiki Text Logged In Out
 
 Woopra
