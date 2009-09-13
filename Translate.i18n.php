@@ -1977,16 +1977,16 @@ Broudet oc'h da adwelet ar c'hemennadennoù adal [[Special:Translate|{{int:trans
 	'translate-jssti-add' => "Ouzhpennañ d'ar roll",
 	'translate-group-desc-mediawikicore' => "Er strollad kemennadennoù-mañ emañ ar c'hemennadennoù implijet e stumm red MediaWiki ({{CURRENTVERSION}})",
 	'translate-group-desc-mediawikimostused' => 'Er strollad kemennadennoù-mañ emañ [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 kemennadenn implijetañ] MediaWiki',
-	'translate-group-desc-mediawikiextensions' => 'Meta-strollad kemennadennoù ennañ holl gemmennadennoù an astennoù skoret evit MediaWiki',
+	'translate-group-desc-mediawikiextensions' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astennoù skoret evit MediaWiki',
 	'translate-group-desc-collection' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astenn MediaWiki [http://www.mediawiki.org/wiki/Extension:Collection Dastumad]',
-	'translate-group-desc-flaggedrevs' => 'Meta-strollad kemennadennoù ennañ holl gemmennadennoù an astenn MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
+	'translate-group-desc-flaggedrevs' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astenn MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astenn MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
 	'translate-group-desc-socialprofile' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astenn MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
 	'translate-group-desc-translate' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astenn MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Treiñ]',
 	'translate-group-desc-wikiaextensions' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astennoù MediaWiki implijet gant [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikihowextensions' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astennoù MediaWiki implijet gant [http://www.wikihow.com wikiHow]',
 	'translate-group-desc-wikimediaextensions' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astennoù MediaWiki implijet gant [http://wikimedia.org/ Wikimedia Foundation]',
-	'translate-group-desc-wikitravelextensions' => 'Meta-strollad kemennadennoù ennañ holl gemmennadennoù an astennoù MediaWiki implijet gant [http://wikitravel.org Wikitravel]',
+	'translate-group-desc-wikitravelextensions' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astennoù MediaWiki implijet gant [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astennoù stag ouzh [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astennoù stag ouzh [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 	'translate-desc-mwembed' => 'Ul levraoueg da enframmañ etrefasoù MediaWiki eo [http://www.mediawiki.org/wiki/MwEmbed MwEmbed]',
@@ -11364,6 +11364,7 @@ Encorajamo-lo a rever mensagens através de [[Special:Translate|{{int:translate}
 /** Brazilian Portuguese (Português do Brasil)
  * @author Eduardo.mps
  * @author Heldergeovane
+ * @author Luckas Blade
  */
 $messages['pt-br'] = array(
 	'translate' => 'Traduzir',
@@ -11575,6 +11576,7 @@ O método <tt>$1</tt> não é suportado.',
 	'translate-import-err-ul-failed' => 'Carregamento de arquivo sem sucesso',
 	'translate-import-err-invalid-title' => 'O nome <nowiki>$1</nowiki> fornecido para o arquivo era inválido.',
 	'translate-import-err-no-such-file' => 'O arquivo <nowiki>$1</nowiki> não existe ou não foi carregado localmente.',
+	'translate-js-fb' => 'Edição normal',
 );
 
 /** Tarifit (Tarifit)
