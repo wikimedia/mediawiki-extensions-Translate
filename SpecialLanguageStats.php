@@ -170,6 +170,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	function getGroupStats( $code, $suppressComplete = false ) {
 		global $wgUser, $wgLang;
 
+		$errorString = '&lt;error&gt;';
 		$out = '';
 
 		$cache = new ArrayMemoryCache( 'groupstats' );
@@ -209,13 +210,13 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 				continue;
 			}
 
-			// Division by 0 should not be possible, but does ooccur. Caching issue?
-			$translatedPercentage = $total ? $wgLang->formatNum( round( 100 * $translated / $total, 2 ) ) : '&lt;error&gt;';
-			$fuzzyPercentage = $total ? $wgLang->formatNum( round( 100 * $fuzzy / $total, 2 ) ) : '&lt;error&gt;';
+			// Division by 0 should not be possible, but does occur. Caching issue?
+			$translatedPercentage = $total ? $wgLang->formatNum( number_format( round( 100 * $translated / $total, 2 ), 2 ) ) : $errorString;
+			$fuzzyPercentage = $total ? $wgLang->formatNum( number_format( round( 100 * $fuzzy / $total, 2 ), 2 ) ) : $errorString;
 
-			if ( !wfEmptyMsg( 'percent', wfMsgNoTrans('percent')) ) {
-				$translatedPercentage = wfMsg( 'percent', $translatedPercentage );
-				$fuzzyPercentage = wfMsg( 'percent', $fuzzyPercentage );
+			if ( !wfEmptyMsg( 'percent', wfMsgNoTrans('percent') ) ) {
+				$translatedPercentage = $translatedPercentage == $errorString ? $translatedPercentage : wfMsg( 'percent', $translatedPercentage );
+				$fuzzyPercentage = $fuzzyPercentage == $errorString ? $fuzzyPercentage : wfMsg( 'percent', $fuzzyPercentage );
 			} else {
 				// For 1.14 compatability
 				$translatedPercentage = "$translatedPercentage%";
@@ -239,8 +240,8 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			$out .= $this->element( $translateGroupLink );
 			$out .= $this->element( $total );
 			$out .= $this->element( $total - $translated );
-			$out .= $this->element( $translatedPercentage, false, $this->getBackgroundColour( $translated, $total ) );
-			$out .= $this->element( $fuzzyPercentage, false, $this->getBackgroundColour( $fuzzy, $total, true ) );
+			$out .= $this->element( $translatedPercentage, false, $translatedPercentage == $errorString ? '' : $this->getBackgroundColour( $translated, $total ) );
+			$out .= $this->element( $fuzzyPercentage, false, $translatedPercentage == $errorString ? '' : $this->getBackgroundColour( $fuzzy, $total, true ) );
 			$out .= $this->blockend();
 		}
 
