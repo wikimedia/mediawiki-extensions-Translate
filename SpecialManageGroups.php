@@ -1,9 +1,7 @@
 <?php
 
 class SpecialManageGroups {
-
 	protected $skin, $user, $out;
-
 	protected $processingTime = 10; // Seconds
 
 	public function __construct() {
@@ -18,37 +16,32 @@ class SpecialManageGroups {
 
 		$this->out->setPageTitle( htmlspecialchars( wfMsg( 'translate-managegroups' ) ) );
 
-
 		$group = $wgRequest->getText( 'group' );
 		$group = MessageGroups::getGroup( $group );
 
 		if ( $group ) {
-
 			if ( $wgRequest->getBool( 'rebuildall', false ) &&
-				$wgRequest->wasPosted() && 
+				$wgRequest->wasPosted() &&
 				$this->user->isAllowed( 'translate-manage' ) &&
 				$this->user->matchEditToken( $wgRequest->getVal( 'token' ) ) ) {
 
 				$cache = new MessageGroupCache( $group );
 				$languages = explode( ',', $wgRequest->getText( 'codes' ) );
 				foreach ( $languages as $code ) {
-					$messages = $group->load($code);
-					if ( count($messages) ) $cache->create( $messages, $code );
+					$messages = $group->load( $code );
+					if ( count( $messages ) ) $cache->create( $messages, $code );
 				}
 			}
-
 
 			$cache = new MessageGroupCache( $group );
 			$code = $wgRequest->getText( 'language', 'en' );
 			$this->importForm( $cache, $group, $code );
 		} else {
-
 			global $wgLang, $wgOut;
 			$groups = MessageGroups::singleton()->getGroups();
 			$wgOut->wrapWikiMsg( '==$1==', 'translate-manage-listgroups' );
 			foreach ( $groups as $group ) {
 				if ( !$group instanceof FileBasedMessageGroup ) continue;
-
 
 				$link = $this->skin->link( $this->getTitle(), $group->getLabel(), array(), array( 'group' => $group->getId() ) );
 				$wgOut->addHtml( $link );
@@ -67,14 +60,16 @@ class SpecialManageGroups {
 			}
 
 			global $wgOut;
+
 			$wgOut->wrapWikiMsg( '==$1==', 'translate-manage-listgroups-old' );
 			$wgOut->addHTML( '<ul>' );
+
 			foreach ( $groups as $group ) {
 				if ( $group instanceof FileBasedMessageGroup ) continue;
 				$wgOut->addHtml( Xml::element( 'li', null, $group->getLabel() ) );
 			}
-			$wgOut->addHTML( '</ul>' );
 
+			$wgOut->addHTML( '</ul>' );
 		}
 	}
 
@@ -104,7 +99,7 @@ class SpecialManageGroups {
 
 		global $wgRequest;
 		if ( $wgRequest->wasPosted() &&
-			$wgRequest->getBool( 'process', false ) && 
+			$wgRequest->getBool( 'process', false ) &&
 			$this->user->isAllowed( 'translate-manage' ) &&
 			$this->user->matchEditToken( $wgRequest->getVal( 'token' ) ) ) {
 			$process = true;
@@ -130,17 +125,15 @@ class SpecialManageGroups {
 		$collection = $group->initCollection( $code );
 		$collection->loadTranslations();
 
-
 		$diff = new DifferenceEngine;
 		$diff->showDiffStyle();
 		$diff->setReducedLineNumbers();
 
 		$changed = array();
 		foreach ( $messages as $key => $value ) {
-		
-
 			$fuzzy = $old = false;
-			if ( isset($collection[$key]) ) {
+
+			if ( isset( $collection[$key] ) ) {
 				$old = $collection[$key]->translation();
 				$fuzzy = TranslateEditAddons::hasFuzzyString( $old ) ||
 						TranslateEditAddons::isFuzzy( self::makeTitle( $group, $key, $code ) );
@@ -148,32 +141,45 @@ class SpecialManageGroups {
 			}
 
 			// No changes at all, ignore
-			if ( $old === $value ) continue;
+			if ( $old === $value ) {
+				continue;
+			}
 
 			if ( $old === false ) {
-				$name = wfMsgHtml( 'translate-manage-import-new', 
-					'<code style="font-weight:normal;">' . htmlspecialchars($key) . '</code>'
+				$name = wfMsgHtml( 'translate-manage-import-new',
+					'<code style="font-weight:normal;">' . htmlspecialchars( $key ) . '</code>'
 				);
+
 				$text = TranslateUtils::convertWhiteSpaceToHTML( $value );
+
 				$changed[] = $this->makeSectionElement( $name, 'new', $text );
 			} else {
-				if ( $fuzzy ) $old = TRANSLATE_FUZZY . $old;
+				if ( $fuzzy ) {
+					$old = TRANSLATE_FUZZY . $old;
+				}
+
 				$diff->setText( $old, $value );
 				$text = $diff->getDiff( '', '' );
 				$type = 'changed';
 
 				if ( $process ) {
-					if ( !count($changed) ) $changed[] = '<ul>';
+					if ( !count( $changed ) ) {
+						$changed[] = '<ul>';
+					}
 
 					global $wgRequest, $wgLang;
+
 					$action = $wgRequest->getVal( "action-$type-$key" );
+
 					if ( $action === null ) {
 						$message = wfMsgExt( 'translate-manage-inconsistent', 'parseinline', wfEscapeWikiText( "action-$type-$key" ) );
 						$changed[] = "<li>$message</li></ul>";
 						$process = false;
 					} else {
 						// Check processing time
-						if ( !isset($this->time) ) $this->time = wfTimestamp();
+						if ( !isset( $this->time ) ) {
+							$this->time = wfTimestamp();
+						}
 
 						$message = $this->doAction( $action, $group, $key, $code, $value );
 
@@ -200,13 +206,14 @@ class SpecialManageGroups {
 
 				$act = array();
 				$defaction = $fuzzy ? 'conflict' : 'import';
+
 				foreach ( $actions as $action ) {
 					$label = wfMsg( "translate-manage-action-$action" );
 					$act[] = Xml::radioLabel( $label, "action-$type-$key", $action, "action-$key-$action", $action === $defaction );
 				}
 
 				$name = wfMsg( 'translate-manage-import-diff',
-					'<code style="font-weight:normal;">' . htmlspecialchars($key) . '</code>',
+					'<code style="font-weight:normal;">' . htmlspecialchars( $key ) . '</code>',
 					implode( ' ', $act )
 				);
 
@@ -214,26 +221,31 @@ class SpecialManageGroups {
 			}
 		}
 
-
 		if ( !$process ) {
 			$collection->filter( 'hastranslation', false );
-			$keys = array_keys($collection->keys());
+			$keys = array_keys( $collection->keys() );
 
-			$diff = array_diff( $keys, array_keys($messages) );
+			$diff = array_diff( $keys, array_keys( $messages ) );
 
 			foreach ( $diff as $s ) {
 				$name = wfMsgHtml( 'translate-manage-import-deleted',
-					'<code style="font-weight:normal;">' . htmlspecialchars($s) . '</code>'
+					'<code style="font-weight:normal;">' . htmlspecialchars( $s ) . '</code>'
 				);
+
 				$text = TranslateUtils::convertWhiteSpaceToHTML(  $collection[$s]->translation() );
+
 				$changed[] = $this->makeSectionElement( $name, 'deleted', $text );
 			}
 		}
 
-		if ( $process || (!count($changed) && $code !== 'en') ) {
-			if ( !count($changed) ) $this->out->addWikiMsg( 'translate-manage-nochanges-other' );
+		if ( $process || ( !count( $changed ) && $code !== 'en' ) ) {
+			if ( !count( $changed ) ) {
+				$this->out->addWikiMsg( 'translate-manage-nochanges-other' );
+			}
 
-			if ( !count($changed) || strpos( $changed[count($changed)-1], '<li>' ) !== 0 ) $changed[] = '<ul>';
+			if ( !count( $changed ) || strpos( $changed[count( $changed ) - 1], '<li>' ) !== 0 ) {
+				$changed[] = '<ul>';
+			}
 
 			$cache->create( $messages, $code );
 			$message = wfMsgExt( 'translate-manage-import-rebuild', 'parseinline' );
@@ -242,10 +254,8 @@ class SpecialManageGroups {
 			$changed[] = "<li>$message</li></ul>";
 			$this->out->addHTML( implode( "\n", $changed ) );
 		} else {
-
 			// END
-
-			if ( count($changed) ) {
+			if ( count( $changed ) ) {
 				if ( $code === 'en' ) {
 					$this->out->addWikiMsg( 'translate-manage-intro-en' );
 				} else {
@@ -266,7 +276,6 @@ class SpecialManageGroups {
 		if ( $code === 'en' ) {
 			$this->doModLangs( $cache, $group );
 		} else {
-
 			$this->out->addHTML( '<p>' . $this->skin->link(
 				$this->getTitle(),
 				wfMsgHtml( 'translate-manage-return-to-group' ),
@@ -274,19 +283,26 @@ class SpecialManageGroups {
 				array( 'group' => $group->getId() )
 			) . '</p>' );
 		}
-
 	}
 
 	public function doModLangs( $cache, $group ) {
 		global $wgLang;
-		$languages = array_keys( Language::getLanguageNames(false) );
+
+		$languages = array_keys( Language::getLanguageNames( false ) );
 		$modified = $codes = array();
+
 		foreach ( $languages as $code ) {
-			if ( $code === 'en' ) continue;
+			if ( $code === 'en' ) {
+				continue;
+			}
+
 			$filename = $group->getSourceFilePath( $code );
 			$mtime = file_exists( $filename ) ? filemtime( $filename ) : false;
-			$cachetime = $cache->exists($code) ? $cache->getTimestamp($code) : false;
-			if ( $mtime === false && $cachetime === false ) continue;
+			$cachetime = $cache->exists( $code ) ? $cache->getTimestamp( $code ) : false;
+
+			if ( $mtime === false && $cachetime === false ) {
+				continue;
+			}
 
 			$link = $this->skin->link(
 				$this->getTitle(),
@@ -304,9 +320,9 @@ class SpecialManageGroups {
 			$codes[] = $code;
 		}
 
-		if ( count($modified) ) {
+		if ( count( $modified ) ) {
 			$this->out->addWikiMsg( 'translate-manage-modlangs',
-				$wgLang->formatNum( count($modified) )
+				$wgLang->formatNum( count( $modified ) )
 			);
 
 			$this->out->addHTML(
@@ -319,6 +335,7 @@ class SpecialManageGroups {
 			);
 
 			global $wgRequest;
+
 			if ( $wgRequest->wasPosted() &&
 				$this->user->isAllowed( 'translate-manage' ) &&
 				$this->user->matchEditToken( $wgRequest->getVal( 'token' ) ) ) {
@@ -337,7 +354,6 @@ class SpecialManageGroups {
 				Xml::submitButton( wfMsg( 'translate-manage-import-rebuild-all' ) ) .
 				Xml::closeElement( 'form' )
 			);
-
 		}
 	}
 
@@ -351,12 +367,14 @@ class SpecialManageGroups {
 			}
 
 			$title = self::makeTitle( $group, $key, $code );
+
 			return $this->doImport( $title, $message, $comment );
 		} elseif ( $action === 'ignore' ) {
 			return array( 'translate-manage-import-ignore', $key );
-		} elseif ( $action === 'fuzzy' ) {
+		} elseif ( $action === 'fuzzy' && $code != 'en' ) {
 			$title = Title::makeTitleSafe( $group->getNamespace(), $key );
 			$comment = wfMsgForContentNoTrans( 'translate-manage-fuzzy-summary' );
+
 			return $this->doFuzzy( $title, $message, $comment );
 		} else {
 			throw new MWException( "Unhandled action $action" );
@@ -366,7 +384,7 @@ class SpecialManageGroups {
 	protected function checkProcessTime() {
 		return wfTimestamp() - $this->time >= $this->processingTime;
 	}
-
+	
 	protected function doImport( $title, $message, $comment, $user = null ) {
 		$flags = EDIT_FORCE_BOT;
 		$article = new Article( $title );
@@ -403,6 +421,7 @@ class SpecialManageGroups {
 
 		$changed = array();
 		$fuzzybot = self::getFuzzyBot();
+
 		foreach ( $rows as $row ) {
 			$ttitle = Title::makeTitle( $row->page_namespace, $row->page_title );
 
@@ -413,10 +432,9 @@ class SpecialManageGroups {
 
 			$changed[] = $this->doImport( $ttitle, $text, "[{$wgUser->getName()}] " . $comment, $fuzzybot );
 			if ( $this->checkProcessTime() ) break;
-
 		}
 
-		if ( count($changed) === $rows->numRows() ) {
+		if ( count( $changed ) === $rows->numRows() ) {
 			$comment = "[{$wgUser->getName()}] " . wfMsgForContentNoTrans( 'translate-manage-import-summary' );
 			$title = Title::makeTitleSafe( $title->getNamespace(), $title->getPrefixedDbKey() . '/en' );
 			$changed[] = $this->doImport( $title, $message, $comment, $fuzzybot );
@@ -435,15 +453,21 @@ class SpecialManageGroups {
 
 	protected static function getFuzzyBot() {
 		global $wgTranslateFuzzyBotName;
+
 		$user = User::newFromName( $wgTranslateFuzzyBotName );
-		if ( !$user->isLoggedIn() ) $user->addToDatabase();
+
+		if ( !$user->isLoggedIn() ) {
+			$user->addToDatabase();
+		}
+
 		return $user;
 	}
 
 	protected static function makeTitle( $group, $key, $code ) {
 		$ns = $group->getNamespace();
 		$titlekey = "$key/$code";
-		return Title::makeTitleSafe( $ns, $titlekey ); 
+
+		return Title::makeTitleSafe( $ns, $titlekey );
 	}
 
 	protected function setSubtitle( $group, $code ) {
@@ -471,5 +495,4 @@ class SpecialManageGroups {
 
 		$this->out->setSubtitle( implode( ' > ', $links ) );
 	}
-
 }
