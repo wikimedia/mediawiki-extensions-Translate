@@ -5030,8 +5030,8 @@ Los changements sont pas sôvâs tant que vos éd pas clicâ sur lo boton « Sô
 	'translate-checks-plural' => 'La dèfinicion utilise <nowiki>{{PLURAL:}}</nowiki> mas pas sa traduccion.',
 	'translate-checks-pagename' => 'Èspâço de noms changiê dês la dèfinicion',
 	'translate-checks-format' => 'Ceta traduccion siut pas la dèfinicion ou ben at una sintaxa fôssa : $1',
-	'translate-checks-escape' => 'Cetos èchapements pôvont étre emprèvus : <strong>$1</strong>',
-	'translate-pref-nonewsletter' => 'Pas mè mandar per mèl les lètres de novèles',
+	'translate-checks-escape' => 'Cetos èchapaments pôvont étre emprèvus : <strong>$1</strong>',
+	'translate-pref-nonewsletter' => 'Pas mè mandar per mèssageria èlèctronica les lètres de novèles',
 	'right-translate' => 'Changiér avouéc l’entèrface de traduccion',
 	'translate-rc-translation-filter' => 'Filtrar les traduccions :',
 	'translate-rc-translation-filter-no' => 'Pas ren fâre',
@@ -8716,7 +8716,7 @@ Do moß en de Jrop „Övversäzer“ sen, för hee Änderonge maache ze könne.
 De Övversäzunge en di Shprooche wääde Der jezeich, wann De aam Övversäze bes.
 Wat De jezeich kreß, wann De nix enndrähß, deiht vun dä Shprooch afhange, en di De övversaz.',
 	'translate-pref-editassistlang-bad' => 'En dä Leß es en onjöltesch Kööözel för en Shprooch: <code><nowiki>$1</nowiki></code>.',
-	'translate-pref-jsedit' => 'Dun e txtra Finstershe för et Övversäze enblände (bruch Java_Skrep)',
+	'translate-pref-jsedit' => 'Dun e extra Finstershe för et Övversäze enblände (bruch Java_Skrep)',
 	'right-translate' => 'Met dä Schnettshtäll zom Övverseze ärrbeide',
 	'right-translate-manage' => 'Jroppe för et Övversäz verwallde',
 	'right-translate-import' => 'Övversäzunge fun Dateie empotteere',
@@ -9100,6 +9100,8 @@ $1',
 	'translate-import-err-ul-failed' => "D'Eropluede vum Fichier huet net geklappt",
 	'translate-import-err-invalid-title' => 'Den Numm vum Fichier <nowiki>$1</nowiki> deen ugi gouf ass net valabel.',
 	'translate-import-err-no-such-file' => 'De Fichier <nowiki>$1</nowiki> gëtt et net oder gouf lokal net eropgelueden.',
+	'translate-import-err-no-headers' => 'De Fichier ass net am Format "Gettext" deen d\'Erweiderung "Translate" brauch:
+De Grupp an d\'Sprooch konnte vun der Entête vum Fichier net bestëmmt ginn.',
 	'translate-import-err-warnings' => 'De Fichier ass net richteg forméiert.
 Vergewëssert Iech datt Ären Editeursprogramm keng msgctxt Felder ewechhëllt.
 Detailler: $1',
