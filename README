@@ -6,6 +6,8 @@ $wgTranslateEC = array_keys($wgTranslateAC); // All modules
 $wgTranslateFuzzyBotName = 'FuzzyBot';
 $wgGroupPermissions['Translators']['translate'] = true;
 
+Make sure you have configured $wgCacheDirectory properly.
+
 * Users have to be a member of user group 'Translators' to enable full functionality.
 
 If your extensions are located in a directory other than $IP/extensions/, you should
