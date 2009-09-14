@@ -66,7 +66,7 @@ foreach ( $groups as $group ) {
 	if ( !file_exists($file) ) continue;
 	STDOUT( "Processing {$group->getLabel()}... ", $group->getId() );
 
-	$input = file_get_contents( $file );
+	$input = file_get_contents( $file ) . "\n";
 
 	$headerEnd = strpos( $input, "\n);\n" );
 
@@ -98,5 +98,5 @@ foreach ( $groups as $group ) {
 	}
 
 	wfMkdirParents( dirname($options['target'] . "/$filename") );
-	file_put_contents( $options['target'] . "/$filename", trim( $output ) );
+	file_put_contents( $options['target'] . "/$filename", trim( $output ) . "\n" );
 }
