@@ -12,7 +12,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
 class TranslateEditAddons {
 	const MSG = 'translate-edit-';
 
-	static function addNavigation( &$outputpage, &$text ) {
+	static function addedNavigation( &$text ) {
 		global $wgUser, $wgTitle;
 
 		if ( !self::isMessageNamespace( $wgTitle ) ) return true;
@@ -119,6 +119,7 @@ EOEO;
 	static function addTools( $object ) {
 		if ( !self::isMessageNamespace( $object->mTitle ) ) return true;
 
+		TranslateEditAddons::addedNavigation( $object->editFormTextTop );
 		$object->editFormTextTop .= self::editBoxes( $object );
 
 		return true;
