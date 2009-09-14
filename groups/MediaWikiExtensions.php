@@ -421,6 +421,17 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-drafts', // test.wikipedia.org
 		'ext-expandtemplates',
 		'ext-extensiondistributor', // MediaWiki.org
+		'ext-flaggedrevs-flaggedrevs',
+		'ext-flaggedrevs-oldreviewedpages',
+		'ext-flaggedrevs-problemchanges',
+		'ext-flaggedrevs-qualityoversight',
+		'ext-flaggedrevs-reviewedpages',
+		'ext-flaggedrevs-stabilization',
+		'ext-flaggedrevs-stablepages',
+		'ext-flaggedrevs-stableversions',
+		'ext-flaggedrevs-unreviewedpages',
+		'ext-flaggedrevs-unstablepages',
+		'ext-flaggedrevs-validationstatistics',
 		'ext-fundraiserportal', // 2009-07-14: not yet live but expected soon/Raymond
 		'ext-gadgets',
 		'ext-globalblocking',
@@ -429,6 +440,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-inputbox',
 		'ext-intersection',
 		'ext-labeledsectiontransclusion', // Wikisource
+		'ext-liquidthreads', # usability
 		'ext-mwsearch',
 		'ext-newusermessage',
 		'ext-nuke',
@@ -441,11 +453,15 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-poem',
 		'ext-proofreadpage', // Wikisource
 		'ext-quiz',
+		'ext-readerfeedback-likedpages',
+		'ext-readerfeedback-problempages',
+		'ext-readerfeedback-ratinghistory',
+		'ext-readerfeedback-readerfeedback',
 		'ext-renameuser',
+		'ext-scanset',
 		'ext-securepoll',
 		'ext-simpleantispam',
 		'ext-sitematrix',
-		'ext-scanset',
 		'ext-skinperpage', // Wikimediafoundation.org
 		'ext-spamblacklist',
 		'ext-syntaxhighlightgeshi',
@@ -454,8 +470,6 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-titlekey',
 		'ext-torblock',
 		'ext-trustedxff',
-		'ext-uploadblacklist',
-		'ext-ui-usabilityinitiative',
 		'ext-ui-clicktracking',
 		'ext-ui-edittoolbar',
 		'ext-ui-editwarning',
@@ -463,6 +477,8 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-ui-optinlink',
 		'ext-ui-prefstats',
 		'ext-ui-simplesearch',
+		'ext-ui-usabilityinitiative',
+		'ext-uploadblacklist',
 		'ext-wikihiero',
 		'ext-wikimediamessages',
 	);
