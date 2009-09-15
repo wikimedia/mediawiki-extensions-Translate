@@ -453,8 +453,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-poem',
 		'ext-proofreadpage', // Wikisource
 		'ext-quiz',
-		'ext-readerfeedback-likedpages',
-		'ext-readerfeedback-problempages',
+		'ext-readerfeedback-ratedpages',
 		'ext-readerfeedback-ratinghistory',
 		'ext-readerfeedback-readerfeedback',
 		'ext-renameuser',
@@ -599,8 +598,7 @@ class AllReaderFeedbackExtensionsGroup extends AllMediawikiExtensionsGroup {
 
 	protected $flaggedrevsextensions = array(
 		'ext-readerfeedback-readerfeedback',
-		'ext-readerfeedback-likedpages',
-		'ext-readerfeedback-problempages',
+		'ext-readerfeedback-ratedpages',
 		'ext-readerfeedback-ratinghistory',
 	);
 

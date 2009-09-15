@@ -775,15 +775,10 @@ file = ReaderFeedback/language/ReaderFeedback.i18n.php
 aliasfile = ReaderFeedback/language/ReaderFeedback.alias.php
 descmsg = readerfeedback-desc
 
-Reader Feedback - Liked Pages
-id = ext-readerfeedback-likedpages
-file = ReaderFeedback/language/LikedPages.i18n.php
-descmsg = likedpages
-
-Reader Feedback - Problem Pages
-id = ext-readerfeedback-problempages
-file = ReaderFeedback/language/ProblemPages.i18n.php
-descmsg = problempages
+Reader Feedback - Rated Pages
+id = ext-readerfeedback-ratedpages
+file = ReaderFeedback/language/RatedPages.i18n.php
+descmsg = ratedpages
 
 Reader Feedback - Rating History
 id = ext-readerfeedback-ratinghistory
