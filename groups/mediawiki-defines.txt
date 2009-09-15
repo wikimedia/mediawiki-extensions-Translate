@@ -1181,6 +1181,11 @@ id = ext-ui-simplesearch
 file = UsabilityInitiative/SimpleSearch/SimpleSearch.i18n.php
 descmsg = simplesearch-desc
 
+Usability Initiative - User Daily Contribs
+file = UsabilityInitiative/UserDailyContribs/UserDailyContribs.i18n.php
+id = ext-ui-userdailycontribs
+descmsg = userdailycontribs-desc
+
 Usage Statistics
 file = UsageStatistics/SpecialUserStats.i18n.php
 aliasfile = UsageStatistics/SpecialUserStats.alias.php

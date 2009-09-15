@@ -478,6 +478,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-ui-prefstats',
 		'ext-ui-simplesearch',
 		'ext-ui-usabilityinitiative',
+		'ext-ui-userdailycontribs',
 		'ext-uploadblacklist',
 		'ext-wikihiero',
 		'ext-wikimediamessages',
@@ -719,6 +720,7 @@ class AllUsabilityInitiativeExtensionsGroup extends AllMediawikiExtensionsGroup 
 		'ext-ui-optinlink',
 		'ext-ui-prefstats',
 		'ext-ui-simplesearch',
+		'ext-ui-userdailycontribs',
 	);
 
 	protected function init() {
