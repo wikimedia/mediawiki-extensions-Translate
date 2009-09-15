@@ -1004,6 +1004,7 @@ $1',
 	'translate-import-err-ul-failed' => 'لم ينجح رفع الملف',
 	'translate-import-err-invalid-title' => 'اسم الملف المعطى <nowiki>$1</nowiki> غير صالح.',
 	'translate-import-err-no-such-file' => 'الملف <nowiki>$1</nowiki> غير موجود أو لم يرفع محليًا.',
+	'translate-js-fb' => 'تحرير عادي',
 );
 
 /** Aramaic (ܐܪܡܝܐ)
@@ -10510,6 +10511,7 @@ Bruk linken nedenfor for å returnere til gruppedataljene.',
 	'translate-manage-import-done' => 'Alt klart!',
 	'translate-manage-subtitle' => 'Administrer',
 	'translate-manage-import-rebuild-all' => 'Bygg om alle språk og ignorer alle forandringer',
+	'translate-import-load' => 'Last fil',
 	'translate-import-err-ul-failed' => 'Filopplasting var ikke vellykket',
 );
 
@@ -14820,6 +14822,7 @@ $messages['yi'] = array(
 	'translate-untranslated' => 'נישט פֿאַרטײַטשט',
 	'translate-percentage-complete' => 'פֿאַרענדיקונג',
 	'translate-percentage-fuzzy' => 'פֿאַרעלטערט',
+	'translate-group-desc-mediawikicore' => 'די מעלדונג גרופע אנטהאלט די מעלגדונגען געניצט אין דער לויפיגער אלפא ווערסיע פון מעדיעוויקי  ({{CURRENTVERSION}})',
 );
 
 /** Yue (粵語)
