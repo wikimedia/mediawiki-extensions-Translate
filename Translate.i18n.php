@@ -6716,6 +6716,7 @@ A változtatások nem mentődnek, míg alul a mentés gombra nem kattintasz.',
 	'translate-language-code' => 'Nyelvkód',
 	'translate-language-code-field-name' => 'Nyelvkód:',
 	'translate-language' => 'Nyelv',
+	'translate-save' => 'Mentés ($1)',
 );
 
 /** Interlingua (Interlingua)
@@ -10719,6 +10720,7 @@ Sètz encoratjat(ada) a repassar los messatges dempuèi [[Special:Translate|{{in
 	'translate-group-desc-wikitravelextensions' => 'Meta grop de messatges que contenon totes los messatges per las extensions utilizadas sus [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Meta grop de messatges que contenon totes los messatges per las extensions aparentadas a [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Grop de messatges Meta que contenon totes los messatges de las extensions ligadas a [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
+	'translate-desc-mwembed' => "[http://www.mediawiki.org/wiki/MwEmbed MwEmbed] es una bibliotèca per incrustar d'interfàcias MediaWiki",
 	'translate-manage-groups' => 'Gestion del grop',
 	'translate-manage-listgroups' => 'Gropes configurats',
 	'translate-manage-listgroups-old' => 'Estil dels gropes ancian',
