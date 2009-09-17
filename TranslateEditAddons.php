@@ -288,13 +288,14 @@ EOEO;
 		$en = $group->getMessage( $key, 'en' );
 		$xx = $group->getMessage( $key, $code );
 
-
 		// Set-up the content area contents properly and not randomly as in
 		// MediaWiki core. $translation is also used for checks later on. Also
 		// add the fuzzy string if necessary.
 		$translation = TranslateUtils::getMessageContent( $key, $code, $nsMain );
+		$isfuzzy = false;
 		if ( $translation !== null ) {
-			if ( !self::hasFuzzyString( $translation) && self::isFuzzy( $object->mTitle ) ) {
+			$isfuzzy = self::isFuzzy( $object->mTitle );
+			if ( !self::hasFuzzyString( $translation) && $isfuzzy ) {
 				$translation = TRANSLATE_FUZZY . $translation;
 			}
 		} else {
@@ -402,8 +403,11 @@ EOEO;
 			}
 		}
 
+		// Diff of current version of original, and its version before last edit of translation, if any
 		global $wgEnablePageTranslation;
-		if ( $wgEnablePageTranslation && $group instanceof WikiPageMessageGroup ) {
+		$showdiff1 = ( $wgEnablePageTranslation && $group instanceof WikiPageMessageGroup );
+		$showdiff2 = ( $isfuzzy );
+		if ( $showdiff1 ) {
 			// TODO: encapsulate somewhere
 			$page = TranslatablePage::newFromTitle( $group->title );
 			$rev = $page->getTransRev( "$key/$code" );
@@ -417,22 +421,75 @@ EOEO;
 						$oldtext = $section->getTextForTrans();
 					}
 				}
-
 				foreach ( $page->getParse()->getSectionsForSave() as $section ) {
 					if ( $group->title->getPrefixedDBKey() .'/'. $section->id === $key ) {
 						$newtext = $section->getTextForTrans();
 					}
 				}
+			}
+			else
+			{
+			}
+		} elseif ( $showdiff2 ) {
+			$newtext = $en;	// FIXME: this should be sufficient, but this seems to come from the MessagesEnphp file instead of most recent the data base record, which is wrong.
+			$en_title = Title::makeTitle( $nsMain, $key . '/en' );	// workaround
+			$revision = Revision::newFromTitle($en_title);		// workaround
+			$newtext = $revision->getText();			// workaround
+			$oldtext = FALSE;
+			// find timestamp of last revision of the current page before it was fuzzied.
+			$rev = $object->getBaseRevision()->getId();
+			if ( $rev )
+			{
+				$fname = __METHOD__ . ' (' . get_class( $this ) . ')';
+				$dbr = wfGetDB( DB_SLAVE );
+				$pid = $dbr->selectField( 'revision', 'rev_page', array( 'rev_id' => $rev ), $fname );
+				if ( $pid )
+				{
+					$not_fuzzy = TranslateEditAddons::findLastRevisionByTag( $rev, 'fuzzy', FALSE );
+					if ( $not_fuzzy )
+					{
+						$rev_en = $dbr->selectRow(
+							array ( 'revision', 'page'),
+							'rev_id',
+							array(
+								'page_namespace' => $nsMain,
+								'page_title' => $key . '/en',
+								'rev_page = page_id',
+								'rev_timestamp < '.$not_fuzzy->rev_timestamp
+							),
+							$fname,
+							array(
+								'ORDER BY' => 'rev_timestamp DESC',
+								'LIMIT' => 1
+							)
+						);
+						if ( $rev_en )
+						{
+							$rev_en = $rev_en->rev_id;
+						}
+						if ( $rev_en )
+						{
+							$revision = Revision::newFromId($rev_en);
+							$oldtext = $revision->getText();
 
-				if ( $oldtext !== $newtext ) {
-					wfLoadExtensionMessages( 'PageTranslation' );
-					$diff = new DifferenceEngine;
-					$diff->setText( $oldtext, $newtext );
-					$diff->setReducedLineNumbers();
-					$boxes[] = $diff->getDiff( wfMsgHtml('tpt-diff-old'), wfMsgHtml('tpt-diff-new') );
-					$diff->showDiffStyle();
+							// FIXME: Own header messages for this case
+							// FIXME: Links to the revision pages
+							// FIXME: Previous and next links
+							// FIXME: Allow switching to HTMLdiff
+						}
+					}
 				}
 			}
+		}
+		if ( ( $showdiff1 || $showdiff2 ) && ( $oldtext !== $newtext ) && ( $oldtext !== FALSE ) ) {
+			wfLoadExtensionMessages( 'PageTranslation' );
+			$diff = new DifferenceEngine;
+			if ( $showdiff1 )
+				$diff->setReducedLineNumbers();
+			$diff->setText( $oldtext, $newtext );
+			$diff->showDiffStyle();
+			$boxes[] = $diff->getDiff( wfMsgHtml('tpt-diff-old'), wfMsgHtml('tpt-diff-new') );
+							// FIXME: If there are versions in between say so.
 		}
 
 		// Definition
@@ -487,6 +544,45 @@ EOEO;
 
 		$res = $dbr->selectField( $tables, $fields, $conds, __METHOD__ );
 		return $res === $id;
+	}
+
+	/**
+	 * Get last revision of a page (not) having a specific revision tag
+	 * @param $pageId page Id
+	 * @param $set	TRUE: find youngest revison having the tag
+	 *		FALSE: find youngest revison *not* having the tag
+	 * @param $rtt_name revision tag name to look for
+	 * @return FALSE: no such revision found
+	 *	otherwise,
+	 *		if $not is TRUE:	object ( rev_id, rev_timestamp, NULL, NULL )
+	 *		if $not is FALSE:	object ( rev_id, rev_timestamp, rt_value, rt_revision )
+	 * TODO: move to a more appropriate place, maybe in core.
+	 * @author Purodha
+	 */
+	public static function findLastRevisionByTag( $pageId, $rtt_name='fuzzy', $set=false ) {
+		$fname = __METHOD__ . ' (' . get_class( $this ) . ')';
+		$dbr = wfGetDB( DB_SLAVE );
+		$id = $dbr->selectField( 'revtag_type', 'rtt_id', array( 'rtt_name' => $rtt_name ), $fname );
+		$tables = array( 'revision' , 'revtag' );
+		$fields = array( 'rev_id', 'rev_timestamp', 'rt_value', 'rt_revision' );
+		$conds  = array(
+			'rev_page' => $pageId,
+		);
+		if ( $set )
+		{
+			$conds[ 'rt_page' ] = $pageId;
+			$conds[ 'rt_type' ] = $id;
+		}
+		else
+		{
+			$conds[] = 'rt_page IS NULL';
+			$conds[] = 'rt_type IS NULL';
+		}
+		$join_conds [ 'revtag' ] = array('LEFT JOIN', 'rev_id = rt_revision');
+		$options['ORDER BY'] = 'rev_timestamp DESC';
+		$options['LIMIT'] = 1;
+		$res = $dbr->selectRow( $tables, $fields, $conds, $fname, $options, $join_conds );
+		return $res;
 	}
 
 	public static function isMessageNamespace( Title $title ) {
