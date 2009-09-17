@@ -1176,9 +1176,23 @@ Strona, kotruž pospytuješ wobdźěłać, po wšěm zdaću stronje markěrowane
 
 /** Hungarian (Magyar)
  * @author Dani
+ * @author Glanthor Reviol
  */
 $messages['hu'] = array(
+	'pagetranslation' => 'Lap fordítása',
+	'right-pagetranslation' => 'Lapok változatainak megjelölése fordítandónak',
+	'tpt-desc' => 'Kiterjesztés lapok fordításához',
+	'tpt-diff-old' => 'Előző szöveg',
+	'tpt-diff-new' => 'Új szöveg',
+	'tpt-edit-failed' => 'Nem sikerült frissíteni a lapot: $1',
+	'tpt-rev-latest' => 'utolsó változat',
+	'tpt-rev-mark-new' => 'ezen változatnak megjelölése fordításra',
+	'tpt-translate-this' => 'lap fordítása',
 	'translate-tag-translate-link-desc' => 'A lap fordítása',
+	'translate-tag-markthis' => 'Lap megjelölése fordításra',
+	'tpt-translation-intro-fuzzy' => 'Az elavult fordítások az alábbi módon vannak jelölve.',
+	'tpt-languages-legend' => 'Más nyelvek:',
+	'tpt-download-page' => 'Lap exportálása fordításokkal együtt',
 );
 
 /** Interlingua (Interlingua)

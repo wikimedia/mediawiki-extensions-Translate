@@ -1064,6 +1064,7 @@ $messages['arc'] = array(
 	'translate-total' => 'ܐܓܪ̈ܬܐ',
 	'translate-untranslated' => 'ܠܐ ܬܘܪ̈ܓܡܐ',
 	'translate-save' => 'ܢܛܘܪ ($1)',
+	'translate-js-fb' => 'ܫܘܚܠܦܐ ܟܝܢܝܐ',
 );
 
 /** Araucanian (Mapudungun)
@@ -4210,6 +4211,7 @@ Vaikeloetelu sõltub kasutaja keelest.',
 	'translate-percentage-fuzzy' => 'Iganenud',
 	'translate-save' => 'Salvesta ($1)',
 	'translate-jssti-add' => 'Lisa loetellu',
+	'translate-js-fb' => 'Harilik toimetamisaken',
 );
 
 /** Basque (Euskara)
@@ -6717,6 +6719,7 @@ A változtatások nem mentődnek, míg alul a mentés gombra nem kattintasz.',
 	'translate-language-code-field-name' => 'Nyelvkód:',
 	'translate-language' => 'Nyelv',
 	'translate-save' => 'Mentés ($1)',
+	'translate-manage-modlang-new' => '$1 (új)',
 );
 
 /** Interlingua (Interlingua)
@@ -14051,6 +14054,7 @@ $messages['ug-latn'] = array(
  * @author AS
  * @author Ahonc
  * @author Aleksandrit
+ * @author NickK
  */
 $messages['uk'] = array(
 	'translate' => 'Переклад',
@@ -14223,6 +14227,7 @@ $messages['uk'] = array(
 	'translate-group-desc-wikitravelextensions' => 'Метагрупа, що містить повідомлення для MediaWiki-розширень, які використовуються [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Метагрупа, що містить повідомлення для MediaWiki-розширень, які використовуються [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Метагрупа, що містить повідомлення для MediaWiki-розширень, які використовуються [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
+	'translate-js-fb' => 'Звичайне редагування',
 );
 
 /** Vèneto (Vèneto)
