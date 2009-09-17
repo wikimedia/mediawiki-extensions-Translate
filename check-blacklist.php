@@ -188,6 +188,13 @@ array(
 	)
 ),
 array(
+	'group' => 'ext-renameuser',
+	'check' => 'variable',
+	'message' => array(
+		'renameuser-renamed-notice', // Optional GENDER parameter
+	)
+),
+array(
 	'group' => 'ext-titleblacklist',
 	'check' => 'variable',
 	'code' => array(
