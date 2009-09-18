@@ -177,9 +177,15 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 		# Fetch groups stats have to be displayed for
 		$groups = MessageGroups::singleton()->getGroups();
-
 		# Get statistics for the message groups
 		foreach ( $groups as $groupName => $g ) {
+			// Do not report if this group is blacklisted.
+			$groupId = $g->getId();
+			$blacklisted = self::isBlacklisted( $groupId, $code );
+
+			if ( $blacklisted !== null ) {
+				continue;
+			}
 
 			$incache = $cache->get( $groupName, $code );
 			if ( $incache !== false ) {
@@ -225,7 +231,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 			$translateTitle = SpecialPage::getTitleFor( 'Translate' );
 			$queryParameters = array(
-				'group' => $g->getId(),
+				'group' => $groupId,
 				'language' => $code
 			);
 
@@ -253,5 +259,27 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		}
 
 		return $out;
+	}
+
+	private function isBlacklisted( $groupId, $code ) {
+		global $wgTranslateBlacklist;
+
+		$blacklisted = null;
+
+		$checks = array(
+			$groupId,
+			strtok( $groupId, '-' ),
+			'*'
+		);
+
+		foreach ( $checks as $check ) {
+			$blacklisted = @$wgTranslateBlacklist[$check][$code];
+
+			if ( $blacklisted !== null ) {
+				break;
+			}
+		}
+
+		return $blacklisted;
 	}
 }
