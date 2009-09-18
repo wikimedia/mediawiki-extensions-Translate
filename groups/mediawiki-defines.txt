@@ -412,6 +412,9 @@ id = ext-flaggedrevs-validationstatistics
 file = FlaggedRevs/language/ValidationStatistics.i18n.php
 descmsg = validationstatistics
 
+Flv Handler
+descmsg = flvhandler_desc
+
 Force Preview
 
 Format Email
