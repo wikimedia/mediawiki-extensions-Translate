@@ -570,6 +570,8 @@ magicfile = Maps/Maps.i18n.magic.php
 descmsg = maps_desc
 optional = maps_name, maps_googlemaps, maps_yahoomaps, maps_openlayers
 
+Mass Edit Regex
+
 Math Stat Functions
 descmsg = msfunc_desc
 magicfile = MathStatFunctions/MathStatFunctions.i18n.magic.php
