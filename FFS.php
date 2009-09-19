@@ -411,6 +411,7 @@ class YamlFFS extends SimpleFFS {
 
 		# Then messages
 		$messages = TranslateSpyc::loadString( $data );
+		$messages = $this->flatten( $messages );
 		$messages = $this->group->getMangler()->mangle( $messages );
 
 		return array(
@@ -437,6 +438,9 @@ class YamlFFS extends SimpleFFS {
 
 			$messages[$key] = $value;
 		}
+
+		$messages = $this->unflatten( $messages );
+
 		$output .= TranslateSpyc::dump( $messages );
 		return $output;
 	}
@@ -460,4 +464,73 @@ class YamlFFS extends SimpleFFS {
 		}
 		return $output;
 	}
+
+	/**
+	 * Flattens multidimensional array by using the path to the value as key
+	 * with each individual key separated by a dot.
+	 */
+	protected function flatten( $messages ) {
+
+		$flat = true;
+		foreach ( $messages as $v ) {
+			if ( !is_array( $v ) ) continue;
+			$flat = false; break;
+		}
+		if ( $flat ) return $messages;
+
+		$array = array();
+		foreach ( $messages as $key => $value ) {
+			if ( !is_array($value) ) {
+				$array[$key] = $value;
+			} else {
+				$newArray = array();
+				foreach ( $value as $newKey => $newValue ) {
+					$newArray["$key.$newKey"] = $newValue;
+				}
+				$array += $this->flatten( $newArray );
+			}
+			// Can as well keep only one copy around
+			unset($messages[$key]);
+		}
+		return $array;
+	}
+
+	/**
+	 * Performs the reverse operation of flatten. Each dot in the key starts a
+	 * new subarray in the final array.
+	 */
+	protected function unflatten( $messages ) {
+		$array = array();
+		foreach ( $messages as $key => &$value ) {
+			$path = explode( '.', $key );
+			if ( count( $path ) == 1 ) {
+				$array[$key] = &$value;
+				continue;
+			}
+
+			$pointer = &$array;
+			do {
+				# Extract the level and make sure it exists
+				$level = array_shift( $path );
+				if ( !isset($pointer[$level]) ) {
+					$pointer[$level] = array();
+				}
+
+				# Update the pointer to the new reference
+				$tmpPointer = &$pointer[$level];
+				unset( $pointer );
+				$pointer = &$tmpPointer;
+				unset( $tmpPointer );
+
+				# If next level is the last, add it into the array
+				if ( count( $path ) === 1 ) {
+					$lastKey = array_shift( $path );
+					$pointer[$lastKey] = &$value;
+				}
+			} while ( count( $path ) );
+
+		}
+		return $array;
+	}
+
 }
