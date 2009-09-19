@@ -524,6 +524,8 @@ Invitations
 aliasfile = Invitations/Invitations.alias.php
 ignored = invitations-uninvitedlist-item
 
+IP Auth
+
 JS Kit
 
 Labeled Section Transclusion
@@ -546,6 +548,10 @@ optional = lqt_rc_ellipsis
 ignored = lqt_header_warning_before_big
 
 Localisation Update
+
+Lockdown
+
+Lockout
 
 Log Entry
 aliasfile = LogEntry/LogEntry.alias.php
