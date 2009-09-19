@@ -46,7 +46,7 @@ class TranslationEditPage {
 		$textareaParams = array(
 			'name' => 'text',
 			'class' => 'mw-translate-edit-area',
-			'rows' =>  $short ? 2: 10,
+			'rows' =>  $short ? 3: 10,
 		);
 		$textarea = Html::element( 'textarea', $textareaParams, $translation );
 
