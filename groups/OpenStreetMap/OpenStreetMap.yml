@@ -12,6 +12,21 @@ FILES:
   sourcePattern: %GROUPROOT%/osm/%CODE%.yml
   targetPattern: %CODE%.yml
   codeMap:
-    pt-BR:      arabic
-    zh-CN:     arabicegyptianspoken
-    zh-TW:      afrikaans
+    pt-BR: arabic
+    zh-CN: arabicegyptianspoken
+    zh-TW: afrikaans
+
+TAGS:
+  optional:
+    - printable_name.with_version
+    - changeset.changeset.id
+    - site.edit.anon_edits
+  ignored:
+    - printable_name.with_id
+    - printable_name.with_name
+    - geocoder.search_osm_namefinder.prefix
+    - notifier.signup_confirm_plain.wiki_signup_url
+    - site.index.license.project_url
+    - trace.edit.visibility_help_url
+    - trace.trace_form.visibility_help_url
+    - trace.trace_form.help_url
