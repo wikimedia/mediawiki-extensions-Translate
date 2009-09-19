@@ -18,6 +18,7 @@ FILES:
 
 TAGS:
   optional:
+    - html.dir
     - printable_name.with_version
     - changeset.changeset.id
     - site.edit.anon_edits
