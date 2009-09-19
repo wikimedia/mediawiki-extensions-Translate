@@ -1044,7 +1044,7 @@ $messages['arc'] = array(
 	'translate-magic-nothing-to-export' => 'ܠܝܬ ܡܕܡ ܠܡܦܩܢܘܬܐ.',
 	'translate-magic-cm-current' => 'ܗܫܝܐ',
 	'translate-magic-cm-original' => 'ܫܪܫܝܐ',
-	'translate-magic-cm-save' => 'ܢܛܘܪ',
+	'translate-magic-cm-save' => 'ܠܒܘܟ',
 	'translationchanges-export' => 'ܐܦܩ',
 	'prefs-translate' => 'ܓܒܝܬ̈ܐ ܕܬܘܪܓܡܐ',
 	'translate-rc-translation-filter-only' => 'ܚܘܝ ܬܘܪ̈ܓܡܐ ܒܠܚܘܕ',
@@ -1063,7 +1063,7 @@ $messages['arc'] = array(
 	'translate-language' => 'ܠܫܢܐ',
 	'translate-total' => 'ܐܓܪ̈ܬܐ',
 	'translate-untranslated' => 'ܠܐ ܬܘܪ̈ܓܡܐ',
-	'translate-save' => 'ܢܛܘܪ ($1)',
+	'translate-save' => 'ܠܒܘܟ ($1)',
 	'translate-js-fb' => 'ܫܘܚܠܦܐ ܟܝܢܝܐ',
 );
 
@@ -8762,7 +8762,7 @@ Do kanns de [$1 Ojinaal-Sigg ändere] ov de [$2 Övversäzong op der neuste Shta
 	'translate-translations-messagename' => 'Tittel:',
 	'translate-translations-project' => 'Projek:',
 	'translate-translations-including-no-param' => 'Jif ene jöltijje Siggetittel för die Nohrich als Parrammeeter för di Ongersigg aan',
-	'languagestats' => 'Statistike övver de Sprooche',
+	'languagestats' => 'Statistike för en Sprooch',
 	'languagestats-summary' => 'Di Sigg hee zeich Statistike vun de Övversetzung för all Nohrechtejroppe fun ener Shprooch.',
 	'translate-language-code' => 'Sproochekood',
 	'translate-language-code-field-name' => 'Shproochekood:',
