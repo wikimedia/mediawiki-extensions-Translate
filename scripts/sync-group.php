@@ -1,4 +1,14 @@
 <?php
+/**
+ * Command line script to import/update source messages and translations into the wiki database.
+ *
+ * @addtogroup Extensions
+ *
+ * @author Niklas Laxström
+ * @copyright Copyright © 2007-2009, Niklas Laxström
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * @file
+ */
 
 $optionsWithArgs = array( 'group', 'lang', 'start', 'end' );
 require( dirname( __FILE__ ) . '/cli.inc' );
@@ -23,7 +33,6 @@ EOT
 }
 
 if ( isset( $options['help'] ) ) showUsage();
-
 
 if ( !isset( $options['group'] ) ) {
 	STDERR( "ESG1: Message group id must be supplied with group parameter." );

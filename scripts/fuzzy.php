@@ -5,14 +5,17 @@
  * @addtogroup Extensions
  *
  * @author Niklas Laxström
- * @copyright Copyright © 2007-2008, Niklas Laxström
+ * @copyright Copyright © 2007-2009, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  * @file
  */
 
 require( dirname( __FILE__ ) . '/cli.inc' );
 
-if ( $args === 1 || isset( $options['help'] ) ) {
+# Override the memory limit for wfShellExec, 100 MB seems to be too little
+$wgMaxShellMemory = 1024 * 200;
+
+function showUsage() {
 	STDERR( <<<EOT
 Fuzzy bot command line script
 
@@ -28,32 +31,30 @@ EOT
 	exit( 1 );
 }
 
-$_skipLanguages = array();
+if ( isset( $options['help'] ) ) showUsage();
+
+$bot = new FuzzyBot( $args );
+
 if ( isset( $options['skiplanguages'] ) ) {
+	$_skipLanguages = array();
 	$_skipLanguages = array_map( 'trim', explode( ',', $options['skiplanguages'] ) );
+	$bot->skipLanguages = $_skipLanguages;
 }
-$_comment = @$options['comment'];
-$_dryrun = !isset( $options['really'] );
-
-
-
-$bot = new FuzzyBot( $args, $_comment, $_skipLanguages, $_dryrun );
+if ( isset( $options['norc'] ) ) $cs->norc = true;
+if ( isset( $options['comment'] ) ) $bot->comment = $options['comment'];
+if ( isset( $options['really'] ) ) $bot->dryrun = false;
 
 $bot->execute();
 
 class FuzzyBot {
-
 	private $titles = array();
-	private $dryrun = true;
 	private $allclear = false;
-	private $comment = null;
-	private $skipLanguages = array();
+	public $dryrun = true;
+	public $comment = null;
+	public $skipLanguages = array();
 
-	public function __construct( $titles, $comment, $skipLanguages, $dryrun = true ) {
+	public function __construct( $titles ) {
 		$this->titles = $titles;
-		$this->comment = $comment;
-		$this->skipLanguages = $skipLanguages;
-		$this->dryrun = $dryrun;
 
 		global $wgTranslateFuzzyBotName;
 
@@ -76,7 +77,8 @@ class FuzzyBot {
 
 		foreach ( $msgs as  $phpIsStupid ) {
 			list( $title, $text ) = $phpIsStupid;
-			$this->updateMessage( $title, $text );
+			$this->updateMessage( $title, TRANSLATE_FUZZY . $text, $this->dryrun, $this->comment );
+			unset( $phpIsStupid );
 		}
 	}
 
@@ -138,40 +140,34 @@ class FuzzyBot {
 		return $user;
 	}
 
-	private function updateMessage( $title, $text ) {
-		global $wgTitle, $wgArticle, $wgTranslateDocumentationLanguageCode, $wgUser;
-		$wgTitle = $title;
+	private function updateMessage( $title, $text, $dryrun, $comment = null ) {
+		global $wgTranslateDocumentationLanguageCode, $wgUser;
 		$oldUser = $wgUser;
 		$wgUser = $this->getImportUser();
 
-		STDOUT( "Updating {$wgTitle->getPrefixedText()}... ", $title );
-		if ( !$wgTitle instanceof Title ) {
+		STDOUT( "Updating {$title->getPrefixedText()}... ", $title );
+		if ( !$title instanceof Title ) {
 			STDOUT( "INVALID TITLE!", $title );
 			return;
 		}
 
-		$items = explode( '/', $wgTitle->getText(), 2 );
+		$items = explode( '/', $title->getText(), 2 );
 		if ( isset( $items[1] ) && $items[1] === $wgTranslateDocumentationLanguageCode ) {
 			STDOUT( "IGNORED!", $title );
 			return;
 		}
 
-		if ( $this->dryrun ) {
+		if ( $dryrun ) {
 			STDOUT( "DRY RUN!", $title );
 			return;
 		}
 
-		$wgArticle = new Article( $wgTitle );
+		$article = new Article( $title );
 
-		$comment = $this->comment ? $this->comment : 'Marking as fuzzy';
+		$status = $article->doEdit( $text, $comment ? $comment : 'Marking as fuzzy', EDIT_FORCE_BOT | EDIT_UPDATE );
 
-		$status = $wgArticle->doEdit( TRANSLATE_FUZZY . $text, $comment, EDIT_FORCE_BOT );
-
-		if ( $status === true || ( is_object( $status ) && $status->isOK() ) ) {
-			STDOUT( "OK!", $title );
-		} else {
-			STDOUT( "Failed!", $title );
-		}
+		$success = $status === true || ( is_object( $status ) && $status->isOK() );
+		STDOUT( $success ? 'OK' : 'FAILED', $title );
 
 		$wgUser = $oldUser;
 	}
