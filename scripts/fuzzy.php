@@ -55,22 +55,14 @@ class FuzzyBot {
 		$this->skipLanguages = $skipLanguages;
 		$this->dryrun = $dryrun;
 
-		global $wgTranslateFuzzyBotName, $wgUser;
+		global $wgTranslateFuzzyBotName;
 
 		if ( !isset( $wgTranslateFuzzyBotName ) ) {
 			STDERR( "\$wgTranslateFuzzyBotName is not set" );
 			return;
 		}
 
-		$wgUser = User::newFromName( $wgTranslateFuzzyBotName );
-
-		if ( !$wgUser->isLoggedIn() ) {
-			STDOUT( "Creating user $wgTranslateFuzzyBotName" );
-			$wgUser->addToDatabase();
-		}
-
 		$this->allclear = true;
-
 	}
 
 	public function execute() {
@@ -86,7 +78,6 @@ class FuzzyBot {
 			list( $title, $text ) = $phpIsStupid;
 			$this->updateMessage( $title, $text );
 		}
-
 	}
 
 	private function getPages() {
@@ -132,9 +123,26 @@ class FuzzyBot {
 		return $messagesContents;
 	}
 
+	public function getImportUser() {
+		static $user = null;
+		if ( $user === null ) {
+			global $wgTranslateFuzzyBotName;
+			$user = User::newFromName( $wgTranslateFuzzyBotName );
+
+			if ( !$user->isLoggedIn() ) {
+				STDOUT( "Creating user $wgTranslateFuzzyBotName" );
+				$user->addToDatabase();
+			}
+		}
+
+		return $user;
+	}
+
 	private function updateMessage( $title, $text ) {
-		global $wgTitle, $wgArticle, $wgTranslateDocumentationLanguageCode;
+		global $wgTitle, $wgArticle, $wgTranslateDocumentationLanguageCode, $wgUser;
 		$wgTitle = $title;
+		$oldUser = $wgUser;
+		$wgUser = $this->getImportUser();
 
 		STDOUT( "Updating {$wgTitle->getPrefixedText()}... ", $title );
 		if ( !$wgTitle instanceof Title ) {
@@ -165,6 +173,6 @@ class FuzzyBot {
 			STDOUT( "Failed!", $title );
 		}
 
+		$wgUser = $oldUser;
 	}
-
 }
