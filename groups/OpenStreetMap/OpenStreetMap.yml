@@ -12,9 +12,9 @@ FILES:
   sourcePattern: %GROUPROOT%/osm/%CODE%.yml
   targetPattern: %CODE%.yml
   codeMap:
-    pt-BR: arabic
-    zh-CN: arabicegyptianspoken
-    zh-TW: afrikaans
+    pt-br: pt-BR
+    zh-cn: zh-CN
+    zh-tw: zh-TW
 
 TAGS:
   optional:
