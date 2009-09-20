@@ -398,6 +398,14 @@ EOT;
 }
 
 class YamlFFS extends SimpleFFS {
+	protected function YAML_Load( $data ) {
+		return TranslateSpyc::loadString( $data );
+	}
+
+	protected function YAML_Dump( $data ) {
+		return TranslateSpyc::dump( $data );
+	}
+
 	//
 	// READ
 	//
@@ -410,7 +418,7 @@ class YamlFFS extends SimpleFFS {
 		$authors = $matches[1];
 
 		# Then messages
-		$messages = TranslateSpyc::loadString( $data );
+		$messages = $this->YAML_Load( $data );
 		$messages = $this->flatten( $messages );
 		$messages = $this->group->getMangler()->mangle( $messages );
 
@@ -441,7 +449,7 @@ class YamlFFS extends SimpleFFS {
 
 		$messages = $this->unflatten( $messages );
 
-		$output .= TranslateSpyc::dump( $messages );
+		$output .= $this->YAML_Dump( $messages );
 		return $output;
 	}
 
@@ -534,3 +542,58 @@ class YamlFFS extends SimpleFFS {
 	}
 
 }
+
+class YamlSyckFFS extends YamlFFS {
+	protected function YAML_Load( $data ) {
+		# Make temporary file
+		$td = wfTempDir();
+		$tf = tempnam( $td, 'yaml-load-' );
+
+		# Write to file
+		file_put_contents( $tf, $data );
+
+		$cmd = "perl -MYAML::Syck=LoadFile -MPHP::Serialization=serialize -E '" .
+		       "my \$yaml = LoadFile(\"$tf\");" .
+		       "open my \$fh, q[>], q[$tf.serialized] or die qq[Can not open q{$tf.serialized}];" .
+		       "say $fh serialize(\$yaml);" .
+		       "close(\$fh);'";
+		$ret = shell_exec($cmd);
+		if (!isset($cmd)) {
+			die("The command '$cmd' died in execution");
+		}
+
+		$serialized = file_get_contents("$tf.serialized");
+		$php_data = unserialize($serialized);
+
+		unlink($tf);
+		unlink("$tf.serialized");
+		
+		return $php_data;
+	}
+
+	protected function YAML_Dump( $data ) {
+		# Make temporary file
+		$td = wfTempDir();
+		$tf = tempnam( $td, 'yaml-load-' );
+
+		# Write to file
+		$sdata = serialize( $data );
+		file_put_contents( $tf, $sdata );
+
+		$cmd = "perl -MYAML::Syck=DumpFile -MPHP::Serialization=unserialize -MFile::Slurp=slurp -E '" .
+		       "my \$serialized = slurp(\"$tf\");" .
+			   "DumpFile(q[$tf.yaml], \$serialized);'";
+		$ret = shell_exec($cmd);
+		if (!isset($cmd)) {
+			die("The command '$cmd' died in execution");
+		}
+
+		$yaml = file_get_contents("$tf.yaml");
+
+		unlink($tf);
+		unlink("$tf.yaml");
+		
+		return $yaml;
+	}
+}
+
