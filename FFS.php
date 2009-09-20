@@ -554,7 +554,7 @@ class YamlSyckFFS extends YamlFFS {
 
 		$cmd = "perl -MYAML::Syck=LoadFile -MPHP::Serialization=serialize -E '" .
 		       "my \$yaml = LoadFile(\"$tf\");" .
-		       "open my \$fh, q[>], q[$tf.serialized] or die qq[Can not open q{$tf.serialized}];" .
+		       "open my \$fh, q[>], q[$tf.serialized] or die qq[Can not open $tf.serialized];" .
 		       "say $fh serialize(\$yaml);" .
 		       "close(\$fh);'";
 		$ret = shell_exec($cmd);
