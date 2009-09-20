@@ -565,10 +565,10 @@ class YamlSyckFFS extends YamlFFS {
 		# Write to file
 		file_put_contents( $tf, $data );
 
-		$cmd = "perl -MYAML::Syck=LoadFile -MPHP::Serialization=serialize -E '" .
+		$cmd = "perl -MYAML::Syck=LoadFile -MPHP::Serialization=serialize -le '" .
 		       "my \$yaml = LoadFile(\"$tf\");" .
 		       "open my \$fh, q[>], q[$tf.serialized] or die qq[Can not open $tf.serialized];" .
-		       "say $fh serialize(\$yaml);" .
+		       "print \$fh serialize(\$yaml);" .
 		       "close(\$fh);'";
 		$ret = shell_exec($cmd);
 		if (!isset($cmd)) {
@@ -593,7 +593,7 @@ class YamlSyckFFS extends YamlFFS {
 		$sdata = serialize( $data );
 		file_put_contents( $tf, $sdata );
 
-		$cmd = "perl -MYAML::Syck=DumpFile -MPHP::Serialization=unserialize -MFile::Slurp=slurp -E '" .
+		$cmd = "perl -MYAML::Syck=DumpFile -MPHP::Serialization=unserialize -MFile::Slurp=slurp -le '" .
 		       "my \$serialized = slurp(\"$tf\");" .
 			   "DumpFile(q[$tf.yaml], \$serialized);'";
 		$ret = shell_exec($cmd);
