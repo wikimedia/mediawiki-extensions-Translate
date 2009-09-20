@@ -47,7 +47,7 @@ class TranslateYaml {
 		       "close(\$fh);'";
 		$out = wfShellExec( $cmd, &$ret );
 		if ( $ret != 0 ) {
-			die("The command '$cmd' died in execution with exit code '$ret': $out");
+			wfDebugDieBacktrace("The command '$cmd' died in execution with exit code '$ret': $out");
 		}
 
 		$serialized = file_get_contents("$tf.serialized");
@@ -73,7 +73,7 @@ class TranslateYaml {
 			   "DumpFile(q[$tf.yaml], \$serialized);'";
 		$out = wfShellExec( $cmd, &$ret );
 		if ( $ret != 0 ) {
-			die("The command '$cmd' died in execution with exit code '$ret': $out");
+			wfDebugDieBacktrace("The command '$cmd' died in execution with exit code '$ret': $out");
 		}
 
 		$yaml = file_get_contents("$tf.yaml");
