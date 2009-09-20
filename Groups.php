@@ -219,7 +219,7 @@ class FileBasedMessageGroup extends MessageGroupBase {
 		return str_replace( array_keys($variables), array_values($variables), $pattern );
 	}
 
-	protected function mapCode( $code ) {
+	public function mapCode( $code ) {
 		if ( isset($this->conf['FILES']['codeMap'][$code]) ) {
 			return $this->conf['FILES']['codeMap'][$code];
 		} else {
