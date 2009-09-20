@@ -419,6 +419,12 @@ class YamlFFS extends SimpleFFS {
 
 		# Then messages
 		$messages = $this->YAML_Load( $data );
+
+		# Some groups have messages under language code
+		if ( isset($this->extra['codeAsRoot']) ) {
+			$messages = array_shift( $messages );
+		}
+
 		$messages = $this->flatten( $messages );
 		$messages = $this->group->getMangler()->mangle( $messages );
 
@@ -448,6 +454,13 @@ class YamlFFS extends SimpleFFS {
 		}
 
 		$messages = $this->unflatten( $messages );
+
+		# Some groups have messages under language code
+		if ( isset($this->extra['codeAsRoot']) ) {
+			$code = $this->group->mapCode( $collection->code );
+			$messages = array( $code => $messages );
+		}
+
 
 		$output .= $this->YAML_Dump( $messages );
 		return $output;
