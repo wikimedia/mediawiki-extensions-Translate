@@ -229,7 +229,7 @@ class FileBasedMessageGroup extends MessageGroupBase {
 }
 
 class MediaWikiMessageGroup extends FileBasedMessageGroup {
-	protected function mapCode( $code ) {
+	public function mapCode( $code ) {
 		return ucfirst( str_replace( '-', '_', parent::mapCode($code) ) );
 	}
 

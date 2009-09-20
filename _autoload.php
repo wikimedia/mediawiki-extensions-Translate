@@ -113,7 +113,8 @@ $wgAutoloadClasses['TPSection'] = $dir . 'tag/TPSection.php';
 $wgAutoloadClasses['SpecialPageTranslation'] = $dir . 'tag/SpecialPageTranslation.php';
 $wgAutoloadClasses['RenderJob'] = $dir . 'tag/RenderJob.php';
 
-$wgAutoloadClasses['TranslateSpyc'] = $dir . 'spyc/loader.php';
+$wgAutoloadClasses['TranslateSpyc'] = $dir . 'utils/TranslateYaml.php';
+$wgAutoloadClasses['TranslateYaml'] = $dir . 'utils/TranslateYaml.php';
 $wgAutoloadClasses['SpecialManageGroups'] = $dir . 'SpecialManageGroups.php';
 
 $wgAutoloadClasses['FFS'] = $dir . 'FFS.php';

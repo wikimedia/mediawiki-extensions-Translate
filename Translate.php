@@ -194,6 +194,12 @@ $wgTranslateTasks = array(
 $wgTranslatePHPlot = false;
 $wgTranslatePHPlotFont = '/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf';
 
+/**
+ * Currently supported spyc and syck.
+ * For syck you need YAML::Syck and PHP::Serialization.
+**/
+$wgTranslateYamlLibrary = 'spyc';
+
 function efTranslateInit() {
 	global $wgTranslatePHPlot, $wgAutoloadClasses, $wgHooks;
 	if ( $wgTranslatePHPlot ) {
