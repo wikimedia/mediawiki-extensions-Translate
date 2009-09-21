@@ -13,7 +13,7 @@ FILES:
   targetPattern: %CODE%.yml
 
 MANGLER:
-	class: StringMatcher
-	prefix: wmobile-
-	patterns:
-		- "*"
+  class: StringMatcher
+  prefix: wmobile-
+  patterns:
+    - "*"
