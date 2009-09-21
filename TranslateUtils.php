@@ -248,9 +248,7 @@ class TranslateUtils {
 
 		global $wgHooks, $wgOut, $wgTranslateCssLocation;
 		if ( $wgTranslateCssLocation ) {
-			$wgOut->addLink( array( 'rel' => 'stylesheet', 'type' => 'text/css',
-				'href' => "$wgTranslateCssLocation/Translate.css", )
-			);
+			$wgOut->addExtensionStyle( "$wgTranslateCssLocation/Translate.css" );
 		} else {
 			$wgHooks['SkinTemplateSetupPageCss'][] = array( __CLASS__ , 'injectCSSCB' );
 		}
