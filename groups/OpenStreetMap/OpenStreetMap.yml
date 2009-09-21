@@ -10,6 +10,7 @@ BASIC:
 FILES:
   class: YamlFFS
   sourcePattern: %GROUPROOT%/osm/%CODE%.yml
+  codeAsRoot: 1
   targetPattern: %CODE%.yml
   codeMap:
     pt-br: pt-BR
