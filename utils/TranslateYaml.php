@@ -59,7 +59,7 @@ class TranslateYaml {
 		return $php_data;
 	}
 
-	protected function syckDump( $data ) {
+	protected static function syckDump( $data ) {
 		# Make temporary file
 		$td = wfTempDir();
 		$tf = tempnam( $td, 'yaml-load-' );
