@@ -44,7 +44,7 @@ class TranslateYaml {
 		       "my \$yaml = LoadFile(\"$tf\");" .
 		       "open my \$fh, q[>], q[$tf.serialized] or die qq[Can not open $tf.serialized];" .
 		       "print \$fh serialize(\$yaml);" .
-		       "close(\$fh);'";
+		       "close(\$fh);' 2>&1";
 		$out = wfShellExec( $cmd, &$ret );
 		if ( $ret != 0 ) {
 			wfDebugDieBacktrace("The command '$cmd' died in execution with exit code '$ret': $out");
@@ -71,7 +71,7 @@ class TranslateYaml {
 		$cmd = "perl -MYAML::Syck=DumpFile -MPHP::Serialization=unserialize -MFile::Slurp=slurp -wle '" .
 		       "my \$serialized = slurp(\"$tf\");" .
 		       "my \$unserialized = unserialize(\$serialized);" .
-			   "DumpFile(q[$tf.yaml], \$unserialized);'";
+			   "DumpFile(q[$tf.yaml], \$unserialized);' 2>&1";
 		$out = wfShellExec( $cmd, &$ret );
 		if ( $ret != 0 ) {
 			wfDebugDieBacktrace("The command '$cmd' died in execution with exit code '$ret': $out");
