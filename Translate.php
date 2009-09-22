@@ -196,7 +196,17 @@ $wgTranslatePHPlotFont = '/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf';
 
 /**
  * Currently supported spyc and syck.
- * For syck you need YAML::Syck and PHP::Serialization.
+ *
+ * For syck we're shelling out to perl. So you need:
+ *
+ * * At least perl 5.8 (find out what you have by running "perl -v")
+ * * Install these modules from CPAN
+ *   * YAML::Syck
+ *   * PHP::Serialization.
+ *   * File::Slurp
+ *
+ * You should be able to do this with:
+ *   for module in 'YAML::Syck' 'PHP::Serialization' 'File::Slurp'; do cpanp -i $module; done
 **/
 $wgTranslateYamlLibrary = 'spyc';
 
