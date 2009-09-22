@@ -26,6 +26,8 @@ TAGS:
     - browse.relation_member.entry
     - layouts.project_name.title
     - layouts.project_name.h1
+    - geocoder.search_osm_namefinder.suffix_suburb
+    - layouts.intro_3_ucl
   ignored:
     - geocoder.search_osm_namefinder.prefix
     - layouts.help_wiki_url
