@@ -78,10 +78,13 @@ class SpecialTranslationChanges extends SpecialPage {
 				case 'core': $class = 'mediawiki'; break;
 				case 'out-commonist': $class = 'commonist'; break;
 				case 'out-freecol': $class = 'freecol'; break;
+				case 'out-fudforum': $class = 'fudforum'; break;
 				case 'out-mantis': $class = 'mantis'; break;
 				case 'out-mwlibrl': $class = 'mwlibrl'; break;
 				case 'out-nocc': $class = 'nocc'; break;
+				case 'out-okawix': $class = 'okawix'; break;
 				case 'out-openlayers': $class = 'openlayers'; break;
+				case 'out-osm': $class = 'osm'; break;
 				case 'out-voctrain': $class = 'voctrain'; break;
 				case 'out-wikiblame': $class = 'wikiblame'; break;
 				default: $class = 'extension'; break;
