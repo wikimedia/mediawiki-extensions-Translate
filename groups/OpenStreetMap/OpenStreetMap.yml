@@ -24,6 +24,8 @@ TAGS:
     - changeset.changeset.id
     - site.edit.anon_edits
     - browse.relation_member.entry
+    - layouts.project_name.title
+    - layouts.project_name.h1
   ignored:
     - geocoder.search_osm_namefinder.prefix
     - layouts.help_wiki_url
