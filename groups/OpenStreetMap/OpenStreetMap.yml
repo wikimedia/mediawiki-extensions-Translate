@@ -23,6 +23,7 @@ TAGS:
     - printable_name.with_version
     - changeset.changeset.id
     - site.edit.anon_edits
+    - browse.relation_member.entry
   ignored:
     - geocoder.search_osm_namefinder.prefix
     - layouts.help_wiki_url
