@@ -74,7 +74,7 @@ class TranslateYaml {
 			   'my $tf = q[' . $tf . '];' .
 		       'my $serialized = slurp($tf);' .
 		       'my $unserialized = unserialize($serialized);' .
-			   'my $unserialized_utf8 deutf8($unserialized);' .
+			   'my $unserialized_utf8 = deutf8($unserialized);' .
 			   'DumpFile(qq[$tf.yaml], $unserialized_utf8);' .
 			   'sub deutf8 {' .
 			       'if(ref($_[0]) eq "HASH") {' .
