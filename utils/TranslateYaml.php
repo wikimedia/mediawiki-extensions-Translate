@@ -69,9 +69,23 @@ class TranslateYaml {
 		file_put_contents( $tf, $sdata );
 
 		$cmd = "perl -MYAML::Syck=DumpFile -MPHP::Serialization=unserialize -MFile::Slurp=slurp -wle '" .
-		       "my \$serialized = slurp(\"$tf\");" .
-		       "my \$unserialized = unserialize(\$serialized);" .
-			   "DumpFile(q[$tf.yaml], \$unserialized);' 2>&1";
+			   '$YAML::Syck::Headless = 1;' .
+			   '$YAML::Syck::SortKeys = 1;' .
+			   'my $tf = q[' . $tf . '];' .
+		       'my $serialized = slurp($tf);' .
+		       'my $unserialized = unserialize($serialized);' .
+			   'my $unserialized_utf8 deutf8($unserialized);' .
+			   'DumpFile(qq[$tf.yaml], $unserialized_utf8);' .
+			   'sub deutf8 {' .
+			       'if(ref($_[0]) eq "HASH") {' .
+			           'return { map { deutf8($_) } %{$_[0]} };' .
+			        '} else {' .
+			            'my $s = $_[0];' .
+			            'utf8::decode($s);' .
+			            'return $s;' .
+			        '}' .
+			    '}' .
+			    ' 2>&1';
 		$out = wfShellExec( $cmd, &$ret );
 		if ( $ret != 0 ) {
 			wfDebugDieBacktrace("The command '$cmd' died in execution with exit code '$ret': $out");
