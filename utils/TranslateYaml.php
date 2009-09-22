@@ -70,7 +70,8 @@ class TranslateYaml {
 
 		$cmd = "perl -MYAML::Syck=DumpFile -MPHP::Serialization=unserialize -MFile::Slurp=slurp -le '" .
 		       "my \$serialized = slurp(\"$tf\");" .
-			   "DumpFile(q[$tf.yaml], \$serialized);'";
+		       "my \$unserialized = unserialize(\$serialized);" .
+			   "DumpFile(q[$tf.yaml], \$unserialized);'";
 		$out = wfShellExec( $cmd, &$ret );
 		if ( $ret != 0 ) {
 			wfDebugDieBacktrace("The command '$cmd' died in execution with exit code '$ret': $out");
