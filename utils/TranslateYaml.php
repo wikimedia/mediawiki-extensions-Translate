@@ -41,10 +41,12 @@ class TranslateYaml {
 		file_put_contents( $tf, $data );
 
 		$cmd = "perl -MYAML::Syck=LoadFile -MPHP::Serialization=serialize -wle '" .
-		       "my \$yaml = LoadFile(\"$tf\");" .
-		       "open my \$fh, q[>], q[$tf.serialized] or die qq[Can not open $tf.serialized];" .
-		       "print \$fh serialize(\$yaml);" .
-		       "close(\$fh);' 2>&1";
+			   'my $tf = q[' . $tf . '];' .
+		       'my $yaml = LoadFile($tf);' .
+		       'open my $fh, ">", "$tf.serialized" or die qq[Can not open "$tf.serialized"];' .
+		       'print $fh serialize($yaml);' .
+		       'close($fh);' .
+			   "' 2>&1";
 		$out = wfShellExec( $cmd, &$ret );
 		if ( $ret != 0 ) {
 			wfDebugDieBacktrace("The command '$cmd' died in execution with exit code '$ret': $out");
