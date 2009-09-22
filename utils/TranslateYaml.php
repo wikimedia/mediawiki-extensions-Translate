@@ -40,7 +40,7 @@ class TranslateYaml {
 		# Write to file
 		file_put_contents( $tf, $data );
 
-		$cmd = "perl -MYAML::Syck=LoadFile -MPHP::Serialization=serialize -le '" .
+		$cmd = "perl -MYAML::Syck=LoadFile -MPHP::Serialization=serialize -wle '" .
 		       "my \$yaml = LoadFile(\"$tf\");" .
 		       "open my \$fh, q[>], q[$tf.serialized] or die qq[Can not open $tf.serialized];" .
 		       "print \$fh serialize(\$yaml);" .
@@ -68,7 +68,7 @@ class TranslateYaml {
 		$sdata = serialize( $data );
 		file_put_contents( $tf, $sdata );
 
-		$cmd = "perl -MYAML::Syck=DumpFile -MPHP::Serialization=unserialize -MFile::Slurp=slurp -le '" .
+		$cmd = "perl -MYAML::Syck=DumpFile -MPHP::Serialization=unserialize -MFile::Slurp=slurp -wle '" .
 		       "my \$serialized = slurp(\"$tf\");" .
 		       "my \$unserialized = unserialize(\$serialized);" .
 			   "DumpFile(q[$tf.yaml], \$unserialized);'";
