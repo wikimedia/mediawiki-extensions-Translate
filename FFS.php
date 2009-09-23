@@ -453,7 +453,6 @@ class YamlFFS extends SimpleFFS {
 			$messages = array( $code => $messages );
 		}
 
-
 		$output .= TranslateYaml::dump( $messages );
 		return $output;
 	}
@@ -496,11 +495,16 @@ class YamlFFS extends SimpleFFS {
 			if ( !is_array($value) ) {
 				$array[$key] = $value;
 			} else {
-				$newArray = array();
-				foreach ( $value as $newKey => $newValue ) {
-					$newArray["$key.$newKey"] = $newValue;
+				$plural = $this->flattenPlural( $value );
+				if ( $plural ) {
+					$array[$key] = $plural;
+				} else {
+					$newArray = array();
+					foreach ( $value as $newKey => $newValue ) {
+						$newArray["$key.$newKey"] = $newValue;
+					}
+					$array += $this->flatten( $newArray );
 				}
-				$array += $this->flatten( $newArray );
 			}
 			// Can as well keep only one copy around
 			unset($messages[$key]);
@@ -514,37 +518,132 @@ class YamlFFS extends SimpleFFS {
 	 */
 	protected function unflatten( $messages ) {
 		$array = array();
-		foreach ( $messages as $key => &$value ) {
-			$path = explode( '.', $key );
-			if ( count( $path ) == 1 ) {
-				$array[$key] = &$value;
-				continue;
+		foreach ( $messages as $key => $value ) {
+			$plurals = $this->unflattenPlural( $key, $value );
+			if ( $plurals === false ) {
+				$plurals = array( $key => $value );
 			}
 
-			$pointer = &$array;
-			do {
-				# Extract the level and make sure it exists
-				$level = array_shift( $path );
-				if ( !isset($pointer[$level]) ) {
-					$pointer[$level] = array();
+			foreach ( $plurals as $key => $value ) {
+
+				$path = explode( '.', $key );
+				if ( count( $path ) == 1 ) {
+					$array[$key] = $value;
+					continue;
 				}
 
-				# Update the pointer to the new reference
-				$tmpPointer = &$pointer[$level];
-				unset( $pointer );
-				$pointer = &$tmpPointer;
-				unset( $tmpPointer );
+				$pointer = &$array;
+				do {
+					# Extract the level and make sure it exists
+					$level = array_shift( $path );
+					if ( !isset($pointer[$level]) ) {
+						$pointer[$level] = array();
+					}
 
-				# If next level is the last, add it into the array
-				if ( count( $path ) === 1 ) {
-					$lastKey = array_shift( $path );
-					$pointer[$lastKey] = &$value;
-				}
-			} while ( count( $path ) );
+					# Update the pointer to the new reference
+					$tmpPointer = &$pointer[$level];
+					unset( $pointer );
+					$pointer = &$tmpPointer;
+					unset( $tmpPointer );
 
+					# If next level is the last, add it into the array
+					if ( count( $path ) === 1 ) {
+						$lastKey = array_shift( $path );
+						$pointer[$lastKey] = $value;
+					}
+				} while ( count( $path ) );
+			}
 		}
 		return $array;
 	}
 
+	protected function flattenPlural( $value ) {
+		return false;
+	}
+
+	protected function unflattenPlural( $key, $value ) {
+		return false;
+	}
+
 }
 
+
+
+class RubyYamlFFS extends YamlFFS {
+	static $pluralWords = array(
+		'zero' => 1,
+		'one' => 1,
+		'many' => 1,
+		'few' => 1,
+		'other' => 1,
+		'two' => 1
+	);
+
+	/**
+	 * Flattens multidimensional array by using the path to the value as key
+	 * with each individual key separated by a dot.
+	 */
+	protected function flattenPlural( $messages ) {
+
+		$plurals = false;
+		foreach( array_keys($messages) as $key ) {
+			if ( isset(self::$pluralWords[$key]) ) {
+				$plurals = true;
+			} elseif( $plurals ) {
+				throw new MWException( "Reserved plural keywords mixed with other keys" );
+			}
+		}
+
+		if ( !$plurals ) return false;
+
+		$pls = '{{PLURAL';
+		foreach( $messages as $key => $value ) {
+			if ( $key === 'other' ) continue;
+			$pls .= "|$key=$value";
+		}
+		$other = isset($messages['other']) ? '|' . $messages['other'] : '';
+		$pls .= "$other|}}";
+		return $pls;
+	}
+
+	protected function unflattenPlural( $key, $message ) {
+		$regex = '~\{\{PLURAL\|(.*?)\|}}~s';
+		$i = 0;
+		$matches = array();
+		$match = array();
+		while ( preg_match( $regex, $message, $match ) ) {
+			$matches[$i] = $match;
+			$message = preg_replace( $regex, "d__{$i}__b", $message );
+			$match = array();
+			$i++;
+		}
+
+		// No plurals
+		if ( $i === 0 ) return false;
+
+		// The final array of alternative plurals forms
+		$alts = array();
+
+		$pluralChoice = implode( '|', array_keys(self::$pluralWords) );
+		$regex = "~($pluralChoice)\s*=\s*(.+)~s";
+		foreach ( $matches as $i => $plu ) {
+			$forms = explode( '|', $plu[1] );
+			foreach ( $forms as $form ) {
+				$match = array();
+				if ( preg_match( $regex, $form, $match ) ) {
+					$formWord = "$key.{$match[1]}";
+					$value = $match[2];
+				} else {
+					$formWord = "$key.other";
+					$value = $form;
+				}
+
+				if ( !isset($alts[$formWord]) ) $alts[$formWord] = $message;
+				$string = $alts[$formWord];
+				$alts[$formWord] = str_replace( "d__{$i}__b", $value, $string );
+			}
+		}
+
+		return $alts;
+	}
+}
