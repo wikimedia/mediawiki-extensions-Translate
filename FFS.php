@@ -580,8 +580,7 @@ class RubyYamlFFS extends YamlFFS {
 	);
 
 	/**
-	 * Flattens multidimensional array by using the path to the value as key
-	 * with each individual key separated by a dot.
+	 * Flattens ruby plural arrays into special plural syntax.
 	 */
 	protected function flattenPlural( $messages ) {
 
@@ -601,16 +600,22 @@ class RubyYamlFFS extends YamlFFS {
 			if ( $key === 'other' ) continue;
 			$pls .= "|$key=$value";
 		}
+
+		// Put the "other" alternative last, without other= prefix
 		$other = isset($messages['other']) ? '|' . $messages['other'] : '';
 		$pls .= "$other|}}";
 		return $pls;
 	}
 
+	/**
+	 * Converts the special plural syntax to array or ruby style plurals
+	 */
 	protected function unflattenPlural( $key, $message ) {
 		$regex = '~\{\{PLURAL\|(.*?)\|}}~s';
 		$i = 0;
 		$matches = array();
 		$match = array();
+		// First replace (possibly multiple ) plural instances into placeholders
 		while ( preg_match( $regex, $message, $match ) ) {
 			$matches[$i] = $match;
 			$message = preg_replace( $regex, "d__{$i}__b", $message );
@@ -624,6 +629,9 @@ class RubyYamlFFS extends YamlFFS {
 		// The final array of alternative plurals forms
 		$alts = array();
 
+		// Then loop trough each plural block and replacing the placeholders
+		// to construct the alternatives. Produces invalid output if there is
+		// multiple plural bocks which don't have the same set of keys.
 		$pluralChoice = implode( '|', array_keys(self::$pluralWords) );
 		$regex = "~($pluralChoice)\s*=\s*(.+)~s";
 		foreach ( $matches as $i => $plu ) {
