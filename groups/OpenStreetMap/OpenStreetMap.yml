@@ -31,17 +31,9 @@ TAGS:
     - site.edit.anon_edits
   ignored:
     - geocoder.search_osm_namefinder.prefix
-    - layouts.help_wiki_url
-    - layouts.shop_url
-    - notifier.gpx_notification.failure.import_failures_url
-    - notifier.signup_confirm_plain.the_wiki_url
-    - notifier.signup_confirm_plain.wiki_signup_url
     - printable_name.with_id
     - printable_name.with_name
     - site.edit.anon_edits_link
     - site.index.license.license_url
     - site.index.license.project_url
-    - trace.edit.visibility_help_url
-    - trace.trace_form.help_url
-    - trace.trace_form.visibility_help_url
     - user.account.public_editing.enabled_link
