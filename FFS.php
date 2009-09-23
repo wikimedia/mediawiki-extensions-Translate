@@ -459,11 +459,15 @@ class YamlFFS extends SimpleFFS {
 
 	protected function doHeader( MessageCollection $collection ) {
 		global $wgSitename;
+		global $wgTranslateYamlLibrary;
 		$code = $collection->code;
 		$name = TranslateUtils::getLanguageName( $code );
 		$native = TranslateUtils::getLanguageName( $code, true );
 		$output  = "# Messages for $name ($native)\n";
 		$output .= "# Exported from $wgSitename\n";
+		if ( isset( $wgTranslateYamlLibrary ) ) {
+			$output .= "# Export driver: $wgTranslateYamlLibrary\n";
+		}
 		return $output;
 	}
 
