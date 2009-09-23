@@ -113,7 +113,13 @@ class MessageTable {
 			$title = $this->keyToTitle( $key );
 
 			$original = $m->definition();
-			$message = $m->translation() ? $m->translation() : $original;
+			if ( $m->translation() ) {
+				$message = $m->translation();
+				$rclasses = array( 'class' => 'translated' );
+			} else {
+				$message = $original;
+				$rclasses = array( 'class' => 'untranslated' );
+			}
 
 			global $wgLang;
 			$niceTitle = htmlspecialchars( $wgLang->truncate( $key, - 30 ) );
@@ -147,7 +153,7 @@ class MessageTable {
 			} else {
 				$output .= Xml::tags( 'tr', array( 'class' => 'def' ),
 					Xml::tags( 'td', null, $leftColumn ) .
-					Xml::tags( 'td', null, TranslateUtils::convertWhiteSpaceToHTML( $message ) )
+					Xml::tags( 'td', $rclasses, TranslateUtils::convertWhiteSpaceToHTML( $message ) )
 				);
 			}
 
