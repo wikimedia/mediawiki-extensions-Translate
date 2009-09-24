@@ -13762,10 +13762,29 @@ $messages['th'] = array(
  * @author Runningfridgesrule
  */
 $messages['tk'] = array(
+	'translate' => 'Terjime',
+	'translate-desc' => 'Mediawikini we ýenekileri terjime etmek üçin [[Special:Translate|ýörite sahypa]]',
 	'translate-history' => 'geçmiş',
 	'translate-task-view' => 'Ähli habarlaşyklary görjek',
 	'translate-task-untranslated' => 'Terjime edilmedik ähli habarlaşyklary görjek',
+	'translate-task-optional' => 'Hökmany däl habarlaşyklary görjek',
+	'translate-task-untranslatedoptional' => 'Terjime edilmedik hökmany däl habarlaşyklary görjek',
+	'translate-task-problematic' => 'Problemaly habarlaşyklary görjek',
+	'translate-task-review' => 'Üýtgeşmeleri gözden geçirjek',
+	'translate-task-reviewall' => 'Terjime edilen ähli habarlaşyklary gözden geçirjek',
+	'translate-task-export-to-file' => 'Terjimeleri faýla eksportirlejek',
+	'translate-task-export-as-po' => 'Terjimeleri Gettext formatyna eksportirlejek',
+	'translate-page-settings-legend' => 'Sazlamalar',
 	'translate-page-task' => 'Men',
+	'translate-page-group' => 'Topar',
+	'translate-page-language' => 'Dil',
+	'translate-page-limit' => 'Çäk',
+	'translate-page-limit-option' => 'Sahypa başyna $1 {{PLURAL:$1|habarlaşyk|habarlaşyk}}',
+	'translate-submit' => 'Getir',
+	'translate-page-navigation-legend' => 'Nawigasiýa',
+	'translate-page-showing' => '$3 sany habarlaşykdan $1 - $2 aralygy görkezilýär.',
+	'translate-page-showing-all' => '$1 {{PLURAL:$1|habarlaşyk|habarlaşyk}} görkezilýär.',
+	'translate-page-description-legend' => 'Topar hakda maglumat',
 );
 
 /** Tagalog (Tagalog)
@@ -14742,6 +14761,29 @@ $messages['wa'] = array(
 	'translate-prev' => 'Pådje di dvant',
 	'translate-optional' => '(opcionel)',
 	'translate-ignored' => '(ignoré)',
+);
+
+/** Kalmyk (Хальмг)
+ * @author Huuchin
+ */
+$messages['xal'] = array(
+	'translate-page-task' => 'Үүл',
+	'translate-page-group' => 'Баг',
+	'translate-page-language' => 'Келн',
+	'translate-page-limit' => 'Цег',
+	'translate-page-limit-option' => '$1 {{PLURAL:$1|зәңг|зәңгс|зәңгс}} халхд',
+	'translate-submit' => 'Асрх',
+	'translate-page-navigation-legend' => 'Орм медлһн',
+	'translate-page-showing' => '$1 - $2 тойгта зәңгс ($3 ут туршдан) үзүлсн.',
+	'translate-page-showing-none' => 'Зәңгс үзүлх уга',
+	'translate-next' => 'дарук халх',
+	'translate-prev' => 'урдк халх',
+	'translate-edit-tmmatch' => '$1%та ирлцән',
+	'translate-edit-goto-no-prev' => 'Эн түрүн халх',
+	'translate-edit-goto-no-next' => 'Эн кенз халх',
+	'translate-edit-goto-prev' => 'Урдк халхиг чиклх',
+	'translate-edit-goto-next' => 'Дарук халхиг чиклх',
+	'translate-pref-editassistlang' => 'Туслмҗин келс',
 );
 
 /** Mingrelian (მარგალური)
