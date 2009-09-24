@@ -166,6 +166,14 @@ array(
 	)
 ),
 array(
+	'group' => 'ext-liquidthreads',
+	'check' => 'variable',
+	'message' => array(
+		'lqt-feed-reply-intro', // Optional GENDER parameter
+		'lqt-feed-new-thread-intro', // Optional GENDER parameter
+	)
+),
+array(
 	'group' => 'ext-newusernotification',
 	'check' => 'variable',
 	'message' => array(
