@@ -169,8 +169,11 @@ array(
 	'group' => 'ext-liquidthreads',
 	'check' => 'variable',
 	'message' => array(
-		'lqt-feed-reply-intro', // Optional GENDER parameter
 		'lqt-feed-new-thread-intro', // Optional GENDER parameter
+		'lqt-feed-reply-intro', // Optional GENDER parameter
+		'lqt-feed-title-all-from', // Optional PLURAL parameter ($2)
+		'lqt-feed-title-new-threads-from', // Optional PLURAL parameter ($2)
+		'lqt-feed-title-replies-from', // Optional PLURAL parameter ($2)
 	)
 ),
 array(
