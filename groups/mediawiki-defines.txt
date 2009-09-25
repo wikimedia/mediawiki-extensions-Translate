@@ -349,6 +349,8 @@ ignored = farmerwikiurl, farmerinterwikiurl
 
 FCK editor
 
+File Page Masking
+
 Find Spam
 aliasfile = FindSpam/FindSpam.alias.php
 
