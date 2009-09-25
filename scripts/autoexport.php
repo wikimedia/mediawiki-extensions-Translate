@@ -79,7 +79,7 @@ if ( isset( $options['threshold'] ) ) {
 }
 
 
-$rows = TranslateUtils::translationChanges( $hours );
+$rows = TranslateUtils::translationChanges( $hours, true );
 $exports = array();
 foreach ( $rows as $row ) {
 	$group = false;
