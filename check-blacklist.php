@@ -21,6 +21,7 @@ array(
 		'history-feed-item-nocomment', // Optional time parameters
 		'lastmodifiedatby', // Optional time parameters
 		'listusers-blocked', // Optional GENDER parameter
+		'perfcachedts', // Optional time parameters
 		'prefs-memberingroups-type', // Optional parameter for group name
 		'prefs-registration-date-time', // Optional time parameters
 		'protect-expiring', // Optional time parameters
