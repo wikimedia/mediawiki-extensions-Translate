@@ -15,6 +15,8 @@ array(
 	'check' => 'variable',
 	'message' => array(
 		'activeusers-count', // Optional GENDER parameter
+		'blocklog-showlog', // Optional GENDER parameter
+		'blocklog-showsuppresslog', // Optional GENDER parameter
 		'confirmemail_body', // Optional time parameters
 		'currentrev-asof', // Optional time parameters
 		'filehist-thumbtext', // Optional time parameters
@@ -28,6 +30,7 @@ array(
 		'rcnotefrom', // Optional time parameters
 		'revision-info', // Optional time parameters
 		'revisionasof', // Optional time parameters
+		'sp-contributions-blocked-notice', // Optional GENDER parameter
 	),
 ),
 array(
