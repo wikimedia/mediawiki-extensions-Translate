@@ -60,7 +60,6 @@ if ( isset( $options['ns'] ) ) {
 
 	foreach( $input as $namespace ) {
 		if( is_numeric( $namespace ) ) {
-			print 'adding "' . $namespace . "\"\n";
 			array_push( $namespaces, $namespace );
 		}
 	}
