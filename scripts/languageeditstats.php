@@ -32,22 +32,27 @@ EOT
 
 /** Process command line parameters
  */
-if ( isset( $options['help'] ) ) showUsage();
+if ( isset( $options['help'] ) ) {
+	showUsage();
+}
 
-if ( isset( $options['days'] ) )
-	$hours = $options['days'] * 24; // no day change cutoff
-else
+if ( isset( $options['days'] ) ) {
+	$hours = inval( $options['days'] ) * 24; // no day change cutoff
+} else {
 	$hours = 7 * 24;
+}
 
-if ( isset( $options['top'] ) )
-	$top = $options['top'];
-else
+if ( isset( $options['top'] ) ) {
+	$top = intval( $options['top'] );
+} else {
 	$top = 10;
+}
 
-if ( isset( $options['bots'] ) )
+if ( isset( $options['bots'] ) ) {
 	$bots = true;
-else
+} else {
 	$bots = false;
+}
 
 $namespaces = array();
 if ( isset( $options['ns'] ) ) {
