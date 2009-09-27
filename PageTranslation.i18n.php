@@ -2350,6 +2350,13 @@ $messages['th'] = array(
 	'tpt-download-page' => 'ส่งหน้าออกไปพร้อมการแปลภาษา',
 );
 
+/** Turkmen (Türkmençe)
+ * @author Hanberke
+ */
+$messages['tk'] = array(
+	'pagetranslation' => 'Terjime sahypasy',
+);
+
 /** Tagalog (Tagalog)
  * @author AnakngAraw
  */

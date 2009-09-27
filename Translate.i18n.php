@@ -7200,6 +7200,13 @@ Silahkan periksa.',
 	'translate-manage-import-fuzzy' => 'Impor dan kejelasan: $1',
 	'translate-manage-import-done' => 'Semua selesai!',
 	'translate-manage-import-rebuild' => 'Buat ulang kas.',
+	'translate-manage-intro-en' => 'Di bawah ini adalah daftar perubahan pesan pada grup ini.
+Silakan tinjau perubahan-perubahan ini dan pilihlah aksi yang ingin Anda lakukan untuk setiap pesan.
+Setelah Anda memutakhirkan definisi pesan, periksa juga perubahan eksternal pada bahasa-bahasa lain, jika ada.
+Perhatikan pula bahwa aksi <code>ignore</code> hanya bersifat sementara.',
+	'translate-manage-intro-other' => 'Di bawah ini adalah daftar perubahan terjemahan dalam bahasa $1.
+Silakan tinjau perubahan-perubahan ini dan pilihlah aksi yang ingin Anda lakukan untuk setiap terjemahan.
+Jika Anda memilih untuk tidak menghiraukan perubahan, mereka akan ditimpa pada ekspor berikutnya.',
 	'translate-manage-subtitle' => 'Kelola',
 	'translate-manage-import-rebuild-all' => 'Bangun kembali semua bahasa dan abaikan perubahan',
 	'importtranslations' => 'Impor terjemahan',
@@ -7209,9 +7216,16 @@ Silahkan periksa.',
 	'translate-import-load' => 'Muatkan berkas',
 	'translate-import-err-type-not-supported' => 'Tidak dapat memuat berkas:
 Metode <tt>$1</tt> tidak didukung.',
+	'translate-import-err-dl-failed' => 'Tidak dapat mengambil berkas:
+$1',
 	'translate-import-err-ul-failed' => 'Pemuatan berkas tidak berhasil',
 	'translate-import-err-invalid-title' => 'Nama berkas <nowiki>$1</nowiki> yang diberikan tidak sah.',
 	'translate-import-err-no-such-file' => 'Berkas <nowiki>$1</nowiki> tidak ada atau belum di unggah kelokal.',
+	'translate-import-err-no-headers' => 'Berkas bukan merupakan berkas Gettext dalam format pengaya Translate yang diciptakan dengan benar:
+Tidak dapat menentukan grup dan bahasa dari kepala berkas.',
+	'translate-import-err-warnings' => "Berkas ini tidak diciptakan dengan benar.
+Pastikan penyunting Anda tidak membuang ''field'' msgctxt.
+Detil: $1",
 	'translate-js-fb' => 'Penyuntingan normal',
 );
 
@@ -13793,7 +13807,32 @@ $messages['tk'] = array(
 	'translate-page-navigation-legend' => 'Nawigasiýa',
 	'translate-page-showing' => '$3 sany habarlaşykdan $1 - $2 aralygy görkezilýär.',
 	'translate-page-showing-all' => '$1 {{PLURAL:$1|habarlaşyk|habarlaşyk}} görkezilýär.',
+	'translate-next' => 'Indiki sahypa',
+	'translate-prev' => 'Öňki sahypa',
 	'translate-page-description-legend' => 'Topar hakda maglumat',
+	'translate-edit-definition' => 'Habarlaşygyň kesgitlemesi',
+	'translate-edit-contribute' => 'goşant goş',
+	'translate-edit-no-information' => "''Bu habarlaşygyň düşündirişi ýok.
+Eger-de bu habarlaşygyň nirede we nähili ulanylýandygyny bilýän bolsaňyz, onda bu habarlaşyga düşündiriş ýazmak arkaly beýleki terjimeçilere kömek edip bilersiňiz.''",
+	'translate-edit-information' => '"$2" habarlaşygy hakda maglumat ($1)',
+	'translate-edit-in-other-languages' => 'Beýleki dillerde "$1" habarlaşygy',
+	'translate-edit-goto-prev' => 'Öňki habarlaşygy redaktirle',
+	'translate-edit-goto-next' => 'Indiki habarlaşygy redaktirle',
+	'translate-edit-goto-list' => 'Sanawa gaýdyp bar',
+	'translate-stats-users' => 'Terjimeçiler',
+	'translate-sidebar-alltrans' => 'Başga dillerde',
+	'translate-translations-messagename' => 'At:',
+	'translate-translations-project' => 'Taslama:',
+	'languagestats' => 'Dil boýunça statistikalar',
+	'languagestats-summary' => 'Bu sahypa bir dildäki ähli habarlaşyk toparlarynyň terjime boýunça statistikasyny görkezýär.',
+	'translate-language-code' => 'Dil kody',
+	'translate-language-code-field-name' => 'Dil kody:',
+	'translate-suppress-complete' => 'Doly terjime edilen habarlaşyk toparlaryny gizle',
+	'translate-language' => 'Dil',
+	'translate-total' => 'Habarlaşyklar',
+	'translate-untranslated' => 'Terjime edilmedik',
+	'translate-percentage-complete' => 'Ýerine ýetirilen',
+	'translate-percentage-fuzzy' => 'Möwriti geçen',
 );
 
 /** Tagalog (Tagalog)
