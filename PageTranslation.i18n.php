@@ -2115,13 +2115,15 @@ $messages['sah'] = array(
 /** Slovak (Slovenčina)
  * @author Helix84
  * @author Mormegil
+ * @author Rudko
  */
 $messages['sk'] = array(
 	'pagetranslation' => 'Preklad stránky',
 	'right-pagetranslation' => 'Označiť verzie stránok na preklad',
 	'tpt-desc' => 'Rozšírenie na preklad stránok s obsahom',
 	'tpt-section' => 'Jednotka prekladu $1',
-	'tpt-section-new' => 'Nová jednotka prekladu. Názov: $1',
+	'tpt-section-new' => 'Nová jednotka prekladu. 
+Názov: $1',
 	'tpt-section-deleted' => 'Jednotka prekladu $1',
 	'tpt-template' => 'Šablóna stránky',
 	'tpt-templatediff' => 'Šablóna stránky sa zmenila.',

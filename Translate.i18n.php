@@ -7276,6 +7276,7 @@ $messages['io'] = array(
 /** Icelandic (Íslenska)
  * @author Jóna Þórunn
  * @author S.Örvarr.S
+ * @author Spacebirdy
  */
 $messages['is'] = array(
 	'translate' => 'Þýða',
@@ -7304,14 +7305,16 @@ $messages['is'] = array(
 	'translate-next' => 'Næsta síða',
 	'translate-prev' => 'Fyrri síða',
 	'translate-page-description-legend' => 'Upplýsingar um hópinn',
+	'translate-page-edit' => 'breyta',
+	'translate-ext-url' => '<hr />Vefsíða: $1',
 	'translate-optional' => '(valfrjálst)',
 	'translate-ignored' => '(hunsað)',
 	'translate-edit-definition' => 'Útskýring á meldingu',
 	'translate-edit-contribute' => 'breyta',
 	'translate-edit-no-information' => "''Þessi melding hefur enga skjölun.
 Ef þú veist hvar eða hvernig meldingin er notuð getur þú hjálpað öðrum þýðendum með því að bæta skjölun við hana.''",
-	'translate-edit-information' => 'Upplýsingar um þessa meldingu ($1)',
-	'translate-edit-in-other-languages' => 'Melding á öðrum tungumálum',
+	'translate-edit-information' => 'Upplýsingar um þessa meldingu "$2" ($1)',
+	'translate-edit-in-other-languages' => 'Melding "$1" á öðrum tungumálum',
 	'translate-edit-committed' => 'Núverandi þýðing í hugbúnaðinum',
 	'translate-edit-warnings' => 'Viðvaranir vegna ókláraðar þýðinga',
 	'translate-magic-submit' => 'Sækja',
@@ -7327,11 +7330,24 @@ Ef þú veist hvar eða hvernig meldingin er notuð getur þú hjálpað öðrum
 	'translationchanges' => 'Breytingar þýðinga',
 	'translationchanges-export' => 'flytja',
 	'translationchanges-change' => '$1: $2 eftir $3',
-	'translate-checks-parameters' => 'Eftirfarandi færibreytur eru ekki notaðar: <strong>$1</strong>',
-	'translate-checks-links' => 'Eftirfarandi tenglar eru vafasamir: <strong>$1</strong>',
-	'translate-checks-xhtml' => 'Gjörðu svo vel og skiptu út eftirfarandi tögum fyrir þau réttu: <strong>$1</strong>',
+	'translate-checks-parameters' => 'Eftirfarandi {{PLURAL:$2|færibreyta er ekki notuð|færibreytur eru ekki notaðar}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links' => 'Eftirfarandi {{PLURAL:$2|tengill er vafasamur|$2 tenglar eru vafasamir}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-xhtml' => 'Gjörðu svo vel og skiptu út eftirfarandi {{PLURAL:$2|tagi|tögum}} fyrir þau réttu:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Skilgreiningin notar <nowiki>{{PLURAL:}}</nowiki> en ekki þýðingin.',
 	'translate-pref-nonewsletter' => 'Ekki senda mér rafrænt fréttabréf',
+	'translate-statsf-scale-days' => 'Dagar',
+	'translate-statsf-submit' => 'Forskoða',
+	'translations' => 'Allar þýðingar',
+	'translate-translations-fieldset-title' => 'Melding',
+	'translate-translations-messagename' => 'Nafn:',
+	'translate-translations-project' => 'Verkefni:',
+	'translate-language' => 'Tungumál',
+	'translate-total' => 'Meldingar',
+	'translate-percentage-fuzzy' => 'Úreltur',
+	'translate-save' => 'Vista ($1)',
 );
 
 /** Italian (Italiano)
