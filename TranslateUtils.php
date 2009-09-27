@@ -80,7 +80,14 @@ class TranslateUtils {
 		return $titles;
 	}
 
-	public static function translationChanges( $hours = 24, $bots = false ) {
+	/**
+	 * Fetches recent changes for titles in given namespaces
+	 *
+	 * @param $hours Int: number of hours.
+	 * @param $bots  Bool: should bot edits be included.
+	 * @param $ns    Array: array of namespace IDs.
+	 */
+	public static function translationChanges( $hours = 24, $bots = false, $ns = null ) {
 		global $wgTranslateMessageNamespaces;
 
 		$dbr = wfGetDB( DB_SLAVE );
@@ -96,8 +103,8 @@ class TranslateUtils {
 
 		$sql = "SELECT $fields, substring_index(rc_title, '/', -1) as lang FROM $recentchanges " .
 		"WHERE rc_timestamp >= '{$cutoff}' " .
-		"AND rc_namespace in ($namespaces) " .
 		( $bots ? '' : 'AND rc_bot = 0 ' ) .
+		( $ns ? 'AND rc_namespace IN (' . implode( ',', $ns ) . ') ' : "AND rc_namespace in ($namespaces) " ) .
 		"ORDER BY lang ASC, rc_timestamp DESC";
 
 		$res = $dbr->query( $sql, __METHOD__ );

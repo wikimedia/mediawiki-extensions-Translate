@@ -9,7 +9,7 @@
  * @file
  */
 
-$optionsWithArgs = array( 'top', 'days' );
+$optionsWithArgs = array( 'top', 'days', 'bots', 'ns' );
 require( dirname( __FILE__ ) . '/cli.inc' );
 
 function showUsage() {
@@ -23,6 +23,7 @@ Options:
   --top       Show given number of language codes (default: 10)
   --days      Calculate for given number of days (default: 7)
   --bots      Include bot edits (default: false)
+  --ns        Comma separated list of Namespace IDs (default: all)
 
 EOT
 );
@@ -48,6 +49,18 @@ if ( isset( $options['bots'] ) )
 else
 	$bots = false;
 
+$namespaces = array();
+if ( isset( $options['ns'] ) ) {
+	$input = explode(',', $options['ns'] );
+
+	foreach( $input as $namespace ) {
+		if( is_numeric( $namespace ) ) {
+			print 'adding "' . $namespace . "\"\n";
+			array_push( $namespaces, $namespace );
+		}
+	}
+}
+
 function figureMessage( $text ) {
 	$pos = strrpos( $text, '/' );
 	$code = substr( $text, $pos + 1 );
@@ -57,7 +70,7 @@ function figureMessage( $text ) {
 
 /** Select set of edits to report on
  */
-$rows = TranslateUtils::translationChanges( $hours, $bots );
+$rows = TranslateUtils::translationChanges( $hours, $bots, $namespaces );
 
 /** Get counts for edits per language code after filtering out edits by
  *  $wgTranslateFuzzyBotName
