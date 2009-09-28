@@ -13,7 +13,9 @@ FILES:
   codeAsRoot: 1
   targetPattern: %CODE%.yml
   codeMap:
+    be-tarask: be-TARASK
     pt-br: pt-BR
+    sr-ec: sr-EC
     zh-cn: zh-CN
     zh-tw: zh-TW
 
