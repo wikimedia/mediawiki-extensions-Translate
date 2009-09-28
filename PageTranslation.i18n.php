@@ -920,6 +920,7 @@ El est una vèrsion traduita de [[$1]] et la traduccion pôt étre betâ a jorn 
 La pâge que vos tâchiéd de changiér semble pas corrèspondre a gins de pâge marcâ por étre traduita.',
 	'tpt-install' => 'Lanciéd « php maintenance/update.php » ou ben l’enstalacion Vouèbe por activar la fonccionalitât de traduccion de pâges.',
 	'tpt-render-summary' => 'Misa a jorn por étre en acôrd avouéc la novèla vèrsion de la pâge d’origina',
+	'tpt-download-page' => 'Èxportar la pâge avouéc ses traduccions',
 );
 
 /** Galician (Galego)

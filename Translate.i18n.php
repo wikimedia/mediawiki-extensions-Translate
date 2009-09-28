@@ -500,7 +500,7 @@ $messages['af'] = array(
 	'translate-page-disabled' => "Vertalings in die taal vir hierdie groep is gedeaktiveer. Rede:
 
 ''$1''",
-	'translate-page-settings-legend' => 'Verstellings',
+	'translate-page-settings-legend' => 'Instellings',
 	'translate-page-task' => 'Ek wil',
 	'translate-page-group' => 'Groep',
 	'translate-page-language' => 'Taal',
@@ -2545,7 +2545,7 @@ $messages['ckb-arab'] = array(
  * @author Mormegil
  */
 $messages['cs'] = array(
-	'translate' => 'Přeložit',
+	'translate' => 'Překládání',
 	'translate-desc' => '[[Special:Translate|Speciální stránka]] zjednodušující překládání systémových hlášení MediaWiki',
 	'translate-edit' => 'editovat',
 	'translate-talk' => 'diskuse',
@@ -2646,6 +2646,7 @@ Změny se neuloží, dokud nekliknete na tlačítko „Uložit změny“ pod edi
 	'translate-checks-pagename' => 'Oproti definici se změnil jmenný prostor',
 	'translate-checks-format' => 'Tento překlad neodpovídá definici nebo má neplatnou syntaxi: $1',
 	'translate-checks-escape' => 'Následující escape sekvence možná nebyly zamýšleny: <strong>$1</strong>',
+	'translate-checks-fudforum-syntax' => 'V tomto projektu musíte namísto <nowiki>$2</nowiki> používat <nowiki>$1</nowiki>.',
 	'translate-pref-nonewsletter' => 'Neposílat mi novinky emailem',
 	'translate-pref-editassistlang' => 'Pomocné jazyky:',
 	'prefs-translate' => 'Nastavení pro překládání',
@@ -2721,6 +2722,8 @@ Teď doporučujeme zkontrolovat hlášení pomocí stránky [[Special:Translate|
 	'translate-group-desc-wikitravelextensions' => 'Nadskupina zpráv obsahující všechny zprávy používané v podporovaných rozšířeních MediaWiki používaných na [http://www.wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Nadskupina zpráv obsahující všechny zprávy používané v podporovaných rozšířeních MediaWiki používaných na [http://www.unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Nadskupina zpráv obsahující všechny zprávy používané v rozšířeních MediaWiki souvisejících s akcí [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
+	'translate-desc-mwembed' => '[http://www.mediawiki.org/wiki/MwEmbed MwEmbed] je knihovna pro vkládání rozhraní MediaWiki',
+	'translate-js-fb' => 'Normální editace',
 );
 
 /** Church Slavic (Словѣ́ньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ)
