@@ -361,6 +361,7 @@ id = ext-flaggedrevs-flaggedrevs
 file = FlaggedRevs/language/FlaggedRevs.i18n.php
 aliasfile = FlaggedRevs/language/FlaggedRevs.alias.php
 optional = revreview-toggle, revreview-ak-review, accesskey-ca-current, accesskey-ca-stable
+ignored = flaggedrevs-stable-categories
 descmsg = flaggedrevs-desc
 
 Flagged Revisions - Old Reviewed Pages
