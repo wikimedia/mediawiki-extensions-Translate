@@ -630,6 +630,7 @@ id = ext-mwsearch
 file = MWSearch/MWSearch.i18n.php
 
 MW Releases
+ignored = mwreleases-list
 
 Navigation Popups
 
