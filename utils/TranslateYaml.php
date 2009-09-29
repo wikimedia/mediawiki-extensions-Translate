@@ -4,13 +4,13 @@ class TranslateYaml {
 	public static function loadString( $text ) {
 		global $wgTranslateYamlLibrary;
 		switch ($wgTranslateYamlLibrary) {
-		case 'spyc':
-			require_once( dirname(__FILE__).'/../spyc/spyc.php' );
-			return spyc_load( $text );
-		case 'syck':
-			return self::syckLoad( $text );
-		default:
-			throw new MWException( "Unknown Yaml library" );
+			case 'spyc':
+				require_once( dirname(__FILE__).'/../spyc/spyc.php' );
+				return spyc_load( $text );
+			case 'syck':
+				return self::syckLoad( $text );
+			default:
+				throw new MWException( "Unknown Yaml library" );
 		}
 	}
 
@@ -22,13 +22,13 @@ class TranslateYaml {
 	public static function dump( $text ) {
 		global $wgTranslateYamlLibrary;
 		switch ($wgTranslateYamlLibrary) {
-		case 'spyc':
-			require_once( dirname(__FILE__).'/../spyc/spyc.php' );
-			return Spyc::YAMLDump( $text );
-		case 'syck':
-			return self::syckDump( $text );
-		default:
-			throw new MWException( "Unknown Yaml library" );
+			case 'spyc':
+				require_once( dirname(__FILE__).'/../spyc/spyc.php' );
+				return Spyc::YAMLDump( $text );
+			case 'syck':
+				return self::syckDump( $text );
+			default:
+				throw new MWException( "Unknown Yaml library" );
 		}
 	}
 
