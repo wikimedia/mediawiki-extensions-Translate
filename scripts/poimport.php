@@ -169,10 +169,9 @@ class PoImporter {
 }
 
 /**
- * Import changes to MediaWiki namespace as given user
+ * Import changes to wiki as given user
  */
 class WikiWriter {
-
 	private $changes = array();
 	private $dryrun = true;
 	private $allclear = false;
@@ -199,7 +198,6 @@ class WikiWriter {
 		}
 
 		$this->allclear = true;
-
 	}
 
 	/**
@@ -213,12 +211,11 @@ class WikiWriter {
 		$count = count( $this->changes );
 		STDOUT( "Going to update $count pages." );
 
-		$ns = $this->group->namespaces[0];
+		$ns = $this->group->getNamespace();
 
 		foreach ( $this->changes as $title => $text ) {
 			$this->updateMessage( $ns, $title, $text );
 		}
-
 	}
 
 	/**
