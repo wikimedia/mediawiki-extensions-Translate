@@ -445,6 +445,8 @@ class YamlFFS extends SimpleFFS {
 			$messages[$key] = $value;
 		}
 
+		if ( !count($messages) ) return false;
+
 		$messages = $this->unflatten( $messages );
 
 		# Some groups have messages under language code
@@ -593,7 +595,7 @@ class RubyYamlFFS extends YamlFFS {
 			if ( isset(self::$pluralWords[$key]) ) {
 				$plurals = true;
 			} elseif( $plurals ) {
-				throw new MWException( "Reserved plural keywords mixed with other keys" );
+				throw new MWException( "Reserved plural keywords mixed with other keys: $key" );
 			}
 		}
 
