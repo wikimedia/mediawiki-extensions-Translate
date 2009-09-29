@@ -367,8 +367,9 @@ class SpecialManageGroups {
 			}
 
 			$title = self::makeTitle( $group, $key, $code );
+			$fuzzybot = self::getFuzzyBot();
 
-			return $this->doImport( $title, $message, $comment );
+			return $this->doImport( $title, $message, $comment, $fuzzybot );
 		} elseif ( $action === 'ignore' ) {
 			return array( 'translate-manage-import-ignore', $key );
 		} elseif ( $action === 'fuzzy' && $code != 'en' ) {
@@ -384,7 +385,7 @@ class SpecialManageGroups {
 	protected function checkProcessTime() {
 		return wfTimestamp() - $this->time >= $this->processingTime;
 	}
-	
+
 	protected function doImport( $title, $message, $comment, $user = null ) {
 		$flags = EDIT_FORCE_BOT;
 		$article = new Article( $title );
@@ -451,6 +452,7 @@ class SpecialManageGroups {
 		);
 	}
 
+	// FIXME: Duplicate code. See ChangeSyncer::getImportUser() in scripts/sync-group.php
 	protected static function getFuzzyBot() {
 		global $wgTranslateFuzzyBotName;
 
