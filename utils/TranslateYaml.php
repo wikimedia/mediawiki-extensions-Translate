@@ -70,7 +70,7 @@ class TranslateYaml {
 		$sdata = serialize( $data );
 		file_put_contents( $tf, $sdata );
 
-		$cmd = "perl -MYAML::Syck=DumpFile -MPHP::Serialization=unserialize -MFile::Slurp=slurp -wle '" .
+		$cmd = "perl -MYAML::Syck=DumpFile -MPHP::Serialization=unserialize -MFile::Slurp=slurp -we '" .
 			   '$YAML::Syck::Headless = 1;' .
 			   '$YAML::Syck::SortKeys = 1;' .
 			   'my $tf = q[' . $tf . '];' .
