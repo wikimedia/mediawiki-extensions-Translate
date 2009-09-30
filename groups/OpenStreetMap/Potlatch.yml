@@ -2,9 +2,9 @@
 BASIC:
   id: out-osm-potlatch
   label: OpenStreetMap - Potlatch
-  description: "{{int:bw-desc-potlatch}}"
+  description: "{{int:bw-desc-osm-potlatch}}"
   namespace: NS_OSM
-  display: out/osm/
+  display: out/osm/potlatch
   class: FileBasedMessageGroup
 
 FILES:
@@ -19,9 +19,3 @@ FILES:
     zh-cn: zh-CN
     zh-tw: zh-TW
     zh-hant: zh-HANT
-
-TAGS:
-  optional:
-    - 
-  ignored:
-    - 

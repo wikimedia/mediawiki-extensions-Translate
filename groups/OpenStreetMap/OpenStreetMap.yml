@@ -1,10 +1,10 @@
 ---
 BASIC:
-  id: out-osm
+  id: out-osm-site
   label: OpenStreetMap
-  description: "{{int:bw-desc-osm}}"
+  description: "{{int:bw-desc-osm-site}}"
   namespace: NS_OSM
-  display: out/osm/
+  display: out/osm/site
   class: FileBasedMessageGroup
 
 FILES:
