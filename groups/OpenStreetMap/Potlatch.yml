@@ -19,3 +19,7 @@ FILES:
     zh-cn: zh-CN
     zh-tw: zh-TW
     zh-hant: zh-HANT
+
+TAGS:
+  ignored:
+    - help_html
