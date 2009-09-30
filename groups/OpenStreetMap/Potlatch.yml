@@ -21,5 +21,5 @@ FILES:
     zh-hant: zh-HANT
 
 TAGS:
-  ignored:
+  optional:
     - help_html
