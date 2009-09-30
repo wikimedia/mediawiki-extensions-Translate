@@ -2232,7 +2232,7 @@ Savjetujemo Vam da izvršite pregled poruke preko [[Special:Translate|{{int:tran
 	'translate-group-desc-collection' => 'Grupa meta poruka koja sadrži sve poruke za MediaWiki proširenje [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
 	'translate-group-desc-flaggedrevs' => 'Grupa meta poruka koja sadrži sve poruke za MediaWiki proširenje [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Grupa meta poruka koja sadrži sve poruke za MediaWiki proširenje [http://www.mediawiki.org/wiki/Extension:FlaggedRevs ReaderFeedback]',
-	'translate-group-desc-socialprofile' => 'Grupa meta poruka koja sadrži sve poruke za prošitenja vezana za MediaWiki proširenje [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
+	'translate-group-desc-socialprofile' => 'Grupa meta poruka koja sadrži sve poruke za proširenja vezana za MediaWiki proširenje [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
 	'translate-group-desc-translate' => 'Grupa meta poruka koje sadrže sve poruke za MediaWiki proširenje [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-wikiaextensions' => 'Grupa meta poruka koja sadrži sve poruke za podržana MediaWiki proširenja za [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikihowextensions' => 'Grupa meta poruka koja sadrži sve poruke za podržana MediaWiki proširenja korištena u [http://www.wikihow.com wikiHow]',
