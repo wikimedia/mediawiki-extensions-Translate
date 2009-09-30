@@ -1,7 +1,7 @@
 ---
 BASIC:
   id: out-osm-site
-  label: OpenStreetMap
+  label: OpenStreetMap - Website
   description: "{{int:bw-desc-osm-site}}"
   namespace: NS_OSM
   display: out/osm/site
