@@ -1599,7 +1599,7 @@ $messages['be-tarask'] = array(
 	'translate-manage-cacheat' => 'Імпартавана $1 $2',
 	'translate-manage-return-to-group' => 'Вярнуцца да старонкі падрабязнасьцяў групы',
 	'translate-manage-modlangs' => 'Калі ласка, праверце магчымая зьмены ў {{PLURAL:$1|наступнай мове|наступных мовах}}:',
-	'translate-manage-modlang-new' => '$1 (новае)',
+	'translate-manage-modlang-new' => '$1 (новая)',
 	'translate-manage-import-diff' => 'Паведамленьне $1 | Дзеяньні: $2',
 	'translate-manage-import-new' => 'Новае паведамленьне $1',
 	'translate-manage-import-deleted' => 'Выдаленае паведамленьне $1',
@@ -4190,6 +4190,7 @@ Vaikeloetelu sõltub kasutaja keelest.',
 	'translate-rc-translation-filter-filter' => 'Ära tõlkeid näita',
 	'translate-rc-translation-filter-site' => 'Ainult süsteemisõnumite muudatused',
 	'translationstats' => 'Tõlkimise statistika',
+	'translate-stats-edits' => 'Muudatusi',
 	'translate-stats-users' => 'Tõlkijad',
 	'translate-statsf-width' => 'Laius pikselites:',
 	'translate-statsf-height' => 'Kõrgus pikselites:',
@@ -11291,6 +11292,7 @@ $messages['pt'] = array(
 	'translate-prev' => 'Página anterior',
 	'translate-page-description-legend' => 'Informação sobre o grupo',
 	'translate-page-edit' => 'editar',
+	'translate-ext-url' => '<hr />Sítio web: $1',
 	'translate-optional' => '(opcional)',
 	'translate-ignored' => '(ignorada)',
 	'translate-edit-definition' => 'Definição da mensagem',
@@ -11410,6 +11412,8 @@ Encorajamo-lo a rever mensagens através de [[Special:Translate|{{int:translate}
 	'translate-group-desc-wikimediaextensions' => 'Meta-grupo de mensagens contendo todas as mensagens de extensões MediaWiki suportadas utilizadas pela [http://wikimedia.org/ Wikimedia Foundation]',
 	'translate-group-desc-wikitravelextensions' => 'Meta-grupo de mensagens contendo todas as mensagens de extensões MediaWiki suportadas usadas pelo [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Meta-grupo de mensagens contendo todas as mensagens para extensões relacionadas com o [http://unicefinnovation.org/wiki.php Uniwiki]',
+	'translate-manage-import-new' => 'Nova mensagem $1',
+	'translate-manage-import-deleted' => 'Eliminada mensagem $1',
 );
 
 /** Brazilian Portuguese (Português do Brasil)
