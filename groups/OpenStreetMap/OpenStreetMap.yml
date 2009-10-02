@@ -27,6 +27,7 @@ TAGS:
     - html.dir
     - layouts.intro_3_bytemark
     - layouts.intro_3_ucl
+    - layouts.license.alt
     - layouts.project_name.h1
     - layouts.project_name.title
     - printable_name.with_version
