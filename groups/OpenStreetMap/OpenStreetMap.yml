@@ -32,6 +32,9 @@ TAGS:
     - layouts.project_name.title
     - printable_name.with_version
     - site.edit.anon_edits
+    - site.layers.base.mapnik
+    - site.layers.base.osmarender
+    - site.layers.overlays.maplint
     # Users may or may not want to translate the OSM wiki too
     - layouts.help_wiki_url
     - layouts.shop_url
