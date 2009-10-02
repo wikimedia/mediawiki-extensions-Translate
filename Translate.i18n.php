@@ -416,7 +416,7 @@ These messages will not be submitted to svn, but will only affect the interface 
 	'translate-jssti-add' => 'Name of button in [[Special:Preferences]], tab Editing.',
 	'translate-manage-modlang-new' => '{{Identical|New}}
 
-"new" means that the translations for that languages has never been imported/cached yet. $1 is a link to that page to do that.',
+"new" means that the translations for that languages has never been imported/cached yet. $1 is a link to the page that allows do that.',
 	'translate-manage-action-import' => '{{Identical|Import}}
 
 Used in the group management interface. {{doc-screenshot|Manage-4.png|twn}}',
@@ -797,7 +797,7 @@ $messages['ar'] = array(
 	'translate-task-export-to-xliff' => 'أصدر الترجمة بصيغة إكسليف',
 	'translate-page-no-such-language' => 'اللغة المحددة كانت غير صحيحة.',
 	'translate-page-no-such-task' => 'المهمة المحددة كانت غير صحيحة.',
-	'translate-page-no-such-group' => 'المجموعة المحددة كانت غير صحيحة.',
+	'translate-page-no-such-group' => 'المجموعة المحددة غير صحيحة.',
 	'translate-page-disabled' => "الترجمات إلى هذه اللغة في هذه المجموعة تم تعطيلها. السبب:
 
 ''$1''",
@@ -832,7 +832,7 @@ $messages['ar'] = array(
 	'translate-edit-goto-no-next' => 'لا رسالة قادمة',
 	'translate-edit-goto-prev' => 'عدل الرسالة السابقة',
 	'translate-edit-goto-next' => 'عدل الرسالة القادمة',
-	'translate-edit-goto-list' => 'الرجوع إلى القائمة',
+	'translate-edit-goto-list' => 'ارجع إلى القائمة',
 	'translate-magic-pagename' => 'ترجمة ميدياويكي الممتدة',
 	'translate-magic-help' => 'يمكنك ترجمة أسماء الصفحات الخاصة، والكلمات السحرية، وأسماء النطاقات.
 
@@ -847,7 +847,7 @@ $messages['ar'] = array(
 التغييرات لن يتم حفظها حتى تضغط زر الحفظ بالأسفل.',
 	'translate-magic-module' => 'النوع:',
 	'translate-magic-submit' => 'اجلب',
-	'translate-magic-cm-export' => 'تصدير',
+	'translate-magic-cm-export' => 'صدّر',
 	'translate-magic-nothing-to-export' => 'لا يوجد شيء يمكن تصديره.',
 	'translate-magic-cm-to-be' => 'لتصبح',
 	'translate-magic-cm-current' => 'الحالي',
@@ -913,7 +913,7 @@ $messages['ar'] = array(
 	'translate-statsf-count-users' => 'المترجمون النشطون',
 	'translate-statsf-language' => 'قائمة بأكواد اللغات مفصولة بفاصلة:',
 	'translate-statsf-group' => 'قائمة بأكواد المجموعات مفصولة بفاصلة:',
-	'translate-statsf-submit' => 'عرض مسبق',
+	'translate-statsf-submit' => 'عاين',
 	'translate-tag-category' => 'صفحات قابلة للترجمة',
 	'translate-tag-page-desc' => 'ترجمة صفحة الويكي [[:$1]].',
 	'translate-tag-fuzzy-comment' => 'التعريف تغير بواسطة [[User:$1]] في المراجعة $2.',
@@ -3045,7 +3045,7 @@ Die Standardliste ist abhängig von der Sprache der Benutzeroberfläche.',
 	'translate-pref-editassistlang-bad' => 'Ungültiger Sprachcode in der Liste:
 <nowiki>$1</nowiki>.',
 	'translate-pref-jsedit' => 'Erweiterter Übersetzungseditor (JavaScript)',
-	'right-translate' => 'Benutzung des Übersetzen-Interfaces',
+	'right-translate' => 'Bearbeitungen mithilfe der Übersetzen-Oberfläche',
 	'right-translate-manage' => 'Übersetzungsgruppen verwalten',
 	'right-translate-import' => 'Offlineübersetzungen importieren',
 	'translate-rc-translation-filter' => 'Übersetzungen filtern:',
@@ -10279,6 +10279,7 @@ Endringar vert ikkje lagra før du klikkar på lagreknappen nedanfor.',
 	'translate-magic-module' => 'Modul:',
 	'translate-magic-submit' => 'Hent',
 	'translate-magic-cm-export' => 'Eksporter',
+	'translate-magic-nothing-to-export' => 'Det er ingenting å eksportera.',
 	'translate-magic-cm-to-be' => 'Framtidig',
 	'translate-magic-cm-current' => 'Noverande',
 	'translate-magic-cm-original' => 'Original',
@@ -10359,6 +10360,10 @@ Du kan [$1 endre kjeldesida] eller [$2 oppdatere omsetjinga].',
 	'translate-nothing-to-do' => 'Det ser ut til at alle moglege omsetjingar er vortne gjorde.
 Sjå gjerne over meldingar gjennom [[Special:Translate|{{int:translate}}]].',
 	'translate-save' => 'Lagra ($1)',
+	'translate-jssti-add' => 'Legg til i lista',
+	'translate-manage-import-new' => 'Ny melding $1',
+	'translate-manage-import-done' => 'Alt klart!',
+	'translate-manage-subtitle' => 'Handtera',
 	'importtranslations' => 'Importér omsetjingar',
 );
 
