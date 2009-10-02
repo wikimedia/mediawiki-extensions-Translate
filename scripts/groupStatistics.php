@@ -9,7 +9,80 @@
  * @file
  */
 
-$optionsWithArgs = array( 'groups', 'output', 'skiplanguages', );
+$mostSpokenLanguages = array(
+	// 'language code' => array( position, ethnologue, encarta, average ), // Remark
+	// Source: http://en.wikipedia.org/w/index.php?title=List_of_languages_by_number_of_native_speakers&oldid=317526109
+	'zh-hans'  => array( 1, 845000, 844700, 844850 ),
+	'zh-hant'  => array( 1, 845000, 844700, 844850 ),
+	'es'       => array( 2, 329000, 322000, 325500 ),
+	'en'       => array( 3, 328000, 341000, 334500 ),
+	'hi'       => array( 4, 182000, 366000, 274000 ), // Classified together with Urdu
+	'ur'       => array( 4,  60600,  60290,  60445 ), // Classified together with Hindi
+	'ar'       => array( 5, 221000, 422039, 321519 ),
+	'bn'       => array( 6, 181000, 207000, 194000 ),
+	'pt'       => array( 7, 178000, 176000, 177000 ),
+	'pt-br'    => array( 7, 178000, 176000, 177000 ),
+	'ru'       => array( 8, 144000, 167000, 155500 ),
+	'ja'       => array( 9, 122000, 125000, 123500 ),
+	'de'       => array( 10, 90300, 100130,  95215 ),
+	'jv'       => array( 11, 84600,  75567,  80083 ),
+	'wuu'      => array( 12, 77200,  77200,  77200 ), // No encarta data
+	'ko'       => array( 13, 75000,  78000,  76500 ),
+	'pnb'      => array( 14, 78300,  72188,  75244 ), // Most spoken variant
+	'fr'       => array( 15, 67800,  78000,  72900 ),
+	'te'       => array( 16, 69800,  69666,  69733 ),
+	'vi'       => array( 17, 68600,  68000,  68300 ),
+	'mr'       => array( 18, 68100,  68022,  68061 ),
+	'ta'       => array( 19, 65700,  66000,  65850 ),
+	'it'       => array( 20, 61700,  62000,  61850 ),
+	'tr'       => array( 21, 59000,  61000,  60000 ),
+	'fa'       => array( 22, 72000,  31300,  51650 ),
+	'yue'      => array( 23, 55500,  55000,  55250 ), // No encarta data
+	'tl'       => array( 24, 48900,  17000,  32950 ),
+	'gu'       => array( 25, 46500,  46100,  46300 ),
+	'nan'      => array( 26, 46200,  46200,  46200 ), // No encarta data, most spoken variant
+	'pl'       => array( 27, 40000,  44000,  42000 ),
+	'uk'       => array( 28, 39400,  47000,  43200 ),
+	'hsn'      => array( 29, 36000,  36000,  36000 ), // No encarta data
+	'ml'       => array( 30, 35706,  35706,  35706 ),
+	'kn'       => array( 31, 35400,  35400,  35400 ),
+	'mai'      => array( 32, 45000,  24191,  34595 ),
+	'bh'       => array( 33, 38500,  26254,  32377 ),
+	'my'       => array( 34, 32300,  32300,  32300 ),
+	'or'       => array( 35, 31700,  32300,  32000 ),
+	'ms'       => array( 36, 39100,  23600,  31350 ),
+	'su'       => array( 37, 34000,  27000,  30500 ),
+	'hak'      => array( 38, 30000,  30000,  30000 ), // No encarta data
+	'ro'       => array( 39, 23400,  26265,  24832 ),
+	'az'       => array( 40, 19100,  31400,  25250 ),
+	'ha'       => array( 41, 24200,  24200,  24200 ),
+	'ps'       => array( 42, 19000,  26811,  22905 ),
+	'gan-hans' => array( 43, 21000,  21000,  21000 ),
+	'gan-hant' => array( 43, 21000,  21000,  21000 ),
+	'id'       => array( 44, 23200,  17100,  20150 ),
+	'th'       => array( 45, 20050,  46100,  33075 ),
+	'nl'       => array( 46, 21700,  20000,  20850 ),
+	'yo'       => array( 47, 20000,  20000,  20000 ),
+	'sd'       => array( 48, 19720,  19720,  19720 ),
+	'uz'       => array( 49, 18466,  20100,  19283 ),
+	'sh'       => array( 50, 16400,  21100,  18750 ),
+);
+
+$localisedWeights = array(
+	'wikimedia' => array(
+		'core-mostused'   => 40,
+		'core'            => 30,
+		'ext-0-wikimedia' => 30
+	),
+	'mediawiki' => array(
+		'core-mostused'   => 30,
+		'core'            => 30,
+		'ext-0-wikimedia' => 20,
+		'ext-0-all'       => 20
+	)
+);
+
+$optionsWithArgs = array( 'groups', 'output', 'skiplanguages', 'most' );
 require( dirname( __FILE__ ) . '/cli.inc' );
 
 class TranslateStatsOutput extends WikiStatsOutput {
@@ -27,7 +100,7 @@ function showUsage() {
 	$msg = <<<END
 	--help : this help message
 	--groups LIST: comma separated list of groups
-	--skiplanguages LIST: comma separated list of languages that should be skipped
+	--skiplanguages LIST: comma separated list of skipped languages
 	--skipzero : skip languages that do not have any localisation at all
 	--fuzzy : add column for fuzzy counts
 	--output TYPE: select an another output engine
@@ -35,6 +108,21 @@ function showUsage() {
 		* 'wiki'     : MediaWiki syntax.
 		* 'metawiki' : MediaWiki syntax used for Meta-Wiki.
 		* 'text'     : Text with tabs.
+	--most : [SCOPE]: report on the 50 most spoken languages. Skipzero is
+			ignored. If a valid scope is defined, the group list is
+			has been chosen, the localisation levels are weighted
+			and reported.
+		* mediawiki:
+			core-mostused (30%)
+			core (30%)
+			ext-0-wikimedia (20%)
+			ext-0-all (20%)
+		* wikimedia:
+			core-mostused (40%)
+			core (30%)
+			ext-0-wikimedia (30%)
+	--speakers : add column for number of speakers (est.). Only valid when
+		     combined with --most.
 
 END;
 	STDERR( $msg );
@@ -87,15 +175,23 @@ if ( !count( $groups ) ) showUsage();
 
 // List of all languages.
 $languages = Language::getLanguageNames( false );
-// Default sorting order by language code, users can sort wiki output by any
-// column, if it is supported.
+// Default sorting order by language code, users can sort wiki output.
 ksort( $languages );
 
 // Output headers
 $out->heading();
 $out->blockstart();
+
+// Add header column for language size
+if( isset( $options['most'] ) ) {
+	$out->element( 'Pos.', true );
+}
 $out->element( 'Code', true );
 $out->element( 'Language', true );
+
+if( isset( $options['most'] ) && isset( $options['speakers'] ) ) {
+	$out->element( 'Speakers', true );
+}
 foreach ( $groups as $g ) {
 	// Add unprocessed description of group as heading
 	$out->element( $g->getLabel(), true );
@@ -121,13 +217,19 @@ foreach ( $groups as $groupName => $g ) {
 	// Perform the statistic calculations on every language
 	foreach ( $languages as $code => $name ) {
 		// Skip list
-		if ( in_array( $code, $skipLanguages ) ) continue;
+		if ( !isset( $options['most'] ) && in_array( $code, $skipLanguages ) ) {
+			continue;
+		}
+
+		// If --most is set, skip all other
+		if ( isset( $options['most'] ) && !isset( $mostSpokenLanguages[$code] ) ) {
+			continue;
+		}
 
 		$incache = $cache->get( $groupName, $code );
 		if ( $incache !== false ) {
 			list( $fuzzy, $translated, $total ) = $incache;
 		} else {
-
 			$collection->resetForNewLanguage( $code );
 			$collection->filter( 'ignored' );
 			$collection->filter( 'optional' );
@@ -153,14 +255,21 @@ foreach ( $groups as $groupName => $g ) {
 
 	}
 
-	$cache->commit(); // Don't keep open too long... to avoid concurrent access
+	$cache->commit(); // Do not keep open too long to avoid concurrent access
 
 	unset($collection);
 }
 
 foreach ( $languages as $code => $name ) {
 	// Skip list
-	if ( in_array( $code, $skipLanguages ) ) continue;
+	if ( !isset( $options['most'] ) && in_array( $code, $skipLanguages ) ) {
+		continue;
+	}
+
+	// If --most is set, skip all other
+	if ( isset( $options['most'] ) && !isset( $mostSpokenLanguages[$code] ) ) {
+		continue;
+	}
 
 	$columns = $rows[$code];
 
@@ -174,8 +283,14 @@ foreach ( $languages as $code => $name ) {
 
 	// Output the the row
 	$out->blockstart();
+	if( isset( $options['most'] ) ) {
+		$out->element( $mostSpokenLanguages[$code][0] );
+	}
 	$out->element( $code );
 	$out->element( $name );
+	if( isset( $options['most'] ) && isset( $options['speakers'] ) ) {
+		$out->element( number_format( $mostSpokenLanguages[$code][3] ) );
+	}
 	foreach ( $columns as $fields ) {
 		list( $invert, $upper, $total ) = $fields;
 		$c = $out->formatPercent( $upper, $total, $invert, /* Decimals */ 2 );
