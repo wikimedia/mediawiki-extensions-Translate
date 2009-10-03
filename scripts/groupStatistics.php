@@ -92,7 +92,11 @@ class TranslateStatsOutput extends WikiStatsOutput {
 }
 
 if ( isset( $options['help'] ) ) showUsage();
-if ( !isset( $options['groups'] ) ) showUsage();
+
+// Show help and exit if '--most' does not have a valid value and no groups set
+if ( !isset( $localisedWeights[$options['most']] ) && !isset( $options['groups'] ) ) {
+	showUsage();
+}
 if ( !isset( $options['output'] ) ) $options['output'] = 'default';
 
 /** Print a usage message*/
@@ -109,9 +113,9 @@ function showUsage() {
 		* 'metawiki' : MediaWiki syntax used for Meta-Wiki.
 		* 'text'     : Text with tabs.
 	--most : [SCOPE]: report on the 50 most spoken languages. Skipzero is
-			ignored. If a valid scope is defined, the group list is
-			ignored and the localisation levels are weighted and
-			reported.
+			ignored. If a valid scope is defined, the group list
+			and fuzzy are ignored and the localisation levels are
+			weighted and reported.
 		* mediawiki:
 			core-mostused (30%)
 			core (30%)
@@ -158,9 +162,18 @@ if ( isset( $options['skiplanguages'] ) ) {
 	$skipLanguages = array_map( 'trim', explode( ',', $options['skiplanguages'] ) );
 }
 
+$reportScore = false;
+if ( isset( $options['most'] ) && isset( $localisedWeights[$options['most']] ) ) {
+	$reportScore = true;
+}
+
 // Get groups from input
 $groups = array();
-$reqGroups = array_map( 'trim', explode( ',', $options['groups'] ) );
+if( $reportScore ) {
+	$reqGroups = array_keys( $localisedWeights[$options['most']] );
+} else {
+	$reqGroups = array_map( 'trim', explode( ',', $options['groups'] ) );
+}
 
 // List of all groups
 $allGroups = MessageGroups::singleton()->getGroups();
@@ -199,6 +212,9 @@ if( ( $options['output'] == 'wiki' || $options['output'] == 'default' ) &&
 if( isset( $options['most'] ) && isset( $options['speakers'] ) ) {
 	$out->element( 'Speakers', true );
 }
+/*if( $reportScore ) {
+	$out->element( 'Score', true );
+}*/
 foreach ( $groups as $g ) {
 	// Add unprocessed description of group as heading
 	$out->element( $g->getLabel(), true );
@@ -327,8 +343,15 @@ foreach ( $languages as $code => $name ) {
 		$out->element( number_format( $mostSpokenLanguages[$code][3] ) );
 	}
 
+	// Fill the score field
+	/*if( $reportScore ) {
+		$weights = $localisedWeights[$options['most']];
+	}*/
+
 	// Fill fields for groups
 	foreach ( $columns as $fields ) {
+		//var_dump( $fields, true );
+		//exit(1);
 		list( $invert, $upper, $total ) = $fields;
 		$c = $out->formatPercent( $upper, $total, $invert, /* Decimals */ 2 );
 		$out->element( $c );
