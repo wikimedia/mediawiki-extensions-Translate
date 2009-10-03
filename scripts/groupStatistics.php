@@ -297,7 +297,7 @@ foreach ( $languages as $code => $name ) {
 	$out->element( $code );
 
 	// Fill language name field
-	if( ( $options['output'] == 'wiki' &&
+	if( $options['output'] == 'wiki' &&
 	  !isset( $options['nol10n'] ) &&
 	  function_exists( 'efI18nTagsInit' ) ) {
 		$out->element( "{{#languagename:" . $code . "}}" );
