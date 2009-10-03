@@ -10,6 +10,7 @@
  */
 
 $mostSpokenLanguages = array(
+	// FIXME: Continent toevoegen (africa, america, asia, australia, europe (timezoneregion-), all ('searchall'))
 	// 'language code' => array( position, ethnologue, encarta, average ), // Remark
 	// Source: http://en.wikipedia.org/w/index.php?title=List_of_languages_by_number_of_native_speakers&oldid=317526109
 	'zh-hans'  => array( 1, 845000, 844700, 844850 ),
@@ -123,6 +124,7 @@ function showUsage() {
 			ext-0-wikimedia (30%)
 	--speakers : add column for number of speakers (est.). Only valid when
 		     combined with --most.
+	--nol10n : do not add localised language name if I18ntags is installed.
 
 END;
 	STDERR( $msg );
@@ -290,7 +292,7 @@ foreach ( $languages as $code => $name ) {
 	// Fill language code field
 	$out->element( $code );
 	// Fill language name field
-	if( function_exists( 'efI18nTagsInit' ) ) {
+	if( !isset( $options['nol10n'] ) && function_exists( 'efI18nTagsInit' ) ) {
 		$out->element( "{{#languagename:" . $code . "}}" );
 	} else {
 		$out->element( $name );
