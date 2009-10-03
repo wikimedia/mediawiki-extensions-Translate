@@ -82,7 +82,7 @@ $localisedWeights = array(
 	)
 );
 
-$optionsWithArgs = array( 'groups', 'output', 'skiplanguages', 'most' );
+$optionsWithArgs = array( 'groups', 'output', 'skiplanguages' );
 require( dirname( __FILE__ ) . '/cli.inc' );
 
 class TranslateStatsOutput extends WikiStatsOutput {
@@ -110,8 +110,8 @@ function showUsage() {
 		* 'text'     : Text with tabs.
 	--most : [SCOPE]: report on the 50 most spoken languages. Skipzero is
 			ignored. If a valid scope is defined, the group list is
-			has been chosen, the localisation levels are weighted
-			and reported.
+			ignored and the localisation levels are weighted and
+			reported.
 		* mediawiki:
 			core-mostused (30%)
 			core (30%)
@@ -125,7 +125,7 @@ function showUsage() {
 		     combined with --most.
 	--nol10n : do not add localised language name if I18ntags is installed.
 	--continent : add a continent column. Only available when output is
-		      'wiki'.
+		      'wiki' or not specified.
 
 END;
 	STDERR( $msg );
@@ -191,7 +191,8 @@ if( isset( $options['most'] ) ) {
 }
 $out->element( 'Code', true );
 $out->element( 'Language', true );
-if( $options['output'] == 'wiki' && isset( $options['continent'] ) ) {
+if( ( $options['output'] == 'wiki' || $options['output'] == 'default' ) &&
+  isset( $options['continent'] ) ) {
 	$out->element( 'Continent', true );
 }
 
@@ -299,7 +300,7 @@ foreach ( $languages as $code => $name ) {
 	$out->element( $code );
 
 	// Fill language name field
-	if( $options['output'] == 'wiki' &&
+	if( ( $options['output'] == 'wiki' || $options['output'] == 'default' ) &&
 	  !isset( $options['nol10n'] ) &&
 	  function_exists( 'efI18nTagsInit' ) ) {
 		$out->element( "{{#languagename:" . $code . "}}" );
@@ -308,11 +309,12 @@ foreach ( $languages as $code => $name ) {
 	}
 
 	// Fill continent field
-	if( $options['output'] == 'wiki' && isset( $options['continent'] ) ) {
+	if( ( $options['output'] == 'wiki' || $options['output'] == 'default' ) &&
+	  isset( $options['continent'] ) ) {
 		if( $mostSpokenLanguages[$code][4] == 'multiple' ) {
 			$continent = '';
 		} else {
-			$content = "{{int:timezoneregion-" . $mostSpokenLanguages[$code][4] . "}}";
+			$continent = "{{int:timezoneregion-" . $mostSpokenLanguages[$code][4] . "}}";
 		}
 		$out->element( $continent );
 	}
