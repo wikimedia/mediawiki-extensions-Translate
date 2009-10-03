@@ -122,7 +122,7 @@ EOEO;
 	static function addTools( $object ) {
 		if ( !self::isMessageNamespace( $object->mTitle ) ) return true;
 		
-		TranslateEditAddons::addNavigation( &$ignored, $object->editFormTextTop );
+		TranslateEditAddons::addNavigation( $ignored, $object->editFormTextTop );
 		$object->editFormTextTop .= self::editBoxes( $object );
 
 		return true;
