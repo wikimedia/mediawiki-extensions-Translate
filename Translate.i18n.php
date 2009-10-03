@@ -6681,7 +6681,7 @@ A változtatások nem mentődnek, míg alul a mentés gombra nem kattintasz.',
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => 'A következő {{PLURAL:$2|paraméter ismeretlen|paraméterek ismeretlenek}}:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-balance' => 'Nem egyenlő számban vannak használva a nyitó- és zárójelek:
+	'translate-checks-balance' => 'Nem egyenlő számban vannak használva a nyitó és záró {{PLURAL:$2|zárójelek|zárójelek}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => 'A következő {{PLURAL:$2|link problémás|linkek problémásak}}:
 <strong><nowiki>$1</nowiki></strong>',
@@ -11419,6 +11419,7 @@ Encorajamo-lo a rever mensagens através de [[Special:Translate|{{int:translate}
 	'translate-group-desc-uniwiki' => 'Meta-grupo de mensagens contendo todas as mensagens para extensões relacionadas com o [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-manage-import-new' => 'Nova mensagem $1',
 	'translate-manage-import-deleted' => 'Eliminada mensagem $1',
+	'translate-js-fb' => 'Edição normal',
 );
 
 /** Brazilian Portuguese (Português do Brasil)
