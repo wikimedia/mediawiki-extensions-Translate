@@ -283,14 +283,23 @@ foreach ( $languages as $code => $name ) {
 
 	// Output the the row
 	$out->blockstart();
+	// Fill language position field
 	if( isset( $options['most'] ) ) {
 		$out->element( $mostSpokenLanguages[$code][0] );
 	}
+	// Fill language code field
 	$out->element( $code );
-	$out->element( $name );
+	// Fill language name field
+	if( function_exists( 'efI18nTagsInit' ) ) {
+		$out->element( "{{#languagename|" . $code . "}}" );
+	} else {
+		$out->element( $name );
+	}
+	// Fill speakers field
 	if( isset( $options['most'] ) && isset( $options['speakers'] ) ) {
 		$out->element( number_format( $mostSpokenLanguages[$code][3] ) );
 	}
+	// Fill fields for groups
 	foreach ( $columns as $fields ) {
 		list( $invert, $upper, $total ) = $fields;
 		$c = $out->formatPercent( $upper, $total, $invert, /* Decimals */ 2 );
