@@ -86,7 +86,7 @@ $localisedWeights = array(
 $optionsWithArgs = array( 'groups', 'output', 'skiplanguages' );
 require( dirname( __FILE__ ) . '/cli.inc' );
 
-class TranslateStatsOutput extends WikiStatsOutput {
+class TranslateStatsOutput extends wikiStatsOutput {
 	function heading() {
 		echo '{| class="sortable wikitable" border="2" cellpadding="4" cellspacing="0" style="background-color: #F9F9F9; border: 1px #AAAAAA solid; border-collapse: collapse; clear:both;" width="100%"' . "\n";
 	}
@@ -164,8 +164,13 @@ if ( isset( $options['skiplanguages'] ) ) {
 }
 
 $reportScore = false;
+// Check if score should be reported and prepare weights
 if ( isset( $options['most'] ) && isset( $localisedWeights[$options['most']] ) ) {
 	$reportScore = true;
+	$weights = array();
+	foreach( $localisedWeights[$options['most']] as $weight ) {
+		$weights[] = $weight;
+	}
 }
 
 // Get groups from input
@@ -213,16 +218,29 @@ if( ( $options['output'] == 'wiki' || $options['output'] == 'default' ) &&
 if( isset( $options['most'] ) && isset( $options['speakers'] ) ) {
 	$out->element( 'Speakers', true );
 }
-/*if( $reportScore ) {
-	$out->element( 'Score', true );
-}*/
+
+$totalWeight = 0;
+if( $reportScore ) {
+	foreach( $localisedWeights[$options['most']] as $weight ) {
+		$totalWeight += $weight;
+	}
+	$out->element( 'Score (' . $totalWeight . ')', true );
+}
+
 foreach ( $groups as $g ) {
 	// Add unprocessed description of group as heading
-	$out->element( $g->getLabel(), true );
-	if ( isset( $options['fuzzy'] ) ) {
+	if( $reportScore ) {
+		$gid = $g->getId();
+		$heading = $g->getLabel() . " (" . $localisedWeights[$options['most']][$gid] . ")";
+	} else {
+		$heading = $g->getLabel();
+	}
+	$out->element( $heading, true );
+	if ( !$reportScore && isset( $options['fuzzy'] ) ) {
 		$out->element( 'Fuzzy', true );
 	}
 }
+
 $out->blockend();
 
 $rows = array();
@@ -345,16 +363,29 @@ foreach ( $languages as $code => $name ) {
 	}
 
 	// Fill the score field
-	/*if( $reportScore ) {
-		$weights = $localisedWeights[$options['most']];
-	}*/
+	if( $reportScore ) {
+		// Keep count
+		$i = 0;
+		// Start with 0 points
+		$score = 0;
+
+		foreach ( $columns as $fields ) {
+			list( $invert, $upper, $total ) = $fields;
+			// Weigh the score and add it to the current score
+			$score += ( $weights[$i] * $upper ) / $total;
+			$i++;
+		}
+
+		// Report a round numbers
+		$score = number_format( $score, 0 );
+
+		$out->element( $score );
+	}
 
 	// Fill fields for groups
 	foreach ( $columns as $fields ) {
-		//var_dump( $fields, true );
-		//exit(1);
 		list( $invert, $upper, $total ) = $fields;
-		$c = $out->formatPercent( $upper, $total, $invert, /* Decimals */ 2 );
+		$c = $out->formatPercent( $upper, $total, $invert );
 		$out->element( $c );
 	}
 	$out->blockend();
