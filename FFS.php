@@ -609,7 +609,7 @@ class RubyYamlFFS extends YamlFFS {
 
 		// Put the "other" alternative last, without other= prefix
 		$other = isset($messages['other']) ? '|' . $messages['other'] : '';
-		$pls .= "$other|}}";
+		$pls .= "$other}}";
 		return $pls;
 	}
 
@@ -622,13 +622,13 @@ class RubyYamlFFS extends YamlFFS {
 
 		// Replace all variables with placeholders. Possible source of bugs
 		// if other characters that given below are used.
-		$regex = '~\{\{a-zA-Z_-}}~';
+		$regex = '~\{\{[a-zA-Z_-]+}}~';
 		$placeholders = array();
 		$match = null;
-		while ( preg_match( $other, $message, $match ) ) {
-			$key = self::placeholder();
-			$placeholders[$key] = $match[0];
-			$message = preg_replace( $other, $key, $message );
+		while ( preg_match( $regex, $message, $match ) ) {
+			$uniqkey = self::placeholder();
+			$placeholders[$uniqkey] = $match[0];
+			$message = preg_replace( $regex, $uniqkey, $message );
 		}
 
 		// Then replace (possible multiple) plural instances into placeholders
@@ -636,9 +636,9 @@ class RubyYamlFFS extends YamlFFS {
 		$matches = array();
 		$match = null;
 		while ( preg_match( $regex, $message, $match ) ) {
-			$key = self::placeholder();
-			$matches[$key] = $match;
-			$message = preg_replace( $regex, $key, $message );
+			$uniqkey = self::placeholder();
+			$matches[$uniqkey] = $match;
+			$message = preg_replace( $regex, $uniqkey, $message );
 		}
 
 		// No plurals, should not happen
@@ -655,6 +655,7 @@ class RubyYamlFFS extends YamlFFS {
 		foreach ( $matches as $ph => $plu ) {
 			$forms = explode( '|', $plu[1] );
 			foreach ( $forms as $form ) {
+				if ( $form === '' ) continue;
 				$match = array();
 				if ( preg_match( $regex, $form, $match ) ) {
 					$formWord = "$key.{$match[1]}";
@@ -680,6 +681,6 @@ class RubyYamlFFS extends YamlFFS {
 
 	protected function placeholder() {
 		static $i = 0;
-		return "\x7fUNIQ" . dechex(mt_rand(0, 0x7fffffff)) . dechex(mt_rand(0, 0x7fffffff)) . '|' . $i++;
+		return "\x7fUNIQ" . dechex(mt_rand(0, 0x7fffffff)) . dechex(mt_rand(0, 0x7fffffff)) . $i++;
 	}
 }
