@@ -124,8 +124,8 @@ function showUsage() {
 	--speakers : add column for number of speakers (est.). Only valid when
 		     combined with --most.
 	--nol10n : do not add localised language name if I18ntags is installed.
-	--continent : add a continent column. Only available when output is not
-		      set or is 'wiki'.
+	--continent : add a continent column. Only available when output is
+		      'wiki'.
 
 END;
 	STDERR( $msg );
@@ -297,16 +297,16 @@ foreach ( $languages as $code => $name ) {
 	$out->element( $code );
 
 	// Fill language name field
-	if( ( !isset( $options['output'] ) || $options['output'] == 'wiki' ) &&
-	  !isset( $options['nol10n'] ) && function_exists( 'efI18nTagsInit' ) ) {
+	if( ( $options['output'] == 'wiki' &&
+	  !isset( $options['nol10n'] ) &&
+	  function_exists( 'efI18nTagsInit' ) ) {
 		$out->element( "{{#languagename:" . $code . "}}" );
 	} else {
 		$out->element( $name );
 	}
 
 	// Fill continent field
-	if( ( !isset( $options['output'] ) || $options['output'] == 'wiki' ) &&
-	  isset( $options['output'] ) ) {
+	if( $options['output'] == 'wiki' && isset( $options['output'] ) ) {
 		if( $mostSpokenLanguages[$code][4] == 'multiple' ) {
 			$continent = '';
 		} else {
