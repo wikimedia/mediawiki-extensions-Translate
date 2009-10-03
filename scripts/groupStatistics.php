@@ -191,7 +191,9 @@ if( isset( $options['most'] ) ) {
 }
 $out->element( 'Code', true );
 $out->element( 'Language', true );
-$out->element( 'Continent', true );
+if( $options['output'] == 'wiki' && isset( $options['continent'] ) ) {
+	$out->element( 'Continent', true );
+}
 
 if( isset( $options['most'] ) && isset( $options['speakers'] ) ) {
 	$out->element( 'Speakers', true );
@@ -306,7 +308,7 @@ foreach ( $languages as $code => $name ) {
 	}
 
 	// Fill continent field
-	if( $options['output'] == 'wiki' && isset( $options['output'] ) ) {
+	if( $options['output'] == 'wiki' && isset( $options['continent'] ) ) {
 		if( $mostSpokenLanguages[$code][4] == 'multiple' ) {
 			$continent = '';
 		} else {
