@@ -314,8 +314,11 @@ foreach ( $languages as $code => $name ) {
 		if( $mostSpokenLanguages[$code][4] == 'multiple' ) {
 			$continent = '';
 		} else {
-			$continent = "{{int:timezoneregion-" . $mostSpokenLanguages[$code][4] . "}}";
+			$continent = isset( $options['nol10n'] ) ?
+				ucfirst ( $mostSpokenLanguages[$code][4] ) :
+				"{{int:timezoneregion-" . $mostSpokenLanguages[$code][4] . "}}";
 		}
+
 		$out->element( $continent );
 	}
 
