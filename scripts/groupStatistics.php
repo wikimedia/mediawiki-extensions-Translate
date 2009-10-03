@@ -291,7 +291,7 @@ foreach ( $languages as $code => $name ) {
 	$out->element( $code );
 	// Fill language name field
 	if( function_exists( 'efI18nTagsInit' ) ) {
-		$out->element( "{{#languagename|" . $code . "}}" );
+		$out->element( "{{#languagename:" . $code . "}}" );
 	} else {
 		$out->element( $name );
 	}
