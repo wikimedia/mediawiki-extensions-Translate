@@ -65,7 +65,8 @@ $mostSpokenLanguages = array(
 	'yo'       => array( 47, 20000,  20000,  20000, 'africa' ),
 	'sd'       => array( 48, 19720,  19720,  19720, 'asia' ),
 	'uz'       => array( 49, 18466,  20100,  19283, 'asia' ),
-	'sh'       => array( 50, 16400,  21100,  18750, 'europe' ),
+	//'sh'       => array( 50, 16400,  21100,  18750, 'europe' ), // 'sh' is excluded because it is a macro language (Bosnian, Croatian, Serbian)
+	'ig'       => array( 50, 18000,  18000,  18000, 'africa' ),
 );
 
 $localisedWeights = array(
