@@ -617,20 +617,32 @@ class RubyYamlFFS extends YamlFFS {
 	 * Converts the special plural syntax to array or ruby style plurals
 	 */
 	protected function unflattenPlural( $key, $message ) {
-		$regex = '~\{\{PLURAL\|(.*?)\|}}~s';
-		$i = 0;
-		$matches = array();
-		$match = array();
-		// First replace (possibly multiple ) plural instances into placeholders
-		while ( preg_match( $regex, $message, $match ) ) {
-			$matches[$i] = $match;
-			$message = preg_replace( $regex, "d__{$i}__b", $message );
-			$match = array();
-			$i++;
+		// Quick escape
+		if ( strpos( $message, '{{PLURAL' ) === false ) return false;
+
+		// Replace all variables with placeholders. Possible source of bugs
+		// if other characters that given below are used.
+		$regex = '~\{\{a-zA-Z_-}}~';
+		$placeholders = array();
+		$match = null;
+		while ( preg_match( $other, $message, $match ) ) {
+			$key = self::placeholder();
+			$placeholders[$key] = $match[0];
+			$message = preg_replace( $other, $key, $message );
 		}
 
-		// No plurals
-		if ( $i === 0 ) return false;
+		// Then replace (possible multiple) plural instances into placeholders
+		$regex = '~\{\{PLURAL\|(.*?)}}~s';
+		$matches = array();
+		$match = null;
+		while ( preg_match( $regex, $message, $match ) ) {
+			$key = self::placeholder();
+			$matches[$key] = $match;
+			$message = preg_replace( $regex, $key, $message );
+		}
+
+		// No plurals, should not happen
+		if ( !count($matches) ) return false;
 
 		// The final array of alternative plurals forms
 		$alts = array();
@@ -640,7 +652,7 @@ class RubyYamlFFS extends YamlFFS {
 		// multiple plural bocks which don't have the same set of keys.
 		$pluralChoice = implode( '|', array_keys(self::$pluralWords) );
 		$regex = "~($pluralChoice)\s*=\s*(.+)~s";
-		foreach ( $matches as $i => $plu ) {
+		foreach ( $matches as $ph => $plu ) {
 			$forms = explode( '|', $plu[1] );
 			foreach ( $forms as $form ) {
 				$match = array();
@@ -654,10 +666,20 @@ class RubyYamlFFS extends YamlFFS {
 
 				if ( !isset($alts[$formWord]) ) $alts[$formWord] = $message;
 				$string = $alts[$formWord];
-				$alts[$formWord] = str_replace( "d__{$i}__b", $value, $string );
+				$alts[$formWord] = str_replace( $ph, $value, $string );
 			}
 		}
 
+		// Replace other variables
+		foreach ( $alts as &$value ) {
+			$value = str_replace( array_keys( $placeholders ), array_values( $placeholders ), $value );
+		}
+
 		return $alts;
+	}
+
+	protected function placeholder() {
+		static $i = 0;
+		return "\x7fUNIQ" . dechex(mt_rand(0, 0x7fffffff)) . dechex(mt_rand(0, 0x7fffffff)) . '|' . $i++;
 	}
 }
