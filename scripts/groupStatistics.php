@@ -10,63 +10,62 @@
  */
 
 $mostSpokenLanguages = array(
-	// 'language code' => array( position, ethnologue, encarta, average, continent ), // Remark
-	// Source: http://en.wikipedia.org/w/index.php?title=List_of_languages_by_number_of_native_speakers&oldid=317526109
-	'zh-hans'  => array( 1, 845000, 844700, 844850, 'asia' ),
-	'zh-hant'  => array( 1, 845000, 844700, 844850, 'asia' ),
-	'es'       => array( 2, 329000, 322000, 325500, 'multiple' ),
-	'en'       => array( 3, 328000, 341000, 334500, 'multiple' ),
-	'hi'       => array( 4, 182000, 366000, 274000, 'asia' ), // Classified together with Urdu
-	'ur'       => array( 4,  60600,  60290,  60445, 'asia' ), // Classified together with Hindi
-	'ar'       => array( 5, 221000, 422039, 321519, 'multiple' ),
-	'bn'       => array( 6, 181000, 207000, 194000, 'asia' ),
-	'pt'       => array( 7, 178000, 176000, 177000, 'multiple' ),
-	'pt-br'    => array( 7, 178000, 176000, 177000, 'america' ),
-	'ru'       => array( 8, 144000, 167000, 155500, 'multiple' ),
-	'ja'       => array( 9, 122000, 125000, 123500, 'asia' ),
-	'de'       => array( 10, 90300, 100130,  95215, 'europe' ),
-	'jv'       => array( 11, 84600,  75567,  80083, 'asia' ),
-	'wuu'      => array( 12, 77200,  77200,  77200, 'asia' ), // No encarta data
-	'ko'       => array( 13, 75000,  78000,  76500, 'asia' ),
-	'pnb'      => array( 14, 78300,  72188,  75244, 'asia' ), // Most spoken variant
-	'fr'       => array( 15, 67800,  78000,  72900, 'multiple' ),
-	'te'       => array( 16, 69800,  69666,  69733, 'asia' ),
-	'vi'       => array( 17, 68600,  68000,  68300, 'asia' ),
-	'mr'       => array( 18, 68100,  68022,  68061, 'asia' ),
-	'ta'       => array( 19, 65700,  66000,  65850, 'asia' ),
-	'it'       => array( 20, 61700,  62000,  61850, 'europe' ),
-	'tr'       => array( 21, 59000,  61000,  60000, 'multiple' ),
-	'fa'       => array( 22, 72000,  31300,  51650, 'asia' ),
-	'yue'      => array( 23, 55500,  55000,  55250, 'asia' ), // No encarta data
-	'tl'       => array( 24, 48900,  17000,  32950, 'asia' ),
-	'gu'       => array( 25, 46500,  46100,  46300, 'asia' ),
-	'nan'      => array( 26, 46200,  46200,  46200, 'asia' ), // No encarta data, most spoken variant
-	'pl'       => array( 27, 40000,  44000,  42000, 'europe' ),
-	'uk'       => array( 28, 39400,  47000,  43200, 'europe' ),
-	'hsn'      => array( 29, 36000,  36000,  36000, 'asia' ), // No encarta data
-	'ml'       => array( 30, 35706,  35706,  35706, 'asia' ),
-	'kn'       => array( 31, 35400,  35400,  35400, 'asia' ),
-	'mai'      => array( 32, 45000,  24191,  34595, 'asia' ),
-	'bh'       => array( 33, 38500,  26254,  32377, 'asia' ),
-	'my'       => array( 34, 32300,  32300,  32300, 'asia' ),
-	'or'       => array( 35, 31700,  32300,  32000, 'asia' ),
-	'ms'       => array( 36, 39100,  23600,  31350, 'asia' ),
-	'su'       => array( 37, 34000,  27000,  30500, 'asia' ),
-	'hak'      => array( 38, 30000,  30000,  30000, 'asia' ), // No encarta data
-	'ro'       => array( 39, 23400,  26265,  24832, 'europe' ),
-	'az'       => array( 40, 19100,  31400,  25250, 'asia' ),
-	'ha'       => array( 41, 24200,  24200,  24200, 'africa' ),
-	'ps'       => array( 42, 19000,  26811,  22905, 'asia' ),
-	'gan-hans' => array( 43, 21000,  21000,  21000, 'asia' ),
-	'gan-hant' => array( 43, 21000,  21000,  21000, 'asia' ),
-	'id'       => array( 44, 23200,  17100,  20150, 'asia' ),
-	'th'       => array( 45, 20050,  46100,  33075, 'asia' ),
-	'nl'       => array( 46, 21700,  20000,  20850, 'europe' ),
-	'yo'       => array( 47, 20000,  20000,  20000, 'africa' ),
-	'sd'       => array( 48, 19720,  19720,  19720, 'asia' ),
-	'uz'       => array( 49, 18466,  20100,  19283, 'asia' ),
-	//'sh'       => array( 50, 16400,  21100,  18750, 'europe' ), // 'sh' is excluded because it is a macro language (Bosnian, Croatian, Serbian)
-	'ig'       => array( 50, 18000,  18000,  18000, 'africa' ),
+	// 'language code' => array( position, speakers in millions, continent ),
+	// Source: http://stats.wikimedia.org/EN/Sitemap.htm
+	'en'       => array( 1, 1500, 'multiple' ),
+	'zh-hans'  => array( 2, 1300, 'asia' ),
+	'zh-hant'  => array( 2, 1300, 'asia' ),
+	'hi'       => array( 3,  550, 'asia' ),
+	'ar'       => array( 4,  530, 'multiple' ),
+	'es'       => array( 5,  500, 'multiple' ),
+	'ms'       => array( 6,  300, 'asia' ),
+	'pt'       => array( 7,  290, 'multiple' ),
+	'pt-br'    => array( 7,  290, 'america' ),
+	'ru'       => array( 8,  278, 'multiple' ),
+	'id'       => array( 9,  250, 'asia' ),
+	'bn'       => array( 10, 230, 'asia' ),
+	'fr'       => array( 11, 200, 'multiple' ),
+	'de'       => array( 12, 185, 'europe' ),
+	'ja'       => array( 13, 132, 'asia' ),
+	'fa'       => array( 14, 107, 'asia' ),
+	'pnb'      => array( 15, 104, 'asia' ), // Most spoken variant
+	'tl'       => array( 16,  90, 'asia' ),
+	'mr'       => array( 17,  90, 'asia' ),
+	'vi'       => array( 18,  80, 'asia' ),
+	'jv'       => array( 19,  80, 'asia' ),
+	'te'       => array( 20,  80, 'asia' ),
+	'ko'       => array( 21,  78, 'asia' ),
+	'wuu'      => array( 22,  77, 'asia' ),
+	'arz'      => array( 23,  76, 'africa' ),
+	'th'       => array( 24,  73, 'asia' ),
+	'yue'      => array( 25,  71, 'asia' ),
+	'tr'       => array( 26,  70, 'multiple' ),
+	'it'       => array( 27,  70, 'europe' ),
+	'ta'       => array( 28,  66, 'asia' ),
+	'ur'       => array( 29,  60, 'asia' ),
+	'my'       => array( 30,  52, 'asia' ),
+	'sw'       => array( 31,  50, 'africa' ),
+	'nan'      => array( 32,  49, 'asia' ),
+	'kn'       => array( 33,  47, 'asia' ),
+	'gu'       => array( 34,  46, 'asia' ),
+	'uk'       => array( 35,  45, 'europe' ),
+	'pl'       => array( 36,  43, 'europe' ),
+	'sd'       => array( 37,  41, 'asia' ),
+	'ha'       => array( 38,  39, 'africa' ),
+	'ml'       => array( 39,  37, 'asia' ),
+	'gan-hans' => array( 40,  35, 'asia' ),
+	'gan-hant' => array( 40,  35, 'asia' ),
+	'hak'      => array( 41,  34, 'asia' ),
+	'or'       => array( 42,  31, 'asia' ),
+	'ne'       => array( 43,  30, 'asia' ),
+	'ro'       => array( 44,  28, 'europe' ),
+	'su'       => array( 45,  27, 'asia' ),
+	'az'       => array( 46,  27, 'asia' ),
+	'nl'       => array( 47,  27, 'europe' ),
+	'zu'       => array( 48,  26, 'africa' ),
+	'ps'       => array( 49,  26, 'asia' ),
+	'ku-arab'  => array( 50,  26, 'asia' ),
+	'ku-latn'  => array( 50,  26, 'asia' ),
 );
 
 $localisedWeights = array(
@@ -346,12 +345,12 @@ foreach ( $languages as $code => $name ) {
 	// Fill continent field
 	if( ( $options['output'] == 'wiki' || $options['output'] == 'default' ) &&
 	  isset( $options['continent'] ) ) {
-		if( $mostSpokenLanguages[$code][4] == 'multiple' ) {
+		if( $mostSpokenLanguages[$code][2] == 'multiple' ) {
 			$continent = '';
 		} else {
 			$continent = isset( $options['nol10n'] ) ?
-				ucfirst ( $mostSpokenLanguages[$code][4] ) :
-				"{{int:timezoneregion-" . $mostSpokenLanguages[$code][4] . "}}";
+				ucfirst ( $mostSpokenLanguages[$code][2] ) :
+				"{{int:timezoneregion-" . $mostSpokenLanguages[$code][2] . "}}";
 		}
 
 		$out->element( $continent );
@@ -359,7 +358,7 @@ foreach ( $languages as $code => $name ) {
 
 	// Fill speakers field
 	if( isset( $options['most'] ) && isset( $options['speakers'] ) ) {
-		$out->element( number_format( $mostSpokenLanguages[$code][3] ) );
+		$out->element( number_format( $mostSpokenLanguages[$code][1] ) );
 	}
 
 	// Fill the score field
