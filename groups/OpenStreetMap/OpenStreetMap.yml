@@ -8,7 +8,7 @@ BASIC:
   class: FileBasedMessageGroup
 
 FILES:
-  class: YamlFFS
+  class: RubyYamlFFS
   sourcePattern: %GROUPROOT%/osm/site/%CODE%.yml
   codeAsRoot: 1
   targetPattern: %CODE%.yml
