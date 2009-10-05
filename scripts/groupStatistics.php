@@ -89,6 +89,10 @@ class TranslateStatsOutput extends wikiStatsOutput {
 	function heading() {
 		echo '{| class="sortable wikitable" border="2" cellpadding="4" cellspacing="0" style="background-color: #F9F9F9; border: 1px #AAAAAA solid; border-collapse: collapse; clear:both;" width="100%"' . "\n";
 	}
+
+	function summaryheading() {
+		echo "\n\n" . '{| class="sortable wikitable" border="2" cellpadding="4" cellspacing="0" style="background-color: #F9F9F9; border: 1px #AAAAAA solid; border-collapse: collapse; clear:both;"' . "\n";
+	}
 }
 
 if ( isset( $options['help'] ) ) showUsage();
@@ -130,6 +134,8 @@ function showUsage() {
 	--nol10n : do not add localised language name if I18ntags is installed.
 	--continent : add a continent column. Only available when output is
 		      'wiki' or not specified.
+	--summary : add a summary with counts and scores per continent category
+		    and totals. Only available for a valid 'most' value.
 
 END;
 	STDERR( $msg );
@@ -301,6 +307,12 @@ foreach ( $groups as $groupName => $g ) {
 	unset($collection);
 }
 
+// init summary array
+if( isset( $options['summary'] ) ) {
+	$summarise = true;
+	$summary = array();
+}
+
 foreach ( $languages as $code => $name ) {
 	// Skip list
 	if ( !isset( $options['most'] ) && in_array( $code, $skipLanguages ) ) {
@@ -378,6 +390,18 @@ foreach ( $languages as $code => $name ) {
 		// Report a round numbers
 		$score = number_format( $score, 0 );
 
+		if( $summarise ) {
+			$continent = $mostSpokenLanguages[$code][2];
+			if( isset( $summary[$continent] ) ) {
+				$newcount = $summary[$continent][0] + 1;
+				$newscore = $summary[$continent][1] + $score;
+			} else {
+				$newcount = 1;
+				$newscore = $score;
+			}
+
+			$summary[$continent] = array( $newcount, $newscore );
+		}
 		$out->element( $score );
 	}
 
@@ -390,5 +414,45 @@ foreach ( $languages as $code => $name ) {
 	$out->blockend();
 }
 
-# Finally output footer
 $out->footer();
+
+if( $reportScore && isset( $options['summary'] ) ) {
+	$out->summaryheading();
+
+	$out->blockstart();
+
+	$out->element( 'Continent', true );
+	$out->element( 'Count', true );
+	$out->element( 'Avg. score', true );
+
+	$out->blockend();
+
+	ksort( $summary );
+
+	$totals = array( 0, 0 );
+
+	foreach ( $summary as $key => $values ) {
+		$out->blockstart();
+
+		if( $key == 'multiple' ) {
+			$out->element( 'Multiple' );
+		} else {
+			$out->element( "{{int:timezoneregion-" . $key . "}}" );
+		}
+		$out->element( $values[0] );
+		$out->element( number_format( $values[1]/$values[0] ) );
+
+		$out->blockend();
+
+		$totals[0] += $values[0];
+		$totals[1] += $values[1];
+	}
+
+	$out->blockstart();
+	$out->element( 'Total' );
+	$out->element( $totals[0] );
+	$out->element( number_format( $totals[1]/$totals[0] ) );
+	$out->blockend();
+
+	$out->footer();
+}
