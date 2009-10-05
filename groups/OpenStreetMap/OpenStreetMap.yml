@@ -44,6 +44,7 @@ TAGS:
     - trace.edit.visibility_help_url
     - trace.trace_form.help_url
     - trace.trace_form.visibility_help_url
+    - user.account.public_editing.enabled_link
   ignored:
     - geocoder.search_osm_namefinder.prefix
     - printable_name.with_id
@@ -51,4 +52,3 @@ TAGS:
     - site.edit.anon_edits_link
     - site.index.license.license_url
     - site.index.license.project_url
-    - user.account.public_editing.enabled_link
