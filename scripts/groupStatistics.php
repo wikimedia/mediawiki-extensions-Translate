@@ -224,8 +224,7 @@ if( isset( $options['most'] ) ) {
 }
 $out->element( 'Code', true );
 $out->element( ( $l10n ? "{{int:translate-page-language}}" : 'Language' ), true );
-if( ( $options['output'] == 'wiki' || $options['output'] == 'default' ) &&
-  isset( $options['continent'] ) ) {
+if( isset( $options['continent'] ) ) {
 	$out->element( ( $l10n ? "{{int:translate-gs-continent}}" : 'Continent' ), true );
 }
 
@@ -361,14 +360,13 @@ foreach ( $languages as $code => $name ) {
 	}
 
 	// Fill continent field
-	if( ( $options['output'] == 'wiki' || $options['output'] == 'default' ) &&
-	  isset( $options['continent'] ) ) {
+	if( ( isset( $options['continent'] ) ) {
 		if( $mostSpokenLanguages[$code][2] == 'multiple' ) {
 			$continent = ( $l10n ? "{{int:translate-gs-multiple}}" : 'Multiple' );
 		} else {
 			$continent = $l10n ?
-				ucfirst ( $mostSpokenLanguages[$code][2] ) :
-				"{{int:timezoneregion-" . $mostSpokenLanguages[$code][2] . "}}";
+				"{{int:timezoneregion-" . $mostSpokenLanguages[$code][2] . "}}" :
+				ucfirst ( $mostSpokenLanguages[$code][2] );
 		}
 
 		$out->element( $continent );
