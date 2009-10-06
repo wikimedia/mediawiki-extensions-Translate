@@ -3,8 +3,10 @@
  * Statistics about message groups.
  *
  * @author Niklas Laxstrom
+ * @author Siebrand Mazeland
  *
  * @copyright Copyright © 2007-2008, Niklas Laxström
+ * @copyright Copyright © 2009, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  * @file
  */
@@ -178,6 +180,13 @@ if ( isset( $options['most'] ) && isset( $localisedWeights[$options['most']] ) )
 	}
 }
 
+// check if l10n should be done
+$l10n = false;
+if( ( $options['output'] == 'wiki' || $options['output'] == 'default' ) &&
+	  !isset( $options['nol10n'] ) ) {
+	$l10n = true;
+}
+
 // Get groups from input
 $groups = array();
 if( $reportScore ) {
@@ -211,17 +220,17 @@ $out->blockstart();
 
 // Add header column for language size
 if( isset( $options['most'] ) ) {
-	$out->element( 'Pos.', true );
+	$out->element( ( $l10n ? "{{int:translate-gs-pos" : 'Pos.' ), true );
 }
 $out->element( 'Code', true );
-$out->element( 'Language', true );
+$out->element( ( $l10n ? "{{int:translate-page-language}}" : 'Language' ), true );
 if( ( $options['output'] == 'wiki' || $options['output'] == 'default' ) &&
   isset( $options['continent'] ) ) {
-	$out->element( 'Continent', true );
+	$out->element( ( $l10n ? "{{int:translate-gs-continent}}" : 'Continent' ), true );
 }
 
 if( isset( $options['most'] ) && isset( $options['speakers'] ) ) {
-	$out->element( 'Speakers', true );
+	$out->element( ( $l10n ? "{{int:translate-gs-speakers}}" : 'Speakers' ), true );
 }
 
 $totalWeight = 0;
@@ -229,7 +238,7 @@ if( $reportScore ) {
 	foreach( $localisedWeights[$options['most']] as $weight ) {
 		$totalWeight += $weight;
 	}
-	$out->element( 'Score (' . $totalWeight . ')', true );
+	$out->element( ( $l10n ? "{{int:translate-gs-score}}" : 'Score' ) . ' (' . $totalWeight . ')', true );
 }
 
 foreach ( $groups as $g ) {
@@ -242,7 +251,7 @@ foreach ( $groups as $g ) {
 	}
 	$out->element( $heading, true );
 	if ( !$reportScore && isset( $options['fuzzy'] ) ) {
-		$out->element( 'Fuzzy', true );
+		$out->element( ( $l10n ? "{{int:translate-percentage-fuzzy}}" : 'Fuzzy' ), true );
 	}
 }
 
@@ -299,7 +308,6 @@ foreach ( $groups as $groupName => $g ) {
 		if ( isset( $options['fuzzy'] ) ) {
 			$rows[$code][] = array( true, $fuzzy, $total );
 		}
-
 	}
 
 	$cache->commit(); // Do not keep open too long to avoid concurrent access
@@ -346,9 +354,7 @@ foreach ( $languages as $code => $name ) {
 	$out->element( $code );
 
 	// Fill language name field
-	if( ( $options['output'] == 'wiki' || $options['output'] == 'default' ) &&
-	  !isset( $options['nol10n'] ) &&
-	  function_exists( 'efI18nTagsInit' ) ) {
+	if( $l10n && function_exists( 'efI18nTagsInit' ) ) {
 		$out->element( "{{#languagename:" . $code . "}}" );
 	} else {
 		$out->element( $name );
@@ -358,9 +364,9 @@ foreach ( $languages as $code => $name ) {
 	if( ( $options['output'] == 'wiki' || $options['output'] == 'default' ) &&
 	  isset( $options['continent'] ) ) {
 		if( $mostSpokenLanguages[$code][2] == 'multiple' ) {
-			$continent = '';
+			$continent = ( $l10n ? "{{int:translate-gs-multiple}}" : 'Multiple' );
 		} else {
-			$continent = isset( $options['nol10n'] ) ?
+			$continent = $l10n ?
 				ucfirst ( $mostSpokenLanguages[$code][2] ) :
 				"{{int:timezoneregion-" . $mostSpokenLanguages[$code][2] . "}}";
 		}
@@ -421,9 +427,9 @@ if( $reportScore && isset( $options['summary'] ) ) {
 
 	$out->blockstart();
 
-	$out->element( 'Continent', true );
-	$out->element( 'Count', true );
-	$out->element( 'Avg. score', true );
+	$out->element( $l10n ? "{{int:translate-gs-continent}}" : 'Continent', true );
+	$out->element( $l10n ? "{{int:translate-gs-count}}" : 'Count', true );
+	$out->element( $l10n ? "{{int:translate-gs-avgscore}}" : 'Avg. score', true );
 
 	$out->blockend();
 
@@ -435,9 +441,9 @@ if( $reportScore && isset( $options['summary'] ) ) {
 		$out->blockstart();
 
 		if( $key == 'multiple' ) {
-			$out->element( 'Multiple' );
+			$out->element( $l10n ? "{{int:translate-gs-multiple}}" : 'Multiple' );
 		} else {
-			$out->element( "{{int:timezoneregion-" . $key . "}}" );
+			$out->element( $l10n ? "{{int:timezoneregion-" . $key . "}}" : ucfirst( $key ) );
 		}
 		$out->element( $values[0] );
 		$out->element( number_format( $values[1]/$values[0] ) );
@@ -449,7 +455,7 @@ if( $reportScore && isset( $options['summary'] ) ) {
 	}
 
 	$out->blockstart();
-	$out->element( 'Total' );
+	$out->element( $l10n ? "{{int:translate-gs-total}}" : 'Total' );
 	$out->element( $totals[0] );
 	$out->element( number_format( $totals[1]/$totals[0] ) );
 	$out->blockend();

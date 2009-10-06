@@ -308,6 +308,17 @@ Make sure your editor does not remove msgctxt fields.
 Details: $1',
 
 	'translate-js-fb' => 'Normal edit',
+
+	// scripts/groupStatistics.php related messages
+	'translate-gs-pos' => 'Pos.',
+	'translate-gs-code' => 'Code',
+	'translate-gs-continent' => 'Continent',
+	'translate-gs-speakers' => 'Speakers',
+	'translate-gs-score' => 'Score',
+	'translate-gs-multiple' => 'Multiple',
+	'translate-gs-count' => 'Count',
+	'translate-gs-total' => 'Total',
+	'translate-gs-avgscore' => 'Avg. score',
 );
 
 /** Message documentation (Message documentation)
