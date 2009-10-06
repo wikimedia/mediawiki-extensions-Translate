@@ -93,7 +93,7 @@ class TranslateStatsOutput extends wikiStatsOutput {
 	}
 
 	function summaryheading() {
-		echo "\n\n" . '{| class="sortable wikitable" border="2" cellpadding="4" cellspacing="0" style="background-color: #F9F9F9; border: 1px #AAAAAA solid; border-collapse: collapse; clear:both;"' . "\n";
+		echo "\n" . '{| class="sortable wikitable" border="2" cellpadding="4" cellspacing="0" style="background-color: #F9F9F9; border: 1px #AAAAAA solid; border-collapse: collapse; clear:both;"' . "\n";
 	}
 }
 
@@ -220,7 +220,7 @@ $out->blockstart();
 
 // Add header column for language size
 if( isset( $options['most'] ) ) {
-	$out->element( ( $l10n ? "{{int:translate-gs-pos" : 'Pos.' ), true );
+	$out->element( ( $l10n ? "{{int:translate-gs-pos}}" : 'Pos.' ), true );
 }
 $out->element( 'Code', true );
 $out->element( ( $l10n ? "{{int:translate-page-language}}" : 'Language' ), true );
