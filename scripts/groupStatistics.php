@@ -360,7 +360,7 @@ foreach ( $languages as $code => $name ) {
 	}
 
 	// Fill continent field
-	if( ( isset( $options['continent'] ) ) {
+	if( isset( $options['continent'] ) ) {
 		if( $mostSpokenLanguages[$code][2] == 'multiple' ) {
 			$continent = ( $l10n ? "{{int:translate-gs-multiple}}" : 'Multiple' );
 		} else {
