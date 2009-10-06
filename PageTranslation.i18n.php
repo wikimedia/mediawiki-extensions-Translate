@@ -2472,14 +2472,35 @@ Tên: $1',
 Chỉ có các phiên bản mới nhất mới có thể đánh dấu cần dịch được.',
 	'tpt-notsuitable' => 'Trang $1 không phù hợp để dịch thuật.
 Hãy đảm bảo là nó có thẻ <nowiki><translate></nowiki> và có cú pháp đúng.',
+	'tpt-saveok' => 'Trang [[$1]] đã được đánh dấu chờ dịch với $2 đơn vị dịch thuật.
+Bạn có thể <span class="plainlinks">[$3 dịch]</span> trang ngay bây giờ.',
+	'tpt-badsect' => '"$1" không phải là tên hợp lệ cho đơn vị dịch thuật $2.',
+	'tpt-showpage-intro' => 'Dưới đây là các mục mới, đang tồn tại hoặc đã bị xóa.
+Trước khi đánh dấu phiên bản này chờ dịch, hãy kiểm tra những thay đổi tại các mục đã được thu gọn lại để tránh công việc không cần thiết cho biên dịch viên chưa.',
+	'tpt-mark-summary' => 'Đánh dấu phiên bản này là cần dịch',
+	'tpt-edit-failed' => 'Không thể cập nhật trang: $1',
+	'tpt-already-marked' => 'Phiên bản mới nhất của trang này đã được đánh dấu cần dịch rồi.',
+	'tpt-list-nopages' => 'Chưa có trang này được đánh dấu cần dịch hoặc chưa sẵn sàng để được đánh dấu cần dịch.',
+	'tpt-old-pages' => 'Một phiên bản nào đó của {{PLURAL:$1||các}} trang này đã được đánh dấu cần dịch.',
+	'tpt-new-pages' => '{{PLURAL:$1|Trang|Các trang}} này có chứa văn bản có thẻ cần dịch, nhưng không có phiên bản nào của {{PLURAL:$1|nó|chúng}} được đánh dấu cần dịch.',
 	'tpt-rev-latest' => 'phiên bản mới nhất',
 	'tpt-rev-old' => 'khác biệt với phiên bản đánh dấu trước',
 	'tpt-rev-mark-new' => 'đánh dấu phiên bản này là cần dịch',
 	'tpt-translate-this' => 'dịch trang này',
 	'translate-tag-translate-link-desc' => 'Dịch trang này',
 	'translate-tag-markthis' => 'Đánh dấu trang này là cần dịch',
+	'translate-tag-markthisagain' => 'Trang này có <span class="plainlinks">[$1 thay đổi]</span> từ khi nó được <span class="plainlinks">[$2 đánh dấu cần dịch]</span> lần cuối.',
+	'translate-tag-hasnew' => 'Trang này có <span class="plainlinks">[$1 thay đổi]</span> chưa được đánh dấu cần dịch.',
+	'tpt-translation-intro' => 'Trang này là một <span class="plainlinks">[$1 bản dịch]</span> của trang [[$2]] và bản dịch đã hoàn thành $3% và theo phiên bản mới nhất.',
+	'tpt-translation-intro-fuzzy' => 'Các bản dịch lỗi thời được đánh dấu như thế này.',
 	'tpt-languages-legend' => 'Ngôn ngữ khác:',
+	'tpt-target-page' => 'Trang này không thể cập nhật bằng tay.
+Nó là một bản dịch của trang [[$1]] và có thể cập nhật bản dịch bằng cách sử dụng [$2 công cụ dịch thuật].',
+	'tpt-unknown-page' => 'Không gian tên này được dành cho các bản dịch trang nội dung.
+Trang bạn muốn sửa đổi dường như không tương ứng với trang nào đã được đánh dấu cần dịch.',
+	'tpt-install' => 'Chạy php maintenance/update.php hoặc cài đặt web để bật tính năng dịch trang.',
 	'tpt-render-summary' => 'Cập nhật đến phiên bản mới của trang nguồn',
+	'tpt-download-page' => 'Xuất trang cùng các bản dịch',
 );
 
 /** Volapük (Volapük)

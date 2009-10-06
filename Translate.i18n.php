@@ -453,6 +453,15 @@ fuzzy = mark translations for review',
 	'translate-import-err-no-such-file' => 'Used in [[Special:ImportTranslations]].',
 	'translate-import-err-no-headers' => 'Used in [[Special:ImportTranslations]].',
 	'translate-import-err-warnings' => 'Used in [[Special:ImportTranslations]].',
+	'translate-gs-pos' => "Used in wiki tables for localisation statistics as a column header for 'Positition' abbreviated. See [[Project:MediaWiki localisation in the 50 most spoken languages|example]]",
+	'translate-gs-code' => 'Used in wiki tables for localisation statistics as a column header for language code. See [[Project:MediaWiki localisation in the 50 most spoken languages|example]]',
+	'translate-gs-continent' => 'Used in wiki tables for localisation statistics as a column header for the continent where a language is spoken. See [[Project:MediaWiki localisation in the 50 most spoken languages|example]]',
+	'translate-gs-speakers' => 'Used in wiki tables for localisation statistics as a column header for the number of speakers of a language. See [[Project:MediaWiki localisation in the 50 most spoken languages|example]]',
+	'translate-gs-score' => 'Used in wiki tables for localisation statistics as a column header for the weighted score of the localisation of a language. See [[Project:MediaWiki localisation in the 50 most spoken languages|example]]',
+	'translate-gs-multiple' => 'Used in wiki tables for localisation statistics as a value in the Continent column when a language is spoken on more than one continent . See [[Project:MediaWiki localisation in the 50 most spoken languages|example]]',
+	'translate-gs-count' => 'Used in summary wiki tables for localisation statistics as a column header for the number of languages on a continent in the table above it. See [[Project:MediaWiki localisation in the 50 most spoken languages|example]]',
+	'translate-gs-total' => 'Used in summary wiki tables for localisation statistics as a row description for the row that contains summarised data for the table. See bottom table on [[Project:MediaWiki localisation in the 50 most spoken languages|example]]',
+	'translate-gs-avgscore' => 'Used in summary wiki tables for localisation statistics as a column header for the average score of languages on a continent in the table above it. See [[Project:MediaWiki localisation in the 50 most spoken languages|example]]',
 );
 
 /** Faeag Rotuma (Faeag Rotuma)
@@ -1661,6 +1670,8 @@ $1',
 Упэўніцеся што Ваш рэдактар не выдаляе палі msgctxt.
 Падрабязнасьці: $1',
 	'translate-js-fb' => 'Звычайнае рэдагаваньне',
+	'translate-gs-continent' => 'Кантынэнт',
+	'translate-gs-multiple' => 'Множны',
 );
 
 /** Bulgarian (Български)
@@ -3474,6 +3485,15 @@ Njemóžno kupku a rěc z datajowych głowow zwěsćiś.',
 Zawěsć, až twój editor njewótpórujo póla msgctxt.
 Drobnostki: $1',
 	'translate-js-fb' => 'Normalne wobźěłanje',
+	'translate-gs-pos' => 'Poz.',
+	'translate-gs-code' => 'Kod',
+	'translate-gs-continent' => 'Kontinent',
+	'translate-gs-speakers' => 'Powědarje',
+	'translate-gs-score' => 'Pogódnośenje',
+	'translate-gs-multiple' => 'Někotare',
+	'translate-gs-count' => 'Licba',
+	'translate-gs-total' => 'Dogromady',
+	'translate-gs-avgscore' => 'Pśerězne pogódnośenje',
 );
 
 /** Ewe (Eʋegbe)
@@ -3687,6 +3707,9 @@ $messages['el'] = array(
 	'translate-import-err-invalid-title' => 'Το όνομα του αρχείου <nowiki>$1</nowiki> δεν ήταν έγκυρο.',
 	'translate-import-err-no-such-file' => 'Το αρχείο <nowiki>$1</nowiki> δεν υπάρχει ή δεν έχει φορτωθεί τοπικά.',
 	'translate-js-fb' => 'Κανονική επεξεργασία',
+	'translate-gs-continent' => 'Ήπειρος',
+	'translate-gs-speakers' => 'Ομιλητές',
+	'translate-gs-multiple' => 'Πολλαπλές',
 );
 
 /** Esperanto (Esperanto)
@@ -4921,6 +4944,15 @@ il est impossible de déterminer le groupe et la langue depuis les entêtes du f
 Assurez-vous que votre outil de traduction ne supprime pas les champs « msgctxt ».
 Détails : $1',
 	'translate-js-fb' => 'Modification normale',
+	'translate-gs-pos' => 'Pos.',
+	'translate-gs-code' => 'Code',
+	'translate-gs-continent' => 'Continent',
+	'translate-gs-speakers' => 'Locuteurs',
+	'translate-gs-score' => 'Score',
+	'translate-gs-multiple' => 'Multiple',
+	'translate-gs-count' => 'Compte',
+	'translate-gs-total' => 'Total',
+	'translate-gs-avgscore' => 'Score moyen',
 );
 
 /** Cajun French (Français cadien)
@@ -5420,6 +5452,15 @@ non se poden determinar o grupo e a lingua a partir das cabeceiras do ficheiro.'
 Asegúrese de que o seu editor non elimina campos msgctxt.
 Detalles: $1',
 	'translate-js-fb' => 'Edición normal',
+	'translate-gs-pos' => 'Pos.',
+	'translate-gs-code' => 'Código',
+	'translate-gs-continent' => 'Continente',
+	'translate-gs-speakers' => 'Falantes',
+	'translate-gs-score' => 'Puntuación',
+	'translate-gs-multiple' => 'Múltiples',
+	'translate-gs-count' => 'Conta',
+	'translate-gs-total' => 'Total',
+	'translate-gs-avgscore' => 'Puntuación media',
 );
 
 /** Gothic (Gothic)
@@ -6514,6 +6555,15 @@ Njeje móžno skupinu a rěč z hłowy dataje zwěsćić.',
 Zawěsć, zo twój editor pola <tt>msgctxt</tt> njewotstronja.
 Podrobnosće: $1',
 	'translate-js-fb' => 'Normalne wobdźěłanje',
+	'translate-gs-pos' => 'Poz.',
+	'translate-gs-code' => 'Kod',
+	'translate-gs-continent' => 'Kontinent',
+	'translate-gs-speakers' => 'Rěčnicy',
+	'translate-gs-score' => 'Pohódnoćenje',
+	'translate-gs-multiple' => 'Wjacore',
+	'translate-gs-count' => 'Ličba',
+	'translate-gs-total' => 'Dohromady',
+	'translate-gs-avgscore' => 'Přerězne pohódnoćenje',
 );
 
 /** Haitian (Kreyòl ayisyen)
@@ -7022,6 +7072,15 @@ Non pote determinar le gruppo e lingua ex le capites del file.',
 Assecura te que tu editor non remove le campos msgctxt.
 Detalios: $1',
 	'translate-js-fb' => 'Modification normal',
+	'translate-gs-pos' => 'Pos.',
+	'translate-gs-code' => 'Codice',
+	'translate-gs-continent' => 'Continente',
+	'translate-gs-speakers' => 'Parlantes',
+	'translate-gs-score' => 'Score',
+	'translate-gs-multiple' => 'Multiple',
+	'translate-gs-count' => 'Conto',
+	'translate-gs-total' => 'Total',
+	'translate-gs-avgscore' => 'Score medie',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -10245,6 +10304,15 @@ het was niet mogelijk de groep en taal te bepalen uit het bestand.',
 Zorg dat uw tekstverwerker het veld msgctxt niet verwijderd.
 Details: $1',
 	'translate-js-fb' => 'Regulier bewerken',
+	'translate-gs-pos' => 'Pos.',
+	'translate-gs-code' => 'Code',
+	'translate-gs-continent' => 'Continent',
+	'translate-gs-speakers' => 'Sprekers',
+	'translate-gs-score' => 'Score',
+	'translate-gs-multiple' => 'Meerdere',
+	'translate-gs-count' => 'Aantal',
+	'translate-gs-total' => 'Totaal',
+	'translate-gs-avgscore' => 'Gem. score',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
@@ -14628,6 +14696,7 @@ $messages['vi'] = array(
 	'translate-prev' => 'Trang trước',
 	'translate-page-description-legend' => 'Thông tin về nhóm',
 	'translate-page-edit' => 'sửa',
+	'translate-ext-url' => '<hr />Website: $1',
 	'translate-optional' => '(tùy chọn)',
 	'translate-ignored' => '(đã bỏ)',
 	'translate-edit-definition' => 'Định nghĩa thông điệp',
@@ -14637,6 +14706,8 @@ $messages['vi'] = array(
 	'translate-edit-in-other-languages' => 'Thông điệp “$1” bằng thứ tiếng khác',
 	'translate-edit-committed' => 'Bản dịch hiện tại trong phần mềm',
 	'translate-edit-warnings' => 'Các cảnh báo về các bản dịch chưa hoàn thành',
+	'translate-edit-tmsugs' => 'Gợi ý từ bộ nhớ biên dịch',
+	'translate-edit-tmmatch' => 'trùng $1%',
 	'translate-edit-goto-no-prev' => 'Không có thông báo trước',
 	'translate-edit-goto-no-next' => 'Không có thông báo kế',
 	'translate-edit-goto-prev' => 'Sửa thông báo trước',
@@ -14657,6 +14728,7 @@ Các thay đổi sẽ không được lưu lại đến khi nào bạn nhấn v�
 	'translate-magic-module' => 'Gói:',
 	'translate-magic-submit' => 'Xem',
 	'translate-magic-cm-export' => 'Xuất',
+	'translate-magic-nothing-to-export' => 'Không có gì để xuất ra.',
 	'translate-magic-cm-to-be' => 'Trở thành',
 	'translate-magic-cm-current' => 'Hiện hành',
 	'translate-magic-cm-original' => 'Bản gốc',
@@ -14667,6 +14739,9 @@ Các thay đổi sẽ không được lưu lại đến khi nào bạn nhấn v�
 	'translate-magic-special' => 'Bí danh của các trang đặc biệt',
 	'translate-magic-words' => 'Từ thần chú',
 	'translate-magic-namespace' => 'Tên của không gian tên',
+	'translate-magic-notsaved' => 'Sửa đổi của bạn chưa được lưu!',
+	'translate-magic-errors' => 'Xin hãy sửa {{PLURAL:$1||các}} lỗi sau trong bản dịch:',
+	'translate-magic-saved' => 'Thay đổi của bạn đã được lưu.',
 	'translationchanges' => 'Các thay đổi bản dịch',
 	'translationchanges-export' => 'xuất',
 	'translationchanges-change' => '$1: $2 bởi $3',
@@ -14678,14 +14753,27 @@ Các thay đổi sẽ không được lưu lại đến khi nào bạn nhấn v�
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '{{PLURAL:$2|Liên kết|Các liên kết}} sau có vấn đề:
 <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links-missing' => '{{PLURAL:$2|Liên kết|Các liên kết}} sau đây bị thiếu:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Xin thay thế{{PLURAL:$2|| các}} thẻ sau bằng thẻ đúng:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Định nghĩa sử dụng <nowiki>{{PLURAL:}}</nowiki> nhưng bản dịch không có.',
 	'translate-checks-pagename' => 'Không gian tên đã thay đổi so với định nghĩa',
 	'translate-checks-format' => 'Bản dịch này không đúng định nghĩa hoặc có cú pháp sai: $1',
 	'translate-checks-escape' => 'Dấu escape sau có thể là vô tinh: <strong>$1</strong>',
+	'translate-checks-fudforum-syntax' => 'Hãy dùng <nowiki>$1</nowiki> thay cho <nowiki>$2</nowiki> trong dự án này.',
 	'translate-pref-nonewsletter' => 'Đừng gửi cho tôi bản tin qua thư điện tử',
+	'translate-pref-editassistlang' => 'Ngôn ngữ bổ trợ:',
+	'prefs-translate' => 'Tùy chọn bản dịch',
+	'translate-pref-editassistlang-help' => 'Danh sách các ngôn ngữ phân tách bằng dấu phẩy.
+Bản dịch thông điệp sang các ngôn ngữ này được hiển thị khi bạn dịch.
+Danh sách các ngôn ngữ mặc định sẽ tùy thuộc vào ngôn ngữ mà bạn chọn.',
+	'translate-pref-editassistlang-bad' => 'Mã ngôn ngữ không hợp lệ trong danh sách:
+<nowiki>$1</nowiki>.',
+	'translate-pref-jsedit' => 'Bộ biên soạn biên dịch nâng cao (JavaScript)',
 	'right-translate' => 'Sửa đổi sử dụng giao diện biên dịch',
+	'right-translate-manage' => 'Quản lý các nhóm biên dịch',
+	'right-translate-import' => 'Nhập các bản dịch ngoại tuyến vào',
 	'translate-rc-translation-filter' => 'Lọc bản dịch:',
 	'translate-rc-translation-filter-no' => 'Không lọc',
 	'translate-rc-translation-filter-only' => 'Chỉ hiển thị bản dịch',
@@ -14739,11 +14827,13 @@ Bạn được khuyến khích xem lại các thông điệp tại [[Special:Tra
  # được hiển thị ở Special:LanguageStats. Các mã nhóm thông điệp không tồn tại
  # sẽ bị bỏ qua.',
 	'translate-save' => 'Lưu ($1)',
+	'translate-jssti-add' => 'Thêm vào danh sách',
 	'translate-group-desc-mediawikicore' => 'Nhóm thông báo này chứa các thông báo dùng trong phiên bản alpha hiện hành của MediaWiki ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'Nhóm thông báo này chứa [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 thông báo dùng nhiều nhất] trong MediaWiki',
 	'translate-group-desc-mediawikiextensions' => 'Nhóm thông báo “mẹ”, chứa các thông báo trong các phần mở rộng MediaWiki được hỗ trợ tại đây',
 	'translate-group-desc-collection' => 'Nhóm thông báo “mẹ”, chứa các thông báo của phần mở rộng [http://www.mediawiki.org/wiki/Extension:Collection Collection] cho MediaWiki',
 	'translate-group-desc-flaggedrevs' => 'Nhóm thông báo “mẹ”, chứa các thông báo của phần mở rộng [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs] cho MediaWiki',
+	'translate-group-desc-readerfeedback' => 'Nhóm thông điệp meta chứa tất cả các thông điệp dùng cho bộ mở rộng MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
 	'translate-group-desc-socialprofile' => 'Nhóm thông báo “mẹ”, chứa thông báo của các phần mở rộng có liên quan đến phần mở rộng [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile] cho MediaWiki',
 	'translate-group-desc-translate' => 'Nhóm thông báo “mẹ”, chứa các thông báo của phần mở rộng [http://www.mediawiki.org/wiki/Extension:Translate Translate] cho MediaWiki',
 	'translate-group-desc-wikiaextensions' => 'Nhóm thông báo “mẹ”, chứa thông báo của các phần mở rộng MediaWiki được sử dụng tại [http://www.wikia.com Wikia]',
@@ -14751,6 +14841,79 @@ Bạn được khuyến khích xem lại các thông điệp tại [[Special:Tra
 	'translate-group-desc-wikimediaextensions' => 'Nhóm thông báo “mẹ”, chứa thông báo của các phần mở rộng MediaWiki được [http://wikimedia.org/ Quỹ Wikimedia] sử dụng',
 	'translate-group-desc-wikitravelextensions' => 'Nhóm thông báo “mẹ”, chứa thông báo của các phần mở rộng MediaWiki được sử dụng tại [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Nhóm thông báo “mẹ”, chứa thông báo của các phần mở rộng có liên quan đến [http://unicefinnovation.org/wiki.php Uniwiki]',
+	'translate-group-desc-ui' => 'Nhóm thông điệp meta chứa tất cả các thông điệp dùng cho bộ mở rộng liên quan đến [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Sáng kiến Khả dụng Wikipedia]',
+	'translate-desc-mwembed' => '[http://www.mediawiki.org/wiki/MwEmbed MwEmbed] là thư viện để nhúng gia diện MediaWiki',
+	'translate-manage-groups' => 'Quản lý nhóm',
+	'translate-manage-listgroups' => 'Nhóm được cấu hình',
+	'translate-manage-listgroups-old' => 'Nhóm theo kiểu cũ',
+	'translate-managegroups' => 'Quản lý nhóm',
+	'translate-manage-newgroup' => 'Nhóm thông điệp này chưa được nhập vào trước đây.',
+	'translate-manage-cacheat' => 'Đã nhập vào ngày $1 lúc $2',
+	'translate-manage-return-to-group' => 'Trở lạ trang chi tiết nhóm',
+	'translate-manage-modlangs' => 'Xin hãy kiểm lại các điều chỉnh có thể trong {{PLURAL:$1||các}} ngôn ngữ sau:',
+	'translate-manage-modlang-new' => '$1 (mới)',
+	'translate-manage-import-diff' => 'Thông điệp $1 | Tác vụ: $2',
+	'translate-manage-import-new' => 'Thông điệp mới $1',
+	'translate-manage-import-deleted' => 'Thông điệp đã xóa $1',
+	'translate-manage-action-import' => 'Nhập',
+	'translate-manage-action-conflict' => 'Nhập và cần sửa',
+	'translate-manage-action-ignore' => 'Bỏ qua',
+	'translate-manage-action-fuzzy' => 'Nhập và cần sửa bản dịch',
+	'translate-manage-submit' => 'Thực hiện',
+	'translate-manage-nochanges' => 'Không có thay đổi trong định nghĩa thông điệp của nhóm này.',
+	'translate-manage-nochanges-other' => 'Không có thay đổi trong ngôn ngữ này.
+Hãy dùng liên kết ở dưới để trở lại trang chi tiết nhóm',
+	'translate-manage-inconsistent' => 'Có sự không nhất quán trong lời yêu cầu.
+Xin hãy kiểm lại các thay đổi rồi thử lại.
+Chi tiết: $1.',
+	'translate-manage-toolong' => 'Thời gian xử lý tối đa đã vượt quá $1 giây.
+Xin hãy gửi lại mẫu này để tiếp tục xử lý.',
+	'translate-manage-import-ok' => 'Đã nhập phiên bản mới của trang $1.',
+	'translate-manage-import-noks' => 'Không thể nhập phiên bản mới của trang $1: $2',
+	'translate-manage-import-ignore' => 'Bỏ qua thông điệp $1.',
+	'translate-manage-import-summary' => 'Đang nhập một bản mới từ nguồn bên ngoài',
+	'translate-manage-conflict-summary' => 'Đang nhập một phiên bản mới từ nguồn bên ngoài.
+Xin kiểm lại.',
+	'translate-manage-fuzzy-summary' => 'Định nghĩa đã thay đổi',
+	'translate-manage-import-fuzzy' => 'Đang nhập và gắn cần sửa: $1',
+	'translate-manage-import-done' => 'Đã xong!',
+	'translate-manage-import-rebuild' => 'Đã tái tạo lại bộ đệm.',
+	'translate-manage-intro-en' => 'Dưới đây là danh sách các nhóm thông điệp trong nhóm này.
+Xin hãy kiểm lại các thay đổi và chọn tác vụ bạn muốn thức hiện cho mỗi thông điệp.
+Sau khi đã cập nhật định nghĩa thông điệp, tìm các thay đổi bên ngoài của ngôn ngữ khác, nếu có.
+Cũng chú ý là tác vụ <code>bỏ qua</code> chỉ là tạm thời.',
+	'translate-manage-intro-other' => 'Dưới đây là danh sách các thay đổi bản dịch trong ngôn ngữ $1.
+Xin hãy xem lại các thay đổi và chọn tác vụ bạn muốn làm đối với từng bản dịch.
+Nếu bạn chọn bỏ qua thay đổi, chúng sẽ bị ghi đè trong lần xuất ra tới.',
+	'translate-manage-subtitle' => 'Quản lý',
+	'translate-manage-import-rebuild-all' => 'Tái tạo mọi ngôn ngữ và bỏ qua thay đổi',
+	'importtranslations' => 'Nhập bản dịch',
+	'translate-import-from-url' => 'URL đến tập tin:',
+	'translate-import-from-wiki' => 'Tập tin trong wiki này:',
+	'translate-import-from-local' => 'Tải tập tin từ máy tính:',
+	'translate-import-load' => 'Tải tập tin',
+	'translate-import-err-type-not-supported' => 'Không thể tải tập tin:
+Phương thức <tt>$1</tt> không được hỗ trợ.',
+	'translate-import-err-dl-failed' => 'Không thể truy xuất tập tin:
+$1',
+	'translate-import-err-ul-failed' => 'Tải tập tin thất bại',
+	'translate-import-err-invalid-title' => 'Tên tập tin đã ghi <nowiki>$1</nowiki> không đúng.',
+	'translate-import-err-no-such-file' => 'Tập tin <nowiki>$1</nowiki> không tồn tại hoặc chưa được tải lên đây.',
+	'translate-import-err-no-headers' => 'Tập tin không phải là tập tin Gettext định dạng đúng trong định dạng mở rộng Translate:
+Không thể xác định nhóm và ngôn ngữ từ tiêu đề tập tin.',
+	'translate-import-err-warnings' => 'Tập tin không được định dạng đúng.
+Hãy đảm bảo trình duyệt của bạn không xóa đi vùng msgctxt.
+Chi tiết:$1',
+	'translate-js-fb' => 'Sửa đổi thông thường',
+	'translate-gs-pos' => 'STT',
+	'translate-gs-code' => 'Mã',
+	'translate-gs-continent' => 'Lục địa',
+	'translate-gs-speakers' => 'Số người nói',
+	'translate-gs-score' => 'Điểm',
+	'translate-gs-multiple' => 'Nhiều',
+	'translate-gs-count' => 'Số lượng',
+	'translate-gs-total' => 'Tổng cộng',
+	'translate-gs-avgscore' => 'Điểm t.bình',
 );
 
 /** Volapük (Volapük)
