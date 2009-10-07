@@ -222,7 +222,7 @@ $languages = Language::getLanguageNames( false );
 // Default sorting order by language code, users can sort wiki output.
 ksort( $languages );
 
-if( $options['legenddetail'] ) {
+if( isset( $options['legenddetail'] ) ) {
 	$out->addFreeText( "{{" . $options['legenddetail'] . "}}\n" );
 }
 
@@ -433,7 +433,7 @@ foreach ( $languages as $code => $name ) {
 $out->footer();
 
 if( $reportScore && isset( $options['summary'] ) ) {
-	if( $reportScore && $options['legendsummary'] ) {
+	if( $reportScore && isset( $options['legendsummary'] ) ) {
 		$out->addFreeText( "{{" . $options['legendsummary'] . "}}\n" );
 	}
 
