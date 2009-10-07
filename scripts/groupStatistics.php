@@ -84,7 +84,7 @@ $localisedWeights = array(
 	)
 );
 
-$optionsWithArgs = array( 'groups', 'output', 'skiplanguages' );
+$optionsWithArgs = array( 'groups', 'output', 'skiplanguages', 'legenddetail', 'legendsummary' );
 require( dirname( __FILE__ ) . '/cli.inc' );
 
 class TranslateStatsOutput extends wikiStatsOutput {
@@ -94,6 +94,10 @@ class TranslateStatsOutput extends wikiStatsOutput {
 
 	function summaryheading() {
 		echo "\n" . '{| class="sortable wikitable" border="2" cellpadding="4" cellspacing="0" style="background-color: #F9F9F9; border: 1px #AAAAAA solid; border-collapse: collapse; clear:both;"' . "\n";
+	}
+
+	function addFreeText( $freeText ) {
+		echo $freeText;
 	}
 }
 
@@ -138,6 +142,10 @@ function showUsage() {
 		      'wiki' or not specified.
 	--summary : add a summary with counts and scores per continent category
 		    and totals. Only available for a valid 'most' value.
+	--legenddetail : Page name for legend to be transcluded at the top of
+			 the details table
+	--legendsummary : Page name for legend to be transcluded at the top of
+			  the summary table
 
 END;
 	STDERR( $msg );
@@ -213,6 +221,10 @@ if ( !count( $groups ) ) showUsage();
 $languages = Language::getLanguageNames( false );
 // Default sorting order by language code, users can sort wiki output.
 ksort( $languages );
+
+if( $options['legenddetail'] ) {
+	$out->addFreeText( "{{" . $options['legenddetail'] . "}}\n" );
+}
 
 // Output headers
 $out->heading();
@@ -421,6 +433,10 @@ foreach ( $languages as $code => $name ) {
 $out->footer();
 
 if( $reportScore && isset( $options['summary'] ) ) {
+	if( $reportScore && $options['legendsummary'] ) {
+		$out->addFreeText( "{{" . $options['legendsummary'] . "}}\n" );
+	}
+
 	$out->summaryheading();
 
 	$out->blockstart();
