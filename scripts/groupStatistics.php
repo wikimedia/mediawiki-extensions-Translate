@@ -234,7 +234,7 @@ $out->blockstart();
 if( isset( $options['most'] ) ) {
 	$out->element( ( $l10n ? "{{int:translate-gs-pos}}" : 'Pos.' ), true );
 }
-$out->element( 'Code', true );
+$out->element( ( $l10n ? "{{int:translate-page-code}}" : 'Code' ), true );
 $out->element( ( $l10n ? "{{int:translate-page-language}}" : 'Language' ), true );
 if( isset( $options['continent'] ) ) {
 	$out->element( ( $l10n ? "{{int:translate-gs-continent}}" : 'Continent' ), true );
