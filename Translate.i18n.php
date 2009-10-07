@@ -1670,8 +1670,15 @@ $1',
 Упэўніцеся што Ваш рэдактар не выдаляе палі msgctxt.
 Падрабязнасьці: $1',
 	'translate-js-fb' => 'Звычайнае рэдагаваньне',
+	'translate-gs-pos' => 'Пазыцыя',
+	'translate-gs-code' => 'Код',
 	'translate-gs-continent' => 'Кантынэнт',
-	'translate-gs-multiple' => 'Множны',
+	'translate-gs-speakers' => 'Носьбітаў',
+	'translate-gs-score' => 'Адзнака',
+	'translate-gs-multiple' => 'Некалькі',
+	'translate-gs-count' => 'Колькасьць',
+	'translate-gs-total' => 'Усяго',
+	'translate-gs-avgscore' => 'Сярэдняя адзнака',
 );
 
 /** Bulgarian (Български)
@@ -4151,6 +4158,12 @@ $1',
 Asegúrese de que su editor no quita los campos msgctxt.
 Detalle: $1',
 	'translate-js-fb' => 'Edición normal',
+	'translate-gs-code' => 'Código',
+	'translate-gs-continent' => 'Continente',
+	'translate-gs-speakers' => 'Hablantes',
+	'translate-gs-score' => 'Valoración',
+	'translate-gs-multiple' => 'Múltiple',
+	'translate-gs-total' => 'Total',
 );
 
 /** Estonian (Eesti)
