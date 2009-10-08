@@ -5783,6 +5783,15 @@ D Gruppen un Sproche hän nit us em Dateichopf chenne ermittlet wäre.',
 Stell sicher, ass dr Editor kei <tt>msgctxt</tt>-Fälder usenimmt.
 Detail: $1',
 	'translate-js-fb' => 'Normali Bearbeitig',
+	'translate-gs-pos' => 'Pos.',
+	'translate-gs-code' => 'Code',
+	'translate-gs-continent' => 'Kontinänt',
+	'translate-gs-speakers' => 'Sprächer',
+	'translate-gs-score' => 'Punktzahl',
+	'translate-gs-multiple' => 'Mehfach',
+	'translate-gs-count' => 'Zellig',
+	'translate-gs-total' => 'Insgsamt',
+	'translate-gs-avgscore' => 'Durschn. Punktzahl',
 );
 
 /** Gujarati (ગુજરાતી)
@@ -8915,7 +8924,7 @@ Do kanns de [$1 Ojinaal-Sigg ändere] ov de [$2 Övversäzong op der neuste Shta
 	'translate-translations-including-no-param' => 'Jif ene jöltijje Siggetittel för die Nohrich als Parrammeeter för di Ongersigg aan',
 	'languagestats' => 'Statistike för en Sprooch',
 	'languagestats-summary' => 'Di Sigg hee zeich Statistike vun de Övversetzung för all Nohrechtejroppe fun ener Shprooch.',
-	'translate-language-code' => 'Sproochekood',
+	'translate-language-code' => 'Ußwahl',
 	'translate-language-code-field-name' => 'Shproochekood:',
 	'translate-suppress-complete' => 'Komplät övversatz Nohrechtejroppe nit aanzeije',
 	'translate-language' => 'Shprooch',
@@ -9310,6 +9319,10 @@ $messages['lmo'] = array(
 	'translate-task-export' => 'Esporta i tradüzión dal',
 	'translate-task-export-to-file' => 'Esporta i tradüzión int un file dal',
 	'translate-task-export-as-po' => "Esporta i tradüzión int 'l furmaa Gettext",
+	'translate-page-settings-legend' => 'Impustazión',
+	'translate-page-task' => 'A vöri',
+	'translate-page-group' => 'Grüp',
+	'translate-page-limit-option' => '$1 {{PLURAL:$1|messagg|messagg}} per pagina',
 	'translate-prev' => 'Pagina precedent',
 	'translate-edit-goto-prev' => "Mudifega 'l messagg che'l vegn prima",
 	'translate-edit-goto-next' => "Mudifega 'l messagg che 'l vegn dop",
@@ -9317,6 +9330,14 @@ $messages['lmo'] = array(
 	'translate-magic-pagename' => 'Tradüzión estendüda de MediaWiki',
 	'translate-pref-editassistlang' => 'Assistent di lenguv:',
 	'prefs-translate' => 'Opzión di tradüzión',
+	'translate-rc-translation-filter' => 'Filtra i tradüzión',
+	'translate-rc-translation-filter-no' => 'Fà nagòt',
+	'translate-rc-translation-filter-only' => 'Mustra dumà i tradüzión',
+	'translate-rc-translation-filter-filter' => 'Elimina i tradüzión',
+	'translate-rc-translation-filter-site' => 'Dumà i cambiament ai messagg del sit',
+	'translationstats' => 'Statistegh de tradüzión',
+	'translate-stats-edits' => "Mudifegh per 'l dì",
+	'translate-stats-users' => 'Tradütur',
 	'translate-statsf-submit' => 'Fà vidè prima',
 	'translate-tag-category' => 'Paginn che se poden vultà',
 	'translate-tag-page-desc' => 'Tradüzión de la pagina wiki [[:$1]].',
@@ -10948,6 +10969,9 @@ es impossible de determinar lo grop e la lenga dempuèi las entèstas del fichi�
 Asseguratz-vos que vòstre esplech de traduccion suprimís pas los camps « msgctxt ».
 Detalhs : $1',
 	'translate-js-fb' => 'Modificacion normala',
+	'translate-gs-pos' => 'Pos.',
+	'translate-gs-continent' => 'Continent',
+	'translate-gs-total' => 'Total',
 );
 
 /** Oriya (ଓଡ଼ିଆ)
@@ -13656,6 +13680,7 @@ $messages['te'] = array(
 	'translate-manage-action-import' => 'దిగుమతి చెయ్యి',
 	'translate-manage-action-ignore' => 'పట్టించుకోవద్దు',
 	'translate-manage-import-done' => 'అంతా పూర్తయ్యింది!',
+	'translate-gs-total' => 'మొత్తం',
 );
 
 /** Tetum (Tetun)
