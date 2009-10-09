@@ -432,7 +432,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-flaggedrevs-unreviewedpages',
 		'ext-flaggedrevs-unstablepages',
 		'ext-flaggedrevs-validationstatistics',
-		'ext-fundraiserportal', // 2009-07-14: not yet live but expected soon/Raymond
+		'ext-fundraiserportal', // 2009-10-08: test.wikipedia.org
 		'ext-gadgets',
 		'ext-globalblocking',
 		'ext-honeypotintegration', // 2009-08-13: test.wikipedia.org
@@ -440,7 +440,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-inputbox',
 		'ext-intersection',
 		'ext-labeledsectiontransclusion', // Wikisource
-		'ext-liquidthreads', # usability
+		'ext-liquidthreads', //2009-09-30: liquidthreads.labs.wikimedia.org
 		'ext-mwreleases', // 2009-09-29: MediaWiki.org
 		'ext-mwsearch',
 		'ext-newusermessage',
