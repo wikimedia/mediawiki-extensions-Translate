@@ -782,6 +782,7 @@ Ha de pertenexer á la colla de tradutors ta alzar os cambeos. Ístos no quedan 
 	'translationchanges' => 'Cambeos en a traduzión',
 	'translationchanges-export' => 'esportar',
 	'translationchanges-change' => '$1: $2 por $3',
+	'translate-save' => 'Alzar($1)',
 );
 
 /** Old English (Anglo-Saxon) */
@@ -9739,10 +9740,10 @@ $messages['ml'] = array(
 	'translate-page-description-legend' => 'ഗ്രൂപ്പിനെപ്പറ്റിയുള്ള വിവരങ്ങള്‍',
 	'translate-optional' => '(നിര്‍ബന്ധമില്ല)',
 	'translate-edit-definition' => 'സന്ദേശത്തിന്റെ നിര്‍‌വചനം',
-	'translate-edit-contribute' => 'സംഭാവന ചെയ്യുക',
+	'translate-edit-contribute' => 'തിരുത്തുക',
 	'translate-edit-no-information' => "''ഈ സന്ദേശത്തിനു ഡോക്കുമെന്റേഷന്‍ ഇല്ല.
 ഈ സന്ദേശം എങ്ങനെയാണു ഉപയോഗിക്കപ്പെടുന്നത് എന്ന് നിങ്ങള്‍ക്ക് അറിയാമെങ്കില്‍, അതിനെകുറിച്ചുള്ള ഡോക്കുമെന്റേഷന്‍ ചേര്‍ത്ത് താങ്കള്‍ക്ക് മറ്റുള്ള പരിഭാഷകര്‍ക്കു സഹായമേകാം.''",
-	'translate-edit-information' => 'ഈ സന്ദേശത്തെക്കുറിച്ചുള്ള വിവരണം ($1)',
+	'translate-edit-information' => '"$2" എന്ന സന്ദേശത്തെക്കുറിച്ചുള്ള വിശദീകരണം ($1)',
 	'translate-edit-in-other-languages' => 'സന്ദേശം മറ്റുള്ള ഭാഷകളില്‍',
 	'translate-edit-committed' => 'സന്ദേശത്തിന്റെ നിലവിലുള്ള പരിഭാഷ',
 	'translate-edit-warnings' => 'അപൂര്‍ണ്ണമായ പരിഭാഷയെക്കുറിച്ചുള്ള മുന്നറിയിപ്പ്',
@@ -12278,6 +12279,15 @@ $1',
 Убедитесь, что ваш редактор не удаляет поля msgctxt.
 Подробнее: $1',
 	'translate-js-fb' => 'Обычное редактирование',
+	'translate-gs-pos' => 'Поз.',
+	'translate-gs-code' => 'Код',
+	'translate-gs-continent' => 'Часть света',
+	'translate-gs-speakers' => 'Носителей',
+	'translate-gs-score' => 'Оценка',
+	'translate-gs-multiple' => 'Несколько',
+	'translate-gs-count' => 'Кол-во',
+	'translate-gs-total' => 'Всего',
+	'translate-gs-avgscore' => 'Ср. оценка',
 );
 
 /** Yakut (Саха тыла)
