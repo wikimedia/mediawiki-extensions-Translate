@@ -667,6 +667,10 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 	public function getMessage( $key, $code ) {
 		if ( $code === 'en' ) {
 			$stuff = $this->load( 'en' );
+			// FIXME: throws PHP Notice:  Undefined index:  <key>
+			// when keys are added, but createMessageIndex.php is
+			// not run (like when a translatable page from page
+			// translation was added)
 			return $stuff[$key];
 		}
 		$title = Title::makeTitleSafe( $this->namespaces[0], "$key/$code" );

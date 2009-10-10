@@ -227,6 +227,8 @@ FOO;
 			 * like markup spanning between sections. */
 			$page->getParse();
 		} catch ( TPException $e ) {
+			// FIXME: throws "PHP Notice:  Undefined variable: ret" when <translate>/</translate> is uneven
+			// and an 'edit conflict'.
 			call_user_func_array( array( $status, 'fatal' ), $ret );
 			return false;
 		}
