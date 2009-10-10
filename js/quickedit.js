@@ -68,7 +68,7 @@ function trlOpenJsEdit( page ) {
 				} else {
 					alert( "Unknown error." );
 				}
-			},
+			}
 		});
 	});
 
