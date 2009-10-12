@@ -7358,6 +7358,15 @@ Tidak dapat menentukan grup dan bahasa dari kepala berkas.',
 Pastikan penyunting Anda tidak membuang ''field'' msgctxt.
 Detil: $1",
 	'translate-js-fb' => 'Penyuntingan normal',
+	'translate-gs-pos' => 'Tingkat.',
+	'translate-gs-code' => 'Kode',
+	'translate-gs-continent' => 'Benua',
+	'translate-gs-speakers' => 'Penutur',
+	'translate-gs-score' => 'Nilai',
+	'translate-gs-multiple' => 'Beragam',
+	'translate-gs-count' => 'Jumlah',
+	'translate-gs-total' => 'Total',
+	'translate-gs-avgscore' => 'Nilai rata-rata',
 );
 
 /** Iloko (Ilokano)

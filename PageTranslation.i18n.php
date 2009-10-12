@@ -918,7 +918,7 @@ Devant que marcar cetes vèrsions por étre traduites, controlâd que los change
 El est una vèrsion traduita de [[$1]] et la traduccion pôt étre betâ a jorn en utilisent l’[$2 outil de traduccion].',
 	'tpt-unknown-page' => 'Ceti èspâço de noms est resèrvâ por la traduccion de pâges de contegnu.
 La pâge que vos tâchiéd de changiér semble pas corrèspondre a gins de pâge marcâ por étre traduita.',
-	'tpt-install' => 'Lanciéd « php maintenance/update.php » ou ben l’enstalacion Vouèbe por activar la fonccionalitât de traduccion de pâges.',
+	'tpt-install' => 'Lanciéd « php maintenance/update.php » ou ben l’enstalacion vouèbe por activar la fonccionalitât de traduccion de pâges.',
 	'tpt-render-summary' => 'Misa a jorn por étre en acôrd avouéc la novèla vèrsion de la pâge d’origina',
 	'tpt-download-page' => 'Èxportar la pâge avouéc ses traduccions',
 );
