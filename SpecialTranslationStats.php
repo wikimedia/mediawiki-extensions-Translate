@@ -216,7 +216,14 @@ class SpecialTranslationStats extends SpecialPage {
 	protected function groupSelector() {
 		$groups = MessageGroups::singleton()->getGroups();
 		foreach ( $groups as $key => $group ) {
-			if ( !$group->exists() ) unset($groups[$key]);
+			if ( !$group->exists() ) {
+				unset($groups[$key]);
+				continue;
+			}
+
+			if ( $group->isMeta() ) {
+				unset($groups[$key]);
+			}
 		}
 
 		ksort( $groups );
