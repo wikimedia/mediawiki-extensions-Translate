@@ -10,7 +10,6 @@ class SpecialTranslationStats extends SpecialPage {
 	public function execute( $par ) {
 		global $wgOut, $wgRequest;
 
-
 		$opts = new FormOptions();
 		$opts->add( 'graphit', false );
 		$opts->add( 'preview', false );
@@ -31,7 +30,6 @@ class SpecialTranslationStats extends SpecialPage {
 			if ( isset( $opts[$key] ) )
 				$opts[$key] = $value;
 		}
-
 
 		$opts->validateIntBounds( 'days', 1, 300 );
 		$opts->validateIntBounds( 'width', 200, 1000 );
@@ -114,7 +112,7 @@ class SpecialTranslationStats extends SpecialPage {
 		}
 
 		if ( $spiParams !== '' ) $spiParams = '/' . $spiParams;
-		
+
 		$titleText = $this->getTitle()->getPrefixedText();
 
 		$wgOut->addHTML(
@@ -126,7 +124,6 @@ class SpecialTranslationStats extends SpecialPage {
 			'<hr />' .
 			Xml::tags( 'div', array( 'style' => 'margin: 1em auto; text-align: center;' ), $this->image( $opts ) )
 		);
-
 	}
 
 	protected function eInput( $name, FormOptions $opts ) {
@@ -262,7 +259,6 @@ class SpecialTranslationStats extends SpecialPage {
 
 		$so = new TranslatePerLanguageStats( $opts );
 
-
 		$tables = array( 'recentchanges' );
 		$fields = array( 'rc_timestamp' );
 
@@ -310,7 +306,6 @@ class SpecialTranslationStats extends SpecialPage {
 		$so->labels( $labels );
 
 		return array( $labels, $data );
-
 	}
 
 	public function draw( FormOptions $opts ) {
@@ -372,11 +367,8 @@ class SpecialTranslationStats extends SpecialPage {
 
 		// Draw it
 		$plot->DrawGraph();
-
 	}
-
 }
-
 
 class TranslatePerLanguageStats {
 	protected $opts;
@@ -399,6 +391,7 @@ class TranslatePerLanguageStats {
 		$filters['group'] = trim( $this->opts['group'] ) !== '';
 
 		foreach ( $groups as $group ) {
+			
 			foreach ( $codes as $code ) {
 				if ( $code !== '' ) $key = "$group ($code)";
 				else $key = $group;
@@ -422,7 +415,6 @@ class TranslatePerLanguageStats {
 		$type .= '-perlang';
 
 		$this->filters = $filters;
-
 	}
 
 	public function postQuery( $rows ) { }
@@ -431,7 +423,6 @@ class TranslatePerLanguageStats {
 		$initial = array_pad( array(), max( 1, count( $this->cache ) ), 0 );
 	}
 
-	
 	public function indexOf( $row ) {
 		global $wgContLang;
 
@@ -475,5 +466,4 @@ class TranslatePerLanguageStats {
 			$labels = array_keys( $this->cache );
 		}
 	}
-
 }
