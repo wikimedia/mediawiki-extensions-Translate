@@ -460,7 +460,9 @@ fuzzy = mark translations for review',
 	'translate-gs-score' => 'Used in wiki tables for localisation statistics as a column header for the weighted score of the localisation of a language. See [[Project:MediaWiki localisation in the 50 most spoken languages|example]]',
 	'translate-gs-multiple' => 'Used in wiki tables for localisation statistics as a value in the Continent column when a language is spoken on more than one continent . See [[Project:MediaWiki localisation in the 50 most spoken languages|example]]',
 	'translate-gs-count' => 'Used in summary wiki tables for localisation statistics as a column header for the number of languages on a continent in the table above it. See [[Project:MediaWiki localisation in the 50 most spoken languages|example]]',
-	'translate-gs-total' => 'Used in summary wiki tables for localisation statistics as a row description for the row that contains summarised data for the table. See bottom table on [[Project:MediaWiki localisation in the 50 most spoken languages|example]]',
+	'translate-gs-total' => 'Used in summary wiki tables for localisation statistics as a row description for the row that contains summarised data for the table. See bottom table on [[Project:MediaWiki localisation in the 50 most spoken languages|example]]
+
+{{Identical|Total}}',
 	'translate-gs-avgscore' => 'Used in summary wiki tables for localisation statistics as a column header for the average score of languages on a continent in the table above it. See [[Project:MediaWiki localisation in the 50 most spoken languages|example]]',
 );
 
@@ -2316,6 +2318,15 @@ Metod <tt>$1</tt> nije podržan.',
 Provjerite da li je Vaš uređivač uklonio msgctxt polja.
 Detalji: $1',
 	'translate-js-fb' => 'Obično uređivanje',
+	'translate-gs-pos' => 'Mj.',
+	'translate-gs-code' => 'Kod',
+	'translate-gs-continent' => 'Kontinent',
+	'translate-gs-speakers' => 'Govornici',
+	'translate-gs-score' => 'Rezultat',
+	'translate-gs-multiple' => 'Više',
+	'translate-gs-count' => 'Broj',
+	'translate-gs-total' => 'Ukupno',
+	'translate-gs-avgscore' => 'Prosj. rezultat',
 );
 
 /** Buginese (ᨅᨔ ᨕᨘᨁᨗ)
@@ -2967,6 +2978,7 @@ Du opfordres til at gennemse beskeder gennem [[Special:Translate|{{int:translate
  * @author Purodha
  * @author Raimond Spekking
  * @author Sebastian Wallroth
+ * @author Tbleher
  * @author Umherirrender
  */
 $messages['de'] = array(
@@ -3209,6 +3221,7 @@ Die Gruppen und Sprache konnte nicht aus dem Dateikopf ermittelt werden.',
 Stelle sicher, dass der Editor keine <tt>msgctxt</tt>-Felder entfernt.
 Details: $1',
 	'translate-js-fb' => 'Normale Bearbeitenseite',
+	'translate-gs-continent' => 'Kontinent',
 );
 
 /** Swiss High German (Schweizer Hochdeutsch)
@@ -7799,7 +7812,7 @@ $messages['ja'] = array(
 	'translationstats' => '翻訳の統計',
 	'translate-stats-edits' => '編集',
 	'translate-stats-users' => '翻訳者',
-	'translate-statsf-intro' => 'このフォームを使って簡単な統計を生成できます。数値には全て上限と下限があります。',
+	'translate-statsf-intro' => 'このフォームを使って簡単な統計を生成できます。数値にはすべて上限と下限があります。',
 	'translate-statsf-options' => 'グラフのオプション',
 	'translate-statsf-width' => 'ピクセル幅:',
 	'translate-statsf-height' => 'ピクセル高:',
@@ -7819,8 +7832,8 @@ $messages['ja'] = array(
 	'translate-tag-fuzzy-reason' => '$1 によって版 $2 にて定義が変更されました (コメント: $3)。',
 	'translate-sidebar-alltrans' => '他言語での翻訳',
 	'translate-tag-noedit' => 'このページは自動的に更新される翻訳用ページです。[$1 ソースの編集] または [$2 翻訳の更新]ができます。',
-	'translations' => '全ての翻訳結果',
-	'translations-summary' => '既存の全ての訳文を見るには下欄にメッセージの名前を入力してください。',
+	'translations' => '全翻訳結果',
+	'translations-summary' => '既存のすべての訳文を見るには下欄にメッセージの名前を入力してください。',
 	'translate-translations-no-message' => '「$1」は翻訳できないメッセージです',
 	'translate-translations-none' => '「$1」には翻訳がありません',
 	'translate-translations-fieldset-title' => 'メッセージ',
@@ -7886,7 +7899,7 @@ $messages['ja'] = array(
 	'translate-manage-conflict-summary' => '外部ソースから新しい版をインポートインポート中。確認してください。',
 	'translate-manage-fuzzy-summary' => '定義が変わりました',
 	'translate-manage-import-fuzzy' => 'インポートおよび fuzzy 中: $1',
-	'translate-manage-import-done' => '全て完了しました！',
+	'translate-manage-import-done' => 'すべて完了しました！',
 	'translate-manage-import-rebuild' => 'キャッシュの再構築',
 	'translate-manage-intro-en' => '以下はこのグループにおけるメッセージの変更の一覧です。変更を精査し、それぞれのメッセージに対して行いたい操作を選択してください。メッセージ定義を更新した際には、もしあれば、他の言語における外部の変更も点検してください。また、操作 <code>ignore</code> は一時的なものにしかすぎないことに注意してください。',
 	'translate-manage-intro-other' => '以下は$1における翻訳の変更の一覧です。変更を精査し、それぞれのメッセージに対して行いたい操作を選択してください。変更を無視することを選んだ場合、次回のインポートでそれは上書きされます。',
@@ -7906,6 +7919,15 @@ $1',
 	'translate-import-err-no-headers' => 'ファイルが Translate 拡張機能の形式に正しく適応した gettext ファイルではありません。ファイルヘッダーからグループと言語を確定することができませんでした。',
 	'translate-import-err-warnings' => 'このファイルは形式が正しくありません。あなたの使ったエディターが msgctxt フィールドを除去していないか確認してください。詳細: $1',
 	'translate-js-fb' => '通常の編集',
+	'translate-gs-pos' => '順位',
+	'translate-gs-code' => 'コード',
+	'translate-gs-continent' => '大陸',
+	'translate-gs-speakers' => '話者数',
+	'translate-gs-score' => '点数',
+	'translate-gs-multiple' => '複数',
+	'translate-gs-count' => '件数',
+	'translate-gs-total' => '合計',
+	'translate-gs-avgscore' => '平均点',
 );
 
 /** Javanese (Basa Jawa)
@@ -9281,6 +9303,11 @@ De Grupp an d\'Sprooch konnte vun der Entête vum Fichier net bestëmmt ginn.',
 Vergewëssert Iech datt Ären Editeursprogramm keng msgctxt Felder ewechhëllt.
 Detailler: $1',
 	'translate-js-fb' => 'Normal Ännerung',
+	'translate-gs-pos' => 'Pos.',
+	'translate-gs-code' => 'Code',
+	'translate-gs-continent' => 'Kontinent',
+	'translate-gs-total' => 'Total',
+	'translate-gs-avgscore' => 'Duerchschnëttleche Score',
 );
 
 /** Limburgish (Limburgs)
