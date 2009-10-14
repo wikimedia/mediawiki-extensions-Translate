@@ -684,6 +684,7 @@ die metode <tt>$1</tt> word nie ondersteun nie.',
 	'translate-import-err-ul-failed' => 'Die oplaai van die lêer was onsuksesvol',
 	'translate-import-err-invalid-title' => 'Die gespesifiseerde lêernaam <nowiki>$1</nowiki> is ongeldig.',
 	'translate-import-err-no-such-file' => 'Die lêer <nowiki>$1</nowiki> bestaan nie of is nie na die bediener opgelaai nie.',
+	'translate-gs-total' => 'Totaal',
 );
 
 /** Amharic (አማርኛ)
@@ -3221,7 +3222,15 @@ Die Gruppen und Sprache konnte nicht aus dem Dateikopf ermittelt werden.',
 Stelle sicher, dass der Editor keine <tt>msgctxt</tt>-Felder entfernt.
 Details: $1',
 	'translate-js-fb' => 'Normale Bearbeitenseite',
+	'translate-gs-pos' => 'Pos.',
+	'translate-gs-code' => 'Code',
 	'translate-gs-continent' => 'Kontinent',
+	'translate-gs-speakers' => 'Sprecher',
+	'translate-gs-score' => 'Ergebnis',
+	'translate-gs-multiple' => 'Mehrere',
+	'translate-gs-count' => 'Anzahl',
+	'translate-gs-total' => 'Gesamt',
+	'translate-gs-avgscore' => 'Durchschnittliches Ergebnis',
 );
 
 /** Swiss High German (Schweizer Hochdeutsch)
@@ -9306,6 +9315,10 @@ Detailler: $1',
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Code',
 	'translate-gs-continent' => 'Kontinent',
+	'translate-gs-speakers' => "Leit déi d'Sprooch schwetzen",
+	'translate-gs-score' => 'Score',
+	'translate-gs-multiple' => 'Méi',
+	'translate-gs-count' => 'Zuel',
 	'translate-gs-total' => 'Total',
 	'translate-gs-avgscore' => 'Duerchschnëttleche Score',
 );
