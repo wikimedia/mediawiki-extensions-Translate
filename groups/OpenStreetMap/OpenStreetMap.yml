@@ -19,6 +19,15 @@ FILES:
     zh-cn: zh-CN
     zh-tw: zh-TW
 
+CHECKER:
+  class: RubyMessageChecker
+  checks:
+    - RubyVariablesCheck
+
+
+AUTOLOAD:
+  RubyMessageChecker: Checker.php
+
 TAGS:
   optional:
     - browse.relation_member.entry
