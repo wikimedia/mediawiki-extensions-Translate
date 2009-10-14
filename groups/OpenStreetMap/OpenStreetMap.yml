@@ -33,6 +33,7 @@ TAGS:
     - browse.relation_member.entry
     - changeset.changeset.id
     - geocoder.search_osm_namefinder.suffix_suburb
+    - geocoder.search_osm_twain.prefix_other
     - html.dir
     - javascripts.map.base.mapnik
     - javascripts.map.base.osmarender
