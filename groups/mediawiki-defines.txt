@@ -804,6 +804,7 @@ descmsg = ratinghistory
 Record Admin
 aliasfile = RecordAdmin/RecordAdmin.alias.php
 ignored = recordadmin-title
+optional = recrodadmin-export-csv, recrodadmin-export-pdf
 
 Redirect
 ignored = redirect-addnewaccount, redirect-userlogincomplete, redirect-userlogoutcomplete
