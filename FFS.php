@@ -526,9 +526,7 @@ class YamlFFS extends SimpleFFS {
 		$array = array();
 		foreach ( $messages as $key => $value ) {
 			$plurals = $this->unflattenPlural( $key, $value );
-			if ( $plurals === false ) {
-				$plurals = array( $key => $value );
-			}
+			if ( $plurals === false ) continue;
 
 			foreach ( $plurals as $key => $value ) {
 
@@ -567,8 +565,12 @@ class YamlFFS extends SimpleFFS {
 		return false;
 	}
 
+	/**
+	 * Override this. Return false to skip processing this value. Otherwise
+	 * return array with keys and values.
+	 */
 	protected function unflattenPlural( $key, $value ) {
-		return false;
+		return array( $key => $value );
 	}
 
 }
@@ -618,7 +620,7 @@ class RubyYamlFFS extends YamlFFS {
 	 */
 	protected function unflattenPlural( $key, $message ) {
 		// Quick escape
-		if ( strpos( $message, '{{PLURAL' ) === false ) return false;
+		if ( strpos( $message, '{{PLURAL' ) === false ) return array( $key => $message );
 
 		// Replace all variables with placeholders. Possible source of bugs
 		// if other characters that given below are used.
@@ -674,6 +676,11 @@ class RubyYamlFFS extends YamlFFS {
 		// Replace other variables
 		foreach ( $alts as &$value ) {
 			$value = str_replace( array_keys( $placeholders ), array_values( $placeholders ), $value );
+		}
+
+		if ( !isset($alts["$key.other"]) ) {
+			wfWarn( "Other not set for key $key" );
+			return false;
 		}
 
 		return $alts;
