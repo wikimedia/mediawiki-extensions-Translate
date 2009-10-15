@@ -23,8 +23,6 @@ class RubyMessageChecker extends MessageChecker {
 			preg_match_all( "/$varPattern/U", $definition, $defVars );
 			preg_match_all( "/$varPattern/U", $translation, $transVars );
 
-			var_dump( $varPattern );
-			var_dump( $defVars );
 			# Check for missing variables in the translation
 			$subcheck = 'missing';
 			$params = self::compareArrays( $defVars[0], $transVars[0] );
