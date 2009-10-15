@@ -9756,6 +9756,7 @@ $1',
 
 /** Malayalam (മലയാളം)
  * @author Jacob.jose
+ * @author Praveenp
  * @author Shijualex
  */
 $messages['ml'] = array(
@@ -9804,6 +9805,7 @@ $messages['ml'] = array(
 	'translate-magic-cm-save' => 'സേവ് ചെയ്യുക',
 	'translate-magic-cm-savefailed' => 'സേവ് ചെയ്യാന്‍ പറ്റിയില്ല',
 	'translate-magic-special' => 'പ്രത്യേക താളുകളുടെ അലിയാസുകള്‍',
+	'translate-magic-words' => 'മാന്ത്രിക പദങ്ങൾ',
 	'translate-magic-namespace' => 'നേംസ്പേസ് നാമങ്ങള്‍',
 	'translationchanges' => 'പരിഭാഷയിലെ മാറ്റങ്ങള്‍',
 	'translationchanges-export' => 'എക്സ്പോര്‍ട്ട്',
@@ -15185,10 +15187,12 @@ $messages['yi'] = array(
 	'translate-edit' => 'רעדאקטירן',
 	'translate-talk' => 'רעדן',
 	'translate-history' => 'היסטאריע',
-	'translate-task-view' => 'ווײַז אלע מעלדונגען פֿון',
-	'translate-task-untranslated' => 'ווײַז אלע נישט פֿארטײַטשטע מעלדונגען פֿון',
+	'translate-task-view' => 'אימפארטירן',
+	'translate-task-untranslated' => 'אָנלאָדן טעקע',
 	'translate-task-optional' => 'באקוקן ברירהדיקן מעלדונגען פון',
 	'translate-task-untranslatedoptional' => 'באַקוקן נישט־פֿאַרטײַטשטע ברירהדיקע מעלדונגען פֿון',
+	'translate-task-problematic' => 'נײַ',
+	'translate-page-no-such-language' => 'באַשטימטע שפראַך אומגילטיג.',
 	'translate-page-no-such-group' => 'ספעציפֿירטע גרופע נישט גילטיק.',
 	'translate-page-task' => 'איך וויל',
 	'translate-page-group' => 'גרופע',
@@ -15253,7 +15257,10 @@ $messages['yi'] = array(
 	'translate-untranslated' => 'נישט פֿאַרטײַטשט',
 	'translate-percentage-complete' => 'פֿאַרענדיקונג',
 	'translate-percentage-fuzzy' => 'פֿאַרעלטערט',
+	'translate-save' => 'אויפֿהיטן ($1)',
 	'translate-group-desc-mediawikicore' => 'די מעלדונג גרופע אנטהאלט די מעלגדונגען געניצט אין דער לויפיגער אלפא ווערסיע פון מעדיעוויקי  ({{CURRENTVERSION}})',
+	'translate-group-desc-mediawikimostused' => 'די מעלדונג גרופע אנטהאלט די [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 מערסטע געניצטע מעלגדונגען] אין מעדיעוויקי',
+	'translate-manage-modlang-new' => '$1 (נײַ)',
 );
 
 /** Yue (粵語)

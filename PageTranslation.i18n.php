@@ -2515,6 +2515,7 @@ $messages['vo'] = array(
  */
 $messages['yi'] = array(
 	'translate-tag-translate-link-desc' => 'פֿארטײַטשט דעם בלאט',
+	'tpt-languages-legend' => 'אנדערע שפראַכן:',
 );
 
 /** Simplified Chinese (‪中文(简体)‬)
