@@ -819,7 +819,7 @@ $messages['ar'] = array(
 	'translate-task-export-to-file' => 'أصدر الترجمة لملف من',
 	'translate-task-export-as-po' => 'أصدر الترجمة بصيغة جت تكست',
 	'translate-task-export-to-xliff' => 'أصدر الترجمة بصيغة إكسليف',
-	'translate-page-no-such-language' => 'اللغة المحددة كانت غير صحيحة.',
+	'translate-page-no-such-language' => 'لم تكن اللغة المحددة صحيحة.',
 	'translate-page-no-such-task' => 'المهمة المحددة كانت غير صحيحة.',
 	'translate-page-no-such-group' => 'المجموعة المحددة غير صحيحة.',
 	'translate-page-disabled' => "الترجمات إلى هذه اللغة في هذه المجموعة تم تعطيلها. السبب:
@@ -913,6 +913,7 @@ $messages['ar'] = array(
 قائمة اللغات المبدئية تعتمد على لغتك.',
 	'translate-pref-editassistlang-bad' => 'رمز لغة غير صالح في القائمة:
 <nowiki>$1</nowiki>.',
+	'translate-pref-jsedit' => 'محرر ترجمة مُحسّن (جافاسكربت)',
 	'right-translate' => 'التعديل باستخدام واجهة الترجمة',
 	'right-translate-manage' => 'إدارة مجموعات الترجمة',
 	'right-translate-import' => 'استيراد الترجمات من الخارج',
@@ -2087,6 +2088,15 @@ Dibosupl eo didermeniñ ar strollad hag ar yezh adalek talbennoù ar restr.",
 Bezit sur ne lam ket ho skridaozer ar maeziennoù msgctxt kuit.
 Munudoù : $1',
 	'translate-js-fb' => 'Kemm normal',
+	'translate-gs-pos' => "Lec'h.",
+	'translate-gs-code' => 'Kod',
+	'translate-gs-continent' => 'Kevandir',
+	'translate-gs-speakers' => 'Yezherien',
+	'translate-gs-score' => 'Skor',
+	'translate-gs-multiple' => 'Lies',
+	'translate-gs-count' => 'Kont',
+	'translate-gs-total' => 'Hollad',
+	'translate-gs-avgscore' => 'Skor keitat',
 );
 
 /** Bosnian (Bosanski)
@@ -14367,7 +14377,7 @@ $messages['ug-latn'] = array(
 $messages['uk'] = array(
 	'translate' => 'Переклад',
 	'translate-desc' => '[[Special:Translate|Спеціальна сторінка]] для перекладу MediaWiki та інших програм',
-	'translate-edit' => 'редагувати',
+	'translate-edit' => 'перекладати',
 	'translate-talk' => 'обговорення',
 	'translate-history' => 'історія',
 	'translate-task-view' => 'Переглянути всі повідомлення',
