@@ -104,9 +104,10 @@ class TranslateStatsOutput extends wikiStatsOutput {
 if ( isset( $options['help'] ) ) showUsage();
 
 // Show help and exit if '--most' does not have a valid value and no groups set
-if ( !isset( $localisedWeights[$options['most']] ) && !isset( $options['groups'] ) ) {
+if ( isset( $options['most'] ) && !isset( $localisedWeights[$options['most']] ) && !isset( $options['groups'] ) ) {
 	showUsage();
 }
+
 if ( !isset( $options['output'] ) ) $options['output'] = 'default';
 
 /** Print a usage message*/
