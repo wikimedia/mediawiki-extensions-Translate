@@ -72,7 +72,7 @@ if ( isset( $options['groups'] ) ) {
 	$groupsFilter = array();
 }
 
-if ( isset( $options['threshold'] ) ) {
+if ( isset( $options['threshold'] ) && intval( $options['threshold'] ) ) {
 	$threshold = $options['threshold'];
 } else {
 	$threshold = false;
