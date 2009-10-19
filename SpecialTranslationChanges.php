@@ -25,7 +25,7 @@ class SpecialTranslationChanges extends SpecialPage {
 		$this->setHeaders();
 		$this->hours = min( 168, $wgRequest->getInt( 'hours', 24 ) );
 
-		$rows = TranslateUtils::translationChanges( $this->hours );
+		$rows = TranslateUtils::translationChanges( $this->hours, true );
 		$wgOut->addHTMl( $this->settingsForm() . $this->output( $rows ) );
 	}
 
@@ -49,7 +49,7 @@ class SpecialTranslationChanges extends SpecialPage {
 	}
 
 	protected static function timeLimitSelector( $selected = 24 ) {
-		$items = array( 3, 6, 12, 24, 48, 72, 168  );
+		$items = array( 3, 6, 12, 24, 48, 72, 168 );
 		$selector = new HTMLSelector( 'hours', 'hours', $selected );
 		foreach ( $items as $item ) $selector->addOption( $item );
 		return $selector->getHTML();
@@ -66,7 +66,7 @@ class SpecialTranslationChanges extends SpecialPage {
 			list( $pieces, ) = explode( '/', $wgContLang->lcfirst( $row->rc_title ), 2 );
 
 			$group = 'Unknown';
-			$mg = TranslateUtils::messageKeyToGroup(  $row->rc_namespace, ':' . $pieces );
+			$mg = TranslateUtils::messageKeyToGroup( $row->rc_namespace, $pieces );
 			if ( !is_null( $mg ) ) $group = $mg;
 
 			$lang = 'site';
@@ -96,10 +96,10 @@ class SpecialTranslationChanges extends SpecialPage {
 
 			$sorted[$class][$group][$lang][] = $row;
 
-			$batch->add( NS_USER,           $row->rc_user_text );
-			$batch->add( NS_USER_TALK,      $row->rc_user_text );
+			$batch->add( NS_USER, $row->rc_user_text );
+			$batch->add( NS_USER_TALK, $row->rc_user_text );
 			if ( $group !== 'core' ) {
-			$batch->add( NS_MEDIAWIKI,      $row->rc_title );
+			$batch->add( NS_MEDIAWIKI, $row->rc_title );
 			}
 			$batch->add( NS_MEDIAWIKI_TALK, $row->rc_title );
 		}
