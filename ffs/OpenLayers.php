@@ -113,6 +113,7 @@ class OpenLayersFormatWriter extends SimpleFormatWriter {
 
 		// Generate list of authors for comment.
 		$authors = $collection->getAuthors();
+		$authors = $this->filterAuthors( $authors, $collection->code );
 		$authorList = '';
 		foreach( $authors as $author ) {
 			$authorList .= " *  - $author\n";
