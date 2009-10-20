@@ -659,6 +659,8 @@ $messages['el'] = array(
  */
 $messages['eo'] = array(
 	'pagetranslation' => 'Paĝa traduko',
+	'right-pagetranslation' => 'Marki versiojn de paĝoj por traduki',
+	'tpt-desc' => 'Kromprogramo por tradukado de enhavaj paĝoj',
 	'tpt-section' => 'Tradukada unuo $1',
 	'tpt-section-new' => 'Nova tradukada unuo.
 Nomo: $1',
@@ -668,7 +670,9 @@ Nomo: $1',
 	'tpt-diff-old' => 'Antaŭa teksto',
 	'tpt-diff-new' => 'Nova teksto',
 	'tpt-submit' => 'Marki ĉi tiun version por traduki',
+	'tpt-sections-oldnew' => 'Novaj kaj ekzistantaj tradukaĵoj',
 	'tpt-sections-deleted' => 'Forigitaj tradukadaj unuoj',
+	'tpt-sections-template' => 'Ŝablono por tradukada paĝo',
 	'tpt-notsuitable' => 'Paĝo $1 ne taŭgas por traduki.
 Certigu ke ĝi havas etikedojn <nowiki><translate></nowiki> kaj havas validan sintakson.',
 	'tpt-mark-summary' => 'Markis ĉi tiun version por traduki.',
