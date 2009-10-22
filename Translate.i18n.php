@@ -407,7 +407,8 @@ These messages will not be submitted to svn, but will only affect the interface 
 	'translate-translations-messagename' => 'Used in [[Special:Translations]].
 
 {{Identical|Name}}',
-	'translate-translations-project' => 'Used in [[Special:Translations]].',
+	'translate-translations-project' => 'Used in [[Special:Translations]].
+{{Identical|Project}}',
 	'translate-translations-including-no-param' => 'Shown when using <code>&#x7b;{Special:Translations}}</code>, but a parameter is required, e.g. <code>&#x7b;{Special:Translations/MediaWiki:Mainpagetext}}</code>',
 	'languagestats' => 'Title of [[Special:LanguageStats]].',
 	'languagestats-summary' => 'Used in [[Special:LanguageStats]].',
@@ -2575,8 +2576,8 @@ $messages['ckb-arab'] = array(
 	'translate-prev' => 'پەڕەی پێشوو',
 	'translate-edit-goto-no-prev' => 'پێش ئەمە پەیام نیە',
 	'translate-edit-goto-no-next' => 'پاش ئەمە پەیام نیە',
-	'translate-edit-goto-prev' => 'دەستکاری پەیامی پێشوو',
-	'translate-edit-goto-next' => 'دەستکاری پەیامی دواتر',
+	'translate-edit-goto-prev' => 'دەستکاریی پەیامی پێشوو',
+	'translate-edit-goto-next' => 'دەستکاریی پەیامی دواتر',
 	'translate-edit-goto-list' => '<<< بگەڕێرۆ بۆ لیست >>>',
 	'translate-magic-cm-export' => 'هەناردن',
 	'translate-magic-nothing-to-export' => 'هیچ شتێک نیە بۆ هەناردن.',
