@@ -231,5 +231,13 @@ array(
 		'edittoolbar-help-content-ilink-syntax', // Contains links that are translated
 		'edittoolbar-help-content-file-syntax', // Contains links that are translated
 	)
+),
+array(
+	'group' => 'out-osm-site',
+	'check' => 'links',
+	'message' => array(
+		'notifier.signup_confirm_html.user_wiki_page', // Contains links that are translated
+		'notifier.signup_confirm_plain.user_wiki_2', // Contains links that are translated
+	)
 )
 );
