@@ -37,7 +37,7 @@ if ( isset( $options['help'] ) ) {
 }
 
 if ( isset( $options['days'] ) ) {
-	$hours = inval( $options['days'] ) * 24; // no day change cutoff
+	$hours = intval( $options['days'] ) * 24; // no day change cutoff
 } else {
 	$hours = 7 * 24;
 }
