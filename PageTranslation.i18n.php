@@ -1207,18 +1207,31 @@ Ellenőrizd, hogy szerepelnek-e benne <nowiki><translate></nowiki> tagek, és he
 	'tpt-saveok' => 'A(z) [[$1]] lap $2 fordítási egységgel megjelölve fordításra.
 A lap mostantól <span class="plainlinks">[$3 lefordítható]</span>.',
 	'tpt-badsect' => '„$1” nem érvényes név a(z) $2 fordítási egységnek.',
+	'tpt-showpage-intro' => 'Alább az új, már létező és törölt szakaszok felsorolása látható.
+Mielőtt fordításra jelölöd ezt a változatot, ellenőrizd hogy a szakaszok változásai minimálisak, elkerülendő a felesleges munkát a fordítóknak.',
 	'tpt-mark-summary' => 'Változat megjelölve fordításra',
 	'tpt-edit-failed' => 'Nem sikerült frissíteni a lapot: $1',
 	'tpt-already-marked' => 'A lap legutolsó verziója már meg van jelölve fordításra.',
+	'tpt-list-nopages' => 'Nincsenek sem fordításra kijelölt, sem kijelölésre kész lapok.',
+	'tpt-old-pages' => '{{PLURAL:$1|Ennek a lapnak|Ezeknek a lapoknak}} néhány változata meg van jelölve fordításra.',
+	'tpt-new-pages' => '{{PLURAL:$1|Ez a lap tartalmaz|Ezek a lapok tartalmaznak}} fordítási tagekkel ellátott szöveget, de jelenleg egyik {{PLURAL:$1|változata|változatuk}} sincs megjelölve fordításra.',
 	'tpt-rev-latest' => 'utolsó változat',
 	'tpt-rev-old' => 'eltérés az előző jelölt változathoz képest',
 	'tpt-rev-mark-new' => 'ezen változatnak megjelölése fordításra',
 	'tpt-translate-this' => 'lap fordítása',
 	'translate-tag-translate-link-desc' => 'A lap fordítása',
 	'translate-tag-markthis' => 'Lap megjelölése fordításra',
+	'translate-tag-markthisagain' => 'Ezen a lapon történtek <span class="plainlinks">[$1 változtatások]</span>, mióta utoljára <span class="plainlinks">[$2 megjelölték fordításra]</span>.',
 	'translate-tag-hasnew' => 'Ez a lap tartalmaz <span class="plainlinks">[$1 változtatásokat]</span>, amelyek nincsenek fordításra jelölve.',
+	'tpt-translation-intro' => 'Ez a(z) [[$2]] lap egy <span class="plainlinks">[$1 lefordított változata]</span>, és a fordítás $3%-a kész és friss.',
 	'tpt-translation-intro-fuzzy' => 'Az elavult fordítások az alábbi módon vannak jelölve.',
 	'tpt-languages-legend' => 'Más nyelvek:',
+	'tpt-target-page' => 'Ezt a lapot nem lehet kézzel frissíteni.
+A(z) [[$1]] lap fordítása, és a fordítását [$2 a fordítás segédeszköz] segítségével lehet frissíteni.',
+	'tpt-unknown-page' => 'Ez a névtér a tartalmi lapok fordításainak van fenntartva.
+A lap, amit szerkeszteni próbálsz, úgy tűnik hogy nem egyezik egy fordításra jelölt lappal sem.',
+	'tpt-install' => 'Futtasd a <code>maintenance/update.php</code>-t vagy a webes telepítőt, hogy engedélyezd a lapfordítás funkciót.',
+	'tpt-render-summary' => 'Frissítés, hogy megegyezzen a forráslap új változatával',
 	'tpt-download-page' => 'Lap exportálása fordításokkal együtt',
 );
 
