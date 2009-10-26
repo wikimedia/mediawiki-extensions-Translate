@@ -3974,6 +3974,7 @@ $1',
  * @author Lin linao
  * @author Locos epraix
  * @author Sanbec
+ * @author Translationista
  */
 $messages['es'] = array(
 	'translate' => 'Traducir',
@@ -4155,6 +4156,7 @@ Se te anima a revisar los mensajes a través de [[Special:Translate|{{int:transl
 	'translate-group-desc-wikitravelextensions' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones MediaWiki soportadas usadas por [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones relacionadas a [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones relacionadas a la [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Iniciativa de usabilidad de Wikipedia]',
+	'translate-desc-mwembed' => '[http://www.mediawiki.org/wiki/MwEmbed MwEmbed] es una biblioteca para incrustar interfaces de MediaWiki',
 	'translate-manage-groups' => 'Gestión de grupo',
 	'translate-manage-listgroups' => 'Grupos configurados',
 	'translate-manage-listgroups-old' => 'Grupos en estilo antiguo',
@@ -4215,6 +4217,7 @@ $1',
 Asegúrese de que su editor no quita los campos msgctxt.
 Detalle: $1',
 	'translate-js-fb' => 'Edición normal',
+	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Código',
 	'translate-gs-continent' => 'Continente',
 	'translate-gs-speakers' => 'Hablantes',
@@ -15216,6 +15219,13 @@ $messages['wa'] = array(
  * @author Huuchin
  */
 $messages['xal'] = array(
+	'translate-task-view' => 'Цуг зәңгс гүүһәд хәләх',
+	'translate-task-untranslated' => 'Цуг орчулсн уга зәңгс гүүһәд хәләх',
+	'translate-task-optional' => 'Цуг немлт зәңгс гүүһәд хәләх',
+	'translate-task-untranslatedoptional' => 'Цуг орчулсн уга немлт зәңгс гүүһәд хәләх',
+	'translate-task-review' => 'Хүврлһдиг хәләх',
+	'translate-task-reviewall' => 'Цуг орчулсн зәңгс гүүһәд хәләх',
+	'translate-page-settings-legend' => 'Көгүд',
 	'translate-page-task' => 'Үүл',
 	'translate-page-group' => 'Баг',
 	'translate-page-language' => 'Келн',
@@ -15227,12 +15237,14 @@ $messages['xal'] = array(
 	'translate-page-showing-none' => 'Зәңгс үзүлх уга',
 	'translate-next' => 'дарук халх',
 	'translate-prev' => 'урдк халх',
+	'translate-page-description-legend' => 'Багин туск',
 	'translate-edit-tmmatch' => '$1%та ирлцән',
 	'translate-edit-goto-no-prev' => 'Эн түрүн халх',
 	'translate-edit-goto-no-next' => 'Эн кенз халх',
 	'translate-edit-goto-prev' => 'Урдк халхиг чиклх',
 	'translate-edit-goto-next' => 'Дарук халхиг чиклх',
 	'translate-pref-editassistlang' => 'Туслмҗин келс',
+	'translate-language' => 'Келн',
 );
 
 /** Mingrelian (მარგალური)
