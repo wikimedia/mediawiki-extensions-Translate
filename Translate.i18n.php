@@ -4223,7 +4223,9 @@ Detalle: $1',
 	'translate-gs-speakers' => 'Hablantes',
 	'translate-gs-score' => 'Valoración',
 	'translate-gs-multiple' => 'Múltiple',
+	'translate-gs-count' => 'Cantidad',
 	'translate-gs-total' => 'Total',
+	'translate-gs-avgscore' => 'Puntuación media',
 );
 
 /** Estonian (Eesti)
@@ -9373,6 +9375,7 @@ Detailler: $1',
 );
 
 /** Limburgish (Limburgs)
+ * @author Aelske
  * @author Ooswesthoesbes
  * @author Pahles
  */
@@ -9381,11 +9384,11 @@ $messages['li'] = array(
 	'translate-edit' => 'bewèrk',
 	'translate-talk' => 'euverlèk',
 	'translate-history' => 'gesjiedenis',
-	'translate-task-view' => 'alle berichte betrachte',
-	'translate-task-untranslated' => 'alle neet-euverzatte berichte betrachte',
-	'translate-task-optional' => 'optioneel berichte betrachte',
+	'translate-task-view' => 'alle berichte bekieke',
+	'translate-task-untranslated' => 'alle neet-vertaalde berichte bekieke',
+	'translate-task-optional' => 'optioneel berichte bekieke',
 	'translate-task-untranslatedoptional' => 'neet-euverzatte optioneel berichte betrachte',
-	'translate-task-problematic' => 'euverzèttinge mèt probleme betrachte',
+	'translate-task-problematic' => 'vertalinge mèt probleme bekieke',
 	'translate-task-review' => 'verangeringe kontrolere',
 	'translate-task-reviewall' => 'alle euverzèttinge kontrolere',
 	'translate-task-export' => 'euverzèttinge exportere',
