@@ -842,6 +842,7 @@ See also
 Scan Set
 
 Secure Passwords
+ignored = securepasswords-invalid
 
 Secure Poll
 aliasfile = SecurePoll/SecurePoll.alias.php
