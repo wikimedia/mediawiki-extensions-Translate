@@ -1075,7 +1075,7 @@ $messages['arc'] = array(
 	'translate-task-export-to-file' => 'ܐܦܩ ܬܘܪ̈ܓܡܐ ܠܠܦܦܐ ܡܢ',
 	'translate-page-settings-legend' => 'ܛܘܝܒ̈ܐ',
 	'translate-page-task' => 'ܒܥܐ ܐܢܐ ܕ',
-	'translate-page-group' => 'ܟܢܘܫܝܐ',
+	'translate-page-group' => 'ܟܢܘܫܬܐ',
 	'translate-page-language' => 'ܠܫܢܐ',
 	'translate-page-limit' => 'ܦܣܝܩܐ',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|ܐܓܪܬܐ|ܐܓܪ̈ܬܐ}} ܠܟܠ ܦܐܬܐ',
@@ -1084,7 +1084,7 @@ $messages['arc'] = array(
 	'translate-page-showing' => 'ܚܘܘܝܐ ܕܐܓܪ̈ܬܐ ܡܢ $1 ܥܕܡܐ ܠ $2 ܡܢ $3.',
 	'translate-page-showing-all' => 'ܚܘܘܝܐ ܕ $1 {{PLURAL:$1|ܐܓܪܬܐ|ܐܓܪ̈ܬܐ}}.',
 	'translate-page-showing-none' => 'ܠܝܬ ܐܓܪ̈ܬܐ ܠܚܘܘܝܐ.',
-	'translate-page-description-legend' => 'ܝܕܥܬ̈ܐ ܥܠ ܟܢܘܫܝܐ',
+	'translate-page-description-legend' => 'ܝܕܥܬ̈ܐ ܥܠ ܟܢܘܫܬܐ',
 	'translate-page-edit' => 'ܫܚܠܦ',
 	'translate-optional' => '(ܨܒܝܢܝܐ)',
 	'translate-edit-contribute' => 'ܫܘܬܦ',
@@ -11528,6 +11528,7 @@ Changes are not saved until you click save button below.',
 
 /** Portuguese (Português)
  * @author 555
+ * @author Hamilton Abreu
  * @author Lijealso
  * @author Malafaya
  * @author Waldir
@@ -11606,7 +11607,7 @@ As alterações não serão gravadas até que você clique abaixo no botão de g
 	'translate-magic-cm-comment' => 'Comentário:',
 	'translate-magic-cm-save' => 'Guardar',
 	'translate-magic-cm-updatedusing' => 'Actualizado usando [[Special:Magic]]',
-	'translate-magic-cm-savefailed' => 'Erro ao salvar',
+	'translate-magic-cm-savefailed' => 'Erro ao gravar',
 	'translate-magic-special' => 'Nomes alternativos de páginas especiais',
 	'translate-magic-words' => 'Palavras mágicas',
 	'translate-magic-namespace' => 'Nomes de espaços nominais',
