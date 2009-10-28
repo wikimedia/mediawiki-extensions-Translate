@@ -156,7 +156,6 @@ class PremadeMediawikiExtensionGroups {
 		global $wgTranslateAC, $wgTranslateEC;
 		$this->init();
 
-		var_dump( $this->groups );
 		if ( !count( $this->groups ) ) return;
 
 		foreach ( $this->groups as $id => $g ) {
