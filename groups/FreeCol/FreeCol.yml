@@ -33,19 +33,20 @@ CHECKER:
 
 TAGS:
   optional:
+    - installer.FreeCol
     - model.foundingFather.*.birthAndDeath
     - model.foundingFather.*.name
     - model.goods.goodsAmount
-    - model.nation.*.ruler
-    - model.nation.Portuguese.Europe
-    - model.nation.Swedish.Europe
-    - model.nation.*.settlementName.*
     - model.nation.*.region.land.*
     - model.nation.*.region.mountain.*
     - model.nation.*.region.river.*
-    - model.unit.occupation.activeNoMovesLeft
-    - shipName.3.0
+    - model.nation.*.ruler
+    - model.nation.*.settlementName.*
+    - model.nation.Portuguese.Europe
+    - model.nation.Swedish.Europe
     - model.region.default
+    - model.unit.occupation.activeNoMovesLeft
     - selectDestination.destinationTurns
+    - shipName.3.0
   ignored:
     - HeaderFont
