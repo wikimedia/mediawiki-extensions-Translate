@@ -577,7 +577,7 @@ ignored = maintenance-stats
 Maps
 magicfile = Maps/Maps.i18n.magic.php
 descmsg = maps_desc
-optional = maps_name, maps_googlemaps, maps_yahoomaps, maps_openlayers
+optional = maps_name, maps_googlemaps, maps_yahoomaps, maps_openlayers, maps_osm
 
 Mass Edit Regex
 
