@@ -318,6 +318,9 @@ class ExtensionMessageGroup extends MessageGroupOld {
 	 * Name of the array where all messages are stored, if applicable.
 	 */
 	protected $arrName      = 'messages';
+
+	protected $path         = null;
+
 	public function getVariableName() { return $this->arrName; }
 	public function setVariableName( $value ) { $this->arrName = $value; }
 
@@ -369,8 +372,15 @@ class ExtensionMessageGroup extends MessageGroupOld {
 	}
 
 	public function getPath() {
-		global $wgTranslateExtensionDirectory;
-		return $wgTranslateExtensionDirectory;
+		if ( $this->path === null ) {
+			global $wgTranslateExtensionDirectory;
+			return $wgTranslateExtensionDirectory; // BC
+		}
+		return $this->path;
+	}
+
+	public function setPath( $path ) {
+		$this->path = $path;
 	}
 
 	public function getReader( $code ) {

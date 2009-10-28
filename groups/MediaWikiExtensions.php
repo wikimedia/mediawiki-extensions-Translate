@@ -2,6 +2,16 @@
 
 class PremadeMediawikiExtensionGroups {
 	protected $groups;
+	protected $definitionFile = null;
+	protected $useConfigure = true;
+	protected $idPrefix = 'ext-';
+
+	public function __construct() {
+		global $wgTranslateExtensionDirectory;
+		$dir = dirname( __FILE__ );
+		$this->definitionFile = $dir . '/mediawiki-defines.txt';
+		$this->path = $wgTranslateExtensionDirectory;
+	}
 
 	public function init() {
 		if ( $this->groups !== null ) return;
@@ -11,16 +21,14 @@ class PremadeMediawikiExtensionGroups {
 			$wgConfigureExtDir = "$IP/extensions/";
 		}
 		$wgAutoloadClasses['TxtDef'] = $wgConfigureExtDir . "Configure/TxtDef.php";
-		if ( class_exists( 'TxtDef' ) ) {
+		if ( $this->useConfigure && class_exists( 'TxtDef' ) ) {
 			$tmp = TxtDef::loadFromFile( $wgConfigureExtDir . "Configure/Configure.settings-ext.txt" );
 			$configureData = array_combine( array_map( array( __CLASS__, 'foldId' ), array_keys($tmp)), array_values($tmp) );
 		} else {
 			$configureData = array();
 		}
 
-
-		$dir = dirname( __FILE__ );
-		$defines = file_get_contents( $dir . '/mediawiki-defines.txt' );
+		$defines = file_get_contents( $this->definitionFile );
 
 		$linefeed = '(\r\n|\n)';
 
@@ -33,7 +41,7 @@ class PremadeMediawikiExtensionGroups {
 			$newgroup = array();
 
 			foreach ( $lines as $line ) {
-				if ( $line === '' ) continue;
+				if ( $line === '' || $line[0] === '#' ) continue;
 
 				if ( strpos( $line, '=' ) === false ) {
 					if ( empty( $newgroup['name'] ) ) {
@@ -98,7 +106,7 @@ class PremadeMediawikiExtensionGroups {
 			if ( isset( $g['id'] ) ) {
 				$id = $g['id'];
 			} else {
-				$id = 'ext-' . preg_replace( '/\s+/', '', strtolower( $name ) );
+				$id = $this->idPrefix . preg_replace( '/\s+/', '', strtolower( $name ) );
 			}
 
 			if ( isset( $g['file'] ) ) {
@@ -110,7 +118,7 @@ class PremadeMediawikiExtensionGroups {
 			if ( isset( $g['descmsg'] ) ) {
 				$descmsg = $g['descmsg'];
 			} else {
-				$descmsg = str_replace( 'ext-', '', $id ) . '-desc';
+				$descmsg = str_replace( $this->idPrefix, '', $id ) . '-desc';
 			}
 
 			$configureId = self::foldId( $name );
@@ -148,12 +156,19 @@ class PremadeMediawikiExtensionGroups {
 		global $wgTranslateAC, $wgTranslateEC;
 		$this->init();
 
+		var_dump( $this->groups );
 		if ( !count( $this->groups ) ) return;
 
 		foreach ( $this->groups as $id => $g ) {
 			$wgTranslateAC[$id] = array( $this, 'factory' );
 			$wgTranslateEC[] = $id;
 		}
+
+		$this->addAllMeta();
+	}
+
+	protected function addAllMeta() {
+		global $wgTranslateAC, $wgTranslateEC;
 
 		$meta = array(
 			'ext-0-all'               => 'AllMediawikiExtensionsGroup',
@@ -177,10 +192,10 @@ class PremadeMediawikiExtensionGroups {
 	}
 
 	public function factory( $id ) {
-
 		$info = $this->groups[$id];
 		$group = ExtensionMessageGroup::factory( $info['name'], $id );
 		$group->setMessageFile( $info['file'] );
+		$group->setPath( $this->path );
 
 		if ( isset( $info['prefix'] ) ) {
 			$mangler = new StringMatcher( $info['prefix'], $info['mangle'] );
@@ -198,8 +213,6 @@ class PremadeMediawikiExtensionGroups {
 		} else {
 			$group->setDescriptionMsg( $info['descmsg'], $info['url'] );
 		}
-
-		global $wgTranslateExtensionDirectory;
 
 		if ( isset($info['aliasfile']) ) $group->setAliasFile( $info['aliasfile'] );
 		if ( isset($info['magicfile']) ) $group->setMagicFile( $info['magicfile'] );
