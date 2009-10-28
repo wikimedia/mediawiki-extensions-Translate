@@ -1,0 +1,371 @@
+ActionPanel
+file = ActionPanel/ActionPanel.i18n.php
+
+AjaxPoll
+file = AjaxPoll/AjaxPoll.i18n.php
+
+# Wrong format
+#ArticlesHome
+#file = ArticlesHome/ArticlesHome.i18n.php
+
+AutoCreateWiki
+file = AutoCreateWiki/AutoCreateWiki.i18n.php
+
+Badges
+file = Badges/UserBadges.i18n.php
+
+#BlogPage
+#file = BlogPage/Blog.i18n.php
+
+Blogs
+file = Blogs/Blogs.i18n.php
+
+CategorySelect
+file = CategorySelect/CategorySelect.i18n.php
+
+#CollabLibs
+#file = CollabLibs/CollabLib.i18n.php
+
+#Comments
+#file = Comments/Comments.i18n.php
+
+#CommentsForum
+#file = CommentsForum/Forum.i18n.php
+#...
+ContestTool
+file = ContestTool/SpecialContestTool.i18n.php
+
+CreateAPage
+file = CreateAPage/MultiEdit.i18n.php
+
+CreatePage
+file = CreatePage/CreatePage.i18n.php
+
+DaemonLoader
+file = DaemonLoader/SpecialDaemonLoader.i18n.php
+
+DynamicPageList2
+file = DynamicPageList2/DynamicPageList2.i18n.php
+
+EditAccount
+file = EditAccount/SpecialEditAccount.i18n.php
+
+Editcount
+file = Editcount/SpecialEditcount.i18n.php
+
+EditingTips
+file = EditingTips/EditingTips.i18n.php
+
+EditResearch
+file = EditResearch/EditResearch.i18n.php
+
+EditSimilar
+file = EditSimilar/EditSimilar.i18n.php
+
+FanBoxes
+file = FanBoxes/FanBox.i18n.php
+
+FlickrImport
+file = FlickrImport/FlickrImport.i18n.php
+
+ForceSubjectForNewSection
+file = ForceSubjectForNewSection/ForceSubjectForNewSection.i18n.php
+
+getmycontacts
+file = getmycontacts/getmycontacts.i18n.php
+
+GlobalWatchlist
+file = GlobalWatchlist/GlobalWatchlist.i18n.php
+
+GraceExpired
+file = GraceExpired/SpecialGraceExpired.i18n.php
+
+HAWelcome
+file = HAWelcome/HAWelcome.i18n.php
+
+HelperPanel
+file = HelperPanel/HelperPanel.i18n.php
+
+ImagePlaceholder
+file = ImagePlaceholder/ImagePlaceholder.i18n.php
+
+ImageRating
+file = ImageRating/ImageRating.i18n.php
+
+InputBox
+file = InputBox/inputbox.i18n.php
+
+InterwikiDispatcher
+file = InterwikiDispatcher/SpecialInterwikiDispatcher.i18n.php
+
+Invite
+file = Invite/Invite.i18n.php
+
+Invite
+file = Invite/SpecialInviteContacts.i18n.php
+
+LinkFilter
+file = LinkFilter/LinkFilter.i18n.php
+
+LinkSuggest
+file = LinkSuggest/LinkSuggest.i18n.php
+
+ListPages
+file = ListPages/ListPages.i18n.php
+
+Listusers
+file = Listusers/SpecialListusers.i18n.php
+
+LoginReg
+file = LoginReg/LoginReg.i18n.php
+
+LookupContribs
+file = LookupContribs/SpecialLookupContribs.i18n.php
+
+MagCloud
+file = MagCloud/MagCloud.i18n.php
+
+Masthead
+file = Masthead/Masthead.i18n.php
+
+MergeTool
+file = MergeTool/SpecialMergeTool.i18n.php
+
+MetricsNY
+file = MetricsNY/SiteMetrics.i18n.php
+
+MostPopularArticles
+file = MostPopularArticles/SpecialMostPopularArticles.i18n.php
+
+MostPopularCategories
+file = MostPopularCategories/SpecialMostPopularCategories.i18n.php
+
+MostVisitedPages
+file = MostVisitedPages/SpecialMostVisitedPages.i18n.php
+
+MultiDelete
+file = MultiDelete/MultiDelete.i18n.php
+
+MultiEdit
+file = MultiEdit/MultiEdit.i18n.php
+
+MultiTasks
+file = MultiTasks/MultiTasks.i18n.php
+
+MultiWikiEdit
+file = MultiWikiEdit/MultiWikiEdit.i18n.php
+
+MyHome
+file = MyHome/MyHome.i18n.php
+
+NewEditPage
+file = NewEditPage/NewEditPage.i18n.php
+
+NewWikiBuilder
+file = NewWikiBuilder/NewWikiBuilder.i18n.php
+aliasfile = NewWikiBuilder/NewWikiBuilder.alias.php
+
+Our404Handler
+file = Our404Handler/SpecialOur404Handler.i18n.php
+
+OutboundScreen
+file = OutboundScreen/OutboundScreen.i18n.php
+
+PictureGame
+file = PictureGame/PictureGame.i18n.php
+
+Poke
+file = Poke/Poke.i18n.php
+
+Poll
+file = Poll/poll.i18n.php
+
+ProblemReports
+file = ProblemReports/ProblemReports.i18n.php
+
+QuizGame
+file = QuizGame/QuestionGame.i18n.php
+
+RandomFeaturedUser
+file = RandomFeaturedUser/RandomFeaturedUser.i18n.php
+
+RandomGameUnit
+file = RandomGameUnit/RandomGameUnit.i18n.php
+
+RandomUsersWithAvatars
+file = RandomUsersWithAvatars/RandomUsersWithAvatars.i18n.php
+
+RegexBlock
+file = RegexBlock/RegexBlock.i18n.php
+
+SearchRankTracker
+file = SearchRankTracker/SpecialSearchRankTracker.i18n.php
+
+Search
+file = Search/Search.i18n.php
+
+SendToAFriend
+file = SendToAFriend/SendToAFriend.i18n.php
+
+ShareFeature
+file = ShareFeature/ShareFeature.i18n.php
+
+SiteScout
+file = SiteScout/SiteScout.i18n.php
+
+SiteWideMessages
+file = SiteWideMessages/SpecialSiteWideMessages.i18n.php
+
+SpamBlacklist
+file = SpamBlacklist/SpamBlacklist.i18n.php
+
+SpecialInterwikiEdit
+file = SpecialInterwikiEdit/SpecialInterwikiEdit.i18n.php
+
+SpecialMiniUpload
+file = SpecialMiniUpload/SpecialMiniUpload.i18n.php
+
+SpecialMultipleLookup
+file = SpecialMultipleLookup/SpecialMultipleLookup.i18n.php
+
+SpecialPrivateDomains
+file = SpecialPrivateDomains/SpecialPrivateDomains.i18n.php
+
+SpecialProtectSite
+file = SpecialProtectSite/SpecialProtectSite.i18n.php
+
+SpecialWidgetDashboard
+file = SpecialWidgetDashboard/SpecialWidgetDashboard.i18n.php
+
+StaffPowers
+file = StaffPowers/StaffPowers.i18n.php
+
+SystemGifts
+file = SystemGifts/SystemGift.i18n.php
+
+TagsReport
+file = TagsReport/SpecialTagsReport.i18n.php
+
+TaskManager
+file = TaskManager/SpecialTaskManager.i18n.php
+
+TextRegex
+file = TextRegex/TextRegex.i18n.php
+aliasfile = TextRegex/TextRegex.alias.php
+
+Theorytab
+file = Theorytab/Theorytab.i18n.php
+
+UserActivity
+file = UserActivity/UserActivity.i18n.php
+
+UserBoard
+file = UserBoard/UserBoard.i18n.php
+
+UserBulletin
+file = UserBulletin/UserBulletin.i18n.php
+
+Userengagement
+file = Userengagement/SpecialUserengagement.i18n.php
+
+UserGifts
+file = UserGifts/UserGifts.i18n.php
+
+UserHome
+file = UserHome/UserActivity.i18n.php
+
+UserImages
+file = UserImages/UserImages.i18n.php
+
+UserProfileStatus
+file = UserProfileStatus/UserStatus.i18n.php
+
+UserProfile
+file = UserProfile/UserProfile.i18n.php
+
+UserRelationship
+file = UserRelationship/UserRelationship.i18n.php
+
+UserStats
+file = UserStats/UserStats.i18n.php
+
+UserWelcome
+file = UserWelcome/UserWelcome.i18n.php
+
+VideoEmbedTool
+file = VideoEmbedTool/VideoEmbedTool.i18n.php
+
+VideoEmbedTool
+file = VideoEmbedTool/WikiaVideoAdd.i18n.php
+
+VideoImport
+file = VideoImport/VideoImport.i18n.php
+
+Video
+file = Video/Video.i18n.php
+
+Vote
+file = Vote/Vote.i18n.php
+
+Webtools
+file = Webtools/SpecialWebtools.i18n.php
+
+WhereIsExtension
+file = WhereIsExtension/SpecialWhereIsExtension.i18n.php
+
+WhosOnline
+file = WhosOnline/WhosOnline.i18n.php
+
+WidgetSpecialPage
+file = WidgetSpecialPage/WidgetsSpecialPage.i18n.php
+
+WikiaAvatar
+file = WikiaAvatar/SpecialWikiaAvatar.i18n.php
+
+WikiaEvents
+file = WikiaEvents/SpecialWikiaEvents.i18n.php
+
+WikiaEvents
+file = WikiaEvents/WikiaEvents.i18n.php
+
+WikiaIrcGateway
+file = WikiaIrcGateway/WikiaIrcGateway.i18n.php
+
+WikiaMiniUpload
+file = WikiaMiniUpload/WikiaMiniUpload.i18n.php
+
+WikiaStats
+file = WikiaStats/SpecialWikiaStats.i18n.php
+
+WikiaUpload
+file = WikiaUpload/WikiaUpload.i18n.php
+
+WikiaUserProfile
+file = WikiaUserProfile/WikiaUserProfile.i18n.php
+
+WikiaVideo
+file = WikiaVideo/WikiaVideo.i18n.php
+
+WikiaWidget
+file = WikiaWidget/WikiaWidget.i18n.php
+
+WikiFactory Dumps
+file = WikiFactory/Dumps/DumpsOnDemand.i18n.php
+
+WikiFactory Reporter
+file = WikiFactory/Reporter/SpecialWikiFactoryReporter.i18n.php
+
+WikiFactory
+file = WikiFactory/SpecialWikiFactory.i18n.php
+
+WikiHealth
+file = WikiHealth/SpecialWikiHealth.i18n.php
+
+FCK
+file = Wysiwyg/i18n/FCK.i18n.php
+
+Wysiwyg
+file = Wysiwyg/i18n/Wysiwyg.i18n.php
+
+WysiwygInterface
+file = WysiwygInterface/WysiwygInterface.i18n.php
