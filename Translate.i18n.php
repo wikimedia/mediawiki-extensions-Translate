@@ -6911,9 +6911,14 @@ A változtatások nem mentődnek, míg alul a mentés gombra nem kattintasz.',
 	'translate-import-load' => 'Fájl betöltése',
 	'translate-import-err-ul-failed' => 'A fájlfeltöltés sikertelen volt',
 	'translate-js-fb' => 'Normál szerkesztés',
+	'translate-gs-pos' => 'Hely',
+	'translate-gs-code' => 'Kód',
 	'translate-gs-continent' => 'Kontinens',
 	'translate-gs-speakers' => 'Beszélők',
+	'translate-gs-score' => 'Eredmény',
+	'translate-gs-multiple' => 'Több',
 	'translate-gs-total' => 'Összesen',
+	'translate-gs-avgscore' => 'Átlagos eredmény',
 );
 
 /** Interlingua (Interlingua)
@@ -11564,9 +11569,9 @@ $messages['pt'] = array(
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|mensagem|mensagens}} por página',
 	'translate-submit' => 'Trazer',
 	'translate-page-navigation-legend' => 'Navegação',
-	'translate-page-showing' => 'Exibindo mensagens de $1 a $2 de $3.',
-	'translate-page-showing-all' => 'Exibindo $1 {{PLURAL:$1|mensagem|mensagens}}.',
-	'translate-page-showing-none' => 'Não há mensagens a serem exibidas.',
+	'translate-page-showing' => 'Apresentando as mensagens $1 a $2 de $3.',
+	'translate-page-showing-all' => 'Apresentando $1 {{PLURAL:$1|mensagem|mensagens}}.',
+	'translate-page-showing-none' => 'Não há mensagens a apresentar.',
 	'translate-next' => 'Página seguinte',
 	'translate-prev' => 'Página anterior',
 	'translate-page-description-legend' => 'Informação sobre o grupo',
@@ -11626,7 +11631,14 @@ As alterações não serão gravadas até que você clique abaixo no botão de g
 	'translate-checks-format' => 'Esta tradução não segue a definição ou tem uma sintaxe inválida: $1',
 	'translate-checks-escape' => 'As seguintes sequências de escape podem ter sido acidentais: <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'Não me enviar newsletters por e-mail',
+	'translate-pref-editassistlang' => 'Línguas de auxílio:',
 	'prefs-translate' => 'Opções de tradução',
+	'translate-pref-editassistlang-help' => 'Lista de códigos de línguas separados por vírgulas.
+Quando estiver a traduzir, ser-lhe-ão também apresentadas as traduções para estas línguas.
+A lista por omissão depende da sua língua.',
+	'translate-pref-editassistlang-bad' => 'Código de língua inválido na lista:
+<nowiki>$1</nowiki>.',
+	'translate-pref-jsedit' => 'Editor de traduções optimizado (JavaScript)',
 	'right-translate' => 'Editar usando a interface de tradução',
 	'translate-rc-translation-filter' => 'Filtrar traduções:',
 	'translate-rc-translation-filter-no' => 'Não fazer nada',
@@ -12812,6 +12824,15 @@ Nebolo možné určiť skupinu a jazyk z hlavičiek súboru.',
 Uistite sa, že váš editor neodstraňuje polia msgctxt.
 Podrobnosti: $1',
 	'translate-js-fb' => 'Bežná úprava',
+	'translate-gs-pos' => 'Poz.',
+	'translate-gs-code' => 'Kód',
+	'translate-gs-continent' => 'Kontinent',
+	'translate-gs-speakers' => 'Hovoriacich',
+	'translate-gs-score' => 'Skóre',
+	'translate-gs-multiple' => 'Násobok',
+	'translate-gs-count' => 'Počet',
+	'translate-gs-total' => 'Celkom',
+	'translate-gs-avgscore' => 'Priem. skóre',
 );
 
 /** Slovenian (Slovenščina)
