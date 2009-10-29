@@ -65,9 +65,20 @@ class AllWikiaExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected function init() {
 		if ( $this->classes === null ) {
 			$this->classes = array();
+
 			$classes = MessageGroups::singleton()->getGroups();
+
+			// Add regular MediaWiki extensions
 			foreach ( $this->wikiaextensions as $key ) {
 				$this->classes[$key] = $classes[$key];
+			}
+
+			// Add extensions that have a wikia- prefix
+			foreach ( $classes as $index => $class ) {
+				if ( ( strpos( $index, 'wikia-' ) === 0 ) && !$class->isMeta() && $class->exists() ) {
+					$this->classes[$index] = $classes[$index];
+					$this->wikiaextensions[] = $index;
+				}
 			}
 		}
 	}
