@@ -28,14 +28,12 @@ class PremadeWikiaExtensionGroups extends PremadeMediawikiExtensionGroups {
 }
 
 class AllWikiaExtensionsGroup extends AllMediawikiExtensionsGroup {
-	protected $description = '{{int:translate-group-desc-mediawikiextensions}}';
-
+	protected $description = '{{int:translate-group-desc-wikiaextensions}}';
 	protected $label = 'Extensions used by Wikia'; // currently using 1.14.0
 	protected $id    = 'ext-0-wikia';
 	protected $meta  = true;
 	protected $type  = 'wikia';
 	protected $classes = null;
-	protected $description = '{{int:translate-group-desc-wikiaextensions}}';
 
 	protected $wikiaextensions = array(
 		'ext-antibot',
