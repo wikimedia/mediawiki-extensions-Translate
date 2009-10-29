@@ -97,7 +97,8 @@ Category Stepper
 ignored = categorystepper
 
 Category Tests
-magicfile = CategoryTests/CategoryTests.i18n.magic.php
+#Gives key conflicts with ParserFunctions. Needs to be fixed first.
+#magicfile = CategoryTests/CategoryTests.i18n.magic.php
 
 Category Tree
 aliasfile = CategoryTree/CategoryTree.alias.php
@@ -645,6 +646,11 @@ descmsg = multipleupload-desc
 MediaWiki Search
 id = ext-mwsearch
 file = MWSearch/MWSearch.i18n.php
+
+# Need to make a symlink into extensions/ to make this work.
+#mwEmbed
+#optional = mwe-size-gigabytes, mwe-size-megabytes, mwe-size-kilobytes, mwe-size-bytes, mwe-cc_title
+#ignored = mwe-welcome_to_sequencer
 
 MW Releases
 ignored = mwreleases-list
@@ -1282,6 +1288,15 @@ ignored = ow_editing_policy_url
 
 Wikihiero
 file = wikihiero/wikihiero.i18n.php
+
+Wikilog
+optional = wikilog-item-footer, wikilog-author-signature, wikilog-title-item-full, 
+ignored = wikilog-item-brief-footer, wikilog-item-sub, wikilog-item-header, wikilog-summary
+ignored = wikilog-backlink, wikilog-brackets, wikilog-navigation-bar
+
+Wikilog Feed
+file = Wikilog/WlFeed.i18n.php
+descmsg = wlfeed-desc
 
 Wikimedia Incubator
 descmsg = wminc-desc
