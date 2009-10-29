@@ -171,7 +171,6 @@ class PremadeMediawikiExtensionGroups {
 
 		$meta = array(
 			'ext-0-all'               => 'AllMediawikiExtensionsGroup',
-			'ext-0-wikia'             => 'AllWikiaExtensionsGroup',
 			'ext-0-wikihow'           => 'AllWikihowExtensionsGroup',
 			'ext-0-wikimedia'         => 'AllWikimediaExtensionsGroup',
 			'ext-0-wikitravel'        => 'AllWikitravelExtensionsGroup',
@@ -301,56 +300,6 @@ class AllMediawikiExtensionsGroup extends MessageGroupOld {
 			if ( $class->exists() ) return true;
 		}
 		return false;
-	}
-}
-
-class AllWikiaExtensionsGroup extends AllMediawikiExtensionsGroup {
-	protected $label = 'Extensions used by Wikia'; // currently using 1.14.0
-	protected $id    = 'ext-0-wikia';
-	protected $meta  = true;
-
-	protected $classes = null;
-	protected $description = '{{int:translate-group-desc-wikiaextensions}}';
-
-	protected $wikiaextensions = array(
-		'ext-antibot',
-		'ext-categorytree',
-		'ext-charinsert',
-		'ext-checkuser',
-		'ext-cite',
-		'ext-confirmedit',
-		'ext-dismissablesitenotice',
-		'ext-dplforum',
-		'ext-editcount',
-		'ext-findspam',
-		'ext-googlemaps',
-		'ext-imagemap',
-		'ext-importfreeimages',
-		'ext-inputbox',
-		'ext-lookupuser',
-		'ext-multiupload',
-		'ext-parserfunctions',
-		'ext-poem',
-		'ext-randomimage',
-		'ext-spamblacklist',
-		'ext-stringfunctions',
-		'ext-timeline',
-		'ext-torblock',
-		'ext-wikihiero',
-	);
-
-	protected function init() {
-		if ( $this->classes === null ) {
-			$this->classes = array();
-			$classes = MessageGroups::singleton()->getGroups();
-			foreach ( $this->wikiaextensions as $key ) {
-				$this->classes[$key] = $classes[$key];
-			}
-		}
-	}
-
-	public function wikiaextensions() {
-		return $this->wikiaextensions;
 	}
 }
 
