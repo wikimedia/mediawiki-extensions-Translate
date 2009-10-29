@@ -297,7 +297,7 @@ ignored = sitenotice_id
 Donation Interface - Donate Interface
 id = ext-di-di
 file = DonationInterface/donate_interface/donate_interface.i18n.php
-descmsg = donate-desc
+descmsg = donate_interface-desc
 ignored = donate_interface-big-amount-display, donate_interface-medium-amount-display, donate_interface-small-amount-display, donate_interface-big-amount-value
 ignored = donate_interface-medium-amount-value, donate_interface-small-amount-value
 
