@@ -31,7 +31,7 @@ file = CategorySelect/CategorySelect.i18n.php
 
 #CommentsForum
 #file = CommentsForum/Forum.i18n.php
-#...
+
 ContestTool
 file = ContestTool/SpecialContestTool.i18n.php
 
@@ -115,8 +115,9 @@ file = ImagePlaceholder/ImagePlaceholder.i18n.php
 LinkSuggest
 file = LinkSuggest/LinkSuggest.i18n.php
 
-ListPages
-file = ListPages/ListPages.i18n.php
+#Cannot support. Not using $wgExtensionMessagesFiles[]
+#ListPages
+#file = ListPages/ListPages.i18n.php
 
 #Duplicate keys (core message in trunk)
 #Listusers

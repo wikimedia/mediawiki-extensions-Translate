@@ -30,7 +30,7 @@ class PremadeWikiaExtensionGroups extends PremadeMediawikiExtensionGroups {
 class AllWikiaExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $description = '{{int:translate-group-desc-wikiaextensions}}';
 	protected $label = 'Extensions used by Wikia'; // currently using 1.14.0
-	protected $id    = 'ext-0-wikia';
+	protected $id    = 'wikia-0-all';
 	protected $meta  = true;
 	protected $type  = 'wikia';
 	protected $classes = null;
