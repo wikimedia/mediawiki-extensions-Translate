@@ -115,12 +115,12 @@ file = ImagePlaceholder/ImagePlaceholder.i18n.php
 LinkSuggest
 file = LinkSuggest/LinkSuggest.i18n.php
 
-#Duplicate keys (core message in trunk)
-#ListPages
-#file = ListPages/ListPages.i18n.php
+ListPages
+file = ListPages/ListPages.i18n.php
 
-Listusers
-file = Listusers/SpecialListusers.i18n.php
+#Duplicate keys (core message in trunk)
+#Listusers
+#file = Listusers/SpecialListusers.i18n.php
 
 #LoginReg
 #file = LoginReg/LoginReg.i18n.php
