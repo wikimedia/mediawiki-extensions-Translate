@@ -294,6 +294,21 @@ Dismissable SiteNotice
 descmsg = sitenotice-desc
 ignored = sitenotice_id
 
+Donation Interface - Donate Interface
+id = di-di
+file = DonationInterface/donate_interface/donate_interface.i18n.php
+descmsg = donate-desc
+
+Donation Interface - Payflow Pro Gateway
+id = di-pfpg
+file = DonationInterface/payflowpro_gateway/payflowpro_gateway.i18n.php
+descmsg = payflowpro_gateway-desc
+
+Donation Interface - PayPal Gateway
+id = di-ppg
+file = DonationInterface/paypal_gateway/paypal_gateway.i18n.php
+descmsg = paypal_gateway-desc
+
 Double Wiki
 
 DPL Forum
