@@ -490,7 +490,7 @@ class AliasMessageGroup extends ExtensionMessageGroup {
 
 class CoreMostUsedMessageGroup extends CoreMessageGroup {
 	protected $label = 'MediaWiki (most used)';
-	protected $id    = 'core-mostused';
+	protected $id    = 'core-0-mostused';
 	protected $meta  = true;
 
 	protected $description = '{{int:translate-group-desc-mediawikimostused}}';

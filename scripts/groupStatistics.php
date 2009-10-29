@@ -72,12 +72,12 @@ $mostSpokenLanguages = array(
 
 $localisedWeights = array(
 	'wikimedia' => array(
-		'core-mostused'   => 40,
+		'core-0-mostused'   => 40,
 		'core'            => 30,
 		'ext-0-wikimedia' => 30
 	),
 	'mediawiki' => array(
-		'core-mostused'   => 30,
+		'core-0-mostused'   => 30,
 		'core'            => 30,
 		'ext-0-wikimedia' => 20,
 		'ext-0-all'       => 20
@@ -128,12 +128,12 @@ function showUsage() {
 			and fuzzy are ignored and the localisation levels are
 			weighted and reported.
 		* mediawiki:
-			core-mostused (30%)
+			core-0-mostused (30%)
 			core (30%)
 			ext-0-wikimedia (20%)
 			ext-0-all (20%)
 		* wikimedia:
-			core-mostused (40%)
+			core-0-mostused (40%)
 			core (30%)
 			ext-0-wikimedia (30%)
 	--speakers : add column for number of speakers (est.). Only valid when
