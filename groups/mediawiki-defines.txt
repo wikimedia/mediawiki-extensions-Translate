@@ -360,6 +360,9 @@ descmsg = extdist-desc
 External Data
 magicfile = ExternalData/ExternalData.i18n.magic.php
 
+External Pages
+aliasfile = ExternalPages/ExternalPages.alias.php
+
 Farmer
 aliasfile = Farmer/Farmer.alias.php
 optional = farmercreateurl
