@@ -2535,6 +2535,8 @@ $messages['vo'] = array(
  * @author פוילישער
  */
 $messages['yi'] = array(
+	'pagetranslation' => 'בלאט טײַטש',
+	'tpt-diff-new' => 'נײַער טעקסט',
 	'translate-tag-translate-link-desc' => 'פֿארטײַטשט דעם בלאט',
 	'tpt-languages-legend' => 'אנדערע שפראַכן:',
 );
