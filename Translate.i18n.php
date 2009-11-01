@@ -4429,9 +4429,16 @@ $messages['eu'] = array(
 	'translate-manage-modlang-new' => '$1 (berria)',
 	'translate-manage-import-new' => 'Mezu berria $1',
 	'translate-manage-import-deleted' => 'Mezu ezabatua $1',
+	'translate-manage-action-import' => 'Inportatu',
 	'translate-manage-action-ignore' => 'Ezikusi',
 	'translate-manage-submit' => 'Exekutatu',
+	'translate-manage-import-done' => 'Dena eginda!',
 	'translate-import-load' => 'Fitxategia kargatu',
+	'translate-gs-pos' => 'Pos.',
+	'translate-gs-code' => 'Kodea',
+	'translate-gs-continent' => 'Kontinentea',
+	'translate-gs-speakers' => 'Hiztunak',
+	'translate-gs-total' => 'Guztira',
 );
 
 /** Extremaduran (Estremeñu)
