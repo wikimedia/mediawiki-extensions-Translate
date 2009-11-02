@@ -874,7 +874,7 @@ Secure Poll
 aliasfile = SecurePoll/SecurePoll.alias.php
 optional = securepoll-header-ip, securepoll-header-xff, securepoll-header-token-match
 optional = securepoll-header-url, securepoll-header-id, securepoll-header-trans-id
-ignored = securepoll-custom-unqualified
+ignored = securepoll-custom-unqualified, securepoll-votername-remote, securepoll-votername-local
 
 Select Category
 
