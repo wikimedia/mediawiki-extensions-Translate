@@ -1043,6 +1043,8 @@ ignored = tasks_search_limit, tasks_help_separator, tasks_creation_tasks, tasks_
 optional = tasks_help_page_link
 descmsg = tasks_desc
 
+Template Info
+
 Template Link
 aliasfile = TemplateLink/TemplateLink.alias.php
 descmsg = templatelink_desc
