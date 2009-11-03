@@ -28,8 +28,7 @@ class OpenLayersMessageGroup extends MessageGroupOld {
 	);
 
 	protected $ignored = array(
-		'end',
-		'w'
+		'end'
 	);
 
 	public function getMessageFile( $code ) {
