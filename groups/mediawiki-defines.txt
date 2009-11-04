@@ -1220,6 +1220,7 @@ ignored = prefstats-list-elem
 Usability Initiative - Side By Side Preview
 id = ext-ui-sidebysidepreview
 file = UsabilityInitiative/SideBySidePreview/SideBySidePreview.i18n.php
+descmsg = sidebysidepreview-desc
 
 Usability Initiative - Simple Search
 id = ext-ui-simplesearch
