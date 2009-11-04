@@ -437,6 +437,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-ui-optin',
 		'ext-ui-optinlink',
 		'ext-ui-prefstats',
+		'ext-ui-sidebysidepreview',
 		'ext-ui-simplesearch',
 		'ext-ui-usabilityinitiative',
 		'ext-ui-userdailycontribs',
@@ -679,6 +680,7 @@ class AllUsabilityInitiativeExtensionsGroup extends AllMediawikiExtensionsGroup 
 		'ext-ui-optin',
 		'ext-ui-optinlink',
 		'ext-ui-prefstats',
+		'ext-ui-sidebysidepreview',
 		'ext-ui-simplesearch',
 		'ext-ui-userdailycontribs',
 	);
