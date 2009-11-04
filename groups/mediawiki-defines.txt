@@ -1217,7 +1217,6 @@ aliasfile = UsabilityInitiative/PrefStats/PrefStats.alias.php
 descmsg = prefstats-desc
 ignored = prefstats-list-elem
 
-SideBySidePreview 
 Usability Initiative - Side By Side Preview
 id = ext-ui-sidebysidepreview
 file = UsabilityInitiative/SideBySidePreview/SideBySidePreview.i18n.php
