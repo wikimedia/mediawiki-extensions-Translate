@@ -377,6 +377,9 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-contributionreporting', // wikimediafoundation.org
 		'ext-contributiontracking', // wikimediafoundation.org
 		'ext-crossnamespacelinks',
+		'ext-di-di', //2009-11-04: test.wikipedia.org
+		'ext-di-pfpg', //2009-11-04: test.wikipedia.org
+		'ext-di-ppg', //2009-11-04: test.wikipedia.org
 		'ext-dismissablesitenotice',
 		'ext-doublewiki', // Wikisource
 		'ext-drafts', // test.wikipedia.org
