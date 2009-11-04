@@ -9897,7 +9897,7 @@ $messages['ml'] = array(
 	'translate-history' => 'നാള്‍വഴി',
 	'translate-task-view' => 'എല്ലാ സന്ദേശങ്ങളും കാണണം',
 	'translate-task-untranslated' => 'പരിഭാഷപ്പെടുത്തിയിട്ടില്ലാത്ത സന്ദേശങ്ങള്‍ കാണണം',
-	'translate-task-optional' => 'പരിഭാഷ നിര്‍ബന്ധമില്ലാത്തെ സന്ദേശങ്ങള്‍ കാണണം',
+	'translate-task-optional' => 'പരിഭാഷ നിര്‍ബന്ധമില്ലാത്ത സന്ദേശങ്ങള്‍ കാണണം',
 	'translate-task-review' => 'മാറ്റങ്ങള്‍ വന്ന സന്ദേശങ്ങള്‍ കാണണം',
 	'translate-task-reviewall' => 'പരിഭാഷ ചെയ്തവ സംശോധനം ചെയ്യണം',
 	'translate-page-no-such-language' => 'തിരഞ്ഞെടുത്ത ഭാഷ അസാധുവാണ്‌.',
@@ -14518,6 +14518,7 @@ $messages['ug-latn'] = array(
  * @author Ahonc
  * @author Aleksandrit
  * @author NickK
+ * @author Prima klasy4na
  */
 $messages['uk'] = array(
 	'translate' => 'Переклад',
@@ -14618,7 +14619,7 @@ $messages['uk'] = array(
 	'translate-checks-format' => 'Цей переклад не відповідає визначенню або має неправильний синтаксис: $1',
 	'translate-checks-escape' => 'Ці екрануючі послідовності можуть бути випадкові: <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'Не надсилати мені інформаційні бюлетені',
-	'translate-pref-editassistlang' => 'Мовний помічник',
+	'translate-pref-editassistlang' => 'Допоміжні мови:',
 	'prefs-translate' => 'Налаштування перекладу',
 	'translate-pref-editassistlang-help' => 'Список мовних кодів, відокремлюваних комою.
 Переклади цими мовами будуть показані при редагуванні повідомлень.
@@ -15414,6 +15415,7 @@ $messages['yi'] = array(
 	'translate-statsf-scale-days' => 'טעג',
 	'translate-statsf-scale-hours' => "שעה'ן",
 	'translate-statsf-count-edits' => 'צאל רעדאקטירונגען',
+	'translate-statsf-submit' => 'פֿאראויסשטעלונג',
 	'translate-tag-page-desc' => 'אפטײַטש פֿונעם וויקי בלאַט [[:$1]].',
 	'translate-sidebar-alltrans' => 'אין אַנדערע שפּראַכן',
 	'translations' => 'אלע אפטײַטשן',
