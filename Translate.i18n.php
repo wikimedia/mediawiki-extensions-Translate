@@ -11694,7 +11694,7 @@ As alterações não serão gravadas até que você clique abaixo no botão de g
 	'translate-pref-nonewsletter' => 'Não me enviar newsletters por e-mail',
 	'translate-pref-editassistlang' => 'Línguas de auxílio:',
 	'prefs-translate' => 'Opções de tradução',
-	'translate-pref-editassistlang-help' => 'Lista de códigos de línguas separados por vírgulas.
+	'translate-pref-editassistlang-help' => 'Lista de códigos de língua separados por vírgulas.
 Quando estiver a traduzir, ser-lhe-ão também apresentadas as traduções para estas línguas.
 A lista por omissão depende da sua língua.',
 	'translate-pref-editassistlang-bad' => 'Código de língua inválido na lista:

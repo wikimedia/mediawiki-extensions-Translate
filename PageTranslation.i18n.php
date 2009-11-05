@@ -300,10 +300,12 @@ $messages['bn'] = array(
 );
 
 /** Breton (Brezhoneg)
+ * @author Fohanno
  * @author Fulup
  */
 $messages['br'] = array(
 	'pagetranslation' => 'Troidigezh ur bajenn',
+	'tpt-section' => 'Unanenn treiñ $1',
 	'tpt-section-deleted' => 'Unanenn dreiñ $1',
 	'tpt-template' => 'Patrom pajenn',
 	'tpt-diff-old' => 'Testenn gent',
@@ -319,11 +321,13 @@ Gallout a ra ar bajenn bezañ <span class="plainlinks">[$3 troet]</span> bremañ
 	'tpt-badsect' => 'Direizh eo an anv "$1" evit un unanenn dreiñ $2.',
 	'tpt-showpage-intro' => "A-is emañ rollet an troidigezhioù nevez, ar re zo anezho hag ar re bet diverket.
 Kent merkañ ar stumm-mañ evit an treiñ, gwiriait mat n'eus ket bet nemeur a gemmoù er rannbennadoù kuit da bourchas labour aner d'an droourien.",
+	'tpt-edit-failed' => "N'eus ket bet gallet hizivaat ar bajenn : $1",
 	'tpt-rev-latest' => 'stumm diwezhañ',
 	'tpt-translate-this' => 'Treiñ ar bajenn-mañ',
 	'translate-tag-translate-link-desc' => 'Treiñ ar bajenn-mañ',
 	'translate-tag-markthis' => 'Merkañ ar bajenn-mañ evit an treiñ',
 	'tpt-languages-legend' => 'Yezhoù all :',
+	'tpt-download-page' => 'Ezporzhiañ ar bajenn gant an troidigezhioù',
 );
 
 /** Bosnian (Bosanski)
