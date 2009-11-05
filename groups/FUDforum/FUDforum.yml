@@ -10,7 +10,7 @@ BASIC:
 FILES:
   class: JavaFFS
   keySeparator: ":"
-  sourcePattern: %GROUPROOT%/fudforum/i18n/%CODE%/msg
+  sourcePattern: %GROUPROOT%/fudforum/%CODE%/msg
   targetPattern: i18n/%CODE%/msg
   codeMap:
     af:      afrikaans
