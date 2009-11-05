@@ -247,5 +247,14 @@ array(
 		'notifier.signup_confirm_html.user_wiki_page', // Contains links that are translated
 		'notifier.signup_confirm_plain.user_wiki_2', // Contains links that are translated
 	)
-)
+),
+
+// translatewiki.net specific
+array(
+	'group' => 'page|Translating:Intro',
+	'check' => 'links',
+	'message' => array(
+		'Translating:Intro/intro', // Contains links that are translated
+	)
+),
 );
