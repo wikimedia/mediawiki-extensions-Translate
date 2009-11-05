@@ -155,6 +155,9 @@ abstract class MessageGroupOld implements MessageGroup {
 		if ( !$path || !$file ) return false;
 		return "$path/$file";
 	}
+	public function getSourceFilePath( $code ) {
+		return $this->getMessageFileWithPath( $code );
+	}
 
 	/**
 	 * Creates a new MessageCollection for this group.
