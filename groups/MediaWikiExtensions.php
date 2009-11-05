@@ -444,7 +444,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-ui-userdailycontribs',
 		'ext-ui-wikieditor',
 		'ext-ui-wikieditorhighlight',
-		'ext-ui-wikeditorpreview',
+		'ext-ui-wikieditorpreview',
 		'ext-ui-wikieditortoc',
 		'ext-ui-wikieditortoolbar',
 		'ext-uploadblacklist',
@@ -689,7 +689,7 @@ class AllUsabilityInitiativeExtensionsGroup extends AllMediawikiExtensionsGroup 
 		'ext-ui-userdailycontribs',
 		'ext-ui-wikieditor',
 		'ext-ui-wikieditorhighlight',
-		'ext-ui-wikeditorpreview',
+		'ext-ui-wikieditorpreview',
 		'ext-ui-wikieditortoc',
 		'ext-ui-wikieditortoolbar',
 	);
