@@ -233,6 +233,14 @@ array(
 	)
 ),
 array(
+	'group' => 'ext-ui-wikieditortoolbar',
+	'check' => 'links',
+	'message' => array(
+		'wikieditor-toolbar-help-content-ilink-syntax', // Contains links that are translated
+		'wikieditor-toolbar-help-content-file-syntax', // Contains links that are translated
+	)
+),
+array(
 	'group' => 'out-osm-site',
 	'check' => 'links',
 	'message' => array(
