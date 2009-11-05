@@ -1224,8 +1224,8 @@ Usability Initiative - Wikieditor Highlight
 id = ext-ui-wikieditorhighlight
 file = UsabilityInitiative/WikiEditor/Modules/Highlight/Highlight.i18n.php
 
-Usability Initiative - Wikeditor Preview
-id = ext-ui-wikeditorpreview
+Usability Initiative - Wikieditor Preview
+id = ext-ui-wikieditorpreview
 file = UsabilityInitiative/WikiEditor/Modules/Preview/Preview.i18n.php
 descmsg = wikieditor-preview-desc
 
