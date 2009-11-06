@@ -399,6 +399,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-fundraiserportal', // 2009-10-08: test.wikipedia.org
 		'ext-gadgets',
 		'ext-globalblocking',
+		'ext-globalusage', // 2009-11-06: test.wikipedia.org
 		'ext-honeypotintegration', // 2009-08-13: test.wikipedia.org
 		'ext-imagemap',
 		'ext-inputbox',
