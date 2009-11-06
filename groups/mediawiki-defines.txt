@@ -1177,11 +1177,6 @@ file = UsabilityInitiative/ClickTracking/ClickTracking.i18n.php
 aliasfile = UsabilityInitiative/ClickTracking/ClickTracking.alias.php
 descmsg = clicktracking-desc
 
-Usability Initiative - Edit Warning
-id = ext-ui-editwarning
-file = UsabilityInitiative/Vector/Modules/EditWarning/EditWarning.i18n.php
-descmsg = editwarning-desc
-
 Usability Initiative - Opt In
 id = ext-ui-optin
 file = UsabilityInitiative/OptIn/OptIn.i18n.php
@@ -1205,15 +1200,25 @@ aliasfile = UsabilityInitiative/PrefStats/PrefStats.alias.php
 descmsg = prefstats-desc
 ignored = prefstats-list-elem
 
-Usability Initiative - Simple Search
-id = ext-ui-simplesearch
-file = UsabilityInitiative/Vector/Modules/SimpleSearch/SimpleSearch.i18n.php
-descmsg = simplesearch-desc
-
 Usability Initiative - User Daily Contribs
 file = UsabilityInitiative/UserDailyContribs/UserDailyContribs.i18n.php
 id = ext-ui-userdailycontribs
 descmsg = userdailycontribs-desc
+
+Usability Initiative - Vector
+id = ext-ui-vector
+file = UsabilityInitiative/Vector/Vector.i18n.php
+descmsg = vector-desc
+
+Usability Initiative - Vector - Edit Warning
+id = ext-ui-vector-editwarning
+file = UsabilityInitiative/Vector/Modules/EditWarning/EditWarning.i18n.php
+descmsg = editwarning-desc
+
+Usability Initiative - Vector - Simple Search
+id = ext-ui-vector-simplesearch
+file = UsabilityInitiative/Vector/Modules/SimpleSearch/SimpleSearch.i18n.php
+descmsg = simplesearch-desc
 
 Usability Initiative - Wikieditor
 id = ext-ui-wikieditor
@@ -1221,20 +1226,20 @@ file = UsabilityInitiative/WikiEditor/WikiEditor.i18n.php
 descmsg = wikieditor-desc
 
 Usability Initiative - Wikieditor Highlight
-id = ext-ui-wikieditorhighlight
+id = ext-ui-wikieditor-highlight
 file = UsabilityInitiative/WikiEditor/Modules/Highlight/Highlight.i18n.php
 
 Usability Initiative - Wikieditor Preview
-id = ext-ui-wikieditorpreview
+id = ext-ui-wikieditor-preview
 file = UsabilityInitiative/WikiEditor/Modules/Preview/Preview.i18n.php
 descmsg = wikieditor-preview-desc
 
 Usability Initiative - Wikieditor TOC
-id = ext-ui-wikieditortoc
+id = ext-ui-wikieditor-toc
 file = UsabilityInitiative/WikiEditor/Modules/Toc/Toc.i18n.php
 
 Usability Initiative - Wikieditor Toolbar
-id = ext-ui-wikieditortoolbar
+id = ext-ui-wikieditor-toolbar
 file = UsabilityInitiative/WikiEditor/Modules/Toolbar/Toolbar.i18n.php
 descmsg = wikieditor-toolbar-desc
 optional = wikieditor-toolbar-help-content-rereference-syntax, wikieditor-toolbar-help-content-showreferences-syntax
