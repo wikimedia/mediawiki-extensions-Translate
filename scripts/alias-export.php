@@ -56,7 +56,7 @@ foreach ( $groups as $group ) {
 		// Fake a group
 		$group = new AliasMessageGroup( $group->getId() );
 		$group->setMessageFile( $file );
-		$group->setVariableName( 'aliases' );
+		$group->setVariableName( $group->getVariableNameAlias() );
 		$writer = $group->getWriter();
 		$writer->fileExport( $langs, $options['target'] );
 	}

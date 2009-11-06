@@ -202,7 +202,6 @@ class PremadeMediawikiExtensionGroups {
 			$info['optional'] = $mangler->mangle( $info['optional'] );
 		}
 
-
 		if ( !empty( $info['var'] ) ) $group->setVariableName( $info['var'] );
 		if ( !empty( $info['optional'] ) ) $group->setOptional( $info['optional'] );
 		if ( !empty( $info['ignored'] ) ) $group->setIgnored( $info['ignored'] );
@@ -212,8 +211,9 @@ class PremadeMediawikiExtensionGroups {
 			$group->setDescriptionMsg( $info['descmsg'], $info['url'] );
 		}
 
-		if ( isset($info['aliasfile']) ) $group->setAliasFile( $info['aliasfile'] );
-		if ( isset($info['magicfile']) ) $group->setMagicFile( $info['magicfile'] );
+		if ( isset( $info['aliasfile'] ) ) $group->setAliasFile( $info['aliasfile'] );
+		if ( isset( $info['aliasvar'] ) ) $group->setVariableNameAlias( $info['aliasvar'] );
+		if ( isset( $info['magicfile'] ) ) $group->setMagicFile( $info['magicfile'] );
 
 		$group->setType( 'mediawiki' );
 		return $group;

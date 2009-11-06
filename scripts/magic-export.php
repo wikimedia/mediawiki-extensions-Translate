@@ -73,7 +73,6 @@ foreach ( $groups as $group ) {
 	$output = substr( $input, 0, $headerEnd + 3 )  . "\n\n";
 
 	foreach ( $langs as $l ) {
-
 		switch ( $options['type'] ) {
 		case 'special':
 			$o = new SpecialPageAliasesCM( $l );

@@ -322,10 +322,19 @@ class ExtensionMessageGroup extends MessageGroupOld {
 	 */
 	protected $arrName      = 'messages';
 
+	/**
+	 * Name of the array where all special page aliases are stored, if applicable.
+	 * Only used in class SpecialPageAliasesCM
+	 */
+	protected $arrAlias      = 'aliases';
+
 	protected $path         = null;
 
 	public function getVariableName() { return $this->arrName; }
 	public function setVariableName( $value ) { $this->arrName = $value; }
+
+	public function getVariableNameAlias() { return $this->arrAlias; }
+	public function setVariableNameAlias( $value ) { $this->arrAlias = $value; }
 
 	/**
 	 * Path to the file where array or function is defined, relative to extensions
@@ -448,7 +457,6 @@ class AliasMessageGroup extends ExtensionMessageGroup {
 
 		return $collection;
 	}
-
 
 	function fill( MessageCollection $messages ) {
 		$cache = $this->load( $messages->code );

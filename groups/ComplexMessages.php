@@ -91,7 +91,6 @@ abstract class ComplexMessages {
 			$chain = array_merge_recursive( $chain, $fbdata );
 		}
 
-
 		if ( $this->firstMagic ) $chain = $this->mergeMagic( $defs, $chain );
 
 		return $group['data'] = array( $defs, $chain, $current );
@@ -134,7 +133,6 @@ abstract class ComplexMessages {
 
 			$data = array_map( 'trim', explode( ',', $values ) );
 			$array[$name] = $data;
-
 		}
 
 		return $array;
@@ -200,7 +198,6 @@ abstract class ComplexMessages {
 	#
 	# Output
 	#
-
 	public function header( $title ) {
 		$colspan = array( 'colspan' => 3 );
 		$header = Xml::element( 'th', $colspan, $this->getTitle() . ' - ' . $title );
@@ -243,7 +240,6 @@ abstract class ComplexMessages {
 
 				$s .= Xml::tags( 'tr', array( 'id' => "mw-sp-magic-$key" ), $rowContents );
 			}
-
 		}
 
 		global $wgUser;
@@ -253,9 +249,11 @@ abstract class ComplexMessages {
 
 		$s .= Xml::closeElement( 'table' );
 
-		return Xml::tags( 'form',
+		return Xml::tags(
+			'form',
 			array( 'method' => 'post', 'action' => $wgRequest->getRequestURL() ),
-			$s );
+			$s
+		);
 	}
 
 	public function getButtons() {
@@ -479,7 +477,7 @@ class SpecialPageAliasesCM extends ComplexMessages {
 			if ( file_exists($file) ) {
 				$this->data[$g->getId()] = array(
 					'label'=> $g->getLabel(),
-					'var'  => 'aliases',
+					'var'  => $g->getVariableNameAlias(),
 					'file' => $file,
 					'code' => $code,
 				);

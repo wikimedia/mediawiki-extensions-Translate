@@ -1316,6 +1316,7 @@ file = wikihiero/wikihiero.i18n.php
 
 Wikilog
 aliasfile = Wikilog/Wikilog.i18n.alias.php
+aliasvar = specialPageAliases
 magicfile = Wikilog/Wikilog.i18n.magic.php
 optional = wikilog-item-footer, wikilog-title-item-full, wikilog-feed-title
 ignored = wikilog-item-brief-footer, wikilog-item-sub, wikilog-item-header, wikilog-summary
