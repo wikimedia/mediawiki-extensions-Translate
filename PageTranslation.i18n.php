@@ -1934,6 +1934,7 @@ $messages['ps'] = array(
 );
 
 /** Portuguese (Português)
+ * @author Hamilton Abreu
  * @author Malafaya
  * @author Waldir
  */
@@ -1943,37 +1944,49 @@ $messages['pt'] = array(
 	'tpt-desc' => 'Extensão para traduzir páginas de conteúdo',
 	'tpt-section' => 'Unidade de tradução $1',
 	'tpt-section-new' => 'Nova unidade de tradução. Nome: $1',
+	'tpt-section-deleted' => 'Unidade de tradução $1',
+	'tpt-template' => 'Modelo de página',
+	'tpt-templatediff' => 'O modelo de página foi modificado.',
 	'tpt-diff-old' => 'Texto anterior',
 	'tpt-diff-new' => 'Novo texto',
 	'tpt-submit' => 'Marcar esta versão para tradução',
+	'tpt-sections-oldnew' => 'Unidades de tradução novas e existentes',
+	'tpt-sections-deleted' => 'Unidades de tradução eliminadas',
+	'tpt-sections-template' => 'Modelo de página de tradução',
 	'tpt-badtitle' => 'Nome de página fornecido ($1) não é um título válido',
 	'tpt-oldrevision' => '$2 não é a versão mais recente da página [[$1]].
 Apenas as últimas versões podem ser marcadas para tradução.',
-	'tpt-notsuitable' => 'Página $1 não é adequada para tradução.
-Certifique-se que a mesma contém tags <nowiki><translate></nowiki> e possui uma sintaxe válida.',
+	'tpt-notsuitable' => "Página $1 não é adequada para tradução.
+Certifique-se que a mesma contém ''tags'' <nowiki><translate></nowiki> e possui uma sintaxe válida.",
 	'tpt-saveok' => 'A página [[$1]] foi marcada para tradução com $2 {{PLURAL:$2|unidade|unidades}} de tradução.
 A página pode agora ser <span class="plainlinks">[$3 traduzida]</span>.',
 	'tpt-badsect' => '"$1" não é um nome válido para a unidade de tradução $2.',
 	'tpt-showpage-intro' => 'Abaixo estão listadas secções novas, existentes e apagadas.
 Antes de marcar esta versão para tradução, verifique que as alterações às secções são minimizadas para evitar trabalho desnecessário para os tradutores.',
 	'tpt-mark-summary' => 'Marcada esta versão para tradução',
-	'tpt-edit-failed' => 'Não foi possível atualizar a página: $1',
+	'tpt-edit-failed' => 'Não foi possível actualizar a página: $1',
 	'tpt-already-marked' => 'A versão mais recente desta página já foi marcada para tradução.',
 	'tpt-list-nopages' => 'Não existem páginas marcadas para tradução, nem prontas a ser marcadas para tradução.',
 	'tpt-old-pages' => 'Alguma versão {{PLURAL:$1|desta página|destas páginas}} foi marcada para tradução.',
-	'tpt-new-pages' => '{{PLURAL:$1|Esta página contém|Estas páginas contêm}} texto com tags de tradução, mas nenhuma versão {{PLURAL:$1|desta página|destas páginas}} está atualmente marcada para tradução.',
+	'tpt-new-pages' => "{{PLURAL:$1|Esta página contém|Estas páginas contêm}} texto com ''tags'' de tradução, mas nenhuma versão {{PLURAL:$1|desta página|destas páginas}} está presentemente marcada para tradução.",
 	'tpt-rev-latest' => 'versão mais recente',
 	'tpt-rev-old' => 'Diferença em relação à versão marcada anterior',
 	'tpt-rev-mark-new' => 'marcar esta versão para tradução',
 	'tpt-translate-this' => 'traduzir esta página',
 	'translate-tag-translate-link-desc' => 'Traduzir esta página',
 	'translate-tag-markthis' => 'Marcar esta página para tradução',
-	'tpt-translation-intro' => 'Esta página é uma <span class="plainlinks">[$1 versão traduzida]</span> de uma página [[$2]], e a tradução está $3% completa e atualizada.',
+	'translate-tag-markthisagain' => 'Esta página tem <span class="plainlinks">[$1 alterações]</span> desde a última vez que foi <span class="plainlinks">[$2 marcada para tradução]</span>.',
+	'translate-tag-hasnew' => 'Esta página contém <span class="plainlinks">[$1 alterações]</span> que não estão marcadas para tradução.',
+	'tpt-translation-intro' => 'Esta página é uma <span class="plainlinks">[$1 versão traduzida]</span> da página [[$2]] e a tradução está $3% completa e actualizada.',
+	'tpt-translation-intro-fuzzy' => 'Traduções desactualizadas estão marcadas desta forma.',
 	'tpt-languages-legend' => 'Outras línguas:',
-	'tpt-target-page' => 'Esta página não pode ser atualizada manualmente.
-Esta página é uma tradução da página [[$1]], e a tradução pode ser atualizada utilizando [$2 a ferramenta de tradução].',
+	'tpt-target-page' => 'Esta página não pode ser actualizada manualmente.
+Esta página é uma tradução da página [[$1]] e a tradução pode ser actualizada usando [$2 a ferramenta de tradução].',
 	'tpt-unknown-page' => 'Este domínio está reservado para traduções de páginas de conteúdo.
-A página que você está a tentar editar não parece corresponder a qualquer página marcada para tradução.',
+A página que está a tentar editar não parece corresponder a qualquer página marcada para tradução.',
+	'tpt-install' => "Execute ''maintenance/update.php'' ou instale através da internet para possibilitar a funcionalidade de tradução de páginas.",
+	'tpt-render-summary' => 'A actualizar para corresponder à nova versão da página fonte',
+	'tpt-download-page' => 'Exportar a página com traduções',
 );
 
 /** Brazilian Portuguese (Português do Brasil)

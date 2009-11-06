@@ -6846,7 +6846,9 @@ A változtatások nem mentődnek, míg alul a mentés gombra nem kattintasz.',
 	'translate-checks-xhtml' => 'A következő {{PLURAL:$2|elemet|elemeket}} cseréld le a megfelelőekre:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Az alapértelmezett változatban van <nowiki>{{PLURAL:}}</nowiki> forma, míg a fordításban nincs (magyar nyelv esetén ez nem feltétlenül probléma!).',
+	'translate-checks-pagename' => 'A névtér nem egyezik meg a definícióval',
 	'translate-checks-format' => 'A fordítás nem felel meg a definíciónak, vagy érvénytelen a szintaxisa: $1',
+	'translate-checks-escape' => 'A következő escape-ek valószínűleg véletlenül történtek: <strong>$1</strong>',
 	'translate-checks-fudforum-syntax' => 'Használj <nowiki>$1</nowiki> formát <nowiki>$2</nowiki> helyett ebben a projektben.',
 	'translate-pref-nonewsletter' => 'Ne küldjenek hírlevelet',
 	'translate-pref-editassistlang' => 'Segédnyelvek:',
@@ -6885,6 +6887,7 @@ A nyelvek alapértelmezett listája a nyelvedtől függ.',
 	'translate-tag-category' => 'Lefordítható lapok',
 	'translate-tag-page-desc' => 'A(z) [[:$1]] lap fordítása',
 	'translate-tag-fuzzy-comment' => '[[User:$1|$1]] megváltoztatta a definíciót a(z) $2 változatnál',
+	'translate-tag-fuzzy-reason' => 'A definíciót „$1” módosította $2-kor, a következő megjegyzéssel: „$3”.',
 	'translate-sidebar-alltrans' => 'Más nyelveken',
 	'translate-tag-noedit' => 'Ez a lap egy automatikusan frissített fordítási lap.
 [$1 Szerkesztheted a forráslapot] vagy [$2 frissítheted a fordítást].',
@@ -6895,6 +6898,7 @@ A nyelvek alapértelmezett listája a nyelvedtől függ.',
 	'translate-translations-fieldset-title' => 'Üzenet',
 	'translate-translations-messagename' => 'Név:',
 	'translate-translations-project' => 'Projekt:',
+	'translate-translations-including-no-param' => 'Adj meg egy érvényes üzenetazonosítót, allapként.',
 	'languagestats' => 'Nyelvi statisztika',
 	'languagestats-summary' => 'Ezen a lapon az egy nyelvhez tartozó összes üzenetcsoport fordítási statisztikái láthatóak.',
 	'translate-language-code' => 'Nyelvkód',
@@ -6905,6 +6909,8 @@ A nyelvek alapértelmezett listája a nyelvedtől függ.',
 	'translate-untranslated' => 'Lefordítatlan',
 	'translate-percentage-complete' => 'Készültségi fok',
 	'translate-percentage-fuzzy' => 'Elavult',
+	'translate-nothing-to-do' => 'Úgy tűnik, hogy az összes fordítás elkészült.
+A  [[Special:Translate|{{int:translate}}]] lapon átnézheted az elkészített fordításokat.',
 	'translate-save' => 'Mentés ($1)',
 	'translate-jssti-add' => 'Hozzáadás a listához',
 	'translate-group-desc-mediawikicore' => 'Ez a csoport a MediaWiki jelenlegi alfaverziójának ({{CURRENTVERSION}}) üzeneteit tartalmazza',
@@ -6928,12 +6934,20 @@ A nyelvek alapértelmezett listája a nyelvedtől függ.',
 	'translate-managegroups' => 'Csoportok kezelése',
 	'translate-manage-newgroup' => 'Ez a csoport még nem volt importálva korábban.',
 	'translate-manage-cacheat' => 'Importálva $1 $2-kor',
+	'translate-manage-return-to-group' => 'Visszatérés a csoport adatlapjához',
+	'translate-manage-modlangs' => 'Ellenőrizd a lehetséges módosításokat a következő {{PLURAL:$1|nyelvnél|nyelveknél}}:',
 	'translate-manage-modlang-new' => '$1 (új)',
+	'translate-manage-import-diff' => 'Üzenet: $1 | Műveletek: $2',
+	'translate-manage-import-new' => 'Új üzenet: $1',
+	'translate-manage-import-deleted' => 'Törölt üzenet: $1',
 	'translate-manage-action-import' => 'Importálás',
 	'translate-manage-action-conflict' => 'Importálás és fuzzy-nak jelölés',
 	'translate-manage-action-ignore' => 'Figyelmen kívül hagyás',
 	'translate-manage-action-fuzzy' => 'Fordítások importálása és fuzzy-nak jelölése',
 	'translate-manage-submit' => 'Végrehajtás',
+	'translate-manage-nochanges' => 'Ebben a csoportban nem történt módosítás az üzenetek definíciójában.',
+	'translate-manage-nochanges-other' => 'Ennél a nyelvnél nem történtek változtatások.
+Használd az alábbi linket a csoport adatlapjához történő visszalépéshez.',
 	'translate-manage-inconsistent' => 'A kérésben inkonzisztenciát észleltem.
 Ellenőrizd a változtatásokat, majd próbáld újra.
 Részletek: $1.',
@@ -6946,6 +6960,7 @@ Küldd el újra az űrlapot a feldolgozás folytatásához.',
 	'translate-manage-conflict-summary' => 'Új változat importálása külső forrásból.
 Ellenőrizd.',
 	'translate-manage-fuzzy-summary' => 'A definíció megváltozott',
+	'translate-manage-import-fuzzy' => 'Importálás és hibák jelölése: $1',
 	'translate-manage-import-done' => 'Az összes kész!',
 	'translate-manage-import-rebuild' => 'Gyorsítótár újraépítése.',
 	'translate-manage-intro-en' => 'Alább láthatóak a csoport üzeneteinek változásai.
@@ -6956,6 +6971,7 @@ Fontos tudni, hogy a <code>figyelmen kívül hagyás</code> csak ideiglenes.',
 Ellenőrizd a változtatásokat, és válaszd ki azt a műveletet, amit alkalmazni szeretnél minden egyes fordításra.
 Ha figyelmen kívül hagyod a változtatásokat, felül lesznek bírálva a következő exportáláskor.',
 	'translate-manage-subtitle' => 'Kezelés',
+	'translate-manage-import-rebuild-all' => 'Nyelvek felépítése újra, és a változtatások figyelmen kívül hagyása',
 	'importtranslations' => 'Fordítások importálása',
 	'translate-import-from-url' => 'A fájl URL-je:',
 	'translate-import-from-wiki' => 'Fájl ezen a wikin:',
@@ -6963,8 +6979,13 @@ Ha figyelmen kívül hagyod a változtatásokat, felül lesznek bírálva a köv
 	'translate-import-load' => 'Fájl betöltése',
 	'translate-import-err-type-not-supported' => 'Nem sikerült betölteni a fájlt:
 A(z) <tt>$1</tt> metódus nem támogatott.',
+	'translate-import-err-dl-failed' => 'Nem sikerült olvasni a fájlt:
+$1',
 	'translate-import-err-ul-failed' => 'A fájlfeltöltés sikertelen volt',
 	'translate-import-err-invalid-title' => 'A megadott fájlnév (<nowiki>$1</nowiki>) érvénytelen.',
+	'translate-import-err-no-such-file' => 'A(z) <nowiki>$1</nowiki> fájl nem létezik vagy nem helyben lett feltöltve.',
+	'translate-import-err-no-headers' => 'A fájl nem egy jól formázott Gettext-fájl a Translate-kiterjesztés formátumával:
+nem sikerült meghatározni a csoportot és a nyelvet a fájl fejlécéből.',
 	'translate-import-err-warnings' => 'A fájl nem megfelelően formázott.
 Ellenőrizd, hogy a szerkesztőd nem távolította-e el az msgctxt-mezőket.
 Részletek: $1',
@@ -6975,6 +6996,7 @@ Részletek: $1',
 	'translate-gs-speakers' => 'Beszélők',
 	'translate-gs-score' => 'Eredmény',
 	'translate-gs-multiple' => 'Több',
+	'translate-gs-count' => 'Számláló',
 	'translate-gs-total' => 'Összesen',
 	'translate-gs-avgscore' => 'Átlagos eredmény',
 );
@@ -7352,7 +7374,7 @@ Perubahan tidak akan disimpan hingga Anda mengklik tombol simpan di bawah.',
 	'translate-checks-format' => 'Terjemahan ini tidak mengikuti definisi atau memiliki sintaksis yang tidak valid: $1',
 	'translate-checks-escape' => "Rangkaian kontrol (''escape sequence'') berikut mungkin tidak disengaja: <strong>$1</strong>",
 	'translate-checks-fudforum-syntax' => 'Gunakan <nowiki>$1</nowiki> bukan <nowiki>$2</nowiki> pada proyek ini.',
-	'translate-pref-nonewsletter' => 'Jangan kirimi saya surat-e nawala',
+	'translate-pref-nonewsletter' => 'Jangan kirimi saya surel nawala',
 	'translate-pref-editassistlang' => 'Bahasa penunjang:',
 	'prefs-translate' => 'Pilihan penterjamahan',
 	'translate-pref-editassistlang-help' => '	
@@ -11699,7 +11721,7 @@ Quando estiver a traduzir, ser-lhe-ão também apresentadas as traduções para 
 A lista por omissão depende da sua língua.',
 	'translate-pref-editassistlang-bad' => 'Código de língua inválido na lista:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Editor de traduções optimizado (JavaScript)',
+	'translate-pref-jsedit' => 'Usar o editor de traduções optimizado (JavaScript)',
 	'right-translate' => 'Editar usando a interface de tradução',
 	'translate-rc-translation-filter' => 'Filtrar traduções:',
 	'translate-rc-translation-filter-no' => 'Não fazer nada',
@@ -13521,6 +13543,7 @@ Anjeun perlu jadi anggota grup panarjamah pikeun nyimpen parobahan. Parobahan mo
  * @author Najami
  * @author Rotsee
  * @author Sannab
+ * @author Skalman
  */
 $messages['sv'] = array(
 	'translate' => 'Översätt',
@@ -13718,6 +13741,7 @@ När du har uppdaterat meddelandedefinitionerna, kontrollera externa förändrin
 	'translate-manage-import-rebuild-all' => 'Bygg om alla språk och ignorera alla förändringar',
 	'importtranslations' => 'Importera översättningar',
 	'translate-import-from-url' => 'URL till filen:',
+	'translate-gs-multiple' => 'Flera',
 );
 
 /** Swahili (Kiswahili)
@@ -14558,6 +14582,7 @@ $messages['uk'] = array(
 	'translate-prev' => 'попередня сторінка',
 	'translate-page-description-legend' => 'Інформація про групу',
 	'translate-page-edit' => 'редагувати',
+	'translate-ext-url' => '<hr />Сайт: $1',
 	'translate-optional' => "(необов'язкове)",
 	'translate-ignored' => '(ігнорується)',
 	'translate-edit-definition' => 'Текст повідомлення',
@@ -14618,6 +14643,7 @@ $messages['uk'] = array(
 	'translate-checks-pagename' => 'Змінилося визначення простору назв',
 	'translate-checks-format' => 'Цей переклад не відповідає визначенню або має неправильний синтаксис: $1',
 	'translate-checks-escape' => 'Ці екрануючі послідовності можуть бути випадкові: <strong>$1</strong>',
+	'translate-checks-fudforum-syntax' => 'Використовувати у цьому проекті <nowiki>$1</nowiki> замість <nowiki>$2</nowiki>.',
 	'translate-pref-nonewsletter' => 'Не надсилати мені інформаційні бюлетені',
 	'translate-pref-editassistlang' => 'Допоміжні мови:',
 	'prefs-translate' => 'Налаштування перекладу',
@@ -14626,7 +14652,10 @@ $messages['uk'] = array(
 Стандартний список залежить від вашої мови.',
 	'translate-pref-editassistlang-bad' => 'Неправильний мовний код в списку:
 <nowiki>$1</nowiki>.',
+	'translate-pref-jsedit' => 'Розширений редактор перекладів (JavaScript)',
 	'right-translate' => 'Редагування з використанням інтерфейсу перекладу',
+	'right-translate-manage' => 'Керування групами перекладів',
+	'right-translate-import' => 'Імпорт офлайнових перекладів',
 	'translate-rc-translation-filter' => 'Фільтр перекладів:',
 	'translate-rc-translation-filter-no' => 'Немає',
 	'translate-rc-translation-filter-only' => 'Показати тільки переклади',
@@ -14683,6 +14712,7 @@ $messages['uk'] = array(
 	'translate-group-desc-mediawikiextensions' => 'Ця метагрупа містить повідомлення підтримуваних розширень MediaWiki',
 	'translate-group-desc-collection' => 'Метагрупа, що містить повідомлення для розширення [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
 	'translate-group-desc-flaggedrevs' => 'Метагрупа, що містить повідомлення для MediaWiki-розширення [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
+	'translate-group-desc-readerfeedback' => 'Метагрупа, що містить всі повідомлення розширення MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
 	'translate-group-desc-socialprofile' => 'Метагрупа, що містить повідомлення для MediaWiki-розширення [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
 	'translate-group-desc-translate' => 'Метагрупа, що містить повідомлення для MediaWiki-розширення [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-wikiaextensions' => 'Метагрупа, що містить повідомлення для MediaWiki-розширень, які використовуються [http://www.wikia.com Wikia]',
@@ -14691,7 +14721,76 @@ $messages['uk'] = array(
 	'translate-group-desc-wikitravelextensions' => 'Метагрупа, що містить повідомлення для MediaWiki-розширень, які використовуються [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Метагрупа, що містить повідомлення для MediaWiki-розширень, які використовуються [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Метагрупа, що містить повідомлення для MediaWiki-розширень, які використовуються [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
+	'translate-manage-groups' => 'Керування групами',
+	'translate-manage-listgroups' => 'Налаштовані групи',
+	'translate-manage-listgroups-old' => 'Групи в старому стилі',
+	'translate-managegroups' => 'Керування групою',
+	'translate-manage-newgroup' => 'Цю групу повідомлень ще не заімпортували.',
+	'translate-manage-cacheat' => 'Імпортовано $1 о $2',
+	'translate-manage-return-to-group' => 'Повернутися до сторінки деталей групи',
+	'translate-manage-modlangs' => 'Будь ласка, перевірте {{PLURAL:$1|таку мову|такі мови}} на зміни:',
+	'translate-manage-modlang-new' => '$1 (нове)',
+	'translate-manage-import-diff' => 'Повідомлення $1 | Дії: $2',
+	'translate-manage-import-new' => 'Нове повідомлення $1',
+	'translate-manage-import-deleted' => 'Вилучено повідомлення $1',
+	'translate-manage-action-import' => 'Імпортувати',
+	'translate-manage-action-conflict' => 'Імпортувати і позначити як неперевірене',
+	'translate-manage-action-ignore' => 'Ігнорувати',
+	'translate-manage-action-fuzzy' => 'Імпортувати і позначити як неперевірені',
+	'translate-manage-submit' => 'Виконати',
+	'translate-manage-nochanges' => 'Нема змін у формулюваннях повідомлень для цієї групи.',
+	'translate-manage-nochanges-other' => 'Не було змін для цієї мови.
+Щоб повернутися до перегляду деталей групи, використайте посилання нижче.',
+	'translate-manage-inconsistent' => 'Виявлено невідповідності в запиті.
+Будь ласка, перевірте зміни і спробуйте ще раз.
+Деталі: $1.',
+	'translate-manage-toolong' => 'Перевищено максимальний час обробки, що складає $1 {{PLURAL:$1|секунду|секунди|секунд}}.
+Будь ласка, відправте дані знову, щоб продовжити обробку.',
+	'translate-manage-import-ok' => 'Імпортовано нову версію сторінки $1.',
+	'translate-manage-import-noks' => 'Не вдалося імпортувати нову версію сторінки $1: $2',
+	'translate-manage-import-ignore' => 'Пропуск повідомлення $1.',
+	'translate-manage-import-summary' => 'Імпорт нової версії із зовнішнього джерела',
+	'translate-manage-conflict-summary' => 'Імпорт нової версії із зовнішнього джерела.
+Будь ласка, перевірте її.',
+	'translate-manage-fuzzy-summary' => 'Змінилося формулювання',
+	'translate-manage-import-fuzzy' => 'Імпорт і позначання як неперевірені: $1',
+	'translate-manage-import-done' => 'Все зроблено!',
+	'translate-manage-import-rebuild' => 'Перебудова кешу.',
+	'translate-manage-intro-en' => 'Далі наведено список змін в повідомленнях групи.
+Будь ласка, перевірте зміни і виберіть дію, яку застосувати щодо кожного повідомлення.
+Після оновлення формулювань повідомлень, перевірте, якщо є, зовнішні зміни в інших мовах.
+Також зауважте, що дія <code>Ігнорувати</code> є тимчасовою.',
+	'translate-manage-intro-other' => 'Далі наведено список перекладів мовою: $1.
+Будь ласка, перевірте зміни і виберіть дію, яку застосувати щодо кожного перекладу.
+Якщо ви проігноруєте повідомлення, вони будуть перевизначені при наступному експорті.',
+	'translate-manage-subtitle' => 'Керування',
+	'translate-manage-import-rebuild-all' => 'Перебудувати всі мови та ігнорувати будь-які зміни',
+	'importtranslations' => 'Імпортувати переклади',
+	'translate-import-from-url' => 'URL-адреса файлу:',
+	'translate-import-from-wiki' => 'Файл у цій вікі:',
+	'translate-import-from-local' => 'Завантажити локальний файл:',
+	'translate-import-load' => 'Завантажити файл',
+	'translate-import-err-type-not-supported' => 'Не вдалося завантажити файл:
+Метод <tt>$1</tt> не підтримується.',
+	'translate-import-err-dl-failed' => 'Не вдалося переслати файл:
+$1',
+	'translate-import-err-ul-failed' => 'Не вдалося переслати файл',
+	'translate-import-err-invalid-title' => 'Вказана назва файлу <nowiki>$1</nowiki> неправильна.',
+	'translate-import-err-no-such-file' => 'Файл <nowiki>$1</nowiki> не існує або не завантажений локально.',
+	'translate-import-err-no-headers' => 'Файл не є правильно побудованим Gettext-файлом у форматі розширення Translate: не вдалося визначити групу і мову із заголовка файлу.',
+	'translate-import-err-warnings' => 'Файл неправильно побудований.
+Впевніться, що ваш редактор не стер поля msgctxt.
+Деталі: $1',
 	'translate-js-fb' => 'Звичайне редагування',
+	'translate-gs-pos' => 'Поз.',
+	'translate-gs-code' => 'Код',
+	'translate-gs-continent' => 'Частина світу',
+	'translate-gs-speakers' => 'Носіїв',
+	'translate-gs-score' => 'Оцінка',
+	'translate-gs-multiple' => 'Кілька',
+	'translate-gs-count' => 'Кількість',
+	'translate-gs-total' => 'Всього',
+	'translate-gs-avgscore' => 'Сер. оцінка',
 );
 
 /** Vèneto (Vèneto)
