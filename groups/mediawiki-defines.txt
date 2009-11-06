@@ -457,6 +457,9 @@ Gadgets
 aliasfile = Gadgets/Gadgets.alias.php
 ignored = gadgets-definition
 
+GeoLite
+optional = geolite
+
 Get Family
 
 Global Blocking
