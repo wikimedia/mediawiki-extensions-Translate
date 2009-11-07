@@ -56,6 +56,9 @@ class OpenLayersFormatReader extends SimpleFormatReader {
 	public function parseMessages( StringMangler $mangler ) {
 		$data = file_get_contents( $this->filename );
 
+		// Add trailing comma to last key pair.
+		$data = str_replace( "\"\n};", "\",\n};", $data );
+
 		// Just get relevant data.
 		$dataStart = strpos( $data, '{' );
 		$dataEnd   = strrpos( $data, '}' );
