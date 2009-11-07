@@ -52,11 +52,19 @@ foreach ( $groups as $group ) {
 	if ( !$group instanceof ExtensionMessageGroup ) continue;
 	$file = $group->getAliasFile();
 
+	$groupId = $group->getId();
+
 	if ( $file !== null ) {
 		// Fake a group
 		$group = new AliasMessageGroup( $group->getId() );
 		$group->setMessageFile( $file );
-		$group->setVariableName( $group->getVariableNameAlias() );
+		// FIXME: getVariableNameAlias() is not read from mediawiki-defines.txt here apparently.
+		// Hacked this one exception in for now
+		if( $groupId == 'ext-wikilog' ) {
+			$group->setVariableNameAlias( 'specialPageAliases' );
+		} else {
+			$group->setVariableName( $group->getVariableNameAlias() );
+		}
 		$writer = $group->getWriter();
 		$writer->fileExport( $langs, $options['target'] );
 	}
