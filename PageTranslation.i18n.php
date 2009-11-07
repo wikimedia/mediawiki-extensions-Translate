@@ -1953,24 +1953,24 @@ $messages['pt'] = array(
 	'tpt-sections-oldnew' => 'Unidades de tradução novas e existentes',
 	'tpt-sections-deleted' => 'Unidades de tradução eliminadas',
 	'tpt-sections-template' => 'Modelo de página de tradução',
-	'tpt-badtitle' => 'Nome de página fornecido ($1) não é um título válido',
+	'tpt-badtitle' => 'O nome de página fornecido ($1) não é um título válido',
 	'tpt-oldrevision' => '$2 não é a versão mais recente da página [[$1]].
 Apenas as últimas versões podem ser marcadas para tradução.',
-	'tpt-notsuitable' => "Página $1 não é adequada para tradução.
-Certifique-se que a mesma contém ''tags'' <nowiki><translate></nowiki> e possui uma sintaxe válida.",
+	'tpt-notsuitable' => "A página $1 não é adequada para tradução.
+Certifique-se que a mesma contém ''tags'' <nowiki><translate></nowiki> e tem uma sintaxe válida.",
 	'tpt-saveok' => 'A página [[$1]] foi marcada para tradução com $2 {{PLURAL:$2|unidade|unidades}} de tradução.
 A página pode agora ser <span class="plainlinks">[$3 traduzida]</span>.',
 	'tpt-badsect' => '"$1" não é um nome válido para a unidade de tradução $2.',
 	'tpt-showpage-intro' => 'Abaixo estão listadas secções novas, existentes e apagadas.
 Antes de marcar esta versão para tradução, verifique que as alterações às secções são minimizadas para evitar trabalho desnecessário para os tradutores.',
-	'tpt-mark-summary' => 'Marcada esta versão para tradução',
+	'tpt-mark-summary' => 'Marcou esta versão para tradução',
 	'tpt-edit-failed' => 'Não foi possível actualizar a página: $1',
 	'tpt-already-marked' => 'A versão mais recente desta página já foi marcada para tradução.',
 	'tpt-list-nopages' => 'Não existem páginas marcadas para tradução, nem prontas a ser marcadas para tradução.',
-	'tpt-old-pages' => 'Alguma versão {{PLURAL:$1|desta página|destas páginas}} foi marcada para tradução.',
-	'tpt-new-pages' => "{{PLURAL:$1|Esta página contém|Estas páginas contêm}} texto com ''tags'' de tradução, mas nenhuma versão {{PLURAL:$1|desta página|destas páginas}} está presentemente marcada para tradução.",
+	'tpt-old-pages' => 'Uma versão {{PLURAL:$1|desta página|destas páginas}} foi marcada para tradução.',
+	'tpt-new-pages' => "{{PLURAL:$1|Esta página contém|Estas páginas contêm}} texto com ''tags'' de tradução, mas nenhuma versão {{PLURAL:$1|da página|das páginas}} está presentemente marcada para tradução.",
 	'tpt-rev-latest' => 'versão mais recente',
-	'tpt-rev-old' => 'Diferença em relação à versão marcada anterior',
+	'tpt-rev-old' => 'diferenças em relação à versão marcada anterior',
 	'tpt-rev-mark-new' => 'marcar esta versão para tradução',
 	'tpt-translate-this' => 'traduzir esta página',
 	'translate-tag-translate-link-desc' => 'Traduzir esta página',
