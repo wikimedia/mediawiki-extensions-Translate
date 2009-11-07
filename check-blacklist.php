@@ -225,15 +225,7 @@ array(
 	)
 ),
 array(
-	'group' => 'ext-ui-edittoolbar',
-	'check' => 'links',
-	'message' => array(
-		'edittoolbar-help-content-ilink-syntax', // Contains links that are translated
-		'edittoolbar-help-content-file-syntax', // Contains links that are translated
-	)
-),
-array(
-	'group' => 'ext-ui-wikieditortoolbar',
+	'group' => 'ext-ui-wikieditor-toolbar',
 	'check' => 'links',
 	'message' => array(
 		'wikieditor-toolbar-help-content-ilink-syntax', // Contains links that are translated
