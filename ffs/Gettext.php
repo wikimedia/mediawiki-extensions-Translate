@@ -39,7 +39,7 @@ class GettextFormatReader extends SimpleFormatReader {
 			$code = $matches[1];
 		}
 
-		if ( preg_match( '/X-Message-Group:\s+([a-zA-Z0-9-_]+)/', $data, $matches ) ) {
+		if ( preg_match( '/X-Message-Group:\s+([a-zA-Z0-9-._\|]+)/', $data, $matches ) ) {
 			$groupId = $matches[1];
 		}
 
@@ -410,7 +410,7 @@ class GettextFFS extends SimpleFFS {
 			$metadata['code'] = $matches[1];
 		} 
 
-		if ( preg_match( '/X-Message-Group:\s+([a-zA-Z0-9-_]+)/', $data, $matches ) ) {
+		if ( preg_match( '/X-Message-Group:\s+([a-zA-Z0-9-._\|]+)/', $data, $matches ) ) {
 			$metadata['group'] = $matches[1];
 		}
 
