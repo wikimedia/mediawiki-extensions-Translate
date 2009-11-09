@@ -802,7 +802,7 @@ aliasfile = PurgeCache/PurgeCache.alias.php
 QPoll
 file = QPoll/qp_i18n.php
 descmsg = qp_desc
-ignored = qpuserchoice
+ignored = qp_voice_link, qp_spec_line
 
 Quiz
 descmsg = quiz_desc
