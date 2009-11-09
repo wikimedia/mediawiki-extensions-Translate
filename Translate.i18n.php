@@ -895,7 +895,7 @@ $messages['ar'] = array(
 	'translate-magic-cm-current' => 'الحالي',
 	'translate-magic-cm-original' => 'الأصلي',
 	'translate-magic-cm-comment' => 'تعليق:',
-	'translate-magic-cm-save' => 'حفظ',
+	'translate-magic-cm-save' => 'احفظ',
 	'translate-magic-cm-updatedusing' => 'حدث باستخدام [[Special:Magic]]',
 	'translate-magic-cm-savefailed' => 'الحفظ فشل',
 	'translate-magic-special' => 'أسماء الصفحات الخاصة',
@@ -987,7 +987,7 @@ $messages['ar'] = array(
 	'translate-languagestats-groups' => ' # أضف أرقام مجموعات الرسائل, واحدا لكل سطر لتحديد مجموعات الرسائل التي
  # تعرض في Special:LanguageStats.أرقام مجموعات الرسائل غير الموجودة سوف 
  # يتم تجاهلها.',
-	'translate-save' => 'حفظ ($1)',
+	'translate-save' => 'احفظ ($1)',
 	'translate-jssti-add' => 'أضف إلى القائمة',
 	'translate-group-desc-mediawikicore' => 'تحتوي مجموعة الرسائل هذه على الرسائل المستخدمة في النسخة ألفا الحالية من ميدياويكي ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'تحتوي مجموعة الرسائل هذه على [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki الرسائل ال500 الأكثر استخدامًا]  في ميدياويكي',
@@ -7384,8 +7384,8 @@ Daftar bahasa baku tergantung pada bahasa Anda.',
 <nowiki>$1</nowiki>.',
 	'translate-pref-jsedit' => 'Tingkatkan penyunting terjemahan (JavaScript)',
 	'right-translate' => 'Menyunting menggunakan antarmuka penerjemahan',
-	'right-translate-manage' => 'Kelola kelompok terjemahan',
-	'right-translate-import' => 'Impor penterjemahan luring',
+	'right-translate-manage' => 'Mengelola kelompok terjemahan',
+	'right-translate-import' => 'Mengimpor terjemahan luring',
 	'translate-rc-translation-filter' => 'Filter terjemahan:',
 	'translate-rc-translation-filter-no' => 'Tidak difilter',
 	'translate-rc-translation-filter-only' => 'Tampilkan hanya terjemahan',
@@ -14636,6 +14636,7 @@ $messages['uk'] = array(
 	'translate-edit-committed' => 'Поточний переклад у програмі',
 	'translate-edit-warnings' => 'Попередження про неповні переклади',
 	'translate-edit-tmsugs' => "Пропозиції з пам'яті перекладів",
+	'translate-edit-tmmatch' => '$1% відповідність',
 	'translate-edit-goto-no-prev' => 'Немає попереднього повідомлення',
 	'translate-edit-goto-no-next' => 'Немає наступного повідомлення',
 	'translate-edit-goto-prev' => 'Редагувати попереднє повідомлення',
@@ -14763,6 +14764,7 @@ $messages['uk'] = array(
 	'translate-group-desc-wikitravelextensions' => 'Метагрупа, що містить повідомлення для MediaWiki-розширень, які використовуються [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Метагрупа, що містить повідомлення для MediaWiki-розширень, які використовуються [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Метагрупа, що містить повідомлення для MediaWiki-розширень, які використовуються [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
+	'translate-desc-mwembed' => '[http://www.mediawiki.org/wiki/MwEmbed MwEmbed] являє собою бібліотеку для вбудовування інтерфейсів MediaWiki',
 	'translate-manage-groups' => 'Керування групами',
 	'translate-manage-listgroups' => 'Налаштовані групи',
 	'translate-manage-listgroups-old' => 'Групи в старому стилі',
@@ -15448,6 +15450,7 @@ $messages['wa'] = array(
  * @author Huuchin
  */
 $messages['xal'] = array(
+	'translate' => 'Орчуллһн',
 	'translate-task-view' => 'Цуг зәңгс гүүһәд хәләх',
 	'translate-task-untranslated' => 'Цуг орчулсн уга зәңгс гүүһәд хәләх',
 	'translate-task-optional' => 'Цуг немлт зәңгс гүүһәд хәләх',
