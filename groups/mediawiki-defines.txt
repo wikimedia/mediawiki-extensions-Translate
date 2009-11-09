@@ -799,6 +799,11 @@ Purge
 Purge Cache
 aliasfile = PurgeCache/PurgeCache.alias.php
 
+QPoll
+file = QPoll/qp_i18n.php
+descmsg = qp_desc
+ignored = qpuserchoice
+
 Quiz
 descmsg = quiz_desc
 
