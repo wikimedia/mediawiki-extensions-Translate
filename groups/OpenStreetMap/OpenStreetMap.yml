@@ -35,7 +35,7 @@ TAGS:
     - geocoder.search_osm_namefinder.suffix_suburb
     - geocoder.search_osm_nominatim.prefix_other
     - geocoder.search_osm_twain.prefix_other
-    - geocoder.search_osm_twain.prefix_other
+    - geocoder.search osm nominatim.prefix other
     - html.dir
     - javascripts.map.base.mapnik
     - javascripts.map.base.osmarender
