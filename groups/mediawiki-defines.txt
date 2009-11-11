@@ -655,7 +655,8 @@ file = MWSearch/MWSearch.i18n.php
 
 # Need to make a symlink into extensions/ to make this work.
 #mwEmbed
-#optional = mwe-size-gigabytes, mwe-size-megabytes, mwe-size-kilobytes, mwe-size-bytes, mwe-cc_title
+#optional = mwe-size-gigabytes, mwe-size-megabytes, mwe-size-kilobytes, mwe-size-bytes
+#optional = mwe-cc_title, rsd-archive_org-title, rsd-flickr-title, rsd-metavid-title
 #ignored = mwe-welcome_to_sequencer
 
 MW Releases
