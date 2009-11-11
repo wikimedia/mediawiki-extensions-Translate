@@ -306,6 +306,7 @@ Donation Interface - Payflow Pro Gateway
 id = ext-di-pfpg
 file = DonationInterface/payflowpro_gateway/payflowpro_gateway.i18n.php
 descmsg = payflowpro_gateway-desc
+optional = payflow_gateway-card-name-amex, payflow_gateway-card-name-visa, payflow_gateway-card-name-mc, payflow_gateway-card-name-discover
 
 Donation Interface - PayPal Gateway
 id = ext-di-ppg
