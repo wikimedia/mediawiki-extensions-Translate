@@ -234,7 +234,7 @@ array(
 ),
 array(
 	'group' => 'out-osm-site',
-	'check' => 'links',
+	'check' => 'parameters',
 	'message' => array(
 		'notifier.signup_confirm_html.user_wiki_page', // Contains links that are translated
 		'notifier.signup_confirm_plain.user_wiki_2', // Contains links that are translated
