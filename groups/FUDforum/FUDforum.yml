@@ -17,6 +17,7 @@ FILES:
     ar:      arabic
     arz:     arabicegyptianspoken
     bg:      bulgarian
+    br:      breton
     ca:      catalan
     cs:      czech
     da:      danish
@@ -24,14 +25,16 @@ FILES:
     de-formal: german_formal
     el:      greek
     en:      english
+    eo:      esperanto
     es:      spanish
     et:      estonian
     fi:      finnish
     fr:      french
     gl:      galician
-    gsw:     swissgerman
+    gsw:     swiss_german
     he:      hebrew
     hr:      croatian
+    hsb:     upper_sorbian
     hu:      hungarian
     id:      indonesian
     is:      icelandic
