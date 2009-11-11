@@ -2447,6 +2447,7 @@ $messages['tt-cyrl'] = array(
 /** Ukrainian (Українська)
  * @author AS
  * @author Ahonc
+ * @author Prima klasy4na
  */
 $messages['uk'] = array(
 	'pagetranslation' => 'Переклад сторінок',
@@ -2462,7 +2463,9 @@ $messages['uk'] = array(
 	'tpt-submit' => 'Позначити цю версію для перекладу',
 	'tpt-sections-oldnew' => 'Нові та існуючі блоки перекладу',
 	'tpt-sections-deleted' => 'Вилучені блоки перекладу',
+	'tpt-sections-template' => 'Шаблон сторінки перекладу',
 	'tpt-badtitle' => 'Зазначена назва сторінки ($1) недопустима',
+	'tpt-rev-latest' => 'остання версія',
 	'tpt-translate-this' => 'перекласти цю сторінку',
 	'translate-tag-translate-link-desc' => 'Перекласти цю сторінку',
 	'tpt-languages-legend' => 'Інші мови:',

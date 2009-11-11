@@ -905,7 +905,7 @@ $messages['ar'] = array(
 	'translate-magic-errors' => 'من فضلك أصلح {{PLURAL:$1||الخطأ|الخطأين|الأخطاء}} التالية في الترجمات:',
 	'translate-magic-saved' => 'حُفظت تعديلاتك بنجاح.',
 	'translationchanges' => 'تغييرات الترجمة',
-	'translationchanges-export' => 'تصدير',
+	'translationchanges-export' => 'صدّر',
 	'translationchanges-change' => '$1: $2 بواسطة $3',
 	'translate-checks-parameters' => '{{PLURAL:$2||المحدد التالي غير مستخدم|المحددان التاليان غير مستخدمان|المحددات التالية غير مستخدمة}}:
 <strong><nowiki>$1</nowiki></strong>',
@@ -923,6 +923,7 @@ $messages['ar'] = array(
 	'translate-checks-pagename' => 'النطاق تغير من التعريف',
 	'translate-checks-format' => 'هذه الترجمة لا تتبع التعريف أو لديها صياغة خاطئة: $1',
 	'translate-checks-escape' => 'عمليات الهروب التالية ربما تكون حدثت بالصدفة: <strong>$1</strong>',
+	'translate-checks-fudforum-syntax' => 'استخدم <nowiki>$1</nowiki> بدلًا من <nowiki>$2</nowiki> في هذا المشروع.',
 	'translate-pref-nonewsletter' => 'لا ترسل لي إخطارات بريدية بالبريد الإلكتروني',
 	'translate-pref-editassistlang' => 'لغات المساعد:',
 	'prefs-translate' => 'خيارات الترجمة',
