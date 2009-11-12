@@ -2078,7 +2078,12 @@ Nume: $1',
  * @author Joetaras
  */
 $messages['roa-tara'] = array(
+	'tpt-diff-old' => 'Teste precedende',
+	'tpt-diff-new' => 'Teste nuève',
+	'tpt-rev-latest' => 'urtema versione',
+	'tpt-translate-this' => 'traduce stà pàgene',
 	'translate-tag-translate-link-desc' => 'Traduce sta vosce',
+	'tpt-languages-legend' => 'Otre lènghe:',
 );
 
 /** Russian (Русский)
