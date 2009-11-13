@@ -1049,12 +1049,15 @@ $1',
 	'translate-import-err-invalid-title' => 'اسم الملف المعطى <nowiki>$1</nowiki> غير صالح.',
 	'translate-import-err-no-such-file' => 'الملف <nowiki>$1</nowiki> غير موجود أو لم يرفع محليًا.',
 	'translate-js-fb' => 'تحرير عادي',
+	'translate-gs-pos' => 'الترتيب',
 	'translate-gs-code' => 'الرمز',
 	'translate-gs-continent' => 'القارة',
 	'translate-gs-speakers' => 'الناطقون',
+	'translate-gs-score' => 'الدرجة',
 	'translate-gs-multiple' => 'عديدة',
 	'translate-gs-count' => 'العدد',
 	'translate-gs-total' => 'المجموع',
+	'translate-gs-avgscore' => 'معدل الدرجات',
 );
 
 /** Aramaic (ܐܪܡܝܐ)
@@ -9819,7 +9822,7 @@ $messages['mk'] = array(
 	'languagestats-summary' => 'Оваа страница прикажува статистики на превод за сите групи на пораки за одреден јазик.',
 	'translate-language-code' => 'Код на јазик',
 	'translate-language-code-field-name' => 'Код на јазик:',
-	'translate-suppress-complete' => 'Сокриј комплетно преведени групи на пораки',
+	'translate-suppress-complete' => 'Сокриј потполно преведени групи на пораки',
 	'translate-language' => 'Јазик',
 	'translate-total' => 'Пораки',
 	'translate-untranslated' => 'Непреведени',
@@ -14476,13 +14479,14 @@ Hinihikayat kang suriin ang mga mensahe sa pamamagitan ng [[Special:Translate|{{
  * @author Joseph
  * @author Karduelis
  * @author Srhat
+ * @author Vito Genovese
  */
 $messages['tr'] = array(
-	'translate' => 'Çeviri',
+	'translate' => 'Çevir',
 	'translate-desc' => "MedyaViki'yi ve ötesini çevirmek için [[Special:Translate|özel sayfa]]",
 	'translate-edit' => 'Değiştir',
 	'translate-talk' => 'tartışma',
-	'translate-history' => 'Geçmiş',
+	'translate-history' => 'geçmiş',
 	'translate-task-view' => 'Tüm mesajları gör',
 	'translate-task-untranslated' => 'Çevirisi yapılmamış bütün mesajları gör',
 	'translate-task-optional' => 'İsteğe bağlı mesajları gör',
@@ -14531,6 +14535,7 @@ Neden:
 	'translate-magic-namespace' => 'Alan adları',
 	'translationchanges' => 'Çeviri değişiklikleri',
 	'translationchanges-export' => 'aktar',
+	'prefs-translate' => 'Çeviri seçenekleri',
 	'translate-rc-translation-filter' => 'Çevirileri filtrele:',
 	'translate-rc-translation-filter-no' => 'Hiçbir şey yapma',
 	'translate-rc-translation-filter-only' => 'Yalnızca çevirileri göster',
@@ -14545,6 +14550,7 @@ Bütün değerlerin alt ve üst sınırları vardır.',
 	'translate-statsf-scale' => 'Veri:',
 	'translate-statsf-scale-days' => 'Günler',
 	'translate-statsf-scale-hours' => 'Saatler',
+	'translate-statsf-count-edits' => 'Değişiklik sayısı',
 	'translate-statsf-count-users' => 'Aktif çevirmenler',
 	'translate-statsf-submit' => 'Ön izleme',
 	'translate-tag-category' => 'Çevirilebilir sayfalar',
@@ -14561,6 +14567,7 @@ Bütün değerlerin alt ve üst sınırları vardır.',
 	'translate-total' => 'Mesajlar',
 	'translate-untranslated' => 'Çevrilmemiş',
 	'translate-percentage-complete' => 'Tamamlanma',
+	'translate-percentage-fuzzy' => 'Eski tarihli',
 );
 
 /** Tatar (Cyrillic) (Татарча/Tatarça (Cyrillic))
