@@ -97,14 +97,27 @@ class PageTranslationHooks {
 		$source = $page->getTitle();
 		$target = Title::makeTitle( $source->getNamespace(), $source->getDBkey() . "/$code" );
 
-		// FIXME: if $taget->exists() is false, all sister articles should be purged.
-		$flags &= ~EDIT_NEW & ~EDIT_UPDATE; // We don't know
+		// We don't know and don't care
+		$flags &= ~EDIT_NEW & ~EDIT_UPDATE;
 
+		// Update the target page
 		$job = RenderJob::newJob( $target );
 		$job->setUser( $user );
 		$job->setSummary( $summary );
 		$job->setFlags( $flags );
 		$job->run();
+
+		// Regenerate translation caches
+		$page->getTranslationPercentages( 'force' );
+
+		// Invalidate caches
+		$pages = $page->getTranslationPages();
+		$pages[] = $page->getTitle();
+		foreach ( $title as $page ) {
+			$article = new Article($title);
+			$article->doPurge();
+		}
+
 	}
 
 	public static function addSidebar( $out, $tpl ) {
