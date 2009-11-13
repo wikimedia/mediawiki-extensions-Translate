@@ -112,12 +112,14 @@ class PageTranslationHooks {
 
 		// Invalidate caches
 		$pages = $page->getTranslationPages();
-		$pages[] = $page->getTitle();
-		foreach ( $title as $page ) {
+		foreach ( $pages as $title ) {
 			$article = new Article($title);
 			$article->doPurge();
 		}
 
+		// And the source page itself too
+		$article = new Article($page->getTitle());
+		$article->doPurge();
 	}
 
 	public static function addSidebar( $out, $tpl ) {
