@@ -13,14 +13,18 @@
  */
 
 class MessageIndexRebuilder {
-	public static function execute() {
+	protected $reportProgress;
 
+	public static function execute( $reportProgress = true ) {
 		$groups = MessageGroups::singleton()->getGroups();
 
 		$hugearray = array();
 		$postponed = array();
 
-		STDOUT( "Working with ", 'main' );
+		if( $reportProgress ) {
+			STDOUT( "Working with ", 'main' );
+			$this->reportProgress = true;
+		}
 
 		foreach ( $groups as $g ) {
 			if ( !$g->exists() ) continue;
@@ -36,7 +40,7 @@ class MessageIndexRebuilder {
 		foreach ( $postponed as $g ) {
 			self::checkAndAdd( $hugearray, $g, true );
 		}
-		
+
 		global $wgCacheDirectory;
 		$filename = "$wgCacheDirectory/translate_messageindex.cdb";
 		$writer = CdbWriter::open( $filename );
@@ -60,7 +64,9 @@ class MessageIndexRebuilder {
 
 		$id = $g->getId();
 
-		STDOUT( "$id ", 'main' );
+		if( $this->reportProgress ) {
+			STDOUT( "$id ", 'main' );
+		}
 
 		$namespace = $g->getNamespace();
 

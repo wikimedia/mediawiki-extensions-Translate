@@ -14,4 +14,27 @@
 
 require( dirname( __FILE__ ) . '/cli.inc' );
 
-MessageIndexRebuilder::execute();
+function showUsage() {
+	STDERR( <<<EOT
+Message index creation command line script
+
+Usage: php createMessageIndex.php [options...]
+
+Options:
+  --help            Show this help text
+  --progress        Report on progress (default: false)
+
+EOT
+);
+	exit( 1 );
+}
+
+if ( isset( $options['help'] ) ) {
+	showUsage();
+}
+
+if ( isset( $options['progress'] ) ) {
+	MessageIndexRebuilder::execute();
+} else {
+	MessageIndexRebuilder::execute( false );
+}
