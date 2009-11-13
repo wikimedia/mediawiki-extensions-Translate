@@ -378,9 +378,9 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-contributionreporting', // wikimediafoundation.org
 		'ext-contributiontracking', // wikimediafoundation.org
 		'ext-crossnamespacelinks',
-		'ext-di-di', //2009-11-04: test.wikipedia.org
-		'ext-di-pfpg', //2009-11-04: test.wikipedia.org
-		'ext-di-ppg', //2009-11-04: test.wikipedia.org
+		'ext-di-di', // wikimediafoundation.org
+		'ext-di-pfpg', // wikimediafoundation.org
+		'ext-di-ppg', // wikimediafoundation.org
 		'ext-dismissablesitenotice',
 		'ext-doublewiki', // Wikisource
 		'ext-drafts', // test.wikipedia.org
@@ -399,14 +399,15 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-flaggedrevs-validationstatistics',
 		'ext-fundraiserportal', // 2009-10-08: test.wikipedia.org
 		'ext-gadgets',
+		'ext-geolite', // 2009-11-13: meta.wikimedia.org
 		'ext-globalblocking',
-		'ext-globalusage', // 2009-11-06: test.wikipedia.org
+		'ext-globalusage', // 2009-11-11: commons.wikimedia.org
 		'ext-honeypotintegration', // 2009-08-13: test.wikipedia.org
 		'ext-imagemap',
 		'ext-inputbox',
 		'ext-intersection',
 		'ext-labeledsectiontransclusion', // Wikisource
-		'ext-liquidthreads', //2009-09-30: liquidthreads.labs.wikimedia.org
+		'ext-liquidthreads', //2009-11-11: MediaWiki.org and some *.labs.wikimedia.org
 		'ext-mwreleases', // 2009-09-29: MediaWiki.org
 		'ext-mwsearch',
 		'ext-newusermessage',
