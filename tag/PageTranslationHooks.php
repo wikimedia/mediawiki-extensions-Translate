@@ -96,6 +96,8 @@ class PageTranslationHooks {
 
 		$source = $page->getTitle();
 		$target = Title::makeTitle( $source->getNamespace(), $source->getDBkey() . "/$code" );
+
+		// FIXME: if $taget->exists() is false, all sister articles should be purged.
 		$flags &= ~EDIT_NEW & ~EDIT_UPDATE; // We don't know
 
 		$job = RenderJob::newJob( $target );
@@ -135,6 +137,8 @@ class PageTranslationHooks {
 		return true;
 	}
 
+		
+
 	public static function languages( $data, $params, $parser ) {
 		$title = $parser->getTitle();
 
@@ -144,7 +148,6 @@ class PageTranslationHooks {
 			$page = TranslatablePage::isTranslationPage( $title );
 		}
 		if ( $page === false || $page->getMarkedTag() === false )  return '';
-
 
 		$status = $page->getTranslationPercentages();
 		if ( !$status ) return '';
