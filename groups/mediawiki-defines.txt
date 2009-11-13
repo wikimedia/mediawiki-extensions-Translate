@@ -295,12 +295,14 @@ Dismissable SiteNotice
 descmsg = sitenotice-desc
 ignored = sitenotice_id
 
-Donation Interface - Donate Interface
-id = ext-di-di
-file = DonationInterface/donate_interface/donate_interface.i18n.php
-descmsg = donate_interface-desc
-ignored = donate_interface-big-amount-display, donate_interface-medium-amount-display, donate_interface-small-amount-display, donate_interface-big-amount-value
-ignored = donate_interface-medium-amount-value, donate_interface-small-amount-value
+# tomaszf indicates this is not used, and that it is unlikely it will be used.
+# Mind the duplicate keys with ext-di-pfpg!
+#Donation Interface - Donate Interface
+#id = ext-di-di
+#file = DonationInterface/donate_interface/donate_interface.i18n.php
+#descmsg = donate_interface-desc
+#ignored = donate_interface-big-amount-display, donate_interface-medium-amount-display, donate_interface-small-amount-display, donate_interface-big-amount-value
+#ignored = donate_interface-medium-amount-value, donate_interface-small-amount-value
 
 Donation Interface - Payflow Pro Gateway
 id = ext-di-pfpg
@@ -308,10 +310,11 @@ file = DonationInterface/payflowpro_gateway/payflowpro_gateway.i18n.php
 descmsg = payflowpro_gateway-desc
 optional = payflow_gateway-card-name-amex, payflow_gateway-card-name-visa, payflow_gateway-card-name-mc, payflow_gateway-card-name-discover
 
-Donation Interface - PayPal Gateway
-id = ext-di-ppg
-file = DonationInterface/paypal_gateway/paypal_gateway.i18n.php
-descmsg = paypal_gateway-desc
+# tomaszf indicates this is not used, and that it is unlikely it will be used.
+#Donation Interface - PayPal Gateway
+#id = ext-di-ppg
+#file = DonationInterface/paypal_gateway/paypal_gateway.i18n.php
+#descmsg = paypal_gateway-desc
 
 Double Wiki
 
