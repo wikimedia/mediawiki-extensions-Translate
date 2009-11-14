@@ -9196,6 +9196,15 @@ $1',
 	'translate-import-err-no-headers' => 'Di Dattei es nit em Jettäx Fommaat vum Zohsazprojramm <code lang="en">Translate</code>: Kunnt de Jropp un Shprooch nit uß de Koppdaate eruß krijje.',
 	'translate-import-err-warnings' => 'Di Dattei es nit em reschteje Fommaat. Beß sescher, dat kein vun Dinge Projramme de <code lang="en">msgctxt</code> Felder fott määt. De Einzelheite: $1',
 	'translate-js-fb' => 'Nomaal Änderung',
+	'translate-gs-pos' => 'Posizjuhn',
+	'translate-gs-code' => 'Afjekööz',
+	'translate-gs-continent' => 'Kontinänt',
+	'translate-gs-speakers' => 'Jekallt vun Milljuhne',
+	'translate-gs-score' => 'Prozänt jedonn',
+	'translate-gs-multiple' => 'Ongerscheidlijje',
+	'translate-gs-count' => 'Aanzahl',
+	'translate-gs-total' => 'Zosamme',
+	'translate-gs-avgscore' => 'Prozänt jedonn em Schnett',
 );
 
 /** Latin (Latina)
@@ -11827,9 +11836,9 @@ Encorajamo-lo a rever mensagens através de [[Special:Translate|{{int:translate}
 	'translate-manage-import-new' => 'Nova mensagem $1',
 	'translate-manage-import-deleted' => 'Mensagem eliminada $1',
 	'translate-manage-action-import' => 'Importar',
-	'translate-manage-action-conflict' => "Importar e ''fuzzy''",
+	'translate-manage-action-conflict' => 'Importar e marcar',
 	'translate-manage-action-ignore' => 'Ignorar',
-	'translate-manage-action-fuzzy' => 'Importar e marcar traduções para revisão',
+	'translate-manage-action-fuzzy' => 'Importar e marcar para revisão',
 	'translate-manage-submit' => 'Executar',
 	'translate-manage-nochanges' => 'Não há alterações nas definições das mensagens deste grupo.',
 	'translate-manage-nochanges-other' => 'Não houve alterações para esta língua.
@@ -11845,7 +11854,35 @@ Por favor, reenvie o formulário para continuar o processamento.',
 	'translate-manage-import-summary' => 'Importando uma nova versão de fonte externa',
 	'translate-manage-conflict-summary' => 'Importando uma nova versão de fonte externa.
 Por favor, verifique.',
+	'translate-manage-fuzzy-summary' => 'A definição sofreu alterações',
+	'translate-manage-import-fuzzy' => 'A importar e marcar para revisão: $1',
+	'translate-manage-import-done' => 'Tudo terminado!',
+	'translate-manage-import-rebuild' => "Reconstrução da ''cache''.",
+	'translate-manage-intro-en' => 'Encontra abaixo uma lista de alterações às mensagens deste grupo.
+Por favor, reveja as alterações e escolha a acção que pretende para cada mensagem. 
+Quando tiver actualizado as definições das mensagens, verifique se ocorreram alterações externas noutras línguas existentes.
+Note também que a acção <code>ignore</code> é somente temporária.',
+	'translate-manage-intro-other' => 'Encontra abaixo uma lista de alterações de traduções na língua $1.
+Por favor, reveja as alterações e escolha a acção que pretende para cada tradução. 
+Se escolher ignorar as alterações, elas serão sobrepostas na próxima exportação.',
+	'translate-manage-subtitle' => 'Gerir',
+	'translate-manage-import-rebuild-all' => 'Reconstruir todas as línguas e ignorar quaisquer alterações',
+	'importtranslations' => 'Importar traduções',
+	'translate-import-from-url' => 'URL para o ficheiro:',
 	'translate-import-from-wiki' => 'Ficheiro nesta wiki:',
+	'translate-import-from-local' => 'Carregamento de ficheiro local:',
+	'translate-import-load' => 'Carregar ficheiro',
+	'translate-import-err-type-not-supported' => 'Não foi possível carregar o ficheiro:
+O método <tt>$1</tt> não é suportado.',
+	'translate-import-err-dl-failed' => 'Não foi possível obter o ficheiro:
+$1',
+	'translate-import-err-invalid-title' => 'O nome de ficheiro fornecido <nowiki>$1</nowiki> era inválido.',
+	'translate-import-err-no-such-file' => 'O ficheiro <nowiki>$1</nowiki> não existe ou não foi carregado localmente.',
+	'translate-import-err-no-headers' => 'O ficheiro não é um ficheiro Gettext válido, com o formato da extensão Translate:
+Não foi possível determinar o grupo e a língua a partir dos cabeçalhos.',
+	'translate-import-err-warnings' => 'Este ficheiro não é válido.
+Certifique-se de que o seu editor não remove os campos msgctxt.
+Detalhes: $1',
 	'translate-js-fb' => 'Edição normal',
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Código',
