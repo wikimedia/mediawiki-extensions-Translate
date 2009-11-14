@@ -22,7 +22,7 @@ Usage: php createMessageIndex.php [options...]
 
 Options:
   --help            Show this help text
-  --progress        Report on progress (default: false)
+  --quiet           Only output errors
 
 EOT
 );
@@ -33,8 +33,4 @@ if ( isset( $options['help'] ) ) {
 	showUsage();
 }
 
-if ( isset( $options['progress'] ) ) {
-	MessageIndexRebuilder::execute();
-} else {
-	MessageIndexRebuilder::execute( false );
-}
+MessageIndexRebuilder::execute();

@@ -13,15 +13,13 @@
  */
 
 class MessageIndexRebuilder {
-	public static function execute( $reportProgress = true ) {
+	public static function execute() {
 		$groups = MessageGroups::singleton()->getGroups();
 
 		$hugearray = array();
 		$postponed = array();
 
-		if( $reportProgress ) {
-			STDOUT( "Working with ", 'main' );
-		}
+		STDOUT( "Working with ", 'main' );
 
 		foreach ( $groups as $g ) {
 			if ( !$g->exists() ) continue;
@@ -31,11 +29,11 @@ class MessageIndexRebuilder {
 				continue;
 			}
 
-			self::checkAndAdd( $hugearray, $g, false, $reportProgress );
+			self::checkAndAdd( $hugearray, $g );
 		}
 
 		foreach ( $postponed as $g ) {
-			self::checkAndAdd( $hugearray, $g, true, $reportProgress );
+			self::checkAndAdd( $hugearray, $g, true );
 		}
 
 		global $wgCacheDirectory;
@@ -45,7 +43,7 @@ class MessageIndexRebuilder {
 		$writer->close();
 	}
 
-	protected static function checkAndAdd( &$hugearray, $g, $ignore = false, $reportProgress = true ) {
+	protected static function checkAndAdd( &$hugearray, $g, $ignore = false ) {
 		if ( $g instanceof MessageGroupBase ) {
 			$cache = new MessageGroupCache( $g );
 			if ( $cache->exists() ) {
@@ -61,9 +59,7 @@ class MessageIndexRebuilder {
 
 		$id = $g->getId();
 
-		if( $reportProgress ) {
-			STDOUT( "$id ", 'main' );
-		}
+		STDOUT( "$id ", 'main' );
 
 		$namespace = $g->getNamespace();
 
