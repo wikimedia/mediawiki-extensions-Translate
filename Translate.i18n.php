@@ -4206,14 +4206,14 @@ Por favor verifique.',
 	'translate-manage-import-rebuild' => 'Reconstruye Caché.',
 	'translate-manage-intro-en' => 'A continuación está la lista de modificaciones de mensajes en este grupo.
 Por favor revise los cambios y elija la acción a tomar para cada mensaje.
-Una vez que Ud. ha actualizado las definiciones de mensajes, controle los cambios externos en otros idiomas, si existen.
-Tenga en cuenta que el comando <code>ignore</code> es solo temporario.',
+Una vez que Ud. haya actualizado las definiciones de mensajes, controle los cambios externos en otros idiomas, si existen.
+Tenga en cuenta que el comando <code>ignore</code> es sólo temporal.',
 	'translate-manage-intro-other' => 'A continuación esta la lista de modificaciones de traducción en idioma $1.
 Por favor revíselos y elija la acción apropiada para cada uno.
 Si prefiere ignorar los cambios, se sobrescribirán en la próxima exportación.',
 	'translate-manage-subtitle' => 'Administrar',
 	'translate-manage-import-rebuild-all' => 'Reconstruye todos los lenguajes e ignora cualquier cambio',
-	'importtranslations' => 'Importar traducciónes',
+	'importtranslations' => 'Importar traducciones',
 	'translate-import-from-url' => 'URL al archivo:',
 	'translate-import-from-wiki' => 'Archivo en esta wiki:',
 	'translate-import-from-local' => 'Importación de archivo local:',
@@ -4225,6 +4225,8 @@ $1',
 	'translate-import-err-ul-failed' => 'La carga del archivo no fue exitosa.',
 	'translate-import-err-invalid-title' => 'El nombre del archivo <nowiki>$1</nowiki> es inválido.',
 	'translate-import-err-no-such-file' => 'El archivo <nowiki>$1</nowiki> no existe o no ha sido guardado localmente.',
+	'translate-import-err-no-headers' => ' El archivo no es un archivo Gettext bien formado en formato de extensión Translate:
+No se puede determinar el grupo y el idioma a partir de los encabezados de archivo.',
 	'translate-import-err-warnings' => 'El archivo no está bien constituído.
 Asegúrese de que su editor no quita los campos msgctxt.
 Detalle: $1',
@@ -11876,6 +11878,7 @@ Se escolher ignorar as alterações, elas serão sobrepostas na próxima exporta
 O método <tt>$1</tt> não é suportado.',
 	'translate-import-err-dl-failed' => 'Não foi possível obter o ficheiro:
 $1',
+	'translate-import-err-ul-failed' => 'Carregamento do ficheiro falhou',
 	'translate-import-err-invalid-title' => 'O nome de ficheiro fornecido <nowiki>$1</nowiki> era inválido.',
 	'translate-import-err-no-such-file' => 'O ficheiro <nowiki>$1</nowiki> não existe ou não foi carregado localmente.',
 	'translate-import-err-no-headers' => 'O ficheiro não é um ficheiro Gettext válido, com o formato da extensão Translate:
