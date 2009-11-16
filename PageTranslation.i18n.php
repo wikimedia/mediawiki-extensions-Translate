@@ -283,9 +283,12 @@ $messages['be-tarask'] = array(
  * @author DCLXVI
  */
 $messages['bg'] = array(
+	'tpt-diff-old' => 'Предишен текст',
+	'tpt-diff-new' => 'Нов текст',
 	'tpt-rev-mark-new' => 'отбелязване на тази версия за превеждане',
 	'tpt-translate-this' => 'превеждане на тази страница',
 	'translate-tag-translate-link-desc' => 'Превеждане на тази страница',
+	'tpt-languages-legend' => 'Други езици:',
 );
 
 /** Bengali (বাংলা)
