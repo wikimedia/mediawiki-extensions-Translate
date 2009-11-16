@@ -149,7 +149,10 @@ class MessageWebImporter {
 				$type = 'changed';
 
 				global $wgRequest;
-				$action = $wgRequest->getVal( "action-$type-$key" );
+				# Spaces don't seem to survive round trip in addition to dots
+				# which are silently handled in getVal
+				$safekey = str_replace( ' ', '_', $key );
+				$action = $wgRequest->getVal( "action-$type-$safekey" );
 
 				if ( $process ) {
 					if ( !count( $changed ) ) $changed[] = '<ul>';
