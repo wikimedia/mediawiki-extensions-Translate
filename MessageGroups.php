@@ -61,7 +61,16 @@ abstract class MessageGroupOld implements MessageGroup {
 	 * branches one can set a message key mangler.
 	 */
 	protected $mangler = null;
-	public function getMangler() { return $this->mangler; }
+	public function getMangler() {
+		$mangler = $this->mangler;
+
+		if( !$mangler ) {
+			$mangler = StringMatcher::emptyMatcher();
+		}
+
+		return $mangler;
+	}
+
 	public function setMangler( $value ) { $this->mangler = $value; }
 
 	protected $type = 'undefined';
@@ -442,7 +451,7 @@ class AliasMessageGroup extends ExtensionMessageGroup {
 
 	public function initCollection( $code, $unique = false ) {
 		$collection = parent::initCollection( $code, $unique );
-		
+
 		$defs = $this->load( 'en' );
 		foreach ( $defs as $key => $value ) {
 			$collection[$key] = new FatMessage( $key, implode( ", ", $value ) );
