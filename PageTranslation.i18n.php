@@ -1741,6 +1741,7 @@ Sjekk at sida er merka med <nowiki><translate></nowiki> merke og har ein gyldig 
 	'tpt-translation-intro-fuzzy' => 'Utdaterte omsetjingar er markerte på dette viset.',
 	'tpt-languages-legend' => 'Andre språk:',
 	'tpt-render-summary' => 'Oppdatering for å svara til ny versjon av kjeldesida',
+	'tpt-download-page' => 'Eksportér side med omsetjingar',
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
