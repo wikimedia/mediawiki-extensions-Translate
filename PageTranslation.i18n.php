@@ -329,6 +329,7 @@ Kent merkañ ar stumm-mañ evit an treiñ, gwiriait mat n'eus ket bet nemeur a g
 	'tpt-translate-this' => 'Treiñ ar bajenn-mañ',
 	'translate-tag-translate-link-desc' => 'Treiñ ar bajenn-mañ',
 	'translate-tag-markthis' => 'Merkañ ar bajenn-mañ evit an treiñ',
+	'tpt-translation-intro-fuzzy' => 'An troidigezhioù diamzeret zo merket evel-henn.',
 	'tpt-languages-legend' => 'Yezhoù all :',
 	'tpt-download-page' => 'Ezporzhiañ ar bajenn gant an troidigezhioù',
 );
@@ -2047,6 +2048,16 @@ Esta página que você está tentando editar não aparenta corresponder a nenhum
 	'tpt-install' => 'Execute a manutenção do php/update.php ou a instalação "web" para habilitar a funcionalidade de tradução de páginas.',
 	'tpt-render-summary' => 'Atualizando para corresponder a nova versão da página fonte',
 	'tpt-download-page' => 'Exportar página com traduções',
+);
+
+/** Rhaeto-Romance (Rumantsch)
+ * @author Gion-andri
+ */
+$messages['rm'] = array(
+	'pagetranslation' => 'Translaziun da paginas',
+	'tpt-diff-old' => 'Ultim text',
+	'tpt-diff-new' => 'Nov text',
+	'tpt-languages-legend' => 'Autras linguas:',
 );
 
 /** Romanian (Română)

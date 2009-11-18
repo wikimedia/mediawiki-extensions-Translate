@@ -7584,6 +7584,7 @@ $messages['io'] = array(
 	'translate-translations-messagename' => 'Nomo:',
 	'translate-language' => 'Linguo',
 	'translate-total' => 'Mesaji',
+	'translate-save' => 'Registragar ($1)',
 );
 
 /** Icelandic (Íslenska)
@@ -9157,11 +9158,11 @@ de Söndersigg [[Special:Translate|{{int:translate}}]] norrens ze prööfe.',
 	'translate-manage-return-to-group' => 'Jangk retuur op de Sigg met de Einzelheite vun dä Jropp',
 	'translate-manage-modlangs' => 'Bes esu joot, un donn op müjjelesche Änderunge en dä foljende {{PLURAL:$1|Shprooch|Shprooche|jaa kei Shprooch}} prööfe:',
 	'translate-manage-modlang-new' => '$1 (neu)',
-	'translate-manage-import-diff' => 'Nohreesch $1 | Akßjuhne: $2',
+	'translate-manage-import-diff' => 'Tittel: $1{{int:pipe-separator}}Donn: $2',
 	'translate-manage-import-new' => 'Neu Nohreesch $1',
 	'translate-manage-import-deleted' => 'Fottjeschmeße Nohreesch $1',
 	'translate-manage-action-import' => 'Empotteere',
-	'translate-manage-action-conflict' => 'Empotteere un met „!!<nowiki />FUZZY!!“ zom Beärbeide makeere',
+	'translate-manage-action-conflict' => 'Empotteere un zom Beärbeide makeere',
 	'translate-manage-action-ignore' => 'Övverjonn',
 	'translate-manage-action-fuzzy' => 'Empotteere un Översäzunge met „!!<nowiki />FUZZY!!“ zom Beärbeide makeere',
 	'translate-manage-submit' => 'Lohß Jonn!',
@@ -9188,9 +9189,9 @@ Wann De entscheids, Änderunge ze övverjonn, dann wääde di Änderunge beim n�
 	'translate-manage-subtitle' => 'Verwallde',
 	'translate-manage-import-rebuild-all' => 'Donn alle Shprooche neu opboue un dobei alle Änderunge övverjonn',
 	'importtranslations' => 'Övversäzonge Empotteere',
-	'translate-import-from-url' => 'Dä <i lang="en">URL</i> för di Datei:',
-	'translate-import-from-wiki' => 'De Datei heh em Wiki:',
-	'translate-import-from-local' => 'Heh en et Wiki huhlaade:',
+	'translate-import-from-url' => 'vun ene <i lang="en">URL</i> em Web:',
+	'translate-import-from-wiki' => 'vun ene Datei heh em Wiki:',
+	'translate-import-from-local' => 'vun Dingem Rääschner:',
 	'translate-import-load' => 'Datei laade',
 	'translate-import-err-type-not-supported' => 'Mer künne di Datei nit laade, weil et Verfahre <tt lang="en">$1</tt> nit ongerschtöz weedt.',
 	'translate-import-err-dl-failed' => 'Kunnt de Datei nit jriife:
@@ -9545,6 +9546,7 @@ $messages['lmo'] = array(
 	'translate-edit-goto-list' => 'Va indree a la lista',
 	'translate-magic-pagename' => 'Tradüzión estendüda de MediaWiki',
 	'translate-magic-submit' => 'Fàm vedè',
+	'translate-magic-cm-updatedusing' => 'Agiurnaa druvand: [[Special:Magic]]',
 	'translate-pref-editassistlang' => 'Assistent di lenguv:',
 	'prefs-translate' => 'Opzión di tradüzión',
 	'translate-rc-translation-filter' => 'Filtra i tradüzión',
@@ -9708,7 +9710,7 @@ $messages['mk'] = array(
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|порака|пораки}} по страница',
 	'translate-submit' => 'Филтрирај',
 	'translate-page-navigation-legend' => 'Навигација',
-	'translate-page-showing' => 'Прикажување на пораки од $1 до $2 од $3',
+	'translate-page-showing' => 'Прикажани се пораки од $1 до $2 од вкупно $3',
 	'translate-page-showing-all' => 'Приказ на $1 {{PLURAL:$1|порака|пораки}}.',
 	'translate-page-showing-none' => 'Нема пораки за прикажување',
 	'translate-page-paging-links' => '[ $1 ] [ $2 ]',
@@ -12143,6 +12145,7 @@ $messages['rif'] = array(
 
 /** Rhaeto-Romance (Rumantsch)
  * @author Gion
+ * @author Gion-andri
  */
 $messages['rm'] = array(
 	'translate-edit' => 'editar',
@@ -12169,8 +12172,8 @@ $messages['rm'] = array(
 	'translate-edit-contribute' => 'contribuir',
 	'translate-edit-no-information' => "''Tar quai messadi na datti nagina documentaziun.
 Sche vus savais nua e co che quai messadi vegn duvrà, pudais vus gidar auters translaturs cun agiuntar ina documentaziun tar quai messadi.''",
-	'translate-edit-information' => 'Infurmaziuns davart quest messadi ($1)',
-	'translate-edit-in-other-languages' => 'Messadis en autras linguas',
+	'translate-edit-information' => 'Infurmaziuns davart il messadi "$2" ($1)',
+	'translate-edit-in-other-languages' => 'Messadis "$1" en autras linguas',
 	'translate-edit-committed' => 'Translaziun actuala da la software',
 	'translate-edit-warnings' => 'Avertiment davart translaziuns nuncumplettas',
 	'translate-edit-goto-no-prev' => 'Nagins messadis precedents',
