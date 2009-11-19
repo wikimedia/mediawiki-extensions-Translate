@@ -34,6 +34,7 @@ CHECKER:
 TAGS:
   optional:
     - installer.FreeCol
+    - lostCityRumour.cityName.*
     - model.foundingFather.*.birthAndDeath
     - model.foundingFather.*.name
     - model.goods.goodsAmount
