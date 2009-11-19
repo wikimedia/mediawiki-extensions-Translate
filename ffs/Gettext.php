@@ -97,10 +97,13 @@ class GettextFormatReader extends SimpleFormatReader {
 				$actualForms = array();
 				for ( $i = 0; $i < $pluralForms[1]; $i++ ) {
 					$matches = array();
+					if ( preg_match( "/^msgid_plural\s($poformat)/mx", $section, $matches ) ) {
+						continue; // Skip
+					}
 					if ( preg_match( "/^msgstr\[$i\]\s($poformat)/mx", $section, $matches ) ) {
 						$actualForms[] = GettextFFS::formatForWiki( $matches[1] );
 					} else {
-						throw new MWException( "Plural not found, expecting $i" );
+						throw new MWException( "Plural not found, expecting $i for: $section" );
 					}
 				}
 
