@@ -311,6 +311,7 @@ $messages['br'] = array(
 	'tpt-section' => 'Unanenn treiñ $1',
 	'tpt-section-deleted' => 'Unanenn dreiñ $1',
 	'tpt-template' => 'Patrom pajenn',
+	'tpt-templatediff' => 'Kemmet eo patrom ar bajenn.',
 	'tpt-diff-old' => 'Testenn gent',
 	'tpt-diff-new' => 'Testenn nevez',
 	'tpt-sections-template' => 'Patrom pajenn dreiñ',
