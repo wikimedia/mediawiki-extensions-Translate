@@ -12,59 +12,6 @@ FILES:
   keySeparator: ":"
   sourcePattern: %GROUPROOT%/fudforum/%CODE%/msg
   targetPattern: i18n/%CODE%/msg
-  codeMap:
-    af:      afrikaans
-    ar:      arabic
-    arz:     arabicegyptianspoken
-    bg:      bulgarian
-    br:      breton
-    ca:      catalan
-    cs:      czech
-    da:      danish
-    de:      german
-    de-formal: german_formal
-    el:      greek
-    en:      english
-    eo:      esperanto
-    es:      spanish
-    et:      estonian
-    fi:      finnish
-    fr:      french
-    gl:      galician
-    gsw:     swiss_german
-    he:      hebrew
-    hr:      croatian
-    hsb:     upper_sorbian
-    hu:      hungarian
-    id:      indonesian
-    is:      icelandic
-    it:      italian
-    ja:      japanese
-    ko:      korean
-    ksh:     ripoarisch
-    lt:      lithuanian
-    lv:      latvian
-    nl:      dutch
-    nn:      norwegian_nynorsk
-    no:      norwegian # BC
-    oc:      occitan
-    pl:      polish
-    pt-br:   portuguese_br
-    pt:      portuguese
-    ro:      romanian
-    ru:      russian
-    sk:      slovak
-    sl:      slovene
-    sr-ec:   serbian
-    sv:      swedish
-    tl:      tagalog
-    tr:      turkish
-    uk:      ukrainian
-    ur:      urdu
-    vi:      vietnamese
-    vo:      volapuk
-    zh-hans: chinese # BC
-    zh-hant: chinese_traditional
 
 CHECKER:
   class: FUDforumMessageChecker
