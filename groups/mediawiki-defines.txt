@@ -1027,9 +1027,14 @@ aliasfile = SpecialForm/SpecialForm.alias.php
 ignored = formtemplatepattern
 descmsg = form-desc
 
+Stale Pages
+aliasfile = StalePages/StalePages.alias.php
+
 Stalker Log
 
 Stock Charts
+
+String Functions
 
 Subst All
 optional = substall-hook
@@ -1037,10 +1042,8 @@ optional = substall-hook
 Sub Page List 3
 descmsg = spl3-desc
 
-Stale Pages
-aliasfile = StalePages/StalePages.alias.php
-
-String Functions
+SVG Zoom
+ignored = svgzoom
 
 Syntax Highlight GeSHi
 file = SyntaxHighlight_GeSHi/SyntaxHighlight_GeSHi.i18n.php
