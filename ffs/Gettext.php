@@ -322,7 +322,10 @@ class GettextFormatWriter extends SimpleFormatWriter {
 
 	protected function formatmsg( $msgid, $msgstr, $msgctxt = false ) {
 		$output = array();
-		
+
+		// FIXME: very ugly hack to allow gettext plurals to be exported.
+		if( $msgstr == '{{PLURAL:GETTEXT|}}' ) return '';
+
 		if ( $msgctxt ) {
 			$output[] = 'msgctxt ' . $this->escape( $msgctxt );
 		}
