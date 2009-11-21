@@ -147,10 +147,14 @@ class ChangeSyncer {
 		$collection->loadTranslations();
 
 		foreach ( $messages as $key => $translation ) {
-
 			if ( !isset( $collection[$key] ) ) {
 				// STDOUT( "Unknown key $key" );
 				continue;
+			}
+
+			// FIXME: temporary exception. Should be fixed elsewhere more generically
+			if( $translation == '{{PLURAL:GETTEXT|}}' ) {
+				return;
 			}
 
 			$title = Title::makeTitleSafe( $this->group->getNamespace(), "$key/$code" );
