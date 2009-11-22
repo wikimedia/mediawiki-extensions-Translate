@@ -34,16 +34,20 @@ class GettextFormatReader extends SimpleFormatReader {
 		}
 		$data = file_get_contents( $this->filename );
 		$parse = GettextFFS::parseGettextData( $data );
-		// Ugly ugly hack! part 1
-		$parse['TEMPLATE']['HEADERS'] = $parse['HEADERS'];
 		return $parse['TEMPLATE'];
+	}
+
+	public function parseFileExt() {
+		if ( $this->filename === false ) {
+			return array();
+		}
+		$data = file_get_contents( $this->filename );
+		return GettextFFS::parseGettextData( $data );
 	}
 
 
 	public function parseMessages( StringMangler $mangler ) {
 		$defs = $this->parseFile();
-		// Ugly ugly hack! part 2
-		unset( $defs['HEADERS'] );
 		$messages = array();
 		foreach ( $defs as $key => $def ) {
 			if ( $this->pot ) {
@@ -69,9 +73,7 @@ class GettextFormatWriter extends SimpleFormatWriter {
 		if ( $reader instanceof GettextFormatReader ) {
 			$this->addAuthors( $reader->parseAuthors(), $code );
 			$this->staticHeader = $reader->parseStaticHeader();
-			$this->owndata = $reader->parseFile();
-			// Ugly ugly hack! part 3
-			$this->headers = $this->owndata['HEADERS'];
+			$this->owndata = $reader->parseFileExt();
 		}
 		if ( $readerEn instanceof GettextFormatReader ) {
 			$this->data = $readerEn->parseFile();
@@ -91,7 +93,7 @@ class GettextFormatWriter extends SimpleFormatWriter {
 		$label = $this->group->getLabel();
 		$languageName = TranslateUtils::getLanguageName( $code );
 
-		$headers = $this->headers;
+		$headers = $this->owndata['HEADERS'];
 		$headers['Project-Id-Version'] = $label;
 		// TODO: make this customisable or something
 		// $headers['Report-Msgid-Bugs-To'] = $wgServer;
@@ -161,7 +163,13 @@ class GettextFormatWriter extends SimpleFormatWriter {
 			if ( isset( $this->data[$key]['ctxt'] ) ) {
 				$ckey = $this->data[$key]['ctxt'];
 			}
-			fwrite( $handle, $this->formatmsg( $m->definition(), $translation, $ckey ) );
+
+			$pluralForms = false;
+			if ( isset($this->owndata['METADATA']['plural']) ) {
+				$pluralForms = $this->owndata['METADATA']['plural'];
+			}
+
+			fwrite( $handle, $this->formatmsg( $m->definition(), $translation, $ckey, $pluralForms ) );
 
 		}
 
@@ -203,7 +211,7 @@ class GettextFormatWriter extends SimpleFormatWriter {
 		return implode( "\n", $output ) . "\n";
 	}
 
-	protected function formatmsg( $msgid, $msgstr, $msgctxt = false ) {
+	protected function formatmsg( $msgid, $msgstr, $msgctxt = false, $pluralForms = false ) {
 		$output = array();
 
 		// FIXME: very ugly hack to allow gettext plurals to be exported.
@@ -218,7 +226,7 @@ class GettextFormatWriter extends SimpleFormatWriter {
 			$output[] = 'msgid ' . $this->escape( $forms[0] );
 			$output[] = 'msgid_plural ' . $this->escape( $forms[1] );
 
-			$forms = $this->splitPlural( $msgstr, $this->plural[1] );
+			$forms = $this->splitPlural( $msgstr, $pluralForms );
 			foreach( $forms as $index => $form ) {
 				$output[] = "msgstr[$index] " . $this->escape( $form );
 			}
@@ -318,15 +326,6 @@ class GettextFFS extends SimpleFFS {
 			throw new MWException( "Gettext file header was not found:\n\n$data" );
 		}
 
-		/* At this stage we are only interested how many plurals forms we should
-		 * be expecting when parsing the rest of this file. */
-		$pluralCount = false;
-		if ( isset($headers['Plural-Forms']) ) {
-			if ( preg_match( '/nplurals=([0-9]+).*;/', $headers['Plural-Forms'], $matches ) ) {
-				$pluralCount = $matches[1];
-			}
-		}
-
 		// Extract some metadata from headers for easier use
 		$metadata = array();
 		if ( isset($headers['X-Language-Code']) ) {
@@ -335,6 +334,15 @@ class GettextFFS extends SimpleFFS {
 
 		if ( isset($headers['X-Message-Group']) ) {
 			$metadata['group'] = $headers['X-Message-Group'];
+		}
+
+		/* At this stage we are only interested how many plurals forms we should
+		 * be expecting when parsing the rest of this file. */
+		$pluralCount = false;
+		if ( isset($headers['Plural-Forms']) ) {
+			if ( preg_match( '/nplurals=([0-9]+).*;/', $headers['Plural-Forms'], $matches ) ) {
+				$pluralCount = $metadata['plural'] = $matches[1];
+			}
 		}
 
 		// Then parse the messages
@@ -380,7 +388,8 @@ class GettextFFS extends SimpleFFS {
 					if ( $match !== null ) {
 						$actualForms[] = self::formatForWiki( $match );
 					} else {
-						throw new MWException( "Plural $i not found, expecting total of $pluralCount" );
+						$actualForms[] = '';
+						error_log( "Plural $i not found, expecting total of $pluralCount for {$item['id']}" );
 					}
 				}
 
