@@ -29,136 +29,21 @@ class GettextFormatReader extends SimpleFormatReader {
 	}
 
 	public function parseFile() {
+		if ( $this->filename === false ) {
+			return array();
+		}
 		$data = file_get_contents( $this->filename );
-		$data = str_replace( "\r\n", "\n", $data );
-
-		$pluralForms = false;
-
-		$matches = array();
-		if ( preg_match( '/X-Language-Code:\s+([a-zA-Z-_]+)/', $data, $matches ) ) {
-			$code = $matches[1];
-		}
-
-		if ( preg_match( '/X-Message-Group:\s+([a-zA-Z0-9-._\|]+)/', $data, $matches ) ) {
-			$groupId = $matches[1];
-		}
-
-		if ( preg_match( '/Plural-Forms:\s+nplurals=([0-9]+).*;/', $data, $matches ) ) {
-			$pluralForms = $matches;
-		}
-
-		$useCtxtAsKey = false;
-
-		$poformat = '".*"\n?(^".*"$\n?)*';
-		$quotePattern = '/(^"|"$\n?)/m';
-
-		$sections = preg_split( '/\n{2,}/', $data );
-		array_shift( $sections ); // First isn't an actual message
-		$changes = array();
-
-		foreach ( $sections as $section ) {
-			if ( trim( $section ) === '' ) continue;
-
-			$item = array(
-				'ctxt'  => '',
-				'id'    => '',
-				'str'   => '',
-				'flags' => array(),
-				'comments' => array(),
-			);
-
-			$matches = array();
-			if ( preg_match( "/^msgctxt\s($poformat)/mx", $section, $matches ) ) {
-				// Remove quoting
-				$item['ctxt'] = GettextFFS::formatForWiki( $matches[1] );
-			} elseif ( $useCtxtAsKey ) {
-				// Invalid message
-				continue;
-			}
-
-			$matches = array();
-			if ( preg_match( "/^msgid\s($poformat)/mx", $section, $matches ) ) {
-				$item['id'] = GettextFFS::formatForWiki( $matches[1] );
-			} else {
-				# echo "Definition not found!\n$section";
-				continue;
-			}
-
-			$pluralMessage = false;
-			$matches = array();
-			if ( preg_match( "/^msgid_plural\s($poformat)/mx", $section, $matches ) ) {
-				$pluralMessage = true;
-				$plural = GettextFFS::formatForWiki( $matches[1] );
-				$item['id'] = "{{PLURAL:GETTEXT|{$item['id']}|$plural}}";
-			}
-
-			if ( $pluralMessage ) {
-
-				$actualForms = array();
-				for ( $i = 0; $i < $pluralForms[1]; $i++ ) {
-					$matches = array();
-					if ( preg_match( "/^msgid_plural\s($poformat)/mx", $section, $matches ) ) {
-						continue; // Skip
-					}
-					if ( preg_match( "/^msgstr\[$i\]\s($poformat)/mx", $section, $matches ) ) {
-						$actualForms[] = GettextFFS::formatForWiki( $matches[1] );
-					} else {
-						throw new MWException( "Plural not found, expecting $i for: $section" );
-					}
-				}
-
-				$item['str'] = '{{PLURAL:GETTEXT|' . implode( '|', $actualForms ) . '}}';
-			} else {
-
-				$matches = array();
-				if ( preg_match( "/^msgstr\s($poformat)/mx", $section, $matches ) ) {
-					$item['str'] = GettextFFS::formatForWiki( $matches[1] );
-				} else {
-					# echo "Translation not found!\n";
-					continue;
-				}
-			}
-
-			// Parse flags
-			$matches = array();
-			if ( preg_match( '/^#,(.*)$/mu', $section, $matches ) ) {
-				$flags = array_map( 'trim', explode( ',', $matches[1] ) );
-				foreach ( $flags as $key => $flag ) {
-					if ( $flag === 'fuzzy' ) {
-						$item['str'] = TRANSLATE_FUZZY . $item['str'];
-						unset( $flags[$key] );
-					}
-				}
-				$item['flags'] = $flags;
-			}
-
-			$matches = array();
-			if ( preg_match_all( '/^#(.?) (.*)$/m', $section, $matches, PREG_SET_ORDER ) ) {
-				foreach ( $matches as $match ) {
-					if ( $match[1] !== ',' ) {
-						$item['comments'][$match[1]][] = $match[2];
-					}
-				}
-			}
-
-			$lang = Language::factory( 'en' );
-			if ( $useCtxtAsKey ) {
-				$key = $item['ctxt'];
-			} else {
-				$key = GettextFFS::generateKeyFromItem( $item );
-			}
-
-			$changes[$key] = $item;
-
-		}
-		$changes['PLURAL'] = $pluralForms;
-		return $changes;
+		$parse = GettextFFS::parseGettextData( $data );
+		// Ugly ugly hack! part 1
+		$parse['TEMPLATE']['HEADERS'] = $parse['HEADERS'];
+		return $parse['TEMPLATE'];
 	}
 
 
 	public function parseMessages( StringMangler $mangler ) {
 		$defs = $this->parseFile();
-		unset($defs['PLURAL']);
+		// Ugly ugly hack! part 2
+		unset( $defs['HEADERS'] );
 		$messages = array();
 		foreach ( $defs as $key => $def ) {
 			if ( $this->pot ) {
@@ -184,8 +69,9 @@ class GettextFormatWriter extends SimpleFormatWriter {
 		if ( $reader instanceof GettextFormatReader ) {
 			$this->addAuthors( $reader->parseAuthors(), $code );
 			$this->staticHeader = $reader->parseStaticHeader();
-			$data = $reader->parseFile();
-			$this->plural = $data['PLURAL'];
+			$this->owndata = $reader->parseFile();
+			// Ugly ugly hack! part 3
+			$this->headers = $this->owndata['HEADERS'];
 		}
 		if ( $readerEn instanceof GettextFormatReader ) {
 			$this->data = $readerEn->parseFile();
@@ -205,14 +91,15 @@ class GettextFormatWriter extends SimpleFormatWriter {
 		$label = $this->group->getLabel();
 		$languageName = TranslateUtils::getLanguageName( $code );
 
-		$headers = array();
+		$headers = $this->headers;
 		$headers['Project-Id-Version'] = $label;
 		// TODO: make this customisable or something
 		// $headers['Report-Msgid-Bugs-To'] = $wgServer;
 		// TODO: sprintfDate doesn't support any time zone flags
 		// $headers['POT-Creation-Date']
 		$headers['PO-Revision-Date'] = $lang->sprintfDate( 'xnY-xnm-xnd xnH:xni:xns+0000', $now );
-		$headers['Language-Team'] = $languageName;
+		// Link to portal pages??
+		//$headers['Language-Team'] = $languageName;
 		$headers['Content-Type'] = 'text/plain; charset=UTF-8';
 		$headers['Content-Transfer-Encoding'] = '8bit';
 
@@ -222,10 +109,6 @@ class GettextFormatWriter extends SimpleFormatWriter {
 		$headers['X-Translation-Project'] = "$wgSitename at $wgServer";
 		$headers['X-Language-Code'] = $code;
 		$headers['X-Message-Group'] = $this->group->getId();
-		if( $this->plural[0] ) {
-			list( $header, $rest ) = explode( ':', $this->plural[0] );
-			$headers[$header] = trim($rest);
-		}
 
 		$headerlines = array( '' );
 		foreach ( $headers as $key => $value ) {
@@ -251,7 +134,7 @@ class GettextFormatWriter extends SimpleFormatWriter {
 			# CASE3: optional messages; accept only if different
 			if ( $m->hasTag( 'optional') ) $flags[] = 'x-optional';
 
-			# Remove fuzzy markings before export
+			# Remove explicit fuzzy markings from the translation before export
 			$flags = array();
 			$comments = array();
 			if ( isset( $this->data[$key]['flags'] ) ) {
@@ -381,6 +264,7 @@ class GettextFormatWriter extends SimpleFormatWriter {
 
 		return $splitPlurals;
 	}
+
 }
 
 class GettextFFS extends SimpleFFS {
@@ -406,34 +290,54 @@ class GettextFFS extends SimpleFFS {
 	}
 
 	public function parseGettext( $data ) {
-		$data = str_replace( "\r\n", "\n", $data );
-		$messages = $template = $metadata = array();
-
-		// Defined only once. Be sure to *not* use it without match, or you might get old data
-		$matches = array();
-
-		if ( preg_match( '/X-Language-Code:\s+([a-zA-Z-_]+)/', $data, $matches ) ) {
-			$metadata['code'] = $matches[1];
-		} 
-
-		if ( preg_match( '/X-Message-Group:\s+([a-zA-Z0-9-._\|]+)/', $data, $matches ) ) {
-			$metadata['group'] = $matches[1];
-		}
-
-		$pluralForms = false;
-		if ( preg_match( '/Plural-Forms:\s+nplurals=([0-9]+).*;/', $data, $matches ) ) {
-			$metadata['plurals'] = $matches;
-			$pluralForms = $matches;
-		}
-
 		$useCtxtAsKey = isset($this->extra['CtxtAsKey']) && $this->extra['CtxtAsKey'];
+		return self::parseGettextData( $data, $useCtxtAsKey );
+	}
 
-		$poformat = '".*"\n?(^".*"$\n?)*';
-		$quotePattern = '/(^"|"$\n?)/m';
+	// Ugly hack to avoid code duplication between old and new style FFS
+	public static function parseGettextData( $data, $useCtxtAsKey = false ) {
+		// Normalise newlines, to make processing easier lates
+		$data = str_replace( "\r\n", "\n", $data );
 
+		/* Delimit the file into sections, which are separated by two newlines.
+		 * We are permissive and accept more than two. This parsing method isn't
+		 * efficient wrt memory, but was easy to implement */
 		$sections = preg_split( '/\n{2,}/', $data );
-		array_shift( $sections ); // First isn't an actual message
 
+		/* First one isn't an actual message. We'll handle it specially below */
+		$headerSection = array_shift( $sections );
+
+		/* Since this is the header section, we are only interested in the tags
+		 * and msgid is empty. Somewhere we should extract the header comments
+		 * too */
+		$match = self::expectKeyword( 'msgstr', $headerSection );
+		if ( $match !== null ) {
+			$headerBlock = self::formatForWiki( $match, 'trim' );
+			$headers = self::parseHeaderTags( $headerBlock );
+		} else {
+			throw new MWException( "Gettext file header was not found:\n\n$data" );
+		}
+
+		/* At this stage we are only interested how many plurals forms we should
+		 * be expecting when parsing the rest of this file. */
+		$pluralCount = false;
+		if ( isset($headers['Plural-Forms']) ) {
+			if ( preg_match( '/nplurals=([0-9]+).*;/', $headers['Plural-Forms'], $matches ) ) {
+				$pluralCount = $matches[1];
+			}
+		}
+
+		// Extract some metadata from headers for easier use
+		$metadata = array();
+		if ( isset($headers['X-Language-Code']) ) {
+			$metadata['code'] = $headers['X-Language-Code'];
+		}
+
+		if ( isset($headers['X-Message-Group']) ) {
+			$metadata['group'] = $headers['X-Message-Group'];
+		}
+
+		// Then parse the messages
 		foreach ( $sections as $section ) {
 			if ( trim( $section ) === '' ) continue;
 
@@ -445,44 +349,49 @@ class GettextFFS extends SimpleFFS {
 				'comments' => array(),
 			);
 
-			$matches = array();
-			if ( preg_match( "/^msgid\s($poformat)/mx", $section, $matches ) ) {
-				$item['id'] = self::formatForWiki( $matches[1] );
+			$match = self::expectKeyword( 'msgid', $section );
+			if ( $match !== null ) {
+				$item['id'] = self::formatForWiki( $match );
 			} else {
 				throw new MWException( "Unable to parse msgid:\n\n$section" );
 			}
 
-			if ( preg_match( "/^msgctxt\s($poformat)/mx", $section, $matches ) ) {
-				$item['ctxt'] = self::formatForWiki( $matches[1] );
+			$match = self::expectKeyword( 'msgctxt', $section );
+			if ( $match !== null ) {
+				$item['ctxt'] = self::formatForWiki( $match );
 			} elseif ( $useCtxtAsKey ) { // Invalid message
 				$metadata['warnings'][] = "Ctxt missing for {$item['id']}";
+				error_log( "Ctxt missing for {$item['id']}" );
 			}
 
 
 			$pluralMessage = false;
-			if ( preg_match( "/^msgid_plural\s($poformat)/mx", $section, $matches ) ) {
+			$match = self::expectKeyword( 'msgid_plural', $section );
+			if ( $match !== null ) {
 				$pluralMessage = true;
-				$plural = self::formatForWiki( $matches[1] );
+				$plural = self::formatForWiki( $match );
 				$item['id'] = "{{PLURAL:GETTEXT|{$item['id']}|$plural}}";
 			}
 
 			if ( $pluralMessage ) {
-
 				$actualForms = array();
-				for ( $i = 0; $i < $pluralForms[1]; $i++ ) {
-					if ( preg_match( "/^msgstr\[$i\]\s($poformat)/mx", $section, $matches ) ) {
-						$actualForms[] = self::formatForWiki( $matches[1] );
+				for ( $i = 0; $i < $pluralCount; $i++ ) {
+					$match = self::expectKeyword( "msgstr\\[$i\\]", $section );
+					if ( $match !== null ) {
+						$actualForms[] = self::formatForWiki( $match );
 					} else {
-						throw new MWException( "Plural not found, expecting $i" );
+						throw new MWException( "Plural $i not found, expecting total of $pluralCount" );
 					}
 				}
 
-				$item['str'] = '{{PLURAL:GETTEXT|' . implode( '|', $actualForms ) . '}}';
+				// Keep the translation empty if no form has translation
+				if ( array_sum( array_map( 'strlen', $actualForms ) ) > 0 ) {
+					$item['str'] = '{{PLURAL:GETTEXT|' . implode( '|', $actualForms ) . '}}';
+				}
 			} else {
-
-				$matches = array();
-				if ( preg_match( "/^msgstr\s($poformat)/mx", $section, $matches ) ) {
-					$item['str'] = self::formatForWiki( $matches[1] );
+				$match = self::expectKeyword( 'msgstr', $section );
+				if ( $match !== null ) {
+					$item['str'] = self::formatForWiki( $match );
 				} else {
 					throw new MWException( "Unable to parse msgstr:\n\n$section" );
 				}
@@ -519,16 +428,34 @@ class GettextFFS extends SimpleFFS {
 
 			$messages[$key] = $item['str'];
 			$template[$key] = $item;
-
 		}
 
 		return array(
 			'MESSAGES' => $messages,
 			'TEMPLATE' => $template,
 			'METADATA' => $metadata,
+			'HEADERS' => $headers
 		);
 	}
 
+	public static function expectKeyword( $name, $section ) {
+		/* Catches the multiline textblock that comes after keywords msgid,
+		 * msgstr, msgid_plural, msgctxt.
+		 */
+		$poformat = '".*"\n?(^".*"$\n?)*';
+
+		$matches = array();
+		if ( preg_match( "/^$name\s($poformat)/mx", $section, $matches ) ) {
+			return $matches[1];
+		} else {
+			return null;
+		}
+	}
+
+	/**
+	 * Generates unique key for each message. Changing this WILL BREAK ALL
+	 * existing pages!
+	 */
 	public static function generateKeyFromItem( $item ) {
 		$lang = Language::factory( 'en' );
 		global $wgLegalTitleChars;
@@ -542,14 +469,35 @@ class GettextFFS extends SimpleFFS {
 		return "$hash-$snippet";
 	}
 
-	public static function formatForWiki( $data ) {
+	/**
+	 * This parses the Gettext text block format. Since trailing whitespace is
+	 * not allowed in MediaWiki pages, the default action is to append
+	 * \-character at the end of the message. You can also choose to ignore it
+	 * and use the trim action instead.
+	 */
+	public static function formatForWiki( $data, $whitespace = 'mark' ) {
 		$quotePattern = '/(^"|"$\n?)/m';
 		$data = preg_replace( $quotePattern, '', $data );
 		$data = stripcslashes( $data );
 		if ( preg_match( '/\s$/', $data ) ) {
-			$data .= '\\';
+			if ( $whitespace === 'mark' )
+				$data .= '\\';
+			elseif ( $whitespace === 'trim' )
+				$data = rtrim($data);
+			else
+				// FIXME: only triggered if there is trailing whitespace
+				throw new MWException( 'Unknown action for whitespace' );
 		}
 		return $data;
+	}
+
+	public static function parseHeaderTags( $headers ) {
+		$tags = array();
+		foreach ( explode("\n", $headers ) as $line ) {
+			list( $key, $value ) = explode( ': ', $line, 2 );
+			$tags[$key] = $value;
+		}
+		return $tags;
 	}
 
 	//
