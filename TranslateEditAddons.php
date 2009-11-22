@@ -384,8 +384,10 @@ EOEO;
 			if ( $group instanceof GettextMessageGroup ) {
 				$reader = $group->getReader( 'en' );
 				if ( $reader ) {
+					global $wgContLang;
+					$mykey = $wgContLang->lcfirst( $key );
 					$data = $reader->parseFile();
-					$help = GettextFormatWriter::formatcomments( @$data[$key]['comments'], false, @$data[$key]['flags'] );
+					$help = GettextFormatWriter::formatcomments( @$data[$mykey]['comments'], false, @$data[$mykey]['flags'] );
 					$info .= "<hr /><pre>$help</pre>";
 				}
 			}
