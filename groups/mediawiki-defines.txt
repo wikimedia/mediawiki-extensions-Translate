@@ -496,6 +496,8 @@ aliasfile = GroupPermissionsManager/GroupPermissionsManager.alias.php
 descmsg = grouppermissions-desc
 optional = grouppermissions-display
 
+Groups Sidebar
+
 Honeypot Integration
 descmsg = honeypot-desc
 
