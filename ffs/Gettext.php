@@ -264,8 +264,12 @@ class GettextFormatWriter extends SimpleFormatWriter {
 			$pluralForm = $text;
 			foreach ( $plurals[0] as $index => $definition ) {
 				$parsedFormsArray = explode( '|', $plurals[1][$index] );
-				if ( !isset($parsedFormsArray[$i]) ) throw new MWException( "Too few plural forms in: $text" );
-				$pluralForm = str_replace( $pluralForm, $definition, $parsedFormsArray[$i] );
+				if ( !isset($parsedFormsArray[$i]) ) {
+					error_log( "Too few plural forms in: $text" );
+					$pluralForm = '';
+				} else {
+					$pluralForm = str_replace( $pluralForm, $definition, $parsedFormsArray[$i] );
+				}
 			}
 			$splitPlurals[$i] = $pluralForm;
 		}
@@ -348,6 +352,8 @@ class GettextFFS extends SimpleFFS {
 		// Then parse the messages
 		foreach ( $sections as $section ) {
 			if ( trim( $section ) === '' ) continue;
+			// These inactive section are of no interest to us
+			if ( preg_match( '/^#~/', $section ) ) continue;
 
 			$item = array(
 				'ctxt'  => '',
