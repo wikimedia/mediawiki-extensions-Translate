@@ -292,7 +292,7 @@ class TranslationHelpers {
 			$reader = $this->group->getReader( 'en' );
 			if ( $reader ) {
 				global $wgContLang;
-				$mykey = $wgContLang->lcfirst( $key );
+				$mykey = $wgContLang->lcfirst( $this->page );
 				$data = $reader->parseFile();
 				$help = GettextFormatWriter::formatcomments( @$data[$mykey]['comments'], false, @$data[$mykey]['flags'] );
 				$info .= "<hr /><pre>$help</pre>";
