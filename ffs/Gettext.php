@@ -352,8 +352,11 @@ class GettextFFS extends SimpleFFS {
 		// Then parse the messages
 		foreach ( $sections as $section ) {
 			if ( trim( $section ) === '' ) continue;
-			// These inactive section are of no interest to us
-			if ( preg_match( '/^#~/', $section ) ) continue;
+			/* These inactive section are of no interest to us. Multiline mode
+			 * is needed because there may be flags or other annoying stuff
+			 * before the commented out sections.
+			 */
+			if ( preg_match( '/^#~/m', $section ) ) continue;
 
 			$item = array(
 				'ctxt'  => '',
