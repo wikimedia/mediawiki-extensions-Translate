@@ -198,6 +198,14 @@ array(
 	)
 ),
 array(
+	'group' => 'ext-qpoll',
+	'check' => 'variable',
+	'message' => array(
+		'qp_user_polls_link', // Optional GENDER parameter
+		'qp_user_missing_polls_link', // Optional GENDER parameter
+	)
+),
+array(
 	'group' => 'ext-regexblock',
 	'check' => 'variable',
 	'message' => array(
