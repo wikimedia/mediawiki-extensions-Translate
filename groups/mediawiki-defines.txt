@@ -1254,6 +1254,10 @@ id = ext-ui-wikieditor-preview
 file = UsabilityInitiative/WikiEditor/Modules/Preview/Preview.i18n.php
 descmsg = wikieditor-preview-desc
 
+Usability Initiative - Wikieditor Publish
+id = ext-ui-wikieditor-publish
+file = UsabilityInitiative/WikiEditor/Modules/Publish/Publish.i18n.php
+
 Usability Initiative - Wikieditor TOC
 id = ext-ui-wikieditor-toc
 file = UsabilityInitiative/WikiEditor/Modules/Toc/Toc.i18n.php
