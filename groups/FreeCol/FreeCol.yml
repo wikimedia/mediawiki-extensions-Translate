@@ -51,3 +51,4 @@ TAGS:
     - shipName.3.0
   ignored:
     - HeaderFont
+    - NormalFont
