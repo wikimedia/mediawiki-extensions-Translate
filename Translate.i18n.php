@@ -2825,6 +2825,8 @@ Teď doporučujeme zkontrolovat hlášení pomocí stránky [[Special:Translate|
 	'translate-import-err-type-not-supported' => 'Nepodařilo se načíst soubor:
 Metoda <tt>$1</tt> není podporována.',
 	'translate-import-err-ul-failed' => 'Načtení souboru se nezdařilo.',
+	'translate-import-err-invalid-title' => 'Zadané jméno souboru <nowiki>$1</nowiki> není platné.',
+	'translate-import-err-no-such-file' => 'Soubor <nowiki>$1</nowiki> neexistuje nebo nebyl načten lokálně.',
 	'translate-js-fb' => 'Normální editace',
 	'translate-gs-pos' => 'Poř.',
 	'translate-gs-code' => 'Kód',
