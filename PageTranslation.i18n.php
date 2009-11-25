@@ -2529,7 +2529,7 @@ Tên: $1',
 	'tpt-submit' => 'Đánh dấu phiên bản này là cần dịch',
 	'tpt-sections-oldnew' => 'Các đơn vị dịch thuật mới và hiện có',
 	'tpt-sections-deleted' => 'Các đơn vị dịch thuật đã bị xóa',
-	'tpt-sections-template' => 'Tiêu bản trang dịch',
+	'tpt-sections-template' => 'Bản mẫu trang dịch',
 	'tpt-badtitle' => 'Tên trang cung cấp ($1) không phải là tên đúng',
 	'tpt-oldrevision' => '$2 không phải là phiên bản mới của trang [[$1]]/
 Chỉ có các phiên bản mới nhất mới có thể đánh dấu cần dịch được.',
