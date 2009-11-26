@@ -102,7 +102,10 @@ class SpecialImportTranslations extends SpecialPage {
 	 * Constructs and outputs file input form with supported methods.
 	 */
 	protected function outputForm() {
-		$this->out->addScriptClass( 'TranslateImport' );
+		global $wgScriptPath;
+		// Core jQuery
+		$this->out->addScriptFile( "$wgScriptPath/extensions/Translate/js/js2stopgap.js" );
+		$this->out->addScriptFile( "$wgScriptPath/extensions/Translate/js/import.js" );
 
 		// Ugly but necessary form building ahead, ohoy
 		$this->out->addHTML(
@@ -118,8 +121,7 @@ class SpecialImportTranslations extends SpecialPage {
 		);
 
 		$class = array( 'class' => 'mw-translate-import-inputs' );
-		global $wgAllowCopyUploads;
-		if ( $wgAllowCopyUploads ) {
+		if ( true ) {
 			$this->out->addHTML(
 				Xml::radioLabel( wfMsg( 'translate-import-from-url' ),
 					'upload-type', 'url', 'mw-translate-up-url',
@@ -162,16 +164,13 @@ class SpecialImportTranslations extends SpecialPage {
 		$source = $this->request->getText( 'upload-type' );
 
 		if ( $source === 'url' ) {
-			global $wgAllowCopyUploads;
-			if ( !$wgAllowCopyUploads ) return array( 'type-not-supported', $source );
-
+			#return array( 'type-not-supported', $source );
 			$url = $this->request->getText( 'upload-url' );
-			$status = Http::doDownload( $url, false );
-			if ( $status->isOk() ) {
-				$filedata = $status->value;
+			$filedata = Http::get( $url );;
+			if ( $filedata ) {
 				return array( 'ok' );
 			} else {
-				return array( 'dl-failed', $status->getWikiText() );
+				return array( 'dl-failed', 'Unknown reason' );
 			}
 		} elseif ( $source === 'local' ) {
 			$filename = $this->request->getFileTempname( 'upload-local' );

@@ -48,19 +48,17 @@ class MessageTable {
 		$this->headers[$type] = array( 'raw', htmlspecialchars($value) );
 	}
 
+	// This is like so because jQuery got removed from core
 	public function setCSSJS() {
 		global $wgOut, $wgScriptPath;
+		$prefix = "$wgScriptPath/extensions/Translate/js";
 		// Our class
-		$wgOut->addScriptClass( 'JsEdit' );
+		$wgOut->addScriptFile( "$prefix/quickedit.js" );
 		// Core jQuery
-		$wgOut->addScriptClass( 'j.ui' );
-		$wgOut->addScriptClass( 'j.ui.dialog' );
-		$wgOut->addScriptClass( 'j.ui.draggable' );
-		$wgOut->addScriptClass( 'j.ui.resizable' );
+		$wgOut->addScriptFile( "$prefix/js2stopgap.js" );
 		// Additional jQuery
-		$wgOut->addScriptClass( 'j.form' );
-		// TODO: this can't be a good way...
-		$wgOut->addExtensionStyle( "$wgScriptPath/js2/mwEmbed/jquery/jquery.ui/themes/base/ui.all.css" );
+		$wgOut->addScriptFile( "$prefix/jquery.form.js" );
+		$wgOut->addExtensionStyle( "$prefix/base/ui.all.css" );
 	}
 
 
