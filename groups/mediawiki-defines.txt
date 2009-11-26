@@ -569,6 +569,8 @@ Language Selector
 
 Latex Doc
 
+LDAP authentication
+
 Link OpenID
 optional = linkopenid-prefs, linkopenid-prefstext-xrdsurl
 
