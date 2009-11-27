@@ -569,7 +569,7 @@ Language Selector
 
 Latex Doc
 
-LDAP authentication
+Ldap Authentication
 
 Link OpenID
 optional = linkopenid-prefs, linkopenid-prefstext-xrdsurl
@@ -935,6 +935,8 @@ descmsg = srf-desc
 optional = srf_icalendar_link, srf_vcard_link, srf_bibtex_link
 
 Semantic Tasks
+
+Sendmail To Wiki
 
 Shared User Rights
 aliasfile = SharedUserRights/SharedUserRights.alias.php
