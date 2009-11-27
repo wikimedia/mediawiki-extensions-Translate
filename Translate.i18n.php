@@ -14000,6 +14000,7 @@ $messages['te'] = array(
 	'translate-magic-words' => 'మాయా పదాలు',
 	'translate-magic-namespace' => 'పేరుబరుల పేర్లు',
 	'translate-magic-notsaved' => 'మీ మార్పు భద్రం కాలేదు!',
+	'translate-magic-saved' => 'మీ మార్పులు విజయవంతంగా భద్రమయ్యాయి.',
 	'translationchanges' => 'అనువాద మార్పులు',
 	'translationchanges-export' => 'ఎగుమతించు',
 	'translationchanges-change' => '$1: $3 చే $2',
@@ -14067,6 +14068,9 @@ $messages['te'] = array(
 	'translate-manage-action-import' => 'దిగుమతి చెయ్యి',
 	'translate-manage-action-ignore' => 'పట్టించుకోవద్దు',
 	'translate-manage-import-done' => 'అంతా పూర్తయ్యింది!',
+	'translate-import-from-wiki' => 'ఈ వికీలోని ఫైలు:',
+	'translate-import-from-local' => 'స్థానిక ఫైలు ఎక్కింపు:',
+	'translate-gs-continent' => 'ఖండం',
 	'translate-gs-total' => 'మొత్తం',
 );
 
