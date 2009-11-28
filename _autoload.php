@@ -90,6 +90,7 @@ $wgAutoloadClasses['TranslationHelpers'] = $dir . 'utils/TranslationHelpers.php'
 
 $wgAutoloadClasses['AllMediawikiExtensionsGroup'] = $dir . 'groups/MediaWikiExtensions.php';
 $wgAutoloadClasses['PremadeMediawikiExtensionGroups'] = $dir . 'groups/MediaWikiExtensions.php';
+$wgAutoloadClasses['PremadeWikiaExtensionGroups'] = $dir . 'groups/Wikia/WikiaExtensions.php';
 $wgAutoloadClasses['CommonistMessageGroup'] = $dir . 'groups/Commonist.php';
 $wgAutoloadClasses['MantisMessageGroup'] = $dir . 'groups/Mantis.php';
 $wgAutoloadClasses['NoccMessageGroup'] = $dir . 'groups/Nocc.php';
