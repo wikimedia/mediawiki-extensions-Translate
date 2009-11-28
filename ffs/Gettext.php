@@ -1,6 +1,8 @@
 <?php
 if ( !defined( 'MEDIAWIKI' ) ) die();
 
+class GettextPluralException extends MwExceptipn {}
+
 class GettextFormatReader extends SimpleFormatReader {
 	protected $pot = false;
 	public function setPotMode( $value ) {
@@ -226,9 +228,13 @@ class GettextFormatWriter extends SimpleFormatWriter {
 			$output[] = 'msgid ' . $this->escape( $forms[0] );
 			$output[] = 'msgid_plural ' . $this->escape( $forms[1] );
 
-			$forms = $this->splitPlural( $msgstr, $pluralForms );
-			foreach( $forms as $index => $form ) {
-				$output[] = "msgstr[$index] " . $this->escape( $form );
+			try {
+				$forms = $this->splitPlural( $msgstr, $pluralForms );
+				foreach( $forms as $index => $form ) {
+					$output[] = "msgstr[$index] " . $this->escape( $form );
+				}
+			} catch ( GettextPluralException $e ) {
+				$output[] = "# Plural problem";
 			}
 		} else {
 			$output[] = 'msgid ' . $this->escape( $msgid );
@@ -253,14 +259,14 @@ class GettextFormatWriter extends SimpleFormatWriter {
 			return $text;
 		} elseif( !$forms ) {
 			$forms = (int) $forms;
-			throw new MWException( "Don't know how to split $text into $forms forms" );
+			throw new GettextPluralException( "Don't know how to split $text into $forms forms" );
 		}
 
 		$splitPlurals = array();
 		for ( $i = 0; $i < $forms; $i++ ) {
 			$plurals = array();
 			$match = preg_match_all( '/{{PLURAL:GETTEXT\|(.*)}}/iU', $text, $plurals );
-			if ( !$match ) throw new MWException( "Failed to parse plural for: $text" );
+			if ( !$match ) throw new GettextPluralException( "Failed to parse plural for: $text" );
 			$pluralForm = $text;
 			foreach ( $plurals[0] as $index => $definition ) {
 				$parsedFormsArray = explode( '|', $plurals[1][$index] );
