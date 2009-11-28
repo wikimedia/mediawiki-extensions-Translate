@@ -242,6 +242,13 @@ array(
 	)
 ),
 array(
+	'group' => 'ext-wikilog',
+	'check' => 'variable',
+	'message' => array(
+		'wikilog-summary-categories', // Optional PLURAL parameter ($1)
+	)
+),
+array(
 	'group' => 'out-osm-site',
 	'check' => 'parameters',
 	'message' => array(
