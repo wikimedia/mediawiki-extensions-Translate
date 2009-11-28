@@ -494,6 +494,17 @@ $messages['niu'] = array(
 	'translate-page-navigation-legend' => 'Navikati',
 );
 
+/** Laz (Laz)
+ * @author Bombola
+ */
+$messages['lzz'] = array(
+	'translate-page-group' => 'Grubi',
+	'translate-page-language' => 'Nena',
+	'translate-stats-users' => 'Magoktirepe',
+	'translate-statsf-scale-days' => 'Ndğalepe',
+	'translate-statsf-scale-hours' => "Saat'epe",
+);
+
 /** Afrikaans (Afrikaans)
  * @author Arnobarnard
  * @author Byeboer
@@ -5232,7 +5243,7 @@ Totes les valors ont des limites d’amont et desot.',
 	'translate-tag-fuzzy-comment' => 'Dèfinicion changiê per l’utilisator [[User:$1|$1]] dens la vèrsion $2.',
 	'translate-tag-fuzzy-reason' => 'Dèfinicion changiê per l’utilisator « $1 » avouéc por comentèro « $3 » dens $2.',
 	'translate-sidebar-alltrans' => 'Dens les ôtres lengoues',
-	'translate-tag-noedit' => 'Cen est una pâge de traduccion betâ a jorn ôtomaticament.
+	'translate-tag-noedit' => 'O est una pâge de traduccion betâ a jorn ôtomaticament.
 Vos pouede [$1 changiér la pâge d’origina] ou ben [$2 betar a jorn la traduccion].',
 	'translations' => 'Totes les traduccions',
 	'translations-summary' => 'Buchiéd un nom de mèssâjo ce-desot por fâre vêre totes les traduccions disponibles.',
@@ -11694,8 +11705,8 @@ $messages['pt'] = array(
 	'translate-task-optional' => 'Ver mensagens opcionais de',
 	'translate-task-untranslatedoptional' => 'Ver mensagens opcionais não traduzidas de',
 	'translate-task-problematic' => 'Ver mensagens com problemas',
-	'translate-task-review' => 'Rever alterações em',
-	'translate-task-reviewall' => 'Rever todas as traduções em',
+	'translate-task-review' => 'Rever alterações a',
+	'translate-task-reviewall' => 'Rever todas as traduções de',
 	'translate-task-export' => 'Exportar traduções de',
 	'translate-task-export-to-file' => 'Exportar para ficheiro as traduções de',
 	'translate-task-export-as-po' => 'Exportar tradução em formato Gettext',
