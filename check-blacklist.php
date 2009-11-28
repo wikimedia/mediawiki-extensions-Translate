@@ -246,6 +246,8 @@ array(
 	'check' => 'variable',
 	'message' => array(
 		'wikilog-summary-categories', // Optional PLURAL parameter ($1)
+		'wikilog-summary-footer', // Optional parameters $3, $4, $5, $6
+		'wikilog-summary-footeri-single', // Optional parameters $1, $2, $3, $4, $5, $6
 	)
 ),
 array(
