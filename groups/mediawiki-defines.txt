@@ -695,6 +695,7 @@ aliasfile = NewsChannel/NewsChannel.alias.php
 
 New User Message
 ignored = newusermessage-template, newusermessage-editor, newusermessage-substitute
+ignored = newusermessage-template-subject, newusermessage-template-body
 
 New User Notification
 file = NewUserNotif/NewUserNotif.i18n.php
