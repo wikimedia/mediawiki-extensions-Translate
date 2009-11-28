@@ -1,7 +1,7 @@
 <?php
 if ( !defined( 'MEDIAWIKI' ) ) die();
 
-class GettextPluralException extends MwExceptipn {}
+class GettextPluralException extends MwException {}
 
 class GettextFormatReader extends SimpleFormatReader {
 	protected $pot = false;
