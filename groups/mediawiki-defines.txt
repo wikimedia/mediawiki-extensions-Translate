@@ -937,6 +937,7 @@ optional = srf_icalendar_link, srf_vcard_link, srf_bibtex_link
 Semantic Tasks
 
 Sendmail To Wiki
+ignored = sendmailtowiki
 
 Shared User Rights
 aliasfile = SharedUserRights/SharedUserRights.alias.php
