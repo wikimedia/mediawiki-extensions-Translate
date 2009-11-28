@@ -12,6 +12,7 @@ svn co https://okawix.svn.sourceforge.net/svnroot/okawix/trunk/okawix/chrome/loc
 Translate configuration:
 wfAddNamespace( ####, 'Okawix' );
 require_once( "$IP/extensions/Translate/groups/Okawix/Okawix.php" );
+$wgTranslateGroupFiles[] = "$IP/extensions/Translate/groups/Okawix/Okawix-doc.yml";
 $wgTranslateGroupFiles[] = "$IP/extensions/Translate/groups/Okawix/Okawix-dtd.yml";
 $wgTranslateGroupFiles[] = "$IP/extensions/Translate/groups/Okawix/Okawix-properties.yml";
 
@@ -21,7 +22,7 @@ TARGET=$HOME/okawix/locale
 TEMP=`mktemp -p $HOME/okawix` || { echo "could not get temp file"; exit 1 }
 
 cd $EXPORTERPATH
-php autoexport.php --hours="$1" --target="$TARGET" --groups="out-okawix-dtd out-okawix-prop"--skip="en" > $TEMP
+php autoexport.php --hours="$1" --target="$TARGET" --groups="out-okawix-dtd out-okawix-prop" --skip="en" --threshold=40 > $TEMP
 
 cat $TEMP
 sh $TEMP
