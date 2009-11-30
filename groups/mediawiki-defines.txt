@@ -1293,6 +1293,8 @@ aliasfile = UserOptionStats/UserOptionStats.alias.php
 
 User Rights Notif
 
+Validator
+
 Vote
 aliasfile = Vote/Vote.alias.php
 
