@@ -242,6 +242,13 @@ array(
 	)
 ),
 array(
+	'group' => 'ext-validator',
+	'check' => 'variable',
+	'message' => array(
+		'validator_error_parameters', // Optional list count for PLURAL ($1)
+	)
+),
+array(
 	'group' => 'ext-wikilog',
 	'check' => 'variable',
 	'message' => array(
