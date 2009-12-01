@@ -384,6 +384,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-drafts', // test.wikipedia.org
 		'ext-expandtemplates',
 		'ext-extensiondistributor', // MediaWiki.org
+		'ext-externalpages', // 2009-11-30: test.wikipedia.org
 		'ext-flaggedrevs-flaggedrevs',
 		'ext-flaggedrevs-oldreviewedpages',
 		'ext-flaggedrevs-problemchanges',
