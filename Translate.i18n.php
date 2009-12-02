@@ -14081,6 +14081,7 @@ $messages['te'] = array(
 	'translate-manage-import-done' => 'అంతా పూర్తయ్యింది!',
 	'translate-import-from-wiki' => 'ఈ వికీలోని ఫైలు:',
 	'translate-import-from-local' => 'స్థానిక ఫైలు ఎక్కింపు:',
+	'translate-import-err-ul-failed' => 'ఫైలు ఎక్కింపు విజయవంతం కాలేదు',
 	'translate-gs-continent' => 'ఖండం',
 	'translate-gs-total' => 'మొత్తం',
 );
