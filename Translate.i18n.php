@@ -11785,7 +11785,7 @@ As alterações não serão gravadas até clicar no botão de gravar abaixo.',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|O seguinte parâmetro é desconhecido|Os seguintes parâmetros são desconhecidos}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Há {{PLURAL:$2|um parênteses irregular|$2 parênteses irregulares}}: <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links' => '{{PLURAL:$2|A seguinte ligação tem|As $2 seguintes ligações têm}} problemas: <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links' => '{{PLURAL:$2|A seguinte ligação tem|As seguintes $2 ligações têm}} problemas: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links-missing' => '{{PLURAL:$2|A seguinte ligação está|As seguintes $2 ligações estão}} em falta:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => "Por favor, corrija {{PLURAL:$2|a seguinte ''tag''|as seguintes ''tags''}}:
@@ -11836,9 +11836,9 @@ Todos os valores têm limites máximos e mínimos.',
 	'translate-tag-fuzzy-reason' => 'Definição alterada por "$1" com o comentário "$3" em $2.',
 	'translate-sidebar-alltrans' => 'Noutras línguas',
 	'translate-tag-noedit' => 'Esta página de tradução é actualizada automaticamente.
-Você pode [$1 editar a página de origem] ou [$2 actualizar a tradução].',
+Pode [$1 editar a página de origem] ou [$2 actualizar a tradução].',
 	'translations' => 'Todas as traduções',
-	'translations-summary' => 'Introduza o título de uma mensagem abaixo para mostrar todas as traduções disponíveis.',
+	'translations-summary' => 'Introduza abaixo o nome de uma mensagem para ver todas as traduções disponíveis.',
 	'translate-translations-no-message' => '"$1" não é uma mensagem traduzível',
 	'translate-translations-none' => 'Não existem traduções para "$1"',
 	'translate-translations-fieldset-title' => 'Mensagem',

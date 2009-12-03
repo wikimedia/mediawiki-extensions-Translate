@@ -1989,8 +1989,8 @@ Antes de marcar esta versão para tradução, verifique que as alterações às 
 	'tpt-languages-legend' => 'Outras línguas:',
 	'tpt-target-page' => 'Esta página não pode ser actualizada manualmente.
 Esta página é uma tradução da página [[$1]] e a tradução pode ser actualizada usando [$2 a ferramenta de tradução].',
-	'tpt-unknown-page' => 'Este domínio está reservado para traduções de páginas de conteúdo.
-A página que está a tentar editar não parece corresponder a qualquer página marcada para tradução.',
+	'tpt-unknown-page' => 'Este espaço nominal está reservado para traduções de páginas de conteúdo.
+A página que está a tentar editar não parece corresponder a nenhuma página marcada para tradução.',
 	'tpt-install' => "Execute ''maintenance/update.php'' ou instale através da internet para possibilitar a funcionalidade de tradução de páginas.",
 	'tpt-render-summary' => 'A actualizar para corresponder à nova versão da página fonte',
 	'tpt-download-page' => 'Exportar a página com traduções',
