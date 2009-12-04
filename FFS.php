@@ -66,6 +66,7 @@ class SimpleFFS implements FFS {
 			if ( count( $lineParts ) !== 2 ) throw new MWException( "Wrong number of parts in line $line" );
 
 			list( $key, $message ) = $lineParts;
+			$key = trim( $key );
 			$messages[$key] = $message;
 		}
 
@@ -213,6 +214,7 @@ class JavaFFS extends SimpleFFS {
 				}
 
 				list( $key, $value ) = explode( $this->keySeparator, $line, 2 );
+				$key = trim( $key );
 				if ( $key === '' ) throw new MWException( "Empty key in line $line" );
 
 				$value = str_replace( '\n', "\n", $value );
