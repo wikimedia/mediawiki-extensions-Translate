@@ -1098,6 +1098,7 @@ file = TodoTasks/SpecialTaskList.i18n.php
 aliasfile = TodoTasks/SpecialTaskList.alias.php
 magicfile = TodoTasks/TodoTasks.i18n.magic.php
 descmsg = tasklist-parser-desc
+ignored = todoTasksValidProjects
 
 Tooltip
 
