@@ -38,8 +38,11 @@ class SpecialManageGroups {
 			$this->importForm( $cache, $group, $code );
 		} else {
 			global $wgLang, $wgOut;
+
 			$groups = MessageGroups::singleton()->getGroups();
+
 			$wgOut->wrapWikiMsg( '==$1==', 'translate-manage-listgroups' );
+
 			foreach ( $groups as $group ) {
 				if ( !$group instanceof FileBasedMessageGroup ) continue;
 
@@ -47,6 +50,7 @@ class SpecialManageGroups {
 				$wgOut->addHtml( $link );
 
 				$cache = new MessageGroupCache( $group );
+
 				if ( $cache->exists() ) {
 					$timestamp = wfTimestamp( TS_MW, $cache->getTimestamp() );
 					$wgOut->addWikiMsg( 'translate-manage-cacheat',
@@ -56,16 +60,16 @@ class SpecialManageGroups {
 				} else {
 					$wgOut->addWikiMsg( 'translate-manage-newgroup' );
 				}
+
 				$wgOut->addHtml( '<hr>' );
 			}
-
-			global $wgOut;
 
 			$wgOut->wrapWikiMsg( '==$1==', 'translate-manage-listgroups-old' );
 			$wgOut->addHTML( '<ul>' );
 
 			foreach ( $groups as $group ) {
 				if ( $group instanceof FileBasedMessageGroup ) continue;
+
 				$wgOut->addHtml( Xml::element( 'li', null, $group->getLabel() ) );
 			}
 
