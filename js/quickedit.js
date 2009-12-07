@@ -87,7 +87,7 @@ function trlVpWidth() {
 }
 
 /*
-mvJsLoader.doLoadDepMode([
+mw.load([
 	[ '$j.ui'
 	],[
 		'$j.ui.resizable',
