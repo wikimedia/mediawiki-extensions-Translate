@@ -2415,12 +2415,13 @@ $messages['bug'] = array(
  * @author Paucabot
  * @author SMP
  * @author Sanbec
+ * @author Ssola
  * @author Toniher
  */
 $messages['ca'] = array(
 	'translate' => 'Tradueix',
 	'translate-desc' => '[[Special:Translate|Pàgina especial]] per a traduir el MediaWiki i altres coses',
-	'translate-edit' => 'edita',
+	'translate-edit' => 'modifica',
 	'translate-talk' => 'discussió',
 	'translate-history' => 'historial',
 	'translate-task-view' => 'veure tots els missatges de',
@@ -2454,7 +2455,7 @@ $messages['ca'] = array(
 	'translate-next' => 'Pàgina següent',
 	'translate-prev' => 'Pàgina anterior',
 	'translate-page-description-legend' => 'Informació del grup',
-	'translate-page-edit' => 'edita',
+	'translate-page-edit' => 'modifica',
 	'translate-optional' => '(opcional)',
 	'translate-ignored' => '(ignorat)',
 	'translate-edit-definition' => 'Definició del missatge',
@@ -9754,7 +9755,7 @@ $messages['mk'] = array(
 	'translate-ext-url' => '<hr />Интернет-страница: $1',
 	'translate-optional' => '(изборно)',
 	'translate-ignored' => '(игнорирано)',
-	'translate-edit-definition' => 'Дефиниција на порака',
+	'translate-edit-definition' => 'Дефиниција на пораката',
 	'translate-edit-contribute' => 'придонес',
 	'translate-edit-no-information' => "''Оваа порака нема опис, не е документирана.
 Ако знаете каде и како оваа порака била користена, може да помогнете на другите преведувачи да додадат опис на оваа порака.''",
@@ -11807,11 +11808,11 @@ A lista por omissão depende da sua língua.',
 	'right-translate' => 'Editar usando a interface de tradução',
 	'right-translate-manage' => 'Gerir grupos de tradução',
 	'right-translate-import' => "Importar traduções ''offline''",
-	'translate-rc-translation-filter' => 'Filtrar traduções:',
-	'translate-rc-translation-filter-no' => 'Não fazer nada',
+	'translate-rc-translation-filter' => 'Filtro de traduções:',
+	'translate-rc-translation-filter-no' => 'Não filtrar',
 	'translate-rc-translation-filter-only' => 'Mostrar apenas traduções',
-	'translate-rc-translation-filter-filter' => 'Ocultar traduções',
-	'translate-rc-translation-filter-site' => 'Apenas alterações a mensagens do sítio',
+	'translate-rc-translation-filter-filter' => 'Não mostrar traduções',
+	'translate-rc-translation-filter-site' => 'Só mudanças às mensagens deste sítio',
 	'translationstats' => 'Estatísticas de traduções',
 	'translate-stats-edits' => 'Edições',
 	'translate-stats-users' => 'Tradutores',
