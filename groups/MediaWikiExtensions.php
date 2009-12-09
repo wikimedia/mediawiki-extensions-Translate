@@ -450,6 +450,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-ui-wikieditor-highlight',
 		'ext-ui-wikieditor-preview',
 		'ext-ui-wikieditor-publish',
+		'ext-ui-wikieditor-templateeditor',
 		'ext-ui-wikieditor-toc',
 		'ext-ui-wikieditor-toolbar',
 		'ext-uploadblacklist',
@@ -697,6 +698,7 @@ class AllUsabilityInitiativeExtensionsGroup extends AllMediawikiExtensionsGroup 
 		'ext-ui-wikieditor-highlight',
 		'ext-ui-wikieditor-preview',
 		'ext-ui-wikieditor-publish',
+		'ext-ui-wikieditor-templateeditor',
 		'ext-ui-wikieditor-toc',
 		'ext-ui-wikieditor-toolbar',
 	);

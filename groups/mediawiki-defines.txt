@@ -1060,6 +1060,8 @@ descmsg = syntaxhighlight-desc
 
 Tab0
 
+Table Mod
+
 Talk Here
 ignored = talkhere-title, talkhere-headtext, talkhere-afterinput
 ignored = talkhere-afterform
@@ -1264,6 +1266,10 @@ descmsg = wikieditor-preview-desc
 Usability Initiative - Wikieditor Publish
 id = ext-ui-wikieditor-publish
 file = UsabilityInitiative/WikiEditor/Modules/Publish/Publish.i18n.php
+
+Usability Initiative - Wikieditor Template Editor
+id = ext-ui-wikieditor-templateeditor
+file = UsabilityInitiative/WikiEditor/Modules/TemplateEditor/TemplateEditor.i18n.php
 
 Usability Initiative - Wikieditor TOC
 id = ext-ui-wikieditor-toc
