@@ -1280,6 +1280,7 @@ id = ext-ui-wikieditor-toolbar
 file = UsabilityInitiative/WikiEditor/Modules/Toolbar/Toolbar.i18n.php
 descmsg = wikieditor-toolbar-desc
 optional = wikieditor-toolbar-help-content-rereference-syntax, wikieditor-toolbar-help-content-showreferences-syntax
+optional = wikieditor-toolbar-tool-table-example-text
 ignored = wikieditor-toolbar-help-content-signaturetimestamp-syntax, wikieditor-toolbar-help-content-signature-syntax, wikieditor-toolbar-tool-file-pre
 
 Usage Statistics
