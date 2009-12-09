@@ -2586,6 +2586,7 @@ $messages['yi'] = array(
 /** Simplified Chinese (‪中文(简体)‬)
  * @author Gzdavidwong
  * @author Liangent
+ * @author PhiLiP
  */
 $messages['zh-hans'] = array(
 	'pagetranslation' => '页面翻译',
@@ -2599,7 +2600,9 @@ $messages['zh-hans'] = array(
 	'tpt-templatediff' => '页面模板已改变。',
 	'tpt-diff-old' => '上一个文字',
 	'tpt-diff-new' => '下一个文字',
+	'tpt-translate-this' => '翻译此页',
 	'translate-tag-translate-link-desc' => '翻译本页',
+	'tpt-languages-legend' => '其他语言：',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
