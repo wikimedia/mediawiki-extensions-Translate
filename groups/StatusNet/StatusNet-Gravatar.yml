@@ -1,0 +1,25 @@
+---
+BASIC:
+  id: out-statusnet-Gravatar
+  label: StatusNet - Gravatar
+  description: "{{int:bw-desc-statusnet-plugin-Gravatar}}"
+  namespace: NS_STATUSNET
+  display: out/statusnet/Gravatar
+  class: GettextMessageGroup
+
+FILES:
+  class: GettextFFS
+  sourcePattern: %GROUPROOT%/plugins/Gravatar/locale/%CODE%/LC_MESSAGES/Gravatar.po
+  targetPattern: Gravatar.po
+  codeMap:
+    en-gb: en_GB
+    no: nb
+    pt-br: pt_BR
+    zh-hans: zh_CN
+    zh-hant: zh_TW
+
+MANGLER
+  class: StringMatcher
+  prefix: Gravatar-
+  patterns:
+    - "*"

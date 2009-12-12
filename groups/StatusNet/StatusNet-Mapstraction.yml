@@ -1,0 +1,25 @@
+---
+BASIC:
+  id: out-statusnet-Mapstraction
+  label: StatusNet - Mapstraction
+  description: "{{int:bw-desc-statusnet-plugin-Mapstraction}}"
+  namespace: NS_STATUSNET
+  display: out/statusnet/Mapstraction
+  class: GettextMessageGroup
+
+FILES:
+  class: GettextFFS
+  sourcePattern: %GROUPROOT%/plugins/Mapstraction/locale/%CODE%/LC_MESSAGES/Mapstraction.po
+  targetPattern: Mapstraction.po
+  codeMap:
+    en-gb: en_GB
+    no: nb
+    pt-br: pt_BR
+    zh-hans: zh_CN
+    zh-hant: zh_TW
+
+MANGLER
+  class: StringMatcher
+  prefix: Mapstraction-
+  patterns:
+    - "*"

@@ -1,0 +1,25 @@
+---
+BASIC:
+  id: out-statusnet-FeedSub
+  label: StatusNet - FeedSub
+  description: "{{int:bw-desc-statusnet-plugin-FeedSub}}"
+  namespace: NS_STATUSNET
+  display: out/statusnet/FeedSub
+  class: GettextMessageGroup
+
+FILES:
+  class: GettextFFS
+  sourcePattern: %GROUPROOT%/plugins/FeedSub/locale/%CODE%/LC_MESSAGES/FeedSub.po
+  targetPattern: FeedSub.po
+  codeMap:
+    en-gb: en_GB
+    no: nb
+    pt-br: pt_BR
+    zh-hans: zh_CN
+    zh-hant: zh_TW
+
+MANGLER
+  class: StringMatcher
+  prefix: FeedSub-
+  patterns:
+    - "*"
