@@ -42,25 +42,27 @@ class SpecialManageGroups {
 			$groups = MessageGroups::singleton()->getGroups();
 
 			$wgOut->wrapWikiMsg( '==$1==', 'translate-manage-listgroups' );
+			$separator = wfMsg( 'word-separator' );
 
 			foreach ( $groups as $group ) {
 				if ( !$group instanceof FileBasedMessageGroup ) continue;
 
 				$link = $this->skin->link( $this->getTitle(), $group->getLabel(), array(), array( 'group' => $group->getId() ) );
-				$wgOut->addHtml( $link );
+				$out = $link . $separator;
 
 				$cache = new MessageGroupCache( $group );
 
 				if ( $cache->exists() ) {
 					$timestamp = wfTimestamp( TS_MW, $cache->getTimestamp() );
-					$wgOut->addWikiMsg( 'translate-manage-cacheat',
+					$out .= wfMsg( 'translate-manage-cacheat',
 						$wgLang->date( $timestamp ),
 						$wgLang->time( $timestamp )
 					);
 				} else {
-					$wgOut->addWikiMsg( 'translate-manage-newgroup' );
+					$$out .= wfMsg( 'translate-manage-newgroup' );
 				}
 
+				$wgOut->addHtml( $out );
 				$wgOut->addHtml( '<hr>' );
 			}
 
