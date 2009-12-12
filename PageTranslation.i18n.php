@@ -1924,6 +1924,16 @@ Strona, którą próbujesz edytować, prawdopodobnie nie odpowiada żadnej stron
 	'tpt-download-page' => 'Wyeksportuj stronę z tłumaczeniami',
 );
 
+/** Piedmontese (Piemontèis)
+ * @author Borichèt
+ */
+$messages['pms'] = array(
+	'pagetranslation' => 'Tradussion dle pàgine',
+	'right-pagetranslation' => 'Marché le version dle pàgine për la tradussion',
+	'tpt-desc' => 'Estension për fé la tradussion dle pàgine ëd contnù',
+	'tpt-section' => 'Unità ëd tradussion $1',
+);
+
 /** Pashto (پښتو)
  * @author Ahmed-Najib-Biabani-Ibrahimkhel
  */

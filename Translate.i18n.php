@@ -4262,7 +4262,7 @@ $1',
 	'translate-import-err-ul-failed' => 'La carga del archivo no fue exitosa.',
 	'translate-import-err-invalid-title' => 'El nombre del archivo <nowiki>$1</nowiki> es inválido.',
 	'translate-import-err-no-such-file' => 'El archivo <nowiki>$1</nowiki> no existe o no ha sido guardado localmente.',
-	'translate-import-err-no-headers' => ' El archivo no es un archivo Gettext bien formado en formato de extensión Translate:
+	'translate-import-err-no-headers' => 'El archivo no es un archivo Gettext bien formado en formato de extensión Translate:
 No se puede determinar el grupo y el idioma a partir de los encabezados de archivo.',
 	'translate-import-err-warnings' => 'El archivo no está bien constituído.
 Asegúrese de que su editor no quita los campos msgctxt.
