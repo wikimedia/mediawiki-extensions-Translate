@@ -2354,6 +2354,9 @@ Savjetujemo Vam da izvršite pregled poruke preko [[Special:Translate|{{int:tran
 	'translate-manage-nochanges' => 'Nema promjena u definicijama poruka u ovoj grupi.',
 	'translate-manage-nochanges-other' => 'Nema promjena za ovaj jezik.
 Upotrijebite link ispod za povratak na pregled detalja grupe.',
+	'translate-manage-inconsistent' => 'Otkrivene nedoslijednosti u zahtjevu.
+Molimo provjerite promjene i pokušajte opet.
+Detalji: $1.',
 	'translate-manage-import-ok' => 'Uvezena nova verzija stranice $1.',
 	'translate-manage-import-noks' => 'Neuspio uvoz nove verzije stranice $1: $2',
 	'translate-manage-import-ignore' => 'Preskaćem poruku $1.',
