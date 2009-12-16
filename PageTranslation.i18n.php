@@ -1932,6 +1932,30 @@ $messages['pms'] = array(
 	'right-pagetranslation' => 'Marché le version dle pàgine për la tradussion',
 	'tpt-desc' => 'Estension për fé la tradussion dle pàgine ëd contnù',
 	'tpt-section' => 'Unità ëd tradussion $1',
+	'tpt-section-new' => 'Neuva unità ëd tradussion.
+Nòm: $1',
+	'tpt-section-deleted' => 'Unità ëd tradussion $1',
+	'tpt-template' => 'Model ëd pàgina',
+	'tpt-templatediff' => "Ël model dla pàgina a l'é cangià.",
+	'tpt-diff-old' => 'Test ëd prima',
+	'tpt-diff-new' => 'Test neuv',
+	'tpt-submit' => 'Marca costa version për la tradussion',
+	'tpt-sections-oldnew' => 'Unità ëd tradussion neuve e esistente',
+	'tpt-sections-deleted' => 'Unità ëd tradussion eliminà',
+	'tpt-sections-template' => 'Model ëd pàgina ëd tradussion',
+	'tpt-badtitle' => "Ël nòm dàit a la pàgina ($1) a l'é pa un tìtol bon",
+	'tpt-oldrevision' => "$2 a l'é nen l'ùltima version dla pàgina [[$1]].
+Mach j'ùltime version a peulo esse marcà për la tradussion.",
+	'tpt-notsuitable' => "La pàgina $1 a va nen bin për la tradussion.
+Ch'a contròla ch'a l'abia le tichëtte <nowiki><translate></nowiki> e na sintassi bon-a.",
+	'tpt-saveok' => 'La pàgina [[$1]] a l\'é stàita marcà për la tradussion con $2 {{PLURAL:$2|unità ëd tradussion|unità ëd tradussion}}.
+Adess la pàgina a peul esse <span class="plainlinks">[$3 voltà]</span>.',
+	'tpt-badsect' => "«$1» a l'é pa un nòm bon për l'unità ëd tradussion $2.",
+	'tpt-showpage-intro' => 'Sì-sota a son listà le session neuve, esistente e sganfà.
+Prima ëd marché costa version për la tradussion, controlé che le modìfiche a le session a son minimisà për evité dël travaj inùtil ai tradutor.',
+	'tpt-mark-summary' => "Costa version a l'é stàita marcà për la tradussion",
+	'tpt-edit-failed' => "Impossìbil d'agiorné la pàgina: $1",
+	'tpt-already-marked' => "L'ùltima version ëd sa pàgina a l'é stàita già marcà për la tradussion.",
 );
 
 /** Pashto (پښتو)
