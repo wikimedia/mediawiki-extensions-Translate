@@ -410,6 +410,11 @@ file = FlaggedRevs/language/ReviewedPages.i18n.php
 optional = reviewedpages-lev-0, reviewedpages-lev-1, reviewedpages-lev-2
 descmsg = reviewedpages-leg
 
+Flagged Revisions - Reviewed Versions
+id = ext-flaggedrevs-reviewedversions
+file = FlaggedRevs/language/ReviewedVersions.i18n.php
+descmsg = reviewedversions-leg1
+
 Flagged Revisions - Stabilization
 id = ext-flaggedrevs-stabilization
 file = FlaggedRevs/language/Stabilization.i18n.php
@@ -419,11 +424,6 @@ Flagged Revisions - Stable Pages
 id = ext-flaggedrevs-stablepages
 file = FlaggedRevs/language/StablePages.i18n.php
 descmsg = stablepages
-
-Flagged Revisions - Stable Versions
-id = ext-flaggedrevs-stableversions
-file = FlaggedRevs/language/StableVersions.i18n.php
-descmsg = stableversions-leg1
 
 Flagged Revisions - Unreviewed Pages
 id = ext-flaggedrevs-unreviewedpages
