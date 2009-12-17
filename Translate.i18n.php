@@ -8682,6 +8682,13 @@ $messages['kk-kz'] = array(
 	'translate-language' => 'Тілі:',
 );
 
+/** Kalaallisut (Kalaallisut)
+ * @author Piivaat
+ */
+$messages['kl'] = array(
+	'translate-sidebar-alltrans' => 'Oqaatsit allatoortut',
+);
+
 /** Khmer (ភាសាខ្មែរ)
  * @author Chhorran
  * @author Lovekhmer
