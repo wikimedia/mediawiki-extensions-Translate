@@ -1956,6 +1956,17 @@ Prima ëd marché costa version për la tradussion, controlé che le modìfiche 
 	'tpt-mark-summary' => "Costa version a l'é stàita marcà për la tradussion",
 	'tpt-edit-failed' => "Impossìbil d'agiorné la pàgina: $1",
 	'tpt-already-marked' => "L'ùltima version ëd sa pàgina a l'é stàita già marcà për la tradussion.",
+	'tpt-list-nopages' => 'A-i é gnun-a pàgina marcà për la tradussion ni pronta për esse marcà për la tradussion.',
+	'tpt-old-pages' => 'Chèiche version ëd {{PLURAL:$1|costa pàgine|coste pàgine}} a son ëstàite marcà për la tradussion.',
+	'tpt-new-pages' => "{{PLURAL:$1|Sa pàgina a conten|Se pàgine a conten-o}} dël test con la tichëtta ëd tradussion, ma gnun-a version ëd {{PLURAL:$1|costa pàgina|coste pàgine}} a l'é al moment marcà për la tradussion.",
+	'tpt-rev-latest' => 'ùltima version',
+	'tpt-rev-old' => 'diferensa con la version marcà precedenta',
+	'tpt-rev-mark-new' => 'marca costa version për la tradussion',
+	'tpt-translate-this' => 'fé la tradussion ëd sa pàgina',
+	'translate-tag-translate-link-desc' => 'Fé la tradussion ëd sa pàgina',
+	'translate-tag-markthis' => 'Marca costa pàgina për la tradussion',
+	'translate-tag-markthisagain' => 'Costa pàgina a l\'ha avù <span class="plainlinks">[$1 cangiament]</span> da cand a l\'é stàita <span class="plainlinks">[$2 marcà për la tradussion]</span> l\'ùltima vira.',
+	'translate-tag-hasnew' => 'Costa pàgina a conten <span class="plainlinks">[$1 cangiament]</span> ch\'a son pa marcà për la tradussion.',
 );
 
 /** Pashto (پښتو)
