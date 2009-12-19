@@ -1801,6 +1801,7 @@ Denne siden er en oversettelse av siden [[$1]] og oversettelsen kan bli oppdater
 Denne siden som du prøver å redigere virker ikke å samsvare med noen av sidene som er markert for oversettelse.',
 	'tpt-install' => 'Kjør php maintenance/update.php eller webinnstallering for å muliggjøre sideoversettelsesegenskapen.',
 	'tpt-render-summary' => 'Oppdaterer for å samsvare ny versjon av kildesiden',
+	'tpt-download-page' => 'Eksporter side med oversettelser',
 );
 
 /** Occitan (Occitan)

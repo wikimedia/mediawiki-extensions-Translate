@@ -8686,7 +8686,9 @@ $messages['kk-kz'] = array(
  * @author Piivaat
  */
 $messages['kl'] = array(
+	'translate-page-language' => 'Oqaatsit',
 	'translate-sidebar-alltrans' => 'Oqaatsit allatoortut',
+	'translate-language' => 'Oqaatsit',
 );
 
 /** Khmer (ភាសាខ្មែរ)
@@ -10981,6 +10983,8 @@ Du oppfordres til å se over meldinger gjennom [[Special:Translate|{{int:transla
 	'translate-group-desc-wikitravelextensions' => 'Metameldingsgruppen inneholder alle meldinger for støttede MediaWiki-utvidelser brukt av [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Metameldingsgruppen inneholder alle meldinger for utvidelser relatert til [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Metameldingsgruppe som inneholder alle meldinger for utvidelser relatert til [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
+	'translate-manage-modlang-new' => '$1 (ny)',
+	'translate-manage-import-diff' => 'Melding $1 | Handlinger: $2',
 	'translate-manage-import-new' => 'Ny melding $1',
 	'translate-manage-import-deleted' => 'Slettet melding $1',
 	'translate-manage-action-ignore' => 'Ignorer',
@@ -10992,6 +10996,15 @@ Bruk linken nedenfor for å returnere til gruppedataljene.',
 	'translate-manage-import-rebuild-all' => 'Bygg om alle språk og ignorer alle forandringer',
 	'translate-import-load' => 'Last fil',
 	'translate-import-err-ul-failed' => 'Filopplasting var ikke vellykket',
+	'translate-gs-pos' => 'Pos.',
+	'translate-gs-code' => 'Kode',
+	'translate-gs-continent' => 'Kontinent',
+	'translate-gs-speakers' => 'Brukere',
+	'translate-gs-score' => 'Score',
+	'translate-gs-multiple' => 'Flere',
+	'translate-gs-count' => 'Antall',
+	'translate-gs-total' => 'Totalt',
+	'translate-gs-avgscore' => 'Gj.snitt score',
 );
 
 /** Northern Sotho (Sesotho sa Leboa)
