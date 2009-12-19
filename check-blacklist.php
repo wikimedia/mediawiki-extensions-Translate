@@ -159,17 +159,17 @@ array(
 	)
 ),
 array(
+	'group' => 'ext-flaggedrevs-reviewedversions',
+	'check' => 'variable',
+	'message' => array(
+		'reviewedversions-review', // Optional time parameters, and name for GENDER
+	)
+),
+array(
 	'group' => 'ext-flaggedrevs-stabilization',
 	'check' => 'variable',
 	'message' => array(
 		'stabilize-expiring', // Optional time parameters
-	)
-),
-array(
-	'group' => 'ext-flaggedrevs-stableversions',
-	'check' => 'variable',
-	'message' => array(
-		'stableversions-review', // Optional time parameters, and name for GENDER
 	)
 ),
 array(
