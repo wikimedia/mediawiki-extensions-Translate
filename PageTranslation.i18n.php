@@ -305,15 +305,19 @@ $messages['bn'] = array(
 /** Breton (Brezhoneg)
  * @author Fohanno
  * @author Fulup
+ * @author Y-M D
  */
 $messages['br'] = array(
 	'pagetranslation' => 'Troidigezh ur bajenn',
 	'tpt-section' => 'Unanenn treiñ $1',
+	'tpt-section-new' => 'Unanenn nevez treiñ.
+Anv : $1',
 	'tpt-section-deleted' => 'Unanenn dreiñ $1',
 	'tpt-template' => 'Patrom pajenn',
 	'tpt-templatediff' => 'Kemmet eo patrom ar bajenn.',
 	'tpt-diff-old' => 'Testenn gent',
 	'tpt-diff-new' => 'Testenn nevez',
+	'tpt-submit' => "Merkañ ar stumm-se evit ma 'vefe troet",
 	'tpt-sections-template' => 'Patrom pajenn dreiñ',
 	'tpt-badtitle' => "N'eo ket reizh titl anv ar bajenn ($1) zo bet lakaet",
 	'tpt-oldrevision' => "N'eo ket $2 stumm diwezhañ ar bajenn [[$1]].
