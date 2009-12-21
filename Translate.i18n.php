@@ -333,6 +333,7 @@ Details: $1',
  * @author Mormegil
  * @author Nike
  * @author Purodha
+ * @author Raymond
  * @author SPQRobin
  * @author Sanbec
  * @author Siebrand
@@ -11592,21 +11593,42 @@ Szczegóły – $1',
 );
 
 /** Piedmontese (Piemontèis)
+ * @author Borichèt
  * @author Bèrto 'd Sèra
  */
 $messages['pms'] = array(
 	'translate' => 'Viragi',
+	'translate-desc' => '[[Special:Translate|Pàgina special]] për le tradussion ëd MediaWiki e ancor ëd pì',
 	'translate-edit' => 'modìfica',
 	'translate-talk' => 'discussion',
 	'translate-history' => 'stòria',
 	'translate-task-view' => 'smon-e tuti ij messagi ëd',
 	'translate-task-untranslated' => 'Smon-e tuti ij messagi nen virà ëd',
 	'translate-task-optional' => 'Smon-e ij messagi opsionaj ëd',
+	'translate-task-untranslatedoptional' => 'Vëdde ij mëssagi facoltativ nen voltà da',
+	'translate-task-problematic' => "S-ciairé ij mëssagi ch'a l'han dij problema",
 	'translate-task-review' => 'Controlé le modìfiche a',
 	'translate-task-reviewall' => 'Controlé tuti ij viragi ëd',
 	'translate-task-export' => 'Esporté ij viragi ëd',
 	'translate-task-export-to-file' => "Esporté ij viragi ant n'archivi da",
+	'translate-task-export-as-po' => 'Esporté le tradussion an formà Gettext',
+	'translate-task-export-to-xliff' => 'Esporté le tradussion an formà Xliff',
+	'translate-page-no-such-language' => "La lenga spessificà a l'é nen vàlida.",
+	'translate-page-no-such-task' => "Ël travaj spessificà a l'é nen bon.",
+	'translate-page-no-such-group' => "La partìa spessificà a l'é nen bon-a.",
+	'translate-page-disabled' => "Le tradussion an costa lenga an costa partìa a son ëstàite disativà.
+Rason:
+
+''$1''",
+	'translate-page-settings-legend' => 'Configurassion',
+	'translate-page-task' => 'I veuj',
+	'translate-page-group' => 'Partìa',
+	'translate-page-language' => 'Lenga',
+	'translate-page-limit' => 'Lìmit',
+	'translate-page-limit-option' => '$1 {{PLURAL:$1|mëssagi|mëssagi}} për pàgina',
 	'translate-submit' => 'Smon-e',
+	'translate-page-navigation-legend' => 'Navigassion',
+	'translate-page-showing' => "Visualisassion dij mëssagi da $1 a $2 ansima a 'n total ëd $3.",
 	'translate-next' => 'Pàgina anans',
 	'translate-prev' => 'Pàgina andré',
 	'translate-optional' => '(opsional)',

@@ -1931,6 +1931,7 @@ Strona, którą próbujesz edytować, prawdopodobnie nie odpowiada żadnej stron
 
 /** Piedmontese (Piemontèis)
  * @author Borichèt
+ * @author Dragonòt
  */
 $messages['pms'] = array(
 	'pagetranslation' => 'Tradussion dle pàgine',
@@ -1972,6 +1973,16 @@ Prima ëd marché costa version për la tradussion, controlé che le modìfiche 
 	'translate-tag-markthis' => 'Marca costa pàgina për la tradussion',
 	'translate-tag-markthisagain' => 'Costa pàgina a l\'ha avù <span class="plainlinks">[$1 cangiament]</span> da cand a l\'é stàita <span class="plainlinks">[$2 marcà për la tradussion]</span> l\'ùltima vira.',
 	'translate-tag-hasnew' => 'Costa pàgina a conten <span class="plainlinks">[$1 cangiament]</span> ch\'a son pa marcà për la tradussion.',
+	'tpt-translation-intro' => 'Sta pàgina-sì a l\'é na <span class="plainlinks">[$1 vërsion traduvùa]</span> ëd na pàgina [[$2]] e la tradussion a l\'é $3% completa e agiornà.',
+	'tpt-translation-intro-fuzzy' => 'Tradussion pa agiornà a son marcà com costa.',
+	'tpt-languages-legend' => 'Àutre lenghe:',
+	'tpt-target-page' => "Sta pàgina-sì a peul pa esse modificà a man. 
+Sta pàgina-sì a l'é na tradussion ëd la pàgina [[$1]] e la tradussion a peul esse modificà an dovrand [$2 l'utiss ëd tradussion].",
+	'tpt-unknown-page' => "Sto spassi nominal-sì a l'é riservà për tradussion ëd pàgine ëd contnù.
+La pàgina ch'it preuve a modifiché a smija pa ch'a corisponda a na pàgina marcà për tradussion.",
+	'tpt-install' => "Fa giré ël php maintnance/update php o l'instalassion dl'aragnà për abilité la possibilità ëd tradussion ëd pàgine.",
+	'tpt-render-summary' => 'Modifiché për esse com la neuva version dla pàgina sorgiss',
+	'tpt-download-page' => 'Espòrta pàgina con tradussion',
 );
 
 /** Pashto (پښتو)
