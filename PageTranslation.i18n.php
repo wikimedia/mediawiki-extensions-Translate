@@ -181,6 +181,8 @@ $messages['ar'] = array(
 فقط آخر النسخ يمكن أن تؤشّر للترجمة.',
 	'tpt-notsuitable' => 'الصفحة $1 غير مناسبة للترجمة.
 تأكد أن لها وسم <nowiki><translate></nowiki> وأن لها صياغة صحيحة.',
+	'tpt-saveok' => 'الصفحة [[$1]] تم التعليم عليها للترجمة ب $2 {{PLURAL:$2|وحدة ترجمة|وحدات ترجمة}}.
+الصفحة يمكن الآن <span class="plainlinks">[$3 ترجمتها]</span>.',
 	'tpt-badsect' => '"$1" ليس اسمًا صحيحًا لوحدة الترجمة $2.',
 	'tpt-showpage-intro' => 'أدناه تُسرد الأقسام الجديدة والموجودة والمحذوفة.
 قبل تعليم هذه النسخة للترجمة، تحقق من أن التغييرات على الأقسام مُقلّلة لتفادي العمل غير الضروري من المترجمين.',
@@ -189,16 +191,23 @@ $messages['ar'] = array(
 	'tpt-already-marked' => 'آخر نسخة من هذه الصفحة مُعلّمة بالفعل للترجمة.',
 	'tpt-list-nopages' => 'لا صفحات مُعلّمة للترجمة أو جاهزة للتعليم للترجمة.',
 	'tpt-old-pages' => 'إحدى نسخ {{PLURAL:$1||هذه الصفحة|هاتان الصفحتان|هذه الصفحات}} عُلّمت للترجمة.',
+	'tpt-new-pages' => '{{PLURAL:$1|هذه الصفحة تحتوي|هذه الصفحات تحتوي}} على نص بوسوم ترجمة، لكن لا نسخة من {{PLURAL:$1|هذه الصفحة|هذه الصفحات}} معلمة حاليا للترجمة.',
 	'tpt-rev-latest' => 'آخر نسخة',
 	'tpt-rev-old' => 'الفرق مقابل النسخة المعلّمة السابقة',
 	'tpt-rev-mark-new' => 'علّم هذه النسخة للترجمة',
 	'tpt-translate-this' => 'ترجم هذه الصّفحة',
 	'translate-tag-translate-link-desc' => 'ترجمة هذه الصفحة',
 	'translate-tag-markthis' => 'علّم هذه الصفحة للترجمة',
+	'translate-tag-markthisagain' => 'هذه الصفحة بها <span class="plainlinks">[$1 تغيير]</span> منذ تم <span class="plainlinks">[$2 تعليمها للترجمة]</span> لآخر مرة.',
+	'translate-tag-hasnew' => 'هذه الصفحة تحتوي على <span class="plainlinks">[$1 تغييرات]</span> غير معلمة للترجمة.',
+	'tpt-translation-intro' => 'هذه الصفحة هي <span class="plainlinks">[$1 نسخة مترجمة]</span> لصفحة [[$2]] والترجمة مكتملة ومحدثة بنسبة $3%.',
 	'tpt-translation-intro-fuzzy' => 'الترجمات غير المُحدّثة مُعلّمة هكذا.',
 	'tpt-languages-legend' => 'لغات أخرى:',
 	'tpt-target-page' => 'لا يمكن تحديث هذه الصفحة يدويًا.
 هذه الصفحة ترجمة لصفحة [[$1]] ويمكن تحديث الترجمة باستخدام [$2 أداة الترجمة].',
+	'tpt-unknown-page' => 'هذا النطاق محجوز لترجمات صفحات المحتوى.
+الصفحة التي تحاول تعديلها لا يبدو أنها تتبع أي صفحة معلمة للترجمة.',
+	'tpt-install' => 'شغل php maintenance/update.php أو نصب من الويب لتفعيل خاصية ترجمة الصفحات.',
 	'tpt-render-summary' => 'تحديث لمطابقة نسخة صفحة المصدر الجديدة',
 	'tpt-download-page' => 'صدّر الصفحة مع الترجمات',
 );
@@ -2146,6 +2155,7 @@ Nume: $1',
 	'tpt-list-nopages' => 'Nici o pagină nu este marcată pentru traducere sau gata să fie marcată pentru traducere.',
 	'tpt-rev-latest' => 'ultima versiune',
 	'tpt-rev-mark-new' => 'marchează această versiune pentru traducere',
+	'tpt-translate-this' => 'tradu aceasta pagină',
 	'translate-tag-translate-link-desc' => 'Tradu această pagină',
 	'translate-tag-markthis' => 'Marchează această pagină pentru traducere',
 	'tpt-translation-intro-fuzzy' => 'Traducerile învechite sunt marcate în acest fel.',
@@ -2428,6 +2438,9 @@ $messages['te'] = array(
 	'tpt-diff-old' => 'గత పాఠ్యం',
 	'tpt-diff-new' => 'కొత్త పాఠ్యం',
 	'tpt-sections-template' => 'అనువాద పేజీ మూస',
+	'tpt-badtitle' => 'ఇచ్చిన పేజీ పేరు ($1) సరైన శీర్షిక కాదు',
+	'tpt-edit-failed' => 'పేజీని తాజాకరించలేకపోయాం: $1',
+	'tpt-already-marked' => 'ఈ పేజీ యొక్క సరికొత్త కూర్పుని ఇప్పటికే అనువాదానికై గుర్తించారు.',
 	'tpt-translate-this' => 'ఈ పేజీని అనువదించండి',
 	'translate-tag-translate-link-desc' => 'ఈ పేజీని అనువదించండి',
 	'tpt-languages-legend' => 'ఇతర భాషలు:',
@@ -2509,13 +2522,27 @@ $messages['tl'] = array(
 /** Turkish (Türkçe)
  * @author Joseph
  * @author Karduelis
+ * @author Vito Genovese
  */
 $messages['tr'] = array(
 	'pagetranslation' => 'Çeviri sayfası',
+	'tpt-template' => 'Sayfa şablonu',
 	'tpt-diff-new' => 'Yeni metin',
+	'tpt-submit' => 'Bu sürümü çeviri için işaretle',
+	'tpt-sections-oldnew' => 'Yeni ve mevcut çeviri birimleri',
+	'tpt-sections-deleted' => 'Silinen çeviri birimleri',
+	'tpt-saveok' => '[[$1]] adlı sayfa $2 {{PLURAL:$2|çeviri birimi|çeviri birimi}} ile çeviri için işaretlenmiş.
+Sayfa artık <span class="plainlinks">[$3 çevrilebilir]</span>.',
+	'tpt-badsect' => '"$1", $2 çeviri birimi için geçerli bir ad değil.',
+	'tpt-mark-summary' => 'Bu sürüm çeviri için işaretlendi',
+	'tpt-edit-failed' => 'Sayfa güncellenemedi: $1',
 	'tpt-translate-this' => 'Bu sayfayı çevir',
 	'translate-tag-translate-link-desc' => 'Bu sayfayı çevir',
+	'translate-tag-markthis' => 'Bu sayfayı çeviri için işaretle',
+	'translate-tag-hasnew' => 'Bu sayfa, çeviri için işaretlenmemiş <span class="plainlinks">[$1 değişiklik]</span> içeriyor.',
+	'tpt-translation-intro-fuzzy' => 'Tarihi geçen çeviriler bu şekilde işaretlenmiştir.',
 	'tpt-languages-legend' => 'Diğer diller:',
+	'tpt-render-summary' => 'Kaynak sayfanın yeni sürümü ile eşleme için güncelleniyor',
 );
 
 /** Tatar (Cyrillic) (Татарча/Tatarça (Cyrillic))
