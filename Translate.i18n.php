@@ -1222,8 +1222,8 @@ $messages['arz'] = array(
 	'translate-edit-contribute' => 'ساهم',
 	'translate-edit-no-information' => "''هذه الرسالة ليس لديها توثيق.
 لو كنت تعرف أين أو كيف يتم استخدام هذه الرسالة، يمكنك مساعدة المترجمين الآخرين بواسطة إضافة توثيق إلى هذه الرسالة.''",
-	'translate-edit-information' => 'معلومات حول هذه الرسالة ($1)',
-	'translate-edit-in-other-languages' => 'الرسالة بلغات أخرى',
+	'translate-edit-information' => 'معلومات حول الرسالة "$2" ($1)',
+	'translate-edit-in-other-languages' => 'الرسالة "$1" بلغات أخرى',
 	'translate-edit-committed' => 'الترجمة الحالية فى البرنامج',
 	'translate-edit-warnings' => 'التحذيرات حول الترجمات غير المكتملة',
 	'translate-edit-goto-no-prev' => 'لا رسالة سابقة',
@@ -3856,9 +3856,15 @@ $messages['el'] = array(
 	'translate-import-err-invalid-title' => 'Το όνομα του αρχείου <nowiki>$1</nowiki> δεν ήταν έγκυρο.',
 	'translate-import-err-no-such-file' => 'Το αρχείο <nowiki>$1</nowiki> δεν υπάρχει ή δεν έχει φορτωθεί τοπικά.',
 	'translate-js-fb' => 'Κανονική επεξεργασία',
+	'translate-gs-pos' => 'Θέση',
+	'translate-gs-code' => 'Κωδικός',
 	'translate-gs-continent' => 'Ήπειρος',
 	'translate-gs-speakers' => 'Ομιλητές',
+	'translate-gs-score' => 'Σκορ',
 	'translate-gs-multiple' => 'Πολλαπλές',
+	'translate-gs-count' => 'Καταμέτρηση',
+	'translate-gs-total' => 'Σύνολο',
+	'translate-gs-avgscore' => 'Μέσο σκορ',
 );
 
 /** Esperanto (Esperanto)
