@@ -318,6 +318,8 @@ $messages['bn'] = array(
  */
 $messages['br'] = array(
 	'pagetranslation' => 'Troidigezh ur bajenn',
+	'right-pagetranslation' => "Merkañ doare pajennoù evit ma 'vefent troet",
+	'tpt-desc' => 'Astenn evit treiñ pajennoù gant danvez',
 	'tpt-section' => 'Unanenn treiñ $1',
 	'tpt-section-new' => 'Unanenn nevez treiñ.
 Anv : $1',
@@ -327,6 +329,8 @@ Anv : $1',
 	'tpt-diff-old' => 'Testenn gent',
 	'tpt-diff-new' => 'Testenn nevez',
 	'tpt-submit' => "Merkañ ar stumm-se evit ma 'vefe troet",
+	'tpt-sections-oldnew' => 'Unanennoù treiñ hag a zo diouto ha re nevez',
+	'tpt-sections-deleted' => 'Unanennoù treinn bet diverket',
 	'tpt-sections-template' => 'Patrom pajenn dreiñ',
 	'tpt-badtitle' => "N'eo ket reizh titl anv ar bajenn ($1) zo bet lakaet",
 	'tpt-oldrevision' => "N'eo ket $2 stumm diwezhañ ar bajenn [[$1]].
@@ -338,13 +342,27 @@ Gallout a ra ar bajenn bezañ <span class="plainlinks">[$3 troet]</span> bremañ
 	'tpt-badsect' => 'Direizh eo an anv "$1" evit un unanenn dreiñ $2.',
 	'tpt-showpage-intro' => "A-is emañ rollet an troidigezhioù nevez, ar re zo anezho hag ar re bet diverket.
 Kent merkañ ar stumm-mañ evit an treiñ, gwiriait mat n'eus ket bet nemeur a gemmoù er rannbennadoù kuit da bourchas labour aner d'an droourien.",
+	'tpt-mark-summary' => 'An doare-se a zo bet merket evit bezañ troet',
 	'tpt-edit-failed' => "N'eus ket bet gallet hizivaat ar bajenn : $1",
+	'tpt-already-marked' => 'Ar stumm ziwezhañ eus ar bajenn-mañ a zo dija bet merket evit bezañ troet.',
+	'tpt-list-nopages' => "N'eo bet merket pajenn ebet evit bezañ troet ha n'eus pajenn ebet prest evit en ober.",
+	'tpt-old-pages' => "Doareoù 'zo eus ar bajenn{{PLURAL:$1|-mañ|où-se}} a zo bet merket evit bezañ troet.",
+	'tpt-new-pages' => '{{PLURAL:$1|Ar bajenn-mañ en|Ar bajennoù-se o}} deus testenn gant balizennoù treinn, met doare ebet eus ar bajenn{{PLURAL:$1|-mañ|où-se}} a zo merket evit bezañ troet.',
 	'tpt-rev-latest' => 'stumm diwezhañ',
+	'tpt-rev-old' => "diforc'hioù gant an doare merket kozh",
+	'tpt-rev-mark-new' => "merkañ an doare-se evit ma 'vefe troet",
 	'tpt-translate-this' => 'Treiñ ar bajenn-mañ',
 	'translate-tag-translate-link-desc' => 'Treiñ ar bajenn-mañ',
 	'translate-tag-markthis' => 'Merkañ ar bajenn-mañ evit an treiñ',
+	'translate-tag-markthisagain' => 'Ar bajenn-mañ he deus bet <span class="plainlinks">[$1 kemm]</span> abaoe m\'eo bet <span class="plainlinks">[$2 merket evit bezañ troet]</span>.',
+	'translate-tag-hasnew' => 'Ar bajenn-mañ he deus <span class="plainlinks">[$1 kemm]</span> ha n\'int ket merket evit bezañ troet.',
+	'tpt-translation-intro' => 'Ar bajenn-mañ a zo un <span class="plainlinks">[$1 droidigezh]</span> eus ar bajenn [[$2]] hag an droidigezh a zo bet kaset da benn da $3% hag hizivaet.',
 	'tpt-translation-intro-fuzzy' => 'An troidigezhioù diamzeret zo merket evel-henn.',
 	'tpt-languages-legend' => 'Yezhoù all :',
+	'tpt-target-page' => "Ne c'hell ket bezañ hizivaet ar bajenn-mañ gant an dorn.
+Un doare troet eus [[$1]] eo hag an droidigezh a c'hell bezañ hizivaet en ur implijout [$2 an ostilh treiñ].",
+	'tpt-install' => "Lañsit php trezalc'h (maintenance)/update.php pe ar staliadur web evit gweredekaat an arc'hweladur treiñ ar pajennoù.",
+	'tpt-render-summary' => 'Hizivadur evit klotañ gant an doare nevez mammenn ar bajenn',
 	'tpt-download-page' => 'Ezporzhiañ ar bajenn gant an troidigezhioù',
 );
 
@@ -903,12 +921,13 @@ $messages['frp'] = array(
 	'right-pagetranslation' => 'Marcar des vèrsions de pâges por étre traduites',
 	'tpt-desc' => 'Èxtension por traduire des pâges de contegnu.',
 	'tpt-section' => 'Unitât de traduccion $1',
-	'tpt-section-new' => 'Unitât de traduccion novèla. Nom : $1',
+	'tpt-section-new' => 'Novèla unitât de traduccion.
+Nom : $1',
 	'tpt-section-deleted' => 'Unitât de traduccion $1',
 	'tpt-template' => 'Modèlo de pâge',
 	'tpt-templatediff' => 'Lo modèlo de pâge at changiê.',
 	'tpt-diff-old' => 'Tèxto devant',
-	'tpt-diff-new' => 'Novél tèxto',
+	'tpt-diff-new' => 'Tèxto novél',
 	'tpt-submit' => 'Marcar ceta vèrsion por étre traduita',
 	'tpt-sections-oldnew' => 'Unitâts de traduccion novèles et ègzistentes',
 	'tpt-sections-deleted' => 'Unitâts de traduccion suprimâs',
@@ -1125,6 +1144,7 @@ $messages['he'] = array(
 	'tpt-mark-summary' => 'גרסה זו סומנה לתרגום',
 	'tpt-edit-failed' => 'לא ניתן לעדכן את הדף: $1',
 	'tpt-already-marked' => 'הגרסה העדכנית ביותר של דף זה כבר סומנה לתרגום.',
+	'tpt-list-nopages' => 'אין דפים המסומנים לתרגום וגם לא דפים המוכנים להיות מסומנים לתרגום.',
 	'tpt-rev-latest' => 'הגרסה האחרונה',
 	'tpt-rev-old' => 'הבדלים מאז הגרסה האחרונה שסומנה',
 	'tpt-rev-mark-new' => 'סימון גרסה זו לתרגום',
@@ -1136,6 +1156,8 @@ $messages['he'] = array(
 	'tpt-languages-legend' => 'שפות אחרות:',
 	'tpt-target-page' => 'לא ניתן לעדכן דף זה ידנית.
 דף זה הוא תרגום של הדף [[$1]] וניתן לעדכן את התרגום באמצעות [$2 כלי התרגום].',
+	'tpt-unknown-page' => 'מרחב שם זה שמור לצורך תרגומי דפי התוכן.
+הדף אותו אתם מנסים לערוך אינו תואם לאף דף המסומן לתרגום.',
 	'tpt-render-summary' => 'עדכון להתאמת הגרסה החדשה של דף המקור',
 	'tpt-download-page' => 'ייצוא דף עם תרגומים',
 );
@@ -2691,14 +2713,25 @@ $messages['zh-hans'] = array(
 	'tpt-translate-this' => '翻译此页',
 	'translate-tag-translate-link-desc' => '翻译本页',
 	'tpt-languages-legend' => '其他语言：',
+	'tpt-download-page' => '汇出含翻译的页面',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
+ * @author Liangent
  * @author Wrightbus
  */
 $messages['zh-hant'] = array(
 	'pagetranslation' => '頁面翻譯',
+	'right-pagetranslation' => '為翻譯標記頁面的版本',
+	'tpt-desc' => '用於翻譯內容頁面的擴展',
+	'tpt-section' => '翻譯單元$1',
+	'tpt-section-new' => '新翻譯單元。
+名字：$1',
+	'tpt-section-deleted' => '翻譯單元$1',
 	'tpt-template' => '頁面模板',
+	'tpt-templatediff' => '頁面模板已改變。',
+	'tpt-diff-old' => '上一個文字',
+	'tpt-diff-new' => '下一個文字',
 	'tpt-translate-this' => '翻譯本頁',
 	'translate-tag-translate-link-desc' => '翻譯本頁',
 	'tpt-languages-legend' => '其它語言：',

@@ -3390,6 +3390,13 @@ Bitte überprüfen Sie Ihre Änderungen und versuchen Sie es erneut.
 Details: $1',
 	'translate-manage-toolong' => 'Die maximale Verarbeitungszeit von $1 {{PLURAL:$1|Sekunde|Sekunden}} ist abgelaufen.
 Bitte schicken Sie das Formular noch einmal ab, um die Verarbeitung fortzusetzen.',
+	'translate-manage-intro-en' => 'Hier ist eine Liste mit Nachrichtenänderungen in dieser Gruppe.
+Bitte kontrollieren Sie die Änderungen und wählen Sie je eine Aktion, die Sie für die Nachricht anwenden möchten.
+Nachdem Sie die Nachrichtentexte angepasst haben, kontrollieren Sie auf externe Änderungen in anderen Sprachen, wenn es welche gibt.
+Beachten Sie, dass die <code>Ignorieren</code>-Aktion nur temporär gilt.',
+	'translate-manage-intro-other' => 'Hier ist eine Liste von Übersetzungsänderungen der Sprache $1.
+Bitte kontrollieren Sie die Änderungen und wählen Sie je eine Aktion, die Sie auf die Übersetzungen anwenden möchten.
+Wenn Sie sich entscheiden, Änderungen zu ignorieren, werden sie mit dem nächsten Export überschrieben.',
 	'translate-import-err-warnings' => 'Die Datei entspricht nicht dem erwarteten Format.
 Stellen Sie sicher, dass der Editor keine <tt>msgctxt</tt>-Felder entfernt.
 Details: $1',
@@ -4758,6 +4765,7 @@ Asetuksen oletusarvoiset kielet riippuvat kielestä jolle olet kääntämässä.
 <nowiki>$1</nowiki>.',
 	'translate-pref-jsedit' => 'Parannettu käännöseditori (JavaScript)',
 	'right-translate' => 'Kääntää käännöstyökalulla',
+	'right-translate-manage' => 'Hallinnoida käännösryhmiä',
 	'translate-rc-translation-filter' => 'Käännösten suodatus',
 	'translate-rc-translation-filter-no' => 'ei toimenpidettä',
 	'translate-rc-translation-filter-only' => 'näytä vain käännökset',
@@ -4844,6 +4852,7 @@ Voit tarkistaa käännöksiä toimintosivulla [[Special:Translate|{{int:translat
 	'translate-manage-import-summary' => 'Tuodaan uusi versio ulkoisesta lähteestä',
 	'translate-manage-conflict-summary' => 'Tuodaan uusi versio ulkoisesta lähteestä.
 Tarkistathan.',
+	'translate-manage-fuzzy-summary' => 'Määritelmä on muuttunut',
 	'translate-manage-import-fuzzy' => 'Tuodaan ja merkitään ”fuzzy”-tilaan: $1',
 	'translate-manage-import-done' => 'Kaikki tehty.',
 	'translate-manage-import-rebuild' => 'Välimuistin uudelleenrakennus.',
@@ -4860,6 +4869,7 @@ $1',
 	'translate-import-err-ul-failed' => 'Tiedoston lähettäminen ei onnistunut',
 	'translate-import-err-invalid-title' => 'Annettu tiedostonnimi <nowiki>$1</nowiki> on virheellinen.',
 	'translate-js-fb' => 'Tavallinen muokkaus',
+	'translate-gs-speakers' => 'Puhujat',
 	'translate-gs-total' => 'Yhteensä',
 );
 
@@ -6190,6 +6200,7 @@ $messages['he'] = array(
 	'translate-edit-committed' => 'התרגום הנוכחי בתוכנה',
 	'translate-edit-warnings' => 'אזהרות על תרגומים חלקיים',
 	'translate-edit-tmsugs' => 'הצעות מזיכרון התרגום',
+	'translate-edit-tmmatch' => 'התאמה $1%',
 	'translate-edit-goto-no-prev' => 'אין הודעה קודמת',
 	'translate-edit-goto-no-next' => 'אין הודעה לאחר זו',
 	'translate-edit-goto-prev' => 'עריכת ההודעה הקודמת',
@@ -6243,12 +6254,14 @@ $messages['he'] = array(
 	'translate-checks-pagename' => 'מרחבי שם ששונו מהגדרתם',
 	'translate-checks-format' => 'תרגום זה אינו תואם להגדרות או שהוא בעל תחביר שגוי: $1',
 	'translate-pref-nonewsletter' => 'אל תשלחו אלי הודעות בדואר האלקטרוני',
+	'translate-pref-editassistlang' => 'שפות הסיוע:',
 	'prefs-translate' => 'אפשרויות תרגום',
 	'translate-pref-editassistlang-bad' => 'קוד שפה שגוי ברשימה:
 <nowiki>$1</nowiki>.',
 	'translate-pref-jsedit' => 'עורך תרגומים משופר (JavaScript)',
 	'right-translate' => 'עריכה באמצעות ממשק התרגום',
 	'right-translate-manage' => 'ניהול קבוצות תרגום',
+	'right-translate-import' => 'ייבוא תרגומים באופן לא מקוון',
 	'translate-rc-translation-filter' => 'סינון תרגומים:',
 	'translate-rc-translation-filter-no' => 'ללא סינון',
 	'translate-rc-translation-filter-only' => 'הצגת תרגומים בלבד',
@@ -6307,17 +6320,30 @@ $messages['he'] = array(
 	'translate-manage-listgroups-old' => 'קבוצות בסגנון הישן',
 	'translate-managegroups' => 'ניהול קבוצות',
 	'translate-manage-newgroup' => 'קבוצת הודעות זו לא יובאה בעבר.',
+	'translate-manage-cacheat' => 'ייובא בתאריך $1 בשעה $2',
 	'translate-manage-return-to-group' => 'חזרה לדף פרטי הקבוצה',
 	'translate-manage-modlang-new' => '$1 (חדש)',
 	'translate-manage-import-diff' => 'הודעה $1 | פעולות: $2',
+	'translate-manage-import-new' => 'הודעה חדשה $1',
+	'translate-manage-import-deleted' => 'הודעה שנמחקה $1',
 	'translate-manage-action-import' => 'ייבוא',
 	'translate-manage-action-ignore' => 'התעלמות',
 	'translate-manage-submit' => 'הפעלה',
+	'translate-manage-nochanges' => 'אין שינויים להגדרות ההודעה עבור קבוצה זו.',
+	'translate-manage-inconsistent' => 'התגלתה חוסר עקביות בבקשה.
+יש לבדוק את השינויים ולנסות שוב.
+פרטים: $1',
+	'translate-manage-toolong' => 'זמן העיבוד המרבי בן {{PLURAL:$1|השניה אחת|$1 השניות}} תם.
+אנא שלחו מחדש את הטופס כדי להמשיך בעיבודו.',
+	'translate-manage-import-ok' => 'יובאה גרסה חדשה של הדף $1.',
 	'translate-manage-import-noks' => 'ייבוא הגרסה החדש של הדף $1 נכשל: $2',
+	'translate-manage-import-ignore' => 'מדלג על ההודעה $1.',
 	'translate-manage-import-summary' => 'ייבוא גרסה חדשה ממקור חיצוני',
+	'translate-manage-fuzzy-summary' => 'ההגדרה שונתה',
 	'translate-manage-import-done' => 'הכול בוצע!',
 	'translate-manage-import-rebuild' => 'בניית המטמון מחדש.',
 	'translate-manage-subtitle' => 'ניהול',
+	'translate-manage-import-rebuild-all' => 'בניה מחדש של כל השפות והתעלמות משינויים כלשהם',
 	'importtranslations' => 'ייבוא תרגומים',
 	'translate-import-from-url' => 'כתובת URL של הקובץ:',
 	'translate-import-from-wiki' => 'קובץ באתר ויקי זה:',
@@ -6331,6 +6357,12 @@ $1',
 	'translate-import-err-invalid-title' => 'שם הקובץ שצוין, <nowiki>$1</nowiki>, אינו תקין.',
 	'translate-import-err-no-such-file' => 'הקובץ <nowiki>$1</nowiki> אינו קיים או שהוא לא הועלה באופן מקומי.',
 	'translate-js-fb' => 'עריכה רגילה',
+	'translate-gs-code' => 'קוד',
+	'translate-gs-continent' => 'יבשת',
+	'translate-gs-speakers' => 'דוברים',
+	'translate-gs-score' => 'ניקוד',
+	'translate-gs-total' => 'סה"כ',
+	'translate-gs-avgscore' => 'ניקוד ממוצע',
 );
 
 /** Hindi (हिन्दी)
@@ -8937,6 +8969,7 @@ $messages['kn'] = array(
 	'translate-language-code' => 'ಭಾಷಾ ಸಂಕೇತ',
 	'translate-language-code-field-name' => 'ಭಾಷಾ ಸಂಕೇತ:',
 	'translate-language' => 'ಭಾಷೆ',
+	'translate-total' => 'ಸಂದೇಶಗಳು',
 );
 
 /** Korean (한국어)
@@ -11055,6 +11088,9 @@ Du oppfordres til å se over meldinger gjennom [[Special:Translate|{{int:transla
 	'translate-manage-nochanges' => 'Det er ingen endringer i meldingsdefinisjonene for denne gruppen.',
 	'translate-manage-nochanges-other' => 'Det var ingen forandringer for dette språket.
 Bruk linken nedenfor for å returnere til gruppedataljene.',
+	'translate-manage-inconsistent' => 'Fant en inkonsistens i forespørselen.
+Vennligst sjekk om det har vært endringer og prøv igjen.
+Detaljer: $1',
 	'translate-manage-toolong' => 'Den maksimale behandlingstiden på {{PLURAL:$1|ett sekund|$1 sekund}} ble overskredet.
 Vennligst send skjemaet på nytt for å fortsette behandlingen.',
 	'translate-manage-import-ok' => 'Importer ny versjon av siden $1.',
@@ -16117,11 +16153,21 @@ $messages['zh-hans'] = array(
 	'right-translate' => '使用翻译界面编辑',
 	'right-translate-manage' => '管理翻译组',
 	'right-translate-import' => '导入离线翻译',
+	'translate-rc-translation-filter' => '筛选翻译：',
+	'translate-rc-translation-filter-no' => '不筛选',
+	'translate-rc-translation-filter-only' => '只显示翻译',
+	'translate-rc-translation-filter-filter' => '排除',
+	'translate-rc-translation-filter-site' => '只有网站讯息的更动',
 	'translationstats' => '翻译统计',
 	'translate-stats-edits' => '编辑',
 	'translate-stats-users' => '翻译者',
+	'translate-statsf-options' => '制图选项',
+	'translate-statsf-width' => '宽度：',
+	'translate-statsf-height' => '高度：',
 	'translate-statsf-scale-days' => '日',
 	'translate-statsf-scale-hours' => '小时',
+	'translate-statsf-count' => '测量：',
+	'translate-statsf-count-edits' => '编辑次数',
 	'translate-statsf-count-users' => '活跃的翻译者',
 	'translate-statsf-group' => '由逗号分隔的列表组代码',
 	'translate-statsf-submit' => '预览',
@@ -16144,18 +16190,23 @@ $messages['zh-hans'] = array(
 	'translate-total' => '界面消息',
 	'translate-untranslated' => '未翻译',
 	'translate-percentage-complete' => '完成度',
+	'translate-percentage-fuzzy' => '已过时',
 	'translate-save' => '保存（$1）',
+	'translate-jssti-add' => '新增至清单',
 	'translate-group-desc-mediawikicore' => '此界面消息群组包含了当前MediaWiki alpha版本所使用的消息（{{CURRENTVERSION}}）',
 	'translate-manage-modlang-new' => '$1（新）',
 	'translate-manage-action-import' => '导入',
 	'translate-manage-action-ignore' => '忽略',
 	'translate-manage-submit' => '执行',
 	'translate-manage-import-done' => '全部完成！',
+	'translate-manage-subtitle' => '管理',
+	'translate-import-load' => '载入档案',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
  * @author Alexsh
  * @author Gzdavidwong
+ * @author Liangent
  * @author Wrightbus
  */
 $messages['zh-hant'] = array(
@@ -16207,6 +16258,8 @@ $messages['zh-hant'] = array(
 	'translate-edit-in-other-languages' => '其他語言的訊息“$1”',
 	'translate-edit-committed' => '當前翻譯',
 	'translate-edit-warnings' => '未完成翻譯的警告',
+	'translate-edit-tmsugs' => '來自翻譯記憶的建議',
+	'translate-edit-tmmatch' => '$1%匹配',
 	'translate-edit-goto-no-prev' => '沒有前一個訊息',
 	'translate-edit-goto-no-next' => '沒有次一個訊息',
 	'translate-edit-goto-prev' => '編輯前一個訊息',
@@ -16226,6 +16279,7 @@ $messages['zh-hant'] = array(
 	'translate-magic-module' => '模組：',
 	'translate-magic-submit' => '擷取',
 	'translate-magic-cm-export' => '匯出',
+	'translate-magic-nothing-to-export' => '沒有東西來導出。',
 	'translate-magic-cm-to-be' => '翻譯',
 	'translate-magic-cm-current' => '目前',
 	'translate-magic-cm-original' => '原始訊息',
@@ -16237,6 +16291,8 @@ $messages['zh-hant'] = array(
 	'translate-magic-words' => '魔術字',
 	'translate-magic-namespace' => '名字空間名稱',
 	'translate-magic-notsaved' => '您的編輯尚未被保存！',
+	'translate-magic-errors' => '請修復翻譯中的以下{{PLURAL:$1|錯誤|錯誤}}：',
+	'translate-magic-saved' => '你的改變已經成功保存。',
 	'translationchanges' => '翻譯更改',
 	'translationchanges-export' => '{{int:translate-magic-cm-export}}',
 	'translationchanges-change' => '$1: $2 由$3翻譯',
@@ -16246,12 +16302,25 @@ $messages['zh-hant'] = array(
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => '括號的數量不一致：<strong>$1</strong>',
 	'translate-checks-links' => '以下的連結可能有問題：<strong>$1</strong>',
+	'translate-checks-links-missing' => '以下鏈接丟失：
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => '請修正以下的標籤：<strong>$1</strong>',
 	'translate-checks-plural' => '原始訊息使用於<nowiki>{{PLURAL:}}</nowiki>中，並沒有用於翻譯。',
+	'translate-checks-pagename' => '名字空間從定義中改變',
+	'translate-checks-format' => '這個翻譯不遵從定義或有無效的語法：$1',
+	'translate-checks-escape' => '以下轉義可能是意外：<strong>$1</strong>',
 	'translate-pref-nonewsletter' => '不要傳送電子報',
 	'translate-pref-editassistlang' => '輔助語言：',
 	'prefs-translate' => '翻譯選項',
+	'translate-pref-editassistlang-help' => '逗號分隔的語言代碼列表。
+當你翻譯的時候，這些語言的相應消息的翻譯會顯示。
+默認語言列表取決於你的語言。',
+	'translate-pref-editassistlang-bad' => '列表中的無效語言代碼：
+<nowiki>$1</nowiki>。',
+	'translate-pref-jsedit' => '增強的翻譯編輯器（JavaScript）',
 	'right-translate' => '使用翻譯介面編輯',
+	'right-translate-manage' => '管理翻譯組',
+	'right-translate-import' => '導入離線翻譯',
 	'translate-rc-translation-filter' => '篩選翻譯：',
 	'translate-rc-translation-filter-no' => '不篩選',
 	'translate-rc-translation-filter-only' => '只顯示翻譯',
@@ -16268,10 +16337,15 @@ $messages['zh-hant'] = array(
 	'translate-statsf-count' => '測量：',
 	'translate-statsf-count-edits' => '編輯次數',
 	'translate-statsf-count-users' => '活躍的翻譯者',
+	'translate-statsf-group' => '由逗號分隔的列表組代碼',
 	'translate-statsf-submit' => '預覽',
 	'translate-tag-category' => '可翻譯的頁面',
+	'translate-tag-page-desc' => '這個wiki頁的翻譯[[:$1]]。',
+	'translate-tag-fuzzy-comment' => '由[[User:$1|$1]]在版本$2對定義作出的改變。',
+	'translate-tag-fuzzy-reason' => '由"$1"的評論"$3"在$2作出的定義改變。',
 	'translate-sidebar-alltrans' => '其他翻譯',
 	'translations' => '所有翻譯',
+	'translations-summary' => '在下方輸入界面消息的名稱來顯示所有可用的翻譯。',
 	'translate-translations-no-message' => '"$1"不是可翻譯的訊息',
 	'translate-translations-none' => '沒有"$1"的翻譯',
 	'translate-translations-fieldset-title' => '所有翻譯',
@@ -16287,7 +16361,10 @@ $messages['zh-hant'] = array(
 	'translate-percentage-fuzzy' => '已過時',
 	'translate-save' => '儲存 （$1）',
 	'translate-jssti-add' => '新增至清單',
+	'translate-group-desc-mediawikicore' => '此界面消息群組包含了當前MediaWiki alpha版本所使用的消息（{{CURRENTVERSION}}）',
+	'translate-manage-modlang-new' => '$1（新）',
 	'translate-manage-action-import' => '匯入',
+	'translate-manage-action-ignore' => '忽略',
 	'translate-manage-submit' => '執行',
 	'translate-manage-import-done' => '全部完成！',
 	'translate-manage-subtitle' => '管理',
