@@ -2597,10 +2597,17 @@ $messages['uk'] = array(
 	'tpt-sections-deleted' => 'Вилучені блоки перекладу',
 	'tpt-sections-template' => 'Шаблон сторінки перекладу',
 	'tpt-badtitle' => 'Зазначена назва сторінки ($1) недопустима',
+	'tpt-badsect' => '"$1" не є припустимою назвою для частини перекладів $2.',
+	'tpt-mark-summary' => 'Позначив цю версію для перекладу',
+	'tpt-edit-failed' => 'Не вдалося оновити сторінку: $1',
 	'tpt-rev-latest' => 'остання версія',
+	'tpt-rev-old' => 'різниця з попередньою позначеною версією',
+	'tpt-rev-mark-new' => 'позначити цю версію для перекладу',
 	'tpt-translate-this' => 'перекласти цю сторінку',
 	'translate-tag-translate-link-desc' => 'Перекласти цю сторінку',
+	'translate-tag-markthis' => 'Позначити цю сторінку для перекладу',
 	'tpt-languages-legend' => 'Інші мови:',
+	'tpt-download-page' => 'Експортувати сторінку з перекладами',
 );
 
 /** Vèneto (Vèneto)

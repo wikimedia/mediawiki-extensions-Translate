@@ -14393,6 +14393,65 @@ $messages['tg-cyrl'] = array(
 	'translate-checks-parameters' => 'Параметрҳои зерин истифода нашудаанд: <strong>$1</strong>',
 );
 
+/** Tajik (Latin) (Тоҷикӣ (Latin))
+ * @author Liangent
+ */
+$messages['tg-latn'] = array(
+	'translate' => 'Tarçuma',
+	'translate-desc' => '[[Special:Translate|Sahifai viƶa]] baroi tarçumai MediaViki va bartar az on',
+	'translate-edit' => 'viroiş',
+	'translate-talk' => 'bahs',
+	'translate-history' => "ta'rix",
+	'translate-task-view' => 'Namoişi tamomi pajƣomho az',
+	'translate-task-untranslated' => 'Namoişi tamomi pajƣomhoi tarçumanaşuda az',
+	'translate-task-optional' => 'Namoişi pajƣomhoi ixtijorī az',
+	'translate-task-review' => 'Bozbiniji taƣjirot',
+	'translate-task-reviewall' => 'Bozbiniji tamomi tarçumaho dar',
+	'translate-task-export' => 'Suduri tarçumaho az',
+	'translate-task-export-to-file' => 'Suduri tarçumaho ba jak parvanda az',
+	'translate-task-export-as-po' => 'Suduri tarçumaho dar qolabi Gettext',
+	'translate-page-no-such-language' => 'Zaboni muşaxxasşuda ƣajrimiçoz ast.',
+	'translate-page-no-such-task' => 'Amali muşaxxasşuda ƣajrimiçoz ast.',
+	'translate-page-no-such-group' => 'Gurūhi muşaxxasşuda ƣajrimiçoz ast.',
+	'translate-page-settings-legend' => 'Tanzimot',
+	'translate-page-task' => 'Man mexoham',
+	'translate-page-group' => 'Gurūh',
+	'translate-page-language' => 'Zabon',
+	'translate-page-limit' => 'Hudud',
+	'translate-page-limit-option' => '$1 {{PLURAL:$1|pajƣom|pajƣomho}} dar har sahifa',
+	'translate-submit' => 'Vokaşidan',
+	'translate-page-navigation-legend' => 'Gaştan',
+	'translate-page-showing' => 'Namoişi pajƣomhoi $3 az $1 to $2.',
+	'translate-page-showing-all' => 'Namoişi $1 {{PLURAL:$1|pajƣom|pajƣomho}}.',
+	'translate-page-showing-none' => 'Pajƣome baroi namoişi vuçud nadorad.',
+	'translate-next' => "Sahifai ba'dī",
+	'translate-prev' => 'Sahifai qablī',
+	'translate-page-description-legend' => 'Ittiloot dar borai gurūh',
+	'translate-optional' => '(ixtijorī)',
+	'translate-ignored' => '(nodida giriftaşuda)',
+	'translate-edit-definition' => "Ta'rifi pajƣom",
+	'translate-edit-contribute' => 'hissaguzorī',
+	'translate-edit-no-information' => "''In pajƣom doroi tavzehot nest.
+Agar şumo medoned in paƣom ciguna jo dar kuço istifoda meşavad, şumo metavoned bo izofa kardani tavzehot ba in pajƣom ba digar tarçumakunandagon kūmak kuned.''",
+	'translate-edit-committed' => "Tarçumai fe'lī dar narmafzor",
+	'translate-edit-warnings' => 'Huşdor dar mavridi tarçumahoi nokomil',
+	'translate-magic-pagename' => 'Tarçumai gustarişjoftai MediaViki',
+	'translate-magic-submit' => 'Vokaşidan',
+	'translate-magic-cm-export' => 'Sudur',
+	'translate-magic-cm-to-be' => 'Budan',
+	'translate-magic-cm-current' => 'Kununī',
+	'translate-magic-cm-original' => 'Aslī',
+	'translate-magic-cm-comment' => 'Tavzehot:',
+	'translate-magic-cm-save' => 'Zaxira',
+	'translate-magic-cm-updatedusing' => 'Barūz şud tavassuti [[Special:Magic]]',
+	'translate-magic-cm-savefailed' => 'Şikast dar zaxira kardan',
+	'translate-magic-words' => 'Kalimahoi çoduī',
+	'translate-magic-namespace' => 'Ismi fazohoi nom',
+	'translationchanges' => 'Taƣjiroti tarçuma',
+	'translationchanges-export' => 'sudur',
+	'translationchanges-change' => '$1: $2 az tarafi $3',
+);
+
 /** Thai (ไทย)
  * @author Ans
  * @author Manop
