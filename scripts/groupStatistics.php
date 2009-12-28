@@ -94,7 +94,7 @@ $wikimediaCodeMap = array(
 	'map-bms' => 'map-bms',
 	'nds-nl' => 'nds-nl',
 	'roa-rup' => 'roa-rup',
-	'roa-tara' => 'roa-rup',
+	'roa-tara' => 'roa-tara',
 
 	// Remaps
 	'be-tarask' => 'be-x-old',
