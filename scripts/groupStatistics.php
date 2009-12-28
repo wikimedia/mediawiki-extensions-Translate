@@ -100,6 +100,7 @@ $wikimediaCodeMap = array(
 	'be-tarask' => 'be-x-old',
 	'ike-cans' => 'iu',
 	'ike-latn' => 'iu',
+	'lzh' => 'zh-classical',
 
 	// Ignored language codes. See reason.
 	'als' => '', // gsw
@@ -124,22 +125,23 @@ $wikimediaCodeMap = array(
 	'ku' => '', // ku-*
 	'ku-arab' => '', // ckb-arab
 	'nb' => '', // no
+	'nl-be' => '', // no MW code
 	'ruq' => '', // ruq-*
 	'simple' => '', // en
 	'sr' => '', // sr-*
-	'tg' => '', //tg-*
+	'tg' => '', // tg-*
 	'tp' => '', // tokipona
 	'tt' => '', // tt-*
 	'ug' => '', // ug-*
 	'zh' => '', // zh-*
 	'zh-classical' => '', // lzh
-	'zh-cn' => '', //
-	'zh-sg' => '', //
-	'zh-hk' => '', //
+	'zh-cn' => '', // zh
+	'zh-sg' => '', // zh
+	'zh-hk' => '', // zh
 	'zh-min-nan' => '', //
-	'zh-mo' => '', //
-	'zh-my' => '', //
-	'zh-tw' => '', //
+	'zh-mo' => '', // zh
+	'zh-my' => '', // zh
+	'zh-tw' => '', // zh
 	'zh-yue' => '', // yue
 );
 
@@ -206,6 +208,10 @@ function showUsage() {
 			 the details table
 	--legendsummary : Page name for legend to be transcluded at the top of
 			  the summary table
+	--wmfscore : Only output WMF language code and weighted score for all
+		     language codes for weighing group 'wikimedia' in CSV. This
+		     report must keep a stable layout as it is used/will be
+		     used in the Wikimedia statistics.
 
 END;
 	STDERR( $msg );
@@ -243,24 +249,31 @@ $reportScore = false;
 if ( isset( $options['most'] ) && isset( $localisedWeights[$options['most']] ) ) {
 	$reportScore = true;
 	$weights = array();
-	foreach( $localisedWeights[$options['most']] as $weight ) {
+	foreach ( $localisedWeights[$options['most']] as $weight ) {
 		$weights[] = $weight;
 	}
 }
 
 // check if l10n should be done
 $l10n = false;
-if( ( $options['output'] == 'wiki' || $options['output'] == 'default' ) &&
+if ( ( $options['output'] == 'wiki' || $options['output'] == 'default' ) &&
 	  !isset( $options['nol10n'] ) ) {
 	$l10n = true;
 }
 
+$wmfscore = false;
+if ( isset( $options['wmfscore'] ) ) {
+	$wmfscore = true;
+}
+
 // Get groups from input
 $groups = array();
-if( $reportScore ) {
+if ( $reportScore ) {
 	$reqGroups = array_keys( $localisedWeights[$options['most']] );
-} else {
+} elseif ( !$wmfscore ) {
 	$reqGroups = array_map( 'trim', explode( ',', $options['groups'] ) );
+} else {
+	$reqGroups = array_keys( $localisedWeights['wikimedia'] );
 }
 
 // List of all groups
@@ -275,58 +288,81 @@ foreach ( $reqGroups as $id ) {
 	}
 }
 
-if ( !count( $groups ) ) showUsage();
+if ( $wmfscore ) {
+	// Override/set parameters
+	$out = new csvStatsOutput();
+	$reportScore = true;
+
+	$weights = array();
+	foreach ( $localisedWeights['wikimedia'] as $weight ) {
+		$weights[] = $weight;
+	}
+	$wmfscores = array();
+}
+
+if ( !count( $groups ) ) {
+	showUsage();
+}
 
 // List of all languages.
 $languages = Language::getLanguageNames( false );
 // Default sorting order by language code, users can sort wiki output.
 ksort( $languages );
 
-if( isset( $options['legenddetail'] ) ) {
+if ( isset( $options['legenddetail'] ) ) {
 	$out->addFreeText( "{{" . $options['legenddetail'] . "}}\n" );
 }
 
-// Output headers
-$out->heading();
-$out->blockstart();
-
-// Add header column for language size
-if( isset( $options['most'] ) ) {
-	$out->element( ( $l10n ? "{{int:translate-gs-pos}}" : 'Pos.' ), true );
-}
-$out->element( ( $l10n ? "{{int:translate-gs-code}}" : 'Code' ), true );
-$out->element( ( $l10n ? "{{int:translate-page-language}}" : 'Language' ), true );
-if( isset( $options['continent'] ) ) {
-	$out->element( ( $l10n ? "{{int:translate-gs-continent}}" : 'Continent' ), true );
-}
-
-if( isset( $options['most'] ) && isset( $options['speakers'] ) ) {
-	$out->element( ( $l10n ? "{{int:translate-gs-speakers}}" : 'Speakers' ), true );
-}
-
 $totalWeight = 0;
-if( $reportScore ) {
-	foreach( $localisedWeights[$options['most']] as $weight ) {
-		$totalWeight += $weight;
-	}
-	$out->element( ( $l10n ? "{{int:translate-gs-score}}" : 'Score' ) . ' (' . $totalWeight . ')', true );
-}
-
-foreach ( $groups as $g ) {
-	// Add unprocessed description of group as heading
-	if( $reportScore ) {
-		$gid = $g->getId();
-		$heading = $g->getLabel() . " (" . $localisedWeights[$options['most']][$gid] . ")";
+if ( $reportScore ) {
+	if ( $wmfscore ) {
+		foreach ( $localisedWeights['wikimedia'] as $weight ) {
+			$totalWeight += $weight;
+		}
 	} else {
-		$heading = $g->getLabel();
-	}
-	$out->element( $heading, true );
-	if ( !$reportScore && isset( $options['fuzzy'] ) ) {
-		$out->element( ( $l10n ? "{{int:translate-percentage-fuzzy}}" : 'Fuzzy' ), true );
+		foreach ( $localisedWeights[$options['most']] as $weight ) {
+			$totalWeight += $weight;
+		}
+		$out->element( ( $l10n ? "{{int:translate-gs-score}}" : 'Score' ) . ' (' . $totalWeight . ')', true );
 	}
 }
 
-$out->blockend();
+if ( !$wmfscore ) {
+	// Output headers
+	$out->heading();
+
+	$out->blockstart();
+
+	if ( isset( $options['most'] ) ) {
+		$out->element( ( $l10n ? "{{int:translate-gs-pos}}" : 'Pos.' ), true );
+	}
+
+	$out->element( ( $l10n ? "{{int:translate-gs-code}}" : 'Code' ), true );
+	$out->element( ( $l10n ? "{{int:translate-page-language}}" : 'Language' ), true );
+	if ( isset( $options['continent'] ) ) {
+		$out->element( ( $l10n ? "{{int:translate-gs-continent}}" : 'Continent' ), true );
+	}
+
+	if ( isset( $options['most'] ) && isset( $options['speakers'] ) ) {
+		$out->element( ( $l10n ? "{{int:translate-gs-speakers}}" : 'Speakers' ), true );
+	}
+
+	foreach ( $groups as $g ) {
+		// Add unprocessed description of group as heading
+		if ( $reportScore ) {
+			$gid = $g->getId();
+			$heading = $g->getLabel() . " (" . $localisedWeights[$options['most']][$gid] . ")";
+		} else {
+			$heading = $g->getLabel();
+		}
+		$out->element( $heading, true );
+		if ( !$reportScore && isset( $options['fuzzy'] ) ) {
+			$out->element( ( $l10n ? "{{int:translate-percentage-fuzzy}}" : 'Fuzzy' ), true );
+		}
+	}
+
+	$out->blockend();
+}
 
 $rows = array();
 foreach ( $languages as $code => $name ) {
@@ -345,6 +381,11 @@ foreach ( $groups as $groupName => $g ) {
 	foreach ( $languages as $code => $name ) {
 		// Skip list
 		if ( !isset( $options['most'] ) && in_array( $code, $skipLanguages ) ) {
+			continue;
+		}
+
+		// Do not calculate if we do not need it for anything.
+		if ( $wmfscore && isset( $wikimediaCodeMap[$code] ) && $wikimediaCodeMap[$code] == '' ) {
 			continue;
 		}
 
@@ -383,11 +424,12 @@ foreach ( $groups as $groupName => $g ) {
 
 	$cache->commit(); // Do not keep open too long to avoid concurrent access
 
-	unset($collection);
+	unset( $collection );
 }
 
 // init summary array
-if( isset( $options['summary'] ) ) {
+$summarise = false;
+if ( isset( $options['summary'] ) ) {
 	$summarise = true;
 	$summary = array();
 }
@@ -395,6 +437,11 @@ if( isset( $options['summary'] ) ) {
 foreach ( $languages as $code => $name ) {
 	// Skip list
 	if ( !isset( $options['most'] ) && in_array( $code, $skipLanguages ) ) {
+		continue;
+	}
+
+	// Skip unneeded
+	if ( $wmfscore && isset( $wikimediaCodeMap[$code] ) && $wikimediaCodeMap[$code] == '' ) {
 		continue;
 	}
 
@@ -407,33 +454,37 @@ foreach ( $languages as $code => $name ) {
 
 	$allZero = true;
 	foreach ( $columns as $fields ) {
-		if ( intval($fields[1]) !== 0 ) $allZero = false;
+		if ( intval( $fields[1] ) !== 0 ) $allZero = false;
 	}
 
 	// Skip dummy languages if requested
 	if ( $allZero && isset( $options['skipzero'] ) ) continue;
 
 	// Output the the row
-	$out->blockstart();
+	if ( !$wmfscore ) {
+		$out->blockstart();
+	}
 
 	// Fill language position field
-	if( isset( $options['most'] ) ) {
+	if ( isset( $options['most'] ) ) {
 		$out->element( $mostSpokenLanguages[$code][0] );
 	}
 
-	// Fill language code field
-	$out->element( $code );
-
 	// Fill language name field
-	if( $l10n && function_exists( 'efI18nTagsInit' ) ) {
-		$out->element( "{{#languagename:" . $code . "}}" );
-	} else {
-		$out->element( $name );
+	if ( !$wmfscore ) {
+		// Fill language code field
+		$out->element( $code );
+
+		if ( $l10n && function_exists( 'efI18nTagsInit' ) ) {
+			$out->element( "{{#languagename:" . $code . "}}" );
+		} else {
+			$out->element( $name );
+		}
 	}
 
 	// Fill continent field
-	if( isset( $options['continent'] ) ) {
-		if( $mostSpokenLanguages[$code][2] == 'multiple' ) {
+	if ( isset( $options['continent'] ) ) {
+		if ( $mostSpokenLanguages[$code][2] == 'multiple' ) {
 			$continent = ( $l10n ? "{{int:translate-gs-multiple}}" : 'Multiple' );
 		} else {
 			$continent = $l10n ?
@@ -445,12 +496,12 @@ foreach ( $languages as $code => $name ) {
 	}
 
 	// Fill speakers field
-	if( isset( $options['most'] ) && isset( $options['speakers'] ) ) {
+	if ( isset( $options['most'] ) && isset( $options['speakers'] ) ) {
 		$out->element( number_format( $mostSpokenLanguages[$code][1] ) );
 	}
 
 	// Fill the score field
-	if( $reportScore ) {
+	if ( $reportScore ) {
 		// Keep count
 		$i = 0;
 		// Start with 0 points
@@ -466,9 +517,9 @@ foreach ( $languages as $code => $name ) {
 		// Report a round numbers
 		$score = number_format( $score, 0 );
 
-		if( $summarise ) {
+		if ( $summarise ) {
 			$continent = $mostSpokenLanguages[$code][2];
-			if( isset( $summary[$continent] ) ) {
+			if ( isset( $summary[$continent] ) ) {
 				$newcount = $summary[$continent][0] + 1;
 				$newscore = $summary[$continent][1] + $score;
 			} else {
@@ -478,22 +529,46 @@ foreach ( $languages as $code => $name ) {
 
 			$summary[$continent] = array( $newcount, $newscore );
 		}
-		$out->element( $score );
+
+		if ( $wmfscore ) {
+			// Multiple variants can be used for the same wiki.
+			// Store the scores in an array and output them later
+			// when they can be averaged.
+			if ( isset( $wikimediaCodeMap[$code] ) ) {
+				$wmfcode = $wikimediaCodeMap[$code];
+			} else {
+				$codeparts = explode( '-', $code );
+				$wmfcode = $codeparts[0];
+			}
+
+			if ( isset( $wmfscores[$wmfcode] ) ) {
+				$count = $wmfscores[$wmfcode]['count'] + 1;
+				$score = ( ( $wmfscores[$wmfcode]['count'] * $wmfscores[$wmfcode]['score'] ) + $score ) / $count;
+				$wmfscores[$wmfcode] = array( 'score' => $score, 'count' => $count );
+			} else {
+				$wmfscores[$wmfcode] = array( 'score' => $score, 'count' => 1 );
+			}
+		} else {
+			$out->element( $score );
+		}
 	}
 
 	// Fill fields for groups
-	foreach ( $columns as $fields ) {
-		list( $invert, $upper, $total ) = $fields;
-		$c = $out->formatPercent( $upper, $total, $invert );
-		$out->element( $c );
+	if ( !$wmfscore ) {
+		foreach ( $columns as $fields ) {
+			list( $invert, $upper, $total ) = $fields;
+			$c = $out->formatPercent( $upper, $total, $invert );
+			$out->element( $c );
+		}
+
+		$out->blockend();
 	}
-	$out->blockend();
 }
 
 $out->footer();
 
-if( $reportScore && isset( $options['summary'] ) ) {
-	if( $reportScore && isset( $options['legendsummary'] ) ) {
+if ( $reportScore && isset( $options['summary'] ) ) {
+	if ( $reportScore && isset( $options['legendsummary'] ) ) {
 		$out->addFreeText( "{{" . $options['legendsummary'] . "}}\n" );
 	}
 
@@ -514,13 +589,13 @@ if( $reportScore && isset( $options['summary'] ) ) {
 	foreach ( $summary as $key => $values ) {
 		$out->blockstart();
 
-		if( $key == 'multiple' ) {
+		if ( $key == 'multiple' ) {
 			$out->element( $l10n ? "{{int:translate-gs-multiple}}" : 'Multiple' );
 		} else {
 			$out->element( $l10n ? "{{int:timezoneregion-" . $key . "}}" : ucfirst( $key ) );
 		}
 		$out->element( $values[0] );
-		$out->element( number_format( $values[1]/$values[0] ) );
+		$out->element( number_format( $values[1] / $values[0] ) );
 
 		$out->blockend();
 
@@ -531,8 +606,17 @@ if( $reportScore && isset( $options['summary'] ) ) {
 	$out->blockstart();
 	$out->element( $l10n ? "{{int:translate-gs-total}}" : 'Total' );
 	$out->element( $totals[0] );
-	$out->element( number_format( $totals[1]/$totals[0] ) );
+	$out->element( number_format( $totals[1] / $totals[0] ) );
 	$out->blockend();
 
 	$out->footer();
+}
+
+// Custom output
+if ( $wmfscore ) {
+	ksort( $wmfscores );
+
+	foreach ( $wmfscores as $code => $stats ) {
+		echo $code . ';' . number_format( $stats['score'] ) . ";\n";
+	}
 }
