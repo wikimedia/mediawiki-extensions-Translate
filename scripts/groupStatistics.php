@@ -84,6 +84,65 @@ $localisedWeights = array(
 	)
 );
 
+// Code map to map localisation codes to Wikimedia project codes. Only
+// exclusions and remapping is defined here. It is assumed that the first part
+// of the localisation code is the WMF project name otherwise (zh-hans -> zh).
+$wikimediaCodeMap = array(
+	// Codes containing a dash
+	'bat-smg' => 'bat-smg',
+	'cbk-zam' => 'cbk-zam',
+	'map-bms' => 'map-bms',
+	'nds-nl' => 'nds-nl',
+	'roa-rup' => 'roa-rup',
+	'roa-tara' => 'roa-rup',
+
+	// Remaps
+	'be-tarask' => 'be-x-old',
+	'ike-cans' => 'iu',
+	'ike-latn' => 'iu',
+
+	// Ignored language codes. See reason.
+	'als' => '', // gsw
+	'be-x-old' => '', // be-tarask
+	'ckb' => '', // ckb-*
+	'crh' => '', // crh-*
+	'de-at' => '', // de
+	'de-ch' => '', // de
+	'de-formal' => '', // de
+	'dk' => '', // da
+	'en-gb' => '', // en
+	'fiu-vro' => '', // vro
+	'gan' => '', // gan-*
+	'got' => '', // extinct. not reporting on this.
+	'hif' => '', // hif-*
+	'iu' => '', // ike-*
+	'kk' => '', // kk-*
+	'kk-cn' => '', // kk-arab
+	'kk-kz' => '', // kk-cyrl
+	'kk-tr' => '', // kk-latn
+	'ko-kp' => '', // ko
+	'ku' => '', // ku-*
+	'ku-arab' => '', // ckb-arab
+	'nb' => '', // no
+	'ruq' => '', // ruq-*
+	'simple' => '', // en
+	'sr' => '', // sr-*
+	'tg' => '', //tg-*
+	'tp' => '', // tokipona
+	'tt' => '', // tt-*
+	'ug' => '', // ug-*
+	'zh' => '', // zh-*
+	'zh-classical' => '', // lzh
+	'zh-cn' => '', //
+	'zh-sg' => '', //
+	'zh-hk' => '', //
+	'zh-min-nan' => '', //
+	'zh-mo' => '', //
+	'zh-my' => '', //
+	'zh-tw' => '', //
+	'zh-yue' => '', // yue
+);
+
 $optionsWithArgs = array( 'groups', 'output', 'skiplanguages', 'legenddetail', 'legendsummary' );
 require( dirname( __FILE__ ) . '/cli.inc' );
 
