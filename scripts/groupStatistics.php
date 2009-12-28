@@ -323,7 +323,6 @@ if ( $reportScore ) {
 		foreach ( $localisedWeights[$options['most']] as $weight ) {
 			$totalWeight += $weight;
 		}
-		$out->element( ( $l10n ? "{{int:translate-gs-score}}" : 'Score' ) . ' (' . $totalWeight . ')', true );
 	}
 }
 
@@ -346,6 +345,11 @@ if ( !$wmfscore ) {
 	if ( isset( $options['most'] ) && isset( $options['speakers'] ) ) {
 		$out->element( ( $l10n ? "{{int:translate-gs-speakers}}" : 'Speakers' ), true );
 	}
+
+	if( $reportScore ) {
+		$out->element( ( $l10n ? "{{int:translate-gs-score}}" : 'Score' ) . ' (' . $totalWeight . ')', true );
+	}
+
 
 	foreach ( $groups as $g ) {
 		// Add unprocessed description of group as heading
