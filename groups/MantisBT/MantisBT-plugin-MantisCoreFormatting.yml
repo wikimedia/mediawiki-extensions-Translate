@@ -12,6 +12,7 @@ FILES:
   sourcePattern: %GROUPROOT%/plugins/MantisCoreFormatting/lang/strings_%CODE%.txt
   targetPattern: strings_%CODE%.txt
   codeMap:
+    af:      afrikaans
     ar:      arabic
     arz:     arabicegyptianspoken
     bg:      bulgarian
@@ -38,6 +39,7 @@ FILES:
     ksh:     ripoarisch
     lt:      lithuanian
     lv:      latvian
+    mk:      macedonian
     nl:      dutch
     nn:      norwegian_nynorsk
     no:      norwegian_bokmal
