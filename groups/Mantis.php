@@ -19,6 +19,7 @@ class MantisMessageGroup extends MessageGroupOld {
 	public function setPath( $value ) { $this->fileDir = $value; }
 
 	protected $codeMap = array(
+		'af' => 'afrikaans',
 		'ar' => 'arabic',
 		'arz' => 'arabicegyptianspoken',
 		'bg' => 'bulgarian',
@@ -45,6 +46,7 @@ class MantisMessageGroup extends MessageGroupOld {
 		'ko' => 'korean',
 		'lt' => 'lithuanian',
 		'lv' => 'latvian',
+		'mk' => 'macadonian',
 		'nl' => 'dutch',
 		'nn' => 'norwegian_nynorsk',
 		'no' => 'norwegian_bokmal',
