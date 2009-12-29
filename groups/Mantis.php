@@ -46,7 +46,7 @@ class MantisMessageGroup extends MessageGroupOld {
 		'ko' => 'korean',
 		'lt' => 'lithuanian',
 		'lv' => 'latvian',
-		'mk' => 'macadonian',
+		'mk' => 'macedonian',
 		'nl' => 'dutch',
 		'nn' => 'norwegian_nynorsk',
 		'no' => 'norwegian_bokmal',
