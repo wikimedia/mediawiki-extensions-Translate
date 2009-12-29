@@ -207,7 +207,7 @@ optional = configure-section-squid, configure-section-svg, configure-section-tex
 optional = configure-section-tidy, configure-old-summary-datetime
 
 Configure Settings
-file = Configure/Configure.settings.i18n.php
+file = Configure/settings/Settings.i18n.php
 descmsg = configure-setting-desc
 optional = configure-setting-desc
 

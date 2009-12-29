@@ -20,9 +20,9 @@ class PremadeMediawikiExtensionGroups {
 		if( !isset( $wgConfigureExtDir ) ) {
 			$wgConfigureExtDir = "$IP/extensions/";
 		}
-		$wgAutoloadClasses['TxtDef'] = $wgConfigureExtDir . "Configure/TxtDef.php";
+		$wgAutoloadClasses['TxtDef'] = $wgConfigureExtDir . "Configure/load_txt_def/TxtDef.php";
 		if ( $this->useConfigure && class_exists( 'TxtDef' ) ) {
-			$tmp = TxtDef::loadFromFile( $wgConfigureExtDir . "Configure/Configure.settings-ext.txt" );
+			$tmp = TxtDef::loadFromFile( $wgConfigureExtDir . "Configure/settings/Settings-ext.txt" );
 			$configureData = array_combine( array_map( array( __CLASS__, 'foldId' ), array_keys($tmp)), array_values($tmp) );
 		} else {
 			$configureData = array();
