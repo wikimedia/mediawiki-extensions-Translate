@@ -4652,6 +4652,7 @@ $messages['fa'] = array(
  * @author Str4nd
  * @author Usp
  * @author Vililikku
+ * @author ZeiP
  */
 $messages['fi'] = array(
 	'translate' => 'Käännä',
@@ -6256,6 +6257,9 @@ $messages['he'] = array(
 	'translate-pref-nonewsletter' => 'אל תשלחו אלי הודעות בדואר האלקטרוני',
 	'translate-pref-editassistlang' => 'שפות הסיוע:',
 	'prefs-translate' => 'אפשרויות תרגום',
+	'translate-pref-editassistlang-help' => 'רשימת קודי שפות המופרדים בפסיקים.
+תרגום הודעה בשפות אלו יופיע בעת תרגום המונחים.
+רשימת שפות ברירת המחדל תלויה בשפה בה אתם דוברים.',
 	'translate-pref-editassistlang-bad' => 'קוד שפה שגוי ברשימה:
 <nowiki>$1</nowiki>.',
 	'translate-pref-jsedit' => 'עורך תרגומים משופר (JavaScript)',
@@ -6356,6 +6360,9 @@ $1',
 	'translate-import-err-ul-failed' => 'העלאת הקובץ לא הצליחה',
 	'translate-import-err-invalid-title' => 'שם הקובץ שצוין, <nowiki>$1</nowiki>, אינו תקין.',
 	'translate-import-err-no-such-file' => 'הקובץ <nowiki>$1</nowiki> אינו קיים או שהוא לא הועלה באופן מקומי.',
+	'translate-import-err-warnings' => 'הקובץ אינו מאורגן כראוי.
+אנא ודאו כי העורך שלכם אינו מסיר את שדות ה־msgctxt.
+פרטים: $1',
 	'translate-js-fb' => 'עריכה רגילה',
 	'translate-gs-code' => 'קוד',
 	'translate-gs-continent' => 'יבשת',
@@ -14649,6 +14656,7 @@ $messages['th'] = array(
 $messages['tk'] = array(
 	'translate' => 'Terjime',
 	'translate-desc' => 'Mediawikini we ýenekileri terjime etmek üçin [[Special:Translate|ýörite sahypa]]',
+	'translate-edit' => 'redaktirle',
 	'translate-history' => 'geçmiş',
 	'translate-task-view' => 'Ähli habarlaşyklary görjek',
 	'translate-task-untranslated' => 'Terjime edilmedik ähli habarlaşyklary görjek',
@@ -14672,6 +14680,7 @@ $messages['tk'] = array(
 	'translate-next' => 'Indiki sahypa',
 	'translate-prev' => 'Öňki sahypa',
 	'translate-page-description-legend' => 'Topar hakda maglumat',
+	'translate-page-edit' => 'redaktirle',
 	'translate-edit-definition' => 'Habarlaşygyň kesgitlemesi',
 	'translate-edit-contribute' => 'goşant goş',
 	'translate-edit-no-information' => "''Bu habarlaşygyň düşündirişi ýok.
@@ -14681,7 +14690,9 @@ Eger-de bu habarlaşygyň nirede we nähili ulanylýandygyny bilýän bolsaňyz,
 	'translate-edit-goto-prev' => 'Öňki habarlaşygy redaktirle',
 	'translate-edit-goto-next' => 'Indiki habarlaşygy redaktirle',
 	'translate-edit-goto-list' => 'Sanawa gaýdyp bar',
+	'translate-magic-cm-save' => 'Ýazdyr',
 	'translate-stats-users' => 'Terjimeçiler',
+	'translate-statsf-submit' => 'Deslapky syn',
 	'translate-sidebar-alltrans' => 'Başga dillerde',
 	'translate-translations-messagename' => 'At:',
 	'translate-translations-project' => 'Taslama:',
@@ -14695,6 +14706,7 @@ Eger-de bu habarlaşygyň nirede we nähili ulanylýandygyny bilýän bolsaňyz,
 	'translate-untranslated' => 'Terjime edilmedik',
 	'translate-percentage-complete' => 'Ýerine ýetirilen',
 	'translate-percentage-fuzzy' => 'Möwriti geçen',
+	'translate-save' => 'Ýazdyr ($1)',
 );
 
 /** Tagalog (Tagalog)

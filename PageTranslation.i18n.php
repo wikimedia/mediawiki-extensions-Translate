@@ -472,11 +472,54 @@ $messages['ckb-arab'] = array(
  */
 $messages['cs'] = array(
 	'pagetranslation' => 'Překlad stránek',
+	'right-pagetranslation' => 'Označování verzí stránek pro překlad',
+	'tpt-desc' => 'Rozšíření pro překládání stránek s obsahem',
+	'tpt-section' => 'Část překladu $1',
+	'tpt-section-new' => 'Nová část překladu.
+Název: $1',
+	'tpt-section-deleted' => 'Část překladu $1',
+	'tpt-template' => 'Šablona stránky',
+	'tpt-templatediff' => 'Šablona stránky se změnila.',
+	'tpt-diff-old' => 'Předchozí text',
+	'tpt-diff-new' => 'Nový text',
+	'tpt-submit' => 'Označit tuto verzi pro překlad',
+	'tpt-sections-oldnew' => 'Nové a existující části překladu',
+	'tpt-sections-deleted' => 'Smazané části překladu',
+	'tpt-sections-template' => 'Šablona stránky pro překlad',
+	'tpt-badtitle' => 'Zadaný název stránky ($1) je neplatný',
+	'tpt-oldrevision' => '$2 není nejnovější verze stránky [[$1]].
+Pro překlad je možné označit pouze nejnovější verze.',
+	'tpt-notsuitable' => 'Stránka $1 není vhodná pro překlad.
+Ujistěte se, že obsahuje značky <code><nowiki><translate></nowiki></code> a má platnou syntaxi.',
+	'tpt-saveok' => 'Stránka [[$1]] byla označena pro překlad {{PLURAL:$2|s $2 částí překladu|se $2 částmi překladu|s $2 částmi překladu}}.
+Tato stránka může být nyní <span class="plainlinks">[$3 přeložena]</span>.',
+	'tpt-badsect' => '„$1“ není platný název části překladu $2.',
+	'tpt-showpage-intro' => 'Níže jsou uvedeny nové, současné a smazané části.
+Předtím než tuto verzi označíte pro překlad zkontrolujte, že změny částí jsou minimální, abyste zabránili zbytečné práci překladatelů.',
+	'tpt-mark-summary' => 'Tato verze je označená pro překlad',
+	'tpt-edit-failed' => 'Nelze aktualizovat stránku: $1',
+	'tpt-already-marked' => 'Nejnovější verze této stránky už byla označena pro překlad.',
+	'tpt-list-nopages' => 'Žádné stránky nejsou označeny pro překlad nebo na to nejsou připraveny.',
+	'tpt-old-pages' => 'Některé verze {{PLURAL:$1|této stránky|těchto stránek}} bylo označeny pro překlad.',
+	'tpt-new-pages' => '{{PLURAL:$1|Tato stránka obsahuje|Tyto stránky obsahují}} text se značkami pro překlad, ale žádná verze {{PLURAL:$1|této stránky|těchto stránek}} není aktuálně označena pro překlad.',
+	'tpt-rev-latest' => 'nejnovější verze',
+	'tpt-rev-old' => 'rozdíl oproti předchozí označené verzi',
+	'tpt-rev-mark-new' => 'označit tuto verzi pro překlad',
+	'tpt-translate-this' => 'přeložit tuto stránku',
 	'translate-tag-translate-link-desc' => 'Přeložit tuto stránku',
+	'translate-tag-markthis' => 'Označit tuto stránku pro překlad',
+	'translate-tag-markthisagain' => 'Tato stránka byla <span class="plainlinks">[$1 změněna]</span> od posledního <span class="plainlinks">[$2 označení pro překlad]</span>.',
 	'translate-tag-hasnew' => 'Tato stránka obsahuje <span class="plainlinks">[$1 změny]</span>, které nebyly označeny pro překlad.',
 	'tpt-translation-intro' => 'Toto je <span class="plainlinks">[$1 přeložená verze]</span> stránky [[$2]], překlad je úplný a aktuální na $3 %.',
 	'tpt-translation-intro-fuzzy' => 'Takto jsou označeny zastaralé části překladu.',
 	'tpt-languages-legend' => 'Jiné jazyky:',
+	'tpt-target-page' => 'Tuto stránku nelze ručně aktualizovat.
+Tato stránka je překladem stránky [[$1]] a překlad lze aktualizovat pomocí [$2 nástroje pro překlad].',
+	'tpt-unknown-page' => 'Tento jmenný prostor je vyhrazený pro překlady stránek s obsahem.
+Zdá se, že stránka, kterou se pokoušíte upravovat neodpovídá žádné stránce označené pro překlad.',
+	'tpt-install' => 'Funkci překladu stránek povolíte spuštěním <code>php maintenance/update.php</code> nebo webové instalace.',
+	'tpt-render-summary' => 'Aktualizace na novou verzi zdrojové stránky',
+	'tpt-download-page' => 'Exportovat stránky s překlady',
 );
 
 /** Danish (Dansk)
@@ -783,10 +826,24 @@ La página que estás tratando de editar no parece corresponder con alguna pági
 );
 
 /** Estonian (Eesti)
+ * @author Avjoska
  * @author Ker
+ * @author Pikne
  */
 $messages['et'] = array(
+	'pagetranslation' => 'Lehekülje tõlkimine',
+	'tpt-section' => 'Tõlkeühik $1',
+	'tpt-section-new' => 'Uus tõlkeühik.
+Nimi: $1',
+	'tpt-template' => 'Lehekülje mall',
+	'tpt-diff-old' => 'Eelnev tekst',
+	'tpt-diff-new' => 'Uus tekst',
+	'tpt-sections-deleted' => 'Kustutatud tõlkeühikud',
+	'tpt-edit-failed' => 'Lehekülje uuendamine ei õnnestunud: $1',
+	'tpt-rev-latest' => 'uusim redaktsioon',
+	'tpt-translate-this' => 'tõlgi see lehekülg',
 	'translate-tag-translate-link-desc' => 'Tõlgi see leht',
+	'tpt-languages-legend' => 'Teistes keeltes:',
 );
 
 /** Basque (Euskara)
