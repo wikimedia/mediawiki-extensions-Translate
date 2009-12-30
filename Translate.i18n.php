@@ -608,9 +608,9 @@ $messages['af'] = array(
 	'translate-pref-nonewsletter' => 'Moenie aan my nuusbriewe per e-pos stuur nie',
 	'translate-pref-editassistlang' => 'Hulptale:',
 	'prefs-translate' => 'Vertalings opsies',
-	'translate-pref-editassistlang-help' => "Komma geskeide lys van taalkodes.
-Vertaling van 'n boodskap in heirdie tale word vertoon wanneer jy vertaal.
-Die versteklys van tale hang af van jou taal.",
+	'translate-pref-editassistlang-help' => "Komma-geskeide lys van taalkodes.
+Vertaling van 'n boodskap in hierdie tale word vertoon wanneer u vertaal.
+Die versteklys van tale hang van u taal af.",
 	'translate-pref-editassistlang-bad' => 'Ongeldige taalkode in die lys:
 <nowiki>$1</nowiki>.',
 	'translate-pref-jsedit' => 'Gebruik verbeterde teksverwerker vir vertalings (benodig JavaScript)',
@@ -3972,6 +3972,8 @@ Vi devas esti en la grupo de tradukantoj por konservi ŝanĝojn.
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Estas nepara nombro de {{PLURAL:$2|krampo|krampoj}}: <strong>$1</strong>',
 	'translate-checks-links' => '{{PLURAL:$2|Jenaj ligiloj estas problemaj|Jena ligilo estas problema}}: <strong>$1</strong>',
+	'translate-checks-links-missing' => 'Mankas {{PLURAL:$2|jena ligilo|jenaj ligiloj}}:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Bonvolu anstataŭigi {{PLURAL:$2|jena etikedo|jenajn etikedojn}} per la korektaj:
 <strong>$1</strong>',
 	'translate-checks-plural' => 'Difino uzas <nowiki>{{PLURAL:}}</nowiki>, sed traduko ne.',
@@ -4062,6 +4064,12 @@ Vi povas [$1 redakti la fontpaĝon] aŭ [$2 ĝisdatigi la tradukon].',
 	'translate-import-err-dl-failed' => 'Ne eblas akiri la dosieron:
 $1',
 	'translate-import-err-ul-failed' => 'Dosiero alŝuto ne estis sukcesa',
+	'translate-js-fb' => 'Norma redakto',
+	'translate-gs-code' => 'Kodo',
+	'translate-gs-continent' => 'Kontinento',
+	'translate-gs-score' => 'Poentaro',
+	'translate-gs-multiple' => 'Oblo',
+	'translate-gs-avgscore' => 'Avĝ poentaro',
 );
 
 /** Spanish (Español)
@@ -13912,6 +13920,7 @@ Anjeun perlu jadi anggota grup panarjamah pikeun nyimpen parobahan. Parobahan mo
  * @author Lejonel
  * @author M.M.S.
  * @author Najami
+ * @author Ozp
  * @author Per
  * @author Rotsee
  * @author Sannab
@@ -14038,7 +14047,7 @@ För att kunna spara ändringar så behöver du tillhöra översättargruppen.
 	'translate-statsf-scale' => 'Tidsupplösning:',
 	'translate-statsf-scale-days' => 'Dagar',
 	'translate-statsf-scale-hours' => 'Timmar',
-	'translate-statsf-count' => ' Storlek:',
+	'translate-statsf-count' => 'Mål:',
 	'translate-statsf-count-edits' => 'Antal redigeringar',
 	'translate-statsf-count-users' => 'Aktiva översättare',
 	'translate-statsf-language' => 'Kommaseparerad lista över språkkoder:',
@@ -14095,6 +14104,7 @@ Du uppmuntras att granska meddelanden genom [[Special:Translate|{{int:translate}
 	'translate-manage-modlangs' => 'Vänligen sök efter möjliga förändringar i följande {{PLURAL:$1|språk|språk}}:',
 	'translate-manage-modlang-new' => '$1 (ny)',
 	'translate-manage-import-diff' => 'Meddelande $1 | Åtgärder: $2',
+	'translate-manage-import-new' => 'Nytt meddelande $1',
 	'translate-manage-action-ignore' => 'Ignorera',
 	'translate-manage-nochanges' => 'Det finns inga förändringar i meddelande-definitionerna för den här gruppen.',
 	'translate-manage-nochanges-other' => 'Inga förändringar för det här språket. 

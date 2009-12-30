@@ -765,6 +765,7 @@ Certigu ke ĝi havas etikedojn <nowiki><translate></nowiki> kaj havas validan si
 	'tpt-rev-mark-new' => 'marki ĉi tiun version por esti tradukita',
 	'tpt-translate-this' => 'traduki ĉi tiun paĝon',
 	'translate-tag-translate-link-desc' => 'Traduki ĉi tiun paĝon',
+	'translate-tag-markthis' => 'Marki ĉi tiun paĝon por tradukado',
 	'tpt-languages-legend' => 'Aliaj lingvoj:',
 	'tpt-download-page' => 'Eksporti paĝon kun tradukoj',
 );
@@ -2605,16 +2606,36 @@ $messages['tl'] = array(
  */
 $messages['tr'] = array(
 	'pagetranslation' => 'Çeviri sayfası',
+	'right-pagetranslation' => 'Sayfa sürümlerini çeviri için işaretler',
+	'tpt-desc' => 'İçerik sayfalarının çevirisi için eklenti',
+	'tpt-section' => 'Çeviri birimi $1',
+	'tpt-section-new' => 'Yeni çeviri birimi.
+Ad: $1',
+	'tpt-section-deleted' => 'Çeviri birimi $1',
 	'tpt-template' => 'Sayfa şablonu',
+	'tpt-templatediff' => 'Sayfa şablonu değişti.',
+	'tpt-diff-old' => 'Önceki metin',
 	'tpt-diff-new' => 'Yeni metin',
 	'tpt-submit' => 'Bu sürümü çeviri için işaretle',
 	'tpt-sections-oldnew' => 'Yeni ve mevcut çeviri birimleri',
 	'tpt-sections-deleted' => 'Silinen çeviri birimleri',
+	'tpt-sections-template' => 'Çeviri sayfası şablonu',
+	'tpt-badtitle' => 'Verilen sayfa adı ($1) geçerli bir başlık değil',
+	'tpt-oldrevision' => '$2, [[$1]] sayfasının en son sürümü değil.
+Sadece en son sürümler çeviri için işaretlenebilir.',
 	'tpt-saveok' => '[[$1]] adlı sayfa $2 {{PLURAL:$2|çeviri birimi|çeviri birimi}} ile çeviri için işaretlenmiş.
 Sayfa artık <span class="plainlinks">[$3 çevrilebilir]</span>.',
 	'tpt-badsect' => '"$1", $2 çeviri birimi için geçerli bir ad değil.',
+	'tpt-showpage-intro' => 'Aşağıda yeni, mevcut ve silinmiş bölümler listelenmiştir.
+Bu sürümü çeviri için işaretlemeden önce, çevirmenlere gereksiz iş çıkarmamak için bölümlerde yapılan değişikliklerin asgari seviyede olduğundan emin olun.',
 	'tpt-mark-summary' => 'Bu sürüm çeviri için işaretlendi',
 	'tpt-edit-failed' => 'Sayfa güncellenemedi: $1',
+	'tpt-already-marked' => 'Bu sayfanın en son sürümü çeviri için işaretlenmiş.',
+	'tpt-list-nopages' => 'Çeviri için işaretlenen ya da işaretlenmeye hazır olan herhangi bir sayfa bulunmuyor.',
+	'tpt-old-pages' => '{{PLURAL:$1|Bu sayfanın|Bu sayfaların}} bazı sürümleri çeviri için işaretlenmiş.',
+	'tpt-rev-latest' => 'en son sürüm',
+	'tpt-rev-old' => 'önceki işaretlenmiş sürümdeki fark',
+	'tpt-rev-mark-new' => 'bu sürümü çeviri için işaretle',
 	'tpt-translate-this' => 'Bu sayfayı çevir',
 	'translate-tag-translate-link-desc' => 'Bu sayfayı çevir',
 	'translate-tag-markthis' => 'Bu sayfayı çeviri için işaretle',
@@ -2622,6 +2643,7 @@ Sayfa artık <span class="plainlinks">[$3 çevrilebilir]</span>.',
 	'tpt-translation-intro-fuzzy' => 'Tarihi geçen çeviriler bu şekilde işaretlenmiştir.',
 	'tpt-languages-legend' => 'Diğer diller:',
 	'tpt-render-summary' => 'Kaynak sayfanın yeni sürümü ile eşleme için güncelleniyor',
+	'tpt-download-page' => 'Çevirileri olan sayfayı dışa aktar',
 );
 
 /** Tatar (Cyrillic) (Татарча/Tatarça (Cyrillic))
