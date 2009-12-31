@@ -103,6 +103,7 @@ $wikimediaCodeMap = array(
 	'ike-latn' => 'iu',
 	'lzh' => 'zh-classical',
 	'nan' => 'zh-min-nan',
+	'vro' => 'fiu-vro',
 	'yue' => 'zh-yue',
 
 	// Ignored language codes. See reason.
