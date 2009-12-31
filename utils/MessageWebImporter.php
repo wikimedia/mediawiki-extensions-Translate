@@ -280,9 +280,8 @@ class MessageWebImporter {
 
 	// FIXME: lot of duplication with SpecialManageGroups::doImport()
 	protected function doImport( $title, $message, $comment, $user = null ) {
-		$flags = EDIT_FORCE_BOT;
 		$article = new Article( $title );
-		$status = $article->doEdit( $message, $comment, $flags );
+		$status = $article->doEdit( $message, $comment );
 		$success = $status->isOK();
 
 		if ( $success ) {
