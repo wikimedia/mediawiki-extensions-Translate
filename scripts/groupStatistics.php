@@ -98,9 +98,12 @@ $wikimediaCodeMap = array(
 
 	// Remaps
 	'be-tarask' => 'be-x-old',
+	'gsw' => 'als',
 	'ike-cans' => 'iu',
 	'ike-latn' => 'iu',
 	'lzh' => 'zh-classical',
+	'nan' => 'zh-min-nan',
+	'yue' => 'zh-yue',
 
 	// Ignored language codes. See reason.
 	'als' => '', // gsw
@@ -109,13 +112,14 @@ $wikimediaCodeMap = array(
 	'crh' => '', // crh-*
 	'de-at' => '', // de
 	'de-ch' => '', // de
-	'de-formal' => '', // de
+	'de-formal' => '', // de, not reporting formal form
 	'dk' => '', // da
 	'en-gb' => '', // en
 	'fiu-vro' => '', // vro
 	'gan' => '', // gan-*
-	'got' => '', // extinct. not reporting on this.
+	'got' => '', // extinct. not reporting formal form
 	'hif' => '', // hif-*
+	'hu-formal' => '', // not reporting
 	'iu' => '', // ike-*
 	'kk' => '', // kk-*
 	'kk-cn' => '', // kk-arab
