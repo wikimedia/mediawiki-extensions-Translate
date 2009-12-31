@@ -223,7 +223,55 @@ $messages['arc'] = array(
  * @author Meno25
  */
 $messages['arz'] = array(
-	'translate-tag-translate-link-desc' => 'ترجمة هذه الصفحة',
+	'pagetranslation' => 'ترجمه صفحة',
+	'right-pagetranslation' => 'عّلم نسخًا م هذه الصفحه للترجمة',
+	'tpt-desc' => 'امتداد لترجمه محتويات الصفحات',
+	'tpt-section' => 'وحده الترجمه $1',
+	'tpt-section-new' => 'وحده ترجمه جديده.
+الاسم: $1',
+	'tpt-section-deleted' => 'وحده الترجمه $1',
+	'tpt-template' => 'قالب صفحة',
+	'tpt-templatediff' => 'تغيّر قالب الصفحه.',
+	'tpt-diff-old' => 'نص سابق',
+	'tpt-diff-new' => 'نص جديد',
+	'tpt-submit' => 'علّم هذه النسخه للترجمة',
+	'tpt-sections-oldnew' => 'وحدات الترجمه الجديده والموجودة',
+	'tpt-sections-deleted' => 'وحدات الترجمه المحذوفة',
+	'tpt-sections-template' => 'قالب صفحه ترجمة',
+	'tpt-badtitle' => 'اسم الصّفحه المعطى ($1) ليس عنوانا صحيحا',
+	'tpt-oldrevision' => '$2 ليست آخر نسخه للصّفحه [[$1]].
+فقط آخر النسخ يمكن أن تؤشّر للترجمه.',
+	'tpt-notsuitable' => 'الصفحه $1 غير مناسبه للترجمه.
+تأكد أن لها وسم <nowiki><translate></nowiki> وأن لها صياغه صحيحه.',
+	'tpt-saveok' => 'الصفحه [[$1]] تم التعليم عليها للترجمه ب $2 {{PLURAL:$2|وحده ترجمة|وحدات ترجمة}}.
+الصفحه يمكن الآن <span class="plainlinks">[$3 ترجمتها]</span>.',
+	'tpt-badsect' => '"$1" ليس اسمًا صحيحًا لوحده الترجمه $2.',
+	'tpt-showpage-intro' => 'أدناه تُسرد الأقسام الجديده والموجوده والمحذوفه.
+قبل تعليم هذه النسخه للترجمه، تحقق من أن التغييرات على الأقسام مُقلّله لتفادى العمل غير الضرورى من المترجمين.',
+	'tpt-mark-summary' => 'علَّم هذه النسخه للترجمة',
+	'tpt-edit-failed' => 'تعذّر تحديث الصفحة: $1',
+	'tpt-already-marked' => 'آخر نسخه من هذه الصفحه مُعلّمه بالفعل للترجمه.',
+	'tpt-list-nopages' => 'لا صفحات مُعلّمه للترجمه أو جاهزه للتعليم للترجمه.',
+	'tpt-old-pages' => 'إحدى نسخ {{PLURAL:$1||هذه الصفحة|هاتان الصفحتان|هذه الصفحات}} عُلّمت للترجمه.',
+	'tpt-new-pages' => '{{PLURAL:$1|هذه الصفحه تحتوي|هذه الصفحات تحتوي}} على نص بوسوم ترجمه، لكن لا نسخه من {{PLURAL:$1|هذه الصفحة|هذه الصفحات}} معلمه حاليا للترجمه.',
+	'tpt-rev-latest' => 'آخر نسخة',
+	'tpt-rev-old' => 'الفرق مقابل النسخه المعلّمه السابقة',
+	'tpt-rev-mark-new' => 'علّم هذه النسخه للترجمة',
+	'tpt-translate-this' => 'ترجم هذه الصّفحة',
+	'translate-tag-translate-link-desc' => 'ترجمه هذه الصفحة',
+	'translate-tag-markthis' => 'علّم هذه الصفحه للترجمة',
+	'translate-tag-markthisagain' => 'هذه الصفحه بها <span class="plainlinks">[$1 تغيير]</span> منذ تم <span class="plainlinks">[$2 تعليمها للترجمة]</span> لآخر مره.',
+	'translate-tag-hasnew' => 'هذه الصفحه تحتوى على <span class="plainlinks">[$1 تغييرات]</span> غير معلمه للترجمه.',
+	'tpt-translation-intro' => 'هذه الصفحه هى <span class="plainlinks">[$1 نسخه مترجمة]</span> لصفحه [[$2]] والترجمه مكتمله ومحدثه بنسبه $3%.',
+	'tpt-translation-intro-fuzzy' => 'الترجمات غير المُحدّثه مُعلّمه هكذا.',
+	'tpt-languages-legend' => 'لغات أخرى:',
+	'tpt-target-page' => 'لا يمكن تحديث هذه الصفحه يدويًا.
+هذه الصفحه ترجمه لصفحه [[$1]] ويمكن تحديث الترجمه باستخدام [$2 أداه الترجمة].',
+	'tpt-unknown-page' => 'هذا النطاق محجوز لترجمات صفحات المحتوى.
+الصفحه التى تحاول تعديلها لا يبدو أنها تتبع أى صفحه معلمه للترجمه.',
+	'tpt-install' => 'شغل php maintenance/update.php أو نصب من الويب لتفعيل خاصيه ترجمه الصفحات.',
+	'tpt-render-summary' => 'تحديث لمطابقه نسخه صفحه المصدر الجديدة',
+	'tpt-download-page' => 'صدّر الصفحه مع الترجمات',
 );
 
 /** Asturian (Asturianu)
