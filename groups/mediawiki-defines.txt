@@ -987,6 +987,11 @@ id = ext-socialprofile-systemgifts
 file = SocialProfile/SystemGifts/SystemGift.i18n.php
 descmsg = systemgiftmanager
 
+Social Profile - User Activity
+id = ext-socialprofile-useractivity
+file = SocialProfile/UserActivity/UserActivity.i18n.php
+descmsg = useractivity
+
 Social Profile - User Board
 id = ext-socialprofile-userboard
 file = SocialProfile/UserBoard/UserBoard.i18n.php
