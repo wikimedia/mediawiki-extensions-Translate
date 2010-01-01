@@ -13,6 +13,7 @@ FILES:
   targetPattern: strings_%CODE%.txt
   codeMap:
     af:      afrikaans
+    am:      amharic
     ar:      arabic
     arz:     arabicegyptianspoken
     bg:      bulgarian

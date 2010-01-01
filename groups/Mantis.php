@@ -20,6 +20,7 @@ class MantisMessageGroup extends MessageGroupOld {
 
 	protected $codeMap = array(
 		'af' => 'afrikaans',
+		'am' => 'amharic',
 		'ar' => 'arabic',
 		'arz' => 'arabicegyptianspoken',
 		'bg' => 'bulgarian',
