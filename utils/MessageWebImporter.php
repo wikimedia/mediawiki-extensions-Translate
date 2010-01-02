@@ -32,10 +32,15 @@ class MessageWebImporter {
 		global $wgUser;
 		return $this->user ? $this->user : $wgUser;
 	}
-	public function setUser( User $user ) { $this->user = $user; }
 
+	public function setUser( User $user ) {
+		$this->user = $user;
+	}
 
-	public function getGroup() { return $this->group; }
+	public function getGroup() {
+		return $this->group;
+	}
+
 	/**
 	 * Group is either MessageGroup object or group id.
 	 */
@@ -47,8 +52,13 @@ class MessageWebImporter {
 		}
 	}
 
-	public function getCode() { return $this->code; }
-	public function setCode( $code = 'en' ) { $this->code = $code; }
+	public function getCode() {
+		return $this->code;
+	}
+
+	public function setCode( $code = 'en' ) {
+		$this->code = $code;
+	}
 
 	protected function getAction() {
 		return $this->getTitle()->getFullURL();
@@ -67,8 +77,7 @@ class MessageWebImporter {
 			Xml::openElement( 'form', $formParams ) .
 			Xml::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
 			Xml::hidden( 'token', $this->getUser()->editToken() ) .
-			Xml::hidden( 'process', 1 )
-		;
+			Xml::hidden( 'process', 1 );
 	}
 
 	protected function doFooter() {
@@ -77,6 +86,7 @@ class MessageWebImporter {
 
 	protected function allowProcess() {
 		global $wgRequest;
+
 		if ( $wgRequest->wasPosted() &&
 			$wgRequest->getBool( 'process', false ) &&
 			$this->getUser()->matchEditToken( $wgRequest->getVal( 'token' ) ) ) {
@@ -95,12 +105,16 @@ class MessageWebImporter {
 	}
 
 	protected function getDefaultAction( $fuzzy, $action ) {
-		if ( $action ) return $action;
+		if ( $action ) {
+			return $action;
+		}
+
 		return $fuzzy ? 'conflict' : 'import';
 	}
 
 	public function execute( $messages ) {
 		global $wgOut;
+
 		$this->out = $wgOut;
 
 		// Set up diff engine
@@ -122,12 +136,14 @@ class MessageWebImporter {
 		// Determine changes
 		$alldone = $process;
 		$changed = array();
+
 		foreach ( $messages as $key => $value ) {
 			$fuzzy = $old = false;
+
 			if ( isset( $collection[$key] ) ) {
 				$old = $collection[$key]->translation();
 				$fuzzy = TranslateEditAddons::hasFuzzyString( $old ) ||
-						TranslateEditAddons::isFuzzy( self::makeTitle( $group, $key, $code ) );
+					TranslateEditAddons::isFuzzy( self::makeTitle( $group, $key, $code ) );
 			}
 
 			// No changes at all, ignore
@@ -151,7 +167,9 @@ class MessageWebImporter {
 				$action = $wgRequest->getVal( "action-$type-$safekey" );
 
 				if ( $process ) {
-					if ( !count( $changed ) ) $changed[] = '<ul>';
+					if ( !count( $changed ) ) {
+						$changed[] = '<ul>';
+					}
 
 					global $wgLang;
 					if ( $action === null ) {
@@ -216,9 +234,13 @@ class MessageWebImporter {
 		}
 
 		if ( $process || ( !count( $changed ) && $code !== 'en' ) ) {
-			if ( !count( $changed ) ) $this->out->addWikiMsg( 'translate-manage-nochanges-other' );
+			if ( !count( $changed ) ) {
+				$this->out->addWikiMsg( 'translate-manage-nochanges-other' );
+			}
 
-			if ( !count( $changed ) || strpos( $changed[count( $changed ) - 1], '<li>' ) !== 0 ) $changed[] = '<ul>';
+			if ( !count( $changed ) || strpos( $changed[count( $changed ) - 1], '<li>' ) !== 0 ) {
+				$changed[] = '<ul>';
+			}
 
 			$message = wfMsgExt( 'translate-manage-import-done', 'parseinline' );
 			$changed[] = "<li>$message</li></ul>";
@@ -333,9 +355,7 @@ class MessageWebImporter {
 			$text = "* " . wfMsgExt( $key, array(), $c );
 		}
 
-		return array( 'translate-manage-import-fuzzy',
-			"\n" . $text
-		);
+		return array( 'translate-manage-import-fuzzy', "\n" . $text );
 	}
 
 	// FIXME: duplicate of SpecialManageGroups::getFuzzyBot()
