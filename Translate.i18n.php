@@ -9586,7 +9586,7 @@ Dir musst am Grupp vun den Iwwersetzer si fir Ännerungen ofspäicheren ze kënn
 	'translate-checks-escape' => 'Dës Escape-Sequenzen kënnen ongewollt sinn: <strong>$1</strong>',
 	'translate-checks-fudforum-syntax' => '<nowiki>$1</nowiki>  aplaz vu(n) <nowiki>$2</nowiki>  an dësem Projet benotzen.',
 	'translate-pref-nonewsletter' => 'Schéckt mir keng E-Mail-Newsletter.',
-	'translate-pref-editassistlang' => 'Sproochen déi ënnerstetzen:',
+	'translate-pref-editassistlang' => 'Sproochen déi ënnerstëtzen:',
 	'prefs-translate' => 'Optioune vun der Iwwersetzung',
 	'translate-pref-editassistlang-help' => "Mat Komma getrennte Lëscht vun de Sproochcoden.
 Iwwersetzung vun engem Message an dës Sprooche gëtt gewisen wann Dir iwwersetzt.
@@ -9711,7 +9711,7 @@ Wann dir decidéiert fir Ännerungen z'ignoréieren, da gi si beim nächsten Exp
 	'translate-import-from-local' => 'Fichier lokal eropgelueden:',
 	'translate-import-load' => 'Fichier lueden',
 	'translate-import-err-type-not-supported' => "De Fichier kann net geluede ginn:
-D'Method <tt>$1</tt> gëtt net ënnerstetzt.",
+D'Method <tt>$1</tt> gëtt net ënnerstëtzt.",
 	'translate-import-err-dl-failed' => 'De Fichier kann net erreescht ginn:
 $1',
 	'translate-import-err-ul-failed' => "D'Eropluede vum Fichier huet net geklappt",
@@ -10076,7 +10076,7 @@ $messages['mk'] = array(
 	'translate-tag-noedit' => 'Оваа страница е автоматски ажуирана страница за превод.
 Можете [$1 да ја уредувате изворната страница] или [$2 да го ажурирате преводот]',
 	'translations' => 'Сите преводи',
-	'translations-summary' => 'Подолу внеси име на порака за приказ на сите достапни преводи.',
+	'translations-summary' => 'Внесете име на порака за приказ на сите достапни преводи.',
 	'translate-translations-no-message' => '"$1" не е порака која се преведува',
 	'translate-translations-none' => 'Нема преводи за "$1"',
 	'translate-translations-fieldset-title' => 'Порака',
