@@ -9,7 +9,7 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 class TranslationEditPage {
-	/// Instance of an Title object
+	// Instance of an Title object
 	protected $title;
 
 	/**
@@ -42,7 +42,7 @@ class TranslationEditPage {
 		$wgOut->disable();
 
 		$translation = $helpers->getTranslation();
-		$short = strpos( $translation, "\n" ) === false && strlen($translation) < 200;
+		$short = strpos( $translation, "\n" ) === false && strlen( $translation ) < 200;
 		$textareaParams = array(
 			'name' => 'text',
 			'class' => 'mw-translate-edit-area',
@@ -52,7 +52,7 @@ class TranslationEditPage {
 
 		$hidden = array();
 		$hidden[] = Xml::hidden( 'title', $this->getTitle()->getPrefixedDbKey() );
-		if ( isset($data['revisions'][0]['timestamp']) )
+		if ( isset( $data['revisions'][0]['timestamp'] ) )
 			$hidden[] = Xml::hidden( 'basetimestamp', $data['revisions'][0]['timestamp'] );
 		$hidden[] = Xml::hidden( 'starttimestamp', $data['starttimestamp'] );
 		$hidden[] = Xml::hidden( 'token', $data['edittoken'] );
@@ -60,7 +60,7 @@ class TranslationEditPage {
 		$hidden[] = Xml::hidden( 'action', 'edit' );
 
 		$summary = Xml::inputLabel( wfMsg( 'summary' ), 'summary', 'summary', 40 );
-		$save = Xml::submitButton( wfMsg( 'savearticle' ), array( 'style' => 'font-weight:bold' ));
+		$save = Xml::submitButton( wfMsg( 'savearticle' ), array( 'style' => 'font-weight:bold' ) );
 		$normal = Xml::element( 'input', array( 'class' => 'mw-translate-fb',
 			'value' => wfMsg( 'translate-js-fb' ), 'type' => 'button' ) );
 
@@ -91,13 +91,13 @@ class TranslationEditPage {
 			'intoken' => 'edit',
 			'titles' => $this->getTitle(),
 			'rvprop' => 'timestamp',
-		));
+		) );
 
-		$api = new ApiMain($params);
+		$api = new ApiMain( $params );
 		$api->execute();
 		$data = $api->getResultData();
 		$data = $data['query']['pages'];
-		$data = array_shift($data);
+		$data = array_shift( $data );
 		return $data;
 	}
 

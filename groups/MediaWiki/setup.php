@@ -10,6 +10,5 @@
  */
 
 
-$dir = dirname(__FILE__);
-#$wgAutoloadClasses['MediaWikiMessageGroup'] = dirname(__FILE__) .'/FreeCol.php';
-$wgAutoloadClasses['MediaWikiMessageChecker'] = dirname(__FILE__) .'/Checker.php';
+$dir = dirname( __FILE__ );
+$wgAutoloadClasses['MediaWikiMessageChecker'] = dirname( __FILE__ ) . '/Checker.php';

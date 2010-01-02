@@ -46,16 +46,16 @@ class ThinMessage extends TMessage {
 		return $this->definition;
 	}
 	public function translation() {
-		if ( !isset($this->row) ) return $this->infile();
+		if ( !isset( $this->row ) ) return $this->infile();
 		return Revision::getRevisionText( $this->row );
 	}
 	public function author() {
-		if ( !isset($this->row) ) return null;
+		if ( !isset( $this->row ) ) return null;
 		return $this->row->rev_user_text;
 	}
 
 	public function infile() {
-		if ( !isset($this->infile) ) return null;
+		if ( !isset( $this->infile ) ) return null;
 		return $this->infile;
 	}
 
@@ -76,7 +76,7 @@ class FatMessage extends TMessage {
 		return $this->translation;
 	}
 
-	public function author() {}
+	public function author() { }
 
 	public function setInfile( $text ) {
 		$this->infile = $text;

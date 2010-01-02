@@ -20,45 +20,45 @@ $invalid = array();
 
 foreach ( $rows as $row ) {
 
-	list( $key, $code ) = TranslateUtils::figureMessage($row->page_title);
+	list( $key, $code ) = TranslateUtils::figureMessage( $row->page_title );
 
 	if ( !$code ) $code = 'en';
 
 	$mg = TranslateUtils::messageKeyToGroup( $row->page_namespace, $key );
 	$ns = $wgContLang->getNsText( $row->page_namespace );
-	if ( is_null($mg) ) {
+	if ( is_null( $mg ) ) {
 		$keys["$ns:$key"][] = $code;
 		$owner = 'xx-unknown';
 	} else {
 		$owner = $mg;
 	}
 
-	if ( !isset($codes[$code]) ) {
+	if ( !isset( $codes[$code] ) ) {
 		$invalid[$code][] = "[[$ns:$key/$code]]";
 	}
 
-	if ( !isset($owners[$owner]) ) $owners[$owner] = 0;
+	if ( !isset( $owners[$owner] ) ) $owners[$owner] = 0;
 	$owners[$owner]++;
 }
 $rows->free();
 
 ksort( $owners );
 
-if ( count($invalid) ) {
+if ( count( $invalid ) ) {
 	echo "==Invalid language codes==\n" . implode( ', ', array_keys( $invalid ) ) . "\n";
 	foreach ( $invalid as $key => $pages ) {
 		echo "# $key: " . implode( ', ', $pages ) . "\n";
 	}
 }
 
-if ( count($owners) ) {
+if ( count( $owners ) ) {
 	echo "\n==Messages claimed==\n";
 	foreach ( $owners as $o => $count ) {
 		echo "# $o: $count\n";
 	}
 }
 
-if ( count($keys) ) {
+if ( count( $keys ) ) {
 	echo "\n==Unclaimed messages==\n";
 	foreach ( $keys as $page => $langs ) {
 		echo "* $page: " . implode( ', ', $langs ) . "\n";

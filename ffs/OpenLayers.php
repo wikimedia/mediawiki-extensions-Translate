@@ -62,7 +62,7 @@ class OpenLayersFormatReader extends SimpleFormatReader {
 		// Just get relevant data.
 		$dataStart = strpos( $data, '{' );
 		$dataEnd   = strrpos( $data, '}' );
-		$data = substr( $data, $dataStart + 1, $dataEnd - $dataStart - 1);
+		$data = substr( $data, $dataStart + 1, $dataEnd - $dataStart - 1 );
 		// Strip comments.
 		$data = preg_replace( '#^(\s*?)//(.*?)$#m', '', $data );
 		// Break in to message segements for further parsing.
@@ -70,7 +70,7 @@ class OpenLayersFormatReader extends SimpleFormatReader {
 
 		$messages = array();
 		// Process each segment.
-		foreach( $data as $segment ) {
+		foreach ( $data as $segment ) {
 			// Remove excess quote mark at beginning.
 			$segment = substr( $segment, 1 );
 			// Add back trailing quote.
@@ -79,7 +79,7 @@ class OpenLayersFormatReader extends SimpleFormatReader {
 			$segment = explode( '" +', $segment );
 			$segment = array_map( array( $this, 'leftTrim' ), $segment );
 			$segment = implode( $segment );
-			#$segment = preg_replace( '#\" \+(.*?)\"#m', '', $segment );
+			# $segment = preg_replace( '#\" \+(.*?)\"#m', '', $segment );
 			// Break in to key and message.
 			$segments = explode( '\':', $segment );
 			$key = $segments[ 0 ];
@@ -118,7 +118,7 @@ class OpenLayersFormatWriter extends SimpleFormatWriter {
 		$authors = $collection->getAuthors();
 		$authors = $this->filterAuthors( $authors, $collection->code, $this->group->getId() );
 		$authorList = '';
-		foreach( $authors as $author ) {
+		foreach ( $authors as $author ) {
 			$authorList .= " *  - $author\n";
 		}
 
@@ -149,7 +149,7 @@ EOT;
 
 		// Get and write messages.
 		$lines = '';
-		foreach( $collection as $message ) {
+		foreach ( $collection as $message ) {
 			$key = Xml::escapeJsString( $message->key() );
 			$value = Xml::escapeJsString( $message->translation() );
 			$lines .= "    '{$message->key()}': \"{$value}\",\n\n";

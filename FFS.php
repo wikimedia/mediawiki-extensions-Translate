@@ -415,7 +415,7 @@ class YamlFFS extends SimpleFFS {
 		$messages = TranslateYaml::loadString( $data );
 
 		# Some groups have messages under language code
-		if ( isset($this->extra['codeAsRoot']) ) {
+		if ( isset( $this->extra['codeAsRoot'] ) ) {
 			$messages = array_shift( $messages );
 		}
 
@@ -447,12 +447,12 @@ class YamlFFS extends SimpleFFS {
 			$messages[$key] = $value;
 		}
 
-		if ( !count($messages) ) return false;
+		if ( !count( $messages ) ) return false;
 
 		$messages = $this->unflatten( $messages );
 
 		# Some groups have messages under language code
-		if ( isset($this->extra['codeAsRoot']) ) {
+		if ( isset( $this->extra['codeAsRoot'] ) ) {
 			$code = $this->group->mapCode( $collection->code );
 			$messages = array( $code => $messages );
 		}
@@ -500,7 +500,7 @@ class YamlFFS extends SimpleFFS {
 
 		$array = array();
 		foreach ( $messages as $key => $value ) {
-			if ( !is_array($value) ) {
+			if ( !is_array( $value ) ) {
 				$array[$key] = $value;
 			} else {
 				$plural = $this->flattenPlural( $value );
@@ -515,7 +515,7 @@ class YamlFFS extends SimpleFFS {
 				}
 			}
 			// Can as well keep only one copy around
-			unset($messages[$key]);
+			unset( $messages[$key] );
 		}
 		return $array;
 	}
@@ -542,7 +542,7 @@ class YamlFFS extends SimpleFFS {
 				do {
 					# Extract the level and make sure it exists
 					$level = array_shift( $path );
-					if ( !isset($pointer[$level]) ) {
+					if ( !isset( $pointer[$level] ) ) {
 						$pointer[$level] = array();
 					}
 
@@ -595,10 +595,10 @@ class RubyYamlFFS extends YamlFFS {
 	protected function flattenPlural( $messages ) {
 
 		$plurals = false;
-		foreach( array_keys($messages) as $key ) {
-			if ( isset(self::$pluralWords[$key]) ) {
+		foreach ( array_keys( $messages ) as $key ) {
+			if ( isset( self::$pluralWords[$key] ) ) {
 				$plurals = true;
-			} elseif( $plurals ) {
+			} elseif ( $plurals ) {
 				throw new MWException( "Reserved plural keywords mixed with other keys: $key" );
 			}
 		}
@@ -606,13 +606,13 @@ class RubyYamlFFS extends YamlFFS {
 		if ( !$plurals ) return false;
 
 		$pls = '{{PLURAL';
-		foreach( $messages as $key => $value ) {
+		foreach ( $messages as $key => $value ) {
 			if ( $key === 'other' ) continue;
 			$pls .= "|$key=$value";
 		}
 
 		// Put the "other" alternative last, without other= prefix
-		$other = isset($messages['other']) ? '|' . $messages['other'] : '';
+		$other = isset( $messages['other'] ) ? '|' . $messages['other'] : '';
 		$pls .= "$other}}";
 		return $pls;
 	}
@@ -646,7 +646,7 @@ class RubyYamlFFS extends YamlFFS {
 		}
 
 		// No plurals, should not happen
-		if ( !count($matches) ) return false;
+		if ( !count( $matches ) ) return false;
 
 		// The final array of alternative plurals forms
 		$alts = array();
@@ -654,7 +654,7 @@ class RubyYamlFFS extends YamlFFS {
 		// Then loop trough each plural block and replacing the placeholders
 		// to construct the alternatives. Produces invalid output if there is
 		// multiple plural bocks which don't have the same set of keys.
-		$pluralChoice = implode( '|', array_keys(self::$pluralWords) );
+		$pluralChoice = implode( '|', array_keys( self::$pluralWords ) );
 		$regex = "~($pluralChoice)\s*=\s*(.+)~s";
 		foreach ( $matches as $ph => $plu ) {
 			$forms = explode( '|', $plu[1] );
@@ -669,7 +669,7 @@ class RubyYamlFFS extends YamlFFS {
 					$value = $form;
 				}
 
-				if ( !isset($alts[$formWord]) ) $alts[$formWord] = $message;
+				if ( !isset( $alts[$formWord] ) ) $alts[$formWord] = $message;
 				$string = $alts[$formWord];
 				$alts[$formWord] = str_replace( $ph, $value, $string );
 			}
@@ -680,7 +680,7 @@ class RubyYamlFFS extends YamlFFS {
 			$value = str_replace( array_keys( $placeholders ), array_values( $placeholders ), $value );
 		}
 
-		if ( !isset($alts["$key.other"]) ) {
+		if ( !isset( $alts["$key.other"] ) ) {
 			wfWarn( "Other not set for key $key" );
 			return false;
 		}
@@ -690,6 +690,6 @@ class RubyYamlFFS extends YamlFFS {
 
 	protected function placeholder() {
 		static $i = 0;
-		return "\x7fUNIQ" . dechex(mt_rand(0, 0x7fffffff)) . dechex(mt_rand(0, 0x7fffffff)) . $i++;
+		return "\x7fUNIQ" . dechex( mt_rand( 0, 0x7fffffff ) ) . dechex( mt_rand( 0, 0x7fffffff ) ) . $i++;
 	}
 }

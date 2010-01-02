@@ -15,17 +15,17 @@ class TranslateEditAddons {
 	static function addNavigation( &$outputpage, &$text ) {
 		global $wgUser, $wgTitle;
 		static $done = false;
-		if ($done) return true;
+		if ( $done ) return true;
 		$done = true;
 
 		if ( !self::isMessageNamespace( $wgTitle ) ) return true;
 
 
-		list( $key, $code, $group) = self::getKeyCodeGroup( $wgTitle );
+		list( $key, $code, $group ) = self::getKeyCodeGroup( $wgTitle );
 		if ( $group === null ) return true;
 
 		if ( $group instanceof MessageGroupBase ) {
-			$cache = new MessageGroupCache($group);
+			$cache = new MessageGroupCache( $group );
 			if ( !$cache->exists() ) return true;
 			$keys = $cache->getKeys();
 			$defs = array();
@@ -142,9 +142,9 @@ EOEO;
 			'tabindex'  => ++$tabindex,
 			'value'     => wfMsg( 'translate-save', $name ),
 			'accesskey' => wfMsg( 'accesskey-save' ),
-			'title'     => wfMsg( 'tooltip-save' ).' ['.wfMsg( 'accesskey-save' ).']',
+			'title'     => wfMsg( 'tooltip-save' ) . ' [' . wfMsg( 'accesskey-save' ) . ']',
 		);
-		$buttons['save'] = Xml::element('input', $temp, '');
+		$buttons['save'] = Xml::element( 'input', $temp, '' );
 		return true;
 	}
 
@@ -154,7 +154,7 @@ EOEO;
 		$preference = $wgUser->getOption( 'translate-editlangs' );
 		if ( $preference !== 'default' ) {
 			$fallbacks = array_map( 'trim', explode( ',', $preference ) );
-			foreach( $fallbacks as $k => $v ) if ( $v === $code ) unset($fallbacks[$k]);
+			foreach ( $fallbacks as $k => $v ) if ( $v === $code ) unset( $fallbacks[$k] );
 			return $fallbacks;
 		}
 
@@ -200,7 +200,7 @@ EOEO;
 		if ( !$title ) $title = "$name ($code)";
 		$title = htmlspecialchars( $title );
 
-		if( $makelink ) {
+		if ( $makelink ) {
 			$skin = $wgUser->getSkin();
 			$linkTitle = Title::newFromText( $makelink );
 			$title = $skin->link(
@@ -211,7 +211,7 @@ EOEO;
 			);
 		}
 
-		if( $group && $attributes['class'] == 'mw-sp-translate-edit-definition' ) {
+		if ( $group && $attributes['class'] == 'mw-sp-translate-edit-definition' ) {
 			global $wgLang;
 
 			$skin = $wgUser->getSkin();
@@ -294,7 +294,7 @@ EOEO;
 		// add the fuzzy string if necessary.
 		$translation = TranslateUtils::getMessageContent( $key, $code, $nsMain );
 		if ( $translation !== null ) {
-			if ( !self::hasFuzzyString( $translation) && self::isFuzzy( $object->mTitle ) ) {
+			if ( !self::hasFuzzyString( $translation ) && self::isFuzzy( $object->mTitle ) ) {
 				$translation = TRANSLATE_FUZZY . $translation;
 			}
 		} else {
@@ -331,7 +331,7 @@ EOEO;
 
 			$server = $wgTranslateTM['server'];
 			$port   = $wgTranslateTM['port'];
-			$timeout= $wgTranslateTM['timeout'];
+			$timeout = $wgTranslateTM['timeout'];
 
 			$def = rawurlencode( $en );
 			$url = "$server:$port/tmserver/en/$code/unit/$def";
@@ -341,17 +341,17 @@ EOEO;
 				$suggestions = array_slice( $suggestions, 0, 3 );
 				foreach ( $suggestions as $s ) {
 					if ( $s['target'] === $translation ) continue;
-					$sugboxes[] = TranslateUtils::fieldset( 
+					$sugboxes[] = TranslateUtils::fieldset(
 						wfMsgHtml( 'translate-edit-tmsug' , sprintf( '%.2f', $s['quality'] ) ),
 						TranslateUtils::convertWhiteSpaceToHTML( $s['target'] ),
 						array( 'class' => 'mw-sp-translate-edit-tmsug', 'title' => $s['source'] )
 					);
 				}
 			}
-			if ( count($sugboxes) > 1 ) {
+			if ( count( $sugboxes ) > 1 ) {
 				$boxes[] = TranslateUtils::fieldset( wfMsgHtml( 'translate-edit-tmsugs' ),
 					implode( "\n", $sugboxes ), array( 'class' => 'mw-sp-translate-edit-tmsugs' ) );
-			} elseif( count($sugboxes) ) {
+			} elseif ( count( $sugboxes ) ) {
 				$boxes[] = $sugboxes[0];
 			}
 		}
@@ -415,13 +415,13 @@ EOEO;
 				$oldtext = null;
 				$newtext = null;
 				foreach ( $oldpage->getParse()->getSectionsForSave() as $section ) {
-					if ( $group->title->getPrefixedDBKey() .'/'. $section->id === $key ) {
+					if ( $group->title->getPrefixedDBKey() . '/' . $section->id === $key ) {
 						$oldtext = $section->getTextForTrans();
 					}
 				}
 
 				foreach ( $page->getParse()->getSectionsForSave() as $section ) {
-					if ( $group->title->getPrefixedDBKey() .'/'. $section->id === $key ) {
+					if ( $group->title->getPrefixedDBKey() . '/' . $section->id === $key ) {
 						$newtext = $section->getTextForTrans();
 					}
 				}
@@ -431,7 +431,7 @@ EOEO;
 					$diff = new DifferenceEngine;
 					$diff->setText( $oldtext, $newtext );
 					$diff->setReducedLineNumbers();
-					$boxes[] = $diff->getDiff( wfMsgHtml('tpt-diff-old'), wfMsgHtml('tpt-diff-new') );
+					$boxes[] = $diff->getDiff( wfMsgHtml( 'tpt-diff-old' ), wfMsgHtml( 'tpt-diff-new' ) );
 					$diff->showDiffStyle();
 				}
 			}
@@ -444,7 +444,7 @@ EOEO;
 		}
 
 		// Some syntactic checks
-		if ( $translation !== null && $code !== $wgTranslateDocumentationLanguageCode) {
+		if ( $translation !== null && $code !== $wgTranslateDocumentationLanguageCode ) {
 			$message = new FatMessage( $key, $en );
 			// Take the contents from edit field as a translation
 			$message->setTranslation( $translation );
@@ -492,9 +492,9 @@ EOEO;
 	}
 
 	public static function isMessageNamespace( Title $title ) {
-		global $wgTranslateMessageNamespaces;;
+		global $wgTranslateMessageNamespaces; ;
 		$namespace = $title->getNamespace();
-		return in_array( $namespace, $wgTranslateMessageNamespaces, true);
+		return in_array( $namespace, $wgTranslateMessageNamespaces, true );
 	}
 
 	public static function tabs( $skin, &$tabs ) {

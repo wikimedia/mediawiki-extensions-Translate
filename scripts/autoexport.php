@@ -39,7 +39,7 @@ if ( isset( $options['format'] ) ) {
 }
 
 if ( isset( $options['hours'] ) ) {
-	$hours = intval($options['hours']);
+	$hours = intval( $options['hours'] );
 	if ( !$hours ) {
 		STDERR( "Invalid duration given, defaulting to 24 hours" );
 		$hours = 24;
@@ -94,7 +94,7 @@ foreach ( $rows as $row ) {
 	if ( strpos( $row->rc_title, '/' ) !== false ) {
 		$code = $row->lang;
 	}
-	if ( $group && ( !count($groupsFilter) || in_array( $group, $groupsFilter ) ) ) {
+	if ( $group && ( !count( $groupsFilter ) || in_array( $group, $groupsFilter ) ) ) {
 		if ( $code && !in_array( $code, $skip ) ) {
 			$exports[$group][$code] = true;
 		}
@@ -109,7 +109,7 @@ foreach ( $exports as $group => $languages ) {
 	sort( $languages );
 	$languages = checkThreshold( $group, $languages, $threshold );
 
-	if ( !count($languages) ) continue;
+	if ( !count( $languages ) ) continue;
 
 	$languagelist = implode( ', ', $languages );
 	STDOUT( str_replace(
@@ -143,7 +143,7 @@ function checkThreshold( $group, $languages, $threshold ) {
 		$collection->filter( 'translated', false );
 		$translated = count( $collection );
 
-		if ( $translated/$total > $threshold/100 ) $qualify[] = $code;
+		if ( $translated / $total > $threshold / 100 ) $qualify[] = $code;
 	}
 	return $qualify;
 

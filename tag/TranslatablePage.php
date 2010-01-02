@@ -56,7 +56,7 @@ class TranslatablePage {
 			}
 		}
 
-		if ( !is_string($this->text) ) throw new MWException( 'We have no text' );
+		if ( !is_string( $this->text ) ) throw new MWException( 'We have no text' );
 		$this->init = true;
 		return $this->text;
 	}
@@ -77,14 +77,14 @@ class TranslatablePage {
 	// Public functions //
 
 	public function getParse() {
-		if ( isset($this->cachedParse) ) return $this->cachedParse;
+		if ( isset( $this->cachedParse ) ) return $this->cachedParse;
 
 		$text = $this->getText();
 
 		$sections = array();
 		$tagPlaceHolders = array();
 
-		while (true) {
+		while ( true ) {
 			$re = '~(<translate>)\s*(.*?)(</translate>)~s';
 			$matches = array();
 			$ok = preg_match_all( $re, $text, $matches, PREG_OFFSET_CAPTURE );
@@ -94,7 +94,7 @@ class TranslatablePage {
 			// Do-placehold for the whole stuff
 			$ph    = $this->getUniq();
 			$start = $matches[0][0][1];
-			$len   = strlen($matches[0][0][0]);
+			$len   = strlen( $matches[0][0][0] );
 			$end   = $start + $len;
 			$text = self::index_replace( $text, $ph, $start, $end );
 
@@ -102,7 +102,7 @@ class TranslatablePage {
 			// Strip the surrounding tags
 			$contents = $matches[0][0][0]; // full match
 			$start = $matches[2][0][1] - $matches[0][0][1]; // bytes before actual content
-			$len   = strlen($matches[2][0][0]); // len of the content
+			$len   = strlen( $matches[2][0][0] ); // len of the content
 			$end   = $start + $len;
 
 			$ret = $this->sectionise( $sections, substr( $contents, $start, $len ) );
@@ -135,7 +135,7 @@ class TranslatablePage {
 
 	protected function getUniq() {
 		static $i = 0;
-		return "\x7fUNIQ" . dechex(mt_rand(0, 0x7fffffff)) . dechex(mt_rand(0, 0x7fffffff)) . '|' . $i++;
+		return "\x7fUNIQ" . dechex( mt_rand( 0, 0x7fffffff ) ) . dechex( mt_rand( 0, 0x7fffffff ) ) . '|' . $i++;
 	}
 
 	protected static function index_replace( $string, $rep, $start, $end ) {
@@ -202,7 +202,7 @@ class TranslatablePage {
 
 		$id = $this->getTagId( $tag );
 
-		if ( is_object($revision) ) throw new MWException('Got object, excepted id');
+		if ( is_object( $revision ) ) throw new MWException( 'Got object, excepted id' );
 
 		$conds = array(
 			'rt_page' => $this->getTitle()->getArticleId(),
@@ -210,14 +210,14 @@ class TranslatablePage {
 			'rt_revision' => $revision
 		);
 		$dbw->delete( 'revtag', $conds, __METHOD__ );
-		if ( $value !== null ) $conds['rt_value'] = serialize(implode('|',$value));
+		if ( $value !== null ) $conds['rt_value'] = serialize( implode( '|', $value ) );
 		$dbw->insert( 'revtag', $conds, __METHOD__ );
 	}
 
-	public function getMarkedTag($db = DB_SLAVE) {
+	public function getMarkedTag( $db = DB_SLAVE ) {
 		return $this->getTag( 'tp:mark' );
 	}
-	public function getReadyTag($db = DB_SLAVE) {
+	public function getReadyTag( $db = DB_SLAVE ) {
 		return $this->getTag( 'tp:tag' );
 	}
 
@@ -287,7 +287,7 @@ class TranslatablePage {
 		$memcKey = wfMemcKey( 'pt', 'status', $this->getTitle()->getPrefixedText() );
 		$cache = $wgMemc->get( $memcKey );
 		if ( !$force && $wgRequest->getText( 'action' ) !== 'purge' ) {
-			if ( is_array($cache) ) return $cache;
+			if ( is_array( $cache ) ) return $cache;
 		}
 
 		$titles = $this->getTranslationPages();
@@ -313,12 +313,12 @@ class TranslatablePage {
 		global $wgContLang;
 		$temp[$wgContLang->getCode()] = 1.00;
 
-		$wgMemc->set( $memcKey, $temp, 60*60*12 );
+		$wgMemc->set( $memcKey, $temp, 60 * 60 * 12 );
 		return $temp;
 	}
 
 	protected function getPercentageInternal( $collection, $markedRevs ) {
-		$count = count($collection);
+		$count = count( $collection );
 		if ( $count === 0 ) return 0;
 
 		// We want to get fuzzy though
@@ -331,20 +331,20 @@ class TranslatablePage {
 			$score = 1;
 
 			// Fuzzy halves score
-			if ( $message->hasTag('fuzzy') ) $score *= 0.5; 
+			if ( $message->hasTag( 'fuzzy' ) ) $score *= 0.5;
 
 			// Reduce 20% for every newer revision than what is translated against
-			$rev = $this->getTransrev( $key .'/' . $collection->code );
+			$rev = $this->getTransrev( $key . '/' . $collection->code );
 			foreach ( $markedRevs as $r ) {
 				if ( $rev === $r->rt_revision ) break;
-				$changed = explode( '|', unserialize($r->rt_value) );
+				$changed = explode( '|', unserialize( $r->rt_value ) );
 
 				// Get a suitable section key
 				$parts = explode( '/', $key );
-				$ikey = $parts[count($parts)-1];
+				$ikey = $parts[count( $parts ) - 1];
 
 				// If the section was changed, reduce the score
-				if ( in_array($ikey, $changed, true) ) {
+				if ( in_array( $ikey, $changed, true ) ) {
 					$score *= 0.8;
 				}
 			}
@@ -352,7 +352,7 @@ class TranslatablePage {
 		}
 
 		// Divide score by count to get completion percentage
-		return $total/$count;
+		return $total / $count;
 	}
 
 	public function getTransRev( $suffix ) {
@@ -373,13 +373,13 @@ class TranslatablePage {
 	protected function getTagId( $tag ) {
 		$validTags = array( 'tp:mark', 'tp:tag', 'tp:transver' );
 		if ( !in_array( $tag, $validTags ) ) {
-			throw new MWException( "Invalid tag $tag requested");
+			throw new MWException( "Invalid tag $tag requested" );
 		}
 
 		// Simple static cache
 		static $tagcache = array();
 
-		if ( !count($tagcache) ) {
+		if ( !count( $tagcache ) ) {
 			$db = wfGetDB( DB_SLAVE );
 			$res = $db->select(
 				'revtag_type', // Table

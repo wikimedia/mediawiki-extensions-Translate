@@ -32,7 +32,7 @@ class OpenLayersMessageGroup extends MessageGroupOld {
 	);
 
 	public function getMessageFile( $code ) {
-		if( isset( $this->codeMap[ $code ] ) ) {
+		if ( isset( $this->codeMap[ $code ] ) ) {
 			$code = $this->codeMap[ $code ];
 		}
 		return "$code.js";

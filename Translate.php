@@ -239,7 +239,7 @@ function efTranslateInit() {
 		global $wgTranslateMessageNamespaces;
 		// Defines for nice usage
 		define ( 'NS_TRANSLATIONS', $wgPageTranslationNamespace );
-		define ( 'NS_TRANSLATIONS_TALK', $wgPageTranslationNamespace +1 );
+		define ( 'NS_TRANSLATIONS_TALK', $wgPageTranslationNamespace + 1 );
 		// Register them as namespaces
 		$wgExtraNamespaces[NS_TRANSLATIONS]      = 'Translations';
 		$wgExtraNamespaces[NS_TRANSLATIONS_TALK] = 'Translations_talk';
@@ -257,7 +257,7 @@ function efTranslateInit() {
 		$wgHooks['ArticleSaveComplete'][] = 'PageTranslationHooks::onSectionSave';
 
 		// Foo
-		#$wgHooks['SkinTemplateOutputPageBeforeExec'][] = 'TranslateTagHooks::addSidebar';
+		# $wgHooks['SkinTemplateOutputPageBeforeExec'][] = 'TranslateTagHooks::addSidebar';
 
 		// Register <languages/>
 		$wgHooks['ParserFirstCallInit'][] = 'efTranslateInitTags';
@@ -302,8 +302,8 @@ function efTranslateCheckPT() {
 	$tags = array( 'tp:mark', 'tp:tag', 'tp:transver', 'fuzzy' );
 
 	$dbw = wfGetDB( DB_MASTER );
-	if ( !$dbw->tableExists('revtag_type') ) {
-		$wgHooks['SiteNoticeAfter'][] = array('efTranslateCheckWarn', 'tpt-install' );
+	if ( !$dbw->tableExists( 'revtag_type' ) ) {
+		$wgHooks['SiteNoticeAfter'][] = array( 'efTranslateCheckWarn', 'tpt-install' );
 		return false;
 	}
 
@@ -322,7 +322,7 @@ function efTranslateCheckPT() {
 function efTranslateCheckWarn( $msg, &$sitenotice ) {
 	global $wgOut;
 	wfLoadExtensionMessages( 'PageTranslation' );
-	$sitenotice = wfMsg($msg);
+	$sitenotice = wfMsg( $msg );
 	$wgOut->enableClientCache( false );
 	return true;
 }
@@ -333,9 +333,9 @@ function efTranslateInitTags( $parser ) {
 	return true;
 }
 
-if ( !defined('TRANSLATE_CLI') ) {
-	function STDOUT() {}
-	function STDERR() {}
+if ( !defined( 'TRANSLATE_CLI' ) ) {
+	function STDOUT() { }
+	function STDERR() { }
 }
 
 $wgTranslateTM = false;

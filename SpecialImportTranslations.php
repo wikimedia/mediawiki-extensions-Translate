@@ -50,7 +50,7 @@ class SpecialImportTranslations extends SpecialPage {
 
 		if ( $this->request->getCheck( 'process' ) ) {
 			$data = $this->getCachedData();
-			if (!$data) {
+			if ( !$data ) {
 				$this->out->addWikiMsg( 'session_fail_preview' ); // Core... bad
 				$this->outputForm();
 				return;
@@ -135,7 +135,7 @@ class SpecialImportTranslations extends SpecialPage {
 		}
 
 		$this->out->addHTML(
-			Xml::radioLabel( wfMsg( 'translate-import-from-wiki' ), 
+			Xml::radioLabel( wfMsg( 'translate-import-from-wiki' ),
 				'upload-type', 'wiki', 'mw-translate-up-wiki',
 				$this->request->getText( 'upload-type' ) === 'wiki' ) .
 			"\n</td><td>\n" .
@@ -164,9 +164,9 @@ class SpecialImportTranslations extends SpecialPage {
 		$source = $this->request->getText( 'upload-type' );
 
 		if ( $source === 'url' ) {
-			#return array( 'type-not-supported', $source );
+			# return array( 'type-not-supported', $source );
 			$url = $this->request->getText( 'upload-url' );
-			$filedata = Http::get( $url );;
+			$filedata = Http::get( $url ); ;
 			if ( $filedata ) {
 				return array( 'ok' );
 			} else {
@@ -206,7 +206,7 @@ class SpecialImportTranslations extends SpecialPage {
 				),
 				'BASIC' => array(
 					'class' => 'FileBasedMessageGroup',
-					'namespace' => -1,
+					'namespace' => - 1,
 				)
 			)
 		);
@@ -218,13 +218,13 @@ class SpecialImportTranslations extends SpecialPage {
 		$metadata = $data['METADATA'];
 
 		// This should catch everything that is not a po file exported form us
-		if ( !isset($metadata['code']) || !isset($metadata['group']) ) {
+		if ( !isset( $metadata['code'] ) || !isset( $metadata['group'] ) ) {
 			return array( 'no-headers' );
 		}
 
 		// And check for stupid editors which like to drop msgctxt..
 		// which unfortunately breaks submission
-		if ( isset($metadata['warnings']) ) {
+		if ( isset( $metadata['warnings'] ) ) {
 			global $wgLang;
 			return array( 'warnings', $wgLang->commaList( $metadata['warnings'] ) );
 		}
@@ -235,7 +235,7 @@ class SpecialImportTranslations extends SpecialPage {
 	protected function setCachedData( $data ) {
 		global $wgMemc;
 		$key = wfMemcKey( 'translate', 'webimport', $this->user->getId() );
-		$wgMemc->set( $key, $data, 60*15 ); // 15 minutes
+		$wgMemc->set( $key, $data, 60 * 15 ); // 15 minutes
 	}
 
 	protected function getCachedData() {

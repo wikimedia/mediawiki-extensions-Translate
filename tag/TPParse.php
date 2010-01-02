@@ -19,7 +19,7 @@ class TPParse {
 	}
 
 	public function countSections() {
-		return count($this->sections);
+		return count( $this->sections );
 	}
 
 	public function getTemplate() {
@@ -49,11 +49,11 @@ class TPParse {
 		foreach ( $sections as $s ) {
 			$s->type = 'old';
 
-			if ( $s->id === -1 ) {
+			if ( $s->id === - 1 ) {
 				$s->type = 'new';
 				$s->id = ++$highest;
 			} else {
-				if ( isset($this->dbSections[$s->id]) ) {
+				if ( isset( $this->dbSections[$s->id] ) ) {
 					$storedText = $this->dbSections[$s->id]->text;
 					if ( $s->text !== $storedText ) {
 						$s->type = 'changed';
@@ -71,8 +71,8 @@ class TPParse {
 
 		$deleted = $this->dbSections;
 		foreach ( $sections as $s ) {
-			if ( isset($deleted[$s->id]) )
-				unset($deleted[$s->id]);
+			if ( isset( $deleted[$s->id] ) )
+				unset( $deleted[$s->id] );
 		}
 		return $deleted;
 	}
@@ -115,8 +115,8 @@ class TPParse {
 		$collection->loadTranslations();
 
 		foreach ( $this->sections as $ph => $s ) {
-			if ( isset($collection[$prefix.$s->id]) ) {
-				$msg = $collection[$prefix.$s->id];
+			if ( isset( $collection[$prefix . $s->id] ) ) {
+				$msg = $collection[$prefix . $s->id];
 				if ( $msg->translation() === null ) {
 					// Just use the orignal string
 					$text = str_replace( $ph, $s->getTextForTrans(), $text );
@@ -131,7 +131,7 @@ class TPParse {
 						$sectiontext = str_replace( $key, $value, $sectiontext );
 					}
 
-					if ( $msg->hasTag('fuzzy') ) {
+					if ( $msg->hasTag( 'fuzzy' ) ) {
 						$sectiontext = "<div class=\"mw-translate-fuzzy\">\n$sectiontext\n</div>";
 					}
 					$text = str_replace( $ph, $sectiontext, $text );

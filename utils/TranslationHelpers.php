@@ -105,7 +105,7 @@ class TranslationHelpers {
 			'definition' => array( $this, 'getDefinitionBox' ),
 			'check' => array( $this, 'getCheckBox' ),
 		);
-		if ( $types !== null ) foreach( $types as $type ) unset($all[$type]);
+		if ( $types !== null ) foreach ( $types as $type ) unset( $all[$type] );
 
 		$boxes = array();
 		foreach ( $all as $type => $cb ) {
@@ -113,7 +113,7 @@ class TranslationHelpers {
 			if ( $box ) $boxes[$type] = $box;
 		}
 
-		if ( count($boxes) ) {
+		if ( count( $boxes ) ) {
 			return Html::rawElement( 'div', array( 'class' => 'mw-sp-translate-edit-fields' ), implode( "\n\n", $boxes ) );
 		} else {
 			throw new MWException( "no boxes" );
@@ -137,7 +137,7 @@ class TranslationHelpers {
 		// Fetch suggestions
 		$server = $wgTranslateTM['server'];
 		$port   = $wgTranslateTM['port'];
-		$timeout= $wgTranslateTM['timeout'];
+		$timeout = $wgTranslateTM['timeout'];
 		$def = rawurlencode( $definition );
 		$url = "$server:$port/tmserver/en/$code/unit/$def";
 		$suggestions = Http::get( $url, $timeout );
@@ -157,7 +157,7 @@ class TranslationHelpers {
 		}
 
 		// Enclose if there is more than one box
-		if ( count($boxes) ) {
+		if ( count( $boxes ) ) {
 			$sep = Html::element( 'hr', array( 'class' => 'mw-translate-sep' ) );
 			return TranslateUtils::fieldset( wfMsgHtml( 'translate-edit-tmsugs' ),
 				implode( "$sep\n", $boxes ), array( 'class' => 'mw-translate-edit-tmsugs' ) );
@@ -184,7 +184,7 @@ class TranslationHelpers {
 
 		$label =
 			wfMsg( 'translate-edit-definition' ) .
-			wfMsg( 'word-separator') .
+			wfMsg( 'word-separator' ) .
 			wfMsg( 'parentheses', $title );
 
 		$msg = Html::rawElement( 'span',
@@ -204,8 +204,8 @@ class TranslationHelpers {
 		$code = $this->targetLanguage;
 		$en = $this->getDefinition();
 
-		if ( strval($translation) === '' ) return null;
-		if( $code === $wgTranslateDocumentationLanguageCode) return null;
+		if ( strval( $translation ) === '' ) return null;
+		if ( $code === $wgTranslateDocumentationLanguageCode ) return null;
 
 		$checker = $this->group->getChecker();
 		if ( !$checker ) return null;
@@ -215,7 +215,7 @@ class TranslationHelpers {
 		$message->setTranslation( $translation );
 
 		$checks = $checker->checkMessage( $message, $code );
-		if ( !count($checks) ) return null;
+		if ( !count( $checks ) ) return null;
 
 		$checkMessages = array();
 		foreach ( $checks as $checkParams ) {
@@ -249,7 +249,7 @@ class TranslationHelpers {
 			$target = Title::makeTitleSafe( $ns, "$page/$fbcode" );
 			if ( $target ) {
 				$label = self::editLink( $target,
-					htmlspecialchars($label), array( 'action' => 'edit' )
+					htmlspecialchars( $label ), array( 'action' => 'edit' )
 				);
 			}
 
@@ -258,7 +258,7 @@ class TranslationHelpers {
 			$boxes[] = Html::rawElement( 'div', $params, self::legend( $label ) . $text . self::clear() );
 		}
 
-		if ( count($boxes) ) {
+		if ( count( $boxes ) ) {
 			$sep = Html::element( 'hr', array( 'class' => 'mw-translate-sep' ) );
 			return TranslateUtils::fieldset( wfMsgHtml( 'translate-edit-in-other-languages' , $page ),
 				implode( "$sep\n", $boxes ), array( 'class' => 'mw-sp-translate-edit-inother' ) );
@@ -325,7 +325,7 @@ class TranslationHelpers {
 		$preference = $wgUser->getOption( 'translate-editlangs' );
 		if ( $preference !== 'default' ) {
 			$fallbacks = array_map( 'trim', explode( ',', $preference ) );
-			foreach( $fallbacks as $k => $v ) if ( $v === $code ) unset($fallbacks[$k]);
+			foreach ( $fallbacks as $k => $v ) if ( $v === $code ) unset( $fallbacks[$k] );
 			return $fallbacks;
 		}
 
@@ -369,7 +369,7 @@ class TranslationHelpers {
 
 		if ( !$title ) $title = "$name ($code)";
 
-		if( $makelink ) {
+		if ( $makelink ) {
 			$linkTitle = Title::newFromText( $makelink );
 			$title = $skin->link(
 				$linkTitle,

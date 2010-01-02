@@ -39,7 +39,7 @@ class MessageIndexRebuilder {
 		global $wgCacheDirectory;
 		$filename = "$wgCacheDirectory/translate_messageindex.cdb";
 		$writer = CdbWriter::open( $filename );
-		$writer->set( 'map', serialize($hugearray) );
+		$writer->set( 'map', serialize( $hugearray ) );
 		$writer->close();
 	}
 
@@ -74,7 +74,7 @@ class MessageIndexRebuilder {
 					STDERR( "Key $key already belongs to $to, conflict with $id" );
 				}
 
-				if ( is_array($hugearray[$key]) ) {
+				if ( is_array( $hugearray[$key] ) ) {
 					// Hard work is already done, just add a new reference
 					$hugearray[$key][] = &$id;
 				} else {
@@ -82,7 +82,7 @@ class MessageIndexRebuilder {
 					// replace the references value, but to store a array of new
 					// references instead. References are hard!
 					$value = &$hugearray[$key];
-					unset($hugearray[$key]);
+					unset( $hugearray[$key] );
 					$hugearray[$key] = array( &$value, &$id );
 				}
 			} else {

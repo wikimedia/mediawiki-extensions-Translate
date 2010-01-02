@@ -78,7 +78,7 @@ foreach ( $langs as $l ) {
 	$matches = array();
 	preg_match( '~^(\$[a-zA-Z]+)\s*=~m', $export, $matches );
 
-	if ( !isset($matches[1]) ) continue;
+	if ( !isset( $matches[1] ) ) continue;
 
 	# remove useles comment
 	$export = preg_replace( "~^# .*$\n~m", '', $export );
@@ -98,7 +98,7 @@ foreach ( $langs as $l ) {
 
 	$data = file_get_contents( $file );
 
-	$export = trim($export) . "\n";
+	$export = trim( $export ) . "\n";
 	$escExport = addcslashes( $export, '\\$' ); # Darn backreferences
 
 	$outFile = $options['target'] . '/' . $group->getMessageFile( $l );

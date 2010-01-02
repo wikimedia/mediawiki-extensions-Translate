@@ -17,13 +17,13 @@ class PremadeMediawikiExtensionGroups {
 		if ( $this->groups !== null ) return;
 
 		global $wgAutoloadClasses, $IP, $wgConfigureExtDir;
-		if( !isset( $wgConfigureExtDir ) ) {
+		if ( !isset( $wgConfigureExtDir ) ) {
 			$wgConfigureExtDir = "$IP/extensions/";
 		}
 		$wgAutoloadClasses['TxtDef'] = $wgConfigureExtDir . "Configure/load_txt_def/TxtDef.php";
 		if ( $this->useConfigure && class_exists( 'TxtDef' ) ) {
 			$tmp = TxtDef::loadFromFile( $wgConfigureExtDir . "Configure/settings/Settings-ext.txt" );
-			$configureData = array_combine( array_map( array( __CLASS__, 'foldId' ), array_keys($tmp)), array_values($tmp) );
+			$configureData = array_combine( array_map( array( __CLASS__, 'foldId' ), array_keys( $tmp ) ), array_values( $tmp ) );
 		} else {
 			$configureData = array();
 		}
@@ -177,7 +177,7 @@ class PremadeMediawikiExtensionGroups {
 			'ext-0-wikitravel'        => 'AllWikitravelExtensionsGroup',
 			'ext-collection-0-all'    => 'AllCollectionExtensionsGroup',
 			'ext-flaggedrevs-0-all'   => 'AllFlaggedRevsExtensionsGroup',
-			'ext-readerfeedback-0-all'=> 'AllReaderFeedbackExtensionsGroup',
+			'ext-readerfeedback-0-all' => 'AllReaderFeedbackExtensionsGroup',
 			'ext-translate-0-all'     => 'AllTranslateExtensionsGroup',
 			'ext-socialprofile-0-all' => 'AllSocialProfileExtensionsGroup',
 			'ext-uniwiki-0-all'       => 'AllUniwikiExtensionsGroup',
@@ -406,8 +406,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-inputbox',
 		'ext-intersection',
 		'ext-labeledsectiontransclusion', // Wikisource
-		'ext-liquidthreads', //2009-11-11: MediaWiki.org and some *.labs.wikimedia.org
-		#'ext-mwembed', // commented out. Also see mediawiki-defines.txt
+		'ext-liquidthreads', // 2009-11-11: MediaWiki.org and some *.labs.wikimedia.org
 		'ext-mwreleases', // 2009-09-29: MediaWiki.org
 		'ext-mwsearch',
 		'ext-newusermessage',

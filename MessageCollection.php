@@ -62,7 +62,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	}
 
 	public function getTags( $type ) {
-		return isset($this->tags[$type]) ? $this->tags[$type] : null;
+		return isset( $this->tags[$type] ) ? $this->tags[$type] : null;
 	}
 
 	public function getAuthors() {
@@ -82,7 +82,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			}
 		}
 
-		#arsort( $authors, SORT_NUMERIC );
+		# arsort( $authors, SORT_NUMERIC );
 		ksort( $authors );
 		foreach ( $authors as $author => $edits ) {
 			if ( $author !== $wgTranslateFuzzyBotName ) {
@@ -153,13 +153,13 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	public function resetForNewLanguage( $code ) {
 		$this->code = $code;
 
-		$this->keys     = $this->fixKeys( array_keys($this->definitions->messages) );
+		$this->keys     = $this->fixKeys( array_keys( $this->definitions->messages ) );
 		$this->dbInfo   = null;
 		$this->dbData   = null;
 		$this->messages = null;
 		$this->infile   = array();
 		$this->authors  = array();
-		unset($this->tags['fuzzy']);
+		unset( $this->tags['fuzzy'] );
 	}
 
 	/**
@@ -183,10 +183,10 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			// Fuzzy messages are not translated messages
 			$translated = $this->filterOnCondition( $hastranslation, $fuzzy );
 			$keys = $this->filterOnCondition( $keys, $translated, $condition );
-		} elseif( $filter === 'changed' ) {
+		} elseif ( $filter === 'changed' ) {
 			$keys = $this->filterChanged( $keys, $condition );
 		} else { // Filter based on tags
-			if ( !isset($this->tags[$filter]) ) {
+			if ( !isset( $this->tags[$filter] ) ) {
 				if ( $filter !== 'optional' && $filter !== 'ignored' ) {
 					throw new MWException( "No tagged messages for custom filter $filter" );
 				}
@@ -201,14 +201,14 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	protected function filterOnCondition( array $keys, array $condKeys, $condition = true ) {
 		if ( $condition === true ) {
 			// Delete $condKeys from $keys
-			foreach( array_keys($condKeys) as $key ) {
-				unset($keys[$key]);
+			foreach ( array_keys( $condKeys ) as $key ) {
+				unset( $keys[$key] );
 			}
 		} else {
 			// Keep the keys which are in $condKeys
-			foreach( array_keys($keys) as $key ) {
-				if ( !isset($condKeys[$key]) ) {
-					unset($keys[$key]);
+			foreach ( array_keys( $keys ) as $key ) {
+				if ( !isset( $condKeys[$key] ) ) {
+					unset( $keys[$key] );
 				}
 			}
 		}
@@ -223,8 +223,8 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$flipKeys = array_flip( $keys );
 		foreach ( $this->dbInfo as $row ) {
 			if ( $row->rt_type !== null ) {
-				if ( !isset($flipKeys[$row->page_title]) ) continue;
-				unset($keys[$flipKeys[$row->page_title]]);
+				if ( !isset( $flipKeys[$row->page_title] ) ) continue;
+				unset( $keys[$flipKeys[$row->page_title]] );
 			}
 		}
 
@@ -241,13 +241,13 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$flipKeys = array_flip( $keys );
 		foreach ( $this->dbInfo as $row ) {
 			// Remove messages which have a translation from keys
-			if ( !isset($flipKeys[$row->page_title]) ) continue;
-			unset($keys[$flipKeys[$row->page_title]]);
+			if ( !isset( $flipKeys[$row->page_title] ) ) continue;
+			unset( $keys[$flipKeys[$row->page_title]] );
 		}
 
 		// Check also if there is something in the file that is not yet in the db
-		foreach ( array_keys($this->infile) as $inf ) {
-			unset($keys[$inf]);
+		foreach ( array_keys( $this->infile ) as $inf ) {
+			unset( $keys[$inf] );
 		}
 
 		// Remove the messages which do not have a translation from the list
@@ -263,12 +263,12 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$flipKeys = array_flip( $keys );
 		foreach ( $this->dbData as $row ) {
 			$realKey = $flipKeys[$row->page_title];
-			if ( !isset($this->infile[$realKey]) ) continue;
+			if ( !isset( $this->infile[$realKey] ) ) continue;
 
 			$text = Revision::getRevisionText( $row );
 			if ( $this->infile[$realKey] === $text ) {
 				// Remove changed messages from the list
-				unset($keys[$realKey]);
+				unset( $keys[$realKey] );
 			}
 		}
 
@@ -284,8 +284,8 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$newkeys = array();
 		$namespace = $this->definitions->namespace;
 		$code = $this->code;
-		foreach( $keys as $key ) {
-			$title = Title::makeTitleSafe( $namespace, $key. '/' . $code );
+		foreach ( $keys as $key ) {
+			$title = Title::makeTitleSafe( $namespace, $key . '/' . $code );
 			if ( !$title ) {
 				wfWarn( "Invalid title $namespace:$key/$code" );
 				continue;
@@ -299,7 +299,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		if ( $this->dbInfo !== null ) return;
 
 		$this->dbInfo = array(); // Something iterable
-		if ( !count($keys) ) return;
+		if ( !count( $keys ) ) return;
 
 		$dbr = wfGetDB( DB_SLAVE );
 
@@ -327,7 +327,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		if ( $this->dbData !== null ) return;
 		
 		$this->dbData = array(); // Something iterable
-		if ( !count($keys) ) return;
+		if ( !count( $keys ) ) return;
 
 		$dbr = wfGetDB( DB_SLAVE );
 
@@ -349,7 +349,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		if ( $this->messages !== null ) return;
 		$messages = array();
 
-		foreach ( array_keys($this->keys) as $key ) {
+		foreach ( array_keys( $this->keys ) as $key ) {
 			$messages[$key] = new ThinMessage( $key, $this->definitions->messages[$key] );
 		}
 
@@ -358,7 +358,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		// Copy rows if any
 		if ( $this->dbData !== null ) {
 			foreach ( $this->dbData as $row ) {
-				if ( !isset($flipKeys[$row->page_title]) ) continue;
+				if ( !isset( $flipKeys[$row->page_title] ) ) continue;
 				$key = $flipKeys[$row->page_title];
 				$messages[$key]->setRow( $row );
 			}
@@ -367,7 +367,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		if ( $this->dbInfo !== null ) {
 			$fuzzy = array();
 			foreach ( $this->dbInfo as $row ) {
-				if ( !isset($flipKeys[$row->page_title]) ) continue;
+				if ( !isset( $flipKeys[$row->page_title] ) ) continue;
 				if ( $row->rt_type !== null ) $fuzzy[] = $flipKeys[$row->page_title];
 			}
 			$this->setTags( 'fuzzy', $fuzzy );
@@ -375,8 +375,8 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 		// Copy tags if any
 		foreach ( $this->tags as $type => $keys ) {
-			foreach( $keys as $key ) {
-				if ( isset($messages[$key]) ) {
+			foreach ( $keys as $key ) {
+				if ( isset( $messages[$key] ) ) {
 					$messages[$key]->setTag( $type );
 				}
 			}
@@ -384,7 +384,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 		// Copy infile if any
 		foreach ( $this->infile as $key => $value ) {
-			if ( isset($messages[$key]) ) {
+			if ( isset( $messages[$key] ) ) {
 				$messages[$key]->setInfile( $value );
 			}
 		}
@@ -427,8 +427,8 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	}
 
 	public function current() {
-		if ( !count($this->messages) ) return false;
-		return current($this->messages);
+		if ( !count( $this->messages ) ) return false;
+		return current( $this->messages );
 	}
 
 	public function key() {
@@ -444,7 +444,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	}
 
 	public function count() {
-		return count($this->keys());
+		return count( $this->keys() );
 	}
 
 }

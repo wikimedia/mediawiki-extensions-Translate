@@ -185,11 +185,11 @@ class TranslateUtils {
 		if ( self::$mi === null ) self::messageIndex();
 
 		# Performance hotspot
-		#$normkey = self::normaliseKey( $namespace, $key );
+		# $normkey = self::normaliseKey( $namespace, $key );
 		$normkey = str_replace( " ", "_", strtolower( "$namespace:$key" ) );
 
 		$group = @self::$mi[$normkey];
-		if ( is_array($group) ) $group = $group[0];
+		if ( is_array( $group ) ) $group = $group[0];
 		return $group;
 	}
 
@@ -197,7 +197,7 @@ class TranslateUtils {
 		if ( self::$mi === null ) self::messageIndex();
 
 		# Performance hotspot
-		#$normkey = self::normaliseKey( $namespace, $key );
+		# $normkey = self::normaliseKey( $namespace, $key );
 		$normkey = str_replace( " ", "_", strtolower( "$namespace:$key" ) );
 
 		return (array) @self::$mi[$normkey];
@@ -210,9 +210,9 @@ class TranslateUtils {
 	public static function messageIndex() {
 		global $wgCacheDirectory;
 		$filename = "$wgCacheDirectory/translate_messageindex.cdb";
-		if ( !file_exists($filename) ) MessageIndexRebuilder::execute();
+		if ( !file_exists( $filename ) ) MessageIndexRebuilder::execute();
 
-		if ( file_exists($filename) ) {
+		if ( file_exists( $filename ) ) {
 			$reader = CdbReader::open( $filename );
 			$keyToGroup = unserialize( $reader->get( 'map' ) );
 		} else {

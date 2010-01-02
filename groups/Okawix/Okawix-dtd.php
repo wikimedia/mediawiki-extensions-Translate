@@ -9,7 +9,7 @@ class OkawixDtdFFS extends SimpleFFS {
 		preg_match_all( ',AUTHOR: ([^\n]+)\n,', $data, $matches );
 		$authors = array();
 
-		for($i = 0;$i < count($matches[1]);$i++) {
+		for ( $i = 0; $i < count( $matches[1] ); $i++ ) {
 			$authors[] = $matches[1][$i];
 		}
 
@@ -20,11 +20,11 @@ class OkawixDtdFFS extends SimpleFFS {
 
 		$messages = array();
 
-		for($i = 0;$i < count($matches[1]);$i++) {
+		for ( $i = 0; $i < count( $matches[1] ); $i++ ) {
 			$messages[$keys[$i]] = str_replace(
-				array('&quot;', '&#34;', '&#39;'),
-				array('"', '"', "'"),
-				$values[$i]);
+				array( '&quot;', '&#34;', '&#39;' ),
+				array( '"', '"', "'" ),
+				$values[$i] );
 		}
 
 		$messages = $this->group->getMangler()->mangle( $messages );
@@ -53,11 +53,11 @@ class OkawixDtdFFS extends SimpleFFS {
 
 			if ( $trans === '' ) continue;
 
-			$trans = str_replace('"', '&quot;', $trans);
+			$trans = str_replace( '"', '&quot;', $trans );
 			$output .= "<!ENTITY $key \"$trans\">\n";
 		}
 
-		return $output ? $header.$output : false;
+		return $output ? $header . $output : false;
 	}
 
 	protected function doHeader( MessageCollection $collection ) {

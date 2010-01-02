@@ -8,7 +8,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 	 * uses and vice versa.
 	 */
 	protected function wikiParameterCheck( $messages, $code, &$warnings ) {
-		foreach( $messages as $message ) {
+		foreach ( $messages as $message ) {
 			$key = $message->key();
 			$definition = $message->definition();
 			$translation = $message->translation();
@@ -20,24 +20,24 @@ class MediaWikiMessageChecker extends MessageChecker {
 			# Check for missing variables in the translation
 			$subcheck = 'missing';
 			$params = self::compareArrays( $defVars[0], $transVars[0] );
-			if ( count($params) ) {
+			if ( count( $params ) ) {
 				$warnings[$key][] = array(
 					array( 'variable', $subcheck, $key, $code ),
 					'translate-checks-parameters',
 					array( 'PARAMS', $params ),
-					array( 'COUNT', count($params) ),
+					array( 'COUNT', count( $params ) ),
 				);
 			}
 
 			# Check for unknown variables in the translation
 			$subcheck = 'unknown';
 			$params = self::compareArrays( $transVars[0], $defVars[0] );
-			if ( count($params) ) {
+			if ( count( $params ) ) {
 				$warnings[$key][] = array(
 					array( 'variable', $subcheck, $key, $code ),
 					'translate-checks-parameters-unknown',
 					array( 'PARAMS', $params ),
-					array( 'COUNT', count($params) ),
+					array( 'COUNT', count( $params ) ),
 				);
 			}
 		}
@@ -53,7 +53,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 	protected function wikiLinksCheck( $messages, $code, &$warnings ) {
 		$tc = Title::legalChars() . '#%{}';
 
-		foreach( $messages as $message ) {
+		foreach ( $messages as $message ) {
 			$key = $message->key();
 			$definition = $message->definition();
 			$translation = $message->translation();
@@ -67,12 +67,12 @@ class MediaWikiMessageChecker extends MessageChecker {
 				$links[] = "[[{$matches[1][$i]}{$matches[2][$i]}]]";
 			}
 
-			if ( count($links) ) {
+			if ( count( $links ) ) {
 				$warnings[$key][] = array(
 					array( 'links', $subcheck, $key, $code ),
 					'translate-checks-links',
 					array( 'PARAMS', $links ),
-					array( 'COUNT', count($links) ),
+					array( 'COUNT', count( $links ) ),
 				);
 			}
 
@@ -85,12 +85,12 @@ class MediaWikiMessageChecker extends MessageChecker {
 				$links[] = "[[{$matches[1][$i]}{$matches[2][$i]}]]";
 			}
 
-			if ( count($links) ) {
+			if ( count( $links ) ) {
 				$warnings[$key][] = array(
 					array( 'links', $subcheck, $key, $code ),
 					'translate-checks-links-missing',
 					array( 'PARAMS', $links ),
-					array( 'COUNT', count($links) ),
+					array( 'COUNT', count( $links ) ),
 				);
 			}
 		}
@@ -100,7 +100,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 	 * Checks if the <br /> and <hr /> tags are using the correct syntax.
 	 */
 	protected function XhtmlCheck( $messages, $code, &$warnings ) {
-		foreach( $messages as $message ) {
+		foreach ( $messages as $message ) {
 			$key = $message->key();
 			$translation = $message->translation();
 			if ( strpos( $translation, '<' ) === false ) continue;
@@ -124,12 +124,12 @@ class MediaWikiMessageChecker extends MessageChecker {
 				}
 			}
 
-			if ( count($wrongTags) ) {
+			if ( count( $wrongTags ) ) {
 				$warnings[$key][] = array(
 					array( 'xhtml', $subcheck, $key, $code ),
 					'translate-checks-xhtml',
 					array( 'PARAMS', $wrongTags ),
-					array( 'COUNT', count($wrongTags) ),
+					array( 'COUNT', count( $wrongTags ) ),
 				);
 			}
 
@@ -143,7 +143,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 	 * @return True if plural magic word is missing.
 	 */
 	protected function pluralCheck( $messages, $code, &$warnings ) {
-		foreach( $messages as $message ) {
+		foreach ( $messages as $message ) {
 			$key = $message->key();
 			$definition = $message->definition();
 			$translation = $message->translation();
@@ -163,7 +163,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 	 * Checks for page names that they have an untranslated namespace.
 	 */
 	protected function pagenameMessagesCheck( $messages, $code, &$warnings ) {
-		foreach( $messages as $message ) {
+		foreach ( $messages as $message ) {
 			$key = $message->key();
 			$definition = $message->definition();
 			$translation = $message->translation();
@@ -188,19 +188,19 @@ class MediaWikiMessageChecker extends MessageChecker {
 	protected function miscMWChecks( $messages, $code, &$warnings ) {
 		$timeList = array( 'protect-expiry-options', 'ipboptions' );
 
-		foreach( $messages as $message ) {
+		foreach ( $messages as $message ) {
 			$key = $message->key();
 			$definition = $message->definition();
 			$translation = $message->translation();
 
 
-			if ( in_array( strtolower($key), $timeList, true ) ) {
+			if ( in_array( strtolower( $key ), $timeList, true ) ) {
 				$defArray = explode( ',', $definition );
 				$traArray = explode( ',', $translation );
 
 				$subcheck = 'timelist-count';
-				$defCount = count($defArray);
-				$traCount = count($traArray);
+				$defCount = count( $defArray );
+				$traCount = count( $traArray );
 				if ( $defCount !== $traCount ) {
 					$warnings[$key][] = array(
 						array( 'miscmw', $subcheck, $key, $code ),
@@ -210,12 +210,12 @@ class MediaWikiMessageChecker extends MessageChecker {
 					continue;
 				}
 
-				for ( $i = 0; $i < count($defArray); $i++ ) {
+				for ( $i = 0; $i < count( $defArray ); $i++ ) {
 					$defItems = array_map( 'trim', explode( ':', $defArray[$i] ) );
 					$traItems = array_map( 'trim', explode( ':', $traArray[$i] ) );
 
 					$subcheck = 'timelist-format';
-					if ( count($traItems) !== 2 ) {
+					if ( count( $traItems ) !== 2 ) {
 						$warnings[$key][] = array(
 							array( 'miscmw', $subcheck, $key, $code ),
 							'translate-checks-format',

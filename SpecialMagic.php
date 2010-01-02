@@ -187,7 +187,7 @@ class SpecialMagic extends SpecialPage {
 
 	protected function outputErrors( $errors ) {
 		global $wgLang, $wgOut;
-		$count = $wgLang->formatNum( count($errors) );
+		$count = $wgLang->formatNum( count( $errors ) );
 		$wgOut->addWikiMsg( 'translate-magic-errors', $count );
 		$wgOut->addHTML( '<ol>' );
 		foreach ( $errors as $error ) {

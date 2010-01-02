@@ -12,7 +12,7 @@
 $optionsWithArgs = array( 'target' );
 require( dirname( __FILE__ ) . '/cli.inc' );
 
-if (isset($options['target'])) {
+if ( isset( $options['target'] ) ) {
 	$targetf = $options['target'];
 } else {
 	$targetf = 'toolserver-export.tsv';
@@ -20,7 +20,7 @@ if (isset($options['target'])) {
 
 $index = unserialize( file_get_contents( TRANSLATE_INDEXFILE ) );
 
-## This obviously doesn't work with external storage etc
+# This obviously doesn't work with external storage etc
 $dbr = wfGetDB( DB_SLAVE );
 $tables = array( 'page', 'revision', 'text' );
 $vars = array( 'page_namespace', 'page_title', 'old_text', 'old_flags' );
@@ -46,7 +46,7 @@ foreach ( $res as $r ) {
 	if ( $key === '' ) continue;
 	if ( $code === '' ) continue;
 
-	$group = @$index[strtolower("{$r->page_namespace}:$key")];
+	$group = @$index[strtolower( "{$r->page_namespace}:$key" )];
 	if ( $group === null ) continue;
 
 	$from = array( "\\",   "\n",   "\t"   );
@@ -57,7 +57,7 @@ foreach ( $res as $r ) {
 		str_replace( $from, $to, $r->old_text ) . "\t" . // Contents
 		str_replace( $from, $to, $code        ) . "\t" . // Code
 		str_replace( $from, $to, $group       ) . "\n" . // Component
-	'');
+	'' );
 }
 
 fclose( $target );

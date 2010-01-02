@@ -83,10 +83,10 @@ foreach ( $groups as $g ) {
 	}
 }
 
-
 function tagFuzzy( $problematic ) {
-	if ( !count($problematic) ) return;
-
+	if ( !count( $problematic ) ) {
+		return;
+	}
 
 	$db = wfGetDB( DB_MASTER );
 	$id = $db->selectField( 'revtag_type', 'rtt_id', array( 'rtt_name' => 'fuzzy' ), __METHOD__ );

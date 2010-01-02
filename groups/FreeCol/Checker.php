@@ -14,7 +14,7 @@ class FreeColMessageChecker extends MessageChecker {
 	 * @param $warnings Array where warnings are appended to.
 	 */
 	protected function FreeColVariablesCheck( $messages, $code, &$warnings ) {
-		foreach( $messages as $message ) {
+		foreach ( $messages as $message ) {
 			$key = $message->key();
 			$definition = $message->definition();
 			$translation = $message->translation();
@@ -26,24 +26,24 @@ class FreeColMessageChecker extends MessageChecker {
 			# Check for missing variables in the translation
 			$subcheck = 'missing';
 			$params = self::compareArrays( $defVars[0], $transVars[0] );
-			if ( count($params) ) {
+			if ( count( $params ) ) {
 				$warnings[$key][] = array(
 					array( 'variable', $subcheck, $key, $code ),
 					'translate-checks-parameters',
 					array( 'PARAMS', $params ),
-					array( 'COUNT', count($params) ),
+					array( 'COUNT', count( $params ) ),
 				);
 			}
 
 			# Check for unknown variables in the translation
 			$subcheck = 'unknown';
 			$params = self::compareArrays( $transVars[0], $defVars[0] );
-			if ( count($params) ) {
+			if ( count( $params ) ) {
 				$warnings[$key][] = array(
 					array( 'variable', $subcheck, $key, $code ),
 					'translate-checks-parameters-unknown',
 					array( 'PARAMS', $params ),
-					array( 'COUNT', count($params) ),
+					array( 'COUNT', count( $params ) ),
 				);
 			}
 		}
@@ -57,7 +57,7 @@ class FreeColMessageChecker extends MessageChecker {
 	 * @param $warnings Array where warnings are appended to.
 	 */
 	protected function FreeColEscapesCheck( $messages, $code, &$warnings ) {
-		foreach( $messages as $message ) {
+		foreach ( $messages as $message ) {
 			$key = $message->key();
 			$translation = $message->translation();
 
@@ -67,12 +67,12 @@ class FreeColMessageChecker extends MessageChecker {
 			# Check for missing variables in the translation
 			$subcheck = 'invalid';
 			$params = $transVars[0];
-			if ( count($params) ) {
+			if ( count( $params ) ) {
 				$warnings[$key][] = array(
 					array( 'escape', $subcheck, $key, $code ),
 					'translate-checks-escape',
 					array( 'PARAMS', $params ),
-					array( 'COUNT', count($params) ),
+					array( 'COUNT', count( $params ) ),
 				);
 			}
 		}

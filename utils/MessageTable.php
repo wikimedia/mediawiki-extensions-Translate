@@ -39,13 +39,13 @@ class MessageTable {
 	}
 
 	public function setHeaderTextMessage( $type, $value ) {
-		if ( !isset($this->headers[$type]) ) throw new MWException( "Unexpected type $type" );
+		if ( !isset( $this->headers[$type] ) ) throw new MWException( "Unexpected type $type" );
 		$this->headers[$type] = array( 'msg', $value );
 	}
 
 	public function setHeaderText( $type, $value ) {
-		if ( !isset($this->headers[$type]) ) throw new MWException( "Unexpected type $type" );
-		$this->headers[$type] = array( 'raw', htmlspecialchars($value) );
+		if ( !isset( $this->headers[$type] ) ) throw new MWException( "Unexpected type $type" );
+		$this->headers[$type] = array( 'raw', htmlspecialchars( $value ) );
 	}
 
 	// This is like so because jQuery got removed from core
@@ -84,7 +84,7 @@ class MessageTable {
 		} else {
 			$tableheader .= Xml::openElement( 'tr' );
 			$tableheader .= Xml::tags( 'th', null, $this->headerText( 'table' ) );
-			$tableheader .= Xml::tags( 'th', null, $this->headerText( 'current' ));
+			$tableheader .= Xml::tags( 'th', null, $this->headerText( 'current' ) );
 			$tableheader .= Xml::closeElement( 'tr' );
 		}
 
@@ -168,7 +168,7 @@ class MessageTable {
 
 
 	protected function headerText( $type ) {
-		if ( !isset($this->headers[$type]) ) throw new MWException( "Unexpected type $type" );
+		if ( !isset( $this->headers[$type] ) ) throw new MWException( "Unexpected type $type" );
 
 		list( $format, $value ) = $this->headers[$type];
 		if ( $format === 'msg' ) {

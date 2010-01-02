@@ -160,10 +160,10 @@ class ViewUntranslatedTask extends ReviewMessagesTask {
 		$this->collection->filter( 'optional' );
 
 		// Update the cache while we are at it
-		$total = count($this->collection);
+		$total = count( $this->collection );
 		$this->collection->filter( 'translated' );
-		$translated = $total - count($this->collection);
-		$fuzzy = count($this->collection->getTags('fuzzy'));
+		$translated = $total - count( $this->collection );
+		$fuzzy = count( $this->collection->getTags( 'fuzzy' ) );
 		
 		$cache = new ArrayMemoryCache( 'groupstats' );
 		$cache->set( $this->group->getID(), $code, array( $fuzzy, $translated, $total ) );
@@ -339,7 +339,7 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 			if ( $translation === null ) $translation = '';
 
 			# CASE3: optional messages; accept only if different
-			if ( $m->hasTag( 'optional') ) $flags[] = 'optional';
+			if ( $m->hasTag( 'optional' ) ) $flags[] = 'optional';
 
 			# Remove fuzzy markings before export
 			if ( strpos( $translation, TRANSLATE_FUZZY ) !== false ) {

@@ -10,6 +10,6 @@
  */
 
 
-$dir = dirname(__FILE__);
-$wgAutoloadClasses['FreeColMessageGroup'] = dirname(__FILE__) .'/FreeCol.php';
-$wgAutoloadClasses['FreeColMessageChecker'] = dirname(__FILE__) .'/Checker.php';
+$dir = dirname( __FILE__ );
+$wgAutoloadClasses['FreeColMessageGroup'] = dirname( __FILE__ ) . '/FreeCol.php';
+$wgAutoloadClasses['FreeColMessageChecker'] = dirname( __FILE__ ) . '/Checker.php';

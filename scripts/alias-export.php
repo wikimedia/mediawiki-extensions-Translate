@@ -60,7 +60,7 @@ foreach ( $groups as $group ) {
 		$group->setMessageFile( $file );
 		// FIXME: getVariableNameAlias() is not read from mediawiki-defines.txt here apparently.
 		// Hacked this one exception in for now
-		if( $groupId == 'ext-wikilog' ) {
+		if ( $groupId == 'ext-wikilog' ) {
 			$group->setVariableNameAlias( 'specialPageAliases' );
 		} else {
 			$group->setVariableName( $group->getVariableNameAlias() );

@@ -3,7 +3,7 @@
 class CommonistMessageGroup extends MessageGroupOld {
 	protected $label = 'Commonist';
 	protected $id    = 'out-commonist';
-	#protected $type  = '';
+	# protected $type  = '';
 
 	protected   $fileDir  = '__BUG__';
 

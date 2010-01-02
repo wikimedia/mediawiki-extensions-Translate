@@ -15,11 +15,11 @@ class MessageChecker {
 			$file = dirname( __FILE__ ) . '/check-blacklist.php';
 			$list = ResourceLoader::loadVariableFromPHPFile( $file, 'checkBlacklist' );
 			$keys = array( 'group', 'check', 'subcheck', 'code', 'message' );
-			foreach( $list as $key => $pattern ) {
+			foreach ( $list as $key => $pattern ) {
 				foreach ( $keys as $checkKey ) {
-					if ( !isset($pattern[$checkKey]) ) {
+					if ( !isset( $pattern[$checkKey] ) ) {
 						$list[$key][$checkKey] = '#';
-					} elseif ( is_array($pattern[$checkKey]) ) {
+					} elseif ( is_array( $pattern[$checkKey] ) ) {
 						$list[$key][$checkKey] =
 							array_map( array( $this, 'foldValue' ), $pattern[$checkKey] );
 					} else {
@@ -55,8 +55,8 @@ class MessageChecker {
 	 */
 	public function setChecks( $checks ) {
 		foreach ( $checks as $k => $c ) {
-			if ( !is_callable($c) ) {
-				unset($checks[$k]);
+			if ( !is_callable( $c ) ) {
+				unset( $checks[$k] );
 				wfWarn( "Check function for check $k is not callable" );
 			}
 		}
@@ -64,7 +64,7 @@ class MessageChecker {
 	}
 
 	public function addCheck( $check ) {
-		if ( is_callable($check) ) {
+		if ( is_callable( $check ) ) {
 			$this->checks[] = $check;
 		}
 	}
@@ -77,11 +77,11 @@ class MessageChecker {
 	public function checkMessage( TMessage $message, $code ) {
 		$warningsArray = array();
 		$messages = array( $message );
-		foreach( $this->checks as $check ) {
+		foreach ( $this->checks as $check ) {
 			call_user_func_array( $check, array( $messages, $code, &$warningsArray ) );
 		}
 		$warningsArray = $this->filterWarnings( $warningsArray );
-		if ( !count($warningsArray) ) return array();
+		if ( !count( $warningsArray ) ) return array();
 		$warnings = $warningsArray[$message->key()];
 		$warnings = $this->fixMessageParams( $warnings );
 		return $warnings;
@@ -94,9 +94,9 @@ class MessageChecker {
 	public function checkMessageFast( TMessage $message, $code ) {
 		$warningsArray = array();
 		$messages = array( $message );
-		foreach( $this->checks as $check ) {
+		foreach ( $this->checks as $check ) {
 			call_user_func_array( $check, array( $messages, $code, &$warningsArray ) );
-			if ( count($warningsArray) ) return true;
+			if ( count( $warningsArray ) ) return true;
 		}
 
 		return false;
@@ -113,7 +113,7 @@ class MessageChecker {
 			// ... each which have array of warnings
 			foreach ( $warnings as $wkey => $warning ) {
 				$check = array_shift( $warning );
-				foreach( self::$globalBlacklist as $pattern ) {
+				foreach ( self::$globalBlacklist as $pattern ) {
 					if ( !$this->match( $pattern['group'], $groupId ) ) continue;
 					if ( !$this->match( $pattern['check'], $check[0] ) ) continue;
 					if ( !$this->match( $pattern['subcheck'], $check[1] ) ) continue;
@@ -134,10 +134,10 @@ class MessageChecker {
 	protected function match( $pattern, $value ) {
 		if ( $pattern === '#' ) {
 			return true;
-		} elseif( is_array( $pattern ) ) {
-			return in_array( strtolower($value), $pattern, true );
+		} elseif ( is_array( $pattern ) ) {
+			return in_array( strtolower( $value ), $pattern, true );
 		} else {
-			return strtolower($value) === $pattern;
+			return strtolower( $value ) === $pattern;
 		}
 	}
 
@@ -151,16 +151,16 @@ class MessageChecker {
 			array_shift( $warning );
 			$message = array( array_shift( $warning ) );
 			foreach ( $warning as $param ) {
-				if ( !is_array( $param ) ) { 
+				if ( !is_array( $param ) ) {
 					$message[] = $param;
 				} else {
 					list( $type, $value ) = $param;
 					if ( $type === 'COUNT' ) {
 						$message[] = $wgLang->formatNum( $value );
-					} elseif( $type === 'PARAMS' ) {
+					} elseif ( $type === 'PARAMS' ) {
 						$message[] = $wgLang->commaList( $value );
 					} else {
-						throw new MWException( "Unknown type $type");
+						throw new MWException( "Unknown type $type" );
 					}
 				}
 			}
@@ -191,7 +191,7 @@ class MessageChecker {
 	 * @param $warnings Array where warnings are appended to.
 	 */
 	protected function printfCheck( $messages, $code, &$warnings ) {
-		foreach( $messages as $message ) {
+		foreach ( $messages as $message ) {
 			$key = $message->key();
 			$definition = $message->definition();
 			$translation = $message->translation();
@@ -202,24 +202,24 @@ class MessageChecker {
 			# Check for missing variables in the translation
 			$subcheck = 'missing';
 			$params = self::compareArrays( $defVars[0], $transVars[0] );
-			if ( count($params) ) {
+			if ( count( $params ) ) {
 				$warnings[$key][] = array(
 					array( 'printf', $subcheck, $key, $code ),
 					'translate-checks-parameters',
 					array( 'PARAMS', $params ),
-					array( 'COUNT', count($params) ),
+					array( 'COUNT', count( $params ) ),
 				);
 			}
 
 			# Check for unknown variables in the translation
 			$subcheck = 'unknown';
 			$params = self::compareArrays( $transVars[0], $defVars[0] );
-			if ( count($params) ) {
+			if ( count( $params ) ) {
 				$warnings[$key][] = array(
 					array( 'printf', $subcheck, $key, $code ),
 					'translate-checks-parameters-unknown',
 					array( 'PARAMS', $params ),
-					array( 'COUNT', count($params) ),
+					array( 'COUNT', count( $params ) ),
 				);
 			}
 		}
@@ -234,7 +234,7 @@ class MessageChecker {
 	 * @param $warnings Array where warnings are appended to.
 	 */
 	protected function braceBalanceCheck( $messages, $code, &$warnings ) {
-		foreach( $messages as $message ) {
+		foreach ( $messages as $message ) {
 			$key = $message->key();
 			$translation = $message->translation();
 			$translation = preg_replace( '/[^{}[\]()]/u', '', $translation );
@@ -257,12 +257,12 @@ class MessageChecker {
 			if ( $counts['{'] !== $counts['}'] ) $balance[] = '{}: ' . ( $counts['{'] - $counts['}'] );
 			if ( $counts['('] !== $counts[')'] ) $balance[] = '(): ' . ( $counts['('] - $counts[')'] );
 
-			if ( count($balance) ) {
+			if ( count( $balance ) ) {
 				$warnings[$key][] = array(
 					array( 'balance', $subcheck, $key, $code ),
 					'translate-checks-balance',
 					array( 'PARAMS', $balance ),
-					array( 'COUNT', count($balance) ),
+					array( 'COUNT', count( $balance ) ),
 				);
 			}
 		}

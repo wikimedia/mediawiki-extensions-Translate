@@ -11,8 +11,9 @@ class TranslateToolbox {
 		global $wgTitle, $wgTranslateMessageNamespaces;
 
 		$ns = $wgTitle->getNamespace();
-		if ( !in_array( $ns, $wgTranslateMessageNamespaces) ) return true;
-
+		if ( !in_array( $ns, $wgTranslateMessageNamespaces ) ) {
+			return true;
+		}
 
 		$inMessageGroup = TranslateUtils::messageKeyToGroup( $wgTitle->getNamespace(), $wgTitle->getBaseText() );
 

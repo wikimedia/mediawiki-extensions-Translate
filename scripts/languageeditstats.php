@@ -56,10 +56,10 @@ if ( isset( $options['bots'] ) ) {
 
 $namespaces = array();
 if ( isset( $options['ns'] ) ) {
-	$input = explode(',', $options['ns'] );
+	$input = explode( ',', $options['ns'] );
 
-	foreach( $input as $namespace ) {
-		if( is_numeric( $namespace ) ) {
+	foreach ( $input as $namespace ) {
+		if ( is_numeric( $namespace ) ) {
 			array_push( $namespaces, $namespace );
 		}
 	}

@@ -3,9 +3,9 @@ class TranslateYaml {
 
 	public static function loadString( $text ) {
 		global $wgTranslateYamlLibrary;
-		switch ($wgTranslateYamlLibrary) {
+		switch ( $wgTranslateYamlLibrary ) {
 			case 'spyc':
-				require_once( dirname(__FILE__).'/../spyc/spyc.php' );
+				require_once( dirname( __FILE__ ) . '/../spyc/spyc.php' );
 				return spyc_load( $text );
 			case 'syck':
 				return self::syckLoad( $text );
@@ -21,9 +21,9 @@ class TranslateYaml {
 
 	public static function dump( $text ) {
 		global $wgTranslateYamlLibrary;
-		switch ($wgTranslateYamlLibrary) {
+		switch ( $wgTranslateYamlLibrary ) {
 			case 'spyc':
-				require_once( dirname(__FILE__).'/../spyc/spyc.php' );
+				require_once( dirname( __FILE__ ) . '/../spyc/spyc.php' );
 				return Spyc::YAMLDump( $text );
 			case 'syck':
 				return self::syckDump( $text );
@@ -49,14 +49,14 @@ class TranslateYaml {
 			   "' 2>&1";
 		$out = wfShellExec( $cmd, &$ret );
 		if ( $ret != 0 ) {
-			wfDebugDieBacktrace("The command '$cmd' died in execution with exit code '$ret': $out");
+			wfDebugDieBacktrace( "The command '$cmd' died in execution with exit code '$ret': $out" );
 		}
 
-		$serialized = file_get_contents("$tf.serialized");
-		$php_data = unserialize($serialized);
+		$serialized = file_get_contents( "$tf.serialized" );
+		$php_data = unserialize( $serialized );
 
-		unlink($tf);
-		unlink("$tf.serialized");
+		unlink( $tf );
+		unlink( "$tf.serialized" );
 		
 		return $php_data;
 	}
@@ -92,17 +92,17 @@ class TranslateYaml {
 			   "' 2>&1";
 		$out = wfShellExec( $cmd, &$ret );
 		if ( $ret != 0 ) {
-			wfDebugDieBacktrace("The command '$cmd' died in execution with exit code '$ret': $out");
+			wfDebugDieBacktrace( "The command '$cmd' died in execution with exit code '$ret': $out" );
 		}
 
-		$yaml = file_get_contents("$tf.yaml");
+		$yaml = file_get_contents( "$tf.yaml" );
 
-		unlink($tf);
-		unlink("$tf.yaml");
+		unlink( $tf );
+		unlink( "$tf.yaml" );
 		
 		return $yaml;
 	}
 }
 
 // BC
-class TranslateSpyc extends TranslateYaml {}
+class TranslateSpyc extends TranslateYaml { }

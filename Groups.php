@@ -25,7 +25,7 @@ abstract class MessageGroupBase implements MessageGroup {
 	protected $conf;
 	protected $namespace;
 
-	protected function __construct() {}
+	protected function __construct() { }
 	
 	public static function factory( $conf ) {
 		$obj = new $conf['BASIC']['class']();
@@ -44,24 +44,24 @@ abstract class MessageGroupBase implements MessageGroup {
 	public function isMeta() { return $this->getFromConf( 'BASIC', 'meta' ); }
 
 	protected function getFromConf( $section, $key ) {
-		return isset($this->conf[$section][$key]) ? $this->conf[$section][$key] : null;
+		return isset( $this->conf[$section][$key] ) ? $this->conf[$section][$key] : null;
 	}
 
 	public function getFFS() {
-		$class = $this->getFromConf( 'FILES','class' );
+		$class = $this->getFromConf( 'FILES', 'class' );
 		if ( $class === null ) return null;
-		if ( !class_exists($class) ) throw new MWException( "FFS class $class does not exists" );
+		if ( !class_exists( $class ) ) throw new MWException( "FFS class $class does not exists" );
 		return new $class( $this );
 	}
 
 	public function getChecker() {
-		$class = $this->getFromConf( 'CHECKER','class' );
+		$class = $this->getFromConf( 'CHECKER', 'class' );
 		if ( $class === null ) return null;
-		if ( !class_exists($class) ) throw new MWException( "Checker class $class does not exists" );
+		if ( !class_exists( $class ) ) throw new MWException( "Checker class $class does not exists" );
 
-		$checker = new $class($this);
-		$checks = $this->getFromConf( 'CHECKER','checks' );
-		if ( !is_array($checks) ) throw new MWException( "Checker class $class not supplied with proper checks" );
+		$checker = new $class( $this );
+		$checks = $this->getFromConf( 'CHECKER', 'checks' );
+		if ( !is_array( $checks ) ) throw new MWException( "Checker class $class not supplied with proper checks" );
 
 		foreach ( $checks as $check ) {
 			$checker->addCheck( array( $checker, $check ) );
@@ -71,17 +71,17 @@ abstract class MessageGroupBase implements MessageGroup {
 	}
 
 	public function getMangler() {
-		if ( !isset($this->mangler) ) {
+		if ( !isset( $this->mangler ) ) {
 
-			$class = $this->getFromConf( 'MANGLER','class' );
+			$class = $this->getFromConf( 'MANGLER', 'class' );
 			if ( $class === null ) {
 				$this->mangler = StringMatcher::emptyMatcher();
 				return $this->mangler;
 			}
 
-			if ( !class_exists($class) ) throw new MWException( "Mangler class $class does not exists" );
+			if ( !class_exists( $class ) ) throw new MWException( "Mangler class $class does not exists" );
 			// TODO: branch handling, merge with upper branch keys
-			$class = $this->getFromConf( 'MANGLER','class' );
+			$class = $this->getFromConf( 'MANGLER', 'class' );
 			$this->mangler = new $class();
 			$this->mangler->setConf( $this->conf['MANGLER'] );
 		}
@@ -106,16 +106,16 @@ abstract class MessageGroupBase implements MessageGroup {
 
 	public function getMessage( $key, $code ) {
 		$cache = new MessageGroupCache( $this );
-		if ( $cache->exists($code) ) {
+		if ( $cache->exists( $code ) ) {
 			$msg = $cache->get( $key, $code );
 
 			if ( $msg !== false ) return $msg;
 			// Try harder
 			$nkey = str_replace( ' ', '_', strtolower( $key ) );
-			$keys = $cache->getKeys($code);
+			$keys = $cache->getKeys( $code );
 			foreach ( $keys as $k ) {
 				if ( $nkey === str_replace( ' ', '_', strtolower( $k ) ) ) {
-					return $cache->get($k);
+					return $cache->get( $k );
 				}
 			}
 			return null;
@@ -125,12 +125,12 @@ abstract class MessageGroupBase implements MessageGroup {
 	}
 
 	public function getTags( $type = null ) {
-		if ( !isset($this->conf['TAGS']) ) return array();
+		if ( !isset( $this->conf['TAGS'] ) ) return array();
 		
 		$tags = $this->conf['TAGS'];
 		if ( !$type ) return $tags;
 
-		if ( isset($tags[$type]) ) return $tags[$type];
+		if ( isset( $tags[$type] ) ) return $tags[$type];
 		return array();
 	}
 
@@ -148,17 +148,17 @@ abstract class MessageGroupBase implements MessageGroup {
 			foreach ( $patterns as $index => $pattern ) {
 				if ( strpos( $pattern, '*' ) === false ) {
 					$matches[] = $pattern;
-					unset($patterns[$index]);
+					unset( $patterns[$index] );
 				}
 			}
 
-			if ( count($patterns) ) {
+			if ( count( $patterns ) ) {
 				// Rest of the keys contain wildcards
 				$mangler = new StringMatcher( '', $patterns );
 
 				// Use mangler to find messages that match
 				foreach ( $messageKeys as $key ) {
-					if ( $mangler->match($key) ) $matches[] = $key;
+					if ( $mangler->match( $key ) ) $matches[] = $key;
 				}
 			}
 
@@ -169,8 +169,8 @@ abstract class MessageGroupBase implements MessageGroup {
 
 	protected function parseNamespace() {
 		$ns = $this->getFromConf( 'BASIC', 'namespace' );
-		if ( is_int($ns) ) return $ns;
-		if ( defined($ns) ) return constant($ns);
+		if ( is_int( $ns ) ) return $ns;
+		if ( defined( $ns ) ) return constant( $ns );
 
 		global $wgContLang;
 		$index = $wgContLang->getNsIndex( $ns );
@@ -183,7 +183,7 @@ abstract class MessageGroupBase implements MessageGroup {
 
 class FileBasedMessageGroup extends MessageGroupBase {
 	public function exists() {
-		return (bool) count($this->load('en'));
+		return (bool) count( $this->load( 'en' ) );
 	}
 
 	public function load( $code ) {
@@ -216,11 +216,11 @@ class FileBasedMessageGroup extends MessageGroupBase {
 			'%MWROOT%' => $IP,
 			'%GROUPROOT%' => $wgTranslateGroupRoot,
 		);
-		return str_replace( array_keys($variables), array_values($variables), $pattern );
+		return str_replace( array_keys( $variables ), array_values( $variables ), $pattern );
 	}
 
 	public function mapCode( $code ) {
-		if ( isset($this->conf['FILES']['codeMap'][$code]) ) {
+		if ( isset( $this->conf['FILES']['codeMap'][$code] ) ) {
 			return $this->conf['FILES']['codeMap'][$code];
 		} else {
 			return $code;
@@ -230,7 +230,7 @@ class FileBasedMessageGroup extends MessageGroupBase {
 
 class MediaWikiMessageGroup extends FileBasedMessageGroup {
 	public function mapCode( $code ) {
-		return ucfirst( str_replace( '-', '_', parent::mapCode($code) ) );
+		return ucfirst( str_replace( '-', '_', parent::mapCode( $code ) ) );
 	}
 
 	protected function setTags( MessageCollection $collection ) {
@@ -238,9 +238,9 @@ class MediaWikiMessageGroup extends FileBasedMessageGroup {
 		if ( $path === null ) throw new MWException( "metadataPath is not configured" );
 
 		$filename = "$path/messageTypes.inc";
-		if ( !is_readable($filename) ) throw new MWException( "$filename is not readable" );
+		if ( !is_readable( $filename ) ) throw new MWException( "$filename is not readable" );
 
-		$data = file_get_contents($filename);
+		$data = file_get_contents( $filename );
 		if ( $data === false ) throw new MWException( "Failed to read $filename" );
 
 		$reader = new ConfEditor( $data );

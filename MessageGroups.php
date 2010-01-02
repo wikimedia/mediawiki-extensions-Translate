@@ -64,7 +64,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	public function getMangler() {
 		$mangler = $this->mangler;
 
-		if( !$mangler ) {
+		if ( !$mangler ) {
 			$mangler = StringMatcher::emptyMatcher();
 		}
 
@@ -210,14 +210,14 @@ abstract class MessageGroupOld implements MessageGroup {
 		return null;
 	}
 
-	public function setConfiguration( $conf ) {}
-	public function getConfiguration() {}
+	public function setConfiguration( $conf ) { }
+	public function getConfiguration() { }
 	public function getNamespace() { return $this->namespaces[0]; }
 	public function getFFS() { return null; }
 	public function getTags( $type = null ) {
 		$tags = $this->getBools();
 		if ( !$type ) return $tags;
-		return isset($tags[$type]) ? $tags[$type] : array();
+		return isset( $tags[$type] ) ? $tags[$type] : array();
 	}
 }
 
@@ -460,8 +460,8 @@ class AliasMessageGroup extends ExtensionMessageGroup {
 		$this->fill( $collection );
 		$this->fillContents( $collection );
 
-		foreach ( array_keys($collection->keys()) as $key ) {
-			if ( $collection[$key]->translation() === null ) unset($collection[$key]);
+		foreach ( array_keys( $collection->keys() ) as $key ) {
+			if ( $collection[$key]->translation() === null ) unset( $collection[$key] );
 		}
 
 		return $collection;
@@ -469,7 +469,7 @@ class AliasMessageGroup extends ExtensionMessageGroup {
 
 	function fill( MessageCollection $messages ) {
 		$cache = $this->load( $messages->code );
-		foreach ( array_keys($messages->keys()) as $key ) {
+		foreach ( array_keys( $messages->keys() ) as $key ) {
 			if ( isset( $cache[$key] ) ) {
 				if ( is_array( $cache[$key] ) ) {
 					$messages[$key]->setInfile( implode( ',', $cache[$key] ) );
@@ -669,7 +669,7 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		$prefix = $this->title->getPrefixedDBKey() . '/';
 		$re = '~<tvar\|([^>]+)>(.*?)</>~u';
 		foreach ( $res as $r ) {
-			//TODO: use getTextForTrans?
+			// TODO: use getTextForTrans?
 			$text = $r->trs_text;
 			$text = preg_replace( $re, '$\1', $text );
 			$defs[$r->trs_key] = $text;
@@ -677,7 +677,7 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		// Some hacks to get nice order for the messages
 		ksort( $defs );
 		$new_defs = array();
-		foreach ( $defs as $k => $v ) $new_defs[$prefix.$k] = $v;
+		foreach ( $defs as $k => $v ) $new_defs[$prefix . $k] = $v;
 		return $new_defs;
 	}
 
@@ -761,11 +761,11 @@ class MessageGroups {
 
 		global $wgTranslateGroupFiles, $wgAutoloadClasses;
 		foreach ( $wgTranslateGroupFiles as $file ) {
-			wfDebug( $file."\n" );
-			$conf = TranslateSpyc::load($file);
-			if ( !empty($conf['AUTOLOAD']) && is_array($conf['AUTOLOAD']) ) {
-				$dir = dirname($file);
-				foreach( $conf['AUTOLOAD'] as $class => $file ) {
+			wfDebug( $file . "\n" );
+			$conf = TranslateSpyc::load( $file );
+			if ( !empty( $conf['AUTOLOAD'] ) && is_array( $conf['AUTOLOAD'] ) ) {
+				$dir = dirname( $file );
+				foreach ( $conf['AUTOLOAD'] as $class => $file ) {
 					$wgAutoloadClasses[$class] = "$dir/$file";
 				}
 			}

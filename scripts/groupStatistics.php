@@ -351,7 +351,7 @@ if ( !$wmfscore ) {
 		$out->element( ( $l10n ? "{{int:translate-gs-speakers}}" : 'Speakers' ), true );
 	}
 
-	if( $reportScore ) {
+	if ( $reportScore ) {
 		$out->element( ( $l10n ? "{{int:translate-gs-score}}" : 'Score' ) . ' (' . $totalWeight . ')', true );
 	}
 

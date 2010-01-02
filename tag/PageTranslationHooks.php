@@ -17,7 +17,7 @@ class PageTranslationHooks {
 
 		// For translation pages, parse plural, grammar etc with correct language
 		if ( $page = TranslatablePage::isTranslationPage( $title ) ) {
-			list(, $code ) = TranslateUtils::figureMessage( $title->getText() );
+			list( , $code ) = TranslateUtils::figureMessage( $title->getText() );
 			$parser->mOptions->setTargetLanguage( Language::factory( $code ) );
 		}
 		return true;
@@ -64,7 +64,7 @@ class PageTranslationHooks {
 		}
 
 		// Update the target translation page
-		list(, $code ) = TranslateUtils::figureMessage( $title->getDBkey() );
+		list( , $code ) = TranslateUtils::figureMessage( $title->getDBkey() );
 		self::updateTranslationPage( $page, $code, $user, $flags, $summary );
 
 		return true;
@@ -113,12 +113,12 @@ class PageTranslationHooks {
 		// Invalidate caches
 		$pages = $page->getTranslationPages();
 		foreach ( $pages as $title ) {
-			$article = new Article($title);
+			$article = new Article( $title );
 			$article->doPurge();
 		}
 
 		// And the source page itself too
-		$article = new Article($page->getTitle());
+		$article = new Article( $page->getTitle() );
 		$article->doPurge();
 	}
 
@@ -200,7 +200,7 @@ class PageTranslationHooks {
 				'alt'   => "$percent%",
 				'title' => "$percent%",
 				'width' => '9',
-				'height'=> '9',
+				'height' => '9',
 			) );
 			$label = "$name $percent";
 
@@ -297,7 +297,7 @@ FOO;
 				$result = array(
 					'tpt-target-page',
 					$page->getTitle()->getPrefixedText(),
-					$page->getTranslationUrl( $code ) 
+					$page->getTranslationUrl( $code )
 				);
 				return false;
 			}
@@ -316,7 +316,7 @@ FOO;
 	}
 
 	// TODO: fix the name
-	public static function test(&$article, &$outputDone, &$pcache) {
+	public static function test( &$article, &$outputDone, &$pcache ) {
 		global $wgOut;
 		if ( !$article->getOldID() ) {
 			self::header( $article->getTitle() );
@@ -352,7 +352,7 @@ FOO;
 
 		$actions = array();
 
-		if ( $marked && $wgUser->isAllowed('translate') ) {
+		if ( $marked && $wgUser->isAllowed( 'translate' ) ) {
 			$par = array(
 				'group' => 'page|' . $title->getPrefixedText(),
 				'language' => $wgLang->getCode(),
@@ -360,7 +360,7 @@ FOO;
 			);
 			$translate = SpecialPage::getTitleFor( 'Translate' );
 			$linkDesc  = wfMsgHtml( 'translate-tag-translate-link-desc' );
-			$actions[] = $sk->link( $translate, $linkDesc, array(), $par);
+			$actions[] = $sk->link( $translate, $linkDesc, array(), $par );
 		}
 
 		if ( $canmark ) {
@@ -368,21 +368,21 @@ FOO;
 			$par = array( 'target' => $title->getPrefixedText() );
 			$translate = SpecialPage::getTitleFor( 'PageTranslation' );
 
-			if ( $wgUser->isAllowed('pagetranslation') ) {
+			if ( $wgUser->isAllowed( 'pagetranslation' ) ) {
 				// This page has never been marked
 				if ( $marked === false ) {
 					$linkDesc  = wfMsgHtml( 'translate-tag-markthis' );
-					$actions[] = $sk->link( $translate, $linkDesc, array(), $par);
+					$actions[] = $sk->link( $translate, $linkDesc, array(), $par );
 				} else {
 					$markUrl = $translate->getFullUrl( $par );
-					$actions[] = wfMsgExt( 'translate-tag-markthisagain', 'parseinline', $diffUrl, $markUrl );	
+					$actions[] = wfMsgExt( 'translate-tag-markthisagain', 'parseinline', $diffUrl, $markUrl );
 				}
 			} else {
 				$actions[] = wfMsgExt( 'translate-tag-hasnew', 'parseinline', $diffUrl );
 			}
 		}
 
-		if ( !count($actions) ) return;
+		if ( !count( $actions ) ) return;
 		$legend  = "<div style=\"font-size: x-small; text-align: center\">";
 		if ( method_exists( $wgLang, 'semicolonList' ) ) {
 			// BC for <1.15
@@ -409,7 +409,7 @@ FOO;
 		// Get the translation percentage
 		$pers = $page->getTranslationPercentages();
 		$per = @$pers[$code];
-		$per = ($per === null) ? 0 : $per * 100;
+		$per = ( $per === null ) ? 0 : $per * 100;
 		$titleText = $page->getTitle()->getPrefixedText();
 		$url = $page->getTranslationUrl( $code );
 
@@ -417,9 +417,9 @@ FOO;
 		wfLoadExtensionMessages( 'PageTranslation' );
 		$wrap = '<div style="font-size: x-small; text-align: center">$1</div>';
 		
-		$wgOut->wrapWikiMsg( $wrap, array( 'tpt-translation-intro', $url, $titleText, $per) );
+		$wgOut->wrapWikiMsg( $wrap, array( 'tpt-translation-intro', $url, $titleText, $per ) );
 
-		if ( ((int) $per) < 100 ) {
+		if ( ( (int) $per ) < 100 ) {
 			$wrap = '<div style="font-size: x-small; text-align: center" class="mw-translate-fuzzy">$1</div>';
 			$wgOut->wrapWikiMsg( $wrap, array( 'tpt-translation-intro-fuzzy' ) );
 		}

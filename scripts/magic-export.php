@@ -63,7 +63,7 @@ foreach ( $groups as $group ) {
 	if ( $filename === null ) continue;
 
 	$file = "$wgTranslateExtensionDirectory/$filename";
-	if ( !file_exists($file) ) continue;
+	if ( !file_exists( $file ) ) continue;
 	STDOUT( "Processing {$group->getLabel()}... ", $group->getId() );
 
 	$input = file_get_contents( $file ) . "\n";
@@ -96,6 +96,6 @@ foreach ( $groups as $group ) {
 		STDOUT( "$l ", $group->getId() );
 	}
 
-	wfMkdirParents( dirname($options['target'] . "/$filename") );
+	wfMkdirParents( dirname( $options['target'] . "/$filename" ) );
 	file_put_contents( $options['target'] . "/$filename", trim( $output ) . "\n" );
 }

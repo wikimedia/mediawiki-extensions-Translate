@@ -3,7 +3,7 @@
 class HTMLJsSelectToInputField extends HTMLTextField {
 	function getInputHTML( $value ) {
 		$input = parent::getInputHTML( $value );
-		if ( isset($this->mParams['select']) ) {
+		if ( isset( $this->mParams['select'] ) ) {
 			$input .= ' ' . $this->mParams['select']->getHtmlAndPrepareJs();
 		}
 		return $input;
@@ -17,16 +17,16 @@ class HTMLJsSelectToInputField extends HTMLTextField {
 
 	function validate( $value, $alldata ) {
 		$p = parent::validate( $value, $alldata );
-		if( $p !== true ) return $p;
+		if ( $p !== true ) return $p;
 
-		if ( !isset($this->mParams['valid-values']) ) return true;
+		if ( !isset( $this->mParams['valid-values'] ) ) return true;
 
 		if ( $value === 'default' ) return true;
 
 		$codes = $this->tidy( $value );
 		$valid = array_flip( $this->mParams['valid-values'] );
 		foreach ( $codes as $code ) {
-			if ( !isset($valid[$code]) )
+			if ( !isset( $valid[$code] ) )
 				return wfMsgExt( 'translate-pref-editassistlang-bad', 'parse', $code );
 		}
 		return true;

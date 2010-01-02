@@ -1,7 +1,7 @@
 <?php
 if ( !defined( 'MEDIAWIKI' ) ) die();
 
-class GettextPluralException extends MwException {}
+class GettextPluralException extends MwException { }
 
 class GettextFormatReader extends SimpleFormatReader {
 	protected $pot = false;
@@ -24,10 +24,10 @@ class GettextFormatReader extends SimpleFormatReader {
 			return '';
 		}
 		$data = file_get_contents( $this->filename );
-		$start = (int) strpos( $data, '# --');
+		$start = (int) strpos( $data, '# --' );
 		if ( $start ) $start += 5;
 		$end = (int) strpos( $data, "msgid" );
-		return substr( $data, $start, $end-$start );
+		return substr( $data, $start, $end - $start );
 	}
 
 	public function parseFile() {
@@ -67,7 +67,7 @@ class GettextFormatReader extends SimpleFormatReader {
 
 class GettextFormatWriter extends SimpleFormatWriter {
 	protected $data = array();
-	protected $plural = array(false, 0);
+	protected $plural = array( false, 0 );
 
 	public function load( $code ) {
 		$reader = $this->group->getReader( $code );
@@ -103,7 +103,7 @@ class GettextFormatWriter extends SimpleFormatWriter {
 		// $headers['POT-Creation-Date']
 		$headers['PO-Revision-Date'] = $lang->sprintfDate( 'xnY-xnm-xnd xnH:xni:xns+0000', $now );
 		// Link to portal pages??
-		//$headers['Language-Team'] = $languageName;
+		// $headers['Language-Team'] = $languageName;
 		$headers['Content-Type'] = 'text/plain; charset=UTF-8';
 		$headers['Content-Transfer-Encoding'] = '8bit';
 
@@ -136,7 +136,7 @@ class GettextFormatWriter extends SimpleFormatWriter {
 			if ( $translation === null ) $translation = '';
 
 			# CASE3: optional messages; accept only if different
-			if ( $m->hasTag( 'optional') ) $flags[] = 'x-optional';
+			if ( $m->hasTag( 'optional' ) ) $flags[] = 'x-optional';
 
 			# Remove explicit fuzzy markings from the translation before export
 			$flags = array();
@@ -167,7 +167,7 @@ class GettextFormatWriter extends SimpleFormatWriter {
 			}
 
 			$pluralForms = false;
-			if ( isset($this->owndata['METADATA']['plural']) ) {
+			if ( isset( $this->owndata['METADATA']['plural'] ) ) {
 				$pluralForms = $this->owndata['METADATA']['plural'];
 			}
 
@@ -217,7 +217,7 @@ class GettextFormatWriter extends SimpleFormatWriter {
 		$output = array();
 
 		// FIXME: very ugly hack to allow gettext plurals to be exported.
-		if( $msgstr == '{{PLURAL:GETTEXT|}}' ) return '';
+		if ( $msgstr == '{{PLURAL:GETTEXT|}}' ) return '';
 
 		if ( $msgctxt ) {
 			$output[] = 'msgctxt ' . $this->escape( $msgctxt );
@@ -230,7 +230,7 @@ class GettextFormatWriter extends SimpleFormatWriter {
 
 			try {
 				$forms = $this->splitPlural( $msgstr, $pluralForms );
-				foreach( $forms as $index => $form ) {
+				foreach ( $forms as $index => $form ) {
 					$output[] = "msgstr[$index] " . $this->escape( $form );
 				}
 			} catch ( GettextPluralException $e ) {
@@ -257,7 +257,7 @@ class GettextFormatWriter extends SimpleFormatWriter {
 	protected function splitPlural( $text, $forms ) {
 		if ( $forms === 1 ) {
 			return $text;
-		} elseif( !$forms ) {
+		} elseif ( !$forms ) {
 			$forms = (int) $forms;
 			throw new GettextPluralException( "Don't know how to split $text into $forms forms" );
 		}
@@ -270,7 +270,7 @@ class GettextFormatWriter extends SimpleFormatWriter {
 			$pluralForm = $text;
 			foreach ( $plurals[0] as $index => $definition ) {
 				$parsedFormsArray = explode( '|', $plurals[1][$index] );
-				if ( !isset($parsedFormsArray[$i]) ) {
+				if ( !isset( $parsedFormsArray[$i] ) ) {
 					error_log( "Too few plural forms in: $text" );
 					$pluralForm = '';
 				} else {
@@ -308,7 +308,7 @@ class GettextFFS extends SimpleFFS {
 	}
 
 	public function parseGettext( $data ) {
-		$useCtxtAsKey = isset($this->extra['CtxtAsKey']) && $this->extra['CtxtAsKey'];
+		$useCtxtAsKey = isset( $this->extra['CtxtAsKey'] ) && $this->extra['CtxtAsKey'];
 		return self::parseGettextData( $data, $useCtxtAsKey );
 	}
 
@@ -338,18 +338,18 @@ class GettextFFS extends SimpleFFS {
 
 		// Extract some metadata from headers for easier use
 		$metadata = array();
-		if ( isset($headers['X-Language-Code']) ) {
+		if ( isset( $headers['X-Language-Code'] ) ) {
 			$metadata['code'] = $headers['X-Language-Code'];
 		}
 
-		if ( isset($headers['X-Message-Group']) ) {
+		if ( isset( $headers['X-Message-Group'] ) ) {
 			$metadata['group'] = $headers['X-Message-Group'];
 		}
 
 		/* At this stage we are only interested how many plurals forms we should
 		 * be expecting when parsing the rest of this file. */
 		$pluralCount = false;
-		if ( isset($headers['Plural-Forms']) ) {
+		if ( isset( $headers['Plural-Forms'] ) ) {
 			if ( preg_match( '/nplurals=([0-9]+).*;/', $headers['Plural-Forms'], $matches ) ) {
 				$pluralCount = $metadata['plural'] = $matches[1];
 			}
@@ -507,7 +507,7 @@ class GettextFFS extends SimpleFFS {
 			if ( $whitespace === 'mark' )
 				$data .= '\\';
 			elseif ( $whitespace === 'trim' )
-				$data = rtrim($data);
+				$data = rtrim( $data );
 			else
 				// FIXME: only triggered if there is trailing whitespace
 				throw new MWException( 'Unknown action for whitespace' );
@@ -517,7 +517,7 @@ class GettextFFS extends SimpleFFS {
 
 	public static function parseHeaderTags( $headers ) {
 		$tags = array();
-		foreach ( explode("\n", $headers ) as $line ) {
+		foreach ( explode( "\n", $headers ) as $line ) {
 			list( $key, $value ) = explode( ': ', $line, 2 );
 			$tags[$key] = $value;
 		}

@@ -19,7 +19,7 @@ class TPSection {
 	}
 
 	public function getMarkedText() {
-		$id = isset($this->name) ? $this->name : $this->id;
+		$id = isset( $this->name ) ? $this->name : $this->id;
 		$header = "<!--T:{$id}-->";
 		$re     = '~^(=+.*?=+\s*?)\n~';
 		$rep    = "\\1 $header\n";
@@ -33,7 +33,7 @@ class TPSection {
 	}
 
 	public function getOldText() {
-		return isset($this->oldtext) ? $this->oldtext : $this->text;
+		return isset( $this->oldtext ) ? $this->oldtext : $this->text;
 	}
 
 	public function getVariables() {
@@ -41,8 +41,8 @@ class TPSection {
 		$matches = array();
 		preg_match_all( $re, $this->text, $matches, PREG_SET_ORDER );
 		$vars = array();
-		foreach( $matches as $m ) {
-			$vars['$'.$m[1]] = $m[2];
+		foreach ( $matches as $m ) {
+			$vars['$' . $m[1]] = $m[2];
 		}
 		return $vars;
 	}

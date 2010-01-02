@@ -42,7 +42,7 @@ $target = $options['target'];
 
 $groups = MessageGroups::singleton()->getGroups();
 
-foreach( $langs as $code ) {
+foreach ( $langs as $code ) {
 $data = '';
 foreach ( $groups as $g ) {
 	if ( $g->isMeta() || !$g->exists() ) continue;

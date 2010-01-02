@@ -20,7 +20,7 @@ class SpecialTranslationStats extends SpecialPage {
 		$opts->add( 'width', 600 );
 		$opts->add( 'height', 400 );
 		$opts->add( 'group', '' );
-		$opts->add( 'uselang', '');
+		$opts->add( 'uselang', '' );
 		$opts->fetchValuesFromRequest( $wgRequest );
 
 		$pars = explode( ';', $par );
@@ -214,12 +214,12 @@ class SpecialTranslationStats extends SpecialPage {
 		$groups = MessageGroups::singleton()->getGroups();
 		foreach ( $groups as $key => $group ) {
 			if ( !$group->exists() ) {
-				unset($groups[$key]);
+				unset( $groups[$key] );
 				continue;
 			}
 
 			if ( $group->isMeta() ) {
-				unset($groups[$key]);
+				unset( $groups[$key] );
 			}
 		}
 
@@ -446,7 +446,7 @@ class TranslatePerLanguageStats {
 
 		if ( $this->filters['group'] ) {
 			$group = TranslateUtils::messageKeyToGroup( $row->rc_namespace, $key );
-			if ( $group === null ) return -1;
+			if ( $group === null ) return - 1;
 			$indexKey .= $group;
 		}
 

@@ -9,25 +9,25 @@ class MessageGroupCache {
 
 	// id or instance of MessageGroup
 	public function __construct( $group ) {
-		if ( is_object($group) ) {
+		if ( is_object( $group ) ) {
 			$this->group = $group->getId();
 		} else {
 			$this->group = $group;
 		}
 	}
 
-	public function exists( $code = 'en') {
+	public function exists( $code = 'en' ) {
 		return file_exists( $this->getCacheFileName( $code ) );
 	}
 
 	public function getKeys( $code = 'en' ) {
 		$cache = $this->open( $code );
-		return unserialize( $cache->get( $this->specialKey('keys') ) );
+		return unserialize( $cache->get( $this->specialKey( 'keys' ) ) );
 	}
 
 	public function getTimestamp( $code = 'en' ) {
 		$cache = $this->open( $code );
-		return $cache->get( $this->specialKey('timestamp') );
+		return $cache->get( $this->specialKey( 'timestamp' ) );
 	}
 
 	public function get( $key, $code = 'en' ) {
@@ -41,13 +41,13 @@ class MessageGroupCache {
 		$cache = CdbWriter::open( $this->getCacheFileName( $code ) );
 
 		$keys = array_keys( $messages );
-		$cache->set( $this->specialKey('keys'), serialize($keys) );
+		$cache->set( $this->specialKey( 'keys' ), serialize( $keys ) );
 
-		foreach( $messages as $key => $value ) {
+		foreach ( $messages as $key => $value ) {
 			$cache->set( $key, $value );
 		}
 
-		$cache->set( $this->specialKey('timestamp'), wfTimestamp() );
+		$cache->set( $this->specialKey( 'timestamp' ), wfTimestamp() );
 		$cache->close();
 	}
 

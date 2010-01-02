@@ -34,9 +34,9 @@ $conds = array(
 	'page_namespace' => $wgTranslateMessageNamespaces,
 );
 
-$limit = max(1000,intval($count/100));
+$limit = max( 1000, intval( $count / 100 ) );
 $offset = 0;
-while (true) {
+while ( true ) {
 	$inserts = array();
 	echo "$offset/$count\n";
 	$options = array( 'LIMIT' => $limit, 'OFFSET' => $offset );

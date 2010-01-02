@@ -12,7 +12,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 class SpecialTranslations extends SpecialAllpages {
-	function __construct(){
+	function __construct() {
 		parent::__construct( 'Translations' );
 	}
 
@@ -30,9 +30,9 @@ class SpecialTranslations extends SpecialAllpages {
 
 		$title = null;
 
-		if( $this->including() ){
+		if ( $this->including() ) {
 			$title = Title::newFromText( $par );
-			if( !$title ){
+			if ( !$title ) {
 				$wgOut->addWikiMsg( 'translate-translations-including-no-param' );
 			} else {
 				$this->showTranslations( $title );
@@ -54,7 +54,7 @@ class SpecialTranslations extends SpecialAllpages {
 			$title = Title::makeTitle( NS_MEDIAWIKI, '' );
 			$wgOut->addHTML( $this->namespaceMessageForm( $title ) );
 		} else {
-			$wgOut->addHTML( $this->namespaceMessageForm( $title ) . '<br />');
+			$wgOut->addHTML( $this->namespaceMessageForm( $title ) . '<br />' );
 			$this->showTranslations( $title );
 		}
 	}
@@ -69,7 +69,7 @@ class SpecialTranslations extends SpecialAllpages {
 		$namespaces = new XmlSelect( 'namespace' );
 		$namespaces->setDefault( $title->getNamespace() );
 
-		foreach ($wgTranslateMessageNamespaces as $ns ) {
+		foreach ( $wgTranslateMessageNamespaces as $ns ) {
 			$namespaces->addOption( $wgContLang->getFormattedNsText( $ns ), $ns );
 		}
 
@@ -113,7 +113,7 @@ class SpecialTranslations extends SpecialAllpages {
 
 		$inMessageGroup = TranslateUtils::messageKeyToGroup( $title->getNamespace(), $title->getText() );
 
-		if( !$inMessageGroup ) {
+		if ( !$inMessageGroup ) {
 			$wgOut->addWikiMsg( 'translate-translations-no-message', $title->getPrefixedText() );
 			return;
 		}
@@ -124,7 +124,7 @@ class SpecialTranslations extends SpecialAllpages {
 			array( 'page_namespace', 'page_title' ),
 			array(
 				'page_namespace' => $namespace,
-				'page_title LIKE \'' . $dbr->escapeLike( $message ) .'\/%\'',
+				'page_title LIKE \'' . $dbr->escapeLike( $message ) . '\/%\'',
 			),
 			__METHOD__,
 			array(
@@ -133,7 +133,7 @@ class SpecialTranslations extends SpecialAllpages {
 			)
 		);
 
-		if( !$res->numRows() ) {
+		if ( !$res->numRows() ) {
 			$wgOut->addWikiMsg( 'translate-translations-no-message', $title->getPrefixedText() );
 			return;
 		}
@@ -169,7 +169,7 @@ class SpecialTranslations extends SpecialAllpages {
 				$tools['edit'] = $sk->link(
 					$t,
 					$niceTitle,
-					array( 'action'),
+					array( 'action' ),
 					array(
 						'action' => 'edit',
 						'loadgroup' => $inMessageGroup
@@ -182,7 +182,7 @@ class SpecialTranslations extends SpecialAllpages {
 			$tools['history'] = $sk->link(
 				$t,
 				"&nbsp;<sup>h</sup>&nbsp;",
-				array( 'action'),
+				array( 'action' ),
 				array( 'action' => 'history' )
 			);
 
@@ -191,7 +191,7 @@ class SpecialTranslations extends SpecialAllpages {
 
 			$extra = '';
 
-			if( TranslateEditAddons::isFuzzy( $t ) ) {
+			if ( TranslateEditAddons::isFuzzy( $t ) ) {
 				$class = 'orig';
 			} else {
 				$class = 'def';
@@ -211,6 +211,6 @@ class SpecialTranslations extends SpecialAllpages {
 
 	public function getTheCode( $name ) {
 		$from = strrpos( $name, '/' );
-		return substr( $name, $from+1 );
+		return substr( $name, $from + 1 );
 	}
 }

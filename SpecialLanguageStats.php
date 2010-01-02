@@ -28,7 +28,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$this->outputHeader();
 
 		# no UI when including()
-		if( !$this->including() ) {
+		if ( !$this->including() ) {
 			$code = $wgRequest->getVal( 'code', $par );
 			$suppressComplete = $wgRequest->getVal( 'suppresscomplete', $par );
 			$wgOut->addHTML( $this->languageForm( $code, $suppressComplete ) );
@@ -40,7 +40,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 		$out = '';
 
-		if( array_key_exists( $code, Language::getLanguageNames() ) ) {
+		if ( array_key_exists( $code, Language::getLanguageNames() ) ) {
 			$out .= $this->getGroupStats( $code, $suppressComplete );
 		} else if ( $code ) {
 			$wgOut->addWikiMsg( 'translate-page-no-such-language' );
@@ -70,7 +70,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 				Xml::label( wfMsg( 'translate-language-code-field-name' ), 'code' ) .
 				"</td>
 				<td class='mw-input'>" .
-					Xml::input( 'code', 30, str_replace('_',' ',$code), array( 'id' => 'code' ) ) .
+					Xml::input( 'code', 30, str_replace( '_', ' ', $code ), array( 'id' => 'code' ) ) .
 				"</td></tr><tr><td colspan='2'>" .
 				Xml::checkLabel( wfMsg( 'translate-suppress-complete' ), 'suppresscomplete', 'suppresscomplete', $suppressComplete ) .
 				"</td>" .
@@ -109,7 +109,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 	# Statistics table element (heading or regular cell)
 	function element( $in, $heading = false, $bgcolor = '' ) {
-		if( $heading ) {
+		if ( $heading ) {
 			$element = '<th>' . $in . '</th>';
 		} else if ( $bgcolor ) {
 			$element = '<td bgcolor="#' . $bgcolor . '">' . $in . '</td>';
@@ -120,12 +120,12 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	}
 
 	function getBackgroundColour( $subset, $total, $fuzzy = false ) {
-		$v = @round(255 * $subset / $total);
+		$v = @round( 255 * $subset / $total );
 
 		if ( $fuzzy ) {
 			# weigh fuzzy with factor 20
 			$v = $v * 20;
-			if( $v > 255 ) $v = 255;
+			if ( $v > 255 ) $v = 255;
 			$v = 255 - $v;
 		}
 
@@ -135,7 +135,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			$green = sprintf( '%02X', 2 * $v );
 		} else {
 			# Yellow to Green
-			$red = sprintf('%02X', 2 * ( 255 - $v ) );
+			$red = sprintf( '%02X', 2 * ( 255 - $v ) );
 			$green = 'FF';
 		}
 		$blue = '00';
@@ -212,7 +212,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			}
 
 			// Skip if $suppressComplete and complete
-			if( $suppressComplete && !$fuzzy && $translated == $total ) {
+			if ( $suppressComplete && !$fuzzy && $translated == $total ) {
 				continue;
 			}
 
@@ -220,7 +220,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			$translatedPercentage = $total ? $wgLang->formatNum( number_format( round( 100 * $translated / $total, 2 ), 2 ) ) : $errorString;
 			$fuzzyPercentage = $total ? $wgLang->formatNum( number_format( round( 100 * $fuzzy / $total, 2 ), 2 ) ) : $errorString;
 
-			if ( !wfEmptyMsg( 'percent', wfMsgNoTrans('percent') ) ) {
+			if ( !wfEmptyMsg( 'percent', wfMsgNoTrans( 'percent' ) ) ) {
 				$translatedPercentage = $translatedPercentage == $errorString ? $translatedPercentage : wfMsg( 'percent', $translatedPercentage );
 				$fuzzyPercentage = $fuzzyPercentage == $errorString ? $fuzzyPercentage : wfMsg( 'percent', $fuzzyPercentage );
 			} else {
@@ -251,7 +251,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			$out .= $this->blockend();
 		}
 
-		if( $out ) {
+		if ( $out ) {
 			$out = $this->createHeader( $code ) . $out;
 			$out .= $this->footer();
 		} else {

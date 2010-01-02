@@ -331,7 +331,7 @@ abstract class ComplexMessages {
 	#
 	public function validate( &$errors = array(), $filter = false ) {
 		$used = array();
-		foreach ( array_keys($this->data) as $group ) {
+		foreach ( array_keys( $this->data ) as $group ) {
 			if (  $filter !== false && !in_array( $group, (array) $filter, true ) ) continue;
 			$this->validateEach( $errors, $group, $used );
 		}
@@ -342,12 +342,12 @@ abstract class ComplexMessages {
 			$values = $this->val( $group, self::LANG_CURRENT, $key );
 			$link = Xml::element( 'a', array( 'href' => "#mw-sp-magic-$key" ), $key );
 
-			if ( count($values) !== count(array_filter($values)) ) {
+			if ( count( $values ) !== count( array_filter( $values ) ) ) {
 				$errors[] = "There is empty value in $link.";
 			}
 
-			foreach( $values as $v ) {
-				if ( isset($used[$v]) ) {
+			foreach ( $values as $v ) {
+				if ( isset( $used[$v] ) ) {
 					$otherkey = $used[$v];
 					$first = Xml::element( 'a', array( 'href' => "#mw-sp-magic-$otherkey" ), $otherkey );
 					$errors[] = "Translation <b>$v</b> is used more than once for $first and $link.";
@@ -362,7 +362,7 @@ abstract class ComplexMessages {
 		$text = '';
 		$errors = array();
 		$this->validate( $errors, $filter );
-		foreach( $errors as $_ ) $text .= "#!!# $_\n";
+		foreach ( $errors as $_ ) $text .= "#!!# $_\n";
 
 		foreach ( $groups = $this->getGroups() as $group => $data ) {
 			if (  $filter !== false && !in_array( $group, (array) $filter, true ) ) continue;
@@ -407,7 +407,7 @@ abstract class ComplexMessages {
 			// Just to be sure, it should not be possible to save invalid data anymore
 			$val = array_unique( $val /*FIXME:SORT_REGULAR*/ );
 			// So do empty elements...
-			foreach ( $val as $k => $v ) if ( $v === '' ) unset($val[$k]);
+			foreach ( $val as $k => $v ) if ( $v === '' ) unset( $val[$k] );
 			// Another check 
 			if ( !count( $val ) ) continue;
 
@@ -468,15 +468,15 @@ class SpecialPageAliasesCM extends ComplexMessages {
 
 		global $wgTranslateExtensionDirectory;
 		$groups = MessageGroups::singleton()->getGroups();
-		foreach( $groups as $g ) {
+		foreach ( $groups as $g ) {
 			if ( !$g instanceof ExtensionMessageGroup ) continue;
 			$file = $g->getAliasFile();
 			if ( $file === null ) continue;
 
 			$file = "$wgTranslateExtensionDirectory/$file";
-			if ( file_exists($file) ) {
+			if ( file_exists( $file ) ) {
 				$this->data[$g->getId()] = array(
-					'label'=> $g->getLabel(),
+					'label' => $g->getLabel(),
 					'var'  => $g->getVariableNameAlias(),
 					'file' => $file,
 					'code' => $code,
@@ -487,7 +487,7 @@ class SpecialPageAliasesCM extends ComplexMessages {
 
 	public function highlight( $key, $values ) {
 		if ( count( $values ) ) {
-			if ( !isset($values[0]) ) throw new MWException( "Something missing from values: " .  print_r( $values, true ) );
+			if ( !isset( $values[0] ) ) throw new MWException( "Something missing from values: " .  print_r( $values, true ) );
 			$values[0] = "<b>$values[0]</b>";
 		}
 		return $values;
@@ -509,7 +509,7 @@ class SpecialPageAliasesCM extends ComplexMessages {
 				} else {
 					$text = $title->getText();
 					$dbkey = $title->getDBkey();
-					if( $text !== $_ && $dbkey !== $_ ) {
+					if ( $text !== $_ && $dbkey !== $_ ) {
 						$errors[] = "Translation <b>$_</b> for $link is not in normalised form, which is <b>$text</b>";
 					}
 				}
@@ -528,7 +528,7 @@ class MagicWordsCM extends ComplexMessages {
 	public function __construct( $code ) {
 		parent::__construct( $code );
 		$this->data['core'] = array(
-			'label'=> 'MediaWiki Core',
+			'label' => 'MediaWiki Core',
 			'var' => 'magicWords',
 			'file' => Language::getMessagesFileName( '%CODE%' ),
 			'code' => false,
@@ -536,15 +536,15 @@ class MagicWordsCM extends ComplexMessages {
 
 		global $wgTranslateExtensionDirectory;
 		$groups = MessageGroups::singleton()->getGroups();
-		foreach( $groups as $g ) {
+		foreach ( $groups as $g ) {
 			if ( !$g instanceof ExtensionMessageGroup ) continue;
 			$file = $g->getMagicFile();
 			if ( $file === null ) continue;
 
 			$file = "$wgTranslateExtensionDirectory/$file";
-			if ( file_exists($file) ) {
+			if ( file_exists( $file ) ) {
 				$this->data[$g->getId()] = array(
-					'label'=> $g->getLabel(),
+					'label' => $g->getLabel(),
 					'var'  => 'magicWords',
 					'file' => $file,
 					'code' => $code,
@@ -568,7 +568,7 @@ class NamespaceCM extends ComplexMessages {
 	public function __construct( $code ) {
 		parent::__construct( $code );
 		$this->data['core'] = array(
-			'label'=> 'MediaWiki Core',
+			'label' => 'MediaWiki Core',
 			'var'  => 'namespaceNames',
 			'file' => Language::getMessagesFileName( '%CODE%' ),
 			'code' => false,
@@ -601,7 +601,7 @@ class NamespaceCM extends ComplexMessages {
 		foreach ( $this->getIterator( $group ) as $key ) {
 			$values = $this->val( $group, self::LANG_CURRENT, $key );
 
-			if ( count($values) >1 ) {
+			if ( count( $values ) > 1 ) {
 				$link = Xml::element( 'a', array( 'href' => "#mw-sp-magic-$key" ), $key );
 				$errors[] = "Namespace $link can have only one translation. Replace the translation with a new one, and notify staff about the change.";
 			}

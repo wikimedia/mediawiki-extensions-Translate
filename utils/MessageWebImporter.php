@@ -24,11 +24,9 @@ class MessageWebImporter {
 		$this->setCode( $code );
 	}
 
-
 	// Wrapper for consistency with SpecialPage
 	public function getTitle() { return $this->title; }
 	public function setTitle( Title $title ) { $this->title = $title; }
-
 
 	public function getUser() {
 		global $wgUser;
@@ -51,7 +49,6 @@ class MessageWebImporter {
 
 	public function getCode() { return $this->code; }
 	public function setCode( $code = 'en' ) { $this->code = $code; }
-
 
 	protected function getAction() {
 		return $this->getTitle()->getFullURL();
@@ -101,7 +98,6 @@ class MessageWebImporter {
 		if ( $action ) return $action;
 		return $fuzzy ? 'conflict' : 'import';
 	}
-
 
 	public function execute( $messages ) {
 		global $wgOut;
@@ -204,7 +200,6 @@ class MessageWebImporter {
 			}
 		}
 
-
 		if ( !$process ) {
 			$collection->filter( 'hastranslation', false );
 			$keys = array_keys( $collection->keys() );
@@ -229,9 +224,7 @@ class MessageWebImporter {
 			$changed[] = "<li>$message</li></ul>";
 			$this->out->addHTML( implode( "\n", $changed ) );
 		} else {
-
 			// END
-
 			if ( count( $changed ) ) {
 				if ( $code === 'en' ) {
 					$this->out->addWikiMsg( 'translate-manage-intro-en' );
@@ -324,8 +317,9 @@ class MessageWebImporter {
 				$fuzzybot
 			);
 
-			if ( $this->checkProcessTime() ) break;
-
+			if ( $this->checkProcessTime() ) {
+				break;
+			}
 		}
 
 		if ( count( $changed ) === count( $rows ) ) {
