@@ -39,8 +39,11 @@ file = ContestTool/SpecialContestTool.i18n.php
 CreateAPage
 file = CreateAPage/MultiEdit.i18n.php
 
-CreatePage
-file = CreatePage/CreatePage.i18n.php
+# Conflicting keys from CreateAPage
+# Key 8:createpage_title already belongs to wikia-createapage, conflict with wikia-createpage
+# Key 8:createpage_title_caption already belongs to wikia-createapage, conflict with wikia-createpage
+#CreatePage
+#file = CreatePage/CreatePage.i18n.php
 
 DaemonLoader
 file = DaemonLoader/SpecialDaemonLoader.i18n.php
@@ -48,8 +51,13 @@ file = DaemonLoader/SpecialDaemonLoader.i18n.php
 EditAccount
 file = EditAccount/SpecialEditAccount.i18n.php
 
-Editcount
-file = Editcount/SpecialEditcount.i18n.php
+# Conflicting keys from MediaWiki SVN's Editocunt
+# Key 8:editcount already belongs to ext-editcount, conflict with wikia-editcount
+# Key 8:editcount_username already belongs to ext-editcount, conflict with wikia-editcount
+# Key 8:editcount_submit already belongs to ext-editcount, conflict with wikia-editcount
+# Key 8:editcount_total already belongs to ext-editcount, conflict with wikia-editcount
+#Editcount
+#file = Editcount/SpecialEditcount.i18n.php
 
 EditingTips
 file = EditingTips/EditingTips.i18n.php
@@ -78,8 +86,11 @@ file = ImagePlaceholder/ImagePlaceholder.i18n.php
 LinkSuggest
 file = LinkSuggest/LinkSuggest.i18n.php
 
-Listusers
-file = Listusers/SpecialListusers.i18n.php
+# Conflicting keys from MediaWiki core
+# Key 8:listusers already belongs to core, conflict with wikia-listusers
+# Key 8:listusers-blocked already belongs to core, conflict with wikia-listusers
+#Listusers
+#file = Listusers/SpecialListusers.i18n.php
 
 LookupContribs
 file = LookupContribs/SpecialLookupContribs.i18n.php
@@ -87,8 +98,11 @@ file = LookupContribs/SpecialLookupContribs.i18n.php
 MagCloud
 file = MagCloud/MagCloud.i18n.php
 
-Masthead
-file = Masthead/Masthead.i18n.php
+# Conflicting keys with Wikia Blogs extension
+# Key 8:blog-avatar-preferences-title already belongs to wikia-blogs, conflict with wikia-masthead
+# Key 8:removeavatar already belongs to ext-socialprofile-userprofile, conflict with wikia-masthead
+#Masthead
+#file = Masthead/Masthead.i18n.php
 
 MostPopularArticles
 file = MostPopularArticles/SpecialMostPopularArticles.i18n.php
@@ -233,8 +247,11 @@ file = InterwikiDispatcher/SpecialInterwikiDispatcher.i18n.php
 #MultiEdit
 #file = MultiEdit/MultiEdit.i18n.php
 
-RegexBlock
-file = RegexBlock/RegexBlock.i18n.php
+# Conflicting keys with MediaWiki SVN RegexBlock extension
+# Key 8:regexblock already belongs to ext-regexblock, conflict with wikia-regexblock
+# Key 8:right-regexblock already belongs to ext-regexblock, conflict with wikia-regexblock
+#RegexBlock
+#file = RegexBlock/RegexBlock.i18n.php
 
 SpecialMiniUpload
 file = SpecialMiniUpload/SpecialMiniUpload.i18n.php
