@@ -836,6 +836,7 @@ id = ext-readerfeedback-readerfeedback
 file = ReaderFeedback/language/ReaderFeedback.i18n.php
 aliasfile = ReaderFeedback/language/ReaderFeedback.alias.php
 descmsg = readerfeedback-desc
+ignored = readerfeedback-ak-review
 
 Reader Feedback - Rated Pages
 id = ext-readerfeedback-ratedpages
