@@ -1,58 +1,27 @@
 ActionPanel
 file = ActionPanel/ActionPanel.i18n.php
-# FIXME: Needs description message
 
 AjaxPoll
-# FIXME: ajaxpoll-thankyou has capitalised You. Use lower case
 file = AjaxPoll/AjaxPoll.i18n.php
-# FIXME: ajaxpoll-percentVotes is patchwork message. Add parameters
-# FIXME: ajaxpoll-summary needs date and time split for $1
-ignored = ajaxpoll-percentVotes, ajaxpoll-summary
 
 # Wrong format
 #ArticlesHome
 #file = ArticlesHome/ArticlesHome.i18n.php
 
 AutoCreateWiki
-# FIXME: Needs description message
-# FIXME: createwikipagetitle : lower case Wiki
-# FIXME: createwiki : lower case Wiki
-# FIXME: autocreatewiki-success-get-started: MediaWiki doesn't use Title Case in messages
-# FIXME: autocreatewiki-welcomebody : has leading newline. Do not use leading or trailing whitespace/newlines.
-# FIXME: autocreatewiki-welcometalk : leading newline
-# FIXME: newwikisstart : lower case Wiki
 file = AutoCreateWiki/AutoCreateWiki.i18n.php
-ignored = requestwiki-filter-language
 
 Badges
-# FIXME: Needs description message
 file = Badges/UserBadges.i18n.php
 
 #BlogPage
 #file = BlogPage/Blog.i18n.php
 
 Blogs
-# FIXME: Needs description message
-# FIXME: createblogpage : lower case Blog
-# FIXME: createbloglistingpage : lower case Blog
-# FIXME: create-blog-permission-denied : lower case Denied
-# FIXME: blog-invalidparam : uses single quotes. It is best to use double quotes everywhere
-# FIXME: blog-continuereading : do not use entities if it can be avoided. Use the unicode character.
-# FIXME: blog-last-edited : message is not used; remove unused messages as they waste time of translators
 file = Blogs/Blogs.i18n.php
-optional = blug-cut-sign
 ignored = create-blog-empty-article
-# FIXME: Create-blog-listing-matches-info : should support PLURAL instead of using "post(s)"
-# FIXME: blog-subheader : should support PLURAL for $1
-# FIXME: blog-subheader-all : should support PLURAL for $1 and $2
-# FIXME: blog-nbrcomments : should use PLURAL for $1
-ignored = create-blog-listing-matches-info, blog-subheader, blog-subheader-all, blog-nbrcomments
 
 CategorySelect
-# FIXME: Needs description message
-# FIXME: categoryselect-infobox-sortkey : use "page" instead of article.
-# FIXME: categoryselect-error-not-exist : use "page" instead of article.
-# FIXME: tog-disablecategoryselect : do not use Title Case
 file = CategorySelect/CategorySelect.i18n.php
 
 #CollabLibs
@@ -70,9 +39,8 @@ file = ContestTool/SpecialContestTool.i18n.php
 CreateAPage
 file = CreateAPage/MultiEdit.i18n.php
 
-#CHECKME Duplicate keys with Uniwiki Create Page extension
-#CreatePage
-#file = CreatePage/CreatePage.i18n.php
+CreatePage
+file = CreatePage/CreatePage.i18n.php
 
 DaemonLoader
 file = DaemonLoader/SpecialDaemonLoader.i18n.php
@@ -80,9 +48,8 @@ file = DaemonLoader/SpecialDaemonLoader.i18n.php
 EditAccount
 file = EditAccount/SpecialEditAccount.i18n.php
 
-#CHECKME Large overlap with MediaWiki Subversion Editcount
-#Editcount
-#file = Editcount/SpecialEditcount.i18n.php
+Editcount
+file = Editcount/SpecialEditcount.i18n.php
 
 EditingTips
 file = EditingTips/EditingTips.i18n.php
@@ -105,22 +72,14 @@ file = GraceExpired/SpecialGraceExpired.i18n.php
 HAWelcome
 file = HAWelcome/HAWelcome.i18n.php
 
-# CHECKME
-#HelperPanel
-#file = HelperPanel/HelperPanel.i18n.php
-
 ImagePlaceholder
 file = ImagePlaceholder/ImagePlaceholder.i18n.php
-
-# CHECKME
-#InterwikiDispatcher
-#file = InterwikiDispatcher/SpecialInterwikiDispatcher.i18n.php
 
 LinkSuggest
 file = LinkSuggest/LinkSuggest.i18n.php
 
-#CHECKME Listusers
-#file = Listusers/SpecialListusers.i18n.php
+Listusers
+file = Listusers/SpecialListusers.i18n.php
 
 LookupContribs
 file = LookupContribs/SpecialLookupContribs.i18n.php
@@ -128,9 +87,8 @@ file = LookupContribs/SpecialLookupContribs.i18n.php
 MagCloud
 file = MagCloud/MagCloud.i18n.php
 
-#CHECKME Huge key overlap with Blog extension
-#Masthead
-#file = Masthead/Masthead.i18n.php
+Masthead
+file = Masthead/Masthead.i18n.php
 
 MostPopularArticles
 file = MostPopularArticles/SpecialMostPopularArticles.i18n.php
@@ -144,13 +102,8 @@ file = MostVisitedPages/SpecialMostVisitedPages.i18n.php
 MultiDelete
 file = MultiDelete/MultiDelete.i18n.php
 
-# CHECKME
-#MultiEdit
-#file = MultiEdit/MultiEdit.i18n.php
-
-#CHECKME Duplicate key multidelete with multidelete
-#MultiTasks
-#file = MultiTasks/MultiTasks.i18n.php
+MultiTasks
+file = MultiTasks/MultiTasks.i18n.php
 
 MyHome
 file = MyHome/MyHome.i18n.php
@@ -174,10 +127,6 @@ file = Poll/poll.i18n.php
 ProblemReports
 file = ProblemReports/ProblemReports.i18n.php
 
-#CHECKME Duplicate; also in MediaWiki Subversion
-#RegexBlock
-#file = RegexBlock/RegexBlock.i18n.php
-
 SearchRankTracker
 file = SearchRankTracker/SpecialSearchRankTracker.i18n.php
 
@@ -195,10 +144,6 @@ file = SiteWideMessages/SpecialSiteWideMessages.i18n.php
 
 SpecialInterwikiEdit
 file = SpecialInterwikiEdit/SpecialInterwikiEdit.i18n.php
-
-#CHECKME
-#SpecialMiniUpload
-#file = SpecialMiniUpload/SpecialMiniUpload.i18n.php
 
 SpecialMultipleLookup
 file = SpecialMultipleLookup/SpecialMultipleLookup.i18n.php
@@ -225,10 +170,6 @@ TextRegex
 file = TextRegex/TextRegex.i18n.php
 aliasfile = TextRegex/TextRegex.alias.php
 
-#CHECKME
-#Theorytab
-#file = Theorytab/Theorytab.i18n.php
-
 VideoEmbedTool
 file = VideoEmbedTool/VideoEmbedTool.i18n.php
 
@@ -249,10 +190,6 @@ file = WikiaIrcGateway/WikiaIrcGateway.i18n.php
 
 WikiaMiniUpload
 file = WikiaMiniUpload/WikiaMiniUpload.i18n.php
-
-#CHECKME
-#WikiaStats
-#file = WikiaStats/SpecialWikiaStats.i18n.php
 
 WikiaUpload
 file = WikiaUpload/WikiaUpload.i18n.php
@@ -283,3 +220,28 @@ file = Wysiwyg/i18n/Wysiwyg.i18n.php
 
 WysiwygInterface
 file = WysiwygInterface/WysiwygInterface.i18n.php
+
+HelperPanel
+file = HelperPanel/HelperPanel.i18n.php
+
+InterwikiDispatcher
+file = InterwikiDispatcher/SpecialInterwikiDispatcher.i18n.php
+
+#i18n file needs to be well formed
+# all sections need to to separated with newlines
+# and no trailing ?>
+#MultiEdit
+#file = MultiEdit/MultiEdit.i18n.php
+
+RegexBlock
+file = RegexBlock/RegexBlock.i18n.php
+
+SpecialMiniUpload
+file = SpecialMiniUpload/SpecialMiniUpload.i18n.php
+
+Theorytab
+file = Theorytab/Theorytab.i18n.php
+ignored = theorytab-subpage
+
+WikiaStats
+file = WikiaStats/SpecialWikiaStats.i18n.php
