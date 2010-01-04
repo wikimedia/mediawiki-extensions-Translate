@@ -214,7 +214,7 @@ class PremadeMediawikiExtensionGroups {
 
 		if( $group->getDescription() == '' ) {
 			global $wgLang;
-			$group->setDescription( wfMsg( 'translate-group-no-description' );
+			$group->setDescription( wfMsg( 'translate-group-desc-nodesc' ) );
 		}
 
 		if ( isset( $info['aliasfile'] ) ) $group->setAliasFile( $info['aliasfile'] );
