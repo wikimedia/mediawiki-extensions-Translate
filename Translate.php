@@ -7,12 +7,12 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
  *
  * @author Niklas Laxström
  * @author Siebrand Mazeland
- * @copyright Copyright © 2006-2009, Niklas Laxström
- * @copyright Copyright © 2007-2009, Siebrand Mazeland
+ * @copyright Copyright © 2006-2010, Niklas Laxström
+ * @copyright Copyright © 2007-2010, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '2009-12-06' );
+define( 'TRANSLATE_VERSION', '2010-01-04' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'path'           => __FILE__,
