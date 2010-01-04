@@ -212,6 +212,11 @@ class PremadeMediawikiExtensionGroups {
 			$group->setDescriptionMsg( $info['descmsg'], $info['url'] );
 		}
 
+		if( $group->getDescription() == '' ) {
+			global $wgLang;
+			$group->setDescription( wfMsg( 'translate-group-no-description' );
+		}
+
 		if ( isset( $info['aliasfile'] ) ) $group->setAliasFile( $info['aliasfile'] );
 		if ( isset( $info['aliasvar'] ) ) $group->setVariableNameAlias( $info['aliasvar'] );
 		if ( isset( $info['magicfile'] ) ) $group->setMagicFile( $info['magicfile'] );

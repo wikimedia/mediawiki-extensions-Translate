@@ -236,6 +236,7 @@ You are encouraged to review messages through [[Special:Translate|{{int:translat
 	'translate-group-desc-uniwiki' => 'Meta message group containing all messages for extensions related to [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Meta message group containing all messages for extensions related to the [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 	'translate-desc-mwembed' => '[http://www.mediawiki.org/wiki/MwEmbed MwEmbed] is a library for embedding MediaWiki interfaces',
+	'translate-group-desc-nodesc' => 'No description is available for this message group',
 
 	'translate-manage-groups' => 'Group management',
 	'translate-manage-listgroups' => 'Configured groups',
