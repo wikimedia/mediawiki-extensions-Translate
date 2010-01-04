@@ -10,16 +10,19 @@ file = AjaxPoll/AjaxPoll.i18n.php
 
 AutoCreateWiki
 file = AutoCreateWiki/AutoCreateWiki.i18n.php
+ignored = requestwiki-filter-language
 
 Badges
 file = Badges/UserBadges.i18n.php
+optional = user-badge-left-align, user-badge-center-align, user-badge-right-align
 
 #BlogPage
 #file = BlogPage/Blog.i18n.php
 
 Blogs
 file = Blogs/Blogs.i18n.php
-ignored = create-blog-empty-article
+optional = blug-cut-sign
+ignored = create-blog-empty-article, blog-listing-zero-self
 
 CategorySelect
 file = CategorySelect/CategorySelect.i18n.php
@@ -38,6 +41,7 @@ file = ContestTool/SpecialContestTool.i18n.php
 
 CreateAPage
 file = CreateAPage/MultiEdit.i18n.php
+optional = createplate-Blank
 
 # Conflicting keys from CreateAPage
 # Key 8:createpage_title already belongs to wikia-createapage, conflict with wikia-createpage
@@ -121,6 +125,7 @@ file = MultiTasks/MultiTasks.i18n.php
 
 MyHome
 file = MyHome/MyHome.i18n.php
+ignored = accesskey-pt-myhome
 
 NewEditPage
 file = NewEditPage/NewEditPage.i18n.php
@@ -155,6 +160,7 @@ file = ShareFeature/ShareFeature.i18n.php
 
 SiteWideMessages
 file = SiteWideMessages/SpecialSiteWideMessages.i18n.php
+ignored = swm-expire-options
 
 SpecialInterwikiEdit
 file = SpecialInterwikiEdit/SpecialInterwikiEdit.i18n.php
@@ -201,6 +207,7 @@ file = WidgetSpecialPage/WidgetsSpecialPage.i18n.php
 
 WikiaIrcGateway
 file = WikiaIrcGateway/WikiaIrcGateway.i18n.php
+ignored = ircgate-channellist
 
 WikiaMiniUpload
 file = WikiaMiniUpload/WikiaMiniUpload.i18n.php
@@ -216,6 +223,7 @@ file = WikiaWidget/WikiaWidget.i18n.php
 
 WikiFactory Dumps
 file = WikiFactory/Dumps/DumpsOnDemand.i18n.php
+ignored = awc-metrics-language-top-list
 
 WikiFactory Reporter
 file = WikiFactory/Reporter/SpecialWikiFactoryReporter.i18n.php
@@ -234,6 +242,7 @@ file = Wysiwyg/i18n/Wysiwyg.i18n.php
 
 WysiwygInterface
 file = WysiwygInterface/WysiwygInterface.i18n.php
+optional = wysiwyginterface
 
 HelperPanel
 file = HelperPanel/HelperPanel.i18n.php
@@ -262,3 +271,12 @@ ignored = theorytab-subpage
 
 WikiaStats
 file = WikiaStats/SpecialWikiaStats.i18n.php
+optional = wikiastats_prev_rank, wikiastats_prev_rank_xls, wikiastats_xls_files_stats
+optional = wikiastats_history_mainstats_value1, wikiastats_history_mainstats_value2, wikiastats_history_mainstats_value3, wikiastats_history_mainstats_value4
+ignored = wikiastats_distrib_article_counting, wikiastats_filename_mainstats, wikiastats_filename_other1, wikiastats_filename_other2
+ignored = wikiastats_filename_other3, wikiastats_filename_other4, wikiastats_filename_other5, wikiastats_filename_other6
+ignored = wikiastats_filename_other7, wikiastats_filename_other8, wikiastats_filename_trend, wikiastats_filename_creation
+ignored = wikiastats_filename_column_A, wikiastats_filename_column_B, wikiastats_filename_column_C, wikiastats_filename_column_D
+ignored = wikiastats_filename_column_E, wikiastats_filename_column_F, wikiastats_filename_column_G, wikiastats_filename_column_H
+ignored = wikiastats_filename_column_I, wikiastats_filename_column_J, wikiastats_filename_column_K, wikiastats_filename_column_L
+ignored = wikiastats_filename_column_M, wikiastats_filename_column_N, wikiastats_filename_column_O
