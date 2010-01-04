@@ -1,15 +1,12 @@
-ActionPanel
-file = ActionPanel/ActionPanel.i18n.php
+Action Panel
 
-AjaxPoll
-file = AjaxPoll/AjaxPoll.i18n.php
+Ajax Poll
 
 # Wrong format
 #ArticlesHome
 #file = ArticlesHome/ArticlesHome.i18n.php
 
-AutoCreateWiki
-file = AutoCreateWiki/AutoCreateWiki.i18n.php
+Auto Create Wiki
 ignored = requestwiki-filter-language
 
 Badges
@@ -20,12 +17,10 @@ optional = user-badge-left-align, user-badge-center-align, user-badge-right-alig
 #file = BlogPage/Blog.i18n.php
 
 Blogs
-file = Blogs/Blogs.i18n.php
 optional = blug-cut-sign
 ignored = create-blog-empty-article, blog-listing-zero-self
 
-CategorySelect
-file = CategorySelect/CategorySelect.i18n.php
+Category Select
 
 #CollabLibs
 #file = CollabLibs/CollabLib.i18n.php
@@ -36,10 +31,10 @@ file = CategorySelect/CategorySelect.i18n.php
 #CommentsForum
 #file = CommentsForum/Forum.i18n.php
 
-ContestTool
+Contest Tool
 file = ContestTool/SpecialContestTool.i18n.php
 
-CreateAPage
+Create A Page
 file = CreateAPage/MultiEdit.i18n.php
 optional = createplate-Blank
 
@@ -49,10 +44,10 @@ optional = createplate-Blank
 #CreatePage
 #file = CreatePage/CreatePage.i18n.php
 
-DaemonLoader
+Daemon Loader
 file = DaemonLoader/SpecialDaemonLoader.i18n.php
 
-EditAccount
+Edit Account
 file = EditAccount/SpecialEditAccount.i18n.php
 
 # Conflicting keys from MediaWiki SVN's Editocunt
@@ -63,32 +58,24 @@ file = EditAccount/SpecialEditAccount.i18n.php
 #Editcount
 #file = Editcount/SpecialEditcount.i18n.php
 
-EditingTips
-file = EditingTips/EditingTips.i18n.php
+Editing Tips
 
-EditResearch
-file = EditResearch/EditResearch.i18n.php
+Edit Research
 
-FlickrImport
-file = FlickrImport/FlickrImport.i18n.php
+Flickr Import
 
-ForceSubjectForNewSection
-file = ForceSubjectForNewSection/ForceSubjectForNewSection.i18n.php
+Force Subject For New Section
 
-GlobalWatchlist
-file = GlobalWatchlist/GlobalWatchlist.i18n.php
+Global Watchlist
 
-GraceExpired
+Grace Expired
 file = GraceExpired/SpecialGraceExpired.i18n.php
 
-HAWelcome
-file = HAWelcome/HAWelcome.i18n.php
+HA Welcome
 
-ImagePlaceholder
-file = ImagePlaceholder/ImagePlaceholder.i18n.php
+Image Placeholder
 
-LinkSuggest
-file = LinkSuggest/LinkSuggest.i18n.php
+Link Suggest
 
 # Conflicting keys from MediaWiki core
 # Key 8:listusers already belongs to core, conflict with wikia-listusers
@@ -96,11 +83,10 @@ file = LinkSuggest/LinkSuggest.i18n.php
 #Listusers
 #file = Listusers/SpecialListusers.i18n.php
 
-LookupContribs
+Lookup Contribs
 file = LookupContribs/SpecialLookupContribs.i18n.php
 
-MagCloud
-file = MagCloud/MagCloud.i18n.php
+Mag Cloud
 
 # Conflicting keys with Wikia Blogs extension
 # Key 8:blog-avatar-preferences-title already belongs to wikia-blogs, conflict with wikia-masthead
@@ -108,130 +94,107 @@ file = MagCloud/MagCloud.i18n.php
 #Masthead
 #file = Masthead/Masthead.i18n.php
 
-MostPopularArticles
+Most Popular Articles
 file = MostPopularArticles/SpecialMostPopularArticles.i18n.php
 
-MostPopularCategories
+Most Popular Categories
 file = MostPopularCategories/SpecialMostPopularCategories.i18n.php
 
-MostVisitedPages
+Most Visited Pages
 file = MostVisitedPages/SpecialMostVisitedPages.i18n.php
 
-MultiDelete
-file = MultiDelete/MultiDelete.i18n.php
+Multi Delete
 
-MultiTasks
-file = MultiTasks/MultiTasks.i18n.php
+Multi Tasks
 
-MyHome
-file = MyHome/MyHome.i18n.php
+My Home
 ignored = accesskey-pt-myhome
 
-NewEditPage
-file = NewEditPage/NewEditPage.i18n.php
+New Edit Page
 
-NewWikiBuilder
-file = NewWikiBuilder/NewWikiBuilder.i18n.php
+New Wiki Builder
 aliasfile = NewWikiBuilder/NewWikiBuilder.alias.php
 
-Our404Handler
+Our 404 Handler
 file = Our404Handler/SpecialOur404Handler.i18n.php
 
-OutboundScreen
-file = OutboundScreen/OutboundScreen.i18n.php
+Outbound Screen
 
 Poll
 file = Poll/poll.i18n.php
 
-ProblemReports
-file = ProblemReports/ProblemReports.i18n.php
+Problem Reports
 
-SearchRankTracker
+Search Rank Tracker
 file = SearchRankTracker/SpecialSearchRankTracker.i18n.php
 
 Search
-file = Search/Search.i18n.php
 
-SendToAFriend
-file = SendToAFriend/SendToAFriend.i18n.php
+Send To A Friend
 
-ShareFeature
-file = ShareFeature/ShareFeature.i18n.php
+Share Feature
 
-SiteWideMessages
+Site Wide Messages
 file = SiteWideMessages/SpecialSiteWideMessages.i18n.php
 ignored = swm-expire-options
 
-SpecialInterwikiEdit
-file = SpecialInterwikiEdit/SpecialInterwikiEdit.i18n.php
+Special Interwiki Edit
 
-SpecialMultipleLookup
-file = SpecialMultipleLookup/SpecialMultipleLookup.i18n.php
+Special Multiple Lookup
 
-SpecialPrivateDomains
-file = SpecialPrivateDomains/SpecialPrivateDomains.i18n.php
+Special Private Domains
 
-SpecialProtectSite
-file = SpecialProtectSite/SpecialProtectSite.i18n.php
+Special Protect Site
 
-SpecialWidgetDashboard
-file = SpecialWidgetDashboard/SpecialWidgetDashboard.i18n.php
+Special Widget Dashboard
 
-StaffPowers
-file = StaffPowers/StaffPowers.i18n.php
+Staff Powers
 
-TagsReport
+Tags Report
 file = TagsReport/SpecialTagsReport.i18n.php
 
-TaskManager
+Task Manager
 file = TaskManager/SpecialTaskManager.i18n.php
 
-TextRegex
-file = TextRegex/TextRegex.i18n.php
+Text Regex
 aliasfile = TextRegex/TextRegex.alias.php
 
-VideoEmbedTool
-file = VideoEmbedTool/VideoEmbedTool.i18n.php
+Video Embed Tool
 
-WikiaVideoAdd
+Wikia Video Add
 file = VideoEmbedTool/WikiaVideoAdd.i18n.php
 
 Webtools
 file = Webtools/SpecialWebtools.i18n.php
 
-WhereIsExtension
+Where Is Extension
 file = WhereIsExtension/SpecialWhereIsExtension.i18n.php
 
-WidgetSpecialPage
+Widget Special Page
 file = WidgetSpecialPage/WidgetsSpecialPage.i18n.php
 
-WikiaIrcGateway
-file = WikiaIrcGateway/WikiaIrcGateway.i18n.php
+Wikia Irc Gateway
 ignored = ircgate-channellist
 
-WikiaMiniUpload
-file = WikiaMiniUpload/WikiaMiniUpload.i18n.php
+Wikia Mini Upload
 
-WikiaUpload
-file = WikiaUpload/WikiaUpload.i18n.php
+Wikia Upload
 
-WikiaVideo
-file = WikiaVideo/WikiaVideo.i18n.php
+Wikia Video
 
-WikiaWidget
-file = WikiaWidget/WikiaWidget.i18n.php
+Wikia Widget
 
-WikiFactory Dumps
+Wiki Factory Dumps
 file = WikiFactory/Dumps/DumpsOnDemand.i18n.php
 ignored = awc-metrics-language-top-list
 
-WikiFactory Reporter
+Wiki Factory Reporter
 file = WikiFactory/Reporter/SpecialWikiFactoryReporter.i18n.php
 
-WikiFactory
+Wiki Factory
 file = WikiFactory/SpecialWikiFactory.i18n.php
 
-WikiHealth
+Wiki Health
 file = WikiHealth/SpecialWikiHealth.i18n.php
 
 FCK
@@ -240,14 +203,12 @@ file = Wysiwyg/i18n/FCK.i18n.php
 Wysiwyg
 file = Wysiwyg/i18n/Wysiwyg.i18n.php
 
-WysiwygInterface
-file = WysiwygInterface/WysiwygInterface.i18n.php
+Wysiwyg Interface
 optional = wysiwyginterface
 
-HelperPanel
-file = HelperPanel/HelperPanel.i18n.php
+Helper Panel
 
-InterwikiDispatcher
+Interwiki Dispatcher
 file = InterwikiDispatcher/SpecialInterwikiDispatcher.i18n.php
 
 #i18n file needs to be well formed
@@ -262,14 +223,12 @@ file = InterwikiDispatcher/SpecialInterwikiDispatcher.i18n.php
 #RegexBlock
 #file = RegexBlock/RegexBlock.i18n.php
 
-SpecialMiniUpload
-file = SpecialMiniUpload/SpecialMiniUpload.i18n.php
+Special Mini Upload
 
-Theorytab
-file = Theorytab/Theorytab.i18n.php
+Theory tab
 ignored = theorytab-subpage
 
-WikiaStats
+Wikia Stats
 file = WikiaStats/SpecialWikiaStats.i18n.php
 optional = wikiastats_prev_rank, wikiastats_prev_rank_xls, wikiastats_xls_files_stats
 optional = wikiastats_history_mainstats_value1, wikiastats_history_mainstats_value2, wikiastats_history_mainstats_value3, wikiastats_history_mainstats_value4
