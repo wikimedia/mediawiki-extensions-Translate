@@ -17,7 +17,7 @@ optional = user-badge-left-align, user-badge-center-align, user-badge-right-alig
 #file = BlogPage/Blog.i18n.php
 
 Blogs
-optional = blug-cut-sign
+optional = blug-cut-sign, blog-avatar-defaults
 ignored = create-blog-empty-article, blog-listing-zero-self
 
 Category Select
