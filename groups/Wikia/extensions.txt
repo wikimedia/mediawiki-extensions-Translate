@@ -187,13 +187,13 @@ Wikia Widget
 
 Wiki Factory Dumps
 file = WikiFactory/Dumps/DumpsOnDemand.i18n.php
-ignored = awc-metrics-language-top-list
 
 Wiki Factory Reporter
 file = WikiFactory/Reporter/SpecialWikiFactoryReporter.i18n.php
 
 Wiki Factory
 file = WikiFactory/SpecialWikiFactory.i18n.php
+ignored = awc-metrics-language-top-list
 
 FCK
 file = Wysiwyg/i18n/FCK.i18n.php
