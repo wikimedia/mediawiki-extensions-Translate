@@ -460,6 +460,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-uploadblacklist',
 		'ext-wikihiero',
 		'ext-wikimediamessages',
+		'ext-wikimedialicensetexts', // commons.wikimedia.org
 	);
 
 	protected function init() {
