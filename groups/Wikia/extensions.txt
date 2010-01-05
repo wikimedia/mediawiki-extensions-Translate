@@ -18,7 +18,7 @@ optional = user-badge-left-align, user-badge-center-align, user-badge-right-alig
 
 Blogs
 optional = blug-cut-sign, blog-avatar-defaults
-ignored = create-blog-empty-article, blog-listing-zero-self
+ignored = create-blog-empty-article, blog-listing-zero-self, blogs-recent-url
 
 Category Select
 
