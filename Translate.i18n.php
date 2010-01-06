@@ -1452,6 +1452,27 @@ $1',
 	'translate-gs-avgscore' => 'معدل الدرجات',
 );
 
+/** Assamese (অসমীয়া)
+ * @author Chaipau
+ */
+$messages['as'] = array(
+	'translate' => 'ভাঙনি কৰক',
+	'translate-edit' => 'সম্পাদনা',
+	'translate-talk' => 'আলোচনা',
+	'translate-history' => 'ইতিহাস',
+	'translate-task-view' => 'সকলো বাৰ্তা',
+	'translate-task-untranslated' => 'ভাঙনি নোহোৱা সকলো বাণী',
+	'translate-task-review' => 'সালসলনিসমূহৰ পুনৰ্বিবেচনা',
+	'translate-task-export' => 'সালসলনিসমূহ প্ৰেৰণ',
+	'translate-page-group' => 'গোট',
+	'translate-page-language' => 'ভাষা',
+	'translate-page-limit' => 'সীমা',
+	'translate-next' => 'পৰৱৰ্তী পৃষ্ঠা',
+	'translate-page-edit' => 'সম্পাদনা',
+	'translate-edit-contribute' => 'বৰঙণি',
+	'translate-manage-subtitle' => 'পৰিচালনা কৰক',
+);
+
 /** Asturian (Asturianu)
  * @author Esbardu
  */
@@ -2043,6 +2064,7 @@ $messages['bpy'] = array(
 );
 
 /** Breton (Brezhoneg)
+ * @author Fohanno
  * @author Fulup
  */
 $messages['br'] = array(
@@ -2224,7 +2246,7 @@ Broudet oc'h da adwelet ar c'hemennadennoù adal [[Special:Translate|{{int:trans
 	'translate-group-desc-wikitravelextensions' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astennoù MediaWiki implijet gant [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astennoù stag ouzh [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astennoù stag ouzh [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
-	#'translate-group-desc-mwembed' => 'Ul levraoueg da enframmañ etrefasoù MediaWiki eo [http://www.mediawiki.org/wiki/MwEmbed MwEmbed]',
+	'translate-group-desc-nodesc' => "N'eus deskrivadur ebet da gaout evit ar strollad kemennadennoù-mañ",
 	'translate-manage-groups' => 'Merañ ar strollad',
 	'translate-manage-listgroups' => 'Strolladoù savet',
 	'translate-manage-listgroups-old' => 'Stiloù kozh ar strolladoù',
@@ -4392,7 +4414,7 @@ Se te anima a revisar los mensajes a través de [[Special:Translate|{{int:transl
 	'translate-group-desc-wikitravelextensions' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones MediaWiki soportadas usadas por [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones relacionadas a [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones relacionadas a la [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Iniciativa de usabilidad de Wikipedia]',
-	#'translate-group-desc-mwembed' => '[http://www.mediawiki.org/wiki/MwEmbed MwEmbed] es una biblioteca para incrustar interfaces de MediaWiki',
+	'translate-group-desc-nodesc' => 'No hay descripción disponible para este grupo de mensaje',
 	'translate-manage-groups' => 'Gestión de grupo',
 	'translate-manage-listgroups' => 'Grupos configurados',
 	'translate-manage-listgroups-old' => 'Grupos en estilo antiguo',
@@ -6038,7 +6060,7 @@ S wird empfohle, Syschtemnochrichte mit dr Spezialsyte [[Special:Translate|{{int
 	'translate-group-desc-wikitravelextensions' => 'In däre Hauptgruppe het s alli Syschtemnochrichte vu dr unterstitzte MediaWiki-Erwyterige, wu vu [http://wikitravel.org Wikitravel] brucht wäre',
 	'translate-group-desc-uniwiki' => 'In däre Hauptgruppe het s alli Syschtemnochrichte fir verwandti Erwyterige vu [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'In däre Hauptgruppe het s alli Syschtemnochrichte vu dr [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Benutzerfrejndligkeits-Initiative]',
-	#'translate-group-desc-mwembed' => '[http://www.mediawiki.org/wiki/MwEmbed MwEmbed] isch e Bibliothek fir s Yybette vu MediaWiki-Schnittstelle',
+	'translate-group-desc-nodesc' => 'Fir die Nochrichte-Gruppe isch kei Bschryybig verfiegbar.',
 	'translate-manage-groups' => 'Gruppeverwaltig',
 	'translate-manage-listgroups' => 'Konfigurierti Gruppe',
 	'translate-manage-listgroups-old' => 'Gruppe in altem Stil',
@@ -14258,6 +14280,7 @@ Du uppmuntras att granska meddelanden genom [[Special:Translate|{{int:translate}
 	'translate-group-desc-wikitravelextensions' => 'Metagrupp som innehåller alla meddelanden för MediaWiki-tillägg som används av [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Metagrupp som innehåller alla meddelanden för tillägg relaterade till [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Metagrupp som innehåller alla meddelanden för tillägg relaterade till [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
+	'translate-group-desc-nodesc' => 'Det finns ingen beskrivning av denna meddelandegrupp',
 	'translate-manage-groups' => 'Grupphantering',
 	'translate-manage-listgroups' => 'Bekräftade grupper',
 	'translate-managegroups' => 'Grupphantering',
