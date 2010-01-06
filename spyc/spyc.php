@@ -256,7 +256,7 @@ class Spyc {
         return $this->_dumpNode($key, array(), $indent, $previous_key, $first_key);
       // It has children.  What to do?
       // Make it the right kind of item
-      $string = $this->_dumpNode($key, NULL, $indent, $previous_key, $first_key);
+      $string = $this->_dumpNode($key, null, $indent, $previous_key, $first_key);
       // Add the indent
       $indent += $this->_dumpIndent;
       // Yamlize the array
