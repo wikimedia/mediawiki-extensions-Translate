@@ -208,6 +208,7 @@ ignored = awc-metrics-language-top-list
 
 FCK
 file = Wysiwyg/i18n/FCK.i18n.php
+optional = wysiwygTemplateMagicWordsLink
 
 Wysiwyg
 file = Wysiwyg/i18n/Wysiwyg.i18n.php
