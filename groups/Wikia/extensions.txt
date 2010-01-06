@@ -51,7 +51,7 @@ file = DaemonLoader/SpecialDaemonLoader.i18n.php
 Edit Account
 file = EditAccount/SpecialEditAccount.i18n.php
 
-# Conflicting keys from MediaWiki SVN's Editocunt
+# Conflicting keys from MediaWiki SVN's Editcount
 # Key 8:editcount already belongs to ext-editcount, conflict with wikia-editcount
 # Key 8:editcount_username already belongs to ext-editcount, conflict with wikia-editcount
 # Key 8:editcount_submit already belongs to ext-editcount, conflict with wikia-editcount
@@ -63,8 +63,19 @@ Editing Tips
 
 Edit Research
 
-Flickr Import
-var = wgFlickrImportMessages
+# Conflicting keys from MediaWiki SVN's ImportFreeImages
+# Key 8:importfreeimages already belongs to ext-importfreeimages, conflict with wikia-flickrimport
+# Key 8:importfreeimages_description already belongs to ext-importfreeimages, conflict with wikia-flickrimport
+# Key 8:importfreeimages_noapikey already belongs to ext-importfreeimages, conflict with wikia-flickrimport
+# Key 8:importfreeimages_nophotosfound already belongs to ext-importfreeimages, conflict with wikia-flickrimport
+# Key 8:importfreeimages_owner already belongs to ext-importfreeimages, conflict with wikia-flickrimport
+# Key 8:importfreeimages_importthis already belongs to ext-importfreeimages, conflict with wikia-flickrimport
+# Key 8:importfreeimages_next already belongs to ext-importfreeimages, conflict with wikia-flickrimport
+# Key 8:importfreeimages_filefromflickr already belongs to ext-importfreeimages, conflict with wikia-flickrimport
+# Key 8:importfreeimages_promptuserforfilename already belongs to ext-importfreeimages, conflict with wikia-flickrimport
+# Key 8:importfreeimages_returntoform already belongs to ext-importfreeimages, conflict with wikia-flickrimport
+#Flickr Import
+#var = wgFlickrImportMessages
 
 Force Subject For New Section
 
