@@ -8311,7 +8311,7 @@ $messages['ja'] = array(
 	'translate-group-desc-wikitravelextensions' => '[http://wikitravel.org Wikitravel] で使われている、サポート対象の MediaWiki 拡張機能のすべてのメッセージを含んだメタメッセージグループ',
 	'translate-group-desc-uniwiki' => '[http://unicefinnovation.org/wiki.php Uniwiki] に関連する拡張機能のすべてのメッセージを含んだメタメッセージグループ',
 	'translate-group-desc-ui' => '[http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative] に関連した拡張機能のすべてのメッセージを含んだメタメッセージグループ',
-	#'translate-group-desc-mwembed' => '[http://www.mediawiki.org/wiki/MwEmbed MwEmbed] は MediaWiki インターフェイスを組み込むためのライブラリーです',
+	'translate-group-desc-nodesc' => 'このメッセージグループには説明がありません',
 	'translate-manage-groups' => 'グループの管理',
 	'translate-manage-listgroups' => '設定済みのグループ',
 	'translate-manage-listgroups-old' => '古いスタイルのグループ',
@@ -15220,11 +15220,13 @@ Grup detayları görünümüne dönmek için aşağıdaki bağlantıyı kullanı
 
 /** Tatar (Cyrillic) (Татарча/Tatarça (Cyrillic))
  * @author Himiq Dzyu
+ * @author Timming
  */
 $messages['tt-cyrl'] = array(
 	'translate' => 'Тәрҗемә',
 	'translate-desc' => '[[Special:Translate|Махсус бит]] MediaWiki һәм башка программлар тәрҗемә итү өчен',
 	'translate-edit' => 'үзгәртү',
+	'translate-next' => 'алдагы бит',
 );
 
 /** Uighur (Uyghurche‎ / ئۇيغۇرچە) */
