@@ -274,6 +274,16 @@ $messages['arz'] = array(
 	'tpt-download-page' => 'صدّر الصفحه مع الترجمات',
 );
 
+/** Assamese (অসমীয়া)
+ * @author Chaipau
+ */
+$messages['as'] = array(
+	'tpt-submit' => 'এই সংস্কৰণ ভাঙনিৰ বাবে বাচক',
+	'tpt-translate-this' => 'এই পৃষ্ঠা ভাঙনি কৰক',
+	'translate-tag-translate-link-desc' => 'এই পৃষ্ঠা ভাঙনি কৰক',
+	'tpt-languages-legend' => 'অন্য ভাষা:',
+);
+
 /** Asturian (Asturianu)
  * @author Esbardu
  */

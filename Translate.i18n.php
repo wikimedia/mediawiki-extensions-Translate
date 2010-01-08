@@ -1464,13 +1464,18 @@ $messages['as'] = array(
 	'translate-task-untranslated' => 'ভাঙনি নোহোৱা সকলো বাণী',
 	'translate-task-review' => 'সালসলনিসমূহৰ পুনৰ্বিবেচনা',
 	'translate-task-export' => 'সালসলনিসমূহ প্ৰেৰণ',
+	'translate-page-task' => 'মোৰ বাঞ্চা',
 	'translate-page-group' => 'গোট',
 	'translate-page-language' => 'ভাষা',
 	'translate-page-limit' => 'সীমা',
+	'translate-submit' => 'অৰ্জন',
 	'translate-next' => 'পৰৱৰ্তী পৃষ্ঠা',
 	'translate-page-edit' => 'সম্পাদনা',
 	'translate-edit-contribute' => 'বৰঙণি',
 	'translate-manage-subtitle' => 'পৰিচালনা কৰক',
+	'translate-import-err-dl-failed' => "ফাইল অৰ্জন কৰা নহ'ল:
+$1",
+	'translate-js-fb' => 'সাধাৰণ সম্পদনা',
 );
 
 /** Asturian (Asturianu)
@@ -15227,6 +15232,7 @@ $messages['tt-cyrl'] = array(
 	'translate-desc' => '[[Special:Translate|Махсус бит]] MediaWiki һәм башка программлар тәрҗемә итү өчен',
 	'translate-edit' => 'үзгәртү',
 	'translate-next' => 'алдагы бит',
+	'languagestats' => 'Тел статистикасы',
 );
 
 /** Uighur (Uyghurche‎ / ئۇيغۇرچە) */
