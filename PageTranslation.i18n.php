@@ -278,6 +278,7 @@ $messages['arz'] = array(
  * @author Chaipau
  */
 $messages['as'] = array(
+	'pagetranslation' => 'পৃষ্ঠা ভাঙনি',
 	'tpt-submit' => 'এই সংস্কৰণ ভাঙনিৰ বাবে বাচক',
 	'tpt-translate-this' => 'এই পৃষ্ঠা ভাঙনি কৰক',
 	'translate-tag-translate-link-desc' => 'এই পৃষ্ঠা ভাঙনি কৰক',
