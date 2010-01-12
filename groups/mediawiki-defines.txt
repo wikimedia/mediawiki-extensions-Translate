@@ -490,6 +490,12 @@ Google Maps
 descmsg = gm-desc
 var = wgGoogleMapsMessages
 
+Google News Sitemap
+descmsg = gnsm-desc
+ignored = gnsm_categorymap
+file = GoogleNewsSitemap/SpecialGoogleNewsSitemap.i18n.php
+aliasfile = GoogleNewsSitemap/SpecialGoogleNewsSitemap.alias.php
+
 Go To Category
 
 Group Permissions Manager
