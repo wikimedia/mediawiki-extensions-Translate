@@ -178,6 +178,7 @@ file = Collection/CollectionCore.i18n.php
 aliasfile = Collection/Collection.alias.php
 descmsg = coll-create_a_book
 ignored = coll-book_creator_box_style, coll-suggest_enabled
+ignored = coll-user_book_prefix, coll-community_book_prefix
 
 Collection - Other
 id = ext-collection-other
