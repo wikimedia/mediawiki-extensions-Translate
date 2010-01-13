@@ -11,7 +11,7 @@ class PremadeWikiaExtensionGroups extends PremadeMediawikiExtensionGroups {
 		parent::__construct();
 		$dir = dirname( __FILE__ );
 		$this->definitionFile = $dir . '/extensions.txt';
-		$this->path = '$wgTranslateGroupRoot/wikia/';
+		$this->path = "$wgTranslateGroupRoot/wikia/";
 	}
 
 	protected function addAllMeta() {
