@@ -2744,6 +2744,7 @@ $messages['uk'] = array(
 	'tpt-translate-this' => 'перекласти цю сторінку',
 	'translate-tag-translate-link-desc' => 'Перекласти цю сторінку',
 	'translate-tag-markthis' => 'Позначити цю сторінку для перекладу',
+	'tpt-translation-intro-fuzzy' => 'Застарілі переклади позначені як тут.',
 	'tpt-languages-legend' => 'Інші мови:',
 	'tpt-download-page' => 'Експортувати сторінку з перекладами',
 );
