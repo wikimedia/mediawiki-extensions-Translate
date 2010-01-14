@@ -2717,6 +2717,7 @@ $messages['tt-cyrl'] = array(
 /** Ukrainian (Українська)
  * @author AS
  * @author Ahonc
+ * @author NickK
  * @author Prima klasy4na
  */
 $messages['uk'] = array(
@@ -2736,7 +2737,7 @@ $messages['uk'] = array(
 	'tpt-sections-template' => 'Шаблон сторінки перекладу',
 	'tpt-badtitle' => 'Зазначена назва сторінки ($1) недопустима',
 	'tpt-badsect' => '"$1" не є припустимою назвою для частини перекладів $2.',
-	'tpt-mark-summary' => 'Позначив цю версію для перекладу',
+	'tpt-mark-summary' => 'Позначено цю версію для перекладу',
 	'tpt-edit-failed' => 'Не вдалося оновити сторінку: $1',
 	'tpt-rev-latest' => 'остання версія',
 	'tpt-rev-old' => 'різниця з попередньою позначеною версією',
@@ -2744,7 +2745,7 @@ $messages['uk'] = array(
 	'tpt-translate-this' => 'перекласти цю сторінку',
 	'translate-tag-translate-link-desc' => 'Перекласти цю сторінку',
 	'translate-tag-markthis' => 'Позначити цю сторінку для перекладу',
-	'tpt-translation-intro-fuzzy' => 'Застарілі переклади позначені як тут.',
+	'tpt-translation-intro-fuzzy' => 'Застарілі переклади позначені так.',
 	'tpt-languages-legend' => 'Інші мови:',
 	'tpt-download-page' => 'Експортувати сторінку з перекладами',
 );
@@ -2834,6 +2835,7 @@ $messages['vo'] = array(
  */
 $messages['yi'] = array(
 	'pagetranslation' => 'בלאט טײַטש',
+	'tpt-diff-old' => 'פֿריערדיגער טעקסט',
 	'tpt-diff-new' => 'נײַער טעקסט',
 	'translate-tag-translate-link-desc' => 'פֿארטײַטשט דעם בלאט',
 	'tpt-languages-legend' => 'אנדערע שפראַכן:',
