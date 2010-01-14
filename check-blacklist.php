@@ -221,6 +221,21 @@ array(
 	)
 ),
 array(
+	'group' => 'ext-socialprofile-useractivity',
+	'check' => 'variable',
+	'message' => array(
+		'useractivity-edit', // Optional GENDER parameter
+		'useractivity-foe', // Optional GENDER parameter
+		'useractivity-friend', // Optional GENDER parameter
+		'useractivity-gift', // Optional GENDER parameter
+		'useractivity-group-comment', // Optional GENDER parameter
+		'useractivity-group-edit', // Optional GENDER parameter
+		'useractivity-group-friend', // Optional GENDER parameter
+		'useractivity-group-user_message', // Optional GENDER parameter
+		'useractivity-user_message', // Optional GENDER parameter
+	)
+),
+array(
 	'group' => 'ext-titleblacklist',
 	'check' => 'variable',
 	'code' => array(
