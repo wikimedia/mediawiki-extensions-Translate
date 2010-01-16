@@ -2580,8 +2580,10 @@ $messages['te'] = array(
 	'tpt-badtitle' => 'ఇచ్చిన పేజీ పేరు ($1) సరైన శీర్షిక కాదు',
 	'tpt-edit-failed' => 'పేజీని తాజాకరించలేకపోయాం: $1',
 	'tpt-already-marked' => 'ఈ పేజీ యొక్క సరికొత్త కూర్పుని ఇప్పటికే అనువాదానికై గుర్తించారు.',
+	'tpt-rev-mark-new' => 'ఈ కూర్పుని అనువాదం కొరకై గుర్తించు',
 	'tpt-translate-this' => 'ఈ పేజీని అనువదించండి',
 	'translate-tag-translate-link-desc' => 'ఈ పేజీని అనువదించండి',
+	'translate-tag-markthis' => 'ఈ పేజీని అనువాదం కొరకు గుర్తించు',
 	'tpt-languages-legend' => 'ఇతర భాషలు:',
 );
 
