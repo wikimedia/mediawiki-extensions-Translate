@@ -171,6 +171,7 @@ optional = closewikis-closed
 Code Review
 aliasfile = CodeReview/CodeReview.alias.php
 descmsg = code-desc
+ignored = code-rev-comment-preview-accesskey, code-rev-submit-accesskey, code-rev-submit-next-accesskey
 
 Collection - Core
 id = ext-collection-core
