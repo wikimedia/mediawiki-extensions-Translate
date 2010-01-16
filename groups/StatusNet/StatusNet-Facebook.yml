@@ -1,16 +1,16 @@
 ---
 BASIC:
-  id: out-statusnet-Facebook
+  id: out-statusnet-facebook
   label: StatusNet - Facebook
-  description: "{{int:bw-desc-statusnet-plugin-Facebook}}"
+  description: "{{int:bw-desc-statusnet-plugin-facebook}}"
   namespace: NS_STATUSNET
-  display: out/statusnet/Facebook
+  display: out/statusnet/facebook
   class: GettextMessageGroup
 
 FILES:
   class: GettextFFS
   sourcePattern: %GROUPROOT%/plugins/Facebook/locale/%CODE%/LC_MESSAGES/Facebook.po
-  targetPattern: Facebook.po
+  targetPattern: plugins/Facebook/locale/%CODE%/LC_MESSAGES/Facebook.po
   codeMap:
     en-gb: en_GB
     no: nb
@@ -20,6 +20,6 @@ FILES:
 
 MANGLER
   class: StringMatcher
-  prefix: Facebook-
+  prefix: facebook-
   patterns:
     - "*"

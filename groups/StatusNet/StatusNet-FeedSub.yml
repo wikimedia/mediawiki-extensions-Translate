@@ -1,16 +1,16 @@
 ---
 BASIC:
-  id: out-statusnet-FeedSub
+  id: out-statusnet-feedsub
   label: StatusNet - FeedSub
-  description: "{{int:bw-desc-statusnet-plugin-FeedSub}}"
+  description: "{{int:bw-desc-statusnet-plugin-feedsub}}"
   namespace: NS_STATUSNET
-  display: out/statusnet/FeedSub
+  display: out/statusnet/feedsub
   class: GettextMessageGroup
 
 FILES:
   class: GettextFFS
   sourcePattern: %GROUPROOT%/plugins/FeedSub/locale/%CODE%/LC_MESSAGES/FeedSub.po
-  targetPattern: FeedSub.po
+  targetPattern: plugins/FeedSub/locale/%CODE%/LC_MESSAGES/FeedSub.po
   codeMap:
     en-gb: en_GB
     no: nb
@@ -20,6 +20,6 @@ FILES:
 
 MANGLER
   class: StringMatcher
-  prefix: FeedSub-
+  prefix: feedsub-
   patterns:
     - "*"

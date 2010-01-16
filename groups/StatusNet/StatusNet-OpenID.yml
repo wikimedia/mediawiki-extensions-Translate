@@ -1,16 +1,16 @@
 ---
 BASIC:
-  id: out-statusnet-OpenID
+  id: out-statusnet-openid
   label: StatusNet - OpenID
-  description: "{{int:bw-desc-statusnet-plugin-OpenID}}"
+  description: "{{int:bw-desc-statusnet-plugin-openid}}"
   namespace: NS_STATUSNET
-  display: out/statusnet/OpenID
+  display: out/statusnet/openid
   class: GettextMessageGroup
 
 FILES:
   class: GettextFFS
   sourcePattern: %GROUPROOT%/plugins/OpenID/locale/%CODE%/LC_MESSAGES/OpenID.po
-  targetPattern: OpenID.po
+  targetPattern: plugins/OpenID/locale/%CODE%/LC_MESSAGES/OpenID.po
   codeMap:
     en-gb: en_GB
     no: nb
@@ -20,6 +20,6 @@ FILES:
 
 MANGLER
   class: StringMatcher
-  prefix: OpenID-
+  prefix: openid-
   patterns:
     - "*"

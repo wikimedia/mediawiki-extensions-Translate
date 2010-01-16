@@ -1,16 +1,16 @@
 ---
 BASIC:
-  id: out-statusnet-Gravatar
+  id: out-statusnet-gravatar
   label: StatusNet - Gravatar
-  description: "{{int:bw-desc-statusnet-plugin-Gravatar}}"
+  description: "{{int:bw-desc-statusnet-plugin-gravatar}}"
   namespace: NS_STATUSNET
-  display: out/statusnet/Gravatar
+  display: out/statusnet/gravatar
   class: GettextMessageGroup
 
 FILES:
   class: GettextFFS
   sourcePattern: %GROUPROOT%/plugins/Gravatar/locale/%CODE%/LC_MESSAGES/Gravatar.po
-  targetPattern: Gravatar.po
+  targetPattern: plugins/Gravatar/locale/%CODE%/LC_MESSAGES/Gravatar.po
   codeMap:
     en-gb: en_GB
     no: nb
@@ -20,6 +20,6 @@ FILES:
 
 MANGLER
   class: StringMatcher
-  prefix: Gravatar-
+  prefix: gravatar-
   patterns:
     - "*"
