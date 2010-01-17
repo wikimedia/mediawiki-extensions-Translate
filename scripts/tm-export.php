@@ -21,7 +21,6 @@ class TMExport extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 		$this->mDescription = 'Script to export messages for translatetoolkit translation memory';
-		#$this->addOption( 'target', 'where to put the sqlite file', 'required', 'target' );
 		$this->addArg( 'target', 'preinitialised sqlite db', 'required' );
 	}
 
@@ -42,7 +41,6 @@ class TMExport extends Maintenance {
 		// TODO: encapsulate list of valid language codes
 		$languages = Language::getLanguageNames( false );
 		unset( $languages['en'] );
-		$codes = array_keys( $languages );
 
 		foreach( $groups as $id => $group ) {
 			if ( $group->isMeta() ) continue;
@@ -56,10 +54,6 @@ class TMExport extends Maintenance {
 				$key = strtr( $key, ' ', '_' );
 				$key = $capitalized ? $wgContLang->ucfirst( $key ) : $key;
 
-				// All the translations what there might be
-				$keys_for_message = array();
-				foreach ( $codes as $code ) $keys_for_message[] = $key . '/' . $code;
-
 				$dbr = wfGetDB( DB_SLAVE );
 				$tables = array( 'page', 'revision', 'text' );
 				// selectFields to stfu Revision class
@@ -68,7 +62,7 @@ class TMExport extends Maintenance {
 					'page_latest = rev_id',
 					'rev_text_id = old_id',
 					'page_namespace' => $group->getNamespace(),
-					'page_title' => $keys_for_message
+					'page_title ' . $dbr->buildLike( "$key/", $dbr->anyString() )
 				);
 
 				$res = $dbr->select( $tables, $vars, $conds, __METHOD__ );
