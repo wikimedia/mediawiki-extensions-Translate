@@ -133,12 +133,12 @@ class TranslationHelpers {
 		global $wgTranslateTM;
 		if ( $wgTranslateTM === false ) return null;
 		if ( !$this->targetLanguage ) return null;
+		if ( strval( $this->getDefinition() ) === '' ) return null;
 
 		// Needed data
 		$code = $this->targetLanguage;
 		$definition = $this->getDefinition();
-
-		$boxes = array();
+		$ns = $this->title->getNsText();
 
 		// Fetch suggestions
 		$server = $wgTranslateTM['server'];
@@ -148,23 +148,44 @@ class TranslationHelpers {
 		$url = "$server:$port/tmserver/en/$code/unit/$def";
 		$suggestions = Http::get( $url, $timeout );
 
+		$sugFields = array();
 		// Parse suggestions, but limit to three (in case there would be more)
 		if ( $suggestions !== false ) {
 			$suggestions = json_decode( $suggestions, true );
-			$suggestions = array_slice( $suggestions, 0, 3 );
 			foreach ( $suggestions as $s ) {
-				$label = wfMsgHtml( 'translate-edit-tmmatch' , sprintf( '%.2f', $s['quality'] ) );
+				// No use to suggest them what they are currently viewing
+				if ( $s['context'] === "$ns:{$this->page}" ) continue;
+
+				$accuracy = wfMsgHtml( 'translate-edit-tmmatch' , sprintf( '%.2f', $s['quality'] ) );
+				$legend = array( $accuracy => array() );
+
 				$source_page = Title::newFromText( $s['context'] . "/$code" );
 				if ( $source_page ) {
-					$label = self::editLink( $source_page,
-						htmlspecialchars( $label ), array( 'action' => 'edit' )
-					);
+					$legend[$accuracy][] = self::editLink( $source_page, '•' );
 				}
+
 				$text = TranslateUtils::convertWhiteSpaceToHTML( $s['target']  );
 				$params = array( 'class' => 'mw-sp-translate-edit-tmsug', 'title' => $s['source'] );
-				$boxes[] = Html::rawElement( 'div', $params, self::legend( $label ) . $text . self::clear() );
+
+				if ( isset( $sugFields[$s['target']] ) ) {
+					$sugFields[$s['target']][2] = array_merge_recursive( $sugFields[$s['target']][2], $legend );
+				} else {
+					$sugFields[$s['target']] = array( $text, $params, $legend );
+				}
+			}
+
+			$boxes = array();
+			foreach( $sugFields as $field ) {
+				list( $text, $params, $label ) = $field;
+				$legend = array();
+				foreach ( $label as $acc => $links ) { $legend[] = $acc . ' ' . implode( " ", $links ); }
+				$legend = implode( ' | ', $legend );
+				$boxes[] = Html::rawElement( 'div', $params, self::legend( $legend ) . $text . self::clear() );
 			}
 		}
+
+		// Limit to three max
+		$boxes = array_slice( $boxes, 0, 3 );
 
 		// Enclose if there is more than one box
 		if ( count( $boxes ) ) {
@@ -259,9 +280,7 @@ class TranslationHelpers {
 
 			$target = Title::makeTitleSafe( $ns, "$page/$fbcode" );
 			if ( $target ) {
-				$label = self::editLink( $target,
-					htmlspecialchars( $label ), array( 'action' => 'edit' )
-				);
+				$label = self::editLink( $target, htmlspecialchars( $label ) );
 			}
 
 			$text = TranslateUtils::convertWhiteSpaceToHTML( $text );
@@ -290,7 +309,7 @@ class TranslationHelpers {
 		$ns = $this->title->getNamespace();
 
 		$title = Title::makeTitle( $ns, $page . '/' . $wgTranslateDocumentationLanguageCode );
-		$edit = self::editLink( $title, wfMsgHtml( 'translate-edit-contribute' ), array( 'action' => 'edit' ) );
+		$edit = self::editLink( $title, wfMsgHtml( 'translate-edit-contribute' ) );
 		$info = TranslateUtils::getMessageContent( $page, $wgTranslateDocumentationLanguageCode, $ns );
 
 		$class = 'mw-sp-translate-edit-info';
@@ -431,9 +450,14 @@ class TranslationHelpers {
 		return TranslateUtils::fieldset( $title, Html::element( 'span', null, $msg ), $attributes );
 	}
 
-
 	public static function editLink( $target, $text, $params = array() ) {
 		global $wgUser;
+
+		list( $page, ) = self::figureMessage( $target );
+		$group = TranslateUtils::messageKeyToGroup( $target->getNamespace(), $page );
+		if ( $group ) $group = MessageGroups::getGroup( $group );
+		$params += array( 'action' => 'edit' );
+		if ( $group ) $params += array( 'loadgroup' => $group->getId() );
 
 		$jsEdit = TranslationEditPage::jsEdit( $target );
 

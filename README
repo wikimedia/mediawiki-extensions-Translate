@@ -34,11 +34,15 @@ function customMessageGroups( $id ) {
 }
 </code>
 
+== Changes in ??? ==
+* 2010-01-16  Translation memory suggestions are aggregated intelligently to save space
+              There is link back to the original message in tm suggestions
+              tm-export superceded dump-tm
+
 == Changes in version 12 ==
 - Page translation
 - New fuzzy system, should be faster now
 - Edit are consistently filled when starting translation
-- ???
 
 == Changes in version 11 ==
 * 2009-05-09
