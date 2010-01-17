@@ -520,9 +520,9 @@ $messages['ckb-arab'] = array(
 	'tpt-already-marked' => 'دوایین وەشانی ئەم لاپەڕەیە لە پێش‌دا بۆ وەرگێڕان نیشان کراوە.',
 	'tpt-rev-latest' => 'دوایین وەشان',
 	'tpt-translate-this' => 'وەرگێڕانی ئەم لاپەڕەیە',
-	'translate-tag-translate-link-desc' => 'وەرگێڕانی ئەم پەرە',
+	'translate-tag-translate-link-desc' => 'وەرگێڕانی ئەم پەڕە',
 	'translate-tag-markthis' => 'نیشان‌کردنی ئەم لاپەڕەیە بۆ وەرگێڕان',
-	'tpt-languages-legend' => 'زمانەکانی‌تر:',
+	'tpt-languages-legend' => 'زمانەکانی دیکە:',
 );
 
 /** Czech (Česky)
