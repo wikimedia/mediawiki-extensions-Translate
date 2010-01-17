@@ -93,6 +93,10 @@ class TranslationHelpers {
 		return $translation;
 	}
 
+	public function setTranslation( $translation ) {
+		$this->translation = $translation;
+	}
+
 	public function getBoxes( $types = null ) {
 		if ( !$this->group ) return '';
 
@@ -100,6 +104,7 @@ class TranslationHelpers {
 		$all = array(
 			'other-languages' => array( $this, 'getOtherLanguagesBox' ),
 			'translation-memory' => array( $this, 'getTmBox' ),
+			'page-translation' => array( $this, 'getPageDiff' ),
 			'separator' => array( $this, 'getSeparatorBox' ),
 			'documenation' => array( $this, 'getDocumentationBox' ),
 			'definition' => array( $this, 'getDefinitionBox' ),
@@ -116,7 +121,7 @@ class TranslationHelpers {
 		if ( count( $boxes ) ) {
 			return Html::rawElement( 'div', array( 'class' => 'mw-sp-translate-edit-fields' ), implode( "\n\n", $boxes ) );
 		} else {
-			throw new MWException( "no boxes" );
+			return '';
 		}
 	}
 
@@ -127,6 +132,7 @@ class TranslationHelpers {
 	protected function getTmBox() {
 		global $wgTranslateTM;
 		if ( $wgTranslateTM === false ) return null;
+		if ( !$this->targetLanguage ) return null;
 
 		// Needed data
 		$code = $this->targetLanguage;
@@ -148,9 +154,13 @@ class TranslationHelpers {
 			$suggestions = array_slice( $suggestions, 0, 3 );
 			foreach ( $suggestions as $s ) {
 				$label = wfMsgHtml( 'translate-edit-tmmatch' , sprintf( '%.2f', $s['quality'] ) );
+				$source_page = Title::newFromText( $s['context'] . "/$code" );
+				if ( $source_page ) {
+					$label = self::editLink( $source_page,
+						htmlspecialchars( $label ), array( 'action' => 'edit' )
+					);
+				}
 				$text = TranslateUtils::convertWhiteSpaceToHTML( $s['target']  );
-
-				$text = TranslateUtils::convertWhiteSpaceToHTML( $text );
 				$params = array( 'class' => 'mw-sp-translate-edit-tmsug', 'title' => $s['source'] );
 				$boxes[] = Html::rawElement( 'div', $params, self::legend( $label ) . $text . self::clear() );
 			}
@@ -216,6 +226,7 @@ class TranslationHelpers {
 
 		$checks = $checker->checkMessage( $message, $code );
 		if ( !count( $checks ) ) return null;
+
 
 		$checkMessages = array();
 		foreach ( $checks as $checkParams ) {
@@ -308,6 +319,44 @@ class TranslationHelpers {
 			wfMsgHtml( 'translate-edit-information', $edit , $page ), $contents, array( 'class' => $class )
 		);
 
+	}
+
+	protected function getPageDiff() {
+		global $wgEnablePageTranslation;
+		if ( !$wgEnablePageTranslation ) return null;
+		if ( !$this->group instanceof WikiPageMessageGroup ) return null;
+
+		// Shortcuts
+		$code = $this->targetLanguage;
+		$key = $this->page;
+
+		// TODO: encapsulate somewhere
+		$page = TranslatablePage::newFromTitle( $this->group->title );
+		$rev = $page->getTransRev( "$key/$code" );
+		$latest = $page->getMarkedTag();
+		if ( $rev === $latest ) return null;
+
+		$oldpage = TranslatablePage::newFromRevision( $this->group->title, $rev );
+		$oldtext = $newtext = null;
+		foreach ( $oldpage->getParse()->getSectionsForSave() as $section ) {
+			if ( $this->group->title->getPrefixedDBKey() . '/' . $section->id === $key ) {
+				$oldtext = $section->getTextForTrans();
+			}
+		}
+
+		foreach ( $page->getParse()->getSectionsForSave() as $section ) {
+			if ( $this->group->title->getPrefixedDBKey() . '/' . $section->id === $key ) {
+				$newtext = $section->getTextForTrans();
+			}
+		}
+
+		if ( $oldtext === $newtext ) return null;
+
+		$diff = new DifferenceEngine;
+		$diff->setText( $oldtext, $newtext );
+		$diff->setReducedLineNumbers();
+		$diff->showDiffStyle();
+		return $diff->getDiff( wfMsgHtml( 'tpt-diff-old' ), wfMsgHtml( 'tpt-diff-new' ) );
 	}
 
 	protected static function legend( $label ) {
