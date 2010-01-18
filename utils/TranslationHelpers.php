@@ -150,6 +150,8 @@ class TranslationHelpers {
 
 		$sugFields = array();
 		// Parse suggestions, but limit to three (in case there would be more)
+		$boxes = array();
+
 		if ( $suggestions !== false ) {
 			$suggestions = json_decode( $suggestions, true );
 			foreach ( $suggestions as $s ) {
@@ -174,7 +176,6 @@ class TranslationHelpers {
 				}
 			}
 
-			$boxes = array();
 			foreach( $sugFields as $field ) {
 				list( $text, $params, $label ) = $field;
 				$legend = array();
