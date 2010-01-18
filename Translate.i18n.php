@@ -12819,6 +12819,7 @@ $messages['roa-tara'] = array(
  * @author Kaganer
  * @author Lockal
  * @author MaxSem
+ * @author Rubin
  * @author Александр Сигачёв
  */
 $messages['ru'] = array(
@@ -13002,7 +13003,7 @@ $messages['ru'] = array(
 	'translate-group-desc-wikitravelextensions' => 'Мета-группа сообщений, содержащая все сообщения поддерживаемых расширений MediaWiki, используемых [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Мета-группа сообщений, содержащая все сообщения расширений, связанных с [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Мета-группа сообщений, содержащая все сообщения расширений, относящихся к [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Инициативе юзабилити Википедии]',
-	#'translate-group-desc-mwembed' => '[http://www.mediawiki.org/wiki/MwEmbed MwEmbed] — библиотека встраивания интерфейсов MediaWiki',
+	'translate-group-desc-nodesc' => 'Для этой группы сообщений не доступно описание.',
 	'translate-manage-groups' => 'Управление группами',
 	'translate-manage-listgroups' => 'Настроенные группы',
 	'translate-manage-listgroups-old' => 'Старый стиль групп',
