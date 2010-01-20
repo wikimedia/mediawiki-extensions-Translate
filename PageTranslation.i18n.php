@@ -1586,6 +1586,13 @@ $messages['jv'] = array(
 	'translate-tag-translate-link-desc' => 'Terjemahaké kaca iki',
 );
 
+/** Georgian (ქართული)
+ * @author Temuri rajavi
+ */
+$messages['ka'] = array(
+	'tpt-diff-new' => 'ახალი ტექსტი',
+);
+
 /** Khmer (ភាសាខ្មែរ)
  * @author គីមស៊្រុន
  * @author វ័ណថារិទ្ធ

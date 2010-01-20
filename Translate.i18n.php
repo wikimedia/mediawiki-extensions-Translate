@@ -8563,6 +8563,7 @@ $messages['ka'] = array(
 	'translate-prev' => 'წინა გვერდი',
 	'translate-page-description-legend' => 'ინფორმაცია ჯგუფის შესახებ',
 	'translate-page-edit' => 'რედაქტირება',
+	'translate-ext-url' => '<hr />ვებ-გვერდი: $1',
 	'translate-optional' => '(არასავალდებულო)',
 	'translate-edit-in-other-languages' => 'იგივე შეტყობინება ($1) სხვა ენებზე',
 	'translate-edit-goto-prev' => 'წინა შეტყობინების რედაქტირება',
@@ -11956,23 +11957,58 @@ Rason:
 	'translate-submit' => 'Smon-e',
 	'translate-page-navigation-legend' => 'Navigassion',
 	'translate-page-showing' => "Visualisassion dij mëssagi da $1 a $2 ansima a 'n total ëd $3.",
+	'translate-page-showing-all' => 'Visualisassion ëd $1 {{PLURAL:$1|mëssagi|mëssagi}}.',
+	'translate-page-showing-none' => 'Gnun mëssagi da mostré.',
 	'translate-next' => 'Pàgina anans',
 	'translate-prev' => 'Pàgina andré',
+	'translate-page-description-legend' => 'Anformassion an sla partìa',
+	'translate-page-edit' => 'modifiché',
+	'translate-ext-url' => "<hr />Sit an sl'aragnà: $1",
 	'translate-optional' => '(opsional)',
 	'translate-ignored' => '(ignorà)',
+	'translate-edit-definition' => 'Definission dël mëssagi',
+	'translate-edit-contribute' => 'colaboré',
+	'translate-edit-no-information' => "''Ës mëssagi a l'ha gnun-a documentassion.
+S'a sa andoa o coma 's mëssagi a l'é dovrà, a peul giuté d'àutri tradutor an giontant dla documentassion a cost mëssagi.''",
+	'translate-edit-information' => 'Anformassion an sël mëssagi «$2» ($1)',
+	'translate-edit-in-other-languages' => "Mëssagi «$1» ant j'àutre lenghe",
+	'translate-edit-committed' => 'Tradussion corenta ant ël programa',
+	'translate-edit-warnings' => 'Avertensa an sle tradussion incomplete',
+	'translate-edit-tmsugs' => 'Sugeriment da le tradussion an memòria',
+	'translate-edit-tmmatch' => 'corëspondensa ëd $1%',
+	'translate-edit-goto-no-prev' => 'Gnun mëssagi prima',
+	'translate-edit-goto-no-next' => 'Gnun mëssagi apress',
+	'translate-edit-goto-prev' => 'Modifiché ël mëssagi prima',
+	'translate-edit-goto-next' => 'Modifiché ël mëssagi apress',
+	'translate-edit-goto-list' => 'Andaré a la lista',
 	'translate-magic-pagename' => 'Viragi estèis ëd MediaWiki',
-	'translate-magic-help' => "A peul viré j'àlias dle pàgine speciaj, le paròle màgiche, ij nòm dle facie e coj djë spassi nominaj. Con le paròle màgiche a venta ch'a buta ëdcò ël viragi n'anglèis, che dësnò a travajo pa pì. Ch'a vardo ëdcò dë lassé ël prim element (0 or 1) tanme ch'a lo treuva. J'àlias dle pàgine soeciaj e le paròle màgiche a peulo avej pì che un viragi. Ij viragi a son separà da vìrgole (,). Ij nòm dle facie e djë spassi nominaj a peulo avej mach un viragi. Ant ël viragi djë spassi nominaj ël cas ëd <tt>$1 talk</tt> a l'é special. <tt>$1</tt> a ven arpiassà col nòm dël sit (pr'esempi <tt>{{ns:project_talk}}</tt>). Se sòn as peul nen fesse an soa lenga për rivé a n'espression bon-a sensa cambié ël nòm dël sit, për piasì, ch'as buta an contat con un programista. A venta ch'a sia ant la partìa dij tradutor për podej salvé soe modìfiche. Le modìfiche as salvo nen fin ch'a-i da nen un colp ansima al al boton ambelessì sota.",
+	'translate-magic-help' => "A peul volté j'àlias dle pàgine speciaj, le paròle màgiche e ij nòm ëd jë spassi nominaj.
+
+J'àlias dle pàgine soeciaj e le paròle màgiche a peulo avej pì che na tradussion.
+Le tradussion a son separà da 'd vìrgole (,).
+Ij nòm ëd jë spassi nominaj a peulo avej mach na tradussion.
+
+Ant la tradussion djë spassi nominaj ël cas ëd <tt>$1 talk</tt> a l'é special. <tt>$1</tt> a ven rampiassà col nòm dël sit (pr'esempi <tt>{{ns:project_talk}}</tt>).
+Se sòn as peul nen fesse an soa lenga për rivé a n'espression bon-a sensa cambié ël nòm dël sit, për piasì, ch'as buta an contat con un programista.
+
+A venta ch'a sia ant la partìa dij tradutor për podej salvé soe modìfiche.
+Le modìfiche as salvo nen fin ch'a-i da nen un colp ansima al al boton ambelessì sota.",
+	'translate-magic-module' => 'Mòdol:',
 	'translate-magic-submit' => 'Smon-e',
 	'translate-magic-cm-export' => 'Esporté',
+	'translate-magic-nothing-to-export' => 'A-i é gnente da esporté.',
 	'translate-magic-cm-to-be' => 'da esse',
 	'translate-magic-cm-current' => 'Corent',
 	'translate-magic-cm-original' => 'Original',
+	'translate-magic-cm-comment' => 'Coment:',
 	'translate-magic-cm-save' => 'Salvé',
 	'translate-magic-cm-updatedusing' => 'Agiornà ën dovrand [[Special:Magic]]',
 	'translate-magic-cm-savefailed' => 'Salvatagi falì',
 	'translate-magic-special' => 'Àlias dle pàgine speciaj',
 	'translate-magic-words' => 'Paròle màgiche',
 	'translate-magic-namespace' => 'Nòm djë spassi nominaj',
+	'translate-magic-notsaved' => "Soa modìfica a l'é pa stàita salvà!",
+	'translate-magic-errors' => "Për piasì, ch'a rangia {{PLURAL:$1|l'eror|j'eror}} si-dapress ant le tradussion:",
 	'translationchanges' => 'Modìfiche ëd viragi',
 	'translate-language' => 'Lenga:',
 );
