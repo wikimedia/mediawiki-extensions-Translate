@@ -35,6 +35,9 @@ function customMessageGroups( $id ) {
 </code>
 
 == Changes in ??? ==
+* 2010-01-22
+- Support for using Google's translation api as a source for tm suggestions
+- Interface element for copying tm suggestion into text area
 * 2010-01-16  Translation memory suggestions are aggregated intelligently to save space
               There is link back to the original message in tm suggestions
               tm-export superceded dump-tm

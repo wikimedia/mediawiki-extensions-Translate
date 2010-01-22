@@ -7,6 +7,7 @@ class TranslationHelpers {
 	protected $group;
 	protected $translation;
 	protected $definition;
+	protected $textareaId;
 
 	public function __construct( Title $title ) {
 		$this->title = $title;
@@ -59,6 +60,13 @@ class TranslationHelpers {
 		return $mg;
 	}
 
+	public function getTextareaId() {
+		return $this->textareaId === null ? 'wpTextbox1' : $this->textareaId;
+	}
+
+	public function setTextareaId( $id ) {
+		$this->textareaId = $id;
+	}
 
 	public function getDefinition() {
 		if ( $this->definition !== null ) return $this->definition;
@@ -103,7 +111,7 @@ class TranslationHelpers {
 		// Box filter
 		$all = array(
 			'other-languages' => array( $this, 'getOtherLanguagesBox' ),
-			'translation-memory' => array( $this, 'getTmBox' ),
+			'translation-memory' => array( $this, 'getSuggestionBox' ),
 			'page-translation' => array( $this, 'getPageDiff' ),
 			'separator' => array( $this, 'getSeparatorBox' ),
 			'documenation' => array( $this, 'getDocumentationBox' ),
@@ -127,7 +135,7 @@ class TranslationHelpers {
 
 	/**
 	 * Returns suggestions from a translation memory.
-	 * @return Html fieldset snippet which contains the suggestions.
+	 * @return Html snippet which contains the suggestions.
 	 */
 	protected function getTmBox() {
 		global $wgTranslateTM;
@@ -166,7 +174,7 @@ class TranslationHelpers {
 					$legend[$accuracy][] = self::editLink( $source_page, '•' );
 				}
 
-				$text = TranslateUtils::convertWhiteSpaceToHTML( $s['target']  );
+				$text = $this->suggestionField( $s['target'] );
 				$params = array( 'class' => 'mw-sp-translate-edit-tmsug', 'title' => $s['source'] );
 
 				if ( isset( $sugFields[$s['target']] ) ) {
@@ -181,12 +189,18 @@ class TranslationHelpers {
 				$legend = array();
 				foreach ( $label as $acc => $links ) { $legend[] = $acc . ' ' . implode( " ", $links ); }
 				$legend = implode( ' | ', $legend );
-				$boxes[] = Html::rawElement( 'div', $params, self::legend( $legend ) . $text . self::clear() );
+				$boxes[] = Html::rawElement( 'div', $params, self::legend( $legend ) . $text . self::clear() ) . "\n";
 			}
 		}
 
 		// Limit to three max
-		$boxes = array_slice( $boxes, 0, 3 );
+		return array_slice( $boxes, 0, 3 );
+	}
+
+	protected function getSuggestionBox() {
+		$boxes = (array) $this->getTmBox();
+		$google = $this->getGoogleSuggestion();
+		if ( $google ) $boxes[] = $google;
 
 		// Enclose if there is more than one box
 		if ( count( $boxes ) ) {
@@ -195,6 +209,36 @@ class TranslationHelpers {
 				implode( "$sep\n", $boxes ), array( 'class' => 'mw-translate-edit-tmsugs' ) );
 		} else {
 			return null;
+		}
+	}
+
+	protected function getGoogleSuggestion() {
+		global $wgProxyKey, $wgGoogleApiKey;
+
+		$code = $this->targetLanguage;
+		$definition = $this->getDefinition();
+
+		$path = 'http://ajax.googleapis.com/ajax/services/language/translate?';
+		$query = array(
+			'q' => $definition,
+			'v' => '1.0',
+			'langpair' => "en|$code",
+			// Unique but not identifiable
+			'userip' => sha1( $wgProxyKey . wfGetIp() ),
+		);
+
+		if ( $wgGoogleApiKey ) $query['key'] = $wgGoogleApiKey;
+
+		$path .= wfArrayToCgi( $query );
+		$google_json = Http::get( $path, 2 );
+		$response = json_decode( $google_json );
+		if ( $response->responseStatus === 200 ) {
+			$text = $this->suggestionField( $response->responseData->translatedText );
+			return Html::rawElement( 'div', null, self::legend('Google') . $text . self::clear() );
+		} else {
+			wfWarn(  __METHOD__ . ': ' . $response->responseDetails );
+			error_log( __METHOD__ . ': ' . $response->responseDetails );
+			return false;
 		}
 	}
 
@@ -449,6 +493,24 @@ class TranslationHelpers {
 		}
 
 		return TranslateUtils::fieldset( $title, Html::element( 'span', null, $msg ), $attributes );
+	}
+
+	public function adder( $source ) {
+			$target = Xml::escapeJsString( $this->getTextareaId() );
+			$source = Xml::escapeJsString( $source );
+			$params = array(
+				'onclick' => "jQuery('#$target').val(jQuery('#$source').text()); return false;",
+				'href' => '#'
+			);
+			return Html::element( 'a', $params, '↓' );
+	}
+
+	public function suggestionField( $contents ) {
+		static $counter = 0;
+		$counter++;
+		$id = "tmsug-" . wfTimestamp() . "-$counter";
+		$contents = TranslateUtils::convertWhiteSpaceToHTML( $contents );
+		return $this->adder($id) . "\n" . Html::rawElement( 'span', array( 'id' => $id ), $contents );
 	}
 
 	public static function editLink( $target, $text, $params = array() ) {

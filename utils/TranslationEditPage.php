@@ -38,6 +38,10 @@ class TranslationEditPage {
 		$data = $this->getEditInfo();
 		$helpers = new TranslationHelpers( $this->getTitle() );
 
+		// jQuery borks on something, probably to :, thus, don't use special chars
+		$id = Sanitizer::escapeId( sha1($this->getTitle()->getPrefixedText()) );
+		$helpers->setTextareaId( $id );
+
 		global $wgServer, $wgScriptPath, $wgOut;
 		$wgOut->disable();
 
@@ -47,6 +51,7 @@ class TranslationEditPage {
 			'name' => 'text',
 			'class' => 'mw-translate-edit-area',
 			'rows' =>  $short ? 3: 10,
+			'id' => $id,
 		);
 		$textarea = Html::element( 'textarea', $textareaParams, $translation );
 

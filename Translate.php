@@ -207,6 +207,11 @@ $wgTranslatePHPlotFont = '/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf';
 **/
 $wgTranslateYamlLibrary = 'spyc';
 
+/**
+ * Google API key if any. Currently only used for Google translation API.
+ */
+$wgGoogleApiKey = false;
+
 function efTranslateInit() {
 	global $wgTranslatePHPlot, $wgAutoloadClasses, $wgHooks;
 	if ( $wgTranslatePHPlot ) {
