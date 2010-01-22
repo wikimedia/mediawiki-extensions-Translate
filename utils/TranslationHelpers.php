@@ -213,10 +213,15 @@ class TranslationHelpers {
 	}
 
 	protected function getGoogleSuggestion() {
-		global $wgProxyKey, $wgGoogleApiKey;
+		global $wgProxyKey, $wgGoogleApiKey, $wgMemc;
 
 		$code = $this->targetLanguage;
 		$definition = $this->getDefinition();
+
+		$memckey = wfMemckey( 'translate-tmsug-badcodes' );
+		$unsupported = $wgMemc->get( $memckey );
+
+		if ( isset( $unsupported[$code] ) ) return null;
 
 		$path = 'http://ajax.googleapis.com/ajax/services/language/translate?';
 		$query = array(
@@ -235,6 +240,9 @@ class TranslationHelpers {
 		if ( $response->responseStatus === 200 ) {
 			$text = $this->suggestionField( $response->responseData->translatedText );
 			return Html::rawElement( 'div', null, self::legend('Google') . $text . self::clear() );
+		} elseif( $response->responseDetails === 'invalid translation language pair' ) {
+			$unsupported[$code] = true;
+			$wgMemc->set( $memckey, $unsupported, 60*60*8 );
 		} else {
 			wfWarn(  __METHOD__ . ': ' . $response->responseDetails );
 			error_log( __METHOD__ . ': ' . $response->responseDetails );
