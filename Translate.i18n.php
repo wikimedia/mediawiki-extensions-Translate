@@ -1035,7 +1035,6 @@ $messages['ar'] = array(
 	'translate-group-desc-wikitravelextensions' => 'مجموعة رسائل علوية تحتوي كل رسائل امتدادات ميدياويكي المدعومة التي تستخدمها [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'مجموعة رسائل علوية تحتوي كل رسائل امتدادات ميدياويكي المدعومة التي تستخدمها [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'مجموعة رسائل علوية تحتوي كل رسائل الامتدادات المتعلقة ب[http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative مبادرة استخدامية ويكيبيديا]',
-	#'translate-group-desc-mwembed' => '[http://www.mediawiki.org/wiki/MwEmbed MwEmbed] هي مكتبة لتضمين واجهات ميدياويكي',
 	'translate-manage-groups' => 'إدارة المجموعة',
 	'translate-manage-listgroups' => 'مجموعات مضبوطة',
 	'translate-manage-listgroups-old' => 'مجموعات ذات النمط القديم',
@@ -1378,7 +1377,6 @@ $messages['arz'] = array(
 	'translate-group-desc-wikitravelextensions' => 'مجموعه رسائل علويه تحتوى كل رسائل امتدادات ميدياويكى المدعومه التى تستخدمها [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'مجموعه رسائل علويه تحتوى كل رسائل امتدادات ميدياويكى المدعومه التى تستخدمها [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'مجموعه رسائل علويه تحتوى كل رسائل الامتدادات المتعلقه ب[http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative مبادره استخداميه ويكيبيديا]',
-	#'translate-group-desc-mwembed' => '[http://www.mediawiki.org/wiki/MwEmbed MwEmbed] هى مكتبه لتضمين واجهات ميدياويكي',
 	'translate-manage-groups' => 'إداره المجموعة',
 	'translate-manage-listgroups' => 'مجموعات مضبوطة',
 	'translate-manage-listgroups-old' => 'مجموعات ذات النمط القديم',
@@ -2533,7 +2531,6 @@ Savjetujemo Vam da izvršite pregled poruke preko [[Special:Translate|{{int:tran
 	'translate-group-desc-wikitravelextensions' => 'Grupa meta poruka koja sadrži sve poruke za podržana MediaWiki proširenja korištena u [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Grupa meta poruka koja sadrži sve poruke za proširenja vezana za [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Grupa meta poruka koja sadrži sve poruke za proširenja vezana za [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia inicijativu upotrebljivosti]',
-	#'translate-group-desc-mwembed' => '[http://www.mediawiki.org/wiki/MwEmbed MwEmbed] je biblioteka za uklapanje MediaWiki interfejsa',
 	'translate-manage-groups' => 'Upravljanje grupom',
 	'translate-manage-listgroups' => 'Uređene grupe',
 	'translate-manage-listgroups-old' => 'Grupe starijeg stila',
@@ -3044,7 +3041,6 @@ Teď doporučujeme zkontrolovat hlášení pomocí stránky [[Special:Translate|
 	'translate-group-desc-wikitravelextensions' => 'Nadskupina zpráv obsahující všechny zprávy používané v podporovaných rozšířeních MediaWiki používaných na [http://www.wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Nadskupina zpráv obsahující všechny zprávy používané v podporovaných rozšířeních MediaWiki používaných na [http://www.unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Nadskupina zpráv obsahující všechny zprávy používané v rozšířeních MediaWiki souvisejících s akcí [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
-	#'translate-group-desc-mwembed' => '[http://www.mediawiki.org/wiki/MwEmbed MwEmbed] je knihovna pro vkládání rozhraní MediaWiki',
 	'importtranslations' => 'Import překladů',
 	'translate-import-from-url' => 'URL souboru:',
 	'translate-import-from-wiki' => 'Soubor na této wiki:',
@@ -3458,7 +3454,6 @@ Es wird empfohlen, Systemnachrichten mit der Spezialseite [[Special:Translate|{{
 	'translate-group-desc-wikitravelextensions' => 'Diese Hauptgruppe beinhaltet alle Systemnachrichten der unterstützten MediaWiki-Erweiterungen, die von [http://wikitravel.org Wikitravel] genutzt werden',
 	'translate-group-desc-uniwiki' => 'Diese Hauptgruppe beinhaltet alle Systemnachrichten für verwandte Erweiterungen von [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Diese Hauptgruppe beinhaltet alle Systemnachrichten der [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
-	#'translate-group-desc-mwembed' => '[http://www.mediawiki.org/wiki/MwEmbed MwEmbed] ist eine Programmbibliothek zum Einbinden von Schnittstellen zu MediaWiki',
 	'translate-manage-groups' => 'Gruppenmanagement',
 	'translate-manage-listgroups' => 'Konfigurierte Gruppen',
 	'translate-manage-listgroups-old' => 'Gruppen im alten Stil',
@@ -6604,8 +6599,8 @@ $messages['hil'] = array(
 /** Croatian (Hrvatski)
  * @author Dalibor Bosits
  * @author Dnik
+ * @author Ex13
  * @author SpeedyGonsales
- * @author Suradnik13
  */
 $messages['hr'] = array(
 	'translate' => 'Prijevodi sistemskih poruka',
@@ -7253,7 +7248,6 @@ A  [[Special:Translate|{{int:translate}}]] lapon átnézheted az elkészített f
 	'translate-group-desc-wikitravelextensions' => 'Gyűjtőcsoport, ami a [http://wikitravel.org Wikitravel] által használt MediaWiki-kiterjesztések összes üzenetét tartalmazza',
 	'translate-group-desc-uniwiki' => 'Gyűjtőcsoport, ami az [http://unicefinnovation.org/wiki.php Uniwiki]hez kapcsolódó MediaWiki-kiterjesztések összes üzenetét tartalmazza',
 	'translate-group-desc-ui' => 'Gyűjtőcsoport, ami a [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]-hez kapcsolódó MediaWiki-kiterjesztések összes üzenetét tartalmazza',
-	#'translate-group-desc-mwembed' => 'Az [http://www.mediawiki.org/wiki/MwEmbed MwEmbed] egy könyvtár a MediaWiki felületeinek beágyazásához',
 	'translate-manage-groups' => 'Csoportok kezelése',
 	'translate-manage-listgroups' => 'Beállított csoportok',
 	'translate-manage-listgroups-old' => 'Régi stílusú csoportok',
@@ -8956,7 +8950,7 @@ $messages['kk-kz'] = array(
 );
 
 /** Kalaallisut (Kalaallisut)
- * @author Piivaat
+ * @author Qaqqalik
  */
 $messages['kl'] = array(
 	'translate-page-language' => 'Oqaatsit',
@@ -9469,7 +9463,6 @@ de Söndersigg [[Special:Translate|{{int:translate}}]] norrens ze prööfe.',
 	'translate-group-desc-wikitravelextensions' => 'Hee di Sammeljropp hät de Täxte un Nohreschte vun alle Zohsatzprojramme vum MediaWiki, di mer hee ongershtöze donn, un di em <i lang="en">[http://wikitravel.org Wikitravel]</i> jebruch wäde',
 	'translate-group-desc-uniwiki' => 'Hee di Sammeljropp hät de Täxte un Nohreschte vun alle Zohsatzprojramme vum MediaWiki, di mem <i lang="en">[http://unicefinnovation.org/wiki.php Uniwiki]</i> ze donn han',
 	'translate-group-desc-ui' => 'Hee di Sammeljropp hät all de Texnohreeschte uß de divärse Zohsazprojramme vun dä [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative „<i lang="en">Wikipedia Usability Initiative</i>“].',
-	#'translate-group-desc-mwembed' => '[http://www.mediawiki.org/wiki/MwEmbed <i lang="en">MwEmbed</i>] es en Sammlong Projramme för Schnettshtelle för MediaWiki enzeboue.',
 	'translate-manage-groups' => 'Jroppeverwalldong',
 	'translate-manage-listgroups' => 'Enjeschtallte Jroppe',
 	'translate-manage-listgroups-old' => 'Jroppe em ahle Shtiil',
@@ -9734,7 +9727,6 @@ Dir sidd awer häerzlech Invitéiert fir d'Systemmessagn op [[Special:Translate|
 	'translate-group-desc-wikitravelextensions' => 'An dëser Grupp sinn all Systemmessage vun den ënnerstëtzte MediaWiki-Erweiderungen, déi vu [http://wikitravel.org Wikitravel] benotzt ginn',
 	'translate-group-desc-uniwiki' => 'Meta-Grupp vun alle Systemmessagen fir Erweiderungen am Zesummenhang mat [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Grupp vu Systemmessage vun den Erweiderungen déi mat der [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Benotzerfrëndlechkeets-Initiative] a Verbindung stinn',
-	#'translate-group-desc-mwembed' => '[http://www.mediawiki.org/wiki/MwEmbed MwEmbed] ass eng Bibliothéik (library) fir MediaWiki interfacen anzebannen',
 	'translate-manage-groups' => 'Gestioun vum Grupp',
 	'translate-manage-listgroups' => 'Agestallte Gruppen',
 	'translate-manage-listgroups-old' => 'Gruppen am ale Stil',
@@ -9981,6 +9973,15 @@ $messages['lv'] = array(
 Norādītajās valodās pieejamie tulkojumi būs redzami tulkošanas lapā.
 Noklusētā saraksta vērtība ir atkarīga no tavas valodas.',
 	'translate-jssti-add' => 'Pievienot sarakstam',
+);
+
+/** Malagasy (Malagasy)
+ * @author Jagwar
+ */
+$messages['mg'] = array(
+	'right-translate' => 'Manova ny interface fandikana',
+	'right-translate-manage' => 'Mitantana ny gropy fandikana',
+	'right-translate-import' => 'Mampiditra ny fandikana na offline aza',
 );
 
 /** Eastern Mari (Олык Марий)
@@ -10314,6 +10315,13 @@ $messages['ml'] = array(
 	'translationchanges-export' => 'എക്സ്പോര്‍ട്ട്',
 	'translationchanges-change' => '$1: $2 ചെയ്തത് $3',
 	'translate-checks-plural' => 'നിര്‍‌വചനം <nowiki>{{PLURAL:}}</nowiki> ഉപയോഗിക്കുന്നു, പക്ഷെ പരിഭാഷ ഉപയോഗിക്കുന്നില്ല.',
+);
+
+/** Mongolian (Монгол)
+ * @author Chinneeb
+ */
+$messages['mn'] = array(
+	'translate-magic-cm-comment' => 'Тайлбар:',
 );
 
 /** Marathi (मराठी)
@@ -11540,7 +11548,6 @@ Sètz encoratjat(ada) a repassar los messatges dempuèi [[Special:Translate|{{in
 	'translate-group-desc-wikitravelextensions' => 'Meta grop de messatges que contenon totes los messatges per las extensions utilizadas sus [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Meta grop de messatges que contenon totes los messatges per las extensions aparentadas a [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Grop de messatges Meta que contenon totes los messatges de las extensions ligadas a [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
-	#'translate-group-desc-mwembed' => "[http://www.mediawiki.org/wiki/MwEmbed MwEmbed] es una bibliotèca per incrustar d'interfàcias MediaWiki",
 	'translate-manage-groups' => 'Gestion del grop',
 	'translate-manage-listgroups' => 'Gropes configurats',
 	'translate-manage-listgroups-old' => 'Estil dels gropes ancian',
@@ -11858,7 +11865,6 @@ Proponujemy przejrzeć komunikaty korzystając z [[Special:Translate|{{int:trans
 	'translate-group-desc-wikitravelextensions' => 'Metagrupa zawiera wszystkie komunikaty obsługiwanych rozszerzeń MediaWiki używanych przez [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Metagrupa komunikatów zawierająca wszystkie komunikaty rozszerzeń związanych z [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Metagrupa komunikatów zawierająca wszystkie komunikaty rozszerzeń związanych z [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Inicjatywą użyteczności Wikipedii]',
-	#'translate-group-desc-mwembed' => '[http://www.mediawiki.org/wiki/MwEmbed MwEmbed] jest biblioteką realizującą osadzany interfejs MediaWiki',
 	'translate-manage-groups' => 'Zarządzanie grupą',
 	'translate-manage-listgroups' => 'Grupy skonfigurowane',
 	'translate-manage-listgroups-old' => 'Grupy w starym stylu',
@@ -13449,7 +13455,6 @@ Môžete [$1 upravovať zdrojovú stránku] alebo [$2 aktualizovať preklad].',
 	'translate-group-desc-wikitravelextensions' => 'Metaskupina správ obsahujúca všetky správy rozšírenia MediaWiki, ktoré používa [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Metaskupina správ obsahujúca všetky správy rozšírenia MediaWiki súvisiace s [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Metaskupina správ obsahujúca všetky správy rozšírení týkajúcich sa [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Iniciatívy použiteľnosti Wikipédie]',
-	#'translate-group-desc-mwembed' => '[http://www.mediawiki.org/wiki/MwEmbed MwEmbed] je knižnica na vkladanie rozhraní MediaWiki',
 	'translate-manage-groups' => 'Správa skupín',
 	'translate-manage-listgroups' => 'Nastavené skupiny',
 	'translate-manage-listgroups-old' => 'Skupiny starého typu',
@@ -16017,7 +16022,6 @@ Bạn được khuyến khích xem lại các thông điệp tại [[Special:Tra
 	'translate-group-desc-wikitravelextensions' => 'Nhóm thông báo “mẹ”, chứa thông báo của các phần mở rộng MediaWiki được sử dụng tại [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Nhóm thông báo “mẹ”, chứa thông báo của các phần mở rộng có liên quan đến [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Nhóm thông điệp meta chứa tất cả các thông điệp dùng cho bộ mở rộng liên quan đến [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Sáng kiến Khả dụng Wikipedia]',
-	#'translate-group-desc-mwembed' => '[http://www.mediawiki.org/wiki/MwEmbed MwEmbed] là thư viện để nhúng gia diện MediaWiki',
 	'translate-manage-groups' => 'Quản lý nhóm',
 	'translate-manage-listgroups' => 'Nhóm được cấu hình',
 	'translate-manage-listgroups-old' => 'Nhóm theo kiểu cũ',

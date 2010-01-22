@@ -1280,7 +1280,7 @@ $messages['he'] = array(
 );
 
 /** Croatian (Hrvatski)
- * @author Suradnik13
+ * @author Ex13
  */
 $messages['hr'] = array(
 	'translate-tag-translate-link-desc' => 'Prevedi ovu stranicu',
@@ -1731,6 +1731,13 @@ D'Säit, déi Dir versicht z'änneren schéngt net mat enger Säit déi fir d'iw
 	'tpt-install' => "Lancéiert php maintenance/update.php oder web install fir d'Fonctioun vun der Säiteniwwersetzung anzeschalten.",
 	'tpt-render-summary' => 'Aktualiséieren fir mat der neier Versioun vun der Quellsäit iwwereneenzestëmmen',
 	'tpt-download-page' => 'Säit mat Iwwersetzungen exportéieren',
+);
+
+/** Malagasy (Malagasy)
+ * @author Jagwar
+ */
+$messages['mg'] = array(
+	'right-pagetranslation' => 'Mamamarika ny santiônam-pejy hodikaina',
 );
 
 /** Macedonian (Македонски)
