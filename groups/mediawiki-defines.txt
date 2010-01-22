@@ -1391,6 +1391,7 @@ prefix = wmf- | sidebar, grouppage-Staff, group-Staff, group-Staff-member
 Wikimedia License Texts
 file = WikimediaMessages/WikimediaLicenseTexts.i18n.php
 descmsg = wikimedialicensetexts-desc
+optional = wm-license-information-permission-reusing-link
 
 Wiki Text Logged In Out
 
