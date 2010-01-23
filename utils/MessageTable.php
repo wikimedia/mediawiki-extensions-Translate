@@ -50,15 +50,16 @@ class MessageTable {
 
 	// This is like so because jQuery got removed from core
 	public function setCSSJS() {
-		global $wgOut, $wgScriptPath;
-		$prefix = "$wgScriptPath/extensions/Translate/js";
+		global $wgOut, $wgScriptPath, $wgExtensionAssetsPath, $wgUser;
+		$prefix = "$wgExtensionAssetsPath/Translate/js";
 		// Our class
 		$wgOut->addScriptFile( "$prefix/quickedit.js" );
 		// Core jQuery
-		$wgOut->addScriptFile( "$prefix/js2stopgap.js" );
+		$wgOut->addScriptFile( "$wgScriptPath/js2/js2stopgap.min.js" );
 		// Additional jQuery
+		$wgOut->addScriptFile( "$prefix/jquery-ui-1.7.2.custom.min.js" );
 		$wgOut->addScriptFile( "$prefix/jquery.form.js" );
-		$wgOut->addExtensionStyle( "$prefix/base/ui.all.css" );
+		$wgOut->addExtensionStyle( "$prefix/base/custom-theme/jquery-ui-1.7.2.custom.css" );
 	}
 
 
