@@ -237,6 +237,14 @@ class TranslationHelpers {
 		$path .= wfArrayToCgi( $query );
 		$google_json = Http::get( $path, 2 );
 		$response = json_decode( $google_json );
+		if ( $google_json === false ) {
+				wfWarn(  __METHOD__ . ': Http::get failed' );
+				return null;
+		} elseif( !is_object( $response ) ) {
+				wfWarn(  __METHOD__ . ': Unable to parse reply: ' . strval( $google_json ) );
+				error_log(  __METHOD__ . ': Unable to parse reply: ' . strval( $google_json ) );
+				return null;
+		}
 		if ( $response->responseStatus === 200 ) {
 			$text = $this->suggestionField( $response->responseData->translatedText );
 			return Html::rawElement( 'div', null, self::legend('Google') . $text . self::clear() );
@@ -246,7 +254,7 @@ class TranslationHelpers {
 		} else {
 			wfWarn(  __METHOD__ . ': ' . $response->responseDetails );
 			error_log( __METHOD__ . ': ' . $response->responseDetails );
-			return false;
+			return null;
 		}
 	}
 
