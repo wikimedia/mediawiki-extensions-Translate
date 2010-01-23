@@ -201,6 +201,8 @@ class TranslationHelpers {
 		$boxes = (array) $this->getTmBox();
 		$google = $this->getGoogleSuggestion();
 		if ( $google ) $boxes[] = $google;
+		$apertium = $this->getApertiumSuggestion();
+		if ( $apertium ) $boxes[] = $apertium;
 
 		// Enclose if there is more than one box
 		if ( count( $boxes ) ) {
@@ -256,6 +258,69 @@ class TranslationHelpers {
 			error_log( __METHOD__ . ': ' . $response->responseDetails );
 			return null;
 		}
+	}
+
+	protected function getApertiumSuggestion() {
+		global $wgTranslateApertium, $wgMemc;
+
+		if ( !$wgTranslateApertium ) return null;
+
+		$page = $this->page;
+		$code = $this->targetLanguage;
+		$ns = $this->title->getNamespace();
+
+		$memckey = wfMemckey( 'translate-tmsug-apertium' );
+		$pairs = $wgMemc->get( $memckey );
+
+		if ( !$pairs ) {
+			$pairs = array();
+			$pairlist = Http::get( $wgTranslateApertium, 5 );
+			if ( $pairlist === false ) return null;
+			$pairlist = trim( Sanitizer::stripAllTags( $pairlist ) );
+			$pairlist = explode( " ", $pairlist );
+			foreach ( $pairlist as $pair ) {
+				$pair = trim( $pair );
+				if ( $pair === '' ) continue;
+				$languages = explode( '-', $pair );
+				if ( count( $languages ) !== 2 ) continue;
+
+				list( $source, $target ) = $languages;
+				if ( !isset( $pairs[$target] ) ) $pairs[$target] = array();
+				$pairs[$target][$source] = true;
+			}
+
+			$wgMemc->set( $memckey, $pairs, 60*60*24 );
+		}
+
+		$code = str_replace( '-', '_', wfBCP47( $code ) );
+
+		if ( !isset( $pairs[$code] ) ) return;
+
+		$suggestions = array();
+
+		foreach ( $pairs[$code] as $candidate => $unused ) {
+			$mwcode = str_replace( '_', '-', strtolower($candidate));
+			$text = TranslateUtils::getMessageContent( $page, $mwcode, $ns );
+			if ( $text === null || TranslateEditAddons::hasFuzzyString( $text ) ) continue;
+			$title = Title::makeTitleSafe( $ns, "$page/$mwcode" );
+			if ( $title && TranslateEditAddons::isFuzzy( $title ) ) continue;
+
+			$query = array(
+				'mark' => 0,
+				'mode' => "$candidate-$code",
+				'text' => $text
+			);
+
+			$response = Http::get( "$wgTranslateApertium?" . wfArrayToCgi( $query ), 3 );
+			if ( $response === false ) {
+					break; // Too slow, back off
+			} else {
+				$response = $this->suggestionField( Sanitizer::decodeCharReferences( $response ) );
+				$suggestions[] = Html::rawElement( 'div', null, self::legend( "Apertium ($candidate)" ) . $response . self::clear() );
+			}
+		}
+		if ( !count($suggestions) ) return null;
+		return implode( "\n", $suggestions );
 	}
 
 	protected function getDefinitionBox() {

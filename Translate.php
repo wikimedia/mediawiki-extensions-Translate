@@ -344,3 +344,8 @@ if ( !defined( 'TRANSLATE_CLI' ) ) {
 }
 
 $wgTranslateTM = false;
+
+/**
+ * Set to the url of Apertium Machine Translation service to activate.
+ */
+$wgTranslateApertium = false;

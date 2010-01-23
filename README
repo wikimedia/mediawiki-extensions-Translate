@@ -35,6 +35,9 @@ function customMessageGroups( $id ) {
 </code>
 
 == Changes in ??? ==
+* 2010-01-24
+- Support for Apertium machine translation service
+- Fixed issue with jQuery and Vector skin
 * 2010-01-22
 - Support for using Google's translation api as a source for tm suggestions
 - Interface element for copying tm suggestion into text area
