@@ -54,10 +54,17 @@ class MessageTable {
 		$prefix = "$wgExtensionAssetsPath/Translate/js";
 		// Our class
 		$wgOut->addScriptFile( "$prefix/quickedit.js" );
+
 		// Core jQuery
-		$wgOut->addScriptFile( "$wgScriptPath/js2/js2stopgap.min.js" );
-		// Additional jQuery
-		$wgOut->addScriptFile( "$prefix/jquery-ui-1.7.2.custom.min.js" );
+		if ( method_exists( $wgOut, 'includeJQuery' ) ) {
+			$wgOut->includeJQuery();
+			$wgOut->addScriptFile( "$prefix/jquery-ui-1.7.2.custom.min.js" );
+		} else {
+			// MW 1.15 and older
+			$wgOut->addScriptFile( "$prefix/js2stopgap.js" );
+		}
+
+		// Additional jQuery stuff
 		$wgOut->addScriptFile( "$prefix/jquery.form.js" );
 		$wgOut->addExtensionStyle( "$prefix/base/custom-theme/jquery-ui-1.7.2.custom.css" );
 	}
