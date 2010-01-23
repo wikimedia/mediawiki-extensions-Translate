@@ -246,7 +246,7 @@ class TranslationHelpers {
 				return null;
 		}
 		if ( $response->responseStatus === 200 ) {
-			$text = $this->suggestionField( $response->responseData->translatedText );
+			$text = $this->suggestionField( Sanitizer::decodeCharReferences( $response->responseData->translatedText ) );
 			return Html::rawElement( 'div', null, self::legend('Google') . $text . self::clear() );
 		} elseif( $response->responseDetails === 'invalid translation language pair' ) {
 			$unsupported[$code] = true;
