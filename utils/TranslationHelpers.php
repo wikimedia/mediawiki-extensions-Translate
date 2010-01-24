@@ -292,14 +292,19 @@ class TranslationHelpers {
 			$wgMemc->set( $memckey, $pairs, 60*60*24 );
 		}
 
+		$codemap = array( 'no' => 'nb' );
+		if ( isset( $codemap[$code] ) ) $code = $codemap[$code];
 		$code = str_replace( '-', '_', wfBCP47( $code ) );
 
 		if ( !isset( $pairs[$code] ) ) return;
 
 		$suggestions = array();
 
+		$codemap = array_flip( $codemap );
 		foreach ( $pairs[$code] as $candidate => $unused ) {
 			$mwcode = str_replace( '_', '-', strtolower($candidate));
+			if ( isset( $codemap[$mwcode] ) ) $mwcode = $codemap[$mwcode];
+
 			$text = TranslateUtils::getMessageContent( $page, $mwcode, $ns );
 			if ( $text === null || TranslateEditAddons::hasFuzzyString( $text ) ) continue;
 			$title = Title::makeTitleSafe( $ns, "$page/$mwcode" );
