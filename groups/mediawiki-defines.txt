@@ -752,6 +752,9 @@ descmsg = hiderevision-desc
 
 Page By
 
+Paged Tiff Handler
+descmsg = tiff-desc
+
 Password Reset
 aliasfile = PasswordReset/PasswordReset.alias.php
 
