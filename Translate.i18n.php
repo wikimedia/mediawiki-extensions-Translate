@@ -9985,6 +9985,15 @@ Noklusētā saraksta vērtība ir atkarīga no tavas valodas.',
  * @author Jagwar
  */
 $messages['mg'] = array(
+	'translate-task-view' => "Jerena ny hafatra rehetra an'i",
+	'translate-task-untranslated' => "Jerena ny hafatra tsy voadikan'i",
+	'translate-task-optional' => "Jerena ny hafatra tsy voateny hadika an'i",
+	'translate-task-untranslatedoptional' => 'Jerena ny hafatra tsy voatery hadika tsy voadika',
+	'translate-task-review' => "Jerena fanindroany ny fanovana natao tamin'i",
+	'translate-task-reviewall' => "Jerena fanindroany ny hafatra voadikan'i",
+	'translate-task-export-to-file' => "Avoaka anaty rakitra ny fandikana an'i",
+	'translate-task-export-as-po' => "Avoaka amin'ny rakitra Gettext ny dikan-tenin'i",
+	'translate-page-task' => 'Tiako',
 	'right-translate' => 'Manova ny interface fandikana',
 	'right-translate-manage' => 'Mitantana ny gropy fandikana',
 	'right-translate-import' => 'Mampiditra ny fandikana na offline aza',
