@@ -224,6 +224,7 @@ class TranslationHelpers {
 		$unsupported = $wgMemc->get( $memckey );
 
 		if ( isset( $unsupported[$code] ) ) return null;
+		if ( trim( strval( $definition ) ) === '' ) return null;
 
 		$path = 'http://ajax.googleapis.com/ajax/services/language/translate?';
 		$query = array(
