@@ -585,7 +585,7 @@ class TranslationHelpers {
 			$target = Xml::escapeJsString( $this->getTextareaId() );
 			$source = Xml::escapeJsString( $source );
 			$params = array(
-				'onclick' => "jQuery('#$target').val(jQuery('#$source').text()); return false;",
+				'onclick' => "jQuery('#$target').val(jQuery('#$source').text()).focus(); return false;",
 				'href' => '#'
 			);
 			return Html::element( 'a', $params, '↓' );
