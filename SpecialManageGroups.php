@@ -59,7 +59,7 @@ class SpecialManageGroups {
 						$wgLang->time( $timestamp )
 					);
 				} else {
-					$$out .= wfMsg( 'translate-manage-newgroup' );
+					$out .= wfMsg( 'translate-manage-newgroup' );
 				}
 
 				$wgOut->addHtml( $out );
