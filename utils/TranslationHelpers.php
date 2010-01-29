@@ -226,20 +226,21 @@ class TranslationHelpers {
 		if ( isset( $unsupported[$code] ) ) return null;
 		if ( trim( strval( $definition ) ) === '' ) return null;
 
-		$path = 'http://ajax.googleapis.com/ajax/services/language/translate?';
-		$query = array(
+		$path = 'http://ajax.googleapis.com/ajax/services/language/translate';
+		$options = array();
+		$options['timeout'] = 3;
+		$options['postData'] = array(
 			'q' => $definition,
 			'v' => '1.0',
 			'langpair' => "en|$code",
 			// Unique but not identifiable
 			'userip' => sha1( $wgProxyKey . wfGetIp() ),
 		);
+		if ( $wgGoogleApiKey ) $options['postData']['key'] = $wgGoogleApiKey;
 
-		if ( $wgGoogleApiKey ) $query['key'] = $wgGoogleApiKey;
-
-		$path .= wfArrayToCgi( $query );
-		$google_json = Http::get( $path, 2 );
+		$google_json = Http::post( $path, $options );
 		$response = json_decode( $google_json );
+
 		if ( $google_json === false ) {
 				wfWarn(  __METHOD__ . ': Http::get failed' );
 				return null;
