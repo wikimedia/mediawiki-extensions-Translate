@@ -575,6 +575,9 @@ descmsg = lst-desc
 
 Language Selector
 
+Last User Login
+aliasfile = LastUserLogin/LastUserLogin.alias.php
+
 Latex Doc
 
 Ldap Authentication
