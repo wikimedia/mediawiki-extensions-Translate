@@ -3275,6 +3275,7 @@ Du opfordres til at gennemse beskeder gennem [[Special:Translate|{{int:translate
  * @author Als-Holder
  * @author Imre
  * @author Lukas9950
+ * @author Lyzzy
  * @author MichaelFrey
  * @author Pill
  * @author Purodha
@@ -3460,6 +3461,7 @@ Es wird empfohlen, Systemnachrichten mit der Spezialseite [[Special:Translate|{{
 	'translate-group-desc-wikitravelextensions' => 'Diese Hauptgruppe beinhaltet alle Systemnachrichten der unterstützten MediaWiki-Erweiterungen, die von [http://wikitravel.org Wikitravel] genutzt werden',
 	'translate-group-desc-uniwiki' => 'Diese Hauptgruppe beinhaltet alle Systemnachrichten für verwandte Erweiterungen von [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Diese Hauptgruppe beinhaltet alle Systemnachrichten der [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
+	'translate-group-desc-nodesc' => 'Für diese Nachrichtengruppe ist keine Beschreibung verfügbar',
 	'translate-manage-groups' => 'Gruppenmanagement',
 	'translate-manage-listgroups' => 'Konfigurierte Gruppen',
 	'translate-manage-listgroups-old' => 'Gruppen im alten Stil',
