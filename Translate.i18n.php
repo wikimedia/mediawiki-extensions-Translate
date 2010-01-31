@@ -3849,6 +3849,7 @@ $messages['ee'] = array(
  * @author Dead3y3
  * @author Omnipaedista
  * @author ZaDiak
+ * @author Περίεργος
  */
 $messages['el'] = array(
 	'translate' => 'Μεταφράστε',
@@ -4030,6 +4031,7 @@ $messages['el'] = array(
 	'translate-manage-submit' => 'Εκτέλεση',
 	'translate-manage-nochanges' => 'Δεν υπάρχουν αλλαγές στους ορισμούς μηνυμάτων για αυτή την ομάδα.',
 	'translate-manage-import-ok' => 'Εισήχθηκε νέα έκδοση της σελίδας $1.',
+	'translate-manage-import-noks' => 'Απέτυχε η εισαγωγή της νέας έκδοσης της σελίδας $1: $2',
 	'translate-manage-import-ignore' => 'Παράκαμψη του μηνύματος $1.',
 	'translate-manage-fuzzy-summary' => 'Ο ορισμός άλλαξε',
 	'translate-manage-import-fuzzy' => 'Εισαγωγή και ασαφοποίηση: $1',
