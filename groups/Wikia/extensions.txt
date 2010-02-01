@@ -7,7 +7,7 @@ Ajax Poll
 #file = ArticlesHome/ArticlesHome.i18n.php
 
 Auto Create Wiki
-optional = autocreatewiki-reminder-subject
+optional = autocreatewiki-reminder-subject, autocreatewiki-language-top-list
 ignored = requestwiki-filter-language
 
 Badges
