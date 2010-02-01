@@ -11309,6 +11309,7 @@ Du oppfordres til å se over meldinger gjennom [[Special:Translate|{{int:transla
 	'translate-group-desc-wikitravelextensions' => 'Metameldingsgruppen inneholder alle meldinger for støttede MediaWiki-utvidelser brukt av [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Metameldingsgruppen inneholder alle meldinger for utvidelser relatert til [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Metameldingsgruppe som inneholder alle meldinger for utvidelser relatert til [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
+	'translate-group-desc-nodesc' => 'Ingen beskrivelse er tilgjengelig for denne meldingsgruppen',
 	'translate-manage-groups' => 'Gruppehåndtering',
 	'translate-manage-listgroups' => 'Konfigurerte grupper',
 	'translate-managegroups' => 'Gruppehåndtering',
