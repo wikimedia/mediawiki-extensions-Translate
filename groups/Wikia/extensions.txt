@@ -145,7 +145,7 @@ file = SearchRankTracker/SpecialSearchRankTracker.i18n.php
 Search
 
 Send To A Friend
-alias = SendToAFriend/SendToAFriend.alias.php
+aliasfile = SendToAFriend/SendToAFriend.alias.php
 
 Share Feature
 
@@ -222,7 +222,7 @@ Helper Panel
 
 Interwiki Dispatcher
 file = InterwikiDispatcher/SpecialInterwikiDispatcher.i18n.php
-alias = InterwikiDispatcher/SpecialInterwikiDispatcher.alias.php
+aliasfile = InterwikiDispatcher/SpecialInterwikiDispatcher.alias.php
 
 #i18n file needs to be well formed
 # all sections need to to separated with newlines
