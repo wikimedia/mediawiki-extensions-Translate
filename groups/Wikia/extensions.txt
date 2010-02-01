@@ -222,6 +222,7 @@ Helper Panel
 
 Interwiki Dispatcher
 file = InterwikiDispatcher/SpecialInterwikiDispatcher.i18n.php
+alias = InterwikiDispatcher/SpecialInterwikiDispatcher.alias.php
 
 #i18n file needs to be well formed
 # all sections need to to separated with newlines
