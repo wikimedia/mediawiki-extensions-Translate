@@ -18,6 +18,7 @@ optional = user-badge-left-align, user-badge-center-align, user-badge-right-alig
 #file = BlogPage/Blog.i18n.php
 
 Blogs
+aliasfile = Blogs/Blogs.alias.php
 optional = blug-cut-sign, blog-avatar-defaults
 ignored = create-blog-empty-article, blog-listing-zero-self, blogs-recent-url
 
@@ -144,6 +145,7 @@ file = SearchRankTracker/SpecialSearchRankTracker.i18n.php
 Search
 
 Send To A Friend
+alias = SendToAFriend/SendToAFriend.alias.php
 
 Share Feature
 
