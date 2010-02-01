@@ -44,7 +44,7 @@ file = ContestTool/SpecialContestTool.i18n.php
 #Added 2010-02-01 -- tor
 CreatePage
 file = CreatePage/CreatePage.i18n.php
-ignore = createpage-newpagelayout
+ignored = createpage-newpagelayout
 
 Daemon Loader
 file = DaemonLoader/SpecialDaemonLoader.i18n.php
