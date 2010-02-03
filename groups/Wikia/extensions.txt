@@ -87,7 +87,7 @@ Grace Expired
 file = GraceExpired/SpecialGraceExpired.i18n.php
 
 HA Welcome
-ignored = welcome-enabled
+ignored = welcome-enabled, welcome-user
 
 Image Placeholder
 
