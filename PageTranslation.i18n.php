@@ -1505,6 +1505,15 @@ Halaman yang ingin Anda sunting ini tampaknya tidak memiliki hubungan dengan hal
 	'tpt-download-page' => 'Ekspor halaman dengan terjemahan',
 );
 
+/** Igbo (Igbo)
+ * @author Ukabia
+ */
+$messages['ig'] = array(
+	'pagetranslation' => 'Ihü kuwariala na asụsụ ozor',
+	'tpt-diff-new' => 'Mpkurụ edemede ohúrù',
+	'tpt-languages-legend' => 'Asụsụ ndi ozor:',
+);
+
 /** Italian (Italiano)
  * @author Darth Kule
  */
@@ -1901,6 +1910,7 @@ Sjekk at sida er merka med <nowiki><translate></nowiki> merke og har ein gyldig 
 	'tpt-edit-failed' => 'Kunne ikkje oppdatera sida: $1',
 	'tpt-already-marked' => 'Den siste versjonen av denne sida har allereie vorte markert for omsetjing.',
 	'tpt-list-nopages' => 'Ingen sider er markerte for omsetjing, eller klar til å verta markert for omsetjing.',
+	'tpt-old-pages' => 'Ein versjon av {{PLURAL:$1|denne sida|desse sidene}} er vorten merkt for omsetjing.',
 	'tpt-rev-latest' => 'siste versjon',
 	'tpt-rev-old' => 'skilnad frå den førre markerte versjonen',
 	'tpt-rev-mark-new' => 'marker denne versjonen for omsetjing',

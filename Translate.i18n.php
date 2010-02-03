@@ -7855,6 +7855,55 @@ Detil: $1",
 	'translate-gs-avgscore' => 'Nilai rata-rata',
 );
 
+/** Igbo (Igbo)
+ * @author Ukabia
+ */
+$messages['ig'] = array(
+	'translate' => 'Kuwaria na asụsụ ozor',
+	'translate-edit' => 'rüwá',
+	'translate-talk' => 'kuwa okwu',
+	'translate-page-settings-legend' => 'Otu ihe dị',
+	'translate-page-task' => 'M chorí',
+	'translate-page-group' => 'Ọtú',
+	'translate-page-language' => 'Asụsụ',
+	'translate-page-limit' => 'Nke orùrù',
+	'translate-submit' => 'Ga wèré',
+	'translate-page-showing-none' => 'Ókò adighi I zi.',
+	'translate-next' => 'Ihü nke di nso',
+	'translate-page-edit' => 'rüwá',
+	'translate-optional' => '(ichóró)',
+	'translate-ignored' => '(atùfùghịrị)',
+	'translate-edit-definition' => 'Mkpurụ omámá ókò',
+	'translate-rc-translation-filter-no' => 'Emela ihe obulà',
+	'translate-stats-edits' => 'Orürü',
+	'translate-stats-users' => 'Ndi na kuwari asụsụ na asụsụ nke ozor',
+	'translate-statsf-width' => 'Íbụ ime ogụgụ pixel:',
+	'translate-statsf-height' => 'Ógólógó ime ogụgụ pixel:',
+	'translate-statsf-scale-days' => 'Ubochi',
+	'translate-statsf-scale-hours' => 'Nkeji Unochi',
+	'translate-statsf-count' => 'Güo ógólógó:',
+	'translate-statsf-count-edits' => 'Ogụgụ orü',
+	'translate-statsf-count-users' => 'Ndi na su asụsụ di ngwamme',
+	'translate-sidebar-alltrans' => 'Na asụsụ ozor',
+	'translate-translations-fieldset-title' => 'Ókò',
+	'translate-translations-messagename' => 'Áhà:',
+	'translate-translations-project' => 'Orü:',
+	'translate-language' => 'Asụsụ',
+	'translate-percentage-complete' => 'Mmechá',
+	'translate-save' => 'Donyéré ($1)',
+	'translate-jssti-add' => 'Tinyé na ndetu',
+	'translate-manage-modlang-new' => '$1 (ohúrù)',
+	'translate-manage-import-new' => 'Ókò ohúrù $1',
+	'translate-manage-import-deleted' => 'Ókò bakashịrị $1',
+	'translate-manage-import-done' => 'Omechá!',
+	'translate-js-fb' => 'Ézíbóté orü',
+	'translate-gs-code' => 'Edemede i zonari',
+	'translate-gs-continent' => 'Obodo ukwu',
+	'translate-gs-speakers' => 'Ndi na su',
+	'translate-gs-multiple' => 'Onuogụgụ kachara otụ',
+	'translate-gs-total' => 'Olé níle',
+);
+
 /** Iloko (Ilokano)
  * @author Saluyot
  */
@@ -10081,7 +10130,7 @@ $messages['mk'] = array(
 	'translate-magic-pagename' => 'Превод на MediaWiki проширувања',
 	'translate-magic-help' => "Можете да ги преведете алијасите на специјалните страници, магичните зборови и називите на именските простори.
 
-Алијасите на специјалните сраници и магичните зборови може да имаат повеќе преводи.
+Алијасите на специјалните страници и волшебните зборови може да имаат повеќе преводи.
 Преводите се одделуваат со запирка (,).
 Именските простори може да имаат само еден превод.
 
@@ -10089,7 +10138,7 @@ $messages['mk'] = array(
 Ако не е можно во вашиот јазик да формирате валиден израз без промена на името на страницата, ве молиме контактирајте со развивачите на софтверот.
 
 Потребно е да припаѓате на групата преведувачи и да ги зачувате измените.
-Измените нема да бидат зачувани без да притиснете на копчето '''зачувај''', прикажано подолу после просторот за уредување.",
+Измените нема да бидат зачувани без да притиснете на копчето '''зачувај''', прикажано подолу под просторот за уредување.",
 	'translate-magic-module' => 'Модул:',
 	'translate-magic-submit' => 'Филтрирај',
 	'translate-magic-cm-export' => 'Извоз',
@@ -11312,6 +11361,7 @@ Du oppfordres til å se over meldinger gjennom [[Special:Translate|{{int:transla
 	'translate-group-desc-nodesc' => 'Ingen beskrivelse er tilgjengelig for denne meldingsgruppen',
 	'translate-manage-groups' => 'Gruppehåndtering',
 	'translate-manage-listgroups' => 'Konfigurerte grupper',
+	'translate-manage-listgroups-old' => 'Grupper med gammel stil',
 	'translate-managegroups' => 'Gruppehåndtering',
 	'translate-manage-newgroup' => 'Denne meldingsgruppen har ikke blitt importert før.',
 	'translate-manage-cacheat' => 'Importert den $1, kl $2',
@@ -11365,6 +11415,9 @@ $1',
 	'translate-import-err-ul-failed' => 'Filopplasting var ikke vellykket',
 	'translate-import-err-invalid-title' => 'Oppgitt filnavn <nowiki>$1</nowiki> var ugyldig.',
 	'translate-import-err-no-such-file' => 'Filen <nowiki>$1</nowiki> finnes ikke eller har ikke blitt lastet opp lokalt.',
+	'translate-import-err-warnings' => 'Filen er ikke ordentlig formatert.
+Kontroller at editoren ikke fjerner msgctxt-feltene.
+Detaljer: $1',
 	'translate-js-fb' => 'Vanlig redigering',
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Kode',
@@ -11581,6 +11634,7 @@ Sètz encoratjat(ada) a repassar los messatges dempuèi [[Special:Translate|{{in
 	'translate-group-desc-wikitravelextensions' => 'Meta grop de messatges que contenon totes los messatges per las extensions utilizadas sus [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Meta grop de messatges que contenon totes los messatges per las extensions aparentadas a [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Grop de messatges Meta que contenon totes los messatges de las extensions ligadas a [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
+	'translate-group-desc-nodesc' => 'I a pas descripcion disponibla per aqueste grop de messatge',
 	'translate-manage-groups' => 'Gestion del grop',
 	'translate-manage-listgroups' => 'Gropes configurats',
 	'translate-manage-listgroups-old' => 'Estil dels gropes ancian',
