@@ -22,6 +22,8 @@ aliasfile = Blogs/Blogs.alias.php
 optional = blug-cut-sign, blog-avatar-defaults
 ignored = create-blog-empty-article, blog-listing-zero-self, blogs-recent-url
 
+Category Hubs
+
 Category Select
 
 #CollabLibs
@@ -139,6 +141,8 @@ file = Poll/poll.i18n.php
 
 Problem Reports
 
+Quick Create
+
 Search Rank Tracker
 file = SearchRankTracker/SpecialSearchRankTracker.i18n.php
 
@@ -173,6 +177,8 @@ file = TaskManager/SpecialTaskManager.i18n.php
 
 Text Regex
 aliasfile = TextRegex/TextRegex.alias.php
+
+Title Edit
 
 Video Embed Tool
 
