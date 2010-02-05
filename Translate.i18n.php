@@ -12018,6 +12018,7 @@ Szczegóły – $1',
 /** Piedmontese (Piemontèis)
  * @author Borichèt
  * @author Bèrto 'd Sèra
+ * @author Dragonòt
  */
 $messages['pms'] = array(
 	'translate' => 'Viragi',
@@ -12104,6 +12105,7 @@ Le modìfiche as salvo nen fin ch'a-i da nen un colp ansima al al boton ambeless
 	'translate-magic-namespace' => 'Nòm djë spassi nominaj',
 	'translate-magic-notsaved' => "Soa modìfica a l'é pa stàita salvà!",
 	'translate-magic-errors' => "Për piasì, ch'a rangia {{PLURAL:$1|l'eror|j'eror}} si-dapress ant le tradussion:",
+	'translate-magic-saved' => 'Ij tò cambi a son stàit salvà con sussess.',
 	'translationchanges' => 'Modìfiche ëd viragi',
 	'translate-language' => 'Lenga:',
 );
