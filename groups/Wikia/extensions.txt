@@ -215,8 +215,6 @@ Wiki Factory
 file = WikiFactory/SpecialWikiFactory.i18n.php
 ignored = awc-metrics-language-top-list
 
-Wysiwyg Interface
-
 Helper Panel
 
 Interwiki Dispatcher
