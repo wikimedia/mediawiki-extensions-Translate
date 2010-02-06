@@ -164,3 +164,19 @@
 	padding-right: 2em;
 	padding-bottom: 2ex;
 }
+
+/* First Steps '*/
+#translate-fs-signup {
+	display: block;
+	margin: 1em;
+	font-weight: bold;
+	font-size: 200%;
+}
+
+#translate-fs-signup a {
+	border: 2px dotted gray;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	background-color: #D1E231 !important;
+}
