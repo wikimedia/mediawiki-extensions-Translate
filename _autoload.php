@@ -125,3 +125,7 @@ $wgAutoloadClasses['YamlFFS'] = $dir . 'FFS.php';
 $wgAutoloadClasses['RubyYamlFFS'] = $dir . 'FFS.php';
 $wgAutoloadClasses['JavaScriptFFS'] = $dir . 'FFS.php';
 $wgAutoloadClasses['GettextFFS'] = $dir . '/ffs/Gettext.php';
+
+$wgAutoloadClasses['HtmlTag'] = $dir . 'utils/Html.php';
+$wgAutoloadClasses['RawHtml'] = $dir . 'utils/Html.php';
+$wgAutoloadClasses['TagContainer'] = $dir . 'utils/Html.php';
