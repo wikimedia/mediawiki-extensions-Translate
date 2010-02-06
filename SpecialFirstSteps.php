@@ -20,13 +20,14 @@ class SpecialFirstSteps extends SpecialPage {
 
 	public function __construct() {
 		parent::__construct( 'FirstSteps' );
+	}
+
+	public function execute( $params ) {
 		global $wgOut, $wgUser;
 		$this->out = $wgOut;
 		$this->user = $wgUser;
 		$this->skin = $wgUser->getSkin();
-	}
 
-	public function execute( $params ) {
 		$this->out->addWikiMsg( 'translate-fs-intro' );
 		$step = false;
 
