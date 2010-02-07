@@ -7,6 +7,7 @@
  * replaces the current value and the object itself is returned. This allows
  * chaining calls. Noted as chain-accessor in the comments. Example:
  * <code>$tag = new HtmlTag( 'div' ); $div = $div->content( 'foo' )->style( 'color', 'red' );</code>
+ * Note: relies on implicit toString conversion (PHP >= 5.2)
  */
 class HtmlTag {
 	public $tag = 'div';
@@ -121,6 +122,7 @@ class HtmlTag {
 	/**
 	 * Returns the html output. Use this when you don't want to use
 	 * implicit string conversion.
+	 * @return string  html
 	 */
 	public function html() {
 		// Collapse styles
@@ -135,10 +137,18 @@ class HtmlTag {
 		}
 	}
 
+	/**
+	 * Wrapper for html method, for implicit conversion to string.
+	 * @return string  html
+	 */
 	public function __toString() {
 		return $this->html();
 	}
 
+	/**
+	 * Constructs the value for style parameter.
+	 * @return string  The value for style parameter.
+	 */
 	public function collapseStyles() {
 		$style = '';
 
@@ -180,8 +190,12 @@ class HtmlTag {
 
 }
 
-
+/**
+ * Class for passing data to HtmlTag. Useful when you already
+ * have piece of html.
+ */
 class RawHtml {
+	/** Contents */
 	public $data = '';
 
 	public function __construct( $data ) {
@@ -193,6 +207,10 @@ class RawHtml {
 	}
 }
 
+/**
+ * Wrapper class which implements array properties. Useful for adding multiple
+ * tags inside as contents of another tag. Items must be pre-escaped!
+ */
 class TagContainer implements ArrayAccess {
 	public $tags = array();
 
