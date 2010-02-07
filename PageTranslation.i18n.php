@@ -353,10 +353,12 @@ $messages['be-tarask'] = array(
 $messages['bg'] = array(
 	'tpt-diff-old' => 'Предишен текст',
 	'tpt-diff-new' => 'Нов текст',
+	'tpt-rev-latest' => 'най-новата версия',
 	'tpt-rev-mark-new' => 'отбелязване на тази версия за превеждане',
 	'tpt-translate-this' => 'превеждане на тази страница',
 	'translate-tag-translate-link-desc' => 'Превеждане на тази страница',
 	'tpt-languages-legend' => 'Други езици:',
+	'tpt-download-page' => 'Изнасяне на страница с преводите',
 );
 
 /** Bengali (বাংলা)
@@ -2423,6 +2425,19 @@ $messages['sah'] = array(
 Бу барылы тылбаастаныахтаах курдук бэлиэтиэҥ иннинэ салааҕа уларытыы төһө кыалларынан аҕыйах буоларын ситиһэ сатыахтааххын өйдөө, ол тылбаасчыттар үлэлэрин аҕыйатыа.',
 	'tpt-mark-summary' => 'Бу барылы тылбастаныахтаах курдук бэлиэтииргэ',
 	'tpt-edit-failed' => 'Бу сирэйи саҥардар табыллыбата: $1',
+);
+
+/** Sinhala (සිංහල)
+ * @author චතුනි අලහප්පෙරුම
+ */
+$messages['si'] = array(
+	'tpt-template' => 'පිටු සැකිල්ල',
+	'tpt-diff-old' => 'පූර්ව පෙළ',
+	'tpt-diff-new' => 'නව පෙළ',
+	'tpt-rev-latest' => 'නවතම අනුවාදය',
+	'tpt-translate-this' => 'මෙම පිටුව පරිවර්තනය කරන්න',
+	'translate-tag-translate-link-desc' => 'මෙම පිටුව පරිවර්තනය කරන්න',
+	'tpt-languages-legend' => 'වෙනත් භාෂා:',
 );
 
 /** Slovak (Slovenčina)
