@@ -53,6 +53,7 @@ TAGS:
     - site.edit.anon_edits
     # Users may or may not want to translate the OSM wiki too
     - layouts.help_wiki_url
+    - layouts.intro_3_partners_url
     - layouts.shop_url
     - notifier.gpx_notification.failure.import_failures_url
     - notifier.signup_confirm_plain.the_wiki_url
