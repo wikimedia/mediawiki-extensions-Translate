@@ -142,8 +142,13 @@ class MessageWebImporter {
 
 			if ( isset( $collection[$key] ) ) {
 				$old = $collection[$key]->translation();
+				/* Fuzzy state of the in-wiki message is of no
+				 * concern. Default action should be 'import'.
+				 * If the string is marked fuzzy in the gettext,
+				 * fuzzy tag is added anyway on import.
 				$fuzzy = TranslateEditAddons::hasFuzzyString( $old ) ||
 					TranslateEditAddons::isFuzzy( self::makeTitle( $group, $key, $code ) );
+				 */
 			}
 
 			// No changes at all, ignore
