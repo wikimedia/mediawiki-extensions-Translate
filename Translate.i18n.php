@@ -12263,8 +12263,8 @@ $1",
 	'translate-import-err-no-such-file' => "L'archivi <nowiki>$1</nowiki> a esist pa o a l'é pa stàit carià localment.",
 	'translate-import-err-no-headers' => "L'archivi a l'é pa n'archivi Gettext bin formà ant ël formà dl'estension Translate:
 As peul pa determinesse la partìa e la lenga da l'antestassion dl'archivi.",
-	'translate-import-err-warnings' => "Ël file a l'é pa bin frmà.
-Sigurte che tò editor a gava pa ij camp msgctxt.
+	'translate-import-err-warnings' => "L'archivi a l'é pa bin formà.
+Ch'as sigura che sò editor a gava pa ij camp msgctxt.
 Detaj: $1",
 	'translate-js-fb' => 'Modìfica normal',
 	'translate-gs-pos' => 'Pos.',
