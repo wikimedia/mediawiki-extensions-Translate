@@ -98,7 +98,7 @@ class SpecialFirstSteps extends SpecialPage {
 		$this->out->addWikiMsg( 'translate-fs-settings-text' );
 		$form = new HtmlTag( 'form' );
 		$items = new TagContainer();
-		$form->param( 'method', 'post')->content( $items );
+		$form->param( 'method', 'post' )->content( $items );
 		$items[] = new RawHtml( Html::hidden( 'step', 'settings' ) );
 		$items[] = new RawHtml( Xml::submitButton( wfMsg( 'translate-fs-settings-skip' ) ) );
 
@@ -129,7 +129,7 @@ class SpecialFirstSteps extends SpecialPage {
 		     $this->user->matchEditToken( $wgRequest->getVal( 'token' ) ) &&
 		     $wgRequest->getText( 'step' ) === 'userpage' )
 		{
-			$article = new Article($userpage);
+			$article = new Article( $userpage );
 			$status = $article->doEdit( $wgRequest->getText( $textareaId ), $this->getTitle() );
 			if ( $status->isOK() ) {
 				$header->content( $header->content . wfMsg( 'translate-fs-pagetitle-done' ) );
@@ -163,7 +163,7 @@ class SpecialFirstSteps extends SpecialPage {
 
 		$form = new HtmlTag( 'form' );
 		$items = new TagContainer();
-		$form->param( 'method', 'post')->content( $items );
+		$form->param( 'method', 'post' )->content( $items );
 
 		$items[] = new RawHtml( Html::hidden( 'step', 'userpage' ) );
 		$items[] = new RawHtml( Html::hidden( 'token', $this->user->editToken() ) );

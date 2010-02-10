@@ -31,7 +31,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 			LanguageNames::LIST_MW_AND_CLDR
 		);
 		$natives = Language::getLanguageNames( false );
-		ksort($natives);
+		ksort( $natives );
 
 		$titles = array();
 		foreach ( $natives as $code => $_ ) {
@@ -40,7 +40,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 
 		$dbr = wfGetDB( DB_SLAVE );
 		$tables = array( 'page', 'revision', 'text' );
-		$vars = array_merge(Revision::selectTextFields(), array( 'page_title', 'page_namespace' ), Revision::selectFields() );
+		$vars = array_merge( Revision::selectTextFields(), array( 'page_title', 'page_namespace' ), Revision::selectFields() );
 		$conds = array(
 			'page_latest = rev_id',
 			'rev_text_id = old_id',
@@ -54,11 +54,11 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$lb = new LinkBatch;
 
 		foreach ( $res as $row ) {
-			$rev = new Revision($row);
+			$rev = new Revision( $row );
 			$text = $rev->getText();
 			$code = strtolower( preg_replace( '!/translators$!', '', $row->page_title ) );
 			preg_match_all( '!{{user\|([^}|]+)!', $text, $matches,  PREG_SET_ORDER );
-			foreach( $matches as $match ) {
+			foreach ( $matches as $match ) {
 				$user = Title::capitalize( $match[1], NS_USER );
 				$lb->add( NS_USER, $user );
 				$lb->add( NS_USER_TALK, $user );
@@ -69,7 +69,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$lb->execute();
 		global $wgUser;
 		$skin = $wgUser->getSkin();
-		foreach ( array_keys($users) as $code ) {
+		foreach ( array_keys( $users ) as $code ) {
 			$wgOut->addWikiText( "== [$code] {$locals[$code]} - {$natives[$code]} ==" );
 
 			foreach ( $users[$code] as $index => $username ) {

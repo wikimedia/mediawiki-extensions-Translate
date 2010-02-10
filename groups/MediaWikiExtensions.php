@@ -212,7 +212,7 @@ class PremadeMediawikiExtensionGroups {
 			$group->setDescriptionMsg( $info['descmsg'], $info['url'] );
 		}
 
-		if( $group->getDescription() == '' ) {
+		if ( $group->getDescription() == '' ) {
 			global $wgLang;
 			$group->setDescription( wfMsg( 'translate-group-desc-nodesc' ) );
 		}

@@ -39,7 +39,7 @@ class TranslationEditPage {
 		$helpers = new TranslationHelpers( $this->getTitle() );
 
 		// jQuery borks on something, probably to :, thus, don't use special chars
-		$id = Sanitizer::escapeId( sha1($this->getTitle()->getPrefixedText()) );
+		$id = Sanitizer::escapeId( sha1( $this->getTitle()->getPrefixedText() ) );
 		$helpers->setTextareaId( $id );
 
 		global $wgServer, $wgScriptPath, $wgOut;

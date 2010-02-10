@@ -184,7 +184,7 @@ class TranslationHelpers {
 				}
 			}
 
-			foreach( $sugFields as $field ) {
+			foreach ( $sugFields as $field ) {
 				list( $text, $params, $label ) = $field;
 				$legend = array();
 				foreach ( $label as $acc => $links ) { $legend[] = $acc . ' ' . implode( " ", $links ); }
@@ -244,17 +244,17 @@ class TranslationHelpers {
 		if ( $google_json === false ) {
 				wfWarn(  __METHOD__ . ': Http::get failed' );
 				return null;
-		} elseif( !is_object( $response ) ) {
+		} elseif ( !is_object( $response ) ) {
 				wfWarn(  __METHOD__ . ': Unable to parse reply: ' . strval( $google_json ) );
 				error_log(  __METHOD__ . ': Unable to parse reply: ' . strval( $google_json ) );
 				return null;
 		}
 		if ( $response->responseStatus === 200 ) {
 			$text = $this->suggestionField( Sanitizer::decodeCharReferences( $response->responseData->translatedText ) );
-			return Html::rawElement( 'div', null, self::legend('Google') . $text . self::clear() );
-		} elseif( $response->responseDetails === 'invalid translation language pair' ) {
+			return Html::rawElement( 'div', null, self::legend( 'Google' ) . $text . self::clear() );
+		} elseif ( $response->responseDetails === 'invalid translation language pair' ) {
 			$unsupported[$code] = true;
-			$wgMemc->set( $memckey, $unsupported, 60*60*8 );
+			$wgMemc->set( $memckey, $unsupported, 60 * 60 * 8 );
 		} else {
 			wfWarn(  __METHOD__ . ': ' . $response->responseDetails );
 			error_log( __METHOD__ . ': ' . $response->responseDetails );
@@ -291,7 +291,7 @@ class TranslationHelpers {
 				$pairs[$target][$source] = true;
 			}
 
-			$wgMemc->set( $memckey, $pairs, 60*60*24 );
+			$wgMemc->set( $memckey, $pairs, 60 * 60 * 24 );
 		}
 
 		$codemap = array( 'no' => 'nb' );
@@ -304,7 +304,7 @@ class TranslationHelpers {
 
 		$codemap = array_flip( $codemap );
 		foreach ( $pairs[$code] as $candidate => $unused ) {
-			$mwcode = str_replace( '_', '-', strtolower($candidate));
+			$mwcode = str_replace( '_', '-', strtolower( $candidate ) );
 			if ( isset( $codemap[$mwcode] ) ) $mwcode = $codemap[$mwcode];
 
 			$text = TranslateUtils::getMessageContent( $page, $mwcode, $ns );
@@ -326,7 +326,7 @@ class TranslationHelpers {
 				$suggestions[] = Html::rawElement( 'div', null, self::legend( "Apertium ($candidate)" ) . $response . self::clear() );
 			}
 		}
-		if ( !count($suggestions) ) return null;
+		if ( !count( $suggestions ) ) return null;
 		return implode( "\n", $suggestions );
 	}
 
@@ -598,7 +598,7 @@ class TranslationHelpers {
 		$counter++;
 		$id = "tmsug-" . wfTimestamp() . "-$counter";
 		$contents = TranslateUtils::convertWhiteSpaceToHTML( $contents );
-		return $this->adder($id) . "\n" . Html::rawElement( 'span', array( 'id' => $id ), $contents );
+		return $this->adder( $id ) . "\n" . Html::rawElement( 'span', array( 'id' => $id ), $contents );
 	}
 
 	public static function editLink( $target, $text, $params = array() ) {

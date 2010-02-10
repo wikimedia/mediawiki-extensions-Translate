@@ -84,7 +84,7 @@ class HtmlTag {
 		}
 
 		if ( $value === false ) {
-			unset($this->params[$name]);
+			unset( $this->params[$name] );
 		} else {
 			$this->params[$name] = $this->assert( 'is_string', $value );
 		}
@@ -105,7 +105,7 @@ class HtmlTag {
 		}
 
 		if ( $value === false ) {
-			unset($this->style[$name]);
+			unset( $this->style[$name] );
 		} else {
 			$this->style[$name] = $this->assert( 'is_string', $value );
 		}
@@ -130,7 +130,7 @@ class HtmlTag {
 		$style = $this->collapseStyles();
 		if ( $style ) $params['style'] = $style;
 
-		if ( is_object($this->content) ) {
+		if ( is_object( $this->content ) ) {
 			return Html::rawElement( $this->tag, $params, $this->content );
 		} else {
 			return Html::element( $this->tag, $params, $this->content );
@@ -174,14 +174,14 @@ class HtmlTag {
 	 */
 	protected function assert( $function, $value, $result = true ) {
 		if ( $function === 'is_string' ) {
-			if ( is_int($value) || is_float( $value ) ) $value = (string) $value;
+			if ( is_int( $value ) || is_float( $value ) ) $value = (string) $value;
 		}
 
 		$real_result = call_user_func( $function, $value );
 		if ( $real_result === $result ) return $value;
 		$msg =  __METHOD__ . ":expecting $function to be $result";
 		if ( $this->strict ) {
-				throw new MWException($msg);
+				throw new MWException( $msg );
 		} else {
 			wfWarn( $msg );
 			return $value;

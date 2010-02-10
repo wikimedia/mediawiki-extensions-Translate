@@ -350,7 +350,7 @@ class MessageWebImporter {
 
 		$changed = array();
 		
-		if( !$user ) {
+		if ( !$user ) {
 			$user = self::getFuzzyBot();
 		}
 
@@ -428,19 +428,19 @@ class MessageWebImporter {
 	 * @return section element
 	 */
 	public static function makeSectionElement( $legend, $type, $content, $params = array() ) {
-		if( isset( $params['container'] ) { 
+		if ( isset( $params['container'] ) ) {
 			$containerParams = array( 'class' => $params['container'] );
 		} else {
 			$containerParams = array( 'class' => "mw-tpt-sp-section mw-tpt-sp-section-type-{$type}" );
 		}
 
-		if( isset( $params['legend'] ) { 
+		if ( isset( $params['legend'] ) ) {
 			$legendParams = array( 'class' => $params['legend'] );
 		} else {
 			$legendParams = array( 'class' => 'mw-translate-manage-legend' );
 		}
 
-		if( isset( $params['content'] ) { 
+		if ( isset( $params['content'] ) ) {
 			$contentParams = array( 'class' => $params['content'] );
 		} else {
 			$contentParams = array( 'class' => 'mw-tpt-sp-content' );
