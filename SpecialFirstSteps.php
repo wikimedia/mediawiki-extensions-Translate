@@ -1,4 +1,6 @@
 <?php
+if ( !defined( 'MEDIAWIKI' ) ) die();
+
 /**
  * @author Niklas Laxström
  * @copyright Copyright © 2010 Niklas Laxström
