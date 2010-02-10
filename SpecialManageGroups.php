@@ -87,17 +87,6 @@ class SpecialManageGroups {
 		}
 	}
 
-	protected function makeSectionElement( $legend, $type, $content ) {
-		$containerParams = array( 'class' => "mw-tpt-sp-section mw-tpt-sp-section-type-{$type}" );
-		$legendParams = array( 'class' => 'mw-translate-manage-legend' );
-		$contentParams = array( 'class' => 'mw-tpt-sp-content' );
-
-		return Xml::tags( 'div', $containerParams,
-			Xml::tags( 'div', $legendParams, $legend ) .
-			Xml::tags( 'div', $contentParams, $content )
-		);
-	}
-
 	public function getTitle() {
 		return SpecialPage::getTitleFor( 'Translate', 'manage' );
 	}
@@ -166,7 +155,7 @@ class SpecialManageGroups {
 
 				$text = TranslateUtils::convertWhiteSpaceToHTML( $value );
 
-				$changed[] = $this->makeSectionElement( $name, 'new', $text );
+				$changed[] = MessageWebImporter::makeSectionElement( $name, 'new', $text );
 			} else {
 				if ( $fuzzy ) {
 					$old = TRANSLATE_FUZZY . $old;
@@ -241,7 +230,7 @@ class SpecialManageGroups {
 					implode( ' ', $act )
 				);
 
-				$changed[] = $this->makeSectionElement( $name, $type, $text );
+				$changed[] = MessageWebImporter::makeSectionElement( $name, $type, $text );
 			}
 		}
 
@@ -258,7 +247,7 @@ class SpecialManageGroups {
 
 				$text = TranslateUtils::convertWhiteSpaceToHTML(  $collection[$s]->translation() );
 
-				$changed[] = $this->makeSectionElement( $name, 'deleted', $text );
+				$changed[] = MessageWebImporter::makeSectionElement( $name, 'deleted', $text );
 			}
 		}
 

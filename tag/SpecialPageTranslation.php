@@ -4,9 +4,11 @@
  * There are two modes 1) list of all pages 2) review mode for one page.
  *
  * @author Niklas Laxström
- * @copyright Copyright © 2009 Niklas Laxström
+ * @author Siebrand Mazeland
+ * @copyright Copyright © 2009-2010 Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
+ 
 class SpecialPageTranslation extends SpecialPage {
 	function __construct() {
 		SpecialPage::SpecialPage( 'PageTranslation' );
@@ -284,7 +286,17 @@ class SpecialPageTranslation extends SpecialPage {
 				$text = TranslateUtils::convertWhiteSpaceToHTML( $s->getText() );
 			}
 
-			$this->makeSectionElement( $name, $s->type, $text );
+			$type = $s->type;
+			$wgOut->addHTML( MessageWebImporter::makeSectionElement(
+				$name,
+				$type,
+				$text,
+				array(
+					'container' => 'mw-tpt-sp-section mw-tpt-sp-section-type-{$type}',
+					'legend' => 'mw-tpt-sp-legend',
+					'content' => 'mw-tpt-sp-content'
+				)
+			) );
 		}
 
 		$deletedSections = $page->getParse()->getDeletedSections();
@@ -292,8 +304,18 @@ class SpecialPageTranslation extends SpecialPage {
 			$wgOut->wrapWikiMsg( '==$1==', 'tpt-sections-deleted' );
 			foreach ( $deletedSections as $s ) {
 				$name = wfMsgHtml( 'tpt-section-deleted', htmlspecialchars( $s->id ) );
+				$type = $s->type;
 				$text = TranslateUtils::convertWhiteSpaceToHTML( $s->getText() );
-				$this->makeSectionElement( $name, $s->type, $text );
+				$wgOut->addHTML( MessageWebImporter::makeSectionElement(
+					$name,
+					$type,
+					$text,
+					array(
+						'container' => 'mw-tpt-sp-section mw-tpt-sp-section-type-{$type}',
+						'legend' => 'mw-tpt-sp-legend',
+						'content' => 'mw-tpt-sp-content'
+					)
+				) );
 			}
 		}
 
@@ -321,21 +343,6 @@ class SpecialPageTranslation extends SpecialPage {
 		$wgOut->addHTML(
 			Xml::submitButton( wfMsg( 'tpt-submit' ) ) .
 			Xml::closeElement( 'form' )
-		);
-	}
-
-	protected function makeSectionElement( $legend, $type, $content ) {
-		global $wgOut;
-
-		$containerParams = array( 'class' => "mw-tpt-sp-section mw-tpt-sp-section-type-{$type}" );
-		$legendParams = array( 'class' => 'mw-tpt-sp-legend' );
-		$contentParams = array( 'class' => 'mw-tpt-sp-content' );
-
-		$wgOut->addHTML(
-			Xml::tags( 'div', $containerParams,
-				Xml::tags( 'div', $legendParams, $legend ) .
-				Xml::tags( 'div', $contentParams, $content )
-			)
 		);
 	}
 

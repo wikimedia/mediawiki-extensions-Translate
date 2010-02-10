@@ -153,7 +153,7 @@ class MessageWebImporter {
 					'<code style="font-weight:normal;">' . htmlspecialchars( $key ) . '</code>'
 				);
 				$text = TranslateUtils::convertWhiteSpaceToHTML( $value );
-				$changed[] = $this->makeSectionElement( $name, 'new', $text );
+				$changed[] = self::makeSectionElement( $name, 'new', $text );
 			} else {
 				$diff->setText( $old, $value );
 				$text = $diff->getDiff( '', '' );
@@ -219,7 +219,7 @@ class MessageWebImporter {
 					implode( ' ', $act )
 				);
 
-				$changed[] = $this->makeSectionElement( $name, $type, $text );
+				$changed[] = self::makeSectionElement( $name, $type, $text );
 			}
 		}
 
@@ -234,7 +234,7 @@ class MessageWebImporter {
 					'<code style="font-weight:normal;">' . htmlspecialchars( $s ) . '</code>'
 				);
 				$text = TranslateUtils::convertWhiteSpaceToHTML(  $collection[$s]->translation() );
-				$changed[] = $this->makeSectionElement( $name, 'deleted', $text );
+				$changed[] = self::makeSectionElement( $name, 'deleted', $text );
 			}
 		}
 
@@ -417,14 +417,38 @@ class MessageWebImporter {
 		return Title::makeTitleSafe( $ns, $titlekey );
 	}
 
-	protected function makeSectionElement( $legend, $type, $content ) {
-		$containerParams = array( 'class' => "mw-tpt-sp-section mw-tpt-sp-section-type-{$type}" );
-		$legendParams = array( 'class' => 'mw-translate-manage-legend' );
-		$contentParams = array( 'class' => 'mw-tpt-sp-content' );
+	/**
+	 * Make section elements
+	 *
+	 * @param $legend String: contents of legend
+	 * @param $type String: contents of type class
+	 * @param $content String: contents of content class
+	 * @param $params Array: array of key-value pairs to override the standard class names
+	 *
+	 * @return section element
+	 */
+	public static function makeSectionElement( $legend, $type, $content, $params = array() ) {
+		if( isset( $params['container'] ) { 
+			$containerParams = array( 'class' => $params['container'] );
+		} else {
+			$containerParams = array( 'class' => "mw-tpt-sp-section mw-tpt-sp-section-type-{$type}" );
+		}
 
-		return Xml::tags( 'div', $containerParams,
-			Xml::tags( 'div', $legendParams, $legend ) .
-			Xml::tags( 'div', $contentParams, $content )
+		if( isset( $params['legend'] ) { 
+			$legendParams = array( 'class' => $params['legend'] );
+		} else {
+			$legendParams = array( 'class' => 'mw-translate-manage-legend' );
+		}
+
+		if( isset( $params['content'] ) { 
+			$contentParams = array( 'class' => $params['content'] );
+		} else {
+			$contentParams = array( 'class' => 'mw-tpt-sp-content' );
+		}
+
+		return Xml::tags(
+			'div', $containerParams,
+			Xml::tags( 'div', $legendParams, $legend ) . Xml::tags( 'div', $contentParams, $content )
 		);
 	}
 
