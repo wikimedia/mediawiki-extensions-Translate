@@ -1064,6 +1064,9 @@ Stalker Log
 
 Stock Charts
 
+Story Board
+aliasfile = StoryBoard/StoryBoard.alias.php
+
 String Functions
 
 Sub Page List 3
