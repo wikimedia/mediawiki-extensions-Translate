@@ -284,11 +284,11 @@ class MessageWebImporter {
 
 			$title = self::makeTitle( $group, $key, $code );
 
-			return $this->doImport( $title, $message, $comment );
+			return self::doImport( $title, $message, $comment );
 		} elseif ( $action === 'ignore' ) {
 			return array( 'translate-manage-import-ignore', $key );
 		} elseif ( $action === 'fuzzy' && $code != 'en' ) {
-			return $this->doFuzzy( $title, $message, $comment );
+			return self::doFuzzy( $title, $message, $comment );
 		} else {
 			throw new MWException( "Unhandled action $action" );
 		}
@@ -298,10 +298,9 @@ class MessageWebImporter {
 		return wfTimestamp() - $this->time >= $this->processingTime;
 	}
 
-	// FIXME: lot of duplication with SpecialManageGroups::doImport()
-	protected function doImport( $title, $message, $comment, $user = null ) {
+	public static function doImport( $title, $message, $comment, $user = null, $flags = false ) {
 		$article = new Article( $title );
-		$status = $article->doEdit( $message, $comment );
+		$status = $article->doEdit( $message, $comment, $flags, false, $user );
 		$success = $status->isOK();
 
 		if ( $success ) {
@@ -313,10 +312,11 @@ class MessageWebImporter {
 		}
 	}
 
-	// FIXME: lot of duplication with SpecialManageGroups::doFuzzy()
-	protected function doFuzzy( $title, $message, $comment ) {
+	public static function doFuzzy( $title, $message, $comment, $user, $editFlags = 0 ) {
 		$dbw = wfGetDB( DB_MASTER );
+
 		$titleText = $title->getDBKey();
+
 		$condArray = array(
 			'page_namespace' => $title->getNamespace(),
 			'page_latest=rev_id',
@@ -332,16 +332,25 @@ class MessageWebImporter {
 		);
 
 		$changed = array();
-		$fuzzybot = self::getFuzzyBot();
+		
+		if( !$user ) {
+			$user = self::getFuzzyBot();
+		}
 
 		foreach ( $rows as $row ) {
 			$ttitle = Title::makeTitle( $row->page_namespace, $row->page_title );
 
-			$changed[] = $this->doImport(
+			// Avoid double-fuzzying
+			$text = Revision::getRevisionText( $row );
+			$text = str_replace( TRANSLATE_FUZZY, '', $text );
+			$text = TRANSLATE_FUZZY . $text;
+
+			$changed[] = self::doImport(
 				$ttitle,
-				TRANSLATE_FUZZY . Revision::getRevisionText( $row ),
+				$text,
 				$comment,
-				$fuzzybot
+				$user,
+				$editFlags
 			);
 
 			if ( $this->checkProcessTime() ) {
@@ -351,7 +360,18 @@ class MessageWebImporter {
 
 		if ( count( $changed ) === count( $rows ) ) {
 			$comment = wfMsgForContentNoTrans( 'translate-manage-import-summary' );
-			$changed[] = $this->doImport( $title, $message, $comment );
+			// FIXME: Leftover of refactoring from SpecialManageGroups::doFuzzy()
+			//        Did not know what to do with this. Have to ask Nikerabbit.
+			//        Probably have to add an extra parameter, but this part should
+			//        have had a comment.
+			// $title = Title::makeTitleSafe( $title->getNamespace(), $title->getPrefixedDbKey() . '/en' );
+			$changed[] = self::doImport(
+				$title,
+				$message,
+				$comment,
+				$user,
+				$editFlags
+			);
 		}
 
 		$text = '';

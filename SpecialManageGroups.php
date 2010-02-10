@@ -1,4 +1,5 @@
 <?php
+if ( !defined( 'MEDIAWIKI' ) ) die();
 
 class SpecialManageGroups {
 	protected $skin, $user, $out;
@@ -375,14 +376,28 @@ class SpecialManageGroups {
 			$title = self::makeTitle( $group, $key, $code );
 			$fuzzybot = self::getFuzzyBot();
 
-			return $this->doImport( $title, $message, $comment, $fuzzybot );
+			return MessageWebImporter::doImport(
+				$title,
+				$message,
+				$comment,
+				$fuzzybot,
+				EDIT_FORCE_BOT
+			);
 		} elseif ( $action === 'ignore' ) {
 			return array( 'translate-manage-import-ignore', $key );
 		} elseif ( $action === 'fuzzy' && $code != 'en' ) {
+			global $wgUser;
 			$title = Title::makeTitleSafe( $group->getNamespace(), $key );
-			$comment = wfMsgForContentNoTrans( 'translate-manage-fuzzy-summary' );
+			$comment = "[{$wgUser->getName()}] ";
+			$comment .= wfMsgForContentNoTrans( 'translate-manage-fuzzy-summary' );
 
-			return $this->doFuzzy( $title, $message, $comment );
+			return MessageWebImporter::doFuzzy(
+				$title,
+				$message,
+				$comment,
+				null,
+				EDIT_FORCE_BOT
+			);
 		} else {
 			throw new MWException( "Unhandled action $action" );
 		}
@@ -390,72 +405,6 @@ class SpecialManageGroups {
 
 	protected function checkProcessTime() {
 		return wfTimestamp() - $this->time >= $this->processingTime;
-	}
-
-	protected function doImport( $title, $message, $comment, $user = null ) {
-		$flags = EDIT_FORCE_BOT;
-		$article = new Article( $title );
-		$status = $article->doEdit( $message, $comment, $flags, false, $user );
-		$success = $status->isOK();
-
-		if ( $success ) {
-			return array( 'translate-manage-import-ok',
-				wfEscapeWikiText( $title->getPrefixedText() )
-			);
-		} else {
-			throw new MWException( "Failed to import new version of page {$title->getPrefixedText()}\n{$status->getWikiText()}" );
-		}
-	}
-
-	protected function doFuzzy( $title, $message, $comment ) {
-		global $wgUser;
-
-		$dbw = wfGetDB( DB_MASTER );
-		$titleText = $title->getDBKey();
-		$conds = array(
-			'page_namespace'    => $title->getNamespace(),
-			'page_latest=rev_id',
-			'rev_text_id=old_id',
-			"page_title LIKE '{$dbw->escapeLike( $titleText )}/%%'"
-		);
-
-		$rows = $dbw->select(
-			array( 'page', 'revision', 'text' ),
-			array( 'page_title', 'page_namespace', 'old_text', 'old_flags' ),
-			$conds,
-			__METHOD__
-		);
-
-		$changed = array();
-		$fuzzybot = self::getFuzzyBot();
-
-		foreach ( $rows as $row ) {
-			$ttitle = Title::makeTitle( $row->page_namespace, $row->page_title );
-
-			// Avoid double-fuzzying
-			$text = Revision::getRevisionText( $row );
-			$text = str_replace( TRANSLATE_FUZZY, '', $text );
-			$text = TRANSLATE_FUZZY . $text;
-
-			$changed[] = $this->doImport( $ttitle, $text, "[{$wgUser->getName()}] " . $comment, $fuzzybot );
-			if ( $this->checkProcessTime() ) break;
-		}
-
-		if ( count( $changed ) === $rows->numRows() ) {
-			$comment = "[{$wgUser->getName()}] " . wfMsgForContentNoTrans( 'translate-manage-import-summary' );
-			$title = Title::makeTitleSafe( $title->getNamespace(), $title->getPrefixedDbKey() . '/en' );
-			$changed[] = $this->doImport( $title, $message, $comment, $fuzzybot );
-		}
-
-		$text = '';
-		foreach ( $changed as $c ) {
-			$key = array_shift( $c );
-			$text .= "* " . wfMsgExt( $key, array(), $c ) . "\n";
-		}
-
-		return array( 'translate-manage-import-fuzzy',
-			"\n" . $text
-		);
 	}
 
 	// FIXME: Duplicate code. See ChangeSyncer::getImportUser() in scripts/sync-group.php
