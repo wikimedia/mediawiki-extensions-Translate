@@ -6,7 +6,8 @@
  * @addtogroup Extensions
  *
  * @author Niklas Laxström
- * @copyright Copyright © 2009, Niklas Laxström
+ * @author Siebrand Mazeland
+ * @copyright Copyright © 2009-2010, Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -142,13 +143,6 @@ class MessageWebImporter {
 
 			if ( isset( $collection[$key] ) ) {
 				$old = $collection[$key]->translation();
-				/* Fuzzy state of the in-wiki message is of no
-				 * concern. Default action should be 'import'.
-				 * If the string is marked fuzzy in the gettext,
-				 * fuzzy tag is added anyway on import.
-				$fuzzy = TranslateEditAddons::hasFuzzyString( $old ) ||
-					TranslateEditAddons::isFuzzy( self::makeTitle( $group, $key, $code ) );
-				 */
 			}
 
 			// No changes at all, ignore
@@ -185,7 +179,13 @@ class MessageWebImporter {
 						// Check processing time
 						if ( !isset( $this->time ) ) $this->time = wfTimestamp();
 
-						$message = $this->doAction( $action, $group, $key, $code, $value );
+						$message = self::doAction(
+							$action,
+							$group,
+							$key,
+							$code,
+							$value
+						);
 
 						$key = array_shift( $message );
 						$params = $message;
@@ -272,23 +272,40 @@ class MessageWebImporter {
 		return $alldone;
 	}
 
-	// FIXME: lot of duplication with SpecialManageGroups::doAction()
-	protected function doAction( $action, $group, $key, $code, $message, $comment = '' ) {
+	/**
+	 * Perform an action on a given group/key/code
+	 * 
+	 * @param $action String: import/conflict/ignore
+	 * @param $group Object: group object
+	 * @param $key String: message key
+	 * @param $code String: language code
+	 * @param $message String: contents for the $key/code combination
+	 * @param $comment String: edit summary (default: empty) - see Article::doEdit
+	 * @param $user Object: object of user that will make the edit (default: null - $wgUser) - see Article::doEdit
+	 * @param $editFlags Integer bitfield: see Article::doEdit
+	 *
+	 * @return String: action result
+	 */
+	public static function doAction( $action, $group, $key, $code, $message, $comment = '', $user = null, $editFlags = 0 ) {
 		if ( $action === 'import' || $action === 'conflict' ) {
 			if ( $action === 'import' ) {
 				$comment = wfMsgForContentNoTrans( 'translate-manage-import-summary' );
 			} else {
 				$comment = wfMsgForContentNoTrans( 'translate-manage-conflict-summary' );
-				$message = TRANSLATE_FUZZY . $message;
+				$message = self::makeMessageFuzzy( $message );
 			}
 
 			$title = self::makeTitle( $group, $key, $code );
 
-			return self::doImport( $title, $message, $comment );
+			return self::doImport( $title, $message, $comment, $user, $editFlags );
 		} elseif ( $action === 'ignore' ) {
 			return array( 'translate-manage-import-ignore', $key );
 		} elseif ( $action === 'fuzzy' && $code != 'en' ) {
-			return self::doFuzzy( $title, $message, $comment );
+			$title = self::makeTitle( $group, $key, $code );
+
+			$message = self::makeMessageFuzzy( $message );
+
+			return self::doImport( $title, $message, $comment, $user, $editFlags );
 		} else {
 			throw new MWException( "Unhandled action $action" );
 		}
@@ -298,9 +315,9 @@ class MessageWebImporter {
 		return wfTimestamp() - $this->time >= $this->processingTime;
 	}
 
-	public static function doImport( $title, $message, $comment, $user = null, $flags = false ) {
+	public static function doImport( $title, $message, $comment, $user = null, $editFlags = 0 ) {
 		$article = new Article( $title );
-		$status = $article->doEdit( $message, $comment, $flags, false, $user );
+		$status = $article->doEdit( $message, $comment, $editFlags, false, $user );
 		$success = $status->isOK();
 
 		if ( $success ) {
@@ -340,10 +357,8 @@ class MessageWebImporter {
 		foreach ( $rows as $row ) {
 			$ttitle = Title::makeTitle( $row->page_namespace, $row->page_title );
 
-			// Avoid double-fuzzying
 			$text = Revision::getRevisionText( $row );
-			$text = str_replace( TRANSLATE_FUZZY, '', $text );
-			$text = TRANSLATE_FUZZY . $text;
+			$text = self::makeTextFuzzy( $text );
 
 			$changed[] = self::doImport(
 				$ttitle,
@@ -383,8 +398,7 @@ class MessageWebImporter {
 		return array( 'translate-manage-import-fuzzy', "\n" . $text );
 	}
 
-	// FIXME: duplicate of SpecialManageGroups::getFuzzyBot()
-	protected static function getFuzzyBot() {
+	public static function getFuzzyBot() {
 		global $wgTranslateFuzzyBotName;
 
 		$user = User::newFromName( $wgTranslateFuzzyBotName );
@@ -396,8 +410,7 @@ class MessageWebImporter {
 		return $user;
 	}
 
-	// FIXME: duplicate of SpecialManageGroups::makeTitle()
-	protected static function makeTitle( $group, $key, $code ) {
+	public static function makeTitle( $group, $key, $code ) {
 		$ns = $group->getNamespace();
 		$titlekey = "$key/$code";
 
@@ -413,5 +426,17 @@ class MessageWebImporter {
 			Xml::tags( 'div', $legendParams, $legend ) .
 			Xml::tags( 'div', $contentParams, $content )
 		);
+	}
+
+	/**
+	 * Safe add fuzzy tag to text
+	 *
+	 * @param $message String: message content
+	 *
+	 * @return $message prefixed with TRANSLATE_FUZZY tag
+	 */
+	public static function makeTextFuzzy( $message ) {
+		$message = str_replace( TRANSLATE_FUZZY, '', $message );
+		return TRANSLATE_FUZZY . $message;
 	}
 }

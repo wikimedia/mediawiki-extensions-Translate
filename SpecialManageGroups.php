@@ -1,5 +1,12 @@
 <?php
-if ( !defined( 'MEDIAWIKI' ) ) die();
+/**
+ * @addtogroup Extensions
+ *
+ * @author Niklas Laxström
+ * @author Siebrand Mazeland
+ * @copyright Copyright © 2009-2010, Niklas Laxström, Siebrand Mazeland
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ */
 
 class SpecialManageGroups {
 	protected $skin, $user, $out;
@@ -188,7 +195,17 @@ class SpecialManageGroups {
 							$this->time = wfTimestamp();
 						}
 
-						$message = $this->doAction( $action, $group, $key, $code, $value );
+						$fuzzybot = MessageWebImporter::getFuzzyBot();
+						$message = MessageWebImporter::doAction(
+							$action,
+							$group,
+							$key,
+							$code,
+							$value,
+							'', /* default edit summary */
+							$fuzzybot,
+							EDIT_FORCE_BOT
+						);
 
 						$key = array_shift( $message );
 						$params = $message;
@@ -364,67 +381,8 @@ class SpecialManageGroups {
 		}
 	}
 
-	protected function doAction( $action, $group, $key, $code, $message, $comment = '' ) {
-		if ( $action === 'import' || $action === 'conflict' ) {
-			if ( $action === 'import' ) {
-				$comment = wfMsgForContentNoTrans( 'translate-manage-import-summary' );
-			} else {
-				$comment = wfMsgForContentNoTrans( 'translate-manage-conflict-summary' );
-				$message = TRANSLATE_FUZZY . $message;
-			}
-
-			$title = self::makeTitle( $group, $key, $code );
-			$fuzzybot = self::getFuzzyBot();
-
-			return MessageWebImporter::doImport(
-				$title,
-				$message,
-				$comment,
-				$fuzzybot,
-				EDIT_FORCE_BOT
-			);
-		} elseif ( $action === 'ignore' ) {
-			return array( 'translate-manage-import-ignore', $key );
-		} elseif ( $action === 'fuzzy' && $code != 'en' ) {
-			global $wgUser;
-			$title = Title::makeTitleSafe( $group->getNamespace(), $key );
-			$comment = "[{$wgUser->getName()}] ";
-			$comment .= wfMsgForContentNoTrans( 'translate-manage-fuzzy-summary' );
-
-			return MessageWebImporter::doFuzzy(
-				$title,
-				$message,
-				$comment,
-				null,
-				EDIT_FORCE_BOT
-			);
-		} else {
-			throw new MWException( "Unhandled action $action" );
-		}
-	}
-
 	protected function checkProcessTime() {
 		return wfTimestamp() - $this->time >= $this->processingTime;
-	}
-
-	// FIXME: Duplicate code. See ChangeSyncer::getImportUser() in scripts/sync-group.php
-	protected static function getFuzzyBot() {
-		global $wgTranslateFuzzyBotName;
-
-		$user = User::newFromName( $wgTranslateFuzzyBotName );
-
-		if ( !$user->isLoggedIn() ) {
-			$user->addToDatabase();
-		}
-
-		return $user;
-	}
-
-	protected static function makeTitle( $group, $key, $code ) {
-		$ns = $group->getNamespace();
-		$titlekey = "$key/$code";
-
-		return Title::makeTitleSafe( $ns, $titlekey );
 	}
 
 	protected function setSubtitle( $group, $code ) {
