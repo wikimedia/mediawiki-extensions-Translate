@@ -139,7 +139,7 @@ class SpecialManageGroups {
 			if ( isset( $collection[$key] ) ) {
 				$old = $collection[$key]->translation();
 				$fuzzy = TranslateEditAddons::hasFuzzyString( $old ) ||
-						TranslateEditAddons::isFuzzy( self::makeTitle( $group, $key, $code ) );
+						TranslateEditAddons::isFuzzy( MessageWebImporter::makeTitle( $group, $key, $code ) );
 				$old = str_replace( TRANSLATE_FUZZY, '', $old );
 			}
 
