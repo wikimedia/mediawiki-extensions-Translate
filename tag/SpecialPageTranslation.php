@@ -8,7 +8,7 @@
  * @copyright Copyright © 2009-2010 Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
- 
+
 class SpecialPageTranslation extends SpecialPage {
 	function __construct() {
 		SpecialPage::SpecialPage( 'PageTranslation' );
@@ -23,7 +23,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 		$target = $wgRequest->getText( 'target', $parameters );
 		$revision = $wgRequest->getText( 'revision', 0 );
-		
+
 		// No specific page or invalid input
 		$title = Title::newFromText( $target );
 		if ( !$title ) {
@@ -250,7 +250,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 		$wgOut->setSubtitle( $this->user->getSkin()->link( $page->getTitle() ) );
 		TranslateUtils::injectCSS();
-	
+
 		$wgOut->addWikiMsg( 'tpt-showpage-intro' );
 
 		$formParams = array(
@@ -286,17 +286,7 @@ class SpecialPageTranslation extends SpecialPage {
 				$text = TranslateUtils::convertWhiteSpaceToHTML( $s->getText() );
 			}
 
-			$type = $s->type;
-			$wgOut->addHTML( MessageWebImporter::makeSectionElement(
-				$name,
-				$type,
-				$text,
-				array(
-					'container' => 'mw-tpt-sp-section mw-tpt-sp-section-type-{$type}',
-					'legend' => 'mw-tpt-sp-legend',
-					'content' => 'mw-tpt-sp-content'
-				)
-			) );
+			$wgOut->addHTML( MessageWebImporter::makeSectionElement( $name, $s->type, $text ) );
 		}
 
 		$deletedSections = $page->getParse()->getDeletedSections();
@@ -304,18 +294,8 @@ class SpecialPageTranslation extends SpecialPage {
 			$wgOut->wrapWikiMsg( '==$1==', 'tpt-sections-deleted' );
 			foreach ( $deletedSections as $s ) {
 				$name = wfMsgHtml( 'tpt-section-deleted', htmlspecialchars( $s->id ) );
-				$type = $s->type;
 				$text = TranslateUtils::convertWhiteSpaceToHTML( $s->getText() );
-				$wgOut->addHTML( MessageWebImporter::makeSectionElement(
-					$name,
-					$type,
-					$text,
-					array(
-						'container' => 'mw-tpt-sp-section mw-tpt-sp-section-type-{$type}',
-						'legend' => 'mw-tpt-sp-legend',
-						'content' => 'mw-tpt-sp-content'
-					)
-				) );
+				$wgOut->addHTML( MessageWebImporter::makeSectionElement( $name, $s->type, $text ) );
 			}
 		}
 
