@@ -12,47 +12,6 @@
 $optionsWithArgs = array( 'lang', 'target', 'group', 'threshold' );
 require( dirname( __FILE__ ) . '/cli.inc' );
 
-// FIXME: this needs to be in a lib.
-/**
- * Returns translated percentage for message group in languages
- *
- * @param $group String Unique key identifying the group
- * @param $languages Array of language codes
- * @param $threshold Int Minimum required percentage translated to return.
- *        Other given language codes will not be returned.
- * @param $simple Bool Return only codes or code/pecentage pairs
- * @return Array of key value pairs code/percentage or array of codes,
- *         depending on $simple
- */
-function getPercentageTranslated( $group, $languages, $threshold = false, $simple = false ) {
-	$stats = array();
-
-	$g = MessageGroups::singleton()->getGroup( $group );
-
-	$collection = $g->initCollection( 'en' );
-	foreach ( $languages as $code ) {
-		$collection->resetForNewLanguage( $code );
-		// Initialise messages
-		$collection->filter( 'ignored' );
-		$collection->filter( 'optional' );
-		// Store the count of real messages for later calculation.
-		$total = count( $collection );
-		$collection->filter( 'translated', false );
-		$translated = count( $collection );
-
-		$translatedPercentage = ( $translated * 100 ) / $total;
-		if ( $translatedPercentage >= $threshold ) {
-			if ( $simple ) {
-				$stats[] = $code;
-			} else {
-				$stats[$code] = $translatedPercentage;
-			}
-		}
-	}
-
-	return $stats;
-}
-
 function showUsage() {
 	STDERR( <<<EOT
 Message exporter.
@@ -108,7 +67,12 @@ if ( !$group instanceof MessageGroup ) {
 }
 
 if ( $threshold ) {
-	$langs = getPercentageTranslated( $options['group'], $langs, $threshold, true );
+	$langs = TranslationStats::getPercentageTranslated(
+		$options['group'],
+		$langs,
+		$threshold,
+		true
+	);
 }
 
 if ( $group instanceof FileBasedMessageGroup ) {

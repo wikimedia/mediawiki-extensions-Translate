@@ -4,7 +4,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
  * Autoload definitions.
  *
  * @author Niklas Laxström
- * @copyright Copyright © 2008, Niklas Laxström
+ * @copyright Copyright © 2008-2010, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  * @file
  */
@@ -48,7 +48,6 @@ $wgAutoloadClasses['SpecialTranslations'] = $dir . 'SpecialTranslations.php';
 $wgAutoloadClasses['SpecialLanguageStats'] = $dir . 'SpecialLanguageStats.php';
 $wgAutoloadClasses['SpecialImportTranslations'] = $dir . 'SpecialImportTranslations.php';
 
-
 $wgAutoloadClasses['SimpleFormatReader'] = $dir . 'ffs/Simple.php';
 $wgAutoloadClasses['SimpleFormatWriter'] = $dir . 'ffs/Simple.php';
 $wgAutoloadClasses['WikiFormatReader'] = $dir . 'ffs/Wiki.php';
@@ -84,10 +83,9 @@ $wgAutoloadClasses['MessageGroupCache'] = $dir . 'utils/MessageGroupCache.php';
 $wgAutoloadClasses['MessageWebImporter'] = $dir . 'utils/MessageWebImporter.php';
 $wgAutoloadClasses['TranslationEditPage'] = $dir . 'utils/TranslationEditPage.php';
 $wgAutoloadClasses['TranslationHelpers'] = $dir . 'utils/TranslationHelpers.php';
-
+$wgAutoloadClasses['TranslationStats'] = $dir . 'utils/TranslationStats.php';
 
 # predefined groups
-
 $wgAutoloadClasses['AllMediawikiExtensionsGroup'] = $dir . 'groups/MediaWikiExtensions.php';
 $wgAutoloadClasses['PremadeMediawikiExtensionGroups'] = $dir . 'groups/MediaWikiExtensions.php';
 $wgAutoloadClasses['PremadeWikiaExtensionGroups'] = $dir . 'groups/Wikia/WikiaExtensions.php';
