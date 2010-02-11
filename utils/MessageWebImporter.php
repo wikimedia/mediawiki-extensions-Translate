@@ -428,7 +428,7 @@ class MessageWebImporter {
 	 */
 	public static function makeSectionElement( $legend, $type, $content ) {
 		$containerParams = array( 'class' => "mw-tpt-sp-section mw-tpt-sp-section-type-{$type}" );
-		$legendParams = array( 'class' => 'mw-translate-manage-legend' );
+		$legendParams = array( 'class' => 'mw-tpt-sp-legend' );
 		$contentParams = array( 'class' => 'mw-tpt-sp-content' );
 
 		return Xml::tags(
