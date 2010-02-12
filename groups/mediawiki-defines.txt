@@ -870,6 +870,9 @@ optional = recrodadmin-export-csv, recrodadmin-export-pdf
 Redirect
 ignored = redirect-addnewaccount, redirect-userlogincomplete, redirect-userlogoutcomplete
 
+Ref Helper
+aliasfile = RefHelper/RefHelper.alias.php
+
 Refresh Special
 aliasfile = RefreshSpecial/RefreshSpecial.alias.php
 
