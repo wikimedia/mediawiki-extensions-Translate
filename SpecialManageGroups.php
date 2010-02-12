@@ -2,9 +2,9 @@
 /**
  * @addtogroup Extensions
  *
- * @author Niklas Laxström
+ * @author Niklas LaxstrÃ¶m
  * @author Siebrand Mazeland
- * @copyright Copyright © 2009-2010, Niklas Laxström, Siebrand Mazeland
+ * @copyright Copyright Â© 2009-2010, Niklas LaxstrÃ¶m, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -139,7 +139,7 @@ class SpecialManageGroups {
 			if ( isset( $collection[$key] ) ) {
 				$old = $collection[$key]->translation();
 				$fuzzy = TranslateEditAddons::hasFuzzyString( $old ) ||
-						TranslateEditAddons::isFuzzy( MessageWebImporter::makeTitle( $group, $key, $code ) );
+						TranslateEditAddons::isFuzzy( MessageWebImporter::makeTranslationTitle( $group, $key, $code ) );
 				$old = str_replace( TRANSLATE_FUZZY, '', $old );
 			}
 

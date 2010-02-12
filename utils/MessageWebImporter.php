@@ -287,6 +287,8 @@ class MessageWebImporter {
 	 * @return String: action result
 	 */
 	public static function doAction( $action, $group, $key, $code, $message, $comment = '', $user = null, $editFlags = 0 ) {
+		$title = self::makeTitle( $group, $key, $code );
+
 		if ( $action === 'import' || $action === 'conflict' ) {
 			if ( $action === 'import' ) {
 				$comment = wfMsgForContentNoTrans( 'translate-manage-import-summary' );
@@ -294,18 +296,15 @@ class MessageWebImporter {
 				$comment = wfMsgForContentNoTrans( 'translate-manage-conflict-summary' );
 				$message = self::makeMessageFuzzy( $message );
 			}
-
-			$title = self::makeTitle( $group, $key, $code );
-
 			return self::doImport( $title, $message, $comment, $user, $editFlags );
+
 		} elseif ( $action === 'ignore' ) {
 			return array( 'translate-manage-import-ignore', $key );
-		} elseif ( $action === 'fuzzy' && $code != 'en' ) {
-			$title = self::makeTitle( $group, $key, $code );
 
+		} elseif ( $action === 'fuzzy' && $code !== 'en' ) {
 			$message = self::makeMessageFuzzy( $message );
-
 			return self::doImport( $title, $message, $comment, $user, $editFlags );
+
 		} else {
 			throw new MWException( "Unhandled action $action" );
 		}
@@ -410,19 +409,25 @@ class MessageWebImporter {
 		return $user;
 	}
 
-	public static function makeTitle( $group, $key, $code ) {
+	/**
+	 * Given a group, message key and language code, creates a title for the
+	 * translation page.
+	 * @param $group MessageGroup
+	 * @param $key String: Message key
+	 * @param $code String: Language code
+	 * @return Title
+	 */
+	public static function makeTranslationTitle( $group, $key, $code ) {
 		$ns = $group->getNamespace();
-		$titlekey = "$key/$code";
-
-		return Title::makeTitleSafe( $ns, $titlekey );
+		return Title::makeTitleSafe( $ns, "$key/$code" );
 	}
 
 	/**
 	 * Make section elements
 	 *
-	 * @param $legend String: contents of legend
+	 * @param $legend String: legend
 	 * @param $type String: contents of type class
-	 * @param $content String: contents of content class
+	 * @param $content String: contents
 	 *
 	 * @return section element
 	 */
@@ -431,14 +436,14 @@ class MessageWebImporter {
 		$legendParams = array( 'class' => 'mw-tpt-sp-legend' );
 		$contentParams = array( 'class' => 'mw-tpt-sp-content' );
 
-		return Xml::tags(
-			'div', $containerParams,
-			Xml::tags( 'div', $legendParams, $legend ) . Xml::tags( 'div', $contentParams, $content )
-		);
+		$items = new TagContainer();
+		$items[] = new HtmlTag( 'div', new RawHtml( $legend ), $legendParams );
+		$items[] = new HtmlTag( 'div', new RawHtml( $content ), $contentParams );
+		return new HtmlTag( 'div', $items, $containerParams );
 	}
 
 	/**
-	 * Safe add fuzzy tag to text
+	 * Prepends translation with fuzzy tag and ensures there is only one of them.
 	 *
 	 * @param $message String: message content
 	 *
