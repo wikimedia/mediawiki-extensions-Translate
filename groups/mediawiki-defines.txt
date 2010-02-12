@@ -597,8 +597,6 @@ Localisation Update
 
 Lockdown
 
-Lockout
-
 Log Entry
 aliasfile = LogEntry/LogEntry.alias.php
 descmsg = logentry-parserhook-desc
