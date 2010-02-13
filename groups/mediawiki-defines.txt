@@ -17,7 +17,6 @@ aliasfile = AdvancedRandom/AdvancedRandom.alias.php
 Ajax Login
 
 Ajax Query Pages
-descmsg = ajax-qp-desc
 
 Ajax Show Editors
 descmsg = ajax-se-desc
