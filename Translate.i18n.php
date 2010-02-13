@@ -1040,6 +1040,7 @@ $messages['ar'] = array(
 	'translate-group-desc-wikitravelextensions' => 'مجموعة رسائل علوية تحتوي كل رسائل امتدادات ميدياويكي المدعومة التي تستخدمها [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'مجموعة رسائل علوية تحتوي كل رسائل امتدادات ميدياويكي المدعومة التي تستخدمها [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'مجموعة رسائل علوية تحتوي كل رسائل الامتدادات المتعلقة ب[http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative مبادرة استخدامية ويكيبيديا]',
+	'translate-group-desc-nodesc' => 'لا وصف متوفر لمجموعة الرسائل هذه',
 	'translate-manage-groups' => 'إدارة المجموعة',
 	'translate-manage-listgroups' => 'مجموعات مضبوطة',
 	'translate-manage-listgroups-old' => 'مجموعات ذات النمط القديم',
@@ -14781,6 +14782,7 @@ $1',
  * @author Lloffiwr
  */
 $messages['sw'] = array(
+	'translate-page-navigation-legend' => 'Urambazaji',
 	'languagestats' => 'Takwimu za lugha',
 	'languagestats-summary' => 'Ukurasa huu unaonyesha takwimu za kutafsiri kwa ajili ya vikundi vya jumbe vya lugha fulani.',
 	'translate-language-code' => 'Kodi ya lugha',
