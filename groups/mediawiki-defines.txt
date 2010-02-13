@@ -1,5 +1,4 @@
 ABC
-descmsg = abcdesc
 optional = abcabc, abcpdf, abcps, abcmidi, abcvorbis
 
 Absentee Landlord
