@@ -93,6 +93,9 @@ ignored = welcome-enabled, welcome-user
 
 Image Placeholder
 
+Interstitial - Outbound Screen
+file = Interstitial/OutboundScreen.i18n.php
+
 Link Suggest
 
 # Conflicting keys from MediaWiki core
@@ -133,8 +136,6 @@ aliasfile = NewWikiBuilder/NewWikiBuilder.alias.php
 
 Our 404 Handler
 file = Our404Handler/SpecialOur404Handler.i18n.php
-
-Outbound Screen
 
 Poll
 file = Poll/poll.i18n.php
