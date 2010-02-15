@@ -1378,7 +1378,7 @@ magicfile = Wikilog/Wikilog.i18n.magic.php
 optional = wikilog-entry-footer, wikilog-title-item-full, wikilog-feed-title
 optional = wikilog-comment-footer, wikilog-simple-signature
 ignored = wikilog-summary, wikilog-summary-header, wikilog-summary-header-single, wikilog-entry-sub
-ignored = wikilog-entry-header, wikilog-backlink, wikilog-brackets, wikilog-navigation-bar
+ignored = wikilog-entry-header, wikilog-backlink, wikilog-brackets
 ignored = wikilog-comment-header
 
 Wikilog Feed
