@@ -1319,6 +1319,8 @@ aliasfile = UserMerge/UserMerge.alias.php
 User Option Stats
 aliasfile = UserOptionStats/UserOptionStats.alias.php
 
+User Page Edit Protection
+
 User Rights Notif
 
 Validator
