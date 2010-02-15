@@ -496,17 +496,6 @@ $messages['niu'] = array(
 	'translate-page-navigation-legend' => 'Navikati',
 );
 
-/** Laz (Laz)
- * @author Bombola
- */
-$messages['lzz'] = array(
-	'translate-page-group' => 'Grubi',
-	'translate-page-language' => 'Nena',
-	'translate-stats-users' => 'Magoktirepe',
-	'translate-statsf-scale-days' => 'Ndğalepe',
-	'translate-statsf-scale-hours' => "Saat'epe",
-);
-
 /** Afrikaans (Afrikaans)
  * @author Arnobarnard
  * @author Byeboer
@@ -4839,6 +4828,7 @@ $messages['fa'] = array(
 );
 
 /** Finnish (Suomi)
+ * @author Centerlink
  * @author Cimon Avaro
  * @author Crt
  * @author Mobe
@@ -5066,7 +5056,10 @@ $1',
 	'translate-import-err-invalid-title' => 'Annettu tiedostonnimi <nowiki>$1</nowiki> on virheellinen.',
 	'translate-js-fb' => 'Tavallinen muokkaus',
 	'translate-gs-pos' => 'Sij.',
+	'translate-gs-code' => 'Koodi',
 	'translate-gs-speakers' => 'Puhujat',
+	'translate-gs-score' => 'Tilanne',
+	'translate-gs-count' => 'Määrä',
 	'translate-gs-total' => 'Yhteensä',
 );
 
@@ -10062,6 +10055,17 @@ $messages['lv'] = array(
 Norādītajās valodās pieejamie tulkojumi būs redzami tulkošanas lapā.
 Noklusētā saraksta vērtība ir atkarīga no tavas valodas.',
 	'translate-jssti-add' => 'Pievienot sarakstam',
+);
+
+/** Laz (Laz)
+ * @author Bombola
+ */
+$messages['lzz'] = array(
+	'translate-page-group' => 'Grubi',
+	'translate-page-language' => 'Nena',
+	'translate-stats-users' => 'Magoktirepe',
+	'translate-statsf-scale-days' => 'Ndğalepe',
+	'translate-statsf-scale-hours' => "Saat'epe",
 );
 
 /** Malagasy (Malagasy)
@@ -16639,7 +16643,7 @@ $messages['xmf'] = array(
 $messages['yi'] = array(
 	'translate' => 'פֿארטײַטשן',
 	'translate-desc' => '[[Special:Translate|באזונדערער בלאט]] פֿאר פֿארטײַטשן מעדיעוויקי און ווײַטער',
-	'translate-edit' => 'רעדאקטירן',
+	'translate-edit' => 'רעדאַקטירן',
 	'translate-talk' => 'רעדן',
 	'translate-history' => 'היסטאריע',
 	'translate-task-view' => 'איבערקוקן אלע מעלדונגען פֿון',
@@ -16666,7 +16670,7 @@ $messages['yi'] = array(
 	'translate-next' => 'קומענדיגער בלאט',
 	'translate-prev' => 'פֿריערדיגער בלאט',
 	'translate-page-description-legend' => 'אינפֿארמאציע וועגן דער גרופע',
-	'translate-page-edit' => 'רעדאקטירן',
+	'translate-page-edit' => 'רעדאַקטירן',
 	'translate-optional' => '(ברירהדיק)',
 	'translate-edit-contribute' => 'בײַשטײַערן',
 	'translate-edit-no-information' => "'''די מעלדונג פעלט דאקומענטאציע.
