@@ -131,8 +131,10 @@ ignored = accesskey-pt-myhome
 
 New Edit Page
 
-New Wiki Builder
-aliasfile = NewWikiBuilder/NewWikiBuilder.alias.php
+# Do not enable. Uses globals in messages and elsewhere in the file
+# and is moved to JS unparsed.
+#New Wiki Builder
+#aliasfile = NewWikiBuilder/NewWikiBuilder.alias.php
 
 Our 404 Handler
 file = Our404Handler/SpecialOur404Handler.i18n.php
