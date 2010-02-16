@@ -287,7 +287,7 @@ class MessageWebImporter {
 	 * @return String: action result
 	 */
 	public static function doAction( $action, $group, $key, $code, $message, $comment = '', $user = null, $editFlags = 0 ) {
-		$title = self::makeTitle( $group, $key, $code );
+		$title = self::makeTranslationTitle( $group, $key, $code );
 
 		if ( $action === 'import' || $action === 'conflict' ) {
 			if ( $action === 'import' ) {
