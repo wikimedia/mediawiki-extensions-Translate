@@ -1132,8 +1132,8 @@ Antes de marcar esta versión para ser traducida, comprobe que as modificacións
 	'tpt-translation-intro' => 'Esta páxina é unha <span class="plainlinks">[$1 versión traducida]</span> da páxina "[[$2]]" e a tradución está completada e actualizada ao $3%.',
 	'tpt-translation-intro-fuzzy' => 'As traducións desfasadas están marcadas coma este texto.',
 	'tpt-languages-legend' => 'Outras linguas:',
-	'tpt-target-page' => 'Esta páxina non pode ser actualizada manualmente.
-Esta páxina é unha tradución da páxina "[[$1]]" e a tradución pode ser actualizada usando [$2 a ferramenta de tradución].',
+	'tpt-target-page' => 'Esta páxina non se pode actualizar manualmente.
+Esta páxina é unha tradución da páxina "[[$1]]" e a tradución pódese actualizar usando [$2 a ferramenta de tradución].',
 	'tpt-unknown-page' => 'Este espazo de nomes está reservado para traducións de páxinas de contido.
 A páxina que está intentando editar parece non corresponder a algunha páxina marcada para ser traducida.',
 	'tpt-install' => 'Executar o php maintenance/update.php ou o instalador web para activar a funcionalidade de tradución de páxinas.',
