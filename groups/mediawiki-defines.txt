@@ -627,6 +627,8 @@ magicfile = MathStatFunctions/MathStatFunctions.i18n.magic.php
 Media Functions
 magicfile = MediaFunctions/MediaFunctions.i18n.magic.php
 
+Metadata Edit
+
 Meta Keywords
 optional = metakeywords, metadescription
 
