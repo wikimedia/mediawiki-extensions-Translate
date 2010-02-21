@@ -18,6 +18,7 @@ array(
 	'message' => array(
 		'activeusers-count', // Optional GENDER parameter
 		'autoblockedtext', // Optional GENDER parameter
+		'blocked-notice-logextract', // Optional GENDER parameter
 		'blocklog-showlog', // Optional GENDER parameter
 		'blocklog-showsuppresslog', // Optional GENDER parameter
 		'confirmemail_body', // Optional time parameters
