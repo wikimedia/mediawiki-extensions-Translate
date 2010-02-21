@@ -49,6 +49,7 @@ TAGS:
     - model.unit.occupation.activeNoMovesLeft
     - selectDestination.destinationTurns
     - shipName.3.0
+    - year.YEAR
   ignored:
     - HeaderFont
     - NormalFont
