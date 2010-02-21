@@ -7587,10 +7587,10 @@ Si tu decide de ignorar alcun modificationes, illos essera omittite durante le p
 	'importtranslations' => 'Importar traductiones',
 	'translate-import-from-url' => 'URL verso le file:',
 	'translate-import-from-wiki' => 'File in iste wiki:',
-	'translate-import-from-local' => 'Cargar un file local:',
+	'translate-import-from-local' => 'Incargar un file local:',
 	'translate-import-load' => 'Cargar file',
-	'translate-import-err-type-not-supported' => 'Impossibile cargar le file:
-Methodo <tt>$1</tt> non es supportate.',
+	'translate-import-err-type-not-supported' => 'Impossibile incargar le file:
+Le methodo <tt>$1</tt> non es supportate.',
 	'translate-import-err-dl-failed' => 'Impossibile obtener le file:
 $1',
 	'translate-import-err-ul-failed' => 'Le cargamento del file non ha succedite',
