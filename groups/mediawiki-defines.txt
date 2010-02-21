@@ -215,6 +215,7 @@ Confirm Account
 aliasfile = ConfirmAccount/ConfirmAccount.alias.php
 descmsg = confirmedit-desc
 optional = requestaccount-info, requestaccount-footer
+ignored = requestaccount-areas
 
 Confirm Edit
 aliasfile = ConfirmEdit/ConfirmEdit.alias.php
