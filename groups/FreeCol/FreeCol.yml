@@ -33,6 +33,9 @@ CHECKER:
 
 TAGS:
   optional:
+    - clearUnitOrders
+    - indianCapitalOwner
+    - indianSettlementOwner
     - installer.FreeCol
     - lostCityRumour.cityName.*
     - model.foundingFather.*.birthAndDeath
