@@ -7278,6 +7278,7 @@ A  [[Special:Translate|{{int:translate}}]] lapon átnézheted az elkészített f
 	'translate-group-desc-wikitravelextensions' => 'Gyűjtőcsoport, ami a [http://wikitravel.org Wikitravel] által használt MediaWiki-kiterjesztések összes üzenetét tartalmazza',
 	'translate-group-desc-uniwiki' => 'Gyűjtőcsoport, ami az [http://unicefinnovation.org/wiki.php Uniwiki]hez kapcsolódó MediaWiki-kiterjesztések összes üzenetét tartalmazza',
 	'translate-group-desc-ui' => 'Gyűjtőcsoport, ami a [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]-hez kapcsolódó MediaWiki-kiterjesztések összes üzenetét tartalmazza',
+	'translate-group-desc-nodesc' => 'Az üzenetcsoporthoz nincs leírás',
 	'translate-manage-groups' => 'Csoportok kezelése',
 	'translate-manage-listgroups' => 'Beállított csoportok',
 	'translate-manage-listgroups-old' => 'Régi stílusú csoportok',
