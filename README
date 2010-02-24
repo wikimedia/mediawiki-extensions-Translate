@@ -35,6 +35,8 @@ function customMessageGroups( $id ) {
 </code>
 
 == Changes in ??? ==
+* 2010-02-24
+- Dropped $wgTranslateCssLocation. In MW 1.16 and later you can use $wgExtensionAssetsPath
 * 2010-01-24
 - Support for Apertium machine translation service
 - Fixed issue with jQuery and Vector skin

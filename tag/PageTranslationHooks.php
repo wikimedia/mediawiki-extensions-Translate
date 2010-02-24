@@ -27,6 +27,7 @@ class PageTranslationHooks {
 		return $matches[2];
 	}
 
+	// Only called form hook
 	public static function injectCss( $outputpage, $text ) {
 		TranslateUtils::injectCSS();
 		return true;
@@ -180,7 +181,7 @@ class PageTranslationHooks {
 		 * would be nicer to use $parser->getFunctionLang();
 		 * but that needs to be set correct first. */
 		// $lobj = $parser->getFunctionLang();
-		global $wgTranslateCssLocation, $wgLang;
+		global $wgLang;
 
 		$languages = array();
 		foreach ( $status as $code => $percent ) {
@@ -196,7 +197,7 @@ class PageTranslationHooks {
 			else                     $image = 5;
 
 			$percent = Xml::element( 'img', array(
-				'src'   => "$wgTranslateCssLocation/images/prog-$image.png",
+				'src'   => TranslateUtils::assetPath( "images/prog-$image.png" ),
 				'alt'   => "$percent%",
 				'title' => "$percent%",
 				'width' => '9',

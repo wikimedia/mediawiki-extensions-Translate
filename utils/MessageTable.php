@@ -48,25 +48,23 @@ class MessageTable {
 		$this->headers[$type] = array( 'raw', htmlspecialchars( $value ) );
 	}
 
-	// This is like so because jQuery got removed from core
-	public function setCSSJS() {
-		global $wgOut, $wgScriptPath, $wgExtensionAssetsPath, $wgUser;
-		$prefix = "$wgExtensionAssetsPath/Translate/js";
+	public function includeAssets() {
+		global $wgOut
 		// Our class
-		$wgOut->addScriptFile( "$prefix/quickedit.js" );
+		$wgOut->addScriptFile( TranslateUtils::assetPath( 'js/quickedit.js' ) );
 
 		// Core jQuery
 		if ( method_exists( $wgOut, 'includeJQuery' ) ) {
 			$wgOut->includeJQuery();
-			$wgOut->addScriptFile( "$prefix/jquery-ui-1.7.2.custom.min.js" );
+			$wgOut->addScriptFile( TranslateUtils::assetPath( 'js/jquery-ui-1.7.2.custom.min.js' ) );
 		} else {
 			// MW 1.15 and older
-			$wgOut->addScriptFile( "$prefix/js2stopgap.js" );
+			$wgOut->addScriptFile( TranslateUtils::assetPath( 'js/js2stopgap.js' ) );
 		}
 
 		// Additional jQuery stuff
-		$wgOut->addScriptFile( "$prefix/jquery.form.js" );
-		$wgOut->addExtensionStyle( "$prefix/base/custom-theme/jquery-ui-1.7.2.custom.css" );
+		$wgOut->addScriptFile( TranslateUtils::assetPath( 'js/jquery.form.js' ) );
+		$wgOut->addExtensionStyle( TranslateUtils::assetPath( 'js/base/custom-theme/jquery-ui-1.7.2.custom.css' ) );
 	}
 
 
@@ -169,7 +167,7 @@ class MessageTable {
 	}
 
 	public function fullTable() {
-		$this->setCSSJS();
+		$this->includeAssets();
 		return $this->header() . $this->contents() . '</table>';
 	}
 

@@ -5,7 +5,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
  * This class contains some static helper functions for other classes.
  *
  * @author Niklas Laxström
- * @copyright Copyright © 2007 Niklas Laxström
+ * @copyright Copyright © 2007, 2009 Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 class TranslateUtils {
@@ -252,20 +252,24 @@ class TranslateUtils {
 	public static function injectCSS() {
 		static $done = false;
 		if ( $done ) return;
-
-		global $wgHooks, $wgOut, $wgTranslateCssLocation;
-		if ( $wgTranslateCssLocation ) {
-			$wgOut->addExtensionStyle( "$wgTranslateCssLocation/Translate.css" );
-		} else {
-			$wgHooks['SkinTemplateSetupPageCss'][] = array( __CLASS__ , 'injectCSSCB' );
-		}
 		$done = true;
+
+		global $wgOut;
+		$wgOut->addExtensionStyle( self::assetPath( 'Translate.css' ) );
 	}
 
-	public static function injectCSSCB( &$css ) {
-		$file = dirname( __FILE__ ) . '/Translate.css';
-		$css .= "/*<![CDATA[*/\n" . htmlspecialchars( file_get_contents( $file ) ) . "\n/*]]>*/";
-		return true;
+	/**
+	 * Construct the web address to given asset.
+	 * @param $path String: path to the resource relative to extensions root directory.
+	 * @return String: (full or partial) web path.
+	 */
+	public static function assetPath( $path ) {
+		global $wgExtensionAssetsPath, $wgScriptPath;
+		if ( version_compare( $wgVersion, '1.16', '>=' ) ) {
+			return "$wgExtensionAssetsPath/Translate/$path";
+		} else {
+			return "$wgScriptPath/extensions/Translate/$path";
+		}
 	}
 
 	public static function snippet( &$text, $length = 10 ) {
