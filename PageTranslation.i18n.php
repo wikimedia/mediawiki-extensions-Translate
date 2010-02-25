@@ -99,6 +99,17 @@ $3 is an URL.',
 	'tpt-languages-legend' => 'The caption of a language selector displayed using <code>&lt;languages /&gt;</code>, e.g. on [[Project list]].',
 );
 
+/** Kabardian (Cyrillic) ()
+ * @author Тамэ Балъкъэрхэ
+ */
+$messages['kbd-cyrl'] = array(
+	'tpt-diff-old' => 'Ипэ ит текстыр',
+	'tpt-diff-new' => 'ТекстыщIэ',
+	'tpt-translate-this' => 'напэкIуэцIыр зэхъуэкIын',
+	'translate-tag-translate-link-desc' => 'НапэкIуэцIыр зэхъуэкIын',
+	'tpt-languages-legend' => 'НэгъуэщIыбзэхэр:',
+);
+
 /** Afrikaans (Afrikaans)
  * @author Naudefj
  */

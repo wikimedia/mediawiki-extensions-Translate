@@ -496,6 +496,21 @@ $messages['niu'] = array(
 	'translate-page-navigation-legend' => 'Navikati',
 );
 
+/** Kabardian (Cyrillic) ()
+ * @author Тамэ Балъкъэрхэ
+ */
+$messages['kbd-cyrl'] = array(
+	'translate-history' => 'тхыдэ',
+	'translate-page-settings-legend' => 'Теухуапхъэхэр',
+	'translate-page-task' => 'Сыхуейщ',
+	'translate-page-group' => 'Гуп',
+	'translate-page-language' => 'Бзэ',
+	'translate-page-limit' => 'ФIимыхуу',
+	'translate-submit' => 'Къэгъэлъэгъуэн',
+	'translate-optional' => '(Iэмалыншэкъым)',
+	'translate-ignored' => '(щхьэщыгъэцIэфтауэ)',
+);
+
 /** Afrikaans (Afrikaans)
  * @author Arnobarnard
  * @author Byeboer
