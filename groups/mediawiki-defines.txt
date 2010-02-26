@@ -329,6 +329,8 @@ ignored = accesskey-drafts-save
 
 Duplicator
 
+Dynamic Sidebar
+
 Edit Count
 aliasfile = Editcount/SpecialEditcount.alias.php
 file = Editcount/SpecialEditcount.i18n.php
