@@ -1407,6 +1407,7 @@ Wikimedia License Texts
 file = WikimediaMessages/WikimediaLicenseTexts.i18n.php
 descmsg = wikimedialicensetexts-desc
 optional = wm-license-information-permission-reusing-link
+ignored = wm-license-gfdl-full-1.2-link, wm-license-gfdl-full-1.3-link
 
 Wiki Text Logged In Out
 
