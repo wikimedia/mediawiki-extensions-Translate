@@ -1648,6 +1648,14 @@ Pues [$1 editar la páxina fonte] o [$2 actualizar la traducción].',
 	'translate-total' => 'Mensaxes',
 );
 
+/** Bashkir (Башҡорт)
+ * @author Рустам Нурыев
+ */
+$messages['ba'] = array(
+	'translationstats' => 'Тәржемәләр статисикаһы',
+	'translations' => 'Бөтә тәржемәләр',
+);
+
 /** Southern Balochi (بلوچی مکرانی)
  * @author Mostafadaneshvar
  */
@@ -7446,9 +7454,9 @@ Le modificationes non es immagazinate usque tu clicca super le button Publicar i
 	'translate-magic-cm-current' => 'Actual',
 	'translate-magic-cm-original' => 'Original',
 	'translate-magic-cm-comment' => 'Commento:',
-	'translate-magic-cm-save' => 'Immagazinar',
+	'translate-magic-cm-save' => 'Publicar',
 	'translate-magic-cm-updatedusing' => 'Actualisate con [[Special:Magic]]',
-	'translate-magic-cm-savefailed' => 'Impossibile immagazinar',
+	'translate-magic-cm-savefailed' => 'Non poteva salveguardar',
 	'translate-magic-special' => 'Aliases de paginas special',
 	'translate-magic-words' => 'Parolas magic',
 	'translate-magic-namespace' => 'Nomines de spatios de nomines',
@@ -7539,7 +7547,7 @@ Es recommendate revider le messages per medio del pagina [[Special:Translate|{{i
 	'translate-languagestats-groups' => ' # Adde IDs de gruppos de messages, un per linea, pro limitar le
  # gruppos monstrate in Special:LanguageStats. Le gruppos non existente
  # essera ignorate.',
-	'translate-save' => 'Immagazinar ($1)',
+	'translate-save' => 'Publicar ($1)',
 	'translate-jssti-add' => 'Adder al lista',
 	'translate-group-desc-mediawikicore' => 'Iste gruppo contine le messages usate in le version alpha actual de MediaWiki ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'Iste gruppo contine le [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 messages usate le plus frequentemente] in MediaWiki',
