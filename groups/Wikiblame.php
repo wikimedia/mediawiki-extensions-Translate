@@ -25,7 +25,7 @@ class WikiblameMessageGroup extends MessageGroupOld {
 		'messages\\x5b\'contact_link\'\\x5d',
 		'messages\\x5b\'lang_example\'\\x5d',
 		'messages\\x5b\'project_example\'\\x5d',
-		'messages\\x5b\'binary in wp\'\\x5d',
+		'messages\\x5b\'binary_in_wp\'\\x5d',
 	);
 
 	public $header = '<?php
