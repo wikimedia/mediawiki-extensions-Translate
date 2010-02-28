@@ -188,9 +188,6 @@ Video Embed Tool
 Wikia Video Add
 file = VideoEmbedTool/WikiaVideoAdd.i18n.php
 
-Webtools
-file = Webtools/SpecialWebtools.i18n.php
-
 Where Is Extension
 file = WhereIsExtension/SpecialWhereIsExtension.i18n.php
 
