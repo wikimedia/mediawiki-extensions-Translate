@@ -11472,6 +11472,8 @@ $1',
 	'translate-import-err-ul-failed' => 'Filopplasting var ikke vellykket',
 	'translate-import-err-invalid-title' => 'Oppgitt filnavn <nowiki>$1</nowiki> var ugyldig.',
 	'translate-import-err-no-such-file' => 'Filen <nowiki>$1</nowiki> finnes ikke eller har ikke blitt lastet opp lokalt.',
+	'translate-import-err-no-headers' => 'Filen er ikke en ordentlig formatert Gettext-fil i Translate-utvidelsesformatet:
+Kunne ikke fastslå gruppe og språk fra filoverskriftene.',
 	'translate-import-err-warnings' => 'Filen er ikke ordentlig formatert.
 Kontroller at editoren ikke fjerner msgctxt-feltene.
 Detaljer: $1',
