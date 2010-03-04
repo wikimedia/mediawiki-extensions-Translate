@@ -1,0 +1,14 @@
+---
+BASIC:
+  id: out-wikireader
+  label: WikiReader
+  description: "{{int:bw-desc-wikireader}}"
+  namespace: NS_WIKIREADER
+  display: out/wikireader/
+  class: FileBasedMessageGroup
+
+FILES:
+  class: JavaFFS
+  sourcePattern: %GROUPROOT%/wikireader/XML-Licenses/%CODE%/wiki.nls
+  definitionFile: %GROUPROOT%/wikireader/XML-Licenses/en/wiki.nls
+  targetPattern: %CODE%/wiki.nls
