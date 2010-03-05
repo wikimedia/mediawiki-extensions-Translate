@@ -14308,11 +14308,15 @@ Ipak bi možda bilo dobro da ih pregledate na [[Special:Translate|{{int:translat
 /** Swati (SiSwati)
  * @author Jatrobat
  * @author MF-Warburg
+ * @author Sibande
  */
 $messages['ss'] = array(
-	'translate' => 'Kuhúmusha',
-	'translate-edit' => 'kúhlela',
+	'translate' => 'Humusha',
+	'translate-edit' => 'hlela',
+	'translate-talk' => 'Ingcoco',
 	'translate-history' => 'umlandvo',
+	'translate-task-view' => 'Bona yonkhe milayeto lebuya ku',
+	'translate-task-untranslated' => 'Bona yonkhe milayeto lengakahumushwa ye',
 );
 
 /** Seeltersk (Seeltersk)
