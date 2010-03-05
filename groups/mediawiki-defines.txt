@@ -1069,8 +1069,9 @@ Stalker Log
 
 Stock Charts
 
-Storyboard
-aliasfile = Storyboard/Storyboard.alias.php
+# Commented out by JeroenDeDauw. Work in progress. Will let you know when to enable. 
+# Storyboard
+# aliasfile = Storyboard/Storyboard.alias.php
 
 String Functions
 
