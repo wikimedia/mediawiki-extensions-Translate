@@ -5,7 +5,7 @@ class TranslatePreferences {
 	 * Add preferences for Translate
 	 */
 	public static function onGetPreferences( $user, &$preferences ) {
-		global $wgEnableEmail, $wgUser;
+		global $wgEnableEmail, $wgUser, $wgEnotifRevealEditorAddress;
 
 		if ( $wgEnableEmail && $wgUser->isEmailConfirmed() ) {
 			// 'translate-pref-nonewsletter' is used as opt-out for
@@ -19,7 +19,8 @@ class TranslatePreferences {
 			);
 
 			// Add setting after 'enotifrevealaddr'
-			$preferences = wfArrayInsertAfter( $preferences, $prefs, 'enotifrevealaddr' );
+			$preferences = wfArrayInsertAfter( $preferences, $prefs,
+				$wgEnotifRevealEditorAddress ? 'enotifrevealaddr' : 'enotifminoredits' );
 		}
 
 		return true;
