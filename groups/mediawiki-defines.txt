@@ -1153,6 +1153,9 @@ Trusted XFF
 
 TSPoll
 
+UK Geocoding For Maps
+descmsg = ukgeocoding_desc
+
 Upload Blacklist
 
 Unicode Converter
