@@ -3860,6 +3860,8 @@ $messages['ee'] = array(
  * @author Consta
  * @author Crazymadlover
  * @author Dead3y3
+ * @author Flyax
+ * @author Lou
  * @author Omnipaedista
  * @author ZaDiak
  * @author Περίεργος
@@ -3908,13 +3910,13 @@ $messages['el'] = array(
 	'translate-ignored' => '(αγνοήστε)',
 	'translate-edit-definition' => 'Ορισμός μηνύματος',
 	'translate-edit-contribute' => 'συμβάλλετε',
-	'translate-edit-no-information' => "''Αυτό το μήνυμα δεν έχει τεκμηρίωση. Αν γνωρίζετε που ή πως χρησιμοποιείται αυτό το μήνυμα, μπορείτε να βοηθήσετε άλλους μεταφραστές προσθέτοντας τεκμηρίωση σε αυτό.''",
+	'translate-edit-no-information' => "''Αυτό το μήνυμα δεν έχει τεκμηρίωση. Αν γνωρίζετε πού ή πώς χρησιμοποιείται αυτό το μήνυμα, μπορείτε να βοηθήσετε άλλους μεταφραστές προσθέτοντας τεκμηρίωση σε αυτό.''",
 	'translate-edit-information' => 'Πληροφορίες σχετικά με το μήνυμα "$2" ($1)',
 	'translate-edit-in-other-languages' => 'Το μήνυμα "$1" σε άλλες γλώσσες',
 	'translate-edit-committed' => 'Τρέχουσα μετάφραση στο λογισμικό',
 	'translate-edit-warnings' => 'Προειδοποιήσεις για ημιτελείς μεταφράσεις',
 	'translate-edit-tmsugs' => 'Προτάσεις από τη μνήμη μετάφρασης',
-	'translate-edit-tmmatch' => '$1% αντιστοίχηση',
+	'translate-edit-tmmatch' => '$1% αντιστοίχιση',
 	'translate-edit-goto-no-prev' => 'Κανένα προηγούμενο μήνυμα',
 	'translate-edit-goto-no-next' => 'Κανένα επόμενο μήνυμα',
 	'translate-edit-goto-prev' => 'Επεξεργασία προηγούμενου μηνύματος',
@@ -3941,14 +3943,14 @@ $messages['el'] = array(
 	'translate-magic-cm-original' => 'Πρωτότυπο',
 	'translate-magic-cm-comment' => 'Σχόλιο:',
 	'translate-magic-cm-save' => 'Αποθήκευση',
-	'translate-magic-cm-updatedusing' => 'Ενημερώθηκε χρησιμοποιόντας την σελίδα [[Special:Magic]]',
+	'translate-magic-cm-updatedusing' => 'Ενημερώθηκε χρησιμοποιώντας τη σελίδα [[Special:Magic]]',
 	'translate-magic-cm-savefailed' => 'Η αποθήκευση απέτυχε',
 	'translate-magic-special' => 'Ψευδώνυμα ειδικών σελίδων',
 	'translate-magic-words' => 'Μαγικές λέξεις',
 	'translate-magic-namespace' => 'Ονομασίες περιοχών ονομάτων',
 	'translate-magic-notsaved' => 'Η αλλαγή σας δεν αποθηκεύθηκε!',
 	'translate-magic-errors' => 'Παρακαλώ διορθώστε {{PLURAL:$1|το σφάλμα|τα σφάλματα}} στις μεταφράσεις:',
-	'translate-magic-saved' => 'Οι αλλαγές σας αποθηκεύθηκαν επιτυχώς.',
+	'translate-magic-saved' => 'Οι αλλαγές σας αποθηκεύτηκαν επιτυχώς.',
 	'translationchanges' => 'Αλλαγές μετάφρασης',
 	'translationchanges-export' => 'εξαγωγή',
 	'translationchanges-change' => '$1: $2 από $3',

@@ -772,6 +772,7 @@ Zda se, až bok, kótaryž wopytujoš wobźěłaś, njewótpowědujo bokoju, kó
 
 /** Greek (Ελληνικά)
  * @author Dead3y3
+ * @author Flyax
  * @author ZaDiak
  */
 $messages['el'] = array(
@@ -790,9 +791,9 @@ $messages['el'] = array(
 	'tpt-sections-oldnew' => 'Νέες και υπάρχοντες μονάδες μετάφρασης',
 	'tpt-sections-deleted' => 'Διαγραμμένες μονάδες μετάφρασης',
 	'tpt-sections-template' => 'Πρότυπο μετάφρασης σελίδας',
-	'tpt-badtitle' => 'Ο τίτλος σελίδας που δώθηκε ($1) δεν είναι έγκυρος τίτλος',
+	'tpt-badtitle' => 'Ο τίτλος σελίδας που δόθηκε ($1) δεν είναι έγκυρος τίτλος',
 	'tpt-notsuitable' => 'Η σελίδα $1 δεν είναι κατάλληλη για μετάφραση.
-Σιγουρέψτε ότι έχει τις ετικέτες <nowiki><translate></nowiki> και έχει εγκυρη σύνταξη.',
+Βεβαιωθείτε ότι έχει τις ετικέτες <nowiki><translate></nowiki> και έχει έγκυρη σύνταξη.',
 	'tpt-badsect' => 'Το "$1" δεν είναι έγκυρο όνομα για τη μονάδα μετάφρασης $2.',
 	'tpt-mark-summary' => 'Αυτή η έκδοση σημάνθηκε για μετάφραση',
 	'tpt-edit-failed' => 'Δεν ήταν δυνατό να ενημερωθεί η σελίδα: $1',
