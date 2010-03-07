@@ -187,7 +187,6 @@ function showUsage() {
 	--output TYPE: select an another output engine
 		* 'csv'      : Comma Separated Values.
 		* 'wiki'     : MediaWiki syntax.
-		* 'metawiki' : MediaWiki syntax used for Meta-Wiki.
 		* 'text'     : Text with tabs.
 	--most : [SCOPE]: report on the 50 most spoken languages. Skipzero is
 			ignored. If a valid scope is defined, the group list
@@ -227,9 +226,6 @@ END;
 switch ( $options['output'] ) {
 	case 'wiki':
 		$out = new wikiStatsOutput();
-		break;
-	case 'metawiki':
-		$out = new metawikiStatsOutput();
 		break;
 	case 'text':
 		$out = new textStatsOutput();
