@@ -2635,6 +2635,7 @@ $messages['te'] = array(
 	'tpt-translate-this' => 'ఈ పేజీని అనువదించండి',
 	'translate-tag-translate-link-desc' => 'ఈ పేజీని అనువదించండి',
 	'translate-tag-markthis' => 'ఈ పేజీని అనువాదం కొరకు గుర్తించు',
+	'translate-tag-markthisagain' => 'చివరిసారి <span class="plainlinks">[$2 అనువాదానికి గుర్తించినప్పటి నుండి]</span> ఈ పేజీకి <span class="plainlinks">[$1 మార్పులు]</span> జరిగాయి.',
 	'tpt-languages-legend' => 'ఇతర భాషలు:',
 );
 
