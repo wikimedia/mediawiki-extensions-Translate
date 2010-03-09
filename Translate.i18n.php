@@ -10598,6 +10598,9 @@ $messages['mt'] = array(
 	'translate-edit-warnings' => 'Twissijiet dwar traduzzjonijiet mhux kompluti',
 	'translate-edit-goto-no-prev' => 'L-ebda messaġġ preċedenti',
 	'translate-edit-goto-no-next' => 'L-ebda messaġġ suċċessiv',
+	'translate-edit-goto-prev' => 'Immodifika l-messaġġ preċedenti',
+	'translate-edit-goto-next' => 'Immodifika l-messaġġ suċċessiv',
+	'translate-edit-goto-list' => 'Lura għal-lista',
 	'translate-magic-help' => "Tista' tittraduċi t-titli tal-paġni speċjali, frażijiet maġiċi u ismijiet tal-ispazju tal-isem.
 
 It-titli tal-paġni speċjali u l-frażijiet maġiċi jista' jkollhom aktar minn traduzzjoni waħda.
