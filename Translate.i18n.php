@@ -10596,6 +10596,7 @@ $messages['mt'] = array(
 	'translate-edit-in-other-languages' => 'Messaġġ "$1" f\'lingwi oħra',
 	'translate-edit-committed' => 'Traduzzjoni attwali fis-software',
 	'translate-edit-warnings' => 'Twissijiet dwar traduzzjonijiet mhux kompluti',
+	'translate-edit-tmsugs' => 'Suġġerimenti mill-memorja tat-traduzzjonijiet',
 	'translate-edit-goto-no-prev' => 'L-ebda messaġġ preċedenti',
 	'translate-edit-goto-no-next' => 'L-ebda messaġġ suċċessiv',
 	'translate-edit-goto-prev' => 'Immodifika l-messaġġ preċedenti',
@@ -10616,7 +10617,9 @@ It-tibdil ma jiġix salvat sakemm ma tagħfasx il-buttuna t'isfel biex issalva."
 	'translate-magic-cm-original' => 'Oriġinali',
 	'translate-magic-cm-comment' => 'Kumment:',
 	'translationchanges-export' => 'esporta',
+	'translate-pref-nonewsletter' => "Tibgħatlix ''newsletter'' b'permezz ta' ittra-e",
 	'languagestats' => 'Statistika tal-lingwi',
+	'translate-js-fb' => 'Modifika normali',
 );
 
 /** Erzya (Эрзянь)
