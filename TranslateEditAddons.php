@@ -2,7 +2,8 @@
 if ( !defined( 'MEDIAWIKI' ) ) die();
 
 /**
- * Tools for edit page view to aid translators.
+ * Tools for edit page view to aid translators. This implements the so called
+ * old style editing, which extends the normal edit page.
  *
  * @author Niklas Laxström
  * @author Siebrand Mazeland
@@ -205,6 +206,12 @@ EOEO;
 		}
 
 		TranslateUtils::injectCSS();
+		if ( !method_exists( $wgOut, 'includeJQuery' ) ) {
+			$wgOut->includeJQuery();
+		} else {
+			// MW 1.15 and older
+			$wgOut->addScriptFile( TranslateUtils::assetPath( 'js/js2stopgap.js' ) );
+		}
 		return $th->getBoxes();
 	}
 
