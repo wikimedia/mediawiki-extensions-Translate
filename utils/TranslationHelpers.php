@@ -161,7 +161,7 @@ class TranslationHelpers {
 		$boxes = array();
 
 		if ( $suggestions !== false ) {
-			$suggestions = json_decode( $suggestions, true );
+			$suggestions = FormatJson::decode( $suggestions, true );
 			foreach ( $suggestions as $s ) {
 				// No use to suggest them what they are currently viewing
 				if ( $s['context'] === "$ns:{$this->page}" ) continue;
@@ -239,7 +239,7 @@ class TranslationHelpers {
 		if ( $wgGoogleApiKey ) $options['postData']['key'] = $wgGoogleApiKey;
 
 		$google_json = Http::post( $path, $options );
-		$response = json_decode( $google_json );
+		$response = FormatJson::decode( $google_json );
 
 		if ( $google_json === false ) {
 				wfWarn(  __METHOD__ . ': Http::get failed' );
