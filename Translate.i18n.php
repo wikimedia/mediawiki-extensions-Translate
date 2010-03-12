@@ -5294,7 +5294,7 @@ Vous êtes encouragé à revoir les message depuis [[Special:Translate|{{int:tra
 	'translate-manage-listgroups-old' => 'Ancien style des groupes',
 	'translate-managegroups' => 'Gestion du groupe',
 	'translate-manage-newgroup' => "Ce groupe de messages n'a pas été importé auparavant.",
-	'translate-manage-cacheat' => 'Importés dans $1 le $2',
+	'translate-manage-cacheat' => 'Importés le $1 à $2',
 	'translate-manage-return-to-group' => 'Retour à la page d’informations du groupe',
 	'translate-manage-modlangs' => 'Vérifier les éventuelles modifications dans les langue{{PLURAL:$1||s}} :',
 	'translate-manage-modlang-new' => '$1 (nouveau)',
