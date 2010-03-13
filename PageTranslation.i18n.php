@@ -773,6 +773,7 @@ Zda se, až bok, kótaryž wopytujoš wobźěłaś, njewótpowědujo bokoju, kó
 /** Greek (Ελληνικά)
  * @author Dead3y3
  * @author Flyax
+ * @author Lou
  * @author ZaDiak
  */
 $messages['el'] = array(
@@ -805,6 +806,7 @@ $messages['el'] = array(
 	'tpt-translate-this' => 'μετάφραση αυτής της σελίδας',
 	'translate-tag-translate-link-desc' => 'Μεταφράστε αυτή τη σελίδα',
 	'translate-tag-markthis' => 'Σήμανση αυτής της σελίδας για μετάφραση',
+	'tpt-translation-intro-fuzzy' => 'Ξεπερασμένες μεταφράσεις σημειώνονται ως εξής.',
 	'tpt-languages-legend' => 'Άλλες γλώσσες:',
 	'tpt-render-summary' => 'Ενημέρωση για να αντιστοιχεί στη νέα έκδοση της σελίδας πηγής',
 	'tpt-download-page' => 'Εξαγωγή της σελίδας με τις μεταφράσεις',
