@@ -183,6 +183,7 @@ array(
 		'lqt-feed-title-all-from', // Optional PLURAL parameter ($2)
 		'lqt-feed-title-new-threads-from', // Optional PLURAL parameter ($2)
 		'lqt-feed-title-replies-from', // Optional PLURAL parameter ($2)
+		'lqt-thread-edited-others',  // Optional date and time parametere ($3/$4)
 	)
 ),
 array(
