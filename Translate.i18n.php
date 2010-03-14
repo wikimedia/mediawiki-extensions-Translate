@@ -3111,6 +3111,7 @@ $messages['cy'] = array(
 /** Danish (Dansk)
  * @author Byrial
  * @author Jon Harald Søby
+ * @author MGA73
  */
 $messages['da'] = array(
 	'translate' => 'Oversæt',
@@ -3216,6 +3217,7 @@ Du skal være i oversættergruppen for at gemme ændringer.
 	'translate-checks-plural' => 'Originalen bruger <nowiki>{{PLURAL:}}</nowiki>, men oversættelsen gør det ikke.',
 	'translate-checks-pagename' => 'Navnerum er anderledes end i originalen',
 	'translate-checks-format' => 'Denne oversættelse følger ikke originalen eller har ugyldig syntaks: $1',
+	'translate-checks-fudforum-syntax' => 'Brug <nowiki>$1</nowiki> i stedet for <nowiki>$2</nowiki> i dette projekt.',
 	'translate-pref-nonewsletter' => 'Send ikke e-mail-nyhedsbreve til mig',
 	'translate-pref-editassistlang' => 'Hjælpesprog:',
 	'prefs-translate' => 'Oversættelsesindstillinger',
@@ -3282,6 +3284,10 @@ Du opfordres til at gennemse beskeder gennem [[Special:Translate|{{int:translate
 	'translate-jssti-add' => 'Tilføj til listen',
 	'translate-group-desc-mediawikicore' => 'Denne beskedgruppe indeholder beskederne som bruges i den nuværende alfaversion af MediaWiki ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'Denne beskedgruppe indeholder de [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 oftest brugte beskeder] i MediaWiki',
+	'translate-manage-modlang-new' => '$1 (ny)',
+	'translate-manage-import-new' => 'Ny meddelelse $1',
+	'translate-manage-import-deleted' => 'Slettet meddelelse $1',
+	'translate-manage-action-ignore' => 'Ignorer',
 );
 
 /** German (Deutsch)
