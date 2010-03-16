@@ -114,6 +114,7 @@ Category Watch
 Central Auth
 aliasfile = CentralAuth/CentralAuth.alias.php
 optional = centralauth-editset-grouplink, centralauth-admin-notblocked
+ignored = centralauth-editset-item-ro
 
 Central Notice
 
