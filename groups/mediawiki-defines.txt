@@ -1404,6 +1404,7 @@ ignored = sidebar, robots.txt
 optional = grouppage-steward, grouppage-sysadmin, grouppage-Global_bot
 optional = grouppage-Global_rollback, grouppage-Ombudsmen, grouppage-coder
 optional = grouppage-Staff, shared-repo-name-shared
+optional = grouppage-Global_sysops
 prefix = wmf- | sidebar, grouppage-Staff, group-Staff, group-Staff-member
 
 Wikimedia License Texts
