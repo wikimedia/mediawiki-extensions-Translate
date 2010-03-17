@@ -928,6 +928,9 @@ Nimi: $1',
  */
 $messages['eu'] = array(
 	'pagetranslation' => 'Orrialdearen itzulpena',
+	'tpt-section-new' => 'Itzulpen unitate berria.
+Izena: $1',
+	'tpt-section-deleted' => '$1 itzulpen unitatea',
 	'tpt-diff-old' => 'Aurreko testua',
 	'tpt-diff-new' => 'Testu berria',
 	'tpt-edit-failed' => 'Ezin izan da orrialdea eguneratu: $1',

@@ -310,7 +310,7 @@ $aliases['ko'] = array(
 	'PageTranslation' => array( '페이지 번역' ),
 );
 
-/** Ripoarisch (Ripoarisch) */
+/** Colognian (Ripoarisch) */
 $aliases['ksh'] = array(
 	'Translate' => array( 'Övversäze' ),
 	'Magic' => array( 'Extras', 'Extras Översäze', 'ExtrasÖversäze' ),

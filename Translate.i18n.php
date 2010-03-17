@@ -4749,6 +4749,7 @@ $messages['eu'] = array(
 	'translate-manage-submit' => 'Exekutatu',
 	'translate-manage-import-done' => 'Dena eginda!',
 	'translate-import-load' => 'Fitxategia kargatu',
+	'translate-js-fb' => 'Aldaketa arrunta',
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Kodea',
 	'translate-gs-continent' => 'Kontinentea',
