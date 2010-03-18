@@ -218,13 +218,16 @@ class TranslationHelpers {
 		global $wgProxyKey, $wgGoogleApiKey, $wgMemc;
 
 		$code = $this->targetLanguage;
-		$definition = $this->getDefinition();
+		$definition = trim( strval( $this->getDefinition() ) ) ;
 
 		$memckey = wfMemckey( 'translate-tmsug-badcodes' );
 		$unsupported = $wgMemc->get( $memckey );
 
 		if ( isset( $unsupported[$code] ) ) return null;
-		if ( trim( strval( $definition ) ) === '' ) return null;
+		if ( $definition === '' ) return null;
+		/* There is 5000 *character* limit, but encoding needs to be taken into
+		* account. Not sure if this applies also to post method. */
+		if ( strlen( rawurlencode( $definition ) ) > 4900 ) return null;
 
 		$path = 'http://ajax.googleapis.com/ajax/services/language/translate';
 		$options = array();
