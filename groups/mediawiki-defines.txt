@@ -396,7 +396,7 @@ descmsg = flaggedrevs-desc
 
 Flagged Revisions - Configured Pages
 id = ext-flaggedrevs-configuredpages
-file = FlaggedRevs/language/Configuredpages.i18n.php
+file = FlaggedRevs/language/ConfiguredPages.i18n.php
 descmsg = configuredpages
 
 Flagged Revisions - Old Reviewed Pages
