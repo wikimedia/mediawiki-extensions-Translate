@@ -391,6 +391,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-extensiondistributor', // MediaWiki.org
 		'ext-externalpages', // 2009-11-30: test.wikipedia.org
 		'ext-flaggedrevs-flaggedrevs',
+		'ext-flaggedrevs-configuredpages',
 		'ext-flaggedrevs-oldreviewedpages',
 		'ext-flaggedrevs-problemchanges',
 		'ext-flaggedrevs-qualityoversight',
@@ -544,6 +545,7 @@ class AllFlaggedRevsExtensionsGroup extends AllMediawikiExtensionsGroup {
 
 	protected $flaggedrevsextensions = array(
 		'ext-flaggedrevs-flaggedrevs',
+		'ext-flaggedrevs-configuredpages',
 		'ext-flaggedrevs-oldreviewedpages',
 		'ext-flaggedrevs-problemchanges',
 		'ext-flaggedrevs-qualityoversight',

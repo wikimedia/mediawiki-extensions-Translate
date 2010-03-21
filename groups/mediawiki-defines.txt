@@ -394,6 +394,11 @@ optional = revreview-toggle-show, revreview-toggle-hide, revreview-ak-review, ac
 ignored = flaggedrevs-stable-categories
 descmsg = flaggedrevs-desc
 
+Flagged Revisions - Configured Pages
+id = ext-flaggedrevs-configuredpages
+file = FlaggedRevs/language/configuredpages.i18n.php
+descmsg = configuredpages
+
 Flagged Revisions - Old Reviewed Pages
 id = ext-flaggedrevs-oldreviewedpages
 file = FlaggedRevs/language/OldReviewedPages.i18n.php
