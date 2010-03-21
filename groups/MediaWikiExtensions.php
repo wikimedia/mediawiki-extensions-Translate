@@ -399,7 +399,6 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-flaggedrevs-stabilization',
 		'ext-flaggedrevs-stablepages',
 		'ext-flaggedrevs-unreviewedpages',
-		'ext-flaggedrevs-unstablepages',
 		'ext-flaggedrevs-validationstatistics',
 		'ext-fundraiserportal', // 2009-10-08: test.wikipedia.org
 		'ext-gadgets',
@@ -553,7 +552,6 @@ class AllFlaggedRevsExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-flaggedrevs-stabilization',
 		'ext-flaggedrevs-stablepages',
 		'ext-flaggedrevs-unreviewedpages',
-		'ext-flaggedrevs-unstablepages',
 		'ext-flaggedrevs-validationstatistics',
 	);
 
