@@ -1269,6 +1269,10 @@ id = ext-ui-vector
 file = UsabilityInitiative/Vector/Vector.i18n.php
 descmsg = vector-desc
 
+Usability Initiative - Vector - Collapsible Nav
+id = ext-ui-vector-collapsiblenav
+file = UsabilityInitiative/Vector/Modules/CollapsibleNav/CollapsibleNav.i18n.php
+
 Usability Initiative - Vector - Edit Warning
 id = ext-ui-vector-editwarning
 file = UsabilityInitiative/Vector/Modules/EditWarning/EditWarning.i18n.php
