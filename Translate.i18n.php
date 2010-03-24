@@ -5273,9 +5273,9 @@ Vous pouvez [$1 modifier la page source] ou [$2 mettre à jour la traduction].',
 	'translate-total' => 'Messages',
 	'translate-untranslated' => 'Non traduits',
 	'translate-percentage-complete' => 'Achèvement',
-	'translate-percentage-fuzzy' => 'Obsolètes',
+	'translate-percentage-fuzzy' => 'Désuets',
 	'translate-nothing-to-do' => 'Toutes les traductions possibles semblent avoir été effectuées.
-Vous êtes encouragé à revoir les message depuis [[Special:Translate|{{int:translate}}]].',
+Vous êtes encouragé à revoir les messages depuis [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-groups' => ' # Ajoutez des ID de groupes de messages, un par ligne pour limiter les groupes
  # qui sont affichés sur Special:LanguageStats. Les groupes inexistants seront
  # ignorés.',

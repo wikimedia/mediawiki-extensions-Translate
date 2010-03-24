@@ -997,6 +997,7 @@ Sivu voidaan nyt <span class="plainlinks">[$3 kääntää]</span>.',
  * @author Crochet.david
  * @author Grondin
  * @author IAlex
+ * @author Urhixidur
  */
 $messages['fr'] = array(
 	'pagetranslation' => 'Traduction de pages',
@@ -1035,10 +1036,10 @@ Avant de marquer ces versions pour être traduites, vérifier que les modificati
 	'tpt-translate-this' => 'traduire cette page',
 	'translate-tag-translate-link-desc' => 'Traduire cette page',
 	'translate-tag-markthis' => 'Marquer cette page pour être traduite',
-	'translate-tag-markthisagain' => 'Cette page a eu <span class="plainlinks">[$1 des modifications]</span> depuis qu’il a été dernièrement <span class="plainlinks">[$2 marqué pour être traduis]</span>.',
-	'translate-tag-hasnew' => 'Cette page contient <span class="plainlinks">[$1 des modifications]</span> qui ne sont pas marqués pour la traduction.',
+	'translate-tag-markthisagain' => 'Cette page a eu <span class="plainlinks">[$1 des modifications]</span> depuis qu’elle a été dernièrement <span class="plainlinks">[$2 marquée pour être traduite]</span>.',
+	'translate-tag-hasnew' => 'Cette page contient <span class="plainlinks">[$1 des modifications]</span> qui ne sont pas marquées pour la traduction.',
 	'tpt-translation-intro' => 'Cette page est une <span class="plainlinks">[$1 traduction]</span> de la page [[$2]] et la traduction est complétée à $3 % et à jour.',
-	'tpt-translation-intro-fuzzy' => 'Les traductions obsolètes sont marquées comme ceci.',
+	'tpt-translation-intro-fuzzy' => 'Les traductions désuètes sont marquées comme ceci.',
 	'tpt-languages-legend' => 'Autres langues :',
 	'tpt-target-page' => 'Cette page ne peut pas être mise à jour manuellement.
 Elle est une version traduite de [[$1]] et la traduction peut être mise à jour en utilisant [$2 l’outil de traduction].',
