@@ -26,9 +26,6 @@ Category Hubs
 
 Category Select
 
-#CollabLibs
-#file = CollabLibs/CollabLib.i18n.php
-
 #Comments
 #file = Comments/Comments.i18n.php
 
@@ -138,9 +135,6 @@ New Edit Page
 
 Our 404 Handler
 file = Our404Handler/SpecialOur404Handler.i18n.php
-
-Poll
-file = Poll/poll.i18n.php
 
 Problem Reports
 
