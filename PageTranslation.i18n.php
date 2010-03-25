@@ -997,6 +997,7 @@ Sivu voidaan nyt <span class="plainlinks">[$3 kääntää]</span>.',
  * @author Crochet.david
  * @author Grondin
  * @author IAlex
+ * @author Peter17
  * @author Urhixidur
  */
 $messages['fr'] = array(
@@ -1019,7 +1020,7 @@ $messages['fr'] = array(
 Seule la dernière version de la page peut être marquée pour être traduite.',
 	'tpt-notsuitable' => 'La page $1 n’est pas convenable pour être traduite.
 Soyez sûr qu’elle contient la balise <nowiki><translate></nowiki> et qu’elle a une syntaxe correcte.',
-	'tpt-saveok' => 'La page « $1 » a été marqué pour être traduite avec $2 {{PLURAL:$2|unité de traduction|unités de traduction}}.
+	'tpt-saveok' => 'La page [[$1]] a été marquée pour être traduite avec $2 {{PLURAL:$2|unité|unités}} de traduction.
 La page peut être <span class="plainlinks">[$3 traduite]</span> dès maintenant.',
 	'tpt-badsect' => '« $1 » n’est pas un nom valide pour une unité de traduction $2.',
 	'tpt-showpage-intro' => 'Ci-dessous, les nouvelles traductions, celles existantes et supprimées.

@@ -5176,7 +5176,7 @@ Les espaces de noms ne peuvent avoir qu’une seule traduction.
 Dans les traductions d’espaces de noms, <tt>$1 talk</tt> est spécial. <tt>$1</tt> est remplacé par le nom du site (par exemple <tt>{{ns:project_talk}}</tt>).
 S’il n’est pas possible d’obtenir une expression valide dans votre langue sans changer le nom du site, veuillez contacter un développeur.
 Vous devez appartenir au groupe des traducteurs pour enregistrer toute modification.
-Les modifications ne sont pas enregistrées tant que vous n’avez pas cliqué sur le bouton « Publier ».',
+Les modifications ne sont pas enregistrées tant que vous n’avez pas cliqué sur le bouton « {{int:translate-magic-cm-save}} ».',
 	'translate-magic-module' => 'Module :',
 	'translate-magic-submit' => 'Lister',
 	'translate-magic-cm-export' => 'Exporter',
@@ -5191,8 +5191,8 @@ Les modifications ne sont pas enregistrées tant que vous n’avez pas cliqué s
 	'translate-magic-special' => 'Alias des pages spéciales',
 	'translate-magic-words' => 'Mots magiques',
 	'translate-magic-namespace' => 'Noms des espaces de noms',
-	'translate-magic-notsaved' => "Votre modification n'a pas été sauvegardée !",
-	'translate-magic-errors' => "Corrigez {{PLURAL:$1|l'erreur suivante|les erreurs suivantes}} dans les traductions :",
+	'translate-magic-notsaved' => 'Votre modification n’a pas été sauvegardée !',
+	'translate-magic-errors' => 'Corrigez {{PLURAL:$1|l’erreur suivante|les erreurs suivantes}} dans les traductions :',
 	'translate-magic-saved' => 'Votre modification a été sauvegardée avec succès.',
 	'translationchanges' => 'Traductions modifiées',
 	'translationchanges-export' => 'exporter',
@@ -5215,7 +5215,7 @@ Les modifications ne sont pas enregistrées tant que vous n’avez pas cliqué s
 	'translate-checks-escape' => 'Les échappements suivants peuvent être accidentels : <strong>$1</strong>',
 	'translate-checks-fudforum-syntax' => 'Utiliser <nowiki>$1</nowiki> au lieu de <nowiki>$2</nowiki> dans ce projet.',
 	'translate-pref-nonewsletter' => 'Ne pas m’envoyer les courriels d’informations',
-	'translate-pref-editassistlang' => "Langues d'assistance :",
+	'translate-pref-editassistlang' => 'Langues d’assistance :',
 	'prefs-translate' => 'Options de traduction',
 	'translate-pref-editassistlang-help' => 'Liste de code de langues séparée par une virgule.
 La traduction d’un message dans ces langues est affiché quand vous êtes en train de le traduire.
@@ -5300,7 +5300,7 @@ Vous êtes encouragé à revoir les messages depuis [[Special:Translate|{{int:tr
 	'translate-manage-listgroups' => 'Groupes configurés',
 	'translate-manage-listgroups-old' => 'Ancien style des groupes',
 	'translate-managegroups' => 'Gestion du groupe',
-	'translate-manage-newgroup' => "Ce groupe de messages n'a pas été importé auparavant.",
+	'translate-manage-newgroup' => 'Ce groupe de messages n’a pas été importé auparavant.',
 	'translate-manage-cacheat' => 'Importés le $1 à $2',
 	'translate-manage-return-to-group' => 'Retour à la page d’informations du groupe',
 	'translate-manage-modlangs' => 'Vérifier les éventuelles modifications dans les langue{{PLURAL:$1||s}} :',
@@ -5313,29 +5313,29 @@ Vous êtes encouragé à revoir les messages depuis [[Special:Translate|{{int:tr
 	'translate-manage-action-ignore' => 'Ignorer',
 	'translate-manage-action-fuzzy' => 'Importer et marquer les traductions comme floues',
 	'translate-manage-submit' => 'Exécuter',
-	'translate-manage-nochanges' => "Il n'y a pas de modification dans les définitions des messages de ce groupe.",
-	'translate-manage-nochanges-other' => "Il n'y a eu aucune modification pour cette langue.
-Utilisez le lien ci-dessous pour revenir à la vue de détail du groupe.",
-	'translate-manage-inconsistent' => "Une inconsistance a été détectée dans la requête.
-Vérifiez s'il y a eu des modifications entre temps et ressayez. Détails : $1.",
+	'translate-manage-nochanges' => 'Il n’y a pas de modification dans les définitions des messages de ce groupe.',
+	'translate-manage-nochanges-other' => 'Il n’y a eu aucune modification pour cette langue.
+Utilisez le lien ci-dessous pour revenir à la vue de détail du groupe.',
+	'translate-manage-inconsistent' => 'Une inconsistance a été détectée dans la requête.
+Vérifiez s’il y a eu des modifications et ressayez. Détails : $1.',
 	'translate-manage-toolong' => 'La durée maximale du temps de traitement de $1 seconde{{PLURAL:$1||s}} a été dépassé.
 Renvoyez le formulaire pour continuer le traitement.',
 	'translate-manage-import-ok' => 'Une nouvelle version de la page $1 a été importée.',
 	'translate-manage-import-noks' => 'Impossible d’importer la nouvelle version de la page $1 : $2',
 	'translate-manage-import-ignore' => 'Le message $1 a été sauté.',
-	'translate-manage-import-summary' => "Importation d'une nouvelle version depuis une source externe.",
-	'translate-manage-conflict-summary' => "Importation d'une nouvelle version depuis une source externe. Vérifiez s'il vous plait.",
+	'translate-manage-import-summary' => 'Importation d’une nouvelle version depuis une source externe.',
+	'translate-manage-conflict-summary' => 'Importation d’une nouvelle version depuis une source externe. Vérifiez s’il vous plaît.',
 	'translate-manage-fuzzy-summary' => 'La définition a changé',
 	'translate-manage-import-fuzzy' => 'Importé et marqué comme flou : $1',
 	'translate-manage-import-done' => 'Tout a été fait !',
 	'translate-manage-import-rebuild' => 'Le cache a été reconstruit.',
-	'translate-manage-intro-en' => "Ci-dessous figure une liste des modifications dans ce groupe.
+	'translate-manage-intro-en' => 'Ci-dessous figure une liste des modifications dans ce groupe.
 Revoyez les modifications et choisissez une action à faire pour chaque message.
-Une fois que vous avez mis à jour les définitions des messages, vérifiez s'il y a eu des modifications externes dans d'autres langues.
-Notez aussi que l'action <code>ignorer</code> est seulement temporaire.",
-	'translate-manage-intro-other' => "Ci-dessous figure une liste des modifications en $1.
+Une fois que vous avez mis à jour les définitions des messages, vérifiez s’il y a eu des modifications externes dans d’autres langues.
+Notez aussi que l’action <code>ignorer</code> est seulement temporaire.',
+	'translate-manage-intro-other' => 'Ci-dessous figure une liste des modifications en $1.
 Revoyez les modifications et choisissez une action à effectuer pour chaque traduction.
-Si vous décidez d'ignorer les modifications, ils seront écrasés lors du prochain export.",
+Si vous décidez d’ignorer les modifications, elles seront écrasées lors de la prochaine exportation.',
 	'translate-manage-subtitle' => 'Gérer',
 	'translate-manage-import-rebuild-all' => 'Reconstruire toutes les langues et ignorer les modifications',
 	'importtranslations' => 'Importer les traductions',
@@ -5344,11 +5344,11 @@ Si vous décidez d'ignorer les modifications, ils seront écrasés lors du proch
 	'translate-import-from-local' => 'Importer un fichier local :',
 	'translate-import-load' => 'Charger le fichier',
 	'translate-import-err-type-not-supported' => 'Impossible de charger le fichier: la méthode <tt>$1</tt> n’est pas supportée.',
-	'translate-import-err-dl-failed' => "Impossible d'accéder au fichier :
-$1",
+	'translate-import-err-dl-failed' => 'Impossible d’accéder au fichier :
+$1',
 	'translate-import-err-ul-failed' => 'Le téléversement du fichier n’a pas été réussi',
 	'translate-import-err-invalid-title' => 'Le nom du fichier fourni <nowiki>$1</nowiki> est invalide.',
-	'translate-import-err-no-such-file' => "Le fichier <nowiki>$1</nowiki> n'existe pas ou n'est pas importé localement.",
+	'translate-import-err-no-such-file' => 'Le fichier <nowiki>$1</nowiki> n’existe pas ou n’a pas été importé localement.',
 	'translate-import-err-no-headers' => "Le fichier n’est pas un fichier ''Gettext'' bien formé dans le format attendu par l’extension ''Translate'' :
 il est impossible de déterminer le groupe et la langue depuis les entêtes du fichier.",
 	'translate-import-err-warnings' => 'Le fichier n’est pas bien formé.
