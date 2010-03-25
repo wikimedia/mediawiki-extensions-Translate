@@ -685,6 +685,11 @@ file = MWSearch/MWSearch.i18n.php
 MW Releases
 ignored = mwreleases-list
 
+Natural Language List
+descmsg = nll-desc
+ignored = nll-itemoutput
+optional = nll-separator
+
 Navigation Popups
 
 Negref
