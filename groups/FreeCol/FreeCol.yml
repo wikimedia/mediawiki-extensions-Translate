@@ -33,7 +33,6 @@ CHECKER:
 
 TAGS:
   optional:
-    - clearUnitOrders
     - indianCapitalOwner
     - indianSettlementOwner
     - installer.FreeCol
