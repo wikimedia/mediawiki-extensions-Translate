@@ -9263,6 +9263,7 @@ $messages['km'] = array(
 $messages['kn'] = array(
 	'translate-history' => 'ಇತಿಹಾಸ',
 	'translate-page-language' => 'ಭಾಷೆ',
+	'translate-optional' => '(ಐಚ್ಛಿಕ)',
 	'translate-statsf-width' => 'ಪಿಕ್ಸಲ್‌ಗಳಲ್ಲಿ ಅಗಲ:',
 	'translate-statsf-height' => 'ಪಿಕ್ಸಲ್‌ಗಳಲ್ಲಿ ಎತ್ತರ:',
 	'translate-statsf-scale-days' => 'ದಿನಗಳು',
@@ -13932,6 +13933,7 @@ Podrobnosti: $1',
 );
 
 /** Slovenian (Slovenščina)
+ * @author Dbc334
  * @author Smihael
  */
 $messages['sl'] = array(
@@ -14002,6 +14004,7 @@ Razlog:
 	'translate-magic-cm-save' => 'Shrani',
 	'translate-magic-cm-updatedusing' => 'Posodobitev z uporabo [[Special:Magic]]',
 	'translate-magic-cm-savefailed' => 'Shranjevanje ni uspelo',
+	'translate-magic-special' => 'Vzdevki posebnih strani',
 	'translate-magic-words' => 'Čarobne besede',
 	'translate-magic-namespace' => 'Imena imenskih prostorov',
 	'translate-magic-notsaved' => 'Vaše urejanje ni bilo shranjeno!',
@@ -14010,6 +14013,7 @@ Razlog:
 	'translationchanges' => 'Spremembe prevoda',
 	'translationchanges-export' => 'izvoz',
 	'translationchanges-change' => '$1: $2 od $3',
+	'translate-group-desc-mediawikicore' => 'Ta skupina sporočil zajema sporočila, uporabljena v trenutni alfarazličici MediaWiki ({{CURRENTVERSION}})',
 );
 
 /** Somali (Soomaaliga)

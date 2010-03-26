@@ -1018,19 +1018,19 @@ $messages['fr'] = array(
 	'tpt-badtitle' => 'Le nom de page donné ($1) n’est pas un titre valide',
 	'tpt-oldrevision' => '$2 n’est pas la dernière version de la page [[$1]].
 Seule la dernière version de la page peut être marquée pour être traduite.',
-	'tpt-notsuitable' => 'La page $1 n’est pas convenable pour être traduite.
-Soyez sûr qu’elle contient la balise <nowiki><translate></nowiki> et qu’elle a une syntaxe correcte.',
+	'tpt-notsuitable' => 'La page $1 n’est pas susceptible d’être traduite.
+Assurez-vous qu’elle contienne la balise <nowiki><translate></nowiki> et qu’elle ait une syntaxe correcte.',
 	'tpt-saveok' => 'La page [[$1]] a été marquée pour être traduite avec $2 {{PLURAL:$2|unité|unités}} de traduction.
 La page peut être <span class="plainlinks">[$3 traduite]</span> dès maintenant.',
 	'tpt-badsect' => '« $1 » n’est pas un nom valide pour une unité de traduction $2.',
 	'tpt-showpage-intro' => 'Ci-dessous, les nouvelles traductions, celles existantes et supprimées.
 Avant de marquer ces versions pour être traduites, vérifier que les modifications aux sections sont minimisées pour éviter du travail inutile aux traducteurs.',
-	'tpt-mark-summary' => 'Cette version a été marqué pour être traduite',
+	'tpt-mark-summary' => 'Cette version a été marquée pour être traduite',
 	'tpt-edit-failed' => 'Impossible de mettre à jour la page $1',
 	'tpt-already-marked' => 'La dernière version de cette page a déjà été marquée pour être traduite.',
-	'tpt-list-nopages' => 'Aucune page n’a été marquée pour être traduite ou prête pour l’être.',
+	'tpt-list-nopages' => 'Aucune page n’a été marquée pour être traduite ni n’est prête à l’être.',
 	'tpt-old-pages' => 'Des versions de {{PLURAL:$1|cette page|ces pages}} ont été marquées pour être traduites.',
-	'tpt-new-pages' => '{{PLURAL:$1|Cette page contient|Ces pages contiennent}} du texte avec des balises de traduction, mais aucune version de {{PLURAL:$1|cette page n’est marqué pour être traduite|ces page ne sont marquées pour être traduites}}.',
+	'tpt-new-pages' => '{{PLURAL:$1|Cette page contient|Ces pages contiennent}} du texte avec des balises de traduction, mais aucune version de {{PLURAL:$1|cette page n’est marquée pour être traduite|ces pages ne sont marquées pour être traduites}}.',
 	'tpt-rev-latest' => 'dernière version',
 	'tpt-rev-old' => 'différence avec la version marquée précédente',
 	'tpt-rev-mark-new' => 'marquer cette version pour être traduite',
@@ -1045,7 +1045,7 @@ Avant de marquer ces versions pour être traduites, vérifier que les modificati
 	'tpt-target-page' => 'Cette page ne peut pas être mise à jour manuellement.
 Elle est une version traduite de [[$1]] et la traduction peut être mise à jour en utilisant [$2 l’outil de traduction].',
 	'tpt-unknown-page' => 'Cet espace de noms est réservé pour la traduction de pages.
-La page que vous essayé de modifier ne semble pas correspondre à aucune page marqué pour être traduite.',
+La page que vous essayé de modifier ne semble correspondre à aucune page marquée pour être traduite.',
 	'tpt-install' => 'Lancez « php maintenance/update.php » ou l’installation web pour activer la fonctionnalité de traduction de pages.',
 	'tpt-render-summary' => 'Mise à jour pour être en accord avec la nouvelle version de la source de la page',
 	'tpt-download-page' => 'Exporter la page avec ses traductions',
