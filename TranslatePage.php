@@ -306,7 +306,7 @@ class SpecialTranslate extends SpecialPage {
 			$navigation = wfMsgExt( self::MSG . 'paging-links',
 				array( 'escape', 'replaceafter' ), $previous, $nextious );
 
-			$navigation = Xml::tags( 'p', null, $showing . ' ' . $navigation );
+			$navigation = $showing . ' ' . $navigation;
 		}
 
 		return
