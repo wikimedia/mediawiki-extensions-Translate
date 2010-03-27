@@ -43,6 +43,13 @@ function trlOpenJsEdit( page ) {
 			trlLoadNext( page );
 		});
 
+		form.find( ".mw-translate-skip" ).click( function() {
+			trlLoadNext( page );
+			dialog.dialog("close");
+			return false;
+		});
+
+
 		form.find( ".mw-translate-edit-area" ).focus();
 
 		form.ajaxForm({

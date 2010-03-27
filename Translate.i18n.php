@@ -310,6 +310,7 @@ Details: $1',
 
 	'translate-js-next' => 'Save and open next',
 	'translate-js-nonext' => 'This was the last message on this page.',
+	'translate-js-skip' => 'Skip to next',
 	'translate-js-save-failed' => 'Saving failed. Please report this error.',
 
 	// scripts/groupStatistics.php related messages
