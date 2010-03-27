@@ -280,10 +280,10 @@ class SpecialTranslate extends SpecialPage {
 		$allInThisPage = $start === 1 && $total <= $this->options['limit'];
 
 		if ( $this->paging['count'] === 0 ) {
-			$navigation = wfMsgExt( self::MSG . 'showing-none', array( 'parse' ) );
+			$navigation = wfMsgExt( self::MSG . 'showing-none', array( 'parseinline' ) );
 		} elseif ( $allInThisPage ) {
 			$navigation = wfMsgExt( self::MSG . 'showing-all',
-				array( 'parse' ), $total );
+				array( 'parseinline' ), $total );
 		} else {
 			$previous = wfMsg( TranslateUtils::MSG . 'prev' );
 			if ( $this->options['offset'] > 0 ) {
