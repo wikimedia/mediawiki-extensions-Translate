@@ -1698,6 +1698,7 @@ $messages['bcl'] = array(
  * @author EugeneZelenko
  * @author Jim-by
  * @author Red Winged Duck
+ * @author Wizardist
  */
 $messages['be-tarask'] = array(
 	'translate' => 'Пераклад',
@@ -1939,7 +1940,10 @@ $1',
 	'translate-import-err-warnings' => 'Няслушны файл.
 Упэўніцеся што Ваш рэдактар не выдаляе палі msgctxt.
 Падрабязнасьці: $1',
-	'translate-js-fb' => 'Звычайнае рэдагаваньне',
+	'translate-js-next' => 'Захаваць і адкрыць наступнае',
+	'translate-js-nonext' => 'Гэта было апошняе паведамленьне на гэтай старонцы.',
+	'translate-js-skip' => 'Адкрыць наступнае',
+	'translate-js-save-failed' => 'Немагчыма захаваць. Калі ласка, паведаміце пра гэтую памылку.',
 	'translate-gs-pos' => 'Пазыцыя',
 	'translate-gs-code' => 'Код',
 	'translate-gs-continent' => 'Кантынэнт',
@@ -3846,7 +3850,10 @@ Njemóžno kupku a rěc z datajowych głowow zwěsćiś.',
 	'translate-import-err-warnings' => 'Dataja njejo derje wuformowana.
 Zawěsć, až twój editor njewótpórujo póla msgctxt.
 Drobnostki: $1',
-	'translate-js-fb' => 'Normalne wobźěłanje',
+	'translate-js-next' => 'Pśiducu powěźeńku składowaś a wocyniś',
+	'translate-js-nonext' => 'To jo było slědna powěźeńka na tos tom boku.',
+	'translate-js-skip' => 'K pśiducej powěźeńce skócyś',
+	'translate-js-save-failed' => 'Składowanje jo se njeraźiło. Pšosym daj toś tu zmólku k wěsći.',
 	'translate-gs-pos' => 'Poz.',
 	'translate-gs-code' => 'Kod',
 	'translate-gs-continent' => 'Kontinent',
@@ -5108,6 +5115,7 @@ $1',
  * @author Jean-Frédéric
  * @author Louperivois
  * @author McDutchie
+ * @author Peter17
  * @author PieRRoMaN
  * @author Seb35
  * @author Sherbrooke
@@ -5357,7 +5365,10 @@ il est impossible de déterminer le groupe et la langue depuis les entêtes du f
 	'translate-import-err-warnings' => 'Le fichier n’est pas bien formé.
 Assurez-vous que votre outil de traduction ne supprime pas les champs « msgctxt ».
 Détails : $1',
-	'translate-js-fb' => 'Modification normale',
+	'translate-js-next' => 'Sauvegarder et ouvrir le suivant',
+	'translate-js-nonext' => "C'était le dernier message de cette page.",
+	'translate-js-skip' => 'Aller au suivant',
+	'translate-js-save-failed' => "L'enregistrement a échoué. Veuillez signaler cette erreur.",
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Code',
 	'translate-gs-continent' => 'Continent',
@@ -5891,7 +5902,10 @@ non se poden determinar o grupo e a lingua a partir das cabeceiras do ficheiro.'
 	'translate-import-err-warnings' => 'O ficheiro non está ben formado.
 Asegúrese de que o seu editor non elimina campos msgctxt.
 Detalles: $1',
-	'translate-js-fb' => 'Edición normal',
+	'translate-js-next' => 'Gardar e abrir a seguinte',
+	'translate-js-nonext' => 'Esta foi a última mensaxe desta páxina.',
+	'translate-js-skip' => 'Pasar á seguinte',
+	'translate-js-save-failed' => 'Fallou o proceso de gardado. Por favor, informe sobre este erro.',
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Código',
 	'translate-gs-continent' => 'Continente',
@@ -6209,7 +6223,10 @@ D Gruppen un Sproche hän nit us em Dateichopf chenne ermittlet wäre.',
 	'translate-import-err-warnings' => 'D Datei entspricht nit em erwartete Format.
 Stell sicher, ass dr Editor kei <tt>msgctxt</tt>-Fälder usenimmt.
 Detail: $1',
-	'translate-js-fb' => 'Normali Bearbeitig',
+	'translate-js-next' => 'Spychere un di negscht ufmache',
+	'translate-js-nonext' => 'Des isch di letscht Nochricht uf däre Syte gsi.',
+	'translate-js-skip' => 'Ibergumpe zue dr negschte',
+	'translate-js-save-failed' => 'S Spychere isch fählgschlaa. Bitte due dää Fähler mälde.',
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Code',
 	'translate-gs-continent' => 'Kontinänt',
@@ -7031,7 +7048,10 @@ Njeje móžno skupinu a rěč z hłowy dataje zwěsćić.',
 	'translate-import-err-warnings' => 'Dataja derje sformowana njeje.
 Zawěsć, zo twój editor pola <tt>msgctxt</tt> njewotstronja.
 Podrobnosće: $1',
-	'translate-js-fb' => 'Normalne wobdźěłanje',
+	'translate-js-next' => 'Přichodnu powěsć składować a wočinić',
+	'translate-js-nonext' => 'To bě poslednja zdźělenka na tutej stronje.',
+	'translate-js-skip' => 'K přichodnej powěsći skočić',
+	'translate-js-save-failed' => 'Składowanje je so njeporadźiło. Prošu zdźěl tutón zmylk.',
 	'translate-gs-pos' => 'Poz.',
 	'translate-gs-code' => 'Kod',
 	'translate-gs-continent' => 'Kontinent',
@@ -11045,7 +11065,10 @@ het was niet mogelijk de groep en taal te bepalen uit het bestand.',
 	'translate-import-err-warnings' => 'Het bestand is niet juist gevormd.
 Zorg dat uw tekstverwerker het veld msgctxt niet verwijderd.
 Details: $1',
-	'translate-js-fb' => 'Regulier bewerken',
+	'translate-js-next' => 'Opslaan en volgende',
+	'translate-js-nonext' => 'Dit was het laatste bericht op deze pagina.',
+	'translate-js-skip' => 'Overslaan en volgende',
+	'translate-js-save-failed' => 'Opslaan is mislukt. Maak alstublieft melding van deze fout.',
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Code',
 	'translate-gs-continent' => 'Continent',
@@ -12342,7 +12365,10 @@ As peul pa determinesse la partìa e la lenga da l'antestassion dl'archivi.",
 	'translate-import-err-warnings' => "L'archivi a l'é pa bin formà.
 Ch'as sigura che sò editor a gava pa ij camp msgctxt.
 Detaj: $1",
-	'translate-js-fb' => 'Modìfica normal',
+	'translate-js-next' => 'Salva e doverta torna',
+	'translate-js-nonext' => "Sto sì a l'é l'ùltim mëssagi dzora a sta pàgina-sì.",
+	'translate-js-skip' => "Sàuta a col ch'a ven",
+	'translate-js-save-failed' => 'Salvatagi falì. Për piasì arpòrta sto eror-sì.',
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Còdes',
 	'translate-gs-continent' => 'Continent',
@@ -13439,7 +13465,10 @@ $1',
 	'translate-import-err-warnings' => 'Файл не является правильно построенным.
 Убедитесь, что ваш редактор не удаляет поля msgctxt.
 Подробнее: $1',
-	'translate-js-fb' => 'Обычное редактирование',
+	'translate-js-next' => 'Сохранить и открыть следующий',
+	'translate-js-nonext' => 'Это было последнее сообщение на этой странице.',
+	'translate-js-skip' => 'Перейти к следующему',
+	'translate-js-save-failed' => 'Сохранение не выполнено. Пожалуйста, сообщите об этой ошибке.',
 	'translate-gs-pos' => 'Поз.',
 	'translate-gs-code' => 'Код',
 	'translate-gs-continent' => 'Часть света',
