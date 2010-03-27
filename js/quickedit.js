@@ -11,19 +11,18 @@
  *
  * TODO list:
  * * On succesful save, update the MessageTable display too.
- * * I18n for the messages
  * * Integrate the (new) edittoolbar
  * * Autoload ui classes
  * * Instead of hc'd onscript, give them a class and use necessary triggers
  * * Live-update the checks assistant
  *
  * @author Niklas Laxström
- * @copyright Copyright © 2009 Niklas Laxström
+ * @copyright Copyright © 2009-2010 Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
 function trlOpenJsEdit( page ) {
-	var url = wgScript + "?title=Special:Translate/editpage&page=" + page + "&uselang=" + wgUserLanguage;
+	var url = trlEditUrl.replace( "$1", page );
 	var id = "jsedit" +  page.replace( /[^a-zA-Z0-9_]/g, '_' );
 
 	var dialog = jQuery("#"+id);
@@ -37,22 +36,14 @@ function trlOpenJsEdit( page ) {
 
 	var dialog = jQuery("#"+id);
 
-	dialog = dialog.load(url, false, function() {
+	dialog.load(url, false, function() {
 		var form = jQuery("#"+ id + " form");
 
-		var fb = form.find( ".mw-translate-fb" );
-		fb.click( function() {
-			var queryString = form.formSerialize();
-			// FIXME: forward contents of the text area
-			var newWindow = window.open( wgScript + "?title=" + page + "&action=edit&from=xjs" );
-			dialog.dialog("close");
-			return false;
-		} );
+		form.find( ".mw-translate-next" ).click( function() {
+			trlLoadNext( page );
+		});
 
-		var textarea = form.find( ".mw-translate-edit-area" );
-		textarea.width(textarea.width()-4);
-		//textarea.wikiEditor();
-		textarea.focus();
+		form.find( ".mw-translate-edit-area" ).focus();
 
 		form.ajaxForm({
 			datatype: "json",
@@ -61,18 +52,17 @@ function trlOpenJsEdit( page ) {
 				if ( json.error ) {
 					alert( json.error.info + " (" + json.error.code +")" );
 				} else if ( json.edit.result == "Failure" ) {
-					alert( "Extension error. Copy your text and try normal edit." );
+					alert(trlMsgSaveFailed);
 				} else if ( json.edit.result == "Success" ) {
-					//alert( "Saved!" );
 					dialog.dialog("close");
 				} else {
-					alert( "Unknown error." );
+					alert(trlMsgSaveFailed);
 				}
 			}
 		});
 	});
 
-    dialog.dialog({
+	dialog.dialog({
 		bgiframe: true,
 		width: parseInt(trlVpWidth()*0.8),
 		title: page,
@@ -86,15 +76,18 @@ function trlVpWidth() {
 	return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 }
 
-/*
-mw.load([
-	[ '$j.ui'
-	],[
-		'$j.ui.resizable',
-		'$j.ui.draggable',
-		'$j.ui.dialog',
-	]
-], function(){
-	$j('link_target').dialog( dialogConfig)
-});
-*/
+function trlLoadNext( title ) {
+	var page = title.replace( /[^:]+:/, "");
+	var namespace = title.replace( /:.*/, "");
+	var found = false;
+	for ( key in trlKeys ) {
+		value = trlKeys[key]
+		if (found) {
+			return trlOpenJsEdit( namespace + ":" + value );
+		} else if( page == value ) {
+			found = true;
+		}
+	}
+	alert(trlMsgNoNext);
+	return;
+}

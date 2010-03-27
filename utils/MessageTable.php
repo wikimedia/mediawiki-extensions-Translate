@@ -49,7 +49,7 @@ class MessageTable {
 	}
 
 	public function includeAssets() {
-		global $wgOut;
+		global $wgOut, $wgScript;
 		// Our class
 		$wgOut->addScriptFile( TranslateUtils::assetPath( 'js/quickedit.js' ) );
 
@@ -65,6 +65,22 @@ class MessageTable {
 		// Additional jQuery stuff
 		$wgOut->addScriptFile( TranslateUtils::assetPath( 'js/jquery.form.js' ) );
 		$wgOut->addExtensionStyle( TranslateUtils::assetPath( 'js/base/custom-theme/jquery-ui-1.7.2.custom.css' ) );
+
+		// Helper stuff for JS
+		$trlKeys = array_values( $this->collection->keys() );
+		$editQuery = wfArrayToCgi( array(
+			'title' => SpecialPage::getTitleFor( 'Translate', 'editpage' )->getPrefixedText(),
+			'loadgroup' => $this->group->getId(),
+		));
+
+		$vars = array(
+			'trlEditUrl' => "$wgScript?$editQuery&page=$1",
+			'trlKeys' => $trlKeys,
+			'trlMsgNoNext' => wfMsg( 'translate-js-nonext' ),
+			'trlMsgSaveFailed' => wfMsg( 'translate-js-save-failed' ),
+		);
+
+		$wgOut->addScript( Skin::makeVariablesScript( $vars ) );
 	}
 
 

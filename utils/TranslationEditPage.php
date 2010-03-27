@@ -66,8 +66,7 @@ class TranslationEditPage {
 
 		$summary = Xml::inputLabel( wfMsg( 'summary' ), 'summary', 'summary', 40 );
 		$save = Xml::submitButton( wfMsg( 'savearticle' ), array( 'style' => 'font-weight:bold' ) );
-		$normal = Xml::element( 'input', array( 'class' => 'mw-translate-fb',
-			'value' => wfMsg( 'translate-js-fb' ), 'type' => 'button' ) );
+		$saveAndNext = Xml::submitButton( wfMsg( 'translate-js-next' ), array( 'class' => 'mw-translate-next' ) );
 
 		// Use the api to submit edits
 		$formParams = array(
@@ -78,7 +77,7 @@ class TranslationEditPage {
 		$form = Html::rawElement( 'form', $formParams,
 			implode( "\n", $hidden ) . "\n" .
 			$helpers->getBoxes() . "\n" .
-			"$textarea\n$summary$save$normal"
+			"$textarea\n$summary$save$saveAndNext"
 		);
 
 		echo $form;

@@ -35,6 +35,8 @@ function customMessageGroups( $id ) {
 </code>
 
 == Changes in ??? ==
+* 2010-03-27
+- Improvements to js edit, like save and open next
 * 2010-02-24
 - Dropped $wgTranslateCssLocation. In MW 1.16 and later you can use $wgExtensionAssetsPath
 * 2010-01-24

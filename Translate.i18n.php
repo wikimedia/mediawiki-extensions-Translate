@@ -308,7 +308,9 @@ Unable to determine group and language from file headers.',
 Make sure your editor does not remove msgctxt fields.
 Details: $1',
 
-	'translate-js-fb' => 'Normal edit',
+	'translate-js-next' => 'Save and open next',
+	'translate-js-nonext' => 'This was the last message on this page.',
+	'translate-js-save-failed' => 'Saving failed. Please report this error.',
 
 	// scripts/groupStatistics.php related messages
 	'translate-gs-pos' => 'Pos.',
