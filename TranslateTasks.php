@@ -64,30 +64,20 @@ abstract class TranslateTask {
 	}
 
 	protected $group = null;
-	protected $messages = null;
+	protected $collection = null;
 	protected $options = null;
+
 	public final function init( MessageGroup $group, TaskOptions $options ) {
 		$this->group = $group;
 		$this->options = $options;
 	}
 
-	protected $process = array();
-
-	protected function setProcess() {
-		$this->process = array(
-			array( $this, 'preinit' ),
-			array( $this, 'doPaging' ),
-			array( $this, 'postinit' ),
-		);
-	}
-
 	abstract protected function output();
 
 	public final function execute() {
-		$this->setProcess();
-		foreach ( $this->process as $function ) {
-			call_user_func( $function );
-		}
+		$this->preinit();
+		$this->doPaging();
+		$this->postinit();
 		return $this->output();
 	}
 
@@ -174,14 +164,6 @@ class ViewUntranslatedTask extends ReviewMessagesTask {
 class ViewOptionalTask extends ViewMessagesTask {
 	protected $id = 'optional';
 
-	protected function setProcess() {
-		$this->process = array(
-			array( $this, 'preinit' ),
-			array( $this, 'doPaging' ),
-			array( $this, 'postinit' ),
-		);
-	}
-
 	protected function preinit() {
 		$code = $this->options->getLanguage();
 		$this->collection = $this->group->initCollection( $code );
@@ -194,14 +176,6 @@ class ViewOptionalTask extends ViewMessagesTask {
 
 class ViewUntranslatedOptionalTask extends ViewOptionalTask {
 	protected $id = 'untranslatedoptional';
-
-	protected function setProcess() {
-		$this->process = array(
-			array( $this, 'preinit' ),
-			array( $this, 'doPaging' ),
-			array( $this, 'postinit' ),
-		);
-	}
 
 	protected function preinit() {
 		$code = $this->options->getLanguage();
@@ -216,14 +190,6 @@ class ViewUntranslatedOptionalTask extends ViewOptionalTask {
 class ReviewAllMessagesTask extends ReviewMessagesTask {
 	protected $id = 'reviewall';
 
-	protected function setProcess() {
-		$this->process = array(
-			array( $this, 'preinit' ),
-			array( $this, 'doPaging' ),
-			array( $this, 'postinit' ),
-		);
-	}
-
 	protected function preinit() {
 		$code = $this->options->getLanguage();
 		$this->collection = $this->group->initCollection( $code );
@@ -237,13 +203,8 @@ class ReviewAllMessagesTask extends ReviewMessagesTask {
 class ExportMessagesTask extends ViewMessagesTask {
 	protected $id = 'export';
 
-	protected function setProcess() {
-		$this->process = array(
-			array( $this, 'preinit' ),
-			array( $this, 'postinit' ),
-		);
-	}
-
+	// N/A
+	protected function doPaging() {}
 
 	public function output() {
 		if ( $this->group instanceof FileBasedMessageGroup ) {
