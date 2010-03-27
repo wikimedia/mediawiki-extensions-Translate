@@ -70,6 +70,7 @@ class TranslationHelpers {
 
 	public function getDefinition() {
 		if ( $this->definition !== null ) return $this->definition;
+		if ( $this->group === null ) return;
 		$this->definition = $this->group->getMessage( $this->page, 'en' );
 		return $this->definition;
 	}
@@ -77,22 +78,23 @@ class TranslationHelpers {
 	public function getTranslation() {
 		if ( $this->translation !== null ) return $this->translation;
 
-		// Shoter names
+		// Shorter names
 		$page = $this->page;
 		$code = $this->targetLanguage;
+		$group = $this->group;
 
 		// Try database first
 		$translation = TranslateUtils::getMessageContent(
-			$page, $code, $this->group->getNamespace()
+			$page, $code, $this->title->getNamespace()
 		);
 
 		if ( $translation !== null ) {
 			if ( !TranslateEditAddons::hasFuzzyString( $translation ) && TranslateEditAddons::isFuzzy( $this->title ) ) {
 				$translation = TRANSLATE_FUZZY . $translation;
 			}
-		} elseif ( !$this->group instanceof FileBasedMessageGroup ) {
+		} elseif ( $group && !$group instanceof FileBasedMessageGroup ) {
 			// Then try to load from files (old groups)
-			$translation = $this->group->getMessage( $page, $code );
+			$translation = $group->getMessage( $page, $code );
 		} else {
 			// Nothing to prefil
 			$translation = '';
@@ -106,7 +108,9 @@ class TranslationHelpers {
 	}
 
 	public function getBoxes( $types = null ) {
-		if ( !$this->group ) return '';
+		if ( $this->group === null ) {
+			trigger_error( "Message group missing for {$this->page}", E_USER_NOTICE );
+		}
 
 		// Box filter
 		$all = array(
@@ -365,6 +369,7 @@ class TranslationHelpers {
 
 	protected function getCheckBox() {
 		global $wgTranslateDocumentationLanguageCode;
+		if ( $this->group === null ) return;
 
 		$page = $this->page;
 		$translation = $this->getTranslation();
