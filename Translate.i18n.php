@@ -186,9 +186,6 @@ All values have upper and lower limits.',
 
 	'translate-sidebar-alltrans'  => 'In other languages',
 
-	'translate-tag-noedit' => 'This page is automatically updated translation page.
-You can [$1 edit the source page] or [$2 update the translation].',
-
 	# Special:Translations
 	'translations' => 'All translations',
 	'translations-summary' => 'Enter a message name below to show all available translations.',
