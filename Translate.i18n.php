@@ -1109,7 +1109,10 @@ $1',
 	'translate-import-err-warnings' => 'الملف ليس مكونا بشكل صحيح.
 تأكد من أن محررك لا يزيل حقول msgctxt .
 التفاصيل: $1',
-	'translate-js-fb' => 'تحرير عادي',
+	'translate-js-next' => 'احفظ وافتح التالية',
+	'translate-js-nonext' => 'كانت هذه آخر رسالة على هذه الصفحة.',
+	'translate-js-skip' => 'تخطَ إلى التالية',
+	'translate-js-save-failed' => 'فشل الحفظ. من فضلك بلّغ عن هذا الخطأ.',
 	'translate-gs-pos' => 'الترتيب',
 	'translate-gs-code' => 'الرمز',
 	'translate-gs-continent' => 'القارة',
@@ -1995,6 +1998,7 @@ $messages['bg'] = array(
 	'translate-prev' => 'Предишна страница',
 	'translate-page-description-legend' => 'Информация за групата',
 	'translate-page-edit' => 'редактиране',
+	'translate-ext-url' => '<hr />Уебсайт: $1',
 	'translate-optional' => '(незадължително)',
 	'translate-ignored' => '(пренебрегнато)',
 	'translate-edit-definition' => 'Оригинално съобщение',
@@ -4292,6 +4296,7 @@ $1',
 /** Spanish (Español)
  * @author Antur
  * @author Crazymadlover
+ * @author Dferg
  * @author Imre
  * @author Kobazulo
  * @author Lin linao
@@ -4541,7 +4546,10 @@ No se puede determinar el grupo y el idioma a partir de los encabezados de archi
 	'translate-import-err-warnings' => 'El archivo no está bien constituído.
 Asegúrese de que su editor no quita los campos msgctxt.
 Detalle: $1',
-	'translate-js-fb' => 'Edición normal',
+	'translate-js-next' => 'Guardar y abrir el siguiente',
+	'translate-js-nonext' => 'Este fue el último mensaje en esta página.',
+	'translate-js-skip' => 'Saltar al siguiente',
+	'translate-js-save-failed' => 'El guardado ha fallado. Por favor informe de este error.',
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Código',
 	'translate-gs-continent' => 'Continente',
@@ -7657,7 +7665,10 @@ Non pote determinar le gruppo e lingua ex le capites del file.',
 	'translate-import-err-warnings' => 'Le file non es ben formate.
 Assecura te que tu editor non remove le campos msgctxt.
 Detalios: $1',
-	'translate-js-fb' => 'Modification normal',
+	'translate-js-next' => 'Salveguardar e aperir le sequente',
+	'translate-js-nonext' => 'Isto esseva le ultime message in iste pagina.',
+	'translate-js-skip' => 'Saltar al sequente',
+	'translate-js-save-failed' => 'Salveguarda fallite. Per favor reporta iste error.',
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Codice',
 	'translate-gs-continent' => 'Continente',
@@ -9287,6 +9298,7 @@ $messages['kn'] = array(
 	'translate-history' => 'ಇತಿಹಾಸ',
 	'translate-page-language' => 'ಭಾಷೆ',
 	'translate-optional' => '(ಐಚ್ಛಿಕ)',
+	'translate-stats-edits' => 'ಸಂಪಾದನೆಗಳು',
 	'translate-statsf-width' => 'ಪಿಕ್ಸಲ್‌ಗಳಲ್ಲಿ ಅಗಲ:',
 	'translate-statsf-height' => 'ಪಿಕ್ಸಲ್‌ಗಳಲ್ಲಿ ಎತ್ತರ:',
 	'translate-statsf-scale-days' => 'ದಿನಗಳು',
@@ -9294,6 +9306,7 @@ $messages['kn'] = array(
 	'translate-statsf-count' => 'ಅಳತೆ:',
 	'translate-statsf-count-edits' => 'ಸಂಪಾದನೆಗಳ ಸಂಖ್ಯೆ',
 	'translate-statsf-submit' => 'ಮುನ್ನೋಟ',
+	'translate-sidebar-alltrans' => 'ಇತರ ಭಾಷೆಗಳಲ್ಲಿ',
 	'translate-translations-fieldset-title' => 'ಸಂದೇಶ',
 	'translate-translations-messagename' => 'ಹೆಸರು:',
 	'translate-translations-project' => 'ಯೋಜನೆ:',
@@ -9925,7 +9938,10 @@ De Grupp an d\'Sprooch konnte vun der Entête vum Fichier net bestëmmt ginn.',
 	'translate-import-err-warnings' => 'De Fichier ass net richteg forméiert.
 Vergewëssert Iech datt Ären Editeursprogramm keng msgctxt Felder ewechhëllt.
 Detailler: $1',
-	'translate-js-fb' => 'Normal Ännerung',
+	'translate-js-next' => 'Späicheren an den Nächsten opmaachen',
+	'translate-js-nonext' => 'Dëst war de leschte Message op dëser Säit',
+	'translate-js-skip' => 'Op den Nächste goen',
+	'translate-js-save-failed' => "D'Späicheren huet net fonctionnéiert. Mellt dëse Feeler w.e.g.",
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Code',
 	'translate-gs-continent' => 'Kontinent',
@@ -10405,7 +10421,10 @@ $1',
 	'translate-import-err-warnings' => 'Податотеката не е добро формулирана.
 Осигурајте се дека вашиот обработувач не ги отстранува msgctxt полињата.
 Детали: $1',
-	'translate-js-fb' => 'Нормално уредување',
+	'translate-js-next' => 'Зачувај и отвори текст',
+	'translate-js-nonext' => 'Ова беше последната порака на страницава.',
+	'translate-js-skip' => 'Прејди на следно',
+	'translate-js-save-failed' => 'Зачувувањето не успеа. Ве молиме пријавете ја оваа грешка.',
 	'translate-gs-pos' => 'Поз.',
 	'translate-gs-code' => 'Код',
 	'translate-gs-continent' => 'Континент',
@@ -11519,7 +11538,10 @@ Kunne ikke fastslå gruppe og språk fra filoverskriftene.',
 	'translate-import-err-warnings' => 'Filen er ikke ordentlig formatert.
 Kontroller at editoren ikke fjerner msgctxt-feltene.
 Detaljer: $1',
-	'translate-js-fb' => 'Vanlig redigering',
+	'translate-js-next' => 'Lagre og åpne neste',
+	'translate-js-nonext' => 'Dette var den siste meldingen på denne siden.',
+	'translate-js-skip' => 'Hopp over til neste',
+	'translate-js-save-failed' => 'Lagring mislyktes. Rapporter denne feilen.',
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Kode',
 	'translate-gs-continent' => 'Kontinent',
