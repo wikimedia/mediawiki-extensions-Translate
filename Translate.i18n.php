@@ -1003,8 +1003,6 @@ $messages['ar'] = array(
 	'translate-tag-fuzzy-comment' => 'التعريف تغير بواسطة [[User:$1]] في المراجعة $2.',
 	'translate-tag-fuzzy-reason' => 'التعريف تغير بواسطة المستخدم $1 بالتعليق "$3" في $2.',
 	'translate-sidebar-alltrans' => 'بلغات أخرى',
-	'translate-tag-noedit' => 'هذه الصفحة هي صفحة ترجمة محدثة تلقائيا.
-يمكنك [$1 تعديل الصفحة المصدر] أو [$2 تحديث الترجمة].',
 	'translations' => 'كل الترجمات',
 	'translations-summary' => 'أدخل اسم رسالة أسفله لعرض كل الترجمات المتوفرة.',
 	'translate-translations-no-message' => '"$1" ليست رسالة قابلة للترجمة',
@@ -7300,8 +7298,6 @@ A nyelvek alapértelmezett listája a nyelvedtől függ.',
 	'translate-tag-fuzzy-comment' => '[[User:$1|$1]] megváltoztatta a definíciót a(z) $2 változatnál',
 	'translate-tag-fuzzy-reason' => 'A definíciót „$1” módosította $2-kor, a következő megjegyzéssel: „$3”.',
 	'translate-sidebar-alltrans' => 'Más nyelveken',
-	'translate-tag-noedit' => 'Ez a lap egy automatikusan frissített fordítási lap.
-[$1 Szerkesztheted a forráslapot] vagy [$2 frissítheted a fordítást].',
 	'translations' => 'Minden fordítás',
 	'translations-summary' => 'Add meg az üzenet nevét az összes elérhető fordítás listázásához.',
 	'translate-translations-no-message' => '„$1” egy nem lefordítható üzenet',
@@ -7400,7 +7396,10 @@ nem sikerült meghatározni a csoportot és a nyelvet a fájl fejlécéből.',
 	'translate-import-err-warnings' => 'A fájl nem megfelelően formázott.
 Ellenőrizd, hogy a szerkesztőd nem távolította-e el az msgctxt-mezőket.
 Részletek: $1',
-	'translate-js-fb' => 'Normál szerkesztés',
+	'translate-js-next' => 'Mentés és a következő megnyitása',
+	'translate-js-nonext' => 'Ez volt az utolsó üzenet ezen a lapon.',
+	'translate-js-skip' => 'Ugrás a következőre',
+	'translate-js-save-failed' => 'A mentés nem sikerült. Kérlek jelezd a hibát.',
 	'translate-gs-pos' => 'Hely',
 	'translate-gs-code' => 'Kód',
 	'translate-gs-continent' => 'Kontinens',
@@ -12630,8 +12629,6 @@ Todos os valores têm limites máximos e mínimos.',
 	'translate-tag-fuzzy-comment' => 'Definição alterada por [[User:$1|$1]] na revisão $2.',
 	'translate-tag-fuzzy-reason' => 'Definição alterada por "$1" com o comentário "$3" em $2.',
 	'translate-sidebar-alltrans' => 'Noutras línguas',
-	'translate-tag-noedit' => 'Esta página de tradução é actualizada automaticamente.
-Pode [$1 editar a página de origem] ou [$2 actualizar a tradução].',
 	'translations' => 'Todas as traduções',
 	'translations-summary' => 'Introduza abaixo o nome de uma mensagem para ver todas as traduções disponíveis.',
 	'translate-translations-no-message' => '"$1" não é uma mensagem traduzível',
@@ -12730,7 +12727,10 @@ Não foi possível determinar o grupo e a língua a partir dos cabeçalhos.',
 	'translate-import-err-warnings' => 'Este ficheiro não é válido.
 Certifique-se de que o seu editor não remove os campos msgctxt.
 Detalhes: $1',
-	'translate-js-fb' => 'Edição normal',
+	'translate-js-next' => 'Gravar e abrir a seguinte',
+	'translate-js-nonext' => 'Esta foi a última mensagem nesta página.',
+	'translate-js-skip' => 'Saltar para a seguinte',
+	'translate-js-save-failed' => 'A gravação falhou. Por favor, informe-nos deste erro.',
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Código',
 	'translate-gs-continent' => 'Continente',
@@ -15836,6 +15836,7 @@ $messages['ug-latn'] = array(
  * @author Aleksandrit
  * @author NickK
  * @author Prima klasy4na
+ * @author Test
  */
 $messages['uk'] = array(
 	'translate' => 'Переклад',
@@ -15977,8 +15978,6 @@ $messages['uk'] = array(
 	'translate-tag-fuzzy-comment' => 'Змінено у версії $2 користувачем [[User:$1|$1]].',
 	'translate-tag-fuzzy-reason' => 'Змінено у версії $2 користувачем $1 з коментарем «$3».',
 	'translate-sidebar-alltrans' => 'Іншими мовами',
-	'translate-tag-noedit' => 'Це автоматично оновлювана сторінка з перекладом.
-Ви можете [$1 відредагувати початкову сторінку] або [$2 оновити переклад].',
 	'translations' => 'Всі переклади',
 	'translations-summary' => 'Введіть назву повідомлення, щоб показати всі доступні переклади.',
 	'translate-translations-no-message' => '"$1" не є повідомленням для перекладу',
@@ -16076,7 +16075,8 @@ $1',
 	'translate-import-err-warnings' => 'Файл неправильно побудований.
 Впевніться, що ваш редактор не стер поля msgctxt.
 Деталі: $1',
-	'translate-js-fb' => 'Звичайне редагування',
+	'translate-js-next' => 'Зберегти і відкрити наступне',
+	'translate-js-save-failed' => 'Збереження не виконано. Будь ласка, повідомте про цю помилку.',
 	'translate-gs-pos' => 'Поз.',
 	'translate-gs-code' => 'Код',
 	'translate-gs-continent' => 'Частина світу',
