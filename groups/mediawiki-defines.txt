@@ -384,6 +384,9 @@ File Page Masking
 Find Spam
 aliasfile = FindSpam/FindSpam.alias.php
 
+Firefogg Chunked Upload
+descmsg = firefoggcu-desc
+
 Fixed Image
 
 Flagged Revisions - Flagged Revs
