@@ -1826,6 +1826,15 @@ $messages['mk'] = array(
 	'tpt-download-page' => 'Извези страница со преводи',
 );
 
+/** Maltese (Malti)
+ * @author Chrisportelli
+ */
+$messages['mt'] = array(
+	'pagetranslation' => 'Traduzzjoni tal-paġni',
+	'tpt-old-pages' => "Xi verżjonijiet ta' {{PLURAL:$1|din il-paġna ġiet immarkata|dawn il-paġni ġew immarkati}} għat-traduzzjoni.",
+	'tpt-languages-legend' => 'Lingwi oħra:',
+);
+
 /** Erzya (Эрзянь)
  * @author Botuzhaleny-sodamo
  */
