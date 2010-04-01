@@ -12487,6 +12487,10 @@ Changes are not saved until you click save button below.',
 	'translate-manage-modlang-new' => '$1 (نوی)',
 	'translate-manage-import-new' => 'نوی پيغام $1',
 	'translate-manage-import-deleted' => 'ړنګ شوی پيغام $1',
+	'translate-manage-import-done' => 'ټول ترسره شوي!',
+	'translate-gs-code' => 'کوډ',
+	'translate-gs-continent' => 'لويه وچه',
+	'translate-gs-speakers' => 'وييونکي',
 	'translate-gs-total' => 'ټولټال',
 );
 
