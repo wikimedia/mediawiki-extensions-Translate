@@ -37,6 +37,8 @@ file = APC/ViewAPC.i18n.php
 aliasfile = APC/ViewAPC.alias.php
 descmsg = viewapc-desc
 
+Api SVG Proxy
+
 Asksql
 aliasfile = Asksql/Asksql.alias.php
 
