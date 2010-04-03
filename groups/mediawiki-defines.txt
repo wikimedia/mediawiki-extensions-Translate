@@ -1268,7 +1268,7 @@ descmsg = prefstats-desc
 ignored = prefstats-list-elem
 
 Usability Initiative - Pref Switch
-id = ext-ui-prefstats
+id = ext-ui-prefswitch
 file = UsabilityInitiative/PrefSwitch/PrefSwitch.i18n.php
 aliasfile = UsabilityInitiative/PrefSwitch/PrefSwitch.alias.php
 descmsg = prefswitch-desc
