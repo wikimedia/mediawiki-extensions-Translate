@@ -278,6 +278,27 @@ array(
 		'notifier.signup_confirm_plain.user_wiki_2', // Contains links that are translated
 	)
 ),
+array(
+	'group' => 'wikia-categoryselect',
+	'check' => 'links',
+	'message' => array(
+		'categoryselect-tooltip', // Contains link parts that may need translation
+	)
+),
+array(
+	'group' => 'wikia-graceexpired',
+	'check' => 'links',
+	'message' => array(
+		'graceexpired-header', // Contains link parts that may need translation
+	)
+),
+array(
+	'group' => 'wikia-problemreports',
+	'check' => 'links',
+	'message' => array(
+		'pr_introductory_text', // Contains link parts that may need translation
+	)
+),
 
 // translatewiki.net specific
 array(
