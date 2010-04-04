@@ -48,7 +48,7 @@ if ( !isset( $options['group'] ) ) {
 }
 
 if ( !is_writable( $options['target'] ) ) {
-	STDERR( "Target directory is not writable" );
+	STDERR( "Target directory is not writable (" . $options['target'] . ")" );
 	exit( 1 );
 }
 if ( isset( $options['threshold'] ) && intval( $options['threshold'] ) ) {
@@ -62,7 +62,7 @@ $langs = Cli::parseLanguageCodes( $options['lang'] );
 $group = MessageGroups::getGroup( $options['group'] );
 
 if ( !$group instanceof MessageGroup ) {
-	STDERR( "Invalid group" );
+	STDERR( "Invalid group: " . $group );
 	exit( 1 );
 }
 
