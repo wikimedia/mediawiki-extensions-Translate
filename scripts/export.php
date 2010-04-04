@@ -62,7 +62,7 @@ $langs = Cli::parseLanguageCodes( $options['lang'] );
 $group = MessageGroups::getGroup( $options['group'] );
 
 if ( !$group instanceof MessageGroup ) {
-	STDERR( "Invalid group: " . $group );
+	STDERR( "Invalid group: " . $options['group'] );
 	exit( 1 );
 }
 
