@@ -2117,6 +2117,7 @@ $messages['bpy'] = array(
 /** Breton (Brezhoneg)
  * @author Fohanno
  * @author Fulup
+ * @author Y-M D
  */
 $messages['br'] = array(
 	'translate' => 'Treiñ',
@@ -2259,8 +2260,6 @@ Bevennoù izel hag uhel zo d'an holl dalvoudoù.",
 	'translate-tag-fuzzy-comment' => 'Termenadur kemmet gant an implijer [[User:$1|$1]] er stumm $2.',
 	'translate-tag-fuzzy-reason' => 'Termenadur kemmet gant an implijer "$1" stag outañ an evezhiadenn "$3" e $2.',
 	'translate-sidebar-alltrans' => 'E yezhoù all',
-	'translate-tag-noedit' => 'Un teul treiñ hizivaet ent emgefre eo ar bajenn-mañ.
-Gallout a rit [$1 kemmañ ar bajenn orin] pe [$2 freskaat an droidigezh].',
 	'translations' => 'An holl droidigezhioù',
 	'translations-summary' => "Merkit anv ur c'hemenn bennak amañ evit gwelet an holl droidigezhioù hegerz.",
 	'translate-translations-no-message' => 'N\'haller ket treiñ "$1"',
@@ -2359,7 +2358,10 @@ Dibosupl eo didermeniñ ar strollad hag ar yezh adalek talbennoù ar restr.",
 	'translate-import-err-warnings' => 'Ne oa ket stummet mat ar restr-mañ.
 Bezit sur ne lam ket ho skridaozer ar maeziennoù msgctxt kuit.
 Munudoù : $1',
-	'translate-js-fb' => 'Kemm normal',
+	'translate-js-next' => 'Enrollañ ha digeriñ an hini da-heul',
+	'translate-js-nonext' => 'Ar gemenadenn ziwezhañ er bajenn-mañ e oa.',
+	'translate-js-skip' => "Mont d'an hini da-heul",
+	'translate-js-save-failed' => "Ur gudenn 'zo bet gant an enrollañ. Mar plij kemennit ar gudenn-mañ.",
 	'translate-gs-pos' => "Lec'h.",
 	'translate-gs-code' => 'Kod',
 	'translate-gs-continent' => 'Kevandir',
@@ -12014,8 +12016,8 @@ Domyślna lista języków zależy od Twojego języka.',
 <nowiki>$1</nowiki>.',
 	'translate-pref-jsedit' => 'Rozszerzony edytor tłumaczeń (JavaScript)',
 	'right-translate' => 'Edycja z użyciem interfejsu tłumaczeń',
-	'right-translate-manage' => 'Zarządzaj grupami tłumaczeń',
-	'right-translate-import' => 'Importuj tłumaczenia offline',
+	'right-translate-manage' => 'Zarządzanie grupami tłumaczeń',
+	'right-translate-import' => 'Importowanie tłumaczeń wykonanych offline',
 	'translate-rc-translation-filter' => 'Filtruj tłumaczenia',
 	'translate-rc-translation-filter-no' => 'Nic nie rób',
 	'translate-rc-translation-filter-only' => 'Pokaż tylko tłumaczenia',
@@ -12559,7 +12561,7 @@ $messages['pt'] = array(
 	'translate-prev' => 'Página anterior',
 	'translate-page-description-legend' => 'Informação sobre o grupo',
 	'translate-page-edit' => 'editar',
-	'translate-ext-url' => '<hr />Sítio na internet: $1',
+	'translate-ext-url' => '<hr />Site na internet: $1',
 	'translate-optional' => '(opcional)',
 	'translate-ignored' => '(ignorada)',
 	'translate-edit-definition' => 'Definição da mensagem',
@@ -12583,8 +12585,8 @@ Os nomes alternativos de páginas especiais e as palavras mágicas podem ter vá
 As traduções são separadas por vírgulas (,).
 Os nomes de espaços nominais só podem ter uma tradução.
 
-Nas traduções de espaços nominais, a partícula <tt>$1 talk</tt> é especial. <tt>$1</tt> é substituído pelo nome do sítio (por exemplo, <tt>{{ns:project_talk}}</tt>).
-Se não é possível formar na sua língua expressões válidas sem alterar o nome do sítio, por favor, contacte um programador.
+Nas traduções de espaços nominais, a partícula <tt>$1 talk</tt> é especial. <tt>$1</tt> é substituído pelo nome do site (por exemplo, <tt>{{ns:project_talk}}</tt>).
+Se não é possível formar na sua língua expressões válidas sem alterar o nome do site, por favor, contacte um programador.
 
 É necessário pertencer ao grupo de tradutores para conseguir gravar as alterações.
 As alterações não serão gravadas até clicar no botão de gravar abaixo.',
@@ -12612,8 +12614,8 @@ As alterações não serão gravadas até clicar no botão de gravar abaixo.',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|O seguinte parâmetro é desconhecido|Os seguintes parâmetros são desconhecidos}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Há {{PLURAL:$2|um parênteses irregular|$2 parênteses irregulares}}: <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links' => '{{PLURAL:$2|A seguinte ligação tem|As seguintes $2 ligações têm}} problemas: <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links-missing' => '{{PLURAL:$2|A seguinte ligação está|As seguintes $2 ligações estão}} em falta:
+	'translate-checks-links' => '{{PLURAL:$2|O link seguinte tem|Os $2 links seguintes têm}} problemas: <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links-missing' => '{{PLURAL:$2|O link seguinte está|Os $2 links seguintes estão}} em falta:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => "Por favor, corrija {{PLURAL:$2|a seguinte ''tag''|as seguintes ''tags''}}:
 <strong>$1</strong>",
@@ -12638,7 +12640,7 @@ A lista por omissão depende da sua língua.',
 	'translate-rc-translation-filter-no' => 'Não filtrar',
 	'translate-rc-translation-filter-only' => 'Mostrar apenas traduções',
 	'translate-rc-translation-filter-filter' => 'Não mostrar traduções',
-	'translate-rc-translation-filter-site' => 'Só mudanças às mensagens deste sítio',
+	'translate-rc-translation-filter-site' => 'Só mudanças às mensagens deste site',
 	'translationstats' => 'Estatísticas de traduções',
 	'translate-stats-edits' => 'Edições',
 	'translate-stats-users' => 'Tradutores',
@@ -12718,7 +12720,7 @@ Encorajamo-lo a rever mensagens através de [[Special:Translate|{{int:translate}
 	'translate-manage-submit' => 'Executar',
 	'translate-manage-nochanges' => 'Não há alterações nas definições das mensagens deste grupo.',
 	'translate-manage-nochanges-other' => 'Não houve alterações para esta língua.
-Use a ligação abaixo para voltar à visualização de detalhes do grupo.',
+Use o link abaixo para voltar aos detalhes do grupo.',
 	'translate-manage-inconsistent' => 'Detectada inconsistência no pedido.
 Por favor, verifique se houve alterações e tente novamente.
 Detalhes: $1.',
