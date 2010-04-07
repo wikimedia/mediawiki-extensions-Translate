@@ -109,7 +109,9 @@ class TranslationHelpers {
 
 	public function getBoxes( $types = null ) {
 		if ( $this->group === null ) {
-			trigger_error( "Message group missing for {$this->page}", E_USER_NOTICE );
+			global $wgRequest;
+			$group = $wgRequest->getText( 'loadgroup', '' );
+			trigger_error( "Message group missing for {$this->page}; Tried to load /{$group}/", E_USER_NOTICE );
 		}
 
 		// Box filter
