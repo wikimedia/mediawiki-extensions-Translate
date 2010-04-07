@@ -766,6 +766,9 @@ file = Oversight/HideRevision.i18n.php
 aliasfile = Oversight/HideRevision.alias.php
 descmsg = hiderevision-desc
 
+Package Force
+descmsg = pf-desc
+
 Page By
 
 Paged Tiff Handler
