@@ -24,6 +24,7 @@ FILES:
     en-us: en_US
     pt:    pt_PT
     pt-br: pt_BR
+    zh-hans: zh_CN
 
 CHECKER:
   class: FreeColMessageChecker
