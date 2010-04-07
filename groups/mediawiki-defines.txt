@@ -1060,6 +1060,7 @@ Spam Blacklist
 descmsg = spam-blacklist-desc
 
 Spam Diff Tool
+aliasfile = SpamDiffTool/SpamDiffTool.alias.php
 
 Spam Regex
 aliasfile = SpamRegex/SpamRegex.alias.php
