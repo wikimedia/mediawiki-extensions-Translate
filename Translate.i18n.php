@@ -309,6 +309,7 @@ Details: $1',
 	'translate-js-nonext' => 'This was the last message on this page.',
 	'translate-js-skip' => 'Skip to next',
 	'translate-js-save-failed' => 'Saving failed. Please report this error.',
+	'translate-js-history' => 'Translation history',
 
 	// scripts/groupStatistics.php related messages
 	'translate-gs-pos' => 'Pos.',

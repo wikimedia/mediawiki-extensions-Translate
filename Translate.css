@@ -180,3 +180,9 @@
 	-webkit-border-radius: 10px;
 	background-color: #D1E231 !important;
 }
+
+/* Quickedit */
+
+.mw-translate-history {
+	float: right;
+}

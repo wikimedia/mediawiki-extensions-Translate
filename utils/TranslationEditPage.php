@@ -68,6 +68,11 @@ class TranslationEditPage {
 		$save = Xml::submitButton( wfMsg( 'savearticle' ), array( 'style' => 'font-weight:bold' ) );
 		$saveAndNext = Xml::submitButton( wfMsg( 'translate-js-next' ), array( 'class' => 'mw-translate-next' ) );
 		$skip = Html::element( 'input', array( 'class' => 'mw-translate-skip', 'type' => 'button', 'value' => wfMsg( 'translate-js-skip' ) ) );
+		if ( $this->getTitle()->exists() ) {
+			$history = Html::element( 'input', array( 'class' => 'mw-translate-history', 'type' => 'button', 'value' => wfMsg( 'translate-js-history' ) ) );
+		} else {
+			$history = '';
+		}
 
 		// Use the api to submit edits
 		$formParams = array(
@@ -78,7 +83,7 @@ class TranslationEditPage {
 		$form = Html::rawElement( 'form', $formParams,
 			implode( "\n", $hidden ) . "\n" .
 			$helpers->getBoxes() . "\n" .
-			"$textarea\n$summary$save$saveAndNext$skip"
+			"$textarea\n$summary$save$saveAndNext$skip$history"
 		);
 
 		echo $form;

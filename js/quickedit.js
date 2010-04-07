@@ -49,6 +49,10 @@ function trlOpenJsEdit( page ) {
 			return false;
 		});
 
+		form.find( ".mw-translate-history" ).click( function() {
+			window.open( wgServer + wgScript + "?action=history&title=" + form.find( "input[name=title]" ).val() );
+			return false;
+		});
 
 		form.find( ".mw-translate-edit-area" ).focus();
 
