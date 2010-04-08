@@ -1077,6 +1077,9 @@ aliasfile = SpecialForm/SpecialForm.alias.php
 ignored = formtemplatepattern
 descmsg = form-desc
 
+Sphinx Search 
+aliasfile = SphinxSearch/SphinxSearch.alias.php
+
 Stale Pages
 aliasfile = StalePages/StalePages.alias.php
 
