@@ -1290,6 +1290,11 @@ id = ext-ui-prefswitchlink
 descmsg = prefswitch-desc
 file = UsabilityInitiative/PrefSwitch/PrefSwitchLink.i18n.php
 
+Usability Initiative - 	Update My Prefs
+file = UsabilityInitiative/UpdateMyPrefs/UpdateMyPrefs.i18n.php
+id = ext-ui-updatemyprefs
+descmsg = updatemyprefs-desc
+
 Usability Initiative - User Daily Contribs
 file = UsabilityInitiative/UserDailyContribs/UserDailyContribs.i18n.php
 id = ext-ui-userdailycontribs
