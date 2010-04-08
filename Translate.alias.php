@@ -35,15 +35,15 @@ $aliases['af'] = array(
 
 /** Arabic (العربية) */
 $aliases['ar'] = array(
-	'Translate'            => array( 'ترجمة' ),
-	'Magic'                => array( 'ترجمة_متقدمة', 'ماجيك' ),
-	'TranslationChanges'   => array( 'تغييرات_الترجمة' ),
-	'TranslationStats'     => array( 'إحصاءات_الترجمة' ),
-	'Translations'         => array( 'ترجمات' ),
-	'LanguageStats'        => array( 'إحصاءات_اللغات' ),
-	'PageTranslation'      => array( 'ترجمة_صفحة' ),
-	'ImportTranslations'   => array( 'استيراد_الترجمات' ),
-	'FirstSteps'           => array( 'الخطوات الأولى' ),
+	'Translate' => array( 'ترجمة' ),
+	'Magic' => array( 'ترجمة_متقدمة', 'ماجيك' ),
+	'TranslationChanges' => array( 'تغييرات_الترجمة' ),
+	'TranslationStats' => array( 'إحصاءات_الترجمة' ),
+	'Translations' => array( 'ترجمات' ),
+	'LanguageStats' => array( 'إحصاءات_اللغات' ),
+	'PageTranslation' => array( 'ترجمة_صفحة' ),
+	'ImportTranslations' => array( 'استيراد_الترجمات' ),
+	'FirstSteps' => array( 'الخطوات الأولى' ),
 );
 
 /** Egyptian Spoken Arabic (مصرى) */
