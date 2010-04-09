@@ -2072,6 +2072,9 @@ $messages['bg'] = array(
 	'translate-language' => 'Език',
 	'translate-total' => 'Съобщения',
 	'translate-save' => 'Съхраняване ($1)',
+	'translate-manage-action-import' => 'Внасяне',
+	'translate-manage-submit' => 'Изпълняване',
+	'translate-manage-subtitle' => 'Управление',
 	'translate-gs-total' => 'Общо',
 );
 
@@ -2362,6 +2365,7 @@ Munudoù : $1',
 	'translate-js-nonext' => 'Ar gemenadenn ziwezhañ er bajenn-mañ e oa.',
 	'translate-js-skip' => "Mont d'an hini da-heul",
 	'translate-js-save-failed' => "Ur gudenn 'zo bet gant an enrollañ. Mar plij kemennit ar gudenn-mañ.",
+	'translate-js-history' => 'Istor an droidigezh',
 	'translate-gs-pos' => "Lec'h.",
 	'translate-gs-code' => 'Kod',
 	'translate-gs-continent' => 'Kevandir',
@@ -11440,8 +11444,6 @@ Standardlisten over språk avhenger av språket ditt.',
 	'translate-tag-fuzzy-comment' => 'Definisjon endret av [[User:$1|$1]] i revisjon $2.',
 	'translate-tag-fuzzy-reason' => 'Definisjon endret av brukeren $1 med kommentaren «$3» i $2.',
 	'translate-sidebar-alltrans' => 'På andre språk',
-	'translate-tag-noedit' => 'Denne siden er en automatisk oppdatert oversettelse.
-Du kan [$1 redigere kildesiden] eller [$2 oppdatere oversettelsen].',
 	'translations' => 'Alle oversettelser',
 	'translations-summary' => 'Skriv et meldingsnavn nedenfor for å vise alle tilgjengelige oversettelser.',
 	'translate-translations-no-message' => '«$1» er ikke en melding som kan oversettes',
@@ -11544,6 +11546,7 @@ Detaljer: $1',
 	'translate-js-nonext' => 'Dette var den siste meldingen på denne siden.',
 	'translate-js-skip' => 'Hopp over til neste',
 	'translate-js-save-failed' => 'Lagring mislyktes. Rapporter denne feilen.',
+	'translate-js-history' => 'Oversettelseshistorikk',
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Kode',
 	'translate-gs-continent' => 'Kontinent',
@@ -15890,6 +15893,7 @@ $messages['ug-latn'] = array(
  * @author NickK
  * @author Prima klasy4na
  * @author Test
+ * @author Тест
  */
 $messages['uk'] = array(
 	'translate' => 'Переклад',
@@ -15946,7 +15950,7 @@ $messages['uk'] = array(
 	'translate-edit-goto-no-next' => 'Немає наступного повідомлення',
 	'translate-edit-goto-prev' => 'Редагувати попереднє повідомлення',
 	'translate-edit-goto-next' => 'Редагувати наступне повідомлення',
-	'translate-edit-goto-list' => 'Назад до списку',
+	'translate-edit-goto-list' => 'Список повідомлень',
 	'translate-magic-pagename' => 'Поглиблений переклад MediaWiki',
 	'translate-magic-help' => "Ви можете перекладати псевдоніми спеціальних сторінок, магічні слова, і простори назв.
 
