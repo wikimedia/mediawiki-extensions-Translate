@@ -177,7 +177,7 @@ class TranslationHelpers {
 
 				$source_page = Title::newFromText( $s['context'] . "/$code" );
 				if ( $source_page ) {
-					$legend[$accuracy][] = self::editLink( $source_page, '•' );
+					$legend[$accuracy][] = self::ajaxEditLink( $source_page, '•' );
 				}
 
 				$text = $this->suggestionField( $s['target'] );
@@ -423,7 +423,7 @@ class TranslationHelpers {
 
 			$target = Title::makeTitleSafe( $ns, "$page/$fbcode" );
 			if ( $target ) {
-				$label = self::editLink( $target, htmlspecialchars( $label ) );
+				$label = self::ajaxEditLink( $target, htmlspecialchars( $label ) );
 			}
 
 			$text = TranslateUtils::convertWhiteSpaceToHTML( $text );
@@ -452,7 +452,7 @@ class TranslationHelpers {
 		$ns = $this->title->getNamespace();
 
 		$title = Title::makeTitle( $ns, $page . '/' . $wgTranslateDocumentationLanguageCode );
-		$edit = self::editLink( $title, wfMsgHtml( 'translate-edit-contribute' ) );
+		$edit = self::ajaxEditLink( $title, wfMsgHtml( 'translate-edit-contribute' ) );
 		$info = TranslateUtils::getMessageContent( $page, $wgTranslateDocumentationLanguageCode, $ns );
 
 		$class = 'mw-sp-translate-edit-info';
@@ -611,16 +611,23 @@ class TranslationHelpers {
 		return $this->adder( $id ) . "\n" . Html::rawElement( 'span', array( 'id' => $id ), $contents );
 	}
 
-	public static function editLink( $target, $text, $params = array() ) {
+	/**
+	 * Ajax-enabled message editing link.
+	 * @param $target Title: Title of the target message.
+	 * @param $text String: Link text for Linker::link()
+	 * @return link
+	 */
+	public static function ajaxEditLink( $target, $text ) {
 		global $wgUser;
 
 		list( $page, ) = self::figureMessage( $target );
 		$group = TranslateUtils::messageKeyToGroup( $target->getNamespace(), $page );
-		if ( $group ) $group = MessageGroups::getGroup( $group );
-		$params += array( 'action' => 'edit' );
-		if ( $group ) $params += array( 'loadgroup' => $group->getId() );
 
-		$jsEdit = TranslationEditPage::jsEdit( $target );
+		$params = array();
+		$params['action'] = 'edit';
+		$params['loadgroup'] = $group;
+
+		$jsEdit = TranslationEditPage::jsEdit( $target, $group );
 
 		return $wgUser->getSkin()->link( $target, $text, $jsEdit, $params );
 	}

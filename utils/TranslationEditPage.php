@@ -111,14 +111,15 @@ class TranslationEditPage {
 		return $data;
 	}
 
-	public static function jsEdit( Title $title ) {
+	public static function jsEdit( Title $title, $group = "" ) {
 		global $wgUser;
 
 		if ( !$wgUser->isAllowed( 'translate' ) ) return array();
 		if ( !$wgUser->getOption( 'translate-jsedit' ) ) return array();
 
 		$jsTitle = Xml::escapeJsString( $title->getPrefixedDbKey() );
-		return array( 'onclick' => "return trlOpenJsEdit( \"$jsTitle\" );" );
+		$jsGroup = Xml::escapeJsString( $group );
+		return array( 'onclick' => "return trlOpenJsEdit( \"$jsTitle\", \"$jsGroup\" );" );
 	}
 
 }

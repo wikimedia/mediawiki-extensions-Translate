@@ -68,13 +68,8 @@ class MessageTable {
 
 		// Helper stuff for JS
 		$trlKeys = array_values( $this->collection->keys() );
-		$editQuery = wfArrayToCgi( array(
-			'title' => SpecialPage::getTitleFor( 'Translate', 'editpage' )->getPrefixedText(),
-			'loadgroup' => $this->group->getId(),
-		));
 
 		$vars = array(
-			'trlEditUrl' => "$wgScript?$editQuery&page=$1",
 			'trlKeys' => $trlKeys,
 			'trlMsgNoNext' => wfMsg( 'translate-js-nonext' ),
 			'trlMsgSaveFailed' => wfMsg( 'translate-js-save-failed' ),

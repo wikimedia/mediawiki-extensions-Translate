@@ -21,8 +21,9 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-function trlOpenJsEdit( page ) {
-	var url = trlEditUrl.replace( "$1", page );
+function trlOpenJsEdit( page, group ) {
+	var url = wgScript + "?title=Special:Translate/editpage&page=$1&loadgroup=$2";
+	url = url.replace( "$1", page ).replace( "$2", group );
 	var id = "jsedit" +  page.replace( /[^a-zA-Z0-9_]/g, '_' );
 
 	var dialog = jQuery("#"+id);
