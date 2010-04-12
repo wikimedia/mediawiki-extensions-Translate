@@ -10500,6 +10500,9 @@ $messages['ml'] = array(
 	'translationchanges-export' => 'എക്സ്പോർട്ട്',
 	'translationchanges-change' => '$1: $2 ചെയ്തത് $3',
 	'translate-checks-plural' => 'നിർ‌വചനം <nowiki>{{PLURAL:}}</nowiki> ഉപയോഗിക്കുന്നു, പക്ഷെ പരിഭാഷ ഉപയോഗിക്കുന്നില്ല.',
+	'translate-pref-nonewsletter' => 'ഇമെയിൽ വാർത്താപത്രികകൾ എനിക്ക് അയയ്ക്കേണ്ടതില്ല',
+	'translate-group-desc-mediawikicore' => 'ഇപ്പോഴത്തെ മീഡിയവിക്കി ആൽഫാ പതിപ്പ് ({{CURRENTVERSION}}) ഉപയോഗിക്കുന്ന എല്ലാ സന്ദേശങ്ങളുമുൾപ്പെടുന്ന ഗണം',
+	'translate-group-desc-wikimediaextensions' => '[http://wikimedia.org/ വിക്കിമീഡിയ ഫൗണ്ടേഷൻ] ഉപയോഗിക്കുന്ന മീഡിയവിക്കി അനുബന്ധങ്ങളിലെ എല്ലാ സന്ദേശങ്ങളുമുൾപ്പെടുന്ന ഗണം',
 );
 
 /** Mongolian (Монгол)
