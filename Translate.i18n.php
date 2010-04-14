@@ -3124,12 +3124,13 @@ $messages['cy'] = array(
  * @author Byrial
  * @author Jon Harald Søby
  * @author MGA73
+ * @author Nghtwlkr
  */
 $messages['da'] = array(
 	'translate' => 'Oversæt',
 	'translate-desc' => '[[Special:Translate|Specialside]] til oversættelse af MediaWiki og andet',
 	'translate-edit' => 'redigér',
-	'translate-talk' => 'dsikussion',
+	'translate-talk' => 'diskussion',
 	'translate-history' => 'historik',
 	'translate-task-view' => 'Se alle beskeder fra',
 	'translate-task-untranslated' => 'Se alle uoversatte beskeder fra',
@@ -3270,8 +3271,6 @@ Alle værdier har øvre og nedre grænser.',
 	'translate-tag-fuzzy-comment' => 'Definitionen er ændret af [[User:$1|$1]] i version $2.',
 	'translate-tag-fuzzy-reason' => 'Definitionen er ændret af "$1" med kommentaren "$3" i $2.',
 	'translate-sidebar-alltrans' => 'På andre sprog',
-	'translate-tag-noedit' => 'Denne side er en automatisk opdateret oversat side.
-Du kan [$1 redigere kildesiden] eller [$2 opdatere oversættelsen].',
 	'translations' => 'Alle oversættelser',
 	'translations-summary' => 'Skriv navnet på en besked nedenfor for at vise alle tilgængelige oversættelser.',
 	'translate-translations-no-message' => '"$1" er ikke en besked som kan oversættes.',
@@ -11308,25 +11307,26 @@ $1',
  */
 $messages['no'] = array(
 	'translate' => 'Oversett',
-	'translate-desc' => '[[Special:Translate|Spesialside]] for oversettelse av MediaWiki o.a.',
+	'translate-desc' => '[[Special:Translate|Spesialside]] for oversettelse av MediaWiki og annet',
 	'translate-edit' => 'rediger',
 	'translate-talk' => 'diskusjon',
 	'translate-history' => 'historikk',
-	'translate-task-view' => 'se alle beskjeder',
-	'translate-task-untranslated' => 'se alle uoversatte beskjeder',
-	'translate-task-optional' => 'se valgfrie beskjeder',
+	'translate-task-view' => 'Vis alle meldinger fra',
+	'translate-task-untranslated' => 'Vis alle uoversatte meldinger fra',
+	'translate-task-optional' => 'Vis valgfrie beskjeder fra',
 	'translate-task-untranslatedoptional' => 'Vis uoversatte valgfrie meldinger fra',
-	'translate-task-problematic' => 'se beskjeder som har problemer',
-	'translate-task-review' => 'gå gjennom endringer',
-	'translate-task-reviewall' => 'gå gjennom oversettelser',
-	'translate-task-export' => 'eksportere oversettelser',
-	'translate-task-export-to-file' => 'eksportere oversettelser til fil',
-	'translate-task-export-as-po' => 'eksportere oversettelser i Gettext-format',
-	'translate-task-export-to-xliff' => 'eksportere oversettelser i Xliff-format',
-	'translate-page-no-such-language' => 'Ugyldig språkkode angitt.',
-	'translate-page-no-such-task' => 'Ugyldig oppgave angitt.',
-	'translate-page-no-such-group' => 'Ugyldig gruppe angitt.',
-	'translate-page-disabled' => "Oversettelser til dette språket i denne gruppen er blitt slått av. Årsak:
+	'translate-task-problematic' => 'Vis beskjeder som har problemer',
+	'translate-task-review' => 'Revider endringer av',
+	'translate-task-reviewall' => 'Revider alle oversatte meldinger i',
+	'translate-task-export' => 'Eksporter oversettelser fra',
+	'translate-task-export-to-file' => 'Eksporter oversettelser til fil fra',
+	'translate-task-export-as-po' => 'Eksporter oversettelser i Gettext-format',
+	'translate-task-export-to-xliff' => 'Eksporter oversettelser i Xliff-format',
+	'translate-page-no-such-language' => 'Oppgitt språk var ugyldig.',
+	'translate-page-no-such-task' => 'Oppgitt oppgave var ugyldig.',
+	'translate-page-no-such-group' => 'Oppgitt gruppe var ugyldig.',
+	'translate-page-disabled' => "Oversettelser til dette språket i denne gruppen har blitt deaktivert.
+Årsak:
 
 ''$1''",
 	'translate-page-settings-legend' => 'Innstillinger',
@@ -11334,44 +11334,45 @@ $messages['no'] = array(
 	'translate-page-group' => 'Gruppe',
 	'translate-page-language' => 'Språk',
 	'translate-page-limit' => 'Grense',
-	'translate-page-limit-option' => '$1 {{PLURAL:$1|beskjed|beskjeder}} per side',
+	'translate-page-limit-option' => '$1 {{PLURAL:$1|melding|meldinger}} per side',
 	'translate-submit' => 'Hent',
 	'translate-page-navigation-legend' => 'Navigasjon',
-	'translate-page-showing' => 'Viser beskjeder fra $1 til $2 av $3.',
-	'translate-page-showing-all' => 'Viser {{PLURAL:$1|én beskjed|$1 beskjeder}}.',
-	'translate-page-showing-none' => 'Ingen beskjeder å vise.',
+	'translate-page-showing' => 'Viser meldinger fra $1 til $2 av $3.',
+	'translate-page-showing-all' => 'Viser {{PLURAL:$1|én melding|$1 meldinger}}.',
+	'translate-page-showing-none' => 'Ingen meldinger å vise.',
 	'translate-next' => 'Neste side',
 	'translate-prev' => 'Forrige side',
 	'translate-page-description-legend' => 'Informasjon om gruppen',
 	'translate-page-edit' => 'rediger',
-	'translate-ext-url' => '<hr />Nettside: $1',
+	'translate-ext-url' => '<hr />Nettsted: $1',
 	'translate-optional' => '(valgfri)',
 	'translate-ignored' => '(ignorert)',
-	'translate-edit-definition' => 'Beskjeden som skal oversettes',
+	'translate-edit-definition' => 'Meldingsdefinisjon',
 	'translate-edit-contribute' => 'bidra',
-	'translate-edit-no-information' => "''Denne beskjeden har ikke dokumentasjon. Om du vet hvor eller hvordan denne beskjeden brukes, kan du hjelpe andre oversettere ved å legge inn dokumentasjon til denne beskjeden.''",
+	'translate-edit-no-information' => "''Denne meldingen har ingen dokumentasjon.
+Om du vet hvor eller hvordan denne meldingen brukes kan du hjelpe andre oversettere ved å legge inn dokumentasjon på denne meldingen.''",
 	'translate-edit-information' => 'Informasjon om meldingen «$2» ($1)',
-	'translate-edit-in-other-languages' => 'Beskjeden «$1» på andre språk',
+	'translate-edit-in-other-languages' => 'Meldingen «$1» på andre språk',
 	'translate-edit-committed' => 'Nåværende oversettelse i programvaren',
 	'translate-edit-warnings' => 'Advarsler om ufullstendige oversettelser',
 	'translate-edit-tmsugs' => 'Forslag fra oversettelsesminnet',
-	'translate-edit-tmmatch' => '$1% overensstemmelse',
-	'translate-edit-goto-no-prev' => 'Ingen beskjeder før denne',
-	'translate-edit-goto-no-next' => 'Ingen beskjeder etter denne',
-	'translate-edit-goto-prev' => 'Rediger forrige beskjed',
-	'translate-edit-goto-next' => 'Rediger neste beskjed',
+	'translate-edit-tmmatch' => 'samsvarer $1%',
+	'translate-edit-goto-no-prev' => 'Ingen foregående melding',
+	'translate-edit-goto-no-next' => 'Ingen neste melding',
+	'translate-edit-goto-prev' => 'Rediger forrige melding',
+	'translate-edit-goto-next' => 'Rediger neste melding',
 	'translate-edit-goto-list' => 'Tilbake til listen',
 	'translate-magic-pagename' => 'Utvidet MediaWiki-oversettelse',
-	'translate-magic-help' => 'Du kan oversette spesialsidenavn, magiske ord og navneromnavn.
+	'translate-magic-help' => 'Du kan oversette spesialsidealias, magiske ord og navneromnavn.
 
-Spesialsidenavn og magiske ord kan ha flere oversettelser.
-Oversettelsene er skilt med komma (,).
-Navnerom kan ha kun én oversettelse.
+Spesialsidealias og magiske ord kan ha flere oversettelser.
+Oversettelsene er adskilt med komma (,).
+Navnerom kan kun ha én oversettelse.
 
-I navneromoversettelsene er <tt>$1 talk</tt> spesiell. <tt>$1</tt> erstattes med sidens navn (for eksempel <tt>{{ns:project_talk}}</tt>).
-Om det ikke er mulig å få til et gyldig uttrykk på ditt språk uten å endre sidenavnet, vennligst kontakt en utvikler.
+I navneromoversettelsene er <tt>$1 talk</tt> spesiell. <tt>$1</tt> erstattes med nettstedsnavnet (for eksempel <tt>{{ns:project_talk}}</tt>).
+Om det ikke er mulig å få til et gyldig uttrykk på ditt språk uten å endre nettstedsnavnet, vennligst kontakt en utvikler.
 
-Du må være i oversettergruppa for å lagre endringer.
+Du må være i oversettergruppen for å lagre endringer.
 Endringer lagres ikke før du klikker på lagre-knappen nedenfor.',
 	'translate-magic-module' => 'Modul:',
 	'translate-magic-submit' => 'Hent',
@@ -11382,75 +11383,76 @@ Endringer lagres ikke før du klikker på lagre-knappen nedenfor.',
 	'translate-magic-cm-original' => 'Opprinnelig',
 	'translate-magic-cm-comment' => 'Kommentar:',
 	'translate-magic-cm-save' => 'Lagre',
-	'translate-magic-cm-updatedusing' => 'Oppdatert vha. [[Special:Magic]]',
+	'translate-magic-cm-updatedusing' => 'Oppdatert ved å bruke [[Special:Magic]]',
 	'translate-magic-cm-savefailed' => 'Lagring mislyktes',
-	'translate-magic-special' => 'Spesialsidenavn',
+	'translate-magic-special' => 'Spesialsidealias',
 	'translate-magic-words' => 'Magiske ord',
 	'translate-magic-namespace' => 'Navneromnavn',
-	'translate-magic-notsaved' => 'Redigeringen din ble ikke lagret!',
-	'translate-magic-errors' => 'Vennligst rett på følgende {{PLURAL:$1|feil|feil}} i oversettelsen:',
-	'translate-magic-saved' => 'Dine endringer ble lagret',
+	'translate-magic-notsaved' => 'Endringen din ble ikke lagret!',
+	'translate-magic-errors' => 'Rett på følgende {{PLURAL:$1|feil|feil}} i oversettelsen:',
+	'translate-magic-saved' => 'Dine endringer ble lagret.',
 	'translationchanges' => 'Oversettelsesendringer',
 	'translationchanges-export' => 'eksporter',
 	'translationchanges-change' => '$1: $2 av $3',
-	'translate-checks-parameters' => 'Følgende {{PLURAL:$2|parameter|parametere}} brukes ikke:
+	'translate-checks-parameters' => 'Følgende {{PLURAL:$2|parameter|parametre}} brukes ikke:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-parameters-unknown' => 'Følgende {{PLURAL:$2|parameter er ukjent|parametere er ukjente}}:
+	'translate-checks-parameters-unknown' => 'Følgende {{PLURAL:$2|parameter er ukjent|parametre er ukjente}}:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-balance' => '{{PLURAL:$2|Det|Det}} er et ujevnt antall parenteser:
+	'translate-checks-balance' => 'Det er et ujevnt antall {{PLURAL:$2|parenteser|paranteser}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => 'Følgende {{PLURAL:$2|lenke er problematisk|$2 lenker er problematiske}}:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links-missing' => 'Følgende {{PLURAL:$2|lenke|lenker}} mangler:
+	'translate-checks-links-missing' => 'Følgende {{PLURAL:$2|lenke|$2 lenker}} mangler:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-xhtml' => 'Erstatt følgende {{PLURAL:$2|tagg|tagger}} med de korrekte:
+	'translate-checks-xhtml' => 'Erstatt følgende {{PLURAL:$2|merke med den korrekte|merker med de korrekte}}:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-plural' => 'Definisjonen bruker <nowiki>{{PLURAL:}}</nowiki>, men oversettelsen gjør ikke det.',
-	'translate-checks-pagename' => 'Navnerom endret fra definisjonen',
+	'translate-checks-plural' => 'Definisjonen bruker <nowiki>{{PLURAL:}}</nowiki> men oversettelsen gjør ikke det.',
+	'translate-checks-pagename' => 'Navnerom forandret fra definisjonen',
 	'translate-checks-format' => 'Denne oversettelsen følger ikke definisjonen eller har ugyldig syntaks: $1',
 	'translate-checks-escape' => 'De følgende lekkasjene kan være tilfeldige: <strong>$1</strong>',
-	'translate-checks-fudforum-syntax' => 'Bruk <nowiki>$1</nowiki> istedetfor <nowiki>$2</nowiki> i dette prosjektet.',
-	'translate-pref-nonewsletter' => 'Ikke send meg nyhetsbrev',
+	'translate-checks-fudforum-syntax' => 'Bruk <nowiki>$1</nowiki> istedet for <nowiki>$2</nowiki> i dette prosjektet.',
+	'translate-pref-nonewsletter' => 'Ikke send meg nyhetsbrev på e-post',
 	'translate-pref-editassistlang' => 'Hjelpespråk:',
-	'prefs-translate' => 'Oversettelsesalternativer',
+	'prefs-translate' => 'Oversettelsesalternativ',
 	'translate-pref-editassistlang-help' => 'Kommaseparert liste over språkkoder.
-Oversettelsen av en beskjed i disse språkene blir vist mens du oversetter.
+Oversettelsen av en melding i disse språkene blir vist mens du oversetter.
 Standardlisten over språk avhenger av språket ditt.',
 	'translate-pref-editassistlang-bad' => 'Ugyldig språkkode i listen:
 <nowiki>$1</nowiki>.',
 	'translate-pref-jsedit' => 'Utvidet redigeringsvindu for oversettelser (JavaScript)',
-	'right-translate' => 'Redigere med oversettingsgrensesnittet',
+	'right-translate' => 'Rediger med oversettingsgrensesnittet',
 	'right-translate-manage' => 'Administrer oversettelsesgrupper',
 	'right-translate-import' => 'Importer frakoblede oversettelser',
 	'translate-rc-translation-filter' => 'Filtrer oversettelser:',
 	'translate-rc-translation-filter-no' => 'Ikke gjør noe',
 	'translate-rc-translation-filter-only' => 'Vis bare oversettelser',
 	'translate-rc-translation-filter-filter' => 'Filtrer bort oversettelser',
-	'translate-rc-translation-filter-site' => 'Kun endringer i {{SITENAME}}-beskjeder',
+	'translate-rc-translation-filter-site' => 'Kun endringer på nettstedsmeldinger',
 	'translationstats' => 'Oversettelsesstatistikk',
 	'translate-stats-edits' => 'Redigeringer',
 	'translate-stats-users' => 'Oversettere',
-	'translate-statsf-intro' => 'Du kan generere enkel statistikk med dette skjemaet. Alle verdiene har øvre og nedre grenser.',
+	'translate-statsf-intro' => 'Du kan generere enkel statistikk med dette skjemaet.
+Alle verdiene har øvre og nedre grenser.',
 	'translate-statsf-options' => 'Grafalternativer',
 	'translate-statsf-width' => 'Bredde i piksler:',
 	'translate-statsf-height' => 'Høyde i piksler:',
 	'translate-statsf-days' => 'Tidsperiode i dager:',
-	'translate-statsf-scale' => 'Kornethet:',
+	'translate-statsf-scale' => 'Detaljnivå:',
 	'translate-statsf-scale-days' => 'Dager',
 	'translate-statsf-scale-hours' => 'Timer',
 	'translate-statsf-count' => 'Mål:',
 	'translate-statsf-count-edits' => 'Antall redigeringer',
 	'translate-statsf-count-users' => 'Aktive oversettere',
-	'translate-statsf-language' => 'Liste over språkkoder adskilt med komma:',
-	'translate-statsf-group' => 'Liste over gruppekoder adskilt med komma:',
+	'translate-statsf-language' => 'Kommaseparert liste over språkkoder:',
+	'translate-statsf-group' => 'Kommaseparert liste over gruppekoder:',
 	'translate-statsf-submit' => 'Forhåndsvisning',
-	'translate-tag-category' => 'Oversettbare sider',
+	'translate-tag-category' => 'Sider som kan oversettes',
 	'translate-tag-page-desc' => 'Oversettelse av wikisiden [[:$1]].',
 	'translate-tag-fuzzy-comment' => 'Definisjon endret av [[User:$1|$1]] i revisjon $2.',
-	'translate-tag-fuzzy-reason' => 'Definisjon endret av brukeren $1 med kommentaren «$3» i $2.',
+	'translate-tag-fuzzy-reason' => 'Definisjon endret av «$1» med kommentaren «$3» i $2.',
 	'translate-sidebar-alltrans' => 'På andre språk',
 	'translations' => 'Alle oversettelser',
-	'translations-summary' => 'Skriv et meldingsnavn nedenfor for å vise alle tilgjengelige oversettelser.',
+	'translations-summary' => 'Skriv inn et meldingsnavn nedenfor for å vise alle tilgjengelige oversettelser.',
 	'translate-translations-no-message' => '«$1» er ikke en melding som kan oversettes',
 	'translate-translations-none' => 'Det finnes ingen oversettelser for «$1»',
 	'translate-translations-fieldset-title' => 'Melding',
@@ -11462,7 +11464,7 @@ Standardlisten over språk avhenger av språket ditt.',
 	'translate-language-code' => 'Språkkode',
 	'translate-language-code-field-name' => 'Språkkode:',
 	'translate-suppress-complete' => 'Skjul meldingsgrupper som er ferdig oversatt',
-	'translate-language' => 'Språk:',
+	'translate-language' => 'Språk',
 	'translate-total' => 'Meldinger',
 	'translate-untranslated' => 'Uoversatte',
 	'translate-percentage-complete' => 'Ferdigstilt',

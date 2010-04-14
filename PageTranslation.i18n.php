@@ -1964,7 +1964,8 @@ $messages['no'] = array(
 	'right-pagetranslation' => 'Merk versjoner av sider for oversettelse',
 	'tpt-desc' => 'Utvidelse for oversetting av innholdssider',
 	'tpt-section' => 'Oversettelsesenhet $1',
-	'tpt-section-new' => 'Ny oversettelsesenhet. Navn: $1',
+	'tpt-section-new' => 'Ny oversettelsesenhet.
+Navn: $1',
 	'tpt-section-deleted' => 'Oversettelsesenhet $1',
 	'tpt-template' => 'Sidemal',
 	'tpt-templatediff' => 'Sidemalen har blitt endret.',
@@ -1978,16 +1979,16 @@ $messages['no'] = array(
 	'tpt-oldrevision' => '$2 er ikke den siste versjonen av siden [[$1]].
 Kun siste versjoner kan bli markert for oversettelse.',
 	'tpt-notsuitable' => 'Side $1 er ikke egnet for oversettelse.
-Sjekk at siden er merket med <nowiki><translate></nowiki>-merke og har en gyldig syntaks.',
-	'tpt-saveok' => 'Siden [[$1]] har blitt markert for oversettelse med {{PLURAL:$2|én oversettelse|$2 oversettelser}}.
+Sjekk at siden har <nowiki><translate></nowiki>-merket og har en gyldig syntaks.',
+	'tpt-saveok' => 'Siden [[$1]] har blitt markert for oversettelse med {{PLURAL:$2|én oversettelsesenhet|$2 oversettelsesenheter}}.
 Den kan nå bli <span class="plainlinks">[$3 oversatt]</span>.',
-	'tpt-badsect' => '«$1» er ikke et gyldig navn for oversettelsen $2.',
-	'tpt-showpage-intro' => 'Under er nye, eksisterende og slettede seksjoner listet opp.
-Før denne versjonen merkes for oversettelse, sjekk at endringene i seksjonene er minimert for å unngå unødvendig arbeid for oversetterne.',
+	'tpt-badsect' => '«$1» er ikke et gyldig navn for oversettelsesenheten $2.',
+	'tpt-showpage-intro' => 'Nedenfor er nye, eksisterende og slettede avsnitt listet opp.
+Før denne versjonen merkes for oversettelse, sjekk at endringene i avsnittene er minimert for å unngå unødvendig arbeid for oversetterne.',
 	'tpt-mark-summary' => 'Markerte denne versjonen for oversettelse',
 	'tpt-edit-failed' => 'Kunne ikke oppdatere siden: $1',
 	'tpt-already-marked' => 'Den siste versjonen av denne siden har allerede blitt markert for oversettelse.',
-	'tpt-list-nopages' => 'Ingen sider er marker for oversettelse, eller er klare for å bli markert for oversettelse.',
+	'tpt-list-nopages' => 'Ingen sider er markert for oversettelse, eller er klare for å bli markert for oversettelse.',
 	'tpt-old-pages' => 'En versjon av {{PLURAL:$1|denne siden|disse sidene}} har blitt markert for oversettelse.',
 	'tpt-new-pages' => '{{PLURAL:$1|Denne siden|Disse sidene}} inneholder tekst med oversettelsesmerker, men ingen versjon av {{PLURAL:$1|denne siden|disse sidene}} er for tiden markert for oversettelse.',
 	'tpt-rev-latest' => 'siste versjon',
@@ -2004,9 +2005,9 @@ Før denne versjonen merkes for oversettelse, sjekk at endringene i seksjonene e
 	'tpt-target-page' => 'Denne siden kan ikke oppdateres manuelt.
 Denne siden er en oversettelse av siden [[$1]] og oversettelsen kan bli oppdatert ved å bruke [$2 oversettelsesverktøyet].',
 	'tpt-unknown-page' => 'Dette navnerommet er reservert for oversettelser av innholdssider.
-Denne siden som du prøver å redigere virker ikke å samsvare med noen av sidene som er markert for oversettelse.',
-	'tpt-install' => 'Kjør php maintenance/update.php eller webinnstallering for å muliggjøre sideoversettelsesegenskapen.',
-	'tpt-render-summary' => 'Oppdaterer for å samsvare ny versjon av kildesiden',
+Denne siden som du prøver å redigere ser ikke ut til å samsvare med noen av sidene som er markert for oversettelse.',
+	'tpt-install' => 'Kjør php maintenance/update.php eller nettinnstallering for å muliggjøre sideoversettelsesfunksjonen.',
+	'tpt-render-summary' => 'Oppdaterer for å svare til ny versjon av kildesiden',
 	'tpt-download-page' => 'Eksporter side med oversettelser',
 );
 
