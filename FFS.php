@@ -298,6 +298,9 @@ class JavaScriptFFS extends SimpleFFS {
 	}
 
 	public function readFromVariable( $data ) {
+		// Add trailing comma to last key pair.
+		$data = str_replace( "\"\n};", "\",\n};", $data );
+
 		// Just get relevant data.
 		$dataStart = strpos( $data, '{' );
 		$dataEnd   = strrpos( $data, '}' );
@@ -330,12 +333,7 @@ class JavaScriptFFS extends SimpleFFS {
 			// Remove quotation marks and syntax.
 			$key = substr( $key, 1 );
 			$value = substr( $value, 1, - 1 );
-			$messages[ $key ] = $value;
-
-			// Hack.
-			if ( $key === 'filterEvaluateNotImplemented' ) {
-				$messages[ $key ] = substr( $value, 0, - 2 );
-			}
+			$messages[ $key ] = self::unescapeJsString( $value );
 		}
 
 		// Remove extraneous key that is sometimes present.
