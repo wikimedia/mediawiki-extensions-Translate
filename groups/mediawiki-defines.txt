@@ -785,6 +785,8 @@ Patroller
 aliasfile = Patroller/Patroller.alias.php
 descmsg = patrol-desc
 
+People Categories
+
 Pdf Handler
 descmsg = pdf-desc
 
