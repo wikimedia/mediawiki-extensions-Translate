@@ -1075,7 +1075,7 @@ aliasfile = SpecialForm/SpecialForm.alias.php
 ignored = formtemplatepattern
 descmsg = form-desc
 
-Sphinx Search 
+Sphinx Search
 aliasfile = SphinxSearch/SphinxSearch.alias.php
 
 Stale Pages
@@ -1085,7 +1085,7 @@ Stalker Log
 
 Stock Charts
 
-# Commented out by JeroenDeDauw. Work in progress. Will let you know when to enable. 
+# Commented out by JeroenDeDauw. Work in progress. Will let you know when to enable.
 # Storyboard
 # aliasfile = Storyboard/Storyboard.alias.php
 
