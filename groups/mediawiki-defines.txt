@@ -332,8 +332,7 @@ Duplicator
 Dynamic Sidebar
 
 Edit Count
-aliasfile = Editcount/SpecialEditcount.alias.php
-file = Editcount/SpecialEditcount.i18n.php
+aliasfile = Editcount/Editcount.alias.php
 
 Edit Messages
 
