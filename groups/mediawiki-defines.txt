@@ -355,8 +355,7 @@ aliasfile = EmergencyDeSysop/EmergencyDeSysop.alias.php
 Error Handler
 
 Eval
-file = Eval/SpecialEval.i18n.php
-aliasfile = Eval/SpecialEval.alias.php
+aliasfile = Eval/Eval.alias.php
 
 Expand Templates
 aliasfile = ExpandTemplates/ExpandTemplates.alias.php
