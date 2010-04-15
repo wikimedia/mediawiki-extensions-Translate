@@ -157,7 +157,7 @@ descmsg = cite_article_desc
 ignored = cite_text
 
 CLDR
-file = cldr/LanguageNames.i18n.php
+file = cldr/cldr.i18n.php
 
 Clean Changes
 
