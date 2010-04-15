@@ -32,8 +32,7 @@ Anti Spoof
 ignored = antispoof-conflict-item
 
 APC
-file = APC/ViewAPC.i18n.php
-aliasfile = APC/ViewAPC.alias.php
+aliasfile = APC/APC.alias.php
 descmsg = viewapc-desc
 
 Api SVG Proxy
