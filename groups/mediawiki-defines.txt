@@ -11,7 +11,6 @@ Admin Links
 aliasfile = AdminLinks/AdminLinks.alias.php
 
 Advanced Random
-file = AdvancedRandom/SpecialAdvancedRandom.i18n.php
 aliasfile = AdvancedRandom/AdvancedRandom.alias.php
 
 Ajax Login
