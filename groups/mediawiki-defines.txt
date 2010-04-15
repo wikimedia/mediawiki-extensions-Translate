@@ -265,7 +265,7 @@ aliasfile = CountEdits/CountEdits.alias.php
 Create Box
 
 Cross Namespace Links
-aliasfile = CrossNamespaceLinks/SpecialCrossNamespaceLinks.alias.php
+aliasfile = CrossNamespaceLinks/CrossNamespaceLinks.alias.php
 
 Crosswiki Block
 file = Crosswiki/Block/CrosswikiBlock.i18n.php
