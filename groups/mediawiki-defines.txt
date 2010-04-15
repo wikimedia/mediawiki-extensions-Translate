@@ -266,7 +266,6 @@ Create Box
 
 Cross Namespace Links
 aliasfile = CrossNamespaceLinks/SpecialCrossNamespaceLinks.alias.php
-file = CrossNamespaceLinks/SpecialCrossNamespaceLinks.i18n.php
 
 Crosswiki Block
 file = Crosswiki/Block/CrosswikiBlock.i18n.php
