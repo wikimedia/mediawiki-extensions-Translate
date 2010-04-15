@@ -2423,6 +2423,14 @@ $messages['ru'] = array(
 	'tpt-download-page' => 'Экспортировать страницу с переводами',
 );
 
+/** Rusyn (русиньскый язык)
+ * @author Gazeb
+ */
+$messages['rue'] = array(
+	'pagetranslation' => 'Переклад сторінок',
+	'tpt-section' => 'Блок перекладу $1',
+);
+
 /** Yakut (Саха тыла)
  * @author HalanTul
  */
