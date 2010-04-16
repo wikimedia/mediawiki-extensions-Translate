@@ -3312,6 +3312,7 @@ Du opfordres til at gennemse beskeder gennem [[Special:Translate|{{int:translate
  * @author Raimond Spekking
  * @author Sebastian Wallroth
  * @author Tbleher
+ * @author The Evil IP address
  * @author Umherirrender
  */
 $messages['de'] = array(
@@ -3420,7 +3421,7 @@ Die Standardliste ist abhängig von der Sprache der Benutzeroberfläche.',
 	'translate-pref-editassistlang-bad' => 'Ungültiger Sprachcode in der Liste:
 <nowiki>$1</nowiki>.',
 	'translate-pref-jsedit' => 'Erweiterter Übersetzungseditor (JavaScript)',
-	'right-translate' => 'Bearbeitungen mithilfe der Übersetzen-Oberfläche',
+	'right-translate' => 'Bearbeitungen mithilfe der Übersetzungsoberfläche',
 	'right-translate-manage' => 'Übersetzungsgruppen verwalten',
 	'right-translate-import' => 'Offlineübersetzungen importieren',
 	'translate-rc-translation-filter' => 'Übersetzungen filtern:',
@@ -3754,8 +3755,6 @@ Standardna lisćina rěcow wótwisujo wót swójeje rěcy.',
 	'translate-tag-fuzzy-comment' => 'Definicija wót [[User:$1|$1]] we wersiji $2 změnjona.',
 	'translate-tag-fuzzy-reason' => 'Definicija wót "$1" z komentarom "$3" w $2 změnjona.',
 	'translate-sidebar-alltrans' => 'W drugich rěcach',
-	'translate-tag-noedit' => 'Toś ten bok jo awtomatiski zaktualizěrowany pśełožkowy bok.
-Móžoš [$1 žrědłowy bok wobźěłaś] abo [$2 pśełožk aktualizěrowaś].',
 	'translations' => 'Wšykne pśełožki',
 	'translations-summary' => 'Zapódaj dołojce zdźěleńske mě, aby wšykne k dispozciji stojece pśełožki pokazał.',
 	'translate-translations-no-message' => '"$1" njejo zdźělenje, kótarež dajo se pśełožowaś.',
@@ -3859,6 +3858,7 @@ Drobnostki: $1',
 	'translate-js-nonext' => 'To jo było slědna powěźeńka na tos tom boku.',
 	'translate-js-skip' => 'K pśiducej powěźeńce skócyś',
 	'translate-js-save-failed' => 'Składowanje jo se njeraźiło. Pšosym daj toś tu zmólku k wěsći.',
+	'translate-js-history' => 'Pśełožowańska historija',
 	'translate-gs-pos' => 'Poz.',
 	'translate-gs-code' => 'Kod',
 	'translate-gs-continent' => 'Kontinent',
