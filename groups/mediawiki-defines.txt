@@ -532,8 +532,7 @@ Import Free Images
 aliasfile = ImportFreeImages/ImportFreeImages.alias.php
 
 Import Users
-file = ImportUsers/SpecialImportUsers.i18n.php
-aliasfile = ImportUsers/SpecialImportUsers.alias.php
+aliasfile = ImportUsers/ImportUsers.alias.php
 
 IM Status
 
