@@ -3304,6 +3304,7 @@ Du opfordres til at gennemse beskeder gennem [[Special:Translate|{{int:translate
 /** German (Deutsch)
  * @author Als-Holder
  * @author Imre
+ * @author Kghbln
  * @author Lukas9950
  * @author Lyzzy
  * @author MichaelFrey
@@ -3556,6 +3557,7 @@ Details: $1',
 	'translate-js-nonext' => 'Dies war die letzte Systemnachricht dieser Seite.',
 	'translate-js-skip' => 'Weiter zur Nächsten',
 	'translate-js-save-failed' => 'Speichern ist fehlgeschlagen. Bitte melde diesen Fehler.',
+	'translate-js-history' => 'Übersetzungsgeschichte',
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Code',
 	'translate-gs-continent' => 'Kontinent',
@@ -8118,6 +8120,7 @@ Ef þú veist hvar eða hvernig meldingin er notuð getur þú hjálpað öðrum
 
 /** Italian (Italiano)
  * @author BrokenArrow
+ * @author Civvì
  * @author Darth Kule
  * @author McDutchie
  * @author Melos
@@ -8258,8 +8261,6 @@ L'elenco predefinito (default) delle lingue dipende dalla propria lingua.",
 	'translate-tag-fuzzy-comment' => 'Definizione cambiata da [[User:$1|$1]] nella revisione $2.',
 	'translate-tag-fuzzy-reason' => 'Definizione cambiata da "$1" con commento "$3" in $2.',
 	'translate-sidebar-alltrans' => 'In altre lingue',
-	'translate-tag-noedit' => 'Questa pagina è una pagina di traduzione aggiornata automaticamente.
-Puoi [$1 modificare la pagina sorgente] o [$2 aggiornare la traduzione].',
 	'translations' => 'Tutte le traduzioni',
 	'translations-summary' => 'Inserire di seguito il nome di un messaggio per mostrare tutte le traduzioni presenti.',
 	'translate-translations-no-message' => '"$1" non è un messaggio traducibile',
@@ -8296,6 +8297,14 @@ Si consiglia di ricontrollare i messaggi attraverso [[Special:Translate|{{int:tr
 	'translate-group-desc-wikitravelextensions' => 'Meta gruppo di messaggi contenente tutti i messaggi per le estensioni di MediaWiki supportate utilizzate da [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Meta gruppo di messaggi contenente tutti i messaggi delle estensioni relative a [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Meta gruppo di messaggi contenente tutti i messaggi delle estensioni relative alla [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
+	'translate-import-err-ul-failed' => 'Il caricamento del file non è riuscito',
+	'translate-import-err-invalid-title' => 'Il nome del file <nowiki>$1</nowiki> non è valido.',
+	'translate-import-err-no-such-file' => 'Il file <nowiki>$1</nowiki> non esiste o non è stato caricato a livello locale.',
+	'translate-js-next' => 'Salva e passa al successivo',
+	'translate-js-nonext' => "Questo era l'ultimo messaggio in questa pagina.",
+	'translate-js-skip' => 'Passa al successivo',
+	'translate-js-save-failed' => "Salvataggio non riuscito. Si prega di segnalare l'errore.",
+	'translate-gs-continent' => 'Continente',
 );
 
 /** Japanese (日本語)
@@ -8601,7 +8610,7 @@ $messages['jv'] = array(
 	'translate-edit-goto-no-next' => 'Ora ana pesen/warta sabanjuré',
 	'translate-edit-goto-prev' => 'Sunting pesen/warta sadurungé',
 	'translate-edit-goto-next' => 'Sunting pesen/warta sabanjuré',
-	'translate-edit-goto-list' => 'Bali menyang dhaptar',
+	'translate-edit-goto-list' => 'Bali menyang pratélan',
 	'translate-magic-pagename' => 'Pangambanan pertalan MediaWiki',
 	'translate-magic-help' => 'Panjenengan bisa nerjemahaké alias kanggo kaca istiméwa, tembung magis, lan jeneng bilik-jeneng.
 
@@ -8671,8 +8680,6 @@ Owah-owahan ora bakal disimpen nganti panjenengan ngeklik tombol simpen ing ngis
 	'translate-tag-fuzzy-comment' => 'Dhéfinisi diowahi déning [[User:$1|$1]] ing révisi $2.',
 	'translate-tag-fuzzy-reason' => 'Dhéfinisi diowahi déning "$1" kanthi komentar "$3" ing $2.',
 	'translate-sidebar-alltrans' => 'Jroning basa liya',
-	'translate-tag-noedit' => 'Kaca iki minangka kaca terjemahan otomatis pungkasan.
-Panjenengan bisa [$1 nyunting sumber kaca] utawa [$2 mutakiraké terjemahan].',
 );
 
 /** Georgian (ქართული)
@@ -13536,6 +13543,23 @@ $1',
 	'translate-gs-count' => 'Кол-во',
 	'translate-gs-total' => 'Всего',
 	'translate-gs-avgscore' => 'Ср. оценка',
+);
+
+/** Rusyn (русиньскый язык)
+ * @author Gazeb
+ */
+$messages['rue'] = array(
+	'translate-js-next' => 'Уложыти і отворити далше',
+	'translate-js-skip' => 'Перескоч на далше',
+	'translate-js-history' => 'Історія перекладу',
+	'translate-gs-pos' => 'Поз.',
+	'translate-gs-code' => 'Код',
+	'translate-gs-continent' => 'Частина світу',
+	'translate-gs-score' => 'Оцінка',
+	'translate-gs-multiple' => 'По веце',
+	'translate-gs-count' => 'Рахунок',
+	'translate-gs-total' => 'Цілком',
+	'translate-gs-avgscore' => 'Сер. оцінка',
 );
 
 /** Yakut (Саха тыла)

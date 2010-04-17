@@ -1536,6 +1536,7 @@ $messages['ig'] = array(
 );
 
 /** Italian (Italiano)
+ * @author Civvì
  * @author Darth Kule
  */
 $messages['it'] = array(
@@ -1557,7 +1558,9 @@ Prima di segnare questa versione per la traduzione, controllare che i cambiament
 	'tpt-list-nopages' => 'Nessuna pagina è segnata per la traduzione oppure è pronta per essere segnata per la traduzione.',
 	'tpt-old-pages' => 'Alcune versioni di {{PLURAL:$1|questa pagina|queste pagine}} sono state segnate per la traduzione.',
 	'translate-tag-translate-link-desc' => 'Traduci questa pagina',
+	'tpt-translation-intro' => 'Questa pagina è una <span class="plainlinks">[$1 versione tradotta]</span> della pagina [[$2]], la traduzione è completa e aggiornata al $3%.',
 	'tpt-languages-legend' => 'Altre lingue:',
+	'tpt-target-page' => 'Questa pagina non può essere aggiornata manualmente. Questa pagina è una traduzione della pagina [[$1]] e la traduzione può essere aggiornata tramite [$2 lo strumento di traduzione].',
 );
 
 /** Japanese (日本語)
