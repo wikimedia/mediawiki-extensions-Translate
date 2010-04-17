@@ -554,8 +554,7 @@ file = intersection/DynamicPageList.i18n.php
 
 Interwiki Edit Page
 id = ext-interwiki
-file = Interwiki/SpecialInterwiki.i18n.php
-aliasfile = Interwiki/SpecialInterwiki.alias.php
+aliasfile = Interwiki/Interwiki.alias.php
 optional = interwiki_defaulturl, interwiki_url, interwiki-url-label
 ignored = interwiki_logentry, interwiki_defaulturl
 
