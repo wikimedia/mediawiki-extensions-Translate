@@ -572,6 +572,8 @@ IP Auth
 
 JS Kit
 
+JS2 Support
+
 Labeled Section Transclusion
 file = LabeledSectionTransclusion/lst.i18n.php
 descmsg = lst-desc
