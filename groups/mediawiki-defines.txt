@@ -842,9 +842,8 @@ descmsg = quiz_desc
 
 Random Image
 
-Random in Category
-file = RandomInCategory/SpecialRandomincategory.i18n.php
-aliasfile = RandomInCategory/SpecialRandomincategory.alias.php
+Random In Category
+aliasfile = RandomInCategory/RandomInCategory.alias.php
 
 Random Root Page
 file = Randomrootpage/Randomrootpage.i18n.php
