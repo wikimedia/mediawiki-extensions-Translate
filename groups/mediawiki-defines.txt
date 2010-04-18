@@ -18,7 +18,6 @@ Ajax Login
 Ajax Query Pages
 
 Ajax Show Editors
-descmsg = ajax-se-desc
 
 Amazon Plus
 optional = amazonplus-status, amazonplus-currency
@@ -33,7 +32,6 @@ ignored = antispoof-conflict-item
 
 APC
 aliasfile = APC/APC.alias.php
-descmsg = viewapc-desc
 
 Api SVG Proxy
 
@@ -41,7 +39,6 @@ Asksql
 aliasfile = Asksql/Asksql.alias.php
 
 Assert Edit
-descmsg = assert_edit_desc
 
 Autoincrement
 magicfile = Autoincrement/Autoincrement.i18n.magic.php
@@ -65,20 +62,15 @@ ignored = babel-template-suffix, babel-footer
 
 Back and Forth
 file = BackAndForth/BackAndForth.i18n.php
-descmsg = backforth-desc
 
 Bad Image
 aliasfile = BadImage/BadImage.alias.php
-descmsg = badimages-desc
 
 Blahtex
-descmsg = math-desc
 
 Block Titles
-descmsg = block_title_error-desc
 
 Book Information
-descmsg = bookinfo-desc
 
 Bread Crumbs
 
