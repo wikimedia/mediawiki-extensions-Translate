@@ -1378,9 +1378,8 @@ Web Store
 What Is My IP
 aliasfile = WhatIsMyIP/WhatIsMyIP.alias.php
 
-White List
-file = WhiteList/WhiteListEdit.i18n.php
-aliasfile = WhiteList/WhiteListEdit.alias.php
+White List Edit
+aliasfile = WhiteListEdit/WhiteListEdit.alias.php
 
 Whos Online
 aliasfile = WhosOnline/WhosOnline.alias.php
