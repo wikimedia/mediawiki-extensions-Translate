@@ -450,6 +450,10 @@ descmsg = flvhandler_desc
 
 Force Preview
 
+Form
+aliasfile = Form/Form.alias.php
+ignored = formtemplatepattern
+
 Format Email
 descmsg = email-desc
 ignored = email_header
@@ -1062,11 +1066,6 @@ aliasfile = SpamRegex/SpamRegex.alias.php
 Special File List
 file = SpecialFileList/SpecialFilelist.i18n.php
 descmsg = filelist-desc
-
-Special Form
-aliasfile = SpecialForm/SpecialForm.alias.php
-ignored = formtemplatepattern
-descmsg = form-desc
 
 Sphinx Search
 aliasfile = SphinxSearch/SphinxSearch.alias.php
