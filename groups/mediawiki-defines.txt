@@ -1341,8 +1341,7 @@ optional = wikieditor-toolbar-tool-table-example-text
 ignored = wikieditor-toolbar-help-content-signaturetimestamp-syntax, wikieditor-toolbar-help-content-signature-syntax, wikieditor-toolbar-tool-file-pre
 
 Usage Statistics
-file = UsageStatistics/SpecialUserStats.i18n.php
-aliasfile = UsageStatistics/SpecialUserStats.alias.php
+aliasfile = UsageStatistics/UsageStatistics.alias.php
 
 User Contact Links
 file = UserContactLinks/UserSignature.i18n.php
