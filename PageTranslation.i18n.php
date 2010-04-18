@@ -393,14 +393,14 @@ $messages['br'] = array(
 	'right-pagetranslation' => "Merkañ doare pajennoù evit ma 'vefent troet",
 	'tpt-desc' => 'Astenn evit treiñ pajennoù gant danvez',
 	'tpt-section' => 'Unanenn treiñ $1',
-	'tpt-section-new' => 'Unanenn nevez treiñ.
+	'tpt-section-new' => 'Unvez treiñ nevez.
 Anv : $1',
 	'tpt-section-deleted' => 'Unanenn dreiñ $1',
 	'tpt-template' => 'Patrom pajenn',
 	'tpt-templatediff' => 'Kemmet eo patrom ar bajenn.',
 	'tpt-diff-old' => 'Testenn gent',
 	'tpt-diff-new' => 'Testenn nevez',
-	'tpt-submit' => "Merkañ ar stumm-se evit ma 'vefe troet",
+	'tpt-submit' => 'Merkañ ar stumm-mañ da vezañ troet',
 	'tpt-sections-oldnew' => 'Unanennoù treiñ hag a zo diouto ha re nevez',
 	'tpt-sections-deleted' => 'Unanennoù treinn bet diverket',
 	'tpt-sections-template' => 'Patrom pajenn dreiñ',
