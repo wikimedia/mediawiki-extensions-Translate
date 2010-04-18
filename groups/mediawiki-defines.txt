@@ -1384,7 +1384,6 @@ ignored = specialwikiathome
 aliasfile = WikiAtHome/WikiAtHome.alias.php
 
 Wikidata
-descmsg = wikidata-desc
 file = Wikidata/Wikidata.i18n.php
 optional = ow_URL, ow_ID, prefs-omegawiki
 ignored = ow_editing_policy_url
@@ -1419,7 +1418,6 @@ prefix = wmf- | sidebar, grouppage-Staff, group-Staff, group-Staff-member
 
 Wikimedia License Texts
 file = WikimediaMessages/WikimediaLicenseTexts.i18n.php
-descmsg = wikimedialicensetexts-desc
 optional = wm-license-cc-wiki-link, wm-license-cecill-wiki-link, wm-license-cecill-full-link, wm-license-fal-wiki-link, wm-license-fal-full-link
 optional = wm-license-fsf-wiki-link, wm-license-free-software-wiki-link, wm-license-gfdl-wiki-link, wm-license-gpl-wiki-link
 optional = wm-license-information-permission-reusing-link, wm-license-lgpl-wiki-link
