@@ -552,8 +552,7 @@ magicfile = Interlanguage/Interlanguage.i18n.magic.php
 Intersection
 file = intersection/DynamicPageList.i18n.php
 
-Interwiki Edit Page
-id = ext-interwiki
+Interwiki
 aliasfile = Interwiki/Interwiki.alias.php
 optional = interwiki_defaulturl, interwiki_url, interwiki-url-label
 ignored = interwiki_logentry, interwiki_defaulturl
