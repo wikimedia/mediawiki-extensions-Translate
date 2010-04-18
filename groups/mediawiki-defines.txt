@@ -665,9 +665,8 @@ Multi Boilerplate
 ignored = multiboilerplate, multiboilerplate-label
 
 Multi Upload
-file = MultiUpload/SpecialMultipleUpload.i18n.php
-aliasfile = MultiUpload/SpecialMultipleUpload.alias.php
-descmsg = multipleupload-desc
+aliasfile = MultiUpload/MultiUpload.alias.php
+descmsg = multiupload-desc
 
 MediaWiki Search
 id = ext-mwsearch
