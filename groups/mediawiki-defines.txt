@@ -1385,7 +1385,6 @@ Whos Online
 aliasfile = WhosOnline/WhosOnline.alias.php
 
 Who Is Watching
-file = WhoIsWatching/SpecialWhoIsWatching.i18n.php
 aliasfile = WhoIsWatching/SpecialWhoIsWatching.alias.php
 
 Widgets
