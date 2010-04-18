@@ -1126,8 +1126,7 @@ Title Key
 Todo
 
 Todo Tasks
-file = TodoTasks/SpecialTaskList.i18n.php
-aliasfile = TodoTasks/SpecialTaskList.alias.php
+aliasfile = TodoTasks/TodoTasks.alias.php
 magicfile = TodoTasks/TodoTasks.i18n.magic.php
 descmsg = tasklist-parser-desc
 ignored = todoTasksValidProjects
