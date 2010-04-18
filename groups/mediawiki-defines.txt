@@ -888,9 +888,8 @@ aliasfile = regexBlock/regexBlock.alias.php
 Regex Functions
 magicfile = RegexFunctions/RegexFunctions.i8n.magic.phh
 
-Rename User
-file = Renameuser/SpecialRenameuser.i18n.php
-aliasfile = Renameuser/SpecialRenameuser.alias.php
+Rename user
+aliasfile = Renameuser/Renameuser.alias.php
 ignored = renameuser-summary
 
 Replace Set
