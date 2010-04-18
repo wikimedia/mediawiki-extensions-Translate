@@ -77,6 +77,8 @@ Bread Crumbs
 Call
 aliasfile = Call/Call.alias.php
 
+Category Feed
+
 Category Intersection
 aliasfile = CategoryIntersection/CategoryIntersection.alias.php
 
@@ -96,10 +98,6 @@ magicfile = CategoryTree/CategoryTree.i18n.magic.php
 ignored = categorytree-collapse-bullet, categorytree-expand-bullet,
 ignored = categorytree-empty-bullet,categorytree-page-bullet
 ignored = categorytree-member-num
-
-Category Feed
-file = catfeed/catfeed.i18n.php
-id = ext-catfeed
 
 Category Watch
 
