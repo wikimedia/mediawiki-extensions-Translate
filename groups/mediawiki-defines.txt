@@ -1112,10 +1112,6 @@ Template Link
 aliasfile = TemplateLink/TemplateLink.alias.php
 descmsg = templatelink_desc
 
-Throttle
-file = Throttle/UserThrottle.i18n.php
-descmsg = acct_creation_global_soft_throttle_hit-desc
-
 TidyTab
 file = TidyTab/Tidy.i18n.php
 descmsg = tidy-desc
@@ -1365,6 +1361,8 @@ aliasfile = UserOptionStats/UserOptionStats.alias.php
 User Page Edit Protection
 
 User Rights Notif
+
+User Throttle
 
 Validator
 
