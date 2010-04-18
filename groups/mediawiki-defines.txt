@@ -725,8 +725,7 @@ aliasfile = NssMySQLAuth/NssMySQLAuth.alias.php
 descmsg = nss-desc
 
 Nuke
-file = Nuke/SpecialNuke.i18n.php
-aliasfile = Nuke/SpecialNuke.alias.php
+aliasfile = Nuke/Nuke.alias.php
 
 OAI-PMH repository
 id = ext-oai
