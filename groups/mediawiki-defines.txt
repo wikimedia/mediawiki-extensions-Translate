@@ -331,7 +331,7 @@ Duplicator
 
 Dynamic Sidebar
 
-Edit Count
+Edit count
 aliasfile = Editcount/Editcount.alias.php
 
 Edit Messages
