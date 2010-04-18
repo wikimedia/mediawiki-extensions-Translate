@@ -129,7 +129,6 @@ ignored = chemFunctions_SMILES, chemFunctions_InChI, chemFunctions_RTECS,
 ignored = chemFunctions_KEGG, chemFunctions_DrugBank
 
 Cite
-descmsg = cite_desc
 optional = cite_reference_link_key_with_num, cite_reference_link_prefix
 optional = cite_reference_link_suffix, cite_references_link_prefix
 optional = cite_references_link_suffix, cite_reference_link
@@ -159,7 +158,6 @@ optional = closewikis-closed
 
 Code Review
 aliasfile = CodeReview/CodeReview.alias.php
-descmsg = code-desc
 ignored = code-rev-comment-preview-accesskey, code-rev-submit-accesskey, code-rev-submit-next-accesskey
 ignored = code-rev-id
 
@@ -267,10 +265,8 @@ CSS
 Data Transfer
 file = DataTransfer/languages/DT_Messages.php
 aliasfile = DataTransfer/languages/DT_Aliases.php
-descmsg = dt-desc
 
 Delayed Definition
-descmsg = delaydef-desc
 
 Delete Batch
 aliasfile = DeleteBatch/DeleteBatch.alias.php
@@ -351,7 +347,6 @@ Expand Templates
 aliasfile = ExpandTemplates/ExpandTemplates.alias.php
 
 Extension Distributor
-descmsg = extdist-desc
 
 External Data
 magicfile = ExternalData/ExternalData.i18n.magic.php
