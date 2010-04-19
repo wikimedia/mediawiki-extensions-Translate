@@ -12420,6 +12420,7 @@ Detaj: $1",
 	'translate-js-nonext' => "Cost a l'era l'ùltim mëssagi dzora a sta pàgina-sì.",
 	'translate-js-skip' => "Sàuta a col ch'a ven",
 	'translate-js-save-failed' => 'Salvatagi falì. Për piasì arpòrta sto eror-sì.',
+	'translate-js-history' => 'Stòria dël viragi',
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Còdes',
 	'translate-gs-continent' => 'Continent',
@@ -13285,6 +13286,7 @@ $messages['roa-tara'] = array(
 
 /** Russian (Русский)
  * @author Ahonc
+ * @author AlexSm
  * @author Ferrer
  * @author Kaganer
  * @author Lockal
