@@ -108,12 +108,6 @@ class TranslationHelpers {
 	}
 
 	public function getBoxes( $types = null ) {
-		if ( $this->group === null ) {
-			global $wgRequest;
-			$group = $wgRequest->getText( 'loadgroup', '' );
-			trigger_error( "Message group missing for {$this->page}; Tried to load /{$group}/", E_USER_NOTICE );
-		}
-
 		// Box filter
 		$all = array(
 			'other-languages' => array( $this, 'getOtherLanguagesBox' ),
