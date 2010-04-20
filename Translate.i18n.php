@@ -9855,8 +9855,6 @@ D'Standard-Lëscht vu Sproochen hànkt vun Ärer Sprooch of.",
 	'translate-tag-fuzzy-comment' => 'Definitioun déi vum [[User:$1|$1]] an der Versioun $2 geännert gouf.',
 	'translate-tag-fuzzy-reason' => 'Definitioun gouf vum "$1" mat der Bemierkung "$3" an $2 geännert.',
 	'translate-sidebar-alltrans' => 'An anere Sproochen',
-	'translate-tag-noedit' => "Dës Säit ass een Iwwersetzungs-Dokument dat automatesch aktualiséiert gëtt.
-Dir kënnt [$1 d'Original Säit änneren] oder [$2 d'Iwwersetzung aktualiséieren].",
 	'translations' => 'All Iwwersetzungen',
 	'translations-summary' => 'Gitt w.e.g. en Numm vun engem Message hei ënnendrënner an fir all disponibel Iwwersetzungen ze weisen.',
 	'translate-translations-no-message' => '"$1" ass kee Message den iwwersat ka ginn',
@@ -9957,6 +9955,7 @@ Detailler: $1',
 	'translate-js-nonext' => 'Dëst war de leschte Message op dëser Säit',
 	'translate-js-skip' => 'Op den Nächste goen',
 	'translate-js-save-failed' => "D'Späicheren huet net fonctionnéiert. Mellt dëse Feeler w.e.g.",
+	'translate-js-history' => 'Versioune vun der Iwwersetzung',
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Code',
 	'translate-gs-continent' => 'Kontinent',
@@ -9966,6 +9965,15 @@ Detailler: $1',
 	'translate-gs-count' => 'Zuel',
 	'translate-gs-total' => 'Total',
 	'translate-gs-avgscore' => 'Duerchschnëttleche Score',
+);
+
+/** Ganda (Luganda)
+ * @author Kizito
+ */
+$messages['lg'] = array(
+	'translate-edit' => 'kyusa',
+	'translate-page-edit' => 'kyusa',
+	'translate-statsf-submit' => 'Kulagako',
 );
 
 /** Limburgish (Limburgs)
