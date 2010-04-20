@@ -1066,6 +1066,10 @@ Stock Charts
 # Storyboard
 # aliasfile = Storyboard/Storyboard.alias.php
 
+Strategy Wiki - Active Task Forces
+descmsg = activetaskforces
+file = StrategyWiki/ActiveTaskForces/ActiveTaskForces.i18n.php
+
 String Functions
 
 Sub Page List 3
