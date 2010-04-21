@@ -433,6 +433,8 @@ Kent merkañ ar stumm-mañ evit an treiñ, gwiriait mat n'eus ket bet nemeur a g
 	'tpt-languages-legend' => 'Yezhoù all :',
 	'tpt-target-page' => "Ne c'hell ket bezañ hizivaet ar bajenn-mañ gant an dorn.
 Un doare troet eus [[$1]] eo hag an droidigezh a c'hell bezañ hizivaet en ur implijout [$2 an ostilh treiñ].",
+	'tpt-unknown-page' => 'Miret eo an esaouenn anv-mañ evit troidigezh ar pajennoù.
+Ar bajenn o peus klasket kemm ne seblant ket klotañ gant pajenn ebet bet merket evit bezañ troet.',
 	'tpt-install' => "Lañsit php trezalc'h (maintenance)/update.php pe ar staliadur web evit gweredekaat an arc'hweladur treiñ ar pajennoù.",
 	'tpt-render-summary' => 'Hizivadur evit klotañ gant an doare nevez mammenn ar bajenn',
 	'tpt-download-page' => 'Ezporzhiañ ar bajenn gant an troidigezhioù',
