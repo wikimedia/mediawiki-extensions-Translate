@@ -199,6 +199,8 @@ All values have upper and lower limits.',
 	# Special:LanguageStats
 	'languagestats' => 'Language statistics',
 	'languagestats-summary' => 'This page shows translation statistics for all message groups for a language.',
+	'languagestats-stats-for' => 'Translation statistics for $1 ($2).',
+	'languagestats-recenttranslations' => 'recent translations',
 	'translate-language-code' => 'Language code',
 	'translate-language-code-field-name' => 'Language code:',
 	'translate-suppress-complete' => 'Suppress completely translated message groups',
@@ -415,6 +417,10 @@ These messages will not be submitted to svn, but will only affect the interface 
 	'translate-translations-including-no-param' => 'Shown when using <code>&#x7b;{Special:Translations}}</code>, but a parameter is required, e.g. <code>&#x7b;{Special:Translations/MediaWiki:Mainpagetext}}</code>',
 	'languagestats' => 'Title of [[Special:LanguageStats]].',
 	'languagestats-summary' => 'Used in [[Special:LanguageStats]].',
+	'languagestats-stats-for' => 'Used in [[Special:LanguageStats]]. Parameters:
+* $1 is a localised language name
+* $2 is {{msg-mw|languagestats-recenttranslations}}',
+	'languagestats-recenttranslations' => 'Substituted in {{msg-mw|languagestats-stats-for}} as $2.',
 	'translate-language-code' => 'Name of fieldset in [[Special:LanguageStats]].
 
 {{Identical|Language code}}',
@@ -767,7 +773,7 @@ $messages['am'] = array(
 	'translate-page-edit' => 'አርም',
 	'translate-edit-definition' => 'የመልዕክቱ ትርጉም',
 	'translate-edit-contribute' => 'ለመሣተፍ',
-	'translate-edit-no-information' => "''ይኸው መልእክት ምንም መረጃ የለውም። 
+	'translate-edit-no-information' => "''ይኸው መልእክት ምንም መረጃ የለውም።
 መልዕክቱ በየት ወይም እንዴት እንደሚጠቀም ዕውቀት ካለዎ፣ መረጃ በመጨምር ሌሎች አስተርጓሚዎች ሊረዱ ይችላሉ።''",
 	'translate-edit-information' => 'መረጃ ስለዚሁ መልእክት ($1)',
 	'translate-edit-in-other-languages' => 'መልዕክቱ በሌሎች ልሳናት',
@@ -1025,7 +1031,7 @@ $messages['ar'] = array(
 	'translate-nothing-to-do' => 'كل الترجمات المحتملة يبدو أنه قد تم عملها.
 من الأفضل أن تراجع الرسائل من خلال [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-groups' => ' # أضف أرقام مجموعات الرسائل, واحدا لكل سطر لتحديد مجموعات الرسائل التي
- # تعرض في Special:LanguageStats.أرقام مجموعات الرسائل غير الموجودة سوف 
+ # تعرض في Special:LanguageStats.أرقام مجموعات الرسائل غير الموجودة سوف
  # يتم تجاهلها.',
 	'translate-save' => 'احفظ ($1)',
 	'translate-jssti-add' => 'أضف إلى القائمة',
@@ -2142,7 +2148,7 @@ $messages['br'] = array(
 	'translate-page-no-such-language' => "Merket ez eus bet ur c'hod yezh direizh",
 	'translate-page-no-such-task' => 'Merket ez eus bet un ober direizh.',
 	'translate-page-no-such-group' => 'Merket ez eus bet ur strollad direizh.',
-	'translate-page-disabled' => "Harpet eo bet an troidigezhioù er yezh-mañ evit ar strollad-mañ. 
+	'translate-page-disabled' => "Harpet eo bet an troidigezhioù er yezh-mañ evit ar strollad-mañ.
 Abeg :
 
 ''$1''",
@@ -2243,7 +2249,7 @@ Cheñch a ra roll dre ziouer ar yezhoù-se diouzh ar yezh a rit ganti.',
 	'translationstats' => 'Stadegoù treiñ',
 	'translate-stats-edits' => 'Kemmoù',
 	'translate-stats-users' => 'Troerien',
-	'translate-statsf-intro' => "Stadegoù eeun a c'hallit krouiñ gant ar furmskrid-mañ. 
+	'translate-statsf-intro' => "Stadegoù eeun a c'hallit krouiñ gant ar furmskrid-mañ.
 Bevennoù izel hag uhel zo d'an holl dalvoudoù.",
 	'translate-statsf-options' => 'Dibarzhioù ar grafik',
 	'translate-statsf-width' => 'Ledander e piksel :',
@@ -2329,7 +2335,7 @@ Adkasit ar furmskrid evit kenderc'hel gant an tretiñ.",
 	'translate-manage-import-noks' => "C'hwitet eo bet enporzhiadenn stumm nevez ar bajenn $1 : $2",
 	'translate-manage-import-ignore' => 'Lezel ar gemennadenn $1 a-gostez.',
 	'translate-manage-import-summary' => 'Enporzhiañ ur stumm nevez adalek ur vammenn ziavaez.',
-	'translate-manage-conflict-summary' => 'Enporzhiañ ur stumm nevez adalek ur vammenn ziavaez. 
+	'translate-manage-conflict-summary' => 'Enporzhiañ ur stumm nevez adalek ur vammenn ziavaez.
 Gwiriit mar plij.',
 	'translate-manage-fuzzy-summary' => 'Cheñchet eo an termenadur',
 	'translate-manage-import-fuzzy' => "Oc'h enporzhiañ hag o strafuilhañ : $1",
@@ -3472,7 +3478,7 @@ Die Standardliste ist abhängig von der Sprache der Benutzeroberfläche.',
 	'translate-percentage-fuzzy' => 'Veraltet',
 	'translate-nothing-to-do' => 'Alle möglichen Übersetzungen sind offenbar schon erledigt.
 Es wird empfohlen, Systemnachrichten mit der Spezialseite [[Special:Translate|{{int:translate}}]] zu überprüfen.',
-	'translate-languagestats-groups' => ' # Ergänze die ID einer Systemnachrichtengruppe (eine per Zeile) um die Gruppen von 
+	'translate-languagestats-groups' => ' # Ergänze die ID einer Systemnachrichtengruppe (eine per Zeile) um die Gruppen von
  # Special:LanguageStats auszuschließen. Nicht existerende IDs
  # werden ignoriert.',
 	'translate-save' => 'Speichern ($1)',
@@ -6777,7 +6783,7 @@ $messages['hr'] = array(
 	'translate-pref-editassistlang' => 'Pomoćni jezici:',
 	'prefs-translate' => 'Mogućnosti prijevoda',
 	'translate-pref-editassistlang-help' => 'Popis jezičnih kodova odjeljen zarezima.
-Prijevod poruke na tim jezicima bit će prikazani dok prevodite. 
+Prijevod poruke na tim jezicima bit će prikazani dok prevodite.
 Zadani popis jezika ovisi o vašem jeziku.',
 	'translate-pref-jsedit' => 'Poboljšani uređivač prijevoda (JavaScript)',
 	'right-translate' => 'Uređivanje koristeći sučelje za prevođenje',
@@ -9193,7 +9199,7 @@ $messages['km'] = array(
 ប្រសិនបើ​ភាសារបស់អ្នក​មិនបានបង្ហាញត្រឹមត្រូវដោយមិនប្តូរឈ្មោះវិបសាយទេ សូមទាក់ទងអ្នកអភិវឌ្ឍ (អ្នករចនាវិបសាយ)។
 
 
-អ្នកចាំបាច់ត្រូវតែស្ថិតក្នុងក្រុមអ្នកប្រែសម្រួល ទើបអាចរក្សាទុកបំលាស់ប្តូរបាន។ 
+អ្នកចាំបាច់ត្រូវតែស្ថិតក្នុងក្រុមអ្នកប្រែសម្រួល ទើបអាចរក្សាទុកបំលាស់ប្តូរបាន។
 បំលាស់ប្តូរនឹងមិនត្រូវបានរក្សាទុកទេ​លើកលែងតែអ្នកបានចុចប៊ូតុង​រក្សាទំព័រទុក​នៅខាងក្រោម ។',
 	'translate-magic-module' => 'ម៉ូឌុល៖',
 	'translate-magic-submit' => 'នាំមក​បង្ហាញ',
@@ -12758,11 +12764,11 @@ Por favor, verifique.',
 	'translate-manage-import-done' => 'Tudo terminado!',
 	'translate-manage-import-rebuild' => "Reconstrução da ''cache''.",
 	'translate-manage-intro-en' => 'Encontra abaixo uma lista de alterações às mensagens deste grupo.
-Por favor, reveja as alterações e escolha a acção que pretende para cada mensagem. 
+Por favor, reveja as alterações e escolha a acção que pretende para cada mensagem.
 Quando tiver actualizado as definições das mensagens, verifique se ocorreram alterações externas noutras línguas existentes.
 Note também que a acção <code>ignore</code> é somente temporária.',
 	'translate-manage-intro-other' => 'Encontra abaixo uma lista de alterações de traduções na língua $1.
-Por favor, reveja as alterações e escolha a acção que pretende para cada tradução. 
+Por favor, reveja as alterações e escolha a acção que pretende para cada tradução.
 Se escolher ignorar as alterações, elas serão sobrepostas na próxima exportação.',
 	'translate-manage-subtitle' => 'Gerir',
 	'translate-manage-import-rebuild-all' => 'Reconstruir todas as línguas e ignorar quaisquer alterações',
@@ -14957,7 +14963,7 @@ Du uppmuntras att granska meddelanden genom [[Special:Translate|{{int:translate}
 	'translate-manage-action-fuzzy' => 'Importera och märk översättningar för kontroll ("fuzzy")',
 	'translate-manage-submit' => 'Genomför',
 	'translate-manage-nochanges' => 'Det finns inga förändringar i meddelande-definitionerna för den här gruppen.',
-	'translate-manage-nochanges-other' => 'Inga förändringar för det här språket. 
+	'translate-manage-nochanges-other' => 'Inga förändringar för det här språket.
 Använd länken nedan för att återgå till gruppdetaljerna.',
 	'translate-manage-toolong' => 'Den maximala behandlingstiden på $1 {{PLURAL:$1|sekund|sekunder}} har överskridits.
 Vänligen aktivera formuläret igen för att fortsätta behandla det.',
@@ -14981,7 +14987,7 @@ När du har uppdaterat meddelandedefinitionerna, kontrollera externa förändrin
 	'translate-import-load' => 'Ladda fil',
 	'translate-import-err-type-not-supported' => 'Kan inte ladda filen:
 Metoden <tt>$1</tt> stöds inte.',
-	'translate-import-err-dl-failed' => 'Kan inte hämta denna filen: 
+	'translate-import-err-dl-failed' => 'Kan inte hämta denna filen:
 $1',
 	'translate-import-err-ul-failed' => 'Filuppladdningen misslyckades',
 	'translate-import-err-invalid-title' => 'Det angivna filnamnet <nowiki>$1</nowiki> är inte giltigt.',

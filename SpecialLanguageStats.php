@@ -11,7 +11,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
  * Use {{Special:LanguageStats/nl/1}} to show for 'nl' and suppres complete.
  *
  * @author Siebrand Mazeland
- * @copyright Copyright © 2008 Siebrand Mazeland
+ * @copyright Copyright © 2008-2010 Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -22,8 +22,6 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 	function execute( $par ) {
 		global $wgRequest, $wgOut;
-
-		wfLoadExtensionMessages( 'Translate' );
 
 		$this->setHeaders();
 		$this->outputHeader();
@@ -145,8 +143,20 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	}
 
 	function createHeader( $code ) {
-		$out = '<!-- ' . $code . " -->\n";
-		$out .= '<!-- ' . TranslateUtils::getLanguageName( $code, false ) . " -->\n";
+		global $wgUser;
+
+		$languageName = TranslateUtils::getLanguageName( $code, false );
+		$rcInLangLink = $wgUser->getSkin()->link(
+			SpecialPage::getTitleFor( 'RecentChanges' ),
+			wfMsg( 'languagestats-recenttranslations' ),
+			array(),
+			array(
+				'translations' => 'only',
+				'trailer' => "/" . $code
+			)
+		);
+
+		$out = wfMsgExt( 'languagestats-stats-for', array( 'parse', 'replaceafter' ), $languageName, $rcInLangLink );
 
 		# Create table header
 		$out .= $this->heading();
