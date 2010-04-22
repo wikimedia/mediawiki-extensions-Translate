@@ -761,6 +761,8 @@ Parser Functions
 descmsg = pfunc_desc
 magicfile = ParserFunctions/ParserFunctions.i18n.magic.php
 
+Parser Wiki
+
 Patroller
 aliasfile = Patroller/Patroller.alias.php
 descmsg = patrol-desc
