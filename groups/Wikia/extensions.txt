@@ -82,7 +82,6 @@ Force Subject For New Section
 
 #Added 2010-04-23 -- tor
 Founder Emails
-file = FounderEmails/FounderEmails.i18n.php
 
 Global Watchlist
 
@@ -198,8 +197,7 @@ ignored = ircgate-channellist
 Wikia Mini Upload
 
 #Added 2010-04-23 -- tor
-WikiaPhotoGallery
-file = WikiaPhotoGallery/WikiaPhotoGallery.i18n.php
+Wikia Photo Gallery
 
 Wikia Upload
 
