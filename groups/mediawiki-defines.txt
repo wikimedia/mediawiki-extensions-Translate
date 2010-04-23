@@ -1064,9 +1064,8 @@ Stalker Log
 
 Stock Charts
 
-# Commented out by JeroenDeDauw. Work in progress. Will let you know when to enable.
-# Storyboard
-# aliasfile = Storyboard/Storyboard.alias.php
+Storyboard
+aliasfile = Storyboard/Storyboard.alias.php
 
 Strategy Wiki - Active Task Forces
 descmsg = activetaskforces
