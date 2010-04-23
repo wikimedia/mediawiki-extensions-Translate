@@ -80,6 +80,10 @@ Edit Research
 
 Force Subject For New Section
 
+#Added 2010-04-23 -- tor
+Founder Emails
+file = FounderEmails/FounderEmails.i18n.php
+
 Global Watchlist
 
 Grace Expired
@@ -192,6 +196,10 @@ Wikia Irc Gateway
 ignored = ircgate-channellist
 
 Wikia Mini Upload
+
+#Added 2010-04-23 -- tor
+WikiaPhotoGallery
+file = WikiaPhotoGallery/WikiaPhotoGallery.i18n.php
 
 Wikia Upload
 
