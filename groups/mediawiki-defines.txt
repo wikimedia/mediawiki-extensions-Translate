@@ -559,6 +559,15 @@ JS Kit
 
 JS2 Support
 
+JS2 Support - Add Media Wizard
+file = JS2Support/AddMediaWizard/AddMediaWizard.i18n.php
+descmsg = addmediawizard-desc
+
+JS2 Support - Upload Wizard
+file = JS2Support/UploadWizard/UploadWizard.i18n.php
+aliasfile = JS2Support/UploadWizard/UploadWizard.alias.php
+descmsg = uploadwizard-desc
+
 Labeled Section Transclusion
 file = LabeledSectionTransclusion/lst.i18n.php
 descmsg = lst-desc
