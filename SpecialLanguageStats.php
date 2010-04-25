@@ -229,22 +229,20 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 			// Division by 0 should not be possible, but does occur. Caching issue?
 			$translatedPercentage = $total ? $wgLang->formatNum( number_format( round( 100 * $translated / $total, 2 ), 2 ) ) : $errorString;
-			$fuzzyPercentage = $total ? $wgLang->formatNum( number_format( round( 100 * $fuzzy / $total, 2 ), 2 ) ) : $errorString;
+			$translatedPercentage = $translatedPercentage == $errorString ? $translatedPercentage : wfMsg( 'percent', $translatedPercentage );
 
-			if ( !wfEmptyMsg( 'percent', wfMsgNoTrans( 'percent' ) ) ) {
-				$translatedPercentage = $translatedPercentage == $errorString ? $translatedPercentage : wfMsg( 'percent', $translatedPercentage );
-				$fuzzyPercentage = $fuzzyPercentage == $errorString ? $fuzzyPercentage : wfMsg( 'percent', $fuzzyPercentage );
-			} else {
-				// For 1.14 compatability
-				$translatedPercentage = "$translatedPercentage%";
-				$fuzzyPercentage = "$fuzzyPercentage%";
-			}
+			$fuzzyPercentage = $total ? $wgLang->formatNum( number_format( round( 100 * $fuzzy / $total, 2 ), 2 ) ) : $errorString;
+			$fuzzyPercentage = $fuzzyPercentage == $errorString ? $fuzzyPercentage : wfMsg( 'percent', $fuzzyPercentage );
 
 			$translateTitle = SpecialPage::getTitleFor( 'Translate' );
 			$queryParameters = array(
 				'group' => $groupId,
 				'language' => $code
 			);
+
+			if( $translated == $total ) {
+				$queryParameters['task'] = 'reviewall'; 
+			}
 
 			$translateGroupLink = $wgUser->getSkin()->link(
 				$translateTitle,
