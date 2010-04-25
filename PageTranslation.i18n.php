@@ -1658,6 +1658,14 @@ $messages['km'] = array(
 	'tpt-languages-legend' => 'ជាភាសាដទៃទៀត៖',
 );
 
+/** Kannada (ಕನ್ನಡ)
+ * @author Nayvik
+ */
+$messages['kn'] = array(
+	'tpt-translate-this' => 'ಈ ಪುಟವನ್ನು ಅನುವಾದಿಸಿ',
+	'translate-tag-translate-link-desc' => 'ಈ ಪುಟವನ್ನು ಅನುವಾದಿಸಿ',
+);
+
 /** Korean (한국어)
  * @author Kwj2772
  */

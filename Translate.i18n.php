@@ -849,6 +849,7 @@ Ha de pertenexer á la colla de tradutors ta alzar os cambeos. Ístos no quedan 
 	'translationchanges' => 'Cambeos en a traduzión',
 	'translationchanges-export' => 'esportar',
 	'translationchanges-change' => '$1: $2 por $3',
+	'translate-translations-fieldset-title' => 'Mensache',
 	'translate-save' => 'Alzar($1)',
 );
 
@@ -4470,6 +4471,8 @@ Todos los valores tienen límites superiores e inferiores.',
 	'translate-translations-including-no-param' => 'Por favor especifique un mensaje clave válido en el parámetro de subpágina',
 	'languagestats' => 'Estadísticas por idioma',
 	'languagestats-summary' => 'Esta página muestra estadísticas de traducción para todos los grupos de mensajes para un idioma.',
+	'languagestats-stats-for' => 'Estadísticas de traducción para $1 ($2).',
+	'languagestats-recenttranslations' => 'Traducciones recientes',
 	'translate-language-code' => 'Código de idioma',
 	'translate-language-code-field-name' => 'Código de idioma',
 	'translate-suppress-complete' => 'Eliminar grupos de mensajes completamente traducidos',
@@ -12801,7 +12804,7 @@ Por favor, verifique.',
 	'translate-manage-intro-en' => 'Encontra abaixo uma lista de alterações às mensagens deste grupo.
 Por favor, reveja as alterações e escolha a acção que pretende para cada mensagem. 
 Quando tiver actualizado as definições das mensagens, verifique se ocorreram alterações externas noutras línguas existentes.
-Note também que a acção <code>ignore</code> é somente temporária.',
+Note também que a acção <code>ignore</code> é só temporária.',
 	'translate-manage-intro-other' => 'Encontra abaixo uma lista de alterações de traduções na língua $1.
 Por favor, reveja as alterações e escolha a acção que pretende para cada tradução. 
 Se escolher ignorar as alterações, elas serão sobrepostas na próxima exportação.',
@@ -16609,8 +16612,6 @@ Danh sách các ngôn ngữ mặc định sẽ tùy thuộc vào ngôn ngữ mà
 	'translate-tag-fuzzy-comment' => 'Định nghĩa do [[User:$1|$1]] thay đổi trong phiên bản $2.',
 	'translate-tag-fuzzy-reason' => 'Định nghĩa do "$1" thay đổi với lời tóm lược "$3" vào $2.',
 	'translate-sidebar-alltrans' => 'Theo ngôn ngữ khác',
-	'translate-tag-noedit' => 'Trang này là trang biên dịch được cập nhật tự động.
-Bạn có thể [$1 sửa mã trang] hoặc [$2 cập nhật bản dịch].',
 	'translations' => 'Tất cả các bản dịch',
 	'translations-summary' => 'Nhập vào một tên thông điệp phía dưới để hiển thị tất cả các bản dịch hiện có.',
 	'translate-translations-no-message' => '"$1" không phải là thông điệp cần dịch',
@@ -16621,6 +16622,8 @@ Bạn có thể [$1 sửa mã trang] hoặc [$2 cập nhật bản dịch].',
 	'translate-translations-including-no-param' => 'Xin ghi rõ một khóa thông điệp hợp lệ trong tham số trang con',
 	'languagestats' => 'Thống kê ngôn ngữ',
 	'languagestats-summary' => 'Trang này hiển thị thống kê biên dịch cho tất cả các nhóm thông điệp dành cho một ngôn ngữ.',
+	'languagestats-stats-for' => 'Thống kê biên dịch của $1 ($2).',
+	'languagestats-recenttranslations' => 'các bản dịch gần đây',
 	'translate-language-code' => 'Mã ngôn ngữ',
 	'translate-language-code-field-name' => 'Mã ngôn ngữ:',
 	'translate-suppress-complete' => 'Bỏ qua các nhóm thông điệp đã được dịch hoàn toàn',
@@ -16650,6 +16653,7 @@ Bạn được khuyến khích xem lại các thông điệp tại [[Special:Tra
 	'translate-group-desc-wikitravelextensions' => 'Nhóm thông báo “mẹ”, chứa thông báo của các phần mở rộng MediaWiki được sử dụng tại [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Nhóm thông báo “mẹ”, chứa thông báo của các phần mở rộng có liên quan đến [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Nhóm thông điệp meta chứa tất cả các thông điệp dùng cho bộ mở rộng liên quan đến [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Sáng kiến Khả dụng Wikipedia]',
+	'translate-group-desc-nodesc' => 'Không có miêu tả cho nhóm thông điệp này',
 	'translate-manage-groups' => 'Quản lý nhóm',
 	'translate-manage-listgroups' => 'Nhóm được cấu hình',
 	'translate-manage-listgroups-old' => 'Nhóm theo kiểu cũ',
@@ -16711,7 +16715,11 @@ Không thể xác định nhóm và ngôn ngữ từ tiêu đề tập tin.',
 	'translate-import-err-warnings' => 'Tập tin không được định dạng đúng.
 Hãy đảm bảo trình duyệt của bạn không xóa đi vùng msgctxt.
 Chi tiết:$1',
-	'translate-js-fb' => 'Sửa đổi thông thường',
+	'translate-js-next' => 'Lưu và sang thông điệp sau',
+	'translate-js-nonext' => 'Đây là thông điệp cuối cùng trên trang này.',
+	'translate-js-skip' => 'Chuyển đến thông điệp kế',
+	'translate-js-save-failed' => 'Không lưu được. Xin hãy báo cáo lỗi này.',
+	'translate-js-history' => 'Lịch sử biên dịch',
 	'translate-gs-pos' => 'STT',
 	'translate-gs-code' => 'Mã',
 	'translate-gs-continent' => 'Lục địa',
