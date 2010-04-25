@@ -1674,7 +1674,7 @@ $messages['ko'] = array(
 	'tpt-languages-legend' => '다른 언어:',
 );
 
-/** Ripoarisch (Ripoarisch)
+/** Colognian (Ripoarisch)
  * @author Purodha
  */
 $messages['ksh'] = array(
@@ -2337,7 +2337,7 @@ Esta página que você está tentando editar não aparenta corresponder a nenhum
 	'tpt-download-page' => 'Exportar página com traduções',
 );
 
-/** Rhaeto-Romance (Rumantsch)
+/** Romansh (Rumantsch)
  * @author Gion-andri
  */
 $messages['rm'] = array(

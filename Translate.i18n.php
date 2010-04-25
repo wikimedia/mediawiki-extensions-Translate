@@ -463,6 +463,10 @@ fuzzy = mark translations for review',
 	'translate-import-err-no-such-file' => 'Used in [[Special:ImportTranslations]].',
 	'translate-import-err-no-headers' => 'Used in [[Special:ImportTranslations]].',
 	'translate-import-err-warnings' => 'Used in [[Special:ImportTranslations]].',
+	'translate-js-next' => 'next refers to next message in the message list',
+	'translate-js-nonext' => 'This is a JavaScript popup (alert) when user clicks "Save and open next" and there is no next message.',
+	'translate-js-skip' => 'A button together with Save and Save an open next. Goes to the next message without saving.',
+	'translate-js-save-failed' => 'If there was unknown error while submitting a translation, user gets this message in javascript popup (alert).',
 	'translate-gs-pos' => "Used in wiki tables for localisation statistics as a column header for 'Positition' abbreviated. See [[Project:MediaWiki localisation in the 50 most spoken languages|example]]",
 	'translate-gs-code' => 'Used in wiki tables for localisation statistics as a column header for language code. See [[Project:MediaWiki localisation in the 50 most spoken languages|example]]',
 	'translate-gs-continent' => 'Used in wiki tables for localisation statistics as a column header for the continent where a language is spoken. See [[Project:MediaWiki localisation in the 50 most spoken languages|example]]',
@@ -739,7 +743,6 @@ die metode <tt>$1</tt> word nie ondersteun nie.',
 	'translate-import-err-warnings' => 'Die lêer is nie goed gevorm nie.
 Maak seker dat u teksverwerker nie "msgctxt"-velde verwyder nie.
 Besonderhede: $1',
-	'translate-js-fb' => 'Normale wysiging',
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Kode',
 	'translate-gs-continent' => 'Kontinent',
@@ -773,7 +776,7 @@ $messages['am'] = array(
 	'translate-page-edit' => 'አርም',
 	'translate-edit-definition' => 'የመልዕክቱ ትርጉም',
 	'translate-edit-contribute' => 'ለመሣተፍ',
-	'translate-edit-no-information' => "''ይኸው መልእክት ምንም መረጃ የለውም።
+	'translate-edit-no-information' => "''ይኸው መልእክት ምንም መረጃ የለውም። 
 መልዕክቱ በየት ወይም እንዴት እንደሚጠቀም ዕውቀት ካለዎ፣ መረጃ በመጨምር ሌሎች አስተርጓሚዎች ሊረዱ ይችላሉ።''",
 	'translate-edit-information' => 'መረጃ ስለዚሁ መልእክት ($1)',
 	'translate-edit-in-other-languages' => 'መልዕክቱ በሌሎች ልሳናት',
@@ -853,7 +856,7 @@ Ha de pertenexer á la colla de tradutors ta alzar os cambeos. Ístos no quedan 
 	'translate-save' => 'Alzar($1)',
 );
 
-/** Old English (Anglo-Saxon) */
+/** Old English (Ænglisc) */
 $messages['ang'] = array(
 	'translate-edit' => 'ādihtan',
 	'translate-talk' => 'mōtung',
@@ -1032,7 +1035,7 @@ $messages['ar'] = array(
 	'translate-nothing-to-do' => 'كل الترجمات المحتملة يبدو أنه قد تم عملها.
 من الأفضل أن تراجع الرسائل من خلال [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-groups' => ' # أضف أرقام مجموعات الرسائل, واحدا لكل سطر لتحديد مجموعات الرسائل التي
- # تعرض في Special:LanguageStats.أرقام مجموعات الرسائل غير الموجودة سوف
+ # تعرض في Special:LanguageStats.أرقام مجموعات الرسائل غير الموجودة سوف 
  # يتم تجاهلها.',
 	'translate-save' => 'احفظ ($1)',
 	'translate-jssti-add' => 'أضف إلى القائمة',
@@ -1192,7 +1195,6 @@ $messages['arc'] = array(
 	'translate-manage-modlang-new' => '$1 (ܚܕܬܐ)',
 	'translate-manage-import-new' => 'ܐܓܪܬܐ ܚܕܬܐ $1',
 	'translate-manage-import-deleted' => 'ܐܓܪܬܐ ܫܝܦܬܐ $1',
-	'translate-js-fb' => 'ܫܘܚܠܦܐ ܟܝܢܝܐ',
 );
 
 /** Araucanian (Mapudungun)
@@ -1358,8 +1360,6 @@ $messages['arz'] = array(
 	'translate-tag-fuzzy-comment' => 'التعريف تغير بواسطه [[User:$1]] فى المراجعه $2.',
 	'translate-tag-fuzzy-reason' => 'التعريف تغير بواسطه المستخدم $1 بالتعليق "$3" فى $2.',
 	'translate-sidebar-alltrans' => 'بلغات أخرى',
-	'translate-tag-noedit' => 'هذه الصفحه هى صفحه ترجمه محدثه تلقائيا.
-يمكنك [$1 تعديل الصفحه المصدر] أو [$2 تحديث الترجمة].',
 	'translations' => 'كل الترجمات',
 	'translations-summary' => 'أدخل اسم رساله أسفله لعرض كل الترجمات المتوفره.',
 	'translate-translations-no-message' => '"$1" ليست رساله قابله للترجمة',
@@ -1457,7 +1457,6 @@ $1',
 	'translate-import-err-warnings' => 'الملف ليس مكونا بشكل صحيح.
 تأكد من أن محررك لا يزيل حقول msgctxt .
 التفاصيل: $1',
-	'translate-js-fb' => 'تحرير عادي',
 	'translate-gs-pos' => 'الترتيب',
 	'translate-gs-code' => 'الرمز',
 	'translate-gs-continent' => 'القارة',
@@ -1514,7 +1513,6 @@ $messages['as'] = array(
 	'translate-manage-subtitle' => 'পৰিচালনা কৰক',
 	'translate-import-err-dl-failed' => "ফাইল অৰ্জন কৰা নহ'ল:
 $1",
-	'translate-js-fb' => 'সাধাৰণ সম্পদনা',
 	'translate-gs-code' => 'কোড',
 	'translate-gs-total' => 'মুঠ',
 );
@@ -1642,8 +1640,6 @@ Los cambeos nun se graben hasta que calques nel botón guardar d'abaxo.",
 	'translate-tag-fuzzy-comment' => 'Definición camudada por [[User:$1|$1]] na revisión $2.',
 	'translate-tag-fuzzy-reason' => 'Definición camudada por "$1" col comentariu "$3" en $2.',
 	'translate-sidebar-alltrans' => 'Otres traducciones',
-	'translate-tag-noedit' => 'Esta páxina ye una páxina de traducción actualizada automáticamente.
-Pues [$1 editar la páxina fonte] o [$2 actualizar la traducción].',
 	'translations' => 'Toles traducciones',
 	'translate-translations-no-message' => '"$1" nun ye un mensaxe traducible',
 	'translate-translations-none' => 'Nun hai traducciones pa "$1"',
@@ -2151,7 +2147,7 @@ $messages['br'] = array(
 	'translate-page-no-such-language' => "Merket ez eus bet ur c'hod yezh direizh",
 	'translate-page-no-such-task' => 'Merket ez eus bet un ober direizh.',
 	'translate-page-no-such-group' => 'Merket ez eus bet ur strollad direizh.',
-	'translate-page-disabled' => "Harpet eo bet an troidigezhioù er yezh-mañ evit ar strollad-mañ.
+	'translate-page-disabled' => "Harpet eo bet an troidigezhioù er yezh-mañ evit ar strollad-mañ. 
 Abeg :
 
 ''$1''",
@@ -2252,7 +2248,7 @@ Cheñch a ra roll dre ziouer ar yezhoù-se diouzh ar yezh a rit ganti.',
 	'translationstats' => 'Stadegoù treiñ',
 	'translate-stats-edits' => 'Kemmoù',
 	'translate-stats-users' => 'Troerien',
-	'translate-statsf-intro' => "Stadegoù eeun a c'hallit krouiñ gant ar furmskrid-mañ.
+	'translate-statsf-intro' => "Stadegoù eeun a c'hallit krouiñ gant ar furmskrid-mañ. 
 Bevennoù izel hag uhel zo d'an holl dalvoudoù.",
 	'translate-statsf-options' => 'Dibarzhioù ar grafik',
 	'translate-statsf-width' => 'Ledander e piksel :',
@@ -2338,7 +2334,7 @@ Adkasit ar furmskrid evit kenderc'hel gant an tretiñ.",
 	'translate-manage-import-noks' => "C'hwitet eo bet enporzhiadenn stumm nevez ar bajenn $1 : $2",
 	'translate-manage-import-ignore' => 'Lezel ar gemennadenn $1 a-gostez.',
 	'translate-manage-import-summary' => 'Enporzhiañ ur stumm nevez adalek ur vammenn ziavaez.',
-	'translate-manage-conflict-summary' => 'Enporzhiañ ur stumm nevez adalek ur vammenn ziavaez.
+	'translate-manage-conflict-summary' => 'Enporzhiañ ur stumm nevez adalek ur vammenn ziavaez. 
 Gwiriit mar plij.',
 	'translate-manage-fuzzy-summary' => 'Cheñchet eo an termenadur',
 	'translate-manage-import-fuzzy' => "Oc'h enporzhiañ hag o strafuilhañ : $1",
@@ -2532,8 +2528,6 @@ Pretpostavljeni spisak jezika zavisi od postavki Vašeg jezika.',
 	'translate-tag-fuzzy-comment' => 'Definiciju je promijenio korisnik [[User:$1|$1]] u reviziji $2.',
 	'translate-tag-fuzzy-reason' => 'Definiciju promijenio "$1" sa komentarom "$3" u $2.',
 	'translate-sidebar-alltrans' => 'Na drugim jezicima',
-	'translate-tag-noedit' => 'Ova stranica je automatski ažuriran prijevod stranice.
-Možete [$1 urediti izvornu stranicu] ili [$2 ažurirati prijevod].',
 	'translations' => 'Svi prijevodi',
 	'translations-summary' => 'Unesite naziv poruke ispod da bi prikazali sve dostupne prijevode.',
 	'translate-translations-no-message' => '"$1" je poruka koja se ne može prevoditi',
@@ -2631,7 +2625,6 @@ Ne mogu da odredim grupu i jezik iz zaglavlja datoteke.',
 	'translate-import-err-warnings' => 'Datoteka nije dobro formirana.
 Provjerite da li je Vaš uređivač uklonio msgctxt polja.
 Detalji: $1',
-	'translate-js-fb' => 'Obično uređivanje',
 	'translate-gs-pos' => 'Mj.',
 	'translate-gs-code' => 'Kod',
 	'translate-gs-continent' => 'Kontinent',
@@ -2791,8 +2784,6 @@ Heu de tenir permisos de traductor per a desar els canvis, que no es guardaran f
 	'translate-tag-fuzzy-comment' => "Definició canviada per [[User:$1|$1]] a l'edició $2.",
 	'translate-tag-fuzzy-reason' => 'Definició canviada per «$1» amb el comentari «$3» a $2.',
 	'translate-sidebar-alltrans' => 'En altres idiomes',
-	'translate-tag-noedit' => 'Aquesta és una pàgina de traducció actualitzada automàticament.
-Podeu [$1 editar la pàgina font] o [$2 actualitzar la traducció].',
 	'translations' => 'Totes les traduccions',
 	'translations-summary' => 'Entreu a continuació un nom de missatge per a mostrar-ne totes les traduccions disponibles.',
 	'translate-translations-no-message' => '«$1» no és un missatge a traduir.',
@@ -3043,8 +3034,6 @@ Implicitní seznam (''default'') závisí na vašem jazyce.",
 	'translate-tag-fuzzy-comment' => 'Definici změnil [[User:$1|$1]] v revizi $2.',
 	'translate-tag-fuzzy-reason' => 'Definici změnil „$1“ v revizi $2 s komentářem „$3“.',
 	'translate-sidebar-alltrans' => 'V jiných jazycích',
-	'translate-tag-noedit' => 'Tato stránka je automaticky aktualizovaná stránka překladu.
-Můžete [$1 upravit zdrojovou stránku] nebo [$2 aktualizovat překlad].',
 	'translations' => 'Všechny překlady',
 	'translations-summary' => 'Všechny dostupné překlady zobrazíte po zadání názvu zprávy.',
 	'translate-translations-no-message' => 'Nelze překládat zprávu „$1“',
@@ -3055,6 +3044,8 @@ Můžete [$1 upravit zdrojovou stránku] nebo [$2 aktualizovat překlad].',
 	'translate-translations-including-no-param' => 'V parametru musíte určit platný název zprávy',
 	'languagestats' => 'Statistika jazyků',
 	'languagestats-summary' => 'Tato stránka zobrazuje statistiku překladů všech skupin zpráv v daném jazyce.',
+	'languagestats-stats-for' => 'Statistiky překladů pro $1 ($2).',
+	'languagestats-recenttranslations' => 'nedávné překlady',
 	'translate-language-code' => 'Kód jazyka',
 	'translate-language-code-field-name' => 'Kód jazyka:',
 	'translate-suppress-complete' => 'Nevypisovat úplně přeložené skupiny zpráv',
@@ -3081,6 +3072,7 @@ Teď doporučujeme zkontrolovat hlášení pomocí stránky [[Special:Translate|
 	'translate-group-desc-wikitravelextensions' => 'Nadskupina zpráv obsahující všechny zprávy používané v podporovaných rozšířeních MediaWiki používaných na [http://www.wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Nadskupina zpráv obsahující všechny zprávy používané v podporovaných rozšířeních MediaWiki používaných na [http://www.unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Nadskupina zpráv obsahující všechny zprávy používané v rozšířeních MediaWiki souvisejících s akcí [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
+	'translate-group-desc-nodesc' => 'Pro tuto skupinu zpráv není popis k dispozici',
 	'importtranslations' => 'Import překladů',
 	'translate-import-from-url' => 'URL souboru:',
 	'translate-import-from-wiki' => 'Soubor na této wiki:',
@@ -3091,7 +3083,6 @@ Metoda <tt>$1</tt> není podporována.',
 	'translate-import-err-ul-failed' => 'Načtení souboru se nezdařilo.',
 	'translate-import-err-invalid-title' => 'Zadané jméno souboru <nowiki>$1</nowiki> není platné.',
 	'translate-import-err-no-such-file' => 'Soubor <nowiki>$1</nowiki> neexistuje nebo nebyl načten lokálně.',
-	'translate-js-fb' => 'Normální editace',
 	'translate-gs-pos' => 'Poř.',
 	'translate-gs-code' => 'Kód',
 	'translate-gs-continent' => 'Světadíl',
@@ -3481,7 +3472,7 @@ Die Standardliste ist abhängig von der Sprache der Benutzeroberfläche.',
 	'translate-percentage-fuzzy' => 'Veraltet',
 	'translate-nothing-to-do' => 'Alle möglichen Übersetzungen sind offenbar schon erledigt.
 Es wird empfohlen, Systemnachrichten mit der Spezialseite [[Special:Translate|{{int:translate}}]] zu überprüfen.',
-	'translate-languagestats-groups' => ' # Ergänze die ID einer Systemnachrichtengruppe (eine per Zeile) um die Gruppen von
+	'translate-languagestats-groups' => ' # Ergänze die ID einer Systemnachrichtengruppe (eine per Zeile) um die Gruppen von 
  # Special:LanguageStats auszuschließen. Nicht existerende IDs
  # werden ignoriert.',
 	'translate-save' => 'Speichern ($1)',
@@ -3605,8 +3596,6 @@ Sie müssen in der Übersetzer-Gruppe sein, um Änderungen zu speichern.
 	'translate-checks-xhtml' => 'Bitte ersetzen Sie {{PLURAL:$2|den folgenden Tag|die folgenden Tags}} durch die korrekten: <strong>$1</strong>',
 	'translate-checks-fudforum-syntax' => 'Bitte benutzen Sie <nowiki>$1</nowiki> anstatt <nowiki>$2</nowiki> in diesem Projekt.',
 	'translate-statsf-intro' => 'Sie können einfache Statistiken mit diesem Formular erstellen. Alle Werte haben untere und oberere Limits.',
-	'translate-tag-noedit' => 'Diese Seite ist eine automatisch aktualisierte Übersetzungsseite.
-Sie können die [$1 Originalseite bearbeiten] oder [$2 die Übersetzung aktualisieren].',
 	'translations-summary' => 'Geben Sie einen Nachrichtennamen ein, um alle verfügbaren Übersetzungen anzuzeigen.',
 	'translate-translations-including-no-param' => 'Bitte geben Sie einen gültigen Nachrichtennamen als Unterseitenparameter an',
 	'translate-manage-modlangs' => 'Bitte überprüfen Sie, ob es Änderungen in {{PLURAL:$1|der folgenden Sprache|den folgenden Sprachen}} gibt:',
@@ -4037,8 +4026,6 @@ $messages['el'] = array(
 	'translate-tag-fuzzy-comment' => 'Ο ορισμός αλλάχθηκε από [[User:$1|$1]] στην αναθεώρηση $2.',
 	'translate-tag-fuzzy-reason' => 'Ο ορισμός αλλάχθηκε από τον/την "$1" με σχόλιο "$3" στις $2.',
 	'translate-sidebar-alltrans' => 'Σε άλλες γλώσσες',
-	'translate-tag-noedit' => 'Αυτή είναι μια αυτόματα ενημερώσιμη σελίδα μετάφρασης.
-Μπορείτε να [$1 επεξεργαστείτε την πηγαία σελίδα] ή να [$2 ενημερώσετε την μετάφραση].',
 	'translations' => 'Όλες οι μεταφράσεις',
 	'translations-summary' => 'Εισάγετε ένα όνομα μηνύματος παρακάτω για εμφανιστούν όλες οι διαθέσιμες μεταφράσεις.',
 	'translate-translations-no-message' => 'Το "$1" δεν είναι ένα μήνυμα προς μετάφραση',
@@ -4097,7 +4084,6 @@ $messages['el'] = array(
 	'translate-import-err-ul-failed' => 'Η επιφόρτωση του αρχείου δεν ήταν επιτυχής',
 	'translate-import-err-invalid-title' => 'Το όνομα του αρχείου <nowiki>$1</nowiki> δεν ήταν έγκυρο.',
 	'translate-import-err-no-such-file' => 'Το αρχείο <nowiki>$1</nowiki> δεν υπάρχει ή δεν έχει φορτωθεί τοπικά.',
-	'translate-js-fb' => 'Κανονική επεξεργασία',
 	'translate-gs-pos' => 'Θέση',
 	'translate-gs-code' => 'Κωδικός',
 	'translate-gs-continent' => 'Ήπειρος',
@@ -4248,8 +4234,6 @@ Vi devas esti en la grupo de tradukantoj por konservi ŝanĝojn.
 	'translate-tag-fuzzy-comment' => 'Difino ŝanĝita de [[User:$1|$1]] en versio $2.',
 	'translate-tag-fuzzy-reason' => 'Difino ŝanĝita de "$1" kun komento "$3" en $2.',
 	'translate-sidebar-alltrans' => 'En aliaj lingvoj',
-	'translate-tag-noedit' => 'Ĉi tiu paĝo estas aŭtomate ĝisdatigita traduko-paĝo.
-Vi povas [$1 redakti la fontpaĝon] aŭ [$2 ĝisdatigi la tradukon].',
 	'translations' => 'Ĉiuj tradukoj',
 	'translations-summary' => 'Enigu mesaĝan nomon suben por montri ĉiujn haveblajn tradukojn.',
 	'translate-translations-no-message' => '"$1" ne estas tradukebla mesaĝo',
@@ -4299,7 +4283,6 @@ Vi povas [$1 redakti la fontpaĝon] aŭ [$2 ĝisdatigi la tradukon].',
 	'translate-import-err-dl-failed' => 'Ne eblas akiri la dosieron:
 $1',
 	'translate-import-err-ul-failed' => 'Dosiero alŝuto ne estis sukcesa',
-	'translate-js-fb' => 'Norma redakto',
 	'translate-gs-code' => 'Kodo',
 	'translate-gs-continent' => 'Kontinento',
 	'translate-gs-score' => 'Poentaro',
@@ -4673,7 +4656,6 @@ Vaikeloetelu sõltub kasutaja keelest.',
 	'translate-percentage-fuzzy' => 'Iganenud',
 	'translate-save' => 'Salvesta ($1)',
 	'translate-jssti-add' => 'Lisa loetellu',
-	'translate-js-fb' => 'Harilik toimetamisaken',
 );
 
 /** Basque (Euskara)
@@ -4783,7 +4765,6 @@ $messages['eu'] = array(
 	'translate-manage-submit' => 'Exekutatu',
 	'translate-manage-import-done' => 'Dena eginda!',
 	'translate-import-load' => 'Fitxategia kargatu',
-	'translate-js-fb' => 'Aldaketa arrunta',
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Kodea',
 	'translate-gs-continent' => 'Kontinentea',
@@ -5045,8 +5026,6 @@ Asetuksen oletusarvoiset kielet riippuvat kielestä jolle olet kääntämässä.
 	'translate-tag-fuzzy-comment' => '[[User:$1|$1]] muutti alkuperäistä tekstiä versiossa $2.',
 	'translate-tag-fuzzy-reason' => '"$1" muutti alkuperäistä tekstiä kommentilla "$3" versiossa $2.',
 	'translate-sidebar-alltrans' => 'Muilla kielillä',
-	'translate-tag-noedit' => 'Tämä sivu on automaattisesti päivittyvä käännössivu.
-Voit [$1 muokata lähdesivua] tai [$2 päivittää käännöksen].',
 	'translations' => 'Kaikki käännökset',
 	'translations-summary' => 'Kirjoita alle sen viestin nimi, jonka kaikki käännökset haluat nähdä.',
 	'translate-translations-no-message' => '”$1” ei ole käännettävä viesti',
@@ -5120,7 +5099,6 @@ Menetelmä <tt>$1</tt> ei kuulu tuettuihin.',
 $1',
 	'translate-import-err-ul-failed' => 'Tiedoston lähettäminen ei onnistunut',
 	'translate-import-err-invalid-title' => 'Annettu tiedostonnimi <nowiki>$1</nowiki> on virheellinen.',
-	'translate-js-fb' => 'Tavallinen muokkaus',
 	'translate-gs-pos' => 'Sij.',
 	'translate-gs-code' => 'Koodi',
 	'translate-gs-speakers' => 'Puhujat',
@@ -5561,8 +5539,6 @@ Totes les valors ont des limites d’amont et desot.',
 	'translate-tag-fuzzy-comment' => 'Dèfinicion changiê per l’utilisator [[User:$1|$1]] dens la vèrsion $2.',
 	'translate-tag-fuzzy-reason' => 'Dèfinicion changiê per l’utilisator « $1 » avouéc por comentèro « $3 » dens $2.',
 	'translate-sidebar-alltrans' => 'Dens les ôtres lengoues',
-	'translate-tag-noedit' => 'O est una pâge de traduccion betâ a jorn ôtomaticament.
-Vos pouede [$1 changiér la pâge d’origina] ou ben [$2 betar a jorn la traduccion].',
 	'translations' => 'Totes les traduccions',
 	'translations-summary' => 'Buchiéd un nom de mèssâjo ce-desot por fâre vêre totes les traduccions disponibles.',
 	'translate-translations-no-message' => '« $1 » est pas un mèssâjo traduisiblo',
@@ -5644,7 +5620,6 @@ $messages['fur'] = array(
 	'translate-translations-project' => 'Progjet:',
 	'translate-language' => 'Lenghe',
 	'translate-untranslated' => 'No tradusûts',
-	'translate-js-fb' => 'Cambiament normâl',
 );
 
 /** Western Frisian (Frysk)
@@ -6584,8 +6559,6 @@ $messages['he'] = array(
 	'translate-tag-fuzzy-comment' => 'ההגדרה שונתה בידי [[User:$1|$1]] בגרסה $2.',
 	'translate-tag-fuzzy-reason' => 'ההגדרה שונתה על ידי "$1" עם תקציר העריכה "$3" ב־$2.',
 	'translate-sidebar-alltrans' => 'בשפות אחרות',
-	'translate-tag-noedit' => 'דף זה הינו דף תרגום המתעדכן אוטומטית.
-ניתן [$1 לערוך את דף המקור] או [$2 לעדכן את התרגום].',
 	'translations' => 'כל התרגומים',
 	'translations-summary' => 'הקלידו את שם ההודעה להלן כדי להציג את כל התרגומים הזמינים.',
 	'translate-translations-no-message' => '"$1" אינה הודעה הניתנת לתרגום',
@@ -6654,7 +6627,6 @@ $1',
 	'translate-import-err-warnings' => 'הקובץ אינו מאורגן כראוי.
 אנא ודאו כי העורך שלכם אינו מסיר את שדות ה־msgctxt.
 פרטים: $1',
-	'translate-js-fb' => 'עריכה רגילה',
 	'translate-gs-code' => 'קוד',
 	'translate-gs-continent' => 'יבשת',
 	'translate-gs-speakers' => 'דוברים',
@@ -6792,7 +6764,7 @@ $messages['hr'] = array(
 	'translate-pref-editassistlang' => 'Pomoćni jezici:',
 	'prefs-translate' => 'Mogućnosti prijevoda',
 	'translate-pref-editassistlang-help' => 'Popis jezičnih kodova odjeljen zarezima.
-Prijevod poruke na tim jezicima bit će prikazani dok prevodite.
+Prijevod poruke na tim jezicima bit će prikazani dok prevodite. 
 Zadani popis jezika ovisi o vašem jeziku.',
 	'translate-pref-jsedit' => 'Poboljšani uređivač prijevoda (JavaScript)',
 	'right-translate' => 'Uređivanje koristeći sučelje za prevođenje',
@@ -7852,8 +7824,6 @@ Daftar bahasa baku tergantung pada bahasa Anda.',
 	'translate-tag-fuzzy-comment' => 'Definisi diubah oleh [[User:$1|$1]] pada revisi $2.',
 	'translate-tag-fuzzy-reason' => 'Definisi diubah oleh "$1" dengan komentar "$3" pada $2.',
 	'translate-sidebar-alltrans' => 'Dalam bahasa lain',
-	'translate-tag-noedit' => 'Halaman ini secara otomatis memperbarui halaman penerjemahan.
-Anda dapat [$1 menyunting halaman sumber] atau [$2 memperbarui terjemahannya].',
 	'translations' => 'Semua terjemahan',
 	'translations-summary' => 'Masukkan sebuah nama pesan di bawah ini untuk menampilkan semua terjemahan yang tersedia.',
 	'translate-translations-no-message' => '"$1" bukan pesan yang dapat diterjemahkan',
@@ -7952,7 +7922,6 @@ Tidak dapat menentukan grup dan bahasa dari kepala berkas.',
 	'translate-import-err-warnings' => "Berkas ini tidak diciptakan dengan benar.
 Pastikan penyunting Anda tidak membuang ''field'' msgctxt.
 Detil: $1",
-	'translate-js-fb' => 'Penyuntingan normal',
 	'translate-gs-pos' => 'Tingkat.',
 	'translate-gs-code' => 'Kode',
 	'translate-gs-continent' => 'Benua',
@@ -8007,7 +7976,6 @@ $messages['ig'] = array(
 	'translate-manage-import-new' => 'Ozi ohúrù $1',
 	'translate-manage-import-deleted' => 'Ozi bakashịrị $1',
 	'translate-manage-import-done' => 'Omechá!',
-	'translate-js-fb' => 'Ézíbóté orü',
 	'translate-gs-code' => 'Edemede i zonari',
 	'translate-gs-continent' => 'Obodo ukwu',
 	'translate-gs-speakers' => 'Ndi na su',
@@ -9212,7 +9180,7 @@ $messages['km'] = array(
 ប្រសិនបើ​ភាសារបស់អ្នក​មិនបានបង្ហាញត្រឹមត្រូវដោយមិនប្តូរឈ្មោះវិបសាយទេ សូមទាក់ទងអ្នកអភិវឌ្ឍ (អ្នករចនាវិបសាយ)។
 
 
-អ្នកចាំបាច់ត្រូវតែស្ថិតក្នុងក្រុមអ្នកប្រែសម្រួល ទើបអាចរក្សាទុកបំលាស់ប្តូរបាន។
+អ្នកចាំបាច់ត្រូវតែស្ថិតក្នុងក្រុមអ្នកប្រែសម្រួល ទើបអាចរក្សាទុកបំលាស់ប្តូរបាន។ 
 បំលាស់ប្តូរនឹងមិនត្រូវបានរក្សាទុកទេ​លើកលែងតែអ្នកបានចុចប៊ូតុង​រក្សាទំព័រទុក​នៅខាងក្រោម ។',
 	'translate-magic-module' => 'ម៉ូឌុល៖',
 	'translate-magic-submit' => 'នាំមក​បង្ហាញ',
@@ -9280,9 +9248,6 @@ $messages['km'] = array(
 	'translate-tag-fuzzy-comment' => 'និយមន័យ​ត្រូវ​វបាន​ផ្លាស់ប្ដូរ​ដោយ [[User:$1|$1]] នៅក្នុង​ការពិនិត្យឡើងវិញ $2 ។',
 	'translate-tag-fuzzy-reason' => 'និយមន័យ​ត្រូវ​វបាន​ផ្លាស់ប្ដូរ​ដោយ "$1" ជាមួយ​ការ​អធិប្បាយ "$3" នៅក្នុង $2.',
 	'translate-sidebar-alltrans' => 'ជាភាសាដទៃទៀត',
-	'translate-tag-noedit' => 'ទំព័រនេះជាទំព័របកប្រែដែលត្រូវបានបន្ទាន់សម័យដោយស្វ័យប្រវត្តិ។
-
-អ្នកអាច [$1 កែប្រែទំព័រប្រភព] ឬ [$2 បន្ទាន់សម័យបំណកប្រែ]។',
 	'translations' => 'បំណកប្រែទាំងអស់',
 	'translations-summary' => 'បញ្ចូល​ឈ្មោះ​សារ​ខាងក្រោម ដើម្បី​បង្ហាញ​គ្រប់​សារ​ទាំងអស់​ដែល​អាច​ប្រែសម្រួល​បាន​។',
 	'translate-translations-no-message' => '"$1" គឺជា​សារ​ដែល​មិនអាច​ប្រែសម្រួល​បាន',
@@ -9474,7 +9439,7 @@ $messages['krj'] = array(
 	'translate-history' => 'Kasaysayan',
 );
 
-/** Ripoarisch (Ripoarisch)
+/** Colognian (Ripoarisch)
  * @author Purodha
  */
 $messages['ksh'] = array(
@@ -9617,8 +9582,6 @@ Wat De jezeich kreß, wann De nix enndrähß, deiht vun dä Shprooch afhange, en
 	'translate-tag-fuzzy-comment' => 'Dä ojinaal-Tex wood fum „[[User:$1|$1]]“ verändert met de Version $2.',
 	'translate-tag-fuzzy-reason' => 'Dä ojinaal-Tex wood fum „$1“ verändert met de Version $2 fum MediaWiki, met dämm Kommentaa: "$3"',
 	'translate-sidebar-alltrans' => 'In ander Shprooche',
-	'translate-tag-noedit' => 'Die Sigg es en Övversäzongß_Sigg, die automattejj_op der neuste Shtant jebraat weed.
-Do kanns de [$1 Ojinaal-Sigg ändere] ov de [$2 Övversäzong op der neuste Shtand bränge].',
 	'translations' => 'All Övversätzunge',
 	'translations-summary' => 'Jif ene Name för en Nohresch enn, öm all de Övversätzunge aanzezeije.',
 	'translate-translations-no-message' => 'Mer han kein Nohresch „$1“ för ze övversetze',
@@ -9711,7 +9674,6 @@ $1',
 	'translate-import-err-no-such-file' => 'Di Datei „<nowiki>$1</nowiki>“ jidd_et nit, udder se es nit heh en et Wiki huhjelaade.',
 	'translate-import-err-no-headers' => 'Di Dattei es nit em Jettäx Fommaat vum Zohsazprojramm <code lang="en">Translate</code>: Kunnt de Jropp un Shprooch nit uß de Koppdaate eruß krijje.',
 	'translate-import-err-warnings' => 'Di Dattei es nit em reschteje Fommaat. Beß sescher, dat kein vun Dinge Projramme de <code lang="en">msgctxt</code> Felder fott määt. De Einzelheite: $1',
-	'translate-js-fb' => 'Nomaal Änderung',
 	'translate-gs-pos' => 'Posizjuhn',
 	'translate-gs-code' => 'Afjekööz',
 	'translate-gs-continent' => 'Kontinänt',
@@ -10191,7 +10153,7 @@ Noklusētā saraksta vērtība ir atkarīga no tavas valodas.',
 	'translate-jssti-add' => 'Pievienot sarakstam',
 );
 
-/** Laz (Laz)
+/** Lazuri (Lazuri)
  * @author Bombola
  */
 $messages['lzz'] = array(
@@ -10735,7 +10697,6 @@ It-tibdil ma jiġix salvat sakemm ma tagħfasx il-buttuna t'isfel biex issalva."
 	'translationchanges-export' => 'esporta',
 	'translate-pref-nonewsletter' => "Tibgħatlix ''newsletter'' b'permezz ta' ittra-e",
 	'languagestats' => 'Statistika tal-lingwi',
-	'translate-js-fb' => 'Modifika normali',
 );
 
 /** Erzya (Эрзянь)
@@ -11308,8 +11269,6 @@ Endringar vert ikkje lagra før du klikkar på lagreknappen nedanfor.',
 	'translate-tag-fuzzy-comment' => 'Definisjon endra av [[User:$1|$1]] i versjon $2.',
 	'translate-tag-fuzzy-reason' => 'Definisjon endra av brukaren $1 med kommentaren «$3» i $2.',
 	'translate-sidebar-alltrans' => 'På andre språk',
-	'translate-tag-noedit' => 'Denne sida er ei automatisk oppdatert omsetjing.
-Du kan [$1 endre kjeldesida] eller [$2 oppdatere omsetjinga].',
 	'translations' => 'Alle omsetjingar',
 	'translations-summary' => 'Skriv inn eit meldingsnamn nedanfor for å visa alle tilgjengelege omsetjingar.',
 	'translate-translations-no-message' => '"$1" er ei melding som ikkje kan omsetjast',
@@ -11788,8 +11747,6 @@ La lista per defaut de las lengas varia en foncion de vòstra lenga.',
 	'translate-tag-fuzzy-comment' => 'Definicion modificada per l’utilizaire [[User:$1|$1]] dins la version $2.',
 	'translate-tag-fuzzy-reason' => 'Definicion modificada per l’utilizaire $1 amb per comentari « $3 » dins $2.',
 	'translate-sidebar-alltrans' => 'Dins las autras lengas',
-	'translate-tag-noedit' => 'Aquesta pagina es un document de traduccion automaticament mesa a jorn.
-Podètz [$1 modificar la pagina font] o [$2 metre a jorn la traduccion].',
 	'translations' => 'Totas las traduccions',
 	'translations-summary' => 'Picatz un nom de messatge en dejós per far veire totas las traduccions disponiblas.',
 	'translate-translations-no-message' => '« $1 » es pas un messatge traductible',
@@ -11885,7 +11842,11 @@ es impossible de determinar lo grop e la lenga dempuèi las entèstas del fichi�
 	'translate-import-err-warnings' => 'Lo fichièr es pas format coma cal.
 Asseguratz-vos que vòstre esplech de traduccion suprimís pas los camps « msgctxt ».
 Detalhs : $1',
-	'translate-js-fb' => 'Modificacion normala',
+	'translate-js-next' => 'Salvar e dobrir lo seguent',
+	'translate-js-nonext' => "Èra lo darrièr messatge d'aquesta pagina.",
+	'translate-js-skip' => 'Anar al seguent',
+	'translate-js-save-failed' => "L'enregistrament a fracassat. Senhalatz aquela error.",
+	'translate-js-history' => 'Istoric de traduccion',
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Còde',
 	'translate-gs-continent' => 'Continent',
@@ -12983,8 +12944,6 @@ A lista padrão de idiomas depende do seu idioma.',
 	'translate-tag-fuzzy-comment' => 'Definição modificada por [[User:$1|$1]] na revisão $2.',
 	'translate-tag-fuzzy-reason' => 'Definição mudada por "$1" com comentário "$3" em $2.',
 	'translate-sidebar-alltrans' => 'Em outras línguas',
-	'translate-tag-noedit' => 'Esta página de tradução é atualizada automaticamente.
-Você pode [$1 editar a página de origem] ou [$2 atualizar a tradução].',
 	'translations' => 'Todas as traduções',
 	'translations-summary' => 'Introduza o título de uma mensagem abaixo para mostrar todas as traduções disponíveis.',
 	'translate-translations-no-message' => '"$1" não é uma mensagem traduzível',
@@ -13058,7 +13017,6 @@ O método <tt>$1</tt> não é suportado.',
 	'translate-import-err-ul-failed' => 'Carregamento de arquivo sem sucesso',
 	'translate-import-err-invalid-title' => 'O nome <nowiki>$1</nowiki> fornecido para o arquivo era inválido.',
 	'translate-import-err-no-such-file' => 'O arquivo <nowiki>$1</nowiki> não existe ou não foi carregado localmente.',
-	'translate-js-fb' => 'Edição normal',
 	'translate-gs-speakers' => 'Falantes',
 	'translate-gs-total' => 'Total',
 );
@@ -13074,7 +13032,7 @@ $messages['rif'] = array(
 	'translate-page-edit' => 'arri',
 );
 
-/** Rhaeto-Romance (Rumantsch)
+/** Romansh (Rumantsch)
  * @author Gion
  * @author Gion-andri
  */
@@ -13262,7 +13220,6 @@ Dacă ştiţi unde sau cum este folosit acest mesaj, îi puteţi ajuta pe ceilal
 Metoda <tt>$1</tt> nu este suportată.',
 	'translate-import-err-ul-failed' => 'Încărcarea fişierului nu a avut succes',
 	'translate-import-err-no-such-file' => 'Fişierul <nowiki>$1</nowiki> nu există sau nu a fost încărcat local.',
-	'translate-js-fb' => 'Modificare normală',
 	'translate-gs-pos' => 'Poz.',
 	'translate-gs-code' => 'Cod',
 	'translate-gs-continent' => 'Continent',
@@ -13778,8 +13735,6 @@ $messages['sah'] = array(
 	'translate-tag-fuzzy-comment' => '[[User:$1|$1]] кыттааччы  $2 барылын уларыппыт.',
 	'translate-tag-fuzzy-reason' => '"$1" кыттааччы $2 барылын уларыппыт, быһаарыыта "$3".',
 	'translate-sidebar-alltrans' => 'Атын тылларынан',
-	'translate-tag-noedit' => 'Бу аптамаатынан саҥардыллар тылбаастаах сирэй.
-[Бастакы сирэйи $1 уларытыаххын] эбэтэр [$2 тылбааһы саҥардыаххын] сөп.',
 	'translations' => 'Бары тылбаастар',
 	'translations-summary' => 'Этии аатын киллэрдэххинэ тылбаастара тахсан кэлиэхтэрэ.',
 	'translate-translations-no-message' => '"$1" тылбаастанар кыахтаах этии буолбатах',
@@ -14008,8 +13963,6 @@ Predvoleny zoznam jazykov závisí na vašom jazyku.',
 	'translate-tag-fuzzy-comment' => 'Definíciu zmenil [[User:$1|$1]] v revízii $2.',
 	'translate-tag-fuzzy-reason' => 'Definíciu zmenil „$1” v revízii $2 s komentárom „$3”.',
 	'translate-sidebar-alltrans' => 'V iných jazykoch',
-	'translate-tag-noedit' => 'Táto stránka je automaticky aktualizovaná stránka prekladu.
-Môžete [$1 upravovať zdrojovú stránku] alebo [$2 aktualizovať preklad].',
 	'translations' => 'Všetky preklady',
 	'translations-summary' => 'Všetky dostupné preklady zobrazíte po zadaní názvu správy.',
 	'translate-translations-no-message' => '„$1“ nie je správa, ktorú možno preložiť',
@@ -14108,7 +14061,6 @@ Nebolo možné určiť skupinu a jazyk z hlavičiek súboru.',
 	'translate-import-err-warnings' => 'Tento súbor nie je platný.
 Uistite sa, že váš editor neodstraňuje polia msgctxt.
 Podrobnosti: $1',
-	'translate-js-fb' => 'Bežná úprava',
 	'translate-gs-pos' => 'Poz.',
 	'translate-gs-code' => 'Kód',
 	'translate-gs-continent' => 'Kontinent',
@@ -14377,8 +14329,6 @@ $messages['sr-ec'] = array(
 	'translate-tag-fuzzy-comment' => 'Дефиницију променио [[User:$1|$1]] у измени $2.',
 	'translate-tag-fuzzy-reason' => 'Дефиницију променио „$1“ са коментаром „$3“ у $2.',
 	'translate-sidebar-alltrans' => 'На другим језицима',
-	'translate-tag-noedit' => 'Ова страна је аутоматски актуализована страна са преводима.
-Можете [$1 изменити изворну страну] или [$2 актуализовати превод].',
 	'translations' => 'Сви преводи',
 	'translations-summary' => 'Унесите испод име поруке, да би били приказани сви расположиви преводи.',
 	'translate-translations-no-message' => '"$1" није преводива порука',
@@ -14511,8 +14461,6 @@ Sve vrednosti imaju svoja gornja i donja ograničenja.',
 	'translate-tag-fuzzy-comment' => 'Definiciju promenio [[User:$1|$1]] u izmeni $2.',
 	'translate-tag-fuzzy-reason' => 'Definiciju promenio „$1“ sa komentarom „$3“ u $2.',
 	'translate-sidebar-alltrans' => 'Na drugim jezicima',
-	'translate-tag-noedit' => 'Ova strana je automatski aktualizovana strana sa prevodima.
-Možete [$1 izmeniti izvornu stranu] ili [$2 aktualizovati prevod].',
 	'translations' => 'Svi prevodi',
 	'translations-summary' => 'Unesite ispod ime poruke, da bi bili prikazani svi raspoloživi prevodi.',
 	'translate-translations-no-message' => '"$1" nije prevodiva poruka',
@@ -14670,8 +14618,6 @@ Annerengen wäide eerste bie dän Klik ap dän Spiekerje-Knoop spiekerd.',
 	'translate-tag-fuzzy-comment' => 'Definition ferannerd truch [[User:$1|$1]] in Version $2.',
 	'translate-tag-fuzzy-reason' => 'Definition ferannerd truch „$1“ mäd dän Kommentoar „$3“ in $2.',
 	'translate-sidebar-alltrans' => 'In uur Sproaken',
-	'translate-tag-noedit' => 'Disse Siede is ne automatisk aktualisierde Uursättengssiede.
-Du koast ju [$1 Originoalsiede beoarbaidje] of [$2 ju Uursättenge aktualisierje].',
 	'translations' => 'Aal Uursättengen',
 	'translations-summary' => 'Reek n Ättergjuchtenoome ien, uum aal ferföigboare Uursättengen antouwiesen.',
 	'translate-translations-no-message' => '„$1“ is neen uursätboare Ättergjucht',
@@ -14946,8 +14892,6 @@ Standardlistan på språk avgörs av ditt språk.',
 	'translate-tag-fuzzy-comment' => 'Definition ändrad av [[User:$1]] i sidversion $2.',
 	'translate-tag-fuzzy-reason' => 'Definition ändrad av användare $1 med kommentaren "$3" i $2.',
 	'translate-sidebar-alltrans' => 'På andra språk',
-	'translate-tag-noedit' => 'Den här sidan är en automatisk uppdaterad översättning.
-Du kan [$1 redigera källsidan] eller [$2 uppdatera översättningen].',
 	'translations' => 'Alla översättningar',
 	'translations-summary' => 'Skriv in ett namn på ett meddelande nedan för att visa alla tillgängliga översättningar.',
 	'translate-translations-no-message' => '"$1" är inte ett översättningsbart meddelande',
@@ -15003,7 +14947,7 @@ Du uppmuntras att granska meddelanden genom [[Special:Translate|{{int:translate}
 	'translate-manage-action-fuzzy' => 'Importera och märk översättningar för kontroll ("fuzzy")',
 	'translate-manage-submit' => 'Genomför',
 	'translate-manage-nochanges' => 'Det finns inga förändringar i meddelande-definitionerna för den här gruppen.',
-	'translate-manage-nochanges-other' => 'Inga förändringar för det här språket.
+	'translate-manage-nochanges-other' => 'Inga förändringar för det här språket. 
 Använd länken nedan för att återgå till gruppdetaljerna.',
 	'translate-manage-toolong' => 'Den maximala behandlingstiden på $1 {{PLURAL:$1|sekund|sekunder}} har överskridits.
 Vänligen aktivera formuläret igen för att fortsätta behandla det.',
@@ -15027,11 +14971,10 @@ När du har uppdaterat meddelandedefinitionerna, kontrollera externa förändrin
 	'translate-import-load' => 'Ladda fil',
 	'translate-import-err-type-not-supported' => 'Kan inte ladda filen:
 Metoden <tt>$1</tt> stöds inte.',
-	'translate-import-err-dl-failed' => 'Kan inte hämta denna filen:
+	'translate-import-err-dl-failed' => 'Kan inte hämta denna filen: 
 $1',
 	'translate-import-err-ul-failed' => 'Filuppladdningen misslyckades',
 	'translate-import-err-invalid-title' => 'Det angivna filnamnet <nowiki>$1</nowiki> är inte giltigt.',
-	'translate-js-fb' => 'Vanlig redigering',
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Kod',
 	'translate-gs-continent' => 'Kontinent',
@@ -15198,8 +15141,6 @@ $messages['te'] = array(
 	'translate-tag-category' => 'అనువదించదగ్గ పేజీలు',
 	'translate-tag-page-desc' => '[[:$1]] వికీ పేజీ యొక్క అనువాదం.',
 	'translate-sidebar-alltrans' => 'ఇతర భాషలలో',
-	'translate-tag-noedit' => 'ఈ పేజీ ఆటోమెటిగ్గా తాజాకరించబడే అనువాదపు పేజీ.
-మీరు దీని [$1 మూల పేజీని మార్చవచ్చు] లేదా [$2 అనువాదాన్ని తాజాకరించవచ్చు].',
 	'translations' => 'అన్ని అనువాదాలు',
 	'translate-translations-no-message' => '"$1" అనేది అనువదించదగ్గ సందేశం కాదు',
 	'translate-translations-none' => '"$1"కి అనువాదాలేమీ లేవు',
@@ -15234,7 +15175,6 @@ $messages['te'] = array(
 	'translate-import-from-wiki' => 'ఈ వికీలోని ఫైలు:',
 	'translate-import-from-local' => 'స్థానిక ఫైలు ఎక్కింపు:',
 	'translate-import-err-ul-failed' => 'ఫైలు ఎక్కింపు విజయవంతం కాలేదు',
-	'translate-js-fb' => 'సాధారణ మార్పు',
 	'translate-gs-pos' => 'స్ధానం',
 	'translate-gs-code' => 'సంకేతం',
 	'translate-gs-continent' => 'ఖండం',
@@ -15523,8 +15463,6 @@ $messages['th'] = array(
 	'translate-tag-fuzzy-comment' => '[[User:$1|$1]] ได้เปลี่ยนนิยามต้นฉบับ (definition) ในรุ่น $2',
 	'translate-tag-fuzzy-reason' => '"$1" ได้เปลี่ยนนิยามต้นฉบับ (definition) ใน $2 โดยให้คำอธิบายไว้ว่า "$3"',
 	'translate-sidebar-alltrans' => 'คำแปลในภาษาอื่น ๆ',
-	'translate-tag-noedit' => 'หน้านี้เป็นหน้าคำแปลที่ได้รับการแก้ไขอัตโนมัติ
-คุณสามารถ[$1 แก้ไขหน้าต้นฉบับ] หรือ [$2 แก้ไขคำแปล]',
 	'translations' => 'คำแปลทั้งหมด',
 	'translations-summary' => 'ใส่ชื่อของข้อความลงด้านล่างนี้ เพื่อแสดงคำแปลที่มีทั้งหมด',
 	'translate-translations-no-message' => '"$1" เป็นข้อความที่ไม่สามารถแปลได้',
@@ -15770,8 +15708,6 @@ Hindi sinasagip ang mga pagbabago maliban na lamang kapag pinindot mo na ang pin
 	'translate-tag-fuzzy-comment' => 'Binago ni [[User:$1|$1]] ang kahulugan sa loob ng pagbabagong $2.',
 	'translate-tag-fuzzy-reason' => 'Binago ni "$1" ang kahulugan na may puna/kumentong "$3" na nasa $2.',
 	'translate-sidebar-alltrans' => 'Sa iba pang mga wika',
-	'translate-tag-noedit' => 'Ang pahinang ito ay isang kusa/awtomatikong isinapanahong pahina ng salinwika.
-Maaari mong [$1 baguhin ang pinagmulang pahina] o [$2 isapanahon ang salinwika].',
 	'translations' => 'Lahat ng mga salinwika',
 	'translations-summary' => 'Magpasok (maglagay) ng isang pangalan ng mensahe sa ibaba upang maipakita ang lahat ng makukuhang mga salinwika.',
 	'translate-translations-no-message' => 'Ang "$1" ay isang hindi maisasalinwikang mensahe',
@@ -15938,7 +15874,6 @@ Grup detayları görünümüne dönmek için aşağıdaki bağlantıyı kullanı
 	'translate-import-from-local' => 'Yerel dosya yükleme:',
 	'translate-import-load' => 'Dosya yükle',
 	'translate-import-err-ul-failed' => 'Dosya yükleme başarısız oldu',
-	'translate-js-fb' => 'Normal değişiklik',
 	'translate-gs-pos' => 'Kon',
 	'translate-gs-code' => 'Kod',
 	'translate-gs-continent' => 'Kıta',
@@ -16461,7 +16396,6 @@ $messages['vep'] = array(
 	'translate-manage-import-deleted' => 'Čutud poiš tedotuz $1',
 	'translate-manage-import-done' => 'Kaik om tehtud!',
 	'translate-import-from-url' => 'Necen failan URL:',
-	'translate-js-fb' => 'Normaline redaktiruind',
 );
 
 /** Vietnamese (Tiếng Việt)
@@ -17000,7 +16934,7 @@ $messages['yi'] = array(
 	'translate-manage-import-new' => 'נייע מעלדונק $1',
 );
 
-/** Yue (粵語)
+/** Cantonese (粵語)
  * @author Shinjiman
  */
 $messages['yue'] = array(
