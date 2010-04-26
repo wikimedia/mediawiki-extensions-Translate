@@ -5814,6 +5814,8 @@ A lista de linguas por defecto depende da súa.',
 	'translate-translations-including-no-param' => 'Por favor, especifique unha clave de mensaxe válida no parámetro da subpáxina',
 	'languagestats' => 'Estatísticas da lingua',
 	'languagestats-summary' => 'Esta páxina amosa as estatísticas da tradución dos grupos de mensaxes dunha lingua.',
+	'languagestats-stats-for' => 'Estatísticas das traducións en $1 ($2).',
+	'languagestats-recenttranslations' => 'traducións recentes',
 	'translate-language-code' => 'Código da lingua',
 	'translate-language-code-field-name' => 'Código da lingua:',
 	'translate-suppress-complete' => 'Omitir os grupos de mensaxes completamente traducidos',
@@ -9311,6 +9313,7 @@ $messages['kn'] = array(
 	'translate-language-code-field-name' => 'ಭಾಷಾ ಸಂಕೇತ:',
 	'translate-language' => 'ಭಾಷೆ',
 	'translate-total' => 'ಸಂದೇಶಗಳು',
+	'translate-gs-total' => 'ಒಟ್ಟು',
 );
 
 /** Korean (한국어)
