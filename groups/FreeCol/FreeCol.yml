@@ -50,6 +50,7 @@ TAGS:
     - model.nation.Swedish.Europe
     - model.region.default
     - model.unit.occupation.activeNoMovesLeft
+    - model.unit.occupation.improving
     - selectDestination.destinationTurns
     - shipName.3.0
     - year.YEAR
