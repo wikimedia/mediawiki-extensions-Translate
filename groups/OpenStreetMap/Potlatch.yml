@@ -9,7 +9,7 @@ BASIC:
 
 FILES:
   class: YamlFFS
-  sourcePattern: %GROUPROOT%/osm/potlatch/%CODE%.yml
+  sourcePattern: %GROUPROOT%/osm/config/potlatch/locales/%CODE%.yml
   codeAsRoot: 1
   targetPattern: %CODE%.yml
   codeMap:

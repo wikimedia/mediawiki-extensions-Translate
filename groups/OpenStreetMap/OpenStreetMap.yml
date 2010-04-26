@@ -9,7 +9,7 @@ BASIC:
 
 FILES:
   class: RubyYamlFFS
-  sourcePattern: %GROUPROOT%/osm/site/%CODE%.yml
+  sourcePattern: %GROUPROOT%/osm/config/locales/%CODE%.yml
   codeAsRoot: 1
   targetPattern: %CODE%.yml
   codeMap:
@@ -23,7 +23,6 @@ CHECKER:
   class: RubyMessageChecker
   checks:
     - RubyVariablesCheck
-
 
 AUTOLOAD:
   RubyMessageChecker: Checker.php
