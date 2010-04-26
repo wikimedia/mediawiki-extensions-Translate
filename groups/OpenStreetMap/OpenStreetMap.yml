@@ -29,10 +29,10 @@ AUTOLOAD:
 
 TAGS:
   optional:
-    - browse.changeset_navigation.paging.all.next
-    - browse.changeset_navigation.paging.all.prev
-    - browse.changeset_navigation.paging.user.next
-    - browse.changeset_navigation.paging.user.prev
+    - browse.navigation.paging.all.next
+    - browse.navigation.paging.all.prev
+    - browse.navigation.paging.user.next
+    - browse.navigation.paging.user.prev
     - browse.relation_member.entry
     - changeset.changeset.id
     - geocoder.search osm nominatim.prefix other
