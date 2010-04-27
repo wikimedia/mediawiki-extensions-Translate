@@ -1384,7 +1384,7 @@ Whos Online
 aliasfile = WhosOnline/WhosOnline.alias.php
 
 Who Is Watching
-aliasfile = WhoIsWatching/SpecialWhoIsWatching.alias.php
+aliasfile = WhoIsWatching/WhoIsWatching.alias.php
 
 Widgets
 magicfile = Widgets/Widgets.i18n.magic.php
