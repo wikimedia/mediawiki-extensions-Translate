@@ -1782,6 +1782,7 @@ D'Säit, déi Dir versicht z'änneren schéngt net mat enger Säit déi fir d'iw
 $messages['lg'] = array(
 	'tpt-translate-this' => 'vvuunula olupapula luno',
 	'translate-tag-translate-link-desc' => 'Vvuunula olupapula luno',
+	'tpt-languages-legend' => 'Nnimi ndala:',
 );
 
 /** Malagasy (Malagasy)

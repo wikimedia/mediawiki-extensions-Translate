@@ -9293,8 +9293,10 @@ $messages['km'] = array(
  * @author Nayvik
  */
 $messages['kn'] = array(
+	'translate-edit' => 'ಸಂಪಾದಿಸಿ',
 	'translate-history' => 'ಇತಿಹಾಸ',
 	'translate-page-language' => 'ಭಾಷೆ',
+	'translate-page-edit' => 'ಸಂಪಾದಿಸಿ',
 	'translate-optional' => '(ಐಚ್ಛಿಕ)',
 	'translate-stats-edits' => 'ಸಂಪಾದನೆಗಳು',
 	'translate-statsf-width' => 'ಪಿಕ್ಸಲ್‌ಗಳಲ್ಲಿ ಅಗಲ:',
@@ -9969,6 +9971,9 @@ $messages['lg'] = array(
 	'translate' => 'Vvuunula',
 	'translate-edit' => 'kyusa',
 	'translate-talk' => 'yogera nange',
+	'translate-task-view' => "Okulaba obubaka bwonna obw'omu",
+	'translate-task-untranslated' => "Okulaba obubaka obutannavvuunulwa obw'omu",
+	'translate-task-reviewall' => "Okulaba obubaka obuvvuunulidwa bwonna obw'omu",
 	'translate-page-language' => 'Lulimi',
 	'translate-submit' => 'Nona',
 	'translate-page-edit' => 'kyusa',
