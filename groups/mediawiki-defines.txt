@@ -115,6 +115,9 @@ optional = changeauthor-rev
 ignored = changeauthor-logpagetext, changeauthor-short
 
 Char Insert
+#magicfile = CharInsert/CharInsert.i18n.magic.php
+
+Checkpoint
 
 Check User
 aliasfile = CheckUser/CheckUser.alias.php
