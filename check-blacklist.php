@@ -51,7 +51,7 @@ array(
 	'group' => 'ext-advancedrandom',
 	'check' => 'links',
 	'message' => array(
-		'advancedrandom-desc', // Contains link parts that may need translations
+		'advancedrandom-desc', // Contains link parts that may need translation
 	)
 ),
 array(
@@ -104,6 +104,13 @@ array(
 	'message' => array(
 		'centralauth-readmore-text', // Contains link to page that may be available in a translated version
 		'centralauth-finish-problems', // Contains link to page that may be available in a translated version
+	)
+),
+array(
+	'group' => 'ext-checkpoint',
+	'check' => 'links',
+	'message' => array(
+		'checkpoint-notice', // Contains link parts that may need translation
 	)
 ),
 array(
