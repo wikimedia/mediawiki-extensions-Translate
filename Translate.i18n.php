@@ -4561,6 +4561,7 @@ Detalle: $1',
 );
 
 /** Estonian (Eesti)
+ * @author Hendrik
  * @author Ker
  * @author Pikne
  */
@@ -4600,7 +4601,7 @@ $messages['et'] = array(
 	'translate-edit-definition' => 'Sõnumi kuju',
 	'translate-edit-contribute' => 'täienda',
 	'translate-edit-information' => 'Selle sõnumi teave ($1)',
-	'translate-edit-in-other-languages' => 'Sõnum teistes keeltes',
+	'translate-edit-in-other-languages' => 'Sõnum "$1" teistes keeltes',
 	'translate-edit-committed' => 'Kehtiv tõlge tarkvaras',
 	'translate-edit-warnings' => 'Hoiatused puuduliku tõlke kohta',
 	'translate-edit-goto-no-prev' => 'Eelmist sõnumit pole',
@@ -4624,6 +4625,7 @@ $messages['et'] = array(
 	'translate-pref-editassistlang-help' => 'Komaga eraldatud keelte loetelu.
 Tõlkimisel kuvatakse sõnumi tõlge nendes keeltes.
 Vaikeloetelu sõltub kasutaja keelest.',
+	'translate-pref-jsedit' => 'Täiustatud tõlkimisredaktor (JavaScript)',
 	'right-translate' => 'Kasutada tõlkeliidest',
 	'translate-rc-translation-filter' => 'Filtreeri tõlkeid:',
 	'translate-rc-translation-filter-no' => 'Ära filtri',
@@ -8453,6 +8455,8 @@ $messages['ja'] = array(
 	'translate-translations-including-no-param' => 'サブページ引数に有効なメッセージキーを指定してください',
 	'languagestats' => '言語別翻訳状況',
 	'languagestats-summary' => 'このページでは指定した言語におけるメッセージの翻訳状況をメッセージグループごとに表示しています。',
+	'languagestats-stats-for' => '$1の翻訳統計（$2）。',
+	'languagestats-recenttranslations' => '最近の翻訳',
 	'translate-language-code' => '言語コード',
 	'translate-language-code-field-name' => '言語コード:',
 	'translate-suppress-complete' => '翻訳が完了したグループを表示しない',
