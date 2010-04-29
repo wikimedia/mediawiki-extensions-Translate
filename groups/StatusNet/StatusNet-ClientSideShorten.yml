@@ -1,0 +1,25 @@
+---
+BASIC:
+  id: out-statusnet-clientsideshorten
+  label: StatusNet - ClientSideShorten
+  description: "{{int:bw-desc-statusnet-plugin-clientsideshorten}}"
+  namespace: NS_STATUSNET
+  display: out/statusnet/clientsideshorten
+  class: GettextMessageGroup
+
+FILES:
+  class: GettextFFS
+  sourcePattern: %GROUPROOT%/plugins/ClientSideShorten/locale/%CODE%/LC_MESSAGES/ClientSideShorten.po
+  targetPattern: plugins/ClientSideShorten/locale/%CODE%/LC_MESSAGES/ClientSideShorten.po
+  codeMap:
+    en-gb: en_GB
+    no: nb
+    pt-br: pt_BR
+    zh-hans: zh_CN
+    zh-hant: zh_TW
+
+MANGLER
+  class: StringMatcher
+  prefix: clientsideshorten-
+  patterns:
+    - "*"

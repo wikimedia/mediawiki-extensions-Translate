@@ -1,0 +1,25 @@
+---
+BASIC:
+  id: out-statusnet-autosandbox
+  label: StatusNet - AutoSandbox
+  description: "{{int:bw-desc-statusnet-plugin-autosandbox}}"
+  namespace: NS_STATUSNET
+  display: out/statusnet/autosandbox
+  class: GettextMessageGroup
+
+FILES:
+  class: GettextFFS
+  sourcePattern: %GROUPROOT%/plugins/AutoSandbox/locale/%CODE%/LC_MESSAGES/AutoSandbox.po
+  targetPattern: plugins/AutoSandbox/locale/%CODE%/LC_MESSAGES/AutoSandbox.po
+  codeMap:
+    en-gb: en_GB
+    no: nb
+    pt-br: pt_BR
+    zh-hans: zh_CN
+    zh-hant: zh_TW
+
+MANGLER
+  class: StringMatcher
+  prefix: autosandbox-
+  patterns:
+    - "*"
