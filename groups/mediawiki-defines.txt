@@ -1314,6 +1314,10 @@ id = ext-ui-wikieditor
 file = UsabilityInitiative/WikiEditor/WikiEditor.i18n.php
 descmsg = wikieditor-desc
 
+Usability Initiative - Wikieditor Add Media Wizard
+id = ext-ui-wikieditor-addmediawizard
+file = UsabilityInitiative/WikiEditor/Modules/AddMediaWizard/AddMediaWizard.i18n.php
+
 Usability Initiative - Wikieditor Highlight
 id = ext-ui-wikieditor-highlight
 file = UsabilityInitiative/WikiEditor/Modules/Highlight/Highlight.i18n.php
