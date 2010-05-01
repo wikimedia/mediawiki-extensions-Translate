@@ -17,7 +17,7 @@ $wgExtensionCredits['specialpage'][] = array(
 $wgSpecialPages['FirstSteps'] = 'SpecialFirstSteps';
 $wgExtensionMessagesFiles['FirstSteps'] = dirname( __FILE__ ) . '/FirstSteps.i18n.php';
 
-class SpecialFirstSteps extends SpecialPage {
+class SpecialFirstSteps extends UnlistedSpecialPage {
 	protected $skin, $user, $out;
 
 	public function __construct() {
