@@ -59,8 +59,28 @@ class SpecialSupportedLanguages extends UnlistedSpecialPage {
 		$lb->execute();
 		global $wgUser;
 		$skin = $wgUser->getSkin();
+
+		$parser = new Parser;
+		$parser->setOutputType( 'wiki' );
+		$parserOptions = new ParserOptions;
+
 		foreach ( array_keys( $users ) as $code ) {
-			$wgOut->addWikiText( "== [$code] {$locals[$code]} - {$natives[$code]} ==" );
+			$portalTitle = Title::makeTitleSafe( NS_PORTAL, $code );
+			$linkText = $parser->parse(
+				"==[$code] {$locals[$code]} - {$natives[$code]}==",
+				$portalTitle /* as dummy */,
+				$wgUser,
+				$parserOptions
+			);
+			$portalLink = link(
+				$portalTitle,
+				$linkText,
+				array( 'id' => $code ),
+				array(),
+				attay( 'known', 'noclasses' )
+			);
+				
+			$wgOut->addHtml( $portalLink );
 
 			foreach ( $users[$code] as $index => $username ) {
 				$title = Title::makeTitleSafe( NS_USER, $username );
