@@ -13,6 +13,9 @@ class SpecialSupportedLanguages extends UnlistedSpecialPage {
 	public function execute( $par ) {
 		global $wgLang, $wgOut;
 
+		$this->outputHeader();
+		$this->setHeaders();
+
 		$locals = LanguageNames::getNames( $wgLang->getCode(),
 			LanguageNames::FALLBACK_NORMAL,
 			LanguageNames::LIST_MW_AND_CLDR
