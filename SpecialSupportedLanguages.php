@@ -67,7 +67,7 @@ class SpecialSupportedLanguages extends UnlistedSpecialPage {
 				$portalTitle,
 				wfMsg( 'supportedlanguages-portallink', $code, $locals[$code], $natives[$code] ),
 				array(
-					'id' => $code
+					'id' => $code,
 					'title' => $portalText . ' ' . $locals[$code]
 				),
 				array(),
