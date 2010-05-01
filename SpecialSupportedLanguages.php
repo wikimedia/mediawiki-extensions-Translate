@@ -70,7 +70,7 @@ class SpecialSupportedLanguages extends UnlistedSpecialPage {
 				array( 'known', 'noclasses' )
 			);
 				
-			$wgOut->addHTML( $portalLink );
+			$wgOut->addHTML( "<h2>" . $portalLink . "</h2>" );
 
 			foreach ( $users[$code] as $index => $username ) {
 				$title = Title::makeTitleSafe( NS_USER, $username );
