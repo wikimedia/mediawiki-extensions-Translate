@@ -12,6 +12,7 @@ $messages = array();
  * @author Siebrand
  */
 $messages['en'] = array(
+	'firststeps' => 'First steps',
 	'translate-fs-pagetitle-done' => ' - done!',
 	'translate-fs-pagetitle' => 'Steps to translator - $1',
 	'translate-fs-signup-title' => 'Sign up',
@@ -20,7 +21,7 @@ $messages['en'] = array(
 	'translate-fs-permissions-title' => 'Request permissions',
 	'translate-fs-target-title' => 'Start translating!',
 	'translate-fs-email-title' => 'Confirm your e-mail address',
-	
+
 	'translate-fs-intro' => "Welcome to the {{SITENAME}} first steps wizard.
 You will be guided trough the process of becoming a translator step by step.
 In the end you will be able to translate ''interface messages'' of all supported projects at {{SITENAME}}.",
@@ -85,24 +86,22 @@ Please be patient.
 	'translate-fs-target-text' => 'Congratulations!
 You can now start translating.
 
-Don\'t be afraid if still feels confusing.
-At [[Project list]] there is an overview of what you can translate.
-Most of the projects have a short description page with \'\'Translate this project\'\' link,
-that will take you to a page which lists all untranslated messages.
-The list of all projects is at [[Special:Translate]].
+Do not be afraid if still feels new and confusing to you.
+At [[Project list]] there is an overview of projects you can contribute translations to.
+Most of the projects have a short description page with a "\'\'Translate this project\'\'" link, that will take you to a page which lists all untranslated messages.
+A list of all message groups with the [[[Special:LanguageStats|current translation status for a language]] is also available.
 
-If you feel that you need to understand more before you start translating,
-you can read [[FAQ|Frequently asked questions]].
-Unfortanely we do not currently have good documentation.
-If there is something that you can\'t find answer for,
-don\'t hesitate to ask it at [[Support]].
+If you feel that you need to understand more before you start translating, you can read the [[FAQ|Frequently asked questions]].
+Unfortanely documentation can be out of date sometimes.
+If there is something that you think you should be able to do, but cannot find out how, do not hesitate to ask it at the [[Support|support page]].
 
-You can also try to seek help of fellow translators that speak the same language at [[Portal:$1]]
-(change the language code if it is incorrect).',
+You can also contact fellow translators of the same language at [[Portal:$1|your language portal]].
+The portal links to your current [[Special:Preferences|language preference]].
+Please change it if needed.',
 
-	'translate-fs-email-text' => 'You should add e-mail to your preferences and confirm it.
+	'translate-fs-email-text' => 'Please provide your e-mail address in [[Special:Preferences|your preferences]] and confirm it from the e-mail that is sent to you.
 
-This helps us to contact you.
-You also receive newsletters at most once a month.
-If you don\'t want receive them, you can opt-out from your [[Special:Preferences]].',
+This allows other users to contact you by e-mail.
+You will also receive newsletters at most once a month.
+If you do not want receive newsletters, you can opt-out in the tab "{{int:prefs-misc}}" of your [[Special:Preferences|preferences]].',
 );

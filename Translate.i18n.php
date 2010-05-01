@@ -215,6 +215,17 @@ You are encouraged to review messages through [[Special:Translate|{{int:translat
  # are shown on Special:LanguageStats. Non-existing message group IDs will
  # be ignored.', # do not duplicate this message to other languages
 
+	# Special:SupportedLanguages
+	'supportedlanguages' => 'Supported languages',
+	'supportedlanguages-summary' => 'This page displays a list of all the languages supported by {{SITENAME}}, together with the names of the translators working on that language.
+If you want more information on a particular language, you can click on the link to the portal for that language.
+Clicking on a translator name will take you to their user page.
+
+If a language is not listed, you can find out how to start a localization project for a language at "[[Translating:Process|New Language]]".
+
+If you translate to a language and your name is not included, please add your name to the list of translators on the [[:Category:Languages|portal]] for that language.
+See the menu bar for a link to the portal for the language of your preference.',
+
 	'translate-save' => 'Save ($1)',
 
 	'translate-jssti-add' => 'Add to list',
