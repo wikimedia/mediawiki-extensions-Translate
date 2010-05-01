@@ -76,7 +76,7 @@ class SpecialSupportedLanguages extends UnlistedSpecialPage {
 				$linkText,
 				array( 'id' => $code ),
 				array(),
-				attay( 'known', 'noclasses' )
+				array( 'known', 'noclasses' )
 			);
 				
 			$wgOut->addHtml( $portalLink );
