@@ -48,6 +48,7 @@ $wgSpecialPageGroups['Translations'] = 'pages';
 $wgSpecialPageGroups['TranslationChanges'] = 'changes';
 $wgSpecialPageGroups['TranslationStats'] = 'wiki';
 $wgSpecialPageGroups['LanguageStats'] = 'wiki';
+$wgSpecialPageGroups['ImportTranslations'] = 'wiki';
 $wgSpecialPageGroups['PageTranslation'] = 'pagetools';
 
 $wgHooks['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';
