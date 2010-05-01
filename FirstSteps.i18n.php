@@ -14,11 +14,11 @@ $messages = array();
 $messages['en'] = array(
 	'firststeps' => 'First steps',
 	'translate-fs-pagetitle-done' => ' - done!',
-	'translate-fs-pagetitle' => 'Steps to translator - $1',
+	'translate-fs-pagetitle' => 'Start translating - $1',
 	'translate-fs-signup-title' => 'Sign up',
 	'translate-fs-settings-title' => 'Configure your preferences',
-	'translate-fs-userpage-title' => 'Create user page for yourself',
-	'translate-fs-permissions-title' => 'Request permissions',
+	'translate-fs-userpage-title' => 'Create your user page',
+	'translate-fs-permissions-title' => 'Request translator permissions',
 	'translate-fs-target-title' => 'Start translating!',
 	'translate-fs-email-title' => 'Confirm your e-mail address',
 
@@ -44,41 +44,40 @@ Your interface languages is used as the default target language.
 It is easy to forget to change the langauge to the correct one, so setting it now is higly recommended.
 
 While you are there, you can also request the software to display translations in other languages you know.
-This setting can be found under {{int:prefs-editing}} tab.
-Feel free to explore other settings too.
+This setting can be found under tab "{{int:prefs-editing}}".
+Feel free to explore other settings, too.
 
 Go to your [[Special:Preferences|preferences page]] now and then return back to this page.',
 	'translate-fs-settings-skip' => "I'm done. Let me proceed.",
 	'translate-fs-userpage-text' => 'Now you need to create an user page.
 
-Please tell something about yourself, who you are and what you do.
-This will help {{SITENAME}} community to work together.
-In {{SITENAME}} there are people all around the world doing different things.
+Please write something about yourself; who you are and what you do.
+This will help the {{SITENAME}} community to work together.
+At {{SITENAME}} there are people from all around the world working on different languages and projects.
 
-In the prefilled box above in the very first line there is <nowiki>{{#babel:en-2}}</nowiki>.
-You should fill it accordingly to your language knowledge.
+In the prefilled box above in the very first line you see <nowiki>{{#babel:en-2}}</nowiki>.
+Please complete it with your language knowledge.
 The number behind the language code describes how well you know the language.
 The alternatives are:
-* 0 not at all
-* 1 little
-* 2 basic
-* 3 good
-* 4 like a native speaker
-* 5 you use the language professionally, for example you are a professional translator.
+* 1 - a little
+* 2 - basic knowledge
+* 3 - good knowledge
+* 4 - native speaker level
+* 5 - you use the language professionally, for example you are a professional translator.
 
-If you are a native speaker of a language, leave the number away.
-Example: if you speak Tamil natively, good English and little Swahili, you would write:
+If you are a native speaker of a language, leave the skill level out, and only use the language code.
+Example: if you speak Tamil natively, English well, and little Swahili, you would write:
 <tt><nowiki>{{#babel:ta|en-3|sw-1}}</nowiki></tt>
 
-If you do not know the language code of a language, now is good time to check it up. You can use the list below.',
+If you do not know the language code of a language, now is good time to look it up. You can use the list below.',
 	'translate-fs-userpage-submit' => 'Create my userpage',
-	'translate-fs-userpage-done' => 'Well done! You now have an userpage.',
+	'translate-fs-userpage-done' => 'Well done! You now have an user page.',
 	'translate-fs-permissions-text' => 'Now you need to place a request to be added to the translator group.
 
 Until we fix the code, please go to [[Project:Translator]] and follow the instructions.
 Then come back to this page.
 
-After you have filed your request, one of the volunteer staff member will check your request and approve it as soon as possible.
+After you have filed your request, one of the volunteer staff members will check your request and approve it as soon as possible.
 Please be patient.
 
 <del>Check that the following request is correctly filled and then press the request button.</del>',

@@ -18,7 +18,6 @@ $wgExtensionCredits['specialpage'][] = array(
 $wgSpecialPages['SupportedLanguages'] = 'SpecialSupportedLanguages';
 
 class SpecialSupportedLanguages extends SpecialPage {
-
 	public function __construct() {
 		parent::__construct( 'SupportedLanguages' );
 	}
@@ -79,9 +78,5 @@ class SpecialSupportedLanguages extends SpecialPage {
 
 			$wgOut->addHTML( $wgLang->listToText( $users[$code] ) );
 		}
-
 	}
-
-
-
 }
