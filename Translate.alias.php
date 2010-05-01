@@ -20,6 +20,7 @@ $aliases['en'] = array(
 	'PageTranslation'    => array( 'PageTranslation' ),
 	'ImportTranslations' => array( 'ImportTranslations' ),
 	'FirstSteps'         => array( 'FirstSteps' ),
+	'SupportedLanguages' => array( 'SupportedLanguages' ),
 );
 
 /** Afrikaans (Afrikaans) */
