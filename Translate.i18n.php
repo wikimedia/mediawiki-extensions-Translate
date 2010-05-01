@@ -2290,6 +2290,8 @@ Bevennoù izel hag uhel zo d'an holl dalvoudoù.",
 	'translate-translations-including-no-param' => "Merkit un alc'hwez kemenn reizh en arventenn ''ispajenn''",
 	'languagestats' => 'Stadegoù yezh',
 	'languagestats-summary' => 'Diskouez a ra ar bajenn-mañ ar stadegoù treiñ evit an holl strolladoù kemennadennoù en ur yezh bennak.',
+	'languagestats-stats-for' => 'Stadegoù an droidigezh evit $1 ($2).',
+	'languagestats-recenttranslations' => 'troidigezhioù diwezhañ',
 	'translate-language-code' => 'Kod yezh',
 	'translate-language-code-field-name' => 'Kod yezh :',
 	'translate-suppress-complete' => 'Arabat diskouez ar strolladoù kemennadennoù zo bet troet penn-da-benn.',
@@ -3789,6 +3791,15 @@ Standardna lisćina rěcow wótwisujo wót swójeje rěcy.',
 	'translate-percentage-fuzzy' => 'Zestarjony',
 	'translate-nothing-to-do' => 'Zda se, až móžne pśełožki su cynjone.
 Pśiraźijo se, až pśeglědujoš powěźeńki pśez [[Special:Translate|{{int:translate}}]].',
+	'supportedlanguages' => 'Pódpěrane rěcy',
+	'supportedlanguages-summary' => 'Toś ten bok zwobraznja lisćinu wšych rěcow, kótarež pódpěraju se pśez {{GRAMMAR:akuzatiw|{{SITENAME}}}}, gromaźe z mjenjami pśełožowarjow, kótarež pśełozuju do teje rěcy.
+Jolic coš dalšne informacije wó wěstej rěcy, móžoš na wótkaz k portaloju teje rěcy kliknuś.
+Kliknjenje na mě pśełožowarja buźo śi k jogo wužywarskemu bokoju wjasć.
+
+Jolic rěc njejo pódane, móžoš pód "[[Translating:Process|Nowa rěc]]" zgóniś, kak móžoš lokalizaciski projekt za rěc startowaś.
+
+Jolic pśełožujoš do rěcy a twójo mě njejo pódane, pśidaj pšosym swójo mě lisćinje pśełožowarjow na [[:Category:Languages|portalu]] teje rěcy.
+Glědaj menijowu lejstwu za wótkaz k portaloju twójeje preferowaneje rěcy.',
 	'translate-save' => 'Składowaś ($1)',
 	'translate-jssti-add' => 'Lisćinje pśidaś',
 	'translate-group-desc-mediawikicore' => 'Toś ta kupka powěźeńkow wopśimujo powěźeńki, kótarež wužywaju se w aktualnej alfa-wersiji MediaWiki ({{CURRENTVERSION}})',
@@ -6984,6 +6995,15 @@ Standardna lisćina rěčow wotwisuje wot twojeje rěče.',
 	'translate-percentage-fuzzy' => 'Zestarjeny',
 	'translate-nothing-to-do' => 'Zda so, zo wšě móžne přełožki su sčinjene.
 Poruča so zdźělenki přez [[Special:Translate|{{int:translate}}]] přepruwować.',
+	'supportedlanguages' => 'Podpěrowane rěče',
+	'supportedlanguages-summary' => 'Tuta strona zwobraznja lisćinu wšěch rěčow, kotrež so přez {{GRAMMAR:akuzatiw|{{SITENAME}}}} podpěruja, hromadźe z mjenami přełožowarjemi, kotřiž do teje rěče přełožuja.
+Jeli chceš dalš informacije wo wěstej rěči, móžeš na wotkaz k portalej wotpowědneje rěče kliknyć.
+Kliknjenje na mjeno přełožowarja budźe će k jeho wužiwarskej stronje wjesć.
+
+Jeli rěč njeje podata, móžeš pod "[[Translating:Process|Nowa rěč]]" zhonić, kak móžeš lokalizaciski projekt za rěč startować.
+
+Jeli přełožuješ do rěče a twoje mjeno njeje podate, přidaj prošu swoje mjeno lisćinje přełožowarjow na [[:Category:Languages|portalu]] teje rěče.
+Hlej menijowu lajstu za wotkaz k portalej swojeje preferowaneje rěče.',
 	'translate-save' => 'Składować ($1)',
 	'translate-jssti-add' => 'Lisćinje přidać',
 	'translate-group-desc-mediawikicore' => 'Tuta skupina zdźělenkow wobsahuje zdźělenki, kotrež so w aktualnej alfa-wersiji MediaWiki ({{CURRENTVERSION}}) wužiwaja',
@@ -7596,6 +7616,15 @@ Es recommendate revider le messages per medio del pagina [[Special:Translate|{{i
 	'translate-languagestats-groups' => ' # Adde IDs de gruppos de messages, un per linea, pro limitar le
  # gruppos monstrate in Special:LanguageStats. Le gruppos non existente
  # essera ignorate.',
+	'supportedlanguages' => 'Linguas supportate',
+	'supportedlanguages-summary' => 'Iste pagina presenta un lista de tote le linguas supportate per {{SITENAME}}, con le nomines del traductores laborante a iste lingua.
+Pro ulterior informationes a proposito de un particular lingua, clicca super le ligamine al portal pro iste lingua.
+Un clic super le nomine de un traductor te portara a su pagina de usator.
+
+Si un lingua non es listate, tu pote leger como comenciar un projecto de localisation pro un lingua a "[[Translating:Process|New Language]]".
+
+Si tu traduce in un lingua e tu nomine non es includite, per favor adde tu nomine al lista de traductores in le [[:Category:Languages|portal]] pro iste lingua.
+Vide le barra de menu pro un ligamine al portal pro le lingua de tu preferentia.',
 	'translate-save' => 'Publicar ($1)',
 	'translate-jssti-add' => 'Adder al lista',
 	'translate-group-desc-mediawikicore' => 'Iste gruppo contine le messages usate in le version alpha actual de MediaWiki ({{CURRENTVERSION}})',
@@ -11069,6 +11098,15 @@ Alle waarden hebben een limiet aan de boven- en onderzijde.',
 	'translate-percentage-fuzzy' => 'Verouderd',
 	'translate-nothing-to-do' => 'Alle mogelijke vertalingen lijken te zijn gemaakt.
 U wordt aangemoedigd om via [[Special:Translate|{{int:translate}}]] vertalingen te controleren.',
+	'supportedlanguages' => 'Ondersteunde talen',
+	'supportedlanguages-summary' => 'Op deze pagina wordt een lijst van alle talen die in {{SITENAME}} worden ondersteund weergegeven, samen met de namen van de vertalers die werken aan die taal.
+Als u meer informatie over een bepaalde taal wilt, kunt u klikken op de verwijzing naar het portaal voor die taal.
+Klikken op de naam van een brengt u naar de gebruikerspagina van die vertaler.
+
+Als een taal niet wordt vermeld, kunt u nalezen hoe een nieuwe taal toegevoegd te krijgen op "[[Translating:Process|Nieuwe taal]]".
+
+Als u vertaalt naar een taal en uw naam is niet opgenomen, dan kunt u uw naam toevoegen aan de lijst van vertalers op het [[:Category:Languages|portaal]] voor die taal.
+Zie de menubalk voor een link verwijzing naar het portaal voor de taal van uw voorkeur.',
 	'translate-save' => 'Opslaan ($1)',
 	'translate-jssti-add' => 'Aan lijst toevoegen',
 	'translate-group-desc-mediawikicore' => 'Deze berichtengroep bevat de berichten die in de huidige alpha-versie van MediaWiki gebruikt worden - {{CURRENTVERSION}}',
@@ -16128,6 +16166,8 @@ $messages['uk'] = array(
 	'translate-translations-including-no-param' => 'Будь ласка, вкажіть ключ повідомлення як параметр підсторінки',
 	'languagestats' => 'Мовна статистика',
 	'languagestats-summary' => 'На цій сторінці представлена статистика перекладів для всіх груп повідомлень даної мови.',
+	'languagestats-stats-for' => 'Статистика перекладів для $1 ($2).',
+	'languagestats-recenttranslations' => 'найновіші переклади',
 	'translate-language-code' => 'Код мови',
 	'translate-language-code-field-name' => 'Код мови:',
 	'translate-suppress-complete' => 'Приховати повністю перекладені групи повідомлень',
@@ -16138,6 +16178,15 @@ $messages['uk'] = array(
 	'translate-percentage-fuzzy' => 'Застаріло',
 	'translate-nothing-to-do' => 'Очевидно, всі можливі переклади вже зроблені.
 Ви можете перевірити повідомлення з допомогою [[Special:Translate|{{int:translate}}]].',
+	'supportedlanguages' => 'Підтримувані мови',
+	'supportedlanguages-summary' => 'На цій сторінці перелічені всі мови, що підтримуються {{SITENAME}}, разом з іменами користувачів, які перекладають на відповідні мови.
+Якщо ви хочете дізнатися більше щодо певної мови, ви можете перейти за посиланням на портал, присвячений цій мові.
+Клацнувши по імені перекладача, ви перейдете на його сторінку користувача.
+
+Якщо якоїсь мови тут немає, то взнати, як започаткувати ще проект локалізації для неї, ви можете на сторінці "[[Translating:Process|Нова мова]]".
+
+Якщо ви перекладач на певну мову, але у відповідному списку вас нема, додайте своє ім\'я до списку перекладачів на [[:Category:Languages|порталі]] цієї мови.
+На бічній панель знаходиться посилання на портал мови вашого інтерфейсу.',
 	'translate-save' => 'Зберегти ($1)',
 	'translate-jssti-add' => 'Додати в список',
 	'translate-group-desc-mediawikicore' => 'Ця група містить повідомлення, які використовують у поточній альфа-версії MediaWiki ({{CURRENTVERSION}})',
@@ -16216,7 +16265,10 @@ $1',
 Впевніться, що ваш редактор не стер поля msgctxt.
 Деталі: $1',
 	'translate-js-next' => 'Зберегти і відкрити наступне',
+	'translate-js-nonext' => 'Це було останнє повідомлення з цієї сторінки.',
+	'translate-js-skip' => 'Перейти до наступного',
 	'translate-js-save-failed' => 'Збереження не виконане. Будь ласка, повідомте про цю помилку.',
+	'translate-js-history' => 'Історія перекладу',
 	'translate-gs-pos' => 'Поз.',
 	'translate-gs-code' => 'Код',
 	'translate-gs-continent' => 'Частина світу',
