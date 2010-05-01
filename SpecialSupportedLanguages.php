@@ -69,7 +69,6 @@ class SpecialSupportedLanguages extends UnlistedSpecialPage {
 			$linkText = $parser->parse(
 				"==[$code] {$locals[$code]} - {$natives[$code]}==",
 				$portalTitle /* as dummy */,
-				$wgUser,
 				$parserOptions
 			);
 			$portalLink = link(
