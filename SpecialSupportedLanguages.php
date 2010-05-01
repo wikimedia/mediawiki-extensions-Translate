@@ -1,23 +1,11 @@
 <?php
-if ( !defined( 'MEDIAWIKI' ) ) die();
-
 /**
  * @author Niklas Laxström
  * @copyright Copyright © 2010 Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-$wgExtensionCredits['specialpage'][] = array(
-	'path'           => __FILE__,
-	'name'           => 'Translate: Supported Languages',
-	'version'        => '2010-01-27',
-	'author'         => 'Niklas Laxström',
-	'description'    => '[[Special:Supported Languages|Special page]] for listing supported languages efficiently',
-);
-
-$wgSpecialPages['SupportedLanguages'] = 'SpecialSupportedLanguages';
-
-class SpecialSupportedLanguages extends SpecialPage {
+class SpecialSupportedLanguages extends UnlistedSpecialPage {
 	public function __construct() {
 		parent::__construct( 'SupportedLanguages' );
 	}

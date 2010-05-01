@@ -12,7 +12,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '2010-04-25' );
+define( 'TRANSLATE_VERSION', '2010-05-01' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'path'           => __FILE__,
@@ -28,6 +28,7 @@ $dir = dirname( __FILE__ ) . '/';
 require_once( $dir . '_autoload.php' );
 
 $wgExtensionMessagesFiles['Translate'] = $dir . 'Translate.i18n.php';
+$wgExtensionMessagesFiles['FirstSteps'] = $dir . 'FirstSteps.i18n.php';
 $wgExtensionMessagesFiles['PageTranslation'] = $dir . 'PageTranslation.i18n.php';
 $wgExtensionAliasesFiles['Translate'] = $dir . 'Translate.alias.php';
 $wgExtensionFunctions[] = 'efTranslateInit';
@@ -39,6 +40,8 @@ $wgSpecialPages['TranslationChanges'] = 'SpecialTranslationChanges';
 $wgSpecialPages['TranslationStats'] = 'SpecialTranslationStats';
 $wgSpecialPages['LanguageStats'] = 'SpecialLanguageStats';
 $wgSpecialPages['ImportTranslations'] = 'SpecialImportTranslations';
+$wgSpecialPages['FirstSteps'] = 'SpecialFirstSteps';
+$wgSpecialPages['SupportedLanguages'] = 'SpecialSupportedLanguages';
 $wgSpecialPageGroups['Magic'] = 'wiki';
 $wgSpecialPageGroups['Translate'] = 'wiki';
 $wgSpecialPageGroups['Translations'] = 'pages';
