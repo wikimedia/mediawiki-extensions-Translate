@@ -60,26 +60,17 @@ class SpecialSupportedLanguages extends UnlistedSpecialPage {
 		global $wgUser;
 		$skin = $wgUser->getSkin();
 
-		$parser = new Parser;
-		$parser->setOutputType( 'wiki' );
-		$parserOptions = new ParserOptions;
-
 		foreach ( array_keys( $users ) as $code ) {
 			$portalTitle = Title::makeTitleSafe( NS_PORTAL, $code );
-			$linkText = $parser->parse(
-				"==[$code] {$locals[$code]} - {$natives[$code]}==",
-				$portalTitle /* as dummy */,
-				$parserOptions
-			);
-			$portalLink = link(
+			$portalLink = $skin->link(
 				$portalTitle,
-				$linkText,
+				wfMsg( 'supportedlanguages-portallink', $code, $locals[$code], $natives[$code] ),
 				array( 'id' => $code ),
 				array(),
 				array( 'known', 'noclasses' )
 			);
 				
-			$wgOut->addHtml( $portalLink );
+			$wgOut->addHTML( $portalLink );
 
 			foreach ( $users[$code] as $index => $username ) {
 				$title = Title::makeTitleSafe( NS_USER, $username );

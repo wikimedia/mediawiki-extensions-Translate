@@ -1143,7 +1143,8 @@ id = ext-translate-core
 descmsg = translate-desc
 file = Translate/Translate.i18n.php
 aliasfile = Translate/Translate.alias.php
-optional = translate-page-paging-links, translate-languagestats-groups
+optional = translate-page-paging-links, translate-languagestats-groups, supportedlanguages-portallink
+
 
 Translate - Page Translation
 id = ext-translate-pagetranslation
