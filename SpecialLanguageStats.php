@@ -248,7 +248,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 			// Bold for meta groups
 			if( $g->isMeta() ) {
-				$groupLabel = "<b>" . $label . "</b>";
+				$groupLabel = "<b>" . $groupLabel . "</b>";
 			}
 
 			$translateGroupLink = $wgUser->getSkin()->link(
