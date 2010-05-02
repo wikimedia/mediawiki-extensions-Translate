@@ -255,7 +255,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 				$translateTitle,
 				$groupLabel,
 				array(
-					'title' => $g->getDescription()
+					'title' => strip_tags( $g->getDescription() )
 				),
 				$queryParameters
 			);
