@@ -254,7 +254,9 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			$translateGroupLink = $wgUser->getSkin()->link(
 				$translateTitle,
 				$groupLabel,
-				array(),
+				array(
+					'title' => $g->getDescription()
+				),
 				$queryParameters
 			);
 
