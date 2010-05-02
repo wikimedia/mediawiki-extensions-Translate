@@ -66,7 +66,7 @@ $aliases['as'] = array(
 	'TranslationStats' => array( 'অনুবাদ পৰিসংখ্যা' ),
 );
 
-/** Azerbaijani (Azərbaycan) */
+/** Azerbaijani (Azərbaycanca) */
 $aliases['az'] = array(
 	'Translations' => array( 'Tərcümələr' ),
 	'PageTranslation' => array( 'SəhifəTərcüməsi' ),
