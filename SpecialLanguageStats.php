@@ -148,7 +148,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$languageName = TranslateUtils::getLanguageName( $code, false );
 		$rcInLangLink = $wgUser->getSkin()->link(
 			SpecialPage::getTitleFor( 'Recentchanges' ),
-			wfMsg( 'languagestats-recenttranslations' ),
+			wfMsgHtml( 'languagestats-recenttranslations' ),
 			array(),
 			array(
 				'translations' => 'only',
@@ -161,11 +161,11 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		# Create table header
 		$out .= $this->heading();
 		$out .= $this->blockstart();
-		$out .= $this->element( wfMsg( 'translate-page-group', true ) );
-		$out .= $this->element( wfMsg( 'translate-total', true ) );
-		$out .= $this->element( wfMsg( 'translate-untranslated', true ) );
-		$out .= $this->element( wfMsg( 'translate-percentage-complete', true ) );
-		$out .= $this->element( wfMsg( 'translate-percentage-fuzzy', true ) );
+		$out .= $this->element( wfMsg( 'translate-page-group' ), true );
+		$out .= $this->element( wfMsg( 'translate-total' ), true );
+		$out .= $this->element( wfMsg( 'translate-untranslated' ), true );
+		$out .= $this->element( wfMsg( 'translate-percentage-complete' ), true );
+		$out .= $this->element( wfMsg( 'translate-percentage-fuzzy' ), true );
 		$out .= $this->blockend();
 
 		return $out;
