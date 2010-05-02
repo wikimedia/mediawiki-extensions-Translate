@@ -179,7 +179,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	 * @return string HTML
 	 */
 	function getGroupStats( $code, $suppressComplete = false ) {
-		global $wgUser, $wgLang;
+		global $wgUser, $wgLang, $wgOut;
 
 		$errorString = '&lt;error&gt;';
 		$out = '';
@@ -255,7 +255,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 				$translateTitle,
 				$groupLabel,
 				array(
-					'title' => strip_tags( $g->getDescription() )
+					'title' => strip_tags( $wgOut->parse( $g->getDescription(), false ) )
 				),
 				$queryParameters
 			);
