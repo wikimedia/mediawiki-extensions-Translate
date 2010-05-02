@@ -244,9 +244,16 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 				$queryParameters['task'] = 'reviewall'; 
 			}
 
+			$groupLabel = $g->getLabel()
+
+			// Bold for meta groups
+			if( $g->isMeta() ) {
+				$groupLabel = "<b>" . $label . "</b>";
+			}
+
 			$translateGroupLink = $wgUser->getSkin()->link(
 				$translateTitle,
-				$g->getLabel(),
+				$groupLabel,
 				array(),
 				$queryParameters
 			);
