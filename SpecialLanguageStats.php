@@ -64,56 +64,43 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$out .= Xml::openElement( 'fieldset' );
 		$out .= Xml::element( 'legend', null, wfMsg( 'translate-language-code' ) );
 		$out .= Xml::openElement( 'table', array( 'id' => 'langcodeselect', 'class' => 'allpages' ) );
-		$out .= "<tr>
-				<td class='mw-label'>" .
-				Xml::label( wfMsg( 'translate-language-code-field-name' ), 'code' ) .
-				"</td>
-				<td class='mw-input'>" .
-					Xml::input( 'code', 30, str_replace( '_', ' ', $code ), array( 'id' => 'code' ) ) .
-				"</td></tr><tr><td colspan='2'>" .
-				Xml::checkLabel( wfMsg( 'translate-suppress-complete' ), 'suppresscomplete', 'suppresscomplete', $suppressComplete ) .
-				"</td>" .
-			"</tr>" .
-			"<tr>" .
-				"<td class='mw-input'>" .
-					Xml::submitButton( wfMsg( 'allpagessubmit' ) ) .
-				"</td>
-			</tr>";
+
+		$out .= Xml::openElement( 'tr' );
+		$out .= Xml::openElement( 'td', array( 'class' => 'mw-label'  ) );
+		$out .= Xml::label( wfMsg( 'translate-language-code-field-name' ), 'code' );
+		$out .= Xml::closeElement( 'td' );
+		$out .= Xml::openElement( 'td', array( 'class' => 'mw-input'  ) );
+		$out .= Xml::input( 'code', 30, str_replace( '_', ' ', $code ), array( 'id' => 'code' ) );
+		$out .= Xml::closeElement( 'td' );
+		$out .= Xml::closeElement( 'tr' );
+
+		$out .= Xml::openElement( 'tr' );
+		$out .= Xml::openElement( 'td', array( 'colspan' => 2 ) );
+		$out .= Xml::checkLabel( wfMsg( 'translate-suppress-complete' ), 'suppresscomplete', 'suppresscomplete', $suppressComplete );
+		$out .= Xml::closeElement( 'td' );
+		$out .= Xml::closeElement( 'tr' );
+
+		$out .= Xml::openElement( 'tr' );
+		$out .= Xml::openElement( 'td', array( 'class' => 'mw-input'  ) );
+		$out .= Xml::submitButton( wfMsg( 'allpagessubmit' ) );
+		$out .= Xml::closeElement( 'td' );
+		$out .= Xml::closeElement( 'tr' );
+
 		$out .= Xml::closeElement( 'table' );
 		$out .= Xml::closeElement( 'fieldset' );
 		$out .= Xml::closeElement( 'form' );
 		$out .= Xml::closeElement( 'div' );
+
 		return $out;
 	}
 
-	# Statistics table heading
-	function heading() {
-		return '<table class="sortable wikitable" border="2" cellpadding="4" cellspacing="0" style="background-color: #F9F9F9; border: 1px #AAAAAA solid; border-collapse: collapse; clear:both;" width="100%">' . "\n";
-	}
-
-	# Statistics table footer
-	function footer() {
-		return "</table>\n";
-	}
-
-	# Statistics table row start
-	function blockstart() {
-		return "\t<tr>\n";
-	}
-
-	# Statistics table row end
-	function blockend() {
-		return "\t</tr>\n";
-	}
 
 	# Statistics table element (heading or regular cell)
-	function element( $in, $heading = false, $bgcolor = '' ) {
-		if ( $heading ) {
-			$element = '<th>' . $in . '</th>';
-		} else if ( $bgcolor ) {
-			$element = '<td bgcolor="#' . $bgcolor . '">' . $in . '</td>';
+	function element( $in, $bgcolor = '' ) {
+		if ( $bgcolor ) {
+			$element = Xml::element( 'td', array( 'bgcolor' => "#" . $bgcolor ), $in );
 		} else {
-			$element = '<td>' . $in . '</td>';
+			$element = Xml::element( 'td', null, $in );
 		}
 		return "\t\t" . $element . "\n";
 	}
@@ -159,14 +146,21 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$out = wfMsgExt( 'languagestats-stats-for', array( 'parse', 'replaceafter' ), $languageName, $rcInLangLink );
 
 		# Create table header
-		$out .= $this->heading();
-		$out .= $this->blockstart();
-		$out .= $this->element( wfMsg( 'translate-page-group' ), true );
-		$out .= $this->element( wfMsg( 'translate-total' ), true );
-		$out .= $this->element( wfMsg( 'translate-untranslated' ), true );
-		$out .= $this->element( wfMsg( 'translate-percentage-complete' ), true );
-		$out .= $this->element( wfMsg( 'translate-percentage-fuzzy' ), true );
-		$out .= $this->blockend();
+		$out .= Xml::openElement( 'table', array(
+			'class' => "sortable wikitable",
+			'border' => '2',
+			'cellpadding' => '4',
+			'cellspacing' => '0',
+			'style' => "background-color: #F9F9F9; border: 1px #AAAAAA solid; border-collapse: collapse; clear:both;",
+			'width' => "100%"
+		);
+		$out .= Xml::openElement( 'tr' );
+		$out .= Xml::element( 'th', null, wfMsg( 'translate-page-group' ) );
+		$out .= Xml::element( 'th' null, wfMsg( 'translate-total' ) );
+		$out .= Xml::element( 'th', null, wfMsg( 'translate-untranslated' ) );
+		$out .= Xml::element( 'th', null, wfMsg( 'translate-percentage-complete' ) );
+		$out .= Xml::element( 'th', null, wfMsg( 'translate-percentage-fuzzy' ) );
+		$out .= Xml::closeElement( 'tr' );
 
 		return $out;
 	}
@@ -248,7 +242,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 			// Bold for meta groups
 			if( $g->isMeta() ) {
-				$groupLabel = "<b>" . $groupLabel . "</b>";
+				$groupLabel = Xml::element( 'b', null, $groupLabel );
 			}
 
 			$translateGroupLink = $wgUser->getSkin()->link(
@@ -260,18 +254,18 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 				$queryParameters
 			);
 
-			$out .= $this->blockstart();
-			$out .= $this->element( $translateGroupLink );
-			$out .= $this->element( $total );
-			$out .= $this->element( $total - $translated );
-			$out .= $this->element( $translatedPercentage, false, $translatedPercentage == $errorString ? '' : $this->getBackgroundColour( $translated, $total ) );
-			$out .= $this->element( $fuzzyPercentage, false, $translatedPercentage == $errorString ? '' : $this->getBackgroundColour( $fuzzy, $total, true ) );
-			$out .= $this->blockend();
+			$out .= Xml::openElement( 'tr' );
+			$out .= Xml::element( 'td', null, $translateGroupLink );
+			$out .= Xml::element( 'td', null, $total );
+			$out .= Xml::element( 'td', null, $total - $translated );
+			$out .= $this->element( $translatedPercentage, $translatedPercentage == $errorString ? '' : $this->getBackgroundColour( $translated, $total ) );
+			$out .= $this->element( $fuzzyPercentage, $translatedPercentage == $errorString ? '' : $this->getBackgroundColour( $fuzzy, $total, true ) );
+			$out .= Xml::closeElement( 'tr' );
 		}
 
 		if ( $out ) {
 			$out = $this->createHeader( $code ) . $out;
-			$out .= $this->footer();
+			$out .= Xml::closeElement( 'table' );
 		} else {
 			$out = wfMsgExt( 'translate-nothing-to-do', 'parse' );
 		}
