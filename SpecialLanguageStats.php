@@ -258,7 +258,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			);
 
 			$out .= Xml::openElement( 'tr' );
-			$out .= $this->element( $translateGroupLink );
+			$out .= '<td>' . $translateGroupLink . '</td>';
 			$out .= Xml::element( 'td', null, $total );
 			$out .= Xml::element( 'td', null, $total - $translated );
 			$out .= $this->element( $translatedPercentage, $translatedPercentage == $errorString ? '' : $this->getBackgroundColour( $translated, $total ) );
