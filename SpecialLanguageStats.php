@@ -146,17 +146,20 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$out = wfMsgExt( 'languagestats-stats-for', array( 'parse', 'replaceafter' ), $languageName, $rcInLangLink );
 
 		# Create table header
-		$out .= Xml::openElement( 'table', array(
-			'class' => "sortable wikitable",
-			'border' => '2',
-			'cellpadding' => '4',
-			'cellspacing' => '0',
-			'style' => "background-color: #F9F9F9; border: 1px #AAAAAA solid; border-collapse: collapse; clear:both;",
-			'width' => "100%"
+		$out .= Xml::openElement(
+			'table',
+			array(
+				'class' => "sortable wikitable",
+				'border' => '2',
+				'cellpadding' => '4',
+				'cellspacing' => '0',
+				'style' => "background-color: #F9F9F9; border: 1px #AAAAAA solid; border-collapse: collapse; clear:both;",
+				'width' => "100%"
+			)
 		);
 		$out .= Xml::openElement( 'tr' );
 		$out .= Xml::element( 'th', null, wfMsg( 'translate-page-group' ) );
-		$out .= Xml::element( 'th' null, wfMsg( 'translate-total' ) );
+		$out .= Xml::element( 'th', null, wfMsg( 'translate-total' ) );
 		$out .= Xml::element( 'th', null, wfMsg( 'translate-untranslated' ) );
 		$out .= Xml::element( 'th', null, wfMsg( 'translate-percentage-complete' ) );
 		$out .= Xml::element( 'th', null, wfMsg( 'translate-percentage-fuzzy' ) );
@@ -235,7 +238,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			);
 
 			if( $translated == $total ) {
-				$queryParameters['task'] = 'reviewall'; 
+				$queryParameters['task'] = 'reviewall';
 			}
 
 			$groupLabel = $g->getLabel();
