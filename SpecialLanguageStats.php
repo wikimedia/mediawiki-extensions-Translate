@@ -143,9 +143,9 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	}
 
 	function createHeader( $code ) {
-		global $wgUser;
+		global $wgUser, $wgLang;
 
-		$languageName = TranslateUtils::getLanguageName( $code, false );
+		$languageName = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() );
 		$rcInLangLink = $wgUser->getSkin()->link(
 			SpecialPage::getTitleFor( 'Recentchanges' ),
 			wfMsgHtml( 'languagestats-recenttranslations' ),
