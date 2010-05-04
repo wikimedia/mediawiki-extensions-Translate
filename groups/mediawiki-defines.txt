@@ -1336,6 +1336,10 @@ Usability Initiative - Wikieditor Template Editor
 id = ext-ui-wikieditor-templateeditor
 file = UsabilityInitiative/WikiEditor/Modules/TemplateEditor/TemplateEditor.i18n.php
 
+Usability Initiative - Wikieditor Templates
+id = ext-ui-wikieditor-templates
+file = UsabilityInitiative/WikiEditor/Modules/Templates/Templates.i18n.php
+
 Usability Initiative - Wikieditor TOC
 id = ext-ui-wikieditor-toc
 file = UsabilityInitiative/WikiEditor/Modules/Toc/Toc.i18n.php
