@@ -3494,6 +3494,8 @@ Die Standardliste ist abhängig von der Sprache der Benutzeroberfläche.',
 	'translate-translations-including-no-param' => 'Bitte gib einen gültigen Nachrichtennamen als Unterseitenparameter an',
 	'languagestats' => 'Sprachstatistiken',
 	'languagestats-summary' => 'Diese Seite zeigt Übersetzungsstatistiken für alle Nachrichtengruppen einer Sprache.',
+	'languagestats-stats-for' => 'Übersetzungsstatistiken für $1 ($2).',
+	'languagestats-recenttranslations' => 'Aktuelle Übersetzungen',
 	'translate-language-code' => 'Sprachcode',
 	'translate-language-code-field-name' => 'Sprachcode:',
 	'translate-suppress-complete' => 'Unterdrücke komplett übersetzte Nachrichtengruppen',
@@ -3507,6 +3509,15 @@ Es wird empfohlen, Systemnachrichten mit der Spezialseite [[Special:Translate|{{
 	'translate-languagestats-groups' => ' # Ergänze die ID einer Systemnachrichtengruppe (eine per Zeile) um die Gruppen von 
  # Special:LanguageStats auszuschließen. Nicht existerende IDs
  # werden ignoriert.',
+	'supportedlanguages' => 'Unterstützte Sprachen',
+	'supportedlanguages-summary' => 'Diese Seite zeigt eine Liste aller unterstützen Sprachen auf {{SITENAME}}, zusammen mit den Namen der Übersetzer, die an der jeweiligen Sprache mitgearbeitet haben.
+Weitere Informationen zu einer Sprache, gibt es beim Klick auf den Portallink.
+Ein Klick auf den Namen eines Übersetzers, führt zur Benutzerseite.
+
+Falls eine Sprache nicht aufgeführt wird, gibt es Informationen zum Starten einer neuen Sprache unter „[[Translating:Process|Neue Sprachen]]“.
+
+Falls der Name eines Übersetzers fehlt, muss dieser zur Liste der Übersetzer im jeweiligen [[:Category:Languages|Portal]] hinzugefügt werden.
+Im Menü befindet sich ein Link zum Portal der eingestellten Sprache.',
 	'translate-save' => 'Speichern ($1)',
 	'translate-jssti-add' => 'Zur Liste hinzufügen',
 	'translate-group-desc-mediawikicore' => 'Diese Gruppe beinhaltet alle Nachrichten der aktuellen alpha-Version von MediaWiki ({{CURRENTVERSION}})',
@@ -4511,7 +4522,7 @@ Se te anima a revisar los mensajes a través de [[Special:Translate|{{int:transl
 	'supportedlanguages' => 'Idiomas soportados',
 	'supportedlanguages-summary' => 'Esta página muestra una lista de todos los idiomas soportados por {{SITENAME}}, junto con los nombres de los traductores que trabajan en ese idioma. Si desea información adicional acerca de un idioma en concreto, puede hacer clic en el enlace al portal para dicho idioma. Al hacer clic en el nombre de un traductor le llevará a su página de usuario. 
 
-Si un idioma no está en la lista, puede descubrir como empezar un proyecto de localización para un idioma en "[[Translating:Proccess | Nuevo Idioma]]".
+Si un idioma no está en la lista, puede descubrir como empezar un proyecto de localización para un idioma en "[[Translating:Process|Nuevo Idioma]]".
 
 Si ayudó traduciendo a un lenguaje y su nombre no está incluido, por favor añada su nombre a la lista de traductores en [[:Category:Languages|portal]] para dicho idioma.
 Vea la barra del menú para un enlace al portal para el idioma de su preferencia.',
@@ -12709,6 +12720,7 @@ Changes are not saved until you click save button below.',
 
 /** Portuguese (Português)
  * @author 555
+ * @author Crazymadlover
  * @author Hamilton Abreu
  * @author Lijealso
  * @author Malafaya
@@ -12882,7 +12894,7 @@ Encorajamo-lo a rever mensagens através de [[Special:Translate|{{int:translate}
 Para obter mais informação sobre uma língua em particular, pode clicar o link para o portal dessa língua.
 Clicar o nome de um tradutor conduz à página de utilizador desse tradutor.
 
-Se uma língua não aparecer na lista, pode descobrir como iniciar um projecto de localização para uma língua em "[[Translating:Process/pt|Língua nova]]".
+Se uma língua não aparecer na lista, pode descobrir como iniciar um projecto de localização para uma língua em "[[Translating:Process|Língua nova]]".
 
 Se faz traduções para uma língua e não aparece na lista, adicione o seu nome à lista de tradutores no [[:Category:Languages|portal]] dessa língua, por favor.
 Na barra lateral à esquerda existe um link para o portal da língua da sua preferência.',
