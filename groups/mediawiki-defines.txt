@@ -43,8 +43,6 @@ Assert Edit
 Autoincrement
 magicfile = Autoincrement/Autoincrement.i18n.magic.php
 
-Awesomeness
-
 Author Protect
 
 Babel
