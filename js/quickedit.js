@@ -58,9 +58,8 @@ function trlOpenJsEdit( page, group ) {
 		form.find( ".mw-translate-edit-area" ).focus();
 
 		form.ajaxForm({
-			datatype: "json",
+			dataType: "json",
 			success: function(json) {
-				json = JSON.parse(json);
 				if ( json.error ) {
 					alert( json.error.info + " (" + json.error.code +")" );
 				} else if ( json.edit.result == "Failure" ) {
