@@ -294,7 +294,7 @@ class MessageWebImporter {
 				$comment = wfMsgForContentNoTrans( 'translate-manage-import-summary' );
 			} else {
 				$comment = wfMsgForContentNoTrans( 'translate-manage-conflict-summary' );
-				$message = self::makeMessageFuzzy( $message );
+				$message = self::makeTextFuzzy( $message );
 			}
 			return self::doImport( $title, $message, $comment, $user, $editFlags );
 
@@ -302,7 +302,7 @@ class MessageWebImporter {
 			return array( 'translate-manage-import-ignore', $key );
 
 		} elseif ( $action === 'fuzzy' && $code !== 'en' ) {
-			$message = self::makeMessageFuzzy( $message );
+			$message = self::makeTextFuzzy( $message );
 			return self::doImport( $title, $message, $comment, $user, $editFlags );
 
 		} else {
