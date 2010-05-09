@@ -1,0 +1,19 @@
+---
+BASIC:
+  id: out-statusnet
+  label: StatusNet
+  description: "{{int:bw-desc-statusnet}}"
+  namespace: NS_STATUSNET
+  display: out/statusnet
+  class: GettextMessageGroup
+
+FILES:
+  class: GettextFFS
+  sourcePattern: %GROUPROOT%/locale/%CODE%/LC_MESSAGES/statusnet.po
+  targetPattern: locale/%CODE%/LC_MESSAGES/statusnet.po
+  codeMap:
+    en-gb: en_GB
+    no: nb
+    pt-br: pt_BR
+    zh-hans: zh_CN
+    zh-hant: zh_TW
