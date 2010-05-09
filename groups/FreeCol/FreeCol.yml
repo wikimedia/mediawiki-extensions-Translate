@@ -56,6 +56,7 @@ TAGS:
     - model.unit.occupation.activeNoMovesLeft
     - model.unit.occupation.improving
     - model.unit.occupation.unknown
+    - *.accelerator
     - selectDestination.destinationTurns
     - shipName.3.0
     - transaction.tax
