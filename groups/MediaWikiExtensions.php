@@ -435,6 +435,7 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-sitematrix',
 		'ext-skinperpage', // Wikimediafoundation.org
 		'ext-spamblacklist',
+		'ext-strategywiki-activetaskforces', // 2010-05-08: strategywiki.wikimedia.org
 		'ext-syntaxhighlightgeshi',
 		'ext-timeline',
 		'ext-titleblacklist',
