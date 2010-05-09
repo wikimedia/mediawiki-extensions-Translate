@@ -123,5 +123,4 @@ class MantisMessageGroup extends MessageGroupOld {
 		) );
 		return $checker;
 	}
-
 }
