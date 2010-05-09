@@ -213,6 +213,7 @@ file = WikiFactory/Reporter/SpecialWikiFactoryReporter.i18n.php
 
 Wiki Factory
 file = WikiFactory/SpecialWikiFactory.i18n.php
+optional = wikifactory-label-eznamespace
 ignored = awc-metrics-language-top-list
 
 Helper Panel
