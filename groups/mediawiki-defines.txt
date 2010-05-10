@@ -501,6 +501,9 @@ optional = grouppermissions-display
 
 Groups Sidebar
 
+Hide Namespace
+descmsg = hidens-desc
+
 Honeypot Integration
 descmsg = honeypot-desc
 
