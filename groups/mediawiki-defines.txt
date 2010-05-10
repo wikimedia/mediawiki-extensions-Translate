@@ -1081,7 +1081,7 @@ Storyboard
 aliasfile = Storyboard/Storyboard.alias.php
 
 Strategy Wiki - Active Task Forces
-descmsg = activetaskforces
+descmsg = active-task-forces-desc
 file = StrategyWiki/ActiveTaskForces/ActiveTaskForces.i18n.php
 
 String Functions
