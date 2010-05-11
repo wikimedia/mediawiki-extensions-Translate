@@ -1036,6 +1036,8 @@ $messages['ar'] = array(
 	'translate-translations-including-no-param' => 'من فضلك حدد مفتاح رسالة صحيح في معامل الصفحة الفرعية',
 	'languagestats' => 'إحصاءات اللغة',
 	'languagestats-summary' => 'هذه الصفحة تعرض إحصاءات الترجمة لكل مجموعات الرسائل للغة.',
+	'languagestats-stats-for' => 'إحصاءات الترجمة للغة $1 ($2).',
+	'languagestats-recenttranslations' => 'ترجمات حديثة',
 	'translate-language-code' => 'رمز اللغة',
 	'translate-language-code-field-name' => 'رمز اللغة:',
 	'translate-suppress-complete' => 'تخطَ مجموعات الرسائل المترجمة كليا',
@@ -1049,6 +1051,7 @@ $messages['ar'] = array(
 	'translate-languagestats-groups' => ' # أضف أرقام مجموعات الرسائل, واحدا لكل سطر لتحديد مجموعات الرسائل التي
  # تعرض في Special:LanguageStats.أرقام مجموعات الرسائل غير الموجودة سوف 
  # يتم تجاهلها.',
+	'supportedlanguages' => 'اللغات المدعومة',
 	'translate-save' => 'احفظ ($1)',
 	'translate-jssti-add' => 'أضف إلى القائمة',
 	'translate-group-desc-mediawikicore' => 'تحتوي مجموعة الرسائل هذه على الرسائل المستخدمة في النسخة ألفا الحالية من ميدياويكي ({{CURRENTVERSION}})',
@@ -3391,7 +3394,7 @@ $messages['de'] = array(
 	'translate-ignored' => '(ignoriert)',
 	'translate-edit-definition' => 'Systemnachricht im Original',
 	'translate-edit-contribute' => 'bearbeiten',
-	'translate-edit-no-information' => "''Diese Systemnachricht hat noch keine Dokumentation. Wenn du weißt, wo und welchem Zusammenhang sie benutzt wird, kannst du anderen Übersetzern helfen, indem du eine Dokumentation hinzufügst.''",
+	'translate-edit-no-information' => "''Diese Systemnachricht hat noch keine Dokumentation. Wenn du weißt, wo und in welchem Zusammenhang sie benutzt wird, kannst du anderen Übersetzern helfen, indem du eine Dokumentation hinzufügst.''",
 	'translate-edit-information' => 'Information über die Systemnachricht „$2“ ($1)',
 	'translate-edit-in-other-languages' => 'Systemnachricht „$1“ in anderer Sprache',
 	'translate-edit-committed' => 'Aktuelle Übersetzung',
@@ -6217,6 +6220,8 @@ D Standardlischt vu Sproche hangt vu Dyyre Sproch ab.',
 	'translate-translations-including-no-param' => 'Bitte gib e giltige Nochrichteschlissel as Untersyteparameter aa',
 	'languagestats' => 'Sprochstatischtike',
 	'languagestats-summary' => 'Die Syte zeigt Ibersetzigsstatischtike fir alli Nochrichtegruppe vun ere Sproch.',
+	'languagestats-stats-for' => 'Ibersetzigsstatischtike fir $1 ($2).',
+	'languagestats-recenttranslations' => 'Aktuälli Ibersetzige',
 	'translate-language-code' => 'Sprochcode',
 	'translate-language-code-field-name' => 'Sprochcode:',
 	'translate-suppress-complete' => 'Unterdruck komplett ibersetzti Nochrichtegruppe',
@@ -6227,6 +6232,15 @@ D Standardlischt vu Sproche hangt vu Dyyre Sproch ab.',
 	'translate-percentage-fuzzy' => 'Veraltet',
 	'translate-nothing-to-do' => 'Alli meglige Ibersetzige sin schyns scho gmacht.
 S wird empfohle, Syschtemnochrichte mit dr Spezialsyte [[Special:Translate|{{int:translate}}]] z iberpriefe.',
+	'supportedlanguages' => 'Unterstitzti Sproche',
+	'supportedlanguages-summary' => 'Die Syte zeigt e Lischte vu allne unterstitze Sproche uf {{SITENAME}}, zämme mit dr Näme vu dr Ibersetzer, wu an däne Sproche mitgschafft hän.
+Meh Informatione zuen ere Sproch git s bim Klick uf dr Portallink.
+E Klick uf dr Name vun eme Ibersetzers fiert zue dr Benutzersyte.
+
+Wänn imfall e Sproch nit ufgfiert wird, git s Informatione zum Starte vun ere neje Sproch unter „[[Translating:Process|Neji Sproche]]“.
+
+Wänn imfall dr Name vun eme Ibersetzer fählt, muess dää zue dr Lischte vu dr Ibersetzer im jewylige [[:Category:Languages|Portal]] zuegfiegt wäre.
+Im Menü git s e Link zum Portal vu dr yygstellte Sproch.',
 	'translate-save' => 'Spychere ($1)',
 	'translate-jssti-add' => 'Zue dr Lischt zuefiege',
 	'translate-group-desc-mediawikicore' => 'In däre Gruppe het s alli Nochrichte vu dr aktuälle alpha-Version vu MediaWiki ({{CURRENTVERSION}})',
@@ -12911,7 +12925,7 @@ Na barra lateral à esquerda existe um link para o portal da língua da sua pref
 	'translate-group-desc-readerfeedback' => 'Meta-grupo contendo todas as mensagens para a extensão do MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs ReaderFeedback]',
 	'translate-group-desc-socialprofile' => 'Meta-grupo contendo todas as mensagens para as extensões relacionadas com a extensão do MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Perfil Social]',
 	'translate-group-desc-translate' => 'Meta-grupo contendo todas as mensagens para a extensão do MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Traduzir]',
-	'translate-group-desc-wikiaextensions' => 'Meta-grupo contendo todas as mensagens para as extensões MediaWiki suportadas, usadas pelo [http://www.wikia.com Wikia]',
+	'translate-group-desc-wikiaextensions' => 'Meta-grupo contendo todas as mensagens para as extensões suportadas do MediaWiki que são usadas pela [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikihowextensions' => 'Meta-grupo contendo todas as mensagens para as extensões MediaWiki suportadas, usadas pelo [http://www.wikihow.com wikiHow]',
 	'translate-group-desc-wikimediaextensions' => 'Meta-grupo contendo todas as mensagens para as extensões MediaWiki suportadas, usadas pela [http://wikimedia.org/ Wikimedia Foundation]',
 	'translate-group-desc-wikitravelextensions' => 'Meta-grupo contendo todas as mensagens para as extensões MediaWiki suportadas, usadas pelo [http://wikitravel.org Wikitravel]',
@@ -14953,6 +14967,7 @@ Anjeun perlu jadi anggota grup panarjamah pikeun nyimpen parobahan. Parobahan mo
 /** Swedish (Svenska)
  * @author Boivie
  * @author Byrial
+ * @author Dafer45
  * @author Fluff
  * @author Lejonel
  * @author M.M.S.
@@ -15185,6 +15200,10 @@ Metoden <tt>$1</tt> stöds inte.',
 $1',
 	'translate-import-err-ul-failed' => 'Filuppladdningen misslyckades',
 	'translate-import-err-invalid-title' => 'Det angivna filnamnet <nowiki>$1</nowiki> är inte giltigt.',
+	'translate-js-next' => 'Spara och öppna nästa',
+	'translate-js-nonext' => 'Detta var det sista meddelandet på denna sida.',
+	'translate-js-skip' => 'Hoppa över till nästa',
+	'translate-js-history' => 'Översättningshistoria',
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Kod',
 	'translate-gs-continent' => 'Kontinent',

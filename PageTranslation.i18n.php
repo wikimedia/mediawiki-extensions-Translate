@@ -390,7 +390,7 @@ $messages['bn'] = array(
  */
 $messages['br'] = array(
 	'pagetranslation' => 'Troidigezh ur bajenn',
-	'right-pagetranslation' => "Merkañ doare pajennoù evit ma 'vefent troet",
+	'right-pagetranslation' => 'Merkañ stummoù pajennoù evit ma vefent troet',
 	'tpt-desc' => 'Astenn evit treiñ pajennoù gant danvez',
 	'tpt-section' => 'Unanenn treiñ $1',
 	'tpt-section-new' => 'Unvez treiñ nevez.
@@ -401,8 +401,8 @@ Anv : $1',
 	'tpt-diff-old' => 'Testenn gent',
 	'tpt-diff-new' => 'Testenn nevez',
 	'tpt-submit' => 'Merkañ ar stumm-mañ da vezañ troet',
-	'tpt-sections-oldnew' => 'Unanennoù treiñ hag a zo diouto ha re nevez',
-	'tpt-sections-deleted' => 'Unanennoù treinn bet diverket',
+	'tpt-sections-oldnew' => 'Unvezioù treiñ kozh ha nevez',
+	'tpt-sections-deleted' => 'Unvezioù treiñ diverket',
 	'tpt-sections-template' => 'Patrom pajenn dreiñ',
 	'tpt-badtitle' => "N'eo ket reizh titl anv ar bajenn ($1) zo bet lakaet",
 	'tpt-oldrevision' => "N'eo ket $2 stumm diwezhañ ar bajenn [[$1]].
@@ -414,29 +414,29 @@ Gallout a ra ar bajenn bezañ <span class="plainlinks">[$3 troet]</span> bremañ
 	'tpt-badsect' => 'Direizh eo an anv "$1" evit un unanenn dreiñ $2.',
 	'tpt-showpage-intro' => "A-is emañ rollet an troidigezhioù nevez, ar re zo anezho hag ar re bet diverket.
 Kent merkañ ar stumm-mañ evit an treiñ, gwiriait mat n'eus ket bet nemeur a gemmoù er rannbennadoù kuit da bourchas labour aner d'an droourien.",
-	'tpt-mark-summary' => 'An doare-se a zo bet merket evit bezañ troet',
+	'tpt-mark-summary' => 'Merket eo bet ar stumm-mañ da vezañ troet',
 	'tpt-edit-failed' => "N'eus ket bet gallet hizivaat ar bajenn : $1",
-	'tpt-already-marked' => 'Ar stumm ziwezhañ eus ar bajenn-mañ a zo dija bet merket evit bezañ troet.',
-	'tpt-list-nopages' => "N'eo bet merket pajenn ebet evit bezañ troet ha n'eus pajenn ebet prest evit en ober.",
-	'tpt-old-pages' => "Doareoù 'zo eus ar bajenn{{PLURAL:$1|-mañ|où-se}} a zo bet merket evit bezañ troet.",
-	'tpt-new-pages' => '{{PLURAL:$1|Ar bajenn-mañ en|Ar bajennoù-se o}} deus testenn gant balizennoù treinn, met doare ebet eus ar bajenn{{PLURAL:$1|-mañ|où-se}} a zo merket evit bezañ troet.',
+	'tpt-already-marked' => 'Merket eo bet ar stumm diwezhañ eus ar bajenn-mañ da vezañ troet dija.',
+	'tpt-list-nopages' => "N'eus pajenn ebet merket da vezañ troet na prest da vezañ merket da vezañ troet.",
+	'tpt-old-pages' => 'Stummoù zo eus ar {{PLURAL:$1|bajenn-mañ|pajennoù-mañ}} zo bet merket da vezañ troet.',
+	'tpt-new-pages' => "{{PLURAL:$1|Er bajenn-mañ|Er pajennoù-mañ}} ez eus testennoù enno balizennoù treiñ, met stumm ebet eus ar {{PLURAL:$1|bajenn-mañ|pajennoù-mañ}} n'eo bet merket da vezañ troet.",
 	'tpt-rev-latest' => 'stumm diwezhañ',
-	'tpt-rev-old' => "diforc'hioù gant an doare merket kozh",
-	'tpt-rev-mark-new' => "merkañ an doare-se evit ma 'vefe troet",
+	'tpt-rev-old' => "diforc'hioù e-keñver an doare merket kozh",
+	'tpt-rev-mark-new' => 'Merkañ ar stumm-mañ evit ma vo troet',
 	'tpt-translate-this' => 'Treiñ ar bajenn-mañ',
 	'translate-tag-translate-link-desc' => 'Treiñ ar bajenn-mañ',
 	'translate-tag-markthis' => 'Merkañ ar bajenn-mañ evit an treiñ',
-	'translate-tag-markthisagain' => 'Ar bajenn-mañ he deus bet <span class="plainlinks">[$1 kemm]</span> abaoe m\'eo bet <span class="plainlinks">[$2 merket evit bezañ troet]</span>.',
-	'translate-tag-hasnew' => 'Ar bajenn-mañ he deus <span class="plainlinks">[$1 kemm]</span> ha n\'int ket merket evit bezañ troet.',
-	'tpt-translation-intro' => 'Ar bajenn-mañ a zo un <span class="plainlinks">[$1 droidigezh]</span> eus ar bajenn [[$2]] hag an droidigezh a zo bet kaset da benn da $3% hag hizivaet.',
+	'translate-tag-markthisagain' => 'Er bajenn-mañ ez eus bet <span class="plainlinks">[$1 kemm]</span> abaoe m\'eo bet <span class="plainlinks">[$2 merket da vezañ troet]</span>.',
+	'translate-tag-hasnew' => 'Er bajenn-mañ ez eus <span class="plainlinks">[$1 kemm]</span> ha n\'int ket bet merket da vezañ troet.',
+	'tpt-translation-intro' => 'Ur stumm <span class="plainlinks">[$1 troet]</span> eus ar bajenn [[$2]] eo ar bajenn-mañ; kaset ez eus bet da benn $3% eus an droidigezh anezhi, ha diouzh an deiz emañ.',
 	'tpt-translation-intro-fuzzy' => 'An troidigezhioù diamzeret zo merket evel-henn.',
 	'tpt-languages-legend' => 'Yezhoù all :',
-	'tpt-target-page' => "Ne c'hell ket bezañ hizivaet ar bajenn-mañ gant an dorn.
-Un doare troet eus [[$1]] eo hag an droidigezh a c'hell bezañ hizivaet en ur implijout [$2 an ostilh treiñ].",
+	'tpt-target-page' => "N'hall ket ar bajenn-mañ bezañ hizivaet gant an dorn.
+Ur stumm troet eus [[$1]] eo ar bajenn-mañ; gallout a ra bezañ hizivaet en ur implijout [$2 an ostilh treiñ].",
 	'tpt-unknown-page' => "Miret eo an esaouenn anv-mañ evit troidigezh ar pajennoù.
 Ar bajenn hoc'h eus klasket kemm ne seblant ket klotañ gant pajenn ebet bet merket evit bezañ troet.",
-	'tpt-install' => "Lañsit php trezalc'h (maintenance)/update.php pe ar staliadur web evit gweredekaat an arc'hweladur treiñ ar pajennoù.",
-	'tpt-render-summary' => 'Hizivadur evit klotañ gant an doare nevez mammenn ar bajenn',
+	'tpt-install' => 'Lañsit php maintenance/update.php pe ar staliadur web evit gweredekaat an treiñ pajennoù.',
+	'tpt-render-summary' => 'Hizivadenn da glotañ gant stumm nevez mammenn ar bajenn',
 	'tpt-download-page' => 'Ezporzhiañ ar bajenn gant an troidigezhioù',
 );
 
