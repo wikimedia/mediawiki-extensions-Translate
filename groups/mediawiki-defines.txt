@@ -7,6 +7,8 @@ Abuse Filter
 optional = abusefilter-edit-builder-op-bool-xor
 aliasfile = AbuseFilter/AbuseFilter.alias.php
 
+Add Media Wizard
+
 Admin Links
 aliasfile = AdminLinks/AdminLinks.alias.php
 
@@ -1113,6 +1115,9 @@ TidyTab
 file = TidyTab/Tidy.i18n.php
 descmsg = tidy-desc
 
+Timed Media Handler
+magicfile = TimedMediaHandler/TimedMediaHandler.i18n.magic.php
+
 Timeline
 file = timeline/Timeline.i18n.php
 
@@ -1156,6 +1161,8 @@ UK Geocoding For Maps
 descmsg = ukgeocoding_desc
 
 Upload Blacklist
+
+Upload Wizard
 
 Unicode Converter
 
