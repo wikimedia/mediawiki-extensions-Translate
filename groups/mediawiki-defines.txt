@@ -1163,6 +1163,7 @@ descmsg = ukgeocoding_desc
 Upload Blacklist
 
 Upload Wizard
+aliasfile = UploadWizard/UploadWizard.alias.php
 
 Unicode Converter
 
