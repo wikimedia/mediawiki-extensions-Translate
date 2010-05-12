@@ -1165,6 +1165,10 @@ Upload Blacklist
 Upload Wizard
 aliasfile = UploadWizard/UploadWizard.alias.php
 
+Upload Wizard - JS part
+id = ext-uploadwizard-js
+file = UploadWizard/js/UploadWizard.i18n.php
+
 Unicode Converter
 
 Uniwiki - Authors
