@@ -1163,7 +1163,7 @@ descmsg = ukgeocoding_desc
 Upload Blacklist
 
 Upload Wizard
-aliasfile = UploadWizard/UploadWizard.alias.php
+#aliasfile = UploadWizard/UploadWizard.alias.php
 
 Upload Wizard - JS part
 id = ext-uploadwizard-js
