@@ -36,6 +36,7 @@ array(
 		'rcnotefrom', // Optional time parameters
 		'revision-info', // Optional time parameters
 		'revisionasof', // Optional time parameters
+		'siteuser', // Optional GENDER parameter
 		'sp-contributions-blocked-notice', // Optional GENDER parameter
 	),
 ),
