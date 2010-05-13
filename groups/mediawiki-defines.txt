@@ -1119,6 +1119,10 @@ Timed Media Handler - Timed Text
 file = TimedMediaHandler/TimedText/TimedText.i18n.php
 optional = mwe-timedtext-key-language
 
+Timed Media Handler - Embed Player
+file = TimedMediaHandler/EmbedPlayer/EmbedPlayer.i18n.php
+optional = mwe-embedplayer-ogg-player-cortado
+
 Timeline
 file = timeline/Timeline.i18n.php
 
