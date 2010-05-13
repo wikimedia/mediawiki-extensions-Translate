@@ -1162,9 +1162,8 @@ Upload Blacklist
 Upload Wizard
 #aliasfile = UploadWizard/UploadWizard.alias.php
 
-Upload Wizard - JS part
-id = ext-uploadwizard-js
-file = UploadWizard/js/UploadWizard.i18n.php
+Upload Wizard
+file = UploadWizard/UploadWizard.i18n.php
 
 Unicode Converter
 
