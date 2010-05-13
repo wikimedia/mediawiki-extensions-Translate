@@ -9,6 +9,13 @@ aliasfile = AbuseFilter/AbuseFilter.alias.php
 
 Add Media Wizard
 
+Add Media Wizard - Add Media
+file = AddMediaWizard/AddMedia/AddMedia.i18n.php
+optional = rsd-archive_org-title, rsd-flickr-title, rsd-metavid-title
+
+Add Media Wizard - Clip Edit
+file = AddMediaWizard/ClipEdit/ClipEdit.i18n.php
+
 Admin Links
 aliasfile = AdminLinks/AdminLinks.alias.php
 
