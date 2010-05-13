@@ -1115,6 +1115,10 @@ descmsg = tidy-desc
 Timed Media Handler
 magicfile = TimedMediaHandler/TimedMediaHandler.i18n.magic.php
 
+Timed Media Handler - Timed Text
+file = TimedMediaHandler/TimedText/TimedText.i18n.php
+optional = mwe-timedtext-key-language
+
 Timeline
 file = timeline/Timeline.i18n.php
 
