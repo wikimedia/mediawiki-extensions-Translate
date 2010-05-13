@@ -1121,9 +1121,7 @@ descmsg = tidy-desc
 
 Timed Media Handler
 magicfile = TimedMediaHandler/TimedMediaHandler.i18n.magic.php
-optional = tmh-player-cortado, tmh-player-vlc-mozilla, tmh-player-vlc-activex, tmh-player-totem
-optional = tmh-player-quicktime-mozilla, tmh-player-quicktime-activex, tmh-player-kmplayer, tmh-player-kaffeine
-optional = tmh-player-mplayerplug-in
+descmsg = timedmedia-desc
 
 Timed Media Handler - Timed Text
 file = TimedMediaHandler/TimedText/TimedText.i18n.php
