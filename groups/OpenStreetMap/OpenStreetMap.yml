@@ -62,6 +62,7 @@ TAGS:
     - trace.trace_form.visibility_help_url
     - user.account.public_editing.enabled_link
     - user.terms.consider_pd_why_url
+    - user.terms.declined
   ignored:
     - geocoder.search_osm_namefinder.prefix
     - printable_name.with_id
