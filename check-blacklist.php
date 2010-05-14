@@ -262,6 +262,13 @@ array(
 	)
 ),
 array(
+	'group' => 'ext-translate-core',
+	'check' => 'links',
+	'message' => array(
+		'supportedlanguages-summary', // Contains links that are translated
+	)
+),
+array(
 	'group' => 'ext-ui-wikieditor-toolbar',
 	'check' => 'links',
 	'message' => array(
