@@ -70,7 +70,7 @@ class SpecialSupportedLanguages extends UnlistedSpecialPage {
 		$lb->execute();
 		global $wgUser;
 		$skin = $wgUser->getSkin();
-		$portalText = wfMsg( 'portal' );
+		$portalBaseText = wfMsg( 'portal' );
 
 		// Information to be used inside the foreach loop
 		$linkInfo['rc']['title'] = SpecialPage::getTitleFor( 'Recentchanges' );
@@ -80,6 +80,8 @@ class SpecialSupportedLanguages extends UnlistedSpecialPage {
 
 		foreach ( array_keys( $users ) as $code ) {
 			$portalTitle = Title::makeTitleSafe( NS_PORTAL, $code );
+
+			$portalText = $portalBaseText;
 
 			// If CLDR is installed, add localised header and link title.
 			if( $cldrInstalled ) {
