@@ -2609,6 +2609,7 @@ $messages['stq'] = array(
 );
 
 /** Swedish (Svenska)
+ * @author Dafer45
  * @author Fluff
  * @author M.M.S.
  * @author Najami
@@ -2657,6 +2658,7 @@ Innan den här versionen märks för översättning, kontrollera att förändrin
 	'tpt-languages-legend' => 'Andra språk:',
 	'tpt-target-page' => 'Den här sidan kan inte uppdateras manuellt. Den här sidan är en översättning av [[$1]] och översättningen kan uppdateras genom att använda [$2 översättningsverktyget].',
 	'tpt-unknown-page' => 'Den här namnrymden är reserverad för översättningar av sidor. Sidan du försöker redigera verkar inte stämma överens med någon sida som är märkt för översättning.',
+	'tpt-render-summary' => 'Uppdaterar för att matcha den nya versionen av källpaketet',
 	'tpt-download-page' => 'Exportera sidan med översättningar',
 );
 

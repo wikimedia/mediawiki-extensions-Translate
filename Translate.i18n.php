@@ -9984,6 +9984,8 @@ D'Standard-Lëscht vu Sproochen hànkt vun Ärer Sprooch of.",
 	'translate-translations-including-no-param' => 'Gitt w.e.g. e gëltege Code vum Message beim Parameter vun der Ënnersäit unn',
 	'languagestats' => 'Sproochstatistiken',
 	'languagestats-summary' => "Dës Säit weist d'Statistike vun der Iwwersetzung fir all Gruppe vu Message fir eng Sprooch.",
+	'languagestats-stats-for' => 'Iwwersetzungsstatistike fir $1 ($2).',
+	'languagestats-recenttranslations' => 'Rezent Iwwersetzungen',
 	'translate-language-code' => 'Sproochecode',
 	'translate-language-code-field-name' => 'Sproochecode:',
 	'translate-suppress-complete' => 'Gruppe vu Messagen. déi komplett iwwersat sinn, net weisen',
@@ -9994,6 +9996,7 @@ D'Standard-Lëscht vu Sproochen hànkt vun Ärer Sprooch of.",
 	'translate-percentage-fuzzy' => 'Net à jour',
 	'translate-nothing-to-do' => "All méiglech Iwwersetzunge sinn anscheinend scho gemaach.
 Dir sidd awer häerzlech Invitéiert fir d'Systemmessagn op [[Special:Translate|{{int:translate}}]] nozekucken.",
+	'supportedlanguages' => 'Ënnerstetzte Sproochen',
 	'translate-save' => 'Späicher ($1)',
 	'translate-jssti-add' => "Op d'Lëscht derbäisetzen",
 	'translate-group-desc-mediawikicore' => "An dëser Grupp mat Message sinn d'Messagen aus der aktueller alpha-Versioun vu MediaWiki ({{CURRENTVERSION}}) dran",
@@ -12972,13 +12975,13 @@ Todos os valores têm limites máximos e mínimos.',
 	'translate-nothing-to-do' => 'Todas as traduções possíveis parecem já ter sido feitas.
 Encorajamo-lo a rever mensagens através de [[Special:Translate|{{int:translate}}]].',
 	'supportedlanguages' => 'Línguas suportadas',
-	'supportedlanguages-summary' => 'Esta página apresenta uma lista de todas as línguas suportadas pela {{SITENAME}}, com os nomes dos tradutores de cada lingua.
+	'supportedlanguages-summary' => 'Esta página apresenta uma lista de todas as línguas suportadas pela {{SITENAME}}, com os nomes dos tradutores de cada língua.
 Para obter mais informação sobre uma língua em particular, pode clicar o link para o portal dessa língua.
 Clicar o nome de um tradutor conduz à página de utilizador desse tradutor.
 
-Se uma língua não aparecer na lista, pode descobrir como iniciar um projecto de localização para uma língua em "[[Translating:Process|Língua nova]]".
+Se uma língua não aparecer na lista, pode descobrir como iniciar um projecto de localização para uma língua em "[[Translating:Process/pt|Língua nova]]".
 
-Se faz traduções para uma língua e não aparece na lista, adicione o seu nome à lista de tradutores no [[:Category:Languages|portal]] dessa língua, por favor.
+Se faz traduções para uma língua e o seu nome não aparece na lista, adicione-o à lista de tradutores no [[:Category:Languages|portal]] dessa língua, por favor.
 Na barra lateral à esquerda existe um link para o portal da língua da sua preferência.',
 	'translate-save' => 'Gravar ($1)',
 	'translate-jssti-add' => 'Adicionar à lista',
@@ -15192,6 +15195,8 @@ Standardlistan på språk avgörs av ditt språk.',
 	'translate-translations-including-no-param' => 'Var god specifiera en giltig meddelandenyckel i undersideparametern',
 	'languagestats' => 'Språkstatistik',
 	'languagestats-summary' => 'Den här sidan visar översättningsstatistik för alla meddelandegrupper för ett språk.',
+	'languagestats-stats-for' => 'Översättningsstatistik för $1 ($2).',
+	'languagestats-recenttranslations' => 'Senaste översättningar',
 	'translate-language-code' => 'Språkkod',
 	'translate-language-code-field-name' => 'Språkkod:',
 	'translate-suppress-complete' => 'Visa inte helt översatta meddelandegrupper',
@@ -15202,6 +15207,15 @@ Standardlistan på språk avgörs av ditt språk.',
 	'translate-percentage-fuzzy' => 'Föråldrat',
 	'translate-nothing-to-do' => 'Alla möjliga översättningar verkar ha gjorts.
 Du uppmuntras att granska meddelanden genom [[Special:Translate|{{int:translate}}]].',
+	'supportedlanguages' => 'Språk som stöds',
+	'supportedlanguages-summary' => 'Denna sida visar en lista över alla språk som stöds av {{SITENAME}}, tillsammans med en lista över översättare som jobbar på detta språk.
+Om du vill ha mer information om ett speciellt språk så klicka på länken till portalen för detta språk.
+Trycker du på en översättares namn kommer du till dennes användarsida.
+
+Om ett språk inte finns med i listan så kan du hitta information om hur du påbörjar ett lokaliseringsprojekt för detta språk på "[[Translating:Process|New Language]]".
+
+Om du översätter till ett språk och ditt namn inte finns med, var vänlig och lägg till dit namn till listan över översättare på [[:Category:Languages|portalen]] för detta språk.
+En länk till till portalen för ditt val av språk finns i menyn.',
 	'translate-save' => 'Spara ($1)',
 	'translate-jssti-add' => 'Lägg till i listan',
 	'translate-group-desc-mediawikicore' => 'Den här gruppen av meddelanden innehåller de meddelanden som används i de nuvarande alfaversionen av MediaWiki ({{CURRENTVERSION}})',
@@ -15254,10 +15268,15 @@ Vänligen kontrollera.',
 	'translate-manage-intro-en' => 'Nedanför är en lista över förändringar på meddelanden i den här gruppen.
 Vänligen se över förändringar och välj den åtgärd du vill utföra för varje meddelande.
 När du har uppdaterat meddelandedefinitionerna, kontrollera externa förändringar på andra språk, om det finns några. Notera att åtgärden <code>ignorera</code> bara är tillfällig.',
+	'translate-manage-intro-other' => 'Nedan följer en lista över översättningar på $1 språk.
+Var vänlig och se över ändringarna och välj den åtgärd du vill utföra för varje översättning.
+Om du väljer att ignorera dessa förändringar så kommer de att åsidosättas vid nästa export.',
 	'translate-manage-subtitle' => 'Hantera',
 	'translate-manage-import-rebuild-all' => 'Bygg om alla språk och ignorera alla förändringar',
 	'importtranslations' => 'Importera översättningar',
 	'translate-import-from-url' => 'URL till filen:',
+	'translate-import-from-wiki' => 'Fil på denna wiki:',
+	'translate-import-from-local' => 'Lokal filuppladdning:',
 	'translate-import-load' => 'Ladda fil',
 	'translate-import-err-type-not-supported' => 'Kan inte ladda filen:
 Metoden <tt>$1</tt> stöds inte.',
@@ -15265,9 +15284,14 @@ Metoden <tt>$1</tt> stöds inte.',
 $1',
 	'translate-import-err-ul-failed' => 'Filuppladdningen misslyckades',
 	'translate-import-err-invalid-title' => 'Det angivna filnamnet <nowiki>$1</nowiki> är inte giltigt.',
+	'translate-import-err-no-such-file' => 'Fil <nowiki>$1</nowiki> finns inte, eller har inte laddats upp lokalt.',
+	'translate-import-err-warnings' => 'Filen är inte välformaterad.
+Kontrollera att din editor inte tar bort msgctxt fält.
+Detaljer: $1',
 	'translate-js-next' => 'Spara och öppna nästa',
 	'translate-js-nonext' => 'Detta var det sista meddelandet på denna sida.',
 	'translate-js-skip' => 'Hoppa över till nästa',
+	'translate-js-save-failed' => 'Misslyckades att spara. Var vänlig rapportera detta fel.',
 	'translate-js-history' => 'Översättningshistoria',
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Kod',
