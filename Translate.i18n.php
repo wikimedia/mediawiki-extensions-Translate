@@ -226,7 +226,11 @@ If a language is not listed, you can find out how to start a localization projec
 If you translate to a language and your name is not included, please add your name to the list of translators on the [[:Category:Languages|portal]] for that language.
 See the menu bar for a link to the portal for the language of your preference.',
 	'supportedlanguages-portallink' => '[$1] $2 - $3',
+	'supportedlanguages-portallink-nocldr' => '[$1] $2',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Translator|Translators}}: $1',
+	'supportedlanguages-noportal-title' => 'No portal namespace defined',
+	'supportedlanguages-noportal' => 'The wiki administrator has not defined NS_PORTAL, so this page does not work.
+On this page a list of language portal will appears for all portals corresponding with a defined language code and a subpage called "translators" containing the template [[:{{ns:template}}:User|User]] taking a user name as parameter.',
 
 	'translate-save' => 'Save ($1)',
 

@@ -13,13 +13,24 @@ class SpecialSupportedLanguages extends UnlistedSpecialPage {
 	public function execute( $par ) {
 		global $wgLang, $wgOut;
 
+		if( !defined( 'NS_PORTAL' ) ) {
+			$wgOut->showErrorPage( 'supportedlanguages-noportal-title', 'supportedlanguages-noportal' );
+			return;
+		}
+
 		$this->outputHeader();
 		$this->setHeaders();
 
-		$locals = LanguageNames::getNames( $wgLang->getCode(),
-			LanguageNames::FALLBACK_NORMAL,
-			LanguageNames::LIST_MW_AND_CLDR
-		);
+		// Check if CLDR extension has been installed.
+		$cldrInstalled = class_exists( 'LanguageNames' );
+
+		if( $cldrInstalled ) {
+			$locals = LanguageNames::getNames( $wgLang->getCode(),
+				LanguageNames::FALLBACK_NORMAL,
+				LanguageNames::LIST_MW_AND_CLDR
+			);
+		}
+
 		$natives = Language::getLanguageNames( false );
 		ksort( $natives );
 
@@ -69,12 +80,23 @@ class SpecialSupportedLanguages extends UnlistedSpecialPage {
 
 		foreach ( array_keys( $users ) as $code ) {
 			$portalTitle = Title::makeTitleSafe( NS_PORTAL, $code );
+
+			// If CLDR is installed, add localised header and link title.
+			if( $cldrInstalled ) {
+				$headerText = wfMsg( 'supportedlanguages-portallink', $code, $locals[$code], $natives[$code] );
+				$portalText .= ' ' . $locals[$code];
+			} else {
+				// No CLDR, so a less localised header and link title.
+				$headerText = wfMsg( 'supportedlanguages-portallink-nocldr', $code, $natives[$code] );
+				$portalText .= ' ' . $natives[$code];
+			}
+
 			$portalLink = $skin->link(
 				$portalTitle,
-				wfMsg( 'supportedlanguages-portallink', $code, $locals[$code], $natives[$code] ),
+				$headerText,
 				array(
 					'id' => $code,
-					'title' => $portalText . ' ' . $locals[$code]
+					'title' => $portalText
 				),
 				array(),
 				array( 'known', 'noclasses' )
