@@ -226,6 +226,7 @@ If a language is not listed, you can find out how to start a localization projec
 If you translate to a language and your name is not included, please add your name to the list of translators on the [[:Category:Languages|portal]] for that language.
 See the menu bar for a link to the portal for the language of your preference.',
 	'supportedlanguages-portallink' => '[$1] $2 - $3',
+	'supportedlanguages-translators' => '{{PLURAL:$2|Translator|Translators}}: $1',
 
 	'translate-save' => 'Save ($1)',
 

@@ -61,6 +61,12 @@ class SpecialSupportedLanguages extends UnlistedSpecialPage {
 		$skin = $wgUser->getSkin();
 		$portalText = wfMsg( 'portal' );
 
+		// Information to be used inside the foreach loop
+		$linkInfo['rc']['title'] = SpecialPage::getTitleFor( 'Recentchanges' );
+		$linkInfo['rc']['msg'] = wfMsg( 'languagestats-recenttranslations' );
+		$linkInfo['stats']['title'] = SpecialPage::getTitleFor( 'LanguageStats' );
+		$linkInfo['stats']['msg'] = wfMsg( 'languagestats' );
+
 		foreach ( array_keys( $users ) as $code ) {
 			$portalTitle = Title::makeTitleSafe( NS_PORTAL, $code );
 			$portalLink = $skin->link(
@@ -73,15 +79,45 @@ class SpecialSupportedLanguages extends UnlistedSpecialPage {
 				array(),
 				array( 'known', 'noclasses' )
 			);
-				
+
 			$wgOut->addHTML( "<h2>" . $portalLink . "</h2>" );
+
+			// Add useful links for language stats and recent changes for the language
+			$links[] = $skin->link(
+				$linkInfo['stats']['title'],
+				$linkInfo['stats']['msg'],
+				array(),
+				array(
+					'code' => $code,
+					'suppresscomplete' => '1'
+				),
+				array( 'known', 'noclasses' )
+			);
+			$links[] = $skin->link(
+				$linkInfo['rc']['title'],
+				$linkInfo['rc']['msg'],
+				array(),
+				array(
+					'translations' => 'only',
+					'trailer' => "/" . $code
+				),
+				array( 'known', 'noclasses' )
+			);
+			$linkList = $wgLang->listToText( $links );
+
+			$wgOut->addHTML( "<p>" . $linkList . "</p>\n" );
 
 			foreach ( $users[$code] as $index => $username ) {
 				$title = Title::makeTitleSafe( NS_USER, $username );
 				$users[$code][$index] = $skin->link( $title, $username );
 			}
 
-			$wgOut->addHTML( $wgLang->listToText( $users[$code] ) );
+			$wgOut->addHTML( "<p>" . wfMsgExt(
+				'supportedlanguages-translators',
+				'parsemag',
+				$wgLang->listToText( $users[$code] ),
+				count( $users[$code] )
+			) . "</p>\n" );
 		}
 	}
 }
