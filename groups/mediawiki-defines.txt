@@ -86,6 +86,8 @@ Bread Crumbs
 Call
 aliasfile = Call/Call.alias.php
 
+Cassandra
+
 Category Feed
 
 Category Intersection
