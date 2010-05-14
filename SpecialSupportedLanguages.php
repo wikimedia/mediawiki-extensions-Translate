@@ -83,6 +83,7 @@ class SpecialSupportedLanguages extends UnlistedSpecialPage {
 			$wgOut->addHTML( "<h2>" . $portalLink . "</h2>" );
 
 			// Add useful links for language stats and recent changes for the language
+			$links = array();
 			$links[] = $skin->link(
 				$linkInfo['stats']['title'],
 				$linkInfo['stats']['msg'],
