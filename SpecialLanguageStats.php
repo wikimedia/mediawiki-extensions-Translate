@@ -83,7 +83,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$out .= Xml::closeElement( 'tr' );
 
 		$out .= Xml::openElement( 'tr' );
-		$out .= Xml::openElement( 'td', array( 'class' => 'mw-input'  ) );
+		$out .= Xml::openElement( 'td', array( 'class' => 'mw-input', 'colspan' => 2 ) );
 		$out .= Xml::submitButton( wfMsg( 'allpagessubmit' ) );
 		$out .= Xml::closeElement( 'td' );
 		$out .= Xml::closeElement( 'tr' );
@@ -95,7 +95,6 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 		return $out;
 	}
-
 
 	# Statistics table element (heading or regular cell)
 	function element( $in, $bgcolor = '' ) {
