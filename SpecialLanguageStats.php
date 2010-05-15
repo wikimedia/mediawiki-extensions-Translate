@@ -157,12 +157,13 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 				'width' => "100%"
 			)
 		);
+
 		$out .= Xml::openElement( 'tr' );
-		$out .= Xml::element( 'th', null, wfMsg( 'translate-page-group' ) );
-		$out .= Xml::element( 'th', null, wfMsg( 'translate-total' ) );
-		$out .= Xml::element( 'th', null, wfMsg( 'translate-untranslated' ) );
-		$out .= Xml::element( 'th', null, wfMsg( 'translate-percentage-complete' ) );
-		$out .= Xml::element( 'th', null, wfMsg( 'translate-percentage-fuzzy' ) );
+		$out .= Xml::element( 'th', array( 'title' => self::newlineToWordSeparator( wfMsg( 'translate-page-group-tooltip' ) ) ), wfMsg( 'translate-page-group' ) );
+		$out .= Xml::element( 'th', array( 'title' => self::newlineToWordSeparator( wfMsg( 'translate-total-tooltip' ) ) ), wfMsg( 'translate-total' ) );
+		$out .= Xml::element( 'th', array( 'title' => self::newlineToWordSeparator( wfMsg( 'translate-untranslated-tooltip' ) ) ), wfMsg( 'translate-untranslated' ) );
+		$out .= Xml::element( 'th', array( 'title' => self::newlineToWordSeparator( wfMsg( 'translate-percentage-complete-tooltip' ) ) ), wfMsg( 'translate-percentage-complete' ) );
+		$out .= Xml::element( 'th', array( 'title' => self::newlineToWordSeparator( wfMsg( 'translate-percentage-fuzzy-tooltip' ) ) ), wfMsg( 'translate-percentage-fuzzy' ) );
 		$out .= Xml::closeElement( 'tr' );
 
 		return $out;
@@ -296,5 +297,17 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		}
 
 		return $blacklisted;
+	}
+
+	private static function newlineToWordSeparator( $text ) {
+		$wordSeparator = wfMsg( 'word-separator' );
+
+		$text = strtr( $text, array(
+			"\n" => $wordSeparator,
+			"\r" => $wordSeparator,
+			"\t" => $wordSeparator,
+		) );
+
+		return $text;
 	}
 }

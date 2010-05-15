@@ -42,6 +42,8 @@ Reason:
 	'translate-page-settings-legend' => 'Settings',
 	'translate-page-task'            => 'I want to',
 	'translate-page-group'           => 'Group',
+	'translate-page-group-tooltip'   => 'The name of a group of messages.
+If the group consists of a subset or superset of messages from other groups, it is displayed in bold.',
 	'translate-page-language'        => 'Language',
 	'translate-page-limit'           => 'Limit',
 	'translate-page-limit-option'    => '$1 {{PLURAL:$1|message|messages}} per page',
@@ -206,9 +208,15 @@ All values have upper and lower limits.',
 	'translate-suppress-complete' => 'Suppress completely translated message groups',
 	'translate-language' => 'Language',
 	'translate-total' => 'Messages',
+	'translate-total-tooltip' => 'The total number of messages in this message group.',
 	'translate-untranslated' => 'Untranslated',
+	'translate-untranslated-tooltip' => 'The total number of untranslated messages in this message group.
+This includes the messages that have been tagged as outdated.',
 	'translate-percentage-complete' => 'Completion',
+	'translate-percentage-complete-tooltip' => 'The percentage of messages in the group that have been translated and not marked as outdated.',
 	'translate-percentage-fuzzy' => 'Outdated',
+	'translate-percentage-fuzzy-tooltip' => 'The percentage of messages in the group that have been translated and have been marked as outdated.
+Messages are marked outdated because the English language source message has changed, or because an automated check for the message failed.',
 	'translate-nothing-to-do' => 'All possible translations appear to have been made.
 You are encouraged to review messages through [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-groups' => ' # Add message group IDs, one per line to restrict the message groups that
