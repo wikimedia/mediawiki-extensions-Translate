@@ -12,7 +12,7 @@ Add Media Wizard
 Add Media Wizard - Add Media
 file = AddMediaWizard/AddMedia/AddMedia.i18n.php
 optional = rsd-archive_org-title, rsd-flickr-title, rsd-metavid-title, mwe-no-import-by-url-linktext
-optional = rsd-wiki_commons-title
+optional = rsd-wiki_commons-title, mwe-cc_title
 
 Add Media Wizard - Clip Edit
 file = AddMediaWizard/ClipEdit/ClipEdit.i18n.php
