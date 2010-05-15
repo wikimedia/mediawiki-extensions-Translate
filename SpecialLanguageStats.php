@@ -149,12 +149,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$out .= Xml::openElement(
 			'table',
 			array(
-				'class' => "sortable wikitable",
-				'border' => '2',
-				'cellpadding' => '4',
-				'cellspacing' => '0',
-				'style' => "background-color: #F9F9F9; border: 1px #AAAAAA solid; border-collapse: collapse; clear:both;",
-				'width' => "100%"
+				'class' => "sortable wikitable"
 			)
 		);
 
