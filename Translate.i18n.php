@@ -1905,6 +1905,8 @@ $messages['be-tarask'] = array(
 
 Калі Вы перакладаеце на нейкую мову, а Вашага імя няма ў сьпісе, калі ласка, дадайце Вашае імя ў сьпіс перакладчыкаў на [[:Category:Languages|партале]] гэтай мовы.
 Шукайце спасылку на партал на мове, пададзенай ў Вашых устаноўках, у мэню.',
+	'supportedlanguages-translators' => '{{PLURAL:$2|Перакладчык|Перакладчыкі}}: $1',
+	'supportedlanguages-noportal-title' => 'Прастора назваў парталаў ня вызначаная',
 	'translate-save' => 'Захаваць ($1)',
 	'translate-jssti-add' => 'Дадаць у сьпіс',
 	'translate-group-desc-mediawikicore' => 'Гэта група паведамленьняў утрымлівае паведамленьні, якія выкарыстоўваюцца ў цяперашняй альфа-вэрсіі MediaWiki ({{CURRENTVERSION}})',
@@ -3535,6 +3537,8 @@ Falls eine Sprache nicht aufgeführt wird, gibt es Informationen zum Starten ein
 
 Falls der Name eines Übersetzers fehlt, muss dieser zur Liste der Übersetzer im jeweiligen [[:Category:Languages|Portal]] hinzugefügt werden.
 Im Menü befindet sich ein Link zum Portal der eingestellten Sprache.',
+	'supportedlanguages-translators' => '{{PLURAL:$2|Übersetzer|Übersetzer}}: $1',
+	'supportedlanguages-noportal-title' => 'Kein Portal-Namensraum definiert',
 	'translate-save' => 'Speichern ($1)',
 	'translate-jssti-add' => 'Zur Liste hinzufügen',
 	'translate-group-desc-mediawikicore' => 'Diese Gruppe beinhaltet alle Nachrichten der aktuellen alpha-Version von MediaWiki ({{CURRENTVERSION}})',
@@ -4543,6 +4547,7 @@ Si un idioma no está en la lista, puede descubrir como empezar un proyecto de l
 
 Si ayudó traduciendo a un lenguaje y su nombre no está incluido, por favor añada su nombre a la lista de traductores en [[:Category:Languages|portal]] para dicho idioma.
 Vea la barra del menú para un enlace al portal para el idioma de su preferencia.',
+	'supportedlanguages-translators' => '{{PLURAL:$2|Traductor|Traductores}}: $1',
 	'translate-save' => 'Grabar($1)',
 	'translate-jssti-add' => 'Añadir a la lista',
 	'translate-group-desc-mediawikicore' => 'Este grupo de mensajes contiene los mensajes usados en la actual versión alpha de MediaWiki ({{CURRENTVERSION}})',
@@ -5229,6 +5234,8 @@ $messages['fr'] = array(
 	'translate-page-settings-legend' => 'Configuration',
 	'translate-page-task' => 'Je veux',
 	'translate-page-group' => 'Groupe',
+	'translate-page-group-tooltip' => "Un nom de groupe de messages.
+Si le groupe contient des sous-ensembles ou des sur-ensembles de messages d'autres groupes, il est affiché en gras.",
 	'translate-page-language' => 'Langue',
 	'translate-page-limit' => 'Limite',
 	'translate-page-limit-option' => '$1 message{{PLURAL:$1||s}} par page',
@@ -5363,9 +5370,15 @@ Toutes les valeurs ont des limites supérieure et inférieure.',
 	'translate-suppress-complete' => 'Ne pas afficher les groupes de messages entièrement traduits',
 	'translate-language' => 'Langue',
 	'translate-total' => 'Messages',
+	'translate-total-tooltip' => 'Le nombre total de messages dans ce groupe.',
 	'translate-untranslated' => 'Non traduits',
+	'translate-untranslated-tooltip' => 'Le nombre total de messages non traduits dans ce groupe.
+Ceci inclut les messages qui ont été marqués comme obsolètes.',
 	'translate-percentage-complete' => 'Achèvement',
+	'translate-percentage-complete-tooltip' => 'Le pourcentage de messages dans ce groupe qui ont été traduits et non marqués comme obsolètes.',
 	'translate-percentage-fuzzy' => 'Désuets',
+	'translate-percentage-fuzzy-tooltip' => 'Le pourcentage de messages dans ce groupe qui ont été traduits puis marqués comme obsolètes.
+Les messages sont marqués comme obsolètes soit parce que la source en anglais a été modifiée ou alors une vérification automatique a échoué.',
 	'translate-nothing-to-do' => 'Toutes les traductions possibles semblent avoir été effectuées.
 Vous êtes encouragé à revoir les messages depuis [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-groups' => ' # Ajoutez des ID de groupes de messages, un par ligne pour limiter les groupes
@@ -5380,6 +5393,11 @@ Si une langue n'est pas répertoriée, vous pouvez trouver la façon de démarre
 
 Si vous traduisez dans une langue et votre nom ne figure pas, veuillez ajouter votre nom à la liste des traducteurs dans le [[:Category:Languages|portail]] de cette langue.
 Voyez la barre de menu pour un lien vers le portail de la langue de vos préférences.",
+	'supportedlanguages-translators' => '{{PLURAL:$2|Traducteur|Traducteurs}} : $1',
+	'supportedlanguages-noportal-title' => 'Espace de noms « Portail » non défini',
+	'supportedlanguages-noportal' => "L'administrateur du wiki n'a pas défini NS_PORTAL, donc cette page ne peut pas fonctionner.
+Sur cette page apparaitront une liste de language pour tous les portails correspondant à une langue définie et une sous-page appelée « translators ».
+La sous-page « translators » doit contenir le modèle [[:{{ns:template}}:User|User]] qui prend un nom d'utilisateur comme paramètre.",
 	'translate-save' => 'Publier ($1)',
 	'translate-jssti-add' => 'Ajouter à la liste',
 	'translate-group-desc-mediawikicore' => 'Ce groupe de messages contient les messages utilisés dans la version alpha actuelle de MediaWiki ({{CURRENTVERSION}}).',
@@ -7557,6 +7575,8 @@ $messages['ia'] = array(
 	'translate-page-settings-legend' => 'Configurationes',
 	'translate-page-task' => 'Io vole',
 	'translate-page-group' => 'Gruppo',
+	'translate-page-group-tooltip' => 'Le nomine de un gruppo de messages.
+Si le gruppo consiste de un sub-insimul o de super-insimules de messages ex altere gruppos, illo es monstrate in litteras grasse.',
 	'translate-page-language' => 'Lingua',
 	'translate-page-limit' => 'Limite',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|message|messages}} per pagina',
@@ -7692,9 +7712,15 @@ Le lista predefinite de linguas depende de tu lingua.',
 	'translate-suppress-complete' => 'Celar le gruppos de messages completemente traducite',
 	'translate-language' => 'Lingua',
 	'translate-total' => 'Messages',
+	'translate-total-tooltip' => 'Le numero total de messages in iste gruppo.',
 	'translate-untranslated' => 'Non traducite',
+	'translate-untranslated-tooltip' => 'Le numero de total de messages non traducite in iste gruppo.
+Isto include le messages que ha essite marcate como obsolete.',
 	'translate-percentage-complete' => 'Completion',
+	'translate-percentage-complete-tooltip' => 'Le percentage de messages in le gruppo que ha essite traducite e non marcate como obsolete.',
 	'translate-percentage-fuzzy' => 'Obsolete',
+	'translate-percentage-fuzzy-tooltip' => 'Le percentage de messages in le gruppo que ha essite traducite e marcate como obsolete.
+Le messages es marcate como obsolete proque le message original in anglese ha cambiate, o proque un verification automatic del message ha fallite.',
 	'translate-nothing-to-do' => 'Il pare que tote le traductiones possibile ha essite facite.
 Es recommendate revider le messages per medio del pagina [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-groups' => ' # Adde IDs de gruppos de messages, un per linea, pro limitar le
@@ -7709,6 +7735,11 @@ Si un lingua non es listate, tu pote leger como comenciar un projecto de localis
 
 Si tu traduce in un lingua e tu nomine non es includite, per favor adde tu nomine al lista de traductores in le [[:Category:Languages|portal]] pro iste lingua.
 Vide le barra de menu pro un ligamine al portal pro le lingua de tu preferentia.',
+	'supportedlanguages-translators' => '{{PLURAL:$2|Traductor|Traductores}}: $1',
+	'supportedlanguages-noportal-title' => 'Le spatio de nomines "portal" non es definite',
+	'supportedlanguages-noportal' => 'Le administrator del wiki non ha definite NS_PORTAL, dunque iste pagina non functiona.
+In iste pagina apparera un lista de portales linguistic pro tote le portales correspondente con un codice de lingua definite e un subpagina appellate "translators".
+Le subpagina "translators" debe continer le patrono [[:{{ns:template}}:User|User]] que prende un nomine de usator como parametro.',
 	'translate-save' => 'Publicar ($1)',
 	'translate-jssti-add' => 'Adder al lista',
 	'translate-group-desc-mediawikicore' => 'Iste gruppo contine le messages usate in le version alpha actual de MediaWiki ({{CURRENTVERSION}})',
@@ -9969,7 +10000,7 @@ D'Standard-Lëscht vu Sproochen hànkt vun Ärer Sprooch of.",
 	'translationstats' => 'Statistike vun der Iwwersetzung',
 	'translate-stats-edits' => 'Ännerunge pro Dag',
 	'translate-stats-users' => 'Iwwersetzer',
-	'translate-statsf-intro' => 'Dir kënnt einfach Statistike mat dësem Formulaire generéieren. All Werter hunn eng enescht an eng iewescht Limit.',
+	'translate-statsf-intro' => 'Dir kënnt einfach Statistike mat dësem Formulaire generéieren. All Wäerter hunn eng ënnescht an eng iewescht Limit.',
 	'translate-statsf-options' => 'Optioune vum Graphique',
 	'translate-statsf-width' => 'Breet a Pixelen:',
 	'translate-statsf-height' => 'Héicht a Pixelen:',
@@ -10011,6 +10042,19 @@ D'Standard-Lëscht vu Sproochen hànkt vun Ärer Sprooch of.",
 	'translate-nothing-to-do' => "All méiglech Iwwersetzunge sinn anscheinend scho gemaach.
 Dir sidd awer häerzlech Invitéiert fir d'Systemmessagn op [[Special:Translate|{{int:translate}}]] nozekucken.",
 	'supportedlanguages' => 'Ënnerstetzte Sproochen',
+	'supportedlanguages-summary' => "Op dëser Säit steet eng Lëscht vun alle Sproochen déi op {{SITENAME}} ënnerstëtzt ginn, zesumme mam Numm vun den Iwwersetzer déi un däer Sprooch schaffen.
+Wann Dir méi Informatiounen iwwer eng bestëmmte Sprooch wëllt hunn, da kënnt Dir op de Link vum Portal fir déi Sprooch klickt.
+Wann Dir op en Numm vun engem Iwwersetzer klickt da komm Dir op deem senger Benotzersäit eraus.
+
+Wann eng Sprooch net an der Lëscht drasteet da fannt dir Informatioune wéi ee mat enger neier Sprooch ufänkt ënnert [[Translating:Process|Nei Sproochen]]“.
+
+
+Wann den Numm vun engem Iwwersetzer feelt, muss deen op d'Lëscht vun den Iwwersetzer op dem [[:Category:Languages|Portal]] vun däer Sprooch derbäi.
+Kuckt de Menu fir e Link op de Portal fir déi Sprooch déi dir an Äre Preferenzen agestallt hutt.",
+	'supportedlanguages-translators' => '{{PLURAL:$2|Iwwersetzer|Iwwersetzer}}: $1',
+	'supportedlanguages-noportal-title' => 'Kee Portal-Nummraum definéiert',
+	'supportedlanguages-noportal' => 'De Wiki Administrateur huet NS_PORTAL net definéiert, dofir fonctionnéiert dës Säit net.
+Op dëser Säit ass eng Lëscht vu Sproocheportal fir all Portaler déi mat engem bestëmmte Sproochecode an enger Ënnersäit mam Numm "translators" wou d\'Schabloun [[:{{ns:template}}:User|Benotzer]] dran ass an déi de Benotzernumm als Parameter huet.',
 	'translate-save' => 'Späicher ($1)',
 	'translate-jssti-add' => "Op d'Lëscht derbäisetzen",
 	'translate-group-desc-mediawikicore' => "An dëser Grupp mat Message sinn d'Messagen aus der aktueller alpha-Versioun vu MediaWiki ({{CURRENTVERSION}}) dran",
@@ -10533,6 +10577,10 @@ $messages['mk'] = array(
 
 Ако преведувате на некој јазик, но вашето име не е наведено, тогаш додајте се на листата на преведувачи која се наоѓа на [[:Category:Languages|матичниот портал]] за тој јазик.
 Во менито лево ќе најдете врска до матичниот портал на јазикот што го сакате.',
+	'supportedlanguages-translators' => '{{PLURAL:$2|Преведувач|Преведувачи}}: $1',
+	'supportedlanguages-noportal-title' => 'Нема определено именски простор за портал',
+	'supportedlanguages-noportal' => 'Администраторот на викито нема определено NS_PORTAL, па затоа страницата не работи.
+На страницава се јавува список на сите портали што одговараат на определен јазичен код и потстраница наречена „преведувачи“ која го содржи шаблонот [[:{{ns:template}}:User|User]] земајќи корисничко име како параметар.',
 	'translate-save' => 'Зачувај ($1)',
 	'translate-jssti-add' => 'Додај на листата',
 	'translate-group-desc-mediawikicore' => 'Оваа група содржи пораки кои се користат на моменталната алфа верзија на МедијаВики ({{CURRENTVERSION}})',
@@ -11274,7 +11322,8 @@ Klikken op de naam van een brengt u naar de gebruikerspagina van die vertaler.
 Als een taal niet wordt vermeld, kunt u nalezen hoe een nieuwe taal toegevoegd te krijgen op "[[Translating:Process|Nieuwe taal]]".
 
 Als u vertaalt naar een taal en uw naam is niet opgenomen, dan kunt u uw naam toevoegen aan de lijst van vertalers op het [[:Category:Languages|portaal]] voor die taal.
-Zie de menubalk voor een link verwijzing naar het portaal voor de taal van uw voorkeur.',
+Zie de menubalk voor een verwijzing naar het portaal voor uw voorkeurstaal.',
+	'supportedlanguages-translators' => '{{PLURAL:$2|Vertaler|Vertalers}}: $1',
 	'translate-save' => 'Opslaan ($1)',
 	'translate-jssti-add' => 'Aan lijst toevoegen',
 	'translate-group-desc-mediawikicore' => 'Deze berichtengroep bevat de berichten die in de huidige alpha-versie van MediaWiki gebruikt worden - {{CURRENTVERSION}}',
@@ -12820,6 +12869,7 @@ Changes are not saved until you click save button below.',
 /** Portuguese (Português)
  * @author 555
  * @author Crazymadlover
+ * @author Giro720
  * @author Hamilton Abreu
  * @author Lijealso
  * @author Malafaya
@@ -12851,6 +12901,8 @@ $messages['pt'] = array(
 	'translate-page-settings-legend' => 'Configurações',
 	'translate-page-task' => 'Eu desejo',
 	'translate-page-group' => 'Grupo',
+	'translate-page-group-tooltip' => 'O nome de um grupo de mensagens.
+Se o grupo é composto por um subconjunto ou superconjunto de mensagens de outros grupos, o mesmo é exibido a negrito.',
 	'translate-page-language' => 'Língua',
 	'translate-page-limit' => 'Limite',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|mensagem|mensagens}} por página',
@@ -12983,9 +13035,15 @@ Todos os valores têm limites máximos e mínimos.',
 	'translate-suppress-complete' => 'Suprimir grupos de mensagens completamente traduzidos',
 	'translate-language' => 'Língua',
 	'translate-total' => 'Mensagens (total)',
+	'translate-total-tooltip' => 'O número total de mensagens neste grupo de mensagens.',
 	'translate-untranslated' => 'Não traduzidas',
+	'translate-untranslated-tooltip' => 'O número total de mensagens não traduzidas neste grupo de mensagens.
+Isto inclui as mensagens que foram marcadas como desactualizadas.',
 	'translate-percentage-complete' => 'Progresso',
+	'translate-percentage-complete-tooltip' => 'A porcentagem das mensagens no grupo que foram traduzidas e não marcadas como desactualizadas.',
 	'translate-percentage-fuzzy' => 'Obsoletas',
+	'translate-percentage-fuzzy-tooltip' => 'A porcentagem das mensagens do grupo que foram traduzidos e foram marcadas como desactualizadas.
+As mensagens estão marcadas como desactualizadas porque a mensagem original em inglês mudou ou porque um controlo automático da mensagem falhou.',
 	'translate-nothing-to-do' => 'Todas as traduções possíveis parecem já ter sido feitas.
 Encorajamo-lo a rever mensagens através de [[Special:Translate|{{int:translate}}]].',
 	'supportedlanguages' => 'Línguas suportadas',
@@ -12997,6 +13055,10 @@ Se uma língua não aparecer na lista, pode descobrir como iniciar um projecto d
 
 Se faz traduções para uma língua e o seu nome não aparece na lista, adicione-o à lista de tradutores no [[:Category:Languages|portal]] dessa língua, por favor.
 Na barra lateral à esquerda existe um link para o portal da língua da sua preferência.',
+	'supportedlanguages-translators' => '{{PLURAL:$2|Tradutor|Tradutores}}: $1',
+	'supportedlanguages-noportal-title' => 'Não foi definido um espaço nominal para portais',
+	'supportedlanguages-noportal' => 'O administrador da wiki não definiu NS_PORTAL, por isso esta página não funciona.
+Nesta página aparece uma lista de todos os portais de línguas que correspondem a um código de língua existente e uma subpágina chamada "translators". Para cada tradutor, a subpágina deve chamar a predefinição [[:{{ns:template}}:User|User]], passando como parâmetro um nome de utilizador.',
 	'translate-save' => 'Gravar ($1)',
 	'translate-jssti-add' => 'Adicionar à lista',
 	'translate-group-desc-mediawikicore' => 'Este grupo contém as mensagens utilizadas na actual versão alfa do MediaWiki ({{CURRENTVERSION}})',
