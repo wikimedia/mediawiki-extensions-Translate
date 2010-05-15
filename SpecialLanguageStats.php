@@ -26,6 +26,8 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$this->setHeaders();
 		$this->outputHeader();
 
+		$wgOut->addExtensionStyle( TranslateUtils::assetPath( 'Translate.css' ) );
+
 		# no UI when including()
 		if ( !$this->including() ) {
 			$code = $wgRequest->getVal( 'code', $par );
@@ -149,7 +151,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$out .= Xml::openElement(
 			'table',
 			array(
-				'class' => "sortable wikitable"
+				'class' => "sortable wikitable mw-sp-translate-table"
 			)
 		);
 
