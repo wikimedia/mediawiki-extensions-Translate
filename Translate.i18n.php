@@ -230,7 +230,8 @@ See the menu bar for a link to the portal for the language of your preference.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Translator|Translators}}: $1',
 	'supportedlanguages-noportal-title' => 'No portal namespace defined',
 	'supportedlanguages-noportal' => 'The wiki administrator has not defined NS_PORTAL, so this page does not work.
-On this page a list of language portal will appears for all portals corresponding with a defined language code and a subpage called "translators" containing the template [[:{{ns:template}}:User|User]] taking a user name as parameter.',
+On this page a list of language portal will appear for all portals corresponding with a defined language code and a subpage called "translators".
+The subpage "translators" must contain the template [[:{{ns:template}}:User|User]], taking a user name as parameter.',
 
 	'translate-save' => 'Save ($1)',
 
