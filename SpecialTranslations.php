@@ -144,9 +144,8 @@ class SpecialTranslations extends SpecialAllpages {
 		$pageInfo = TranslateUtils::getContents( $titles, $namespace );
 
 		$tableheader = Xml::openElement( 'table', array(
-			'class'   => 'mw-sp-translate-table',
-			'cellspacing' => '0' )
-		);
+			'class'   => 'mw-sp-translate-table'
+		) );
 
 		$tableheader .= Xml::openElement( 'tr' );
 		$tableheader .= Xml::element( 'th', null, wfMsg( 'allmessagesname' ) );

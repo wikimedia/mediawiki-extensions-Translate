@@ -81,9 +81,8 @@ class MessageTable {
 
 	public function header() {
 		$tableheader = Xml::openElement( 'table', array(
-			'class'   => 'mw-sp-translate-table',
-			'cellspacing' => '0' )
-		);
+			'class'   => 'mw-sp-translate-table'
+		) );
 
 		if ( $this->reviewMode ) {
 			$tableheader .= Xml::openElement( 'tr' );
