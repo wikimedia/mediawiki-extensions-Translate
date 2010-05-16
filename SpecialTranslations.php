@@ -145,7 +145,6 @@ class SpecialTranslations extends SpecialAllpages {
 
 		$tableheader = Xml::openElement( 'table', array(
 			'class'   => 'mw-sp-translate-table',
-			'border'  => '1',
 			'cellspacing' => '0' )
 		);
 

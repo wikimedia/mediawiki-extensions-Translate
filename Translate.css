@@ -1,6 +1,7 @@
 /* Special:Translate */
 .mw-sp-translate-table {
 	width: 100%;
+	border: 1;
 }
 
 .mw-sp-translate-table th {
