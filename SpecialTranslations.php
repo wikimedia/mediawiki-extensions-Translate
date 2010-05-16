@@ -66,7 +66,7 @@ class SpecialTranslations extends SpecialAllpages {
 		global $wgContLang, $wgScript, $wgTranslateMessageNamespaces;
 		$t = $this->getTitle();
 
-		$namespaces = new XmlSelect( 'namespace' );
+		$namespaces = new XmlSelect( 'namespace', 'namespace' );
 		$namespaces->setDefault( $title->getNamespace() );
 
 		foreach ( $wgTranslateMessageNamespaces as $ns ) {
