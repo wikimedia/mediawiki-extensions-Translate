@@ -459,6 +459,7 @@ These messages will not be submitted to svn, but will only affect the interface 
 	'translate-percentage-complete' => 'Used in [[Special:LanguageStats]].',
 	'translate-percentage-fuzzy' => 'Used in [[Special:LanguageStats]].',
 	'translate-languagestats-groups' => "You can translate the text, including 'Leave this line exactly as it is'. The lines of this messages have one (1) leading space.",
+	'supportedlanguages-noportal' => '{{doc-important|Do not translate "translators" and "<nowiki>[[:{{ns:template}}:User|User]]</nowiki>"!}}',
 	'translate-save' => '{{Identical|Save}}',
 	'translate-jssti-add' => 'Name of button in [[Special:Preferences]], tab Editing.',
 	'translate-manage-modlang-new' => '{{Identical|New}}
@@ -3539,6 +3540,9 @@ Falls der Name eines Übersetzers fehlt, muss dieser zur Liste der Übersetzer i
 Im Menü befindet sich ein Link zum Portal der eingestellten Sprache.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Übersetzer|Übersetzer}}: $1',
 	'supportedlanguages-noportal-title' => 'Kein Portal-Namensraum definiert',
+	'supportedlanguages-noportal' => 'Der Wiki-Administrator hat die Variable <code>NS_PORTAL</code> nicht definiert, daher funktioniert diese Seite nicht.
+Auf dieser Seite wird eine Liste der Sprachportale erscheinen, die nach einem entsprechenden Sprachcode benannt sind und eine Unterseite mit dem Namen „translators“ haben.
+Die Unterseite „translators“ muss die Vorlage [[:{{ns:template}}:User|User]] beinhalten, mit einem Benutzernamen als Parameter.',
 	'translate-save' => 'Speichern ($1)',
 	'translate-jssti-add' => 'Zur Liste hinzufügen',
 	'translate-group-desc-mediawikicore' => 'Diese Gruppe beinhaltet alle Nachrichten der aktuellen alpha-Version von MediaWiki ({{CURRENTVERSION}})',
@@ -6966,6 +6970,8 @@ $messages['hsb'] = array(
 	'translate-page-settings-legend' => 'Nastajenja',
 	'translate-page-task' => 'Akcija',
 	'translate-page-group' => 'Skupina',
+	'translate-page-group-tooltip' => 'Mjeno powěsćoweje skupiny.
+Jeli skupina zestaja so z podskupiny abo nadskupiny zdźělenkow z druhich skupinow, zwobrazni so jako tučny tekst.',
 	'translate-page-language' => 'Rěč',
 	'translate-page-limit' => 'Ličba zdźělenkow',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|zdźělenka|zdźělence|zdźělenki|zdźělenkow}} na stronu',
@@ -7092,9 +7098,15 @@ Standardna lisćina rěčow wotwisuje wot twojeje rěče.',
 	'translate-suppress-complete' => 'Dospołnje přełožene zdźělenske skupiny potłóčić',
 	'translate-language' => 'Rěč:',
 	'translate-total' => 'Zdźělenki',
+	'translate-total-tooltip' => 'Cyłkowna ličba zdźělenkow w tutej powěsćowej skupinje.',
 	'translate-untranslated' => 'Njepřełoženy',
+	'translate-untranslated-tooltip' => 'Cyłkowna ličba njepřełoženych zdźělenkow w tutej powěsćowej skupinje.
+To zapřijima zdźělenki, kotrež su jako zestarjene woznamjenjene.',
 	'translate-percentage-complete' => 'Dospołny',
+	'translate-percentage-complete-tooltip' => 'Procentualny podźěl zdźělenkow w skupinje, kotryž je přełoženy a njeje jako zestarjeny markěrowany.',
 	'translate-percentage-fuzzy' => 'Zestarjeny',
+	'translate-percentage-fuzzy-tooltip' => 'Procentualny podźěl zdźělenkow w skupinje, kotryž je přełoženy a je jako zestarjeny markěrowany.
+Zdźělenki su jako zestarjene markěrowane, dokelž jendźelska žórłowa zdźělenka je so změniła, dokelž awtomatiska kontrola za zdźělenka je so njeporadźiła abo dokelž něchtó je je jako zestarjene markěrował.',
 	'translate-nothing-to-do' => 'Zda so, zo wšě móžne přełožki su sčinjene.
 Poruča so zdźělenki přez [[Special:Translate|{{int:translate}}]] přepruwować.',
 	'supportedlanguages' => 'Podpěrowane rěče',
@@ -7106,6 +7118,11 @@ Jeli rěč njeje podata, móžeš pod "[[Translating:Process|Nowa rěč]]" zhoni
 
 Jeli přełožuješ do rěče a twoje mjeno njeje podate, přidaj prošu swoje mjeno lisćinje přełožowarjow na [[:Category:Languages|portalu]] teje rěče.
 Hlej menijowu lajstu za wotkaz k portalej swojeje preferowaneje rěče.',
+	'supportedlanguages-translators' => '{{PLURAL:$2|Přełožowar|Přełožowarjej|Přełožowarjo|Přełožowarjow}}: $1',
+	'supportedlanguages-noportal-title' => 'Žadyn mjenowy rum za portal definowany',
+	'supportedlanguages-noportal' => 'Wikiadministrator njeje NS_PORTAL definował, tohodla tuta strona njefunguje.
+Na tutej stronje budźe so lisćina rěčnych portalow jewić, za wšě portale, kotrež definowemu rěčnemu kodej a podstronje z mjenom "translators" wotpowěduja.
+Podstrona "translators" dyrbi předłohu  [[:{{ns:template}}:User|User]] wobsahować a wužiwa wužiwarske mjeno jako parameter.',
 	'translate-save' => 'Składować ($1)',
 	'translate-jssti-add' => 'Lisćinje přidać',
 	'translate-group-desc-mediawikicore' => 'Tuta skupina zdźělenkow wobsahuje zdźělenki, kotrež so w aktualnej alfa-wersiji MediaWiki ({{CURRENTVERSION}}) wužiwaja',
@@ -7442,6 +7459,7 @@ A nyelvek alapértelmezett listája a nyelvedtől függ.',
 	'translate-translations-including-no-param' => 'Adj meg egy érvényes üzenetazonosítót, allapként.',
 	'languagestats' => 'Nyelvi statisztika',
 	'languagestats-summary' => 'Ezen a lapon az egy nyelvhez tartozó összes üzenetcsoport fordítási statisztikái láthatóak.',
+	'languagestats-recenttranslations' => 'friss fordítások',
 	'translate-language-code' => 'Nyelvkód',
 	'translate-language-code-field-name' => 'Nyelvkód:',
 	'translate-suppress-complete' => 'Teljesen lefordított üzenetcsoportok elrejtése',
@@ -7452,6 +7470,8 @@ A nyelvek alapértelmezett listája a nyelvedtől függ.',
 	'translate-percentage-fuzzy' => 'Elavult',
 	'translate-nothing-to-do' => 'Úgy tűnik, hogy az összes fordítás elkészült.
 A  [[Special:Translate|{{int:translate}}]] lapon átnézheted az elkészített fordításokat.',
+	'supportedlanguages' => 'Támogatott nyelvek',
+	'supportedlanguages-noportal-title' => 'Nincs portál-névtér meghatározva',
 	'translate-save' => 'Mentés ($1)',
 	'translate-jssti-add' => 'Hozzáadás a listához',
 	'translate-group-desc-mediawikicore' => 'Ez a csoport a MediaWiki jelenlegi alfaverziójának ({{CURRENTVERSION}}) üzeneteit tartalmazza',
@@ -10427,6 +10447,8 @@ $messages['mk'] = array(
 	'translate-page-settings-legend' => 'Нагодувања',
 	'translate-page-task' => 'Сакам',
 	'translate-page-group' => 'Група',
+	'translate-page-group-tooltip' => 'Називот на групата пораки.
+Ако групата се состои од подмножество или надмножество пораки од други групи, тогаш е прикажана со задебелени букви.',
 	'translate-page-language' => 'Јазик',
 	'translate-page-limit' => 'Ограничување',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|порака|пораки}} по страница',
@@ -10458,7 +10480,7 @@ $messages['mk'] = array(
 	'translate-edit-goto-prev' => 'Уреди претходна порака',
 	'translate-edit-goto-next' => 'Уреди следна порака',
 	'translate-edit-goto-list' => 'Прикажи листа на пораки',
-	'translate-magic-pagename' => 'Превод на MediaWiki проширувања',
+	'translate-magic-pagename' => 'Превод на MediaWiki додатоци',
 	'translate-magic-help' => "Можете да ги преведете алијасите на специјалните страници, магичните зборови и називите на именските простори.
 
 Алијасите на специјалните страници и волшебните зборови може да имаат повеќе преводи.
@@ -10563,9 +10585,15 @@ $messages['mk'] = array(
 	'translate-suppress-complete' => 'Сокриј потполно преведени групи на пораки',
 	'translate-language' => 'Јазик',
 	'translate-total' => 'Пораки',
+	'translate-total-tooltip' => 'Вкупниот број на пораки во оваа група.',
 	'translate-untranslated' => 'Непреведени',
+	'translate-untranslated-tooltip' => 'Вкупниот број на непреведени пораки во оваа група.
+Тука спаѓаат пораките означени како застарени.',
 	'translate-percentage-complete' => 'Потполност',
+	'translate-percentage-complete-tooltip' => 'Постоток на пораки во групата што се преведени и не се означени како застарени.',
 	'translate-percentage-fuzzy' => 'Застарени',
+	'translate-percentage-fuzzy-tooltip' => 'Постоток на пораки во групата што биле преведени, но означени како зазстарени.
+Пораките се означуваат како застарени кога ќе се измени изворната порака на англиски, или кога нема да успее автоматската проверка на пораката.',
 	'translate-nothing-to-do' => 'Извршени се сите можни преводи.
 Ви препорачуваме да ги прегледате пораките преку [[Special:Translate|{{int:translate}}]].',
 	'supportedlanguages' => 'Поддржани јазици',
@@ -10585,18 +10613,18 @@ $messages['mk'] = array(
 	'translate-jssti-add' => 'Додај на листата',
 	'translate-group-desc-mediawikicore' => 'Оваа група содржи пораки кои се користат на моменталната алфа верзија на МедијаВики ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'Во оваа група пораки се наведени [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 најчесто користени пораки] на МедијаВики',
-	'translate-group-desc-mediawikiextensions' => 'Мета-група која ги содржи сите пораки за поддржаните проширувања за МедијаВики',
+	'translate-group-desc-mediawikiextensions' => 'Мета-група која ги содржи сите пораки за поддржаните додатоци за МедијаВики',
 	'translate-group-desc-collection' => 'Мета-група која ги содржи сите пораки за МедијаВики проширувањето [http://www.mediawiki.org/wiki/Extension:Collection Збирка (Collection)]',
 	'translate-group-desc-flaggedrevs' => 'Мета-група која ги содржи сите пораки за МедијаВики проширувањето [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Мета-група која ги содржи сите пораки за МедијаВики проширувањето [http://www.mediawiki.org/wiki/Extension:ReaderFeedback Мислења на читателите (ReaderFeedback)]',
-	'translate-group-desc-socialprofile' => 'Мета-група која ги содржи сите пораки за проширувањата поврзани со МедијаВики проширувањето [http://www.mediawiki.org/wiki/Extension:SocialProfile Друштвен профил (Social Profile)]',
+	'translate-group-desc-socialprofile' => 'Мета-група која ги содржи сите пораки за додатоците поврзани со МедијаВики проширувањето [http://www.mediawiki.org/wiki/Extension:SocialProfile Друштвен профил (Social Profile)]',
 	'translate-group-desc-translate' => 'Мета-група која ги содржи сите пораки за МедијаВики проширувањето [http://www.mediawiki.org/wiki/Extension:Translate Преведување (Translate)]',
-	'translate-group-desc-wikiaextensions' => 'Мета-група која ги содржи сите пораки за поддржаните МедијаВики проширувања кои се користат на [http://www.wikia.com Викија]',
-	'translate-group-desc-wikihowextensions' => 'Мета-група која ги содржи сите пораки за поддржаните МедијаВики проширувања кои се користат на [http://www.wikihow.com wikiHow]',
-	'translate-group-desc-wikimediaextensions' => 'Мета-група која ги содржи сите пораки за поддржаните МедијаВики проширувања кои ги користи [http://wikimedia.org/ Фондацијата Викимедија]',
-	'translate-group-desc-wikitravelextensions' => 'Мета-група која ги содржи сите пораки за поддржаните МедијаВики проширувања кои се користат на [http://wikitravel.org Wikitravel]',
-	'translate-group-desc-uniwiki' => 'Мета-група која ги содржи сите пораки за проширувањата поврзани со [http://unicefinnovation.org/wiki.php Uniwiki]',
-	'translate-group-desc-ui' => 'Мета-група која ги содржи сите пораки за проширувањата поврзани со [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Иницијативата за употребливост на Википедија]',
+	'translate-group-desc-wikiaextensions' => 'Мета-група која ги содржи сите пораки за поддржаните МедијаВики додатоци кои се користат на [http://www.wikia.com Викија]',
+	'translate-group-desc-wikihowextensions' => 'Мета-група која ги содржи сите пораки за поддржаните МедијаВики додатоци кои се користат на [http://www.wikihow.com wikiHow]',
+	'translate-group-desc-wikimediaextensions' => 'Мета-група која ги содржи сите пораки за поддржаните МедијаВики додатоци кои ги користи [http://wikimedia.org/ Фондацијата Викимедија]',
+	'translate-group-desc-wikitravelextensions' => 'Мета-група која ги содржи сите пораки за поддржаните МедијаВики додатоци кои се користат на [http://wikitravel.org Wikitravel]',
+	'translate-group-desc-uniwiki' => 'Мета-група која ги содржи сите пораки за додатоците поврзани со [http://unicefinnovation.org/wiki.php Унивики]',
+	'translate-group-desc-ui' => 'Мета-група која ги содржи сите пораки за додатоците поврзани со [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Иницијативата за употребливост на Википедија]',
 	'translate-group-desc-nodesc' => 'Нема опис за оваа група пораки',
 	'translate-manage-groups' => 'Раководење со групи',
 	'translate-manage-listgroups' => 'Конфигурирани групи',
@@ -10654,7 +10682,7 @@ $1',
 	'translate-import-err-ul-failed' => 'Подигнувањето на податотеката е неуспешно',
 	'translate-import-err-invalid-title' => 'Наведеното име на податотеката <nowiki>$1</nowiki> е погрешно.',
 	'translate-import-err-no-such-file' => 'Податотеката <nowiki>$1</nowiki> не постои или не е подигната локално.',
-	'translate-import-err-no-headers' => 'Податотеката не е добро обликувана Gettext податотека во форматот за преведување на проширувања:
+	'translate-import-err-no-headers' => 'Податотеката не е добро обликувана Gettext податотека во форматот за преведување на додатоци:
 Не можам да одредам група и јазик од насловите на податотеката.',
 	'translate-import-err-warnings' => 'Податотеката не е добро формулирана.
 Осигурајте се дека вашиот обработувач не ги отстранува msgctxt полињата.
@@ -11173,6 +11201,8 @@ $messages['nl'] = array(
 	'translate-page-settings-legend' => 'Instellingen',
 	'translate-page-task' => 'Ik wil',
 	'translate-page-group' => 'Groep',
+	'translate-page-group-tooltip' => 'De naam van een groep berichten.
+Als de groep bestaat uit een subset of superset van berichten van andere groepen, dan wordt deze vet weergegeven.',
 	'translate-page-language' => 'Taal',
 	'translate-page-limit' => 'Maximaal',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|bericht|berichten}} per pagina',
@@ -11309,9 +11339,15 @@ Alle waarden hebben een limiet aan de boven- en onderzijde.',
 	'translate-suppress-complete' => 'Volledig vertaalde berichtengroepen verbergen',
 	'translate-language' => 'Taal:',
 	'translate-total' => 'Berichten',
+	'translate-total-tooltip' => 'Het totaal aantal berichten in deze berichtengroep.',
 	'translate-untranslated' => 'Te vertalen',
+	'translate-untranslated-tooltip' => 'Het totale aantal onvertaalde berichten in deze berichtengroep.
+Dit aantal bevat ook berichten die als verouderd zijn gemarkeerd.',
 	'translate-percentage-complete' => 'Vertaald',
+	'translate-percentage-complete-tooltip' => 'Het percentage van de berichten in de groep die zijn vertaald en niet zijn gemarkeerd als verouderd.',
 	'translate-percentage-fuzzy' => 'Verouderd',
+	'translate-percentage-fuzzy-tooltip' => 'Het percentage van de berichten in de groep die zijn vertaald en zijn gemarkeerd als verouderd.
+Berichten zijn gemarkeerd als verouderd omdat het Engelstalige bronbericht is gewijzigd, omdat een automatische controle op het bericht is mislukt, of omdat iemand het bericht heeft aangemerkt als verouderd.',
 	'translate-nothing-to-do' => 'Alle mogelijke vertalingen lijken te zijn gemaakt.
 U wordt aangemoedigd om via [[Special:Translate|{{int:translate}}]] vertalingen te controleren.',
 	'supportedlanguages' => 'Ondersteunde talen',
@@ -11324,6 +11360,10 @@ Als een taal niet wordt vermeld, kunt u nalezen hoe een nieuwe taal toegevoegd t
 Als u vertaalt naar een taal en uw naam is niet opgenomen, dan kunt u uw naam toevoegen aan de lijst van vertalers op het [[:Category:Languages|portaal]] voor die taal.
 Zie de menubalk voor een verwijzing naar het portaal voor uw voorkeurstaal.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Vertaler|Vertalers}}: $1',
+	'supportedlanguages-noportal-title' => 'De portaalnaamruimte is niet ingesteld',
+	'supportedlanguages-noportal' => 'De wikibeheerder heeft NS_PORTAL niet ingesteld, zodat deze pagina niet werkt.
+Op deze pagina wordt een lijst van taalportalen weergegevens voor alle portalen die overeenkomen met een ingestelde taalcode en een subpagina "translators".
+De subpagina "translators" moet het sjabloon [[:{{ns:template}}:User|User]] bevatten, waarbij een gebruikersnaam als parameter wordt geaccepteerd.',
 	'translate-save' => 'Opslaan ($1)',
 	'translate-jssti-add' => 'Aan lijst toevoegen',
 	'translate-group-desc-mediawikicore' => 'Deze berichtengroep bevat de berichten die in de huidige alpha-versie van MediaWiki gebruikt worden - {{CURRENTVERSION}}',
@@ -12877,7 +12917,7 @@ Changes are not saved until you click save button below.',
  */
 $messages['pt'] = array(
 	'translate' => 'Traduzir',
-	'translate-desc' => '[[Special:Translate|Página especial]] para traduzir o MediaWiki e mais',
+	'translate-desc' => '[[Special:Translate|Página especial]] para traduzir o MediaWiki e outras aplicações',
 	'translate-edit' => 'editar',
 	'translate-talk' => 'discussão',
 	'translate-history' => 'histórico',
@@ -12886,7 +12926,7 @@ $messages['pt'] = array(
 	'translate-task-optional' => 'Ver mensagens opcionais de',
 	'translate-task-untranslatedoptional' => 'Ver mensagens opcionais não traduzidas de',
 	'translate-task-problematic' => 'Ver mensagens com problemas',
-	'translate-task-review' => 'Rever alterações a',
+	'translate-task-review' => 'Rever alterações de',
 	'translate-task-reviewall' => 'Rever todas as traduções de',
 	'translate-task-export' => 'Exportar traduções de',
 	'translate-task-export-to-file' => 'Exportar para ficheiro as traduções de',
@@ -12902,14 +12942,14 @@ $messages['pt'] = array(
 	'translate-page-task' => 'Eu desejo',
 	'translate-page-group' => 'Grupo',
 	'translate-page-group-tooltip' => 'O nome de um grupo de mensagens.
-Se o grupo é composto por um subconjunto ou superconjunto de mensagens de outros grupos, o mesmo é exibido a negrito.',
+Se o grupo é composto por um subconjunto ou superconjunto de mensagens de outros grupos, o mesmo é apresentado a negrito.',
 	'translate-page-language' => 'Língua',
 	'translate-page-limit' => 'Limite',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|mensagem|mensagens}} por página',
 	'translate-submit' => 'Procurar',
 	'translate-page-navigation-legend' => 'Navegação',
-	'translate-page-showing' => 'Apresentando as mensagens $1 a $2 de $3.',
-	'translate-page-showing-all' => 'Apresentando $1 {{PLURAL:$1|mensagem|mensagens}}.',
+	'translate-page-showing' => 'A apresentar as mensagens $1 a $2 de $3.',
+	'translate-page-showing-all' => 'A apresentar $1 {{PLURAL:$1|mensagem|mensagens}}.',
 	'translate-page-showing-none' => 'Não há mensagens a apresentar.',
 	'translate-next' => 'Página seguinte',
 	'translate-prev' => 'Página anterior',
@@ -13040,12 +13080,12 @@ Todos os valores têm limites máximos e mínimos.',
 	'translate-untranslated-tooltip' => 'O número total de mensagens não traduzidas neste grupo de mensagens.
 Isto inclui as mensagens que foram marcadas como desactualizadas.',
 	'translate-percentage-complete' => 'Progresso',
-	'translate-percentage-complete-tooltip' => 'A porcentagem das mensagens no grupo que foram traduzidas e não marcadas como desactualizadas.',
-	'translate-percentage-fuzzy' => 'Obsoletas',
-	'translate-percentage-fuzzy-tooltip' => 'A porcentagem das mensagens do grupo que foram traduzidos e foram marcadas como desactualizadas.
-As mensagens estão marcadas como desactualizadas porque a mensagem original em inglês mudou ou porque um controlo automático da mensagem falhou.',
+	'translate-percentage-complete-tooltip' => 'A percentagem de mensagens no grupo que foram traduzidas e não estão marcadas como desactualizadas.',
+	'translate-percentage-fuzzy' => 'Desactualizadas',
+	'translate-percentage-fuzzy-tooltip' => 'A percentagem de mensagens do grupo que foram traduzidas e estão marcadas como desactualizadas.
+As mensagens estão marcadas como desactualizadas porque a mensagem original em inglês mudou ou porque uma verificação automática da mensagem detectou um problema.',
 	'translate-nothing-to-do' => 'Todas as traduções possíveis parecem já ter sido feitas.
-Encorajamo-lo a rever mensagens através de [[Special:Translate|{{int:translate}}]].',
+Encorajamo-lo a rever as mensagens usando [[Special:Translate|{{int:translate}}]].',
 	'supportedlanguages' => 'Línguas suportadas',
 	'supportedlanguages-summary' => 'Esta página apresenta uma lista de todas as línguas suportadas pela {{SITENAME}}, com os nomes dos tradutores de cada língua.
 Para obter mais informação sobre uma língua em particular, pode clicar o link para o portal dessa língua.
@@ -13096,7 +13136,7 @@ Nesta página aparece uma lista de todos os portais de línguas que correspondem
 	'translate-manage-nochanges' => 'Não há alterações nas definições das mensagens deste grupo.',
 	'translate-manage-nochanges-other' => 'Não houve alterações para esta língua.
 Use o link abaixo para voltar aos detalhes do grupo.',
-	'translate-manage-inconsistent' => 'Detectada inconsistência no pedido.
+	'translate-manage-inconsistent' => 'Foi detectada uma inconsistência no pedido.
 Por favor, verifique se houve alterações e tente novamente.
 Detalhes: $1.',
 	'translate-manage-toolong' => 'O tempo máximo de $1 {{PLURAL:$1|segundo|segundos}} de processamento foi excedido.
@@ -13106,7 +13146,7 @@ Por favor, reenvie o formulário para continuar o processamento.',
 	'translate-manage-import-ignore' => 'Não processando a mensagem $1.',
 	'translate-manage-import-summary' => 'Importando uma nova versão de fonte externa',
 	'translate-manage-conflict-summary' => 'Importando uma nova versão de fonte externa.
-Por favor, verifique.',
+Verifique-a, por favor.',
 	'translate-manage-fuzzy-summary' => 'A definição sofreu alterações',
 	'translate-manage-import-fuzzy' => 'A importar e marcar para revisão: $1',
 	'translate-manage-import-done' => 'Tudo terminado!',
@@ -13679,6 +13719,8 @@ $messages['ru'] = array(
 	'translate-page-settings-legend' => 'Параметры',
 	'translate-page-task' => 'Я хочу',
 	'translate-page-group' => 'Группа',
+	'translate-page-group-tooltip' => 'Название группы сообщений.
+Если группа состоит из подмножества или супермножества сообщений других групп, оно будет выделено жирным шрифтом.',
 	'translate-page-language' => 'Язык',
 	'translate-page-limit' => 'Ограничение',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|сообщение|сообщения|сообщений}} на страницу',
@@ -13813,9 +13855,15 @@ $messages['ru'] = array(
 	'translate-suppress-complete' => 'Не показывать полностью переведённые группы сообщений',
 	'translate-language' => 'Язык',
 	'translate-total' => 'Сообщения',
+	'translate-total-tooltip' => 'Общее число сообщений в этой группе сообщений.',
 	'translate-untranslated' => 'Непереведённые',
+	'translate-untranslated-tooltip' => 'Общее число непереведённых сообщений в этой группе сообщений.
+Включая сообщения, отмеченные как устаревшие.',
 	'translate-percentage-complete' => 'Выполнено',
+	'translate-percentage-complete-tooltip' => 'Доля сообщений группы, которые были переведены и не помечены как устаревшие.',
 	'translate-percentage-fuzzy' => 'Устарело',
+	'translate-percentage-fuzzy-tooltip' => 'Доля сообщений группы, которые были переведены и были отмечены как устаревшие.
+Сообщения отмечаются устаревшим, если изменилось исходное английское сообщение, если сообщение не прошло автоматическую проверку, или если кто-то отметил его как устаревшее.',
 	'translate-nothing-to-do' => 'По всей видимости, все возможные переводы уже сделаны.
 Вы можете проверить сообщения с помощью [[Special:Translate|{{int:translate}}]].',
 	'supportedlanguages' => 'Поддерживаемые языки',
@@ -13827,6 +13875,11 @@ $messages['ru'] = array(
 
 Если вы переводите на некоторый язык, но ваше имя не включено в список, пожалуйста, добавить своё имя в список переводчиков на [[:Category:Languages|портале]] данного языка.
 Ссылку на языковой портал языка из ваших настроек можно найти в меню.',
+	'supportedlanguages-translators' => '{{PLURAL:$2|Переводчик|Переводчики}}: $1',
+	'supportedlanguages-noportal-title' => 'Не определено пространство имён портала',
+	'supportedlanguages-noportal' => 'Администратор вики не определил NS_PORTAL, поэтому данная страница не работает.
+На этой странице появится список языковых порталов, соответствующих определённым кодам языков, и подстраница «Переводчики».
+Подстраница «Переводчики» должна содержать шаблон [[:{{ns:template}}:User|User]], с именем участника в качестве параметра.',
 	'translate-save' => 'Сохранить ($1)',
 	'translate-jssti-add' => 'Добавить в список',
 	'translate-group-desc-mediawikicore' => 'Эта группа сообщений содержит сообщения, используемые в текущей альфа-версии MediaWiki ({{CURRENTVERSION}})',
