@@ -185,7 +185,7 @@ class SpecialTranslations extends SpecialAllpages {
 			);
 
 			$anchor = 'msg_' . $key;
-			$anchor = Xml::element( 'a', array( 'name' => $anchor, 'href' => "#$anchor" ), "↓" );
+			$anchor = Xml::element( 'a', array( 'id' => $anchor, 'href' => "#$anchor" ), "↓" );
 
 			$extra = '';
 
