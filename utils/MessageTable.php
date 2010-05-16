@@ -147,7 +147,7 @@ class MessageTable {
 			);
 
 			$anchor = 'msg_' . $key;
-			$anchor = Xml::element( 'a', array( 'name' => $anchor, 'href' => "#$anchor" ), "↓" );
+			$anchor = Xml::element( 'a', array( 'id' => $anchor, 'href' => "#$anchor" ), "↓" );
 
 			$extra = '';
 			if ( $m->hasTag( 'optional' ) ) $extra = '<br />' . $optional;
