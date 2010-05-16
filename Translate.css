@@ -1,11 +1,13 @@
 /* Special:Translate */
 .mw-sp-translate-table {
 	width: 100%;
-	border: 1;
+	border-style: solid none none solid;
+	border-width: 1px;
 }
 
 .mw-sp-translate-table th {
 	background-color: #b2b2ff;
+	border-style: none solid solid none;
 }
 
 .mw-sp-translate-table tr.orig {
@@ -35,6 +37,7 @@
 
 .mw-sp-translate-table td {
 	vertical-align: top;
+	border-style: none solid solid none;
 }
 
 .mw-sp-translate-error {
