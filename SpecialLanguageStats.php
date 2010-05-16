@@ -99,7 +99,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	# Statistics table element (heading or regular cell)
 	function element( $in, $bgcolor = '' ) {
 		if ( $bgcolor ) {
-			$element = Xml::element( 'td', array( 'bgcolor' => "#" . $bgcolor ), $in );
+			$element = Xml::element( 'td', array( 'style' => "background-color: #" . $bgcolor ), $in );
 		} else {
 			$element = Xml::element( 'td', null, $in );
 		}
