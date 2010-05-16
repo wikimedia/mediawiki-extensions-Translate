@@ -82,7 +82,6 @@ class MessageTable {
 	public function header() {
 		$tableheader = Xml::openElement( 'table', array(
 			'class'   => 'mw-sp-translate-table',
-			'border'  => '1',
 			'cellspacing' => '0' )
 		);
 
