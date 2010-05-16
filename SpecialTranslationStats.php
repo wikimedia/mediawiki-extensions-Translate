@@ -145,13 +145,16 @@ class SpecialTranslationStats extends SpecialPage {
 	protected function eRadio( $name, FormOptions $opts, array $alts ) {
 		$value = $opts[$name];
 
-		$s = '<tr><td>' . $this->eLabel( $name ) . '</td><td>';
+		$label = 'translate-statsf-' . $name;
+		$label = wfMsgExt( $label, array( 'parsemag', 'escapenoentities' ) );
+		$s = '<tr><td>' . $label . '</td><td>';
 
 		$options = array();
 		foreach ( $alts as $alt ) {
-			$radio = Xml::radio( $name, $alt, $alt === $opts[$name] ) . ' ';
-			$label = wfMsgExt( "translate-statsf-$name-$alt", array( 'parsemag', 'escapenoentities' ) );
-			$options[] = Xml::tags( 'label', null, "$radio $label" );
+			$id = "$name-$alt";
+			$radio = Xml::radio( $name, $alt, $alt === $opts[$name],
+				array( 'id' => $id ) ) . ' ';
+			$options[] = $radio . ' ' . $this->eLabel( $id );
 		}
 
 		$s .= Xml::tags( 'span', array( 'id' => $name ), implode( ' ', $options ) );
