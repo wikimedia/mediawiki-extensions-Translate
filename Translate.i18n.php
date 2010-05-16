@@ -216,7 +216,7 @@ This includes the messages that have been tagged as outdated.',
 	'translate-percentage-complete-tooltip' => 'The percentage of messages in the group that have been translated and not marked as outdated.',
 	'translate-percentage-fuzzy' => 'Outdated',
 	'translate-percentage-fuzzy-tooltip' => 'The percentage of messages in the group that have been translated and have been marked as outdated.
-Messages are marked outdated because the English language source message has changed, or because an automated check for the message failed.',
+Messages are marked outdated because the English language source message has changed, because an automated check for the message failed, or because someone marked it as outdated.',
 	'translate-nothing-to-do' => 'All possible translations appear to have been made.
 You are encouraged to review messages through [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-groups' => ' # Add message group IDs, one per line to restrict the message groups that
