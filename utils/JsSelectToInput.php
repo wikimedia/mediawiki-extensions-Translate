@@ -67,8 +67,8 @@ class JsSelectToInput {
 		static $done = false;
 		if ( $done ) return;
 
-		global $wgOut, $wgScriptPath;
-		$wgOut->addScriptFile( "$wgScriptPath/extensions/Translate/utils/JsSelectToInput.js" );
+		global $wgOut;
+		$wgOut->addScriptFile( TranslateUtils::assetPath( 'utils/JsSelectToInput.js' ) );
 	}
 
 }
