@@ -30,7 +30,7 @@ class TranslationMemoryUpdater {
 		$ns_text = $wgContLang->getNsText( $group->getNamespace() );
 		$definition = $group->getMessage( $key, 'en' );
 		if ( !is_string( $definition ) || !strlen( $definition ) ) {
-			wfDebugLog( 'tmserver', "Unable to get definition for $ns_text:$key" );
+			wfDebugLog( 'tmserver', "Unable to get definition for $ns_text:$key/$code" );
 			return true;
 		}
 		
@@ -63,7 +63,7 @@ class TranslationMemoryUpdater {
 		$dbw->delete( '`targets`', $delete, __METHOD__ );
 		// We only do SQlite which doesn't need to know unique indexes
 		$dbw->replace( '`targets`', null, $insert, __METHOD__ );
-		wfDebugLog( 'tmserver', "Inserted new tm-translation for $ns_text:$key" );
+		wfDebugLog( 'tmserver', "Inserted new tm-translation for $ns_text:$key/$code" );
 
 		return true;
 	}
