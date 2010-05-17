@@ -87,6 +87,8 @@ $wgAutoloadClasses['TranslationEditPage'] = $dir . 'utils/TranslationEditPage.ph
 $wgAutoloadClasses['TranslationHelpers'] = $dir . 'utils/TranslationHelpers.php';
 $wgAutoloadClasses['TranslationStats'] = $dir . 'utils/TranslationStats.php';
 
+$wgAutoloadClasses['TranslationMemoryUpdater'] = $dir . 'utils/TranslationMemoryUpdater.php';
+
 # predefined groups
 $wgAutoloadClasses['AllMediawikiExtensionsGroup'] = $dir . 'groups/MediaWikiExtensions.php';
 $wgAutoloadClasses['PremadeMediawikiExtensionGroups'] = $dir . 'groups/MediaWikiExtensions.php';

@@ -21,20 +21,16 @@ class TMExport extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 		$this->mDescription = 'Script to export messages for translatetoolkit translation memory';
-		$this->addArg( 'target', 'preinitialised sqlite db', 'required' );
 	}
 
 	public function execute() {
 		global $wgContLang;
 
-		global $wgSQLiteDataDir;
-		$target = $this->getArg( 0 );
-		$target_dirname = dirname( $target );
-		$target_basename = basename( $target );
-		swap( $wgSQLiteDataDir, $target_dirname );
-		$dbw = new DatabaseSqlite( 'server', 'user', 'password', $target_basename );
-		swap( $wgSQLiteDataDir, $target_dirname );
-
+		$dbw = TranslationMemoryUpdater::getDatabaseHandle();
+		if ( $dbw === null ) {
+			$this->error( "Database file not configured" );
+			$this->exit();
+		}
 		$dbw->setFlag( DBO_TRX ); // HUGE speed improvement
 
 		$groups = MessageGroups::singleton()->getGroups();

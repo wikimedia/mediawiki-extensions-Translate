@@ -633,12 +633,10 @@ class WikiMessageGroup extends MessageGroupOld {
 		global $wgContLang;
 		$params = array();
 		if ( $code && $wgContLang->getCode() !== $code ) {
-			$key = "$key/$code";
+			return TranslateUtils::getMessageContent( $key, $code );
 		} else {
-			$params[] = 'content';
+			return TranslateUtils::getMessageContent( $key, false );
 		}
-		$message = wfMsgExt( $key, $params );
-		return wfEmptyMsg( $key, $message ) ? null : $message;
 	}
 }
 

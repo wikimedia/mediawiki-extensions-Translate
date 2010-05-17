@@ -71,6 +71,8 @@ $wgHooks['SpecialRecentChangesQuery'][] = 'TranslateRcFilter::translationFilter'
 $wgHooks['SpecialRecentChangesPanel'][] = 'TranslateRcFilter::translationFilterForm';
 $wgHooks['SkinTemplateToolboxEnd'][] = 'TranslateToolbox::toolboxAllTranslations';
 
+# Translation memory updates
+$wgHooks['ArticleSaveComplete'][] = 'TranslationMemoryUpdater::update';
 
 
 $wgEnablePageTranslation = false;
@@ -346,6 +348,16 @@ if ( !defined( 'TRANSLATE_CLI' ) ) {
 	function STDERR() { }
 }
 
+/**
+ * Enable tmserver translation memory from translatetoolkit.
+ * Example configuration: 
+ * $wgTranslateTM = array(
+ *   'server' => 'http://127.0.0.1',
+ *   'port' => 54321,
+ *   'timeout' => 4,
+ *   'database' => '/path/to/database.sqlite',
+ * );
+ */
 $wgTranslateTM = false;
 
 /**
