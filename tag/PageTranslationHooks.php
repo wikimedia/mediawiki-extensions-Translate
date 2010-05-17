@@ -295,6 +295,7 @@ FOO;
 			if ( $page->getMarkedTag() ) {
 				list( , $code ) = TranslateUtils::figureMessage( $title->getText() );
 				wfLoadExtensionMessages( 'PageTranslation' );
+				// FIXME: Core chokes on this, passing an array as first parameter to wfMsgNoTrans
 				$result = array(
 					'tpt-target-page',
 					$page->getTitle()->getPrefixedText(),
