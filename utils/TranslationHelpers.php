@@ -139,9 +139,13 @@ class TranslationHelpers {
 	 */
 	protected function getTmBox() {
 		global $wgTranslateTM;
+
 		if ( $wgTranslateTM === false ) return null;
 		if ( !$this->targetLanguage ) return null;
 		if ( strval( $this->getDefinition() ) === '' ) return null;
+
+		$serviceName = 'tmserver';
+		if ( self::checkTranslationServiceFailure( $serviceName ) ) return null;
 
 		// Needed data
 		$code = $this->targetLanguage;
@@ -191,6 +195,9 @@ class TranslationHelpers {
 				$legend = implode( ' | ', $legend );
 				$boxes[] = Html::rawElement( 'div', $params, self::legend( $legend ) . $text . self::clear() ) . "\n";
 			}
+		} else {
+			// Assume timeout
+			self::reportTranslationSerficeFailure( $serviceName );
 		}
 
 		// Limit to three max
@@ -216,6 +223,9 @@ class TranslationHelpers {
 
 	protected function getGoogleSuggestion() {
 		global $wgProxyKey, $wgGoogleApiKey, $wgMemc;
+
+		$serviceName = 'Google';
+		if ( self::checkTranslationServiceFailure( $serviceName ) ) return null;
 
 		$code = $this->targetLanguage;
 		$definition = trim( strval( $this->getDefinition() ) ) ;
@@ -246,6 +256,8 @@ class TranslationHelpers {
 
 		if ( $google_json === false ) {
 				wfWarn(  __METHOD__ . ': Http::get failed' );
+				// Most likely a timeout or other general error
+				self::reportTranslationSerficeFailure( $serviceName );
 				return null;
 		} elseif ( !is_object( $response ) ) {
 				wfWarn(  __METHOD__ . ': Unable to parse reply: ' . strval( $google_json ) );
@@ -259,6 +271,8 @@ class TranslationHelpers {
 			$unsupported[$code] = true;
 			$wgMemc->set( $memckey, $unsupported, 60 * 60 * 8 );
 		} else {
+			// Unknown error, assume the worst
+			self::reportTranslationSerficeFailure( $serviceName );
 			wfWarn(  __METHOD__ . ': ' . $response->responseDetails );
 			error_log( __METHOD__ . ': ' . $response->responseDetails );
 			return null;
@@ -269,6 +283,8 @@ class TranslationHelpers {
 		global $wgTranslateApertium, $wgMemc;
 
 		if ( !$wgTranslateApertium ) return null;
+		$serviceName = 'Apertium';
+		if ( self::checkTranslationServiceFailure( $serviceName ) ) return null;
 
 		$page = $this->page;
 		$code = $this->targetLanguage;
@@ -323,6 +339,7 @@ class TranslationHelpers {
 
 			$response = Http::get( "$wgTranslateApertium?" . wfArrayToCgi( $query ), 3 );
 			if ( $response === false ) {
+					self::reportTranslationSerficeFailure( $serviceName );
 					break; // Too slow, back off
 			} else {
 				$response = $this->suggestionField( Sanitizer::decodeCharReferences( $response ) );
@@ -624,5 +641,43 @@ class TranslationHelpers {
 		$jsEdit = TranslationEditPage::jsEdit( $target, $group );
 
 		return $wgUser->getSkin()->link( $target, $text, $jsEdit, $params );
+	}
+
+	/**
+	 * How many failures during failure period need to happen to consider
+	 * the service being temporarily off-line. */
+	protected static $serviceFailureCount = 5;
+	/**
+	 * How long after the last detected failure we clear the status and
+	 * try again.
+	 */
+	protected static $serviceFailurePeriod = 300;
+
+	/**
+	 * Checks whether the given service has exceeded failure count */
+	public static function checkTranslationServiceFailure( $service ) {
+		global $wgMemc;
+		$key = wfMemckey( "translate-service-$service" );
+		// Both false and null are converted to zero, which is desirable
+		return intval( $wgMemc->get( $key ) ) >= self::$serviceFailureCount;
+	}
+
+	/**
+	 * Increases the failure count for a given service */
+	public static function reportTranslationSerficeFailure( $service ) {
+		global $wgMemc;
+		$key = wfMemckey( "translate-service-$service" );
+		// Both false and null are converted to zero, which is desirable.
+		/* FIXME: not atomic, but the default incr() implemention seems to
+		 * ignore expiry time */
+		$count = intval( $wgMemc->get( $key ) );
+		$wgMemc->set( $key, $count + 1, self::$serviceFailurePeriod );
+		/* By using >= we expose if something is still increasing failure
+		 * count if we are over the limit */
+		if ( $count + 1 >= self::$serviceFailureCount ) {
+			$language = Language::factory( 'en' );
+			$period = $language->formatTimePeriod( self::$serviceFailurePeriod );
+			error_log( "Translation service $service suspended for $period" );
+		}
 	}
 }
