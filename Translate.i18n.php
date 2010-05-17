@@ -1758,6 +1758,8 @@ $messages['be-tarask'] = array(
 	'translate-page-settings-legend' => 'Парамэтры',
 	'translate-page-task' => 'Я хачу',
 	'translate-page-group' => 'Група',
+	'translate-page-group-tooltip' => 'Назва групы паведамленьняў.
+Калі група ўтрымлівае падмноствы ці супэрмноствы паведамленьняў з іншых групаў, яна будзе выдзеленая тлустым шрыфтам.',
 	'translate-page-language' => 'Мова',
 	'translate-page-limit' => 'Ліміт',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|паведамленьне|паведамленьні|паведамленьняў}} на старонцы',
@@ -1892,9 +1894,15 @@ $messages['be-tarask'] = array(
 	'translate-suppress-complete' => 'Поўнасьцю схаваць перакладзеныя групы паведамленьняў',
 	'translate-language' => 'Мова',
 	'translate-total' => 'Паведамленьні',
+	'translate-total-tooltip' => 'Агульная колькасьць паведамленьняў у гэтай групе паведамленьняў.',
 	'translate-untranslated' => 'Неперакладзеныя',
+	'translate-untranslated-tooltip' => 'Агульная колькасьць неперакладзеных паведамленьняў у гэтай групе паведамленьняў.
+Яна ўтрымлівае паведамленьні, якія пазначаны як састарэлыя.',
 	'translate-percentage-complete' => 'Перакладзеныя',
+	'translate-percentage-complete-tooltip' => 'Адсотак паведамленьняў у групе, якія былі перакладзены і не пазначаны як састарэлыя.',
 	'translate-percentage-fuzzy' => 'Састарэлыя',
+	'translate-percentage-fuzzy-tooltip' => 'Адсотак паведамленьняў у групе, якія былі перакладзены і былі пазначаныя як састарэлыя.
+Паведамленьні пазначаюцца як састарэлыя, таму што крынічныя паведамленьні на ангельскай мове былі зьмененыя, таму што не прайшлі аўтаматычную праверку, альбо таму што нехта пазначыў іх як састарэлыя.',
 	'translate-nothing-to-do' => 'Былі зроблены ўсе магчымыя пераклады.
 Вы можаце праверыць пераклады з дапамогай [[Special:Translate|{{int:translate}}]].',
 	'supportedlanguages' => 'Падтрымліваемыя мовы',
@@ -1908,6 +1916,9 @@ $messages['be-tarask'] = array(
 Шукайце спасылку на партал на мове, пададзенай ў Вашых устаноўках, у мэню.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Перакладчык|Перакладчыкі}}: $1',
 	'supportedlanguages-noportal-title' => 'Прастора назваў парталаў ня вызначаная',
+	'supportedlanguages-noportal' => 'Адміністратар {{SITENAME}} ня вызначыў NS_PORTAL, таму гэтая старонка не працуе.
+На гэтай старонцы зьявіцца сьпіс моўных парталаў, адпаведна вызначаным моўным кодам і падстаронка з назваў «translators».
+Падстаронка «translators» павінна ўтрымліваць шаблён [[:{{ns:template}}:User|User]], з іменем удзельніка ў якасьці парамэтра.',
 	'translate-save' => 'Захаваць ($1)',
 	'translate-jssti-add' => 'Дадаць у сьпіс',
 	'translate-group-desc-mediawikicore' => 'Гэта група паведамленьняў утрымлівае паведамленьні, якія выкарыстоўваюцца ў цяперашняй альфа-вэрсіі MediaWiki ({{CURRENTVERSION}})',
@@ -3394,6 +3405,8 @@ $messages['de'] = array(
 	'translate-page-settings-legend' => 'Einstellungen',
 	'translate-page-task' => 'Aufgabe',
 	'translate-page-group' => 'Gruppe',
+	'translate-page-group-tooltip' => 'Der Name einer Gruppe von Systemnachrichten.
+Sofern die Gruppe aus einer Teil- oder Obermenge von Systemnachrichten einer anderen Gruppe besteht, wird sie in Fettschrift angezeigt.',
 	'translate-page-language' => 'Sprache',
 	'translate-page-limit' => 'Limit',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|Systemnachricht|Systemnachrichten}} pro Seite',
@@ -3521,9 +3534,15 @@ Die Standardliste ist abhängig von der Sprache der Benutzeroberfläche.',
 	'translate-suppress-complete' => 'Unterdrücke komplett übersetzte Nachrichtengruppen',
 	'translate-language' => 'Sprache',
 	'translate-total' => 'Systemnachrichten',
+	'translate-total-tooltip' => 'Die Gesamtzahl der Systemnachrichten in dieser Gruppe.',
 	'translate-untranslated' => 'Nicht übersetzt',
+	'translate-untranslated-tooltip' => 'Die Gesamtzahl der nicht übersetzten Systemnachrichten dieser Gruppe.
+Sie beinhaltet auch die Systemnachrichten, die als veraltet gekennzeichnet wurden.',
 	'translate-percentage-complete' => 'Vollständigkeit',
+	'translate-percentage-complete-tooltip' => 'Der Prozentsatz der Systemnachrichten in der Gruppe, die übersetzt, bzw. nicht als veraltet gekennzeichnet wurden.',
 	'translate-percentage-fuzzy' => 'Veraltet',
+	'translate-percentage-fuzzy-tooltip' => 'Der Prozentsatz der Systemnachrichten in der Gruppe, die übersetzt, allerdings als veraltet gekennzeichnet wurden.
+Systemnachrichten werden als veraltet gekennzeichnet, sofern die englische Vorlage verändert wurde, die automatische Prüfung der übersetzten Systemnachricht fehlgeschlagen ist, oder weil sie jemand manuell als veraltet gekennzeichnet hat.',
 	'translate-nothing-to-do' => 'Alle möglichen Übersetzungen sind offenbar schon erledigt.
 Es wird empfohlen, Systemnachrichten mit der Spezialseite [[Special:Translate|{{int:translate}}]] zu überprüfen.',
 	'translate-languagestats-groups' => ' # Ergänze die ID einer Systemnachrichtengruppe (eine per Zeile) um die Gruppen von 
