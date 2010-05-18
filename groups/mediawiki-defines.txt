@@ -1179,10 +1179,7 @@ descmsg = ukgeocoding_desc
 Upload Blacklist
 
 Upload Wizard
-#aliasfile = UploadWizard/UploadWizard.alias.php
-
-Upload Wizard
-file = UploadWizard/UploadWizard.i18n.php
+aliasfile = UploadWizard/UploadWizard.alias.php
 
 Unicode Converter
 
