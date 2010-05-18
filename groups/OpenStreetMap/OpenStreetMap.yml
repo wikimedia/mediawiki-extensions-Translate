@@ -35,6 +35,7 @@ TAGS:
     - browse.navigation.paging.user.prev
     - browse.relation_member.entry
     - changeset.changeset.id
+    - geocoder.search_osm_nominatim.prefix_format
     - geocoder.search osm nominatim.prefix other
     - geocoder.search_osm_namefinder.suffix_suburb
     - geocoder.search_osm_nominatim.prefix_other
