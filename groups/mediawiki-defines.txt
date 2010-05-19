@@ -429,6 +429,7 @@ descmsg = reviewedversions-leg1
 Flagged Revisions - Stabilization
 id = ext-flaggedrevs-stabilization
 file = FlaggedRevs/language/Stabilization.i18n.php
+ignored = stabilize_protect_quota
 descmsg = stabilization
 
 Flagged Revisions - Stable Pages
