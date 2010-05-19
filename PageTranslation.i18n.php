@@ -2354,7 +2354,7 @@ $messages['rm'] = array(
  */
 $messages['ro'] = array(
 	'pagetranslation' => 'Traducerea paginii',
-	'tpt-desc' => 'Extensie pentru traducerea conţinutului paginilor',
+	'tpt-desc' => 'Extensie pentru traducerea conținutului paginilor',
 	'tpt-section' => 'Unitate de traducere $1',
 	'tpt-section-new' => 'Unitate de traducere nouă.
 Nume: $1',
@@ -2363,8 +2363,8 @@ Nume: $1',
 	'tpt-diff-old' => 'Text precedent',
 	'tpt-diff-new' => 'Text nou',
 	'tpt-submit' => 'Marchează această versiune pentru traducere',
-	'tpt-sections-oldnew' => 'Unităţi de traducere noi şi existente',
-	'tpt-sections-deleted' => 'Unităţi de traducere şterse',
+	'tpt-sections-oldnew' => 'Unități de traducere noi și existente',
+	'tpt-sections-deleted' => 'Unități de traducere șterse',
 	'tpt-badsect' => '"$1" nu este un nume valid pentru unitatea de traducere $2.',
 	'tpt-mark-summary' => 'Marcat această versiune pentru traducere',
 	'tpt-already-marked' => 'Ultima versiune a acestei pagini a fost deja marcată pentru traducere.',
