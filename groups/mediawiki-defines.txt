@@ -605,7 +605,7 @@ aliasfile = LiquidThreads/i18n/Lqt.alias.php
 magicfile = LiquidThreads/i18n/LiquidThreads.magic.php
 descmsg = lqt-desc
 optional = lqt_rc_ellipsis
-ignored = lqt_header_warning_before_big, lqt-newusermessage-template-subject, lqt-newusermessage-template-body
+ignored = lqt_header_warning_before_big
 
 Localisation Update
 
