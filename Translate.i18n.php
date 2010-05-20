@@ -4425,6 +4425,8 @@ $messages['es'] = array(
 	'translate-page-settings-legend' => 'Preferencias',
 	'translate-page-task' => 'Deseo',
 	'translate-page-group' => 'Grupo',
+	'translate-page-group-tooltip' => 'El nombre de un grupo de mensajes.
+Si el grupo consiste en un subconjunto o superconjunto de mensajes de otros grupos, esto es mostrado en negrita.',
 	'translate-page-language' => 'Idioma',
 	'translate-page-limit' => 'Límite',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|mensaje|mensajes}} por página',
@@ -4558,9 +4560,15 @@ Todos los valores tienen límites superiores e inferiores.',
 	'translate-suppress-complete' => 'Eliminar grupos de mensajes completamente traducidos',
 	'translate-language' => 'Idioma',
 	'translate-total' => 'Mensajes',
+	'translate-total-tooltip' => 'El número total de mensajes en este grupo de mensajes.',
 	'translate-untranslated' => 'Sin traducir',
+	'translate-untranslated-tooltip' => 'El número total de mensajes sin traducir en este grupo de mensajes.
+Esto incluye los mensajes que han sido etiquetados como desactualizados.',
 	'translate-percentage-complete' => 'Completados',
+	'translate-percentage-complete-tooltip' => 'El porcentaje de mensajes en el grupo que han sido traducidos y no están marcados como desactualizados.',
 	'translate-percentage-fuzzy' => 'Desactualizados',
+	'translate-percentage-fuzzy-tooltip' => 'El porcentaje de mensajes en el grupo que han sido traducidos y han sido marcados como desactualizados.
+Los mensajes están marcados como desactualizados porque la fuente en idioma inglés ha cambiado, porque una verificación automática del mensaje falló, o porque lo marcó como desactualizado.',
 	'translate-nothing-to-do' => 'Todas las posibles traducciones parecen haber sido hechas.
 Se te anima a revisar los mensajes a través de [[Special:Translate|{{int:translate}}]].',
 	'supportedlanguages' => 'Idiomas soportados',
@@ -4571,6 +4579,8 @@ Si un idioma no está en la lista, puede descubrir como empezar un proyecto de l
 Si ayudó traduciendo a un lenguaje y su nombre no está incluido, por favor añada su nombre a la lista de traductores en [[:Category:Languages|portal]] para dicho idioma.
 Vea la barra del menú para un enlace al portal para el idioma de su preferencia.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Traductor|Traductores}}: $1',
+	'supportedlanguages-noportal-title' => 'No hay definido ningún espacio de nombres para los portales',
+	'supportedlanguages-noportal' => 'El administrador del wiki no ha definido NS_PORTAL, por lo que esta página no funciona. En esta página aparecerá un listado con cada portal de idioma, cada uno con un código de idioma definido y una subpágina llamada "traductores". La subpágina "traductores" debe contener la plantilla [[:{{ns:template}}:User|User]], con un nombre de usuario como parámetro.',
 	'translate-save' => 'Grabar($1)',
 	'translate-jssti-add' => 'Añadir a la lista',
 	'translate-group-desc-mediawikicore' => 'Este grupo de mensajes contiene los mensajes usados en la actual versión alpha de MediaWiki ({{CURRENTVERSION}})',
@@ -6014,7 +6024,7 @@ Esta subpáxina "translators" debe conter o modelo [[:{{ns:template}}:User|User]
 	'translate-manage-submit' => 'Executar',
 	'translate-manage-nochanges' => 'Non hai cambios nas definicións das mensaxes neste grupo.',
 	'translate-manage-nochanges-other' => 'Non houbo cambios nesta lingua.
-Use a ligazón de embaixo para voltar á vista dos detalles do grupo.',
+Use a ligazón de embaixo para volver á vista dos detalles do grupo.',
 	'translate-manage-inconsistent' => 'Detectouse unha inconsistencia na solicitude.
 Por favor, comprobe os cambios e inténteo de novo. Detalles: $1.',
 	'translate-manage-toolong' => 'Excedeuse do máximo tempo de procesamento de $1 {{PLURAL:$1|segundo|segundos}}.
@@ -13250,7 +13260,7 @@ Detalhes: $1',
 	'translate-js-nonext' => 'Esta foi a última mensagem nesta página.',
 	'translate-js-skip' => 'Saltar para a seguinte',
 	'translate-js-save-failed' => 'A gravação falhou. Por favor, informe-nos deste erro.',
-	'translate-js-history' => 'Historial de tradução',
+	'translate-js-history' => 'Historial de traduções',
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Código',
 	'translate-gs-continent' => 'Continente',
