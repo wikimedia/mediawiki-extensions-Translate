@@ -2092,6 +2092,7 @@ La pagina qu'ensajatz de modificar sembla pas correspondre a cap de pagina marca
  */
 $messages['pdc'] = array(
 	'pagetranslation' => 'Iwwersetzing vun Bledder',
+	'tpt-rev-latest' => 'Letscht Version',
 	'tpt-translate-this' => 'des Blatt iwwersetze',
 	'translate-tag-translate-link-desc' => 'Des Blatt iwwersetze',
 	'tpt-languages-legend' => 'Annre Schprooche:',
@@ -2680,6 +2681,7 @@ $messages['te'] = array(
 	'tpt-badtitle' => 'ఇచ్చిన పేజీ పేరు ($1) సరైన శీర్షిక కాదు',
 	'tpt-edit-failed' => 'పేజీని తాజాకరించలేకపోయాం: $1',
 	'tpt-already-marked' => 'ఈ పేజీ యొక్క సరికొత్త కూర్పుని ఇప్పటికే అనువాదానికై గుర్తించారు.',
+	'tpt-rev-latest' => 'చిట్టచివరి కూర్పు',
 	'tpt-rev-mark-new' => 'ఈ కూర్పుని అనువాదం కొరకై గుర్తించు',
 	'tpt-translate-this' => 'ఈ పేజీని అనువదించండి',
 	'translate-tag-translate-link-desc' => 'ఈ పేజీని అనువదించండి',
@@ -2815,6 +2817,28 @@ $messages['tt-cyrl'] = array(
 	'pagetranslation' => 'Битләр тәрҗемәсе',
 	'tpt-translate-this' => 'бу битне тәрҗемә итү',
 	'translate-tag-translate-link-desc' => 'Бу битне тәрҗемә итү',
+);
+
+/** ئۇيغۇرچە (ئۇيغۇرچە)
+ * @author Sahran
+ */
+$messages['ug-arab'] = array(
+	'pagetranslation' => 'بەت تەرجىمە',
+	'tpt-section' => '$1 تەرجىمە بۆلىكى',
+	'tpt-section-new' => 'يېڭى تەرجىمە بۆلىكى.
+ئاتى: $1',
+	'tpt-section-deleted' => '$1 تەرجىمە بۆلىكى',
+	'tpt-template' => 'بەت قېلىپى',
+	'tpt-templatediff' => 'بەت قېلىپى ئۆزگەردى.',
+	'tpt-diff-old' => 'ئالدىنقى تېكست',
+	'tpt-diff-new' => 'يېڭى تېكست',
+	'tpt-rev-latest' => 'ئاخىرقى نەشرى',
+	'tpt-rev-old' => 'ئالدىنقى بەلگە قويۇلغان نەشرى بىلەن بولغان پەرقى',
+	'tpt-rev-mark-new' => 'تەرجىمە ئۈچۈن بۇ نەشرىگە بەلگە سال',
+	'tpt-translate-this' => 'بۇ بەتنى تەرجىمە قىل',
+	'translate-tag-translate-link-desc' => 'بۇ بەتنى تەرجىمە قىل',
+	'translate-tag-markthis' => 'تەرجىمە ئۈچۈن بۇ بەتكە بەلگە سال',
+	'tpt-languages-legend' => 'باشقا تىل',
 );
 
 /** Ukrainian (Українська)
