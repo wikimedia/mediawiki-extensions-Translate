@@ -141,8 +141,14 @@ class SpecialManageGroups {
 		$diff->showDiffStyle();
 		$diff->setReducedLineNumbers();
 
+		$ignoredMessages = $collection->getTags( 'ignored' );
 		$changed = array();
 		foreach ( $messages as $key => $value ) {
+			// ignored? ignore
+			if( in_array( $key, $ignoredMessages ) ) {
+				continue;
+			}
+
 			$fuzzy = $old = false;
 
 			if ( isset( $collection[$key] ) ) {
