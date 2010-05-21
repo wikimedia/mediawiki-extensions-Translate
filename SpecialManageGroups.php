@@ -28,16 +28,19 @@ class SpecialManageGroups {
 		$group = MessageGroups::getGroup( $group );
 
 		if ( $group ) {
-			if ( $wgRequest->getBool( 'rebuildall', false ) &&
+			if (
+				$wgRequest->getBool( 'rebuildall', false ) &&
 				$wgRequest->wasPosted() &&
 				$this->user->isAllowed( 'translate-manage' ) &&
-				$this->user->matchEditToken( $wgRequest->getVal( 'token' ) ) ) {
-
+				$this->user->matchEditToken( $wgRequest->getVal( 'token' ) )
+			) {
 				$cache = new MessageGroupCache( $group );
 				$languages = explode( ',', $wgRequest->getText( 'codes' ) );
 				foreach ( $languages as $code ) {
 					$messages = $group->load( $code );
-					if ( count( $messages ) ) $cache->create( $messages, $code );
+					if ( count( $messages ) ) {
+						$cache->create( $messages, $code );
+					}
 				}
 			}
 
@@ -53,7 +56,9 @@ class SpecialManageGroups {
 			$separator = wfMsg( 'word-separator' );
 
 			foreach ( $groups as $group ) {
-				if ( !$group instanceof FileBasedMessageGroup ) continue;
+				if ( !$group instanceof FileBasedMessageGroup ) {
+					continue;
+				}
 
 				$link = $this->skin->link( $this->getTitle(), $group->getLabel(), array(), array( 'group' => $group->getId() ) );
 				$out = $link . $separator;
@@ -78,7 +83,9 @@ class SpecialManageGroups {
 			$wgOut->addHTML( '<ul>' );
 
 			foreach ( $groups as $group ) {
-				if ( $group instanceof FileBasedMessageGroup ) continue;
+				if ( $group instanceof FileBasedMessageGroup ) {
+					continue;
+				}
 
 				$wgOut->addHtml( Xml::element( 'li', null, $group->getLabel() ) );
 			}
@@ -101,10 +108,12 @@ class SpecialManageGroups {
 		);
 
 		global $wgRequest;
-		if ( $wgRequest->wasPosted() &&
+		if (
+			$wgRequest->wasPosted() &&
 			$wgRequest->getBool( 'process', false ) &&
 			$this->user->isAllowed( 'translate-manage' ) &&
-			$this->user->matchEditToken( $wgRequest->getVal( 'token' ) ) ) {
+			$this->user->matchEditToken( $wgRequest->getVal( 'token' ) )
+		) {
 			$process = true;
 		} else {
 			$process = false;

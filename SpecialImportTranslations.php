@@ -81,7 +81,6 @@ class SpecialImportTranslations extends SpecialPage {
 		if ( $alldone ) {
 			$this->deleteCachedData();
 		}
-
 	}
 
 	/**
@@ -256,5 +255,4 @@ class SpecialImportTranslations extends SpecialPage {
 		$key = wfMemcKey( 'translate', 'webimport', $this->user->getId() );
 		return $wgMemc->delete( $key );
 	}
-
 }
