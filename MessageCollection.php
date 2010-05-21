@@ -119,7 +119,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * loaded from the database. PAGEINFO: existence and fuzzy tags.
 	 * TRANSLATIONS: translations for every message. It is recommended to first
 	 * filter with messages that do not need those. It is recommended to add
-	 * translations from file with addInfile, and it is needed for chagned
+	 * translations from file with addInfile, and it is needed for changed
 	 * filter to work.
 	 *
 	 * @param $type
