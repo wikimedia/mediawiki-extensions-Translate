@@ -46,6 +46,13 @@ class SpecialManageGroups {
 
 			$cache = new MessageGroupCache( $group );
 			$code = $wgRequest->getText( 'language', 'en' );
+
+			// Go to English for undefined codes.
+			$codes = array_keys( Language::getLanguageNames( false ) );
+			if( !in_array( $code, $codes ) ) {
+				$code = 'en';
+			}
+
 			$this->importForm( $cache, $group, $code );
 		} else {
 			global $wgLang, $wgOut;
