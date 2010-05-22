@@ -12,7 +12,6 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
  */
 
 class SpecialImportTranslations extends SpecialPage {
-
 	/**
 	 * Set up and fill some dependencies.
 	*/
@@ -104,7 +103,7 @@ class SpecialImportTranslations extends SpecialPage {
 	 */
 	protected function outputForm() {
 		global $wgScriptPath;
-		// Core jQuery
+		// jQuery
 		$this->out->addScriptFile( "$wgScriptPath/extensions/Translate/js/js2stopgap.js" );
 		$this->out->addScriptFile( "$wgScriptPath/extensions/Translate/js/import.js" );
 
@@ -124,19 +123,18 @@ class SpecialImportTranslations extends SpecialPage {
 		);
 
 		$class = array( 'class' => 'mw-translate-import-inputs' );
-		if ( true ) {
-			$this->out->addHTML(
-				Xml::radioLabel( wfMsg( 'translate-import-from-url' ),
-					'upload-type', 'url', 'mw-translate-up-url',
-					$this->request->getText( 'upload-type' ) === 'url' ) .
-				"\n" . Xml::closeElement( 'td' ) . Xml::openElement( 'td' ) . "\n" .
-				Xml::input( 'upload-url', 50,
-					$this->request->getText( 'upload-url' ),
-					array( 'id' => 'mw-translate-up-url-input' ) + $class ) .
-				"\n" . Xml::closeElement( 'td' ) . Xml::closeElement( 'tr' ) .
-				Xml::openElement( 'tr' ) . Xml::openElement( 'td' ) . "\n"
-			);
-		}
+
+		$this->out->addHTML(
+			Xml::radioLabel( wfMsg( 'translate-import-from-url' ),
+				'upload-type', 'url', 'mw-translate-up-url',
+				$this->request->getText( 'upload-type' ) === 'url' ) .
+			"\n" . Xml::closeElement( 'td' ) . Xml::openElement( 'td' ) . "\n" .
+			Xml::input( 'upload-url', 50,
+				$this->request->getText( 'upload-url' ),
+				array( 'id' => 'mw-translate-up-url-input' ) + $class ) .
+			"\n" . Xml::closeElement( 'td' ) . Xml::closeElement( 'tr' ) .
+			Xml::openElement( 'tr' ) . Xml::openElement( 'td' ) . "\n"
+		);
 
 		$this->out->addHTML(
 			Xml::radioLabel( wfMsg( 'translate-import-from-wiki' ),
@@ -144,7 +142,7 @@ class SpecialImportTranslations extends SpecialPage {
 				$this->request->getText( 'upload-type' ) === 'wiki' ) .
 			"\n" . Xml::closeElement( 'td' ) . Xml::openElement( 'td' ) . "\n" .
 			Xml::input( 'upload-wiki', 50,
-				$this->request->getText( 'upload-wiki', 'File:' ),
+				$this->request->getText( 'upload-wiki', 'File:' ), // FIXME: needs i18n in content language.
 				array( 'id' => 'mw-translate-up-wiki-input' ) + $class ) .
 			"\n" . Xml::closeElement( 'td' ) . Xml::closeElement( 'tr' ) .
 			Xml::openElement( 'tr' ) . Xml::openElement( 'td' ) . "\n" .
@@ -160,7 +158,6 @@ class SpecialImportTranslations extends SpecialPage {
 			Xml::submitButton( wfMsg( 'translate-import-load' ) ) .
 			Xml::closeElement( 'form' )
 		);
-
 	}
 
 	/**
@@ -204,18 +201,16 @@ class SpecialImportTranslations extends SpecialPage {
 	protected function parseFile( $data ) {
 		// Construct a dummy group for us...
 		// Time to rethink the interface again?
-		$group = MessageGroupBase::factory(
-			array(
-				'FILES' => array(
-					'class' => 'GettextFFS',
-					'CtxtAsKey' => true,
-				),
-				'BASIC' => array(
-					'class' => 'FileBasedMessageGroup',
-					'namespace' => - 1,
-				)
+		$group = MessageGroupBase::factory( array(
+			'FILES' => array(
+				'class' => 'GettextFFS',
+				'CtxtAsKey' => true,
+			),
+			'BASIC' => array(
+				'class' => 'FileBasedMessageGroup',
+				'namespace' => - 1,
 			)
-		);
+		) );
 
 		$ffs = new GettextFFS( $group );
 		$data = $ffs->readFromVariable( $data );
@@ -223,13 +218,13 @@ class SpecialImportTranslations extends SpecialPage {
 		// Special data added by GettextFFS
 		$metadata = $data['METADATA'];
 
-		// This should catch everything that is not a po file exported form us
+		// This should catch everything that is not a gettext file exported from us
 		if ( !isset( $metadata['code'] ) || !isset( $metadata['group'] ) ) {
 			return array( 'no-headers' );
 		}
 
-		// And check for stupid editors which like to drop msgctxt..
-		// which unfortunately breaks submission
+		// And check for stupid editors that drop msgctxt which
+		// unfortunately breaks submission.
 		if ( isset( $metadata['warnings'] ) ) {
 			global $wgLang;
 			return array( 'warnings', $wgLang->commaList( $metadata['warnings'] ) );
