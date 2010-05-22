@@ -296,7 +296,9 @@ class CoreMessageGroup extends MessageGroupOld {
 		$file = $this->getMessageFileWithPath( $code );
 		// Can return null, convert to array
 		$messages = (array) $this->mangler->mangle(
-			ResourceLoader::loadVariableFromPHPFile( $file, 'messages' ) );
+			ResourceLoader::loadVariableFromPHPFile( $file, 'messages' )
+		);
+
 		if ( $this->parentId ) {
 			if ( $code !== 'en' ) {
 				// For branches, load newer compatible messages for missing entries, if any
@@ -564,6 +566,14 @@ class GettextMessageGroup extends MessageGroupOld {
 			if ( isset( $this->codeMap[$code] ) ) {
 				$code = $this->codeMap[$code];
 			}
+
+			// If this (valid) code is a mapped target, do not provide a file.
+			// Example: 'no' => 'nb'.
+			$mappedCodes = array_values( $this->codeMap );
+			if( in_array( $code, $mappedCodes ) ) {
+				return '';
+			}
+
 			return $this->replaceVariables( $this->filePattern, $code );
 		}
 	}
