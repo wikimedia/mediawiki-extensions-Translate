@@ -563,6 +563,8 @@ class GettextMessageGroup extends MessageGroupOld {
 		if ( $code == 'en' ) {
 			return $this->getPotFile();
 		} else {
+			$origCode = $code;
+
 			if ( isset( $this->codeMap[$code] ) ) {
 				$code = $this->codeMap[$code];
 			}
@@ -570,7 +572,7 @@ class GettextMessageGroup extends MessageGroupOld {
 			// If this (valid) code is a mapped target, do not provide a file.
 			// Example: 'no' => 'nb'.
 			$mappedCodes = array_values( $this->codeMap );
-			if( in_array( $code, $mappedCodes ) ) {
+			if( $code == $origCode && in_array( $code, $mappedCodes ) ) {
 				return '';
 			}
 
