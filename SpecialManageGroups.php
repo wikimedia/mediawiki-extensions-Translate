@@ -27,6 +27,11 @@ class SpecialManageGroups {
 		$group = $wgRequest->getText( 'group' );
 		$group = MessageGroups::getGroup( $group );
 
+		// Only supported for FileBasedMessageGroups
+		if( !$group instanceof FileBasedMessageGroup ) {
+			$group = null;
+		}
+
 		if ( $group ) {
 			if (
 				$wgRequest->getBool( 'rebuildall', false ) &&
