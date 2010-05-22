@@ -754,7 +754,6 @@ class MessageGroups {
 			}
 		}
 
-
 		wfRunHooks( 'TranslatePostInitGroups', array( &$wgTranslateCC ) );
 
 		global $wgTranslateGroupFiles, $wgAutoloadClasses;

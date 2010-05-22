@@ -5,6 +5,7 @@
  * @copyright Copyright © 2008-2009, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
+
 class MessageChecker {
 	protected $checks = array();
 	protected $group  = null;
@@ -124,7 +125,6 @@ class MessageChecker {
 			}
 		}
 
-	
 		return $warningsArray;
 	}
 
@@ -267,5 +267,4 @@ class MessageChecker {
 			}
 		}
 	}
-
 }
