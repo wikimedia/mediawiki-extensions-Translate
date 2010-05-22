@@ -163,6 +163,7 @@ class MessageWebImporter {
 				# Spaces don't seem to survive round trip in addition to dots
 				# which are silently handled in getVal
 				$safekey = str_replace( ' ', '_', $key );
+				$safekey = str_replace( '.', '_', $key );
 				$action = $wgRequest->getVal( "action-$type-$safekey" );
 
 				if ( $process ) {

@@ -187,10 +187,12 @@ class SpecialManageGroups {
 
 					global $wgRequest, $wgLang;
 
+					$requestKey = str_replace( '.', '_', $key );
+					$requestKey = str_replace( ' ', '_', $key );
 					$action = $wgRequest->getVal( "action-$type-$key" );
 
 					if ( $action === null ) {
-						$message = wfMsgExt( 'translate-manage-inconsistent', 'parseinline', wfEscapeWikiText( "action-$type-$key" ) );
+						$message = wfMsgExt( 'translate-manage-inconsistent', 'parseinline', wfEscapeWikiText( "action-$type-$requestKey" ) );
 						$changed[] = "<li>$message</li></ul>";
 						$process = false;
 					} else {
