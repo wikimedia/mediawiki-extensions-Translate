@@ -64,19 +64,28 @@ STDOUT( "Conflict times: " . wfTimestamp( TS_ISO_8601, $start ) . " - " . wfTime
 
 $codes = array_filter( array_map( 'trim', explode( ',', $options['lang'] ) ) );
 
+$supportedCodes = array_keys( Language::getLanguageNames( false ) );
+ksort( $supportedCodes );
+
 if ( $codes[0] === '*' ) {
-	$langs = Language::getLanguageNames();
-	ksort( $langs );
-	$codes = array_keys( $langs );
+	$codes = $supportedCodes;
 }
 
 foreach ( $groups as &$group ) {
-	if ( $group->isMeta() ) continue;
+	// No sync possible for meta groups
+	if ( $group->isMeta() ) {
+		continue;
+	}
 
 	STDOUT( "{$group->getLabel()} ", $group );
 
 	foreach ( $codes as $code ) {
-
+		// No sync possible for unsupported language codes.
+		if( !in_array( $code, $supportedCodes ) ) {
+			STDOUT( "Unsupported code " . $code . ": skipping." );
+			continue;
+		}
+		
 		if ( $group instanceof FileBasedMessageGroup ) {
 			$file = $group->getSourceFilePath( $code );
 		} else {
