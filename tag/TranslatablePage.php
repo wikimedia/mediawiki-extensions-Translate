@@ -13,8 +13,21 @@ class TranslatablePage {
 	 * Text contents of the page.
 	 */
 	protected $text = null;
+
+	/**
+	 * Revision of the page, if applicaple.
+	 */
 	protected $revision = null;
+
+	/**
+	 * From which source this object was constructed.
+	 * Can be: text, revision, title
+	 */
 	protected $source = null;
+
+	/**
+	 * Whether the page contents is already loaded.
+	 */
 	protected $init = false;
 
 	protected function __construct( Title $title ) {
@@ -23,12 +36,23 @@ class TranslatablePage {
 
 	// Public constructors //
 
+	/**
+	 * Constructs a translatable page from given text.
+	 * Some functions will fail unless you set revision
+	 * parameter manually.
+	 */
 	public static function newFromText( Title $title, $text ) {
 		$obj = new self( $title );
 		$obj->text = $text;
 		$obj->source = 'text';
 		return $obj;
 	}
+
+	/**
+	 * Constructs a translatable page from given revision.
+	 * The revision must belong to the title given or unspecified
+	 * behaviour will happen.
+	 */
 
 	public static function newFromRevision( Title $title, $revision ) {
 		$rev = Revision::newFromTitle( $title, $revision );
@@ -40,6 +64,10 @@ class TranslatablePage {
 		return $obj;
 	}
 
+	/**
+	 * Constructs a translatable page from title.
+	 * The text of last marked revision is loaded when neded.
+	 */
 	public static function newFromTitle( Title $title ) {
 		$obj = new self( $title );
 		$obj->source = 'title';
@@ -48,10 +76,16 @@ class TranslatablePage {
 
 	// Getters //
 
+	/**
+	 * Returns the title for this translatable page.
+	 */
 	public function getTitle() {
 		return $this->title;
 	}
 
+	/**
+	 * Returns the text for this translatable page.
+	 */
 	public function getText() {
 		if ( $this->init === false ) {
 			switch ( $this->source ) {
@@ -73,11 +107,16 @@ class TranslatablePage {
 
 	/**
 	 * Revision is null if object was constructed using newFromText.
+	 * @return null or integer
 	 */
 	public function getRevision() {
 		return $this->revision;
 	}
 
+	/**
+	 * Manually set a revision number to use loading page text.
+	 * @param $revision integer
+	 */
 	public function setRevision( $revision ) {
 		$this->revision = $revision;
 		$this->source = 'revision';
@@ -86,6 +125,11 @@ class TranslatablePage {
 
 	// Public functions //
 
+	/**
+	 * Returns a TPParse object which represents the parsed page.
+	 * Throws TPExcetion if the page is malformed as a translatable
+	 * page.
+	 */
 	public function getParse() {
 		if ( isset( $this->cachedParse ) ) return $this->cachedParse;
 
@@ -121,11 +165,15 @@ class TranslatablePage {
 				self::index_replace( $contents, $ret, $start, $end );
 		}
 
-		if ( strpos( $text, '<translate>' ) !== false )
+		if ( strpos( $text, '<translate>' ) !== false ) {
+			$text = str_replace( "\n", '\n', $text );
 			throw new TPException( array( 'pt-parse-open', $text ) );
+		}
 
-		if ( strpos( $text, '</translate>' ) !== false )
+		if ( strpos( $text, '</translate>' ) !== false ) {
+			$text = str_replace( "\n", '\n', $text );
 			throw new TPException( array( 'pt-parse-close', $text ) );
+		}
 
 		foreach ( $tagPlaceHolders as $ph => $value ) {
 			$text = str_replace( $ph, $value, $text );
@@ -143,6 +191,9 @@ class TranslatablePage {
 
 	// Inner functionality //
 
+	/**
+	 * Returns a random string that can be used as placeholder.
+	 */
 	protected function getUniq() {
 		static $i = 0;
 		return "\x7fUNIQ" . dechex( mt_rand( 0, 0x7fffffff ) ) . dechex( mt_rand( 0, 0x7fffffff ) ) . '|' . $i++;
@@ -152,6 +203,14 @@ class TranslatablePage {
 		return substr( $string, 0, $start ) . $rep . substr( $string, $end );
 	}
 
+	/**
+	 * Splits the content marked with \<translate> tags into sections, which
+	 * are separated with with two or more newlines. Extra whitespace is captured
+	 * in the template and not included in the sections.
+	 * @param $sections Array of placeholder => TPSection.
+	 * @param $text Contents of one pair of \<translate> tags.
+	 * @return string Templace with placeholders for sections, which itself are added to $sections.
+	 */
 	protected function sectionise( &$sections, $text ) {
 		$flags = PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE;
 		$parts = preg_split( '~(\s*\n\n\s*|\s*$)~', $text, -1, $flags );
@@ -169,12 +228,21 @@ class TranslatablePage {
 		return $template;
 	}
 
+	/**
+	 * Checks if this section already contains a section marker. If there
+	 * is not, a new one will be created. Marker will have the value of
+	 * -1, which will later be replaced with a real value.
+	 *
+	 * May throw a TPException if there is error with existing section
+	 * markers.
+	 * @param $content string Content of one section
+	 * @return TPSection
+	 */
 	protected function shakeSection( $content ) {
 		$re = '~<!--T:(.*?)-->~';
 		$matches = array();
 		$count = preg_match_all( $re, $content, $matches, PREG_SET_ORDER );
-		if ( $count === false ) throw new TPException( 'pt-error', 'shake', $content );
-		if ( $count > 1 ) throw new TPException( 'pt-shake-dupid', $content );
+		if ( $count > 1 ) throw new TPException( array( 'pt-shake-multiple', $content ) );
 
 		$section = new TPSection;
 		if ( $count === 1 ) {
@@ -187,11 +255,10 @@ class TranslatablePage {
 				$content = preg_replace( $rer1, '', $content );
 				$content = preg_replace( $rer2, '', $content );
 			}
-		} else { // New section
+		} else {
+			// New section
 			$section->id = -1;
 		}
-
-		if ( $content === '' ) throw new TPException( 'pt-shake-empty' );
 
 		$section->text = $content;
 

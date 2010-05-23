@@ -35,13 +35,15 @@ class PageTranslationParserTester extends Maintenance {
 			$title = Title::newFromText( $pagename );
 			$translatablePage = TranslatablePage::newFromText( $title, file_get_contents( $file ) );
 
+			$pattern = realpath( "$testDirectory" ) . "/$pagename";
+
 			try {
 				$parse = $translatablePage->getParse();
 			} catch ( TPException $e ) {
-				$this->output( "Testfile $filename failed to parse because: " . $e->getMessage() );
+				$this->output( "Testfile $filename failed to parse... see $pattern.ptfile.fail" );
+				file_put_contents( "$pattern.ptfile.fail", $e->getMessage() );
+				continue;
 			}
-
-			$pattern = "$testDirectory/$pagename";
 
 			if ( file_exists( "$pattern.ptsource" ) ) {
 				$source = $parse->getSourcePageText();

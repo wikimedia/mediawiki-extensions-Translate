@@ -73,6 +73,12 @@ The page you are trying to edit does not seem to correspond any page marked for 
 	'tpt-render-summary' => 'Updating to match new version of source page',
 
 	'tpt-download-page' => 'Export page with translations',
+
+	'pt-shake-multiple' => 'Multiple section markers for one section.
+Section text:
+$1
+',
+
 );
 
 /** Message documentation (Message documentation)
