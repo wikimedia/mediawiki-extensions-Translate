@@ -332,7 +332,12 @@ abstract class ComplexMessages {
 		foreach ( array_keys( $this->data ) as $group ) {
 			foreach ( $this->getIterator( $group ) as $key ) {
 				$data = $request->getText( $this->getKeyForEdit( $key ) );
-				$data = implode( ', ', array_map( 'trim', explode( ',', $data ) ) );
+				// Make a nice array out of the submit with trimmed values.
+				$data = array_map( 'trim', explode( ',', $data ) );
+				// Normalise: Replace spaces with underscores.
+				$data = str_replace( ' ', '_', $data );
+				// Create final format.
+				$data = implode( ', ', $data );
 				if ( $data !== '' ) {
 					$text .= "$key = $data\n" ;
 				}
