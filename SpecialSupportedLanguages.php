@@ -58,7 +58,7 @@ class SpecialSupportedLanguages extends UnlistedSpecialPage {
 			$rev = new Revision( $row );
 			$text = $rev->getText();
 			$code = strtolower( preg_replace( '!/translators$!', '', $row->page_title ) );
-			preg_match_all( '!{{user\|([^}|]+)!', $text, $matches,  PREG_SET_ORDER );
+			preg_match_all( '!{{[Uu]ser\|([^}|]+)!', $text, $matches,  PREG_SET_ORDER );
 			foreach ( $matches as $match ) {
 				$user = Title::capitalize( $match[1], NS_USER );
 				$lb->add( NS_USER, $user );
