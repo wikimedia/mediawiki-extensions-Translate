@@ -95,7 +95,7 @@ class GettextFormatWriter extends SimpleFormatWriter {
 		$label = $this->group->getLabel();
 		$languageName = TranslateUtils::getLanguageName( $code );
 
-		$headers = $this->owndata['HEADERS'];
+		$headers = isset( $this->owndata['HEADERS'] ) ? $this->owndata['HEADERS'] : array();
 		$headers['Project-Id-Version'] = $label;
 		// TODO: make this customisable or something
 		// $headers['Report-Msgid-Bugs-To'] = $wgServer;
