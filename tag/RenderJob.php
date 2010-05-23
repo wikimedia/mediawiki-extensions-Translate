@@ -44,11 +44,7 @@ class RenderJob extends Job {
 		$group = MessageGroups::getGroup( "page|$key" );
 		$collection = $group->initCollection( $code );
 
-		// Muck up the text
 		$text = $page->getParse()->getTranslationPageText( $collection );
-		// Same as in renderSourcePage
-		$cb = array( __CLASS__, 'replaceTagCb' );
-		$text = preg_replace_callback( '~(\n?<translate>\s*?)(.*?)(\s*?</translate>)~s', $cb, $text );
 
 		// Other stuff
 		$user    = $this->getUser();
@@ -77,10 +73,6 @@ class RenderJob extends Job {
 		$page->getTranslationPercentages( true );
 
 		return true;
-	}
-
-	public static function replaceTagCb( $matches ) {
-		return $matches[2];
 	}
 
 	public function setFlags( $flags ) {

@@ -17,19 +17,19 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	public $code = null;
 
 	// External stuff
-	private $definitions = null; // MessageDefinitions
-	private $infile = array();   // message key => translation
+	protected $definitions = null; // MessageDefinitions
+	protected $infile = array();   // message key => translation
 
 	// Keys and messages
-	private $keys = null;     // message key => database key
-	private $messages = null; // message key => ThinMessage
+	protected $keys = null;     // message key => database key
+	protected $messages = null; // message key => ThinMessage
 
 	// Database resources
-	private $dbInfo = null; // existence, fuzzy
-	private $dbData = null; // all translations
+	protected $dbInfo = null; // existence, fuzzy
+	protected $dbData = null; // all translations
 
 	// Tags, copied to thin messages
-	private $tags = array(); // tagtype => keys
+	protected $tags = array(); // tagtype => keys
 
 	protected $authors = array();
 	
@@ -455,5 +455,13 @@ class MessageDefinitions {
 	public function __construct( $namespace, array $messages ) {
 		$this->namespace = $namespace;
 		$this->messages = $messages;
+	}
+}
+
+class TestMessageCollection extends MessageCollection {
+	public function __construct( $code ) {
+		$this->code = $code;
+		$this->definitions = array();
+		$this->keys = array();
 	}
 }

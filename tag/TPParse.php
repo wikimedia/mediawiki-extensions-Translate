@@ -115,31 +115,47 @@ class TPParse {
 		$collection->loadTranslations();
 
 		foreach ( $this->sections as $ph => $s ) {
+			$sectiontext = null;
+
 			if ( isset( $collection[$prefix . $s->id] ) ) {
 				$msg = $collection[$prefix . $s->id];
-				if ( $msg->translation() === null ) {
-					// Just use the orignal string
-					$text = str_replace( $ph, $s->getTextForTrans(), $text );
-				} else {
-					$sectiontext = $msg->translation();
+				$translation = $msg->translation();
 
+				if ( $translation !== null ) {
 					// Ideally we should not have fuzzy here, but old texts do
-					$sectiontext = str_replace( TRANSLATE_FUZZY, '', $sectiontext );
-
-					$vars = $s->getVariables();
-					foreach ( $vars as $key => $value ) {
-						$sectiontext = str_replace( $key, $value, $sectiontext );
-					}
+					$sectiontext = str_replace( TRANSLATE_FUZZY, '', $translation );
 
 					if ( $msg->hasTag( 'fuzzy' ) ) {
 						$sectiontext = "<div class=\"mw-translate-fuzzy\">\n$sectiontext\n</div>";
 					}
-					$text = str_replace( $ph, $sectiontext, $text );
 				}
-			} else {
-				$text = str_replace( $ph, $s->getTextForTrans(), $text );
 			}
+
+			// Use the original text if no translation is available
+			if ( $sectiontext === null ) {
+				$sectiontext = $s->getTextForTrans();
+			}
+
+			// Substitute variables into section text and substitute text into document
+			$sectiontext = self::replaceVariables( $s->getVariables(), $sectiontext );
+			$text = str_replace( $ph, $sectiontext, $text );
+		}
+
+		// Remove translation markup
+		$cb = array( __CLASS__, 'replaceTagCb' );
+		$text = preg_replace_callback( '~(<translate>\n?)(.*?)(\n?</translate>)~s', $cb, $text );
+
+		return $text;
+	}
+
+	protected static function replaceVariables( $variables, $text ) {
+		foreach ( $variables as $key => $value ) {
+			$text = str_replace( $key, $value, $text );
 		}
 		return $text;
+	}
+
+	protected static function replaceTagCb( $matches ) {
+		return $matches[2];
 	}
 }

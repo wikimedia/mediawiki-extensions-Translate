@@ -1,13 +1,23 @@
 <?php
+
+/**
+ * Class to parse translatable wiki pages.
+ */
 class TranslatablePage {
+	/**
+	 * Title of the page.
+	 */
+	protected $title = null;
 
-	private $title = null;
-	private $text = null;
-	private $revision = null;
-	private $source = null;
-	private $init = false;
+	/**
+	 * Text contents of the page.
+	 */
+	protected $text = null;
+	protected $revision = null;
+	protected $source = null;
+	protected $init = false;
 
-	private function __construct( Title $title ) {
+	protected function __construct( Title $title ) {
 		$this->title = $title;
 	}
 

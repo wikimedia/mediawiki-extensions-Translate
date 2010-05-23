@@ -30,6 +30,7 @@ $wgAutoloadClasses['AliasMessageGroup'] = $dir . 'MessageGroups.php';
 
 $wgAutoloadClasses['MessageCollection'] = $dir . 'MessageCollection.php';
 $wgAutoloadClasses['MessageDefinitions'] = $dir . 'MessageCollection.php';
+$wgAutoloadClasses['TestMessageCollection'] = $dir . 'MessageCollection.php';
 $wgAutoloadClasses['TMessage'] = $dir . 'Message.php';
 $wgAutoloadClasses['ThinMessage'] = $dir . 'Message.php';
 $wgAutoloadClasses['FatMessage'] = $dir . 'Message.php';
