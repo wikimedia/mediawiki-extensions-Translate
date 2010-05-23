@@ -26,7 +26,7 @@ class SpecialMagic extends SpecialPage {
 	private $nondefaults = array();
 
 	public function __construct() {
-		SpecialPage::SpecialPage( 'Magic' );
+		parent::__construct( 'Magic' );
 	}
 
 	/**
@@ -37,7 +37,7 @@ class SpecialMagic extends SpecialPage {
 	}
 
 	/**
-	 * Returns xhtml output of the form
+	 * Returns HTML5 output of the form
 	 * GLOBALS: $wgLang
 	 */
 	protected function getForm() {
@@ -62,14 +62,13 @@ class SpecialMagic extends SpecialPage {
 				Xml::submitButton( wfMsg( 'translate-magic-cm-export' ), array( 'name' => 'export' ) ) .
 			'</td></tr></table>' .
 			Xml::hidden( 'title', $this->getTitle()->getPrefixedText() )
-			
 		);
 		return $form;
 	}
 
 	/**
 	 * Helper function get module selector.
-	 * Returns the xhtml-compatible select-element.
+	 * Returns the HTML5-compatible select-element.
 	 * @param $selectedId which value should be selected by default
 	 * @return string
 	 */
@@ -85,10 +84,10 @@ class SpecialMagic extends SpecialPage {
 		global $wgUser, $wgRequest;
 
 		$defaults = array(
-		/* str  */ 'module'   => '',
-		/* str  */ 'language' => $wgUser->getOption( 'language' ),
-		/* bool */ 'export'   => false,
-		/* bool */ 'savetodb' => false,
+			/* str  */ 'module'   => '',
+			/* str  */ 'language' => $wgUser->getOption( 'language' ),
+			/* bool */ 'export'   => false,
+			/* bool */ 'savetodb' => false,
 		);
 
 		// Place where all non default variables will end
@@ -118,7 +117,6 @@ class SpecialMagic extends SpecialPage {
 	 */
 	public function execute( $parameters ) {
 		global $wgUser, $wgOut, $wgRequest, $wgLang;
-		wfLoadExtensionMessages( 'Translate' );
 
 		$this->setup( $parameters );
 		$this->setHeaders();
@@ -164,7 +162,6 @@ class SpecialMagic extends SpecialPage {
 			}
 		}
 
-
 		if ( $this->options['export'] ) {
 			$output = $o->export();
 			if ( $output === '' ) {
@@ -181,8 +178,6 @@ class SpecialMagic extends SpecialPage {
 		$o->validate( $errors );
 		if ( $errors ) $this->outputErrors( $errors );
 		$wgOut->addHTML( $o->output() );
-
-
 	}
 
 	protected function outputErrors( $errors ) {
@@ -195,5 +190,4 @@ class SpecialMagic extends SpecialPage {
 		}
 		$wgOut->addHTML( '</ol>' );
 	}
-
 }

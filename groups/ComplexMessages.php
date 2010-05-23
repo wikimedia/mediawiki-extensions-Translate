@@ -36,7 +36,6 @@ abstract class ComplexMessages {
 	#
 	# Data retrieval
 	#
-
 	protected $init = false;
 	public function getGroups() {
 		if ( !$this->init ) {
@@ -48,18 +47,24 @@ abstract class ComplexMessages {
 		}
 
 		return $this->data;
-		
+
 	}
 
 	public function cleanData( $defs, $current ) {
 		foreach ( $current as $item => $values ) {
-			if ( !$this->elementsInArray ) break;
+			if ( !$this->elementsInArray ) {
+				break;
+			}
+
 			if ( !isset( $defs[$item] ) ) {
 				unset( $current[$item] );
 				continue;
 			}
+
 			foreach ( $values as $index => $value )
-				if ( in_array( $value, $defs[$item], true ) ) unset( $current[$item][$index] );
+				if ( in_array( $value, $defs[$item], true ) ) {
+					unset( $current[$item][$index] );
+				}
 		}
 		return $current;
 	}
@@ -74,7 +79,6 @@ abstract class ComplexMessages {
 		return $current;
 	}
 
-
 	public function getData( &$group, $savedData ) {
 		$defs = $this->readVariable( $group, 'en' );
 		$code = $this->language;
@@ -87,11 +91,16 @@ abstract class ComplexMessages {
 		$chain = $current;
 		while ( $this->chainable && $code = Language::getFallbackFor( $code ) ) {
 			$fbdata = $this->readVariable( $group, $code );
-			if ( $this->firstMagic ) $fbdata = $this->cleanData( $defs, $fbdata );
+			if ( $this->firstMagic ) {
+				$fbdata = $this->cleanData( $defs, $fbdata );
+			}
+
 			$chain = array_merge_recursive( $chain, $fbdata );
 		}
 
-		if ( $this->firstMagic ) $chain = $this->mergeMagic( $defs, $chain );
+		if ( $this->firstMagic ) {
+			$chain = $this->mergeMagic( $defs, $chain );
+		}
 
 		return $group['data'] = array( $defs, $chain, $current );
 	}
@@ -125,11 +134,18 @@ abstract class ComplexMessages {
 		$lines = array_map( 'trim', explode( "\n", $data ) );
 		$array = array();
 		foreach ( $lines as $line ) {
-			if ( $line === '' || $line[0] === '#' || $line[0] === '<' ) continue;
-			if ( strpos( $line, '='  ) === false ) continue;
+			if ( $line === '' || $line[0] === '#' || $line[0] === '<' ) {
+				continue;
+			}
+
+			if ( strpos( $line, '='  ) === false ) {
+				continue;
+			}
 
 			list( $name, $values ) = array_map( 'trim', explode( '=', $line, 2 ) );
-			if ( $name === '' || $values === '' ) continue;
+			if ( $name === '' || $values === '' ) {
+				continue;
+			}
 
 			$data = array_map( 'trim', explode( ',', $values ) );
 			$array[$name] = $data;
@@ -151,12 +167,19 @@ abstract class ComplexMessages {
 		$array = $this->getGroups();
 		$subarray = @$array[$group]['data'][$type][$key];
 		if ( $this->elementsInArray ) {
-			if ( !$subarray || !count( $subarray ) ) return array();
+			if ( !$subarray || !count( $subarray ) ) {
+				return array();
+			}
 		} else {
-			if ( !$subarray ) return array();
+			if ( !$subarray ) {
+				return array();
+			}
 		}
 
-		if ( !is_array( $subarray ) ) $subarray = array( $subarray );
+		if ( !is_array( $subarray ) ) {
+			$subarray = array( $subarray );
+		}
+
 		return $subarray;
 	}
 
@@ -169,7 +192,9 @@ abstract class ComplexMessages {
 		}
 
 		$ { $group['var'] } = array(); # Initialize
-		if ( file_exists( $file ) ) require( $file ); # Include
+		if ( file_exists( $file ) ) {
+			require( $file ); # Include
+		}
 
 		if ( $group['code'] ) {
 			$data = (array) @$ { $group['var'] } [$code];
@@ -220,17 +245,23 @@ abstract class ComplexMessages {
 
 		foreach ( array_keys( $this->data ) as $group ) {
 			$s .= $this->header( $this->data[$group]['label'] );
-			
+
 			foreach ( $this->getIterator( $group ) as $key ) {
 				$rowContents = '';
 
 				$value = $this->val( $group, self::LANG_MASTER, $key );
-				if ( $this->firstMagic ) array_shift( $value );
+				if ( $this->firstMagic ) {
+					array_shift( $value );
+				}
+
 				$value = array_map( 'htmlspecialchars', $value );
 				$rowContents .= '<td>' . $this->formatElement( $value ) . '</td>';
 
 				$value = $this->val( $group, self::LANG_CHAIN, $key );
-				if ( $this->firstMagic ) array_shift( $value );
+				if ( $this->firstMagic ) {
+					array_shift( $value );
+				}
+
 				$value = array_map( 'htmlspecialchars', $value );
 				$value = $this->highlight( $key, $value );
 				$rowContents .= '<td>' . $this->formatElement( $value ) . '</td>';
@@ -263,7 +294,10 @@ abstract class ComplexMessages {
 	}
 
 	public function formatElement( $element ) {
-		if ( !count( $element ) ) return '';
+		if ( !count( $element ) ) {
+			return '';
+		}
+
 		if ( is_array( $element ) ) {
 			$element = array_map( 'trim', $element );
 			$element = implode( ', ', $element );
@@ -297,8 +331,9 @@ abstract class ComplexMessages {
 			foreach ( $this->getIterator( $group ) as $key ) {
 				$data = $request->getText( $this->getKeyForEdit( $key ) );
 				$data = implode( ', ', array_map( 'trim', explode( ',', $data ) ) );
-				if ( $data !== '' )
+				if ( $data !== '' ) {
 					$text .= "$key = $data\n" ;
+				}
 			}
 		}
 		return $text;
@@ -319,7 +354,6 @@ abstract class ComplexMessages {
 
 		/* Reset outdated array */
 		$this->init = false;
-
 	}
 
 	#
@@ -332,7 +366,10 @@ abstract class ComplexMessages {
 	public function validate( &$errors = array(), $filter = false ) {
 		$used = array();
 		foreach ( array_keys( $this->data ) as $group ) {
-			if (  $filter !== false && !in_array( $group, (array) $filter, true ) ) continue;
+			if (  $filter !== false && !in_array( $group, (array) $filter, true ) ) {
+				continue;
+			}
+
 			$this->validateEach( $errors, $group, $used );
 		}
 	}
@@ -365,7 +402,10 @@ abstract class ComplexMessages {
 		foreach ( $errors as $_ ) $text .= "#!!# $_\n";
 
 		foreach ( $groups = $this->getGroups() as $group => $data ) {
-			if (  $filter !== false && !in_array( $group, (array) $filter, true ) ) continue;
+			if (  $filter !== false && !in_array( $group, (array) $filter, true ) ) {
+				continue;
+			}
+
 			$text .= $this->exportEach( $group, $data );
 		}
 
@@ -394,11 +434,15 @@ abstract class ComplexMessages {
 
 			$from = self::LANG_CURRENT;
 			// Abuse of the firstMagic property, should use something proper
-			if ( $this->firstMagic ) $from = self::LANG_CHAIN;
+			if ( $this->firstMagic ) {
+				$from = self::LANG_CHAIN;
+			}
 
 			// Check for translations
 			$val = $this->val( $group, self::LANG_CURRENT, $key );
-			if ( !$val || !count( $val ) ) continue;
+			if ( !$val || !count( $val ) ) {
+				continue;
+			}
 
 			// Then get the data we really want
 			$val = $this->val( $group, $from, $key );
@@ -406,10 +450,18 @@ abstract class ComplexMessages {
 			// Remove duplicated entries, causes problems with magic words
 			// Just to be sure, it should not be possible to save invalid data anymore
 			$val = array_unique( $val /*FIXME:SORT_REGULAR*/ );
+
 			// So do empty elements...
-			foreach ( $val as $k => $v ) if ( $v === '' ) unset( $val[$k] );
-			// Another check 
-			if ( !count( $val ) ) continue;
+			foreach ( $val as $k => $v ) {
+				if ( $v === '' ) {
+					unset( $val[$k] );
+				}
+			}
+
+			// Another check
+			if ( !count( $val ) ) {
+				continue;
+			}
 
 			$normalized = array_map( array( $this, 'normalize' ), $val );
 			if ( $this->elementsInArray ) {
@@ -469,9 +521,14 @@ class SpecialPageAliasesCM extends ComplexMessages {
 		global $wgTranslateExtensionDirectory;
 		$groups = MessageGroups::singleton()->getGroups();
 		foreach ( $groups as $g ) {
-			if ( !$g instanceof ExtensionMessageGroup ) continue;
+			if ( !$g instanceof ExtensionMessageGroup ) {
+				continue;
+			}
+
 			$file = $g->getAliasFile();
-			if ( $file === null ) continue;
+			if ( $file === null ) {
+				continue;
+			}
 
 			$file = "$wgTranslateExtensionDirectory/$file";
 			if ( file_exists( $file ) ) {
@@ -487,7 +544,10 @@ class SpecialPageAliasesCM extends ComplexMessages {
 
 	public function highlight( $key, $values ) {
 		if ( count( $values ) ) {
-			if ( !isset( $values[0] ) ) throw new MWException( "Something missing from values: " .  print_r( $values, true ) );
+			if ( !isset( $values[0] ) ) {
+				throw new MWException( "Something missing from values: " .  print_r( $values, true ) );
+			}
+
 			$values[0] = "<b>$values[0]</b>";
 		}
 		return $values;
@@ -537,9 +597,14 @@ class MagicWordsCM extends ComplexMessages {
 		global $wgTranslateExtensionDirectory;
 		$groups = MessageGroups::singleton()->getGroups();
 		foreach ( $groups as $g ) {
-			if ( !$g instanceof ExtensionMessageGroup ) continue;
+			if ( !$g instanceof ExtensionMessageGroup ) {
+				continue;
+			}
+
 			$file = $g->getMagicFile();
-			if ( $file === null ) continue;
+			if ( $file === null ) {
+				continue;
+			}
 
 			$file = "$wgTranslateExtensionDirectory/$file";
 			if ( file_exists( $file ) ) {
@@ -554,10 +619,12 @@ class MagicWordsCM extends ComplexMessages {
 	}
 
 	public function highlight( $key, $values ) {
-		if ( count( $values ) && $key === 'redirect' ) $values[0] = "<b>$values[0]</b>";
+		if ( count( $values ) && $key === 'redirect' ) {
+			$values[0] = "<b>$values[0]</b>";
+		}
+
 		return $values;
 	}
-
 }
 
 class NamespaceCM extends ComplexMessages {
@@ -576,8 +643,8 @@ class NamespaceCM extends ComplexMessages {
 	}
 
 	protected $constants = array(
-		- 2 => 'NS_MEDIA',
-		- 1 => 'NS_SPECIAL',
+		-2 => 'NS_MEDIA',
+		-1 => 'NS_SPECIAL',
 		 0 => 'NS_MAIN',
 		 1 => 'NS_TALK',
 		 2 => 'NS_USER',
@@ -607,5 +674,4 @@ class NamespaceCM extends ComplexMessages {
 			}
 		}
 	}
-
 }
