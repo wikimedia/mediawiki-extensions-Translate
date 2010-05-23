@@ -204,7 +204,7 @@ class ExportMessagesTask extends ViewMessagesTask {
 	protected $id = 'export';
 
 	// N/A
-	protected function doPaging() {}
+	protected function doPaging() { }
 
 	public function output() {
 		if ( $this->group instanceof FileBasedMessageGroup ) {

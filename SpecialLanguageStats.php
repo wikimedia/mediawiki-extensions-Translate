@@ -234,14 +234,14 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 				'language' => $code
 			);
 
-			if( $translated == $total ) {
+			if ( $translated == $total ) {
 				$queryParameters['task'] = 'reviewall';
 			}
 
 			$groupLabel = $g->getLabel();
 
 			// Bold for meta groups
-			if( $g->isMeta() ) {
+			if ( $g->isMeta() ) {
 				$groupLabel = Xml::element( 'b', null, $groupLabel );
 			}
 

@@ -28,7 +28,7 @@ class SpecialManageGroups {
 		$group = MessageGroups::getGroup( $group );
 
 		// Only supported for FileBasedMessageGroups
-		if( !$group instanceof FileBasedMessageGroup ) {
+		if ( !$group instanceof FileBasedMessageGroup ) {
 			$group = null;
 		}
 
@@ -54,7 +54,7 @@ class SpecialManageGroups {
 
 			// Go to English for undefined codes.
 			$codes = array_keys( Language::getLanguageNames( false ) );
-			if( !in_array( $code, $codes ) ) {
+			if ( !in_array( $code, $codes ) ) {
 				$code = 'en';
 			}
 
@@ -154,14 +154,14 @@ class SpecialManageGroups {
 		$diff->setReducedLineNumbers();
 
 		$ignoredMessages = $collection->getTags( 'ignored' );
-		if( !is_array( $ignoredMessages ) ) {
+		if ( !is_array( $ignoredMessages ) ) {
 			$ignoredMessages = array();
 		}
 
 		$changed = array();
 		foreach ( $messages as $key => $value ) {
 			// ignored? ignore
-			if( in_array( $key, $ignoredMessages ) ) {
+			if ( in_array( $key, $ignoredMessages ) ) {
 				continue;
 			}
 

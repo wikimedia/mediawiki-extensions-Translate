@@ -572,7 +572,7 @@ class GettextMessageGroup extends MessageGroupOld {
 			// If this (valid) code is a mapped target, do not provide a file.
 			// Example: 'no' => 'nb'.
 			$mappedCodes = array_values( $this->codeMap );
-			if( $code == $origCode && in_array( $code, $mappedCodes ) ) {
+			if ( $code == $origCode && in_array( $code, $mappedCodes ) ) {
 				return '';
 			}
 

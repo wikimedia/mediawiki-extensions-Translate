@@ -81,7 +81,7 @@ foreach ( $groups as &$group ) {
 
 	foreach ( $codes as $code ) {
 		// No sync possible for unsupported language codes.
-		if( !in_array( $code, $supportedCodes ) ) {
+		if ( !in_array( $code, $supportedCodes ) ) {
 			STDOUT( "Unsupported code " . $code . ": skipping." );
 			continue;
 		}
