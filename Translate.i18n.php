@@ -88,7 +88,7 @@ Special page aliases and magic words can have multiple translations.
 Translations are separated by a comma (,).
 Namespaces can have only one translation.
 
-In namespace translations <tt>$1 talk</tt> is special. <tt>$1</tt> is replaced with sitename (for example <tt>{{ns:project_talk}}</tt>).
+In namespace translations <code>$1 talk</code> is special. <code>$1</code> is replaced with sitename (for example <code>{{ns:project_talk}}</code>).
 If it is not possible in your language to form valid expression without changing sitename, please contact a developer.
 
 You need to be in the translators group to save changes.
@@ -320,7 +320,7 @@ If you choose to ignore changes, they will be overridden on next export.',
 	'translate-import-load' => 'Load file',
 
 	'translate-import-err-type-not-supported' => 'Unable to load the file:
-Method <tt>$1</tt> is not supported.',
+Method <code>$1</code> is not supported.',
 	'translate-import-err-dl-failed' => 'Unable to fetch the file:
 $1',
 	'translate-import-err-ul-failed' => 'File upload was not successful',
