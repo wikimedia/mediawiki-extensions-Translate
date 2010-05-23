@@ -102,7 +102,9 @@ abstract class ComplexMessages {
 			$chain = $this->mergeMagic( $defs, $chain );
 		}
 
-		return $group['data'] = array( $defs, $chain, $current );
+		$data = $group['data'] = array( $defs, $chain, $current );
+
+		return $data;
 	}
 
 	/**
@@ -430,7 +432,9 @@ abstract class ComplexMessages {
 		foreach ( $this->getIterator( $group ) as $key ) {
 			$temp = "\t{$indexKeys[$key]}";
 
-			while ( strlen( $temp ) <= $padTo ) { $temp .= ' '; }
+			while ( strlen( $temp ) <= $padTo ) {
+				$temp .= ' ';
+			}
 
 			$from = self::LANG_CURRENT;
 			// Abuse of the firstMagic property, should use something proper
@@ -496,11 +500,9 @@ abstract class ComplexMessages {
 	#
 	# /Export
 	#
-
 	public function highlight( $key, $values ) {
 		return $values;
 	}
-
 }
 
 class SpecialPageAliasesCM extends ComplexMessages {
@@ -576,7 +578,6 @@ class SpecialPageAliasesCM extends ComplexMessages {
 			}
 		}
 	}
-
 }
 
 class MagicWordsCM extends ComplexMessages {
