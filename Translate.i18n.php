@@ -106,7 +106,7 @@ Changes are not saved until you click save button below.',
 	'translate-magic-cm-comment' => 'Comment:',
 	'translate-magic-cm-save'    => 'Save',
 
-	'translate-magic-cm-updatedusing' => 'Updated using [[Special:Magic]]',
+	'translate-magic-cm-updatedusing' => 'Updated using [[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]]',
 	'translate-magic-cm-savefailed'   => 'Save failed',
 
 	'translate-magic-special'   => 'Special page aliases',

@@ -350,7 +350,7 @@ abstract class ComplexMessages {
 		$title = Title::newFromText( 'MediaWiki:' . $this->getKeyForSave() );
 		$article = new Article( $title );
 
-		$data = "# DO NOT EDIT THIS PAGE DIRECTLY! Use [[Special:Magic]].\n<pre>\n" . $this->formatForSave( $request ) . "\n</pre>";
+		$data = "# DO NOT EDIT THIS PAGE DIRECTLY! Use [[Special:AdvancedTranslate]].\n<pre>\n" . $this->formatForSave( $request ) . "\n</pre>";
 
 		$comment = $request->getText( 'comment', wfMsgForContent( self::MSG . 'updatedusing' ) );
 		$status = $article->doEdit( $data, $comment, 0 );
