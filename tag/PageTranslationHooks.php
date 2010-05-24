@@ -186,9 +186,10 @@ class PageTranslationHooks {
 		$languages = array();
 		foreach ( $status as $code => $percent ) {
 			$name = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() );
+			$name = htmlspecialchars( $name ); // Unlikely, but better safe
 
 			/* Percentages are too accurate and take more
-			 * space than plain images */
+			 * space than simple images */
 			$percent *= 100;
 			if     ( $percent < 20 ) $image = 1;
 			elseif ( $percent < 40 ) $image = 2;
@@ -210,14 +211,16 @@ class PageTranslationHooks {
 			$_title = Title::makeTitle( $title->getNamespace(), $title->getDBkey() . $suffix );
 
 			// For some reason self-links are not done automatically
+			if ( $code === $wgLang->getCode() ) {
+				$label = Html::rawElement( 'b', null, $label );
+			}
 			if ( $parser->getTitle()->getText() === $_title->getText() ) {
-				$languages[] = "<b>$label</b>";
+				$languages[] = "$label";
 			} else {
-				$languages[] = $sk->link( $_title, $label );
+				$languages[] = $sk->link( $_title, $label, array(), array(), array( 'known' ) );
 			}
 		}
 
-		wfLoadExtensionMessages( 'PageTranslation' );
 		$legend = wfMsg( 'tpt-languages-legend' );
 		$languages = implode( '&nbsp;• ', $languages );
 
@@ -344,7 +347,6 @@ FOO;
 		$marked, $ready ) {
 
 		global $wgUser, $wgLang;
-		wfLoadExtensionMessages( 'PageTranslation' );
 
 		$title = $page->getTitle();
 		$sk = $wgUser->getSkin();
@@ -385,14 +387,11 @@ FOO;
 		}
 
 		if ( !count( $actions ) ) return;
-		$legend  = "<div style=\"font-size: x-small; text-align: center\">";
-		if ( method_exists( $wgLang, 'semicolonList' ) ) {
-			// BC for <1.15
-			$legend .= $wgLang->semicolonList( $actions );
-		} else {
-			$legend .= implode( '; ', $actions );
-		}
-		$legend .= '</div><hr />';
+		$legend  = Html::rawElement(
+			'div',
+			array( 'style' => 'font-size: x-small; text-align: center;' ),
+			$wgLang->semicolonList( $actions )
+		) . Html::element( 'hr' );
 		
 		global $wgOut;
 		$wgOut->addHTML( $legend );
@@ -416,7 +415,6 @@ FOO;
 		$url = $page->getTranslationUrl( $code );
 
 		// Output
-		wfLoadExtensionMessages( 'PageTranslation' );
 		$wrap = '<div style="font-size: x-small; text-align: center">$1</div>';
 		
 		$wgOut->wrapWikiMsg( $wrap, array( 'tpt-translation-intro', $url, $titleText, $per ) );
