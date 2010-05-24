@@ -76,6 +76,10 @@ class MessageTable {
 		);
 
 		$wgOut->addScript( Skin::makeVariablesScript( $vars ) );
+
+		// Might be needed, but ajax doesn't load it
+		$diff = new DifferenceEngine;
+		$diff->showDiffStyle();
 	}
 
 
