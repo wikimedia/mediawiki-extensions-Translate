@@ -74,10 +74,18 @@ The page you are trying to edit does not seem to correspond any page marked for 
 
 	'tpt-download-page' => 'Export page with translations',
 
+	'pt-parse-open' => 'Unbalanced &lt;translate> tag.
+Translation template: <pre>$1</pre>',
+	'pt-parse-close' => 'Unbalanced &lt;/translate> tag.
+Translation template: <pre>$1</pre>',
+	'pt-parse-nested' => 'Nested &lt;translate> sections are not allowed.
+Tag text: <pre>$1</pre>',
 	'pt-shake-multiple' => 'Multiple section markers for one section.
-Section text:
-$1
-',
+Section text: <pre>$1</pre>',
+	'pt-shake-position' => 'Section markers in unexpected position.
+Section text: <pre>$1</pre>',
+	'pt-shake-empty' => 'Empty section for marker $1.',
+
 
 );
 

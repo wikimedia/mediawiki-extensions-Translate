@@ -37,11 +37,20 @@ class PageTranslationParserTester extends Maintenance {
 
 			$pattern = realpath( "$testDirectory" ) . "/$pagename";
 
+			$failureExpected = strpos( $pagename, 'Fail' ) === 0;
+
 			try {
 				$parse = $translatablePage->getParse();
+				if ( $failureExpected ) {
+					$target = $parse->getTranslationPageText( new TestMessageCollection( "foo" ) );
+					$this->output( "Testfile $filename should have failed... see $pattern.pttarget.fail" );
+					file_put_contents( "$pattern.pttarget.fail", $target );
+				}
 			} catch ( TPException $e ) {
-				$this->output( "Testfile $filename failed to parse... see $pattern.ptfile.fail" );
-				file_put_contents( "$pattern.ptfile.fail", $e->getMessage() );
+				if ( !$failureExpected ) {
+					$this->output( "Testfile $filename failed to parse... see $pattern.ptfile.fail" );
+					file_put_contents( "$pattern.ptfile.fail", $e->getMessage() );
+				}
 				continue;
 			}
 

@@ -77,6 +77,7 @@ $wgHooks['ArticleSaveComplete'][] = 'TranslationMemoryUpdater::update';
 
 $wgEnablePageTranslation = false;
 $wgPageTranslationNamespace = 1198;
+$wgTranslateStaticTags = false;
 
 $wgJobClasses['RenderJob'] = 'RenderJob';
 $wgAvailableRights[] = 'translate';
@@ -277,6 +278,8 @@ function efTranslateInit() {
 
 		// Check syntax for <translate>
 		$wgHooks['ArticleSave'][] = 'PageTranslationHooks::tpSyntaxCheck';
+		$wgHooks['EditFilter'][] = 'PageTranslationHooks::tpSyntaxCheckForEditPage';
+
 
 		// Add transtag to page props for discovery
 		$wgHooks['ArticleSaveComplete'][] = 'PageTranslationHooks::addTranstag';

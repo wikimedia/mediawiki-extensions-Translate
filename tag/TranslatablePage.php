@@ -2,6 +2,10 @@
 
 /**
  * Class to parse translatable wiki pages.
+ *
+ * @author Niklas Laxström
+ * @copyright Copyright © 2009-2010 Niklas Laxström
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 class TranslatablePage {
 	/**
@@ -142,7 +146,6 @@ class TranslatablePage {
 			$re = '~(<translate>)\s*(.*?)(</translate>)~s';
 			$matches = array();
 			$ok = preg_match_all( $re, $text, $matches, PREG_OFFSET_CAPTURE );
-			if ( $ok === false ) return array( 'pt-error', 'tag', $text );
 			if ( $ok === 0 ) break; // No matches
 
 			// Do-placehold for the whole stuff
@@ -159,20 +162,26 @@ class TranslatablePage {
 			$len   = strlen( $matches[2][0][0] ); // len of the content
 			$end   = $start + $len;
 
-			$ret = $this->sectionise( $sections, substr( $contents, $start, $len ) );
+			$sectiontext = substr( $contents, $start, $len );
+
+			if ( strpos( $sectiontext, '<translate>' ) !== false ) {
+				throw new TPException( array( 'pt-parse-nested', $sectiontext ) );
+			}
+
+			$ret = $this->sectionise( $sections, $sectiontext );
 
 			$tagPlaceHolders[$ph] =
 				self::index_replace( $contents, $ret, $start, $end );
 		}
 
-		if ( strpos( $text, '<translate>' ) !== false ) {
-			$text = str_replace( "\n", '\n', $text );
-			throw new TPException( array( 'pt-parse-open', $text ) );
+		$prettyTemplate = $text;
+		foreach ( $tagPlaceHolders as $ph => $value ) {
+			$prettyTemplate = str_replace( $ph, '[...]', $prettyTemplate );
 		}
-
-		if ( strpos( $text, '</translate>' ) !== false ) {
-			$text = str_replace( "\n", '\n', $text );
-			throw new TPException( array( 'pt-parse-close', $text ) );
+		if ( strpos( $text, '<translate>' ) !== false ) {
+			throw new TPException( array( 'pt-parse-open', $prettyTemplate ) );
+		} elseif ( strpos( $text, '</translate>' ) !== false ) {
+			throw new TPException( array( 'pt-parse-close', $prettyTemplate ) );
 		}
 
 		foreach ( $tagPlaceHolders as $ph => $value ) {
@@ -242,7 +251,9 @@ class TranslatablePage {
 		$re = '~<!--T:(.*?)-->~';
 		$matches = array();
 		$count = preg_match_all( $re, $content, $matches, PREG_SET_ORDER );
-		if ( $count > 1 ) throw new TPException( array( 'pt-shake-multiple', $content ) );
+		if ( $count > 1 ) {
+			throw new TPException( array( 'pt-shake-multiple', $content ) );
+		}
 
 		$section = new TPSection;
 		if ( $count === 1 ) {
@@ -250,10 +261,17 @@ class TranslatablePage {
 				list( /*full*/, $id ) = $match;
 				$section->id = $id;
 
-				$rer1 = '~^\s*<!--T:(.*?)-->\s*~'; // Normal sections
-				$rer2 = '~\s*<!--T:(.*?)-->~'; // Sections with title
+				// Currently handle only these two standard places.
+				// Is this too strict?
+				$rer1 = '~^<!--T:(.*?)-->\n~'; // Normal sections
+				$rer2 = '~\s*<!--T:(.*?)-->\n~'; // Sections with title
 				$content = preg_replace( $rer1, '', $content );
 				$content = preg_replace( $rer2, '', $content );
+				if ( preg_match( $re, $content ) === 1 ) {
+					throw new TPException( array( 'pt-shake-position', $content ) );
+				} elseif ( trim( $content ) === '' ) {
+					throw new TPException( array( 'pt-shake-empty', $id ) );
+				}
 			}
 		} else {
 			// New section
@@ -453,6 +471,11 @@ class TranslatablePage {
 			throw new MWException( "Invalid tag $tag requested" );
 		}
 
+		global $wgTranslateStaticTags;
+		if ( is_array($wgTranslateStaticTags) ) {
+			return $wgTranslateStaticTags[$tag];
+		}
+
 		// Simple static cache
 		static $tagcache = array();
 
@@ -482,14 +505,23 @@ class TranslatablePage {
 		return $page;
 	}
 
-	public static function changeTitleText( Title $title, $text ) {
+	protected static function changeTitleText( Title $title, $text ) {
 		return Title::makeTitleSafe( $title->getNamespace(), $text );
 	}
 }
 
+/**
+ * Class to signal translatable page parser exceptions.
+ */
 class TPException extends MWException {
+	protected $msg = null;
 	public function __construct( $msg ) {
+		$this->msg = $msg;
 		parent::__construct( call_user_func_array( 'wfMsg', $msg ) );
+	}
+
+	public function getMsg() {
+		return $this->msg;
 	}
 }
 

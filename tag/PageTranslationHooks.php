@@ -237,21 +237,32 @@ class PageTranslationHooks {
 FOO;
 	}
 
-	// When attempting to save
+	// To display nice error for editpage
+	public static function tpSyntaxCheckForEditPage( $editpage, $text, $section, &$error, $summary ) {
+		if ( strpos( $text, '<translate>' ) === false ) return true;
+		$page = TranslatablePage::newFromText( $editpage->mTitle, $text );
+		try {
+			$page->getParse();
+		} catch ( TPException $e ) {
+			$error .= Html::rawElement( 'div', array( 'class' => 'error' ), $e->getMessage() );
+		}
+		return true;
+	}
+
+	/**
+	 * When attempting to save, last resort. Edit page would only display
+	 * edit conflict if there wasn't tpSyntaxCheckForEditPage
+	 */
 	public static function tpSyntaxCheck( $article, $user, $text, $summary,
 			$minor, $_, $_, $flags, $status ) {
 		// Quick escape on normal pages
-		if ( strpos( $text, '</translate>' ) === false ) return true;
+		if ( strpos( $text, '<translate>' ) === false ) return true;
 
 		$page = TranslatablePage::newFromText( $article->getTitle(), $text );
 		try {
-			/* This does not catch all problems yet,
-			 * like markup spanning between sections. */
 			$page->getParse();
 		} catch ( TPException $e ) {
-			// FIXME: throws "PHP Notice:  Undefined variable: ret" when <translate>/</translate> is uneven
-			// and an 'edit conflict'.
-			call_user_func_array( array( $status, 'fatal' ), $ret );
+			call_user_func_array( array( $status, 'fatal' ), $e->getMsg() );
 			return false;
 		}
 
@@ -281,7 +292,6 @@ FOO;
 			if ( $group === null ) {
 				// No group means that the page is currently not 
 				// registered to any page translation message groups
-				wfLoadExtensionMessages( 'PageTranslation' );
 				$result = array( 'tpt-unknown-page' );
 				return false;
 			}
@@ -297,8 +307,6 @@ FOO;
 
 			if ( $page->getMarkedTag() ) {
 				list( , $code ) = TranslateUtils::figureMessage( $title->getText() );
-				wfLoadExtensionMessages( 'PageTranslation' );
-				// FIXME: Core chokes on this, passing an array as first parameter to wfMsgNoTrans
 				$result = array(
 					'tpt-target-page',
 					$page->getTitle()->getPrefixedText(),
