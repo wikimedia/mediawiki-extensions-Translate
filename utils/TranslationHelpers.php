@@ -112,7 +112,8 @@ class TranslationHelpers {
 		$all = array(
 			'other-languages' => array( $this, 'getOtherLanguagesBox' ),
 			'translation-memory' => array( $this, 'getSuggestionBox' ),
-			'page-translation' => array( $this, 'getPageDiff' ),
+			'translation-diff' => array( $this, 'getPageDiff' ),
+			'page-translation' => array( $this, 'getTranslationPageDiff' ),
 			'separator' => array( $this, 'getSeparatorBox' ),
 			'documenation' => array( $this, 'getDocumentationBox' ),
 			'definition' => array( $this, 'getDefinitionBox' ),
@@ -495,6 +496,46 @@ class TranslationHelpers {
 	}
 
 	protected function getPageDiff() {
+		if ( $this->group instanceof WikiPageMessageGroup ) return null;
+
+		// Shortcuts
+		$code = $this->targetLanguage;
+		$key = $this->page;
+
+		$definitionTitle = Title::makeTitleSafe( $this->title->getNamespace(), "$key/en" );
+		if ( !$definitionTitle || !$definitionTitle->exists() ) {
+			return null;
+		}
+
+		$db = wfGetDB( DB_MASTER );
+		$id = $db->selectField( 'revtag_type', 'rtt_id',
+			array( 'rtt_name' => 'tp:transver' ), __METHOD__ );
+
+		$conds = array(
+			'rt_page' => $this->title->getArticleId(),
+			'rt_type' => $id,
+			'rt_revision' => $this->title->getLatestRevID(),
+		);
+
+		$latestRevision = $definitionTitle->getLatestRevID();
+		$translationRevision =  $db->selectField( 'revtag', 'rt_value', $conds, __METHOD__ );
+		var_dump($translationRevision);
+
+		if ( $translationRevision === false ) return null;
+
+		$oldtext = Revision::newFromTitle( $definitionTitle, $translationRevision )->getText();
+		$newtext = Revision::newFromTitle( $definitionTitle, $latestRevision )->getText();
+
+		if ( $oldtext === $newtext ) return null;
+
+		$diff = new DifferenceEngine;
+		$diff->setText( $oldtext, $newtext );
+		$diff->setReducedLineNumbers();
+		$diff->showDiffStyle();
+		return $diff->getDiff( wfMsgHtml( 'tpt-diff-old' ), wfMsgHtml( 'tpt-diff-new' ) );
+	}
+
+	protected function getTranslationPageDiff() {
 		global $wgEnablePageTranslation;
 		if ( !$wgEnablePageTranslation ) return null;
 		if ( !$this->group instanceof WikiPageMessageGroup ) return null;

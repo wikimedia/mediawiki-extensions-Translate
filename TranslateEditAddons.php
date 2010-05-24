@@ -302,7 +302,7 @@ EOEO;
 			$rev = $revision->getID();
 		}
 
-		// Add the ready tag
+		// <fuzzy tag
 		$dbw = wfGetDB( DB_MASTER );
 
 		$id = $dbw->selectField( 'revtag_type', 'rtt_id', array( 'rtt_name' => 'fuzzy' ), __METHOD__ );
@@ -317,6 +317,26 @@ EOEO;
 
 		// Add the fuzzy tag if needed
 		if ( $fuzzy !== false ) {
+			$dbw->insert( 'revtag', $conds, __METHOD__ );
+		}
+		// fuzzy>
+
+		// Diffs for changed messages
+		if ( $group instanceof WikiPageMessageGroup ) return true;
+		$definitionTitle = Title::makeTitleSafe( $title->getNamespace(), "$key/en" );
+		if ( $definitionTitle && $definitionTitle->exists() ) {
+			$definitionRevision = $definitionTitle->getLatestRevID();
+
+			$id = $dbw->selectField( 'revtag_type', 'rtt_id',
+				array( 'rtt_name' => 'tp:transver' ), __METHOD__ );
+
+			$conds = array(
+				'rt_page' => $title->getArticleId(),
+				'rt_type' => $id,
+				'rt_revision' => $rev,
+			);
+			$dbw->delete( 'revtag', $conds, __METHOD__ );
+			$conds['rt_value'] = $definitionRevision;
 			$dbw->insert( 'revtag', $conds, __METHOD__ );
 		}
 
