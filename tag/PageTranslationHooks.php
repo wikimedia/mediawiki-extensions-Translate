@@ -217,7 +217,7 @@ class PageTranslationHooks {
 			if ( $parser->getTitle()->getText() === $_title->getText() ) {
 				$languages[] = "$label";
 			} else {
-				$languages[] = $sk->link( $_title, $label, array(), array(), array( 'known' ) );
+				$languages[] = $sk->linkKnown( $_title, $label );
 			}
 		}
 
@@ -455,7 +455,7 @@ FOO;
 		$href = SpecialPage::getTitleFor( 'Export' )->getLocalUrl( $params );
 		$linkText = wfMsgHtml( 'tpt-download-page' );
 
-		print "<li id=\"t-download-as-pdf\"><a href=\"$href\" rel=\"nofollow\">$linkText</a></li>";
+		print "<li id=\"t-export-translationpages\"><a href=\"$href\" rel=\"nofollow\">$linkText</a></li>";
 		return true;
 	}
 
