@@ -89,7 +89,7 @@ class TPParse {
 
 		$res = $db->select( $tables, $vars, $conds, __METHOD__ );
 		foreach ( $res as $r ) {
-			$section = new TPsection;
+			$section = new TPSection;
 			$section->id = $r->trs_key;
 			$section->text = $r->trs_text;
 			$section->type = 'db';

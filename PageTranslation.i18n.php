@@ -31,6 +31,7 @@ Name: $1',
 	
 	# Specific page on the special page
 	'tpt-badtitle' => 'Page name given ($1) is not a valid title',
+	'tpt-nosuchpage' => 'Page $1 does not exist',
 	'tpt-oldrevision' => '$2 is not the latest version of the page [[$1]].
 Only latest versions can be marked for translation.',
 	'tpt-notsuitable' => 'Page $1 is not suitable for translation.
@@ -2458,9 +2459,6 @@ $messages['ru'] = array(
 	'tpt-install' => 'Запустите php-скрипт maintenance/update.php или веб-установку, чтобы включить возможность перевода страниц.',
 	'tpt-render-summary' => 'Обновление для соответствия новой версии исходной страницы.',
 	'tpt-download-page' => 'Экспортировать страницу с переводами',
-	'pt-shake-multiple' => 'Несколько маркеров раздела в одном разделе.
-Текст раздела:
-$1',
 );
 
 /** Rusyn (русиньскый язык)

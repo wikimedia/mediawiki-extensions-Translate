@@ -15,14 +15,13 @@ class SpecialPageTranslation extends SpecialPage {
 	}
 
 	public function execute( $parameters ) {
-		wfLoadExtensionMessages( 'PageTranslation' );
 		$this->setHeaders();
 
 		global $wgRequest, $wgOut, $wgUser;
 		$this->user = $wgUser;
 
 		$target = $wgRequest->getText( 'target', $parameters );
-		$revision = $wgRequest->getText( 'revision', 0 );
+		$revision = $wgRequest->getInt( 'revision', 0 );
 
 		// No specific page or invalid input
 		$title = Title::newFromText( $target );
@@ -42,21 +41,24 @@ class SpecialPageTranslation extends SpecialPage {
 		}
 
 		// We are processing some specific page
-		if ( $revision === '0' ) {
-			// Get the latest revision
-			$revision = $title->getLatestRevID();
-		} elseif ( $revision !== $title->getLatestRevID() ) {
-			// We do want to notify the reviewer if the underlying page changes during review
-			$wgOut->addWikiMsg( 'tpt-oldrevision', $title->getPrefixedText(), $revision );
-			$this->listPages();
+		if ( !$title->exists() ) {
+			$wgOut->addWikiMsg( 'tpt-nosuchpage', $title->getPrefixedText() );
 			return;
 		}
 
+		if ( $revision === 0 ) {
+			// Get the latest revision
+			$revision = $title->getLatestRevID();
+		}
 		$page = TranslatablePage::newFromRevision( $title, $revision );
-
 		if ( !$page instanceof TranslatablePage ) {
 			$wgOut->addWikiMsg( 'tpt-notsuitable', $title->getPrefixedText(), $revision );
-			$this->listPages();
+			return;
+		}
+
+		if ( $revision !== $title->getLatestRevID() ) {
+			// We do want to notify the reviewer if the underlying page changes during review
+			$wgOut->addWikiMsg( 'tpt-oldrevision', $title->getPrefixedText(), $revision );
 			return;
 		}
 
