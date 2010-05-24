@@ -322,6 +322,7 @@ EOEO;
 		// fuzzy>
 
 		// Diffs for changed messages
+		if ( $fuzzy !== false ) return true;
 		if ( $group instanceof WikiPageMessageGroup ) return true;
 		$definitionTitle = Title::makeTitleSafe( $title->getNamespace(), "$key/en" );
 		if ( $definitionTitle && $definitionTitle->exists() ) {
