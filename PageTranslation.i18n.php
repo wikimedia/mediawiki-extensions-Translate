@@ -44,14 +44,19 @@ Before marking this version for translation, check that the changes to sections 
 	'tpt-mark-summary' => 'Marked this version for translation',
 	'tpt-edit-failed' => 'Could not update the page: $1',
 	'tpt-already-marked' => 'The latest version of this page has already been marked for translation.',
+	'tpt-unmarked' => 'Page $1 is no longer marked for translation.',
 
 	# Page list on the special page
 	'tpt-list-nopages' => 'No pages are marked for translation nor ready to be marked for translation.',
 	'tpt-old-pages' => 'Some version of {{PLURAL:$1|this page has|these pages have}} been marked for translation.',
-	'tpt-new-pages' => '{{PLURAL:$1|This page contains|These pages contain}} text with translation tags, but no version of {{PLURAL:$1|this page is|these pages are}} currently marked for translation.',
+	'tpt-new-pages' => '{{PLURAL:$1|This page contains|These pages contain}} text with translation tags,
+but no version of {{PLURAL:$1|this page is|these pages are}} currently marked for translation.',
+	'tpt-other-pages' => 'Old version of {{PLURAL:$1|this page is|these pages are}} marked for translation,
+but the current version cannot be marked for translation.',
 	'tpt-rev-latest' => 'latest version',
 	'tpt-rev-old' => 'difference to previous marked version',
 	'tpt-rev-mark-new' => 'mark this version for translation',
+	'tpt-rev-unmark' => 'remove this page from translation',
 	'tpt-translate-this' => 'translate this page',
 
 	# Source and translation page headers

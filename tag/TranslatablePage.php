@@ -316,6 +316,19 @@ class TranslatablePage {
 		return $this->getTag( 'tp:tag' );
 	}
 
+	public function removeTags() {
+		$dbw = wfGetDB( DB_MASTER );
+		$conds = array(
+			'rt_page' => $this->getTitle()->getArticleId(),
+			'rt_type' => array(
+				$this->getTagId( 'tp:mark' ),
+				$this->getTagId( 'tp:tag' ),
+			),
+		);
+
+		$dbw->delete( 'revtag', $conds, __METHOD__ );
+	}
+
 	// Returns false if not found
 	protected function getTag( $tag, $dbt = DB_SLAVE ) {
 		$db = wfGetDB( $dbt );
