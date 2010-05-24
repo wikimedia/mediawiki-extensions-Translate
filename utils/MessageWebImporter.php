@@ -275,7 +275,7 @@ class MessageWebImporter {
 
 	/**
 	 * Perform an action on a given group/key/code
-	 * 
+	 *
 	 * @param $action String: import/conflict/ignore
 	 * @param $group Object: group object
 	 * @param $key String: message key
@@ -305,7 +305,8 @@ class MessageWebImporter {
 		} elseif ( $action === 'fuzzy' && $code !== 'en' ) {
 			$message = self::makeTextFuzzy( $message );
 			return self::doImport( $title, $message, $comment, $user, $editFlags );
-
+		} elseif ( $action === 'fuzzy' && $code == 'en' ) {
+			return self::doFuzzy( $title, $message, $comment, $user, $editFlags );
 		} else {
 			throw new MWException( "Unhandled action $action" );
 		}
@@ -330,15 +331,24 @@ class MessageWebImporter {
 	}
 
 	public static function doFuzzy( $title, $message, $comment, $user, $editFlags = 0 ) {
+		global $wgUser;
+
+		if ( !$wgUser->isAllowed( 'translate-manage' ) ) {
+			return wfMsg( 'badaccess-group0' );
+		}
+
 		$dbw = wfGetDB( DB_MASTER );
 
-		$titleText = $title->getDBKey();
+		// Work on all subpages of base title.
+		$titleText = $title->getBaseText();
 
-		$condArray = array(
-			'page_namespace' => $title->getNamespace(),
+		$namespace = $title->getNamespace();
+		$titleText = $dbw->escapeLike( $titleText );
+		$conds= array(
+			'page_namespace' => $namespace,
 			'page_latest=rev_id',
 			'rev_text_id=old_id',
-			"page_title LIKE '{$dbw->escapeLike( $titleText )}/%%'"
+			'page_title LIKE \'' . $titleText . '\/%\''
 		);
 
 		$rows = $dbw->select(
@@ -348,18 +358,26 @@ class MessageWebImporter {
 			__METHOD__
 		);
 
-		$changed = array();
-		
+		// Edit with fuzzybot if there is no user.
 		if ( !$user ) {
 			$user = self::getFuzzyBot();
 		}
 
+		// Process all rows.
+		$changed = array();
 		foreach ( $rows as $row ) {
 			$ttitle = Title::makeTitle( $row->page_namespace, $row->page_title );
 
-			$text = Revision::getRevisionText( $row );
-			$text = self::makeTextFuzzy( $text );
+			// No fuzzy for English original
+			if( $ttitle->getSubpageText() == 'en' ) {
+				// Use imported text, not database text.
+				$text = $message;
+			} else {
+				$text = Revision::getRevisionText( $row );
+				$text = self::makeTextFuzzy( $text );
+			}
 
+			// Do actual import
 			$changed[] = self::doImport(
 				$ttitle,
 				$text,
@@ -367,32 +385,13 @@ class MessageWebImporter {
 				$user,
 				$editFlags
 			);
-
-			if ( $this->checkProcessTime() ) {
-				break;
-			}
 		}
 
-		if ( count( $changed ) === count( $rows ) ) {
-			$comment = wfMsgForContentNoTrans( 'translate-manage-import-summary' );
-			// FIXME: Leftover of refactoring from SpecialManageGroups::doFuzzy()
-			//        Did not know what to do with this. Have to ask Nikerabbit.
-			//        Probably have to add an extra parameter, but this part should
-			//        have had a comment.
-			// $title = Title::makeTitleSafe( $title->getNamespace(), $title->getPrefixedDbKey() . '/en' );
-			$changed[] = self::doImport(
-				$title,
-				$message,
-				$comment,
-				$user,
-				$editFlags
-			);
-		}
-
+		// Format return text
 		$text = '';
 		foreach ( $changed as $c ) {
 			$key = array_shift( $c );
-			$text = "* " . wfMsgExt( $key, array(), $c );
+			$text .= "* " . wfMsgExt( $key, array(), $c ) . "\n";
 		}
 
 		return array( 'translate-manage-import-fuzzy', "\n" . $text );
