@@ -7,12 +7,15 @@ class PageTranslationHooks {
 
 	public static function renderTagPage( $parser, &$text, $state ) {
 		$title = $parser->getTitle();
-		if ( strpos( $text, '</translate>' ) !== false ) {
+		if ( strpos( $text, '<translate>' ) !== false ) {
+			$nowiki = array();
+			$text = TranslatablePage::armourNowiki( $nowiki, $text );
 			$cb = array( __CLASS__, 'replaceTagCb' );
 			# Remove the tags nicely, trying to not leave excess whitespace lying around
-			$text = preg_replace_callback( '~(\n?<translate>\s*?)(.*?)(\s*?</translate>)~s', $cb, $text );
+			$text = preg_replace_callback( '~(<translate>)\s*(.*?)(</translate>)~s', $cb, $text );
 			# Replace variable markers
 			$text = preg_replace_callback( '~(<tvar[^<>]+>)(.*)(</>)~s', $cb, $text );
+			$text = TranslatablePage::unArmourNowiki( $nowiki, $text );
 		}
 
 		// For translation pages, parse plural, grammar etc with correct language
@@ -279,7 +282,9 @@ FOO;
 
 		// Add the ready tag
 		$page = TranslatablePage::newFromTitle( $article->getTitle() );
-		$page->addReadyTag( $revision->getId() );
+		if ( $page->getParse()->countSections() > 0 ) {
+			$page->addReadyTag( $revision->getId() );
+		}
 
 		return true;
 	}

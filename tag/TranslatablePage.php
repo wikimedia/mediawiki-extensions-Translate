@@ -139,6 +139,9 @@ class TranslatablePage {
 
 		$text = $this->getText();
 
+		$nowiki = array();
+		$text = self::armourNowiki( $nowiki, $text );
+
 		$sections = array();
 		$tagPlaceHolders = array();
 
@@ -149,7 +152,7 @@ class TranslatablePage {
 			if ( $ok === 0 ) break; // No matches
 
 			// Do-placehold for the whole stuff
-			$ph    = $this->getUniq();
+			$ph    = self::getUniq();
 			$start = $matches[0][0][1];
 			$len   = strlen( $matches[0][0][0] );
 			$end   = $start + $len;
@@ -167,6 +170,8 @@ class TranslatablePage {
 			if ( strpos( $sectiontext, '<translate>' ) !== false ) {
 				throw new TPException( array( 'pt-parse-nested', $sectiontext ) );
 			}
+
+			$sectiontext = self::unArmourNowiki( $nowiki, $sectiontext );
 
 			$ret = $this->sectionise( $sections, $sectiontext );
 
@@ -188,6 +193,8 @@ class TranslatablePage {
 			$text = str_replace( $ph, $value, $text );
 		}
 
+		$text = self::unArmourNowiki( $nowiki, $text );
+
 		$parse = new TPParse( $this->getTitle() );
 		$parse->template = $text;
 		$parse->sections = $sections;
@@ -200,10 +207,27 @@ class TranslatablePage {
 
 	// Inner functionality //
 
+	public static function armourNowiki( &$holders, $text ) {
+		$re = '~(<nowiki>)(.*?)(</nowiki>)~';
+		while ( preg_match( $re, $text, $matches ) ) {
+			$ph = self::getUniq();
+			$text = str_replace( $matches[0], $ph, $text );
+			$holders[$ph] = $matches[0];
+		}
+		return $text;
+	}
+
+	public static function unArmourNowiki( $holders, $text ) {
+		foreach ( $holders as $ph => $value ) {
+			$text = str_replace( $ph, $value, $text );
+		}
+		return $text;
+	}
+
 	/**
 	 * Returns a random string that can be used as placeholder.
 	 */
-	protected function getUniq() {
+	protected static function getUniq() {
 		static $i = 0;
 		return "\x7fUNIQ" . dechex( mt_rand( 0, 0x7fffffff ) ) . dechex( mt_rand( 0, 0x7fffffff ) ) . '|' . $i++;
 	}
@@ -229,7 +253,7 @@ class TranslatablePage {
 			if ( trim( $_ ) === '' ) {
 				$template .= $_;
 			} else {
-				$ph = $this->getUniq();
+				$ph = self::getUniq();
 				$sections[$ph] = $this->shakeSection( $_ );
 				$template .= $ph;
 			}

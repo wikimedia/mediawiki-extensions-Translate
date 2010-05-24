@@ -141,9 +141,13 @@ class TPParse {
 			$text = str_replace( $ph, $sectiontext, $text );
 		}
 
+		$nph = array();
+		$text = TranslatablePage::armourNowiki( $nph, $text );
+
 		// Remove translation markup
 		$cb = array( __CLASS__, 'replaceTagCb' );
 		$text = preg_replace_callback( '~(<translate>\n?)(.*?)(\n?</translate>)~s', $cb, $text );
+		$text = TranslatablePage::unArmourNowiki( $nph, $text );
 
 		return $text;
 	}
