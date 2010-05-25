@@ -136,7 +136,7 @@ class TPParse {
 					$sectiontext = str_replace( TRANSLATE_FUZZY, '', $translation );
 
 					if ( $msg->hasTag( 'fuzzy' ) ) {
-						$sectiontext = "<div class=\"mw-translate-fuzzy\">\n$sectiontext\n</div>";
+						$sectiontext = "<span class=\"mw-translate-fuzzy\">\n$sectiontext\n</span>";
 					}
 				}
 			}
