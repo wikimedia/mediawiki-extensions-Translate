@@ -304,14 +304,14 @@ class SpecialPageTranslation extends SpecialPage {
 			'method' => 'post',
 			'action' => $this->getTitle()->getFullURL(),
 			'class'  => 'mw-tpt-sp-markform',
-			'token'  => $this->user->editToken(),
 		);
 
 		$wgOut->addHTML(
 			Xml::openElement( 'form', $formParams ) .
 			Xml::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
 			Xml::hidden( 'revision', $page->getRevision() ) .
-			Xml::hidden( 'target', $page->getTitle()->getPrefixedtext() )
+			Xml::hidden( 'target', $page->getTitle()->getPrefixedtext() ) .
+			Xml::hidden( 'token', $this->user->editToken() )
 		);
 
 		$wgOut->wrapWikiMsg( '==$1==', 'tpt-sections-oldnew' );
