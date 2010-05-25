@@ -7,6 +7,7 @@
  * @copyright Copyright © 2009-2010 Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
+
 class TPParse {
 	protected $title = null;
 
@@ -32,8 +33,8 @@ class TPParse {
 		foreach ( $sections as $ph => $s ) {
 			$text = str_replace( $ph, "<!--T:{$s->id}-->", $text );
 		}
-		return $text;
 
+		return $text;
 	}
 
 	public function getSectionsForSave() {
@@ -45,7 +46,10 @@ class TPParse {
 			$highest = max( $highest, $key );
 		}
 
-		foreach ( $sections as $_ ) $highest = max( $_->id, $highest );
+		foreach ( $sections as $_ ) {
+			$highest = max( $_->id, $highest );
+		}
+
 		foreach ( $sections as $s ) {
 			$s->type = 'old';
 
@@ -68,17 +72,21 @@ class TPParse {
 
 	public function getDeletedSections() {
 		$sections = $this->getSectionsForSave();
-
 		$deleted = $this->dbSections;
+
 		foreach ( $sections as $s ) {
-			if ( isset( $deleted[$s->id] ) )
+			if ( isset( $deleted[$s->id] ) ) {
 				unset( $deleted[$s->id] );
+			}
 		}
+
 		return $deleted;
 	}
 
 	protected function loadFromDatabase() {
-		if ( $this->dbSections !== null ) return;
+		if ( $this->dbSections !== null ) {
+			return;
+		}
 
 		$this->dbSections = array();
 
@@ -99,9 +107,11 @@ class TPParse {
 
 	public function getSourcePageText() {
 		$text = $this->template;
+
 		foreach ( $this->sections as $ph => $s ) {
 			$text = str_replace( $ph, $s->getMarkedText(), $text );
 		}
+
 		return $text;
 	}
 
@@ -156,6 +166,7 @@ class TPParse {
 		foreach ( $variables as $key => $value ) {
 			$text = str_replace( $key, $value, $text );
 		}
+
 		return $text;
 	}
 

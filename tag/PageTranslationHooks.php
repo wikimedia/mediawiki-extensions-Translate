@@ -1,12 +1,12 @@
 <?php
 
 class PageTranslationHooks {
-
 	// Uuugly hack
 	static $allowTargetEdit = false;
 
 	public static function renderTagPage( $parser, &$text, $state ) {
 		$title = $parser->getTitle();
+
 		if ( strpos( $text, '<translate>' ) !== false ) {
 			$nowiki = array();
 			$text = TranslatablePage::armourNowiki( $nowiki, $text );
@@ -23,6 +23,7 @@ class PageTranslationHooks {
 			list( , $code ) = TranslateUtils::figureMessage( $title->getText() );
 			$parser->mOptions->setTargetLanguage( Language::factory( $code ) );
 		}
+
 		return true;
 	}
 
@@ -40,6 +41,7 @@ class PageTranslationHooks {
 		$namespace = $title->getNamespace();
 		$text = $title->getDBkey();
 		list( $key, ) = TranslateUtils::figureMessage( $text );
+
 		return TranslateUtils::messageKeyToGroup( $namespace, $key );
 	}
 
@@ -50,14 +52,21 @@ class PageTranslationHooks {
 		// Some checks
 
 		// We are only interested in the translations namespace
-		if ( $title->getNamespace() != NS_TRANSLATIONS ) return true;
+		if ( $title->getNamespace() != NS_TRANSLATIONS ) {
+			return true;
+		}
+
 		// Do not trigger renders for fuzzy
-		if ( strpos( $text, TRANSLATE_FUZZY ) !== false ) return true;
+		if ( strpos( $text, TRANSLATE_FUZZY ) !== false ) {
+			return true;
+		}
 
 		// Figure out the group
 		$groupKey = self::titleToGroup( $title );
 		$group = MessageGroups::getGroup( $groupKey );
-		if ( !$group instanceof WikiPageMessageGroup ) return;
+		if ( !$group instanceof WikiPageMessageGroup ) {
+			return;
+		}
 
 		// Finally we know the title and can construct a Translatable page
 		$page = TranslatablePage::newFromTitle( $group->title );
@@ -75,7 +84,9 @@ class PageTranslationHooks {
 	}
 
 	protected static function addSectionTag( Title $title, $revision, $pageRevision ) {
-		if ( $pageRevision === null ) throw new MWException( 'Page revision is null' );
+		if ( $pageRevision === null ) {
+			throw new MWException( 'Page revision is null' );
+		}
 
 		$dbw = wfGetDB( DB_MASTER );
 
@@ -129,6 +140,7 @@ class PageTranslationHooks {
 	public static function addSidebar( $out, $tpl ) {
 		// TODO: fixme
 		return true;
+
 		global $wgLang;
 
 		// Sort by translation percentage
@@ -137,7 +149,7 @@ class PageTranslationHooks {
 		foreach ( $status as $code => $percent ) {
 			$name = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() );
 			$percent = $wgLang->formatNum( round( 100 * $percent ) );
-			$label = "$name ($percent%)";
+			$label = "$name ($percent%)"; // FIXME: i18n
 
 			$_title = TranslateTagUtils::codefyTitle( $title, $code );
 
@@ -156,8 +168,6 @@ class PageTranslationHooks {
 		return true;
 	}
 
-		
-
 	public static function languages( $data, $params, $parser ) {
 		$title = $parser->getTitle();
 
@@ -166,10 +176,15 @@ class PageTranslationHooks {
 		if ( $page->getMarkedTag() === false ) {
 			$page = TranslatablePage::isTranslationPage( $title );
 		}
-		if ( $page === false || $page->getMarkedTag() === false )  return '';
+
+		if ( $page === false || $page->getMarkedTag() === false ) {
+			return '';
+		}
 
 		$status = $page->getTranslationPercentages();
-		if ( !$status ) return '';
+		if ( !$status ) {
+			return '';
+		}
 
 		// Fix title
 		$title = $page->getTitle();
@@ -202,8 +217,8 @@ class PageTranslationHooks {
 
 			$percent = Xml::element( 'img', array(
 				'src'   => TranslateUtils::assetPath( "images/prog-$image.png" ),
-				'alt'   => "$percent%",
-				'title' => "$percent%",
+				'alt'   => "$percent%", // FIXME: i18n
+				'title' => "$percent%", // FIXME: i18n
 				'width' => '9',
 				'height' => '9',
 			) );
@@ -217,6 +232,7 @@ class PageTranslationHooks {
 			if ( $code === $wgLang->getCode() ) {
 				$label = Html::rawElement( 'b', null, $label );
 			}
+
 			if ( $parser->getTitle()->getText() === $_title->getText() ) {
 				$languages[] = "$label";
 			} else {
@@ -242,13 +258,17 @@ FOO;
 
 	// To display nice error for editpage
 	public static function tpSyntaxCheckForEditPage( $editpage, $text, $section, &$error, $summary ) {
-		if ( strpos( $text, '<translate>' ) === false ) return true;
+		if ( strpos( $text, '<translate>' ) === false ) {
+			return true;
+		}
+
 		$page = TranslatablePage::newFromText( $editpage->mTitle, $text );
 		try {
 			$page->getParse();
 		} catch ( TPException $e ) {
 			$error .= Html::rawElement( 'div', array( 'class' => 'error' ), $e->getMessage() );
 		}
+
 		return true;
 	}
 
@@ -259,7 +279,9 @@ FOO;
 	public static function tpSyntaxCheck( $article, $user, $text, $summary,
 			$minor, $_, $_, $flags, $status ) {
 		// Quick escape on normal pages
-		if ( strpos( $text, '<translate>' ) === false ) return true;
+		if ( strpos( $text, '<translate>' ) === false ) {
+			return true;
+		}
 
 		$page = TranslatablePage::newFromText( $article->getTitle(), $text );
 		try {
@@ -275,10 +297,14 @@ FOO;
 	public static function addTranstag( $article, $user, $text, $summary,
 			$minor, $_, $_, $flags, $revision ) {
 		// We are not interested in null revisions
-		if ( $revision === null ) return true;
+		if ( $revision === null ) {
+			return true;
+		}
 
 		// Quick escape on normal pages
-		if ( strpos( $text, '</translate>' ) === false ) return true;
+		if ( strpos( $text, '</translate>' ) === false ) {
+			return true;
+		}
 
 		// Add the ready tag
 		$page = TranslatablePage::newFromTitle( $article->getTitle() );
@@ -295,7 +321,7 @@ FOO;
 		if ( $title->getNamespace() == NS_TRANSLATIONS && $action === 'edit' ) {
 			$group = self::titleToGroup( $title );
 			if ( $group === null ) {
-				// No group means that the page is currently not 
+				// No group means that the page is currently not
 				// registered to any page translation message groups
 				$result = array( 'tpt-unknown-page' );
 				return false;
@@ -304,11 +330,12 @@ FOO;
 			return true;
 		}
 
-
 		// Case 2: Target pages
 		$page = TranslatablePage::isTranslationPage( $title );
 		if ( $page !== false ) {
-			if ( self::$allowTargetEdit ) return true;
+			if ( self::$allowTargetEdit ) {
+				return true;
+			}
 
 			if ( $page->getMarkedTag() ) {
 				list( , $code ) = TranslateUtils::figureMessage( $title->getText() );
@@ -326,6 +353,7 @@ FOO;
 
 	public static function schemaUpdates() {
 		global $wgExtNewTables;
+
 		$dir = dirname( __FILE__ ) . '/..';
 		$wgExtNewTables[] = array( 'translate_sections', "$dir/translate.sql" );
 		$wgExtNewTables[] = array( 'revtag_type', "$dir/revtags.sql" );
@@ -336,9 +364,11 @@ FOO;
 	// TODO: fix the name
 	public static function test( &$article, &$outputDone, &$pcache ) {
 		global $wgOut;
+
 		if ( !$article->getOldID() ) {
 			self::header( $article->getTitle() );
 		}
+
 		return true;
 	}
 
@@ -356,9 +386,7 @@ FOO;
 		}
 	}
 
-	protected static function sourcePageHeader( TranslatablePage $page,
-		$marked, $ready ) {
-
+	protected static function sourcePageHeader( TranslatablePage $page, $marked, $ready ) {
 		global $wgUser, $wgLang;
 
 		$title = $page->getTitle();
@@ -375,6 +403,7 @@ FOO;
 				'language' => $wgLang->getCode(),
 				'task' => 'view'
 			);
+
 			$translate = SpecialPage::getTitleFor( 'Translate' );
 			$linkDesc  = wfMsgHtml( 'translate-tag-translate-link-desc' );
 			$actions[] = $sk->link( $translate, $linkDesc, array(), $par );
@@ -399,16 +428,18 @@ FOO;
 			}
 		}
 
-		if ( !count( $actions ) ) return;
+		if ( !count( $actions ) ) {
+			return;
+		}
+
 		$legend  = Html::rawElement(
 			'div',
 			array( 'style' => 'font-size: x-small; text-align: center;' ),
 			$wgLang->semicolonList( $actions )
 		) . Html::element( 'hr' );
-		
+
 		global $wgOut;
 		$wgOut->addHTML( $legend );
-
 	}
 
 	protected static function translationPageHeader( Title $title ) {
@@ -416,7 +447,9 @@ FOO;
 
 		// Check if applicable
 		$page = TranslatablePage::isTranslationPage( $title );
-		if ( $page === false ) return;
+		if ( $page === false ) {
+			return;
+		}
 
 		list( , $code ) = TranslateUtils::figureMessage( $title->getText() );
 
@@ -429,7 +462,7 @@ FOO;
 
 		// Output
 		$wrap = '<div style="font-size: x-small; text-align: center">$1</div>';
-		
+
 		$wgOut->wrapWikiMsg( $wrap, array( 'tpt-translation-intro', $url, $titleText, $per ) );
 
 		if ( ( (int) $per ) < 100 ) {
@@ -437,7 +470,6 @@ FOO;
 			$wgOut->wrapWikiMsg( $wrap, array( 'tpt-translation-intro-fuzzy' ) );
 		}
 		$wgOut->addHTML( '<hr />' );
-
 	}
 
 	public static function parserTestTables( &$tables ) {
@@ -455,10 +487,14 @@ FOO;
 		if ( $page->getMarkedTag() === false ) {
 			$page = TranslatablePage::isTranslationPage( $title );
 		}
-		if ( $page === false || $page->getMarkedTag() === false )  return true;
+
+		if ( $page === false || $page->getMarkedTag() === false ) {
+			return true;
+		}
 
 		$export = array( $page->getTitle()->getPrefixedText() ); // Source page
 		$titles = $page->getTranslationPages();
+
 		foreach ( $titles as $title ) {
 			$export[] = $title->getPrefixedText();
 		}
@@ -469,7 +505,7 @@ FOO;
 		$linkText = wfMsgHtml( 'tpt-download-page' );
 
 		print "<li id=\"t-export-translationpages\"><a href=\"$href\" rel=\"nofollow\">$linkText</a></li>";
+
 		return true;
 	}
-
 }

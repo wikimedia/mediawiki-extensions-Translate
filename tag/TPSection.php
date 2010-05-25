@@ -26,9 +26,11 @@ class TPSection {
 		$count  = 0;
 
 		$text = preg_replace( $re, $rep, $this->text, 1, $count );
+
 		if ( $count === 0 ) {
 			$text = $header . "\n" . $this->text;
 		}
+
 		return $text;
 	}
 
@@ -41,9 +43,11 @@ class TPSection {
 		$matches = array();
 		preg_match_all( $re, $this->text, $matches, PREG_SET_ORDER );
 		$vars = array();
+
 		foreach ( $matches as $m ) {
 			$vars['$' . $m[1]] = $m[2];
 		}
+
 		return $vars;
 	}
 }
