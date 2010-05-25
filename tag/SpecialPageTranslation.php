@@ -303,7 +303,8 @@ class SpecialPageTranslation extends SpecialPage {
 		$formParams = array(
 			'method' => 'post',
 			'action' => $this->getTitle()->getFullURL(),
-			'class'  => 'mw-tpt-sp-markform'
+			'class'  => 'mw-tpt-sp-markform',
+			'token'  => $this->user->editToken(),
 		);
 
 		$wgOut->addHTML(
