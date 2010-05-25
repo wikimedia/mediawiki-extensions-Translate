@@ -153,6 +153,7 @@ Naam: $1',
 	'tpt-sections-deleted' => 'Verwyderde vertaaleenhede',
 	'tpt-sections-template' => 'Vertaalbladsjabloon',
 	'tpt-badtitle' => "Die naam verskaf ($1) is nie 'n geldige bladsynaam nie",
+	'tpt-nosuchpage' => 'Bladsy $1 bestaan nie.',
 	'tpt-oldrevision' => '$2 is nie die nuutste weergawe van die bladsy [[$1]] nie.
 Slegs die nuutste weergawe kan vir vertaling gemerk word.',
 	'tpt-notsuitable' => 'Die bladsy $1 is nie geskik om vir vertaling gemerk te word nie.
@@ -165,6 +166,7 @@ Alvorens u die weergawe vir vertaling merk, maak seker dat die veranderinge gemi
 	'tpt-mark-summary' => 'Merk die weergawe vir vertaling',
 	'tpt-edit-failed' => 'Die bladsy "$1" kon nie bygewerk word nie.',
 	'tpt-already-marked' => 'Die nuutste weergawe van die bladsy is reeds gemerk vir vertaling.',
+	'tpt-unmarked' => 'Bladsy $1 is nie meer vir vertaling gemerk nie.',
 	'tpt-list-nopages' => 'Geen bladsye is vir vertaling gemerk of is reg om vir vertaling gemerk te word nie.',
 	'tpt-old-pages' => "'n Weergawe van die {{PLURAL:$1|bladsy|bladsye}} is reeds vir vertaling gemerk.",
 	'tpt-new-pages' => 'Hierdie {{PLURAL:$1|bladsy bevat|bladsye bevat}} teks met vertalings-etikette, maar geen weergawe van die {{PLURAL:$1|bladsy|bladsye}} is vir vertaling gemerk nie.',
@@ -187,6 +189,7 @@ Die bladsy wat u probeer wysig kom nie ooreen met een wat vir vertaling gemerk i
 	'tpt-install' => 'Voer php maintenance/update.php of die webinstallasie uit om die bladsyvertaling te aktiveer.',
 	'tpt-render-summary' => "Besig met bewerkings vanweë 'n nuwe basisweergawe van die bronblad",
 	'tpt-download-page' => 'Eksporteer bladsy met vertalings',
+	'pt-shake-empty' => 'Leë afdeling vir merker $1.',
 );
 
 /** Arabic (العربية)
@@ -360,12 +363,15 @@ $messages['be-tarask'] = array(
 	'tpt-mark-summary' => 'Пазначыў гэтую вэрсію для перакладу',
 	'tpt-edit-failed' => 'Немагчыма абнавіць старонку: $1',
 	'tpt-already-marked' => 'Апошняя вэрсія гэтай старонкі ўжо была пазначана для перакладу.',
+	'tpt-unmarked' => 'Старонка $1 болей не пазначаная для перакладу.',
 	'tpt-list-nopages' => 'Старонкі для перакладу не пазначаныя альбо не падрыхтаваныя.',
 	'tpt-old-pages' => 'Некаторыя вэрсіі {{PLURAL:$1|гэтай старонкі|гэтых старонак}} былі пазначаны для перакладу.',
 	'tpt-new-pages' => '{{PLURAL:$1|Гэта старонка ўтрымлівае|Гэтыя старонкі ўтрымліваюць}} тэкст з тэгамі перакладу, але {{PLURAL:$1|пазначанай для перакладу вэрсіі гэтай старонкі|пазначаных для перакладу вэрсіяў гэтых старонак}} няма.',
+	'tpt-other-pages' => '{{PLURAL:$1|Старая вэрсія гэтай старонкі пазначаная|Старыя вэрсіі гэтых старонак пазначаныя}} для перакладу, але {{PLURAL:$1|апошняя вэрсія ня можа быць пазначаная|апошнія вэрсіі ня могуць быць пазначаныя}} для перакладу.',
 	'tpt-rev-latest' => 'апошняя вэрсія',
 	'tpt-rev-old' => 'розьніца з папярэдняй пазначанай вэрсіяй',
 	'tpt-rev-mark-new' => 'пазначыць гэту вэрсію для перакладу',
+	'tpt-rev-unmark' => 'выдаліць гэтую старонку са сьпісу для перакладу',
 	'tpt-translate-this' => 'перакласьці гэту старонку',
 	'translate-tag-translate-link-desc' => 'Перакласьці гэту старонку',
 	'translate-tag-markthis' => 'Пазначыць гэту старонку для перакладу',
@@ -381,8 +387,17 @@ $messages['be-tarask'] = array(
 	'tpt-install' => 'Запусьціце php maintenance/update.php альбо усталюйце праз вэб-інтэрфэйс для актывізацыі інструмэнтаў перакладу старонак.',
 	'tpt-render-summary' => 'Абнаўленьне для адпаведнасьці новай вэрсіі крынічнай старонкі',
 	'tpt-download-page' => 'Экспартаваць старонку з перакладамі',
+	'pt-parse-open' => 'Незбалянсаваны тэг &lt;translate>.
+Шаблён перакладу: <pre>$1</pre>',
+	'pt-parse-close' => 'Незбалянсаваны тэг &lt;/translate>.
+Шаблён перакладу: <pre>$1</pre>',
+	'pt-parse-nested' => 'Укладзеныя сэкцыі &lt;translate> — недазволеныя.
+Тэкст тэгу: <pre>$1</pre>',
 	'pt-shake-multiple' => 'Некалькі маркераў сэкцыяў у адной сэкцыі.
 Тэкст сэкцыі: <pre>$1</pre>',
+	'pt-shake-position' => 'Меткі сэкцыі ў нечаканых пазыцыях.
+Тэкст сэкцыі: <pre>$1</pre>',
+	'pt-shake-empty' => 'Пустая сэкцыя для меткі $1.',
 );
 
 /** Bulgarian (Български)
@@ -785,6 +800,7 @@ $messages['dsb'] = array(
 	'tpt-sections-deleted' => 'Wulašowane pśełožowańske jadnotki',
 	'tpt-sections-template' => 'Pśedłoga pśełožowańskego boka',
 	'tpt-badtitle' => 'Pódane bokowe mě ($1) njejo płaśiwy titel',
+	'tpt-nosuchpage' => 'Bok $1 njeeksistěrujo',
 	'tpt-oldrevision' => '$2 njejo aktualna wersija boka [[$1]].
 Jano aktualne wersije daju se za pśełožowanje markěrowaś.',
 	'tpt-notsuitable' => 'Bok $1 njejo gódny za pśełožowanje.
@@ -796,12 +812,16 @@ Nježli až markěrujoš toś tu wersiju za pśełožowanje, pśekontrolěruj, l
 	'tpt-mark-summary' => 'Jo toś tu wersiju za pśełožowanje markěrował',
 	'tpt-edit-failed' => 'Toś ten bok njejo se dał aktualizěrowaś: $1',
 	'tpt-already-marked' => 'Aktualna wersija toś togo boka jo južo za pśełožowanje markěrowana.',
+	'tpt-unmarked' => 'Bok $1 wěcej njejo za pśełožowanje markěrowany.',
 	'tpt-list-nopages' => 'Žedne boki njejsu za pśełožowanje markěrowane ani su gótowe, aby se za pśełožowanje markěrowali.',
 	'tpt-old-pages' => 'Někaka wersija {{PLURAL:$1|toś togo boka|toś teju bokowu|toś tych bokow|toś tych bokow}} jo se za pśełožowanje markěrowała.',
 	'tpt-new-pages' => '{{PLURAL:$1|Toś ten bok wopśimujo|Toś tej boka wopśumujotej|Toś te boki wopśimuju|Toś te boki wopśimuju}} tekst z pśełožowańskimi toflickami, ale žedna wersija {{PLURAL:$1|toś togo boka|toś teju bokowu|toś tych bokow|toś tych bokow}} njejo tuchylu za pśełožowanje markěrowana.',
+	'tpt-other-pages' => 'Stara wersija {{PLURAL:$1|toś togo boka|toś teju bokowu|toś tych bokow|tośtych bokow}} jo za pśełožowanje markěrowana, 
+ale nejnowša wersija njedajo se za pśełožowanje markěrowaś.',
 	'tpt-rev-latest' => 'aktualna wersija',
 	'tpt-rev-old' => 'rozdźěl k pjerwjejšnej markěrowanej wersiji',
 	'tpt-rev-mark-new' => 'toś tu wersiju za pśełožowanje markěrowaś',
+	'tpt-rev-unmark' => 'toś ten bok wót pśełožowanja wuzamknuś',
 	'tpt-translate-this' => 'toś ten bok pśełožyś',
 	'translate-tag-translate-link-desc' => 'Toś ten bok pśełožyś',
 	'translate-tag-markthis' => 'Toś ten bok za pśełožowanje markěrowaś',
@@ -817,6 +837,11 @@ Zda se, až bok, kótaryž wopytujoš wobźěłaś, njewótpowědujo bokoju, kó
 	'tpt-install' => 'Wuwjeź php maintenance/update.php abo webinstalaciju, aby zmóžnił funkciju pśełožowanja bokow.',
 	'tpt-render-summary' => 'Aktualizacija pó nowej wersiji žrědłowego boka',
 	'tpt-download-page' => 'Bok z pśełožkami eksportěrowaś',
+	'pt-parse-open' => 'Asymetriska toflicka &lt;translate>.
+Pśełožowańska pśedłoga: <pre>$1</pre>',
+	'pt-parse-close' => 'Asymetriska toflicka &lt;/translate>.
+Pśełožowańska pśedłoga: <pre>$1</pre>',
+	'pt-parse-nested' => '',
 );
 
 /** Greek (Ελληνικά)
@@ -897,6 +922,7 @@ Certigu ke ĝi havas etikedojn <nowiki><translate></nowiki> kaj havas validan si
 /** Spanish (Español)
  * @author Antur
  * @author Crazymadlover
+ * @author Diego Grez
  * @author Sanbec
  */
 $messages['es'] = array(
@@ -915,6 +941,7 @@ $messages['es'] = array(
 	'tpt-sections-deleted' => 'Unidades de traducción borradas',
 	'tpt-sections-template' => 'Plantilla de página de traducción',
 	'tpt-badtitle' => 'Nombre de página dado ($1) no es un título válido',
+	'tpt-nosuchpage' => 'Página $1 no existe',
 	'tpt-oldrevision' => '$2 no es la última versión de la página [[$1]].
 Solamente las últimas versiones pueden ser marcadas para traducción',
 	'tpt-notsuitable' => 'La página $1 no es adecuada para traducción.
@@ -927,12 +954,16 @@ Antes de marcar esta versión para traducción, verifica que los cambios a las s
 	'tpt-mark-summary' => 'Marcada esta sección para traducción',
 	'tpt-edit-failed' => 'No pudo actualizar la página : $1',
 	'tpt-already-marked' => 'La última versión de esta página ya ha sido marcada para traducción.',
+	'tpt-unmarked' => 'Página $1 no está más marcada para traducción.',
 	'tpt-list-nopages' => 'Ninguna página está marcada para traducción ni lista para ser marcada para traducción.',
 	'tpt-old-pages' => 'Alguna versión de {{PLURAL:$1|esta página|estas páginas han}} sido marcadas para traducción.',
 	'tpt-new-pages' => '{{PLURAL:$1|Esta página contiene|Estas páginas contienen}} texto con etiquetas de traducción, pero ninguna versión de {{PLURAL:$1|esta página est|estas páginas están}} actualmente marcadas para traducción.',
+	'tpt-other-pages' => 'Versión antigua de {{PLURAL:$1|esta página está|estas páginas están}} marcadas para traducción,
+pero la última versión no puede ser marcada para traducción.',
 	'tpt-rev-latest' => 'última versión',
 	'tpt-rev-old' => 'diferenciar a la versión marcada previa',
 	'tpt-rev-mark-new' => 'marcar esta versión para traducción',
+	'tpt-rev-unmark' => 'remover esta página de la traducción',
 	'tpt-translate-this' => 'traducir esta página',
 	'translate-tag-translate-link-desc' => 'Traducir esta página',
 	'translate-tag-markthis' => 'Marcar esta página para traducción',
@@ -948,6 +979,10 @@ La página que estás tratando de editar no parece corresponder con alguna pági
 	'tpt-install' => 'Corra maintenance/update.php o instale desde la web para activar las funciones de traducción.',
 	'tpt-render-summary' => 'Actualizando para hallar una nueva versión de la página fuente',
 	'tpt-download-page' => 'Exportar página con traducciones',
+	'pt-parse-open' => 'Etiqueta &lt;translate> desequilibrada.
+Plantilla de traducción: <pre>$1</pre>',
+	'pt-parse-close' => 'Etiqueta &lt;/translate> desequilibrada.
+Plantilla de traducción: <pre>$1</pre>',
 );
 
 /** Estonian (Eesti)
@@ -1086,6 +1121,7 @@ $messages['fr'] = array(
 	'tpt-sections-deleted' => 'Unités de traduction supprimées',
 	'tpt-sections-template' => 'Modèle de page de traduction',
 	'tpt-badtitle' => 'Le nom de page donné ($1) n’est pas un titre valide',
+	'tpt-nosuchpage' => "La page $1 n'existe pas",
 	'tpt-oldrevision' => '$2 n’est pas la dernière version de la page [[$1]].
 Seule la dernière version de la page peut être marquée pour être traduite.',
 	'tpt-notsuitable' => 'La page $1 n’est pas susceptible d’être traduite.
@@ -1098,12 +1134,16 @@ Avant de marquer ces versions pour être traduites, vérifier que les modificati
 	'tpt-mark-summary' => 'Cette version a été marquée pour être traduite',
 	'tpt-edit-failed' => 'Impossible de mettre à jour la page $1',
 	'tpt-already-marked' => 'La dernière version de cette page a déjà été marquée pour être traduite.',
+	'tpt-unmarked' => "La page $1 n'est plus marquée pour être traduite.",
 	'tpt-list-nopages' => 'Aucune page n’a été marquée pour être traduite ni n’est prête à l’être.',
 	'tpt-old-pages' => 'Des versions de {{PLURAL:$1|cette page|ces pages}} ont été marquées pour être traduites.',
 	'tpt-new-pages' => '{{PLURAL:$1|Cette page contient|Ces pages contiennent}} du texte avec des balises de traduction, mais aucune version de {{PLURAL:$1|cette page n’est marquée pour être traduite|ces pages ne sont marquées pour être traduites}}.',
+	'tpt-other-pages' => 'Une ancienne version de {{PLURAL:$1|cette page|ces pages}} a été marquée pour être traduite,
+mais la dernière version ne peut pas être marquée pour être traduite.',
 	'tpt-rev-latest' => 'dernière version',
 	'tpt-rev-old' => 'différence avec la version marquée précédente',
 	'tpt-rev-mark-new' => 'marquer cette version pour être traduite',
+	'tpt-rev-unmark' => 'supprimer cette page de la traduction',
 	'tpt-translate-this' => 'traduire cette page',
 	'translate-tag-translate-link-desc' => 'Traduire cette page',
 	'translate-tag-markthis' => 'Marquer cette page pour être traduite',
@@ -1206,6 +1246,7 @@ $messages['gl'] = array(
 	'tpt-sections-deleted' => 'Unidades de tradución borradas',
 	'tpt-sections-template' => 'Modelo de páxina de tradución',
 	'tpt-badtitle' => 'O nome de páxina dado ("$1") non é un título válido',
+	'tpt-nosuchpage' => 'Non existe a páxina "$1"',
 	'tpt-oldrevision' => '$2 non é a última versión da páxina "[[$1]]".
 Só as últimas versións poden ser marcadas para seren traducidas.',
 	'tpt-notsuitable' => 'A páxina "$1" non é válida para ser traducida.
@@ -1218,12 +1259,15 @@ Antes de marcar esta versión para ser traducida, comprobe que as modificacións
 	'tpt-mark-summary' => 'Marcou esta versión para ser traducida',
 	'tpt-edit-failed' => 'Non se puido actualizar a páxina: $1',
 	'tpt-already-marked' => 'A última versión desta páxina xa foi marcada para ser traducida.',
+	'tpt-unmarked' => 'A páxina "$1" xa non está marcada para traducir.',
 	'tpt-list-nopages' => 'Non hai ningunha páxina marcada para ser traducida, nin preparada para ser marcada para ser traducida.',
 	'tpt-old-pages' => 'Algunha versión {{PLURAL:$1|desta páxina|destas páxinas}} ten sido marcada para ser traducida.',
 	'tpt-new-pages' => '{{PLURAL:$1|Esta páxina contén|Estas páxinas conteñen}} texto con etiquetas de tradución, pero ningunha versión {{PLURAL:$1|desta páxina|destas páxinas}} está actualmente marcada para ser traducida.',
+	'tpt-other-pages' => '{{PLURAL:$1|Hai marcada para traducir unha a versión vella desta páxina|Hai marcadas para traducir algunhas versións vellas destas páxinas}}, pero {{PLURAL:$1|a última versión|as últimas versións}} non se {{PLURAL:$1|pode|poden}} marcar.',
 	'tpt-rev-latest' => 'última versión',
 	'tpt-rev-old' => 'diferenza coa versión previa marcada',
 	'tpt-rev-mark-new' => 'marcar esta versión para ser traducida',
+	'tpt-rev-unmark' => 'eliminar esta páxina da tradución',
 	'tpt-translate-this' => 'traducir esta páxina',
 	'translate-tag-translate-link-desc' => 'Traducir esta páxina',
 	'translate-tag-markthis' => 'Marcar esta páxina para ser traducida',
@@ -1691,6 +1735,7 @@ $messages['ja'] = array(
 	'tpt-sections-deleted' => '削除された翻訳単位',
 	'tpt-sections-template' => '翻訳ページの雛型',
 	'tpt-badtitle' => '指定したページ名 ($1) は無効なタイトルです',
+	'tpt-nosuchpage' => 'ページ「$1」は存在しません',
 	'tpt-oldrevision' => '$2 はページ [[$1]] の最新版ではありません。翻訳対象に指定できるのは最新版のみです。',
 	'tpt-notsuitable' => 'ページ $1 は翻訳に対応していません。<nowiki><translate></nowiki>が含まれていること、またマークアップが正しいことを確認してください。',
 	'tpt-saveok' => 'ページ [[$1]] は翻訳対象に指定されており、$2{{PLURAL:$2|個}}の翻訳単位を含んでいます。このページを<span class="plainlinks">[$3 翻訳]</span>することができます。',
@@ -1699,12 +1744,15 @@ $messages['ja'] = array(
 	'tpt-mark-summary' => 'この版を翻訳対象に指定しました',
 	'tpt-edit-failed' => 'ページを更新できませんでした: $1',
 	'tpt-already-marked' => 'このページの最新版がすでに翻訳対象に指定されています。',
+	'tpt-unmarked' => 'ページ「$1」はもう翻訳対象に指定されていません。',
 	'tpt-list-nopages' => '翻訳対象に指定されたページがない、または翻訳対象に指定する準備ができているページがありません。',
 	'tpt-old-pages' => '{{PLURAL:$1|これらの|この}}ページには翻訳対象に指定された版があります。',
 	'tpt-new-pages' => '{{PLURAL:$1|以下のページ}}は本文に翻訳タグを含んでいますが、翻訳対象に指定されている版が{{PLURAL:$1|ありません}}。',
+	'tpt-other-pages' => '{{PLURAL:$1|このページの古い版}}が翻訳対象に指定されていますが、最新の{{PLURAL:$1|版}}は翻訳対象に指定できません。',
 	'tpt-rev-latest' => '最新版',
 	'tpt-rev-old' => '以前に翻訳指定された版との差分',
 	'tpt-rev-mark-new' => 'この版を翻訳対象に指定する',
+	'tpt-rev-unmark' => 'このページを翻訳対象から除去する',
 	'tpt-translate-this' => 'このページを翻訳する',
 	'translate-tag-translate-link-desc' => 'このページを翻訳する',
 	'translate-tag-markthis' => 'このページを翻訳対象に指定する',
@@ -1718,9 +1766,17 @@ $messages['ja'] = array(
 	'tpt-install' => 'ページ翻訳機能を有効にするために、php maintenance/update.php またはウェブ・インストーラーを実行する。',
 	'tpt-render-summary' => '翻訳元ページの新版に適合するように更新中',
 	'tpt-download-page' => '翻訳付きでページを書き出し',
-	'pt-shake-multiple' => '1つのセクションに対する、複数セクションのマーカー。
-セクションの文章：
-$1',
+	'pt-parse-open' => '&lt;translate> タグの対応がとれていません。
+翻訳の雛型: <pre>$1</pre>',
+	'pt-parse-close' => '&lt;/translate> タグの対応がとれていません。
+翻訳の雛型: <pre>$1</pre>',
+	'pt-parse-nested' => '&lt;translate> タグのネストは許されません。
+タグ内容: <pre>$1</pre>',
+	'pt-shake-multiple' => '1つのセクションに対して、複数のセクション・マーカーがあります。
+セクション内容: <pre>$1</pre>',
+	'pt-shake-position' => '予期せぬ位置にセクション・マーカーがあります。
+セクション内容: <pre>$1</pre>',
+	'pt-shake-empty' => 'マーカー $1 に対応するセクションが空です。',
 );
 
 /** Javanese (Basa Jawa)
@@ -1850,6 +1906,7 @@ $messages['lb'] = array(
 	'tpt-sections-deleted' => 'Geläschten Iwwersetzungseenheeten',
 	'tpt-sections-template' => 'Iwwersetzung Säiteschabloun',
 	'tpt-badtitle' => 'De Säitennumm deen ugi gouf ($1) ass kee valabelen Titel',
+	'tpt-nosuchpage' => "D'Säit $1 gëtt et net",
 	'tpt-oldrevision' => "$2 ass net déi lescht Versioun vun der Säit [[$1]].
 Nëmmen déi lescht Versioune kënne fir d'Iwwersetzung markéiert ginn.",
 	'tpt-notsuitable' => "D'Säit $1 ass net geeegent fir iwwersat ze ginn.
@@ -1862,12 +1919,16 @@ Ier dir dës Versioun fir d'iwwersetze markéiert, kuckt w.e.g. no datt d'Änner
 	'tpt-mark-summary' => "huet dës Versioun fir d'Iwwersetzung markéiert",
 	'tpt-edit-failed' => "D'Säit $1 konnt net aktualiséiert ginn",
 	'tpt-already-marked' => "Déilescht Versioun vun dëser Säit gouf scho fir d'Iwwersetzung markéiert.",
+	'tpt-unmarked' => "D'Säit $1 ass net méi fir z'iwwersetze markéiert.",
 	'tpt-list-nopages' => "Et si keng Säite fir d'Iwwersetzung markéiert respektiv fäerdeg fir fir d'Iwersetzung markéiert ze ginn.",
 	'tpt-old-pages' => "Eng Versioun vun {{PLURAL:$1|dëser Säit|dëse Säite}} gouf fir d'Iwwersetze markéiert.",
 	'tpt-new-pages' => "Op {{PLURAL:$1|dëser Säit|dëse Säiten}} ass Text mat Iwwersetzungs-Markéierungen, awer keng Versioun vun {{PLURAL:$1|dëser Säit|dëse Säiten}} ass elo fir d'Iwwersetze  markéiert.",
+	'tpt-other-pages' => "Al Versioun vun {{PLURAL:$1|dëser Säit|dëse Säite}} sinn als z'iwwesetze markéiert,
+awer déi lescht Versioun kann fir d'Iwwersetzung markéiert ginn.",
 	'tpt-rev-latest' => 'lescht Versioun',
 	'tpt-rev-old' => 'Ënnerscheed zu der vireger markéierter Versioun',
 	'tpt-rev-mark-new' => "dës Versioun fir d'Iwwersetzung markéieren",
+	'tpt-rev-unmark' => 'dës Säit vum Iwwersetzen ewechhuelen',
 	'tpt-translate-this' => 'dës Säit iwwersetzen',
 	'translate-tag-translate-link-desc' => 'Dës Säit iwwersetzen',
 	'translate-tag-markthis' => "Dës Säit fir d'Iwwersetzung markéieren",
@@ -1883,6 +1944,7 @@ D'Säit, déi Dir versicht z'änneren schéngt net mat enger Säit déi fir d'iw
 	'tpt-install' => "Lancéiert php maintenance/update.php oder web install fir d'Fonctioun vun der Säiteniwwersetzung anzeschalten.",
 	'tpt-render-summary' => 'Aktualiséieren fir mat der neier Versioun vun der Quellsäit iwwereneenzestëmmen',
 	'tpt-download-page' => 'Säit mat Iwwersetzungen exportéieren',
+	'pt-shake-empty' => 'Abschnitt fir Marker $1 eidelmaachen.',
 );
 
 /** Ganda (Luganda)
@@ -1922,6 +1984,7 @@ $messages['mk'] = array(
 	'tpt-sections-deleted' => 'Избришани преводни едници',
 	'tpt-sections-template' => 'Шаблон за страница за превод',
 	'tpt-badtitle' => 'Даденото име на страницата ($1) е погрешен наслов',
+	'tpt-nosuchpage' => 'Страницата $1 не постои',
 	'tpt-oldrevision' => '$2 не е најнова верзија на страницата [[$1]].
 Само најновите верзии можат да се обележуваат за преведување.',
 	'tpt-notsuitable' => 'Страницата $1 не е погодна за преведување.
@@ -1934,12 +1997,16 @@ $messages['mk'] = array(
 	'tpt-mark-summary' => 'Ја означувам оваа верзија за преведување',
 	'tpt-edit-failed' => 'Не можев да ја обновам страницата: $1',
 	'tpt-already-marked' => 'Најновата верзија на оваа страница е веќе обележана за преведување.',
+	'tpt-unmarked' => 'Страницата $1 повеќе не е означена за преведување.',
 	'tpt-list-nopages' => 'Нема пораки обележани за преведување, ниту страници готови за обележување за да бидат преведени.',
 	'tpt-old-pages' => 'Извесна верзија на {{PLURAL:$1|оваа страница|овие страници}} е обележана за преведување.',
 	'tpt-new-pages' => '{{PLURAL:$1|Оваа страница содржи|Овие страници содржат}} текст со ознаки за преведување, но моментално нема верзија на {{PLURAL:$1|оваа страница|овие страници}} која е обележана за преведување.',
+	'tpt-other-pages' => 'Стара верзија на {{PLURAL:$1|оваа страница|овие страници}} е означена за преводување,
+но најновата верзија не може да се означи за преведување.',
 	'tpt-rev-latest' => 'најнова верзија',
 	'tpt-rev-old' => 'разлики со претходната обележана верзија',
 	'tpt-rev-mark-new' => 'обележи ја оваа верзија за преведување',
+	'tpt-rev-unmark' => 'отстрани ја страницава од преводот',
 	'tpt-translate-this' => 'преведете ја страницава',
 	'translate-tag-translate-link-desc' => 'Преведи ја оваа страница',
 	'translate-tag-markthis' => "Обележи ја оваа страница со 'за преведување'",
@@ -1955,9 +2022,17 @@ $messages['mk'] = array(
 	'tpt-install' => 'Пуштете го php maintenance/update.php или интернет-инсталација за да ја добиете можноста за преведување страници.',
 	'tpt-render-summary' => 'Обнова за усогласување со новата верзија на изворната страница',
 	'tpt-download-page' => 'Извези страница со преводи',
+	'pt-parse-open' => 'Неврамнотежена &lt;translate> ознака.
+Шаблон за преводот: <pre>$1</pre>',
+	'pt-parse-close' => 'Неврамнотежена &lt;/translate> ознака.
+Шаблон за преводот: <pre>$1</pre>',
+	'pt-parse-nested' => 'Не се дозволени гвнездени &lt;translate> поднаслови.
+Текст на ознаката: <pre>$1</pre>',
 	'pt-shake-multiple' => 'Повеќекратни означувачи за поднаслови во еден поднаслов.
-Текст на поднасловот:
-$1',
+Текст на поднасловот: <pre>$1</pre>',
+	'pt-shake-position' => 'Неочекувана положба на означувачите за поднаслови.
+Текст во поднасловот: <pre>$1</pre>',
+	'pt-shake-empty' => 'Празен поднаслов за означувачот $1.',
 );
 
 /** Maltese (Malti)
@@ -2006,6 +2081,7 @@ Naam: $1',
 	'tpt-sections-deleted' => 'Verwijderde vertaaleenheden',
 	'tpt-sections-template' => 'Vertaalpaginasjabloon',
 	'tpt-badtitle' => 'De opgegeven paginanaam ($1) is geen geldige paginanaam',
+	'tpt-nosuchpage' => 'Pagina "$1" bestaat niet',
 	'tpt-oldrevision' => '$2 is niet de meest recente versie van de pagina "[[$1]]".
 Alleen de meest recente versie kan voor vertaling gemarkeerd worden.',
 	'tpt-notsuitable' => 'De pagina "$1" kan niet voor vertaling gemarkeerd worden.
@@ -2018,12 +2094,16 @@ Controleer voordat u deze versie voor vertaling markeert of de wijzigingen aan d
 	'tpt-mark-summary' => 'Heeft deze versie voor vertaling gemarkeerd',
 	'tpt-edit-failed' => 'De pagina "$1" kon niet bijgewerkt worden.',
 	'tpt-already-marked' => 'De meest recente versie van deze pagina is al gemarkeerd voor vertaling.',
+	'tpt-unmarked' => 'Pagina "$1" is niet langer te vertalen.',
 	'tpt-list-nopages' => "Er zijn geen pagina's gemarkeerd voor vertaling, noch klaar om gemarkeerd te worden voor vertaling.",
 	'tpt-old-pages' => "Er is al een versie van deze {{PLURAL:$1|pagina|pagina's}} gemarkeerd voor vertaling.",
 	'tpt-new-pages' => "Deze {{PLURAL:$1|pagina bevat|pagina's bevatten}} tekst met vertalingslabels, maar van deze {{PLURAL:$1|pagina|pagina's}} is geen versie gemarkeerd voor vertaling.",
+	'tpt-other-pages' => '{{PLURAL:$1|Een oude versie van deze pagina is|Oude versies van deze pagina zijn}} gemarkeerd voor vertaling,
+maar de laatste {{PLURAL:$1|versie kan|versies kunnen}} niet gemarkeerd worden voor vertaling.',
 	'tpt-rev-latest' => 'meest recente versie',
 	'tpt-rev-old' => 'verschil met de vorige gemarkeerde versie',
 	'tpt-rev-mark-new' => 'deze versie voor vertaling markeren',
+	'tpt-rev-unmark' => 'deze pagina als te vertalen pagina verwijderen',
 	'tpt-translate-this' => 'deze pagina vertalen',
 	'translate-tag-translate-link-desc' => 'Deze pagina vertalen',
 	'translate-tag-markthis' => 'Deze pagina voor vertaling markeren',
@@ -2040,9 +2120,17 @@ De pagina die u probeert te bewerken lijkt niet overeen te komen met een te vert
 	'tpt-install' => 'Voer php maintenance/update.php of de webinstallatie uit om de paginavertaling te activeren.',
 	'tpt-render-summary' => 'Bijgewerkt vanwege een nieuwe basisversie van de bronpagina',
 	'tpt-download-page' => 'Pagina met vertalingen exporteren',
+	'pt-parse-open' => 'Ongebalanceerd label &lt;translate>.
+Vertaalsjabloon: <pre>$1</pre>',
+	'pt-parse-close' => 'Ongebalanceerd label &lt;translate>.
+Vertaalsjabloon: <pre>$1</pre>',
+	'pt-parse-nested' => 'Geneste &lt;translate>-secties zijn niet toegestaan.
+Labeltekst: <pre>$1</pre>',
 	'pt-shake-multiple' => 'Meerdere sectiemarkeringen voor een enkele sectie aangetroffen.
-Sectietekst:
-$1',
+Sectietekst: <pre>$1</pre>',
+	'pt-shake-position' => 'Sectiemarkeringen op een onverwachte plaats.
+Sectietekst: <pre>$1</pre>',
+	'pt-shake-empty' => 'Lege sectie voor markering $1.',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
@@ -2544,6 +2632,7 @@ $messages['ru'] = array(
 	'tpt-sections-deleted' => 'Удалённые элементы перевода',
 	'tpt-sections-template' => 'Шаблон страницы перевода',
 	'tpt-badtitle' => 'Указанное название страницы ($1) не является допустимым',
+	'tpt-nosuchpage' => 'Страница «$1» не существует.',
 	'tpt-oldrevision' => '$2 не является последней версией страницы [[$1]].
 Только последние версии могут быть отмечены для перевода.',
 	'tpt-notsuitable' => 'Страницы $1 является неподходящей для перевода.
@@ -2556,12 +2645,16 @@ $messages['ru'] = array(
 	'tpt-mark-summary' => 'Отметить эту версию для перевода',
 	'tpt-edit-failed' => 'Невозможно обновить эту страницу: $1',
 	'tpt-already-marked' => 'Последняя версия этой страницы уже была отмечена для перевода.',
+	'tpt-unmarked' => 'Страница $1 больше не отмечена для перевода.',
 	'tpt-list-nopages' => 'Нет страниц, отмеченных для перевода, а также нет страниц готовых к отметке.',
 	'tpt-old-pages' => 'Некоторые версии {{PLURAL:$1|этой страницы|этих страниц}} были отмечены для перевода.',
 	'tpt-new-pages' => '{{PLURAL:$1|Эта страница содержит|Эти страницы содержат}} текст с тегами перевода, но ни одна из версий {{PLURAL:$1|этой страницы|этих страниц}} не отмечена для перевода.',
+	'tpt-other-pages' => '{{PLURAL:$1|Старая версия этой страницы|Старые версии этих страниц}} отмечены для перевода,
+но последняя версия не может быть отмечена для перевода.',
 	'tpt-rev-latest' => 'последняя версия',
 	'tpt-rev-old' => 'различия с предыдущей отмеченной версией',
 	'tpt-rev-mark-new' => 'отметить эту версию для перевода',
+	'tpt-rev-unmark' => 'убрать эту страницу из перевода',
 	'tpt-translate-this' => 'перевести эту страницу',
 	'translate-tag-translate-link-desc' => 'Перевести эту страницу',
 	'translate-tag-markthis' => 'Отметить эту страницу для перевода',
@@ -2579,6 +2672,10 @@ $messages['ru'] = array(
 	'tpt-download-page' => 'Экспортировать страницу с переводами',
 	'pt-parse-open' => 'Несбалансированный тег &lt;translate>.
 Шаблон перевода: <pre>$1</pre>',
+	'pt-parse-close' => 'Несбалансированный тег &lt;translate>.
+Шаблон перевода: <pre>$1</pre>',
+	'pt-parse-nested' => 'Недопустимы вложенные разделы &lt;translate>.
+Текст тега: <pre>$1</pre>',
 	'pt-shake-multiple' => 'Несколько маркеров раздела в одном разделе.
 Текст раздела: <pre>$1</pre>',
 	'pt-shake-position' => 'Неожиданное положение маркеров разделов.
