@@ -23,8 +23,6 @@ class SpecialTranslations extends SpecialAllpages {
 	 */
 	function execute( $par ) {
 		global $wgRequest, $wgOut;
-
-		wfLoadExtensionMessages( 'Translate' );
 		$this->setHeaders();
 		$this->outputHeader();
 

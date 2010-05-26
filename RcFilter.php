@@ -31,7 +31,6 @@ class TranslateRcFilter {
 
 	public static function translationFilterForm( &$items, $opts ) {
 		global $wgRequest;
-		wfLoadExtensionMessages( 'Translate' );
 		$opts->consumeValue( 'translations' );
 		$default = $wgRequest->getVal( 'translations', '' );
 

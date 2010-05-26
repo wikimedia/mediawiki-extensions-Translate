@@ -334,7 +334,6 @@ function efTranslateCheckPT() {
 
 function efTranslateCheckWarn( $msg, &$sitenotice ) {
 	global $wgOut;
-	wfLoadExtensionMessages( 'PageTranslation' );
 	$sitenotice = wfMsg( $msg );
 	$wgOut->enableClientCache( false );
 	return true;

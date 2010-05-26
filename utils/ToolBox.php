@@ -18,8 +18,6 @@ class TranslateToolbox {
 		$inMessageGroup = TranslateUtils::messageKeyToGroup( $wgTitle->getNamespace(), $wgTitle->getBaseText() );
 
 		if ( $inMessageGroup ) {
-			wfLoadExtensionMessages( 'Translate' );
-
 			// Add a slash at the end, to not have basename in the result of Special:Prefixindex
 			$message = $wgTitle->getNsText() . ":" . $wgTitle->getBaseText();
 			$desc = wfMsg( 'translate-sidebar-alltrans' );
