@@ -834,6 +834,9 @@ descmsg = protectsection_desc
 PSI NoTocNum
 magicfile = PSINoTocNum/PSINoTocNum.i18n.magic.php
 
+Pure Wiki Deletion
+aliasfile = PureWikiDeletion/PureWikiDeletion.alias.php
+
 Purge
 
 Purge Cache
