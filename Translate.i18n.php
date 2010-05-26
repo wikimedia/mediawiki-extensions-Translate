@@ -3527,7 +3527,7 @@ $messages['de'] = array(
 	'translate-page-no-such-language' => 'Die angegebene Sprache ist ungültig.',
 	'translate-page-no-such-task' => 'Die angegebene Aufgabe ist ungültig.',
 	'translate-page-no-such-group' => 'Die angegebene Gruppe ist ungültig.',
-	'translate-page-disabled' => "Übersetzungen in dieser Sprache in dieser Gruppe wurde deaktiviert. Grund:
+	'translate-page-disabled' => "Übersetzungen in dieser Sprache in dieser Gruppe wurden deaktiviert. Grund:
 
 ''$1''",
 	'translate-page-settings-legend' => 'Einstellungen',
@@ -3863,6 +3863,8 @@ $messages['dsb'] = array(
 	'translate-page-settings-legend' => 'Nastajenja',
 	'translate-page-task' => 'Cu',
 	'translate-page-group' => 'Kupka',
+	'translate-page-group-tooltip' => 'Mě kupki powěźeńkow.
+Jolic kupka jo z pódkupki abo nadkupki powěźeńkow drugich kupkow, zwobraznjujo se tucnje.',
 	'translate-page-language' => 'Rěc',
 	'translate-page-limit' => 'Licba powěsćow',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|powěsć|powěsći|powěsći|powěsćow}} na bok',
@@ -3987,9 +3989,15 @@ Standardna lisćina rěcow wótwisujo wót swójeje rěcy.',
 	'translate-suppress-complete' => 'Dopołnje pśełožone zdźěleńske kupki pódtłocyś',
 	'translate-language' => 'Rěc:',
 	'translate-total' => 'Zdźělenja',
+	'translate-total-tooltip' => 'Cełkowna licba powěźeńkow w toś tej kupce powěźeńkow.',
 	'translate-untranslated' => 'Njepśełožony',
+	'translate-untranslated-tooltip' => 'Cełkowna licba njepśełožonych powěźeńkow w toś tej kupce powěźeńkow.
+Wóna wopśimujo powěźeńki, kótarež su seako zestarjone markěrowali.',
 	'translate-percentage-complete' => 'Dopołnjenje',
+	'translate-percentage-complete-tooltip' => 'Procentualny późěl powěźeńkow w kupce, kótayž jo se pśełožył a njejo se markěrował ako zestarjony.',
 	'translate-percentage-fuzzy' => 'Zestarjony',
+	'translate-percentage-fuzzy-tooltip' => 'Procentualny późěl powěźeńkow w kupce, kótaryž jo se pśełožył a jo se markěrował ako zestarjony.
+Powěźeńki markěruju se ako zestarjone, dokulaž engelske žrědłowa powěźeńka jo se změniła, dokulaž awtomatiska kontrola za powěźeńku jo se njeraźiła abo dokulaž něchten jo ju ako zestarjonu markěrował.',
 	'translate-nothing-to-do' => 'Zda se, až móžne pśełožki su cynjone.
 Pśiraźijo se, až pśeglědujoš powěźeńki pśez [[Special:Translate|{{int:translate}}]].',
 	'supportedlanguages' => 'Pódpěrane rěcy',
@@ -4001,6 +4009,11 @@ Jolic rěc njejo pódane, móžoš pód "[[Translating:Process|Nowa rěc]]" zgó
 
 Jolic pśełožujoš do rěcy a twójo mě njejo pódane, pśidaj pšosym swójo mě lisćinje pśełožowarjow na [[:Category:Languages|portalu]] teje rěcy.
 Glědaj menijowu lejstwu za wótkaz k portaloju twójeje preferowaneje rěcy.',
+	'supportedlanguages-translators' => '{{PLURAL:$2|Pśełožowaŕ|Pśełožowarja|Pśełožowarje|Pśełožowarjow}}: $1',
+	'supportedlanguages-noportal-title' => 'Žeden portalowy mjenjowy rum definěrowany',
+	'supportedlanguages-noportal' => 'Wikiadministrator njejo NS_PORTAL definěrował, togodla bok njefunkcioněrujo.
+Na toś tom boku buźo se lisćina rěcnych portalow pokazowaś, za wšykne portale, kótarež wótpowěduju definěrowanemu rěcnemu kodoju pódbokoju z mjenim "pśełožowarje".
+Pódbok "pśełožowarje" musy pśedłogu [[:{{ns:template}}:User|Wužywaŕ]] wopśimjeś, z wužywarskim mjenim ako parameter.',
 	'translate-save' => 'Składowaś ($1)',
 	'translate-jssti-add' => 'Lisćinje pśidaś',
 	'translate-group-desc-mediawikicore' => 'Toś ta kupka powěźeńkow wopśimujo powěźeńki, kótarež wužywaju se w aktualnej alfa-wersiji MediaWiki ({{CURRENTVERSION}})',
@@ -9665,8 +9678,12 @@ $messages['kn'] = array(
 	'translate-edit' => 'ಸಂಪಾದಿಸಿ',
 	'translate-history' => 'ಇತಿಹಾಸ',
 	'translate-page-language' => 'ಭಾಷೆ',
+	'translate-next' => 'ಮುಂದಿನ ಪುಟ',
+	'translate-prev' => 'ಹಿಂದಿನ ಪುಟ',
 	'translate-page-edit' => 'ಸಂಪಾದಿಸಿ',
 	'translate-optional' => '(ಐಚ್ಛಿಕ)',
+	'translate-edit-goto-prev' => 'ಹಿಂದಿನ ಸಂದೇಶವನ್ನು ಸಂಪಾದಿಸು',
+	'translate-edit-goto-next' => 'ಮುಂದಿನ ಸಂದೇಶವನ್ನು ಸಂಪಾದಿಸು',
 	'translate-stats-edits' => 'ಸಂಪಾದನೆಗಳು',
 	'translate-statsf-width' => 'ಪಿಕ್ಸಲ್‌ಗಳಲ್ಲಿ ಅಗಲ:',
 	'translate-statsf-height' => 'ಪಿಕ್ಸಲ್‌ಗಳಲ್ಲಿ ಎತ್ತರ:',
@@ -9684,6 +9701,7 @@ $messages['kn'] = array(
 	'translate-language-code-field-name' => 'ಭಾಷಾ ಸಂಕೇತ:',
 	'translate-language' => 'ಭಾಷೆ',
 	'translate-total' => 'ಸಂದೇಶಗಳು',
+	'translate-manage-modlang-new' => '$1 (ಹೊಸ)',
 	'translate-gs-total' => 'ಒಟ್ಟು',
 );
 
@@ -12912,13 +12930,13 @@ Tùit ij valor a l'han dij lìmit superior e anferior.",
 	'translate-total' => 'Mëssagi',
 	'translate-total-tooltip' => 'Ël nùmer total ëd mëssagi an sta partìa ëd mëssagi.',
 	'translate-untranslated' => 'Nen voltà',
-	'translate-untranslated-tooltip' => "Ël nùmer total ëd mëssagi pa virà an sta partìa ëd mëssagi sì.
-Sòn sì a anclud ij mëssagi ch'a son ëstàit marcà com vej.",
+	'translate-untranslated-tooltip' => "Ël nùmer total ëd mëssagi pa voltà an sta partìa ëd mëssagi sì.
+Sòn a anclud ij mëssagi ch'a son ëstàit marcà com vej.",
 	'translate-percentage-complete' => 'Completà',
-	'translate-percentage-complete-tooltip' => "La persentual ëd mëssagi ant la partìa ch'a son ëstàit virà e pa marcà com vej.",
+	'translate-percentage-complete-tooltip' => "La përsentual ëd mëssagi ant la partìa ch'a son ëstàit voltà e pa marcà com vej.",
 	'translate-percentage-fuzzy' => 'Veje',
-	'translate-percentage-fuzzy-tooltip' => "La përsentual ëd mëssagi ant la partìa ch'a son ëstàit virà e a son ëstàit marcà com vej.
-Ij mëssagi a son marcà com vej përchè ël mëssagi sorziss an lenga Anglèisa a l'é cangià, përchè un control automàtich për ël mëssagi a l'é falì, o përchè cheidun a l'ha marcalo com vej.",
+	'translate-percentage-fuzzy-tooltip' => "La përsentual ëd mëssagi ant la partìa ch'a son ëstàit voltà e a son ëstàit marcà com vej.
+Ij mëssagi a son marcà com vej përchè ël mëssagi sorgiss an lenga anglèisa a l'é cangià, përchè un contròl automàtich për ël mëssagi a l'é falì, o përchè cheidun a l'ha marcalo com vej.",
 	'translate-nothing-to-do' => "Tute le tradussion possìbij a smijo esse stàite fàite.
 A l'é ancoragià a revisioné ij mëssagi con [[Special:Translate|{{int:translate}}]].",
 	'supportedlanguages' => 'Lenghe mantnùe',
@@ -12930,11 +12948,11 @@ Se na lenga a l'é nen ant la lista, a peul trové coma anandié un proget ëd l
 
 Se chiel a fa 'd tradussion an na lenga e sò nòm a l'é nen comprèis, për piasì ch'a gionta sò nòm a la lista dij tradutor an sël [[:Category:Languages|portal]] ëd cola lenga.
 Ch'a bèica la bara ëd menù për n'anliura al portal ëd la lenga soa preferensa.",
-	'supportedlanguages-translators' => '{{PLURAL:$2|Virador|Virador}}: $1',
-	'supportedlanguages-noportal-title' => 'Pa gnun spassi nominal ëd portal definì',
-	'supportedlanguages-noportal' => 'L\'aministrador dla wiki a l\'ha pa definì NS_PORTAL, parèj sta pàgina-sì a travaja pa.
-Su sta pàgina-sì na lista ëd portaj ëd lenghe a pararirà për tùit ij portaj corespondent con un còdes ëd lenga definì e con na pàgina ciamà "translators".
-La sotpàgina "translators" a deuv conten-e lë stamp [[:{{ns:template}}:User|User]], ch\'a pija un nòm utent com paràmetr.',
+	'supportedlanguages-translators' => '{{PLURAL:$2|Tradutor|Tradutor}}: $1',
+	'supportedlanguages-noportal-title' => 'Gnun ëspassi nominal ëd portal definì',
+	'supportedlanguages-noportal' => 'L\'aministrator dla wiki a l\'ha pa definì NS_PORTAL, parèj sta pàgina-sì a travaja pa.
+Su sta pàgina-sì na lista ëd portaj ëd lenghe a comparrirà për tùit ij portaj corespondent con un còdes ëd lenga definì e con na pàgina ciamà "translators".
+La sot-pàgina "translators" a deuv conten-e lë stamp [[:{{ns:template}}:User|User]], ch\'a pija un nòm utent com paràmetr.',
 	'translate-save' => 'Salva ($1)',
 	'translate-jssti-add' => 'Gionté a la lista',
 	'translate-group-desc-mediawikicore' => 'Sta partìa ëd mëssagi-sì a conten ij mëssagi dovrà ant la version alfa corenta ëd MediaWiki ({{CURRENTVERSION}})',
@@ -15876,10 +15894,16 @@ $messages['te'] = array(
 	'translate-manage-action-import' => 'దిగుమతి చెయ్యి',
 	'translate-manage-action-ignore' => 'పట్టించుకోవద్దు',
 	'translate-manage-import-done' => 'అంతా పూర్తయ్యింది!',
+	'translate-manage-subtitle' => 'నిర్వహణ',
 	'importtranslations' => 'అనువాదాల దిగుమతి',
 	'translate-import-from-wiki' => 'ఈ వికీలోని ఫైలు:',
 	'translate-import-from-local' => 'స్థానిక ఫైలు ఎక్కింపు:',
 	'translate-import-err-ul-failed' => 'ఫైలు ఎక్కింపు విజయవంతం కాలేదు',
+	'translate-js-next' => 'భద్రపరిచి తర్వాతి దానికి వెళ్ళు',
+	'translate-js-nonext' => 'ఈ పుటలో ఇది చివరి సందేశం',
+	'translate-js-skip' => 'వదిలేసి తర్వాతి దానికి వెళ్ళు',
+	'translate-js-save-failed' => 'భద్రపరచడం విఫలమైంది. దయచేసి ఈ పొరపాటుని నివేదించండి.',
+	'translate-js-history' => 'అనువాద చరిత్ర',
 	'translate-gs-pos' => 'స్ధానం',
 	'translate-gs-code' => 'సంకేతం',
 	'translate-gs-continent' => 'ఖండం',

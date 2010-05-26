@@ -842,6 +842,11 @@ Pśełožowańska pśedłoga: <pre>$1</pre>',
 	'pt-parse-close' => 'Asymetriska toflicka &lt;/translate>.
 Pśełožowańska pśedłoga: <pre>$1</pre>',
 	'pt-parse-nested' => '',
+	'pt-shake-multiple' => 'Někotare wótrězkowe marki za jaden wótrězk.
+Tekst wótrězka: <pre>$1</pre>',
+	'pt-shake-position' => 'Wótrězkowe marki na njewócakowanem městnje.
+Tekst wótrězka: <pre>$1</pre>',
+	'pt-shake-empty' => 'Prozny wótrězk za marku $1.',
 );
 
 /** Greek (Ελληνικά)
@@ -1315,6 +1320,7 @@ $messages['gsw'] = array(
 	'tpt-sections-deleted' => 'Gleschti Ibersetzigs-Abschnitt',
 	'tpt-sections-template' => 'Ibersetzigs-Sytevorlag',
 	'tpt-badtitle' => 'Dr Sytename, wu Du aagee hesch ($1), isch kei giltige Sytename',
+	'tpt-nosuchpage' => 'D Syte $1 git s nit',
 	'tpt-oldrevision' => '$2 isch nit di letscht Version vu dr Syte [[$1]].
 Nume di letschte Versione chenne zum Iberseze markiert wäre.',
 	'tpt-notsuitable' => 'D Syte $1 cha nit iberstez wäre.
@@ -1327,9 +1333,12 @@ Voreb Du die Versione zum Ibersetze markiersch, iberprief, ass d Änderige an dr
 	'tpt-mark-summary' => 'het die Versione zum Ibersetze markiert',
 	'tpt-edit-failed' => 'Cha d Syte nit aktualisiere: $1',
 	'tpt-already-marked' => 'Di letscht Version vu däre Syte isch scho zum Ibersetze markiert wore.',
+	'tpt-unmarked' => 'D Syte $1 isch nit lenger markiert, ass sie mueß ibersetzt wäre.',
 	'tpt-list-nopages' => 'S sin kei Syte zum Ibersetze markiert wore un sin au no keini Syte fertig, wu chennte zum Ibersetze markiert wäre',
 	'tpt-old-pages' => '{{PLURAL:$1|E Version vu däre Syte isch|E paar Versione vu däne Syte sin}} zum Ibersetze markiert wore',
 	'tpt-new-pages' => '{{PLURAL:$1|In däre Syte|In däne Syte}} het s Tekscht mit Ibersetzigs-Markierige, aber zur Zyt isch kei Version {{PLURAL:$1|däre Syte|däne Syte}} zum Ibersetze markiert.',
+	'tpt-other-pages' => '{{PLURAL:$1|En alti Version vu däre Syte isch markiert, ass si mueß|Alti Versione vu däne Syte sin markiert, ass si mien}} ibersetzt wäre.
+Di {{PLURAL:$1|nejscht Version cha dergege nit markiert wäre, ass si mueß|nejschte Versione chenne dergege nit markiert wäre, ass sin mien}} ibersetzt wäre.',
 	'tpt-rev-latest' => 'letschti Version',
 	'tpt-rev-old' => 'Unterschid zue dr letschte markierte Version',
 	'tpt-rev-mark-new' => 'die Version zum Ibersetze markiere',
@@ -1588,6 +1597,7 @@ $messages['ia'] = array(
 	'tpt-sections-deleted' => 'Unitates de traduction delite',
 	'tpt-sections-template' => 'Patrono de pagina de traduction',
 	'tpt-badtitle' => 'Le nomine de pagina specificate ($1) non es un titulo valide',
+	'tpt-nosuchpage' => 'Le pagina $1 non existe',
 	'tpt-oldrevision' => '$2 non es le version le plus recente del pagina [[$1]].
 Solmente le versiones le plus recente pote esser marcate pro traduction.',
 	'tpt-notsuitable' => 'Le pagina $1 non es traducibile.
@@ -1600,12 +1610,16 @@ Ante de marcar iste version pro traduction, assecura que le modificationes al se
 	'tpt-mark-summary' => 'Marcava iste version pro traduction',
 	'tpt-edit-failed' => 'Non poteva actualisar le pagina: $1',
 	'tpt-already-marked' => 'Le version le plus recente de iste pagina ha jam essite marcate pro traduction.',
+	'tpt-unmarked' => 'Le pagina $1 non es plus marcate pro traduction.',
 	'tpt-list-nopages' => 'Il non ha paginas marcate pro traduction, ni paginas preparate pro isto.',
 	'tpt-old-pages' => 'Alcun {{PLURAL:$1|version de iste pagina|versiones de iste paginas}} ha essite marcate pro traduction.',
 	'tpt-new-pages' => 'Iste {{PLURAL:$1|pagina|paginas}} contine texto con etiquettas de traduction, ma nulle version de iste {{PLURAL:$1|pagina|paginas}} es actualmente marcate pro traduction.',
+	'tpt-other-pages' => '{{PLURAL:$1|Un ancian version de iste pagina|Ancian versiones de iste paginas}} es marcate pro traduction,
+ma le ultime {{PLURAL:$1|version|versiones}} non pote esser marcate pro traduction.',
 	'tpt-rev-latest' => 'ultime version',
 	'tpt-rev-old' => 'differentia con previe version marcate',
 	'tpt-rev-mark-new' => 'marcar iste version pro traduction',
+	'tpt-rev-unmark' => 'remover iste pagina del traduction',
 	'tpt-translate-this' => 'traducer iste pagina',
 	'translate-tag-translate-link-desc' => 'Traducer iste pagina',
 	'translate-tag-markthis' => 'Marcar iste pagina pro traduction',
@@ -1621,6 +1635,17 @@ Le pagina que tu vole modificar non pare corresponder con alcun pagina marcate p
 	'tpt-install' => 'Executa maintenance/update.php o le installation web pro activar le traduction de paginas.',
 	'tpt-render-summary' => 'Actualisation a un nove version del pagina de origine',
 	'tpt-download-page' => 'Exportar pagina con traductiones',
+	'pt-parse-open' => 'Etiquetta &lt;translate> asymmetric.
+Patrono de traduction: <pre>$1</pre>',
+	'pt-parse-close' => 'Etiquetta &lt;/translate> asymmetric.
+Patrono de traduction: <pre>$1</pre>',
+	'pt-parse-nested' => 'Le sectiones &lt;translate> annidate non es permittite.
+Texto del etiquetta: <pre>$1</pre>',
+	'pt-shake-multiple' => 'Marcatores de section multiple pro un sol section.
+Texto del section: <pre>$1</pre>',
+	'pt-shake-position' => 'Marcatores de section a un position inexpectate.
+Texto del section: <pre>$1</pre>',
+	'pt-shake-empty' => 'Section vacue pro le marcator $1.',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -1944,6 +1969,10 @@ D'Säit, déi Dir versicht z'änneren schéngt net mat enger Säit déi fir d'iw
 	'tpt-install' => "Lancéiert php maintenance/update.php oder web install fir d'Fonctioun vun der Säiteniwwersetzung anzeschalten.",
 	'tpt-render-summary' => 'Aktualiséieren fir mat der neier Versioun vun der Quellsäit iwwereneenzestëmmen',
 	'tpt-download-page' => 'Säit mat Iwwersetzungen exportéieren',
+	'pt-parse-open' => 'Netsymetreschen &lt;translate&gt;-Tag.
+Iwwersetzungsschabloun: <pre>$1</pre>',
+	'pt-parse-close' => 'Netsymetreschen &lt;&#47;translate&gt;-Tag.
+Iwwersetzungsschabloun: <pre>$1</pre>',
 	'pt-shake-empty' => 'Abschnitt fir Marker $1 eidelmaachen.',
 );
 
@@ -2413,8 +2442,7 @@ La pàgina ch'it preuve a modifiché a smija pa ch'a corisponda a na pàgina mar
 	'tpt-render-summary' => 'Modifiché për esse com la neuva version dla pàgina sorgiss',
 	'tpt-download-page' => 'Espòrta pàgina con tradussion',
 	'pt-shake-multiple' => 'Marcador mùltipl ëd session për na session.
-Test ëd la session:
-$1',
+Test ëd la session: <pre>$1</pre>',
 );
 
 /** Pashto (پښتو)
@@ -2916,6 +2944,7 @@ $messages['te'] = array(
 	'tpt-diff-new' => 'కొత్త పాఠ్యం',
 	'tpt-sections-template' => 'అనువాద పేజీ మూస',
 	'tpt-badtitle' => 'ఇచ్చిన పేజీ పేరు ($1) సరైన శీర్షిక కాదు',
+	'tpt-nosuchpage' => '$1 అనే పుట లేనే లేదు',
 	'tpt-edit-failed' => 'పేజీని తాజాకరించలేకపోయాం: $1',
 	'tpt-already-marked' => 'ఈ పేజీ యొక్క సరికొత్త కూర్పుని ఇప్పటికే అనువాదానికై గుర్తించారు.',
 	'tpt-rev-latest' => 'చిట్టచివరి కూర్పు',
