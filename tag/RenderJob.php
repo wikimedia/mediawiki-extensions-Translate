@@ -12,6 +12,7 @@
 class RenderJob extends Job {
 	public static function newJob( Title $target ) {
 		global $wgTranslateFuzzyBotName;
+		wfLoadExtensionMessages( 'PageTranslation' );
 
 		$job = new self( $target );
 		$job->setUser( $wgTranslateFuzzyBotName );

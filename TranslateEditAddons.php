@@ -58,6 +58,7 @@ class TranslateEditAddons {
 
 		$skin = $wgUser->getSkin();
 		$id = $group->getId();
+		wfLoadExtensionMessages( 'Translate' );
 
 		$ns = $wgTitle->getNamespace();
 		$title = Title::makeTitleSafe( $ns, "$prev/$code" );

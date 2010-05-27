@@ -51,6 +51,7 @@ abstract class TranslateTask {
 
 	/* We need $id here because staticness prevents subclass overriding */
 	public static function labelForTask( $id ) {
+		wfLoadExtensionMessages( 'Translate' );
 		return wfMsg( TranslateUtils::MSG . 'task-' . $id );
 	}
 

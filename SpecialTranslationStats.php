@@ -69,6 +69,7 @@ class SpecialTranslationStats extends SpecialPage {
 
 	protected function form( $opts ) {
 		global $wgOut, $wgScript;
+		wfLoadExtensionMessages( 'Translate' );
 		$this->setHeaders();
 		$wgOut->addWikiMsg( 'translate-statsf-intro' );
 
@@ -312,6 +313,7 @@ class SpecialTranslationStats extends SpecialPage {
 	}
 
 	public function draw( FormOptions $opts ) {
+		wfLoadExtensionMessages( 'Translate' );
 		global $wgTranslatePHPlotFont, $wgLang;
 
 		$width = $opts->getValue( 'width' );
