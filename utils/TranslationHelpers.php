@@ -519,8 +519,6 @@ class TranslationHelpers {
 
 		$latestRevision = $definitionTitle->getLatestRevID();
 		$translationRevision =  $db->selectField( 'revtag', 'rt_value', $conds, __METHOD__ );
-		var_dump($translationRevision);
-
 		if ( $translationRevision === false ) return null;
 
 		$oldtext = Revision::newFromTitle( $definitionTitle, $translationRevision )->getText();
