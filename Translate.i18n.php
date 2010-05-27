@@ -5373,6 +5373,7 @@ $1',
  * @author Guillom
  * @author IAlex
  * @author Jean-Frédéric
+ * @author Litlok
  * @author Louperivois
  * @author McDutchie
  * @author Peter17
@@ -5575,7 +5576,7 @@ La sous-page « translators » doit contenir le modèle [[:{{ns:template}}:User|
 	'translate-save' => 'Publier ($1)',
 	'translate-jssti-add' => 'Ajouter à la liste',
 	'translate-group-desc-mediawikicore' => 'Ce groupe de messages contient les messages utilisés dans la version alpha actuelle de MediaWiki ({{CURRENTVERSION}}).',
-	'translate-group-desc-mediawikimostused' => 'Ce groupe de message contient les [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 messages les plus souvent utilisés] dans MediaWiki.',
+	'translate-group-desc-mediawikimostused' => 'Ce groupe de messages contient les [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 messages les plus souvent utilisés] dans MediaWiki.',
 	'translate-group-desc-mediawikiextensions' => 'Ce méta-groupe de messages contient les messages de toutes les extensions pour MediaWiki supportées.',
 	'translate-group-desc-collection' => 'Ce méta-groupe de messages contient tous les messages de l’extension MediaWiki [http://www.mediawiki.org/wiki/Extension:Collection Collection].',
 	'translate-group-desc-flaggedrevs' => 'Groupe des messages Meta contenant tous les messages de l’extension MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
@@ -17893,6 +17894,7 @@ $messages['yue'] = array(
  * @author Jimmy xu wrk
  * @author Liangent
  * @author PhiLiP
+ * @author Sahran
  * @author Wmr89502270
  */
 $messages['zh-hans'] = array(
@@ -18041,6 +18043,7 @@ $messages['zh-hans'] = array(
 	'translate-translations-messagename' => '名称：',
 	'translate-translations-project' => '计划:',
 	'languagestats' => '语言统计',
+	'languagestats-recenttranslations' => '最近的翻译',
 	'translate-language-code' => '语言代码',
 	'translate-language-code-field-name' => '语言代码：',
 	'translate-language' => '语言',
@@ -18048,10 +18051,18 @@ $messages['zh-hans'] = array(
 	'translate-untranslated' => '未翻译',
 	'translate-percentage-complete' => '完成度',
 	'translate-percentage-fuzzy' => '已过时',
+	'supportedlanguages-translators' => '{{PLURAL:$2|翻译者|翻译者}}: $1',
 	'translate-save' => '保存（$1）',
 	'translate-jssti-add' => '新增至清单',
 	'translate-group-desc-mediawikicore' => '此界面消息群组包含了当前MediaWiki alpha版本所使用的消息（{{CURRENTVERSION}}）',
+	'translate-manage-groups' => '组管理',
+	'translate-manage-listgroups' => '配置组',
+	'translate-manage-listgroups-old' => '旧样式组',
+	'translate-managegroups' => '组管理',
+	'translate-manage-newgroup' => '以前此消息组没有被导入过。',
 	'translate-manage-modlang-new' => '$1（新）',
+	'translate-manage-import-new' => '新消息 $1',
+	'translate-manage-import-deleted' => '删除的消息  $1',
 	'translate-manage-action-import' => '导入',
 	'translate-manage-action-ignore' => '忽略',
 	'translate-manage-submit' => '执行',
