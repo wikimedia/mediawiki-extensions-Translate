@@ -461,9 +461,20 @@ These messages will not be submitted to svn, but will only affect the interface 
 	'supportedlanguages-noportal' => '{{doc-important|Do not translate "translators" and "<nowiki>[[:{{ns:template}}:User|User]]</nowiki>"!}}',
 	'translate-save' => '{{Identical|Save}}',
 	'translate-jssti-add' => 'Name of button in [[Special:Preferences]], tab Editing.',
+	'translate-manage-groups' => 'Special page title. See screenshot. [[File:Manage-1.png|right|thumb|Group management interface]]',
+	'translate-manage-listgroups' => 'Section heading on special page. See screenshot [[File:Manage-1.png|150px|right|Group management interface]].',
+	'translate-manage-listgroups-old' => 'Section heading on special page. See screenshot [[File:Manage-1.png|right|thumb|Group management interface]].',
+	'translate-manage-modlangs' => '{{doc-screenshot|Manage-3.png|twn}}Part of group management special page.',
 	'translate-manage-modlang-new' => '{{Identical|New}}
 
 "new" means that the translations for that languages has never been imported/cached yet. $1 is a link to the page that allows do that.',
+	'translate-manage-import-diff' => 'See screenshot [[File:Manage-2.png|150px|right|Group management interface]].
+Variables:
+*$1 - Message name
+*$2 - radio buttons 
+**{{msg-mw|MediaWiki:Translate-manage-action-import}}
+**{{msg-mw|Translate-manage-action-conflict}}
+**{{msg-mw|Translate-manage-action-ignore}}',
 	'translate-manage-action-import' => '{{Identical|Import}}
 
 Used in the group management interface. {{doc-screenshot|Manage-4.png|twn}}',
@@ -474,9 +485,15 @@ fuzzy = mark translations for review',
 	'translate-manage-action-fuzzy' => 'Used in the group management interface. {{doc-screenshot|Manage-4.png|twn}}
 
 fuzzy = mark translations for review',
-	'translate-manage-submit' => 'Used in the group management interface. {{doc-screenshot|Manage-4.png|twn}}',
+	'translate-manage-submit' => 'Used in the group management interface. {{doc-screenshot|Manage-3.png|twn}}',
 	'translate-manage-import-fuzzy' => 'fuzzy = mark translations for review',
-	'translate-manage-intro-en' => 'If your language and its grammar permit, you can refer to <code>ignore</code> as <code>{<nowiki />{int:{{msg-mw|translate-manage-action-ignore}}}}</code>.',
+	'translate-manage-intro-en' => 'Introduction to special page. See screenshot [[File:Manage-2.png|150px|right|Group management interface]].
+
+If your language and its grammar permit, you can refer to <code>ignore</code> as <code>{<nowiki />{int:{{msg-mw|translate-manage-action-ignore}}}}</code>.',
+	'translate-manage-intro-other' => 'Introduction to special page. See screenshot. [[File:Manage-2.png|150px|right|Group management interface]]
+$1 is a language name.',
+	'translate-manage-import-rebuild-all' => 'Submit button on group management special page.
+{{doc-screenshot|Manage-3.png|twn}}',
 	'importtranslations' => 'Used in [[Special:ImportTranslations]]. {{doc-screenshot|Import-1.png|twn}}',
 	'translate-import-from-url' => 'Used in [[Special:ImportTranslations]]. {{doc-screenshot|Import-1.png|twn}}',
 	'translate-import-from-wiki' => 'Used in [[Special:ImportTranslations]]. {{doc-screenshot|Import-1.png|twn}}',
@@ -11113,7 +11130,31 @@ $messages['mt'] = array(
 	'translate-task-optional' => 'Uri messaġġi opzjonali minn',
 	'translate-task-untranslatedoptional' => 'Uri l-messaġġi opzjonali li għadhom ma ġewx traddoti minn',
 	'translate-task-problematic' => 'Uri messaġġi li għadhom problemi',
+	'translate-task-review' => 'Irrevedi tibdil minn',
+	'translate-task-reviewall' => "Irrevedi kull messaġġ tradott f'",
+	'translate-task-export' => 'Esporta t-traduzzjonijiet minn',
+	'translate-task-export-to-file' => 'Esporta t-traduzzjoni lejn fajl minn',
+	'translate-task-export-as-po' => "Esporta t-traduzzjoni f'format Gettext",
+	'translate-task-export-to-xliff' => "Esporta t-traduzzjoni f'format Xliff",
+	'translate-page-no-such-language' => 'Il-lingwa speċifikata hi invalida.',
+	'translate-page-no-such-task' => 'L-azzjoni speċifikata kienet invalida.',
+	'translate-page-no-such-group' => 'Il-grupp speċifikat huwa invalidu.',
+	'translate-page-disabled' => "Traduzzjonijiet f'din il-lingwa għal dan il-grupp ġew diżabilitati.. Raġuni:
+
+''$1''",
+	'translate-page-settings-legend' => 'Impostazzjonijiet',
+	'translate-page-task' => 'Irrid',
+	'translate-page-group' => 'Grupp',
 	'translate-page-language' => 'Lingwa',
+	'translate-page-limit' => 'Limitu',
+	'translate-page-limit-option' => '$1 {{PLURAL:$1|messaġġ|messaġġ}} kull paġna',
+	'translate-submit' => 'Ikseb',
+	'translate-page-navigation-legend' => 'Navigazzjoni',
+	'translate-page-showing' => "Qed jidhru l-messaġġi minn $1 sa $2 ta' $3",
+	'translate-page-showing-all' => 'Qed jidhru $1 {{PLURAL:$1|messaġġ|messaġġ}}.',
+	'translate-page-showing-none' => "L-ebda messaġġ x'jintwera.",
+	'translate-next' => 'Paġna suċċessiva',
+	'translate-prev' => 'Paġna preċedenti',
 	'translate-page-description-legend' => 'Informazzjoni dwar il-grupp',
 	'translate-page-edit' => 'editja',
 	'translate-ext-url' => '<hr />Sit elettroniku: $1',
@@ -11180,7 +11221,7 @@ It-tibdil ma jiġix salvat sakemm ma tagħfasx il-buttuna t'isfel biex issalva."
 	'translate-checks-format' => 'Din it-traduzzjoni ma ssegwix id-definizzjoni segwenti jew għandha sintassi invalidi: $1',
 	'translate-checks-escape' => "L-''escapes'' segwenti jistgħu jkunu aċċidentali: <strong>$1</strong>",
 	'translate-checks-fudforum-syntax' => "Uża <nowiki>$1</nowiki> minflok <nowiki>$2</nowiki> f'dan il-proġett.",
-	'translate-pref-nonewsletter' => "Tibgħatlix ''newsletter'' b'permezz ta' ittra-e",
+	'translate-pref-nonewsletter' => "Tibgħatlix ''newsletters'' permezz ta' ittra-e",
 	'translate-pref-editassistlang' => 'Lingwi assistenti:',
 	'prefs-translate' => 'Opzjonijiet għat-traduzzjoni',
 	'translate-pref-editassistlang-help' => "Kodiċi tal-lingwi separati minn virgola.
@@ -11205,6 +11246,8 @@ Il-lista predefinita tal-lingwi tiddependi fuq il-lingwa tiegħek.",
 	'translate-translations-project' => 'Proġett:',
 	'languagestats' => 'Statistika tal-lingwi',
 	'languagestats-summary' => "Din il-paġna turi l-istatistika tat-traduzzjonijiet għall-gruppi kollha tal-messaġġi ta' lingwa.",
+	'translate-language-code' => 'Kodiċi tal-lingwa',
+	'translate-language-code-field-name' => 'Kodiċi tal-lingwa:',
 	'translate-group-desc-nodesc' => "L-ebda deskrizzjoni mhi disponibbli għal dan il-grupp ta' messaġġi",
 	'translate-js-next' => 'Salvaha u għaddi għal li jmiss',
 	'translate-js-skip' => 'Li jmiss',
@@ -16958,6 +17001,7 @@ $messages['uk'] = array(
 
 Якщо ви перекладач на певну мову, але у відповідному списку вас нема, додайте своє ім\'я до списку перекладачів на [[:Category:Languages|порталі]] цієї мови.
 На бічній панель знаходиться посилання на портал мови вашого інтерфейсу.',
+	'supportedlanguages-translators' => 'Перекладачів: $1',
 	'translate-save' => 'Зберегти ($1)',
 	'translate-jssti-add' => 'Додати в список',
 	'translate-group-desc-mediawikicore' => 'Ця група містить повідомлення, які використовують у поточній альфа-версії MediaWiki ({{CURRENTVERSION}})',

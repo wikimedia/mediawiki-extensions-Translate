@@ -3026,7 +3026,72 @@ $messages['tk'] = array(
  * @author AnakngAraw
  */
 $messages['tl'] = array(
+	'pagetranslation' => 'Salinwika ng pahina',
+	'right-pagetranslation' => 'Tatakan ang mga bersyon ng mga pahinang isasalinwika',
+	'tpt-desc' => 'Dugtong para sa pagsasalinwika ng mga pahina ng nilalaman',
+	'tpt-section' => 'Yunit ng salinwika $1',
+	'tpt-section-new' => 'Bagong yunit ng salinwika.
+Pangalan: $1',
+	'tpt-section-deleted' => 'Yunit ng salinwika $1',
+	'tpt-template' => 'Suleras ng pahina',
+	'tpt-templatediff' => 'Nabago na ang suleras ng pahina.',
+	'tpt-diff-old' => 'Naunang teksto',
+	'tpt-diff-new' => 'Bagong teksto',
+	'tpt-submit' => 'Tatakan ang bersyong ito para isalinwika',
+	'tpt-sections-oldnew' => 'Bago at umiiral ng mga yunit ng salinwika',
+	'tpt-sections-deleted' => 'Naburang mga yunit ng salinwika',
+	'tpt-sections-template' => 'Suleras ng pahina ng salinwika',
+	'tpt-badtitle' => 'Ang pangalan ng pahinang ibinigay ($1) ay isang hindi tanggap na pamagat',
+	'tpt-nosuchpage' => 'Hindi umiiral ang pahinang $1',
+	'tpt-oldrevision' => 'Ang $2 ay hindi ang pinakabagong bersyon ng pahinang [[$1]].
+Tanging pinakabagong mga bersyong lang ang tatatakan para sa pagsasalinwika.',
+	'tpt-notsuitable' => 'Hindi angkop ang pahinang $1 para sa pagsasalinwika.
+Tiyaking mayroon itong mga tatak na <nowiki><translate></nowiki> at may isang tanggap na sintaks.',
+	'tpt-saveok' => 'Nilagyang ng tanda ang pahinang [[$1]] para sa pagsasalinwika na may $2 na {{PLURAL:$2|yunit ng salinwika|mga yunit ng salinwika}}.
+Maaari na ngayong <span class="plainlinks">[$3 isalinwika]</span> ang pahina.',
+	'tpt-badsect' => 'Ang $1" ay isang hindi tanggap na pangalan para sa yunit ng salinwikang $2.',
+	'tpt-showpage-intro' => 'Nakatala sa ibaba ang bago, umiiral at naburang mga seksyon.
+Bago tatakan ang bersyong ito para isalinwika, suriing nakauntian ang mga pagbabago sa mga seksyon upang maiwasan ang hindi kailangang gawain para sa mga tagapagsalinwika.',
+	'tpt-mark-summary' => 'Tinatakan ang bersyong ito para isalinwika',
+	'tpt-edit-failed' => 'Hindi maisapanahon ang pahina:  $1',
+	'tpt-already-marked' => 'Ang huling bersyon ng pahinang ito ay natatakan na para sa pagsasalinwika.',
+	'tpt-unmarked' => 'Ang pahinang $1 ay hindi na tinatakan para sa pagsasalinwika.',
+	'tpt-list-nopages' => 'Walang mga pahinang tinatakan para sa pagsasalinwika o nakahanda upang markahan para sa pagsasalinwika.',
+	'tpt-old-pages' => 'Ilang bersyon ng {{PLURAL:$1|pahinang ito|mga pahinang ito}} ay natatakan na para sa pagsasalinwika.',
+	'tpt-new-pages' => '{{PLURAL:$1|Naglalaman ang pahinang ito|Naglalaman ang mga pahinang ito}} ng tekstong may mga tatak ng pagsasalinwika,
+ngunit walang bersyon na {{PLURAL:$1|ang pahinang ito|ang mga pahinang ito}} ay kasalukuyang tinatakan para sa pagsasalinwika.',
+	'tpt-other-pages' => '{{PLURAL:$1|Isang lumang bersyon ng pahinang ito ang|Mas lumang mga bersyon ng mga pahinang ito ang}} tinatakan para sa pagsasalinwika,
+subalit ang pinakabagong {{PLURAL:$1|bersyon|mga bersyon}} ay hindi matatatakan para sa pagsasalinwika.',
+	'tpt-rev-latest' => 'pinakabagong bersyon',
+	'tpt-rev-old' => 'pagkakaiba sa unang bersyong minarkahan',
+	'tpt-rev-mark-new' => 'tatakan ang bersyong ito para isalinwika',
+	'tpt-rev-unmark' => 'alisin ang pahinang ito mula sa pagsasalinwika',
+	'tpt-translate-this' => 'isalinwika ang pahinang ito',
 	'translate-tag-translate-link-desc' => 'Isalinwika ang pahinang ito',
+	'translate-tag-markthis' => 'Tatakan ang pahinang ito para isalinwika',
+	'translate-tag-markthisagain' => 'Ang pahinang ito ay may <span class="plainlinks">[$1 mga pagbabago]</span> mula pa noong huli itong <span class="plainlinks">[$2 tinatakan para isalinwika]</span>.',
+	'translate-tag-hasnew' => 'Naglalaman ang pahinang ito ng <span class="plainlinks">[$1 mga pagbabagong]</span> hindi tinatakan para isalinwika.',
+	'tpt-translation-intro' => 'Ang pahinang ito ay isang <span class="plainlinks">[$1 naisalinwikang bersyon]</span> ng isang pahina [[$2]] at ang salinwika ay $3% kumpleto na.',
+	'tpt-translation-intro-fuzzy' => 'Tinatakan ng ganito ang mga pagsasalinwikang lipas na sa panahon.',
+	'tpt-languages-legend' => 'Iba pang mga wika:',
+	'tpt-target-page' => 'Hindi maaaring kinakamay na maisapanahon ang pahinang ito.
+Ang pahinang ito ay isang salinwika ng pahinang [[$1]] at maisasapanahon ang salinwika sa pamamagitan ng [$2 kasangkapang pansalinwika].',
+	'tpt-unknown-page' => 'Nakalaan ang puwang na pampangalang ito para sa mga salinwika ng pahina ng nilalaman.
+Tila hindi tumutugma ang pahinang sinusubukan mong baguhin sa anumang pahinang natatakan para sa pagsasalinwika.',
+	'tpt-install' => 'Patakbuhin ang pagpapanatiling php/update.php o paglalagay na pang-web upang mapaandar ang kasangkapang-katangiang pangsalinwika ng pahina.',
+	'tpt-render-summary' => 'Isinasapanahon upang tumugma sa bagong bersyon ng pinagmulang pahina',
+	'tpt-download-page' => 'Iluwas ang pahinang may mga pagsasalinwika',
+	'pt-parse-open' => 'Hindi magkatimbang na tatak na &lt;translate>.
+Suleras ng pagsasalinwika:  <pre>$1</pre>',
+	'pt-parse-close' => 'Hindi magkatimbang na tatak na &lt;translate>.
+Suleras ng pagsasalinwika:  <pre>$1</pre>',
+	'pt-parse-nested' => 'Hindi pinapayagan ang nakapugad na mga seksyong &lt;translate>.
+Teksto ng tatak: <pre>$1</pre>',
+	'pt-shake-multiple' => 'Mga pananda ng maramihang seksyon para sa isang seksyon.
+Teksto ng seksyon: <pre>$1</pre>',
+	'pt-shake-position' => 'Mga panandang pangseksyon sa loob ng posisyong hindi inaasahan.
+Teksto ng seksyon: <pre>$1</pre>',
+	'pt-shake-empty' => 'Seksyong walang laman para sa panandang $1.',
 );
 
 /** Turkish (Türkçe)
