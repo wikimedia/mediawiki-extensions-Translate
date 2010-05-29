@@ -9770,6 +9770,7 @@ $1',
 	'translate-edit-no-information' => '이 메시지에 관한 도움말이 없습니다.
 만약 이 메시지가 어디에 어떻게 사용되는지 알고 계시다면 도움말을 작성해주세요.',
 	'translate-edit-information' => '이 메시지 "$2"에 관한 도움말 ($1)',
+	'translate-edit-in-other-languages' => '"$1" 메시지의 다른 언어판',
 	'translate-edit-committed' => '소프트웨어의 현재 번역',
 	'translate-edit-warnings' => '불완전한 번역에 대한 경고',
 	'translate-edit-tmmatch' => '$1% 일치',
@@ -9784,6 +9785,9 @@ $1',
 	'translate-magic-cm-export' => '내보내기',
 	'translate-magic-nothing-to-export' => '내보낼 것이 없습니다.',
 	'translate-magic-cm-to-be' => '번역 후',
+	'translate-magic-cm-current' => '현재 내용',
+	'translate-magic-cm-original' => '원래 내용',
+	'translate-magic-cm-comment' => '편집 내용:',
 	'translate-magic-cm-save' => '저장',
 	'translate-magic-cm-updatedusing' => '[[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]]을 통해 업데이트함',
 	'translate-magic-cm-savefailed' => '저장 실패',
@@ -9791,9 +9795,14 @@ $1',
 	'translate-magic-words' => '매직 워드',
 	'translate-magic-namespace' => '이름공간 이름',
 	'translate-magic-notsaved' => '당신의 편집이 저장되지 않았습니다!',
+	'translate-magic-errors' => '번역문에서 다음 오류{{PLURAL:$1|를|들을}} 수정해주십시오:',
+	'translate-magic-saved' => '당신의 편집 내용을 성공적으로 저장했습니다.',
 	'translationchanges-export' => '내보내기',
+	'translate-checks-parameters' => '다음 {{PLURAL:$2|변수가}} 사용되지 않았습니다:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => '메시지 원문에는 <nowiki>{{PLURAL:}}</nowiki>을 사용하지만 번역문에서는 그렇지 않습니다.',
 	'translate-pref-nonewsletter' => '이메일 뉴스레터를 보내지 않습니다',
+	'translate-pref-editassistlang' => '보조 언어:',
 	'prefs-translate' => '번역 옵션',
 	'right-translate' => '시스템 메시지를 번역',
 	'translate-rc-translation-filter' => '번역 필터:',
@@ -10141,6 +10150,8 @@ $messages['lb'] = array(
 	'translate-page-settings-legend' => 'Astellungen',
 	'translate-page-task' => 'Ech wëll',
 	'translate-page-group' => 'Grupp',
+	'translate-page-group-tooltip' => 'Den Numm vun engem Grupp vu Messagen.
+Wann de Grupp aus Ënnergruppen besteet oder Messagen aus anere Gruppen drastinn da gëtt en fett ugewisen.',
 	'translate-page-language' => 'Sprooch',
 	'translate-page-limit' => 'Maximum',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|Message|Message}} pro Säit',
@@ -10700,7 +10711,7 @@ $messages['mk'] = array(
 	'translate-edit-goto-no-next' => 'Нема следна порака',
 	'translate-edit-goto-prev' => 'Уреди претходна порака',
 	'translate-edit-goto-next' => 'Уреди следна порака',
-	'translate-edit-goto-list' => 'Прикажи листа на пораки',
+	'translate-edit-goto-list' => 'Назад кон списокот',
 	'translate-magic-pagename' => 'Превод на MediaWiki додатоци',
 	'translate-magic-help' => "Можете да ги преведете алијасите на специјалните страници, магичните зборови и називите на именските простори.
 
@@ -10752,11 +10763,11 @@ $messages['mk'] = array(
 	'translate-checks-fudforum-syntax' => 'Користете <nowiki>$1</nowiki> наместо <nowiki>$2</nowiki> во овој проект.',
 	'translate-pref-nonewsletter' => 'Не ми испраќај новости по е-пошта',
 	'translate-pref-editassistlang' => 'Помошни јазици:',
-	'prefs-translate' => 'Опции за преведување',
-	'translate-pref-editassistlang-help' => 'Листа на јазични кодови одделени со запирка.
+	'prefs-translate' => 'Нагодувања за преведување',
+	'translate-pref-editassistlang-help' => 'Список на јазични кодови одделени со запирка.
 Преводите на пораките на овие јазици се прикажуваат кога преведувате.
-Листата на јазици зададена по основно зависи од вашиот јазик.',
-	'translate-pref-editassistlang-bad' => 'Погрешен јазичен код на листата:
+Списокот на јазици зададен по основно зависи од вашиот јазик.',
+	'translate-pref-editassistlang-bad' => 'Погрешен јазичен код на списокот:
 <nowiki>$1</nowiki>.',
 	'translate-pref-jsedit' => 'Подобрен уредник на преводи (JavaScript)',
 	'right-translate' => 'Уредување со користење на интерфејсот за преведување',
@@ -10771,7 +10782,7 @@ $messages['mk'] = array(
 	'translate-stats-edits' => 'Уредувања',
 	'translate-stats-users' => 'Преведувачи',
 	'translate-statsf-intro' => 'Може да генерирате едноставни статистики со помош на оваа форма. Сите вредности имаат максимални и минимални граници.',
-	'translate-statsf-options' => 'Опции за графиконот',
+	'translate-statsf-options' => 'Нагодувања за графиконот',
 	'translate-statsf-width' => 'Ширина во пиксели:',
 	'translate-statsf-height' => 'Висина во пиксели:',
 	'translate-statsf-days' => 'Временски период во денови:',
@@ -10781,8 +10792,8 @@ $messages['mk'] = array(
 	'translate-statsf-count' => 'Мерка:',
 	'translate-statsf-count-edits' => 'Број на уредувања',
 	'translate-statsf-count-users' => 'Активни преведувачи',
-	'translate-statsf-language' => 'Листа на јазични кодови, одвоени со запирка:',
-	'translate-statsf-group' => 'Листа на група на кодови, одвоени со запирка:',
+	'translate-statsf-language' => 'Список на јазични кодови, одвоени со запирка:',
+	'translate-statsf-group' => 'Список на групни кодови, одвоени со запирка:',
 	'translate-statsf-submit' => 'Преглед',
 	'translate-tag-category' => 'Преводливи страници',
 	'translate-tag-page-desc' => 'Превод на вики страницата [[:$1]]',
@@ -10822,16 +10833,16 @@ $messages['mk'] = array(
 Ако сакате повеќе информации за некој јазик, можете да кликнете на врската до матичниот портал за тој јазик.
 Со кликнување на името на некој преведувач ќе бидете одведени до неговата корисничка страница.
 
-Доколку не можете да најдете некој јазик на листата, можете да дознаете како да започнете проект за локализација на тој јазик на страницата „[[Translating:Process|Нов јазик]]“.
+Доколку не можете да најдете некој јазик на списокот, можете да дознаете како да започнете проект за локализација на тој јазик на страницата „[[Translating:Process|Нов јазик]]“.
 
-Ако преведувате на некој јазик, но вашето име не е наведено, тогаш додајте се на листата на преведувачи која се наоѓа на [[:Category:Languages|матичниот портал]] за тој јазик.
+Ако преведувате на некој јазик, но вашето име не е наведено, тогаш додајте се на списокот на преведувачи која се наоѓа на [[:Category:Languages|матичниот портал]] за тој јазик.
 Во менито лево ќе најдете врска до матичниот портал на јазикот што го сакате.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Преведувач|Преведувачи}}: $1',
 	'supportedlanguages-noportal-title' => 'Нема определено именски простор за портал',
 	'supportedlanguages-noportal' => 'Администраторот на викито нема определено NS_PORTAL, па затоа страницата не работи.
 На страницава се јавува список на сите портали што одговараат на определен јазичен код и потстраница наречена „преведувачи“ која го содржи шаблонот [[:{{ns:template}}:User|User]] земајќи корисничко име како параметар.',
 	'translate-save' => 'Зачувај ($1)',
-	'translate-jssti-add' => 'Додај на листата',
+	'translate-jssti-add' => 'Додај во список',
 	'translate-group-desc-mediawikicore' => 'Оваа група содржи пораки кои се користат на моменталната алфа верзија на МедијаВики ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'Во оваа група пораки се наведени [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 најчесто користени пораки] на МедијаВики',
 	'translate-group-desc-mediawikiextensions' => 'Мета-група која ги содржи сите пораки за поддржаните додатоци за МедијаВики',
@@ -10882,11 +10893,11 @@ $messages['mk'] = array(
 	'translate-manage-import-fuzzy' => 'Увезување и обележување со fuzzy: $1',
 	'translate-manage-import-done' => 'Сè е готово!',
 	'translate-manage-import-rebuild' => 'Обнова на кешот.',
-	'translate-manage-intro-en' => 'Еве листа на промени во пораките во оваа група.
+	'translate-manage-intro-en' => 'Еве список на промени во пораките во оваа група.
 Прегледајте ги пораките и изберете го дејството што сакате да го направите за секоја порака.
 Откога ќе ги обновите дефинициите на пораките, проверете дали има надворешни промени на други јазици.
 Исто така имајте в превид дека дејството <code>ignore</code> е само привремено.',
-	'translate-manage-intro-other' => 'Еве листа на промени во преводите на $1 јазик.
+	'translate-manage-intro-other' => 'Еве список на промени во преводите на $1 јазик.
 Прегледајте ги пораките и изберете го дејството што сакате да го направите за секоја порака.
 Ако изберете да ги занемарите промените, тие ќе бидат заменети при следниот извоз.',
 	'translate-manage-subtitle' => 'Раководи',

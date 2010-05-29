@@ -464,6 +464,8 @@ Kent merkañ ar stumm-mañ evit an treiñ, gwiriait mat n'eus ket bet nemeur a g
 	'tpt-list-nopages' => "N'eus pajenn ebet merket da vezañ troet na prest da vezañ merket da vezañ troet.",
 	'tpt-old-pages' => 'Stummoù zo eus ar {{PLURAL:$1|bajenn-mañ|pajennoù-mañ}} zo bet merket da vezañ troet.',
 	'tpt-new-pages' => "{{PLURAL:$1|Er bajenn-mañ|Er pajennoù-mañ}} ez eus testennoù enno balizennoù treiñ, met stumm ebet eus ar {{PLURAL:$1|bajenn-mañ|pajennoù-mañ}} n'eo bet merket da vezañ troet.",
+	'tpt-other-pages' => "Merket ez eus bet da vezañ troet {{PLURAL:$1|ur stumm kozh eus ar bajenn-mañ|stummoù koshoc'h eus ar pajennoù-mañ}};
+ar {{PLURAL:$1|stumm|stummoù}} diwezhañ avat n'hallont ket bezañ merket da vezañ troet.",
 	'tpt-rev-latest' => 'stumm diwezhañ',
 	'tpt-rev-old' => "diforc'hioù e-keñver an doare merket kozh",
 	'tpt-rev-mark-new' => 'Merkañ ar stumm-mañ evit ma vo troet',
@@ -929,6 +931,7 @@ Certigu ke ĝi havas etikedojn <nowiki><translate></nowiki> kaj havas validan si
  * @author Crazymadlover
  * @author Diego Grez
  * @author Sanbec
+ * @author Translationista
  */
 $messages['es'] = array(
 	'pagetranslation' => 'Traducción de página',
@@ -988,6 +991,8 @@ La página que estás tratando de editar no parece corresponder con alguna pági
 Plantilla de traducción: <pre>$1</pre>',
 	'pt-parse-close' => 'Etiqueta &lt;/translate> desequilibrada.
 Plantilla de traducción: <pre>$1</pre>',
+	'pt-parse-nested' => 'No se permite secciones anidadas &lt;translate>.
+Texto de etiqueta: <pre>$1</pre>',
 );
 
 /** Estonian (Eesti)
@@ -1860,6 +1865,8 @@ $messages['kn'] = array(
  * @author Kwj2772
  */
 $messages['ko'] = array(
+	'pagetranslation' => '문서 번역',
+	'tpt-translate-this' => '이 문서 번역하기',
 	'translate-tag-translate-link-desc' => '이 문서 번역하기',
 	'tpt-languages-legend' => '다른 언어:',
 );
@@ -1973,6 +1980,8 @@ D'Säit, déi Dir versicht z'änneren schéngt net mat enger Säit déi fir d'iw
 Iwwersetzungsschabloun: <pre>$1</pre>',
 	'pt-parse-close' => 'Netsymetreschen &lt;&#47;translate&gt;-Tag.
 Iwwersetzungsschabloun: <pre>$1</pre>',
+	'pt-parse-nested' => 'Verschachtelt &lt;translate&gt;-Abschnitter sinn net méiglech.
+Text vum Tag: <pre>$1</pre>',
 	'pt-shake-empty' => 'Abschnitt fir Marker $1 eidelmaachen.',
 );
 
@@ -2045,7 +2054,7 @@ $messages['mk'] = array(
 	'tpt-translation-intro-fuzzy' => 'Застарените преводи се обележуваат вака.',
 	'tpt-languages-legend' => 'Други јазици:',
 	'tpt-target-page' => 'Оваа страница не може да се обнови рачно.
-Оваа страница е превод на страницата [[$1]] а преводот може да се обнови со помош на [$2 the алатката за преведување].',
+Страницава е превод на страницата [[$1]], а преводот може да се обнови само со помош на [$2 алатката за преведување].',
 	'tpt-unknown-page' => 'Овој именски простор е резервиран за преводи на содржински страници.
 Страницата која се обидувате да ја уредите не соодветствува со ниедна страница обележана за преведување.',
 	'tpt-install' => 'Пуштете го php maintenance/update.php или интернет-инсталација за да ја добиете можноста за преведување страници.',
