@@ -1,17 +1,17 @@
 <?php
 
 class TranslateRcFilter {
-
 	public static function translationFilter( &$conds, &$tables, &$join_conds, $opts ) {
 		global $wgRequest, $wgTranslateMessageNamespaces;
+
 		$translations = $wgRequest->getVal( 'translations', '' );
 		$opts->add( 'translations', false );
 		$opts->setValue( 'translations', $translations );
 
-
 		$dbr = wfGetDB( DB_SLAVE );
 
 		$namespaces = array();
+
 		foreach ( $wgTranslateMessageNamespaces as $index ) {
 			$namespaces[] = $index;
 			$namespaces[] = $index + 1; // Talk too
@@ -26,15 +26,15 @@ class TranslateRcFilter {
 			$conds[] = 'rc_namespace IN (' . $dbr->makeList( $namespaces ) . ')';
 			$conds[] = 'rc_title not like \'%%/%%\'';
 		}
+
 		return true;
 	}
 
 	public static function translationFilterForm( &$items, $opts ) {
 		global $wgRequest;
-		wfLoadExtensionMessages( 'Translate' );
+
 		$opts->consumeValue( 'translations' );
 		$default = $wgRequest->getVal( 'translations', '' );
-
 
 		$label = Xml::label( wfMsg( 'translate-rc-translation-filter' ), 'mw-translation-filter' );
 		$select = new XmlSelect( 'translations', 'mw-translation-filter', $default );
@@ -44,8 +44,7 @@ class TranslateRcFilter {
 		$select->addOption( wfMsg( 'translate-rc-translation-filter-site' ), 'site' );
 
 		$items['translations'] = array( $label, $select->getHTML() );
+
 		return true;
 	}
-
-
 }

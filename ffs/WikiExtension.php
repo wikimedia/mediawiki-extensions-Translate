@@ -76,7 +76,6 @@ class WikiExtensionFormatReader extends WikiFormatReader {
 }
 
 class WikiExtensionFormatWriter extends WikiFormatWriter {
-
 	// Inherit
 	protected $authors;
 

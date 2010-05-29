@@ -41,12 +41,18 @@ class SimpleFFS implements FFS {
 
 	public function read( $code ) {
 		$filename = $this->group->getSourceFilePath( $code );
-		if ( $filename === null ) return false;
+		if ( $filename === null ) {
+			return false;
+		}
 
-		if ( !file_exists( $filename ) ) return false;
+		if ( !file_exists( $filename ) ) {
+			return false;
+		}
 
 		$input = file_get_contents( $filename );
-		if ( $input === false ) throw new MWException( "Unable to read file $filename" );
+		if ( $input === false ) {
+			throw new MWException( "Unable to read file $filename" );
+		}
 
 		return $this->readFromVariable( $input );
 	}
@@ -54,16 +60,24 @@ class SimpleFFS implements FFS {
 	public function readFromVariable( $data ) {
 		$parts = explode( "\0\0\0\0", $data );
 
-		if ( count( $parts ) !== 2 ) throw new MWException( 'Wrong number of parts' );
+		if ( count( $parts ) !== 2 ) {
+			throw new MWException( 'Wrong number of parts' );
+		}
 
 		list( $authorsPart, $messagesPart ) = $parts;
 		$authors = explode( "\0", $authorsPart );
 		$messages = array();
+
 		foreach ( explode( "\0", $messagesPart ) as $line ) {
-			if ( $line === '' ) continue;
+			if ( $line === '' ) {
+				continue;
+			}
+
 			$lineParts = explode( '=', $line, 2 );
 
-			if ( count( $lineParts ) !== 2 ) throw new MWException( "Wrong number of parts in line $line" );
+			if ( count( $lineParts ) !== 2 ) {
+				throw new MWException( "Wrong number of parts in line $line" );
+			}
 
 			list( $key, $message ) = $lineParts;
 			$key = trim( $key );
@@ -81,9 +95,17 @@ class SimpleFFS implements FFS {
 	public function write( MessageCollection $collection ) {
 		$writePath = $this->writePath;
 
-		if ( $writePath === null ) throw new MWException( "Write path is not set" );
-		if ( !file_exists( $writePath ) ) throw new MWException( "Write path '$writePath' does not exists" );
-		if ( !is_writable( $writePath ) ) throw new MWException( "Write path '$writePath' is not writable" );
+		if ( $writePath === null ) {
+			throw new MWException( "Write path is not set" );
+		}
+
+		if ( !file_exists( $writePath ) ) {
+			throw new MWException( "Write path '$writePath' does not exists" );
+		}
+
+		if ( !is_writable( $writePath ) ) {
+			throw new MWException( "Write path '$writePath' is not writable" );
+		}
 
 		$targetFile = $writePath . '/' . $this->group->getTargetFilename( $collection->code );
 
@@ -104,6 +126,7 @@ class SimpleFFS implements FFS {
 	public function writeIntoVariable( MessageCollection $collection ) {
 		$sourceFile = $this->group->getSourceFilePath( $collection->code );
 		$this->tryReadSource( $sourceFile, $collection );
+
 		return $this->writeReal( $collection );
 	}
 
@@ -116,6 +139,7 @@ class SimpleFFS implements FFS {
 		$output .= "\0\0\0\0";
 
 		$mangler = $this->group->getMangler();
+
 		foreach ( $collection as $key => $m ) {
 			$key = $mangler->unmangle( $key );
 			$trans = $m->translation();
@@ -127,6 +151,7 @@ class SimpleFFS implements FFS {
 
 	protected function tryReadSource( $filename, $collection ) {
 		$sourceText = $this->tryReadFile( $filename );
+
 		if ( $sourceText !== false ) {
 			$sourceData = $this->readFromVariable( $sourceText );
 			if ( isset( $sourceData['AUTHORS'] ) ) {
@@ -136,23 +161,37 @@ class SimpleFFS implements FFS {
 	}
 
 	protected function tryReadFile( $filename ) {
-		if ( !$filename ) return false;
-		if ( !file_exists( $filename ) ) return false;
-		if ( !is_readable( $filename ) ) throw new MWException( "File $filename is not readable" );
+		if ( !$filename ) {
+			return false;
+		}
+
+		if ( !file_exists( $filename ) ) {
+			return false;
+		}
+
+		if ( !is_readable( $filename ) ) {
+			throw new MWException( "File $filename is not readable" );
+		}
+
 		$data = file_get_contents( $filename );
-		if ( $data == false ) throw new MWException( "Unable to read file $filename" );
+		if ( $data == false ) {
+			throw new MWException( "Unable to read file $filename" );
+		}
+
 		return $data;
 	}
 
 	protected function filterAuthors( array $authors, $code ) {
 		global $wgTranslateAuthorBlacklist;
 		$groupId = $this->group->getId();
+
 		foreach ( $authors as $i => $v ) {
 			$hash = "$groupId;$code;$v";
 
 			$blacklisted = false;
 			foreach ( $wgTranslateAuthorBlacklist as $rule ) {
 				list( $type, $regex ) = $rule;
+
 				if ( preg_match( $regex, $hash ) ) {
 					if ( $type === 'white' ) {
 						$blacklisted = false;
@@ -162,7 +201,10 @@ class SimpleFFS implements FFS {
 					}
 				}
 			}
-			if ( $blacklisted ) unset( $authors[$i] );
+
+			if ( $blacklisted ) {
+				unset( $authors[$i] );
+			}
 		}
 
 		return $authors;
@@ -171,6 +213,7 @@ class SimpleFFS implements FFS {
 	public static function fixNewLines( $data ) {
 		$data = str_replace( "\r\n", "\n", $data );
 		$data = str_replace( "\r", "\n", $data );
+
 		return $data;
 	}
 }
@@ -180,8 +223,10 @@ class JavaFFS extends SimpleFFS {
 
 	public function __construct( FileBasedMessageGroup $group ) {
 		parent::__construct( $group );
-		if ( isset( $this->extra['keySeparator'] ) )
+
+		if ( isset( $this->extra['keySeparator'] ) ) {
 			$this->keySeparator = $this->extra['keySeparator'];
+		}
 	}
 
 	//
@@ -201,11 +246,18 @@ class JavaFFS extends SimpleFFS {
 				$valuecont = str_replace( '\n', "\n", $valuecont );
 				$value .= $valuecont;
 			} else {
-				if ( $line === '' ) continue;
+				if ( $line === '' ) {
+					continue;
+				}
+
 				if ( $line[0] === '#' ) {
 					$match = array();
 					$ok = preg_match( '/#\s*Author:\s*(.*)/', $line, $match );
-					if ( $ok ) $authors[] = $match[1];
+
+					if ( $ok ) {
+						$authors[] = $match[1];
+					}
+
 					continue;
 				}
 
@@ -215,7 +267,10 @@ class JavaFFS extends SimpleFFS {
 
 				list( $key, $value ) = explode( $this->keySeparator, $line, 2 );
 				$key = trim( $key );
-				if ( $key === '' ) throw new MWException( "Empty key in line $line" );
+
+				if ( $key === '' ) {
+					throw new MWException( "Empty key in line $line" );
+				}
 
 				$value = str_replace( '\n', "\n", $value );
 			}
@@ -246,17 +301,23 @@ class JavaFFS extends SimpleFFS {
 
 		$output = '';
 		$mangler = $this->group->getMangler();
+
 		foreach ( $collection as $key => $m ) {
 			$key = $mangler->unmangle( $key );
 			$value = $m->translation();
 			$value = str_replace( TRANSLATE_FUZZY, '', $value );
 
-			if ( $value === '' ) continue;
+			if ( $value === '' ) {
+				continue;
+			}
 
 			# Make sure we don't slip newlines trough... it would be fatal
 			$value = str_replace( "\n", '\\n', $value );
 			# Just to give an overview of translation quality
-			if ( $m->hasTag( 'fuzzy' ) ) $output .= "# Fuzzy\n";
+			if ( $m->hasTag( 'fuzzy' ) ) {
+				$output .= "# Fuzzy\n";
+			}
+
 			$output .= "$key{$this->keySeparator}$value\n";
 		}
 
@@ -270,12 +331,14 @@ class JavaFFS extends SimpleFFS {
 			$output = $this->extra['header'];
 		} else {
 			global $wgSitename;
+
 			$code = $collection->code;
 			$name = TranslateUtils::getLanguageName( $code );
 			$native = TranslateUtils::getLanguageName( $code, true );
 			$output  = "# Messages for $name ($native)\n";
 			$output .= "# Exported from $wgSitename\n";
 		}
+
 		return $output;
 	}
 
@@ -283,9 +346,11 @@ class JavaFFS extends SimpleFFS {
 		$output = '';
 		$authors = $collection->getAuthors();
 		$authors = $this->filterAuthors( $authors, $collection->code );
+
 		foreach ( $authors as $author ) {
 			$output .= "# Author: $author\n";
 		}
+
 		return $output;
 	}
 }
@@ -294,6 +359,7 @@ class JavaScriptFFS extends SimpleFFS {
 	private function leftTrim( $string ) {
 		$string = ltrim( $string );
 		$string = ltrim( $string, '"' );
+
 		return $string;
 	}
 
@@ -351,6 +417,7 @@ class JavaScriptFFS extends SimpleFFS {
 		// Generate list of authors for comment.
 		$authors = $collection->getAuthors();
 		$authorList = '';
+
 		foreach ( $authors as $author ) {
 			$authorList .= " *  - $author\n";
 		}
@@ -440,12 +507,17 @@ class YamlFFS extends SimpleFFS {
 			$key = $mangler->unmangle( $key );
 			$value = $m->translation();
 			$value = str_replace( TRANSLATE_FUZZY, '', $value );
-			if ( $value === '' ) continue;
+
+			if ( $value === '' ) {
+				continue;
+			}
 
 			$messages[$key] = $value;
 		}
 
-		if ( !count( $messages ) ) return false;
+		if ( !count( $messages ) ) {
+			return false;
+		}
 
 		$messages = $this->unflatten( $messages );
 
@@ -462,14 +534,17 @@ class YamlFFS extends SimpleFFS {
 	protected function doHeader( MessageCollection $collection ) {
 		global $wgSitename;
 		global $wgTranslateYamlLibrary;
+
 		$code = $collection->code;
 		$name = TranslateUtils::getLanguageName( $code );
 		$native = TranslateUtils::getLanguageName( $code, true );
 		$output  = "# Messages for $name ($native)\n";
 		$output .= "# Exported from $wgSitename\n";
+
 		if ( isset( $wgTranslateYamlLibrary ) ) {
 			$output .= "# Export driver: $wgTranslateYamlLibrary\n";
 		}
+
 		return $output;
 	}
 
@@ -477,9 +552,11 @@ class YamlFFS extends SimpleFFS {
 		$output = '';
 		$authors = $collection->getAuthors();
 		$authors = $this->filterAuthors( $authors, $collection->code );
+
 		foreach ( $authors as $author ) {
 			$output .= "# Author: $author\n";
 		}
+
 		return $output;
 	}
 
@@ -488,13 +565,19 @@ class YamlFFS extends SimpleFFS {
 	 * with each individual key separated by a dot.
 	 */
 	protected function flatten( $messages ) {
-
 		$flat = true;
+
 		foreach ( $messages as $v ) {
-			if ( !is_array( $v ) ) continue;
+			if ( !is_array( $v ) ) {
+				continue;
+			}
+
 			$flat = false; break;
 		}
-		if ( $flat ) return $messages;
+
+		if ( $flat ) {
+			return $messages;
+		}
 
 		$array = array();
 		foreach ( $messages as $key => $value ) {
@@ -515,6 +598,7 @@ class YamlFFS extends SimpleFFS {
 			// Can as well keep only one copy around
 			unset( $messages[$key] );
 		}
+
 		return $array;
 	}
 
@@ -526,7 +610,10 @@ class YamlFFS extends SimpleFFS {
 		$array = array();
 		foreach ( $messages as $key => $value ) {
 			$plurals = $this->unflattenPlural( $key, $value );
-			if ( $plurals === false ) continue;
+
+			if ( $plurals === false ) {
+				continue;
+			}
 
 			foreach ( $plurals as $key => $value ) {
 
@@ -558,6 +645,7 @@ class YamlFFS extends SimpleFFS {
 				} while ( count( $path ) );
 			}
 		}
+
 		return $array;
 	}
 
@@ -572,10 +660,7 @@ class YamlFFS extends SimpleFFS {
 	protected function unflattenPlural( $key, $value ) {
 		return array( $key => $value );
 	}
-
 }
-
-
 
 class RubyYamlFFS extends YamlFFS {
 	static $pluralWords = array(
@@ -601,11 +686,16 @@ class RubyYamlFFS extends YamlFFS {
 			}
 		}
 
-		if ( !$plurals ) return false;
+		if ( !$plurals ) {
+			return false;
+		}
 
 		$pls = '{{PLURAL';
 		foreach ( $messages as $key => $value ) {
-			if ( $key === 'other' ) continue;
+			if ( $key === 'other' ) {
+				continue;
+			}
+
 			$pls .= "|$key=$value";
 		}
 
@@ -620,13 +710,16 @@ class RubyYamlFFS extends YamlFFS {
 	 */
 	protected function unflattenPlural( $key, $message ) {
 		// Quick escape
-		if ( strpos( $message, '{{PLURAL' ) === false ) return array( $key => $message );
+		if ( strpos( $message, '{{PLURAL' ) === false ) {
+			return array( $key => $message );
+		}
 
 		// Replace all variables with placeholders. Possible source of bugs
 		// if other characters that given below are used.
 		$regex = '~\{\{[a-zA-Z_-]+}}~';
 		$placeholders = array();
 		$match = null;
+
 		while ( preg_match( $regex, $message, $match ) ) {
 			$uniqkey = self::placeholder();
 			$placeholders[$uniqkey] = $match[0];
@@ -637,6 +730,7 @@ class RubyYamlFFS extends YamlFFS {
 		$regex = '~\{\{PLURAL\|(.*?)}}~s';
 		$matches = array();
 		$match = null;
+
 		while ( preg_match( $regex, $message, $match ) ) {
 			$uniqkey = self::placeholder();
 			$matches[$uniqkey] = $match;
@@ -644,7 +738,9 @@ class RubyYamlFFS extends YamlFFS {
 		}
 
 		// No plurals, should not happen
-		if ( !count( $matches ) ) return false;
+		if ( !count( $matches ) ) {
+			return false;
+		}
 
 		// The final array of alternative plurals forms
 		$alts = array();
@@ -656,8 +752,12 @@ class RubyYamlFFS extends YamlFFS {
 		$regex = "~($pluralChoice)\s*=\s*(.+)~s";
 		foreach ( $matches as $ph => $plu ) {
 			$forms = explode( '|', $plu[1] );
+
 			foreach ( $forms as $form ) {
-				if ( $form === '' ) continue;
+				if ( $form === '' ) {
+					continue;
+				}
+
 				$match = array();
 				if ( preg_match( $regex, $form, $match ) ) {
 					$formWord = "$key.{$match[1]}";
@@ -667,7 +767,10 @@ class RubyYamlFFS extends YamlFFS {
 					$value = $form;
 				}
 
-				if ( !isset( $alts[$formWord] ) ) $alts[$formWord] = $message;
+				if ( !isset( $alts[$formWord] ) ) {
+					$alts[$formWord] = $message;
+				}
+
 				$string = $alts[$formWord];
 				$alts[$formWord] = str_replace( $ph, $value, $string );
 			}
@@ -688,6 +791,7 @@ class RubyYamlFFS extends YamlFFS {
 
 	protected function placeholder() {
 		static $i = 0;
+
 		return "\x7fUNIQ" . dechex( mt_rand( 0, 0x7fffffff ) ) . dechex( mt_rand( 0, 0x7fffffff ) ) . $i++;
 	}
 }

@@ -51,7 +51,6 @@ abstract class TranslateTask {
 
 	/* We need $id here because staticness prevents subclass overriding */
 	public static function labelForTask( $id ) {
-		wfLoadExtensionMessages( 'Translate' );
 		return wfMsg( TranslateUtils::MSG . 'task-' . $id );
 	}
 
@@ -78,6 +77,7 @@ abstract class TranslateTask {
 		$this->preinit();
 		$this->doPaging();
 		$this->postinit();
+
 		return $this->output();
 	}
 
@@ -112,9 +112,9 @@ class ViewMessagesTask extends TranslateTask {
 	protected function output() {
 		$table = new MessageTable( $this->collection, $this->group );
 		$table->appendEditLinkParams( 'loadtask', $this->getId() );
+
 		return $table->fullTable();
 	}
-
 }
 
 class ReviewMessagesTask extends ViewMessagesTask {
@@ -136,7 +136,6 @@ class ReviewMessagesTask extends ViewMessagesTask {
 
 		return $table->fullTable();
 	}
-
 }
 
 class ViewUntranslatedTask extends ReviewMessagesTask {
@@ -154,11 +153,10 @@ class ViewUntranslatedTask extends ReviewMessagesTask {
 		$this->collection->filter( 'translated' );
 		$translated = $total - count( $this->collection );
 		$fuzzy = count( $this->collection->getTags( 'fuzzy' ) );
-		
+
 		$cache = new ArrayMemoryCache( 'groupstats' );
 		$cache->set( $this->group->getID(), $code, array( $fuzzy, $translated, $total ) );
 	}
-
 }
 
 class ViewOptionalTask extends ViewMessagesTask {
@@ -171,7 +169,6 @@ class ViewOptionalTask extends ViewMessagesTask {
 		$this->collection->filter( 'ignored' );
 		$this->collection->filter( 'optional', false );
 	}
-
 }
 
 class ViewUntranslatedOptionalTask extends ViewOptionalTask {
@@ -197,7 +194,6 @@ class ReviewAllMessagesTask extends ReviewMessagesTask {
 		$this->collection->filter( 'ignored' );
 		$this->collection->filter( 'hastranslation', false );
 	}
-
 }
 
 class ExportMessagesTask extends ViewMessagesTask {
@@ -214,7 +210,7 @@ class ExportMessagesTask extends ViewMessagesTask {
 			$writer = $this->group->getWriter();
 			$data = $writer->webExport( $this->collection );
 		}
-		
+
 		return Xml::openElement( 'textarea', array( 'id' => 'wpTextbox1', 'rows' => '50' ) ) .
 			$data .
 			"</textarea>";
@@ -297,10 +293,14 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 
 			$translation = $m->translation();
 			# CASE2: no translation
-			if ( $translation === null ) $translation = '';
+			if ( $translation === null ) {
+				$translation = '';
+			}
 
 			# CASE3: optional messages; accept only if different
-			if ( $m->hasTag( 'optional' ) ) $flags[] = 'optional';
+			if ( $m->hasTag( 'optional' ) ) {
+				$flags[] = 'optional';
+			}
 
 			# Remove fuzzy markings before export
 			if ( strpos( $translation, TRANSLATE_FUZZY ) !== false ) {
@@ -311,7 +311,9 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 			$comments = '';
 			if ( $wgTranslateDocumentationLanguageCode ) {
 				$documentation = TranslateUtils::getMessageContent( $key, $wgTranslateDocumentationLanguageCode );
-				if ( $documentation ) $comments = $documentation;
+				if ( $documentation ) {
+					$comments = $documentation;
+				}
 			}
 
 			$out .= self::formatcomments( $comments, $flags );
@@ -326,11 +328,13 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 		$line = addcslashes( $line, '\\"' );
 		$line = str_replace( "\n", '\n', $line );
 		$line = '"' . $line . '"';
+
 		return $line;
 	}
 
 	private static function formatcomments( $comments = false, $flags = false ) {
 		$output = array();
+
 		if ( $comments ) {
 			$output[] = '#. ' . implode( "\n#. ", explode( "\n", $comments ) );
 		}
@@ -353,14 +357,20 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 			$output[] = 'msgctxt ' . self::escape( $msgctxt );
 		}
 
-		if ( !is_array( $msgid ) ) { $msgid = array( $msgid ); }
-		if ( !is_array( $msgstr ) ) { $msgstr = array( $msgstr ); }
+		if ( !is_array( $msgid ) ) {
+			$msgid = array( $msgid );
+		}
+
+		if ( !is_array( $msgstr ) ) {
+			$msgstr = array( $msgstr );
+		}
+
 		$output[] = 'msgid ' . implode( "\n", array_map( array( __CLASS__, 'escape' ), $msgid ) );
 		$output[] = 'msgstr ' . implode( "\n", array_map( array( __CLASS__, 'escape' ), $msgstr ) );
 
 		$out = implode( "\n", $output ) . "\n\n";
-		return $out;
 
+		return $out;
 	}
 }
 
@@ -373,6 +383,7 @@ class TranslateTasks {
 
 	public static function getTask( $id ) {
 		global $wgTranslateTasks;
+
 		if ( array_key_exists( $id, $wgTranslateTasks ) ) {
 			if ( is_callable( $wgTranslateTasks[$id] ) ) {
 				return call_user_func( $wgTranslateTasks[$id], $id );

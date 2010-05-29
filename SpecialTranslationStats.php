@@ -69,7 +69,7 @@ class SpecialTranslationStats extends SpecialPage {
 
 	protected function form( $opts ) {
 		global $wgOut, $wgScript;
-		wfLoadExtensionMessages( 'Translate' );
+
 		$this->setHeaders();
 		$wgOut->addWikiMsg( 'translate-statsf-intro' );
 

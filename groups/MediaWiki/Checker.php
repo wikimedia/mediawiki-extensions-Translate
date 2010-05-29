@@ -1,13 +1,14 @@
 <?php
 
 class MediaWikiMessageChecker extends MessageChecker {
-
-
 	/**
 	 * Checks if the translation uses all variables $[1-9] that the definition
 	 * uses and vice versa.
 	 */
 	protected function wikiParameterCheck( $messages, $code, &$warnings ) {
+		// FIXME: gives false positive on (some?) languages for which a
+		//        parameter is completely left out. Example:
+		//        http://translatewiki.net/w/i.php?title=MediaWiki:Configure-ext-ext-dependencies/zh-hant&action=edit
 		foreach ( $messages as $message ) {
 			$key = $message->key();
 			$definition = $message->definition();
@@ -43,7 +44,6 @@ class MediaWikiMessageChecker extends MessageChecker {
 		}
 	}
 
-
 	/**
 	 * Checks if the translation uses links that are discouraged. Valid links are
 	 * those that link to Special: or {{ns:special}}: or project pages trough
@@ -57,13 +57,17 @@ class MediaWikiMessageChecker extends MessageChecker {
 			$key = $message->key();
 			$definition = $message->definition();
 			$translation = $message->translation();
-		
+
 			$subcheck = 'extra';
 			$matches = $links = array();
 			preg_match_all( "/\[\[([{$tc}]+)(\\|(.+?))?]]/sDu", $translation, $matches );
 			for ( $i = 0; $i < count( $matches[0] ); $i++ ) {
 				$backMatch = preg_quote( $matches[1][$i], '/' );
-				if ( preg_match( "/\[\[$backMatch/", $definition ) ) continue;
+
+				if ( preg_match( "/\[\[$backMatch/", $definition ) ) {
+					continue;
+				}
+
 				$links[] = "[[{$matches[1][$i]}{$matches[2][$i]}]]";
 			}
 
@@ -81,7 +85,11 @@ class MediaWikiMessageChecker extends MessageChecker {
 			preg_match_all( "/\[\[([{$tc}]+)(\\|(.+?))?]]/sDu", $definition, $matches );
 			for ( $i = 0; $i < count( $matches[0] ); $i++ ) {
 				$backMatch = preg_quote( $matches[1][$i], '/' );
-				if ( preg_match( "/\[\[$backMatch/", $translation ) ) continue;
+
+				if ( preg_match( "/\[\[$backMatch/", $translation ) ) {
+					continue;
+				}
+
 				$links[] = "[[{$matches[1][$i]}{$matches[2][$i]}]]";
 			}
 
@@ -103,8 +111,10 @@ class MediaWikiMessageChecker extends MessageChecker {
 		foreach ( $messages as $message ) {
 			$key = $message->key();
 			$translation = $message->translation();
-			if ( strpos( $translation, '<' ) === false ) continue;
-			
+			if ( strpos( $translation, '<' ) === false ) {
+				continue;
+			}
+
 			$subcheck = 'invalid';
 			$tags = array(
 				'~<hr *(\\\\)?>~suDi' => '<hr />', // Wrong syntax
@@ -132,7 +142,6 @@ class MediaWikiMessageChecker extends MessageChecker {
 					array( 'COUNT', count( $wrongTags ) ),
 				);
 			}
-
 		}
 	}
 
@@ -149,8 +158,10 @@ class MediaWikiMessageChecker extends MessageChecker {
 			$translation = $message->translation();
 
 			$subcheck = 'missing';
-			if ( stripos( $definition, '{{plural:' ) !== false &&
-				stripos( $translation, '{{plural:' ) === false ) {
+			if (
+				stripos( $definition, '{{plural:' ) !== false &&
+				stripos( $translation, '{{plural:' ) === false
+			) {
 				$warnings[$key][] = array(
 					array( 'plural', $subcheck, $key, $code ),
 					'translate-checks-plural',
@@ -205,7 +216,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 					$warnings[$key][] = array(
 						array( 'miscmw', $subcheck, $key, $code ),
 						'translate-checks-format',
-						"Parameter count is $traCount; should be $defCount",
+						"Parameter count is $traCount; should be $defCount", // FIXME: missing i18n.
 					);
 					continue;
 				}
@@ -219,7 +230,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 						$warnings[$key][] = array(
 							array( 'miscmw', $subcheck, $key, $code ),
 							'translate-checks-format',
-							"<nowiki>$traArray[$i]</nowiki> is malformed",
+							"<nowiki>$traArray[$i]</nowiki> is malformed", // FIXME: missing i18n.
 						);
 						continue;
 					}
@@ -237,5 +248,4 @@ class MediaWikiMessageChecker extends MessageChecker {
 			}
 		}
 	}
-
 }

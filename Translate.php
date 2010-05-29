@@ -334,15 +334,17 @@ function efTranslateCheckPT() {
 
 function efTranslateCheckWarn( $msg, &$sitenotice ) {
 	global $wgOut;
-	wfLoadExtensionMessages( 'PageTranslation' );
+
 	$sitenotice = wfMsg( $msg );
 	$wgOut->enableClientCache( false );
+
 	return true;
 }
 
 function efTranslateInitTags( $parser ) {
 	// For nice language list in-page
 	$parser->setHook( 'languages', array( 'PageTranslationHooks', 'languages' ) );
+
 	return true;
 }
 

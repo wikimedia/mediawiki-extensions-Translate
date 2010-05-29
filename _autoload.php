@@ -101,7 +101,6 @@ $wgAutoloadClasses['OpenLayersMessageGroup'] = $dir . 'groups/OpenLayers.php';
 $wgAutoloadClasses['WikiblameMessageGroup'] = $dir . 'groups/Wikiblame.php';
 $wgAutoloadClasses['MediaWikiMessageChecker'] = $dir . 'groups/MediaWiki/Checker.php';
 
-
 # complex messages
 $wgAutoloadClasses['ComplexMessages'] = $dir . 'groups/ComplexMessages.php';
 $wgAutoloadClasses['SpecialPageAliasesCM'] = $dir . 'groups/ComplexMessages.php';
