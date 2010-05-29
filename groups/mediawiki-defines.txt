@@ -1011,11 +1011,11 @@ aliasfile = SiteMatrix/SiteMatrix.alias.php
 
 Skin Per Page
 
-# OBSOLETE: use Maps
-#Slippy Map
-#ignored = slippymap_license, slippymap_osmlink
-#descmsg = slippymap_desc
-#optional = slippymap_tagname, slippymap_extname
+# NOT OBSOLETE: Maps does not support OSM in trunk
+Slippy Map
+ignored = slippymap_license, slippymap_osmlink
+descmsg = slippymap_desc
+optional = slippymap_tagname, slippymap_extname
 
 Smooth Gallery
 magicfile = SmoothGallery/SmoothGallery.i18n.magic.php
