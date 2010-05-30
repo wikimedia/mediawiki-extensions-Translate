@@ -24,8 +24,6 @@ class SpecialTranslations extends SpecialAllpages {
 	function execute( $par ) {
 		global $wgRequest, $wgOut;
 
-		TranslateUtils::injectCSS();
-
 		$this->setHeaders();
 		$this->outputHeader();
 
@@ -169,9 +167,12 @@ class SpecialTranslations extends SpecialAllpages {
 
 		$canTranslate = $wgUser->isAllowed( 'translate' );
 
+		$ajaxPageList = array();
+
 		foreach ( $res as $s ) {
 			$key = $s->page_title;
 			$tTitle = Title::makeTitle( $s->page_namespace, $key );
+			$ajaxPageList[] = $tTitle->getDBkey();
 
 			$text = htmlspecialchars( $this->getCode( $s->page_title ) );
 
@@ -207,6 +208,14 @@ class SpecialTranslations extends SpecialAllpages {
 
 		$out .= Xml::closeElement( 'table' );
 		$wgOut->addHTML( $out );
+
+		$vars = array(
+			'trlKeys' => $ajaxPageList,
+			'trlMsgNoNext' => wfMsg( 'translate-js-nonext' ),
+			'trlMsgSaveFailed' => wfMsg( 'translate-js-save-failed' ),
+		);
+
+		$wgOut->addScript( Skin::makeVariablesScript( $vars ) );
 	}
 
 	private function getCode( $name ) {
@@ -218,6 +227,7 @@ class SpecialTranslations extends SpecialAllpages {
 	private static function includeAssets() {
 		global $wgOut, $wgScript;
 
+		TranslateUtils::injectCSS();
 		$wgOut->addScriptFile( TranslateUtils::assetPath( 'js/quickedit.js' ) );
 		$wgOut->includeJQuery();
 		$wgOut->addScriptFile( TranslateUtils::assetPath( 'js/jquery-ui-1.7.2.custom.min.js' ) );
