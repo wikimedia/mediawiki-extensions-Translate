@@ -26,6 +26,7 @@ class TranslateUtils {
 		if ( !isset( $cache[$message] ) ) {
 			$cache[$message] = $wgContLang->ucfirst( $message );
 		}
+
 		if ( $code ) {
 			return $cache[$message] . '/' . $code;
 		} else {
@@ -37,6 +38,7 @@ class TranslateUtils {
 		$pos = strrpos( $text, '/' );
 		$code = substr( $text, $pos + 1 );
 		$key = substr( $text, 0, $pos );
+
 		return array( $key, $code );
 	}
 
@@ -45,6 +47,7 @@ class TranslateUtils {
 
 		$title = self::title( $key, $language );
 		$data = self::getContents( array( $title ), $namespace );
+
 		return isset( $data[$title][0] ) ? $data[$title][0] : null;
 	}
 
@@ -115,6 +118,7 @@ class TranslateUtils {
 			$rows[] = $row;
 		}
 		$dbr->freeResult( $res );
+
 		return $rows;
 	}
 
@@ -126,10 +130,12 @@ class TranslateUtils {
 
 	public static function simpleSelector( $name, $items, $selected ) {
 		$options = array();
+
 		foreach ( $items as $item ) {
 			$item = strval( $item );
 			$options[] = Xml::option( $item, $item, $item == $selected );
 		}
+
 		return self::selector( $name, implode( "\n", $options ) );
 	}
 
@@ -156,11 +162,13 @@ class TranslateUtils {
 				break;
 		}
 		$code = implode( '-', $parts );
+
 		return isset( $languages[$code] ) ? $languages[$code] . $suffix : false;
 	}
 
 	public static function languageSelector( $language, $selectedId ) {
 		global $wgLang;
+
 		if ( is_callable( array( 'LanguageNames', 'getNames' ) ) ) {
 			$languages = LanguageNames::getNames( $language,
 				LanguageNames::FALLBACK_NORMAL,
@@ -176,25 +184,33 @@ class TranslateUtils {
 		foreach ( $languages as $code => $name ) {
 			$selector->addOption( "$code - $name", $code );
 		}
+
 		return $selector->getHTML();
 	}
 
 	static $mi = null;
 
 	public static function messageKeyToGroup( $namespace, $key ) {
-		if ( self::$mi === null ) self::messageIndex();
+		if ( self::$mi === null ) {
+			self::messageIndex();
+		}
 
 		# Performance hotspot
 		# $normkey = self::normaliseKey( $namespace, $key );
 		$normkey = str_replace( " ", "_", strtolower( "$namespace:$key" ) );
 
 		$group = @self::$mi[$normkey];
-		if ( is_array( $group ) ) $group = $group[0];
+		if ( is_array( $group ) ) {
+			$group = $group[0];
+		}
+
 		return $group;
 	}
 
 	public static function messageKeyToGroups( $namespace, $key ) {
-		if ( self::$mi === null ) self::messageIndex();
+		if ( self::$mi === null ) {
+			self::messageIndex();
+		}
 
 		# Performance hotspot
 		# $normkey = self::normaliseKey( $namespace, $key );
@@ -225,9 +241,8 @@ class TranslateUtils {
 	}
 
 	public static function fieldset( $legend, $contents, $attributes = array() ) {
-		return
-			Xml::openElement( 'fieldset', $attributes ) .
-				Xml::tags( 'legend', null, $legend ) . $contents .
+		return Xml::openElement( 'fieldset', $attributes ) .
+			Xml::tags( 'legend', null, $legend ) . $contents .
 			Xml::closeElement( 'fieldset' );
 	}
 
@@ -251,10 +266,15 @@ class TranslateUtils {
 
 	public static function injectCSS() {
 		static $done = false;
-		if ( $done ) return;
+
+		if ( $done ) {
+			return;
+		}
+
 		$done = true;
 
 		global $wgOut;
+
 		$wgOut->addExtensionStyle( self::assetPath( 'Translate.css' ) );
 	}
 
@@ -265,6 +285,7 @@ class TranslateUtils {
 	 */
 	public static function assetPath( $path ) {
 		global $wgExtensionAssetsPath, $wgScriptPath, $wgVersion;
+
 		if ( version_compare( $wgVersion, '1.16', '>=' ) ) {
 			return "$wgExtensionAssetsPath/Translate/$path";
 		} else {
@@ -274,13 +295,14 @@ class TranslateUtils {
 
 	public static function snippet( &$text, $length = 10 ) {
 		global $wgLegalTitleChars, $wgContLang;
+
 		$snippet = preg_replace( "/[^\p{L}]/u", ' ', $text );
 		$snippet = preg_replace( "/ {2,}/u", ' ', $snippet );
 		$snippet = $wgContLang->truncate( $snippet, $length, '' );
 		$snippet = str_replace( ' ', '_', trim( $snippet ) );
+
 		return $snippet;
 	}
-
 }
 
 class HTMLSelector {
@@ -289,9 +311,17 @@ class HTMLSelector {
 	private $attributes = array();
 
 	public function __construct( $name = false, $id = false, $selected = false ) {
-		if ( $name ) $this->setAttribute( 'name', $name );
-		if ( $id ) $this->setAttribute( 'id', $id );
-		if ( $selected ) $this->selected = $selected;
+		if ( $name ) {
+			$this->setAttribute( 'name', $name );
+		}
+
+		if ( $id ) {
+			$this->setAttribute( 'id', $id );
+		}
+
+		if ( $selected ) {
+			$this->selected = $selected;
+		}
 	}
 
 	public function setSelected( $selected ) {
