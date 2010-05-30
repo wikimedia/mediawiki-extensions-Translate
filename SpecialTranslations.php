@@ -24,8 +24,12 @@ class SpecialTranslations extends SpecialAllpages {
 	function execute( $par ) {
 		global $wgRequest, $wgOut;
 
+		TranslateUtils::injectCSS();
+
 		$this->setHeaders();
 		$this->outputHeader();
+
+		self::includeAssets();
 
 		$title = null;
 
@@ -36,6 +40,7 @@ class SpecialTranslations extends SpecialAllpages {
 			} else {
 				$this->showTranslations( $title );
 			}
+
 			return;
 		}
 
@@ -63,6 +68,7 @@ class SpecialTranslations extends SpecialAllpages {
 	*/
 	function namespaceMessageForm( Title $title = null ) {
 		global $wgContLang, $wgScript, $wgTranslateMessageNamespaces;
+
 		$t = $this->getTitle();
 
 		$namespaces = new XmlSelect( 'namespace', 'namespace' );
@@ -99,6 +105,7 @@ class SpecialTranslations extends SpecialAllpages {
 		$out .= Xml::closeElement( 'fieldset' );
 		$out .= Xml::closeElement( 'form' );
 		$out .= Xml::closeElement( 'div' );
+
 		return $out;
 	}
 
@@ -114,6 +121,7 @@ class SpecialTranslations extends SpecialAllpages {
 
 		if ( !$inMessageGroup ) {
 			$wgOut->addWikiMsg( 'translate-translations-no-message', $title->getPrefixedText() );
+
 			return;
 		}
 
@@ -134,12 +142,17 @@ class SpecialTranslations extends SpecialAllpages {
 
 		if ( !$res->numRows() ) {
 			$wgOut->addWikiMsg( 'translate-translations-no-message', $title->getPrefixedText() );
+
 			return;
 		}
 
 		// Normal output
 		$titles = array();
-		foreach ( $res as $s ) { $titles[] = $s->page_title; }
+
+		foreach ( $res as $s ) {
+			$titles[] = $s->page_title;
+		}
+
 		$pageInfo = TranslateUtils::getContents( $titles, $namespace );
 
 		$tableheader = Xml::openElement( 'table', array(
@@ -158,43 +171,33 @@ class SpecialTranslations extends SpecialAllpages {
 
 		foreach ( $res as $s ) {
 			$key = $s->page_title;
-			$t = Title::makeTitle( $s->page_namespace, $key );
+			$tTitle = Title::makeTitle( $s->page_namespace, $key );
 
-			$niceTitle = htmlspecialchars( $this->getTheCode( $s->page_title ) );
+			$text = htmlspecialchars( $this->getCode( $s->page_title ) );
 
 			if ( $canTranslate ) {
-				$tools['edit'] = $sk->link(
-					$t,
-					$niceTitle,
-					array( 'action' ),
-					array(
-						'action' => 'edit',
-						'loadgroup' => $inMessageGroup
-					)
+				$tools['edit'] = TranslationHelpers::ajaxEditLink(
+					$tTitle,
+					$text
 				);
 			} else {
-				$tools['edit'] = $sk->link( $t, $niceTitle );
+				$tools['edit'] = $sk->link( $t, $text );
 			}
 
 			$tools['history'] = $sk->link(
-				$t,
+				$tTitle,
 				"&#160;<sup>h</sup>&#160;",
 				array( 'action' ),
 				array( 'action' => 'history' )
 			);
 
-			$anchor = 'msg_' . $key;
-			$anchor = Xml::element( 'a', array( 'id' => $anchor, 'href' => "#$anchor" ), "↓" );
-
-			$extra = '';
-
-			if ( TranslateEditAddons::isFuzzy( $t ) ) {
+			if ( TranslateEditAddons::isFuzzy( $tTitle ) ) {
 				$class = 'orig';
 			} else {
 				$class = 'def';
 			}
-			
-			$leftColumn = $anchor . $tools['history'] . $tools['edit'] . $extra;
+
+			$leftColumn = $tools['history'] . $tools['edit'];
 			$out .= Xml::tags( 'tr', array( 'class' => $class ),
 				Xml::tags( 'td', null, $leftColumn ) .
 				Xml::tags( 'td', null, TranslateUtils::convertWhiteSpaceToHTML( $pageInfo[$key][0] ) )
@@ -206,8 +209,23 @@ class SpecialTranslations extends SpecialAllpages {
 		$wgOut->addHTML( $out );
 	}
 
-	public function getTheCode( $name ) {
+	private function getCode( $name ) {
 		$from = strrpos( $name, '/' );
+
 		return substr( $name, $from + 1 );
+	}
+
+	private static function includeAssets() {
+		global $wgOut, $wgScript;
+
+		$wgOut->addScriptFile( TranslateUtils::assetPath( 'js/quickedit.js' ) );
+		$wgOut->includeJQuery();
+		$wgOut->addScriptFile( TranslateUtils::assetPath( 'js/jquery-ui-1.7.2.custom.min.js' ) );
+		$wgOut->addScriptFile( TranslateUtils::assetPath( 'js/jquery.form.js' ) );
+		$wgOut->addExtensionStyle( TranslateUtils::assetPath( 'js/base/custom-theme/jquery-ui-1.7.2.custom.css' ) );
+
+		// Might be needed, but ajax doesn't load it
+		$diff = new DifferenceEngine;
+		$diff->showDiffStyle();
 	}
 }
