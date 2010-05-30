@@ -33,8 +33,7 @@ function trlOpenJsEdit( page, group ) {
 		return false;
 	}
 
-	jQuery('<div></div>').attr('id', id).appendTo(jQuery('body'));
-
+	jQuery('<div/>').attr('id', id).appendTo(jQuery('body'));
 	var dialog = jQuery("#"+id);
 
 	dialog.load(url, false, function() {
@@ -62,9 +61,9 @@ function trlOpenJsEdit( page, group ) {
 			success: function(json) {
 				if ( json.error ) {
 					alert( json.error.info + " (" + json.error.code +")" );
-				} else if ( json.edit.result == "Failure" ) {
+				} else if ( json.edit.result === "Failure" ) {
 					alert(trlMsgSaveFailed);
-				} else if ( json.edit.result == "Success" ) {
+				} else if ( json.edit.result === "Success" ) {
 					dialog.dialog("close");
 				} else {
 					alert(trlMsgSaveFailed);
@@ -92,10 +91,10 @@ function trlLoadNext( title ) {
 	var namespace = title.replace( /:.*/, "");
 	var found = false;
 	for ( key in trlKeys ) {
-		value = trlKeys[key]
+		value = trlKeys[key];
 		if (found) {
 			return trlOpenJsEdit( namespace + ":" + value );
-		} else if( page == value ) {
+		} else if( page === value ) {
 			found = true;
 		}
 	}
