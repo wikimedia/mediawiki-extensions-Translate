@@ -1,5 +1,4 @@
 <?php
-
 /**
  * OpenLayers JavaScript language class file format handler.
  *
@@ -9,7 +8,6 @@
  */
 
 class OpenLayersFormatReader extends SimpleFormatReader {
-
 	private static function unescapeJsString( $string ) {
 		// See ECMA 262 section 7.8.4 for string literal format
 		$pairs = array(
@@ -34,12 +32,14 @@ class OpenLayersFormatReader extends SimpleFormatReader {
 			"\xe2\x80\x8d" => "\\u200d", // ZERO WIDTH JOINER
 		);
 		$pairs = array_flip( $pairs );
+
 		return strtr( $string, $pairs );
 	}
 
 	private function leftTrim( $string ) {
 		$string = ltrim( $string );
 		$string = ltrim( $string, '"' );
+
 		return $string;
 	}
 
@@ -99,11 +99,9 @@ class OpenLayersFormatReader extends SimpleFormatReader {
 
 		return $messages;
 	}
-
 }
 
 class OpenLayersFormatWriter extends SimpleFormatWriter {
-
 	/**
 	 * Export a languages messages.
 	 * @param $target File handler.
@@ -118,6 +116,7 @@ class OpenLayersFormatWriter extends SimpleFormatWriter {
 		$authors = $collection->getAuthors();
 		$authors = $this->filterAuthors( $authors, $collection->code, $this->group->getId() );
 		$authorList = '';
+
 		foreach ( $authors as $author ) {
 			$authorList .= " *  - $author\n";
 		}
@@ -164,5 +163,4 @@ EOT;
 		// File terminator.
 		fwrite( $target, '});' );
 	}
-
 }

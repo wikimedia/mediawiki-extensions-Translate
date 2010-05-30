@@ -45,14 +45,15 @@ if ( !isset( $options['type'] ) ) {
 	exit( 1 );
 }
 
-
 $langs = Cli::parseLanguageCodes( '*' );
 $groups = MessageGroups::singleton()->getGroups();
 
 $type = $options['type'] ;
 
 foreach ( $groups as $group ) {
-	if ( !$group instanceof ExtensionMessageGroup ) continue;
+	if ( !$group instanceof ExtensionMessageGroup ) {
+		continue;
+	}
 
 	if ( $type === 'special' ) {
 		$filename = $group->getAliasFile();
@@ -60,10 +61,15 @@ foreach ( $groups as $group ) {
 		$filename = $group->getMagicFile();
 	}
 
-	if ( $filename === null ) continue;
+	if ( $filename === null ) {
+		continue;
+	}
 
 	$file = "$wgTranslateExtensionDirectory/$filename";
-	if ( !file_exists( $file ) ) continue;
+	if ( !file_exists( $file ) ) {
+		continue;
+	}
+
 	STDOUT( "Processing {$group->getLabel()}... ", $group->getId() );
 
 	$input = file_get_contents( $file ) . "\n";
@@ -74,19 +80,21 @@ foreach ( $groups as $group ) {
 
 	foreach ( $langs as $l ) {
 		switch ( $options['type'] ) {
-		case 'special':
-			$o = new SpecialPageAliasesCM( $l );
-			break;
-		case 'magic':
-			$o = new MagicWordsCM( $l );
-			break;
-		default:
-			STDERR( "Invalid type: must be one of: special, magic" );
-			exit( 1 );
+			case 'special':
+				$o = new SpecialPageAliasesCM( $l );
+				break;
+			case 'magic':
+				$o = new MagicWordsCM( $l );
+				break;
+			default:
+				STDERR( "Invalid type: must be one of: special, magic" );
+				exit( 1 );
 		}
 
 		$export = $o->export( $group->getId() );
-		if ( $export === '' ) continue;
+		if ( $export === '' ) {
+			continue;
+		}
 
 		# remove useles comment
 		$export = preg_replace( "~^# .*$\n~m", '', $export );

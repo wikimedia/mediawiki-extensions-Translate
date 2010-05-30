@@ -38,18 +38,21 @@ class SpecialPageTranslation extends SpecialPage {
 		// Check permissions
 		if ( !$this->user->isAllowed( 'pagetranslation' ) ) {
 			$wgOut->permissionRequired( 'pagetranslation' );
+
 			return;
 		}
 
 		// Check permissions
 		if ( !$this->user->matchEditToken( $wgRequest->getText( 'token' ) ) ) {
 			$wgOut->permissionRequired( 'pagetranslation' );
+
 			return;
 		}
 
 		// We are processing some specific page
 		if ( !$title->exists() ) {
 			$wgOut->addWikiMsg( 'tpt-nosuchpage', $title->getPrefixedText() );
+
 			return;
 		}
 
@@ -57,6 +60,7 @@ class SpecialPageTranslation extends SpecialPage {
 			$page = TranslatablePage::newFromTitle( $title );
 			$page->removeTags();
 			$wgOut->addWikiMsg( 'tpt-unmarked', $title->getPrefixedText() );
+
 			return;
 		}
 
@@ -68,12 +72,14 @@ class SpecialPageTranslation extends SpecialPage {
 		$page = TranslatablePage::newFromRevision( $title, $revision );
 		if ( !$page instanceof TranslatablePage ) {
 			$wgOut->addWikiMsg( 'tpt-notsuitable', $title->getPrefixedText(), $revision );
+
 			return;
 		}
 
 		if ( $revision !== $title->getLatestRevID() ) {
 			// We do want to notify the reviewer if the underlying page changes during review
 			$wgOut->addWikiMsg( 'tpt-oldrevision', $title->getPrefixedText(), $revision );
+
 			return;
 		}
 
@@ -81,6 +87,7 @@ class SpecialPageTranslation extends SpecialPage {
 		if ( $lastrev !== false && $lastrev === $revision ) {
 			$wgOut->addWikiMsg( 'tpt-already-marked' );
 			$this->listPages();
+
 			return;
 		}
 
@@ -282,6 +289,7 @@ class SpecialPageTranslation extends SpecialPage {
 		}
 
 		global $wgLang;
+
 		return $wgLang->semicolonList( $actions );
 	}
 
@@ -443,7 +451,10 @@ class SpecialPageTranslation extends SpecialPage {
 		$changed = array();
 
 		foreach ( $sections as $s ) {
-			if ( $s->type === 'changed' ) $changed[] = $s->name;
+			if ( $s->type === 'changed' ) {
+				$changed[] = $s->name;
+			}
+
 			$inserts[] = array(
 				'trs_page' => $page->getTitle()->getArticleId(),
 				'trs_key' => $s->name,

@@ -1,4 +1,5 @@
 <?php
+
 interface StringMangler {
 	public static function EmptyMatcher();
 	public function setConf( $configuration );
@@ -8,7 +9,6 @@ interface StringMangler {
 	public function mangle( $data );
 	public function unMangle( $data );
 }
-
 
 class StringMatcher implements StringMangler {
 	protected $sPrefix = '';
@@ -46,21 +46,30 @@ class StringMatcher implements StringMangler {
 	}
 
 	public function match( $string ) {
-		if ( in_array( $string, $this->aExact ) ) return true;
+		if ( in_array( $string, $this->aExact ) ) {
+			return true;
+		}
 
 		foreach ( $this->aPrefix as $prefix => $len ) {
-			if ( strncmp( $string, $prefix, $len ) === 0 ) return true;
+			if ( strncmp( $string, $prefix, $len ) === 0 ) {
+				return true;
+			}
 		}
 
 		foreach ( $this->aRegex as $regex ) {
-			if ( preg_match( $regex, $string ) ) return true;
+			if ( preg_match( $regex, $string ) ) {
+				return true;
+			}
 		}
 
 		return false;
 	}
 
 	public function mangle( $data ) {
-		if ( !$this->sPrefix ) { return $data; }
+		if ( !$this->sPrefix ) {
+			return $data;
+		}
+
 		if ( is_array( $data ) ) {
 			return $this->mangleArray( $data );
 		} elseif ( is_string( $data ) ) {
@@ -73,7 +82,10 @@ class StringMatcher implements StringMangler {
 	}
 
 	public function unMangle( $data ) {
-		if ( !$this->sPrefix ) { return $data; }
+		if ( !$this->sPrefix ) {
+			return $data;
+		}
+
 		if ( is_array( $data ) ) {
 			return $this->mangleArray( $data, true );
 		} elseif ( is_string( $data ) ) {
@@ -84,7 +96,6 @@ class StringMatcher implements StringMangler {
 			throw new MWException( __METHOD__ . ": Unsupported datatype" );
 		}
 	}
-
 
 	protected function mangleString( $string, $reverse = false ) {
 		if ( $reverse ) {

@@ -31,6 +31,7 @@ class MessageWebImporter {
 
 	public function getUser() {
 		global $wgUser;
+
 		return $this->user ? $this->user : $wgUser;
 	}
 
@@ -146,7 +147,9 @@ class MessageWebImporter {
 			}
 
 			// No changes at all, ignore
-			if ( strval( $old ) === strval( $value ) ) continue;
+			if ( strval( $old ) === strval( $value ) ) {
+				continue;
+			}
 
 			if ( $old === false ) {
 				$name = wfMsgHtml( 'translate-manage-import-new',
@@ -160,6 +163,7 @@ class MessageWebImporter {
 				$type = 'changed';
 
 				global $wgRequest;
+
 				# Spaces don't seem to survive round trip in addition to dots
 				# which are silently handled in getVal
 				$safekey = str_replace( ' ', '_', $key );
@@ -172,6 +176,7 @@ class MessageWebImporter {
 					}
 
 					global $wgLang;
+
 					if ( $action === null ) {
 						$message = wfMsgExt( 'translate-manage-inconsistent', 'parseinline', wfEscapeWikiText( "action-$type-$key" ) );
 						$changed[] = "<li>$message</li></ul>";
@@ -297,13 +302,14 @@ class MessageWebImporter {
 				$comment = wfMsgForContentNoTrans( 'translate-manage-conflict-summary' );
 				$message = self::makeTextFuzzy( $message );
 			}
+
 			return self::doImport( $title, $message, $comment, $user, $editFlags );
 
 		} elseif ( $action === 'ignore' ) {
 			return array( 'translate-manage-import-ignore', $key );
-
 		} elseif ( $action === 'fuzzy' && $code !== 'en' ) {
 			$message = self::makeTextFuzzy( $message );
+
 			return self::doImport( $title, $message, $comment, $user, $editFlags );
 		} elseif ( $action === 'fuzzy' && $code == 'en' ) {
 			return self::doFuzzy( $title, $message, $comment, $user, $editFlags );
@@ -344,7 +350,7 @@ class MessageWebImporter {
 
 		$namespace = $title->getNamespace();
 		$titleText = $dbw->escapeLike( $titleText );
-		$conds= array(
+		$conds = array(
 			'page_namespace' => $namespace,
 			'page_latest=rev_id',
 			'rev_text_id=old_id',
@@ -369,7 +375,7 @@ class MessageWebImporter {
 			$ttitle = Title::makeTitle( $row->page_namespace, $row->page_title );
 
 			// No fuzzy for English original
-			if( $ttitle->getSubpageText() == 'en' ) {
+			if ( $ttitle->getSubpageText() == 'en' ) {
 				// Use imported text, not database text.
 				$text = $message;
 			} else {
@@ -419,6 +425,7 @@ class MessageWebImporter {
 	 */
 	public static function makeTranslationTitle( $group, $key, $code ) {
 		$ns = $group->getNamespace();
+
 		return Title::makeTitleSafe( $ns, "$key/$code" );
 	}
 
@@ -439,6 +446,7 @@ class MessageWebImporter {
 		$items = new TagContainer();
 		$items[] = new HtmlTag( 'div', new RawHtml( $legend ), $legendParams );
 		$items[] = new HtmlTag( 'div', new RawHtml( $content ), $contentParams );
+
 		return new HtmlTag( 'div', $items, $containerParams );
 	}
 
@@ -451,6 +459,7 @@ class MessageWebImporter {
 	 */
 	public static function makeTextFuzzy( $message ) {
 		$message = str_replace( TRANSLATE_FUZZY, '', $message );
+
 		return TRANSLATE_FUZZY . $message;
 	}
 }

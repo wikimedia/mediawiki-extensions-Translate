@@ -8,6 +8,7 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  * @file
  */
+
 require( dirname( __FILE__ ) . '/cli.inc' );
 
 $db = wfGetDB( DB_MASTER );
@@ -18,13 +19,11 @@ if ( $id === false ) {
 	exit();
 }
 
-
 $count = $db->selectField( 'page', 'count(*)', array( 'page_namespace' => $wgTranslateMessageNamespaces ), __METHOD__ );
 if ( !$count ) {
 	echo "Nothing to update";
 	exit();
 }
-
 
 $tables = array( 'page', 'text', 'revision' );
 $fields = array( 'page_id', 'page_title', 'page_namespace', 'rev_id', 'old_text', 'old_flags' );
@@ -41,7 +40,11 @@ while ( true ) {
 	echo "$offset/$count\n";
 	$options = array( 'LIMIT' => $limit, 'OFFSET' => $offset );
 	$res = $db->select( $tables, $fields, $conds, __METHOD__, $options );
-	if ( !$res->numRows() ) break;
+
+	if ( !$res->numRows() ) {
+		break;
+	}
+
 	foreach ( $res as $r ) {
 		$text = Revision::getRevisionText( $r );
 		if ( strpos( $text, TRANSLATE_FUZZY ) !== false ) {
@@ -52,8 +55,8 @@ while ( true ) {
 			);
 		}
 	}
+
 	$offset += $limit;
 
 	$db->replace( 'revtag', 'rt_type_page_revision', $inserts, __METHOD__ );
 }
-

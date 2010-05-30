@@ -17,7 +17,6 @@
  * Second section (if any) is returned verbatim.
  */
 class PhpVariablesFormatReader extends SimpleFormatReader {
-
 	/**
 	 * Reads all \@author tags from the file and returns array of authors.
 	 *
@@ -30,9 +29,11 @@ class PhpVariablesFormatReader extends SimpleFormatReader {
 		if ( $this->filename === false ) {
 			return array();
 		}
+
 		$contents = file_get_contents( $this->filename );
 		$m = array();
 		$count = preg_match_all( '/@author (.*)/', $contents, $m );
+
 		return $m[1];
 	}
 
@@ -107,6 +108,7 @@ class PhpVariablesFormatReader extends SimpleFormatReader {
 			$value = str_replace( array( "\'", "\\\\" ), array( "'", "\\" ), $_[2] );
 			$messages[$key] = $value;
 		}
+
 		return $messages;
 	}
 }

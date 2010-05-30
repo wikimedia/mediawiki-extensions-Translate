@@ -174,7 +174,9 @@ if ( isset( $options['most'] ) && !isset( $localisedWeights[$options['most']] ) 
 	showUsage();
 }
 
-if ( !isset( $options['output'] ) ) $options['output'] = 'default';
+if ( !isset( $options['output'] ) ) {
+	$options['output'] = 'default';
+}
 
 /** Print a usage message*/
 function showUsage() {
@@ -250,6 +252,7 @@ $reportScore = false;
 if ( isset( $options['most'] ) && isset( $localisedWeights[$options['most']] ) ) {
 	$reportScore = true;
 	$weights = array();
+
 	foreach ( $localisedWeights[$options['most']] as $weight ) {
 		$weights[] = $weight;
 	}

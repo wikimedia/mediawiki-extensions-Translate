@@ -31,7 +31,6 @@ class TranslatePreferences {
 		$select = self::languageSelector();
 		$select->setTargetId( 'mw-input-translate-editlangs' );
 
-
 		$languages = Language::getLanguageNames( false );
 
 		$preferences['translate-editlangs'] = array(
@@ -58,6 +57,7 @@ class TranslatePreferences {
 
 	protected static  function languageSelector() {
 		global $wgLang;
+
 		if ( is_callable( array( 'LanguageNames', 'getNames' ) ) ) {
 			$languages = LanguageNames::getNames( $wgLang->getCode(),
 				LanguageNames::FALLBACK_NORMAL
@@ -75,6 +75,7 @@ class TranslatePreferences {
 
 		$jsSelect = new JsSelectToInput( $selector );
 		$jsSelect->setSourceId( 'mw-language-selector' );
+
 		return $jsSelect;
 	}
 }

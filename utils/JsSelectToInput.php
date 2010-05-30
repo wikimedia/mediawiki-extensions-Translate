@@ -1,6 +1,5 @@
 <?php
 
-
 class JsSelectToInput {
 	protected $targetId, $sourceId;
 	protected $select;
@@ -40,15 +39,16 @@ class JsSelectToInput {
 			if ( is_callable( array( $select, 'getAttribute' ) ) ) {
 				$this->sourceId = $select->getAttribute['id'];
 			}
+
 			if ( !$this->sourceId ) {
 				throw new MWException( "ID needs to be specified for the selector" );
 			}
 		}
 
-		
 		self::injectJs();
 		$html = $this->getButton( $this->msg, $this->sourceId, $this->targetId );
 		$html .= $this->select->getHtml();
+
 		return $html;
 	}
 
@@ -60,15 +60,19 @@ class JsSelectToInput {
 			'value' => wfMsg( $msg ),
 			'onclick' => "appendFromSelect( '$source', '$target' );"
 		) );
+
 		return $html;
 	}
 
 	public static function injectJs() {
 		static $done = false;
-		if ( $done ) return;
+
+		if ( $done ) {
+			return;
+		}
 
 		global $wgOut;
+
 		$wgOut->addScriptFile( TranslateUtils::assetPath( 'utils/JsSelectToInput.js' ) );
 	}
-
 }

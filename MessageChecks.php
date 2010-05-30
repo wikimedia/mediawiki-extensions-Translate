@@ -79,13 +79,19 @@ class MessageChecker {
 	public function checkMessage( TMessage $message, $code ) {
 		$warningsArray = array();
 		$messages = array( $message );
+
 		foreach ( $this->checks as $check ) {
 			call_user_func_array( $check, array( $messages, $code, &$warningsArray ) );
 		}
+
 		$warningsArray = $this->filterWarnings( $warningsArray );
-		if ( !count( $warningsArray ) ) return array();
+		if ( !count( $warningsArray ) ) {
+			return array();
+		}
+
 		$warnings = $warningsArray[$message->key()];
 		$warnings = $this->fixMessageParams( $warnings );
+
 		return $warnings;
 	}
 
@@ -98,7 +104,9 @@ class MessageChecker {
 		$messages = array( $message );
 		foreach ( $this->checks as $check ) {
 			call_user_func_array( $check, array( $messages, $code, &$warningsArray ) );
-			if ( count( $warningsArray ) ) return true;
+			if ( count( $warningsArray ) ) {
+				return true;
+			}
 		}
 
 		return false;
@@ -116,11 +124,12 @@ class MessageChecker {
 			foreach ( $warnings as $wkey => $warning ) {
 				$check = array_shift( $warning );
 				foreach ( self::$globalBlacklist as $pattern ) {
-					if ( !$this->match( $pattern['group'], $groupId ) ) continue;
-					if ( !$this->match( $pattern['check'], $check[0] ) ) continue;
+					if ( !$this->match( $pattern['group'], $groupId ) )     continue;
+					if ( !$this->match( $pattern['check'], $check[0] ) )    continue;
 					if ( !$this->match( $pattern['subcheck'], $check[1] ) ) continue;
-					if ( !$this->match( $pattern['message'], $check[2] ) ) continue;
-					if ( !$this->match( $pattern['code'], $check[3] ) ) continue;
+					if ( !$this->match( $pattern['message'], $check[2] ) )  continue;
+					if ( !$this->match( $pattern['code'], $check[3] ) )     continue;
+
 					unset( $warningsArray[$mkey][$wkey] );
 				}
 			}

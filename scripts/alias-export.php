@@ -49,7 +49,10 @@ $langs = Cli::parseLanguageCodes( $options['lang'] );
 $groups = MessageGroups::singleton()->getGroups();
 
 foreach ( $groups as $group ) {
-	if ( !$group instanceof ExtensionMessageGroup ) continue;
+	if ( !$group instanceof ExtensionMessageGroup ) {
+		continue;
+	}
+
 	$file = $group->getAliasFile();
 
 	$groupId = $group->getId();
@@ -58,6 +61,7 @@ foreach ( $groups as $group ) {
 		// Fake a group
 		$group = new AliasMessageGroup( $group->getId() );
 		$group->setMessageFile( $file );
+
 		// FIXME: getVariableNameAlias() is not read from mediawiki-defines.txt here apparently.
 		// Hacked this one exception in for now
 		if ( $groupId == 'ext-wikilog' ) {

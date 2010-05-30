@@ -43,11 +43,19 @@ foreach ( $res as $r ) {
 	}
 
 	list( $key, $code ) = TranslateUtils::figureMessage( $r->page_title );
-	if ( $key === '' ) continue;
-	if ( $code === '' ) continue;
+
+	if ( $key === '' ) {
+		continue;
+	}
+
+	if ( $code === '' ) {
+		continue;
+	}
 
 	$group = @$index[strtolower( "{$r->page_namespace}:$key" )];
-	if ( $group === null ) continue;
+	if ( $group === null ) {
+		continue;
+	}
 
 	$from = array( "\\",   "\n",   "\t"   );
 	$to =   array( "\\\\", "\\\n", "\\\t" );

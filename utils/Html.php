@@ -1,5 +1,4 @@
 <?php
-
 /**
  * HTML builder class which wraps around Html::rawElement().
  * Most of the functions are dual purpose. With no value (or null value) they
@@ -9,6 +8,7 @@
  * <code>$tag = new HtmlTag( 'div' ); $div = $div->content( 'foo' )->style( 'color', 'red' );</code>
  * Note: relies on implicit toString conversion (PHP >= 5.2)
  */
+
 class HtmlTag {
 	public $tag = 'div';
 	public $content = '';
@@ -36,9 +36,12 @@ class HtmlTag {
 	 * @return Mixed  The tag name or self;
 	 */
 	public function tag( $value = null ) {
-		if ( $value === null ) return $this->tag;
+		if ( $value === null ) {
+			return $this->tag;
+		}
 
 		$this->tag = (string) $this->assert( 'is_string', $value );
+
 		return $this;
 	}
 
@@ -48,7 +51,9 @@ class HtmlTag {
 	 * @return Mixed  The content as a string or self.
 	 */
 	public function content( $value = null ) {
-		if ( $value === null ) return $this->content;
+		if ( $value === null ) {
+			return $this->content;
+		}
 
 		if ( $value instanceof HtmlTag || $value instanceof RawHtml || $value instanceof TagContainer  ) {
 			$this->content = $value;
@@ -65,9 +70,12 @@ class HtmlTag {
 	 * @return Array  The paramater array.
 	 */
 	public function params( $value = null ) {
-		if ( $value === null ) return $this->params;
+		if ( $value === null ) {
+			return $this->params;
+		}
 
 		$this->params = (array) $this->assert( 'is_array', $value );
+
 		return $this;
 	}
 
@@ -79,6 +87,7 @@ class HtmlTag {
 	 */
 	public function param( $name, $value = null ) {
 		$name = (string) $this->assert( 'is_string', $name );
+
 		if ( $value === null ) {
 			return isset( $this->params[$name] ) ? $this->params[$name] : null;
 		}
@@ -88,6 +97,7 @@ class HtmlTag {
 		} else {
 			$this->params[$name] = $this->assert( 'is_string', $value );
 		}
+
 		return $this;
 	}
 
@@ -100,6 +110,7 @@ class HtmlTag {
 	 */
 	public function style( $name, $value = null ) {
 		$name = (string) $this->assert( 'is_string', $name );
+
 		if ( $value === null ) {
 			return isset( $this->style[$name] ) ? $this->style[$name] : null;
 		}
@@ -109,6 +120,7 @@ class HtmlTag {
 		} else {
 			$this->style[$name] = $this->assert( 'is_string', $value );
 		}
+
 		return $this;
 	}
 
@@ -128,7 +140,10 @@ class HtmlTag {
 		// Collapse styles
 		$params = $this->params;
 		$style = $this->collapseStyles();
-		if ( $style ) $params['style'] = $style;
+
+		if ( $style ) {
+			$params['style'] = $style;
+		}
 
 		if ( is_object( $this->content ) ) {
 			return Html::rawElement( $this->tag, $params, $this->content );
@@ -161,7 +176,10 @@ class HtmlTag {
 			$style .= "$name: $val;";
 		}
 
-		if ( $style !== '' ) return $style;
+		if ( $style !== '' ) {
+			return $style;
+		}
+
 		return false;
 	}
 
@@ -174,20 +192,25 @@ class HtmlTag {
 	 */
 	protected function assert( $function, $value, $result = true ) {
 		if ( $function === 'is_string' ) {
-			if ( is_int( $value ) || is_float( $value ) ) $value = (string) $value;
+			if ( is_int( $value ) || is_float( $value ) ) {
+				$value = (string) $value;
+			}
 		}
 
 		$real_result = call_user_func( $function, $value );
-		if ( $real_result === $result ) return $value;
+		if ( $real_result === $result ) {
+			return $value;
+		}
+
 		$msg =  __METHOD__ . ":expecting $function to be $result";
 		if ( $this->strict ) {
 				throw new MWException( $msg );
 		} else {
 			wfWarn( $msg );
+
 			return $value;
 		}
 	}
-
 }
 
 /**
@@ -220,8 +243,11 @@ class TagContainer implements ArrayAccess {
 
 	public function __toString() {
 		$output = '';
-		foreach ( $this->tags as $tag )
+
+		foreach ( $this->tags as $tag ) {
 			$output .= $tag . "\n";
+		}
+
 		return $output;
 	}
 
@@ -233,12 +259,15 @@ class TagContainer implements ArrayAccess {
 			$this->tags[$offset] = $value;
 		}
 	}
+
 	public function offsetExists( $offset ) {
 		return isset( $this->tags[$offset] );
 	}
+
 	public function offsetUnset( $offset ) {
 		unset( $this->tags[$offset] );
 	}
+
 	public function offsetGet( $offset ) {
 		return isset( $this->tags[$offset] ) ? $this->tags[$offset] : null;
 	}

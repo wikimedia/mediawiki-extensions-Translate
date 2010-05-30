@@ -16,7 +16,6 @@ $dir = dirname( __FILE__ ); $IP = "$dir/../../..";
 define( 'TRANSLATE_CLI', 1 );
 require_once( "$IP/maintenance/Maintenance.php" );
 
-
 class TMExport extends Maintenance {
 	public function __construct() {
 		parent::__construct();
@@ -39,7 +38,10 @@ class TMExport extends Maintenance {
 		unset( $languages['en'] );
 
 		foreach ( $groups as $id => $group ) {
-			if ( $group->isMeta() ) continue;
+			if ( $group->isMeta() ) {
+				continue;
+			}
+
 			$this->output( "Processing: {$group->getLabel()} ", $id );
 			$capitalized = MWNamespace::isCapitalized( $group->getNamespace() );
 			$ns_text = $wgContLang->getNsText( $group->getNamespace() );
@@ -63,7 +65,9 @@ class TMExport extends Maintenance {
 
 				$res = $dbr->select( $tables, $vars, $conds, __METHOD__ );
 				// Assure that there is at least one translation
-				if ( $res->numRows() < 1 ) continue;
+				if ( $res->numRows() < 1 ) {
+					continue;
+				}
 
 				$insert = array(
 					'text' => $definition,
@@ -98,7 +102,6 @@ class TMExport extends Maintenance {
 			$dbw->commit();
 		} // each group>
 	}
-
 }
 
 $maintClass = 'TMExport';

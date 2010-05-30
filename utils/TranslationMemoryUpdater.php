@@ -1,31 +1,40 @@
 <?php
-
 /**
-*
+*  Class for updating the Translation Memory
 */
-class TranslationMemoryUpdater {
 
+class TranslationMemoryUpdater {
 	public static function update( $article, $user, $text, $summary, $minor, $_, $_, $flags, $revision ) {
 		global $wgContLang;
 
 		$dbw = self::getDatabaseHandle();
 		// Not in use or misconfigured
-		if ( $dbw === null ) return true;
+		if ( $dbw === null ) {
+			return true;
+		}
 
 		$title = $article->getTitle();
 		// Something we are not interested in at all
-		if ( !TranslateEditAddons::isMessageNamespace( $title ) ) return true;
+		if ( !TranslateEditAddons::isMessageNamespace( $title ) ) {
+			return true;
+		}
 
 		list( $key, $code, $group ) = TranslateEditAddons::getKeyCodeGroup( $title );
 		// Unknown message, we cannot handle. We need definition.
-		if ( !$group || !$code ) return true;
+		if ( !$group || !$code ) {
+			return true;
+		}
 
 		// Skip definitions to not slow down mass imports etc.
 		// These will be added when first translation is made
-		if ( $code === 'en' ) return true;
+		if ( $code === 'en' ) {
+			return true;
+		}
 
 		// Skip fuzzy messages
-		if ( TranslateEditAddons::hasFuzzyString( $text ) ) return true;
+		if ( TranslateEditAddons::hasFuzzyString( $text ) ) {
+			return true;
+		}
 
 		$ns_text = $wgContLang->getNsText( $group->getNamespace() );
 		$definition = $group->getMessage( $key, 'en' );
@@ -33,7 +42,7 @@ class TranslationMemoryUpdater {
 			wfDebugLog( 'tmserver', "Unable to get definition for $ns_text:$key/$code" );
 			return true;
 		}
-		
+
 		$tmDefinition = array(
 			'text' => $definition,
 			'context' => "$ns_text:$key",
@@ -68,10 +77,12 @@ class TranslationMemoryUpdater {
 		return true;
 	}
 
-
 	public static function getDatabaseHandle() {
 		global $wgTranslateTM;
-		if ( !isset( $wgTranslateTM['database'] ) ) return null;
+
+		if ( !isset( $wgTranslateTM['database'] ) ) {
+			return null;
+		}
 
 		$database = $wgTranslateTM['database'];
 
@@ -92,5 +103,4 @@ class TranslationMemoryUpdater {
 
 		return new DatabaseSqliteStandalone( $database );
 	}
-
 }

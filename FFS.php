@@ -232,7 +232,6 @@ class JavaFFS extends SimpleFFS {
 	//
 	// READ
 	//
-
 	public function readFromVariable( $data ) {
 		$data = self::fixNewLines( $data );
 		$lines = array_map( 'ltrim', explode( "\n", $data ) );

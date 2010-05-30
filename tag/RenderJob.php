@@ -57,6 +57,7 @@ class RenderJob extends Job {
 
 		// User hack
 		global $wgUser;
+
 		$oldUser = $wgUser;
 		$wgUser = $user;
 

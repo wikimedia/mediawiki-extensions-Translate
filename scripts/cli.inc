@@ -17,7 +17,10 @@ require_once( "$IP/maintenance/commandLine.inc" );
 
 function STDOUT( $str, $channel = null, $force = false ) {
 	global $options;
-	if ( isset($options['quiet']) &&!$force ) return;
+
+	if ( isset($options['quiet']) &&!$force ) {
+		return;
+	}
 
 	static $lastChannel = null;
 	static $lineStart = true;
@@ -26,10 +29,16 @@ function STDOUT( $str, $channel = null, $force = false ) {
 		fwrite( STDOUT, $str );
 	} elseif ( $str === false ) {
 		// Cleanup
-		if ( !$lineStart ) fwrite( STDOUT, "\n" );
+		if ( !$lineStart ) {
+			fwrite( STDOUT, "\n" );
+		}
+
 		return;
 	} else {
-		if ( !$lineStart ) fwrite( STDOUT, "\n" );
+		if ( !$lineStart ) {
+			fwrite( STDOUT, "\n" );
+		}
+
 		fwrite( STDOUT, $str );
 	}
 
@@ -38,6 +47,7 @@ function STDOUT( $str, $channel = null, $force = false ) {
 		fwrite( STDOUT, "\n" );
 		$lineStart = true;
 	}
+
 	$lastChannel = $channel;
 }
 
@@ -47,9 +57,7 @@ function STDERR( $message, $channel = null ) {
 
 register_shutdown_function('STDOUT', false);
 
-
 class Cli {
-
 	public static function parseLanguageCodes( /* string */ $codes ) {
 		$langs = array_map( 'trim', explode( ',', $codes ) );
 		if ( $langs[0] === '*' ) {
@@ -57,6 +65,7 @@ class Cli {
 			ksort($languages);
 			$langs = array_keys($languages);
 		}
+
 		return $langs;
 	}
 }

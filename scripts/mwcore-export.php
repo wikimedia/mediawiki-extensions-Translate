@@ -35,6 +35,7 @@ if ( !isset( $options['target'] ) ) {
 	STDERR( "You need to specify target directory" );
 	exit( 1 );
 }
+
 if ( !isset( $options['lang'] ) ) {
 	STDERR( "You need to specify languages to export" );
 	exit( 1 );
@@ -55,30 +56,33 @@ $langs = Cli::parseLanguageCodes( $options['lang'] );
 $group = MessageGroups::getGroup( 'core' );
 
 foreach ( $langs as $l ) {
-
 	$o = null;
 	switch ( $options['type'] ) {
-	case 'special':
-		$o = new SpecialPageAliasesCM( $l );
-		break;
-	case 'magic':
-		$o = new MagicWordsCM( $l );
-		break;
-	case 'namespace':
-		$o = new NamespaceCM( $l );
-		break;
-	default:
-		STDERR( "Invalid type: must be one of special, magic, namespace" );
-		exit( 1 );
+		case 'special':
+			$o = new SpecialPageAliasesCM( $l );
+			break;
+		case 'magic':
+			$o = new MagicWordsCM( $l );
+			break;
+		case 'namespace':
+			$o = new NamespaceCM( $l );
+			break;
+		default:
+			STDERR( "Invalid type: must be one of special, magic, namespace" );
+			exit( 1 );
 	}
 
 	$export = $o->export( 'core' );
-	if ( $export === '' ) continue;
+	if ( $export === '' ) {
+		continue;
+	}
 
 	$matches = array();
 	preg_match( '~^(\$[a-zA-Z]+)\s*=~m', $export, $matches );
 
-	if ( !isset( $matches[1] ) ) continue;
+	if ( !isset( $matches[1] ) ) {
+		continue;
+	}
 
 	# remove useles comment
 	$export = preg_replace( "~^# .*$\n~m", '', $export );

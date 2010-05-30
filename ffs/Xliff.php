@@ -64,6 +64,7 @@ class XliffFormatWriter extends SimpleFormatWriter {
 			$w->writeAttribute( 'id', $key );
 			$w->writeElement( 'source', $m->definition() );
 			$translation = $m->translatiom();
+
 			if ( $translation !== null ) {
 				$w->writeElement( 'target',  $translation );
 			}

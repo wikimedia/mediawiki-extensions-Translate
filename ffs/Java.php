@@ -16,7 +16,6 @@
  * Second section (if any) is returned verbatim.
  */
 class JavaFormatReader extends SimpleFormatReader {
-
 	/**
  	 * Inherited from SimpleFormatReader, which parses whole header in one pass.
 	 * Basically the same, with different author prefix and separator between
@@ -78,15 +77,21 @@ class JavaFormatReader extends SimpleFormatReader {
 
 		# This format works nicely with line based parsing
 		$lines = array_map( 'trim', file( $this->filename ) );
-		if ( !$lines ) { return null; }
+		if ( !$lines ) {
+			return null;
+		}
 
 		$messages = array();
 
 		foreach ( $lines as $line ) {
-			if ( $line === '' || !strpos( $line, '=' ) || $line[0] === '#' ) { continue; }
+			if ( $line === '' || !strpos( $line, '=' ) || $line[0] === '#' ) {
+				continue;
+			}
+
 			list( $key, $value ) = explode( '=', $line, 2 );
 			$messages[$mangler->mangle( trim( $key ) )] = trim( $value );
 		}
+
 		return $messages;
 	}
 }
@@ -95,12 +100,12 @@ class JavaFormatReader extends SimpleFormatReader {
  * Very simple writer for exporting messages to Java property files from wiki.
  */
 class JavaFormatWriter extends SimpleFormatWriter {
-
 	/**
 	 * Inherited. Very simplistic header with timestamp.
 	 */
 	public function makeHeader( $handle, $code ) {
 		global $wgSitename;
+
 		list( $name, $native ) = $this->getLanguageNames( $code );
 		$authors = $this->formatAuthors( '# Author: ', $code );
 		$when = wfTimestamp( TS_ISO_8601 );
@@ -129,5 +134,4 @@ HEADER
 			fwrite( $handle, "$key=$value\n" );
 		}
 	}
-
 }

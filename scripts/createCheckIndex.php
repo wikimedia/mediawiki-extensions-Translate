@@ -107,4 +107,3 @@ function tagFuzzy( $problematic ) {
 		$db->replace( 'revtag', 'rt_type_page_revision', $inserts, __METHOD__ );
 	}
 }
-

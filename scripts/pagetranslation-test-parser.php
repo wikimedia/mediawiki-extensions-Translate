@@ -17,7 +17,6 @@ if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 }
 require_once( "$IP/maintenance/Maintenance.php" );
 
-
 class PageTranslationParserTester extends Maintenance {
 	public function __construct() {
 		parent::__construct();
@@ -74,7 +73,6 @@ class PageTranslationParserTester extends Maintenance {
 			if ( file_exists( "$pattern.pttest" ) ) {
 				require( "$pattern.pttest" );
 			}
-
 		}
 	}
 

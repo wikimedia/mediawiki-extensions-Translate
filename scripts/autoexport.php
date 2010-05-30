@@ -78,9 +78,9 @@ if ( isset( $options['threshold'] ) && intval( $options['threshold'] ) ) {
 	$threshold = false;
 }
 
-
 $rows = TranslateUtils::translationChanges( $hours, true );
 $exports = array();
+
 foreach ( $rows as $row ) {
 	$group = false;
 	$code = false;
@@ -89,11 +89,14 @@ foreach ( $rows as $row ) {
 	list( $pieces, ) = explode( '/', $wgContLang->lcfirst( $row->rc_title ), 2 );
 
 	$mg = TranslateUtils::messageKeyToGroup(  $row->rc_namespace, $pieces );
-	if ( !is_null( $mg ) ) $group = $mg;
+	if ( !is_null( $mg ) ) {
+		$group = $mg;
+	}
 
 	if ( strpos( $row->rc_title, '/' ) !== false ) {
 		$code = $row->lang;
 	}
+
 	if ( $group && ( !count( $groupsFilter ) || in_array( $group, $groupsFilter ) ) ) {
 		if ( $code && !in_array( $code, $skip ) ) {
 			$exports[$group][$code] = true;
@@ -109,7 +112,9 @@ foreach ( $exports as $group => $languages ) {
 	sort( $languages );
 	$languages = checkThreshold( $group, $languages, $threshold );
 
-	if ( !count( $languages ) ) continue;
+	if ( !count( $languages ) ) {
+		continue;
+	}
 
 	$languagelist = implode( ', ', $languages );
 	STDOUT( str_replace(
@@ -120,6 +125,7 @@ foreach ( $exports as $group => $languages ) {
 	if ( $summarize ) {
 		list( $group, ) = explode( '-', $group, 2 );
 	}
+
 	if ( isset( $notice[$group] ) ) {
 		$notice[$group] = array_merge( $notice[$group], $languages );
 	} else {
@@ -128,7 +134,10 @@ foreach ( $exports as $group => $languages ) {
 }
 
 function checkThreshold( $group, $languages, $threshold ) {
-	if ( $threshold === false ) return $languages;
+	if ( $threshold === false ) {
+		return $languages;
+	}
+
 	$qualify = array();
 
 	$g = MessageGroups::singleton()->getGroup( $group );
@@ -143,10 +152,12 @@ function checkThreshold( $group, $languages, $threshold ) {
 		$collection->filter( 'translated', false );
 		$translated = count( $collection );
 
-		if ( $translated / $total > $threshold / 100 ) $qualify[] = $code;
+		if ( $translated / $total > $threshold / 100 ) {
+			$qualify[] = $code;
+		}
 	}
-	return $qualify;
 
+	return $qualify;
 }
 
 foreach ( $notice as $group => $languages ) {

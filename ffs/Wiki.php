@@ -25,6 +25,7 @@ class WikiFormatReader extends SimpleFormatReader {
 		$contents = file_get_contents( $this->filename );
 		$m = array();
 		$count = preg_match_all( '/@author (.*)/', $contents, $m );
+
 		return $m[1];
 	}
 
@@ -32,6 +33,7 @@ class WikiFormatReader extends SimpleFormatReader {
 		if ( $this->filename === false ) {
 			return '';
 		}
+
 		$contents = file_get_contents( $this->filename );
 
 		/** FIXME: handle the case where the first comment is missing */
@@ -39,10 +41,21 @@ class WikiFormatReader extends SimpleFormatReader {
 
 		$start = strpos( $contents, '*/' );
 		$end = strpos( $contents, '$messages' );
-		if ( $start === false ) return '';
-		if ( $start === $end ) return '';
+
+		if ( $start === false ) {
+			return '';
+		}
+
+		if ( $start === $end ) {
+			return '';
+		}
+		
 		$start += 2; // Get over the comment ending
-		if ( $end === false ) return trim( substr( $contents, $start ) );
+
+		if ( $end === false ) {
+			return trim( substr( $contents, $start ) );
+		}
+
 		return trim( substr( $contents, $start, $end - $start ) );
 	}
 
@@ -50,8 +63,10 @@ class WikiFormatReader extends SimpleFormatReader {
 		if ( $this->filename === false ) {
 			return array();
 		}
+
 		$ { $this->variableName } = array();
 		require( $this->filename );
+
 		return $mangler->mangle( $ { $this->variableName } );
 	}
 
@@ -95,6 +110,7 @@ HEADER
 		if ( !$dir ) {
 			$this->writeMessagesBlock( $handle, $messages );
 			fwrite( $handle, ");\n" );
+
 			return;
 		}
 
@@ -175,8 +191,12 @@ HEADER
 	protected function exportItemPad( $handle, $key, $value, $pad = 0 ) {
 		# Add the key name
 		fwrite( $handle, "'$key'" );
+
 		# Add the appropriate block whitespace
-		if ( $pad ) fwrite( $handle, str_repeat( ' ', $pad - strlen( $key ) ) );
+		if ( $pad ) {
+			fwrite( $handle, str_repeat( ' ', $pad - strlen( $key ) ) );
+		}
+
 		fwrite( $handle, ' => ' );
 
 		if ( $this->commaToArray ) {
@@ -203,11 +223,9 @@ HEADER
 
 		# It is safe to use '-quoting, unless there is '-quote in the text
 		if ( strpos( $value, $single ) !== false ) {
-
 			# In case there is no variables that need to be escaped, just use "-quote
 			if ( strpos( $value, $double ) === false && !preg_match( '/\$[^0-9]/', $value ) ) {
 				$quote = $double;
-
 			# Something needs quoting, pick the quote which causes less quoting
 			} else {
 				$doubleEsc = substr_count( $value, $double ) + substr_count( $value, '$' );

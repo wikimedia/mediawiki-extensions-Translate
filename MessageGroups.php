@@ -93,6 +93,7 @@ abstract class MessageGroupOld implements MessageGroup {
 			$messages = $reader->parseMessages( $this->mangler );
 			return $messages ? $messages : array();
 		}
+
 		return array();
 	}
 
@@ -107,6 +108,7 @@ abstract class MessageGroupOld implements MessageGroup {
 		if ( !is_array( $defs ) ) {
 			throw new MWException( "Unable to load definitions for " . $this->getLabel() );
 		}
+
 		return $defs;
 	}
 
@@ -132,16 +134,21 @@ abstract class MessageGroupOld implements MessageGroup {
 			$this->messages[$code] = self::normaliseKeys( $this->load( $code ) );
 		}
 		$key = strtolower( str_replace( ' ', '_', $key ) );
+
 		return isset( $this->messages[$code][$key] ) ? $this->messages[$code][$key] : null;
 	}
 
 	public static function normaliseKeys( $array ) {
-		if ( !is_array( $array ) ) return null;
+		if ( !is_array( $array ) ) {
+			return null;
+		}
+
 		$new = array();
 		foreach ( $array as $key => $v ) {
 			$key = strtolower( str_replace( ' ', '_', $key ) );
 			$new[$key] = $v;
 		}
+
 		return $new;
 	}
 
@@ -273,11 +280,13 @@ class CoreMessageGroup extends MessageGroupOld {
 
 			return $ourDefs;
 		}
+
 		return $this->getDefinitions();
 	}
 
 	public function getMessageFile( $code ) {
 		$code = ucfirst( str_replace( '-', '_', $code ) );
+
 		return "Messages$code.php";
 	}
 
@@ -295,6 +304,7 @@ class CoreMessageGroup extends MessageGroupOld {
 
 	public function getBools() {
 		require( $this->getMetaDataPrefix() . '/messageTypes.inc' );
+
 		return array(
 			'optional' => $this->mangler->mangle( $wgOptionalMessages ),
 			'ignored'  => $this->mangler->mangle( $wgIgnoredMessages ),
@@ -462,7 +472,6 @@ class ExtensionMessageGroup extends MessageGroupOld {
 
 	public function getMagicFile() { return $this->magicFile; }
 	public function setMagicFile( $file ) { $this->magicFile = $file; }
-
 }
 
 class AliasMessageGroup extends ExtensionMessageGroup {
@@ -538,6 +547,7 @@ class AliasMessageGroup extends ExtensionMessageGroup {
 		$writer = new WikiExtensionFormatWriter( $this );
 		$writer->variableName = $this->getVariableName();
 		$writer->commaToArray = true;
+
 		return $writer;
 	}
 }
@@ -626,7 +636,6 @@ class GettextMessageGroup extends MessageGroupOld {
 		return $group;
 	}
 
-
 	public function getReader( $code ) {
 		$reader = new GettextFormatReader( $this->getMessageFileWithPath( $code ) );
 		$reader->setPrefix( $this->prefix );
@@ -712,7 +721,6 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 
 		$this->title = $title;
 		$this->namespaces = array( NS_TRANSLATIONS, NS_TRANSLATIONS_TALK );
-
 	}
 
 	public function getDefinitions() {
@@ -858,6 +866,7 @@ class MessageGroups {
 		self::init();
 
 		global $wgTranslateEC, $wgTranslateAC, $wgTranslateCC;
+
 		if ( in_array( $id, $wgTranslateEC ) ) {
 			$creater = $wgTranslateAC[$id];
 			if ( is_array( $creater ) ) {
@@ -884,6 +893,7 @@ class MessageGroups {
 	public $classes = array();
 	private function __construct() {
 		self::init();
+
 		global $wgTranslateEC, $wgTranslateCC;
 
 		$all = array_merge( $wgTranslateEC, array_keys( $wgTranslateCC ) );

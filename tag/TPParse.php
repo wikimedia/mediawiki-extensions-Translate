@@ -67,6 +67,7 @@ class TPParse {
 			}
 
 		}
+
 		return $sections;
 	}
 

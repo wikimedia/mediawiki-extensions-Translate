@@ -9,7 +9,9 @@ class ArrayMemoryCache {
 	public function __construct( $table ) {
 		$this->table = $table;
 		$this->key = wfMemcKey( $this->table );
+
 		global $wgMemc;
+
 		$this->memc = $wgMemc;
 	}
 
@@ -19,22 +21,34 @@ class ArrayMemoryCache {
 
 	public function get( $group, $code ) {
 		$this->load();
-		if ( !isset( $this->cache[$group][$code] ) ) return false;
+
+		if ( !isset( $this->cache[$group][$code] ) ) {
+			return false;
+		}
+
 		return explode( ',', $this->cache[$group][$code] );
 	}
 
 	public function set( $group, $code, $value ) {
 		$this->load();
-		if ( !isset( $this->cache[$group] ) ) $this->cache[$group] = array();
+
+		if ( !isset( $this->cache[$group] ) ) {
+			$this->cache[$group] = array();
+		}
+
 		$this->cache[$group][$code] = implode( ',', $value );
 	}
 
 	public function clear( $group, $code ) {
 		$this->load();
-		if ( isset( $this->cache[$group][$code] ) )
+
+		if ( isset( $this->cache[$group][$code] ) ) {
 			unset( $this->cache[$group][$code] );
-		if ( isset( $this->cache[$group] ) && !count( $this->cache[$group] ) )
+		}
+
+		if ( isset( $this->cache[$group] ) && !count( $this->cache[$group] ) ) {
 			unset( $this->cache[$group] );
+		}
 	}
 
 	public function commit() {
@@ -45,7 +59,10 @@ class ArrayMemoryCache {
 	protected function load() {
 		if ( $this->cache === null ) {
 			$this->cache = $this->memc->get( $this->key );
-			if ( !is_array( $this->cache ) ) $this->cache = array();
+
+			if ( !is_array( $this->cache ) ) {
+				$this->cache = array();
+			}
 		}
 	}
 

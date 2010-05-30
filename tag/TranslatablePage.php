@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Class to parse translatable wiki pages.
  *
@@ -7,6 +6,7 @@
  * @copyright Copyright © 2009-2010 Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
+
 class TranslatablePage {
 	/**
 	 * Title of the page.
@@ -49,6 +49,7 @@ class TranslatablePage {
 		$obj = new self( $title );
 		$obj->text = $text;
 		$obj->source = 'text';
+
 		return $obj;
 	}
 
@@ -67,6 +68,7 @@ class TranslatablePage {
 		$obj = new self( $title );
 		$obj->source = 'revision';
 		$obj->revision = $revision;
+
 		return $obj;
 	}
 
@@ -77,6 +79,7 @@ class TranslatablePage {
 	public static function newFromTitle( Title $title ) {
 		$obj = new self( $title );
 		$obj->source = 'title';
+
 		return $obj;
 	}
 
@@ -406,6 +409,7 @@ class TranslatablePage {
 			'group' => 'page|' . $this->getTitle()->getPrefixedText(),
 			'task' => 'view'
 		);
+
 		if ( $code ) {
 			$params['language'] = $code;
 		}
@@ -452,6 +456,7 @@ class TranslatablePage {
 	public function getTranslationPercentages( $force = false ) {
 		// Check the memory cache, as this is very slow to calculate
 		global $wgMemc, $wgRequest;
+
 		$memcKey = wfMemcKey( 'pt', 'status', $this->getTitle()->getPrefixedText() );
 		$cache = $wgMemc->get( $memcKey );
 
@@ -483,6 +488,7 @@ class TranslatablePage {
 
 		// Content language is always up-to-date
 		global $wgContLang;
+
 		$temp[$wgContLang->getCode()] = 1.00;
 
 		$wgMemc->set( $memcKey, $temp, 60 * 60 * 12 );
@@ -554,6 +560,7 @@ class TranslatablePage {
 		}
 
 		global $wgTranslateStaticTags;
+
 		if ( is_array( $wgTranslateStaticTags ) ) {
 			return $wgTranslateStaticTags[$tag];
 		}
@@ -610,6 +617,7 @@ class TranslatablePage {
  */
 class TPException extends MWException {
 	protected $msg = null;
+
 	public function __construct( $msg ) {
 		$this->msg = $msg;
 		parent::__construct( call_user_func_array( 'wfMsg', $msg ) );

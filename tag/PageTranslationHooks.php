@@ -34,6 +34,7 @@ class PageTranslationHooks {
 	// Only called form hook
 	public static function injectCss( $outputpage, $text ) {
 		TranslateUtils::injectCSS();
+
 		return true;
 	}
 
@@ -324,6 +325,7 @@ FOO;
 				// No group means that the page is currently not
 				// registered to any page translation message groups
 				$result = array( 'tpt-unknown-page' );
+
 				return false;
 			}
 
@@ -344,6 +346,7 @@ FOO;
 					$page->getTitle()->getPrefixedText(),
 					$page->getTranslationUrl( $code )
 				);
+
 				return false;
 			}
 		}
@@ -439,6 +442,7 @@ FOO;
 		) . Html::element( 'hr' );
 
 		global $wgOut;
+
 		$wgOut->addHTML( $legend );
 	}
 
@@ -469,6 +473,7 @@ FOO;
 			$wrap = '<div style="font-size: x-small; text-align: center" class="mw-translate-fuzzy">$1</div>';
 			$wgOut->wrapWikiMsg( $wrap, array( 'tpt-translation-intro-fuzzy' ) );
 		}
+
 		$wgOut->addHTML( '<hr />' );
 	}
 

@@ -27,7 +27,10 @@ EOT
 	exit( 1 );
 }
 
-if ( isset( $options['help'] ) ) showUsage();
+if ( isset( $options['help'] ) ) {
+	showUsage();
+}
+
 if ( !isset( $options['file'] ) ) {
 	STDERR( "You need to specify input file" );
 	exit( 1 );
@@ -60,7 +63,6 @@ $w->execute();
  * supported.
  */
 class PoImporter {
-
 	/**
 	 * Path to file to parse.
 	 */
@@ -125,8 +127,11 @@ class PoImporter {
 			if ( preg_match( "/^msgctxt\s($poformat)/mx", $section, $matches ) ) {
 				// Remove quoting
 				$key = preg_replace( $quotePattern, '', $matches[1] );
+
 				// Ignore unknown keys
-				if ( !isset( $contents[$key] ) ) continue;
+				if ( !isset( $contents[$key] ) ) {
+					continue;
+				}
 			} else {
 				continue;
 			}
@@ -163,9 +168,7 @@ class PoImporter {
 		}
 
 		return array( $changes, $groupId );
-
 	}
-
 }
 
 /**
@@ -223,6 +226,7 @@ class WikiWriter {
 	 */
 	private function updateMessage( $namespace, $title, $text ) {
 		global $wgTitle, $wgArticle;
+
 		$wgTitle = Title::makeTitleSafe( $namespace, $title );
 
 		STDOUT( "Updating {$wgTitle->getPrefixedText()}... ", $title );

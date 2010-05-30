@@ -1,15 +1,16 @@
 <?php
-if ( !defined( 'MEDIAWIKI' ) ) die();
 
 class GettextPluralException extends MwException { }
 
 class GettextFormatReader extends SimpleFormatReader {
 	protected $pot = false;
+
 	public function setPotMode( $value ) {
 		$this->pot = $value;
 	}
 
 	protected $prefix = '';
+
 	public function setPrefix( $value ) {
 		$this->prefix = $value;
 	}
@@ -23,10 +24,16 @@ class GettextFormatReader extends SimpleFormatReader {
 		if ( $this->filename === false ) {
 			return '';
 		}
+
 		$data = file_get_contents( $this->filename );
 		$start = (int) strpos( $data, '# --' );
-		if ( $start ) $start += 5;
+
+		if ( $start ) {
+			$start += 5;
+		}
+
 		$end = (int) strpos( $data, "msgid" );
+
 		return substr( $data, $start, $end - $start );
 	}
 
@@ -34,8 +41,10 @@ class GettextFormatReader extends SimpleFormatReader {
 		if ( $this->filename === false ) {
 			return array();
 		}
+
 		$data = file_get_contents( $this->filename );
 		$parse = GettextFFS::parseGettextData( $data );
+
 		return $parse['TEMPLATE'];
 	}
 
@@ -43,7 +52,9 @@ class GettextFormatReader extends SimpleFormatReader {
 		if ( $this->filename === false ) {
 			return array();
 		}
+
 		$data = file_get_contents( $this->filename );
+
 		return GettextFFS::parseGettextData( $data );
 	}
 
@@ -51,6 +62,7 @@ class GettextFormatReader extends SimpleFormatReader {
 	public function parseMessages( StringMangler $mangler ) {
 		$defs = $this->parseFile();
 		$messages = array();
+
 		foreach ( $defs as $key => $def ) {
 			if ( $this->pot ) {
 				$messages[$key] = $def['id'];
@@ -60,9 +72,9 @@ class GettextFormatReader extends SimpleFormatReader {
 				}
 			}
 		}
+
 		return $messages;
 	}
-
 }
 
 class GettextFormatWriter extends SimpleFormatWriter {
@@ -72,16 +84,17 @@ class GettextFormatWriter extends SimpleFormatWriter {
 	public function load( $code ) {
 		$reader = $this->group->getReader( $code );
 		$readerEn = $this->group->getReader( 'en' );
+
 		if ( $reader instanceof GettextFormatReader ) {
 			$this->addAuthors( $reader->parseAuthors(), $code );
 			$this->staticHeader = $reader->parseStaticHeader();
 			$this->owndata = $reader->parseFileExt();
 		}
+
 		if ( $readerEn instanceof GettextFormatReader ) {
 			$this->data = $readerEn->parseFile();
 		}
 	}
-
 
 	public function exportLanguage( $handle, MessageCollection $messages ) {
 		global $wgSitename, $wgServer, $wgTranslateDocumentationLanguageCode;
@@ -133,10 +146,14 @@ class GettextFormatWriter extends SimpleFormatWriter {
 
 			$translation = $m->translation();
 			# CASE2: no translation
-			if ( $translation === null ) $translation = '';
+			if ( $translation === null ) {
+				$translation = '';
+			}
 
 			# CASE3: optional messages; accept only if different
-			if ( $m->hasTag( 'optional' ) ) $flags[] = 'x-optional';
+			if ( $m->hasTag( 'optional' ) ) {
+				$flags[] = 'x-optional';
+			}
 
 			# Remove explicit fuzzy markings from the translation before export
 			$flags = array();
@@ -144,6 +161,7 @@ class GettextFormatWriter extends SimpleFormatWriter {
 			if ( isset( $this->data[$key]['flags'] ) ) {
 				$flags = $this->data[$key]['flags'];
 			}
+
 			if ( strpos( $translation, TRANSLATE_FUZZY ) !== false ) {
 				$translation = str_replace( TRANSLATE_FUZZY, '', $translation );
 				$flags[] = 'fuzzy';
@@ -172,7 +190,6 @@ class GettextFormatWriter extends SimpleFormatWriter {
 			}
 
 			fwrite( $handle, $this->formatmsg( $m->definition(), $translation, $ckey, $pluralForms ) );
-
 		}
 
 		return $out;
@@ -184,6 +201,7 @@ class GettextFormatWriter extends SimpleFormatWriter {
 		$line = addcslashes( $line, '\\"' );
 		$line = str_replace( "\n", '\n', $line );
 		$line = '"' . $line . '"';
+
 		return $line;
 	}
 
@@ -199,12 +217,17 @@ class GettextFormatWriter extends SimpleFormatWriter {
 		}
 
 		// Ensure there is always something
-		if ( !count( $comments ) ) $comments[':'][] = '';
+		if ( !count( $comments ) ) {
+			$comments[':'][] = '';
+		}
 
 		$order = array( '', '.', ':', ',', '|' );
 		$output = array();
 		foreach ( $order as $type ) {
-			if ( !isset( $comments[$type] ) ) continue;
+			if ( !isset( $comments[$type] ) ) {
+				continue;
+			}
+
 			foreach ( $comments[$type] as $value ) {
 				$output[] = "#$type $value";
 			}
@@ -217,7 +240,9 @@ class GettextFormatWriter extends SimpleFormatWriter {
 		$output = array();
 
 		// FIXME: very ugly hack to allow gettext plurals to be exported.
-		if ( $msgstr == '{{PLURAL:GETTEXT|}}' ) return '';
+		if ( $msgstr == '{{PLURAL:GETTEXT|}}' ) {
+			return '';
+		}
 
 		if ( $msgctxt ) {
 			$output[] = 'msgctxt ' . $this->escape( $msgctxt );
@@ -250,6 +275,7 @@ class GettextFormatWriter extends SimpleFormatWriter {
 		}
 
 		$out = implode( "\n", $output ) . "\n\n";
+
 		return $out;
 
 	}
@@ -266,7 +292,11 @@ class GettextFormatWriter extends SimpleFormatWriter {
 		for ( $i = 0; $i < $forms; $i++ ) {
 			$plurals = array();
 			$match = preg_match_all( '/{{PLURAL:GETTEXT\|(.*)}}/iU', $text, $plurals );
-			if ( !$match ) throw new GettextPluralException( "Failed to parse plural for: $text" );
+
+			if ( !$match ) {
+				throw new GettextPluralException( "Failed to parse plural for: $text" );
+			}
+
 			$pluralForm = $text;
 			foreach ( $plurals[0] as $index => $definition ) {
 				$parsedFormsArray = explode( '|', $plurals[1][$index] );
@@ -282,15 +312,12 @@ class GettextFormatWriter extends SimpleFormatWriter {
 
 		return $splitPlurals;
 	}
-
 }
 
 class GettextFFS extends SimpleFFS {
-
 	//
 	// READ
 	//
-
 	public function readFromVariable( $data ) {
 		$authors = $messages = array();
 
@@ -357,7 +384,10 @@ class GettextFFS extends SimpleFFS {
 
 		// Then parse the messages
 		foreach ( $sections as $section ) {
-			if ( trim( $section ) === '' ) continue;
+			if ( trim( $section ) === '' ) {
+				continue;
+			}
+
 			/* These inactive section are of no interest to us. Multiline mode
 			 * is needed because there may be flags or other annoying stuff
 			 * before the commented out sections.
@@ -482,7 +512,9 @@ class GettextFFS extends SimpleFFS {
 	 */
 	public static function generateKeyFromItem( $item ) {
 		$lang = Language::factory( 'en' );
+
 		global $wgLegalTitleChars;
+
 		$hash = sha1( $item['ctxt'] . $item['id'] );
 		$snippet = $item['id'];
 		$snippet = preg_replace( "/[^$wgLegalTitleChars]/", ' ', $snippet );
@@ -490,6 +522,7 @@ class GettextFFS extends SimpleFFS {
 		$snippet = preg_replace( "/ {2,}/", ' ', $snippet );
 		$snippet = $lang->truncate( $snippet, 30, '' );
 		$snippet = str_replace( ' ', '_', trim( $snippet ) );
+
 		return "$hash-$snippet";
 	}
 
@@ -503,6 +536,7 @@ class GettextFFS extends SimpleFFS {
 		$quotePattern = '/(^"|"$\n?)/m';
 		$data = preg_replace( $quotePattern, '', $data );
 		$data = stripcslashes( $data );
+
 		if ( preg_match( '/\s$/', $data ) ) {
 			if ( $whitespace === 'mark' )
 				$data .= '\\';
@@ -512,6 +546,7 @@ class GettextFFS extends SimpleFFS {
 				// FIXME: only triggered if there is trailing whitespace
 				throw new MWException( 'Unknown action for whitespace' );
 		}
+
 		return $data;
 	}
 
@@ -521,13 +556,13 @@ class GettextFFS extends SimpleFFS {
 			list( $key, $value ) = explode( ': ', $line, 2 );
 			$tags[$key] = $value;
 		}
+
 		return $tags;
 	}
 
 	//
 	// WRITE
 	//
-
 	protected function writeReal( MessageCollection $collection ) {
 		throw new MWException( 'Not implemented' );
 		$output  = $this->doHeader( $collection );
@@ -540,21 +575,28 @@ class GettextFFS extends SimpleFFS {
 			$key = $mangler->unmangle( $key );
 			$value = $m->translation();
 			$value = str_replace( TRANSLATE_FUZZY, '', $value );
-			if ( $value === '' ) continue;
+
+			if ( $value === '' ) {
+				continue;
+			}
 
 			$messages[$key] = $value;
 		}
+
 		$output .= TranslateSpyc::dump( $messages );
+
 		return $output;
 	}
 
 	protected function doHeader( MessageCollection $collection ) {
 		global $wgSitename;
+
 		$code = $collection->code;
 		$name = TranslateUtils::getLanguageName( $code );
 		$native = TranslateUtils::getLanguageName( $code, true );
 		$output  = "# Messages for $name ($native)\n";
 		$output .= "# Exported from $wgSitename\n";
+
 		return $output;
 	}
 
@@ -562,10 +604,11 @@ class GettextFFS extends SimpleFFS {
 		$output = '';
 		$authors = $collection->getAuthors();
 		$authors = $this->filterAuthors( $authors, $collection->code );
+
 		foreach ( $authors as $author ) {
 			$output .= "# Author: $author\n";
 		}
+
 		return $output;
 	}
-
 }

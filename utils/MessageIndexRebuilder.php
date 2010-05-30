@@ -22,7 +22,10 @@ class MessageIndexRebuilder {
 		STDOUT( "Working with ", 'main' );
 
 		foreach ( $groups as $g ) {
-			if ( !$g->exists() ) continue;
+			if ( !$g->exists() ) {
+				continue;
+			}
+
 			# Skip meta thingies
 			if ( $g->isMeta() ) {
 				$postponed[] = $g;
@@ -37,7 +40,9 @@ class MessageIndexRebuilder {
 		}
 
 		global $wgCacheDirectory;
+
 		$filename = "$wgCacheDirectory/translate_messageindex.cdb";
+
 		$writer = CdbWriter::open( $filename );
 		$writer->set( 'map', serialize( $hugearray ) );
 		$writer->close();
@@ -46,6 +51,7 @@ class MessageIndexRebuilder {
 	protected static function checkAndAdd( &$hugearray, $g, $ignore = false ) {
 		if ( $g instanceof MessageGroupBase ) {
 			$cache = new MessageGroupCache( $g );
+
 			if ( $cache->exists() ) {
 				$keys = $cache->getKeys();
 			} else {
@@ -53,7 +59,11 @@ class MessageIndexRebuilder {
 			}
 		} else {
 			$messages = $g->getDefinitions();
-			if ( !is_array( $messages ) ) continue;
+
+			if ( !is_array( $messages ) ) {
+				continue;
+			}
+
 			$keys = array_keys( $messages );
 		}
 

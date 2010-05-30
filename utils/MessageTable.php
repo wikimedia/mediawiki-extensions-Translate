@@ -6,8 +6,8 @@
  * @copyright Copyright © 2007-2009 Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
-class MessageTable {
 
+class MessageTable {
 	protected $reviewMode = false;
 	protected $collection = null;
 	protected $group = null;
@@ -39,17 +39,24 @@ class MessageTable {
 	}
 
 	public function setHeaderTextMessage( $type, $value ) {
-		if ( !isset( $this->headers[$type] ) ) throw new MWException( "Unexpected type $type" );
+		if ( !isset( $this->headers[$type] ) ) {
+			throw new MWException( "Unexpected type $type" );
+		}
+
 		$this->headers[$type] = array( 'msg', $value );
 	}
 
 	public function setHeaderText( $type, $value ) {
-		if ( !isset( $this->headers[$type] ) ) throw new MWException( "Unexpected type $type" );
+		if ( !isset( $this->headers[$type] ) ) {
+			throw new MWException( "Unexpected type $type" );
+		}
+
 		$this->headers[$type] = array( 'raw', htmlspecialchars( $value ) );
 	}
 
 	public function includeAssets() {
 		global $wgOut, $wgScript;
+
 		// Our class
 		$wgOut->addScriptFile( TranslateUtils::assetPath( 'js/quickedit.js' ) );
 
@@ -82,7 +89,6 @@ class MessageTable {
 		$diff->showDiffStyle();
 	}
 
-
 	public function header() {
 		$tableheader = Xml::openElement( 'table', array(
 			'class'   => 'mw-sp-translate-table'
@@ -112,15 +118,18 @@ class MessageTable {
 
 	public function contents() {
 		global $wgUser;
+
 		$sk = $wgUser->getSkin();
 
 		$optional = wfMsgHtml( 'translate-optional' );
 
 		$batch = new LinkBatch();
 		$ns = $this->group->getNamespace();
+
 		foreach ( $this->collection->keys() as $key ) {
 			$batch->add( $ns, $key );
 		}
+
 		$batch->execute();
 
 		$output =  '';
@@ -139,6 +148,7 @@ class MessageTable {
 			}
 
 			global $wgLang;
+
 			$niceTitle = htmlspecialchars( $wgLang->truncate( $key, - 30 ) );
 
 			$tools['edit'] = $sk->link(
@@ -153,7 +163,9 @@ class MessageTable {
 			$anchor = Xml::element( 'a', array( 'id' => $anchor, 'href' => "#$anchor" ), "↓" );
 
 			$extra = '';
-			if ( $m->hasTag( 'optional' ) ) $extra = '<br />' . $optional;
+			if ( $m->hasTag( 'optional' ) ) {
+				$extra = '<br />' . $optional;
+			}
 
 			$leftColumn = $anchor . $tools['edit'] . $extra;
 
@@ -173,7 +185,6 @@ class MessageTable {
 					Xml::tags( 'td', $rclasses, TranslateUtils::convertWhiteSpaceToHTML( $message ) )
 				);
 			}
-
 		}
 
 		return $output;
@@ -181,13 +192,14 @@ class MessageTable {
 
 	public function fullTable() {
 		$this->includeAssets();
+
 		return $this->header() . $this->contents() . '</table>';
 	}
 
-
-
 	protected function headerText( $type ) {
-		if ( !isset( $this->headers[$type] ) ) throw new MWException( "Unexpected type $type" );
+		if ( !isset( $this->headers[$type] ) ) {
+			throw new MWException( "Unexpected type $type" );
+		}
 
 		list( $format, $value ) = $this->headers[$type];
 		if ( $format === 'msg' ) {
@@ -202,7 +214,7 @@ class MessageTable {
 	protected function keyToTitle( $key ) {
 		$titleText = TranslateUtils::title( $key, $this->collection->code );
 		$namespace = $this->group->getNamespace();
+
 		return Title::makeTitle( $namespace, $titleText );
 	}
-
 }

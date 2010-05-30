@@ -1,8 +1,9 @@
 <?php
-class TranslateYaml {
 
+class TranslateYaml {
 	public static function loadString( $text ) {
 		global $wgTranslateYamlLibrary;
+
 		switch ( $wgTranslateYamlLibrary ) {
 			case 'spyc':
 				require_once( dirname( __FILE__ ) . '/../spyc/spyc.php' );
@@ -16,11 +17,13 @@ class TranslateYaml {
 
 	public static function load( $file ) {
 		$text = file_get_contents( $file );
+
 		return self::loadString( $text );
 	}
 
 	public static function dump( $text ) {
 		global $wgTranslateYamlLibrary;
+
 		switch ( $wgTranslateYamlLibrary ) {
 			case 'spyc':
 				require_once( dirname( __FILE__ ) . '/../spyc/spyc.php' );
@@ -47,7 +50,9 @@ class TranslateYaml {
 		       'print $fh serialize($yaml);' .
 		       'close($fh);' .
 			   "' 2>&1";
+
 		$out = wfShellExec( $cmd, &$ret );
+
 		if ( $ret != 0 ) {
 			wfDebugDieBacktrace( "The command '$cmd' died in execution with exit code '$ret': $out" );
 		}
@@ -57,7 +62,7 @@ class TranslateYaml {
 
 		unlink( $tf );
 		unlink( "$tf.serialized" );
-		
+
 		return $php_data;
 	}
 
@@ -99,7 +104,7 @@ class TranslateYaml {
 
 		unlink( $tf );
 		unlink( "$tf.yaml" );
-		
+
 		return $yaml;
 	}
 }

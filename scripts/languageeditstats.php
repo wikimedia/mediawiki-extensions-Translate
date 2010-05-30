@@ -69,6 +69,7 @@ function figureMessage( $text ) {
 	$pos = strrpos( $text, '/' );
 	$code = substr( $text, $pos + 1 );
 	$key = substr( $text, 0, $pos );
+
 	return array( $key, $code );
 }
 
@@ -82,11 +83,16 @@ $rows = TranslateUtils::translationChanges( $hours, $bots, $namespaces );
 $codes = array();
 foreach ( $rows as $_ ) {
 	// Filter out edits by $wgTranslateFuzzyBotName
-	if ( $_->rc_user_text === $wgTranslateFuzzyBotName ) continue;
+	if ( $_->rc_user_text === $wgTranslateFuzzyBotName ) {
+		continue;
+	}
 
 	list( , $code ) = figureMessage( $_->rc_title );
 
-	if ( !isset( $codes[$code] ) ) $codes[$code] = 0;
+	if ( !isset( $codes[$code] ) ) {
+		$codes[$code] = 0;
+	}
+
 	$codes[$code]++;
 }
 
@@ -95,6 +101,9 @@ foreach ( $rows as $_ ) {
 arsort( $codes );
 $i = 0;
 foreach ( $codes as $code => $num  ) {
-	if ( $i++ === $top ) break;
+	if ( $i++ === $top ) {
+		break;
+	}
+
 	STDOUT( "$code\t$num" );
 }

@@ -333,6 +333,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		}
 
 		$this->dbInfo = array(); // Something iterable
+
 		if ( !count( $keys ) ) {
 			return;
 		}

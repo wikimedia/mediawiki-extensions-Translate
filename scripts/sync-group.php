@@ -32,7 +32,9 @@ EOT
 	exit( 1 );
 }
 
-if ( isset( $options['help'] ) ) showUsage();
+if ( isset( $options['help'] ) ) {
+	showUsage();
+}
 
 if ( !isset( $options['group'] ) ) {
 	STDERR( "ESG1: Message group id must be supplied with group parameter." );
@@ -91,17 +93,32 @@ foreach ( $groups as &$group ) {
 		} else {
 			$file = $group->getMessageFileWithPath( $code );
 		}
-		if ( !$file ) continue;
 
-		if ( !file_exists( $file ) ) continue;
+		if ( !$file ) {
+			continue;
+		}
+
+		if ( !file_exists( $file ) ) {
+			continue;
+		}
 
 		$cs = new ChangeSyncer( $group );
-		if ( isset( $options['norc'] ) ) $cs->norc = true;
-		if ( isset( $options['noask'] ) ) $cs->interactive = false;
-		if ( isset( $options['nocolor'] ) ) $cs->nocolor = true;
+		if ( isset( $options['norc'] ) ) {
+			$cs->norc = true;
+		}
+
+		if ( isset( $options['noask'] ) ) {
+			$cs->interactive = false;
+		}
+
+		if ( isset( $options['nocolor'] ) ) {
+			$cs->nocolor = true;
+		}
 
 		$ts = $cs->getTimestampsFromSvn( $file );
-		if ( !$ts ) $ts = $cs->getTimestampsFromFs( $file );
+		if ( !$ts ) {
+			$ts = $cs->getTimestampsFromFs( $file );
+		}
 
 		STDOUT( "Modify time for $code: " . wfTimestamp( TS_ISO_8601, $ts ) );
 
@@ -126,8 +143,10 @@ class ChangeSyncer {
 		$file = escapeshellarg( $file );
 		$retval = 0;
 		$output = wfShellExec( "svn info $file 2>/dev/null", $retval );
-		if ( $retval ) return false;
 
+		if ( $retval ) {
+			return false;
+		}
 
 		$matches = array();
 		// PHP doesn't allow foo || return false;
@@ -136,20 +155,29 @@ class ChangeSyncer {
 		// PHP (for being an ass)!
 		$regex = '^Last Changed Date: (.*) \(';
 		$ok = preg_match( "~$regex~m", $output, $matches );
-		if ( $ok ) return strtotime( $matches[1] );
+		if ( $ok ) {
+			return strtotime( $matches[1] );
+		}
 
 		return false;
 	}
 
 	public function getTimestampsFromFs( $file ) {
-		if ( !file_exists( $file ) ) return false;
+		if ( !file_exists( $file ) ) {
+			return false;
+		}
+
 		$stat = stat( $file );
+
 		return $stat['mtime'];
 	}
 
 	public function checkConflicts( $code, $startTs = false, $endTs = false, $changeTs = false ) {
 		$messages = $this->group->load( $code );
-		if ( !count( $messages ) ) return;
+
+		if ( !count( $messages ) ) {
+			return;
+		}
 
 		$collection = $this->group->initCollection( $code );
 		$collection->filter( 'ignored' );
@@ -178,7 +206,9 @@ class ChangeSyncer {
 
 			$current = str_replace( TRANSLATE_FUZZY, '', $collection[$key]->translation() );
 			$translation = str_replace( TRANSLATE_FUZZY, '', $translation );
-			if ( $translation === $current ) continue;
+			if ( $translation === $current ) {
+				continue;
+			}
 
 			STDOUT( "Conflict in " . $this->color( 'bold', $page ) . "!", $page );
 
@@ -228,7 +258,10 @@ class ChangeSyncer {
 
 			}
 
-			if ( !$this->interactive ) continue;
+			if ( !$this->interactive ) {
+				continue;
+			}
+
 			STDOUT( " →Needs manual resolution", $page );
 			STDOUT( "Source translation at $changeDate:" );
 			STDOUT( $this->color( 'blue', $translation ) . "\n" );
@@ -239,11 +272,16 @@ class ChangeSyncer {
 				STDOUT( "Resolution: [S]kip [I]mport [C]onflict: ", 'foo' );
 				$action = fgets( STDIN );
 				$action = strtoupper( trim( $action ) );
-				if ( $action === 'S' ) break;
+
+				if ( $action === 'S' ) {
+					break;
+				}
+
 				if ( $action === 'I' ) {
 					$this->import( $title, $translation, 'Updating translation from external source' );
 					break;
 				}
+
 				if ( $action === 'C' ) {
 					$this->import( $title, TRANSLATE_FUZZY . $translation, 'Edit conflict between wiki and source' );
 					break;
@@ -272,7 +310,9 @@ class ChangeSyncer {
 		$revision = Revision::newFromTitle( $title );
 		while ( $revision ) {
 			// No need to go back further
-			if ( $startTs && $wikiTs && ( $wikiTs < $startTs ) ) break;
+			if ( $startTs && $wikiTs && ( $wikiTs < $startTs ) ) {
+				break;
+			}
 
 			if ( $revision->getRawUserText() === $wgTranslateFuzzyBotName ) {
 				$revision = $revision->getPrevious();
@@ -288,8 +328,10 @@ class ChangeSyncer {
 
 	public function getImportUser() {
 		static $user = null;
+
 		if ( $user === null ) {
 			global $wgTranslateFuzzyBotName;
+
 			$user = User::newFromName( $wgTranslateFuzzyBotName );
 
 			if ( !$user->isLoggedIn() ) {
@@ -303,11 +345,14 @@ class ChangeSyncer {
 
 	public function import( $title, $translation, $comment ) {
 		global $wgUser;
+
 		$old = $wgUser;
 		$wgUser = $this->getImportUser();
 
 		$flags = EDIT_FORCE_BOT;
-		if ( $this->norc ) $flags |= EDIT_SUPPRESS_RC;
+		if ( $this->norc ) {
+			$flags |= EDIT_SUPPRESS_RC;
+		}
 
 		$article = new Article( $title );
 		STDOUT( "Importing {$title->getPrefixedText()}: ", $title );

@@ -19,10 +19,11 @@ $codes = Language::getLanguageNames();
 $invalid = array();
 
 foreach ( $rows as $row ) {
-
 	list( $key, $code ) = TranslateUtils::figureMessage( $row->page_title );
 
-	if ( !$code ) $code = 'en';
+	if ( !$code ) {
+		$code = 'en';
+	}
 
 	$mg = TranslateUtils::messageKeyToGroup( $row->page_namespace, $key );
 	$ns = $wgContLang->getNsText( $row->page_namespace );
@@ -37,9 +38,13 @@ foreach ( $rows as $row ) {
 		$invalid[$code][] = "[[$ns:$key/$code]]";
 	}
 
-	if ( !isset( $owners[$owner] ) ) $owners[$owner] = 0;
+	if ( !isset( $owners[$owner] ) ) {
+		$owners[$owner] = 0;
+	}
+
 	$owners[$owner]++;
 }
+
 $rows->free();
 
 ksort( $owners );

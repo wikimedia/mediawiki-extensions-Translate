@@ -41,6 +41,7 @@ class SimpleFormatReader {
 	protected function parseHeader() {
 		$authors = array();
 		$staticHeader = '';
+
 		if ( $this->filename !== false ) {
 			$handle = fopen( $this->filename, "rt" );
 			$state = 0;
@@ -60,7 +61,10 @@ class SimpleFormatReader {
 						$authors[] = substr( $line, $prefixLength );
 					}
 				} elseif ( $state === 1 ) {
-					if ( $line === self::SEPARATOR ) break; // End of static header, if any
+					if ( $line === self::SEPARATOR ) {
+						break; // End of static header, if any
+					}
+
 					$staticHeader .= $line;
 				}
 			}
@@ -87,14 +91,10 @@ class SimpleFormatReader {
 		}
 
 		return $messages;
-		
 	}
-
-
 }
 
 class SimpleFormatWriter {
-
 	const SEPARATOR = '----';
 	const AUTHORPREFIX = 'Author: ';
 
@@ -131,11 +131,13 @@ class SimpleFormatWriter {
 		}
 	}
 
-
 	public function fileExport( array $languages, $targetDirectory ) {
 		foreach ( $languages as $code ) {
 			$messages = $this->getMessagesForExport( $this->group, $code );
-			if ( !count( $messages ) ) continue;
+
+			if ( !count( $messages ) ) {
+				continue;
+			}
 
 			$filename = $this->group->getMessageFile( $code );
 			$target = $targetDirectory . '/' . $filename;
@@ -166,6 +168,7 @@ class SimpleFormatWriter {
 		rewind( $handle );
 		$data = stream_get_contents( $handle );
 		fclose( $handle );
+
 		return $data;
 	}
 
@@ -176,6 +179,7 @@ class SimpleFormatWriter {
 		$collection->filter( 'hastranslation', false );
 		$collection->loadTranslations();
 		$this->addAuthors( $collection->getAuthors(), $code );
+
 		return $collection;
 	}
 
@@ -195,6 +199,7 @@ class SimpleFormatWriter {
 
 	public function filterAuthors( array $authors, $code, $groupId ) {
 		global $wgTranslateAuthorBlacklist;
+
 		foreach ( $authors as $i => $v ) {
 			$hash = "$groupId;$code;$v";
 
@@ -218,7 +223,6 @@ class SimpleFormatWriter {
 		}
 
 		return $authors;
-
 	}
 
 	protected function formatAuthors( $prefix, $code ) {
@@ -228,7 +232,9 @@ class SimpleFormatWriter {
 		$groupId = $this->group->getId();
 		$authors = $this->authors[$code];
 		$authors = $this->filterAuthors( $authors, $code, $groupId );
-		if ( empty( $authors ) ) return '';
+		if ( empty( $authors ) ) {
+			return '';
+		}
 
 		sort( $authors );
 
@@ -236,6 +242,7 @@ class SimpleFormatWriter {
 		foreach ( $authors as $a ) {
 			$s[] = $prefix . $a;
 		}
+
 		return implode( "\n", $s ) . "\n";
 	}
 
@@ -257,6 +264,7 @@ class SimpleFormatWriter {
 	protected function getLanguageNames( $code ) {
 		$name = TranslateUtils::getLanguageName( $code );
 		$native = TranslateUtils::getLanguageName( $code, true );
+
 		return array( $name, $native );
 	}
 }
