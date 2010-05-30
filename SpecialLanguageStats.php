@@ -44,7 +44,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		if ( array_key_exists( $code, Language::getLanguageNames() ) ) {
 			$out .= $this->getGroupStats( $code, $suppressComplete );
 		} else if ( $code ) {
-			$wgOut->addWikiMsg( 'translate-page-no-such-language' );
+			$wgOut->wrapWikiMsg( "<div class='error'>$1</div>", 'translate-page-no-such-language' );
 		}
 
 		$wgOut->addHTML( $out );
