@@ -418,6 +418,9 @@ $messages['bg'] = array(
  * @author Bellayet
  */
 $messages['bn'] = array(
+	'pagetranslation' => 'পাতা অনুবাদ',
+	'tpt-diff-old' => 'পূর্বের লেখা',
+	'tpt-diff-new' => 'নতুন লেখা',
 	'tpt-rev-latest' => 'সাম্প্রতিকতম সংস্করণ',
 	'tpt-translate-this' => 'এই পাতা অনুবাদ করুন',
 	'translate-tag-translate-link-desc' => 'এই পাতা অনুবাদ করুন',
@@ -485,6 +488,17 @@ Ar bajenn hoc'h eus klasket kemm ne seblant ket klotañ gant pajenn ebet bet mer
 	'tpt-install' => 'Lañsit php maintenance/update.php pe ar staliadur web evit gweredekaat an treiñ pajennoù.',
 	'tpt-render-summary' => 'Hizivadenn da glotañ gant stumm nevez mammenn ar bajenn',
 	'tpt-download-page' => 'Ezporzhiañ ar bajenn gant an troidigezhioù',
+	'pt-parse-open' => 'Balizenn &lt;translate> digempouez.
+Patrom treiñ : <pre>$1</pre>',
+	'pt-parse-close' => 'Balizenn &lt;/translate> digempouez.
+Patrom treiñ  <pre>$1</pre>',
+	'pt-parse-nested' => "N'eo ket aotreet ar rannbennadoù &lt;translate> empret an eil en egile.
+Testenn ar valizenn : <pre>$1</pre>",
+	'pt-shake-multiple' => 'Merkerioù rannbennadoù lies evit ur rannbennad.
+Testenn ar rannbennad : <pre>$1</pre>',
+	'pt-shake-position' => "Merkerioù rannbennad lec'hiet drol.
+Testenn ar rannbennad : <pre>$1</pre>",
+	'pt-shake-empty' => "Rannbennad c'houllo evit ar merker $1.",
 );
 
 /** Bosnian (Bosanski)
@@ -993,6 +1007,11 @@ Plantilla de traducción: <pre>$1</pre>',
 Plantilla de traducción: <pre>$1</pre>',
 	'pt-parse-nested' => 'No se permite secciones anidadas &lt;translate>.
 Texto de etiqueta: <pre>$1</pre>',
+	'pt-shake-multiple' => 'Múltiples marcadores de la sección para una sección.
+Texto de ección: <pre>$1</pre>',
+	'pt-shake-position' => 'Marcadores de sección en posición inesperada.
+Texto de sección: <pre>$1</pre>',
+	'pt-shake-empty' => 'Sección vacía para el marcador $1.',
 );
 
 /** Estonian (Eesti)
@@ -3255,6 +3274,7 @@ Tên: $1',
 	'tpt-sections-deleted' => 'Các đơn vị dịch thuật đã bị xóa',
 	'tpt-sections-template' => 'Bản mẫu trang dịch',
 	'tpt-badtitle' => 'Tên trang cung cấp ($1) không phải là tên đúng',
+	'tpt-nosuchpage' => 'Trang $1 không tồn tại',
 	'tpt-oldrevision' => '$2 không phải là phiên bản mới của trang [[$1]]/
 Chỉ có các phiên bản mới nhất mới có thể đánh dấu cần dịch được.',
 	'tpt-notsuitable' => 'Trang $1 không phù hợp để dịch thuật.
@@ -3267,12 +3287,15 @@ Trước khi đánh dấu phiên bản này chờ dịch, hãy kiểm tra nhữn
 	'tpt-mark-summary' => 'Đánh dấu phiên bản này là cần dịch',
 	'tpt-edit-failed' => 'Không thể cập nhật trang: $1',
 	'tpt-already-marked' => 'Phiên bản mới nhất của trang này đã được đánh dấu cần dịch rồi.',
+	'tpt-unmarked' => 'Trang $1 không còn đánh dấu là cần dịch.',
 	'tpt-list-nopages' => 'Chưa có trang này được đánh dấu cần dịch hoặc chưa sẵn sàng để được đánh dấu cần dịch.',
 	'tpt-old-pages' => 'Một phiên bản nào đó của {{PLURAL:$1||các}} trang này đã được đánh dấu cần dịch.',
 	'tpt-new-pages' => '{{PLURAL:$1|Trang|Các trang}} này có chứa văn bản có thẻ cần dịch, nhưng không có phiên bản nào của {{PLURAL:$1|nó|chúng}} được đánh dấu cần dịch.',
+	'tpt-other-pages' => '{{PLURAL:$1|Một|Những}} phiên bản trước của trang này được đánh dấu là cần dịch, nhưng {{PLURAL:$1|phiên bản|các phiên bản}} gần đây nhất không thể được đánh dấu là cần dịch.',
 	'tpt-rev-latest' => 'phiên bản mới nhất',
 	'tpt-rev-old' => 'khác biệt với phiên bản đánh dấu trước',
 	'tpt-rev-mark-new' => 'đánh dấu phiên bản này là cần dịch',
+	'tpt-rev-unmark' => 'bỏ đánh dấu cần dịch khỏi trang này',
 	'tpt-translate-this' => 'dịch trang này',
 	'translate-tag-translate-link-desc' => 'Dịch trang này',
 	'translate-tag-markthis' => 'Đánh dấu trang này là cần dịch',
@@ -3288,6 +3311,12 @@ Trang bạn muốn sửa đổi dường như không tương ứng với trang n
 	'tpt-install' => 'Chạy php maintenance/update.php hoặc cài đặt web để bật tính năng dịch trang.',
 	'tpt-render-summary' => 'Cập nhật đến phiên bản mới của trang nguồn',
 	'tpt-download-page' => 'Xuất trang cùng các bản dịch',
+	'pt-parse-open' => 'Thẻ &lt;translate> không đều.
+Bản mẫu thông dịch: <pre>$1</pre>',
+	'pt-parse-close' => 'Thẻ &lt;/translate> không đều.
+Bản mẫu thông dịch: <pre>$1</pre>',
+	'pt-parse-nested' => 'Không được phép bỏ phần &lt;translate> trong phần khác.
+Văn bản thẻ: <pre>$1</pre>',
 );
 
 /** Volapük (Volapük)
