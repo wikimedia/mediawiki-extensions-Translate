@@ -42,7 +42,6 @@ class SpecialTranslations extends SpecialAllpages {
 			return;
 		}
 
-
 		# GET values
 		$message = $wgRequest->getText( 'message' );
 		$namespace = $wgRequest->getInt( 'namespace', NS_MAIN );
@@ -168,6 +167,7 @@ class SpecialTranslations extends SpecialAllpages {
 		$canTranslate = $wgUser->isAllowed( 'translate' );
 
 		$ajaxPageList = array();
+		$historyText = "&#160;<sup>" . wfMsg( 'translate-translations-history-short' ) . "</sup>&#160;";
 
 		foreach ( $res as $s ) {
 			$key = $s->page_title;
@@ -187,8 +187,11 @@ class SpecialTranslations extends SpecialAllpages {
 
 			$tools['history'] = $sk->link(
 				$tTitle,
-				"&#160;<sup>h</sup>&#160;",
-				array( 'action' ),
+				$historyText,
+				array(
+					'action',
+					'title' => wfMsg( 'history-title', $tTitle->getPrefixedDbKey() )
+				),
 				array( 'action' => 'history' )
 			);
 
@@ -204,6 +207,7 @@ class SpecialTranslations extends SpecialAllpages {
 				Xml::tags( 'td', null, TranslateUtils::convertWhiteSpaceToHTML( $pageInfo[$key][0] ) )
 			);
 		}
+
 		TranslateUtils::injectCSS();
 
 		$out .= Xml::closeElement( 'table' );

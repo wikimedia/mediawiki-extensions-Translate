@@ -139,9 +139,13 @@ class TranslationEditPage {
 			return array();
 		}
 
-		$jsTitle = Xml::escapeJsString( $title->getPrefixedDbKey() );
+		$dbKey = $title->getPrefixedDbKey();
+		$jsTitle = Xml::escapeJsString( $dbKey );
 		$jsGroup = Xml::escapeJsString( $group );
 
-		return array( 'onclick' => "return trlOpenJsEdit( \"$jsTitle\", \"$jsGroup\" );" );
+		return array(
+			'onclick' => "return trlOpenJsEdit( \"$jsTitle\", \"$jsGroup\" );",
+			'title' => wfMsg( 'translate-edit-title', $dbKey )
+		);
 	}
 }

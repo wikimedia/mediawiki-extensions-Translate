@@ -64,6 +64,7 @@ If the group consists of a subset or superset of messages from other groups, it 
 	'translate-optional' => '(optional)',
 	'translate-ignored'  => '(ignored)',
 
+	'translate-edit-title'              => 'Edit "$1"',
 	'translate-edit-definition'         => 'Message definition',
 	'translate-edit-contribute'         => 'contribute',
 	'translate-edit-no-information'     => "''This message has no documentation.
@@ -197,6 +198,7 @@ All values have upper and lower limits.',
 	'translate-translations-messagename' => 'Name:',
 	'translate-translations-project' => 'Project:',
 	'translate-translations-including-no-param' => 'Please specify a valid message key in the subpage parameter',
+	'translate-translations-history-short' => 'h',
 
 	# Special:LanguageStats
 	'languagestats' => 'Language statistics',
