@@ -61,13 +61,8 @@ class MessageTable {
 		$wgOut->addScriptFile( TranslateUtils::assetPath( 'js/quickedit.js' ) );
 
 		// Core jQuery
-		if ( method_exists( $wgOut, 'includeJQuery' ) ) {
-			$wgOut->includeJQuery();
-			$wgOut->addScriptFile( TranslateUtils::assetPath( 'js/jquery-ui-1.7.2.custom.min.js' ) );
-		} else {
-			// MW 1.15 and older
-			$wgOut->addScriptFile( TranslateUtils::assetPath( 'js/js2stopgap.js' ) );
-		}
+		$wgOut->includeJQuery();
+		$wgOut->addScriptFile( TranslateUtils::assetPath( 'js/jquery-ui-1.7.2.custom.min.js' ) );
 
 		// Additional jQuery stuff
 		$wgOut->addScriptFile( TranslateUtils::assetPath( 'js/jquery.form.js' ) );

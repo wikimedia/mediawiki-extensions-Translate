@@ -205,12 +205,7 @@ EOEO;
 		}
 
 		TranslateUtils::injectCSS();
-		if ( method_exists( $wgOut, 'includeJQuery' ) ) {
-			$wgOut->includeJQuery();
-		} else {
-			// MW 1.15 and older
-			$wgOut->addScriptFile( TranslateUtils::assetPath( 'js/js2stopgap.js' ) );
-		}
+		$wgOut->includeJQuery();
 		return $th->getBoxes();
 	}
 

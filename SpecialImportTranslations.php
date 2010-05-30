@@ -103,8 +103,7 @@ class SpecialImportTranslations extends SpecialPage {
 	 */
 	protected function outputForm() {
 		global $wgScriptPath;
-		// jQuery
-		$this->out->addScriptFile( "$wgScriptPath/extensions/Translate/js/js2stopgap.js" );
+		$wgOut->includeJQuery();
 		$this->out->addScriptFile( "$wgScriptPath/extensions/Translate/js/import.js" );
 
 		// Ugly but necessary form building ahead, ohoy
