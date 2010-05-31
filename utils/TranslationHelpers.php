@@ -462,7 +462,6 @@ class TranslationHelpers {
 
 		global $wgUser;
 
-		$label = " ()";
 		$title = $wgUser->getSkin()->link(
 			SpecialPage::getTitleFor( 'Translate' ),
 			htmlspecialchars( $this->group->getLabel() ),
