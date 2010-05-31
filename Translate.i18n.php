@@ -75,6 +75,7 @@ If you know where or how this message is used, you can help other translators by
 	'translate-edit-warnings'           => 'Warnings about incomplete translations',
 	'translate-edit-tmsugs'             => 'Suggestions from translation memory',
 	'translate-edit-tmmatch'            => '$1% match',
+	'translate-use-suggestion'          => 'Insert this suggestion in the translation area. This replaces all current content.',
 
 	'translate-edit-goto-no-prev'       => 'No previous message',
 	'translate-edit-goto-no-next'       => 'No next message',

@@ -800,7 +800,8 @@ class TranslationHelpers {
 			$source = Xml::escapeJsString( $source );
 			$params = array(
 				'onclick' => "jQuery('#$target').val(jQuery('#$source').text()).focus(); return false;",
-				'href' => '#'
+				'href' => '#',
+				'title' => wfMsg( 'translate-use-suggestion' )
 			);
 
 			return Html::element( 'a', $params, '↓' );
