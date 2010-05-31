@@ -1,6 +1,4 @@
 <?php
-if ( !defined( 'MEDIAWIKI' ) ) die();
-
 /**
  * Implements a special page which shows all translations for a message.
  * Bits taken from SpecialPrefixindex.php and TranslateTasks.php
@@ -11,6 +9,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
  * @copyright Copyright © 2009 Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
+
 class SpecialTranslations extends SpecialAllpages {
 	function __construct() {
 		parent::__construct( 'Translations' );

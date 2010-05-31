@@ -1,6 +1,4 @@
 <?php
-if ( !defined( 'MEDIAWIKI' ) ) die();
-
 /**
  * Implements a special page which givens translation statistics for a given
  * set of message groups. Message group names can be entered (pipe separated)

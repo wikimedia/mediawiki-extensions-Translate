@@ -1,8 +1,6 @@
 <?php
-if ( !defined( 'MEDIAWIKI' ) ) die();
 
 class SpecialTranslationStats extends SpecialPage {
-
 	public function __construct() {
 		parent::__construct( 'TranslationStats' );
 		$this->includable( true );
@@ -395,7 +393,7 @@ class TranslatePerLanguageStats {
 		$filters['group'] = trim( $this->opts['group'] ) !== '';
 
 		foreach ( $groups as $group ) {
-			
+
 			foreach ( $codes as $code ) {
 				if ( $code !== '' ) $key = "$group ($code)";
 				else $key = $group;

@@ -1,10 +1,9 @@
 <?php
-if ( !defined( 'MEDIAWIKI' ) ) die();
-
 /**
  * This special page helps with the translations of MediaWiki features that are
  * not in the main messages array.
  */
+
 class SpecialMagic extends SpecialPage {
 	/** Message prefix for translations */
 	const MSG = 'translate-magic-';

@@ -1,9 +1,8 @@
 <?php
-if ( !defined( 'MEDIAWIKI' ) ) die();
-
 /**
  * Implementation of Special:TranslationChanges special page.
  */
+
 class SpecialTranslationChanges extends SpecialPage {
 	const MSG = 'translationchanges-';
 
