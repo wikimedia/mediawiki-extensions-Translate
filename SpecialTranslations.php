@@ -182,7 +182,7 @@ class SpecialTranslations extends SpecialAllpages {
 					$text
 				);
 			} else {
-				$tools['edit'] = $sk->link( $t, $text );
+				$tools['edit'] = $sk->link( $tTitle, $text );
 			}
 
 			$tools['history'] = $sk->link(
