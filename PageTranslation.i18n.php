@@ -2001,6 +2001,10 @@ Iwwersetzungsschabloun: <pre>$1</pre>',
 Iwwersetzungsschabloun: <pre>$1</pre>',
 	'pt-parse-nested' => 'Verschachtelt &lt;translate&gt;-Abschnitter sinn net méiglech.
 Text vum Tag: <pre>$1</pre>',
+	'pt-shake-multiple' => 'E puer Abschnittsmarkéierungen fir een Abschnitt.
+Text vum Abschnitt: <pre>$1</pre>',
+	'pt-shake-position' => 'Abschnittsmarkéierungen op enger onerwaarter Plaz.
+Text vum Abschnitt: <pre>$1</pre>',
 	'pt-shake-empty' => 'Abschnitt fir Marker $1 eidelmaachen.',
 );
 
