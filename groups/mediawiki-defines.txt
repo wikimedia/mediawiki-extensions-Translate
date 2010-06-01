@@ -466,6 +466,9 @@ ignored = framedvideo_default_width, framedvideo_force_default_size, framedvideo
 ignored = framedvideo_max_height, framedvideo_allow_full_screen, framedvideo_force_allow_full_screen, framedvideo_force_frames
 ignored = framedvideo_force_position
 
+Front Back Matter Forced Wikilinks
+descmsg = frontbackforced-desc
+
 Fundraiser Portal
 
 Gadgets
