@@ -1926,6 +1926,7 @@ $messages['be-tarask'] = array(
 	'translate-edit-warnings' => 'Папярэджаньне аб няпоўных перакладах',
 	'translate-edit-tmsugs' => 'Прапановы з памяці перакладу',
 	'translate-edit-tmmatch' => '$1% супадзеньне',
+	'translate-use-suggestion' => 'Устаўце прапанову ў вобласьць перакладаў. Гэта заменіць увесь цяперашні зьмест.',
 	'translate-edit-goto-no-prev' => 'Няма папярэдняга паведамленьня',
 	'translate-edit-goto-no-next' => 'Няма наступнага паведамленьня',
 	'translate-edit-goto-prev' => 'Рэдагаваць папярэдняе паведамленьне',
@@ -6085,6 +6086,7 @@ Se o grupo está composto por un subconxunto ou un superconxunto de mensaxes dou
 	'translate-ext-url' => '<hr />Páxina web: $1',
 	'translate-optional' => '(opcional)',
 	'translate-ignored' => '(ignorado)',
+	'translate-edit-title' => 'Editar "$1"',
 	'translate-edit-definition' => 'Definición da mensaxe',
 	'translate-edit-contribute' => 'contribuír',
 	'translate-edit-no-information' => "''Esta mensaxe non ten documentación.''
@@ -6095,6 +6097,7 @@ Se o grupo está composto por un subconxunto ou un superconxunto de mensaxes dou
 	'translate-edit-warnings' => 'Avisos acerca de traducións incompletas',
 	'translate-edit-tmsugs' => 'Suxestións da memoria de tradución',
 	'translate-edit-tmmatch' => '$1% de coincidencia',
+	'translate-use-suggestion' => 'Inserir esta suxestión na zona de tradución. Isto substitúe todo o contido actual.',
 	'translate-edit-goto-no-prev' => 'Non hai mensaxe previa',
 	'translate-edit-goto-no-next' => 'Non hai mensaxe seguinte',
 	'translate-edit-goto-prev' => 'Editar a mensaxe previa',
@@ -6196,6 +6199,7 @@ A lista de linguas por defecto depende da súa.',
 	'translate-translations-messagename' => 'Nome:',
 	'translate-translations-project' => 'Proxecto:',
 	'translate-translations-including-no-param' => 'Por favor, especifique unha clave de mensaxe válida no parámetro da subpáxina',
+	'translate-translations-history-short' => 'h',
 	'languagestats' => 'Estatísticas da lingua',
 	'languagestats-summary' => 'Esta páxina amosa as estatísticas da tradución dos grupos de mensaxes dunha lingua.',
 	'languagestats-stats-for' => 'Estatísticas das traducións en $1 ($2).',
@@ -7281,6 +7285,7 @@ Jeli skupina zestaja so z podskupiny abo nadskupiny zdźělenkow z druhich skupi
 	'translate-edit-warnings' => 'Warnowanja wo njedospołnych přełožkach',
 	'translate-edit-tmsugs' => 'Namjety z přełožowanskeho pomjatka',
 	'translate-edit-tmmatch' => '$1 % wotpowědowanja',
+	'translate-use-suggestion' => 'Zasuń tutón namjet do přełožowanskeho pola. To naruna wšón aktualny wobsah.',
 	'translate-edit-goto-no-prev' => 'Žana předchadna zdźělenka',
 	'translate-edit-goto-no-next' => 'Žana přichodna zdźělenka',
 	'translate-edit-goto-prev' => 'Předchadnu zdźělenku wobdźěłać',
@@ -14083,6 +14088,7 @@ $messages['roa-tara'] = array(
  * @author Lockal
  * @author MaxSem
  * @author Rubin
+ * @author Tempodivalse
  * @author Александр Сигачёв
  */
 $messages['ru'] = array(
@@ -14138,6 +14144,7 @@ $messages['ru'] = array(
 	'translate-edit-warnings' => 'Предупреждения о неполных переводах',
 	'translate-edit-tmsugs' => 'Предложения из памяти переводов',
 	'translate-edit-tmmatch' => '$1% соответствие',
+	'translate-use-suggestion' => 'Вставить этот совет в участок переводов. Это заменит всё прежнее содержание.',
 	'translate-edit-goto-no-prev' => 'Это первое сообщение',
 	'translate-edit-goto-no-next' => 'Это последнее сообщение',
 	'translate-edit-goto-prev' => 'Править предыдущее сообщение',
@@ -16523,6 +16530,7 @@ Kung alam mo kung saan o paano ginagamit ang mensaheng ito, makakatulong ka sa i
 	'translate-edit-warnings' => 'Mga babala hinggil sa hindi pa ganap na mga salinwika',
 	'translate-edit-tmsugs' => 'Mga mungkahi mula sa alaala ng salinwika',
 	'translate-edit-tmmatch' => '$1% tumugma',
+	'translate-use-suggestion' => 'Isingit ang mungkahing ito sa pook ng salinwika.  Pinapalitan nito ang lahat ng kasalukuyang nilalaman.',
 	'translate-edit-goto-no-prev' => 'Walang sinusundang mensahe',
 	'translate-edit-goto-no-next' => 'Walang kasunod na mensahe',
 	'translate-edit-goto-prev' => 'Baguhin ang sinusundang mensahe',
@@ -16661,6 +16669,20 @@ Lilitaw sa pahinang ito ang isang talaan ng mga pintuan ng wika para sa lahat ng
 Ang kabahaging pahinang "tagapagsalinwika" ay dapat na maglaman ng suleras na [[:{{ns:template}}:User|Tagagamit]], na kinuha ang pangalan ng tagagamit bilang parametro.',
 	'translate-save' => 'Sagipin ($1)',
 	'translate-jssti-add' => 'Idagdag sa talaan',
+	'translate-group-desc-mediawikicore' => 'Naglalaman ang pangkat ng mensaheng ito ng mga mensaheng ginagamit sa kasalukuyang bersyong alpa ng MediaWiki ({{CURRENTVERSION}})',
+	'translate-group-desc-mediawikimostused' => 'Naglalaman ang pangkat ng mensaheng ito ng [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 pinakamadalas gamiting mga mensahe] sa MediaWiki',
+	'translate-group-desc-mediawikiextensions' => 'Pangkat ng mensahe ng Meta na naglalaman ng lahat ng mga mensahe para sa tinatangkilik na mga karugtong para sa MediaWiki',
+	'translate-group-desc-collection' => 'Pangkat ng mensahe ng Meta na naglalaman ng lahat ng mga mensahe para sa dugtong pang-MediaWiki na [http://www.mediawiki.org/wiki/Extension:Collection Kalipunan]',
+	'translate-group-desc-flaggedrevs' => 'Pangkat ng mensahe ng Meta na naglalaman ng lahat ng mga mensahe para dugtong ng MediaWiki na [http://www.mediawiki.org/wiki/Extension:FlaggedRevs Binandilang mga Pagbabago]',
+	'translate-group-desc-readerfeedback' => 'Pangkat ng mensahe ng Meta na naglalaman ng lahat ng mga mensahe para dugtong ng MediaWiki na [http://www.mediawiki.org/wiki/Extension:ReaderFeedback Katugunan ng Mambabasa]',
+	'translate-group-desc-socialprofile' => 'Pangkat ng mensahe ng Meta na naglalaman ng lahat ng mga mensaheng may kaugnayan sa dugtong ng MediaWiki na [http://www.mediawiki.org/wiki/Extension:SocialProfile Balangkas Panlipunan]',
+	'translate-group-desc-translate' => 'Pangkat ng mensahe ng Meta na naglalaman ng lahat ng mga mensahe para dugtong ng MediaWiki na [http://www.mediawiki.org/wiki/Extension:Translate Isalinwika]',
+	'translate-group-desc-wikiaextensions' => 'Pangkat ng mensahe ng Meta na naglalaman ng lahat ng mga mensahe para sa tinatangkilik na mga dugtong ng MediaWiki na ginagamit ng [http://www.wikia.com Wikia]',
+	'translate-group-desc-wikihowextensions' => 'Pangkat ng mensahe ng Meta na naglalaman ng lahat ng mga mensahe para sa tinatangkilik na mga dugtong ng MediaWiki na ginagamit ng [http://www.wikihow.com wikiHow]',
+	'translate-group-desc-wikimediaextensions' => 'Pangkat ng mensahe ng Meta na naglalaman ng lahat ng mga mensahe para sa tinatangkilik na mga dugtong ng MediaWiki na ginagamit ng [http://wikimedia.org/ Pundasyong Wikimedia]',
+	'translate-group-desc-wikitravelextensions' => 'Pangkat ng mensahe ng Meta na naglalaman ng lahat ng mga mensahe para sa tinatangkilik na mga dugtong ng MediaWiki na ginagamit ng [http://wikitravel.org Wikitravel]',
+	'translate-group-desc-uniwiki' => 'Pangkat ng mensahe ng Meta na naglalaman ng lahat ng mga mensahe para sa mga dugtong na may kaugnayan sa [http://unicefinnovation.org/wiki.php Uniwiki]',
+	'translate-group-desc-ui' => 'Pangkat ng mensahe ng Meta na naglalaman ng lahat ng mga mensahe para sa mga dugtong na may kaugnayan sa [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Pagpapanimula ng Pagkanagagamit ng Wikipedia]',
 	'translate-group-desc-nodesc' => 'Walang makukulang paglalarawan para sa pangkat ng mensaheng ito',
 	'translate-manage-groups' => 'Pamamahala ng pangkat',
 	'translate-manage-listgroups' => 'Isinaayos na mga pangkat',
@@ -16679,6 +16701,14 @@ Ang kabahaging pahinang "tagapagsalinwika" ay dapat na maglaman ng suleras na [[
 	'translate-manage-action-ignore' => 'Huwag pansinin',
 	'translate-manage-action-fuzzy' => 'Mga salinwikang inangkat at malabo',
 	'translate-manage-submit' => 'Isakatuparan',
+	'translate-manage-nochanges' => 'Walang mga pagbabago sa mga pagbibigay-kahulugan ng mensahe para sa pangkat na ito.',
+	'translate-manage-nochanges-other' => 'Walang mga pagbabago para sa wikang ito.
+Gamitin ang kawing sa ibaba upang maibalik ang tanawin ng mga detalye ng pangkat.',
+	'translate-manage-inconsistent' => 'Nakapansin ng kataliwasan sa kahilingan.
+Pakisuri para sa mga pagbabago at subukan uli.
+Mga detalye: $1.',
+	'translate-manage-toolong' => 'Lumampas na sa pinakamataas na panahon ng pagsasagawa na $1 {{PLURAL:$1|segundo|mga segundo}}.
+Mangyaring ipasang muli ang pormularyo upang magpatuloy sa pagsasagawa.',
 	'translate-manage-import-ok' => 'Inangkat na bagong bersyon ng pahinang $1.',
 	'translate-manage-import-noks' => 'Nabigo sa pag-angkat ng bagong bersyon ng pahinang $1: $2',
 	'translate-manage-import-ignore' => 'Nilalaktawan ang mensaheng $1.',
@@ -16689,6 +16719,12 @@ Pakisuri.',
 	'translate-manage-import-fuzzy' => 'Pag-aangkat at pagkamalabo ng: $1',
 	'translate-manage-import-done' => 'Lahat nagawa na!',
 	'translate-manage-import-rebuild' => 'Gawing muli ang taguan.',
+	'translate-manage-intro-en' => 'Nasa ibaba ang isang talaan ng mga pagbabago sa mensahe sa loob ng pangkat na ito.
+Pakisuri ang mga pagbabago at pumili ng isang galaw na nais mong gawin para sa bawat mensahe.
+Pagkaraang naisapanahon mo na ang mga kahulugan ng mensahe, magsuri ng mga pagbabagong panlabas sa ibang mga wika, kung mayroon. Pakiunawa rin na ang galaw na <code>huwag pansinin</code> ay pansamantala lang.',
+	'translate-manage-intro-other' => 'Nasa ibaba ang talaan ng mga pagbabago sa salinwika sa wikang $1.
+Pakisuri ang mga pagbabago at pumili ng galaw na nais mong gawin para sa bawat salinwika.
+Kung pinili mong huwag pansinin ang mga pagbabago, pangingibabawan sila sa susunod na pagluluwas.',
 	'translate-manage-subtitle' => 'Mamahala',
 	'translate-manage-import-rebuild-all' => 'Muling itatag ang mga wika at huwag pansinin ang anumang mga pagbabago',
 	'importtranslations' => 'Mag-angkat ng mga salinwika',
