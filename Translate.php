@@ -74,7 +74,6 @@ $wgHooks['SkinTemplateToolboxEnd'][] = 'TranslateToolbox::toolboxAllTranslations
 # Translation memory updates
 $wgHooks['ArticleSaveComplete'][] = 'TranslationMemoryUpdater::update';
 
-
 $wgEnablePageTranslation = false;
 $wgPageTranslationNamespace = 1198;
 $wgTranslateStaticTags = false;
@@ -146,8 +145,8 @@ $wgTranslateMessageNamespaces = array( NS_MEDIAWIKI );
 
 /** AC = Available classes */
 $wgTranslateAC = array(
-'core'                      => 'CoreMessageGroup',
-'core-0-mostused'           => 'CoreMostUsedMessageGroup',
+	'core'            => 'CoreMessageGroup',
+	'core-0-mostused' => 'CoreMostUsedMessageGroup',
 );
 
 /**
@@ -210,7 +209,7 @@ $wgTranslatePHPlotFont = '/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf';
  *
  * You should be able to do this with:
  *   for module in 'YAML::Syck' 'PHP::Serialization' 'File::Slurp'; do cpanp -i $module; done
-**/
+ */
 $wgTranslateYamlLibrary = 'spyc';
 
 /**
@@ -238,7 +237,6 @@ function efTranslateInit() {
 
 	global $wgEnablePageTranslation;
 	if ( $wgEnablePageTranslation ) {
-
 		// Special page + the right to use it
 		global $wgSpecialPages, $wgAvailableRights;
 		$wgSpecialPages['PageTranslation'] = 'SpecialPageTranslation';
@@ -279,7 +277,6 @@ function efTranslateInit() {
 		// Check syntax for <translate>
 		$wgHooks['ArticleSave'][] = 'PageTranslationHooks::tpSyntaxCheck';
 		$wgHooks['EditFilter'][] = 'PageTranslationHooks::tpSyntaxCheckForEditPage';
-
 
 		// Add transtag to page props for discovery
 		$wgHooks['ArticleSaveComplete'][] = 'PageTranslationHooks::addTranstag';
@@ -355,7 +352,7 @@ if ( !defined( 'TRANSLATE_CLI' ) ) {
 
 /**
  * Enable tmserver translation memory from translatetoolkit.
- * Example configuration: 
+ * Example configuration:
  * $wgTranslateTM = array(
  *   'server' => 'http://127.0.0.1',
  *   'port' => 54321,

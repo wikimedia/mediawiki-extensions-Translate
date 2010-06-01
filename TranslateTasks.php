@@ -40,7 +40,6 @@ class TaskOptions {
 	public function getPagingCB() {
 		return $this->pagingCB;
 	}
-
 }
 
 /**

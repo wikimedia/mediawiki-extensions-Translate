@@ -7,7 +7,7 @@ class SpecialTranslationChanges extends SpecialPage {
 	const MSG = 'translationchanges-';
 
 	function __construct() {
-		SpecialPage::SpecialPage( 'TranslationChanges' );
+		parent::__construct( 'TranslationChanges' );
 	}
 
 	/** Access point for this special page */

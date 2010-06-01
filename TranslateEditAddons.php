@@ -14,22 +14,36 @@ class TranslateEditAddons {
 
 	static function addNavigation( &$outputpage, &$text ) {
 		global $wgUser, $wgTitle;
+
 		static $done = false;
-		if ( $done ) return true;
+		if ( $done ) {
+			return true;
+		}
+
 		$done = true;
 
-		if ( !self::isMessageNamespace( $wgTitle ) ) return true;
-
+		if ( !self::isMessageNamespace( $wgTitle ) ) {
+			return true;
+		}
 
 		list( $key, $code, $group ) = self::getKeyCodeGroup( $wgTitle );
-		if ( $group === null ) return true;
+		if ( $group === null ) {
+			return true;
+		}
 
 		if ( $group instanceof MessageGroupBase ) {
 			$cache = new MessageGroupCache( $group );
-			if ( !$cache->exists() ) return true;
+			if ( !$cache->exists() ) {
+				return true;
+			}
+
 			$keys = $cache->getKeys();
 			$defs = array();
-			foreach ( $keys as $_ ) $defs[$_] = $cache->get( $_ );
+
+			foreach ( $keys as $_ ) {
+				$defs[$_] = $cache->get( $_ );
+			}
+
 			$skip = array_merge( $group->getTags( 'ignored' ), $group->getTags( 'optional' ) );
 		} else {
 			$defs = $group->getDefinitions();
@@ -40,7 +54,10 @@ class TranslateEditAddons {
 
 		$next = $prev = $def = null;
 		foreach ( array_keys( $defs ) as $tkey ) {
-			if ( in_array( $tkey, $skip ) ) continue;
+			if ( in_array( $tkey, $skip ) ) {
+				continue;
+			}
+
 			// Keys can have mixed case, but they have to be unique in a case
 			// insensitive manner. It is therefore safe and a must to use case
 			// insensitive comparison method
@@ -52,6 +69,7 @@ class TranslateEditAddons {
 				$next = $tkey;
 				break;
 			}
+
 			$prev = $tkey;
 		}
 
@@ -69,6 +87,7 @@ class TranslateEditAddons {
 			if ( !$title->exists() ) {
 				$params['action'] = 'edit';
 			}
+
 			$prevLink = $skin->link( $title,
 				wfMsgHtml( 'translate-edit-goto-prev' ), array(), $params );
 		}
@@ -114,13 +133,16 @@ EOEO;
 
 	static function intro( $object ) {
 		$object->suppressIntro = true;
+
 		return true;
 	}
 
 
 	static function addTools( $object ) {
-		if ( !self::isMessageNamespace( $object->mTitle ) ) return true;
-		
+		if ( !self::isMessageNamespace( $object->mTitle ) ) {
+			return true;
+		}
+
 		TranslateEditAddons::addNavigation( $ignored, $object->editFormTextTop );
 		$object->editFormTextTop .= self::editBoxes( $object );
 
@@ -128,11 +150,18 @@ EOEO;
 	}
 
 	static function buttonHack( $editpage, &$buttons, $tabindex ) {
-		if ( !self::isMessageNamespace( $editpage->mTitle ) ) return true;
+		if ( !self::isMessageNamespace( $editpage->mTitle ) ) {
+			return true;
+		}
 
 		global $wgLang;
+
 		list( , $code ) = self::figureMessage( $editpage->mTitle );
-		if ( $code !== 'qqq' ) return true;
+
+		if ( $code !== 'qqq' ) {
+			return true;
+		}
+
 		$name = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() );
 		$temp = array(
 			'id'        => 'wpSave',
@@ -144,6 +173,7 @@ EOEO;
 			'title'     => wfMsg( 'tooltip-save' ) . ' [' . wfMsg( 'accesskey-save' ) . ']',
 		);
 		$buttons['save'] = Xml::element( 'input', $temp, '' );
+
 		return true;
 	}
 
@@ -153,6 +183,7 @@ EOEO;
 	private static function figureMessage( Title $title ) {
 		$text = $title->getDBkey();
 		$pos = strrpos( $text, '/' );
+
 		if ( $pos === false ) {
 			$code = '';
 			$key = $text;
@@ -160,12 +191,14 @@ EOEO;
 			$code = substr( $text, $pos + 1 );
 			$key = substr( $text, 0, $pos );
 		}
+
 		return array( $key, $code );
 	}
 
 	public static function getKeyCodeGroup( Title $title ) {
 		list( $key, $code ) = self::figureMessage( $title );
 		$group = self::getMessageGroup( $title->getNamespace(), $key );
+
 		return array( $key, $code, $group );
 	}
 
@@ -178,6 +211,7 @@ EOEO;
 	 */
 	private static function getMessageGroup( $namespace, $key ) {
 		global $wgRequest;
+
 		$group = $wgRequest->getText( 'loadgroup', '' );
 		$mg = MessageGroups::getGroup( $group );
 
@@ -205,6 +239,7 @@ EOEO;
 
 		TranslateUtils::injectCSS();
 		$wgOut->includeJQuery();
+
 		return $th->getBoxes();
 	}
 
@@ -227,17 +262,22 @@ EOEO;
 		);
 
 		$res = $dbr->selectField( $tables, $fields, $conds, __METHOD__ );
+
 		return $res === $id;
 	}
 
 	public static function isMessageNamespace( Title $title ) {
 		global $wgTranslateMessageNamespaces; ;
+
 		$namespace = $title->getNamespace();
+
 		return in_array( $namespace, $wgTranslateMessageNamespaces, true );
 	}
 
 	public static function tabs( $skin, &$tabs ) {
-		if ( !self::isMessageNamespace( $skin->mTitle ) ) return true;
+		if ( !self::isMessageNamespace( $skin->mTitle ) ) {
+			return true;
+		}
 
 		unset( $tabs['protect'] );
 
@@ -246,29 +286,38 @@ EOEO;
 
 	public static function keepFields( $edit, $out ) {
 		global $wgRequest;
+
 		$out->addHTML( "\n" .
 			Xml::hidden( 'loadgroup', $wgRequest->getText( 'loadgroup' ) ) .
 			Xml::hidden( 'loadtask', $wgRequest->getText( 'loadtask' ) ) .
 			"\n"
 		);
+
 		return true;
 	}
 
 	public static function onSave( $article, $user, $text, $summary,
-			$minor, $_, $_, $flags, $revision ) {
-
+			$minor, $_, $_, $flags, $revision
+	) {
 		$title = $article->getTitle();
 
-		if ( !self::isMessageNamespace( $title ) ) return true;
+		if ( !self::isMessageNamespace( $title ) ) {
+			return true;
+		}
 
 		list( $key, $code, $group ) = self::getKeyCodeGroup( $title );
 
 		// Unknown message, do not handle
-		if ( !$group || !$code ) return true;
+		if ( !$group || !$code ) {
+			return true;
+		}
 
 		$groups = TranslateUtils::messageKeyToGroups( $title->getNamespace(), $key );
 		$cache = new ArrayMemoryCache( 'groupstats' );
-		foreach ( $groups as $g ) $cache->clear( $g, $code );
+
+		foreach ( $groups as $g ) {
+			$cache->clear( $g, $code );
+		}
 
 		// Check for explicit tag
 		$fuzzy = self::hasFuzzyString( $text );
@@ -277,6 +326,7 @@ EOEO;
 		global $wgTranslateDocumentationLanguageCode;
 		if ( $code !== $wgTranslateDocumentationLanguageCode ) {
 			$checker = $group->getChecker();
+
 			if ( $checker ) {
 				$en = $group->getMessage( $key, 'en' );
 				$message = new FatMessage( $key, $en );
@@ -284,7 +334,9 @@ EOEO;
 				$message->setTranslation( $text );
 
 				$checks = $checker->checkMessage( $message, $code );
-				if ( count( $checks ) ) $fuzzy = true;
+				if ( count( $checks ) ) {
+					$fuzzy = true;
+				}
 			}
 		}
 
@@ -315,8 +367,14 @@ EOEO;
 		// fuzzy>
 
 		// Diffs for changed messages
-		if ( $fuzzy !== false ) return true;
-		if ( $group instanceof WikiPageMessageGroup ) return true;
+		if ( $fuzzy !== false ) {
+			return true;
+		}
+
+		if ( $group instanceof WikiPageMessageGroup ) {
+			return true;
+		}
+
 		$definitionTitle = Title::makeTitleSafe( $title->getNamespace(), "$key/en" );
 		if ( $definitionTitle && $definitionTitle->exists() ) {
 			$definitionRevision = $definitionTitle->getLatestRevID();
@@ -336,5 +394,4 @@ EOEO;
 
 		return true;
 	}
-
 }

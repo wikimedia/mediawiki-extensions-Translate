@@ -19,7 +19,7 @@ class SpecialTranslate extends SpecialPage {
 	protected $options     = null;
 
 	function __construct() {
-		SpecialPage::SpecialPage( 'Translate' );
+		parent::__construct( 'Translate' );
 	}
 
 	/**
