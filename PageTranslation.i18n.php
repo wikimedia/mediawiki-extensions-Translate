@@ -1366,6 +1366,7 @@ Di {{PLURAL:$1|nejscht Version cha dergege nit markiert wäre, ass si mueß|nejs
 	'tpt-rev-latest' => 'letschti Version',
 	'tpt-rev-old' => 'Unterschid zue dr letschte markierte Version',
 	'tpt-rev-mark-new' => 'die Version zum Ibersetze markiere',
+	'tpt-rev-unmark' => 'die Syte vum Ibersetze zruckneh',
 	'tpt-translate-this' => 'die Syte ibersetze',
 	'translate-tag-translate-link-desc' => 'Die Syte ibersetze',
 	'translate-tag-markthis' => 'Die Syte zum ibersetze markiere',
@@ -1381,6 +1382,17 @@ D Syte, wu Du witt bearbeite, ghert schyns zue keire Syte, wu zum Ibersetze mark
 	'tpt-install' => 'php maintenance/update.php oder d Webinstallation laufe loo go s Syte-Ibersetzigs-Feature megli mache.',
 	'tpt-render-summary' => 'Aktualisiere zum e neji Version vu dr Quällsyte z finde',
 	'tpt-download-page' => 'Syte mit Ibersetzige exportiere',
+	'pt-parse-open' => 'Uasymmetrischi &lt;translate&gt;-Markierig.
+Ibersetzigsvorlag: <pre>$1</pre>',
+	'pt-parse-close' => 'Uusymmetrischi &lt;&#47;translate&gt;-Markierig.
+Ibersetzigsvorlag: <pre>$1</pre>',
+	'pt-parse-nested' => 'Verschachtleti &lt;translate&gt;-Abschnitt sin nit megli.
+Text vu dr Markierig: <pre>$1</pre>',
+	'pt-shake-multiple' => 'Mehreri Abschnittsmarker fir ei Abschnitt.
+Text vum Abschnitt: <pre>$1</pre>',
+	'pt-shake-position' => 'S het Abschnittsmarker an ere nit erwartete Stell.
+Text vum Abschnitt: <pre>$1</pre>',
+	'pt-shake-empty' => 'Abschnitt lääre fir Marker $1.',
 );
 
 /** Gujarati (ગુજરાતી)
