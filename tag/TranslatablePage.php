@@ -309,7 +309,7 @@ class TranslatablePage {
 				// Currently handle only these two standard places.
 				// Is this too strict?
 				$rer1 = '~^<!--T:(.*?)-->\n~'; // Normal sections
-				$rer2 = '~\s*<!--T:(.*?)-->\n~'; // Sections with title
+				$rer2 = '~\s*<!--T:(.*?)-->$~m'; // Sections with title
 				$content = preg_replace( $rer1, '', $content );
 				$content = preg_replace( $rer2, '', $content );
 
