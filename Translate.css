@@ -61,6 +61,7 @@
 .mw-sp-translate-edit-fields fieldset {
 	line-height: normal;
 	margin: 0px;
+	border: 1px solid #2F6FAB;
 }
 
 .mw-translate-edit-extra {
@@ -94,7 +95,22 @@
 
 .mw-translate-edit-area {
 	padding: 0;
+	width: 100%;
 }
+
+.mw-translate-history {
+	float: right;
+}
+
+/* Blue tints for translate fieldsets */
+.mw-sp-translate-edit-inother { background-color: #F8F8FF; }
+.mw-sp-translate-in-other-small { background-color: #F0F8FF; }
+.mw-sp-translate-in-other-big { background-color: #F0F8FF; }
+.mw-sp-translate-message-documentation { background-color: #C0C8FF; }
+.mw-sp-translate-edit-definition { background-color: #EAF3FC; }
+.mw-sp-translate-edit-warnings { background-color: #FFDBDB; }
+.mw-translate-definition-preview { padding: 3px; }
+.mw-translate-edit-tmsugs { background-color: #C0F9B6; }
 
 /* End edit page */
 
@@ -186,10 +202,4 @@
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	background-color: #D1E231 !important;
-}
-
-/* Quickedit */
-
-.mw-translate-history {
-	float: right;
 }
