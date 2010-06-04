@@ -91,12 +91,6 @@ class SpecialPageTranslation extends SpecialPage {
 			return;
 		}
 
-		if ( !$wgRequest->wasPosted() ) {
-			$wgOut->permissionRequired( 'pagetranslation' );
-			return;
-		}
-
-
 		// This will modify the sections to include name property
 		$error = false;
 		$sections = $this->checkInput( $page, $error );
