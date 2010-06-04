@@ -64,6 +64,10 @@
 	border: 1px solid #2F6FAB;
 }
 
+.mw-sp-translate-edit-fields legend {
+	background-color: transparent;
+}
+
 .mw-translate-edit-extra {
 	border-bottom: 1px solid black;
 }
