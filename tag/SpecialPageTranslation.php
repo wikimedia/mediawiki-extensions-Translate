@@ -43,7 +43,7 @@ class SpecialPageTranslation extends SpecialPage {
 		}
 
 		// Check permissions
-		if ( !$this->user->matchEditToken( $wgRequest->getText( 'token' ) ) ) {
+		if ( $wgRequest->wasPosted() && !$this->user->matchEditToken( $wgRequest->getText( 'token' ) ) ) {
 			$wgOut->permissionRequired( 'pagetranslation' );
 
 			return;
@@ -66,7 +66,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 		if ( $revision === 0 ) {
 			// Get the latest revision
-			$revision = $title->getLatestRevID();
+			$revision = intval($title->getLatestRevID());
 		}
 
 		$page = TranslatablePage::newFromRevision( $title, $revision );
@@ -76,7 +76,7 @@ class SpecialPageTranslation extends SpecialPage {
 			return;
 		}
 
-		if ( $revision !== $title->getLatestRevID() ) {
+		if ( $revision !== intval($title->getLatestRevID()) ) {
 			// We do want to notify the reviewer if the underlying page changes during review
 			$wgOut->addWikiMsg( 'tpt-oldrevision', $title->getPrefixedText(), $revision );
 
@@ -90,6 +90,12 @@ class SpecialPageTranslation extends SpecialPage {
 
 			return;
 		}
+
+		if ( !$wgRequest->wasPosted() ) {
+			$wgOut->permissionRequired( 'pagetranslation' );
+			return;
+		}
+
 
 		// This will modify the sections to include name property
 		$error = false;
