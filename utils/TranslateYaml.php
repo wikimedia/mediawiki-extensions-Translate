@@ -51,7 +51,7 @@ class TranslateYaml {
 		       'close($fh);' .
 			   "' 2>&1";
 
-		$out = wfShellExec( $cmd, &$ret );
+		$out = wfShellExec( $cmd, $ret );
 
 		if ( $ret != 0 ) {
 			wfDebugDieBacktrace( "The command '$cmd' died in execution with exit code '$ret': $out" );
@@ -95,7 +95,7 @@ class TranslateYaml {
 			       '}' .
 			   '}' .
 			   "' 2>&1";
-		$out = wfShellExec( $cmd, &$ret );
+		$out = wfShellExec( $cmd, $ret );
 		if ( $ret != 0 ) {
 			wfDebugDieBacktrace( "The command '$cmd' died in execution with exit code '$ret': $out" );
 		}
