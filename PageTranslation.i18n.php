@@ -581,6 +581,14 @@ Assegureu-vos que té les etiquetes <nowiki><translate></nowiki> i una sintaxi v
 	'tpt-languages-legend' => 'Altres idiomes:',
 );
 
+/** Chechen (Нохчийн)
+ * @author Sasan700
+ */
+$messages['ce'] = array(
+	'tpt-diff-new' => 'Керла йоза',
+	'tpt-languages-legend' => 'Кхин меттанаш:',
+);
+
 /** Sorani (Arabic script) (‫کوردی (عەرەبی)‬)
  * @author Marmzok
  * @author رزگار
@@ -1579,6 +1587,7 @@ Név: $1',
 	'tpt-sections-deleted' => 'Törölt fordítási egységek',
 	'tpt-sections-template' => 'Fordítási lapsablonok',
 	'tpt-badtitle' => 'A megadott lapnév ($1) nem érvényes cím',
+	'tpt-nosuchpage' => 'A(z) $1 lap nem létezik.',
 	'tpt-oldrevision' => '$2 nem a(z) [[$1]] lap legutolsó változata.
 Csak a legfrissebb változatok jelölhetőek meg fordításra.',
 	'tpt-notsuitable' => 'A(z) $1 lap nem alkalmas a fordításra.
@@ -1591,6 +1600,7 @@ Mielőtt fordításra jelölöd ezt a változatot, ellenőrizd hogy a szakaszok 
 	'tpt-mark-summary' => 'Változat megjelölve fordításra',
 	'tpt-edit-failed' => 'Nem sikerült frissíteni a lapot: $1',
 	'tpt-already-marked' => 'A lap legutolsó verziója már meg van jelölve fordításra.',
+	'tpt-unmarked' => 'A(z) $1 lap most már nincs megjelölve fordításra.',
 	'tpt-list-nopages' => 'Nincsenek sem fordításra kijelölt, sem kijelölésre kész lapok.',
 	'tpt-old-pages' => '{{PLURAL:$1|Ennek a lapnak|Ezeknek a lapoknak}} néhány változata meg van jelölve fordításra.',
 	'tpt-new-pages' => '{{PLURAL:$1|Ez a lap tartalmaz|Ezek a lapok tartalmaznak}} fordítási tagekkel ellátott szöveget, de jelenleg egyik {{PLURAL:$1|változata|változatuk}} sincs megjelölve fordításra.',
@@ -2274,6 +2284,7 @@ Navn: $1',
 	'tpt-sections-deleted' => 'Slettede oversettelsesenheter',
 	'tpt-sections-template' => 'Mal for oversettelsesside',
 	'tpt-badtitle' => 'Det angitte sidenavnet ($1) er ikke en gyldig tittel',
+	'tpt-nosuchpage' => 'Siden $1 finnes ikke',
 	'tpt-oldrevision' => '$2 er ikke den siste versjonen av siden [[$1]].
 Kun siste versjoner kan bli markert for oversettelse.',
 	'tpt-notsuitable' => 'Side $1 er ikke egnet for oversettelse.
@@ -2286,12 +2297,15 @@ Før denne versjonen merkes for oversettelse, sjekk at endringene i avsnittene e
 	'tpt-mark-summary' => 'Markerte denne versjonen for oversettelse',
 	'tpt-edit-failed' => 'Kunne ikke oppdatere siden: $1',
 	'tpt-already-marked' => 'Den siste versjonen av denne siden har allerede blitt markert for oversettelse.',
+	'tpt-unmarked' => 'Siden $1 er ikke lenger markert for oversettelse.',
 	'tpt-list-nopages' => 'Ingen sider er markert for oversettelse, eller er klare for å bli markert for oversettelse.',
 	'tpt-old-pages' => 'En versjon av {{PLURAL:$1|denne siden|disse sidene}} har blitt markert for oversettelse.',
 	'tpt-new-pages' => '{{PLURAL:$1|Denne siden|Disse sidene}} inneholder tekst med oversettelsesmerker, men ingen versjon av {{PLURAL:$1|denne siden|disse sidene}} er for tiden markert for oversettelse.',
+	'tpt-other-pages' => '{{PLURAL:$1|En gammel versjon av denne siden|Eldre versjoner av disse sidene}} er markert for oversettelse, men den siste versjonen kan ikke markeres for oversettelse.',
 	'tpt-rev-latest' => 'siste versjon',
 	'tpt-rev-old' => 'forskjell fra forrige markerte versjon',
 	'tpt-rev-mark-new' => 'merk denne versjonen for oversettelse',
+	'tpt-rev-unmark' => 'fjern denne siden fra oversettelse',
 	'tpt-translate-this' => 'oversett denne siden',
 	'translate-tag-translate-link-desc' => 'Oversett denne siden',
 	'translate-tag-markthis' => 'Merk denne siden for oversettelse',
@@ -2307,6 +2321,17 @@ Denne siden som du prøver å redigere ser ikke ut til å samsvare med noen av s
 	'tpt-install' => 'Kjør php maintenance/update.php eller nettinnstallering for å muliggjøre sideoversettelsesfunksjonen.',
 	'tpt-render-summary' => 'Oppdaterer for å svare til ny versjon av kildesiden',
 	'tpt-download-page' => 'Eksporter side med oversettelser',
+	'pt-parse-open' => 'Ubalansert &lt;translate>-element.
+Oversettelsesmal: <pre>$1</pre>',
+	'pt-parse-close' => 'Ubalansert &lt;/translate>-element.
+Oversettelsesmal: <pre>$1</pre>',
+	'pt-parse-nested' => 'Nøstede &lt;translate>-seksjoner er ikke tillatt.
+Elementtekst: <pre>$1</pre>',
+	'pt-shake-multiple' => 'Flere avsnittsmarkører for en seksjon.
+Seksjonstekst: <pre>$1</pre>',
+	'pt-shake-position' => 'Seksjonsmarkører i uventede posisjoner.
+Seksjonstekst: <pre>$1</pre>',
+	'pt-shake-empty' => 'Tøm seksjon for markør $1.',
 );
 
 /** Occitan (Occitan)
