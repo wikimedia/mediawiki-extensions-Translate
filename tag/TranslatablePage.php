@@ -449,8 +449,20 @@ class TranslatablePage {
 		);
 
 		$titles = TitleArray::newFromResult( $res );
+		$filtered = array();
 
-		return $titles;
+		// Make sure we only get translation subpages while ignoring others
+		$codes = Language::getLanguageNames( false );
+		$prefix = $this->getTitle()->getText();
+		foreach ( $titles as $title ) {
+			list( $name, $code ) = TranslateUtils::figureMessage( $title->getText() );
+			if ( !isset($codes[$code]) || $name !== $prefix ) {
+				continue;
+			}
+			$filtered[] = $title;
+		}
+
+		return $filtered;
 	}
 
 	public function getTranslationPercentages( $force = false ) {
@@ -589,6 +601,11 @@ class TranslatablePage {
 		list( $key, $code ) = TranslateUtils::figureMessage( $title->getText() );
 
 		if ( $key === '' || $code === '' ) {
+			return false;
+		}
+
+		$codes = Language::getLanguageNames( false );
+		if ( !isset( $codes[$code] ) ) {
 			return false;
 		}
 
