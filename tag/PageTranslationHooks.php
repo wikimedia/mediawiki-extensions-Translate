@@ -223,26 +223,22 @@ class PageTranslationHooks {
 				'width' => '9',
 				'height' => '9',
 			) );
-			$label = "$name $percent";
 
 			// Add links to other languages
 			$suffix = ( $code === 'en' ) ? '' : "/$code";
 			$_title = Title::makeTitle( $title->getNamespace(), $title->getDBkey() . $suffix );
 
-			// For some reason self-links are not done automatically
-			if ( $code === $wgLang->getCode() ) {
-				$label = Html::rawElement( 'b', null, $label );
-			}
-
 			if ( $parser->getTitle()->getText() === $_title->getText() ) {
-				$languages[] = "$label";
+				$languages[] = Html::rawElement( 'b', null, "*$name* $percent" );
+			} elseif ( $code === $wgLang->getCode() ) {
+				$languages[] = $sk->linkKnown( $_title, Html::rawElement( 'b', null, "$name $percent" ) );
 			} else {
-				$languages[] = $sk->linkKnown( $_title, $label );
+				$languages[] = $sk->linkKnown( $_title, "$name $percent" );
 			}
 		}
 
 		$legend = wfMsg( 'tpt-languages-legend' );
-		$languages = implode( '&#160;• ', $languages );
+		$languages = implode( ' •&#160;', $languages );
 
 		return <<<FOO
 <div class="mw-pt-languages">
