@@ -351,6 +351,8 @@ aliasfile = EditUser/EditUser.alias.php
 
 Email Address Image
 
+Embed Video
+
 Emergency DeSysop
 aliasfile = EmergencyDeSysop/EmergencyDeSysop.alias.php
 
