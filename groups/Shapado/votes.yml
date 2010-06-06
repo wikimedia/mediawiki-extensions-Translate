@@ -4,7 +4,7 @@ BASIC:
   label: Shapado - Votes
   description: "{{int:bw-desc-shapado}}"
   namespace: NS_SHAPADO
-  display: out/shapaso/votes
+  display: out/shapado/votes
   class: FileBasedMessageGroup
 
 FILES:

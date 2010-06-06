@@ -4,7 +4,7 @@ BASIC:
   label: Shapado - Errors
   description: "{{int:bw-desc-shapado}}"
   namespace: NS_SHAPADO
-  display: out/shapaso/errors
+  display: out/shapado/errors
   class: FileBasedMessageGroup
 
 FILES:

@@ -4,7 +4,7 @@ BASIC:
   label: Shapado - Close requests
   description: "{{int:bw-desc-shapado}}"
   namespace: NS_SHAPADO
-  display: out/shapaso/closerequests
+  display: out/shapado/closerequests
   class: FileBasedMessageGroup
 
 FILES:

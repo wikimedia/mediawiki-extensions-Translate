@@ -4,7 +4,7 @@ BASIC:
   label: Shapado - Users
   description: "{{int:bw-desc-shapado}}"
   namespace: NS_SHAPADO
-  display: out/shapaso/users
+  display: out/shapado/users
   class: FileBasedMessageGroup
 
 FILES:

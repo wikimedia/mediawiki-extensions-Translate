@@ -4,7 +4,7 @@ BASIC:
   label: Shapado - Widgets
   description: "{{int:bw-desc-shapado}}"
   namespace: NS_SHAPADO
-  display: out/shapaso/widgets
+  display: out/shapado/widgets
   class: FileBasedMessageGroup
 
 FILES:

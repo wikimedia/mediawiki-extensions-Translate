@@ -4,7 +4,7 @@ BASIC:
   label: Shapado - Ads
   description: "{{int:bw-desc-shapado}}"
   namespace: NS_SHAPADO
-  display: out/shapaso/ads
+  display: out/shapado/ads
   class: FileBasedMessageGroup
 
 FILES:

@@ -4,7 +4,7 @@ BASIC:
   label: Shapado - Devise
   description: "{{int:bw-desc-shapado}}"
   namespace: NS_SHAPADO
-  display: out/shapaso/devise
+  display: out/shapado/devise
   class: FileBasedMessageGroup
 
 FILES:

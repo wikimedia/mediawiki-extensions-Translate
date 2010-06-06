@@ -4,7 +4,7 @@ BASIC:
   label: Shapado - Groups
   description: "{{int:bw-desc-shapado}}"
   namespace: NS_SHAPADO
-  display: out/shapaso/groups
+  display: out/shapado/groups
   class: FileBasedMessageGroup
 
 FILES:

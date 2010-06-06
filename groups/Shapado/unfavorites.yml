@@ -4,7 +4,7 @@ BASIC:
   label: Shapado - Unfavorites
   description: "{{int:bw-desc-shapado}}"
   namespace: NS_SHAPADO
-  display: out/shapaso/unfavorites
+  display: out/shapado/unfavorites
   class: FileBasedMessageGroup
 
 FILES:

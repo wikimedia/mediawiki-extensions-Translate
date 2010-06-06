@@ -4,7 +4,7 @@ BASIC:
   label: Shapado - Moderate
   description: "{{int:bw-desc-shapado}}"
   namespace: NS_SHAPADO
-  display: out/shapaso/moderate
+  display: out/shapado/moderate
   class: FileBasedMessageGroup
 
 FILES:

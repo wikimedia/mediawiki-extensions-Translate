@@ -1,6 +1,6 @@
 # Read-only repository setup
 cd %GROUPROOT%
-git git clone git://gitorious.org/shapado/shapado.git shapado
+git clone git://gitorious.org/shapado/shapado.git shapado
 
 # Configuration
 Add the following line to LocalSettings.php to include all Shapado groups:

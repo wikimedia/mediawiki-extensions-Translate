@@ -4,7 +4,7 @@ BASIC:
   label: Shapado - Questions
   description: "{{int:bw-desc-shapado}}"
   namespace: NS_SHAPADO
-  display: out/shapaso/questions
+  display: out/shapado/questions
   class: FileBasedMessageGroup
 
 FILES:
