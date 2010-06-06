@@ -278,6 +278,10 @@ Crowd Authentication
 
 CSS
 
+Data Transclusion
+magicfile = DataTransclusion/DataTransclusion.i18n.magic.php
+ignored = datatransclusion-test-wikitext, datatransclusion-test-evil-html, datatransclusion-test-nowiki
+
 Data Transfer
 file = DataTransfer/languages/DT_Messages.php
 aliasfile = DataTransfer/languages/DT_Aliases.php
