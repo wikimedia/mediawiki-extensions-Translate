@@ -2193,7 +2193,7 @@ maar de laatste {{PLURAL:$1|versie kan|versies kunnen}} niet gemarkeerd worden v
 	'translate-tag-markthisagain' => 'Deze pagina is <span class="plainlinks">[$1 gewijzigd]</span> sinds deze voor het laatst <span class="plainlinks">[$2 voor vertaling gemarkeerd]</span> is geweest.',
 	'translate-tag-hasnew' => 'Aan deze pagina zijn <span class="plainlinks">[$1 wijzigingen]</span> gemaakt die niet voor vertaling zijn gemarkeerd.',
 	'tpt-translation-intro' => 'Deze pagina is een <span class="plainlinks">[$1 vertaalde versie]</span> van de pagina [[$2]] en de vertaling is $3% compleet en bijgewerkt.',
-	'tpt-translation-intro-fuzzy' => 'Verouderde vertaling worden zo weergegeven.',
+	'tpt-translation-intro-fuzzy' => 'Verouderde vertalingen worden zo weergegeven.',
 	'tpt-languages-legend' => 'Andere talen:',
 	'tpt-target-page' => 'Deze pagina kan niet handmatig worden bijgewerkt.
 Deze pagina is een vertaling van de pagina [[$1]].
@@ -2926,6 +2926,9 @@ Prepričajte se, da ima oznake <nowiki><translate></nowiki> in veljavno sintakso
  * @author Михајло Анђелковић
  */
 $messages['sr-ec'] = array(
+	'tpt-diff-old' => 'Претходни текст',
+	'tpt-diff-new' => 'Следећи текст',
+	'tpt-submit' => 'Означи ову верзију за превод',
 	'translate-tag-translate-link-desc' => 'Преведите ову страну',
 );
 

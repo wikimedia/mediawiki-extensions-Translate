@@ -12744,6 +12744,8 @@ $messages['pl'] = array(
 	'translate-page-settings-legend' => 'Ustawienia',
 	'translate-page-task' => 'Chcę',
 	'translate-page-group' => 'Grupa',
+	'translate-page-group-tooltip' => 'Nazwa grupy wiadomości.
+Jeśli grupa zawiera podzbiór lub nadzbiór komunikatów innej grupy, jest wyświetlana pogrubioną czcionką.',
 	'translate-page-language' => 'Język',
 	'translate-page-limit' => 'Ograniczenie',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|komunikat|komunikaty|komunikatów}} na stronę',
@@ -12759,6 +12761,7 @@ $messages['pl'] = array(
 	'translate-ext-url' => '<hr />Strona internetowa: $1',
 	'translate-optional' => '(dodatkowe)',
 	'translate-ignored' => '(zignorowane)',
+	'translate-edit-title' => 'Edycja „$1“',
 	'translate-edit-definition' => 'Tekst źródłowy komunikatu',
 	'translate-edit-contribute' => 'prześlij',
 	'translate-edit-no-information' => "''Ten komunikat nie posiada dokumentacji. Jeśli wiesz gdzie lub jak ten komunikat jest używany, możesz pomóc innym tłumaczom przez dodanie dokumentacji do tego komunikatu.''",
@@ -12883,7 +12886,7 @@ Domyślna lista języków zależy od Twojego języka.',
 	'translate-percentage-fuzzy' => 'Zdezaktualizowane',
 	'translate-nothing-to-do' => 'Wszystkie możliwe tłumaczenia zostały wykonane.
 Proponujemy przejrzeć komunikaty korzystając z [[Special:Translate|{{int:translate}}]].',
-	'supportedlanguages' => 'Wspierane języki',
+	'supportedlanguages' => 'Obsługiwane języki',
 	'supportedlanguages-summary' => 'Ta strona wyświetla listę wszystkich języków, obsługiwanych przez {{SITENAME}}, razem z nazwami tłumaczy, pracującyj nad danym językiem.
 Jeżeli chcesz dowiedzieć się więcej na temat określonego języka, kliknij na link do portalu dla tego języka.
 Jeżeli chcesz przejść do strony danego tłumacza, kliknij na jego nazwę.
@@ -12891,6 +12894,7 @@ If a language is not listed, you can find out how to start a localization projec
 
 If you translate to a language and your name is not included, please add your name to the list of translators on the [[:Category:Languages|portal]] for that language.
 See the menu bar for a link to the portal for the language of your preference.',
+	'supportedlanguages-translators' => '{{PLURAL:$2|Tłumacz|Tłumacze:}} $1',
 	'translate-save' => 'Zapisz ($1)',
 	'translate-jssti-add' => 'Dodaj do listy',
 	'translate-group-desc-mediawikicore' => 'Grupa zawiera komunikaty wykorzystywane w bieżącej wersji alfa MediaWiki ({{CURRENTVERSION}})',
