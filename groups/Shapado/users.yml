@@ -13,7 +13,7 @@ FILES:
   codeAsRoot: 1
   targetPattern: %CODE%.yml
   codeMap:
-    es-ar: es-AR
+    es:    es-AR
     pt:    pt-PT
     pt-br: pt-BR
     sr-ec: sr-EC
