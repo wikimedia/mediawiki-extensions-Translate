@@ -1,0 +1,28 @@
+---
+BASIC:
+  id: out-shapado-ads
+  label: Shapado - Ads
+  description: "{{int:bw-desc-shapado}}"
+  namespace: NS_SHAPADO
+  display: out/shapaso/ads
+  class: FileBasedMessageGroup
+
+FILES:
+  class: YamlFFS
+  sourcePattern: %GROUPROOT%/shapado/config/locales/ads/%CODE%.yml
+  codeAsRoot: 1
+  targetPattern: %CODE%.yml
+  codeMap:
+    es-ar: es-AR
+    pt:    pt-PT
+    pt-br: pt-BR
+    sr-ec: sr-EC
+    zh-cn: zh-CN
+    zh-tw: zh-TW
+    zh-hant: zh-HANT
+
+MANGLER:
+  class: StringMatcher
+  prefix: ads-
+  patterns:
+    - "*"
