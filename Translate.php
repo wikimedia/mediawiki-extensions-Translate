@@ -13,7 +13,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '2010-05-24' );
+define( 'TRANSLATE_VERSION', '2010-06-07' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'path'           => __FILE__,
@@ -166,6 +166,7 @@ $wgTranslateGroupStructure = array(
 	'/^wikia/' => array( 'wikia' ),
 	'/^out-mantis/' => array( 'mantis' ),
 	'/^out-okawix/' => array( 'okawix' ),
+	'/^out-shapado/' => array( 'shapado' ),
 	'/^page\|/' => array( 'page' ),
 );
 
