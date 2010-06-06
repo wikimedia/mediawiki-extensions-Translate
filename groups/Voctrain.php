@@ -2,7 +2,8 @@
 /**
  * Support for Voctrain: http://www.
  *
- * @addtogroup Extensions
+ * @file
+ * @ingroup Extensions
  *
  * @copyright Copyright © 2009, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later

@@ -2,7 +2,7 @@
 /**
  * An extension to ease the translation of Mediawiki
  *
- * @addtogroup Extensions
+ * @ingroup Extensions
  *
  * @author Niklas Laxström
  * @copyright Copyright © 2007-2009, Niklas Laxström

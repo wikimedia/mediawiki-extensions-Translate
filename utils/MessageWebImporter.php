@@ -3,7 +3,7 @@
  * Class which encapsulates message importing. It scans for changes (new, changed, deleted),
  * displays them in pretty way with diffs and finally executes the actions the user choices.
  *
- * @addtogroup Extensions
+ * @ingroup Extensions
  *
  * @author Niklas Laxström
  * @author Siebrand Mazeland

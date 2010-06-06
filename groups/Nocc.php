@@ -2,7 +2,8 @@
 /**
  * Support NOCC: http://nocc.sourceforge.net.
  *
- * @addtogroup Extensions
+ * @file
+ * @ingroup Extensions
  *
  * @author Siebrand Mazeland
  * @copyright Copyright © 2009, Siebrand Mazeland

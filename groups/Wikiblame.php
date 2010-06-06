@@ -2,7 +2,8 @@
 /**
  * Support Wikiblame: http://wikipedia.ramselehof.de/wikiblame.php.
  *
- * @addtogroup Extensions
+ * @file
+ * @ingroup Extensions
  *
  * @copyright Copyright © 2009, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later

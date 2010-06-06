@@ -2,7 +2,8 @@
 /**
  * Special page to import po files exported using Translate extension.
  *
- * @addtogroup Extensions
+ * @file
+ * @ingroup Extensions
  *
  * @author Niklas Laxström
  * @copyright Copyright © 2009, Niklas Laxström

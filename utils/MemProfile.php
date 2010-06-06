@@ -3,7 +3,8 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
 /**
  * Helper functions to locate when memory is consumed
  *
- * @addtogroup Extensions
+ * @file
+ * @ingroup Extensions
  *
  * @author Niklas Laxström
  * @copyright Copyright © 2008, Niklas Laxström

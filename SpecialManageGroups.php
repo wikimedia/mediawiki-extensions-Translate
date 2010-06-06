@@ -1,6 +1,7 @@
 <?php
 /**
- * @addtogroup Extensions
+ * @file
+ * @ingroup Extensions
  *
  * @author Niklas Laxström
  * @author Siebrand Mazeland

@@ -2,7 +2,8 @@
 /**
  * Command line script to mark translations fuzzy (similar to gettext fuzzy).
  *
- * @addtogroup Extensions
+ * @file
+ * @ingroup Extensions
  *
  * @author Niklas Laxström
  * @copyright Copyright © 2007-2009, Niklas Laxström

@@ -3,7 +3,8 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
 /**
  * An extension to ease the translation of Mediawiki and other projects.
  *
- * @addtogroup Extensions
+ * @file
+ * @ingroup Extensions
  *
  * @author Niklas Laxström
  * @author Siebrand Mazeland

@@ -2,7 +2,8 @@
 /**
  * Command line script to import/update source messages and translations into the wiki database.
  *
- * @addtogroup Extensions
+ * @file
+ * @ingroup Extensions
  *
  * @author Niklas Laxström
  * @copyright Copyright © 2007-2009, Niklas Laxström

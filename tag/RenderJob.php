@@ -2,7 +2,7 @@
 /**
  * Job for updating translation pages.
  *
- * @addtogroup Extensions
+ * @ingroup Extensions
  *
  * @author Niklas Laxström
  * @copyright Copyright © 2008-2009, Niklas Laxström

@@ -2,7 +2,7 @@
 /**
  * Class which offers functionality for statistics reporting.
  *
- * @addtogroup Extensions
+ * @ingroup Extensions
  *
  * @author Niklas Laxström
  * @author Siebrand Mazeland
