@@ -2400,6 +2400,7 @@ $messages['pdc'] = array(
 );
 
 /** Polish (Polski)
+ * @author Deejay1
  * @author Leinad
  * @author Sp5uhe
  * @author ToSter
@@ -2421,6 +2422,7 @@ Nazwa – $1',
 	'tpt-sections-deleted' => 'Usunięte jednostki tłumaczenia',
 	'tpt-sections-template' => 'Szablon strony tłumaczenia',
 	'tpt-badtitle' => 'Podana nazwa strony ($1) nie jest dozwolonym tytułem',
+	'tpt-nosuchpage' => 'Strona $1 nie istnieje',
 	'tpt-oldrevision' => '$2 nie jest najnowszą wersją strony [[$1]].
 Tylko najnowsze wersje mogą być oznaczane do tłumaczenia.',
 	'tpt-notsuitable' => 'Strona $1 nie nadaje się do tłumaczenia.
