@@ -481,6 +481,7 @@ FOO;
 	}
 
 	public static function exportToolbox( $skin ) {
+		global $wgOut;
 		$title = $wgOut->getTitle();
 
 		// Check if this is a source page or a translation page
