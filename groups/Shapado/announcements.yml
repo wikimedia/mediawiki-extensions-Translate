@@ -26,3 +26,7 @@ MANGLER:
   prefix: announcements-
   patterns:
     - "*"
+
+TAGS:
+  ignored:
+    - announcements-announcements.form
