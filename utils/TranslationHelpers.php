@@ -521,8 +521,10 @@ class TranslationHelpers {
 			wfMsg( 'word-separator' ) .
 			wfMsg( 'parentheses', $title );
 
-		$msg = Html::rawElement( 'span',
-			array( 'class' => 'mw-translate-edit-deftext' ),
+		$id = "def-" . wfTimeStamp();
+
+		$msg = $this->adder( $id ) . "\n" . Html::rawElement( 'span',
+			array( 'class' => 'mw-translate-edit-deftext', 'id' => $id ),
 			TranslateUtils::convertWhiteSpaceToHTML( $en )
 		);
 
