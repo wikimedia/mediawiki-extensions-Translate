@@ -845,17 +845,18 @@ class MessageGroups {
 
 		foreach ( $wgTranslateGroupFiles as $file ) {
 			wfDebug( $file . "\n" );
-			$conf = TranslateSpyc::load( $file );
+			$fgroups = TranslateSpyc::parseGroupFile( $file );
 
-			if ( !empty( $conf['AUTOLOAD'] ) && is_array( $conf['AUTOLOAD'] ) ) {
-				$dir = dirname( $file );
-				foreach ( $conf['AUTOLOAD'] as $class => $file ) {
-					$wgAutoloadClasses[$class] = "$dir/$file";
+			foreach( $fgroups as $id => $conf ) {
+				if ( !empty( $conf['AUTOLOAD'] ) && is_array( $conf['AUTOLOAD'] ) ) {
+					$dir = dirname( $file );
+					foreach ( $conf['AUTOLOAD'] as $class => $file ) {
+						$wgAutoloadClasses[$class] = "$dir/$file";
+					}
 				}
+				$group = MessageGroupBase::factory( $conf );
+				$wgTranslateCC[$id] = $group;
 			}
-
-			$group = MessageGroupBase::factory( $conf );
-			$wgTranslateCC[$group->getId()] = $group;
 		}
 
 		$loaded = true;
