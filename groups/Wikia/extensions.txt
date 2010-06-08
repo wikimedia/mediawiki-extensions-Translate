@@ -1,3 +1,6 @@
+Achievements II
+file = AchievementsII/i18n/AchievementsII.i18n.php
+
 Action Panel
 
 Ajax Poll
