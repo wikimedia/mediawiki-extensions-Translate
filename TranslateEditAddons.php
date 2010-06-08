@@ -180,7 +180,7 @@ EOEO;
 	/**
 	* @return Array of the message and the language
 	*/
-	private static function figureMessage( Title $title ) {
+	public static function figureMessage( Title $title ) {
 		$text = $title->getDBkey();
 		$pos = strrpos( $text, '/' );
 

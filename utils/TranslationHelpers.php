@@ -1,41 +1,63 @@
 <?php
 
+/**
+ * Provides the nice boxes that aid the translators to do their job.
+ * Boxes contain definition, documentation, other languages, translation memory
+ * suggestions, highlighted changes etc.
+ *
+ * @author Niklas Laxström
+ * @copyright Copyright © 2010 Niklas Laxström
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ */
 class TranslationHelpers {
+	/**
+	 * Title of the message
+	 */
 	protected $title;
+	/**
+	 * Name of the message without namespace or language code.
+	 */
 	protected $page;
+	/**
+	 * The language we are translating into.
+	 */
 	protected $targetLanguage;
+	/**
+	 * The group object of the message (or null if there isn't any)
+	 */
 	protected $group;
+	/**
+	 * The current translation as a string.
+	 */
 	protected $translation;
+	/**
+	 * The message definition as a string.
+	 */
 	protected $definition;
-	protected $textareaId;
+	/**
+	 * HTML id to the text area that contains the translation. Used to insert
+	 * suggestion directly into the text area, for example.
+	 */
+	protected $textareaId = 'wpTextbox1';
 
+	/**
+	 * @param Title $title Title of a page that holds a translation.
+	 */
 	public function __construct( Title $title ) {
 		$this->title = $title;
 		$this->init();
 	}
 
+	/**
+	 * Initializes member variables.
+	 */
 	protected function init() {
 		$title = $this->title;
-		list( $page, $code ) = self::figureMessage( $title );
+		list( $page, $code ) = TranslateEditAddons::figureMessage( $title );
 
 		$this->page = $page;
 		$this->targetLanguage = $code;
 		$this->group = self::getMessageGroup( $title->getNamespace(), $page );
-	}
-
-	public static function figureMessage( Title $title ) {
-		$text = $title->getDBkey();
-		$pos = strrpos( $text, '/' );
-
-		if ( $pos === false ) {
-			$code = '';
-			$key = $text;
-		} else {
-			$code = substr( $text, $pos + 1 );
-			$key = substr( $text, 0, $pos );
-		}
-
-		return array( $key, $code );
 	}
 
 	/**
@@ -63,14 +85,26 @@ class TranslationHelpers {
 		return $mg;
 	}
 
+	/**
+	 * Gets the HTML id of the text area that contains the translation.
+	 * @return String
+	 */
 	public function getTextareaId() {
-		return $this->textareaId === null ? 'wpTextbox1' : $this->textareaId;
+		return $this->textareaId;
 	}
 
+	/**
+	 * Sets the HTML id of the text area that contains the translation.
+	 * @param $id String
+	 */
 	public function setTextareaId( $id ) {
 		$this->textareaId = $id;
 	}
 
+	/**
+	 * Gets the message definition.
+	 * @return String
+	 */
 	public function getDefinition() {
 		if ( $this->definition !== null ) {
 			return $this->definition;
@@ -85,6 +119,11 @@ class TranslationHelpers {
 		return $this->definition;
 	}
 
+	/**
+	 * Gets the current message translation. Fuzzy messages will be marked as
+	 * such unless translation is provided manually.
+	 * @return String
+	 */
 	public function getTranslation() {
 		if ( $this->translation !== null ) {
 			return $this->translation;
@@ -117,11 +156,22 @@ class TranslationHelpers {
 		return $translation;
 	}
 
+	/**
+	 * Manual override for the translation. If not given or it is null, the code
+	 * will try to fetch it automatically.
+	 * @param $translation String or null
+	 */
 	public function setTranslation( $translation ) {
 		$this->translation = $translation;
 	}
 
-	public function getBoxes( $types = null ) {
+	/**
+	 * Returns block element HTML snippet that contains the translation aids.
+	 * Not all boxes are shown all the time depending on whether they have
+	 * any information to show and on configuration variables.
+	 * @return String. Block level HTML snippet or empty string.
+	 */
+	public function getBoxes() {
 		// Box filter
 		$all = array(
 			'other-languages' => array( $this, 'getOtherLanguagesBox' ),
@@ -133,12 +183,6 @@ class TranslationHelpers {
 			'definition' => array( $this, 'getDefinitionBox' ),
 			'check' => array( $this, 'getCheckBox' ),
 		);
-
-		if ( $types !== null ) {
-			foreach ( $types as $type ) {
-				unset( $all[$type] );
-			}
-		}
 
 		$boxes = array();
 		foreach ( $all as $type => $cb ) {
@@ -825,7 +869,7 @@ class TranslationHelpers {
 	public static function ajaxEditLink( $target, $text ) {
 		global $wgUser;
 
-		list( $page, ) = self::figureMessage( $target );
+		list( $page, ) = TranslateEditAddons::figureMessage( $target );
 		$group = TranslateUtils::messageKeyToGroup( $target->getNamespace(), $page );
 
 		$params = array();
