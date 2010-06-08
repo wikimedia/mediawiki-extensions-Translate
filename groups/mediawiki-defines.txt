@@ -575,6 +575,9 @@ aliasfile = Interwiki/Interwiki.alias.php
 optional = interwiki_defaulturl, interwiki_url, interwiki-url-label
 ignored = interwiki_logentry, interwiki_defaulturl
 
+Interwiki Integration
+aliasfile = InterwikiIntegration/InterwikiIntegration.alias.php
+
 Interwiki List
 aliasfile = InterwikiList/InterwikiList.alias.php
 
