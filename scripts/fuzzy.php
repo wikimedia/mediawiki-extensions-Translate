@@ -86,7 +86,7 @@ class FuzzyBot {
 		$count = count( $msgs );
 		STDOUT( "Found $count pages to update." );
 
-		foreach ( $msgs as  $phpIsStupid ) {
+		foreach ( $msgs as $phpIsStupid ) {
 			list( $title, $text ) = $phpIsStupid;
 			$this->updateMessage( $title, TRANSLATE_FUZZY . $text, $this->dryrun, $this->comment );
 			unset( $phpIsStupid );
