@@ -792,7 +792,6 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		$checker->setChecks( array(
 			array( $checker, 'pluralCheck' ),
 			array( $checker, 'wikiParameterCheck' ),
-			array( $checker, 'wikiLinksCheck' ),
 			array( $checker, 'XhtmlCheck' ),
 			array( $checker, 'braceBalanceCheck' ),
 			array( $checker, 'pagenameMessagesCheck' ),
