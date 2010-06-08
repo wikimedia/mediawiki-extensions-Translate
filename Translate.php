@@ -167,7 +167,7 @@ $wgTranslateGroupStructure = array(
 	'/^out-mantis/' => array( 'mantis' ),
 	'/^out-okawix/' => array( 'okawix' ),
 	'/^out-shapado/' => array( 'shapado' ),
-	'/^page\|/' => array( 'page' ),
+//	'/^page\|/' => array( 'page' ),
 );
 
 $wgTranslateAddMWExtensionGroups = false;
