@@ -101,10 +101,10 @@ class SpecialImportTranslations extends SpecialPage {
 	 * Constructs and outputs file input form with supported methods.
 	 */
 	protected function outputForm() {
-		global $wgOut, $wgScriptPath;
+		global $wgOut;
 
 		$wgOut->includeJQuery();
-		$this->out->addScriptFile( "$wgScriptPath/extensions/Translate/js/import.js" );
+		$this->out->addScriptFile( TranslateUtils::assetPath( 'js/import.js' ) );
 
 		// Ugly but necessary form building ahead, ohoy
 		$this->out->addHTML(
