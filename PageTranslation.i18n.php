@@ -2605,6 +2605,7 @@ Texto da secção: <pre>$1</pre>',
 
 /** Brazilian Portuguese (Português do Brasil)
  * @author Eduardo.mps
+ * @author Giro720
  * @author Heldergeovane
  */
 $messages['pt-br'] = array(
@@ -2624,6 +2625,7 @@ Nome: $1',
 	'tpt-sections-deleted' => 'Unidades de tradução apagadas',
 	'tpt-sections-template' => 'Modelo de página de tradução',
 	'tpt-badtitle' => 'O nome de página dado ($1) não é um título válido',
+	'tpt-nosuchpage' => 'A página $1 não existe',
 	'tpt-oldrevision' => '$2 não é a versão atual da página [[$1]].
 Apenas as versões atuais pode ser marcadas para tradução.',
 	'tpt-notsuitable' => 'A página $1 não está adequada para tradução.
@@ -2636,9 +2638,11 @@ Antes de marcar esta versão para tradução, verifique se as mudanças nas seç
 	'tpt-mark-summary' => 'Marcou esta versão para tradução',
 	'tpt-edit-failed' => 'Não foi possível atualizar a página: $1',
 	'tpt-already-marked' => 'A versão atual desta página já foi marcada para tradução.',
+	'tpt-unmarked' => 'A página $1 já não está marcada para tradução.',
 	'tpt-list-nopages' => 'Nenhuma página está marcada para tradução nem pronta para ser marcada para tradução.',
 	'tpt-old-pages' => 'Alguma versão {{PLURAL:$1|desta página|destas páginas}} foi marcada para tradução.',
 	'tpt-new-pages' => '{{PLURAL:$1|Esta página contém|Estas páginas contêm}} texto com marcas de tradução, mas nenhuma versão {{PLURAL:$1|desta página|destas páginas}} está atualmente marcada para tradução.',
+	'tpt-other-pages' => '{{PLURAL:$1|A versão anterior desta página está marcada|Versões anteriores desta página estão marcadas}} para tradução, mas a última versão não pode ser marcada para tradução.',
 	'tpt-rev-latest' => 'versão atual',
 	'tpt-rev-old' => 'Diferença em relação à versão marcada anterior',
 	'tpt-rev-mark-new' => 'marcar esta versão para traduçao',
