@@ -350,9 +350,6 @@ Edit Similar
 
 Edit Subpages
 
-Edit User
-aliasfile = EditUser/EditUser.alias.php
-
 Email Address Image
 
 Embed Video
@@ -515,11 +512,6 @@ ignored = gnsm_categorymap
 aliasfile = GoogleNewsSitemap/GoogleNewsSitemap.alias.php
 
 Go To Category
-
-Group Permissions Manager
-aliasfile = GroupPermissionsManager/GroupPermissionsManager.alias.php
-descmsg = grouppermissions-desc
-optional = grouppermissions-display
 
 Groups Sidebar
 
