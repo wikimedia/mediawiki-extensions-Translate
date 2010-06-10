@@ -42,12 +42,12 @@ class PageTranslationParserTester extends Maintenance {
 				$parse = $translatablePage->getParse();
 				if ( $failureExpected ) {
 					$target = $parse->getTranslationPageText( new TestMessageCollection( "foo" ) );
-					$this->output( "Testfile $filename should have failed... see $pattern.pttarget.fail" );
+					$this->output( "Testfile $filename should have failed... see $pattern.pttarget.fail\n" );
 					file_put_contents( "$pattern.pttarget.fail", $target );
 				}
 			} catch ( TPException $e ) {
 				if ( !$failureExpected ) {
-					$this->output( "Testfile $filename failed to parse... see $pattern.ptfile.fail" );
+					$this->output( "Testfile $filename failed to parse... see $pattern.ptfile.fail\n" );
 					file_put_contents( "$pattern.ptfile.fail", $e->getMessage() );
 				}
 				continue;
@@ -56,7 +56,7 @@ class PageTranslationParserTester extends Maintenance {
 			if ( file_exists( "$pattern.ptsource" ) ) {
 				$source = $parse->getSourcePageText();
 				if ( $source !== file_get_contents( "$pattern.ptsource" ) ) {
-					$this->output( "Testfile $filename failed with source page output... writing $pattern.ptsource.fail" );
+					$this->output( "Testfile $filename failed with source page output... writing $pattern.ptsource.fail\n" );
 					file_put_contents( "$pattern.ptsource.fail", $source );
 				}
 			}
@@ -64,7 +64,7 @@ class PageTranslationParserTester extends Maintenance {
 			if ( file_exists( "$pattern.pttarget" ) ) {
 				$target = $parse->getTranslationPageText( new TestMessageCollection( "foo" ) );
 				if ( $target !== file_get_contents( "$pattern.pttarget" ) ) {
-					$this->output( "Testfile $filename failed with target page output... writing $pattern.pttarget.fail" );
+					$this->output( "Testfile $filename failed with target page output... writing $pattern.pttarget.fail\n" );
 					file_put_contents( "$pattern.pttarget.fail", $target );
 				}
 			}

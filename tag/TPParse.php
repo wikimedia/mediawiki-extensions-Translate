@@ -157,7 +157,7 @@ class TPParse {
 
 		// Remove translation markup
 		$cb = array( __CLASS__, 'replaceTagCb' );
-		$text = preg_replace_callback( '~(<translate>\n?)(.*)(</translate>\n?)~sU', $cb, $text );
+		$text = preg_replace_callback( '~(<translate>\n??)(.*)(\n??</translate>)~sU', $cb, $text );
 		$text = TranslatablePage::unArmourNowiki( $nph, $text );
 
 		return $text;
