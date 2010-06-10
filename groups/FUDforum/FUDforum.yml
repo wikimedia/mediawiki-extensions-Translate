@@ -11,7 +11,7 @@ FILES:
   class: JavaFFS
   keySeparator: ":"
   sourcePattern: %GROUPROOT%/fudforum/%CODE%/msg
-  targetPattern: i18n/%CODE%/msg
+  targetPattern: fudforum/%CODE%/msg
 
 CHECKER:
   class: FUDforumMessageChecker

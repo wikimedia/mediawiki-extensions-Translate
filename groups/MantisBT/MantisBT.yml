@@ -10,7 +10,7 @@ BASIC:
 FILES:
   class: PhpVariablesFFS
   sourcePattern: %GROUPROOT%/lang/strings_%CODE%.txt
-  targetPattern: strings_%CODE%.txt
+  targetPattern: mantisbt/plugins/MantisGraph/lang/strings_%CODE%.txt
   codeMap:
     af:      afrikaans
     am:      amharic

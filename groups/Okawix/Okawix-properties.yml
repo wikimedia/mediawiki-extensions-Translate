@@ -10,7 +10,7 @@ BASIC:
 FILES:
   class: JavaFFS
   sourcePattern: %GROUPROOT%/okawix/locale/%CODE%/interfacewiki/okawix.properties
-  targetPattern: %CODE%/interfacewiki/okawix.properties
+  targetPattern: okawix/%CODE%/interfacewiki/okawix.properties
   codeMap:
     de:    de-DE
     en:    en-US

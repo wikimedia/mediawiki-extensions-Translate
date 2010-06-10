@@ -11,7 +11,7 @@ FILES:
   class: RubyYamlFFS
   sourcePattern: %GROUPROOT%/osm/config/locales/%CODE%.yml
   codeAsRoot: 1
-  targetPattern: %CODE%.yml
+  targetPattern: osm/config/locales/%CODE%.yml
   codeMap:
     be-tarask: be-TARASK
     pt-br: pt-BR

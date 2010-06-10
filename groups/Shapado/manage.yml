@@ -11,7 +11,7 @@ FILES:
   class: YamlFFS
   sourcePattern: %GROUPROOT%/shapado/config/locales/manage/%CODE%.yml
   codeAsRoot: 1
-  targetPattern: %CODE%.yml
+  targetPattern: shapado/config/locales/manage/%CODE%.yml
   codeMap:
     es:    es-AR
     pt:    pt-PT

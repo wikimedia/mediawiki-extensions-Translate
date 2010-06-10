@@ -11,7 +11,7 @@ FILES:
   class: YamlFFS
   sourcePattern: %GROUPROOT%/osm/config/potlatch/locales/%CODE%.yml
   codeAsRoot: 1
-  targetPattern: %CODE%.yml
+  targetPattern: osm/config/potlatch/locales/%CODE%.yml
   codeMap:
     be-tarask: be-TARASK
     pt-br: pt-BR

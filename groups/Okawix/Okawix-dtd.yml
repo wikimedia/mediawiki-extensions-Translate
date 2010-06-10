@@ -10,7 +10,7 @@ BASIC:
 FILES:
   class: OkawixDtdFFS
   sourcePattern: %GROUPROOT%/okawix/locale/%CODE%/interfacewiki/okawix.dtd
-  targetPattern: %CODE%/interfacewiki/okawix.dtd
+  targetPattern: okawix/%CODE%/interfacewiki/okawix.dtd
   codeMap:
     de:    de-DE
     en:    en-US
