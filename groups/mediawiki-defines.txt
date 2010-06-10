@@ -94,6 +94,8 @@ Category Feed
 Category Intersection
 aliasfile = CategoryIntersection/CategoryIntersection.alias.php
 
+Category Multisort
+
 Category On Upload
 optional = categoryonupload-none
 
