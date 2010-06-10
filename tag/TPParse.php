@@ -116,14 +116,16 @@ class TPParse {
 		return $text;
 	}
 
-	public function getTranslationPageText( MessageCollection $collection ) {
+	public function getTranslationPageText( /*MessageCollection*/ $collection ) {
 		$text = $this->template; // The source
 
 		// For finding the messages
 		$prefix = $this->title->getPrefixedDBKey() . '/';
 
-		$collection->filter( 'hastranslation', false );
-		$collection->loadTranslations();
+		if ( $collection instanceOf MessageCollection ) {
+			$collection->filter( 'hastranslation', false );
+			$collection->loadTranslations();
+		}
 
 		foreach ( $this->sections as $ph => $s ) {
 			$sectiontext = null;

@@ -8,14 +8,8 @@ class PageTranslationHooks {
 		$title = $parser->getTitle();
 
 		if ( strpos( $text, '<translate>' ) !== false ) {
-			$nowiki = array();
-			$text = TranslatablePage::armourNowiki( $nowiki, $text );
-			$cb = array( __CLASS__, 'replaceTagCb' );
-			# Remove the tags nicely, trying to not leave excess whitespace lying around
-			$text = preg_replace_callback( '~(<translate>\n??)(.*)(\n??</translate>)~sU', $cb, $text );
-			# Replace variable markers
-			$text = preg_replace_callback( '~(<tvar[^<>]+>)(.*)(</>)~s', $cb, $text );
-			$text = TranslatablePage::unArmourNowiki( $nowiki, $text );
+			$parse = TranslatablePage::newFromText( $parser->getTitle(), $text )->getParse(); 
+			$text = $parse->getTranslationPageText( null );
 		}
 
 		// For translation pages, parse plural, grammar etc with correct language
