@@ -2898,6 +2898,7 @@ Zdá sa, že stránka, ktorú sa pokúšate upravovať nezodpovedá žiadnej str
 );
 
 /** Slovenian (Slovenščina)
+ * @author Dbc334
  * @author Smihael
  */
 $messages['sl'] = array(
@@ -2908,6 +2909,7 @@ $messages['sl'] = array(
 	'tpt-section-new' => 'Nove prevajalska enota.
 Ime: $1',
 	'tpt-section-deleted' => 'Prevajalna enota $1',
+	'tpt-template' => 'Predloga strani',
 	'tpt-templatediff' => 'Predloga te strani se je spremenila.',
 	'tpt-diff-old' => 'Prejšnje besedilo',
 	'tpt-diff-new' => 'Novo besedilo',
@@ -2915,10 +2917,13 @@ Ime: $1',
 	'tpt-sections-oldnew' => 'Nove in obstoječe prevajalske enote',
 	'tpt-sections-deleted' => 'Izbrisane prevajalske enote',
 	'tpt-sections-template' => 'Prevod predloge strani',
+	'tpt-badtitle' => 'Dano ime strani ($1) ni veljaven naslov',
+	'tpt-nosuchpage' => 'Stran $1 ne obstaja',
 	'tpt-oldrevision' => '$2 ni najnovejša različics strani [[$1]].
 Samo zadnje različice se lahko označi za prevod.',
 	'tpt-notsuitable' => 'Stran $1 ni primerna za prevod.
 Prepričajte se, da ima oznake <nowiki><translate></nowiki> in veljavno sintakso.',
+	'tpt-edit-failed' => 'Ni mogoče posodobiti strani: $1',
 	'tpt-rev-latest' => 'najnovejša različica',
 	'tpt-rev-old' => 'razlika s prejšnjimi označeni različici',
 	'tpt-rev-mark-new' => 'označi to različico za prevajanje',
@@ -2926,6 +2931,7 @@ Prepričajte se, da ima oznake <nowiki><translate></nowiki> in veljavno sintakso
 	'translate-tag-translate-link-desc' => 'Prevedi to stran',
 	'translate-tag-markthis' => 'Označi to stran za prevajanje',
 	'tpt-languages-legend' => 'Ostali jeziki:',
+	'tpt-download-page' => 'Izvozi stran s prevodi',
 );
 
 /** Serbian Cyrillic ekavian (Српски (ћирилица))
