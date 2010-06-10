@@ -254,7 +254,7 @@ FOO;
 	}
 
 	// To display nice error for editpage
-	public static function tpSyntaxCheckForEditPage( $editpage, $text, $section, &$error, $summary ) {
+	public static function tpSyntaxCheckForEditPage( $editpage, $text, &$error, $summary ) {
 		if ( strpos( $text, '<translate>' ) === false ) {
 			return true;
 		}
