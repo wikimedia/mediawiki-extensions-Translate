@@ -12,7 +12,7 @@ class PageTranslationHooks {
 			$text = TranslatablePage::armourNowiki( $nowiki, $text );
 			$cb = array( __CLASS__, 'replaceTagCb' );
 			# Remove the tags nicely, trying to not leave excess whitespace lying around
-			$text = preg_replace_callback( '~(<translate>)\s*(.*?)(</translate>)~s', $cb, $text );
+			$text = preg_replace_callback( '~(<translate>\n??)(.*)(\n??</translate>)~sU', $cb, $text );
 			# Replace variable markers
 			$text = preg_replace_callback( '~(<tvar[^<>]+>)(.*)(</>)~s', $cb, $text );
 			$text = TranslatablePage::unArmourNowiki( $nowiki, $text );
