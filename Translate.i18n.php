@@ -558,6 +558,15 @@ $messages['niu'] = array(
 	'translate-page-navigation-legend' => 'Navikati',
 );
 
+/** Moroccan Spoken Arabic (Maġribi)
+ * @author Enzoreg
+ */
+$messages['ary'] = array(
+	'translate-manage-modlang-new' => '$1 (jdid)',
+	'translate-manage-import-new' => 'Méṣaj jdid $1',
+	'translate-manage-import-deleted' => 'Méṣaj memḫi $1',
+);
+
 /** Kabardian (Cyrillic) ()
  * @author Тамэ Балъкъэрхэ
  */
@@ -15423,8 +15432,11 @@ Sve vrednosti imaju svoja gornja i donja ograničenja.',
 	'translate-translations-messagename' => 'Naziv:',
 	'translate-translations-project' => 'Projekat:',
 	'translate-translations-including-no-param' => 'Molimo Vas da navedete ispravan ključ poruke u podstraničnom parametru',
+	'translate-translations-history-short' => 'i',
 	'languagestats' => 'Statistika jezika',
 	'languagestats-summary' => 'Ova strana pokazuje statistike prevoda za sve grupe poruka nekog jezika.',
+	'languagestats-stats-for' => 'Statistike prevoda za $1 ($2).',
+	'languagestats-recenttranslations' => 'skorašnji prevodi',
 	'translate-language-code' => 'Kod jezika',
 	'translate-language-code-field-name' => 'Kod jezika:',
 	'translate-suppress-complete' => 'Ne prikazuj potpuno prevedene grupe poruka',
@@ -15435,6 +15447,7 @@ Sve vrednosti imaju svoja gornja i donja ograničenja.',
 	'translate-percentage-fuzzy' => 'Neažurno',
 	'translate-nothing-to-do' => 'Izgleda da su sve poruke prevedene.
 Ipak bi možda bilo dobro da ih pregledate na [[Special:Translate|{{int:translate}}]].',
+	'supportedlanguages' => 'Podržani jezici',
 	'translate-save' => 'Snimi ($1)',
 );
 
@@ -18630,6 +18643,7 @@ $messages['zh-hant'] = array(
 	'translate-translations-messagename' => '消息：',
 	'translate-translations-project' => '計畫:',
 	'languagestats' => '語言統計',
+	'languagestats-recenttranslations' => '最近的翻譯',
 	'translate-language-code' => '語言代碼',
 	'translate-language-code-field-name' => '語言代碼：',
 	'translate-language' => '語言',
@@ -18637,10 +18651,18 @@ $messages['zh-hant'] = array(
 	'translate-untranslated' => '未翻譯',
 	'translate-percentage-complete' => '完成度',
 	'translate-percentage-fuzzy' => '已過時',
+	'supportedlanguages-translators' => '{{PLURAL:$2|翻譯者|翻譯者}}: $1',
 	'translate-save' => '儲存 （$1）',
 	'translate-jssti-add' => '新增至清單',
 	'translate-group-desc-mediawikicore' => '此界面消息群組包含了當前MediaWiki alpha版本所使用的消息（{{CURRENTVERSION}}）',
+	'translate-manage-groups' => '組管理',
+	'translate-manage-listgroups' => '配置組',
+	'translate-manage-listgroups-old' => '舊樣式組',
+	'translate-managegroups' => '組管理',
+	'translate-manage-newgroup' => '以前此消息組沒有被導入過。',
 	'translate-manage-modlang-new' => '$1（新）',
+	'translate-manage-import-new' => '新消息 $1',
+	'translate-manage-import-deleted' => '刪除的消息  $1',
 	'translate-manage-action-import' => '匯入',
 	'translate-manage-action-ignore' => '忽略',
 	'translate-manage-submit' => '執行',

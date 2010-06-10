@@ -2942,6 +2942,9 @@ $messages['sr-ec'] = array(
  * @author Michaello
  */
 $messages['sr-el'] = array(
+	'tpt-diff-old' => 'Prethodni tekst',
+	'tpt-diff-new' => 'Sledeći tekst',
+	'tpt-submit' => 'Označi ovu verziju za prevod',
 	'translate-tag-translate-link-desc' => 'Prevedite ovu stranu',
 );
 
