@@ -96,6 +96,8 @@ aliasfile = CategoryIntersection/CategoryIntersection.alias.php
 
 Category Multisort
 
+Category Multisort Chinese
+
 Category On Upload
 optional = categoryonupload-none
 
