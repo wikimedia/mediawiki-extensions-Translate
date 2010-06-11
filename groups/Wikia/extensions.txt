@@ -81,6 +81,9 @@ Edit Research
 #Flickr Import
 #var = wgFlickrImportMessages
 
+Follow
+aliasfile = Follow/Follow.alias.php
+
 Force Subject For New Section
 
 #Added 2010-04-23 -- tor
