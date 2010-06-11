@@ -105,3 +105,13 @@ This allows other users to contact you by e-mail.
 You will also receive newsletters at most once a month.
 If you do not want receive newsletters, you can opt-out in the tab "{{int:prefs-misc}}" of your [[Special:Preferences|preferences]].',
 );
+
+/** Breton (Brezhoneg)
+ * @author Y-M D
+ */
+$messages['br'] = array(
+	'firststeps' => 'Pazenn gentañ',
+	'translate-fs-pagetitle-done' => '↓  - graet !',
+	'translate-fs-signup-title' => 'En em enskrivañ',
+);
+

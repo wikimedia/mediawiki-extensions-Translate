@@ -745,6 +745,7 @@ $messages['de'] = array(
 	'tpt-sections-oldnew' => 'Neue und vorhandene Übersetzungseinheiten',
 	'tpt-sections-deleted' => 'Gelöschte Übersetzungseinheiten',
 	'tpt-sections-template' => 'Übersetzungsseitenvorlage',
+	'tpt-action-nofuzzy' => 'Setze die Übersetzungen nicht außer Kraft',
 	'tpt-badtitle' => 'Der angegebene Seitenname „$1“ ist kein gültiger Titel',
 	'tpt-nosuchpage' => 'Die Seite $1 existiert nicht',
 	'tpt-oldrevision' => '$2 ist nicht die letzte Version der Seite [[$1]].
@@ -781,6 +782,7 @@ Die neueste Version kann hingegen nicht als zu Übersetzen markiert werden.',
 Diese Seite ist eine Übersetzung der Seite [[$1]] und die Übersetzung kann mithilfe des [$2 Übersetzungswerkzeuges] aktualisiert werden.',
 	'tpt-unknown-page' => 'Dieser Namensraum ist für das Übersetzen von Wikiseiten reserviert.
 Die Seite, die gerade bearbeitet wird, hat keine Verbindung zu einer übersetzbaren Seite.',
+	'tpt-move-impossible' => 'Das Verschieben von Seiten, die zur Übersetzung freigegeben wurden, ist bislang nicht möglich.',
 	'tpt-install' => 'Bitte <tt>maintenance/update.php</tt> oder Webinstallation ausführen, um die Seitenübersetzung zu aktivieren.',
 	'tpt-render-summary' => 'Übernehme Bearbeitung einer neuen Version der Quellseite',
 	'tpt-download-page' => 'Seite mit Übersetzungen exportieren',
@@ -1009,6 +1011,7 @@ pero la última versión no puede ser marcada para traducción.',
 Esta página es una traducción de la página [[$1]] y la traducción puede ser actualizada usando [$2 la herramienta de traducción].',
 	'tpt-unknown-page' => 'Este espacio de nombre está reservado para traducciones de páginas de contenido.
 La página que estás tratando de editar no parece corresponder con alguna página marcada para traducción.',
+	'tpt-move-impossible' => 'Mover páginas marcadas para traducción no es aún posible.',
 	'tpt-install' => 'Corra maintenance/update.php o instale desde la web para activar las funciones de traducción.',
 	'tpt-render-summary' => 'Actualizando para hallar una nueva versión de la página fuente',
 	'tpt-download-page' => 'Exportar página con traducciones',
@@ -1160,6 +1163,7 @@ $messages['fr'] = array(
 	'tpt-sections-oldnew' => 'Unités de traduction nouvelles et existantes',
 	'tpt-sections-deleted' => 'Unités de traduction supprimées',
 	'tpt-sections-template' => 'Modèle de page de traduction',
+	'tpt-action-nofuzzy' => 'Ne pas invalider les traductions',
 	'tpt-badtitle' => 'Le nom de page donné ($1) n’est pas un titre valide',
 	'tpt-nosuchpage' => "La page $1 n'existe pas",
 	'tpt-oldrevision' => '$2 n’est pas la dernière version de la page [[$1]].
@@ -1196,6 +1200,7 @@ mais la dernière version ne peut pas être marquée pour être traduite.',
 Elle est une version traduite de [[$1]] et la traduction peut être mise à jour en utilisant [$2 l’outil de traduction].',
 	'tpt-unknown-page' => 'Cet espace de noms est réservé pour la traduction de pages.
 La page que vous essayé de modifier ne semble correspondre à aucune page marquée pour être traduite.',
+	'tpt-move-impossible' => "Déplacer des pages marquées pour être traduites n'est actuellement pas possible.",
 	'tpt-install' => 'Lancez « php maintenance/update.php » ou l’installation web pour activer la fonctionnalité de traduction de pages.',
 	'tpt-render-summary' => 'Mise à jour pour être en accord avec la nouvelle version de la source de la page',
 	'tpt-download-page' => 'Exporter la page avec ses traductions',
@@ -1285,6 +1290,7 @@ $messages['gl'] = array(
 	'tpt-sections-oldnew' => 'Unidades de tradución novas e existentes',
 	'tpt-sections-deleted' => 'Unidades de tradución borradas',
 	'tpt-sections-template' => 'Modelo de páxina de tradución',
+	'tpt-action-nofuzzy' => 'Non invalidar as traducións',
 	'tpt-badtitle' => 'O nome de páxina dado ("$1") non é un título válido',
 	'tpt-nosuchpage' => 'Non existe a páxina "$1"',
 	'tpt-oldrevision' => '$2 non é a última versión da páxina "[[$1]]".
@@ -1320,6 +1326,7 @@ Antes de marcar esta versión para ser traducida, comprobe que as modificacións
 Esta páxina é unha tradución da páxina "[[$1]]" e a tradución pódese actualizar usando [$2 a ferramenta de tradución].',
 	'tpt-unknown-page' => 'Este espazo de nomes está reservado para traducións de páxinas de contido.
 A páxina que está intentando editar parece non corresponder a algunha páxina marcada para ser traducida.',
+	'tpt-move-impossible' => 'Aínda non é posible mover páxinas marcadas para traducir.',
 	'tpt-install' => 'Executar o php maintenance/update.php ou o instalador web para activar a funcionalidade de tradución de páxinas.',
 	'tpt-render-summary' => 'Actualizando para coincidir coa nova versión da páxina de orixe',
 	'tpt-download-page' => 'Exportar a páxina coas traducións',
@@ -1553,6 +1560,7 @@ ale aktualna wersija njehodźi so za přełožowanje markěrować..',
 Tuta strona je přełožk strony [[$1]] a přełožk hodźi so z pomocu [$2 Přełožić] aktualizować.',
 	'tpt-unknown-page' => 'Tutón mjenowy rum je za přełožki wobsahowych stronow wuměnjeny.
 Strona, kotruž pospytuješ wobdźěłać, po wšěm zdaću stronje markěrowanej za přełožowanje njewotpowěduje.',
+	'tpt-move-impossible' => 'Přesuwanje stronow, kotrež su jako přełoženje markěrowane, hišće móžno njeje.',
 	'tpt-install' => 'Wuwjedź php maintenance/update.php ab webinstalaciju, zo by funkcija přełožowanje stronow zmóžnił.',
 	'tpt-render-summary' => 'Aktualizacija po nowej wersiji žórłoweje strony',
 	'tpt-download-page' => 'Stronu z přełožkami eksportować',
@@ -1681,6 +1689,7 @@ ma le ultime {{PLURAL:$1|version|versiones}} non pote esser marcate pro traducti
 Iste pagina es un traduction del pagina [[$1]] e le traduction pote esser actualisate con le [$2 instrumento de traduction].',
 	'tpt-unknown-page' => 'Iste spatio de nomines es reservate pro traductiones de paginas de contento.
 Le pagina que tu vole modificar non pare corresponder con alcun pagina marcate pro traduction.',
+	'tpt-move-impossible' => 'Le renomination de paginas marcate pro traduction non es ancora possibile.',
 	'tpt-install' => 'Executa maintenance/update.php o le installation web pro activar le traduction de paginas.',
 	'tpt-render-summary' => 'Actualisation a un nove version del pagina de origine',
 	'tpt-download-page' => 'Exportar pagina con traductiones',
@@ -2203,6 +2212,7 @@ Deze pagina is een vertaling van de pagina [[$1]].
 De vertaling kan bijgewerkt worden via de [$2 vertaalhulpmiddelen].',
 	'tpt-unknown-page' => "Deze naamruimte is gereserveerd voor de vertalingen van van pagina's.
 De pagina die u probeert te bewerken lijkt niet overeen te komen met een te vertalen pagina.",
+	'tpt-move-impossible' => "Pagina's hernoemen is nog niet mogelijk.",
 	'tpt-install' => 'Voer php maintenance/update.php of de webinstallatie uit om de paginavertaling te activeren.',
 	'tpt-render-summary' => 'Bijgewerkt vanwege een nieuwe basisversie van de bronpagina',
 	'tpt-download-page' => 'Pagina met vertalingen exporteren',
@@ -3403,6 +3413,7 @@ $messages['yi'] = array(
  * @author Gzdavidwong
  * @author Liangent
  * @author PhiLiP
+ * @author Yfdyh000
  */
 $messages['zh-hans'] = array(
 	'pagetranslation' => '页面翻译',
@@ -3416,6 +3427,7 @@ $messages['zh-hans'] = array(
 	'tpt-templatediff' => '页面模板已改变。',
 	'tpt-diff-old' => '上一个文字',
 	'tpt-diff-new' => '下一个文字',
+	'tpt-sections-template' => '翻译页面模版',
 	'tpt-translate-this' => '翻译此页',
 	'translate-tag-translate-link-desc' => '翻译本页',
 	'tpt-languages-legend' => '其他语言：',

@@ -18319,6 +18319,7 @@ $messages['yue'] = array(
  * @author PhiLiP
  * @author Sahran
  * @author Wmr89502270
+ * @author Yfdyh000
  */
 $messages['zh-hans'] = array(
 	'translate' => '翻译',
@@ -18489,6 +18490,7 @@ $messages['zh-hans'] = array(
 	'translate-manage-action-import' => '导入',
 	'translate-manage-action-ignore' => '忽略',
 	'translate-manage-submit' => '执行',
+	'translate-manage-import-ignore' => '跳过消息 $1。',
 	'translate-manage-import-done' => '全部完成！',
 	'translate-manage-subtitle' => '管理',
 	'translate-import-load' => '载入档案',
