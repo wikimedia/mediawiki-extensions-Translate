@@ -28,6 +28,8 @@ Name: $1',
 	'tpt-sections-oldnew' => 'New and existing translation units',
 	'tpt-sections-deleted' => 'Deleted translation units',
 	'tpt-sections-template' => 'Translation page template',
+
+	'tpt-action-nofuzzy' => 'Don\'t invalidate translations (use for minor changes like spelling fixes)',
 	
 	# Specific page on the special page
 	'tpt-badtitle' => 'Page name given ($1) is not a valid title',

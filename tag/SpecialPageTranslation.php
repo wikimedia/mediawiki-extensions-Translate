@@ -355,7 +355,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 		foreach ( $sections as $s ) {
 			if ( $s->type === 'new' ) {
-				$input = Xml::input( 'tpt-sect-' . $s->id, 10, $s->name );
+				$input = Xml::input( 'tpt-sect-' . $s->id, 15, $s->name );
 				$name = wfMsgHtml( 'tpt-section-new', $input );
 			} else {
 				$name = wfMsgHtml( 'tpt-section', htmlspecialchars( $s->name ) );
@@ -367,6 +367,9 @@ class SpecialPageTranslation extends SpecialPage {
 				$text = $diff->getDiff( wfMsgHtml( 'tpt-diff-old' ), wfMsgHtml( 'tpt-diff-new' ) );
 				$diff->showDiffStyle();
 				$diff->setReducedLineNumbers();
+
+				$id = "tpt-sect-{$s->id}-action-nofuzzy";
+				$text = Xml::checkLabel( wfMsg( 'tpt-action-nofuzzy' ), $id, $id, false ) . $text;
 			} else {
 				$text = TranslateUtils::convertWhiteSpaceToHTML( $s->getText() );
 			}
@@ -450,19 +453,23 @@ class SpecialPageTranslation extends SpecialPage {
 		$inserts = array();
 		$changed = array();
 
+		$pageId = $page->getTitle()->getArticleId();
 		foreach ( $sections as $s ) {
 			if ( $s->type === 'changed' ) {
-				$changed[] = $s->name;
+				// Allow silent changes to avoid fuzzying unnecessary.
+				if ( !$wgRequest->getCheck( "tpt-sect-{$s->id}-action-nofuzzy" ) ) {
+					$changed[] = $s->name;
+				}
 			}
 
 			$inserts[] = array(
-				'trs_page' => $page->getTitle()->getArticleId(),
+				'trs_page' => $pageId,
 				'trs_key' => $s->name,
 				'trs_text' => $s->getText(),
 			);
 		}
 
-		// Don't add stuff is no changes, use the plain null instead for prettiness
+		// Don't add stuff if no changes, use the plain null instead for prettiness
 		if ( !count( $changed ) ) {
 			$changed = null;
 		}
@@ -471,8 +478,7 @@ class SpecialPageTranslation extends SpecialPage {
 		$dbw->delete( 'translate_sections', array( 'trs_page' => $page->getTitle()->getArticleId() ), __METHOD__ );
 		$ok = $dbw->insert( 'translate_sections', $inserts, __METHOD__ );
 
-		// Store changed sections in the database for easy access.
-		// Used when determinen the up-to-datedness for section translations.
+		// Stores the names of changed sections in the database. Not currently used for anything.
 		$page->addMarkedTag( $newrevision, $changed );
 		$this->addFuzzyTags( $page, $changed );
 
