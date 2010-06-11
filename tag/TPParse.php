@@ -159,7 +159,7 @@ class TPParse {
 
 		// Remove translation markup
 		$cb = array( __CLASS__, 'replaceTagCb' );
-		$text = preg_replace_callback( '~(<translate>\n??)(.*)(\n??</translate>)~sU', $cb, $text );
+		$text = preg_replace_callback( '~(<translate>)(.*)(</translate>)~sU', $cb, $text );
 		$text = TranslatablePage::unArmourNowiki( $nph, $text );
 
 		return $text;
@@ -174,6 +174,6 @@ class TPParse {
 	}
 
 	protected static function replaceTagCb( $matches ) {
-		return $matches[2];
+		return preg_replace( '~^\n|\n\z~', '', $matches[2] );
 	}
 }
