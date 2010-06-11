@@ -423,6 +423,8 @@ class SpecialPageTranslation extends SpecialPage {
 	 * - Invalidates caches
 	 */
 	public function markForTranslation( TranslatablePage $page, Array $sections ) {
+		global $wgRequest;
+
 		// Add the section markers to the source page
 		$article = new Article( $page->getTitle() );
 		$status = $article->doEdit(
