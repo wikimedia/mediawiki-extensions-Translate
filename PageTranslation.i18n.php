@@ -29,7 +29,7 @@ Name: $1',
 	'tpt-sections-deleted' => 'Deleted translation units',
 	'tpt-sections-template' => 'Translation page template',
 
-	'tpt-action-nofuzzy' => 'Don\'t invalidate translations (use for minor changes like spelling fixes)',
+	'tpt-action-nofuzzy' => 'Do not invalidate translations',
 	
 	# Specific page on the special page
 	'tpt-badtitle' => 'Page name given ($1) is not a valid title',
