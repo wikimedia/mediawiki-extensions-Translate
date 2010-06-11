@@ -339,6 +339,12 @@ FOO;
 
 				return false;
 			}
+		} elseif ( $action === 'move' ) {
+			$page = TranslatablePage::newFromTitle( $title );
+			if ( $page->getMarkedTag() ) {
+				$result = array( 'tpt-move-impossible' );
+				return false;
+			}
 		}
 
 		return true;

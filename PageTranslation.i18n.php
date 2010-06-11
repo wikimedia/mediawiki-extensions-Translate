@@ -73,6 +73,7 @@ but the latest {{PLURAL:$1|version|versions}} cannot be marked for translation.'
 This page is a translation of page [[$1]] and the translation can be updated using [$2 the translation tool].',
 	'tpt-unknown-page' => 'This namespace is reserved for content page translations.
 The page you are trying to edit does not seem to correspond any page marked for translation.',
+	'tpt-move-impossible' => 'Moving pages marked for translation is not yet possible.',
 
 	'tpt-install' => 'Run php maintenance/update.php or web install to enable page translation feature.',
 
