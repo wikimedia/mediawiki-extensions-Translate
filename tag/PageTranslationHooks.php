@@ -8,8 +8,12 @@ class PageTranslationHooks {
 		$title = $parser->getTitle();
 
 		if ( strpos( $text, '<translate>' ) !== false ) {
-			$parse = TranslatablePage::newFromText( $parser->getTitle(), $text )->getParse(); 
-			$text = $parse->getTranslationPageText( null );
+			try {
+				$parse = TranslatablePage::newFromText( $parser->getTitle(), $text )->getParse();
+				$text = $parse->getTranslationPageText( null );
+			} catch ( TPException $e ) {
+				// Show ugly preview without processed <translate> tags
+			}
 		}
 
 		// For translation pages, parse plural, grammar etc with correct language
