@@ -1175,6 +1175,10 @@ file = Translate/Translate.i18n.php
 aliasfile = Translate/Translate.alias.php
 optional = translate-page-paging-links, translate-languagestats-groups, supportedlanguages-portallink, supportedlanguages-portallink-nocldr
 
+Translate - First Steps
+id = ext-translate-firststeps
+file = Translate/FirstSteps.i18n.php
+descmsg = firststeps-desc
 
 Translate - Page Translation
 id = ext-translate-pagetranslation

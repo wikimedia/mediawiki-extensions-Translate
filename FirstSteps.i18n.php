@@ -13,6 +13,7 @@ $messages = array();
  */
 $messages['en'] = array(
 	'firststeps' => 'First steps',
+	'firststeps-desc' => '[[Special:FirstSteps|Special page]] for getting users started on a wiki using the Translate extension',
 	'translate-fs-pagetitle-done' => ' - done!',
 	'translate-fs-pagetitle' => 'Getting started wizard - $1',
 	'translate-fs-signup-title' => 'Sign up',

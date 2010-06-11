@@ -641,6 +641,7 @@ class AllTranslateExtensionsGroup extends AllMediawikiExtensionsGroup {
 
 	protected $translateprofileextensions = array(
 		'ext-translate-core',
+		'ext-translate-firststeps',
 		'ext-translate-pagetranslation',
 	);
 
