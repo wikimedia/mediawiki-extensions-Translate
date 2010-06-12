@@ -975,6 +975,7 @@ $messages['es'] = array(
 	'tpt-sections-oldnew' => 'Unidades de traducción nuevas y existentes',
 	'tpt-sections-deleted' => 'Unidades de traducción borradas',
 	'tpt-sections-template' => 'Plantilla de página de traducción',
+	'tpt-action-nofuzzy' => 'No invalidar traducciones',
 	'tpt-badtitle' => 'Nombre de página dado ($1) no es un título válido',
 	'tpt-nosuchpage' => 'Página $1 no existe',
 	'tpt-oldrevision' => '$2 no es la última versión de la página [[$1]].
@@ -1653,6 +1654,7 @@ $messages['ia'] = array(
 	'tpt-sections-oldnew' => 'Unitates de traduction nove e existente',
 	'tpt-sections-deleted' => 'Unitates de traduction delite',
 	'tpt-sections-template' => 'Patrono de pagina de traduction',
+	'tpt-action-nofuzzy' => 'Non invalidar traductiones',
 	'tpt-badtitle' => 'Le nomine de pagina specificate ($1) non es un titulo valide',
 	'tpt-nosuchpage' => 'Le pagina $1 non existe',
 	'tpt-oldrevision' => '$2 non es le version le plus recente del pagina [[$1]].
@@ -2078,6 +2080,7 @@ $messages['mk'] = array(
 	'tpt-sections-oldnew' => 'Нови и постоечки преводни единици',
 	'tpt-sections-deleted' => 'Избришани преводни едници',
 	'tpt-sections-template' => 'Шаблон за страница за превод',
+	'tpt-action-nofuzzy' => 'Не поништувај преводи',
 	'tpt-badtitle' => 'Даденото име на страницата ($1) е погрешен наслов',
 	'tpt-nosuchpage' => 'Страницата $1 не постои',
 	'tpt-oldrevision' => '$2 не е најнова верзија на страницата [[$1]].
@@ -2114,6 +2117,7 @@ $messages['mk'] = array(
 Страницава е превод на страницата [[$1]], а преводот може да се обнови само со помош на [$2 алатката за преведување].',
 	'tpt-unknown-page' => 'Овој именски простор е резервиран за преводи на содржински страници.
 Страницата која се обидувате да ја уредите не соодветствува со ниедна страница обележана за преведување.',
+	'tpt-move-impossible' => 'Сè уште нема можност за преместување на страници обележани за преведување.',
 	'tpt-install' => 'Пуштете го php maintenance/update.php или интернет-инсталација за да ја добиете можноста за преведување страници.',
 	'tpt-render-summary' => 'Обнова за усогласување со новата верзија на изворната страница',
 	'tpt-download-page' => 'Извези страница со преводи',
@@ -2175,6 +2179,7 @@ Naam: $1',
 	'tpt-sections-oldnew' => 'Nieuwe en bestaande vertaaleenheden',
 	'tpt-sections-deleted' => 'Verwijderde vertaaleenheden',
 	'tpt-sections-template' => 'Vertaalpaginasjabloon',
+	'tpt-action-nofuzzy' => 'Vertalingen niet als verouderd markeren',
 	'tpt-badtitle' => 'De opgegeven paginanaam ($1) is geen geldige paginanaam',
 	'tpt-nosuchpage' => 'Pagina "$1" bestaat niet',
 	'tpt-oldrevision' => '$2 is niet de meest recente versie van de pagina "[[$1]]".
@@ -2565,6 +2570,7 @@ $messages['pt'] = array(
 	'tpt-sections-oldnew' => 'Unidades de tradução novas e existentes',
 	'tpt-sections-deleted' => 'Unidades de tradução eliminadas',
 	'tpt-sections-template' => 'Modelo de página de tradução',
+	'tpt-action-nofuzzy' => 'Não invalidar traduções',
 	'tpt-badtitle' => 'O nome de página fornecido ($1) não é um título válido',
 	'tpt-nosuchpage' => 'A página $1 não existe',
 	'tpt-oldrevision' => '$2 não é a versão mais recente da página [[$1]].
@@ -2600,6 +2606,7 @@ Antes de marcar esta versão para tradução, verifique que as alterações às 
 Esta página é uma tradução da página [[$1]] e a tradução pode ser actualizada usando [$2 a ferramenta de tradução].',
 	'tpt-unknown-page' => 'Este espaço nominal está reservado para traduções de páginas de conteúdo.
 A página que está a tentar editar não parece corresponder a nenhuma página marcada para tradução.',
+	'tpt-move-impossible' => 'Ainda não é possível mover páginas marcadas para tradução.',
 	'tpt-install' => "Execute ''maintenance/update.php'' ou instale através da internet para possibilitar a funcionalidade de tradução de páginas.",
 	'tpt-render-summary' => 'A actualizar para corresponder à nova versão da página fonte',
 	'tpt-download-page' => 'Exportar a página com traduções',
@@ -2730,6 +2737,7 @@ $messages['roa-tara'] = array(
 
 /** Russian (Русский)
  * @author Ferrer
+ * @author G0rn
  * @author Александр Сигачёв
  */
 $messages['ru'] = array(
@@ -2747,6 +2755,7 @@ $messages['ru'] = array(
 	'tpt-sections-oldnew' => 'Новые и существующие элементы перевода',
 	'tpt-sections-deleted' => 'Удалённые элементы перевода',
 	'tpt-sections-template' => 'Шаблон страницы перевода',
+	'tpt-action-nofuzzy' => 'Не помечать переводы как устаревшие',
 	'tpt-badtitle' => 'Указанное название страницы ($1) не является допустимым',
 	'tpt-nosuchpage' => 'Страница «$1» не существует.',
 	'tpt-oldrevision' => '$2 не является последней версией страницы [[$1]].
@@ -2783,6 +2792,7 @@ $messages['ru'] = array(
 Эта страница является переводом страницы [[$1]], перевод может быть обновлен с помощью специального [$2 инструмента перевода].',
 	'tpt-unknown-page' => 'Это пространство имён зарезервировано для переводов текстов страниц.
 Страница, которую вы пытаетесь изменить, не соответствует какой-либо странице, отмеченной для перевода.',
+	'tpt-move-impossible' => 'Переименование помеченных для перевода страниц пока не возможно.',
 	'tpt-install' => 'Запустите php-скрипт maintenance/update.php или веб-установку, чтобы включить возможность перевода страниц.',
 	'tpt-render-summary' => 'Обновление для соответствия новой версии исходной страницы.',
 	'tpt-download-page' => 'Экспортировать страницу с переводами',
