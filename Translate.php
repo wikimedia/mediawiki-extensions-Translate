@@ -13,7 +13,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '2010-06-10' );
+define( 'TRANSLATE_VERSION', '2010-06-12' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'path'           => __FILE__,
@@ -353,18 +353,39 @@ if ( !defined( 'TRANSLATE_CLI' ) ) {
 }
 
 /**
- * Enable tmserver translation memory from translatetoolkit.
- * Example configuration:
- * $wgTranslateTM = array(
+ * Define various web services that provide translation suggestions.
+ * Example for tmserver translation memory from translatetoolkit.
+ * $wgTranslateTranslationServices['local'] = array(
  *   'server' => 'http://127.0.0.1',
  *   'port' => 54321,
  *   'timeout' => 4,
  *   'database' => '/path/to/database.sqlite',
+ *   'type' => 'tmserver',
  * );
+ *
+ * For Google and Apertium, you should get an API key.
+ * @see http://wiki.apertium.org/wiki/Apertium_web_service
+ * @see http://code.google.com/apis/ajaxsearch/key.html
+ *
+ * The translation services are provided with the following information:
+ * - server ip address
+ * - versions of MediaWiki and Translate extension
+ * - clients ip address encrypted with $wgProxyKey
+ * - source text to translate
+ * - private API key if provided
  */
-$wgTranslateTM = false;
-
-/**
- * Set to the url of Apertium Machine Translation service to activate.
- */
-$wgTranslateApertium = false;
+$wgTranslateTranslationServices = array();
+$wgTranslateTranslationServices['Google'] = array(
+	'url' => 'http://ajax.googleapis.com/ajax/services/language/translate',
+	'key' => null,
+	'timeout' => 3,
+	'type' => 'google',
+);
+$wgTranslateTranslationServices['Apertium'] = array(
+	'url' => 'http://api.apertium.org/json/translate',
+	'pairs' => 'http://api.apertium.org/json/listPairs',
+	'key' => null,
+	'timeout' => 3,
+	'type' => 'apertium',
+	'codemap' => array( 'no' => 'nb' ),
+);

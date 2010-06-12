@@ -204,13 +204,7 @@ class TranslationHelpers {
 	 * Returns suggestions from a translation memory.
 	 * @return Html snippet which contains the suggestions.
 	 */
-	protected function getTmBox() {
-		global $wgTranslateTM;
-
-		if ( $wgTranslateTM === false ) {
-			return null;
-		}
-
+	protected function getTmBox( $serviceName, $config ) {
 		if ( !$this->targetLanguage ) {
 			return null;
 		}
@@ -219,7 +213,6 @@ class TranslationHelpers {
 			return null;
 		}
 
-		$serviceName = 'tmserver';
 		if ( self::checkTranslationServiceFailure( $serviceName ) ) {
 			return null;
 		}
@@ -230,9 +223,9 @@ class TranslationHelpers {
 		$ns = $this->title->getNsText();
 
 		// Fetch suggestions
-		$server = $wgTranslateTM['server'];
-		$port   = $wgTranslateTM['port'];
-		$timeout = $wgTranslateTM['timeout'];
+		$server = $config['server'];
+		$port   = $config['port'];
+		$timeout = $config['timeout'];
 		$def = rawurlencode( $definition );
 		$url = "$server:$port/tmserver/en/$code/unit/$def";
 		$suggestions = Http::get( $url, $timeout );
@@ -284,27 +277,35 @@ class TranslationHelpers {
 			self::reportTranslationSerficeFailure( $serviceName );
 		}
 
+		$boxes = array_slice( $boxes, 0, 3 );
+		$result = implode( "\n", $boxes );
+
 		// Limit to three max
-		return array_slice( $boxes, 0, 3 );
+		return $result;
 	}
 
 	protected function getSuggestionBox() {
-		$boxes = (array) $this->getTmBox();
-		$google = $this->getGoogleSuggestion();
+		global $wgTranslateTranslationServices;
 
-		if ( $google ) {
-			$boxes[] = $google;
+		$boxes = array();
+		foreach ( $wgTranslateTranslationServices as $name => $config ) {
+			if ( $config['type'] === 'tmserver' ) {
+				$boxes[] = $this->getTmBox( $name, $config );
+			} elseif( $config['type'] === 'google' ) {
+				$boxes[] = $this->getGoogleSuggestion( $name, $config );
+			} elseif( $config['type'] === 'apertium' ) {
+				$boxes[] = $this->getApertiumSuggestion( $name, $config );
+			} else {
+				throw new MWException( __METHOD__ . ": Unsupported type {$config['type']}" );
+			}
 		}
 
-		$apertium = $this->getApertiumSuggestion();
-		if ( $apertium ) {
-			$boxes[] = $apertium;
-		}
+		// Remove nulls and falses
+		$boxes = array_filter( $boxes );
 
 		// Enclose if there is more than one box
 		if ( count( $boxes ) ) {
 			$sep = Html::element( 'hr', array( 'class' => 'mw-translate-sep' ) );
-
 			return TranslateUtils::fieldset( wfMsgHtml( 'translate-edit-tmsugs' ),
 				implode( "$sep\n", $boxes ), array( 'class' => 'mw-translate-edit-tmsugs' ) );
 		} else {
@@ -312,10 +313,9 @@ class TranslationHelpers {
 		}
 	}
 
-	protected function getGoogleSuggestion() {
-		global $wgProxyKey, $wgGoogleApiKey, $wgMemc;
+	protected function getGoogleSuggestion( $serviceName, $config ) {
+		global $wgMemc;
 
-		$serviceName = 'Google';
 		if ( self::checkTranslationServiceFailure( $serviceName ) ) {
 			return null;
 		}
@@ -323,14 +323,10 @@ class TranslationHelpers {
 		$code = $this->targetLanguage;
 		$definition = trim( strval( $this->getDefinition() ) ) ;
 
-		$memckey = wfMemckey( 'translate-tmsug-badcodes' );
+		$memckey = wfMemckey( 'translate-tmsug-badcodes-' . $serviceName );
 		$unsupported = $wgMemc->get( $memckey );
 
-		if ( isset( $unsupported[$code] ) ) {
-			return null;
-		}
-
-		if ( $definition === '' ) {
+		if ( $definition === '' || isset( $unsupported[$code] ) ) {
 			return null;
 		}
 
@@ -340,113 +336,101 @@ class TranslationHelpers {
 			return null;
 		}
 
-		$path = 'http://ajax.googleapis.com/ajax/services/language/translate';
-		$options = array();
-		$options['timeout'] = 3;
-		$options['postData'] = array(
-			'q' => $definition,
-			'v' => '1.0',
-			'langpair' => "en|$code",
-			// Unique but not identifiable
-			'userip' => sha1( $wgProxyKey . wfGetIp() ),
-		);
+		$options = self::makeGoogleQueryParams( $definition, "en|$code", $config );
+		$json = Http::post( $config['url'], $options );
+		$response = FormatJson::decode( $json );
 
-		if ( $wgGoogleApiKey ) {
-			$options['postData']['key'] = $wgGoogleApiKey;
-		}
-
-		$google_json = Http::post( $path, $options );
-		$response = FormatJson::decode( $google_json );
-
-		if ( $google_json === false ) {
+		if ( $json === false ) {
 				wfWarn(  __METHOD__ . ': Http::get failed' );
 				// Most likely a timeout or other general error
 				self::reportTranslationSerficeFailure( $serviceName );
 
 				return null;
 		} elseif ( !is_object( $response ) ) {
-				wfWarn(  __METHOD__ . ': Unable to parse reply: ' . strval( $google_json ) );
-				error_log(  __METHOD__ . ': Unable to parse reply: ' . strval( $google_json ) );
+				wfWarn(  __METHOD__ . ': Unable to parse reply: ' . strval( $json ) );
+				error_log(  __METHOD__ . ': Unable to parse reply: ' . strval( $json ) );
 
 				return null;
 		}
 
 		if ( $response->responseStatus === 200 ) {
 			$text = $this->suggestionField( Sanitizer::decodeCharReferences( $response->responseData->translatedText ) );
-
-			return Html::rawElement( 'div', null, self::legend( 'Google' ) . $text . self::clear() );
+			return Html::rawElement( 'div', null, self::legend( $serviceName ) . $text . self::clear() );
 		} elseif ( $response->responseDetails === 'invalid translation language pair' ) {
 			$unsupported[$code] = true;
 			$wgMemc->set( $memckey, $unsupported, 60 * 60 * 8 );
 		} else {
 			// Unknown error, assume the worst
 			self::reportTranslationSerficeFailure( $serviceName );
-			wfWarn(  __METHOD__ . ': ' . $response->responseDetails );
-			error_log( __METHOD__ . ': ' . $response->responseDetails );
-
+			wfWarn(  __METHOD__ . "($serviceName): " . $response->responseDetails );
+			error_log( __METHOD__ . "($serviceName): " . $response->responseDetails );
 			return null;
 		}
 	}
 
-	protected function getApertiumSuggestion() {
-		global $wgTranslateApertium, $wgMemc;
+	protected static function makeGoogleQueryParams( $definition, $pair, $config ) {
+		global $wgSitename, $wgVersion, $wgProxyKey;
+		$options = array();
+		$options['timeout'] = $config['timeout'];
 
-		if ( !$wgTranslateApertium ) {
-			return null;
+		$options['postData'] = array(
+			'q' => $definition,
+			'v' => '1.0',
+			'langpair' => $pair,
+			// Unique but not identifiable
+			'userip' => sha1( $wgProxyKey . wfGetIp() ),
+			'x-application' => "$wgSitename (MediaWiki $wgVersion; Translate " . TRANSLATE_VERSION . ")",
+		);
+
+		if ( $config['key'] ) {
+			$options['postData']['key'] = $config['key'];
 		}
 
-		$serviceName = 'Apertium';
+		return $options;
+	}
+
+	protected function getApertiumSuggestion( $serviceName, $config ) {
+		global $wgMemc;
+
 		if ( self::checkTranslationServiceFailure( $serviceName ) ) {
-			return null;
+			//return null;
 		}
 
 		$page = $this->page;
 		$code = $this->targetLanguage;
 		$ns = $this->title->getNamespace();
 
-		$memckey = wfMemckey( 'translate-tmsug-apertium' );
+		$memckey = wfMemckey( 'translate-tmsug-pairs-' . $serviceName );
 		$pairs = $wgMemc->get( $memckey );
 
 		if ( !$pairs ) {
-			$pairs = array();
-			$pairlist = Http::get( $wgTranslateApertium, 5 );
 
-			if ( $pairlist === false ) {
+			$pairs = array();
+			$json = Http::get( $config['pairs'], 5 );
+			$response = FormatJson::decode( $json );
+
+			if ( $json === false ) {
+				self::reportTranslationSerficeFailure( $serviceName );
+				return null;
+			} elseif ( !is_object( $response ) ) {
+				error_log(  __METHOD__ . ': Unable to parse reply: ' . strval( $json ) );
 				return null;
 			}
 
-			$pairlist = trim( Sanitizer::stripAllTags( $pairlist ) );
-			$pairlist = explode( " ", $pairlist );
-
-			foreach ( $pairlist as $pair ) {
-				$pair = trim( $pair );
-
-				if ( $pair === '' ) {
-					continue;
-				}
-
-				$languages = explode( '-', $pair );
-
-				if ( count( $languages ) !== 2 ) {
-					continue;
-				}
-
-				list( $source, $target ) = $languages;
-
+			foreach ( $response->responseData as $pair ) {
+				$source = $pair->sourceLanguage;
+				$target = $pair->targetLanguage;
 				if ( !isset( $pairs[$target] ) ) {
 					$pairs[$target] = array();
 				}
-
 				$pairs[$target][$source] = true;
 			}
 
 			$wgMemc->set( $memckey, $pairs, 60 * 60 * 24 );
 		}
 
-		$codemap = array( 'no' => 'nb' );
-
-		if ( isset( $codemap[$code] ) ) {
-			$code = $codemap[$code];
+		if ( isset( $config['codemap'][$code] ) ) {
+			$code = $config['codemap'][$code];
 		}
 
 		$code = str_replace( '-', '_', wfBCP47( $code ) );
@@ -457,7 +441,7 @@ class TranslationHelpers {
 
 		$suggestions = array();
 
-		$codemap = array_flip( $codemap );
+		$codemap = array_flip( $config['codemap'] );
 		foreach ( $pairs[$code] as $candidate => $unused ) {
 			$mwcode = str_replace( '_', '-', strtolower( $candidate ) );
 
@@ -475,19 +459,22 @@ class TranslationHelpers {
 				continue;
 			}
 
-			$query = array(
-				'mark' => 0,
-				'mode' => "$candidate-$code",
-				'text' => $text
-			);
-
-			$response = Http::get( "$wgTranslateApertium?" . wfArrayToCgi( $query ), 3 );
-			if ( $response === false ) {
-					self::reportTranslationSerficeFailure( $serviceName );
-					break; // Too slow, back off
+			$options = self::makeGoogleQueryParams( $text, "$candidate|$code", $config );
+			$options['postData']['format'] = 'html';
+			$json = Http::post( $config['url'], $options );
+			$response = FormatJson::decode( $json );
+			if ( $json === false || !is_object( $response ) ) {
+				self::reportTranslationSerficeFailure( $serviceName );
+				break; // Too slow, back off
+			} elseif ( $response->responseStatus !== 200 ) {
+				error_log( __METHOD__ . " with ($serviceName ($candidate)): " . $response->responseDetails );
 			} else {
-				$response = $this->suggestionField( Sanitizer::decodeCharReferences( $response ) );
-				$suggestions[] = Html::rawElement( 'div', null, self::legend( "Apertium ($candidate)" ) . $response . self::clear() );
+				$sug = Sanitizer::decodeCharReferences( $response->responseData->translatedText );
+				$sug = $this->suggestionField( $sug );
+				$suggestions[] = Html::rawElement( 'div',
+					array( 'title' => $text ),
+					self::legend( "$serviceName ($candidate)" ) . $sug . self::clear()
+				);
 			}
 		}
 
