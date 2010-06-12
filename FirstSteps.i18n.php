@@ -41,7 +41,7 @@ $3Sign up$4',
 	'translate-fs-settings-text' => 'You should now go to your preferences and
 at least change your interface language to the language you are going to translate to.
 
-Your interface languages is used as the default target language.
+Your interface language is used as the default target language.
 It is easy to forget to change the language to the correct one, so setting it now is highly recommended.
 
 While you are there, you can also request the software to display translations in other languages you know.
