@@ -333,7 +333,8 @@ class TranslationHelpers {
 		}
 
 		$code = $this->targetLanguage;
-		$definition = trim( strval( $this->getDefinition() ) ) ;
+		$definition = trim( strval( $this->getDefinition() ) );
+		$definition = str_replace( "\n", "<newline/>", $definition );
 
 		$memckey = wfMemckey( 'translate-tmsug-badcodes-' . $serviceName );
 		$unsupported = $wgMemc->get( $memckey );
@@ -366,7 +367,9 @@ class TranslationHelpers {
 		}
 
 		if ( $response->responseStatus === 200 ) {
-			$text = $this->suggestionField( Sanitizer::decodeCharReferences( $response->responseData->translatedText ) );
+			$text = Sanitizer::decodeCharReferences( $response->responseData->translatedText );
+			$text = str_replace( "<newline/>", "\n", $text );
+			$text = $this->suggestionField( $text );
 			return Html::rawElement( 'div', null, self::legend( $serviceName ) . $text . self::clear() );
 		} elseif ( $response->responseDetails === 'invalid translation language pair' ) {
 			$unsupported[$code] = true;
@@ -494,7 +497,8 @@ class TranslationHelpers {
 			return null;
 		}
 
-		return implode( "\n", $suggestions );
+		$divider = Html::element( 'div', array( 'style' => 'margin-bottom: 0.5ex' ) );
+		return implode( "$divider\n", $suggestions );
 	}
 
 	protected function getDefinitionBox() {
@@ -523,9 +527,11 @@ class TranslationHelpers {
 		$dialogID = $this->dialogID();
 		$id = Sanitizer::escapeId( "def-$dialogID" );
 		$msg = $this->adder( $id ) . "\n" . Html::rawElement( 'span',
-			array( 'class' => 'mw-translate-edit-deftext', 'id' => $id ),
+			array( 'class' => 'mw-translate-edit-deftext' ),
 			TranslateUtils::convertWhiteSpaceToHTML( $en )
 		);
+
+		$msg .= Html::element( 'pre', array( 'id' => $id, 'style' => 'display: none;' ), $en );
 
 		$class = array( 'class' => 'mw-sp-translate-edit-definition mw-translate-edit-definition' );
 
@@ -877,15 +883,16 @@ class TranslationHelpers {
 			return Html::element( 'a', $params, '↓' );
 	}
 
-	public function suggestionField( $contents ) {
+	public function suggestionField( $text ) {
 		static $counter = 0;
 
 		$counter++;
 		$dialogID = $this->dialogID();
 		$id = Sanitizer::escapeId( "tmsug-$dialogID-$counter" );
-		$contents = TranslateUtils::convertWhiteSpaceToHTML( $contents );
+		$contents = TranslateUtils::convertWhiteSpaceToHTML( $text );
+		$contents .= Html::element( 'pre', array( 'id' => $id, 'style' => 'display: none;' ), $text );
 
-		return $this->adder( $id ) . "\n" . Html::rawElement( 'span', array( 'id' => $id ), $contents );
+		return $this->adder( $id ) . "\n" . $contents;
 	}
 
 	/**
