@@ -22,7 +22,7 @@
  */
 
 function trlOpenJsEdit( page, group ) {
-	var url = wgScript + "?title=Special:Translate/editpage&page=$1&loadgroup=$2";
+	var url = wgScript + "?title=Special:Translate/editpage&suggestions=async&page=$1&loadgroup=$2";
 	url = url.replace( "$1", page ).replace( "$2", group );
 	var id = "jsedit" +  page.replace( /[^a-zA-Z0-9_]/g, '_' );
 
@@ -35,6 +35,9 @@ function trlOpenJsEdit( page, group ) {
 
 	jQuery('<div/>').attr('id', id).appendTo(jQuery('body'));
 	var dialog = jQuery("#"+id);
+	
+	var spinner = jQuery("<div/>").attr("class", "mw-ajax-loader" );
+	dialog.html( jQuery("<div/>").attr("class", "mw-ajax-dialog").html( spinner ) );
 
 	dialog.load(url, false, function() {
 		var form = jQuery("#"+ id + " form");

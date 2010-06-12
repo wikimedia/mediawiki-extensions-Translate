@@ -39,6 +39,7 @@ function customMessageGroups( $id ) {
 - Removed $wgGoogleApiKey, $wgTranslateTM and $wgTranslateApertium
 - You need to migrate to $wgTranslateTranslationServices
 - Page translation has been improved a lot
+- translation memory suggestions can now be loaded asynchronously
 * 2010-03-27
 - Improvements to js edit, like save and open next
 * 2010-02-24

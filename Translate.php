@@ -358,7 +358,8 @@ if ( !defined( 'TRANSLATE_CLI' ) ) {
  * $wgTranslateTranslationServices['local'] = array(
  *   'server' => 'http://127.0.0.1',
  *   'port' => 54321,
- *   'timeout' => 4,
+ *   'timeout-sync' => 3,
+ *   'timeout-async' => 6,
  *   'database' => '/path/to/database.sqlite',
  *   'type' => 'tmserver',
  * );
@@ -378,14 +379,16 @@ $wgTranslateTranslationServices = array();
 $wgTranslateTranslationServices['Google'] = array(
 	'url' => 'http://ajax.googleapis.com/ajax/services/language/translate',
 	'key' => null,
-	'timeout' => 3,
+	'timeout-sync' => 3,
+	'timeout-async' => 6,
 	'type' => 'google',
 );
 $wgTranslateTranslationServices['Apertium'] = array(
 	'url' => 'http://api.apertium.org/json/translate',
 	'pairs' => 'http://api.apertium.org/json/listPairs',
 	'key' => null,
-	'timeout' => 3,
+	'timeout-sync' => 2,
+	'timeout-async' => 6,
 	'type' => 'apertium',
 	'codemap' => array( 'no' => 'nb' ),
 );

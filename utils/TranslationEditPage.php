@@ -11,6 +11,7 @@
 class TranslationEditPage {
 	// Instance of an Title object
 	protected $title;
+	protected $suggestions = 'sync';
 
 	/**
 	 * Constructor.
@@ -27,7 +28,9 @@ class TranslationEditPage {
 			return null;
 		}
 
-		return new self( $title );
+		$obj = new self( $title );
+		$obj->suggestions = $request->getText( 'suggestions' );
+		return $obj;
 	}
 
 
@@ -39,16 +42,21 @@ class TranslationEditPage {
 	 * disabled all other output.
 	 */
 	public function execute() {
+		global $wgOut, $wgServer, $wgScriptPath;
+
+		$wgOut->disable();
+
 		$data = $this->getEditInfo();
 		$helpers = new TranslationHelpers( $this->getTitle() );
+
+		if ( $this->suggestions === 'only' ) {
+			echo $helpers->getBoxes( $this->suggestions );
+			return;
+		}
 
 		// jQuery borks on something, probably to :, thus, don't use special chars
 		$id = Sanitizer::escapeId( sha1( $this->getTitle()->getPrefixedText() ) );
 		$helpers->setTextareaId( $id );
-
-		global $wgServer, $wgScriptPath, $wgOut;
-
-		$wgOut->disable();
 
 		$translation = $helpers->getTranslation();
 		$short = strpos( $translation, "\n" ) === false && strlen( $translation ) < 200;
@@ -98,11 +106,11 @@ class TranslationEditPage {
 
 		$form = Html::rawElement( 'form', $formParams,
 			implode( "\n", $hidden ) . "\n" .
-			$helpers->getBoxes() . "\n" .
+			$helpers->getBoxes( $this->suggestions ) . "\n" .
 			"$textarea\n$summary$save$saveAndNext$skip$history"
 		);
 
-		echo $form;
+		echo Html::rawElement( 'div', array( 'class' => 'mw-ajax-dialog' ), $form );
 	}
 
 	/**

@@ -171,7 +171,7 @@ class TranslationHelpers {
 	 * any information to show and on configuration variables.
 	 * @return String. Block level HTML snippet or empty string.
 	 */
-	public function getBoxes() {
+	public function getBoxes( $suggestions = 'sync' ) {
 		// Box filter
 		$all = array(
 			'other-languages' => array( $this, 'getOtherLanguagesBox' ),
@@ -183,6 +183,12 @@ class TranslationHelpers {
 			'definition' => array( $this, 'getDefinitionBox' ),
 			'check' => array( $this, 'getCheckBox' ),
 		);
+
+		if ( $suggestions === 'async' ) {
+			$all['translation-memory'] = array( $this, 'getLazySuggestionBox' );
+		} elseif( $suggestions === 'only' ) {
+			return (string) call_user_func( $all['translation-memory'], 'lazy' );
+		}
 
 		$boxes = array();
 		foreach ( $all as $type => $cb ) {
@@ -284,11 +290,17 @@ class TranslationHelpers {
 		return $result;
 	}
 
-	protected function getSuggestionBox() {
+	protected function getSuggestionBox( $async = false ) {
 		global $wgTranslateTranslationServices;
 
 		$boxes = array();
 		foreach ( $wgTranslateTranslationServices as $name => $config ) {
+			if ( $async === 'async' ) {
+				$config['timeout'] = $config['timeout-async'];
+			} else {
+				$config['timeout'] = $config['timeout-sync'];
+			}
+
 			if ( $config['type'] === 'tmserver' ) {
 				$boxes[] = $this->getTmBox( $name, $config );
 			} elseif( $config['type'] === 'google' ) {
@@ -825,6 +837,25 @@ class TranslationHelpers {
 		}
 
 		return TranslateUtils::fieldset( $title, Html::element( 'span', null, $msg ), $attributes );
+	}
+
+	public function getLazySuggestionBox() {
+		global $wgScript;
+
+		if ( $this->group === null || !$this->targetLanguage ) {
+			return null;
+		}
+
+		$url = SpecialPage::getTitleFor( 'Translate', 'editpage' )->getLocalUrl( array(
+			'suggestions' => 'only',
+			'page' => "{$this->page}/{$this->targetLanguage}",
+			'loadgroup' => $this->group->getId(),
+		) );
+		$url = Xml::escapeJsString( $url );
+		$id = 'tm-lazy-sug-' . wfTimestamp();
+		$script = Html::inlineScript( "jQuery('#$id').load( \"$url\" )" );
+		$spinner = Html::element( 'div', array( 'class' => 'mw-ajax-loader' ) );
+		return Html::rawElement( 'div', array( 'id' => $id ), $script.$spinner );
 	}
 
 	public function adder( $source ) {

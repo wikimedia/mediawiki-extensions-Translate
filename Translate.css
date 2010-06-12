@@ -58,6 +58,10 @@
 
 /* Edit page */
 
+.mw-ajax-dialog .mw-ajax-loader {
+	margin: 2em;
+}
+
 .mw-sp-translate-edit-fields fieldset {
 	line-height: normal;
 	margin: 0px;
