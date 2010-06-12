@@ -49,7 +49,8 @@ This setting can be found under tab "{{int:prefs-editing}}".
 Feel free to explore other settings, too.
 
 Go to your [[Special:Preferences|preferences page]] now and then return back to this page.',
-	'translate-fs-settings-skip' => "I'm done. Let me proceed.",
+	'translate-fs-settings-skip' => "I'm done.
+Let me proceed.",
 	'translate-fs-userpage-text' => 'Now you need to create an user page.
 
 Please write something about yourself; who you are and what you do.
@@ -68,9 +69,10 @@ The alternatives are:
 
 If you are a native speaker of a language, leave the skill level out, and only use the language code.
 Example: if you speak Tamil natively, English well, and little Swahili, you would write:
-<tt><nowiki>{{#babel:ta|en-3|sw-1}}</nowiki></tt>
+<code><nowiki>{{#babel:ta|en-3|sw-1}}</nowiki></code>
 
-If you do not know the language code of a language, now is good time to look it up. You can use the list below.',
+If you do not know the language code of a language, now is good time to look it up.
+You can use the list below.',
 	'translate-fs-userpage-submit' => 'Create my userpage',
 	'translate-fs-userpage-done' => 'Well done! You now have an user page.',
 	'translate-fs-permissions-text' => 'Now you need to place a request to be added to the translator group.
