@@ -769,11 +769,6 @@ Open Search Xml
 
 Other Sites
 
-Oversight
-file = Oversight/HideRevision.i18n.php
-aliasfile = Oversight/HideRevision.alias.php
-descmsg = hiderevision-desc
-
 Package Force
 descmsg = pf-desc
 
