@@ -520,8 +520,8 @@ class TranslationHelpers {
 			wfMsg( 'word-separator' ) .
 			wfMsg( 'parentheses', $title );
 
-		$id = "def-" . wfTimeStamp();
-
+		$dialogID = $this->dialogID();
+		$id = Sanitizer::escapeId( "def-$dialogID" );
 		$msg = $this->adder( $id ) . "\n" . Html::rawElement( 'span',
 			array( 'class' => 'mw-translate-edit-deftext', 'id' => $id ),
 			TranslateUtils::convertWhiteSpaceToHTML( $en )
@@ -848,14 +848,21 @@ class TranslationHelpers {
 
 		$url = SpecialPage::getTitleFor( 'Translate', 'editpage' )->getLocalUrl( array(
 			'suggestions' => 'only',
-			'page' => "{$this->page}/{$this->targetLanguage}",
+			'page' => $this->title->getPrefixedDbKey(),
 			'loadgroup' => $this->group->getId(),
 		) );
 		$url = Xml::escapeJsString( $url );
-		$id = 'tm-lazy-sug-' . wfTimestamp();
+
+		$dialogID = $this->dialogID();
+		$id = Sanitizer::escapeId( "tm-lazysug-$dialogID" );
+
 		$script = Html::inlineScript( "jQuery('#$id').load( \"$url\" )" );
 		$spinner = Html::element( 'div', array( 'class' => 'mw-ajax-loader' ) );
 		return Html::rawElement( 'div', array( 'id' => $id ), $script.$spinner );
+	}
+
+	public function dialogID() {
+		return sha1( $this->title->getPrefixedDbKey() );
 	}
 
 	public function adder( $source ) {
@@ -874,7 +881,8 @@ class TranslationHelpers {
 		static $counter = 0;
 
 		$counter++;
-		$id = "tmsug-" . wfTimestamp() . "-$counter";
+		$dialogID = $this->dialogID();
+		$id = Sanitizer::escapeId( "tmsug-$dialogID-$counter" );
 		$contents = TranslateUtils::convertWhiteSpaceToHTML( $contents );
 
 		return $this->adder( $id ) . "\n" . Html::rawElement( 'span', array( 'id' => $id ), $contents );

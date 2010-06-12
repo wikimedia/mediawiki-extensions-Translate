@@ -49,14 +49,13 @@ class TranslationEditPage {
 		$data = $this->getEditInfo();
 		$helpers = new TranslationHelpers( $this->getTitle() );
 
+		$id = "tm-target-{$helpers->dialogID()}";
+		$helpers->setTextareaId( $id );
+
 		if ( $this->suggestions === 'only' ) {
 			echo $helpers->getBoxes( $this->suggestions );
 			return;
 		}
-
-		// jQuery borks on something, probably to :, thus, don't use special chars
-		$id = Sanitizer::escapeId( sha1( $this->getTitle()->getPrefixedText() ) );
-		$helpers->setTextareaId( $id );
 
 		$translation = $helpers->getTranslation();
 		$short = strpos( $translation, "\n" ) === false && strlen( $translation ) < 200;
