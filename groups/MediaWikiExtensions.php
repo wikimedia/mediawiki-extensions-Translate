@@ -419,7 +419,6 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-oai',
 		'ext-ogghandler',
 		'ext-opensearchxml',
-		'ext-oversight',
 		'ext-parserfunctions',
 		'ext-pdfhandler',
 		'ext-poem',
