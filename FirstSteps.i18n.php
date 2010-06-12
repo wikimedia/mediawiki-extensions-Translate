@@ -42,7 +42,7 @@ $3Sign up$4',
 at least change your interface language to the language you are going to translate to.
 
 Your interface languages is used as the default target language.
-It is easy to forget to change the langauge to the correct one, so setting it now is higly recommended.
+It is easy to forget to change the language to the correct one, so setting it now is highly recommended.
 
 While you are there, you can also request the software to display translations in other languages you know.
 This setting can be found under tab "{{int:prefs-editing}}".
@@ -78,7 +78,7 @@ If you do not know the language code of a language, now is good time to look it 
 Until we fix the code, please go to [[Project:Translator]] and follow the instructions.
 Then come back to this page.
 
-After you have filed your request, one of the volunteer staff members will check your request and approve it as soon as possible.
+After you have submitted your request, one of the volunteer staff members will check your request and approve it as soon as possible.
 Please be patient.
 
 <del>Check that the following request is correctly filled and then press the request button.</del>',
