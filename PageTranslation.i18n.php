@@ -352,6 +352,7 @@ $messages['be-tarask'] = array(
 	'tpt-sections-oldnew' => 'Новыя і існуючыя адзінкі перакладу',
 	'tpt-sections-deleted' => 'Выдаленыя адзінкі перакладу',
 	'tpt-sections-template' => 'Шаблён старонкі перакладу',
+	'tpt-action-nofuzzy' => 'Не бракаваць пераклады',
 	'tpt-badtitle' => 'Пададзеная назва старонкі ($1) не зьяўляецца слушнай',
 	'tpt-nosuchpage' => 'Старонка $1 не існуе',
 	'tpt-oldrevision' => '$2 не зьяўляецца апошняй вэрсіяй старонкі [[$1]].
@@ -387,6 +388,7 @@ $messages['be-tarask'] = array(
 Гэта старонка зьяўляецца перакладам старонкі [[$1]], пераклад можа быць абноўлены з выкарыстаньнем [$2 інструмэнта перакладу].',
 	'tpt-unknown-page' => 'Гэта прастора назваў зарэзэрваваная для перакладаў старонак зьместу.
 Старонка, якую Вы спрабуеце рэдагаваць, верагодна не зьвязана зь якой-небудзь старонкай пазначанай для перакладу.',
+	'tpt-move-impossible' => 'Перайменаваньне пазначаных на пераклад старонак пакуль немагчымае.',
 	'tpt-install' => 'Запусьціце php maintenance/update.php альбо усталюйце праз вэб-інтэрфэйс для актывізацыі інструмэнтаў перакладу старонак.',
 	'tpt-render-summary' => 'Абнаўленьне для адпаведнасьці новай вэрсіі крынічнай старонкі',
 	'tpt-download-page' => 'Экспартаваць старонку з перакладамі',
@@ -1525,6 +1527,7 @@ $messages['hsb'] = array(
 	'tpt-sections-oldnew' => 'Nowe a eksistowace přełožowanske jednotki',
 	'tpt-sections-deleted' => 'Wušmórnjene přełožowanske jednotki',
 	'tpt-sections-template' => 'Předłoha přełožowanskeje strony',
+	'tpt-action-nofuzzy' => 'Njedeklaruj přełožki za njepłaćiwe',
 	'tpt-badtitle' => 'Podate mjeno strony ($1) płaćiwy titul njeje',
 	'tpt-nosuchpage' => 'Strona $1 njeeksistuje',
 	'tpt-oldrevision' => '$2 aktualna wersija strony [[$1]] njeje.
@@ -1992,6 +1995,7 @@ $messages['lb'] = array(
 	'tpt-sections-oldnew' => 'Nei an Iwwersetzungseeenheeten déi et scho gëtt',
 	'tpt-sections-deleted' => 'Geläschten Iwwersetzungseenheeten',
 	'tpt-sections-template' => 'Iwwersetzung Säiteschabloun',
+	'tpt-action-nofuzzy' => 'Invalidéiert keng Iwwersetzungen',
 	'tpt-badtitle' => 'De Säitennumm deen ugi gouf ($1) ass kee valabelen Titel',
 	'tpt-nosuchpage' => "D'Säit $1 gëtt et net",
 	'tpt-oldrevision' => "$2 ass net déi lescht Versioun vun der Säit [[$1]].
@@ -2028,6 +2032,7 @@ awer déi lescht Versioun kann fir d'Iwwersetzung markéiert ginn.",
 Dës Säit ass eng Iwwersetzung vun der Säit [[$1]] an d'Iwwersetzung ka mat Hëllef vun der [$2 Iwwersetzungs-Fonctioun] aktulaiséiert ginn.",
 	'tpt-unknown-page' => "Dëse Nummraum ass fir d'Iwwersetze vu Säitemat Inhalt reservéiert.
 D'Säit, déi Dir versicht z'änneren schéngt net mat enger Säit déi fir d'iwwersetzung markéiert ass ze korrespondéieren.",
+	'tpt-move-impossible' => "D'Réckele vu Säiten, déi fir d'Iwwersetzung markéiert sinn, ass bis elo net méiglech.",
 	'tpt-install' => "Lancéiert php maintenance/update.php oder web install fir d'Fonctioun vun der Säiteniwwersetzung anzeschalten.",
 	'tpt-render-summary' => 'Aktualiséieren fir mat der neier Versioun vun der Quellsäit iwwereneenzestëmmen',
 	'tpt-download-page' => 'Säit mat Iwwersetzungen exportéieren',
@@ -3460,6 +3465,7 @@ $messages['zh-hant'] = array(
 	'tpt-templatediff' => '頁面模板已改變。',
 	'tpt-diff-old' => '上一個文字',
 	'tpt-diff-new' => '下一個文字',
+	'tpt-sections-template' => '翻譯頁面模版',
 	'tpt-translate-this' => '翻譯本頁',
 	'translate-tag-translate-link-desc' => '翻譯本頁',
 	'tpt-languages-legend' => '其它語言：',

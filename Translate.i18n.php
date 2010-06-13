@@ -17355,6 +17355,7 @@ $messages['uk'] = array(
 	'translate-suppress-complete' => 'Приховати повністю перекладені групи повідомлень',
 	'translate-language' => 'Мова',
 	'translate-total' => 'Повідомлення',
+	'translate-total-tooltip' => 'Загальна кількість повідомлень у цій групі повідомлень.',
 	'translate-untranslated' => 'Неперекладені',
 	'translate-percentage-complete' => 'Готово',
 	'translate-percentage-fuzzy' => 'Застаріло',
@@ -17369,7 +17370,7 @@ $messages['uk'] = array(
 
 Якщо ви перекладач на певну мову, але у відповідному списку вас нема, додайте своє ім\'я до списку перекладачів на [[:Category:Languages|порталі]] цієї мови.
 На бічній панель знаходиться посилання на портал мови вашого інтерфейсу.',
-	'supportedlanguages-translators' => 'Перекладачів: $1',
+	'supportedlanguages-translators' => '{{PLURAL:$2|Перекладач|Перекладачі}}: $1',
 	'translate-save' => 'Зберегти ($1)',
 	'translate-jssti-add' => 'Додати в список',
 	'translate-group-desc-mediawikicore' => 'Ця група містить повідомлення, які використовують у поточній альфа-версії MediaWiki ({{CURRENTVERSION}})',
@@ -18668,6 +18669,7 @@ $messages['zh-hant'] = array(
 	'translate-manage-action-import' => '匯入',
 	'translate-manage-action-ignore' => '忽略',
 	'translate-manage-submit' => '執行',
+	'translate-manage-import-ignore' => '跳過消息 $1。',
 	'translate-manage-import-done' => '全部完成！',
 	'translate-manage-subtitle' => '管理',
 	'translate-import-load' => '載入檔案',
