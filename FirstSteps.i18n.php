@@ -91,7 +91,7 @@ You can now start translating.
 Do not be afraid if still feels new and confusing to you.
 At [[Project list]] there is an overview of projects you can contribute translations to.
 Most of the projects have a short description page with a "\'\'Translate this project\'\'" link, that will take you to a page which lists all untranslated messages.
-A list of all message groups with the [[[Special:LanguageStats|current translation status for a language]] is also available.
+A list of all message groups with the [[Special:LanguageStats|current translation status for a language]] is also available.
 
 If you feel that you need to understand more before you start translating, you can read the [[FAQ|Frequently asked questions]].
 Unfortanely documentation can be out of date sometimes.
