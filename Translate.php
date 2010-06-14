@@ -58,6 +58,7 @@ $wgHooks['AlternateEdit'][] = 'TranslateEditAddons::intro';
 $wgHooks['EditPageBeforeEditButtons'][] = 'TranslateEditAddons::buttonHack';
 $wgHooks['EditPage::showEditForm:fields'][] = 'TranslateEditAddons::keepFields';
 $wgHooks['SkinTemplateTabs'][] = 'TranslateEditAddons::tabs';
+#$wgHooks['ArticleAfterFetchContent'][] = 'TranslateEditAddons::customDisplay';
 
 # Custom preferences
 $wgDefaultUserOptions['translate'] = 0;
@@ -291,6 +292,8 @@ function efTranslateInit() {
 		$wgHooks['ParserTestTables'][] = 'PageTranslationHooks::parserTestTables';
 
 		$wgHooks['SkinTemplateToolboxEnd'][] = 'PageTranslationHooks::exportToolbox';
+
+		$wgHooks['LinksUpdate'][] = 'PageTranslationHooks::preventCategorization';
 	}
 }
 

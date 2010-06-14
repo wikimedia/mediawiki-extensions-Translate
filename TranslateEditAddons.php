@@ -150,6 +150,8 @@ EOEO;
 	}
 
 	static function buttonHack( $editpage, &$buttons, $tabindex ) {
+		global $wgTranslateDocumentationLanguageCode;
+
 		if ( !self::isMessageNamespace( $editpage->mTitle ) ) {
 			return true;
 		}
@@ -158,7 +160,7 @@ EOEO;
 
 		list( , $code ) = self::figureMessage( $editpage->mTitle );
 
-		if ( $code !== 'qqq' ) {
+		if ( $code !== $wgTranslateDocumentationLanguageCode ) {
 			return true;
 		}
 
@@ -231,10 +233,8 @@ EOEO;
 		global $wgTranslateDocumentationLanguageCode, $wgOut, $wgRequest;
 
 		$th = new TranslationHelpers( $object->mTitle );
-
 		if ( $object->firsttime && !$wgRequest->getCheck( 'oldid' ) && !$wgRequest->getCheck( 'undo' ) ) {
-		} else {
-			$th->setTranslation( $object->textbox1 );
+			$object->textbox1 = $th->getTranslation();
 		}
 
 		TranslateUtils::injectCSS();
@@ -394,4 +394,12 @@ EOEO;
 
 		return true;
 	}
+
+	public static function customDisplay( $article, &$content ) {
+		if ( self::isMessageNamespace( $article->getTitle() ) ) {
+			$content = "<pre><nowiki>$content</nowiki></pre>";
+		}
+		return true;
+	}
+
 }

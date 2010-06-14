@@ -514,4 +514,15 @@ FOO;
 
 		return true;
 	}
+
+	public static function preventCategorization( $updater ) {
+		global $wgTranslateDocumentationLanguageCode;
+		$title = $updater->getTitle();
+		list( , $code ) = TranslateUtils::figureMessage( $title );
+		if ( $title->getNamespace() == NS_TRANSLATIONS && $code !== $wgTranslateDocumentationLanguageCode ) {
+			$updater->mCategories = array();
+		}
+		return true;
+	}
+
 }
