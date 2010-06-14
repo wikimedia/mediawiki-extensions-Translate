@@ -8,7 +8,6 @@ TEMPLATE:
     class: YamlFFS
     codeAsRoot: 1
     codeMap:
-      es:    es-AR
       pt:    pt-PT
       pt-br: pt-BR
       sr-ec: sr-EC
