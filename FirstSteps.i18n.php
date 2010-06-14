@@ -116,12 +116,49 @@ $messages['qqq'] = array(
 );
 
 /** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
+ * @author EugeneZelenko
+ * @author Jim-by
  * @author Wizardist
  */
 $messages['be-tarask'] = array(
 	'firststeps' => 'Першыя крокі',
 	'firststeps-desc' => '[[Special:FirstSteps|Спэцыяльная старонка]] для пачатку працы з пашырэньнем Translate',
 	'translate-fs-pagetitle-done' => ' — зроблена!',
+	'translate-fs-pagetitle' => 'Майстар пачатковага навучаньня — $1',
+	'translate-fs-signup-title' => 'Зарэгіструйцеся',
+	'translate-fs-settings-title' => 'Устанавіце Вашыя ўстаноўкі',
+	'translate-fs-userpage-title' => 'Стварыце Вашую старонку ўдзельніка',
+	'translate-fs-permissions-title' => 'Запытайце правы перакладчыка',
+	'translate-fs-target-title' => 'Пачніце перакладаць!',
+	'translate-fs-email-title' => 'Пацьвердзіць Ваш адрас электроннай пошты',
+	'translate-fs-intro' => "Запрашаем у майстар пачатковага навучаньня {{GRAMMAR:родны|{{SITENAME}}}}.
+Вас правядуць праз працэс станаўленьня перакладчыкам крок за крокам.
+Пасьля гэтага Вы зможаце перакладаць ''паведамленьні інтэрфэйсу'' ўсіх праектаў, якія падтрымліваюцца ў {{GRAMMAR:месны|{{SITENAME}}}}.",
+	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount.png|frame]]
+
+Спачатку Вам неабходна зарэгістравацца.
+
+Аўтарства Вашых перакладаў будзе прыпісвацца Вашаму рахунку.
+Выява справа паказвае, як запаўняць палі.
+
+Калі Вы ўжо зарэгістраваныя, то замест$1 увайдзіце як$2.
+Пасьля рэгістрацыі, калі ласка, вярніцеся на гэтую старонку.
+
+$3Зарэгістравацца$4',
+	'translate-fs-settings-text' => 'Цяпер Вам неабходна перайсьці ў устаноўкі і
+зьмяніць мову інтэрфэйсу на мову, на якую Вы зьбіраецеся перакладаць.
+
+Мова Вашага інтэрфэйсу будзе выкарыстоўвацца, як мова перакладу па змоўчваньні.
+Вельмі лёгка забыцца зьмяніць мову, таму настойліва рэкамэндуем зьмяніць яе зараз.
+
+Пакуль Вы там, Вы можаце ўключыць паказ перакладаў на іншыя мовы, якія Вы ведаеце.
+Гэтая ўстаноўка знаходзіцца ў закладцы «{{int:prefs-editing}}».
+Таксама, Вы можаце паспрабаваць іншыя ўстаноўкі.
+
+Перайдзіце на Вашую [[Special:Preferences|старонку ўстановак]], а потым вярніцеся на гэтую старонку.',
+	'translate-fs-settings-skip' => 'Я ўсё выканаў.
+Перайсьці далей.',
+	'translate-fs-userpage-done' => 'Выдатна! Цяпер Вы маеце старонку ўдзельніка.',
 );
 
 /** Breton (Brezhoneg)
@@ -130,7 +167,14 @@ $messages['be-tarask'] = array(
 $messages['br'] = array(
 	'firststeps' => 'Pazenn gentañ',
 	'translate-fs-pagetitle-done' => '↓  - graet !',
+	'translate-fs-pagetitle' => "Heñcher loc'hañ - $1",
 	'translate-fs-signup-title' => 'En em enskrivañ',
+	'translate-fs-settings-title' => 'Kefluniañ ho arventennoù',
+	'translate-fs-userpage-title' => 'Krouiñ ho fajenn implijer',
+	'translate-fs-permissions-title' => 'Goulennit an aotreoù troer',
+	'translate-fs-target-title' => 'Kregiñ da dreiñ !',
+	'translate-fs-email-title' => "Kadarnait ho chomlec'h postel",
+	'translate-fs-userpage-submit' => 'Krouiñ ma fajenn implijer',
 );
 
 /** German (Deutsch)
@@ -258,6 +302,17 @@ Si ya te has registrado, $1inicia sesión$2 entonces.
 Una vez que te has registrado, por favor regresa a esta página.
 
 $3Registrarse$4',
+	'translate-fs-settings-text' => 'Ahora debes ir a tus preferencias y
+al menos cambiar el idioma de la interfaz al idioma que quieres traducir.
+
+El idioma de la interfaz es usado como el idioma a traducir por defecto.
+Es fácil olvidarse de cambiar el idioma al correcto, por lo que configurarlo ahora es altamente recomendado.
+
+Mientras estás aquí, puedes hacer que el software muestre traducciones en otros idiomas que conozcas.
+Esta configuración se encuentra bajo la pestaña "{{int:prefs-editing}}".
+Siéntete libre de explorar otras configuraciones también.
+
+Ve a tu [[Special:Preferences|página de preferencias]] ahora y entonces puedes volver a ésta página.',
 	'translate-fs-settings-skip' => 'He terminado.
 Déjenme continuar.',
 	'translate-fs-userpage-submit' => 'Crear mi página de usuario',
@@ -371,6 +426,10 @@ $messages['gl'] = array(
 	'translate-fs-permissions-title' => 'Solicite permisos de tradutor',
 	'translate-fs-target-title' => 'Comece a traducir!',
 	'translate-fs-email-title' => 'Confirme o seu enderezo de correo electrónico',
+	'translate-fs-settings-skip' => 'Listo.
+Que vén agora?',
+	'translate-fs-userpage-submit' => 'Crear a miña páxina de usuario',
+	'translate-fs-userpage-done' => 'Ben feito! Agora xa ten unha páxina de usuario.',
 );
 
 /** Upper Sorbian (Hornjoserbsce)
@@ -526,10 +585,16 @@ $messages['lb'] = array(
 	'translate-fs-pagetitle' => 'Assistent fir unzefänken - $1',
 	'translate-fs-signup-title' => 'Schreift Iech an',
 	'translate-fs-settings-title' => 'Är Astellunge festleeën',
+	'translate-fs-userpage-title' => 'Maacht Är Benotzersäit',
+	'translate-fs-permissions-title' => 'Iwwersetzerrechter ufroen',
 	'translate-fs-target-title' => 'Ufänke mat iwwersetzen!',
 	'translate-fs-email-title' => 'Confirméiert är E-Mailadress',
+	'translate-fs-intro' => "Wëllkomm beim {{SITENAME}}-Startassistent.
+Iech gëtt gewisen, Déi Dir Schrëtt fir Schrëtt zum Iwwersetzer gitt.
+Um Schluss kënnt Dir all ''Interface-Messagen'' vun de vun {{SITENAME}} ënnerstetzte Projeten iwwersetzen.",
 	'translate-fs-settings-skip' => 'Ech si fäerdeg.
 Loosst mech weidermaachen.',
+	'translate-fs-userpage-submit' => 'Meng Benotzersäit maachen',
 	'translate-fs-userpage-done' => 'Gutt gemaach! dir hutt elo eng Benotzersäit.',
 );
 
@@ -924,5 +989,20 @@ $3Зарегистрироваться$4',
 Это позволяет другим участникам связываться с вами по электронной почте.
 Вы также будете получать новостную рассылку раз в месяц.
 Если вы не хотите получать рассылку, то вы можете отказаться от неё на вкладке «{{int:prefs-misc}}» ваших [[Special:Preferences|настроек]].',
+);
+
+/** Ukrainian (Українська)
+ * @author Тест
+ */
+$messages['uk'] = array(
+	'firststeps' => 'Перші кроки',
+	'translate-fs-pagetitle-done' => ' - зроблено!',
+	'translate-fs-signup-title' => 'Зареєструйтеся',
+	'translate-fs-settings-title' => 'Встановіть ваші налаштування',
+	'translate-fs-userpage-title' => 'Створіть вашу сторінку користувача',
+	'translate-fs-permissions-title' => 'Зробіть запит на права перекладача',
+	'translate-fs-target-title' => 'Почніть перекладати!',
+	'translate-fs-email-title' => 'Підтвердіть вашу адресу електронної пошти',
+	'translate-fs-userpage-submit' => 'Створити мою сторінку користувача',
 );
 
