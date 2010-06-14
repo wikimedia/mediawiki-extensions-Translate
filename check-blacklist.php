@@ -269,6 +269,13 @@ array(
 	)
 ),
 array(
+	'group' => 'ext-translate-firststeps',
+	'check' => 'links',
+	'message' => array(
+		'translate-fs-signup-text', // Contains links that are translated
+	)
+),
+array(
 	'group' => 'ext-ui-prefswitch',
 	'check' => 'links',
 	'message' => array(
