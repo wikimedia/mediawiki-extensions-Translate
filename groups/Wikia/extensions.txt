@@ -3,6 +3,10 @@ file = AchievementsII/i18n/AchievementsII.i18n.php
 
 Action Panel
 
+Combo Ajax Login
+file = AjaxLogin/ComboAjaxLogin.i18n.php
+descmsg = comboajaxlogin-desc
+
 Ajax Poll
 
 # Wrong format
