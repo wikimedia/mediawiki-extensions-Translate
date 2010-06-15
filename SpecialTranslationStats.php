@@ -311,7 +311,6 @@ class SpecialTranslationStats extends SpecialPage {
 	}
 
 	public function draw( FormOptions $opts ) {
-		wfLoadExtensionMessages( 'Translate' );
 		global $wgTranslatePHPlotFont, $wgLang;
 
 		$width = $opts->getValue( 'width' );

@@ -153,5 +153,3 @@ class TranslateYaml {
 	}
 }
 
-// BC
-class TranslateSpyc extends TranslateYaml { }

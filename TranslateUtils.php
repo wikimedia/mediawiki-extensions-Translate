@@ -283,13 +283,8 @@ class TranslateUtils {
 	 * @return String: (full or partial) web path.
 	 */
 	public static function assetPath( $path ) {
-		global $wgExtensionAssetsPath, $wgScriptPath, $wgVersion;
-
-		if ( version_compare( $wgVersion, '1.16', '>=' ) ) {
-			return "$wgExtensionAssetsPath/Translate/$path";
-		} else {
-			return "$wgScriptPath/extensions/Translate/$path";
-		}
+		global $wgExtensionAssetsPath;
+		return "$wgExtensionAssetsPath/Translate/$path";
 	}
 
 	public static function snippet( &$text, $length = 10 ) {

@@ -845,7 +845,7 @@ class MessageGroups {
 
 		foreach ( $wgTranslateGroupFiles as $file ) {
 			wfDebug( $file . "\n" );
-			$fgroups = TranslateSpyc::parseGroupFile( $file );
+			$fgroups = TranslateYaml::parseGroupFile( $file );
 
 			foreach( $fgroups as $id => $conf ) {
 				if ( !empty( $conf['AUTOLOAD'] ) && is_array( $conf['AUTOLOAD'] ) ) {

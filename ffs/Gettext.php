@@ -583,7 +583,7 @@ class GettextFFS extends SimpleFFS {
 			$messages[$key] = $value;
 		}
 
-		$output .= TranslateSpyc::dump( $messages );
+		$output .= TranslateYaml::dump( $messages );
 
 		return $output;
 	}
