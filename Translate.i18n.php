@@ -12779,6 +12779,7 @@ Jeśli grupa zawiera podzbiór lub nadzbiór komunikatów innej grupy, jest wyś
 	'translate-edit-warnings' => 'Ostrzeżenia o niedokończonych tłumaczeniach',
 	'translate-edit-tmsugs' => 'Sugestie na podstawie poprzednich tłumaczeń',
 	'translate-edit-tmmatch' => 'pasuje $1%',
+	'translate-use-suggestion' => 'Wstaw tę propozycję w obszar edycji tłumaczenia. Dotychczasowa treść zostanie zastąpiona.',
 	'translate-edit-goto-no-prev' => 'Brak poprzedniego komunikatu',
 	'translate-edit-goto-no-next' => 'Brak następnego komunikatu',
 	'translate-edit-goto-prev' => 'Edycja poprzedniego komunikatu',
@@ -12880,6 +12881,7 @@ Domyślna lista języków zależy od Twojego języka.',
 	'translate-translations-messagename' => 'Nazwa:',
 	'translate-translations-project' => 'Projekt:',
 	'translate-translations-including-no-param' => 'Podaj prawidłową nazwę strony w parametrze podstrony',
+	'translate-translations-history-short' => 'h',
 	'languagestats' => 'Statystyka językowa',
 	'languagestats-summary' => 'Strona pokazuje statystykę tłumaczenia dla wszystkich grup komunikatów we wskazanym języku.',
 	'languagestats-stats-for' => 'Statystyki tłumaczenia dla $1 ($2)',
@@ -12889,9 +12891,15 @@ Domyślna lista języków zależy od Twojego języka.',
 	'translate-suppress-complete' => 'Pomiń grupy komunikatów całkowicie przetłumaczone',
 	'translate-language' => 'Język',
 	'translate-total' => 'Komunikaty',
+	'translate-total-tooltip' => 'Liczba wszystkich komunikatów w tej grupie.',
 	'translate-untranslated' => 'Nieprzetłumaczone',
+	'translate-untranslated-tooltip' => 'Liczba wszystkich nieprzetłumaczonych komunikatów w tej grupie.
+Uwzględnia ona komunikaty, które zostały oznaczone jako nieaktualne.',
 	'translate-percentage-complete' => 'Przetłumaczone',
+	'translate-percentage-complete-tooltip' => 'Odsetek wiadomości w grupie, które zostały przetłumaczone i nie są oznaczone jako nieaktualne.',
 	'translate-percentage-fuzzy' => 'Zdezaktualizowane',
+	'translate-percentage-fuzzy-tooltip' => 'Odsetek wiadomości w grupie, które zostały przetłumaczone i nie są oznaczone jako nieaktualne.
+Komunikaty oznaczane są jako nieaktualne gdy źródłowy komunikat w języku angielskim został zmieniony, jeśli automat wykryje nieprawidłowości lub ktoś oznaczy komunikat ręcznie.',
 	'translate-nothing-to-do' => 'Wszystkie możliwe tłumaczenia zostały wykonane.
 Proponujemy przejrzeć komunikaty korzystając z [[Special:Translate|{{int:translate}}]].',
 	'supportedlanguages' => 'Obsługiwane języki',
@@ -12903,6 +12911,10 @@ If a language is not listed, you can find out how to start a localization projec
 If you translate to a language and your name is not included, please add your name to the list of translators on the [[:Category:Languages|portal]] for that language.
 See the menu bar for a link to the portal for the language of your preference.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Tłumacz|Tłumacze:}} $1',
+	'supportedlanguages-noportal-title' => 'Nie określono przestrzeni nazw dla portalu',
+	'supportedlanguages-noportal' => 'Ta strona nie działa ponieważ administrator wiki nie określił NS_PORTAL,
+Na tej stronie znajduje się lista portali językowych dla każdego z portali odpowiadającemu kodowi języka oraz podstronie „translators“.
+Podstrona „translators“ musi zawierać szablon [[:{{ns:template}}:User|User]] z nazwą użytkownika jako parametrem.',
 	'translate-save' => 'Zapisz ($1)',
 	'translate-jssti-add' => 'Dodaj do listy',
 	'translate-group-desc-mediawikicore' => 'Grupa zawiera komunikaty wykorzystywane w bieżącej wersji alfa MediaWiki ({{CURRENTVERSION}})',
@@ -13674,6 +13686,7 @@ Detalhes: $1',
 
 /** Brazilian Portuguese (Português do Brasil)
  * @author Eduardo.mps
+ * @author Giro720
  * @author Heldergeovane
  * @author Luckas Blade
  */
@@ -13886,7 +13899,11 @@ O método <code>$1</code> não é suportado.',
 	'translate-import-err-invalid-title' => 'O nome <nowiki>$1</nowiki> fornecido para o arquivo era inválido.',
 	'translate-import-err-no-such-file' => 'O arquivo <nowiki>$1</nowiki> não existe ou não foi carregado localmente.',
 	'translate-gs-speakers' => 'Falantes',
+	'translate-gs-score' => 'Pont.',
+	'translate-gs-multiple' => 'Múltiplos',
+	'translate-gs-count' => 'Contagem',
 	'translate-gs-total' => 'Total',
+	'translate-gs-avgscore' => 'Pont. média',
 );
 
 /** Tarifit (Tarifit)

@@ -2559,6 +2559,7 @@ $messages['ps'] = array(
 );
 
 /** Portuguese (Português)
+ * @author Giro720
  * @author Hamilton Abreu
  * @author Malafaya
  * @author Waldir
@@ -2601,7 +2602,7 @@ Antes de marcar esta versão para tradução, verifique que as alterações às 
 	'tpt-rev-latest' => 'versão mais recente',
 	'tpt-rev-old' => 'diferenças em relação à versão marcada anterior',
 	'tpt-rev-mark-new' => 'marcar esta versão para tradução',
-	'tpt-rev-unmark' => 'remover estas página das páginas para tradução',
+	'tpt-rev-unmark' => 'remover esta página das páginas para tradução',
 	'tpt-translate-this' => 'traduzir esta página',
 	'translate-tag-translate-link-desc' => 'Traduzir esta página',
 	'translate-tag-markthis' => 'Marcar esta página para tradução',
@@ -2652,6 +2653,7 @@ Nome: $1',
 	'tpt-sections-oldnew' => 'Unidades de tradução novas e existentes',
 	'tpt-sections-deleted' => 'Unidades de tradução apagadas',
 	'tpt-sections-template' => 'Modelo de página de tradução',
+	'tpt-action-nofuzzy' => 'Não invalidar traduções',
 	'tpt-badtitle' => 'O nome de página dado ($1) não é um título válido',
 	'tpt-nosuchpage' => 'A página $1 não existe',
 	'tpt-oldrevision' => '$2 não é a versão atual da página [[$1]].
@@ -2674,6 +2676,7 @@ Antes de marcar esta versão para tradução, verifique se as mudanças nas seç
 	'tpt-rev-latest' => 'versão atual',
 	'tpt-rev-old' => 'Diferença em relação à versão marcada anterior',
 	'tpt-rev-mark-new' => 'marcar esta versão para traduçao',
+	'tpt-rev-unmark' => 'remover esta página das páginas para tradução',
 	'tpt-translate-this' => 'traduzir esta página',
 	'translate-tag-translate-link-desc' => 'Traduzir esta página',
 	'translate-tag-markthis' => 'Marcar esta página para tradução',
