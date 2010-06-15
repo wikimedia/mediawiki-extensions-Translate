@@ -343,7 +343,7 @@ FOO;
 
 				return false;
 			}
-		} elseif ( $action === 'move' ) {
+		} elseif ( $action === 'move' || $action === 'delete' ) {
 			$page = TranslatablePage::newFromTitle( $title );
 			if ( $page->getMarkedTag() ) {
 				$result = array( 'tpt-move-impossible' );

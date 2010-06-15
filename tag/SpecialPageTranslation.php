@@ -59,6 +59,7 @@ class SpecialPageTranslation extends SpecialPage {
 		if ( $revision === -1 ) {
 			$page = TranslatablePage::newFromTitle( $title );
 			$page->removeTags();
+			$page->getTitle()-invalidateCache();
 			global $wgUser;
 			$logger = new LogPage( 'pagetranslation' );
 			$params = array( 'user' => $wgUser->getName() );
@@ -166,15 +167,11 @@ class SpecialPageTranslation extends SpecialPage {
 		// Pages where mark <= tag
 		$items = array();
 		foreach ( $pages as $index => $page ) {
-			if ( !isset( $page['tp:mark'] ) ) {
+			if ( !isset( $page['tp:mark'] ) || !isset( $page['tp:tag'] ) ) {
 				continue;
 			}
 
-			if ( !isset( $page['tp:tag'] ) ) {
-				continue;
-			}
-
-			if ( $page['tp:mark'] > $page['tp:tag'] ) {
+			if ( $page['tp:tag'] !== $page['title']->getLatestRevID() ) {
 				continue;
 			}
 
@@ -193,16 +190,19 @@ class SpecialPageTranslation extends SpecialPage {
 		// Pages which are never marked
 		$items = array();
 		foreach ( $pages as $index => $page ) {
-			if ( isset( $page['tp:mark'] ) ) {
+			if ( isset( $page['tp:mark'] ) || !isset( $page['tp:tag'] ) ) {
 				continue;
 			}
 
-			if ( !isset( $page['tp:tag'] ) ) {
+			/* Ignore pages which have had <translate> at some point, but which
+			 * have never been marked. */
+			if ( $page['title']->getLatestRevID() !== $page['tp:tag'] ) {
+				unset( $pages[$index] );
 				continue;
 			}
 
 			$link = $this->user->getSkin()->link( $page['title'] );
-			$acts = $this->actionLinks( $page['title'], $page['tp:tag'], 'old' );
+			$acts = $this->actionLinks( $page['title'], $page['tp:tag'], 'new' );
 			$items[] = "<li>$link ($acts) </li>";
 
 			unset( $pages[$index] );
@@ -497,6 +497,7 @@ class SpecialPageTranslation extends SpecialPage {
 		);
 		$logger->addEntry( 'mark', $page->getTitle(), null, array( serialize( $params ) ) );
 
+		$page->getTitle()-invalidateCache();
 		$this->setupRenderJobs( $page );
 
 		// Re-generate caches
