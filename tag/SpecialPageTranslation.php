@@ -176,6 +176,9 @@ class SpecialPageTranslation extends SpecialPage {
 			}
 
 			$link = $this->user->getSkin()->link( $page['title'] );
+			if ( $page['tp:mark'] !== $page['tp:tag'] ) {
+				$link = "<b>$link</b>";
+			}
 			$acts = $this->actionLinks( $page['title'], $page['tp:mark'], 'old' );
 			$items[] = "<li>$link ($acts) </li>";
 			unset( $pages[$index] );
