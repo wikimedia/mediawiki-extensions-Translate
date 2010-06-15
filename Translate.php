@@ -240,6 +240,13 @@ function efTranslateInit() {
 		$wgSpecialPages['PageTranslation'] = 'SpecialPageTranslation';
 		$wgAvailableRights[] = 'pagetranslation';
 
+		global $wgLogNames, $wgLogActionsHandlers, $wgLogTypes, $wgLogHeaders;
+		$wgLogTypes[] = 'pagetranslation';
+		$wgLogHeaders['pagetranslation'] = 'pt-log-header';
+		$wgLogNames['pagetranslation'] = 'pt-log-name';
+		$wgLogActionsHandlers['pagetranslation/mark'] = 'PageTranslationHooks::formatLogEntry';
+		$wgLogActionsHandlers['pagetranslation/unmark'] = 'PageTranslationHooks::formatLogEntry';
+
 		// Namespaces
 		global $wgPageTranslationNamespace, $wgExtraNamespaces;
 		global $wgNamespacesWithSubpages, $wgNamespaceProtection;

@@ -59,6 +59,10 @@ class SpecialPageTranslation extends SpecialPage {
 		if ( $revision === -1 ) {
 			$page = TranslatablePage::newFromTitle( $title );
 			$page->removeTags();
+			global $wgUser;
+			$logger = new LogPage( 'pagetranslation' );
+			$params = array( 'user' => $wgUser->getName() );
+			$logger->addEntry( 'unmark', $page->getTitle(), null, array( serialize( $params ) ) );
 			$wgOut->addWikiMsg( 'tpt-unmarked', $title->getPrefixedText() );
 
 			return;
@@ -483,6 +487,15 @@ class SpecialPageTranslation extends SpecialPage {
 		// Stores the names of changed sections in the database. Not currently used for anything.
 		$page->addMarkedTag( $newrevision, $changed );
 		$this->addFuzzyTags( $page, $changed );
+
+		global $wgUser;
+		$logger = new LogPage( 'pagetranslation' );
+		$params = array(
+			'user' => $wgUser->getName(),
+			'revision' => $newrevision,
+			'changed' => count( $changed ),
+		);
+		$logger->addEntry( 'mark', $page->getTitle(), null, array( serialize( $params ) ) );
 
 		$this->setupRenderJobs( $page );
 

@@ -525,4 +525,20 @@ FOO;
 		return true;
 	}
 
+	public static function formatLogEntry( $type, $action, $title, $forContent, $params ) {
+		global $wgLang, $wgContLang;
+
+		$language = $forContent ? $wgContLang : $wgLang;
+		$opts = array( 'parseinline', 'language' => $language );
+		$_ = unserialize( $params[0] );
+		$user =  $_['user'];
+
+		if ( $action === 'mark' ) {
+			$revision =  $_['revision'];
+			return wfMsgExt( 'pt-log-mark', $opts, $title->getPrefixedText(), $user, $revision );
+		} elseif( $action === 'unmark' ) {
+			return wfMsgExt( 'pt-log-unmark', $opts, $title->getPrefixedText(), $user );
+		}
+	}
+
 }
