@@ -203,6 +203,11 @@ $3Зарэгістравацца$4',
 Таксама, Вы можаце зьвязацца з перакладчыкамі на Вашую мову на [[Portal:$1|партале Вашай мовы]].
 Спасылка парталу перанакіруе Вас на партал мовы пазначанай ў Вашых [[Special:Preferences|моўных устаноўках]].
 Калі ласка, зьмяніце іх, калі трэба.",
+	'translate-fs-email-text' => 'Калі ласка, падайце адрас Вашай электроннай пошты ў [[Special:Preferences|Вашых устаноўках]] і пацьвердзіце яго з электроннага ліста, які будзе Вам дасланы.
+
+Гэта дазволіць іншым удзельнікам зносіцца з Вамі праз электронную пошту.
+Таксама, Вы будзеце атрымліваць штомесячныя лісты з навінамі.
+Калі Вы не жадаеце атрымліваць лісты з навінамі, Вы можаце адмовіцца ад іх на закладцы «{{int:prefs-misc}}» Вашых [[Special:Preferences|установак]].',
 );
 
 /** Breton (Brezhoneg)
@@ -317,9 +322,30 @@ Wenn du keinen erhalten möchtest, kannst du dich im Tab „{{int:prefs-misc}}�
 Wenn du keinen Newsletter haben möchtest, kannst du dich im Tab Translate-fs-target-text',
 );
 
+/** Lower Sorbian (Dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'translate-fs-target-text' => "Gratulacija!
+Móžoš něnto pśełožowanje zachopiś.
+
+Buź mimo starosći, jolic zda se śi hyšći nowe a konfuzne.
+Na [[Project list|lisćinje projektow]] jo pśeglěd projektow, ku kótarymž móžoš pśełožki pśinosowaś. Nejwěcej projektow ma krotky wopisański bok z wótkazom \"''Toś ten projekt pśełožyś''\", kótaryž wjeźo śi k bokoju, kótaryž wšykne njepśełožone powěźeńki wopśimujo.
+Lisćina wšyknych kupkow powěźeńkow z [[Special:LanguageStats|aktualnym pśełožowanskim stawom za rěc]] stoj teke k dispoziciji.
+
+Jolic měniš, až dejš nejpjerwjej wěcej rozumiś, nježli až zachopijoš  pśełožowaś, móžoš [[FAQ|Ceste pšašanja]] cytaś.
+Dokumentacija móžo bóžko wótergi zestarjona byś.
+Joli něco jo, wó kótaremž mysliš, až by měło móžno byś, ale njenamakajoš, kak móžoš to cyniś, pšašaj se ga na boku [[Support|Pódpěra]].
+
+Móžoš se teke ze sobupśełožowarjami teje sameje rěcy na [[Portal:\$1|portalu swójeje rěcy]] do zwiska stajiś.
+Portal wótkazujo na twójo aktualne [[Special:Preferences|rěcne nastajenje]].
+Pšosym změń jo, jolic to jo trěbne.",
+);
+
 /** Spanish (Español)
  * @author Crazymadlover
  * @author Diego Grez
+ * @author Tempestas
  */
 $messages['es'] = array(
 	'firststeps' => 'Primeros pasos',
@@ -359,6 +385,10 @@ Siéntete libre de explorar otras configuraciones también.
 Ve a tu [[Special:Preferences|página de preferencias]] ahora y entonces puedes volver a ésta página.',
 	'translate-fs-settings-skip' => 'He terminado.
 Déjenme continuar.',
+	'translate-fs-userpage-text' => 'Ahora es necesario crear una página de usuario.
+Por favor escribe algo sobre ti; Quién eres y qué haces.
+Esto ayudará a la {{SITENAME}} comunidad para trabajar juntos.
+En {{SITENAME}} hay gente de todo el mundo trabajando en distintos idiomas y proyectos.',
 	'translate-fs-userpage-submit' => 'Crear mi página de usuario',
 	'translate-fs-userpage-done' => 'Bien hecho! Ahora tienes una página de usuario.',
 );
@@ -470,8 +500,55 @@ $messages['gl'] = array(
 	'translate-fs-permissions-title' => 'Solicite permisos de tradutor',
 	'translate-fs-target-title' => 'Comece a traducir!',
 	'translate-fs-email-title' => 'Confirme o seu enderezo de correo electrónico',
+	'translate-fs-intro' => "Benvido ao asistente para dar os primeiros pasos en {{SITENAME}}.
+Esta guía axudaralle, paso a paso, a través do proceso para se converter nun tradutor.
+Cando remate, poderá traducir as ''mensaxes da interface'' de todos os proxectos soportados en {{SITENAME}}.",
+	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount.png|frame]]
+
+No primeiro paso, cómpre que se rexistre.
+
+As traducións que faga atribuiránselle ao seu nome de usuario.
+A imaxe da dereita mostra como encher os campos.
+
+Se xa se rexistrou, $1acceda ao sistema$2.
+Unha vez que o faga, vova a esta páxina.
+
+$3Rexístrese$4',
+	'translate-fs-settings-text' => 'Agora ten que ás súas preferencias e
+cambiar a lingua da interface pola lingua á que vai traducir as mensaxes.
+
+A lingua da interface úsase como lingua por defecto para as traducións.
+É doado esquecerse de cambiar a lingua, de xeito que definila agora é bastante recomendable.
+
+De paso que vai ás preferencias, tamén pode solicitar que o software mostre as traducións noutras linguas que coñeza.
+Esta configuración pódese atopar na lapela "{{int:prefs-editing}}".
+Síntase libre de probar o resto de opcións tamén.
+
+Vaia á [[Special:Preferences|páxina das súas preferencias]] e volva despois a esta páxina.',
 	'translate-fs-settings-skip' => 'Listo.
 Que vén agora?',
+	'translate-fs-userpage-text' => 'Agora necesita crear unha páxina de usuario.
+
+Escriba algo sobre si mesmo; quen é vostede e o que fai.
+Isto axudará á comunidade de {{SITENAME}} a traballar xuntos.
+En {{SITENAME}} hai xente de todo o mundo traballando en diferentes linguas e proxectos.
+
+Na cadra preenchida enriba na primeira liña pode ollar:  <nowiki>{{#babel:en-2}}</nowiki>.
+Complétea cos seus coñecementos lingüísticos.
+O número que vai despois do código da lingua describe o ben que a coñece.
+As alternativas son:
+* 1 - un pouco
+* 2 - coñecemento básico
+* 3 - bo coñecemento
+* 4 - nivel de falante nativo
+* 5 - usa a lingua profesionalmente, é dicir, é un tradutor profesional.
+
+Se vostede é un falante nativo dunha lingua, ignore o nivel e use só o código de lingua.
+Exemplo: se a súa lingua materna é o italiano, se fala o galego ben e o inglés un pouco, tería que escribir:
+<code><nowiki>{{#babel:it|gl-3|en-1}}</nowiki></code>
+
+Se non sabe coñece o código de lingua dalgunha lingua, agora é un bo momento para descubrilo.
+Pode empregar a lista que hai a continuación.',
 	'translate-fs-userpage-submit' => 'Crear a miña páxina de usuario',
 	'translate-fs-userpage-done' => 'Ben feito! Agora xa ten unha páxina de usuario.',
 );
@@ -482,13 +559,13 @@ Que vén agora?',
 $messages['hsb'] = array(
 	'firststeps' => 'Prěnje kroki',
 	'firststeps-desc' => '[[Special:FirstSteps|Specialna strona]] za startowu pomoc na wikiju, kotryž rozšěrjenje Translate wužiwa',
-	'translate-fs-pagetitle-done' => '- sčinjene!',
+	'translate-fs-pagetitle-done' => ' - sčinjene!',
 	'translate-fs-pagetitle' => 'Startowy asistent - $1',
 	'translate-fs-signup-title' => 'Registrować',
 	'translate-fs-settings-title' => 'Konfiguruj swoje nastajenja',
 	'translate-fs-userpage-title' => 'Wutwor swoju wužiwarsku stronu',
 	'translate-fs-permissions-title' => 'Wo přełožowanske prawa prosyć',
-	'translate-fs-target-title' => 'Započń přełožk!',
+	'translate-fs-target-title' => 'Započń přełožować!',
 	'translate-fs-email-title' => 'Wobkruć swoju e-mejlowu adresu',
 	'translate-fs-intro' => "Witaj do startoweho asistenta projekta {{SITENAME}}.
 Dóstanješ nawod krok po kroku, kak so z přełožowarjom stanješ.
@@ -516,8 +593,53 @@ Wobhladaj sej woměrje tež druhe nastajenja.
 Dźi nětko k swojej [[Special:Preferences|stronje nastajenjow]] a wróć so potom k tutej stronje.',
 	'translate-fs-settings-skip' => 'Sym hotowy.
 Daj mi pokročować.',
+	'translate-fs-userpage-text' => 'Nětko dyrbiš wužiwarsku stronu wutworić.
+
+Prošu napisaj něšto wo sebi; štó sy a što činiš.
+To budźe zhromadźenstwu {{SITENAME}} při zhromadnym dźěle pomhać.
+Na {{SITENAME}} su ludźo z cyłeho swěta, kotřiž na rozdźělnych rěčach a projektach dźěłaja.
+
+We wupjelnjenym kašćiku horjeka w prěnjej lince, widźiš <nowiki>{{#babel:en-2}}</nowiki>.
+Prošu wudospołń jón přez twoje rěčne znajomosće.
+Ličba za rěčnym kodom wopisuje, kak derje znaješ rěč.
+Móžnosće su:
+* 1 - trochu
+* 2 - zakładne znajomosće
+* 3 - dobre znajomosće
+* 4 - niwow maćernorěčneho rěčnika
+* 5 - wužiwaš rěč profesionelnje, na přikład twoje powołanje je přełožowar.
+
+Jeli sy maćernorěčny rěčnik rěče, wuwostaj ličbu za rěčnym kodom a wužij jenož rěčny kod.
+Přikład: jeli tamilšćina je twoja maćeršćina, jendźelšćinu derje a swahilšćinu trochu rozumiš, by pisał:
+<code><nowiki>{{#babel:ta|en-3|sw-1}}</nowiki></code>
+
+Jeli njeznaješ rěčny kod rěče, pohladaj nětko za nim.
+Móžeš slědowacu lisćinu za to wužiwać.',
 	'translate-fs-userpage-submit' => 'Moju wužiwarsku stronu wutworić',
 	'translate-fs-userpage-done' => 'Gratulacija! Maš nětko wužiwarsku stronu.',
+	'translate-fs-permissions-text' => 'Nětko dyrbiš wo přiwzaće do skupiny přełožowarjow prosyć.
+
+Doniž kod njekorigujemy, dźi na stronu [[Project:Translator]] a slěduj instrukcije. Wróć so potom na tutu stronu.
+
+Po tym zo sy swoje požadanje wotpósłał, budźe jedyn z dobrowólnych čłonow teama twoje požadanje kontrolować a jo tak bórze kaž móžno schwalić.
+Prošu budź sćerpliwy.
+
+<del>Skontroluj, hač slědowace požadanje je korektnje wupjelnjene a klikń potom na tłóčatko.</del>',
+	'translate-fs-target-text' => "Zbožopřeće!
+Móžeš nětko přełožowanje započeć.
+
+Nječiń sej žane starosće, jeli so ći hišće nowe a konfuzne zda.
+Na [[Project list|lisćinje projektow]] je přehlad projektow, ke kotrymž móžeš přełožki přinošować.
+Najwjace projektow ma krótku wopisansku stronu z wotkazom \"''Tutón projekt přełožić''\", kotryž će k stronje wjedźe, kotraž wšě njepřełožene zdźělenki nalistuje.
+Lisćina wšěch skupinow zdźělenkow z [[Special:LanguageStats|aktualnym přełožowanskim stawom za rěč]] tež k dispoziciji steji.
+
+Jeli měniš, zo dyrbiš najprjedy wjace rozumić, prjedy hač zapóčnješ přełožować, móžeš [[FAQ|Časte prašenja]] čitać.
+Bohužel móže dokumentacija druhdy zestarjena być.
+Jeli něšto je, wo kotrymž mysliš, zo měło móžno być, ale njenamakaš, kak móžeš to činić, prašej so woměrje na stronje [[Support|Podpěra]].
+
+Móžeš so tež ze sobupřełožowarjemi samsneje rěče na [[Portal:\$1|portalu swojeje rěče]] do zwiska stajić.
+Portal wotkazuje na twoje aktualne [[Special:Preferences|rěčne nastajenje]].
+Prošu změń jo, jeli to je trěbne.",
 	'translate-fs-email-text' => 'Prošu podaj swoju e-mejlowu adresu w [[Special:Preferences|swojich nastajenjach]] a wobkruć ju přez e-mejl, kotraž so ći sćele. 
 
 To dowola druhim wužiwarjam, so z tobu přez e-mejl do zwisk stajić.
@@ -844,6 +966,7 @@ Als u geen nieuwsbrieven wilt ontvangen, dan kunt u dit aangeven in het tabblad 
 );
 
 /** Portuguese (Português)
+ * @author Giro720
  * @author Hamilton Abreu
  */
 $messages['pt'] = array(
@@ -887,7 +1010,7 @@ Passar ao seguinte.',
 
 Escreva qualquer coisa sobre si, por favor; descreva quem é e o que faz.
 Isto ajudará a comunidade da {{SITENAME}} a trabalhar em conjunto.
-Na {{SITENAME}} existem pessoas de todo o mundo a trabalhar emlínguas e projectos diferentes.
+Na {{SITENAME}} existem pessoas de todo o mundo a trabalhar em línguas e projectos diferentes.
 
 Na caixa que foi introduzida acima, verá na primeira linha <nowiki>{{#babel:en-2}}</nowiki>.
 Preencha-a com o seu conhecimento de línguas.
@@ -941,6 +1064,9 @@ Se não deseja receber as newsletters, pode optar por não recebê-las no separa
  * @author Giro720
  */
 $messages['pt-br'] = array(
+	'translate-fs-intro' => "Bem-vindo ao assistente de iniciação da {{SITENAME}}.
+Você será conduzido passo-a-passo através do processo necessário para se tornar um tradutor.
+No fim, será capaz de traduzir as ''mensagens da interface'' de todos os projetos suportados na {{SITENAME}}.",
 	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount-pt.png|frame]]
 
 No primeiro passo, você precisa se registar.
@@ -952,6 +1078,63 @@ Se já você já se registou, então $1autentique-se$2.
 Depois de estar registado, volte a esta página, por favor.
 
 $3Registar$4',
+	'translate-fs-settings-text' => 'Agora você deve ir até as suas preferências e, pelo menos, configurar na língua da interface a língua para a qual vai traduzir.
+
+Por padrão, a sua língua da interface é usada como a língua de destino das traduções.
+É fácil esquecer-se de alterar a língua para a correta, por isso é altamente recomendado que a configure agora.
+
+Enquanto está nas preferências, pode também pedir ao software que apresente as traduções noutras línguas que também conheça.
+Esta configuração pode ser encontrada no separador "{{int:prefs-editing}}".
+Sinta-se à vontade para explorar também as restantes configurações.
+
+Vá agora à sua [[Special:Preferences|página de preferências]] e depois volte a esta página.',
+	'translate-fs-settings-skip' => 'Terminei.
+Passar ao passo seguinte.',
+	'translate-fs-userpage-text' => 'Agora você precisa criar uma página de usuário.
+
+Escreva qualquer coisa sobre si, por favor; descreva quem é e o que faz.
+Isto ajudará a comunidade da {{SITENAME}} a trabalhar em conjunto.
+Na {{SITENAME}} existem pessoas de todo o mundo a trabalhar em línguas e projetos diferentes.
+
+Na caixa que foi introduzida acima, verá na primeira linha <nowiki>{{#babel:en-2}}</nowiki>.
+Preencha-a com o seu conhecimento de línguas.
+O número a seguir ao código da língua descreve o seu grau de conhecimento dessa língua.
+As alternativas são:
+* 1 - nível básico
+* 2 - nível médio
+* 3 - nível avançado
+* 4 - nível quase nativo
+* 5 - nível profissional (usa a língua profissionalmente, por exemplo, é um tradutor profissional).
+
+Se a língua é a sua língua materna, não coloque nenhum número e use somente o código da língua.
+Por exemplo: se o português é a sua língua materna, fala bem inglês e um pouco de francês, deve escrever: <tt><nowiki>{{#babel:pt|en-3|fr-1}}</nowiki></tt>
+
+Se desconhece o código de língua de uma língua, esta é uma boa hora para descobri-lo.
+Você pode usar a lista abaixo.',
+	'translate-fs-permissions-text' => 'Agora precisa de criar um pedido para ser adicionado ao grupo dos tradutores.
+
+Até termos corrigido o software, vá a [[Project:Translator]] e siga as instruções, por favor.
+Depois volte a esta página.
+
+Após ter submetido o pedido, um dos membros da equipe de voluntários irá verificar o seu pedido e aprová-lo logo que possível.
+Seja paciente, por favor.
+
+<del>Verifique que o seguinte pedido está preenchido corretamente e depois clique o botão.</del>',
+	'translate-fs-target-text' => 'Parabéns!
+Agora você pode começar a traduzir.
+
+Não tenha medo se tudo lhe parecer ainda novo e confuso.
+Na [[Project list|lista de projetos]] há um resumo dos projetos para os quais pode contribuir com traduções.
+A maioria dos projetos tem uma página de descrição breve com um link "Traduza este projeto", que o leva a uma página com todas as mensagens ainda por traduzir.
+Também está disponível uma lista de todos os grupos de mensagens com o [[Special:LanguageStats|estado presente de tradução para uma língua]].
+
+Se acredita que precisa de compreender melhor antes de começar a traduzir, pode ler as [[FAQ|perguntas frequentes]].
+Infelizmente a documentação pode, por vezes, estar desatualizada.
+Se há alguma coisa que acha que devia poder fazer, mas não consegue descobrir como, não hesite em perguntar na [[Support|página de suporte]].
+
+Pode também contatar os outros tradutores da mesma língua no [[Portal:$1|portal da sua língua]].
+O portal leva-o à [[Special:Preferences|língua selecionada nas suas preferências]].
+Altere-a se for necessário, por favor.',
 );
 
 /** Russian (Русский)
@@ -961,7 +1144,7 @@ $3Registar$4',
 $messages['ru'] = array(
 	'firststeps' => 'Первые шаги',
 	'firststeps-desc' => '[[Special:FirstSteps|Служебная страница]] для новых пользователей вики с установленным расширением перевода',
-	'translate-fs-pagetitle-done' => '— сделано!',
+	'translate-fs-pagetitle-done' => ' — сделано!',
 	'translate-fs-pagetitle' => 'Программа начального обучения — $1',
 	'translate-fs-signup-title' => 'Зарегистрируйтесь',
 	'translate-fs-settings-title' => 'Произведите настройку',

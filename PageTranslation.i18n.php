@@ -406,6 +406,10 @@ $messages['be-tarask'] = array(
 	'pt-shake-position' => 'Меткі сэкцыі ў нечаканых пазыцыях.
 Тэкст сэкцыі: <pre>$1</pre>',
 	'pt-shake-empty' => 'Пустая сэкцыя для меткі $1.',
+	'pt-log-header' => 'Журнал для дзеяньняў зьвязаных з сыстэмай перакладу старонак',
+	'pt-log-name' => 'Журнал перакладу старонак',
+	'pt-log-mark' => '{{GENDER:$2|пазначыў|пазначыла}} вэрсію $3 старонкі [[:$1]] для перакладу.',
+	'pt-log-unmark' => '{{GENDER:$2|выдаліў|выдаліла}} метку перакладу са старонкі [[:$1]].',
 );
 
 /** Bulgarian (Български)
@@ -733,6 +737,7 @@ Siden som du prøver at redigere, ser ikke ud til at svare til nogen side marker
  * @author Imre
  * @author Kghbln
  * @author Purodha
+ * @author The Evil IP address
  * @author Umherirrender
  */
 $messages['de'] = array(
@@ -802,6 +807,10 @@ Text des Abschnitts: <pre>$1</pre>',
 	'pt-shake-position' => 'Abschnittsmarker befinden sich an unerwarteter Stelle.
 Text des Abschnitts: <pre>$1</pre>',
 	'pt-shake-empty' => 'Abschnitt für Marker $1  leeren.',
+	'pt-log-header' => 'Logbuch der Änderungen im Zusammenhang mit dem Übersetzungssystem',
+	'pt-log-name' => 'Übersetzungs-Logbuch',
+	'pt-log-mark' => '{{GENDER:$2|gab}} Version $3 der Seite „[[:$1]]“ zur Übersetzung frei',
+	'pt-log-unmark' => '{{GENDER:$2|entfernte}} Seite „[[:$1]]“ aus der Übersetzung',
 );
 
 /** German (formal address) (Deutsch (Sie-Form))
@@ -833,6 +842,7 @@ $messages['dsb'] = array(
 	'tpt-sections-oldnew' => 'Nowe a eksistowace pśełožowańske jadnotki',
 	'tpt-sections-deleted' => 'Wulašowane pśełožowańske jadnotki',
 	'tpt-sections-template' => 'Pśedłoga pśełožowańskego boka',
+	'tpt-action-nofuzzy' => 'Njeanulěruj pśełožki',
 	'tpt-badtitle' => 'Pódane bokowe mě ($1) njejo płaśiwy titel',
 	'tpt-nosuchpage' => 'Bok $1 njeeksistěrujo',
 	'tpt-oldrevision' => '$2 njejo aktualna wersija boka [[$1]].
@@ -868,6 +878,7 @@ ale nejnowša wersija njedajo se za pśełožowanje markěrowaś.',
 Toś ten bok jo pśełožk boka [[$1]] a pśełožk dajo se z pomocu [$2 Pśełožyś] aktualizěrowaś.',
 	'tpt-unknown-page' => 'Toś ten mjenjowy rum jo za pśełožki wopśimjeśowych bokow wuměnjony.
 Zda se, až bok, kótaryž wopytujoš wobźěłaś, njewótpowědujo bokoju, kótaryž jo za pśełožowanje markěrowany.',
+	'tpt-move-impossible' => 'Pśesuwanje bokow, kótarež su za pśełožowanje markěrowane, hyšći njejo móžno.',
 	'tpt-install' => 'Wuwjeź php maintenance/update.php abo webinstalaciju, aby zmóžnił funkciju pśełožowanja bokow.',
 	'tpt-render-summary' => 'Aktualizacija pó nowej wersiji žrědłowego boka',
 	'tpt-download-page' => 'Bok z pśełožkami eksportěrowaś',
@@ -881,6 +892,10 @@ Tekst wótrězka: <pre>$1</pre>',
 	'pt-shake-position' => 'Wótrězkowe marki na njewócakowanem městnje.
 Tekst wótrězka: <pre>$1</pre>',
 	'pt-shake-empty' => 'Prozny wótrězk za marku $1.',
+	'pt-log-header' => 'Protokol za akcije w zwisku z pśełožowańskim systemom',
+	'pt-log-name' => 'Protokol pśełožkow',
+	'pt-log-mark' => 'jo wersiju $3 boka [[:$1]] za pśełožowanje {{GENDER:$2|markěrował|markěrowała}}.',
+	'pt-log-unmark' => 'jo bok [[:$1]] z pśełožowanja {{GENDER:$2|wótpórał|wótpórała}}.',
 );
 
 /** Greek (Ελληνικά)
@@ -1221,6 +1236,10 @@ Texte de la section : <pre>$1</pre>',
 	'pt-shake-position' => 'Marqueurs de section à une position inattendue.
 Texte de la section : <pre>$1</pre>',
 	'pt-shake-empty' => 'Section vide pour le marqueur $1.',
+	'pt-log-header' => 'Journal des actions liées au système de traduction de pages',
+	'pt-log-name' => 'Journal des traductions de pages',
+	'pt-log-mark' => 'a {{GENDER:$2|marqué}} la révision $3 de la page [[:$1]] pour être traduite.',
+	'pt-log-unmark' => 'a {{GENDER:$2|supprimé}} la page [[:$1]] de la traduction.',
 );
 
 /** Franco-Provençal (Arpetan)
@@ -1347,6 +1366,10 @@ Texto da sección: <pre>$1</pre>',
 	'pt-shake-position' => 'Os marcadores de sección atópanse nunha posición inesperada.
 Texto da sección: <pre>$1</pre>',
 	'pt-shake-empty' => 'Sección baleira para o marcador $1.',
+	'pt-log-header' => 'Rexistro de accións e operacións relacionadas co sistema de tradución de páxinas',
+	'pt-log-name' => 'Rexistro de traducións de páxinas',
+	'pt-log-mark' => '{{GENDER:$2|marcou}} a revisión $3 da páxina "[[:$1]]" para traducir',
+	'pt-log-unmark' => '{{GENDER:$2|retirou}} a páxina "[[:$1]]" da tradución',
 );
 
 /** Swiss German (Alemannisch)
@@ -1530,7 +1553,7 @@ $messages['hsb'] = array(
 	'tpt-sections-oldnew' => 'Nowe a eksistowace přełožowanske jednotki',
 	'tpt-sections-deleted' => 'Wušmórnjene přełožowanske jednotki',
 	'tpt-sections-template' => 'Předłoha přełožowanskeje strony',
-	'tpt-action-nofuzzy' => 'Njedeklaruj přełožki za njepłaćiwe',
+	'tpt-action-nofuzzy' => 'Njeanuluj přełožki',
 	'tpt-badtitle' => 'Podate mjeno strony ($1) płaćiwy titul njeje',
 	'tpt-nosuchpage' => 'Strona $1 njeeksistuje',
 	'tpt-oldrevision' => '$2 aktualna wersija strony [[$1]] njeje.
@@ -1582,6 +1605,10 @@ Tekst wotrězka: <pre>$1</pre>',
 	'pt-shake-position' => 'Wotrězkowe marki na njewočakowanym městnje.
 Tekst wotrězka: <pre>$1</pre>',
 	'pt-shake-empty' => 'Prózdny wotrězk za marku $1.',
+	'pt-log-header' => 'Protokol za akcije w zwisku z přełožowanskim systemom',
+	'pt-log-name' => 'Protokol přełožkow',
+	'pt-log-mark' => 'jo wersiju $3 strony [[:$1]] za přełožowanje {{GENDER:$2|markěrował|markěrowała}}.',
+	'pt-log-unmark' => 'jo stronu [[:$1]] z přełožowanja {{GENDER:$2|wotstronił|wotstroniła}}.',
 );
 
 /** Hungarian (Magyar)
@@ -1712,6 +1739,10 @@ Texto del section: <pre>$1</pre>',
 	'pt-shake-position' => 'Marcatores de section a un position inexpectate.
 Texto del section: <pre>$1</pre>',
 	'pt-shake-empty' => 'Section vacue pro le marcator $1.',
+	'pt-log-header' => 'Registro de actiones ligate al systema de traduction de paginas',
+	'pt-log-name' => 'Registro de traduction de paginas',
+	'pt-log-mark' => '{{GENDER:$2|marcava}} le version $3 del pagina [[:$1]] pro traduction.',
+	'pt-log-unmark' => '{{GENDER:$2|removeva}} le pagina [[:$1]] del traduction.',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -2050,6 +2081,8 @@ Text vum Abschnitt: <pre>$1</pre>',
 	'pt-shake-position' => 'Abschnittsmarkéierungen op enger onerwaarter Plaz.
 Text vum Abschnitt: <pre>$1</pre>',
 	'pt-shake-empty' => 'Abschnitt fir Marker $1 eidelmaachen.',
+	'pt-log-header' => 'Logbuch vun den Aktiounee a Verbindung mat dem System vun der Säiteniwwersetzung',
+	'pt-log-name' => 'Logbuch vun de Säiteniwwersetzungen',
 );
 
 /** Ganda (Luganda)
@@ -2140,6 +2173,10 @@ $messages['mk'] = array(
 	'pt-shake-position' => 'Неочекувана положба на означувачите за поднаслови.
 Текст во поднасловот: <pre>$1</pre>',
 	'pt-shake-empty' => 'Празен поднаслов за означувачот $1.',
+	'pt-log-header' => 'Дневник на дејства кои се однесуваат на системот за превод на страници',
+	'pt-log-name' => 'Дневник на преводи на страници',
+	'pt-log-mark' => '{{GENDER:$2|означена}} ревизија $3 на стр. [[:$1]] за превод.',
+	'pt-log-unmark' => '{{GENDER:$2|отстранета}} страницата [[:$1]] од преводот.',
 );
 
 /** Maltese (Malti)
@@ -2240,6 +2277,10 @@ Sectietekst: <pre>$1</pre>',
 	'pt-shake-position' => 'Sectiemarkeringen op een onverwachte plaats.
 Sectietekst: <pre>$1</pre>',
 	'pt-shake-empty' => 'Lege sectie voor markering $1.',
+	'pt-log-header' => 'Logboek voor handelingen rerelateerd aan het paginavertalingsysteem',
+	'pt-log-name' => 'Logboek paginavertaling',
+	'pt-log-mark' => '{{GENDER:$2|heeft}} versie $3 van pagina [[:$1]] voor vertaling gemarkeerd.',
+	'pt-log-unmark' => '{{GENDER:$2|heeft}} de vertalingsmarkering voor pagina [[:$1]] verwijderd.',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
@@ -2630,6 +2671,10 @@ Texto da secção: <pre>$1</pre>',
 	'pt-shake-position' => 'Marcadores de secção encontram-se numa posição inesperada.
 Texto da secção: <pre>$1</pre>',
 	'pt-shake-empty' => 'Secção em branco para o marcador $1.',
+	'pt-log-header' => 'Registo para operações relacionadas com o sistema de tradução de páginas',
+	'pt-log-name' => 'Registo de tradução de páginas',
+	'pt-log-mark' => '{{GENDER:$2|marcou}} a edição $3 da página "[[:$1]]" para tradução.',
+	'pt-log-unmark' => '{{GENDER:$2|removeu}} a página "[[:$1]]" de tradução.',
 );
 
 /** Brazilian Portuguese (Português do Brasil)
@@ -2818,6 +2863,10 @@ $messages['ru'] = array(
 	'pt-shake-position' => 'Неожиданное положение маркеров разделов.
 Текст раздела: <pre>$1</pre>',
 	'pt-shake-empty' => 'Пустой раздел для маркера $1.',
+	'pt-log-header' => 'Журнал для действий, связанных с системой перевода страниц',
+	'pt-log-name' => 'Журнал перевода страниц',
+	'pt-log-mark' => '{{GENDER:$2|пометил}} версию $3 страницы [[:$1]] для перевода.',
+	'pt-log-unmark' => '{{GENDER:$2|снял}} пометку для перевода со страницы [[:$1]].',
 );
 
 /** Rusyn (русиньскый язык)
