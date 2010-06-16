@@ -97,8 +97,8 @@ Section text: <pre>$1</pre>',
 
 	'pt-log-header' => 'Log for actions related to the page translation system',
 	'pt-log-name' => 'Page translation log',
-	'pt-log-mark' => '{{GENDER:$2|marked}} revision $3 of page [[:$1]] for translation.',
-	'pt-log-unmark' => '{{GENDER:$2|removed}} page [[:$1]] from translation.',
+	'pt-log-mark' => '{{GENDER:$2|marked}} revision $3 of page "[[:$1]]" for translation',
+	'pt-log-unmark' => '{{GENDER:$2|removed}} page "[[:$1]]" from translation',
 );
 
 /** Message documentation (Message documentation)
