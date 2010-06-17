@@ -408,8 +408,8 @@ $messages['be-tarask'] = array(
 	'pt-shake-empty' => 'Пустая сэкцыя для меткі $1.',
 	'pt-log-header' => 'Журнал для дзеяньняў зьвязаных з сыстэмай перакладу старонак',
 	'pt-log-name' => 'Журнал перакладу старонак',
-	'pt-log-mark' => '{{GENDER:$2|пазначыў|пазначыла}} вэрсію $3 старонкі [[:$1]] для перакладу.',
-	'pt-log-unmark' => '{{GENDER:$2|выдаліў|выдаліла}} метку перакладу са старонкі [[:$1]].',
+	'pt-log-mark' => '{{GENDER:$2|пазначыў|пазначыла}} вэрсію $3 старонкі «[[:$1]]» для перакладу.',
+	'pt-log-unmark' => '{{GENDER:$2|выдаліў|выдаліла}} метку перакладу са старонкі «[[:$1]]».',
 );
 
 /** Bulgarian (Български)
@@ -894,8 +894,8 @@ Tekst wótrězka: <pre>$1</pre>',
 	'pt-shake-empty' => 'Prozny wótrězk za marku $1.',
 	'pt-log-header' => 'Protokol za akcije w zwisku z pśełožowańskim systemom',
 	'pt-log-name' => 'Protokol pśełožkow',
-	'pt-log-mark' => 'jo wersiju $3 boka [[:$1]] za pśełožowanje {{GENDER:$2|markěrował|markěrowała}}.',
-	'pt-log-unmark' => 'jo bok [[:$1]] z pśełožowanja {{GENDER:$2|wótpórał|wótpórała}}.',
+	'pt-log-mark' => 'jo wersiju $3 boka "[[:$1]]" za pśełožowanje {{GENDER:$2|markěrował|markěrowała}}.',
+	'pt-log-unmark' => 'jo bok "[[:$1]]" z pśełožowanja {{GENDER:$2|wótpórał|wótpórała}}.',
 );
 
 /** Greek (Ελληνικά)
@@ -1047,6 +1047,10 @@ Texto de ección: <pre>$1</pre>',
 	'pt-shake-position' => 'Marcadores de sección en posición inesperada.
 Texto de sección: <pre>$1</pre>',
 	'pt-shake-empty' => 'Sección vacía para el marcador $1.',
+	'pt-log-header' => 'Registro para acciones relacionadas al sistema de traducción de página',
+	'pt-log-name' => 'Registro de traducción de página',
+	'pt-log-mark' => 'Revisión {{GENDER:$2|marcada}} $3 de página "[[:$1]]" para traducción',
+	'pt-log-unmark' => 'Revisión {{GENDER:$2|marcada}} de página "[[:$1]]" para traducción',
 );
 
 /** Estonian (Eesti)
@@ -1238,8 +1242,8 @@ Texte de la section : <pre>$1</pre>',
 	'pt-shake-empty' => 'Section vide pour le marqueur $1.',
 	'pt-log-header' => 'Journal des actions liées au système de traduction de pages',
 	'pt-log-name' => 'Journal des traductions de pages',
-	'pt-log-mark' => 'a {{GENDER:$2|marqué}} la révision $3 de la page [[:$1]] pour être traduite.',
-	'pt-log-unmark' => 'a {{GENDER:$2|supprimé}} la page [[:$1]] de la traduction.',
+	'pt-log-mark' => 'a {{GENDER:$2|marqué}} la révision $3 de la page « [[:$1]] » pour être traduite',
+	'pt-log-unmark' => 'a {{GENDER:$2|supprimé}} la page « [[:$1]] » de la traduction',
 );
 
 /** Franco-Provençal (Arpetan)
@@ -1607,8 +1611,8 @@ Tekst wotrězka: <pre>$1</pre>',
 	'pt-shake-empty' => 'Prózdny wotrězk za marku $1.',
 	'pt-log-header' => 'Protokol za akcije w zwisku z přełožowanskim systemom',
 	'pt-log-name' => 'Protokol přełožkow',
-	'pt-log-mark' => 'jo wersiju $3 strony [[:$1]] za přełožowanje {{GENDER:$2|markěrował|markěrowała}}.',
-	'pt-log-unmark' => 'jo stronu [[:$1]] z přełožowanja {{GENDER:$2|wotstronił|wotstroniła}}.',
+	'pt-log-mark' => 'jo wersiju $3 strony "[[:$1]]" za přełožowanje {{GENDER:$2|markěrował|markěrowała}}.',
+	'pt-log-unmark' => 'jo stronu "[[:$1]]" z přełožowanja {{GENDER:$2|wotstronił|wotstroniła}}.',
 );
 
 /** Hungarian (Magyar)
@@ -1741,8 +1745,8 @@ Texto del section: <pre>$1</pre>',
 	'pt-shake-empty' => 'Section vacue pro le marcator $1.',
 	'pt-log-header' => 'Registro de actiones ligate al systema de traduction de paginas',
 	'pt-log-name' => 'Registro de traduction de paginas',
-	'pt-log-mark' => '{{GENDER:$2|marcava}} le version $3 del pagina [[:$1]] pro traduction.',
-	'pt-log-unmark' => '{{GENDER:$2|removeva}} le pagina [[:$1]] del traduction.',
+	'pt-log-mark' => '{{GENDER:$2|marcava}} le version $3 del pagina "[[:$1]]" pro traduction.',
+	'pt-log-unmark' => '{{GENDER:$2|removeva}} le pagina "[[:$1]]" del traduction.',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -2175,8 +2179,8 @@ $messages['mk'] = array(
 	'pt-shake-empty' => 'Празен поднаслов за означувачот $1.',
 	'pt-log-header' => 'Дневник на дејства кои се однесуваат на системот за превод на страници',
 	'pt-log-name' => 'Дневник на преводи на страници',
-	'pt-log-mark' => '{{GENDER:$2|означена}} ревизија $3 на стр. [[:$1]] за превод.',
-	'pt-log-unmark' => '{{GENDER:$2|отстранета}} страницата [[:$1]] од преводот.',
+	'pt-log-mark' => '{{GENDER:$2|означена}} ревизија $3 на стрaницата „[[:$1]]“ за превод.',
+	'pt-log-unmark' => '{{GENDER:$2|отстранета}} страницата „[[:$1]]“ од преводот.',
 );
 
 /** Maltese (Malti)
@@ -2279,8 +2283,8 @@ Sectietekst: <pre>$1</pre>',
 	'pt-shake-empty' => 'Lege sectie voor markering $1.',
 	'pt-log-header' => 'Logboek voor handelingen rerelateerd aan het paginavertalingsysteem',
 	'pt-log-name' => 'Logboek paginavertaling',
-	'pt-log-mark' => '{{GENDER:$2|heeft}} versie $3 van pagina [[:$1]] voor vertaling gemarkeerd.',
-	'pt-log-unmark' => '{{GENDER:$2|heeft}} de vertalingsmarkering voor pagina [[:$1]] verwijderd.',
+	'pt-log-mark' => '{{GENDER:$2|heeft}} versie $3 van pagina "[[:$1]]" voor vertaling gemarkeerd',
+	'pt-log-unmark' => '{{GENDER:$2|heeft}} de vertalingsmarkering voor pagina "[[:$1]]" verwijderd',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
@@ -2865,8 +2869,8 @@ $messages['ru'] = array(
 	'pt-shake-empty' => 'Пустой раздел для маркера $1.',
 	'pt-log-header' => 'Журнал для действий, связанных с системой перевода страниц',
 	'pt-log-name' => 'Журнал перевода страниц',
-	'pt-log-mark' => '{{GENDER:$2|пометил}} версию $3 страницы [[:$1]] для перевода.',
-	'pt-log-unmark' => '{{GENDER:$2|снял}} пометку для перевода со страницы [[:$1]].',
+	'pt-log-mark' => '{{GENDER:$2|отметил|отметила}} для перевода версию $3 страницы «[[:$1]]»',
+	'pt-log-unmark' => '{{GENDER:$2|снял|сняла}} отметку перевода со страницы [[:$1]]',
 );
 
 /** Rusyn (русиньскый язык)
