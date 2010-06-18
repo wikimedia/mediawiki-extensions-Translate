@@ -500,7 +500,7 @@ class SpecialPageTranslation extends SpecialPage {
 		);
 		$logger->addEntry( 'mark', $page->getTitle(), null, array( serialize( $params ) ) );
 
-		$page->getTitle()-invalidateCache();
+		$page->getTitle()->invalidateCache();
 		$this->setupRenderJobs( $page );
 
 		// Re-generate caches
