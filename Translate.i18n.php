@@ -17906,8 +17906,19 @@ Bạn được khuyến khích xem lại các thông điệp tại [[Special:Tra
  # được hiển thị ở Special:LanguageStats. Các mã nhóm thông điệp không tồn tại
  # sẽ bị bỏ qua.',
 	'supportedlanguages' => 'Ngôn ngữ có sẵn',
+	'supportedlanguages-summary' => "Trang này liệt kê tất cả các ngôn ngữ được {{SITENAME}} hỗ trợ, cùng với tên các biên dịch viên đang làm việc trên ngôn ngữ đó.
+Nếu bạn muốn biết thêm thông tin về một ngôn ngữ cụ thể, bạn có nhấn vào cổng chào của ngôn ngữ đó.
+Nhấn vào tên biên dịch viên sẽ đưa bạn đến trang thành viên của họ.
+
+Nếu trong danh sách không có ngôn ngữ nào đó, bạn có thể đọc cách khởi động một dự án bản địa hóa cho ngôn ngữ tại ''[[Translating:Process|Ngôn ngữ mới]]\".
+
+Nếu bạn dịch sang một ngôn ngữ mà không thấy tên bạn được ghi, xin ghi tên bạn vào danh sách các biên dịch viên tại [[:Category:Languages|cổng chào]] của ngôn ngữ đó.
+Xem thanh trình đơn để biết liên kết đến cổng ngôn ngữ của ngôn ngữ mà bạn chọn.",
 	'supportedlanguages-translators' => '{{PLURAL:$2|Biên dịch viên|Các biên dịch viên}}: $1',
 	'supportedlanguages-noportal-title' => 'Chưa định rõ không gian tên chủ đề',
+	'supportedlanguages-noportal' => 'Bảo quản viên wiki chưa định nghĩa NS_PORTAL, do đó trang này không hoạt động.
+Tại trang này danh sách các cổng chào ngôn ngữ sẽ xuất hiện cho tất cả các cổng chào tương ứng với một mã ngôn ngữ đã định nghĩa cùng một trang con có tên "translators" (biên dịch viên).
+Trang con "translators" phải chứa bản mẫu [[:{{ns:template}}:User|User]], đưa tên người dùng vào thông số.',
 	'translate-save' => 'Lưu ($1)',
 	'translate-jssti-add' => 'Thêm vào danh sách',
 	'translate-group-desc-mediawikicore' => 'Nhóm thông báo này chứa các thông báo dùng trong phiên bản alpha hiện hành của MediaWiki ({{CURRENTVERSION}})',

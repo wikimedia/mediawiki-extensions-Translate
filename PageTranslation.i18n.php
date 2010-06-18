@@ -2087,6 +2087,7 @@ Text vum Abschnitt: <pre>$1</pre>',
 	'pt-shake-empty' => 'Abschnitt fir Marker $1 eidelmaachen.',
 	'pt-log-header' => 'Logbuch vun den Aktiounee a Verbindung mat dem System vun der Säiteniwwersetzung',
 	'pt-log-name' => 'Logbuch vun de Säiteniwwersetzungen',
+	'pt-log-unmark' => '{{GENDER:$2|huet}} d\'Säit "[[:$1]]" vun der Iwwersetzung ewechgeholl',
 );
 
 /** Ganda (Luganda)

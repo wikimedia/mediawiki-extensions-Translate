@@ -367,6 +367,7 @@ Jolic njocoš  powěsćowe listy dostaś, móžoš to na rejtarku "{{int:prefs-m
 /** Spanish (Español)
  * @author Crazymadlover
  * @author Diego Grez
+ * @author Drini
  * @author Tempestas
  */
 $messages['es'] = array(
@@ -395,7 +396,7 @@ Una vez que te has registrado, por favor regresa a esta página.
 
 $3Registrarse$4',
 	'translate-fs-settings-text' => 'Ahora debes ir a tus preferencias y
-al menos cambiar el idioma de la interfaz al idioma que quieres traducir.
+cambiar el idioma de la interfaz al idioma que quieres traducir.
 
 El idioma de la interfaz es usado como el idioma a traducir por defecto.
 Es fácil olvidarse de cambiar el idioma al correcto, por lo que configurarlo ahora es altamente recomendado.
@@ -404,7 +405,7 @@ Mientras estás aquí, puedes hacer que el software muestre traducciones en otro
 Esta configuración se encuentra bajo la pestaña "{{int:prefs-editing}}".
 Siéntete libre de explorar otras configuraciones también.
 
-Ve a tu [[Special:Preferences|página de preferencias]] ahora y entonces puedes volver a ésta página.',
+Ve a tu [[Special:Preferences|página de preferencias]] ahora y entonces puedes volver a esta página.',
 	'translate-fs-settings-skip' => 'He terminado.
 Déjenme continuar.',
 	'translate-fs-userpage-text' => 'Ahora es necesario crear una página de usuario.
@@ -413,6 +414,33 @@ Esto ayudará a la {{SITENAME}} comunidad para trabajar juntos.
 En {{SITENAME}} hay gente de todo el mundo trabajando en distintos idiomas y proyectos.',
 	'translate-fs-userpage-submit' => 'Crear mi página de usuario',
 	'translate-fs-userpage-done' => 'Bien hecho! Ahora tienes una página de usuario.',
+	'translate-fs-permissions-text' => 'Ahora necesitas colocar una solicitud para ser agregado al grupo de traductores.
+
+Hasta que arreglemos el código, por favor ve a [[Project:Translator]] y sigue las instrucciones.
+
+Después que hayas enviado tu solicitud, uno de los miembros del staff de voluntarios verificará tu solicitud y lo aprobará tan pronto como sea posible. Por favor se paciente.
+
+<del>Verifica que la siguiente solicitud está correctamente llenada y luego presiona el botón de solicitud.</del>',
+	'translate-fs-target-text' => "Felicitaciones!
+Puedes ahora comenzar a traducir.
+
+No temas si lo sientes nuevo y confuso para ti.
+En la [[Project list]] hay una visión general de los proyectos en los que puedes contribuir con traducciones.
+La mayoría de los proyectos tiene una página de descripción corta con un enlace \"''Traducir este proyecto''\", que te llevará a una página que lista todos los mensajes sin traducir.
+Una lista de todos los grupos de mensajes con el [[Special:LanguageStats|status de traducción actual para un idioma]] está también disponible.
+
+Si sientes que necesitas entender más antes de empezar a traducir, puedes leer las [[FAQ|Preguntas frecuentes]].
+Desafortunadamente la documentación puede estar desactualizada a veces.
+Si hay algo que pienses que deberías ser capaz de hacer, pero no cómo, no dudes en preguntarlo en la [[Support|página de soporte]].
+
+Puedes también contactar con otros traductores al mismo idioma en el [[Portal:\$1|portal de tu idioma]].
+El portal enlaza a tu [[Special:Preferences|preferencia de idioma]] actual.
+Por favor cámbialo si es necesario.",
+	'translate-fs-email-text' => 'Por favor brinda tu dirección de correo electrónico en [[Special:Preferences|tus preferencias]] y confírmalo desde el correo que se te envíe.
+
+Esto permite a los otros usuarios contactarte por correo electrónico.
+También recibirás boletines de noticias como máximo una vez al mes.
+Si no deseas recibir boletines de noticias, puedes cancelarlas en la pestaña  "{{int:prefs-misc}}" de tus [[Special:Preferences|preferencias]].',
 );
 
 /** French (Français)
@@ -1021,7 +1049,15 @@ Als u geen nieuwsbrieven wilt ontvangen, dan kunt u dit aangeven in het tabblad 
  */
 $messages['pl'] = array(
 	'firststeps' => 'Pierwsze kroki',
+	'firststeps-desc' => '[[Special:FirstSteps|Strona specjalna]] ułatwiająca rozpoczęcie pracy na wiki z wykorzystaniem rozszerzenia Translate',
+	'translate-fs-pagetitle-done' => '– gotowe!',
+	'translate-fs-pagetitle' => 'Kreator pierwszych kroków – $1',
+	'translate-fs-signup-title' => 'Rejestracja',
+	'translate-fs-settings-title' => 'Konfiguracja preferencji',
 	'translate-fs-userpage-title' => 'Tworzenie swojej strony użytkownika',
+	'translate-fs-permissions-title' => 'Wniosek o uprawnienia tłumacza',
+	'translate-fs-target-title' => 'Zacznij tłumaczyć!',
+	'translate-fs-email-title' => 'Potwierdź swój adres e‐mail',
 );
 
 /** Portuguese (Português)
