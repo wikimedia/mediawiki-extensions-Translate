@@ -672,6 +672,7 @@ class WikiMessageGroup extends MessageGroupOld {
 		$definitions = array();
 		/* In theory could have templates that are substitued */
 		$contents = wfMsg( $this->source );
+		$contents = preg_replace( '~^\s*#.*$~m', '', $contents );
 		$messages = preg_split( '/\s+/', $contents );
 
 		foreach ( $messages as $message ) {
