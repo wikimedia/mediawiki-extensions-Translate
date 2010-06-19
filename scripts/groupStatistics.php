@@ -285,6 +285,8 @@ $allGroups = MessageGroups::singleton()->getGroups();
 
 // Get list of valid groups
 foreach ( $reqGroups as $id ) {
+	// Page translation group ids use spaces which are not nice on command line
+	$id = str_replace( '_', ' ', $id );
 	if ( isset( $allGroups[$id] ) ) {
 		$groups[$id] = $allGroups[$id];
 	} else {
