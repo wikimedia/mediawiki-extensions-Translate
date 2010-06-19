@@ -105,7 +105,7 @@ Please change it if needed.',
 
 This allows other users to contact you by e-mail.
 You will also receive newsletters at most once a month.
-If you do not want receive newsletters, you can opt-out in the tab "{{int:prefs-misc}}" of your [[Special:Preferences|preferences]].',
+If you do not want receive newsletters, you can opt-out in the tab "{{int:prefs-personal}}" of your [[Special:Preferences|preferences]].',
 );
 
 /** Message documentation (Message documentation)
