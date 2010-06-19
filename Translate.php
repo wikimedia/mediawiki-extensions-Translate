@@ -76,35 +76,132 @@ $wgHooks['SkinTemplateToolboxEnd'][] = 'TranslateToolbox::toolboxAllTranslations
 # Translation memory updates
 $wgHooks['ArticleSaveComplete'][] = 'TranslationMemoryUpdater::update';
 
-$wgEnablePageTranslation = false;
-$wgPageTranslationNamespace = 1198;
-$wgTranslateStaticTags = false;
 
 $wgJobClasses['RenderJob'] = 'RenderJob';
 $wgAvailableRights[] = 'translate';
 $wgAvailableRights[] = 'translate-import';
 $wgAvailableRights[] = 'translate-manage';
 
-define( 'TRANSLATE_FUZZY', '!!FUZZY!!' );
 
-#
-# Configuration variables
-#
+# == Configuration variables ==
 
-/** Where to look for extension files */
-$wgTranslateExtensionDirectory = "$IP/extensions/";
+# === Basic configuration ===
 
-/** Which other language translations are displayed to help translator */
-$wgTranslateLanguageFallbacks = array();
+/**
+ * Language code for message documentation. Suggested values are qqq or info.
+ * If set to false (default), message documentation feature is disabled.
+ */
+$wgTranslateDocumentationLanguageCode = false;
 
-/** Name of the fuzzer bot */
+/**
+ * Name of the bot which will invalidate translations and do maintenance
+ * for page translation feature. Also used for importing messages from external
+ * sources.
+ */
 $wgTranslateFuzzyBotName = 'FuzzyBot';
 
-/** Address to css if non-default or false */
-$wgTranslateCssLocation = $wgScriptPath . '/extensions/Translate';
+/**
+ * Default values for list of languages to show translators as an aid when
+ * translating. Each user can override this setting in their preferences.
+ * Example:
+ *  $wgTranslateLanguageFallbacks['fi'] = 'sv';
+ *  $wgTranslateLanguageFallbacks['sv'] = array( 'da', 'no', 'nn' );
+ */
+$wgTranslateLanguageFallbacks = array();
 
-/** Language code for special documentation language */
-$wgTranslateDocumentationLanguageCode = false;
+/**
+ * Text that will be shown in translations if the translation is outdated.
+ * Must be something that does not conflict with actual content.
+ */
+define( 'TRANSLATE_FUZZY', '!!FUZZY!!' );
+
+/**
+ * Define various web services that provide translation suggestions.
+ * Example for tmserver translation memory from translatetoolkit.
+ * $wgTranslateTranslationServices['local'] = array(
+ *   'server' => 'http://127.0.0.1',
+ *   'port' => 54321,
+ *   'timeout-sync' => 3,
+ *   'timeout-async' => 6,
+ *   'database' => '/path/to/database.sqlite',
+ *   'type' => 'tmserver',
+ * );
+ *
+ * For Google and Apertium, you should get an API key.
+ * @see http://wiki.apertium.org/wiki/Apertium_web_service
+ * @see http://code.google.com/apis/ajaxsearch/key.html
+ *
+ * The translation services are provided with the following information:
+ * - server ip address
+ * - versions of MediaWiki and Translate extension
+ * - clients ip address encrypted with $wgProxyKey
+ * - source text to translate
+ * - private API key if provided
+ */
+$wgTranslateTranslationServices = array();
+$wgTranslateTranslationServices['Google'] = array(
+	'url' => 'http://ajax.googleapis.com/ajax/services/language/translate',
+	'key' => null,
+	'timeout-sync' => 3,
+	'timeout-async' => 6,
+	'type' => 'google',
+);
+$wgTranslateTranslationServices['Apertium'] = array(
+	'url' => 'http://api.apertium.org/json/translate',
+	'pairs' => 'http://api.apertium.org/json/listPairs',
+	'key' => null,
+	'timeout-sync' => 2,
+	'timeout-async' => 6,
+	'type' => 'apertium',
+	'codemap' => array( 'no' => 'nb' ),
+);
+
+/**
+ * List of tasks in Special:Translate. If you are only using page translation
+ * feature, you might want to disable 'optional' task. Example:
+ *  unset($wgTranslateTasks['optional']);
+ */
+$wgTranslateTasks = array(
+	'view'                 => 'ViewMessagesTask',
+	'untranslated'         => 'ViewUntranslatedTask',
+	'optional'             => 'ViewOptionalTask',
+//	'untranslatedoptional' => 'ViewUntranslatedOptionalTask',
+	'review'               => 'ReviewMessagesTask',
+	'reviewall'            => 'ReviewAllMessagesTask',
+	'export-as-po'         => 'ExportasPoMessagesTask',
+	'export-to-file'       => 'ExportToFileMessagesTask',
+//	'export-to-xliff'      => 'ExportToXliffMessagesTask',
+);
+
+
+# === Page translation feature ===
+
+/**
+ * Enable page translation feature.
+ * @see http://translatewiki.net/wiki/Translating:Page_translation_feature
+ */
+$wgEnablePageTranslation = false;
+
+/**
+ * Number for the Translations namespace. Change this if it conflicts with
+ * other namespace in your wiki.
+ */
+$wgPageTranslationNamespace = 1198;
+
+/**
+ * Hack to reduce database queries due to indirection in the database
+ * layout. May go away in future.
+ * Example:
+ *  $wgTranslateStaticTags = array(
+ *  	"tp:mark" => 3,
+ *  	"tp:tag" => 4,
+ *  	"tp:transver" => 5
+ *  );
+ */
+$wgTranslateStaticTags = false;
+
+
+# === Message group configuration ===
 
 /**
  * Two-dimensional array of languages that cannot be translated.
@@ -143,16 +240,9 @@ $wgTranslateBlacklist = array();
 $wgTranslateAuthorBlacklist = array();
 $wgTranslateAuthorBlacklist[] = array( 'black', '/^.*;.*;.*Bot$/Ui' );
 
-$wgTranslateMessageNamespaces = array( NS_MEDIAWIKI );
-
-/** AC = Available classes */
-$wgTranslateAC = array(
-	'core'            => 'CoreMessageGroup',
-	'core-0-mostused' => 'CoreMostUsedMessageGroup',
-);
-
 /**
- * Regexps for putting groups into subgroups. Deepest groups first.
+ * Regexps for putting groups into subgroups at Special:Translate.
+ * Deepest groups first.
  */
 $wgTranslateGroupStructure = array(
 	'/^core/' => array( 'core' ),
@@ -171,36 +261,89 @@ $wgTranslateGroupStructure = array(
 //	'/^page\|/' => array( 'page' ),
 );
 
-$wgTranslateAddMWExtensionGroups = false;
-$wgTranslateGroupRoot = '/var/www/externals';
-$wgTranslateGroupFiles = array();
+/**
+ * List of namespace that contain messages. No talk namespaces.
+ * @see http://translatewiki.net/wiki/Translating:Group_configuration
+ */
+$wgTranslateMessageNamespaces = array( NS_MEDIAWIKI );
 
-/** EC = Enabled classes */
+/**
+ * AC = Available classes.
+ * Basic classes register themselves in here.
+ */
+$wgTranslateAC = array(
+	'core'            => 'CoreMessageGroup',
+	'core-0-mostused' => 'CoreMostUsedMessageGroup',
+);
+
+/**
+ * EC = Enabled classes.
+ * Which of the basic classes are enabled.
+ * To enable them all, use:
+ *  $wgTranslateEC = $wgTranslateAC;
+ */
 $wgTranslateEC = array();
 $wgTranslateEC[] = 'core';
 
-/** CC = Custom classes */
+/**
+ * CC = Custom classes.
+ * Custom classes register themselves here.
+ * Key is always the group id, while the value is an message group object
+ * or callable function.
+ */
 $wgTranslateCC = array();
 
-/** Tasks */
-$wgTranslateTasks = array(
-	'view'                 => 'ViewMessagesTask',
-	'untranslated'         => 'ViewUntranslatedTask',
-	'optional'             => 'ViewOptionalTask',
-//	'untranslatedoptional' => 'ViewUntranslatedOptionalTask',
-	'review'               => 'ReviewMessagesTask',
-	'reviewall'            => 'ReviewAllMessagesTask',
-	'export-as-po'         => 'ExportasPoMessagesTask',
-	'export-to-file'       => 'ExportToFileMessagesTask',
-//	'export-to-xliff'      => 'ExportToXliffMessagesTask',
-);
-
-/** PHPlot for nice graphs */
-$wgTranslatePHPlot = false;
-$wgTranslatePHPlotFont = '/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf';
+/**
+ * Enable all configured MediaWiki extensions.
+ * Extensions which do not exist are ignored.
+ * @see Translate/groups/mediawiki-defines.txt
+ */
+$wgTranslateAddMWExtensionGroups = false;
 
 /**
- * Currently supported spyc and syck.
+ * Location in the filesystem to which paths are relative in custom groups.
+ */
+$wgTranslateGroupRoot = '/var/www/externals';
+
+/**
+ * The newest and recommended way of adding custom groups is YAML files.
+ * See examples under Translate/groups
+ * Usage example:
+ *  $wgTranslateGroupFiles[] = "$IP/extensions/Translate/groups/Shapado/Shapado.yml";
+ */
+$wgTranslateGroupFiles = array();
+
+
+# === System setup related configuration ===
+
+/**
+ * Location of your extensions, if not the default. Only matters
+ * if you are localising your own extensions with this extension.
+ */
+$wgTranslateExtensionDirectory = "$IP/extensions/";
+
+# ==== PHPlot ====
+
+/**
+ * For Special:TranslationStats PHPlot is needed to produce graphs.
+ * Set this the location of phplot.php.
+ */
+$wgTranslatePHPlot = false;
+
+/**
+ * The default font for PHPlot for drawing text. Only used if the automatic
+ * best font selection fails. The automatic best font selector uses language
+ * code to call fc-match program. If you have open_basedir restriction or
+ * safe-mode, using the found font is likely to fail. In this case you need
+ * to change the code to use hard-coded font, or copy fonts to location PHP
+ * can access them, and make sure fc-match returns only those fonts.
+ */
+$wgTranslatePHPlotFont = '/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf';
+
+# ==== YAML driver ====
+
+/**
+ * Currently supported YAML drivers are spyc and syck.
  *
  * For syck we're shelling out to perl. So you need:
  *
@@ -215,16 +358,22 @@ $wgTranslatePHPlotFont = '/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf';
  */
 $wgTranslateYamlLibrary = 'spyc';
 
+# Startup code
+
 function efTranslateInit() {
 	global $wgTranslatePHPlot, $wgAutoloadClasses, $wgHooks;
 	if ( $wgTranslatePHPlot ) {
 		$wgAutoloadClasses['PHPlot'] = $wgTranslatePHPlot;
 	}
 
+	global $wgReservedUsernames, $wgTranslateFuzzyBotName;
+	$wgReservedUsernames[] = $wgTranslateFuzzyBotName;
+
 	// Database schema
 	$wgHooks['LoadExtensionSchemaUpdates'][] = 'PageTranslationHooks::schemaUpdates';
 
 	// Do not activate hooks if not setup properly
+	global $wgEnablePageTranslation;
 	if ( !efTranslateCheckPT() ) {
 		$wgEnablePageTranslation = false;
 		return true;
@@ -233,7 +382,6 @@ function efTranslateInit() {
 	// Fuzzy tags for speed
 	$wgHooks['ArticleSaveComplete'][] = 'TranslateEditAddons::onSave';
 
-	global $wgEnablePageTranslation;
 	if ( $wgEnablePageTranslation ) {
 		// Special page + the right to use it
 		global $wgSpecialPages, $wgAvailableRights;
@@ -356,44 +504,3 @@ if ( !defined( 'TRANSLATE_CLI' ) ) {
 	function STDOUT() { }
 	function STDERR() { }
 }
-
-/**
- * Define various web services that provide translation suggestions.
- * Example for tmserver translation memory from translatetoolkit.
- * $wgTranslateTranslationServices['local'] = array(
- *   'server' => 'http://127.0.0.1',
- *   'port' => 54321,
- *   'timeout-sync' => 3,
- *   'timeout-async' => 6,
- *   'database' => '/path/to/database.sqlite',
- *   'type' => 'tmserver',
- * );
- *
- * For Google and Apertium, you should get an API key.
- * @see http://wiki.apertium.org/wiki/Apertium_web_service
- * @see http://code.google.com/apis/ajaxsearch/key.html
- *
- * The translation services are provided with the following information:
- * - server ip address
- * - versions of MediaWiki and Translate extension
- * - clients ip address encrypted with $wgProxyKey
- * - source text to translate
- * - private API key if provided
- */
-$wgTranslateTranslationServices = array();
-$wgTranslateTranslationServices['Google'] = array(
-	'url' => 'http://ajax.googleapis.com/ajax/services/language/translate',
-	'key' => null,
-	'timeout-sync' => 3,
-	'timeout-async' => 6,
-	'type' => 'google',
-);
-$wgTranslateTranslationServices['Apertium'] = array(
-	'url' => 'http://api.apertium.org/json/translate',
-	'pairs' => 'http://api.apertium.org/json/listPairs',
-	'key' => null,
-	'timeout-sync' => 2,
-	'timeout-async' => 6,
-	'type' => 'apertium',
-	'codemap' => array( 'no' => 'nb' ),
-);
