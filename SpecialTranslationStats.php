@@ -41,6 +41,10 @@ class SpecialTranslationStats extends SpecialPage {
 		foreach ( array( 'group', 'language' ) as $t ) {
 			$values = array_map( 'trim', explode( ',', $opts[$t] ) );
 			$values = array_splice( $values, 0, 4 );
+			if ( $t === 'group' ) {
+				$values = preg_replace( '~^page_~', 'page|', $values );
+			}
+			//var_dump( implode( ',', $values ) );
 			$opts[$t] = implode( ',', $values );
 		}
 
