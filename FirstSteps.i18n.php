@@ -207,7 +207,7 @@ $3Зарэгістравацца$4',
 
 Гэта дазволіць іншым удзельнікам зносіцца з Вамі праз электронную пошту.
 Таксама, Вы будзеце атрымліваць штомесячныя лісты з навінамі.
-Калі Вы не жадаеце атрымліваць лісты з навінамі, Вы можаце адмовіцца ад іх на закладцы «{{int:prefs-misc}}» Вашых [[Special:Preferences|установак]].',
+Калі Вы не жадаеце атрымліваць лісты з навінамі, Вы можаце адмовіцца ад іх на закладцы «{{int:prefs-personal}}» Вашых [[Special:Preferences|установак]].',
 );
 
 /** Breton (Brezhoneg)
@@ -318,7 +318,7 @@ Bitte ändere sie falls nötig.",
 
 Dies gibt anderen die Möglichkeit, dich über E-Mail zu erreichen.
 Du erhälst außerdem bis zu einmal im Monat einen Newsletter.
-Wenn du keinen erhalten möchtest, kannst du dich im Tab „{{int:prefs-misc}}“ in deinen [[Special:Preferences|Einstellungen]] austragen.
+Wenn du keinen erhalten möchtest, kannst du dich im Tab „{{int:prefs-personal}}“ in deinen [[Special:Preferences|Einstellungen]] austragen.
 Wenn du keinen Newsletter haben möchtest, kannst du dich im Tab Translate-fs-target-text',
 );
 
@@ -361,7 +361,7 @@ Pšosym změń jo, jolic to jo trěbne.",
 
 To dowólujo drugim wužywarjam se z tobu do zwiska stajiś.
 Buźoš teke powěsćowe listy jaden raz na mjasec dostaś.
-Jolic njocoš  powěsćowe listy dostaś, móžoš to na rejtarku "{{int:prefs-misc}}" swójich [[Special:Preferences|nastajenjow]] wótwóliś.',
+Jolic njocoš  powěsćowe listy dostaś, móžoš to na rejtarku "{{int:prefs-personal}}" swójich [[Special:Preferences|nastajenjow]] wótwóliś.',
 );
 
 /** Spanish (Español)
@@ -440,7 +440,7 @@ Por favor cámbialo si es necesario.",
 
 Esto permite a los otros usuarios contactarte por correo electrónico.
 También recibirás boletines de noticias como máximo una vez al mes.
-Si no deseas recibir boletines de noticias, puedes cancelarlas en la pestaña  "{{int:prefs-misc}}" de tus [[Special:Preferences|preferencias]].',
+Si no deseas recibir boletines de noticias, puedes cancelarlas en la pestaña  "{{int:prefs-personal}}" de tus [[Special:Preferences|preferencias]].',
 );
 
 /** French (Français)
@@ -533,7 +533,7 @@ Veuillez la changer si nécessaire.",
 
 Cela permettra aux autres utilisateurs de vous contacter par courrier électronique.
 Vous recevrez aussi un courrier d’informations au plus une fois par mois.
-Si vous ne souhaitez pas recevoir ce courrier d’informations, vous pouvez le désactiver dans l’onglet « {{int:prefs-misc}} » de vos [[Special:Preferences|préférences]].',
+Si vous ne souhaitez pas recevoir ce courrier d’informations, vous pouvez le désactiver dans l’onglet « {{int:prefs-personal}} » de vos [[Special:Preferences|préférences]].',
 );
 
 /** Galician (Galego)
@@ -629,7 +629,7 @@ Cámbiea se fose necesario.",
 
 Isto permite que outros usuarios se poñan en contacto con vostede por correo electrónico.
 Tamén recibirá boletíns informativos, como máximo unha vez ao mes.
-Se non quere recibir estes boletíns, pode cancelar a subscrición na lapela "{{int:prefs-misc}}" das súas [[Special:Preferences|preferencias]].',
+Se non quere recibir estes boletíns, pode cancelar a subscrición na lapela "{{int:prefs-personal}}" das súas [[Special:Preferences|preferencias]].',
 );
 
 /** Upper Sorbian (Hornjoserbsce)
@@ -723,7 +723,7 @@ Prošu změń jo, jeli to je trěbne.",
 
 To dowola druhim wužiwarjam, so z tobu přez e-mejl do zwisk stajić.
 Dóstanješ tež powěsćowe listy, zwjetša jónkróć wob měsać.
-Jeli nochceš powěsćowe listy dóstać, móžeš tutu opciju na rajtarku "{{int:prefs-misc}}" swojich [[Special:Preferences|preferencow]] znjemóžnić.',
+Jeli nochceš powěsćowe listy dóstać, móžeš tutu opciju na rajtarku "{{int:prefs-personal}}" swojich [[Special:Preferences|preferencow]] znjemóžnić.',
 );
 
 /** Interlingua (Interlingua)
@@ -817,15 +817,76 @@ Per favor cambia lo si necessari.",
 
 Isto permitte que altere usatores te contacta via e-mail.
 Tu recipera anque bulletines de novas al plus un vice per mense.
-Si tu non vole reciper bulletines de novas, tu pote disactivar los in le scheda "{{int:prefs-misc}}" de tu [[Special:Preferences|preferentias]].',
+Si tu non vole reciper bulletines de novas, tu pote disactivar los in le scheda "{{int:prefs-personal}}" de tu [[Special:Preferences|preferentias]].',
 );
 
 /** Japanese (日本語)
+ * @author Fryed-peach
  * @author Hosiryuhosi
  */
 $messages['ja'] = array(
+	'firststeps' => '開始手順',
+	'firststeps-desc' => 'Translate 拡張機能を使用するウィキで利用者が開始準備をするための[[Special:FirstSteps|特別ページ]]',
+	'translate-fs-pagetitle-done' => ' - 完了！',
+	'translate-fs-pagetitle' => '開始準備ウィザード - $1',
+	'translate-fs-signup-title' => '利用者登録',
+	'translate-fs-settings-title' => '個人設定の設定',
 	'translate-fs-userpage-title' => 'あなたの利用者ページを作成',
+	'translate-fs-permissions-title' => '翻訳者権限の申請',
+	'translate-fs-target-title' => '翻訳を始めましょう！',
+	'translate-fs-email-title' => '自分の電子メールアドレスの確認',
+	'translate-fs-intro' => '{{SITENAME}} 開始準備ウィザードへようこそ。これから翻訳者になるための手順について1つずつ案内していきます。それらを終えると、あなたは {{SITENAME}} でサポートしているすべてのプロジェクトのインターフェイスメッセージを翻訳できるようになります。',
+	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount.png|frame]]
+
+手順の初めは利用者登録を済ませることです。
+
+あなたが為した翻訳にはあなたの利用者名がクレジットとして付記されます。右の画像ではフォームの各欄をどのように埋めるのかを示しています。
+
+既に登録が済んでいる場合は、代わりに$1ログイン$2してください。登録がまだの場合は、登録を済ませてからこのページに戻ってきてください。
+
+$3登録$4',
+	'translate-fs-settings-text' => '個人設定に移動し、まずインターフェイス言語をあなたが作業しようとしている翻訳先の言語に変更してください。
+
+あなたのインターフェイス言語は既定の翻訳先言語として使われます。この言語を正しいものに変更する作業は忘れがちであるため、今それを行うことを強く勧めます。
+
+またさらに、あなたが知っている他の言語での訳文も表示するよう設定することができます。その設定は「{{int:prefs-editing}}」タブの下にあります。他の設定について探ってみるのもよいでしょう。
+
+[[Special:Preferences|個人設定ページ]]に移動し、終わったらこのページに戻ってきてください。',
+	'translate-fs-settings-skip' => '終わったので次に進みます。',
+	'translate-fs-userpage-text' => '次に、あなたの利用者ページを作成する必要があります。
+
+自身について、あなたが何者で何をしているのかなど、なにかを書いてください。これは {{SITENAME}} のコミュニティーで共同作業を行う助けとなります。{{SITENAME}} には世界中から異なる言語やプロジェクトで作業を行っている人々が集まっています。
+
+上の入力済みのボックスのちょうど1行目に <nowiki>{{#babel:en-2}}</nowiki> とあるのを確認してください。それをあなたの言語に関する知識を書いて完成させます。言語コードの後に続く数字は、その言語をあなたがどれだけ理解できるか伝えるものです。以下が選択肢です:
+* 1 - 少し
+* 2 - 基礎的な知識
+* 3 - 十分な知識
+* 4 - 母語話者の水準
+* 5 - プロの翻訳家であるなど、その言語を職業的に使用している
+
+あなたがその言語のまさに母語話者である場合、理解度を表す数字の部分は消して、言語コードのみを書きます。例えば、あなたが母語としてタミル語を話し、英語をうまく、スワヒリ語を少し話す場合は、次のようになります:
+<code><nowiki>{{#babel:ta|en-3|sw-1}}</nowiki></code>
+
+言語コードがわからない場合は、いい機会ですので調べてみましょう。下記の一覧を参考にしてください。',
 	'translate-fs-userpage-submit' => '自分の利用者ページを作成',
+	'translate-fs-userpage-done' => 'お疲れ様です。あなたの利用者ページができました。',
+	'translate-fs-permissions-text' => '次に、翻訳者グループに追加してもらうよう申請を出す必要があります。
+
+新しい仕組みが完成するまでは、[[Project:Translator]] に移動してそこにある指示に従っていただくことになっています。終わったらこのページに戻ってきてください。
+
+申請が提出されると、できる限り速やかにボランティアスタッフの誰かがあなたの申請を審査し承認いたします。この間しばらくお待ちください。
+
+<del>以下の申請が正しく入力されているか確認し、それから申請ボタンを押してください。</del>',
+	'translate-fs-target-text' => "お疲れ様でした！あなたが翻訳を開始する準備が整いました。
+
+まだ慣れないことや分かりにくいことがあっても、心配することはありません。[[Project list|プロジェクト一覧]]にあなたが翻訳を行うことのできる各プロジェクトの概要があります。ほとんどのプロジェクトには短い解説ページがあり、「'''Translate this project'''」というリンクからそのプロジェクトの未翻訳メッセージをすべて一覧できるページに移動できます。すべてのメッセージグループに関して[[Special:LanguageStats|各言語別に現在の翻訳状況]]を一覧することもできます。
+
+翻訳を始める前にもっと知らなければならないことがあると感じられたならば、[[FAQ]] のページを読むのもよいでしょう。残念なことにドキュメントの中には更新が途絶えてしまっているものもあります。もし、なにかやりたいことがあって、それをどうやって行えばよいのかわからない場合には、遠慮せず[[Support|サポートページ]]にて質問してください。
+
+また、同じ言語で作業している仲間の翻訳者とは[[Portal:$1|言語別のポータル]]で連絡することができます。ポータルへのリンクは現在の[[Special:Preferences|言語設定]]によります。必要ならば変更してください。",
+	'translate-fs-email-text' => 'あなたの電子メールアドレスを[[Special:Preferences|個人設定]]で入力し、送られてきたメールからそのメールアドレスの確認を行ってください。
+
+これにより、他の利用者があなたに電子メールを通じて連絡できるようになります。また、多くて月に1回ほどニュースレターが送られてきます。ニュースレターを受け取りたくない場合は、[[Special:Preferences|個人設定]]の「{{int:prefs-personal}}」タブで受信の中止を設定できます。',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
@@ -853,7 +914,7 @@ Loosst mech weidermaachen.',
 
 Dëst erlaabte et anere Benotzer fir Iech per Mail ze kontaktéieren.
 Dir och Newsletteren awer héchstens eng pro Mount.
-Wann Dir keng Newslettere kréie wëllt, da kënnt Dir dat am Tab "{{int:prefs-misc}}"  vun Ären [[Special:Preferences|Astellungen]] ausschalten.',
+Wann Dir keng Newslettere kréie wëllt, da kënnt Dir dat am Tab "{{int:prefs-personal}}"  vun Ären [[Special:Preferences|Astellungen]] ausschalten.',
 );
 
 /** Macedonian (Македонски)
@@ -946,7 +1007,7 @@ $3Регистрација$4',
 
 Ова им овозможува на корисниците да ве контактираат преку е-пошта.
 На таа адреса ќе добивате и билтени со новости, највеќе еднаш месечно.
-Ако не сакате да добиват билтени, можете да се отпишете преку јазичето „{{int:prefs-misc}}“ во вашите [[Special:Preferences|нагодувања]].',
+Ако не сакате да добиват билтени, можете да се отпишете преку јазичето „{{int:prefs-personal}}“ во вашите [[Special:Preferences|нагодувања]].',
 );
 
 /** Dutch (Nederlands)
@@ -1041,7 +1102,17 @@ Wijzig deze als nodig.",
 
 Dit makt het mogelijk dat andere gebruikers contact met u opnemen per e-mail.
 U ontvangt dan ook maximaal een keer per maand de nieuwsbrief.
-Als u geen nieuwsbrieven wilt ontvangen, dan kunt u dit aangeven in het tabblad "{{int:prefs-misc}}" van uw [[Special:Preferences|voorkeuren]].',
+Als u geen nieuwsbrieven wilt ontvangen, dan kunt u dit aangeven in het tabblad "{{int:prefs-personal}}" van uw [[Special:Preferences|voorkeuren]].',
+);
+
+/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
+ * @author Nghtwlkr
+ */
+$messages['no'] = array(
+	'translate-fs-pagetitle-done' => ' - ferdig!',
+	'translate-fs-email-title' => 'Bekreft e-postadressen din',
+	'translate-fs-userpage-submit' => 'Opprett brukersiden min',
+	'translate-fs-userpage-done' => 'Flott! Nå har du en brukerside.',
 );
 
 /** Polish (Polski)
@@ -1152,13 +1223,23 @@ Altere-a se for necessário, por favor.',
 
 Isto permite que os outros utilizadores o contactem por correio electrónico.
 Também receberá newsletters, no máximo uma vez por mês.
-Se não deseja receber as newsletters, pode optar por não recebê-las no separador "{{int:prefs-misc}}" das suas [[Special:Preferences|preferências]].',
+Se não deseja receber as newsletters, pode optar por não recebê-las no separador "{{int:prefs-personal}}" das suas [[Special:Preferences|preferências]].',
 );
 
 /** Brazilian Portuguese (Português do Brasil)
  * @author Giro720
  */
 $messages['pt-br'] = array(
+	'firststeps' => 'Primeiros passos',
+	'firststeps-desc' => '[[Special:FirstSteps|Página especial]] para familiarizar os usuários com o uso da extensão Translate numa wiki',
+	'translate-fs-pagetitle-done' => ' - feito!',
+	'translate-fs-pagetitle' => 'Assistente de iniciação - $1',
+	'translate-fs-signup-title' => 'Registe-se',
+	'translate-fs-settings-title' => 'Configure as suas preferências',
+	'translate-fs-userpage-title' => 'Crie a sua página de usuário',
+	'translate-fs-permissions-title' => 'Solicite permissões de tradutor',
+	'translate-fs-target-title' => 'Comece a traduzir!',
+	'translate-fs-email-title' => 'Confirme o seu endereço de e-mail',
 	'translate-fs-intro' => "Bem-vindo ao assistente de iniciação da {{SITENAME}}.
 Você será conduzido passo-a-passo através do processo necessário para se tornar um tradutor.
 No fim, será capaz de traduzir as ''mensagens da interface'' de todos os projetos suportados na {{SITENAME}}.",
@@ -1206,6 +1287,8 @@ Por exemplo: se o português é a sua língua materna, fala bem inglês e um pou
 
 Se desconhece o código de língua de uma língua, esta é uma boa hora para descobri-lo.
 Você pode usar a lista abaixo.',
+	'translate-fs-userpage-submit' => 'Criar a minha página de usuário',
+	'translate-fs-userpage-done' => 'Bom trabalho! Agora você tem uma página de usuário.',
 	'translate-fs-permissions-text' => 'Agora precisa de criar um pedido para ser adicionado ao grupo dos tradutores.
 
 Até termos corrigido o software, vá a [[Project:Translator]] e siga as instruções, por favor.
@@ -1230,6 +1313,11 @@ Se há alguma coisa que acha que devia poder fazer, mas não consegue descobrir 
 Pode também contatar os outros tradutores da mesma língua no [[Portal:$1|portal da sua língua]].
 O portal leva-o à [[Special:Preferences|língua selecionada nas suas preferências]].
 Altere-a se for necessário, por favor.',
+	'translate-fs-email-text' => 'Forneça o seu endereço de e-mail nas [[Special:Preferences|suas preferências]] e confirme-o a partir da mensagem que lhe será enviada.
+
+Isto permite que os outros utilizadores o contatem por e-mail.
+Também receberá newsletters, no máximo uma vez por mês.
+Se não deseja receber as newsletters, pode optar por não recebê-las no separador "{{int:prefs-personal}}" das suas [[Special:Preferences|preferências]].',
 );
 
 /** Russian (Русский)
@@ -1323,7 +1411,17 @@ $3Зарегистрироваться$4',
 
 Это позволяет другим участникам связываться с вами по электронной почте.
 Вы также будете получать новостную рассылку раз в месяц.
-Если вы не хотите получать рассылку, то вы можете отказаться от неё на вкладке «{{int:prefs-misc}}» ваших [[Special:Preferences|настроек]].',
+Если вы не хотите получать рассылку, то вы можете отказаться от неё на вкладке «{{int:prefs-personal}}» ваших [[Special:Preferences|настроек]].',
+);
+
+/** Slovenian (Slovenščina)
+ * @author Dbc334
+ */
+$messages['sl'] = array(
+	'firststeps' => 'Prvi koraki',
+	'translate-fs-pagetitle-done' => '– končano!',
+	'translate-fs-userpage-submit' => 'Ustvari mojo uporabniško stran',
+	'translate-fs-userpage-done' => 'Dobro opravljeno! Sedaj imate uporabniško stran.',
 );
 
 /** Tagalog (Tagalog)

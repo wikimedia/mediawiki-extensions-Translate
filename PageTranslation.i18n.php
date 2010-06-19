@@ -1860,6 +1860,7 @@ $messages['ja'] = array(
 	'tpt-sections-oldnew' => '新規および既存の翻訳単位',
 	'tpt-sections-deleted' => '削除された翻訳単位',
 	'tpt-sections-template' => '翻訳ページの雛型',
+	'tpt-action-nofuzzy' => '翻訳を失効させない',
 	'tpt-badtitle' => '指定したページ名 ($1) は無効なタイトルです',
 	'tpt-nosuchpage' => 'ページ「$1」は存在しません',
 	'tpt-oldrevision' => '$2 はページ [[$1]] の最新版ではありません。翻訳対象に指定できるのは最新版のみです。',
@@ -1889,6 +1890,7 @@ $messages['ja'] = array(
 	'tpt-languages-legend' => '他言語での翻訳:',
 	'tpt-target-page' => 'このページは手動で更新できません。このページはページ [[$1]] の翻訳で、[$2 翻訳ツール]を使用して更新します。',
 	'tpt-unknown-page' => 'この名前空間はコンテンツページの翻訳のために使用します。あなたが編集しようとしているページに対応する翻訳対象ページが存在しないようです。',
+	'tpt-move-impossible' => '翻訳対象として指定されたページの移動はまだ不可能です。',
 	'tpt-install' => 'ページ翻訳機能を有効にするために、php maintenance/update.php またはウェブ・インストーラーを実行する。',
 	'tpt-render-summary' => '翻訳元ページの新版に適合するように更新中',
 	'tpt-download-page' => '翻訳付きでページを書き出し',
@@ -1903,6 +1905,10 @@ $messages['ja'] = array(
 	'pt-shake-position' => '予期せぬ位置にセクション・マーカーがあります。
 セクション内容: <pre>$1</pre>',
 	'pt-shake-empty' => 'マーカー $1 に対応するセクションが空です。',
+	'pt-log-header' => 'ページ翻訳システムに関連した操作の記録',
+	'pt-log-name' => 'ページ翻訳記録',
+	'pt-log-mark' => 'ページ「[[:$1]]」の版 $3 を翻訳対象に{{GENDER:$2|指定}}',
+	'pt-log-unmark' => 'ページ「[[:$1]]」の翻訳指定を{{GENDER:$2|解除}}',
 );
 
 /** Javanese (Basa Jawa)
@@ -2087,6 +2093,7 @@ Text vum Abschnitt: <pre>$1</pre>',
 	'pt-shake-empty' => 'Abschnitt fir Marker $1 eidelmaachen.',
 	'pt-log-header' => 'Logbuch vun den Aktiounee a Verbindung mat dem System vun der Säiteniwwersetzung',
 	'pt-log-name' => 'Logbuch vun de Säiteniwwersetzungen',
+	'pt-log-mark' => '{{GENDER:$2|huet}} d\'Versioun $3 vun der Säit "[[:$1]]" fir z\'iwwersetze markéiert',
 	'pt-log-unmark' => '{{GENDER:$2|huet}} d\'Säit "[[:$1]]" vun der Iwwersetzung ewechgeholl',
 );
 
@@ -2739,9 +2746,25 @@ Antes de marcar esta versão para tradução, verifique se as mudanças nas seç
 Esta página é uma tradução da página [[$1]] e a tradução pode ser atualizada usando [$2 a ferramenta de tradução].',
 	'tpt-unknown-page' => 'Este domínio é reservado para traduções de páginas de conteúdo.
 Esta página que você está tentando editar não aparenta corresponder a nenhuma página marcada para tradução.',
+	'tpt-move-impossible' => 'Ainda não é possível mover páginas marcadas para tradução.',
 	'tpt-install' => 'Execute a manutenção do php/update.php ou a instalação "web" para habilitar a funcionalidade de tradução de páginas.',
 	'tpt-render-summary' => 'Atualizando para corresponder a nova versão da página fonte',
 	'tpt-download-page' => 'Exportar página com traduções',
+	'pt-parse-open' => 'O elemento &lt;translate> está desequilibrado.
+Modelo de tradução: <pre>$1</pre>',
+	'pt-parse-close' => 'O elemento &lt;/translate> está desequilibrado.
+Modelo de tradução: <pre>$1</pre>',
+	'pt-parse-nested' => 'Não são permitidas scções &lt;translate> cruzadas.
+Texto do elemento: <pre>$1</pre>',
+	'pt-shake-multiple' => 'Vários marcadores de seção para uma seção.
+Texto da seção: <pre>$1</pre>',
+	'pt-shake-position' => 'Marcadores de seção encontram-se numa posição inesperada.
+Texto da seção: <pre>$1</pre>',
+	'pt-shake-empty' => 'Seção em branco para o marcador $1.',
+	'pt-log-header' => 'Registro para operações relacionadas com o sistema de tradução de páginas',
+	'pt-log-name' => 'Registro de tradução de páginas',
+	'pt-log-mark' => '{{GENDER:$2|marcou}} a edição $3 da página "[[:$1]]" para tradução.',
+	'pt-log-unmark' => '{{GENDER:$2|removeu}} a página "[[:$1]]" de tradução.',
 );
 
 /** Romansh (Rumantsch)
