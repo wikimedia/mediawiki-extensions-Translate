@@ -225,6 +225,16 @@ MANGLER:
 
 ---
 BASIC:
+  id: out-shapado-notifier
+  label: Shapado - Notifier
+  display: out/shapado/notifier
+  class: FileBasedMessageGroup
+FILES:
+  sourcePattern: %GROUPROOT%/shapado/config/locales/notifier/%CODE%.yml
+  targetPattern: shapado/config/locales/notifier/%CODE%.yml
+
+---
+BASIC:
   id: out-shapado-pages
   label: Shapado - Pages
   display: out/shapado/pages
