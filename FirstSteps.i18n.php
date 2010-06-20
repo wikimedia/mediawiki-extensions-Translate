@@ -443,6 +443,24 @@ También recibirás boletines de noticias como máximo una vez al mes.
 Si no deseas recibir boletines de noticias, puedes cancelarlas en la pestaña  "{{int:prefs-personal}}" de tus [[Special:Preferences|preferencias]].',
 );
 
+/** Finnish (Suomi)
+ * @author Nike
+ */
+$messages['fi'] = array(
+	'firststeps' => 'Alkutoimet',
+	'firststeps-desc' => '[[Special:FirstSteps|Toimintosivu]] joka ohjastaa uudet käyttäjät Translate-laajennoksen käyttöön.',
+	'translate-fs-pagetitle-done' => ' - valmis!',
+	'translate-fs-pagetitle' => 'Alkutoimet - $1',
+	'translate-fs-signup-title' => 'Rekisteröityminen',
+	'translate-fs-settings-title' => 'Asetusten määrittäminen',
+	'translate-fs-userpage-title' => 'Käyttäjäsivun luominen',
+	'translate-fs-permissions-title' => 'Pyyntö kääntäjäryhmään liittämisestä',
+	'translate-fs-target-title' => 'Kääntäminen voi alkaa!',
+	'translate-fs-email-title' => 'Sähköpostiosoitteen vahvistus',
+	'translate-fs-userpage-submit' => 'Luo käyttäjäsivuni',
+	'translate-fs-userpage-done' => 'Hyvin tehty! Sinulla on nyt käyttäjäsivu.',
+);
+
 /** French (Français)
  * @author Peter17
  */
@@ -1419,7 +1437,15 @@ $3Зарегистрироваться$4',
  */
 $messages['sl'] = array(
 	'firststeps' => 'Prvi koraki',
-	'translate-fs-pagetitle-done' => '– končano!',
+	'firststeps-desc' => '[[Special:FirstSteps|Posebna stran]] za pripravo uporabnikov na začetek uporabe wikija z uporabo razširitve Translate',
+	'translate-fs-pagetitle-done' => ' – končano!',
+	'translate-fs-pagetitle' => 'Čarovnik prvih korakov – $1',
+	'translate-fs-signup-title' => 'Prijavite se',
+	'translate-fs-settings-title' => 'Konfigurirajte svoje nastavitve',
+	'translate-fs-userpage-title' => 'Ustvarite svojo uporabniško stran',
+	'translate-fs-permissions-title' => 'Zaprosite za prevajalska dovoljenja',
+	'translate-fs-target-title' => 'Začnite prevajati!',
+	'translate-fs-email-title' => 'Potrdite svoj e-poštni naslov',
 	'translate-fs-userpage-submit' => 'Ustvari mojo uporabniško stran',
 	'translate-fs-userpage-done' => 'Dobro opravljeno! Sedaj imate uporabniško stran.',
 );

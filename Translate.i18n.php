@@ -453,7 +453,9 @@ These messages will not be submitted to svn, but will only affect the interface 
 	'languagestats-stats-for' => 'Used in [[Special:LanguageStats]]. Parameters:
 * $1 is a localised language name
 * $2 is {{msg-mw|languagestats-recenttranslations}}',
-	'languagestats-recenttranslations' => 'Substituted in {{msg-mw|languagestats-stats-for}} as $2.',
+	'languagestats-recenttranslations' => 'Substituted in {{msg-mw|languagestats-stats-for}} as $2.
+
+Also appears as a link on [[Special:SupportedLanguages]] to the Recent Changes special page.',
 	'translate-language-code' => 'Name of fieldset in [[Special:LanguageStats]].
 
 {{Identical|Language code}}',
@@ -3428,8 +3430,10 @@ $messages['cy'] = array(
 	'translate-edit' => 'golygu',
 	'translate-page-edit' => 'golygu',
 	'translate-pref-nonewsletter' => 'Peidier ag anfon cylchlythyron e-bost ataf',
+	'translate-translations-history-short' => 'h',
 	'languagestats' => 'Ystadegau ieithyddol',
 	'languagestats-summary' => "Mae'r dudalen hon yn dangos ystadegau cyfieithu yr holl grwpiau negeseuon ar gyfer rhyw iaith.",
+	'languagestats-recenttranslations' => 'cyfieithiadau diweddar',
 	'translate-language-code' => 'Côd iaith',
 	'translate-language-code-field-name' => 'Côd iaith:',
 	'translate-suppress-complete' => 'Hepgor dangos y grwpiau o negeseuon sydd wedi eu llwyr gyfieithu',
@@ -13833,7 +13837,10 @@ São exibidas as traduções de uma mensagem nestes idiomas quando você está t
 A lista padrão de idiomas depende do seu idioma.',
 	'translate-pref-editassistlang-bad' => 'Código de idioma inválido na lista:
 <nowiki>$1</nowiki>.',
+	'translate-pref-jsedit' => 'Usar o editor de traduções melhorado (JavaScript)',
 	'right-translate' => 'Editar usando a interface de tradução',
+	'right-translate-manage' => 'Gerenciar grupos de tradução',
+	'right-translate-import' => 'Importar traduções offline',
 	'translate-rc-translation-filter' => 'Filtrar traduções:',
 	'translate-rc-translation-filter-no' => 'Não fazer nada',
 	'translate-rc-translation-filter-only' => 'Mostrar apenas traduções',
@@ -13869,18 +13876,28 @@ A lista padrão de idiomas depende do seu idioma.',
 	'translate-translations-messagename' => 'Nome:',
 	'translate-translations-project' => 'Projeto:',
 	'translate-translations-including-no-param' => 'Por favor, especifique uma chave de mensagem válida no parâmetro subpágina',
+	'translate-translations-history-short' => 'h',
 	'languagestats' => 'Estatísticas da língua',
 	'languagestats-summary' => 'Esta página mostra estatísticas de tradução para todos os grupos de mensagens para uma língua.',
+	'languagestats-stats-for' => 'Estatísticas de tradução para $1 ($2).',
+	'languagestats-recenttranslations' => 'traduções recentes',
 	'translate-language-code' => 'Código de língua',
 	'translate-language-code-field-name' => 'Código de língua:',
 	'translate-suppress-complete' => 'Suprimir grupos de mensagens completamente traduzidos',
 	'translate-language' => 'Língua',
 	'translate-total' => 'Mensagens (total)',
+	'translate-total-tooltip' => 'O número total de mensagens neste grupo de mensagens.',
 	'translate-untranslated' => 'Não traduzidas',
+	'translate-untranslated-tooltip' => 'O número total de mensagens não traduzidas neste grupo de mensagens.
+Isto inclui as mensagens que foram marcadas como desatualizadas.',
 	'translate-percentage-complete' => 'Progresso',
+	'translate-percentage-complete-tooltip' => 'A percentagem de mensagens no grupo que foram traduzidas e não estão marcadas como desatualizadas',
 	'translate-percentage-fuzzy' => 'Obsoletas',
+	'translate-percentage-fuzzy-tooltip' => 'A percentagem de mensagens do grupo que foram traduzidas e estão marcadas como desatualizadas.
+As mensagens estão marcadas como desatualizadas porque a mensagem original em inglês mudou ou porque uma verificação automática da mensagem detectou um problema.',
 	'translate-nothing-to-do' => 'Aparentemente todas as traduções possíveis foram feitas.
 Você é encorajado a revisar mensagens através de [[Special:Translate|{{int:translate}}]].',
+	'supportedlanguages' => 'Línguas suportadas',
 	'translate-save' => 'Gravar ($1)',
 	'translate-jssti-add' => 'Adicionar à lista',
 	'translate-group-desc-mediawikicore' => 'Este grupo de mensagens contém as mensagens utilizadas na atual versão alfa do MediaWiki ({{CURRENTVERSION}})',

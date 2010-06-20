@@ -1113,6 +1113,7 @@ $messages['fi'] = array(
 	'tpt-sections-oldnew' => 'Uudet ja olemassa olevat käännösosiot',
 	'tpt-sections-deleted' => 'Poistetut käännösosiot',
 	'tpt-sections-template' => 'Käännössivun mallipohja',
+	'tpt-action-nofuzzy' => 'Älä merkitse käännöksiä vanhentuneiksi',
 	'tpt-badtitle' => 'Sivun nimi ($1) ei ole kelvollinen otsikko',
 	'tpt-nosuchpage' => 'Sivua $1 ei ole olemassa',
 	'tpt-oldrevision' => '$2 ei ole uusin versio sivusta [[$1]]. 
@@ -1150,6 +1151,7 @@ mutta viimeisintä versiota ei voi merkitä käännettäväksi.',
 Tämä sivu on käännös sivusta [[$1]] ja käännöstä voi päivittää käyttämällä [$2 käännöstyökalua].',
 	'tpt-unknown-page' => 'Tämä nimiavaruus on varattu sisältösivujen käännöksille.
 Sivu, jota yrität muokata, ei näytä vastaavan mitään sivua, joka on merkitty käännettäväksi.',
+	'tpt-move-impossible' => 'Käännettäväksi merkittyjä sivujen siirtäminen ei ole vielä mahdollista.',
 	'tpt-install' => 'Suorita maintenance/update.php tai verkkoasennus, jotta sivujen käännösominaisuus toimii.',
 	'tpt-render-summary' => 'Päivittäminen vastaamaan uutta versiota lähdesivusta',
 	'tpt-download-page' => 'Sivun vienti käännösten kera',
@@ -1164,6 +1166,10 @@ Käännösosion teksti: <pre>$1</pre>',
 	'pt-shake-position' => 'Käännösosiotunniste on odottamattomassa paikassa.
 Käännösosion teksti: <pre>$1</pre>',
 	'pt-shake-empty' => 'Käännösosio $1 sisältää vain tunnisteen.',
+	'pt-log-header' => 'Tämä loki sisältää sivunkäännösominaisuuteen liittyviä tapahtumia.',
+	'pt-log-name' => 'Sivunkääntöloki',
+	'pt-log-mark' => '{{GENDER:$2|merkitsi}} version $3 sivusta [[:$1]] käännettäväksi',
+	'pt-log-unmark' => '{{GENDER:$2|poisti}} sivun "[[:$1]]" käännösjärjestelmästä',
 );
 
 /** French (Français)
