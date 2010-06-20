@@ -232,6 +232,8 @@ BASIC:
 FILES:
   sourcePattern: %GROUPROOT%/shapado/config/locales/notifier/%CODE%.yml
   targetPattern: shapado/config/locales/notifier/%CODE%.yml
+MANGLER:
+  prefix: notifier-
 
 ---
 BASIC:
