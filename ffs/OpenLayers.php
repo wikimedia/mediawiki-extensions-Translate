@@ -8,6 +8,8 @@
  */
 
 class OpenLayersFormatReader extends SimpleFormatReader {
+	protected $keyquote = true;
+
 	private static function unescapeJsString( $string ) {
 		// See ECMA 262 section 7.8.4 for string literal format
 		$pairs = array(
@@ -81,7 +83,11 @@ class OpenLayersFormatReader extends SimpleFormatReader {
 			$segment = implode( $segment );
 			# $segment = preg_replace( '#\" \+(.*?)\"#m', '', $segment );
 			// Break in to key and message.
-			$segments = explode( '\':', $segment );
+			if( $this->keyquote) {
+				$segments = explode( '\':', $segment );
+			} else {
+				$segments = explode( ': ', $segment );
+			}
 			$key = $segments[ 0 ];
 			unset( $segments[ 0 ] );
 			$value = implode( $segments );
@@ -89,7 +95,9 @@ class OpenLayersFormatReader extends SimpleFormatReader {
 			$key = trim( $key );
 			$value = trim( $value );
 			// Remove quotation marks and syntax.
-			$key = substr( $key, 1 );
+			if( $this->keyquote ) {
+				$key = substr( $key, 1 );
+			}
 			$value = substr( $value, 1, -1 );
 			$messages[ $key ] = self::unescapeJsString( $value );
 		}
@@ -151,7 +159,11 @@ EOT;
 		foreach ( $collection as $message ) {
 			$key = Xml::escapeJsString( $message->key() );
 			$value = Xml::escapeJsString( $message->translation() );
-			$lines .= "    '{$message->key()}': \"{$value}\",\n\n";
+			if( $this->keyquote ) {
+				$lines .= "    '{$message->key()}': \"{$value}\",\n\n";
+			} else {
+				$lines .= "    {$message->key()}: \"{$value}\",\n\n";
+			}
 		}
 
 
