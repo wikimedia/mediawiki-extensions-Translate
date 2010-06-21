@@ -74,7 +74,7 @@ class SpecialSupportedLanguages extends UnlistedSpecialPage {
 
 		// Information to be used inside the foreach loop
 		$linkInfo['rc']['title'] = SpecialPage::getTitleFor( 'Recentchanges' );
-		$linkInfo['rc']['msg'] = wfMsg( 'languagestats-recenttranslations' );
+		$linkInfo['rc']['msg'] = wfMsg( 'supportedlanguages-recenttranslations' );
 		$linkInfo['stats']['title'] = SpecialPage::getTitleFor( 'LanguageStats' );
 		$linkInfo['stats']['msg'] = wfMsg( 'languagestats' );
 
