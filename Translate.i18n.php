@@ -357,6 +357,7 @@ Details: $1',
 /** Message documentation (Message documentation)
  * @author Ans
  * @author Darth Kule
+ * @author Dbc334
  * @author EugeneZelenko
  * @author Fryed-peach
  * @author Jon Harald Søby
@@ -483,7 +484,7 @@ Also appears as a link on [[Special:SupportedLanguages]] to the Recent Changes s
 Variables:
 *$1 - Message name
 *$2 - radio buttons 
-**{{msg-mw|MediaWiki:Translate-manage-action-import}}
+**{{msg-mw|Translate-manage-action-import}}
 **{{msg-mw|Translate-manage-action-conflict}}
 **{{msg-mw|Translate-manage-action-ignore}}',
 	'translate-manage-action-import' => '{{Identical|Import}}
@@ -5751,6 +5752,7 @@ Voyez la barre de menu pour un lien vers le portail de la langue de vos préfér
 	'supportedlanguages-noportal' => "L'administrateur du wiki n'a pas défini NS_PORTAL, donc cette page ne peut pas fonctionner.
 Sur cette page apparaitront une liste de language pour tous les portails correspondant à une langue définie et une sous-page appelée « translators ».
 La sous-page « translators » doit contenir le modèle [[:{{ns:template}}:User|User]] qui prend un nom d'utilisateur comme paramètre.",
+	'supportedlanguages-recenttranslations' => 'traductions récentes',
 	'translate-save' => 'Publier ($1)',
 	'translate-jssti-add' => 'Ajouter à la liste',
 	'translate-group-desc-mediawikicore' => 'Ce groupe de messages contient les messages utilisés dans la version alpha actuelle de MediaWiki ({{CURRENTVERSION}}).',
@@ -7522,7 +7524,7 @@ Podstrona "translators" dyrbi předłohu  [[:{{ns:template}}:User|User]] wobsaho
 	'translate-group-desc-wikimediaextensions' => 'Hłowna skupina, kotraž wšě zdźělenki za podpěrowane rozšěrjenja MediaWiki wobsahuje, kotrež so přez [http://wikimedia.org/ Wikimedia Foundation] wužiwaja',
 	'translate-group-desc-wikitravelextensions' => 'Hłowna skupina, kotraž wšě zdźělenki za podpěrowane rozšěrjenja MediaWiki, kotrež so přez [http://wikitravel.org Wikitravel] wužiwaja',
 	'translate-group-desc-uniwiki' => 'Hłowna skupina, kotraž wšě zdźělenki za rozšěrjenja wobsahuje, kotrež su z [http://unicefinnovation.org/wiki.php Uniwiki] přiwuzne',
-	'translate-group-desc-ui' => 'Metaskupina zdźělenkow, kotraž wšě zdźělenki za rozšěrjenja wobsahuje, kotrež so na [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative iniciatiwu wužiwajomnosć Wikipedije] poćahuja.',
+	'translate-group-desc-ui' => 'Metaskupina zdźělenkow, kotraž wšě zdźělenki za rozšěrjenja wobsahuje, kotrež so na [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative iniciatiwu wužiwajomnosće Wikipedije] poćahuja.',
 	'translate-group-desc-nodesc' => 'Za tutu skupinu zdźělenkow wopisanje k dispoziciji njesteji.',
 	'translate-manage-groups' => 'Zrjadowanje skupinow',
 	'translate-manage-listgroups' => 'Konfigurowane skupiny',
@@ -13899,6 +13901,18 @@ As mensagens estão marcadas como desatualizadas porque a mensagem original em i
 	'translate-nothing-to-do' => 'Aparentemente todas as traduções possíveis foram feitas.
 Você é encorajado a revisar mensagens através de [[Special:Translate|{{int:translate}}]].',
 	'supportedlanguages' => 'Línguas suportadas',
+	'supportedlanguages-summary' => 'Esta página apresenta uma lista de todas as línguas suportadas pela {{SITENAME}}, com os nomes dos tradutores de cada língua.
+Para obter mais informação sobre uma língua em particular, pode clicar o link para o portal dessa língua.
+Clicar o nome de um tradutor conduz à página de utilizador desse tradutor.
+
+Se uma língua não aparecer na lista, pode descobrir como iniciar um projeto de localização para uma língua em "[[Translating:Process/pt|Língua nova]]".
+
+Se faz traduções para uma língua e o seu nome não aparece na lista, adicione-o à lista de tradutores no [[:Category:Languages|portal]] dessa língua, por favor.
+Na barra lateral à esquerda existe um link para o portal da língua da sua preferência.',
+	'supportedlanguages-translators' => '{{PLURAL:$2|Tradutor|Tradutores}}: $1',
+	'supportedlanguages-noportal-title' => 'Não foi definido um espaço nominal para portais',
+	'supportedlanguages-noportal' => 'O administrador da wiki não definiu NS_PORTAL, por isso esta página não funciona.
+Nesta página aparece uma lista de todos os portais de línguas que correspondem a um código de língua existente e uma subpágina chamada "translators". Para cada tradutor, a subpágina deve chamar a predefinição [[:{{ns:template}}:User|User]], passando como parâmetro um nome de utilizador.',
 	'translate-save' => 'Gravar ($1)',
 	'translate-jssti-add' => 'Adicionar à lista',
 	'translate-group-desc-mediawikicore' => 'Este grupo de mensagens contém as mensagens utilizadas na atual versão alfa do MediaWiki ({{CURRENTVERSION}})',
@@ -13907,6 +13921,15 @@ Você é encorajado a revisar mensagens através de [[Special:Translate|{{int:tr
 	'translate-group-desc-collection' => 'Meta-grupo de mensagens contendo todas as mensagens para a extensão MediaWiki [http://www.mediawiki.org/wiki/Extension:Collection Colecção]',
 	'translate-group-desc-flaggedrevs' => 'Meta-grupo de mensagens contendo todas as mensagens para a extensão MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs Edições Analisadas]',
 	'translate-group-desc-readerfeedback' => 'Meta-grupo de mensagens contendo todas as mensagens para a extensão MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs ReaderFeedback]',
+	'translate-group-desc-socialprofile' => 'Este meta-grupo contém todas as mensagens para as extensões relacionadas com a extensão do MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Perfil Social]',
+	'translate-group-desc-translate' => 'Este meta-grupo contém todas as mensagens para a extensão do MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Traduzir]',
+	'translate-group-desc-wikiaextensions' => 'Este meta-grupo contém todas as mensagens para as extensões suportadas do MediaWiki que são usadas pela [http://www.wikia.com Wikia]',
+	'translate-group-desc-wikihowextensions' => 'Este meta-grupo contém todas as mensagens para as extensões MediaWiki suportadas, usadas pelo [http://www.wikihow.com wikiHow]',
+	'translate-group-desc-wikimediaextensions' => 'Este meta-grupo contém todas as mensagens para as extensões MediaWiki suportadas, usadas pela [http://wikimedia.org/ Wikimedia Foundation]',
+	'translate-group-desc-wikitravelextensions' => 'Este meta-grupo contém todas as mensagens para as extensões MediaWiki suportadas, usadas pelo [http://wikitravel.org Wikitravel]',
+	'translate-group-desc-uniwiki' => 'Este meta-grupo contém todas as mensagens para as extensões relacionadas com o [http://unicefinnovation.org/wiki.php Uniwiki]',
+	'translate-group-desc-ui' => 'Este meta-grupo contém todas as mensagens para as extensões relacionadas com a [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Iniciativa de Usabilidade da Wikipédia]',
+	'translate-group-desc-nodesc' => 'Não existe descrição para este grupo de mensagens',
 	'translate-manage-groups' => 'Gestão de grupos',
 	'translate-manage-listgroups' => 'Grupos configurados',
 	'translate-manage-listgroups-old' => 'Antigo estilo dos grupos',
@@ -13938,8 +13961,17 @@ Por favor reenvie o formulário para continuar processando.',
 	'translate-manage-import-summary' => 'Importando uma nova versão de um fonte externa',
 	'translate-manage-conflict-summary' => 'Importando uma nova versão de uma fonte externa.
 Por favor, confira.',
+	'translate-manage-fuzzy-summary' => 'A definição sofreu alterações',
 	'translate-manage-import-fuzzy' => 'Importando e marcando traduções para revisão: $1',
 	'translate-manage-import-done' => 'Tudo feito!',
+	'translate-manage-import-rebuild' => 'Reconstrução de cache.',
+	'translate-manage-intro-en' => 'Encontra abaixo uma lista de alterações às mensagens deste grupo.
+Por favor, reveja as alterações e escolha a ação que pretende para cada mensagem. 
+Quando tiver atualizado as definições das mensagens, verifique se ocorreram alterações externas noutras línguas existentes.
+Note também que a ação <code>ignore</code> é só temporária.',
+	'translate-manage-intro-other' => 'Encontra-se abaixo uma lista de alterações de traduções na língua $1.
+Por favor, reveja as alterações e escolha a ação que pretende para cada tradução. 
+Se escolher ignorar as alterações, elas serão sobrepostas na próxima exportação.',
 	'translate-manage-subtitle' => 'Gerenciar',
 	'translate-manage-import-rebuild-all' => 'Refazer todos os idiomas e ignorar quaisquer alterações',
 	'importtranslations' => 'Importar traduções',
@@ -13949,9 +13981,24 @@ Por favor, confira.',
 	'translate-import-load' => 'Carregar arquivo',
 	'translate-import-err-type-not-supported' => 'Impossível carregar o arquivo:
 O método <code>$1</code> não é suportado.',
+	'translate-import-err-dl-failed' => 'Não foi possível obter o arquivo:
+$1',
 	'translate-import-err-ul-failed' => 'Carregamento de arquivo sem sucesso',
 	'translate-import-err-invalid-title' => 'O nome <nowiki>$1</nowiki> fornecido para o arquivo era inválido.',
 	'translate-import-err-no-such-file' => 'O arquivo <nowiki>$1</nowiki> não existe ou não foi carregado localmente.',
+	'translate-import-err-no-headers' => 'O arquivo não é um arquivo Gettext válido, com o formato da extensão Translate:
+Não foi possível determinar o grupo e a língua a partir dos cabeçalhos.',
+	'translate-import-err-warnings' => 'Este arquivo não é válido.
+Certifique-se de que o seu editor não remove os campos msgctxt.
+Detalhes: $1',
+	'translate-js-next' => 'Gravar e abrir a seguinte',
+	'translate-js-nonext' => 'Esta foi a última mensagem nesta página.',
+	'translate-js-skip' => 'Saltar para a seguinte',
+	'translate-js-save-failed' => 'A gravação falhou. Por favor, informe-nos deste erro.',
+	'translate-js-history' => 'Histórico de traduções',
+	'translate-gs-pos' => 'Pos.',
+	'translate-gs-code' => 'Código',
+	'translate-gs-continent' => 'Continente',
 	'translate-gs-speakers' => 'Falantes',
 	'translate-gs-score' => 'Pont.',
 	'translate-gs-multiple' => 'Múltiplos',
@@ -15126,6 +15173,7 @@ Razlog:
 	'translate-edit-warnings' => 'Opozorila o nepopolnosti prevoda',
 	'translate-edit-tmsugs' => 'Predlogi iz spomina prevodov',
 	'translate-edit-tmmatch' => '$1 % ujemanje',
+	'translate-use-suggestion' => 'Vstavi ta predlog v prevajalno območje. To zamenja vso trenutno vsebino.',
 	'translate-edit-goto-no-prev' => 'To je prvo sporočilo (ni predhodnega sporočila)',
 	'translate-edit-goto-no-next' => 'To je zadnje sporočilo (ni naslednjega sporočila)',
 	'translate-edit-goto-prev' => 'Uredi prejšnje sporočilo',
@@ -15138,7 +15186,7 @@ Razlog:
 	'translate-magic-nothing-to-export' => 'Ni sporočil za izvoz.',
 	'translate-magic-cm-to-be' => 'Naj bo',
 	'translate-magic-cm-current' => 'Trenutno',
-	'translate-magic-cm-original' => 'Original',
+	'translate-magic-cm-original' => 'Izvirnik',
 	'translate-magic-cm-comment' => 'Komentar:',
 	'translate-magic-cm-save' => 'Shrani',
 	'translate-magic-cm-updatedusing' => 'Posodobitev z uporabo [[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]]',
@@ -15152,21 +15200,52 @@ Razlog:
 	'translationchanges' => 'Spremembe prevoda',
 	'translationchanges-export' => 'izvoz',
 	'translationchanges-change' => '$1: $2 od $3',
+	'translate-checks-parameters' => '{{PLURAL:$2|Naslednji parameter ni uporabljen|Naslednja parametra nista uporabljena|Naslednji parametri niso uporabljeni}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Naslednji parameter je neznan|Naslednja parametra sta neznana|Naslednji parametri so neznani}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-balance' => 'V sporočilu je neparno število {{PLURAL:$2|narekovajev}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links' => '{{PLURAL:$2|Naslednja povezava je sporna|Naslednji povezavi sta sporni|Naslednje povezave so sporne}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links-missing' => '{{PLURAL:$2|Naslednja povezava manjka|Naslednji povezavi manjkata|Naslednje povezave manjkajo}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-xhtml' => 'Prosimo, zamenjajte {{PLURAL:$2|sledečo oznako z ustrezno|sledeči oznaki z ustreznima|sledeče oznake z ustreznimi}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-plural' => 'Opredelitev uporablja <nowiki>{{PLURAL:}}</nowiki>, vendar je prevod ne.',
 	'translate-checks-fudforum-syntax' => 'V tem projektu uporabite <nowiki>$1</nowiki> namesto <nowiki>$2</nowiki>.',
 	'translate-pref-nonewsletter' => 'Ne pošiljaj mi e-poštnih glasil',
 	'translate-pref-editassistlang' => 'Pomožni jeziki:',
 	'prefs-translate' => 'Možnosti prevajanja',
+	'translate-pref-editassistlang-bad' => 'Neveljavna koda jezika na seznamu:
+<nowiki>$1</nowiki>.',
 	'translate-pref-jsedit' => 'Izboljšan urejevalnik prevodov (JavaScript)',
+	'right-translate' => 'Urejanje z uporabo prevajalnega vmesnika',
+	'right-translate-manage' => 'Urejanje skupin prevodov',
+	'right-translate-import' => 'Uvažanje nepovezanih prevodov',
 	'translate-rc-translation-filter' => 'Filtriraj prevode:',
+	'translate-rc-translation-filter-no' => 'Ne stori ničesar',
+	'translate-rc-translation-filter-only' => 'Prikaži samo prevode',
+	'translate-rc-translation-filter-filter' => 'Izloči prevode',
+	'translate-rc-translation-filter-site' => 'Samo spremembe sporočil strani',
 	'translationstats' => 'Statistika prevodov',
 	'translate-stats-edits' => 'Urejanja',
 	'translate-stats-users' => 'Prevajalci',
+	'translate-statsf-intro' => 'S tem obrazcem lahko ustvarite preprosto statistiko.
+Vse vrednosti imajo zgornje in spodnje omejitve.',
 	'translate-statsf-options' => 'Možnosti grafa',
 	'translate-statsf-width' => 'Širina v slikovnih pikah:',
 	'translate-statsf-height' => 'Višina v slikovnih pikah:',
+	'translate-statsf-days' => 'Časovno obdobje v dneh:',
 	'translate-statsf-scale-days' => 'Dni',
 	'translate-statsf-scale-hours' => 'Ur',
+	'translate-statsf-count-edits' => 'Število urejanj',
+	'translate-statsf-count-users' => 'Aktivni prevajalci',
+	'translate-statsf-language' => 'Z vejico ločen seznam kod jezikov:',
+	'translate-statsf-group' => 'Z vejico ločen seznam kod skupin:',
 	'translate-statsf-submit' => 'Predogled',
+	'translate-tag-category' => 'Prevedljive strani',
+	'translate-tag-page-desc' => 'Prevod wikistrani [[:$1]].',
 	'translate-sidebar-alltrans' => 'V drugih jezikih',
 	'translations' => 'Vsi prevodi',
 	'translations-summary' => 'Spodaj vnesite ime sporočila, da prikažete vse njegove razpoložljive prevode.',
@@ -15175,6 +15254,7 @@ Razlog:
 	'translate-translations-fieldset-title' => 'Sporočilo',
 	'translate-translations-messagename' => 'Ime:',
 	'translate-translations-project' => 'Projekt:',
+	'translate-translations-history-short' => 'z',
 	'languagestats' => 'Statistika jezika',
 	'languagestats-summary' => 'Ta stran prikazuje statistiko prevodov za vse skupine sporočil jezika.',
 	'languagestats-stats-for' => 'Statistika prevodov za jezik $1 ($2).',
@@ -15184,18 +15264,80 @@ Razlog:
 	'translate-suppress-complete' => 'Preskoči v celoti prevedene skupine sporočil',
 	'translate-language' => 'Jezik',
 	'translate-total' => 'Sporočil',
+	'translate-total-tooltip' => 'Skupno število sporočil v tej skupini sporočil.',
 	'translate-untranslated' => 'Neprevedeno',
+	'translate-untranslated-tooltip' => 'Skupno število neprevedenih sporočil v tej skupini sporočil.
+Vključuje sporočila, ki so bila označena kot zastarela.',
 	'translate-percentage-complete' => 'Končano',
 	'translate-percentage-fuzzy' => 'Zastarelo',
 	'supportedlanguages' => 'Podprti jeziki',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Prevajalec|Prevajalca|Prevajalci}}: $1',
+	'supportedlanguages-noportal-title' => 'Določen ni noben imenski prostor portala',
+	'supportedlanguages-recenttranslations' => 'nedavni prevodi',
 	'translate-save' => 'Shrani ($1)',
 	'translate-jssti-add' => 'Dodaj na seznam',
 	'translate-group-desc-mediawikicore' => 'Ta skupina sporočil zajema sporočila, uporabljena v trenutni alfarazličici MediaWiki ({{CURRENTVERSION}})',
+	'translate-group-desc-mediawikimostused' => 'Ta skupina sporočil vsebuje [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 najbolj uporabljanih sporočil] v MediaWiki',
+	'translate-group-desc-mediawikiextensions' => 'Krovna skupina sporočil, ki vsebuje vsa sporočila podprtih razširitev MediaWiki',
+	'translate-group-desc-collection' => 'Krovna skupina sporočil, ki vsebuje vsa sporočila razširitve MediaWiki [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
+	'translate-group-desc-flaggedrevs' => 'Krovna skupina sporočil, ki vsebuje vsa sporočila razširitve MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
+	'translate-group-desc-readerfeedback' => 'Krovna skupina sporočil, ki vsebuje vsa sporočila razširitve MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
+	'translate-group-desc-socialprofile' => 'Krovna skupina sporočil, ki vsebuje vsa sporočila razširitev, povezana z razširitvijo MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
+	'translate-group-desc-translate' => 'Krovna skupina sporočil, ki vsebuje vsa sporočila razširitve MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
+	'translate-group-desc-wikiaextensions' => 'Krovna skupina sporočil, ki vsebuje vsa sporočila podprtih razširitev MediaWiki, ki jih uporablja [http://www.wikia.com Wikia]',
+	'translate-group-desc-wikihowextensions' => 'Krovna skupina sporočil, ki vsebuje vsa sporočila podprtih razširitev MediaWiki, ki jih uporablja [http://www.wikihow.com wikiHow]',
+	'translate-group-desc-wikimediaextensions' => 'Krovna skupina sporočil, ki vsebuje vsa sporočila podprtih razširitev MediaWiki, ki jih uporablja [http://wikimedia.org/ Fundacija Wikimedia]',
+	'translate-group-desc-wikitravelextensions' => 'Krovna skupina sporočil, ki vsebuje vsa sporočila podprtih razširitev MediaWiki, ki jih uporablja [http://wikitravel.org Wikitravel]',
+	'translate-group-desc-uniwiki' => 'Krovna skupina sporočil, ki vsebuje vsa sporočila razširitev, povezanih z [http://unicefinnovation.org/wiki.php Uniwiki]',
+	'translate-group-desc-ui' => 'Krovna skupina sporočil, ki vsebuje vsa sporočila razširitev, povezanih z [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedijino Pobudo za uporabnost]',
 	'translate-group-desc-nodesc' => 'Za to skupino sporočil opis ni na voljo',
+	'translate-manage-groups' => 'Upravljanje skupin',
+	'translate-manage-listgroups' => 'Konfigurirane skupine',
+	'translate-manage-listgroups-old' => 'Skupine starega sloga',
+	'translate-managegroups' => 'Upravljanje skupin',
+	'translate-manage-newgroup' => 'Ta skupina sporočil predhodno še ni bila uvožena.',
 	'translate-manage-cacheat' => 'Uvoženo $1 ob $2',
+	'translate-manage-return-to-group' => 'Vrnitev na stran s podrobnostmi skupine',
+	'translate-manage-modlangs' => 'Prosimo, preverite morebitne spremembe v {{PLURAL:$1|sledečem jeziku|sledečima jezikoma|sledečih jezikih}}:',
+	'translate-manage-modlang-new' => '$1 (novo)',
+	'translate-manage-import-diff' => 'Sporočilo $1 | Dejanja: $2',
 	'translate-manage-import-new' => 'Novo sporočilo $1',
 	'translate-manage-import-deleted' => 'Izbriši sporočilo $1',
+	'translate-manage-action-import' => 'Uvozi',
+	'translate-manage-action-conflict' => 'Uvozi in označi kot ohlapno',
+	'translate-manage-action-ignore' => 'Prezri',
+	'translate-manage-action-fuzzy' => 'Uvozi in prevode označi kot ohlapne',
+	'translate-manage-submit' => 'Izvedi',
+	'translate-manage-nochanges' => 'Ni sprememb v opredelitvi sporočil za to skupino.',
+	'translate-manage-import-ok' => 'Uvožena nova različica strani $1.',
+	'translate-manage-import-noks' => 'Uvoz nove različice strani $1 je spodletel: $2',
+	'translate-manage-import-ignore' => 'Preskakovanje sporočila $1.',
+	'translate-manage-import-summary' => 'Uvažanje nove različice iz zunanjega vira',
+	'translate-manage-conflict-summary' => 'Uvažanje nove različice iz zunanjega vira.
+Prosimo, preverite.',
+	'translate-manage-fuzzy-summary' => 'Opredelitev se je spremenila',
+	'translate-manage-import-fuzzy' => 'Uvažam in označujem kot ohlapno: $1',
+	'translate-manage-import-done' => 'Vse opravljeno!',
+	'translate-manage-import-rebuild' => 'Ponovna gradnja predpomnilnika.',
+	'translate-manage-subtitle' => 'Upravljaj',
+	'translate-manage-import-rebuild-all' => 'Ponovno zgradi vse jezike in prezri katere koli spremembe',
+	'importtranslations' => 'Uvažanje prevodov',
+	'translate-import-from-url' => 'URL datoteke:',
+	'translate-import-from-wiki' => 'Datoteka v tem wikiju:',
+	'translate-import-from-local' => 'Nalaganje lokalne datoteke:',
+	'translate-import-load' => 'Naloži datoteko',
+	'translate-import-err-type-not-supported' => 'Ne morem naložiti datoteke:
+Način <code>$1</code> ni podprt.',
+	'translate-import-err-dl-failed' => 'Ne morem pridobiti datoteke:
+$1',
+	'translate-import-err-ul-failed' => 'Nalaganje datoteke ni bilo uspešno',
+	'translate-import-err-invalid-title' => 'Določeno ime datoteke <nowiki>$1</nowiki> je bilo neveljavno.',
+	'translate-import-err-no-such-file' => 'Datoteka <nowiki>$1</nowiki> ne obstaja ali pa ni bila naložena lokalno.',
+	'translate-import-err-no-headers' => 'Datoteka ni dobro oblikovana datoteka Gettext v obliki razširitve Translate:
+Ne morem določiti skupine in jezika iz glav datoteke.',
+	'translate-import-err-warnings' => 'Datoteka ni dobro oblikovana.
+Prepričajte se, da vaš urejevalnik ne odstrani polj msgctxt.
+Podrobnosti: $1',
 	'translate-js-next' => 'Shrani in odpri naslednje',
 	'translate-js-nonext' => 'To je bilo zadnje sporočilo na tej strani.',
 	'translate-js-skip' => 'Preskoči na naslednje',

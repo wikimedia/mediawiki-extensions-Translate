@@ -3034,21 +3034,41 @@ Ime: $1',
 	'tpt-sections-oldnew' => 'Nove in obstoječe prevajalske enote',
 	'tpt-sections-deleted' => 'Izbrisane prevajalske enote',
 	'tpt-sections-template' => 'Prevod predloge strani',
+	'tpt-action-nofuzzy' => 'Ne označuj prevodov kot ohlapne',
 	'tpt-badtitle' => 'Dano ime strani ($1) ni veljaven naslov',
 	'tpt-nosuchpage' => 'Stran $1 ne obstaja',
 	'tpt-oldrevision' => '$2 ni najnovejša različics strani [[$1]].
 Samo zadnje različice se lahko označi za prevod.',
 	'tpt-notsuitable' => 'Stran $1 ni primerna za prevod.
 Prepričajte se, da ima oznake <nowiki><translate></nowiki> in veljavno sintakso.',
+	'tpt-badsect' => '»$1« ni veljavno ime za prevajalsko enoto $2.',
+	'tpt-mark-summary' => 'Označil to različico za prevajanje',
 	'tpt-edit-failed' => 'Ni mogoče posodobiti strani: $1',
+	'tpt-already-marked' => 'Najnovejša različica te strani je že bila označena za prevajanje.',
+	'tpt-unmarked' => 'Stran $1 ni več označena za prevajanje.',
+	'tpt-list-nopages' => 'Nobena stran ni označena za prevajanje, niti pripravljena, da se označi za prevajanje.',
+	'tpt-old-pages' => 'Nekatere različice {{PLURAL:$1|te strani|teh strani}} so bile označene za prevajanje.',
 	'tpt-rev-latest' => 'najnovejša različica',
 	'tpt-rev-old' => 'razlika s prejšnjimi označeni različici',
 	'tpt-rev-mark-new' => 'označi to različico za prevajanje',
+	'tpt-rev-unmark' => 'odstrani to stran iz prevoda',
 	'tpt-translate-this' => 'prevedi to stran',
 	'translate-tag-translate-link-desc' => 'Prevedi to stran',
 	'translate-tag-markthis' => 'Označi to stran za prevajanje',
+	'tpt-translation-intro-fuzzy' => 'Zastareli prevodi so označeni tako.',
 	'tpt-languages-legend' => 'Ostali jeziki:',
+	'tpt-move-impossible' => 'Prestavljanje strani, označenih za prevajanje, še ni mogoče.',
 	'tpt-download-page' => 'Izvozi stran s prevodi',
+	'pt-parse-open' => 'Neizenačena etiketa &lt;translate>.
+Prevajalna predloga: <pre>$1</pre>',
+	'pt-parse-close' => 'Neizenačena etiketa &lt;/translate>.
+Prevajalna predloga: <pre>$1</pre>',
+	'pt-parse-nested' => 'Gnezdeni razdelki &lt;translate> niso dovoljeni.
+Besedilo etikete: <pre>$1</pre>',
+	'pt-log-header' => 'Dnevnik dejanj, ki so povezana s sistemom prevajanja strani',
+	'pt-log-name' => 'Dnevnik prevajanja strani',
+	'pt-log-mark' => '{{GENDER:$2|označil|označila}} redakcijo $3 strani »[[:$1]]« za prevajanje',
+	'pt-log-unmark' => '{{GENDER:$2|odstranil|odstranila}} stran »[[:$1]]« iz prevajanja',
 );
 
 /** Serbian Cyrillic ekavian (Српски (ћирилица))

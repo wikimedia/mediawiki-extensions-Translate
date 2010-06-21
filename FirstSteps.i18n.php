@@ -1446,6 +1446,8 @@ $messages['sl'] = array(
 	'translate-fs-permissions-title' => 'Zaprosite za prevajalska dovoljenja',
 	'translate-fs-target-title' => 'Začnite prevajati!',
 	'translate-fs-email-title' => 'Potrdite svoj e-poštni naslov',
+	'translate-fs-settings-skip' => 'Končal sem.
+Pustite mi nadaljevati.',
 	'translate-fs-userpage-submit' => 'Ustvari mojo uporabniško stran',
 	'translate-fs-userpage-done' => 'Dobro opravljeno! Sedaj imate uporabniško stran.',
 );
