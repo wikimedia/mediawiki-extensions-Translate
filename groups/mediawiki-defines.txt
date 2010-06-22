@@ -1195,6 +1195,7 @@ Upload Blacklist
 
 Upload Wizard
 aliasfile = UploadWizard/UploadWizard.alias.php
+ignored = mwe-upwiz-license-pd-us
 
 Unicode Converter
 
