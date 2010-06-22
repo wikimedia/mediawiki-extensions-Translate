@@ -838,6 +838,22 @@ Tu recipera anque bulletines de novas al plus un vice per mense.
 Si tu non vole reciper bulletines de novas, tu pote disactivar los in le scheda "{{int:prefs-personal}}" de tu [[Special:Preferences|preferentias]].',
 );
 
+/** Indonesian (Bahasa Indonesia)
+ * @author Irwangatot
+ */
+$messages['id'] = array(
+	'firststeps' => 'Langkah pertama',
+	'firststeps-desc' => '[[Special:FirstSteps|Halaman istimewa]] untuk mendapatkan pengguna memulai di wiki menggunakan ekstensi Terjemahan',
+	'translate-fs-pagetitle-done' => '- Selesai!',
+	'translate-fs-pagetitle' => 'Persiapan wizard - $ 1',
+	'translate-fs-signup-title' => 'Mendaftar',
+	'translate-fs-settings-title' => 'Mengkonfigurasi preferensi anda',
+	'translate-fs-userpage-title' => 'Buat halaman pengguna anda',
+	'translate-fs-permissions-title' => 'Permintaan izin penerjemah',
+	'translate-fs-target-title' => 'Mulai menerjemahkan!',
+	'translate-fs-email-title' => 'Konfirmasikan alamat surel Anda',
+);
+
 /** Japanese (日本語)
  * @author Fryed-peach
  * @author Hosiryuhosi
@@ -1472,5 +1488,16 @@ $messages['uk'] = array(
 	'translate-fs-target-title' => 'Почніть перекладати!',
 	'translate-fs-email-title' => 'Підтвердіть вашу адресу електронної пошти',
 	'translate-fs-userpage-submit' => 'Створити мою сторінку користувача',
+);
+
+/** Vietnamese (Tiếng Việt)
+ * @author Minh Nguyen
+ */
+$messages['vi'] = array(
+	'firststeps' => 'Các bước đầu',
+	'translate-fs-signup-title' => 'Đăng ký',
+	'translate-fs-userpage-title' => 'Tạo trang cá nhân',
+	'translate-fs-target-title' => 'Tiến hành dịch!',
+	'translate-fs-email-title' => 'Xác nhận địa chỉ thư điện tử',
 );
 

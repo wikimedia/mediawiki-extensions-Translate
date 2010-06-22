@@ -1757,6 +1757,7 @@ Texto del section: <pre>$1</pre>',
 
 /** Indonesian (Bahasa Indonesia)
  * @author Bennylin
+ * @author Irwangatot
  * @author Rex
  */
 $messages['id'] = array(
@@ -1775,6 +1776,7 @@ $messages['id'] = array(
 	'tpt-sections-deleted' => 'Unit penerjemahan yang dihapus',
 	'tpt-sections-template' => 'Templat halaman penerjemahan',
 	'tpt-badtitle' => 'Nama halaman yang diberikan ($1) tidak valid',
+	'tpt-nosuchpage' => 'Halaman $1 tidak ada',
 	'tpt-oldrevision' => '$2 bukan revisi terakhir dari halaman [[$1]].
 Hanya revisi terakhir yang dapat ditandai untuk diterjemahkan.',
 	'tpt-notsuitable' => 'Halaman $1 tidak dapat diterjemahkan.
