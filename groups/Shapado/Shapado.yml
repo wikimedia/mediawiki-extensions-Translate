@@ -275,7 +275,7 @@ BASIC:
   display: out/shapado/sessions
 FILES:
   sourcePattern: %GROUPROOT%/shapado/config/locales/sessions/%CODE%.yml
-  targetPattern: shapado/config/locales/sesions/%CODE%.yml
+  targetPattern: shapado/config/locales/sessions/%CODE%.yml
 MANGLER:
   prefix: sessions-
 
