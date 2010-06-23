@@ -44,7 +44,6 @@ class SpecialTranslationStats extends SpecialPage {
 			if ( $t === 'group' ) {
 				$values = preg_replace( '~^page_~', 'page|', $values );
 			}
-			//var_dump( implode( ',', $values ) );
 			$opts[$t] = implode( ',', $values );
 		}
 
@@ -301,11 +300,13 @@ class SpecialTranslationStats extends SpecialPage {
 		foreach ( $res as $row ) {
 			$date = $wgLang->sprintfDate( $dateFormat, $row->rc_timestamp );
 
-			$index = $so->indexOf( $row );
-			if ( $index < 0 ) continue;
+			$indexes = $so->indexOf( $row );
+			if ( $indexes === -1 ) continue;
 
-			if ( !isset( $data[$date][$index] ) ) $data[$date][$index] = 0;
-			$data[$date][$index]++;
+			foreach ( (array) $indexes as $index ) {
+				if ( !isset( $data[$date][$index] ) ) $data[$date][$index] = 0;
+				$data[$date][$index]++;
+			}
 		}
 
 		$labels = null;
@@ -389,13 +390,18 @@ class TranslatePerLanguageStats {
 	public function preQuery( &$tables, &$fields, &$conds, &$type, &$options ) {
 		$db = wfGetDB( DB_SLAVE );
 
-		$groups = explode( ',', $this->opts['group'] );
-		$codes = explode( ',', $this->opts['language'] );
+		$groups = array_map( 'trim', explode( ',', $this->opts['group'] ) );
+		$codes = array_map( 'trim', explode( ',', $this->opts['language'] ) );
 
 		$filters['language'] = trim( $this->opts['language'] ) !== '';
 		$filters['group'] = trim( $this->opts['group'] ) !== '';
 
+		$namespaces = array();
+
 		foreach ( $groups as $group ) {
+			if ( $group === '' ) continue;
+			$ns = MessageGroups::getGroup( $group )->getNamespace();
+			$namespaces[$ns] = true;
 
 			foreach ( $codes as $code ) {
 				if ( $code !== '' ) $key = "$group ($code)";
@@ -404,9 +410,14 @@ class TranslatePerLanguageStats {
 			}
 		}
 
+		if ( count( $namespaces ) ) {
+			$conds['rc_namespace'] = array_keys( $namespaces );
+		}
+
 		if ( $filters['language'] ) {
 			$myconds = array();
 			foreach ( $codes as $code ) {
+				if ( $code === '' ) continue;
 				$myconds[] = 'rc_title like \'%%/' . $db->escapeLike( $code ) . "'";
 			}
 
@@ -444,26 +455,35 @@ class TranslatePerLanguageStats {
 		}
 
 		if ( !max( $this->filters ) ) return 0;
-		if ( strpos( $row->rc_title, '/' ) === false ) return - 1;
+		if ( strpos( $row->rc_title, '/' ) === false ) return -1;
+		if ( !count( $this->cache ) ) return 0;
 
 		list( $key, $code ) = TranslateUtils::figureMessage( $row->rc_title );
-		$indexKey = '';
+		$indexKeys = array();
 
 		if ( $this->filters['group'] ) {
-			$group = TranslateUtils::messageKeyToGroup( $row->rc_namespace, $key );
-			if ( $group === null ) return - 1;
-			$indexKey .= $group;
+			$groups = TranslateUtils::messageKeyToGroups( $row->rc_namespace, $key );
+			if ( !count( $groups ) ) {
+				return -1;
+			}
+			foreach ( $groups as $group ) $indexKeys[] = $group;
 		}
 
 		if ( $this->filters['language'] ) {
-			$indexKey .= " ($code)";
+			foreach ( $indexKeys as &$value ) {
+				$value .= " ($code)";
+			}
 		}
 
-		if ( count( $this->cache ) ) {
-			return isset( $this->cache[$indexKey] ) ? $this->cache[$indexKey] : - 1;
-		} else {
-			return 0;
+		$indexes = array();
+
+		foreach ( $indexKeys as $value ) {
+			if ( isset( $this->cache[$value] ) ) {
+				$indexes[] = $this->cache[$value];
+			}
 		}
+
+		return $indexes;
 	}
 
 	public function labels( &$labels ) {
