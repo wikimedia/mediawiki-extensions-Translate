@@ -196,7 +196,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 				if ( $filter !== 'optional' && $filter !== 'ignored' ) {
 					throw new MWException( "No tagged messages for custom filter $filter" );
 				}
-				$keys = array();
+				$keys = $this->filterOnCondition( $keys, array(), $condition );
 			} else {
 				$taggedKeys = array_flip( $this->tags[$filter] );
 				$keys = $this->filterOnCondition( $keys, $taggedKeys, $condition );
