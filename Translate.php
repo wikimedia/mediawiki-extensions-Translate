@@ -322,6 +322,11 @@ $wgTranslateGroupFiles = array();
  */
 $wgTranslateExtensionDirectory = "$IP/extensions/";
 
+/**
+ * Set location of cache files. Defaults to $wgCacheDirectory.
+ */
+$wgTranslateCacheDirectory = false;
+
 # ==== PHPlot ====
 
 /**
