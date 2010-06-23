@@ -159,6 +159,9 @@ aliasfile = SendToAFriend/SendToAFriend.alias.php
 
 Share Feature
 
+Sitemap
+aliasfile = Sitemap/Sitemap.alias.php
+
 Site Wide Messages
 file = SiteWideMessages/SpecialSiteWideMessages.i18n.php
 ignored = swm-expire-options
