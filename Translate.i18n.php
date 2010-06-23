@@ -10519,6 +10519,7 @@ Kuckt de Menu fir e Link op de Portal fir déi Sprooch déi dir an Äre Preferen
 	'supportedlanguages-noportal-title' => 'Kee Portal-Nummraum definéiert',
 	'supportedlanguages-noportal' => 'De Wiki Administrateur huet NS_PORTAL net definéiert, dofir fonctionnéiert dës Säit net.
 Op dëser Säit ass eng Lëscht vu Sproocheportal fir all Portaler déi mat engem bestëmmte Sproochecode an enger Ënnersäit mam Numm "translators" wou d\'Schabloun [[:{{ns:template}}:User|Benotzer]] dran ass an déi de Benotzernumm als Parameter huet.',
+	'supportedlanguages-recenttranslations' => 'rezent Iwwersetzungen',
 	'translate-save' => 'Späicher ($1)',
 	'translate-jssti-add' => "Op d'Lëscht derbäisetzen",
 	'translate-group-desc-mediawikicore' => "An dëser Grupp mat Message sinn d'Messagen aus der aktueller alpha-Versioun vu MediaWiki ({{CURRENTVERSION}}) dran",
@@ -10991,7 +10992,7 @@ $messages['mk'] = array(
 	'translate-rc-translation-filter-no' => 'Не прави ништо',
 	'translate-rc-translation-filter-only' => 'Прикажи само преводи',
 	'translate-rc-translation-filter-filter' => 'Филтрирај преводи',
-	'translate-rc-translation-filter-site' => 'Промени само на пораките на мрж. место',
+	'translate-rc-translation-filter-site' => 'Промени само во пораките на мреж. место',
 	'translationstats' => 'Статистики на преведување',
 	'translate-stats-edits' => 'Уредувања',
 	'translate-stats-users' => 'Преведувачи',

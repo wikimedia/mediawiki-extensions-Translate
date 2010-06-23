@@ -1495,9 +1495,15 @@ $messages['uk'] = array(
  */
 $messages['vi'] = array(
 	'firststeps' => 'Các bước đầu',
+	'firststeps-desc' => '[[Special:FirstSteps|Trang đặc biệt]] để giúp những người mơi đến bắt đầu sử dụng phần mở rộng Dịch',
+	'translate-fs-pagetitle-done' => ' – đã hoàn tất!',
+	'translate-fs-pagetitle' => 'Trình Thuật sĩ Bắt đầu – $1',
 	'translate-fs-signup-title' => 'Đăng ký',
+	'translate-fs-settings-title' => 'Cấu hình tùy chọn',
 	'translate-fs-userpage-title' => 'Tạo trang cá nhân',
+	'translate-fs-permissions-title' => 'Yêu cầu quyền biên dịch viên',
 	'translate-fs-target-title' => 'Tiến hành dịch!',
 	'translate-fs-email-title' => 'Xác nhận địa chỉ thư điện tử',
+	'translate-fs-userpage-submit' => 'Tạo trang cá nhân',
 );
 

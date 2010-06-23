@@ -3515,6 +3515,9 @@ Bản mẫu thông dịch: <pre>$1</pre>',
 Bản mẫu thông dịch: <pre>$1</pre>',
 	'pt-parse-nested' => 'Không được phép bỏ phần &lt;translate> trong phần khác.
 Văn bản thẻ: <pre>$1</pre>',
+	'pt-log-header' => 'Nhật trình các tác vụ co liên quan đến hệ thống dịch trang',
+	'pt-log-name' => 'Nhật trình dịch trang',
+	'pt-log-mark' => '{{GENDER:$2|}}đã đánh dấu phiên bản $3 của trang “[[:$1]]” là cần được dịch',
 );
 
 /** Volapük (Volapük)
