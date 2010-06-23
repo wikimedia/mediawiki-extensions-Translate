@@ -223,8 +223,7 @@ class TranslateUtils {
 	}
 
 	public static function messageIndex() {
-		global $wgCacheDirectory;
-		$filename = "$wgCacheDirectory/translate_messageindex.cdb";
+		$filename = self::cacheFile( 'translate_messageindex.cdb' );
 		if ( !file_exists( $filename ) ) MessageIndexRebuilder::execute();
 
 		if ( file_exists( $filename ) ) {
@@ -285,6 +284,23 @@ class TranslateUtils {
 	public static function assetPath( $path ) {
 		global $wgExtensionAssetsPath;
 		return "$wgExtensionAssetsPath/Translate/$path";
+	}
+
+	/**
+	 * Gets the path for cache files
+	 */
+	public static function cacheFile( $filename ) {
+		global $wgTranslateCacheDirectory, $wgCacheDirectory;
+
+		if ( $wgTranslateCacheDirectory !== false ) {
+			$dir = $wgTranslateCacheDirectory;
+		} elseif ( $wgCacheDirectory !== false ) {
+			$dir = $wgCacheDirectory;
+		} else {
+			throw new MWException( "\$wgCacheDirectory must be configured" );
+		}
+
+		return "$dir/$filename";
 	}
 
 	public static function snippet( &$text, $length = 10 ) {

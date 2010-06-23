@@ -41,7 +41,7 @@ class MessageIndexRebuilder {
 
 		global $wgCacheDirectory;
 
-		$filename = "$wgCacheDirectory/translate_messageindex.cdb";
+		$filename = TranslateUtils::cacheFile( 'translate_messageindex.cdb' );
 
 		$writer = CdbWriter::open( $filename );
 		$writer->set( 'map', serialize( $hugearray ) );

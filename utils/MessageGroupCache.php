@@ -67,9 +67,7 @@ class MessageGroupCache {
 	}
 
 	protected function getCacheFileName( $code ) {
-		global $wgCacheDirectory;
-
-		return "$wgCacheDirectory/translate_groupcache-{$this->group}-$code.cdb";
+		return TranslateUtils::cacheFile( "translate_groupcache-{$this->group}-$code.cdb" );
 	}
 
 	protected function specialKey( $key ) {
