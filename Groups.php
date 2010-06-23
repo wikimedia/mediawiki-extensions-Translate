@@ -227,13 +227,12 @@ abstract class MessageGroupBase implements MessageGroup {
 
 class FileBasedMessageGroup extends MessageGroupBase {
 	public function exists() {
-		return (bool) count( $this->load( 'en' ) );
+		return $this->getFFS()->exists();
 	}
 
 	public function load( $code ) {
 		$ffs = $this->getFFS();
 		$data = $ffs->read( $code );
-
 		return $data ? $data['MESSAGES'] : array();
 	}
 
@@ -315,4 +314,93 @@ class MediaWikiMessageGroup extends FileBasedMessageGroup {
 
 		parent::setTags( $collection );
 	}
+}
+
+
+/**
+ * Groups multiple message groups together as one big group.
+ * Limitations:
+ *  - Only groups of same type and in the same namespace
+ */
+class AggregateMessageGroup extends MessageGroupBase {
+
+	public function exists() {
+		// Group exists if there is any subgroups
+		$exists = (bool) $this->conf['GROUPS'];
+
+		if ( !$exists ) {
+			trigger_error( __METHOD__ . "[{$this->getId()}]: Group is empty" );
+		}
+
+		return $exists;
+	}
+
+	public function load( $code ) {
+		$messages = array();
+		foreach( $this->getGroups() as $group ) {
+			$messages += $group->load( $code );
+		}
+		return $messages;
+	}
+
+	public function getMangler() {
+		if ( !isset( $this->mangler ) ) {
+			$this->mangler = StringMatcher::emptyMatcher();
+		}
+		return $this->mangler;
+	}
+
+	protected function getGroups() {
+		if ( !isset( $this->groups ) ) {
+			$groups = array();
+			$ids = (array) $this->conf['GROUPS'];
+			foreach( $ids as $id ) {
+				// Don't try to include self and go to infinite loop
+				if ( $id === $this->getId() ) continue;
+				$groups[$id] = MessageGroups::getGroup( $id );
+			}
+			$this->groups = $groups;
+		}
+		return $this->groups;
+	}
+
+	public function initCollection( $code ) {
+		$messages = array();
+		foreach( $this->getGroups() as $group ) {
+			$cache = new MessageGroupCache( $group );
+			foreach ( $cache->getKeys() as $key ) {
+				$messages[$key] = $cache->get( $key );
+			}
+		}
+
+		$namespace = $this->getNamespace();
+		$definitions = new MessageDefinitions( $namespace, $messages );
+		$collection = MessageCollection::newFromDefinitions( $definitions, $code );
+		$this->setTags( $collection );
+
+		return $collection;
+	}
+
+	public function getMessage( $key, $code ) {
+		foreach( $this->getGroups() as $group ) {
+			$message = $group->getMessage( $key, $code );
+			if ( $message !== null ) return $message;
+		}
+	}
+
+	public function getTags( $type = null ) {
+		$tags = array();
+		foreach( $this->getGroups() as $group ) {
+			//FIXME: is this correct?
+			$tags = array_merge_recursive( $tags, $group->getTags( $type ) );
+		}
+		return $tags;
+	}
+
+	protected function setTags( MessageCollection $collection ) {
+		foreach( $this->getGroups() as $group ) {
+			$group->setTags( $collection );
+		}
+	}
+
 }

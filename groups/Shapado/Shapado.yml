@@ -24,6 +24,45 @@ TEMPLATE:
 
 ---
 BASIC:
+  id: out-shapado-0-all
+  label: All Shapado messages
+  display: out/shapado
+  meta: yes
+  class: AggregateMessageGroup
+GROUPS:
+  - out-shapado-ads
+  - out-shapado-announcements
+  - out-shapado-answers
+  - out-shapado-badges
+  - out-shapado-closerequests
+  - out-shapado-comments
+  - out-shapado-doc
+  - out-shapado-errors
+  - out-shapado-favorites
+  - out-shapado-flags
+  - out-shapado-global
+  - out-shapado-groups
+  - out-shapado-imports
+  - out-shapado-layouts
+  - out-shapado-mailers
+  - out-shapado-manage
+  - out-shapado-members
+  - out-shapado-moderate
+  - out-shapado-notifier
+  - out-shapado-pages
+  - out-shapado-questions
+  - out-shapado-searches
+  - out-shapado-sessions
+  - out-shapado-shared
+  - out-shapado-unfavorites
+  - out-shapado-users
+  - out-shapado-votes
+  - out-shapado-welcome
+  - out-shapado-widgets
+  - out-shapado-wiki
+
+---
+BASIC:
   id: out-shapado-ads
   label: Shapado - Ads
   display: out/shapado/ads

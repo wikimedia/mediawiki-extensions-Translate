@@ -39,7 +39,7 @@ class SimpleFFS implements FFS {
 	public function setWritePath( $writePath ) { $this->writePath = $writePath; }
 	public function getWritePath() { return $this->writePath; }
 
-	public function read( $code ) {
+	public function exists( $code = 'en' ) {
 		$filename = $this->group->getSourceFilePath( $code );
 		if ( $filename === null ) {
 			return false;
@@ -49,6 +49,15 @@ class SimpleFFS implements FFS {
 			return false;
 		}
 
+		return true;
+	}
+
+	public function read( $code ) {
+		if ( !$this->exists( $code ) ) {
+			return false;
+		}
+
+		$filename = $this->group->getSourceFilePath( $code );
 		$input = file_get_contents( $filename );
 		if ( $input === false ) {
 			throw new MWException( "Unable to read file $filename" );
