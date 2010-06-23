@@ -15,7 +15,7 @@ Ajax Poll
 
 Auto Create Wiki
 optional = autocreatewiki-reminder-subject, autocreatewiki-language-top-list
-ignored = requestwiki-filter-language
+ignored = requestwiki-filter-language, autocreatewiki-tagline
 
 Badges
 file = Badges/UserBadges.i18n.php
