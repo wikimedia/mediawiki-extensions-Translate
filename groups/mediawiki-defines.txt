@@ -45,6 +45,8 @@ aliasfile = APC/APC.alias.php
 
 Api SVG Proxy
 
+Approved Revs
+
 Asksql
 aliasfile = Asksql/Asksql.alias.php
 
