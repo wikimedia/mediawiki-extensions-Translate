@@ -626,6 +626,8 @@ Log Entry
 aliasfile = LogEntry/LogEntry.alias.php
 descmsg = logentry-parserhook-desc
 
+Logo Functions
+
 Lookup User
 aliasfile = LookupUser/LookupUser.alias.php
 
