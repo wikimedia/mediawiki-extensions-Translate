@@ -1368,6 +1368,11 @@ id = ext-ui-wikieditor-preview
 file = UsabilityInitiative/WikiEditor/Modules/Preview/Preview.i18n.php
 descmsg = wikieditor-preview-desc
 
+Usability Initiative - Wikieditor Preview Dialog
+id = ext-ui-wikieditor-previewdialog
+file = UsabilityInitiative/WikiEditor/Modules/PreviewDialog/PreviewDialog.i18n.php
+descmsg = wikieditor-previewDialog-preference
+
 Usability Initiative - Wikieditor Publish
 id = ext-ui-wikieditor-publish
 file = UsabilityInitiative/WikiEditor/Modules/Publish/Publish.i18n.php
