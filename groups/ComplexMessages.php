@@ -566,7 +566,9 @@ class SpecialPageAliasesCM extends ComplexMessages {
 			$values = $this->val( $group, self::LANG_CURRENT, $key );
 
 			foreach ( $values as $i => $_ ) {
+				wfSuppressWarnings();
 				$title = SpecialPage::getTitleFor( $_ );
+				wfRestoreWarnings();
 				$link = Xml::element( 'a', array( 'href' => "#mw-sp-magic-$key" ), $key );
 				if ( $title === null ) {
 					if ( $_ !== '' ) {
