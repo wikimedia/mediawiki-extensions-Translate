@@ -8161,6 +8161,7 @@ Vide le barra de menu pro un ligamine al portal pro le lingua de tu preferentia.
 	'supportedlanguages-noportal' => 'Le administrator del wiki non ha definite NS_PORTAL, dunque iste pagina non functiona.
 In iste pagina apparera un lista de portales linguistic pro tote le portales correspondente con un codice de lingua definite e un subpagina appellate "translators".
 Le subpagina "translators" debe continer le patrono [[:{{ns:template}}:User|User]] que prende un nomine de usator como parametro.',
+	'supportedlanguages-recenttranslations' => 'traductiones recente',
 	'translate-save' => 'Publicar ($1)',
 	'translate-jssti-add' => 'Adder al lista',
 	'translate-group-desc-mediawikicore' => 'Iste gruppo contine le messages usate in le version alpha actual de MediaWiki ({{CURRENTVERSION}})',
@@ -8695,6 +8696,7 @@ Ef þú veist hvar eða hvernig meldingin er notuð getur þú hjálpað öðrum
  * @author McDutchie
  * @author Melos
  * @author Pietrodn
+ * @author VittGam
  */
 $messages['it'] = array(
 	'translate' => 'Traduzione',
@@ -8702,15 +8704,15 @@ $messages['it'] = array(
 	'translate-edit' => 'modifica',
 	'translate-talk' => 'discussione',
 	'translate-history' => 'cronologia',
-	'translate-task-view' => 'Visualizzare tutti i messaggi dal',
-	'translate-task-untranslated' => 'Visualizzare tutti i messaggi non tradotti dal',
-	'translate-task-optional' => 'Visualizzare i messaggi opzionali dal',
-	'translate-task-untranslatedoptional' => 'Visualizza i messaggi opzionali non tradotti dal',
+	'translate-task-view' => 'Visualizzare tutti i messaggi',
+	'translate-task-untranslated' => 'Visualizzare tutti i messaggi non tradotti',
+	'translate-task-optional' => 'Visualizzare i messaggi opzionali',
+	'translate-task-untranslatedoptional' => 'Visualizzare i messaggi opzionali non tradotti',
 	'translate-task-problematic' => 'Visualizzare messaggi che hanno problemi',
-	'translate-task-review' => 'Revisionare i cambiamenti al',
-	'translate-task-reviewall' => 'Revisionare tutti i messaggi tradotti nel',
-	'translate-task-export' => 'Esportare le traduzioni dal',
-	'translate-task-export-to-file' => 'Esportare la traduzione in un file dal',
+	'translate-task-review' => 'Revisionare i cambiamenti',
+	'translate-task-reviewall' => 'Revisionare tutti i messaggi tradotti',
+	'translate-task-export' => 'Esportare le traduzioni',
+	'translate-task-export-to-file' => 'Esportare la traduzione in un file',
 	'translate-task-export-as-po' => 'Esportare la traduzione nel formato Gettext',
 	'translate-task-export-to-xliff' => 'Esportare la traduzione nel formato Xliff',
 	'translate-page-no-such-language' => 'Il linguaggio specificato non è valido.',
@@ -14608,11 +14610,11 @@ $messages['rue'] = array(
 	'translate-edit' => 'едітовати',
 	'translate-talk' => 'діскузія',
 	'translate-history' => 'історія',
-	'translate-task-view' => 'Зобразити вшыткы увідомлїня  з',
-	'translate-task-untranslated' => 'Зобразити вшыткы непереложены увідомлїня з',
-	'translate-task-optional' => 'Зобразити волительны увідомлїня з',
-	'translate-task-untranslatedoptional' => 'Зобразити непереложены волительны увідомлїня з',
-	'translate-task-problematic' => 'Зобразити увідомлїня з проблематічным перекладом',
+	'translate-task-view' => 'Зобразити вшыткы повідомлїня  з',
+	'translate-task-untranslated' => 'Зобразити вшыткы непереложены повідомлїня з',
+	'translate-task-optional' => 'Зобразити волительны повідомлїня з',
+	'translate-task-untranslatedoptional' => 'Зобразити непереложены волительны повідомлїня з',
+	'translate-task-problematic' => 'Зобразити повідомлїня з проблематічным перекладом',
 	'translate-task-review' => 'Порівнати зміны в',
 	'translate-task-reviewall' => 'Порівнати вшыткы переклады в',
 	'translate-task-export' => 'Експортовати переклады',
@@ -14629,6 +14631,8 @@ $messages['rue'] = array(
 	'translate-page-limit' => 'Ліміт',
 	'translate-submit' => 'Вказати',
 	'translate-page-navigation-legend' => 'Навіґація',
+	'translate-next' => 'Далша сторінка',
+	'translate-prev' => 'Попередня сторінка',
 	'translate-page-description-legend' => 'Інформація о ґрупі',
 	'languagestats' => 'Штатістіка языків',
 	'translate-js-next' => 'Уложыти і отворити далше',

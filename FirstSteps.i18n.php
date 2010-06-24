@@ -1492,6 +1492,7 @@ $messages['uk'] = array(
 
 /** Vietnamese (Tiếng Việt)
  * @author Minh Nguyen
+ * @author Vinhtantran
  */
 $messages['vi'] = array(
 	'firststeps' => 'Các bước đầu',
@@ -1504,6 +1505,85 @@ $messages['vi'] = array(
 	'translate-fs-permissions-title' => 'Yêu cầu quyền biên dịch viên',
 	'translate-fs-target-title' => 'Tiến hành dịch!',
 	'translate-fs-email-title' => 'Xác nhận địa chỉ thư điện tử',
+	'translate-fs-intro' => "Hoan nghênh bạn đến với trình hướng dẫn sử dụng {{SITENAME}}.
+Bạn sẽ được hướng dẫn từng bước quá trình trở thành biên dịch viên.
+Cuối cùng bạn sẽ có thể dịch được ''thông điệp giao diện'' của tất cả các dự án được hỗ trợ tại {{SITENAME}}.",
+	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount.png|frame]]
+
+Đầu tiên bạn phải mở tài khoản.
+
+Chúng tôi sẽ ghi công cho bản dịch của bạn thông qua tên người dùng của bạn.
+Hình bên phải hướng dẫn cho bạn cách điền vào các ô trống.
+
+Nếu bạn đã mở tài khoản rồi, hãy $1đăng nhập$2.
+Sau khi đã mở tài khoản, hãy trở lại trang này.
+
+$3Mở tài khoản$4',
+	'translate-fs-settings-text' => 'Giờ bạn nên đến trang tùy chọn cá nhân của mình và
+nhớ phải thay đổi ngôn ngữ giao diện sang loại ngôn ngữ mà bạn dự định sẽ dịch sang.
+
+Ngôn ngữ giao diện của bạn sẽ được dùng làm ngôn ngữ đích mặc định.
+Rất dễ quên thay đổi ngôn ngữ sang một ngôn ngữ đúng, vì thế chúng tôi khuyên bạn nên làm ngay bây giờ.
+
+Khi ở đó, bạn cũng có thể yêu cầu phần mềm hiển thị các bản dịch trong các ngôn ngữ khác mà bạn biết.
+Thiết lập này bạn có thể tìm thấy ở thẻ "{{int:prefs-editing}}".
+Bạn cứ thoải mái khám phá các thiết lập khác nhé.
+
+Đến [[Special:Preferences|trang tùy chọn cá nhân]] của bạn ngay bây giờ rồi trở lại trang này.',
+	'translate-fs-settings-skip' => 'Tôi đã xong.
+Cho tôi xem tiếp nào.',
+	'translate-fs-userpage-text' => 'Bây giờ bạn cần phải tạo trang thành viên của mình.
+
+Xin hãy viết một chút về bản thân; giới thiệu bạn là ai và bạn làm gì.
+Điều này sẽ giúp cho cộng đồng {{SITENAME}} cộng tác với nhau dễ hơn.
+Tại {{SITENAME}} có nhiều người từ khắp nơi trên thế giới làm việc trên các dự án và ngôn ngữ khác nhau.
+
+Trong hộp đã điền sẵn ở phía trên ngay dòng đầu tiên bạn sẽ nhìn thấy <nowiki>{{#babel:en-2}}</nowiki>.
+Xin hãy điền nó bằng ngôn ngữ mà bạn biết.
+Con số phía sau mã ngôn ngữ biểu thị mức độ thông thạo của bạn đối với ngôn ngữ.
+Các con số đó có nghĩa là:
+* 1 - một chút
+* 2 - biết cơ bản
+* 3 - có kiến thức tốt
+* 4 - cấp độ bản địa
+* 5 - bạn sử dụng ngôn ngữ một cách chuyên nghiệp, ví dụ bạn là biên dịch viên chuyên nghiệp.
+
+Nếu bạn là người nói tiếng bản địa của ngôn ngữ đó, không cần phải điền mức độ thành thạo, chỉ cần ghi mã ngôn ngữ là được.
+Ví dụ: Nếu Tamil là ngôn ngữ mẹ đẻ của bạn, nói tiếng Anh tốt, một chút tiếng Swahili, bạn cần viết:
+<code><nowiki>{{#babel:ta|en-3|sw-1}}</nowiki></code>
+
+Nếu bạn không biết mã ngôn ngữ của một ngôn ngữ, lúc này bạn có thể tra nó.
+Bạn có thể dùng danh sách phía dưới.',
 	'translate-fs-userpage-submit' => 'Tạo trang cá nhân',
+	'translate-fs-userpage-done' => 'Tốt lắm! Bây giờ bạn đã có trang người dùng.',
+	'translate-fs-permissions-text' => 'Giờ bạn cần phải đặt yêu cầu được thêm vào một nhóm biên dịch.
+
+Cho đến khi chúng tôi sửa xong lỗi, xin đến [[Project:Translator]] và làm theo hướng dẫn.
+Sau đó trở lại trang này.
+
+Sau khi đã đăng yêu cầu, một trong các thành viên tình nguyện của chúng tôi sẽ kiểm tra yêu cầu và chứng thực nó rất sớm.
+Xin hãy kiên nhẫn.
+
+<del>Kiểm tra xem yêu cầu dưới đây đã được điền đúng hay chưa rồi nhấn nút gửi.</del>',
+	'translate-fs-target-text' => "Chúc mừng bạn!
+Giờ bạn đã có thể bắt đầu biên dịch.
+
+Đừng e ngại nếu bạn còn cảm thấy bỡ ngỡ và rối rắm.
+Tại [[Project list]] có danh sách tổng quan các dự án mà bạn có thể đóng góp bản dịch vào.
+Phần lớn các dự án đều có một trang miêu tả ngắn cùng với liên kết \"''Dịch dự án này''\", nó sẽ đưa bạn đến trang trong đó liệt kê mọi thông điệp chưa dịch.
+Danh sách tất cả các nhóm thông điệp cùng với [[Special:LanguageStats|tình trạng biên dịch hiện tại của một ngôn ngữ]] cũng có sẵn.
+
+Nếu bạn cảm thấy bạn cần phải hiểu rõ hơn trước khi bắt đầu dịch, bạn có thể đọc [[FAQ|các câu hỏi thường gặp]].
+Rất tiếc là văn bản này đôi khi hơi lạc hậu.
+Nếu có gì bạn nghĩ bạn nên làm, nhưng không biết cách, đừng do dự hỏi nó tại [[Support|trang hỗ trợ]].
+
+Bạn cũng có thể liên hệ với đồng nghiệp biên dịch của cùng ngôn ngữ tại [[Portal:\$1|cổng ngôn ngữ của bạn]].
+Cổng này liên kết đến [[Special:Preferences|tùy chọn ngôn ngữ của bạn]].
+Xin hãy thay đổi nếu cần.",
+	'translate-fs-email-text' => 'Xin cung cấp cho chúng tôi địa chỉ thư điện tử của bạn trong [[Special:Preferences|tùy chọn cá nhân]] và xác nhận nó trong thư chúng tôi gửi cho bạn.
+
+Nó cho phép người khác liên hệ với bạn qua thư.
+Bạn cũng sẽ nhận được thư tin tức tối đa một bức một tháng.
+Nếu bạn không muốn nhận thư tin tức, bạn có thể bỏ nó ra khỏi thẻ "{{int:prefs-personal}}" trong [[Special:Preferences|tùy chọn cá nhân]].',
 );
 

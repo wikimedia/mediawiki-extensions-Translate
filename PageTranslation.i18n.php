@@ -1824,29 +1824,62 @@ $messages['ig'] = array(
 /** Italian (Italiano)
  * @author Civvì
  * @author Darth Kule
+ * @author VittGam
  */
 $messages['it'] = array(
 	'pagetranslation' => 'Traduzione pagine',
 	'right-pagetranslation' => 'Segna versione di pagine per la traduzione',
 	'tpt-desc' => 'Estensione per la traduzione di pagine di contenuti',
+	'tpt-section' => 'Unità di traduzione $1',
+	'tpt-section-new' => 'Nuova unità di traduzione.
+Nome: $1',
+	'tpt-section-deleted' => 'Unità di traduzione $1',
+	'tpt-template' => 'Modello della pagina',
+	'tpt-templatediff' => 'Il modello della pagina è cambiato.',
 	'tpt-diff-old' => 'Testo precedente',
 	'tpt-diff-new' => 'Testo successivo',
 	'tpt-submit' => 'Segna questa versione per la traduzione',
+	'tpt-sections-oldnew' => 'Unità di traduzione nuove ed esistenti',
+	'tpt-sections-deleted' => 'Unità di traduzione eliminate',
+	'tpt-sections-template' => 'Modello della pagina di traduzione',
+	'tpt-action-nofuzzy' => 'Non invalidare le traduzioni',
 	'tpt-badtitle' => 'Il nome fornito per la pagina ($1) non è un titolo valido',
+	'tpt-nosuchpage' => 'La pagina $1 non esiste',
 	'tpt-oldrevision' => "$2 non è l'ultima versione della pagina [[$1]].
 Solo le ultime versioni possono essere segnate per la traduzione.",
 	'tpt-notsuitable' => 'La pagina $1 non è adatta per la traduzione.
 Assicurarsi che abbia i tag <nowiki><translate></nowiki> e una sintassi valida.',
+	'tpt-saveok' => 'La pagina [[$1]] è stata marcata per la traduzione con $2 unità di traduzione.
+Ora la pagina può essere <span class="plainlinks">[$3 tradotta]</span>.',
+	'tpt-badsect' => '"$1" non è un nome valido per l\'unità di traduzione $2.',
 	'tpt-showpage-intro' => 'Di seguito sono elencate le sezioni nuove, esistenti e cancellate.
 Prima di segnare questa versione per la traduzione, controllare che i cambiamenti per le sezioni siano ridotti al minimo per evitare lavoro non necessario ai traduttori.',
+	'tpt-mark-summary' => 'Versione marcata per la traduzione',
 	'tpt-edit-failed' => 'Impossibile aggiornare la pagina: $1',
 	'tpt-already-marked' => "L'ultima versione di questa pagina è già stata segnata per la traduzione.",
+	'tpt-unmarked' => 'La pagina $1 non è più marcata per la traduzione.',
 	'tpt-list-nopages' => 'Nessuna pagina è segnata per la traduzione oppure è pronta per essere segnata per la traduzione.',
 	'tpt-old-pages' => 'Alcune versioni di {{PLURAL:$1|questa pagina|queste pagine}} sono state segnate per la traduzione.',
+	'tpt-new-pages' => '{{PLURAL:$1|Questa pagina contiene|Queste pagine contengono}} testo con tag di traduzione,
+ma al momento nessuna versione di {{PLURAL:$1|questa pagina|queste pagine}} è marcata per la traduzione.',
+	'tpt-other-pages' => "{{PLURAL:$1|Una vecchia versione di questa pagina è marcata|Delle vecchie versioni di queste pagine sono marcate}} per la traduzione,
+ma {{PLURAL:$1|l'ultima versione non può essere marcata|le ultime versioni non possono essere marcate}} per la traduzione.",
+	'tpt-rev-latest' => 'ultima versione',
+	'tpt-rev-old' => 'differenze dalla precedente versione marcata',
+	'tpt-rev-mark-new' => 'segna questa versione per la traduzione',
+	'tpt-rev-unmark' => 'rimuovi questa pagina dalla traduzione',
+	'tpt-translate-this' => 'traduci questa pagina',
 	'translate-tag-translate-link-desc' => 'Traduci questa pagina',
+	'translate-tag-markthis' => 'Segna questa pagina per la traduzione',
+	'translate-tag-markthisagain' => 'Questa pagina è stata <span class="plainlinks">[$1 modificata]</span> da quando era stata <span class="plainlinks">[$2 segnata per la traduzione]</span>.',
+	'translate-tag-hasnew' => 'Questa pagina contiene delle <span class="plainlinks">[$1 modifiche]</span> che non sono segnate per la traduzione.',
 	'tpt-translation-intro' => 'Questa pagina è una <span class="plainlinks">[$1 versione tradotta]</span> della pagina [[$2]], la traduzione è completa e aggiornata al $3%.',
+	'tpt-translation-intro-fuzzy' => 'Le traduzioni non aggiornate sono marcate come questo testo.',
 	'tpt-languages-legend' => 'Altre lingue:',
 	'tpt-target-page' => 'Questa pagina non può essere aggiornata manualmente. Questa pagina è una traduzione della pagina [[$1]] e la traduzione può essere aggiornata tramite [$2 lo strumento di traduzione].',
+	'tpt-unknown-page' => 'Questo namespace è riservato alle traduzioni del contenuto delle pagine.
+La pagina che stai cercando di modificare non sembra corrispondere ad alcuna pagina segnata per la traduzione.',
+	'tpt-move-impossible' => 'Non è ancora possibile spostare le pagine marcate per la traduzione.',
 );
 
 /** Japanese (日本語)
@@ -3471,6 +3504,7 @@ Tên: $1',
 	'tpt-sections-oldnew' => 'Các đơn vị dịch thuật mới và hiện có',
 	'tpt-sections-deleted' => 'Các đơn vị dịch thuật đã bị xóa',
 	'tpt-sections-template' => 'Bản mẫu trang dịch',
+	'tpt-action-nofuzzy' => 'Đừng làm mất hiệu lực bản dịch',
 	'tpt-badtitle' => 'Tên trang cung cấp ($1) không phải là tên đúng',
 	'tpt-nosuchpage' => 'Trang $1 không tồn tại',
 	'tpt-oldrevision' => '$2 không phải là phiên bản mới của trang [[$1]]/
@@ -3506,6 +3540,7 @@ Trước khi đánh dấu phiên bản này chờ dịch, hãy kiểm tra nhữn
 Nó là một bản dịch của trang [[$1]] và có thể cập nhật bản dịch bằng cách sử dụng [$2 công cụ dịch thuật].',
 	'tpt-unknown-page' => 'Không gian tên này được dành cho các bản dịch trang nội dung.
 Trang bạn muốn sửa đổi dường như không tương ứng với trang nào đã được đánh dấu cần dịch.',
+	'tpt-move-impossible' => 'Việc di chuyển trang cần dịch chưa thực hiện được.',
 	'tpt-install' => 'Chạy php maintenance/update.php hoặc cài đặt web để bật tính năng dịch trang.',
 	'tpt-render-summary' => 'Cập nhật đến phiên bản mới của trang nguồn',
 	'tpt-download-page' => 'Xuất trang cùng các bản dịch',
@@ -3515,9 +3550,15 @@ Bản mẫu thông dịch: <pre>$1</pre>',
 Bản mẫu thông dịch: <pre>$1</pre>',
 	'pt-parse-nested' => 'Không được phép bỏ phần &lt;translate> trong phần khác.
 Văn bản thẻ: <pre>$1</pre>',
+	'pt-shake-multiple' => 'Nhiều phần đánh dấu cho một mục.
+Phần văn bản: <pre>$1</pre>',
+	'pt-shake-position' => 'Phần đánh dấu ở vị trí không mong đợi.
+Phần văn bản: <pre>$1</pre>',
+	'pt-shake-empty' => 'Điểm đánh dấu $1 có phần rỗng.',
 	'pt-log-header' => 'Nhật trình các tác vụ co liên quan đến hệ thống dịch trang',
 	'pt-log-name' => 'Nhật trình dịch trang',
 	'pt-log-mark' => '{{GENDER:$2|}}đã đánh dấu phiên bản $3 của trang “[[:$1]]” là cần được dịch',
+	'pt-log-unmark' => '{{GENDER:$2|đã di chuyển}} trang "[[:$1]]" từ bản dịch',
 );
 
 /** Volapük (Volapük)
