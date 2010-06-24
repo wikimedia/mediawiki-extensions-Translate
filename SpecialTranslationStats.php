@@ -52,8 +52,10 @@ class SpecialTranslationStats extends SpecialPage {
 		} elseif ( $opts['graphit'] ) {
 
 			// Cache for two hours
-			$lastMod = $wgOut->checkLastModified( wfTimestamp( TS_MW, time() - 2 * 3600 ) );
-			if ( $lastMod ) return;
+			if ( !$opts['preview'] ) {
+				$lastMod = $wgOut->checkLastModified( wfTimestamp( TS_MW, time() - 2 * 3600 ) );
+				if ( $lastMod ) return;
+			}
 
 			$wgOut->disable();
 
@@ -279,7 +281,6 @@ class SpecialTranslationStats extends SpecialPage {
 		$so->preQuery( $tables, $fields, $conds, $type, $options );
 		$res = $dbr->select( $tables, $fields, $conds, $type, $options );
 
-
 		// Initialisations
 		$so->postQuery( $res );
 
@@ -291,9 +292,9 @@ class SpecialTranslationStats extends SpecialPage {
 
 		$data = array();
 		while ( $cutoff < $now ) {
-			$date = $wgLang->sprintfDate( $dateFormat, wfTimestamp( TS_MW, $cutoff )  );
-			$so->preProcess( $data[$date] );
+			$date = $wgLang->sprintfDate( $dateFormat, wfTimestamp( TS_MW, $cutoff ) );
 			$cutoff += $increment;
+			$data[$date] = array();
 		}
 
 		// Processing
@@ -301,7 +302,7 @@ class SpecialTranslationStats extends SpecialPage {
 			$date = $wgLang->sprintfDate( $dateFormat, $row->rc_timestamp );
 
 			$indexes = $so->indexOf( $row );
-			if ( $indexes === -1 ) continue;
+			if ( $indexes === false ) continue;
 
 			foreach ( (array) $indexes as $index ) {
 				if ( !isset( $data[$date][$index] ) ) $data[$date][$index] = 0;
@@ -309,8 +310,17 @@ class SpecialTranslationStats extends SpecialPage {
 			}
 		}
 
-		$labels = null;
-		$so->labels( $labels );
+		$labels = $so->labels();
+
+		/* Make sure there is empty entries for silent days, or otherwise
+		 * they will be skipped alltogether. */
+		foreach ( $data as &$date ) {
+			foreach ( $labels as $label ) {
+				if ( !isset( $date[$label] ) ) {
+					$date[$label] = 0;
+				}
+			}
+		}
 
 		return array( $labels, $data );
 	}
@@ -378,9 +388,6 @@ class SpecialTranslationStats extends SpecialPage {
 
 class TranslatePerLanguageStats {
 	protected $opts;
-	protected $cache;
-	protected $index;
-	protected $filters;
 	protected $usercache;
 
 	public function __construct( FormOptions $opts ) {
@@ -390,54 +397,41 @@ class TranslatePerLanguageStats {
 	public function preQuery( &$tables, &$fields, &$conds, &$type, &$options ) {
 		$db = wfGetDB( DB_SLAVE );
 
-		$groups = array_map( 'trim', explode( ',', $this->opts['group'] ) );
-		$codes = array_map( 'trim', explode( ',', $this->opts['language'] ) );
-
-		$filters['language'] = trim( $this->opts['language'] ) !== '';
-		$filters['group'] = trim( $this->opts['group'] ) !== '';
+		$this->groups = array_filter( array_map( 'trim', explode( ',', $this->opts['group'] ) ) );
+		$this->codes = array_filter( array_map( 'trim', explode( ',', $this->opts['language'] ) ) );
 
 		$namespaces = array();
+		$languages = array();
 
-		foreach ( $groups as $group ) {
-			if ( $group === '' ) continue;
-			$ns = MessageGroups::getGroup( $group )->getNamespace();
-			$namespaces[$ns] = true;
-
-			foreach ( $codes as $code ) {
-				if ( $code !== '' ) $key = "$group ($code)";
-				else $key = $group;
-				$this->cache[$key] = count( $this->cache );
+		foreach ( $this->groups as $id ) {
+			$group = MessageGroups::getGroup( $id );
+			if ( $group ) {
+				$namespaces[] = $group->getNamespace();
 			}
+		}
+
+		foreach( $this->codes as $code ) {
+			$languages[] = 'rc_title like \'%%/' . $db->escapeLike( $code ) . "'";
 		}
 
 		if ( count( $namespaces ) ) {
-			$conds['rc_namespace'] = array_keys( $namespaces );
+			$namespaces = array_unique( $namespaces );
+			$conds['rc_namespace'] = $namespaces;
 		}
 
-		if ( $filters['language'] ) {
-			$myconds = array();
-			foreach ( $codes as $code ) {
-				if ( $code === '' ) continue;
-				$myconds[] = 'rc_title like \'%%/' . $db->escapeLike( $code ) . "'";
-			}
-
-			$conds[] = $db->makeList( $myconds, LIST_OR );
+		if ( count( $languages ) ) {
+			$languages = array_unique( $languages );
+			$conds[] = $db->makeList( $languages, LIST_OR );
 		}
 
-		if ( max( $filters ) ) $fields[] = 'rc_title';
-		if ( $filters['group'] ) $fields[] = 'rc_namespace';
+		$fields[] = 'rc_title';
+		if ( $this->groups ) $fields[] = 'rc_namespace';
 		if ( $this->opts['count'] === 'users' ) $fields[] = 'rc_user_text';
 
 		$type .= '-perlang';
-
-		$this->filters = $filters;
 	}
 
 	public function postQuery( $rows ) { }
-
-	public function preProcess( &$initial ) {
-		$initial = array_pad( array(), max( 1, count( $this->cache ) ), 0 );
-	}
 
 	public function indexOf( $row ) {
 		global $wgContLang;
@@ -454,41 +448,53 @@ class TranslatePerLanguageStats {
 			}
 		}
 
-		if ( !max( $this->filters ) ) return 0;
-		if ( strpos( $row->rc_title, '/' ) === false ) return -1;
-		if ( !count( $this->cache ) ) return 0;
+		// Don't consider language-less pages
+		if ( strpos( $row->rc_title, '/' ) === false ) return false;
+
+		// No filters, just one key to track
+		if ( !$this->groups && !$this->codes ) return 'all';
+
+		// The key-building needs to be in sync with ::labels()
+		$keys = array();
 
 		list( $key, $code ) = TranslateUtils::figureMessage( $row->rc_title );
-		$indexKeys = array();
 
-		if ( $this->filters['group'] ) {
+		if ( $this->groups ) {
+			/* Get list of keys that the message belongs to, and filter
+			 * out those which are not requested */
 			$groups = TranslateUtils::messageKeyToGroups( $row->rc_namespace, $key );
-			if ( !count( $groups ) ) {
-				return -1;
-			}
-			foreach ( $groups as $group ) $indexKeys[] = $group;
+			$keys = array_intersect( $this->groups, $groups );
+		} else {
+			$keys[] = '';
 		}
-
-		if ( $this->filters['language'] ) {
-			foreach ( $indexKeys as &$value ) {
-				$value .= " ($code)";
-			}
-		}
-
-		$indexes = array();
-
-		foreach ( $indexKeys as $value ) {
-			if ( isset( $this->cache[$value] ) ) {
-				$indexes[] = $this->cache[$value];
+		if ( $this->codes ) {
+			foreach ( $keys as &$value ) {
+				if ( $value === '' ) {
+					$value = $code;
+				} else {
+					$value .= " ($code)";
+				}
 			}
 		}
-
-		return $indexes;
+		return $keys;
 	}
 
-	public function labels( &$labels ) {
-		if ( count( $this->cache ) > 1 ) {
-			$labels = array_keys( $this->cache );
+	public function labels() {
+		$labels = array();
+		if ( $this->groups && $this->codes ) {
+			foreach ( $this->codes as $code ) {
+				foreach ( $this->groups as $group ) {
+					$labels[] = "$group ($code)";
+				}
+			}
+		} elseif ( $this->groups ) {
+				$labels = $this->groups;
+		} elseif ( $this->codes ) {
+			$labels = $this->codes;
+		} else {
+			$labels = array();
 		}
+		return $labels;
 	}
+
 }
