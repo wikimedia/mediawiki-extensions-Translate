@@ -77,7 +77,10 @@ class PageTranslationHooks {
 
 		// Update the target translation page
 		list( , $code ) = TranslateUtils::figureMessage( $title->getDBkey() );
-		self::updateTranslationPage( $page, $code, $user, $flags, $summary );
+		global $wgTranslateDocumentationLanguageCode;
+		if ( $code !== $wgTranslateDocumentationLanguageCode ) {
+			self::updateTranslationPage( $page, $code, $user, $flags, $summary );
+		}
 
 		return true;
 	}
