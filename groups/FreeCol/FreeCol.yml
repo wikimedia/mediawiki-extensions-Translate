@@ -62,6 +62,5 @@ TAGS:
     - transaction.tax
     - year.YEAR
   ignored:
-    - HeaderFont
-    - NormalFont
-    - BoldFont
+    - font.*
+    - cli.arg.font
