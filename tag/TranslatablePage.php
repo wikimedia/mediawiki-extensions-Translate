@@ -368,6 +368,11 @@ class TranslatablePage {
 		return $this->getTag( 'tp:tag' );
 	}
 
+	/**
+	 * Removes all page translation feature data from the database.
+	 * Does not remove translated sections or translation pages.
+	 * FIXME: Change name to something better.
+	 */
 	public function removeTags() {
 		$dbw = wfGetDB( DB_MASTER );
 		$conds = array(
@@ -379,6 +384,7 @@ class TranslatablePage {
 		);
 
 		$dbw->delete( 'revtag', $conds, __METHOD__ );
+		$dbw->delete( 'translate_sections', array( 'trs_page' => $this->getTitle()->getArticleId() ), __METHOD__ );
 	}
 
 	// Returns false if not found
