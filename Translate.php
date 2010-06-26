@@ -43,6 +43,7 @@ $wgSpecialPages['LanguageStats'] = 'SpecialLanguageStats';
 $wgSpecialPages['ImportTranslations'] = 'SpecialImportTranslations';
 $wgSpecialPages['FirstSteps'] = 'SpecialFirstSteps';
 $wgSpecialPages['SupportedLanguages'] = 'SpecialSupportedLanguages';
+$wgSpecialPages['MyLanguage'] = 'SpecialMyLanguage';
 $wgSpecialPageGroups['Magic'] = 'wiki';
 $wgSpecialPageGroups['Translate'] = 'wiki';
 $wgSpecialPageGroups['Translations'] = 'pages';
