@@ -478,10 +478,9 @@ class TranslatablePage {
 		$memcKey = wfMemcKey( 'pt', 'status', $this->getTitle()->getPrefixedText() );
 		$cache = $wgMemc->get( $memcKey );
 
-		if ( !$force && $wgRequest->getText( 'action' ) !== 'purge' ) {
-			if ( is_array( $cache ) ) {
-				return $cache;
-			}
+		$force = $force || $wgRequest->getText( 'action' ) === 'purge';
+		if ( !$force && is_array( $cache ) ) {
+			return $cache;
 		}
 
 		$titles = $this->getTranslationPages();
@@ -532,21 +531,24 @@ class TranslatablePage {
 			// Fuzzy halves score
 			if ( $message->hasTag( 'fuzzy' ) ) {
 				$score *= 0.5;
-			}
 
-			// Reduce 20% for every newer revision than what is translated against
-			$rev = $this->getTransrev( $key . '/' . $collection->code );
-			foreach ( $markedRevs as $r ) {
-				if ( $rev === $r->rt_revision ) break;
-				$changed = explode( '|', unserialize( $r->rt_value ) );
+				/* Reduce 20% for every newer revision than what is translated against.
+				 * This is inside fuzzy clause, because there might be silent changes
+				 * which we don't want to decrease the translation percentage.
+				 */
+				$rev = $this->getTransrev( $key . '/' . $collection->code );
+				foreach ( $markedRevs as $r ) {
+					if ( $rev === $r->rt_revision ) break;
+					$changed = explode( '|', unserialize( $r->rt_value ) );
 
-				// Get a suitable section key
-				$parts = explode( '/', $key );
-				$ikey = $parts[count( $parts ) - 1];
+					// Get a suitable section key
+					$parts = explode( '/', $key );
+					$ikey = $parts[count( $parts ) - 1];
 
-				// If the section was changed, reduce the score
-				if ( in_array( $ikey, $changed, true ) ) {
-					$score *= 0.8;
+					// If the section was changed, reduce the score
+					if ( in_array( $ikey, $changed, true ) ) {
+						$score *= 0.8;
+					}
 				}
 			}
 			$total += $score;
