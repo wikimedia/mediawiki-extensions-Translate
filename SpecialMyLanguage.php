@@ -18,6 +18,8 @@ class SpecialMyLanguage extends SpecialPage {
 
 	public function execute( $par ) {
 		global $wgOut, $wgLang;
+
+		$title = null;
 		if ( strval($par) !== '' ) {
 			$title = Title::newFromText( $par );
 			if ( $title && $title->exists() ) {
