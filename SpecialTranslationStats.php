@@ -290,35 +290,33 @@ class SpecialTranslationStats extends SpecialPage {
 		$increment = 3600 * 24;
 		if ( $opts['scale'] === 'hours' ) $increment = 3600;
 
+		$labels = $so->labels();
+		if ( count($labels) ) {
+			$keys = array_keys( $labels );
+			$values = array_pad( array(), count( $labels ), 0 );
+			$defaults = array_combine( $keys, $values );
+		} else {
+			$defaults = array( '0' => '0' );
+		}
+
 		$data = array();
 		while ( $cutoff < $now ) {
 			$date = $wgLang->sprintfDate( $dateFormat, wfTimestamp( TS_MW, $cutoff ) );
 			$cutoff += $increment;
-			$data[$date] = array();
+			$data[$date] = $defaults;
 		}
 
 		// Processing
+		$labelToIndex = array_flip( $labels );
 		foreach ( $res as $row ) {
 			$date = $wgLang->sprintfDate( $dateFormat, $row->rc_timestamp );
 
-			$indexes = $so->indexOf( $row );
-			if ( $indexes === false ) continue;
+			$indexLabels = $so->indexOf( $row );
+			if ( $indexLabels === false ) continue;
 
-			foreach ( (array) $indexes as $index ) {
-				if ( !isset( $data[$date][$index] ) ) $data[$date][$index] = 0;
-				$data[$date][$index]++;
-			}
-		}
-
-		$labels = $so->labels();
-
-		/* Make sure there is empty entries for silent days, or otherwise
-		 * they will be skipped alltogether. */
-		foreach ( $data as &$date ) {
-			foreach ( $labels as $label ) {
-				if ( !isset( $date[$label] ) ) {
-					$date[$label] = 0;
-				}
+			foreach ( (array) $indexLabels as $i ) {
+				if ( !isset( $labelToIndex[$i] ) ) continue;
+				$data[$date][$labelToIndex[$i]]++;
 			}
 		}
 
@@ -360,8 +358,10 @@ class SpecialTranslationStats extends SpecialPage {
 		if ( $legend !== null )
 			$plot->SetLegend( $legend );
 
-		$plot->setFont( 'x_label', null, 8 );
-		$plot->setFont( 'y_label', null, 8 );
+		$numberFont = FCFontFinder::find( 'en' );
+
+		$plot->setFont( 'x_label', $numberFont, 8 );
+		$plot->setFont( 'y_label', $numberFont, 8 );
 
 		$yTitle = wfMsg( 'translate-stats-' . $opts['count'] );
 
@@ -459,42 +459,52 @@ class TranslatePerLanguageStats {
 
 		list( $key, $code ) = TranslateUtils::figureMessage( $row->rc_title );
 
+		$groups = array();
+		$codes = array();
+
 		if ( $this->groups ) {
 			/* Get list of keys that the message belongs to, and filter
 			 * out those which are not requested */
 			$groups = TranslateUtils::messageKeyToGroups( $row->rc_namespace, $key );
-			$keys = array_intersect( $this->groups, $groups );
-		} else {
-			$keys[] = '';
+			$groups = array_intersect( $this->groups, $groups );
 		}
+
 		if ( $this->codes ) {
-			foreach ( $keys as &$value ) {
-				if ( $value === '' ) {
-					$value = $code;
-				} else {
-					$value .= " ($code)";
-				}
-			}
+			$codes = array( $code );
 		}
-		return $keys;
+		return $this->combineTwoArrays( $groups, $codes );
 	}
 
 	public function labels() {
-		$labels = array();
-		if ( $this->groups && $this->codes ) {
-			foreach ( $this->codes as $code ) {
-				foreach ( $this->groups as $group ) {
-					$labels[] = "$group ($code)";
-				}
-			}
-		} elseif ( $this->groups ) {
-				$labels = $this->groups;
-		} elseif ( $this->codes ) {
-			$labels = $this->codes;
-		} else {
-			$labels = array();
+		return $this->combineTwoArrays( $this->groups, $this->codes );
+	}
+
+	protected function makeLabel( $group, $code ) {
+		if ( $code ) {
+			global $wgLang;
+			$code = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() ) . " ($code)";
 		}
-		return $labels;
+
+		if ( $group && $code ) {
+			return "$group @ $code";
+		} elseif ( $group || $code ) {
+			return "$group$code";
+		} else {
+			return "Test";
+		}
+	}
+
+	protected function combineTwoArrays( $groups, $codes ) {
+		if ( !count( $groups ) ) $groups[] = false;
+		if ( !count( $codes ) ) $codes[] = false;
+
+		$items = array();
+		foreach ( $groups as $group ) {
+		foreach ( $codes as $code ) {
+			$items[] = $this->makeLabel( $group, $code );
+		}
+		}
+		return $items;
 	}
 
 }
