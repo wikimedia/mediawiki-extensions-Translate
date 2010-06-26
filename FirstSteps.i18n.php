@@ -115,6 +115,14 @@ $messages['qqq'] = array(
 	'translate-fs-permissions-text' => 'Synonym for "filed" is "submitted".',
 );
 
+/** Arabic (العربية)
+ * @author ترجمان05
+ */
+$messages['ar'] = array(
+	'translate-fs-pagetitle-done' => '- تمّ!',
+	'translate-fs-target-title' => 'إبدأ بالترجمة',
+);
+
 /** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
  * @author EugeneZelenko
  * @author Jim-by
