@@ -948,6 +948,17 @@ $messages['lb'] = array(
 	'translate-fs-intro' => "Wëllkomm beim {{SITENAME}}-Startassistent.
 Iech gëtt gewisen, Déi Dir Schrëtt fir Schrëtt zum Iwwersetzer gitt.
 Um Schluss kënnt Dir all ''Interface-Messagen'' vun de vun {{SITENAME}} ënnerstetzte Projeten iwwersetzen.",
+	'translate-fs-signup-text' => "[[Image:HowToStart1CreateAccount.png|frame]]
+
+als éischte Schrëtt musst dir iech umellen.
+
+Déi Iwwersetzungen déi Dir maacht ginn Ärem Benotzernumm ugerechent.
+D'Bild riets weist wéi Dir d'Felder ausfëlle sollt.
+
+Wann dir Iech schonn ugemellt hutt, $1logg Iech$2 an.
+Esou bal wéi Dir ugellt an ageloggt sidd, kommt w.e.g. op dës Säit zréck.
+
+$3Umellen$4",
 	'translate-fs-settings-skip' => 'Ech si fäerdeg.
 Loosst mech weidermaachen.',
 	'translate-fs-userpage-submit' => 'Meng Benotzersäit maachen',
@@ -1163,7 +1174,7 @@ $messages['no'] = array(
 $messages['pl'] = array(
 	'firststeps' => 'Pierwsze kroki',
 	'firststeps-desc' => '[[Special:FirstSteps|Strona specjalna]] ułatwiająca rozpoczęcie pracy na wiki z wykorzystaniem rozszerzenia Translate',
-	'translate-fs-pagetitle-done' => '– gotowe!',
+	'translate-fs-pagetitle-done' => '&#32;– gotowe!',
 	'translate-fs-pagetitle' => 'Kreator pierwszych kroków – $1',
 	'translate-fs-signup-title' => 'Rejestracja',
 	'translate-fs-settings-title' => 'Konfiguracja preferencji',
@@ -1171,6 +1182,14 @@ $messages['pl'] = array(
 	'translate-fs-permissions-title' => 'Wniosek o uprawnienia tłumacza',
 	'translate-fs-target-title' => 'Zacznij tłumaczyć!',
 	'translate-fs-email-title' => 'Potwierdź swój adres e‐mail',
+);
+
+/** Pashto (پښتو)
+ * @author Ahmed-Najib-Biabani-Ibrahimkhel
+ */
+$messages['ps'] = array(
+	'translate-fs-pagetitle-done' => ' - ترسره شو!',
+	'translate-fs-signup-title' => 'نومليکل',
 );
 
 /** Portuguese (Português)
@@ -1474,6 +1493,98 @@ $messages['sl'] = array(
 Pustite mi nadaljevati.',
 	'translate-fs-userpage-submit' => 'Ustvari mojo uporabniško stran',
 	'translate-fs-userpage-done' => 'Dobro opravljeno! Sedaj imate uporabniško stran.',
+);
+
+/** Swedish (Svenska)
+ * @author Fredrik
+ */
+$messages['sv'] = array(
+	'firststeps' => 'Komma igång',
+	'firststeps-desc' => '[[Special:FirstSteps|Särskild sida]] för att få användare att komma igång med en wiki med hjälp av översättningstillägget',
+	'translate-fs-pagetitle-done' => ' – klart!',
+	'translate-fs-pagetitle' => 'Guide för att komma igång - $1',
+	'translate-fs-signup-title' => 'Skapa ett användarkonto',
+	'translate-fs-settings-title' => 'Konfigurera inställningar',
+	'translate-fs-userpage-title' => 'Skapa din användarsida',
+	'translate-fs-permissions-title' => 'Ansök om översättarbehörigheter',
+	'translate-fs-target-title' => 'Börja översätta!',
+	'translate-fs-email-title' => 'Bekräfta din e-postadress',
+	'translate-fs-intro' => "Välkommen till guiden för att komma igång med {{SITENAME}}. Du kommer att vägledas stegvis i hur man blir översättare. När du är färdig kommer du att kunna översätta ''gränssnittsmeddelanden'' av alla projekt som stöds av {{SITENAME}}.",
+	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount.png|frame]] 
+
+Först behöver du skapa ett användarkonto.
+
+Poäng för dina översättningar tillskrivs ditt användarnamn.
+Bilden till höger visar hur du fyller i fälten.
+
+Om du redan har registrerat dig så logga in istället.
+När du har registrerat dig, gå tillbaka till denna sida.
+
+Skapa ett användarkonto',
+	'translate-fs-settings-text' => 'Du bör nu gå till dina inställningar och 
+åtminstone byta språk för gränssnittet till det språk du ska översätta till. 
+
+Språket för gränssnittet används som standard för det språk du översätter till.
+Det är lätt att glömma att ändra till rätt språk, så det är varmt rekommenderat att göra det nu.
+
+Medan du är där kan du även be om programvaran för att visa översättningar till andra språk du kan. 
+Denna inställning finns under fliken "((int: prefs-redigering))". 
+Du får gärna utforska andra inställningar också. 
+
+Gå nu till din [[Special:Preferences|inställningssida]] och återvänd sedan till den här sidan.',
+	'translate-fs-settings-skip' => 'Jag är klar. 
+Låt mig gå vidare.',
+	'translate-fs-userpage-text' => 'Nu behöver du skapa en användarsida.
+
+Skriv gärna något om dig själv, vem du är och vad du gör.
+Detta kommer att hjälpa användare av {{SITENAME}} att arbeta tillsammans.
+På {{SITENAME}} arbetar människor från hela världen med olika språk och projekt.
+
+I den allra första raden i den förifyllda rutan ovan visas <nowiki>{{#babel:en-2}}</nowiki>.
+Fyll i raden med dina språkkunskaper.
+Siffran bredvid språkkoden beskriver hur väl du behärskar språket.
+Valmöjligheterna är:
+ * 1 - lite grann
+ * 2 - grundläggande kunskaper
+ * 3 - goda kunskaper
+ * 4 - nästan som ett modersmål
+ * 5 - du använder språket professionellt, till exempel om du är en professionell översättare.
+
+Om du har ett språk som modersmål, så strunta i att skriva ut kompetensnivån och använda bara språkkoden.
+Exempel: Om svenska är ditt modersmål, du talar engelska väl och lite swahili, så skriver du:
+<code><nowiki>{{#babel:sv|en-3|sw-1}}</nowiki></code>
+
+Om du inte känner till språkkoden för ett språk så är det dags att slå upp den nu.
+Du kan använda listan nedan.',
+	'translate-fs-userpage-submit' => 'Skapa din användarsida',
+	'translate-fs-userpage-done' => 'Mycket bra! Du har nu en användarsida.',
+	'translate-fs-permissions-text' => 'Nu behöver du skicka en förfrågan om att få komma med i översättargruppen.
+
+Tills vi har fixat till koden får du gå till [[Project:Translator]] och följa instruktionerna.
+Återvänd sedan tillbaka till den här sidan.
+
+När du har skickat din förfrågan kommer en av de frivilligarbetande medlemmarna att granska din ansökan och godkänna den så snart som möjligt.
+Ha tålamod.
+
+<del>Kontrollera att följande förfrågan är korrekt ifylld och tryck sedan på knappen för att skicka förfrågan.</del>',
+	'translate-fs-target-text' => "Grattis! Nu kan du börja översätta.
+
+Var inte rädd om det fortfarande känns nytt och främmande för dig.
+På sidan [[Project list]] finns en översikt över projekt du kan bidra med översättningar till. De flesta projekt har en sida med en kort beskrivning och en länk \"''Översätt det här projektet''\" som tar dig till en sida som listar alla oöversatta meddelanden.
+Det finns även en förteckning över alla meddelandegrupper med [[Special:LanguageStats|den aktuella översättningsstatusen för ett språk]].
+
+Om du känner att du behöver förstå mer innan du börjar översätta kan du läsa igenom [[FAQ|Vanliga frågor]]. 
+Tyvärr kan dokumentationen vara föråldrad ibland.
+Om det finns något som du tror att du skulle kunna göra men inte lyckas ta på reda på hur, så tveka inte att fråga på [[Support|supportsidan]].
+
+Du kan också ta kontakt med de andra översättarna av samma språk på [[Portal:\$1|din språkportal]].
+Portalen länkar till språket i din nuvarande [[Special:Preferences|språkinställning]].
+Du kan ändra om det behövs.",
+	'translate-fs-email-text' => 'Ange din e-postadress i [[Special:Preferences|dina inställningar]] och bekräfta den genom det e-postmeddelande som skickas till dig. 
+
+Detta gör det möjligt för andra användare att kontakta dig via e-post. 
+Du kommer också att få ett nyhetsbrev högst en gång i månaden. 
+Om du inte vill få några nyhetsbrev så kan kan välja bort dem under fliken "{{int:prefs-personal}}" i dina [[Special:Preferences|inställningar]].',
 );
 
 /** Tagalog (Tagalog)

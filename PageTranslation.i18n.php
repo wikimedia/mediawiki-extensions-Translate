@@ -2584,6 +2584,7 @@ Nazwa – $1',
 	'tpt-sections-oldnew' => 'Nowe i istniejące jednostki tłumaczenia',
 	'tpt-sections-deleted' => 'Usunięte jednostki tłumaczenia',
 	'tpt-sections-template' => 'Szablon strony tłumaczenia',
+	'tpt-action-nofuzzy' => 'Nie unieważniaj tłumaczeń',
 	'tpt-badtitle' => 'Podana nazwa strony ($1) nie jest dozwolonym tytułem',
 	'tpt-nosuchpage' => 'Strona $1 nie istnieje',
 	'tpt-oldrevision' => '$2 nie jest najnowszą wersją strony [[$1]].
@@ -2598,12 +2599,15 @@ Przed oznaczeniem tej wersji do tłumaczenia, aby uniknąć niepotrzebnej pracy 
 	'tpt-mark-summary' => 'Oznaczono tę wersję do tłumaczenia',
 	'tpt-edit-failed' => 'Nie udało się zaktualizować strony $1',
 	'tpt-already-marked' => 'Najnowsza wersja tej strony już wcześniej została oznaczona do tłumaczenia.',
+	'tpt-unmarked' => 'Strona $1 nie będzie dłużej oznaczona jako przeznaczona do tłumaczenia.',
 	'tpt-list-nopages' => 'Nie oznaczono stron do tłumaczenia i nie ma stron gotowych do oznaczenia do tłumaczenia.',
 	'tpt-old-pages' => 'Niektóre wersje {{PLURAL:$1|tej strony|tych stron}} zostały oznaczone do tłumaczenia.',
 	'tpt-new-pages' => '{{PLURAL:$1|Ta strona zawiera|Te strony zawierają}} tekst ze znacznikami tłumaczenia, ale żadna wersja {{PLURAL:$1|tej strony|tych stron}} nie jest aktualnie oznaczona do tłumaczenia.',
+	'tpt-other-pages' => '{{PLURAL:$1|Stara wersja tej strony jest oznaczona jako przeznaczona|Stare wersje tych stron są oznaczone jako przeznaczone}} do tłumaczenia, ale {{PLURAL:$1|jej aktualna wersja nie może zostać oznaczona jako przeznaczona|ich aktualne wersje nie mogą zostać oznaczone jako przeznaczone}} do tłumaczenia.',
 	'tpt-rev-latest' => 'ostatnia wersja',
 	'tpt-rev-old' => 'zmiana w stosunku do ostatniej oznaczonej wersji',
 	'tpt-rev-mark-new' => 'oznacz tę wersję do tłumaczenia',
+	'tpt-rev-unmark' => 'usuń tę stronę z przeznaczonych do tłumaczenia',
 	'tpt-translate-this' => 'przetłumacz tę stronę',
 	'translate-tag-translate-link-desc' => 'Przetłumacz tę stronę',
 	'translate-tag-markthis' => 'Oznacz tę stronę do tłumaczenia',
@@ -2616,9 +2620,25 @@ Przed oznaczeniem tej wersji do tłumaczenia, aby uniknąć niepotrzebnej pracy 
 Jest ona tłumaczeniem strony [[$1]], a tłumaczenie może zostać zmienione za pomocą [$2 narzędzia tłumacza].',
 	'tpt-unknown-page' => 'Ta przestrzeń nazw jest zarezerwowana dla tłumaczeń stron z zawartością.
 Strona, którą próbujesz edytować, prawdopodobnie nie odpowiada żadnej stronie oznaczonej do tłumaczenia.',
+	'tpt-move-impossible' => 'Przenoszenie stron oznaczonych jako przeznaczone do tłumaczenia nie jest jeszcze możliwe.',
 	'tpt-install' => 'Uruchom php maintenance/update.php lub przeprowadź instalację webową, aby włączyć opcję tłumaczenia stron.',
 	'tpt-render-summary' => 'Aktualizowanie w celu dopasowania nowej wersji strony źródłowej',
 	'tpt-download-page' => 'Wyeksportuj stronę z tłumaczeniami',
+	'pt-parse-open' => 'Niezrównoważony znacznik &lt;translate>. 
+Szablon tłumaczenia – <pre>$1</pre>',
+	'pt-parse-close' => 'Niezrównoważony znacznik &lt;/translate>. 
+Szablon tłumaczenia – <pre>$1</pre>',
+	'pt-parse-nested' => 'Zagnieżdżanie sekcji &lt;translate> nie jest dopuszczalne.
+Tekst znacznika – <pre>$1</pre>',
+	'pt-shake-multiple' => 'Wiele wyróżników sekcji dla jednej sekcji.
+Tekst sekcji – <pre>$1</pre>',
+	'pt-shake-position' => 'Wyróżniki sekcji w nieoczekiwanym miejscu.
+Tekst sekcji – <pre>$1</pre>',
+	'pt-shake-empty' => 'Pusta sekcja dla wyróżnika $1.',
+	'pt-log-header' => 'Rejestr działań związanych z systemem tłumaczenia stron',
+	'pt-log-name' => 'Rejestr tłumaczenia stron',
+	'pt-log-mark' => '{{GENDER:$2|oznaczył|oznaczyła|oznaczył(‐a)}} wersję $3 strony „[[:$1]]“ jako przeznaczonej do tłumaczenia',
+	'pt-log-unmark' => '{{GENDER:$2|usunął|usunęła|usunął(‐eła)}} oznaczenie strony „[[:$1]]“ jako przeznaczonej do tłumaczenia',
 );
 
 /** Piedmontese (Piemontèis)
@@ -2689,6 +2709,7 @@ $messages['ps'] = array(
 	'tpt-diff-old' => 'پخوانی متن',
 	'tpt-diff-new' => 'نوی متن',
 	'tpt-sections-template' => 'د ژباړې د مخ کينډۍ',
+	'tpt-rev-latest' => 'تازه بڼه',
 	'tpt-translate-this' => 'همدا مخ ژباړل',
 	'translate-tag-translate-link-desc' => 'همدا مخ ژباړل',
 	'translate-tag-markthis' => 'همدا مخ د ژباړې لپاره په نښه کول',
@@ -3119,6 +3140,8 @@ Ime: $1',
 Samo zadnje različice se lahko označi za prevod.',
 	'tpt-notsuitable' => 'Stran $1 ni primerna za prevod.
 Prepričajte se, da ima oznake <nowiki><translate></nowiki> in veljavno sintakso.',
+	'tpt-saveok' => 'Stran [[$1]] je bila označena za prevod z $2 {{PLURAL:$2|prevajalsko enoto|prevajalskima enotama|prevajalskimi enotami}}.
+Stran je sedaj mogoče <span class="plainlinks">[$3 prevesti]</span>.',
 	'tpt-badsect' => '»$1« ni veljavno ime za prevajalsko enoto $2.',
 	'tpt-mark-summary' => 'Označil to različico za prevajanje',
 	'tpt-edit-failed' => 'Ni mogoče posodobiti strani: $1',
@@ -3133,9 +3156,16 @@ Prepričajte se, da ima oznake <nowiki><translate></nowiki> in veljavno sintakso
 	'tpt-translate-this' => 'prevedi to stran',
 	'translate-tag-translate-link-desc' => 'Prevedi to stran',
 	'translate-tag-markthis' => 'Označi to stran za prevajanje',
+	'translate-tag-markthisagain' => 'Ta stran ima <span class="plainlinks">[$1 sprememb]</span> odkar je bila nazadnje <span class="plainlinks">[$2 označena za prevajanje]</span>.',
+	'translate-tag-hasnew' => 'Ta stran vsebuje <span class="plainlinks">[$1 sprememb]</span>, ki niso označene za prevajanje.',
+	'tpt-translation-intro' => 'Ta stran je <span class="plainlinks">[$1 prevedena različica]</span> strani [[$2]] in prevod je $3 % dokončan.',
 	'tpt-translation-intro-fuzzy' => 'Zastareli prevodi so označeni tako.',
 	'tpt-languages-legend' => 'Ostali jeziki:',
+	'tpt-target-page' => 'Te strani ni mogoče ročno posodobiti.
+Ta stran je prevod strani [[$1]], njen prevod lahko posodobite z uporabo [$2 prevajalskega orodja].',
 	'tpt-move-impossible' => 'Prestavljanje strani, označenih za prevajanje, še ni mogoče.',
+	'tpt-install' => 'Zaženite php maintenance/update.php ali spletno namestitev, da omogočite zmožnost prevajanja strani.',
+	'tpt-render-summary' => 'Posodabljanje za ujemanje nove različice izvorne strani',
 	'tpt-download-page' => 'Izvozi stran s prevodi',
 	'pt-parse-open' => 'Neizenačena etiketa &lt;translate>.
 Prevajalna predloga: <pre>$1</pre>',
