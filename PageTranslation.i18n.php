@@ -95,10 +95,53 @@ Section text: <pre>$1</pre>',
 Section text: <pre>$1</pre>',
 	'pt-shake-empty' => 'Empty section for marker $1.',
 
+	# logging system
 	'pt-log-header' => 'Log for actions related to the page translation system',
 	'pt-log-name' => 'Page translation log',
 	'pt-log-mark' => '{{GENDER:$2|marked}} revision $3 of page "[[:$1]]" for translation',
 	'pt-log-unmark' => '{{GENDER:$2|removed}} page "[[:$1]]" from translation',
+	'pt-log-moveok' => '{{GENDER:$2|renamed}} translatable page $1 to [[:$3]]',
+	'pt-log-movenok' => '{{GENDER:$2|encountered}} a problem while moving [[:$1]] to [[:$3]]',
+
+
+	# move page replacement
+	'pt-movepage-title' => 'Move translatable page $1',
+	'pt-movepage-blockers' => 'The translatable page cannot be moved to a new name because of the following {{PLURAL:$1|error|errors}}:',
+	'pt-movepage-block-base-exists' => 'The target base page [[:$1]] exists.',
+	'pt-movepage-block-base-invalid' => 'The target base page is not a valid title.',
+	'pt-movepage-block-tp-exists' => 'The target translation page [[:$2]] exists.',
+	'pt-movepage-block-tp-invalid' => 'The target translation page title for [[:$1]] would be invalid (too long?).',
+	'pt-movepage-block-section-exists' => 'The target section page [[:$2]] exists.',
+	'pt-movepage-block-section-invalid' => 'The target section page title for [[:$1]] would be invalid (too long?).',
+
+	'pt-movepage-list-pages' => 'List of pages to move',
+	'pt-movepage-list-translation' => 'Translation pages',
+	'pt-movepage-list-section' => 'Section pages',
+	'pt-movepage-list-other' => 'Other subpages',
+	'pt-movepage-list-count' => 'In total $1 {{PLURAL:$1|page|pages}} to move.',
+
+
+	'pt-movepage-legend' => 'Move translatable page',
+	'pt-movepage-current' => 'Current name:',
+	'pt-movepage-new' => 'New name:',
+	'pt-movepage-reason' => 'Reason:',
+	'pt-movepage-subpages' => 'Move all subpages',
+
+	'pt-movepage-action-check' => 'Check if the move is possible',
+	'pt-movepage-action-perform' => 'Do the move',
+	'pt-movepage-action-other' => 'Change target',
+
+	'pt-movepage-intro' => 'This special page allows you to move pages which are marked for translation.
+The move action will not be instant, because many pages will need to be moved.
+The job queue will be used for moving the pages.
+While the pages are being moved, it is not possible interact with the pages in question.
+Failures will be logged in the page translation log and they need to be repaired by hand.',
+
+	'pt-movepage-logreason' => 'Part of translatable page $1.',
+	'pt-movepage-started' => 'The base page is now moved.
+Please check the page translation log for errors and completion message.',
+
+	'pt-locked-page' => 'This page is locked because translatable page is currently being moved.',
 );
 
 /** Message documentation (Message documentation)
@@ -220,7 +263,6 @@ $messages['ar'] = array(
 	'tpt-sections-deleted' => 'وحدات الترجمة المحذوفة',
 	'tpt-sections-template' => 'قالب صفحة ترجمة',
 	'tpt-badtitle' => 'اسم الصّفحة المعطى ($1) ليس عنوانا صحيحا',
-	'tpt-nosuchpage' => 'الصفحة $1 غير موجودة',
 	'tpt-oldrevision' => '$2 ليست آخر نسخة للصّفحة [[$1]].
 فقط آخر النسخ يمكن أن تؤشّر للترجمة.',
 	'tpt-notsuitable' => 'الصفحة $1 غير مناسبة للترجمة.
@@ -233,7 +275,6 @@ $messages['ar'] = array(
 	'tpt-mark-summary' => 'علَّم هذه النسخة للترجمة',
 	'tpt-edit-failed' => 'تعذّر تحديث الصفحة: $1',
 	'tpt-already-marked' => 'آخر نسخة من هذه الصفحة مُعلّمة بالفعل للترجمة.',
-	'tpt-unmarked' => 'الصفحة $1 لم تعد مُعلّمة للترجمة',
 	'tpt-list-nopages' => 'لا صفحات مُعلّمة للترجمة أو جاهزة للتعليم للترجمة.',
 	'tpt-old-pages' => 'إحدى نسخ {{PLURAL:$1||هذه الصفحة|هاتان الصفحتان|هذه الصفحات}} عُلّمت للترجمة.',
 	'tpt-new-pages' => '{{PLURAL:$1|هذه الصفحة تحتوي|هذه الصفحات تحتوي}} على نص بوسوم ترجمة، لكن لا نسخة من {{PLURAL:$1|هذه الصفحة|هذه الصفحات}} معلمة حاليا للترجمة.',

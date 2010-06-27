@@ -115,7 +115,9 @@ $wgAutoloadClasses['TPException'] = $dir . 'tag/TranslatablePage.php';
 $wgAutoloadClasses['TPParse'] = $dir . 'tag/TPParse.php';
 $wgAutoloadClasses['TPSection'] = $dir . 'tag/TPSection.php';
 $wgAutoloadClasses['SpecialPageTranslation'] = $dir . 'tag/SpecialPageTranslation.php';
+$wgAutoloadClasses['SpecialPageTranslationMovePage'] = $dir . 'tag/SpecialPageTranslationMovePage.php';
 $wgAutoloadClasses['RenderJob'] = $dir . 'tag/RenderJob.php';
+$wgAutoloadClasses['MoveJob'] = $dir . 'tag/MoveJob.php';
 
 $wgAutoloadClasses['TranslateYaml'] = $dir . 'utils/TranslateYaml.php';
 $wgAutoloadClasses['SpecialManageGroups'] = $dir . 'SpecialManageGroups.php';

@@ -77,8 +77,6 @@ $wgHooks['SkinTemplateToolboxEnd'][] = 'TranslateToolbox::toolboxAllTranslations
 # Translation memory updates
 $wgHooks['ArticleSaveComplete'][] = 'TranslationMemoryUpdater::update';
 
-
-$wgJobClasses['RenderJob'] = 'RenderJob';
 $wgAvailableRights[] = 'translate';
 $wgAvailableRights[] = 'translate-import';
 $wgAvailableRights[] = 'translate-manage';
@@ -364,6 +362,10 @@ $wgTranslatePHPlotFont = '/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf';
  */
 $wgTranslateYamlLibrary = 'spyc';
 
+
+# Temporary variable
+$wgTranslateEnablePageMoving = false;
+
 # Startup code
 
 function efTranslateInit() {
@@ -400,6 +402,12 @@ function efTranslateInit() {
 		$wgLogNames['pagetranslation'] = 'pt-log-name';
 		$wgLogActionsHandlers['pagetranslation/mark'] = 'PageTranslationHooks::formatLogEntry';
 		$wgLogActionsHandlers['pagetranslation/unmark'] = 'PageTranslationHooks::formatLogEntry';
+		$wgLogActionsHandlers['pagetranslation/moveok'] = 'PageTranslationHooks::formatLogEntry';
+		$wgLogActionsHandlers['pagetranslation/movenok'] = 'PageTranslationHooks::formatLogEntry';
+
+		global $wgJobClasses;
+		$wgJobClasses['RenderJob'] = 'RenderJob';
+		$wgJobClasses['MoveJob'] = 'MoveJob';
 
 		// Namespaces
 		global $wgPageTranslationNamespace, $wgExtraNamespaces;
@@ -443,13 +451,22 @@ function efTranslateInit() {
 		// Prevent editing of unknown pages in Translations namespace
 		$wgHooks['getUserPermissionsErrorsExpensive'][] = 'PageTranslationHooks::translationsCheck';
 
+		// Locking during page moves
+		$wgHooks['getUserPermissionsErrorsExpensive'][] = 'PageTranslationHooks::lockedPagesCheck';
+
 		$wgHooks['ArticleViewHeader'][] = 'PageTranslationHooks::test';
 
 		$wgHooks['ParserTestTables'][] = 'PageTranslationHooks::parserTestTables';
 
 		$wgHooks['SkinTemplateToolboxEnd'][] = 'PageTranslationHooks::exportToolbox';
 
+		// Prevent section pages appearing in categories
 		$wgHooks['LinksUpdate'][] = 'PageTranslationHooks::preventCategorization';
+
+		global $wgTranslateEnablePageMoving;
+		if ( $wgTranslateEnablePageMoving ) {
+			$wgHooks['SpecialPage_initList'][] = 'PageTranslationHooks::replaceMovePage';
+		}
 	}
 }
 

@@ -347,6 +347,8 @@ FOO;
 				return false;
 			}
 		} elseif ( $action === 'move' || $action === 'delete' ) {
+			global $wgTranslateEnablePageMoving;
+			if ( $wgTranslateEnablePageMoving && $action === 'move' ) return true;
 			$page = TranslatablePage::newFromTitle( $title );
 			if ( $page->getMarkedTag() ) {
 				$result = array( 'tpt-move-impossible' );
@@ -533,15 +535,36 @@ FOO;
 
 		$language = $forContent ? $wgContLang : $wgLang;
 		$opts = array( 'parseinline', 'language' => $language );
+
 		$_ = unserialize( $params[0] );
 		$user =  $_['user'];
 
 		if ( $action === 'mark' ) {
-			$revision =  $_['revision'];
-			return wfMsgExt( 'pt-log-mark', $opts, $title->getPrefixedText(), $user, $revision );
+			return wfMsgExt( 'pt-log-mark', $opts, $title->getPrefixedText(), $user, $_['revision'] );
 		} elseif( $action === 'unmark' ) {
 			return wfMsgExt( 'pt-log-unmark', $opts, $title->getPrefixedText(), $user );
+		} elseif( $action === 'moveok' ) {
+			return wfMsgExt( 'pt-log-moveok', $opts, $title->getPrefixedText(), $user, $_['target'] );
+		} elseif( $action === 'movenok' ) {
+			return wfMsgExt( 'pt-log-moveok', $opts, $title->getPrefixedText(), $user, $_['target'] );
 		}
 	}
+
+	public static function replaceMovePage( &$list ) {
+		$list['Movepage'] = 'SpecialPageTranslationMovePage';
+		return true;
+	}
+
+	public static function lockedPagesCheck( $title, $user, $action, &$result ) {
+		global $wgMemc;
+		if ( $wgMemc->get( 'pt-lock', $title->getPrefixedText() ) === true ) {
+			$result = array( 'pt-locked-page' );
+			return false;
+		}
+
+		return true;
+	}
+
+
 
 }
