@@ -405,7 +405,12 @@ class TranslatablePage {
 
 		$options = array( 'ORDER BY' => 'rt_revision DESC' );
 
-		return $db->selectField( 'revtag', $fields, $conds, __METHOD__, $options );
+		$tag = $db->selectField( 'revtag', $fields, $conds, __METHOD__, $options );
+		if ( $tag !== false ) {
+			return intval( $tag );
+		} else {
+			return false;
+		}
 	}
 
 

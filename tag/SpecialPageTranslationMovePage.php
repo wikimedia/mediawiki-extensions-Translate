@@ -170,7 +170,9 @@ class SpecialPageTranslationMovePage extends SpecialPage {
 			$wgOut->addWikiMsg( 'pt-movepage-blockers', $wgLang->formatNum( count( $errors ) ) );
 			$wgOut->addHTML( '<ul>' );
 			foreach( $errors as $error ) {
-				$wgOut->wrapWikiMsg( '<li>$1</li>', $error + array( 'options' => 'parsemag' ) );
+				// I have no idea what the parser is doing, but this is mad.
+				// <li>$1</li> doesn't work.
+				$wgOut->wrapWikiMsg( "<li>$1", $error );
 			}
 			$wgOut->addHTML( '</ul></div>' );
 		}
@@ -197,7 +199,7 @@ class SpecialPageTranslationMovePage extends SpecialPage {
 		$this->addInputLabel( $form, wfMsg( 'pt-movepage-current' ), 'wpOldTitleFake', 30, $this->oldText, $disabled );
 		$this->addInputLabel( $form, wfMsg( 'pt-movepage-new' ), 'wpNewTitle', 30, $this->newText );
 		$this->addInputLabel( $form, wfMsg( 'pt-movepage-reason' ), 'reason', 60, $this->reason );
-		$form[] = Xml::checkLabel( wfMsg( 'pt-movepage-subpages' ), 'subpages', 'mw-subpages', $this->moveSubpages, $disabled ) . $br;
+		$form[] = Xml::checkLabel( wfMsg( 'pt-movepage-subpages' ), 'subpages', 'mw-subpages', $this->moveSubpages ) . $br;
 		$form[] = Xml::submitButton( wfMsg( 'pt-movepage-action-check' ), $subaction );
 		$form[] = Html::closeElement( 'form' );
 		$form[] = Html::closeElement( 'fieldset' );
@@ -271,7 +273,8 @@ class SpecialPageTranslationMovePage extends SpecialPage {
 		$this->addInputLabel( $form, wfMsg( 'pt-movepage-current' ), 'wpOldTitleFake', 30, $this->oldText, $disabled );
 		$this->addInputLabel( $form, wfMsg( 'pt-movepage-new' ), 'wpNewTitleFake', 30, $this->newText, $disabled );
 		$this->addInputLabel( $form, wfMsg( 'pt-movepage-reason' ), 'reason', 60, $this->reason );
-		$form[] = Xml::checkLabel( wfMsg( 'pt-movepage-subpages' ), 'subpages', 'mw-subpages', $this->moveSubpages ) . $br;
+		$form[] = Html::hidden( 'subpages', $this->moveSubpages );
+		$form[] = Xml::checkLabel( wfMsg( 'pt-movepage-subpages' ), 'subpagesFake', 'mw-subpages', $this->moveSubpages, $disabled ) . $br;
 		$form[] = Xml::submitButton( wfMsg( 'pt-movepage-action-perform' ), $subaction );
 		$form[] = Xml::submitButton( wfMsg( 'pt-movepage-action-other' ), $subaction );
 		$form[] = Html::closeElement( 'form' );
@@ -295,25 +298,26 @@ class SpecialPageTranslationMovePage extends SpecialPage {
 
 		$target = $this->newTitle;
 		$base = $this->oldTitle->getPrefixedText();
+		$oldLatest = $this->oldTitle->getLatestRevId();
 
 		$translationPages = $this->getTranslationPages();
 		foreach ( $translationPages as $old ) {
 			$to = $this->newPageTitle( $base, $old, $target );
-			$jobs[$old->getPrefixedText()] = MoveJob::newJob( $old, $to, $base );
+			$jobs[$old->getPrefixedText()] = MoveJob::newJob( $old, $to, $base, $this->user );
 		}
 
 		$sectionPages = $this->getSectionPages();
 		foreach ( $sectionPages as $old ) {
 			$to = $this->newPageTitle( $base, $old, $target );
-			$jobs[$old->getPrefixedText()] = MoveJob::newJob( $old, $to, $base );
+			$jobs[$old->getPrefixedText()] = MoveJob::newJob( $old, $to, $base, $this->user );
 		}
 
-		if ( $this->subpages ) {
+		if ( $this->moveSubpages ) {
 			$subpages = $this->getSubpages();
 			foreach ( $subpages as $old ) {
 			if ( TranslatablePage::isTranslationPage( $old ) ) continue;
 				$to = $this->newPageTitle( $base, $old, $target );
-				$jobs[$old->getPrefixedText()] = MoveJob::newJob( $old, $to, $base );
+				$jobs[$old->getPrefixedText()] = MoveJob::newJob( $old, $to, $base, $this->user );
 			}
 		}
 
@@ -322,14 +326,25 @@ class SpecialPageTranslationMovePage extends SpecialPage {
 		global $wgMemc;
 		$wgMemc->set( wfMemcKey( 'pt-base', $base ), array_keys( $jobs ), 60*60*6 );
 
-		$errors = $this->oldTitle->moveTo( $this->newTitle(), true, $this->reason, false );
-		if ( $errors ) {
+		MoveJob::forceRedirects( false );
+
+		$errors = $this->oldTitle->moveTo( $this->newTitle, true, $this->reason, false );
+		if ( is_array($errors) ) {
 			$this->showErrors( $errors );
 		}
 
+		MoveJob::forceRedirects( true );
+
+		$newTpage = TranslatablePage::newFromTitle( $this->newTitle );
+		$newTpage->addReadyTag( $this->newTitle->getLatestRevId( GAID_FOR_UPDATE ) );
+		if ( $newTpage->getMarkedTag() === $oldLatest ) {
+			$newTpage->addMarkedTag( $this->newTitle->getLatestRevId( GAID_FOR_UPDATE ) );
+		}
 
 		//TODO: defer or make faster
 		MessageIndexRebuilder::execute();
+
+		global $wgOut;
 		$wgOut->addWikiMsg( 'pt-movepage-started' );
 	}
 
@@ -383,6 +398,22 @@ class SpecialPageTranslationMovePage extends SpecialPage {
 			} else {
 				$errors = $old->isValidMoveOperation( $target, false );
 				if ( is_array( $errors ) ) $blockers = array_merge( $blockers, $errors );
+			}
+		}
+
+		if ( $this->moveSubpages ) {
+			$subpages = $this->getSubpages();
+			foreach ( $subpages as $old ) {
+				if ( TranslatablePage::isTranslationPage( $old ) ) continue;
+				$new = $this->newPageTitle( $base, $old, $target );
+				if ( !$new ) {
+					$blockers[] = array( 'pt-movepage-block-subpage-invalid', $old->getPrefixedText() );
+				} elseif ( $new->exists() ) {
+					$blockers[] = array( 'pt-movepage-block-subpage-exists', $old->getPrefixedText(), $new->getPrefixedText() );
+				} else {
+					$errors = $old->isValidMoveOperation( $target, false );
+					if ( is_array( $errors ) ) $blockers = array_merge( $blockers, $errors );
+				}
 			}
 		}
 

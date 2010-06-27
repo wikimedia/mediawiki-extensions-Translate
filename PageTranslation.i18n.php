@@ -75,7 +75,7 @@ but the latest {{PLURAL:$1|version|versions}} cannot be marked for translation.'
 This page is a translation of page [[$1]] and the translation can be updated using [$2 the translation tool].',
 	'tpt-unknown-page' => 'This namespace is reserved for content page translations.
 The page you are trying to edit does not seem to correspond any page marked for translation.',
-	'tpt-move-impossible' => 'Moving pages marked for translation is not yet possible.',
+	'tpt-delete-impossible' => 'Deleting pages marked for translation is not yet possible.',
 
 	'tpt-install' => 'Run php maintenance/update.php or web install to enable page translation feature.',
 
@@ -100,7 +100,7 @@ Section text: <pre>$1</pre>',
 	'pt-log-name' => 'Page translation log',
 	'pt-log-mark' => '{{GENDER:$2|marked}} revision $3 of page "[[:$1]]" for translation',
 	'pt-log-unmark' => '{{GENDER:$2|removed}} page "[[:$1]]" from translation',
-	'pt-log-moveok' => '{{GENDER:$2|renamed}} translatable page $1 to [[:$3]]',
+	'pt-log-moveok' => '{{GENDER:$2|completed}} renaming of translatable page $1 to a new name',
 	'pt-log-movenok' => '{{GENDER:$2|encountered}} a problem while moving [[:$1]] to [[:$3]]',
 
 
@@ -113,13 +113,14 @@ Section text: <pre>$1</pre>',
 	'pt-movepage-block-tp-invalid' => 'The target translation page title for [[:$1]] would be invalid (too long?).',
 	'pt-movepage-block-section-exists' => 'The target section page [[:$2]] exists.',
 	'pt-movepage-block-section-invalid' => 'The target section page title for [[:$1]] would be invalid (too long?).',
+	'pt-movepage-block-subpage-exists' => 'The target subpage [[:$2]] exists.',
+	'pt-movepage-block-subpage-invalid' => 'The target subpage title for [[:$1]] would be invalid (too long?).',
 
 	'pt-movepage-list-pages' => 'List of pages to move',
 	'pt-movepage-list-translation' => 'Translation pages',
 	'pt-movepage-list-section' => 'Section pages',
 	'pt-movepage-list-other' => 'Other subpages',
 	'pt-movepage-list-count' => 'In total $1 {{PLURAL:$1|page|pages}} to move.',
-
 
 	'pt-movepage-legend' => 'Move translatable page',
 	'pt-movepage-current' => 'Current name:',

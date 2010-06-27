@@ -363,9 +363,6 @@ $wgTranslatePHPlotFont = '/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf';
 $wgTranslateYamlLibrary = 'spyc';
 
 
-# Temporary variable
-$wgTranslateEnablePageMoving = false;
-
 # Startup code
 
 function efTranslateInit() {
@@ -463,10 +460,8 @@ function efTranslateInit() {
 		// Prevent section pages appearing in categories
 		$wgHooks['LinksUpdate'][] = 'PageTranslationHooks::preventCategorization';
 
-		global $wgTranslateEnablePageMoving;
-		if ( $wgTranslateEnablePageMoving ) {
-			$wgHooks['SpecialPage_initList'][] = 'PageTranslationHooks::replaceMovePage';
-		}
+		// Custom move page that can move all the associated pages too
+		$wgHooks['SpecialPage_initList'][] = 'PageTranslationHooks::replaceMovePage';
 	}
 }
 

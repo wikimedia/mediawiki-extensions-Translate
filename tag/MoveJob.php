@@ -10,7 +10,7 @@
  */
 
 class MoveJob extends Job {
-	public static function newJob( Title $source, Title $target, $base, User $performer ) {
+	public static function newJob( Title $source, Title $target, $base, /*User*/ $performer ) {
 		global $wgTranslateFuzzyBotName;
 
 		$job = new self( $source );
@@ -36,43 +36,51 @@ class MoveJob extends Job {
 		$user    = $this->getUser();
 		$summary = $this->getSummary();
 		$target  = $this->getTarget();
+		$base    = $this->getBase();
 
 		PageTranslationHooks::$allowTargetEdit = true;
 		$oldUser = $wgUser;
 		$wgUser = $user;
+		self::forceRedirects( false );
 
 		// Don't check perms, don't leave a redirect
-		$ok = $source->moveTo( $target, false, $summary, false );
-		if ( $ok ) {
+		$ok = $title->moveTo( $target, false, $summary, false );
+		if ( !$ok ) {
 			$logger = new LogPage( 'pagetranslation' );
 			$params = array(
 				'user' => $this->getPerformer(),
 				'target' => $target->getPrefixedText(),
-				'error' => base64_encode( $ok ),
+				'error' => base64_encode( serialize( $ok ) ), // This is getting ridiculous
 			);
-			$logger->addEntry( 'moveok', $title, null, array( serialize( $params ) ) );
+			$doer = User::newFromName( $this->getPerformer() );
+			$logger->addEntry( 'movenok', $title, null, array( serialize( $params ) ), $doer );
 		}
 
-		$wgUser = $oldUser;
+		self::forceRedirects( true );
 		PageTranslationHooks::$allowTargetEdit = false;
 
 		$this->unlock();
 
 		global $wgMemc;
-		$pages = $wgMemc->get( 'pt-base', $base );
+		$pages = (array) $wgMemc->get( wfMemcKey( 'pt-base', $base ) );
+		$last = true;
+
 		foreach ( $pages as $page ) {
-			if ( $wgMemc->get( 'pt-lock', $page ) === true ) {
-				return true;
+			if ( $wgMemc->get( wfMemcKey( 'pt-lock', $page ) ) === true ) {
+				$last = false;
+				break;
 			}
 		}
 
-		$logger = new LogPage( 'pagetranslation' );
-		$params = array(
-			'user' => $this->getPerformer(),
-			'target' => $target->getPrefixedText(),
-		);
-		$logger->addEntry( 'moveok', $title, null, array( serialize( $params ) ) );
+		if ( $last )  {
+			$wgMemc->delete( wfMemcKey( 'pt-base', $base ) );
+			$logger = new LogPage( 'pagetranslation' );
+			$params = array( 'user' => $this->getPerformer() );
+			$doer = User::newFromName( $this->getPerformer() );
+			$logger->addEntry( 'moveok', Title::newFromText( $base ), null, array( serialize( $params ) ), $doer );
+		}
 
+		$wgUser = $oldUser;
 
 		return true;
 	}
@@ -94,7 +102,7 @@ class MoveJob extends Job {
 	}
 
 	public function setPerformer( $performer ) {
-		if ( $performer instanceof Performer ) {
+		if ( is_object( $performer ) ) {
 			$this->params['performer'] = $performer->getName();
 		} else {
 			$this->params['performer'] = $performer;
@@ -114,11 +122,11 @@ class MoveJob extends Job {
 	}
 
 	public function getTarget() {
-		return Title::newFromText( $this->params['summary'] );
+		return Title::newFromText( $this->params['target'] );
 	}
 
 	public function setUser( $user ) {
-		if ( $user instanceof User ) {
+		if ( is_object( $user ) ) {
 			$this->params['user'] = $user->getName();
 		} else {
 			$this->params['user'] = $user;
@@ -134,14 +142,46 @@ class MoveJob extends Job {
 
 	public function lock() {
 		global $wgMemc;
-		$wgMemc->set( wfMemcKey( 'pt-lock', $title->getPrefixedText() ), true, 60*60*6 );
+		$wgMemc->set( wfMemcKey( 'pt-lock', $this->title->getPrefixedText() ), true, 60*60*6 );
 		$wgMemc->set( wfMemcKey( 'pt-lock', $this->getTarget()->getPrefixedText() ), true, 60*60*6 );
 	}
 
 	public function unlock() {
 		global $wgMemc;
-		$wgMemc->delete( wfMemcKey( 'pt-lock', $title->getPrefixedText() ) );
+		$wgMemc->delete( wfMemcKey( 'pt-lock', $this->title->getPrefixedText() ) );
 		$wgMemc->delete( wfMemcKey( 'pt-lock', $this->getTarget()->getPrefixedText() ) );
 	}
+
+	/**
+	* Modified from wfSuppressWarnings
+	*/
+	public static function forceRedirects( $end = false ) {
+		static $suppressCount = 0;
+		static $originalLevel = null;
+
+		global $wgGroupPermissions;
+		global $wgUser;
+
+		if ( $end ) {
+			if ( $suppressCount ) {
+				--$suppressCount;
+				if ( !$suppressCount ) {
+					if ( $originalLevel === null ) {
+						unset( $wgGroupPermissions['*']['suppressredirect'] );
+					} else {
+						$wgGroupPermissions['*']['suppressredirect'] = $originalLevel;
+					}
+				}
+			}
+		} else {
+			if ( !$suppressCount ) {
+				$originalLevel = isset( $wgGroupPermissions['*']['suppressredirect'] ) ? $wgGroupPermissions['*']['suppressredirect'] : null;
+				$wgGroupPermissions['*']['suppressredirect'] = true;
+			}
+			++$suppressCount;
+		}
+		$wgUser->clearInstanceCache();
+	}
+
 
 }

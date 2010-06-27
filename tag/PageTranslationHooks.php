@@ -346,12 +346,10 @@ FOO;
 
 				return false;
 			}
-		} elseif ( $action === 'move' || $action === 'delete' ) {
-			global $wgTranslateEnablePageMoving;
-			if ( $wgTranslateEnablePageMoving && $action === 'move' ) return true;
+		} elseif ( $action === 'delete' ) {
 			$page = TranslatablePage::newFromTitle( $title );
 			if ( $page->getMarkedTag() ) {
-				$result = array( 'tpt-move-impossible' );
+				$result = array( 'tpt-delete-impossible' );
 				return false;
 			}
 		}
@@ -544,9 +542,9 @@ FOO;
 		} elseif( $action === 'unmark' ) {
 			return wfMsgExt( 'pt-log-unmark', $opts, $title->getPrefixedText(), $user );
 		} elseif( $action === 'moveok' ) {
-			return wfMsgExt( 'pt-log-moveok', $opts, $title->getPrefixedText(), $user, $_['target'] );
+			return wfMsgExt( 'pt-log-moveok', $opts, $title->getPrefixedText(), $user );
 		} elseif( $action === 'movenok' ) {
-			return wfMsgExt( 'pt-log-moveok', $opts, $title->getPrefixedText(), $user, $_['target'] );
+			return wfMsgExt( 'pt-log-movenok', $opts, $title->getPrefixedText(), $user, $_['target'] );
 		}
 	}
 
@@ -557,7 +555,8 @@ FOO;
 
 	public static function lockedPagesCheck( $title, $user, $action, &$result ) {
 		global $wgMemc;
-		if ( $wgMemc->get( 'pt-lock', $title->getPrefixedText() ) === true ) {
+		$key = wfMemcKey( 'pt-lock', $title->getPrefixedText() );
+		if ( $wgMemc->get( $key ) === true ) {
 			$result = array( 'pt-locked-page' );
 			return false;
 		}
