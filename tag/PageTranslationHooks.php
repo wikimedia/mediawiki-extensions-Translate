@@ -528,10 +528,10 @@ FOO;
 		return true;
 	}
 
-	public static function formatLogEntry( $type, $action, $title, $forContent, $params ) {
+	public static function formatLogEntry( $type, $action, $title, $forUI, $params ) {
 		global $wgLang, $wgContLang;
 
-		$language = $forContent ? $wgContLang : $wgLang;
+		$language = $forUI === null ? $wgContLang : $wgLang;
 		$opts = array( 'parseinline', 'language' => $language );
 
 		$_ = unserialize( $params[0] );
