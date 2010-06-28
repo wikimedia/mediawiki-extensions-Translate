@@ -586,6 +586,9 @@ ignored = invitations-uninvitedlist-item
 
 IP Auth
 
+JS Bread Crumbs
+optional = jsbreadcrumbs-separator
+
 JS Kit
 
 JS2 Support
