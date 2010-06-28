@@ -234,6 +234,21 @@ $messages['br'] = array(
 	'translate-fs-userpage-submit' => 'Krouiñ ma fajenn implijer',
 );
 
+/** Bosnian (Bosanski)
+ * @author Palapa
+ */
+$messages['bs'] = array(
+	'firststeps' => 'Prvi koraci',
+	'translate-fs-pagetitle-done' => 'Urađeno!',
+	'translate-fs-settings-title' => 'Podesi svoje postavke',
+	'translate-fs-userpage-title' => 'Napravi svoju korisničku stranicu',
+	'translate-fs-permissions-title' => 'Zahtijevaj prevodilačku dozvolu',
+	'translate-fs-target-title' => 'Počni prevoditi!',
+	'translate-fs-email-title' => 'Potvrdi svoju e-mail adresu',
+	'translate-fs-userpage-submit' => 'Napravi moju korisničku stranicu',
+	'translate-fs-userpage-done' => 'Odlično urađeno! Sada imate korisničku stranicu.',
+);
+
 /** German (Deutsch)
  * @author The Evil IP address
  */
@@ -1473,6 +1488,17 @@ $3Зарегистрироваться$4',
 Это позволяет другим участникам связываться с вами по электронной почте.
 Вы также будете получать новостную рассылку раз в месяц.
 Если вы не хотите получать рассылку, то вы можете отказаться от неё на вкладке «{{int:prefs-personal}}» ваших [[Special:Preferences|настроек]].',
+);
+
+/** Rusyn (русиньскый язык)
+ * @author Gazeb
+ */
+$messages['rue'] = array(
+	'translate-fs-pagetitle-done' => ' - зроблено!',
+	'translate-fs-userpage-title' => 'Створити вашу сторінку хоснователя',
+	'translate-fs-permissions-title' => 'Жадати права перекладателя',
+	'translate-fs-target-title' => 'Започати перекладаня!',
+	'translate-fs-email-title' => 'Підтвердьте свою адресу ел. пошты',
 );
 
 /** Slovenian (Slovenščina)
