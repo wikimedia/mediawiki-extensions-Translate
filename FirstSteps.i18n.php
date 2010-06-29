@@ -223,6 +223,7 @@ $3Зарэгістравацца$4',
  */
 $messages['br'] = array(
 	'firststeps' => 'Pazenn gentañ',
+	'firststeps-desc' => '[[Special:FirstSteps|Pajenn dibar]] evit hentañ an implijerien war ur wiki hag a implij an astenn Translate',
 	'translate-fs-pagetitle-done' => '↓  - graet !',
 	'translate-fs-pagetitle' => "Heñcher loc'hañ - $1",
 	'translate-fs-signup-title' => 'En em enskrivañ',
@@ -231,7 +232,13 @@ $messages['br'] = array(
 	'translate-fs-permissions-title' => 'Goulennit an aotreoù troer',
 	'translate-fs-target-title' => 'Kregiñ da dreiñ !',
 	'translate-fs-email-title' => "Kadarnait ho chomlec'h postel",
+	'translate-fs-intro' => "Deuet mat oc'h er skoazeller evit pazioù kentañ {{SITENAME}}.
+Emaomp o vont da hentañ ac'hanoc'h paz ha paz evit dont da vezañ un troer.
+E fin an hentad e c'helloc'h treiñ \"kemennadennoù etrefas\" an holl raktresoù meret gant {{SITENAME}}.",
+	'translate-fs-settings-skip' => "Echuet eo ganin.
+Lezit ac'hanon da genderc'hel.",
 	'translate-fs-userpage-submit' => 'Krouiñ ma fajenn implijer',
+	'translate-fs-userpage-done' => "Dispar ! Ur bajenn implijer hoc'h eus bremañ.",
 );
 
 /** Bosnian (Bosanski)
@@ -1515,10 +1522,49 @@ $messages['sl'] = array(
 	'translate-fs-permissions-title' => 'Zaprosite za prevajalska dovoljenja',
 	'translate-fs-target-title' => 'Začnite prevajati!',
 	'translate-fs-email-title' => 'Potrdite svoj e-poštni naslov',
+	'translate-fs-intro' => "Dobrodošli v čarovniku prvih korakov na {{GRAMMAR:dajalnik|{{SITENAME}}}}.
+Vodili vas bomo skozi postopek, da postanete prevajalec, korak za korakom.
+Na koncu boste lahko prevajali ''sporočila vmesnika'' vseh podprtih projektov na {{GRAMMAR:dajalnik|{{SITENAME}}}}.",
+	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount.png|frame]]
+
+Na prvem koraku se morate registrirati.
+
+Zasluge za vaše prevode so pripisane vašemu uporabniškemu imenu.
+Slika na desni prikazuje, kako izpolniti polja.
+
+Če ste se že registrirali, se namesto tega $1prijavite$2.
+Ko ste enkrat registrirani, se prosimo vrnite na to stran.
+
+$3Registracija$4',
+	'translate-fs-settings-text' => 'Sedaj pojdite v svoje nastavitve in
+vsaj spremenite jezik vmesnika v jezik v katerega nameravate prevajati.
+
+Vaš jezik vmesnika je uporabljen kot privzeti ciljni jezik.
+Hitro se lahko zgodi, da pozabimo spremeniti jezik v pravega, zato je ta nastavitev zelo priporočljiva.
+
+Medtem ko ste tam, lahko programje zaprosite za prikaz prevodov v drugih jezikih, ki jih poznate.
+To nastavitev je mogoče najti pod zavihkom »{{int:prefs-editing}}«.
+Brez zadržkov raziščite tudi ostale nastavitve.
+
+Sedaj pojdite na vašo [[Special:Preferences|stran z nastavitvami]] in se nato vrnite na to stran.',
 	'translate-fs-settings-skip' => 'Končal sem.
 Pustite mi nadaljevati.',
 	'translate-fs-userpage-submit' => 'Ustvari mojo uporabniško stran',
 	'translate-fs-userpage-done' => 'Dobro opravljeno! Sedaj imate uporabniško stran.',
+	'translate-fs-permissions-text' => 'Sedaj morate vložiti prošnjo za vključitev v skupino prevajalcev.
+
+Dokler ne popravimo kode, prosimo, pojdite na [[Project:Translator]] in sledite navodilom.
+Nato se vrnite nazaj na to stran.
+
+Ko oddate prošnjo, bo nekdo od prostovoljnih članov osebja preveril vašo zahtevo in jo potrdil takoj, ko bo to mogoče.
+Prosimo, bodite potrpežljivi.
+
+<del>Preverite, ali je naslednja zahteva izpolnjena pravilno, in pritisnite gumb za zahtevek.</del>',
+	'translate-fs-email-text' => 'Prosimo, navedite svoj e-poštni naslov v [[Special:Preferences|svojih nastavitvah]] in ga potrdite iz e-pošte, ki vam bo poslana.
+
+To omogoča drugim uporabnikom, da stopijo v stik z vami preko e-pošte.
+Prav tako boste prejemali glasilo, največ enkrat mesečno.
+Če ne želite prejemati glasila, se lahko odjavite na zavihku »{{int:prefs-personal}}« v vaših [[Special:Preferences|nastavitvah]].',
 );
 
 /** Swedish (Svenska)

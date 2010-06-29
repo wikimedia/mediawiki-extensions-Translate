@@ -435,6 +435,8 @@ This warning indicates that the namespace in the translation does not match the 
 	'translate-rc-translation-filter-site' => 'Selects changes to MediaWiki-messages without a language code in the [[Special:RecentChanges|recentchanges]].
 For example MediaWiki:Common.css, but not MediaWiki:Common.css/fr or other messages for specific languages.
 These messages will not be submitted to svn, but will only affect the interface on translatewiki.net.',
+	'translate-statsf-scale' => 'Used on [[Special:TranslationStats]].',
+	'translate-statsf-count' => 'Used on [[Special:TranslationStats]].',
 	'translate-statsf-submit' => '{{Identical|Preview}}',
 	'translations' => 'Title of [[Special:Translations]].',
 	'translations-summary' => 'Used in [[Special:Translations]].',
@@ -2438,6 +2440,7 @@ Ma ya d'ober ar strollad istrolladoù pe usstrolladoù kemennadennoù tennet eus
 	'translate-edit-warnings' => 'Kemennoù diwall diwar-benn an troidigezhioù diglok',
 	'translate-edit-tmsugs' => 'Kinnig a-berzh ar memor treiñ',
 	'translate-edit-tmmatch' => '$1% kenglotañ',
+	'translate-use-suggestion' => "Ensoc'hañ ar c'hinnig-mañ er prenestr treiñ. Erlec'hiañ a ra hollad an danvez a-vremañ.",
 	'translate-edit-goto-no-prev' => 'Kemennadenn ebet a-raok',
 	'translate-edit-goto-no-next' => "Kemennadenn ebet war-lerc'h",
 	'translate-edit-goto-prev' => "Mont d'ar gemennadenn a-raok",
@@ -2571,6 +2574,7 @@ Sellit ouzh al lañser evit al liamm a gas d'ar yezh spisaet ganeoc'h en ho penn
 	'supportedlanguages-noportal' => 'N\'eus bet termenet NS_PORTAL ebet gant merour ar wiki. Gant se n\'hall ket ar bajenn-mañ mont en-dro.
 War ar bajenn-mañ e vo gwelet ur roll yezhoù evit an holl borchedoù a glot gant ur yezh resis hag un ispajenn anvet "translators".
 Dre ret emañ en ispajenn "translators" ar patrom [[:{{ns:template}}:User|User]], a gemer un anv implijer da arventenn.',
+	'supportedlanguages-recenttranslations' => 'troidigezhioù ziwezhañ',
 	'translate-save' => 'Enrollañ ($1)',
 	'translate-jssti-add' => "Ouzhpennañ d'ar roll",
 	'translate-group-desc-mediawikicore' => "Er strollad kemennadennoù-mañ emañ ar c'hemennadennoù implijet e stumm red MediaWiki ({{CURRENTVERSION}})",
@@ -6667,6 +6671,7 @@ Im Menü git s e Link zum Portal vu dr yygstellte Sproch.',
 	'supportedlanguages-noportal' => 'Dr Wiki-Administrator het d Variable <code>NS_PORTAL</code> nit definiert, wäge däm funktioniert die Syte nit.
 Uf däre Syte erschyynt e Lischt vu dr Sprochportal mit allene Portal, wu e definierte Sprochcode hän un e Untersyte hän mit eme Name „translators“.
 In dr Untersyte „translators“ mueß es d Vorlag [[:{{ns:template}}:User|User]] din haa, mit eme Benutzername as Parameter.',
+	'supportedlanguages-recenttranslations' => 'Aktuälli Ibersetzige',
 	'translate-save' => 'Spychere ($1)',
 	'translate-jssti-add' => 'Zue dr Lischt zuefiege',
 	'translate-group-desc-mediawikicore' => 'In däre Gruppe het s alli Nochrichte vu dr aktuälle alpha-Version vu MediaWiki ({{CURRENTVERSION}})',
@@ -15248,7 +15253,18 @@ Razlog:
 	'translate-edit-goto-prev' => 'Uredi prejšnje sporočilo',
 	'translate-edit-goto-next' => 'Uredi naslednje sporočilo',
 	'translate-edit-goto-list' => 'Vrni se na seznam',
-	'translate-magic-pagename' => 'Razširjeno MediaWiki prevajanje',
+	'translate-magic-pagename' => 'Razširjeno prevajanje MediaWiki',
+	'translate-magic-help' => 'Prevedete lahko vzdevke posebnih strani, čarobne besede in imena imenskih prostorov.
+
+Vzdevki posebnih strani in čarobne besede imajo lahko več prevodov.
+Prevodi so ločeni z vejico (,).
+Imenski prostori imajo lahko samo en prevod.
+
+V prevodih imenskih prostorov je <code>$1 talk</code> posebnost. <code>$1</code> je zamenjano z imenom strani (na primer <code>{{ns:project_talk}}</code>).
+Če v vašem jeziku ni mogoče tvoriti veljavnega izraza brez spreminjanja imena strani, prosimo, stopite v stik z razvijalcem.
+
+Za shranjevanje sprememb morate biti v skupini prevajalcev.
+Spremembe niso shranjene dokler ne kliknete spodnjega gumba za shranjevanje.',
 	'translate-magic-module' => 'Modul:',
 	'translate-magic-submit' => 'Dobi',
 	'translate-magic-cm-export' => 'Izvoz',
@@ -15289,6 +15305,9 @@ Razlog:
 	'translate-pref-nonewsletter' => 'Ne pošiljaj mi e-poštnih glasil',
 	'translate-pref-editassistlang' => 'Pomožni jeziki:',
 	'prefs-translate' => 'Možnosti prevajanja',
+	'translate-pref-editassistlang-help' => 'Z vejicami ločen seznam kod jezikov.
+Ko prevajate, so prikazani prevodi sporočila v teh jezikih.
+Privzeti seznam jezikov je odvisen od vašega jezika.',
 	'translate-pref-editassistlang-bad' => 'Neveljavna koda jezika na seznamu:
 <nowiki>$1</nowiki>.',
 	'translate-pref-jsedit' => 'Izboljšan urejevalnik prevodov (JavaScript)',
@@ -15309,8 +15328,10 @@ Vse vrednosti imajo zgornje in spodnje omejitve.',
 	'translate-statsf-width' => 'Širina v slikovnih pikah:',
 	'translate-statsf-height' => 'Višina v slikovnih pikah:',
 	'translate-statsf-days' => 'Časovno obdobje v dneh:',
+	'translate-statsf-scale' => 'Zrnavost:',
 	'translate-statsf-scale-days' => 'Dni',
 	'translate-statsf-scale-hours' => 'Ur',
+	'translate-statsf-count' => 'Merilo:',
 	'translate-statsf-count-edits' => 'Število urejanj',
 	'translate-statsf-count-users' => 'Aktivni prevajalci',
 	'translate-statsf-language' => 'Z vejico ločen seznam kod jezikov:',
@@ -15328,6 +15349,7 @@ Vse vrednosti imajo zgornje in spodnje omejitve.',
 	'translate-translations-fieldset-title' => 'Sporočilo',
 	'translate-translations-messagename' => 'Ime:',
 	'translate-translations-project' => 'Projekt:',
+	'translate-translations-including-no-param' => 'Prosimo, navedite veljavni ključ sporočila v parametru podstrani',
 	'translate-translations-history-short' => 'z',
 	'languagestats' => 'Statistika jezika',
 	'languagestats-summary' => 'Ta stran prikazuje statistiko prevodov za vse skupine sporočil jezika.',
@@ -15343,12 +15365,26 @@ Vse vrednosti imajo zgornje in spodnje omejitve.',
 	'translate-untranslated-tooltip' => 'Skupno število neprevedenih sporočil v tej skupini sporočil.
 Vključuje sporočila, ki so bila označena kot zastarela.',
 	'translate-percentage-complete' => 'Končano',
+	'translate-percentage-complete-tooltip' => 'Odstotek sporočil v skupini, ki so bila prevedena in ne označena kot zastarela.',
 	'translate-percentage-fuzzy' => 'Zastarelo',
+	'translate-percentage-fuzzy-tooltip' => 'Odstotek sporočil v skupini, ki so bila prevedena in označena kot zastarela.
+Sporočila so označena kot zastarela, ker se je izvorno sporočilo v angleškem jeziku spremenilo, ker je samodejno preverjanje sporočila spodletelo ali ker ga je nekdo označil kot zastarelega.',
 	'translate-nothing-to-do' => 'Kaže, da so vsi mogoči prevodi dokončani.
 Predlagamo vam, da pregledate sporočila preko [[Special:Translate|{{int:translate}}]].',
 	'supportedlanguages' => 'Podprti jeziki',
+	'supportedlanguages-summary' => 'Ta stran prikazuje seznam vseh jezikov, ki jih podpira {{SITENAME}}, skupaj z imeni prevajalcev, ki delujejo na tem jeziku.
+Če želite več informacij o določenem jeziku, lahko kliknete na povezavo do portala tega jezika.
+S klikom na ime prevajalca boste prišli na njegovo uporabniško stran.
+
+Če jezik ni naveden, lahko poizveste kako začeti z lokalizacijo projekta za jezik na »[[Translating:Process|Nov jezik]]«.
+
+Če prevajate v jezik in vaše ime ni vključeno, ga, prosimo, dodajte na seznam prevajalcev na [[:Category:Languages|portalu]] tega jezika.
+Oglejte si stransko vrstico za povezavo do portala jezika, določenega v vaših nastavitvah.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Prevajalec|Prevajalca|Prevajalci}}: $1',
 	'supportedlanguages-noportal-title' => 'Določen ni noben imenski prostor portala',
+	'supportedlanguages-noportal' => 'Administrator wikija ni opredelil NS_PORTAL, zato ta stran ne deluje.
+Na tej stran bo prikazan seznam jezikovnih portalov za vse portale z določeno kodo jezika in podstranjo imenovano »translators«.
+Podstran »translators« mora vsebovati predlogo [[:{{ns:template}}:User|User]], ki kot parameter sprejme uporabniško ime.',
 	'supportedlanguages-recenttranslations' => 'nedavni prevodi',
 	'translate-save' => 'Shrani ($1)',
 	'translate-jssti-add' => 'Dodaj na seznam',
@@ -15385,6 +15421,13 @@ Predlagamo vam, da pregledate sporočila preko [[Special:Translate|{{int:transla
 	'translate-manage-action-fuzzy' => 'Uvozi in prevode označi kot ohlapne',
 	'translate-manage-submit' => 'Izvedi',
 	'translate-manage-nochanges' => 'Ni sprememb v opredelitvi sporočil za to skupino.',
+	'translate-manage-nochanges-other' => 'Za ta jezik ni bilo sprememb.
+Uporabite spodnjo povezavo za vrnitev na pogled podrobnosti skupine.',
+	'translate-manage-inconsistent' => 'V zahtevi je bila odkrita nedoslednost.
+Prosimo, preverite spremembe in poskusite znova.
+Podrobnosti: $1',
+	'translate-manage-toolong' => 'Najdaljši čas obdelave $1 {{PLURAL:$1|sekunde|sekund}} je presežen.
+Prosimo, ponovno potrdite obrazec, da nadaljujete z obdelavo.',
 	'translate-manage-import-ok' => 'Uvožena nova različica strani $1.',
 	'translate-manage-import-noks' => 'Uvoz nove različice strani $1 je spodletel: $2',
 	'translate-manage-import-ignore' => 'Preskakovanje sporočila $1.',
@@ -15395,6 +15438,13 @@ Prosimo, preverite.',
 	'translate-manage-import-fuzzy' => 'Uvažam in označujem kot ohlapno: $1',
 	'translate-manage-import-done' => 'Vse opravljeno!',
 	'translate-manage-import-rebuild' => 'Ponovna gradnja predpomnilnika.',
+	'translate-manage-intro-en' => 'Spodaj se nahaja seznam sprememb sporočil v tej skupini.
+Prosimo, preglejte spremembe in izberite dejanje, ki ga želite storiti za vsak prevod.
+Ko posodobite opredelitve sporočil, preverite zunanje spremembe v drugih jezikih, če obstajajo.
+Pomnite tudi, da je dejanje <code>prezri</code> samo začasno.',
+	'translate-manage-intro-other' => 'Spodaj se nahaja seznam sprememb prevodov v jeziku $1.
+Prosimo, preglejte spremembe in izberite dejanje, ki ga želite storiti za vsak prevod.
+Če se odločite prezreti spremembe, bodo od naslednjem izvozu povožene.',
 	'translate-manage-subtitle' => 'Upravljaj',
 	'translate-manage-import-rebuild-all' => 'Ponovno zgradi vse jezike in prezri katere koli spremembe',
 	'importtranslations' => 'Uvažanje prevodov',
