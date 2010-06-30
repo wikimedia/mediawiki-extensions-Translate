@@ -12777,6 +12777,7 @@ $messages['pdc'] = array(
 	'translate-translations-none' => 'Keene Iwwersetzingen fer „$1“ vorhande',
 	'translate-translations-messagename' => 'Naame:',
 	'translate-translations-project' => 'Projekt:',
+	'translate-translations-history-short' => 'G',
 	'languagestats' => 'Nummere vun Schprooche',
 	'translate-language-code' => 'Schprooche-Code',
 	'translate-language-code-field-name' => 'Schprooche-Code:',
@@ -12785,6 +12786,7 @@ $messages['pdc'] = array(
 	'supportedlanguages-translators' => '{{PLURAL:$2|Iwwersetzer|Iwwersetzer}}: $1',
 	'translate-jssti-add' => 'Zu de Lischt dezu duh',
 	'translate-manage-modlang-new' => '$1 (nei)',
+	'translate-manage-import-done' => 'Alles geduh!',
 );
 
 /** Polish (Polski)

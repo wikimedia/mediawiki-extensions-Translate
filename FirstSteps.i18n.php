@@ -1549,6 +1549,28 @@ Brez zadržkov raziščite tudi ostale nastavitve.
 Sedaj pojdite na vašo [[Special:Preferences|stran z nastavitvami]] in se nato vrnite na to stran.',
 	'translate-fs-settings-skip' => 'Končal sem.
 Pustite mi nadaljevati.',
+	'translate-fs-userpage-text' => 'Sedaj ustvarite uporabniško stran.
+
+Prosimo, napišite nekaj o sebi; kdo ste in kaj počnete.
+To bo pripomoglo k sodelovanju skupnosti {{GRAMMAR:rodilnik|{{SITENAME}}}}.
+Na {{GRAMMAR:dajalnik|{{SITENAME}}}} so ljudje iz celega sveta, ki delujejo na različnih jezikih in projektih.
+
+V že izpolnjenem polju spodaj boste v prvi vrstici videli <nowiki>{{#babel:en-2}}</nowiki>.
+Prosimo, izpolnite ga s svojim znanjem jezikov.
+Številka za kodo jezika opisuje, kako dobro poznate jezik.
+Možnosti so:
+* 1 – malo,
+* 2 – osnovno znanje,
+* 3 – dobro znanje,
+* 4 – raven naravnega govorca,
+* 5 – jezik uporabljate poklicno, na primer ste profesionalni prevajalec.
+
+Če ste naravni govorec, izpustite raven izurjenosti in uporabite samo kodo jezika.
+Primer: če ste naravni govorec tamilščine, angleščino dobro obvladate in znate še nekaj svahilija, potem napišete:
+<code><nowiki>{{#babel:ta|en-3|sw-1}}</nowiki></code>
+
+Če ne veste jezikovne kode nekega jezika, jo je sedaj priporočljivo poiskati.
+Uporabite lahko spodnji seznam.',
 	'translate-fs-userpage-submit' => 'Ustvari mojo uporabniško stran',
 	'translate-fs-userpage-done' => 'Dobro opravljeno! Sedaj imate uporabniško stran.',
 	'translate-fs-permissions-text' => 'Sedaj morate vložiti prošnjo za vključitev v skupino prevajalcev.
@@ -1560,6 +1582,21 @@ Ko oddate prošnjo, bo nekdo od prostovoljnih članov osebja preveril vašo zaht
 Prosimo, bodite potrpežljivi.
 
 <del>Preverite, ali je naslednja zahteva izpolnjena pravilno, in pritisnite gumb za zahtevek.</del>',
+	'translate-fs-target-text' => "Čestitamo!
+Sedaj lahko začnete prevajati.
+
+Ne bojte se, če se vam še vedno zdi novo in zmedeno.
+Na [[Project list|Seznamu projektov]] se nahaja pregled projektov, h katerim lahko prispevate s prevajanjem.
+Večina projektov ima kratko opisno stran s povezavo »''Prevedi ta projekt''«, ki vas bo ponesla na stran s seznamom neprevedenih sporočil.
+Na voljo je tudi seznam vseh skupin sporočil s [[Special:LanguageStats|trenutnim stanjem prevodov za jezik]].
+
+Če menite, da morate razumeti več stvari, preden začnete prevajati, lahko preberete [[FAQ|Pogosto zastavljena vprašanja]].
+Žal je lahko dokumentacija ponekod zastarela.
+Če je kaj takega, kar bi morali storiti, vendar ne ugotovite kako, ne oklevajte in povprašajte na [[Support|podporni strani]].
+
+Prav tako lahko stopite v stik s kolegi prevajalci istega jezika na [[Portal:$1|vašem jezikovnem portalu]].
+Portal kaže glede na vašo trenutno [[Special:Preferences|nastavitev jezika]].
+Prosimo, spremenite jo, če je potrebno.",
 	'translate-fs-email-text' => 'Prosimo, navedite svoj e-poštni naslov v [[Special:Preferences|svojih nastavitvah]] in ga potrdite iz e-pošte, ki vam bo poslana.
 
 To omogoča drugim uporabnikom, da stopijo v stik z vami preko e-pošte.

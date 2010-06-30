@@ -2587,9 +2587,15 @@ Sectietekst: <pre>$1</pre>',
 	'pt-movepage-action-check' => 'Controleren of hernoemen mogelijk is',
 	'pt-movepage-action-perform' => 'Hernoemen',
 	'pt-movepage-action-other' => 'Doel wijzigen',
+	'pt-movepage-intro' => "Via dezespeciale pagina kunt u een te vertalen pagina's hernoemen.
+Dit wordt niet direct gedaan, omdat het mogelijk is dat heel veel pagina's hernoemd moeten worden.
+De jobqueue hernoemt uiteindelijke de pagina.
+Terwijl de pagina's worden hernoemd, is het niet mogelijk handeling uit te voeren op betrokken pagina's.
+In het logboek paginavertaling worden fouten opgeslagen die op een later moment handmatig hersteld kunnen worden.",
 	'pt-movepage-logreason' => 'Onderdeel van te vertalen pagina $1.',
 	'pt-movepage-started' => 'De basispagina is nu hernoemd.
 Kijk in het logboek paginavertaling na of er fouten zijn gemeld en of de complete handeling is afgerond.',
+	'pt-locked-page' => 'Deze pagina kan niet gewijzigd worden omdat de te vertalen pagina op dit moment hernoemd wordt.',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
@@ -2773,6 +2779,7 @@ $messages['pdc'] = array(
 	'tpt-translate-this' => 'des Blatt iwwersetze',
 	'translate-tag-translate-link-desc' => 'Des Blatt iwwersetze',
 	'tpt-languages-legend' => 'Annre Schprooche:',
+	'pt-movepage-reason' => 'Grund:',
 );
 
 /** Polish (Polski)
@@ -3228,7 +3235,7 @@ $messages['ru'] = array(
 Эта страница является переводом страницы [[$1]], перевод может быть обновлен с помощью специального [$2 инструмента перевода].',
 	'tpt-unknown-page' => 'Это пространство имён зарезервировано для переводов текстов страниц.
 Страница, которую вы пытаетесь изменить, не соответствует какой-либо странице, отмеченной для перевода.',
-	'tpt-move-impossible' => 'Переименование помеченных для перевода страниц пока не возможно.',
+	'tpt-delete-impossible' => 'Удаление помеченных для перевода страниц пока не возможно.',
 	'tpt-install' => 'Запустите php-скрипт maintenance/update.php или веб-установку, чтобы включить возможность перевода страниц.',
 	'tpt-render-summary' => 'Обновление для соответствия новой версии исходной страницы.',
 	'tpt-download-page' => 'Экспортировать страницу с переводами',
@@ -3247,6 +3254,9 @@ $messages['ru'] = array(
 	'pt-log-name' => 'Журнал перевода страниц',
 	'pt-log-mark' => '{{GENDER:$2|отметил|отметила}} для перевода версию $3 страницы «[[:$1]]»',
 	'pt-log-unmark' => '{{GENDER:$2|снял|сняла}} отметку перевода со страницы [[:$1]]',
+	'pt-log-moveok' => '{{GENDER:$2|произвёл|произвела}} переименование доступной для перевода страницы $1',
+	'pt-log-movenok' => '{{GENDER:$2|вызвал|вызвала}} ошибку при переименовании [[:$1]] в [[:$3]]',
+	'pt-movepage-title' => 'Переименование доступной для перевода страницы $1',
 );
 
 /** Rusyn (русиньскый язык)
