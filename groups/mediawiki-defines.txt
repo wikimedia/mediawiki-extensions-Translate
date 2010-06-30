@@ -782,6 +782,8 @@ descmsg = pf-desc
 
 Page By
 
+Page Object Model
+
 Paged Tiff Handler
 descmsg = tiff-desc
 
