@@ -461,11 +461,21 @@ $messages['be-tarask'] = array(
 	'pt-log-name' => 'Журнал перакладу старонак',
 	'pt-log-mark' => '{{GENDER:$2|пазначыў|пазначыла}} вэрсію $3 старонкі «[[:$1]]» для перакладу.',
 	'pt-log-unmark' => '{{GENDER:$2|выдаліў|выдаліла}} метку перакладу са старонкі «[[:$1]]».',
+	'pt-log-moveok' => '{{GENDER:$2|зьмяніў|зьмяніла}} назву старонкі да перакладу $1',
+	'pt-log-movenok' => '{{GENDER:$2|выклікаў|выклікала}} праблему пад час пераносу [[:$1]] у [[:$3]]',
 	'pt-movepage-title' => 'Перанесьці старонкі, якія магчыма перакладаць, $1',
 	'pt-movepage-blockers' => 'Немагчыма перанесьці старонкі, якія магчыма перакладаць, з-за {{PLURAL:$1|наступнай памылкі|наступных памылак}}:',
 	'pt-movepage-block-base-exists' => 'Існуе мэтавая базавая старонка [[:$1]].',
 	'pt-movepage-block-base-invalid' => 'Мэтавая базавая старонка мае няслушную назву.',
 	'pt-movepage-block-tp-exists' => 'Мэтавая старонка перакладу [[:$2]] існуе.',
+	'pt-movepage-block-tp-invalid' => 'Мэтавая назва старонкі да перакладу [[:$1]] будзе няслушнай (занадта доўгая?)',
+	'pt-movepage-block-section-exists' => 'Мэтавая сэкцыя старонкі [[:$2]] існуе.',
+	'pt-movepage-block-section-invalid' => 'Мэтавая назва сэкцыі старонкі [[:$1]] будзе няслушнай (занадта доўгая?).',
+	'pt-movepage-block-subpage-exists' => 'Мэтавая падстаронка [[:$2]] існуе.',
+	'pt-movepage-block-subpage-invalid' => 'Мэтавая назва падстаронкі [[:$1]] будзе няслушнай (занадта доўгая?).',
+	'pt-movepage-list-pages' => 'Сьпіс старонак да пераносу',
+	'pt-movepage-list-translation' => 'Старонкі да перакладу',
+	'pt-movepage-list-other' => 'Іншыя падстаронкі',
 );
 
 /** Bulgarian (Български)
@@ -1521,7 +1531,7 @@ Antes de marcar esta versión para ser traducida, comprobe que as modificacións
 Esta páxina é unha tradución da páxina "[[$1]]" e a tradución pódese actualizar usando [$2 a ferramenta de tradución].',
 	'tpt-unknown-page' => 'Este espazo de nomes está reservado para traducións de páxinas de contido.
 A páxina que está intentando editar parece non corresponder a algunha páxina marcada para ser traducida.',
-	'tpt-move-impossible' => 'Aínda non é posible mover páxinas marcadas para traducir.',
+	'tpt-delete-impossible' => 'Aínda non é posible borrar páxinas marcadas para traducir.',
 	'tpt-install' => 'Executar o php maintenance/update.php ou o instalador web para activar a funcionalidade de tradución de páxinas.',
 	'tpt-render-summary' => 'Actualizando para coincidir coa nova versión da páxina de orixe',
 	'tpt-download-page' => 'Exportar a páxina coas traducións',
@@ -1537,9 +1547,37 @@ Texto da sección: <pre>$1</pre>',
 Texto da sección: <pre>$1</pre>',
 	'pt-shake-empty' => 'Sección baleira para o marcador $1.',
 	'pt-log-header' => 'Rexistro de accións e operacións relacionadas co sistema de tradución de páxinas',
-	'pt-log-name' => 'Rexistro de traducións de páxinas',
+	'pt-log-name' => 'Rexistro de páxinas de tradución',
 	'pt-log-mark' => '{{GENDER:$2|marcou}} a revisión $3 da páxina "[[:$1]]" para traducir',
 	'pt-log-unmark' => '{{GENDER:$2|retirou}} a páxina "[[:$1]]" da tradución',
+	'pt-log-moveok' => '{{GENDER:$2|trasladou}} a páxina traducible "$1" a un novo nome',
+	'pt-log-movenok' => '{{GENDER:$2|deu}} cun problema ao mover "[[:$1]]" a "[[:$3]]"',
+	'pt-movepage-title' => 'Mover a páxina traducible "$1"',
+	'pt-movepage-blockers' => 'Non se pode trasladar a páxina traducible a un novo nome debido {{PLURAL:$1|ao seguinte erro|aos seguintes erros}}:',
+	'pt-movepage-block-base-exists' => 'Existe a páxina de destino "[[:$1]]".',
+	'pt-movepage-block-base-invalid' => 'A páxina de destino ten un título incorrecto.',
+	'pt-movepage-block-tp-exists' => 'Existe a páxina de tradución de destino "[[:$2]]".',
+	'pt-movepage-block-tp-invalid' => 'O título da páxina de tradución de destino para "[[:$1]]" é incorrecto (quizais sexa longo de máis).',
+	'pt-movepage-block-section-exists' => 'Existe a sección da páxina de destino "[[:$2]]".',
+	'pt-movepage-block-section-invalid' => 'O título da sección da páxina de destino para "[[:$1]]" é incorrecto (quizais sexa longo de máis).',
+	'pt-movepage-block-subpage-exists' => 'Existe a subpáxina de destino "[[:$2]]".',
+	'pt-movepage-block-subpage-invalid' => 'O título da subpáxina de destino para "[[:$1]]" é incorrecto (quizais sexa longo de máis).',
+	'pt-movepage-list-pages' => 'Lista de páxinas a mover',
+	'pt-movepage-list-translation' => 'Páxinas de tradución',
+	'pt-movepage-list-section' => 'Sección de páxina',
+	'pt-movepage-list-other' => 'Outras subpáxinas',
+	'pt-movepage-list-count' => 'En total, $1 {{PLURAL:$1|páxina|páxinas}} a mover.',
+	'pt-movepage-legend' => 'Mover a páxina traducible',
+	'pt-movepage-current' => 'Nome actual:',
+	'pt-movepage-new' => 'Novo nome:',
+	'pt-movepage-reason' => 'Motivo:',
+	'pt-movepage-subpages' => 'Mover todas as subpáxinas',
+	'pt-movepage-action-check' => 'Comprobar se o traslado é posible',
+	'pt-movepage-action-perform' => 'Realizar o traslado',
+	'pt-movepage-action-other' => 'Cambiar o destino',
+	'pt-movepage-logreason' => 'Parte da páxina traducible "$1".',
+	'pt-movepage-started' => 'Estase a mover a páxina base.
+Comprobe o rexistro de páxinas de tradución por se houbese algún erro e para ler as mensaxes de conclusión.',
 );
 
 /** Swiss German (Alemannisch)
@@ -2311,7 +2349,7 @@ awer déi lescht Versioun kann fir d'Iwwersetzung markéiert ginn.",
 Dës Säit ass eng Iwwersetzung vun der Säit [[$1]] an d'Iwwersetzung ka mat Hëllef vun der [$2 Iwwersetzungs-Fonctioun] aktulaiséiert ginn.",
 	'tpt-unknown-page' => "Dëse Nummraum ass fir d'Iwwersetze vu Säitemat Inhalt reservéiert.
 D'Säit, déi Dir versicht z'änneren schéngt net mat enger Säit déi fir d'iwwersetzung markéiert ass ze korrespondéieren.",
-	'tpt-move-impossible' => "D'Réckele vu Säiten, déi fir d'Iwwersetzung markéiert sinn, ass bis elo net méiglech.",
+	'tpt-delete-impossible' => "D'Läsche vu Säiten, déi fir d'Iwwersetzung markéiert sinn, ass bis elo net méiglech.",
 	'tpt-install' => "Lancéiert php maintenance/update.php oder web install fir d'Fonctioun vun der Säiteniwwersetzung anzeschalten.",
 	'tpt-render-summary' => 'Aktualiséieren fir mat der neier Versioun vun der Quellsäit iwwereneenzestëmmen',
 	'tpt-download-page' => 'Säit mat Iwwersetzungen exportéieren',
@@ -2330,6 +2368,15 @@ Text vum Abschnitt: <pre>$1</pre>',
 	'pt-log-name' => 'Logbuch vun de Säiteniwwersetzungen',
 	'pt-log-mark' => '{{GENDER:$2|huet}} d\'Versioun $3 vun der Säit "[[:$1]]" fir z\'iwwersetze markéiert',
 	'pt-log-unmark' => '{{GENDER:$2|huet}} d\'Säit "[[:$1]]" vun der Iwwersetzung ewechgeholl',
+	'pt-movepage-title' => 'Déi iwwersetzbar Säit $1 réckelen',
+	'pt-movepage-list-pages' => 'Lëscht vun de Säite fir ze réckelen',
+	'pt-movepage-list-translation' => 'Iwwersetzungssäiten',
+	'pt-movepage-list-count' => 'Am ganzen $1 {{PLURAL:$1|Säit|Säite}} fir ze réckelen.',
+	'pt-movepage-current' => 'Aktuellen Numm:',
+	'pt-movepage-new' => 'Neien Numm:',
+	'pt-movepage-reason' => 'Grond:',
+	'pt-movepage-action-perform' => 'Réckelen',
+	'pt-movepage-logreason' => 'Deel vun der iwwersetzbarer Säit $1.',
 );
 
 /** Ganda (Luganda)
@@ -3181,6 +3228,7 @@ $messages['roa-tara'] = array(
 /** Russian (Русский)
  * @author Ferrer
  * @author G0rn
+ * @author Grigol
  * @author Александр Сигачёв
  */
 $messages['ru'] = array(
@@ -3257,6 +3305,11 @@ $messages['ru'] = array(
 	'pt-log-moveok' => '{{GENDER:$2|произвёл|произвела}} переименование доступной для перевода страницы $1',
 	'pt-log-movenok' => '{{GENDER:$2|вызвал|вызвала}} ошибку при переименовании [[:$1]] в [[:$3]]',
 	'pt-movepage-title' => 'Переименование доступной для перевода страницы $1',
+	'pt-movepage-list-pages' => 'Список страниц для переименования',
+	'pt-movepage-current' => 'Текущее название:',
+	'pt-movepage-new' => 'Новое название:',
+	'pt-movepage-reason' => 'Причина:',
+	'pt-movepage-subpages' => 'Переименовать все подстраницы',
 );
 
 /** Rusyn (русиньскый язык)
