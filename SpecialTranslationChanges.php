@@ -150,7 +150,7 @@ class SpecialTranslationChanges extends SpecialPage {
 
 					$exportLabel = wfMsgHtml( self::MSG . 'export' );
 
-					$titleText = SpecialPage::getTitleFor( 'translate' );
+					$titleText = SpecialPage::getTitleFor( 'Translate' );
 
 					$export = $skin->link(
 						$titleText,
