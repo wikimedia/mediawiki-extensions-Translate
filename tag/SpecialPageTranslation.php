@@ -158,10 +158,12 @@ class SpecialPageTranslation extends SpecialPage {
 		foreach ( $res as $r ) {
 			if ( !isset( $pages[$r->page_id] ) ) {
 				$pages[$r->page_id] = array();
-				$pages[$r->page_id]['title'] = Title::newFromRow( $r );
+				$title = Title::newFromRow( $r );
+				$pages[$r->page_id]['title'] = $title;
+				$pages[$r->page_id]['latest'] = intval( $title->getLatestRevID() );
 			}
 
-			$pages[$r->page_id][$r->rtt_name] = $r->rt_revision;
+			$pages[$r->page_id][$r->rtt_name] = intval( $r->rt_revision );
 		}
 
 		// Pages where mark <= tag
@@ -171,7 +173,7 @@ class SpecialPageTranslation extends SpecialPage {
 				continue;
 			}
 
-			if ( $page['tp:tag'] !== $page['title']->getLatestRevID() ) {
+			if ( $page['tp:tag'] !== $page['latest'] ) {
 				continue;
 			}
 
@@ -179,7 +181,7 @@ class SpecialPageTranslation extends SpecialPage {
 			if ( $page['tp:mark'] !== $page['tp:tag'] ) {
 				$link = "<b>$link</b>";
 			}
-			$acts = $this->actionLinks( $page['title'], $page['tp:mark'], 'old' );
+			$acts = $this->actionLinks( $page['title'], $page['tp:mark'], $page['latest'], 'old' );
 			$items[] = "<li>$link ($acts) </li>";
 			unset( $pages[$index] );
 		}
@@ -199,13 +201,13 @@ class SpecialPageTranslation extends SpecialPage {
 
 			/* Ignore pages which have had <translate> at some point, but which
 			 * have never been marked. */
-			if ( $page['title']->getLatestRevID() !== $page['tp:tag'] ) {
+			if ( $page['tp:tag'] !== $page['latest'] ) {
 				unset( $pages[$index] );
 				continue;
 			}
 
 			$link = $this->user->getSkin()->link( $page['title'] );
-			$acts = $this->actionLinks( $page['title'], $page['tp:tag'], 'new' );
+			$acts = $this->actionLinks( $page['title'], $page['tp:tag'], $page['latest'], 'new' );
 			$items[] = "<li>$link ($acts) </li>";
 
 			unset( $pages[$index] );
@@ -222,7 +224,7 @@ class SpecialPageTranslation extends SpecialPage {
 		$items = array();
 		foreach ( $pages as $index => $page ) {
 			$link = $this->user->getSkin()->link( $page['title'] );
-			$acts = $this->actionLinks( $page['title'], $page['tp:tag'], 'stuck' );
+			$acts = $this->actionLinks( $page['title'], $page['tp:tag'], $page['latest'], 'stuck' );
 			$items[] = "<li>$link ($acts) </li>";
 
 			unset( $pages[$index] );
@@ -235,10 +237,9 @@ class SpecialPageTranslation extends SpecialPage {
 		}
 	}
 
-	protected function actionLinks( $title, $rev, $old = 'old' ) {
+	protected function actionLinks( $title, $rev, $latest, $old = 'old' ) {
 		$actions = array();
 
-		$latest = $title->getLatestRevId();
 		/* For pages that have been marked for translation at some point,
 		 * but there has been new changes since then, provide a link to
 		 * to view the differences between last marked version and latest
