@@ -49,6 +49,7 @@ TAGS:
     - layouts.license.alt
     - layouts.project_name.h1
     - layouts.project_name.title
+    - notifier.message_notification.subject_header
     - printable_name.with_version
     - site.edit.anon_edits
     # Users may or may not want to translate the OSM wiki too
