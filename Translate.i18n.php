@@ -13132,6 +13132,7 @@ Se la partìa a consist d'un sot-ansema o un dzor-ansema ëd mëssagi da àutre 
 	'translate-ext-url' => "<hr />Sit an sl'aragnà: $1",
 	'translate-optional' => '(opsional)',
 	'translate-ignored' => '(ignorà)',
+	'translate-edit-title' => 'Modìfica "$1"',
 	'translate-edit-definition' => 'Definission dël mëssagi',
 	'translate-edit-contribute' => 'colaboré',
 	'translate-edit-no-information' => "''Ës mëssagi a l'ha gnun-a documentassion.
@@ -13142,6 +13143,7 @@ S'a sa andoa o coma 's mëssagi a l'é dovrà, a peul giuté d'àutri tradutor a
 	'translate-edit-warnings' => 'Avertensa an sle tradussion incomplete',
 	'translate-edit-tmsugs' => 'Sugeriment da le tradussion an memòria',
 	'translate-edit-tmmatch' => 'corëspondensa ëd $1%',
+	'translate-use-suggestion' => "Ansëriss sto sugeriment-sì ant l'aira ëd viragi. Sòn-sì a coata tut ël contnù corent.",
 	'translate-edit-goto-no-prev' => 'Gnun mëssagi prima',
 	'translate-edit-goto-no-next' => 'Gnun mëssagi apress',
 	'translate-edit-goto-prev' => 'Modifiché ël mëssagi prima',
@@ -13244,6 +13246,7 @@ Tùit ij valor a l'han dij lìmit superior e anferior.",
 	'translate-translations-messagename' => 'Nòm:',
 	'translate-translations-project' => 'Proget:',
 	'translate-translations-including-no-param' => "Për piasì, ch'a spessìfica na ciav ëd mëssagi bon-a ant ël paràmetr ëd la sot-pàgina",
+	'translate-translations-history-short' => 'h',
 	'languagestats' => 'Statìstiche dle lenghe',
 	'languagestats-summary' => 'Sta pàgina-sì a smon le statìstiche ëd tradussion për tute le partìe ëd mëssagi për na lenga.',
 	'languagestats-stats-for' => 'Statìstiche ëd tradussion për $1 ($2).',
@@ -13278,6 +13281,7 @@ Ch'a bèica la bara ëd menù për n'anliura al portal ëd la lenga soa preferen
 	'supportedlanguages-noportal' => 'L\'aministrator dla wiki a l\'ha pa definì NS_PORTAL, parèj sta pàgina-sì a travaja pa.
 Su sta pàgina-sì na lista ëd portaj ëd lenghe a comparrirà për tùit ij portaj corespondent con un còdes ëd lenga definì e con na pàgina ciamà "translators".
 La sot-pàgina "translators" a deuv conten-e lë stamp [[:{{ns:template}}:User|User]], ch\'a pija un nòm utent com paràmetr.',
+	'supportedlanguages-recenttranslations' => 'tradussion recente',
 	'translate-save' => 'Salva ($1)',
 	'translate-jssti-add' => 'Gionté a la lista',
 	'translate-group-desc-mediawikicore' => 'Sta partìa ëd mëssagi-sì a conten ij mëssagi dovrà ant la version alfa corenta ëd MediaWiki ({{CURRENTVERSION}})',
@@ -15656,6 +15660,17 @@ $messages['sr-ec'] = array(
 Ипак би можда било добро да их прегледате на [[Special:Translate|{{int:translate}}]].',
 	'supportedlanguages' => 'Подржани језици',
 	'translate-save' => 'Сними ($1)',
+	'translate-manage-cacheat' => 'Увезено $1, у $2',
+	'translate-manage-modlang-new' => '$1 (ново)',
+	'translate-manage-import-diff' => 'Порука $1 | Кација: $2',
+	'translate-manage-import-new' => 'Нова порука $1',
+	'translate-manage-import-deleted' => 'Обрисана порука $1',
+	'translate-manage-action-import' => 'Увези',
+	'translate-manage-action-conflict' => 'Увези и fuzzy',
+	'translate-manage-action-ignore' => 'Игнориши',
+	'translate-manage-submit' => 'Изврши',
+	'translate-import-from-wiki' => 'Фајл на овом Викију:',
+	'translate-import-from-local' => 'Слање локалног фајла:',
 );
 
 /** Serbian Latin ekavian (Srpski (latinica))
