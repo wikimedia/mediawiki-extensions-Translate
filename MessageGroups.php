@@ -836,7 +836,8 @@ class MessageGroups {
 				$id = "page|$title";
 				$wgTranslateCC[$id] = new WikiPageMessageGroup( $id, $title );
 				$wgTranslateCC[$id]->setLabel( $title );
-				$wgTranslateCC[$id]->setDescription( wfMsgNoTrans( 'translate-tag-page-desc', $title ) );
+				$target = SpecialPage::getTitleFor( 'MyLanguage', $title )->getPrefixedText();
+				$wgTranslateCC[$id]->setDescription( wfMsgNoTrans( 'translate-tag-page-desc', $title, $target ) );
 			}
 		}
 
