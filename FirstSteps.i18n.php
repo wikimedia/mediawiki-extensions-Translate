@@ -24,7 +24,7 @@ $messages['en'] = array(
 	'translate-fs-email-title' => 'Confirm your e-mail address',
 
 	'translate-fs-intro' => "Welcome to the {{SITENAME}} first steps wizard.
-You will be guided trough the process of becoming a translator step by step.
+You will be guided through the process of becoming a translator step by step.
 In the end you will be able to translate ''interface messages'' of all supported projects at {{SITENAME}}.",
 
 	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount.png|frame]]
@@ -48,7 +48,7 @@ While you are there, you can also request the software to display translations i
 This setting can be found under tab "{{int:prefs-editing}}".
 Feel free to explore other settings, too.
 
-Go to your [[Special:Preferences|preferences page]] now and then return back to this page.',
+Go to your [[Special:Preferences|preferences page]] now and then return to this page.',
 	'translate-fs-settings-skip' => "I'm done.
 Let me proceed.",
 	'translate-fs-userpage-text' => 'Now you need to create an user page.
@@ -71,7 +71,7 @@ If you are a native speaker of a language, leave the skill level out, and only u
 Example: if you speak Tamil natively, English well, and little Swahili, you would write:
 <code><nowiki>{{#babel:ta|en-3|sw-1}}</nowiki></code>
 
-If you do not know the language code of a language, now is good time to look it up.
+If you do not know the language code of a language, now is a good time to look it up.
 You can use the list below.',
 	'translate-fs-userpage-submit' => 'Create my userpage',
 	'translate-fs-userpage-done' => 'Well done! You now have an user page.',
@@ -88,13 +88,13 @@ Please be patient.
 	'translate-fs-target-text' => 'Congratulations!
 You can now start translating.
 
-Do not be afraid if still feels new and confusing to you.
+Do not be afraid if it still feels new and confusing to you.
 At [[Project list]] there is an overview of projects you can contribute translations to.
 Most of the projects have a short description page with a "\'\'Translate this project\'\'" link, that will take you to a page which lists all untranslated messages.
 A list of all message groups with the [[Special:LanguageStats|current translation status for a language]] is also available.
 
 If you feel that you need to understand more before you start translating, you can read the [[FAQ|Frequently asked questions]].
-Unfortanely documentation can be out of date sometimes.
+Unfortunately documentation can be out of date sometimes.
 If there is something that you think you should be able to do, but cannot find out how, do not hesitate to ask it at the [[Support|support page]].
 
 You can also contact fellow translators of the same language at [[Portal:$1|your language portal]].
@@ -105,7 +105,7 @@ Please change it if needed.',
 
 This allows other users to contact you by e-mail.
 You will also receive newsletters at most once a month.
-If you do not want receive newsletters, you can opt-out in the tab "{{int:prefs-personal}}" of your [[Special:Preferences|preferences]].',
+If you do not want to receive newsletters, you can opt-out in the tab "{{int:prefs-personal}}" of your [[Special:Preferences|preferences]].',
 );
 
 /** Message documentation (Message documentation)
