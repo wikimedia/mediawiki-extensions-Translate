@@ -177,6 +177,7 @@ $3 is an URL.',
 	'pt-log-unmark' => 'Used on [[Special:Log/pagetranslation]]',
 	'pt-log-moveok' => 'Used on [[Special:Log/pagetranslation]]',
 	'pt-log-movenok' => 'Used on [[Special:Log/pagetranslation]]',
+	'pt-movepage-reason' => '{{Identical|Reason}}',
 );
 
 /** Kabardian (Cyrillic) ()
@@ -1575,9 +1576,15 @@ Texto da sección: <pre>$1</pre>',
 	'pt-movepage-action-check' => 'Comprobar se o traslado é posible',
 	'pt-movepage-action-perform' => 'Realizar o traslado',
 	'pt-movepage-action-other' => 'Cambiar o destino',
+	'pt-movepage-intro' => 'Esta páxina especial permite mover páxinas que están marcadas para a súa tradución.
+A acción de traslado non será inmediata porque é necesario mover moitas outras páxinas.
+A cola de traballos usarase para mover as páxinas.
+Mentres as páxinas son trasladadas, non é posible traballar nelas.
+Os erros quedarán rexistrados no rexistro de páxinas de tradución e deberán ser reparados manualmente.',
 	'pt-movepage-logreason' => 'Parte da páxina traducible "$1".',
 	'pt-movepage-started' => 'Estase a mover a páxina base.
 Comprobe o rexistro de páxinas de tradución por se houbese algún erro e para ler as mensaxes de conclusión.',
+	'pt-locked-page' => 'Esta páxina está bloqueada porque se está a mover a páxina traducible.',
 );
 
 /** Swiss German (Alemannisch)
@@ -2134,6 +2141,7 @@ La pagina che stai cercando di modificare non sembra corrispondere ad alcuna pag
 /** Japanese (日本語)
  * @author Aotake
  * @author Fryed-peach
+ * @author 青子守歌
  */
 $messages['ja'] = array(
 	'pagetranslation' => 'ページ翻訳',
@@ -2180,7 +2188,7 @@ $messages['ja'] = array(
 	'tpt-languages-legend' => '他言語での翻訳:',
 	'tpt-target-page' => 'このページは手動で更新できません。このページはページ [[$1]] の翻訳で、[$2 翻訳ツール]を使用して更新します。',
 	'tpt-unknown-page' => 'この名前空間はコンテンツページの翻訳のために使用します。あなたが編集しようとしているページに対応する翻訳対象ページが存在しないようです。',
-	'tpt-move-impossible' => '翻訳対象として指定されたページの移動はまだ不可能です。',
+	'tpt-delete-impossible' => '翻訳対象として指定されたページの削除はまだ不可能です。',
 	'tpt-install' => 'ページ翻訳機能を有効にするために、php maintenance/update.php またはウェブ・インストーラーを実行する。',
 	'tpt-render-summary' => '翻訳元ページの新版に適合するように更新中',
 	'tpt-download-page' => '翻訳付きでページを書き出し',
@@ -3894,6 +3902,7 @@ $messages['ug-arab'] = array(
  * @author Ahonc
  * @author NickK
  * @author Prima klasy4na
+ * @author Тест
  */
 $messages['uk'] = array(
 	'pagetranslation' => 'Переклад сторінок',
@@ -3923,6 +3932,7 @@ $messages['uk'] = array(
 	'tpt-translation-intro-fuzzy' => 'Застарілі переклади позначені так.',
 	'tpt-languages-legend' => 'Інші мови:',
 	'tpt-download-page' => 'Експортувати сторінку з перекладами',
+	'pt-log-name' => 'Журнал перекладу сторінок',
 );
 
 /** Vèneto (Vèneto)
@@ -3998,7 +4008,6 @@ Trước khi đánh dấu phiên bản này chờ dịch, hãy kiểm tra nhữn
 Nó là một bản dịch của trang [[$1]] và có thể cập nhật bản dịch bằng cách sử dụng [$2 công cụ dịch thuật].',
 	'tpt-unknown-page' => 'Không gian tên này được dành cho các bản dịch trang nội dung.
 Trang bạn muốn sửa đổi dường như không tương ứng với trang nào đã được đánh dấu cần dịch.',
-	'tpt-move-impossible' => 'Việc di chuyển trang cần dịch chưa thực hiện được.',
 	'tpt-install' => 'Chạy php maintenance/update.php hoặc cài đặt web để bật tính năng dịch trang.',
 	'tpt-render-summary' => 'Cập nhật đến phiên bản mới của trang nguồn',
 	'tpt-download-page' => 'Xuất trang cùng các bản dịch',
@@ -4017,6 +4026,14 @@ Phần văn bản: <pre>$1</pre>',
 	'pt-log-name' => 'Nhật trình dịch trang',
 	'pt-log-mark' => '{{GENDER:$2|}}đã đánh dấu phiên bản $3 của trang “[[:$1]]” là cần được dịch',
 	'pt-log-unmark' => '{{GENDER:$2|đã di chuyển}} trang "[[:$1]]" từ bản dịch',
+	'pt-movepage-list-pages' => 'Danh sách trang để di chuyển',
+	'pt-movepage-list-translation' => 'Trang dịch thuật',
+	'pt-movepage-current' => 'Tên hiện hành:',
+	'pt-movepage-new' => 'Tên mới:',
+	'pt-movepage-reason' => 'Lý do:',
+	'pt-movepage-subpages' => 'Di chuyển các trang phụ',
+	'pt-movepage-action-check' => 'Kiểm tra có thể di chuyển',
+	'pt-movepage-action-perform' => 'Di chuyển',
 );
 
 /** Volapük (Volapük)

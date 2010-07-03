@@ -13143,7 +13143,7 @@ S'a sa andoa o coma 's mëssagi a l'é dovrà, a peul giuté d'àutri tradutor a
 	'translate-edit-warnings' => 'Avertensa an sle tradussion incomplete',
 	'translate-edit-tmsugs' => 'Sugeriment da le tradussion an memòria',
 	'translate-edit-tmmatch' => 'corëspondensa ëd $1%',
-	'translate-use-suggestion' => "Ansëriss sto sugeriment-sì ant l'aira ëd viragi. Sòn-sì a coata tut ël contnù corent.",
+	'translate-use-suggestion' => 'A anseriss sto sugeriment-sì ant la fnestra ëd tradussion. Sòn a rampiassa tut ël contnù corent.',
 	'translate-edit-goto-no-prev' => 'Gnun mëssagi prima',
 	'translate-edit-goto-no-next' => 'Gnun mëssagi apress',
 	'translate-edit-goto-prev' => 'Modifiché ël mëssagi prima',
