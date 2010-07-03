@@ -114,7 +114,9 @@ class SpecialTranslationChanges extends SpecialPage {
 
 	protected function output( Array $rows ) {
 		$groupObjects = MessageGroups::singleton()->getGroups();
+
 		global $wgLang, $wgUser;
+
 		$index = -1;
 		$output = '';
 		$skin = $wgUser->getSkin();
@@ -122,12 +124,15 @@ class SpecialTranslationChanges extends SpecialPage {
 		$changes = $this->sort( $rows );
 		foreach ( $changes as $class => $groups ) {
 			foreach ( $groups as $group => $languages ) {
-
 				$label = $group;
+
 				if ( isset( $groupObjects[$group] ) ) {
 					$label = $groupObjects[$group]->getLabel();
 				}
+
 				$output .= Xml::element( 'h3', null, $label );
+
+				$exportLabel = wfMsgHtml( self::MSG . 'export' );
 
 				foreach ( $languages as $language => $rows ) {
 					$index++;
@@ -148,8 +153,6 @@ class SpecialTranslationChanges extends SpecialPage {
 						$wgLang->formatNum( count( $rows ) )
 					);
 
-					$exportLabel = wfMsgHtml( self::MSG . 'export' );
-
 					$titleText = SpecialPage::getTitleFor( 'Translate' );
 
 					$export = $skin->link(
@@ -164,7 +167,9 @@ class SpecialTranslationChanges extends SpecialPage {
 					);
 
 					$languageName = TranslateUtils::getLanguageName( $language );
-					if ( !$languageName ) $languageName = $language;
+					if ( !$languageName ) {
+						$languageName = $language;
+					}
 
 					$output .= Xml::tags( 'h4', null, "$rowTl $language <small>($languageName)</small> ($nchanges) ($export)" );
 					$output .= Xml::openElement( 'ul',
@@ -195,12 +200,14 @@ class SpecialTranslationChanges extends SpecialPage {
 	 */
 	private static function makeBlock( $tl, $lang, $rowCache, $rowId ) {
 		global $wgLang;
+
 		$changes = count( $rowCache );
 		$output = Xml::tags( 'h3', null, "$tl $lang ($nchanges)" );
 		$output .= Xml::tags( 'ul',
 			array( 'id' => $rowId, 'style' => 'display: none' ),
 			implode( "\n", $rowCache )
 		);
+
 		return $output;
 	}
 
