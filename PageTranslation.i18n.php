@@ -464,7 +464,7 @@ $messages['be-tarask'] = array(
 	'pt-log-unmark' => '{{GENDER:$2|выдаліў|выдаліла}} метку перакладу са старонкі «[[:$1]]».',
 	'pt-log-moveok' => '{{GENDER:$2|зьмяніў|зьмяніла}} назву старонкі да перакладу $1',
 	'pt-log-movenok' => '{{GENDER:$2|выклікаў|выклікала}} праблему пад час пераносу [[:$1]] у [[:$3]]',
-	'pt-movepage-title' => 'Перанесьці старонкі, якія магчыма перакладаць, $1',
+	'pt-movepage-title' => 'Перанесьці старонку $1, якую магчыма перакласьці',
 	'pt-movepage-blockers' => 'Немагчыма перанесьці старонкі, якія магчыма перакладаць, з-за {{PLURAL:$1|наступнай памылкі|наступных памылак}}:',
 	'pt-movepage-block-base-exists' => 'Існуе мэтавая базавая старонка [[:$1]].',
 	'pt-movepage-block-base-invalid' => 'Мэтавая базавая старонка мае няслушную назву.',
@@ -477,6 +477,24 @@ $messages['be-tarask'] = array(
 	'pt-movepage-list-pages' => 'Сьпіс старонак да пераносу',
 	'pt-movepage-list-translation' => 'Старонкі да перакладу',
 	'pt-movepage-list-other' => 'Іншыя падстаронкі',
+	'pt-movepage-list-count' => '$1 {{PLURAL:$1|старонка|старонкі|старонак}} для пераносу.',
+	'pt-movepage-legend' => 'Перанесьці старонкі, якія магчыма перакласьці',
+	'pt-movepage-current' => 'Цяперашняя назва:',
+	'pt-movepage-new' => 'Новая назва:',
+	'pt-movepage-reason' => 'Прычына:',
+	'pt-movepage-subpages' => 'Перанесьці ўсе падстаронкі',
+	'pt-movepage-action-check' => 'Праверыць, ці магчымы перанос',
+	'pt-movepage-action-perform' => 'Перанесьці',
+	'pt-movepage-action-other' => 'Зьмяніць цэль',
+	'pt-movepage-intro' => 'Гэтая спэцыяльная старонка дазваляе пераносіць старонкі, пазначаныя да перакладу.
+Перанос не адбудзецца імгненна, таму што спатрэбіцца пераносіць шмат старонак.
+Для гэтага будзе выкарыстаная чарга заданьняў.
+Падчас пераносу маніпуляцыя са старонкамі будзе немагчымая.
+Усе памылкі падчас пераносу будуць занесеныя ў журнал перакладу старонак, і будзе патрэбная іх ручная апрацоўка.',
+	'pt-movepage-logreason' => 'Частка старонкі $1, якую магчыма перакласьці.',
+	'pt-movepage-started' => 'Асноўная старонка перанесеная.
+Праверце журнал перакладаў старонак наконт памылак і паведамленьня пра выкананьне.',
+	'pt-locked-page' => 'Гэтая старонка заблякаваная з-за працэсу пераносу старонкі, якую магчыма перакласьці.',
 );
 
 /** Bulgarian (Български)
@@ -1032,6 +1050,16 @@ Tekst wótrězka: <pre>$1</pre>',
 	'pt-log-name' => 'Protokol pśełožkow',
 	'pt-log-mark' => 'jo wersiju $3 boka "[[:$1]]" za pśełožowanje {{GENDER:$2|markěrował|markěrowała}}.',
 	'pt-log-unmark' => 'jo bok "[[:$1]]" z pśełožowanja {{GENDER:$2|wótpórał|wótpórała}}.',
+);
+
+/** Ewe (Eʋegbe)
+ * @author Natsubee
+ */
+$messages['ee'] = array(
+	'tpt-rev-latest' => 'tata yeyeɛtɔwu',
+	'tpt-translate-this' => 'ɖe axa sia gɔme',
+	'translate-tag-translate-link-desc' => 'Ɖe axa sia gɔme',
+	'tpt-languages-legend' => 'Gbe bubuwo:',
 );
 
 /** Greek (Ελληνικά)
@@ -1824,8 +1852,18 @@ Tekst wotrězka: <pre>$1</pre>',
 	'pt-log-name' => 'Protokol přełožkow',
 	'pt-log-mark' => 'jo wersiju $3 strony "[[:$1]]" za přełožowanje {{GENDER:$2|markěrował|markěrowała}}.',
 	'pt-log-unmark' => 'jo stronu "[[:$1]]" z přełožowanja {{GENDER:$2|wotstronił|wotstroniła}}.',
+	'pt-log-moveok' => 'je přemjenowanje přełožowanskeje strony $1 do noweho mjena {{GENDER:$2|wotzamknył|wotzamknyła}}',
+	'pt-log-movenok' => 'je při přesuwanju [[:$1]] do [[:$3]] na problem {{GENDER:$2|storčił|storčiła}}',
 	'pt-movepage-title' => 'Přełožujomnu stronu $1 přesunyć',
 	'pt-movepage-blockers' => 'Přełožujomna strona njeda so {{PLURAL:$1|slědowaceho zmylka|slědowaceju zmylkow|slědowacych zmylkow|slědowacych zmylkow}} dla do noweho mjena přesunyć:',
+	'pt-movepage-block-base-exists' => 'Zakładna cilowa strona [[:$1]] eksistuje.',
+	'pt-movepage-block-base-invalid' => 'Zakładna cilowa strona płaćiwy titul njeje.',
+	'pt-movepage-block-tp-exists' => 'Cilowa přełožowanska strona [[:$2]] eksistuje.',
+	'pt-movepage-block-tp-invalid' => 'Titul ciloweje přełožowanskeje strony za [[:$1]] by płaćiwy był (předołho?).',
+	'pt-movepage-block-section-exists' => 'Cilowa wotrězkowa strona [[:$2]] eksistuje.',
+	'pt-movepage-block-section-invalid' => 'Titul ciloweje wotrězkoweje strony za [[:$1]] by płaćiwy był (předołho?).',
+	'pt-movepage-block-subpage-exists' => 'Cilowa podstrona [[:$2]] eksistuje.',
+	'pt-movepage-block-subpage-invalid' => 'Titul ciloweje podstrony za [[:$1]] by płaćiwy był (předołho?).',
 	'pt-movepage-list-pages' => 'Lisćina strony, kotrež maja so přesunyć',
 	'pt-movepage-list-translation' => 'Přełožowanske strony',
 	'pt-movepage-list-section' => 'Wotrězkowe strony',
@@ -1839,7 +1877,14 @@ Tekst wotrězka: <pre>$1</pre>',
 	'pt-movepage-action-check' => 'Kontrolować, hač přesunjenje je móžno',
 	'pt-movepage-action-perform' => 'Přesunyć',
 	'pt-movepage-action-other' => 'Cil změnić',
+	'pt-movepage-intro' => 'Tuta specialna strona zmóžnja přesuwanje stronow, kotrež su za přełožowanje markěrowane.
+Přesunjenje so hnydom njestawa, dokelž wjele stronow dyrbi so přesunyć.
+Za přesuwanje stronow budźe so čakanski rynk wužiwać.
+Při přesuwanju stronow njeje móžno, z wotpowědnymi stronami do zwiska stupić.
+Zmylki budu so w přełožowanskim protokolu protokolować  a dyrbja so manuelnje skorigować.',
 	'pt-movepage-logreason' => 'Dźěl přełožujomneje strony $1.',
+	'pt-movepage-started' => 'Zakładna strona je nětko přesunjena.
+Prošu skontroluj překožowanski protokol strony za zmylkami a zdźělenku wukonjenja.',
 	'pt-locked-page' => 'Tuta strona je zawrjena, dokelž přełožujomna strona so runje přesuwa.',
 );
 
@@ -2737,6 +2782,7 @@ Navn: $1',
 	'tpt-sections-oldnew' => 'Nye og eksisterende oversettelsesenheter',
 	'tpt-sections-deleted' => 'Slettede oversettelsesenheter',
 	'tpt-sections-template' => 'Mal for oversettelsesside',
+	'tpt-action-nofuzzy' => 'Ikke ugyldiggjør oversettelser',
 	'tpt-badtitle' => 'Det angitte sidenavnet ($1) er ikke en gyldig tittel',
 	'tpt-nosuchpage' => 'Siden $1 finnes ikke',
 	'tpt-oldrevision' => '$2 er ikke den siste versjonen av siden [[$1]].
@@ -2772,6 +2818,7 @@ Før denne versjonen merkes for oversettelse, sjekk at endringene i avsnittene e
 Denne siden er en oversettelse av siden [[$1]] og oversettelsen kan bli oppdatert ved å bruke [$2 oversettelsesverktøyet].',
 	'tpt-unknown-page' => 'Dette navnerommet er reservert for oversettelser av innholdssider.
 Denne siden som du prøver å redigere ser ikke ut til å samsvare med noen av sidene som er markert for oversettelse.',
+	'tpt-delete-impossible' => 'Sletting av sider markert for oversettelse er ikke mulig ennå.',
 	'tpt-install' => 'Kjør php maintenance/update.php eller nettinnstallering for å muliggjøre sideoversettelsesfunksjonen.',
 	'tpt-render-summary' => 'Oppdaterer for å svare til ny versjon av kildesiden',
 	'tpt-download-page' => 'Eksporter side med oversettelser',
@@ -2786,6 +2833,44 @@ Seksjonstekst: <pre>$1</pre>',
 	'pt-shake-position' => 'Seksjonsmarkører i uventede posisjoner.
 Seksjonstekst: <pre>$1</pre>',
 	'pt-shake-empty' => 'Tøm seksjon for markør $1.',
+	'pt-log-header' => 'Logg over handlinger relatert til systemet for sideoversettelser',
+	'pt-log-name' => 'Logg for sideoversettelser',
+	'pt-log-mark' => '{{GENDER:$2|markerte}} revisjon $3 av side «[[:$1]]» for oversettelse',
+	'pt-log-unmark' => '{{GENDER:$2|fjernet}} side «[[:$1]]» fra oversettelse',
+	'pt-log-moveok' => '{{GENDER:$2|fullførte}} omdøping av oversettbar side $1 til et nytt navn',
+	'pt-log-movenok' => '{{GENDER:$2|støtte på}} et problem under flytting av [[:$1]] til [[:$3]]',
+	'pt-movepage-title' => 'Flytt oversettbar side $1',
+	'pt-movepage-blockers' => 'Den oversettbare siden kan ikke flyttes til et nytt navn på grunn av følgende {{PLURAL:$1|feil|feil}}:',
+	'pt-movepage-block-base-exists' => 'Målbasesiden [[:$1]] finnes.',
+	'pt-movepage-block-base-invalid' => 'Målbasesiden er ikke en gyldig tittel.',
+	'pt-movepage-block-tp-exists' => 'Måloversettelsessiden [[:$2]] finnes.',
+	'pt-movepage-block-tp-invalid' => 'Måloversettelsessidetittelen for [[:$1]] ville vært ugyldig (for lang?).',
+	'pt-movepage-block-section-exists' => 'Målavsnittssiden [[:$2]] finnes.',
+	'pt-movepage-block-section-invalid' => 'Målavsnittssidetittelen for [[:$1]] ville vært ugyldig (for lang?).',
+	'pt-movepage-block-subpage-exists' => 'Målundersiden [[:$2]] finnes.',
+	'pt-movepage-block-subpage-invalid' => 'Målundersidetittelen for [[:$1]] ville vært ugyldig (for lang?).',
+	'pt-movepage-list-pages' => 'Liste over sider å flytte',
+	'pt-movepage-list-translation' => 'Oversettelsessider',
+	'pt-movepage-list-section' => 'Avsnittssider',
+	'pt-movepage-list-other' => 'Andre undersider',
+	'pt-movepage-list-count' => 'Totalt $1 {{PLURAL:$1|side|sider}} å flytte.',
+	'pt-movepage-legend' => 'Flytt oversettbar side',
+	'pt-movepage-current' => 'Nåværende navn:',
+	'pt-movepage-new' => 'Nytt navn:',
+	'pt-movepage-reason' => 'Årsak:',
+	'pt-movepage-subpages' => 'Flytt alle undersider',
+	'pt-movepage-action-check' => 'Kontroller om flyttingen er mulig',
+	'pt-movepage-action-perform' => 'Utfør flyttingen',
+	'pt-movepage-action-other' => 'Endre mål',
+	'pt-movepage-intro' => 'Denne spesialsiden tillater deg å flytte sider som er markert for oversettelse.
+Flyttehandlingen vil ikke skje umiddelbart fordi mange sider må flyttes.
+Jobbkøen vil bli brukt for å flytte sidene.
+Mens sidene flyttes er det ikke mulig å samhandle med gjeldende sider.
+Feil vil bli logget i sideoversettelsesloggen og de må repareres for hånd.',
+	'pt-movepage-logreason' => 'Del av oversettbar side $1.',
+	'pt-movepage-started' => 'Basesiden har nå blitt flyttet.
+Kontroller sideoversettelsesloggen for feil- og fullføringsmeldinger.',
+	'pt-locked-page' => 'Denne siden er låst fordi oversettelsessiden blir flyttet nå.',
 );
 
 /** Occitan (Occitan)
@@ -4041,6 +4126,11 @@ Phần văn bản: <pre>$1</pre>',
  */
 $messages['vo'] = array(
 	'translate-tag-translate-link-desc' => 'Tradutön padi at',
+);
+
+/** Wu (吴语) */
+$messages['wuu'] = array(
+	'pt-movepage-reason' => '理由：',
 );
 
 /** Yiddish (ייִדיש)
