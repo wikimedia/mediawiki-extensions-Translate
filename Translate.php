@@ -13,7 +13,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-define( 'TRANSLATE_VERSION', '2010-06-12' );
+define( 'TRANSLATE_VERSION', '2010-07-04' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'path'           => __FILE__,

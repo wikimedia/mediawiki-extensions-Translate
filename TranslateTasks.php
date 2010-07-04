@@ -374,10 +374,29 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 }
 
 class TranslateTasks {
-	public static function getTasks() {
+	public static function getTasks( $pageTranslation = false ) {
 		global $wgTranslateTasks;
 
-		return array_keys( $wgTranslateTasks );
+		// Tasks not to be available in page translation
+		$filterTasks = array(
+			'optional',
+			'untranslatedoptional',
+			'review',
+			'export-to-file',
+			'export-to-xliff'
+		);
+
+		$allTasks = array_keys( $wgTranslateTasks );
+		
+		if ( $pageTranslation ) {
+			foreach( $allTasks as $id => $task ) {
+				if ( in_array( $task, $filterTasks ) ) {
+					unset( $allTasks[$id] );
+				}
+			}
+		}
+
+		return $allTasks;
 	}
 
 	public static function getTask( $id ) {
