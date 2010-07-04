@@ -252,7 +252,7 @@ class SpecialTranslate extends SpecialPage {
 		$selector = new HTMLSelector( 'task', 'task', $this->options['task'] );
 
 		// Check if this is a page translation group to return only appropriate tasks.
-		$isPageTranslation = strpos( $this->group->getId(), 'page|' ) === 0 ? true : false;
+		$isPageTranslation = strpos( $this->group->getId(), 'page|' ) === 0;
 
 		foreach ( TranslateTasks::getTasks( $isPageTranslation ) as $id ) {
 			$label = call_user_func( array( 'TranslateTask', 'labelForTask' ), $id );
