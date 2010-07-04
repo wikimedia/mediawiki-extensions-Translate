@@ -171,7 +171,7 @@ class TranslateUtils {
 		if ( is_callable( array( 'LanguageNames', 'getNames' ) ) ) {
 			$languages = LanguageNames::getNames( $language,
 				LanguageNames::FALLBACK_NORMAL,
-				LanguageNames::LIST_MW_AND_CLDR
+				LanguageNames::LIST_MW
 			);
 		} else {
 			$languages = Language::getLanguageNames( false );
