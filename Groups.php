@@ -337,9 +337,11 @@ class AggregateMessageGroup extends MessageGroupBase {
 
 	public function load( $code ) {
 		$messages = array();
+
 		foreach( $this->getGroups() as $group ) {
 			$messages += $group->load( $code );
 		}
+
 		return $messages;
 	}
 
@@ -354,9 +356,13 @@ class AggregateMessageGroup extends MessageGroupBase {
 		if ( !isset( $this->groups ) ) {
 			$groups = array();
 			$ids = (array) $this->conf['GROUPS'];
+
 			foreach( $ids as $id ) {
 				// Don't try to include self and go to infinite loop
-				if ( $id === $this->getId() ) continue;
+				if ( $id === $this->getId() ) {
+					continue;
+				}
+
 				$groups[$id] = MessageGroups::getGroup( $id );
 			}
 			$this->groups = $groups;
@@ -402,5 +408,4 @@ class AggregateMessageGroup extends MessageGroupBase {
 			$group->setTags( $collection );
 		}
 	}
-
 }
