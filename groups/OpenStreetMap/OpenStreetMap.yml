@@ -1,23 +1,40 @@
----
-BASIC:
-  id: out-osm-site
-  label: OpenStreetMap - Website
-  description: "{{int:bw-desc-osm-site}}"
+TEMPLATE:
+  BASIC:
   namespace: NS_OSM
-  display: out/osm/site
   class: FileBasedMessageGroup
 
-FILES:
-  class: RubyYamlFFS
-  sourcePattern: %GROUPROOT%/osm/config/locales/%CODE%.yml
-  codeAsRoot: 1
-  targetPattern: osm/config/locales/%CODE%.yml
-  codeMap:
+  FILES:
+    class: YamlFFS
+    codeAsRoot: 1
+    codeMap:
     be-tarask: be-TARASK
     pt-br: pt-BR
     sr-ec: sr-EC
     zh-cn: zh-CN
     zh-tw: zh-TW
+
+---
+BASIC:
+  id: out-osm-0-all
+  label: All OpenStreetMap messages
+  description: "{{int:bw-desc-openstreetmap}}"
+  display: out/osm
+  meta: yes
+  class: AggregateMessageGroup
+GROUPS:
+  - out-osm-potlatch
+  - out-osm-site
+
+---
+BASIC:
+  id: out-osm-site
+  label: OpenStreetMap - Website
+  description: "{{int:bw-desc-osm-site}}"
+  display: out/osm/site
+
+FILES:
+  sourcePattern: %GROUPROOT%/osm/config/locales/%CODE%.yml
+  targetPattern: osm/config/locales/%CODE%.yml
 
 CHECKER:
   class: RubyMessageChecker
@@ -72,3 +89,29 @@ TAGS:
     - site.edit.anon_edits_link
     - site.index.license.license_url
     - site.index.license.project_url
+
+---
+BASIC:
+  id: out-osm-potlatch
+  label: OpenStreetMap - Potlatch
+  description: "{{int:bw-desc-osm-potlatch}}"
+  display: out/osm/potlatch
+
+FILES:
+  sourcePattern: %GROUPROOT%/osm/config/potlatch/locales/%CODE%.yml
+  targetPattern: osm/config/potlatch/locales/%CODE%.yml
+
+TAGS:
+  optional:
+    - help_html
+    - inspector_way
+    - inspector_way_name
+    - microblog_name_identica
+    - microblog_name_twitter
+    - option_layer_digitalglobe_haiti
+    - option_layer_geoeye_gravitystorm_haiti
+    - option_layer_geoeye_haiti
+    - option_layer_geoeye_nypl_haiti
+    - option_layer_mapnik
+    - option_layer_osmarender
+    - option_layer_yahoo
