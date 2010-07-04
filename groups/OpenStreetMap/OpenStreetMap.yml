@@ -1,7 +1,7 @@
 TEMPLATE:
   BASIC:
-  namespace: NS_OSM
-  class: FileBasedMessageGroup
+    namespace: NS_OSM
+    class: FileBasedMessageGroup
 
   FILES:
     class: YamlFFS
@@ -21,6 +21,7 @@ BASIC:
   display: out/osm
   meta: yes
   class: AggregateMessageGroup
+
 GROUPS:
   - out-osm-potlatch
   - out-osm-site
