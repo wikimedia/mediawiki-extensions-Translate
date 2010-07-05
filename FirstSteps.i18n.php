@@ -475,6 +475,7 @@ Si no deseas recibir boletines de noticias, puedes cancelarlas en la pestaña  "
 
 /** Finnish (Suomi)
  * @author Nike
+ * @author ZeiP
  */
 $messages['fi'] = array(
 	'firststeps' => 'Alkutoimet',
@@ -487,8 +488,79 @@ $messages['fi'] = array(
 	'translate-fs-permissions-title' => 'Pyyntö kääntäjäryhmään liittämisestä',
 	'translate-fs-target-title' => 'Kääntäminen voi alkaa!',
 	'translate-fs-email-title' => 'Sähköpostiosoitteen vahvistus',
+	'translate-fs-intro' => "Tervetuloa {{GRAMMAR:genitive|{{SITENAME}}}} ohjattuihin ensiaskeleisiin.
+Seuraamalla sivun ohjeita pääset kääntäjäksi alta aikayksikön.
+Suoritettuasi kaikki askeleet, voit kääntää kaikkien {{GRAMMAR:inessive|{{SITENAME}}}} olevien projektien ''käyttöliittymäviestejä''.",
+	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount.png|frame]]
+
+Ensimmäinen askel on rekisteröityminen.
+
+Käyttäjätunnuksesi näytetään käännösten yhteydessä.
+Voit katsoa apua kenttien täyttämiseen oikealla olevasta kuvasta.
+
+Jos olet jo rekisteröitynyt, $1kirjaudu sisään$2.
+Palaa rekisteröitymisen jälkeen tälle sivulle.
+
+$3Rekisteröidy$4',
+	'translate-fs-settings-text' => 'Mene seuraavaksi asetussivulle.
+Muuta käyttöliittymäkielesi kieleksi, jolle käännät.
+
+Käyttöliittymäkieltäsi käytetään oletusarvoisena kohdekielenä.
+Kielen asettaminen kannattaa tehdä jo nyt, koska sen valitseminen unohtuu helposti.
+
+Samalla voit määritellä ne kielet, jotka haluat nähdä kääntämisen aikana.
+Tämä asetus löytyy välilehdeltä {{int:prefs-editing}}.
+Voit vapaasti kurkkia muitakin asetuksia.
+
+Mene nyt [[Special:Preferences|asetussivulle]] ja palaa sitten tälle sivulle.',
+	'translate-fs-settings-skip' => 'Olen valmis.
+Haluan jatkaa.',
+	'translate-fs-userpage-text' => 'Nyt on aika luoda oma käyttäjäsivusi.
+
+Kirjoita jotain itsestäsi – kuka olet ja mitä teet. 
+Tämän tarkoituksena on edistää yhteisöllisyyttä.
+{{GRAMMAR:inessive|{{SITENAME}}}} käyttäjät eri puolilta maailmaa työskentelevät eri kielten ja projektien parissa.
+
+Ylläolevan tekstikentän ensimmäinen rivi on <nowiki>{{#babel:en-2}}</nowiki>.
+Päivitä se vastaamaan kielitaitoasi.
+Numero kielitunnuksen jälkeen kuvaa kielitaitoasi.
+Vaihtoehdot:
+* 1 — vähäinen
+* 2 — perustiedot
+* 3 — hyvät tiedot
+* 4 — kuin syntyperäinen
+* 5 — käytät kieltä ammattimaisesti – esimerkiksi olet kielenkääntäjä
+
+Jos olet kielen synnynnäinen puhuja, jätä taitotaso pois ja käytä vain kielitunnusta.
+Esimerkki: Jos olet tamilin synnynnäinen puhuja ja osaat englantia hyvin ja swahilia vähän, voit merkitä:
+<code><nowiki>{{#babel:ta|en-3|sw-1}}</nowiki></code>
+
+Jos et tiedä kielen kielitunnusta, nyt on hyvä aika etsiä se.
+Voit käyttää allaolevaa listaa.',
 	'translate-fs-userpage-submit' => 'Luo käyttäjäsivuni',
 	'translate-fs-userpage-done' => 'Hyvin tehty! Sinulla on nyt käyttäjäsivu.',
+	'translate-fs-permissions-text' => 'Nyt sinun tulee pyytää, että sinut lisätään kääntäjäryhmään.
+
+Kunnes saamme koodin korjattua, mene sivulle [[Project:Translator]] ja seuraa ohjeita.
+Palaa sitten tälle sivulle.
+
+Kun olet tehnyt pyynnön, joku projektin ylläpitäjistä tarkistaa ja hyväksyy sen mahdollisimman pian.
+Olethan kärsivällinen.',
+	'translate-fs-target-text' => 'Onnittelut!
+Voit nyt aloittaa kääntämisen.
+
+Älä huolestu, vaikka et vielä täysin ymmärtäisi miten kaikki toimii.
+Meillä on [[Project list|lista projekteista]], joiden kääntämiseen voit osallistua.
+Useimmilla projekteilla on lyhyt kuvaussivu, jossa on linkki varsinaiselle käännössivulle.
+[[Special:LanguageStats|Kielen nykyisen käännöstilanteen]] näyttävä lista on myös saatavilla.
+
+Jos haluat tietää lisää, voit lukea vaikkapa [[FAQ|usein kysyttyjä kysymyksiä]].
+Valitettavasti dokumentaatio voi joskus olla hivenen vanhentunutta.
+Jos et keksi, miten joku tarvitsemasi asia tehdään, älä epäröi pyytää apua [[Support|tukisivulla]].
+
+Voit myös ottaa yhteyttä muihin saman kielen kääntäjiin [[Portal:$1|oman kielesi portaalissa]].
+Valikon portaalilinkki osoittaa [[Special:Preferences|valitsemasi kielen]] portaaliin.
+Jos valitsemasi kieli on väärä, muuta se.',
 );
 
 /** French (Français)
@@ -1258,7 +1330,7 @@ Vær tålmodig.
 Du kan nå begynne å oversette.
 
 Ikke vær redd om det fortsatt føles nytt og forvirrende.
-På [[Project list]] er det en liste over prosjekt du kan bidra med oversettelser til.
+I [[Project list|prosjektlisten]] er det en liste over prosjekt du kan bidra med oversettelser til.
 De fleste av prosjektene har en kort beskrivelsesside med en «''Oversett dette prosjektet''»-lenke som vil føre deg til en side som lister opp alle uoversatte meldinger.
 En liste over alle meldingsgruppene med den [[Special:LanguageStats|nåværende oversettelsesstatusen for et språk]] er også tilgjengelig.
 

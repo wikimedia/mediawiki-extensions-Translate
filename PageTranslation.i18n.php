@@ -177,6 +177,10 @@ $3 is an URL.',
 	'pt-log-unmark' => 'Used on [[Special:Log/pagetranslation]]',
 	'pt-log-moveok' => 'Used on [[Special:Log/pagetranslation]]',
 	'pt-log-movenok' => 'Used on [[Special:Log/pagetranslation]]',
+	'pt-movepage-block-base-exists' => "'''base page''' refers to the untranslated version of the translatable page.",
+	'pt-movepage-block-tp-exists' => 'translation page is a translated version of a translatable page',
+	'pt-movepage-block-section-exists' => 'Section page is a translation of one section. Translation page consists of many translation sections.',
+	'pt-movepage-block-subpage-exists' => 'Subpage is here any subpage of translation page, which is not a translated version of the translatable page.',
 	'pt-movepage-reason' => '{{Identical|Reason}}',
 );
 
@@ -476,6 +480,7 @@ $messages['be-tarask'] = array(
 	'pt-movepage-block-subpage-invalid' => 'Мэтавая назва падстаронкі [[:$1]] будзе няслушнай (занадта доўгая?).',
 	'pt-movepage-list-pages' => 'Сьпіс старонак да пераносу',
 	'pt-movepage-list-translation' => 'Старонкі да перакладу',
+	'pt-movepage-list-section' => 'Старонкі сэкцыі',
 	'pt-movepage-list-other' => 'Іншыя падстаронкі',
 	'pt-movepage-list-count' => '$1 {{PLURAL:$1|старонка|старонкі|старонак}} для пераносу.',
 	'pt-movepage-legend' => 'Перанесьці старонкі, якія магчыма перакласьці',
@@ -1261,6 +1266,7 @@ Izena: $1',
  * @author Crt
  * @author Nike
  * @author Silvonen
+ * @author ZeiP
  */
 $messages['fi'] = array(
 	'pagetranslation' => 'Sivujen kääntäminen',
@@ -1315,7 +1321,7 @@ mutta viimeisintä versiota ei voi merkitä käännettäväksi.',
 Tämä sivu on käännös sivusta [[$1]] ja käännöstä voi päivittää käyttämällä [$2 käännöstyökalua].',
 	'tpt-unknown-page' => 'Tämä nimiavaruus on varattu sisältösivujen käännöksille.
 Sivu, jota yrität muokata, ei näytä vastaavan mitään sivua, joka on merkitty käännettäväksi.',
-	'tpt-move-impossible' => 'Käännettäväksi merkittyjä sivujen siirtäminen ei ole vielä mahdollista.',
+	'tpt-delete-impossible' => 'Käännettäväksi merkittyjen sivujen poistaminen ei ole vielä mahdollista.',
 	'tpt-install' => 'Suorita maintenance/update.php tai verkkoasennus, jotta sivujen käännösominaisuus toimii.',
 	'tpt-render-summary' => 'Päivittäminen vastaamaan uutta versiota lähdesivusta',
 	'tpt-download-page' => 'Sivun vienti käännösten kera',
@@ -1334,6 +1340,40 @@ Käännösosion teksti: <pre>$1</pre>',
 	'pt-log-name' => 'Sivunkääntöloki',
 	'pt-log-mark' => '{{GENDER:$2|merkitsi}} version $3 sivusta [[:$1]] käännettäväksi',
 	'pt-log-unmark' => '{{GENDER:$2|poisti}} sivun "[[:$1]]" käännösjärjestelmästä',
+	'pt-log-moveok' => '{{GENDER:$2|sai valmiiksi}} käännettävän sivun $1 siirtämisen uudelle nimelle',
+	'pt-log-movenok' => 'Käännettävän sivun siirtämisessä tapahtui virhe siirrettäessä sivua [[:$1]] nimelle [[:$3]]',
+	'pt-movepage-title' => 'Käännettävän sivun $1 siirtäminen',
+	'pt-movepage-blockers' => 'Käännettävää sivua ei voi siirtää uudelle nimelle {{PLURAL:$1|seuraavasta syystä|seuraavista syistä}}:',
+	'pt-movepage-block-base-exists' => 'Kohdesivu [[:$1]] on olemassa.',
+	'pt-movepage-block-base-invalid' => 'Kohdesivun nimi ei ole kelvollinen.',
+	'pt-movepage-block-tp-exists' => 'Käännössivu [[:$2]] on olemassa.',
+	'pt-movepage-block-tp-invalid' => 'Käännössivun [[:$1]] uusi nimi ei ole kelvollinen (liian pitkä?)',
+	'pt-movepage-block-section-exists' => 'Käännösosiosivu [[:$2]] on olemassa.',
+	'pt-movepage-block-section-invalid' => 'Käännösosiosivun [[:$1]] uusi nimi ei ole kelvollinen (liian pitkä?)',
+	'pt-movepage-block-subpage-exists' => 'Alasivu [[:$2]] on olemassa.',
+	'pt-movepage-block-subpage-invalid' => 'Alisivun [[:$1]] uusi nimi ei ole kelvollinen (liian pitkä?)',
+	'pt-movepage-list-pages' => 'Lista siirrettävistä sivuista',
+	'pt-movepage-list-translation' => 'Käännössivut',
+	'pt-movepage-list-section' => 'Käännösosiosivut',
+	'pt-movepage-list-other' => 'Muut alasivut',
+	'pt-movepage-list-count' => 'Yhteensä $1 {{PLURAL:$1|siirrettävä sivu|siirrettävää sivua}}.',
+	'pt-movepage-legend' => 'Siirrä käännettävä sivu',
+	'pt-movepage-current' => 'Nykyinen nimi',
+	'pt-movepage-new' => 'Uusi nimi',
+	'pt-movepage-reason' => 'Syy',
+	'pt-movepage-subpages' => 'Siirrä kaikki alasivut',
+	'pt-movepage-action-check' => 'Tarkista, onko sivun siirtäminen mahdollista',
+	'pt-movepage-action-perform' => 'Tee siirto',
+	'pt-movepage-action-other' => 'Vaihda kohde',
+	'pt-movepage-intro' => 'Tällä toimintosivulla voit siirtää käännettäväksi merkittyjä sivuja.
+Siirto ei tapahdu heti, koska useita sivuja täytyy siirtää.
+Siirtojonoa käytetään sivujen siirtämiseen.
+Sivut ovat lukittuna siirron ajan.
+Epäonnistuneet siirrot tallennetaan sivunkääntölokiin ja ne täytyy korjata käsin.',
+	'pt-movepage-logreason' => 'Osa käännettävästä sivusta $1.',
+	'pt-movepage-started' => 'Käännettävän sivun perussivu on siirretty.
+Tarkista mahdolliset virheet ja valmistumisviestit sivunkääntölokista.',
+	'pt-locked-page' => 'Tämä sivu on lukittu, koska käännettävän sivun siirtäminen on kesken.',
 );
 
 /** French (Français)
@@ -2445,6 +2485,7 @@ Text vum Abschnitt: <pre>$1</pre>',
 	'pt-movepage-current' => 'Aktuellen Numm:',
 	'pt-movepage-new' => 'Neien Numm:',
 	'pt-movepage-reason' => 'Grond:',
+	'pt-movepage-subpages' => 'All Ënnersäite réckelen',
 	'pt-movepage-action-perform' => 'Réckelen',
 	'pt-movepage-logreason' => 'Deel vun der iwwersetzbarer Säit $1.',
 );
@@ -2754,7 +2795,7 @@ Sjekk at sida er merka med <nowiki><translate></nowiki> merke og har ein gyldig 
 	'tpt-translate-this' => 'set om denne sida',
 	'translate-tag-translate-link-desc' => 'Set om denne sida',
 	'translate-tag-markthis' => 'Merk denne sida for omsetjing',
-	'tpt-translation-intro-fuzzy' => 'Utdaterte omsetjingar er markerte på dette viset.',
+	'tpt-translation-intro-fuzzy' => 'Utdaterte omsetjingar er merkte på dette viset.',
 	'tpt-languages-legend' => 'Andre språk:',
 	'tpt-render-summary' => 'Oppdatering for å svara til ny versjon av kjeldesida',
 	'tpt-download-page' => 'Eksporter side med omsetjingar',

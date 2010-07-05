@@ -5380,6 +5380,8 @@ $messages['fi'] = array(
 	'translate-page-settings-legend' => 'Asetukset',
 	'translate-page-task' => 'Haluan',
 	'translate-page-group' => 'Ryhmä',
+	'translate-page-group-tooltip' => 'Viestiryhmän nimi.
+Jos ryhmä koostuu osittain muista ryhmistä, se näytetään lihavoituna.',
 	'translate-page-language' => 'Kieli',
 	'translate-page-limit' => 'Rajoitus',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|viesti|viestiä}} sivulla',
@@ -5395,6 +5397,7 @@ $messages['fi'] = array(
 	'translate-ext-url' => '<hr />Verkkosivu: $1',
 	'translate-optional' => '(valinnainen)',
 	'translate-ignored' => '(ei-käännettävä)',
+	'translate-edit-title' => 'Muokkaa sivua $1',
 	'translate-edit-definition' => 'Viestin määritelmä',
 	'translate-edit-contribute' => 'auta dokumentoinnissa',
 	'translate-edit-no-information' => "''Tätä viestiä ei ole dokumentoitu. Jos tiedät missä tai miten tätä viestiä käytetään, voit auttaa muita kääntäjiä lisäämällä kommentteja tähän viestiin.''",
@@ -5404,6 +5407,7 @@ $messages['fi'] = array(
 	'translate-edit-warnings' => 'Varoituksia virheellisestä käännöksestä',
 	'translate-edit-tmsugs' => 'Ehdotukset käännösmuistista',
 	'translate-edit-tmmatch' => 'Vastaavuus $1%',
+	'translate-use-suggestion' => 'Korvaa nykyinen käännös tällä ehdotuksella.',
 	'translate-edit-goto-no-prev' => 'Ei edellistä viestiä',
 	'translate-edit-goto-no-next' => 'Ei seuraavaa viestiä',
 	'translate-edit-goto-prev' => 'Muokkaa edellistä viestiä',
@@ -5456,6 +5460,7 @@ Muutoksia ei tallenneta, ennen kuin painat tallenna-painiketta.',
 	'translate-checks-pagename' => 'Nimiavaruus muuttui määritellystä',
 	'translate-checks-format' => 'Tämä käännös ei noudata alkuperäistä tekstiä tai sillä on virheellinen syntaksi: $1',
 	'translate-checks-escape' => 'Seuraavat escape-merkkijonot saattavat olla tahattomia: <strong>$1</strong>',
+	'translate-checks-fudforum-syntax' => 'Käytä merkinnän <nowiki>$1</nowiki> sijasta merkintää <nowiki>$2</nowiki> tässä projektissa.',
 	'translate-pref-nonewsletter' => 'Älä lähetä minulle uutiskirjeitä',
 	'translate-pref-editassistlang' => 'Avustavat kielet',
 	'prefs-translate' => 'Käännösasetukset',
@@ -5467,6 +5472,7 @@ Asetuksen oletusarvoiset kielet riippuvat kielestä jolle olet kääntämässä.
 	'translate-pref-jsedit' => 'Parannettu käännöseditori (JavaScript)',
 	'right-translate' => 'Kääntää käännöstyökalulla',
 	'right-translate-manage' => 'Hallinnoida käännösryhmiä',
+	'right-translate-import' => 'Tuo ulkoisia käännöksiä',
 	'translate-rc-translation-filter' => 'Käännösten suodatus',
 	'translate-rc-translation-filter-no' => 'ei toimenpidettä',
 	'translate-rc-translation-filter-only' => 'näytä vain käännökset',
@@ -5505,16 +5511,29 @@ Asetuksen oletusarvoiset kielet riippuvat kielestä jolle olet kääntämässä.
 	'translate-translations-history-short' => 'h',
 	'languagestats' => 'Kielitilastot',
 	'languagestats-summary' => 'Tämä sivu näyttää käännöstilastot kaikille kielen viestiryhmille.',
+	'languagestats-stats-for' => 'Käännöstilastot kielelle $1 ($2).',
+	'languagestats-recenttranslations' => 'tuoreet käännökset',
 	'translate-language-code' => 'Kielikoodi',
 	'translate-language-code-field-name' => 'Kielikoodi',
 	'translate-suppress-complete' => 'Älä näytä kokonaan käännettyjä viestiryhmiä',
 	'translate-language' => 'Kieli',
 	'translate-total' => 'Viestit',
+	'translate-total-tooltip' => 'Viestien kokonaismäärä tässä ryhmässä.',
 	'translate-untranslated' => 'Kääntämättömiä',
+	'translate-untranslated-tooltip' => 'Kääntämättömien viestien lukumäärä tässä ryhmässä.
+Luku sisältää vanhentuneiksi merkityt viestit.',
 	'translate-percentage-complete' => 'Käännösten kattavuus',
+	'translate-percentage-complete-tooltip' => 'Käännettyjen viestien osuus',
 	'translate-percentage-fuzzy' => 'Vanhentunut',
 	'translate-nothing-to-do' => 'Kaikki mahdolliset käännökset on merkitty tehdyiksi.
 Voit tarkistaa käännöksiä toimintosivulla [[Special:Translate|{{int:translate}}]].',
+	'supportedlanguages' => 'Tuetut kielet',
+	'supportedlanguages-translators' => '{{PLURAL:$2|Kääntäjä|Kääntäjät}}: $1',
+	'supportedlanguages-noportal-title' => 'Portaalinimiavaruutta ei ole määritelty',
+	'supportedlanguages-noportal' => 'Tämä sivu ei toimi, koska wikin ylläpitäjä ei ole määritellyt NS_PORTAL-asetusta.
+Tällä sivulla on lista kaikista kieliportaaleista joilla on alasivu nimellä ”translators”.
+Alasivun ”translators” tulee käyttää mallinetta [[:{{ns:template}}:User|User]], joka ottaa käyttäjätunnuksen parametrina.',
+	'supportedlanguages-recenttranslations' => 'tuoreet käännökset',
 	'translate-save' => 'Tallenna ($1)',
 	'translate-jssti-add' => 'Lisää listaan',
 	'translate-group-desc-mediawikicore' => 'Tämä viestiryhmä sisältää viestit, joita käytetään nykyisessä MediaWikin alfaversiossa ({{CURRENTVERSION}})',
@@ -5522,12 +5541,14 @@ Voit tarkistaa käännöksiä toimintosivulla [[Special:Translate|{{int:translat
 	'translate-group-desc-mediawikiextensions' => 'Kokoava viestiryhmä kaikille MediaWikiä tukeville laajennuksille',
 	'translate-group-desc-collection' => 'Tämä metaviestiryhmä sisältää kaikki viestit, joita käytetään MediaWikin laajennuksessa [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
 	'translate-group-desc-flaggedrevs' => 'Tämä metaviestiryhmä sisältää kaikki viestit MediaWikin [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs-laajennusta] varten',
+	'translate-group-desc-readerfeedback' => 'Tämä metaviestiryhmä sisältää kaikki MediaWikin [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback-laajennuksen] viestit',
 	'translate-group-desc-socialprofile' => 'Tämä metaviestiryhmä sisältää kaikki viestit, jotka liittyvä MediaWikin [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile -ohjelmalaajennukseen]',
 	'translate-group-desc-translate' => 'Tämä metaviestiryhmä sisältää kaikki viestit MediaWikin [http://www.mediawiki.org/wiki/Extension:Translate Käännöstyökalu-laajennusta] varten',
 	'translate-group-desc-wikiaextensions' => 'Tämä metaviestiryhmä sisältää kaikki ne tuetut MediaWikin laajennuksien viestit, joita [http://www.wikia.com Wikia] käyttää',
 	'translate-group-desc-wikihowextensions' => 'Tämä metaviestiryhmä sisältää kaikki tuetut MediaWikin laajennuksien viestit, joita [http://www.wikihow.com wikiHow] käyttää',
 	'translate-group-desc-wikimediaextensions' => 'Tämä metaviestiryhmä sisältää kaikki tuetut MediaWikin laajennuksien viestit, joita [http://wikimedia.org/ Wikimedia Foundation] käyttää',
 	'translate-group-desc-wikitravelextensions' => 'Tämä metaviestiryhmä sisältää kaikki tuetut MediaWikin laajennuksien viestit, joita [http://wikitravel.org Wikitravel] käyttää',
+	'translate-group-desc-uniwiki' => 'Metaviestiryhmä, joka sisältää kaikki [http://unicefinnovation.org/wiki.php Uniwikiin] liittyvien laajennuksien viestit.',
 	'translate-manage-groups' => 'Käännösryhmien hallinta',
 	'translate-manage-listgroups' => 'Asetetut ryhmät',
 	'translate-manage-listgroups-old' => 'Vanhanmalliset ryhmät',
@@ -5569,12 +5590,19 @@ $1',
 	'translate-import-err-ul-failed' => 'Tiedoston lähettäminen ei onnistunut',
 	'translate-import-err-invalid-title' => 'Annettu tiedostonnimi <nowiki>$1</nowiki> on virheellinen.',
 	'translate-js-next' => 'Tallenna ja avaa seuraava',
+	'translate-js-nonext' => 'Tämä oli tämän sivun viimeinen viesti.',
+	'translate-js-skip' => 'Hyppää seuraavaan',
+	'translate-js-save-failed' => 'Tallentaminen epäonnistui. Ilmoita tästä virheestä.',
+	'translate-js-history' => 'Käännöshistoria',
 	'translate-gs-pos' => 'Sij.',
 	'translate-gs-code' => 'Koodi',
+	'translate-gs-continent' => 'Maanosa',
 	'translate-gs-speakers' => 'Puhujat',
 	'translate-gs-score' => 'Tilanne',
+	'translate-gs-multiple' => 'Useita',
 	'translate-gs-count' => 'Määrä',
 	'translate-gs-total' => 'Yhteensä',
+	'translate-gs-avgscore' => 'Keskim. pisteet',
 );
 
 /** French (Français)
@@ -12373,7 +12401,7 @@ Hvis du oversetter til et språk og navnet ditt ikke er inkludert kan du legge t
 Se menylinjen for en lenke til språkportalen til ditt språk.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Oversetter|Oversettere}}: $1',
 	'supportedlanguages-noportal-title' => 'Ingen portalnavnerom definert',
-	'supportedlanguages-noportal' => 'Wikiadministratoren har definert NS_PORTAL, so denne siden virker ikke.
+	'supportedlanguages-noportal' => 'Wikiadministratoren har ikke definert NS_PORTAL, så denne siden virker ikke.
 På denne siden vil en liste over språkportaler vises for alle portaler som tilsvarer en definert språkkode og en underside kalt «translators».
 Undersiden «translators» må innholde malen [[:{{ns:template}}:User|User]] som tar et brukernavn som en parameter.',
 	'supportedlanguages-recenttranslations' => 'siste oversettelser',
@@ -12987,7 +13015,7 @@ Domyślna lista języków zależy od Twojego języka.',
 	'translate-translations-history-short' => 'h',
 	'languagestats' => 'Statystyka językowa',
 	'languagestats-summary' => 'Strona pokazuje statystykę tłumaczenia dla wszystkich grup komunikatów we wskazanym języku.',
-	'languagestats-stats-for' => 'Statystyki tłumaczenia dla $1 ($2)',
+	'languagestats-stats-for' => 'Statystyki tłumaczenia dla $1 ($2).',
 	'languagestats-recenttranslations' => 'ostatnie tłumaczenia',
 	'translate-language-code' => 'Kod języka',
 	'translate-language-code-field-name' => 'Kod języka',
@@ -13006,13 +13034,14 @@ Komunikaty oznaczane są jako nieaktualne gdy źródłowy komunikat w języku an
 	'translate-nothing-to-do' => 'Wszystkie możliwe tłumaczenia zostały wykonane.
 Proponujemy przejrzeć komunikaty korzystając z [[Special:Translate|{{int:translate}}]].',
 	'supportedlanguages' => 'Obsługiwane języki',
-	'supportedlanguages-summary' => 'Ta strona wyświetla listę wszystkich języków, obsługiwanych przez {{SITENAME}}, razem z nazwami tłumaczy, pracującyj nad danym językiem.
-Jeżeli chcesz dowiedzieć się więcej na temat określonego języka, kliknij na link do portalu dla tego języka.
-Jeżeli chcesz przejść do strony danego tłumacza, kliknij na jego nazwę.
-If a language is not listed, you can find out how to start a localization project for a language at "[[Translating:Process|New Language]]".
+	'supportedlanguages-summary' => 'Na tej stronie znajduje się lista wszystkich języków, obsługiwanych przez {{GRAMMAR:B.lp|{{SITENAME}}}}, razem z pseudonimami tłumaczy, pracującymi w danym języku.
+Jeżeli chcesz dowiedzieć się więcej na temat określonego języka, kliknij na link do portalu tego języka.
+Jeżeli chcesz przejść do strony danego tłumacza, kliknij na jego pseudonim.
 
-If you translate to a language and your name is not included, please add your name to the list of translators on the [[:Category:Languages|portal]] for that language.
-See the menu bar for a link to the portal for the language of your preference.',
+Jeżeli języka brak w spisie, informację o tym jak rozpocząć tłumaczenie na nowy język odnajdziesz na stronie „[[Translating:Process|nowy język]]“.
+
+Jeśli tłumaczysz na jakiś język, a Twojego pseudonimu brak, dopisz się do listy tłumaczy na stronie [[:Category:Languages|portalu]] właściwego języka.
+W menu odnajdziesz link do portalu języka, który wybrałeś w preferencjach.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Tłumacz|Tłumacze:}} $1',
 	'supportedlanguages-noportal-title' => 'Nie określono przestrzeni nazw dla portalu',
 	'supportedlanguages-noportal' => 'Ta strona nie działa ponieważ administrator wiki nie określił NS_PORTAL,
