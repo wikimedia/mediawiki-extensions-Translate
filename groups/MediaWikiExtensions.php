@@ -616,7 +616,6 @@ class AllSocialProfileExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-socialprofile-userrelationship',
 		'ext-socialprofile-userstats',
 		'ext-socialprofile-userwelcome',
-		'ext-yui',
 	);
 
 	protected function init() {
