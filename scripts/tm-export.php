@@ -1,6 +1,6 @@
 <?php
 /**
- * Script to export messages for translatetoolkit translation memory
+ * Script to bootstrap translatetoolkit translation memory
  *
  * @author Niklas Laxstrom
  *
@@ -9,11 +9,12 @@
  * @file
  */
 
-$optionsWithArgs = array( 'target' );
-
-$dir = dirname( __FILE__ ); $IP = "$dir/../../..";
-@include( "$dir/../../CorePath.php" ); // Allow override
-define( 'TRANSLATE_CLI', 1 );
+// Standard boilerplate to define $IP
+if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
+	$IP = getenv( 'MW_INSTALL_PATH' );
+} else {
+	$dir = dirname( __FILE__ ); $IP = "$dir/../../..";
+}
 require_once( "$IP/maintenance/Maintenance.php" );
 
 class TMExport extends Maintenance {
