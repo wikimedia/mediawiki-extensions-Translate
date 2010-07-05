@@ -235,6 +235,8 @@ EOEO;
 		$th = new TranslationHelpers( $object->mTitle );
 		if ( $object->firsttime && !$wgRequest->getCheck( 'oldid' ) && !$wgRequest->getCheck( 'undo' ) ) {
 			$object->textbox1 = $th->getTranslation();
+		} else {
+			$th->setTranslation( $object->textbox1 );
 		}
 
 		TranslateUtils::injectCSS();
