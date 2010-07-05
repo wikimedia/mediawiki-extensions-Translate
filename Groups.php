@@ -151,6 +151,47 @@ abstract class MessageGroupBase implements MessageGroup {
 	}
 
 	public function getTags( $type = null ) {
+		if ( $type === null ) {
+			$taglist = array();
+			foreach ( $this->getRawTags() as $type => $patterns ) {
+				$taglist[$type] = $this->parseTags( $patterns );
+			}
+			return $taglist;
+		} else {
+			return $this->parse( $this->getRawTags( $type ) );
+		}
+	}
+
+	protected function parseTags( $patterns ) {
+		$cache = new MessageGroupCache( $this->getId() );
+		$messageKeys = $cache->getKeys();
+
+		$matches = array();
+
+		// Collect exact keys, no point running them trough string matcher
+		foreach ( $patterns as $index => $pattern ) {
+			if ( strpos( $pattern, '*' ) === false ) {
+				$matches[] = $pattern;
+				unset( $patterns[$index] );
+			}
+		}
+
+		if ( count( $patterns ) ) {
+			// Rest of the keys contain wildcards
+			$mangler = new StringMatcher( '', $patterns );
+
+			// Use mangler to find messages that match
+			foreach ( $messageKeys as $key ) {
+				if ( $mangler->match( $key ) ) {
+					$matches[] = $key;
+				}
+			}
+		}
+
+		return $matches;
+	}
+
+	protected function getRawTags( $type = null ) {
 		if ( !isset( $this->conf['TAGS'] ) ) {
 			return array();
 		}
@@ -168,37 +209,8 @@ abstract class MessageGroupBase implements MessageGroup {
 	}
 
 	protected function setTags( MessageCollection $collection ) {
-		$tags = $this->getTags();
-
-		$cache = new MessageGroupCache( $this->getId() );
-		$messageKeys = $cache->getKeys();
-
-		// Loop trough all tag types
-		foreach ( $tags as $type => $patterns ) {
-			$matches = array();
-
-			// Collect exact keys, no point running them trough string matcher
-			foreach ( $patterns as $index => $pattern ) {
-				if ( strpos( $pattern, '*' ) === false ) {
-					$matches[] = $pattern;
-					unset( $patterns[$index] );
-				}
-			}
-
-			if ( count( $patterns ) ) {
-				// Rest of the keys contain wildcards
-				$mangler = new StringMatcher( '', $patterns );
-
-				// Use mangler to find messages that match
-				foreach ( $messageKeys as $key ) {
-					if ( $mangler->match( $key ) ) {
-						$matches[] = $key;
-					}
-				}
-			}
-
-			// Add the combined matches
-			$collection->setTags( $type, $matches );
+		foreach ( $this->getTags() as $type => $tags ) {
+			$collection->setTags( $type, $tags );
 		}
 	}
 
@@ -288,7 +300,7 @@ class MediaWikiMessageGroup extends FileBasedMessageGroup {
 		return ucfirst( str_replace( '-', '_', parent::mapCode( $code ) ) );
 	}
 
-	protected function setTags( MessageCollection $collection ) {
+	public function getTags( $type = null ) {
 		$path = $this->getFromConf( 'BASIC', 'metadataPath' );
 
 		if ( $path === null ) {
@@ -309,10 +321,20 @@ class MediaWikiMessageGroup extends FileBasedMessageGroup {
 
 		$reader = new ConfEditor( $data );
 		$vars = $reader->getVars();
-		$collection->setTags( 'optional', $vars['wgOptionalMessages'] );
-		$collection->setTags( 'ignored', $vars['wgIgnoredMessages'] );
 
-		parent::setTags( $collection );
+		$tags = array();
+		$tags['optional'] = $vars['wgOptionalMessages'];
+		$tags['ignored'] = $vars['wgIgnoredMessages'];
+
+		if ( !$type ) {
+			return $tags;
+		}
+
+		if ( isset( $tags[$type] ) ) {
+			return $tags[$type];
+		}
+
+		return array();
 	}
 }
 
@@ -397,15 +419,8 @@ class AggregateMessageGroup extends MessageGroupBase {
 	public function getTags( $type = null ) {
 		$tags = array();
 		foreach( $this->getGroups() as $group ) {
-			//FIXME: is this correct?
 			$tags = array_merge_recursive( $tags, $group->getTags( $type ) );
 		}
 		return $tags;
-	}
-
-	protected function setTags( MessageCollection $collection ) {
-		foreach( $this->getGroups() as $group ) {
-			$group->setTags( $collection );
-		}
 	}
 }
