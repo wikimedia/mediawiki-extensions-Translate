@@ -158,7 +158,7 @@ abstract class MessageGroupBase implements MessageGroup {
 			}
 			return $taglist;
 		} else {
-			return $this->parse( $this->getRawTags( $type ) );
+			return $this->parseTags( $this->getRawTags( $type ) );
 		}
 	}
 
