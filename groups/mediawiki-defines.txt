@@ -1507,7 +1507,4 @@ Wiki Text Logged In Out
 
 Woopra
 
-YUI
-file = SocialProfile/YUI/yui.i18n.php
-
 YouTube Auth Sub
