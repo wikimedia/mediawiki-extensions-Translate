@@ -59,7 +59,7 @@ At {{SITENAME}} there are people from all around the world working on different 
 
 In the prefilled box above in the very first line you see <nowiki>{{#babel:en-2}}</nowiki>.
 Please complete it with your language knowledge.
-The number behind the language code describes how well you know the language.
+The number after the language code describes how well you know the language.
 The alternatives are:
 * 1 - a little
 * 2 - basic knowledge
