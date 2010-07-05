@@ -466,3 +466,17 @@ FILES:
 
 MANGLER:
   prefix: wiki-
+
+---
+BASIC:
+  id: out-shapado-js
+  label: Shapado (JavaScript)
+  description: "{{int:bw-desc-shapado-js}}"
+  namespace: NS_SHAPADO
+  display: out/shapado/js
+  class: FileBasedMessageGroup
+
+FILES:
+  class: ShapadoJsFFS
+  sourcePattern: %GROUPROOT%/shapado/public/javascripts/i18n/%CODE%.js
+  targetPattern: shapado/public/javascripts/i18n/%CODE%.js

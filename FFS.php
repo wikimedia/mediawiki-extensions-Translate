@@ -363,83 +363,163 @@ class JavaFFS extends SimpleFFS {
 	}
 }
 
-class JavaScriptFFS extends SimpleFFS {
-	private function leftTrim( $string ) {
-		$string = ltrim( $string );
-		$string = ltrim( $string, '"' );
+abstract class JavaScriptFFS extends SimpleFFS {
 
-		return $string;
-	}
+	/**
+	 * Message keys format.
+	 */
+	abstract protected function transformKey( $key );
+
+	/**
+	 * Header of message file.
+	 */
+	abstract protected function header( $code, $authors );
+
+	/**
+	 * Footer of message file.
+	 */
+	abstract protected function footer();
 
 	public function readFromVariable( $data ) {
-		// Add trailing comma to last key pair.
-		$data = str_replace( "\"\n};", "\",\n};", $data );
 
-		// Just get relevant data.
+		/* Pre-processing */
+
+		// Find the start and end of the data section (enclosed in curly braces).
 		$dataStart = strpos( $data, '{' );
 		$dataEnd   = strrpos( $data, '}' );
+		// Strip everything outside of the data section.
 		$data = substr( $data, $dataStart + 1, $dataEnd - $dataStart - 1 );
+
 		// Strip comments.
 		$data = preg_replace( '#^(\s*?)//(.*?)$#m', '', $data );
-		// Break in to message segements for further parsing.
-		$data = explode( '",', $data );
+
+		// Replace message endings with double quotes.
+		$data = preg_replace( "#\'\,\n#", "\",\n", $data );
+
+		// Strip excess whitespace.
+		$data = trim( $data );
+
+		/* Per-key message */
+
+		// Break in to segments.
+		$data = explode( "\",\n", $data );
 
 		$messages = array();
-		// Process each segment.
-		foreach ( $data as $segment ) {
-			// Remove excess quote mark at beginning.
-			$segment = substr( $segment, 1 );
-			// Add back trailing quote.
+		foreach( $data as $segment ) {
+			// Add back trailing quote, removed by explosion.
 			$segment .= '"';
-			// Concatenate seperate strings.
+
+			// Concatenate separate strings.
 			$segment = explode( '" +', $segment );
-			$segment = array_map( array( $this, 'leftTrim' ), $segment );
+			for( $i = 0; $i < count( $segment ); $i++ ) {
+				$segment[$i] = ltrim( $segment[$i] );
+				$segment[$i] = ltrim( $segment[$i], '"' );
+			}
 			$segment = implode( $segment );
-			# $segment = preg_replace( '#\" \+(.*?)\"#m', '', $segment );
+
+			// Remove line breaks between message keys and messages.
+			$segment = preg_replace( "#\:(\s+)[\\\"\']#", ': "', $segment );
+
 			// Break in to key and message.
-			$segments = explode( '\':', $segment );
+			$segments = explode( ': "', $segment );
 			$key = $segments[ 0 ];
-			unset( $segments[ 0 ] );
-			$value = implode( $segments );
-			// Strip excess whitespace from both.
+			$value = $segments[1];
+
+			// Strip excess whitespace from key and value.
 			$key = trim( $key );
 			$value = trim( $value );
-			// Remove quotation marks and syntax.
-			$key = substr( $key, 1 );
-			$value = substr( $value, 1, - 1 );
+
+			// Strip quotation marks.
+			$key = trim( $key, '\'"' );
+			$value = trim( $value, '\'"' );
+
+			// Unescape any JavaScript and append to message array.
 			$messages[ $key ] = self::unescapeJsString( $value );
 		}
-
-		// Remove extraneous key that is sometimes present.
-		unset( $messages[ 0 ] );
 
 		return array( 'MESSAGES' => $messages );
 	}
 
-	// Quick shortcut for getting the plain exported data
 	public function writeIntoVariable( MessageCollection $collection ) {
-		$code = $collection->code;
+		$r = $this->header( $collection->code, $collection->getAuthors() );
+
+		// Get and write messages.
+		foreach ( $collection as $message ) {
+			$key   = $this->transformKey( Xml::escapeJsString( $message->key()         ) );
+			$value =                      Xml::escapeJsString( $message->translation() );
+
+			$r .= "    {$key}: \"{$value}\",\n\n";
+		}
+
+		// Strip last comma, re-add trailing newlines.
+		$r = substr( $r, 0, - 3 );
+		$r .= "\n\n";
+
+		return $r . $this->footer();
+	}
+
+	protected function authorsList( $authors ) {
+		if( count( $authors ) > 0 ) {
+			foreach ( $authors as $author ) {
+				$authorsList .= " *  - $author\n";
+			}
+			return <<<EOT
+/* Translators:
+$authorsList */
+
+
+EOT;
+		} else {
+			return '';
+		}
+	}
+
+	private static function unescapeJsString( $string ) {
+		// See ECMA 262 section 7.8.4 for string literal format
+		$pairs = array(
+			"\\" => "\\\\",
+			"\"" => "\\\"",
+			'\'' => '\\\'',
+			"\n" => "\\n",
+			"\r" => "\\r",
+
+			# To avoid closing the element or CDATA section
+			"<" => "\\x3c",
+			">" => "\\x3e",
+
+			# To avoid any complaints about bad entity refs
+			"&" => "\\x26",
+
+			# Work around https://bugzilla.mozilla.org/show_bug.cgi?id=274152
+			# Encode certain Unicode formatting chars so affected
+			# versions of Gecko don't misinterpret our strings;
+			# this is a common problem with Farsi text.
+			"\xe2\x80\x8c" => "\\u200c", // ZERO WIDTH NON-JOINER
+			"\xe2\x80\x8d" => "\\u200d", // ZERO WIDTH JOINER
+		);
+		$pairs = array_flip( $pairs );
+
+		return strtr( $string, $pairs );
+	}
+}
+
+class OpenLayersFFS extends JavaScriptFFS {
+	protected function transformKey( $key ) {
+		return "'$key'";
+	}
+
+	protected function header( $code, $authors ) {
 		$names = Language::getLanguageNames();
 		$name = $names[ $code ];
 
-		// Generate list of authors for comment.
-		$authors = $collection->getAuthors();
-		$authorList = '';
+		$authorsList = $this->authorsList( $authors );
 
-		foreach ( $authors as $author ) {
-			$authorList .= " *  - $author\n";
-		}
-
-		// Generate header and write.
-		$r = <<<EOT
+		return <<<EOT
 /* Copyright (c) 2006-2008 MetaCarta, Inc., published under the Clear BSD
  * license.  See http://svn.openlayers.org/trunk/openlayers/license.txt for the
  * full text of the license. */
 
-/* Translators (2009 onwards):
-$authorList */
-
-/**
+$authorsList/**
  * @requires OpenLayers/Lang.js
  */
 
@@ -451,24 +531,32 @@ $authorList */
  */
 OpenLayers.Lang["$code"] = OpenLayers.Util.applyDefaults({
 
+EOT;
+	}
+
+	protected function footer() {
+		return '});';
+	}
+}
+
+class ShapadoJsFFS extends JavaScriptFFS {
+	protected function transformKey( $key ) {
+		return $key;
+	}
+
+	protected function header( $code, $authors ) {
+
+		$authorsList = $this->authorsList( $authors );
+
+		return <<<EOT
+{$authorsList}var I18n = {
+
 
 EOT;
+	}
 
-		// Get and write messages.
-		foreach ( $collection as $message ) {
-			$key = Xml::escapeJsString( $message->key() );
-			$value = Xml::escapeJsString( $message->translation() );
-
-			$line = "    '{$message->key()}': \"{$value}\",\n\n";
-			$r .= $line;
-		}
-
-		// Strip last comma.
-		$r = substr( $r, 0, - 3 );
-		$r .= "\n\n";
-
-		// File terminator.
-		return $r . '});';
+	protected function footer() {
+		return '};';
 	}
 }
 

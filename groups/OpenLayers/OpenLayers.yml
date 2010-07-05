@@ -8,8 +8,8 @@ BASIC:
   class: FileBasedMessageGroup
 
 FILES:
-  class: JavaScriptFFS
-  sourcePattern: %GROUPROOT%/Lang/%CODE%.js
+  class: OpenLayersFFS
+  sourcePattern: %GROUPROOT%/openlayers/%CODE%.js
   targetPattern: openlayers/%CODE%.js
   codeMap:
     cs:      cs-CZ
