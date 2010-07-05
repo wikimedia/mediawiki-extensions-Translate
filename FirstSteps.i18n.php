@@ -31,7 +31,7 @@ In the end you will be able to translate ''interface messages'' of all supported
 
 In the first step you must sign up.
 
-Credits for your translations are attributed to your user name.
+Credit for your translations is attributed to your user name.
 The image on the right shows how to fill the fields.
 
 If you have already signed up, $1log in$2 instead.
@@ -97,9 +97,8 @@ If you feel that you need to understand more before you start translating, you c
 Unfortunately documentation can be out of date sometimes.
 If there is something that you think you should be able to do, but cannot find out how, do not hesitate to ask it at the [[Support|support page]].
 
-You can also contact fellow translators of the same language at [[Portal:$1|your language portal]].
-The portal links to your current [[Special:Preferences|language preference]].
-Please change it if needed.',
+You can also contact fellow translators of the same language at [[Portal:$1|your language portal]]\'s [[Portal_talk:$1|talk page]].
+If you have not already done so, [[Special:Preferences|change your user interface language to the language you want to translate in]], so that the wiki is able to show the most relevant links for you.',
 
 	'translate-fs-email-text' => 'Please provide your e-mail address in [[Special:Preferences|your preferences]] and confirm it from the e-mail that is sent to you.
 
