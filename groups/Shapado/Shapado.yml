@@ -470,11 +470,8 @@ MANGLER:
 ---
 BASIC:
   id: out-shapado-js
-  label: Shapado (JavaScript)
-  description: "{{int:bw-desc-shapado-js}}"
-  namespace: NS_SHAPADO
+  label: Shapado - JavaScript
   display: out/shapado/js
-  class: FileBasedMessageGroup
 
 FILES:
   class: ShapadoJsFFS
