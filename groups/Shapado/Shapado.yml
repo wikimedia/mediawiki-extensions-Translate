@@ -22,6 +22,14 @@ TEMPLATE:
     patterns:
       - "*"
 
+  CHECKER:
+    class: ShapadoMessageChecker
+    checks:
+      - ShapadoVariablesCheck
+
+  AUTOLOAD:
+    ShapadoMessageChecker: Checker.php
+
 ---
 BASIC:
   id: out-shapado-0-all
