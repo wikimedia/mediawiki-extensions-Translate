@@ -531,7 +531,7 @@ class TranslationHelpers {
 			TranslateUtils::convertWhiteSpaceToHTML( $en )
 		);
 
-		$msg .= Html::element( 'pre', array( 'id' => $id, 'style' => 'display: none;' ), $en );
+		$msg .= $this->wrapInsert( $id, $en );
 
 		$class = array( 'class' => 'mw-sp-translate-edit-definition mw-translate-edit-definition' );
 
@@ -608,9 +608,16 @@ class TranslationHelpers {
 				$label = self::ajaxEditLink( $target, htmlspecialchars( $label ) );
 			}
 
-			$text = TranslateUtils::convertWhiteSpaceToHTML( $text );
+			$dialogID = $this->dialogID();
+			$id = Sanitizer::escapeId( "other-$fbcode-$dialogID" );
+
 			$params = array( 'class' => 'mw-translate-edit-item' );
-			$boxes[] = Html::rawElement( 'div', $params, self::legend( $label ) . $text . self::clear() );
+
+			$contents = $this->adder( $id ) . "\n" . self::legend( $label ) .
+				TranslateUtils::convertWhiteSpaceToHTML( $text ) . self::clear();
+
+			$boxes[] = Html::rawElement( 'div', $params, $contents ) .
+				$this->wrapInsert( $id, $text );
 		}
 
 		if ( count( $boxes ) ) {
@@ -883,6 +890,10 @@ class TranslationHelpers {
 			return Html::element( 'a', $params, '↓' );
 	}
 
+	public function wrapInsert( $id, $text ) {
+		return Html::element( 'pre', array( 'id' => $id, 'style' => 'display: none;' ), $text );
+	}
+
 	public function suggestionField( $text ) {
 		static $counter = 0;
 
@@ -890,7 +901,7 @@ class TranslationHelpers {
 		$dialogID = $this->dialogID();
 		$id = Sanitizer::escapeId( "tmsug-$dialogID-$counter" );
 		$contents = TranslateUtils::convertWhiteSpaceToHTML( $text );
-		$contents .= Html::element( 'pre', array( 'id' => $id, 'style' => 'display: none;' ), $text );
+		$contents .= $this->wrapInsert( $id, $text );
 
 		return $this->adder( $id ) . "\n" . $contents;
 	}
