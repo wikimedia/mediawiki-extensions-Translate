@@ -52,6 +52,7 @@ GROUPS:
   - out-shapado-global
   - out-shapado-groups
   - out-shapado-imports
+  - out-shapado-js
   - out-shapado-layouts
   - out-shapado-mailers
   - out-shapado-manage
