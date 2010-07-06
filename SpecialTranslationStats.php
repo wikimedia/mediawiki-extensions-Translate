@@ -50,7 +50,6 @@ class SpecialTranslationStats extends SpecialPage {
 		if ( $this->including() ) {
 			$wgOut->addHTML( $this->image( $opts ) );
 		} elseif ( $opts['graphit'] ) {
-
 			// Cache for two hours
 			if ( !$opts['preview'] ) {
 				$lastMod = $wgOut->checkLastModified( wfTimestamp( TS_MW, time() - 2 * 3600 ) );
@@ -193,7 +192,7 @@ class SpecialTranslationStats extends SpecialPage {
 
 		ksort( $languages );
 
-		$selector = new XmlSelect( 'mw-language-selector', 'mw-language-selector'  );
+		$selector = new XmlSelect( 'mw-language-selector', 'mw-language-selector' );
 		foreach ( $languages as $code => $name ) {
 			$selector->addOption( "$code - $name", $code );
 		}
@@ -232,7 +231,7 @@ class SpecialTranslationStats extends SpecialPage {
 
 		ksort( $groups );
 
-		$selector = new XmlSelect( 'mw-group-selector', 'mw-group-selector'  );
+		$selector = new XmlSelect( 'mw-group-selector', 'mw-group-selector' );
 		foreach ( $groups as $code => $name ) {
 			$selector->addOption( $name->getLabel(), $code );
 		}

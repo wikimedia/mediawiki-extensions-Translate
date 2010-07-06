@@ -22,9 +22,9 @@ class SpecialMyLanguage extends SpecialPage {
 		$title = null;
 		if ( strval($par) !== '' ) {
 			$title = Title::newFromText( $par );
-			if ( $title && ( $title->exists() || $title->isAlwaysKnown() ) ) {
+			if ( $title && $title->exists() ) {
 				$local = Title::newFromText( "$par/" . $wgLang->getCode() );
-				if ( $local && ( $local->exists() || $local->isAlwaysKnown() ) ) {
+				if ( $local && $local->exists() ) {
 					$title = $local;
 				}
 			}

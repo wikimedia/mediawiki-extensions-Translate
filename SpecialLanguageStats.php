@@ -31,14 +31,20 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			$code = $wgRequest->getVal( 'code', $par );
 			$suppressComplete = $wgRequest->getVal( 'suppresscomplete', $par );
 			$wgOut->addHTML( $this->buildLanguageForm( $code, $suppressComplete ) );
-/*
-			$form = $this->buildLanguageForm( $code, $suppressComplete );
-			$form->show();
-*/
 		} else {
 			$paramArray = explode( '/', $par, 2 );
 			$code = $paramArray[0];
 			$suppressComplete = isset( $paramArray[1] ) && (bool)$paramArray[1];
+		}
+
+		if ( !$code ) {
+			global $wgUser;
+
+			if ( $wgUser->isLoggedIn() ) {
+				global $wgLnng;
+
+				$code = $wgLang->getCode();
+			}
 		}
 
 		$out = '';
@@ -60,28 +66,10 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	*/
 	function buildLanguageForm( $code = '', $suppressComplete = false ) {
 		global $wgScript;
+
 		$t = $this->getTitle();
 
-/*
-		$formFields = array(
-			'code' => array(
-				'type' => 'text',
-				'label-message' => 'translate-language-code-field-name',
-				'size' => '30'
-			),
-			'suppresscomplete' => array(
-				'type' => 'toggle',
-				'label-message' => 'translate-suppress-complete',
-			),
-		);
-
-		$form = new HTMLForm( $formFields );
-		$form->setTitle( SpecialPage::getTitleFor( 'LanguageStats' ) );
-
-		return $form;
-*/
-
-		$out  = Xml::openElement( 'div', array( 'class' => 'languagecode' ) );
+		$out = Xml::openElement( 'div', array( 'class' => 'languagecode' ) );
 		$out .= Xml::openElement( 'form', array( 'method' => 'get', 'action' => $wgScript ) );
 		$out .= Xml::hidden( 'title', $t->getPrefixedText() );
 		$out .= Xml::openElement( 'fieldset' );
@@ -89,10 +77,10 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$out .= Xml::openElement( 'table', array( 'id' => 'langcodeselect', 'class' => 'allpages' ) );
 
 		$out .= Xml::openElement( 'tr' );
-		$out .= Xml::openElement( 'td', array( 'class' => 'mw-label'  ) );
+		$out .= Xml::openElement( 'td', array( 'class' => 'mw-label' ) );
 		$out .= Xml::label( wfMsg( 'translate-language-code-field-name' ), 'code' );
 		$out .= Xml::closeElement( 'td' );
-		$out .= Xml::openElement( 'td', array( 'class' => 'mw-input'  ) );
+		$out .= Xml::openElement( 'td', array( 'class' => 'mw-input' ) );
 		$out .= Xml::input( 'code', 30, str_replace( '_', ' ', $code ), array( 'id' => 'code' ) );
 		$out .= Xml::closeElement( 'td' );
 		$out .= Xml::closeElement( 'tr' );
