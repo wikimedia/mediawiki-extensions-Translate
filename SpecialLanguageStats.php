@@ -41,7 +41,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			global $wgUser;
 
 			if ( $wgUser->isLoggedIn() ) {
-				global $wgLnng;
+				global $wgLang;
 
 				$code = $wgLang->getCode();
 			}
