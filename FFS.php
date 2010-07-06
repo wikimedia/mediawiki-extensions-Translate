@@ -364,7 +364,6 @@ class JavaFFS extends SimpleFFS {
 }
 
 abstract class JavaScriptFFS extends SimpleFFS {
-
 	/**
 	 * Message keys format.
 	 */
@@ -381,7 +380,6 @@ abstract class JavaScriptFFS extends SimpleFFS {
 	abstract protected function footer();
 
 	public function readFromVariable( $data ) {
-
 		/* Pre-processing */
 
 		// Find the start and end of the data section (enclosed in curly braces).
@@ -434,8 +432,12 @@ abstract class JavaScriptFFS extends SimpleFFS {
 			$value = trim( $value, '\'"' );
 
 			// Unescape any JavaScript and append to message array.
-			$messages[ $key ] = self::unescapeJsString( $value );
+			$messages[$key] = self::unescapeJsString( $value );
 		}
+
+		$messages = $this->group->getMangler()->mangle( $messages );
+
+		// FIXME: authors missing?
 
 		return array( 'MESSAGES' => $messages );
 	}
