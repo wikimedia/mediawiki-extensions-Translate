@@ -380,7 +380,18 @@ abstract class JavaScriptFFS extends SimpleFFS {
 	abstract protected function footer();
 
 	public function readFromVariable( $data ) {
-		/* Pre-processing */
+		/* Parse authors list */
+		$authors = preg_replace( "#/\* Translators\:\n(.*?)\n \*/(.*)#s", '$1', $data );
+		if( $authors === $data ) {
+			$authors = array();
+		} else {
+			$authors = explode( "\n", $authors );
+			for( $i = 0; $i < count( $authors ); $i++ ) {
+				$authors[$i] = substr( $authors[$i], 6 );
+			}
+		}
+
+		/* Pre-processing of messages */
 
 		// Find the start and end of the data section (enclosed in curly braces).
 		$dataStart = strpos( $data, '{' );
@@ -397,7 +408,7 @@ abstract class JavaScriptFFS extends SimpleFFS {
 		// Strip excess whitespace.
 		$data = trim( $data );
 
-		/* Per-key message */
+		/* Per-key message processing */
 
 		// Break in to segments.
 		$data = explode( "\",\n", $data );
@@ -407,11 +418,10 @@ abstract class JavaScriptFFS extends SimpleFFS {
 			// Add back trailing quote, removed by explosion.
 			$segment .= '"';
 
-			// Concatenate separate strings.
+			// Concatenate separated strings.
 			$segment = explode( '" +', $segment );
 			for( $i = 0; $i < count( $segment ); $i++ ) {
-				$segment[$i] = ltrim( $segment[$i] );
-				$segment[$i] = ltrim( $segment[$i], '"' );
+				$segment[$i] = ltrim( ltrim( $segment[$i] ), '"' );
 			}
 			$segment = implode( $segment );
 
@@ -420,37 +430,36 @@ abstract class JavaScriptFFS extends SimpleFFS {
 
 			// Break in to key and message.
 			$segments = explode( ': "', $segment );
-			$key = $segments[ 0 ];
-			$value = $segments[1];
 
-			// Strip excess whitespace from key and value.
-			$key = trim( $key );
-			$value = trim( $value );
+			// Strip excess whitespace from key and value, then quotation marks.
+			$key = trim( trim( $segments[0] ), '\'"' );
+			$value = trim( trim( $segments[1] ), '\'"' );
 
-			// Strip quotation marks.
-			$key = trim( $key, '\'"' );
-			$value = trim( $value, '\'"' );
-
-			// Unescape any JavaScript and append to message array.
+			// Unescape any JavaScript string syntax and append to message array.
 			$messages[$key] = self::unescapeJsString( $value );
 		}
 
 		$messages = $this->group->getMangler()->mangle( $messages );
 
-		// FIXME: authors missing?
-
-		return array( 'MESSAGES' => $messages );
+		return array(
+			'AUTHORS' => $authors,
+			'MESSAGES' => $messages
+		);
 	}
 
 	public function writeIntoVariable( MessageCollection $collection ) {
 		$r = $this->header( $collection->code, $collection->getAuthors() );
 
+		$mangler = $this->group->getMangler();
+
 		// Get and write messages.
 		foreach ( $collection as $message ) {
-			$key   = $this->transformKey( Xml::escapeJsString( $message->key()         ) );
-			$value =                      Xml::escapeJsString( $message->translation() );
+			$key = $mangler->unmangle( $message->key() );
+			$key = $this->transformKey( Xml::escapeJsString( $key ) );
 
-			$r .= "    {$key}: \"{$value}\",\n\n";
+			$translation = Xml::escapeJsString( $message->translation() );
+
+			$r .= "    {$key}: \"{$translation}\",\n\n";
 		}
 
 		// Strip last comma, re-add trailing newlines.
@@ -461,19 +470,12 @@ abstract class JavaScriptFFS extends SimpleFFS {
 	}
 
 	protected function authorsList( $authors ) {
-		if( count( $authors ) > 0 ) {
-			foreach ( $authors as $author ) {
-				$authorsList .= " *  - $author\n";
-			}
-			return <<<EOT
-/* Translators:
-$authorsList */
+		if( count( $authors ) === 0 ) return '';
 
-
-EOT;
-		} else {
-			return '';
+		foreach ( $authors as $author ) {
+			$authorsList .= " *  - $author\n";
 		}
+		return "/* Translators:\n$authorsList */\n\n";
 	}
 
 	private static function unescapeJsString( $string ) {
@@ -547,14 +549,8 @@ class ShapadoJsFFS extends JavaScriptFFS {
 	}
 
 	protected function header( $code, $authors ) {
-
 		$authorsList = $this->authorsList( $authors );
-
-		return <<<EOT
-{$authorsList}var I18n = {
-
-
-EOT;
+		return "{$authorsList}var I18n = {\n\n";
 	}
 
 	protected function footer() {
