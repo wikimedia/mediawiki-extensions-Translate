@@ -2486,6 +2486,7 @@ Text vum Abschnitt: <pre>$1</pre>',
 	'pt-movepage-new' => 'Neien Numm:',
 	'pt-movepage-reason' => 'Grond:',
 	'pt-movepage-subpages' => 'All Ënnersäite réckelen',
+	'pt-movepage-action-check' => "Nokucken ob d'Réckele méiglech ass",
 	'pt-movepage-action-perform' => 'Réckelen',
 	'pt-movepage-logreason' => 'Deel vun der iwwersetzbarer Säit $1.',
 );
@@ -3132,6 +3133,9 @@ $messages['ps'] = array(
 	'translate-tag-translate-link-desc' => 'همدا مخ ژباړل',
 	'translate-tag-markthis' => 'همدا مخ د ژباړې لپاره په نښه کول',
 	'tpt-languages-legend' => 'نورې ژبې:',
+	'pt-movepage-current' => 'اوسنی نوم:',
+	'pt-movepage-new' => 'نوی نوم:',
+	'pt-movepage-reason' => 'سبب:',
 );
 
 /** Portuguese (Português)
@@ -3456,6 +3460,15 @@ $messages['ru'] = array(
 	'pt-log-moveok' => '{{GENDER:$2|произвёл|произвела}} переименование доступной для перевода страницы $1',
 	'pt-log-movenok' => '{{GENDER:$2|вызвал|вызвала}} ошибку при переименовании [[:$1]] в [[:$3]]',
 	'pt-movepage-title' => 'Переименование доступной для перевода страницы $1',
+	'pt-movepage-blockers' => 'Страница с возможностью перевода не может быть переименована из-за {{PLURAL:$1|следующей ошибки|следующих ошибок}}:',
+	'pt-movepage-block-base-exists' => 'Основная целевая страница [[:$1]] уже существует.',
+	'pt-movepage-block-base-invalid' => 'Недопустимое название основной целевой страницы.',
+	'pt-movepage-block-tp-exists' => 'Перевод целевой страницы [[:$2]] уже существует.',
+	'pt-movepage-block-tp-invalid' => 'Название перевода целевой страницы [[:$1]] будет считаться недействительным (возможно, слишком длинное).',
+	'pt-movepage-block-section-exists' => 'Раздел целевой страницы [[:$1]] уже существует.',
+	'pt-movepage-block-section-invalid' => 'Название раздела целевой страницы [[:$1]] будет считаться недействительным (возможно, слишком длинным).',
+	'pt-movepage-block-subpage-exists' => 'Целевая подстраница [[:$2]] уже существует.',
+	'pt-movepage-block-subpage-invalid' => 'Название целевой подстраницы [[:$1]] будет считаться недействительным (возможно, слишком длинным).',
 	'pt-movepage-list-pages' => 'Список страниц для переименования',
 	'pt-movepage-list-other' => 'Другие подстраницы',
 	'pt-movepage-current' => 'Текущее название:',
@@ -3725,9 +3738,27 @@ $messages['stq'] = array(
 	'translate-tag-translate-link-desc' => 'Disse Siede uursätte',
 );
 
+/** Sundanese (Basa Sunda)
+ * @author Kandar
+ */
+$messages['su'] = array(
+	'pagetranslation' => 'Alihbasa kaca',
+	'tpt-diff-old' => 'Téks saméméhna',
+	'tpt-diff-new' => 'Téks anyar',
+	'tpt-nosuchpage' => 'Kaca $1 euweuh.',
+	'pt-movepage-current' => 'Ngaran ayeuna:',
+	'pt-movepage-new' => 'Ngaran anyar:',
+	'pt-movepage-reason' => 'Alesan:',
+	'pt-movepage-subpages' => 'Pindahkeun sakabéh subkaca',
+	'pt-movepage-action-check' => 'Pariksa susuganan bisa dipindahkeun',
+	'pt-movepage-action-perform' => 'Pindahkeun',
+	'pt-movepage-action-other' => 'Ganti tujul',
+);
+
 /** Swedish (Svenska)
  * @author Dafer45
  * @author Fluff
+ * @author Jopparn
  * @author M.M.S.
  * @author Najami
  * @author Rotsee
@@ -3765,6 +3796,7 @@ Innan den här versionen märks för översättning, kontrollera att förändrin
 	'tpt-rev-latest' => 'senaste versionen',
 	'tpt-rev-old' => 'skillnad mot föregående markerad version',
 	'tpt-rev-mark-new' => 'märk den här versionen för översättning',
+	'tpt-rev-unmark' => 'Radera denna sida från översättning',
 	'tpt-translate-this' => 'översätt den här sidan',
 	'translate-tag-translate-link-desc' => 'Översätt den här sidan',
 	'translate-tag-markthis' => 'Märk den här sidan för översättning',
@@ -3775,8 +3807,23 @@ Innan den här versionen märks för översättning, kontrollera att förändrin
 	'tpt-languages-legend' => 'Andra språk:',
 	'tpt-target-page' => 'Den här sidan kan inte uppdateras manuellt. Den här sidan är en översättning av [[$1]] och översättningen kan uppdateras genom att använda [$2 översättningsverktyget].',
 	'tpt-unknown-page' => 'Den här namnrymden är reserverad för översättningar av sidor. Sidan du försöker redigera verkar inte stämma överens med någon sida som är märkt för översättning.',
+	'tpt-delete-impossible' => 'Radera sidor som markerats för översättning är ännu inte är möjligt.',
+	'tpt-install' => 'Kör php-underhåll/update.php eller webb-installation för att  möjliggöra sidans översättningsfunktioner.',
 	'tpt-render-summary' => 'Uppdaterar för att matcha den nya versionen av källpaketet',
 	'tpt-download-page' => 'Exportera sidan med översättningar',
+	'pt-movepage-list-pages' => 'Lista över sidor att flytta',
+	'pt-movepage-list-translation' => 'Översättningssidor',
+	'pt-movepage-list-section' => 'Avsnittssidor',
+	'pt-movepage-list-other' => 'Andra undersidor',
+	'pt-movepage-legend' => 'Flytta översättningsbar sida',
+	'pt-movepage-current' => 'Nuvarande namn:',
+	'pt-movepage-new' => 'Nytt namn:',
+	'pt-movepage-reason' => 'Orsak:',
+	'pt-movepage-subpages' => 'Flytta alla undersidor',
+	'pt-movepage-action-check' => 'Kontrollera om flytten är möjligt',
+	'pt-movepage-action-perform' => 'Genomför flytten',
+	'pt-movepage-action-other' => 'Ändra mål',
+	'pt-locked-page' => 'Denna sida är låst eftersom den översättningsbara sidan håller på att flyttas.',
 );
 
 /** Telugu (తెలుగు)
@@ -4059,6 +4106,7 @@ $messages['uk'] = array(
 	'tpt-languages-legend' => 'Інші мови:',
 	'tpt-download-page' => 'Експортувати сторінку з перекладами',
 	'pt-log-name' => 'Журнал перекладу сторінок',
+	'pt-log-mark' => '{{GENDER:$2|позначив|позначила}} для перекладу версію $3 сторінки "[[:$1]]"',
 );
 
 /** Vèneto (Vèneto)
@@ -4134,6 +4182,7 @@ Trước khi đánh dấu phiên bản này chờ dịch, hãy kiểm tra nhữn
 Nó là một bản dịch của trang [[$1]] và có thể cập nhật bản dịch bằng cách sử dụng [$2 công cụ dịch thuật].',
 	'tpt-unknown-page' => 'Không gian tên này được dành cho các bản dịch trang nội dung.
 Trang bạn muốn sửa đổi dường như không tương ứng với trang nào đã được đánh dấu cần dịch.',
+	'tpt-delete-impossible' => 'Chưa có thể xóa những trang được đánh dấu là cần dịch',
 	'tpt-install' => 'Chạy php maintenance/update.php hoặc cài đặt web để bật tính năng dịch trang.',
 	'tpt-render-summary' => 'Cập nhật đến phiên bản mới của trang nguồn',
 	'tpt-download-page' => 'Xuất trang cùng các bản dịch',
@@ -4152,14 +4201,25 @@ Phần văn bản: <pre>$1</pre>',
 	'pt-log-name' => 'Nhật trình dịch trang',
 	'pt-log-mark' => '{{GENDER:$2|}}đã đánh dấu phiên bản $3 của trang “[[:$1]]” là cần được dịch',
 	'pt-log-unmark' => '{{GENDER:$2|đã di chuyển}} trang "[[:$1]]" từ bản dịch',
+	'pt-log-moveok' => 'đã hoàn thành việc đổi tên của trang dịch được $1',
+	'pt-log-movenok' => 'đã gặp vấn đề trong khi di chuyển [[:$1]] đến [[:$3]]',
+	'pt-movepage-title' => 'Di chuyển trang dịch được $1',
+	'pt-movepage-blockers' => 'Trang dịch được không thể được đổi tên vì {{PLURAL:$1|lỗi|các lỗi}} sau:',
 	'pt-movepage-list-pages' => 'Danh sách trang để di chuyển',
 	'pt-movepage-list-translation' => 'Trang dịch thuật',
+	'pt-movepage-list-section' => 'Trang phần',
+	'pt-movepage-list-other' => 'Những trang phụ khác',
+	'pt-movepage-list-count' => 'Tổng cộng có $1 trang để di chuyển.',
 	'pt-movepage-current' => 'Tên hiện hành:',
 	'pt-movepage-new' => 'Tên mới:',
 	'pt-movepage-reason' => 'Lý do:',
 	'pt-movepage-subpages' => 'Di chuyển các trang phụ',
 	'pt-movepage-action-check' => 'Kiểm tra có thể di chuyển',
 	'pt-movepage-action-perform' => 'Di chuyển',
+	'pt-movepage-logreason' => 'Một phần của trang dịch được $1.',
+	'pt-movepage-started' => 'Trang gốc đã được di chuyển.
+Xin hãy kiểm tra những lỗi hay thông điệp kết quả thành công trong nhật trình dịch trang.',
+	'pt-locked-page' => 'Trang này bị khóa vì trang dịch được hiện đang được di chuyển.',
 );
 
 /** Volapük (Volapük)

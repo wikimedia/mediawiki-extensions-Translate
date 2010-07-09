@@ -10991,7 +10991,7 @@ $messages['mk'] = array(
 	'translate-edit-goto-prev' => 'Уреди претходна порака',
 	'translate-edit-goto-next' => 'Уреди следна порака',
 	'translate-edit-goto-list' => 'Назад кон списокот',
-	'translate-magic-pagename' => 'Превод на MediaWiki додатоци',
+	'translate-magic-pagename' => 'Превод на додатоци за МедијаВики',
 	'translate-magic-help' => "Можете да ги преведете алијасите на специјалните страници, волшебните зборови и називите на именските простори.
 
 Алијасите на специјалните страници и волшебните зборови може да имаат повеќе преводи.
@@ -11051,7 +11051,7 @@ $messages['mk'] = array(
 	'translate-pref-jsedit' => 'Подобрен уредник на преводи (JavaScript)',
 	'right-translate' => 'Уредување со користење на посредникот за преведување',
 	'right-translate-manage' => 'Раководење со преводни групи',
-	'right-translate-import' => 'Увезување на преводи од компјутер',
+	'right-translate-import' => 'Увезување на преводи од сметач (безмрежни)',
 	'translate-rc-translation-filter' => 'Филтрирање на преводи:',
 	'translate-rc-translation-filter-no' => 'Не прави ништо',
 	'translate-rc-translation-filter-only' => 'Прикажи само преводи',
@@ -14173,6 +14173,7 @@ Sche vus savais nua e co che quai messadi vegn duvrà, pudais vus gidar auters t
 /** Romanian (Română)
  * @author Firilacroco
  * @author KlaudiuMihaila
+ * @author Minisarm
  */
 $messages['ro'] = array(
 	'translate' => 'Traducere',
@@ -14279,6 +14280,7 @@ Dacă știți unde sau cum este folosit acest mesaj, îi puteți ajuta pe ceilal
 	'translate-translations-messagename' => 'Nume:',
 	'translate-translations-project' => 'Proiect:',
 	'languagestats' => 'Statistici de limbă',
+	'languagestats-recenttranslations' => 'schimbări recente',
 	'translate-language-code' => 'Codul limbii',
 	'translate-language-code-field-name' => 'Codul limbii:',
 	'translate-suppress-complete' => 'Ascunde grupurile de mesaje traduse complet',
@@ -14986,6 +14988,7 @@ $messages['si'] = array(
 	'translate-untranslated' => 'පරිවර්තනය නොකල',
 	'translate-percentage-complete' => 'සමාප්තිය',
 	'translate-percentage-fuzzy' => 'යල් පැන ගිය',
+	'translate-save' => '($1) සුරකින්න',
 	'translate-jssti-add' => 'ලැයිස්තුවට එක් කරන්න',
 	'translate-manage-modlang-new' => '$1 (නව)',
 	'translate-manage-import-new' => 'නව පණිවුඩය $1',
@@ -15863,6 +15866,17 @@ Sve vrednosti imaju svoja gornja i donja ograničenja.',
 Ipak bi možda bilo dobro da ih pregledate na [[Special:Translate|{{int:translate}}]].',
 	'supportedlanguages' => 'Podržani jezici',
 	'translate-save' => 'Snimi ($1)',
+	'translate-manage-cacheat' => 'Uvezeno $1, u $2',
+	'translate-manage-modlang-new' => '$1 (novo)',
+	'translate-manage-import-diff' => 'Poruka $1 | Kacija: $2',
+	'translate-manage-import-new' => 'Nova poruka $1',
+	'translate-manage-import-deleted' => 'Obrisana poruka $1',
+	'translate-manage-action-import' => 'Uvezi',
+	'translate-manage-action-conflict' => 'Uvezi i fuzzy',
+	'translate-manage-action-ignore' => 'Ignoriši',
+	'translate-manage-submit' => 'Izvrši',
+	'translate-import-from-wiki' => 'Fajl na ovom Vikiju:',
+	'translate-import-from-local' => 'Slanje lokalnog fajla:',
 );
 
 /** Swati (SiSwati)
