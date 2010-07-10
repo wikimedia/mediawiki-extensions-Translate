@@ -2488,6 +2488,7 @@ Text vum Abschnitt: <pre>$1</pre>',
 	'pt-movepage-subpages' => 'All Ënnersäite réckelen',
 	'pt-movepage-action-check' => "Nokucken ob d'Réckele méiglech ass",
 	'pt-movepage-action-perform' => 'Réckelen',
+	'pt-movepage-action-other' => 'Zil änneren',
 	'pt-movepage-logreason' => 'Deel vun der iwwersetzbarer Säit $1.',
 );
 
@@ -3133,6 +3134,7 @@ $messages['ps'] = array(
 	'translate-tag-translate-link-desc' => 'همدا مخ ژباړل',
 	'translate-tag-markthis' => 'همدا مخ د ژباړې لپاره په نښه کول',
 	'tpt-languages-legend' => 'نورې ژبې:',
+	'pt-movepage-list-translation' => 'د ژباړې مخونه',
 	'pt-movepage-current' => 'اوسنی نوم:',
 	'pt-movepage-new' => 'نوی نوم:',
 	'pt-movepage-reason' => 'سبب:',
@@ -3307,7 +3309,7 @@ Antes de marcar esta versão para tradução, verifique se as mudanças nas seç
 Esta página é uma tradução da página [[$1]] e a tradução pode ser atualizada usando [$2 a ferramenta de tradução].',
 	'tpt-unknown-page' => 'Este domínio é reservado para traduções de páginas de conteúdo.
 Esta página que você está tentando editar não aparenta corresponder a nenhuma página marcada para tradução.',
-	'tpt-move-impossible' => 'Ainda não é possível mover páginas marcadas para tradução.',
+	'tpt-delete-impossible' => 'Ainda não é possível eliminar páginas marcadas para tradução.',
 	'tpt-install' => 'Execute a manutenção do php/update.php ou a instalação "web" para habilitar a funcionalidade de tradução de páginas.',
 	'tpt-render-summary' => 'Atualizando para corresponder a nova versão da página fonte',
 	'tpt-download-page' => 'Exportar página com traduções',
@@ -3326,6 +3328,40 @@ Texto da seção: <pre>$1</pre>',
 	'pt-log-name' => 'Registro de tradução de páginas',
 	'pt-log-mark' => '{{GENDER:$2|marcou}} a edição $3 da página "[[:$1]]" para tradução.',
 	'pt-log-unmark' => '{{GENDER:$2|removeu}} a página "[[:$1]]" de tradução.',
+	'pt-log-moveok' => '{{GENDER:$2|alterou o nome}} da página traduzível $1 para [[:$3]]',
+	'pt-log-movenok' => '{{GENDER:$2|encontrou}} um problema ao mover [[:$1]] para [[:$3]]',
+	'pt-movepage-title' => 'Mover a página traduzível $1',
+	'pt-movepage-blockers' => 'A página traduzível não pode ser movida para outro nome devido {{PLURAL:$1|ao seguinte erro|aos seguintes erros}}:',
+	'pt-movepage-block-base-exists' => 'A página base de destino [[:$1]] existe.',
+	'pt-movepage-block-base-invalid' => 'A página base de destino não tem um título válido.',
+	'pt-movepage-block-tp-exists' => 'A página de tradução de destino [[:$2]] existe.',
+	'pt-movepage-block-tp-invalid' => 'O título da página de tradução de destino para [[:$1]] seria inválido (talvez demasiado longo).',
+	'pt-movepage-block-section-exists' => 'A página da seção de destino [[:$2]] existe.',
+	'pt-movepage-block-section-invalid' => 'O título da página da seção de destino para [[:$1]] seria inválido (talvez demasiado longo).',
+	'pt-movepage-block-subpage-exists' => 'A subpágina de destino [[:$2]] existe.',
+	'pt-movepage-block-subpage-invalid' => 'O título da subpágina de destino para [[:$1]] seria inválido (talvez demasiado longo).',
+	'pt-movepage-list-pages' => 'Lista de páginas para serem movidas',
+	'pt-movepage-list-translation' => 'Páginas de tradução',
+	'pt-movepage-list-section' => 'Páginas de seção',
+	'pt-movepage-list-other' => 'Outras subpáginas',
+	'pt-movepage-list-count' => 'No total, $1 {{PLURAL:$1|página para ser movida|páginas para serem movidas}}.',
+	'pt-movepage-legend' => 'Mover página traduzível',
+	'pt-movepage-current' => 'Nome atual:',
+	'pt-movepage-new' => 'Nome novo:',
+	'pt-movepage-reason' => 'Motivo:',
+	'pt-movepage-subpages' => 'Mover todas as subpáginas',
+	'pt-movepage-action-check' => 'Verificar se a movimentação é possível',
+	'pt-movepage-action-perform' => 'Realizar a movimentação',
+	'pt-movepage-action-other' => 'Alterar o destino',
+	'pt-movepage-intro' => 'Esta página especial permite-lhe mover páginas que estão marcadas para tradução.
+A operação de movimentação não é instantânea, porque será necessário mover muitas páginas.
+A fila de tarefas será usada para mover as páginas.
+Enquanto estão a ser movidas, não é possível interagir com as páginas em questão.
+As falhas serão registradas no registro de tradução de páginas e necessitam de ser reparadas manualmente.',
+	'pt-movepage-logreason' => 'Parte da página traduzível $1.',
+	'pt-movepage-started' => 'A página base foi movida.
+Verifique no registo de tradução de páginas se ocorreram erros e se existe a mensagem de conclusão, por favor.',
+	'pt-locked-page' => 'Está página está bloqueada porque a página traduzível está sendo movida.',
 );
 
 /** Romansh (Rumantsch)

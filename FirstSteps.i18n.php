@@ -461,21 +461,21 @@ Hasta que arreglemos el código, por favor ve a [[Project:Translator]] y sigue l
 Después que hayas enviado tu solicitud, uno de los miembros del staff de voluntarios verificará tu solicitud y lo aprobará tan pronto como sea posible. Por favor se paciente.
 
 <del>Verifica que la siguiente solicitud está correctamente llenada y luego presiona el botón de solicitud.</del>',
-	'translate-fs-target-text' => "Felicitaciones!
+	'translate-fs-target-text' => 'Felicitaciones!
 Puedes ahora comenzar a traducir.
 
 No temas si lo sientes nuevo y confuso para ti.
 En la [[Project list]] hay una visión general de los proyectos en los que puedes contribuir con traducciones.
-La mayoría de los proyectos tiene una página de descripción corta con un enlace \"''Traducir este proyecto''\", que te llevará a una página que lista todos los mensajes sin traducir.
+La mayoría de los proyectos tiene una página de descripción corta con un enlace "\'\'Traducir este proyecto\'\'", que te llevará a una página que lista todos los mensajes sin traducir.
 Una lista de todos los grupos de mensajes con el [[Special:LanguageStats|status de traducción actual para un idioma]] está también disponible.
 
 Si sientes que necesitas entender más antes de empezar a traducir, puedes leer las [[FAQ|Preguntas frecuentes]].
 Desafortunadamente la documentación puede estar desactualizada a veces.
 Si hay algo que pienses que deberías ser capaz de hacer, pero no cómo, no dudes en preguntarlo en la [[Support|página de soporte]].
 
-Puedes también contactar con otros traductores al mismo idioma en el [[Portal:\$1|portal de tu idioma]].
+Puedes también contactar con otros traductores al mismo idioma en la [[Portal_talk:$1|página de discusión]] del [[Portal:$1|portal de tu idioma]].
 El portal enlaza a tu [[Special:Preferences|preferencia de idioma]] actual.
-Por favor cámbialo si es necesario.",
+Por favor cámbialo si es necesario.',
 	'translate-fs-email-text' => 'Por favor brinda tu dirección de correo electrónico en [[Special:Preferences|tus preferencias]] y confírmalo desde el correo que se te envíe.
 
 Esto permite a los otros usuarios contactarte por correo electrónico.
@@ -870,7 +870,7 @@ $messages['ia'] = array(
 	'translate-fs-intro' => "Benvenite al assistente de initiation de {{SITENAME}}.
 Tu essera guidate passo a passo trans le processo de devenir traductor.
 Al fin tu potera traducer le ''messages de interfacie'' de tote le projectos supportate in {{SITENAME}}.",
-	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount.png|frame]]
+	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount-ia.png|frame]]
 
 In le prime passo tu debe crear un conto.
 
@@ -1373,6 +1373,7 @@ $messages['pl'] = array(
 $messages['ps'] = array(
 	'translate-fs-pagetitle-done' => ' - ترسره شو!',
 	'translate-fs-signup-title' => 'نومليکل',
+	'translate-fs-permissions-title' => 'د ژباړې د اجازې غوښتنه',
 	'translate-fs-target-title' => 'په ژباړې پيل وکړۍ',
 );
 
@@ -1543,20 +1544,19 @@ Seja paciente, por favor.
 
 <del>Verifique que o seguinte pedido está preenchido corretamente e depois clique o botão.</del>',
 	'translate-fs-target-text' => 'Parabéns!
-Agora você pode começar a traduzir.
+Agora pode começar a traduzir.
 
-Não tenha medo se tudo lhe parecer ainda novo e confuso.
-Na [[Project list|lista de projetos]] há um resumo dos projetos para os quais pode contribuir com traduções.
+Não tenha medo se tudo lhe parecer ainda novo e confuso. 
+Na [[Project list|lista de projetos]] há um resumo dos projetos de tradução em que você pode colaborar.
 A maioria dos projetos tem uma página de descrição breve com um link "Traduza este projeto", que o leva a uma página com todas as mensagens ainda por traduzir.
 Também está disponível uma lista de todos os grupos de mensagens com o [[Special:LanguageStats|estado presente de tradução para uma língua]].
 
-Se acredita que precisa de compreender melhor antes de começar a traduzir, pode ler as [[FAQ|perguntas frequentes]].
+Se acredita que precisa de compreender o processo melhor antes de começar a traduzir, pode ler as [[FAQ|perguntas frequentes]].
 Infelizmente a documentação pode, por vezes, estar desatualizada.
 Se há alguma coisa que acha que devia poder fazer, mas não consegue descobrir como, não hesite em perguntar na [[Support|página de suporte]].
 
-Pode também contatar os outros tradutores da mesma língua no [[Portal:$1|portal da sua língua]].
-O portal leva-o à [[Special:Preferences|língua selecionada nas suas preferências]].
-Altere-a se for necessário, por favor.',
+Pode também contatar os outros tradutores da mesma língua na [[Portal_talk:$1|página de discussão]] do [[Portal:$1|portal da sua língua]].
+Se ainda não o fez, [[Special:Preferences|defina como a sua língua da interface a língua para a qual pretende traduzir]]. Isto permite que a wiki lhe apresente os links mais relevantes para você.',
 	'translate-fs-email-text' => 'Forneça o seu endereço de e-mail nas [[Special:Preferences|suas preferências]] e confirme-o a partir da mensagem que lhe será enviada.
 
 Isto permite que os outros utilizadores o contatem por e-mail.
