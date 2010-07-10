@@ -290,16 +290,12 @@ class SpecialTranslationStats extends SpecialPage {
 		if ( $opts['scale'] === 'hours' ) $increment = 3600;
 
 		$labels = $so->labels();
-		if ( count($labels) ) {
-			$keys = array_keys( $labels );
-			$values = array_pad( array(), count( $labels ), 0 );
-			$defaults = array_combine( $keys, $values );
-		} else {
-			$defaults = array( '0' => '0' );
-		}
+		$keys = array_keys( $labels );
+		$values = array_pad( array(), count( $labels ), 0 );
+		$defaults = array_combine( $keys, $values );
 
 		$data = array();
-		while ( $cutoff < $now ) {
+		while ( $cutoff <= $now+$increment ) {
 			$date = $wgLang->sprintfDate( $dateFormat, wfTimestamp( TS_MW, $cutoff ) );
 			$cutoff += $increment;
 			$data[$date] = $defaults;
@@ -317,6 +313,11 @@ class SpecialTranslationStats extends SpecialPage {
 				if ( !isset( $labelToIndex[$i] ) ) continue;
 				$data[$date][$labelToIndex[$i]]++;
 			}
+		}
+
+		// Don't display dummy label
+		if ( count( $labels ) === 1 && $labels[0] === 'all' ) {
+			$labels = array();
 		}
 
 		return array( $labels, $data );
@@ -378,7 +379,6 @@ class SpecialTranslationStats extends SpecialPage {
 
 		$plot->SetTransparentColor( 'white' );
 		$plot->SetBackgroundColor( 'white' );
-		// $plot->SetFileFormat('gif');
 
 		// Draw it
 		$plot->DrawGraph();
@@ -489,7 +489,7 @@ class TranslatePerLanguageStats {
 		} elseif ( $group || $code ) {
 			return "$group$code";
 		} else {
-			return "Test";
+			return 'all';
 		}
 	}
 
