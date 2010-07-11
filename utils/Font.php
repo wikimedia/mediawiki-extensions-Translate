@@ -8,6 +8,21 @@
 
 class FCFontFinder {
 	public static function find( $code ) {
+		if ( ini_get( 'open_basedir' ) ) {
+			wfDebugLog( 'fcfont', 'Disabled because of open_basedir is active' );
+			// Most likely we can't access any fonts we might find
+			return false;
+		}
+
+		$cache = self::getCache();
+		$cachekey = wfMemckey( 'fcfont', $code );
+		$timeout = 60*60*12;
+
+		$cached = $cache->get( $cachekey  );
+		if ( is_string( $cached ) ) {
+			return $cached === 'NEGATIVE' ? false : $cached;
+		}
+
 		$code = wfEscapeShellArg( ":lang=$code" );
 		$ok = 0;
 		$cmd = "fc-match $code";
@@ -17,6 +32,7 @@ class FCFontFinder {
 
 		if ( $ok !== 0 ) {
 			wfDebugLog( 'fcfont', "fc-match error output: $suggestion" );
+			$cache->set( $cachekey, 'NEGATIVE', $timeout );
 			return false;
 		}
 
@@ -25,6 +41,7 @@ class FCFontFinder {
 
 		if ( !preg_match( $pattern, $suggestion, $matches ) ) {
 			wfDebugLog( 'fcfont', "fc-match: return format not understood: $suggestion" );
+			$cache->set( $cachekey, 'NEGATIVE', $timeout );
 			return false;
 		}
 
@@ -42,6 +59,7 @@ class FCFontFinder {
 
 		if ( $ok !== 0 ) {
 			wfDebugLog( 'fcfont', "fc-list error output: $candidates" );
+			$cache->set( $cachekey, 'NEGATIVE', $timeout );
 			return false;
 		}
 
@@ -56,6 +74,11 @@ class FCFontFinder {
 		$chosen = substr( $files[0], 0, -1 );
 
 		wfDebugLog( 'fcfont', "fc-list got $count candidates; using $chosen" );
+		$cache->set( $cachekey, $chosen, $timeout );
 		return $chosen;
+	}
+
+	protected static function getCache() {
+		return wfGetCache( CACHE_ANYTHING );
 	}
 }
