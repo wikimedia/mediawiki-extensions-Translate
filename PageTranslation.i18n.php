@@ -1201,7 +1201,6 @@ pero la última versión no puede ser marcada para traducción.',
 Esta página es una traducción de la página [[$1]] y la traducción puede ser actualizada usando [$2 la herramienta de traducción].',
 	'tpt-unknown-page' => 'Este espacio de nombre está reservado para traducciones de páginas de contenido.
 La página que estás tratando de editar no parece corresponder con alguna página marcada para traducción.',
-	'tpt-move-impossible' => 'Mover páginas marcadas para traducción no es aún posible.',
 	'tpt-install' => 'Corra maintenance/update.php o instale desde la web para activar las funciones de traducción.',
 	'tpt-render-summary' => 'Actualizando para hallar una nueva versión de la página fuente',
 	'tpt-download-page' => 'Exportar página con traducciones',
@@ -1220,6 +1219,19 @@ Texto de sección: <pre>$1</pre>',
 	'pt-log-name' => 'Registro de traducción de página',
 	'pt-log-mark' => 'Revisión {{GENDER:$2|marcada}} $3 de página "[[:$1]]" para traducción',
 	'pt-log-unmark' => 'Revisión {{GENDER:$2|marcada}} de página "[[:$1]]" para traducción',
+	'pt-movepage-list-pages' => 'Lista de páginas a mover',
+	'pt-movepage-list-translation' => 'Páginas de traducción',
+	'pt-movepage-list-section' => 'Páginas de sección',
+	'pt-movepage-list-other' => 'Otras subpáginas',
+	'pt-movepage-list-count' => 'En total $1 {{PLURAL:$1|página|páginas}} a mover',
+	'pt-movepage-legend' => 'Mover página traducible',
+	'pt-movepage-current' => 'Nombre actual:',
+	'pt-movepage-new' => 'Nuevo nombre:',
+	'pt-movepage-reason' => 'Razón:',
+	'pt-movepage-subpages' => 'Mover todas las subpáginas',
+	'pt-movepage-action-check' => 'Verificar si el movimiento es posible',
+	'pt-movepage-action-perform' => 'Hacer el movimiento',
+	'pt-movepage-action-other' => 'Cambiar destino',
 );
 
 /** Estonian (Eesti)
@@ -3328,7 +3340,7 @@ Texto da seção: <pre>$1</pre>',
 	'pt-log-name' => 'Registro de tradução de páginas',
 	'pt-log-mark' => '{{GENDER:$2|marcou}} a edição $3 da página "[[:$1]]" para tradução.',
 	'pt-log-unmark' => '{{GENDER:$2|removeu}} a página "[[:$1]]" de tradução.',
-	'pt-log-moveok' => '{{GENDER:$2|alterou o nome}} da página traduzível $1 para [[:$3]]',
+	'pt-log-moveok' => '{{GENDER:$2|alterou o nome}} da página traduzível $1 para um nome novo',
 	'pt-log-movenok' => '{{GENDER:$2|encontrou}} um problema ao mover [[:$1]] para [[:$3]]',
 	'pt-movepage-title' => 'Mover a página traduzível $1',
 	'pt-movepage-blockers' => 'A página traduzível não pode ser movida para outro nome devido {{PLURAL:$1|ao seguinte erro|aos seguintes erros}}:',
@@ -3566,6 +3578,7 @@ $messages['sah'] = array(
 
 /** Sinhala (සිංහල)
  * @author චතුනි අලහප්පෙරුම
+ * @author බිඟුවා
  */
 $messages['si'] = array(
 	'tpt-template' => 'පිටු සැකිල්ල',
@@ -3575,6 +3588,7 @@ $messages['si'] = array(
 	'tpt-translate-this' => 'මෙම පිටුව පරිවර්තනය කරන්න',
 	'translate-tag-translate-link-desc' => 'මෙම පිටුව පරිවර්තනය කරන්න',
 	'tpt-languages-legend' => 'වෙනත් භාෂා:',
+	'pt-movepage-action-other' => 'ඉලක්කය මාරු කරන්න',
 );
 
 /** Slovak (Slovenčina)
