@@ -30,13 +30,16 @@ class SpecialTranslationStats extends SpecialPage {
 				$opts[$key] = $value;
 		}
 
-		$opts->validateIntBounds( 'days', 1, 300 );
+		$opts->validateIntBounds( 'days', 1, 10000 );
 		$opts->validateIntBounds( 'width', 200, 1000 );
 		$opts->validateIntBounds( 'height', 200, 1000 );
 
-		$validScales = array( 'days', 'hours' );
+		$validScales = array( 'months', 'weeks', 'days', 'hours' );
 		if ( !in_array( $opts['scale'], $validScales ) ) $opts['scale'] = 'days';
 		if ( $opts['scale'] === 'hours' ) $opts->validateIntBounds( 'days', 1, 4 );
+
+		$validCounts = array( 'edits', 'users', 'registrations' );
+		if ( !in_array( $opts['count'], $validCounts ) ) $opts['count'] = 'edits';
 
 		foreach ( array( 'group', 'language' ) as $t ) {
 			$values = array_map( 'trim', explode( ',', $opts[$t] ) );
@@ -90,8 +93,8 @@ class SpecialTranslationStats extends SpecialPage {
 			$this->eInput( 'height', $opts ) .
 			'<tr><td colspan="2"><hr /></td></tr>' .
 			$this->eInput( 'days', $opts ) .
-			$this->eRadio( 'scale', $opts, array( 'days', 'hours' ) ) .
-			$this->eRadio( 'count', $opts, array( 'edits', 'users' ) ) .
+			$this->eRadio( 'scale', $opts, array( 'months', 'weeks', 'days', 'hours' ) ) .
+			$this->eRadio( 'count', $opts, array( 'edits', 'users', 'registrations' ) ) .
 			'<tr><td colspan="2"><hr /></td></tr>' .
 			$this->eLanguage( 'language', $opts ) .
 			$this->eGroup( 'group', $opts ) .
@@ -255,39 +258,33 @@ class SpecialTranslationStats extends SpecialPage {
 	}
 
 	protected function getData( FormOptions $opts ) {
-		global $wgLang, $wgTranslateMessageNamespaces;
+		global $wgLang;
 		$dbr = wfGetDB( DB_SLAVE );
+
+		if ( $opts['count'] === 'registrations' ) {
+			$so = new TranslateRegistrationStats( $opts );
+		} else {
+			$so = new TranslatePerLanguageStats( $opts );
+		}
 
 		$now = time();
 		$cutoff = $now - ( 3600 * 24 * $opts->getValue( 'days' ) - 1 );
 		if ( $opts['scale'] === 'days' ) $cutoff -= ( $cutoff % 86400 );
-		$cutoffDb = $dbr->timestamp( $cutoff );
 
-		$so = new TranslatePerLanguageStats( $opts );
 
-		$tables = array( 'recentchanges' );
-		$fields = array( 'rc_timestamp' );
-
-		$conds = array(
-			"rc_timestamp >= '$cutoffDb'",
-			'rc_namespace' => $wgTranslateMessageNamespaces,
-			'rc_bot' => 0
-		);
-
+		$tables = array();
+		$fields = array();
+		$conds = array();
 		$type = __METHOD__;
-		$options = array( 'ORDER BY' => 'rc_timestamp' );
+		$options = array();
 
-		$so->preQuery( $tables, $fields, $conds, $type, $options );
+		$so->preQuery( $tables, $fields, $conds, $type, $options, $cutoff );
 		$res = $dbr->select( $tables, $fields, $conds, $type, $options );
+		wfDebug( __METHOD__ . "-queryend\n" );
 
-		// Initialisations
-		$so->postQuery( $res );
-
-		$dateFormat = 'Y-m-d';
-		if ( $opts['scale'] === 'hours' ) $dateFormat .= ';H';
-
-		$increment = 3600 * 24;
-		if ( $opts['scale'] === 'hours' ) $increment = 3600;
+		// Start processing the data
+		$dateFormat = $so->getDateFormat();
+		$increment = self::getIncrement( $opts['scale'] );
 
 		$labels = $so->labels();
 		$keys = array_keys( $labels );
@@ -295,7 +292,8 @@ class SpecialTranslationStats extends SpecialPage {
 		$defaults = array_combine( $keys, $values );
 
 		$data = array();
-		while ( $cutoff <= $now+$increment ) {
+		// Allow 10 seconds in the future for processing time
+		while ( $cutoff <= $now+10 ) {
 			$date = $wgLang->sprintfDate( $dateFormat, wfTimestamp( TS_MW, $cutoff ) );
 			$cutoff += $increment;
 			$data[$date] = $defaults;
@@ -304,13 +302,14 @@ class SpecialTranslationStats extends SpecialPage {
 		// Processing
 		$labelToIndex = array_flip( $labels );
 		foreach ( $res as $row ) {
-			$date = $wgLang->sprintfDate( $dateFormat, $row->rc_timestamp );
-
 			$indexLabels = $so->indexOf( $row );
 			if ( $indexLabels === false ) continue;
 
 			foreach ( (array) $indexLabels as $i ) {
 				if ( !isset( $labelToIndex[$i] ) ) continue;
+				$date = $wgLang->sprintfDate( $dateFormat, $so->getTimestamp( $row ) );
+				// Ignore values outside range
+				if ( !isset($data[$date]) ) continue;
 				$data[$date][$labelToIndex[$i]]++;
 			}
 		}
@@ -371,11 +370,17 @@ class SpecialTranslationStats extends SpecialPage {
 		$plot->SetXTickPos( 'none' );
 		$plot->SetXLabelAngle( 45 );
 
-		$max = max( array_map( 'max', $resData ) );
-		$yTick = 5;
-		while ( $max / $yTick > $height / 20 ) $yTick *= 2;
 
+		$max = max( array_map( 'max', $resData ) );
+		$max = self::roundToSignificant( $max, 1 );
+		$max = round( $max, intval(-log( $max, 10 )) );
+
+		$yTick = 10;
+		while ( $max / $yTick > $height / 20 ) $yTick *= 2;
+		$yTick = self::roundToSignificant( $yTick );
 		$plot->SetYTickIncrement( $yTick );
+		$plot->SetPlotAreaWorld( null, 0, null, $max );
+
 
 		$plot->SetTransparentColor( 'white' );
 		$plot->SetBackgroundColor( 'white' );
@@ -383,18 +388,91 @@ class SpecialTranslationStats extends SpecialPage {
 		// Draw it
 		$plot->DrawGraph();
 	}
+
+	public static function roundToSignificant( $number, $significant = 1 ) {
+		$log = (int) log( $number, 10 );
+		$nonSignificant =  max( 0, $log - $significant + 1 );
+		$factor = pow( 10, $nonSignificant );
+		return intval( ceil( $number / $factor ) * $factor );
+	}
+
+	public static function getIncrement( $scale ) {
+		$increment = 3600 * 24;
+		if ( $scale === 'months' ) {
+			/* We use increment to fill up the values. Use number small enough
+			 * to ensure we hit each month */
+			$increment = 3600*24*15;
+		} elseif ( $scale === 'weeks' ) {
+			$increment = 3600*24*7;
+		} elseif ( $scale === 'hours' ) {
+			$increment = 3600;
+		}
+		return $increment;
+	}
 }
 
-class TranslatePerLanguageStats {
+interface TranslationStatsInterface {
+	public function __construct( FormOptions $opts );
+	public function preQuery( &$tables, &$fields, &$conds, &$type, &$options, $cutoff );
+	public function indexOf( $row );
+	public function labels();
+	public function getTimestamp( $row );
+	public function getDateFormat();
+}
+
+abstract class TranslationStatsBase implements TranslationStatsInterface {
+	/** FormOptions */
 	protected $opts;
-	protected $usercache;
 
 	public function __construct( FormOptions $opts ) {
 		$this->opts = $opts;
 	}
 
-	public function preQuery( &$tables, &$fields, &$conds, &$type, &$options ) {
+	public function indexOf( $row ) {
+		return array( 'all' );
+	}
+
+	public function labels() {
+		return array( 'all' );
+	}
+
+	public function getDateFormat() {
+		$dateFormat = 'Y-m-d';
+		if ( $this->opts['scale'] === 'months' ) {
+			$dateFormat = 'Y-m';
+		} elseif ( $this->opts['scale'] === 'weeks' ) {
+			$dateFormat = 'Y-\WW';
+		} elseif ( $this->opts['scale'] === 'hours' ) {
+			$dateFormat .= ';H';
+		}
+		return $dateFormat;
+	}
+}
+
+class TranslatePerLanguageStats extends TranslationStatsBase {
+	protected $usercache;
+
+	public function __construct( FormOptions $opts ) {
+		parent::__construct( $opts );
+		// This query is slow... ensure a slower limit
+		$opts->validateIntBounds( 'days', 1, 200 );
+	}
+
+	public function preQuery( &$tables, &$fields, &$conds, &$type, &$options, $cutoff ) {
+		global $wgTranslateMessageNamespaces;
+
 		$db = wfGetDB( DB_SLAVE );
+
+		$tables = array( 'recentchanges' );
+		$fields = array( 'rc_timestamp' );
+
+		$conds = array(
+			"rc_timestamp >= '{$db->timestamp( $cutoff )}'",
+			'rc_namespace' => $wgTranslateMessageNamespaces,
+			'rc_bot' => 0
+		);
+
+		$options = array( 'ORDER BY' => 'rc_timestamp' );
 
 		$this->groups = array_filter( array_map( 'trim', explode( ',', $this->opts['group'] ) ) );
 		$this->codes = array_filter( array_map( 'trim', explode( ',', $this->opts['language'] ) ) );
@@ -430,18 +508,13 @@ class TranslatePerLanguageStats {
 		$type .= '-perlang';
 	}
 
-	public function postQuery( $rows ) { }
-
 	public function indexOf( $row ) {
-		global $wgContLang;
-
+		// We need to check that there is only one user per day
 		if ( $this->opts['count'] === 'users' ) {
-			$dateFormat = 'Y-m-d';
-			if ( $this->opts['scale'] === 'hours' ) $dateFormat .= ';H';
-			$date = $wgContLang->sprintfDate( $dateFormat, $row->rc_timestamp );
+			$date = $this->formatTimestamp( $row->rc_timestamp );
 
 			if ( isset( $this->usercache[$date][$row->rc_user_text] ) ) {
-				return - 1;
+				return -1;
 			} else {
 				$this->usercache[$date][$row->rc_user_text] = 1;
 			}
@@ -478,6 +551,10 @@ class TranslatePerLanguageStats {
 		return $this->combineTwoArrays( $this->groups, $this->codes );
 	}
 
+	public function getTimestamp( $row ) {
+		return $row->rc_timestamp;
+	}
+
 	protected function makeLabel( $group, $code ) {
 		if ( $code ) {
 			global $wgLang;
@@ -504,6 +581,35 @@ class TranslatePerLanguageStats {
 		}
 		}
 		return $items;
+	}
+
+	protected function formatTimestamp( $timestamp ) {
+		global $wgContLang;
+		switch ( $this->opts['scale'] ) {
+		case 'hours' : $cut = 2; break;
+		case 'days'  : $cut = 4; break;
+		case 'months': $cut = 8; break;
+		default      : return $wgContLang->sprintfDate( $this->getDateFormat(), $timestamp );
+		}
+
+		return substr( $timestamp, 0, -$cut );
+	}
+
+}
+
+class TranslateRegistrationStats extends TranslationStatsBase {
+
+	public function preQuery( &$tables, &$fields, &$conds, &$type, &$options, $cutoff ) {
+		$db = wfGetDB( DB_SLAVE );
+		$tables = 'user';
+		$fields = 'user_registration';
+		$conds = array( "user_registration >= '{$db->timestamp( $cutoff )}'" );
+		$type .= '-registration';
+		$options = array();
+	}
+
+	public function getTimestamp( $row ) {
+		return $row->user_registration;
 	}
 
 }
