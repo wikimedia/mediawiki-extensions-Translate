@@ -101,7 +101,7 @@ class TranslatablePage {
 			case 'text':
 				break;
 			case 'title':
-				$revision = $this->getMarkedTag();
+				$this->revision = $this->getMarkedTag();
 			case 'revision':
 				$rev = Revision::newFromTitle( $this->getTitle(), $this->revision );
 				$this->text = $rev->getText();
@@ -114,7 +114,6 @@ class TranslatablePage {
 		}
 
 		$this->init = true;
-
 		return $this->text;
 	}
 
