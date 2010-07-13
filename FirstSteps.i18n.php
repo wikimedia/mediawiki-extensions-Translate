@@ -1371,6 +1371,7 @@ $messages['pl'] = array(
  * @author Ahmed-Najib-Biabani-Ibrahimkhel
  */
 $messages['ps'] = array(
+	'firststeps' => 'لومړي ګامونه',
 	'translate-fs-pagetitle-done' => ' - ترسره شو!',
 	'translate-fs-signup-title' => 'نومليکل',
 	'translate-fs-permissions-title' => 'د ژباړې د اجازې غوښتنه',
@@ -1875,6 +1876,20 @@ Om du inte vill få några nyhetsbrev så kan kan välja bort dem under fliken "
  */
 $messages['tl'] = array(
 	'translate-fs-pagetitle-done' => ' - gawa na!',
+);
+
+/** ئۇيغۇرچە (ئۇيغۇرچە)
+ * @author Sahran
+ */
+$messages['ug-arab'] = array(
+	'firststeps' => 'تۇنجى قەدەم',
+	'translate-fs-pagetitle-done' => ' - تامام!',
+	'translate-fs-pagetitle' => 'باشلاش يېتەكچىسىگە ئېرىش - $1',
+	'translate-fs-settings-title' => 'مايىللىقىڭىزنى سەپلەڭ',
+	'translate-fs-userpage-title' => 'ئىشلەتكۈچى بېتىڭىزنى قۇرۇڭ',
+	'translate-fs-permissions-title' => 'تەرجىمە قىلىش ھوقۇق ئىلتىماسى',
+	'translate-fs-target-title' => 'تەرجىمە قىلىشنى باشلا!',
+	'translate-fs-email-title' => 'ئېلخەت مەنزىلىڭىزنى جەزملەڭ',
 );
 
 /** Ukrainian (Українська)

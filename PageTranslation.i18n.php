@@ -911,7 +911,7 @@ Die neueste Version kann hingegen nicht als zu Übersetzen markiert werden.',
 	'translate-tag-markthisagain' => 'Diese Seite wurde <span class="plainlinks">[$1 bearbeitet]</span>, nachdem sie zuletzt <span class="plainlinks">[$2 zur Übersetzung markiert]</span> wurde.',
 	'translate-tag-hasnew' => 'Diese Seite enthält <span class="plainlinks">[$1 Bearbeitungen]</span>, die nicht zur Übersetzung markiert sind.',
 	'tpt-translation-intro' => 'Diese Seite ist eine <span class="plainlinks">[$1 übersetzte Version]</span> der Seite [[$2]] und die Übersetzung ist zu $3 % abgeschlossen und aktuell.',
-	'tpt-translation-intro-fuzzy' => 'Nicht aktuelle Übersetzungen werden wie dieser Text markiert.',
+	'tpt-translation-intro-fuzzy' => 'Veraltete Übersetzungen werden wie dieser Text markiert.',
 	'tpt-languages-legend' => 'Andere Sprachen:',
 	'tpt-target-page' => 'Diese Seite kann nicht manuell aktualisiert werden.
 Diese Seite ist eine Übersetzung der Seite [[$1]] und die Übersetzung kann mithilfe des [$2 Übersetzungswerkzeuges] aktualisiert werden.',
@@ -1037,7 +1037,7 @@ ale nejnowša wersija njedajo se za pśełožowanje markěrowaś.',
 Toś ten bok jo pśełožk boka [[$1]] a pśełožk dajo se z pomocu [$2 Pśełožyś] aktualizěrowaś.',
 	'tpt-unknown-page' => 'Toś ten mjenjowy rum jo za pśełožki wopśimjeśowych bokow wuměnjony.
 Zda se, až bok, kótaryž wopytujoš wobźěłaś, njewótpowědujo bokoju, kótaryž jo za pśełožowanje markěrowany.',
-	'tpt-move-impossible' => 'Pśesuwanje bokow, kótarež su za pśełožowanje markěrowane, hyšći njejo móžno.',
+	'tpt-delete-impossible' => 'Wulašowanje bokow, kótarež su za pśełožowanje markěrowane, hyšći njejo móžno.',
 	'tpt-install' => 'Wuwjeź php maintenance/update.php abo webinstalaciju, aby zmóžnił funkciju pśełožowanja bokow.',
 	'tpt-render-summary' => 'Aktualizacija pó nowej wersiji žrědłowego boka',
 	'tpt-download-page' => 'Bok z pśełožkami eksportěrowaś',
@@ -1055,6 +1055,20 @@ Tekst wótrězka: <pre>$1</pre>',
 	'pt-log-name' => 'Protokol pśełožkow',
 	'pt-log-mark' => 'jo wersiju $3 boka "[[:$1]]" za pśełožowanje {{GENDER:$2|markěrował|markěrowała}}.',
 	'pt-log-unmark' => 'jo bok "[[:$1]]" z pśełožowanja {{GENDER:$2|wótpórał|wótpórała}}.',
+	'pt-movepage-title' => 'Psełožujobny bok $1 psésunuś',
+	'pt-movepage-list-pages' => 'Lisćina bokow, kótarež maju se pśesunuś',
+	'pt-movepage-list-translation' => 'Pśełožowańske boki',
+	'pt-movepage-list-section' => 'Wótrězkowe boki',
+	'pt-movepage-list-other' => 'Druge pódboki',
+	'pt-movepage-legend' => 'Pśełožujobny bok pśesunuś',
+	'pt-movepage-current' => 'Aktualne mě:',
+	'pt-movepage-new' => 'Nowe mě:',
+	'pt-movepage-reason' => 'Pśicyna:',
+	'pt-movepage-subpages' => 'Wšykne pódboki pśesunuś',
+	'pt-movepage-action-check' => 'Kontrolěrowaś, lěc pśesunjenje jo móžno',
+	'pt-movepage-action-perform' => 'Pśesunuś',
+	'pt-movepage-action-other' => 'Cel změniś',
+	'pt-movepage-logreason' => 'Źěl pśełožujobnego boka $1.',
 );
 
 /** Ewe (Eʋegbe)
@@ -3513,17 +3527,32 @@ $messages['ru'] = array(
 	'pt-movepage-block-base-invalid' => 'Недопустимое название основной целевой страницы.',
 	'pt-movepage-block-tp-exists' => 'Перевод целевой страницы [[:$2]] уже существует.',
 	'pt-movepage-block-tp-invalid' => 'Название перевода целевой страницы [[:$1]] будет считаться недействительным (возможно, слишком длинное).',
-	'pt-movepage-block-section-exists' => 'Раздел целевой страницы [[:$1]] уже существует.',
+	'pt-movepage-block-section-exists' => 'Раздел целевой страницы [[:$2]] уже существует.',
 	'pt-movepage-block-section-invalid' => 'Название раздела целевой страницы [[:$1]] будет считаться недействительным (возможно, слишком длинным).',
 	'pt-movepage-block-subpage-exists' => 'Целевая подстраница [[:$2]] уже существует.',
 	'pt-movepage-block-subpage-invalid' => 'Название целевой подстраницы [[:$1]] будет считаться недействительным (возможно, слишком длинным).',
 	'pt-movepage-list-pages' => 'Список страниц для переименования',
+	'pt-movepage-list-translation' => 'Страницы перевода',
+	'pt-movepage-list-section' => 'Разделы страниц',
 	'pt-movepage-list-other' => 'Другие подстраницы',
+	'pt-movepage-list-count' => 'Всего переименовать $1 {{PLURAL:$1|страницу|страницы|страниц}}.',
+	'pt-movepage-legend' => 'Переименование переводимых страниц',
 	'pt-movepage-current' => 'Текущее название:',
 	'pt-movepage-new' => 'Новое название:',
 	'pt-movepage-reason' => 'Причина:',
 	'pt-movepage-subpages' => 'Переименовать все подстраницы',
+	'pt-movepage-action-check' => 'Проверить возможно ли переименование',
+	'pt-movepage-action-perform' => 'Произвести переименование',
 	'pt-movepage-action-other' => 'Изменить цель',
+	'pt-movepage-intro' => 'Это служебная страница позволяет переименовывать страницы, отмеченные для перевода.
+Переименование не будет произведено одномоментно, так как требуется сменить название многим страницам.
+Для подобно задачи будет использована очередь заданий.
+Во время процесса переименования, пропадает возможность взаимодействия с этими страницами.
+Возникшие проблемы будут записаны в журнал переименований переводимых страниц, их нужно будет исправить вручную.',
+	'pt-movepage-logreason' => 'Часть переводимой страницы $1.',
+	'pt-movepage-started' => 'Основная страница переименована.
+Пожалуйста, проверьте журнал переводимых страниц на наличие ошибок.',
+	'pt-locked-page' => 'Эта страница заблокирована, так переводимая страница сейчас переименовывается.',
 );
 
 /** Rusyn (русиньскый язык)
