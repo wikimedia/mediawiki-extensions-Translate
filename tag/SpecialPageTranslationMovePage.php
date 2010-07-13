@@ -1,6 +1,6 @@
 <?php
 
-class SpecialPageTranslationMovePage extends SpecialPage {
+class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 	// Basif form parameters both as text and as titles
 	protected $newText, $newTitle, $oldText, $oldTitle;
 
