@@ -356,6 +356,9 @@ Edit Similar
 
 Edit Subpages
 
+Edit User
+aliasfile = EditUser/EditUser.alias.php
+
 Email Address Image
 
 Embed Video
