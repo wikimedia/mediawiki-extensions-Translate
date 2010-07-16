@@ -21,6 +21,8 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+var dialogwidth = false;
+
 function trlOpenJsEdit( page, group ) {
 	var url = wgScript + "?title=Special:Translate/editpage&suggestions=async&page=$1&loadgroup=$2";
 	url = url.replace( "$1", page ).replace( "$2", group );
@@ -41,6 +43,8 @@ function trlOpenJsEdit( page, group ) {
 
 	dialog.load(url, false, function() {
 		var form = jQuery("#"+ id + " form");
+		
+		form.hide().show( "clip" );
 
 		form.find( ".mw-translate-next" ).click( function() {
 			trlLoadNext( page );
@@ -77,9 +81,15 @@ function trlOpenJsEdit( page, group ) {
 
 	dialog.dialog({
 		bgiframe: true,
-		width: parseInt(trlVpWidth()*0.8),
+		width: dialogwidth ? dialogwidth : parseInt(trlVpWidth()*0.8),
 		title: page,
-		position: "top"
+		position: "top",
+		resize: function(event, ui) {
+			jQuery("#"+ id + " textarea").width( "100%" );
+		},
+		resizeStop: function(event, ui) {
+			dialogwidth = jQuery("#"+ id).width();
+		}
 	});
 
 	return false;
