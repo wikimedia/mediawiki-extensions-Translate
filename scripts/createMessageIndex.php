@@ -33,4 +33,6 @@ if ( isset( $options['help'] ) ) {
 	showUsage();
 }
 
+$cache = new ArrayMemoryCache( 'groupstats' );
+$cache->clearAll();
 MessageIndexRebuilder::execute();

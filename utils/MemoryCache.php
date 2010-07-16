@@ -51,6 +51,11 @@ class ArrayMemoryCache {
 		}
 	}
 
+	public function clearAll() {
+		$this->load();
+		$this->cache = array();
+	}
+
 	public function commit() {
 		$this->save();
 	}
