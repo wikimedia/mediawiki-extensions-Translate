@@ -375,7 +375,29 @@ class ExtensionMessageGroup extends MessageGroupOld {
 	public function getMessageFile( $code ) { return $this->messageFile; }
 	public function setMessageFile( $value ) { $this->messageFile = $value; }
 
+	public function getDescription() {
+		if ( $this->description === null ) {
+			// Load the messages only when needed
+			$this->setDescriptionMsgReal( $this->descriptionKey, $this->descriptionUrl );
+		}
+		return parent::getDescription();
+	}
+
+	// Holders for lazy loading
+	private $descriptionKey, $descriptionUrl;
+
+	/**
+	 * Extensions have almost always a localised description message and
+	 * address to extension homepage.
+	 */
 	public function setDescriptionMsg( $key, $url ) {
+		$this->descriptionKey = $key;
+		$this->descriptionUrl = $url;
+	}
+
+	protected function setDescriptionMsgReal( $key, $url ) {
+		$this->description = '';
+
 		global $wgLang;
 
 		$desc = $this->getMessage( $key, $wgLang->getCode() );
@@ -390,6 +412,10 @@ class ExtensionMessageGroup extends MessageGroupOld {
 
 		if ( $url ) {
 			$this->description .= wfMsgNoTrans( 'translate-ext-url', $url );
+		}
+
+		if ( $this->description === '' ) {
+			$this->description = wfMsgNoTrans( 'translate-group-desc-nodesc' );
 		}
 	}
 
