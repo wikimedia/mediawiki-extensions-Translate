@@ -827,26 +827,61 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 
 		return $checker;
 	}
+
+	public function getDescription() {
+		$title = $this->title;
+		$target = SpecialPage::getTitleFor( 'MyLanguage', $title )->getPrefixedText();
+		return wfMsgNoTrans( 'translate-tag-page-desc', $title, $target );
+	}
 }
 
 class MessageGroups {
 	public static function init() {
 		static $loaded = false;
+		if ( $loaded ) return;
+		$loaded = true;
 
-		if ( $loaded ) {
-			return;
+		global $wgTranslateCC, $wgTranslateEC, $wgTranslateAC;
+		global $wgAutoloadClasses;
+
+		$key = wfMemckey( 'translate-groups' );
+		$cache = wfGetCache( CACHE_DB );
+		$value = DependencyWrapper::getValueFromCache( $cache, $key );
+
+		if ( $value === null ) {
+			wfDebug( __METHOD__ . "-nocache\n" );
+			self::loadGroupDefinitions();
+		} else {
+			wfDebug( __METHOD__ . "-withcache\n" );
+			$wgTranslateCC = $value['cc'];
+			$wgTranslateAC = $value['ac'];
+			$wgTranslateEC = $value['ec'];
+
+			foreach ( $value['autoload'] as $class => $file ) {
+				$wgAutoloadClasses[$class] = $file;
+			}
 		}
-		wfDebug( __METHOD__ . "\n" );
+	}
 
+	public static function loadGroupDefinitions() {
 		global $wgTranslateAddMWExtensionGroups;
+		global $wgEnablePageTranslation, $wgTranslateGroupFiles;
+		global $wgTranslateAC, $wgTranslateEC, $wgTranslateCC;
+		global $wgAutoloadClasses;
 
+		$deps = array();
+		$deps[] = new GlobalDependency( 'wgTranslateAddMWExtensionGroups' );
+		$deps[] = new GlobalDependency( 'wgEnablePageTranslation' );
+		$deps[] = new GlobalDependency( 'wgTranslateGroupFiles' );
+		$deps[] = new GlobalDependency( 'wgTranslateAC' );
+		$deps[] = new GlobalDependency( 'wgTranslateEC' );
+		$deps[] = new GlobalDependency( 'wgTranslateCC' );
+		$deps[] = New FileDependency( dirname( __FILE__ ) . '/groups/mediawiki-defines.txt' );
+		
 		if ( $wgTranslateAddMWExtensionGroups ) {
 			$a = new PremadeMediawikiExtensionGroups;
 			$a->addAll();
 		}
-
-		global $wgTranslateCC;
-		global $wgEnablePageTranslation;
 
 		if ( $wgEnablePageTranslation ) {
 			$dbr = wfGetDB( DB_SLAVE );
@@ -862,24 +897,25 @@ class MessageGroups {
 				$id = "page|$title";
 				$wgTranslateCC[$id] = new WikiPageMessageGroup( $id, $title );
 				$wgTranslateCC[$id]->setLabel( $title );
-				$target = SpecialPage::getTitleFor( 'MyLanguage', $title )->getPrefixedText();
-				$wgTranslateCC[$id]->setDescription( wfMsgNoTrans( 'translate-tag-page-desc', $title, $target ) );
 			}
 		}
 
 		wfRunHooks( 'TranslatePostInitGroups', array( &$wgTranslateCC ) );
 
-		global $wgTranslateGroupFiles, $wgAutoloadClasses;
+		$autoload = array();
 
 		foreach ( $wgTranslateGroupFiles as $configFile ) {
 			wfDebug( $configFile . "\n" );
+			$deps[] = new FileDependency( realpath( $configFile ) );
 			$fgroups = TranslateYaml::parseGroupFile( $configFile );
 
 			foreach( $fgroups as $id => $conf ) {
 				if ( !empty( $conf['AUTOLOAD'] ) && is_array( $conf['AUTOLOAD'] ) ) {
 					$dir = dirname( $configFile );
 					foreach ( $conf['AUTOLOAD'] as $class => $file ) {
+						// For this request and for caching
 						$wgAutoloadClasses[$class] = "$dir/$file";
+						$autoload[$class] = "$dir/$file";
 					}
 				}
 				$group = MessageGroupBase::factory( $conf );
@@ -887,7 +923,19 @@ class MessageGroups {
 			}
 		}
 
-		$loaded = true;
+		$key = wfMemckey( 'translate-groups' );
+		$cache = wfGetCache( CACHE_DB );
+		$value = array(
+			'ac' => $wgTranslateAC,
+			'ec' => $wgTranslateEC,
+			'cc' => $wgTranslateCC,
+			'autoload' => $autoload,
+		);
+
+		$wrapper = new DependencyWrapper( $value, $deps );
+		$wrapper->storeToCache( $cache, $key, 60*60*2 );
+
+		wfDebug( __METHOD__ . "-end\n" );
 	}
 
 	public static function getGroup( $id ) {
