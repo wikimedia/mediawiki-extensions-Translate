@@ -341,6 +341,7 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 			$newTpage->addMarkedTag( $this->newTitle->getLatestRevId( GAID_FOR_UPDATE ) );
 		}
 
+		MessageGroups::clearCache();
 		//TODO: defer or make faster
 		MessageIndexRebuilder::execute();
 

@@ -845,8 +845,7 @@ class MessageGroups {
 		global $wgAutoloadClasses;
 
 		$key = wfMemckey( 'translate-groups' );
-		$cache = wfGetCache( CACHE_DB );
-		$value = DependencyWrapper::getValueFromCache( $cache, $key );
+		$value = DependencyWrapper::getValueFromCache( self::getCache(), $key );
 
 		if ( $value === null ) {
 			wfDebug( __METHOD__ . "-nocache\n" );
@@ -861,6 +860,24 @@ class MessageGroups {
 				$wgAutoloadClasses[$class] = $file;
 			}
 		}
+	}
+
+	/**
+	 * Manually reset groups when dependencies cannot
+	 * detect those automatically
+	 */
+	public static function clearCache() {
+		$key = wfMemckey( 'translate-groups' );
+		self::getCache()->delete( $key );
+	}
+
+	/**
+	 * Returns a cache object. Currently just wrapper for
+	 * database cache, but could be improved or replaced
+	 * with something that prefers Memcached over db.
+	 */
+	protected static function getCache() {
+		return wfGetCache( CACHE_DB );
 	}
 
 	public static function loadGroupDefinitions() {
@@ -924,7 +941,6 @@ class MessageGroups {
 		}
 
 		$key = wfMemckey( 'translate-groups' );
-		$cache = wfGetCache( CACHE_DB );
 		$value = array(
 			'ac' => $wgTranslateAC,
 			'ec' => $wgTranslateEC,
@@ -933,7 +949,7 @@ class MessageGroups {
 		);
 
 		$wrapper = new DependencyWrapper( $value, $deps );
-		$wrapper->storeToCache( $cache, $key, 60*60*2 );
+		$wrapper->storeToCache( self::getCache(), $key, 60*60*2 );
 
 		wfDebug( __METHOD__ . "-end\n" );
 	}
@@ -972,32 +988,34 @@ class MessageGroups {
 		}
 	}
 
-	public $classes = array();
+	public $classes;
 	private function __construct() {
 		self::init();
 
-		global $wgTranslateEC, $wgTranslateCC;
 
-		$all = array_merge( $wgTranslateEC, array_keys( $wgTranslateCC ) );
-		sort( $all );
-
-		foreach ( $all as $id ) {
-			$g = self::getGroup( $id );
-			$this->classes[$g->getId()] = $g;
-		}
 	}
 
 	public static function singleton() {
 		static $instance;
-
 		if ( !$instance instanceof self ) {
 			$instance = new self();
 		}
-
 		return $instance;
 	}
 
 	public function getGroups() {
+		if ( $this->classes === null ) {
+			$this->classes = array();
+			global $wgTranslateEC, $wgTranslateCC;
+
+			$all = array_merge( $wgTranslateEC, array_keys( $wgTranslateCC ) );
+			sort( $all );
+
+			foreach ( $all as $id ) {
+				$g = self::getGroup( $id );
+				$this->classes[$g->getId()] = $g;
+			}
+		}
 		return $this->classes;
 	}
 }

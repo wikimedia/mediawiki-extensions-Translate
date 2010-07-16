@@ -330,6 +330,7 @@ class TranslatablePage {
 
 	public function addMarkedTag( $revision, $value = null ) {
 		$this->addTag( 'tp:mark', $revision, $value );
+		MessageGroups::clearCache();
 	}
 
 	public function addReadyTag( $revision ) {
