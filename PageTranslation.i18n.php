@@ -3578,7 +3578,23 @@ $messages['ru'] = array(
  */
 $messages['rue'] = array(
 	'pagetranslation' => 'Переклад сторінок',
+	'right-pagetranslation' => 'Означованя верзій сторінок про переклад',
+	'tpt-desc' => 'Росшыріня про перекладаня сторінок з обсягом',
 	'tpt-section' => 'Блок перекладу $1',
+	'tpt-section-new' => 'Новый блок перекладу.
+Назва: $1',
+	'tpt-section-deleted' => 'Блок перекладу $1',
+	'tpt-template' => 'Шаблона сторінкы',
+	'tpt-templatediff' => 'Шаблона сторінкы зміненый.',
+	'tpt-diff-old' => 'Попереднїй текст',
+	'tpt-diff-new' => 'Новый текст',
+	'tpt-submit' => 'Означіти тоту верзію про переклад',
+	'tpt-sections-oldnew' => 'Новы і екзістуючі сторінкы перекладу',
+	'tpt-sections-deleted' => 'Змазаны части сторінок',
+	'tpt-sections-template' => 'Шаблона сторінкы перекладу',
+	'tpt-nosuchpage' => 'Сторінка $1 не екзістує',
+	'tpt-oldrevision' => '$2 не є найновша верзія сторінкы [[$1]].
+Про переклад є можне означіти лем найновшы сторінкы.',
 	'tpt-rev-latest' => 'остатня верзія',
 	'tpt-translate-this' => 'перекласти тоту сторінку',
 	'translate-tag-translate-link-desc' => 'Перекласти тоту сторінку',

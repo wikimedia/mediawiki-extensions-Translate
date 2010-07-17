@@ -1059,6 +1059,17 @@ Wann dir Iech schonn ugemellt hutt, $1logg Iech$2 an.
 Esou bal wéi Dir ugellt an ageloggt sidd, kommt w.e.g. op dës Säit zréck.
 
 $3Umellen$4",
+	'translate-fs-settings-text' => "Elo gitt Dir am beschten op Är Astellungen a
+wiesselt Är Sprooch vum Interface an déi Sprooch an déi Dir iwwersetze wëllt.
+
+D'Sprooch déi Dir fir den Interface benotzt gëtt als Standard-Zilsprooch benotzt.
+Et geet séier fir d'Astelle vun der Sprooch op déi korrekt ze vergiessen, dofir ass et ugeroden dat elo direkt ze maachen.
+
+Wann Dir schonn do sidd, da kënnt Dir d'Software och froe fir Iwwersetzungen aner Sproochen déi Dir kennt ze weisen.
+Dës Astellung fannt Dir op dem Tab \"{{int:prefs-editing}}\".
+Zéckt net fir och aner Astellungen auszeprobéieren.
+
+Gitt elo op Är [[Special:Preferences|Säit mat den Astellungen]] a kommt duerno op dës Säit zréck.",
 	'translate-fs-settings-skip' => 'Ech si fäerdeg.
 Loosst mech weidermaachen.',
 	'translate-fs-userpage-submit' => 'Meng Benotzersäit maachen',
@@ -1662,11 +1673,45 @@ $3Зарегистрироваться$4',
  * @author Gazeb
  */
 $messages['rue'] = array(
+	'firststeps' => 'Першы крокы',
 	'translate-fs-pagetitle-done' => ' - зроблено!',
+	'translate-fs-signup-title' => 'Зареґіструйте ся',
 	'translate-fs-userpage-title' => 'Створити вашу сторінку хоснователя',
 	'translate-fs-permissions-title' => 'Жадати права перекладателя',
 	'translate-fs-target-title' => 'Започати перекладаня!',
 	'translate-fs-email-title' => 'Підтвердьте свою адресу ел. пошты',
+	'translate-fs-userpage-text' => 'Теперь вам треба створити сторінку хоснователя.
+
+Напиште дашто о собі, хто сьте і де робите.
+Тото поможе {{SITENAME}} комунітї працовати вєдно.
+На {{SITENAME}} суть люде з цілого світа, котры працують на вшелиякых языках і проєктах.
+
+В поличку выповненым допереду на каждім першім рядку видите <nowiki>{{#babel:en-2}}</nowiki>.
+Просиме, докінчте то з вашов языковов зналостёв.
+Чісло за языковым кодом пописує як добру знаєте тот язык.
+Можности суть:
+* 1 - маленько
+* 2 - основна зналость
+* 3 - добра зналость
+* 4 - рівень материньского языка
+* 5 - язык хоснуєте професіонално, наприклад сьте професіоналный перекладач.
+
+Кідь є язык ваш материньскый, зохабте рівень языкя так, і хоснуйте лем код языка.
+Приклад: кідь Tamil є ваш материньскый язык, Анґліцкы добрі, і маленько Swahili, вы бы написали:
+<code><nowiki>{{#babel:ta|en-3|sw-1}}</nowiki></code>
+
+Кідь не знаєте код языка, так є час ёго поглядати.
+Можете хосновати список ниже.',
+	'translate-fs-userpage-submit' => 'Створити мою сторінку хоснователя',
+	'translate-fs-userpage-done' => 'Добрі зроблено! Теперь маєте сторінку хоснователя.',
+	'translate-fs-permissions-text' => 'Теперь потребуєте подати жадость про приданя до чрупы перекладателїв.
+Покы мы не справиме  код, ідьте до [[Project:Translator]] і наслїдуйте інштрукції.
+Потім ся верните на тоту сторінку.
+
+Кідь сьте одослали вашу пожадавку, єден член з добровольных працовників перевірить вашу пожадавку і схваліть єй так скоро як то буде можне.
+Просиме, будьте терпезливы.
+
+<del>Перевірте ці наслїдуюча пожадавка є  правилно выповнена і стисните ґомбічку пожадавкы.</del>',
 );
 
 /** Slovenian (Slovenščina)
