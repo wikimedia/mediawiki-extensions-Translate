@@ -1,61 +1,10 @@
-Check out writable copy:
+# Read-only repository setup
+cd %GROUPROOT%
+git clone git://git.mantisbt.org/mantisbt mantisbt
 
-cd $HOME/projects/
-git clone git://git.mantisbt.org/git://mantisbt.org/mantisbt mantisbt
+# Configuration
+wfAddNamespace( 1210, 'Mantis' ); // Choose any free namespace number
+$wgTranslateGroupFiles[] = "$IP/extensions/Translate/groups/MantisBT/MantisBT.yaml";
 
-Settings:
-wfAddNamespace( 1210, 'Mantis' );
-
-As long as new message groups have not yet been implemented for MantisBT, the
-following settings are needed:
-
-$wgHooks['TranslatePostInitGroups'][] = array( 'setupMantis' );
-function setupMantis( &$cc ) {
-        global $wgTranslateGroupRoot;
-        $id = 'out-mantis';
-        $mg = new MantisMessageGroup;
-        $mg->setId( $id );
-        $mg->setType( 'mantis' );
-        $mg->setDescription( "{{int:bw-desc-mantisbt}}" );
-        $mg->namespaces = array( NS_MANTIS, NS_MANTIS_TALK );
-        $mg->setPath( "$wgTranslateGroupRoot/mantisbt/lang" );
-        $cc[$id] = $mg;
-
-        $id = 'out-mantis-mantiscoreformatting';
-        $mg = new MantisMessageGroup;
-        $mg->setId( $id );
-        $mg->setType( 'mantis' );
-        $mg->setLabel( 'MantisBT - Mantis Core Formatting' );
-        $mg->setDescription( "{{int:bw-desc-mantisbt-mantiscoreformatting}}" );
-        $mg->namespaces = array( NS_MANTIS, NS_MANTIS_TALK );
-        $mg->setPath( "$wgTranslateGroupRoot/mantisbt/plugins/MantisCoreFormatting/lang" );
-        $cc[$id] = $mg;
-
-        $id = 'out-mantis-mantisgraph';
-        $mg = new MantisMessageGroup;
-        $mg->setId( $id );
-        $mg->setType( 'mantis' );
-        $mg->setLabel( 'MantisBT - Mantis Graph' );
-        $mg->setDescription( "{{int:bw-desc-mantisbt-mantisgraph}}" );
-        $mg->namespaces = array( NS_MANTIS, NS_MANTIS_TALK );
-        $mg->setPath( "$wgTranslateGroupRoot/mantisbt/plugins/MantisGraph/lang" );
-        $cc[$id] = $mg;
-
-        $id = 'out-mantis-xmlimportexport';
-        $mg = new MantisMessageGroup;
-        $mg->setId( $id );
-        $mg->setType( 'mantis' );
-        $mg->setLabel( 'MantisBT - Xml Import Export' );
-        $mg->setDescription( "{{int:bw-desc-mantisbt-xmlimportexport}}" );
-        $mg->namespaces = array( NS_MANTIS, NS_MANTIS_TALK );
-        $mg->setPath( "$wgTranslateGroupRoot/mantisbt/plugins/XmlImportExport/lang" );
-        $cc[$id] = $mg;
-
-        return true;
-}
-
-When PhpVariablesFFS has been implemented, the following will suffice:
-$wgTranslateGroupFiles[] = "$IP/extensions/Translate/groups/MantisBT/MantisBT.yml";
-$wgTranslateGroupFiles[] = "$IP/extensions/Translate/groups/MantisBT/MantisBT-plugin-MantisCoreFormatting.yml";
-$wgTranslateGroupFiles[] = "$IP/extensions/Translate/groups/MantisBT/MantisBT-plugin-MantisGraph.yml";
-$wgTranslateGroupFiles[] = "$IP/extensions/Translate/groups/MantisBT/MantisBT-plugin-XmlImportExport.yml";
+# Commits
+To do.
