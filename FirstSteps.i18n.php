@@ -1072,6 +1072,28 @@ Zéckt net fir och aner Astellungen auszeprobéieren.
 Gitt elo op Är [[Special:Preferences|Säit mat den Astellungen]] a kommt duerno op dës Säit zréck.",
 	'translate-fs-settings-skip' => 'Ech si fäerdeg.
 Loosst mech weidermaachen.',
+	'translate-fs-userpage-text' => "Elo musst Dir eng Benotzersäit leeën.
+
+Schreift w.e.g. eppes iwwer Iech, wien Dir sidd a wat Dir maacht.
+Dat hëlleft der {{SITENAME}}-Gemeinschaft bäi der Zesummenaarbecht.
+Op {{SITENAME}} gëtt et Leit aus ganzer Welt, déi u verschiddene Sproochen a Projeten schaffen.
+
+An der ausgefëllter Këscht uewe gesi Dir an der éischter Zeil <nowiki>{{#babel:en-2}}</nowiki>.
+Fëllt et w.e.g mat Äre Sproochkenntnisser aus.
+D'Zuel hanner dem Sproochcode beschreiwt wéi gudd Dir d'Sprooch kënnt.
+D'Méiglechkeete sinn:
+*1 - e bëssen
+*2 - Basiswëssen
+*3 - fléissend
+*4 - bal wéi d'Mammesprooch
+*5 - professionell, z.B. wann Dir e professionellen Iwwersetzer sidd.
+
+Wenn dat Är Mammesprooch ass, loosst d'Zuel ewech a benotzt nëmmen de Sproochcode.
+Beispill: Wann Dir Tamil als Mammesprooch, Englesch gutt an e bësse Swahili kéint Dir dat esou uginn:
+<code><nowiki>{{#babel:ta|en-3|sw-1}}</nowiki></code>
+
+Wann Dir de Sproochcode vun enger Sprooch net kennt, da kuckt en elo no.
+Dir kënnt d'Lëscht ënnen drënner benotzen.",
 	'translate-fs-userpage-submit' => 'Meng Benotzersäit maachen',
 	'translate-fs-userpage-done' => 'Gutt gemaach! dir hutt elo eng Benotzersäit.',
 	'translate-fs-email-text' => 'Gitt w.e.g. Är E-Mailadress an [[Special:Preferences|Ären Astellungen]] un a confirméiert se vun der E-Mail aus déi Dir geschéckt kritt.
@@ -1800,9 +1822,8 @@ Na voljo je tudi seznam vseh skupin sporočil s [[Special:LanguageStats|trenutni
 Žal je lahko dokumentacija ponekod zastarela.
 Če je kaj takega, kar bi morali storiti, vendar ne ugotovite kako, ne oklevajte in povprašajte na [[Support|podporni strani]].
 
-Prav tako lahko stopite v stik s kolegi prevajalci istega jezika na [[Portal:$1|vašem jezikovnem portalu]].
-Portal kaže glede na vašo trenutno [[Special:Preferences|nastavitev jezika]].
-Prosimo, spremenite jo, če je potrebno.",
+Prav tako lahko stopite v stik s kolegi prevajalci istega jezika na [[Portal_talk:$1|pogovorni strani]] [[Portal:$1|vašega jezikovnega portala]].
+Če še tega niste storili, nastavite [[Special:Preferences|jezik vašega uporabniškega vmesnika na jezik v katerega želite prevajati]], da bo wiki lahko prikazal povezave, ki vam najbolje ustrezajo.",
 	'translate-fs-email-text' => 'Prosimo, navedite svoj e-poštni naslov v [[Special:Preferences|svojih nastavitvah]] in ga potrdite iz e-pošte, ki vam bo poslana.
 
 To omogoča drugim uporabnikom, da stopijo v stik z vami preko e-pošte.
