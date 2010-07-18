@@ -3,7 +3,7 @@ cd %GROUPROOT%
 git clone git://gitorious.org/shapado/shapado.git shapado
 
 # Configuration
-Add the following line to LocalSettings.php to include all Shapado groups:
+wfAddNamespace( 1226, 'Shapado' ); // Choose any free namespace number
 $wgTranslateGroupFiles[] = "$IP/extensions/Translate/groups/Shapado/Shapado.yml";
 
 # Commits
