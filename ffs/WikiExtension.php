@@ -123,15 +123,17 @@ class WikiExtensionFormatWriter extends WikiFormatWriter {
 	}
 
 	protected function doExport( $handle, $languages ) {
+		global $wgTranslateDocumentationLanguageCode;
+
 		$this->_load();
 		$this->_makeHeader( $handle );
 
 		$this->exportSection( $handle, 'en', $languages );
-		$this->exportSection( $handle, 'qqq', $languages );
+		$this->exportSection( $handle, $wgTranslateDocumentationLanguageCode, $languages );
 
 		$__languages = Language::getLanguageNames( false );
 		foreach ( array_keys( $__languages ) as $code ) {
-			if ( $code === 'en' || $code === 'qqq' ) {
+			if ( $code === 'en' || $code === $wgTranslateDocumentationLanguageCode ) {
 				continue;
 			}
 
