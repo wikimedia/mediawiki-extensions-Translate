@@ -1096,6 +1096,14 @@ Wann Dir de Sproochcode vun enger Sprooch net kennt, da kuckt en elo no.
 Dir kënnt d'Lëscht ënnen drënner benotzen.",
 	'translate-fs-userpage-submit' => 'Meng Benotzersäit maachen',
 	'translate-fs-userpage-done' => 'Gutt gemaach! dir hutt elo eng Benotzersäit.',
+	'translate-fs-permissions-text' => 'Elo musst Dir eng Ufro maache fir an de Grupp vun den Iwwersetzer derbäigesat ze ginn.
+
+Bis mir de Code geännert hunn, gitt w.e.g. op [[Project:Translator]] a maacht ete sou wéi et do beschriwwen ass.
+Kommt duerno zréck op dës Säit.
+
+Nodeems datt Dir Är Ufro gemaacht hutt, kuckt ee vun de fräiwëllege Membere vun eise Mataarbechter Är Ufro no an approuvéiert se esou séier wéi méiglech. Hutt w.e.g. e bësse Gedold.
+
+<del>Kuckt w.e.g. no ob dës Ufro korrekt ausgefëllt ass a klickt dann op de Knäppche vun der Ufro.</del>',
 	'translate-fs-email-text' => 'Gitt w.e.g. Är E-Mailadress an [[Special:Preferences|Ären Astellungen]] un a confirméiert se vun der E-Mail aus déi Dir geschéckt kritt.
 
 Dëst erlaabte et anere Benotzer fir Iech per Mail ze kontaktéieren.
