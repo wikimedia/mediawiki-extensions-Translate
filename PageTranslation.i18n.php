@@ -1080,6 +1080,11 @@ Tekst wótrězka: <pre>$1</pre>',
 	'pt-movepage-action-check' => 'Kontrolěrowaś, lěc pśesunjenje jo móžno',
 	'pt-movepage-action-perform' => 'Pśesunuś',
 	'pt-movepage-action-other' => 'Cel změniś',
+	'pt-movepage-intro' => 'Toś ten specialny bok dowólujo śi boki pśesunuś, kótarež sz za pśełožk markěrowane.
+Pśesunjenje njebuźo se ned staś, dokulaž wjele bokow muse se pśesunuś.
+Cakański rěd buźo se wužywaś, aby se boki pśesunuli.
+Mjaztym až boki se pśesuwaju,  njejo móžno z wótpowědnymi bokami interagěrowaś.
+Zmólki budu se protokolěrowaś w pséłožowańskem protokolu a muse se manuelnje wótpóraś.',
 	'pt-movepage-logreason' => 'Źěl pśełožujobnego boka $1.',
 	'pt-movepage-started' => 'Zakładny bok jo něnto pśesunjony.
 Pšosym pśekontrolěruj pśełožowański protokol boka za zmólkami a pśewjeźeńsku powěźeńku.',
@@ -4328,8 +4333,8 @@ Phần văn bản: <pre>$1</pre>',
 	'pt-log-name' => 'Nhật trình dịch trang',
 	'pt-log-mark' => '{{GENDER:$2|}}đã đánh dấu phiên bản $3 của trang “[[:$1]]” là cần được dịch',
 	'pt-log-unmark' => '{{GENDER:$2|đã di chuyển}} trang "[[:$1]]" từ bản dịch',
-	'pt-log-moveok' => 'đã hoàn thành việc đổi tên của trang dịch được $1',
-	'pt-log-movenok' => 'đã gặp vấn đề trong khi di chuyển [[:$1]] đến [[:$3]]',
+	'pt-log-moveok' => '{{GENDER:$2|}}đã hoàn thành việc đổi tên của trang dịch được $1',
+	'pt-log-movenok' => '{{GENDER:$2|}}đã gặp vấn đề trong khi di chuyển [[:$1]] đến [[:$3]]',
 	'pt-movepage-title' => 'Di chuyển trang dịch được $1',
 	'pt-movepage-blockers' => 'Trang dịch được không thể được đổi tên vì {{PLURAL:$1|lỗi|các lỗi}} sau:',
 	'pt-movepage-list-pages' => 'Danh sách trang để di chuyển',
