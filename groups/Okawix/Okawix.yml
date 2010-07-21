@@ -1,0 +1,61 @@
+TEMPLATE:
+  BASIC:
+    namespace: NS_OKAWIX
+    class: FileBasedMessageGroup
+
+  FILES:
+    class: JavaFFS
+    codeMap:
+      de: de-DE
+      en: en-US
+      fr: fr-FR
+
+---
+BASIC:
+  id: out-okawix-0-all
+  label: All Okawix messages
+  display: out/okawix
+  meta: yes
+  class: AggregateMessageGroup
+
+GROUPS:
+  - out-okawix-doc
+  - out-okawix-dtd
+  - out-okawix-properties
+
+---
+BASIC:
+  id: out-okawix-doc
+  label: Okawix (Documentation)
+  description: "{{int:bw-desc-okawix-doc}}"
+  display: out/okawix/doc
+
+FILES:
+  sourcePattern: %GROUPROOT%/okawix/locale/%CODE%/interfacewiki/okawix-doc.properties
+  targetPattern: okawix/%CODE%/interfacewiki/okawix-doc.properties
+
+---
+BASIC:
+  id: out-okawix-dtd
+  label: Okawix (Dtd)
+  description: "{{int:bw-desc-okawix-dtd}}"
+  display: out/okawix/dtd
+
+FILES:
+  class: OkawixDtdFFS
+  sourcePattern: %GROUPROOT%/okawix/locale/%CODE%/interfacewiki/okawix.dtd
+  targetPattern: okawix/%CODE%/interfacewiki/okawix.dtd
+
+AUTOLOAD:
+  OkawixDtdFFS: Okawix-dtd.php
+
+---
+BASIC:
+  id: out-okawix-prop
+  label: Okawix (Properties)
+  description: "{{int:bw-desc-okawix-prop}}"
+  display: out/okawix/prop
+
+FILES:
+  sourcePattern: %GROUPROOT%/okawix/locale/%CODE%/interfacewiki/okawix.properties
+  targetPattern: okawix/%CODE%/interfacewiki/okawix.properties
