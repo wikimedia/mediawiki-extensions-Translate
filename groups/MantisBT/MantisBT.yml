@@ -86,10 +86,25 @@ TEMPLATE:
 
 ---
 BASIC:
-  id: out-mantis
+  id: out-mantis-0-all
+  label: All MantisBT messages
+  display: out/mantis
+  description: "{{int:bw-desc-mantisbt}}"
+  meta: yes
+  class: AggregateMessageGroup
+
+GROUPS:
+  - out-mantis
+  - out-mantis-mantiscoreformatting
+  - out-mantis-mantisgraph
+  - out-mantis-xmlimportexport
+
+---
+BASIC:
+  id: out-mantis-core
   label: MantisBT (web-based bugtracking system)
   description: "{{int:bw-desc-mantisbt}}"
-  display: out/mantis/
+  display: out/mantis/core
 
 FILES:
   sourcePattern: %GROUPROOT%/mantisbt/lang/strings_%CODE%.txt
