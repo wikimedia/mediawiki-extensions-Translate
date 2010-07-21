@@ -4559,6 +4559,7 @@ $messages['el'] = array(
 );
 
 /** Esperanto (Esperanto)
+ * @author AVRS
  * @author ArnoLagrange
  * @author Melancholie
  * @author Michawiki
@@ -4596,7 +4597,7 @@ $messages['eo'] = array(
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|mesaĝo|mesaĝoj}} po paĝo',
 	'translate-submit' => 'Mendi',
 	'translate-page-navigation-legend' => 'Navigado',
-	'translate-page-showing' => 'Estas motrataj mesaĝoj $1 ĝis $2 el $3.',
+	'translate-page-showing' => 'Estas montrataj mesaĝoj $1 ĝis $2 el $3.',
 	'translate-page-showing-all' => 'Estas montrataj $1 {{PLURAL:$1|mesaĝo|mesaĝoj}}.',
 	'translate-page-showing-none' => 'Ne estas mesaĝoj por montri.',
 	'translate-next' => 'Sekva paĝo',
