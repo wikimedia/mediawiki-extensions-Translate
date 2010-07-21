@@ -2,6 +2,7 @@ TEMPLATE:
   BASIC:
     namespace: NS_OKAWIX
     class: FileBasedMessageGroup
+    description: "{{int:bw-desc-okawix}}"
 
   FILES:
     class: JavaFFS
