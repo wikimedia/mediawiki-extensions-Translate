@@ -408,7 +408,7 @@ class TranslationHelpers {
 		global $wgMemc;
 
 		if ( self::checkTranslationServiceFailure( $serviceName ) ) {
-			//return null;
+			return null;
 		}
 
 		$page = $this->page;
