@@ -415,7 +415,7 @@ descmsg = configuredpages
 Flagged Revisions - Pending Changes
 id = ext-flaggedrevs-pendingchanges
 file = FlaggedRevs/language/PendingChanges.i18n.php
-descmsg = oldreviewedpages-legend
+descmsg = pendingchanges-legend
 
 Flagged Revisions - Problem Changes
 id = ext-flaggedrevs-problemchanges
