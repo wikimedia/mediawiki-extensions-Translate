@@ -412,9 +412,9 @@ id = ext-flaggedrevs-configuredpages
 file = FlaggedRevs/language/ConfiguredPages.i18n.php
 descmsg = configuredpages
 
-Flagged Revisions - Old Reviewed Pages
-id = ext-flaggedrevs-oldreviewedpages
-file = FlaggedRevs/language/OldReviewedPages.i18n.php
+Flagged Revisions - Pending Changes
+id = ext-flaggedrevs-pendingchanges
+file = FlaggedRevs/language/PendingChanges.i18n.php
 descmsg = oldreviewedpages-legend
 
 Flagged Revisions - Problem Changes
