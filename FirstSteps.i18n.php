@@ -1619,6 +1619,98 @@ Também receberá newsletters, no máximo uma vez por mês.
 Se não deseja receber as newsletters, pode optar por não recebê-las no separador "{{int:prefs-personal}}" das suas [[Special:Preferences|preferências]].',
 );
 
+/** Romanian (Română)
+ * @author Minisarm
+ */
+$messages['ro'] = array(
+	'firststeps' => 'Primii pași',
+	'firststeps-desc' => '[[Special:FirstSteps|Pagină specială]] pentru a veni în întâmpinarea utilizatorilor unui site wiki care folosesc extensia Translate',
+	'translate-fs-pagetitle-done' => ' – realizat!',
+	'translate-fs-pagetitle' => 'Ghidul începătorului – $1',
+	'translate-fs-signup-title' => 'Înregistrați-vă',
+	'translate-fs-settings-title' => 'Configurați-vă preferințele',
+	'translate-fs-userpage-title' => 'Creați-vă propria pagină de utilizator',
+	'translate-fs-permissions-title' => 'Cereți permisiuni de traducător',
+	'translate-fs-target-title' => 'Să traducem!',
+	'translate-fs-email-title' => 'Confirmați-vă adresa de e-mail',
+	'translate-fs-intro' => "Bine ați venit: acesta este un ghid al începătorului oferit de {{SITENAME}}.
+Veți fi îndrumat pas cu pas pentru a deveni un traducător.
+În finalul procesului, veți putea traduce ''mesaje din interfața'' tuturor proiectelor care dispun de serviciile {{SITENAME}}.",
+	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount.png|frame]]
+
+În primul rând va trebui să vă înregistrați.
+
+Numelui dumneavoastră de utilizator îi vor fi atribuite toate traducerile pe care le efectuați.
+Imaginea din dreapta vă arată cum trebuie să completați câmpurile.
+
+Dacă dețineți deja un cont, nu trebuie decât să vă $1autentificați$2.
+Odată înregistrat, vă rugăm să reveniți la această pagină.
+
+$3Înregistrare$4',
+	'translate-fs-settings-text' => 'Acum ar trebui să mergeți în pagina preferințelor și să operați cel puțin o modificare constând în alegerea limbii interfeței (aceeași limbă în care veți traduce).
+
+Limba aleasă pentru interfață va fi utilizată ca limbă implicită pentru traducere.
+Este foarte ușor să treceți cu vederea acest aspect și de aceea vă recomandăm să faceți modificarea chiar acum.
+
+Pentru că tot veți merge în pagina destinată preferințelor, puteți cere software-ului să afișeze traduceri și în alte limbi pe care le stăpâniți.
+Această opțiune poate fi găsită în fila „{{int:prefs-editing}}”.
+Nu ezitați să explorați și alte setări, de asemenea.
+
+Puteți merge acum la [[Special:Preferences|pagina preferințelor]] după care să reveniți aici.',
+	'translate-fs-settings-skip' => 'Sunt gata.
+Lasă-mă să continui.',
+	'translate-fs-userpage-text' => 'Acum va trebui să vă creați o pagină de utilizator.
+
+Vă rugăm să ne spuneți câte ceva despre dumneavoastră: cine sunteți și ce faceți.
+Acest lucru va ajuta comunitatea {{SITENAME}} să își desfășoare activitatea mai eficient, întrucât la {{SITENAME}} sunt oameni din toate colțurile lumii care lucrează în diferite limbi și pentru diferite proiecte.
+
+În caseta precompletată de mai sus, în prima linie, veți descoperi sintagma <nowiki>{{#babel:en-2}}</nowiki>.
+Vă rugăm să o completați în conformitate cu competențele dumneavoastră lingvistice.
+Numărul de după codul limbii reprezintă nivelul de competență asociată limbii respective.
+Opțiunile sunt următoarele:
+* 1 – foarte puțin
+* 2 – cunoștințe de bază
+* 3 – cunoștințe avansate
+* 4 – cunoștințe de limbă maternă
+* 5 – stăpâniți foarte bine limba, asemenea unui traducător profesionist.
+
+Dacă sunteți un vorbitor nativ al unei limbi, completați doar codul limbii, fără a specifica nivelul competenței.
+De exemplu, dacă limba maternă este româna, dar puteți comunica destul de bine în limba engleză, însă foarte puțin în franceză, iată ce ar trebui să scrieți:
+<code><nowiki>{{#babel:ro|en-3|fr-1}}</nowiki></code>
+
+Dacă nu cunoașteți codul asociat unei limbi, acum este momentul să-l căutați în lista de mai jos.',
+	'translate-fs-userpage-submit' => 'Creează-mi pagina mea de utilizator',
+	'translate-fs-userpage-done' => 'Foarte bine! Acum aveți o pagină de utilizator.',
+	'translate-fs-permissions-text' => 'Acum trebuie să depuneți o cerere pentru a vă ralia grupului de traducători.
+
+Până când vom reuși să reparăm codul, vă rugăm să mergeți la [[Project:Translator]] și să urmați instrucțiunile de acolo.
+Apoi reveniți la această pagină.
+
+După ce ați trimis cererea, unul din membrii voluntari ai comitetului o va analiza și o va aproba cât de curând posibil.
+Vă rugăm, fiți răbdător.
+
+<del>Verificați dacă cererea de mai jos este în corect completată după care apăsați butonul de trimitere.</del>',
+	'translate-fs-target-text' => "Felicitări!
+Din acest moment puteți traduce.
+
+Nu vă faceți griji dacă încă nu v-ați acomodat, iar unele lucruri vi se par ciudate.
+[[Project list|Lista de aici]] reprezintă o trecere în revistă a proiectelor la care puteți contribui.
+Majoritatea proiectelor beneficiază de o pagină descriptivă care conține și legătura „''Tradu acest proiect''”, legătură ce vă va conduce către o pagină afișând toate mesajele netraduse.
+De asemenea, este disponibilă o listă a grupurilor de mesaje cu [[Special:LanguageStats|situația curentă în funcție de limbă]].
+
+Dacă simțiți că detaliile de până acum sunt insuficiente, puteți consulta  [[FAQ|întrebările frecvente]] înainte de a traduce.
+Din păcate, în unele cazuri, documentația este învechită și neactualizată.
+Dacă există vreun lucru de care bănuiți că sunteți capabil, dar nu ați descoperit încă cum să procedați, nu ezitați să puneți întrebări la [[Support|cafeneaua locală]].
+
+Puteți, de asemenea, să contactați și alți traducători de aceeași limbă pe [[Portal_talk:$1|pagina de discuție]] a [[Portal:$1|portalului lingvistic]] asociat comunității dumneavoastră.
+Dacă nu ați procedat deja conform îndrumărilor, [[Special:Preferences|schimbați limba interfeței în așa fel încât să fie identică cu limba în care traduceți]]. Astfel, site-ul wiki este capabil să se plieze nevoilor dumneavoastră mult mai bine prin legături relevante.",
+	'translate-fs-email-text' => 'Vă rugăm să ne furnizați o adresă de e-mail prin intermediul [[Special:Preferences|paginii preferințelor]], după care să o confirmați (verificați-vă căsuța de poștă electronică căutând un mesaj trimis de noi).
+
+Acest lucru oferă posibilitatea altor utilizator să vă contacteze utilizând poșta electronică.
+De asemenea, veți primi, cel mult o dată pe lună, un mesaj cu noutăți și știri.
+Dacă nu doriți să recepționați acest newsletter, vă puteți dezabona în fila „{{int:prefs-personal}}” a [[Special:Preferences|preferințelor]] dumneavoastră.',
+);
+
 /** Russian (Русский)
  * @author G0rn
  * @author Александр Сигачёв

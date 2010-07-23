@@ -3455,6 +3455,7 @@ $messages['rm'] = array(
 /** Romanian (Română)
  * @author Firilacroco
  * @author KlaudiuMihaila
+ * @author Minisarm
  */
 $messages['ro'] = array(
 	'pagetranslation' => 'Traducerea paginii',
@@ -3469,7 +3470,8 @@ Nume: $1',
 	'tpt-submit' => 'Marchează această versiune pentru traducere',
 	'tpt-sections-oldnew' => 'Unități de traducere noi și existente',
 	'tpt-sections-deleted' => 'Unități de traducere șterse',
-	'tpt-badsect' => '"$1" nu este un nume valid pentru unitatea de traducere $2.',
+	'tpt-nosuchpage' => 'Pagina $1 nu există',
+	'tpt-badsect' => '„$1” nu este un nume valid pentru unitatea de traducere $2.',
 	'tpt-mark-summary' => 'Marcat această versiune pentru traducere',
 	'tpt-already-marked' => 'Ultima versiune a acestei pagini a fost deja marcată pentru traducere.',
 	'tpt-list-nopages' => 'Nici o pagină nu este marcată pentru traducere sau gata să fie marcată pentru traducere.',
