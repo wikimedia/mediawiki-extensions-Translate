@@ -106,7 +106,7 @@ class SpecialTranslations extends SpecialAllpages {
 	}
 
 	function showTranslations( Title $title ) {
-		global $wgOut, $wgUser, $wgContLang, $wgLang;
+		global $wgOut, $wgUser;
 
 		$sk = $wgUser->getSkin();
 

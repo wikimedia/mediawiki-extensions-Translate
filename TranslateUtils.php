@@ -166,8 +166,6 @@ class TranslateUtils {
 	}
 
 	public static function languageSelector( $language, $selectedId ) {
-		global $wgLang;
-
 		if ( is_callable( array( 'LanguageNames', 'getNames' ) ) ) {
 			$languages = LanguageNames::getNames( $language,
 				LanguageNames::FALLBACK_NORMAL,
@@ -304,7 +302,7 @@ class TranslateUtils {
 	}
 
 	public static function snippet( &$text, $length = 10 ) {
-		global $wgLegalTitleChars, $wgContLang;
+		global $wgContLang;
 
 		$snippet = preg_replace( "/[^\p{L}]/u", ' ', $text );
 		$snippet = preg_replace( "/ {2,}/u", ' ', $snippet );

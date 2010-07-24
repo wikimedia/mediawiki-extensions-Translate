@@ -55,7 +55,7 @@ class MessageTable {
 	}
 
 	public function includeAssets() {
-		global $wgOut, $wgScript;
+		global $wgOut;
 
 		// Our class
 		$wgOut->addScriptFile( TranslateUtils::assetPath( 'js/quickedit.js' ) );

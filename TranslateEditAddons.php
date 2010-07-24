@@ -230,7 +230,7 @@ EOEO;
 	}
 
 	private static function editBoxes( $object ) {
-		global $wgTranslateDocumentationLanguageCode, $wgOut, $wgRequest;
+		global $wgOut, $wgRequest;
 
 		$th = new TranslationHelpers( $object->mTitle );
 		if ( $object->firsttime && !$wgRequest->getCheck( 'oldid' ) && !$wgRequest->getCheck( 'undo' ) ) {

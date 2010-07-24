@@ -169,7 +169,6 @@ class SpecialTranslationStats extends SpecialPage {
 	}
 
 	protected function eLanguage( $name, FormOptions $opts ) {
-		global $wgLang;
 		$value = $opts[$name];
 
 		$select = $this->languageSelector();
@@ -206,7 +205,6 @@ class SpecialTranslationStats extends SpecialPage {
 	}
 
 	protected function eGroup( $name, FormOptions $opts ) {
-		global $wgLang;
 		$value = $opts[$name];
 
 		$select = $this->groupSelector();

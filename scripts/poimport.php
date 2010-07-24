@@ -178,7 +178,6 @@ class WikiWriter {
 	private $changes = array();
 	private $dryrun = true;
 	private $allclear = false;
-	private $user = '';
 	private $group = null;
 
 	/**

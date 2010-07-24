@@ -59,8 +59,6 @@ class TranslateRcFilter {
 	 * @return Boolean true
 	 */
 	public static function translationFilterForm( &$items, $opts ) {
-		global $wgRequest;
-
 		$opts->consumeValue( 'translations' );
 		$default = $opts->getValue( 'translations' );
 

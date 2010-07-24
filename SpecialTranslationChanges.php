@@ -199,10 +199,8 @@ class SpecialTranslationChanges extends SpecialPage {
 	 * GLOBALS: $wgLang
 	 */
 	private static function makeBlock( $tl, $lang, $rowCache, $rowId ) {
-		global $wgLang;
-
 		$changes = count( $rowCache );
-		$output = Xml::tags( 'h3', null, "$tl $lang ($nchanges)" );
+		$output = Xml::tags( 'h3', null, "$tl $lang ($changes)" );
 		$output .= Xml::tags( 'ul',
 			array( 'id' => $rowId, 'style' => 'display: none' ),
 			implode( "\n", $rowCache )

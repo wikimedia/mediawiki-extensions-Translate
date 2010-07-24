@@ -369,8 +369,6 @@ FOO;
 
 	// TODO: fix the name
 	public static function test( &$article, &$outputDone, &$pcache ) {
-		global $wgOut;
-
 		if ( !$article->getOldID() ) {
 			self::header( $article->getTitle() );
 		}
@@ -379,8 +377,6 @@ FOO;
 	}
 
 	public static function header( Title $title ) {
-		global $wgLang, $wgUser;
-
 		$page = TranslatablePage::newFromTitle( $title );
 		$marked = $page->getMarkedTag();
 		$ready = $page->getReadyTag();

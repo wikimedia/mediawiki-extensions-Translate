@@ -534,7 +534,7 @@ if ( !defined( 'TRANSLATE_CLI' ) ) {
 function wfAddNamespace( $id, $name ) {
 	global $wgExtraNamespaces, $wgContentNamespaces,
 		$wgTranslateMessageNamespaces, $wgNamespaceProtection,
-		$wgNamespacesWithSubpages, $wgCapitalLinkOverrides;
+		$wgNamespacesWithSubpages;
 
 	$constant = strtoupper( "NS_$name" );
 

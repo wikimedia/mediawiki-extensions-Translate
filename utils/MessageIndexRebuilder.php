@@ -39,8 +39,6 @@ class MessageIndexRebuilder {
 			self::checkAndAdd( $hugearray, $g, true );
 		}
 
-		global $wgCacheDirectory;
-
 		$filename = TranslateUtils::cacheFile( 'translate_messageindex.cdb' );
 
 		$writer = CdbWriter::open( $filename );

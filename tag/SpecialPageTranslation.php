@@ -338,7 +338,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 	/** Displays the sections and changes for the user to review */
 	public function showPage( TranslatablePage $page, Array $sections ) {
-		global $wgOut, $wgScript, $wgLang;
+		global $wgOut;
 
 		$wgOut->setSubtitle( $this->user->getSkin()->link( $page->getTitle() ) );
 		TranslateUtils::injectCSS();

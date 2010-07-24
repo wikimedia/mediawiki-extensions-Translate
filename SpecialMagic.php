@@ -115,7 +115,7 @@ class SpecialMagic extends SpecialPage {
 	 * GLOBALS: $wgRequest, $wgOut, $wgUser, $wgLang
 	 */
 	public function execute( $parameters ) {
-		global $wgUser, $wgOut, $wgRequest, $wgLang;
+		global $wgUser, $wgOut, $wgRequest;
 
 		$this->setup( $parameters );
 		$this->setHeaders();

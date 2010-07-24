@@ -253,7 +253,7 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 	}
 
 	public function output() {
-		global $IP, $wgServer, $wgTranslateDocumentationLanguageCode;
+		global $wgServer, $wgTranslateDocumentationLanguageCode;
 
 		$lang = Language::factory( 'en' );
 

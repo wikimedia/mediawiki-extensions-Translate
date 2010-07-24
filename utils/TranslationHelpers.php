@@ -585,7 +585,7 @@ class TranslationHelpers {
 	}
 
 	protected function getOtherLanguagesBox() {
-		global $wgLang, $wgUser;
+		global $wgLang;
 
 		$code = $this->targetLanguage;
 		$page = $this->page;
@@ -635,7 +635,7 @@ class TranslationHelpers {
 	}
 
 	public function getDocumentationBox() {
-		global $wgTranslateDocumentationLanguageCode, $wgUser, $wgOut;
+		global $wgTranslateDocumentationLanguageCode, $wgOut;
 
 		if ( !$wgTranslateDocumentationLanguageCode ) {
 			return null;
@@ -853,8 +853,6 @@ class TranslationHelpers {
 	}
 
 	public function getLazySuggestionBox() {
-		global $wgScript;
-
 		if ( $this->group === null || !$this->targetLanguage ) {
 			return null;
 		}
