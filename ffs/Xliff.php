@@ -30,7 +30,6 @@ class XliffFormatWriter extends SimpleFormatWriter {
 	 * Writes very minimalistic header that validates XLIFF schema.
 	 */
 	protected function header( XMLWriter $w, $handle, $code ) {
-		$header = '';
 		$w->startDocument( '1.0', 'UTF-8' );
 
 		// http://docs.oasis-open.org/xliff/v1.2/os/xliff-core.html#Specs_XMLDecl
