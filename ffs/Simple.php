@@ -140,6 +140,9 @@ class SimpleFormatWriter {
 			}
 
 			$filename = $this->group->getMessageFile( $code );
+			if ( !$filename ) {
+				continue;
+			}
 			$target = $targetDirectory . '/' . $filename;
 
 			wfMkdirParents( dirname( $target ) );
