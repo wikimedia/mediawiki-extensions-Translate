@@ -195,7 +195,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		foreach ( $groups as $groupName => $g ) {
 			// Do not report if this group is blacklisted.
 			$groupId = $g->getId();
-			$blacklisted = self::isBlacklisted( $groupId, $code );
+			$blacklisted = $this->isBlacklisted( $groupId, $code );
 
 			if ( $blacklisted !== null ) {
 				continue;

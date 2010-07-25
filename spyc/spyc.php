@@ -481,8 +481,6 @@ class Spyc {
     $line = trim( $line );
     if ( !$line ) return array();
 
-    $array = array();
-
     $group = $this->nodeContainsGroup( $line );
     if ( $group ) {
       $this->addGroup( $line, $group );

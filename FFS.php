@@ -815,7 +815,7 @@ class RubyYamlFFS extends YamlFFS {
 		$match = null;
 
 		while ( preg_match( $regex, $message, $match ) ) {
-			$uniqkey = self::placeholder();
+			$uniqkey = $this->placeholder();
 			$placeholders[$uniqkey] = $match[0];
 			$message = preg_replace( $regex, $uniqkey, $message );
 		}
@@ -826,7 +826,7 @@ class RubyYamlFFS extends YamlFFS {
 		$match = null;
 
 		while ( preg_match( $regex, $message, $match ) ) {
-			$uniqkey = self::placeholder();
+			$uniqkey = $this->placeholder();
 			$matches[$uniqkey] = $match;
 			$message = preg_replace( $regex, $uniqkey, $message );
 		}
