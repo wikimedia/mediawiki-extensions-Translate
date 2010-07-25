@@ -141,8 +141,7 @@ class PageTranslationHooks {
 
 	public static function addSidebar( $out, $tpl ) {
 		// TODO: fixme
-		return true;
-
+/*
 		global $wgLang;
 
 		// Sort by translation percentage
@@ -166,7 +165,7 @@ class PageTranslationHooks {
 		$sidebar['TRANSLATIONS'] = $items;
 
 		$tpl->set( 'sidebar', $sidebar );
-
+*/
 		return true;
 	}
 
