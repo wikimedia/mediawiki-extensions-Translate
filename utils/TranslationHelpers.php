@@ -685,7 +685,6 @@ class TranslationHelpers {
 		}
 
 		// Shortcuts
-		$code = $this->targetLanguage;
 		$key = $this->page;
 
 		$definitionTitle = Title::makeTitleSafe( $this->title->getNamespace(), "$key/en" );

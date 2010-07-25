@@ -24,7 +24,7 @@ class WikiFormatReader extends SimpleFormatReader {
 		}
 		$contents = file_get_contents( $this->filename );
 		$m = array();
-		$count = preg_match_all( '/@author (.*)/', $contents, $m );
+		preg_match_all( '/@author (.*)/', $contents, $m );
 
 		return $m[1];
 	}
@@ -37,7 +37,7 @@ class WikiFormatReader extends SimpleFormatReader {
 		$contents = file_get_contents( $this->filename );
 
 		/** FIXME: handle the case where the first comment is missing */
-		$dollarstart = strpos( $contents, '$' );
+		//$dollarstart = strpos( $contents, '$' );
 
 		$start = strpos( $contents, '*/' );
 		$end = strpos( $contents, '$messages' );

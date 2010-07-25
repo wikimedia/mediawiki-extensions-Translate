@@ -108,7 +108,6 @@ class JavaFormatWriter extends SimpleFormatWriter {
 
 		list( $name, $native ) = $this->getLanguageNames( $code );
 		$authors = $this->formatAuthors( '# Author: ', $code );
-		$when = wfTimestamp( TS_ISO_8601 );
 
 		fwrite( $handle, <<<HEADER
 # Messages for $name ($native)

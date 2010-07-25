@@ -486,7 +486,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 		$dbw = wfGetDB( DB_MASTER );
 		$dbw->delete( 'translate_sections', array( 'trs_page' => $page->getTitle()->getArticleId() ), __METHOD__ );
-		$ok = $dbw->insert( 'translate_sections', $inserts, __METHOD__ );
+		$dbw->insert( 'translate_sections', $inserts, __METHOD__ );
 
 		/* Stores the names of changed sections in the database.
 		 * Used for calculating completion percentages for outdated messages */

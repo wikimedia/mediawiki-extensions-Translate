@@ -319,7 +319,7 @@ class GettextFFS extends SimpleFFS {
 	// READ
 	//
 	public function readFromVariable( $data ) {
-		$authors = $messages = array();
+		$authors = array();
 
 		# Authors first
 		$matches = array();

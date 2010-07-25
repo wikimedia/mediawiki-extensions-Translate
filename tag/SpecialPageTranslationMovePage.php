@@ -294,7 +294,6 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 
 	protected function performAction() {
 		$jobs = array();
-		$titles = array();
 
 		$target = $this->newTitle;
 		$base = $this->oldTitle->getPrefixedText();

@@ -161,7 +161,6 @@ class SimpleFormatWriter {
 		$code = $collection->code; // shorthand
 
 		// Open temporary stream
-		$filename = $this->group->getMessageFile( $code );
 		$handle = fopen( 'php://temp', 'wt' );
 
 		$this->addAuthors( $collection->getAuthors(), $code );

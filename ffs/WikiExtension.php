@@ -108,7 +108,6 @@ class WikiExtensionFormatWriter extends WikiFormatWriter {
 		$code = $collection->code; // shorthand
 
 		// Open temporary stream
-		$filename = $this->group->getMessageFile( $code );
 		$handle = fopen( 'php://temp', 'wt' );
 
 		$this->addAuthors( $collection->getAuthors(), $code );
@@ -176,7 +175,7 @@ class WikiExtensionFormatWriter extends WikiFormatWriter {
 	}
 
 	public function parseAuthorsFromString( $string ) {
-		$count = preg_match_all( '/@author (.*)/', $string, $m );
+		preg_match_all( '/@author (.*)/', $string, $m );
 
 		return $m[1];
 	}

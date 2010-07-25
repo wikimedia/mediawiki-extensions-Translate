@@ -32,7 +32,7 @@ class PhpVariablesFormatReader extends SimpleFormatReader {
 
 		$contents = file_get_contents( $this->filename );
 		$m = array();
-		$count = preg_match_all( '/@author (.*)/', $contents, $m );
+		preg_match_all( '/@author (.*)/', $contents, $m );
 
 		return $m[1];
 	}
