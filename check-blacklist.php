@@ -115,6 +115,13 @@ array(
 	)
 ),
 array(
+	'group' => 'ext-codereview',
+	'check' => 'variable',
+	'message' => array(
+		'code-stats-main', // Optional time parameters
+	)
+),
+array(
 	'group' => 'ext-confirmaccount',
 	'check' => 'variable',
 	'message' => array(
