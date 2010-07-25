@@ -473,7 +473,6 @@ function efTranslateCheckPT() {
 	if ( $wgCommandLineMode ) return true;
 
 	$version = "3"; // Must be a string
-	global $wgMemc;
 	$memcKey = wfMemcKey( 'pt' );
 	$ok = $wgMemc->get( $memcKey );
 
@@ -534,7 +533,7 @@ if ( !defined( 'TRANSLATE_CLI' ) ) {
 function wfAddNamespace( $id, $name ) {
 	global $wgExtraNamespaces, $wgContentNamespaces,
 		$wgTranslateMessageNamespaces, $wgNamespaceProtection,
-		$wgNamespacesWithSubpages;
+		$wgNamespacesWithSubpages, $wgNamespacesToBeSearchedDefault;
 
 	$constant = strtoupper( "NS_$name" );
 

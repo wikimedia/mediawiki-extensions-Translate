@@ -162,7 +162,7 @@ class MessageWebImporter {
 				$text = $diff->getDiff( '', '' );
 				$type = 'changed';
 
-				global $wgRequest;
+				global $wgRequest, $wgLang;;
 
 				# Spaces don't seem to survive round trip in addition to dots
 				# which are silently handled in getVal
@@ -174,8 +174,6 @@ class MessageWebImporter {
 					if ( !count( $changed ) ) {
 						$changed[] = '<ul>';
 					}
-
-					global $wgLang;
 
 					if ( $action === null ) {
 						$message = wfMsgExt( 'translate-manage-inconsistent', 'parseinline', wfEscapeWikiText( "action-$type-$key" ) );
@@ -262,7 +260,6 @@ class MessageWebImporter {
 				if ( $code === 'en' ) {
 					$this->out->addWikiMsg( 'translate-manage-intro-en' );
 				} else {
-					global $wgLang;
 					$lang = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() );
 					$this->out->addWikiMsg( 'translate-manage-intro-other', $lang );
 				}

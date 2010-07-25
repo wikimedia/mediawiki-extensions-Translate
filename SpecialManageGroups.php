@@ -120,7 +120,7 @@ class SpecialManageGroups {
 			'class'  => 'mw-translate-manage'
 		);
 
-		global $wgRequest;
+		global $wgRequest, $wgLang;
 		if (
 			$wgRequest->wasPosted() &&
 			$wgRequest->getBool( 'process', false ) &&
@@ -201,8 +201,6 @@ class SpecialManageGroups {
 					if ( !count( $changed ) ) {
 						$changed[] = '<ul>';
 					}
-
-					global $wgRequest, $wgLang;
 
 					$requestKey = str_replace( '.', '_', $key );
 					$requestKey = str_replace( ' ', '_', $key );
@@ -306,7 +304,6 @@ class SpecialManageGroups {
 				if ( $code === 'en' ) {
 					$this->out->addWikiMsg( 'translate-manage-intro-en' );
 				} else {
-					global $wgLang;
 					$lang = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() );
 					$this->out->addWikiMsg( 'translate-manage-intro-other', $lang );
 				}

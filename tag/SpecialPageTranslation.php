@@ -60,7 +60,7 @@ class SpecialPageTranslation extends SpecialPage {
 			$page = TranslatablePage::newFromTitle( $title );
 			$page->removeTags();
 			$page->getTitle()->invalidateCache();
-			global $wgUser;
+
 			$logger = new LogPage( 'pagetranslation' );
 			$params = array( 'user' => $wgUser->getName() );
 			$logger->addEntry( 'unmark', $page->getTitle(), null, array( serialize( $params ) ) );
