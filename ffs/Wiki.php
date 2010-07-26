@@ -116,8 +116,6 @@ HEADER
 
 		require( $dir . '/messages.inc' );
 
-		global $wgMessageStructure, $wgBlockComments;
-
 		# Sort messages to blocks
 		$sortedMessages['unknown'] = $messages;
 		foreach ( $wgMessageStructure as $blockName => $block ) {

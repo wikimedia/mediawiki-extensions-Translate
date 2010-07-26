@@ -303,8 +303,6 @@ class CoreMessageGroup extends MessageGroupOld {
 	}
 
 	public function getBools() {
-		global $wgOptionalMessages, $wgIgnoredMessages;
-
 		require( $this->getMetaDataPrefix() . '/messageTypes.inc' );
 
 		return array(
