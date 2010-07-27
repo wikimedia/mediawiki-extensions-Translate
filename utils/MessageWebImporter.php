@@ -115,7 +115,7 @@ class MessageWebImporter {
 	}
 
 	public function execute( $messages ) {
-		global $wgOut;
+		global $wgOut, $wgLang;
 
 		$this->out = $wgOut;
 
@@ -162,7 +162,7 @@ class MessageWebImporter {
 				$text = $diff->getDiff( '', '' );
 				$type = 'changed';
 
-				global $wgRequest, $wgLang;;
+				global $wgRequest;
 
 				# Spaces don't seem to survive round trip in addition to dots
 				# which are silently handled in getVal
