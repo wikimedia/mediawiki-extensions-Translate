@@ -149,9 +149,6 @@ Problem Reports
 
 Quick Create
 
-Search Rank Tracker
-file = SearchRankTracker/SpecialSearchRankTracker.i18n.php
-
 Search
 
 Send To A Friend
