@@ -38,7 +38,7 @@ file = ContestTool/SpecialContestTool.i18n.php
 #file = CreateAPage/MultiEdit.i18n.php
 #optional = createplate-Blank, createplate-list
 
-CreatePage
+Create Page
 file = CreatePage/CreatePage.i18n.php
 ignored = createpage-newpagelayout
 
@@ -67,10 +67,16 @@ file = GraceExpired/SpecialGraceExpired.i18n.php
 HA Welcome
 ignored = welcome-enabled, welcome-user
 
+Helper Panel
+
 Image Placeholder
 
 Interstitial - Outbound Screen
 file = Interstitial/OutboundScreen.i18n.php
+
+Interwiki Dispatcher
+file = InterwikiDispatcher/SpecialInterwikiDispatcher.i18n.php
+aliasfile = InterwikiDispatcher/SpecialInterwikiDispatcher.alias.php
 
 Link Suggest
 
@@ -129,6 +135,8 @@ ignored = swm-expire-options
 
 Special Interwiki Edit
 
+Special Mini Upload
+
 Special Multiple Lookup
 
 Special Private Domains
@@ -152,15 +160,18 @@ file = TaskManager/SpecialTaskManager.i18n.php
 Text Regex
 aliasfile = TextRegex/TextRegex.alias.php
 
+Theory tab
+ignored = theorytab-subpage
+
 Title Edit
 
 Video Embed Tool
 
-Wikia Video Add
-file = VideoEmbedTool/WikiaVideoAdd.i18n.php
-
 Where Is Extension
 file = WhereIsExtension/SpecialWhereIsExtension.i18n.php
+
+Wikia Video Add
+file = VideoEmbedTool/WikiaVideoAdd.i18n.php
 
 Widget Special Page
 file = WidgetSpecialPage/WidgetsSpecialPage.i18n.php
@@ -171,6 +182,19 @@ ignored = ircgate-channellist
 Wikia Mini Upload
 
 Wikia Photo Gallery
+
+Wikia Stats
+file = WikiaStats/SpecialWikiaStats.i18n.php
+optional = wikiastats_prev_rank, wikiastats_prev_rank_xls, wikiastats_xls_files_stats
+optional = wikiastats_history_mainstats_value1, wikiastats_history_mainstats_value2, wikiastats_history_mainstats_value3, wikiastats_history_mainstats_value4
+optional = wikiastats_creation_wikia_filename
+ignored = wikiastats_distrib_article_counting, wikiastats_filename_mainstats, wikiastats_filename_other1, wikiastats_filename_other2
+ignored = wikiastats_filename_other3, wikiastats_filename_other4, wikiastats_filename_other5, wikiastats_filename_other6
+ignored = wikiastats_filename_other7, wikiastats_filename_other8, wikiastats_filename_trend, wikiastats_filename_creation
+ignored = wikiastats_filename_column_A, wikiastats_filename_column_B, wikiastats_filename_column_C, wikiastats_filename_column_D
+ignored = wikiastats_filename_column_E, wikiastats_filename_column_F, wikiastats_filename_column_G, wikiastats_filename_column_H
+ignored = wikiastats_filename_column_I, wikiastats_filename_column_J, wikiastats_filename_column_K, wikiastats_filename_column_L
+ignored = wikiastats_filename_column_M, wikiastats_filename_column_N, wikiastats_filename_column_O
 
 Wikia Upload
 
@@ -188,27 +212,3 @@ Wiki Factory
 file = WikiFactory/SpecialWikiFactory.i18n.php
 optional = wikifactory-label-eznamespace
 ignored = awc-metrics-language-top-list
-
-Helper Panel
-
-Interwiki Dispatcher
-file = InterwikiDispatcher/SpecialInterwikiDispatcher.i18n.php
-aliasfile = InterwikiDispatcher/SpecialInterwikiDispatcher.alias.php
-
-Special Mini Upload
-
-Theory tab
-ignored = theorytab-subpage
-
-Wikia Stats
-file = WikiaStats/SpecialWikiaStats.i18n.php
-optional = wikiastats_prev_rank, wikiastats_prev_rank_xls, wikiastats_xls_files_stats
-optional = wikiastats_history_mainstats_value1, wikiastats_history_mainstats_value2, wikiastats_history_mainstats_value3, wikiastats_history_mainstats_value4
-optional = wikiastats_creation_wikia_filename
-ignored = wikiastats_distrib_article_counting, wikiastats_filename_mainstats, wikiastats_filename_other1, wikiastats_filename_other2
-ignored = wikiastats_filename_other3, wikiastats_filename_other4, wikiastats_filename_other5, wikiastats_filename_other6
-ignored = wikiastats_filename_other7, wikiastats_filename_other8, wikiastats_filename_trend, wikiastats_filename_creation
-ignored = wikiastats_filename_column_A, wikiastats_filename_column_B, wikiastats_filename_column_C, wikiastats_filename_column_D
-ignored = wikiastats_filename_column_E, wikiastats_filename_column_F, wikiastats_filename_column_G, wikiastats_filename_column_H
-ignored = wikiastats_filename_column_I, wikiastats_filename_column_J, wikiastats_filename_column_K, wikiastats_filename_column_L
-ignored = wikiastats_filename_column_M, wikiastats_filename_column_N, wikiastats_filename_column_O
