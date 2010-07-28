@@ -131,6 +131,9 @@ Special Private Domains
 
 Special Protect Site
 
+Special Sponsor Page
+file = SpecialSponsorPage/Sponsor.i18n.php
+
 Special Widget Dashboard
 
 Staff Powers
