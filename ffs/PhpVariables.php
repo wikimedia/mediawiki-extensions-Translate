@@ -256,7 +256,7 @@ PHP;
 		$authors = $this->filterAuthors( $authors, $collection->code );
 
 		foreach ( $authors as $author ) {
-			$output .= "* @author $author\n";
+			$output .= " * @author $author\n";
 		}
 
 		return $output;
