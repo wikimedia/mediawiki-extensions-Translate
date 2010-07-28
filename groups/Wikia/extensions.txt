@@ -144,6 +144,7 @@ Special Private Domains
 Special Protect Site
 
 Special Sponsor Page
+descmsg = sponsorpage-desc
 file = SpecialSponsorPage/Sponsor.i18n.php
 optional = sponsor-template
 
