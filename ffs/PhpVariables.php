@@ -171,7 +171,6 @@ class FlatPhpFFS extends SimpleFFS {
 		$matches = array();
 		preg_match_all( '/^ \* @author\s+(.+)$/m', $data, $matches );
 		$authors = $matches[1];
-		var_dump( $matches );
 
 		# Then messages
 		$matches = array();
