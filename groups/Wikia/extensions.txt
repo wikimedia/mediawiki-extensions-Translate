@@ -17,9 +17,6 @@ Badges
 file = Badges/UserBadges.i18n.php
 optional = user-badge-left-align, user-badge-center-align, user-badge-right-align
 
-#BlogPage
-#file = BlogPage/Blog.i18n.php
-
 Blogs
 aliasfile = Blogs/Blogs.alias.php
 optional = blug-cut-sign, blog-avatar-defaults
@@ -41,7 +38,6 @@ file = ContestTool/SpecialContestTool.i18n.php
 #file = CreateAPage/MultiEdit.i18n.php
 #optional = createplate-Blank, createplate-list
 
-#Added 2010-02-01 -- tor
 CreatePage
 file = CreatePage/CreatePage.i18n.php
 ignored = createpage-newpagelayout
@@ -52,38 +48,15 @@ file = DaemonLoader/SpecialDaemonLoader.i18n.php
 Edit Account
 file = EditAccount/SpecialEditAccount.i18n.php
 
-# Conflicting keys from MediaWiki SVN's Editcount
-# Key 8:editcount already belongs to ext-editcount, conflict with wikia-editcount
-# Key 8:editcount_username already belongs to ext-editcount, conflict with wikia-editcount
-# Key 8:editcount_submit already belongs to ext-editcount, conflict with wikia-editcount
-# Key 8:editcount_total already belongs to ext-editcount, conflict with wikia-editcount
-#Editcount
-#file = Editcount/SpecialEditcount.i18n.php
-
 Editing Tips
 
 Edit Research
-
-# Conflicting keys from MediaWiki SVN's ImportFreeImages
-# Key 8:importfreeimages already belongs to ext-importfreeimages, conflict with wikia-flickrimport
-# Key 8:importfreeimages_description already belongs to ext-importfreeimages, conflict with wikia-flickrimport
-# Key 8:importfreeimages_noapikey already belongs to ext-importfreeimages, conflict with wikia-flickrimport
-# Key 8:importfreeimages_nophotosfound already belongs to ext-importfreeimages, conflict with wikia-flickrimport
-# Key 8:importfreeimages_owner already belongs to ext-importfreeimages, conflict with wikia-flickrimport
-# Key 8:importfreeimages_importthis already belongs to ext-importfreeimages, conflict with wikia-flickrimport
-# Key 8:importfreeimages_next already belongs to ext-importfreeimages, conflict with wikia-flickrimport
-# Key 8:importfreeimages_filefromflickr already belongs to ext-importfreeimages, conflict with wikia-flickrimport
-# Key 8:importfreeimages_promptuserforfilename already belongs to ext-importfreeimages, conflict with wikia-flickrimport
-# Key 8:importfreeimages_returntoform already belongs to ext-importfreeimages, conflict with wikia-flickrimport
-#Flickr Import
-#var = wgFlickrImportMessages
 
 Follow
 aliasfile = Follow/Follow.alias.php
 
 Force Subject For New Section
 
-#Added 2010-04-23 -- tor
 Founder Emails
 
 Global Watchlist
@@ -100,12 +73,6 @@ Interstitial - Outbound Screen
 file = Interstitial/OutboundScreen.i18n.php
 
 Link Suggest
-
-# Conflicting keys from MediaWiki core
-# Key 8:listusers already belongs to core, conflict with wikia-listusers
-# Key 8:listusers-blocked already belongs to core, conflict with wikia-listusers
-#Listusers
-#file = Listusers/SpecialListusers.i18n.php
 
 Lookup Contribs
 file = LookupContribs/SpecialLookupContribs.i18n.php
@@ -195,7 +162,6 @@ ignored = ircgate-channellist
 
 Wikia Mini Upload
 
-#Added 2010-04-23 -- tor
 Wikia Photo Gallery
 
 Wikia Upload
@@ -220,18 +186,6 @@ Helper Panel
 Interwiki Dispatcher
 file = InterwikiDispatcher/SpecialInterwikiDispatcher.i18n.php
 aliasfile = InterwikiDispatcher/SpecialInterwikiDispatcher.alias.php
-
-#i18n file needs to be well formed
-# all sections need to to separated with newlines
-# and no trailing ?>
-#MultiEdit
-#file = MultiEdit/MultiEdit.i18n.php
-
-# Conflicting keys with MediaWiki SVN RegexBlock extension
-# Key 8:regexblock already belongs to ext-regexblock, conflict with wikia-regexblock
-# Key 8:right-regexblock already belongs to ext-regexblock, conflict with wikia-regexblock
-#RegexBlock
-#file = RegexBlock/RegexBlock.i18n.php
 
 Special Mini Upload
 
