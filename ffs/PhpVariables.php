@@ -169,8 +169,9 @@ class FlatPhpFFS extends SimpleFFS {
 
 		# Authors first
 		$matches = array();
-		preg_match_all( '/^ * @author\s*(.*)\s*$/m', $data, $matches );
+		preg_match_all( '/^ \* @author\s+(.+)$/m', $data, $matches );
 		$authors = $matches[1];
+		var_dump( $matches );
 
 		# Then messages
 		$matches = array();
@@ -211,6 +212,7 @@ class FlatPhpFFS extends SimpleFFS {
 			$key = stripcslashes( $key );
 
 			$value = $item->translation();
+			if ( $value === null ) continue;
 			$value = str_replace( TRANSLATE_FUZZY, '', $value );
 			$value = addcslashes( $value, "'" );
 
