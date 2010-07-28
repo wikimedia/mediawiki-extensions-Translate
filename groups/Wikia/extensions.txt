@@ -9,10 +9,6 @@ descmsg = comboajaxlogin-desc
 
 Ajax Poll
 
-# Wrong format
-#ArticlesHome
-#file = ArticlesHome/ArticlesHome.i18n.php
-
 Auto Create Wiki
 optional = autocreatewiki-reminder-subject, autocreatewiki-language-top-list
 ignored = requestwiki-filter-language, autocreatewiki-tagline
@@ -33,11 +29,8 @@ Category Hubs
 
 Category Select
 
-#Comments
-#file = Comments/Comments.i18n.php
-
-#CommentsForum
-#file = CommentsForum/Forum.i18n.php
+CommentsForum
+file = CommentsForum/Forum.i18n.php
 
 Contest Tool
 file = ContestTool/SpecialContestTool.i18n.php
