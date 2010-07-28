@@ -891,6 +891,7 @@ class MessageGroups {
 		$deps[] = new GlobalDependency( 'wgTranslateEC' );
 		$deps[] = new GlobalDependency( 'wgTranslateCC' );
 		$deps[] = New FileDependency( dirname( __FILE__ ) . '/groups/mediawiki-defines.txt' );
+		$deps[] = New FileDependency( dirname( __FILE__ ) . '/groups/Wikia/extensions.txt' );
 		
 		if ( $wgTranslateAddMWExtensionGroups ) {
 			$a = new PremadeMediawikiExtensionGroups;
