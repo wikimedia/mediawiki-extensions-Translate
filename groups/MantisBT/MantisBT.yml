@@ -78,6 +78,7 @@ TEMPLATE:
        */
 
 
+
   CHECKER:
     class: MessageChecker
     checks:

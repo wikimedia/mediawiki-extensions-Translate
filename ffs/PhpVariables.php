@@ -239,7 +239,7 @@ class FlatPhpFFS extends SimpleFFS {
 		$output = <<<PHP
 /** $name ($native)
  * $docu
- * To improve a translation please visit $wgSitename
+ * To improve a translation please visit http://$wgSitename
  *
  * @ingroup Language
  * @file
