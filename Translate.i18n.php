@@ -576,21 +576,6 @@ $messages['ary'] = array(
 	'translate-manage-import-deleted' => 'Méṣaj memḫi $1',
 );
 
-/** Kabardian (Cyrillic) ()
- * @author Тамэ Балъкъэрхэ
- */
-$messages['kbd-cyrl'] = array(
-	'translate-history' => 'тхыдэ',
-	'translate-page-settings-legend' => 'Теухуапхъэхэр',
-	'translate-page-task' => 'Сыхуейщ',
-	'translate-page-group' => 'Гуп',
-	'translate-page-language' => 'Бзэ',
-	'translate-page-limit' => 'ФIимыхуу',
-	'translate-submit' => 'Къэгъэлъэгъуэн',
-	'translate-optional' => '(Iэмалыншэкъым)',
-	'translate-ignored' => '(щхьэщыгъэцIэфтауэ)',
-);
-
 /** Afrikaans (Afrikaans)
  * @author Arnobarnard
  * @author Byeboer
@@ -9134,17 +9119,21 @@ $messages['ja'] = array(
 	'translationstats' => '翻訳の統計',
 	'translate-stats-edits' => '編集',
 	'translate-stats-users' => '翻訳者',
+	'translate-stats-registrations' => '登録',
 	'translate-statsf-intro' => 'このフォームを使って簡単な統計を生成できます。数値にはすべて上限と下限があります。',
 	'translate-statsf-options' => 'グラフのオプション',
 	'translate-statsf-width' => 'ピクセル幅:',
 	'translate-statsf-height' => 'ピクセル高:',
 	'translate-statsf-days' => '時期 (日数):',
 	'translate-statsf-scale' => '粒度:',
+	'translate-statsf-scale-months' => 'ヶ月',
+	'translate-statsf-scale-weeks' => '週',
 	'translate-statsf-scale-days' => '日',
 	'translate-statsf-scale-hours' => '時間',
 	'translate-statsf-count' => '尺度:',
 	'translate-statsf-count-edits' => '編集回数',
 	'translate-statsf-count-users' => '活動中の翻訳者',
+	'translate-statsf-count-registrations' => '新しい利用者',
 	'translate-statsf-language' => 'カンマ区切りの言語コードの一覧:',
 	'translate-statsf-group' => 'カンマ区切りのグループコードの一覧:',
 	'translate-statsf-submit' => 'プレビュー',
@@ -9537,6 +9526,21 @@ $messages['kaa'] = array(
 	'translate-checks-plural' => "Anıqlamada <nowiki>{{PLURAL:}}</nowiki> paydalanılg'an, biraq awdarmada bul joq.",
 	'translate-pref-nonewsletter' => "Mag'an e-mail boyınsha jan'alıqlardı jibermen'",
 	'right-translate' => "Awdarma interfeysi ja'rdeminde o'zgertiw",
+);
+
+/** Kabardian (Cyrillic) ()
+ * @author Тамэ Балъкъэрхэ
+ */
+$messages['kbd-cyrl'] = array(
+	'translate-history' => 'тхыдэ',
+	'translate-page-settings-legend' => 'Теухуапхъэхэр',
+	'translate-page-task' => 'Сыхуейщ',
+	'translate-page-group' => 'Гуп',
+	'translate-page-language' => 'Бзэ',
+	'translate-page-limit' => 'ФIимыхуу',
+	'translate-submit' => 'Къэгъэлъэгъуэн',
+	'translate-optional' => '(Iэмалыншэкъым)',
+	'translate-ignored' => '(щхьэщыгъэцIэфтауэ)',
 );
 
 /** Kongo (Kongo)

@@ -268,13 +268,14 @@ $messages['bs'] = array(
 
 /** German (Deutsch)
  * @author Kghbln
+ * @author Purodha
  * @author The Evil IP address
  */
 $messages['de'] = array(
 	'firststeps' => 'Erste Schritte',
 	'firststeps-desc' => '[[Special:FirstSteps|Spezialseite]] zur Starterleichterung auf Wikis mit der „Translate“-Extension',
 	'translate-fs-pagetitle-done' => '- erledigt!',
-	'translate-fs-pagetitle' => 'Startsassistent - $1',
+	'translate-fs-pagetitle' => 'Startassistent - $1',
 	'translate-fs-signup-title' => 'Registrieren',
 	'translate-fs-settings-title' => 'Deine Einstellungen anpassen',
 	'translate-fs-userpage-title' => 'Deine Benutzerseite erstellen',
@@ -965,6 +966,7 @@ $messages['id'] = array(
 /** Japanese (日本語)
  * @author Fryed-peach
  * @author Hosiryuhosi
+ * @author 青子守歌
  */
 $messages['ja'] = array(
 	'firststeps' => '開始手順',
@@ -1025,7 +1027,8 @@ $3登録$4',
 
 翻訳を始める前にもっと知らなければならないことがあると感じられたならば、[[FAQ]] のページを読むのもよいでしょう。残念なことにドキュメントの中には更新が途絶えてしまっているものもあります。もし、なにかやりたいことがあって、それをどうやって行えばよいのかわからない場合には、遠慮せず[[Support|サポートページ]]にて質問してください。
 
-また、同じ言語で作業している仲間の翻訳者とは[[Portal:$1|言語別のポータル]]で連絡することができます。ポータルへのリンクは現在の[[Special:Preferences|言語設定]]によります。必要ならば変更してください。",
+また、同じ言語で作業している仲間の翻訳者とは[[Portal:$1|言語別のポータル]]の[[Portal_talk:$1|トークページ]]で連絡することができます。
+まだ設定されていなければ、[[Special:Preferences|インターフェースの言語を、翻訳先としたい言語に変更]]すれば、ウィキ上では最も関連性のあるリンクが表示されます。",
 	'translate-fs-email-text' => 'あなたの電子メールアドレスを[[Special:Preferences|個人設定]]で入力し、送られてきたメールからそのメールアドレスの確認を行ってください。
 
 これにより、他の利用者があなたに電子メールを通じて連絡できるようになります。また、多くて月に1回ほどニュースレターが送られてきます。ニュースレターを受け取りたくない場合は、[[Special:Preferences|個人設定]]の「{{int:prefs-personal}}」タブで受信の中止を設定できます。',
@@ -2048,6 +2051,22 @@ Du kan ändra om det behövs.",
 Detta gör det möjligt för andra användare att kontakta dig via e-post. 
 Du kommer också att få ett nyhetsbrev högst en gång i månaden. 
 Om du inte vill få några nyhetsbrev så kan kan välja bort dem under fliken "{{int:prefs-personal}}" i dina [[Special:Preferences|inställningar]].',
+);
+
+/** Telugu (తెలుగు)
+ * @author Veeven
+ */
+$messages['te'] = array(
+	'firststeps' => 'మొదటి అడుగులు',
+	'translate-fs-pagetitle-done' => ' - పూర్తయ్యింది!',
+	'translate-fs-signup-title' => 'నమోదు',
+	'translate-fs-settings-title' => 'మీ అభిరుచులను అమర్చుకోండి',
+	'translate-fs-userpage-title' => 'మీ వాడుకరి పుటని సృష్టించుకోండి',
+	'translate-fs-permissions-title' => 'అనువాద అనుమతులకై అభ్యర్థించండి',
+	'translate-fs-target-title' => 'అనువదించడం మొదలుపెట్టండి!',
+	'translate-fs-email-title' => 'మీ ఈమెయిలు చిరునామాని నిర్ధారించండి',
+	'translate-fs-userpage-submit' => 'నా వాడుకరి పుటని సృష్టించు',
+	'translate-fs-userpage-done' => 'భళా! మీకు ఇప్పుడు వాడుకరి పుట ఉంది.',
 );
 
 /** Tagalog (Tagalog)

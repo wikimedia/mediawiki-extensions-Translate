@@ -184,17 +184,6 @@ $3 is an URL.',
 	'pt-movepage-reason' => '{{Identical|Reason}}',
 );
 
-/** Kabardian (Cyrillic) ()
- * @author Тамэ Балъкъэрхэ
- */
-$messages['kbd-cyrl'] = array(
-	'tpt-diff-old' => 'Ипэ ит текстыр',
-	'tpt-diff-new' => 'ТекстыщIэ',
-	'tpt-translate-this' => 'напэкIуэцIыр зэхъуэкIын',
-	'translate-tag-translate-link-desc' => 'НапэкIуэцIыр зэхъуэкIын',
-	'tpt-languages-legend' => 'НэгъуэщIыбзэхэр:',
-);
-
 /** Afrikaans (Afrikaans)
  * @author Naudefj
  */
@@ -2226,6 +2215,7 @@ Halaman yang ingin Anda sunting ini tampaknya tidak memiliki hubungan dengan hal
  */
 $messages['ig'] = array(
 	'pagetranslation' => 'Ihü kuwariala na asụsụ ozor',
+	'tpt-template' => 'Àtụ ihü',
 	'tpt-diff-new' => 'Mpkurụ edemede ohúrù',
 	'tpt-languages-legend' => 'Asụsụ ndi ozor:',
 );
@@ -2360,6 +2350,40 @@ $messages['ja'] = array(
 	'pt-log-name' => 'ページ翻訳記録',
 	'pt-log-mark' => 'ページ「[[:$1]]」の版 $3 を翻訳対象に{{GENDER:$2|指定}}',
 	'pt-log-unmark' => 'ページ「[[:$1]]」の翻訳指定を{{GENDER:$2|解除}}',
+	'pt-log-moveok' => '翻訳可能ページ$1を新しい名前に変更{{GENDER:$2|完了}}',
+	'pt-log-movenok' => '[[:$1]]を[[:$3]]へ移動中に問題が{{GENDER:$2|発生しました}}',
+	'pt-movepage-title' => '翻訳可能ページ$1を移動',
+	'pt-movepage-blockers' => '翻訳可能ページは、{{PLURAL:$1|以下の問題}}により、新しい名前に移動できません：',
+	'pt-movepage-block-base-exists' => '対象の基底ページ[[:$1]]は既に存在しています。',
+	'pt-movepage-block-base-invalid' => '対象の基底ページは有効なタイトルではありません。',
+	'pt-movepage-block-tp-exists' => '対象の翻訳ページ[[:$2]]は既に存在しています。',
+	'pt-movepage-block-tp-invalid' => '対象の翻訳ページの題[[:$1]]が無効です（長過ぎる？）。',
+	'pt-movepage-block-section-exists' => '対象の節ページ[[:$2]]は既に存在しています。',
+	'pt-movepage-block-section-invalid' => '対象の節ページの題[[:$1]]が無効です（長過ぎる？）。',
+	'pt-movepage-block-subpage-exists' => '対象のサブページ[[:$2]]は既に存在しています。',
+	'pt-movepage-block-subpage-invalid' => '対象のサブページの題[[:$1]]が無効です（長過ぎる？）。',
+	'pt-movepage-list-pages' => '移動するページの一覧',
+	'pt-movepage-list-translation' => '翻訳ページ',
+	'pt-movepage-list-section' => '節ページ',
+	'pt-movepage-list-other' => 'その他のサブページ',
+	'pt-movepage-list-count' => '合計で$1ページが移動',
+	'pt-movepage-legend' => '翻訳可能ページを移動',
+	'pt-movepage-current' => '現在の名前：',
+	'pt-movepage-new' => '新しい名前：',
+	'pt-movepage-reason' => '理由：',
+	'pt-movepage-subpages' => 'サブページを全て移動',
+	'pt-movepage-action-check' => '移動が可能な場合にチェック',
+	'pt-movepage-action-perform' => '移動しない',
+	'pt-movepage-action-other' => '対象を変更',
+	'pt-movepage-intro' => 'この特別ページは、翻訳用に設定されたページを移動することができます。
+多くのページを移動しなければならないため、移動操作はすぐに完了はしません。
+ページの移動には、ジョブ・キューが使用されます。
+ページが移動されている間、そのページの質問ページで対話することができません。
+失敗はページの翻訳ログに記録されるので、それらは手動で修正される必要があります。',
+	'pt-movepage-logreason' => '翻訳可能ページ$1の一部。',
+	'pt-movepage-started' => '基底ページが移動されました。
+ページの翻訳ログで、エラーや完了メッセージを確認してください。',
+	'pt-locked-page' => '現在、翻訳ページが移動されているため、このページはロックされています',
 );
 
 /** Javanese (Basa Jawa)
@@ -2374,6 +2398,17 @@ $messages['jv'] = array(
  */
 $messages['ka'] = array(
 	'tpt-diff-new' => 'ახალი ტექსტი',
+);
+
+/** Kabardian (Cyrillic) ()
+ * @author Тамэ Балъкъэрхэ
+ */
+$messages['kbd-cyrl'] = array(
+	'tpt-diff-old' => 'Ипэ ит текстыр',
+	'tpt-diff-new' => 'ТекстыщIэ',
+	'tpt-translate-this' => 'напэкIуэцIыр зэхъуэкIын',
+	'translate-tag-translate-link-desc' => 'НапэкIуэцIыр зэхъуэкIын',
+	'tpt-languages-legend' => 'НэгъуэщIыбзэхэр:',
 );
 
 /** Khmer (ភាសាខ្មែរ)
