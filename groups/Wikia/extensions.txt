@@ -29,7 +29,7 @@ Category Hubs
 
 Category Select
 
-CommentsForum
+Comments Forum
 file = CommentsForum/Forum.i18n.php
 
 Contest Tool
