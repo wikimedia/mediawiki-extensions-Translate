@@ -212,3 +212,10 @@ Wiki Factory
 file = WikiFactory/SpecialWikiFactory.i18n.php
 optional = wikifactory-label-eznamespace
 ignored = awc-metrics-language-top-list
+
+Wiki Stickies
+aliasfile = WikiStickies/SpecialWikiStickies.alias.php
+
+Without images
+file = WikiStickies/SpecialWithoutimages.i18n.php
+aliasfile = WikiStickies/SpecialWithoutimages.alias.php
