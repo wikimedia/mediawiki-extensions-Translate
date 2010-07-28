@@ -137,6 +137,7 @@ Special Protect Site
 
 Special Sponsor Page
 file = SpecialSponsorPage/Sponsor.i18n.php
+optional = sponsor-template
 
 Special Widget Dashboard
 
