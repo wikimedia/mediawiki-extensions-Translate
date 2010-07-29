@@ -385,7 +385,12 @@ class AggregateMessageGroup extends MessageGroupBase {
 					continue;
 				}
 
-				$groups[$id] = MessageGroups::getGroup( $id );
+				$group = MessageGroups::getGroup( $id );
+				if ( $group === null ) {
+					error_log( "Invalid group id in {$this->getId()}: $id" );
+					continue;
+				}
+				$groups[$id] =  $group;
 			}
 			$this->groups = $groups;
 		}
