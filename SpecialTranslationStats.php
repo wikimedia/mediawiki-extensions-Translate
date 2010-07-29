@@ -484,7 +484,7 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 		}
 
 		foreach( $this->codes as $code ) {
-			$languages[] = 'rc_title like \'%%/' . $db->escapeLike( $code ) . "'";
+			$languages[] = 'rc_title ' . $db->buildLike( $db->anyString(), "/$code" );
 		}
 
 		if ( count( $namespaces ) ) {
