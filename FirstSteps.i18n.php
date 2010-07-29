@@ -266,6 +266,14 @@ $messages['bs'] = array(
 	'translate-fs-userpage-done' => 'Odlično urađeno! Sada imate korisničku stranicu.',
 );
 
+/** Czech (Česky)
+ * @author Mormegil
+ */
+$messages['cs'] = array(
+	'firststeps' => 'První kroky',
+	'firststeps-desc' => '[[Special:FirstSteps|Speciální stránka]] pomáhající uživatelům začít pracovat na wiki s rozšířením Translate',
+);
+
 /** German (Deutsch)
  * @author Kghbln
  * @author Purodha

@@ -3361,7 +3361,7 @@ Implicitní seznam (''default'') závisí na vašem jazyce.",
 	'translate-translations-including-no-param' => 'V parametru musíte určit platný název zprávy',
 	'languagestats' => 'Statistika jazyků',
 	'languagestats-summary' => 'Tato stránka zobrazuje statistiku překladů všech skupin zpráv v daném jazyce.',
-	'languagestats-stats-for' => 'Statistiky překladů pro $1 ($2).',
+	'languagestats-stats-for' => 'Statistiky překladů pro jazyk $1 ($2).',
 	'languagestats-recenttranslations' => 'nedávné překlady',
 	'translate-language-code' => 'Kód jazyka',
 	'translate-language-code-field-name' => 'Kód jazyka:',
@@ -7299,6 +7299,7 @@ $messages['hil'] = array(
  * @author Dnik
  * @author Ex13
  * @author SpeedyGonsales
+ * @author Tivek
  */
 $messages['hr'] = array(
 	'translate' => 'Prijevodi sistemskih poruka',
@@ -7326,6 +7327,8 @@ $messages['hr'] = array(
 	'translate-page-settings-legend' => 'Postavke',
 	'translate-page-task' => 'Želim',
 	'translate-page-group' => 'Skupina',
+	'translate-page-group-tooltip' => 'Ime grupe poruka.
+Ako se grupa sastoji od podskupa ili nadskupa poruka iz drugih grupa, prikazana je podebljano.',
 	'translate-page-language' => 'Jezik',
 	'translate-page-limit' => 'Prikaži maks.',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|poruka|poruke|poruka}} po stranici',
@@ -14327,6 +14330,7 @@ Dacă grupul reprezintă un subset sau un superset de mesaje care provin de la a
 Dacă știți unde sau cum este folosit acest mesaj, îi puteți ajuta pe ceilalți traducători prin adăugarea documentației acestui mesaj.''",
 	'translate-edit-information' => 'Informații despre mesajul „$2” ($1)',
 	'translate-edit-in-other-languages' => 'Mesajul „$1” în alte limbi',
+	'translate-edit-warnings' => 'Avertizări în legătură cu traducerile incomplete',
 	'translate-edit-tmsugs' => 'Sugestii din memoria de traducere',
 	'translate-edit-tmmatch' => 'Potrivire în proporție de $1%',
 	'translate-edit-goto-no-prev' => 'Nici un mesaj anterior',
@@ -14400,6 +14404,7 @@ Dacă știți unde sau cum este folosit acest mesaj, îi puteți ajuta pe ceilal
 	'translate-translations-messagename' => 'Nume:',
 	'translate-translations-project' => 'Proiect:',
 	'languagestats' => 'Statistici de limbă',
+	'languagestats-summary' => 'Această pagină afișează statistici despre traducerile grupurilor de mesaje în funcție de limbă.',
 	'languagestats-recenttranslations' => 'schimbări recente',
 	'translate-language-code' => 'Codul limbii',
 	'translate-language-code-field-name' => 'Codul limbii:',
@@ -17935,17 +17940,21 @@ $messages['uk'] = array(
 	'translationstats' => 'Статистика перекладів',
 	'translate-stats-edits' => 'Редагувань за день',
 	'translate-stats-users' => 'Перекладачі',
+	'translate-stats-registrations' => 'Реєстрації',
 	'translate-statsf-intro' => 'Ця форма допоможе вам створити зручний графік. Для всіх значень можна задати верхню і нижню межі.',
 	'translate-statsf-options' => 'Параметри графіка',
 	'translate-statsf-width' => 'Ширина в пікселях:',
 	'translate-statsf-height' => 'Висота в пікселях:',
 	'translate-statsf-days' => 'Час у днях:',
 	'translate-statsf-scale' => 'Ступінь деталізації:',
+	'translate-statsf-scale-months' => 'Місяці',
+	'translate-statsf-scale-weeks' => 'Тижні',
 	'translate-statsf-scale-days' => 'Дні',
 	'translate-statsf-scale-hours' => 'Години',
 	'translate-statsf-count' => 'Міра:',
 	'translate-statsf-count-edits' => 'Кількість редагувань',
 	'translate-statsf-count-users' => 'Активні перекладачі',
+	'translate-statsf-count-registrations' => 'Нові користувачі',
 	'translate-statsf-language' => 'Список кодів мови, розділених комами:',
 	'translate-statsf-group' => 'Список кодів групи мов, розділених комами:',
 	'translate-statsf-submit' => 'Перегляд',

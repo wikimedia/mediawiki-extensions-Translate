@@ -1567,22 +1567,26 @@ Nom : $1',
 	'tpt-sections-oldnew' => 'Unitâts de traduccion novèles et ègzistentes',
 	'tpt-sections-deleted' => 'Unitâts de traduccion suprimâs',
 	'tpt-sections-template' => 'Modèlo de pâge de traduccion',
+	'tpt-action-nofuzzy' => 'Pas envalidar les traduccions',
 	'tpt-badtitle' => 'Lo nom de pâge balyê ($1) est pas un titro valido',
+	'tpt-nosuchpage' => 'La pâge $1 ègziste pas',
 	'tpt-oldrevision' => '$2 est pas la dèrriére vèrsion de la pâge [[$1]].
 Solament la dèrriére vèrsion de la pâge pôt étre marcâ por étre traduita.',
-	'tpt-notsuitable' => 'La pâge $1 est pas convegnâbla por étre traduita.
-Seyâd de sûr que contint la balisa <nowiki><translate></nowiki> et qu’at una sintaxa justa.',
-	'tpt-saveok' => 'La pâge « $1 » at étâ marcâ por étre traduita avouéc $2 {{PLURAL:$2|unitât de traduccion|unitâts de traduccion}}.
+	'tpt-notsuitable' => 'La pâge $1 sè préte pas por étre traduita.
+Assurâd-vos que contegne la balisa <nowiki><translate></nowiki> et pués qu’èye una sintaxa justa.',
+	'tpt-saveok' => 'La pâge [[$1]] at étâ marcâ por étre traduita avouéc $2 unitât{{PLURAL:$2||s}} de traduccion.
 La pâge pôt étre <span class="plainlinks">[$3 traduita]</span> dês ora.',
 	'tpt-badsect' => '« $1 » est pas un nom valido por una unitât de traduccion $2.',
-	'tpt-showpage-intro' => 'Ce-desot, les novèles traduccions, celes ègzistentes et suprimâs.
+	'tpt-showpage-intro' => 'Ce-desot, les novèles traduccions, celes ègzistentes et pués celes suprimâs.
 Devant que marcar cetes vèrsions por étre traduites, controlâd que los changements a les sèccions sont petiôts por èvitar de travâly inutilo ux traductors.',
 	'tpt-mark-summary' => 'Ceta vèrsion at étâ marcâ por étre traduita',
-	'tpt-edit-failed' => 'Empossiblo de betar a jorn la pâge $1',
+	'tpt-edit-failed' => 'Empossiblo de betar a jorn la pâge : $1',
 	'tpt-already-marked' => 'La dèrriére vèrsion de ceta pâge at ja étâ marcâ por étre traduita.',
+	'tpt-unmarked' => 'La pâge $1 est pas més marcâ por étre traduita.',
 	'tpt-list-nopages' => 'Niona pâge at étâ marcâ por étre traduita ou ben prèsta por l’étre.',
 	'tpt-old-pages' => 'Des vèrsions de {{PLURAL:$1|ceta pâge|cetes pâges}} ont étâ marcâs por étre traduites.',
-	'tpt-new-pages' => '{{PLURAL:$1|Ceta pâge contint|Cetes pâges contegnont}} de tèxto avouéc des balises de traduccion, mas niona vèrsion de {{PLURAL:$1|ceta pâge est marcâ por étre traduita|cetes pâges sont marcâs por étre traduites}}.',
+	'tpt-new-pages' => '{{PLURAL:$1|Ceta pâge contint|Cetes pâges contegnont}} de tèxto avouéc des balises de traduccion,
+mas niona vèrsion de {{PLURAL:$1|ceta pâge est marcâ por étre traduita|cetes pâges sont marcâs por étre traduites}}.',
 	'tpt-rev-latest' => 'dèrriére vèrsion',
 	'tpt-rev-old' => 'difèrence avouéc cela vèrsion marcâ',
 	'tpt-rev-mark-new' => 'marcar ceta vèrsion por étre traduita',
@@ -4278,6 +4282,7 @@ $messages['uk'] = array(
 	'tpt-sections-deleted' => 'Вилучені блоки перекладу',
 	'tpt-sections-template' => 'Шаблон сторінки перекладу',
 	'tpt-badtitle' => 'Зазначена назва сторінки ($1) недопустима',
+	'tpt-nosuchpage' => 'Сторінки $1 не існує',
 	'tpt-badsect' => '"$1" не є припустимою назвою для частини перекладів $2.',
 	'tpt-mark-summary' => 'Позначено цю версію для перекладу',
 	'tpt-edit-failed' => 'Не вдалося оновити сторінку: $1',
