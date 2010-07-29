@@ -451,7 +451,7 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 
 			$dbw = wfGetDB( DB_MASTER );
 			$fields = array( 'page_namespace', 'page_title' );
-			$titleCond = 'page_title like \'' . $dbw->escapeLike( $base ) . "/%%'";
+			$titleCond = 'page_title '. $dbw->buildLike( "$base/", $dbw->anyString() );
 			$conds = array( 'page_namespace' => NS_TRANSLATIONS, $titleCond );
 			$result = $dbw->select( 'page', $fields, $conds, __METHOD__ );
 			$this->sectionPages = TitleArray::newFromResult( $result );

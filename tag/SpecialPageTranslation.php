@@ -524,7 +524,7 @@ class SpecialPageTranslation extends SpecialPage {
 		foreach ( $changed as $c ) {
 			$title = Title::makeTitleSafe( NS_TRANSLATIONS, "$prefix/$c" );
 			if ( $title ) {
-				$titles[] = 'page_title like \'' . $db->escapeLike( $title->getDBkey() ) . '/%\'';
+				$titles[] = 'page_title ' . $db->buildLike( $title->getDBkey() . '/', $db->anyString() );
 			}
 		}
 

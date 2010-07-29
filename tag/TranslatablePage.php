@@ -448,13 +448,14 @@ class TranslatablePage {
 	public function getTranslationPages() {
 		// Fetch the available translation pages from database
 		$dbr = wfGetDB( DB_SLAVE );
-		$likePattern = $dbr->escapeLike( $this->getTitle()->getDBkey() ) . '/%%';
+		$prefix = $this->getTitle()->getDBkey() . '/';
+		$likePattern = $dbr->buildLike( $prefix, $dbr->anyString() );
 		$res = $dbr->select(
 			'page',
 			array( 'page_namespace', 'page_title' ),
 			array(
 				'page_namespace' => $this->getTitle()->getNamespace(),
-				"page_title LIKE '$likePattern'"
+				"page_title $likePattern"
 			),
 			__METHOD__
 		);
