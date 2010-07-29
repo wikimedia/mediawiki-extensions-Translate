@@ -35,4 +35,5 @@ if ( isset( $options['help'] ) ) {
 
 $cache = new ArrayMemoryCache( 'groupstats' );
 $cache->clearAll();
+MessageGroups::clearCache();
 MessageIndexRebuilder::execute();
