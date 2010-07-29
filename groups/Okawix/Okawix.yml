@@ -22,7 +22,7 @@ BASIC:
 GROUPS:
   - out-okawix-doc
   - out-okawix-dtd
-  - out-okawix-properties
+  - out-okawix-prop
 
 ---
 BASIC:
