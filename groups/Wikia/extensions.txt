@@ -117,6 +117,12 @@ Quick Create
 
 Recipes Tweaks
 
+RTE - Base
+file = RTE/i18n/RTE.i18n.php
+
+RTE - CK Wikia
+file = RTE/i18n/CK.wikia.i18n.php
+
 Search
 
 Send To A Friend
