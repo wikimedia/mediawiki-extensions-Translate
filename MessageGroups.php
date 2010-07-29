@@ -731,31 +731,34 @@ class WikiMessageGroup extends MessageGroupOld {
 }
 
 class WikiPageMessageGroup extends WikiMessageGroup {
-	protected $type = 'mediawiki';
-
-	public $title;
+	protected $title;
 
 	public function __construct( $id, $source ) {
 		$this->id = $id;
-		$title = Title::newFromText( $source );
-
-		if ( !$title ) {
-			throw new MWException( 'Invalid title' );
-		}
-
-		$this->title = $title;
+		$this->title = $source;
 		$this->namespaces = array( NS_TRANSLATIONS, NS_TRANSLATIONS_TALK );
+	}
+
+	public function getTitle() {
+		if ( is_string( $this->title ) ) {
+			$this->title = Title::newFromText( $this->title );
+		}
+		return $this->title;
+	}
+
+	public function getType() {
+		return 'mediawiki';
 	}
 
 	public function getDefinitions() {
 		$dbr = wfGetDB( DB_SLAVE );
 		$tables = 'translate_sections';
 		$vars = array( 'trs_key', 'trs_text' );
-		$conds = array( 'trs_page' => $this->title->getArticleId() );
+		$conds = array( 'trs_page' => $this->getTitle()->getArticleId() );
 		$res = $dbr->select( $tables, $vars, $conds, __METHOD__ );
 
 		$defs = array();
-		$prefix = $this->title->getPrefixedDBKey() . '/';
+		$prefix = $this->getTitle()->getPrefixedDBKey() . '/';
 		$re = '~<tvar\|([^>]+)>(.*?)</>~u';
 
 		foreach ( $res as $r ) {
@@ -830,6 +833,7 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		$target = SpecialPage::getTitleFor( 'MyLanguage', $title )->getPrefixedText();
 		return wfMsgNoTrans( 'translate-tag-page-desc', $title, $target );
 	}
+
 }
 
 class MessageGroups {
@@ -989,8 +993,6 @@ class MessageGroups {
 	public $classes;
 	private function __construct() {
 		self::init();
-
-
 	}
 
 	public static function singleton() {
