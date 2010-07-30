@@ -740,23 +740,23 @@ class TranslationHelpers {
 		$key = $this->page;
 
 		// TODO: encapsulate somewhere
-		$page = TranslatablePage::newFromTitle( $this->group->title );
+		$page = TranslatablePage::newFromTitle( $this->group->getTitle() );
 		$rev = $page->getTransRev( "$key/$code" );
 		$latest = $page->getMarkedTag();
 		if ( $rev === $latest ) {
 			return null;
 		}
 
-		$oldpage = TranslatablePage::newFromRevision( $this->group->title, $rev );
+		$oldpage = TranslatablePage::newFromRevision( $this->group->getTitle(), $rev );
 		$oldtext = $newtext = null;
 		foreach ( $oldpage->getParse()->getSectionsForSave() as $section ) {
-			if ( $this->group->title->getPrefixedDBKey() . '/' . $section->id === $key ) {
+			if ( $this->group->getTitle()->getPrefixedDBKey() . '/' . $section->id === $key ) {
 				$oldtext = $section->getTextForTrans();
 			}
 		}
 
 		foreach ( $page->getParse()->getSectionsForSave() as $section ) {
-			if ( $this->group->title->getPrefixedDBKey() . '/' . $section->id === $key ) {
+			if ( $this->group->getTitle()->getPrefixedDBKey() . '/' . $section->id === $key ) {
 				$newtext = $section->getTextForTrans();
 			}
 		}
