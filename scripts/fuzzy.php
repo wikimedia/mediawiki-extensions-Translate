@@ -101,7 +101,7 @@ class FuzzyBot {
 		foreach ( $this->titles as $title ) {
 			$title = TranslateUtils::title( $title, '' );
 			$title = str_replace( ' ', '_', $title );
-			$search_titles[] = "page_title LIKE '{$dbr->escapeLike( $title )}%%'";
+			$search_titles[] = 'page_title ' . $dbr->buildLike( $title, $dbr->anyString() );
 		}
 
 		$condArray = array(

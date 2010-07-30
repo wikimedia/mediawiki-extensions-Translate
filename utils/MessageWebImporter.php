@@ -345,13 +345,11 @@ class MessageWebImporter {
 		// Work on all subpages of base title.
 		$titleText = $title->getBaseText();
 
-		$namespace = $title->getNamespace();
-		$titleText = $dbw->escapeLike( $titleText );
 		$conds = array(
-			'page_namespace' => $namespace,
+			'page_namespace' => $title->getNamespace(),
 			'page_latest=rev_id',
 			'rev_text_id=old_id',
-			'page_title LIKE \'' . $titleText . '\/%\''
+			'page_title ' . $dbw->buildLike( "$titleText/", $dbw->anyString() ),
 		);
 
 		$rows = $dbw->select(

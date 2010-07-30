@@ -127,7 +127,7 @@ class SpecialTranslations extends SpecialAllpages {
 			array( 'page_namespace', 'page_title' ),
 			array(
 				'page_namespace' => $namespace,
-				'page_title LIKE \'' . $dbr->escapeLike( $message ) . '\/%\'',
+				'page_title ' . $dbr->buildLike( "$message/", $dbr->anyString() ),
 			),
 			__METHOD__,
 			array(
