@@ -14369,7 +14369,7 @@ Dacă știți unde sau cum este folosit acest mesaj, îi puteți ajuta pe ceilal
 	'translate-pref-nonewsletter' => 'Nu-mi trimite știri prin e-mail',
 	'translate-pref-editassistlang' => 'Limbi ajutătoare',
 	'prefs-translate' => 'Opțiuni de traducere',
-	'translate-rc-translation-filter' => 'Filtrează traducerile:',
+	'translate-rc-translation-filter' => 'Filtru traduceri:',
 	'translate-rc-translation-filter-no' => 'Nu fă nimic',
 	'translate-rc-translation-filter-only' => 'Arată doar traduceri',
 	'translate-rc-translation-filter-filter' => 'Fără traduceri',
@@ -17814,6 +17814,7 @@ $messages['ug-latn'] = array(
  * @author AS
  * @author Ahonc
  * @author Aleksandrit
+ * @author Apromix
  * @author NickK
  * @author Prima klasy4na
  * @author Test
@@ -17845,6 +17846,8 @@ $messages['uk'] = array(
 	'translate-page-settings-legend' => 'Параметри',
 	'translate-page-task' => 'Я хочу',
 	'translate-page-group' => 'Група',
+	'translate-page-group-tooltip' => 'Назва групи повідомлень. 
+Якщо група складається з підмножини або надпідмножин повідомлень від інших груп, воно буде відображатися жирним шрифтом.',
 	'translate-page-language' => 'Мова',
 	'translate-page-limit' => 'Обмеження',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|повідомлення|повідомлення|повідомлень}} на сторінку',
@@ -17860,6 +17863,7 @@ $messages['uk'] = array(
 	'translate-ext-url' => '<hr />Сайт: $1',
 	'translate-optional' => "(необов'язкове)",
 	'translate-ignored' => '(ігнорується)',
+	'translate-edit-title' => 'Редагувати «$1»',
 	'translate-edit-definition' => 'Текст повідомлення',
 	'translate-edit-contribute' => 'редагувати',
 	'translate-edit-no-information' => "''Це повідомлення не має опису.
@@ -17971,6 +17975,7 @@ $messages['uk'] = array(
 	'translate-translations-messagename' => 'Назва:',
 	'translate-translations-project' => 'Проект:',
 	'translate-translations-including-no-param' => 'Будь ласка, вкажіть ключ повідомлення як параметр підсторінки',
+	'translate-translations-history-short' => 'і',
 	'languagestats' => 'Мовна статистика',
 	'languagestats-summary' => 'На цій сторінці представлена статистика перекладів для всіх груп повідомлень даної мови.',
 	'languagestats-stats-for' => 'Статистика перекладів мовою: $1 ($2).',
@@ -17996,6 +18001,7 @@ $messages['uk'] = array(
 Якщо ви перекладач на певну мову, але у відповідному списку вас нема, додайте своє ім\'я до списку перекладачів на [[:Category:Languages|порталі]] цієї мови.
 На бічній панель знаходиться посилання на портал мови вашого інтерфейсу.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Перекладач|Перекладачі}}: $1',
+	'supportedlanguages-recenttranslations' => 'останні переклади',
 	'translate-save' => 'Зберегти ($1)',
 	'translate-jssti-add' => 'Додати в список',
 	'translate-group-desc-mediawikicore' => 'Ця група містить повідомлення, які використовують у поточній альфа-версії MediaWiki ({{CURRENTVERSION}})',
