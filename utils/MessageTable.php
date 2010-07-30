@@ -119,7 +119,10 @@ class MessageTable {
 		$optional = wfMsgHtml( 'translate-optional' );
 
 		$batch = new LinkBatch();
-		$batch->setCaller( __METHOD__ );
+		if ( method_exists( $batch, 'setCaller' ) ) {
+			$batch->setCaller( __METHOD__ );
+		}
+
 		$ns = $this->group->getNamespace();
 
 		foreach ( $this->collection->keys() as $key ) {
