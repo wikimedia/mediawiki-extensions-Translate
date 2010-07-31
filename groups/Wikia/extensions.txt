@@ -70,7 +70,7 @@ HA Welcome
 ignored = welcome-enabled, welcome-user
 
 Health Check
-file = SpecialHealthCheck/HealthCheck.i18n.php
+file = SpecialHealthcheck/HealthCheck.i18n.php
 
 Helper Panel
 
