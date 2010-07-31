@@ -2603,6 +2603,11 @@ Text vum Abschnitt: <pre>$1</pre>',
 	'pt-movepage-action-check' => "Nokucken ob d'Réckele méiglech ass",
 	'pt-movepage-action-perform' => 'Réckelen',
 	'pt-movepage-action-other' => 'Zil änneren',
+	'pt-movepage-intro' => "Dës Spezialsäit erméiglecht Iech et fir Säiten déi fir d'Iwwersetzung markéiert sinn ze réckelen.
+D'Réckelaktioun gëtt net direkt gemaach wëll vill Säite geréckelt musse ginn.
+D'Job-Queue gëtt fir d'Réckele vun de Säite benotzt.
+Da wann d'Säite geréckelt ginn ass et net méiglech mat deene Säiten déi grad geréckelt ginn ze schaffen.
+Wann et net fonctionnéiert gëtt dat am Iwwersetungs-Logbuch festgehal an et muss vun Hand reparéiert ginn.",
 	'pt-movepage-logreason' => 'Deel vun der iwwersetzbarer Säit $1.',
 	'pt-movepage-started' => "D'Basissäit ass geréckelt.
 Kuckt w.e.g. d'Logbuch vun den Iwwersetzunge vu Säiten no fir Feelermeldungen respektiv d'Meldung datt alles ok ass.",
