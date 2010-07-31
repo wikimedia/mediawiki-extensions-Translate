@@ -29,6 +29,8 @@ Category Select
 Comments Forum
 file = CommentsForum/Forum.i18n.php
 
+Community Messages
+
 Contest Tool
 file = ContestTool/SpecialContestTool.i18n.php
 
