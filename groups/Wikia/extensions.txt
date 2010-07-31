@@ -139,6 +139,8 @@ Site Wide Messages
 file = SiteWideMessages/SpecialSiteWideMessages.i18n.php
 ignored = swm-expire-options
 
+Slider Tag
+
 Special Interwiki Edit
 
 Special Mini Upload
