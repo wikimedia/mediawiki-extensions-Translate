@@ -68,7 +68,7 @@ class PageTranslationHooks {
 		}
 
 		// Finally we know the title and can construct a Translatable page
-		$page = TranslatablePage::newFromTitle( $group->title );
+		$page = TranslatablePage::newFromTitle( $group->getTitle() );
 
 		// Add a tracking mark
 		if ( $revision !== null ) {
