@@ -11,7 +11,7 @@
 
 class SpecialManageGroups {
 	protected $skin, $user, $out;
-	protected $processingTime = 10; // Seconds
+	protected $processingTime = 30; // Seconds
 
 	public function __construct() {
 		global $wgOut, $wgUser;
