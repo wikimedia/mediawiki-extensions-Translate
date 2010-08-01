@@ -109,7 +109,6 @@ $wikimediaCodeMap = array(
 	// Ignored language codes. See reason.
 	'als' => '', // gsw
 	'be-x-old' => '', // be-tarask
-	'ckb' => '', // ckb-*
 	'crh' => '', // crh-*
 	'de-at' => '', // de
 	'de-ch' => '', // de
@@ -128,7 +127,7 @@ $wikimediaCodeMap = array(
 	'kk-tr' => '', // kk-latn
 	'ko-kp' => '', // ko
 	'ku' => '', // ku-*
-	'ku-arab' => '', // ckb-arab
+	'ku-arab' => '', // ckb
 	'nb' => '', // no
 	'nl-be' => '', // no MW code
 	'ruq' => '', // ruq-*
