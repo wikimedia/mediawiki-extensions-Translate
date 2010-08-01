@@ -120,6 +120,7 @@ class SpecialTranslationChanges extends SpecialPage {
 		$index = -1;
 		$output = '';
 		$skin = $wgUser->getSkin();
+		$userLang = $wgUser->getCode;
 
 		$changes = $this->sort( $rows );
 		foreach ( $changes as $class => $groups ) {
@@ -166,7 +167,7 @@ class SpecialTranslationChanges extends SpecialPage {
 						)
 					);
 
-					$languageName = TranslateUtils::getLanguageName( $language );
+					$languageName = TranslateUtils::getLanguageName( $language, false, $userLang );
 					if ( !$languageName ) {
 						$languageName = $language;
 					}
