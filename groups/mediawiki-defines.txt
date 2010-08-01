@@ -1232,7 +1232,7 @@ Uniwiki - Create Page
 id = ext-uniwiki-createpage
 file = uniwiki/CreatePage/CreatePage.i18n.php
 aliasfile = uniwiki/CreatePage/CreatePage.alias.php
-descmsg = createpage-desc
+descmsg = uwcreatepage-desc
 
 Uniwiki - Css Hooks
 id = ext-uniwiki-csshooks
