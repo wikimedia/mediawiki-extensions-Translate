@@ -3158,7 +3158,7 @@ $messages['ch'] = array(
  * @author Marmzok
  * @author رزگار
  */
-$messages['ckb-arab'] = array(
+$messages['ckb'] = array(
 	'translate' => 'وەرگێڕان',
 	'translate-talk' => 'لێدوان',
 	'translate-history' => 'مێژوو',

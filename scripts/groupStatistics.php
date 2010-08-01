@@ -66,7 +66,7 @@ $mostSpokenLanguages = array(
 	'nl'       => array( 47,  27, 'europe' ),
 	'zu'       => array( 48,  26, 'africa' ),
 	'ps'       => array( 49,  26, 'asia' ),
-	'ckb-arab' => array( 50,  26, 'asia' ),
+	'ckb'      => array( 50,  26, 'asia' ),
 	'ku-latn'  => array( 50,  26, 'asia' ),
 );
 

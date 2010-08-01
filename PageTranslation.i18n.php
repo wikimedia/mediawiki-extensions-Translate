@@ -719,7 +719,7 @@ $messages['ce'] = array(
  * @author Marmzok
  * @author رزگار
  */
-$messages['ckb-arab'] = array(
+$messages['ckb'] = array(
 	'pagetranslation' => 'وەرگێڕانی لاپەڕە',
 	'tpt-template' => 'داڕێژەی لاپەڕە',
 	'tpt-templatediff' => 'داڕێژەی لاپەڕەکە گۆڕاوە.',
