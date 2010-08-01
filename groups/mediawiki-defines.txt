@@ -1148,7 +1148,8 @@ file = TidyTab/Tidy.i18n.php
 descmsg = tidy-desc
 
 Timed Media Handler
-magicfile = TimedMediaHandler/TimedMediaHandler.i18n.magic.php
+# Siebrand 201005-13: conflicting magic words with Ogghandler
+#magicfile = TimedMediaHandler/TimedMediaHandler.i18n.magic.php
 descmsg = timedmedia-desc
 
 Timed Media Handler - Timed Text
@@ -1474,8 +1475,9 @@ Wikihiero
 file = wikihiero/wikihiero.i18n.php
 
 Wikilog
-aliasfile = Wikilog/Wikilog.i18n.alias.php
-aliasvar = specialPageAliases
+# FIXME: broken
+#aliasfile = Wikilog/Wikilog.i18n.alias.php
+#aliasvar = specialPageAliases
 magicfile = Wikilog/Wikilog.i18n.magic.php
 optional = wikilog-entry-footer, wikilog-title-item-full, wikilog-feed-title
 optional = wikilog-comment-footer, wikilog-simple-signature
