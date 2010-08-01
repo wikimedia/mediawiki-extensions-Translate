@@ -120,7 +120,7 @@ class SpecialTranslationChanges extends SpecialPage {
 		$index = -1;
 		$output = '';
 		$skin = $wgUser->getSkin();
-		$userLang = $wgUser->getCode;
+		$userLang = $wgLang->getCode();
 
 		$changes = $this->sort( $rows );
 		foreach ( $changes as $class => $groups ) {
