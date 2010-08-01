@@ -674,6 +674,21 @@ Vous recevrez aussi un courrier d’informations au plus une fois par mois.
 Si vous ne souhaitez pas recevoir ce courrier d’informations, vous pouvez le désactiver dans l’onglet « {{int:prefs-personal}} » de vos [[Special:Preferences|préférences]].',
 );
 
+/** Franco-Provençal (Arpetan)
+ * @author ChrisPtDe
+ */
+$messages['frp'] = array(
+	'firststeps' => 'Premiérs pâs',
+	'firststeps-desc' => '[[Special:FirstSteps|Pâge spèciâla]] por guidar los utilisators sur un vouiqui qu’utilise l’èxtension « Translate ».',
+	'translate-fs-pagetitle-done' => ' - fêt !',
+	'translate-fs-signup-title' => 'Enscrîde-vos',
+	'translate-fs-settings-title' => 'Configurâd voutres prèferences',
+	'translate-fs-userpage-title' => 'Féte voutra pâge utilisator',
+	'translate-fs-permissions-title' => 'Demandâd les pèrmissions de traductor',
+	'translate-fs-target-title' => 'Comenciéd a traduire !',
+	'translate-fs-email-title' => 'Confirmâd voutra adrèce èlèctronica',
+);
+
 /** Galician (Galego)
  * @author Toliño
  */
@@ -956,13 +971,14 @@ Si tu non vole reciper bulletines de novas, tu pote disactivar los in le scheda 
 );
 
 /** Indonesian (Bahasa Indonesia)
+ * @author Farras
  * @author Irwangatot
  */
 $messages['id'] = array(
 	'firststeps' => 'Langkah pertama',
 	'firststeps-desc' => '[[Special:FirstSteps|Halaman istimewa]] untuk mendapatkan pengguna memulai di wiki menggunakan ekstensi Terjemahan',
 	'translate-fs-pagetitle-done' => '- Selesai!',
-	'translate-fs-pagetitle' => 'Persiapan wizard - $ 1',
+	'translate-fs-pagetitle' => 'Wisaya perkenalan - $ 1',
 	'translate-fs-signup-title' => 'Mendaftar',
 	'translate-fs-settings-title' => 'Mengkonfigurasi preferensi anda',
 	'translate-fs-userpage-title' => 'Buat halaman pengguna anda',
@@ -1439,8 +1455,10 @@ $messages['ps'] = array(
 	'firststeps' => 'لومړي ګامونه',
 	'translate-fs-pagetitle-done' => ' - ترسره شو!',
 	'translate-fs-signup-title' => 'نومليکل',
+	'translate-fs-userpage-title' => 'ستاسې کارن مخ جوړول',
 	'translate-fs-permissions-title' => 'د ژباړې د اجازې غوښتنه',
 	'translate-fs-target-title' => 'په ژباړې پيل وکړۍ',
+	'translate-fs-userpage-submit' => 'خپل کارن مخ جوړول',
 );
 
 /** Portuguese (Português)
@@ -1858,6 +1876,13 @@ $messages['rue'] = array(
 Просиме, будьте терпезливы.
 
 <del>Перевірте ці наслїдуюча пожадавка є  правилно выповнена і стисните ґомбічку пожадавкы.</del>',
+);
+
+/** Sinhala (සිංහල)
+ * @author බිඟුවා
+ */
+$messages['si'] = array(
+	'translate-fs-pagetitle-done' => ' - හරි!',
 );
 
 /** Slovenian (Slovenščina)
