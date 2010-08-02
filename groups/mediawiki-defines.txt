@@ -565,6 +565,10 @@ Input Box
 Inspect Cache
 aliasfile = InspectCache/InspectCache.alias.php
 
+# Create a symbolic link "Installer" to phase3/includes/installer in extensions/ before enabling this.
+#Installer
+#descmsg = config-desc
+
 Interlanguage
 magicfile = Interlanguage/Interlanguage.i18n.magic.php
 
