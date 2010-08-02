@@ -64,6 +64,7 @@ class PageTranslationHooks {
 		$groupKey = self::titleToGroup( $title );
 		$group = MessageGroups::getGroup( $groupKey );
 		if ( !$group instanceof WikiPageMessageGroup ) {
+			SpecialPageTranslation::superDebug( __METHOD__, 'not wp-group', $title, $user, $groupKey );
 			return;
 		}
 
@@ -79,6 +80,7 @@ class PageTranslationHooks {
 		list( , $code ) = TranslateUtils::figureMessage( $title->getDBkey() );
 		global $wgTranslateDocumentationLanguageCode;
 		if ( $code !== $wgTranslateDocumentationLanguageCode ) {
+			SpecialPageTranslation::superDebug( __METHOD__, 'ok', $title, $user );
 			self::updateTranslationPage( $page, $code, $user, $flags, $summary );
 		}
 
