@@ -1009,6 +1009,8 @@ descmsg = gblrights-desc
 Show Processlist
 aliasfile = ShowProcesslist/ShowProcesslist.alias.php
 
+Sidebar Donate Box
+
 Sign Document
 aliasfile = SignDocument/SignDocument.alias.php
 descmsg = signature-desc
