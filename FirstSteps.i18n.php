@@ -681,12 +681,17 @@ $messages['frp'] = array(
 	'firststeps' => 'Premiérs pâs',
 	'firststeps-desc' => '[[Special:FirstSteps|Pâge spèciâla]] por guidar los utilisators sur un vouiqui qu’utilise l’èxtension « Translate ».',
 	'translate-fs-pagetitle-done' => ' - fêt !',
+	'translate-fs-pagetitle' => 'Guido d’emmodâ - $1',
 	'translate-fs-signup-title' => 'Enscrîde-vos',
 	'translate-fs-settings-title' => 'Configurâd voutres prèferences',
 	'translate-fs-userpage-title' => 'Féte voutra pâge utilisator',
 	'translate-fs-permissions-title' => 'Demandâd les pèrmissions de traductor',
 	'translate-fs-target-title' => 'Comenciéd a traduire !',
 	'translate-fs-email-title' => 'Confirmâd voutra adrèce èlèctronica',
+	'translate-fs-settings-skip' => 'J’é chavonâ.
+Lèssiéd-mè continuar.',
+	'translate-fs-userpage-submit' => 'Fâre ma pâge utilisator',
+	'translate-fs-userpage-done' => 'Bien fêt ! Ora, vos avéd una pâge utilisator.',
 );
 
 /** Galician (Galego)

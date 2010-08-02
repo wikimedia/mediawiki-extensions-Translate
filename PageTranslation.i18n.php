@@ -1651,7 +1651,7 @@ Tèxto de la sèccion : <pre>$1</pre>',
 	'pt-movepage-action-other' => 'Changiér la ciba',
 	'pt-movepage-logreason' => 'Èxtrèt de la pâge a traduire $1.',
 	'pt-movepage-started' => 'Ora, la pâge de bâsa est renomâ.
-Volyéd controlar lo jornal de les traduccions de pâges por repèrar des èrrors et por liére lo mèssâjo de concllusion.',
+Volyéd controlar lo jornal de les traduccions de pâges por repèrar des èrrors et por liére lo mèssâjo d’avance.',
 	'pt-locked-page' => 'Ceta pâge est vèrrolyê perce que la pâge a traduire est aprés étre renomâ.',
 );
 
