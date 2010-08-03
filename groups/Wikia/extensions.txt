@@ -130,9 +130,6 @@ file = RTE/i18n/CK.wikia.i18n.php
 
 Search
 
-Send To A Friend
-aliasfile = SendToAFriend/SendToAFriend.alias.php
-
 Shared Help
 
 Share Feature
