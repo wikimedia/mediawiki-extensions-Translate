@@ -509,9 +509,9 @@ class SpecialPageTranslation extends SpecialPage {
 		$this->setupRenderJobs( $page );
 
 		// Re-generate caches
-		MessageIndexRebuilder::execute();
 		$page->getTranslationPercentages( /*re-generate*/ true );
-
+		ArrayMemoryCache::factory( 'groupstats' )->clearGroup( 'page|' . $page->getTitle()->getPrefixedText() );
+		MessageIndexRebuilder::execute();
 		return false;
 	}
 

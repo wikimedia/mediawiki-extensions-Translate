@@ -19,6 +19,11 @@ class ArrayMemoryCache {
 		$this->save();
 	}
 
+	public function factory( $table ) {
+		// __CLASS__ doesn't work, but this is PHP
+		return new ArrayMemoryCache( $table );
+	}
+
 	public function get( $group, $code ) {
 		$this->load();
 
@@ -49,6 +54,11 @@ class ArrayMemoryCache {
 		if ( isset( $this->cache[$group] ) && !count( $this->cache[$group] ) ) {
 			unset( $this->cache[$group] );
 		}
+	}
+
+	public function clearGroup( $group ) {
+		$this->load();
+		unset( $this->cache[$group] );
 	}
 
 	public function clearAll() {
