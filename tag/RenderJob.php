@@ -62,8 +62,8 @@ class RenderJob extends Job {
 		$wgUser = $user;
 
 		// Do the edit
-		$article->doEdit( $text, $summary, $flags );
-		SpecialPageTranslation::superDebug( __METHOD__, 'edit', $user, $title, $flags );
+		$status = $article->doEdit( $text, $summary, $flags );
+		SpecialPageTranslation::superDebug( __METHOD__, 'edit', $user, $title, $flags, $status );
 
 		// User hack
 		$wgUser = $oldUser;
