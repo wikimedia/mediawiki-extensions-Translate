@@ -6077,7 +6077,7 @@ Los changements sont pas encartâs tant que vos éd pas clicâ sur lo boton « E
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'La dèfinicion utilise <nowiki>{{PLURAL:}}</nowiki> mas pas sa traduccion.',
 	'translate-checks-pagename' => 'Èspâço de noms changiê dês la dèfinicion',
-	'translate-checks-format' => 'Ceta traduccion siut pas la dèfinicion ou ben at una sintaxa fôssa : $1',
+	'translate-checks-format' => 'Ceta traduccion siut pas la dèfinicion ou ben el at una sintaxa fôssa : $1',
 	'translate-checks-escape' => 'Cetos èchapaments pôvont étre emprèvus : <strong>$1</strong>',
 	'translate-checks-fudforum-syntax' => 'Utilisâd <nowiki>$1</nowiki> nan pas <nowiki>$2</nowiki> dens ceti projèt.',
 	'translate-pref-nonewsletter' => 'Pas mè mandar les lètres de novèles per mèssageria èlèctronica',
@@ -6197,6 +6197,11 @@ Vos éte encoragiê a revêre los mèssâjos dês [[Special:Translate|{{int:tran
 	'translate-manage-nochanges' => 'Y at gins de changement dens les dèfinicions des mèssâjos de ceta tropa.',
 	'translate-manage-nochanges-other' => 'Y at avu gins de changement por ceta lengoua.
 Utilisâd lo lim ce-desot por tornar a la vua de dètaly de la tropa.',
+	'translate-manage-inconsistent' => 'Una enconsistence at étâ dècelâ dens la requéta.
+Volyéd controlar s’y at avu des changements et pués tornâd èprovar.
+Dètalys : $1.',
+	'translate-manage-toolong' => 'Lo temps lo ples grant de trètament de $1 second{{PLURAL:$1|a|es}} at étâ dèpassâ.
+Volyéd remandar lo formulèro por continuar lo trètament.',
 	'translate-manage-import-ok' => 'Una novèla vèrsion de la pâge $1 at étâ importâ.',
 	'translate-manage-import-noks' => 'Empossiblo d’importar la novèla vèrsion de la pâge $1 : $2',
 	'translate-manage-import-ignore' => 'Lo mèssâjo $1 at étâ sôtâ.',
@@ -6207,7 +6212,39 @@ Controlâd s’il vos plét.',
 	'translate-manage-import-fuzzy' => 'Importâ et pués marcâ coment troblo : $1',
 	'translate-manage-import-done' => 'Tot at étâ fêt !',
 	'translate-manage-import-rebuild' => 'Lo cache at étâ refêt.',
+	'translate-manage-subtitle' => 'Administrar',
+	'translate-manage-import-rebuild-all' => 'Refâre totes les lengoues et pués ignorar tôs los changements',
+	'importtranslations' => 'Importar les traduccions',
+	'translate-import-from-url' => 'URL de vers lo fichiér :',
+	'translate-import-from-wiki' => 'Fichiér sur cél vouiqui :',
+	'translate-import-from-local' => 'Importar un fichiér local :',
 	'translate-import-load' => 'Chargiér lo fichiér',
+	'translate-import-err-type-not-supported' => 'Empossiblo de chargiér lo fichiér :
+la mètoda <code>$1</code> est pas recognua.',
+	'translate-import-err-dl-failed' => 'Empossiblo d’arrevar u fichiér :
+$1',
+	'translate-import-err-ul-failed' => 'Lo tèlèchargement du fichiér at pas reussi',
+	'translate-import-err-invalid-title' => 'Lo nom du fichiér balyê <nowiki>$1</nowiki> est envalido.',
+	'translate-import-err-no-such-file' => 'Lo fichiér <nowiki>$1</nowiki> ègziste pas ou ben il at pas étâ importâ localament.',
+	'translate-import-err-no-headers' => "Lo fichiér est pas un fichiér ''gettext'' bien formâ dens lo format atendu per l’èxtension ''Translate'' :
+o est empossiblo de dètèrmenar la tropa et la lengoua dês les en-tétes du fichiér.",
+	'translate-import-err-warnings' => 'Lo fichiér est pas bien formâ.
+Assurâd-vos que voutron èditor suprime pas los champs « msgctxt ».
+Dètalys : $1',
+	'translate-js-next' => 'Sôvar et pués uvrir celi d’aprés',
+	'translate-js-nonext' => 'O ére lo dèrriér mèssâjo de ceta pâge.',
+	'translate-js-skip' => 'Alar a celi d’aprés',
+	'translate-js-save-failed' => 'L’encartâjo at pas reussi. Volyéd raportar ceta èrror.',
+	'translate-js-history' => 'Historico de traduccion',
+	'translate-gs-pos' => 'Pos.',
+	'translate-gs-code' => 'Code',
+	'translate-gs-continent' => 'Continent',
+	'translate-gs-speakers' => 'Locutors',
+	'translate-gs-score' => 'Mârca',
+	'translate-gs-multiple' => 'Un mouél',
+	'translate-gs-count' => 'Compto',
+	'translate-gs-total' => 'Soma',
+	'translate-gs-avgscore' => 'Mârca moyena',
 );
 
 /** Friulian (Furlan)
@@ -17080,6 +17117,7 @@ $messages['th'] = array(
 	'translate-ext-url' => '<hr />เว็บไซต์: $1',
 	'translate-optional' => '(สามารถเลือกได้)',
 	'translate-ignored' => '(เพิกเฉย)',
+	'translate-edit-title' => 'แก้ไข "$1"',
 	'translate-edit-definition' => 'นิยามข้อความต้นฉบับ',
 	'translate-edit-contribute' => 'ช่วยเขียน',
 	'translate-edit-no-information' => "''ข้อความนี้ไม่มีคำอธิบายการใช้งาน ถ้าคุณทราบว่าข้อความนี้ใช้ตรงส่วนไหนหรือใช้อย่างไร คุณสามารถช่วยเพิ่มคำอธิบายการใช้งานของข้อความนี้ เพื่อเป็นประโยชน์แก่ผู้แปลคนอื่นได้''",
@@ -17151,10 +17189,15 @@ $messages['th'] = array(
 	'translate-statsf-width' => 'ความกว้างในหน่วยพิกเซล:',
 	'translate-statsf-height' => 'ความสูงในหน่วยพิกเซล:',
 	'translate-statsf-days' => 'ช่วงเวลานับเป็นวัน:',
+	'translate-statsf-scale' => 'ความละเอียด',
+	'translate-statsf-scale-months' => 'เดือน',
+	'translate-statsf-scale-weeks' => 'สัปดาห์',
 	'translate-statsf-scale-days' => 'วัน',
 	'translate-statsf-scale-hours' => 'ชั่วโมง',
+	'translate-statsf-count' => 'ตัวแปร:',
 	'translate-statsf-count-edits' => 'จำนวนการแก้ไข',
 	'translate-statsf-count-users' => 'ผู้แปลที่ขยันขันแข็ง',
+	'translate-statsf-count-registrations' => 'ผู้ใช้ใหม่',
 	'translate-statsf-language' => 'รายการรหัสภาษา ใช้เครื่องหมายลูกน้ำ (comma) เป็นตัวคั่น:',
 	'translate-statsf-group' => 'รายการรหัสของกลุ่ม ใช้เครื่องหมายลูกน้ำ (comma) เป็นตัวคั่น:',
 	'translate-statsf-submit' => 'แสดงตัวอย่าง',
@@ -17173,6 +17216,8 @@ $messages['th'] = array(
 	'translate-translations-including-no-param' => 'โปรดระบุคีย์ของข้อความในตัวแปรหน้าย่อย (subpage parameter) ให้ถูกต้อง',
 	'languagestats' => 'สถิติภาษา',
 	'languagestats-summary' => 'หน้านี้แสดงค่าสถิติการแปลของทุกกลุ่มข้อความในภาษาหนึ่งๆ',
+	'languagestats-stats-for' => 'สถิติการแปลสำหรับภาษา$1 ($2)',
+	'languagestats-recenttranslations' => 'การแปลล่าสุด',
 	'translate-language-code' => 'รหัสภาษา',
 	'translate-language-code-field-name' => 'รหัสภาษา:',
 	'translate-suppress-complete' => 'ไม่แสดงกลุ่มของข้อความที่แปลเสร็จสมบูรณ์แล้ว',
@@ -17183,7 +17228,10 @@ $messages['th'] = array(
 	'translate-percentage-fuzzy' => 'ล้าสมัย',
 	'translate-nothing-to-do' => 'การแปลทุกอย่างเสร็จสิ้นแล้ว
 อย่างไรก็ดีกรุณาพึงตรวจสอบข้อความต่าง ๆ ผ่านทาง[[Special:Translate|{{int:translate}}]]',
+	'supportedlanguages-translators' => '{{PLURAL:$2|ผู้แปล|ผู้แปล}}: คุณ $1',
+	'supportedlanguages-recenttranslations' => 'การแปลล่าสุด',
 	'translate-save' => 'บันทึก ($1)',
+	'translate-jssti-add' => 'เพิ่มลงในรายการ',
 	'translate-group-desc-mediawikiextensions' => 'เป็นกลุ่มที่นิยามกลุ่มของข้อความ ที่มีข้อความทั้งหมดสำหรับส่วนที่เพิ่มเติมของมีเดียวิกิ',
 	'translate-group-desc-collection' => 'เป็นกลุ่มที่นิยามกลุ่มของข้อความ ที่มีข้อความทั้งหมดสำหรับส่วนเพิ่มเติม[http://www.mediawiki.org/wiki/Extension:Collection แหล่งสะสม]ของมีเดียวิกิ',
 	'translate-group-desc-flaggedrevs' => 'เป็นกลุ่มที่นิยามกลุ่มของข้อความ ที่มีข้อความทั้งหมดสำหรับส่วนเพิ่มเติม [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs] ของมีเดียวิกิ',
@@ -17218,6 +17266,16 @@ $messages['th'] = array(
 	'translate-import-err-warnings' => 'ไฟล์ไม่ได้ถูกสร้างโดยปกติ
 <br />ตรวจสอบให้แน่ใจว่าตัวแก้ไขของคุณไม่ได้ลบส่วนของ msgctxt ออกไป
 <br />รายละเอียด: $1',
+	'translate-js-next' => 'บันทึกและแปลต่อ',
+	'translate-js-nonext' => 'นี่เป็นข้อความล่าสุดในหน้านี้',
+	'translate-js-skip' => 'ข้าม',
+	'translate-js-save-failed' => 'ไม่สามารถบันทึกได้ กรุณาติดต่อเจ้าหน้าที่',
+	'translate-js-history' => 'ประวัติการแปล',
+	'translate-gs-continent' => 'ทวีป',
+	'translate-gs-speakers' => 'จำนวนผู้ใช้',
+	'translate-gs-score' => 'คะแนน',
+	'translate-gs-total' => 'รวม',
+	'translate-gs-avgscore' => 'คะแนนเฉลี่ย',
 );
 
 /** Turkmen (Türkmençe)
@@ -19034,6 +19092,7 @@ $messages['yue'] = array(
 
 /** Simplified Chinese (‪中文(简体)‬)
  * @author Alexsh
+ * @author Chenxiaoqino
  * @author Gaoxuewei
  * @author Gzdavidwong
  * @author Jimmy xu wrk
@@ -19084,6 +19143,7 @@ $messages['zh-hans'] = array(
 	'translate-ext-url' => '<hr />网站：$1',
 	'translate-optional' => '（可选）',
 	'translate-ignored' => '（已略过）',
+	'translate-edit-title' => '开始翻译 $1',
 	'translate-edit-definition' => '界面消息原文',
 	'translate-edit-contribute' => '贡献',
 	'translate-edit-no-information' => "''本界面消息没有任何说明文档。如果您知道这个消息在哪使用或如何使用，您可以增加该消息的说明文档来帮助其他翻译者。''",
@@ -19093,6 +19153,7 @@ $messages['zh-hans'] = array(
 	'translate-edit-warnings' => '未完成翻译的警告',
 	'translate-edit-tmsugs' => '来自翻译记忆的建议',
 	'translate-edit-tmmatch' => '$1%匹配',
+	'translate-use-suggestion' => '请将此建议插入到翻译区域。这会代替所有当前的内容。',
 	'translate-edit-goto-no-prev' => '没有上一个消息',
 	'translate-edit-goto-no-next' => '没有下一个消息',
 	'translate-edit-goto-prev' => '编辑上一个消息',
@@ -19130,15 +19191,15 @@ $messages['zh-hans'] = array(
 	'translationchanges' => '翻译更改',
 	'translationchanges-export' => '{{int:translate-magic-cm-export}}',
 	'translationchanges-change' => '$1: $2 由$3翻译',
-	'translate-checks-parameters' => '以下参数没有使用到：
+	'translate-checks-parameters' => '以下$2 个参数未知：
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-parameters-unknown' => '以下参数未知：
+	'translate-checks-parameters-unknown' => '以下$2 个参数未知：
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => '括号不对称：
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '以下链接可能有问题：
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links-missing' => '以下链接丢失：
+	'translate-checks-links-missing' => '以下$2 个链接丢失：
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => '请修正以下的标签：
 <strong><nowiki>$1</nowiki></strong>',
@@ -19166,14 +19227,21 @@ $messages['zh-hans'] = array(
 	'translationstats' => '翻译统计',
 	'translate-stats-edits' => '编辑',
 	'translate-stats-users' => '翻译者',
+	'translate-stats-registrations' => '注册',
 	'translate-statsf-options' => '制图选项',
 	'translate-statsf-width' => '宽度：',
 	'translate-statsf-height' => '高度：',
+	'translate-statsf-days' => '以天计算的时间段：',
+	'translate-statsf-scale' => '粗糙程度：',
+	'translate-statsf-scale-months' => '月份',
+	'translate-statsf-scale-weeks' => '周',
 	'translate-statsf-scale-days' => '日',
 	'translate-statsf-scale-hours' => '小时',
 	'translate-statsf-count' => '测量：',
 	'translate-statsf-count-edits' => '编辑次数',
 	'translate-statsf-count-users' => '活跃的翻译者',
+	'translate-statsf-count-registrations' => '新用户',
+	'translate-statsf-language' => '由逗号分隔的语言代码',
 	'translate-statsf-group' => '由逗号分隔的列表组代码',
 	'translate-statsf-submit' => '预览',
 	'translate-tag-category' => '可翻译的页面',
@@ -19188,15 +19256,26 @@ $messages['zh-hans'] = array(
 	'translate-translations-fieldset-title' => '界面消息',
 	'translate-translations-messagename' => '名称：',
 	'translate-translations-project' => '计划:',
+	'translate-translations-history-short' => '史',
 	'languagestats' => '语言统计',
+	'languagestats-summary' => '这个页面显示了当前语言的所有项目组的完成度。',
+	'languagestats-stats-for' => '$1 ($2) 的翻译统计。',
 	'languagestats-recenttranslations' => '最近的翻译',
 	'translate-language-code' => '语言代码',
 	'translate-language-code-field-name' => '语言代码：',
+	'translate-suppress-complete' => '隐藏已全部翻译完成的项目组',
 	'translate-language' => '语言',
 	'translate-total' => '界面消息',
+	'translate-total-tooltip' => '此项目组中的消息总数。',
 	'translate-untranslated' => '未翻译',
+	'translate-untranslated-tooltip' => '此项目组中未翻译的消息总数（包括被标记为过时的消息）。',
 	'translate-percentage-complete' => '完成度',
+	'translate-percentage-complete-tooltip' => '此项目组中已被翻译且没有被标记为过时的消息的百分比。',
 	'translate-percentage-fuzzy' => '已过时',
+	'translate-percentage-fuzzy-tooltip' => '此项目组中被翻译并被标记为过时的消息的百分比。消息可能因为原文改变、自动检查未通过或者某人的标记而被标记为过时。',
+	'translate-nothing-to-do' => '似乎所有的翻译都已经完成。
+你可以在[[Special:Translate|{{int:translate}}]]查看其他的翻译项目。',
+	'supportedlanguages' => '支持的语言',
 	'supportedlanguages-translators' => '{{PLURAL:$2|翻译者|翻译者}}: $1',
 	'translate-save' => '保存（$1）',
 	'translate-jssti-add' => '新增至清单',
@@ -19216,6 +19295,11 @@ $messages['zh-hans'] = array(
 	'translate-manage-import-done' => '全部完成！',
 	'translate-manage-subtitle' => '管理',
 	'translate-import-load' => '载入档案',
+	'translate-js-next' => '保存并打开下一条',
+	'translate-js-nonext' => '这是本页的最后一条信息。',
+	'translate-js-skip' => '跳至下一条',
+	'translate-js-save-failed' => '保存失败。请报告此错误。',
+	'translate-js-history' => '翻译历史',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)

@@ -2275,7 +2275,13 @@ $messages['ig'] = array(
 	'pagetranslation' => 'Ihü kuwariala na asụsụ ozor',
 	'tpt-template' => 'Àtụ ihü',
 	'tpt-diff-new' => 'Mpkurụ edemede ohúrù',
+	'tpt-translate-this' => 'kùwáría ihüá na asụsụ ozor',
+	'translate-tag-translate-link-desc' => 'Kùwáría ihüá na asụsụ ozor',
 	'tpt-languages-legend' => 'Asụsụ ndi ozor:',
+	'pt-movepage-list-other' => 'Ihü-íme-ihü nke ozor',
+	'pt-movepage-current' => 'Áhà nke di ùbwá:',
+	'pt-movepage-new' => 'Áhà ọhúrù:',
+	'pt-movepage-reason' => 'Mgbághapụtà:',
 );
 
 /** Italian (Italiano)
@@ -2644,6 +2650,7 @@ Text vum Abschnitt: <pre>$1</pre>',
 	'pt-movepage-block-base-exists' => "D'Basiszilsäit [[:$1]] gëtt et schonn.",
 	'pt-movepage-block-base-invalid' => "D'Basiszilsäit huet kee valabelen Titel.",
 	'pt-movepage-block-tp-exists' => "D'Iwwersetzungszilsäit [[:$2]] gëtt et schonn.",
+	'pt-movepage-block-tp-invalid' => 'Den Numm vun der iwwersater Zilsäit fir [[:$1]] wier net valabel (ze laang?).',
 	'pt-movepage-list-pages' => 'Lëscht vun de Säite fir ze réckelen',
 	'pt-movepage-list-translation' => 'Iwwersetzungssäiten',
 	'pt-movepage-list-section' => 'Abschnitter vu Säiten',
@@ -4100,10 +4107,16 @@ $messages['te'] = array(
 	'translate-tag-markthis' => 'ఈ పేజీని అనువాదం కొరకు గుర్తించు',
 	'translate-tag-markthisagain' => 'చివరిసారి <span class="plainlinks">[$2 అనువాదానికి గుర్తించినప్పటి నుండి]</span> ఈ పేజీకి <span class="plainlinks">[$1 మార్పులు]</span> జరిగాయి.',
 	'tpt-languages-legend' => 'ఇతర భాషలు:',
+	'pt-log-name' => 'పేజీ అనువాదాల చిట్టా',
+	'pt-movepage-list-other' => 'ఇతర ఉపపుటలు',
+	'pt-movepage-current' => 'ప్రస్తుత పేరు:',
+	'pt-movepage-new' => 'కొత్త పేరు:',
+	'pt-movepage-reason' => 'కారణం:',
 );
 
 /** Thai (ไทย)
  * @author Ans
+ * @author Passawuth
  * @author Woraponboonkerd
  */
 $messages['th'] = array(
@@ -4124,6 +4137,7 @@ $messages['th'] = array(
 	'tpt-sections-deleted' => 'หน่วยการแปลที่ถูกลบแล้ว',
 	'tpt-sections-template' => 'แม่แบบหน้าการแปลภาษา',
 	'tpt-badtitle' => 'ชื่อหน้าที่กำหนดมานั้น ($1) ไม่ใช่ชื่อหน้าที่ถูกต้อง',
+	'tpt-nosuchpage' => 'ไม่มีหน้า $1',
 	'tpt-oldrevision' => '$2 ไม่ใช่รุ่นปรับปรุงล่าสุดของหน้าชื่อ[[$1]]
 
 เฉพาะรุ่นปรับปรุงล่าสุดเท่านั้นที่สา่มารถกำหนดเพื่อการแปลภาษา',
@@ -4145,6 +4159,7 @@ $messages['th'] = array(
 	'tpt-rev-latest' => 'รุ่นปรับปรุงล่าสุด',
 	'tpt-rev-old' => 'เทียบความแตกต่างไปยังรุ่นที่กำหนดก่อนหน้านี้',
 	'tpt-rev-mark-new' => 'กำหนดให้รุ่นปรับปรุงนี้เพื่อการแปลภาษา',
+	'tpt-rev-unmark' => 'ลบหน้านี้จากการแปล',
 	'tpt-translate-this' => 'แปลหน้านี้',
 	'translate-tag-translate-link-desc' => 'แปลหน้านี้',
 	'translate-tag-markthis' => 'กำหนดให้หน้านี้เพื่อการแปลภาษา',
@@ -4495,6 +4510,7 @@ $messages['yi'] = array(
 );
 
 /** Simplified Chinese (‪中文(简体)‬)
+ * @author Chenxiaoqino
  * @author Gzdavidwong
  * @author Liangent
  * @author PhiLiP
@@ -4517,6 +4533,7 @@ $messages['zh-hans'] = array(
 	'translate-tag-translate-link-desc' => '翻译本页',
 	'tpt-languages-legend' => '其他语言：',
 	'tpt-download-page' => '汇出含翻译的页面',
+	'pt-locked-page' => '此页面已被锁定，因为可翻译页面正在被移动。',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)

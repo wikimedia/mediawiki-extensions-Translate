@@ -992,6 +992,13 @@ $messages['id'] = array(
 	'translate-fs-email-title' => 'Konfirmasikan alamat surel Anda',
 );
 
+/** Igbo (Igbo)
+ * @author Ukabia
+ */
+$messages['ig'] = array(
+	'translate-fs-pagetitle-done' => '- ọméchá!',
+);
+
 /** Japanese (日本語)
  * @author Fryed-peach
  * @author Hosiryuhosi
@@ -2107,6 +2114,21 @@ $messages['te'] = array(
 	'translate-fs-userpage-done' => 'భళా! మీకు ఇప్పుడు వాడుకరి పుట ఉంది.',
 );
 
+/** Thai (ไทย)
+ * @author Passawuth
+ */
+$messages['th'] = array(
+	'translate-fs-pagetitle-done' => 'เรียบร้อย!',
+	'translate-fs-signup-title' => 'สมัครสมาชิก',
+	'translate-fs-settings-title' => 'ตั้งค่าการใช้งาน',
+	'translate-fs-userpage-title' => 'สร้างหน้าผู้ใช้ของคุณ',
+	'translate-fs-permissions-title' => 'ขออนุญาตแปล',
+	'translate-fs-target-title' => 'เริ่มต้นแปล!',
+	'translate-fs-email-title' => 'ยืนยันอีเมล',
+	'translate-fs-userpage-submit' => 'สร้างหน้าผู้ใช้ของฉัน',
+	'translate-fs-userpage-done' => 'ตอนนี้คุณมีหน้าผู้ใช้ของคุณเองแล้ว',
+);
+
 /** Tagalog (Tagalog)
  * @author AnakngAraw
  */
@@ -2239,5 +2261,21 @@ Xin hãy thay đổi nếu cần.',
 Nó cho phép người khác liên hệ với bạn qua thư.
 Bạn cũng sẽ nhận được thư tin tức tối đa một bức một tháng.
 Nếu bạn không muốn nhận thư tin tức, bạn có thể bỏ nó ra khỏi thẻ "{{int:prefs-personal}}" trong [[Special:Preferences|tùy chọn cá nhân]].',
+);
+
+/** Simplified Chinese (‪中文(简体)‬)
+ * @author Chenxiaoqino
+ */
+$messages['zh-hans'] = array(
+	'firststeps' => '第一步',
+	'translate-fs-pagetitle-done' => ' - 完成！',
+	'translate-fs-signup-title' => '注册',
+	'translate-fs-settings-title' => '设置你的选项',
+	'translate-fs-userpage-title' => '创建你的用户页面',
+	'translate-fs-permissions-title' => '请求翻译者权限',
+	'translate-fs-target-title' => '开始翻译！',
+	'translate-fs-email-title' => '确认您的邮箱地址',
+	'translate-fs-userpage-submit' => '创建我的用户页面',
+	'translate-fs-userpage-done' => '很好！现在你有了一个用户页面。',
 );
 
