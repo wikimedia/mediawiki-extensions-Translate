@@ -8740,7 +8740,7 @@ Detil: $1",
 $messages['ig'] = array(
 	'translate' => 'Kuwaria na asụsụ ozor',
 	'translate-edit' => 'rüwá',
-	'translate-talk' => 'kuwa okwu',
+	'translate-talk' => 'okwu',
 	'translate-page-settings-legend' => 'Otu ihe dị',
 	'translate-page-task' => 'M chorí',
 	'translate-page-group' => 'Ọtú',
@@ -8782,7 +8782,7 @@ $messages['ig'] = array(
 	'translate-gs-continent' => 'Obodo ukwu',
 	'translate-gs-speakers' => 'Ndi na su',
 	'translate-gs-multiple' => 'Onuogụgụ kachara otụ',
-	'translate-gs-total' => 'Olé níle',
+	'translate-gs-total' => 'Òlé níle',
 );
 
 /** Iloko (Ilokano)
@@ -10382,7 +10382,7 @@ Do moß en de Jrop „Övversäzer“ sen, för hee Änderonge maache ze könne.
 	'translate-magic-nothing-to-export' => 'Et jit nix ze expoteeere.',
 	'translate-magic-cm-to-be' => 'Soll wääde',
 	'translate-magic-cm-current' => 'Eß jäz',
-	'translate-magic-cm-original' => 'Orrijinaal',
+	'translate-magic-cm-original' => 'Ojinahl',
 	'translate-magic-cm-comment' => 'Koot zesamme jefaß, Quell',
 	'translate-magic-cm-save' => 'Seschere',
 	'translate-magic-cm-updatedusing' => 'Övver [[Special:AdvancedTranslate|{{#special:magic}}]] jeänndert.',
