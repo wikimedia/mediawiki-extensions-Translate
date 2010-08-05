@@ -359,10 +359,11 @@ FOO;
 	}
 
 	public static function schemaUpdates() {
-		global $wgExtNewTables;
+		global $wgExtNewTables, $wgExtNewFields;
 
 		$dir = dirname( __FILE__ ) . '/..';
 		$wgExtNewTables[] = array( 'translate_sections', "$dir/translate.sql" );
+		$wgExtNewFields[] = array( 'translate_sections', 'trs_order', "$dir/translate-add-trs_order.patch.sql" );
 		$wgExtNewTables[] = array( 'revtag_type', "$dir/revtags.sql" );
 
 		return true;

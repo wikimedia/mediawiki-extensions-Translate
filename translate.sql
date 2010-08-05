@@ -11,6 +11,9 @@ CREATE TABLE /*_*/translate_sections (
   -- Section contents
   trs_text mediumblob NOT NULL,
 
+  -- Section order
+  trs_order int unsigned,
+
   PRIMARY KEY (trs_page, trs_key)
 ) /*$wgDBTableOptions*/;
 

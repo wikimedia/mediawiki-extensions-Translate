@@ -755,7 +755,11 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		$tables = 'translate_sections';
 		$vars = array( 'trs_key', 'trs_text' );
 		$conds = array( 'trs_page' => $this->getTitle()->getArticleId() );
-		$res = $dbr->select( $tables, $vars, $conds, __METHOD__ );
+		$options = array();
+		if ( $dbr->fieldExists( 'translate_sections', 'trs_order', __METHOD__ ) ) {
+			$options['GROUP BY'] = 'trs_order';
+		}
+		$res = $dbr->select( $tables, $vars, $conds, __METHOD__, $options );
 
 		$defs = array();
 		$prefix = $this->getTitle()->getPrefixedDBKey() . '/';
