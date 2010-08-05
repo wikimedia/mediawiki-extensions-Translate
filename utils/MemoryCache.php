@@ -19,7 +19,7 @@ class ArrayMemoryCache {
 		$this->save();
 	}
 
-	public function factory( $table ) {
+	public static function factory( $table ) {
 		// __CLASS__ doesn't work, but this is PHP
 		return new ArrayMemoryCache( $table );
 	}
