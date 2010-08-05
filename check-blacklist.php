@@ -336,7 +336,7 @@ array(
 	)
 ),
 array(
-	'group' => 'ext-specialsponsorpage',
+	'group' => 'wikia-specialsponsorpage',
 	'check' => 'variable',
 	'message' => array(
 		'sponsor-price-45yr', // Contains $ sign that can be translated differently.
