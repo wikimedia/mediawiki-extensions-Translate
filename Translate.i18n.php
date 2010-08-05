@@ -2377,6 +2377,7 @@ $messages['bpy'] = array(
 /** Breton (Brezhoneg)
  * @author Fohanno
  * @author Fulup
+ * @author Gwendal
  * @author Y-M D
  */
 $messages['br'] = array(
@@ -2553,7 +2554,7 @@ En o zouez ar c'hemennadennoù merket evel dispredet.",
 	'translate-percentage-complete' => 'Echu',
 	'translate-percentage-complete-tooltip' => "An dregantad a gemennadennoù er strollad-mañ hag a zo bet troet ha n'int ket dispredet.",
 	'translate-percentage-fuzzy' => 'Dispredet',
-	'translate-percentage-fuzzy-tooltip' => "An dregantad a gemennadennoù zo bet troet er strollad-maén hag a zo bet merket evel dispredet.
+	'translate-percentage-fuzzy-tooltip' => "An dregantad a gemennadennoù zo bet troet er strollad-mañ hag a zo bet merket evel dispredet.
 Merket e vez kemennadennoù zo evel dispredet pe peogwir eo bet cheñchet ar gemennadenn orin e saozneg pe peogwir eo bet c'hwitet ar gwiriekadur emgefre.",
 	'translate-nothing-to-do' => "Evit doare eo bet kaset da benn kement troidigezh posupl.
 Broudet oc'h da adwelet ar c'hemennadennoù adal [[Special:Translate|{{int:translate}}]].",
@@ -3234,6 +3235,8 @@ $messages['cs'] = array(
 	'translate-page-settings-legend' => 'Nastavení',
 	'translate-page-task' => 'Chci',
 	'translate-page-group' => 'skupina',
+	'translate-page-group-tooltip' => 'Název skupiny zpráv.
+Pokud skupina obsahuje podmnožinu či nadmnožinu zpráv z jiných skupin, zobrazuje se tučně.',
 	'translate-page-language' => 'Jazyk',
 	'translate-page-limit' => 's&nbsp;omezením',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|zpráva|zprávy|zpráv}} na stránce',
@@ -3258,6 +3261,7 @@ $messages['cs'] = array(
 	'translate-edit-warnings' => 'Upozornění na neúplný překlad',
 	'translate-edit-tmsugs' => 'Návrhy z překladové paměti',
 	'translate-edit-tmmatch' => '$1% shoda',
+	'translate-use-suggestion' => 'Vložit tento návrh do okna pro překlad. Nahradí se jím veškerý stávající obsah.',
 	'translate-edit-goto-no-prev' => 'Toto je první zpráva',
 	'translate-edit-goto-no-next' => 'Toto je poslední zpráva',
 	'translate-edit-goto-prev' => 'Editovat předchozí zprávu',
@@ -3332,6 +3336,7 @@ Implicitní seznam (''default'') závisí na vašem jazyce.",
 	'translationstats' => 'Statistika překladů',
 	'translate-stats-edits' => 'Úpravy',
 	'translate-stats-users' => 'Překladatelé',
+	'translate-stats-registrations' => 'Registrace',
 	'translate-statsf-intro' => 'Pomocí tohoto formuláře můžete tvořit jednoduché statistiky. Všechny hodnoty mají horní a spodní hranici.',
 	'translate-statsf-options' => 'Možnosti grafu',
 	'translate-statsf-width' => 'Šířka v pixelech:',
@@ -3368,9 +3373,15 @@ Implicitní seznam (''default'') závisí na vašem jazyce.",
 	'translate-suppress-complete' => 'Nevypisovat úplně přeložené skupiny zpráv',
 	'translate-language' => 'Jazyk',
 	'translate-total' => 'Zprávy',
+	'translate-total-tooltip' => 'Celkový počet zpráv v této skupině.',
 	'translate-untranslated' => 'Nepřeložené',
+	'translate-untranslated-tooltip' => 'Celkový počet nepřeložených zpráv v této skupině.
+Zahrnuje zprávy označené jako zastaralé.',
 	'translate-percentage-complete' => 'Dokončené',
+	'translate-percentage-complete-tooltip' => 'Podíl zpráv v této skupině, které jsou přeloženy a nejsou označeny jako zastaralé.',
 	'translate-percentage-fuzzy' => 'Zastaralé',
+	'translate-percentage-fuzzy-tooltip' => 'Podíl zpráv v této skupině, které jsou přeloženy a jsou označeny jako zastaralé.
+Zprávy se označují jako zastaralé v případě, že se zdrojová anglická zpráva změnila, protože nevyhověly automatické kontrole nebo protože je někdo označil jako zastaralé.',
 	'translate-nothing-to-do' => 'Vypadá to, že všechny možné překlady jsou hotové.
 Teď doporučujeme zkontrolovat hlášení pomocí stránky [[Special:Translate|{{int:translate}}]].',
 	'supportedlanguages' => 'Podporované jazyky',
@@ -8749,7 +8760,7 @@ $messages['ig'] = array(
 	'translate-submit' => 'Ga wèré',
 	'translate-page-navigation-legend' => 'Otú Uzọr',
 	'translate-page-showing-none' => 'Ozi adighi I zi.',
-	'translate-next' => 'Ihü nke di nso',
+	'translate-next' => 'Ihü sò',
 	'translate-page-edit' => 'rüwá',
 	'translate-optional' => '(ichóró)',
 	'translate-ignored' => '(atùfùghịrị)',
@@ -8762,7 +8773,7 @@ $messages['ig'] = array(
 	'translate-statsf-width' => 'Íbụ ime ogụgụ pixel:',
 	'translate-statsf-height' => 'Ógólógó ime ogụgụ pixel:',
 	'translate-statsf-scale-days' => 'Ubochi',
-	'translate-statsf-scale-hours' => 'Nkeji Unochi',
+	'translate-statsf-scale-hours' => 'Àmànì',
 	'translate-statsf-count' => 'Güo ógólógó:',
 	'translate-statsf-count-edits' => 'Ogụgụ orü',
 	'translate-statsf-count-users' => 'Ndi na su asụsụ di ngwamme',
