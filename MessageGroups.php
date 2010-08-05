@@ -757,7 +757,7 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		$conds = array( 'trs_page' => $this->getTitle()->getArticleId() );
 		$options = array();
 		if ( $dbr->fieldExists( 'translate_sections', 'trs_order', __METHOD__ ) ) {
-			$options['GROUP BY'] = 'trs_order';
+			$options['ORDER BY'] = 'trs_order';
 		}
 		$res = $dbr->select( $tables, $vars, $conds, __METHOD__, $options );
 
