@@ -335,7 +335,14 @@ array(
 		'pr_introductory_text', // Contains link parts that may need translation
 	)
 ),
-
+array(
+	'group' => 'ext-specialsponsorpage',
+	'check' => 'variable',
+	'message' => array(
+		'sponsor-price-45yr', // Contains $ sign that can be translated differently.
+		'sponsor-price-5m', // Contains $ sign that can be translated differently.
+	)
+),
 // translatewiki.net specific
 array(
 	'group' => 'page|Translating:Intro',
