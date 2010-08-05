@@ -63,6 +63,10 @@ function trlOpenJsEdit( page, group ) {
 
 		form.find( ".mw-translate-edit-area" ).focus();
 		addAccessKeys( form );
+		var b = form.find(".mw-translate-save"); b.val( b.val() + " (a)" );
+		var b = form.find(".mw-translate-next"); b.val( b.val() + " (s)" );
+		var b = form.find(".mw-translate-skip"); b.val( b.val() + " (d)" );
+		var b = form.find(".mw-translate-history"); b.val( b.val() + " (h)" );
 
 		form.ajaxForm({
 			dataType: "json",
