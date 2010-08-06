@@ -150,7 +150,9 @@ class TranslateUtils {
 
 		$parts = explode( '-', $code );
 		$suffix = '';
-		switch ( @$parts[1] ) {
+
+		$parts1 = isset( $parts[1] ) ? $parts[1] : '';
+		switch ( $parts1 ) {
 			case 'latn':
 				$suffix = ' (Latin)'; # TODO: i18n
 				unset( $parts[1] );
@@ -196,7 +198,7 @@ class TranslateUtils {
 		# $normkey = self::normaliseKey( $namespace, $key );
 		$normkey = str_replace( " ", "_", strtolower( "$namespace:$key" ) );
 
-		$group = @self::$mi[$normkey];
+		$group = isset( self::$mi[$normkey] ) ? self::$mi[$normkey] : null;
 		if ( is_array( $group ) ) {
 			$group = $group[0];
 		}
@@ -213,7 +215,11 @@ class TranslateUtils {
 		# $normkey = self::normaliseKey( $namespace, $key );
 		$normkey = str_replace( " ", "_", strtolower( "$namespace:$key" ) );
 
-		return (array) @self::$mi[$normkey];
+		if( isset( self::$mi[$normkey] ) ) {
+			return (array) self::$mi[$normkey];
+		} else {
+			return array();
+		}
 	}
 
 	public static function normaliseKey( $namespace, $key ) {
