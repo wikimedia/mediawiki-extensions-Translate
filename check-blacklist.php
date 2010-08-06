@@ -340,7 +340,7 @@ array(
 	'check' => 'variable',
 	'message' => array(
 		'sponsor-price-45yr', // Contains $ sign that can be translated differently.
-		'sponsor-price-5m', // Contains $ sign that can be translated differently.
+		'sponsor-price-5mo', // Contains $ sign that can be translated differently.
 	)
 ),
 // translatewiki.net specific
