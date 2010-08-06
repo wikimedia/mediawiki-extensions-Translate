@@ -1298,6 +1298,11 @@ file = UsabilityInitiative/ClickTracking/ClickTracking.i18n.php
 aliasfile = UsabilityInitiative/ClickTracking/ClickTracking.alias.php
 descmsg = clicktracking-desc
 
+Usability Initiative - 	Dont Switch Me Over
+file = UsabilityInitiative/DontSwitchMeOver/DontSwitchMeOver.i18n.php
+id = ext-ui-dontswitchmeover
+descmsg = updatemyprefs-desc
+
 Usability Initiative - Opt In
 id = ext-ui-optin
 file = UsabilityInitiative/OptIn/OptIn.i18n.php
@@ -1339,11 +1344,6 @@ Usability Initiative - Pref Switch Link
 id = ext-ui-prefswitchlink
 descmsg = prefswitch-desc
 file = UsabilityInitiative/PrefSwitch/PrefSwitchLink.i18n.php
-
-Usability Initiative - 	Update My Prefs
-file = UsabilityInitiative/UpdateMyPrefs/UpdateMyPrefs.i18n.php
-id = ext-ui-updatemyprefs
-descmsg = updatemyprefs-desc
 
 Usability Initiative - User Daily Contribs
 file = UsabilityInitiative/UserDailyContribs/UserDailyContribs.i18n.php
