@@ -2268,14 +2268,90 @@ Nếu bạn không muốn nhận thư tin tức, bạn có thể bỏ nó ra kh�
  */
 $messages['zh-hans'] = array(
 	'firststeps' => '第一步',
+	'firststeps-desc' => '让用户开始wiki翻译的[[Special:FirstSteps|引导页面]]',
 	'translate-fs-pagetitle-done' => ' - 完成！',
+	'translate-fs-pagetitle' => '$1 入门向导',
 	'translate-fs-signup-title' => '注册',
 	'translate-fs-settings-title' => '设置你的选项',
 	'translate-fs-userpage-title' => '创建你的用户页面',
 	'translate-fs-permissions-title' => '请求翻译者权限',
 	'translate-fs-target-title' => '开始翻译！',
 	'translate-fs-email-title' => '确认您的邮箱地址',
+	'translate-fs-intro' => "欢迎来到 {{SITENAME}}入门向导。
+你会被指导如何成为一名翻译者。
+最后你将可以翻译{{SITENAME}}里所有项目的''界面消息''.",
+	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount.png|frame]]
+
+首先你必须注册。
+
+翻译行为将基于用户名记录。
+右边的图片指示了如何在网页里填表。
+
+如果你已经注册了，请$1 登录$2 。
+当你完成注册后，请回到此页面。
+
+$3 注册$4',
+	'translate-fs-settings-text' => '现在你应该到选项页面并且至少将界面语言设置成你希望翻译成的语言。
+
+你的界面语言将会是默认的翻译目标语言。
+设置语言很容易被忘记，所以我们建议你现在就去设置。
+
+你也可以要求软件显示你懂得的其他语言，这可以在"{{int:prefs-editing}}"进行设置。
+自由探索其他设置选项吧。
+
+到[[Special:Preferences|设置页面]]完成设置，并返回此页面。',
+	'translate-fs-settings-skip' => '我完成了。继续进行。',
+	'translate-fs-userpage-text' => '现在你需要创建用户页面。
+
+请写一些关于你的东西，比如，你是谁？你希望干些什么？
+这会帮助凝聚{{SITENAME}}用户群体。
+在{{SITENAME}}有来自世界各地的用户在翻译不同的语言和项目。
+
+
+在已经填好的文字区域中的第一行你会看到<nowiki>{{#babel:en-2}}</nowiki>。
+继续填入其他你懂得的语言知识。
+跟在语言代码后面的表示你通晓这门语言的程度。
+他们表示：
+* 1 - 懂得一点点；
+* 2 - 懂得基本知识；
+* 3 - 能很好的掌握；
+* 4 - 母语水平；
+* 5 - 专业水平，比如说你是专业语言学家。
+
+如果你使用某种语言作为母语，不要填写通晓程度代码。
+样例：如果你的母语是中文，能说英语说的很好，还会一点日语，那么你应该写：
+<code><nowiki>{{#babel:zh|en-3|ja-1}}</nowiki></code>
+
+如果你还不知道一门语言的代码，现在是时候查找一下了。
+你可以使用下面的列表。',
 	'translate-fs-userpage-submit' => '创建我的用户页面',
 	'translate-fs-userpage-done' => '很好！现在你有了一个用户页面。',
+	'translate-fs-permissions-text' => '你现在需要提交申请以加入翻译组。
+
+请到[[Project:Translator]]页面，并跟随上面的指引。
+然后，回到此页面。
+
+在你提交申请之后，其中一名志愿者员工会检查您的申请并尽快批准。
+请耐心点。',
+	'translate-fs-target-text' => '恭喜！
+你现在可以进行翻译了。
+
+如果你还觉得初来乍到，有些困惑，别害怕，开始翻译吧。
+
+ [[Project list|项目列表]] 列出了所有你可以进行贡献的项目。
+每个项目都有一条简短的描述，以及能显示所有未翻译条目的“翻译此项目”的链接。
+你也可以查看某个语言下[[Special:LanguageStats|所有项目的翻译状态]]。
+
+如果你需要在开始翻译前了解更多，请查看[[]FAQ]。
+不幸的是，某些文档有时是过时的。
+如果你想帮忙却不知到怎么办，请大胆的到[[Support|技术支持页面]]提问。
+
+你也可以在[[Portal:$1|你的翻译语言]]的[[Portal_talk:$1|讨论页]]联系和你翻译同样语言的人。
+请确保你已经在[[Special:Preferences|选项里变更你的用户界面语言]]，这样Wiki也能给你展示最合适的链接。',
+	'translate-fs-email-text' => '请在[[Special:Preferences|选项]]页面留下电子邮箱地址并进行验证。
+
+这能让其他用户通过电子邮件联系你。
+你也会收到至多每月一次的电子通讯。
+如果你不想收到通讯，你可以在[[Special:Preferences|选项]]"页面的{{int:prefs-personal}}"标签选择停止接收。',
 );
 

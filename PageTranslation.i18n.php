@@ -1875,6 +1875,11 @@ $messages['gu'] = array(
 	'tpt-languages-legend' => 'અન્ય ભાષાઓ:',
 );
 
+/** Hausa (هَوُسَ) */
+$messages['ha'] = array(
+	'pt-movepage-reason' => 'Dalili:',
+);
+
 /** Hebrew (עברית)
  * @author Rotemliss
  * @author YaronSh
@@ -2651,6 +2656,8 @@ Text vum Abschnitt: <pre>$1</pre>',
 	'pt-movepage-block-base-invalid' => "D'Basiszilsäit huet kee valabelen Titel.",
 	'pt-movepage-block-tp-exists' => "D'Iwwersetzungszilsäit [[:$2]] gëtt et schonn.",
 	'pt-movepage-block-tp-invalid' => 'Den Numm vun der iwwersater Zilsäit fir [[:$1]] wier net valabel (ze laang?).',
+	'pt-movepage-block-subpage-exists' => "D'Zil-Ënnersäit [[:$2]] gëtt et schonn.",
+	'pt-movepage-block-subpage-invalid' => 'Den Titel vun der Zil-Ënnersäit fir [[:$1]] wier net valabel (ze laang?).',
 	'pt-movepage-list-pages' => 'Lëscht vun de Säite fir ze réckelen',
 	'pt-movepage-list-translation' => 'Iwwersetzungssäiten',
 	'pt-movepage-list-section' => 'Abschnitter vu Säiten',
@@ -4532,11 +4539,13 @@ $messages['zh-hans'] = array(
 	'tpt-sections-deleted' => '已删除的翻译模块',
 	'tpt-sections-template' => '翻译页面模版',
 	'tpt-action-nofuzzy' => '不要使翻译作废',
-	'tpt-badtitle' => '提供的页面名（$1 )不是有效的标题。',
+	'tpt-badtitle' => '提供的页面名($1 )不是有效的标题。',
+	'tpt-nosuchpage' => '页面$1 不存在。',
 	'tpt-translate-this' => '翻译此页',
 	'translate-tag-translate-link-desc' => '翻译本页',
 	'tpt-languages-legend' => '其他语言：',
 	'tpt-download-page' => '汇出含翻译的页面',
+	'pt-movepage-logreason' => '可翻译页面$1 的部分。',
 	'pt-locked-page' => '此页面已被锁定，因为可翻译页面正在被移动。',
 );
 

@@ -7128,6 +7128,11 @@ $messages['gv'] = array(
 	'translate-edit-in-other-languages' => 'Çhaghteraght ayns çhengaghyn elley',
 );
 
+/** Hausa (هَوُسَ) */
+$messages['ha'] = array(
+	'translate-magic-cm-comment' => 'Bahasi:',
+);
+
 /** Hakka (Hak-kâ-fa)
  * @author Hakka
  */
