@@ -1298,7 +1298,7 @@ file = UsabilityInitiative/ClickTracking/ClickTracking.i18n.php
 aliasfile = UsabilityInitiative/ClickTracking/ClickTracking.alias.php
 descmsg = clicktracking-desc
 
-Usability Initiative - 	Dont Switch Me Over
+Usability Initiative - Dont Switch Me Over
 file = UsabilityInitiative/DontSwitchMeOver/DontSwitchMeOver.i18n.php
 id = ext-ui-dontswitchmeover
 descmsg = updatemyprefs-desc
