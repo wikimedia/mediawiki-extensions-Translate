@@ -715,7 +715,7 @@ $messages['ce'] = array(
 	'tpt-languages-legend' => 'Кхин меттанаш:',
 );
 
-/** Sorani (Arabic script) (‫کوردی (عەرەبی)‬)
+/** Sorani (کوردی)
  * @author Marmzok
  * @author رزگار
  */
@@ -733,6 +733,7 @@ $messages['ckb'] = array(
 	'translate-tag-translate-link-desc' => 'وەرگێڕانی ئەم پەڕە',
 	'translate-tag-markthis' => 'نیشان‌کردنی ئەم لاپەڕەیە بۆ وەرگێڕان',
 	'tpt-languages-legend' => 'زمانەکانی دیکە:',
+	'pt-movepage-reason' => 'هۆکار:',
 );
 
 /** Czech (Česky)
