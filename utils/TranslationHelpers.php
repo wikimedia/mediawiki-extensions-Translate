@@ -280,7 +280,7 @@ class TranslationHelpers {
 			}
 		} else {
 			// Assume timeout
-			self::reportTranslationSerficeFailure( $serviceName );
+			self::reportTranslationServiceFailure( $serviceName );
 		}
 
 		$boxes = array_slice( $boxes, 0, 3 );
@@ -356,7 +356,7 @@ class TranslationHelpers {
 		if ( $json === false ) {
 				wfWarn(  __METHOD__ . ': Http::get failed' );
 				// Most likely a timeout or other general error
-				self::reportTranslationSerficeFailure( $serviceName );
+				self::reportTranslationServiceFailure( $serviceName );
 
 				return null;
 		} elseif ( !is_object( $response ) ) {
@@ -376,7 +376,7 @@ class TranslationHelpers {
 			$wgMemc->set( $memckey, $unsupported, 60 * 60 * 8 );
 		} else {
 			// Unknown error, assume the worst
-			self::reportTranslationSerficeFailure( $serviceName );
+			self::reportTranslationServiceFailure( $serviceName );
 			wfWarn(  __METHOD__ . "($serviceName): " . $response->responseDetails );
 			error_log( __METHOD__ . "($serviceName): " . $response->responseDetails );
 			return null;
@@ -425,7 +425,7 @@ class TranslationHelpers {
 			$response = FormatJson::decode( $json );
 
 			if ( $json === false ) {
-				self::reportTranslationSerficeFailure( $serviceName );
+				self::reportTranslationServiceFailure( $serviceName );
 				return null;
 			} elseif ( !is_object( $response ) ) {
 				error_log(  __METHOD__ . ': Unable to parse reply: ' . strval( $json ) );
@@ -479,7 +479,7 @@ class TranslationHelpers {
 			$json = Http::post( $config['url'], $options );
 			$response = FormatJson::decode( $json );
 			if ( $json === false || !is_object( $response ) ) {
-				self::reportTranslationSerficeFailure( $serviceName );
+				self::reportTranslationServiceFailure( $serviceName );
 				break; // Too slow, back off
 			} elseif ( $response->responseStatus !== 200 ) {
 				error_log( __METHOD__ . " with ($serviceName ($candidate)): " . $response->responseDetails );
@@ -937,32 +937,49 @@ class TranslationHelpers {
 	/**
 	 * Checks whether the given service has exceeded failure count */
 	public static function checkTranslationServiceFailure( $service ) {
-		global $wgMemc;
+		global $wgMemc, $wgContLang;
 
 		$key = wfMemckey( "translate-service-$service" );
+		$value = $wgMemc->get( $key );
+		if ( !is_string( $value ) ) return false;
+		list( $count, $failed ) = explode( '|', $value, 2 );
 
-		// Both false and null are converted to zero, which is desirable
-		return intval( $wgMemc->get( $key ) ) >= self::$serviceFailureCount;
+		if ( $failed + ( 2 * self::$serviceFailurePeriod ) < wfTimestamp() ) {
+			error_log( "Translation service $service (was) restored" );
+			$wgMemc->delete( $key );
+			return false;
+		} elseif ( $failed + self::$serviceFailurePeriod < wfTimestamp() ) {
+			/* We are in suspicious mode and one failure is enough to update
+			 * failed timestamp. If the service works however, let's use it.
+			 * Previous failures are forgotten after another failure period
+			 * has passed */
+			return false;
+		}
+		
+		return $count >= self::$serviceFailureCount;
 	}
 
 	/**
 	 * Increases the failure count for a given service */
-	public static function reportTranslationSerficeFailure( $service ) {
+	public static function reportTranslationServiceFailure( $service ) {
 		global $wgMemc;
 
 		$key = wfMemckey( "translate-service-$service" );
-		// Both false and null are converted to zero, which is desirable.
-		/* FIXME: not atomic, but the default incr() implemention seems to
-		 * ignore expiry time */
-		$count = intval( $wgMemc->get( $key ) );
-		$wgMemc->set( $key, $count + 1, self::$serviceFailurePeriod );
+		$value = $wgMemc->get( $key );
+		if ( !is_string( $value ) ) {
+			$count = 0;
+		} else {
+			list( $count, ) = explode( '|', $value, 2 );	
+		}
 
-		/* By using >= we expose if something is still increasing failure
-		 * count if we are over the limit */
-		if ( $count + 1 >= self::$serviceFailureCount ) {
-			$language = Language::factory( 'en' );
-			$period = $language->formatTimePeriod( self::$serviceFailurePeriod );
-			error_log( "Translation service $service suspended for $period" );
+		$count += 1;
+		$failed = wfTimestamp();
+		$wgMemc->set( $key, "$count|$failed", self::$serviceFailurePeriod*5 );
+
+		if ( $count == self::$serviceFailureCount ) {
+			error_log( "Translation service $service suspended" );
+		} elseif( $count > self::$serviceFailureCount ) {
+			error_log( "Translation service $service still suspended" );
 		}
 	}
 }

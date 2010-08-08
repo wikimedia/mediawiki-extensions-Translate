@@ -210,7 +210,7 @@ class ViewWithSuggestionsTask extends ViewMessagesTask {
 					}
 				}
 			} else {
-				TranslationHelpers::reportTranslationSerficeFailure( 'tmserver' );
+				TranslationHelpers::reportTranslationServiceFailure( 'tmserver' );
 			}
 			unset( $this->collection[$key] );
 		}
