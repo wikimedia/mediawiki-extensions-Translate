@@ -21,6 +21,7 @@ $messages['en'] = array(
 	'translate-task-view'                 => 'View all messages from',
 	'translate-task-untranslated'         => 'View all untranslated messages from',
 	'translate-task-optional'             => 'View optional messages from',
+	'translate-task-suggestions'          => 'View messages with suggestions from translation memory',
 	'translate-task-untranslatedoptional' => 'View untranslated optional messages from',
 	'translate-task-problematic'          => 'View messages that have problems',
 	'translate-task-review'               => 'Review changes to',

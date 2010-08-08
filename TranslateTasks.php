@@ -170,6 +170,53 @@ class ViewOptionalTask extends ViewMessagesTask {
 	}
 }
 
+class ViewWithSuggestionsTask extends ViewMessagesTask {
+	protected $id = 'suggestions';
+
+	protected function preinit() {
+		$code = $this->options->getLanguage();
+		global $wgTranslateTranslationServices;
+		$config = $wgTranslateTranslationServices['tmserver'];
+		$server = $config['server'];
+		$port   = $config['port'];
+		$timeout = $config['timeout-sync'];
+
+		$this->collection = $this->group->initCollection( $code );
+		$this->collection->setInfile( $this->group->load( $code ) );
+		$this->collection->filter( 'ignored' );
+		$this->collection->filter( 'optional' );
+		$this->collection->filter( 'translated' );
+		$this->collection->filter( 'fuzzy' );
+		$this->collection->loadTranslations();
+
+		$start = time();
+
+		foreach ( $this->collection->keys() as $key => $_ ) {
+			if ( time() - $start > 5 || TranslationHelpers::checkTranslationServiceFailure( 'tmserver' ) ) {
+				unset( $this->collection[$key] );
+				continue;
+			}
+
+			$def = rawurlencode( $this->collection[$key]->definition() );
+			$url = "$server:$port/tmserver/en/$code/unit/$def";
+			$suggestions = Http::get( $url, $timeout );
+
+			if ( $suggestions !== false ) {
+				$suggestions = FormatJson::decode( $suggestions, true );
+				foreach ( $suggestions as $s ) {
+					// We have a good suggestion, do not filter
+					if ( $s['quality'] > 0.80 ) {
+						continue 2;
+					}
+				}
+			} else {
+				TranslationHelpers::reportTranslationSerficeFailure( 'tmserver' );
+			}
+			unset( $this->collection[$key] );
+		}
+	}
+}
+
 class ViewUntranslatedOptionalTask extends ViewOptionalTask {
 	protected $id = 'untranslatedoptional';
 
@@ -375,7 +422,7 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 
 class TranslateTasks {
 	public static function getTasks( $pageTranslation = false ) {
-		global $wgTranslateTasks;
+		global $wgTranslateTasks, $wgTranslateTranslationServices;
 
 		// Tasks not to be available in page translation
 		$filterTasks = array(
@@ -394,6 +441,10 @@ class TranslateTasks {
 					unset( $allTasks[$id] );
 				}
 			}
+		}
+
+		if ( !isset( $wgTranslateTranslationServices['tmserver'] ) ) {
+			unset( $allTasks['suggestions'] );
 		}
 
 		return $allTasks;
