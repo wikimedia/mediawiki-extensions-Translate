@@ -255,6 +255,7 @@ $wgTranslateGroupStructure = array(
 	'/^ext-ui/' => array( 'ext', 'usabilityinitiative' ),
 	'/^ext/' => array( 'ext' ),
 	'/^wikia/' => array( 'wikia' ),
+	'/^out-ihris/' => array( 'ihris' ),
 	'/^out-mantis/' => array( 'mantis' ),
 	'/^out-okawix/' => array( 'okawix' ),
 	'/^out-osm/' => array( 'osm' ),
