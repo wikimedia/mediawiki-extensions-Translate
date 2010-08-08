@@ -451,7 +451,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	//
 	/* ArrayAccess methods */
 	public function offsetExists( $offset ) {
-		return isset( $this->messages[$offset] );
+		return isset( $this->keys[$offset] );
 	}
 
 	public function offsetGet( $offset ) {
@@ -463,7 +463,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	}
 
 	public function offsetUnset( $offset ) {
-		unset( $this->messages[$offset] );
+		unset( $this->keys[$offset] );
 	}
 
 	/* Fail fast */
@@ -478,27 +478,27 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	/* Iterator methods */
 	public function rewind() {
-		reset( $this->messages );
+		reset( $this->keys );
 	}
 
 	public function current() {
-		if ( !count( $this->messages ) ) {
+		if ( !count( $this->keys ) ) {
 			return false;
 		}
 
-		return current( $this->messages );
+		return $this->messages[key( $this->keys )];
 	}
 
 	public function key() {
-		return key( $this->messages );
+		return key( $this->keys );
 	}
 
 	public function next() {
-		return next( $this->messages );
+		return next( $this->keys );
 	}
 
 	public function valid() {
-		return $this->current() !== false;
+		return isset( $this->messages[key( $this->keys )] );
 	}
 
 	public function count() {
