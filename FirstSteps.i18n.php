@@ -1460,6 +1460,36 @@ $messages['pl'] = array(
 	'translate-fs-email-title' => 'Potwierdź swój adres e‐mail',
 );
 
+/** Piedmontese (Piemontèis)
+ * @author Dragonòt
+ */
+$messages['pms'] = array(
+	'firststeps' => 'Prim pass',
+	'firststeps-desc' => "[[Special:FirstSteps|Pàgina special]] për fé parte j'utent an dzora a na wiki an dovrand l'estension Translate",
+	'translate-fs-pagetitle-done' => ' - fàit!',
+	'translate-fs-pagetitle' => 'Wizard për parte - $1',
+	'translate-fs-signup-title' => 'Firmé',
+	'translate-fs-settings-title' => 'Configura ij tò gust',
+	'translate-fs-userpage-title' => 'Crea toa pàgina utent',
+	'translate-fs-permissions-title' => 'Ciama ij përmess ëd virador',
+	'translate-fs-target-title' => 'Part a viré!',
+	'translate-fs-email-title' => 'Che an conferma soa adrëssa ëd pòsta eletrònica',
+	'translate-fs-intro' => "Bin ëvnù al wizard dël prim pass ëd {{SITENAME}}.
+It saras guidà pass për pass ant ël process dë vnì un virador.
+A la fin it saras bon a viré ij ''mëssagi d'antërfacia'' ëd tùit ij proget apogià a {{SITENAME}}.",
+	'translate-fs-signup-text' => "[[Image:HowToStart1CreateAccount.png|frame]]
+
+Ant ël prim pass it deuve firmé.
+
+Ij crédit për toe tradussion a son atribuì a tò nòm utent.
+La figura a la drita a mosta com vempe ij camp.
+
+S'it l'as già firmà, $1log in$2 anvece.
+Na vira ch'it l'has firmà, për piasì artorna a sta pàgina-sì.
+
+$3Sign up$4",
+);
+
 /** Pashto (پښتو)
  * @author Ahmed-Najib-Biabani-Ibrahimkhel
  */
