@@ -1461,33 +1461,86 @@ $messages['pl'] = array(
 );
 
 /** Piedmontese (Piemontèis)
+ * @author Borichèt
  * @author Dragonòt
  */
 $messages['pms'] = array(
 	'firststeps' => 'Prim pass',
-	'firststeps-desc' => "[[Special:FirstSteps|Pàgina special]] për fé parte j'utent an dzora a na wiki an dovrand l'estension Translate",
+	'firststeps-desc' => "[[Special:FirstSteps|Pàgina special]] për anandié j'utent an sna wiki dovrand l'estension Translate",
 	'translate-fs-pagetitle-done' => ' - fàit!',
-	'translate-fs-pagetitle' => 'Wizard për parte - $1',
-	'translate-fs-signup-title' => 'Firmé',
+	'translate-fs-pagetitle' => 'Guida për parte - $1',
+	'translate-fs-signup-title' => "Ch'as anscriva",
 	'translate-fs-settings-title' => 'Configura ij tò gust',
 	'translate-fs-userpage-title' => 'Crea toa pàgina utent',
-	'translate-fs-permissions-title' => 'Ciama ij përmess ëd virador',
-	'translate-fs-target-title' => 'Part a viré!',
+	'translate-fs-permissions-title' => "Ch'a ciama ij përmess ëd tradutor",
+	'translate-fs-target-title' => "Ch'a ancamin-a a volté!",
 	'translate-fs-email-title' => 'Che an conferma soa adrëssa ëd pòsta eletrònica',
-	'translate-fs-intro' => "Bin ëvnù al wizard dël prim pass ëd {{SITENAME}}.
-It saras guidà pass për pass ant ël process dë vnì un virador.
-A la fin it saras bon a viré ij ''mëssagi d'antërfacia'' ëd tùit ij proget apogià a {{SITENAME}}.",
+	'translate-fs-intro' => "Bin ëvnù an sl'assistent dij prim pass ëd {{SITENAME}}.
+A sarà guidà pass për pass ant ël process dë vnì un tradutor.
+A la fin a sarà bon a volté ij ''mëssagi dj'antërfasse'' ëd tùit ij proget gestì da {{SITENAME}}.",
 	'translate-fs-signup-text' => "[[Image:HowToStart1CreateAccount.png|frame]]
 
-Ant ël prim pass it deuve firmé.
+Ël prim pass a l'é d'anscriv-se.
 
-Ij crédit për toe tradussion a son atribuì a tò nòm utent.
-La figura a la drita a mosta com vempe ij camp.
+L'arconossiment për soe tradussion a l'é atribuì a sò stranòm d'utent.
+La figura a la drita a mostra com ampinì ij camp.
 
-S'it l'as già firmà, $1log in$2 anvece.
-Na vira ch'it l'has firmà, për piasì artorna a sta pàgina-sì.
+Se nopà a l'é già anscrivusse, $1ch'a rintra ant ël sistema$2.
+Na vira ch'a l'é anscrivusse, për piasì ch'a artorna a sta pàgina-sì.
 
-$3Sign up$4",
+$3Ch'as anscriva$4",
+	'translate-fs-settings-text' => "A dovrìa adess andé ai sò gust e
+almanch cangé soa lenga d'antërfacia a la lenga ant la qual a veul volté.
+
+Soa lenga d'antërfacia a l'é dovrà com la lenga ëd destinassion dë stàndard.
+A l'é bel fé dësmentié ëd cangé la lenga a cola giusta, parèj a l'é motobin arcomandà d'ampostela adess.
+
+Dagià ch'a-i é, a peul ëdcò ciamé al programa dë smon-e le tradussion ant j'àutre lenghe ch'a conòss.
+Costa ampostassion a peul esse trovà sota la tichëtta \"{{int:prefs-editing}}\".
+Ch'as senta lìber d'esploré ëdcò d'àutre ampostassion.
+
+Ch'a vada a soa [[Special:Preferences|pàgina dij gust]] adess e ch'a artorna peui a sta pàgina-sì.",
+	'translate-fs-settings-skip' => "I l'heu fàit.
+I von anans.",
+	'translate-fs-userpage-text' => "Adess a dev creé na pàgina utent.
+
+Për piasì ch'a scriva quaicòs a propòsit ëd chiel; ch'i ch'a l'é e lòn ch'a fa.
+Sòn a giutërà la comunità {{SITENAME}} a travajé ansema.
+A {{SITENAME}} a-i é ëd përson-e da tut ël mond ch'a travajo su lenghe e proget diferent.
+
+Ant ël camp preampostà dzora, ant la prima linia a vëd <nowiki>{{#babel:en-2}}</nowiki>.
+Për piasì ch'a lo completa con soa conossensa dla lenga.
+Ël nùmer dapress dël còdes dla lenga a descriv com ch'a conòss la lenga.
+J'alternative a son:
+* 1 - un pòch
+* 2 - conossensa ëd bas
+* 3 - bon-a conossensa
+* 4 - livel ëd parlant nativ
+* 5 - a deuvra la lenga professionalment, për esempi a l'é un tradutor professionista.
+
+S'a l'é un parlant nativ ëd la lenga, ch'a lassa perde ël livel ëd conossensa, e ch'a deuvra mach ël còdes ëd la lenga.
+Esempi: s'a l'é un parlant nativ Tamil, bon Anglèis, e pòch Swahili, a dovrìa scrive:
+<code><nowiki>{{#babel:ta|en-3|sw-1}}</nowiki></code>
+
+S'a conòss pa ël còdes ëd na lenga, adess a l'é un bon moment për sërchelo.
+A peul dovré la lista sì-sota.",
+	'translate-fs-userpage-submit' => 'Crea mia pàgina utent',
+	'translate-fs-userpage-done' => "Bin fàit! Adess it l'has na pàgina utent.",
+	'translate-fs-permissions-text' => "Adess it deuve fé n'arcesta d'esse giontà al grup dij virador.
+
+An mente ch'i coregioma ël còdes, për piasì va a [[Project:Translator]] e va daré a j'istrussion.
+Peui torna andré a sta pàgina-sì.
+
+D'apress d'avèj fàit toa arcesta, un dij mèmber volontari dl'echip a controlerà toa arcesta e a l'aproverà prima ch'a peul.
+Për piasì pòrta passiensa.
+
+<del>Contròla che l'arcesta ch'a ven a sia vempìa da bin e peui sgnaca ël boton d'arcesta.</del>",
+	'translate-fs-target-text' => "Congratulassion!
+Adess it peule ancaminé a viré!
+
+Avèj pa por s'it sente anco' neuv e confus.
+A [[Project list]] a-i é na presentassion dij proget ch'it peule contribuì a viré.
+Vàire proget a l'han na curta pàgina ëd descrission con un colegament \"''Vira sto proget''\", ch'at pòrta a na pàgina ch'a lista tùit ij mëssagi pa virà.",
 );
 
 /** Pashto (پښتو)

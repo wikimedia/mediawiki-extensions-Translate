@@ -2391,6 +2391,7 @@ $messages['br'] = array(
 	'translate-task-view' => 'Welet an holl gemennadennoù evit',
 	'translate-task-untranslated' => 'Welet an holl gemennadennoù didro evit',
 	'translate-task-optional' => 'Welet an holl gemennadennoù diret evit',
+	'translate-task-suggestions' => "Gwelout ar c'hemennadoù gant atizoù memor an droidigezh",
 	'translate-task-untranslatedoptional' => "Gwelet ar c'hemennadennoù diret n'int ket bet troet evit",
 	'translate-task-problematic' => "Gwelet ar c'hemennadennoù kudennek",
 	'translate-task-review' => "Adwelet ma c'hemmoù evit",
@@ -5997,6 +5998,7 @@ $messages['frp'] = array(
 	'translate-task-view' => 'Vêre tôs los mèssâjos de la',
 	'translate-task-untranslated' => 'Vêre tôs los mèssâjos pas traduits de la',
 	'translate-task-optional' => 'Vêre los mèssâjos u chouèx de la',
+	'translate-task-suggestions' => 'Vêre los mèssâjos avouéc los consèlys de la mèmouère de traduccion de la',
 	'translate-task-untranslatedoptional' => 'Vêre los mèssâjos u chouèx pas traduits de la',
 	'translate-task-problematic' => 'Vêre los mèssâjos que sont pas de sûr de la',
 	'translate-task-review' => 'Revêre los changements a la',
@@ -6168,7 +6170,7 @@ Cen encllut los mèssâjos qu’ont étâ marcâs coment dèpassâs.',
 	'translate-percentage-complete-tooltip' => 'Lo porcentâjo de mèssâjos dens ceta tropa qu’ont étâ traduits et pas marcâs coment dèpassâs.',
 	'translate-percentage-fuzzy' => 'Dèpassâs',
 	'translate-percentage-fuzzy-tooltip' => 'Lo porcentâjo de mèssâjos dens ceta tropa qu’ont étâ traduits et pués marcâs coment dèpassâs.
-Los mèssâjos sont marcâs coment dèpassâs seye perce que la sôrsa en anglès at étâ changiê ou ben adonc un contrôlo ôtomatico at pas reussi.',
+Los mèssâjos sont marcâs coment dèpassâs seye perce que lo mèssâjo sôrsa en anglès at étâ changiê ou ben adonc un contrôlo ôtomatico at pas reussi.',
 	'translate-nothing-to-do' => 'Totes les traduccions possibles semblont avêr étâ fêtes.
 Vos éte encoragiê a revêre los mèssâjos dês [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-groups' => ' # Apondéd des identifiants de tropes de mèssâjos, yon per legne por limitar les tropes
@@ -9140,6 +9142,7 @@ $messages['ja'] = array(
 	'translate-task-view' => 'すべてのメッセージ',
 	'translate-task-untranslated' => '未翻訳メッセージ',
 	'translate-task-optional' => '任意翻訳のメッセージ',
+	'translate-task-suggestions' => '翻訳メモリーの提案メッセージを表示する',
 	'translate-task-untranslatedoptional' => '未翻訳の任意翻訳メッセージ',
 	'translate-task-problematic' => '問題のあるメッセージ',
 	'translate-task-review' => '更新反映待ちのメッセージ',
@@ -10375,8 +10378,8 @@ $messages['ksh'] = array(
 	'translate-ignored' => '(övverjange)',
 	'translate-edit-definition' => 'De Ojinaal Nohresch',
 	'translate-edit-contribute' => 'beijdraare',
-	'translate-edit-no-information' => "''Mer han kein Dokementazjohn för dat Täxshtöck.
-Wann De weijß, wann un woh dit Shtöck jenou jebruch weed, dann kanns De de Anndere hellefe, un jet för_et ennjävve.''",
+	'translate-edit-no-information' => "Mer han kein Dokementazjohn för dat Täxshtöck.
+Wann De weijß, wann un woh dat Shtöck jenou jebruch weed, dann kanns De dä Anndere hellefe, un jet för_et ennjävve.''",
 	'translate-edit-information' => 'Ennfommazjohne övver de Nohresch „$2“ ($1)',
 	'translate-edit-in-other-languages' => 'Di Nohresch „$1“ in annder Shprooche',
 	'translate-edit-committed' => 'Es aktowäll övversaz met',
@@ -13372,7 +13375,7 @@ $messages['pms'] = array(
 	'translate-task-view' => 'smon-e tuti ij messagi ëd',
 	'translate-task-untranslated' => 'Smon-e tuti ij messagi nen virà ëd',
 	'translate-task-optional' => 'Smon-e ij messagi opsionaj ëd',
-	'translate-task-suggestions' => 'Varda mëssagi con sugeriment për memòria ëd viragi',
+	'translate-task-suggestions' => 'Vëdde ij mëssagi con ij sugeriment ëd la memòria ëd tradussion',
 	'translate-task-untranslatedoptional' => 'Vëdde ij mëssagi facoltativ nen voltà da',
 	'translate-task-problematic' => "S-ciairé ij mëssagi ch'a l'han dij problema",
 	'translate-task-review' => 'Controlé le modìfiche a',
