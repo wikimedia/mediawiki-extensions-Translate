@@ -945,7 +945,9 @@ class TranslationHelpers {
 		list( $count, $failed ) = explode( '|', $value, 2 );
 
 		if ( $failed + ( 2 * self::$serviceFailurePeriod ) < wfTimestamp() ) {
-			error_log( "Translation service $service (was) restored" );
+			if ( $count >= self::$serviceFailureCount ) {
+				error_log( "Translation service $service (was) restored" );
+			}
 			$wgMemc->delete( $key );
 			return false;
 		} elseif ( $failed + self::$serviceFailurePeriod < wfTimestamp() ) {
