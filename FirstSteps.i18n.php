@@ -1526,21 +1526,34 @@ S'a conòss pa ël còdes ëd na lenga, adess a l'é un bon moment për sërchel
 A peul dovré la lista sì-sota.",
 	'translate-fs-userpage-submit' => 'Crea mia pàgina utent',
 	'translate-fs-userpage-done' => "Bin fàit! Adess it l'has na pàgina utent.",
-	'translate-fs-permissions-text' => "Adess it deuve fé n'arcesta d'esse giontà al grup dij virador.
+	'translate-fs-permissions-text' => "Adess a dev fé n'arcesta d'esse giontà a la partìa dij tradutor.
 
-An mente ch'i coregioma ël còdes, për piasì va a [[Project:Translator]] e va daré a j'istrussion.
-Peui torna andré a sta pàgina-sì.
+Antramentre ch'i coregioma ël còdes, për piasì ch'a vada a [[Project:Translator]] e ch'a fasa conforma a j'istrussion.
+Peui ch'a torna andré a sta pàgina-sì.
 
-D'apress d'avèj fàit toa arcesta, un dij mèmber volontari dl'echip a controlerà toa arcesta e a l'aproverà prima ch'a peul.
-Për piasì pòrta passiensa.
+Apress d'avèj fàit soa arcesta, un dij mèmber volontari dl'echip a controlërà soa arcesta e a l'aprovërà prima ch'a peul.
+Për piasì, ch'a pòrta passiensa.
 
-<del>Contròla che l'arcesta ch'a ven a sia vempìa da bin e peui sgnaca ël boton d'arcesta.</del>",
+<del>Ch'a contròla che l'arcesta sì-sota a sia compilà për da bin e peui ch'a sgnaca ël boton d'arcesta.</del>",
 	'translate-fs-target-text' => "Congratulassion!
-Adess it peule ancaminé a viré!
+Adess a peul ancaminé a volté!
 
-Avèj pa por s'it sente anco' neuv e confus.
-A [[Project list]] a-i é na presentassion dij proget ch'it peule contribuì a viré.
-Vàire proget a l'han na curta pàgina ëd descrission con un colegament \"''Vira sto proget''\", ch'at pòrta a na pàgina ch'a lista tùit ij mëssagi pa virà.",
+Ch'a l'abia pa tëmma s'as sent anco' neuv e confus.
+A [[Project list]] a-i é na presentassion dij proget ch'a peul contribuì a volté.
+Vàire proget a l'han na curta pàgina ëd descrission con un colegament \"''Vòlta ës proget''\", ch'a lo pòrta a na pàgina ch'a lista tùit ij mëssagi nen voltà.
+Na lista ëd tute le partìe ëd mëssagi con lë [[Special:LanguageStats|stat corent ëd tradussion për na lenga]] a l'é ëdcò disponìbil.
+
+S'a pensa ch'a l'ha dabzògn ëd capì ëd pi prima d'ancaminé a volté, a peul lese le [[FAQ|chestion ciamà ëd soens]].
+Për maleur, dle vire la documentassion a peul esse veja.
+S'a-i é quaicòs ch'a pensa ch'a podrìa esse bon a fé, ma a tiess pa a trové coma, ch'as gene pa a ciamelo a la [[Support|pàgina d'agiut]].
+
+A peul ëdcò contaté ij tradutor amis ëd la midema lenga a la [[Portal_talk:\$1|pàgina ëd discussion]] ëd [[Portal:\$1|sò portal ëd la lenga]]'.
+S'a l'ha pa anco' falo, [[Special:Preferences|ch'a cangia la lenga ëd soa antërfacia utent a la lenga ant la qual a veul fé dle tradussion]], an manera che la wiki a sia bon-a a smon-e ij colegament pi amportant për chiel.",
+	'translate-fs-email-text' => "Për piasì, ch'a buta soa adrëssa ëd pòsta eletrònica ant ij [[Special:Preferences|sò gust]] e ch'a la conferma dal mëssagi che i l'oma mandaje.
+
+Sòn a përmët a j'àutri utent ëd contatelo për pòsta eletrònica.
+A arseivrà ëdcò na litra d'anformassion, al pi na vira al mèis.
+S'a veul pa arsèive le litre d'anformassion, a peule serne ëd nò ant la tichëtta \"{{int:prefs-personal}}\" dij sò [[Special:Preferences|gust]].",
 );
 
 /** Pashto (پښتو)
