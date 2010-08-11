@@ -126,6 +126,7 @@ ignored = centralauth-editset-item-ro
 
 Central Notice
 aliasfile = CentralNotice/CentralNotice.alias.php
+optional = centralnotice-language-listing
 
 Change Author
 aliasfile = ChangeAuthor/ChangeAuthor.alias.php
