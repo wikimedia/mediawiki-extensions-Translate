@@ -14,7 +14,7 @@ class GettextFormatReader extends SimpleFormatReader {
 	public function setPrefix( $value ) {
 		$this->prefix = $value;
 	}
-	
+
 
 	public function parseAuthors() {
 		return array(); // Not implemented
@@ -73,7 +73,7 @@ class GettextFormatReader extends SimpleFormatReader {
 			}
 		}
 
-		return $messages;
+		return $mangler->mangle( $messages );
 	}
 }
 
@@ -141,8 +141,12 @@ class GettextFormatWriter extends SimpleFormatWriter {
 		fwrite( $handle, $header );
 		fwrite( $handle, $this->formatmsg( '', $headerlines  ) );
 
+		$mangler = $this->group->getMangler();
+
 		foreach ( $messages as $key => $m ) {
 			$flags = array();
+
+			$key = $mangler->unmangle( $key );
 
 			$translation = $m->translation();
 			# CASE2: no translation
