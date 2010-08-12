@@ -462,7 +462,7 @@ abstract class JavaScriptFFS extends SimpleFFS {
 
 			$translation = Xml::escapeJsString( $message->translation() );
 
-			$body .= "    {$key}: \"{$translation}\",\n\n";
+			$body .= "    {$key}: \"{$translation}\",\n";
 		}
 
 		if( strlen( $body ) === 0 ) return false;
@@ -567,7 +567,9 @@ class ShapadoJsFFS extends JavaScriptFFS {
  *
 {$authorsList}
  */
+
 var I18n = {
+
 EOT;
 	}
 
