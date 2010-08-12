@@ -468,8 +468,8 @@ abstract class JavaScriptFFS extends SimpleFFS {
 		if( strlen( $body ) === 0 ) return false;
 
 		// Strip last comma, re-add trailing newlines.
-		$body = substr( $body, 0, - 3 );
-		$body .= "\n\n";
+		$body = substr( $body, 0, -2 );
+		$body .= "\n";
 
 		return $header . $body . $this->footer();
 	}
@@ -481,7 +481,9 @@ abstract class JavaScriptFFS extends SimpleFFS {
 		foreach ( $authors as $author ) {
 			$authorsList .= " *  - $author\n";
 		}
-		return " * Translators:\n$authorsList";
+
+		// Remove trailing newline, and return.
+		return substr( " * Translators:\n$authorsList", 0, -1 );
 	}
 
 	protected static function unescapeJsString( $string ) {
@@ -529,11 +531,13 @@ class OpenLayersFFS extends JavaScriptFFS {
  * license.  See http://svn.openlayers.org/trunk/openlayers/license.txt for the
  * full text of the license. */
 
-$authorsList/**
+/**
  * @requires OpenLayers/Lang.js
  */
 
 /**
+$authorsList
+ *
  * Namespace: OpenLayers.Lang["$code"]
  * Dictionary for $name.  Keys for entries are used in calls to
  *     <OpenLayers.Lang.translate>.  Entry bodies are normal strings or
