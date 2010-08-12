@@ -662,7 +662,7 @@ class TranslationHelpers {
 
 				$mykey = $wgContLang->lcfirst( $this->page );
 				$data = $reader->parseFile();
-				$help = GettextFormatWriter::formatcomments( @$data[$mykey]['comments'], false, @$data[$mykey]['flags'] );
+				$help = GettextFormatWriter::formatComments( @$data[$mykey]['comments'], false, @$data[$mykey]['flags'] );
 				$info .= "<hr /><pre>$help</pre>";
 			}
 		}

@@ -181,7 +181,7 @@ class GettextFormatWriter extends SimpleFormatWriter {
 				$comments = $this->data[$key]['comments'];
 			}
 
-			fwrite( $handle, self::formatcomments( $comments, $documentation, $flags ) );
+			fwrite( $handle, self::formatComments( $comments, $documentation, $flags ) );
 
 			$ckey = '';
 			if ( isset( $this->data[$key]['ctxt'] ) ) {
@@ -209,7 +209,7 @@ class GettextFormatWriter extends SimpleFormatWriter {
 		return $line;
 	}
 
-	public static function formatcomments( $comments, $documentation = false, $flags = false ) {
+	public static function formatComments( $comments, $documentation = false, $flags = false ) {
 		if ( $documentation ) {
 			foreach ( explode( "\n", $documentation ) as $line ) {
 				$comments['.'][] = $line;

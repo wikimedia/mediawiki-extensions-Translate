@@ -363,7 +363,7 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 				}
 			}
 
-			$out .= self::formatcomments( $comments, $flags );
+			$out .= self::formatComments( $comments, $flags );
 			$out .= self::formatmsg( $m->definition(), $translation, $key, $flags );
 
 		}
@@ -379,7 +379,7 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 		return $line;
 	}
 
-	private static function formatcomments( $comments = false, $flags = false ) {
+	private static function formatComments( $comments = false, $flags = false ) {
 		$output = array();
 
 		if ( $comments ) {
