@@ -19,8 +19,8 @@ FILES:
 TAGS:
   optional:
     - text_dir
-    - messages\\x5b\'manual_link\'\\x5d
-    - messages\\x5b\'contact_link\'\\x5d
-    - messages\\x5b\'lang_example\'\\x5d
-    - messages\\x5b\'project_example\'\\x5d
-    - messages\\x5b\'binary_in_wp\'\\x5d
+    - messages\x5b'manual_link'\x5d
+    - messages\x5b'contact_link'\x5d
+    - messages\x5b'lang_example'\x5d
+    - messages\x5b'project_example'\x5d
+    - messages\x5b'binary_in_wp'\x5d
