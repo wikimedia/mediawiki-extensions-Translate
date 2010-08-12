@@ -481,7 +481,7 @@ abstract class JavaScriptFFS extends SimpleFFS {
 		foreach ( $authors as $author ) {
 			$authorsList .= " *  - $author\n";
 		}
-		return "/* Translators:\n$authorsList */\n\n";
+		return " * Translators:\n$authorsList\n";
 	}
 
 	protected static function unescapeJsString( $string ) {
@@ -555,8 +555,21 @@ class ShapadoJsFFS extends JavaScriptFFS {
 	}
 
 	protected function header( $code, $authors ) {
+		global $wgSitename;
+
+		$code = $collection->code;
+		$name = TranslateUtils::getLanguageName( $code );
+		$native = TranslateUtils::getLanguageName( $code, true );
 		$authorsList = $this->authorsList( $authors );
-		return "{$authorsList}var I18n = {\n\n";
+
+		return <<<EOT
+/** Messages for $name ($native)
+ *  Exported from $wgSitename
+ *
+{$authorsList}
+ */
+var I18n = {
+EOT;
 	}
 
 	protected function footer() {
