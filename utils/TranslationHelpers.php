@@ -662,8 +662,11 @@ class TranslationHelpers {
 
 				$mykey = $wgContLang->lcfirst( $this->page );
 				$data = $reader->parseFile();
-				$help = GettextFormatWriter::formatComments( @$data[$mykey]['comments'], false, @$data[$mykey]['flags'] );
-				$info .= "<hr /><pre>$help</pre>";
+				$help = trim( GettextFormatWriter::formatComments( @$data[$mykey]['comments'], false, @$data[$mykey]['flags'] ) );
+				// Do not display an empty comment. That's no help and takes up unnecessary space.
+				if( $help !== '#:' ) {
+					$info .= "<hr /><pre>$help</pre>";
+				}
 			}
 		}
 
