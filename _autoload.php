@@ -96,7 +96,6 @@ $wgAutoloadClasses['AllMediawikiExtensionsGroup'] = $dir . 'groups/MediaWikiExte
 $wgAutoloadClasses['PremadeMediawikiExtensionGroups'] = $dir . 'groups/MediaWikiExtensions.php';
 $wgAutoloadClasses['PremadeWikiaExtensionGroups'] = $dir . 'groups/Wikia/WikiaExtensions.php';
 $wgAutoloadClasses['CommonistMessageGroup'] = $dir . 'groups/Commonist.php';
-$wgAutoloadClasses['NoccMessageGroup'] = $dir . 'groups/Nocc.php';
 $wgAutoloadClasses['OpenLayersMessageGroup'] = $dir . 'groups/OpenLayers.php';
 $wgAutoloadClasses['WikiblameMessageGroup'] = $dir . 'groups/Wikiblame.php';
 $wgAutoloadClasses['MediaWikiMessageChecker'] = $dir . 'groups/MediaWiki/Checker.php';
