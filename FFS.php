@@ -481,7 +481,7 @@ abstract class JavaScriptFFS extends SimpleFFS {
 		foreach ( $authors as $author ) {
 			$authorsList .= " *  - $author\n";
 		}
-		return " * Translators:\n$authorsList\n";
+		return " * Translators:\n$authorsList";
 	}
 
 	protected static function unescapeJsString( $string ) {
