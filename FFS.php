@@ -557,7 +557,6 @@ class ShapadoJsFFS extends JavaScriptFFS {
 	protected function header( $code, $authors ) {
 		global $wgSitename;
 
-		$code = $collection->code;
 		$name = TranslateUtils::getLanguageName( $code );
 		$native = TranslateUtils::getLanguageName( $code, true );
 		$authorsList = $this->authorsList( $authors );
