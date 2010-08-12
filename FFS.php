@@ -447,38 +447,44 @@ abstract class JavaScriptFFS extends SimpleFFS {
 		);
 	}
 
-	public function writeIntoVariable( MessageCollection $collection ) {
-		$r = $this->header( $collection->code, $collection->getAuthors() );
+	public function writeReal( MessageCollection $collection ) {
+		$header = $this->header( $collection->code, $collection->getAuthors() );
 
 		$mangler = $this->group->getMangler();
 
 		// Get and write messages.
+		$body = '';
 		foreach ( $collection as $message ) {
+			if( strlen( $message->translation() ) === 0 ) continue;
+
 			$key = $mangler->unmangle( $message->key() );
 			$key = $this->transformKey( Xml::escapeJsString( $key ) );
 
 			$translation = Xml::escapeJsString( $message->translation() );
 
-			$r .= "    {$key}: \"{$translation}\",\n\n";
+			$body .= "    {$key}: \"{$translation}\",\n\n";
 		}
 
-		// Strip last comma, re-add trailing newlines.
-		$r = substr( $r, 0, - 3 );
-		$r .= "\n\n";
+		if( strlen( $body ) === 0 ) return false;
 
-		return $r . $this->footer();
+		// Strip last comma, re-add trailing newlines.
+		$body = substr( $body, 0, - 3 );
+		$body .= "\n\n";
+
+		return $header . $body . $this->footer();
 	}
 
 	protected function authorsList( $authors ) {
 		if( count( $authors ) === 0 ) return '';
 
+		$authorsList = '';
 		foreach ( $authors as $author ) {
 			$authorsList .= " *  - $author\n";
 		}
 		return "/* Translators:\n$authorsList */\n\n";
 	}
 
-	private static function unescapeJsString( $string ) {
+	protected static function unescapeJsString( $string ) {
 		// See ECMA 262 section 7.8.4 for string literal format
 		$pairs = array(
 			"\\" => "\\\\",
