@@ -1217,6 +1217,8 @@ Upload Blacklist
 
 Upload Wizard
 aliasfile = UploadWizard/UploadWizard.alias.php
+optional = linktest, pluraltest, magictest, namespacedtest
+optional = extremelycomplextest, internallinktest
 ignored = mwe-upwiz-license-pd-us
 
 Unicode Converter
