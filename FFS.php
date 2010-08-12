@@ -545,7 +545,7 @@ EOT;
 	}
 
 	protected function footer() {
-		return '});';
+		return "});\n";
 	}
 }
 
@@ -560,7 +560,7 @@ class ShapadoJsFFS extends JavaScriptFFS {
 	}
 
 	protected function footer() {
-		return '};';
+		return "};\n";
 	}
 }
 
