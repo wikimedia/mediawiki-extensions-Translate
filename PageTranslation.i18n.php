@@ -265,6 +265,7 @@ $messages['ar'] = array(
 	'tpt-sections-deleted' => 'وحدات الترجمة المحذوفة',
 	'tpt-sections-template' => 'قالب صفحة ترجمة',
 	'tpt-badtitle' => 'اسم الصّفحة المعطى ($1) ليس عنوانا صحيحا',
+	'tpt-nosuchpage' => 'الصفحة $1 غير موجودة',
 	'tpt-oldrevision' => '$2 ليست آخر نسخة للصّفحة [[$1]].
 فقط آخر النسخ يمكن أن تؤشّر للترجمة.',
 	'tpt-notsuitable' => 'الصفحة $1 غير مناسبة للترجمة.
@@ -277,6 +278,7 @@ $messages['ar'] = array(
 	'tpt-mark-summary' => 'علَّم هذه النسخة للترجمة',
 	'tpt-edit-failed' => 'تعذّر تحديث الصفحة: $1',
 	'tpt-already-marked' => 'آخر نسخة من هذه الصفحة مُعلّمة بالفعل للترجمة.',
+	'tpt-unmarked' => 'الصفحة $1 لم تعد مُعلّمة للترجمة',
 	'tpt-list-nopages' => 'لا صفحات مُعلّمة للترجمة أو جاهزة للتعليم للترجمة.',
 	'tpt-old-pages' => 'إحدى نسخ {{PLURAL:$1||هذه الصفحة|هاتان الصفحتان|هذه الصفحات}} عُلّمت للترجمة.',
 	'tpt-new-pages' => '{{PLURAL:$1|هذه الصفحة تحتوي|هذه الصفحات تحتوي}} على نص بوسوم ترجمة، لكن لا نسخة من {{PLURAL:$1|هذه الصفحة|هذه الصفحات}} معلمة حاليا للترجمة.',
@@ -964,9 +966,11 @@ Bitte prüfe das Übersetzungs-Logbuch auf Fehlermeldungen, bzw. die Vollzugsnac
 
 /** German (formal address) (Deutsch (Sie-Form))
  * @author Imre
+ * @author Kghbln
  * @author Umherirrender
  */
 $messages['de-formal'] = array(
+	'tpt-action-nofuzzy' => 'Setzen Sie die Übersetzungen nicht außer Kraft',
 	'tpt-notsuitable' => 'Die Seite $1 ist nicht zum Übersetzen geeignet.
 Stellen Sie sicher, dass ein <nowiki><translate></nowiki>-Tag und gültige Syntax verwendet wird.',
 	'tpt-showpage-intro' => 'Untenstehend sind neue, vorhandene und gelöschte Abschnitte aufgelistet.
@@ -2348,7 +2352,6 @@ ma {{PLURAL:$1|l'ultima versione non può essere marcata|le ultime versioni non 
 	'tpt-target-page' => 'Questa pagina non può essere aggiornata manualmente. Questa pagina è una traduzione della pagina [[$1]] e la traduzione può essere aggiornata tramite [$2 lo strumento di traduzione].',
 	'tpt-unknown-page' => 'Questo namespace è riservato alle traduzioni del contenuto delle pagine.
 La pagina che stai cercando di modificare non sembra corrispondere ad alcuna pagina segnata per la traduzione.',
-	'tpt-move-impossible' => 'Non è ancora possibile spostare le pagine marcate per la traduzione.',
 );
 
 /** Japanese (日本語)
@@ -2470,7 +2473,7 @@ $messages['ka'] = array(
 	'tpt-diff-new' => 'ახალი ტექსტი',
 );
 
-/** Kabardian (Cyrillic) ()
+/** Kabardian (Cyrillic) (къэбэрдеибзэ/qabardjajəbza (Cyrillic))
  * @author Тамэ Балъкъэрхэ
  */
 $messages['kbd-cyrl'] = array(
@@ -2658,6 +2661,7 @@ Text vum Abschnitt: <pre>$1</pre>',
 	'pt-movepage-block-tp-exists' => "D'Iwwersetzungszilsäit [[:$2]] gëtt et schonn.",
 	'pt-movepage-block-tp-invalid' => 'Den Numm vun der iwwersater Zilsäit fir [[:$1]] wier net valabel (ze laang?).',
 	'pt-movepage-block-section-exists' => 'Den Zilabschnitt [[:$2]] gëtt et schonn.',
+	'pt-movepage-block-section-invalid' => 'Den Numm vum Abschnitt vun der Zilsäit fir [[:$1]] wier net valabel (ze laang?).',
 	'pt-movepage-block-subpage-exists' => "D'Zil-Ënnersäit [[:$2]] gëtt et schonn.",
 	'pt-movepage-block-subpage-invalid' => 'Den Titel vun der Zil-Ënnersäit fir [[:$1]] wier net valabel (ze laang?).',
 	'pt-movepage-list-pages' => 'Lëscht vun de Säite fir ze réckelen',
@@ -3232,7 +3236,6 @@ Przed oznaczeniem tej wersji do tłumaczenia, aby uniknąć niepotrzebnej pracy 
 Jest ona tłumaczeniem strony [[$1]], a tłumaczenie może zostać zmienione za pomocą [$2 narzędzia tłumacza].',
 	'tpt-unknown-page' => 'Ta przestrzeń nazw jest zarezerwowana dla tłumaczeń stron z zawartością.
 Strona, którą próbujesz edytować, prawdopodobnie nie odpowiada żadnej stronie oznaczonej do tłumaczenia.',
-	'tpt-move-impossible' => 'Przenoszenie stron oznaczonych jako przeznaczone do tłumaczenia nie jest jeszcze możliwe.',
 	'tpt-install' => 'Uruchom php maintenance/update.php lub przeprowadź instalację webową, aby włączyć opcję tłumaczenia stron.',
 	'tpt-render-summary' => 'Aktualizowanie w celu dopasowania nowej wersji strony źródłowej',
 	'tpt-download-page' => 'Wyeksportuj stronę z tłumaczeniami',
@@ -4349,6 +4352,7 @@ $messages['ug-arab'] = array(
  * @author Ahonc
  * @author NickK
  * @author Prima klasy4na
+ * @author Riwnodennyk
  * @author Тест
  */
 $messages['uk'] = array(
@@ -4382,6 +4386,10 @@ $messages['uk'] = array(
 	'tpt-download-page' => 'Експортувати сторінку з перекладами',
 	'pt-log-name' => 'Журнал перекладу сторінок',
 	'pt-log-mark' => '{{GENDER:$2|позначив|позначила}} для перекладу версію $3 сторінки "[[:$1]]"',
+	'pt-movepage-blockers' => 'Сторінка перекладу не може бути перейменована через {{PLURAL:$1|помилку|помилки}}:',
+	'pt-movepage-list-pages' => 'Перелік сторінок до перейменування',
+	'pt-movepage-new' => "Нове ім'я:",
+	'pt-movepage-reason' => 'Причина:',
 );
 
 /** Urdu (اردو) */

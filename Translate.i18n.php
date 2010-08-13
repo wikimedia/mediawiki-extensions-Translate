@@ -3157,7 +3157,7 @@ $messages['ch'] = array(
 	'translate-page-navigation-legend' => 'Nabegasion',
 );
 
-/** Sorani (Arabic script) (‫کوردی (عەرەبی)‬)
+/** Sorani (کوردی)
  * @author Asoxor
  * @author Marmzok
  * @author رزگار
@@ -3948,9 +3948,10 @@ Details: $1',
 
 /** Swiss High German (Schweizer Hochdeutsch)
  * @author MichaelFrey
+ * @author The Evil IP address
  */
 $messages['de-ch'] = array(
-	'translate-edit-no-information' => "''Diese Systemnachricht hat noch keine Dokumentation. Wenn du weisst, wo und welchem Zusammenhang sie benutzt wird, kannst du anderen Übersetzern helfen, indem du eine Dokumentation hinzufügst.''",
+	'translate-edit-no-information' => "''Diese Systemnachricht hat noch keine Dokumentation. Wenn du weisst, wo und in welchem Zusammenhang sie benutzt wird, kannst du anderen Übersetzern helfen, indem du eine Dokumentation hinzufügst.''",
 );
 
 /** German (formal address) (Deutsch (Sie-Form))
@@ -9666,7 +9667,7 @@ $messages['kaa'] = array(
 	'right-translate' => "Awdarma interfeysi ja'rdeminde o'zgertiw",
 );
 
-/** Kabardian (Cyrillic) ()
+/** Kabardian (Cyrillic) (къэбэрдеибзэ/qabardjajəbza (Cyrillic))
  * @author Тамэ Балъкъэрхэ
  */
 $messages['kbd-cyrl'] = array(
@@ -11120,6 +11121,7 @@ $messages['mg'] = array(
 	'right-translate' => 'Manova ny interface fandikana',
 	'right-translate-manage' => 'Mitantana ny gropy fandikana',
 	'right-translate-import' => 'Mampiditra ny fandikana na offline aza',
+	'translate-sidebar-alltrans' => "Amin'ny teny vahiny",
 );
 
 /** Eastern Mari (Олык Марий)
@@ -12439,6 +12441,7 @@ $messages['no'] = array(
 	'translate-task-view' => 'Vis alle meldinger fra',
 	'translate-task-untranslated' => 'Vis alle uoversatte meldinger fra',
 	'translate-task-optional' => 'Vis valgfrie beskjeder fra',
+	'translate-task-suggestions' => 'Se meldinger med forslag fra oversettelsesminnet',
 	'translate-task-untranslatedoptional' => 'Vis uoversatte valgfrie meldinger fra',
 	'translate-task-problematic' => 'Vis beskjeder som har problemer',
 	'translate-task-review' => 'Revider endringer av',
@@ -13050,6 +13053,7 @@ $messages['pdc'] = array(
 	'translate-stats-users' => 'Iwwersetzer',
 	'translate-statsf-scale-days' => 'Daag',
 	'translate-statsf-scale-hours' => 'Schtund',
+	'translate-statsf-submit' => 'Aagucke',
 	'translate-sidebar-alltrans' => 'In annere Schprooche',
 	'translations' => 'Alle Iwwersetzinge',
 	'translate-translations-none' => 'Keene Iwwersetzingen fer „$1“ vorhande',
@@ -17828,7 +17832,7 @@ $messages['tt-cyrl'] = array(
 	'languagestats' => 'Тел статистикасы',
 );
 
-/** Uighur (Uyghurche‎ / ئۇيغۇرچە) */
+/** Uighur (ئۇيغۇرچە / Uyghurche‎) */
 $messages['ug'] = array(
 	'translate-edit' => 'uzgartish',
 	'translate-talk' => 'monazire',
@@ -17964,7 +17968,7 @@ $messages['ug-arab'] = array(
 	'translate-gs-total' => 'جەمئى',
 );
 
-/** Uighur (Latin) (Uyghurche‎ / ئۇيغۇرچە (Latin))
+/** Uighur (Latin) (ئۇيغۇرچە / Uyghurche‎ (Latin))
  * @author Jose77
  */
 $messages['ug-latn'] = array(
@@ -17982,6 +17986,7 @@ $messages['ug-latn'] = array(
  * @author Ahonc
  * @author Aleksandrit
  * @author Apromix
+ * @author Hypers
  * @author NickK
  * @author Prima klasy4na
  * @author Test
@@ -17996,6 +18001,7 @@ $messages['uk'] = array(
 	'translate-task-view' => 'Переглянути всі повідомлення',
 	'translate-task-untranslated' => 'Переглянути неперекладені повідомлення',
 	'translate-task-optional' => "Переглянути необов'язкові повідомлення",
+	'translate-task-suggestions' => "Перегляд повідомлень з пропозиціями від пам'яті перекладу",
 	'translate-task-untranslatedoptional' => "Переглянути неперекладені необов'язкові повідомлення",
 	'translate-task-problematic' => 'Переглянути проблемні повідомлення',
 	'translate-task-review' => 'Перевірити зміни',
@@ -18041,6 +18047,7 @@ $messages['uk'] = array(
 	'translate-edit-warnings' => 'Попередження про неповні переклади',
 	'translate-edit-tmsugs' => "Пропозиції з пам'яті перекладів",
 	'translate-edit-tmmatch' => '$1% відповідність',
+	'translate-use-suggestion' => 'Вставити цю пропозицію в поле перекладу. Це замінить увесь поточний зміст.',
 	'translate-edit-goto-no-prev' => 'Немає попереднього повідомлення',
 	'translate-edit-goto-no-next' => 'Немає наступного повідомлення',
 	'translate-edit-goto-prev' => 'Редагувати попереднє повідомлення',
@@ -18154,8 +18161,13 @@ $messages['uk'] = array(
 	'translate-total' => 'Повідомлення',
 	'translate-total-tooltip' => 'Загальна кількість повідомлень у цій групі повідомлень.',
 	'translate-untranslated' => 'Неперекладені',
+	'translate-untranslated-tooltip' => 'Загальна кількість неперекладених повідомлень у цій групі повідомлень.
+Вона включає повідомлення, які були помічені як застарілі.',
 	'translate-percentage-complete' => 'Готово',
+	'translate-percentage-complete-tooltip' => 'Частка повідомлень у групі, які були перекладені та не помічені як застарілі.',
 	'translate-percentage-fuzzy' => 'Застаріло',
+	'translate-percentage-fuzzy-tooltip' => 'Частка повідомлень у групі, які були перекладені та були відмічені як застарілі.
+Повідомлення відмічені застарілими, оскільки англомовне оригінальне повідомлення змінилося, автоматизована перевірка повідомлення не вдалася, або хтось позначив їх як застарілі.',
 	'translate-nothing-to-do' => 'Очевидно, всі можливі переклади вже зроблені.
 Ви можете перевірити повідомлення з допомогою [[Special:Translate|{{int:translate}}]].',
 	'supportedlanguages' => 'Підтримувані мови',
@@ -18168,6 +18180,10 @@ $messages['uk'] = array(
 Якщо ви перекладач на певну мову, але у відповідному списку вас нема, додайте своє ім\'я до списку перекладачів на [[:Category:Languages|порталі]] цієї мови.
 На бічній панель знаходиться посилання на портал мови вашого інтерфейсу.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Перекладач|Перекладачі}}: $1',
+	'supportedlanguages-noportal-title' => 'Не визначено простір імен порталу',
+	'supportedlanguages-noportal' => 'Адміністратор вікі не визначив NS_PORTAL, тому ця сторінка не працює.
+На цій сторінці з\'явиться список мовних порталів для всіх порталів, які відповідають визначеним кодам мов, а також підсторінка "translators".
+Підсторінка "translators" повинна містити шаблон [[:{{ns:template}}:User|User]], з ім\'ям користувача в якості параметра.',
 	'supportedlanguages-recenttranslations' => 'останні переклади',
 	'translate-save' => 'Зберегти ($1)',
 	'translate-jssti-add' => 'Додати в список',

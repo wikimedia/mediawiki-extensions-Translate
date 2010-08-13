@@ -2247,6 +2247,7 @@ $messages['ug-arab'] = array(
 );
 
 /** Ukrainian (Українська)
+ * @author Hypers
  * @author Тест
  */
 $messages['uk'] = array(
@@ -2259,6 +2260,9 @@ $messages['uk'] = array(
 	'translate-fs-permissions-title' => 'Зробіть запит на права перекладача',
 	'translate-fs-target-title' => 'Почніть перекладати!',
 	'translate-fs-email-title' => 'Підтвердіть вашу адресу електронної пошти',
+	'translate-fs-intro' => 'Ласкаво просимо до майстра "перші кроки" проекту {{SITENAME}}.
+Крок за кроком майстер проведе вас шляхом становлення як перекладача.
+Зрештою, ви зможете перекладати інтерфейсні повідомлення усіх проектів, що підтримуються на {{SITENAME}}.',
 	'translate-fs-userpage-submit' => 'Створити мою сторінку користувача',
 );
 
