@@ -163,6 +163,7 @@ class SimpleFFS implements FFS {
 
 		if ( $sourceText !== false ) {
 			$sourceData = $this->readFromVariable( $sourceText );
+
 			if ( isset( $sourceData['AUTHORS'] ) ) {
 				$collection->addCollectionAuthors( $sourceData['AUTHORS'] );
 			}
@@ -455,17 +456,21 @@ abstract class JavaScriptFFS extends SimpleFFS {
 		// Get and write messages.
 		$body = '';
 		foreach ( $collection as $message ) {
-			if( strlen( $message->translation() ) === 0 ) continue;
+			if( strlen( $message->translation() ) === 0 ) {
+				continue;
+			}
 
 			$key = $mangler->unmangle( $message->key() );
 			$key = $this->transformKey( Xml::escapeJsString( $key ) );
 
 			$translation = Xml::escapeJsString( $message->translation() );
 
-			$body .= "    {$key}: \"{$translation}\",\n";
+			$body .= "\t{$key}: \"{$translation}\",\n";
 		}
 
-		if( strlen( $body ) === 0 ) return false;
+		if( strlen( $body ) === 0 ) {
+			return false;
+		}
 
 		// Strip last comma, re-add trailing newlines.
 		$body = substr( $body, 0, -2 );
@@ -475,7 +480,9 @@ abstract class JavaScriptFFS extends SimpleFFS {
 	}
 
 	protected function authorsList( $authors ) {
-		if( count( $authors ) === 0 ) return '';
+		if( count( $authors ) === 0 ) {
+			return '';
+		}
 
 		$authorsList = '';
 		foreach ( $authors as $author ) {
@@ -578,7 +585,7 @@ EOT;
 	}
 
 	protected function footer() {
-		return "};\n";
+		return "};\n\n";
 	}
 }
 
