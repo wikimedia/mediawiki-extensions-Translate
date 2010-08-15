@@ -1516,6 +1516,7 @@ file = WikimediaMessages/WikimediaLicenseTexts.i18n.php
 optional = wm-license-cc-wiki-link, wm-license-cecill-wiki-link, wm-license-cecill-full-link, wm-license-fal-wiki-link, wm-license-fal-full-link
 optional = wm-license-fsf-wiki-link, wm-license-free-software-wiki-link, wm-license-gfdl-wiki-link, wm-license-gpl-wiki-link
 optional = wm-license-information-permission-reusing-link, wm-license-lgpl-wiki-link, wm-license-licensing-update-wiki-link
+optional = wm-license-pd-wiki-link
 ignored = wm-license-gfdl-full-1.2-link, wm-license-gfdl-full-1.3-link, wm-license-gpl-2-full-link, wm-license-gpl-3-full-link
 ignored = wm-license-lgpl-2.1-full-link, wm-license-lgpl-3-full-link
 
