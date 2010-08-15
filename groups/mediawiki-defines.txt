@@ -714,9 +714,6 @@ MediaWiki Search
 id = ext-mwsearch
 file = MWSearch/MWSearch.i18n.php
 
-MW Releases
-ignored = mwreleases-list
-
 Natural Language List
 descmsg = nll-desc
 ignored = nll-itemoutput
