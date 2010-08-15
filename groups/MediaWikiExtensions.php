@@ -407,7 +407,6 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 		'ext-intersection',
 		'ext-labeledsectiontransclusion', // Wikisource
 		'ext-liquidthreads', // 2009-11-11: MediaWiki.org and some *.labs.wikimedia.org
-		'ext-mwreleases', // 2009-09-29: MediaWiki.org
 		'ext-mwsearch',
 		'ext-newusermessage',
 		'ext-nuke',
