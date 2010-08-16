@@ -152,14 +152,10 @@ ignored = chemFunctions_SMILES, chemFunctions_InChI, chemFunctions_RTECS,
 ignored = chemFunctions_KEGG, chemFunctions_DrugBank
 
 Cite
-optional = cite_reference_link_key_with_num, cite_reference_link_prefix
-optional = cite_reference_link_suffix, cite_references_link_prefix
-optional = cite_references_link_suffix, cite_reference_link
-optional = cite_references_link_one, cite_references_link_many
-optional = cite_references_link_many_format
-optional = cite_references_link_many_format_backlink_labels
-optional = cite_references_link_many_sep, cite_references_link_many_and
-ignored = cite_references_prefix, cite_references_suffix
+optional = cite_reference_link_key_with_num, cite_reference_link_prefix, cite_reference_link_suffix, cite_references_link_prefix
+optional = cite_references_link_suffix, cite_reference_link, cite_references_link_one, cite_references_link_many
+optional = cite_references_link_many_format, cite_references_link_many_format_backlink_labels, cite_references_link_many_sep, cite_references_link_many_and
+ignored = cite_references_prefix, cite_references_suffix, cite_references_no_link
 
 Special Cite
 id = ext-citespecial
