@@ -19,7 +19,7 @@ class PageTranslationHooks {
 		// For translation pages, parse plural, grammar etc with correct language
 		if ( $page = TranslatablePage::isTranslationPage( $title ) ) {
 			list( , $code ) = TranslateUtils::figureMessage( $title->getText() );
-			$parser->mOptions->setTargetLanguage( Language::factory( $code ) );
+			$parser->getOptions()->setTargetLanguage( Language::factory( $code ) );
 		}
 
 		return true;
@@ -195,18 +195,19 @@ class PageTranslationHooks {
 		// Sort by language code, which seems to be the only sane method
 		ksort( $status );
 
-		$sk = $parser->mOptions->getSkin();
+		$options = $parser->getOptions();
 
-		/* We rely on $wgLang, which should not matter as
-		 * languages are cached per language. However it
-		 * would be nicer to use $parser->getFunctionLang();
-		 * but that needs to be set correct first. */
-		// $lobj = $parser->getFunctionLang();
-		global $wgLang;
+		$sk = $options->getSkin();
+		if ( method_exists( $options, 'getUserLang' ) ) {
+			$userLangCode = $options->getUserLang();
+		} else {
+			global $wgLang;
+			$userLangCode = $wgLang->getCode();
+		}
 
 		$languages = array();
 		foreach ( $status as $code => $percent ) {
-			$name = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() );
+			$name = TranslateUtils::getLanguageName( $code, false, $userLangCode );
 			$name = htmlspecialchars( $name ); // Unlikely, but better safe
 
 			/* Percentages are too accurate and take more
@@ -232,7 +233,7 @@ class PageTranslationHooks {
 
 			if ( $parser->getTitle()->getText() === $_title->getText() ) {
 				$languages[] = Html::rawElement( 'b', null, "*$name* $percent" );
-			} elseif ( $code === $wgLang->getCode() ) {
+			} elseif ( $code === $userLangCode ) {
 				$languages[] = $sk->linkKnown( $_title, Html::rawElement( 'b', null, "$name $percent" ) );
 			} else {
 				$languages[] = $sk->linkKnown( $_title, "$name $percent" );
