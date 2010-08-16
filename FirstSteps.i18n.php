@@ -367,7 +367,7 @@ Bitte ändere sie falls nötig.",
 	'translate-fs-email-text' => 'Bitte gebe deine E-Mail-Adresse in [[Special:Preferences|deinen Einstellungen]] ein und bestätige die an dich versandte E-Mail.
 
 Dies gibt anderen die Möglichkeit, dich über E-Mail zu erreichen.
-Du erhälst außerdem bis zu einmal im Monat einen Newsletter.
+Du erhältst außerdem bis zu einmal im Monat einen Newsletter.
 Wenn du keinen erhalten möchtest, kannst du dich im Tab „{{int:prefs-personal}}“ in deinen [[Special:Preferences|Einstellungen]] austragen.
 Wenn du keinen Newsletter haben möchtest, kannst du dich im Tab Translate-fs-target-text',
 );
@@ -983,13 +983,58 @@ $messages['id'] = array(
 	'firststeps' => 'Langkah pertama',
 	'firststeps-desc' => '[[Special:FirstSteps|Halaman istimewa]] untuk mendapatkan pengguna memulai di wiki menggunakan ekstensi Terjemahan',
 	'translate-fs-pagetitle-done' => '- Selesai!',
-	'translate-fs-pagetitle' => 'Wisaya perkenalan - $ 1',
+	'translate-fs-pagetitle' => 'Wisaya perkenalan - $1',
 	'translate-fs-signup-title' => 'Mendaftar',
 	'translate-fs-settings-title' => 'Mengkonfigurasi preferensi anda',
 	'translate-fs-userpage-title' => 'Buat halaman pengguna anda',
 	'translate-fs-permissions-title' => 'Permintaan izin penerjemah',
 	'translate-fs-target-title' => 'Mulai menerjemahkan!',
 	'translate-fs-email-title' => 'Konfirmasikan alamat surel Anda',
+	'translate-fs-intro' => "Selamat datang di wisaya tahapan pertama {{SITENAME}}.
+Anda akan dipandu melalui proses untuk menjadi seorang penerjemah tahap demi tahap.
+Hasilnya Anda akan mampu menerjemahkan ''pesan antarmuka'' semua proyek yang didukung di {{SITENAME}}.",
+	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount.png|frame]]
+
+Pada tahap pertama Anda harus mendaftar.
+
+Kredit terjemahan Anda berupa nama pengguna Anda.
+Gambar di kanan menunjukkan cara mengisi kotak.
+
+Jika Anda sudah mendaftar, silakan $1masuk log$2.
+Setelah Anda mendaftar, silakan kembali ke halaman ini.
+
+$3Daftar$4',
+	'translate-fs-settings-skip' => 'Saya sudah selesai.
+Izinkan saya melanjutkan.',
+	'translate-fs-userpage-text' => 'Sekarang Anda perlu membuat halaman pengguna.
+
+Silakan tulis tentang diri Anda; siapa Anda dan apa pekerjaan Anda.
+Ini akan membantu komunitas {{SITENAME}} untuk bekerjasama.
+Di {{SITENAME}} ada banyak orang dari seluruh dunia yang bekerja dalam berbagai bahasa dan proyek.
+
+Pada kotak isian awal di atas, tepatnya kalimat pertama, Anda melihat <nowiki>{{#babel:en-2}}</nowiki>.
+Silakan isi dengan pengetahuan bahasa Anda.
+Angka setelah kode bahasa menjelaskan sejauh mana Anda mengenal bahasa ini.
+Alternatifnya ialah:
+* 1 - sedikit
+* 2 - pengetahuan dasar
+* 3 - pengetahuan baik
+* 4 - setingkat penutur asli
+* 5 - Anda menuturkannya secara profesional, misalnya Anda adalah penerjemah profesional.
+
+Jika Anda seorang penutur asli suatu bahasa, kosongkan tingkat kemampuan, dan gunakan kode bahasa saja.
+Misal: Anda penutur asli bahasa Tamil, dapat berbahasa Inggris dengan baik, dan sedikit bahasa Swahili, Anda dapat menuliskan:
+<code><nowiki>{{#babel:ta|en-3|sw-1}}</nowiki></code>
+
+Jika Anda tidak mengetahui kode bahasa dari suatu bahasa, saatnya untuk mencari tahu.
+Anda dapat menggunakan daftar di bawah.',
+	'translate-fs-userpage-submit' => 'Buat halaman pengguna saya',
+	'translate-fs-userpage-done' => 'Bagus! Sekarang Anda memiliki halaman pengguna.',
+	'translate-fs-email-text' => 'Mohon masukkan alamat surel Anda di [[Special:Preferences|preferensi Anda]] dan konfirmasikan dari surel yang dikirimkan ke Anda.
+
+Tindakan ini memungkinkan pengguna lain menghubungi Anda melalui surel.
+Anda juga akan menerima langganan berita sekali sebulan.
+Jika Anda tidak ingin menerima langganan berita, Anda dapat memilih tidak di tab "{{int:prefs-personal}}" di [[Special:Preferences|preferensi]] Anda.',
 );
 
 /** Igbo (Igbo)
@@ -1848,8 +1893,16 @@ De asemenea, veți primi, cel mult o dată pe lună, un mesaj cu noutăți și �
 Dacă nu doriți să recepționați acest newsletter, vă puteți dezabona în fila „{{int:prefs-personal}}” a [[Special:Preferences|preferințelor]] dumneavoastră.',
 );
 
+/** Tarandíne (Tarandíne)
+ * @author Joetaras
+ */
+$messages['roa-tara'] = array(
+	'translate-fs-pagetitle-done' => '- apposte!',
+);
+
 /** Russian (Русский)
  * @author G0rn
+ * @author Hypers
  * @author Александр Сигачёв
  */
 $messages['ru'] = array(
@@ -1866,7 +1919,7 @@ $messages['ru'] = array(
 	'translate-fs-intro' => 'Добро пожаловать в программу начального обучения проекта {{SITENAME}}.
 Шаг за шагом вы будете проведены по обучающей программе переводчиков.
 По окончанию обучения вы сможете переводить интерфейсные сообщения всех поддерживаемых проектов {{SITENAME}}.',
-	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount.png|frame]]
+	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount-ru.png|frame]]
 
 Для начала вам необходимо зарегистрироваться.
 
@@ -2254,6 +2307,7 @@ $messages['uk'] = array(
 	'firststeps' => 'Перші кроки',
 	'firststeps-desc' => '[[Special:FirstSteps|Спеціальна сторінка]], яка полегшує новим користувачам початок роботи з використанням розширення Translate',
 	'translate-fs-pagetitle-done' => ' - зроблено!',
+	'translate-fs-pagetitle' => 'Майстер "Початок роботи" - $1',
 	'translate-fs-signup-title' => 'Зареєструйтеся',
 	'translate-fs-settings-title' => 'Встановіть ваші налаштування',
 	'translate-fs-userpage-title' => 'Створіть вашу сторінку користувача',
@@ -2263,7 +2317,82 @@ $messages['uk'] = array(
 	'translate-fs-intro' => 'Ласкаво просимо до майстра "перші кроки" проекту {{SITENAME}}.
 Крок за кроком майстер проведе вас шляхом становлення як перекладача.
 Зрештою, ви зможете перекладати інтерфейсні повідомлення усіх проектів, що підтримуються на {{SITENAME}}.',
+	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount-ru.png|frame]]
+
+На першому кроці вам необхідно зареєструватися.
+
+Авторство ваших перекладів надається вашому імені користувача.
+Зображення праворуч показує, як заповнити поля.
+
+Якщо ви вже зареєстровані, тоді замість цього $1увійдіть$2.
+Після реєстрації, будь ласка, поверніться на цю сторінку.
+
+$3Зареєструватися$4',
+	'translate-fs-settings-text' => 'Тепер вам необхідно перейти до налаштувань і
+щонайменше змінити мову інтерфейсу на ту мову, на яку ви збираєтесь перекладати.
+
+Ваша мова інтерфейсу буде використовуватися як мова, на яку здійснюється переклад, за замовчуванням.
+Оскільки забути обрати правильну мову легко, то вкрай рекомендовано встановити її зараз.
+
+Пока ви знаходитесь у налаштуваннях, ви також можете увімкнути відображення перекладів іншими мовами, які ви знаєте.
+Це налаштування можна знати у вкладці «{{int:prefs-editing}}».
+Можете також дослідити й інші налаштування.
+
+Зараз перейдіть на свою [[Special:Preferences|сторінку налаштувань]], а потім поверніться на цю сторінку.',
+	'translate-fs-settings-skip' => 'Зроблено. 
+Дозвольте мені продовжити.',
+	'translate-fs-userpage-text' => 'Тепер вам потрібно створити сторінку учасника.
+
+Будь ласка, напишіть щось про себе: хто ви і чим займаєтесь.
+Це допоможе спільноті {{SITENAME}} працювати разом.
+На {{SITENAME}} є люди з усього світу, які працюють на різних мовах і проектах.
+
+У попередньо заповненому полі зверху в найпершому рядку ви побачите <nowiki>{{#babel:en-2}}</nowiki>.
+Будь ласка, заповніть це поле у відповідності з вашими знаннями мов.
+Номер після коду мови визначає, наскільки добре ви знаєте цю мову.
+Варіанти:
+* 1 — трохи
+* 2 — базове знання
+* 3 — хороше знання
+* 4 — рівень носія мови
+* 5 — ви використовуєте мову професійно, наприклад, ви — професійний перекладач.
+
+Якщо мова є вашою рідною, то не зазначайте рівень (цифру й дефіс), а використовуйте тільки код мови.
+Приклад: якщо тамільська мова є вашою рідною, а також у вас є хороше знання англійської та невелике знання суахілі, то вам потрібно написати:
+<code><nowiki>{{#babel:ta|en-3|sw-1}}</nowiki></code>
+
+Якщо ви не знаєте коду мови, то зараз саме час його знайти.
+Можете використовувати перелік нижче.',
 	'translate-fs-userpage-submit' => 'Створити мою сторінку користувача',
+	'translate-fs-userpage-done' => 'Чудово! Тепер у вас є сторінка користувача.',
+	'translate-fs-permissions-text' => 'Тепер вам необхідно подати запит, щоб вас додали до групи перекладачів.
+
+Поки ми не виправимо код, потрібно переходити до [[Project:Translator]] та дотримуватись інструкцій.
+Потім поверніться до цієї сторінки.
+
+Після того, як ви подасте запит, один з волонтерів команди сайту перевірить ваш запит і схвалить його якомога швидше.
+Будь ласка, будьте терплячими. 
+
+<del>Переконайтеся, що наступний запит правильно заповнений, а потім натисніть кнопку запиту.</del>',
+	'translate-fs-target-text' => 'Вітаємо!
+Тепер ви можете розпочати перекладати.
+
+Не турбуйтеся, якщо це досі здається вам новим і заплутаним. 
+В [[Project list|переліку проектів]] є огляд проектів, яким ви можете допомогти з перекладами.
+Більшість цих проектів має сторінку з невеличким описом та посиланням "\'\'Translate this project\'\'", яке приведе Вас на сторінку з переліком усіх неперекладених повідомлень.
+Також доступний список всіх груп повідомлень з [[Special:LanguageStats|поточним статусом перекладу для цієї мови]].
+
+Якщо ви відчуваєте, що вам необхідно отримати більше інформації, перш ніж приступити до перекладу, ви можете прочитати [[FAQ|часті запитання]]. 
+На жаль, іноді документація може бути застарілою.
+Якщо ви думаєте, що повинна бути можливість щось зробити, але не можете дізнатися як, не вагайтеся питати про це на [[Support|сторінці підтримки]].
+
+Ви також можете звернутися до колег - перекладачів тієї ж мови на [[Portal_talk:$1|сторінці обговорення]] [[Portal:$1|порталу вашої мови]]. 
+Якщо ви ще не зробили цього, [[Special:Preferences|змініть мову вашого інтерфейсу користувача на ту, якою хочете перекладати]], щоб у вікі була змога показувати найбільш відповідні для Вас посилання.',
+	'translate-fs-email-text' => 'Будь ласка, введіть Вашу адресу електронної пошти в [[[Special:Preferences|налаштуваннях]] і підтвердіть її з листа, який буде вам надіслано.
+
+Це дозволить іншим користувачам зв\'язуватися з вами електронною поштою.
+Ви також будете отримувати розсилку новин не частіше одного разу на місяць.
+Якщо ви не хочете отримувати розсилку новин, ви можете відмовитися від неї у вкладці "{{int:prefs-personal}}" ваших [Special:Preferences|налаштувань]].',
 );
 
 /** Vietnamese (Tiếng Việt)

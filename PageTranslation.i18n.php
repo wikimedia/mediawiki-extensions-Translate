@@ -2236,6 +2236,7 @@ $messages['id'] = array(
 	'tpt-sections-oldnew' => 'Unit-unit penerjemahan baru dan yang telah ada',
 	'tpt-sections-deleted' => 'Unit penerjemahan yang dihapus',
 	'tpt-sections-template' => 'Templat halaman penerjemahan',
+	'tpt-action-nofuzzy' => 'Jangan membatalkan terjemahan',
 	'tpt-badtitle' => 'Nama halaman yang diberikan ($1) tidak valid',
 	'tpt-nosuchpage' => 'Halaman $1 tidak ada',
 	'tpt-oldrevision' => '$2 bukan revisi terakhir dari halaman [[$1]].
@@ -2274,8 +2275,48 @@ Halaman yang ingin Anda sunting ini tampaknya tidak memiliki hubungan dengan hal
 	'tpt-install' => 'Jalankan php maintenance/update.php atau instalasi web untuk mengaktifkan fitur terjemahan halaman.',
 	'tpt-render-summary' => 'Memperbarui ke revisi terbaru halaman sumber',
 	'tpt-download-page' => 'Ekspor halaman dengan terjemahan',
+	'pt-parse-open' => 'Tag &lt;translate> tidak seimbang.
+Templat terjemahan: <pre>$1</pre>',
+	'pt-parse-close' => 'Tag &lt;/translate> tidak seimbang.
+Templat terjemahan: <pre>$1</pre>',
+	'pt-shake-multiple' => 'Penanda bagian ganda untuk satu bagian.
+Teks bagian: <pre>$1</pre>',
+	'pt-shake-position' => 'Penanda bagian di tempat tak terduka.
+Teks bagian: <pre>$1</pre>',
+	'pt-shake-empty' => 'Bagian kosong untuk penanda $1.',
 	'pt-log-header' => 'Log tindakan yang berhubungan dengan sistem penerjemahan halaman',
 	'pt-log-name' => 'Log penerjemahan halaman',
+	'pt-log-mark' => '{{GENDER:$2|menandai}} versi $3 halaman "[[:$1]]" untuk diterjemahkan',
+	'pt-log-unmark' => '{{GENDER:$2|menghapus}} halaman "[[:$1]]" dari penerjemahan',
+	'pt-log-moveok' => '{{GENDER:$2|selesai}} mengganti nama halaman yang dapat diterjemahkan $1 menjadi nama baru',
+	'pt-log-movenok' => '{{GENDER:$2|mengalami}} masalah ketika memindahkan [[:$1]] ke [[:$3]]',
+	'pt-movepage-title' => 'Pindahkan halaman yang dapat diterjemahkan $1',
+	'pt-movepage-blockers' => 'Halaman yang dapat diterjemahkan tidak dapat dipindahkan ke nama baru karena {{PLURAL:$1|kesalahan|kesalahan}} berikut:',
+	'pt-movepage-block-base-exists' => 'Halaman dasar target [[:$1]] ditemukan.',
+	'pt-movepage-block-base-invalid' => 'Halaman dasar target memiliki judul yang tidak sah.',
+	'pt-movepage-block-tp-exists' => 'Halaman penerjemahan target [[:$2]] ditemukan.',
+	'pt-movepage-block-tp-invalid' => 'Judul halaman penerjemahan target untuk [[:$1]] salah (terlalu panjang?).',
+	'pt-movepage-block-section-exists' => 'Halaman bagian target [[:$2]] ditemukan.',
+	'pt-movepage-block-section-invalid' => 'Judul halaman bagian target untuk [[:$1]] salah (terlalu panjang?).',
+	'pt-movepage-block-subpage-exists' => 'Subhalaman taget [[:$2]] ditemukan.',
+	'pt-movepage-block-subpage-invalid' => 'Judul subhalaman target untuk [[:$1]] salah (terlalu panjang?).',
+	'pt-movepage-list-pages' => 'Daftar halaman yang akan dipindahkan',
+	'pt-movepage-list-translation' => 'Halaman penerjemahan',
+	'pt-movepage-list-section' => 'Halaman bagian',
+	'pt-movepage-list-other' => 'Subhalaman lain',
+	'pt-movepage-list-count' => 'Secara keseluruhan ada $1 {{PLURAL:$1|halaman|halaman}} yang akan dipindahkan.',
+	'pt-movepage-legend' => 'Pindahkan halaman yang dapat diterjemahkan',
+	'pt-movepage-current' => 'Nama sekarang:',
+	'pt-movepage-new' => 'Nama baru:',
+	'pt-movepage-reason' => 'Alasan:',
+	'pt-movepage-subpages' => 'Pindahkan semua subhalaman',
+	'pt-movepage-action-check' => 'Periksa apabila langkah ini memungkinkan',
+	'pt-movepage-action-perform' => 'Lakukan langkah ini',
+	'pt-movepage-action-other' => 'Ubah target',
+	'pt-movepage-logreason' => 'Bagian dari halaman yang dapat diterjemahkan $1.',
+	'pt-movepage-started' => 'Halaman dasar sekarang pindah.
+Silakan periksa log penerjemahan halaman untuk pesan kesalahan dan selesai.',
+	'pt-locked-page' => 'Halaman ini dikunci karena halaman yang dapat diterjemahkan saat ini sedang dipindahkan.',
 );
 
 /** Igbo (Igbo)
@@ -3606,12 +3647,20 @@ Nume: $1',
  * @author Joetaras
  */
 $messages['roa-tara'] = array(
+	'tpt-template' => "Pàgene d'u template",
 	'tpt-diff-old' => 'Teste precedende',
 	'tpt-diff-new' => 'Teste nuève',
+	'tpt-nosuchpage' => "Pàgene $1 non g'esiste",
 	'tpt-rev-latest' => 'urtema versione',
 	'tpt-translate-this' => 'traduce stà pàgene',
 	'translate-tag-translate-link-desc' => 'Traduce sta vosce',
 	'tpt-languages-legend' => 'Otre lènghe:',
+	'pt-movepage-current' => 'Nome de mò:',
+	'pt-movepage-new' => 'Nome nuève:',
+	'pt-movepage-reason' => 'Mutive:',
+	'pt-movepage-subpages' => 'Spuèste tutte le sottopàggene',
+	'pt-movepage-action-perform' => "Fà 'u spostamende",
+	'pt-movepage-action-other' => "Cange 'a destinazione",
 );
 
 /** Russian (Русский)
@@ -4386,9 +4435,9 @@ $messages['uk'] = array(
 	'tpt-download-page' => 'Експортувати сторінку з перекладами',
 	'pt-log-name' => 'Журнал перекладу сторінок',
 	'pt-log-mark' => '{{GENDER:$2|позначив|позначила}} для перекладу версію $3 сторінки "[[:$1]]"',
-	'pt-movepage-blockers' => 'Сторінка перекладу не може бути перейменована через {{PLURAL:$1|помилку|помилки}}:',
-	'pt-movepage-list-pages' => 'Перелік сторінок до перейменування',
-	'pt-movepage-new' => "Нове ім'я:",
+	'pt-movepage-blockers' => 'Сторінка перекладу не може бути перейменована через {{PLURAL:$1|таку помилку|такі помилки}}:',
+	'pt-movepage-list-pages' => 'Список сторінок для перейменування',
+	'pt-movepage-new' => 'Нова назва:',
 	'pt-movepage-reason' => 'Причина:',
 );
 
