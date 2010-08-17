@@ -222,10 +222,6 @@ class SpecialTranslationStats extends SpecialPage {
 				unset( $groups[$key] );
 				continue;
 			}
-
-			if ( $group->isMeta() ) {
-				unset( $groups[$key] );
-			}
 		}
 
 		ksort( $groups );
