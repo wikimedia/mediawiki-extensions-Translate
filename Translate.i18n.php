@@ -1862,6 +1862,8 @@ $messages['ba'] = array(
 	'translate-page-settings-legend' => 'Шарттар',
 	'translate-page-task' => 'Мин теләйем',
 	'translate-page-group' => 'Төркөм',
+	'translate-page-group-tooltip' => 'Төркөм исеме.
+Башҡа төркөмдәрҙән һәм башҡа төркөмдәрҙә булған яҙмаларҙан торған төркөмдәр ҡалын шрифт менән күрһәтелгән.',
 	'translate-page-language' => 'Тел',
 	'translate-page-limit' => 'Сикләү',
 	'translate-page-limit-option' => 'Бер биткә $1 {{PLURAL:$1|яҙма}}',
@@ -1890,6 +1892,31 @@ $messages['ba'] = array(
 	'translate-edit-goto-prev' => 'Алдағы яҙманы үҙгәртергә',
 	'translate-edit-goto-next' => 'Сираттағы яҙманы үҙгәртергә',
 	'translate-edit-goto-list' => 'Исемлеккә ҡайтырға',
+	'translate-magic-pagename' => 'MediaWiki тәрәнәйтелгән тәржемәһе',
+	'translate-magic-submit' => 'Сығарырға',
+	'translate-magic-cm-export' => 'Сығарырға',
+	'translate-magic-nothing-to-export' => 'Сығарыр өсөн бер нимә лә юҡ.',
+	'translate-magic-cm-to-be' => 'Булырға тейеш',
+	'translate-magic-cm-current' => 'Хәҙерге',
+	'translate-magic-cm-comment' => 'Иҫкәрмә:',
+	'translate-magic-cm-save' => 'Һаҡларға',
+	'translate-magic-cm-updatedusing' => '[[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]] ярҙамында яңыртылған',
+	'translate-magic-cm-savefailed' => 'Һаҡлап булманы',
+	'translate-magic-special' => 'Махсус биттәрҙең псевдонимдары',
+	'translate-magic-notsaved' => 'Һеҙҙең үҙгәртеүҙәрегеҙ һаҡланманы!',
+	'translate-magic-errors' => 'Түбәндәге {{PLURAL:$1|хатаны|хаталарҙы}} төҙәтегеҙ, зинһар:',
+	'translate-magic-saved' => 'Һеҙҙең үҙгәртеүҙәрегеҙ уңышлы һаҡланды.',
+	'translationchanges' => 'Тәржемәләге үҙгәрештәр',
+	'translationchanges-export' => 'сығарырға',
+	'translationchanges-change' => '$1: $2 — $3',
+	'translate-checks-parameters' => 'Түбәндәге {{PLURAL:$2|параметр|параметрҙар}} ҡулланылмай:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters-unknown' => 'Түбәндәге {{PLURAL:$2|параметр|параметрҙар}} билдәһеҙ:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-balance' => 'Уң һәм һул {{PLURAL:$2|йәйә|йәйә}} һаны парлы түгел:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-xhtml' => 'Түбәндәге {{PLURAL:$2|тэгты|тэгтарҙы}} төҙәтегеҙ, зинһар:
+<strong><nowiki>$1</nowiki></strong>',
 	'translationstats' => 'Тәржемәләр статисикаһы',
 	'translate-stats-edits' => 'Үҙгәртеүҙәр',
 	'translate-stats-users' => 'Тәржемәселәр',
@@ -16989,16 +17016,20 @@ $messages['te'] = array(
 	'translationstats' => 'అనువాద గణాంకాలు',
 	'translate-stats-edits' => 'మార్పులు',
 	'translate-stats-users' => 'అనువాదకులు',
+	'translate-stats-registrations' => 'నమోదులు',
 	'translate-statsf-intro' => 'ఈ ఫారాన్ని ఉపయోగించి సరళమైన గణాంకాలను పొందవచ్చు. అన్ని విలువలకీ ఎగువ మరియు దిగువ పరిమితులు ఉంటాయి.',
 	'translate-statsf-options' => 'గ్రాఫు ఎంపికలు',
 	'translate-statsf-width' => 'వెడల్పు పిక్సెళ్ళలో:',
 	'translate-statsf-height' => 'ఎత్తు పిక్సెళ్ళలో:',
 	'translate-statsf-days' => 'కాలం రోజులలో:',
+	'translate-statsf-scale-months' => 'నెలలు',
+	'translate-statsf-scale-weeks' => 'వారాలు',
 	'translate-statsf-scale-days' => 'రోజులు',
 	'translate-statsf-scale-hours' => 'గంటలు',
 	'translate-statsf-count' => 'కొలత:',
 	'translate-statsf-count-edits' => 'మార్పుల సంఖ్య',
 	'translate-statsf-count-users' => 'క్రియాశీల అనువాదకులు',
+	'translate-statsf-count-registrations' => 'కొత్త వాడుకరులు',
 	'translate-statsf-language' => 'కామాతో వేరుపరచిన భాషా సంకేతాల జాబితా:',
 	'translate-statsf-group' => 'కామాలతో వేరుపరచిన సమూహ సంకేతాల జాబితా:',
 	'translate-statsf-submit' => 'మునుజూపు',
@@ -17021,11 +17052,13 @@ $messages['te'] = array(
 	'translate-suppress-complete' => 'పూర్తిగా అనువాదమైన సందేశాల సమూహాలను దాచు',
 	'translate-language' => 'భాష',
 	'translate-total' => 'సందేశాలు',
+	'translate-total-tooltip' => 'ఈ సందేశ సమూహంలోని సందేశాల మొత్తం సంఖ్య.',
 	'translate-untranslated' => 'అనువాదంకానివి',
 	'translate-percentage-complete' => 'పూర్తైనవి',
 	'translate-percentage-fuzzy' => 'పాతబడినవి',
 	'supportedlanguages' => 'తోడ్పాటు ఉన్న భాషలు',
 	'supportedlanguages-translators' => '{{PLURAL:$2|అనువాదకుడు|అనువాదకులు}}: $1',
+	'supportedlanguages-recenttranslations' => 'ఇటీవలి అనువాదాలు',
 	'translate-save' => 'భద్రపరచు ($1)',
 	'translate-jssti-add' => 'జాబితాకి చేర్చు',
 	'translate-group-desc-nodesc' => 'ఈ సందేశ సమూహానికి వివరణ లేదు',
@@ -17923,6 +17956,7 @@ Grup detayları görünümüne dönmek için aşağıdaki bağlantıyı kullanı
 /** Tatar (Cyrillic) (Татарча/Tatarça (Cyrillic))
  * @author Himiq Dzyu
  * @author Timming
+ * @author Ильнар
  */
 $messages['tt-cyrl'] = array(
 	'translate' => 'Тәрҗемә',
@@ -17930,6 +17964,14 @@ $messages['tt-cyrl'] = array(
 	'translate-edit' => 'үзгәртү',
 	'translate-next' => 'алдагы бит',
 	'languagestats' => 'Тел статистикасы',
+	'languagestats-summary' => 'Бу биттә бирелгән тел өчен тәрҗемәләр статистикасы бирелә.',
+	'languagestats-stats-for' => '$1 ($2) өчен тәрҗемә статистикасы.',
+	'languagestats-recenttranslations' => 'яңа тәрҗемәләр',
+	'translate-language-code' => 'Телнең коды',
+	'translate-language-code-field-name' => 'Телнең коды:',
+	'translate-suppress-complete' => 'Тулысынча тәрҗемә ителгән төркемнәрне күрсәтмәскә',
+	'translate-language' => 'Тел',
+	'translate-total' => 'Хат',
 );
 
 /** Uighur (ئۇيغۇرچە / Uyghurche‎) */
