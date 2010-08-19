@@ -22,7 +22,9 @@ class SpecialImportTranslations extends SpecialPage {
 		$this->request = $wgRequest;
 	}
 
-	// Dependencies
+	/**
+	 * Dependencies
+	 */ 
 	protected $user, $out, $request;
 
 	/**
@@ -31,7 +33,9 @@ class SpecialImportTranslations extends SpecialPage {
 	public function execute( $parameters ) {
 		$this->setHeaders();
 
-		// Security and validity checks
+		/**
+		 * Security and validity checks
+		 */
 		if ( !$this->userCanExecute( $this->user ) ) {
 			$this->displayRestrictionError();
 			return;
@@ -57,8 +61,10 @@ class SpecialImportTranslations extends SpecialPage {
 			}
 
 		} else {
-			// Proceed to loading and parsing if possible
-			// TODO: use a Status object instead?
+			/**
+			 * Proceed to loading and parsing if possible
+			 * @todo: use a Status object instead?
+			 */
 			$file = null;
 			$msg = $this->loadFile( $file );
 			if ( $this->checkError( $msg ) ) return;
@@ -106,7 +112,9 @@ class SpecialImportTranslations extends SpecialPage {
 		$wgOut->includeJQuery();
 		$this->out->addScriptFile( TranslateUtils::assetPath( 'js/import.js' ) );
 
-		// Ugly but necessary form building ahead, ohoy
+		/**
+		 * Ugly but necessary form building ahead, ohoy
+		 */
 		$this->out->addHTML(
 			Xml::openElement( 'form', array(
 				'action' => $this->getTitle()->getLocalUrl(),
@@ -198,8 +206,9 @@ class SpecialImportTranslations extends SpecialPage {
 	 * Try parsing file.
 	 */
 	protected function parseFile( $data ) {
-		// Construct a dummy group for us...
-		// Time to rethink the interface again?
+		/** Construct a dummy group for us...
+		 * @todo Time to rethink the interface again?
+		 */
 		$group = MessageGroupBase::factory( array(
 			'FILES' => array(
 				'class' => 'GettextFFS',
@@ -214,16 +223,22 @@ class SpecialImportTranslations extends SpecialPage {
 		$ffs = new GettextFFS( $group );
 		$data = $ffs->readFromVariable( $data );
 
-		// Special data added by GettextFFS
+		/**
+		 * Special data added by GettextFFS
+		 */
 		$metadata = $data['METADATA'];
 
-		// This should catch everything that is not a gettext file exported from us
+		/**
+		 * This should catch everything that is not a gettext file exported from us
+		 */
 		if ( !isset( $metadata['code'] ) || !isset( $metadata['group'] ) ) {
 			return array( 'no-headers' );
 		}
 
-		// And check for stupid editors that drop msgctxt which
-		// unfortunately breaks submission.
+		/**
+		 * And check for stupid editors that drop msgctxt which
+		 * unfortunately breaks submission.
+		 */
 		if ( isset( $metadata['warnings'] ) ) {
 			global $wgLang;
 			return array( 'warnings', $wgLang->commaList( $metadata['warnings'] ) );

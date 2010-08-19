@@ -10,9 +10,8 @@
  *
  * @file
  * @author Siebrand Mazeland
- *
- * Copyright © 2008-2010 Siebrand Mazeland
- * http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * @copyright Copyright © 2008-2010 Siebrand Mazeland
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
 class SpecialLanguageStats extends IncludableSpecialPage {
@@ -107,7 +106,9 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		return $out;
 	}
 
-	# Statistics table element (heading or regular cell)
+	/**
+	 * Statistics table element (heading or regular cell)
+	 */
 	function element( $in, $bgcolor = '' ) {
 		if ( $bgcolor ) {
 			$element = Xml::element( 'td', array( 'style' => "background-color: #" . $bgcolor ), $in );
@@ -121,18 +122,24 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$v = @round( 255 * $subset / $total );
 
 		if ( $fuzzy ) {
-			# weigh fuzzy with factor 20
+			/**
+			 * weigh fuzzy with factor 20.
+			 */
 			$v = $v * 20;
 			if ( $v > 255 ) $v = 255;
 			$v = 255 - $v;
 		}
 
 		if ( $v < 128 ) {
-			# Red to Yellow
+			/**
+			 * Red to Yellow
+			 */
 			$red = 'FF';
 			$green = sprintf( '%02X', 2 * $v );
 		} else {
-			# Yellow to Green
+			/**
+			 * Yellow to Green
+			 */
 			$red = sprintf( '%02X', 2 * ( 255 - $v ) );
 			$green = 'FF';
 		}
@@ -157,7 +164,9 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 		$out = wfMsgExt( 'languagestats-stats-for', array( 'parse', 'replaceafter' ), $languageName, $rcInLangLink );
 
-		# Create table header
+		/**
+		 * Create table header
+		 */
 		$out .= Xml::openElement(
 			'table',
 			array(
@@ -191,11 +200,18 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 		$cache = new ArrayMemoryCache( 'groupstats' );
 
-		# Fetch groups stats have to be displayed for
+		/**
+		 * Fetch groups stats have to be displayed for.
+		 */
 		$groups = MessageGroups::singleton()->getGroups();
-		# Get statistics for the message groups
+
+		/**
+		 * Get statistics for the message groups,
+		 */
 		foreach ( $groups as $groupName => $g ) {
-			// Do not report if this group is blacklisted.
+			/**
+			 * Do not report if this group is blacklisted.
+			 */
 			$groupId = $g->getId();
 			$blacklisted = $this->isBlacklisted( $groupId, $code );
 
@@ -207,19 +223,27 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			if ( $incache !== false ) {
 				list( $fuzzy, $translated, $total ) = $incache;
 			} else {
-				// Initialise messages
+				/**
+				 * Initialise messages.
+				 */
 				$collection = $g->initCollection( $code );
 				$collection->setInFile( $g->load( $code ) );
 				$collection->filter( 'ignored' );
 				$collection->filter( 'optional' );
-				// Store the count of real messages for later calculation.
+				/**
+				 * Store the count of real messages for later calculation.
+				 */
 				$total = count( $collection );
 
-				// Count fuzzy first
+				/**
+				 * Count fuzzy first.
+				 */
 				$collection->filter( 'fuzzy' );
 				$fuzzy = $total - count( $collection );
 
-				// Count the completion percent
+				/**
+				 * Count the completed translations.
+				 */
 				$collection->filter( 'hastranslation', false );
 				$translated = count( $collection );
 
@@ -227,12 +251,16 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 			}
 
-			// Skip if $suppressComplete and complete
+			/**
+			 * Skip if $suppressComplete and complete
+			 */
 			if ( $suppressComplete && !$fuzzy && $translated == $total ) {
 				continue;
 			}
 
-			// Division by 0 should not be possible, but does occur. Caching issue?
+			/**
+			 * Division by 0 should not be possible, but does occur. Caching issue?
+			 */
 			$translatedPercentage = $total ? $wgLang->formatNum( number_format( round( 100 * $translated / $total, 2 ), 2 ) ) : $errorString;
 			$translatedPercentage = $translatedPercentage == $errorString ? $translatedPercentage : wfMsg( 'percent', $translatedPercentage );
 
@@ -251,7 +279,9 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 			$groupLabel = $g->getLabel();
 
-			// Bold for meta groups
+			/**
+			 * Bold for meta groups.
+			 */
 			if ( $g->isMeta() ) {
 				$groupLabel = Xml::element( 'b', null, $groupLabel );
 			}

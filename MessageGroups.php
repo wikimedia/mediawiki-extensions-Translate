@@ -3,10 +3,9 @@
  * @todo: needs documentation
  *
  * @file
- * @author Niklas Laxström
- * 
- * Copyright © 2008-2010, Niklas Laxström
- * http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * @author Niklas LaxstrÃ¶m
+ * @copyright Copyright Â© 2008-2010, Niklas LaxstrÃ¶m
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
 abstract class MessageGroupOld implements MessageGroup {
@@ -219,7 +218,9 @@ abstract class MessageGroupOld implements MessageGroup {
 		return null;
 	}
 
-	// Can be overwritten to retun false if something is wrong
+	/**
+	 * Can be overwritten to retun false if something is wrong.
+	 */
 	public function exists() {
 		return true;
 	}
@@ -243,6 +244,9 @@ abstract class MessageGroupOld implements MessageGroup {
 	}
 }
 
+/**
+ * @todo: needs documentation
+ */
 class CoreMessageGroup extends MessageGroupOld {
 	protected $label       = 'MediaWiki';
 	protected $id          = 'core';
@@ -282,7 +286,9 @@ class CoreMessageGroup extends MessageGroupOld {
 			$parentDefs = $parent->getDefinitions();
 			$ourDefs = $this->getDefinitions();
 
-			// Filter out shared messages
+			/**
+			 * Filter out shared messages.
+			 */
 			foreach ( array_keys( $parentDefs ) as $key ) {
 				unset( $ourDefs[$key] );
 			}
@@ -322,14 +328,18 @@ class CoreMessageGroup extends MessageGroupOld {
 
 	public function load( $code ) {
 		$file = $this->getMessageFileWithPath( $code );
-		// Can return null, convert to array
+		/**
+		 * Can return null, convert to array.
+		 */
 		$messages = (array) $this->mangler->mangle(
 			ResourceLoader::loadVariableFromPHPFile( $file, 'messages' )
 		);
 
 		if ( $this->parentId ) {
 			if ( $code !== 'en' ) {
-				// For branches, load newer compatible messages for missing entries, if any
+				/**
+				 * For branches, load newer compatible messages for missing entries, if any.
+				 */
 				$trunk = MessageGroups::getGroup( $this->parentId );
 				$messages += $trunk->mangler->unmangle( $trunk->load( $code ) );
 			}
@@ -354,6 +364,9 @@ class CoreMessageGroup extends MessageGroupOld {
 	}
 }
 
+/**
+ * @todo: needs documentation
+ */
 class ExtensionMessageGroup extends MessageGroupOld {
 	protected $magicFile, $aliasFile;
 
@@ -386,13 +399,17 @@ class ExtensionMessageGroup extends MessageGroupOld {
 
 	public function getDescription() {
 		if ( $this->description === null ) {
-			// Load the messages only when needed
+			/**
+			 * Load the messages only when needed.
+			 */
 			$this->setDescriptionMsgReal( $this->descriptionKey, $this->descriptionUrl );
 		}
 		return parent::getDescription();
 	}
 
-	// Holders for lazy loading
+	/**
+	 * Holders for lazy loading.
+	 */
 	private $descriptionKey, $descriptionUrl;
 
 	/**
@@ -509,6 +526,9 @@ class ExtensionMessageGroup extends MessageGroupOld {
 	public function setMagicFile( $file ) { $this->magicFile = $file; }
 }
 
+/**
+ * @todo: needs documentation
+ */
 class AliasMessageGroup extends ExtensionMessageGroup {
 	protected $dataSource;
 
@@ -586,6 +606,9 @@ class AliasMessageGroup extends ExtensionMessageGroup {
 	}
 }
 
+/**
+ * @todo: needs documentation
+ */
 class CoreMostUsedMessageGroup extends CoreMessageGroup {
 	protected $label = 'MediaWiki (most used)';
 	protected $id    = 'core-0-mostused';
@@ -613,8 +636,12 @@ class CoreMostUsedMessageGroup extends CoreMessageGroup {
 	}
 }
 
+/**
+ * @todo: needs documentation
+ */
 class GettextMessageGroup extends MessageGroupOld {
 	protected $type = 'gettext';
+
 	/**
 	 * Name of the array where all messages are stored, if applicable.
 	 */
@@ -647,8 +674,9 @@ class GettextMessageGroup extends MessageGroupOld {
 				$code = $this->codeMap[$code];
 			}
 
-			// If this (valid) code is a mapped target, do not provide a file.
-			// Example: 'no' => 'nb'.
+			/** If this (valid) code is a mapped target, do not provide a file.
+			 * Example: 'no' => 'nb'.
+			 */
 			$mappedCodes = array_values( $this->codeMap );
 			if ( $code == $origCode && in_array( $code, $mappedCodes ) ) {
 				return '';
@@ -686,6 +714,9 @@ class GettextMessageGroup extends MessageGroupOld {
 	}
 }
 
+/**
+ * @todo: needs documentation
+ */
 class WikiMessageGroup extends MessageGroupOld {
 	protected $source = null;
 
@@ -701,10 +732,15 @@ class WikiMessageGroup extends MessageGroupOld {
 		$this->source = $source;
 	}
 
-	/* Fetch definitions from database */
+	/**
+	 * Fetch definitions from database.
+	 */
 	public function getDefinitions() {
 		$definitions = array();
-		/* In theory could have templates that are substitued */
+
+		/**
+		 * In theory could have templates that are substitued
+		 */
 		$contents = wfMsg( $this->source );
 		$contents = preg_replace( '~^\s*#.*$~m', '', $contents );
 		$messages = preg_split( '/\s+/', $contents );
@@ -739,6 +775,9 @@ class WikiMessageGroup extends MessageGroupOld {
 	}
 }
 
+/**
+ * @todo: needs documentation
+ */
 class WikiPageMessageGroup extends WikiMessageGroup {
 	protected $title;
 
@@ -775,13 +814,17 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		$re = '~<tvar\|([^>]+)>(.*?)</>~u';
 
 		foreach ( $res as $r ) {
-			// TODO: use getTextForTrans?
+			/**
+			 * @todo: use getTextForTrans?
+			 */
 			$text = $r->trs_text;
 			$text = preg_replace( $re, '$\1', $text );
 			$defs[$r->trs_key] = $text;
 		}
 
-		// Some hacks to get nice order for the messages
+		/**
+		 * Some hacks to get nice order for the messages.
+		 */
 		ksort( $defs );
 		$new_defs = array();
 		foreach ( $defs as $k => $v ) {
@@ -810,10 +853,12 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 	public function getMessage( $key, $code ) {
 		if ( $code === 'en' ) {
 			$stuff = $this->load( 'en' );
-			// FIXME: throws PHP Notice:  Undefined index:  <key>
-			// when keys are added, but createMessageIndex.php is
-			// not run (like when a translatable page from page
-			// translation was added)
+			/**
+			 * @todo Throws PHP Notice:  Undefined index:  <key>
+			 * when keys are added, but createMessageIndex.php is
+			 * not run (like when a translatable page from page
+			 * translation was added).
+			 */
 			return $stuff[$key];
 		}
 
@@ -846,9 +891,11 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		$target = SpecialPage::getTitleFor( 'MyLanguage', $title )->getPrefixedText();
 		return wfMsgNoTrans( 'translate-tag-page-desc', $title, $target );
 	}
-
 }
 
+/**
+ * @todo: needs documentation
+ */
 class MessageGroups {
 	public static function init() {
 		static $loaded = false;
@@ -945,7 +992,9 @@ class MessageGroups {
 				if ( !empty( $conf['AUTOLOAD'] ) && is_array( $conf['AUTOLOAD'] ) ) {
 					$dir = dirname( $configFile );
 					foreach ( $conf['AUTOLOAD'] as $class => $file ) {
-						// For this request and for caching
+						/**
+						 * For this request and for caching.
+						 */
 						$wgAutoloadClasses[$class] = "$dir/$file";
 						$autoload[$class] = "$dir/$file";
 					}
@@ -991,7 +1040,9 @@ class MessageGroups {
 			} elseif ( strpos( $id, 'page|' ) === 0 ) {
 				list( , $title ) = explode( '|', $id, 2 );
 
-				// Check first if it valid page title at all
+				/**
+				 * Check first if it valid page title at all.
+				 */
 				if ( !Title::newFromText( $title ) ) {
 					return null;
 				}

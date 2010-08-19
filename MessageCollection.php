@@ -4,11 +4,9 @@
  *
  * @ingroup Extensions
  * @file
- *
  * @author Niklas Laxström
- *
- * Copyright © 2007-2009, Niklas Laxström
- * http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * @copyright Copyright © 2007-2009, Niklas Laxström
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
 class MessageCollection implements ArrayAccess, Iterator, Countable {
@@ -17,25 +15,62 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 */
 	public $code = null;
 
-	// External stuff
-	protected $definitions = null; // MessageDefinitions
-	protected $infile = array();   // message key => translation
+	/**
+	 * External stuff.
+	 */
 
-	// Keys and messages
-	protected $keys = null;     // message key => database key
-	protected $messages = null; // message key => ThinMessage
+	/**
+	 * MessageDefinitions
+	 */
+	protected $definitions = null;
 
-	// Database resources
-	protected $dbInfo = null; // existence, fuzzy
-	protected $dbData = null; // all translations
+	/**
+	 * message key => translation
+	 */
+	protected $infile = array();
 
-	// Tags, copied to thin messages
-	protected $tags = array(); // tagtype => keys
+	/**
+	 * Keys and messages.
+	 */
 
+	/**
+	 * message key => database key
+	 */
+	protected $keys = null;
+
+	/**
+	 * message key => ThinMessage
+	 */
+	protected $messages = null;
+
+	/**
+	 * Database resources
+	 */
+
+	/**
+	 * existence, fuzzy
+	 */
+	protected $dbInfo = null;
+
+	/**
+	 * all translations
+	 */
+	protected $dbData = null;
+
+	/**
+	 * Tags, copied to thin messages
+	 * tagtype => keys
+	 */
+	protected $tags = array(); //
+
+	/**
+	 * Authors
+	 */
 	protected $authors = array();
 
-	// Constructors etc.
-	//
+	/**
+	 * Constructors etc.
+	 */
 	public function __construct( $code ) {
 		$this->code = $code;
 	}
@@ -48,8 +83,9 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		return $collection;
 	}
 
-	// Data setters
-	//
+	/**
+	 * Data setters
+	 */
 	public function setInfile( array $messages ) {
 		$this->infile = $messages;
 	}
@@ -58,7 +94,9 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$this->tags[$type] = $keys;
 	}
 
-	// Getters
+	/**
+	 * Data getters
+	 */
 	public function keys() {
 		return $this->keys;
 	}
@@ -75,7 +113,9 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$authors = array_flip( $this->authors );
 
 		foreach ( $this->messages as $m ) {
-			// Check if there is authors
+			/**
+			 * Check if there are authors
+			 */
 			$author = $m->author();
 
 			if ( $author === null ) {
@@ -114,7 +154,9 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$this->authors = array_unique( $authors );
 	}
 
-	// Data modifiers
+	/**
+	 * Data modifiers
+	 */
 
 	public function loadTranslations() {
 		$this->loadData( $this->keys );
@@ -177,8 +219,9 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$this->keys = array_slice( $this->keys, $offset, $limit, true );
 	}
 
-	// Protected functions
-	//
+	/**
+	 * Protected functions
+	 */
 	protected function applyFilter( $filter, $condition ) {
 		$keys = $this->keys;
 		if ( $filter === 'fuzzy' ) {
@@ -188,7 +231,9 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		} elseif ( $filter === 'translated' ) {
 			$fuzzy = $this->filterFuzzy( $keys, false );
 			$hastranslation = $this->filterHastranslation( $keys, false );
-			// Fuzzy messages are not translated messages
+			/**
+			 * Fuzzy messages are not counted as translated messages
+			 */
 			$translated = $this->filterOnCondition( $hastranslation, $fuzzy );
 			$keys = $this->filterOnCondition( $keys, $translated, $condition );
 		} elseif ( $filter === 'changed' ) {
@@ -210,12 +255,16 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	protected function filterOnCondition( array $keys, array $condKeys, $condition = true ) {
 		if ( $condition === true ) {
-			// Delete $condKeys from $keys
+			/**
+			 * Delete $condKeys from $keys
+			 */
 			foreach ( array_keys( $condKeys ) as $key ) {
 				unset( $keys[$key] );
 			}
 		} else {
-			// Keep the keys which are in $condKeys
+			/**
+			 * Keep the keys which are in $condKeys
+			 */
 			foreach ( array_keys( $keys ) as $key ) {
 				if ( !isset( $condKeys[$key] ) ) {
 					unset( $keys[$key] );
@@ -262,7 +311,9 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$flipKeys = array_flip( $keys );
 
 		foreach ( $this->dbInfo as $row ) {
-			// Remove messages which have a translation from keys
+			/**
+			 * Remove messages which have a translation from keys
+			 */
 			if ( !isset( $flipKeys[$row->page_title] ) ) {
 				continue;
 			}
@@ -270,12 +321,16 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			unset( $keys[$flipKeys[$row->page_title]] );
 		}
 
-		// Check also if there is something in the file that is not yet in the db
+		/**
+		 * Check also if there is something in the file that is not yet in the db
+		 */
 		foreach ( array_keys( $this->infile ) as $inf ) {
 			unset( $keys[$inf] );
 		}
 
-		// Remove the messages which do not have a translation from the list
+		/**
+		 * Remove the messages which do not have a translation from the list
+		 */
 		if ( $condition === false ) {
 			$keys = array_diff( $origKeys, $keys );
 		}
@@ -300,12 +355,16 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 			$text = Revision::getRevisionText( $row );
 			if ( $this->infile[$realKey] === $text ) {
-				// Remove changed messages from the list
+				/**
+				 * Remove changed messages from the list
+				 */
 				unset( $keys[$realKey] );
 			}
 		}
 
-		// Remove the messages which have not changed from the list
+		/**
+		 * Remove the messages which have not changed from the list
+		 */
 		if ( $condition === false ) {
 			$keys = $this->filterOnCondition( $keys, $origKeys, false );
 		}
@@ -334,7 +393,10 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			return;
 		}
 
-		$this->dbInfo = array(); // Something iterable
+		/**
+		 * Something iterable
+		 */
+		$this->dbInfo = array();
 
 		if ( !count( $keys ) ) {
 			return;
@@ -368,7 +430,10 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			return;
 		}
 
-		$this->dbData = array(); // Something iterable
+		/**
+		 * Something iterable
+		 */
+		$this->dbData = array();
 
 		if ( !count( $keys ) ) {
 			return;
@@ -403,7 +468,9 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 		$flipKeys = array_flip( $this->keys );
 
-		// Copy rows if any
+		/**
+		 * Copy rows if any
+		 */
 		if ( $this->dbData !== null ) {
 			foreach ( $this->dbData as $row ) {
 				if ( !isset( $flipKeys[$row->page_title] ) ) {
@@ -430,7 +497,9 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			$this->setTags( 'fuzzy', $fuzzy );
 		}
 
-		// Copy tags if any
+		/**
+		 * Copy tags if any
+		 */
 		foreach ( $this->tags as $type => $keys ) {
 			foreach ( $keys as $key ) {
 				if ( isset( $messages[$key] ) ) {
@@ -439,7 +508,9 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			}
 		}
 
-		// Copy infile if any
+		/**
+		 * Copy infile if any
+		 */
 		foreach ( $this->infile as $key => $value ) {
 			if ( isset( $messages[$key] ) ) {
 				$messages[$key]->setInfile( $value );
@@ -449,9 +520,13 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$this->messages = $messages;
 	}
 
-	// Interfaces etc.
-	//
-	/* ArrayAccess methods */
+	/**
+	 * Interfaces etc.
+	 */
+
+	/**
+	 * ArrayAccess methods
+	 */
 	public function offsetExists( $offset ) {
 		return isset( $this->keys[$offset] );
 	}
@@ -468,17 +543,23 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		unset( $this->keys[$offset] );
 	}
 
-	/* Fail fast */
+	/**
+	 * Fail fast
+	 */
 	public function __get( $name ) {
 		throw new MWException( __METHOD__ . ": Trying to access unknown property $name" );
 	}
 
-	/* Fail fast */
+	/**
+	 * Fail fast
+	 */
 	public function __set( $name, $value ) {
 		throw new MWException( __METHOD__ . ": Trying to modify unknown property $name" );
 	}
 
-	/* Iterator methods */
+	/**
+	 * Iterator methods
+	 */
 	public function rewind() {
 		reset( $this->keys );
 	}
@@ -508,6 +589,9 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	}
 }
 
+/**
+ * @todo Documentation needed.
+ */
 class MessageDefinitions {
 	public $namespace;
 	public $messages;
@@ -517,6 +601,9 @@ class MessageDefinitions {
 	}
 }
 
+/**
+ * @todo Documentation needed.
+ */
 class TestMessageCollection extends MessageCollection {
 	public function __construct( $code ) {
 		$this->code = $code;

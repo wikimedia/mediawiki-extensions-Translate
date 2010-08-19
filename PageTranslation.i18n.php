@@ -3,8 +3,7 @@
  * Translations of Page Translation feature of Translate extension.
  *
  * @file
- *
- * http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
 $messages = array();

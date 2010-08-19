@@ -4,8 +4,8 @@
  * @file
  * @author Niklas Laxström
  *
- * Copyright © 2010 Niklas Laxström
- * http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * @copyright Copyright © 2010, Niklas Laxström
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
 class SpecialFirstSteps extends UnlistedSpecialPage {
@@ -98,7 +98,6 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 		return $step_message;
 	}
 
-
 	protected function showUserpage( $step ) {
 		global $wgRequest;
 
@@ -117,8 +116,8 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 		$preload = "{{#babel:en-2}}\nI am My Name and....";
 
 		if ( $wgRequest->wasPosted() &&
-		     $this->user->matchEditToken( $wgRequest->getVal( 'token' ) ) &&
-		     $wgRequest->getText( 'step' ) === 'userpage' )
+			$this->user->matchEditToken( $wgRequest->getVal( 'token' ) ) &&
+			$wgRequest->getText( 'step' ) === 'userpage' )
 		{
 			$article = new Article( $userpage );
 			$status = $article->doEdit( $wgRequest->getText( $textareaId ), $this->getTitle() );

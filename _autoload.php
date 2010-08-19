@@ -5,9 +5,8 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
  *
  * @file
  * @author Niklas Laxström
- * 
- * Copyright © 2008-2010, Niklas Laxström
- * http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * @copyright Copyright © 2008-2010, Niklas Laxström
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
 $dir = dirname( __FILE__ ) . '/';
@@ -73,7 +72,9 @@ $wgAutoloadClasses['OpenLayersFormatReader'] = $dir . 'ffs/OpenLayers.php';
 $wgAutoloadClasses['OpenLayersFormatWriter'] = $dir . 'ffs/OpenLayers.php';
 $wgAutoloadClasses['XliffFormatWriter'] = $dir . 'ffs/Xliff.php';
 
-# utils
+/**
+ * utils
+ */
 $wgAutoloadClasses['ResourceLoader'] = $dir . 'utils/ResourceLoader.php';
 $wgAutoloadClasses['StringMangler'] = $dir . 'utils/StringMatcher.php';
 $wgAutoloadClasses['StringMatcher'] = $dir . 'utils/StringMatcher.php';
@@ -96,20 +97,26 @@ $wgAutoloadClasses['TranslationStats'] = $dir . 'utils/TranslationStats.php';
 
 $wgAutoloadClasses['TranslationMemoryUpdater'] = $dir . 'utils/TranslationMemoryUpdater.php';
 
-# predefined groups
+/**
+ * predefined groups
+ */
 $wgAutoloadClasses['AllMediawikiExtensionsGroup'] = $dir . 'groups/MediaWikiExtensions.php';
 $wgAutoloadClasses['PremadeMediawikiExtensionGroups'] = $dir . 'groups/MediaWikiExtensions.php';
 $wgAutoloadClasses['PremadeWikiaExtensionGroups'] = $dir . 'groups/Wikia/WikiaExtensions.php';
 $wgAutoloadClasses['OpenLayersMessageGroup'] = $dir . 'groups/OpenLayers.php';
 $wgAutoloadClasses['MediaWikiMessageChecker'] = $dir . 'groups/MediaWiki/Checker.php';
 
-# complex messages
+/**
+ * Complex messages
+ */
 $wgAutoloadClasses['ComplexMessages'] = $dir . 'groups/ComplexMessages.php';
 $wgAutoloadClasses['SpecialPageAliasesCM'] = $dir . 'groups/ComplexMessages.php';
 $wgAutoloadClasses['MagicWordsCM'] = $dir . 'groups/ComplexMessages.php';
 $wgAutoloadClasses['NamespaceCM'] = $dir . 'groups/ComplexMessages.php';
 
-# page translation
+/**
+ * Page translation
+ */
 $wgAutoloadClasses['PageTranslationHooks'] = $dir . 'tag/PageTranslationHooks.php';
 $wgAutoloadClasses['TranslatablePage'] = $dir . 'tag/TranslatablePage.php';
 $wgAutoloadClasses['TPException'] = $dir . 'tag/TranslatablePage.php';

@@ -3,7 +3,6 @@
  * @todo Needs documentation.
  * @file
  * @ingroup Extensions
- *
  * @author Niklas Laxström
  * @author Siebrand Mazeland
  * @copyright Copyright © 2009-2010, Niklas Laxström, Siebrand Mazeland
@@ -12,7 +11,10 @@
 
 class SpecialManageGroups {
 	protected $skin, $user, $out;
-	protected $processingTime = 30; // Seconds
+	/**
+	 * Maximum allowed processing time in seconds.
+	 */
+	protected $processingTime = 30;
 
 	public function __construct() {
 		global $wgOut, $wgUser;
@@ -29,7 +31,9 @@ class SpecialManageGroups {
 		$group = $wgRequest->getText( 'group' );
 		$group = MessageGroups::getGroup( $group );
 
-		// Only supported for FileBasedMessageGroups
+		/**
+		 * Only supported for FileBasedMessageGroups.
+		 */
 		if ( !$group instanceof FileBasedMessageGroup ) {
 			$group = null;
 		}
@@ -54,7 +58,9 @@ class SpecialManageGroups {
 			$cache = new MessageGroupCache( $group );
 			$code = $wgRequest->getText( 'language', 'en' );
 
-			// Go to English for undefined codes.
+			/**
+			 * Go to English for undefined codes.
+			 */
 			$codes = array_keys( Language::getLanguageNames( false ) );
 			if ( !in_array( $code, $codes ) ) {
 				$code = 'en';
@@ -141,7 +147,9 @@ class SpecialManageGroups {
 			Xml::hidden( 'process', 1 )
 		);
 
-		// BEGIN
+		/**
+		 * BEGIN
+		 */
 		$messages = $group->load( $code );
 
 		if ( !$cache->exists() && $code === 'en' ) {
@@ -162,7 +170,9 @@ class SpecialManageGroups {
 
 		$changed = array();
 		foreach ( $messages as $key => $value ) {
-			// ignored? ignore
+			/**
+			 * ignored? ignore!
+			 */
 			if ( in_array( $key, $ignoredMessages ) ) {
 				continue;
 			}
@@ -176,7 +186,9 @@ class SpecialManageGroups {
 				$old = str_replace( TRANSLATE_FUZZY, '', $old );
 			}
 
-			// No changes at all, ignore
+			/**
+			 * No changes at all, ignore.
+			 */
 			if ( $old === $value ) {
 				continue;
 			}
@@ -212,7 +224,9 @@ class SpecialManageGroups {
 						$changed[] = "<li>$message</li></ul>";
 						$process = false;
 					} else {
-						// Check processing time
+						/**
+						 * Check processing time.
+						 */
 						if ( !isset( $this->time ) ) {
 							$this->time = wfTimestamp();
 						}
@@ -300,7 +314,9 @@ class SpecialManageGroups {
 			$changed[] = "<li>$message</li></ul>";
 			$this->out->addHTML( implode( "\n", $changed ) );
 		} else {
-			// END
+			/**
+			 * END
+			 */
 			if ( count( $changed ) ) {
 				if ( $code === 'en' ) {
 					$this->out->addWikiMsg( 'translate-manage-intro-en' );

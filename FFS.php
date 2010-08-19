@@ -5,31 +5,42 @@
  * @todo Needs documentation.
  *
  * @file
- * @author Niklas Laxström
- * 
- * Copyright © 2008-2010, Niklas Laxström
- * http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * @author Niklas LaxstrÃ¶m
+ * @copyright Copyright Â© 2008-2010, Niklas LaxstrÃ¶m
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
 interface FFS {
 	public function __construct( FileBasedMessageGroup $group );
 
-	// The file system location
+	/**
+	 * Set the file system location
+	 */
 	public function setWritePath( $target );
+
+	/**
+	 * Get the file system location
+	 */
 	public function getWritePath();
 
-	// Will parse messages, authors, and any custom data from file specified in
-	// $group and return it in associative array with keys like AUTHORS and
-	// MESSAGES.
+	/**
+	 * Will parse messages, authors, and any custom data from file specified in
+	 * $group and return it in associative array with keys like AUTHORS and
+	 * MESSAGES.
+	 */
 	public function read( $code );
 
 	public function readFromVariable( $data );
 
-	// Writes to the location provided in $group, exporting translations included
-	// in collection with any special handling needed.
+	/**
+	 * Writes to the location provided in $group, exporting translations included
+	 * in collection with any special handling needed.
+	 */
 	public function write( MessageCollection $collection );
 
-	// Quick shortcut for getting the plain exported data
+	/**
+	 * Quick shortcut for getting the plain exported data.
+	 */
 	public function writeIntoVariable( MessageCollection $collection );
 }
 
@@ -256,9 +267,9 @@ class JavaFFS extends SimpleFFS {
 		}
 	}
 
-	//
-	// READ
-	//
+	/**
+	 * READ
+	 */
 	public function readFromVariable( $data ) {
 		$data = self::fixNewLines( $data );
 		$lines = array_map( 'ltrim', explode( "\n", $data ) );
@@ -317,9 +328,9 @@ class JavaFFS extends SimpleFFS {
 		);
 	}
 
-	//
-	// WRITE
-	//
+	/**
+	 * Write
+	 */
 	protected function writeReal( MessageCollection $collection ) {
 		$header  = $this->doHeader( $collection );
 		$header .= $this->doAuthors( $collection );
@@ -337,9 +348,14 @@ class JavaFFS extends SimpleFFS {
 				continue;
 			}
 
-			# Make sure we don't slip newlines trough... it would be fatal
+			/**
+			 * Make sure we do not slip newlines trough... it would be fatal.
+			 */
 			$value = str_replace( "\n", '\\n', $value );
-			# Just to give an overview of translation quality
+
+			/**
+			 * Just to give an overview of translation quality.
+			 */
 			if ( $m->hasTag( 'fuzzy' ) ) {
 				$output .= "# Fuzzy\n";
 			}
@@ -414,49 +430,76 @@ abstract class JavaScriptFFS extends SimpleFFS {
 
 		/* Pre-processing of messages */
 
-		// Find the start and end of the data section (enclosed in curly braces).
+		/**
+		 * Find the start and end of the data section (enclosed in curly braces).
+		 */
 		$dataStart = strpos( $data, '{' );
 		$dataEnd   = strrpos( $data, '}' );
-		// Strip everything outside of the data section.
+
+		/**
+		 * Strip everything outside of the data section.
+		 */
 		$data = substr( $data, $dataStart + 1, $dataEnd - $dataStart - 1 );
 
-		// Strip comments.
+		/**
+		 * Strip comments.
+		 */
 		$data = preg_replace( '#^(\s*?)//(.*?)$#m', '', $data );
 
-		// Replace message endings with double quotes.
+		/**
+		 * Replace message endings with double quotes.
+		 */
 		$data = preg_replace( "#\'\,\n#", "\",\n", $data );
 
-		// Strip excess whitespace.
+		/**
+		 * Strip excess whitespace.
+		 */
 		$data = trim( $data );
 
-		/* Per-key message processing */
+		/**
+		 * Per-key message processing.
+		 */
 
-		// Break in to segments.
+		/**
+		 * Break in to segments.
+		 */
 		$data = explode( "\",\n", $data );
 
 		$messages = array();
 		foreach ( $data as $segment ) {
-			// Add back trailing quote, removed by explosion.
+			/**
+			 * Add back trailing quote, removed by explosion.
+			 */
 			$segment .= '"';
 
-			// Concatenate separated strings.
+			/**
+			 * Concatenate separated strings.
+			 */
 			$segment = explode( '" +', $segment );
 			for ( $i = 0; $i < count( $segment ); $i++ ) {
 				$segment[$i] = ltrim( ltrim( $segment[$i] ), '"' );
 			}
 			$segment = implode( $segment );
 
-			// Remove line breaks between message keys and messages.
+			/**
+			 * Remove line breaks between message keys and messages.
+			 */
 			$segment = preg_replace( "#\:(\s+)[\\\"\']#", ': "', $segment );
 
-			// Break in to key and message.
+			/**
+			 * Break in to key and message.
+			 */
 			$segments = explode( ': "', $segment );
 
-			// Strip excess whitespace from key and value, then quotation marks.
+			/**
+			 * Strip excess whitespace from key and value, then quotation marks.
+			 */
 			$key = trim( trim( $segments[0] ), '\'"' );
 			$value = trim( trim( $segments[1] ), '\'"' );
 
-			// Unescape any JavaScript string syntax and append to message array.
+			/**
+			 * Unescape any JavaScript string syntax and append to message array.
+			 */
 			$messages[$key] = self::unescapeJsString( $value );
 		}
 
@@ -473,7 +516,9 @@ abstract class JavaScriptFFS extends SimpleFFS {
 
 		$mangler = $this->group->getMangler();
 
-		// Get and write messages.
+		/**
+		 * Get and write messages.
+		 */
 		$body = '';
 		foreach ( $collection as $message ) {
 			if ( strlen( $message->translation() ) === 0 ) {
@@ -492,7 +537,9 @@ abstract class JavaScriptFFS extends SimpleFFS {
 			return false;
 		}
 
-		// Strip last comma, re-add trailing newlines.
+		/**
+		 * Strip last comma, re-add trailing newlines.
+		 */
 		$body = substr( $body, 0, -2 );
 		$body .= "\n";
 
@@ -509,12 +556,16 @@ abstract class JavaScriptFFS extends SimpleFFS {
 			$authorsList .= " *  - $author\n";
 		}
 
-		// Remove trailing newline, and return.
+		/**
+		 * Remove trailing newline, and return.
+		 */
 		return substr( " * Translators:\n$authorsList", 0, -1 );
 	}
 
 	protected static function unescapeJsString( $string ) {
-		// See ECMA 262 section 7.8.4 for string literal format
+		/**
+		 * See ECMA 262 section 7.8.4 for string literal format
+		 */
 		$pairs = array(
 			"\\" => "\\\\",
 			"\"" => "\\\"",
@@ -522,17 +573,23 @@ abstract class JavaScriptFFS extends SimpleFFS {
 			"\n" => "\\n",
 			"\r" => "\\r",
 
-			# To avoid closing the element or CDATA section
+			/**
+			 * To avoid closing the element or CDATA section.
+			 */
 			"<" => "\\x3c",
 			">" => "\\x3e",
 
-			# To avoid any complaints about bad entity refs
+			/**
+			 * To avoid any complaints about bad entity refs.
+			 */
 			"&" => "\\x26",
 
-			# Work around https://bugzilla.mozilla.org/show_bug.cgi?id=274152
-			# Encode certain Unicode formatting chars so affected
-			# versions of Gecko don't misinterpret our strings;
-			# this is a common problem with Farsi text.
+			/**
+			 * Work around https://bugzilla.mozilla.org/show_bug.cgi?id=274152
+			 * Encode certain Unicode formatting chars so affected
+			 * versions of Gecko don't misinterpret our strings;
+			 * this is a common problem with Farsi text.
+			 */
 			"\xe2\x80\x8c" => "\\u200c", // ZERO WIDTH NON-JOINER
 			"\xe2\x80\x8d" => "\\u200d", // ZERO WIDTH JOINER
 		);
@@ -619,21 +676,27 @@ EOT;
  * @todo Needs documentation.
  */
 class YamlFFS extends SimpleFFS {
-	//
-	// READ
-	//
+	/**
+	 * READ
+	 */
 	public function readFromVariable( $data ) {
 		$authors = $messages = array();
 
-		# Authors first
+		/**
+		 * Authors first.
+		 */
 		$matches = array();
 		preg_match_all( '/^#\s*Author:\s*(.*)$/m', $data, $matches );
 		$authors = $matches[1];
 
-		# Then messages
+		/**
+		 * Then messages.
+		 */
 		$messages = TranslateYaml::loadString( $data );
 
-		# Some groups have messages under language code
+		/**
+		 * Some groups have messages under language code
+		 */
 		if ( isset( $this->extra['codeAsRoot'] ) ) {
 			$messages = array_shift( $messages );
 		}
@@ -647,9 +710,9 @@ class YamlFFS extends SimpleFFS {
 		);
 	}
 
-	//
-	// WRITE
-	//
+	/**
+	 * Write
+	 */
 	protected function writeReal( MessageCollection $collection ) {
 		$output  = $this->doHeader( $collection );
 		$output .= $this->doAuthors( $collection );
@@ -675,7 +738,9 @@ class YamlFFS extends SimpleFFS {
 
 		$messages = $this->unflatten( $messages );
 
-		# Some groups have messages under language code
+		/**
+		 * Some groups have messages under language code.
+		 */
 		if ( isset( $this->extra['codeAsRoot'] ) ) {
 			$code = $this->group->mapCode( $collection->code );
 			$messages = array( $code => $messages );
@@ -749,7 +814,10 @@ class YamlFFS extends SimpleFFS {
 					$array += $this->flatten( $newArray );
 				}
 			}
-			// Can as well keep only one copy around
+
+			/**
+			 * Can as well keep only one copy around.
+			 */
 			unset( $messages[$key] );
 		}
 
@@ -779,19 +847,25 @@ class YamlFFS extends SimpleFFS {
 
 				$pointer = &$array;
 				do {
-					# Extract the level and make sure it exists
+					/**
+					 * Extract the level and make sure it exists.
+					 */
 					$level = array_shift( $path );
 					if ( !isset( $pointer[$level] ) ) {
 						$pointer[$level] = array();
 					}
 
-					# Update the pointer to the new reference
+					/**
+					 * Update the pointer to the new reference.
+					 */
 					$tmpPointer = &$pointer[$level];
 					unset( $pointer );
 					$pointer = &$tmpPointer;
 					unset( $tmpPointer );
 
-					# If next level is the last, add it into the array
+					/**
+					 * If next level is the last, add it into the array.
+					 */
 					if ( count( $path ) === 1 ) {
 						$lastKey = array_shift( $path );
 						$pointer[$lastKey] = $value;
@@ -856,7 +930,9 @@ class RubyYamlFFS extends YamlFFS {
 			$pls .= "|$key=$value";
 		}
 
-		// Put the "other" alternative last, without other= prefix
+		/**
+		 * Put the "other" alternative last, without other= prefix.
+		 */
 		$other = isset( $messages['other'] ) ? '|' . $messages['other'] : '';
 		$pls .= "$other}}";
 		return $pls;
@@ -866,13 +942,17 @@ class RubyYamlFFS extends YamlFFS {
 	 * Converts the special plural syntax to array or ruby style plurals
 	 */
 	protected function unflattenPlural( $key, $message ) {
-		// Quick escape
+		/**
+		 * Quick escape.
+		 */
 		if ( strpos( $message, '{{PLURAL' ) === false ) {
 			return array( $key => $message );
 		}
 
-		// Replace all variables with placeholders. Possible source of bugs
-		// if other characters that given below are used.
+		/**
+		 * Replace all variables with placeholders. Possible source of bugs
+		 * if other characters that given below are used.
+		 */
 		$regex = '~\{\{[a-zA-Z_-]+}}~';
 		$placeholders = array();
 		$match = null;
@@ -883,7 +963,9 @@ class RubyYamlFFS extends YamlFFS {
 			$message = preg_replace( $regex, $uniqkey, $message );
 		}
 
-		// Then replace (possible multiple) plural instances into placeholders
+		/**
+		 * Then replace (possible multiple) plural instances into placeholders.
+		 */
 		$regex = '~\{\{PLURAL\|(.*?)}}~s';
 		$matches = array();
 		$match = null;
@@ -894,17 +976,23 @@ class RubyYamlFFS extends YamlFFS {
 			$message = preg_replace( $regex, $uniqkey, $message );
 		}
 
-		// No plurals, should not happen
+		/**
+		 * No plurals, should not happen.
+		 */
 		if ( !count( $matches ) ) {
 			return false;
 		}
 
-		// The final array of alternative plurals forms
+		/**
+		 * The final array of alternative plurals forms.
+		 */
 		$alts = array();
 
-		// Then loop trough each plural block and replacing the placeholders
-		// to construct the alternatives. Produces invalid output if there is
-		// multiple plural bocks which don't have the same set of keys.
+		/**
+		 * Then loop trough each plural block and replacing the placeholders
+		 * to construct the alternatives. Produces invalid output if there is
+		 * multiple plural bocks which don't have the same set of keys.
+		 */
 		$pluralChoice = implode( '|', array_keys( self::$pluralWords ) );
 		$regex = "~($pluralChoice)\s*=\s*(.+)~s";
 		foreach ( $matches as $ph => $plu ) {
@@ -933,7 +1021,9 @@ class RubyYamlFFS extends YamlFFS {
 			}
 		}
 
-		// Replace other variables
+		/**
+		 * Replace other variables.
+		 */
 		foreach ( $alts as &$value ) {
 			$value = str_replace( array_keys( $placeholders ), array_values( $placeholders ), $value );
 		}

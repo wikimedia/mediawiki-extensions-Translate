@@ -4,11 +4,13 @@
  *
  * @file
  * @author Niklas Laxström
- * 
- * Copyright © 2008-2009, Niklas Laxström
- * http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * @copyright Copyright © 2008-2009, Niklas Laxström
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+/**
+ * @todo Documentation needed.
+ */
 class MessageChecker {
 	protected $checks = array();
 	protected $group  = null;
@@ -77,8 +79,9 @@ class MessageChecker {
 	/**
 	 * Checks one message, returns array of warnings that can be passed to
 	 * OutputPage::addWikiMsg or similar.
+	 *
+	 * Remember to return array!
 	 */
-	// Remember to return array!
 	public function checkMessage( TMessage $message, $code ) {
 		$warningsArray = array();
 		$messages = array( $message );
@@ -121,7 +124,9 @@ class MessageChecker {
 	protected function filterWarnings( $warningsArray ) {
 		$groupId = $this->group->getId();
 
-		// There is array of messages...
+		/**
+		 * There is an array of messages...
+		 */
 		foreach ( $warningsArray as $mkey => $warnings ) {
 			// ... each which have array of warnings
 			foreach ( $warnings as $wkey => $warning ) {
@@ -217,7 +222,9 @@ class MessageChecker {
 			preg_match_all( '/%[sd]/U', $definition, $defVars );
 			preg_match_all( '/%[sd]/U', $translation, $transVars );
 
-			# Check for missing variables in the translation
+			/**
+			 * Check for missing variables in the translation
+			 */
 			$subcheck = 'missing';
 			$params = self::compareArrays( $defVars[0], $transVars[0] );
 
@@ -230,7 +237,9 @@ class MessageChecker {
 				);
 			}
 
-			# Check for unknown variables in the translation
+			/**
+			 * Check for unknown variables in the translation
+			 */
 			$subcheck = 'unknown';
 			$params = self::compareArrays( $transVars[0], $defVars[0] );
 

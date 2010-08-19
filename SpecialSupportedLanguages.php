@@ -3,9 +3,8 @@
  * @todo Needs documentation
  * @file
  * @author Niklas Laxström
- *
- * Copyright © 2010 Niklas Laxström
- * http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * @copyright Copyright © 2010 Niklas Laxström
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
 class SpecialSupportedLanguages extends UnlistedSpecialPage {
@@ -24,7 +23,9 @@ class SpecialSupportedLanguages extends UnlistedSpecialPage {
 		$this->outputHeader();
 		$this->setHeaders();
 
-		// Check if CLDR extension has been installed.
+		/**
+		 * Check if CLDR extension has been installed.
+		 */
 		$cldrInstalled = class_exists( 'LanguageNames' );
 
 		if ( $cldrInstalled ) {
@@ -75,7 +76,9 @@ class SpecialSupportedLanguages extends UnlistedSpecialPage {
 		$skin = $wgUser->getSkin();
 		$portalBaseText = wfMsg( 'portal' );
 
-		// Information to be used inside the foreach loop
+		/**
+		 * Information to be used inside the foreach loop.
+		 */
 		$linkInfo['rc']['title'] = SpecialPage::getTitleFor( 'Recentchanges' );
 		$linkInfo['rc']['msg'] = wfMsg( 'supportedlanguages-recenttranslations' );
 		$linkInfo['stats']['title'] = SpecialPage::getTitleFor( 'LanguageStats' );
@@ -86,12 +89,16 @@ class SpecialSupportedLanguages extends UnlistedSpecialPage {
 
 			$portalText = $portalBaseText;
 
-			// If CLDR is installed, add localised header and link title.
+			/**
+			 * If CLDR is installed, add localised header and link title.
+			 */
 			if ( $cldrInstalled ) {
 				$headerText = wfMsg( 'supportedlanguages-portallink', $code, $locals[$code], $natives[$code] );
 				$portalText .= ' ' . $locals[$code];
 			} else {
-				// No CLDR, so a less localised header and link title.
+				/**
+				 * No CLDR, so a less localised header and link title.
+				 */
 				$headerText = wfMsg( 'supportedlanguages-portallink-nocldr', $code, $natives[$code] );
 				$portalText .= ' ' . $natives[$code];
 			}
@@ -109,7 +116,9 @@ class SpecialSupportedLanguages extends UnlistedSpecialPage {
 
 			$wgOut->addHTML( "<h2>" . $portalLink . "</h2>" );
 
-			// Add useful links for language stats and recent changes for the language
+			/**
+			 * Add useful links for language stats and recent changes for the language.
+			 */
 			$links = array();
 			$links[] = $skin->link(
 				$linkInfo['stats']['title'],

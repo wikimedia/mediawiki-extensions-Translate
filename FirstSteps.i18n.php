@@ -5,9 +5,8 @@
  * @file
  * @author Niklas Laxström
  * @author Siebrand Mazeland
- * 
- * Copyright © 2008-2010, Niklas Laxström, Siebrand Mazeland
- * http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * @copyright Copyright © 2008-2010, Niklas Laxström, Siebrand Mazeland
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
 $messages = array();

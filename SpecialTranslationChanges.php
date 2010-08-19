@@ -3,10 +3,9 @@
  * Implementation of Special:TranslationChanges special page.
  *
  * @file
- * @author Niklas Laxström
- * 
- * Copyright © 2008-2010, Niklas Laxström
- * http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * @author Niklas LaxstrÃ¶m
+ * @copyright  Copyright Â© 2008-2010, Niklas LaxstrÃ¶m
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
 class SpecialTranslationChanges extends SpecialPage {
@@ -16,7 +15,9 @@ class SpecialTranslationChanges extends SpecialPage {
 		parent::__construct( 'TranslationChanges' );
 	}
 
-	/** Access point for this special page */
+	/**
+	 *Access point for this special page
+	 */
 	public function execute( $parameters ) {
 		global $wgOut, $wgScriptPath, $wgJsMimeType, $wgStyleVersion, $wgRequest;
 
@@ -216,8 +217,8 @@ class SpecialTranslationChanges extends SpecialPage {
 		return $output;
 	}
 
-	/*
-	 * TODO: Following are from ChangesList.php. Try to figure out some nice place
+	/**
+	 * @todo Following are from ChangesList.php. Try to figure out some nice place
 	 * to put them in so that they can be used easily.
 	 */
 

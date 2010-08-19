@@ -4,8 +4,8 @@
  *
  * @file
  * @author Niklas Laxström
- * Copyright © 2010, Niklas Laxström
- * http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * @copyright Copyright © 2010, Niklas Laxström
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
 /**
@@ -193,7 +193,9 @@ abstract class MessageGroupBase implements MessageGroup {
 				throw new MWException( "Mangler class $class does not exists" );
 			}
 
-			// TODO: branch handling, merge with upper branch keys
+			/**
+			 * @todo Branch handling, merge with upper branch keys
+			 */
 			$class = $this->getFromConf( 'MANGLER', 'class' );
 			$this->mangler = new $class();
 			$this->mangler->setConf( $this->conf['MANGLER'] );
@@ -261,7 +263,9 @@ abstract class MessageGroupBase implements MessageGroup {
 
 		$matches = array();
 
-		// Collect exact keys, no point running them trough string matcher
+		/**
+		 * Collect exact keys, no point running them trough string matcher
+		 */
 		foreach ( $patterns as $index => $pattern ) {
 			if ( strpos( $pattern, '*' ) === false ) {
 				$matches[] = $pattern;
@@ -270,10 +274,14 @@ abstract class MessageGroupBase implements MessageGroup {
 		}
 
 		if ( count( $patterns ) ) {
-			// Rest of the keys contain wildcards
+			/**
+			 * Rest of the keys contain wildcards.
+			 */
 			$mangler = new StringMatcher( '', $patterns );
 
-			// Use mangler to find messages that match
+			/**
+			 * Use mangler to find messages that match.
+			 */
 			foreach ( $messageKeys as $key ) {
 				if ( $mangler->match( $key ) ) {
 					$matches[] = $key;
@@ -438,7 +446,6 @@ class MediaWikiMessageGroup extends FileBasedMessageGroup {
 	}
 }
 
-
 /**
  * Groups multiple message groups together as one big group.
  *
@@ -448,7 +455,9 @@ class MediaWikiMessageGroup extends FileBasedMessageGroup {
 class AggregateMessageGroup extends MessageGroupBase {
 
 	public function exists() {
-		// Group exists if there is any subgroups
+		/**
+		 * Group exists if there are any subgroups.
+		 */
 		$exists = (bool) $this->conf['GROUPS'];
 
 		if ( !$exists ) {
@@ -481,7 +490,9 @@ class AggregateMessageGroup extends MessageGroupBase {
 			$ids = (array) $this->conf['GROUPS'];
 
 			foreach ( $ids as $id ) {
-				// Don't try to include self and go to infinite loop
+				/**
+				 * Do not try to include self and go to infinite loop.
+				 */
 				if ( $id === $this->getId() ) {
 					continue;
 				}

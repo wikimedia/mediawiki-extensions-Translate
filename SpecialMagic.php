@@ -4,28 +4,33 @@
  * not in the main messages array.
  *
  * @file
- * @author Niklas Laxström
- * 
- * Copyright © 2008-2010, Niklas Laxström
- * http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * @author Niklas LaxstrÃ¶m
+ * @copyright Copyright Â© 2008-2010, Niklas LaxstrÃ¶m
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
 class SpecialMagic extends SpecialPage {
-	/** Message prefix for translations */
+	/**
+	 * Message prefix for translations
+	 */
 	const MSG = 'translate-magic-';
 
 	const MODULE_MAGIC     = 'words';
 	const MODULE_SPECIAL   = 'special';
 	const MODULE_NAMESPACE = 'namespace';
 
-	/** List of supported modules */
+	/**
+	 * List of supported modules
+	 */
 	private $aModules = array(
 		self::MODULE_SPECIAL,
 		self::MODULE_NAMESPACE,
 		self::MODULE_MAGIC
 	);
 
-	/** Page options */
+	/**
+	 * Page options
+	 */
 	private $options = array();
 	private $defaults = array();
 	private $nondefaults = array();
@@ -95,10 +100,14 @@ class SpecialMagic extends SpecialPage {
 			/* bool */ 'savetodb' => false,
 		);
 
-		// Place where all non default variables will end
+		/**
+		 * Place where all non default variables will end.
+		 */
 		$nondefaults = array();
 
-		// Temporary store possible values parsed from parameters
+		/**
+		 * Temporary store possible values parsed from parameters.
+		 */
 		$options = $defaults;
 		foreach ( $options as $v => $t ) {
 			if ( is_bool( $t ) ) {

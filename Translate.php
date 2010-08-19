@@ -117,7 +117,6 @@ $wgSpecialPages['MyLanguage'] = 'SpecialMyLanguage';
 /**
  * Register hooks.
  */
-
 $wgHooks['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';
 $wgHooks['OutputPageBeforeHTML'][] = 'TranslateEditAddons::addNavigation';
 $wgHooks['AlternateEdit'][] = 'TranslateEditAddons::intro';
@@ -625,7 +624,9 @@ function efTranslateCheckPT() {
 	}
 
 	foreach ( $tags as $tag ) {
-		# @todo: use insert ignore
+		/**
+		 * @todo: use insert ignore
+		 */
 		$field = array( 'rtt_name' => $tag );
 		$ret = $dbw->selectField( 'revtag_type', 'rtt_name', $field, __METHOD__ );
 		
