@@ -3,10 +3,12 @@
  * An extension to ease the translation of Mediawiki
  *
  * @ingroup Extensions
+ * @file
  *
  * @author Niklas Laxström
- * @copyright Copyright © 2007-2009, Niklas Laxström
- * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ *
+ * Copyright © 2007-2009, Niklas Laxström
+ * http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
 class MessageCollection implements ArrayAccess, Iterator, Countable {

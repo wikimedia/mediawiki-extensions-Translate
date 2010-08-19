@@ -1,15 +1,15 @@
 <?php
-
 /**
  * Adds a new filter to Special:RecentChanges which makes it possible to filter
  * translations away or show them only.
  *
+ * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2010 Niklas Laxström
- * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ *
+ * Copyright © 2010 Niklas Laxström
+ * http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 class TranslateRcFilter {
-
 	/**
 	 * Default action for the filter: ('', 'only', 'filter', 'site')
 	 */

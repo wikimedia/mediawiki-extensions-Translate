@@ -8,9 +8,11 @@
  *
  * Use {{Special:LanguageStats/nl/1}} to show for 'nl' and suppres complete.
  *
+ * @file
  * @author Siebrand Mazeland
- * @copyright Copyright © 2008-2010 Siebrand Mazeland
- * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ *
+ * Copyright © 2008-2010 Siebrand Mazeland
+ * http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
 class SpecialLanguageStats extends IncludableSpecialPage {

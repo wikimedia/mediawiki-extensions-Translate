@@ -1,4 +1,13 @@
 <?php
+/**
+ * @todo Needs documentation.
+ *
+ * @file
+ * @author Niklas Laxström
+ * 
+ * Copyright © 2008-2010, Niklas Laxström
+ * http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ */
 
 abstract class TMessage {
 	protected $key;
@@ -21,6 +30,9 @@ abstract class TMessage {
 	abstract public function author();
 }
 
+/**
+ * @todo Needs documentation.
+ */
 class ThinMessage extends TMessage {
 	private $infile;
 	private $row;
@@ -64,6 +76,9 @@ class ThinMessage extends TMessage {
 	}
 }
 
+/**
+ * @todo Needs documentation.
+ */
 class FatMessage extends TMessage {
 	protected $translation = null;
 	protected $infile = null;

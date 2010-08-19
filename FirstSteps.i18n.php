@@ -1,8 +1,13 @@
 <?php
 /**
- * Translations of Translate extension.
+ * Message for Special:FirstSteps of the Translate extension.
  *
- * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * @file
+ * @author Niklas Laxström
+ * @author Siebrand Mazeland
+ * 
+ * Copyright © 2008-2010, Niklas Laxström, Siebrand Mazeland
+ * http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
 $messages = array();

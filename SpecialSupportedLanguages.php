@@ -1,8 +1,11 @@
 <?php
 /**
+ * @todo Needs documentation
+ * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2010 Niklas Laxström
- * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ *
+ * Copyright © 2010 Niklas Laxström
+ * http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
 class SpecialSupportedLanguages extends UnlistedSpecialPage {

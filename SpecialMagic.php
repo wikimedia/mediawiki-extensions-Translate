@@ -2,6 +2,12 @@
 /**
  * This special page helps with the translations of MediaWiki features that are
  * not in the main messages array.
+ *
+ * @file
+ * @author Niklas Laxström
+ * 
+ * Copyright © 2008-2010, Niklas Laxström
+ * http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
 class SpecialMagic extends SpecialPage {

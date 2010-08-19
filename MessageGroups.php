@@ -1,4 +1,13 @@
 <?php
+/**
+ * @todo: needs documentation
+ *
+ * @file
+ * @author Niklas Laxström
+ * 
+ * Copyright © 2008-2010, Niklas Laxström
+ * http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ */
 
 abstract class MessageGroupOld implements MessageGroup {
 	/**

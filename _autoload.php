@@ -3,10 +3,11 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
 /**
  * Autoload definitions.
  *
- * @author Niklas Laxström
- * @copyright Copyright © 2008-2010, Niklas Laxström
- * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  * @file
+ * @author Niklas Laxström
+ * 
+ * Copyright © 2008-2010, Niklas Laxström
+ * http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
 $dir = dirname( __FILE__ ) . '/';

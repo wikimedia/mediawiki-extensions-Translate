@@ -1,4 +1,15 @@
 <?php
+/**
+ * File format support classes
+ *
+ * @todo Needs documentation.
+ *
+ * @file
+ * @author Niklas Laxström
+ * 
+ * Copyright © 2008-2010, Niklas Laxström
+ * http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ */
 
 interface FFS {
 	public function __construct( FileBasedMessageGroup $group );
@@ -22,6 +33,9 @@ interface FFS {
 	public function writeIntoVariable( MessageCollection $collection );
 }
 
+/**
+ * @todo Needs documentation.
+ */
 class SimpleFFS implements FFS {
 	protected $group;
 	protected $writePath;
@@ -228,6 +242,9 @@ class SimpleFFS implements FFS {
 	}
 }
 
+/**
+ * @todo Needs documentation.
+ */
 class JavaFFS extends SimpleFFS {
 	protected $keySeparator = '=';
 
@@ -364,6 +381,9 @@ class JavaFFS extends SimpleFFS {
 	}
 }
 
+/**
+ * @todo Needs documentation.
+ */
 abstract class JavaScriptFFS extends SimpleFFS {
 	/**
 	 * Message keys format.
@@ -522,6 +542,9 @@ abstract class JavaScriptFFS extends SimpleFFS {
 	}
 }
 
+/**
+ * @todo Needs documentation.
+ */
 class OpenLayersFFS extends JavaScriptFFS {
 	protected function transformKey( $key ) {
 		return "'$key'";
@@ -560,6 +583,9 @@ EOT;
 	}
 }
 
+/**
+ * @todo Needs documentation.
+ */
 class ShapadoJsFFS extends JavaScriptFFS {
 	protected function transformKey( $key ) {
 		return $key;
@@ -589,6 +615,9 @@ EOT;
 	}
 }
 
+/**
+ * @todo Needs documentation.
+ */
 class YamlFFS extends SimpleFFS {
 	//
 	// READ
@@ -787,6 +816,9 @@ class YamlFFS extends SimpleFFS {
 	}
 }
 
+/**
+ * @todo Needs documentation.
+ */
 class RubyYamlFFS extends YamlFFS {
 	static $pluralWords = array(
 		'zero' => 1,

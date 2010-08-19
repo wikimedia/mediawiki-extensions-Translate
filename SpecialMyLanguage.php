@@ -5,6 +5,7 @@
  *
  * Usage: [[Special:MyLanguage/Page name|link text]]
  *
+ * @file
  * @author Niklas Laxström
  * 
  * Copyright © 2010 Niklas Laxström, Siebrand Mazeland
