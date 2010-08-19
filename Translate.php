@@ -254,8 +254,8 @@ $wgTranslateTasks = array(
 $wgEnablePageTranslation = false;
 
 /**
- * Number for the Translations namespace. Change this if it conflicts with
- * other namespace in your wiki.
+ * Number for the Translations namespace. Change this if it conflicts with a
+ * namespace in your wiki.
  */
 $wgPageTranslationNamespace = 1198;
 
@@ -657,6 +657,9 @@ function efTranslateInitTags( $parser ) {
 	return true;
 }
 
+/**
+ * @todo document
+ */
 if ( !defined( 'TRANSLATE_CLI' ) ) {
 	function STDOUT() { }
 	function STDERR() { }

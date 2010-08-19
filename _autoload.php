@@ -50,6 +50,10 @@ $wgAutoloadClasses['SpecialLanguageStats'] = $dir . 'SpecialLanguageStats.php';
 $wgAutoloadClasses['SpecialImportTranslations'] = $dir . 'SpecialImportTranslations.php';
 $wgAutoloadClasses['SpecialFirstSteps'] = $dir . 'SpecialFirstSteps.php';
 $wgAutoloadClasses['SpecialSupportedLanguages'] = $dir . 'SpecialSupportedLanguages.php';
+
+/**
+ * Register class for Special:MyLanguage
+ */
 $wgAutoloadClasses['SpecialMyLanguage'] = $dir . 'SpecialMyLanguage.php';
 
 $wgAutoloadClasses['SimpleFormatReader'] = $dir . 'ffs/Simple.php';
