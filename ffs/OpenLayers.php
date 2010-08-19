@@ -83,7 +83,7 @@ class OpenLayersFormatReader extends SimpleFormatReader {
 			$segment = implode( $segment );
 			# $segment = preg_replace( '#\" \+(.*?)\"#m', '', $segment );
 			// Break in to key and message.
-			if( $this->keyquote) {
+			if ( $this->keyquote ) {
 				$segments = explode( '\':', $segment );
 			} else {
 				$segments = explode( ': ', $segment );
@@ -95,7 +95,7 @@ class OpenLayersFormatReader extends SimpleFormatReader {
 			$key = trim( $key );
 			$value = trim( $value );
 			// Remove quotation marks and syntax.
-			if( $this->keyquote ) {
+			if ( $this->keyquote ) {
 				$key = substr( $key, 1 );
 			}
 			$value = substr( $value, 1, -1 );
@@ -158,7 +158,7 @@ EOT;
 		$lines = '';
 		foreach ( $collection as $message ) {
 			$value = Xml::escapeJsString( $message->translation() );
-			if( $this->keyquote ) {
+			if ( $this->keyquote ) {
 				$key = Xml::escapeJsString( $message->key() );
 				$lines .= "    '{$key}': \"{$value}\",\n\n";
 			} else {

@@ -37,7 +37,7 @@ class WikiFormatReader extends SimpleFormatReader {
 		$contents = file_get_contents( $this->filename );
 
 		/** FIXME: handle the case where the first comment is missing */
-		//$dollarstart = strpos( $contents, '$' );
+		// $dollarstart = strpos( $contents, '$' );
 
 		$start = strpos( $contents, '*/' );
 		$end = strpos( $contents, '$messages' );
@@ -49,7 +49,7 @@ class WikiFormatReader extends SimpleFormatReader {
 		if ( $start === $end ) {
 			return '';
 		}
-		
+
 		$start += 2; // Get over the comment ending
 
 		if ( $end === false ) {

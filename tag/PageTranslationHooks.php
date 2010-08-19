@@ -538,11 +538,11 @@ FOO;
 
 		if ( $action === 'mark' ) {
 			return wfMsgExt( 'pt-log-mark', $opts, $title->getPrefixedText(), $user, $_['revision'] );
-		} elseif( $action === 'unmark' ) {
+		} elseif ( $action === 'unmark' ) {
 			return wfMsgExt( 'pt-log-unmark', $opts, $title->getPrefixedText(), $user );
-		} elseif( $action === 'moveok' ) {
+		} elseif ( $action === 'moveok' ) {
 			return wfMsgExt( 'pt-log-moveok', $opts, $title->getPrefixedText(), $user );
-		} elseif( $action === 'movenok' ) {
+		} elseif ( $action === 'movenok' ) {
 			return wfMsgExt( 'pt-log-movenok', $opts, $title->getPrefixedText(), $user, $_['target'] );
 		}
 	}

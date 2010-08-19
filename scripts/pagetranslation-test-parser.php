@@ -68,7 +68,7 @@ class PageTranslationParserTester extends Maintenance {
 					file_put_contents( "$pattern.pttarget.fail", $target );
 				}
 			}
-	
+
 			// Custom tests written in php
 			if ( file_exists( "$pattern.pttest" ) ) {
 				require( "$pattern.pttest" );

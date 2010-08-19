@@ -88,7 +88,7 @@ foreach ( $groups as &$group ) {
 			STDOUT( "Unsupported code " . $code . ": skipping." );
 			continue;
 		}
-		
+
 		if ( $group instanceof FileBasedMessageGroup ) {
 			$file = $group->getSourceFilePath( $code );
 		} else {

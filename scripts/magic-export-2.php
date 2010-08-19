@@ -53,7 +53,7 @@ $type = $options['type'] ;
 // Open file handles.
 STDOUT( "Opening file handles..." );
 $handles = array();
-$keys = array();error_reporting( E_ALL | E_STRICT );
+$keys = array(); error_reporting( E_ALL | E_STRICT );
 foreach ( $groups as $group ) {
 	if ( !$group instanceof ExtensionMessageGroup ) continue;
 
@@ -69,7 +69,7 @@ foreach ( $groups as $group ) {
 	if ( !file_exists( $file ) ) continue;
 
 	include( $file );
-	if( !isset( $aliases ) ) continue;
+	if ( !isset( $aliases ) ) continue;
 	$keys[$group->getId()] = array_keys( $aliases['en'] );
 	unset( $aliases );
 
@@ -91,7 +91,7 @@ foreach ( $langs as $l ) {
 			exit( 1 );
 	}
 
-	if( !$title || !$title->exists() ) {
+	if ( !$title || !$title->exists() ) {
 		STDOUT( "Skiping $l..." );
 		continue;
 	} else {
@@ -104,10 +104,10 @@ foreach ( $langs as $l ) {
 	$segments = explode( "\n", $data );
 	array_shift( $segments );
 	array_shift( $segments );
-	unset( $segments[count($segments)-1] );
-	unset( $segments[count($segments)-1] );
+	unset( $segments[count( $segments ) -1] );
+	unset( $segments[count( $segments ) -1] );
 	$messages = array();
-	foreach( $segments as $segment ) {
+	foreach ( $segments as $segment ) {
 		$parts = explode( '=', $segment );
 		$key = trim( array_shift( $parts ) );
 		$translations = explode( ', ', implode( $parts ) );
@@ -115,11 +115,11 @@ foreach ( $langs as $l ) {
 	}
 
 	// Need to only provide the keys applicable to the file that is being written.
-	foreach( $handles as $group => $handle ) {
+	foreach ( $handles as $group => $handle ) {
 		STDOUT( "\t{$group}... " );
 		$thismessages = $messages; // TODO: Reduce.
 		$out = "\$aliases['{$group}	'] = array(\n";
-		foreach( $thismessages as $key => $translations ) {
+		foreach ( $thismessages as $key => $translations ) {
 			$translations = implode( "', '", $translations );
 			$out .= "\t'$key' => array( '$translations' ),\n";
 		}
@@ -130,6 +130,6 @@ foreach ( $langs as $l ) {
 
 // Close handles.
 STDOUT( "Closing file handles..." );
-foreach( $handles as $group => $handle ) {
+foreach ( $handles as $group => $handle ) {
 	fclose( $handle );
 }

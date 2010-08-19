@@ -70,7 +70,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 		if ( $revision === 0 ) {
 			// Get the latest revision
-			$revision = intval($title->getLatestRevID());
+			$revision = intval( $title->getLatestRevID() );
 		}
 
 		$page = TranslatablePage::newFromRevision( $title, $revision );
@@ -80,10 +80,10 @@ class SpecialPageTranslation extends SpecialPage {
 			return;
 		}
 
-		if ( $revision !== intval($title->getLatestRevID()) ) {
+		if ( $revision !== intval( $title->getLatestRevID() ) ) {
 			// We do want to notify the reviewer if the underlying page changes during review
 			$wgOut->addWikiMsg( 'tpt-oldrevision', $title->getPrefixedText(), $revision );
-			self::superDebug( __METHOD__, "revision mismatch while marking", $this->user, $title, $revision, intval($title->getLatestRevID()) );
+			self::superDebug( __METHOD__, "revision mismatch while marking", $this->user, $title, $revision, intval( $title->getLatestRevID() ) );
 			return;
 		}
 

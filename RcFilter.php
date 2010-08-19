@@ -55,7 +55,7 @@ class TranslateRcFilter {
 	 * Hooks SpecialRecentChangesPanel. See the hook documentation for
 	 * documentation of the function parameters.
 	 *
-	 * Adds a HTMl selector into $items 
+	 * Adds a HTMl selector into $items
 	 * @return Boolean true
 	 */
 	public static function translationFilterForm( &$items, $opts ) {

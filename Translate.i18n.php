@@ -492,7 +492,7 @@ These messages will not be submitted to svn, but will only affect the interface 
 	'translate-manage-import-diff' => 'See screenshot [[File:Manage-2.png|150px|right|Group management interface]].
 Variables:
 *$1 - Message name
-*$2 - radio buttons 
+*$2 - radio buttons
 **{{msg-mw|Translate-manage-action-import}}
 **{{msg-mw|Translate-manage-action-conflict}}
 **{{msg-mw|Translate-manage-action-ignore}}',
@@ -951,7 +951,7 @@ $messages['am'] = array(
 	'translate-page-edit' => 'አርም',
 	'translate-edit-definition' => 'የመልዕክቱ ትርጉም',
 	'translate-edit-contribute' => 'ለመሣተፍ',
-	'translate-edit-no-information' => "''ይኸው መልእክት ምንም መረጃ የለውም። 
+	'translate-edit-no-information' => "''ይኸው መልእክት ምንም መረጃ የለውም።
 መልዕክቱ በየት ወይም እንዴት እንደሚጠቀም ዕውቀት ካለዎ፣ መረጃ በመጨምር ሌሎች አስተርጓሚዎች ሊረዱ ይችላሉ።''",
 	'translate-edit-information' => 'መረጃ ስለዚሁ መልእክት ($1)',
 	'translate-edit-in-other-languages' => 'መልዕክቱ በሌሎች ልሳናት',
@@ -1211,7 +1211,7 @@ $messages['ar'] = array(
 	'translate-nothing-to-do' => 'كل الترجمات المحتملة يبدو أنه قد تم عملها.
 من الأفضل أن تراجع الرسائل من خلال [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-groups' => ' # أضف أرقام مجموعات الرسائل, واحدا لكل سطر لتحديد مجموعات الرسائل التي
- # تعرض في Special:LanguageStats.أرقام مجموعات الرسائل غير الموجودة سوف 
+ # تعرض في Special:LanguageStats.أرقام مجموعات الرسائل غير الموجودة سوف
  # يتم تجاهلها.',
 	'supportedlanguages' => 'اللغات المدعومة',
 	'supportedlanguages-recenttranslations' => 'الترجمات الأخيرة',
@@ -2499,7 +2499,7 @@ $messages['br'] = array(
 	'translate-page-no-such-language' => "Merket ez eus bet ur c'hod yezh direizh",
 	'translate-page-no-such-task' => 'Merket ez eus bet un ober direizh.',
 	'translate-page-no-such-group' => 'Merket ez eus bet ur strollad direizh.',
-	'translate-page-disabled' => "Harpet eo bet an troidigezhioù er yezh-mañ evit ar strollad-mañ. 
+	'translate-page-disabled' => "Harpet eo bet an troidigezhioù er yezh-mañ evit ar strollad-mañ.
 Abeg :
 
 ''$1''",
@@ -2605,7 +2605,7 @@ Cheñch a ra roll dre ziouer ar yezhoù-se diouzh ar yezh a rit ganti.',
 	'translate-stats-edits' => 'Kemmoù',
 	'translate-stats-users' => 'Troerien',
 	'translate-stats-registrations' => 'Enskrivadurioù',
-	'translate-statsf-intro' => "Stadegoù eeun a c'hallit krouiñ gant ar furmskrid-mañ. 
+	'translate-statsf-intro' => "Stadegoù eeun a c'hallit krouiñ gant ar furmskrid-mañ.
 Bevennoù izel hag uhel zo d'an holl dalvoudoù.",
 	'translate-statsf-options' => 'Dibarzhioù ar grafik',
 	'translate-statsf-width' => 'Ledander e piksel :',
@@ -2718,7 +2718,7 @@ Adkasit ar furmskrid evit kenderc'hel gant an tretiñ.",
 	'translate-manage-import-noks' => "C'hwitet eo bet enporzhiadenn stumm nevez ar bajenn $1 : $2",
 	'translate-manage-import-ignore' => 'Lezel ar gemennadenn $1 a-gostez.',
 	'translate-manage-import-summary' => 'Enporzhiañ ur stumm nevez adalek ur vammenn ziavaez.',
-	'translate-manage-conflict-summary' => 'Enporzhiañ ur stumm nevez adalek ur vammenn ziavaez. 
+	'translate-manage-conflict-summary' => 'Enporzhiañ ur stumm nevez adalek ur vammenn ziavaez.
 Gwiriit mar plij.',
 	'translate-manage-fuzzy-summary' => 'Cheñchet eo an termenadur',
 	'translate-manage-import-fuzzy' => "Oc'h enporzhiañ hag o strafuilhañ : $1",
@@ -3933,7 +3933,7 @@ Sie beinhaltet auch die Systemnachrichten, die als veraltet gekennzeichnet wurde
 Systemnachrichten werden als veraltet gekennzeichnet, sofern die englische Vorlage verändert wurde, die automatische Prüfung der übersetzten Systemnachricht fehlgeschlagen ist, oder weil sie jemand manuell als veraltet gekennzeichnet hat.',
 	'translate-nothing-to-do' => 'Alle möglichen Übersetzungen sind offenbar schon erledigt.
 Es wird empfohlen, Systemnachrichten mit der Spezialseite [[Special:Translate|{{int:translate}}]] zu überprüfen.',
-	'translate-languagestats-groups' => ' # Ergänze die ID einer Systemnachrichtengruppe (eine per Zeile) um die Gruppen von 
+	'translate-languagestats-groups' => ' # Ergänze die ID einer Systemnachrichtengruppe (eine per Zeile) um die Gruppen von
  # Special:LanguageStats auszuschließen. Nicht existerende IDs
  # werden ignoriert.',
 	'supportedlanguages' => 'Unterstützte Sprachen',
@@ -5070,7 +5070,7 @@ Los mensajes están marcados como desactualizados porque la fuente en idioma ing
 	'translate-nothing-to-do' => 'Todas las posibles traducciones parecen haber sido hechas.
 Se te anima a revisar los mensajes a través de [[Special:Translate|{{int:translate}}]].',
 	'supportedlanguages' => 'Idiomas soportados',
-	'supportedlanguages-summary' => 'Esta página muestra una lista de todos los idiomas soportados por {{SITENAME}}, junto con los nombres de los traductores que trabajan en ese idioma. Si desea información adicional acerca de un idioma en concreto, puede hacer clic en el enlace al portal para dicho idioma. Al hacer clic en el nombre de un traductor le llevará a su página de usuario. 
+	'supportedlanguages-summary' => 'Esta página muestra una lista de todos los idiomas soportados por {{SITENAME}}, junto con los nombres de los traductores que trabajan en ese idioma. Si desea información adicional acerca de un idioma en concreto, puede hacer clic en el enlace al portal para dicho idioma. Al hacer clic en el nombre de un traductor le llevará a su página de usuario.
 
 Si un idioma no está en la lista, puede descubrir como empezar un proyecto de localización para un idioma en "[[Translating:Process|Nuevo Idioma]]".
 
@@ -7620,7 +7620,7 @@ Ako se grupa sastoji od podskupa ili nadskupa poruka iz drugih grupa, prikazana 
 	'translate-pref-editassistlang' => 'Pomoćni jezici:',
 	'prefs-translate' => 'Mogućnosti prijevoda',
 	'translate-pref-editassistlang-help' => 'Popis jezičnih kodova odjeljen zarezima.
-Prijevod poruke na tim jezicima bit će prikazani dok prevodite. 
+Prijevod poruke na tim jezicima bit će prikazani dok prevodite.
 Zadani popis jezika ovisi o vašem jeziku.',
 	'translate-pref-jsedit' => 'Poboljšani uređivač prijevoda (JavaScript)',
 	'right-translate' => 'Uređivanje koristeći sučelje za prevođenje',
@@ -10176,7 +10176,7 @@ $messages['km'] = array(
 ប្រសិនបើ​ភាសារបស់អ្នក​មិនបានបង្ហាញត្រឹមត្រូវដោយមិនប្តូរឈ្មោះវិបសាយទេ សូមទាក់ទងអ្នកអភិវឌ្ឍ (អ្នករចនាវិបសាយ)។
 
 
-អ្នកចាំបាច់ត្រូវតែស្ថិតក្នុងក្រុមអ្នកប្រែសម្រួល ទើបអាចរក្សាទុកបំលាស់ប្តូរបាន។ 
+អ្នកចាំបាច់ត្រូវតែស្ថិតក្នុងក្រុមអ្នកប្រែសម្រួល ទើបអាចរក្សាទុកបំលាស់ប្តូរបាន។
 បំលាស់ប្តូរនឹងមិនត្រូវបានរក្សាទុកទេ​លើកលែងតែអ្នកបានចុចប៊ូតុង​រក្សាទំព័រទុក​នៅខាងក្រោម ។',
 	'translate-magic-module' => 'ម៉ូឌុល៖',
 	'translate-magic-submit' => 'នាំមក​បង្ហាញ',
@@ -14170,11 +14170,11 @@ Verifique-a, por favor.',
 	'translate-manage-import-done' => 'Tudo terminado!',
 	'translate-manage-import-rebuild' => "Reconstrução da ''cache''.",
 	'translate-manage-intro-en' => 'Encontra abaixo uma lista de alterações às mensagens deste grupo.
-Por favor, reveja as alterações e escolha a acção que pretende para cada mensagem. 
+Por favor, reveja as alterações e escolha a acção que pretende para cada mensagem.
 Quando tiver actualizado as definições das mensagens, verifique se ocorreram alterações externas noutras línguas existentes.
 Note também que a acção <code>ignore</code> é só temporária.',
 	'translate-manage-intro-other' => 'Encontra abaixo uma lista de alterações de traduções na língua $1.
-Por favor, reveja as alterações e escolha a acção que pretende para cada tradução. 
+Por favor, reveja as alterações e escolha a acção que pretende para cada tradução.
 Se escolher ignorar as alterações, elas serão sobrepostas na próxima exportação.',
 	'translate-manage-subtitle' => 'Gerir',
 	'translate-manage-import-rebuild-all' => 'Reconstruir todas as línguas e ignorar quaisquer alterações',
@@ -14462,11 +14462,11 @@ Por favor, confira.',
 	'translate-manage-import-done' => 'Tudo feito!',
 	'translate-manage-import-rebuild' => 'Reconstrução de cache.',
 	'translate-manage-intro-en' => 'Encontra abaixo uma lista de alterações às mensagens deste grupo.
-Por favor, reveja as alterações e escolha a ação que pretende para cada mensagem. 
+Por favor, reveja as alterações e escolha a ação que pretende para cada mensagem.
 Quando tiver atualizado as definições das mensagens, verifique se ocorreram alterações externas noutras línguas existentes.
 Note também que a ação <code>ignore</code> é só temporária.',
 	'translate-manage-intro-other' => 'Encontra-se abaixo uma lista de alterações de traduções na língua $1.
-Por favor, reveja as alterações e escolha a ação que pretende para cada tradução. 
+Por favor, reveja as alterações e escolha a ação que pretende para cada tradução.
 Se escolher ignorar as alterações, elas serão sobrepostas na próxima exportação.',
 	'translate-manage-subtitle' => 'Gerenciar',
 	'translate-manage-import-rebuild-all' => 'Refazer todos os idiomas e ignorar quaisquer alterações',
@@ -16824,7 +16824,7 @@ En länk till till portalen för ditt val av språk finns i menyn.',
 	'translate-manage-action-fuzzy' => 'Importera och märk översättningar för kontroll ("fuzzy")',
 	'translate-manage-submit' => 'Genomför',
 	'translate-manage-nochanges' => 'Det finns inga förändringar i meddelande-definitionerna för den här gruppen.',
-	'translate-manage-nochanges-other' => 'Inga förändringar för det här språket. 
+	'translate-manage-nochanges-other' => 'Inga förändringar för det här språket.
 Använd länken nedan för att återgå till gruppdetaljerna.',
 	'translate-manage-toolong' => 'Den maximala behandlingstiden på $1 {{PLURAL:$1|sekund|sekunder}} har överskridits.
 Vänligen aktivera formuläret igen för att fortsätta behandla det.',
@@ -16853,7 +16853,7 @@ Om du väljer att ignorera dessa förändringar så kommer de att åsidosättas 
 	'translate-import-load' => 'Ladda fil',
 	'translate-import-err-type-not-supported' => 'Kan inte ladda filen:
 Metoden <code>$1</code> stöds inte.',
-	'translate-import-err-dl-failed' => 'Kan inte hämta denna filen: 
+	'translate-import-err-dl-failed' => 'Kan inte hämta denna filen:
 $1',
 	'translate-import-err-ul-failed' => 'Filuppladdningen misslyckades',
 	'translate-import-err-invalid-title' => 'Det angivna filnamnet <nowiki>$1</nowiki> är inte giltigt.',
@@ -18161,7 +18161,7 @@ $messages['uk'] = array(
 	'translate-page-settings-legend' => 'Параметри',
 	'translate-page-task' => 'Я хочу',
 	'translate-page-group' => 'Група',
-	'translate-page-group-tooltip' => 'Назва групи повідомлень. 
+	'translate-page-group-tooltip' => 'Назва групи повідомлень.
 Якщо група складається з підмножини або надпідмножин повідомлень від інших груп, воно буде відображатися жирним шрифтом.',
 	'translate-page-language' => 'Мова',
 	'translate-page-limit' => 'Обмеження',

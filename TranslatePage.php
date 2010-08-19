@@ -253,7 +253,7 @@ class SpecialTranslate extends SpecialPage {
 
 		// Check if this is a page translation group to return only appropriate tasks.
 		$isPageTranslation = false;
-		if( $this->group ) {
+		if ( $this->group ) {
 			$isPageTranslation = strpos( $this->group->getId(), 'page|' ) === 0;
 		}
 

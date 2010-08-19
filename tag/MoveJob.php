@@ -142,8 +142,8 @@ class MoveJob extends Job {
 
 	public function lock() {
 		global $wgMemc;
-		$wgMemc->set( wfMemcKey( 'pt-lock', $this->title->getPrefixedText() ), true, 60*60*6 );
-		$wgMemc->set( wfMemcKey( 'pt-lock', $this->getTarget()->getPrefixedText() ), true, 60*60*6 );
+		$wgMemc->set( wfMemcKey( 'pt-lock', $this->title->getPrefixedText() ), true, 60 * 60 * 6 );
+		$wgMemc->set( wfMemcKey( 'pt-lock', $this->getTarget()->getPrefixedText() ), true, 60 * 60 * 6 );
 	}
 
 	public function unlock() {

@@ -900,7 +900,7 @@ class MessageGroups {
 		$deps[] = new GlobalDependency( 'wgTranslateCC' );
 		$deps[] = New FileDependency( dirname( __FILE__ ) . '/groups/mediawiki-defines.txt' );
 		$deps[] = New FileDependency( dirname( __FILE__ ) . '/groups/Wikia/extensions.txt' );
-		
+
 		if ( $wgTranslateAddMWExtensionGroups ) {
 			$a = new PremadeMediawikiExtensionGroups;
 			$a->addAll();
@@ -932,7 +932,7 @@ class MessageGroups {
 			$deps[] = new FileDependency( realpath( $configFile ) );
 			$fgroups = TranslateYaml::parseGroupFile( $configFile );
 
-			foreach( $fgroups as $id => $conf ) {
+			foreach ( $fgroups as $id => $conf ) {
 				if ( !empty( $conf['AUTOLOAD'] ) && is_array( $conf['AUTOLOAD'] ) ) {
 					$dir = dirname( $configFile );
 					foreach ( $conf['AUTOLOAD'] as $class => $file ) {
@@ -955,7 +955,7 @@ class MessageGroups {
 		);
 
 		$wrapper = new DependencyWrapper( $value, $deps );
-		$wrapper->storeToCache( self::getCache(), $key, 60*60*2 );
+		$wrapper->storeToCache( self::getCache(), $key, 60 * 60 * 2 );
 
 		wfDebug( __METHOD__ . "-end\n" );
 	}

@@ -20,7 +20,7 @@ class SpecialMyLanguage extends SpecialPage {
 		global $wgOut, $wgLang;
 
 		$title = null;
-		if ( strval($par) !== '' ) {
+		if ( strval( $par ) !== '' ) {
 			$title = Title::newFromText( $par );
 			if ( $title && $title->exists() ) {
 				$local = Title::newFromText( "$par/" . $wgLang->getCode() );

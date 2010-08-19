@@ -468,7 +468,7 @@ class TranslatablePage {
 		$prefix = $this->getTitle()->getText();
 		foreach ( $titles as $title ) {
 			list( $name, $code ) = TranslateUtils::figureMessage( $title->getText() );
-			if ( !isset($codes[$code]) || $name !== $prefix ) {
+			if ( !isset( $codes[$code] ) || $name !== $prefix ) {
 				continue;
 			}
 			$filtered[] = $title;

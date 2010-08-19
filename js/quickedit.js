@@ -37,13 +37,13 @@ function trlOpenJsEdit( page, group ) {
 
 	jQuery('<div/>').attr('id', id).appendTo(jQuery('body'));
 	var dialog = jQuery("#"+id);
-	
+
 	var spinner = jQuery("<div/>").attr("class", "mw-ajax-loader" );
 	dialog.html( jQuery("<div/>").attr("class", "mw-ajax-dialog").html( spinner ) );
 
 	dialog.load(url, false, function() {
 		var form = jQuery("#"+ id + " form");
-		
+
 		form.hide().show( "clip" );
 
 		form.find( ".mw-translate-next" ).click( function() {

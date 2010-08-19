@@ -35,7 +35,7 @@ $verbose = isset( $options['verbose'] );
 $groups = MessageGroups::singleton()->getGroups();
 
 foreach ( $groups as $g ) {
-	
+
 	$id = $g->getId();
 
 	// Skip groups that are not requested
@@ -95,7 +95,7 @@ function tagFuzzy( $problematic ) {
 		$titleText = $title->getDBKey();
 		$res = $db->select( 'page', array( 'page_id', 'page_latest' ),
 			array( 'page_namespace' => $p[0], 'page_title' => $titleText ), __METHOD__ );
-		
+
 		$inserts = array();
 		foreach ( $res as $r ) {
 			$inserts = array(

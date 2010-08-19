@@ -38,7 +38,7 @@ class TranslationEditPage {
 	public function getTitle() { return $this->title; }
 
 	/**
-	 * Generates the html snippet for ajax edit. Echoes it to the output and 
+	 * Generates the html snippet for ajax edit. Echoes it to the output and
 	 * disabled all other output.
 	 */
 	public function execute() {

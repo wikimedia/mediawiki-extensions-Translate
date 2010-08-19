@@ -360,7 +360,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 	public function load( $code ) {
 		$messages = array();
 
-		foreach( $this->getGroups() as $group ) {
+		foreach ( $this->getGroups() as $group ) {
 			$messages += $group->load( $code );
 		}
 
@@ -379,7 +379,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 			$groups = array();
 			$ids = (array) $this->conf['GROUPS'];
 
-			foreach( $ids as $id ) {
+			foreach ( $ids as $id ) {
 				// Don't try to include self and go to infinite loop
 				if ( $id === $this->getId() ) {
 					continue;
@@ -399,7 +399,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 
 	public function initCollection( $code ) {
 		$messages = array();
-		foreach( $this->getGroups() as $group ) {
+		foreach ( $this->getGroups() as $group ) {
 			$cache = new MessageGroupCache( $group );
 			foreach ( $cache->getKeys() as $key ) {
 				$messages[$key] = $cache->get( $key );
@@ -415,7 +415,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 	}
 
 	public function getMessage( $key, $code ) {
-		foreach( $this->getGroups() as $group ) {
+		foreach ( $this->getGroups() as $group ) {
 			$message = $group->getMessage( $key, $code );
 			if ( $message !== null ) return $message;
 		}
@@ -423,7 +423,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 
 	public function getTags( $type = null ) {
 		$tags = array();
-		foreach( $this->getGroups() as $group ) {
+		foreach ( $this->getGroups() as $group ) {
 			$tags = array_merge_recursive( $tags, $group->getTags( $type ) );
 		}
 		return $tags;

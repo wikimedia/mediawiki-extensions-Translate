@@ -215,7 +215,7 @@ class TranslateUtils {
 		# $normkey = self::normaliseKey( $namespace, $key );
 		$normkey = str_replace( " ", "_", strtolower( "$namespace:$key" ) );
 
-		if( isset( self::$mi[$normkey] ) ) {
+		if ( isset( self::$mi[$normkey] ) ) {
 			return (array) self::$mi[$normkey];
 		} else {
 			return array();

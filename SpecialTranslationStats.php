@@ -285,7 +285,7 @@ class SpecialTranslationStats extends SpecialPage {
 
 		$data = array();
 		// Allow 10 seconds in the future for processing time
-		while ( $cutoff <= $now+10 ) {
+		while ( $cutoff <= $now + 10 ) {
 			$date = $wgLang->sprintfDate( $dateFormat, wfTimestamp( TS_MW, $cutoff ) );
 			$cutoff += $increment;
 			$data[$date] = $defaults;
@@ -301,7 +301,7 @@ class SpecialTranslationStats extends SpecialPage {
 				if ( !isset( $labelToIndex[$i] ) ) continue;
 				$date = $wgLang->sprintfDate( $dateFormat, $so->getTimestamp( $row ) );
 				// Ignore values outside range
-				if ( !isset($data[$date]) ) continue;
+				if ( !isset( $data[$date] ) ) continue;
 				$data[$date][$labelToIndex[$i]]++;
 			}
 		}
@@ -365,7 +365,7 @@ class SpecialTranslationStats extends SpecialPage {
 
 		$max = max( array_map( 'max', $resData ) );
 		$max = self::roundToSignificant( $max, 1 );
-		$max = round( $max, intval(-log( $max, 10 )) );
+		$max = round( $max, intval( -log( $max, 10 ) ) );
 
 		$yTick = 10;
 		while ( $max / $yTick > $height / 20 ) $yTick *= 2;
@@ -393,9 +393,9 @@ class SpecialTranslationStats extends SpecialPage {
 		if ( $scale === 'months' ) {
 			/* We use increment to fill up the values. Use number small enough
 			 * to ensure we hit each month */
-			$increment = 3600*24*15;
+			$increment = 3600 * 24 * 15;
 		} elseif ( $scale === 'weeks' ) {
-			$increment = 3600*24*7;
+			$increment = 3600 * 24 * 7;
 		} elseif ( $scale === 'hours' ) {
 			$increment = 3600;
 		}
@@ -479,7 +479,7 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 			}
 		}
 
-		foreach( $this->codes as $code ) {
+		foreach ( $this->codes as $code ) {
 			$languages[] = 'rc_title ' . $db->buildLike( $db->anyString(), "/$code" );
 		}
 

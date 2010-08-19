@@ -186,7 +186,7 @@ class TranslationHelpers {
 
 		if ( $suggestions === 'async' ) {
 			$all['translation-memory'] = array( $this, 'getLazySuggestionBox' );
-		} elseif( $suggestions === 'only' ) {
+		} elseif ( $suggestions === 'only' ) {
 			return (string) call_user_func( $all['translation-memory'], 'lazy' );
 		}
 
@@ -303,9 +303,9 @@ class TranslationHelpers {
 
 			if ( $config['type'] === 'tmserver' ) {
 				$boxes[] = $this->getTmBox( $name, $config );
-			} elseif( $config['type'] === 'google' ) {
+			} elseif ( $config['type'] === 'google' ) {
 				$boxes[] = $this->getGoogleSuggestion( $name, $config );
-			} elseif( $config['type'] === 'apertium' ) {
+			} elseif ( $config['type'] === 'apertium' ) {
 				$boxes[] = $this->getApertiumSuggestion( $name, $config );
 			} else {
 				throw new MWException( __METHOD__ . ": Unsupported type {$config['type']}" );
@@ -664,7 +664,7 @@ class TranslationHelpers {
 				$data = $reader->parseFile();
 				$help = trim( GettextFormatWriter::formatComments( @$data[$mykey]['comments'], false, @$data[$mykey]['flags'] ) );
 				// Do not display an empty comment. That's no help and takes up unnecessary space.
-				if( $help !== '#:' ) {
+				if ( $help !== '#:' ) {
 					$info .= "<hr /><pre>$help</pre>";
 				}
 			}
@@ -871,7 +871,7 @@ class TranslationHelpers {
 
 		$script = Html::inlineScript( "jQuery('#$id').load( \"$url\" )" );
 		$spinner = Html::element( 'div', array( 'class' => 'mw-ajax-loader' ) );
-		return Html::rawElement( 'div', array( 'id' => $id ), $script.$spinner );
+		return Html::rawElement( 'div', array( 'id' => $id ), $script . $spinner );
 	}
 
 	public function dialogID() {
@@ -960,7 +960,7 @@ class TranslationHelpers {
 			 * has passed */
 			return false;
 		}
-		
+
 		return $count >= self::$serviceFailureCount;
 	}
 
@@ -974,16 +974,16 @@ class TranslationHelpers {
 		if ( !is_string( $value ) ) {
 			$count = 0;
 		} else {
-			list( $count, ) = explode( '|', $value, 2 );	
+			list( $count, ) = explode( '|', $value, 2 );
 		}
 
 		$count += 1;
 		$failed = wfTimestamp();
-		$wgMemc->set( $key, "$count|$failed", self::$serviceFailurePeriod*5 );
+		$wgMemc->set( $key, "$count|$failed", self::$serviceFailurePeriod * 5 );
 
 		if ( $count == self::$serviceFailureCount ) {
 			error_log( "Translation service $service suspended" );
-		} elseif( $count > self::$serviceFailureCount ) {
+		} elseif ( $count > self::$serviceFailureCount ) {
 			error_log( "Translation service $service still suspended" );
 		}
 	}

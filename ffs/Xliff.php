@@ -47,7 +47,7 @@ class XliffFormatWriter extends SimpleFormatWriter {
 		$w->writeAttribute( 'datatype', 'x-wiki' );
 		// doesn't make any sense
 		$w->writeAttribute( 'original', $this->group->getId() );
-		
+
 		fwrite( $handle, $w->outputMemory( true ) );
 	}
 

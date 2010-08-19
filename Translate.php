@@ -59,7 +59,7 @@ $wgHooks['AlternateEdit'][] = 'TranslateEditAddons::intro';
 $wgHooks['EditPageBeforeEditButtons'][] = 'TranslateEditAddons::buttonHack';
 $wgHooks['EditPage::showEditForm:fields'][] = 'TranslateEditAddons::keepFields';
 $wgHooks['SkinTemplateTabs'][] = 'TranslateEditAddons::tabs';
-#$wgHooks['ArticleAfterFetchContent'][] = 'TranslateEditAddons::customDisplay';
+# $wgHooks['ArticleAfterFetchContent'][] = 'TranslateEditAddons::customDisplay';
 
 # Custom preferences
 $wgDefaultUserOptions['translate'] = 0;
@@ -540,16 +540,16 @@ function wfAddNamespace( $id, $name ) {
 	$constant = strtoupper( "NS_$name" );
 
 	define( $constant, $id );
-	define( $constant . '_TALK', $id+1 );
+	define( $constant . '_TALK', $id + 1 );
 
 	$wgExtraNamespaces[$id]   = $name;
-	$wgExtraNamespaces[$id+1] = $name . '_talk';
+	$wgExtraNamespaces[$id + 1] = $name . '_talk';
 
 	$wgContentNamespaces[]           = $id;
 	$wgTranslateMessageNamespaces[]  = $id;
 
 	$wgNamespacesWithSubpages[$id]   = true;
-	$wgNamespacesWithSubpages[$id+1] = true;
+	$wgNamespacesWithSubpages[$id + 1] = true;
 
 	$wgNamespaceProtection[$id] = array( 'translate' );
 

@@ -41,7 +41,7 @@ class PTCheckDB extends Maintenance {
 				$sql = $dbw->selectSQLtext( $data[1], '*', $data[2] );
 				$sql = preg_replace( '~^SELECT~', 'DELETE', $sql );
 				$this->output( "$name: $data[0] - $sql\n" );
-				
+
 			}
 		}
 	}
@@ -79,7 +79,7 @@ class PTCheckDB extends Maintenance {
 				$marked = $page->getMarkedTag();
 				$latest = $title->getLatestRevId();
 				$this->output( "Revision numbers: <tagged, marked, latest> <$tagged, $marked, $latest>\n" );
-				if ( strval($marked) === '' ) {
+				if ( strval( $marked ) === '' ) {
 					$this->output( "These sections do not belong the current page (anymore?)\n" );
 					$fixes["$name <sections>"] = array( 'delete sections', 'translate_section', array( 'trs_page' => $id ) );
 				}
@@ -98,7 +98,7 @@ class PTCheckDB extends Maintenance {
 		$result = $dbr->select( 'revtag_type', '*', null, __METHOD__ );
 		$idToTag = array();
 		foreach ( $result as $_ ) $idToTag[$_->rtt_id] = $_->rtt_name;
-		$tagToId = array_flip($idToTag);
+		$tagToId = array_flip( $idToTag );
 
 		$pages = $dbr->select( 'revtag', 'rt_page', null, __METHOD__, array( 'GROUP BY' => 'rt_page' ) );
 		$this->output( "Checking that tags match a valid page...\n\n" );
@@ -138,7 +138,7 @@ class PTCheckDB extends Maintenance {
 				if ( $check !== true ) {
 					$name = $this->idToName( $_->rt_page );
 					$this->output( "Page $name has invalid tp:transver: $check\n" );
-					$fixes["$name <revtag:transver>"] = 
+					$fixes["$name <revtag:transver>"] =
 						array( 'delete tag', 'revtag', array( 'rt_page' => $id, 'rt_type' => $_->rt_type ) );
 				}
 			}

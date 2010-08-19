@@ -435,9 +435,9 @@ class TranslateTasks {
 		);
 
 		$allTasks = array_keys( $wgTranslateTasks );
-		
+
 		if ( $pageTranslation ) {
-			foreach( $allTasks as $id => $task ) {
+			foreach ( $allTasks as $id => $task ) {
 				if ( in_array( $task, $filterTasks ) ) {
 					unset( $allTasks[$id] );
 				}

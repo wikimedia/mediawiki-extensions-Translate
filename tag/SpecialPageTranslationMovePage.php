@@ -19,7 +19,7 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 	 * Allow skipping non-translation subpages.
 	 */
 	protected $moveSubpages;
-	
+
 
 	/**
 	 * TranslatablePage instance.
@@ -77,11 +77,11 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 			// Is there really no better way to do this?
 			$subactionText = $wgRequest->getText( 'subaction' );
 			switch ( $subactionText ) {
-			case wfMsg( 'pt-movepage-action-check'):
+			case wfMsg( 'pt-movepage-action-check' ):
 				$subaction = 'check'; break;
-			case wfMsg( 'pt-movepage-action-perform'):
+			case wfMsg( 'pt-movepage-action-perform' ):
 				$subaction = 'perform'; break;
-			case wfMsg( 'pt-movepage-action-other'):
+			case wfMsg( 'pt-movepage-action-other' ):
 				$subaction = ''; break;
 			default:
 				$subaction = '';
@@ -95,7 +95,7 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 				} else {
 					$this->showConfirmation();
 				}
-			} elseif( $subaction === 'perform' && $this->checkToken() && $wgRequest->wasPosted() ) {
+			} elseif ( $subaction === 'perform' && $this->checkToken() && $wgRequest->wasPosted() ) {
 				$this->performAction();
 			} else {
 				$this->showForm();
@@ -119,19 +119,19 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 			return;
 		}
 
-		if( $this->oldTitle === null ) {
+		if ( $this->oldTitle === null ) {
 			$wgOut->showErrorPage( 'notargettitle', 'notargettext' );
 			return;
 		}
 
-		if( !$this->oldTitle->exists() ) {
+		if ( !$this->oldTitle->exists() ) {
 			$wgOut->showErrorPage( 'nopagetitle', 'nopagetext' );
 			return;
 		}
 
 		# Check rights
 		$permErrors = $this->oldTitle->getUserPermissionsErrors( 'move', $this->user );
-		if( !empty( $permErrors ) ) {
+		if ( !empty( $permErrors ) ) {
 			$wgOut->showPermissionsErrorPage( $permErrors );
 			return;
 		}
@@ -164,7 +164,7 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 			$wgOut->addHTML( Html::openElement( 'div', array( 'class' => 'error' ) ) );
 			$wgOut->addWikiMsg( 'pt-movepage-blockers', $wgLang->formatNum( count( $errors ) ) );
 			$wgOut->addHTML( '<ul>' );
-			foreach( $errors as $error ) {
+			foreach ( $errors as $error ) {
 				// I have no idea what the parser is doing, but this is mad.
 				// <li>$1</li> doesn't work.
 				$wgOut->wrapWikiMsg( "<li>$1", $error );
@@ -184,11 +184,11 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		$br = Html::element( 'br' );
 		$subaction = array( 'name' => 'subaction' );
 		$disabled =  array( 'disabled' => 'disabled' );
-		$formParams = array( 'method' => 'post', 'action' => $this->getTitle( $this->oldText)->getLocalURL() );
+		$formParams = array( 'method' => 'post', 'action' => $this->getTitle( $this->oldText )->getLocalURL() );
 
 		$form = array();
 		$form[] = Xml::fieldset( wfMsg( 'pt-movepage-legend' ) );
-		$form[] = Html::openElement( 'form', $formParams ); 
+		$form[] = Html::openElement( 'form', $formParams );
 		$form[] = Html::hidden( 'wpEditToken', $this->user->editToken() );
 		$form[] = Html::hidden( 'wpOldTitle', $this->oldText );
 		$this->addInputLabel( $form, wfMsg( 'pt-movepage-current' ), 'wpOldTitleFake', 30, $this->oldText, $disabled );
@@ -208,8 +208,8 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 	protected function addInputLabel( &$form, $label, $name, $size = false , $text = false, $attribs = array() ) {
 		$br = Html::element( 'br' );
 		list( $label, $input ) = Xml::inputLabelSep( $label, $name, $name, $size, $text, $attribs );
-		$form[] = $label.$br;
-		$form[] = $input.$br;
+		$form[] = $label . $br;
+		$form[] = $input . $br;
 	}
 
 	/**
@@ -260,7 +260,7 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 
 		$form = array();
 		$form[] = Xml::fieldset( wfMsg( 'pt-movepage-legend' ) );
-		$form[] = Html::openElement( 'form', $formParams ); 
+		$form[] = Html::openElement( 'form', $formParams );
 		$form[] = Html::hidden( 'wpEditToken', $this->user->editToken() );
 		// Apparently HTML spec says that disabled elements are not submitted... ARGH!
 		$form[] = Html::hidden( 'wpOldTitle', $this->oldText );
@@ -318,12 +318,12 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		Job::batchInsert( $jobs );
 
 		global $wgMemc;
-		$wgMemc->set( wfMemcKey( 'pt-base', $base ), array_keys( $jobs ), 60*60*6 );
+		$wgMemc->set( wfMemcKey( 'pt-base', $base ), array_keys( $jobs ), 60 * 60 * 6 );
 
 		MoveJob::forceRedirects( false );
 
 		$errors = $this->oldTitle->moveTo( $this->newTitle, true, $this->reason, false );
-		if ( is_array($errors) ) {
+		if ( is_array( $errors ) ) {
 			$this->showErrors( $errors );
 		}
 
@@ -336,7 +336,7 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		}
 
 		MessageGroups::clearCache();
-		//TODO: defer or make faster
+		// TODO: defer or make faster
 		MessageIndexRebuilder::execute();
 
 		global $wgOut;
@@ -446,7 +446,7 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 
 			$dbw = wfGetDB( DB_MASTER );
 			$fields = array( 'page_namespace', 'page_title' );
-			$titleCond = 'page_title '. $dbw->buildLike( "$base/", $dbw->anyString() );
+			$titleCond = 'page_title ' . $dbw->buildLike( "$base/", $dbw->anyString() );
 			$conds = array( 'page_namespace' => NS_TRANSLATIONS, $titleCond );
 			$result = $dbw->select( 'page', $fields, $conds, __METHOD__ );
 			$this->sectionPages = TitleArray::newFromResult( $result );

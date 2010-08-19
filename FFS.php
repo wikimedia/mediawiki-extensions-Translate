@@ -383,11 +383,11 @@ abstract class JavaScriptFFS extends SimpleFFS {
 	public function readFromVariable( $data ) {
 		/* Parse authors list */
 		$authors = preg_replace( "#/\* Translators\:\n(.*?)\n \*/(.*)#s", '$1', $data );
-		if( $authors === $data ) {
+		if ( $authors === $data ) {
 			$authors = array();
 		} else {
 			$authors = explode( "\n", $authors );
-			for( $i = 0; $i < count( $authors ); $i++ ) {
+			for ( $i = 0; $i < count( $authors ); $i++ ) {
 				$authors[$i] = substr( $authors[$i], 6 );
 			}
 		}
@@ -415,13 +415,13 @@ abstract class JavaScriptFFS extends SimpleFFS {
 		$data = explode( "\",\n", $data );
 
 		$messages = array();
-		foreach( $data as $segment ) {
+		foreach ( $data as $segment ) {
 			// Add back trailing quote, removed by explosion.
 			$segment .= '"';
 
 			// Concatenate separated strings.
 			$segment = explode( '" +', $segment );
-			for( $i = 0; $i < count( $segment ); $i++ ) {
+			for ( $i = 0; $i < count( $segment ); $i++ ) {
 				$segment[$i] = ltrim( ltrim( $segment[$i] ), '"' );
 			}
 			$segment = implode( $segment );
@@ -456,7 +456,7 @@ abstract class JavaScriptFFS extends SimpleFFS {
 		// Get and write messages.
 		$body = '';
 		foreach ( $collection as $message ) {
-			if( strlen( $message->translation() ) === 0 ) {
+			if ( strlen( $message->translation() ) === 0 ) {
 				continue;
 			}
 
@@ -468,7 +468,7 @@ abstract class JavaScriptFFS extends SimpleFFS {
 			$body .= "\t{$key}: \"{$translation}\",\n";
 		}
 
-		if( strlen( $body ) === 0 ) {
+		if ( strlen( $body ) === 0 ) {
 			return false;
 		}
 
@@ -480,7 +480,7 @@ abstract class JavaScriptFFS extends SimpleFFS {
 	}
 
 	protected function authorsList( $authors ) {
-		if( count( $authors ) === 0 ) {
+		if ( count( $authors ) === 0 ) {
 			return '';
 		}
 

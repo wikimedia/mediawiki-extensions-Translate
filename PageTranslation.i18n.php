@@ -30,7 +30,7 @@ Name: $1',
 	'tpt-sections-template' => 'Translation page template',
 
 	'tpt-action-nofuzzy' => 'Do not invalidate translations',
-	
+
 	# Specific page on the special page
 	'tpt-badtitle' => 'Page name given ($1) is not a valid title',
 	'tpt-nosuchpage' => 'Page $1 does not exist',
@@ -1013,7 +1013,7 @@ Nježli až markěrujoš toś tu wersiju za pśełožowanje, pśekontrolěruj, l
 	'tpt-list-nopages' => 'Žedne boki njejsu za pśełožowanje markěrowane ani su gótowe, aby se za pśełožowanje markěrowali.',
 	'tpt-old-pages' => 'Někaka wersija {{PLURAL:$1|toś togo boka|toś teju bokowu|toś tych bokow|toś tych bokow}} jo se za pśełožowanje markěrowała.',
 	'tpt-new-pages' => '{{PLURAL:$1|Toś ten bok wopśimujo|Toś tej boka wopśumujotej|Toś te boki wopśimuju|Toś te boki wopśimuju}} tekst z pśełožowańskimi toflickami, ale žedna wersija {{PLURAL:$1|toś togo boka|toś teju bokowu|toś tych bokow|toś tych bokow}} njejo tuchylu za pśełožowanje markěrowana.',
-	'tpt-other-pages' => 'Stara wersija {{PLURAL:$1|toś togo boka|toś teju bokowu|toś tych bokow|tośtych bokow}} jo za pśełožowanje markěrowana, 
+	'tpt-other-pages' => 'Stara wersija {{PLURAL:$1|toś togo boka|toś teju bokowu|toś tych bokow|tośtych bokow}} jo za pśełožowanje markěrowana,
 ale nejnowša wersija njedajo se za pśełožowanje markěrowaś.',
 	'tpt-rev-latest' => 'aktualna wersija',
 	'tpt-rev-old' => 'rozdźěl k pjerwjejšnej markěrowanej wersiji',
@@ -1348,7 +1348,7 @@ $messages['fi'] = array(
 	'tpt-action-nofuzzy' => 'Älä merkitse käännöksiä vanhentuneiksi',
 	'tpt-badtitle' => 'Sivun nimi ($1) ei ole kelvollinen otsikko',
 	'tpt-nosuchpage' => 'Sivua $1 ei ole olemassa',
-	'tpt-oldrevision' => '$2 ei ole uusin versio sivusta [[$1]]. 
+	'tpt-oldrevision' => '$2 ei ole uusin versio sivusta [[$1]].
 Ainoastaan uusin versio voidaan merkitä käännettäviksi.',
 	'tpt-notsuitable' => 'Sivu $1 ei sovellu käännettäväksi.
 Varmista, että sivu sisältää &lt;translate>-merkinnät ja että siinä ei ole ole syntaksivirheitä.',
@@ -1974,7 +1974,7 @@ Prjedy hač tutu wersiju za přełožowanje markěruješ, skontroluj, hač změn
 	'tpt-list-nopages' => 'Strony njejsu ani za přełožowanje markěrowali ani njejsu hotowe za přełožowanje.',
 	'tpt-old-pages' => 'Někajka wersija {{PLURAL:$1|tuteje strony|tuteju stronow|tutych stronow|tutych stronow}} je so za přełožowanje markěrowała.',
 	'tpt-new-pages' => '{{PLURAL:$1|Tuta strona wobsahuje|Tutej stronje|Tute strony wobsahuja|Tute strony wobsahuja}} tekst z přełožowanskimi tafličkimi, ale žana wersija {{PLURAL:$1|tuteje strony|tuteju stronow|tutych stronow|tutych stronow}} njeje tuchwilu za přełožowanje markěrowana.',
-	'tpt-other-pages' => 'Stara wersija {{PLURAL:$1|tuteje strony|tuteju stronow|tutych stronow|tutych stronow}} je za přełožowanje markěrowana, 
+	'tpt-other-pages' => 'Stara wersija {{PLURAL:$1|tuteje strony|tuteju stronow|tutych stronow|tutych stronow}} je za přełožowanje markěrowana,
 ale aktualna wersija njehodźi so za přełožowanje markěrować..',
 	'tpt-rev-latest' => 'aktualna wersija',
 	'tpt-rev-old' => 'rozdźěl k předchadnej markěrowanej wersiji',
@@ -3282,9 +3282,9 @@ Strona, którą próbujesz edytować, prawdopodobnie nie odpowiada żadnej stron
 	'tpt-install' => 'Uruchom php maintenance/update.php lub przeprowadź instalację webową, aby włączyć opcję tłumaczenia stron.',
 	'tpt-render-summary' => 'Aktualizowanie w celu dopasowania nowej wersji strony źródłowej',
 	'tpt-download-page' => 'Wyeksportuj stronę z tłumaczeniami',
-	'pt-parse-open' => 'Niezrównoważony znacznik &lt;translate>. 
+	'pt-parse-open' => 'Niezrównoważony znacznik &lt;translate>.
 Szablon tłumaczenia – <pre>$1</pre>',
-	'pt-parse-close' => 'Niezrównoważony znacznik &lt;/translate>. 
+	'pt-parse-close' => 'Niezrównoważony znacznik &lt;/translate>.
 Szablon tłumaczenia – <pre>$1</pre>',
 	'pt-parse-nested' => 'Zagnieżdżanie sekcji &lt;translate> nie jest dopuszczalne.
 Tekst znacznika – <pre>$1</pre>',
@@ -3346,7 +3346,7 @@ Prima ëd marché costa version për la tradussion, controlé che le modìfiche 
 	'tpt-translation-intro' => 'Sta pàgina-sì a l\'é na <span class="plainlinks">[$1 vërsion traduvùa]</span> ëd na pàgina [[$2]] e la tradussion a l\'é $3% completa e agiornà.',
 	'tpt-translation-intro-fuzzy' => 'Tradussion pa agiornà a son marcà com costa.',
 	'tpt-languages-legend' => 'Àutre lenghe:',
-	'tpt-target-page' => "Sta pàgina-sì a peul pa esse modificà a man. 
+	'tpt-target-page' => "Sta pàgina-sì a peul pa esse modificà a man.
 Sta pàgina-sì a l'é na tradussion ëd la pàgina [[$1]] e la tradussion a peul esse modificà an dovrand [$2 l'utiss ëd tradussion].",
 	'tpt-unknown-page' => "Sto spassi nominal-sì a l'é riservà për tradussion ëd pàgine ëd contnù.
 La pàgina ch'it preuve a modifiché a smija pa ch'a corisponda a na pàgina marcà për tradussion.",
@@ -3819,7 +3819,7 @@ $messages['sah'] = array(
 	'right-pagetranslation' => 'Тылбаастанар сирэйдэр барылларын бэлиэтээһин',
 	'tpt-desc' => 'Сирэй ис хоһоонун тылбаастыырга кэҥэтии',
 	'tpt-section' => 'Тылбаас единицата $1',
-	'tpt-section-new' => 'Тылбаас саҥа единицата. 
+	'tpt-section-new' => 'Тылбаас саҥа единицата.
 Аата: $1',
 	'tpt-section-deleted' => 'Тылбаас элэмиэнэ $1',
 	'tpt-template' => 'Сирэй халыыба',
@@ -3869,7 +3869,7 @@ $messages['sk'] = array(
 	'right-pagetranslation' => 'Označiť verzie stránok na preklad',
 	'tpt-desc' => 'Rozšírenie na preklad stránok s obsahom',
 	'tpt-section' => 'Jednotka prekladu $1',
-	'tpt-section-new' => 'Nová jednotka prekladu. 
+	'tpt-section-new' => 'Nová jednotka prekladu.
 Názov: $1',
 	'tpt-section-deleted' => 'Jednotka prekladu $1',
 	'tpt-template' => 'Šablóna stránky',
