@@ -1,26 +1,119 @@
 <?php
+/**
+ * This file holds new style message groups and message group interface.
+ *
+ * @file
+ * @author Niklas Laxström
+ * @copyright Copyright © 2010, Niklas Laxström
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ */
 
+/**
+ * Interface for message groups.
+ *
+ * Message groups are the heart of the Translate extension. They encapsulate
+ * a set of messages. Aside from basic information like id, label and
+ * description, the class defines which mangler, message checker and file
+ * system support (FFS), if any, the group uses. Usually this is only thin
+ * wrapper over message configuration files.
+ */
 interface MessageGroup {
+	/**
+	 * Returns the parsed YAML configuration.
+	 * @todo Remove from the interface. Only usage is in FFS. Figure out a better way.
+	 * @return array
+	 */
 	public function getConfiguration();
 
+	/**
+	 * Returns the unique identifier for this group.
+	 * @return string
+	 */
 	public function getId();
+	/**
+	 * Returns the human readable label (as plain text).
+	 * @return string
+	 */
 	public function getLabel();
+	/**
+	 * Returns a longer description about the group. Description can use wiki text.
+	 * @return string
+	 */
 	public function getDescription();
+	/**
+	 * Returns the namespace where messages are placed.
+	 * @return int
+	 */
 	public function getNamespace();
 
+	/**
+	 * @todo Unclear usage. Perhaps rename to isSecondary with the only purpose
+	 *       suppress warnings about message key conflicts.
+	 * @return bool
+	 */
 	public function isMeta();
+	/**
+	 * If this function returns false, the message group is ignored and treated
+	 * like it would not be configured at all. Useful for graceful degradation.
+	 * Try to keep the check fast to avoid performance problems.
+	 * @return bool
+	 */
 	public function exists();
 
+	/**
+	 * Returns a FFS object that handles reading and writing messages to files.
+	 * May also return null if it doesn't make sense.
+	 * @return FFS or null
+	 */
 	public function getFFS();
+	/**
+	 * Returns a message checker object or null.
+	 * @todo Make an interface for message checkers.
+	 * @return MessageChecker or null
+	 */
 	public function getChecker();
+	/**
+	 * Return a message mangler or null.
+	 * @todo Make an interface for message manglers
+	 * @return StringMatcher or null
+	 */
 	public function getMangler();
 
+	/**
+	 * Initialises a message collection with the given language code,
+	 * message definitions and message tags.
+	 * @return MessageCollection
+	 */
 	public function initCollection( $code );
+	/**
+	 * Returns a list of messages in a given language code. For some groups
+	 * that list may be identical with the translation in the wiki. For other
+	 * groups the messages may be loaded from a file (and differ from the
+	 * current translations or definitions).
+	 * @return array
+	 */
 	public function load( $code );
+	/**
+	 * Returns message tags. If type is given, only messages keys with that
+	 * tag is returnted. Otherwise an array[tag => keys] is returnted.
+	 * @return array
+	 */
 	public function getTags( $type = null );
+	/**
+	 * Returns the definition or translation for given message key in given
+	 * language code.
+	 * @todo Is this needed in the interface?
+	 * @return string or null
+	 */
 	public function getMessage( $key, $code );
 }
 
+/**
+ * This class implements some basic functions that wrap around the YAML
+ * message group configurations.
+ *
+ * @see http://translatewiki.net/wiki/Translating:Group_configuration
+ */
 abstract class MessageGroupBase implements MessageGroup {
 	protected $conf;
 	protected $namespace;
@@ -237,6 +330,13 @@ abstract class MessageGroupBase implements MessageGroup {
 	}
 }
 
+/**
+ * This class implements default behaviour for file based message groups.
+ *
+ * File based message groups are primary type of groups at translatewiki.net,
+ * while other projects may use mainly page translation message groups, or
+ * custom type of message groups.
+ */
 class FileBasedMessageGroup extends MessageGroupBase {
 	public function exists() {
 		return $this->getFFS()->exists();
@@ -341,8 +441,9 @@ class MediaWikiMessageGroup extends FileBasedMessageGroup {
 
 /**
  * Groups multiple message groups together as one big group.
+ *
  * Limitations:
- *  - Only groups of same type and in the same namespace
+ *  - Only groups of same type and in the same namespace.
  */
 class AggregateMessageGroup extends MessageGroupBase {
 
