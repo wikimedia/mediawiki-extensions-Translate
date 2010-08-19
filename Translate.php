@@ -13,6 +13,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+// Version number used in extension credits and in other placed where needed.
 define( 'TRANSLATE_VERSION', '2010-07-21' );
 
 $wgExtensionCredits['specialpage'][] = array(
@@ -368,8 +369,10 @@ $wgTranslateYamlLibrary = 'spyc';
 
 # Startup code
 
+// Initialise extension.
 function efTranslateInit() {
 	global $wgTranslatePHPlot, $wgAutoloadClasses, $wgHooks;
+
 	if ( $wgTranslatePHPlot ) {
 		$wgAutoloadClasses['PHPlot'] = $wgTranslatePHPlot;
 	}
@@ -390,6 +393,7 @@ function efTranslateInit() {
 	// Fuzzy tags for speed
 	$wgHooks['ArticleSaveComplete'][] = 'TranslateEditAddons::onSave';
 
+	// Page translation setup check and init if enabled.
 	if ( $wgEnablePageTranslation ) {
 		// Special page + the right to use it
 		global $wgSpecialPages, $wgAvailableRights;
@@ -413,14 +417,17 @@ function efTranslateInit() {
 		global $wgPageTranslationNamespace, $wgExtraNamespaces;
 		global $wgNamespacesWithSubpages, $wgNamespaceProtection;
 		global $wgTranslateMessageNamespaces;
+
 		// Defines for nice usage
 		define ( 'NS_TRANSLATIONS', $wgPageTranslationNamespace );
 		define ( 'NS_TRANSLATIONS_TALK', $wgPageTranslationNamespace + 1 );
+
 		// Register them as namespaces
 		$wgExtraNamespaces[NS_TRANSLATIONS]      = 'Translations';
 		$wgExtraNamespaces[NS_TRANSLATIONS_TALK] = 'Translations_talk';
 		$wgNamespacesWithSubpages[NS_TRANSLATIONS]      = true;
 		$wgNamespacesWithSubpages[NS_TRANSLATIONS_TALK] = true;
+
 		// Standard protection and register it for filtering
 		$wgNamespaceProtection[NS_TRANSLATIONS] = array( 'translate' );
 		$wgTranslateMessageNamespaces[] = NS_TRANSLATIONS;
@@ -468,11 +475,14 @@ function efTranslateInit() {
 	}
 }
 
+// Check if Page Translation was set up properly.
 function efTranslateCheckPT() {
 	global $wgHooks, $wgMemc, $wgCommandLineMode;
 
 	// Short circuit tests on cli, useless db trip and no reporting.
-	if ( $wgCommandLineMode ) return true;
+	if ( $wgCommandLineMode ) {
+		return true;
+	}
 
 	$version = "3"; // Must be a string
 	$memcKey = wfMemcKey( 'pt' );
@@ -496,7 +506,10 @@ function efTranslateCheckPT() {
 		// TODO: use insert ignore
 		$field = array( 'rtt_name' => $tag );
 		$ret = $dbw->selectField( 'revtag_type', 'rtt_name', $field, __METHOD__ );
-		if ( $ret !== $tag ) $dbw->insert( 'revtag_type', $field, __METHOD__ );
+		
+		if ( $ret !== $tag ) {
+			$dbw->insert( 'revtag_type', $field, __METHOD__ );
+		}
 	}
 
 	$wgMemc->set( $memcKey, $version );
