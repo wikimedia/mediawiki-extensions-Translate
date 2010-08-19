@@ -13,9 +13,14 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-# Version number used in extension credits and in other placed where needed.
+/**
+ * Version number used in extension credits and in other placed where needed.
+ */
 define( 'TRANSLATE_VERSION', '2010-08-19' );
 
+/**
+ * Extension credits properties.
+ */
 $wgExtensionCredits['specialpage'][] = array(
 	'path'           => __FILE__,
 	'name'           => 'Translate',
@@ -25,34 +30,93 @@ $wgExtensionCredits['specialpage'][] = array(
 	'url'            => 'http://www.mediawiki.org/wiki/Extension:Translate',
 );
 
-# Setup class autoloads
+/**
+ * Setup class autoloads
+ */
 $dir = dirname( __FILE__ ) . '/';
 require_once( $dir . '_autoload.php' );
 
+/**
+ * Register extension messages files.
+ */
 $wgExtensionMessagesFiles['Translate'] = $dir . 'Translate.i18n.php';
 $wgExtensionMessagesFiles['FirstSteps'] = $dir . 'FirstSteps.i18n.php';
 $wgExtensionMessagesFiles['PageTranslation'] = $dir . 'PageTranslation.i18n.php';
+
+/**
+ * Register special page aliases.
+ */
 $wgExtensionAliasesFiles['Translate'] = $dir . 'Translate.alias.php';
+
+/**
+ * Init hook.
+ */
 $wgExtensionFunctions[] = 'efTranslateInit';
 
+/**
+ * Setup special pages
+ */
+
+/**
+ * Special:Translate
+ */
 $wgSpecialPages['Translate'] = 'SpecialTranslate';
-$wgSpecialPages['Translations'] = 'SpecialTranslations';
-$wgSpecialPages['Magic'] = 'SpecialMagic';
-$wgSpecialPages['TranslationChanges'] = 'SpecialTranslationChanges';
-$wgSpecialPages['TranslationStats'] = 'SpecialTranslationStats';
-$wgSpecialPages['LanguageStats'] = 'SpecialLanguageStats';
-$wgSpecialPages['ImportTranslations'] = 'SpecialImportTranslations';
-$wgSpecialPages['FirstSteps'] = 'SpecialFirstSteps';
-$wgSpecialPages['SupportedLanguages'] = 'SpecialSupportedLanguages';
-$wgSpecialPages['MyLanguage'] = 'SpecialMyLanguage';
-$wgSpecialPageGroups['Magic'] = 'wiki';
 $wgSpecialPageGroups['Translate'] = 'wiki';
+
+/**
+ * Special:Translations
+ */
+$wgSpecialPages['Translations'] = 'SpecialTranslations';
 $wgSpecialPageGroups['Translations'] = 'pages';
+
+/**
+ * Special:AdvancedTranslate
+ */
+$wgSpecialPages['Magic'] = 'SpecialMagic';
+$wgSpecialPageGroups['Magic'] = 'wiki';
+
+/**
+ * Special:TranslationChanges
+ */
+$wgSpecialPages['TranslationChanges'] = 'SpecialTranslationChanges';
 $wgSpecialPageGroups['TranslationChanges'] = 'changes';
+
+/**
+ * Special:TranslationStats
+ */
+$wgSpecialPages['TranslationStats'] = 'SpecialTranslationStats';
 $wgSpecialPageGroups['TranslationStats'] = 'wiki';
+
+/**
+ * Special:LanguageStats
+ */
+$wgSpecialPages['LanguageStats'] = 'SpecialLanguageStats';
 $wgSpecialPageGroups['LanguageStats'] = 'wiki';
+
+/**
+ * Special:ImportTranslations
+ */
+$wgSpecialPages['ImportTranslations'] = 'SpecialImportTranslations';
 $wgSpecialPageGroups['ImportTranslations'] = 'wiki';
-$wgSpecialPageGroups['PageTranslation'] = 'pagetools';
+
+/**
+ * Special:FirstSteps. Unlisted special page; does not need $wgSpecialPageGroups.
+ */
+$wgSpecialPages['FirstSteps'] = 'SpecialFirstSteps';
+
+/**
+ * Special:SupportedLanguages. Unlisted special page; does not need $wgSpecialPageGroups.
+ */
+$wgSpecialPages['SupportedLanguages'] = 'SpecialSupportedLanguages';
+
+/**
+ * Special:MyLanguage. Unlisted special page; does not need $wgSpecialPageGroups.
+ */
+$wgSpecialPages['MyLanguage'] = 'SpecialMyLanguage';
+
+/**
+ * Register hooks.
+ */
 
 $wgHooks['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';
 $wgHooks['OutputPageBeforeHTML'][] = 'TranslateEditAddons::addNavigation';
@@ -62,7 +126,9 @@ $wgHooks['EditPage::showEditForm:fields'][] = 'TranslateEditAddons::keepFields';
 $wgHooks['SkinTemplateTabs'][] = 'TranslateEditAddons::tabs';
 # $wgHooks['ArticleAfterFetchContent'][] = 'TranslateEditAddons::customDisplay';
 
-# Custom preferences
+/**
+ * Custom preferences
+ */
 $wgDefaultUserOptions['translate'] = 0;
 $wgDefaultUserOptions['translate-editlangs'] = 'default';
 $wgDefaultUserOptions['translate-jsedit'] = 1;
@@ -70,12 +136,16 @@ $wgHooks['GetPreferences'][] = 'TranslatePreferences::onGetPreferences';
 $wgHooks['GetPreferences'][] = 'TranslatePreferences::translationAssistLanguages';
 $wgHooks['GetPreferences'][] = 'TranslatePreferences::translationJsedit';
 
-# Recent changes filters
+/**
+ * Recent changes filters
+ */
 $wgHooks['SpecialRecentChangesQuery'][] = 'TranslateRcFilter::translationFilter';
 $wgHooks['SpecialRecentChangesPanel'][] = 'TranslateRcFilter::translationFilterForm';
 $wgHooks['SkinTemplateToolboxEnd'][] = 'TranslateToolbox::toolboxAllTranslations';
 
-# Translation memory updates
+/**
+ * Translation memory updates
+ */
 $wgHooks['ArticleSaveComplete'][] = 'TranslationMemoryUpdater::update';
 
 $wgAvailableRights[] = 'translate';
@@ -286,6 +356,9 @@ $wgTranslateAC = array(
  *  $wgTranslateEC = $wgTranslateAC;
  */
 $wgTranslateEC = array();
+/**
+ * Add MediaWiki core messages group.
+ */
 $wgTranslateEC[] = 'core';
 
 /**
@@ -369,7 +442,9 @@ $wgTranslateYamlLibrary = 'spyc';
 
 # Startup code
 
-# Initialise extension.
+/**
+ * Initialise extension.
+ */
 function efTranslateInit() {
 	global $wgTranslatePHPlot, $wgAutoloadClasses, $wgHooks;
 
@@ -380,24 +455,35 @@ function efTranslateInit() {
 	global $wgReservedUsernames, $wgTranslateFuzzyBotName;
 	$wgReservedUsernames[] = $wgTranslateFuzzyBotName;
 
-	# Database schema
+	/**
+	 * Hook for database schema.
+	 */
 	$wgHooks['LoadExtensionSchemaUpdates'][] = 'PageTranslationHooks::schemaUpdates';
 
-	# Do not activate hooks if not setup properly
+	/**
+	 * Do not activate hooks if not setup properly
+	 */
 	global $wgEnablePageTranslation;
 	if ( !efTranslateCheckPT() ) {
 		$wgEnablePageTranslation = false;
 		return true;
 	}
 
-	# Fuzzy tags for speed
+	/**
+	 * Fuzzy tags for speed.
+	 */
 	$wgHooks['ArticleSaveComplete'][] = 'TranslateEditAddons::onSave';
 
-	# Page translation setup check and init if enabled.
+	/**
+	 * Page translation setup check and init if enabled.
+	 */
 	if ( $wgEnablePageTranslation ) {
-		# Special page + the right to use it
+		/**
+		 * Special page and the right to use it
+		 */
 		global $wgSpecialPages, $wgAvailableRights;
 		$wgSpecialPages['PageTranslation'] = 'SpecialPageTranslation';
+		$wgSpecialPageGroups['PageTranslation'] = 'pagetools';
 		$wgAvailableRights[] = 'pagetranslation';
 
 		global $wgLogNames, $wgLogActionsHandlers, $wgLogTypes, $wgLogHeaders;
@@ -413,52 +499,81 @@ function efTranslateInit() {
 		$wgJobClasses['RenderJob'] = 'RenderJob';
 		$wgJobClasses['MoveJob'] = 'MoveJob';
 
-		# Namespaces
+		/**
+		 * Namespaces
+		 */
 		global $wgPageTranslationNamespace, $wgExtraNamespaces;
 		global $wgNamespacesWithSubpages, $wgNamespaceProtection;
 		global $wgTranslateMessageNamespaces;
 
-		# Defines for nice usage
+		/**
+		 * Defines for nice usage
+		 */
 		define ( 'NS_TRANSLATIONS', $wgPageTranslationNamespace );
 		define ( 'NS_TRANSLATIONS_TALK', $wgPageTranslationNamespace + 1 );
 
-		# Register them as namespaces
+		/**
+		 * Register them as namespaces
+		 */
 		$wgExtraNamespaces[NS_TRANSLATIONS]      = 'Translations';
 		$wgExtraNamespaces[NS_TRANSLATIONS_TALK] = 'Translations_talk';
 		$wgNamespacesWithSubpages[NS_TRANSLATIONS]      = true;
 		$wgNamespacesWithSubpages[NS_TRANSLATIONS_TALK] = true;
 
-		# Standard protection and register it for filtering
+		/**
+		 * Standard protection and register it for filtering
+		 */
 		$wgNamespaceProtection[NS_TRANSLATIONS] = array( 'translate' );
 		$wgTranslateMessageNamespaces[] = NS_TRANSLATIONS;
 
-		# Page translation hooks
-		# Register our css, is there a better place for this?
+		/**
+		 * Page translation hooks
+		 */
+
+		/**
+		 * Register our css, is there a better place for this?
+		 */
 		$wgHooks['OutputPageBeforeHTML'][] = 'PageTranslationHooks::injectCss';
 
-		# Add transver tags and update translation target pages
+		/**
+		 * Add transver tags and update translation target pages
+		 */
 		$wgHooks['ArticleSaveComplete'][] = 'PageTranslationHooks::onSectionSave';
 
-		# Foo
+		/**
+		 * @todo document.
+		 */
 		# $wgHooks['SkinTemplateOutputPageBeforeExec'][] = 'TranslateTagHooks::addSidebar';
 
+		/**
 		# Register <languages/>
+		 */
 		$wgHooks['ParserFirstCallInit'][] = 'efTranslateInitTags';
 
-		# Strip <translate> tags etc. from source pages when rendering
+		/**
+		 * Strip <translate> tags etc. from source pages when rendering
+		 */
 		$wgHooks['ParserBeforeStrip'][] = 'PageTranslationHooks::renderTagPage';
 
-		# Check syntax for <translate>
+		/**
+		 * Check syntax for <translate>
+		 */
 		$wgHooks['ArticleSave'][] = 'PageTranslationHooks::tpSyntaxCheck';
 		$wgHooks['EditFilterMerged'][] = 'PageTranslationHooks::tpSyntaxCheckForEditPage';
 
-		# Add transtag to page props for discovery
+		/**
+		 * Add transtag to page props for discovery
+		 */
 		$wgHooks['ArticleSaveComplete'][] = 'PageTranslationHooks::addTranstag';
 
-		# Prevent editing of unknown pages in Translations namespace
+		/**
+		 * Prevent editing of unknown pages in Translations namespace
+		 */
 		$wgHooks['getUserPermissionsErrorsExpensive'][] = 'PageTranslationHooks::translationsCheck';
 
-		# Locking during page moves
+		/**
+		 * Locking during page moves
+		 */
 		$wgHooks['getUserPermissionsErrorsExpensive'][] = 'PageTranslationHooks::lockedPagesCheck';
 
 		$wgHooks['ArticleViewHeader'][] = 'PageTranslationHooks::test';
@@ -467,15 +582,21 @@ function efTranslateInit() {
 
 		$wgHooks['SkinTemplateToolboxEnd'][] = 'PageTranslationHooks::exportToolbox';
 
-		# Prevent section pages appearing in categories
+		/**
+		 * Prevent section pages appearing in categories
+		 */
 		$wgHooks['LinksUpdate'][] = 'PageTranslationHooks::preventCategorization';
 
-		# Custom move page that can move all the associated pages too
+		/**
+		 * Custom move page that can move all the associated pages too
+		 */
 		$wgHooks['SpecialPage_initList'][] = 'PageTranslationHooks::replaceMovePage';
 	}
 }
 
-# Check if Page Translation was set up properly.
+/**
+ * Check if Page Translation was set up properly.
+ */
 function efTranslateCheckPT() {
 	global $wgHooks, $wgMemc, $wgCommandLineMode;
 
@@ -528,7 +649,9 @@ function efTranslateCheckWarn( $msg, &$sitenotice ) {
 }
 
 function efTranslateInitTags( $parser ) {
-	# For nice language list in-page
+	/**
+	 * For nice language list in-page
+	 */
 	$parser->setHook( 'languages', array( 'PageTranslationHooks', 'languages' ) );
 
 	return true;
