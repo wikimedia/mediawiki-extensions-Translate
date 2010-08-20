@@ -1,51 +1,70 @@
 <?php
 /**
- * File format support classes
+ * File format support classes.
  *
- * @todo Needs documentation.
+ * These classes handle parsing and generating various different
+ * file formats where translation messages are stored.
  *
  * @file
+ * @defgroup FFS File format support
  * @author Niklas Laxström
  * @copyright Copyright © 2008-2010, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+/**
+ * Interface for file system support classes.
+ * @ingroup FFS
+ */
 interface FFS {
 	public function __construct( FileBasedMessageGroup $group );
 
 	/**
 	 * Set the file system location
+	 * @param $target \string Filesystem path for exported files.
 	 */
 	public function setWritePath( $target );
 
 	/**
 	 * Get the file system location
+	 * @return \string
 	 */
 	public function getWritePath();
 
 	/**
-	 * Will parse messages, authors, and any custom data from file specified in
-	 * $group and return it in associative array with keys like AUTHORS and
-	 * MESSAGES.
+	 * Will parse messages, authors, and any custom data from the file 
+	 * and return it in associative array with keys like \c AUTHORS and
+	 * \c MESSAGES.
+	 * @param $code \string Languge code.
+	 * @return \array
 	 */
 	public function read( $code );
 
 	public function readFromVariable( $data );
 
 	/**
-	 * Writes to the location provided in $group, exporting translations included
-	 * in collection with any special handling needed.
+	 * Writes to the location provided with setWritePath and group specific
+	 * directory structure. Exports translations included in the given
+	 * collection with any special handling needed.
+	 * @param $collection MessageCollection
 	 */
 	public function write( MessageCollection $collection );
 
 	/**
 	 * Quick shortcut for getting the plain exported data.
+	 * Same as write(), but returns the output instead of writing it into
+	 * a file.
+	 * @param $collection MessageCollection
+	 * @return \string
 	 */
 	public function writeIntoVariable( MessageCollection $collection );
 }
 
 /**
- * @todo Needs documentation.
+ * Very basic FFS module that implements some basic functionality and
+ * simple binary based file format.
+ * Other FFS classes can extend SimpleFFS and override suitable methods.
+ * @ingroup FFS
  */
 class SimpleFFS implements FFS {
 	protected $group;
@@ -254,7 +273,13 @@ class SimpleFFS implements FFS {
 }
 
 /**
- * @todo Needs documentation.
+ * JavaFFS class implements support for Java properties files.
+ * This class reads and writes only utf-8 files. Java projects
+ * need to run native2ascii on them before using them.
+ *
+ * This class adds a new item into FILES section of group configuration:
+ * \c keySeparator which defaults to '='.
+ * @ingroup FFS
  */
 class JavaFFS extends SimpleFFS {
 	protected $keySeparator = '=';
@@ -267,9 +292,8 @@ class JavaFFS extends SimpleFFS {
 		}
 	}
 
-	/**
-	 * READ
-	 */
+	// READ
+
 	public function readFromVariable( $data ) {
 		$data = self::fixNewLines( $data );
 		$lines = array_map( 'ltrim', explode( "\n", $data ) );
@@ -328,9 +352,8 @@ class JavaFFS extends SimpleFFS {
 		);
 	}
 
-	/**
-	 * Write
-	 */
+	// Write
+
 	protected function writeReal( MessageCollection $collection ) {
 		$header  = $this->doHeader( $collection );
 		$header .= $this->doAuthors( $collection );
@@ -348,14 +371,10 @@ class JavaFFS extends SimpleFFS {
 				continue;
 			}
 
-			/**
-			 * Make sure we do not slip newlines trough... it would be fatal.
-			 */
+			// Make sure we do not slip newlines trough... it would be fatal.
 			$value = str_replace( "\n", '\\n', $value );
 
-			/**
-			 * Just to give an overview of translation quality.
-			 */
+			// Just to give an overview of translation quality.
 			if ( $m->hasTag( 'fuzzy' ) ) {
 				$output .= "# Fuzzy\n";
 			}
@@ -399,6 +418,7 @@ class JavaFFS extends SimpleFFS {
 
 /**
  * @todo Needs documentation.
+ * @ingroup FFS
  */
 abstract class JavaScriptFFS extends SimpleFFS {
 	/**
@@ -563,31 +583,25 @@ abstract class JavaScriptFFS extends SimpleFFS {
 	}
 
 	protected static function unescapeJsString( $string ) {
-		/**
-		 * See ECMA 262 section 7.8.4 for string literal format
-		 */
+		// See ECMA 262 section 7.8.4 for string literal format
 		$pairs = array(
 			"\\" => "\\\\",
 			"\"" => "\\\"",
-			'\'' => '\\\'',
+			"'" => "\\\'",
 			"\n" => "\\n",
 			"\r" => "\\r",
 
-			/**
-			 * To avoid closing the element or CDATA section.
-			 */
+			// To avoid closing the element or CDATA section.
 			"<" => "\\x3c",
 			">" => "\\x3e",
 
-			/**
-			 * To avoid any complaints about bad entity refs.
-			 */
+			// To avoid any complaints about bad entity refs.
 			"&" => "\\x26",
 
-			/**
+			/*
 			 * Work around https://bugzilla.mozilla.org/show_bug.cgi?id=274152
 			 * Encode certain Unicode formatting chars so affected
-			 * versions of Gecko don't misinterpret our strings;
+			 * versions of Gecko do not misinterpret our strings;
 			 * this is a common problem with Farsi text.
 			 */
 			"\xe2\x80\x8c" => "\\u200c", // ZERO WIDTH NON-JOINER
@@ -601,6 +615,7 @@ abstract class JavaScriptFFS extends SimpleFFS {
 
 /**
  * @todo Needs documentation.
+ * @ingroup FFS
  */
 class OpenLayersFFS extends JavaScriptFFS {
 	protected function transformKey( $key ) {
@@ -613,6 +628,7 @@ class OpenLayersFFS extends JavaScriptFFS {
 
 		$authorsList = $this->authorsList( $authors );
 
+		/** @cond doxygen_bug */
 		return <<<EOT
 /* Copyright (c) 2006-2008 MetaCarta, Inc., published under the Clear BSD
  * license.  See http://svn.openlayers.org/trunk/openlayers/license.txt for the
@@ -633,6 +649,7 @@ $authorsList
 OpenLayers.Lang["$code"] = OpenLayers.Util.applyDefaults({
 
 EOT;
+		/** @endcond */
 	}
 
 	protected function footer() {
@@ -642,6 +659,7 @@ EOT;
 
 /**
  * @todo Needs documentation.
+ * @ingroup FFS
  */
 class ShapadoJsFFS extends JavaScriptFFS {
 	protected function transformKey( $key ) {
@@ -655,6 +673,7 @@ class ShapadoJsFFS extends JavaScriptFFS {
 		$native = TranslateUtils::getLanguageName( $code, true );
 		$authorsList = $this->authorsList( $authors );
 
+		/** @cond doxygen_bug */
 		return <<<EOT
 /** Messages for $name ($native)
  *  Exported from $wgSitename
@@ -665,6 +684,7 @@ class ShapadoJsFFS extends JavaScriptFFS {
 var I18n = {
 
 EOT;
+		/** @endcond */
 	}
 
 	protected function footer() {
@@ -673,30 +693,26 @@ EOT;
 }
 
 /**
- * @todo Needs documentation.
+ * Implements support for message storage in YAML format.
+ *
+ * This class adds new key into FILES section: \c codeAsRoot.
+ * If it is set to true, all messages will under language code.
+ * @ingroup FFS
  */
 class YamlFFS extends SimpleFFS {
-	/**
-	 * READ
-	 */
+
 	public function readFromVariable( $data ) {
 		$authors = $messages = array();
 
-		/**
-		 * Authors first.
-		 */
+		// Authors first.
 		$matches = array();
 		preg_match_all( '/^#\s*Author:\s*(.*)$/m', $data, $matches );
 		$authors = $matches[1];
 
-		/**
-		 * Then messages.
-		 */
+		// Then messages.
 		$messages = TranslateYaml::loadString( $data );
 
-		/**
-		 * Some groups have messages under language code
-		 */
+		// Some groups have messages under language code
 		if ( isset( $this->extra['codeAsRoot'] ) ) {
 			$messages = array_shift( $messages );
 		}
@@ -710,9 +726,6 @@ class YamlFFS extends SimpleFFS {
 		);
 	}
 
-	/**
-	 * Write
-	 */
 	protected function writeReal( MessageCollection $collection ) {
 		$output  = $this->doHeader( $collection );
 		$output .= $this->doAuthors( $collection );
@@ -738,9 +751,7 @@ class YamlFFS extends SimpleFFS {
 
 		$messages = $this->unflatten( $messages );
 
-		/**
-		 * Some groups have messages under language code.
-		 */
+		// Some groups have messages under language code.
 		if ( isset( $this->extra['codeAsRoot'] ) ) {
 			$code = $this->group->mapCode( $collection->code );
 			$messages = array( $code => $messages );
@@ -891,7 +902,10 @@ class YamlFFS extends SimpleFFS {
 }
 
 /**
- * @todo Needs documentation.
+ * Extends YamlFFS with Ruby (on Rails) style plural support. Supports subkeys
+ * zero, one, many, few, other and two for each message using plural with
+ * {{count}} variable.
+ * @ingroup FFS
  */
 class RubyYamlFFS extends YamlFFS {
 	static $pluralWords = array(
@@ -930,9 +944,7 @@ class RubyYamlFFS extends YamlFFS {
 			$pls .= "|$key=$value";
 		}
 
-		/**
-		 * Put the "other" alternative last, without other= prefix.
-		 */
+		// Put the "other" alternative last, without other= prefix.
 		$other = isset( $messages['other'] ) ? '|' . $messages['other'] : '';
 		$pls .= "$other}}";
 		return $pls;
@@ -942,14 +954,12 @@ class RubyYamlFFS extends YamlFFS {
 	 * Converts the special plural syntax to array or ruby style plurals
 	 */
 	protected function unflattenPlural( $key, $message ) {
-		/**
-		 * Quick escape.
-		 */
+		// Quick escape.
 		if ( strpos( $message, '{{PLURAL' ) === false ) {
 			return array( $key => $message );
 		}
 
-		/**
+		/*
 		 * Replace all variables with placeholders. Possible source of bugs
 		 * if other characters that given below are used.
 		 */
@@ -963,9 +973,7 @@ class RubyYamlFFS extends YamlFFS {
 			$message = preg_replace( $regex, $uniqkey, $message );
 		}
 
-		/**
-		 * Then replace (possible multiple) plural instances into placeholders.
-		 */
+		// Then replace (possible multiple) plural instances into placeholders.
 		$regex = '~\{\{PLURAL\|(.*?)}}~s';
 		$matches = array();
 		$match = null;
@@ -976,19 +984,15 @@ class RubyYamlFFS extends YamlFFS {
 			$message = preg_replace( $regex, $uniqkey, $message );
 		}
 
-		/**
-		 * No plurals, should not happen.
-		 */
+		// No plurals, should not happen.
 		if ( !count( $matches ) ) {
 			return false;
 		}
 
-		/**
-		 * The final array of alternative plurals forms.
-		 */
+		// The final array of alternative plurals forms.
 		$alts = array();
 
-		/**
+		/*
 		 * Then loop trough each plural block and replacing the placeholders
 		 * to construct the alternatives. Produces invalid output if there is
 		 * multiple plural bocks which don't have the same set of keys.
@@ -1021,9 +1025,7 @@ class RubyYamlFFS extends YamlFFS {
 			}
 		}
 
-		/**
-		 * Replace other variables.
-		 */
+		// Replace other variables.
 		foreach ( $alts as &$value ) {
 			$value = str_replace( array_keys( $placeholders ), array_values( $placeholders ), $value );
 		}
