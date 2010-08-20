@@ -1,7 +1,22 @@
 <?php
+/**
+ * Gettext file format handler for both old and new style message groups.
+ *
+ * @author Niklas Laxström
+ * @author Siebrand Mazeland
+ * @copyright Copyright © 2008-2010, Niklas Laxström, Siebrand Mazeland
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * @file
+ */
 
+/**
+ * Extends class MwException. Currently empty.
+ */
 class GettextPluralException extends MwException { }
 
+/**
+ * Read the gettext file.
+ */
 class GettextFormatReader extends SimpleFormatReader {
 	protected $pot = false;
 
@@ -15,11 +30,22 @@ class GettextFormatReader extends SimpleFormatReader {
 		$this->prefix = $value;
 	}
 
-
+	/**
+	 * Get authors from gettext file.
+	 *
+	 * @todo Implement this.
+	 * return \array List of authors
+	 */
 	public function parseAuthors() {
-		return array(); // Not implemented
+		return array();
 	}
 
+	/**
+	 * Returns static header of gettext file.
+	 * Static part recognition is based on finding "# --" as beginning and
+	 * "msgid" as end.
+	 * return /string Static header of gettext file.
+	 */
 	public function parseStaticHeader() {
 		if ( $this->filename === false ) {
 			return '';
@@ -57,7 +83,6 @@ class GettextFormatReader extends SimpleFormatReader {
 
 		return GettextFFS::parseGettextData( $data );
 	}
-
 
 	public function parseMessages( StringMangler $mangler ) {
 		$defs = $this->parseFile();
@@ -110,13 +135,23 @@ class GettextFormatWriter extends SimpleFormatWriter {
 
 		$headers = isset( $this->owndata['HEADERS'] ) ? $this->owndata['HEADERS'] : array();
 		$headers['Project-Id-Version'] = $label;
-		// TODO: make this customisable or something
-		// $headers['Report-Msgid-Bugs-To'] = $wgServer;
-		// TODO: sprintfDate doesn't support any time zone flags
-		// $headers['POT-Creation-Date']
+
+		/**
+		 * @todo Make this customisable or something
+		 * $headers['Report-Msgid-Bugs-To'] = $wgServer;
+		 */
+
+		/** @todo sprintfDate doesn't support any time zone flags
+		 * $headers['POT-Creation-Date']
+		 */
+
 		$headers['PO-Revision-Date'] = $lang->sprintfDate( 'xnY-xnm-xnd xnH:xni:xns+0000', $now );
-		// Link to portal pages??
-		// $headers['Language-Team'] = $languageName;
+
+		/**
+		 * @todo Link to portal pages?
+		 * $headers['Language-Team'] = $languageName;
+		 */
+
 		$headers['Content-Type'] = 'text/plain; charset=UTF-8';
 		$headers['Content-Transfer-Encoding'] = '8bit';
 
@@ -243,7 +278,7 @@ class GettextFormatWriter extends SimpleFormatWriter {
 	protected function formatmsg( $msgid, $msgstr, $msgctxt = false, $pluralForms = false ) {
 		$output = array();
 
-		// FIXME: very ugly hack to allow gettext plurals to be exported.
+		// @todo Very ugly hack to allow gettext plurals to be exported.
 		if ( $msgstr == '{{PLURAL:GETTEXT|}}' ) {
 			return '';
 		}
@@ -318,6 +353,10 @@ class GettextFormatWriter extends SimpleFormatWriter {
 	}
 }
 
+/**
+ * FFS class that implements support for gettext file format.
+ * @ingroup FFS
+ */
 class GettextFFS extends SimpleFFS {
 	//
 	// READ
@@ -343,7 +382,10 @@ class GettextFFS extends SimpleFFS {
 		return self::parseGettextData( $data, $useCtxtAsKey );
 	}
 
-	// Ugly hack to avoid code duplication between old and new style FFS
+	/**
+	 * Ugly hack to avoid code duplication between old and new style FFS.
+	 * @todo Refactor method into smaller parts.
+	 */
 	public static function parseGettextData( $data, $useCtxtAsKey = false ) {
 		// Normalise newlines, to make processing easier lates
 		$data = str_replace( "\r\n", "\n", $data );
@@ -547,7 +589,7 @@ class GettextFFS extends SimpleFFS {
 			elseif ( $whitespace === 'trim' )
 				$data = rtrim( $data );
 			else
-				// FIXME: only triggered if there is trailing whitespace
+				// @todo Only triggered if there is trailing whitespace
 				throw new MWException( 'Unknown action for whitespace' );
 		}
 

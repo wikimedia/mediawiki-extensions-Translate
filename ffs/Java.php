@@ -21,7 +21,7 @@ class JavaFormatReader extends SimpleFormatReader {
 	 * Basically the same, with different author prefix and separator between
 	 * headers and messages.
 	 *
-	 * FIXME: possible to refactor to reduce duplication?
+	 * @todo Possible to refactor to reduce duplication?
 	 */
 	protected function parseHeader() {
 		$authors = array();

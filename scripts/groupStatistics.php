@@ -84,9 +84,11 @@ $localisedWeights = array(
 	)
 );
 
-// Code map to map localisation codes to Wikimedia project codes. Only
-// exclusions and remapping is defined here. It is assumed that the first part
-// of the localisation code is the WMF project name otherwise (zh-hans -> zh).
+/**
+ * Code map to map localisation codes to Wikimedia project codes. Only
+ * exclusions and remapping is defined here. It is assumed that the first part
+ * of the localisation code is the WMF project name otherwise (zh-hans -> zh).
+ */
 $wikimediaCodeMap = array(
 	// Codes containing a dash
 	'bat-smg' => 'bat-smg',
@@ -181,7 +183,9 @@ if ( !isset( $options['output'] ) ) {
 	$options['output'] = 'default';
 }
 
-/** Print a usage message*/
+/**
+ * Print a usage message.
+ */
 function showUsage() {
 	$msg = <<<END
 	--help : this help message

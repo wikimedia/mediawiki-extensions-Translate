@@ -49,7 +49,6 @@ $wgAutoloadClasses['TranslateRcFilter'] = $dir . 'RcFilter.php';
  * These are not autoloaded by default in MediaWiki core.
  * @{
  */
-
 $wgAutoloadClasses['languages'] = $IP . '/maintenance/language/languages.inc';
 $wgAutoloadClasses['MessageWriter'] = $IP . '/maintenance/language/writeMessagesArray.inc';
 /**@}*/
