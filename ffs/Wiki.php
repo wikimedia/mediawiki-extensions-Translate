@@ -8,6 +8,9 @@
  * @file
  */
 
+/**
+ * @todo Needs documentation.
+ */
 class WikiFormatReader extends SimpleFormatReader {
 	// Set by creater
 	public $variableName = 'messages';
@@ -71,6 +74,9 @@ class WikiFormatReader extends SimpleFormatReader {
 
 }
 
+/**
+ * @todo Needs documentation.
+ */
 class WikiFormatWriter extends SimpleFormatWriter {
 	public $commaToArray = false;
 
@@ -155,6 +161,7 @@ HEADER
 		// We copy only relevant translations to this new array
 		$new = array();
 		$mangler = $this->group->getMangler();
+
 		foreach ( $messages as $key => $m ) {
 			$key = $mangler->unMangle( $key );
 			# Remove fuzzy markings before export

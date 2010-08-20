@@ -12,6 +12,8 @@
 /**
  * This writer creates standard compliant XLIFF documents. Currently it only
  * writes little more than what is mandatory.
+ *
+ * @deprecated Old style writer.
  */
 class XliffFormatWriter extends SimpleFormatWriter {
 	// Re-implemented

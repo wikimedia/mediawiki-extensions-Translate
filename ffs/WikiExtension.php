@@ -2,12 +2,15 @@
 /**
  * Multiple language wiki file format handler.
  *
+ * @file
  * @author Niklas Laxström
  * @copyright Copyright © 2008, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
- * @file
  */
 
+/**
+ * @todo Needs documentation and conversion to new style message group.
+ */
 class WikiExtensionFormatReader extends WikiFormatReader {
 	public function parseSections( $var ) {
 		if ( $this->filename === false ) {
@@ -77,6 +80,9 @@ class WikiExtensionFormatReader extends WikiFormatReader {
 	}
 }
 
+/**
+ * @todo Needs documentation and conversion to new style message group.
+ */
 class WikiExtensionFormatWriter extends WikiFormatWriter {
 	// Inherit
 	protected $authors;

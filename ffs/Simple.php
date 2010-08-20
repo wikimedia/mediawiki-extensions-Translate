@@ -8,6 +8,9 @@
  * @file
  */
 
+/**
+ * @todo Needs documentation.
+ */
 class SimpleFormatReader {
 	const SEPARATOR = '----';
 	const AUTHORPREFIX = 'Author: ';
@@ -94,6 +97,9 @@ class SimpleFormatReader {
 	}
 }
 
+/**
+ * @todo Needs documentation.
+ */
 class SimpleFormatWriter {
 	const SEPARATOR = '----';
 	const AUTHORPREFIX = 'Author: ';
@@ -147,6 +153,7 @@ class SimpleFormatWriter {
 
 			wfMkdirParents( dirname( $target ) );
 			$handle = fopen( $target, 'wt' );
+
 			if ( $handle === false ) {
 				throw new MWException( "Unable to open target for writing" );
 			}
@@ -229,11 +236,14 @@ class SimpleFormatWriter {
 
 	protected function formatAuthors( $prefix, $code ) {
 		// Check if there is any authors at all
-		if ( empty( $this->authors[$code] ) ) return '';
+		if ( empty( $this->authors[$code] ) ) {
+			return '';
+		}
 
 		$groupId = $this->group->getId();
 		$authors = $this->authors[$code];
 		$authors = $this->filterAuthors( $authors, $code, $groupId );
+
 		if ( empty( $authors ) ) {
 			return '';
 		}
@@ -256,6 +266,7 @@ class SimpleFormatWriter {
 
 	protected function exportMessages( $handle, MessageCollection $collection ) {
 		$mangler = $this->group->getMangler();
+
 		foreach ( $collection as $item ) {
 			$key = $mangler->unMangle( $item->key() );
 			$value = str_replace( TRANSLATE_FUZZY, '', $item->translation() );
