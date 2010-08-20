@@ -1,6 +1,7 @@
 <?php
 /**
- * Support for Voctrain: http://www.
+ * Support for Voctrain vocabulary trainer.
+ * http://www.omegawiki.org/extensions/Wikidata/util/voctrain/trainer.php
  *
  * @file
  * @ingroup Extensions
@@ -23,7 +24,6 @@ class VoctrainMessageGroup extends ExtensionMessageGroup {
 }
 
 class VoctrainMessageChecker extends MessageChecker {
-
 	/**
 	 * Checks for missing and unknown parameters
 	 * @param $messages Iterable list of TMessages.

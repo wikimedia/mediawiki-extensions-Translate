@@ -1,13 +1,16 @@
 <?php
-
 /**
  * Support for OpenLayers.
  *
+ * @file
  * @author Robert Leverington <robert@rhl.me.uk>
  * @copyright Copyright © 2009 Robert Leverington
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+/**
+ * @deprecated Use new style class OpenLayersFFS.
+ */
 class OpenLayersMessageGroup extends MessageGroupOld {
 	protected $label = 'OpenLayers (slippy maps)';
 	protected $id    = 'out-openlayers';

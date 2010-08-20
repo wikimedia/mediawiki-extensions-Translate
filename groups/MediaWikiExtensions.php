@@ -1,5 +1,16 @@
 <?php
+/**
+ * Classes for MediaWiki extension translation.
+ *
+ * @file
+ * @author Niklas Laxström
+ * @copyright Copyright © 2008-2010, Niklas Laxström
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ */
 
+/**
+ * @todo Needs documentation.
+ */
 class PremadeMediawikiExtensionGroups {
 	protected $groups;
 	protected $definitionFile = null;
@@ -221,6 +232,12 @@ class PremadeMediawikiExtensionGroups {
 	}
 }
 
+/**
+ * Adds a message group containing all supported  MediaWiki extensions in the
+ * Wikimedia Subversion repository.
+ *
+ * @todo Needs documentation.
+ */
 class AllMediawikiExtensionsGroup extends MessageGroupOld {
 	protected $label = 'MediaWiki extensions';
 	protected $id    = 'ext-0-all';
@@ -304,6 +321,12 @@ class AllMediawikiExtensionsGroup extends MessageGroupOld {
 	}
 }
 
+/**
+ * Adds a message group containing all supported MediaWiki extensions used by
+ * wikiHow.
+ *
+ * @todo Needs documentation.
+ */
 class AllWikihowExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $label = 'Extensions used by Wikihow'; // currently using 1.12.0
 	protected $id    = 'ext-0-wikihow';
@@ -347,6 +370,12 @@ class AllWikihowExtensionsGroup extends AllMediawikiExtensionsGroup {
 	}
 }
 
+/**
+ * Adds a message group containing all supported MediaWiki extensions used by
+ * Wikimedia.
+ *
+ * @todo Needs documentation.
+ */
 class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $label = 'Extensions used by Wikimedia';
 	protected $id    = 'ext-0-wikimedia';
@@ -478,6 +507,12 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 	}
 }
 
+/**
+ * Adds a message group containing all supported MediaWiki extensions used by
+ * WikiTravel.
+ *
+ * @todo Needs documentation.
+ */
 class AllWikitravelExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $label = 'Extensions used by Wikitravel'; // currently using 1.11.2
 	protected $id    = 'ext-0-wikitravel';
@@ -511,6 +546,12 @@ class AllWikitravelExtensionsGroup extends AllMediawikiExtensionsGroup {
 	}
 }
 
+/**
+ * Adds a message group containing all components of the MediaWiki extension
+ * Collection.
+ *
+ * @todo Needs documentation.
+ */
 class AllCollectionExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $label = 'Collection';
 	protected $id    = 'ext-collection-0-all';
@@ -535,6 +576,12 @@ class AllCollectionExtensionsGroup extends AllMediawikiExtensionsGroup {
 	}
 }
 
+/**
+ * Adds a message group containing all components of the MediaWiki extension
+ * FlaggedRevs.
+ *
+ * @todo Needs documentation.
+ */
 class AllFlaggedRevsExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $label = 'FlaggedRevs';
 	protected $id    = 'ext-flaggedrevs-0-all';
@@ -568,6 +615,12 @@ class AllFlaggedRevsExtensionsGroup extends AllMediawikiExtensionsGroup {
 	}
 }
 
+/**
+ * Adds a message group containing all components of the MediaWiki extension
+ * ReaderFeedback.
+ *
+ * @todo Needs documentation.
+ */
 class AllReaderFeedbackExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $label = 'ReaderFeedback';
 	protected $id    = 'ext-readerfeedback-0-all';
@@ -593,6 +646,12 @@ class AllReaderFeedbackExtensionsGroup extends AllMediawikiExtensionsGroup {
 	}
 }
 
+/**
+ * Adds a message group containing all components of the MediaWiki extension
+ * SocialProfile.
+ *
+ * @todo Needs documentation.
+ */
 class AllSocialProfileExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $label = 'Social Profile';
 	protected $id    = 'ext-socialprofile-0-all';
@@ -623,6 +682,12 @@ class AllSocialProfileExtensionsGroup extends AllMediawikiExtensionsGroup {
 	}
 }
 
+/**
+ * Adds a message group containing all components of the MediaWiki extension
+ * Translate.
+ *
+ * @todo Needs documentation.
+ */
 class AllTranslateExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $label = 'Translate';
 	protected $id    = 'ext-translate-0-all';
@@ -648,6 +713,12 @@ class AllTranslateExtensionsGroup extends AllMediawikiExtensionsGroup {
 	}
 }
 
+/**
+ * Adds a message group containing all components of the MediaWiki extension
+ * Uniwiki.
+ *
+ * @todo Needs documentation.
+ */
 class AllUniwikiExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $label = 'Uniwiki';
 	protected $id    = 'ext-uniwiki-0-all';
@@ -682,6 +753,12 @@ class AllUniwikiExtensionsGroup extends AllMediawikiExtensionsGroup {
 	}
 }
 
+/**
+ * Adds a message group containing all components of the Wikimedia Usability
+ * Initiative.
+ *
+ * @todo Needs documentation.
+ */
 class AllUsabilityInitiativeExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $label = 'Usability Initiative';
 	protected $id    = 'ext-ui-0-all';

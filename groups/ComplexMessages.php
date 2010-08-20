@@ -1,5 +1,16 @@
 <?php
+/**
+ * Classes for complex messages (MediaWiki special page aliases, namespace names, magic words).
+ *
+ * @file
+ * @author Niklas Laxström
+ * @copyright Copyright © 2008-2010, Niklas Laxström
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ */
 
+/**
+ * @todo Needs documentation.
+ */
 abstract class ComplexMessages {
 	const MSG = 'translate-magic-cm-';
 
@@ -510,6 +521,9 @@ abstract class ComplexMessages {
 	}
 }
 
+/**
+ * @todo Needs documentation.
+ */
 class SpecialPageAliasesCM extends ComplexMessages {
 	protected $id = SpecialMagic::MODULE_SPECIAL;
 	protected $databaseMsg = 'sp-translate-data-SpecialPageAliases';
@@ -587,6 +601,9 @@ class SpecialPageAliasesCM extends ComplexMessages {
 	}
 }
 
+/**
+ * @todo Needs documentation.
+ */
 class MagicWordsCM extends ComplexMessages {
 	protected $id = SpecialMagic::MODULE_MAGIC;
 	protected $firstMagic = true;
@@ -635,6 +652,9 @@ class MagicWordsCM extends ComplexMessages {
 	}
 }
 
+/**
+ * @todo Needs documentation.
+ */
 class NamespaceCM extends ComplexMessages {
 	protected $id = SpecialMagic::MODULE_NAMESPACE;
 	protected $elementsInArray = false;
