@@ -1,15 +1,20 @@
 <?php
 /**
- * Implementation of Special:TranslationChanges special page. Gives an overview
- * per message group of translations in a given number of hours.
+ * Contains logic for special page Special:TranslationChanges 
  *
- * @ingroup SpecialPage
+ * @file
  * @author Niklas Laxström
  * @author Siebrand Mazeland
  * @copyright  Copyright © 2008-2010, Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+/**
+ * Implementation of Special:TranslationChanges special page. Gives an overview
+ * per message group of translations in a given number of hours.
+ *
+ * @ingroup SpecialPage
+ */
 class SpecialTranslationChanges extends SpecialPage {
 	const MSG = 'translationchanges-';
 

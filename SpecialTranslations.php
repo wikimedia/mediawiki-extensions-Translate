@@ -1,15 +1,20 @@
 <?php
 /**
- * Implements a special page which shows all translations for a message.
- * Bits taken from SpecialPrefixindex.php and TranslateTasks.php
+ * Contains logic for special page Special:Translations 
  *
- * @ingroup SpecialPage
+ * @file
  * @author Siebrand Mazeland
  * @author Niklas Laxstörm
  * @copyright Copyright © 2008-2010 Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+/**
+ * Implements a special page which shows all translations for a message.
+ * Bits taken from SpecialPrefixindex.php and TranslateTasks.php
+ *
+ * @ingroup SpecialPage
+ */
 class SpecialTranslations extends SpecialAllpages {
 	function __construct() {
 		parent::__construct( 'Translations' );
@@ -17,7 +22,7 @@ class SpecialTranslations extends SpecialAllpages {
 
 	/**
 	 * Entry point : initialise variables and call subfunctions.
-	 * @param $par String: becomes "MediaWiki:Allmessages" when called like
+	 * @param $par \string Message key. Becomes "MediaWiki:Allmessages" when called like
 	 *             Special:Translations/MediaWiki:Allmessages (default null)
 	 */
 	function execute( $par ) {
@@ -62,8 +67,11 @@ class SpecialTranslations extends SpecialAllpages {
 	}
 
 	/**
-	* Message input fieldset
-	*/
+	 * Message input fieldset
+	 *
+	 * @param $title Title (default: null)
+	 * @return \string HTML for fieldset.
+	 */
 	function namespaceMessageForm( Title $title = null ) {
 		global $wgContLang, $wgScript, $wgTranslateMessageNamespaces;
 
@@ -107,6 +115,12 @@ class SpecialTranslations extends SpecialAllpages {
 		return $out;
 	}
 
+	/**
+	 * Builds a table with all translations of $title.
+	 *
+	 * @param $title Title (default: null)
+	 * @return void
+	 */
 	function showTranslations( Title $title ) {
 		global $wgOut, $wgUser;
 
@@ -227,12 +241,23 @@ class SpecialTranslations extends SpecialAllpages {
 		$wgOut->addScript( Skin::makeVariablesScript( $vars ) );
 	}
 
+	/**
+	 * Get code for a page name
+	 *
+	 * @param $name \string Page title (f.e. "MediaWiki:Main_page/nl").
+	 * @return \string Language code
+	 */
 	private function getCode( $name ) {
 		$from = strrpos( $name, '/' );
 
 		return substr( $name, $from + 1 );
 	}
 
+	/**
+	 * Add JavaScript assets
+	 *
+	 * @return void
+	 */
 	private static function includeAssets() {
 		global $wgOut;
 

@@ -3,12 +3,16 @@
  * Tools for edit page view to aid translators. This implements the so called
  * old style editing, which extends the normal edit page.
  *
+ * @file
  * @author Niklas Laxström
  * @author Siebrand Mazeland
  * @copyright Copyright © 2007-2010 Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+/**
+ * @todo Needs documentation.
+ */
 class TranslateEditAddons {
 	const MSG = 'translate-edit-';
 
@@ -33,6 +37,7 @@ class TranslateEditAddons {
 
 		if ( $group instanceof MessageGroupBase ) {
 			$cache = new MessageGroupCache( $group );
+
 			if ( !$cache->exists() ) {
 				return true;
 			}
@@ -96,6 +101,7 @@ class TranslateEditAddons {
 
 		$title = Title::makeTitleSafe( $ns, "$next/$code" );
 		$nextLink = wfMsgHtml( 'translate-edit-goto-no-next' );
+
 		if ( $next !== null && $next !== true ) {
 			$params['loadgroup'] = $id;
 
@@ -130,6 +136,7 @@ class TranslateEditAddons {
 </ul><hr />
 <div class="mw-translate-definition-preview">$def</div>
 EOEO;
+
 		return true;
 	}
 

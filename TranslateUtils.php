@@ -17,9 +17,9 @@ class TranslateUtils {
 	/**
 	 * Does quick normalisation of message name so that in can be looked from the
 	 * database.
-	 * @param $message Name of the message
-	 * @param $code Language code in lower case and with dash as delimieter
-	 * @return The normalised title as a string.
+	 * @param $message \string Name of the message
+	 * @param $code \string Language code in lower case and with dash as delimieter
+	 * @return \string The normalised title as a string.
 	 */
 	public static function title( $message, $code ) {
 		global $wgContLang;
@@ -28,6 +28,7 @@ class TranslateUtils {
 		 * Cache some amount of titles for speed.
 		 */
 		static $cache = array();
+
 		if ( !isset( $cache[$message] ) ) {
 			$cache[$message] = $wgContLang->ucfirst( $message );
 		}
@@ -59,8 +60,8 @@ class TranslateUtils {
 	/**
 	 * Fetches contents for titles in given namespace
 	 *
-	 * @param $titles Mixed: string or array of titles.
-	 * @param $namespace Mixed: the number of the namespace to look in for.
+	 * @param $titles Mixed String or array of titles.
+	 * @param $namespace Mixed The number of the namespace to look in for.
 	 */
 	public static function getContents( $titles, $namespace ) {
 		$dbr = wfGetDB( DB_SLAVE );
@@ -91,9 +92,10 @@ class TranslateUtils {
 	/**
 	 * Fetches recent changes for titles in given namespaces
 	 *
-	 * @param $hours Int: number of hours.
-	 * @param $bots  Bool: should bot edits be included.
-	 * @param $ns    Array: array of namespace IDs.
+	 * @param $hours \int Number of hours.
+	 * @param $bots  \bool Should bot edits be included.
+	 * @param $ns    \array Array of namespace IDs.
+	 * @return \array List of recent changes.
 	 */
 	public static function translationChanges( $hours = 24, $bots = false, $ns = null ) {
 		global $wgTranslateMessageNamespaces;
@@ -108,6 +110,7 @@ class TranslateUtils {
 
 		$fields = 'rc_title, rc_timestamp, rc_user_text, rc_namespace';
 
+		// @todo Raw SQL
 		$sql = "SELECT $fields, substring_index(rc_title, '/', -1) as lang FROM $recentchanges " .
 		"WHERE rc_timestamp >= '{$cutoff}' " .
 		( $bots ? '' : 'AND rc_bot = 0 ' ) .
@@ -218,6 +221,7 @@ class TranslateUtils {
 		$normkey = str_replace( " ", "_", strtolower( "$namespace:$key" ) );
 
 		$group = isset( self::$mi[$normkey] ) ? self::$mi[$normkey] : null;
+
 		if ( is_array( $group ) ) {
 			$group = $group[0];
 		}
@@ -249,7 +253,10 @@ class TranslateUtils {
 
 	public static function messageIndex() {
 		$filename = self::cacheFile( 'translate_messageindex.cdb' );
-		if ( !file_exists( $filename ) ) MessageIndexRebuilder::execute();
+
+		if ( !file_exists( $filename ) ) {
+			MessageIndexRebuilder::execute();
+		}
 
 		if ( file_exists( $filename ) ) {
 			$reader = CdbReader::open( $filename );
@@ -260,6 +267,7 @@ class TranslateUtils {
 		}
 
 		self::$mi = $keyToGroup;
+
 		return $keyToGroup;
 	}
 
@@ -275,8 +283,8 @@ class TranslateUtils {
 	 * \<br /> and occurances of leading and trailing and multiple consecutive
 	 * spaces to non-breaking spaces.
 	 *
-	 * @param $msg Plain text string.
-	 * @return Text string that is ready for outputting.
+	 * @param $msg \string Plain text string.
+	 * @return \string Text string that is ready for outputting.
 	 */
 	public static function convertWhiteSpaceToHTML( $msg ) {
 		$msg = htmlspecialchars( $msg );
@@ -284,6 +292,7 @@ class TranslateUtils {
 		$msg = preg_replace( '/ $/m', '&#160;', $msg );
 		$msg = preg_replace( '/  /', '&#160; ', $msg );
 		$msg = str_replace( "\n", '<br />', $msg );
+
 		return $msg;
 	}
 
@@ -303,8 +312,8 @@ class TranslateUtils {
 
 	/**
 	 * Construct the web address to given asset.
-	 * @param $path String: path to the resource relative to extensions root directory.
-	 * @return String: (full or partial) web path.
+	 * @param $path \string Path to the resource relative to extensions root directory.
+	 * @return \string Full or partial web path.
 	 */
 	public static function assetPath( $path ) {
 		global $wgExtensionAssetsPath;

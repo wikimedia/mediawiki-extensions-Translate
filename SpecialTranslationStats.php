@@ -1,14 +1,17 @@
 <?php
 /**
- * Includable special page for generating graphs on translations.
+ * Contains logic for special page Special:TranslationStats 
  *
- * @ingroup SpecialPage
+ * @file
  * @author Niklas Laxström
  * @copyright Copyright © 2008-2010, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
 /**
+ * Includable special page for generating graphs on translations.
+ *
+ * @ingroup SpecialPage
  * @todo Needs documentation.
  */
 class SpecialTranslationStats extends SpecialPage {
@@ -618,7 +621,6 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 
 		return substr( $timestamp, 0, -$cut );
 	}
-
 }
 
 /**

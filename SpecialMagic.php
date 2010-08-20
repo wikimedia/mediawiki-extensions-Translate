@@ -1,14 +1,19 @@
 <?php
 /**
- * This special page helps with the translations of MediaWiki features that are
- * not in the main messages array.
+ * Contains logic for special page Special:AdvancedTranslate
  *
- * @ingroup SpecialPage
+ * @file
  * @author Niklas Laxström
  * @copyright Copyright © 2008-2010, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+/**
+ * This special page helps with the translations of MediaWiki features that are
+ * not in the main messages array (special page aliases, magic words, namespace names).
+ *
+ * @ingroup SpecialPage
+ */
 class SpecialMagic extends SpecialPage {
 	/**
 	 * Message prefix for translations
@@ -78,9 +83,9 @@ class SpecialMagic extends SpecialPage {
 
 	/**
 	 * Helper function get module selector.
-	 * Returns the HTML5-compatible select-element.
-	 * @param $selectedId which value should be selected by default
-	 * @return string
+	 *
+	 * @param $selectedId \string Which value should be selected by default
+	 * @return \string HTML5-compatible select-element.
 	 */
 	protected function moduleSelector( $selectedId ) {
 		$selector = new HTMLSelector( 'module', 'module', $selectedId );

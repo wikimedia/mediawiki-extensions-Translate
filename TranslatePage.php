@@ -1,15 +1,20 @@
 <?php
 /**
- * Implements the core of Translate extension - a special page which shows
- * a list of messages in a format defined by Tasks.
+ * Contains logic for special page Special:Translate 
  *
- * @ingroup SpecialPage
+ * @file
  * @author Niklas Laxström
  * @author Siebrand Mazeland
  * @copyright Copyright © 2006-2010 Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+/**
+ * Implements the core of Translate extension - a special page which shows
+ * a list of messages in a format defined by Tasks.
+ *
+ * @ingroup SpecialPage
+ */
 class SpecialTranslate extends SpecialPage {
 	const MSG = 'translate-page-';
 
@@ -298,6 +303,7 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	private $paging = null;
+
 	public function cbAddPagingNumbers( $start, $count, $total ) {
 		$this->paging = array(
 			'start' => $start,
@@ -450,7 +456,6 @@ class SpecialTranslate extends SpecialPage {
 
 		$array[$key] = $value;
 	}
-
 
 	public function groupInformation() {
 		$out = '';

@@ -8,6 +8,9 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+/**
+ * @todo Needs documentation.
+ */
 class SpecialManageGroups {
 	protected $skin, $user, $out;
 	/**
@@ -117,6 +120,9 @@ class SpecialManageGroups {
 		return SpecialPage::getTitleFor( 'Translate', 'manage' );
 	}
 
+	/**
+	 * @todo Very long code block; split up.
+	 */
 	public function importForm( $cache, $group, $code ) {
 		$this->setSubtitle( $group, $code );
 
@@ -423,6 +429,7 @@ class SpecialManageGroups {
 
 	protected function setSubtitle( $group, $code ) {
 		global $wgLang;
+
 		$links[] = $this->skin->link(
 			$this->getTitle(),
 			wfMsgHtml( 'translate-manage-subtitle' )

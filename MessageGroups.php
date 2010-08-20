@@ -137,9 +137,9 @@ abstract class MessageGroupOld implements MessageGroup {
 	 * Returns of stored translation of message specified by the $key in language
 	 * code $code.
 	 *
-	 * @param $key Key of the message.
-	 * @param $code Language code.
-	 * @return Stored translation or null.
+	 * @param $key \string Key of the message.
+	 * @param $code \string Language code.
+	 * @return Mixed List of stored translation or \null.
 	 */
 	public function getMessage( $key, $code ) {
 		if ( !isset( $this->messages[$code] ) ) {
@@ -193,8 +193,8 @@ abstract class MessageGroupOld implements MessageGroup {
 	/**
 	 * Creates a new MessageCollection for this group.
 	 *
-	 * @param $code The langauge code for this collection.
-	 * @param $unique Bool: wether to build collection for messages unique to this
+	 * @param $code \string The langauge code for this collection.
+	 * @param $unique \bool Wether to build collection for messages unique to this
 	 *                group only.
 	 */
 	public function initCollection( $code, $unique = false ) {
@@ -462,8 +462,9 @@ class ExtensionMessageGroup extends MessageGroupOld {
 	/**
 	 * This function loads messages for given language for further use.
 	 *
-	 * @param $code Language code
+	 * @param $code \string Language code
 	 * @throws MWException If loading fails.
+	 * @return \array List of messages.
 	 */
 	public function load( $code ) {
 		$reader = $this->getReader( $code );
@@ -733,8 +734,9 @@ class WikiMessageGroup extends MessageGroupOld {
 	/**
 	 * Constructor.
 	 *
-	 * @param $id Unique id for this group.
-	 * @param $source Mediawiki message that contains list of message keys.
+	 * @param $id \string Unique id for this group.
+	 * @param $source \string Mediawiki message that contains list of message keys.
+	 * @return \void
 	 */
 	public function __construct( $id, $source ) {
 		parent::__construct();
@@ -770,9 +772,9 @@ class WikiMessageGroup extends MessageGroupOld {
 	 * Returns of stored translation of message specified by the $key in language
 	 * code $code.
 	 *
-	 * @param $key Key of the message.
-	 * @param $code Language code.
-	 * @return Stored translation or null.
+	 * @param $key \string Key of the message.
+	 * @param $code \string Language code.
+	 * @todo Document return value (<code>isset( $data[$title][0] ) ? $data[$title][0] : null;<code> from TranslateUtils::getMessageContent).
 	 */
 	public function getMessage( $key, $code ) {
 		global $wgContLang;
@@ -857,9 +859,9 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 	 * Returns of stored translation of message specified by the $key in language
 	 * code $code.
 	 *
-	 * @param $key Key of the message.
-	 * @param $code Language code.
-	 * @return Stored translation or null.
+	 * @param $key \string Key of the message.
+	 * @param $code \string Language code.
+	 * @return Mixed Stored translation or null.
 	 */
 	public function getMessage( $key, $code ) {
 		if ( $code === 'en' ) {
