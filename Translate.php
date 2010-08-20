@@ -247,6 +247,11 @@ $wgTranslateTasks = array(
 
 /**
  * Enable page translation feature.
+ *
+ * Page translation feature allows structured translation of wiki pages
+ * with simple markup and automatic tracking of changes.
+ *
+ * @defgroup PageTranslation Page translation
  * @see http://translatewiki.net/wiki/Translating:Page_translation_feature
  */
 $wgEnablePageTranslation = false;
