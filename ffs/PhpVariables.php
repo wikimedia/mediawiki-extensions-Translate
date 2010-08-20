@@ -4,7 +4,7 @@
  *
  * @author Niklas Laxström
  * @author Siebrand Mazeland
- * @copyright Copyright © 2008, Niklas Laxström, Siebrand Mazeland
+ * @copyright Copyright © 2008-2010, Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  * @file
  */
@@ -20,10 +20,8 @@ class PhpVariablesFormatReader extends SimpleFormatReader {
 	/**
 	 * Reads all \@author tags from the file and returns array of authors.
 	 *
-	 * @param $filename From which file to get the authors.
 	 * @return Array of authors.
-	 *
-	 * FIXME: possible to refactor to reduce duplication? (copy from Wiki.php)
+	 * @todo Possible to refactor to reduce duplication? (copy from Wiki.php)
 	 */
 	public function parseAuthors() {
 		if ( $this->filename === false ) {
@@ -42,7 +40,7 @@ class PhpVariablesFormatReader extends SimpleFormatReader {
 	 * Basically the same, with different author prefix and separator between
 	 * headers and messages.
 	 *
-	 * FIXME: possible to refactor to reduce duplication?
+	 * @todo Possible to refactor to reduce duplication?
 	 */
 	protected function parseHeader() {
 		$authors = array();

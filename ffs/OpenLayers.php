@@ -5,6 +5,7 @@
  * @author Robert Leverington
  * @copyright Copyright © 2009 Robert Leverington
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * @file
  */
 
 class OpenLayersFormatReader extends SimpleFormatReader {
@@ -41,19 +42,20 @@ class OpenLayersFormatReader extends SimpleFormatReader {
 	private function leftTrim( $string ) {
 		$string = ltrim( $string );
 		$string = ltrim( $string, '"' );
-
 		return $string;
 	}
 
 	/**
 	 * Parse OpenLayer JavaScript language class.
-	 * Known issues:
+	 *
+	 * @param $mangler StringMangler
+	 * @return \array Messages from the file.
+	 *
+	 * @todo Known issues:
 	 *   - It is a requirement for key names to be enclosed in single
 	 *     quotation marks, and for messages to be enclosed in double.
 	 *   - The last key-value pair must have a comma at the end.
 	 *   - Uses seperate $this->leftTrim() function, this is undersired.
-	 * @params $mangler StringMangler
-	 * @return Array: Messages from file.
 	 */
 	public function parseMessages( StringMangler $mangler ) {
 		$data = file_get_contents( $this->filename );
@@ -110,6 +112,7 @@ class OpenLayersFormatReader extends SimpleFormatReader {
 }
 
 class OpenLayersFormatWriter extends SimpleFormatWriter {
+
 	/**
 	 * Export a languages messages.
 	 * @param $target File handler.
