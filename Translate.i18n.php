@@ -362,6 +362,7 @@ Details: $1',
 
 /** Message documentation (Message documentation)
  * @author Ans
+ * @author Assele
  * @author Darth Kule
  * @author Dbc334
  * @author EugeneZelenko
@@ -1918,10 +1919,48 @@ $messages['ba'] = array(
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Түбәндәге {{PLURAL:$2|тэгты|тэгтарҙы}} төҙәтегеҙ, зинһар:
 <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-plural' => 'Сығанаҡ <nowiki>{{PLURAL:}}</nowiki> ҡуллана, ә тәржемә ҡулланмай.',
+	'translate-checks-format' => 'Был тәржемә билдәләмәһе менән тап килмәй йәки синтаксик хаталары бар: $1',
+	'translate-checks-fudforum-syntax' => 'Был проектта  <nowiki>$2</nowiki> урынына  <nowiki>$1</nowiki> ҡулланырға.',
+	'translate-pref-nonewsletter' => 'Минең электрон почтаға яңылыҡтар ебәрмәҫкә',
+	'translate-pref-editassistlang' => 'Ярҙамсы телдәр:',
+	'prefs-translate' => 'Тәржемә көйләүҙәре',
+	'translate-pref-editassistlang-help' => 'Ошо телдәргә тәржемәләр яҙмаларҙы үҙгәрткән ваҡытта күрһәтеләсәк.
+Ғәҙәттәге исемлек һеҙ һайлаған телгә бәйле.',
+	'translate-pref-editassistlang-bad' => 'Исемлектәге тел коды дөрөҫ түгел:
+<nowiki>$1</nowiki>.',
+	'translate-pref-jsedit' => 'Яҡшыртылған тәржемә ҡоралы (JavaScript)',
+	'right-translate' => 'Тәржемә интерфейсы ярҙамында үҙгәртеү',
+	'right-translate-manage' => 'Тәржемә төркөмдәрен мөхәррирләү',
+	'translate-rc-translation-filter' => 'Тәржемәләрҙе һайлап алырға:',
+	'translate-rc-translation-filter-no' => 'Барыһы ла',
+	'translate-rc-translation-filter-only' => 'Тәржемәләр генә',
+	'translate-rc-translation-filter-filter' => 'Тәржемәләрҙән башҡалар',
+	'translate-rc-translation-filter-site' => 'Cайттың система яҙмалары ғына',
 	'translationstats' => 'Тәржемәләр статисикаһы',
 	'translate-stats-edits' => 'Үҙгәртеүҙәр',
 	'translate-stats-users' => 'Тәржемәселәр',
+	'translate-statsf-intro' => 'Был формала ябай статистика рәсеме ҡарарға мөмкин.
+Статистика сиктәрен бөтә параметрҙар буйынса билдәләргә була.',
+	'translate-statsf-options' => 'Рәсемде көйләү',
+	'translate-statsf-width' => 'Киңлек (пикселдарҙа)',
+	'translate-statsf-height' => 'Бейеклек (пикселдарҙа)',
+	'translate-statsf-days' => 'Ваҡыт арауығы (көндәрҙә)',
+	'translate-statsf-scale' => 'Ентеклелек  дәрәжәһе',
+	'translate-statsf-scale-months' => 'Айҙар',
+	'translate-statsf-scale-weeks' => 'Аҙналар',
+	'translate-statsf-scale-days' => 'Көндәр',
+	'translate-statsf-scale-hours' => 'Сәғәттәр',
+	'translate-statsf-count' => 'Үлсәм',
+	'translate-statsf-count-edits' => 'Үҙгәртеүҙәр һаны',
+	'translate-statsf-count-users' => 'Әүҙем тәржемәселәр һаны',
+	'translate-statsf-count-registrations' => 'Яңы ҡатнашыусылар',
+	'translate-statsf-language' => 'Тел кодтары өтөр аша:',
+	'translate-statsf-group' => 'Төркөм кодтары өтөр аша:',
+	'translate-statsf-submit' => 'Ҡарап сығырға',
+	'translate-tag-category' => 'Тәржемә ителә торған биттәр',
 	'translations' => 'Бөтә тәржемәләр',
+	'languagestats' => 'Тел статистикаһы',
 	'languagestats-summary' => 'Был биттә бөтә төркөмдәр өсөн һайланған телдә тәржемәләр статистикаһы күрһәтелгән.',
 	'languagestats-stats-for' => '$1 теле өсөн тәржемәләр статистикаһы ($2).',
 	'languagestats-recenttranslations' => 'яңыраҡ эшләнгән тәржемәләр',
@@ -1932,6 +1971,29 @@ $messages['ba'] = array(
 	'translate-total' => 'Яҙмалар',
 	'translate-total-tooltip' => 'Был төркөмдәге бөтә яҙмалар һаны',
 	'translate-untranslated' => 'Тәржемә ителмәгәндәр',
+	'translate-untranslated-tooltip' => 'Был төркөмдәге тәржемә ителмәгән яҙмаларҙың дөйөм һаны.
+Иҫкергән тип билдәләнгән яҙмаларҙы ла үҙ эсенә ала.',
+	'translate-percentage-complete' => 'Тәржемә ителгәндәр',
+	'translate-percentage-complete-tooltip' => 'Төркөмдөң тәржемә ителгән һәм иҫкергән тип билдәләнмәгән яҙмалары өлөшө.',
+	'translate-percentage-fuzzy' => 'Иҫкергән',
+	'translate-percentage-fuzzy-tooltip' => 'Төркөмдөң тәржемә ителгән һәм иҫкергән тип билдәләнгән яҙмалары өлөшө.
+Яҙма йә уның инглиз телендәге сығанағы үҙгәрһә, йә автоматик тикшереүҙе үтмәһә, йә кемдер уны иҫкергән тип билдәләһә иҫкергән тип иҫәпләнә.',
+	'translate-nothing-to-do' => 'Бөтә мөмкин булған тәржемәләр яһалған булырға тейеш.
+[[Special:Translate|{{int:translate}}]] ярҙамында яҙмаларҙы тикшерә алаһығыҙ.',
+	'translate-js-next' => 'Һаҡларға һәм сираттағыны асырға',
+	'translate-js-nonext' => 'Был яҙма әлеге биттә аҙаҡҡыһы булды.',
+	'translate-js-skip' => 'Сираттағыға күсергә',
+	'translate-js-save-failed' => 'Яҙҙырып ҡуйыу үтәлмәне. Был хата тураһында хәбәр итегеҙ, зинһар.',
+	'translate-js-history' => 'Тәржемә тарихы',
+	'translate-gs-pos' => 'Урын',
+	'translate-gs-code' => 'Код',
+	'translate-gs-continent' => 'Донъя өлөшө',
+	'translate-gs-speakers' => 'Һөйләшеүселәр',
+	'translate-gs-score' => 'Билдә',
+	'translate-gs-multiple' => 'Бер нисә',
+	'translate-gs-count' => 'Һан',
+	'translate-gs-total' => 'Барыһы',
+	'translate-gs-avgscore' => 'Уртаса билдә',
 );
 
 /** Southern Balochi (بلوچی مکرانی)
@@ -12868,6 +12930,8 @@ $messages['nso'] = array(
 	'translate-statsf-scale-days' => 'Matšatši',
 	'translate-statsf-scale-hours' => 'Diiri',
 	'translate-statsf-count-edits' => 'Palo ya diphetogo',
+	'translate-js-next' => 'Boloka o bule yago latela',
+	'translate-js-skip' => 'Lesa o bule yago latela',
 );
 
 /** Occitan (Occitan)
@@ -16057,6 +16121,7 @@ $messages['sq'] = array(
 
 /** Serbian Cyrillic ekavian (Српски (ћирилица))
  * @author Sasa Stefanovic
+ * @author Жељко Тодоровић
  * @author Михајло Анђелковић
  */
 $messages['sr-ec'] = array(
@@ -16094,8 +16159,8 @@ $messages['sr-ec'] = array(
 	'translate-page-showing' => 'Приказ порука од $1 до $2, од $3.',
 	'translate-page-showing-all' => 'Приказ $1 {{PLURAL:$1|поруке|порука}}.',
 	'translate-page-showing-none' => 'Нема порука у приказу.',
-	'translate-next' => 'Следећа страна',
-	'translate-prev' => 'Претходна страна',
+	'translate-next' => 'Следећа страница',
+	'translate-prev' => 'Претходна страница',
 	'translate-page-description-legend' => 'Информације о групи',
 	'translate-page-edit' => 'измени',
 	'translate-optional' => '(необавезно)',
