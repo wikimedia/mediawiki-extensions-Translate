@@ -1,21 +1,54 @@
 <?php
 /**
- * Message checking framework.
- *
  * @file
- * @author Niklas Laxström
- * @copyright Copyright © 2008-2009, Niklas Laxström
- * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * @defgroup MessageCheckers Message Checkers
  */
 
 /**
- * @todo Documentation needed.
+ * Message checking framework.
+ *
+ * Message checkers try to find common mistakes so that translators can fix
+ * them quickly. To implement your own checks, extend this class and add a
+ * method of the following type:
+ * @code
+ * protected function myCheck( $messages, $code, &$warnings ) {
+ * 	foreach ( $messages as $message ) {
+ * 		$key = $message->key();
+ * 		$translation = $message->translation();
+ * 		if ( strpos( $translation, 'smelly' ) !== false ) {
+ * 			$warnings[$key][] = array(
+ * 				array( 'badword', 'smelly', $key, $code ),
+ * 				'translate-checks-badword', // Needs to be defined in i18n file
+ * 				array( 'PARAMS', 'smelly' ),
+ * 			);
+ * 		}
+ * 	}
+ * }
+ * @endcode
+ * 
+ * Warnings are of format: <pre>
+ * $warnings[$key][] = array(
+ *    array( 'printf', $subcheck, $key, $code ), # check idenfitication
+ *    'translate-checks-parameters-unknown', # check warning message
+ *    array( 'PARAMS', $params ), # optional special param list, formatted later with $wgLang->commaList
+ *    array( 'COUNT', count($params) ), # optional number of params, formatted later with $wgLang->formatNum
+ *    'Any other parameters to the message',
+ * </pre>
+ *
+ * @ingroup MessageCheckers
+ * @author Niklas Laxström
+ * @copyright Copyright © 2008-2009, Niklas Laxström
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 class MessageChecker {
 	protected $checks = array();
 	protected $group  = null;
 	private static $globalBlacklist = null;
 
+	/**
+	 * Cosntructs a suitable checker for given message group.
+	 * @param $group MessageGroup
+	 */
 	public function __construct( MessageGroup $group ) {
 		if ( self::$globalBlacklist === null ) {
 			$file = dirname( __FILE__ ) . '/check-blacklist.php';
@@ -41,24 +74,18 @@ class MessageChecker {
 		$this->group = $group;
 	}
 
+	/**
+	 * Normalises check keys.
+	 * @param $value \string check key
+	 * @return \string normalised check key
+	 */
 	protected function foldValue( $value ) {
 		return str_replace( ' ', '_', strtolower( $value ) );
 	}
 
 	/**
 	 * Set the tests for this checker. Array of callables with descriptive keys.
-	 * The callbacks will be called with parameters:
-	 * - array of TMessages
-	 * - language code
-	 * - array of warnings (by reference)
-	 * To add new warnings, use:
-	 * $warnings[$key][] = array(
-	 *    array( 'printf', $subcheck, $key, $code ), # check idenfitication
-	 *    'translate-checks-parameters-unknown', # check warning message
-	 *    array( 'PARAMS', $params ), # special param list, formatted later with $wgLang->commaList
-	 *    array( 'COUNT', count($params) ), # number of params, formatted later with $wgLang->formatNum
-	 *    'Any other param to the message',
-	 * );
+	 * @param $checks \array List of checks (suitable methods in this class)
 	 */
 	public function setChecks( $checks ) {
 		foreach ( $checks as $k => $c ) {
@@ -70,6 +97,10 @@ class MessageChecker {
 		$this->checks = $checks;
 	}
 
+	/**
+	 * Adds one tests for this checker.
+	 * @see setChecks()
+	 */
 	public function addCheck( $check ) {
 		if ( is_callable( $check ) ) {
 			$this->checks[] = $check;
@@ -80,7 +111,9 @@ class MessageChecker {
 	 * Checks one message, returns array of warnings that can be passed to
 	 * OutputPage::addWikiMsg or similar.
 	 *
-	 * Remember to return array!
+	 * @param $message TMessage
+	 * @param $code \string Language code
+	 * @return \array
 	 */
 	public function checkMessage( TMessage $message, $code ) {
 		$warningsArray = array();
@@ -103,7 +136,9 @@ class MessageChecker {
 
 	/**
 	 * Checks one message, returns true if any check matches.
-	 * @return bool
+	 * @param $message TMessage
+	 * @param $code \string Language code
+	 * @return \bool True if there is a problem, false otherwise.
 	 */
 	public function checkMessageFast( TMessage $message, $code ) {
 		$warningsArray = array();
@@ -120,45 +155,27 @@ class MessageChecker {
 	}
 
 	/**
-	 * Filtering happens after all checks have been run by calling this function.
+	 * Filters warnings defined in check-blacklist.php.
+	 * @param $warningsArray \array List of warnings produces by checkMessage().
+	 * @return \array List of filtered warnings.
 	 */
 	protected function filterWarnings( $warningsArray ) {
 		$groupId = $this->group->getId();
 
-		/**
-		 * There is an array of messages...
-		 */
+		// There is an array of messages...
 		foreach ( $warningsArray as $mkey => $warnings ) {
-			/**
-			 * ... each which has an array of warnings.
-			 */
+			// ... each which has an array of warnings.
 			foreach ( $warnings as $wkey => $warning ) {
 				$check = array_shift( $warning );
-				/**
-				 * Check if the key is blacklisted...
-				 */
+				// Check if the key is blacklisted...
 				foreach ( self::$globalBlacklist as $pattern ) {
-					/**
-					 * ... based on message group
-					 */
 					if ( !$this->match( $pattern['group'], $groupId ) )     continue;
-					/**
-					 * ... based on check
-					 */
 					if ( !$this->match( $pattern['check'], $check[0] ) )    continue;
-					/**
-					 * ... based on subcheck
-					 */
 					if ( !$this->match( $pattern['subcheck'], $check[1] ) ) continue;
-					/**
-					 * ... based on message
-					 */
 					if ( !$this->match( $pattern['message'], $check[2] ) )  continue;
-					/**
-					 * ... based on code
-					 */
 					if ( !$this->match( $pattern['code'], $check[3] ) )     continue;
 
+					// If all of the aboce match, filter the check
 					unset( $warningsArray[$mkey][$wkey] );
 				}
 			}
@@ -169,6 +186,9 @@ class MessageChecker {
 
 	/**
 	 * Matches check information against blacklist pattern.
+	 * @param $pattern \string
+	 * @param $value \string The actual value in the warnings produces by the check
+	 * @return \bool True of the pattern matches the value.
 	 */
 	protected function match( $pattern, $value ) {
 		if ( $pattern === '#' ) {
@@ -183,6 +203,8 @@ class MessageChecker {
 	/**
 	 * Converts the special params to something nice. Currently useless, but
 	 * useful if in the future blacklist can work with parameter level too.
+	 * @param $warnings \array List of warnings
+	 * @return List of warning messages with parameters.
 	 */
 	protected function fixMessageParams( $warnings ) {
 		global $wgLang;
@@ -213,6 +235,9 @@ class MessageChecker {
 
 	/**
 	 * Compares two arrays return items that don't exist in the latter.
+	 * @param $defs \array
+	 * @param $trans \array
+	 * @return Items of $defs that are not in $trans.
 	 */
 	protected static function compareArrays( $defs, $trans ) {
 		$missing = array();
@@ -227,12 +252,11 @@ class MessageChecker {
 	}
 
 	/**
-	 * Example check function.
 	 * Checks for missing and unknown printf formatting characters in
 	 * translations.
-	 * @param $messages Iterable list of TMessages.
-	 * @param $code Language code of the translations.
-	 * @param $warnings Array where warnings are appended to.
+	 * @param $messages \mixed Iterable list of TMessages.
+	 * @param $code \string Language code
+	 * @param $warnings \array Array where warnings are appended to.
 	 */
 	protected function printfCheck( $messages, $code, &$warnings ) {
 		foreach ( $messages as $message ) {
@@ -278,10 +302,9 @@ class MessageChecker {
 	/**
 	 * Checks if the translation has even number of opening and closing
 	 * parentheses. {, [ and ( are checked.
-	 *
-	 * @param $messages Iterable list of TMessages.
-	 * @param $code Language code of the translations.
-	 * @param $warnings Array where warnings are appended to.
+	 * @param $messages \mixed Iterable list of TMessages.
+	 * @param $code \string Language code
+	 * @param $warnings \array Array where warnings are appended to.
 	 */
 	protected function braceBalanceCheck( $messages, $code, &$warnings ) {
 		foreach ( $messages as $message ) {

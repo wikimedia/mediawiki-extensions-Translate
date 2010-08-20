@@ -1,6 +1,4 @@
 # Doxyfile 1.5.6
-#
-# $Id$
 
 #---------------------------------------------------------------------------
 # Project related configuration options
@@ -210,6 +208,7 @@ ALIASES = "type{1}=<b> \1 </b>:" \
 		"types{2}=<b> \1 </b> or <b> \2 </b>:" \
 		"types{3}=<b> \1 </b>, <b> \2 </b>, or <b> \3 </b>:" \
 		"arrayof{2}=<b> Array </b> of \2" \
+		"array=\type{Array}" \
 		"null=\type{Null}" \
 		"boolean=\type{Boolean}" \
 		"bool=\type{Boolean}" \
