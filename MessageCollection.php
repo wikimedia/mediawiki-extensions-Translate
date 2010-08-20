@@ -5,7 +5,7 @@
  * @ingroup Extensions
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2007-2009, Niklas Laxström
+ * @copyright Copyright © 2007-2010, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -238,7 +238,10 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			$keys = $this->filterOnCondition( $keys, $translated, $condition );
 		} elseif ( $filter === 'changed' ) {
 			$keys = $this->filterChanged( $keys, $condition );
-		} else { // Filter based on tags
+		} else {
+			/**
+			 * Filter based on tags.
+			 */
 			if ( !isset( $this->tags[$filter] ) ) {
 				if ( $filter !== 'optional' && $filter !== 'ignored' ) {
 					throw new MWException( "No tagged messages for custom filter $filter" );
@@ -469,7 +472,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$flipKeys = array_flip( $this->keys );
 
 		/**
-		 * Copy rows if any
+		 * Copy rows if any.
 		 */
 		if ( $this->dbData !== null ) {
 			foreach ( $this->dbData as $row ) {
@@ -498,7 +501,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		}
 
 		/**
-		 * Copy tags if any
+		 * Copy tags if any.
 		 */
 		foreach ( $this->tags as $type => $keys ) {
 			foreach ( $keys as $key ) {
@@ -509,7 +512,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		}
 
 		/**
-		 * Copy infile if any
+		 * Copy infile if any.
 		 */
 		foreach ( $this->infile as $key => $value ) {
 			if ( isset( $messages[$key] ) ) {

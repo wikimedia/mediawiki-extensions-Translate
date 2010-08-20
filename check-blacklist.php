@@ -1,12 +1,16 @@
 <?php
 /**
- * @todo Needs documentation.
  * @file
  * @author Niklas Laxström
  * @copyright Copyright © 2008-2010, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+/**
+ * List of checks that should not be performed.
+ * 
+ * @todo Needs documentation.
+ */
 $checkBlacklist = array(
 
 array(

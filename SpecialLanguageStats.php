@@ -27,7 +27,9 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 		$wgOut->addExtensionStyle( TranslateUtils::assetPath( 'Translate.css' ) );
 
-		# no UI when including()
+		/**
+		 * no UI when including()
+		 */
 		if ( !$this->including() ) {
 			$code = $wgRequest->getVal( 'code', $par );
 			$suppressComplete = $wgRequest->getVal( 'suppresscomplete', $par );
@@ -123,7 +125,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 		if ( $fuzzy ) {
 			/**
-			 * weigh fuzzy with factor 20.
+			 * Weigh fuzzy with factor 20.
 			 */
 			$v = $v * 20;
 			if ( $v > 255 ) $v = 255;

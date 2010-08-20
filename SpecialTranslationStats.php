@@ -1,5 +1,16 @@
 <?php
+/**
+ * Includable special page for generating graphs on translations.
+ *
+ * @file
+ * @author Niklas Laxström
+ * @copyright Copyright © 2008-2010, Niklas Laxström
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ */
 
+/**
+ * @todo Needs documentation.
+ */
 class SpecialTranslationStats extends SpecialPage {
 	public function __construct() {
 		parent::__construct( 'TranslationStats' );
@@ -403,6 +414,9 @@ class SpecialTranslationStats extends SpecialPage {
 	}
 }
 
+/**
+ * @todo Needs documentation.
+ */
 interface TranslationStatsInterface {
 	public function __construct( FormOptions $opts );
 	public function preQuery( &$tables, &$fields, &$conds, &$type, &$options, $cutoff );
@@ -412,8 +426,13 @@ interface TranslationStatsInterface {
 	public function getDateFormat();
 }
 
+/**
+ * @todo Needs documentation.
+ */
 abstract class TranslationStatsBase implements TranslationStatsInterface {
-	/** FormOptions */
+	/**
+	 * FormOptions
+	 */
 	protected $opts;
 
 	public function __construct( FormOptions $opts ) {
@@ -441,12 +460,17 @@ abstract class TranslationStatsBase implements TranslationStatsInterface {
 	}
 }
 
+/**
+ * @todo Needs documentation.
+ */
 class TranslatePerLanguageStats extends TranslationStatsBase {
 	protected $usercache;
 
 	public function __construct( FormOptions $opts ) {
 		parent::__construct( $opts );
-		// This query is slow... ensure a slower limit
+		/**
+		 * This query is slow... ensure a slower limit.
+		 */
 		$opts->validateIntBounds( 'days', 1, 200 );
 	}
 
@@ -501,7 +525,9 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 	}
 
 	public function indexOf( $row ) {
-		// We need to check that there is only one user per day
+		/**
+		 * We need to check that there is only one user per day.
+		 */
 		if ( $this->opts['count'] === 'users' ) {
 			$date = $this->formatTimestamp( $row->rc_timestamp );
 
@@ -512,22 +538,29 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 			}
 		}
 
-		// Don't consider language-less pages
+		/**
+		 * Do not consider language-less pages.
+		 */
 		if ( strpos( $row->rc_title, '/' ) === false ) return false;
 
-		// No filters, just one key to track
+		/**
+		 * No filters, just one key to track.
+		 */
 		if ( !$this->groups && !$this->codes ) return 'all';
 
-		// The key-building needs to be in sync with ::labels()
-
+		/**
+		 * The key-building needs to be in sync with ::labels().
+		 */
 		list( $key, $code ) = TranslateUtils::figureMessage( $row->rc_title );
 
 		$groups = array();
 		$codes = array();
 
 		if ( $this->groups ) {
-			/* Get list of keys that the message belongs to, and filter
-			 * out those which are not requested */
+			/**
+			 * Get list of keys that the message belongs to, and filter
+			 * out those which are not requested.
+			 */
 			$groups = TranslateUtils::messageKeyToGroups( $row->rc_namespace, $key );
 			$groups = array_intersect( $this->groups, $groups );
 		}
@@ -588,8 +621,10 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 
 }
 
+/**
+ * @todo Needs documentation.
+ */
 class TranslateRegistrationStats extends TranslationStatsBase {
-
 	public function preQuery( &$tables, &$fields, &$conds, &$type, &$options, $cutoff ) {
 		$db = wfGetDB( DB_SLAVE );
 		$tables = 'user';
@@ -602,5 +637,4 @@ class TranslateRegistrationStats extends TranslationStatsBase {
 	public function getTimestamp( $row ) {
 		return $row->user_registration;
 	}
-
 }

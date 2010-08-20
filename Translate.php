@@ -8,8 +8,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
  *
  * @author Niklas Laxström
  * @author Siebrand Mazeland
- * @copyright Copyright © 2006-2010, Niklas Laxström
- * @copyright Copyright © 2007-2010, Siebrand Mazeland
+ * @copyright Copyright © 2006-2010, Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 

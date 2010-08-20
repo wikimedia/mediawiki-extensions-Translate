@@ -8,6 +8,9 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+/**
+ * @deprecated
+ */
 abstract class MessageGroupOld implements MessageGroup {
 	/**
 	 * Human-readable name of this group

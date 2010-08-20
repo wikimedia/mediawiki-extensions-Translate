@@ -48,7 +48,9 @@ class TaskOptions {
 abstract class TranslateTask {
 	protected $id = '__BUG__';
 
-	/* We need $id here because staticness prevents subclass overriding */
+	/**
+	 * We need $id here because staticness prevents subclass overriding.
+	 */
 	public static function labelForTask( $id ) {
 		return wfMsg( TranslateUtils::MSG . 'task-' . $id );
 	}
@@ -93,6 +95,9 @@ abstract class TranslateTask {
 	}
 }
 
+/**
+ * @todo Needs documentation.
+ */
 class ViewMessagesTask extends TranslateTask {
 	protected $id = 'view';
 
@@ -116,6 +121,9 @@ class ViewMessagesTask extends TranslateTask {
 	}
 }
 
+/**
+ * @todo Needs documentation.
+ */
 class ReviewMessagesTask extends ViewMessagesTask {
 	protected $id = 'review';
 
@@ -137,6 +145,9 @@ class ReviewMessagesTask extends ViewMessagesTask {
 	}
 }
 
+/**
+ * @todo Needs documentation.
+ */
 class ViewUntranslatedTask extends ReviewMessagesTask {
 	protected $id = 'untranslated';
 
@@ -147,7 +158,9 @@ class ViewUntranslatedTask extends ReviewMessagesTask {
 		$this->collection->filter( 'ignored' );
 		$this->collection->filter( 'optional' );
 
-		// Update the cache while we are at it
+		/**
+		 * Update the cache while we are at it.
+		 */
 		$total = count( $this->collection );
 		$this->collection->filter( 'translated' );
 		$translated = $total - count( $this->collection );
@@ -158,6 +171,9 @@ class ViewUntranslatedTask extends ReviewMessagesTask {
 	}
 }
 
+/**
+ * @todo Needs documentation.
+ */
 class ViewOptionalTask extends ViewMessagesTask {
 	protected $id = 'optional';
 
@@ -170,6 +186,9 @@ class ViewOptionalTask extends ViewMessagesTask {
 	}
 }
 
+/**
+ * @todo Needs documentation.
+ */
 class ViewWithSuggestionsTask extends ViewMessagesTask {
 	protected $id = 'suggestions';
 
@@ -192,7 +211,9 @@ class ViewWithSuggestionsTask extends ViewMessagesTask {
 		$start = time();
 
 		foreach ( $this->collection->keys() as $key => $_ ) {
-			// Allow up to 10 seconds to search for suggestions.
+			/**
+			 * Allow up to 10 seconds to search for suggestions.
+			 */
 			if ( time() - $start > 10 || TranslationHelpers::checkTranslationServiceFailure( 'tmserver' ) ) {
 				unset( $this->collection[$key] );
 				continue;
@@ -205,7 +226,9 @@ class ViewWithSuggestionsTask extends ViewMessagesTask {
 			if ( $suggestions !== false ) {
 				$suggestions = FormatJson::decode( $suggestions, true );
 				foreach ( $suggestions as $s ) {
-					// We have a good suggestion, do not filter
+					/**
+					 * We have a good suggestion, do not filter.
+					 */
 					if ( $s['quality'] > 0.80 ) {
 						continue 2;
 					}
@@ -218,6 +241,9 @@ class ViewWithSuggestionsTask extends ViewMessagesTask {
 	}
 }
 
+/**
+ * @todo Needs documentation.
+ */
 class ViewUntranslatedOptionalTask extends ViewOptionalTask {
 	protected $id = 'untranslatedoptional';
 
@@ -231,6 +257,9 @@ class ViewUntranslatedOptionalTask extends ViewOptionalTask {
 	}
 }
 
+/**
+ * @todo Needs documentation.
+ */
 class ReviewAllMessagesTask extends ReviewMessagesTask {
 	protected $id = 'reviewall';
 
@@ -243,10 +272,15 @@ class ReviewAllMessagesTask extends ReviewMessagesTask {
 	}
 }
 
+/**
+ * @todo Needs documentation.
+ */
 class ExportMessagesTask extends ViewMessagesTask {
 	protected $id = 'export';
 
-	// N/A
+	/**
+	 * N/A.
+	 */
 	protected function doPaging() { }
 
 	public function output() {
@@ -264,6 +298,9 @@ class ExportMessagesTask extends ViewMessagesTask {
 	}
 }
 
+/**
+ * @todo Needs documentation.
+ */
 class ExportToFileMessagesTask extends ExportMessagesTask {
 	protected $id = 'export-to-file';
 
@@ -284,6 +321,9 @@ class ExportToFileMessagesTask extends ExportMessagesTask {
 	}
 }
 
+/**
+ * @todo Needs documentation.
+ */
 class ExportToXliffMessagesTask extends ExportToFileMessagesTask {
 	protected $id = 'export-to-xliff';
 
@@ -293,6 +333,9 @@ class ExportToXliffMessagesTask extends ExportToFileMessagesTask {
 	}
 }
 
+/**
+ * @todo Needs documentation.
+ */
 class ExportAsPoMessagesTask extends ExportMessagesTask {
 	protected $id = 'export-as-po';
 
@@ -316,9 +359,13 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 
 		$headers = array();
 		$headers['Project-Id-Version'] = 'MediaWiki ' . SpecialVersion::getVersion( 'nodb' );
-		// TODO: make this customisable or something
+		/**
+		 * @todo Make this customisable or something.
+		 */
 		$headers['Report-Msgid-Bugs-To'] = $wgServer;
-		// TODO: sprintfDate doesn't support any time zone flags
+		/**
+		 * @todo sprintfDate does not support any time zone flags.
+		 */
 		$headers['POT-Creation-Date'] = $lang->sprintfDate( 'xnY-xnm-xnd xnH:xni:xns+0000', $now );
 		$headers['Language-Team'] = TranslateUtils::getLanguageName( $this->options->getLanguage() );
 		$headers['Content-Type'] = 'text-plain; charset=UTF-8';
@@ -339,17 +386,23 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 			$flags = array();
 
 			$translation = $m->translation();
-			# CASE2: no translation
+			/**
+			 * CASE2: no translation.
+			 */
 			if ( $translation === null ) {
 				$translation = '';
 			}
 
-			# CASE3: optional messages; accept only if different
+			/**
+			 * CASE3: optional messages; accept only if different.
+			 */
 			if ( $m->hasTag( 'optional' ) ) {
 				$flags[] = 'optional';
 			}
 
-			# Remove fuzzy markings before export
+			/**
+			 * Remove fuzzy markings before export.
+			 */
 			if ( strpos( $translation, TRANSLATE_FUZZY ) !== false ) {
 				$translation = str_replace( TRANSLATE_FUZZY, '', $translation );
 				$flags[] = 'fuzzy';
@@ -421,11 +474,16 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 	}
 }
 
+/**
+ * @todo Needs documentation.
+ */
 class TranslateTasks {
 	public static function getTasks( $pageTranslation = false ) {
 		global $wgTranslateTasks, $wgTranslateTranslationServices;
 
-		// Tasks not to be available in page translation
+		/**
+		 * Tasks not to be available in page translation.
+		 */
 		$filterTasks = array(
 			'optional',
 			'untranslatedoptional',

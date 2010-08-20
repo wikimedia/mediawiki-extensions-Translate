@@ -2,6 +2,7 @@
 /**
  * This class contains some static helper functions for other classes.
  *
+ * @file
  * @author Niklas Laxström
  * @copyright Copyright © 2007, 2009 Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
@@ -20,7 +21,9 @@ class TranslateUtils {
 	public static function title( $message, $code ) {
 		global $wgContLang;
 
-		// Cache some amount of titles for speed
+		/**
+		 * Cache some amount of titles for speed.
+		 */
 		static $cache = array();
 		if ( !isset( $cache[$message] ) ) {
 			$cache[$message] = $wgContLang->ucfirst( $message );
@@ -96,7 +99,6 @@ class TranslateUtils {
 		$recentchanges = $dbr->tableName( 'recentchanges' );
 		$hours = intval( $hours );
 		$cutoff_unixtime = time() - ( $hours * 3600 );
-		# $cutoff_unixtime = $cutoff_unixtime - ($cutoff_unixtime % 86400);
 		$cutoff = $dbr->timestamp( $cutoff_unixtime );
 
 		$namespaces = $dbr->makeList( $wgTranslateMessageNamespaces );
@@ -111,7 +113,9 @@ class TranslateUtils {
 
 		$res = $dbr->query( $sql, __METHOD__ );
 
-		// Fetch results, prepare a batch link existence check query
+		/**
+		 * Fetch results, prepare a batch link existence check query.
+		 */
 		$rows = array();
 		while ( $row = $dbr->fetchObject( $res ) ) {
 			$rows[] = $row;
@@ -152,13 +156,23 @@ class TranslateUtils {
 		$suffix = '';
 
 		$parts1 = isset( $parts[1] ) ? $parts[1] : '';
+
+		/**
+		 * @todo Add missing scripts that are in use (deva, arab).
+		 */
 		switch ( $parts1 ) {
 			case 'latn':
-				$suffix = ' (Latin)'; # TODO: i18n
+				/**
+				 * @todo i18n.
+				 */
+				$suffix = ' (Latin)';
 				unset( $parts[1] );
 				break;
 			case 'cyrl':
-				$suffix = ' (Cyrillic)'; # TODO: i18n
+				/**
+				 * @todo i18n.
+				 */
+				$suffix = ' (Cyrillic)';
 				unset( $parts[1] );
 				break;
 		}
@@ -194,7 +208,9 @@ class TranslateUtils {
 			self::messageIndex();
 		}
 
-		# Performance hotspot
+		/**
+		 * Performance hotspot.
+		 */
 		# $normkey = self::normaliseKey( $namespace, $key );
 		$normkey = str_replace( " ", "_", strtolower( "$namespace:$key" ) );
 
@@ -211,7 +227,9 @@ class TranslateUtils {
 			self::messageIndex();
 		}
 
-		# Performance hotspot
+		/**
+		 * Performance hotspot.
+		 */
 		# $normkey = self::normaliseKey( $namespace, $key );
 		$normkey = str_replace( " ", "_", strtolower( "$namespace:$key" ) );
 

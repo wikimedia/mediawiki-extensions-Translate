@@ -78,7 +78,9 @@ class SpecialTranslate extends SpecialPage {
 			$this->options['group'] = $this->defaults['group'];
 		}
 
-		// Show errors nicely
+		/**
+		 * Show errors nicely.
+		 */
 		$wgOut->addHTML( $this->settingsForm( $errors ) );
 
 		if ( count( $errors ) ) {
@@ -99,7 +101,9 @@ class SpecialTranslate extends SpecialPage {
 			}
 		}
 
-		# Proceed
+		/**
+		 * Proceed.
+		 */
 		$taskOptions = new TaskOptions(
 			$this->options['language'],
 			$this->options['limit'],
@@ -107,7 +111,9 @@ class SpecialTranslate extends SpecialPage {
 			array( $this, 'cbAddPagingNumbers' )
 		);
 
-		// Initialise and get output
+		/**
+		 * Initialise and get output.
+		 */
 		$this->task->init( $this->group, $taskOptions );
 		$output = $this->task->execute();
 
@@ -251,7 +257,9 @@ class SpecialTranslate extends SpecialPage {
 	protected function taskSelector( $pageTranslation = false ) {
 		$selector = new HTMLSelector( 'task', 'task', $this->options['task'] );
 
-		// Check if this is a page translation group to return only appropriate tasks.
+		/**
+		 * Check if this is a page translation group to return only appropriate tasks.
+		 */
 		$isPageTranslation = false;
 		if ( $this->group ) {
 			$isPageTranslation = strpos( $this->group->getId(), 'page|' ) === 0;
@@ -408,14 +416,20 @@ class SpecialTranslate extends SpecialPage {
 
 			foreach ( $wgTranslateGroupStructure as $pattern => $hypergroup ) {
 				if ( preg_match( $pattern, $id ) ) {
-					// Emulate deepArraySet, because AFAIK php doesn't have one
+					/**
+					 * Emulate deepArraySet, because AFAIK php does not have one
+					 */
 					self::deepArraySet( $structure, $hypergroup, $id, $o );
-					// We need to continue the outer loop, because we have finished this item
+					/**
+					 * We need to continue the outer loop, because we have finished this item.
+					 */
 					continue 2;
 				}
 			}
 
-			// Does not belong to any subgroup, just shove it into main level
+			/**
+			 * Does not belong to any subgroup, just shove it into main level.
+			 */
 			$structure[$id] = $o;
 		}
 

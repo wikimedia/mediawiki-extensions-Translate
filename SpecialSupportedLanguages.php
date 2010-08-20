@@ -15,6 +15,9 @@ class SpecialSupportedLanguages extends UnlistedSpecialPage {
 	public function execute( $par ) {
 		global $wgLang, $wgOut;
 
+		/**
+		 * Requires NS_PORTAL. If not present, display error text.
+		 */
 		if ( !defined( 'NS_PORTAL' ) ) {
 			$wgOut->showErrorPage( 'supportedlanguages-noportal-title', 'supportedlanguages-noportal' );
 			return;

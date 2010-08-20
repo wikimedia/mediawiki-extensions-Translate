@@ -4,7 +4,6 @@
  *
  * @file
  * @ingroup Extensions
- *
  * @author Niklas Laxström
  * @copyright Copyright © 2009, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
@@ -24,7 +23,7 @@ class SpecialImportTranslations extends SpecialPage {
 
 	/**
 	 * Dependencies
-	 */ 
+	 */
 	protected $user, $out, $request;
 
 	/**
@@ -47,7 +46,10 @@ class SpecialImportTranslations extends SpecialPage {
 		}
 
 		if ( !$this->user->matchEditToken( $this->request->getVal( 'token' ) ) ) {
-			$this->out->addWikiMsg( 'session_fail_preview' ); // Core... bad
+			/**
+			 * @todo Core... bad.
+			 */
+			$this->out->addWikiMsg( 'session_fail_preview' );
 			$this->outputForm();
 			return;
 		}
@@ -55,7 +57,10 @@ class SpecialImportTranslations extends SpecialPage {
 		if ( $this->request->getCheck( 'process' ) ) {
 			$data = $this->getCachedData();
 			if ( !$data ) {
-				$this->out->addWikiMsg( 'session_fail_preview' ); // Core... bad
+				/**
+				 * @todo Core... bad.
+				 */
+				$this->out->addWikiMsg( 'session_fail_preview' );
 				$this->outputForm();
 				return;
 			}
@@ -149,7 +154,10 @@ class SpecialImportTranslations extends SpecialPage {
 				$this->request->getText( 'upload-type' ) === 'wiki' ) .
 			"\n" . Xml::closeElement( 'td' ) . Xml::openElement( 'td' ) . "\n" .
 			Xml::input( 'upload-wiki', 50,
-				$this->request->getText( 'upload-wiki', 'File:' ), // FIXME: needs i18n in content language.
+						/**
+						 * @todo Needs i18n in content language.
+						 */
+				$this->request->getText( 'upload-wiki', 'File:' ),
 				array( 'id' => 'mw-translate-up-wiki-input' ) + $class ) .
 			"\n" . Xml::closeElement( 'td' ) . Xml::closeElement( 'tr' ) .
 			Xml::openElement( 'tr' ) . Xml::openElement( 'td' ) . "\n" .
@@ -174,7 +182,6 @@ class SpecialImportTranslations extends SpecialPage {
 		$source = $this->request->getText( 'upload-type' );
 
 		if ( $source === 'url' ) {
-			# return array( 'type-not-supported', $source );
 			$url = $this->request->getText( 'upload-url' );
 			$filedata = Http::get( $url ); ;
 			if ( $filedata ) {
@@ -250,7 +257,10 @@ class SpecialImportTranslations extends SpecialPage {
 	protected function setCachedData( $data ) {
 		global $wgMemc;
 		$key = wfMemcKey( 'translate', 'webimport', $this->user->getId() );
-		$wgMemc->set( $key, $data, 60 * 15 ); // 15 minutes
+		/**
+		 * 15 minutes.
+		 */
+		$wgMemc->set( $key, $data, 60 * 15 );
 	}
 
 	protected function getCachedData() {

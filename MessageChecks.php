@@ -108,6 +108,7 @@ class MessageChecker {
 	public function checkMessageFast( TMessage $message, $code ) {
 		$warningsArray = array();
 		$messages = array( $message );
+
 		foreach ( $this->checks as $check ) {
 			call_user_func_array( $check, array( $messages, $code, &$warningsArray ) );
 			if ( count( $warningsArray ) ) {
@@ -128,14 +129,34 @@ class MessageChecker {
 		 * There is an array of messages...
 		 */
 		foreach ( $warningsArray as $mkey => $warnings ) {
-			// ... each which have array of warnings
+			/**
+			 * ... each which has an array of warnings.
+			 */
 			foreach ( $warnings as $wkey => $warning ) {
 				$check = array_shift( $warning );
+				/**
+				 * Check if the key is blacklisted...
+				 */
 				foreach ( self::$globalBlacklist as $pattern ) {
+					/**
+					 * ... based on message group
+					 */
 					if ( !$this->match( $pattern['group'], $groupId ) )     continue;
+					/**
+					 * ... based on check
+					 */
 					if ( !$this->match( $pattern['check'], $check[0] ) )    continue;
+					/**
+					 * ... based on subcheck
+					 */
 					if ( !$this->match( $pattern['subcheck'], $check[1] ) ) continue;
+					/**
+					 * ... based on message
+					 */
 					if ( !$this->match( $pattern['message'], $check[2] ) )  continue;
+					/**
+					 * ... based on code
+					 */
 					if ( !$this->match( $pattern['code'], $check[3] ) )     continue;
 
 					unset( $warningsArray[$mkey][$wkey] );

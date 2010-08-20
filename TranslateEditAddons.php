@@ -5,7 +5,7 @@
  *
  * @author Niklas Laxström
  * @author Siebrand Mazeland
- * @copyright Copyright © 2007-2009 Niklas Laxström
+ * @copyright Copyright © 2007-2010 Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -58,9 +58,11 @@ class TranslateEditAddons {
 				continue;
 			}
 
-			// Keys can have mixed case, but they have to be unique in a case
-			// insensitive manner. It is therefore safe and a must to use case
-			// insensitive comparison method
+			/**
+			 * Keys can have mixed case, but they have to be unique in a case
+			 * insensitive manner. It is therefore safe and a must to use case
+			 * insensitive comparison method.
+			 */
 			if ( $key === strtolower( strtr( $tkey, ' ', '_' ) ) ) {
 				$next = true;
 				$def = $defs[$tkey];
@@ -217,9 +219,13 @@ EOEO;
 		$group = $wgRequest->getText( 'loadgroup', '' );
 		$mg = MessageGroups::getGroup( $group );
 
-		# If we were not given group, or the group given was meta...
+		/**
+		 * If we were not given group, or the group given was meta...
+		 */
 		if ( is_null( $mg ) || $mg->isMeta() ) {
-			# .. then try harder, because meta groups are *inefficient*
+			/**
+			 * .. then try harder, because meta groups are *inefficient*.
+			 */
 			$group = TranslateUtils::messageKeyToGroup( $namespace, $key );
 			if ( $group ) {
 				$mg = MessageGroups::getGroup( $group );
@@ -309,7 +315,9 @@ EOEO;
 
 		list( $key, $code, $group ) = self::getKeyCodeGroup( $title );
 
-		// Unknown message, do not handle
+		/**
+		 * Unknown message, do not handle.
+		 */
 		if ( !$group || !$code ) {
 			return true;
 		}
@@ -321,10 +329,14 @@ EOEO;
 			$cache->clear( $g, $code );
 		}
 
-		// Check for explicit tag
+		/**
+		 * Check for explicit tag.
+		 */
 		$fuzzy = self::hasFuzzyString( $text );
 
-		// Check for problems, but only if not fuzzy already
+		/**
+		 * Check for problems, but only if not fuzzy already.
+		 */
 		global $wgTranslateDocumentationLanguageCode;
 		if ( $code !== $wgTranslateDocumentationLanguageCode ) {
 			$checker = $group->getChecker();
@@ -332,7 +344,9 @@ EOEO;
 			if ( $checker ) {
 				$en = $group->getMessage( $key, 'en' );
 				$message = new FatMessage( $key, $en );
-				// Take the contents from edit field as a translation
+				/**
+				 * Take the contents from edit field as a translation.
+				 */
 				$message->setTranslation( $text );
 
 				$checks = $checker->checkMessage( $message, $code );
@@ -342,14 +356,18 @@ EOEO;
 			}
 		}
 
-		// Update it
+		/**
+		 * Update it.
+		 */
 		if ( $revision === null ) {
 			$rev = $article->getTitle()->getLatestRevId();
 		} else {
 			$rev = $revision->getID();
 		}
 
-		// <fuzzy tag
+		/**
+		 * begin fuzzy tag.
+		 */
 		$dbw = wfGetDB( DB_MASTER );
 
 		$id = $dbw->selectField( 'revtag_type', 'rtt_id', array( 'rtt_name' => 'fuzzy' ), __METHOD__ );
@@ -359,16 +377,24 @@ EOEO;
 			'rt_type' => $id,
 			'rt_revision' => $rev
 		);
-		// Remove any existing fuzzy tags for this revision
+		/**
+		 * Remove any existing fuzzy tags for this revision
+		 */
 		$dbw->delete( 'revtag', $conds, __METHOD__ );
 
-		// Add the fuzzy tag if needed
+		/**
+		 * Add the fuzzy tag if needed.
+		 */
 		if ( $fuzzy !== false ) {
 			$dbw->insert( 'revtag', $conds, __METHOD__ );
 		}
-		// fuzzy>
+		/**
+		 * End fuzzy
+		 */
 
-		// Diffs for changed messages
+		/**
+		 * Diffs for changed messages.
+		 */
 		if ( $fuzzy !== false ) {
 			return true;
 		}

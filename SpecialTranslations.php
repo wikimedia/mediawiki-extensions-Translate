@@ -5,8 +5,7 @@
  *
  * @author Siebrand Mazeland
  * @author Niklas Laxstörm
- * @copyright Copyright © 2008 Siebrand Mazeland
- * @copyright Copyright © 2009 Niklas Laxström
+ * @copyright Copyright © 2008-2010 Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -41,7 +40,9 @@ class SpecialTranslations extends SpecialAllpages {
 			return;
 		}
 
-		# GET values
+		/**
+		 * GET values.
+		 */
 		$message = $wgRequest->getText( 'message' );
 		$namespace = $wgRequest->getInt( 'namespace', NS_MAIN );
 		if ( $message !== '' ) {
@@ -142,7 +143,9 @@ class SpecialTranslations extends SpecialAllpages {
 			return;
 		}
 
-		// Normal output
+		/**
+		 * Normal output.
+		 */
 		$titles = array();
 
 		foreach ( $res as $s ) {
@@ -160,7 +163,9 @@ class SpecialTranslations extends SpecialAllpages {
 		$tableheader .= Xml::element( 'th', null, wfMsg( 'allmessagescurrent' ) );
 		$tableheader .= Xml::closeElement( 'tr' );
 
-		// Adapted version of TranslateUtils:makeListing() by Nikerabbit
+		/**
+		 * Adapted version of TranslateUtils:makeListing() by Nikerabbit.
+		 */
 		$out = $tableheader;
 
 		$canTranslate = $wgUser->isAllowed( 'translate' );
@@ -237,7 +242,9 @@ class SpecialTranslations extends SpecialAllpages {
 		$wgOut->addScriptFile( TranslateUtils::assetPath( 'js/jquery.form.js' ) );
 		$wgOut->addExtensionStyle( TranslateUtils::assetPath( 'js/base/custom-theme/jquery-ui-1.7.2.custom.css' ) );
 
-		// Might be needed, but ajax doesn't load it
+		/**
+		 * Might be needed, but ajax does not load it.
+		 */
 		$diff = new DifferenceEngine;
 		$diff->showDiffStyle();
 	}
