@@ -1,5 +1,8 @@
+== Copying ==
+See http://www.gnu.org/licenses/gpl2.html
+
 == Installation ==
-LocalSettings.php:
+For very very quick start add the following to LocalSettings.php:
 
 include("$IP/extensions/Translate/Translate.php");
 $wgTranslateEC = array_keys($wgTranslateAC); // All modules
@@ -8,33 +11,28 @@ $wgGroupPermissions['Translators']['translate'] = true;
 
 Make sure you have configured $wgCacheDirectory properly.
 
-* Users have to be a member of user group 'Translators' to enable full functionality.
+More documenation is at
+ http://translatewiki.net/wiki/Translating:Documentation#Documentation_for_system_administrators
 
-If your extensions are located in a directory other than $IP/extensions/, you should
-update $wgTranslateExtensionDirectory and $wgTranslateCssLocation. Check Translate.php
-to see what values they expect.
+== Contributing ==
+Translations? -> go to http://translatewiki.net and sign up.
+Code? File format handlers? New message groups? Graphics? Suggestions?
+Bug reports? -> please start a thread at http://translatewiki.net/wiki/Support
+or join us at #mediawiki-i18n and let us know what you have in mind.
 
-=== Defining custom message groups ===
+Bugs and feature requests are collected at:
+ http://translatewiki.net/wiki/Issues_and_features
 
-Example of creating message group for custom user interface of the wiki.
-After including the extension, use the following code:
+Documentation for the extension is at:
+ http://translatewiki.net/wiki/Translating:Documentation
+And for the code at:
+ http://translatewiki.net/docs/Translate/html/
 
-<code>
-/* Value can be either anything callable, which is called by key as parameter,
- * or it can be instance of MessageGroup.
- */
-$wgTranslateCC['wikigroup'] = 'customMessageGroups';
+== Change log ==
 
-/* $id would be "wikigroup" */
-function customMessageGroups( $id ) {
-	$mg = new WikiMessageGroup( 'wiki-wikiname', 'wikiname-messages' );
-	$mg->setLabel( 'Wikiname UI Messages' );
-	$mg->setDescription( 'This group contains user interface messages used on Wikiname.' );
-	return $mg;
-}
-</code>
-
-== Changes in ??? ==
+=== Changes in ??? ===
+* 2010-08-20
+- Documentation updated a lot, added doxygen spec file.
 * 2010-06-12
 - Removed $wgGoogleApiKey, $wgTranslateTM and $wgTranslateApertium
 - You need to migrate to $wgTranslateTranslationServices
@@ -54,12 +52,12 @@ function customMessageGroups( $id ) {
               There is link back to the original message in tm suggestions
               tm-export superceded dump-tm
 
-== Changes in version 12 ==
+=== Changes in version 12 ===
 - Page translation
 - New fuzzy system, should be faster now
 - Edit are consistently filled when starting translation
 
-== Changes in version 11 ==
+=== Changes in version 11 ===
 * 2009-05-09
 - Support added for OpenLayers
 - Page translation feature updated. Not backwards compatible
@@ -72,7 +70,7 @@ function customMessageGroups( $id ) {
 * 2009-04-04:1 PhpVariables Mantis header inconsistency fixed
 * 2009-03-29   Table header on Special:LanguageStats suppressed when all translations are complete
 
-== Changes in version 10 ==
+=== Changes in version 10 ===
 * 2009-03-24   Also 2 decimals for fuzzy in Special:LanguageStats
 * 2009-03-23   Localised number formatting in Special:LanguageStats
 * 2009-02-22
@@ -135,7 +133,7 @@ function customMessageGroups( $id ) {
 * 2008-06-30:1 More contrast in the new default page for Special translate
 * 2008-06-29:2 Branched core messages now load translations from trunk files too
 
-== Changes in version 9 ==
+=== Changes in version 9 ===
 * Released 2008-06-29
 * (bug 12955) Numbers should be localized in Translate extension
 * Support branches for core messages
@@ -165,7 +163,7 @@ function customMessageGroups( $id ) {
 * new front page for Special:Translate
 * desc and descmsg support for mediawiki extension group definitions
 
-== Changes in version 8 ==
+=== Changes in version 8 ===
 * Released 2008-02-06
 * export.php for even faster exporting (only core messages supported currently)
 * Message groups can now have description or notes for translations
@@ -192,7 +190,7 @@ function customMessageGroups( $id ) {
 * Link to Special:Translate added in Special:Version
 * Possibility to add comments when editing with Special:magic
 
-== Changes in version 7 ==
+=== Changes in version 7 ===
 * Released 2007-12-29
 * New HTMLSelector class
 * Cleaned user interface of Special:Translate
@@ -205,7 +203,7 @@ function customMessageGroups( $id ) {
 * Experimental po import
 * groupStatistics.php for creating statistics for groups
 
-== Changes in version 6 ==
+=== Changes in version 6 ===
 * Released 2007-12-21
 * New classes MessageCollection and TMessage
 * Experimental po export
@@ -213,11 +211,11 @@ function customMessageGroups( $id ) {
 * New member function MessageGroup::isMeta
 * Lots of new extensions supported
 
-== Changes in version 5 ==
+=== Changes in version 5 ===
 * Released 2007-11-14
 * CreateMessageIndex.php which creates serialised index of message key -> group
 
-== Changes in version 4 ==
+=== Changes in version 4 ===
 * New "task-based" interface
 * Paging of messages
 * Separation of translation and interface language
