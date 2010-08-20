@@ -1,14 +1,19 @@
 <?php
+
 /**
  * A special page for marking revisions of pages for translation.
- * There are two modes 1) list of all pages 2) review mode for one page.
  *
+ * This page is the main tool for translation administrators in the wiki.
+ * It will list all pages in their various states and provides actions
+ * that are suitable for given translatable page.
+ *
+ * @ingroup SpecialPage
+ * @ingroup PageTranslation
  * @author Niklas Laxström
  * @author Siebrand Mazeland
  * @copyright Copyright © 2009-2010 Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
-
 class SpecialPageTranslation extends SpecialPage {
 	function __construct() {
 		parent::__construct( 'PageTranslation' );

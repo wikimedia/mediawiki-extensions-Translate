@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Implements a special page which givens translation statistics for a given
  * set of message groups. Message group names can be entered (pipe separated)
@@ -8,12 +9,11 @@
  *
  * Use {{Special:LanguageStats/nl/1}} to show for 'nl' and suppres complete.
  *
- * @file
  * @author Siebrand Mazeland
  * @copyright Copyright © 2008-2010 Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * @ingroup SpecialPage
  */
-
 class SpecialLanguageStats extends IncludableSpecialPage {
 	function __construct() {
 		parent::__construct( 'LanguageStats' );
@@ -27,9 +27,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 		$wgOut->addExtensionStyle( TranslateUtils::assetPath( 'Translate.css' ) );
 
-		/**
-		 * no UI when including()
-		 */
+		// no UI when including()
 		if ( !$this->including() ) {
 			$code = $wgRequest->getVal( 'code', $par );
 			$suppressComplete = $wgRequest->getVal( 'suppresscomplete', $par );
@@ -62,11 +60,11 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	}
 
 	/**
-	* HTML for the top form
-	* @param integer $code A language code (default empty, example: 'en').
-	* @param bool $suppressComplete If completely translated groups should be suppressed
-	* @return string HTML
-	*/
+	 * HTML for the top form.
+	 * @param $code \string A language code (default empty, example: 'en').
+	 * @param $suppressComplete \bool If completely translated groups should be suppressed.
+	 * @return \string HTML
+	 */
 	function buildLanguageForm( $code = '', $suppressComplete = false ) {
 		global $wgScript;
 
@@ -110,6 +108,10 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 	/**
 	 * Statistics table element (heading or regular cell)
+	 * @todo document
+	 * @param $in \string
+	 * @param $bgcolor \string
+	 * @return \string
 	 */
 	function element( $in, $bgcolor = '' ) {
 		if ( $bgcolor ) {
@@ -166,9 +168,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 		$out = wfMsgExt( 'languagestats-stats-for', array( 'parse', 'replaceafter' ), $languageName, $rcInLangLink );
 
-		/**
-		 * Create table header
-		 */
+		// Create table header
 		$out .= Xml::openElement(
 			'table',
 			array(
@@ -188,11 +188,11 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	}
 
 	/**
-	 * HTML for language statistics
+	 * HTML for language statistics.
 	 * Copied and adaped from groupStatistics.php by Nikerabbit
-	 * @param integer $code A language code (default empty, example: 'en').
-	 * @param bool $suppressComplete If completely translated groups should be suppressed
-	 * @return string HTML
+	 * @param $code \string A language code (default empty, example: 'en').
+	 * @param $suppressComplete \bool If completely translated groups should be suppressed
+	 * @return \string HTML
 	 */
 	function getGroupStats( $code, $suppressComplete = false ) {
 		global $wgUser, $wgLang, $wgOut;
@@ -225,27 +225,19 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			if ( $incache !== false ) {
 				list( $fuzzy, $translated, $total ) = $incache;
 			} else {
-				/**
-				 * Initialise messages.
-				 */
+				// Initialise messages.
 				$collection = $g->initCollection( $code );
 				$collection->setInFile( $g->load( $code ) );
 				$collection->filter( 'ignored' );
 				$collection->filter( 'optional' );
-				/**
-				 * Store the count of real messages for later calculation.
-				 */
+				// Store the count of real messages for later calculation.
 				$total = count( $collection );
 
-				/**
-				 * Count fuzzy first.
-				 */
+				// Count fuzzy first.
 				$collection->filter( 'fuzzy' );
 				$fuzzy = $total - count( $collection );
 
-				/**
-				 * Count the completed translations.
-				 */
+				// Count the completed translations.
 				$collection->filter( 'hastranslation', false );
 				$translated = count( $collection );
 
@@ -253,16 +245,12 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 			}
 
-			/**
-			 * Skip if $suppressComplete and complete
-			 */
+			// Skip if $suppressComplete and complete
 			if ( $suppressComplete && !$fuzzy && $translated == $total ) {
 				continue;
 			}
 
-			/**
-			 * Division by 0 should not be possible, but does occur. Caching issue?
-			 */
+			// Division by 0 should not be possible, but does occur. Caching issue?
 			$translatedPercentage = $total ? $wgLang->formatNum( number_format( round( 100 * $translated / $total, 2 ), 2 ) ) : $errorString;
 			$translatedPercentage = $translatedPercentage == $errorString ? $translatedPercentage : wfMsg( 'percent', $translatedPercentage );
 
@@ -281,9 +269,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 			$groupLabel = $g->getLabel();
 
-			/**
-			 * Bold for meta groups.
-			 */
+			// Bold for meta groups.
 			if ( $g->isMeta() ) {
 				$groupLabel = Xml::element( 'b', null, $groupLabel );
 			}
@@ -338,6 +324,9 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		return $blacklisted;
 	}
 
+	/**
+	 * @todo name does not match behaviour.
+	 */
 	private static function newlineToWordSeparator( $text ) {
 		$wordSeparator = wfMsg( 'word-separator' );
 

@@ -1,14 +1,14 @@
 <?php
+
 /**
- * Special page to import po files exported using Translate extension.
+ * Special page to import Gettext (.po) files exported using Translate extension.
+ * Does not support general Gettext files.
  *
- * @file
- * @ingroup Extensions
+ * @ingroup SpecialPage
  * @author Niklas Laxström
- * @copyright Copyright © 2009, Niklas Laxström
+ * @copyright Copyright © 2009-2010, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
-
 class SpecialImportTranslations extends SpecialPage {
 	/**
 	 * Set up and fill some dependencies.

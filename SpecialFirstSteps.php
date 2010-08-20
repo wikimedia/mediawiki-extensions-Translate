@@ -1,12 +1,14 @@
 <?php
+
 /**
- * @todo Needs documentation
- * @file
+ * Implements a special page which assists users to become translators.
+ * Currently it is tailored for the needs of translatewiki.net
+ *
+ * @ingroup SpecialPage
  * @author Niklas Laxström
  * @copyright Copyright © 2010, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
-
 class SpecialFirstSteps extends UnlistedSpecialPage {
 	protected $skin, $user, $out;
 
