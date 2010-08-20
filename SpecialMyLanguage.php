@@ -5,9 +5,9 @@
  *
  * Usage: [[Special:MyLanguage/Page name|link text]]
  *
- * @file
+ * @ingroup SpecialPage
  * @author Niklas Laxström
- * @copyright Copyright © 2010 Niklas Laxström, Siebrand Mazeland
+ * @copyright Copyright © 2010 Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 

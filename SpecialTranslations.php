@@ -3,6 +3,7 @@
  * Implements a special page which shows all translations for a message.
  * Bits taken from SpecialPrefixindex.php and TranslateTasks.php
  *
+ * @ingroup SpecialPage
  * @author Siebrand Mazeland
  * @author Niklas Laxstörm
  * @copyright Copyright © 2008-2010 Niklas Laxström, Siebrand Mazeland

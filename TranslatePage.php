@@ -3,8 +3,10 @@
  * Implements the core of Translate extension - a special page which shows
  * a list of messages in a format defined by Tasks.
  *
+ * @ingroup SpecialPage
  * @author Niklas Laxström
- * @copyright Copyright © 2006-2007 Niklas Laxström
+ * @author Siebrand Mazeland
+ * @copyright Copyright © 2006-2010 Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 

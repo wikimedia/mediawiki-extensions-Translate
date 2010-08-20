@@ -1,8 +1,7 @@
 <?php
 /**
  * @todo Needs documentation.
- * @file
- * @ingroup Extensions
+ * @ingroup SpecialPage
  * @author Niklas Laxström
  * @author Siebrand Mazeland
  * @copyright Copyright © 2009-2010, Niklas Laxström, Siebrand Mazeland
