@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * MediaWiki specific message checks.
+ * @ingroup MessageCheckers
+ * @author Niklas Laxström
+ * @copyright Copyright © 2008-2009, Niklas Laxström
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ */
 class MediaWikiMessageChecker extends MessageChecker {
 	/**
 	 * Checks if the translation uses all variables $[1-9] that the definition
@@ -105,7 +112,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 	}
 
 	/**
-	 * Checks if the <br /> and <hr /> tags are using the correct syntax.
+	 * Checks if the \<br /> and \<hr /> tags are using the correct syntax.
 	 */
 	protected function XhtmlCheck( $messages, $code, &$warnings ) {
 		foreach ( $messages as $message ) {
@@ -147,9 +154,6 @@ class MediaWikiMessageChecker extends MessageChecker {
 
 	/**
 	 * Checks if the translation doesn't use plural while the definition has one.
-	 *
-	 * @param $message Instance of TMessage.
-	 * @return True if plural magic word is missing.
 	 */
 	protected function pluralCheck( $messages, $code, &$warnings ) {
 		foreach ( $messages as $message ) {
