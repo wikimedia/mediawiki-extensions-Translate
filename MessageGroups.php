@@ -857,7 +857,7 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		if ( $code === 'en' ) {
 			$stuff = $this->load( 'en' );
 			/**
-			 * @todo Throws PHP Notice:  Undefined index:  <key>
+			 * @todo Throws PHP Notice:  Undefined index:  \<key>
 			 * when keys are added, but createMessageIndex.php is
 			 * not run (like when a translatable page from page
 			 * translation was added).

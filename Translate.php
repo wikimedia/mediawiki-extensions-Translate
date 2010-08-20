@@ -506,17 +506,17 @@ function efTranslateInit() {
 		# $wgHooks['SkinTemplateOutputPageBeforeExec'][] = 'TranslateTagHooks::addSidebar';
 
 		/**
-		# Register <languages/>
+		 * Register \<languages/>
 		 */
 		$wgHooks['ParserFirstCallInit'][] = 'efTranslateInitTags';
 
 		/**
-		 * Strip <translate> tags etc. from source pages when rendering
+		 * Strip \<translate> tags etc. from source pages when rendering
 		 */
 		$wgHooks['ParserBeforeStrip'][] = 'PageTranslationHooks::renderTagPage';
 
 		/**
-		 * Check syntax for <translate>
+		 * Check syntax for \<translate>
 		 */
 		$wgHooks['ArticleSave'][] = 'PageTranslationHooks::tpSyntaxCheck';
 		$wgHooks['EditFilterMerged'][] = 'PageTranslationHooks::tpSyntaxCheckForEditPage';

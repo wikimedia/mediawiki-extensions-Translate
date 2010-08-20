@@ -257,7 +257,7 @@ EOEO;
 	 * Check if a string contains the fuzzy string.
 	 *
 	 * @param $text \string Arbitrary text
-	 * return \bool If string contains fuzzy string.
+	 * @return \bool If string contains fuzzy string.
 	 */
 	public static function hasFuzzyString( $text ) {
 		return strpos( $text, TRANSLATE_FUZZY ) !== false;
@@ -266,7 +266,7 @@ EOEO;
 	/** Check if a title is marked as fuzzy.
 	 *
 	 * @param $title Title
-	 * return \bool If title is marked fuzzy.
+	 * @return \bool If title is marked fuzzy.
 	 */
 	public static function isFuzzy( Title $title ) {
 		$dbr = wfGetDB( DB_SLAVE );
@@ -291,7 +291,7 @@ EOEO;
 	/** Check if a title is in a message namespace.
 	 *
 	 * @param $title Title
-	 * return \bool If title is in a message namespace.
+	 * @return \bool If title is in a message namespace.
 	 */
 	public static function isMessageNamespace( Title $title ) {
 		global $wgTranslateMessageNamespaces; ;

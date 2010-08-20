@@ -228,7 +228,7 @@ class SpecialTranslationChanges extends SpecialPage {
 	 * Generate HTML for an arrow or placeholder graphic
 	 * @param $dir \string One of '', 'd', 'l', 'r'
 	 * @param $alt \string Alt text
-	 * @return string HTML "img" tag
+	 * @return string HTML \<img> tag
 	 */
 	private function arrow( $dir, $alt = '' ) {
 		global $wgStylePath;
@@ -240,7 +240,7 @@ class SpecialTranslationChanges extends SpecialPage {
 	/**
 	 * Generate HTML for a right- or left-facing arrow,
 	 * depending on language direction.
-	 * @return string HTML "img" tag
+	 * @return string HTML \<img> tag
 	 */
 	private function sideArrow() {
 		global $wgContLang;
@@ -251,7 +251,7 @@ class SpecialTranslationChanges extends SpecialPage {
 	/**
 	 * Generate HTML for a down-facing arrow
 	 * depending on language direction.
-	 * @return string HTML <img> tag
+	 * return string HTML \<img> tag
 	 */
 	private function downArrow() {
 		return $this->arrow( 'd', '-' );

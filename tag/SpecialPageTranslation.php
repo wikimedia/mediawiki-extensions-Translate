@@ -204,7 +204,7 @@ class SpecialPageTranslation extends SpecialPage {
 				continue;
 			}
 
-			/* Ignore pages which have had <translate> at some point, but which
+			/* Ignore pages which have had \<translate> at some point, but which
 			 * have never been marked. */
 			if ( $page['tp:tag'] !== $page['latest'] ) {
 				unset( $pages[$index] );
