@@ -1,10 +1,12 @@
 <?php
 /**
- * Implementation of Special:TranslationChanges special page.
+ * Implementation of Special:TranslationChanges special page. Gives an overview
+ * per message group of translations in a given number of hours.
  *
- * @file
+ * @ingroup SpecialPage
  * @author Niklas Laxström
- * @copyright  Copyright © 2008-2010, Niklas Laxström
+ * @author Siebrand Mazeland
+ * @copyright  Copyright © 2008-2010, Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -224,12 +226,11 @@ class SpecialTranslationChanges extends SpecialPage {
 
 	/**
 	 * Generate HTML for an arrow or placeholder graphic
-	 * @param string $dir one of '', 'd', 'l', 'r'
-	 * @param string $alt text
-	 * @return string HTML <img> tag
-	 * @access private
+	 * @param $dir \string One of '', 'd', 'l', 'r'
+	 * @param $alt \string Alt text
+	 * @return string HTML "img" tag
 	 */
-	function arrow( $dir, $alt = '' ) {
+	private function arrow( $dir, $alt = '' ) {
 		global $wgStylePath;
 		$encUrl = htmlspecialchars( $wgStylePath . '/common/images/Arr_' . $dir . '.png' );
 		$encAlt = htmlspecialchars( $alt );
@@ -239,10 +240,9 @@ class SpecialTranslationChanges extends SpecialPage {
 	/**
 	 * Generate HTML for a right- or left-facing arrow,
 	 * depending on language direction.
-	 * @return string HTML <img> tag
-	 * @access private
+	 * @return string HTML "img" tag
 	 */
-	function sideArrow() {
+	private function sideArrow() {
 		global $wgContLang;
 		$dir = $wgContLang->isRTL() ? 'l' : 'r';
 		return $this->arrow( $dir, '+' );
@@ -252,9 +252,8 @@ class SpecialTranslationChanges extends SpecialPage {
 	 * Generate HTML for a down-facing arrow
 	 * depending on language direction.
 	 * @return string HTML <img> tag
-	 * @access private
 	 */
-	function downArrow() {
+	private function downArrow() {
 		return $this->arrow( 'd', '-' );
 	}
 }

@@ -1,4 +1,14 @@
 <?php
+/**
+ * Overrides Special:Movepage to to allow renaming a page translation page and
+ * all related translations and derivative pages.
+ *
+ * @ingroup SpecialPage
+ * @ingroup PageTranslation
+ * @author Niklas Laxström
+ * @copyright  Copyright © 2010, Niklas Laxström
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ */
 
 class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 	// Basif form parameters both as text and as titles
@@ -203,7 +213,7 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 
 	/**
 	 * Shortcut for keeping the code at least a bit readable. Adds label and input into $form array.
-	 * @params Many
+	 * @todo Document parameters.
 	 */
 	protected function addInputLabel( &$form, $label, $name, $size = false , $text = false, $attribs = array() ) {
 		$br = Html::element( 'br' );
