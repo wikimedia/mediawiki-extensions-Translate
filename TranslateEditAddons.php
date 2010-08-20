@@ -210,7 +210,9 @@ EOEO;
 	 * Tries to determine to which group this message belongs. It tries to get
 	 * group id from loadgroup GET-paramater, but fallbacks to messageIndex file
 	 * if no valid group was provided, or the group provided is a meta group.
-	 * @param $key The message key we are interested in.
+	 *
+	 * @param $namespace \int The namespace number for the key we are interested in.
+	 * @param $key \string The message key we are interested in.
 	 * @return MessageGroup which the key belongs to, or null.
 	 */
 	private static function getMessageGroup( $namespace, $key ) {
@@ -251,10 +253,21 @@ EOEO;
 		return $th->getBoxes();
 	}
 
+	/**
+	 * Check if a string contains the fuzzy string.
+	 *
+	 * @param $text \string Arbitrary text
+	 * return \bool If string contains fuzzy string.
+	 */
 	public static function hasFuzzyString( $text ) {
 		return strpos( $text, TRANSLATE_FUZZY ) !== false;
 	}
 
+	/** Check if a title is marked as fuzzy.
+	 *
+	 * @param $title Title
+	 * return \bool If title is marked fuzzy.
+	 */
 	public static function isFuzzy( Title $title ) {
 		$dbr = wfGetDB( DB_SLAVE );
 		$id = $dbr->selectField( 'revtag_type', 'rtt_id', array( 'rtt_name' => 'fuzzy' ), __METHOD__ );
@@ -274,6 +287,12 @@ EOEO;
 		return $res === $id;
 	}
 
+
+	/** Check if a title is in a message namespace.
+	 *
+	 * @param $title Title
+	 * return \bool If title is in a message namespace.
+	 */
 	public static function isMessageNamespace( Title $title ) {
 		global $wgTranslateMessageNamespaces; ;
 
@@ -429,5 +448,4 @@ EOEO;
 		}
 		return true;
 	}
-
 }

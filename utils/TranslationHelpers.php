@@ -41,7 +41,7 @@ class TranslationHelpers {
 	protected $textareaId = 'wpTextbox1';
 
 	/**
-	 * @param Title $title Title of a page that holds a translation.
+	 * @param $title Title Title of a page that holds a translation.
 	 */
 	public function __construct( Title $title ) {
 		$this->title = $title;
