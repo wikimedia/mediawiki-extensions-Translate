@@ -30,92 +30,49 @@ $wgExtensionCredits['specialpage'][] = array(
 );
 
 /**
- * Setup class autoloads
+ * @cond file_level_code
+ * Setup class autoloading.
  */
 $dir = dirname( __FILE__ ) . '/';
 require_once( $dir . '_autoload.php' );
+/** @endcond */
 
 /**
- * Register extension messages files.
+ * @cond file_level_code
  */
+
+// Register extension messages and other localisation.
 $wgExtensionMessagesFiles['Translate'] = $dir . 'Translate.i18n.php';
 $wgExtensionMessagesFiles['FirstSteps'] = $dir . 'FirstSteps.i18n.php';
 $wgExtensionMessagesFiles['PageTranslation'] = $dir . 'PageTranslation.i18n.php';
-
-/**
- * Register special page aliases.
- */
 $wgExtensionAliasesFiles['Translate'] = $dir . 'Translate.alias.php';
 
-/**
- * Init hook.
- */
+// Register initialization hook
 $wgExtensionFunctions[] = 'efTranslateInit';
 
-/**
- * Setup special pages
- */
-
-/**
- * Special:Translate
- */
+// Register special pages into MediaWiki
 $wgSpecialPages['Translate'] = 'SpecialTranslate';
 $wgSpecialPageGroups['Translate'] = 'wiki';
-
-/**
- * Special:Translations
- */
 $wgSpecialPages['Translations'] = 'SpecialTranslations';
 $wgSpecialPageGroups['Translations'] = 'pages';
-
-/**
- * Special:AdvancedTranslate
- */
 $wgSpecialPages['Magic'] = 'SpecialMagic';
 $wgSpecialPageGroups['Magic'] = 'wiki';
-
-/**
- * Special:TranslationChanges
- */
 $wgSpecialPages['TranslationChanges'] = 'SpecialTranslationChanges';
 $wgSpecialPageGroups['TranslationChanges'] = 'changes';
-
-/**
- * Special:TranslationStats
- */
 $wgSpecialPages['TranslationStats'] = 'SpecialTranslationStats';
 $wgSpecialPageGroups['TranslationStats'] = 'wiki';
-
-/**
- * Special:LanguageStats
- */
 $wgSpecialPages['LanguageStats'] = 'SpecialLanguageStats';
 $wgSpecialPageGroups['LanguageStats'] = 'wiki';
-
-/**
- * Special:ImportTranslations
- */
 $wgSpecialPages['ImportTranslations'] = 'SpecialImportTranslations';
 $wgSpecialPageGroups['ImportTranslations'] = 'wiki';
-
-/**
- * Special:FirstSteps. Unlisted special page; does not need $wgSpecialPageGroups.
- */
+// Unlisted special page; does not need $wgSpecialPageGroups.
 $wgSpecialPages['FirstSteps'] = 'SpecialFirstSteps';
-
-/**
- * Special:SupportedLanguages. Unlisted special page; does not need $wgSpecialPageGroups.
- */
+// Unlisted special page; does not need $wgSpecialPageGroups.
 $wgSpecialPages['SupportedLanguages'] = 'SpecialSupportedLanguages';
-
-/**
- * Special:MyLanguage. Unlisted special page; does not need $wgSpecialPageGroups.
- */
+// Unlisted special page; does not need $wgSpecialPageGroups.
 $wgSpecialPages['MyLanguage'] = 'SpecialMyLanguage';
 
-/**
- * Register hooks.
- */
+// Register hooks.
 $wgHooks['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';
 $wgHooks['OutputPageBeforeHTML'][] = 'TranslateEditAddons::addNavigation';
 $wgHooks['AlternateEdit'][] = 'TranslateEditAddons::intro';
@@ -124,9 +81,7 @@ $wgHooks['EditPage::showEditForm:fields'][] = 'TranslateEditAddons::keepFields';
 $wgHooks['SkinTemplateTabs'][] = 'TranslateEditAddons::tabs';
 # $wgHooks['ArticleAfterFetchContent'][] = 'TranslateEditAddons::customDisplay';
 
-/**
- * Custom preferences
- */
+// Custom preferences
 $wgDefaultUserOptions['translate'] = 0;
 $wgDefaultUserOptions['translate-editlangs'] = 'default';
 $wgDefaultUserOptions['translate-jsedit'] = 1;
@@ -134,21 +89,20 @@ $wgHooks['GetPreferences'][] = 'TranslatePreferences::onGetPreferences';
 $wgHooks['GetPreferences'][] = 'TranslatePreferences::translationAssistLanguages';
 $wgHooks['GetPreferences'][] = 'TranslatePreferences::translationJsedit';
 
-/**
- * Recent changes filters
- */
+// Recent changes filters
 $wgHooks['SpecialRecentChangesQuery'][] = 'TranslateRcFilter::translationFilter';
 $wgHooks['SpecialRecentChangesPanel'][] = 'TranslateRcFilter::translationFilterForm';
 $wgHooks['SkinTemplateToolboxEnd'][] = 'TranslateToolbox::toolboxAllTranslations';
 
-/**
- * Translation memory updates
- */
+// Translation memory updates
 $wgHooks['ArticleSaveComplete'][] = 'TranslationMemoryUpdater::update';
 
+// New rights
 $wgAvailableRights[] = 'translate';
 $wgAvailableRights[] = 'translate-import';
 $wgAvailableRights[] = 'translate-manage';
+
+/** @endcond */
 
 
 # == Configuration variables ==
@@ -186,6 +140,7 @@ define( 'TRANSLATE_FUZZY', '!!FUZZY!!' );
 /**
  * Define various web services that provide translation suggestions.
  * Example for tmserver translation memory from translatetoolkit.
+ * <pre>
  * $wgTranslateTranslationServices['tmserver'] = array(
  *   'server' => 'http://127.0.0.1',
  *   'port' => 54321,
@@ -194,6 +149,7 @@ define( 'TRANSLATE_FUZZY', '!!FUZZY!!' );
  *   'database' => '/path/to/database.sqlite',
  *   'type' => 'tmserver',
  * );
+ * </pre>
  *
  * For Google and Apertium, you should get an API key.
  * @see http://wiki.apertium.org/wiki/Apertium_web_service
@@ -251,7 +207,7 @@ $wgTranslateTasks = array(
  * Page translation feature allows structured translation of wiki pages
  * with simple markup and automatic tracking of changes.
  *
- * @defgroup PageTranslation Page translation
+ * @defgroup PageTranslation Page Translation
  * @see http://translatewiki.net/wiki/Translating:Page_translation_feature
  */
 $wgEnablePageTranslation = false;
@@ -446,7 +402,8 @@ $wgTranslateYamlLibrary = 'spyc';
 # Startup code
 
 /**
- * Initialise extension.
+ * Initialises the extension.
+ * @private
  */
 function efTranslateInit() {
 	global $wgTranslatePHPlot, $wgAutoloadClasses, $wgHooks;
@@ -598,7 +555,9 @@ function efTranslateInit() {
 }
 
 /**
- * Check if Page Translation was set up properly.
+ * Checks if page translation was set up properly.
+ * @ingroup PageTranslation
+ * @private
  */
 function efTranslateCheckPT() {
 	global $wgHooks, $wgMemc, $wgCommandLineMode;
@@ -644,38 +603,46 @@ function efTranslateCheckPT() {
 	return true;
 }
 
+/**
+ * Replaces the sitenotice with a warning that the extension is not
+ * set up properly. Also disables caching to avoid the notices getting
+ * stuck.
+ * @param $msg \string Message key
+ * @param $sitenotice \string
+ * @return \bool true
+ */
 function efTranslateCheckWarn( $msg, &$sitenotice ) {
 	global $wgOut;
-
 	$sitenotice = wfMsg( $msg );
 	$wgOut->enableClientCache( false );
-
-	return true;
-}
-
-function efTranslateInitTags( $parser ) {
-	/**
-	 * For nice language list in-page
-	 */
-	$parser->setHook( 'languages', array( 'PageTranslationHooks', 'languages' ) );
-
 	return true;
 }
 
 /**
- * @todo document
+ * Registers \<languages> tag with the parser.
+ * @param $parser Parser
+ * @return \bool true
  */
+function efTranslateInitTags( $parser ) {
+	 // For nice language list in-page
+	$parser->setHook( 'languages', array( 'PageTranslationHooks', 'languages' ) );
+	return true;
+}
+
+/** @cond cli_support */
 if ( !defined( 'TRANSLATE_CLI' ) ) {
 	function STDOUT() { }
 	function STDERR() { }
 }
+/** @endcond */
 
 /**
  * Helper function for adding namespace for message groups.
+ *
  * It defines constants for the namespace (and talk namespace) and sets up
  * restrictions and some other configuration.
- * @param $id int Namespace number
- * @param $name Name of the namespace
+ * @param $id \int Namespace number
+ * @param $name \string Name of the namespace
  */
 function wfAddNamespace( $id, $name ) {
 	global $wgExtraNamespaces, $wgContentNamespaces,
