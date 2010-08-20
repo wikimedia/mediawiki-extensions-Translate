@@ -462,7 +462,7 @@ function efTranslateInit() {
 		/**
 		 * Namespaces
 		 */
-		global $wgPageTranslationNamespace, $wgExtraNamespaces;
+		global $wgPageTranslationNamespace, $wgCanonicalNamespaceNames;
 		global $wgNamespacesWithSubpages, $wgNamespaceProtection;
 		global $wgTranslateMessageNamespaces;
 
@@ -475,8 +475,8 @@ function efTranslateInit() {
 		/**
 		 * Register them as namespaces
 		 */
-		$wgExtraNamespaces[NS_TRANSLATIONS]      = 'Translations';
-		$wgExtraNamespaces[NS_TRANSLATIONS_TALK] = 'Translations_talk';
+		$wgCanonicalNamespaceNames[NS_TRANSLATIONS]      = 'Translations';
+		$wgCanonicalNamespaceNames[NS_TRANSLATIONS_TALK] = 'Translations_talk';
 		$wgNamespacesWithSubpages[NS_TRANSLATIONS]      = true;
 		$wgNamespacesWithSubpages[NS_TRANSLATIONS_TALK] = true;
 
