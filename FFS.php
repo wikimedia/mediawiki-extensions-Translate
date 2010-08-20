@@ -494,8 +494,8 @@ abstract class JavaScriptFFS extends SimpleFFS {
 			/**
 			 * Strip excess whitespace from key and value, then quotation marks.
 			 */
-			$key = trim( trim( $segments[0] ), '\'"' );
-			$value = trim( trim( $segments[1] ), '\'"' );
+			$key = trim( trim( $segments[0] ), "'\"" );
+			$value = trim( trim( $segments[1] ), "'\"" );
 
 			/**
 			 * Unescape any JavaScript string syntax and append to message array.

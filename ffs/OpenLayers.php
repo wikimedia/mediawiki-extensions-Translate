@@ -29,7 +29,7 @@ class OpenLayersFormatReader extends SimpleFormatReader {
 
 			# Work around https://bugzilla.mozilla.org/show_bug.cgi?id=274152
 			# Encode certain Unicode formatting chars so affected
-			# versions of Gecko don't misinterpret our strings;
+			# versions of Gecko do not misinterpret our strings;
 			# this is a common problem with Farsi text.
 			"\xe2\x80\x8c" => "\\u200c", // ZERO WIDTH NON-JOINER
 			"\xe2\x80\x8d" => "\\u200d", // ZERO WIDTH JOINER
@@ -86,7 +86,7 @@ class OpenLayersFormatReader extends SimpleFormatReader {
 			# $segment = preg_replace( '#\" \+(.*?)\"#m', '', $segment );
 			// Break in to key and message.
 			if ( $this->keyquote ) {
-				$segments = explode( '\':', $segment );
+				$segments = explode( "':", $segment );
 			} else {
 				$segments = explode( ': ', $segment );
 			}
