@@ -1,6 +1,6 @@
 <?php
 /**
- * Translations of Translate extension.
+ * Translations for the core of the Translate extension.
  *
  * @file
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later

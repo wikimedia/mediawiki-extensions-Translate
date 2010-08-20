@@ -1,12 +1,16 @@
 <?php
 /**
- * @todo Needs documentation.
+ * Classes for message objects.
+ *
  * @file
  * @author Niklas Laxström
  * @copyright Copyright © 2008-2010, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+/**
+ * @todo Needs documentation.
+ */
 abstract class TMessage {
 	protected $key;
 	protected $definition;
@@ -48,24 +52,34 @@ class ThinMessage extends TMessage {
 		$this->tags[] = $tag;
 	}
 
-
 	public function key() {
 		return $this->key;
 	}
+
 	public function definition() {
 		return $this->definition;
 	}
+
 	public function translation() {
-		if ( !isset( $this->row ) ) return $this->infile();
+		if ( !isset( $this->row ) ) {
+			return $this->infile();
+		}
+
 		return Revision::getRevisionText( $this->row );
 	}
 	public function author() {
-		if ( !isset( $this->row ) ) return null;
+		if ( !isset( $this->row ) ) {
+			return null;
+		}
+
 		return $this->row->rev_user_text;
 	}
 
 	public function infile() {
-		if ( !isset( $this->infile ) ) return null;
+		if ( !isset( $this->infile ) ) {
+			return null;
+		}
+
 		return $this->infile;
 	}
 
@@ -80,12 +94,16 @@ class ThinMessage extends TMessage {
 class FatMessage extends TMessage {
 	protected $translation = null;
 	protected $infile = null;
+
 	public function setTranslation( $text ) {
 		$this->translation = $text;
 	}
 
 	public function translation() {
-		if ( $this->translation === null ) return $this->infile;
+		if ( $this->translation === null ) {
+			return $this->infile;
+		}
+
 		return $this->translation;
 	}
 

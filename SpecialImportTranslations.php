@@ -1,13 +1,18 @@
 <?php
-
 /**
- * Special page to import Gettext (.po) files exported using Translate extension.
- * Does not support general Gettext files.
+ * Contains logic for special page Special:ImportTranslations.
  *
- * @ingroup SpecialPage
+ * @file
  * @author Niklas Laxström
  * @copyright Copyright © 2009-2010, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ */
+
+/**
+ * Special page to import Gettext (.po) files exported using Translate extension.
+ * Does not support generic Gettext files.
+ *
+ * @ingroup SpecialPage
  */
 class SpecialImportTranslations extends SpecialPage {
 	/**
@@ -87,6 +92,7 @@ class SpecialImportTranslations extends SpecialPage {
 
 		$importer = new MessageWebImporter( $this->getTitle(), $group, $code );
 		$alldone = $importer->execute( $messages );
+
 		if ( $alldone ) {
 			$this->deleteCachedData();
 		}
@@ -191,18 +197,30 @@ class SpecialImportTranslations extends SpecialPage {
 			}
 		} elseif ( $source === 'local' ) {
 			$filename = $this->request->getFileTempname( 'upload-local' );
-			if ( !is_uploaded_file( $filename ) ) return array( 'ul-failed' );
+			if ( !is_uploaded_file( $filename ) ) {
+				return array( 'ul-failed' );
+			}
+
 			$filedata = file_get_contents( $filename );
+
 			return array( 'ok' );
 		} elseif ( $source === 'wiki' ) {
 			$filetitle = $this->request->getText( 'upload-wiki' );
 			$title = Title::newFromText( $filetitle, NS_FILE );
-			if ( !$title ) return array( 'invalid-title', $filetitle );
+
+			if ( !$title ) {
+				return array( 'invalid-title', $filetitle );
+			}
+
 			$file = wfLocalFile( $title );
-			if ( !$file || !$file->exists() ) return array( 'no-such-file', $title->getPrefixedText() );
+
+			if ( !$file || !$file->exists() ) {
+				return array( 'no-such-file', $title->getPrefixedText() );
+			}
 
 			$filename = $file->getPath();
 			$filedata = file_get_contents( $filename );
+
 			return array( 'ok' );
 		} else {
 			return array( 'type-not-supported', $source );
@@ -256,22 +274,28 @@ class SpecialImportTranslations extends SpecialPage {
 
 	protected function setCachedData( $data ) {
 		global $wgMemc;
+
 		$key = wfMemcKey( 'translate', 'webimport', $this->user->getId() );
+
 		/**
-		 * 15 minutes.
+		 * Cache 15 minutes.
 		 */
 		$wgMemc->set( $key, $data, 60 * 15 );
 	}
 
 	protected function getCachedData() {
 		global $wgMemc;
+
 		$key = wfMemcKey( 'translate', 'webimport', $this->user->getId() );
+
 		return $wgMemc->get( $key );
 	}
 
 	protected function deleteCachedData() {
 		global $wgMemc;
+
 		$key = wfMemcKey( 'translate', 'webimport', $this->user->getId() );
+
 		return $wgMemc->delete( $key );
 	}
 }

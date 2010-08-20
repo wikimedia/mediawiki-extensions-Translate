@@ -1,13 +1,19 @@
 <?php
+/**
+ * Contains logic for special page Special:FirstSteps to guide users through
+ * the process of becoming a translator.
+ *
+ * @file
+ * @author Niklas Laxström
+ * @copyright Copyright © 2010, Niklas Laxström
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ */
 
 /**
  * Implements a special page which assists users to become translators.
  * Currently it is tailored for the needs of translatewiki.net
  *
  * @ingroup SpecialPage
- * @author Niklas Laxström
- * @copyright Copyright © 2010, Niklas Laxström
- * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 class SpecialFirstSteps extends UnlistedSpecialPage {
 	protected $skin, $user, $out;
@@ -44,6 +50,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 			$this->out->addHtml( $header );
 			return $step;
 		}
+
 		if (  $this->user->isLoggedIn() ) {
 			$header->content( $header->content . wfMsg( 'translate-fs-pagetitle-done' ) );
 			$this->out->addHtml( $header );
@@ -66,6 +73,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 		list( $su_before, $su_after ) =  explode( '|||', $tag, 2 );
 
 		$this->out->addWikiMsg( 'translate-fs-signup-text', $li_before, $li_after, $su_before, $su_after );
+
 		return $step_message;
 	}
 
@@ -80,6 +88,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 			$this->out->addHtml( $header );
 			return $step;
 		}
+
 		if ( $this->user->getOption( 'language' ) !== 'en' || $wgRequest->getText( 'step' ) === 'settings' ) {
 			$header->content( $header->content . wfMsg( 'translate-fs-pagetitle-done' ) );
 			$this->out->addHtml( $header );
@@ -88,6 +97,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 
 		$this->out->addHtml( $header->style( 'opacity', false ) );
 		$this->out->addWikiMsg( 'translate-fs-settings-text' );
+
 		$form = new HtmlTag( 'form' );
 		$items = new TagContainer();
 		$form->param( 'method', 'post' )->content( $items );
@@ -122,10 +132,12 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 		{
 			$article = new Article( $userpage );
 			$status = $article->doEdit( $wgRequest->getText( $textareaId ), $this->getTitle() );
+
 			if ( $status->isOK() ) {
 				$header->content( $header->content . wfMsg( 'translate-fs-pagetitle-done' ) );
 				$this->out->addHtml( $header );
 				$this->out->addWikiMsg( 'translate-fs-userpage-done' );
+
 				return false;
 			} else {
 				$this->out->addWikiText( $status->getWikiText() );
@@ -137,9 +149,11 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 			$revision = Revision::newFromTitle( $userpage );
 			$text = $revision->getText();
 			$preload = $text;
+
 			if ( preg_match( '/{{#babel:/i', $text ) ) {
 				$header->content( $header->content . wfMsg( 'translate-fs-pagetitle-done' ) );
 				$this->out->addHtml( $header );
+
 				return false;
 			}
 		}
@@ -164,6 +178,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 		$items[] = new RawHtml( Xml::submitButton( wfMsg( 'translate-fs-userpage-submit' ) ) );
 
 		$this->out->addHtml( $form );
+
 		return $step_message;
 	}
 
@@ -182,6 +197,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 			$this->out->addHtml( $header );
 			return $step;
 		}
+
 		$this->out->addHtml( $header->style( 'opacity', false ) );
 		$this->out->addWikiMsg( 'translate-fs-permissions-text' );
 
@@ -196,6 +212,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 		if ( $step ) {
 			$header->style( 'opacity', 0.4 );
 			$this->out->addHtml( $header );
+
 			return $step;
 		}
 
@@ -219,6 +236,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 		if ( $this->user->isEmailConfirmed() ) {
 			$header->content( $header->content . wfMsg( 'translate-fs-pagetitle-done' ) );
 			$this->out->addHtml( $header );
+
 			return $step; // Start translating step
 		}
 

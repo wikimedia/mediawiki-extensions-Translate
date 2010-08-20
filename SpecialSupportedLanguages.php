@@ -1,13 +1,24 @@
 <?php
 /**
- * @todo Needs documentation
- * @ingroup SpecialPage
+ * Contains logic for special page Special:SupportedLanguages
+ *
+ * @file
  * @author Niklas Laxström
  * @author Siebrand Mazeland
  * @copyright  Copyright © 2010, Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+/**
+ * Implements unlisted special page Special:SupportedLanguages. The wiki
+ * administrator must define NS_PORTAL, otherwise this page does not work.
+ * This page displays a list of language portals for all portals corresponding
+ * with a language code defined for MediaWiki and a subpage called
+ * "translators". The subpage "translators" must contain the template
+ * [[:{{ns:template}}:User|User]], taking a user name as parameter.
+ *
+ * @ingroup SpecialPage
+ */
 class SpecialSupportedLanguages extends UnlistedSpecialPage {
 	public function __construct() {
 		parent::__construct( 'SupportedLanguages' );
@@ -66,6 +77,7 @@ class SpecialSupportedLanguages extends UnlistedSpecialPage {
 			$rev = new Revision( $row );
 			$text = $rev->getText();
 			$code = strtolower( preg_replace( '!/translators$!', '', $row->page_title ) );
+
 			preg_match_all( '!{{[Uu]ser\|([^}|]+)!', $text, $matches,  PREG_SET_ORDER );
 			foreach ( $matches as $match ) {
 				$user = Title::capitalize( $match[1], NS_USER );
@@ -76,7 +88,9 @@ class SpecialSupportedLanguages extends UnlistedSpecialPage {
 		}
 
 		$lb->execute();
+
 		global $wgUser;
+
 		$skin = $wgUser->getSkin();
 		$portalBaseText = wfMsg( 'portal' );
 
@@ -90,7 +104,6 @@ class SpecialSupportedLanguages extends UnlistedSpecialPage {
 
 		foreach ( array_keys( $users ) as $code ) {
 			$portalTitle = Title::makeTitleSafe( NS_PORTAL, $code );
-
 			$portalText = $portalBaseText;
 
 			/**

@@ -1,6 +1,6 @@
 <?php
 /**
- * An extension to ease the translation of Mediawiki
+ * This file contains classes that implements message collections.
  *
  * @ingroup Extensions
  * @file
@@ -9,6 +9,9 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+/**
+ * @todo Needs documentation.
+ */
 class MessageCollection implements ArrayAccess, Iterator, Countable {
 	/**
 	 * It is handy to store the language code here.

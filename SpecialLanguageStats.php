@@ -1,17 +1,23 @@
 <?php
+/**
+ * Contains logic for special page Special:LanguageStats.
+ *
+ * @file
+ * @author Siebrand Mazeland
+ * @author Niklas Laxström
+ * @copyright Copyright © 2008-2010 Siebrand Mazeland, Niklas Laxström
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ */
 
 /**
- * Implements a special page which givens translation statistics for a given
- * set of message groups. Message group names can be entered (pipe separated)
- * into the form, or added as a parameter in the URL.
+ * Implements includable special page Special:LanguageStats which provides
+ * translation statistics for all defined message groups.
  *
  * Loosely based on the statistics code in phase3/maintenance/language
  *
- * Use {{Special:LanguageStats/nl/1}} to show for 'nl' and suppres complete.
+ * Use {{Special:LanguageStats/nl/1}} to show for 'nl' and suppres completely
+ * translated groups.
  *
- * @author Siebrand Mazeland
- * @copyright Copyright © 2008-2010 Siebrand Mazeland
- * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  * @ingroup SpecialPage
  */
 class SpecialLanguageStats extends IncludableSpecialPage {
@@ -62,7 +68,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	/**
 	 * HTML for the top form.
 	 * @param $code \string A language code (default empty, example: 'en').
-	 * @param $suppressComplete \bool If completely translated groups should be suppressed.
+	 * @param $suppressComplete \bool If completely translated groups should be suppressed (default: false).
 	 * @return \string HTML
 	 */
 	function buildLanguageForm( $code = '', $suppressComplete = false ) {
@@ -108,6 +114,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 	/**
 	 * Statistics table element (heading or regular cell)
+	 *
 	 * @todo document
 	 * @param $in \string
 	 * @param $bgcolor \string
@@ -190,6 +197,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	/**
 	 * HTML for language statistics.
 	 * Copied and adaped from groupStatistics.php by Nikerabbit
+	 *
 	 * @param $code \string A language code (default empty, example: 'en').
 	 * @param $suppressComplete \bool If completely translated groups should be suppressed
 	 * @return \string HTML
@@ -325,7 +333,11 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	}
 
 	/**
-	 * @todo name does not match behaviour.
+	 * Used to circumvent ugly tooltips when newlines are used in the
+	 * message content ("x\ny" becomes "x y").
+	 *
+	 * @todo Name does not match behaviour.
+	 * @todo Make this a static helper function somewhere?
 	 */
 	private static function newlineToWordSeparator( $text ) {
 		$wordSeparator = wfMsg( 'word-separator' );

@@ -1,7 +1,8 @@
 <?php
 /**
- * @todo: needs documentation
+ * Message groups
  *
+ * @todo: needs documentation
  * @file
  * @author Niklas Laxström
  * @copyright Copyright © 2008-2010, Niklas Laxström
@@ -249,6 +250,7 @@ abstract class MessageGroupOld implements MessageGroup {
 
 /**
  * @todo: needs documentation
+ * @deprecated
  */
 class CoreMessageGroup extends MessageGroupOld {
 	protected $label       = 'MediaWiki';
@@ -369,6 +371,7 @@ class CoreMessageGroup extends MessageGroupOld {
 
 /**
  * @todo: needs documentation
+ * @deprecated
  */
 class ExtensionMessageGroup extends MessageGroupOld {
 	protected $magicFile, $aliasFile;
@@ -531,6 +534,7 @@ class ExtensionMessageGroup extends MessageGroupOld {
 
 /**
  * @todo: needs documentation
+ * @deprecated
  */
 class AliasMessageGroup extends ExtensionMessageGroup {
 	protected $dataSource;
@@ -611,6 +615,7 @@ class AliasMessageGroup extends ExtensionMessageGroup {
 
 /**
  * @todo: needs documentation
+ * @deprecated
  */
 class CoreMostUsedMessageGroup extends CoreMessageGroup {
 	protected $label = 'MediaWiki (most used)';
@@ -641,6 +646,7 @@ class CoreMostUsedMessageGroup extends CoreMessageGroup {
 
 /**
  * @todo: needs documentation
+ * @deprecated
  */
 class GettextMessageGroup extends MessageGroupOld {
 	protected $type = 'gettext';
@@ -719,6 +725,7 @@ class GettextMessageGroup extends MessageGroupOld {
 
 /**
  * @todo: needs documentation
+ * @deprecated
  */
 class WikiMessageGroup extends MessageGroupOld {
 	protected $source = null;
@@ -780,6 +787,7 @@ class WikiMessageGroup extends MessageGroupOld {
 
 /**
  * @todo: needs documentation
+ * @deprecated
  */
 class WikiPageMessageGroup extends WikiMessageGroup {
 	protected $title;

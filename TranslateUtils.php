@@ -1,6 +1,6 @@
 <?php
 /**
- * This class contains some static helper functions for other classes.
+ * This file contains classes with static helper functions for other classes.
  *
  * @file
  * @author Niklas Laxström
@@ -8,6 +8,9 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+/**
+ * @todo Needs documentation.
+ */
 class TranslateUtils {
 	const MSG = 'translate-';
 
@@ -337,6 +340,9 @@ class TranslateUtils {
 	}
 }
 
+/**
+ * @todo Needs documentation.
+ */
 class HTMLSelector {
 	private $options = array();
 	private $selected = false;

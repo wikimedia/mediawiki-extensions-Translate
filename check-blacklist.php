@@ -2,17 +2,19 @@
 /**
  * List of checks that should not be performed.
  *
- * The array takes input of arrays which define constraints. Checks which match
- * those constrains are skipped. Possible constrains are <tt>group</tt>,
- * <tt>check</tt>, <tt>code</tt> and <tt>message</tt>.
  * @todo Use YAML?
- *
+ * @file
  * @author Niklas Laxström
  * @copyright Copyright © 2008-2010, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
-$checkBlacklist = array(
 
+/**
+ * The array takes input of arrays which define constraints. Checks which match
+ * those constrains are skipped. Possible constrains are <tt>group</tt>,
+ * <tt>check</tt>, <tt>code</tt> and <tt>message</tt>.
+ */
+$checkBlacklist = array(
 array(
 	'check' => 'plural',
 	'code' => array( 'az', 'bo', 'dz', 'id', 'fa', 'gan', 'gan-hans',

@@ -1,12 +1,13 @@
 <?php
 /**
+ * Message checking framework.
+ *
  * @file
  * @defgroup MessageCheckers Message Checkers
+ *
  */
 
 /**
- * Message checking framework.
- *
  * Message checkers try to find common mistakes so that translators can fix
  * them quickly. To implement your own checks, extend this class and add a
  * method of the following type:

@@ -1,16 +1,21 @@
 <?php
 /**
- * Special page just to redirect the user to translated version if page,
- * if it exists.
+ * Contains logic for special page Special:MyLanguage
  *
- * Usage: [[Special:MyLanguage/Page name|link text]]
- *
- * @ingroup SpecialPage
+ * @file
  * @author Niklas Laxström
  * @copyright Copyright © 2010 Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+/**
+ * Unlisted special page just to redirect the user to the translated version of
+ * a page, if it exists.
+ *
+ * Usage: [[Special:MyLanguage/Page name|link text]]
+ *
+ * @ingroup SpecialPage
+ */
 class SpecialMyLanguage extends UnlistedSpecialPage {
 	/**
 	 * Construct
