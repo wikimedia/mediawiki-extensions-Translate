@@ -13,7 +13,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 	 * uses and vice versa.
 	 */
 	protected function wikiParameterCheck( $messages, $code, &$warnings ) {
-		// FIXME: gives false positive on (some?) languages for which a
+		// @todo Gives false positive on (some?) languages for which a
 		//        parameter is completely left out. Example:
 		//        http://translatewiki.net/w/i.php?title=MediaWiki:Configure-ext-ext-dependencies/zh-hant&action=edit
 		foreach ( $messages as $message ) {
@@ -220,7 +220,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 					$warnings[$key][] = array(
 						array( 'miscmw', $subcheck, $key, $code ),
 						'translate-checks-format',
-						"Parameter count is $traCount; should be $defCount", // FIXME: missing i18n.
+						"Parameter count is $traCount; should be $defCount", // @todo Missing i18n.
 					);
 					continue;
 				}
@@ -234,7 +234,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 						$warnings[$key][] = array(
 							array( 'miscmw', $subcheck, $key, $code ),
 							'translate-checks-format',
-							"<nowiki>$traArray[$i]</nowiki> is malformed", // FIXME: missing i18n.
+							"<nowiki>$traArray[$i]</nowiki> is malformed", // @todo Missing i18n.
 						);
 						continue;
 					}

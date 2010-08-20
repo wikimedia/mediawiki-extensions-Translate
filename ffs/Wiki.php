@@ -15,8 +15,7 @@ class WikiFormatReader extends SimpleFormatReader {
 	/**
 	 * Reads all \@author tags from the file and returns array of authors.
 	 *
-	 * @param $filename From which file to get the authors.
-	 * @return Array of authors.
+	 * @return \array List of authors.
 	 */
 	public function parseAuthors() {
 		if ( $this->filename === false ) {
@@ -36,7 +35,7 @@ class WikiFormatReader extends SimpleFormatReader {
 
 		$contents = file_get_contents( $this->filename );
 
-		/** FIXME: handle the case where the first comment is missing */
+		// @todo Handle the case where the first comment is missing */
 		// $dollarstart = strpos( $contents, '$' );
 
 		$start = strpos( $contents, '*/' );
@@ -149,7 +148,8 @@ HEADER
 	 * Preprocesses MessageArray to suitable format and filters things that should
 	 * not be exported.
 	 *
-	 * @param $array Reference of MessageArray.
+	 * @param $messages MessageCollection Reference of MessageArray.
+	 * @return Array of key-translation pairs. 
 	 */
 	public function makeExportArray( MessageCollection $messages ) {
 		// We copy only relevant translations to this new array

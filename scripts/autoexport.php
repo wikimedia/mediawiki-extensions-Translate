@@ -85,7 +85,7 @@ foreach ( $rows as $row ) {
 	$group = false;
 	$code = false;
 
-	// TODO: fixme
+	// @todo Fixme
 	list( $pieces, ) = explode( '/', $wgContLang->lcfirst( $row->rc_title ), 2 );
 
 	$mg = TranslateUtils::messageKeyToGroup(  $row->rc_namespace, $pieces );

@@ -181,9 +181,10 @@ class WikiWriter {
 	private $group = null;
 
 	/**
-	 * @param $changes Array of key/langcode => translation.
-	 * @param $user User who makes the edits in wiki.
-	 * @param $dryrun Don't do anything that affects the database.
+	 * @param $changes \array Array of key/langcode => translation.
+	 * @param $groupId \string Group ID.
+	 * @param $user \string User who makes the edits in wiki.
+	 * @param $dryrun \bool Do not do anything that affects the database.
 	 */
 	public function __construct( $changes, $groupId, $user, $dryrun = true ) {
 		$this->changes = $changes;

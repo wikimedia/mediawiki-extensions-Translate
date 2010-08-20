@@ -190,7 +190,7 @@ class ChangeSyncer {
 				continue;
 			}
 
-			// FIXME: temporary exception. Should be fixed elsewhere more generically
+			// @todo Temporary exception. Should be fixed elsewhere more generically.
 			if ( $translation == '{{PLURAL:GETTEXT|}}' ) {
 				return;
 			}

@@ -15,16 +15,16 @@ class TranslationStats {
 	 * Returns translated percentage for message group in given
 	 * languages
 	 *
-	 * @param $group String: Unique key identifying the group
-	 * @param $languages Array: array of language codes
-	 * @param $threshold Int: Minimum required percentage translated to
+	 * @todo Add ability to return localised fuzzy percentage.
+	 * @param $group \string Unique key identifying the group
+	 * @param $languages \array List of language codes
+	 * @param $threshold \int Minimum required percentage translated to
 	 * return. Other given language codes will not be returned.
-	 * @param $simple Bool: Return only codes or code/pecentage pairs
+	 * @param $simple \bool Return only codes or code/pecentage pairs
 	 *
-	 * @return Array: array of key value pairs code (string)/percentage
+	 * @return \array Array of key value pairs code (string)/percentage
 	 * (float) or array of codes, depending on $simple
 	 */
-	// FIXME: add ability to return fuzzy percentage.
 	public static function getPercentageTranslated( $group, $languages, $threshold = false, $simple = false ) {
 		$stats = array();
 

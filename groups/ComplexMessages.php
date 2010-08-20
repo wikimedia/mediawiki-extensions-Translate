@@ -458,7 +458,7 @@ abstract class ComplexMessages {
 
 			// Remove duplicated entries, causes problems with magic words
 			// Just to be sure, it should not be possible to save invalid data anymore
-			$val = array_unique( $val /*FIXME:SORT_REGULAR*/ );
+			$val = array_unique( $val /* @todo SORT_REGULAR */ );
 
 			// So do empty elements...
 			foreach ( $val as $k => $v ) {

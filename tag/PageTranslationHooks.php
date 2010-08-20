@@ -141,8 +141,10 @@ class PageTranslationHooks {
 		$article->doPurge();
 	}
 
+	/**
+	 * @todo NOOP now.
+	 */
 	public static function addSidebar( $out, $tpl ) {
-		// TODO: fixme
 /*
 		global $wgLang;
 
@@ -152,7 +154,7 @@ class PageTranslationHooks {
 		foreach ( $status as $code => $percent ) {
 			$name = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() );
 			$percent = $wgLang->formatNum( round( 100 * $percent ) );
-			$label = "$name ($percent%)"; // FIXME: i18n
+			$label = "$name ($percent%)"; // @todo i18n missing.
 
 			$_title = TranslateTagUtils::codefyTitle( $title, $code );
 
@@ -221,8 +223,8 @@ class PageTranslationHooks {
 
 			$percent = Xml::element( 'img', array(
 				'src'   => TranslateUtils::assetPath( "images/prog-$image.png" ),
-				'alt'   => "$percent%", // FIXME: i18n
-				'title' => "$percent%", // FIXME: i18n
+				'alt'   => "$percent%", // @todo i18n missing.
+				'title' => "$percent%", // @todo i18n missing.
 				'width' => '9',
 				'height' => '9',
 			) );
