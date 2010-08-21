@@ -378,6 +378,7 @@ Details: $1',
  * @author SPQRobin
  * @author Sanbec
  * @author Siebrand
+ * @author The Evil IP address
  * @author Toliño
  * @author Umherirrender
  * @author פוילישער
@@ -386,7 +387,7 @@ $messages['qqq'] = array(
 	'translate' => 'Part of the "Translate" extension. This message is the page title of the special page [[Special:Translate]]. It is the verb "to translate" and should be in the infinitive mood.
 
 {{Identical|Translate}}',
-	'translate-desc' => 'Short description of the Translate extension, shown in [[Special:Version]]. Do not translate or change links.',
+	'translate-desc' => '{{desc}}',
 	'translate-edit' => '{{Identical|Edit}}',
 	'translate-talk' => '{{Identical|Talk}}',
 	'translate-history' => '{{Identical|History}}',
@@ -1959,7 +1960,15 @@ $messages['ba'] = array(
 	'translate-statsf-group' => 'Төркөм кодтары өтөр аша:',
 	'translate-statsf-submit' => 'Ҡарап сығырға',
 	'translate-tag-category' => 'Тәржемә ителә торған биттәр',
+	'translate-sidebar-alltrans' => 'Башҡа телдәрҙә',
 	'translations' => 'Бөтә тәржемәләр',
+	'translations-summary' => 'Бөтә мөмкин булған телдәрҙә тәржемәләр сығарыр өсөн, яҙманың исемен керетегеҙ.',
+	'translate-translations-no-message' => '"$1" - тәржемә ителә торған яҙма түгел',
+	'translate-translations-none' => '"$1" өсөн тәржемәләр юҡ',
+	'translate-translations-fieldset-title' => 'Яҙма',
+	'translate-translations-messagename' => 'Исем',
+	'translate-translations-project' => 'Проект:',
+	'translate-translations-history-short' => 'т',
 	'languagestats' => 'Тел статистикаһы',
 	'languagestats-summary' => 'Был биттә бөтә төркөмдәр өсөн һайланған телдә тәржемәләр статистикаһы күрһәтелгән.',
 	'languagestats-stats-for' => '$1 теле өсөн тәржемәләр статистикаһы ($2).',
@@ -1980,6 +1989,11 @@ $messages['ba'] = array(
 Яҙма йә уның инглиз телендәге сығанағы үҙгәрһә, йә автоматик тикшереүҙе үтмәһә, йә кемдер уны иҫкергән тип билдәләһә иҫкергән тип иҫәпләнә.',
 	'translate-nothing-to-do' => 'Бөтә мөмкин булған тәржемәләр яһалған булырға тейеш.
 [[Special:Translate|{{int:translate}}]] ярҙамында яҙмаларҙы тикшерә алаһығыҙ.',
+	'supportedlanguages-translators' => '{{PLURAL:$2|Тәржемәсе|Тәржемәселәр}}: $1',
+	'supportedlanguages-recenttranslations' => 'яңыраҡ эшләнгән тәржемәләр',
+	'translate-save' => 'Һаҡларға ($1)',
+	'translate-jssti-add' => 'Исемлеккә өҫтәргә',
+	'translate-group-desc-mediawikicore' => 'Был төркөм MediaWiki проектының хәҙерге альфа-версияһында ({{CURRENTVERSION}}) ҡулланылған яҙмаларҙы үҙ эсенә ала.',
 	'translate-js-next' => 'Һаҡларға һәм сираттағыны асырға',
 	'translate-js-nonext' => 'Был яҙма әлеге биттә аҙаҡҡыһы булды.',
 	'translate-js-skip' => 'Сираттағыға күсергә',
@@ -3380,6 +3394,7 @@ $messages['cs'] = array(
 	'translate-task-view' => 'Zobrazit všechny zprávy z',
 	'translate-task-untranslated' => 'Zobrazit všechny nepřeložené zprávy z',
 	'translate-task-optional' => 'Zobrazit volitelné zprávy z',
+	'translate-task-suggestions' => 'Zobrazit všechny zprávy s návrhy z překladové paměti',
 	'translate-task-untranslatedoptional' => 'Zobrazit nepřeložené volitelné zprávy z',
 	'translate-task-problematic' => 'Zobrazit zprávy s problematickým překladem',
 	'translate-task-review' => 'Porovnat změny v',
@@ -10665,7 +10680,7 @@ Wat De jezeich kreß, wann De nix enndrähß, deiht vun dä Shprooch afhange, en
 	'translate-translations-none' => 'Mer han kei Övversätzunge för „$1“',
 	'translate-translations-fieldset-title' => 'Nohrich',
 	'translate-translations-messagename' => 'Tittel:',
-	'translate-translations-project' => 'Projek:',
+	'translate-translations-project' => 'Projäk:',
 	'translate-translations-including-no-param' => 'Jif ene jöltijje Siggetittel för die Nohrich als Parrammeeter för di Ongersigg aan',
 	'languagestats' => 'Statistike för en Sprooch',
 	'languagestats-summary' => 'Di Sigg hee zeich Statistike vun de Övversetzung för all Nohrechtejroppe fun ener Shprooch.',
@@ -18712,6 +18727,7 @@ $messages['vi'] = array(
 	'translate-task-view' => 'Xem tất cả các thông điệp từ',
 	'translate-task-untranslated' => 'Xem tất cả các thông điệp chưa dịch từ',
 	'translate-task-optional' => 'Xem các thông điệp tùy chọn từ',
+	'translate-task-suggestions' => 'Xem các thông điệp có gợi ý từ bộ nhớ biên dịch',
 	'translate-task-untranslatedoptional' => 'Xem các thông điệp tùy chọn chưa dịch từ',
 	'translate-task-problematic' => 'Xem các thông báo có vấn đề',
 	'translate-task-review' => 'Kiểm lại các thay đổi trong',

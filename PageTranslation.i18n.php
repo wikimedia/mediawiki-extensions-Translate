@@ -624,6 +624,11 @@ Testenn ar rannbennad : <pre>$1</pre>",
 	'pt-movepage-action-check' => 'Gwiriekaat ha posupl eo adenvel',
 	'pt-movepage-action-perform' => 'Adenvel',
 	'pt-movepage-action-other' => 'Kemmañ ar moned',
+	'pt-movepage-intro' => "Gant ar bajenn dibar-mañ e c'hallit adenvel ar pajennoù merket da vezañ troet.
+Ne zeuio ket an wir diouzhtu an adenvel rak ret e vo dilec'hiañ kalz a bajennoù.
+Implijet e vo al lostad gortoz evit adenvel ar pajennoù.
+N'eus ket tu da etreober gant ar pajennoù e-keit hag emeur ouzh o adenvel.
+Er marilh treiñ e vo enrollet ar mankoù adenvel; eno e vo deoc'h o reizhañ gant an dorn.",
 	'pt-movepage-logreason' => 'Tennad eus ar bajenn da dreiñ $1.',
 	'pt-movepage-started' => 'Ar bajenn diazez a zo bet adanvet.
 Mar plij gwiriekait marilh an droidigezhioù evit kempenn fazioù, ma vefe, ha lenn ar gemennadenn echuiñ.',
@@ -1696,7 +1701,7 @@ Antes de marcar esta versión para ser traducida, comprobe que as modificacións
 	'tpt-already-marked' => 'A última versión desta páxina xa foi marcada para ser traducida.',
 	'tpt-unmarked' => 'A páxina "$1" xa non está marcada para traducir.',
 	'tpt-list-nopages' => 'Non hai ningunha páxina marcada para ser traducida, nin preparada para ser marcada para ser traducida.',
-	'tpt-old-pages' => 'Algunha versión {{PLURAL:$1|desta páxina|destas páxinas}} ten sido marcada para ser traducida.',
+	'tpt-old-pages' => 'Algunha versión {{PLURAL:$1|desta páxina|destas páxinas}} foi marcada para ser traducida.',
 	'tpt-new-pages' => '{{PLURAL:$1|Esta páxina contén|Estas páxinas conteñen}} texto con etiquetas de tradución, pero ningunha versión {{PLURAL:$1|desta páxina|destas páxinas}} está actualmente marcada para ser traducida.',
 	'tpt-other-pages' => '{{PLURAL:$1|Hai marcada para traducir unha a versión vella desta páxina|Hai marcadas para traducir algunhas versións vellas destas páxinas}}, pero {{PLURAL:$1|a última versión|as últimas versións}} non se {{PLURAL:$1|pode|poden}} marcar.',
 	'tpt-rev-latest' => 'última versión',
@@ -3208,6 +3213,11 @@ La pagina qu'ensajatz de modificar sembla pas correspondre a cap de pagina marca
 	'tpt-install' => "Aviatz php maintenance/update.php o l'installacion web per activar la foncionalitat de traduccion de paginas.",
 	'tpt-render-summary' => 'Mesa a jorn per èsser en acòrd amb la version novèla de la font de la pagina',
 	'tpt-download-page' => 'Exportar la pagina amb sas traduccions',
+	'pt-movepage-list-translation' => 'Paginas de traduccion',
+	'pt-movepage-new' => 'Nom novèl :',
+	'pt-movepage-reason' => 'Motiu :',
+	'pt-movepage-action-perform' => 'Tornar nomenar',
+	'pt-movepage-action-other' => 'Cambiar la cibla',
 );
 
 /** Deitsch (Deitsch)
@@ -3224,6 +3234,7 @@ $messages['pdc'] = array(
 
 /** Polish (Polski)
  * @author Deejay1
+ * @author Equadus
  * @author Leinad
  * @author Sp5uhe
  * @author ToSter
@@ -3280,6 +3291,7 @@ Przed oznaczeniem tej wersji do tłumaczenia, aby uniknąć niepotrzebnej pracy 
 Jest ona tłumaczeniem strony [[$1]], a tłumaczenie może zostać zmienione za pomocą [$2 narzędzia tłumacza].',
 	'tpt-unknown-page' => 'Ta przestrzeń nazw jest zarezerwowana dla tłumaczeń stron z zawartością.
 Strona, którą próbujesz edytować, prawdopodobnie nie odpowiada żadnej stronie oznaczonej do tłumaczenia.',
+	'tpt-delete-impossible' => 'Usuwanie stron oznaczonych do tłumaczenia nie jest jeszcze możliwe.',
 	'tpt-install' => 'Uruchom php maintenance/update.php lub przeprowadź instalację webową, aby włączyć opcję tłumaczenia stron.',
 	'tpt-render-summary' => 'Aktualizowanie w celu dopasowania nowej wersji strony źródłowej',
 	'tpt-download-page' => 'Wyeksportuj stronę z tłumaczeniami',
@@ -3298,6 +3310,12 @@ Tekst sekcji – <pre>$1</pre>',
 	'pt-log-name' => 'Rejestr tłumaczenia stron',
 	'pt-log-mark' => '{{GENDER:$2|oznaczył|oznaczyła|oznaczył(‐a)}} wersję $3 strony „[[:$1]]“ jako przeznaczonej do tłumaczenia',
 	'pt-log-unmark' => '{{GENDER:$2|usunął|usunęła|usunął(‐eła)}} oznaczenie strony „[[:$1]]“ jako przeznaczonej do tłumaczenia',
+	'pt-movepage-list-pages' => 'Lista stron do przeniesienia',
+	'pt-movepage-list-translation' => 'Strony do przetłumaczenia',
+	'pt-movepage-current' => 'Obecna nazwa',
+	'pt-movepage-new' => 'Nowa nazwa',
+	'pt-movepage-reason' => 'Powód',
+	'pt-movepage-action-other' => 'Zmiana celu',
 );
 
 /** Piedmontese (Piemontèis)
