@@ -32,6 +32,9 @@ CHECKER:
     - FreeColEscapesCheck
     - FreeColVariablesCheck
 
+AUTOLOAD:
+  FreeColMessageChecker: Checker.php
+
 TAGS:
   optional:
     - colopedia.abilityGrantedBy
