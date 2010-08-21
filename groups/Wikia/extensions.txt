@@ -178,6 +178,8 @@ Title Edit
 
 Video Embed Tool
 
+Watch Sub Pages
+
 Where Is Extension
 file = WhereIsExtension/SpecialWhereIsExtension.i18n.php
 
