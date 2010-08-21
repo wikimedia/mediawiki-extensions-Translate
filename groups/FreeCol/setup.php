@@ -1,6 +1,7 @@
 <?php
 /**
- * Support FreeCol: http://www.freecol.org/.
+ * Support for FreeCol
+ * http://www.freecol.org
  *
  * @file
  * @ingroup Extensions
@@ -12,4 +13,8 @@
 
 
 $dir = dirname( __FILE__ );
+
+/**
+ * Add the FreeColMessageChecker class to the autoloader.
+ */
 $wgAutoloadClasses['FreeColMessageChecker'] = dirname( __FILE__ ) . '/Checker.php';

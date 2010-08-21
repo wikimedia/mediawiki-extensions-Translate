@@ -233,7 +233,7 @@ class PremadeMediawikiExtensionGroups {
 }
 
 /**
- * Adds a message group containing all supported  MediaWiki extensions in the
+ * Adds a message group containing all supported MediaWiki extensions in the
  * Wikimedia Subversion repository.
  *
  * @todo Needs documentation.

@@ -1,17 +1,25 @@
 <?php
- /**
+/**
+ * Implements MessageChecker for FreeCol.
+ *
  * @file
+ * @author Niklas Laxström
  * @copyright Copyright © 2009, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
-class FreeColMessageChecker extends MessageChecker {
 
+/**
+ * Message checks for FreeCol
+ *
+ * @ingroup MessageCheckers
+ */
+class FreeColMessageChecker extends MessageChecker {
 	/**
 	 * Checks for missing and unknown variables in translations.
 	 *
-	 * @param $messages Iterable list of TMessages.
-	 * @param $code Language code of the translations.
-	 * @param $warnings Array where warnings are appended to.
+	 * @param $messages \array Iterable list of TMessages.
+	 * @param $code \string Language code of the translations.
+	 * @param $warnings \array Array where warnings are appended to.
 	 */
 	protected function FreeColVariablesCheck( $messages, $code, &$warnings ) {
 		foreach ( $messages as $message ) {
@@ -52,9 +60,9 @@ class FreeColMessageChecker extends MessageChecker {
 	/**
 	 * Checks for bad escapes in translations.
 	 *
-	 * @param $messages Iterable list of TMessages.
-	 * @param $code Language code of the translations.
-	 * @param $warnings Array where warnings are appended to.
+	 * @param $messages \array Iterable list of TMessages.
+	 * @param $code \string Language code of the translations.
+	 * @param $warnings \array Array where warnings are appended to.
 	 */
 	protected function FreeColEscapesCheck( $messages, $code, &$warnings ) {
 		foreach ( $messages as $message ) {
@@ -77,5 +85,4 @@ class FreeColMessageChecker extends MessageChecker {
 			}
 		}
 	}
-
 }

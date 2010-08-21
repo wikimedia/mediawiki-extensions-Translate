@@ -1,5 +1,16 @@
 <?php
+/**
+ * Classes for Wikia extension translation.
+ *
+ * @file
+ * @author Niklas Laxström
+ * @copyright Copyright © 2008-2010, Niklas Laxström
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ */
 
+/**
+ * @todo Needs documentation.
+ */
 class PremadeWikiaExtensionGroups extends PremadeMediawikiExtensionGroups {
 	protected $useConfigure = false;
 	protected $idPrefix = 'wikia-';
@@ -28,6 +39,12 @@ class PremadeWikiaExtensionGroups extends PremadeMediawikiExtensionGroups {
 	}
 }
 
+/**
+ * Adds a message group containing all supported Wikia extensions in the
+ * Wikia Subversion repository and the Wikimedia Subversion.
+ *
+ * @todo Needs documentation.
+ */
 class AllWikiaExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $description = '{{int:translate-group-desc-wikiaextensions}}';
 	protected $label = 'Extensions used by Wikia'; // currently using 1.14.0

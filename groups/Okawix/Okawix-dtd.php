@@ -1,9 +1,20 @@
 <?php
 /**
+ * Implements FFS for Okawix DTD file format.
+ *
+ * @file
+ * @author Guillaume Duhamel
+ * @author Niklas Laxström
+ * @author Siebrand Mazeland
  * @copyright Copyright © 2009, Guillaume Duhamel
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+/**
+ * File format support for Okawix DTD.
+ *
+ * @ingroup FFS
+ */
 class OkawixDtdFFS extends SimpleFFS {
 	public function readFromVariable( $data ) {
 		preg_match_all( ',AUTHOR: ([^\n]+)\n,', $data, $matches );
@@ -51,7 +62,9 @@ class OkawixDtdFFS extends SimpleFFS {
 			$trans = $m->translation();
 			$trans = str_replace( TRANSLATE_FUZZY, '', $trans );
 
-			if ( $trans === '' ) continue;
+			if ( $trans === '' ) {
+				continue;
+			}
 
 			$trans = str_replace( '"', '&quot;', $trans );
 			$output .= "<!ENTITY $key \"$trans\">\n";

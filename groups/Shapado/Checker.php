@@ -1,17 +1,25 @@
 <?php
- /**
+/**
+ * Implements MessageChecker for Shapado.
+ *
  * @file
+ * @author Niklas Laxström
  * @copyright Copyright © 2009-2010, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
-class ShapadoMessageChecker extends MessageChecker {
 
+/**
+ * Message checks for Shapado
+ *
+ * @ingroup MessageCheckers
+ */
+class ShapadoMessageChecker extends MessageChecker {
 	/**
 	 * Checks for missing and unknown variables in translations.
 	 *
-	 * @param $messages Iterable list of TMessages.
-	 * @param $code Language code of the translations.
-	 * @param $warnings Array where warnings are appended to.
+	 * @param $messages \array Iterable list of TMessages.
+	 * @param $code \string Language code of the translations.
+	 * @param $warnings \array Array where warnings are appended to.
 	 */
 	protected function ShapadoVariablesCheck( $messages, $code, &$warnings ) {
 		foreach ( $messages as $message ) {

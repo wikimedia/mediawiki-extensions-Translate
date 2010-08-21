@@ -1,16 +1,26 @@
 <?php
-
 /**
- * MediaWiki specific message checks.
- * @ingroup MessageCheckers
+ * Implements MessageChecker for MediaWiki.
+ *
+ * @file
  * @author Niklas Laxström
  * @copyright Copyright © 2008-2009, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ */
+
+/**
+ * MediaWiki specific message checks.
+ *
+ * @ingroup MessageCheckers
  */
 class MediaWikiMessageChecker extends MessageChecker {
 	/**
 	 * Checks if the translation uses all variables $[1-9] that the definition
 	 * uses and vice versa.
+	 *
+	 * @param $messages \array Iterable list of TMessages.
+	 * @param $code \string Language code of the translations.
+	 * @param $warnings \array Array where warnings are appended to.
 	 */
 	protected function wikiParameterCheck( $messages, $code, &$warnings ) {
 		// @todo Gives false positive on (some?) languages for which a
@@ -56,6 +66,10 @@ class MediaWikiMessageChecker extends MessageChecker {
 	 * those that link to Special: or {{ns:special}}: or project pages trough
 	 * MediaWiki messages like {{MediaWiki:helppage-url}}:. Also links in the
 	 * definition are allowed.
+	 *
+	 * @param $messages \array Iterable list of TMessages.
+	 * @param $code \string Language code of the translations.
+	 * @param $warnings \array Array where warnings are appended to.
 	 */
 	protected function wikiLinksCheck( $messages, $code, &$warnings ) {
 		$tc = Title::legalChars() . '#%{}';
@@ -113,6 +127,10 @@ class MediaWikiMessageChecker extends MessageChecker {
 
 	/**
 	 * Checks if the \<br /> and \<hr /> tags are using the correct syntax.
+	 *
+	 * @param $messages \array Iterable list of TMessages.
+	 * @param $code \string Language code of the translations.
+	 * @param $warnings \array Array where warnings are appended to.
 	 */
 	protected function XhtmlCheck( $messages, $code, &$warnings ) {
 		foreach ( $messages as $message ) {
@@ -154,6 +172,10 @@ class MediaWikiMessageChecker extends MessageChecker {
 
 	/**
 	 * Checks if the translation doesn't use plural while the definition has one.
+	 *
+	 * @param $messages \array Iterable list of TMessages.
+	 * @param $code \string Language code of the translations.
+	 * @param $warnings \array Array where warnings are appended to.
 	 */
 	protected function pluralCheck( $messages, $code, &$warnings ) {
 		foreach ( $messages as $message ) {
@@ -176,6 +198,10 @@ class MediaWikiMessageChecker extends MessageChecker {
 
 	/**
 	 * Checks for page names that they have an untranslated namespace.
+	 *
+	 * @param $messages \array Iterable list of TMessages.
+	 * @param $code \string Language code of the translations.
+	 * @param $warnings \array Array where warnings are appended to.
 	 */
 	protected function pagenameMessagesCheck( $messages, $code, &$warnings ) {
 		foreach ( $messages as $message ) {
@@ -199,6 +225,10 @@ class MediaWikiMessageChecker extends MessageChecker {
 
 	/**
 	 * Checks for some miscellaneous messages with special syntax.
+	 *
+	 * @param $messages \array Iterable list of TMessages.
+	 * @param $code \string Language code of the translations.
+	 * @param $warnings \array Array where warnings are appended to.
 	 */
 	protected function miscMWChecks( $messages, $code, &$warnings ) {
 		$timeList = array( 'protect-expiry-options', 'ipboptions' );
