@@ -179,6 +179,7 @@ Title Edit
 Video Embed Tool
 
 Watch Sub Pages
+descmsg = wikia-watchsubpages-desc
 
 Where Is Extension
 file = WhereIsExtension/SpecialWhereIsExtension.i18n.php
