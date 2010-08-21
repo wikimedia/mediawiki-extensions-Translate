@@ -26,7 +26,7 @@ class VoctrainMessageGroup extends ExtensionMessageGroup {
 class VoctrainMessageChecker extends MessageChecker {
 	/**
 	 * Checks for missing and unknown parameters
-	 * @param $messages Iterable list of TMessages.
+	 * @param $messages Iterable list of TMessage objects.
 	 * @param $code Language code of the translations.
 	 * @param $warnings Array where warnings are appended to.
 	 */

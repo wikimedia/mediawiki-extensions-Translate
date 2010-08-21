@@ -18,7 +18,7 @@ class RubyMessageChecker extends MessageChecker {
 	/**
 	 * Checks for missing and unknown variables in translations.
 	 *
-	 * @param $messages \array Iterable list of TMessages.
+	 * @param $messages \array Iterable list of TMessage objects.
 	 * @param $code \string Language code of the translations.
 	 * @param $warnings \array Array where warnings are appended to.
 	 */

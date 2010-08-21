@@ -255,7 +255,7 @@ class MessageChecker {
 	/**
 	 * Checks for missing and unknown printf formatting characters in
 	 * translations.
-	 * @param $messages \mixed Iterable list of TMessages.
+	 * @param $messages \mixed Iterable list of TMessage objects.
 	 * @param $code \string Language code
 	 * @param $warnings \array Array where warnings are appended to.
 	 */
@@ -303,7 +303,7 @@ class MessageChecker {
 	/**
 	 * Checks if the translation has even number of opening and closing
 	 * parentheses. {, [ and ( are checked.
-	 * @param $messages \mixed Iterable list of TMessages.
+	 * @param $messages \mixed Iterable list of TMessage objects.
 	 * @param $code \string Language code
 	 * @param $warnings \array Array where warnings are appended to.
 	 */

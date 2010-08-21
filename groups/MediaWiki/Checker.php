@@ -18,7 +18,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 	 * Checks if the translation uses all variables $[1-9] that the definition
 	 * uses and vice versa.
 	 *
-	 * @param $messages \array Iterable list of TMessages.
+	 * @param $messages \array Iterable list of TMessage objects.
 	 * @param $code \string Language code of the translations.
 	 * @param $warnings \array Array where warnings are appended to.
 	 */
@@ -67,7 +67,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 	 * MediaWiki messages like {{MediaWiki:helppage-url}}:. Also links in the
 	 * definition are allowed.
 	 *
-	 * @param $messages \array Iterable list of TMessages.
+	 * @param $messages \array Iterable list of TMessage objects.
 	 * @param $code \string Language code of the translations.
 	 * @param $warnings \array Array where warnings are appended to.
 	 */
@@ -128,7 +128,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 	/**
 	 * Checks if the \<br /> and \<hr /> tags are using the correct syntax.
 	 *
-	 * @param $messages \array Iterable list of TMessages.
+	 * @param $messages \array Iterable list of TMessage objects.
 	 * @param $code \string Language code of the translations.
 	 * @param $warnings \array Array where warnings are appended to.
 	 */
@@ -173,7 +173,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 	/**
 	 * Checks if the translation doesn't use plural while the definition has one.
 	 *
-	 * @param $messages \array Iterable list of TMessages.
+	 * @param $messages \array Iterable list of TMessage objects.
 	 * @param $code \string Language code of the translations.
 	 * @param $warnings \array Array where warnings are appended to.
 	 */
@@ -199,7 +199,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 	/**
 	 * Checks for page names that they have an untranslated namespace.
 	 *
-	 * @param $messages \array Iterable list of TMessages.
+	 * @param $messages \array Iterable list of TMessage objects.
 	 * @param $code \string Language code of the translations.
 	 * @param $warnings \array Array where warnings are appended to.
 	 */
@@ -226,7 +226,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 	/**
 	 * Checks for some miscellaneous messages with special syntax.
 	 *
-	 * @param $messages \array Iterable list of TMessages.
+	 * @param $messages \array Iterable list of TMessage objects.
 	 * @param $code \string Language code of the translations.
 	 * @param $warnings \array Array where warnings are appended to.
 	 */

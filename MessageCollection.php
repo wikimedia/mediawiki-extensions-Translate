@@ -10,6 +10,8 @@
  */
 
 /**
+ * Core message collection class.
+ *
  * @todo Needs documentation.
  */
 class MessageCollection implements ArrayAccess, Iterator, Countable {

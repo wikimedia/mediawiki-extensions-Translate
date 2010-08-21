@@ -26,7 +26,6 @@ class TranslatePreferences {
 		return true;
 	}
 
-
 	public static function translationAssistLanguages( $user, &$preferences ) {
 		$select = self::languageSelector();
 		$select->setTargetId( 'mw-input-translate-editlangs' );
