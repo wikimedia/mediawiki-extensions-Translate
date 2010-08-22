@@ -736,7 +736,6 @@ class WikiMessageGroup extends MessageGroupOld {
 	 *
 	 * @param $id \string Unique id for this group.
 	 * @param $source \string Mediawiki message that contains list of message keys.
-	 * @return \void
 	 */
 	public function __construct( $id, $source ) {
 		parent::__construct();

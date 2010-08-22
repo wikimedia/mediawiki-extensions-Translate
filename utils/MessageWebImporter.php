@@ -284,12 +284,12 @@ class MessageWebImporter {
 	/**
 	 * Perform an action on a given group/key/code
 	 *
-	 * @param $action \string Import/conflict/ignore
+	 * @param $action \string Options: 'import', 'conflict' or 'ignore'
 	 * @param $group MessageGroup Group object
 	 * @param $key \string Message key
 	 * @param $code \string Language code
-	 * @param $message \string: contents for the $key/code combination
-	 * @param $comment \string: edit summary (default: empty) - see Article::doEdit
+	 * @param $message \string contents for the $key/code combination
+	 * @param $comment \string edit summary (default: empty) - see Article::doEdit
 	 * @param $user User User that will make the edit (default: null - $wgUser) - see Article::doEdit
 	 * @param $editFlags Integer bitfield: see Article::doEdit
 	 * @return \string Action result
