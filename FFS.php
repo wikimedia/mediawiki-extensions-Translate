@@ -32,7 +32,7 @@ interface FFS {
 	public function getWritePath();
 
 	/**
-	 * Will parse messages, authors, and any custom data from the file 
+	 * Will parse messages, authors, and any custom data from the file
 	 * and return it in associative array with keys like \c AUTHORS and
 	 * \c MESSAGES.
 	 * @param $code \string Languge code.

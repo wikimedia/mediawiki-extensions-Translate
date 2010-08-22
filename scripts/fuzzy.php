@@ -3,12 +3,9 @@
  * Command line script to mark translations fuzzy (similar to gettext fuzzy).
  *
  * @file
- * @ingroup Extensions
- *
  * @author Niklas Laxström
  * @copyright Copyright © 2007-2009, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
- * @file
  */
 
 require( dirname( __FILE__ ) . '/cli.inc' );
@@ -57,6 +54,9 @@ if ( isset( $options['really'] ) ) {
 
 $bot->execute();
 
+/**
+ * @todo Needs documentation.
+ */
 class FuzzyBot {
 	private $titles = array();
 	private $allclear = false;

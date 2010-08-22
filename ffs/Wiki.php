@@ -155,7 +155,7 @@ HEADER
 	 * not be exported.
 	 *
 	 * @param $messages MessageCollection Reference of MessageArray.
-	 * @return Array of key-translation pairs. 
+	 * @return Array of key-translation pairs.
 	 */
 	public function makeExportArray( MessageCollection $messages ) {
 		// We copy only relevant translations to this new array

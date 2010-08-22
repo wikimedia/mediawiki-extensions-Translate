@@ -1,6 +1,6 @@
 <?php
 /**
- * Script to export special core feature of MediaWiki
+ * Script to export special core features of MediaWiki.
  *
  * @author Niklas Laxstrom
  *
@@ -57,6 +57,7 @@ $group = MessageGroups::getGroup( 'core' );
 
 foreach ( $langs as $l ) {
 	$o = null;
+
 	switch ( $options['type'] ) {
 		case 'special':
 			$o = new SpecialPageAliasesCM( $l );

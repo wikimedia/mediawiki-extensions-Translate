@@ -3,21 +3,27 @@
  * Class which encapsulates message importing. It scans for changes (new, changed, deleted),
  * displays them in pretty way with diffs and finally executes the actions the user choices.
  *
- * @ingroup Extensions
- *
+ * @file
  * @author Niklas Laxström
  * @author Siebrand Mazeland
  * @copyright Copyright © 2009-2010, Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+/**
+ * Class which encapsulates message importing. It scans for changes (new, changed, deleted),
+ * displays them in pretty way with diffs and finally executes the actions the user choices.
+ */
 class MessageWebImporter {
 	protected $title;
 	protected $user;
 	protected $group;
 	protected $code;
 
-	protected $processingTime = 60; // Seconds
+	/**
+	 * Maximum processing time in seconds.
+	 */
+	protected $processingTime = 60;
 
 	public function __construct( Title $title = null, $group = null, $code = 'en' ) {
 		$this->setTitle( $title );
@@ -278,16 +284,15 @@ class MessageWebImporter {
 	/**
 	 * Perform an action on a given group/key/code
 	 *
-	 * @param $action String: import/conflict/ignore
-	 * @param $group Object: group object
-	 * @param $key String: message key
-	 * @param $code String: language code
-	 * @param $message String: contents for the $key/code combination
-	 * @param $comment String: edit summary (default: empty) - see Article::doEdit
-	 * @param $user Object: object of user that will make the edit (default: null - $wgUser) - see Article::doEdit
+	 * @param $action \string Import/conflict/ignore
+	 * @param $group MessageGroup Group object
+	 * @param $key \string Message key
+	 * @param $code \string Language code
+	 * @param $message \string: contents for the $key/code combination
+	 * @param $comment \string: edit summary (default: empty) - see Article::doEdit
+	 * @param $user User User that will make the edit (default: null - $wgUser) - see Article::doEdit
 	 * @param $editFlags Integer bitfield: see Article::doEdit
-	 *
-	 * @return String: action result
+	 * @return \string Action result
 	 */
 	public static function doAction( $action, $group, $key, $code, $message, $comment = '', $user = null, $editFlags = 0 ) {
 		$title = self::makeTranslationTitle( $group, $key, $code );
@@ -413,9 +418,10 @@ class MessageWebImporter {
 	/**
 	 * Given a group, message key and language code, creates a title for the
 	 * translation page.
+	 *
 	 * @param $group MessageGroup
-	 * @param $key String: Message key
-	 * @param $code String: Language code
+	 * @param $key \string Message key
+	 * @param $code \string Language code
 	 * @return Title
 	 */
 	public static function makeTranslationTitle( $group, $key, $code ) {
@@ -425,13 +431,12 @@ class MessageWebImporter {
 	}
 
 	/**
-	 * Make section elements
+	 * Make section elements.
 	 *
-	 * @param $legend String: legend
-	 * @param $type String: contents of type class
-	 * @param $content String: contents
-	 *
-	 * @return section element
+	 * @param $legend \string Legend
+	 * @param $type\string Contents of type class
+	 * @param $content \string Contents
+	 * @return \string Section element
 	 */
 	public static function makeSectionElement( $legend, $type, $content ) {
 		$containerParams = array( 'class' => "mw-tpt-sp-section mw-tpt-sp-section-type-{$type}" );
@@ -449,8 +454,7 @@ class MessageWebImporter {
 	 * Prepends translation with fuzzy tag and ensures there is only one of them.
 	 *
 	 * @param $message String: message content
-	 *
-	 * @return $message prefixed with TRANSLATE_FUZZY tag
+	 * @return $message \string Message prefixed with TRANSLATE_FUZZY tag
 	 */
 	public static function makeTextFuzzy( $message ) {
 		$message = str_replace( TRANSLATE_FUZZY, '', $message );

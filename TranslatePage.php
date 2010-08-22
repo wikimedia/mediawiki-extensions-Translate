@@ -1,6 +1,6 @@
 <?php
 /**
- * Contains logic for special page Special:Translate 
+ * Contains logic for special page Special:Translate.
  *
  * @file
  * @author Niklas Laxström

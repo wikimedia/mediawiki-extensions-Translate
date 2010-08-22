@@ -1,4 +1,13 @@
 <?php
+/**
+ * Contains wrapper class for interface to parse and generate YAML files.
+ *
+ * @file
+ * @author Ævar Arnfjörð Bjarmason
+ * @author Niklas Laxström
+ * @copyright Copyright © 2009, Niklas Laxström, Ævar Arnfjörð Bjarmason
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ */
 
 /**
  * This class is a wrapper class to provide interface to parse
@@ -152,4 +161,3 @@ class TranslateYaml {
 		return $yaml;
 	}
 }
-

@@ -1,8 +1,16 @@
 <?php
 /**
-*  Class for updating the Translation Memory
-*/
+ * Contains classes for updating the Translation Memory.
+ *
+ * @file
+ * @author Niklas Laxström
+ * @copyright Copyright © 2010, Niklas Laxström
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ */
 
+/**
+ *  Class for updating the Translation Memory runtime.
+ */
 class TranslationMemoryUpdater {
 	public static function update( $article, $user, $text, $summary, $minor, $_, $_, $flags, $revision ) {
 		global $wgContLang;
@@ -70,7 +78,7 @@ class TranslationMemoryUpdater {
 
 		// Purge old translations for this message
 		$dbw->delete( '`targets`', $delete, __METHOD__ );
-		// We only do SQlite which doesn't need to know unique indexes
+		// We only do SQlite which does not need to know unique indexes
 		$dbw->replace( '`targets`', null, $insert, __METHOD__ );
 		wfDebugLog( 'tmserver', "Inserted new tm-translation for $ns_text:$key/$code" );
 

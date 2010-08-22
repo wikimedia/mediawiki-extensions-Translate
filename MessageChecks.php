@@ -26,7 +26,7 @@
  * 	}
  * }
  * @endcode
- * 
+ *
  * Warnings are of format: <pre>
  * $warnings[$key][] = array(
  *    array( 'printf', $subcheck, $key, $code ), # check idenfitication

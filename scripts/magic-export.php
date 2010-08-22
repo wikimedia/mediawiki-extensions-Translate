@@ -3,7 +3,6 @@
  * Script to export special page aliases of extensions.
  *
  * @author Niklas Laxstrom
- *
  * @copyright Copyright © 2008-2009, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  * @file
@@ -73,9 +72,7 @@ foreach ( $groups as $group ) {
 	STDOUT( "Processing {$group->getLabel()}... ", $group->getId() );
 
 	$input = file_get_contents( $file ) . "\n";
-
 	$headerEnd = strpos( $input, "\n);\n" );
-
 	$output = substr( $input, 0, $headerEnd + 3 )  . "\n\n";
 
 	foreach ( $langs as $l ) {

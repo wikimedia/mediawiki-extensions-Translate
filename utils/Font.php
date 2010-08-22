@@ -1,11 +1,18 @@
 <?php
 /**
- * Wrapper around font-config to get useful ttf font given a language code.
- * Uses wfShellExec, wfEscapeShellArg and wfDebugLog from MediaWiki.
+ * Contains class with wrapper around font-config.
+ *
+ * @file
  * @author Niklas Laxström, 2008
- * @license PD
+ * @license Public Domain
  */
 
+/**
+ * Wrapper around font-config to get useful ttf font given a language code.
+ * Uses wfShellExec, wfEscapeShellArg and wfDebugLog from MediaWiki.
+ *
+ * @todo Needs documentation.
+ */
 class FCFontFinder {
 	public static function find( $code ) {
 		if ( ini_get( 'open_basedir' ) ) {

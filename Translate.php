@@ -592,7 +592,7 @@ function efTranslateCheckPT() {
 		 */
 		$field = array( 'rtt_name' => $tag );
 		$ret = $dbw->selectField( 'revtag_type', 'rtt_name', $field, __METHOD__ );
-		
+
 		if ( $ret !== $tag ) {
 			$dbw->insert( 'revtag_type', $field, __METHOD__ );
 		}

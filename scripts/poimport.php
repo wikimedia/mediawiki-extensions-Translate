@@ -1,6 +1,6 @@
 <?php
 /**
- * Imports po files exported from Special:Translate back.
+ * Imports gettext files exported from Special:Translate back.
  *
  * @author Niklas Laxström
  * @copyright Copyright © 2007-2008 Niklas Laxström

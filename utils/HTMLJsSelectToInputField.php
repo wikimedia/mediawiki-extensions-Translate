@@ -1,5 +1,12 @@
 <?php
+/**
+ * @todo Needs documentation.
+ * @file
+ */
 
+/**
+ * @todo Needs documentation.
+ */
 class HTMLJsSelectToInputField extends HTMLTextField {
 	function getInputHTML( $value ) {
 		$input = parent::getInputHTML( $value );

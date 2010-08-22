@@ -1,6 +1,6 @@
 <?php
 /**
- * Contains logic for special page Special:Translations 
+ * Contains logic for special page Special:Translations.
  *
  * @file
  * @author Siebrand Mazeland

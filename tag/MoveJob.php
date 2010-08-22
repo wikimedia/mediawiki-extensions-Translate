@@ -1,14 +1,18 @@
 <?php
 /**
- * Job for moving translation pages.
+ * Contains class with job for moving translation pages.
  *
- * @ingroup Extensions
- *
+ * @file
  * @author Niklas Laxström
  * @copyright Copyright © 2008-2010, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+/**
+ * Contains class with job for moving translation pages.
+ *
+ * @ingroup PageTranslation
+ */
 class MoveJob extends Job {
 	public static function newJob( Title $source, Title $target, $base, /*User*/ $performer ) {
 		global $wgTranslateFuzzyBotName;
@@ -182,6 +186,4 @@ class MoveJob extends Job {
 		}
 		$wgUser->clearInstanceCache();
 	}
-
-
 }

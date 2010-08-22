@@ -1,13 +1,18 @@
 <?php
+/**
+ * Contains helper class for interface parts that aid translations in doing
+ * their thing.
+ *
+ * @file
+ * @author Niklas Laxström
+ * @copyright Copyright © 2010 Niklas Laxström
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ */
 
 /**
  * Provides the nice boxes that aid the translators to do their job.
  * Boxes contain definition, documentation, other languages, translation memory
  * suggestions, highlighted changes etc.
- *
- * @author Niklas Laxström
- * @copyright Copyright © 2010 Niklas Laxström
- * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 class TranslationHelpers {
 	/**

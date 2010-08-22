@@ -1,13 +1,17 @@
 <?php
 /**
- * This class together with some javascript implements the ajax translation
- * page.
+ * Contains classes doe the AJAX translation page.
  *
+ * @file
  * @author Niklas Laxström
  * @copyright Copyright © 2009 Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+/**
+ * This class together with some JavaScript implements the AJAX translation
+ * page.
+ */
 class TranslationEditPage {
 	// Instance of an Title object
 	protected $title;
@@ -32,7 +36,6 @@ class TranslationEditPage {
 		$obj->suggestions = $request->getText( 'suggestions' );
 		return $obj;
 	}
-
 
 	public function setTitle( Title $title ) { $this->title = $title; }
 	public function getTitle() { return $this->title; }
@@ -115,7 +118,7 @@ class TranslationEditPage {
 	/**
 	 * Gets the edit token and timestamps in some ugly array structure. Needs to
 	 * be cleaned up.
-	 * @return Array
+	 * @return \array
 	 */
 	protected function getEditInfo() {
 		$params = new FauxRequest( array(

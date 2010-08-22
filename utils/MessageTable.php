@@ -1,12 +1,16 @@
 <?php
 /**
- * Pretty-formatter for message collections
+ * Contains classes to build tables for MessageCollection objects.
  *
+ * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2007-2009 Niklas Laxström
+ * @copyright Copyright © 2007-2010 Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+/**
+ * Pretty formatter for MessageCollection objects.
+ */
 class MessageTable {
 	protected $reviewMode = false;
 	protected $collection = null;

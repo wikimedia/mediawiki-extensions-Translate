@@ -1,6 +1,7 @@
 <?php
 /**
  * Translatable page model.
+
  * @defgroup PageTranslation Page Translation
  * @file
  * @author Niklas Laxström
@@ -295,6 +296,7 @@ class TranslatablePage {
 	 *
 	 * May throw a TPException if there is error with existing section
 	 * markers.
+	 *
 	 * @param $content string Content of one section
 	 * @return TPSection
 	 */
@@ -420,7 +422,6 @@ class TranslatablePage {
 			return false;
 		}
 	}
-
 
 	public function getTranslationUrl( $code = false ) {
 		$translate = SpecialPage::getTitleFor( 'Translate' );

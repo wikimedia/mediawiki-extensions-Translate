@@ -1,5 +1,15 @@
 <?php
+/**
+ * @todo Needs documentation.
+ * @file
+ * @author Niklas Laxström
+ * @copyright Copyright © 2008-2010, Niklas Laxström
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ */
 
+/**
+ * @todo Needs documentation.
+ */
 interface StringMangler {
 	public static function EmptyMatcher();
 	public function setConf( $configuration );
@@ -10,6 +20,9 @@ interface StringMangler {
 	public function unMangle( $data );
 }
 
+/**
+ * @todo Needs documentation.
+ */
 class StringMatcher implements StringMangler {
 	protected $sPrefix = '';
 	protected $aExact  = array();

@@ -1,5 +1,19 @@
 <?php
+/**
+ * Contains class with page translation feature hooks.
+ *
+ * @file
+ * @author Niklas Laxström
+ * @copyright Copyright © 2008-2010, Niklas Laxström
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ */
 
+/**
+ * Hooks for page translation.
+ *
+ * @todo Methods need documentation.
+ * @ingroup PageTranslation
+ */
 class PageTranslationHooks {
 	// Uuugly hack
 	static $allowTargetEdit = false;
@@ -564,7 +578,4 @@ FOO;
 
 		return true;
 	}
-
-
-
 }

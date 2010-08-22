@@ -4,13 +4,14 @@
  *
  * @author Niklas Laxstrom
  * @author Siebrand Mazeland
- *
- * @copyright Copyright © 2007-2008, Niklas Laxström
- * @copyright Copyright © 2009, Siebrand Mazeland
+ * @copyright Copyright © 2007-2010, Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  * @file
  */
 
+/**
+ * @todo Needs documentation.
+ */
 $mostSpokenLanguages = array(
 	// 'language code' => array( position, speakers in millions, continent ),
 	// Source: http://stats.wikimedia.org/EN/Sitemap.htm
@@ -70,6 +71,9 @@ $mostSpokenLanguages = array(
 	'ku-latn'  => array( 50,  26, 'asia' ),
 );
 
+/**
+ * @todo Needs documentation.
+ */
 $localisedWeights = array(
 	'wikimedia' => array(
 		'core-0-mostused'   => 40,
@@ -158,6 +162,9 @@ $wikimediaCodeMap = array(
 $optionsWithArgs = array( 'groups', 'output', 'skiplanguages', 'legenddetail', 'legendsummary' );
 require( dirname( __FILE__ ) . '/cli.inc' );
 
+/**
+ * @todo Needs documentation.
+ */
 class TranslateStatsOutput extends wikiStatsOutput {
 	function heading() {
 		echo '{| class="sortable wikitable" border="2" cellpadding="4" cellspacing="0" style="background-color: #F9F9F9; border: 1px #AAAAAA solid; border-collapse: collapse; clear:both;" width="100%"' . "\n";

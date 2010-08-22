@@ -3,11 +3,16 @@
  * This class represents the results of parsed source page, that is, the
  * extracted sections and a template.
  *
+ * @file
  * @author Niklas Laxström
  * @copyright Copyright © 2009-2010 Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+/**
+ * @todo Needs documentation.
+ * @ingroup PageTranslation
+ */
 class TPParse {
 	protected $title = null;
 

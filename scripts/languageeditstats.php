@@ -30,7 +30,8 @@ EOT
 	exit( 1 );
 }
 
-/** Process command line parameters
+/**
+ * Process command line parameters
  */
 if ( isset( $options['help'] ) ) {
 	showUsage();
@@ -73,12 +74,14 @@ function figureMessage( $text ) {
 	return array( $key, $code );
 }
 
-/** Select set of edits to report on
+/**
+ * Select set of edits to report on
  */
 $rows = TranslateUtils::translationChanges( $hours, $bots, $namespaces );
 
-/** Get counts for edits per language code after filtering out edits by
- *  $wgTranslateFuzzyBotName
+/**
+ * Get counts for edits per language code after filtering out edits by
+ * $wgTranslateFuzzyBotName.
  */
 $codes = array();
 foreach ( $rows as $_ ) {
@@ -96,7 +99,8 @@ foreach ( $rows as $_ ) {
 	$codes[$code]++;
 }
 
-/** Sort counts and report descending up to $top rows.
+/**
+ * Sort counts and report descending up to $top rows.
  */
 arsort( $codes );
 $i = 0;

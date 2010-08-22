@@ -2,11 +2,16 @@
 /**
  * This class represents one section of a translatable page.
  *
+ * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2009 Niklas Laxström
+ * @copyright Copyright © 2009-2010 Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+/**
+ * @todo Needs documentation.
+ * @ingroup PageTranslation
+ */
 class TPSection {
 	public $id, $name, $text, $type;
 

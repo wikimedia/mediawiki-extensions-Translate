@@ -129,6 +129,9 @@ foreach ( $groups as &$group ) {
 	unset( $group );
 }
 
+/**
+ * @todo Needs documentation.
+ */
 class ChangeSyncer {
 	public $group;
 	public $norc = false;

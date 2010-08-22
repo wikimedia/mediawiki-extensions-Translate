@@ -3,7 +3,6 @@
  * Script to export special page aliases and magic words of extensions.
  *
  * @author Robert Leverington <robert@rhl.me.uk>
- *
  * @copyright Copyright © 2010 Robert Leverington
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  * @file
@@ -55,7 +54,9 @@ STDOUT( "Opening file handles..." );
 $handles = array();
 $keys = array(); error_reporting( E_ALL | E_STRICT );
 foreach ( $groups as $group ) {
-	if ( !$group instanceof ExtensionMessageGroup ) continue;
+	if ( !$group instanceof ExtensionMessageGroup ) {
+		continue;
+	}
 
 	if ( $type === 'special' ) {
 		$filename = $group->getAliasFile();
@@ -63,13 +64,20 @@ foreach ( $groups as $group ) {
 		$filename = $group->getMagicFile();
 	}
 
-	if ( $filename === null ) continue;
+	if ( $filename === null ) {
+		continue;
+	}
 
 	$file = "$wgTranslateExtensionDirectory/$filename";
-	if ( !file_exists( $file ) ) continue;
+	if ( !file_exists( $file ) ) {
+		continue;
+	}
 
 	include( $file );
-	if ( !isset( $aliases ) ) continue;
+	if ( !isset( $aliases ) ) {
+		continue;
+	}
+
 	$keys[$group->getId()] = array_keys( $aliases['en'] );
 	unset( $aliases );
 
@@ -97,6 +105,7 @@ foreach ( $langs as $l ) {
 	} else {
 		STDOUT( "Processing $l..." );
 	}
+
 	$article = new Article( $title );
 	$data = $article->getContent();
 
@@ -106,7 +115,9 @@ foreach ( $langs as $l ) {
 	array_shift( $segments );
 	unset( $segments[count( $segments ) -1] );
 	unset( $segments[count( $segments ) -1] );
+
 	$messages = array();
+
 	foreach ( $segments as $segment ) {
 		$parts = explode( '=', $segment );
 		$key = trim( array_shift( $parts ) );
@@ -119,10 +130,12 @@ foreach ( $langs as $l ) {
 		STDOUT( "\t{$group}... " );
 		$thismessages = $messages; // TODO: Reduce.
 		$out = "\$aliases['{$group}	'] = array(\n";
+
 		foreach ( $thismessages as $key => $translations ) {
 			$translations = implode( "', '", $translations );
 			$out .= "\t'$key' => array( '$translations' ),\n";
 		}
+
 		$out .= ");\n\n";
 		fwrite( $handle, $out );
 	}

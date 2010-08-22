@@ -1,5 +1,17 @@
 <?php
+/**
+ * Classes for adding extension specific toolbox menu items.
+ *
+ * @file
+ * @author Siebrand Mazeland
+ * @author Niklas Laxström
+ * @copyright Copyright © 2008-2010, Siebrand Mazeland, Niklas Laxström
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ */
 
+/**
+ * Adds extension specific context aware toolbox menu items.
+ */
 class TranslateToolbox {
 	/**
 	 * Adds link in toolbox to Special:Prefixindex to show all other

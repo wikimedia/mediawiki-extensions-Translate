@@ -1,6 +1,9 @@
 <?php
-
-/* This scripts finds messages that are invalid or unused */
+/**
+ * This scripts finds messages that are invalid or unused.
+ *
+ * @file
+ */
 
 require( dirname( __FILE__ ) . '/cli.inc' );
 
@@ -8,7 +11,7 @@ $dbr = wfGetDB( DB_SLAVE );
 $rows = $dbr->select( array( 'page' ),
 	array( 'page_title', 'page_namespace' ),
 	array(
-		'page_namespace'    => $wgTranslateMessageNamespaces,
+		'page_namespace' => $wgTranslateMessageNamespaces,
 	),
 	__METHOD__
 );
@@ -27,6 +30,7 @@ foreach ( $rows as $row ) {
 
 	$mg = TranslateUtils::messageKeyToGroup( $row->page_namespace, $key );
 	$ns = $wgContLang->getNsText( $row->page_namespace );
+
 	if ( is_null( $mg ) ) {
 		$keys["$ns:$key"][] = $code;
 		$owner = 'xx-unknown';
@@ -51,6 +55,7 @@ ksort( $owners );
 
 if ( count( $invalid ) ) {
 	echo "==Invalid language codes==\n" . implode( ', ', array_keys( $invalid ) ) . "\n";
+
 	foreach ( $invalid as $key => $pages ) {
 		echo "# $key: " . implode( ', ', $pages ) . "\n";
 	}
@@ -58,6 +63,7 @@ if ( count( $invalid ) ) {
 
 if ( count( $owners ) ) {
 	echo "\n==Messages claimed==\n";
+
 	foreach ( $owners as $o => $count ) {
 		echo "# $o: $count\n";
 	}
@@ -65,6 +71,7 @@ if ( count( $owners ) ) {
 
 if ( count( $keys ) ) {
 	echo "\n==Unclaimed messages==\n";
+
 	foreach ( $keys as $page => $langs ) {
 		echo "* $page: " . implode( ', ', $langs ) . "\n";
 	}

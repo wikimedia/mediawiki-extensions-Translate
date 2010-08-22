@@ -1,12 +1,27 @@
 <?php
+/**
+ * Contains classes for addition of extension specific preference settings.
+ *
+ * @file
+ * @author Siebrand Mazeland
+ * @author Niklas Laxström
+ * @copyright Copyright © 2008-2010 Siebrand Mazeland, Niklas Laxström
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ */
 
+/**
+ * Class to add Translate specific preference settings.
+ */
 class TranslatePreferences {
 	/**
-	 * Add preferences for Translate
+	 * Add 'translate-pref-nonewsletter' preference.
+	 *
+	 * @return \bool true
 	 */
 	public static function onGetPreferences( $user, &$preferences ) {
 		global $wgEnableEmail, $wgUser, $wgEnotifRevealEditorAddress;
 
+		// Only show is e-mail is enabled and user has a confirmed e-mail address.
 		if ( $wgEnableEmail && $wgUser->isEmailConfirmed() ) {
 			// 'translate-pref-nonewsletter' is used as opt-out for
 			// users with a confirmed e-mail address
@@ -26,10 +41,17 @@ class TranslatePreferences {
 		return true;
 	}
 
+	/**
+	 * Add 'translate-editlangs' preference.
+	 *
+	 * @return \bool true
+	 */
 	public static function translationAssistLanguages( $user, &$preferences ) {
+		// Get selector.
 		$select = self::languageSelector();
+		// Set target ID.
 		$select->setTargetId( 'mw-input-translate-editlangs' );
-
+		// Get available languages.
 		$languages = Language::getLanguageNames( false );
 
 		$preferences['translate-editlangs'] = array(
@@ -44,6 +66,11 @@ class TranslatePreferences {
 		return true;
 	}
 
+	/**
+	 * Add 'translate-jsedit' preference.
+	 *
+	 * @return \bool true
+	 */
 	public static function translationJsedit( $user, &$preferences ) {
 		$preferences['translate-jsedit'] = array(
 			'class' => 'HTMLCheckField',
@@ -54,6 +81,9 @@ class TranslatePreferences {
 		return true;
 	}
 
+	/**
+	 * JavsScript selector for language codes.
+	 */
 	protected static  function languageSelector() {
 		global $wgLang;
 

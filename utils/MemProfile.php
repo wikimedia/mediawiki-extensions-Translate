@@ -4,8 +4,6 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
  * Helper functions to locate when memory is consumed
  *
  * @file
- * @ingroup Extensions
- *
  * @author Niklas Laxström
  * @copyright Copyright © 2008, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
@@ -14,6 +12,9 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
 $wgMemUse = array();
 $wgMemStack = 0;
 
+/**
+ * @todo Needs documentation.
+ */
 function wfMemIn( $a ) {
 	global $wgLang, $wgMemUse, $wgMemStack;
 
@@ -30,6 +31,9 @@ function wfMemIn( $a ) {
 	$wgMemStack++;
 }
 
+/**
+ * @todo Needs documentation.
+ */
 function wfMemOut( $a ) {
 	global $wgLang, $wgMemUse, $wgMemStack;
 

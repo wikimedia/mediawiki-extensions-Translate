@@ -1,15 +1,20 @@
 <?php
 /**
- * Overrides Special:Movepage to to allow renaming a page translation page and
- * all related translations and derivative pages.
+ * Contains class to override Special:MovePage for page translation.
  *
- * @ingroup SpecialPage
- * @ingroup PageTranslation
+ * @file
  * @author Niklas Laxström
  * @copyright  Copyright © 2010, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+/**
+ * Overrides Special:Movepage to to allow renaming a page translation page and
+ * all related translations and derivative pages.
+ *
+ * @ingroup SpecialPage
+ * @ingroup PageTranslation
+ */
 class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 	// Basif form parameters both as text and as titles
 	protected $newText, $newTitle, $oldText, $oldTitle;
@@ -289,7 +294,9 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 
 	protected function printChangeLine( $base, $old, $target, $enabled = true ) {
 		global $wgOut;
+
 		$to = $this->newPageTitle( $base, $old, $target );
+
 		if ( $enabled ) {
 			$wgOut->addWikiText( '* ' . $old->getPrefixedText() . ' → ' . $to );
 		} else {
@@ -319,7 +326,10 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		if ( $this->moveSubpages ) {
 			$subpages = $this->getSubpages();
 			foreach ( $subpages as $old ) {
-			if ( TranslatablePage::isTranslationPage( $old ) ) continue;
+				if ( TranslatablePage::isTranslationPage( $old ) ) {
+					continue;
+				}
+
 				$to = $this->newPageTitle( $base, $old, $target );
 				$jobs[$old->getPrefixedText()] = MoveJob::newJob( $old, $to, $base, $this->user );
 			}
@@ -341,6 +351,7 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 
 		$newTpage = TranslatablePage::newFromTitle( $this->newTitle );
 		$newTpage->addReadyTag( $this->newTitle->getLatestRevId( GAID_FOR_UPDATE ) );
+
 		if ( $newTpage->getMarkedTag() === $oldLatest ) {
 			$newTpage->addMarkedTag( $this->newTitle->getLatestRevId( GAID_FOR_UPDATE ) );
 		}
@@ -409,8 +420,12 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		if ( $this->moveSubpages ) {
 			$subpages = $this->getSubpages();
 			foreach ( $subpages as $old ) {
-				if ( TranslatablePage::isTranslationPage( $old ) ) continue;
+				if ( TranslatablePage::isTranslationPage( $old ) ) {
+					continue;
+				}
+
 				$new = $this->newPageTitle( $base, $old, $target );
+
 				if ( !$new ) {
 					$blockers[] = array( 'pt-movepage-block-subpage-invalid', $old->getPrefixedText() );
 				} elseif ( $new->exists() ) {
@@ -435,6 +450,7 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 	 */
 	protected function newPageTitle( $base, Title $old, Title $target ) {
 		$search = preg_quote( $base, '~' );
+
 		if ( $old->getNamespace() == NS_TRANSLATIONS ) {
 			$new = $old->getText();
 			$new = preg_replace( "~^$search~", $target->getPrefixedText(), $new, 1 );
@@ -482,5 +498,4 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 	protected function getSubpages() {
 		return $this->page->getTitle()->getSubpages();
 	}
-
 }

@@ -4,8 +4,7 @@
  * translate extension.
  *
  * @author Niklas Laxstrom
- *
- * @copyright Copyright © 2008, Niklas Laxström
+ * @copyright Copyright © 2008-2010, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  * @file
  */
@@ -57,6 +56,9 @@ function STDERR( $message, $channel = null ) {
 
 register_shutdown_function('STDOUT', false);
 
+/**
+ * @todo Needs documentation.
+ */
 class Cli {
 	public static function parseLanguageCodes( /* string */ $codes ) {
 		$langs = array_map( 'trim', explode( ',', $codes ) );

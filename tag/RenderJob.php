@@ -9,6 +9,10 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+/**
+ * @todo Needs documentation.
+ * @ingroup PageTranslation
+ */
 class RenderJob extends Job {
 	public static function newJob( Title $target ) {
 		global $wgTranslateFuzzyBotName;
@@ -52,7 +56,7 @@ class RenderJob extends Job {
 
 		$article = new Article( $title );
 
-		// TODO: fuzzybot hack
+		// @todo Fuzzybot hack
 		PageTranslationHooks::$allowTargetEdit = true;
 
 		// User hack

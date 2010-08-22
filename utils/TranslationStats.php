@@ -1,15 +1,17 @@
 <?php
 /**
- * Class which offers functionality for statistics reporting.
+ * Contains class which offers functionality for statistics reporting.
  *
- * @ingroup Extensions
- *
+ * @file
  * @author Niklas Laxström
  * @author Siebrand Mazeland
  * @copyright Copyright © 2010, Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+/**
+ * Contains methods that provide statistics for message groups.
+ */
 class TranslationStats {
 	/**
 	 * Returns translated percentage for message group in given

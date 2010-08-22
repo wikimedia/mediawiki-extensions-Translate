@@ -1,5 +1,14 @@
 <?php
 /**
+ * Contains HTML builder class which wraps around Html::rawElement().
+ *
+ * @file
+ * @author Niklas Laxström
+ * @copyright Copyright © 2010, Niklas Laxström
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ */
+
+/**
  * HTML builder class which wraps around Html::rawElement().
  * Most of the functions are dual purpose. With no value (or null value) they
  * return the current value of asked property. If the value is not null, it
@@ -8,7 +17,6 @@
  * <code>$tag = new HtmlTag( 'div' ); $div = $div->content( 'foo' )->style( 'color', 'red' );</code>
  * Note: relies on implicit toString conversion (PHP >= 5.2)
  */
-
 class HtmlTag {
 	public $tag = 'div';
 	public $content = '';
@@ -20,9 +28,10 @@ class HtmlTag {
 	/**
 	 * Constructs a html tag. See the notes about handling contentless tags in
 	 * HTML class.
-	 * @param $tag string  Optional. The name of the tag, if null defaults to div.
-	 * @param $content string  Optional. The contents of the tag, if null defaults to empty string.
-	 * @param $params array  Optional. The html parameters for this tag, if null defaults to no tags.
+	 *
+	 * @param $tag \string  Optional. The name of the tag, if null defaults to div.
+	 * @param $content \string  Optional. The contents of the tag, if null defaults to empty string.
+	 * @param $params \array  Optional. The html parameters for this tag, if null defaults to no tags.
 	 */
 	public function __construct( $tag = null, $content = null, $params = null ) {
 		$this->tag( $tag );
@@ -32,8 +41,9 @@ class HtmlTag {
 
 	/**
 	 * Sets tag type. Chain-accessor.
-	 * @param $value Mixed  Optional. Null to view and string to set the tag.
-	 * @return Mixed  The tag name or self;
+	 *
+	 * @param $value \mixed  Optional. Null to view and string to set the tag.
+	 * @return \mixed  The tag name or self;
 	 */
 	public function tag( $value = null ) {
 		if ( $value === null ) {
@@ -47,8 +57,9 @@ class HtmlTag {
 
 	/**
 	 * Sets the tag content. Chain-accessor.
-	 * @param $value Mixed  Optional. Null to view and string to set the content.
-	 * @return Mixed  The content as a string or self.
+	 *
+	 * @param $value \mixed  Optional. Null to view and string to set the content.
+	 * @return \mixed  The content as a string or self.
 	 */
 	public function content( $value = null ) {
 		if ( $value === null ) {
@@ -66,8 +77,9 @@ class HtmlTag {
 
 	/**
 	 * Sets all parameters. Chain-accessor.
-	 * @param $value Mixed  Optional. Null to view and array to set the values.
-	 * @return Array  The paramater array.
+	 *
+	 * @param $value \mixed  Optional. Null to view and array to set the values.
+	 * @return \array  The paramater array.
 	 */
 	public function params( $value = null ) {
 		if ( $value === null ) {
@@ -81,9 +93,10 @@ class HtmlTag {
 
 	/**
 	 * Sets or unsets a parameter. Chain-accessor.
-	 * @param $name String  The name of the parameter.
-	 * @param $value Mixed  Optional. False to unset, null to view and string to set the value.
-	 * @return Mixed  The value of the parameter or null if not set.
+	 *
+	 * @param $name \string  The name of the parameter.
+	 * @param $value \mixed  Optional. False to unset, null to view and string to set the value.
+	 * @return \mixed  The value of the parameter or null if not set.
 	 */
 	public function param( $name, $value = null ) {
 		$name = (string) $this->assert( 'is_string', $name );
@@ -104,9 +117,10 @@ class HtmlTag {
 	/**
 	 * Sets or unsets one CSS style parameter. Chain-accessor. These will be
 	 * appended to style paramerer set in tag parameters.
-	 * @param $name String  The name of the parameter.
-	 * @param $value Mixed  Optional. False to unset, null to view and string to set the value.
-	 * @return Mixed  The value of the parameter or null if not set.
+	 *
+	 * @param $name \string  The name of the parameter.
+	 * @param $value \mixed  Optional. False to unset, null to view and string to set the value.
+	 * @return \mixed  The value of the parameter or null if not set.
 	 */
 	public function style( $name, $value = null ) {
 		$name = (string) $this->assert( 'is_string', $name );
@@ -132,9 +146,10 @@ class HtmlTag {
 	}
 
 	/**
-	 * Returns the html output. Use this when you don't want to use
+	 * Returns the html output. Use this when you do not want to use
 	 * implicit string conversion.
-	 * @return string  html
+	 *
+	 * @return \string  HTML
 	 */
 	public function html() {
 		// Collapse styles
@@ -154,7 +169,8 @@ class HtmlTag {
 
 	/**
 	 * Wrapper for html method, for implicit conversion to string.
-	 * @return string  html
+	 *
+	 * @return \string  html
 	 */
 	public function __toString() {
 		return $this->html();
@@ -162,7 +178,8 @@ class HtmlTag {
 
 	/**
 	 * Constructs the value for style parameter.
-	 * @return string  The value for style parameter.
+	 *
+	 * @return \string  The value for style parameter.
 	 */
 	public function collapseStyles() {
 		$style = '';
@@ -185,10 +202,11 @@ class HtmlTag {
 
 	/**
 	 * Simple type checker for input. Simple types are silently converted to string for convenience.
-	 * @param $function string  Function to use as type checker, for example is_string.
-	 * @param $value Mixed  The value to to check.
-	 * @param $result Mixed  The value to compare to the result of the check.
-	 * @return The value given.
+	 *
+	 * @param $function \string  Function to use as type checker, for example is_string.
+	 * @param $value \mixed  The value to to check.
+	 * @param $result \mixed  The value to compare to the result of the check.
+	 * @return \string The value given.
 	 */
 	protected function assert( $function, $value, $result = true ) {
 		if ( $function === 'is_string' ) {

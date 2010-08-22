@@ -1,4 +1,13 @@
 <?php
+/**
+ * Contains logic for special page Special:ImportTranslations.
+ *
+ * @file
+ * @author Niklas Laxström
+ * @author Siebrand Mazeland
+ * @copyright Copyright © 2008-2010 Niklas Laxström, Siebrand Mazeland
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ */
 
 /**
  * A special page for marking revisions of pages for translation.
@@ -9,10 +18,6 @@
  *
  * @ingroup SpecialPage
  * @ingroup PageTranslation
- * @author Niklas Laxström
- * @author Siebrand Mazeland
- * @copyright Copyright © 2009-2010 Niklas Laxström, Siebrand Mazeland
- * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 class SpecialPageTranslation extends SpecialPage {
 	function __construct() {

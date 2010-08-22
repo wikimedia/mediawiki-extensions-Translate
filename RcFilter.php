@@ -1,15 +1,18 @@
 <?php
 /**
- * Adds a new filter to Special:RecentChanges which makes it possible to filter
- * translations away or show them only.
+ * Contains class with filter to Special:RecentChanges to enable additional
+ * filtering.
  *
  * @file
  * @author Niklas Laxström
- *
  * @copyright Copyright © 2010, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+/**
+ * Adds a new filter to Special:RecentChanges which makes it possible to filter
+ * translations away or show them only.
+ */
 class TranslateRcFilter {
 	/**
 	 * Default action for the filter: ('', 'only', 'filter', 'site')
@@ -21,7 +24,7 @@ class TranslateRcFilter {
 	 * documentation of the function parameters.
 	 *
 	 * Appends SQL filter conditions into $conds.
-	 * @return Boolean true
+	 * @return \bool true
 	 */
 	public static function translationFilter( &$conds, &$tables, &$join_conds, $opts ) {
 		global $wgRequest, $wgTranslateMessageNamespaces;
@@ -57,7 +60,7 @@ class TranslateRcFilter {
 	 * documentation of the function parameters.
 	 *
 	 * Adds a HTMl selector into $items
-	 * @return Boolean true
+	 * @return \bool true
 	 */
 	public static function translationFilterForm( &$items, $opts ) {
 		$opts->consumeValue( 'translations' );

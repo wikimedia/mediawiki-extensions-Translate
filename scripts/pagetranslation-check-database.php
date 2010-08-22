@@ -17,6 +17,9 @@ if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 }
 require_once( "$IP/maintenance/Maintenance.php" );
 
+/**
+ * @todo Needs documentation.
+ */
 class PTCheckDB extends Maintenance {
 	public function __construct() {
 		parent::__construct();
@@ -31,17 +34,18 @@ class PTCheckDB extends Maintenance {
 		$dbw = wfGetDB( DB_MASTER );
 		if ( $this->getOption( 'fix' ) ) {
 			$this->output( "Performing the following fixes:\n" );
+
 			foreach ( $fixes as $name => $data ) {
 				$this->output( "$name: $data[0]...", $name );
 				$dbw->delete( $data[1], '*', $data[2], __METHOD__ );
 			}
 		} else {
 			$this->output( "Use --fix to perform following fixes:\n" );
+
 			foreach ( $fixes as $name => $data ) {
 				$sql = $dbw->selectSQLtext( $data[1], '*', $data[2] );
 				$sql = preg_replace( '~^SELECT~', 'DELETE', $sql );
 				$this->output( "$name: $data[0] - $sql\n" );
-
 			}
 		}
 	}
@@ -51,8 +55,10 @@ class PTCheckDB extends Maintenance {
 
 		$dbr = wfGetDB( DB_SLAVE );
 		$pages = $dbr->select( 'translate_sections', 'trs_page', null, __METHOD__, array( 'GROUP BY' => 'trs_page' ) );
+
 		$this->output( "Found {$pages->numRows()} pages in the section table\n" );
 		$this->output( "Checking that they match a valid translatable page...\n\n" );
+
 		foreach ( $pages as $row ) {
 			$id = $row->trs_page;
 			$sections = $dbr->select( 'translate_sections', 'trs_key', array( 'trs_page' => $id ), __METHOD__ );
@@ -87,6 +93,7 @@ class PTCheckDB extends Maintenance {
 
 			$this->output( "\n" );
 		}
+
 		return $fixes;
 	}
 
@@ -97,11 +104,16 @@ class PTCheckDB extends Maintenance {
 
 		$result = $dbr->select( 'revtag_type', '*', null, __METHOD__ );
 		$idToTag = array();
-		foreach ( $result as $_ ) $idToTag[$_->rtt_id] = $_->rtt_name;
+
+		foreach ( $result as $_ ) {
+			$idToTag[$_->rtt_id] = $_->rtt_name;
+		}
+
 		$tagToId = array_flip( $idToTag );
 
 		$pages = $dbr->select( 'revtag', 'rt_page', null, __METHOD__, array( 'GROUP BY' => 'rt_page' ) );
 		$this->output( "Checking that tags match a valid page...\n\n" );
+
 		foreach ( $pages as $row ) {
 			$id = $row->rt_page;
 			$title = Title::newFromID( $id );
@@ -145,12 +157,14 @@ class PTCheckDB extends Maintenance {
 		}
 
 		$this->output( "Checked {$result->numRows()} tags in the revtag table\n\n\n" );
+
 		return $fixes;
 	}
 
 	protected function idToName( $id ) {
 		$title = Title::newFromID( $id );
 		$name = $title ? $title->getPrefixedText() : "#$id";
+
 		if ( !$title ) {
 			$name .= $this->findDeletedPage( $id );
 		}
@@ -160,6 +174,7 @@ class PTCheckDB extends Maintenance {
 
 	protected function getSectionNames( $result ) {
 		$names = array();
+
 		foreach ( $result as $section ) {
 			$names[] = $section->trs_key;
 		}
@@ -171,18 +186,23 @@ class PTCheckDB extends Maintenance {
 		$dbr = wfGetDB( DB_SLAVE );
 		$page = $dbr->selectRow( 'archive', array( 'ar_namespace', 'ar_title' ),
 			array( 'ar_page_id' => $id ), __METHOD__ );
+
 		if ( $page ) {
 			$title = Title::makeTitleSafe( $page->ar_namespace, $page->ar_title );
 			if ( $title ) {
 				return $title->getPrefixedText();
 			}
 		}
+
 		return false;
 	}
 
 	protected function checkTransrevRevision( $revId ) {
 		static $cache = array();
-		if ( isset( $cache[$revId] ) ) return $cache[$revId];
+
+		if ( isset( $cache[$revId] ) ) {
+			return $cache[$revId];
+		}
 
 		$revision = Revision::newFromId( $revId );
 		if ( !$revision ) {
