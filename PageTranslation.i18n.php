@@ -802,6 +802,7 @@ Zdá se, že stránka, kterou se pokoušíte upravovat neodpovídá žádné str
 
 /** Danish (Dansk)
  * @author Byrial
+ * @author Emilkris33
  */
 $messages['da'] = array(
 	'pagetranslation' => 'Sideoversættelse',
@@ -819,7 +820,9 @@ Navn: $1',
 	'tpt-sections-oldnew' => 'Nye og eksisterende oversættelsesenheder',
 	'tpt-sections-deleted' => 'Slettede oversættelsesenheder',
 	'tpt-sections-template' => 'Skabelon til oversættelsesside',
+	'tpt-action-nofuzzy' => 'Ugyldiggør ikke oversættelser.',
 	'tpt-badtitle' => 'Det angivne sidenavn ($1) er ikke en gyldig titel',
+	'tpt-nosuchpage' => 'Siden $1 findes ikke',
 	'tpt-oldrevision' => '$2 er ikke den seneste version af siden [[$1]].
 Kun den seneste version kan markeres for oversættelse.',
 	'tpt-notsuitable' => 'Siden $1 er ikke parat til oversættelse.
@@ -832,12 +835,16 @@ kontrollér før denne version markeres for oversættelse, at ændringerne i sek
 	'tpt-mark-summary' => 'Markerede denne version for oversættelse',
 	'tpt-edit-failed' => 'Kunne ikke opdatere siden: $1',
 	'tpt-already-marked' => 'Den seneste version af denne side er allerede markeret for oversættelse.',
+	'tpt-unmarked' => 'Siden $1 er ikke længere markeret til oversættelse.',
 	'tpt-list-nopages' => 'Ingen sider er markeret for oversættelse eller parate til at blive markeret for oversættelse.',
 	'tpt-old-pages' => 'En version af {{PLURAL:$1|denne side|disse sider}} er markeret for oversættelse.',
 	'tpt-new-pages' => '{{PLURAL:$1|Denne side|Disse sider}} indeholder tekst med oversættelsestags, men ingen version af {{PLURAL:$1|siden|siderne}} er i øjeblikket markeret for oversættelse.',
+	'tpt-other-pages' => '{{PLURAL:$1|En gammel version af denne side er|Ældre versioner af disse sider er}}markeret til oversættelse,
+men {{PLURAL:$1|den seneste version|de seneste versioner}} kan ikke mærkes til oversættelse.',
 	'tpt-rev-latest' => 'seneste version',
 	'tpt-rev-old' => 'forskel fra forrige markerede version',
 	'tpt-rev-mark-new' => 'markér denne version for oversættelse',
+	'tpt-rev-unmark' => 'fjern denne side fra oversættelse',
 	'tpt-translate-this' => 'oversæt denne side',
 	'translate-tag-translate-link-desc' => 'Oversæt denne side',
 	'translate-tag-markthis' => 'Markér denne side for oversættelse',
@@ -850,9 +857,36 @@ kontrollér før denne version markeres for oversættelse, at ændringerne i sek
 Siden er en oversættelse af siden [[$1]] og oversættelsen kan opdateres ved at bruge [$2 oversættelsesværktøjet].',
 	'tpt-unknown-page' => 'Dette navnerum er reserveret til oversættelser af indholdssider.
 Siden som du prøver at redigere, ser ikke ud til at svare til nogen side markeret for oversættelse.',
+	'tpt-delete-impossible' => 'Sletning af sider markeret til oversættelse, er endnu ikke muligt.',
 	'tpt-install' => 'Kør php maintenance/update.php eller webinstallering for at slå sideoversættelsesfunktionen til.',
 	'tpt-render-summary' => 'Opdaterer for at passe til en ny version af kildesiden',
 	'tpt-download-page' => 'Eksportér side med oversættelser',
+	'pt-parse-open' => 'Ubalanceret &lt;translate> tag.
+Oversættelse skabelon: <pre>$1</pre>',
+	'pt-parse-close' => 'Ubalanceret &lt;/translate> tag.
+Oversættelse skabelon: <pre>$1</pre>',
+	'pt-parse-nested' => 'Indlejrede &lt;translate> sektioner er ikke tilladt.
+Tag tekst: <pre>$1</pre>',
+	'pt-shake-multiple' => 'Flere afsnit markører for et afsnit.
+Afsnit tekst: <pre>$1</pre>',
+	'pt-shake-position' => 'Afsnit markører i uvendet position. 
+Afsnit tekst: <pre>$1</pre>',
+	'pt-shake-empty' => 'Tom section for markør $1.',
+	'pt-log-header' => 'Log for handlinger i forbindelse med side oversættelses systemet',
+	'pt-log-name' => 'Sideoversættelses log',
+	'pt-log-mark' => '{{GENDER:$2|markeret}} version $3 af siden "[[:$1]]" til oversættelse',
+	'pt-log-unmark' => '{{GENDER:$2|fjernet}} side "[[:$1]]" fra oversættelse',
+	'pt-log-moveok' => '{{GENDER:$2|fuldført}} omdøbning af oversætbare side $1 til et nyt navn',
+	'pt-log-movenok' => '{{GENDER:$2|støtte på}} et problem under flytningen af [[:$1]] til [[:$3]]',
+	'pt-movepage-title' => 'Flyt oversætbare side $1',
+	'pt-movepage-blockers' => 'Den oversætbare side kan ikke flyttes til et nyt navn på grund af følgende {{PLURAL:$1|fejl|fejl}}:',
+	'pt-movepage-block-base-exists' => 'Målbase siden [[:$1]] findes.',
+	'pt-movepage-block-base-invalid' => 'Målbase siden er ikke en gyldig titel.',
+	'pt-movepage-block-tp-exists' => 'Mål oversættelsessiden [[:$2]] findes.',
+	'pt-movepage-block-tp-invalid' => 'Mål oversættelses side titlen for [[:$1]] ville være ugyldig (for lang?).',
+	'pt-movepage-block-section-exists' => 'Mål oversættelses sektionen [[:$2]] findes.',
+	'pt-movepage-block-section-invalid' => 'Mål sections side titlen for [[:$1]] ville være ugyldig (for lang?).',
+	'pt-movepage-block-subpage-exists' => 'Mål undersiden [[:$2]] findes.',
 );
 
 /** German (Deutsch)
@@ -2287,6 +2321,8 @@ Halaman yang ingin Anda sunting ini tampaknya tidak memiliki hubungan dengan hal
 Templat terjemahan: <pre>$1</pre>',
 	'pt-parse-close' => 'Tag &lt;/translate> tidak seimbang.
 Templat terjemahan: <pre>$1</pre>',
+	'pt-parse-nested' => 'Bagian &lt;translate> bersarang tidak diizinkan.
+Teks tanda: <pre>$1</pre>',
 	'pt-shake-multiple' => 'Penanda bagian ganda untuk satu bagian.
 Teks bagian: <pre>$1</pre>',
 	'pt-shake-position' => 'Penanda bagian di tempat tak terduka.
@@ -2321,6 +2357,11 @@ Teks bagian: <pre>$1</pre>',
 	'pt-movepage-action-check' => 'Periksa apabila langkah ini memungkinkan',
 	'pt-movepage-action-perform' => 'Lakukan langkah ini',
 	'pt-movepage-action-other' => 'Ubah target',
+	'pt-movepage-intro' => 'Halaman istimewa ini memungkinkan Anda untuk memindahkan halaman yang ditandai untuk diterjemahkan.
+Tindakan pemindahan tidak akan berlangsung cepat, karena banyak halaman yang perlu dipindahkan.
+Antrean kerja akan digunakan untuk memindahkan halaman.
+Ketika halaman dipindahkan, tidak dimungkinkan untuk berinteraksi dengan halaman yang bersangkutan.
+Kegagalan akan dicatat di catatan terjemahan halaman dan halaman tersebut perlu diperbaiki.',
 	'pt-movepage-logreason' => 'Bagian dari halaman yang dapat diterjemahkan $1.',
 	'pt-movepage-started' => 'Halaman dasar sekarang pindah.
 Silakan periksa log penerjemahan halaman untuk pesan kesalahan dan selesai.',
@@ -3338,7 +3379,9 @@ Nòm: $1',
 	'tpt-sections-oldnew' => 'Unità ëd tradussion neuve e esistente',
 	'tpt-sections-deleted' => 'Unità ëd tradussion eliminà',
 	'tpt-sections-template' => 'Model ëd pàgina ëd tradussion',
+	'tpt-action-nofuzzy' => 'Anvàlida pa ij viragi',
 	'tpt-badtitle' => "Ël nòm dàit a la pàgina ($1) a l'é pa un tìtol bon",
+	'tpt-nosuchpage' => 'La pàgina $1 a esist pa',
 	'tpt-oldrevision' => "$2 a l'é nen l'ùltima version dla pàgina [[$1]].
 Mach j'ùltime version a peulo esse marcà për la tradussion.",
 	'tpt-notsuitable' => "La pàgina $1 a va nen bin për la tradussion.
@@ -3351,6 +3394,7 @@ Prima ëd marché costa version për la tradussion, controlé che le modìfiche 
 	'tpt-mark-summary' => "Costa version a l'é stàita marcà për la tradussion",
 	'tpt-edit-failed' => "Impossìbil d'agiorné la pàgina: $1",
 	'tpt-already-marked' => "L'ùltima version ëd sa pàgina a l'é stàita già marcà për la tradussion.",
+	'tpt-unmarked' => "La pàgina $1 a l'é pa pi marcà për ël viragi.",
 	'tpt-list-nopages' => 'A-i é gnun-a pàgina marcà për la tradussion ni pronta për esse marcà për la tradussion.',
 	'tpt-old-pages' => 'Chèiche version ëd {{PLURAL:$1|costa pàgine|coste pàgine}} a son ëstàite marcà për la tradussion.',
 	'tpt-new-pages' => "{{PLURAL:$1|Sa pàgina a conten|Se pàgine a conten-o}} dël test con la tichëtta ëd tradussion, ma gnun-a version ëd {{PLURAL:$1|costa pàgina|coste pàgine}} a l'é al moment marcà për la tradussion.",

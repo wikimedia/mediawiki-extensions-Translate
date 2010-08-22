@@ -1008,6 +1008,17 @@ Jika Anda sudah mendaftar, silakan $1masuk log$2.
 Setelah Anda mendaftar, silakan kembali ke halaman ini.
 
 $3Daftar$4',
+	'translate-fs-settings-text' => 'Silakan tuju ke preferensi Anda dan
+setidaknya ubah bahasa antarmuka Anda ke bahasa terjemahan Anda.
+
+Bahasa antarmuka Anda digunakan sebagai bahasa tujuan baku.
+Hal ini mudah dilupakan untuk mengubah bahasa ke bahasa yang benar, jadi dianjurkan apabila pengaturan dilakukan sekarang.
+
+Ketika Anda berada di sana, Anda juga dapat meminta perangkat lunak untuk menampilkan terjemahan dalam bahasa lain yang Anda tahu.
+Pengaturan ini dapat ditemukan di bawah tab "{{int:prefs-editing}}".
+Jangan ragu untuk menjelajahi pengaturan lainnya juga.
+
+Tuju ke [[Special:Preferences|halaman preferensi]] sekarang dan kemudian kembali ke halaman ini.',
 	'translate-fs-settings-skip' => 'Saya sudah selesai.
 Izinkan saya melanjutkan.',
 	'translate-fs-userpage-text' => 'Sekarang Anda perlu membuat halaman pengguna.
@@ -1034,6 +1045,29 @@ Jika Anda tidak mengetahui kode bahasa dari suatu bahasa, saatnya untuk mencari 
 Anda dapat menggunakan daftar di bawah.',
 	'translate-fs-userpage-submit' => 'Buat halaman pengguna saya',
 	'translate-fs-userpage-done' => 'Bagus! Sekarang Anda memiliki halaman pengguna.',
+	'translate-fs-permissions-text' => 'Sekarang Anda perlu memberikan permintaan yang akan ditambahkan ke grup penerjemah.
+
+Hingga kami memerbaiki kode, silakan kunjungi [[Project:Translator]] dan ikuti petunjuknya.
+Kemudian kembali ke halaman ini.
+
+Setelah Anda mengirim permintaan Anda, satu dari anggota staf relawan akan memeriksa dan menyetujui permintaan Anda sesegera mungkin.
+Harap bersabar.
+
+<del>Periksa apabila permintaan tersebut diisi dengan benar dan kemudian tekan tombol minta.</del>',
+	'translate-fs-target-text' => 'Selamat!
+Sekarang Anda dapat mulai menerjemahkan.
+
+Jangan takut apabila masih terasa baru dan membingungkan Anda.
+Di [[Project list]] ada gambaran mengenai proyek yang dapat Anda sumbangkan terjemahannya.
+Sebagian besar proyek memiliki halaman deskripsi pendek dengan pranala "\'\'Terjemahkan proyek ini\'\'", pranala tersebut akan membawa Anda ke halaman yang berisi daftar semua pesan yang belum diterjemahkan.
+Daftar semua grup pesan dengan [[Special:LanguageStats|status terjemahan saat ini untuk suatu bahasa]] juga tersedia.
+
+Jika Anda merasa bahwa Anda perlu untuk memahami lebih lanjut sebelum mulai menerjemahkan, Anda dapat membaca [[FAQ|Pertanyaan-pertanyaan yang Sering Diajukan]].
+Sayangnya dokumentasi kadang dapat kadaluwarsa.
+Jika ada sesuatu yang Anda pikir Anda harus mampu lakukan, tetapi tidak dapat menemukan caranya, jangan ragu untuk menanyakannya di [[Support|halaman dukungan]].
+
+Anda juga dapat menghubungi sesama penerjemah bahasa yang sama di [[Portal_talk:$1|halaman pembicaraan]] [[Portal:$1|portal bahasa Anda]].
+Jika Anda belum melakukannya, [[Special:Preferences|ubah bahasa antarmuka pengguna Anda menjadi bahasa terjemahan Anda]] sehingga wiki dapat menunjukkan pranala paling relevan untuk Anda.',
 	'translate-fs-email-text' => 'Mohon masukkan alamat surel Anda di [[Special:Preferences|preferensi Anda]] dan konfirmasikan dari surel yang dikirimkan ke Anda.
 
 Tindakan ini memungkinkan pengguna lain menghubungi Anda melalui surel.

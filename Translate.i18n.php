@@ -8715,6 +8715,8 @@ $messages['id'] = array(
 	'translate-page-settings-legend' => 'Pengaturan',
 	'translate-page-task' => 'Saya ingin',
 	'translate-page-group' => 'Kelompok',
+	'translate-page-group-tooltip' => 'Nama grup pesan.
+Jika grup berisi subset atau superset pesan dari grup lain, maka akan ditampilkan dalam huruf tebal.',
 	'translate-page-language' => 'Bahasa',
 	'translate-page-limit' => 'Batasan',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|pesan|pesan}} per halaman',
@@ -8858,14 +8860,29 @@ Daftar bahasa baku tergantung pada bahasa Anda.',
 	'translate-total' => 'Pesan',
 	'translate-total-tooltip' => 'Jumlah total pesan di grup pesan ini.',
 	'translate-untranslated' => 'Belum diterjemahkan',
+	'translate-untranslated-tooltip' => 'Jumlah pesan yang belum diterjemahkan di grup pesan ini.
+Ini meliputi pesan yang telah ditandai sebagai kadaluwarsa.',
 	'translate-percentage-complete' => 'Selesai',
 	'translate-percentage-complete-tooltip' => 'Persentase pesan di grup yang telah diterjemahkan dan tidak ditandai sebagai kadaluwarsa.',
 	'translate-percentage-fuzzy' => 'Usang',
+	'translate-percentage-fuzzy-tooltip' => 'Persentase pesan di grup yang telah diterjemahkan dan telah ditandai sebagai kadaluwarsa.
+Pesan ditandai kadaluwarsa karena pesan sumber berbahasa Inggris telah berubah, karena pemeriksaan otomatis untuk pesan gagal, atau karena seseorang menandainya sebagai kadaluwarsa.',
 	'translate-nothing-to-do' => 'Semua terjemahan yang mungkin tampaknya telah dibuat.
 Silakan meninjau pesan-pesan melalui [[Special:Translate|{{int:translate}}]].',
 	'supportedlanguages' => 'Bahasa yang didukung',
+	'supportedlanguages-summary' => 'Halaman ini menampilkan daftar semua bahasa yang didukung oleh {{SITENAME}}, bersama dengan nama penerjemah yang bekerja dengan bahasa itu.
+Jika Anda menginginkan informasi lebih lanjut mengenai suatu bahasa, Anda dapat mengklik pranala menuju portal bahasa tersebut.
+Mengklik nama penerjemah akan membawa Anda ke halaman pengguna mereka.
+
+Jika sebuah bahasa belum terdaftar, Anda dapat mencari tahu cara memulai proyek lokalisasi untuk sebuah bahasa di "[[Translating:Process|Bahasa Baru]]".
+
+Jika Anda menerjemahkan ke sebuah bahasa dan nama Anda tidak dimasukkan, silakan tambahkan nama Anda ke daftar penerjemah di [[:Category:Languages|portal]] bahasa tersebut.
+Lihat kotak menu untuk pranala ke portal bahasa preferensi Anda.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Penerjemah|Penerjemah}}: $1',
 	'supportedlanguages-noportal-title' => 'Tidak ada ruang nama portal yang disebutkan',
+	'supportedlanguages-noportal' => 'Pengurus wiki belum menetapkan NS_PORTAL, jadi halaman ini tidak bekerja.
+Di halaman ini, daftar portal bahasa akan muncul untuk semua portal yang berhubungan dengan kode bahasa yang ditetapkan dan sebuah subhalaman bernama "penerjemah".
+Subhalaman "penerjemah" harus berisi templat [[:{{ns:template}}:User|User]], menggunakan nama pengguna sebagai parameter.',
 	'supportedlanguages-recenttranslations' => 'terjemahan terbaru',
 	'translate-save' => 'Simpan ($1)',
 	'translate-jssti-add' => 'Tambahkan pada daftar',
