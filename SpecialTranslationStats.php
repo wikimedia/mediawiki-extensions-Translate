@@ -274,9 +274,23 @@ class SpecialTranslationStats extends SpecialPage {
 		}
 
 		$now = time();
-		$cutoff = $now - ( 3600 * 24 * $opts->getValue( 'days' ) - 1 );
-		if ( $opts['scale'] === 'days' ) $cutoff -= ( $cutoff % 86400 );
-
+		/* Ensure that the first item in the graph has full data even
+		 * if it doesn't align with the given 'days' boundary */
+		$cutoff = $now - ( 3600 * 24 * $opts->getValue( 'days' ) );
+		if ( $opts['scale'] === 'hours' ) {
+			$cutoff -= ( $cutoff % 3600 );
+		} elseif ( $opts['scale'] === 'days' ) {
+			$cutoff -= ( $cutoff % 86400 );
+		} elseif ( $opts['scale'] === 'weeks' ) {
+			/* Here we assume that week starts on monday, which does not
+			 * always hold true. Go backwards day by day until we are on monday */
+			while ( date( 'D', $cutoff ) !== "Mon" ) { $cutoff -= 86400; }
+			$cutoff -= ( $cutoff % 86400 );
+		} elseif ( $opts['scale'] === 'months' ) {
+			// Go backwards day by day until we are on the first day of the month
+			while ( date( 'j', $cutoff ) !== "1" ) { $cutoff -= 86400; }
+			$cutoff -= ( $cutoff % 86400 );
+		}
 
 		$tables = array();
 		$fields = array();
@@ -324,6 +338,9 @@ class SpecialTranslationStats extends SpecialPage {
 		if ( count( $labels ) === 1 && $labels[0] === 'all' ) {
 			$labels = array();
 		}
+
+		$last = array_splice( $data, -1, 1 );
+		$data[key( $last ) . '*'] = current( $last );
 
 		return array( $labels, $data );
 	}
