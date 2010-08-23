@@ -73,7 +73,9 @@ class SpecialTranslationStats extends SpecialPage {
 				if ( $lastMod ) return;
 			}
 
-			$wgOut->disable();
+			if ( !$wgRequest->getBool( 'debug' ) ) {
+				$wgOut->disable();
+			}
 
 			if ( !class_exists( 'PHPlot' ) ) {
 				header( "HTTP/1.0 500 Multi fail" );
@@ -632,8 +634,8 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 	protected function formatTimestamp( $timestamp ) {
 		global $wgContLang;
 		switch ( $this->opts['scale'] ) {
-		case 'hours' : $cut = 2; break;
-		case 'days'  : $cut = 4; break;
+		case 'hours' : $cut = 4; break;
+		case 'days'  : $cut = 6; break;
 		case 'months': $cut = 8; break;
 		default      : return $wgContLang->sprintfDate( $this->getDateFormat(), $timestamp );
 		}
