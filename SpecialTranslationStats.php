@@ -383,6 +383,8 @@ class SpecialTranslationStats extends SpecialPage {
 
 		$yTick = 10;
 		while ( $max / $yTick > $height / 20 ) $yTick *= 2;
+		// If we have very small case, ensure that there is at least one tick
+		$yTick = min( $max, $yTick );
 		$yTick = self::roundToSignificant( $yTick );
 		$plot->SetYTickIncrement( $yTick );
 		$plot->SetPlotAreaWorld( null, 0, null, $max );
