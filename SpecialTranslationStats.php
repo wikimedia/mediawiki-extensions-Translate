@@ -14,10 +14,9 @@
  * @ingroup SpecialPage
  * @todo Needs documentation.
  */
-class SpecialTranslationStats extends SpecialPage {
+class SpecialTranslationStats extends IncludableSpecialPage {
 	public function __construct() {
 		parent::__construct( 'TranslationStats' );
-		$this->includable( true );
 	}
 
 	public function execute( $par ) {
@@ -37,11 +36,16 @@ class SpecialTranslationStats extends SpecialPage {
 		$opts->fetchValuesFromRequest( $wgRequest );
 
 		$pars = explode( ';', $par );
+
 		foreach ( $pars as $item ) {
-			if ( strpos( $item, '=' ) === false ) continue;
+			if ( strpos( $item, '=' ) === false ) {
+				continue;
+			}
+
 			list( $key, $value ) = array_map( 'trim', explode( '=', $item, 2 ) );
-			if ( isset( $opts[$key] ) )
+			if ( isset( $opts[$key] ) ) {
 				$opts[$key] = $value;
+			}
 		}
 
 		$opts->validateIntBounds( 'days', 1, 10000 );
@@ -49,11 +53,18 @@ class SpecialTranslationStats extends SpecialPage {
 		$opts->validateIntBounds( 'height', 200, 1000 );
 
 		$validScales = array( 'months', 'weeks', 'days', 'hours' );
-		if ( !in_array( $opts['scale'], $validScales ) ) $opts['scale'] = 'days';
-		if ( $opts['scale'] === 'hours' ) $opts->validateIntBounds( 'days', 1, 4 );
+		if ( !in_array( $opts['scale'], $validScales ) ) {
+			$opts['scale'] = 'days';
+		}
+
+		if ( $opts['scale'] === 'hours' ) {
+			$opts->validateIntBounds( 'days', 1, 4 );
+		}
 
 		$validCounts = array( 'edits', 'users', 'registrations' );
-		if ( !in_array( $opts['count'], $validCounts ) ) $opts['count'] = 'edits';
+		if ( !in_array( $opts['count'], $validCounts ) ) {
+			$opts['count'] = 'edits';
+		}
 
 		foreach ( array( 'group', 'language' ) as $t ) {
 			$values = array_map( 'trim', explode( ',', $opts[$t] ) );
@@ -70,7 +81,10 @@ class SpecialTranslationStats extends SpecialPage {
 			// Cache for two hours
 			if ( !$opts['preview'] ) {
 				$lastMod = $wgOut->checkLastModified( wfTimestamp( TS_MW, time() - 2 * 3600 ) );
-				if ( $lastMod ) return;
+
+				if ( $lastMod ) {
+					return;
+				}
 			}
 
 			if ( !$wgRequest->getBool( 'debug' ) ) {
@@ -124,16 +138,26 @@ class SpecialTranslationStats extends SpecialPage {
 			'</fieldset>'
 		);
 
-		if ( !$opts['preview'] ) return;
+		if ( !$opts['preview'] ) {
+			return;
+		}
 
 		$spiParams = '';
 		foreach ( $opts->getChangedValues() as $key => $v ) {
-			if ( $key === 'preview' ) continue;
-			if ( $spiParams !== '' ) $spiParams .= ';';
+			if ( $key === 'preview' ) {
+				continue;
+			}
+
+			if ( $spiParams !== '' ) {
+				$spiParams .= ';';
+			}
+
 			$spiParams .= wfEscapeWikiText( "$key=$v" );
 		}
 
-		if ( $spiParams !== '' ) $spiParams = '/' . $spiParams;
+		if ( $spiParams !== '' ) {
+			$spiParams = '/' . $spiParams;
+		}
 
 		$titleText = $this->getTitle()->getPrefixedText();
 
@@ -160,6 +184,7 @@ class SpecialTranslationStats extends SpecialPage {
 	protected function eLabel( $name ) {
 		$label = 'translate-statsf-' . $name;
 		$label = wfMsgExt( $label, array( 'parsemag', 'escapenoentities' ) );
+
 		return Xml::tags( 'label', array( 'for' => $name ), $label );
 	}
 
@@ -177,8 +202,8 @@ class SpecialTranslationStats extends SpecialPage {
 		}
 
 		$s .= implode( ' ', $options );
-
 		$s .= '</td></tr>' . "\n";
+
 		return $s;
 	}
 
@@ -249,6 +274,7 @@ class SpecialTranslationStats extends SpecialPage {
 
 		$jsSelect = new JsSelectToInput( $selector );
 		$jsSelect->setSourceId( 'mw-group-selector' );
+
 		return $jsSelect;
 	}
 
@@ -256,6 +282,7 @@ class SpecialTranslationStats extends SpecialPage {
 		$title = $this->getTitle();
 		$cgiparams = wfArrayToCgi( array( 'graphit' => true ), $opts->getAllValues() );
 		$href = $title->getLocalUrl( $cgiparams );
+
 		return Xml::element( 'img',
 			array(
 				'src' => $href,
@@ -276,6 +303,7 @@ class SpecialTranslationStats extends SpecialPage {
 		}
 
 		$now = time();
+
 		/* Ensure that the first item in the graph has full data even
 		 * if it doesn't align with the given 'days' boundary */
 		$cutoff = $now - ( 3600 * 24 * $opts->getValue( 'days' ) );
@@ -286,11 +314,15 @@ class SpecialTranslationStats extends SpecialPage {
 		} elseif ( $opts['scale'] === 'weeks' ) {
 			/* Here we assume that week starts on monday, which does not
 			 * always hold true. Go backwards day by day until we are on monday */
-			while ( date( 'D', $cutoff ) !== "Mon" ) { $cutoff -= 86400; }
+			while ( date( 'D', $cutoff ) !== "Mon" ) {
+				$cutoff -= 86400;
+			}
 			$cutoff -= ( $cutoff % 86400 );
 		} elseif ( $opts['scale'] === 'months' ) {
 			// Go backwards day by day until we are on the first day of the month
-			while ( date( 'j', $cutoff ) !== "1" ) { $cutoff -= 86400; }
+			while ( date( 'j', $cutoff ) !== "1" ) {
+				$cutoff -= 86400;
+			}
 			$cutoff -= ( $cutoff % 86400 );
 		}
 
@@ -323,15 +355,24 @@ class SpecialTranslationStats extends SpecialPage {
 
 		// Processing
 		$labelToIndex = array_flip( $labels );
+
 		foreach ( $res as $row ) {
 			$indexLabels = $so->indexOf( $row );
-			if ( $indexLabels === false ) continue;
+			if ( $indexLabels === false ) {
+				continue;
+			}
 
 			foreach ( (array) $indexLabels as $i ) {
-				if ( !isset( $labelToIndex[$i] ) ) continue;
+				if ( !isset( $labelToIndex[$i] ) ) {
+					continue;
+
+				}
 				$date = $wgLang->sprintfDate( $dateFormat, $so->getTimestamp( $row ) );
 				// Ignore values outside range
-				if ( !isset( $data[$date] ) ) continue;
+				if ( !isset( $data[$date] ) ) {
+					continue;
+				}
+
 				$data[$date][$labelToIndex[$i]]++;
 			}
 		}
@@ -359,19 +400,23 @@ class SpecialTranslationStats extends SpecialPage {
 		$count = count( $resData );
 		$skip = intval( $count / ( $width / 60 ) - 1 );
 		$i = $count;
+
 		foreach ( $resData as $date => $edits ) {
 			if ( $skip > 0 ) {
 				if ( ( $count - $i ) % $skip !== 0 ) $date = '';
 			}
+
 			if ( strpos( $date, ';' ) !== false ) {
 				list( , $date ) = explode( ';', $date, 2 );
 			}
+
 			array_unshift( $edits, $date );
 			$data[] = $edits;
 			$i--;
 		}
 
 		$font = FCFontFinder::find( $wgLang->getCode() );
+
 		if ( $font ) {
 			$plot->SetDefaultTTFont( $font );
 		} else {
@@ -379,8 +424,9 @@ class SpecialTranslationStats extends SpecialPage {
 		}
 		$plot->SetDataValues( $data );
 
-		if ( $legend !== null )
+		if ( $legend !== null ) {
 			$plot->SetLegend( $legend );
+		}
 
 		$numberFont = FCFontFinder::find( 'en' );
 
@@ -401,7 +447,10 @@ class SpecialTranslationStats extends SpecialPage {
 		$max = round( $max, intval( -log( $max, 10 ) ) );
 
 		$yTick = 10;
-		while ( $max / $yTick > $height / 20 ) $yTick *= 2;
+		while ( $max / $yTick > $height / 20 ) {
+			$yTick *= 2;
+		}
+
 		// If we have very small case, ensure that there is at least one tick
 		$yTick = min( $max, $yTick );
 		$yTick = self::roundToSignificant( $yTick );
@@ -434,6 +483,7 @@ class SpecialTranslationStats extends SpecialPage {
 		} elseif ( $scale === 'hours' ) {
 			$increment = 3600;
 		}
+
 		return $increment;
 	}
 }
@@ -480,6 +530,7 @@ abstract class TranslationStatsBase implements TranslationStatsInterface {
 		} elseif ( $this->opts['scale'] === 'hours' ) {
 			$dateFormat .= ';H';
 		}
+
 		return $dateFormat;
 	}
 }
@@ -542,8 +593,14 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 		}
 
 		$fields[] = 'rc_title';
-		if ( $this->groups ) $fields[] = 'rc_namespace';
-		if ( $this->opts['count'] === 'users' ) $fields[] = 'rc_user_text';
+
+		if ( $this->groups ) {
+			$fields[] = 'rc_namespace';
+		}
+
+		if ( $this->opts['count'] === 'users' ) {
+			$fields[] = 'rc_user_text';
+		}
 
 		$type .= '-perlang';
 	}
@@ -565,12 +622,16 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 		/**
 		 * Do not consider language-less pages.
 		 */
-		if ( strpos( $row->rc_title, '/' ) === false ) return false;
+		if ( strpos( $row->rc_title, '/' ) === false ) {
+			return false;
+		}
 
 		/**
 		 * No filters, just one key to track.
 		 */
-		if ( !$this->groups && !$this->codes ) return 'all';
+		if ( !$this->groups && !$this->codes ) {
+			return 'all';
+		}
 
 		/**
 		 * The key-building needs to be in sync with ::labels().
@@ -592,6 +653,7 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 		if ( $this->codes ) {
 			$codes = array( $code );
 		}
+
 		return $this->combineTwoArrays( $groups, $codes );
 	}
 
@@ -619,25 +681,38 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 	}
 
 	protected function combineTwoArrays( $groups, $codes ) {
-		if ( !count( $groups ) ) $groups[] = false;
-		if ( !count( $codes ) ) $codes[] = false;
+		if ( !count( $groups ) ) {
+			$groups[] = false;
+		}
+
+		if ( !count( $codes ) ) {
+			$codes[] = false;
+		}
 
 		$items = array();
 		foreach ( $groups as $group ) {
-		foreach ( $codes as $code ) {
-			$items[] = $this->makeLabel( $group, $code );
-		}
+			foreach ( $codes as $code ) {
+				$items[] = $this->makeLabel( $group, $code );
+			}
 		}
 		return $items;
 	}
 
 	protected function formatTimestamp( $timestamp ) {
 		global $wgContLang;
+
 		switch ( $this->opts['scale'] ) {
-		case 'hours' : $cut = 4; break;
-		case 'days'  : $cut = 6; break;
-		case 'months': $cut = 8; break;
-		default      : return $wgContLang->sprintfDate( $this->getDateFormat(), $timestamp );
+			case 'hours' :
+				$cut = 4;
+				break;
+			case 'days' :
+				$cut = 6;
+				break;
+			case 'months':
+				$cut = 8;
+				break;
+			default :
+				return $wgContLang->sprintfDate( $this->getDateFormat(), $timestamp );
 		}
 
 		return substr( $timestamp, 0, -$cut );
