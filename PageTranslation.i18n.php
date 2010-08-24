@@ -2012,9 +2012,40 @@ $messages['he'] = array(
 
 /** Croatian (Hrvatski)
  * @author Ex13
+ * @author SpeedyGonsales
  */
 $messages['hr'] = array(
+	'pagetranslation' => 'Prijevod stranice',
+	'right-pagetranslation' => 'Označi inačice stranica za prijevod',
+	'tpt-desc' => 'Proširenje za prevođenje sadržaja stranica',
+	'tpt-section-new' => 'Nova grupa za prijevod.
+Ime: $1',
+	'tpt-diff-old' => 'Prethodni tekst',
+	'tpt-diff-new' => 'Novi tekst',
+	'tpt-submit' => 'Označi ovu verziju za prijevod',
+	'tpt-sections-oldnew' => 'Novi i postojeći prijevodi',
+	'tpt-sections-deleted' => 'Obrisane grupe prijevoda',
+	'tpt-sections-template' => 'Predložak stranice za prijevod',
+	'tpt-rev-latest' => 'Najnovija inačica',
+	'tpt-rev-old' => 'razlika u odnosu na prethodnu označenu inačicu',
+	'tpt-rev-mark-new' => 'označi ovu inačicu za prijevod',
+	'tpt-translate-this' => 'prevedi ovu stranicu',
 	'translate-tag-translate-link-desc' => 'Prevedi ovu stranicu',
+	'translate-tag-markthis' => 'Označi ovu stranicu za prijevod',
+	'tpt-languages-legend' => 'Drugi jezici:',
+	'pt-movepage-current' => 'Trenutačni naziv:',
+	'pt-movepage-new' => 'Novi naziv:',
+	'pt-movepage-reason' => 'Razlog:',
+	'pt-movepage-subpages' => 'Premjesti sve podstranice',
+	'pt-movepage-action-check' => 'Provjeri je li premještanje moguće',
+	'pt-movepage-action-perform' => 'Premjesti',
+	'pt-movepage-action-other' => 'Promijeni cilj',
+	'pt-movepage-intro' => 'Ova posebna stranica omogućava vam premještanje stranica koje su označene za prijevod. 
+Premještanje nije trenutačno, jer mnoge stranice treba premjestiti. 
+Red poslova će se koristiti za premještanje stranica. 
+Dok se stranice premještaju, nije moguće raditi na stranicama u pitanju. 
+Kvarovi/pogreške biti će prijavljene u evidenciji prijevoda i trebaju se ručno popraviti.',
+	'pt-movepage-logreason' => 'Dio prevodive stranice $1.',
 );
 
 /** Upper Sorbian (Hornjoserbsce)

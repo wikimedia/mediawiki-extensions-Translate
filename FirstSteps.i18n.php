@@ -888,6 +888,14 @@ Du chunnsch derno derzue eimol im Monet e Newsletter iber.
 Wänn Du kei Newsletter witt iberchuu, chasch di im Tab „{{int:prefs-personal}}“ in [[Special:Preferences|Dyyne Yystellige]] uustrage.',
 );
 
+/** Croatian (Hrvatski)
+ * @author SpeedyGonsales
+ */
+$messages['hr'] = array(
+	'translate-fs-signup-title' => 'Prijavite se',
+	'translate-fs-userpage-submit' => 'Stvori moju suradničku stranicu',
+);
+
 /** Upper Sorbian (Hornjoserbsce)
  * @author Michawiki
  */
