@@ -120,6 +120,9 @@ Problem Reports
 
 Quick Create
 
+Random Wiki
+file = RandomWiki/SpecialRandomWiki.i18n.php
+
 Recipes Tweaks
 
 RTE - Base
