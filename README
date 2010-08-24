@@ -31,6 +31,8 @@ And for the code at:
 == Change log ==
 
 === Changes in ??? ===
+* 2010-08-23
+- Fixed multiple bugs in Special:TranslationStats
 * 2010-08-20
 - Documentation updated a lot, added doxygen spec file.
 * 2010-06-12

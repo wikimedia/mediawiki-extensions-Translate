@@ -40,6 +40,12 @@ interface FFS {
 	 */
 	public function read( $code );
 
+	/**
+	 * Same as read(), but takes the data as a parameters. The caller
+	 * is supposed to know in what language the translations are in.
+	 * @param $data \string Formatted messages.
+	 * @return \array
+	 */
 	public function readFromVariable( $data );
 
 	/**

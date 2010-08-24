@@ -9,8 +9,12 @@
  * @file
  */
 
-$dir = dirname( __FILE__ ); $IP = "$dir/../../..";
-@include("$dir/../../CorePath.php"); // Allow override
+// Standard boilerplate to define $IP
+if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
+	$IP = getenv( 'MW_INSTALL_PATH' );
+} else {
+	$dir = dirname( __FILE__ ); $IP = "$dir/../../..";
+}
 define( 'TRANSLATE_CLI', 1 );
 require_once( "$IP/maintenance/commandLine.inc" );
 
