@@ -279,6 +279,7 @@ $messages['cs'] = array(
 );
 
 /** German (Deutsch)
+ * @author Als-Holder
  * @author Kghbln
  * @author Purodha
  * @author The Evil IP address
@@ -372,8 +373,7 @@ Bitte ändere sie falls nötig.",
 
 Dies gibt anderen die Möglichkeit, dich über E-Mail zu erreichen.
 Du erhältst außerdem bis zu einmal im Monat einen Newsletter.
-Wenn du keinen erhalten möchtest, kannst du dich im Tab „{{int:prefs-personal}}“ in deinen [[Special:Preferences|Einstellungen]] austragen.
-Wenn du keinen Newsletter haben möchtest, kannst du dich im Tab Translate-fs-target-text',
+Wenn du keinen Newsletter erhalten möchtest, kannst du dich im Tab „{{int:prefs-personal}}“ in deinen [[Special:Preferences|Einstellungen]] austragen.',
 );
 
 /** Lower Sorbian (Dolnoserbski)
@@ -791,6 +791,101 @@ Se aínda non o fixo, [[Special:Preferences|cambie a lingua da interface de usua
 Isto permite que outros usuarios se poñan en contacto con vostede por correo electrónico.
 Tamén recibirá boletíns informativos, como máximo unha vez ao mes.
 Se non quere recibir estes boletíns, pode cancelar a subscrición na lapela "{{int:prefs-personal}}" das súas [[Special:Preferences|preferencias]].',
+);
+
+/** Swiss German (Alemannisch)
+ * @author Als-Holder
+ */
+$messages['gsw'] = array(
+	'firststeps' => 'Erschti Schritt',
+	'firststeps-desc' => '[[Special:FirstSteps|Spezialsyte]] as Hilf fir neji Benutzer zum Aafange uf eme Wiki mit dr „Translate“-Erwyterig',
+	'translate-fs-pagetitle-done' => '- erledigt!',
+	'translate-fs-pagetitle' => 'Hilfsprogramm zum Aafang - $1',
+	'translate-fs-signup-title' => 'Regischtriere',
+	'translate-fs-settings-title' => 'Dyy Yystellige aapasse',
+	'translate-fs-userpage-title' => 'Dyy Benutzersyte aalege',
+	'translate-fs-permissions-title' => 'E Aatrag stelle uf s Ibersetzerrächt',
+	'translate-fs-target-title' => 'Aafange mit em Ibersetze!',
+	'translate-fs-email-title' => 'Dyy E-Mail-Adräss bstetige',
+	'translate-fs-intro' => "Willchuu bi dr {{SITENAME}}-Hilf zue dr erschte Schritt.
+Dir wird zeigt, wie Du Schritt fir Schritt e Ibersetzer wirsch.
+Am Änd wirsch alli ''Oberfleche-Nochrichte'' vu dr Projäkt, wu vu {{SITENAME}} unterstitzt wäre, chenne ibersetze.",
+	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount.png|frame]]
+
+As erschtes muesch dir e Benutzerkonto aalege.
+
+Dyy Benutzername wird in dr Autorelischte fir Dyyni Ibersetzige gnännt.
+S Bild rächts zeigt, wie Du d Fälder muesch uusfille.
+
+Wänn Du di scho regischtriert hesch, $1mäld di statt däm aa$2.
+Wänn Du aagmäldet bisch, chumm zruck uf die Syte.
+
+$3Benutzerkonto aalege$4',
+	'translate-fs-settings-text' => 'Gang jetz zue Dyyne Yystellige un tue zerscht Dyy Oberflechesproch uf d Sproch ändere, wu Du ibersetze tuesch.
+
+Dyy Oberflechesproch wird as Dyy Standardsproch brucht.
+Mer vergisst lyycht, d Sproch in di Richtig z ändere, wäge däm wir dempfohle, des sofort z mache.
+
+Wänn Du draa bisch, chasch au d Software au aafroge, Ibersetzige in andere Sproche aazzeige, wu Du chänsch.
+Die Yystellig findsch unter em Tab „{{int:prefs-editing}}“.
+Lueg dir au rueig di andere Yystelligsmegligkeiten aa.
+
+Gang jetz in Dyyni [[Special:Preferences|Yystellige]] un chumm derno zruck uf die Syte.',
+	'translate-fs-settings-skip' => 'Fertig.
+Negschte Schritt.',
+	'translate-fs-userpage-text' => 'Jetz muesch Dyyni Benutzersyte aalege.
+
+Bitte schryyb ebis iber di, wär Du bisch un was du machsch.
+Des hilft dr {{SITENAME}}-Gmeinschaft bi dr Zämmearbet.
+Uf {{SITENAME}} git s Lyt us dr ganze Wält, wu an verschidene Sproche un Projäkt schaffe.
+
+Im uusgfillte Chäschtli obe sihsch in dr erschte Zyyle <nowiki>{{#babel:en-2}}</nowiki>.
+Bitte fill e uus mit Dyyne Sprochchänntnis.
+D Zahl hinter em Sprochcode bschrybt, wie guet Du die Sproch chasch.
+D Megligkeite sin:
+*1 - e bitzeli
+*2 - Grundchänntnis
+*3 - seli guet
+*4 - fascht wie ne Muetsprochler
+*5 - professionäll, z.B. wänn e professionälle Ibersetzer bisch.
+
+Wänn Du ne Muetersprochler bisch, no loss d Zahl ewäg un nimm nume dr Sprochcode.
+Byyschpel: Wänn Du Alemannisch as Muetersproch, Änglisch guet un e weng Swahili chasch, no chennscht des schryybe:
+<code><nowiki>{{#babel:gsw|en-3|sw-1}}</nowiki></code>
+
+Wänn Du dr Sprochcode vun ere Sproch nit chännsch, no lueg e jetz no.
+Du chasch d Lischte unter bruche.',
+	'translate-fs-userpage-submit' => 'Myy Benutzersyte aalege',
+	'translate-fs-userpage-done' => 'Guet gmacht! Du hesch jetz e Benutzersyte',
+	'translate-fs-permissions-text' => 'Jetz muesch e Aatrag stelle, ass Du zue dr Ibersetzergruppe zuegfiegt wirsch.
+
+Bis mir dr Code korrigiere, gang uf [[Project:Translator]] un gang dr Aawyysysige no.
+Chumm derno zruck uf die Syte.
+
+Wänn Du dr Aatrag abgschickt hesch, wird e frejwillige Mitarbeiter Dyy Aatrag priefe un e so schnäll wie megli akzeptiere.
+Bitte haa do ne weng Geduld.
+
+<del>Stell sicher, ass dää Aatrag korräkt uusgfillt isch, un druck derno dr Chnopf.</del>',
+	'translate-fs-target-text' => "Glickwunsch!
+Du chasch jetz aafange mit Ibersetze.
+
+Bi nit verwirrt, wänn s dir no nej un unibersichtli vorchunnt.
+Uf dr Syte [[Project list|Projäkt]] git s e Ibersicht vu dr Projäkt, wu Du chasch ibersetze.
+Di meischte Projäkt hän e churzi Bschryybigssyte zämme mit eme „''Ibersetze''“- Link, wu di uf e Syte mit Nochrichte bringt, wu nonig ibersetzt sin.
+E Lischt vu allne Nochrichtegruppe un em [[Special:LanguageStats|momentane Status vun ere Sproch]] git s au.
+
+Wänn Du meh dodervu witt verstoh, chasch di [[FAQ|hyfig gstellte Froge]] läse.
+Leider cha d Dokumäntation zytwyys veraltet syy.
+Wänn Du ebis witt mache, weisch aber nit wie, no frog no uf dr [[Support|Hilfssyte]].
+
+Du chasch au Ibersetzer vu Dyyre Sproch uf dr [[Portal_talk:$1|Diskussionssyte]] [[Portal:$1|vum Sprochportal]] kontaktiere.
+S Portal verlinkt uf Dyyni derzytig [[Special:Preferences|Sprochyystellig]].
+Bitte tue si ändere wänn netig.",
+	'translate-fs-email-text' => 'Bitte gib Dyy E-Mail-Adräss yy in [[Special:Preferences|Dyyne Yystellige]] un tue d E-Mail, wu an di gschickt wird, bstetige.
+
+Des git andere d Megligkeit, di iber E-Mail z erreiche.
+Du chunnsch derno derzue eimol im Monet e Newsletter iber.
+Wänn Du kei Newsletter witt iberchuu, chasch di im Tab „{{int:prefs-personal}}“ in [[Special:Preferences|Dyyne Yystellige]] uustrage.',
 );
 
 /** Upper Sorbian (Hornjoserbsce)

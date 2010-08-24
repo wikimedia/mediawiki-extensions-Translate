@@ -1827,6 +1827,7 @@ $messages['gsw'] = array(
 	'tpt-sections-oldnew' => 'Neji un vorhandeni Ibersetzigs-Abschnitt',
 	'tpt-sections-deleted' => 'Gleschti Ibersetzigs-Abschnitt',
 	'tpt-sections-template' => 'Ibersetzigs-Sytevorlag',
+	'tpt-action-nofuzzy' => 'Setz d Ibersetzige nit usser Chraft',
 	'tpt-badtitle' => 'Dr Sytename, wu Du aagee hesch ($1), isch kei giltige Sytename',
 	'tpt-nosuchpage' => 'D Syte $1 git s nit',
 	'tpt-oldrevision' => '$2 isch nit di letscht Version vu dr Syte [[$1]].
@@ -1863,6 +1864,7 @@ Di {{PLURAL:$1|nejscht Version cha dergege nit markiert wäre, ass si mueß|nejs
 Die Syte isch e Ibersetzig vu dr Syte [[$1]] un d Ibersetzig cha aktualisert wäre mit em [$2 Ibersetzigstool].',
 	'tpt-unknown-page' => 'Dää Namensruum isch reserviert fir Ibersetzige vu Inhaltssyte.
 D Syte, wu Du witt bearbeite, ghert schyns zue keire Syte, wu zum Ibersetze markiert isch.',
+	'tpt-delete-impossible' => 'S Lesche vu Syte, wu frejgee sin fir d Ibersetzig, isch nonig megli.',
 	'tpt-install' => 'php maintenance/update.php oder d Webinstallation laufe loo go s Syte-Ibersetzigs-Feature megli mache.',
 	'tpt-render-summary' => 'Aktualisiere zum e neji Version vu dr Quällsyte z finde',
 	'tpt-download-page' => 'Syte mit Ibersetzige exportiere',
@@ -1877,6 +1879,44 @@ Text vum Abschnitt: <pre>$1</pre>',
 	'pt-shake-position' => 'S het Abschnittsmarker an ere nit erwartete Stell.
 Text vum Abschnitt: <pre>$1</pre>',
 	'pt-shake-empty' => 'Abschnitt lääre fir Marker $1.',
+	'pt-log-header' => 'Logbuech vu dr Änderige im Zämmehang mit em Ibersetzigssyschtem',
+	'pt-log-name' => 'Sytenibersetzigs-Logbuech',
+	'pt-log-mark' => '{{GENDER:$2|het}} Version $3 vu dr Syte „[[:$1]]“ fir d Ibersetzig frejgee',
+	'pt-log-unmark' => '{{GENDER:$2|het}} d Syte „[[:$1]]“ us dr Ibersetzig uusegnuu',
+	'pt-log-moveok' => '{{GENDER:$2|het}} d Umnännig vu dr Ibersetzigssyte $1 uf e neje Name abgschlosse',
+	'pt-log-movenok' => '{{GENDER:$2|het}} e Probläm bi dr Verschiebig vu [[:$1]] no [[:$3]]',
+	'pt-movepage-title' => 'D Ibersetzigssyte $1 verschiebe',
+	'pt-movepage-blockers' => 'Di ibersetzbar Syte het wäge {{PLURAL:$1|däm Fähler|däne Fähler}} nit nit uf dr nej Name chenne verschobe wäre:',
+	'pt-movepage-block-base-exists' => 'D Basissyte [[:$1]] git s scho.',
+	'pt-movepage-block-base-invalid' => 'D Basissyte het kei giltige Name.',
+	'pt-movepage-block-tp-exists' => 'D Ibersetzigssyte [[:$2]] git s scho.',
+	'pt-movepage-block-tp-invalid' => 'Dr Ziilname vu dr Ibersetzigssyte fir [[:$1]] wär nit giltig (z lang?).',
+	'pt-movepage-block-section-exists' => 'D Abschnittssyte [[:$2]] git s scho.',
+	'pt-movepage-block-section-invalid' => 'Dr Ziilname vu dr Abschnittssyte fir [[:$1]] wär nit giltig (z lang?).',
+	'pt-movepage-block-subpage-exists' => 'D Untersyte [[:$2]] git s scho.',
+	'pt-movepage-block-subpage-invalid' => 'Dr Ziilname vu dr Untersyte fir [[:$1]] wär nit giltig (z lang?).',
+	'pt-movepage-list-pages' => 'Lischt vu dr Syte, wu mien verschobe wäre',
+	'pt-movepage-list-translation' => 'Ibersetzigssyte',
+	'pt-movepage-list-section' => 'Abschnittssyte',
+	'pt-movepage-list-other' => 'Anderi Untersyte',
+	'pt-movepage-list-count' => 'Insgsamt git s $1 Syte, wu {{PLURAL:$1|mueß|mien}} verschobe wäre.',
+	'pt-movepage-legend' => 'Ibersetzigssyte verschiebe',
+	'pt-movepage-current' => 'Aktuälle Sytename:',
+	'pt-movepage-new' => 'Neje Sytename:',
+	'pt-movepage-reason' => 'Grund:',
+	'pt-movepage-subpages' => 'Alli Untersyte verschiebe',
+	'pt-movepage-action-check' => 'Iberpriefig, eb d Verschiebig megli isch',
+	'pt-movepage-action-perform' => 'Verschiebig durfiere',
+	'pt-movepage-action-other' => 'Ziil ändere',
+	'pt-movepage-intro' => 'Die Spezialsyte macht s megli Syte z verschiebe, wu fir d Ibersetzig zeichnet sin.
+D Verschiebig chunnt nit sofort, wel vil Syte derby mien verschobe wäre.
+S wird wäge däm d Uftragswarteschlang zum Verschiebe vu dr Syte verwändet.
+Bim Verschiebigsvorgang isch s nit megli, die Syte z nutze.
+Verschiebigsfähler wäre im Ibersetzigs-Logbuech ufzeichnet un mien vu Hand verbesseret wäre.',
+	'pt-movepage-logreason' => 'Teil vu dr Ibersetzigssyte $1.',
+	'pt-movepage-started' => 'D Basissyte isch jetz verschobe wore.
+Bitte prief s Ibersetzigs-Logbuech uf Fählermäldige un d Vollzugsnochricht.',
+	'pt-locked-page' => 'Die Syte isch gsperrt, wel d Ibersetzigssyte zurzyt verschobe wird.',
 );
 
 /** Gujarati (ગુજરાતી)
@@ -3379,7 +3419,7 @@ Nòm: $1',
 	'tpt-sections-oldnew' => 'Unità ëd tradussion neuve e esistente',
 	'tpt-sections-deleted' => 'Unità ëd tradussion eliminà',
 	'tpt-sections-template' => 'Model ëd pàgina ëd tradussion',
-	'tpt-action-nofuzzy' => 'Anvàlida pa ij viragi',
+	'tpt-action-nofuzzy' => 'Invalidé nen le tradussion',
 	'tpt-badtitle' => "Ël nòm dàit a la pàgina ($1) a l'é pa un tìtol bon",
 	'tpt-nosuchpage' => 'La pàgina $1 a esist pa',
 	'tpt-oldrevision' => "$2 a l'é nen l'ùltima version dla pàgina [[$1]].
@@ -3394,13 +3434,16 @@ Prima ëd marché costa version për la tradussion, controlé che le modìfiche 
 	'tpt-mark-summary' => "Costa version a l'é stàita marcà për la tradussion",
 	'tpt-edit-failed' => "Impossìbil d'agiorné la pàgina: $1",
 	'tpt-already-marked' => "L'ùltima version ëd sa pàgina a l'é stàita già marcà për la tradussion.",
-	'tpt-unmarked' => "La pàgina $1 a l'é pa pi marcà për ël viragi.",
+	'tpt-unmarked' => "La pàgina $1 a l'é pi nen marcà për la tradussion.",
 	'tpt-list-nopages' => 'A-i é gnun-a pàgina marcà për la tradussion ni pronta për esse marcà për la tradussion.',
 	'tpt-old-pages' => 'Chèiche version ëd {{PLURAL:$1|costa pàgine|coste pàgine}} a son ëstàite marcà për la tradussion.',
 	'tpt-new-pages' => "{{PLURAL:$1|Sa pàgina a conten|Se pàgine a conten-o}} dël test con la tichëtta ëd tradussion, ma gnun-a version ëd {{PLURAL:$1|costa pàgina|coste pàgine}} a l'é al moment marcà për la tradussion.",
+	'tpt-other-pages' => "{{PLURAL:$1|Na veja version ëd costa pàgina a l'é|Dle veje version ëd coste pàgine a son}} marcà për la tradussion,
+ma {{PLURAL:$1|l'ùltima version a peul|j'ùltime version a peulo}} pa esse marcà për la tradussion.",
 	'tpt-rev-latest' => 'ùltima version',
 	'tpt-rev-old' => 'diferensa con la version marcà precedenta',
 	'tpt-rev-mark-new' => 'marca costa version për la tradussion',
+	'tpt-rev-unmark' => 'gava costa pàgina da la tradussion',
 	'tpt-translate-this' => 'fé la tradussion ëd sa pàgina',
 	'translate-tag-translate-link-desc' => 'Fé la tradussion ëd sa pàgina',
 	'translate-tag-markthis' => 'Marca costa pàgina për la tradussion',
@@ -3413,11 +3456,59 @@ Prima ëd marché costa version për la tradussion, controlé che le modìfiche 
 Sta pàgina-sì a l'é na tradussion ëd la pàgina [[$1]] e la tradussion a peul esse modificà an dovrand [$2 l'utiss ëd tradussion].",
 	'tpt-unknown-page' => "Sto spassi nominal-sì a l'é riservà për tradussion ëd pàgine ëd contnù.
 La pàgina ch'it preuve a modifiché a smija pa ch'a corisponda a na pàgina marcà për tradussion.",
+	'tpt-delete-impossible' => "Scancelé dle pàgine marcà për la tradussion a l'é ancor nen possìbil.",
 	'tpt-install' => "Fa giré ël php maintnance/update php o l'instalassion dl'aragnà për abilité la possibilità ëd tradussion ëd pàgine.",
 	'tpt-render-summary' => 'Modifiché për esse com la neuva version dla pàgina sorgiss',
 	'tpt-download-page' => 'Espòrta pàgina con tradussion',
+	'pt-parse-open' => 'Tichëtta &lt;translate> pa bilansà.
+Stamp ëd viragi: <pre>$1</pre>',
+	'pt-parse-close' => 'Tichëtta &lt;/translate> pa bilansà.
+Stamp ëd viragi: <pre>$1</pre>',
+	'pt-parse-nested' => 'Le session &lt;translate> anidà a son pa përmëttùe.
+Test ëd la tichëtta: <pre>$1</pre>',
 	'pt-shake-multiple' => 'Marcador mùltipl ëd session për na session.
 Test ëd la session: <pre>$1</pre>',
+	'pt-shake-position' => 'Marcador ëd session an na posission pa spetà.
+Test ëd la session: <pre>$1</pre>',
+	'pt-shake-empty' => 'Session veuida për ël marcador $1.',
+	'pt-log-header' => "Registr ëd j'assion colegà al sistema ëd tradussion ëd pàgine",
+	'pt-log-name' => 'Registr dle tradussion ëd pàgine',
+	'pt-log-mark' => '{{GENDER:$2|marcà}} la revision $3 dla pàgina "[[:$1]]" për la tradussion',
+	'pt-log-unmark' => 'a l\'ha {{GENDER:$2|gavà}} la pàgina "[[:$1]]" da la tradussion',
+	'pt-log-moveok' => "a l'ha {{GENDER:$2|completà}} ëd deje un nòm neuv a la pàgina da volté $1",
+	'pt-log-movenok' => "{{GENDER:$2|a l'ha rancontrà}} un problema an tramudand [[:$1]] a [[:$3]]",
+	'pt-movepage-title' => 'Tramudé la pàgina da volté $1',
+	'pt-movepage-blockers' => 'La pàgina da volté a peul pa esse tramudà a un nòm neuv a motiv ëd {{PLURAL:$1|cost eror|costi eror}}:',
+	'pt-movepage-block-base-exists' => 'La pàgina base pontà [[:$1]] a esist.',
+	'pt-movepage-block-base-invalid' => "La pàgina base pontà a l'é pa un tìtol bon.",
+	'pt-movepage-block-tp-exists' => 'La pàgina ëd viragi pontà [[:$2]] a esist.',
+	'pt-movepage-block-tp-invalid' => 'Ël tìtol ëd la pàgina ëd viragi pontà për [[:$1]] a podrìa esse pa bon (tròp longh?).',
+	'pt-movepage-block-section-exists' => 'La pàgina ëd session pontà [[:$2]] a esist.',
+	'pt-movepage-block-section-invalid' => 'Ël tìtol ëd la pàgina ëd session pontà për [[:$1]] a podrìa esse pa bon (tròp longh?).',
+	'pt-movepage-block-subpage-exists' => 'La sotpàgina pontà [[:$2]] a esist.',
+	'pt-movepage-block-subpage-invalid' => 'Ël tìtol ëd la sotpàgina pontà për [[:$1]] a podrìa esse pa bon (tròp longh?).',
+	'pt-movepage-list-pages' => 'Lista dle pàgine da tramudé',
+	'pt-movepage-list-translation' => 'Pàgine ëd viragi',
+	'pt-movepage-list-section' => 'Pàgine ëd session',
+	'pt-movepage-list-other' => 'Àutre sot-pàgine',
+	'pt-movepage-list-count' => 'An total $1 {{PLURAL:$1|pàgina|pàgine}} da tramudé.',
+	'pt-movepage-legend' => 'Tramudé la pàgina da volté',
+	'pt-movepage-current' => 'Nòm corent:',
+	'pt-movepage-new' => 'Nòm neuv:',
+	'pt-movepage-reason' => 'Rason:',
+	'pt-movepage-subpages' => 'Tramuda tute le sotpàgine',
+	'pt-movepage-action-check' => "Contròla s'a l'é possìbil tramudé",
+	'pt-movepage-action-perform' => 'Fé ël tramud',
+	'pt-movepage-action-other' => 'Cangé ël bërsaj',
+	'pt-movepage-intro' => "Sta pàgina special a-j përmët ëd tramudé dle pàgine ch'a son marcà për la tradussion.
+L'assion ëd tramud a sarà pa d'amblé, përchè tante pàgine a dovran esse tramudà.
+La coa ëd travaj a sarà dovrà për tramudé le pàgine.
+Antramentre che le pàgine a son tramudà, a l'é nen possìbil anteragì con cole pàgine.
+J'eror a saran registrà ant ël registr ëd tradussion ëd le pàgine e a dovran esse rangià a man.",
+	'pt-movepage-logreason' => 'Tòch ëd la pàgina da volté $1.',
+	'pt-movepage-started' => "La pàgina base adess a l'é tramudà.
+Për piasì contròla ël registr ëd viragi dle pàgine për eror e mëssagi ëd completament.",
+	'pt-locked-page' => "Cota pàgina a l'é blocà përchè la pàgina da volté a l'é an camin ch'as tramuda.",
 );
 
 /** Pashto (پښتو)

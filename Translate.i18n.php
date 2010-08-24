@@ -1918,6 +1918,10 @@ $messages['ba'] = array(
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Уң һәм һул {{PLURAL:$2|йәйә|йәйә}} һаны парлы түгел:
 <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links' => 'Түбәндәге {{PLURAL:$2|һылтанма|$2 һылтанмалар}} ҡыйынлыҡтар тыуҙыра.
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links-missing' => 'Түбәндәге {{PLURAL:$2|һылтанма|$2 һылтанмалар}} кәрәк:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Түбәндәге {{PLURAL:$2|тэгты|тэгтарҙы}} төҙәтегеҙ, зинһар:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Сығанаҡ <nowiki>{{PLURAL:}}</nowiki> ҡуллана, ә тәржемә ҡулланмай.',
@@ -1989,11 +1993,21 @@ $messages['ba'] = array(
 Яҙма йә уның инглиз телендәге сығанағы үҙгәрһә, йә автоматик тикшереүҙе үтмәһә, йә кемдер уны иҫкергән тип билдәләһә иҫкергән тип иҫәпләнә.',
 	'translate-nothing-to-do' => 'Бөтә мөмкин булған тәржемәләр яһалған булырға тейеш.
 [[Special:Translate|{{int:translate}}]] ярҙамында яҙмаларҙы тикшерә алаһығыҙ.',
+	'supportedlanguages' => 'Ҡулланылған телдәр',
+	'supportedlanguages-summary' => 'Был биттә {{SITENAME}} проектында ҡулланылған телдәр һәм был телдәр өҫтөндә эшләүсе тәржемәселәр исемлеге килтерелгән.
+Әгәр ниндәйҙер тел тураһында тулыраҡ мәғлүмәт алырға теләһәгеҙ, шул телдең порталы һылтанмаһына баҫығыҙ.
+Берәй тәржемәсе исеменә баҫһағыҙ, шул тәржемәсенең битенә эләгерһегеҙ.
+
+Әгәр ниндәй ҙә булһа тел исемлектә килтерелмәгән икән, һеҙ ошо телгә локалләштереүҙе "[[Translating:Process|Яңы тел]]" битендә башлай алаһығыҙ.
+
+Әгәр һеҙ ниндәй ҙә булһа телгә тәржемә итәһегеҙ һәм һеҙҙең исемегеҙ тәржемәселәр исемлегендә юҡ икән, зинһар, исемегеҙҙе был телдең [[:Category:Languages|порталында]] тәржемәселәр исемлегенә өҫтәгеҙ.
+Һеҙҙең көйләүҙәрегеҙҙәге тел порталына һылтанманы менюла табырға була.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Тәржемәсе|Тәржемәселәр}}: $1',
 	'supportedlanguages-recenttranslations' => 'яңыраҡ эшләнгән тәржемәләр',
 	'translate-save' => 'Һаҡларға ($1)',
 	'translate-jssti-add' => 'Исемлеккә өҫтәргә',
 	'translate-group-desc-mediawikicore' => 'Был төркөм MediaWiki проектының хәҙерге альфа-версияһында ({{CURRENTVERSION}}) ҡулланылған яҙмаларҙы үҙ эсенә ала.',
+	'translate-group-desc-mediawikimostused' => 'Был төркөм MediaWiki проектының [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 иң йыш ҡуланылған яҙмаларын] үҙ эсенә ала',
 	'translate-js-next' => 'Һаҡларға һәм сираттағыны асырға',
 	'translate-js-nonext' => 'Был яҙма әлеге биттә аҙаҡҡыһы булды.',
 	'translate-js-skip' => 'Сираттағыға күсергә',
@@ -6895,6 +6909,7 @@ $messages['gsw'] = array(
 	'translate-task-view' => 'Zeig alli Syschtemnochrichte vu dr',
 	'translate-task-untranslated' => 'Zeig alli nit ibersetzte Syschtemnochrichte vu dr',
 	'translate-task-optional' => 'Zeig optionali Syschtemnochrichte vu dr',
+	'translate-task-suggestions' => 'Nochrichte mit Vorschleg us em Ibersetzigsspyycher aazeige',
 	'translate-task-untranslatedoptional' => 'Zeig nit ibersetzti optionali Syschtemnochrichte vu dr',
 	'translate-task-problematic' => 'Zeig Syschtemnochrichte mit Probläm',
 	'translate-task-review' => 'Prief Änderige vu dr',
@@ -7007,17 +7022,21 @@ D Standardlischt vu Sproche hangt vu Dyyre Sproch ab.',
 	'translationstats' => 'Ibersetzigsstatischtike',
 	'translate-stats-edits' => 'Bearbeitunge am Tag',
 	'translate-stats-users' => 'Ibersetzer',
+	'translate-stats-registrations' => 'Regischtrierige',
 	'translate-statsf-intro' => 'Du chasch eifachi Statischtike mit däm Formular aalege. Alli Wärt hän unteri un oberi Gränze.',
 	'translate-statsf-options' => 'Zeichnigsoptione',
 	'translate-statsf-width' => 'Breiti in Pixel:',
 	'translate-statsf-height' => 'Hechi in Pixel:',
 	'translate-statsf-days' => 'Zytruum in Täg:',
 	'translate-statsf-scale' => 'Granularität:',
+	'translate-statsf-scale-months' => 'Monet',
+	'translate-statsf-scale-weeks' => 'Wuche',
 	'translate-statsf-scale-days' => 'Täg',
 	'translate-statsf-scale-hours' => 'Stunde',
 	'translate-statsf-count' => 'Maßstab:',
 	'translate-statsf-count-edits' => 'Aazahl Bearbeitige',
 	'translate-statsf-count-users' => 'Aktivi Ibersetzer',
+	'translate-statsf-count-registrations' => 'Neji Benutzer',
 	'translate-statsf-language' => 'Komma-trännti Lischt vu dr Sprochcode:',
 	'translate-statsf-group' => 'Komma-trännti Lischt vu dr Gruppecode:',
 	'translate-statsf-submit' => 'Vorschou',
@@ -12056,6 +12075,7 @@ $messages['myv'] = array(
 
 /** Nahuatl (Nāhuatl)
  * @author Fluence
+ * @author Ricardo gs
  */
 $messages['nah'] = array(
 	'translate' => 'Tictlahtōlcuepāz',
@@ -12074,7 +12094,7 @@ $messages['nah'] = array(
 	'translate-page-description-legend' => 'Olōltechopa',
 	'translate-page-edit' => 'ticpatlāz',
 	'translate-edit-contribute' => 'titlapalēhuīz',
-	'translate-edit-in-other-languages' => 'Tlahcuilōltzin occequīntīn tlahtōlcopa',
+	'translate-edit-in-other-languages' => 'Tītlantlahtōlli "$1" occēquīntīn tlahtōlco',
 	'translate-edit-goto-prev' => 'Ticpatlāz achtopa tlahcuilōltzin',
 	'translate-edit-goto-next' => 'Ticpatlāz niman tlahcuilōltzin',
 	'translate-edit-goto-list' => 'Ticuepāz',
@@ -12093,10 +12113,10 @@ $messages['nah'] = array(
 	'translate-statsf-scale-days' => 'Tōnaltin',
 	'translate-statsf-submit' => 'Achtochīhualiztli',
 	'translate-tag-page-desc' => 'Huiquizāzanilli ītlahtōlcuepaliz [[$2|$1]].',
-	'translate-sidebar-alltrans' => 'Occequīntīn tlahtōlcuepaliztli',
+	'translate-sidebar-alltrans' => 'Occēquīntīn tlahtōlco',
 	'translations' => 'Mochi tlahtōlcuepaliztli',
 	'translate-translations-none' => 'Ayāc tlahtōlcuepaliztli ic "$1"',
-	'translate-translations-fieldset-title' => 'Mochi tlahtōlcuepaliztli',
+	'translate-translations-fieldset-title' => 'Tītlantlahtōlli',
 );
 
 /** Neapolitan (Nnapulitano) */
