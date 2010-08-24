@@ -49,6 +49,7 @@ $wgExtensionAliasesFiles['Translate'] = $dir . 'Translate.alias.php';
 
 // Register initialization hook
 $wgExtensionFunctions[] = 'efTranslateInit';
+$wgHooks['CanonicalNamespaces'][] = 'efTranslateNamespaces';
 
 // Register special pages into MediaWiki
 $wgSpecialPages['Translate'] = 'SpecialTranslate';
@@ -401,6 +402,12 @@ $wgTranslateYamlLibrary = 'spyc';
 
 # Startup code
 
+function efTranslateNamespaces( &$list ) {
+	$list[NS_TRANSLATIONS]      = 'Translations';
+	$list[NS_TRANSLATIONS_TALK] = 'Translations_talk';
+	return true;
+}
+
 /**
  * Initialises the extension.
  * @private
@@ -459,24 +466,19 @@ function efTranslateInit() {
 		$wgJobClasses['RenderJob'] = 'RenderJob';
 		$wgJobClasses['MoveJob'] = 'MoveJob';
 
-		/**
-		 * Namespaces
-		 */
-		global $wgPageTranslationNamespace, $wgCanonicalNamespaceNames;
+		// Namespaces
+		global $wgPageTranslationNamespace, $wgExtraNamespaces;
 		global $wgNamespacesWithSubpages, $wgNamespaceProtection;
-		global $wgTranslateMessageNamespaces;
+		global $wgTranslateMessageNamespaces, $wgVersion;
 
-		/**
-		 * Defines for nice usage
-		 */
+		// Define constants for more readable core
 		define ( 'NS_TRANSLATIONS', $wgPageTranslationNamespace );
 		define ( 'NS_TRANSLATIONS_TALK', $wgPageTranslationNamespace + 1 );
 
-		/**
-		 * Register them as namespaces
-		 */
-		$wgCanonicalNamespaceNames[NS_TRANSLATIONS]      = 'Translations';
-		$wgCanonicalNamespaceNames[NS_TRANSLATIONS_TALK] = 'Translations_talk';
+		if ( version_compare( $wgVersion, '1.17alpha', '<' ) ) {
+			efTranslateNamespaces( &$wgExtraNamespaces );
+		}
+
 		$wgNamespacesWithSubpages[NS_TRANSLATIONS]      = true;
 		$wgNamespacesWithSubpages[NS_TRANSLATIONS_TALK] = true;
 
