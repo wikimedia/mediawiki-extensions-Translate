@@ -483,7 +483,7 @@ function efTranslateInit() {
 		}
 
 		if ( version_compare( $wgVersion, '1.17alpha', '<' ) ) {
-			efTranslateNamespaces( &$wgExtraNamespaces );
+			efTranslateNamespaces( $wgExtraNamespaces );
 		}
 
 		$wgNamespacesWithSubpages[NS_TRANSLATIONS]      = true;
