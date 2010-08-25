@@ -113,8 +113,11 @@ If you do not want to receive newsletters, you can opt-out in the tab "{{int:pre
 
 /** Message documentation (Message documentation)
  * @author Lloffiwr
+ * @author The Evil IP address
  */
 $messages['qqq'] = array(
+	'translate-fs-signup-text' => 'The parameters represent the start and end of an HTML link.',
+	'translate-fs-userpage-text' => 'You may replace "Tamil" (ta) and "Swahili" (sw) with languages that people from your language are more likely to speak.',
 	'translate-fs-permissions-text' => 'Synonym for "filed" is "submitted".',
 );
 
@@ -302,7 +305,7 @@ Am Ende wirst du alle ''Oberflächen-Nachrichten'' der von {{SITENAME}} unterst�
 
 Als erstes musst du dir ein Benutzerkonto anlegen.
 
-Dein Benutzername wird in den Autorenlisten für deine Übersetzungen genannt.
+Dein Benutzername wird in den Autorenlisten deiner Übersetzungen genannt.
 Das Bild rechts zeigt, wie du die Felder ausfüllen musst.
 
 Wenn du dich bereits registriert hast, $1logge dich stattdessen ein$2.
@@ -338,8 +341,8 @@ Die Möglichkeiten sind:
 *5 - professionell, z.B. wenn du ein professioneller Übersetzer bist.
 
 Wenn du ein Muttersprachler bist, lasse die Zahl aus und benutze nur den Sprachcode.
-Beispiel: Wenn du Tamil als Muttersprache, Englisch gut und ein wenig Swahili könntest du Folgendes schreiben:
-<code><nowiki>{{#babel:ta|en-3|sw-1}}</nowiki></code>
+Beispiel: Wenn du Deutsch als Muttersprache, Englisch gut und ein wenig Französisch sprechen, könntest du Folgendes schreiben:
+<code><nowiki>{{#babel:de|en-3|fr-1}}</nowiki></code>
 
 Wenn du den Sprachcode einer Sprache nicht kennst, dann guck ihn jetzt nach.
 Du kannst die Liste unten benutzen.',
@@ -353,11 +356,11 @@ Kehre danach zurück auf diese Seite.
 Nachdem du den Antrag abgeschickt hast, wird ein freiwilliger Mitarbeiter deinen Antrag prüfen und ihn so bald wie möglich akzeptieren.
 Bitte habe dabei etwas Geduld.
 
-<del>Stelle sicher, dass der folgende Antrag korrekt ausgefüllt und und drücke dann den Button.</del>',
+<del>Stelle sicher, dass der folgende Antrag korrekt ausgefüllt ist und drücke dann den Button.</del>',
 	'translate-fs-target-text' => "Glückwunsch!
 Du kannst nun mit dem Übersetzen beginnen.
 
-Sei nicht verwirrt, wenn es dir noch neu und unübersichtlich verkommt.
+Sei nicht verwirrt, wenn es dir noch neu und unübersichtlich vorkommt.
 Auf der Seite [[Project list|Projekte]] gibt es eine Übersicht der Projekte, die du übersetzen kannst.
 Die meisten Projekte haben eine kurze Beschreibungsseite zusammen mit einem „''Übersetzen''“- Link, der dich auf eine Seite mit nicht-übersetzten Nachrichten bringt.
 Eine Liste aller Nachrichtengruppen und dem [[Special:LanguageStats|momentanen Status einer Sprache]] gibt es auch.
