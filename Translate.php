@@ -403,6 +403,11 @@ $wgTranslateYamlLibrary = 'spyc';
 # Startup code
 
 function efTranslateNamespaces( &$list ) {
+	global $wgPageTranslationNamespace;
+	if ( !defined( 'NS_TRANSLATIONS' ) ) {
+		define( 'NS_TRANSLATIONS', $wgPageTranslationNamespace );
+		define( 'NS_TRANSLATIONS_TALK', $wgPageTranslationNamespace + 1 );
+	}
 	$list[NS_TRANSLATIONS]      = 'Translations';
 	$list[NS_TRANSLATIONS_TALK] = 'Translations_talk';
 	return true;
@@ -472,8 +477,10 @@ function efTranslateInit() {
 		global $wgTranslateMessageNamespaces, $wgVersion;
 
 		// Define constants for more readable core
-		define ( 'NS_TRANSLATIONS', $wgPageTranslationNamespace );
-		define ( 'NS_TRANSLATIONS_TALK', $wgPageTranslationNamespace + 1 );
+		if ( !defined( 'NS_TRANSLATIONS' ) ) {
+			define( 'NS_TRANSLATIONS', $wgPageTranslationNamespace );
+			define( 'NS_TRANSLATIONS_TALK', $wgPageTranslationNamespace + 1 );
+		}
 
 		if ( version_compare( $wgVersion, '1.17alpha', '<' ) ) {
 			efTranslateNamespaces( &$wgExtraNamespaces );
