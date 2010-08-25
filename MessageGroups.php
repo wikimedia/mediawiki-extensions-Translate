@@ -85,10 +85,6 @@ abstract class MessageGroupOld implements MessageGroup {
 
 	public function setMangler( $value ) { $this->mangler = $value; }
 
-	protected $type = 'undefined';
-	public function getType() { return $this->type; }
-	public function setType( $value ) { $this->type = $value; }
-
 	public $namespaces = array( NS_MEDIAWIKI, NS_MEDIAWIKI_TALK );
 
 	public function getReader( $code ) {
@@ -808,10 +804,6 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 			$this->title = Title::newFromText( $this->title );
 		}
 		return $this->title;
-	}
-
-	public function getType() {
-		return 'mediawiki';
 	}
 
 	public function getDefinitions() {

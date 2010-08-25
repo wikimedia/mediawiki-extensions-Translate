@@ -227,7 +227,6 @@ class PremadeMediawikiExtensionGroups {
 		if ( isset( $info['aliasvar'] ) ) $group->setVariableNameAlias( $info['aliasvar'] );
 		if ( isset( $info['magicfile'] ) ) $group->setMagicFile( $info['magicfile'] );
 
-		$group->setType( 'mediawiki' );
 		return $group;
 	}
 }
