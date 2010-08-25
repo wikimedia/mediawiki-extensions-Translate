@@ -811,10 +811,7 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		$tables = 'translate_sections';
 		$vars = array( 'trs_key', 'trs_text' );
 		$conds = array( 'trs_page' => $this->getTitle()->getArticleId() );
-		$options = array();
-		if ( $dbr->fieldExists( 'translate_sections', 'trs_order', __METHOD__ ) ) {
-			$options['ORDER BY'] = 'trs_order';
-		}
+		$options = array( 'ORDER BY' => 'trs_order');
 		$res = $dbr->select( $tables, $vars, $conds, __METHOD__, $options );
 
 		$defs = array();
@@ -822,18 +819,12 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		$re = '~<tvar\|([^>]+)>(.*?)</>~u';
 
 		foreach ( $res as $r ) {
-			/**
-			 * @todo: use getTextForTrans?
-			 */
+			/// @todo: use getTextForTrans?
 			$text = $r->trs_text;
 			$text = preg_replace( $re, '$\1', $text );
 			$defs[$r->trs_key] = $text;
 		}
 
-		/**
-		 * Some hacks to get nice order for the messages.
-		 */
-		ksort( $defs );
 		$new_defs = array();
 		foreach ( $defs as $k => $v ) {
 			$new_defs[$prefix . $k] = $v;
