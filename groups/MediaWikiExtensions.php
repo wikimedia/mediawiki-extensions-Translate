@@ -3,8 +3,8 @@
  * Classes for MediaWiki extension translation.
  *
  * @file
- * @author Niklas Laxström
- * @copyright Copyright © 2008-2010, Niklas Laxström
+ * @author Niklas LaxstrÃ¶m
+ * @copyright Copyright Â© 2008-2010, Niklas LaxstrÃ¶m
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
