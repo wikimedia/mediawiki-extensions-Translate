@@ -725,8 +725,13 @@ class GettextMessageGroup extends MessageGroupOld {
 }
 
 /**
- * @todo: needs documentation
- * @deprecated
+ * Group for messages that can be controlled via a page in MediaWiki namespace.
+ *
+ * In the page comments start with # and continue till the end of the line.
+ * The page should contain list of page names in MediaWiki namespace, without
+ * the namespace prefix. Use underscores for spaces in page names, since
+ * whitespace separates the page names from each other.
+ * @ingroup MessageGroups
  */
 class WikiMessageGroup extends MessageGroupOld {
 	protected $source = null;
@@ -745,13 +750,12 @@ class WikiMessageGroup extends MessageGroupOld {
 
 	/**
 	 * Fetch definitions from database.
+	 * @return \array Array of messages keys with definitions.
 	 */
 	public function getDefinitions() {
 		$definitions = array();
 
-		/**
-		 * In theory could have templates that are substitued
-		 */
+		// In theory the page could have templates that are substitued
 		$contents = wfMsg( $this->source );
 		$contents = preg_replace( '~^\s*#.*$~m', '', $contents );
 		$messages = preg_split( '/\s+/', $contents );
@@ -773,7 +777,7 @@ class WikiMessageGroup extends MessageGroupOld {
 	 *
 	 * @param $key \string Key of the message.
 	 * @param $code \string Language code.
-	 * @todo Document return value (<code>isset( $data[$title][0] ) ? $data[$title][0] : null;<code> from TranslateUtils::getMessageContent).
+	 * @return \types{\string,\null} The translation or null if it doesn't exists.
 	 */
 	public function getMessage( $key, $code ) {
 		global $wgContLang;
@@ -787,8 +791,8 @@ class WikiMessageGroup extends MessageGroupOld {
 }
 
 /**
- * @todo: needs documentation
- * @deprecated
+ * Wraps the translatable page sections into a message group.
+ * @ingroup PageTranslation
  */
 class WikiPageMessageGroup extends WikiMessageGroup {
 	protected $title;
@@ -860,7 +864,7 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 	 *
 	 * @param $key \string Key of the message.
 	 * @param $code \string Language code.
-	 * @return Mixed Stored translation or null.
+	 * @return \mixed Stored translation or null.
 	 */
 	public function getMessage( $key, $code ) {
 		if ( $code === 'en' ) {
@@ -906,7 +910,8 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 }
 
 /**
- * @todo: needs documentation
+ * Factory class for accessing message groups individually by id or
+ * all of them as an list.
  */
 class MessageGroups {
 	public static function init() {
@@ -936,8 +941,9 @@ class MessageGroups {
 	}
 
 	/**
-	 * Manually reset groups when dependencies cannot
-	 * detect those automatically
+	 * Manually reset group cache.
+	 *
+	 * Use when automatic dependency tracking fails.
 	 */
 	public static function clearCache() {
 		$key = wfMemckey( 'translate-groups' );
@@ -1004,9 +1010,7 @@ class MessageGroups {
 				if ( !empty( $conf['AUTOLOAD'] ) && is_array( $conf['AUTOLOAD'] ) ) {
 					$dir = dirname( $configFile );
 					foreach ( $conf['AUTOLOAD'] as $class => $file ) {
-						/**
-						 * For this request and for caching.
-						 */
+						// For this request and for caching.
 						$wgAutoloadClasses[$class] = "$dir/$file";
 						$autoload[$class] = "$dir/$file";
 					}
@@ -1030,6 +1034,11 @@ class MessageGroups {
 		wfDebug( __METHOD__ . "-end\n" );
 	}
 
+	/**
+	 * Fetch a message group by id.
+	 * @param $id \string Message group id.
+	 * @return Message group or null if it doesn't exist.
+	 */
 	public static function getGroup( $id ) {
 		self::init();
 
@@ -1052,9 +1061,7 @@ class MessageGroups {
 			} elseif ( strpos( $id, 'page|' ) === 0 ) {
 				list( , $title ) = explode( '|', $id, 2 );
 
-				/**
-				 * Check first if it valid page title at all.
-				 */
+				// Check first if it valid page title at all.
 				if ( !Title::newFromText( $title ) ) {
 					return null;
 				}
@@ -1066,6 +1073,7 @@ class MessageGroups {
 		}
 	}
 
+	/// @todo make protected
 	public $classes;
 	private function __construct() {
 		self::init();
@@ -1079,6 +1087,10 @@ class MessageGroups {
 		return $instance;
 	}
 
+	/**
+	 * Get all enabled message groups.
+	 * @return \array
+	 */
 	public function getGroups() {
 		if ( $this->classes === null ) {
 			$this->classes = array();
