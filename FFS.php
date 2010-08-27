@@ -36,7 +36,7 @@ interface FFS {
 	 * and return it in associative array with keys like \c AUTHORS and
 	 * \c MESSAGES.
 	 * @param $code \string Languge code.
-	 * @return \array
+	 * @return \arrayof{String,Mixed} Parsed data.
 	 */
 	public function read( $code );
 
@@ -44,7 +44,7 @@ interface FFS {
 	 * Same as read(), but takes the data as a parameters. The caller
 	 * is supposed to know in what language the translations are in.
 	 * @param $data \string Formatted messages.
-	 * @return \array
+	 * @return \arrayof{String,Mixed} Parsed data.
 	 */
 	public function readFromVariable( $data );
 

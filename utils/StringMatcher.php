@@ -1,6 +1,6 @@
 <?php
 /**
- * @todo Needs documentation.
+ * Code for mangling message keys to avoid conflicting keys.
  * @file
  * @author Niklas Laxström
  * @copyright Copyright © 2008-2010, Niklas Laxström
@@ -8,31 +8,67 @@
  */
 
 /**
- * @todo Needs documentation.
+ * Interface that key-mangling classes must implement.
+ *
+ * The operations has to be reversible so that
+ * x equals unMangle( mangle( x ) ).
  */
 interface StringMangler {
+	/// @todo Does this really need to be in the interface???
 	public static function EmptyMatcher();
+
+	/**
+	 * General way to pass configuration to the mangler.
+	 * @param $configuration \array
+	 */
 	public function setConf( $configuration );
 
-	// String or array
+	/**
+	 * Match strings against a pattern.
+	 * If string matches, mangle() should mangle the key.
+	 * @param $string \string Message key.
+	 * @return \bool
+	 */
 	public function match( $string );
+	/**
+	 * Mangles a list of message keys.
+	 * @param $data \string or \list{String} Unmangled message keys.
+	 * @return \string or \list{String} Mangled message keys.
+	 */
 	public function mangle( $data );
+	/**
+	 * Reverses the operation mangle() did.
+	 * @param $data \string or \list{String} Mangled message keys.
+	 * @return \string or \list{String} Umangled message keys.
+	 */
 	public function unMangle( $data );
 }
 
 /**
- * @todo Needs documentation.
+ * The versatile default implementation of StringMangler interface.
+ * It supports exact matches and patterns with any-wildcard (*).
+ * All matching strings are prefixed with the same prefix.
  */
 class StringMatcher implements StringMangler {
+	/// Prefix for mangled message keys
 	protected $sPrefix = '';
+	/// Exact message keys
 	protected $aExact  = array();
+	/// Patterns of type foo*
 	protected $aPrefix = array();
+	/// Patterns that contain wildcard anywhere else than in the end
 	protected $aRegex  = array();
 
+	/**
+	 * Alias for making NO-OP string mangler.
+	 */
 	public static function EmptyMatcher() {
 		return new StringMatcher;
 	}
 
+	/**
+	 * Cosntructor, see EmptyMatcher();
+	 */
 	public function __construct( $prefix = '', $patterns = array() ) {
 		$this->sPrefix = $prefix;
 		$this->init( $patterns );
@@ -43,6 +79,12 @@ class StringMatcher implements StringMangler {
 		$this->init( $conf['patterns'] );
 	}
 
+	/**
+	 * Preprocesses the patterns.
+	 * They are split into exact keys, prefix matches and pattern matches to
+	 * speed up matching process.
+	 * @param $strings \list{String} Key patterns.
+	 */
 	protected function init( Array $strings ) {
 		foreach ( $strings as $string ) {
 			$pos = strpos( $string, '*' );
@@ -110,6 +152,12 @@ class StringMatcher implements StringMangler {
 		}
 	}
 
+	/**
+	 * Mangles or unmangles single string.
+	 * @param $string \string Message key.
+	 * @param $reverse \bool Direction of mangling or unmangling.
+	 * @return \string
+	 */
 	protected function mangleString( $string, $reverse = false ) {
 		if ( $reverse ) {
 			return $this->unMangleString( $string );
@@ -120,6 +168,11 @@ class StringMatcher implements StringMangler {
 		}
 	}
 
+	/**
+	 * Unmangles the message key by removing the prefix it it exists.
+	 * @param $string \string Message key.
+	 * @return \string Unmangled message key.
+	 */
 	protected function unMangleString( $string ) {
 		if ( strncmp( $string, $this->sPrefix, strlen( $this->sPrefix ) ) === 0 ) {
 			return substr( $string, strlen( $this->sPrefix ) );
@@ -128,6 +181,12 @@ class StringMatcher implements StringMangler {
 		}
 	}
 
+	/**
+	 * Mangles or unmangles list of message keys.
+	 * @param $array \list{String} Message keys.
+	 * @param $reverse \bool Direction of mangling or unmangling.
+	 * @return \list{String} (Un)mangled message keys.
+	 */
 	protected function mangleArray( Array $array, $reverse = false ) {
 		$temp = array();
 
