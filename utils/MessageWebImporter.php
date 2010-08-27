@@ -348,13 +348,14 @@ class MessageWebImporter {
 		$dbw = wfGetDB( DB_MASTER );
 
 		// Work on all subpages of base title.
-		$titleText = $title->getBaseText();
+		$messageInfo = TranslateEditAddons::figureMessage( $title );
+		$titleText = $messageInfo[0];
 
 		$conds = array(
 			'page_namespace' => $title->getNamespace(),
 			'page_latest=rev_id',
 			'rev_text_id=old_id',
-			'page_title ' . $dbw->buildLike( "$titleText/", $dbw->anyString() ),
+			'page_title' . $dbw->buildLike( "$titleText/", $dbw->anyString() ),
 		);
 
 		$rows = $dbw->select(
