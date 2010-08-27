@@ -22,6 +22,10 @@ aliasfile = Blogs/Blogs.alias.php
 optional = blug-cut-sign, blog-avatar-defaults
 ignored = create-blog-empty-article, blog-listing-zero-self, blogs-recent-url
 
+Batch User Rights
+file = SpecialBatchUserRights/BatchUserRights.i18n.php
+aliasfile = SpecialBatchUserRights/BatchUserRights.alias.php
+
 Category Hubs
 
 Category Select
