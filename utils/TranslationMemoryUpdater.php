@@ -1,6 +1,6 @@
 <?php
 /**
- * Contains classes for updating the Translation Memory.
+ * Contains classes for updating the local translation memory.
  *
  * @file
  * @author Niklas Laxström
@@ -9,7 +9,7 @@
  */
 
 /**
- *  Class for updating the Translation Memory runtime.
+ *  Class for updating the tmserver from translate toolkit during runtime.
  */
 class TranslationMemoryUpdater {
 	public static function update( $article, $user, $text, $summary, $minor, $_, $_, $flags, $revision ) {
@@ -85,6 +85,12 @@ class TranslationMemoryUpdater {
 		return true;
 	}
 
+	/**
+	 * Return a handle to tmserver database.
+	 * Tmserver uses a sqlite database, which we access trough MediaWiki's
+	 * SQLite database handler.
+	 * @return DatabaseSqlite or null
+	 */
 	public static function getDatabaseHandle() {
 		global $wgTranslateTM;
 

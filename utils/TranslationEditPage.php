@@ -1,10 +1,11 @@
 <?php
 /**
- * Contains classes doe the AJAX translation page.
+ * Contains classes that imeplement the server side component of AJAX
+ * translation page.
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2009 Niklas Laxström
+ * @copyright Copyright © 2009-2010 Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -25,6 +26,12 @@ class TranslationEditPage {
 		$this->setTitle( $title );
 	}
 
+	/**
+	 * Constructs a page from WebRequest.
+	 * This interface is a big klunky.
+	 * @param $request WebRequest
+	 * @return TranslationEditPage
+	 */
 	public static function newFromRequest( WebRequest $request ) {
 		$title = Title::newFromText( $request->getText( 'page' ) );
 
@@ -37,7 +44,14 @@ class TranslationEditPage {
 		return $obj;
 	}
 
+	/**
+	 * Change the title of the page we are working on.
+	 */
 	public function setTitle( Title $title ) { $this->title = $title; }
+	/**
+	 * Get the title of the page we are working on.
+	 * @return Title
+	 */
 	public function getTitle() { return $this->title; }
 
 	/**
@@ -138,6 +152,15 @@ class TranslationEditPage {
 		return $data;
 	}
 
+	/**
+	 * Returns link attributes that enable javascript translation dialog.
+	 * Will degrade gracefully if user does not have permissions or JavaScript
+	 * is not enabled.
+	 * @param $title Title Title object for the translatable message.
+	 * @param $group \string The group in which this message belongs to.
+	 *   Optional, but avoids a lookup later if provided.
+	 * @return \array
+	 */
 	public static function jsEdit( Title $title, $group = "" ) {
 		global $wgUser;
 

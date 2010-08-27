@@ -15,6 +15,7 @@
 class TranslatePreferences {
 	/**
 	 * Add 'translate-pref-nonewsletter' preference.
+	 * This is actually specific to translatewiki.net
 	 *
 	 * @return \bool true
 	 */
@@ -43,6 +44,7 @@ class TranslatePreferences {
 
 	/**
 	 * Add 'translate-editlangs' preference.
+	 * These are the languages also shown when translating.
 	 *
 	 * @return \bool true
 	 */
@@ -68,6 +70,7 @@ class TranslatePreferences {
 
 	/**
 	 * Add 'translate-jsedit' preference.
+	 * An option to disable the javascript edit interface.
 	 *
 	 * @return \bool true
 	 */
@@ -84,7 +87,7 @@ class TranslatePreferences {
 	/**
 	 * JavsScript selector for language codes.
 	 */
-	protected static  function languageSelector() {
+	protected static function languageSelector() {
 		global $wgLang;
 
 		if ( is_callable( array( 'LanguageNames', 'getNames' ) ) ) {

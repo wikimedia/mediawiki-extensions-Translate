@@ -1,6 +1,6 @@
 <?php
 /**
- * @todo Needs documentation.
+ * Stuff for handling configuration files in PHP format.
  * @file
  * @author Niklas Laxström
  * @copyright Copyright © 2010 Niklas Laxström
@@ -8,15 +8,20 @@
  */
 
 /**
- * @todo Needs documentation.
+ * Stuff for handling configuration files in PHP format.
  */
 class ResourceLoader {
+	/**
+	 * Returns a global variable from PHP file by executing the file.
+	 * @param $_filename \string Path to the file.
+	 * @param $_variable \string Name of the variable.
+	 * @return \mixed The variable contents or null.
+	 */
 	public static function loadVariableFromPHPFile( $_filename, $_variable ) {
 		if ( !file_exists( $_filename ) ) {
 			return null;
 		} else {
 			require( $_filename );
-
 			return isset( $$_variable ) ? $$_variable : null;
 		}
 	}
