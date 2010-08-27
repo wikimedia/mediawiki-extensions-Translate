@@ -320,6 +320,20 @@ array(
 	)
 ),
 array(
+	'group' => 'out-fudforum',
+	'check' => 'variable',
+	'message' => array(
+		'page_timings', // Optional parameter for PLURAL
+	)
+),
+array(
+	'group' => 'out-fudforum',
+	'check' => 'parameters',
+	'message' => array(
+		'page_timings', // Optional parameter for PLURAL
+	)
+),
+array(
 	'group' => 'out-osm-site',
 	'check' => 'parameters',
 	'message' => array(
