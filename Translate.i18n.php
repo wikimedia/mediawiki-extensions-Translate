@@ -5911,7 +5911,7 @@ $messages['fr'] = array(
 	'translate-page-disabled' => "Les traductions dans cette langue ont été désactivées pour ce groupe. Motif :
 
 ''$1''",
-	'translate-page-settings-legend' => 'Configuration',
+	'translate-page-settings-legend' => 'Paramètres',
 	'translate-page-task' => 'Je veux',
 	'translate-page-group' => 'Groupe',
 	'translate-page-group-tooltip' => "Un nom de groupe de messages.
@@ -9212,6 +9212,7 @@ Ef þú veist hvar eða hvernig meldingin er notuð getur þú hjálpað öðrum
  * @author BrokenArrow
  * @author Civvì
  * @author Darth Kule
+ * @author Gianfranco
  * @author McDutchie
  * @author Melos
  * @author Pietrodn
@@ -9388,6 +9389,35 @@ Si consiglia di ricontrollare i messaggi attraverso [[Special:Translate|{{int:tr
 	'translate-group-desc-wikitravelextensions' => 'Meta gruppo di messaggi contenente tutti i messaggi per le estensioni di MediaWiki supportate utilizzate da [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Meta gruppo di messaggi contenente tutti i messaggi delle estensioni relative a [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Meta gruppo di messaggi contenente tutti i messaggi delle estensioni relative alla [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
+	'translate-manage-groups' => 'Gestione dei gruppi',
+	'translate-manage-listgroups' => 'Gruppi configurati',
+	'translate-manage-listgroups-old' => 'Gruppi vecchia generazione',
+	'translate-managegroups' => 'Gestione dei gruppi',
+	'translate-manage-newgroup' => 'Questo gruppo di messaggi non è stato importato in precedenza.',
+	'translate-manage-cacheat' => 'Importato il $1 alle $2',
+	'translate-manage-return-to-group' => 'Torna alla pagina di dettaglio del gruppo',
+	'translate-manage-modlangs' => 'Si prega di verificare eventuali modifiche intervenute per {{PLURAL:$1|la lingua seguente|le seguenti lingue}}:',
+	'translate-manage-modlang-new' => '$1 (nuovo)',
+	'translate-manage-import-diff' => 'Messaggio $1 | Azioni: $2',
+	'translate-manage-import-new' => 'Nuovo messaggio $1',
+	'translate-manage-import-deleted' => 'Cancellato messaggio $1',
+	'translate-manage-action-import' => 'Importa',
+	'translate-manage-action-conflict' => 'Importa e segna per revisione',
+	'translate-manage-action-ignore' => 'Ignora',
+	'translate-manage-action-fuzzy' => 'Importa e segna per traduzione',
+	'translate-manage-submit' => 'Esegui',
+	'translate-manage-nochanges' => 'Non ci sono cambiamenti nelle definizioni dei messaggi per questo gruppo.',
+	'translate-manage-nochanges-other' => "Non c'era alcuna novità per questa lingua. 
+Usa il link sottostante per rivedere i dettagli del gruppo.",
+	'translate-manage-import-done' => 'Tutto fatto!',
+	'translate-manage-import-rebuild' => 'Ricostruzione della cache.',
+	'importtranslations' => 'Importa traduzioni',
+	'translate-import-from-url' => 'URL del file:',
+	'translate-import-from-wiki' => 'File di questo wiki:',
+	'translate-import-from-local' => 'carica file locale:',
+	'translate-import-load' => 'Carica file',
+	'translate-import-err-type-not-supported' => 'Impossibile caricare il file: 
+la modalità <code>$1</code> non è supportata.',
 	'translate-import-err-ul-failed' => 'Il caricamento del file non è riuscito',
 	'translate-import-err-invalid-title' => 'Il nome del file <nowiki>$1</nowiki> non è valido.',
 	'translate-import-err-no-such-file' => 'Il file <nowiki>$1</nowiki> non esiste o non è stato caricato a livello locale.',
@@ -14844,6 +14874,8 @@ Dacă știți unde sau cum este folosit acest mesaj, îi puteți ajuta pe ceilal
 	'translate-untranslated' => 'Netraduse',
 	'translate-percentage-complete' => 'Completare',
 	'translate-percentage-fuzzy' => 'Învechite',
+	'supportedlanguages' => 'Limbi întreținute',
+	'supportedlanguages-translators' => '{{PLURAL:$2|Traducător|Traducători}}: $1',
 	'supportedlanguages-recenttranslations' => 'traduceri recente',
 	'translate-save' => 'Salvare ($1)',
 	'translate-jssti-add' => 'Adaugă în listă',

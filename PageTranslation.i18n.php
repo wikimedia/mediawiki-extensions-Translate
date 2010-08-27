@@ -2458,6 +2458,7 @@ $messages['ig'] = array(
 /** Italian (Italiano)
  * @author Civvì
  * @author Darth Kule
+ * @author Gianfranco
  * @author VittGam
  */
 $messages['it'] = array(
@@ -2483,8 +2484,8 @@ Nome: $1',
 Solo le ultime versioni possono essere segnate per la traduzione.",
 	'tpt-notsuitable' => 'La pagina $1 non è adatta per la traduzione.
 Assicurarsi che abbia i tag <nowiki><translate></nowiki> e una sintassi valida.',
-	'tpt-saveok' => 'La pagina [[$1]] è stata marcata per la traduzione con $2 unità di traduzione.
-Ora la pagina può essere <span class="plainlinks">[$3 tradotta]</span>.',
+	'tpt-saveok' => 'La pagina [[$1]] è stata segnalata per la traduzione con $2 {{PLURAL:$2|corpo di traduzione|corpi di traduzione}}.
+La pagina può ora essere <span class="plainlinks">[$3 tradotta]</span>.',
 	'tpt-badsect' => '"$1" non è un nome valido per l\'unità di traduzione $2.',
 	'tpt-showpage-intro' => 'Di seguito sono elencate le sezioni nuove, esistenti e cancellate.
 Prima di segnare questa versione per la traduzione, controllare che i cambiamenti per le sezioni siano ridotti al minimo per evitare lavoro non necessario ai traduttori.',
@@ -2513,6 +2514,11 @@ ma {{PLURAL:$1|l'ultima versione non può essere marcata|le ultime versioni non 
 	'tpt-target-page' => 'Questa pagina non può essere aggiornata manualmente. Questa pagina è una traduzione della pagina [[$1]] e la traduzione può essere aggiornata tramite [$2 lo strumento di traduzione].',
 	'tpt-unknown-page' => 'Questo namespace è riservato alle traduzioni del contenuto delle pagine.
 La pagina che stai cercando di modificare non sembra corrispondere ad alcuna pagina segnata per la traduzione.',
+	'tpt-delete-impossible' => 'La cancellazione di pagine contrassegnate per la traduzione non è ancora possibile.',
+	'tpt-install' => "Esegui lo script php maintenance/update.php o riesegui l'installazione web per abilitare il servizio di traduzione pagine.",
+	'tpt-render-summary' => 'Aggiornamento per riscontrare la nuova versione della pagina di origine',
+	'tpt-download-page' => 'Esporta la pagina con le traduzioni',
+	'pt-shake-empty' => 'Sezione vuota per il marcatore $1.',
 );
 
 /** Japanese (日本語)
@@ -3828,6 +3834,7 @@ Nume: $1',
 	'translate-tag-markthis' => 'Marchează această pagină pentru traducere',
 	'tpt-translation-intro-fuzzy' => 'Traducerile învechite sunt marcate în acest fel.',
 	'tpt-languages-legend' => 'Alte limbi:',
+	'pt-movepage-reason' => 'Motiv:',
 );
 
 /** Tarandíne (Tarandíne)
