@@ -2187,7 +2187,9 @@ $messages['rue'] = array(
  * @author බිඟුවා
  */
 $messages['si'] = array(
+	'firststeps' => 'පළමු පියවරවල්',
 	'translate-fs-pagetitle-done' => ' - හරි!',
+	'translate-fs-target-title' => 'පරිවර්ථනය කිරීම අරඹන්න!',
 );
 
 /** Slovenian (Slovenščina)
