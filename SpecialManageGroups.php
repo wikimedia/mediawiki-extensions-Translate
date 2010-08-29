@@ -400,16 +400,6 @@ class SpecialManageGroups {
 				'action' => $this->getTitle()->getFullURL( array( 'group' => $group->getId() ) ),
 			);
 
-			global $wgRequest;
-
-			if ( $wgRequest->wasPosted() &&
-				$this->user->isAllowed( 'translate-manage' ) &&
-				$this->user->matchEditToken( $wgRequest->getVal( 'token' ) ) ) {
-				$process = true;
-			} else {
-				$process = false;
-			}
-
 			$this->out->addHTML(
 				Xml::openElement( 'form', $formParams ) .
 				Xml::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
@@ -420,6 +410,16 @@ class SpecialManageGroups {
 				Xml::submitButton( wfMsg( 'translate-manage-import-rebuild-all' ) ) .
 				Xml::closeElement( 'form' )
 			);
+
+			global $wgRequest;
+
+			if ( $wgRequest->wasPosted() &&
+				$this->user->isAllowed( 'translate-manage' ) &&
+				$this->user->matchEditToken( $wgRequest->getVal( 'token' ) ) ) {
+				$process = true;
+			} else {
+				$process = false;
+			}
 		}
 	}
 
