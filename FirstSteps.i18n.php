@@ -2189,7 +2189,8 @@ $messages['rue'] = array(
 $messages['si'] = array(
 	'firststeps' => 'පළමු පියවරවල්',
 	'translate-fs-pagetitle-done' => ' - හරි!',
-	'translate-fs-target-title' => 'පරිවර්ථනය කිරීම අරඹන්න!',
+	'translate-fs-signup-title' => 'ප්‍රවිෂ්ඨ වන්න',
+	'translate-fs-target-title' => 'පරිවර්තනය කිරීම අරඹන්න!',
 );
 
 /** Slovenian (Slovenščina)

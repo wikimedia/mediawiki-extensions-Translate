@@ -3653,6 +3653,8 @@ Metoda <code>$1</code> není podporována.',
  * @author Kaszeba
  */
 $messages['csb'] = array(
+	'translate' => 'Dolmôczë',
+	'translate-edit' => 'edicëjô',
 	'translate-edit-in-other-languages' => 'Wiadło "$1" w jinych jãzëkach',
 	'translate-edit-goto-prev' => 'Edicëjô wczasniészegò wiadła',
 	'translate-edit-goto-next' => 'Edicëjô nôslédnegò wiadła',
@@ -11806,7 +11808,7 @@ $messages['ml'] = array(
 	'translate-page-disabled' => "ഈ ഗണത്തിലുള്ള സന്ദേശങ്ങൾക്ക് ഈ ഭാഷയിലുള്ള പരിഭാഷ നിരോധിച്ചിരിക്കുന്നു. കാരണം:
 
 ''$1''",
-	'translate-page-settings-legend' => 'ക്രമീകരണങ്ങൾ',
+	'translate-page-settings-legend' => 'സജ്ജീകരണങ്ങൾ',
 	'translate-page-task' => 'എനിക്ക്',
 	'translate-page-group' => 'ഗണം',
 	'translate-page-language' => 'ഭാഷ',
@@ -14916,6 +14918,7 @@ Dacă știți unde sau cum este folosit acest mesaj, îi puteți ajuta pe ceilal
 	'translate-translations-project' => 'Proiect:',
 	'languagestats' => 'Statistici de limbă',
 	'languagestats-summary' => 'Această pagină afișează statistici despre traducerile grupurilor de mesaje în funcție de limbă.',
+	'languagestats-stats-for' => 'Statistici despre traduceri pentru $1 ($2).',
 	'languagestats-recenttranslations' => 'schimbări recente',
 	'translate-language-code' => 'Codul limbii',
 	'translate-language-code-field-name' => 'Codul limbii:',
@@ -15654,6 +15657,8 @@ $messages['si'] = array(
 	'translate-edit-goto-prev' => 'පූර්ව පණිවුඩය පරිවර්තනය කරන්න',
 	'translate-edit-goto-next' => 'ඊලඟ පණිවුඩය පරිවර්තනය කරන්න',
 	'translate-edit-goto-list' => 'ආපසු ලැයිස්තුවට',
+	'translate-magic-module' => 'මොඩියුලය:',
+	'translate-magic-submit' => 'ආහරනය කරන්න',
 	'translate-magic-cm-export' => 'නිර්යාත',
 	'translate-magic-cm-current' => 'වත්මන්',
 	'translate-magic-cm-original' => 'මුල් පිටපත',
@@ -15704,6 +15709,9 @@ $messages['si'] = array(
 	'translate-manage-action-import' => 'ආයාත කරන්න',
 	'translate-manage-action-ignore' => 'නොසලකන්න',
 	'translate-manage-import-done' => 'සියල්ල කරන ලදී',
+	'translate-manage-subtitle' => 'කළමනාකරණය',
+	'translate-js-next' => 'සුරකීමෙන් පසු ඊළඟ එක විවෘත කරන්න',
+	'translate-js-history' => 'පරිවර්තන ඉතිහාසය',
 	'translate-gs-count' => 'ගණනය',
 	'translate-gs-total' => 'මුළු',
 );

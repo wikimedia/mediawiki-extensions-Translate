@@ -4048,13 +4048,18 @@ $messages['sah'] = array(
  * @author බිඟුවා
  */
 $messages['si'] = array(
+	'pagetranslation' => 'පිටුව පරිවර්තනය',
+	'tpt-section' => '$1 පරිවර්තන ඒකකය',
+	'tpt-section-deleted' => '$1 පරිවර්තන ඒකකය',
 	'tpt-template' => 'පිටු සැකිල්ල',
+	'tpt-templatediff' => 'පිටු සැකිල්ල වෙනස් වී ඇත',
 	'tpt-diff-old' => 'පූර්ව පෙළ',
 	'tpt-diff-new' => 'නව පෙළ',
 	'tpt-rev-latest' => 'නවතම අනුවාදය',
 	'tpt-translate-this' => 'මෙම පිටුව පරිවර්තනය කරන්න',
 	'translate-tag-translate-link-desc' => 'මෙම පිටුව පරිවර්තනය කරන්න',
 	'tpt-languages-legend' => 'වෙනත් භාෂා:',
+	'pt-movepage-current' => 'වත්මන් නාමය:',
 	'pt-movepage-new' => 'නව නම:',
 	'pt-movepage-reason' => 'හේතුව:',
 	'pt-movepage-action-other' => 'ඉලක්කය මාරු කරන්න',
