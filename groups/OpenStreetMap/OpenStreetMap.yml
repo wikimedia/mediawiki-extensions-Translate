@@ -7,11 +7,11 @@ TEMPLATE:
     class: RubyYamlFFS
     codeAsRoot: 1
     codeMap:
-    be-tarask: be-TARASK
-    pt-br: pt-BR
-    sr-ec: sr-EC
-    zh-cn: zh-CN
-    zh-tw: zh-TW
+      be-tarask: be-TARASK
+      pt-br: pt-BR
+      sr-ec: sr-EC
+      zh-cn: zh-CN
+      zh-tw: zh-TW
 
 ---
 BASIC:
