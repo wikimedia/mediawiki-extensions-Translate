@@ -391,10 +391,6 @@ class SpecialManageGroups {
 				$wgLang->formatNum( count( $modified ) )
 			);
 
-			$this->out->addHTML(
-				'<ul><li>' . implode( "</li>\n<li>", $modified ) . '</li></ul>'
-			);
-
 			$formParams = array(
 				'method' => 'post',
 				'action' => $this->getTitle()->getFullURL( array( 'group' => $group->getId() ) ),
@@ -409,6 +405,10 @@ class SpecialManageGroups {
 				Xml::hidden( 'rebuildall', 1 ) .
 				Xml::submitButton( wfMsg( 'translate-manage-import-rebuild-all' ) ) .
 				Xml::closeElement( 'form' )
+			);
+
+			$this->out->addHTML(
+				'<ul><li>' . implode( "</li>\n<li>", $modified ) . '</li></ul>'
 			);
 
 			global $wgRequest;
