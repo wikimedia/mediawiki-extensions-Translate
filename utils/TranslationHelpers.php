@@ -940,7 +940,7 @@ class TranslationHelpers {
 	 * How long after the last detected failure we clear the status and
 	 * try again.
 	 */
-	protected static $serviceFailurePeriod = 300;
+	protected static $serviceFailurePeriod = 900;
 
 	/**
 	 * Checks whether the given service has exceeded failure count */
