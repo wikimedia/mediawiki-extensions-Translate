@@ -59,6 +59,7 @@ GROUPS:
   - out-shapado-members
   - out-shapado-moderate
   - out-shapado-notifier
+  - out-shapado-openrequests
   - out-shapado-pages
   - out-shapado-questions
   - out-shapado-searches
@@ -324,6 +325,19 @@ FILES:
 
 MANGLER:
   prefix: notifier-
+
+---
+BASIC:
+  id: out-shapado-openrequests
+  label: Shapado - Open Requests
+  display: out/shapado/openrequests
+
+FILES:
+  sourcePattern: %GROUPROOT%/shapado/config/locales/open_requests/%CODE%.yml
+  targetPattern: shapado/config/locales/open_requests/%CODE%.yml
+
+MANGLER:
+  prefix: openrequests-
 
 ---
 BASIC:
