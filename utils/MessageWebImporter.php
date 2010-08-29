@@ -218,7 +218,7 @@ class MessageWebImporter {
 					$label = wfMsg( "translate-manage-action-$action" );
 					$name = self::escapeNameForPHP( "action-$type-$key" );
 					$id = Sanitizer::escapeId( "action-$key-$action" );
-					$act[] = Xml::radioLabel( $label, $nameid, $action, $id, $action === $defaction );
+					$act[] = Xml::radioLabel( $label, $name, $action, $id, $action === $defaction );
 				}
 
 				$name = wfMsg( 'translate-manage-import-diff',
