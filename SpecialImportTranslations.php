@@ -273,29 +273,17 @@ class SpecialImportTranslations extends SpecialPage {
 	}
 
 	protected function setCachedData( $data ) {
-		global $wgMemc;
-
 		$key = wfMemcKey( 'translate', 'webimport', $this->user->getId() );
-
-		/**
-		 * Cache 15 minutes.
-		 */
-		$wgMemc->set( $key, $data, 60 * 15 );
+		wfGetCache( CACHE_DB )->set( $key, $data, 60 * 30 );
 	}
 
 	protected function getCachedData() {
-		global $wgMemc;
-
 		$key = wfMemcKey( 'translate', 'webimport', $this->user->getId() );
-
-		return $wgMemc->get( $key );
+		return wfGetCache( CACHE_DB )->get( $key );
 	}
 
 	protected function deleteCachedData() {
-		global $wgMemc;
-
 		$key = wfMemcKey( 'translate', 'webimport', $this->user->getId() );
-
-		return $wgMemc->delete( $key );
+		return wfGetCache( CACHE_DB )->delete( $key );
 	}
 }
