@@ -169,12 +169,7 @@ class MessageWebImporter {
 				$type = 'changed';
 
 				global $wgRequest;
-
-				# Spaces don't seem to survive round trip in addition to dots
-				# which are silently handled in getVal
-				$safekey = str_replace( ' ', '_', $key );
-				$safekey = str_replace( '.', '_', $key );
-				$action = $wgRequest->getVal( "action-$type-$safekey" );
+				$action = $wgRequest->getVal( self::escapeNameForPHP( "action-$type-$key" ) );
 
 				if ( $process ) {
 					if ( !count( $changed ) ) {
@@ -221,7 +216,9 @@ class MessageWebImporter {
 
 				foreach ( $actions as $action ) {
 					$label = wfMsg( "translate-manage-action-$action" );
-					$act[] = Xml::radioLabel( $label, "action-$type-$key", $action, "action-$key-$action", $action === $defaction );
+					$name = self::escapeNameForPHP( "action-$type-$key" );
+					$id = Sanitizer::escapeId( "action-$key-$action" );
+					$act[] = Xml::radioLabel( $label, $nameid, $action, $id, $action === $defaction );
 				}
 
 				$name = wfMsg( 'translate-manage-import-diff',
@@ -434,10 +431,10 @@ class MessageWebImporter {
 	/**
 	 * Make section elements.
 	 *
-	 * @param $legend \string Legend
-	 * @param $type\string Contents of type class
-	 * @param $content \string Contents
-	 * @return \string Section element
+	 * @param $legend \string Legend as raw html.
+	 * @param $type \string Contents of type class.
+	 * @param $content \string Contents as raw html.
+	 * @return \string Section element as html.
 	 */
 	public static function makeSectionElement( $legend, $type, $content ) {
 		$containerParams = array( 'class' => "mw-tpt-sp-section mw-tpt-sp-section-type-{$type}" );
@@ -461,5 +458,29 @@ class MessageWebImporter {
 		$message = str_replace( TRANSLATE_FUZZY, '', $message );
 
 		return TRANSLATE_FUZZY . $message;
+	}
+
+	/**
+	 * Escape name such that it validates as name and id parameter in html, and
+	 * so that we can get it back with WebRequest::getVal(). Especially dot and
+	 * spaces are difficult for the latter.
+	 * @param $name \string
+	 * @return \string
+	 */
+	public static function escapeNameForPHP( $name ) {
+		$replacements = array(
+			"("  => '(OP)',
+			" "  => '(SP)',
+			"\t" => '(TAB)',
+			"."  => '(DOT)',
+			"'"  => '(SQ)',
+			"\"" => '(DQ)',
+			"%"  => '(PC)',
+			"&"  => '(AMP)',
+		);
+
+		/* How nice of you PHP. No way to split array into keys and values in one
+		 * function or have str_replace which takes one array? */
+		return str_replace( array_keys( $replacements ), array_values( $replacements ), $name );
 	}
 }
