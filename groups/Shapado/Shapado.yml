@@ -12,10 +12,11 @@ TEMPLATE:
       no:    nb
       pt:    pt-PT
       pt-br: pt-BR
-      sr-ec: sr-EC
-      zh-cn: zh-CN
-      zh-tw: zh-TW
-      zh-hant: zh-HANT
+      sr-ec: sr
+      sr-el: sr-LATN
+      tt-cyrl: tt
+      zh-hans: zh-CN
+      zh-hant: zh-TW
 
   MANGLER:
     class: StringMatcher
