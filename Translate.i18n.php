@@ -10959,13 +10959,13 @@ $messages['lb'] = array(
 	'translate-edit' => 'änneren',
 	'translate-talk' => 'Diskussioun',
 	'translate-history' => 'Versiounen',
-	'translate-task-view' => 'All Systemmessagen uweisen',
-	'translate-task-untranslated' => 'All net iwwersate Systemmessagen uweisen',
-	'translate-task-optional' => 'Optional Messagen uweisen',
+	'translate-task-view' => 'All Systemmessagen weisen',
+	'translate-task-untranslated' => 'All net iwwersate Systemmessagen weisen',
+	'translate-task-optional' => 'Optional Messagen weisen',
 	'translate-task-suggestions' => 'Weis Message mat Virschléi vun der Iwwersetzungs-Memoire',
 	'translate-task-untranslatedoptional' => 'Weis déi net-iwwersaten optional Systemmessage vu(n)',
 	'translate-task-problematic' => 'Systemmessage weisen wou et Problemer gëtt',
-	'translate-task-review' => 'Ännerungen uweisen',
+	'translate-task-review' => 'Ännerungen nokucken',
 	'translate-task-reviewall' => 'All Iwwersetzungen nokucken',
 	'translate-task-export' => 'All Iwwersetzunge exportéieren',
 	'translate-task-export-to-file' => "D'Iwwersetzung an e Fichier exportéieren",
@@ -10985,7 +10985,7 @@ Wann de Grupp aus Ënnergruppen besteet oder Messagen aus anere Gruppen drastinn
 	'translate-page-language' => 'Sprooch',
 	'translate-page-limit' => 'Maximum',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|Message|Message}} pro Säit',
-	'translate-submit' => 'Uweisen',
+	'translate-submit' => 'Weisen',
 	'translate-page-navigation-legend' => 'Navigatioun',
 	'translate-page-showing' => "D'Message vu(n) $1 bis $2 vun am Ganze(n) $3 gi gewisen.",
 	'translate-page-showing-all' => '$1 {{PLURAL:$1|Message gëtt|Message gi}} gewisen',
@@ -16384,7 +16384,7 @@ $messages['sr-ec'] = array(
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Присутан је непаран број {{PLURAL:$2|заграда|заграда}}:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links' => '{{PLURAL:$2|Следећи линк је проблематичан|Следећих $2 линкова је шрпбчематично}}:
+	'translate-checks-links' => '{{PLURAL:$2|Следећа веза је проблематична|Следеће $2 везе су проблематичне}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Молимо Вас, замените {{PLURAL:$2|следећи таг|следеће тагове}} исправним:
 <strong><nowiki>$1</nowiki></strong>',
@@ -16456,6 +16456,7 @@ $messages['sr-ec'] = array(
 
 /** Serbian Latin ekavian (Srpski (latinica))
  * @author Michaello
+ * @author Жељко Тодоровић
  */
 $messages['sr-el'] = array(
 	'translate' => 'Prevod',
@@ -16531,7 +16532,7 @@ Ako znate gde se i kako koristi, možete pomoći ostalim prevodiocima dodavanjem
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Prisutan je neparan broj {{PLURAL:$2|zagrada|zagrada}}:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links' => '{{PLURAL:$2|Sledeći link je problematičan|Sledećih $2 linkova je šrpbčematično}}:
+	'translate-checks-links' => '{{PLURAL:$2|Sledeća veza je problematična|Sledeće $2 veze su problematične}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Molimo Vas, zamenite {{PLURAL:$2|sledeći tag|sledeće tagove}} ispravnim:
 <strong><nowiki>$1</nowiki></strong>',
