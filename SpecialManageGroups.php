@@ -408,16 +408,6 @@ class SpecialManageGroups {
 			$this->out->addHTML(
 				'<ul><li>' . implode( "</li>\n<li>", $modified ) . '</li></ul>'
 			);
-
-			global $wgRequest;
-
-			if ( $wgRequest->wasPosted() &&
-				$this->user->isAllowed( 'translate-manage' ) &&
-				$this->user->matchEditToken( $wgRequest->getVal( 'token' ) ) ) {
-				$process = true;
-			} else {
-				$process = false;
-			}
 		}
 	}
 
