@@ -129,6 +129,8 @@ file = RandomWiki/SpecialRandomWiki.i18n.php
 
 Recipes Tweaks
 
+Related Pages
+
 RTE - Base
 file = RTE/i18n/RTE.i18n.php
 
