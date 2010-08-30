@@ -222,9 +222,9 @@ abstract class MessageGroupBase implements MessageGroup {
 	}
 
 	public function getMessage( $key, $code ) {
-		$cache = new MessageGroupCache( $this );
-		if ( $cache->exists( $code ) ) {
-			$msg = $cache->get( $key, $code );
+		$cache = new MessageGroupCache( $this, $code );
+		if ( $cache->exists() ) {
+			$msg = $cache->get( $key );
 
 			if ( $msg !== false ) {
 				return $msg;
@@ -232,7 +232,7 @@ abstract class MessageGroupBase implements MessageGroup {
 
 			// Try harder
 			$nkey = str_replace( ' ', '_', strtolower( $key ) );
-			$keys = $cache->getKeys( $code );
+			$keys = $cache->getKeys();
 
 			foreach ( $keys as $k ) {
 				if ( $nkey === str_replace( ' ', '_', strtolower( $k ) ) ) {

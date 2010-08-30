@@ -11,59 +11,58 @@
  * @todo Needs documentation.
  */
 class MessageGroupCache {
+	/// \string 
 	protected $group;
+	/// CdbReader
 	protected $cache;
-
-	// Implementation detail
+	/// \string
 	protected $code;
 
-	// id or instance of MessageGroup
-	public function __construct( $group ) {
+	/**
+	 * Contructs a new cache object for given group and language code.
+	 * @param $group \types{String,FileBasedMessageGroup} Group object or id.
+	 * @param $code \string Language code. Default value 'en'.
+	 */
+	public function __construct( $group, $code = 'en' ) {
 		if ( is_object( $group ) ) {
 			$this->group = $group->getId();
 		} else {
 			$this->group = $group;
 		}
+		$this->code = $code;
 	}
 
-	public function exists( $code = 'en' ) {
-		return file_exists( $this->getCacheFileName( $code ) );
+	public function exists() {
+		return file_exists( $this->getCacheFileName() );
 	}
 
-	public function getKeys( $code = 'en' ) {
-		$cache = $this->open( $code );
-
-		return unserialize( $cache->get( $this->specialKey( 'keys' ) ) );
+	public function getKeys() {
+		return unserialize( $this->open()->get( $this->specialKey( 'keys' ) ) );
 	}
 
-	public function getTimestamp( $code = 'en' ) {
-		$cache = $this->open( $code );
-
-		return $cache->get( $this->specialKey( 'timestamp' ) );
+	public function getTimestamp() {
+		return $this->open()->get( $this->specialKey( 'timestamp' ) );
 	}
 
-	public function updateTimestamp( $code = 'en' ) {
-		$cache = CdbWriter::open( $this->getCacheFileName( $code ) );
-		$cache->set( $this->specialKey( 'timestamp' ), wfTimestamp() );
-		$cache->close();
+	public function getHash() {
+		return $this->open()->get( $this->specialKey( 'hash' ) );
 	}
 
-	public function getHash( $code = 'en' ) {
-		$cache = $this->open( $code );
-		return $cache->get( $this->specialKey( 'hash' ) );
+	public function get( $key ) {
+		return $this->open()->get( $key );
 	}
 
-	public function get( $key, $code = 'en' ) {
-		$cache = $this->open( $code );
+	public function create() {
+		$this->close(); // Close the reader instance just to be sure
 
-		return $cache->get( $key );
-	}
+		$group = MessageGroups::getGroup( $this->group );
+		$messages = $group->load( $this->code );
+		if ( !count( $messages ) ) {
+			return; // Don't create empty caches
+		}
+		$hash = md5( file_get_contents( $group->getSourceFilePath( $this->code ) ) );
 
-	public function create( $messages, $code = 'en', $hash = false ) {
-		$this->cache = null; // Needed?
-
-		$cache = CdbWriter::open( $this->getCacheFileName( $code ) );
-
+		$cache = CdbWriter::open( $this->getCacheFileName() );
 		$keys = array_keys( $messages );
 		$cache->set( $this->specialKey( 'keys' ), serialize( $keys ) );
 
@@ -76,20 +75,22 @@ class MessageGroupCache {
 		$cache->close();
 	}
 
-	protected function open( $code ) {
-		if ( $code !== $this->code || !$this->cache ) {
-			if ( $this->cache ) {
-				$this->cache->close();
-			}
-
-			$this->cache = CdbReader::open( $this->getCacheFileName( $code ) );
+	protected function open() {
+		if ( $this->cache === null ) {
+			$this->cache = CdbReader::open( $this->getCacheFileName() );
 		}
-
 		return $this->cache;
 	}
 
-	protected function getCacheFileName( $code ) {
-		return TranslateUtils::cacheFile( "translate_groupcache-{$this->group}-$code.cdb" );
+	protected function close() {
+		if ( $this->cache !== null ) {
+			$this->cache->close();
+			$this->cache = null;
+		}
+	}
+
+	protected function getCacheFileName() {
+		return TranslateUtils::cacheFile( "translate_groupcache-{$this->group}-{$this->code}.cdb" );
 	}
 
 	protected function specialKey( $key ) {

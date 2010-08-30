@@ -57,31 +57,21 @@ class SpecialManageGroups {
 				$this->user->isAllowed( 'translate-manage' ) &&
 				$this->user->matchEditToken( $wgRequest->getVal( 'token' ) )
 			) {
-				$cache = new MessageGroupCache( $group );
 				$languages = explode( ',', $wgRequest->getText( 'codes' ) );
 				foreach ( $languages as $code ) {
-					$messages = $group->load( $code );
-					if ( count( $messages ) ) {
-						$filename = $group->getSourceFilePath( $code );
-						$hash = md5( file_get_contents( $filename ) );
-						$cache->create( $messages, $code, $hash );
-					} else {
-						///@todo delete stale caches?
-					}
+					$cache = new MessageGroupCache( $group, $code );
+					$cache->create();
 				}
 			}
 
-			$cache = new MessageGroupCache( $group );
 			$code = $wgRequest->getText( 'language', 'en' );
-
-
 			// Go to English for undefined codes.
 			$codes = array_keys( Language::getLanguageNames( false ) );
 			if ( !in_array( $code, $codes ) ) {
 				$code = 'en';
 			}
 
-			$this->importForm( $cache, $group, $code );
+			$this->importForm( $group, $code );
 		} else {
 			global $wgLang, $wgOut;
 
@@ -99,7 +89,6 @@ class SpecialManageGroups {
 				$out = $link . $separator;
 
 				$cache = new MessageGroupCache( $group );
-
 				if ( $cache->exists() ) {
 					$timestamp = wfTimestamp( TS_MW, $cache->getTimestamp() );
 					$out .= wfMsg( 'translate-manage-cacheat',
@@ -144,7 +133,7 @@ class SpecialManageGroups {
 	/**
 	 * @todo Very long code block; split up.
 	 */
-	public function importForm( $cache, $group, $code ) {
+	public function importForm( $group, $code ) {
 		$this->setSubtitle( $group, $code );
 
 		$formParams = array(
@@ -174,12 +163,9 @@ class SpecialManageGroups {
 		);
 
 		// BEGIN
-		$messages = $group->load( $code );
-
+		$cache = new MessageGroupCache( $group, $code );
 		if ( !$cache->exists() && $code === 'en' ) {
-			$filename = $group->getSourceFilePath( $code );
-			$hash = md5( file_get_contents( $filename ) );
-			$cache->create( $messages, $code, $hash );
+			$cache->create();
 		}
 
 		$collection = $group->initCollection( $code );
@@ -194,6 +180,7 @@ class SpecialManageGroups {
 			$ignoredMessages = array();
 		}
 
+		$messages = $group->load( $code );
 		$changed = array();
 		foreach ( $messages as $key => $value ) {
 			// ignored? ignore!
@@ -329,9 +316,7 @@ class SpecialManageGroups {
 				$changed[] = '<ul>';
 			}
 
-			$filename = $group->getSourceFilePath( $code );
-			$hash = md5( file_get_contents( $filename ) );
-			$cache->create( $messages, $code, $hash );
+			$cache->create();
 			$message = wfMsgExt( 'translate-manage-import-rebuild', 'parseinline' );
 			$changed[] = "<li>$message</li>";
 			$message = wfMsgExt( 'translate-manage-import-done', 'parseinline' );
@@ -350,6 +335,7 @@ class SpecialManageGroups {
 				$this->out->addHTML( implode( "\n", $changed ) );
 				$this->out->addHTML( Xml::submitButton( wfMsg( 'translate-manage-submit' ) ) );
 			} else {
+				$cache->create(); // Update timestamp
 				$this->out->addWikiMsg( 'translate-manage-nochanges' );
 			}
 		}
@@ -357,7 +343,7 @@ class SpecialManageGroups {
 		$this->out->addHTML( '</form>' );
 
 		if ( $code === 'en' ) {
-			$this->doModLangs( $cache, $group );
+			$this->doModLangs( $group );
 		} else {
 			$this->out->addHTML( '<p>' . $this->skin->link(
 				$this->getTitle(),
@@ -368,7 +354,7 @@ class SpecialManageGroups {
 		}
 	}
 
-	public function doModLangs( $cache, $group ) {
+	public function doModLangs( $group ) {
 		global $wgLang;
 
 		$languages = array_keys( Language::getLanguageNames( false ) );
@@ -390,12 +376,9 @@ class SpecialManageGroups {
 				array( 'group' => $group->getId(), 'language' => $code )
 			);
 
-			$filename = $group->getSourceFilePath( $code );
-			$mtime = file_exists( $filename ) ? filemtime( $filename ) : false;
-			$cachetime = $cache->exists( $code ) ? $cache->getTimestamp( $code ) : false;
-			if ( $mtime === false ) {
+			if ( !$cache->exists() ) {
 				$modified[] = wfMsgHtml( 'translate-manage-modlang-new', $link  );
-			} elseif ( $mtime > $cachetime  ) {
+			} else {
 				$modified[] = $link;
 			}
 
@@ -478,11 +461,11 @@ class SpecialManageGroups {
 	 * Uses modification timestamps and file hashes to check.
 	 */
 	protected function changedSinceCached( $group, $code = 'en' ) {
-		$cache = new MessageGroupCache( $group );
+		$cache = new MessageGroupCache( $group, $code );
 		$filename = $group->getSourceFilePath( $code );
 
 		$mtime = file_exists( $filename ) ? filemtime( $filename ) : false;
-		$cachetime = $cache->exists( $code ) ? $cache->getTimestamp( $code ) : false;
+		$cachetime = $cache->exists() ? $cache->getTimestamp() : false;
 
 		// No such language at all, or cache is up to date
 		if ( $mtime <= $cachetime ) {
@@ -490,12 +473,12 @@ class SpecialManageGroups {
 		}
 
 		// Timestamps differ (or either cache or the file does not exists)
-		$oldhash = $cache->exists( $code ) ? $cache->getHash( $code ) : false;
+		$oldhash = $cache->exists() ? $cache->getHash() : false;
 		$newhash = file_exists( $filename ) ? md5( file_get_contents( $filename ) ) : false;
 		wfDebugLog( 'translate-manage', "$mtime === $cachetime | $code | $oldhash !== $newhash\n" );
 		if ( $newhash === $oldhash ) {
 			// Update cache so that we don't need to compare hashes next time
-			$cache->updateTimestamp( $code );
+			$cache->create();
 			return false;
 		}
 	
