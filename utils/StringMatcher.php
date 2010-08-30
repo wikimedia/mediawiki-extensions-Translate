@@ -10,7 +10,7 @@
 /**
  * Interface that key-mangling classes must implement.
  *
- * The operations has to be reversible so that
+ * The operations have to be reversible so that
  * x equals unMangle( mangle( x ) ).
  */
 interface StringMangler {
