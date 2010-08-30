@@ -1,6 +1,8 @@
 <?php
 /**
- * @todo Needs documentation.
+ * Implements classes for Special:Translate/manage from where file based message
+ * groups are be managed.
+ *
  * @ingroup SpecialPage
  * @author Niklas Laxström
  * @author Siebrand Mazeland
@@ -9,6 +11,11 @@
  */
 
 /**
+ * Class for special page Special:Translate/manage. On this special page file
+ * based message groups can be managed (FileBasedMessageGroup). This page
+ * allows updating of the file cache, import and fuzzy for source language
+ * messages, as well as import/update of messages in other languages.
+ *
  * @todo Needs documentation.
  */
 class SpecialManageGroups {
@@ -18,6 +25,9 @@ class SpecialManageGroups {
 	 */
 	protected $processingTime = 30;
 
+	/**
+	 * Constructor
+	 */
 	public function __construct() {
 		global $wgOut, $wgUser;
 		$this->out = $wgOut;
@@ -60,9 +70,8 @@ class SpecialManageGroups {
 			$cache = new MessageGroupCache( $group );
 			$code = $wgRequest->getText( 'language', 'en' );
 
-			/**
-			 * Go to English for undefined codes.
-			 */
+
+			// Go to English for undefined codes.
 			$codes = array_keys( Language::getLanguageNames( false ) );
 			if ( !in_array( $code, $codes ) ) {
 				$code = 'en';
@@ -116,6 +125,9 @@ class SpecialManageGroups {
 		}
 	}
 
+	/**
+	 * Special:Translate/manage.
+	 */
 	public function getTitle() {
 		return SpecialPage::getTitleFor( 'Translate', 'manage' );
 	}
@@ -152,9 +164,7 @@ class SpecialManageGroups {
 			Xml::hidden( 'process', 1 )
 		);
 
-		/**
-		 * BEGIN
-		 */
+		// BEGIN
 		$messages = $group->load( $code );
 
 		if ( !$cache->exists() && $code === 'en' ) {
@@ -175,9 +185,7 @@ class SpecialManageGroups {
 
 		$changed = array();
 		foreach ( $messages as $key => $value ) {
-			/**
-			 * ignored? ignore!
-			 */
+			// ignored? ignore!
 			if ( in_array( $key, $ignoredMessages ) ) {
 				continue;
 			}
@@ -191,9 +199,7 @@ class SpecialManageGroups {
 				$old = str_replace( TRANSLATE_FUZZY, '', $old );
 			}
 
-			/**
-			 * No changes at all, ignore.
-			 */
+			// No changes at all, ignore.
 			if ( $old === $value ) {
 				continue;
 			}
@@ -317,9 +323,7 @@ class SpecialManageGroups {
 			$changed[] = "<li>$message</li></ul>";
 			$this->out->addHTML( implode( "\n", $changed ) );
 		} else {
-			/**
-			 * END
-			 */
+			// END
 			if ( count( $changed ) ) {
 				if ( $code === 'en' ) {
 					$this->out->addWikiMsg( 'translate-manage-intro-en' );
@@ -411,10 +415,22 @@ class SpecialManageGroups {
 		}
 	}
 
+	/**
+	 * Reports if processing time for current page has exceeded the set
+	 * maximum ($processingTime).
+	 */
 	protected function checkProcessTime() {
 		return wfTimestamp() - $this->time >= $this->processingTime;
 	}
 
+	/**
+	 * Set a subtitle like "Manage > FreeCol (open source game) > German"
+	 * based on group and language code. The language part is not shown if
+	 * it is 'en', and all three possible parts of the subtitle are linked.
+	 *
+	 * @param $group Object MessageGroup.
+	 * @param $code \string Language code.
+	 */
 	protected function setSubtitle( $group, $code ) {
 		global $wgLang;
 
@@ -430,6 +446,7 @@ class SpecialManageGroups {
 			array( 'group' => $group->getId() )
 		);
 
+		// Do not show language part for English.
 		if ( $code !== 'en' ) {
 			$links[] = $this->skin->link(
 				$this->getTitle(),
