@@ -376,6 +376,7 @@ class SpecialManageGroups {
 				array( 'group' => $group->getId(), 'language' => $code )
 			);
 
+			$cache = new MessageGroupCache( $group, $code );
 			if ( !$cache->exists() ) {
 				$modified[] = wfMsgHtml( 'translate-manage-modlang-new', $link  );
 			} else {
