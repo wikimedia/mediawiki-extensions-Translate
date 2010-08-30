@@ -62,7 +62,11 @@ class SpecialManageGroups {
 				foreach ( $languages as $code ) {
 					$messages = $group->load( $code );
 					if ( count( $messages ) ) {
-						$cache->create( $messages, $code );
+						$filename = $group->getSourceFilePath( $code );
+						$hash = md5( file_get_contents( $filename ) );
+						$cache->create( $messages, $code, $hash );
+					} else {
+						///@todo delete stale caches?
 					}
 				}
 			}
@@ -102,6 +106,11 @@ class SpecialManageGroups {
 						$wgLang->date( $timestamp ),
 						$wgLang->time( $timestamp )
 					);
+
+					if ( $this->changedSinceCached( $group ) ) {
+						$out = '<span style="color:red">!!</span> ' . $out;
+					}
+
 				} else {
 					$out .= wfMsg( 'translate-manage-newgroup' );
 				}
@@ -168,7 +177,9 @@ class SpecialManageGroups {
 		$messages = $group->load( $code );
 
 		if ( !$cache->exists() && $code === 'en' ) {
-			$cache->create( $messages );
+			$filename = $group->getSourceFilePath( $code );
+			$hash = md5( file_get_contents( $filename ) );
+			$cache->create( $messages, $code, $hash );
 		}
 
 		$collection = $group->initCollection( $code );
@@ -194,13 +205,10 @@ class SpecialManageGroups {
 
 			if ( isset( $collection[$key] ) ) {
 				$old = $collection[$key]->translation();
-				$fuzzy = TranslateEditAddons::hasFuzzyString( $old ) ||
-						TranslateEditAddons::isFuzzy( MessageWebImporter::makeTranslationTitle( $group, $key, $code ) );
-				$old = str_replace( TRANSLATE_FUZZY, '', $old );
 			}
 
 			// No changes at all, ignore.
-			if ( $old === $value ) {
+			if ( str_replace( TRANSLATE_FUZZY, '', $old ) === $value ) {
 				continue;
 			}
 
@@ -213,8 +221,13 @@ class SpecialManageGroups {
 
 				$changed[] = MessageWebImporter::makeSectionElement( $name, 'new', $text );
 			} else {
-				if ( $fuzzy ) {
-					$old = TRANSLATE_FUZZY . $old;
+				if ( TranslateEditAddons::hasFuzzyString( $old ) ) {
+					// NO-OP
+				} else {
+					$transTitle = MessageWebImporter::makeTranslationTitle( $group, $key, $code );
+					if ( TranslateEditAddons::isFuzzy( $transTitle ) ) {
+						$old = TRANSLATE_FUZZY . $old;
+					}
 				}
 
 				$diff->setText( $old, $value );
@@ -316,7 +329,9 @@ class SpecialManageGroups {
 				$changed[] = '<ul>';
 			}
 
-			$cache->create( $messages, $code );
+			$filename = $group->getSourceFilePath( $code );
+			$hash = md5( file_get_contents( $filename ) );
+			$cache->create( $messages, $code, $hash );
 			$message = wfMsgExt( 'translate-manage-import-rebuild', 'parseinline' );
 			$changed[] = "<li>$message</li>";
 			$message = wfMsgExt( 'translate-manage-import-done', 'parseinline' );
@@ -364,11 +379,7 @@ class SpecialManageGroups {
 				continue;
 			}
 
-			$filename = $group->getSourceFilePath( $code );
-			$mtime = file_exists( $filename ) ? filemtime( $filename ) : false;
-			$cachetime = $cache->exists( $code ) ? $cache->getTimestamp( $code ) : false;
-
-			if ( $mtime === false && $cachetime === false ) {
+			if ( !$this->changedSinceCached( $group, $code ) ) {
 				continue;
 			}
 
@@ -379,6 +390,9 @@ class SpecialManageGroups {
 				array( 'group' => $group->getId(), 'language' => $code )
 			);
 
+			$filename = $group->getSourceFilePath( $code );
+			$mtime = file_exists( $filename ) ? filemtime( $filename ) : false;
+			$cachetime = $cache->exists( $code ) ? $cache->getTimestamp( $code ) : false;
 			if ( $mtime === false ) {
 				$modified[] = wfMsgHtml( 'translate-manage-modlang-new', $link  );
 			} elseif ( $mtime > $cachetime  ) {
@@ -457,5 +471,34 @@ class SpecialManageGroups {
 		}
 
 		$this->out->setSubtitle( implode( ' > ', $links ) );
+	}
+
+	/**
+	 * Checks if the source file has changed since last check.
+	 * Uses modification timestamps and file hashes to check.
+	 */
+	protected function changedSinceCached( $group, $code = 'en' ) {
+		$cache = new MessageGroupCache( $group );
+		$filename = $group->getSourceFilePath( $code );
+
+		$mtime = file_exists( $filename ) ? filemtime( $filename ) : false;
+		$cachetime = $cache->exists( $code ) ? $cache->getTimestamp( $code ) : false;
+
+		// No such language at all, or cache is up to date
+		if ( $mtime <= $cachetime ) {
+			return false;
+		}
+
+		// Timestamps differ (or either cache or the file does not exists)
+		$oldhash = $cache->exists( $code ) ? $cache->getHash( $code ) : false;
+		$newhash = file_exists( $filename ) ? md5( file_get_contents( $filename ) ) : false;
+		wfDebugLog( 'translate-manage', "$mtime === $cachetime | $code | $oldhash !== $newhash\n" );
+		if ( $newhash === $oldhash ) {
+			// Update cache so that we don't need to compare hashes next time
+			$cache->updateTimestamp( $code );
+			return false;
+		}
+	
+		return true;
 	}
 }

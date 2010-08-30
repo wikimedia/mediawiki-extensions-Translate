@@ -42,13 +42,24 @@ class MessageGroupCache {
 		return $cache->get( $this->specialKey( 'timestamp' ) );
 	}
 
+	public function updateTimestamp( $code = 'en' ) {
+		$cache = CdbWriter::open( $this->getCacheFileName( $code ) );
+		$cache->set( $this->specialKey( 'timestamp' ), wfTimestamp() );
+		$cache->close();
+	}
+
+	public function getHash( $code = 'en' ) {
+		$cache = $this->open( $code );
+		return $cache->get( $this->specialKey( 'hash' ) );
+	}
+
 	public function get( $key, $code = 'en' ) {
 		$cache = $this->open( $code );
 
 		return $cache->get( $key );
 	}
 
-	public function create( $messages, $code = 'en' ) {
+	public function create( $messages, $code = 'en', $hash = false ) {
 		$this->cache = null; // Needed?
 
 		$cache = CdbWriter::open( $this->getCacheFileName( $code ) );
@@ -61,6 +72,7 @@ class MessageGroupCache {
 		}
 
 		$cache->set( $this->specialKey( 'timestamp' ), wfTimestamp() );
+		$cache->set( $this->specialKey( 'hash' ), $hash );
 		$cache->close();
 	}
 
