@@ -43,7 +43,7 @@ BASIC:
   display: out/okawix/dtd
 
 FILES:
-  class: OkawixDtdFFS
+  class: DtdFFS
   sourcePattern: %GROUPROOT%/okawix/locale/%CODE%/interfacewiki/okawix.dtd
   targetPattern: okawix/%CODE%/interfacewiki/okawix.dtd
 

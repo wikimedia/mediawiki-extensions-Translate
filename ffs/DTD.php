@@ -1,21 +1,21 @@
 <?php
 /**
- * Implements FFS for Okawix DTD file format.
+ * Implements FFS for DTD file format.
  *
  * @file
  * @author Guillaume Duhamel
  * @author Niklas Laxström
  * @author Siebrand Mazeland
- * @copyright Copyright © 2009, Guillaume Duhamel
+ * @copyright Copyright © 2009-2010, Guillaume Duhamel, Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
 /**
- * File format support for Okawix DTD.
+ * File format support for DTD.
  *
  * @ingroup FFS
  */
-class OkawixDtdFFS extends SimpleFFS {
+class DtdFFS extends SimpleFFS {
 	public function readFromVariable( $data ) {
 		preg_match_all( ',AUTHOR: ([^\n]+)\n,', $data, $matches );
 		$authors = array();

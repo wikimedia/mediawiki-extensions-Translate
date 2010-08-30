@@ -168,6 +168,7 @@ $wgAutoloadClasses['OpenLayersFFS'] = $dir . 'FFS.php';
 $wgAutoloadClasses['ShapadoJsFFS'] = $dir . 'FFS.php';
 $wgAutoloadClasses['GettextFFS'] = $dir . '/ffs/Gettext.php';
 $wgAutoloadClasses['FlatPhpFFS'] = $dir . 'ffs/PhpVariables.php';
+$wgAutoloadClasses['DtdFFS'] = $dir . 'ffs/DTD.php';
 /**@}*/
 
 /**
