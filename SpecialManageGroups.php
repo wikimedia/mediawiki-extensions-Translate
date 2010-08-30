@@ -276,7 +276,7 @@ class SpecialManageGroups {
 
 				foreach ( $actions as $action ) {
 					$label = wfMsg( "translate-manage-action-$action" );
-					$name = self::escapeNameForPHP( "action-$type-$key" );
+					$name = MessageWebImporter::escapeNameForPHP( "action-$type-$key" );
 					$id = Sanitizer::escapeId( "action-$key-$action" );
 					$act[] = Xml::radioLabel( $label, $name, $action, $id, $action === $defaction );
 				}
