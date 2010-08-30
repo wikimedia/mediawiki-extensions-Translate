@@ -220,18 +220,14 @@ class SpecialManageGroups {
 						$changed[] = '<ul>';
 					}
 
-					$requestKey = str_replace( '.', '_', $key );
-					$requestKey = str_replace( ' ', '_', $key );
-					$action = $wgRequest->getVal( "action-$type-$key" );
+					$action = $wgRequest->getVal( MessageWebImporter::escapeNameForPHP( "action-$type-$key" ) );
 
 					if ( $action === null ) {
-						$message = wfMsgExt( 'translate-manage-inconsistent', 'parseinline', wfEscapeWikiText( "action-$type-$requestKey" ) );
+						$message = wfMsgExt( 'translate-manage-inconsistent', 'parseinline', wfEscapeWikiText( "action-$type-$key" ) );
 						$changed[] = "<li>$message</li></ul>";
 						$process = false;
 					} else {
-						/**
-						 * Check processing time.
-						 */
+						// Initialise processing time counter.
 						if ( !isset( $this->time ) ) {
 							$this->time = wfTimestamp();
 						}
@@ -274,7 +270,9 @@ class SpecialManageGroups {
 
 				foreach ( $actions as $action ) {
 					$label = wfMsg( "translate-manage-action-$action" );
-					$act[] = Xml::radioLabel( $label, "action-$type-$key", $action, "action-$key-$action", $action === $defaction );
+					$name = self::escapeNameForPHP( "action-$type-$key" );
+					$id = Sanitizer::escapeId( "action-$key-$action" );
+					$act[] = Xml::radioLabel( $label, $name, $action, $id, $action === $defaction );
 				}
 
 				$name = wfMsg( 'translate-manage-import-diff',
