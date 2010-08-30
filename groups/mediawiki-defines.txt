@@ -909,7 +909,7 @@ Ref Helper
 aliasfile = RefHelper/RefHelper.alias.php
 
 Reflect
-file = server/i18n/Reflect.i18n.php
+file = Reflect/server/i18n/Reflect.i18n.php
 
 Refresh Special
 aliasfile = RefreshSpecial/RefreshSpecial.alias.php
