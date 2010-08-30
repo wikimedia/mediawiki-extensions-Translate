@@ -16,7 +16,7 @@
  * @ingroup PageTranslation
  */
 class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
-	// Basif form parameters both as text and as titles
+	// Basic form parameters both as text and as titles
 	protected $newText, $newTitle, $oldText, $oldTitle;
 
 	// Other form parameters
@@ -191,7 +191,7 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 	/**
 	 * The query form.
 	 */
-	protected function showForm( ) {
+	protected function showForm() {
 		global $wgOut;
 
 		$wgOut->addWikiMsg( 'pt-movepage-intro' );
@@ -218,7 +218,12 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 
 	/**
 	 * Shortcut for keeping the code at least a bit readable. Adds label and input into $form array.
-	 * @todo Document parameters.
+	 * @param $form \list{String} Array where input element and label is appended.
+	 * @param $label \string Label text.
+	 * @param $name \string Name attribute.
+	 * @param $size \int Size attribute of the input element. Default false.
+	 * @param $text \string Text of the value attribute. Default false.
+	 * @param $attribs \array Extra attributes. Default empty array.
 	 */
 	protected function addInputLabel( &$form, $label, $name, $size = false , $text = false, $attribs = array() ) {
 		$br = Html::element( 'br' );
