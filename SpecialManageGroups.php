@@ -18,7 +18,7 @@
  *
  * @todo Needs documentation.
  */
-class SpecialManageGroups {
+class SpecialManageGroups extends SpecialPage {
 	protected $skin, $user, $out;
 	/**
 	 * Maximum allowed processing time in seconds.
@@ -33,9 +33,10 @@ class SpecialManageGroups {
 		$this->out = $wgOut;
 		$this->user = $wgUser;
 		$this->skin = $wgUser->getSkin();
+		parent::__construct( 'ManageMessageGroups', 'translate-manage' );
 	}
 
-	public function execute() {
+	public function execute( $par ) {
 		global $wgRequest;
 
 		$this->out->setPageTitle( htmlspecialchars( wfMsg( 'translate-managegroups' ) ) );
@@ -85,6 +86,8 @@ class SpecialManageGroups {
 					continue;
 				}
 
+				wfDebug( __METHOD__ . ": {$group->getId()}\n" );
+
 				$link = $this->skin->link( $this->getTitle(), $group->getLabel(), array(), array( 'group' => $group->getId() ) );
 				$out = $link . $separator;
 
@@ -96,8 +99,18 @@ class SpecialManageGroups {
 						$wgLang->time( $timestamp )
 					);
 
-					if ( !$cache->isValid() ) {
-						$out = '<span style="color:red">!!</span> ' . $out;
+					$languages = array_keys( Language::getLanguageNames( false ) );
+					$modified = array();
+
+					foreach ( $languages as $code ) {
+						$cache = new MessageGroupCache( $group, $code );
+						if ( !$cache->isValid() ) $modified[] = $code;
+					}
+
+					if ( count( $modified ) ) {
+						$out = '[' . implode( ",", $modified ) . '] ' . $out;
+					} else {
+						$out = Html::rawElement( 'span', array( 'style' => 'color:grey' ), $out );
 					}
 
 				} else {
@@ -121,13 +134,6 @@ class SpecialManageGroups {
 
 			$wgOut->addHTML( '</ul>' );
 		}
-	}
-
-	/**
-	 * Special:Translate/manage.
-	 */
-	public function getTitle() {
-		return SpecialPage::getTitleFor( 'Translate', 'manage' );
 	}
 
 	/**

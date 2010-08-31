@@ -20,6 +20,7 @@ $aliases['en'] = array(
 	'LanguageStats'      => array( 'LanguageStats' ),
 	'PageTranslation'    => array( 'PageTranslation' ),
 	'ImportTranslations' => array( 'ImportTranslations' ),
+	'ManageMessageGroups'=> array( 'ManageMessageGroups' ),
 	'FirstSteps'         => array( 'FirstSteps' ),
 	'SupportedLanguages' => array( 'SupportedLanguages' ),
 	'MyLanguage'         => array( 'MyLanguage' ),

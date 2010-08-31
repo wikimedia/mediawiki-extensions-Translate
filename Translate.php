@@ -66,6 +66,8 @@ $wgSpecialPages['LanguageStats'] = 'SpecialLanguageStats';
 $wgSpecialPageGroups['LanguageStats'] = 'wiki';
 $wgSpecialPages['ImportTranslations'] = 'SpecialImportTranslations';
 $wgSpecialPageGroups['ImportTranslations'] = 'wiki';
+$wgSpecialPages['ManageMessageGroups'] = 'SpecialManageGroups';
+$wgSpecialPageGroups['ManageMessageGroups'] = 'wiki';
 // Unlisted special page; does not need $wgSpecialPageGroups.
 $wgSpecialPages['FirstSteps'] = 'SpecialFirstSteps';
 // Unlisted special page; does not need $wgSpecialPageGroups.

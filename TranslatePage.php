@@ -39,18 +39,7 @@ class SpecialTranslate extends SpecialPage {
 
 		$this->setHeaders();
 
-		if ( $parameters === 'manage' ) {
-			$this->restriction( 'translate-manage' );
-			if ( !$this->userCanExecute( $wgUser ) ) {
-				$this->displayRestrictionError();
-				return;
-			}
-
-			$manage = new SpecialManageGroups();
-			$manage->execute();
-
-			return;
-		} elseif ( $parameters === 'editpage' ) {
+		if ( $parameters === 'editpage' ) {
 			$editpage = TranslationEditPage::newFromRequest( $wgRequest );
 
 			if ( $editpage ) {
