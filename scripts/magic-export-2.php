@@ -3,6 +3,7 @@
  * Script to export special page aliases and magic words of extensions.
  *
  * @author Robert Leverington <robert@rhl.me.uk>
+ *
  * @copyright Copyright © 2010 Robert Leverington
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  * @file
@@ -45,6 +46,8 @@ if ( !isset( $options['type'] ) ) {
 }
 
 $langs = Cli::parseLanguageCodes( '*' );
+unset( $langs[array_search( 'en', $langs )] );
+$langs = array_merge( array( 'en' ), $langs );
 $groups = MessageGroups::singleton()->getGroups();
 
 $type = $options['type'] ;
@@ -52,11 +55,9 @@ $type = $options['type'] ;
 // Open file handles.
 STDOUT( "Opening file handles..." );
 $handles = array();
-$keys = array(); error_reporting( E_ALL | E_STRICT );
+$messagesOld = array();
 foreach ( $groups as $group ) {
-	if ( !$group instanceof ExtensionMessageGroup ) {
-		continue;
-	}
+	if ( !$group instanceof ExtensionMessageGroup ) continue;
 
 	if ( $type === 'special' ) {
 		$filename = $group->getAliasFile();
@@ -64,26 +65,39 @@ foreach ( $groups as $group ) {
 		$filename = $group->getMagicFile();
 	}
 
-	if ( $filename === null ) {
-		continue;
-	}
+	if ( $filename === null ) continue;
 
 	$file = "$wgTranslateExtensionDirectory/$filename";
-	if ( !file_exists( $file ) ) {
-		continue;
-	}
+	if ( !file_exists( $file ) ) continue;
 
 	include( $file );
-	if ( !isset( $aliases ) ) {
-		continue;
-	}
-
-	$keys[$group->getId()] = array_keys( $aliases['en'] );
+	if( !isset( $aliases ) ) continue;
+	$messagesOld[$group->getId()] = $aliases;
 	unset( $aliases );
 
 	$handles[$group->getId()] = fopen( $options['target'] . '/' . $filename, 'w' );
 
 	STDOUT( "\t{$group->getId()}" );
+}
+
+// Write header.
+foreach( $handles as $handle ) {
+	if( $type === 'special' ) {
+			fwrite( $handle, <<<EOT
+<?php
+
+/**
+ * Aliases for special pages
+ *
+ * @file
+ * @ingroup Extensions
+ */
+
+\$aliases = array();
+EOT
+);
+	} else {
+	}
 }
 
 foreach ( $langs as $l ) {
@@ -95,54 +109,63 @@ foreach ( $langs as $l ) {
 			$title = Title::newFromText( 'MediaWiki:Sp-translate-data-MagicWords/' . $l );
 			break;
 		default:
-			STDERR( "Invalid type: must be one of: special, magic" );
 			exit( 1 );
 	}
 
-	if ( !$title || !$title->exists() ) {
+	if( !$title || !$title->exists() ) {
 		STDOUT( "Skiping $l..." );
-		continue;
+
+		$messagesNew = array();
 	} else {
 		STDOUT( "Processing $l..." );
-	}
 
-	$article = new Article( $title );
-	$data = $article->getContent();
+		$article = new Article( $title );
+		$data = $article->getContent();
 
-	// Parse message file.
-	$segments = explode( "\n", $data );
-	array_shift( $segments );
-	array_shift( $segments );
-	unset( $segments[count( $segments ) -1] );
-	unset( $segments[count( $segments ) -1] );
-
-	$messages = array();
-
-	foreach ( $segments as $segment ) {
-		$parts = explode( '=', $segment );
-		$key = trim( array_shift( $parts ) );
-		$translations = explode( ', ', implode( $parts ) );
-		$messages[$key] = $translations;
-	}
-
-	// Need to only provide the keys applicable to the file that is being written.
-	foreach ( $handles as $group => $handle ) {
-		STDOUT( "\t{$group}... " );
-		$thismessages = $messages; // TODO: Reduce.
-		$out = "\$aliases['{$group}	'] = array(\n";
-
-		foreach ( $thismessages as $key => $translations ) {
-			$translations = implode( "', '", $translations );
-			$out .= "\t'$key' => array( '$translations' ),\n";
+		// Parse message file.
+		$segments = explode( "\n", $data );
+		array_shift( $segments );
+		array_shift( $segments );
+		unset( $segments[count($segments)-1] );
+		unset( $segments[count($segments)-1] );
+		$messagesNew = array();
+		foreach( $segments as $segment ) {
+			$parts = explode( '=', $segment );
+			$key = trim( array_shift( $parts ) );
+			$translations = explode( ', ', implode( $parts ) );
+			$messagesNew[$key] = $translations;
 		}
+	}
 
-		$out .= ");\n\n";
-		fwrite( $handle, $out );
+	foreach( $handles as $group => $handle ) {
+		STDOUT( "\t{$group}... " );
+		$namesEn = LanguageNames::getNames( 'en' );
+		$namesNative = Language::getLanguageNames();
+		$messagesOut = array();
+		foreach( $messagesOld[$group]['en'] as $key => $message ) {
+			if( array_key_exists( $key, $messagesNew ) ) {
+				$messagesOut[$key] = $messagesNew[$key];
+			} elseif( isset( $messagesOld[$group][$l][$key] ) ) {
+				$messagesOut[$key] = $messagesOld[$group][$l][$key];
+			}
+		}
+		if( count( $messagesOut ) > 0 ) {
+			$out = "\n\n/** {$namesEn[$l]} ({$namesNative[$l]}) */\n\$aliases['{$l}'] = array(\n";
+			foreach( $messagesOut as $key => $translations ) {
+				foreach( $translations as $id => $translation ) {
+					$translations[$id] = addslashes( $translation );
+				}
+				$translations = implode( "', '", $translations );
+				$out .= "\t'$key' => array( '$translations' ),\n";
+			}
+			$out .= ");";
+			fwrite( $handle, $out );
+		}
 	}
 }
 
 // Close handles.
 STDOUT( "Closing file handles..." );
-foreach ( $handles as $group => $handle ) {
+foreach( $handles as $group => $handle ) {
 	fclose( $handle );
 }
