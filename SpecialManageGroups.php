@@ -96,7 +96,7 @@ class SpecialManageGroups {
 						$wgLang->time( $timestamp )
 					);
 
-					if ( $this->changedSinceCached( $group ) ) {
+					if ( !$cache->isValid() ) {
 						$out = '<span style="color:red">!!</span> ' . $out;
 					}
 
@@ -365,7 +365,9 @@ class SpecialManageGroups {
 				continue;
 			}
 
-			if ( !$this->changedSinceCached( $group, $code ) ) {
+			$cache = new MessageGroupCache( $group, $code );
+
+			if ( $cache->isValid() ) {
 				continue;
 			}
 
@@ -376,7 +378,6 @@ class SpecialManageGroups {
 				array( 'group' => $group->getId(), 'language' => $code )
 			);
 
-			$cache = new MessageGroupCache( $group, $code );
 			if ( !$cache->exists() ) {
 				$modified[] = wfMsgHtml( 'translate-manage-modlang-new', $link  );
 			} else {
@@ -457,32 +458,4 @@ class SpecialManageGroups {
 		$this->out->setSubtitle( implode( ' > ', $links ) );
 	}
 
-	/**
-	 * Checks if the source file has changed since last check.
-	 * Uses modification timestamps and file hashes to check.
-	 */
-	protected function changedSinceCached( $group, $code = 'en' ) {
-		$cache = new MessageGroupCache( $group, $code );
-		$filename = $group->getSourceFilePath( $code );
-
-		$mtime = file_exists( $filename ) ? filemtime( $filename ) : false;
-		$cachetime = $cache->exists() ? $cache->getTimestamp() : false;
-
-		// No such language at all, or cache is up to date
-		if ( $mtime <= $cachetime ) {
-			return false;
-		}
-
-		// Timestamps differ (or either cache or the file does not exists)
-		$oldhash = $cache->exists() ? $cache->getHash() : false;
-		$newhash = file_exists( $filename ) ? md5( file_get_contents( $filename ) ) : false;
-		wfDebugLog( 'translate-manage', "$mtime === $cachetime | $code | $oldhash !== $newhash\n" );
-		if ( $newhash === $oldhash ) {
-			// Update cache so that we don't need to compare hashes next time
-			$cache->create();
-			return false;
-		}
-	
-		return true;
-	}
 }
