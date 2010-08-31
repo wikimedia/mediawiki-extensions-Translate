@@ -54,7 +54,7 @@ class RenderJob extends Job {
 		$summary = $this->getSummary();
 		$flags   = $this->getFlags();
 
-		$article = new Article( $title );
+		$article = new Article( $title, 0 );
 
 		// @todo Fuzzybot hack
 		PageTranslationHooks::$allowTargetEdit = true;
