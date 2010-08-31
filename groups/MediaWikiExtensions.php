@@ -183,9 +183,7 @@ class PremadeMediawikiExtensionGroups {
 
 		$meta = array(
 			'ext-0-all'               => 'AllMediawikiExtensionsGroup',
-			'ext-0-wikihow'           => 'AllWikihowExtensionsGroup',
 			'ext-0-wikimedia'         => 'AllWikimediaExtensionsGroup',
-			'ext-0-wikitravel'        => 'AllWikitravelExtensionsGroup',
 			'ext-collection-0-all'    => 'AllCollectionExtensionsGroup',
 			'ext-flaggedrevs-0-all'   => 'AllFlaggedRevsExtensionsGroup',
 			'ext-readerfeedback-0-all' => 'AllReaderFeedbackExtensionsGroup',
@@ -317,55 +315,6 @@ class AllMediawikiExtensionsGroup extends MessageGroupOld {
 			if ( $class->exists() ) return true;
 		}
 		return false;
-	}
-}
-
-/**
- * Adds a message group containing all supported MediaWiki extensions used by
- * wikiHow.
- *
- * @todo Needs documentation.
- */
-class AllWikihowExtensionsGroup extends AllMediawikiExtensionsGroup {
-	protected $label = 'Extensions used by Wikihow'; // currently using 1.12.0
-	protected $id    = 'ext-0-wikihow';
-	protected $meta  = true;
-
-	protected $classes = null;
-	protected $description = '{{int:translate-group-desc-wikihowextensions}}';
-
-	protected $wikihowextensions = array(
-		'ext-antispoof',
-		'ext-blocktitles',
-		'ext-checkuser',
-		'ext-cite',
-		'ext-confirmedit',
-		'ext-formatemail',
-		'ext-imagemap',
-		'ext-importfreeimages',
-		'ext-multiupload',
-		'ext-openid',
-		'ext-parserfunctions',
-		'ext-postcomment',
-		'ext-renameuser',
-		'ext-spamblacklist',
-		'ext-spamdifftool',
-		'ext-syntaxhighlightgeshi',
-		'ext-youtubeauthsub',
-	);
-
-	protected function init() {
-		if ( $this->classes === null ) {
-			$this->classes = array();
-			$classes = MessageGroups::singleton()->getGroups();
-			foreach ( $this->wikihowextensions as $key ) {
-				$this->classes[$key] = $classes[$key];
-			}
-		}
-	}
-
-	public function wikihowextensions() {
-		return $this->wikihowextensions;
 	}
 }
 
@@ -503,45 +452,6 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 
 	public function wmfextensions() {
 		return $this->wmfextensions;
-	}
-}
-
-/**
- * Adds a message group containing all supported MediaWiki extensions used by
- * WikiTravel.
- *
- * @todo Needs documentation.
- */
-class AllWikitravelExtensionsGroup extends AllMediawikiExtensionsGroup {
-	protected $label = 'Extensions used by Wikitravel'; // currently using 1.11.2
-	protected $id    = 'ext-0-wikitravel';
-	protected $meta  = true;
-
-	protected $classes = null;
-	protected $description = '{{int:translate-group-desc-wikitravelextensions}}';
-
-	protected $wikitravelextensions = array(
-		'ext-charinsert',
-		'ext-inputbox',
-		'ext-microid',
-		'ext-openid',
-		'ext-parserfunctions',
-		'ext-renameuser',
-		'ext-stringfunctions',
-	);
-
-	protected function init() {
-		if ( $this->classes === null ) {
-			$this->classes = array();
-			$classes = MessageGroups::singleton()->getGroups();
-			foreach ( $this->wikitravelextensions as $key ) {
-				$this->classes[$key] = $classes[$key];
-			}
-		}
-	}
-
-	public function wikitravelextensions() {
-		return $this->wikitravelextensions;
 	}
 }
 
