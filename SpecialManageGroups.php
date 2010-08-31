@@ -1,6 +1,6 @@
 <?php
 /**
- * Implements classes for Special:Translate/manage from where file based message
+ * Implements special page for group management, where file based message
  * groups are be managed.
  *
  * @ingroup SpecialPage
@@ -11,23 +11,17 @@
  */
 
 /**
- * Class for special page Special:Translate/manage. On this special page file
- * based message groups can be managed (FileBasedMessageGroup). This page
+ * Class for special page Special:ManageMessageGroups. On this special page
+ * file based message groups can be managed (FileBasedMessageGroup). This page
  * allows updating of the file cache, import and fuzzy for source language
  * messages, as well as import/update of messages in other languages.
- *
- * @todo Needs documentation.
  */
 class SpecialManageGroups extends SpecialPage {
 	protected $skin, $user, $out;
-	/**
-	 * Maximum allowed processing time in seconds.
-	 */
+	/// Maximum allowed processing time in seconds.
 	protected $processingTime = 30;
 
-	/**
-	 * Constructor
-	 */
+	/// Constructor
 	public function __construct() {
 		global $wgOut, $wgUser;
 		$this->out = $wgOut;
@@ -44,9 +38,6 @@ class SpecialManageGroups extends SpecialPage {
 		$group = $wgRequest->getText( 'group' );
 		$group = MessageGroups::getGroup( $group );
 
-		/**
-		 * Only supported for FileBasedMessageGroups.
-		 */
 		if ( !$group instanceof FileBasedMessageGroup ) {
 			$group = null;
 		}
@@ -423,6 +414,7 @@ class SpecialManageGroups extends SpecialPage {
 	/**
 	 * Reports if processing time for current page has exceeded the set
 	 * maximum ($processingTime).
+	 * @return \bool
 	 */
 	protected function checkProcessTime() {
 		return wfTimestamp() - $this->time >= $this->processingTime;
@@ -433,7 +425,7 @@ class SpecialManageGroups extends SpecialPage {
 	 * based on group and language code. The language part is not shown if
 	 * it is 'en', and all three possible parts of the subtitle are linked.
 	 *
-	 * @param $group Object MessageGroup.
+	 * @param $group MessageGroup
 	 * @param $code \string Language code.
 	 */
 	protected function setSubtitle( $group, $code ) {
@@ -446,16 +438,17 @@ class SpecialManageGroups extends SpecialPage {
 
 		$links[] = $this->skin->link(
 			$this->getTitle(),
-			$group->getLabel(),
+			htmlspecialchars( $group->getLabel() ),
 			array(),
 			array( 'group' => $group->getId() )
 		);
 
 		// Do not show language part for English.
 		if ( $code !== 'en' ) {
+			$langname = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() );
 			$links[] = $this->skin->link(
 				$this->getTitle(),
-				TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() ),
+				htmlspecialchars( $langname ),
 				array(),
 				array( 'group' => $group->getId(), 'language' => $code )
 			);
