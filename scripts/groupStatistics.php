@@ -1,21 +1,29 @@
 <?php
 /**
- * Statistics about message groups.
+ * Commandline script to general statistics about the localisation level of
+ * localisation for one or more message groups.
  *
+ * @file
+ * @ingroup Script Stats
  * @author Niklas Laxstrom
  * @author Siebrand Mazeland
  * @copyright Copyright © 2007-2010, Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
- * @file
- * @ingroup Script Stats
  */
 
 /**
- * @todo Needs documentation.
+ * Array of the most spoken languages in the world.
+ * Source: http://stats.wikimedia.org/EN/Sitemap.htm.
+ *
+ * Key value pairs of:
+ * [MediaWiki localisation code] => array(
+ *    [position in top 50],
+ *    [speakers in millions],
+ *    [continent where localisation is spoken]
+ * )
+ *
  */
 $mostSpokenLanguages = array(
-	// 'language code' => array( position, speakers in millions, continent ),
-	// Source: http://stats.wikimedia.org/EN/Sitemap.htm
 	'en'       => array( 1, 1500, 'multiple' ),
 	'zh-hans'  => array( 2, 1300, 'asia' ),
 	'zh-hant'  => array( 2, 1300, 'asia' ),
@@ -73,16 +81,21 @@ $mostSpokenLanguages = array(
 );
 
 /**
- * @todo Needs documentation.
+ * Variable with key-value pairs with a named index and an array of key-value
+ * pairs where the key is a MessageGroup ID and the value is a weight of the
+ * group in the sum of the values for all the groups in the array.
+ *
+ * Definitions in this variable can be used to report weighted meta localisation
+ * scores.
  */
 $localisedWeights = array(
 	'wikimedia' => array(
-		'core-0-mostused'   => 40,
+		'core-0-mostused' => 40,
 		'core'            => 30,
 		'ext-0-wikimedia' => 30
 	),
 	'mediawiki' => array(
-		'core-0-mostused'   => 30,
+		'core-0-mostused' => 30,
 		'core'            => 30,
 		'ext-0-wikimedia' => 20,
 		'ext-0-all'       => 20
@@ -91,7 +104,7 @@ $localisedWeights = array(
 
 /**
  * Code map to map localisation codes to Wikimedia project codes. Only
- * exclusions and remapping is defined here. It is assumed that the first part
+ * exclusion and remapping is defined here. It is assumed that the first part
  * of the localisation code is the WMF project name otherwise (zh-hans -> zh).
  */
 $wikimediaCodeMap = array(
@@ -163,25 +176,9 @@ $wikimediaCodeMap = array(
 $optionsWithArgs = array( 'groups', 'output', 'skiplanguages', 'legenddetail', 'legendsummary' );
 require( dirname( __FILE__ ) . '/cli.inc' );
 
-/**
- * @todo Needs documentation.
- * @ingroup Stats
- */
-class TranslateStatsOutput extends wikiStatsOutput {
-	function heading() {
-		echo '{| class="sortable wikitable" border="2" cellpadding="4" cellspacing="0" style="background-color: #F9F9F9; border: 1px #AAAAAA solid; border-collapse: collapse; clear:both;" width="100%"' . "\n";
-	}
-
-	function summaryheading() {
-		echo "\n" . '{| class="sortable wikitable" border="2" cellpadding="4" cellspacing="0" style="background-color: #F9F9F9; border: 1px #AAAAAA solid; border-collapse: collapse; clear:both;"' . "\n";
-	}
-
-	function addFreeText( $freeText ) {
-		echo $freeText;
-	}
+if ( isset( $options['help'] ) ) {
+	showUsage();
 }
-
-if ( isset( $options['help'] ) ) showUsage();
 
 // Show help and exit if '--most' does not have a valid value and no groups set
 if ( isset( $options['most'] ) && !isset( $localisedWeights[$options['most']] ) && !isset( $options['groups'] ) ) {
@@ -190,54 +187,6 @@ if ( isset( $options['most'] ) && !isset( $localisedWeights[$options['most']] ) 
 
 if ( !isset( $options['output'] ) ) {
 	$options['output'] = 'default';
-}
-
-/**
- * Print a usage message.
- */
-function showUsage() {
-	$msg = <<<END
-	--help : this help message
-	--groups LIST: comma separated list of groups
-	--skiplanguages LIST: comma separated list of skipped languages
-	--skipzero : skip languages that do not have any localisation at all
-	--fuzzy : add column for fuzzy counts
-	--output TYPE: select an another output engine
-		* 'csv'      : Comma Separated Values.
-		* 'wiki'     : MediaWiki syntax.
-		* 'text'     : Text with tabs.
-	--most : [SCOPE]: report on the 50 most spoken languages. Skipzero is
-			ignored. If a valid scope is defined, the group list
-			and fuzzy are ignored and the localisation levels are
-			weighted and reported.
-		* mediawiki:
-			core-0-mostused (30%)
-			core (30%)
-			ext-0-wikimedia (20%)
-			ext-0-all (20%)
-		* wikimedia:
-			core-0-mostused (40%)
-			core (30%)
-			ext-0-wikimedia (30%)
-	--speakers : add column for number of speakers (est.). Only valid when
-		     combined with --most.
-	--nol10n : do not add localised language name if I18ntags is installed.
-	--continent : add a continent column. Only available when output is
-		      'wiki' or not specified.
-	--summary : add a summary with counts and scores per continent category
-		    and totals. Only available for a valid 'most' value.
-	--legenddetail : Page name for legend to be transcluded at the top of
-			 the details table
-	--legendsummary : Page name for legend to be transcluded at the top of
-			  the summary table
-	--wmfscore : Only output WMF language code and weighted score for all
-		     language codes for weighing group 'wikimedia' in CSV. This
-		     report must keep a stable layout as it is used/will be
-		     used in the Wikimedia statistics.
-
-END;
-	STDERR( $msg );
-	exit( 1 );
 }
 
 # Select an output engine
@@ -480,11 +429,15 @@ foreach ( $languages as $code => $name ) {
 
 	$allZero = true;
 	foreach ( $columns as $fields ) {
-		if ( intval( $fields[1] ) !== 0 ) $allZero = false;
+		if ( intval( $fields[1] ) !== 0 ) {
+			$allZero = false;
+		}
 	}
 
 	// Skip dummy languages if requested
-	if ( $allZero && isset( $options['skipzero'] ) ) continue;
+	if ( $allZero && isset( $options['skipzero'] ) ) {
+		continue;
+	}
 
 	// Output the the row
 	if ( !$wmfscore ) {
@@ -644,5 +597,71 @@ if ( $wmfscore ) {
 
 	foreach ( $wmfscores as $code => $stats ) {
 		echo $code . ';' . number_format( $stats['score'] ) . ";\n";
+	}
+}
+
+/**
+ * Print a usage message.
+ */
+function showUsage() {
+	$msg = <<<PHP
+	--help : this help message
+	--groups LIST: comma separated list of groups
+	--skiplanguages LIST: comma separated list of skipped languages
+	--skipzero : skip languages that do not have any localisation at all
+	--fuzzy : add column for fuzzy counts
+	--output TYPE: select an another output engine
+		* 'csv'      : Comma Separated Values.
+		* 'wiki'     : MediaWiki syntax.
+		* 'text'     : Text with tabs.
+	--most : [SCOPE]: report on the 50 most spoken languages. Skipzero is
+			ignored. If a valid scope is defined, the group list
+			and fuzzy are ignored and the localisation levels are
+			weighted and reported.
+		* mediawiki:
+			core-0-mostused (30%)
+			core (30%)
+			ext-0-wikimedia (20%)
+			ext-0-all (20%)
+		* wikimedia:
+			core-0-mostused (40%)
+			core (30%)
+			ext-0-wikimedia (30%)
+	--speakers : add column for number of speakers (est.). Only valid when
+		     combined with --most.
+	--nol10n : do not add localised language name if I18ntags is installed.
+	--continent : add a continent column. Only available when output is
+		      'wiki' or not specified.
+	--summary : add a summary with counts and scores per continent category
+		    and totals. Only available for a valid 'most' value.
+	--legenddetail : Page name for legend to be transcluded at the top of
+			 the details table
+	--legendsummary : Page name for legend to be transcluded at the top of
+			  the summary table
+	--wmfscore : Only output WMF language code and weighted score for all
+		     language codes for weighing group 'wikimedia' in CSV. This
+		     report must keep a stable layout as it is used/will be
+		     used in the Wikimedia statistics.
+
+PHP;
+	STDERR( $msg );
+	exit( 1 );
+}
+
+/**
+ * @todo Needs documentation.
+ * @ingroup Stats
+ */
+class TranslateStatsOutput extends wikiStatsOutput {
+	function heading() {
+		echo '{| class="sortable wikitable" border="2" cellpadding="4" cellspacing="0" style="background-color: #F9F9F9; border: 1px #AAAAAA solid; border-collapse: collapse; clear:both;" width="100%"' . "\n";
+	}
+
+	function summaryheading() {
+		echo "\n" . '{| class="sortable wikitable" border="2" cellpadding="4" cellspacing="0" style="background-color: #F9F9F9; border: 1px #AAAAAA solid; border-collapse: collapse; clear:both;"' . "\n";
+	}
+
+	function addFreeText( $freeText ) {
+		echo $freeText;
 	}
 }
