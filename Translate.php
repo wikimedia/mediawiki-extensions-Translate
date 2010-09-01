@@ -495,11 +495,6 @@ function efTranslateInit() {
 		// Add transver tags and update translation target pages
 		$wgHooks['ArticleSaveComplete'][] = 'PageTranslationHooks::onSectionSave';
 
-		/**
-		 * @todo document.
-		 */
-		# $wgHooks['SkinTemplateOutputPageBeforeExec'][] = 'TranslateTagHooks::addSidebar';
-
 		// Register \<languages/>
 		$wgHooks['ParserFirstCallInit'][] = 'efTranslateInitTags';
 

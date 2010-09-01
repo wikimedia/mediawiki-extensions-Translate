@@ -155,38 +155,6 @@ class PageTranslationHooks {
 		$article->doPurge();
 	}
 
-	/**
-	 * @todo NOOP now.
-	 */
-	public static function addSidebar( $out, $tpl ) {
-/*
-		global $wgLang;
-
-		// Sort by translation percentage
-		arsort( $status, SORT_NUMERIC );
-
-		foreach ( $status as $code => $percent ) {
-			$name = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() );
-			$percent = $wgLang->formatNum( round( 100 * $percent ) );
-			$label = "$name ($percent%)"; // @todo i18n missing.
-
-			$_title = TranslateTagUtils::codefyTitle( $title, $code );
-
-			$items[] = array(
-				'text' => $label,
-				'href' => $_title->getFullURL(),
-				'id' => 'foo',
-			);
-		}
-
-		$sidebar = $out->buildSidebar();
-		$sidebar['TRANSLATIONS'] = $items;
-
-		$tpl->set( 'sidebar', $sidebar );
-*/
-		return true;
-	}
-
 	public static function languages( $data, $params, $parser ) {
 		$title = $parser->getTitle();
 
@@ -386,7 +354,7 @@ FOO;
 		return true;
 	}
 
-	// TODO: fix the name
+	/// @todo: fix method name.
 	public static function test( &$article, &$outputDone, &$pcache ) {
 		if ( !$article->getOldID() ) {
 			self::header( $article->getTitle() );
