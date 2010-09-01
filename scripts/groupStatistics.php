@@ -86,7 +86,9 @@ $mostSpokenLanguages = array(
  * group in the sum of the values for all the groups in the array.
  *
  * Definitions in this variable can be used to report weighted meta localisation
- * scores.
+ * scores for the 50 most spoken languages.
+ *
+ * @todo Allow weighted reporting for all available languges.
  */
 $localisedWeights = array(
 	'wikimedia' => array(
@@ -177,7 +179,9 @@ $optionsWithArgs = array( 'groups', 'output', 'skiplanguages', 'legenddetail', '
 require( dirname( __FILE__ ) . '/cli.inc' );
 
 /**
- * @todo Needs documentation.
+ * Provides heading, summaryheading and free text addition for stats output in
+ * wiki format.
+ *
  * @ingroup Stats
  */
 class TranslateStatsOutput extends wikiStatsOutput {
@@ -200,6 +204,8 @@ if ( isset( $options['help'] ) ) {
 
 // Show help and exit if '--most' does not have a valid value and no groups set
 if ( isset( $options['most'] ) && !isset( $localisedWeights[$options['most']] ) && !isset( $options['groups'] ) ) {
+	showUsage();
+} elseif ( !isset( $options['most'] ) && !isset( $options['groups'] ) ) {
 	showUsage();
 }
 
