@@ -4861,6 +4861,8 @@ $messages['yi'] = array(
 	'tpt-diff-new' => 'נײַער טעקסט',
 	'translate-tag-translate-link-desc' => 'פֿארטײַטשט דעם בלאט',
 	'tpt-languages-legend' => 'אנדערע שפראַכן:',
+	'pt-movepage-list-pages' => 'רשימה פון בלעטער צו באַוועגן',
+	'pt-movepage-list-translation' => 'טײַטש  בלעטער',
 );
 
 /** Simplified Chinese (‪中文(简体)‬)
