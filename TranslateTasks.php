@@ -5,7 +5,7 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2007-2008 Niklas Laxström
+ * @copyright Copyright © 2007-2010 Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -13,11 +13,23 @@
  * Container for options that are passed to tasks.
  */
 class TaskOptions {
-	private $language = null;
-	private $limit = 0;
-	private $offset = 0;
-	private $pagingCB = null;
+	/// \string Language code.
+	protected $language;
+	/// \int Number of items to show.
+	protected $limit = 0;
+	/// \int Offset to the results.
+	protected $offset = 0;
+	/// \mixed Callback which is called to provide information about the result counts.
+	protected $pagingCB;
 
+	/**
+	 * @param $language \string Language code.
+	 * @param $limit \int Number of items to show.
+	 * @param $offset \int Offset to the results.
+	 * @param $pagingCB \mixed Callback which is called to provide information
+	 * about the result counts. The callback is provided with three parameters:
+	 * provided offset, number of messages to show, number of messages in total.
+	 */
 	public function __construct( $language, $limit = 0, $offset = 0, $pagingCB = null ) {
 		$this->language = $language;
 		$this->limit = $limit;
@@ -25,55 +37,101 @@ class TaskOptions {
 		$this->pagingCB = $pagingCB;
 	}
 
+	/**
+	 * @return \string Language code.
+	 */
 	public function getLanguage() {
 		return $this->language;
 	}
 
+	/**
+	 * @return \int Number of items to show.
+	 */
 	public function getLimit() {
 		return $this->limit;
 	}
 
+	/**
+	 * @return \int Offset to the results.
+	 */
 	public function getOffset() {
 		return $this->offset;
 	}
 
+	/**
+	 * @return \mixed Callback which is called to provide information about the result counts.
+	 */
 	public function getPagingCB() {
 		return $this->pagingCB;
 	}
 }
 
 /**
- * Implements the core of TranslateTask.
+ * Basic implementation and interface for tasks.
+ * Task is a combination of filters and output format that are applied to
+ * messages of given message group in given language.
  */
 abstract class TranslateTask {
+	/// \string Task identifier.
 	protected $id = '__BUG__';
 
+	// We need $id here because staticness prevents subclass overriding.
 	/**
-	 * We need $id here because staticness prevents subclass overriding.
+	 * Get label for task.
+	 * @param $id \string.
+	 * @return \string
 	 */
 	public static function labelForTask( $id ) {
-		return wfMsg( TranslateUtils::MSG . 'task-' . $id );
+		return wfMsg( 'translate-task-' . $id );
 	}
 
+	/**
+	 * Get task identifier.
+	 * @return \string
+	 */
 	public function getId() {
 		return $this->id;
 	}
 
+	/**
+	 * Indicates whether the task itself will hand the full output page.
+	 * If false, the result is embedded in the normal results page.
+	 * @return \bool
+	 */
 	public function plainOutput() {
 		return false;
 	}
 
-	protected $group = null;
-	protected $collection = null;
-	protected $options = null;
+	protected $group; ///< \type{MessageGroup} Message group.
+	protected $collection; ///< \type{MessageCollection} Messages.
+	protected $options; ///< \type{TaskOptions} Options.
 
+	/**
+	 * Constructor.
+	 * @param $group \type{MessageGroup} Message group.
+	 * @param $options \type{TaskOptions} Options.
+	 */
 	public final function init( MessageGroup $group, TaskOptions $options ) {
 		$this->group = $group;
 		$this->options = $options;
 	}
 
+	/**
+	 * Outputs the results.
+	 * @return \string
+	 */
 	abstract protected function output();
 
+	/// Processes messages before paging is done.
+	abstract protected function preinit();
+
+	/// Processes messages after paging is done.
+	abstract protected function postinit();
+
+	/**
+	 * Executes the task with given options and outputs the results.
+	 * @return \string Html.
+	 */
 	public final function execute() {
 		$this->preinit();
 		$this->doPaging();
@@ -82,6 +140,11 @@ abstract class TranslateTask {
 		return $this->output();
 	}
 
+	/**
+	 * Takes a slice of messages according to limit and offset given
+	 * in option at initialisation time. Calls the callback to provide
+	 * information how much messages there is.
+	 */
 	protected function doPaging() {
 		$total = count( $this->collection );
 		$this->collection->slice(
@@ -96,7 +159,7 @@ abstract class TranslateTask {
 }
 
 /**
- * @todo Needs documentation.
+ * Lists all non-optional messages with translation if any.
  */
 class ViewMessagesTask extends TranslateTask {
 	protected $id = 'view';
@@ -122,7 +185,7 @@ class ViewMessagesTask extends TranslateTask {
 }
 
 /**
- * @todo Needs documentation.
+ * List messages which has been changed since last export.
  */
 class ReviewMessagesTask extends ViewMessagesTask {
 	protected $id = 'review';
@@ -146,7 +209,7 @@ class ReviewMessagesTask extends ViewMessagesTask {
 }
 
 /**
- * @todo Needs documentation.
+ * Lists untranslated non-optional messages.
  */
 class ViewUntranslatedTask extends ReviewMessagesTask {
 	protected $id = 'untranslated';
@@ -158,9 +221,7 @@ class ViewUntranslatedTask extends ReviewMessagesTask {
 		$this->collection->filter( 'ignored' );
 		$this->collection->filter( 'optional' );
 
-		/**
-		 * Update the cache while we are at it.
-		 */
+		// Update the cache while we are at it.
 		$total = count( $this->collection );
 		$this->collection->filter( 'translated' );
 		$translated = $total - count( $this->collection );
@@ -172,7 +233,7 @@ class ViewUntranslatedTask extends ReviewMessagesTask {
 }
 
 /**
- * @todo Needs documentation.
+ * Lists optional messages.
  */
 class ViewOptionalTask extends ViewMessagesTask {
 	protected $id = 'optional';
@@ -187,7 +248,8 @@ class ViewOptionalTask extends ViewMessagesTask {
 }
 
 /**
- * @todo Needs documentation.
+ * Lists messages with good translation memory suggestions.
+ * The number of results is limited by the speed of translation memory.
  */
 class ViewWithSuggestionsTask extends ViewMessagesTask {
 	protected $id = 'suggestions';
@@ -211,9 +273,7 @@ class ViewWithSuggestionsTask extends ViewMessagesTask {
 		$start = time();
 
 		foreach ( $this->collection->keys() as $key => $_ ) {
-			/**
-			 * Allow up to 10 seconds to search for suggestions.
-			 */
+			// Allow up to 10 seconds to search for suggestions.
 			if ( time() - $start > 10 || TranslationHelpers::checkTranslationServiceFailure( 'tmserver' ) ) {
 				unset( $this->collection[$key] );
 				continue;
@@ -226,9 +286,7 @@ class ViewWithSuggestionsTask extends ViewMessagesTask {
 			if ( $suggestions !== false ) {
 				$suggestions = FormatJson::decode( $suggestions, true );
 				foreach ( $suggestions as $s ) {
-					/**
-					 * We have a good suggestion, do not filter.
-					 */
+					// We have a good suggestion, do not filter.
 					if ( $s['quality'] > 0.80 ) {
 						continue 2;
 					}
@@ -242,7 +300,7 @@ class ViewWithSuggestionsTask extends ViewMessagesTask {
 }
 
 /**
- * @todo Needs documentation.
+ * Lists untranslated optional messages.
  */
 class ViewUntranslatedOptionalTask extends ViewOptionalTask {
 	protected $id = 'untranslatedoptional';
@@ -258,7 +316,7 @@ class ViewUntranslatedOptionalTask extends ViewOptionalTask {
 }
 
 /**
- * @todo Needs documentation.
+ * Lists all translations for reviewing.
  */
 class ReviewAllMessagesTask extends ReviewMessagesTask {
 	protected $id = 'reviewall';
@@ -273,15 +331,13 @@ class ReviewAllMessagesTask extends ReviewMessagesTask {
 }
 
 /**
- * @todo Needs documentation.
+ * Exports messages to their native format with embedded textarea.
  */
 class ExportMessagesTask extends ViewMessagesTask {
 	protected $id = 'export';
 
-	/**
-	 * N/A.
-	 */
-	protected function doPaging() { }
+	// No paging should be done.
+	protected function doPaging() {}
 
 	public function output() {
 		if ( $this->group instanceof FileBasedMessageGroup ) {
@@ -299,7 +355,7 @@ class ExportMessagesTask extends ViewMessagesTask {
 }
 
 /**
- * @todo Needs documentation.
+ * Exports messages to their native format as whole page.
  */
 class ExportToFileMessagesTask extends ExportMessagesTask {
 	protected $id = 'export-to-file';
@@ -322,7 +378,7 @@ class ExportToFileMessagesTask extends ExportMessagesTask {
 }
 
 /**
- * @todo Needs documentation.
+ * Exports messages to xliff format.
  */
 class ExportToXliffMessagesTask extends ExportToFileMessagesTask {
 	protected $id = 'export-to-xliff';
@@ -334,7 +390,9 @@ class ExportToXliffMessagesTask extends ExportToFileMessagesTask {
 }
 
 /**
- * @todo Needs documentation.
+ * Exports messages as special Gettext format that is suitable for off-line
+ * translation with tools that support Gettext. These files can later be
+ * imported back to the wiki.
  */
 class ExportAsPoMessagesTask extends ExportMessagesTask {
 	protected $id = 'export-as-po';
@@ -343,6 +401,7 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 		return true;
 	}
 
+	/// @todo Encapsulate Gettext formatter.
 	public function output() {
 		global $wgServer, $wgTranslateDocumentationLanguageCode;
 
@@ -359,13 +418,9 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 
 		$headers = array();
 		$headers['Project-Id-Version'] = 'MediaWiki ' . SpecialVersion::getVersion( 'nodb' );
-		/**
-		 * @todo Make this customisable or something.
-		 */
+		/// @todo Make this customisable or something.
 		$headers['Report-Msgid-Bugs-To'] = $wgServer;
-		/**
-		 * @todo sprintfDate does not support any time zone flags.
-		 */
+		/// @todo Language::sprintfDate() does not support any time zone flags.
 		$headers['POT-Creation-Date'] = $lang->sprintfDate( 'xnY-xnm-xnd xnH:xni:xns+0000', $now );
 		$headers['Language-Team'] = TranslateUtils::getLanguageName( $this->options->getLanguage() );
 		$headers['Content-Type'] = 'text-plain; charset=UTF-8';
@@ -386,23 +441,17 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 			$flags = array();
 
 			$translation = $m->translation();
-			/**
-			 * CASE2: no translation.
-			 */
+			// CASE2: no translation.
 			if ( $translation === null ) {
 				$translation = '';
 			}
 
-			/**
-			 * CASE3: optional messages; accept only if different.
-			 */
+			// CASE3: optional messages; accept only if different.
 			if ( $m->hasTag( 'optional' ) ) {
 				$flags[] = 'optional';
 			}
 
-			/**
-			 * Remove fuzzy markings before export.
-			 */
+			// Remove fuzzy markings before export, use the fuzzy flag.
 			if ( strpos( $translation, TRANSLATE_FUZZY ) !== false ) {
 				$translation = str_replace( TRANSLATE_FUZZY, '', $translation );
 				$flags[] = 'fuzzy';
@@ -475,15 +524,20 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 }
 
 /**
- * @todo Needs documentation.
+ * Collection of functions to get tasks.
  */
 class TranslateTasks {
+
+	/**
+	 * Return list of available tasks.
+	 * @param $pageTranslation Whether this group is page translation group.
+	 * @todo Make the above parameter a group and check its class?
+	 * @return \list{String} Task identifiers.
+	 */
 	public static function getTasks( $pageTranslation = false ) {
 		global $wgTranslateTasks, $wgTranslateTranslationServices;
 
-		/**
-		 * Tasks not to be available in page translation.
-		 */
+		// Tasks not to be available in page translation.
 		$filterTasks = array(
 			'optional',
 			'untranslatedoptional',
@@ -509,6 +563,11 @@ class TranslateTasks {
 		return $allTasks;
 	}
 
+	/**
+	 * Get task by id.
+	 * @param $id \string Task identifier.
+	 * @return \types{TranslateTask,Null} The task or null if no such task.
+	 */
 	public static function getTask( $id ) {
 		global $wgTranslateTasks;
 

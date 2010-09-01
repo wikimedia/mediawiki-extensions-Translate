@@ -1,13 +1,14 @@
 <?php
 /**
- * A script to populate fuzzy tags.
+ * A script to populate fuzzy tags to revtag table.
  *
  * @author Niklas Laxstrom
- *
- * @copyright Copyright © 2009, Niklas Laxström
+ * @copyright Copyright © 2009-2010, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  * @file
  */
+
+/// @cond
 
 require( dirname( __FILE__ ) . '/cli.inc' );
 
@@ -60,3 +61,5 @@ while ( true ) {
 
 	$db->replace( 'revtag', 'rt_type_page_revision', $inserts, __METHOD__ );
 }
+
+/// @endcond
