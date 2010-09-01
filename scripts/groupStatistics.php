@@ -176,6 +176,24 @@ $wikimediaCodeMap = array(
 $optionsWithArgs = array( 'groups', 'output', 'skiplanguages', 'legenddetail', 'legendsummary' );
 require( dirname( __FILE__ ) . '/cli.inc' );
 
+/**
+ * @todo Needs documentation.
+ * @ingroup Stats
+ */
+class TranslateStatsOutput extends wikiStatsOutput {
+	function heading() {
+		echo '{| class="sortable wikitable" border="2" cellpadding="4" cellspacing="0" style="background-color: #F9F9F9; border: 1px #AAAAAA solid; border-collapse: collapse; clear:both;" width="100%"' . "\n";
+	}
+
+	function summaryheading() {
+		echo "\n" . '{| class="sortable wikitable" border="2" cellpadding="4" cellspacing="0" style="background-color: #F9F9F9; border: 1px #AAAAAA solid; border-collapse: collapse; clear:both;"' . "\n";
+	}
+
+	function addFreeText( $freeText ) {
+		echo $freeText;
+	}
+}
+
 if ( isset( $options['help'] ) ) {
 	showUsage();
 }
@@ -646,22 +664,4 @@ function showUsage() {
 PHP;
 	STDERR( $msg );
 	exit( 1 );
-}
-
-/**
- * @todo Needs documentation.
- * @ingroup Stats
- */
-class TranslateStatsOutput extends wikiStatsOutput {
-	function heading() {
-		echo '{| class="sortable wikitable" border="2" cellpadding="4" cellspacing="0" style="background-color: #F9F9F9; border: 1px #AAAAAA solid; border-collapse: collapse; clear:both;" width="100%"' . "\n";
-	}
-
-	function summaryheading() {
-		echo "\n" . '{| class="sortable wikitable" border="2" cellpadding="4" cellspacing="0" style="background-color: #F9F9F9; border: 1px #AAAAAA solid; border-collapse: collapse; clear:both;"' . "\n";
-	}
-
-	function addFreeText( $freeText ) {
-		echo $freeText;
-	}
 }
