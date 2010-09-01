@@ -1,6 +1,6 @@
 <?php
 /**
- * This class represents one section of a translatable page.
+ * Helper for TPParse.
  *
  * @file
  * @author Niklas Laxström
@@ -9,21 +9,42 @@
  */
 
 /**
- * @todo Needs documentation.
+ * This class represents one individual section in translatable page.
  * @ingroup PageTranslation
  */
 class TPSection {
-	public $id, $name, $text, $type;
+	/// \string Section name
+	public $id;
+	/// \string New name of the section, that will be saved to database.
+	public $name;
+	/// \string Section text.
+	public $text;
+	/// \string Is this new, existing, changed or deleted section.
+	public $type;
+	/// \string Text of previous version of this section.
+	public $oldText;
 
+	/**
+	 * Returns section text unmodified.
+	 * @return \string Wikitext.
+	 */
 	public function getText() {
 		return $this->text;
 	}
 
+	/**
+	 * Returns section text with variables replaced.
+	 * @return \string Wikitext.
+	 */
 	public function getTextForTrans() {
 		$re = '~<tvar\|([^>]+)>(.*?)</>~u';
 		return preg_replace( $re, '\2', $this->text );
 	}
 
+	/**
+	 * Returns the section text section marker updated or added.
+	 * @return \string Wikitext.
+	 */
 	public function getMarkedText() {
 		$id = isset( $this->name ) ? $this->name : $this->id;
 		$header = "<!--T:{$id}-->";
@@ -40,10 +61,19 @@ class TPSection {
 		return $text;
 	}
 
+	/**
+	 * Returns oldtext, or current text if not available.
+	 * @return \string Wikitext.
+	 */
 	public function getOldText() {
 		return isset( $this->oldtext ) ? $this->oldtext : $this->text;
 	}
 
+	/**
+	 * Returns array of variables defined on this section.
+	 * @return \arrayof{String,String} Values indexed with keys which are
+	 * prefixed with a dollar sign.
+	 */
 	public function getVariables() {
 		$re = '~<tvar\|([^>]+)>(.*?)</>~u';
 		$matches = array();

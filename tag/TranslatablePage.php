@@ -1,7 +1,6 @@
 <?php
 /**
  * Translatable page model.
-
  * @defgroup PageTranslation Page Translation
  * @file
  * @author Niklas Laxström

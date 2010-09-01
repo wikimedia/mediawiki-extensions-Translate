@@ -16,8 +16,7 @@
  * It will list all pages in their various states and provides actions
  * that are suitable for given translatable page.
  *
- * @ingroup SpecialPage
- * @ingroup PageTranslation
+ * @ingroup SpecialPage PageTranslation
  */
 class SpecialPageTranslation extends SpecialPage {
 	function __construct() {
@@ -595,6 +594,14 @@ class SpecialPageTranslation extends SpecialPage {
 		}
 	}
 
+	/**
+	 * Enhanced version of wfDebug that allows more detailed debugging.
+	 * You can pass anything as varags and it will be serialized. Article
+	 * and User objects have special handling to only output name and id.
+	 * @param $method \string Calling method.
+	 * @param $msg \string Debug message.
+	 * @todo Move to better place.
+	 */
 	public static function superDebug( $method, $msg /* varags */ ) {
 		$args = func_get_args();
 		$args = array_slice( $args, 2 );

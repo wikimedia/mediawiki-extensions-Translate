@@ -157,8 +157,8 @@ class MoveJob extends Job {
 	}
 
 	/**
-	* Modified from wfSuppressWarnings
-	*/
+	 * Adapted from wfSuppressWarnings to allow not leaving redirects.
+	 */
 	public static function forceRedirects( $end = false ) {
 		static $suppressCount = 0;
 		static $originalLevel = null;
