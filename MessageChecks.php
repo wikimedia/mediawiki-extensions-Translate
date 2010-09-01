@@ -1,6 +1,6 @@
 <?php
 /**
- * Message checking framework.
+ * %Message checking framework.
  *
  * @file
  * @defgroup MessageCheckers Message Checkers
@@ -31,14 +31,14 @@
  * $warnings[$key][] = array(
  *    array( 'printf', $subcheck, $key, $code ), # check idenfitication
  *    'translate-checks-parameters-unknown', # check warning message
- *    array( 'PARAMS', $params ), # optional special param list, formatted later with $wgLang->commaList
- *    array( 'COUNT', count($params) ), # optional number of params, formatted later with $wgLang->formatNum
+ *    array( 'PARAMS', $params ), # optional special param list, formatted later with Language::commaList()
+ *    array( 'COUNT', count($params) ), # optional number of params, formatted later with Language::formatNum()
  *    'Any other parameters to the message',
  * </pre>
  *
  * @ingroup MessageCheckers
  * @author Niklas Laxström
- * @copyright Copyright © 2008-2009, Niklas Laxström
+ * @copyright Copyright © 2008-2010, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 class MessageChecker {

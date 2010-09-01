@@ -247,7 +247,7 @@ abstract class MessageGroupOld implements MessageGroup {
 }
 
 /**
- * This group supports the MediaWiki messages itself.
+ * This group supports the %MediaWiki messages itself.
  * @todo Move to the new interface.
  */
 class CoreMessageGroup extends MessageGroupOld {
@@ -361,7 +361,7 @@ class CoreMessageGroup extends MessageGroupOld {
 }
 
 /**
- * This group supports messages of MediaWiki extensions using the standard
+ * This group supports messages of %MediaWiki extensions using the standard
  * format.
  * @todo Move to the new interface.
  */
@@ -606,7 +606,7 @@ class AliasMessageGroup extends ExtensionMessageGroup {
 }
 
 /**
- * This class implements the "Most used messages" group for MediaWiki.
+ * This class implements the "Most used messages" group for %MediaWiki.
  * @todo Move to the new interface.
  */
 class CoreMostUsedMessageGroup extends CoreMessageGroup {
@@ -716,10 +716,10 @@ class GettextMessageGroup extends MessageGroupOld {
 }
 
 /**
- * Group for messages that can be controlled via a page in MediaWiki namespace.
+ * Group for messages that can be controlled via a page in %MediaWiki namespace.
  *
  * In the page comments start with # and continue till the end of the line.
- * The page should contain list of page names in MediaWiki namespace, without
+ * The page should contain list of page names in %MediaWiki namespace, without
  * the namespace prefix. Use underscores for spaces in page names, since
  * whitespace separates the page names from each other.
  * @ingroup MessageGroups
