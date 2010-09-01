@@ -12,6 +12,7 @@
  * Contains class with job for moving translation pages.
  *
  * @ingroup PageTranslation
+ * @todo Get rid of direct reference to $wgMemc.
  */
 class MoveJob extends Job {
 	public static function newJob( Title $source, Title $target, $base, /*User*/ $performer ) {

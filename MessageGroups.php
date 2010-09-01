@@ -230,7 +230,7 @@ abstract class MessageGroupOld implements MessageGroup {
 		return null;
 	}
 
-	// Unsupported stuff, just to satisfy the new internace
+	// Unsupported stuff, just to satisfy the new interface
 	public function setConfiguration( $conf ) { }
 	public function getConfiguration() { }
 	public function getNamespace() { return $this->namespaces[0]; }
