@@ -17,7 +17,7 @@
  * "translators". The subpage "translators" must contain the template
  * [[:{{ns:template}}:User|User]], taking a user name as parameter.
  *
- * @ingroup SpecialPage
+ * @ingroup SpecialPage TranslateSpecialPage
  */
 class SpecialSupportedLanguages extends UnlistedSpecialPage {
 	public function __construct() {

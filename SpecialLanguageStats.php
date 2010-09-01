@@ -18,7 +18,7 @@
  * Use {{Special:LanguageStats/nl/1}} to show for 'nl' and suppres completely
  * translated groups.
  *
- * @ingroup SpecialPage
+ * @ingroup SpecialPage TranslateSpecialPage Stats
  */
 class SpecialLanguageStats extends IncludableSpecialPage {
 	function __construct() {

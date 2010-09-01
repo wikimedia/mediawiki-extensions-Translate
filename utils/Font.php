@@ -2,18 +2,24 @@
 /**
  * Contains class with wrapper around font-config.
  *
- * @file
- * @author Niklas Laxström, 2008
+ * @author Niklas Laxström
+ * @copyright Copyright © 2008-2010, Niklas Laxström
  * @license Public Domain
+ * @file
  */
 
 /**
  * Wrapper around font-config to get useful ttf font given a language code.
- * Uses wfShellExec, wfEscapeShellArg and wfDebugLog from MediaWiki.
+ * Uses wfShellExec, wfEscapeShellArg and wfDebugLog, wfGetCache and
+ * wfMemckey from %MediaWiki.
  *
- * @todo Needs documentation.
+ * @ingroup Stats
  */
 class FCFontFinder {
+	/**
+	 * Searches for suitable font in the system.
+	 * @param $code \string Language code.
+	 */
 	public static function find( $code ) {
 		if ( ini_get( 'open_basedir' ) ) {
 			wfDebugLog( 'fcfont', 'Disabled because of open_basedir is active' );

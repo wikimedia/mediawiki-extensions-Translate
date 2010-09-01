@@ -12,6 +12,7 @@
  * Class for caching translation completion percentages.
  * @todo Figure out a better name.
  * @todo Tries to be generic, but is not.
+ * @ingroup Stats
  */
 class ArrayMemoryCache {
 	/// Key for the data stored

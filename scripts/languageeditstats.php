@@ -4,9 +4,10 @@
  *
  * @author Niklas Laxström
  * @author Siebrand Mazeland
- * @copyright Copyright © 2008 Niklas Laxström, Siebrand Mazeland
+ * @copyright Copyright © 2008-2010 Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  * @file
+ * @ingroup Script Stats
  */
 
 $optionsWithArgs = array( 'top', 'days', 'bots', 'ns' );

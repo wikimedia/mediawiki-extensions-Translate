@@ -7,6 +7,7 @@
  * @copyright Copyright © 2007-2010, Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  * @file
+ * @ingroup Script Stats
  */
 
 /**
@@ -164,6 +165,7 @@ require( dirname( __FILE__ ) . '/cli.inc' );
 
 /**
  * @todo Needs documentation.
+ * @ingroup Stats
  */
 class TranslateStatsOutput extends wikiStatsOutput {
 	function heading() {

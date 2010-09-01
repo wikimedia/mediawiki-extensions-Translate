@@ -9,14 +9,15 @@
  */
 
 /**
- * This special page helps with the translations of MediaWiki features that are
+ * This special page helps with the translations of %MediaWiki features that are
  * not in the main messages array (special page aliases, magic words, namespace names).
  *
- * @ingroup SpecialPage
+ * @ingroup SpecialPage TranslateSpecialPage
  */
 class SpecialMagic extends SpecialPage {
 	/**
 	 * Message prefix for translations
+	 * @todo Remove.
 	 */
 	const MSG = 'translate-magic-';
 

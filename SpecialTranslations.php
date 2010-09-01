@@ -13,7 +13,7 @@
  * Implements a special page which shows all translations for a message.
  * Bits taken from SpecialPrefixindex.php and TranslateTasks.php
  *
- * @ingroup SpecialPage
+ * @ingroup SpecialPage TranslateSpecialPage
  */
 class SpecialTranslations extends SpecialAllpages {
 	function __construct() {

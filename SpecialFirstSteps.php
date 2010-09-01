@@ -13,7 +13,7 @@
  * Implements a special page which assists users to become translators.
  * Currently it is tailored for the needs of translatewiki.net
  *
- * @ingroup SpecialPage
+ * @ingroup SpecialPage TranslateSpecialPage
  */
 class SpecialFirstSteps extends UnlistedSpecialPage {
 	protected $skin, $user, $out;

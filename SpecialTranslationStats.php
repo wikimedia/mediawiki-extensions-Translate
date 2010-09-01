@@ -1,6 +1,7 @@
 <?php
 /**
  * Contains logic for special page Special:TranslationStats.
+ * @defgroup Stats Statistics
  *
  * @file
  * @author Niklas Laxström
@@ -11,7 +12,7 @@
 /**
  * Includable special page for generating graphs on translations.
  *
- * @ingroup SpecialPage
+ * @ingroup SpecialPage TranslateSpecialPage Stats
  * @todo Needs documentation.
  */
 class SpecialTranslationStats extends IncludableSpecialPage {

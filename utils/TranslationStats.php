@@ -11,6 +11,7 @@
 
 /**
  * Contains methods that provide statistics for message groups.
+ * @ingroup Stats
  */
 class TranslationStats {
 	/**

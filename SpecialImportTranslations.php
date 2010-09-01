@@ -12,7 +12,7 @@
  * Special page to import Gettext (.po) files exported using Translate extension.
  * Does not support generic Gettext files.
  *
- * @ingroup SpecialPage
+ * @ingroup SpecialPage TranslateSpecialPage
  */
 class SpecialImportTranslations extends SpecialPage {
 	/**

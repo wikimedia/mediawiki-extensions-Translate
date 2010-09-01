@@ -13,7 +13,7 @@
  * Implementation of Special:TranslationChanges special page. Gives an overview
  * per message group of translations in a given number of hours.
  *
- * @ingroup SpecialPage
+ * @ingroup SpecialPage TranslateSpecialPage
  */
 class SpecialTranslationChanges extends SpecialPage {
 	const MSG = 'translationchanges-';

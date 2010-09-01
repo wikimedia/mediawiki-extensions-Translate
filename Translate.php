@@ -644,4 +644,4 @@ function wfAddNamespace( $id, $name ) {
 	$wgNamespacesToBeSearchedDefault[$id] = true;
 }
 
-/** @defgroup SpecialPage Special pages */
+/** @defgroup TranslateSpecialPage Special pages of Translate extension */

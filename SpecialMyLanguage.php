@@ -14,7 +14,7 @@
  *
  * Usage: [[Special:MyLanguage/Page name|link text]]
  *
- * @ingroup SpecialPage
+ * @ingroup SpecialPage TranslateSpecialPage
  */
 class SpecialMyLanguage extends UnlistedSpecialPage {
 	/**
