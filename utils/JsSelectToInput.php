@@ -12,7 +12,7 @@
  */
 class JsSelectToInput {
 	/// Id of the text field where stuff is appended
-	protected $targetId
+	protected $targetId;
 	/// Id of the \<option> field
 	protected $sourceId;
 	/// XmlSelect
