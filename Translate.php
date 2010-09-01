@@ -417,6 +417,8 @@ function efTranslateNamespaces( &$list ) {
 
 /**
  * Initialises the extension.
+ * Does late-initialization that is not possible at file level,
+ * because it depends on user configuration.
  * @private
  */
 function efTranslateInit() {
@@ -429,32 +431,22 @@ function efTranslateInit() {
 	global $wgReservedUsernames, $wgTranslateFuzzyBotName;
 	$wgReservedUsernames[] = $wgTranslateFuzzyBotName;
 
-	/**
-	 * Hook for database schema.
-	 */
+	// Hook for database schema.
 	$wgHooks['LoadExtensionSchemaUpdates'][] = 'PageTranslationHooks::schemaUpdates';
 
-	/**
-	 * Do not activate hooks if not setup properly
-	 */
+	// Do not activate hooks if not setup properly
 	global $wgEnablePageTranslation;
 	if ( !efTranslateCheckPT() ) {
 		$wgEnablePageTranslation = false;
 		return true;
 	}
 
-	/**
-	 * Fuzzy tags for speed.
-	 */
+	// Fuzzy tags for speed.
 	$wgHooks['ArticleSaveComplete'][] = 'TranslateEditAddons::onSave';
 
-	/**
-	 * Page translation setup check and init if enabled.
-	 */
+	// Page translation setup check and init if enabled.
 	if ( $wgEnablePageTranslation ) {
-		/**
-		 * Special page and the right to use it
-		 */
+		// Special page and the right to use it
 		global $wgSpecialPages, $wgAvailableRights;
 		$wgSpecialPages['PageTranslation'] = 'SpecialPageTranslation';
 		$wgSpecialPageGroups['PageTranslation'] = 'pagetools';
@@ -491,24 +483,16 @@ function efTranslateInit() {
 		$wgNamespacesWithSubpages[NS_TRANSLATIONS]      = true;
 		$wgNamespacesWithSubpages[NS_TRANSLATIONS_TALK] = true;
 
-		/**
-		 * Standard protection and register it for filtering
-		 */
+		// Standard protection and register it for filtering
 		$wgNamespaceProtection[NS_TRANSLATIONS] = array( 'translate' );
 		$wgTranslateMessageNamespaces[] = NS_TRANSLATIONS;
 
-		/**
-		 * Page translation hooks
-		 */
+		/// Page translation hooks
 
-		/**
-		 * Register our css, is there a better place for this?
-		 */
+		/// @todo Register our css, is there a better place for this?
 		$wgHooks['OutputPageBeforeHTML'][] = 'PageTranslationHooks::injectCss';
 
-		/**
-		 * Add transver tags and update translation target pages
-		 */
+		// Add transver tags and update translation target pages
 		$wgHooks['ArticleSaveComplete'][] = 'PageTranslationHooks::onSectionSave';
 
 		/**
@@ -516,51 +500,38 @@ function efTranslateInit() {
 		 */
 		# $wgHooks['SkinTemplateOutputPageBeforeExec'][] = 'TranslateTagHooks::addSidebar';
 
-		/**
-		 * Register \<languages/>
-		 */
+		// Register \<languages/>
 		$wgHooks['ParserFirstCallInit'][] = 'efTranslateInitTags';
 
-		/**
-		 * Strip \<translate> tags etc. from source pages when rendering
-		 */
+		// Strip \<translate> tags etc. from source pages when rendering
 		$wgHooks['ParserBeforeStrip'][] = 'PageTranslationHooks::renderTagPage';
 
-		/**
-		 * Check syntax for \<translate>
-		 */
+		// Check syntax for \<translate>
 		$wgHooks['ArticleSave'][] = 'PageTranslationHooks::tpSyntaxCheck';
 		$wgHooks['EditFilterMerged'][] = 'PageTranslationHooks::tpSyntaxCheckForEditPage';
 
-		/**
-		 * Add transtag to page props for discovery
-		 */
+		// Add transtag to page props for discovery
 		$wgHooks['ArticleSaveComplete'][] = 'PageTranslationHooks::addTranstag';
 
-		/**
-		 * Prevent editing of unknown pages in Translations namespace
-		 */
+		// Prevent editing of unknown pages in Translations namespace
 		$wgHooks['getUserPermissionsErrorsExpensive'][] = 'PageTranslationHooks::translationsCheck';
 
-		/**
-		 * Locking during page moves
-		 */
+		// Locking during page moves
 		$wgHooks['getUserPermissionsErrorsExpensive'][] = 'PageTranslationHooks::lockedPagesCheck';
 
+		// Our custom header for translation pages
 		$wgHooks['ArticleViewHeader'][] = 'PageTranslationHooks::test';
 
+		// Our tables are needed for parser tests
 		$wgHooks['ParserTestTables'][] = 'PageTranslationHooks::parserTestTables';
 
+		// The unuseful export all translations item in the toolbox
 		$wgHooks['SkinTemplateToolboxEnd'][] = 'PageTranslationHooks::exportToolbox';
 
-		/**
-		 * Prevent section pages appearing in categories
-		 */
+		// Prevent section pages appearing in categories
 		$wgHooks['LinksUpdate'][] = 'PageTranslationHooks::preventCategorization';
 
-		/**
-		 * Custom move page that can move all the associated pages too
-		 */
+		// Custom move page that can move all the associated pages too
 		$wgHooks['SpecialPage_initList'][] = 'PageTranslationHooks::replaceMovePage';
 	}
 }
@@ -588,6 +559,7 @@ function efTranslateCheckPT() {
 
 	/** Add our tags if they are not registered yet
 	 *  tp:tag is called also the ready tag
+	 * @todo Remove useless complication that is revtag_type table.
 	 */
 	$tags = array( 'tp:mark', 'tp:tag', 'tp:transver', 'fuzzy' );
 
@@ -598,9 +570,7 @@ function efTranslateCheckPT() {
 	}
 
 	foreach ( $tags as $tag ) {
-		/**
-		 * @todo: use insert ignore
-		 */
+		/// @todo: use insert ignore
 		$field = array( 'rtt_name' => $tag );
 		$ret = $dbw->selectField( 'revtag_type', 'rtt_name', $field, __METHOD__ );
 
@@ -635,7 +605,7 @@ function efTranslateCheckWarn( $msg, &$sitenotice ) {
  * @return \bool true
  */
 function efTranslateInitTags( $parser ) {
-	 // For nice language list in-page
+	// For nice language list in-page
 	$parser->setHook( 'languages', array( 'PageTranslationHooks', 'languages' ) );
 	return true;
 }

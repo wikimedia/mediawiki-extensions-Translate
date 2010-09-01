@@ -1,11 +1,14 @@
 <?php
 /**
- * @todo Needs documentation.
+ * Implementation of JsSelectToInput class which is compatible with MediaWiki's preferences system.
  * @file
+ * @author Niklas Laxström
+ * @copyright Copyright © 2010 Niklas Laxström
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
 /**
- * @todo Needs documentation.
+* Implementation of JsSelectToInput class which is extends HTMLTextField.
  */
 class HTMLJsSelectToInputField extends HTMLTextField {
 	function getInputHTML( $value ) {
@@ -54,7 +57,6 @@ class HTMLJsSelectToInputField extends HTMLTextField {
 
 	function filter( $value, $alldata ) {
 		$value = parent::filter( $value, $alldata );
-
 		return implode( ', ', $this->tidy( $value ) );
 	}
 }
