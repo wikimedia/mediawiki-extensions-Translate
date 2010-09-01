@@ -1,0 +1,115 @@
+BASIC:
+  id: ext-0-wikimedia
+  label: Extension used by Wikimedia
+  display: ext/wikimedia
+  meta: yes
+  class: AggregateMessageGroup
+  description: '{{int:translate-group-desc-wikimediaextensions}}'
+  namespace: NS_MEDIAWIKI
+
+GROUPS:
+  - ext-abusefilter
+  - ext-antibot # anti spam and such (usually all wikis)
+  - ext-antispoof
+  - ext-assertedit # bots
+  - ext-categorytree
+  - ext-centralauth
+  - ext-centralnotice
+  - ext-charinsert
+  - ext-checkuser
+  - ext-cite
+  - ext-citespecial
+  - ext-clientside # usability.wikimedia.org
+  - ext-codereview # MediaWiki.org
+  - ext-collection-core
+  - ext-collection-other
+  - ext-communityvoice # usability.wikimedia.org
+  - ext-confirmedit
+  - ext-confirmeditfancycaptcha
+  - ext-contactpage # on nl.wp and wikimediafoundation.org
+  - ext-contributionreporting # wikimediafoundation.org
+  - ext-contributiontracking # wikimediafoundation.org
+  - ext-crossnamespacelinks
+  - ext-di-pfpg # wikimediafoundation.org
+  - ext-dismissablesitenotice
+  - ext-doublewiki # Wikisource
+  - ext-drafts # test.wikipedia.org
+  - ext-expandtemplates
+  - ext-extensiondistributor # MediaWiki.org
+  - ext-externalpages # 2009-11-30: test.wikipedia.org
+  - ext-flaggedrevs-flaggedrevs
+  - ext-flaggedrevs-configuredpages
+  - ext-flaggedrevs-pendingchanges
+  - ext-flaggedrevs-problemchanges
+  - ext-flaggedrevs-qualityoversight
+  - ext-flaggedrevs-reviewedpages
+  - ext-flaggedrevs-reviewedversions
+  - ext-flaggedrevs-stabilization
+  - ext-flaggedrevs-stablepages
+  - ext-flaggedrevs-unreviewedpages
+  - ext-flaggedrevs-validationstatistics
+  - ext-fundraiserportal # 2009-10-08: test.wikipedia.org
+  - ext-gadgets
+  - ext-geolite # 2009-11-13: meta.wikimedia.org
+  - ext-globalblocking
+  - ext-globalusage # 2009-11-11: commons.wikimedia.org
+  - ext-honeypotintegration # 2009-08-13: test.wikipedia.org
+  - ext-imagemap
+  - ext-inputbox
+  - ext-intersection
+  - ext-labeledsectiontransclusion # Wikisource
+  - ext-liquidthreads # 2009-11-11: MediaWiki.org and some *.labs.wikimedia.org
+  - ext-mwsearch
+  - ext-newusermessage
+  - ext-nuke
+  - ext-oai
+  - ext-ogghandler
+  - ext-opensearchxml
+  - ext-parserfunctions
+  - ext-pdfhandler
+  - ext-poem
+  - ext-proofreadpage # Wikisource
+  - ext-quiz
+  - ext-readerfeedback-ratedpages
+  - ext-readerfeedback-ratinghistory
+  - ext-readerfeedback-readerfeedback
+  - ext-renameuser
+  - ext-scanset
+  - ext-securepoll
+  - ext-simpleantispam
+  - ext-sitematrix
+  - ext-skinperpage # Wikimediafoundation.org
+  - ext-spamblacklist
+  - ext-strategywiki-activestrategy # 2010-05-08: strategywiki.wikimedia.org
+  - ext-syntaxhighlightgeshi
+  - ext-timeline
+  - ext-titleblacklist
+  - ext-titlekey
+  - ext-torblock
+  - ext-trustedxff
+  - ext-ui-clicktracking
+  - ext-ui-dontswitchmeover
+  - ext-ui-optin
+  - ext-ui-optinlink
+  - ext-ui-prefstats
+  - ext-ui-prefswitch
+  - ext-ui-prefswitchlink
+  - ext-ui-usabilityinitiative
+  - ext-ui-userdailycontribs
+  - ext-ui-vector
+  - ext-ui-vector-collapsiblenav
+  - ext-ui-vector-editwarning
+  - ext-ui-vector-simplesearch
+  - ext-ui-wikieditor
+  - ext-ui-wikieditor-addmediawizard
+  - ext-ui-wikieditor-highlight
+  - ext-ui-wikieditor-preview
+  - ext-ui-wikieditor-publish
+  - ext-ui-wikieditor-templateeditor
+  - ext-ui-wikieditor-templates
+  - ext-ui-wikieditor-toc
+  - ext-ui-wikieditor-toolbar
+  - ext-uploadblacklist
+  - ext-wikihiero
+  - ext-wikimediamessages
+  - ext-wikimedialicensetexts # commons.wikimedia.org

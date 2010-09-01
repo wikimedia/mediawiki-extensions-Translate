@@ -1,0 +1,13 @@
+BASIC:
+  id: ext-translate-0-all
+  label: Translate
+  display: ext/translate
+  meta: yes
+  class: AggregateMessageGroup
+  description: '{{int:translate-group-desc-translate}}'
+  namespace: NS_MEDIAWIKI
+
+GROUPS:
+  - ext-translate-core
+  - ext-translate-firststeps
+  - ext-translate-pagetranslation
