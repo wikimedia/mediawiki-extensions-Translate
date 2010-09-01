@@ -1,8 +1,8 @@
 <?php
 /**
- * Message groups
+ * This file contains the old style message groups and MessageGroups class
+ * for accessing all message groups by id.
  *
- * @todo: needs documentation
  * @file
  * @author Niklas Laxström
  * @copyright Copyright © 2008-2010, Niklas Laxström
@@ -10,6 +10,7 @@
  */
 
 /**
+ * This is the interface for old style message groups.
  * @deprecated
  */
 abstract class MessageGroupOld implements MessageGroup {
@@ -189,8 +190,8 @@ abstract class MessageGroupOld implements MessageGroup {
 	/**
 	 * Creates a new MessageCollection for this group.
 	 *
-	 * @param $code \string The langauge code for this collection.
-	 * @param $unique \bool Wether to build collection for messages unique to this
+	 * @param $code \string Language code for this collection.
+	 * @param $unique \bool Whether to build collection for messages unique to this
 	 *                group only.
 	 */
 	public function initCollection( $code, $unique = false ) {
@@ -229,6 +230,7 @@ abstract class MessageGroupOld implements MessageGroup {
 		return null;
 	}
 
+	// Unsupported stuff, just to satisfy the new internace
 	public function setConfiguration( $conf ) { }
 	public function getConfiguration() { }
 	public function getNamespace() { return $this->namespaces[0]; }
@@ -245,8 +247,8 @@ abstract class MessageGroupOld implements MessageGroup {
 }
 
 /**
- * @todo: needs documentation
- * @deprecated
+ * This group supports the MediaWiki messages itself.
+ * @todo Move to the new interface.
  */
 class CoreMessageGroup extends MessageGroupOld {
 	protected $label       = 'MediaWiki';
@@ -287,9 +289,7 @@ class CoreMessageGroup extends MessageGroupOld {
 			$parentDefs = $parent->getDefinitions();
 			$ourDefs = $this->getDefinitions();
 
-			/**
-			 * Filter out shared messages.
-			 */
+			// Filter out shared messages.
 			foreach ( array_keys( $parentDefs ) as $key ) {
 				unset( $ourDefs[$key] );
 			}
@@ -302,7 +302,6 @@ class CoreMessageGroup extends MessageGroupOld {
 
 	public function getMessageFile( $code ) {
 		$code = ucfirst( str_replace( '-', '_', $code ) );
-
 		return "Messages$code.php";
 	}
 
@@ -329,18 +328,14 @@ class CoreMessageGroup extends MessageGroupOld {
 
 	public function load( $code ) {
 		$file = $this->getMessageFileWithPath( $code );
-		/**
-		 * Can return null, convert to array.
-		 */
+		// Can return null, convert to array.
 		$messages = (array) $this->mangler->mangle(
 			ResourceLoader::loadVariableFromPHPFile( $file, 'messages' )
 		);
 
 		if ( $this->parentId ) {
 			if ( $code !== 'en' ) {
-				/**
-				 * For branches, load newer compatible messages for missing entries, if any.
-				 */
+				// For branches, load newer compatible messages for missing entries, if any.
 				$trunk = MessageGroups::getGroup( $this->parentId );
 				$messages += $trunk->mangler->unmangle( $trunk->load( $code ) );
 			}
@@ -366,8 +361,9 @@ class CoreMessageGroup extends MessageGroupOld {
 }
 
 /**
- * @todo: needs documentation
- * @deprecated
+ * This group supports messages of MediaWiki extensions using the standard
+ * format.
+ * @todo Move to the new interface.
  */
 class ExtensionMessageGroup extends MessageGroupOld {
 	protected $magicFile, $aliasFile;
@@ -401,9 +397,7 @@ class ExtensionMessageGroup extends MessageGroupOld {
 
 	public function getDescription() {
 		if ( $this->description === null ) {
-			/**
-			 * Load the messages only when needed.
-			 */
+			// Load the messages only when needed.
 			$this->setDescriptionMsgReal( $this->descriptionKey, $this->descriptionUrl );
 		}
 		return parent::getDescription();
@@ -530,8 +524,9 @@ class ExtensionMessageGroup extends MessageGroupOld {
 }
 
 /**
- * @todo: needs documentation
- * @deprecated
+ * This supports translation of special page aliases via
+ * the Special:AdvancedTranslate page.
+ * @todo Move to the new interface or no interface at all.
  */
 class AliasMessageGroup extends ExtensionMessageGroup {
 	protected $dataSource;
@@ -611,8 +606,8 @@ class AliasMessageGroup extends ExtensionMessageGroup {
 }
 
 /**
- * @todo: needs documentation
- * @deprecated
+ * This class implements the "Most used messages" group for MediaWiki.
+ * @todo Move to the new interface.
  */
 class CoreMostUsedMessageGroup extends CoreMessageGroup {
 	protected $label = 'MediaWiki (most used)';
@@ -642,8 +637,8 @@ class CoreMostUsedMessageGroup extends CoreMessageGroup {
 }
 
 /**
- * @todo: needs documentation
- * @deprecated
+ * This implements the old style message group for Gettext format.
+ * @todo Move to the new interface.
  */
 class GettextMessageGroup extends MessageGroupOld {
 	protected $type = 'gettext';
@@ -852,12 +847,6 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 	public function getMessage( $key, $code ) {
 		if ( $code === 'en' ) {
 			$stuff = $this->load( 'en' );
-			/**
-			 * @todo Throws PHP Notice:  Undefined index:  \<key>
-			 * when keys are added, but createMessageIndex.php is
-			 * not run (like when a translatable page from page
-			 * translation was added).
-			 */
 			return $stuff[$key];
 		}
 
@@ -895,8 +884,11 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 /**
  * Factory class for accessing message groups individually by id or
  * all of them as an list.
+ * @todo Clean up the mixed static/member method interface.
  */
 class MessageGroups {
+
+	/// Initialises the list of groups (but not the groups itself if possible).
 	public static function init() {
 		static $loaded = false;
 		if ( $loaded ) return;
@@ -935,14 +927,24 @@ class MessageGroups {
 
 	/**
 	 * Returns a cache object. Currently just wrapper for
-	 * database cache, but could be improved or replaced
+	 * database cache, but @todo could be improved or replaced
 	 * with something that prefers Memcached over db.
 	 */
 	protected static function getCache() {
 		return wfGetCache( CACHE_DB );
 	}
 
-	public static function loadGroupDefinitions() {
+	/**
+	 * This constructs the list of all groups from multiple different
+	 * sources. When possible, a cache dependency is created to automatically
+	 * recreate the cache when configuration changes.
+	 * @todo Reduce the ways of which messages can be added. Target is just
+	 * to have three ways: Yaml files, translatable pages and with the hook.
+	 * @todo In conjuction with the above, reduce the number of global
+	 * variables like wgTranslate#C and have the message groups specify
+	 * their own cache dependencies.
+	 */
+	protected static function loadGroupDefinitions() {
 		global $wgTranslateAddMWExtensionGroups;
 		global $wgEnablePageTranslation, $wgTranslateGroupFiles;
 		global $wgTranslateAC, $wgTranslateEC, $wgTranslateCC;
@@ -973,6 +975,7 @@ class MessageGroups {
 			$res = $dbr->select( $tables, $vars, $conds, __METHOD__, $options );
 
 			foreach ( $res as $r ) {
+				/// @todo Lazy-construct translatable page message groups.
 				$title = Title::makeTitle( $r->page_namespace, $r->page_title )->getPrefixedText();
 				$id = "page|$title";
 				$wgTranslateCC[$id] = new WikiPageMessageGroup( $id, $title );
@@ -1056,12 +1059,13 @@ class MessageGroups {
 		}
 	}
 
-	/// @todo make protected
+	/// @todo Make protected.
 	public $classes;
 	private function __construct() {
 		self::init();
 	}
 
+	/// Constructor function.
 	public static function singleton() {
 		static $instance;
 		if ( !$instance instanceof self ) {
