@@ -1,6 +1,6 @@
 <?php
 /**
- * @todo Needs documentation.
+ * Code for caching translation completion percentages.
  *
  * @file
  * @author Niklas Laxström
@@ -9,27 +9,39 @@
  */
 
 /**
- * @todo Needs documentation.
+ * Class for caching translation completion percentages.
+ * @todo Figure out a better name.
+ * @todo Tries to be generic, but is not.
  */
 class ArrayMemoryCache {
-	protected $table;
+	/// Key for the data stored
 	protected $key;
+	/// Memory cache wrapper
 	protected $memc;
+	/// Object cache of the data
 	protected $cache;
 
+	/**
+	 * Constructor
+	 * @param $table \string Name of the cache.
+	 */
 	public function __construct( $table ) {
-		$this->table = $table;
-		$this->key = wfMemcKey( $this->table );
+		$this->key = wfMemcKey( $table );
 
 		global $wgMemc;
 
 		$this->memc = $wgMemc;
 	}
 
+	/// Destructor
 	public function __destruct() {
 		$this->save();
 	}
 
+	/**
+	 * @copydoc ArrayMemoryCache::__construct() 
+	 * Static factory function for the constructor.
+	 */
 	public static function factory( $table ) {
 		// __CLASS__ doesn't work, but this is PHP
 		return new ArrayMemoryCache( $table );

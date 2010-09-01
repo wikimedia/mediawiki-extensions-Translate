@@ -45,7 +45,7 @@ class MessageGroupCache {
 
 	/**
 	 * Returns list of message keys that are stored.
-	 * @return \List{String} Message keys that can be passed one-by-one to get() method.
+	 * @return \list{String} Message keys that can be passed one-by-one to get() method.
 	 */
 	public function getKeys() {
 		return unserialize( $this->open()->get( '#keys' ) );

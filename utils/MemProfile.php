@@ -1,7 +1,7 @@
 <?php
 if ( !defined( 'MEDIAWIKI' ) ) die();
 /**
- * Helper functions to locate when memory is consumed
+ * Very crude tools to track memory usage
  *
  * @file
  * @author Niklas Laxström
@@ -9,11 +9,14 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+/// Memory usage at checkpoints
 $wgMemUse = array();
+/// Tracks the deepness of the stack
 $wgMemStack = 0;
 
 /**
- * @todo Needs documentation.
+ * Call to start memory counting for a block.
+ * @param $a \string Block name.
  */
 function wfMemIn( $a ) {
 	global $wgLang, $wgMemUse, $wgMemStack;
@@ -32,7 +35,8 @@ function wfMemIn( $a ) {
 }
 
 /**
- * @todo Needs documentation.
+ * Call to start stop counting for a block. Difference from start is shown.
+ * @param $a \string Block name.
  */
 function wfMemOut( $a ) {
 	global $wgLang, $wgMemUse, $wgMemStack;
