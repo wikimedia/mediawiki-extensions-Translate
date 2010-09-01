@@ -232,8 +232,6 @@ class PremadeMediawikiExtensionGroups {
 /**
  * Adds a message group containing all supported MediaWiki extensions in the
  * Wikimedia Subversion repository.
- *
- * @todo Needs documentation.
  */
 class AllMediawikiExtensionsGroup extends MessageGroupOld {
 	protected $label = 'MediaWiki extensions';
@@ -242,16 +240,6 @@ class AllMediawikiExtensionsGroup extends MessageGroupOld {
 	protected $type  = 'mediawiki';
 	protected $classes = null;
 	protected $description = '{{int:translate-group-desc-mediawikiextensions}}';
-
-	public function getProblematic( $code ) {
-		$this->init();
-		$array = array();
-		foreach ( $this->classes as $class ) {
-			// Use array_merge because of numeric keys
-			$array = array_merge( $array, $class->getProblematic( $code ) );
-		}
-		return $array;
-	}
 
 	// Don't add the (mw ext) thingie
 	public function getLabel() { return $this->label; }
