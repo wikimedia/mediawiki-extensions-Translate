@@ -490,9 +490,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 			$ids = (array) $this->conf['GROUPS'];
 
 			foreach ( $ids as $id ) {
-				/**
-				 * Do not try to include self and go to infinite loop.
-				 */
+				// Do not try to include self and go to infinite loop.
 				if ( $id === $this->getId() ) {
 					continue;
 				}
@@ -502,7 +500,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 					error_log( "Invalid group id in {$this->getId()}: $id" );
 					continue;
 				}
-				$groups[$id] =  $group;
+				$groups[$id] = $group;
 			}
 			$this->groups = $groups;
 		}
@@ -513,8 +511,13 @@ class AggregateMessageGroup extends MessageGroupBase {
 		$messages = array();
 		foreach ( $this->getGroups() as $group ) {
 			$cache = new MessageGroupCache( $group );
-			foreach ( $cache->getKeys() as $key ) {
-				$messages[$key] = $cache->get( $key );
+			if ( $cache->exists() ) {
+				foreach ( $cache->getKeys() as $key ) {
+					$messages[$key] = $cache->get( $key );
+				}
+			} else {
+				// BC for MessageGroupOld
+				$messages = wfArrayMerge( $messages, $group->load( 'en' ) );
 			}
 		}
 
