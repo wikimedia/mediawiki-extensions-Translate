@@ -4,7 +4,7 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2009, Niklas Laxström
+ * @copyright Copyright © 2009-2010, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -28,9 +28,12 @@ class ArrayMemoryCache {
 	public function __construct( $table ) {
 		$this->key = wfMemcKey( $table );
 
-		global $wgMemc;
+		$cacher = wfGetCache( CACHE_MEMCACHED );
+		if ( $cacher instanceof FakeMemCachedClient ) {
+			$cacher = wfGetCache( CACHE_DB );
+		}
 
-		$this->memc = $wgMemc;
+		$this->memc = $cacher;
 	}
 
 	/// Destructor
