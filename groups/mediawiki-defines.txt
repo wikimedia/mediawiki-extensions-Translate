@@ -47,6 +47,8 @@ Api SVG Proxy
 
 Approved Revs
 
+Article To Category 2
+
 Asksql
 aliasfile = Asksql/Asksql.alias.php
 
