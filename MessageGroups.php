@@ -948,7 +948,7 @@ class MessageGroups {
 		global $wgTranslateAddMWExtensionGroups;
 		global $wgEnablePageTranslation, $wgTranslateGroupFiles;
 		global $wgTranslateAC, $wgTranslateEC, $wgTranslateCC;
-		global $wgAutoloadClasses;
+		global $wgAutoloadClasses, $wgTranslateExtensionDirectory;
 
 		$deps = array();
 		$deps[] = new GlobalDependency( 'wgTranslateAddMWExtensionGroups' );
@@ -957,6 +957,7 @@ class MessageGroups {
 		$deps[] = new GlobalDependency( 'wgTranslateAC' );
 		$deps[] = new GlobalDependency( 'wgTranslateEC' );
 		$deps[] = new GlobalDependency( 'wgTranslateCC' );
+		$deps[] = new GlobalDependency( 'wgTranslateExtensionDirectory' );
 		$deps[] = New FileDependency( dirname( __FILE__ ) . '/groups/mediawiki-defines.txt' );
 		$deps[] = New FileDependency( dirname( __FILE__ ) . '/groups/Wikia/extensions.txt' );
 
