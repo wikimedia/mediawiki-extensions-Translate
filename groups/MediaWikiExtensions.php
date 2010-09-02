@@ -27,13 +27,20 @@ class PremadeMediawikiExtensionGroups {
 	public function init() {
 		if ( $this->groups !== null ) return;
 
-		global $wgAutoloadClasses, $IP, $wgConfigureExtDir;
-		if ( !isset( $wgConfigureExtDir ) ) {
-			$wgConfigureExtDir = "$IP/extensions/";
+		global $wgAutoloadClasses, $IP, $wgTranslateExtensionDirectory;
+
+		$postfix = 'Configure/load_txt_def/TxtDef.php';
+		if ( file_exists( "$IP/extensions/$postfix" ) ) {
+			$prefix = "$IP/extensions";
+		} elseif( file_exists( "$wgTranslateExtensionDirectory/$postfix" ) ) {
+			$prefix = $wgTranslateExtensionDirectory;
+		} else {
+			$prefix = false;
 		}
-		$wgAutoloadClasses['TxtDef'] = $wgConfigureExtDir . "Configure/load_txt_def/TxtDef.php";
-		if ( $this->useConfigure && class_exists( 'TxtDef' ) ) {
-			$tmp = TxtDef::loadFromFile( $wgConfigureExtDir . "Configure/settings/Settings-ext.txt" );
+
+		if ( $this->useConfigure && $prefix ) {
+			$wgAutoloadClasses['TxtDef'] = "$prefix/$postfix";
+			$tmp = TxtDef::loadFromFile( "$prefix/Configure/settings/Settings-ext.txt" );
 			$configureData = array_combine( array_map( array( __CLASS__, 'foldId' ), array_keys( $tmp ) ), array_values( $tmp ) );
 		} else {
 			$configureData = array();
@@ -309,8 +316,6 @@ class AllMediawikiExtensionsGroup extends MessageGroupOld {
 /**
  * Adds a message group containing all supported MediaWiki extensions used by
  * Wikimedia.
- *
- * @todo Needs documentation.
  */
 class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $label = 'Extensions used by Wikimedia';
@@ -446,8 +451,6 @@ class AllWikimediaExtensionsGroup extends AllMediawikiExtensionsGroup {
 /**
  * Adds a message group containing all components of the MediaWiki extension
  * Collection.
- *
- * @todo Needs documentation.
  */
 class AllCollectionExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $label = 'Collection';
@@ -476,8 +479,6 @@ class AllCollectionExtensionsGroup extends AllMediawikiExtensionsGroup {
 /**
  * Adds a message group containing all components of the MediaWiki extension
  * FlaggedRevs.
- *
- * @todo Needs documentation.
  */
 class AllFlaggedRevsExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $label = 'FlaggedRevs';
@@ -515,8 +516,6 @@ class AllFlaggedRevsExtensionsGroup extends AllMediawikiExtensionsGroup {
 /**
  * Adds a message group containing all components of the MediaWiki extension
  * ReaderFeedback.
- *
- * @todo Needs documentation.
  */
 class AllReaderFeedbackExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $label = 'ReaderFeedback';
@@ -546,8 +545,6 @@ class AllReaderFeedbackExtensionsGroup extends AllMediawikiExtensionsGroup {
 /**
  * Adds a message group containing all components of the MediaWiki extension
  * SocialProfile.
- *
- * @todo Needs documentation.
  */
 class AllSocialProfileExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $label = 'Social Profile';
@@ -582,8 +579,6 @@ class AllSocialProfileExtensionsGroup extends AllMediawikiExtensionsGroup {
 /**
  * Adds a message group containing all components of the MediaWiki extension
  * Translate.
- *
- * @todo Needs documentation.
  */
 class AllTranslateExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $label = 'Translate';
@@ -613,8 +608,6 @@ class AllTranslateExtensionsGroup extends AllMediawikiExtensionsGroup {
 /**
  * Adds a message group containing all components of the MediaWiki extension
  * Uniwiki.
- *
- * @todo Needs documentation.
  */
 class AllUniwikiExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $label = 'Uniwiki';
@@ -653,8 +646,6 @@ class AllUniwikiExtensionsGroup extends AllMediawikiExtensionsGroup {
 /**
  * Adds a message group containing all components of the Wikimedia Usability
  * Initiative.
- *
- * @todo Needs documentation.
  */
 class AllUsabilityInitiativeExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $label = 'Usability Initiative';
