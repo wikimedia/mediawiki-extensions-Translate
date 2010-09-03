@@ -39,7 +39,7 @@ class MWExtFileList extends Maintenance {
 		}
 
 		$files = array_keys( $this->files );
-		$this->output( implode( "\n", $files ) . "\n" );
+		$this->output( trim( implode( "\n", $files ) . "\n" ) );
 	}
 
 	public function addPaths( $file ) {
