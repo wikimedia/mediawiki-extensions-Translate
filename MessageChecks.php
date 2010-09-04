@@ -53,7 +53,7 @@ class MessageChecker {
 	public function __construct( MessageGroup $group ) {
 		if ( self::$globalBlacklist === null ) {
 			$file = dirname( __FILE__ ) . '/check-blacklist.php';
-			$list = ResourceLoader::loadVariableFromPHPFile( $file, 'checkBlacklist' );
+			$list = PHPVariableLoader::loadVariableFromPHPFile( $file, 'checkBlacklist' );
 			$keys = array( 'group', 'check', 'subcheck', 'code', 'message' );
 
 			foreach ( $list as $key => $pattern ) {

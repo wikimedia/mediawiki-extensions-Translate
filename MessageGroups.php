@@ -330,7 +330,7 @@ class CoreMessageGroup extends MessageGroupOld {
 		$file = $this->getMessageFileWithPath( $code );
 		// Can return null, convert to array.
 		$messages = (array) $this->mangler->mangle(
-			ResourceLoader::loadVariableFromPHPFile( $file, 'messages' )
+			PHPVariableLoader::loadVariableFromPHPFile( $file, 'messages' )
 		);
 
 		if ( $this->parentId ) {

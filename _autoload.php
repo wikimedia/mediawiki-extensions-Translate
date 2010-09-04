@@ -92,7 +92,7 @@ $wgAutoloadClasses['XliffFormatWriter'] = $dir . 'ffs/Xliff.php';
  * @name   Various utilities
  * @{
  */
-$wgAutoloadClasses['ResourceLoader'] = $dir . 'utils/ResourceLoader.php';
+$wgAutoloadClasses['PHPVariableLoader'] = $dir . 'utils/ResourceLoader.php';
 $wgAutoloadClasses['StringMangler'] = $dir . 'utils/StringMatcher.php';
 $wgAutoloadClasses['StringMatcher'] = $dir . 'utils/StringMatcher.php';
 $wgAutoloadClasses['FCFontFinder'] = $dir . 'utils/Font.php';

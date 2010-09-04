@@ -10,7 +10,7 @@
 /**
  * Stuff for handling configuration files in PHP format.
  */
-class ResourceLoader {
+class PHPVariableLoader {
 	/**
 	 * Returns a global variable from PHP file by executing the file.
 	 * @param $_filename \string Path to the file.
