@@ -1,6 +1,6 @@
 BASIC:
   id: out-ihris-manage-0-all
-  label: iHris Manage
+  label: iHRIS Manage
   display: out/ihris/manage
   meta: yes
   class: AggregateMessageGroup
