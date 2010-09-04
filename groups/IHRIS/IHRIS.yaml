@@ -1,0 +1,30 @@
+BASIC:
+  id: out-ihris-manage-0-all
+  label: iHris Manage
+  display: out/ihris/manage
+  meta: yes
+  class: AggregateMessageGroup
+  description: '{{int:bw-desc-ihris-manage}}'
+  namespace: NS_IHRIS
+
+GROUPS:
+  - out-ihris-manage-acci
+  - out-ihris-manage-app
+  - out-ihris-manage-bene
+  - out-ihris-manage-crfp
+  - out-ihris-manage-crfr
+  - out-ihris-manage-crpr
+  - out-ihris-manage-crsp
+  - out-ihris-manage-crsr
+  - out-ihris-manage-cure
+  - out-ihris-manage-diac
+  - out-ihris-manage-job
+  - out-ihris-manage-manage
+  - out-ihris-manage-masi
+  - out-ihris-manage-pede
+  - out-ihris-manage-pepo
+  - out-ihris-manage-regi
+  - out-ihris-manage-sade
+  - out-ihris-manage-sala
+  - out-ihris-manage-side
+  - out-ihris-manage-siwa
