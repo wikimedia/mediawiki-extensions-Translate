@@ -12,54 +12,35 @@
 /**
  * Core message collection class.
  *
- * @todo Needs documentation.
+ * Message group is collection of messages of one message group in one
+ * language. It handles loading of the messages in one huge batch, and also
+ * stores information that can be used to filter the collection in different
+ * ways.
  */
 class MessageCollection implements ArrayAccess, Iterator, Countable {
-	/**
-	 * It is handy to store the language code here.
-	 */
-	public $code = null;
+	/// \string Language code.
+	public $code;
 
-	/**
-	 * External stuff.
-	 */
-
-	/**
-	 * MessageDefinitions
-	 */
+	/// \type{MessageDefinitions}
 	protected $definitions = null;
 
-	/**
-	 * message key => translation
-	 */
+	/// \arrayof{String,String} Message key => translation.
 	protected $infile = array();
 
-	/**
-	 * Keys and messages.
-	 */
+	// Keys and messages.
 
-	/**
-	 * message key => database key
-	 */
+	/// \arrayof{String,String} Message key => database key.
 	protected $keys = null;
 
-	/**
-	 * message key => ThinMessage
-	 */
+	/// \arrayof{String,TMessage} Message key => messages.
 	protected $messages = null;
 
-	/**
-	 * Database resources
-	 */
+	// Database resources
 
-	/**
-	 * existence, fuzzy
-	 */
+	// existence, fuzzy
 	protected $dbInfo = null;
 
-	/**
-	 * all translations
-	 */
+	// all translations
 	protected $dbData = null;
 
 	/**
@@ -68,29 +49,32 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 */
 	protected $tags = array(); //
 
-	/**
-	 * Authors
-	 */
+	/// \list{String} Authors.
 	protected $authors = array();
 
 	/**
-	 * Constructors etc.
+	 * Constructors. Use newFromDefinitions() instead.
+	 * @param $code \string Language code.
 	 */
 	public function __construct( $code ) {
 		$this->code = $code;
 	}
 
+	/**
+	 * Construct a new message collection from definitions.
+	 * @param $definitions \type{MessageDefinitions}
+	 * @param $code \string Language code.
+	 * @return \type{MessageCollection}
+	 */
 	public static function newFromDefinitions( MessageDefinitions $definitions, $code ) {
 		$collection = new self( $code );
 		$collection->definitions = $definitions;
 		$collection->resetForNewLanguage( $code );
-
 		return $collection;
 	}
 
-	/**
-	 * Data setters
-	 */
+	// Data setters
+
 	public function setInfile( array $messages ) {
 		$this->infile = $messages;
 	}
