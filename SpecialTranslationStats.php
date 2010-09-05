@@ -1,7 +1,6 @@
 <?php
 /**
  * Contains logic for special page Special:TranslationStats.
- * @defgroup Stats Statistics
  *
  * @file
  * @author Niklas Laxström
@@ -10,10 +9,14 @@
  */
 
 /**
+ * @defgroup Stats Statistics
+ * Collection of code to produce various kinds of statistics.
+ */
+
+/**
  * Includable special page for generating graphs on translations.
  *
  * @ingroup SpecialPage TranslateSpecialPage Stats
- * @todo Needs documentation.
  */
 class SpecialTranslationStats extends IncludableSpecialPage {
 	public function __construct() {
@@ -103,7 +106,11 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 		}
 	}
 
-	protected function form( $opts ) {
+	/**
+	 * Constructs the form which can be used to generate custom graphs.
+	 * @param $opts FormOptions
+	 */
+	protected function form( FormOptions $opts ) {
 		global $wgOut, $wgScript;
 
 		$this->setHeaders();
@@ -173,6 +180,12 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 		);
 	}
 
+	/**
+	 * Constructs a table row with label and input in two columns.
+	 * @param $name \string Option name.
+	 * @param $opts FormOptions
+	 * @return \string Html.
+	 */
 	protected function eInput( $name, FormOptions $opts ) {
 		$value = $opts[$name];
 
@@ -182,6 +195,11 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 			'</td></tr>' . "\n";
 	}
 
+	/**
+	 * Constructs a label for option.
+	 * @param $name \string Option name.
+	 * @return \string Html.
+	 */
 	protected function eLabel( $name ) {
 		$label = 'translate-statsf-' . $name;
 		$label = wfMsgExt( $label, array( 'parsemag', 'escapenoentities' ) );
@@ -189,6 +207,13 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 		return Xml::tags( 'label', array( 'for' => $name ), $label );
 	}
 
+	/**
+	 * Constructs a table row with label and radio input in two columns.
+	 * @param $name Option name.
+	 * @param $opts FormOptions
+	 * @param $alts \list{String} List of alternatives.
+	 * @return \string Html.
+	 */
 	protected function eRadio( $name, FormOptions $opts, array $alts ) {
 		$label = 'translate-statsf-' . $name;
 		$label = wfMsgExt( $label, array( 'parsemag', 'escapenoentities' ) );
@@ -208,6 +233,12 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 		return $s;
 	}
 
+	/**
+	 * Constructs a table row with label and language selector in two columns.
+	 * @param $name \string Option name.
+	 * @param $opts FormOptions
+	 * @return \string Html.
+	 */
 	protected function eLanguage( $name, FormOptions $opts ) {
 		$value = $opts[$name];
 
@@ -221,6 +252,10 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 			'</td></tr>' . "\n";
 	}
 
+	/**
+	 * Constructs a JavaScript enhanced language selector.
+	 * @return \type{JsSelectToInput}
+	 */
 	protected function languageSelector() {
 		global $wgLang;
 		if ( is_callable( array( 'LanguageNames', 'getNames' ) ) ) {
@@ -244,6 +279,12 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 		return $jsSelect;
 	}
 
+	/**
+	 * Constructs a table row with label and group selector in two columns.
+	 * @param $name \string Option name.
+	 * @param $opts FormOptions
+	 * @return \string Html.
+	 */
 	protected function eGroup( $name, FormOptions $opts ) {
 		$value = $opts[$name];
 
@@ -257,6 +298,10 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 			'</td></tr>' . "\n";
 	}
 
+	/**
+	 * Constructs a JavaScript enhanced group selector.
+	 * @return \type{JsSelectToInput}
+	 */
 	protected function groupSelector() {
 		$groups = MessageGroups::singleton()->getGroups();
 		foreach ( $groups as $key => $group ) {
@@ -279,7 +324,12 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 		return $jsSelect;
 	}
 
-	protected function image( $opts ) {
+	/**
+	 * Returns an \<img> tag for graph.
+	 * @param $opts FormOptions
+	 * @return \string Html.
+	 */
+	protected function image( FormOptions $opts ) {
 		$title = $this->getTitle();
 		$cgiparams = wfArrayToCgi( array( 'graphit' => true ), $opts->getAllValues() );
 		$href = $title->getLocalUrl( $cgiparams );
@@ -293,6 +343,11 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 		);
 	}
 
+	/**
+	 * Fetches and preprocesses graph data that can be fed to graph drawer.
+	 * @param $opts FormOptions
+	 * @return \arrayof{String,Array} Data indexed by their date labels.
+	 */
 	protected function getData( FormOptions $opts ) {
 		global $wgLang;
 		$dbr = wfGetDB( DB_SLAVE );
@@ -389,6 +444,10 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 		return array( $labels, $data );
 	}
 
+	/**
+	 * Adds raw image data of the graph to the output.
+	 * @param $opts FormOptions
+	 */
 	public function draw( FormOptions $opts ) {
 		global $wgTranslatePHPlotFont, $wgLang;
 
@@ -466,6 +525,18 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 		$plot->DrawGraph();
 	}
 
+	/**
+	 * Enhanced version of round that supports rounding up to a given scale
+	 * relative to the number itself. Examples:
+	 * - roundToSignificant( 1234, 0 ) = 10000
+	 * - roundToSignificant( 1234, 1 ) = 2000
+	 * - roundToSignificant( 1234, 2 ) = 1300
+	 * - roundToSignificant( 1234, 3 ) = 1240
+	 * 
+	 * @param $number \int Number to round.
+	 * @param $significant \int How many signficant numbers to keep.
+	 * @return \int Rounded number.
+	 */
 	public static function roundToSignificant( $number, $significant = 1 ) {
 		$log = (int) log( $number, 10 );
 		$nonSignificant =  max( 0, $log - $significant + 1 );
@@ -473,6 +544,14 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 		return intval( ceil( $number / $factor ) * $factor );
 	}
 
+	/**
+	 * Returns an increment in seconds for a given scale.
+	 * The increment must be small enough that we will hit every item in the
+	 * scale when using different multiples of the increment. It should be
+	 * large enough to avoid hitting the same item multiple times.
+	 * @param $scale \string Either months, weeks, days or hours.
+	 * @return \int Number of seconds in the increment.
+	 */
 	public static function getIncrement( $scale ) {
 		$increment = 3600 * 24;
 		if ( $scale === 'months' ) {
@@ -490,24 +569,65 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 }
 
 /**
- * @todo Needs documentation.
+ * Interface for producing different kinds of graphs.
+ * The graphs are based on data queried from the database.
+ * @ingroup Stats
  */
 interface TranslationStatsInterface {
+	/**
+	 * Constructor. The implementation can access the graph options, but not
+	 * define new ones.
+	 * @param $opts FormOptions
+	 */
 	public function __construct( FormOptions $opts );
+
+	/**
+	 * Query details that the graph must fill.
+	 * @param $tables \array Empty list. Append table names.
+	 * @param $fields \array Empty list. Append field names.
+	 * @param $conds \array Empty array. Append select conditions.
+	 * @param $type \string Append graph type (used to identify queries).
+	 * @param $options \array Empty array. Append extra query options.
+	 * @param $cutoff \string Precalculated cutoff timestamp in unix format.
+	 */
 	public function preQuery( &$tables, &$fields, &$conds, &$type, &$options, $cutoff );
+
+	/**
+	 * Return the indexes which this result contributes to.
+	 * Return 'all' if only one variable is measured. Return false if none.
+	 * @param $row \type{Database Result Row}
+	 */
 	public function indexOf( $row );
+
+	/**
+	 * Return the names of the variables being measured.
+	 * Return 'all' if only one variable is measured. Must match indexes
+	 * returned by indexOf() and contain them all.
+	 * @return \list{String}
+	 */
 	public function labels();
+
+	/**
+	 * Return the timestamp associated with this result row.
+	 * @param $row \type{Database Result Row}
+	 * @return \string Timestamp.
+	 */
 	public function getTimestamp( $row );
+
+	/**
+	 * Return time formatting string.
+	 * @see Language::sprintfDate()
+	 * @return \string
+	 */
 	public function getDateFormat();
 }
 
 /**
- * @todo Needs documentation.
+ * Provides some hand default implementations for TranslationStatsInterface.
+ * @ingroup Stats
  */
 abstract class TranslationStatsBase implements TranslationStatsInterface {
-	/**
-	 * FormOptions
-	 */
+	/// \type{FormOptions} Graph options.
 	protected $opts;
 
 	public function __construct( FormOptions $opts ) {
@@ -537,16 +657,16 @@ abstract class TranslationStatsBase implements TranslationStatsInterface {
 }
 
 /**
- * @todo Needs documentation.
+ * Graph which provides statistics on active users and number of translations.
+ * @ingroup Stats
  */
 class TranslatePerLanguageStats extends TranslationStatsBase {
+	/// \arrayof{String,\bool} Cache used to count active users only once per day.
 	protected $usercache;
 
 	public function __construct( FormOptions $opts ) {
 		parent::__construct( $opts );
-		/**
-		 * This query is slow... ensure a slower limit.
-		 */
+		// This query is slow... ensure a lower limit.
 		$opts->validateIntBounds( 'days', 1, 200 );
 	}
 
@@ -607,9 +727,7 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 	}
 
 	public function indexOf( $row ) {
-		/**
-		 * We need to check that there is only one user per day.
-		 */
+		// We need to check that there is only one user per day.
 		if ( $this->opts['count'] === 'users' ) {
 			$date = $this->formatTimestamp( $row->rc_timestamp );
 
@@ -620,30 +738,24 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 			}
 		}
 
-		/**
-		 * Do not consider language-less pages.
-		 */
+		// Do not consider language-less pages.
 		if ( strpos( $row->rc_title, '/' ) === false ) {
 			return false;
 		}
 
-		/**
-		 * No filters, just one key to track.
-		 */
+		// No filters, just one key to track.
 		if ( !$this->groups && !$this->codes ) {
 			return 'all';
 		}
 
-		/**
-		 * The key-building needs to be in sync with ::labels().
-		 */
+		// The key-building needs to be in sync with ::labels().
 		list( $key, $code ) = TranslateUtils::figureMessage( $row->rc_title );
 
 		$groups = array();
 		$codes = array();
 
 		if ( $this->groups ) {
-			/**
+			/*
 			 * Get list of keys that the message belongs to, and filter
 			 * out those which are not requested.
 			 */
@@ -666,6 +778,13 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 		return $row->rc_timestamp;
 	}
 
+	/**
+	 * Makes a label for variable. If group or language code filters, or both
+	 * are used, combine those in a pretty way.
+	 * @param $group \string Group name.
+	 * @param $code \string Language code.
+	 * @return \string Label.
+	 */
 	protected function makeLabel( $group, $code ) {
 		if ( $code ) {
 			global $wgLang;
@@ -681,6 +800,13 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 		}
 	}
 
+	/**
+	 * Cross-product of two lists with string results, where either
+	 * list can be empty.
+	 * @param $groups \list{String} Group names.
+	 * @param $codes \list{String} Language codes.
+	 * @return \list{String} Labels.
+	 */
 	protected function combineTwoArrays( $groups, $codes ) {
 		if ( !count( $groups ) ) {
 			$groups[] = false;
@@ -699,6 +825,12 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 		return $items;
 	}
 
+	/**
+	 * Returns unique index for given item in the scale being used.
+	 * Called a lot, so performance intensive.
+	 * @param $timestamp \string Timestamp in mediawiki format.
+	 * @return \string
+	 */
 	protected function formatTimestamp( $timestamp ) {
 		global $wgContLang;
 
@@ -721,7 +853,8 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 }
 
 /**
- * @todo Needs documentation.
+ * Graph which provides statistics about amount of registered users in a given time.
+ * @ingroup Stats
  */
 class TranslateRegistrationStats extends TranslationStatsBase {
 	public function preQuery( &$tables, &$fields, &$conds, &$type, &$options, $cutoff ) {

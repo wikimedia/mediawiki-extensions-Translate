@@ -2,16 +2,16 @@
 /**
  * Job for updating translation pages.
  *
- * @ingroup Extensions
- *
+ * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2008-2009, Niklas Laxström
+ * @copyright Copyright © 2008-2010, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
 /**
- * @todo Needs documentation.
- * @ingroup PageTranslation
+ * Job for updating translation pages when translation or template changes.
+ */
+ * @ingroup PageTranslation JobQueue
  */
 class RenderJob extends Job {
 	public static function newJob( Title $target ) {

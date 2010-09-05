@@ -11,7 +11,7 @@
 /**
  * Contains class with job for moving translation pages.
  *
- * @ingroup PageTranslation
+ * @ingroup PageTranslation JobQueue
  * @todo Get rid of direct reference to $wgMemc.
  */
 class MoveJob extends Job {

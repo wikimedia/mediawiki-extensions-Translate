@@ -4,6 +4,7 @@
  * groups are be managed.
  *
  * @ingroup SpecialPage
+ * @file
  * @author Niklas Laxström
  * @author Siebrand Mazeland
  * @copyright Copyright © 2009-2010, Niklas Laxström, Siebrand Mazeland
