@@ -10,7 +10,7 @@ BASIC:
 GROUPS:
   - ext-ui-clicktracking
   - ext-ui-dontswitchmeover
-  - ext-ui-in
+  - ext-ui-optin
   - ext-ui-optinlink
   - ext-ui-prefstats
   - ext-ui-prefswitch
