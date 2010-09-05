@@ -111,5 +111,5 @@ GROUPS:
   - ext-ui-wikieditor-toolbar
   - ext-uploadblacklist
   - ext-wikihiero
-  - ext-wikimediamessages
   - ext-wikimedialicensetexts # commons.wikimedia.org
+  - ext-wikimediamessages
