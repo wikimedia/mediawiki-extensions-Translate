@@ -491,7 +491,7 @@ class SpecialTranslate extends SpecialPage {
 
 		if ( $hasSubblocks ) {
 			$msg = wfMsgExt( 'translate-showsub', 'parsemag', $wgLang->formatNum( count( $blocks ) ) );
-			$desc .= Html::element( 'a', array( 'onclick' => "$('#$subid').toggle()", 'class' => 'mw-sp-showmore' ), $msg );
+			$desc .= Html::element( 'a', array( 'onclick' => "jQuery('#$subid').toggle()", 'class' => 'mw-sp-showmore' ), $msg );
 		}
 
 		$out = "\n<tr><td>$label</td>\n<td>$desc</td></tr>\n";
