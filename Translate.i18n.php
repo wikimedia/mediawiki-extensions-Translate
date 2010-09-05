@@ -21,7 +21,7 @@ $messages['en'] = array(
 	'translate-showsub' => 'Show the {{PLURAL:$1|subgroup|$1 subgroups}}.',
 
 	'translate-grouplisting' => 'This is the list of all translatable groups.
-Click the message group name to view list of untranslated messages.',
+Click the message group name to view a list of untranslated messages.',
 
 	'translate-task-view'                 => 'View all messages from',
 	'translate-task-untranslated'         => 'View all untranslated messages from',
