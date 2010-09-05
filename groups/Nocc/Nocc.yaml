@@ -1,6 +1,6 @@
 BASIC:
   id: out-nocc
-  label: NOCC (webmail client)
+  label: NOCC
   namespace: NS_NOCC
   class: FileBasedMessageGroup
   description: "{{int:bw-desc-nocc}}"

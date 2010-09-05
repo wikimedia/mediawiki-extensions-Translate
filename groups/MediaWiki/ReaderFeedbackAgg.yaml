@@ -1,6 +1,6 @@
 BASIC:
   id: ext-readerfeedback-0-all
-  label: Reader Feedback
+  label: All Reader Feedback messages
   display: ext/readerfeedback
   meta: yes
   class: AggregateMessageGroup

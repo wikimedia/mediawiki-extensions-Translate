@@ -1,7 +1,7 @@
 ---
 BASIC:
   id: out-freecol
-  label: FreeCol (open source game)
+  label: FreeCol
   description: "{{int:bw-desc-freecol}}"
   namespace: NS_FREECOL
   display: out/freecol/

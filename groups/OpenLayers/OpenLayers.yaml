@@ -1,7 +1,7 @@
 ---
 BASIC:
   id: out-openlayers
-  label: OpenLayers (slippy maps)
+  label: OpenLayers
   description: "{{int:bw-desc-openlayers}}"
   namespace: NS_OPENLAYERS
   display: out/openlayers/

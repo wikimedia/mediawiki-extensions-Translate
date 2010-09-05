@@ -1,6 +1,6 @@
 BASIC:
   id: ext-ui-0-all
-  label: Usability Initiative
+  label: All Usability Initiative messages
   display: ext/ui
   meta: yes
   class: AggregateMessageGroup

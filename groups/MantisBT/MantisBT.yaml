@@ -103,7 +103,7 @@ GROUPS:
 ---
 BASIC:
   id: out-mantis-core
-  label: MantisBT (web-based bugtracking system)
+  label: MantisBT
   description: "{{int:bw-desc-mantisbt}}"
   display: out/mantis/core
 

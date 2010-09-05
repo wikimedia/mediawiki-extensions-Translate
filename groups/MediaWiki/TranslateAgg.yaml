@@ -1,6 +1,6 @@
 BASIC:
   id: ext-translate-0-all
-  label: Translate
+  label: All Translate messages
   display: ext/translate
   meta: yes
   class: AggregateMessageGroup
