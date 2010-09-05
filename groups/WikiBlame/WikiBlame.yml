@@ -3,7 +3,7 @@ BASIC:
   label: WikiBlame
   namespace: NS_WIKIMEDIA
   class: FileBasedMessageGroup
-  description: "{{int:int:bw-desc-wikiblame}}"
+  description: "{{int:bw-desc-wikiblame}}"
   display: out/wikiblame
 
 FILES:
