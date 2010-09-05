@@ -10,7 +10,7 @@
 
 /**
  * Job for updating translation pages when translation or template changes.
- */
+ *
  * @ingroup PageTranslation JobQueue
  */
 class RenderJob extends Job {
