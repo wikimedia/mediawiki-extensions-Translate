@@ -259,23 +259,6 @@ The subpage "translators" must contain the template [[:{{ns:template}}:User|User
 
 	'translate-jssti-add' => 'Add to list',
 
-	# Meta message group descriptions
-	'translate-group-desc-mediawikicore' => 'This message group contains the messages used in the current alpha version of MediaWiki ({{CURRENTVERSION}})',
-	'translate-group-desc-mediawikimostused' => 'This message group contains the [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 most often used messages] in MediaWiki',
-	'translate-group-desc-mediawikiextensions' => 'Meta message group containing all messages for supported extensions for MediaWiki',
-	'translate-group-desc-collection' => 'Meta message group containing all messages for the MediaWiki extension [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
-	'translate-group-desc-flaggedrevs' => 'Meta message group containing all messages for the MediaWiki extension [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
-	'translate-group-desc-readerfeedback' => 'Meta message group containing all messages for the MediaWiki extension [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
-	'translate-group-desc-socialprofile' => 'Meta message group containing all messages for extensions related to the MediaWiki extension [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
-	'translate-group-desc-translate' => 'Meta message group containing all messages for the MediaWiki extension [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
-	'translate-group-desc-wikiaextensions' => 'Meta message group containing all messages for supported MediaWiki extensions used by [http://www.wikia.com Wikia]',
-	'translate-group-desc-wikihowextensions' => 'Meta message group containing all messages for supported MediaWiki extensions used by [http://www.wikihow.com wikiHow]',
-	'translate-group-desc-wikimediaextensions' => 'Meta message group containing all messages for supported MediaWiki extensions used by the [http://wikimedia.org/ Wikimedia Foundation]',
-	'translate-group-desc-wikitravelextensions' => 'Meta message group containing all messages for supported MediaWiki extensions used by [http://wikitravel.org Wikitravel]',
-	'translate-group-desc-uniwiki' => 'Meta message group containing all messages for extensions related to [http://unicefinnovation.org/wiki.php Uniwiki]',
-	'translate-group-desc-ui' => 'Meta message group containing all messages for extensions related to the [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
-	'translate-group-desc-nodesc' => 'No description is available for this message group',
-
 	'translate-manage-groups' => 'Group management',
 	'translate-manage-listgroups' => 'Configured groups',
 	'translate-manage-listgroups-old' => 'Old style groups',

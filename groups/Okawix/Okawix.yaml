@@ -2,7 +2,7 @@ TEMPLATE:
   BASIC:
     namespace: NS_OKAWIX
     class: FileBasedMessageGroup
-    description: "{{int:bw-desc-okawix}}"
+    description: "{{int:translate-group-desc-okawix}}"
 
   FILES:
     class: JavaFFS
@@ -28,7 +28,7 @@ GROUPS:
 BASIC:
   id: out-okawix-doc
   label: Okawix (Documentation)
-  description: "{{int:bw-desc-okawix-doc}}"
+  description: "{{int:translate-group-desc-okawix}}"
   display: out/okawix/doc
 
 FILES:
@@ -39,7 +39,7 @@ FILES:
 BASIC:
   id: out-okawix-dtd
   label: Okawix (Dtd)
-  description: "{{int:bw-desc-okawix-dtd}}"
+  description: "{{int:translate-group-desc-okawix}}"
   display: out/okawix/dtd
 
 FILES:
@@ -54,7 +54,7 @@ AUTOLOAD:
 BASIC:
   id: out-okawix-prop
   label: Okawix (Properties)
-  description: "{{int:bw-desc-okawix-prop}}"
+  description: "{{int:translate-group-desc-okawix}}"
   display: out/okawix/prop
 
 FILES:
