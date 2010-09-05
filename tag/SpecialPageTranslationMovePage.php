@@ -46,8 +46,14 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 	 */
 	protected $user;
 
-	public function __construct() {
+	/**
+	 * Whether MovePageForm extends SpecialPage
+	 */
+	protected $old;
+
+	public function __construct( $old ) {
 		parent::__construct( 'Movepage' );
+		$this->old = $old;
 	}
 
 	/*
@@ -118,7 +124,11 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 
 		} else {
 			// Delegate... don't want to reimplement this
-			$this->doNormalMovePage( $par );
+			if ( $this->old ) {
+				$this->doOldNormalMovePage();
+			} else {
+				$this->doNormalMovePage( $par );
+			}
 		}
 	}
 
@@ -158,6 +168,16 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 	protected function doNormalMovePage( $par ) {
 		$sp = new MovePageForm();
 		$sp->execute( $par );
+	}
+
+	protected function doOldNormalMovePage() {
+		global $wgRequest;
+		$form = new MovePageForm( $this->oldTitle, $this->newTitle );
+		if ( 'submit' == $wgRequest->getVal( 'action' ) && $this->checkToken() && $wgRequest->wasPosted() ) {
+			$form->doSubmit();
+		} else {
+			$form->showForm( '' );
+		}
 	}
 
 	/**

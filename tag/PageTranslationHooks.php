@@ -532,7 +532,8 @@ FOO;
 	}
 
 	public static function replaceMovePage( &$list ) {
-		$list['Movepage'] = 'SpecialPageTranslationMovePage';
+		$old = is_array( $list['Movepage'] );
+		$list['Movepage'] = array( 'SpecialPageTranslationMovePage', $old );
 		return true;
 	}
 
