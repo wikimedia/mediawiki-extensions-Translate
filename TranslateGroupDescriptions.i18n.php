@@ -28,9 +28,7 @@ $messages['en'] = array(
 	'translate-group-desc-socialprofile' => 'Meta message group containing all messages for extensions related to the MediaWiki extension [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
 	'translate-group-desc-translate' => 'Meta message group containing all messages for the MediaWiki extension [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-wikiaextensions' => 'Meta message group containing all messages for supported MediaWiki extensions used by [http://www.wikia.com Wikia]',
-	'translate-group-desc-wikihowextensions' => 'Meta message group containing all messages for supported MediaWiki extensions used by [http://www.wikihow.com wikiHow]',
 	'translate-group-desc-wikimediaextensions' => 'Meta message group containing all messages for supported MediaWiki extensions used by the [http://wikimedia.org/ Wikimedia Foundation]',
-	'translate-group-desc-wikitravelextensions' => 'Meta message group containing all messages for supported MediaWiki extensions used by [http://wikitravel.org Wikitravel]',
 	'translate-group-desc-uniwiki' => 'Meta message group containing all messages for extensions related to [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Meta message group containing all messages for extensions related to the [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 
