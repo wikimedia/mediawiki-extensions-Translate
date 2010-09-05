@@ -11,7 +11,7 @@ $messages = array();
 
 /** English
  */
-$messages[] = array(
+$messages['en'] = array(
 	# Message group description
 	'translategroupdescriptions-desc' => 'Message group descriptions for products supported by the [http://mediawiki.org/wiki/Extension:Translate]] extension',
 
