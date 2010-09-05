@@ -18,6 +18,10 @@ $messages['en'] = array(
 	'translate-edit'    => 'edit',
 	'translate-talk'    => 'talk',
 	'translate-history' => 'history',
+	'translate-showsub' => 'Show {{PLURAL:$1|subgroup|$1 subgroups}}.',
+
+	'translate-grouplisting' => 'This is the list of all translatable groups.
+Click the group name to view list of untranslated messages.',
 
 	'translate-task-view'                 => 'View all messages from',
 	'translate-task-untranslated'         => 'View all untranslated messages from',

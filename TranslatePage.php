@@ -13,7 +13,7 @@
  * Implements the core of Translate extension - a special page which shows
  * a list of messages in a format defined by Tasks.
  *
- * @ingroup SpecialPage
+ * @ingroup SpecialPage TranslateSpecialPage
  */
 class SpecialTranslate extends SpecialPage {
 	const MSG = 'translate-page-';
@@ -454,11 +454,12 @@ class SpecialTranslate extends SpecialPage {
 			$out .= $this->formatGroupInformation( $blocks );
 		}
 
-		return $out;
+		$header = wfMsgExt( 'translate-grouplisting', 'parse' );
+		return $header . "\n" . Html::rawElement( 'table', array( 'class' => 'mw-sp-translate-grouplist wikitable' ), $out );
 	}
 
 	public function formatGroupInformation( $blocks, $level = 2 ) {
-		global $wgUser;
+		global $wgUser, $wgLang;
 
 		if ( is_array( $blocks ) ) {
 			$block = array_shift( $blocks );
@@ -476,37 +477,37 @@ class SpecialTranslate extends SpecialPage {
 			'language' => $code
 		);
 
-		$edit = $wgUser->getSkin()->link(
+		$label = $wgUser->getSkin()->link(
 			$title,
-			wfMsgHtml( self::MSG . 'edit' ),
+			htmlspecialchars( $block->getLabel() ),
 			array(),
 			$queryParams
 		);
 
-		$label =  htmlspecialchars( $block->getLabel() ) . " ($edit)";
 		$desc = $this->getGroupDescription( $block );
 		$hasSubblocks = is_array( $blocks ) && count( $blocks );
 
-		if ( $hasSubblocks || $level === 2 ) {
-			$class = 'mw-sp-translate-group';
-		} else {
-			$class = 'mw-sp-translate-target';
-		}
-
-		$out = "\n<div class=\"$class mw-sp-translate-$id\">\n";
-		$out .= Xml::tags( "h$level", null, $label );
-
-		if ( $desc !== null ) {
-			$out .= Xml::wrapClass( $desc, 'description', 'div' );
-		}
+		$subid = "mw-subgroup-$id";
 
 		if ( $hasSubblocks ) {
+			$msg = wfMsgExt( 'translate-showsub', 'parsemag', $wgLang->formatNum( count( $blocks ) ) );
+			$desc .= Html::element( 'a', array( 'onclick' => "$('#$subid').toggle()", 'class' => 'mw-sp-showmore' ), $msg );
+		}
+
+		$out = "\n<tr><td>$label</td>\n<td>$desc</td></tr>\n";
+		if ( $hasSubblocks ) {
+			$out .= "<tr><td></td><td>\n";
+			$tableParams = array(
+				'id' => "mw-subgroup-$id",
+				'style' => 'display:none;',
+				'class' => "mw-sp-translate-subgroup depth-$level",
+			);
+			$out .= Html::openElement( 'table', $tableParams );
 			foreach ( $blocks as $subBlock ) {
 				$out .= $this->formatGroupInformation( $subBlock, $level + 1 );
 			}
+			$out .= '</table></td></tr>';
 		}
-
-		$out .= "\n</div>\n";
 
 		return $out;
 	}
