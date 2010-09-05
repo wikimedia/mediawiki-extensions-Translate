@@ -27,7 +27,7 @@ GROUPS:
 ---
 BASIC:
   id: out-okawix-doc
-  label: Okawix (Documentation)
+  label: Okawix - Documentation
   description: "{{int:translate-group-desc-okawix}}"
   display: out/okawix/doc
 
@@ -38,7 +38,7 @@ FILES:
 ---
 BASIC:
   id: out-okawix-dtd
-  label: Okawix (Dtd)
+  label: Okawix - DTD
   description: "{{int:translate-group-desc-okawix}}"
   display: out/okawix/dtd
 
@@ -53,7 +53,7 @@ AUTOLOAD:
 ---
 BASIC:
   id: out-okawix-prop
-  label: Okawix (Properties)
+  label: Okawix - Properties
   description: "{{int:translate-group-desc-okawix}}"
   display: out/okawix/prop
 
