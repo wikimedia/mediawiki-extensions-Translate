@@ -4,11 +4,11 @@
 
 BASIC:
   id: page-0-all
-  label: All translatable pages
+  label: Translatable pages
   display: page
   meta: yes
   class: AggregateMessageGroup
-  description: 'All translatable pages'
+  description: '{{int:translate-group-desc-translatablepages}}'
   namespace: NS_TRANSLATIONS
 
 GROUPS:
