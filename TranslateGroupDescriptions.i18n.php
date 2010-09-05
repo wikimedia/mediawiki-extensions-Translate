@@ -19,9 +19,9 @@ $messages['en'] = array(
 	'translate-group-desc-nodesc' => 'No description is available for this message group',
 
 	# Meta message group descriptions for MediaWiki and MediaWiki extensions extensions
-	'translate-group-desc-mediawikicore' => 'This message group contains the messages used in the current alpha version of MediaWiki ({{CURRENTVERSION}})',
-	'translate-group-desc-mediawikimostused' => 'This message group contains the [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 most often used messages] in MediaWiki',
-	'translate-group-desc-mediawikiextensions' => 'Meta message group containing all messages for supported extensions for MediaWiki',
+	'translate-group-desc-mediawikicore' => 'This message group contains the messages used in the current alpha version of [[Translating:MediaWiki|MediaWiki]] ({{CURRENTVERSION}})',
+	'translate-group-desc-mediawikimostused' => 'This message group contains the [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 most often used messages] in [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawikiextensions' => 'Meta message group containing all messages for supported extensions for [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-collection' => 'Meta message group containing all messages for the MediaWiki extension [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
 	'translate-group-desc-flaggedrevs' => 'Meta message group containing all messages for the MediaWiki extension [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Meta message group containing all messages for the MediaWiki extension [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
