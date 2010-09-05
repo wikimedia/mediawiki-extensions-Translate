@@ -50,6 +50,6 @@ $messages['en'] = array(
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] is a microblogging server',
 	'bw-desc-voctrain' => '[[Translating:Voctrain|Voctrain]] is an OmegaWiki-based vocabulary trainer',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] is able to quickly find the authors of a page in a Wikimedia wiki',
-	'bw-desc-wikimediamobile' => '[[Translating:Wikimedia_mobile|Wikiemdia mobile]] is the mobile interface for Wikipedia',
+	'bw-desc-wikimediamobile' => '[[Translating:Wikimedia_mobile|Wikimedia mobile]] is the mobile interface for Wikipedia',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] delivers an offline, text-only version of Wikipedia on a mobile device.',
 );
