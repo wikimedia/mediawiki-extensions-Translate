@@ -897,7 +897,7 @@ class MessageGroups {
 		global $wgTranslateCC, $wgTranslateEC, $wgTranslateAC;
 		global $wgAutoloadClasses;
 
-		$key = wfMemckey( 'translate-groups' );
+		$key = wfMemcKey( 'translate-groups' );
 		$value = DependencyWrapper::getValueFromCache( self::getCache(), $key );
 
 		if ( $value === null ) {
@@ -926,12 +926,14 @@ class MessageGroups {
 	}
 
 	/**
-	 * Returns a cache object. Currently just wrapper for
-	 * database cache, but @todo could be improved or replaced
-	 * with something that prefers Memcached over db.
+	 * Returns a cacher object.
 	 */
 	protected static function getCache() {
-		return wfGetCache( CACHE_DB );
+		$cacher = wfGetCache( CACHE_MEMCACHED );
+		if ( $cacher instanceof FakeMemCachedClient ) {
+			$cacher = wfGetCache( CACHE_DB );
+		}
+		return $cacher;
 	}
 
 	/**
