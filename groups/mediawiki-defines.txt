@@ -11,11 +11,13 @@ Add Media Wizard
 
 Add Media Wizard - Add Media
 file = AddMediaWizard/AddMedia/AddMedia.i18n.php
+descmsg = addmediawizard-desc
 optional = rsd-archive_org-title, rsd-flickr-title, rsd-metavid-title, mwe-no-import-by-url-linktext
 optional = rsd-wiki_commons-title, mwe-cc_title
 
 Add Media Wizard - Clip Edit
 file = AddMediaWizard/ClipEdit/ClipEdit.i18n.php
+descmsg = addmediawizard-desc
 
 Admin Links
 aliasfile = AdminLinks/AdminLinks.alias.php
@@ -401,62 +403,62 @@ Fixed Image
 Flagged Revisions - Flagged Revs
 id = ext-flaggedrevs-flaggedrevs
 file = FlaggedRevs/language/FlaggedRevs.i18n.php
+descmsg = flaggedrevs-desc
 aliasfile = FlaggedRevs/language/FlaggedRevs.alias.php
 optional = revreview-toggle-show, revreview-toggle-hide, revreview-ak-review, accesskey-ca-current, accesskey-ca-stable
 ignored = flaggedrevs-stable-categories
-descmsg = flaggedrevs-desc
 
 Flagged Revisions - Configured Pages
 id = ext-flaggedrevs-configuredpages
 file = FlaggedRevs/language/ConfiguredPages.i18n.php
-descmsg = configuredpages
+descmsg = flaggedrevs-desc
 
 Flagged Revisions - Pending Changes
 id = ext-flaggedrevs-pendingchanges
 file = FlaggedRevs/language/PendingChanges.i18n.php
-descmsg = pendingchanges-legend
+descmsg = flaggedrevs-desc
 
 Flagged Revisions - Problem Changes
 id = ext-flaggedrevs-problemchanges
 file = FlaggedRevs/language/ProblemChanges.i18n.php
-descmsg = problemchanges
+descmsg = flaggedrevs-desc
 
 Flagged Revisions - Quality Oversight
 id = ext-flaggedrevs-qualityoversight
 file = FlaggedRevs/language/QualityOversight.i18n.php
-descmsg = qualityoversight
+descmsg = flaggedrevs-desc
 
 Flagged Revisions - Reviewed Pages
 id = ext-flaggedrevs-reviewedpages
 file = FlaggedRevs/language/ReviewedPages.i18n.php
+descmsg = flaggedrevs-desc
 optional = reviewedpages-lev-0, reviewedpages-lev-1, reviewedpages-lev-2
-descmsg = reviewedpages-leg
 
 Flagged Revisions - Reviewed Versions
 id = ext-flaggedrevs-reviewedversions
 file = FlaggedRevs/language/ReviewedVersions.i18n.php
-descmsg = reviewedversions-leg1
+descmsg = flaggedrevs-desc
 
 Flagged Revisions - Stabilization
 id = ext-flaggedrevs-stabilization
 file = FlaggedRevs/language/Stabilization.i18n.php
+descmsg = flaggedrevs-desc
 ignored = stabilize_protect_quota
-descmsg = stabilization
 
 Flagged Revisions - Stable Pages
 id = ext-flaggedrevs-stablepages
 file = FlaggedRevs/language/StablePages.i18n.php
-descmsg = stablepages
+descmsg = flaggedrevs-desc
 
 Flagged Revisions - Unreviewed Pages
 id = ext-flaggedrevs-unreviewedpages
 file = FlaggedRevs/language/UnreviewedPages.i18n.php
-descmsg = right-unreviewedpages
+descmsg = flaggedrevs-desc
 
 Flagged Revisions - Validation Statistics
 id = ext-flaggedrevs-validationstatistics
 file = FlaggedRevs/language/ValidationStatistics.i18n.php
-descmsg = validationstatistics
+descmsg = flaggedrevs-desc
 
 Flv Handler
 descmsg = flvhandler_desc
@@ -601,6 +603,7 @@ JS2 Support
 
 JS2 Support - mwEmbed
 file = JS2Support/mwEmbed/mwEmbed.i18n.php
+descmsg = js2support-desc
 optional = mwe-size-gigabytes, mwe-size-megabytes, mwe-size-kilobytes, mwe-size-bytes
 
 Labeled Section Transclusion
@@ -1161,10 +1164,12 @@ descmsg = timedmedia-desc
 
 Timed Media Handler - Timed Text
 file = TimedMediaHandler/TimedText/TimedText.i18n.php
+descmsg = timedmedia-desc
 optional = mwe-timedtext-key-language
 
 Timed Media Handler - Embed Player
 file = TimedMediaHandler/EmbedPlayer/EmbedPlayer.i18n.php
+descmsg = timedmedia-desc
 optional = mwe-embedplayer-ogg-player-cortado
 
 Timeline
