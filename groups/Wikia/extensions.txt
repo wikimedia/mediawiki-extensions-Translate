@@ -181,10 +181,16 @@ file = TaskManager/SpecialTaskManager.i18n.php
 Text Regex
 aliasfile = TextRegex/TextRegex.alias.php
 
+Theme Designer
+
 Theory tab
 ignored = theorytab-subpage
 
 Title Edit
+
+Unsubscribe
+file = SpecialUnsubscribe/Unsubscribe.i18n.php
+aliasfile = SpecialUnsubscribe/Unsubscribe.alias.php
 
 Video Embed Tool
 
