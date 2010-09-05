@@ -1204,7 +1204,7 @@ file = Translate/FirstSteps.i18n.php
 descmsg = firststeps-desc
 
 Translate - Message Group Descriptions
-id = ext-translate-msgdescs
+id = ext-translate-groupdescs
 file = Translate/TranslateGroupDescriptions.i18n.php
 descmsg = translategroupdescriptions-desc
 
