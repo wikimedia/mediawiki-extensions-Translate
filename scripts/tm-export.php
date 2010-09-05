@@ -17,6 +17,7 @@ if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 }
 require_once( "$IP/maintenance/Maintenance.php" );
 
+/// Script to bootstrap translatetoolkit translation memory
 class TMExport extends Maintenance {
 	public function __construct() {
 		parent::__construct();

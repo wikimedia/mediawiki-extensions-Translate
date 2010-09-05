@@ -9,9 +9,10 @@
  */
 
 /**
- * @todo Needs documentation.
+ * Essentially random collection of helper functions, similar to GlobalFunctions.php.
  */
 class TranslateUtils {
+	/// @todo Get rid of this constant.
 	const MSG = 'translate-';
 
 	/**
@@ -24,9 +25,7 @@ class TranslateUtils {
 	public static function title( $message, $code ) {
 		global $wgContLang;
 
-		/**
-		 * Cache some amount of titles for speed.
-		 */
+		// Cache some amount of titles for speed.
 		static $cache = array();
 
 		if ( !isset( $cache[$message] ) ) {
@@ -40,6 +39,12 @@ class TranslateUtils {
 		}
 	}
 
+	/**
+	 * Splits page name into message key and language code.
+	 * @param $text \string
+	 * @return \type{Tuple{String,String}} Key and language code.
+	 * @todo Handle names without slash.
+	 */
 	public static function figureMessage( $text ) {
 		$pos = strrpos( $text, '/' );
 		$code = substr( $text, $pos + 1 );
@@ -48,6 +53,13 @@ class TranslateUtils {
 		return array( $key, $code );
 	}
 
+	/**
+	 * Loads page content *without* side effects.
+	 * @param $key \string Message key.
+	 * @param $language \string Language code.
+	 * @param $namespace \ing Namespace number.
+	 * @return \types{\string,\null} The contents or null.
+	 */
 	public static function getMessageContent( $key, $language,
 		$namespace = NS_MEDIAWIKI ) {
 
@@ -58,10 +70,12 @@ class TranslateUtils {
 	}
 
 	/**
-	 * Fetches contents for titles in given namespace
+	 * Fetches contents for pagenames in given namespace without side effects.
 	 *
-	 * @param $titles Mixed String or array of titles.
-	 * @param $namespace Mixed The number of the namespace to look in for.
+	 * @param $titles \types{String,\list{String}} Database page names.
+	 * @param $namespace \int The number of the namespace.
+	 * @return \arrayof{\String,\type{Tuple{String,String}}} Tuples of page
+	 * text and last author indexed by page name.
 	 */
 	public static function getContents( $titles, $namespace ) {
 		$dbr = wfGetDB( DB_SLAVE );
@@ -93,8 +107,8 @@ class TranslateUtils {
 	 * Fetches recent changes for titles in given namespaces
 	 *
 	 * @param $hours \int Number of hours.
-	 * @param $bots  \bool Should bot edits be included.
-	 * @param $ns    \array Array of namespace IDs.
+	 * @param $bots \bool Should bot edits be included.
+	 * @param $ns \list{Integer} List of namespace IDs.
 	 * @return \array List of recent changes.
 	 */
 	public static function translationChanges( $hours = 24, $bots = false, $ns = null ) {
@@ -119,9 +133,7 @@ class TranslateUtils {
 
 		$res = $dbr->query( $sql, __METHOD__ );
 
-		/**
-		 * Fetch results, prepare a batch link existence check query.
-		 */
+		// Fetch results, prepare a batch link existence check query.
 		$rows = array();
 		while ( $row = $dbr->fetchObject( $res ) ) {
 			$rows[] = $row;
@@ -133,10 +145,23 @@ class TranslateUtils {
 
 	/* Some other helpers for ouput*/
 
+	/**
+	 * Makes a selector from name and options.
+	 * @param $name \string
+	 * @param $options \List{String} Html \<option> elements.
+	 * @return \string Html.
+	 */
 	public static function selector( $name, $options ) {
 		return Xml::tags( 'select', array( 'name' => $name, 'id' => $name ), $options );
 	}
 
+	/**
+	 * Makes a selector from name and options.
+	 * @param $name \string
+	 * @param $options \list{String} The name and value of options.
+	 * @param $selected \string The default selected value.
+	 * @return \string Html.
+	 */
 	public static function simpleSelector( $name, $items, $selected ) {
 		$options = array();
 
@@ -148,6 +173,13 @@ class TranslateUtils {
 		return self::selector( $name, implode( "\n", $options ) );
 	}
 
+	/**
+	 * Returns a localised language name.
+	 * @param $code \string Language code.
+	 * @param $native \string Use only native names.
+	 * @param $language \string Language code of language the the name should be in.
+	 * @return \string Best-effort localisation of wanted language name.
+	 */
 	public static function getLanguageName( $code, $native = false, $language = 'en' ) {
 		if ( !$native && is_callable( array( 'LanguageNames', 'getNames' ) ) ) {
 			$languages = LanguageNames::getNames( $language ,
@@ -163,21 +195,15 @@ class TranslateUtils {
 
 		$parts1 = isset( $parts[1] ) ? $parts[1] : '';
 
-		/**
-		 * @todo Add missing scripts that are in use (deva, arab).
-		 */
+		/// @todo Add missing scripts that are in use (deva, arab).
 		switch ( $parts1 ) {
 			case 'latn':
-				/**
-				 * @todo i18n.
-				 */
+				/// @todo i18n.
 				$suffix = ' (Latin)';
 				unset( $parts[1] );
 				break;
 			case 'cyrl':
-				/**
-				 * @todo i18n.
-				 */
+				/// @todo i18n.
 				$suffix = ' (Cyrillic)';
 				unset( $parts[1] );
 				break;
@@ -187,6 +213,12 @@ class TranslateUtils {
 		return isset( $languages[$code] ) ? $languages[$code] . $suffix : false;
 	}
 
+	/**
+	 * Returns a language selector.
+	 * @param $language \string Language code of the language the names should
+	 * be localised to.
+	 * @param $selectedId \string The language code that is selected by default.
+	 */
 	public static function languageSelector( $language, $selectedId ) {
 		if ( is_callable( array( 'LanguageNames', 'getNames' ) ) ) {
 			$languages = LanguageNames::getNames( $language,
@@ -207,16 +239,21 @@ class TranslateUtils {
 		return $selector->getHTML();
 	}
 
+	/// \array Cached message index.
 	static $mi = null;
 
+	/**
+	 * Returns the primary group message belongs to.
+	 * @param $namespace \int
+	 * @param $key \string
+	 * @return \types{\String,\null} Group id or null.
+	 */
 	public static function messageKeyToGroup( $namespace, $key ) {
 		if ( self::$mi === null ) {
 			self::messageIndex();
 		}
 
-		/**
-		 * Performance hotspot.
-		 */
+		// Performance hotspot.
 		# $normkey = self::normaliseKey( $namespace, $key );
 		$normkey = str_replace( " ", "_", strtolower( "$namespace:$key" ) );
 
@@ -229,14 +266,18 @@ class TranslateUtils {
 		return $group;
 	}
 
+	/**
+	 * Returns the all the groups message belongs to.
+	 * @param $namespace \int
+	 * @param $key \string
+	 * @return \list{String} Possibly empty list of group ids.
+	 */
 	public static function messageKeyToGroups( $namespace, $key ) {
 		if ( self::$mi === null ) {
 			self::messageIndex();
 		}
 
-		/**
-		 * Performance hotspot.
-		 */
+		// Performance hotspot.
 		# $normkey = self::normaliseKey( $namespace, $key );
 		$normkey = str_replace( " ", "_", strtolower( "$namespace:$key" ) );
 
@@ -247,10 +288,21 @@ class TranslateUtils {
 		}
 	}
 
+	/**
+	 * Converts page name and namespace to message index format.
+	 * @param $namespace \int
+	 * @param $key \string
+	 * @return \string
+	 */
 	public static function normaliseKey( $namespace, $key ) {
 		return str_replace( " ", "_", strtolower( "$namespace:$key" ) );
 	}
 
+
+	/**
+	 * Opens and returns the message index.
+	 * @return \array or \type{false}
+	 */
 	public static function messageIndex() {
 		$filename = self::cacheFile( 'translate_messageindex.cdb' );
 
@@ -271,6 +323,13 @@ class TranslateUtils {
 		return $keyToGroup;
 	}
 
+	/**
+	 * Constructs a fieldset with contents.
+	 * @param $legend \string Raw html.
+	 * @param $contents \string Raw html.
+	 * @param $attributes \array Html attributes for the fieldset.
+	 * @return \string Html.
+	 */
 	public static function fieldset( $legend, $contents, $attributes = array() ) {
 		return Xml::openElement( 'fieldset', $attributes ) .
 			Xml::tags( 'legend', null, $legend ) . $contents .
@@ -296,6 +355,9 @@ class TranslateUtils {
 		return $msg;
 	}
 
+	/**
+	 * Injects extension css (only once).
+	 */
 	public static function injectCSS() {
 		static $done = false;
 
@@ -306,7 +368,6 @@ class TranslateUtils {
 		$done = true;
 
 		global $wgOut;
-
 		$wgOut->addExtensionStyle( self::assetPath( 'Translate.css' ) );
 	}
 
@@ -322,6 +383,9 @@ class TranslateUtils {
 
 	/**
 	 * Gets the path for cache files
+	 * @param $filename \string
+	 * @return \string Full path.
+	 * @throws \type{MWException} If cache directory is not configured.
 	 */
 	public static function cacheFile( $filename ) {
 		global $wgTranslateCacheDirectory, $wgCacheDirectory;
@@ -337,26 +401,24 @@ class TranslateUtils {
 		return "$dir/$filename";
 	}
 
-	public static function snippet( &$text, $length = 10 ) {
-		global $wgContLang;
-
-		$snippet = preg_replace( "/[^\p{L}]/u", ' ', $text );
-		$snippet = preg_replace( "/ {2,}/u", ' ', $snippet );
-		$snippet = $wgContLang->truncate( $snippet, $length, '' );
-		$snippet = str_replace( ' ', '_', trim( $snippet ) );
-
-		return $snippet;
-	}
 }
 
 /**
- * @todo Needs documentation.
+ * Yet another class for building html selectors.
  */
 class HTMLSelector {
+	/// \list{String} \<option> elements.
 	private $options = array();
+	/// \string The selected value.
 	private $selected = false;
+	/// \array Extra html attributes.
 	private $attributes = array();
-
+	
+	/**
+	 * @param $name \string
+	 * @param $id \string Default false.
+	 * @param $selected \string Default false.
+	 */
 	public function __construct( $name = false, $id = false, $selected = false ) {
 		if ( $name ) {
 			$this->setAttribute( 'name', $name );
@@ -371,20 +433,38 @@ class HTMLSelector {
 		}
 	}
 
+	/**
+	 * Set selected value.
+	 * @param $selected \string Default false.
+	 */
 	public function setSelected( $selected ) {
 		$this->selected = $selected;
 	}
 
+	/**
+	 * Set html attribute.
+	 * @param $name \string Attribute name.
+	 * @param $value \string Attribute value.
+	 */
 	public function setAttribute( $name, $value ) {
 		$this->attributes[$name] = $value;
 	}
 
+	/**
+	 * Add an option.
+	 * @param $name \string Display name.
+	 * @param $value \string Option value. Uses $name if not given.
+	 * @param $selected \string Default selected value. Uses object value if not given.
+	 */
 	public function addOption( $name, $value = false, $selected = false ) {
 		$selected = $selected ? $selected : $this->selected;
 		$value = $value ? $value : $name;
 		$this->options[] = Xml::option( $name, $value, $value === $selected );
 	}
 
+	/**
+	 * @return \string Html for the selector.
+	 */
 	public function getHTML() {
 		return Xml::tags( 'select', $this->attributes, implode( "\n", $this->options ) );
 	}
