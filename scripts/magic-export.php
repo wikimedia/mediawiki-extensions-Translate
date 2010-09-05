@@ -8,6 +8,8 @@
  * @file
  */
 
+/// @cond
+
 $optionsWithArgs = array( 'target', 'type' );
 require( dirname( __FILE__ ) . '/cli.inc' );
 
@@ -104,3 +106,5 @@ foreach ( $groups as $group ) {
 	wfMkdirParents( dirname( $options['target'] . "/$filename" ) );
 	file_put_contents( $options['target'] . "/$filename", trim( $output ) . "\n" );
 }
+
+/// @endcond

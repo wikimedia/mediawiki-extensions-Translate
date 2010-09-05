@@ -24,23 +24,23 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	/// \type{MessageDefinitions}
 	protected $definitions = null;
 
-	/// \arrayof{String,String} Message key => translation.
+	/// \arrayof{String,String} %Message key => translation.
 	protected $infile = array();
 
 	// Keys and messages.
 
-	/// \arrayof{String,String} Message key => database key.
+	/// \arrayof{String,String} %Message display key => database key.
 	protected $keys = null;
 
-	/// \arrayof{String,TMessage} Message key => messages.
+	/// \arrayof{String,TMessage} %Message key => messages.
 	protected $messages = null;
 
 	// Database resources
 
-	// existence, fuzzy
+	/// \type{Database Result Resource} Stored message existence and fuzzy state.
 	protected $dbInfo = null;
 
-	// all translations
+	/// \type{Database Result Resource} Stored translations in database.
 	protected $dbData = null;
 
 	/**
@@ -73,27 +73,60 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		return $collection;
 	}
 
+	/**
+	 * Constructs a new empty message collection. Suitable for example for testing.
+	 * @param $code \string Language Code.
+	 * @return \type{MessageCollection}
+	 */
+	public static function newEmpty( $code ) {
+
+	}
+
 	// Data setters
 
+	/**
+	 * Set translation from file, as opposed to translation which only exists
+	 * in the wiki because they are not exported and committed yet.
+	 * @param $messages \arrayof{String,String} Array of translations indexed
+	 * by display key.
+	 */
 	public function setInfile( array $messages ) {
 		$this->infile = $messages;
 	}
 
+	/**
+	 * Set message tags.
+	 * @param $type \string Tag type, usually ignored or optional.
+	 * @param $keys \list{String} List of display keys.
+	 */
 	public function setTags( $type, array $keys ) {
 		$this->tags[$type] = $keys;
 	}
 
 	/**
-	 * Data getters
+	 * Returns list of available message keys. This is affected by filtering.
+	 * @return \arrayof{String,String} List of database keys indexed by display keys.
 	 */
 	public function keys() {
 		return $this->keys;
 	}
 
+	/**
+	 * Returns stored message tags.
+	 * @param $type \string Tag type, usually optional or ignored.
+	 * @return \types{\list{String},\null} List of keys or null if no tags.
+	 * @todo Return empty array instead?
+	 */
 	public function getTags( $type ) {
 		return isset( $this->tags[$type] ) ? $this->tags[$type] : null;
 	}
 
+	/**
+	 * Lists all translators that have contributed to the latest revisions of
+	 * each translation. Causes translations to be loaded from the database.
+	 * Is not affected by filters.
+	 * @return \list{String} List of usernames.
+	 */
 	public function getAuthors() {
 		global $wgTranslateFuzzyBotName;
 
@@ -102,9 +135,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$authors = array_flip( $this->authors );
 
 		foreach ( $this->messages as $m ) {
-			/**
-			 * Check if there are authors
-			 */
+			// Check if there are authors
 			$author = $m->author();
 
 			if ( $author === null ) {
@@ -129,7 +160,13 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		return isset( $filteredAuthors ) ? $filteredAuthors : array();
 	}
 
-	public function addCollectionAuthors( /*list*/$authors, $mode = 'append' ) {
+	/**
+	 * Add external authors (usually from the file).
+	 * @param $authors \list{String} List of authors.
+	 * @param $mode \string Either append or set authors.
+	 * @throws MWException If invalid $mode given.
+	 */
+	public function addCollectionAuthors( $authors, $mode = 'append' ) {
 		switch( $mode ) {
 			case 'append':
 				$authors = array_merge( $this->authors, $authors );
@@ -143,46 +180,16 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$this->authors = array_unique( $authors );
 	}
 
-	/**
-	 * Data modifiers
-	 */
+	// Data modifiers
 
+	/**
+	 * Loads all message data. Must be called before accessing the messages
+	 * with ArrayAccess or iteration.
+	 */
 	public function loadTranslations() {
 		$this->loadData( $this->keys );
 		$this->loadInfo( $this->keys );
 		$this->initMessages();
-	}
-
-	/**
-	 * Filters messages based on some condition. Some filters cause data to be
-	 * loaded from the database. PAGEINFO: existence and fuzzy tags.
-	 * TRANSLATIONS: translations for every message. It is recommended to first
-	 * filter with messages that do not need those. It is recommended to add
-	 * translations from file with addInfile, and it is needed for changed
-	 * filter to work.
-	 *
-	 * @param $type
-	 *  fuzzy: messages with fuzzy tag (PAGEINFO)
-	 *  optional: messages marked for optional.
-	 *  ignored: messages which are not for translation.
-	 *  hastranslation: messages which have translation (be if fuzzy or not) (PAGEINFO, *INFILE).
-	 *  translated: messages which have translation which is not fuzzy (PAGEINFO, *INFILE).
-	 *  changed: translation in database differs from infile. (INFILE, TRANSLATIONS)
-	 * @param $condition True or false.
-	 */
-	public function filter( $type, $condition = true ) {
-		switch( $type ) {
-			case 'fuzzy':
-			case 'optional':
-			case 'ignored':
-			case 'hastranslation':
-			case 'changed':
-			case 'translated':
-				$this->applyFilter( $type, $condition );
-				break;
-			default:
-				throw new MWException( "Unknown filter $type" );
-		}
 	}
 
 	/**
@@ -209,7 +216,47 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	}
 
 	/**
-	 * Protected functions
+	 * Filters messages based on some condition. Some filters cause data to be
+	 * loaded from the database. PAGEINFO: existence and fuzzy tags.
+	 * TRANSLATIONS: translations for every message. It is recommended to first
+	 * filter with messages that do not need those. It is recommended to add
+	 * translations from file with addInfile, and it is needed for changed
+	 * filter to work.
+	 *
+	 * @param $type \string
+	 *  - fuzzy: messages with fuzzy tag (PAGEINFO)
+	 *  - optional: messages marked for optional.
+	 *  - ignored: messages which are not for translation.
+	 *  - hastranslation: messages which have translation (be if fuzzy or not)
+	 *    (PAGEINFO, *INFILE).
+	 *  - translated: messages which have translation which is not fuzzy
+	 *    (PAGEINFO, *INFILE).
+	 *  - changed: translation in database differs from infile.
+	 *    (INFILE, TRANSLATIONS)
+	 * @param $condition \bool Whether to return messages which do not satisfy
+	 * the given filter condition (true), or only which do (false).
+	 * @throws \type{MWException} If given invalid filter name.
+	 */
+	public function filter( $type, $condition = true ) {
+		switch( $type ) {
+			case 'fuzzy':
+			case 'optional':
+			case 'ignored':
+			case 'hastranslation':
+			case 'changed':
+			case 'translated':
+				$this->applyFilter( $type, $condition );
+				break;
+			default:
+				throw new MWException( "Unknown filter $type" );
+		}
+	}
+
+	/**
+	 * Really apply a filter. Some filters need multiple conditions.
+	 * @param $filter \string Filter name.
+	 * @param $condition \bool Whether to return messages which do not satisfy
+	 * the given filter condition (true), or only which do (false).
 	 */
 	protected function applyFilter( $filter, $condition ) {
 		$keys = $this->keys;
@@ -220,17 +267,13 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		} elseif ( $filter === 'translated' ) {
 			$fuzzy = $this->filterFuzzy( $keys, false );
 			$hastranslation = $this->filterHastranslation( $keys, false );
-			/**
-			 * Fuzzy messages are not counted as translated messages
-			 */
+			// Fuzzy messages are not counted as translated messages
 			$translated = $this->filterOnCondition( $hastranslation, $fuzzy );
 			$keys = $this->filterOnCondition( $keys, $translated, $condition );
 		} elseif ( $filter === 'changed' ) {
 			$keys = $this->filterChanged( $keys, $condition );
 		} else {
-			/**
-			 * Filter based on tags.
-			 */
+			// Filter based on tags.
 			if ( !isset( $this->tags[$filter] ) ) {
 				if ( $filter !== 'optional' && $filter !== 'ignored' ) {
 					throw new MWException( "No tagged messages for custom filter $filter" );
@@ -245,6 +288,21 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$this->keys = $keys;
 	}
 
+	/**
+	 * Filters list of keys with other list of keys according to the condition.
+	 * In other words, you have a list of keys, and you have determined list of
+	 * keys that have some feature. Now you can either take messages that are
+	 * both in the first list and the second list OR are in the first list but
+	 * are not in the second list (conditition = true and false respectively).
+	 * What makes this more complex is that second list of keys might not be a
+	 * subset of the first list of keys.
+	 * @param $keys \list{String} List of keys to filter.
+	 * @param $condKeys \list{String} Second list of keys for filtering.
+	 * @param $condition \bool True (default) to return keys which are on first
+	 * and second list, false to return keys which are on the first but not on
+	 * second.
+	 * @return \list{String} Filtered keys.
+	 */
 	protected function filterOnCondition( array $keys, array $condKeys, $condition = true ) {
 		if ( $condition === true ) {
 			/**
@@ -267,6 +325,13 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		return $keys;
 	}
 
+	/**
+	 * Filters list of keys according to whether the translation is fuzzy.
+	 * @param $keys \list{String} List of keys to filter.
+	 * @param $condition \bool True to filter away fuzzy translations, false
+	 * to filter non-fuzzy translations.
+	 * @return \list{String} Filtered keys.
+	 */
 	protected function filterFuzzy( array $keys, $condition ) {
 		$this->loadInfo( $keys );
 
@@ -293,6 +358,13 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		return $keys;
 	}
 
+	/**
+	 * Filters list of keys according to whether they have a translation.
+	 * @param $keys \list{String} List of keys to filter.
+	 * @param $condition \bool True to filter away translated, false
+	 * to filter untranslated.
+	 * @return \list{String} Filtered keys.
+	 */
 	protected function filterHastranslation( array $keys, $condition ) {
 		$this->loadInfo( $keys );
 
@@ -303,9 +375,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$flipKeys = array_flip( $keys );
 
 		foreach ( $this->dbInfo as $row ) {
-			/**
-			 * Remove messages which have a translation from keys
-			 */
+			// Remove messages which have a translation from keys
 			if ( !isset( $flipKeys[$row->page_title] ) ) {
 				continue;
 			}
@@ -313,16 +383,12 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			unset( $keys[$flipKeys[$row->page_title]] );
 		}
 
-		/**
-		 * Check also if there is something in the file that is not yet in the db
-		 */
+		// Check also if there is something in the file that is not yet in the database
 		foreach ( array_keys( $this->infile ) as $inf ) {
 			unset( $keys[$inf] );
 		}
 
-		/**
-		 * Remove the messages which do not have a translation from the list
-		 */
+		// Remove the messages which do not have a translation from the list
 		if ( $condition === false ) {
 			$keys = array_diff( $origKeys, $keys );
 		}
@@ -330,6 +396,14 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		return $keys;
 	}
 
+	/**
+	 * Filters list of keys according to whether the current translation
+	 * differs from the commited translation.
+	 * @param $keys \list{String} List of keys to filter.
+	 * @param $condition \bool True to filter changed translations, false
+	 * to filter unchanged translations.
+	 * @return \list{String} Filtered keys.
+	 */
 	protected function filterChanged( array $keys, $condition ) {
 		$this->loadData( $keys );
 
@@ -347,23 +421,25 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 			$text = Revision::getRevisionText( $row );
 			if ( $this->infile[$realKey] === $text ) {
-				/**
-				 * Remove changed messages from the list
-				 */
+				// Remove unchanged messages from the list
 				unset( $keys[$realKey] );
 			}
 		}
 
-		/**
-		 * Remove the messages which have not changed from the list
-		 */
+		// Remove the messages which have not changed from the list
 		if ( $condition === false ) {
 			$keys = $this->filterOnCondition( $keys, $origKeys, false );
 		}
 
 		return $keys;
 	}
+	/** @} */
 
+	/**
+	 * Takes list of keys and converts them into database format.
+	 * @param $keys \list{String} List of keys in display format.
+	 * @return \arrayof{String,String} Array of keys in database format indexed by display format.
+	 */
 	protected function fixKeys( array $keys ) {
 		$newkeys = array();
 		$namespace = $this->definitions->namespace;
@@ -380,14 +456,15 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		return $newkeys;
 	}
 
+	/**
+	 * Loads existence and fuzzy state for given list of keys.
+	 * @param $keys \list{String} List of keys in database format.
+	 */
 	protected function loadInfo( array $keys ) {
 		if ( $this->dbInfo !== null ) {
 			return;
 		}
 
-		/**
-		 * Something iterable
-		 */
 		$this->dbInfo = array();
 
 		if ( !count( $keys ) ) {
@@ -417,14 +494,15 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$this->dbInfo = $dbr->select( $tables, $fields, $conds, __METHOD__, array(), $joins );
 	}
 
+	/**
+	 * Loads translation for given list of keys.
+	 * @param $keys \list{String} List of keys in database format.
+	 */
 	protected function loadData( $keys ) {
 		if ( $this->dbData !== null ) {
 			return;
 		}
 
-		/**
-		 * Something iterable
-		 */
 		$this->dbData = array();
 
 		if ( !count( $keys ) ) {
@@ -447,6 +525,10 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$this->dbData = $res;
 	}
 
+	/**
+	 * Constructs all TMessages from the data accumulated so far.
+	 * Usually there is no need to call this method directly.
+	 */
 	public function initMessages() {
 		if ( $this->messages !== null ) {
 			return;
@@ -460,9 +542,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 		$flipKeys = array_flip( $this->keys );
 
-		/**
-		 * Copy rows if any.
-		 */
+		// Copy rows if any.
 		if ( $this->dbData !== null ) {
 			foreach ( $this->dbData as $row ) {
 				if ( !isset( $flipKeys[$row->page_title] ) ) {
@@ -489,9 +569,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			$this->setTags( 'fuzzy', $fuzzy );
 		}
 
-		/**
-		 * Copy tags if any.
-		 */
+		// Copy tags if any.
 		foreach ( $this->tags as $type => $keys ) {
 			foreach ( $keys as $key ) {
 				if ( isset( $messages[$key] ) ) {
@@ -500,9 +578,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			}
 		}
 
-		/**
-		 * Copy infile if any.
-		 */
+		// Copy infile if any.
 		foreach ( $this->infile as $key => $value ) {
 			if ( isset( $messages[$key] ) ) {
 				$messages[$key]->setInfile( $value );
@@ -513,11 +589,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	}
 
 	/**
-	 * Interfaces etc.
-	 */
-
-	/**
-	 * ArrayAccess methods
+	 * ArrayAccess methods. @{
 	 */
 	public function offsetExists( $offset ) {
 		return isset( $this->keys[$offset] );
@@ -534,23 +606,22 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	public function offsetUnset( $offset ) {
 		unset( $this->keys[$offset] );
 	}
+	/** @} */
 
 	/**
-	 * Fail fast
+	 * Fail fast if trying to access unknown properties. @{
 	 */
 	public function __get( $name ) {
 		throw new MWException( __METHOD__ . ": Trying to access unknown property $name" );
 	}
 
-	/**
-	 * Fail fast
-	 */
 	public function __set( $name, $value ) {
 		throw new MWException( __METHOD__ . ": Trying to modify unknown property $name" );
 	}
+	/** @} */
 
 	/**
-	 * Iterator methods
+	 * Iterator method. @{
 	 */
 	public function rewind() {
 		reset( $this->keys );
@@ -579,10 +650,14 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	public function count() {
 		return count( $this->keys() );
 	}
+	/** @} */
+
 }
 
 /**
- * @todo Documentation needed.
+ * Wrapper for message definitions, just to beauty the code.
+ * This is one reason why message collections and thus message groups are
+ * restricted into single namespace.
  */
 class MessageDefinitions {
 	public $namespace;
@@ -590,16 +665,5 @@ class MessageDefinitions {
 	public function __construct( $namespace, array $messages ) {
 		$this->namespace = $namespace;
 		$this->messages = $messages;
-	}
-}
-
-/**
- * @todo Documentation needed.
- */
-class TestMessageCollection extends MessageCollection {
-	public function __construct( $code ) {
-		$this->code = $code;
-		$this->definitions = array();
-		$this->keys = array();
 	}
 }

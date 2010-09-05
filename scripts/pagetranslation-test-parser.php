@@ -44,7 +44,7 @@ class PageTranslationParserTester extends Maintenance {
 			try {
 				$parse = $translatablePage->getParse();
 				if ( $failureExpected ) {
-					$target = $parse->getTranslationPageText( new TestMessageCollection( "foo" ) );
+					$target = $parse->getTranslationPageText( MessageCollection::newEmpty( "foo" ) );
 					$this->output( "Testfile $filename should have failed... see $pattern.pttarget.fail\n" );
 					file_put_contents( "$pattern.pttarget.fail", $target );
 				}
@@ -65,7 +65,7 @@ class PageTranslationParserTester extends Maintenance {
 			}
 
 			if ( file_exists( "$pattern.pttarget" ) ) {
-				$target = $parse->getTranslationPageText( new TestMessageCollection( "foo" ) );
+				$target = $parse->getTranslationPageText( MessageCollection::newEmpty( "foo" ) );
 				if ( $target !== file_get_contents( "$pattern.pttarget" ) ) {
 					$this->output( "Testfile $filename failed with target page output... writing $pattern.pttarget.fail\n" );
 					file_put_contents( "$pattern.pttarget.fail", $target );
