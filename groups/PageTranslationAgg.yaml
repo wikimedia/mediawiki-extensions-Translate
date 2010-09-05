@@ -1,0 +1,15 @@
+# Enable this group if you want to have aggregate group for all page
+# page translation groups. You can also add this configuration:
+# $wgTranslateGroupStructure['/^page/'] = array( 'page' );
+
+BASIC:
+  id: page-0-all
+  label: All translatable pages
+  display: page
+  meta: yes
+  class: AggregateMessageGroup
+  description: 'All translatable pages'
+  namespace: NS_TRANSLATIONS
+
+GROUPS:
+  - page|*

@@ -455,9 +455,7 @@ class MediaWikiMessageGroup extends FileBasedMessageGroup {
 class AggregateMessageGroup extends MessageGroupBase {
 
 	public function exists() {
-		/**
-		 * Group exists if there are any subgroups.
-		 */
+		// Group exists if there are any subgroups.
 		$exists = (bool) $this->conf['GROUPS'];
 
 		if ( !$exists ) {
@@ -488,6 +486,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 		if ( !isset( $this->groups ) ) {
 			$groups = array();
 			$ids = (array) $this->conf['GROUPS'];
+			$ids = $this->expandWildcards( $ids );
 
 			foreach ( $ids as $id ) {
 				// Do not try to include self and go to infinite loop.
@@ -505,6 +504,34 @@ class AggregateMessageGroup extends MessageGroupBase {
 			$this->groups = $groups;
 		}
 		return $this->groups;
+	}
+
+	/**
+	 * If the list of group ids contains wildcards, this function will match
+	 * them against the list of all supported groups and return matched group
+	 * names.
+	 * @param $ids \list{String}
+	 * @return \list{String}
+	 */
+	protected function expandWildcards( $ids ) {
+		$hasWild = false;
+		foreach ( $ids as $id ) {
+			if ( strpos( $id, '*' ) !== false ) { 
+				$hasWild = true;
+				break;
+			}
+		}
+
+		if ( !$hasWild ) return $ids;
+
+		$matcher = new StringMatcher( '', $ids );
+		$all = array();
+		foreach ( MessageGroups::singleton()->getGroups() as $id => $_ ) {
+			if ( $matcher->match( $id ) ) {
+				$all[] = $id;
+			}
+		}
+		return $all;
 	}
 
 	public function initCollection( $code ) {
