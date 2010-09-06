@@ -184,21 +184,6 @@ class PremadeMediawikiExtensionGroups {
 			$wgTranslateAC[$id] = array( $this, 'factory' );
 			$wgTranslateEC[] = $id;
 		}
-
-		$this->addAllMeta();
-	}
-
-	protected function addAllMeta() {
-		global $wgTranslateAC, $wgTranslateEC;
-
-		$meta = array(
-			'ext-0-all'               => 'AllMediawikiExtensionsGroup',
-		);
-
-		foreach ( $meta as $id => $g ) {
-			$wgTranslateAC[$id] = $g;
-			$wgTranslateEC[] = $id;
-		}
 	}
 
 	public function factory( $id ) {
@@ -228,83 +213,5 @@ class PremadeMediawikiExtensionGroups {
 		if ( isset( $info['magicfile'] ) ) $group->setMagicFile( $info['magicfile'] );
 
 		return $group;
-	}
-}
-
-/**
- * Adds a message group containing all supported %MediaWiki extensions in the
- * Wikimedia Subversion repository.
- * @deprecated Replaced by AggregateMessageGroup and yaml configuration.
- */
-class AllMediawikiExtensionsGroup extends MessageGroupOld {
-	protected $label = 'MediaWiki extensions';
-	protected $id    = 'ext-0-all';
-	protected $meta  = true;
-	protected $type  = 'mediawiki';
-	protected $classes = null;
-	protected $description = '{{int:translate-group-desc-mediawikiextensions}}';
-
-	// Don't add the (mw ext) thingie
-	public function getLabel() { return $this->label; }
-
-	protected function init() {
-		if ( $this->classes === null ) {
-			$this->classes = MessageGroups::singleton()->getGroups();
-			foreach ( $this->classes as $index => $class ) {
-				if ( ( strpos( $class->getId(), 'ext-' ) !== 0 ) || $class->isMeta() || !$class->exists() ) {
-					unset( $this->classes[$index] );
-				}
-			}
-		}
-	}
-
-	public function load( $code ) {
-		$this->init();
-		$array = array();
-		foreach ( $this->classes as $class ) {
-			// Use wfArrayMerge because of string keys
-			$array = wfArrayMerge( $array, $class->load( $code ) );
-		}
-		return $array;
-	}
-
-	public function getMessage( $key, $code ) {
-		$this->init();
-		$msg = null;
-		foreach ( $this->classes as $class ) {
-			$msg = $class->getMessage( $key, $code );
-			if ( $msg !== null ) return $msg;
-		}
-		return null;
-	}
-
-	function getDefinitions() {
-		$this->init();
-		$array = array();
-		foreach ( $this->classes as $class ) {
-			// Use wfArrayMerge because of string keys
-			$array = wfArrayMerge( $array, $class->getDefinitions() );
-		}
-		return $array;
-	}
-
-	function getBools() {
-		$this->init();
-		$bools = parent::getBools();
-		foreach ( $this->classes as $class ) {
-			$newbools = ( $class->getBools() );
-			if ( count( $newbools['optional'] ) || count( $newbools['ignored'] ) ) {
-				$bools = array_merge_recursive( $bools, $class->getBools() );
-			}
-		}
-		return $bools;
-	}
-
-	public function exists() {
-		$this->init();
-		foreach ( $this->classes as $class ) {
-			if ( $class->exists() ) return true;
-		}
-		return false;
 	}
 }
