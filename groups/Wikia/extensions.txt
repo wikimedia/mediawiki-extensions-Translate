@@ -92,8 +92,6 @@ Link Suggest
 Lookup Contribs
 file = LookupContribs/SpecialLookupContribs.i18n.php
 
-Mag Cloud
-
 Masthead
 
 Most Popular Articles
