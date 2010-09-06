@@ -1,0 +1,35 @@
+BASIC:
+  id: wikia-0-all
+  label: Wikia MediaWiki extensions
+  display: wikia
+  meta: yes
+  class: AggregateMessageGroup
+  description: '{{int:translate-group-desc-wikiaextensions}}'
+  namespace: NS_MEDIAWIKI
+
+GROUPS:
+  - wikia-*
+  - ext-antibot
+  - ext-categorytree
+  - ext-charinsert
+  - ext-checkuser
+  - ext-cite
+  - ext-confirmedit
+  - ext-dismissablesitenotice
+  - ext-dplforum
+  - ext-editcount
+  - ext-findspam
+  - ext-googlemaps
+  - ext-imagemap
+  - ext-importfreeimages
+  - ext-inputbox
+  - ext-lookupuser
+  - ext-multiupload
+  - ext-parserfunctions
+  - ext-poem
+  - ext-randomimage
+  - ext-spamblacklist
+  - ext-stringfunctions
+  - ext-timeline
+  - ext-torblock
+  - ext-wikihiero
