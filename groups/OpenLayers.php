@@ -14,7 +14,7 @@
  * @todo Use new style class OpenLayersFFS.
  */
 class OpenLayersMessageGroup extends MessageGroupOld {
-	protected $label = 'OpenLayers (slippy maps)';
+	protected $label = 'OpenLayers';
 	protected $id    = 'out-openlayers';
 	protected $type  = 'openlayers';
 
