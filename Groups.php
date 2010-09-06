@@ -499,6 +499,13 @@ class AggregateMessageGroup extends MessageGroupBase {
 					error_log( "Invalid group id in {$this->getId()}: $id" );
 					continue;
 				}
+
+				/** @todo Figure out a better way to skip groups which are in
+				* aggregate and as individual in the list. */
+				if ( $group instanceof AggregateMessageGroup ) {
+					continue;
+				}
+
 				$groups[$id] = $group;
 			}
 			$this->groups = $groups;
