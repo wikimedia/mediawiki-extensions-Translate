@@ -1,13 +1,14 @@
 <?php
 /**
- * Script to export special core features of MediaWiki.
+ * Script to export special core features of %MediaWiki.
  *
  * @author Niklas Laxstrom
- *
- * @copyright Copyright © 2009, Niklas Laxström
+ * @copyright Copyright © 2009-2010, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  * @file
  */
+
+/// @cond
 
 $optionsWithArgs = array( 'lang', 'target', 'type' );
 require( dirname( __FILE__ ) . '/cli.inc' );
@@ -126,3 +127,5 @@ foreach ( $langs as $l ) {
 		file_put_contents( $outFile, $data );
 	}
 }
+
+/// @endcond

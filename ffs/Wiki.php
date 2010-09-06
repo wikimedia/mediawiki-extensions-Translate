@@ -3,13 +3,13 @@
  * Wike file format handler.
  *
  * @author Niklas Laxström
- * @copyright Copyright © 2008, Niklas Laxström
+ * @copyright Copyright © 2008-2010, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  * @file
  */
 
 /**
- * @todo Needs documentation.
+ * Old-style parser for %MediaWiki i18n format (one file per language).
  */
 class WikiFormatReader extends SimpleFormatReader {
 	// Set by creater
@@ -75,7 +75,7 @@ class WikiFormatReader extends SimpleFormatReader {
 }
 
 /**
- * @todo Needs documentation.
+ * Old-style writer for %MediaWiki i18n format (one file per language).
  */
 class WikiFormatWriter extends SimpleFormatWriter {
 	public $commaToArray = false;

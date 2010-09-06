@@ -9,7 +9,7 @@
  */
 
 /**
- * @todo Needs documentation.
+ * Support for %MediaWiki extensions in Wikias repository.
  */
 class PremadeWikiaExtensionGroups extends PremadeMediawikiExtensionGroups {
 	protected $useConfigure = false;
@@ -43,7 +43,7 @@ class PremadeWikiaExtensionGroups extends PremadeMediawikiExtensionGroups {
  * Adds a message group containing all supported Wikia extensions in the
  * Wikia Subversion repository and the Wikimedia Subversion.
  *
- * @todo Needs documentation.
+ * @todo Migrate to yaml configuration
  */
 class AllWikiaExtensionsGroup extends AllMediawikiExtensionsGroup {
 	protected $description = '{{int:translate-group-desc-wikiaextensions}}';

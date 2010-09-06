@@ -42,7 +42,7 @@ class TranslateUtils {
 	/**
 	 * Splits page name into message key and language code.
 	 * @param $text \string
-	 * @return \type{Tuple{String,String}} Key and language code.
+	 * @return \type{Tuple[String,String]} Key and language code.
 	 * @todo Handle names without slash.
 	 */
 	public static function figureMessage( $text ) {
@@ -57,7 +57,7 @@ class TranslateUtils {
 	 * Loads page content *without* side effects.
 	 * @param $key \string Message key.
 	 * @param $language \string Language code.
-	 * @param $namespace \ing Namespace number.
+	 * @param $namespace \int Namespace number.
 	 * @return \types{\string,\null} The contents or null.
 	 */
 	public static function getMessageContent( $key, $language,
@@ -74,7 +74,7 @@ class TranslateUtils {
 	 *
 	 * @param $titles \types{String,\list{String}} Database page names.
 	 * @param $namespace \int The number of the namespace.
-	 * @return \arrayof{\String,\type{Tuple{String,String}}} Tuples of page
+	 * @return \arrayof{\string,\type{Tuple[String,String]}} Tuples of page
 	 * text and last author indexed by page name.
 	 */
 	public static function getContents( $titles, $namespace ) {
@@ -148,7 +148,7 @@ class TranslateUtils {
 	/**
 	 * Makes a selector from name and options.
 	 * @param $name \string
-	 * @param $options \List{String} Html \<option> elements.
+	 * @param $options \list{String} Html \<option> elements.
 	 * @return \string Html.
 	 */
 	public static function selector( $name, $options ) {
@@ -158,7 +158,7 @@ class TranslateUtils {
 	/**
 	 * Makes a selector from name and options.
 	 * @param $name \string
-	 * @param $options \list{String} The name and value of options.
+	 * @param $items \list{String} The name and value of options.
 	 * @param $selected \string The default selected value.
 	 * @return \string Html.
 	 */
@@ -246,7 +246,7 @@ class TranslateUtils {
 	 * Returns the primary group message belongs to.
 	 * @param $namespace \int
 	 * @param $key \string
-	 * @return \types{\String,\null} Group id or null.
+	 * @return \types{\string,\null} Group id or null.
 	 */
 	public static function messageKeyToGroup( $namespace, $key ) {
 		if ( self::$mi === null ) {

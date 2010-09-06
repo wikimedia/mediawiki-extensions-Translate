@@ -3,13 +3,14 @@
  * Simple file format handler for testing import and export.
  *
  * @author Niklas Laxström
- * @copyright Copyright © 2008, Niklas Laxström
+ * @copyright Copyright © 2008-2010, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  * @file
  */
 
 /**
- * @todo Needs documentation.
+ * Example implementation of old-style file format reader.
+ * @see FFS
  */
 class SimpleFormatReader {
 	const SEPARATOR = '----';
@@ -98,7 +99,8 @@ class SimpleFormatReader {
 }
 
 /**
- * @todo Needs documentation.
+ * Example implementation of old-style file format writer.
+ * @see FFS
  */
 class SimpleFormatWriter {
 	const SEPARATOR = '----';

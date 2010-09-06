@@ -8,6 +8,9 @@
  * @file
  */
 
+/**
+ * Old style parser for JavaScript format files.
+ */
 class OpenLayersFormatReader extends SimpleFormatReader {
 	protected $keyquote = true;
 
@@ -111,6 +114,9 @@ class OpenLayersFormatReader extends SimpleFormatReader {
 	}
 }
 
+/**
+ * Old style writer for JavaScript format files.
+ */
 class OpenLayersFormatWriter extends SimpleFormatWriter {
 
 	/**

@@ -1,6 +1,6 @@
 <?php
 /**
- * Classes for MediaWiki extension translation.
+ * Classes for %MediaWiki extension translation.
  *
  * @file
  * @author Niklas Laxström
@@ -9,7 +9,7 @@
  */
 
 /**
- * @todo Needs documentation.
+ * Class which handles special definition format for %MediaWiki extensions.
  */
 class PremadeMediawikiExtensionGroups {
 	protected $groups;
@@ -24,6 +24,7 @@ class PremadeMediawikiExtensionGroups {
 		$this->path = $wgTranslateExtensionDirectory;
 	}
 
+	/// Initialisation function
 	public function init() {
 		if ( $this->groups !== null ) return;
 
@@ -167,10 +168,12 @@ class PremadeMediawikiExtensionGroups {
 		$this->groups = $fixedGroups;
 	}
 
+	/// Makes an group id from extension name
 	static function foldId( $name ) {
 		return preg_replace( '/\s+/', '', strtolower( $name ) );
 	}
 
+	/// Registers all extensions
 	public function addAll() {
 		global $wgTranslateAC, $wgTranslateEC;
 		$this->init();
@@ -229,8 +232,9 @@ class PremadeMediawikiExtensionGroups {
 }
 
 /**
- * Adds a message group containing all supported MediaWiki extensions in the
+ * Adds a message group containing all supported %MediaWiki extensions in the
  * Wikimedia Subversion repository.
+ * @deprecated Replaced by AggregateMessageGroup and yaml configuration.
  */
 class AllMediawikiExtensionsGroup extends MessageGroupOld {
 	protected $label = 'MediaWiki extensions';

@@ -10,7 +10,8 @@
  */
 
 /**
- * @todo Needs documentation.
+ * Implements file format support for PHP files which consist of multiple
+ * variable assignments.
  */
 class FlatPhpFFS extends SimpleFFS {
 	//

@@ -3,7 +3,6 @@
  * Script to test page translation parser
  *
  * @author Niklas Laxstrom
- *
  * @copyright Copyright © 2010, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  * @file
@@ -18,7 +17,8 @@ if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 require_once( "$IP/maintenance/Maintenance.php" );
 
 /**
- * @todo Needs documentation.
+ * Custom testing framework for page translation parser.
+ * @ingroup PageTranslation Maintenance
  */
 class PageTranslationParserTester extends Maintenance {
 	public function __construct() {

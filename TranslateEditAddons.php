@@ -11,11 +11,15 @@
  */
 
 /**
- * @todo Needs documentation.
+ * Various editing enhancements to the edit page interface.
+ * Partly succeeded by the new ajax-enhanced editor but kept for compatibility.
+ * Also has code that is still relevant, like the hooks on save.
  */
 class TranslateEditAddons {
-	const MSG = 'translate-edit-';
 
+	/**
+	 * Add some ugly navigation links below translations.
+	 */
 	static function addNavigation( &$outputpage, &$text ) {
 		global $wgUser, $wgTitle;
 
@@ -63,7 +67,7 @@ class TranslateEditAddons {
 				continue;
 			}
 
-			/**
+			/*
 			 * Keys can have mixed case, but they have to be unique in a case
 			 * insensitive manner. It is therefore safe and a must to use case
 			 * insensitive comparison method.
@@ -140,13 +144,18 @@ EOEO;
 		return true;
 	}
 
+	/**
+	 * Keep the usual diiba daaba hidden from translators.
+	 */
 	static function intro( $object ) {
 		$object->suppressIntro = true;
 
 		return true;
 	}
 
-
+	/**
+	 * Adds the translation aids and navigation to the normal edit page.
+	 */
 	static function addTools( $object ) {
 		if ( !self::isMessageNamespace( $object->mTitle ) ) {
 			return true;
@@ -158,6 +167,10 @@ EOEO;
 		return true;
 	}
 
+	/**
+	 * Replace the normal save button with one that says if you are editing
+	 * message documentation to try to avoid accidents.
+	 */
 	static function buttonHack( $editpage, &$buttons, $tabindex ) {
 		global $wgTranslateDocumentationLanguageCode;
 
@@ -382,18 +395,14 @@ EOEO;
 			}
 		}
 
-		/**
-		 * Update it.
-		 */
+		// Update it.
 		if ( $revision === null ) {
 			$rev = $article->getTitle()->getLatestRevId();
 		} else {
 			$rev = $revision->getID();
 		}
 
-		/**
-		 * begin fuzzy tag.
-		 */
+		// begin fuzzy tag.
 		$dbw = wfGetDB( DB_MASTER );
 
 		$id = $dbw->selectField( 'revtag_type', 'rtt_id', array( 'rtt_name' => 'fuzzy' ), __METHOD__ );
@@ -403,24 +412,16 @@ EOEO;
 			'rt_type' => $id,
 			'rt_revision' => $rev
 		);
-		/**
-		 * Remove any existing fuzzy tags for this revision
-		 */
+		// Remove any existing fuzzy tags for this revision
 		$dbw->delete( 'revtag', $conds, __METHOD__ );
 
-		/**
-		 * Add the fuzzy tag if needed.
-		 */
+		// Add the fuzzy tag if needed.
 		if ( $fuzzy !== false ) {
 			$dbw->insert( 'revtag', $conds, __METHOD__ );
 		}
-		/**
-		 * End fuzzy
-		 */
 
-		/**
-		 * Diffs for changed messages.
-		 */
+
+		// Diffs for changed messages.
 		if ( $fuzzy !== false ) {
 			return true;
 		}

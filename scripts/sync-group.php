@@ -2,14 +2,13 @@
 /**
  * Command line script to import/update source messages and translations into the wiki database.
  *
- * @file
- * @ingroup Extensions
- *
  * @author Niklas Laxström
- * @copyright Copyright © 2007-2009, Niklas Laxström
+ * @copyright Copyright © 2007-2010, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  * @file
  */
+
+/// @cond
 
 $optionsWithArgs = array( 'group', 'lang', 'start', 'end' );
 require( dirname( __FILE__ ) . '/cli.inc' );
@@ -129,20 +128,27 @@ foreach ( $groups as &$group ) {
 	unset( $group );
 }
 
+/// @endcond
+
 /**
- * @todo Needs documentation.
+ * Simple external changes syncer and conflict resolution.
  */
 class ChangeSyncer {
-	public $group;
-	public $norc = false;
-	public $interactive = true;
-	public $nocolor = false;
+	public $group; ///< \type{MessageGroup}
+	public $norc = false; ///< \bool Don't list changes in recent changes table.
+	public $interactive = true; ///< \bool Whether the script can ask questions.
+	public $nocolor = false; ///< \bool Disable colour output.
 
 	public function __construct( MessageGroup $group ) {
 		$this->group = $group;
 	}
 
 	// svn component from pecl doesn't seem to have this in quick sight
+	/**
+	 * Fetch last changed timestamp for a versioned file for conflict resolution.
+	 * @param $file \string Filename with full path.
+	 * @return \string Timestamp or false.
+	 */
 	public function getTimestampsFromSvn( $file ) {
 		$file = escapeshellarg( $file );
 		$retval = 0;
@@ -166,6 +172,11 @@ class ChangeSyncer {
 		return false;
 	}
 
+	/**
+	 * Fetch last changed timestamp for any file for conflict resolution.
+	 * @param $file \string Filename with full path.
+	 * @return \string Timestamp or false.
+	 */
 	public function getTimestampsFromFs( $file ) {
 		if ( !file_exists( $file ) ) {
 			return false;
@@ -176,6 +187,13 @@ class ChangeSyncer {
 		return $stat['mtime'];
 	}
 
+	/**
+	 * Do some conflict resolution for translations.
+	 * @param $code \string Language code.
+	 * @param $startTs \int Time of the last export (changes in wiki after this will conflict)
+	 * @param $endTs \int Time of the last export (changes in source before this wont conflict)
+	 * @param $changeTs \int When change happened in the source.
+	 */
 	public function checkConflicts( $code, $startTs = false, $endTs = false, $changeTs = false ) {
 		$messages = $this->group->load( $code );
 
@@ -294,6 +312,12 @@ class ChangeSyncer {
 		}
 	}
 
+	/**
+	 * Colours text for shell output
+	 * @param $color \string Either blue, green or bold.
+	 * @param $text \string
+	 * @return \string
+	 */
 	public function color( $color, $text ) {
 		switch ( $color ) {
 			case 'blue':
@@ -307,6 +331,12 @@ class ChangeSyncer {
 		}
 	}
 
+	/**
+	 * Try to identify when the translation was last changed in the wiki.
+	 * @param $title \type{Title} Title of the page which contains translation.
+	 * @param $startTs \int Timestamp how far back to go before giving up.
+	 * @return \int Timestamp or false.
+	 */
 	public function getLastGoodChange( $title, $startTs = false ) {
 		global $wgTranslateFuzzyBotName;
 
@@ -330,6 +360,10 @@ class ChangeSyncer {
 		return $wikiTs;
 	}
 
+	/**
+	 * Initialises FuzzyBot if necessary.
+	 * @return \type{User}
+	 */
 	public function getImportUser() {
 		static $user = null;
 
@@ -347,6 +381,12 @@ class ChangeSyncer {
 		return $user;
 	}
 
+	/**
+	 * Does the actual edit.
+	 * @param $title \type{Title}
+	 * @param $translation \string
+	 * @param $comment \string Edit summary.
+	 */
 	public function import( $title, $translation, $comment ) {
 		global $wgUser;
 
@@ -358,7 +398,7 @@ class ChangeSyncer {
 			$flags |= EDIT_SUPPRESS_RC;
 		}
 
-		$article = new Article( $title );
+		$article = new Article( $title, 0 );
 		STDOUT( "Importing {$title->getPrefixedText()}: ", $title );
 		$status = $article->doEdit( $translation, $comment, $flags );
 		$success = $status === true || ( is_object( $status ) && $status->isOK() );
@@ -368,4 +408,5 @@ class ChangeSyncer {
 	}
 }
 
+// Print timestamp if the user wants to store it
 STDOUT( wfTimestamp( TS_RFC2822 ) );

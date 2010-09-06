@@ -4,11 +4,12 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2008, Niklas Laxström
+ * @copyright Copyright © 2008-2010, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
 /**
+ * Old-style parser for %MediaWiki extension i18n format.
  * @todo Needs documentation and conversion to new style message group.
  */
 class WikiExtensionFormatReader extends WikiFormatReader {
@@ -81,6 +82,7 @@ class WikiExtensionFormatReader extends WikiFormatReader {
 }
 
 /**
+ * Old-style writer for %MediaWiki extension i18n format.
  * @todo Needs documentation and conversion to new style message group.
  */
 class WikiExtensionFormatWriter extends WikiFormatWriter {

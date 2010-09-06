@@ -1,6 +1,6 @@
 <?php
 /**
- * Classes for complex messages (MediaWiki special page aliases, namespace names, magic words).
+ * Classes for complex messages (%MediaWiki special page aliases, namespace names, magic words).
  *
  * @file
  * @author Niklas Laxström
@@ -9,6 +9,8 @@
  */
 
 /**
+ * Base class which implements handling and translation interface of
+ * non-message %MediaWiki items.
  * @todo Needs documentation.
  */
 abstract class ComplexMessages {
@@ -246,9 +248,6 @@ abstract class ComplexMessages {
 			'<tr>' . implode( "\n", $subheading )  . '</tr>';
 	}
 
-	/**
-	 * GLOBALS: $wgRequest
-	 */
 	public function output() {
 		global $wgRequest;
 
@@ -522,6 +521,7 @@ abstract class ComplexMessages {
 }
 
 /**
+ * Adds support for translating special page aliases via Special:AdvancedTranslate.
  * @todo Needs documentation.
  */
 class SpecialPageAliasesCM extends ComplexMessages {
@@ -602,6 +602,7 @@ class SpecialPageAliasesCM extends ComplexMessages {
 }
 
 /**
+ * Adds support for translating magic words via Special:AdvancedTranslate.
  * @todo Needs documentation.
  */
 class MagicWordsCM extends ComplexMessages {
@@ -653,6 +654,7 @@ class MagicWordsCM extends ComplexMessages {
 }
 
 /**
+ * Adds support for translating namespace names via Special:AdvancedTranslate.
  * @todo Needs documentation.
  */
 class NamespaceCM extends ComplexMessages {

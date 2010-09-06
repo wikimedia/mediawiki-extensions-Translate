@@ -1,6 +1,6 @@
 <?php
 /**
- * Message for Special:FirstSteps of the Translate extension.
+ * %Messages for Special:FirstSteps of the Translate extension.
  *
  * @file
  * @author Niklas Laxström

@@ -10,12 +10,12 @@
  */
 
 /**
- * Extends class MwException. Currently empty.
+ * Identifies Gettext plural exceptions.
  */
-class GettextPluralException extends MwException { }
+class GettextPluralException extends MwException {}
 
 /**
- * Read the gettext file.
+ * Old-style parser for gettext file format.
  */
 class GettextFormatReader extends SimpleFormatReader {
 	protected $pot = false;
@@ -102,6 +102,9 @@ class GettextFormatReader extends SimpleFormatReader {
 	}
 }
 
+/**
+ * Old-style writer for gettext file format.
+ */
 class GettextFormatWriter extends SimpleFormatWriter {
 	protected $data = array();
 	protected $plural = array( false, 0 );
@@ -354,7 +357,7 @@ class GettextFormatWriter extends SimpleFormatWriter {
 }
 
 /**
- * FFS class that implements support for gettext file format.
+ * New-style FFS class that implements support for gettext file format.
  * @ingroup FFS
  */
 class GettextFFS extends SimpleFFS {

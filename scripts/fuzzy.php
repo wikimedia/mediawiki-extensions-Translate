@@ -8,6 +8,8 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+/// @cond
+
 require( dirname( __FILE__ ) . '/cli.inc' );
 
 # Override the memory limit for wfShellExec, 100 MB seems to be too little
@@ -54,16 +56,27 @@ if ( isset( $options['really'] ) ) {
 
 $bot->execute();
 
+/// @endcond
+
+
 /**
- * @todo Needs documentation.
+ * Class for marking translation fuzzy.
  */
 class FuzzyBot {
+	/// \list{String} List of patterns to mark.
 	private $titles = array();
+	/// \bool Check for configuration problems.
 	private $allclear = false;
+	/// \bool Dont do anything unless confirmation is given
 	public $dryrun = true;
+	/// \string Edit summary.
 	public $comment = null;
+	/// \list{String} List of language codes to skip.
 	public $skipLanguages = array();
 
+	/**
+	 * @param $titles \list{String}
+	 */
 	public function __construct( $titles ) {
 		$this->titles = $titles;
 
@@ -93,6 +106,7 @@ class FuzzyBot {
 		}
 	}
 
+	/// Searches pages that match given patterns
 	private function getPages() {
 		global $wgTranslateMessageNamespaces;
 		$dbr = wfGetDB( DB_SLAVE );
@@ -136,6 +150,10 @@ class FuzzyBot {
 		return $messagesContents;
 	}
 
+	/**
+	 * Create FuzzyBot user if necessary.
+	 * @return \type{User}
+	 */
 	public function getImportUser() {
 		static $user = null;
 
@@ -152,6 +170,13 @@ class FuzzyBot {
 		return $user;
 	}
 
+	/**
+	 * Does the actual edit if possible.
+	 * @param $title \type{Title}
+	 * @param $text \string
+	 * @param $dryrun \bool Whether to really do it or just show what would be done.
+	 * @param $comment \string Edit summary.
+	 */
 	private function updateMessage( $title, $text, $dryrun, $comment = null ) {
 		global $wgTranslateDocumentationLanguageCode, $wgUser;
 
@@ -175,7 +200,7 @@ class FuzzyBot {
 			return;
 		}
 
-		$article = new Article( $title );
+		$article = new Article( $title, 0 );
 
 		$status = $article->doEdit( $text, $comment ? $comment : 'Marking as fuzzy', EDIT_FORCE_BOT | EDIT_UPDATE );
 

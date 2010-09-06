@@ -423,7 +423,7 @@ class JavaFFS extends SimpleFFS {
 }
 
 /**
- * @todo Needs documentation.
+ * Generic file format support for JavaScript formatted files.
  * @ingroup FFS
  */
 abstract class JavaScriptFFS extends SimpleFFS {
@@ -620,7 +620,8 @@ abstract class JavaScriptFFS extends SimpleFFS {
 }
 
 /**
- * @todo Needs documentation.
+ * New style file format support for specific kind of JavaScript
+ * formatted files used by OpenLayers.
  * @ingroup FFS
  */
 class OpenLayersFFS extends JavaScriptFFS {
@@ -664,7 +665,7 @@ EOT;
 }
 
 /**
- * @todo Needs documentation.
+ * File format support for Shapado, which uses JavaScript based format.
  * @ingroup FFS
  */
 class ShapadoJsFFS extends JavaScriptFFS {

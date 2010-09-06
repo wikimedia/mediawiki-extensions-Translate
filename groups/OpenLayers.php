@@ -9,7 +9,9 @@
  */
 
 /**
- * @deprecated Use new style class OpenLayersFFS.
+ * %Message group for OpenLayers.
+ * @todo Use new style group configuration.
+ * @todo Use new style class OpenLayersFFS.
  */
 class OpenLayersMessageGroup extends MessageGroupOld {
 	protected $label = 'OpenLayers (slippy maps)';

@@ -4,12 +4,13 @@
  * http://www.omegawiki.org/extensions/Wikidata/util/voctrain/trainer.php
  *
  * @file
- * @ingroup Extensions
- *
- * @copyright Copyright © 2009, Niklas Laxström
+ * @copyright Copyright © 2009-2010, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+/**
+ * Old-style message group for Vocabulary trainer.
+ */
 class VoctrainMessageGroup extends ExtensionMessageGroup {
 
 	public function getChecker() {
@@ -23,6 +24,9 @@ class VoctrainMessageGroup extends ExtensionMessageGroup {
 
 }
 
+/**
+ * %Message checker for Vocabulary trainer.
+ */
 class VoctrainMessageChecker extends MessageChecker {
 	/**
 	 * Checks for missing and unknown parameters

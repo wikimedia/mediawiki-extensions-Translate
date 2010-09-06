@@ -1,15 +1,15 @@
 <?php
 /**
- * Implements MessageChecker for MediaWiki.
+ * Implements MessageChecker for %MediaWiki.
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2008-2009, Niklas Laxström
+ * @copyright Copyright © 2008-2010, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
 /**
- * MediaWiki specific message checks.
+ * %MediaWiki specific message checks.
  *
  * @ingroup MessageCheckers
  */

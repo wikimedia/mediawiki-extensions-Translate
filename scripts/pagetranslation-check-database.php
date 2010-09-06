@@ -18,7 +18,9 @@ if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 require_once( "$IP/maintenance/Maintenance.php" );
 
 /**
- * @todo Needs documentation.
+ * Script to check the consistency of the databases of the page translation
+ * feature and fix problems.
+ * @todo Document methods.
  */
 class PTCheckDB extends Maintenance {
 	public function __construct() {
