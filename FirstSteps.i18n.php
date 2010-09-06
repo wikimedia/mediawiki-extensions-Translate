@@ -1738,6 +1738,10 @@ $messages['pl'] = array(
 	'translate-fs-permissions-title' => 'Wniosek o uprawnienia tłumacza',
 	'translate-fs-target-title' => 'Zacznij tłumaczyć!',
 	'translate-fs-email-title' => 'Potwierdź swój adres e‐mail',
+	'translate-fs-settings-skip' => 'Skończyłem. 
+Pozwól mi przejść dalej.',
+	'translate-fs-userpage-submit' => 'Utwórz moją stronę użytkownika',
+	'translate-fs-userpage-done' => 'Udało się! Masz już swoją stronę użytkownika.',
 );
 
 /** Piedmontese (Piemontèis)

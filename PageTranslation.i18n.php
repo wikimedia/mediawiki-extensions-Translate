@@ -3434,12 +3434,40 @@ Tekst sekcji – <pre>$1</pre>',
 	'pt-log-name' => 'Rejestr tłumaczenia stron',
 	'pt-log-mark' => '{{GENDER:$2|oznaczył|oznaczyła|oznaczył(‐a)}} wersję $3 strony „[[:$1]]“ jako przeznaczonej do tłumaczenia',
 	'pt-log-unmark' => '{{GENDER:$2|usunął|usunęła|usunął(‐eła)}} oznaczenie strony „[[:$1]]“ jako przeznaczonej do tłumaczenia',
+	'pt-log-moveok' => '{{GENDER:$2|zmienił|zmieniła|zmieniono}} nazwę przetłumaczalnej strony $1 na nową',
+	'pt-log-movenok' => '{{GENDER:$2|napotkał|napotkała|napotkano}} problem z przeniesieniem [[:$1]] do [[:$3]]',
+	'pt-movepage-title' => 'Przenieś przetłumaczalną stronę $1',
+	'pt-movepage-blockers' => 'Przetłumaczalna strona nie może zostać przeniesiona pod nową nazwę ponieważ {{PLURAL:$1|wystąpił następujący błąd|wystąpiły następujące błędy:}}',
+	'pt-movepage-block-base-exists' => 'Istnieje bazowa strona docelowa [[:$1]].',
+	'pt-movepage-block-base-invalid' => 'Nazwa docelowej strony nie jest poprawnym tytułem.',
+	'pt-movepage-block-tp-exists' => 'Istnieje docelowa strona tłumaczenia [[:$2]].',
+	'pt-movepage-block-tp-invalid' => 'Nazwa docelowej strony tłumaczenia [[:$1]] może być nieprawidłowa. Może jest zbyt długa?',
+	'pt-movepage-block-section-exists' => 'Istnieje docelowa sekcja strony [[:$2]].',
+	'pt-movepage-block-section-invalid' => 'Nazwa docelowej sekcji strony [[:$1]] jest nieprawidłowa. Może jest zbyt długa?',
+	'pt-movepage-block-subpage-exists' => 'Docelowa podstrona [[:$2]] istnieje.',
+	'pt-movepage-block-subpage-invalid' => 'Nazwa docelowej podstrony [[:$1]] jest nieprawidłowa. Może jest zbyt długa?',
 	'pt-movepage-list-pages' => 'Lista stron do przeniesienia',
 	'pt-movepage-list-translation' => 'Strony do przetłumaczenia',
+	'pt-movepage-list-section' => 'Sekcje stron',
+	'pt-movepage-list-other' => 'Inne podstrony',
+	'pt-movepage-list-count' => 'W sumie do przeniesienia {{PLURAL:$1|jest $1 strona|są $1 strony|jest $1 stron}}.',
+	'pt-movepage-legend' => 'Przenieś przetłumaczalną stronę',
 	'pt-movepage-current' => 'Obecna nazwa',
 	'pt-movepage-new' => 'Nowa nazwa',
 	'pt-movepage-reason' => 'Powód',
+	'pt-movepage-subpages' => 'Przenieś wszystkie podstrony',
+	'pt-movepage-action-check' => 'Sprawdź czy przeniesienie jest wykonalne',
+	'pt-movepage-action-perform' => 'Przenieś',
 	'pt-movepage-action-other' => 'Zmiana celu',
+	'pt-movepage-intro' => 'Ta strona specjalna pozwala na przenoszenie stron, które zostały oznaczone jako wymagające tłumaczenia.
+Działanie przenoszenia nie jest natychmiastowe, ponieważ wiele stron wymaga przenoszenia.
+Do przenoszenia stron jest wykorzystywana kolejka zadań.
+Podczas gdy strony są przenoszone, nie jest możliwa praca z tymi stronami poprzez zapytania.
+Błędy zostaną zalogowane na stronie rejestru tłumaczeń i muszą zostać naprawione ręcznie.',
+	'pt-movepage-logreason' => 'Część przetłumaczalnej strony $1.',
+	'pt-movepage-started' => 'Strona bazowa jest teraz przenoszona. 
+Proszę sprawdzić na stronie dziennika tłumaczeń czy nie wystąpiły błędy oraz komunikat o zakończeniu operacji.',
+	'pt-locked-page' => 'Ta strona jest zablokowana ponieważ jest przygotowana do przeniesienia.',
 );
 
 /** Piedmontese (Piemontèis)
