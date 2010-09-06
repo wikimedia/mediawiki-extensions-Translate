@@ -555,7 +555,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 				}
 			} else {
 				// BC for MessageGroupOld
-				$messages = wfArrayMerge( $messages, $group->load( 'en' ) );
+				$messages += $group->load( 'en' );
 			}
 		}
 
