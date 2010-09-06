@@ -455,9 +455,14 @@ FOO;
 
 		$wgOut->wrapWikiMsg( $wrap, array( 'tpt-translation-intro', $url, $titleText, $per ) );
 
-		if ( ( (int) $per ) < 100 ) {
-			$wrap = '<div style="font-size: x-small; text-align: center" class="mw-translate-fuzzy">$1</div>';
-			$wgOut->wrapWikiMsg( $wrap, array( 'tpt-translation-intro-fuzzy' ) );
+		if ( ((int) $per) < 100 ) {
+			$group = MessageGroups::getGroup( 'page|' . $page->getTitle()->getPrefixedText() );
+			$collection = $group->initCollection( $code );
+			$collection->filter( 'fuzzy', false );
+			if ( count( $collection ) ) {
+				$wrap = '<div style="font-size: x-small; text-align: center" class="mw-translate-fuzzy">$1</div>';
+				$wgOut->wrapWikiMsg( $wrap, array( 'tpt-translation-intro-fuzzy' ) );
+			}
 		}
 
 		$wgOut->addHTML( '<hr />' );
