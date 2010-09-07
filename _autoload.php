@@ -120,7 +120,6 @@ $wgAutoloadClasses['TranslateYaml'] = $dir . 'utils/TranslateYaml.php';
  * @name   Classes for predefined old-style message groups
  * @{
  */
-$wgAutoloadClasses['AllMediawikiExtensionsGroup'] = $dir . 'groups/MediaWikiExtensions.php';
 $wgAutoloadClasses['PremadeMediawikiExtensionGroups'] = $dir . 'groups/MediaWikiExtensions.php';
 $wgAutoloadClasses['PremadeWikiaExtensionGroups'] = $dir . 'groups/Wikia/WikiaExtensions.php';
 $wgAutoloadClasses['MediaWikiMessageChecker'] = $dir . 'groups/MediaWiki/Checker.php';
