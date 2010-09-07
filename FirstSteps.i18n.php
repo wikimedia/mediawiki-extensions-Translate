@@ -1738,6 +1738,9 @@ $messages['pl'] = array(
 	'translate-fs-permissions-title' => 'Wniosek o uprawnienia tłumacza',
 	'translate-fs-target-title' => 'Zacznij tłumaczyć!',
 	'translate-fs-email-title' => 'Potwierdź swój adres e‐mail',
+	'translate-fs-intro' => "Witaj w kreatorze pierwszych kroków na {{GRAMMAR:MS,pl|{{SITENAME}}}}.
+Pomożemy Ci krok po kroku przejść przez proces zostania tłumaczem.
+Po jego zakończeniu będziesz mógł tłumaczyć ''komunikatu interfejsu'' wszystkich wspieranych przez {{GRAMMAR:B.lp|{{SITENAME}}}} projektów.",
 	'translate-fs-settings-skip' => 'Skończyłem. 
 Pozwól mi przejść dalej.',
 	'translate-fs-userpage-submit' => 'Utwórz moją stronę użytkownika',
