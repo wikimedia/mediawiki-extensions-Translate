@@ -569,6 +569,7 @@ aliasfile = InspectCache/InspectCache.alias.php
 # Create a symbolic link "Installer" to phase3/includes/installer in extensions/ before enabling this.
 #Installer
 #descmsg = config-desc
+#optional = config-type-mysql, config-type-postgres, config-type-sqlite, config-type-oracle
 
 Interlanguage
 magicfile = Interlanguage/Interlanguage.i18n.magic.php
