@@ -593,7 +593,7 @@ abstract class JavaScriptFFS extends SimpleFFS {
 		$pairs = array(
 			"\\" => "\\\\",
 			"\"" => "\\\"",
-			"'" => "\\\'",
+			"'" => "\\'",
 			"\n" => "\\n",
 			"\r" => "\\r",
 
