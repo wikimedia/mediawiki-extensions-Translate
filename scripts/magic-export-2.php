@@ -71,9 +71,18 @@ foreach ( $groups as $group ) {
 	if ( !file_exists( $file ) ) continue;
 
 	include( $file );
-	if( !isset( $aliases ) ) continue;
-	$messagesOld[$group->getId()] = $aliases;
-	unset( $aliases );
+	switch( $type ) {
+		case 'special':
+			if( !isset( $aliases ) ) continue;
+			$messagesOld[$group->getId()] = $aliases;
+			unset( $aliases );
+			break;
+		case 'magic':
+			if( !isset( $magicWords ) ) continue;
+			$messagesOld[$group->getId()] = $magicWords;
+			unset( $magicWords );
+			break;
+	}
 
 	$handles[$group->getId()] = fopen( $options['target'] . '/' . $filename, 'w' );
 
@@ -83,7 +92,7 @@ foreach ( $groups as $group ) {
 // Write header.
 foreach( $handles as $handle ) {
 	if( $type === 'special' ) {
-			fwrite( $handle, <<<EOT
+		fwrite( $handle, <<<EOT
 <?php
 
 /**
@@ -97,6 +106,18 @@ foreach( $handles as $handle ) {
 EOT
 );
 	} else {
+		fwrite( $handle, <<<EOT
+
+/**
+ * Internationalisation file for magic
+ *
+ * @file
+ * @ingroup Extensions
+ */
+
+\$magicWords = array();
+EOT
+		);
 	}
 }
 
@@ -150,13 +171,36 @@ foreach ( $langs as $l ) {
 			}
 		}
 		if( count( $messagesOut ) > 0 ) {
-			$out = "\n\n/** {$namesEn[$l]} ({$namesNative[$l]}) */\n\$aliases['{$l}'] = array(\n";
+			switch( $options['type'] ) {
+				case 'special':
+					$out = "\n\n/** {$namesEn[$l]} ({$namesNative[$l]}) */\n\$aliases['{$l}'] = array(\n";
+					break;
+				case 'magic':
+					$out = "\n\n/** {$namesEn[$l]} ({$namesNative[$l]}) */\n\$magicWords['{$l}'] = array(\n";
+					break;
+			}
 			foreach( $messagesOut as $key => $translations ) {
 				foreach( $translations as $id => $translation ) {
 					$translations[$id] = addslashes( $translation );
+					if( $options['type'] === 'magic' ) {
+						if( $translation === '0' ) {
+							unset( $translations[$id] );
+						}
+					}
 				}
 				$translations = implode( "', '", $translations );
-				$out .= "\t'$key' => array( '$translations' ),\n";
+				switch( $options['type'] ) {
+					case 'special':
+						$out .= "\t'$key' => array( '$translations' ),\n";
+						break;
+					case 'magic':
+						if( $messagesOld['ext-babel']['en'][$key][0] === 0 ) {
+							$out .= "\t'$key' => array( 0, '$translations' ),\n";
+						} else {
+							$out .= "\t'$key' => array( '$translations' ),\n";
+						}
+						break;
+				}
 			}
 			$out .= ");";
 			fwrite( $handle, $out );
