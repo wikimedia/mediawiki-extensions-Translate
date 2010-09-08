@@ -237,6 +237,56 @@ Erstellt von der Universität Bamberg. Lizenziert unter GPL 2.0 oder später. En
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] ist ein Projekt für eine offline, nur-Text-Version der Wikipedia auf Kleingeräte.',
 );
 
+/** French (Français)
+ * @author Crochet.david
+ * @author IAlex
+ * @author Jean-Frédéric
+ * @author Litlok
+ * @author Peter17
+ * @author PieRRoMaN
+ * @author Verdy p
+ * @author Xapitoun
+ */
+$messages['fr'] = array(
+	'translate-group-desc-nodesc' => 'Aucune description n’est disponible pour ce groupe de messages',
+	'translate-group-desc-mediawikicore' => 'Ce groupe de messages contient les messages utilisés dans la version alpha actuelle de MediaWiki ({{CURRENTVERSION}}).',
+	'translate-group-desc-mediawikimostused' => 'Ce groupe de messages contient les [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 messages les plus souvent utilisés] dans MediaWiki.',
+	'translate-group-desc-mediawikiextensions' => 'Ce méta-groupe de messages contient les messages de toutes les extensions pour MediaWiki supportées.',
+	'translate-group-desc-collection' => 'Ce méta-groupe de messages contient tous les messages de l’extension MediaWiki [http://www.mediawiki.org/wiki/Extension:Collection Collection].',
+	'translate-group-desc-flaggedrevs' => 'Groupe des messages Meta contenant tous les messages de l’extension MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
+	'translate-group-desc-readerfeedback' => 'Groupe des messages Meta contenant tous les messages de l’extension MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
+	'translate-group-desc-socialprofile' => 'Groupe des messages Meta contenant tous les messages des extensions liées à l’extension MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
+	'translate-group-desc-translate' => 'Groupe des messages Meta contenant tous les messages de l’extension MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
+	'translate-group-desc-wikiaextensions' => 'Ce méta-groupe de messages contient tous les messages des extensions MediaWiki utilisées par [http://www.wikia.com Wikia].',
+	'translate-group-desc-wikimediaextensions' => 'Ce méta-groupe de messages contient tous les messages des extensions MediaWiki utilisées par la [http://wikimedia.org/ Wikimedia Foundation].',
+	'translate-group-desc-uniwiki' => 'Meta groupe de messages contenant tous les messages pour les extensions apparentées à [http://unicefinnovation.org/wiki.php Uniwiki]',
+	'translate-group-desc-ui' => 'Groupe de messages Meta contenant tous les messages des extensions liées à [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
+	'translate-group-desc-translatablepages' => 'Toutes les pages traductibles',
+	'bw-desc-freecol' => 'Avant de traduire FreeCol dans votre langue, veuillez lire [[Translating:FreeCol]]. Freecol est publié sous licence GPL.',
+	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], un forum internet écrit en PHP.',
+	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] est un système gratuit pour le suivi sur le web des anomalies. Rapportez tous les problèmes sur [[Support]].',
+	'translate-group-desc-mediawiki-core-115' => 'Les messages pour la version stable 1.15 de [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawiki-core-116' => 'Les messages pour la version stable 1.16 de [[Translating:MediaWiki|MediaWiki]]',
+	'bw-desc-mwlibrl' => "'''mwlib.rl''' est une bibliothèque Python pour créer des documents PDF à partir des articles de MediaWiki qui ont été analysés par la bibliothèque mwlib.
+
+Veuillez consulter [[mw:Extension:PDF Writer]] et http://code.pediapress.com/wiki/wiki/mwlibrl pour plus d’informations.",
+	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] est un client webmail écrit en PHP. Rapportez tous les problèmes sur [[Support]].',
+	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] est un lecteur Wikipédia hors-ligne',
+	'bw-desc-openlayers' => 'OpenLayers est logiciel en source ouvert pour la génération dynamique de cartes. Rapportez tous les problèmes sur [[Support]].',
+	'bw-desc-openstreetmap' => 'Groupe de messages pour tous les message de [[Translating:OpenStreetMap|OpenStreetMap]]',
+	'bw-desc-osm-site' => "Ce groupe de messages contient les messages de l'interface d'[[Translating:Open Street Map|Open Street Map]].",
+	'bw-desc-osm-potlatch' => 'Ce groupe de messages contient les messages de l’interface de [[Translating:OpenStreetMap|Potlatch]]. Veuillez :
+*essayer de faire des traductions de longueur équivalente à l’original anglais, en raison de restrictions de l’interface utilisateur. Voir le [http://trac.openstreetmap.org/ticket/2067 rapport de bug].
+*utiliser [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] pour tester Potlatch. Vous pouvez tester autant que vous le voulez dans n’importe-quelle zone.',
+	'bw-desc-shapado' => 'Groupe de messages pour le logiciel libre et open-source de questions/réponses [[Translating:Shapado|Shapado]]',
+	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] est un serveur de microblogging en source ouverte',
+	'bw-desc-voctrain' => 'Entraîneur de vocabulaire basé sur [http://omegawiki.org OmegaWiki]. Utilise un système à base de cartes flash pour apprendre le vocabulaire de n’importe quel langue vers n’importe quelle langue prise en charge par Omegawiki.
+Créé pour l’Université de Bamberg. Publié sous licence GPL 2.0 ou plus récent. Développé par [[User:Kim Bruning|Kim Bruning]].',
+	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] permet de trouver rapidement les auteurs d’une page dans un wiki de Wikimedia.',
+	'bw-desc-wikimediamobile' => 'Wikimedia Mobile peut être trouvé à http://m.wikipedia.org et a pour but de faciliter l’accès à Wikipédia sur les téléphones mobiles supportés à travers le monde.',
+	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] est un projet visant à offrir une version texte de Wikipedia en mode hors connexion sur un périphérique mobile.',
+);
+
 /** Galician (Galego)
  * @author Toliño
  */

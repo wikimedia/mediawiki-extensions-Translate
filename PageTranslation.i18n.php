@@ -4922,6 +4922,7 @@ $messages['zh-hans'] = array(
 	'translate-tag-translate-link-desc' => '翻译本页',
 	'tpt-languages-legend' => '其他语言：',
 	'tpt-download-page' => '汇出含翻译的页面',
+	'pt-movepage-reason' => '原因：',
 	'pt-movepage-logreason' => '可翻译页面$1 的部分。',
 	'pt-locked-page' => '此页面已被锁定，因为可翻译页面正在被移动。',
 );
