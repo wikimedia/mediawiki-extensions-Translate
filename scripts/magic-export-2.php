@@ -212,7 +212,7 @@ PHP
 								$out .= "\t'$key' => array( '$translations' ),\n";
 								break;
 							case 'magic':
-								if( $this->messagesOld['ext-babel']['en'][$key][0] === 0 ) {
+								if( $this->messagesOld[$group]['en'][$key][0] === 0 ) {
 									$out .= "\t'$key' => array( 0, '$translations' ),\n";
 								} else {
 									$out .= "\t'$key' => array( '$translations' ),\n";
