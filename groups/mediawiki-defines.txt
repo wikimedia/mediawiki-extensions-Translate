@@ -1044,6 +1044,8 @@ aliasfile = SiteMatrix/SiteMatrix.alias.php
 
 Skin Per Page
 
+Slimbox Thumbs
+
 # NOT OBSOLETE: Maps does not support OSM in trunk
 Slippy Map
 ignored = slippymap_license, slippymap_osmlink
