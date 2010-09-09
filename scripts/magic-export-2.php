@@ -24,11 +24,9 @@ class MagicExport extends Maintenance {
 
 		$this->addOption( 'target', 'Target directory for exported files', true, true );
 		$this->addOption( 'type', 'magic or special', true, true );
-
 	}
 
 	public function execute() {
-
 		$this->target = $this->getOption( 'target' );
 		$this->type = $this->getOption( 'type' );
 
@@ -46,8 +44,16 @@ class MagicExport extends Maintenance {
 		$this->closeHandles();
 	}
 
+	/**
+	 * Itterate through all groups, loading current data from the existing
+	 * extension and opening message files for message output.
+	 *  - If the group does not define a special page alias file or magic
+	 *    words file, or that file does not exist, it is ignored silently.
+	 *  - If the file does contain a data array (e.g. $aliases) then the
+	 *    program exits.
+	 */
 	protected function openHandles() {
-		$this->output( "Opening file handles...\n" );
+		$this->output( "Opening file handles and loading current data...\n" );
 
 		$groups = MessageGroups::singleton()->getGroups();
 		foreach ( $groups as $group ) {
@@ -69,7 +75,7 @@ class MagicExport extends Maintenance {
 			}
 
 			global $wgTranslateExtensionDirectory;
-			$file = "$wgTranslateExtensionDirectory/$filename";
+			$file = "$wgTranslateExtensionDirectory$filename";
 			$dir = dirname( $file );
 			if ( !file_exists( $file ) )  {
 				continue;
@@ -78,15 +84,15 @@ class MagicExport extends Maintenance {
 			include( $file );
 			switch( $this->type ) {
 				case 'special':
-					if( !isset( $aliases ) ) {
-						#die( "File '$file' does not contain an aliases array.\n" );
+					if ( !isset( $aliases ) ) {
+						die( "File '$file' does not contain an aliases array.\n" );
 					}
 					$this->messagesOld[$group->getId()] = $aliases;
 					unset( $aliases );
 					break;
 				case 'magic':
-					if( !isset( $magicWords ) ) {
-						#die( "File '$file' does not contain a magic words array.\n" );
+					if ( !isset( $magicWords ) ) {
+						die( "File '$file' does not contain a magic words array.\n" );
 					}
 					$this->messagesOld[$group->getId()] = $magicWords;
 					unset( $magicWords );
@@ -94,17 +100,21 @@ class MagicExport extends Maintenance {
 			}
 
 			$file = $this->target . '/' . $filename;
-			if( !file_exists( dirname( $file ) ) ) mkdir( dirname( $file ), 0777, true );
+			if ( !file_exists( dirname( $file ) ) ) mkdir( dirname( $file ), 0777, true );
 			$this->handles[$group->getId()] = fopen( $file, 'w' );
 
 			$this->output( "\t{$group->getId()}\n" );
 		}
 	}
 
+	/**
+	 * Write the opening of the files for each output file handle.
+	 */
 	protected function writeHeaders() {
-		foreach( $this->handles as $handle ) {
-			if( $this->type === 'special' ) {
-				fwrite( $handle, <<<PHP
+		foreach ( $this->handles as $handle ) {
+			switch( $this->type ) {
+				case 'special':
+					fwrite( $handle, <<<PHP
 <?php
 
 /**
@@ -116,13 +126,14 @@ class MagicExport extends Maintenance {
 
 \$aliases = array();
 PHP
-);
-			} else {
-				fwrite( $handle, <<<PHP
+					);
+					break;
+				case 'magic':
+					fwrite( $handle, <<<PHP
 <?php
 
 /**
- * Internationalisation file for magic
+ * Internationalisation file for magic words
  *
  * @file
  * @ingroup Extensions
@@ -130,16 +141,23 @@ PHP
 
 \$magicWords = array();
 PHP
-				);
+					);
+				break;
 			}
 		}
 	}
 
+	/**
+	 * Itterate through available languages, loading and parsing the data
+	 * message from the MediaWiki namespace and writing the data to its output
+	 * file handle.
+	 */
 	protected function writeFiles() {
 		$langs = self::parseLanguageCodes( '*' );
 		unset( $langs[array_search( 'en', $langs )] );
 		$langs = array_merge( array( 'en' ), $langs );
 		foreach ( $langs as $l ) {
+			// Load message page.
 			switch ( $this->type ) {
 				case 'special':
 					$title = Title::makeTitleSafe( NS_MEDIAWIKI, 'Sp-translate-data-SpecialPageAliases/' . $l );
@@ -151,7 +169,8 @@ PHP
 					exit( 1 );
 			}
 
-			if( !$title || !$title->exists() ) {
+			// Parse message page.
+			if ( !$title || !$title->exists() ) {
 				$this->output( "Skiping $l...\n" );
 
 				$messagesNew = array();
@@ -165,10 +184,10 @@ PHP
 				$segments = explode( "\n", $data );
 				array_shift( $segments );
 				array_shift( $segments );
-				unset( $segments[count($segments)-1] );
-				unset( $segments[count($segments)-1] );
+				unset( $segments[count( $segments ) -1] );
+				unset( $segments[count( $segments ) -1] );
 				$messagesNew = array();
-				foreach( $segments as $segment ) {
+				foreach ( $segments as $segment ) {
 					$parts = explode( ' = ', $segment );
 					$key = array_shift( $parts );
 					$translations = explode( ', ', implode( $parts ) );
@@ -176,19 +195,22 @@ PHP
 				}
 			}
 
-			foreach( $this->handles as $group => $handle ) {
-				$this->output( "\t{$group}...\n" );
-				$namesEn = LanguageNames::getNames( 'en' );
+			// Write data to handles.
+			$namesEn = LanguageNames::getNames( 'en' );
 				$namesNative = Language::getLanguageNames();
+			foreach ( $this->handles as $group => $handle ) {
+				// Find messages to write to this handle.
 				$messagesOut = array();
-				foreach( $this->messagesOld[$group]['en'] as $key => $message ) {
-					if( array_key_exists( $key, $messagesNew ) ) {
+				foreach ( $this->messagesOld[$group]['en'] as $key => $message ) {
+					if ( array_key_exists( $key, $messagesNew ) ) {
 						$messagesOut[$key] = $messagesNew[$key];
-					} elseif( isset( $this->messagesOld[$group][$l][$key] ) ) {
+					} elseif ( isset( $this->messagesOld[$group][$l][$key] ) ) {
 						$messagesOut[$key] = $this->messagesOld[$group][$l][$key];
 					}
 				}
-				if( count( $messagesOut ) > 0 ) {
+
+				// If there are messages to write, write them.
+				if ( count( $messagesOut ) > 0 ) {
 					switch( $this->type ) {
 						case 'special':
 							$out = "\n\n/** {$namesEn[$l]} ({$namesNative[$l]}) */\n\$aliases['{$l}'] = array(\n";
@@ -197,13 +219,11 @@ PHP
 							$out = "\n\n/** {$namesEn[$l]} ({$namesNative[$l]}) */\n\$magicWords['{$l}'] = array(\n";
 							break;
 					}
-					foreach( $messagesOut as $key => $translations ) {
-						foreach( $translations as $id => $translation ) {
+					foreach ( $messagesOut as $key => $translations ) {
+						foreach ( $translations as $id => $translation ) {
 							$translations[$id] = addslashes( $translation );
-							if( $this->type === 'magic' ) {
-								if( $translation == '0' ) {
+							if ( $this->type === 'magic' && $translation == '0' ) {
 									unset( $translations[$id] );
-								}
 							}
 						}
 						$translations = implode( "', '", $translations );
@@ -212,7 +232,7 @@ PHP
 								$out .= "\t'$key' => array( '$translations' ),\n";
 								break;
 							case 'magic':
-								if( $this->messagesOld[$group]['en'][$key][0] === 0 ) {
+								if ( $this->messagesOld[$group]['en'][$key][0] === 0 ) {
 									$out .= "\t'$key' => array( 0, '$translations' ),\n";
 								} else {
 									$out .= "\t'$key' => array( '$translations' ),\n";
@@ -227,26 +247,30 @@ PHP
 		}
 	}
 
+	/**
+	 * Close all output file handles.
+	 */
 	protected function closeHandles() {
 		$this->output( "Closing file handles...\n" );
-		foreach( $this->handles as $group => $handle ) {
+		foreach ( $this->handles as $group => $handle ) {
 			fclose( $handle );
 		}
 	}
 
+	/**
+	 * Copied from cli.inc.
+	 */
 	private static function parseLanguageCodes( /* string */ $codes ) {
 		$langs = array_map( 'trim', explode( ',', $codes ) );
 		if ( $langs[0] === '*' ) {
 			$languages = Language::getLanguageNames();
-			ksort($languages);
-			$langs = array_keys($languages);
+			ksort( $languages );
+			$langs = array_keys( $languages );
 		}
-
 		return $langs;
 	}
 
 }
-
 
 $maintClass = "MagicExport";
 require_once( DO_MAINTENANCE );
