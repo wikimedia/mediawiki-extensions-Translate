@@ -1083,6 +1083,11 @@ Dóstanješ tež powěsćowe listy, zwjetša jónkróć wob měsać.
 Jeli nochceš powěsćowe listy dóstać, móžeš tutu opciju na rajtarku "{{int:prefs-personal}}" swojich [[Special:Preferences|preferencow]] znjemóžnić.',
 );
 
+/** Hungarian (Magyar) */
+$messages['hu'] = array(
+	'translate-fs-signup-title' => 'Feliratkozás',
+);
+
 /** Interlingua (Interlingua)
  * @author McDutchie
  */

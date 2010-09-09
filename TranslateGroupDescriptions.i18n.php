@@ -333,6 +333,52 @@ Extensión creada pola Universidade de Bamberg. Licenza GPL 2.0 ou posterior. De
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] é un proxecto para ollar unha versión da Wikipedia sen conexión e en modo de só lectura nun dispositivo móbil.',
 );
 
+/** Swiss German (Alemannisch)
+ * @author Als-Holder
+ */
+$messages['gsw'] = array(
+	'translategroupdescriptions-desc' => 'Bschryybig vu dr Nochrichtegruppe vu Projäkt, wu mit dr Softwareerwyterig [http://mediawiki.org/wiki/Extension:Translate „Translate“] unterstitzt wäre',
+	'translate-group-desc-nodesc' => 'Fir die Nochrichte-Gruppe isch kei Bschryybig verfiegbar.',
+	'translate-group-desc-mediawikicore' => 'In däre Gruppe het s alli Nochrichte vu dr aktuälle alpha-Version vu MediaWiki ({{CURRENTVERSION}})',
+	'translate-group-desc-mediawikimostused' => 'In däre Gruppe het s di [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 am meischte bruchte Nochrichte] in MediaWiki',
+	'translate-group-desc-mediawikiextensions' => 'In däre Hauptgruppe het s alli Syschtemnochrichte vu dr Erwyterige, wu vu MediaWiki unterstitzt wäre',
+	'translate-group-desc-collection' => 'In däre Hauptgruppe het s alli Syschtemnochrichte fir d MediaWiki-Erwyterig [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
+	'translate-group-desc-flaggedrevs' => 'In däre Hauptgruppe het s alli Syschtemnochrichte fir d MediaWiki-Erwyterig [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
+	'translate-group-desc-readerfeedback' => 'Meta-Nochrichte-Gruppe, wu s alli Nochrichte din het fir d MediaWiki-Erwyterig [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
+	'translate-group-desc-socialprofile' => 'In däre Hauptgruppe het s alli Syschtemnochrichte fir verwandti Erwyterige vu dr MediaWiki-Erwyterig  f[http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
+	'translate-group-desc-translate' => 'In däre Hauptgruppe het s alli Syschtemnochrichte fir d MediaWiki-Erwyterig [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
+	'translate-group-desc-wikiaextensions' => 'In däre Hauptgruppe het s alli Syschtemnochrichte vu dr unterstitzte MediaWiki-Erwyterige, wu vu  [http://www.wikia.com Wikia] brucht wäre',
+	'translate-group-desc-wikimediaextensions' => 'In däre Hauptgruppe het s alli Syschtemnochrichte vu dr unterstitzte MediaWiki-Erwyterige, wu vu dr [http://wikimedia.org/ Wikimedia Foundation] brucht wäre',
+	'translate-group-desc-uniwiki' => 'In däre Hauptgruppe het s alli Syschtemnochrichte fir verwandti Erwyterige vu [http://unicefinnovation.org/wiki.php Uniwiki]',
+	'translate-group-desc-ui' => 'In däre Hauptgruppe het s alli Syschtemnochrichte vu dr [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Benutzerfrejndligkeits-Initiative]',
+	'translate-group-desc-translatablepages' => 'Alli ibersetzbare Syte',
+	'bw-desc-freecol' => 'Voreb Du aafangsch mit Ibersetze vu FreeCol, liis bitte zerscht [[Translating:FreeCol]]. Freecol nutzt d GPL-Lizänz.',
+	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], e Netzforum, wu in PHP gschriben isch.',
+	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] isch e webbasiert Bug-Tracking-Syschtem. Iber Probläm sott uf [[Support]] berichtet wäre.',
+	'translate-group-desc-mantisbt-plugin-core' => 'E Haupt-Plugin fir [[Translating:MantisBT|MantisBT]]',
+	'translate-group-desc-mediawiki-core-115' => 'Nochrichte fir di stabil Version 1.15 vu [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawiki-core-116' => 'Nochrichte fir di stabil Version 1.16 vu [[Translating:MediaWiki|MediaWiki]]',
+	'bw-desc-mwlibrl' => "'''mwlib.rl''' isch e Python-Bibliothek zum Schrybe vu PDF-Dokumänt us MediaWiki-Artikel, wu dur d mwlib-Bibliothek parsed wore sin.
+
+Bitte lueg uf [[mw:Extension:PDF_Writer]] un uf http://code.pediapress.com/wiki/wiki/mwlibrl fir meh Informatione.",
+	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] isch e Webmail-Client, wu in PHP gschribe isch. Froge un Fähler sotte uf [[Support]] berichtet wäre.',
+	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] isch e Offline-Programm zum Läse vu dr Wikipedia',
+	'bw-desc-openlayers' => 'OpenLayers isch e dynamische Open-Source-Chartegenerator. Froge un Fähler sotte uf [[Support]] berichtet wäre.',
+	'bw-desc-openstreetmap' => 'Nochrichtegruppe fir alli [[Translating:OpenStreetMap|OpenStreetMap]]-Nochrichte',
+	'bw-desc-osm-site' => 'In däre Gruppe het s Nochrichte vu dr Benutzeroberflechi fir [[Translating:Open Street Map|Open Street Map]].',
+	'bw-desc-osm-potlatch' => 'In däre Nochrichte-Gruppe het s d Syschtemnochrichte fir [[Translating:OpenStreetMap|Potlatch]]. Bitte:
+
+* Versuech, wänn s goht, bi Dyyne Ibersetzige d Lengi vu dr änglische Ibersetzig yyzhalte, wel s Yyschränkige bim UI-Framework git. Lueg au dr [http://trac.openstreetmap.org/ticket/2067 uffig Bug].
+* Verwänd [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] zum Teschte vu Potlatch. Dert chasch Bearbeitige mache zum Versueche, wie Du witt.',
+	'bw-desc-shapado' => 'Syschtemnaochrichte vu [[Translating:Shapado|Shapado]], ere freje Open-Source-Software fir Froge un Antworte',
+	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] isch e Opensource-Mikroblog-Server',
+	'bw-desc-voctrain' => 'Omegawiki-basierte Vokabeltrainer. Mithilf vun eme Flashchartesyschtem chenne Vokable vu jedere Sproch zue jedere vu Omagawiki unterstitzte Sproch glehrt wäre.
+Aagleit vu dr Universität Bamberg. Lizänziert unter GPL 2.0 oder speter. Entwicklet vum [[User:Kim Bruning|Kim Bruning]].',
+	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] cha d Autore vun ere Syte im e Wikimedia-Wiki schnäll uusefinde.',
+	'bw-desc-wikimediamobile' => 'Di mobil Version vu dr Wikipedia findsch unter http://m.wikipedia.org. Si het s Ziil, Wikipedia uf Smartphones rund um d Wält z bringe.',
+	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] isch e Projäkt, wu ne Offline-Textversion vu dr Wikipedia fir e Mobilservice z Verfiegig stellt.',
+);
+
 /** Interlingua (Interlingua)
  * @author McDutchie
  */
@@ -786,5 +832,52 @@ $messages['ru'] = array(
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] позволяет быстро найти авторов страницы в проектах Викимедиа.',
 	'bw-desc-wikimediamobile' => 'Мобильная Викимедиа находится по адресу http://m.wikipedia.org и предназначена для работы с Википедией с поддерживаемых смартфонов по всему миру.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] — это проект, предоставляющий автономную текстовую версию Википедии на мобильном устройстве.',
+);
+
+/** Vietnamese (Tiếng Việt)
+ * @author Minh Nguyen
+ * @author Vinhtantran
+ */
+$messages['vi'] = array(
+	'translategroupdescriptions-desc' => 'Miêu tả các sản phẩm được phần mở rộng [http://mediawiki.org/wiki/Extension:Translate Translate] hỗ trợ',
+	'translate-group-desc-nodesc' => 'Không có miêu tả cho nhóm thông điệp này',
+	'translate-group-desc-mediawikicore' => 'Nhóm thông báo này chứa các thông báo dùng trong phiên bản alpha hiện hành của MediaWiki ({{CURRENTVERSION}})',
+	'translate-group-desc-mediawikimostused' => 'Nhóm thông báo này chứa [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 thông báo dùng nhiều nhất] trong MediaWiki',
+	'translate-group-desc-mediawikiextensions' => 'Nhóm thông báo “mẹ”, chứa các thông báo trong các phần mở rộng MediaWiki được hỗ trợ tại đây',
+	'translate-group-desc-collection' => 'Nhóm thông báo “mẹ”, chứa các thông báo của phần mở rộng [http://www.mediawiki.org/wiki/Extension:Collection Collection] cho MediaWiki',
+	'translate-group-desc-flaggedrevs' => 'Nhóm thông báo “mẹ”, chứa các thông báo của phần mở rộng [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs] cho MediaWiki',
+	'translate-group-desc-readerfeedback' => 'Nhóm thông điệp meta chứa tất cả các thông điệp dùng cho bộ mở rộng MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
+	'translate-group-desc-socialprofile' => 'Nhóm thông báo “mẹ”, chứa thông báo của các phần mở rộng có liên quan đến phần mở rộng [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile] cho MediaWiki',
+	'translate-group-desc-translate' => 'Nhóm thông báo “mẹ”, chứa các thông báo của phần mở rộng [http://www.mediawiki.org/wiki/Extension:Translate Translate] cho MediaWiki',
+	'translate-group-desc-wikiaextensions' => 'Nhóm thông báo “mẹ”, chứa thông báo của các phần mở rộng MediaWiki được sử dụng tại [http://www.wikia.com Wikia]',
+	'translate-group-desc-wikimediaextensions' => 'Nhóm thông báo “mẹ”, chứa thông báo của các phần mở rộng MediaWiki được [http://wikimedia.org/ Quỹ Wikimedia] sử dụng',
+	'translate-group-desc-uniwiki' => 'Nhóm thông báo “mẹ”, chứa thông báo của các phần mở rộng có liên quan đến [http://unicefinnovation.org/wiki.php Uniwiki]',
+	'translate-group-desc-ui' => 'Nhóm thông điệp meta chứa tất cả các thông điệp dùng cho bộ mở rộng liên quan đến [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Sáng kiến Khả dụng Wikipedia]',
+	'translate-group-desc-translatablepages' => 'Mọi trang dịch được',
+	'bw-desc-freecol' => 'Trước khi dịch FreeCol ra ngôn ngữ của bạn, xin hãy đọc [[Translating:FreeCol]]. Freecol sử dụng giấy phép GPL.',
+	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], một diễn đàn mạng được viết bằng PHP.',
+	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] là hệ thống miễn phí để theo dõi lỗi trên Web. Xin hãy báo cáo lỗi tại [[Support]].',
+	'translate-group-desc-mantisbt-plugin-core' => 'Một trong những phần bổ trợ chính của [[Translating:MantisBT|MantisBT]]',
+	'translate-group-desc-mediawiki-core-115' => 'Các thông điệp trong phiên bản ổn định 1.15 của [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawiki-core-116' => 'Các thông điệp trong phiên bản ổn định 1.16 của [[Translating:MediaWiki|MediaWiki]]',
+	'bw-desc-mwlibrl' => "'''mwlib.rl''' là một thư viện Python để tạo ra tài liệu PDF từ những bài MediaWiki được thư viện mwlib xử lý.
+
+Xem thêm chi tiết tại [[MW:Extension:PDF Writer]] và http://code.pediapress.com/wiki/wiki/mwlibrl .",
+	'bw-desc-nocc' => '[http://nocc.sourceforge.net/ NOCC] là chương trình thư điện tử Web được viết bằng PHP. Xin hãy báo cáo lỗi tại [[Support]].',
+	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] là chương trình đọc Wikipedia ngoại tuyến',
+	'bw-desc-openlayers' => 'OpenLayers là một thư viện mã nguồn mở để tạo ra bản đồ động. Xin hãy báo cáo lỗi tại [[Support]].',
+	'bw-desc-openstreetmap' => 'Nhóm thông điệp chứa các thông điệp của [[Translating:OpenStreetMap|OpenStreetMap]]',
+	'bw-desc-osm-site' => 'Nhóm thông điệp này chứa các thông điệp của giao diện [[Translating:OpenStreetMap|OpenStreetMap]].',
+	'bw-desc-osm-potlatch' => 'Nhóm thông điệp này chứa các thông điệp của giao diện [[Translating:OpenStreetMap|Potlatch]]. Xin hãy:
+
+* Cố gắng dịch càng gần độ dài của bản gốc tiếng Anh càng tốt vì những hạn chế của nền giao diện. Xem thêm [http://trac.openstreetmap.org/ticket/2067 lỗi chưa giải quyết].
+* Thử Potlatch tại máy chủ [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org]. Bạn có thể thử ở đấy phần nào cũng được.',
+	'bw-desc-shapado' => 'Nhóm thông điệp cho phần mềm hỏi đáp nguồn mở miễn phí [[Translating:Shapado|Shapado]]',
+	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] là máy chủ tiểu blog nguồn mở',
+	'bw-desc-voctrain' => "Chương trình dạy từ vựng dựa trên [http://omegawiki.org OmegaWiki]. Sử dụng hệ thống thẻ nhớ (''flashcard'') để tập nói ngôn ngữ nào dùng ngôn ngữ nào tại Omegawiki.
+Được xây dựng bởi [[User:Kim Bruning|Kim Bruning]] cho Đại học Bamberg và cho phép sử dụng theo giấy phép GPL 2.0 hoặc phiên bản mới hơn.",
+	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] có thể nhanh chóng tìm ra tác giả của trang trong wiki của Wikimedia.',
+	'bw-desc-wikimediamobile' => 'Wikimedia di động có thể xem tại http://m.wikipedia.org với mục tiêu mang Wikipedia đến các điện thoại thông minh trên khắp thế giới.',
+	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] là dự án sản xuất phiên bản Wikipedia ngoại tuyến có văn bản thuần để đọc trên thiết bị di động.',
 );
 

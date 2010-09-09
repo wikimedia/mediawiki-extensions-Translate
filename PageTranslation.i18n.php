@@ -2218,6 +2218,7 @@ A lap, amit szerkeszteni próbálsz, úgy tűnik hogy nem egyezik egy fordítás
 	'tpt-install' => 'Futtasd a <code>maintenance/update.php</code>-t vagy a webes telepítőt, hogy engedélyezd a lapfordítás funkciót.',
 	'tpt-render-summary' => 'Frissítés, hogy megegyezzen a forráslap új változatával',
 	'tpt-download-page' => 'Lap exportálása fordításokkal együtt',
+	'pt-movepage-reason' => 'Indoklás:',
 );
 
 /** Interlingua (Interlingua)
@@ -4862,6 +4863,11 @@ Phần văn bản: <pre>$1</pre>',
 	'pt-movepage-subpages' => 'Di chuyển các trang phụ',
 	'pt-movepage-action-check' => 'Kiểm tra có thể di chuyển',
 	'pt-movepage-action-perform' => 'Di chuyển',
+	'pt-movepage-intro' => 'Trang đặc biệt này cho phép bạn di chuyển các trang được đánh dấu là cần dịch.
+Tác vụ này sẽ không được thực hiện ngay vì cần di chuyển nhiều trang một lúc.
+Các trang sẽ được đưa vào hàng đợi việc để được di chuyển.
+Trong khi các trang đang được di chuyển, không thể tương tác các trang đó.
+Những vụ thất bại sẽ được ghi vào nhật trình dịch trang; các trang được ảnh hưởng sẽ cần được sửa đổi bằng tay.',
 	'pt-movepage-logreason' => 'Một phần của trang dịch được $1.',
 	'pt-movepage-started' => 'Trang gốc đã được di chuyển.
 Xin hãy kiểm tra những lỗi hay thông điệp kết quả thành công trong nhật trình dịch trang.',
