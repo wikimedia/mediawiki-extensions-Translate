@@ -12,6 +12,9 @@
 
 require( dirname( dirname( dirname( dirname( __FILE__ ) ) ) ) . '/maintenance/Maintenance.php' );
 
+/**
+ * Maintenance class for the fast export of special page aliases and magic words.
+ */
 class MagicExport extends Maintenance {
 	protected $type;
 	protected $target;
