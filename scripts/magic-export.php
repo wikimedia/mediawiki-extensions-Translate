@@ -42,7 +42,7 @@ class MagicExport extends Maintenance {
 		}
 
 		$this->openHandles();
-		$this->writeHeaders();
+		// $this->writeHeaders();
 		$this->writeFiles();
 		$this->writeFooters();
 		$this->closeHandles();
@@ -79,13 +79,13 @@ class MagicExport extends Maintenance {
 			}
 
 			global $wgTranslateExtensionDirectory;
-			$file = "$wgTranslateExtensionDirectory/$filename";
-			$dir = dirname( $file );
-			if ( !file_exists( $file ) )  {
+			$inFile = "$wgTranslateExtensionDirectory/$filename";
+			$dir = dirname( $inFile );
+			if ( !file_exists( $inFile ) )  {
 				continue;
 			}
 
-			include( $file );
+			include( $inFile );
 			switch( $this->type ) {
 				case 'special':
 					if ( isset( $aliases ) ) {
@@ -95,24 +95,39 @@ class MagicExport extends Maintenance {
 						$this->messagesOld[$group->getId()] = $specialPageAliases;
 						unset( $specialPageAliases );
 					} else {
-						die( "File '$file' does not contain an aliases array.\n" );
+						die( "File '$inFile' does not contain an aliases array.\n" );
 					}
 					break;
 				case 'magic':
 					if ( !isset( $magicWords ) ) {
-						die( "File '$file' does not contain a magic words array.\n" );
+						die( "File '$inFile' does not contain a magic words array.\n" );
 					}
 					$this->messagesOld[$group->getId()] = $magicWords;
 					unset( $magicWords );
 					break;
 			}
 
-			$file = $this->target . '/' . $filename;
-			wfMkdirParents( dirname( $file ) );
-			$this->handles[$group->getId()] = fopen( $file, 'w' );
+			$outFile = $this->target . '/' . $filename;
+			wfMkdirParents( dirname( $outFile ) );
+			$this->handles[$group->getId()] = fopen( $outFile, 'w' );
+			fwrite( $this->handles[$group->getId()], $this->readHeader( $inFile ) );
 
 			$this->output( "\t{$group->getId()}\n" );
 		}
+	}
+
+	protected function readHeader( $file ) {
+		$data = file_get_contents( $file );
+
+		// Seek first '*/'.
+		$end = strpos( $data, '*/' ) + 2;
+
+		if( $end === false ) {
+			die( "No header found in '$file'.\n" );
+		}
+
+		// Grab header.
+		return substr( $data, 0, $end );
 	}
 
 	/**
