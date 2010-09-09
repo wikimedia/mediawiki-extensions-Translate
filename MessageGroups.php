@@ -377,7 +377,7 @@ class ExtensionMessageGroup extends MessageGroupOld {
 	 * Name of the array where all special page aliases are stored, if applicable.
 	 * Only used in class SpecialPageAliasesCM
 	 */
-	protected $arrAlias = 'aliases';
+	protected $arrAlias = 'specialPageAliases';
 
 	protected $path = null;
 

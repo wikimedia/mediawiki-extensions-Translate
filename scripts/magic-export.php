@@ -88,12 +88,15 @@ class MagicExport extends Maintenance {
 			include( $file );
 			switch( $this->type ) {
 				case 'special':
-					// TODO: Rename to $specialPageAliases after the first export.
-					if ( !isset( $aliases ) ) {
+					if ( isset( $aliases ) ) {
+						$this->messagesOld[$group->getId()] = $aliases;
+						unset( $aliases );
+					} elseif ( isset( $specialPageAliases ) ) {
+						$this->messagesOld[$group->getId()] = $specialPageAliases;
+						unset( $specialPageAliases );
+					} else {
 						die( "File '$file' does not contain an aliases array.\n" );
 					}
-					$this->messagesOld[$group->getId()] = $aliases;
-					unset( $aliases );
 					break;
 				case 'magic':
 					if ( !isset( $magicWords ) ) {

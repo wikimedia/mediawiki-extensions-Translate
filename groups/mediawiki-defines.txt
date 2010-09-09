@@ -1501,9 +1501,7 @@ Wikihiero
 file = wikihiero/wikihiero.i18n.php
 
 Wikilog
-# FIXME: broken
-#aliasfile = Wikilog/Wikilog.i18n.alias.php
-#aliasvar = specialPageAliases
+aliasfile = Wikilog/Wikilog.i18n.alias.php
 magicfile = Wikilog/Wikilog.i18n.magic.php
 optional = wikilog-entry-footer, wikilog-title-item-full, wikilog-feed-title
 optional = wikilog-comment-footer, wikilog-simple-signature

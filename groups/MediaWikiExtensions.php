@@ -78,7 +78,6 @@ class PremadeMediawikiExtensionGroups {
 					case 'desc':
 					case 'magicfile':
 					case 'aliasfile':
-					case 'aliasvar':
 						$newgroup[$key] = $value;
 						break;
 					case 'optional':
@@ -155,7 +154,7 @@ class PremadeMediawikiExtensionGroups {
 				'url' => $url,
 			);
 
-			$copyvars = array( 'ignored', 'optional', 'var', 'desc', 'prefix', 'mangle', 'magicfile', 'aliasfile', 'aliasvar' );
+			$copyvars = array( 'ignored', 'optional', 'var', 'desc', 'prefix', 'mangle', 'magicfile', 'aliasfile' );
 			foreach ( $copyvars as $var ) {
 				if ( isset( $g[$var] ) ) {
 					$newgroup[$var] = $g[$var];
@@ -209,7 +208,6 @@ class PremadeMediawikiExtensionGroups {
 		}
 
 		if ( isset( $info['aliasfile'] ) ) $group->setAliasFile( $info['aliasfile'] );
-		if ( isset( $info['aliasvar'] ) ) $group->setVariableNameAlias( $info['aliasvar'] );
 		if ( isset( $info['magicfile'] ) ) $group->setMagicFile( $info['magicfile'] );
 
 		return $group;
