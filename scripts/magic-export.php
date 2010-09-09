@@ -79,7 +79,7 @@ class MagicExport extends Maintenance {
 			}
 
 			global $wgTranslateExtensionDirectory;
-			$file = "$wgTranslateExtensionDirectory$filename";
+			$file = "$wgTranslateExtensionDirectory/$filename";
 			$dir = dirname( $file );
 			if ( !file_exists( $file ) )  {
 				continue;
