@@ -44,6 +44,7 @@ class MagicExport extends Maintenance {
 		$this->openHandles();
 		$this->writeHeaders();
 		$this->writeFiles();
+		$this->writeFooters();
 		$this->closeHandles();
 	}
 
@@ -87,6 +88,7 @@ class MagicExport extends Maintenance {
 			include( $file );
 			switch( $this->type ) {
 				case 'special':
+					// TODO: Rename to $specialPageAliases after the first export.
 					if ( !isset( $aliases ) ) {
 						die( "File '$file' does not contain an aliases array.\n" );
 					}
@@ -127,7 +129,7 @@ class MagicExport extends Maintenance {
  * @ingroup Extensions
  */
 
-\$aliases = array();
+\$specialPageAliases = array();
 PHP
 					);
 					break;
@@ -216,7 +218,7 @@ PHP
 				if ( count( $messagesOut ) > 0 ) {
 					switch( $this->type ) {
 						case 'special':
-							$out = "\n\n/** {$namesEn[$l]} ({$namesNative[$l]}) */\n\$aliases['{$l}'] = array(\n";
+							$out = "\n\n/** {$namesEn[$l]} ({$namesNative[$l]}) */\n\$specialPageAliases['{$l}'] = array(\n";
 							break;
 						case 'magic':
 							$out = "\n\n/** {$namesEn[$l]} ({$namesNative[$l]}) */\n\$magicWords['{$l}'] = array(\n";
@@ -246,6 +248,27 @@ PHP
 					$out .= ");";
 					fwrite( $handle, $out );
 				}
+			}
+		}
+	}
+
+	/**
+	 * For special page aliases we set $aliases as a reference to
+	 * the more modern $specialPageAliases for backwards compatibility.
+	 */
+	protected function writeFooters() {
+		$this->output( "Writing file footers...\n" );
+		if( $this->type === 'special' ) {
+			foreach( $this->handles as $group => $handle ) {
+				fwrite( $handle, <<<PHP
+
+
+/**
+ * For backwards compatibility with MediaWiki 1.15 and earlier.
+ */
+\$aliases =& \$specialPageAliases;
+PHP
+				);
 			}
 		}
 	}
