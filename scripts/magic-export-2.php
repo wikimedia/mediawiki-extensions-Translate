@@ -100,7 +100,7 @@ class MagicExport extends Maintenance {
 			}
 
 			$file = $this->target . '/' . $filename;
-			if ( !file_exists( dirname( $file ) ) ) mkdir( dirname( $file ), 0777, true );
+			wfMkdirParents( dirname( $file ) );
 			$this->handles[$group->getId()] = fopen( $file, 'w' );
 
 			$this->output( "\t{$group->getId()}\n" );
