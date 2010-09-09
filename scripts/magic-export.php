@@ -124,7 +124,6 @@ class MagicExport extends Maintenance {
 				case 'special':
 					fwrite( $handle, <<<PHP
 <?php
-
 /**
  * Aliases for special pages
  *
