@@ -11061,7 +11061,6 @@ Wann Dir op en Numm vun engem Iwwersetzer klickt da komm Dir op deem senger Beno
 
 Wann eng Sprooch net an der Lëscht drasteet da fannt dir Informatioune wéi ee mat enger neier Sprooch ufänkt ënnert [[Translating:Process|Nei Sproochen]]“.
 
-
 Wann den Numm vun engem Iwwersetzer feelt, muss deen op d'Lëscht vun den Iwwersetzer op dem [[:Category:Languages|Portal]] vun däer Sprooch derbäi.
 Kuckt de Menu fir e Link op de Portal fir déi Sprooch déi dir an Äre Preferenzen agestallt hutt.",
 	'supportedlanguages-translators' => '{{PLURAL:$2|Iwwersetzer|Iwwersetzer}}: $1',
