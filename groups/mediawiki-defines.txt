@@ -99,7 +99,7 @@ Category Browser
 aliasfile = CategoryBrowser/CategoryBrowser.alias.php
 optional = cb_previous_items_stats
 ignored = cb_previous_items_line, cb_next_items_line, cb_op1_template, cb_op2_template
-ignored = cb_lbracket_op, cb_rbracket_op, cb_or_op, cb_and_op, cb_ge_op, cb_le_op, cb_eq_op
+ignored = cb_lbracket_op, cb_rbracket_op, cb_ge_op, cb_le_op, cb_eq_op
 
 Category Feed
 
