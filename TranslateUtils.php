@@ -359,16 +359,20 @@ class TranslateUtils {
 	 * Injects extension css (only once).
 	 */
 	public static function injectCSS() {
-		static $done = false;
+		global $wgOut;
 
-		if ( $done ) {
-			return;
+		if ( class_exists( 'ResourceLoader' ) ) {
+			$wgOut->addModuleStyles( 'translate-css' );
+			return true;
 		}
 
-		$done = true;
+		static $done = false;
 
-		global $wgOut;
-		$wgOut->addExtensionStyle( self::assetPath( 'Translate.css' ) );
+		if ( !$done ) {
+			$wgOut->addExtensionStyle( self::assetPath( 'Translate.css' ) );
+		}
+
+		return $done = true;
 	}
 
 	/**

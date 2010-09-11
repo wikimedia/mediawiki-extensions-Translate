@@ -405,6 +405,12 @@ $wgTranslateYamlLibrary = 'spyc';
 
 # Startup code
 
+if ( class_exists( 'ResourceLoader' ) ) {
+	ResourceLoader::register( array( 'translate-css' =>
+		new ResourceLoaderFileModule( array( 'styles' => 'extensions/Translate/Translate.css' ) )
+	) );
+}
+
 function efTranslateNamespaces( &$list ) {
 	global $wgPageTranslationNamespace;
 	if ( !defined( 'NS_TRANSLATIONS' ) ) {
