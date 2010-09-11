@@ -35,7 +35,7 @@ class TranslateEditAddons {
 		}
 
 		list( $key, $code, $group ) = self::getKeyCodeGroup( $wgTitle );
-		if ( $group === null ) {
+		if ( !$group || !$code ) {
 			return true;
 		}
 
