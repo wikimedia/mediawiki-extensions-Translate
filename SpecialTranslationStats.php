@@ -82,18 +82,6 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 		if ( $this->including() ) {
 			$wgOut->addHTML( $this->image( $opts ) );
 		} elseif ( $opts['graphit'] ) {
-			// Cache for two hours
-			if ( !$opts['preview'] ) {
-				$lastMod = $wgOut->checkLastModified( wfTimestamp( TS_MW, time() - 2 * 3600 ) );
-
-				if ( $lastMod ) {
-					return;
-				}
-			}
-
-			if ( !$wgRequest->getBool( 'debug' ) ) {
-				$wgOut->disable();
-			}
 
 			if ( !class_exists( 'PHPlot' ) ) {
 				header( "HTTP/1.0 500 Multi fail" );
@@ -101,6 +89,14 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 			}
 
 			$this->draw( $opts );
+
+			if ( !$wgRequest->getBool( 'debug' ) ) {
+				$wgOut->disable();
+				header( 'Content-Type: image/png' );
+				header( 'Cache-Control: private, max-age=3600' );
+				header( 'Expires: ' . wfTimestamp( TS_RFC2822, time() + 3600 ) );
+			}
+
 		} else {
 			$this->form( $opts );
 		}
