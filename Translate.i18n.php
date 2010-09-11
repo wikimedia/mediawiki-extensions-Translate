@@ -1387,6 +1387,7 @@ $messages['arc'] = array(
 	'translate-manage-modlang-new' => '$1 (ܚܕܬܐ)',
 	'translate-manage-import-new' => 'ܐܓܪܬܐ ܚܕܬܐ $1',
 	'translate-manage-import-deleted' => 'ܐܓܪܬܐ ܫܝܦܬܐ $1',
+	'translate-js-next' => 'ܠܒܘܟ ܘܦܬܘܚ ܕܒܬܪܗ',
 );
 
 /** Araucanian (Mapudungun)
