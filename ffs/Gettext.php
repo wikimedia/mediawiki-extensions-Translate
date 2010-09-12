@@ -625,7 +625,10 @@ class GettextFFS extends SimpleFFS {
 	// WRITE
 	//
 	protected function writeReal( MessageCollection $collection ) {
+		global $wgSitename;
 		$output = $this->doHeader( $collection );
+
+		$specs = array();
 
 		$mangler = $this->group->getMangler();
 		$messages = array();
@@ -647,7 +650,7 @@ class GettextFFS extends SimpleFFS {
 	}
 
 	protected function doHeader( MessageCollection $collection ) {
-		global $wgSitename;
+		global $wgSitename, $wgServer;
 		$code = $collection->code;
 		$name = TranslateUtils::getLanguageName( $code );
 		$native = TranslateUtils::getLanguageName( $code, true );
@@ -666,6 +669,33 @@ $authors$extra
 
 PHP;
 
+		/// @todo twn specific
+		$portal = Title::makeTitle( NS_PORTAL, $code )->getFullUrl();
+
+		$specs = array();
+
+		$specs['Project-Id-Version'] = $this->group->getLabel();
+		$specs['Report-Msgid-Bugs'] = $wgSitename;
+		$specs['POT-Creation-Date'] = self::formatTime( $this->getPotTime() );
+		$specs['PO-Revision-Date'] = self::formatTime( wfTimestampNow() );
+		$specs['Language-Team'] = "$name <$portal>";
+		$specs['Content-Type'] = 'text/plain; charset=UTF-8';
+		$specs['Content-Transfer-Encoding'] = '8bit';
+		$specs['X-Generator'] = $this->getGenerator();
+		$specs['X-Translation-Project'] = "$wgSitename at $wgServer";
+		$specs['X-Language-Code'] = $code;
+		// Prepend # so that message import does not think this is a file it can import
+		$specs['X-Message-Group'] = '#' . $this->group->getId();
+
+		$output .= 'msgid ""' . "\n";
+		$output .= 'msgstr ""' . "\n";
+		$output .= '""' . "\n";
+
+		foreach ( $specs as $k => $v ) {
+			$output .= self::escape( "$k: $v\n" ) . "\n";
+		}
+
+
 		return $output;
 	}
 
@@ -680,4 +710,30 @@ PHP;
 
 		return $output;
 	}
+
+	protected static function formatTime( $time ) {
+		$lang = Language::factory( 'en' );
+		return $lang->sprintfDate( 'xnY-xnm-xnd xnH:xni:xns+0000', $time );
+	}
+
+	protected function getPotTime() {
+		$defs = new MessageGroupCache( $this->group );
+		return $defs->exists() ? $defs->getTimestamp() : wfTimestampNow();
+	}
+
+	protected function getGenerator() {
+		return 'MediaWiki ' . SpecialVersion::getVersion() .
+			"; Translate extension (" . TRANSLATE_VERSION . ")";
+	}
+
+	protected static function escape( $line ) {
+		// There may be \ as a last character, for keeping trailing whitespace
+		$line = preg_replace( '/\\\\$/', '', $line );
+		$line = addcslashes( $line, '\\"' );
+		$line = str_replace( "\n", '\n', $line );
+		$line = '"' . $line . '"';
+
+		return $line;
+	}
+
 }
