@@ -621,29 +621,25 @@ class GettextFFS extends SimpleFFS {
 		return $tags;
 	}
 
-	//
-	// WRITE
-	//
 	protected function writeReal( MessageCollection $collection ) {
 		$pot = $this->read( 'en' );
 		$template = $this->read( $collection->code );
 		$output = $this->doGettextHeader( $collection, $template );
-
-		$mangler = $this->group->getMangler();
-		$messages = array();
 		foreach ( $collection as $key => $m ) {
-			$key = $mangler->unmangle( $key );
-			$value = $m->translation();
-			$value = str_replace( TRANSLATE_FUZZY, '', $value );
-
-			if ( $value === '' ) {
-				continue;
+			$tags = $m->getTags();
+			if ( $tags ) {
+				$output .= "#, " . implode( ', ', $tags ) . "\n";
 			}
 
-			$messages[$key] = $value;
-		}
+			if ( isset( $pot['TEMPLATE'][$key]['msgctxt'] ) ) {
+				$output .= 'msgctxt ' . self::escape( $pot['TEMPLATE'][$key]['msgctxt'] ) . "\n";
+			}
 
-		$output .= TranslateYaml::dump( $messages );
+			$translation = str_replace( TRANSLATE_FUZZY, '', $m->translation() );
+
+			$output .= 'msgid ' . self::escape( $m->definition() ) . "\n";
+			$output .= 'msgstr ' . self::escape( $translation ) . "\n\n";
+		}
 
 		return $output;
 	}
@@ -694,6 +690,7 @@ PHP;
 			$output .= self::escape( "$k: $v\n" ) . "\n";
 		}
 
+		$output .= "\n";
 
 		return $output;
 	}
