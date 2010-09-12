@@ -89,6 +89,14 @@ abstract class TMessage {
 	public function hasTag( $tag ) {
 		return in_array( $tag, $this->tags, true );
 	}
+
+	/**
+	 * Return all tags for this message;
+	 * @return \list{String}
+	 */
+	public function getTags() {
+		return $this->tags;
+	}
 }
 
 /**
