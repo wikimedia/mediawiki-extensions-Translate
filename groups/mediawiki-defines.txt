@@ -49,6 +49,8 @@ Api SVG Proxy
 
 Approved Revs
 
+Article Assessment Pilot
+
 Article To Category 2
 
 Asksql
