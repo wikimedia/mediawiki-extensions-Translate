@@ -69,6 +69,14 @@ array(
 	)
 ),
 array(
+	'group' => 'ext-articleassessmentpilot',
+	'check' => 'links',
+	'message' => array(
+		'articleassessment-results-show', // Contains incomplete wiki link that get rewritten by JavaScript
+		'articleassessment-results-hide', // Contains incomplete wiki link that get rewritten by JavaScript
+	)
+),
+array(
 	'group' => 'ext-babel',
 	'check' => 'variable',
 	'message' => array(
