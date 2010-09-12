@@ -9421,14 +9421,14 @@ la modalità <code>$1</code> non è supportata.',
  * @author 青子守歌
  */
 $messages['ja'] = array(
-	'translate' => 'ソフトウェアメッセージの翻訳',
-	'translate-desc' => 'MediaWikiをはじめとするソフトウェアのメッセージを翻訳するための[[Special:Translate|特別ページ]]',
+	'translate' => '翻訳',
+	'translate-desc' => 'MediaWikiなどを翻訳する[[Special:Translate|特別ページ]]',
 	'translate-edit' => '編集',
 	'translate-talk' => 'トーク',
 	'translate-history' => '履歴',
-	'translate-showsub' => '{{PLURAL:$1|下位グループ|$1の下位グループ}}を表示する。',
-	'translate-grouplisting' => 'これは、翻訳可能な全グループの一覧です。
-メッセージのグループ名をクリックして、未翻訳メッセージの一覧を見ることができます。',
+	'translate-showsub' => '{{PLURAL:$1|下位群|$1の下位群}}を表示する。',
+	'translate-grouplisting' => 'これは、翻訳可能な全群の一覧です。
+メッセージの群名をクリックして、未翻訳メッセージの一覧を見ることができます。',
 	'translate-task-view' => 'すべてのメッセージ',
 	'translate-task-untranslated' => '未翻訳メッセージ',
 	'translate-task-optional' => '任意翻訳のメッセージ',
@@ -9437,40 +9437,41 @@ $messages['ja'] = array(
 	'translate-task-problematic' => '問題のあるメッセージ',
 	'translate-task-review' => '更新反映待ちのメッセージ',
 	'translate-task-reviewall' => '翻訳済みメッセージ',
-	'translate-task-export' => '翻訳された PHP コードをテキストエリアに出力',
-	'translate-task-export-to-file' => '翻訳された PHP コードをファイルとしてエクスポート',
-	'translate-task-export-as-po' => '翻訳された PHP コードを gettext 形式でエクスポート',
-	'translate-task-export-to-xliff' => '翻訳を Xliff 形式で書き出す',
-	'translate-page-no-such-language' => '言語指定が不正です',
-	'translate-page-no-such-task' => '絞り込みの指定が不正です',
-	'translate-page-no-such-group' => '種類の指定が不正です',
-	'translate-page-disabled' => "このグループではこの言語への翻訳は停止されています。理由：
+	'translate-task-export' => '翻訳されたPHPコードをテキストエリアに出力',
+	'translate-task-export-to-file' => '翻訳されたPHPコードをファイルとして書き出し',
+	'translate-task-export-as-po' => '翻訳されたPHPコードをgettext形式で書き出し',
+	'translate-task-export-to-xliff' => '翻訳をXliff形式で書き出し',
+	'translate-page-no-such-language' => '言語指定が不正です。',
+	'translate-page-no-such-task' => '絞り込みの指定が不正です。',
+	'translate-page-no-such-group' => '種類の指定が不正です。',
+	'translate-page-disabled' => "この群では、この言語への翻訳は停止されています。理由：
 
 ''$1''",
 	'translate-page-settings-legend' => '設定',
 	'translate-page-task' => '絞込み',
-	'translate-page-group' => '種類',
+	'translate-page-group' => '群',
 	'translate-page-group-tooltip' => 'メッセージ群の名前です。メッセージ群に下位群や他の群のメッセージを含む上位群がある場合、太字で表示されています。',
 	'translate-page-language' => '言語',
 	'translate-page-limit' => '表示数',
-	'translate-page-limit-option' => 'ページごとに $1{{PLURAL:$1|個}}のメッセージ',
+	'translate-page-limit-option' => 'ページごとに$1{{PLURAL:$1|個}}のメッセージ',
 	'translate-submit' => '表示を更新',
 	'translate-page-navigation-legend' => '案内',
-	'translate-page-showing' => '全 $3 件中 $1 件目から $2 件目まで表示しています',
-	'translate-page-showing-all' => '全 $1 {{PLURAL:$1|件}}を表示しています',
+	'translate-page-showing' => '全$3件中$1件目から$2件目まで表示しています。',
+	'translate-page-showing-all' => '全$1{{PLURAL:$1|件}}を表示しています',
 	'translate-page-showing-none' => '該当する項目はありません。',
 	'translate-next' => '次のページ',
 	'translate-prev' => '前のページ',
-	'translate-page-description-legend' => 'このグループについて',
+	'translate-page-description-legend' => 'この群について',
 	'translate-page-edit' => '編集',
-	'translate-ext-url' => '<hr />ウェブサイト: $1',
-	'translate-optional' => '(任意翻訳)',
-	'translate-ignored' => '(翻訳無効)',
+	'translate-ext-url' => '<hr />ウェブサイト：$1',
+	'translate-optional' => '（任意翻訳）',
+	'translate-ignored' => '（翻訳無視）',
 	'translate-edit-title' => '「$1」を編集',
-	'translate-edit-definition' => '元のメッセージ',
-	'translate-edit-contribute' => '寄稿する',
-	'translate-edit-no-information' => "''このメッセージに関する説明はありません。もし、このメッセージがどこでどのように使われているかご存知でしたら、他の翻訳者のために説明を寄稿してください。なお、このメッセージは多言語共通の表示となりますので、翻訳者全員が理解できる言語（MediaWiki では英語）での記述をお願いします。''",
-	'translate-edit-information' => 'メッセージ「$2」に関する説明 ($1)',
+	'translate-edit-definition' => 'メッセージ定義',
+	'translate-edit-contribute' => '投稿する',
+	'translate-edit-no-information' => "''このメッセージに関する説明はありません。
+もしこのメッセージが、どこでどのように使われているか知っている場合、説明を投稿して、他の翻訳者を助けてください。''",
+	'translate-edit-information' => 'メッセージ「$2」に関する説明（$1）',
 	'translate-edit-in-other-languages' => '他言語におけるメッセージ「$1」',
 	'translate-edit-committed' => '現在ソフトウェア上で採用されている翻訳メッセージ',
 	'translate-edit-warnings' => '不完全な翻訳に対する警告',
@@ -9487,57 +9488,58 @@ $messages['ja'] = array(
 
 特別ページへのエイリアスとマジックワードには複数の翻訳を割り当てることができます。複数の翻訳がある時はコンマ(,)で区切ってください。名前空間名には一つの翻訳しか当てることができません。
 
-名前空間を翻訳する際、<code>$1 talk</code> には特別な注意事項があります。それは、<code>$1</code> がサイト名に変更される点です(例えば<code>{{ns:project_talk}}</code>の様に)。あなたが翻訳しようとしている言語において、サイト名の変更なしには正しい形式で表現できない場合、開発者に相談してください。
+名前空間を翻訳する際、<code>$1 talk</code>には特別な注意事項があります。それは、<code>$1</code>がサイト名に変更される点です(例えば<code>{{ns:project_talk}}</code>の様に)。翻訳しようとしている言語において、サイト名の変更なしには正しい形式で表現できない場合、開発者に相談してください。
 
 変更を保存できるのは、翻訳者グループに属する利用者のみです。以下の{{int:translate-magic-cm-save}}ボタンを押すまで変更は保存されません。',
-	'translate-magic-module' => 'モジュール:',
+	'translate-magic-module' => 'モジュール：',
 	'translate-magic-submit' => '表示を更新',
-	'translate-magic-cm-export' => 'エクスポート',
-	'translate-magic-nothing-to-export' => 'エクスポートできるものはありません。',
+	'translate-magic-cm-export' => '書き出し',
+	'translate-magic-nothing-to-export' => '書き出せるものはありません。',
 	'translate-magic-cm-to-be' => '変更後',
-	'translate-magic-cm-current' => '変更前',
+	'translate-magic-cm-current' => '現在',
 	'translate-magic-cm-original' => '元の内容',
-	'translate-magic-cm-comment' => '編集内容の要約:',
+	'translate-magic-cm-comment' => '編集内容の要約：',
 	'translate-magic-cm-save' => '保存',
-	'translate-magic-cm-updatedusing' => '[[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]] による更新に成功しました',
+	'translate-magic-cm-updatedusing' => '[[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]]による更新に成功しました',
 	'translate-magic-cm-savefailed' => '保存に失敗しました',
 	'translate-magic-special' => '特別ページへのエイリアス',
 	'translate-magic-words' => 'マジックワード',
 	'translate-magic-namespace' => '名前空間名',
-	'translate-magic-notsaved' => 'あなたの編集は保存されませんでした！',
-	'translate-magic-errors' => '以下の{{PLURAL:$1|エラー|エラー}}を修正してください：',
-	'translate-magic-saved' => 'あなたの修正は正常に保存されました。',
+	'translate-magic-notsaved' => '編集は保存されませんでした！',
+	'translate-magic-errors' => '以下の{{PLURAL:$1|エラー}}を修正してください：',
+	'translate-magic-saved' => '変更は正常に保存されました。',
 	'translationchanges' => '翻訳変更状況',
-	'translationchanges-export' => 'エクスポート',
-	'translationchanges-change' => '$1: $2 翻訳者-$3',
-	'translate-checks-parameters' => '次の{{PLURAL:$2|パラメータ}}が利用されていません:
+	'translationchanges-export' => '書き出し',
+	'translationchanges-change' => '$1：$2、$3による',
+	'translate-checks-parameters' => '次の{{PLURAL:$2|パラメーター}}が利用されていません：
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-parameters-unknown' => '次の{{PLURAL:$2|パラメータ}}が未定義です:
+	'translate-checks-parameters-unknown' => '次の{{PLURAL:$2|パラメーター}}が未定義です：
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-balance' => '{{PLURAL:$2|括弧}}の数が一致していません:
+	'translate-checks-balance' => '{{PLURAL:$2|括弧}}の数が一致していません：
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links' => '次の{{PLURAL:$2|リンク}}に問題があります:
+	'translate-checks-links' => '次の{{PLURAL:$2|リンク}}に問題があります：
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links-missing' => '以下の{{PLURAL:$2|$2個の}}リンクが欠けています:
+	'translate-checks-links-missing' => '以下の{{PLURAL:$2|$2個のリンク}}が欠けています：
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-xhtml' => '次の{{PLURAL:$2|タグ}}を正しいものに修正してください:
+	'translate-checks-xhtml' => '次の{{PLURAL:$2|タグ}}を正しいものに修正してください：
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-plural' => '元のメッセージにある <nowiki>{{PLURAL:}}</nowiki> が翻訳の中にありません。<br />
-(日本語訳では、ほとんどの場合、<nowiki>{{PLURAL:}}</nowiki> を用いずに訳しています。その場合、この警告は無視してかまいません。)',
-	'translate-checks-pagename' => 'もとの定義から名前空間が変更されています',
-	'translate-checks-format' => 'この翻訳は定義に沿っていない、または不正な構文を使用しています: $1',
-	'translate-checks-escape' => '以下のエスケープは偶発のものであるかもしれません: <strong>$1</strong>',
-	'translate-checks-fudforum-syntax' => 'このプロジェクトでは <nowiki>$2</nowiki> の代わりに <nowiki>$1</nowiki> を使用します。',
+	'translate-checks-plural' => '定義には<nowiki>{{PLURAL:}}</nowiki>がありますが、翻訳に存在していません。',
+	'translate-checks-pagename' => '定義から名前空間が変更されています',
+	'translate-checks-format' => 'この翻訳は定義に沿っていない、または不正な構文を使用しています：$1',
+	'translate-checks-escape' => '以下のエスケープは偶発のものであるかもしれません：<strong>$1</strong>',
+	'translate-checks-fudforum-syntax' => 'このプロジェクトでは<nowiki>$2</nowiki>の代わりに<nowiki>$1</nowiki>を使用します。',
 	'translate-pref-nonewsletter' => '電子メールのニュースレターを受け取らない',
 	'translate-pref-editassistlang' => '補助言語：',
 	'prefs-translate' => '翻訳設定',
-	'translate-pref-editassistlang-help' => '言語コードをカンマ区切りで記入すると、各メッセージの翻訳画面においてそれらの言語での翻訳文が表示されます。初期設定の言語一覧は個人設定で指定した使用言語によって変化します。',
-	'translate-pref-editassistlang-bad' => 'リスト中の不正な言語コード:
+	'translate-pref-editassistlang-help' => 'カンマ区切りの言語コード一覧。
+これらの言語での翻訳が、翻訳中に表示されます。
+規定の一覧は、自身の言語により変化します。',
+	'translate-pref-editassistlang-bad' => '一覧中の不正な言語コード：
 <nowiki>$1</nowiki>',
-	'translate-pref-jsedit' => '拡張版翻訳エディタ (JavaScript が必要)',
+	'translate-pref-jsedit' => '拡張版翻訳エディタ（JavaScriptが必要）',
 	'right-translate' => '翻訳用インターフェースを使って編集する',
 	'right-translate-manage' => '翻訳グループを管理する',
-	'right-translate-import' => 'オフラインでの翻訳をインポートする',
+	'right-translate-import' => 'オフラインでの翻訳を読み込む',
 	'translate-rc-translation-filter' => '絞込み:',
 	'translate-rc-translation-filter-no' => '絞り込まない',
 	'translate-rc-translation-filter-only' => '翻訳のみ',

@@ -1083,9 +1083,17 @@ Dóstanješ tež powěsćowe listy, zwjetša jónkróć wob měsać.
 Jeli nochceš powěsćowe listy dóstać, móžeš tutu opciju na rajtarku "{{int:prefs-personal}}" swojich [[Special:Preferences|preferencow]] znjemóžnić.',
 );
 
-/** Hungarian (Magyar) */
+/** Hungarian (Magyar)
+ * @author Misibacsi
+ */
 $messages['hu'] = array(
+	'firststeps' => 'Első lépések',
+	'translate-fs-pagetitle-done' => ' - kész!',
 	'translate-fs-signup-title' => 'Feliratkozás',
+	'translate-fs-target-title' => 'Kezdj fordítani!',
+	'translate-fs-email-title' => 'Erősítsd meg az email címedet!',
+	'translate-fs-userpage-submit' => 'Felhasználói lap létrehozása',
+	'translate-fs-userpage-done' => 'Felhasználói lap létrehozva.',
 );
 
 /** Interlingua (Interlingua)
