@@ -336,6 +336,12 @@ class ReviewAllMessagesTask extends ReviewMessagesTask {
 class ExportMessagesTask extends ViewMessagesTask {
 	protected $id = 'export';
 
+	protected function preinit() {
+		$code = $this->options->getLanguage();
+		$this->collection = $this->group->initCollection( $code );
+		$this->collection->setInfile( $this->group->load( $code ) );
+	}
+
 	// No paging should be done.
 	protected function doPaging() {}
 
@@ -365,7 +371,6 @@ class ExportToFileMessagesTask extends ExportMessagesTask {
 	}
 
 	public function output() {
-		$this->collection->filter( 'translated', false );
 		if ( $this->group instanceof FileBasedMessageGroup ) {
 			$ffs = $this->group->getFFS();
 			$data = $ffs->writeIntoVariable( $this->collection );
