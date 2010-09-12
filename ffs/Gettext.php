@@ -361,6 +361,11 @@ class GettextFormatWriter extends SimpleFormatWriter {
  * @ingroup FFS
  */
 class GettextFFS extends SimpleFFS {
+	protected $offlineMode = false;
+
+	public function setOfflineMode( $value ) {
+		$this->offlineMode = $value;
+	}
 
 	public function readFromVariable( $data ) {
 		$authors = array();
@@ -520,7 +525,7 @@ class GettextFFS extends SimpleFFS {
 			$matches = array();
 			if ( preg_match_all( '/^#(.?) (.*)$/m', $section, $matches, PREG_SET_ORDER ) ) {
 				foreach ( $matches as $match ) {
-					if ( $match[1] !== ',' ) {
+					if ( $match[1] !== ',' && strpos( $match[1], '[Wiki]' ) !== 0 ) {
 						$item['comments'][$match[1]][] = $match[2];
 					}
 				}
@@ -624,61 +629,22 @@ class GettextFFS extends SimpleFFS {
 	protected function writeReal( MessageCollection $collection ) {
 		$pot = $this->read( 'en' );
 		$template = $this->read( $collection->code );
-		$output = $this->doGettextHeader( $collection, $template );
+		$pluralCount = false;
+		$output = $this->doGettextHeader( $collection, $template, $pluralCount );
+
 		foreach ( $collection as $key => $m ) {
 			$transTemplate = isset( $template['TEMPLATE'][$key] ) ?
 				$template['TEMPLATE'][$key] : array();
 			$potTemplate = isset( $pot['TEMPLATE'][$key] ) ?
 				$pot['TEMPLATE'][$key] : array();
-
-			$comments = array();
-			if ( isset( $potTemplate['comments'] ) ) {
-				$comments = $potTemplate['comments'];
-			} elseif ( isset( $transTemplate['comments'] ) ) {
-				$comments = $transTemplate['comments'];
-			}
-
-			$header = '';
-
-			$header .= self::formatDocumentation( $key );
-			foreach ( $comments as $type => $typecomments ) {
-				foreach ( $typecomments as $comment ) {
-					if ( strpos( $comment, '[Wiki]' ) === 0 ) continue;
-					$header .= "#$type $comment\n";
-				}
-			}
-
-			$tags = $m->getTags();
-			$flags = isset( $transTemplate['flags'] ) ? $transTemplate['flags'] : array();
 			
-			$outFlags = array_unique( array_merge( $tags, $flags ) );
-
-			if ( $outFlags ) {
-				sort( $outFlags );
-				$header .= "#, " . implode( ', ', $outFlags ) . "\n";
-			}
-
-			if ( $header ) {
-				$output .= $header;
-			} else {
-				// Must be at least empty comment
-				$output .= "#\n";
-			}
-
-			if ( isset( $potTemplate['msgctxt'] ) ) {
-				$output .= 'msgctxt ' . self::escape( $potTemplate['msgctxt'] ) . "\n";
-			}
-
-			$translation = str_replace( TRANSLATE_FUZZY, '', $m->translation() );
-
-			$output .= 'msgid ' . self::escape( $m->definition() ) . "\n";
-			$output .= 'msgstr ' . self::escape( $translation ) . "\n\n";
+			$output .= $this->formatMessageBlock( $key, $m, $transTemplate, $potTemplate, $pluralCount );
 		}
 
 		return $output;
 	}
 
-	protected function doGettextHeader( MessageCollection $collection, $template ) {
+	protected function doGettextHeader( MessageCollection $collection, $template, &$pluralCount ) {
 		global $wgSitename, $wgServer;
 		$code = $collection->code;
 		$name = TranslateUtils::getLanguageName( $code );
@@ -722,6 +688,10 @@ PHP;
 			$specs['Plural-Forms'] = 'nplurals=2; plural=(n != 1);';
 		}
 
+		$match = array();
+		preg_match( '/nplurals=(\d+);/', $specs['Plural-Forms'], $match );
+		$pluralCount = $match[1];
+
 		$output .= 'msgid ""' . "\n";
 		$output .= 'msgstr ""' . "\n";
 		$output .= '""' . "\n";
@@ -747,6 +717,70 @@ PHP;
 		return $output;
 	}
 
+	protected function formatMessageBlock( $key, $m, $trans, $pot, $pluralCount ) {
+		$header = $this->formatDocumentation( $key );
+
+		$comments = self::chainGetter( 'comments', $pot, $trans, array() );
+		foreach ( $comments as $type => $typecomments ) {
+			foreach ( $typecomments as $comment ) {
+				$header .= "#$type $comment\n";
+			}
+		}
+
+		$flags = self::chainGetter( 'flags', $pot, $trans, array() );
+		$flags = array_unique( array_merge( $m->getTags(), $flags ) );
+
+
+		$ctxt = self::chainGetter( 'msgctxt', $pot, $trans, false );
+		if ( $ctxt ) {
+			$output .= 'msgctxt ' . self::escape( $ctxt ) . "\n";
+		}
+
+		$msgid = $m->definition();
+		$msgstr = str_replace( TRANSLATE_FUZZY, '', $m->translation() );
+
+		if ( preg_match( '/{{PLURAL:GETTEXT/i', $msgid ) ) {
+			$forms = $this->splitPlural( $msgid, 2 );
+			$content  = 'msgid ' . $this->escape( $forms[0] ) . "\n";
+			$content .= 'msgid_plural ' . $this->escape( $forms[1] ) . "\n";
+
+			try {
+				$forms = $this->splitPlural( $msgstr, $pluralCount );
+				foreach ( $forms as $index => $form ) {
+					$content .= "msgstr[$index] " . $this->escape( $form ) . "\n";
+				}
+			} catch ( GettextPluralException $e ) {
+				$flags[] = 'x-invalid-plural';
+				for ( $i = 0; $i < $pluralCount; $i++ ) {
+					$content .= "msgstr[$i] \"\"\n";
+				}
+			}
+
+		} else {
+			$content  = 'msgid ' . self::escape( $msgid ) . "\n";
+			$content .= 'msgstr ' . self::escape( $msgstr ) . "\n";
+		}
+
+		if ( $flags ) {
+			sort( $flags );
+			$header .= "#, " . implode( ', ', $flags ) . "\n";
+		}
+
+		$output = $header ? $header : "#\n";
+		$output .= $content . "\n";
+		return $output;
+	}
+
+	protected static function chainGetter( $key, $a, $b, $default ) {
+		if ( isset( $a[$key] ) ) {
+			return $a[$key];
+		} elseif ( isset( $b[$key] ) ) {
+			return $b[$key];
+		} else {
+			return $default;
+		}
+	}
+
 	protected static function formatTime( $time ) {
 		$lang = Language::factory( 'en' );
 		return $lang->sprintfDate( 'xnY-xnm-xnd xnH:xni:xns+0000', $time );
@@ -762,13 +796,15 @@ PHP;
 			"; Translate extension (" . TRANSLATE_VERSION . ")";
 	}
 
-	protected static function formatDocumentation( $key ) {
+	protected function formatDocumentation( $key ) {
 		global $wgTranslateDocumentationLanguageCode;
+
+		if ( !$this->offlineMode ) return '';
 
 		$code = $wgTranslateDocumentationLanguageCode;
 		if ( !$code ) return '';
 
-		$documentation = TranslateUtils::getMessageContent( $key, $code );
+		$documentation = TranslateUtils::getMessageContent( $key, $code, $this->group->getNamespace() );
 		if ( !is_string( $documentation ) ) return '';
 
 		$lines = explode( "\n", $documentation );
@@ -803,6 +839,36 @@ PHP;
 			if ( $rulecode === $code ) return $rule;
 		}
 		return '';
+	}
+
+	protected function splitPlural( $text, $forms ) {
+		if ( $forms === 1 ) {
+			return $text;
+		}
+
+		$splitPlurals = array();
+		for ( $i = 0; $i < $forms; $i++ ) {
+			$plurals = array();
+			$match = preg_match_all( '/{{PLURAL:GETTEXT\|(.*)}}/iU', $text, $plurals );
+
+			if ( !$match ) {
+				throw new GettextPluralException( "Failed to parse plural for: $text" );
+			}
+
+			$pluralForm = $text;
+			foreach ( $plurals[0] as $index => $definition ) {
+				$parsedFormsArray = explode( '|', $plurals[1][$index] );
+				if ( !isset( $parsedFormsArray[$i] ) ) {
+					error_log( "Too few plural forms in: $text" );
+					$pluralForm = '';
+				} else {
+					$pluralForm = str_replace( $pluralForm, $definition, $parsedFormsArray[$i] );
+				}
+			}
+			$splitPlurals[$i] = $pluralForm;
+		}
+
+		return $splitPlurals;
 	}
 
 }
