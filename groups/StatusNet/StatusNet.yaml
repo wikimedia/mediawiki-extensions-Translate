@@ -6,6 +6,7 @@ BASIC:
   namespace: NS_STATUSNET
   display: out/statusnet/
   class: FileBasedMessageGroup
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/master/%FILE%#line%LINE%
 
 FILES:
   class: GettextFFS

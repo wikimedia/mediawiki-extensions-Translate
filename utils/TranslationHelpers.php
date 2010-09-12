@@ -660,21 +660,7 @@ class TranslationHelpers {
 			$class = 'mw-sp-translate-edit-noinfo';
 		}
 
-		if ( $this->group instanceof GettextMessageGroup ) {
-			$reader = $this->group->getReader( 'en' );
-			if ( $reader ) {
-				global $wgContLang;
-
-				$mykey = $wgContLang->lcfirst( $this->page );
-				$data = $reader->parseFile();
-				$help = trim( GettextFormatWriter::formatComments( @$data[$mykey]['comments'], false, @$data[$mykey]['flags'] ) );
-				// Do not display an empty comment. That's no help and takes up unnecessary space.
-				if ( $help !== '#:' ) {
-					$info .= "<hr /><pre>$help</pre>";
-				}
-			}
-		}
-
+		$info .= $this->formatGettextComments();
 		$class .= ' mw-sp-translate-message-documentation';
 
 		$contents = $wgOut->parse( $info );
@@ -685,6 +671,59 @@ class TranslationHelpers {
 			wfMsgHtml( 'translate-edit-information', $edit , $page ), $contents, array( 'class' => $class )
 		);
 
+	}
+
+	protected function formatGettextComments() {
+		if ( $this->group instanceof GettextMessageGroup ) {
+			$reader = $this->group->getReader( 'en' );
+			if ( $reader ) {
+				global $wgContLang;
+
+				$mykey = $wgContLang->lcfirst( $this->page );
+				$data = $reader->parseFile();
+				$help = trim( GettextFormatWriter::formatComments( @$data[$mykey]['comments'], false, @$data[$mykey]['flags'] ) );
+				// Do not display an empty comment. That's no help and takes up unnecessary space.
+				if ( $help !== '#:' ) {
+					return "<hr /><pre>$help</pre>";
+				}
+			}
+		}
+
+		if ( $this->group instanceof FileBasedMessageGroup ) {
+			$ffs = $this->group->getFFS();
+			if ( $ffs instanceof GettextFFS ) {
+				global $wgContLang;
+				$mykey = $wgContLang->lcfirst( $this->page );
+				$data = $ffs->read( 'en' );
+				$help = $data['TEMPLATE'][$mykey]['comments'];
+				// Do not display an empty comment. That's no help and takes up unnecessary space.
+				$conf = $this->group->getConfiguration();
+				if ( isset( $conf['BASIC']['codeBrowser'] ) ) {
+					$out = '';
+					$pattern = $conf['BASIC']['codeBrowser'];
+					$pattern = str_replace( '%FILE%', '\1', $pattern );
+					$pattern = str_replace( '%LINE%', '\2', $pattern );
+					$pattern = "[$pattern \\1:\\2]";
+					foreach ( $help as $type => $lines ) {
+						if ( $type === ':' ) {
+							$files = '';
+							foreach ( $lines as $index => $line ) {
+								$files .= ' ' . preg_replace( '/([^ :]+):(\d+)/', $pattern, $line );
+							}
+							$out .= "<nowiki>#:</nowiki> $files<br />";
+						} else {
+							foreach ( $lines as $index => $line ) {
+								$out .= "<nowiki>#$type</nowiki> $line<br />";
+							}
+						}
+					}
+					
+				}
+				return "<hr />$out";
+			}
+		}
+
+		return '';
 	}
 
 	protected function getPageDiff() {
