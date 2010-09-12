@@ -631,6 +631,23 @@ class GettextFFS extends SimpleFFS {
 			$potTemplate = isset( $pot['TEMPLATE'][$key] ) ?
 				$pot['TEMPLATE'][$key] : array();
 
+			$comments = array();
+			if ( isset( $potTemplate['comments'] ) ) {
+				$comments = $potTemplate['comments'];
+			} elseif ( isset( $transTemplate['comments'] ) ) {
+				$comments = $transTemplate['comments'];
+			}
+
+			$header = '';
+
+			$header .= self::formatDocumentation( $key );
+			foreach ( $comments as $type => $typecomments ) {
+				foreach ( $typecomments as $comment ) {
+					if ( strpos( $comment, '[Wiki]' ) === 0 ) continue;
+					$header .= "#$type $comment\n";
+				}
+			}
+
 			$tags = $m->getTags();
 			$flags = isset( $transTemplate['flags'] ) ? $transTemplate['flags'] : array();
 			
@@ -638,7 +655,14 @@ class GettextFFS extends SimpleFFS {
 
 			if ( $outFlags ) {
 				sort( $outFlags );
-				$output .= "#, " . implode( ', ', $outFlags ) . "\n";
+				$header .= "#, " . implode( ', ', $outFlags ) . "\n";
+			}
+
+			if ( $header ) {
+				$output .= $header;
+			} else {
+				// Must be at least empty comment
+				$output .= "#\n";
 			}
 
 			if ( isset( $potTemplate['msgctxt'] ) ) {
@@ -681,8 +705,8 @@ PHP;
 
 		$specs['Project-Id-Version'] = $this->group->getLabel();
 		$specs['Report-Msgid-Bugs-To'] = $wgSitename;
-		$specs['POT-Creation-Date'] = self::formatTime( $this->getPotTime() );
 		$specs['PO-Revision-Date'] = self::formatTime( wfTimestampNow() );
+		$specs['X-POT-Import-Date'] = self::formatTime( $this->getPotTime() );
 		$specs['Language-Team'] = "$name <$portal>";
 		$specs['Content-Type'] = 'text/plain; charset=UTF-8';
 		$specs['Content-Transfer-Encoding'] = '8bit';
@@ -691,6 +715,12 @@ PHP;
 		$specs['X-Language-Code'] = $code;
 		// Prepend # so that message import does not think this is a file it can import
 		$specs['X-Message-Group'] = '#' . $this->group->getId();
+		$plural = self::getPluralRule( $code );
+		if ( $plural ) {
+			$specs['Plural-Forms'] = $plural;
+		} elseif( !isset( $specs['Plural-Forms'] ) ) {
+			$specs['Plural-Forms'] = 'nplurals=2; plural=(n != 1);';
+		}
 
 		$output .= 'msgid ""' . "\n";
 		$output .= 'msgstr ""' . "\n";
@@ -732,6 +762,23 @@ PHP;
 			"; Translate extension (" . TRANSLATE_VERSION . ")";
 	}
 
+	protected static function formatDocumentation( $key ) {
+		global $wgTranslateDocumentationLanguageCode;
+
+		$code = $wgTranslateDocumentationLanguageCode;
+		if ( !$code ) return '';
+
+		$documentation = TranslateUtils::getMessageContent( $key, $code );
+		if ( !is_string( $documentation ) ) return '';
+
+		$lines = explode( "\n", $documentation );
+		$out = '';
+		foreach ( $lines as $line ) {
+			$out .= "#. [Wiki] $line\n";
+		}
+		return $out;
+	}
+
 	protected static function escape( $line ) {
 		// There may be \ as a last character, for keeping trailing whitespace
 		$line = preg_replace( '/\\\\$/', '', $line );
@@ -740,6 +787,22 @@ PHP;
 		$line = '"' . $line . '"';
 
 		return $line;
+	}
+
+	/**
+	 * Returns plural rule for Gettext.
+	 * @param $code \string Language code.
+	 * @return \string
+	 */
+	public static function getPluralRule( $code ) {
+		$rulefile = dirname( __FILE__ ) . '/../data/plural-gettext.txt';
+		$rules = file_get_contents( $rulefile );
+		foreach ( explode( "\n", $rules ) as $line ) {
+			if ( trim( $line ) === '' ) continue;
+			list( $rulecode, $rule ) = explode( "\t", $line );
+			if ( $rulecode === $code ) return $rule;
+		}
+		return '';
 	}
 
 }
