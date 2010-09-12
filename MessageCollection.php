@@ -305,16 +305,12 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 */
 	protected function filterOnCondition( array $keys, array $condKeys, $condition = true ) {
 		if ( $condition === true ) {
-			/**
-			 * Delete $condKeys from $keys
-			 */
+			// Delete $condKeys from $keys
 			foreach ( array_keys( $condKeys ) as $key ) {
 				unset( $keys[$key] );
 			}
 		} else {
-			/**
-			 * Keep the keys which are in $condKeys
-			 */
+			// Keep the keys which are in $condKeys
 			foreach ( array_keys( $keys ) as $key ) {
 				if ( !isset( $condKeys[$key] ) ) {
 					unset( $keys[$key] );
