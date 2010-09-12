@@ -625,10 +625,7 @@ class GettextFFS extends SimpleFFS {
 	// WRITE
 	//
 	protected function writeReal( MessageCollection $collection ) {
-		global $wgSitename;
 		$output = $this->doHeader( $collection );
-
-		$specs = array();
 
 		$mangler = $this->group->getMangler();
 		$messages = array();
