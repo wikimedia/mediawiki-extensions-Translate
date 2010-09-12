@@ -625,7 +625,9 @@ class GettextFFS extends SimpleFFS {
 	// WRITE
 	//
 	protected function writeReal( MessageCollection $collection ) {
-		$output = $this->doHeader( $collection );
+		$pot = $this->read( 'en' );
+		$template = $this->read( $collection->code );
+		$output = $this->doGettextHeader( $collection, $template );
 
 		$mangler = $this->group->getMangler();
 		$messages = array();
@@ -646,7 +648,7 @@ class GettextFFS extends SimpleFFS {
 		return $output;
 	}
 
-	protected function doHeader( MessageCollection $collection ) {
+	protected function doGettextHeader( MessageCollection $collection, $template ) {
 		global $wgSitename, $wgServer;
 		$code = $collection->code;
 		$name = TranslateUtils::getLanguageName( $code );
@@ -669,10 +671,10 @@ PHP;
 		/// @todo twn specific
 		$portal = Title::makeTitle( NS_PORTAL, $code )->getFullUrl();
 
-		$specs = array();
+		$specs = isset( $template['HEADERS'] ) ? $template['HEADERS'] : array();
 
 		$specs['Project-Id-Version'] = $this->group->getLabel();
-		$specs['Report-Msgid-Bugs'] = $wgSitename;
+		$specs['Report-Msgid-Bugs-To'] = $wgSitename;
 		$specs['POT-Creation-Date'] = self::formatTime( $this->getPotTime() );
 		$specs['PO-Revision-Date'] = self::formatTime( wfTimestampNow() );
 		$specs['Language-Team'] = "$name <$portal>";

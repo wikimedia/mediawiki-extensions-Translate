@@ -209,9 +209,13 @@ abstract class MessageGroupBase implements MessageGroup {
 		$messages = array();
 
 		$cache = new MessageGroupCache( $this );
-
-		foreach ( $cache->getKeys() as $key ) {
-			$messages[$key] = $cache->get( $key );
+		if ( !$cache->exists() ) {
+			wfWarn( "By-passing message group cache" );
+			$messages = $this->load( 'en' );
+		} else {
+			foreach ( $cache->getKeys() as $key ) {
+				$messages[$key] = $cache->get( $key );
+			}
 		}
 
 		$definitions = new MessageDefinitions( $namespace, $messages );
