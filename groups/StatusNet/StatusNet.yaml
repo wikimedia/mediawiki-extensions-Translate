@@ -1,19 +1,25 @@
 ---
 BASIC:
-  id: out-statusnet
+  id: out-statusnet-beta
   label: StatusNet
   description: "{{int:bw-desc-statusnet}}"
   namespace: NS_STATUSNET
-  display: out/statusnet
-  class: GettextMessageGroup
+  display: out/statusnet/
+  class: FileBasedMessageGroup
 
 FILES:
   class: GettextFFS
-  sourcePattern: %GROUPROOT%/locale/%CODE%/LC_MESSAGES/statusnet.po
-  targetPattern: locale/%CODE%/LC_MESSAGES/statusnet.po
+  sourcePattern: %GROUPROOT%/statusnet/locale/%CODE%/LC_MESSAGES/statusnet.po
+  definitionFile: %GROUPROOT%/statusnet/locale/statusnet.pot
+  targetPattern: statusnet/locale/%CODE%/LC_MESSAGES/statusnet.po
   codeMap:
+    no:    nb
+    nl-be: nl_BE
     en-gb: en_GB
-    no: nb
+    en-us: en_US
     pt-br: pt_BR
     zh-hans: zh_CN
     zh-hant: zh_TW
+  header: |
+    # This file is distributed under the same license as the StatusNet package.
+    #
