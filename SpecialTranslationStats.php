@@ -243,8 +243,8 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 
 		return
 			'<tr><td>' . $this->eLabel( $name ) . '</td><td>' .
+			$select->getHtmlAndPrepareJs() . '<br />' .
 			Xml::input( $name, 20, $value, array( 'id' => $name ) ) .
-			$select->getHtmlAndPrepareJs() .
 			'</td></tr>' . "\n";
 	}
 
@@ -289,8 +289,8 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 
 		return
 			'<tr><td>' . $this->eLabel( $name ) . '</td><td>' .
+			$select->getHtmlAndPrepareJs() . '<br />' .
 			Xml::input( $name, 20, $value, array( 'id' => $name ) ) .
-			$select->getHtmlAndPrepareJs() .
 			'</td></tr>' . "\n";
 	}
 
