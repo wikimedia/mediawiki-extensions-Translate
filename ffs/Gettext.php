@@ -361,9 +361,7 @@ class GettextFormatWriter extends SimpleFormatWriter {
  * @ingroup FFS
  */
 class GettextFFS extends SimpleFFS {
-	//
-	// READ
-	//
+
 	public function readFromVariable( $data ) {
 		$authors = array();
 
@@ -374,8 +372,11 @@ class GettextFFS extends SimpleFFS {
 
 		# Then messages and everything else
 		$parsedData = $this->parseGettext( $data );
-		$parsedData['MESSAGES'] = $this->group->getMangler()->mangle( $parsedData['MESSAGES'] );
 		$parsedData['AUTHORS'] = $authors;
+
+		foreach ( $parsedData['MESSAGES'] as $key => $value ) {
+			if ( $value === '' ) unset( $parsedData['MESSAGES'][$key] );
+		}
 
 		return $parsedData;
 	}
@@ -390,6 +391,8 @@ class GettextFFS extends SimpleFFS {
 	 * @todo Refactor method into smaller parts.
 	 */
 	public static function parseGettextData( $data, $useCtxtAsKey = false ) {
+		$potmode = false;
+
 		// Normalise newlines, to make processing easier lates
 		$data = str_replace( "\r\n", "\n", $data );
 
@@ -400,7 +403,6 @@ class GettextFFS extends SimpleFFS {
 
 		/* First one isn't an actual message. We'll handle it specially below */
 		$headerSection = array_shift( $sections );
-
 		/* Since this is the header section, we are only interested in the tags
 		 * and msgid is empty. Somewhere we should extract the header comments
 		 * too */
@@ -408,6 +410,10 @@ class GettextFFS extends SimpleFFS {
 		if ( $match !== null ) {
 			$headerBlock = self::formatForWiki( $match, 'trim' );
 			$headers = self::parseHeaderTags( $headerBlock );
+
+			// Check for pot-mode by checking if the header is fuzzy
+			$flags = self::parseFlags( $headerSection );
+			if ( in_array( 'fuzzy', $flags, true ) ) $potmode = true;
 		} else {
 			throw new MWException( "Gettext file header was not found:\n\n$data" );
 		}
@@ -501,18 +507,15 @@ class GettextFFS extends SimpleFFS {
 			}
 
 			// Parse flags
-			$matches = array();
-			if ( preg_match( '/^#,(.*)$/mu', $section, $matches ) ) {
-				$flags = array_map( 'trim', explode( ',', $matches[1] ) );
-				foreach ( $flags as $key => $flag ) {
-					if ( $flag === 'fuzzy' ) {
-						$item['str'] = TRANSLATE_FUZZY . $item['str'];
-						unset( $flags[$key] );
-					}
+			$flags = self::parseFlags( $section );
+			foreach ( $flags as $key => $flag ) {
+				if ( $flag === 'fuzzy' ) {
+					$item['str'] = TRANSLATE_FUZZY . $item['str'];
+					unset( $flags[$key] );
 				}
-				$item['flags'] = $flags;
 			}
-
+			$item['flags'] = $flags;
+		
 			// Rest of the comments
 			$matches = array();
 			if ( preg_match_all( '/^#(.?) (.*)$/m', $section, $matches, PREG_SET_ORDER ) ) {
@@ -529,7 +532,7 @@ class GettextFFS extends SimpleFFS {
 				$key = self::generateKeyFromItem( $item );
 			}
 
-			$messages[$key] = $item['str'];
+			$messages[$key] = $potmode ? $item['id'] : $item['str'];
 			$template[$key] = $item;
 		}
 
@@ -539,6 +542,15 @@ class GettextFFS extends SimpleFFS {
 			'METADATA' => $metadata,
 			'HEADERS' => $headers
 		);
+	}
+
+	public static function parseFlags( $section ) {
+		$matches = array();
+		if ( preg_match( '/^#,(.*)$/mu', $section, $matches ) ) {
+			return array_map( 'trim', explode( ',', $matches[1] ) );
+		} else {
+			return array();
+		}
 	}
 
 	public static function expectKeyword( $name, $section ) {
@@ -613,12 +625,9 @@ class GettextFFS extends SimpleFFS {
 	// WRITE
 	//
 	protected function writeReal( MessageCollection $collection ) {
-		throw new MWException( 'Not implemented' );
-		$output  = $this->doHeader( $collection );
-		$output .= $this->doAuthors( $collection );
+		$output = $this->doHeader( $collection );
 
 		$mangler = $this->group->getMangler();
-
 		$messages = array();
 		foreach ( $collection as $key => $m ) {
 			$key = $mangler->unmangle( $key );
@@ -639,12 +648,23 @@ class GettextFFS extends SimpleFFS {
 
 	protected function doHeader( MessageCollection $collection ) {
 		global $wgSitename;
-
 		$code = $collection->code;
 		$name = TranslateUtils::getLanguageName( $code );
 		$native = TranslateUtils::getLanguageName( $code, true );
-		$output  = "# Messages for $name ($native)\n";
-		$output .= "# Exported from $wgSitename\n";
+		$authors = $this->doAuthors( $collection );
+		if ( isset( $this->extra['header'] ) ) {
+			$extra = "# --\n" . $this->extra['header'];
+		} else {
+			$extra = '';
+		}
+
+		$output = <<<PHP
+# Translation of {$this->group->getLabel()} to $name ($native)
+# Expored from $wgSitename
+#
+$authors$extra
+
+PHP;
 
 		return $output;
 	}
