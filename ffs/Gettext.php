@@ -626,13 +626,23 @@ class GettextFFS extends SimpleFFS {
 		$template = $this->read( $collection->code );
 		$output = $this->doGettextHeader( $collection, $template );
 		foreach ( $collection as $key => $m ) {
+			$transTemplate = isset( $template['TEMPLATE'][$key] ) ?
+				$template['TEMPLATE'][$key] : array();
+			$potTemplate = isset( $pot['TEMPLATE'][$key] ) ?
+				$pot['TEMPLATE'][$key] : array();
+
 			$tags = $m->getTags();
-			if ( $tags ) {
-				$output .= "#, " . implode( ', ', $tags ) . "\n";
+			$flags = isset( $transTemplate['flags'] ) ? $transTemplate['flags'] : array();
+			
+			$outFlags = array_unique( array_merge( $tags, $flags ) );
+
+			if ( $outFlags ) {
+				sort( $outFlags );
+				$output .= "#, " . implode( ', ', $outFlags ) . "\n";
 			}
 
-			if ( isset( $pot['TEMPLATE'][$key]['msgctxt'] ) ) {
-				$output .= 'msgctxt ' . self::escape( $pot['TEMPLATE'][$key]['msgctxt'] ) . "\n";
+			if ( isset( $potTemplate['msgctxt'] ) ) {
+				$output .= 'msgctxt ' . self::escape( $potTemplate['msgctxt'] ) . "\n";
 			}
 
 			$translation = str_replace( TRANSLATE_FUZZY, '', $m->translation() );
