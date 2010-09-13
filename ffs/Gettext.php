@@ -661,8 +661,10 @@ class GettextFFS extends SimpleFFS {
 # Expored from $wgSitename
 #
 $authors$extra
-
 PHP;
+
+		// Make sure there is no empty line before msgid
+		$output = trim( $output ) . "\n";
 
 		/// @todo twn specific
 		$portal = Title::makeTitle( NS_PORTAL, $code )->getFullUrl();
@@ -728,8 +730,7 @@ PHP;
 		}
 
 		$flags = self::chainGetter( 'flags', $pot, $trans, array() );
-		$flags = array_unique( array_merge( $m->getTags(), $flags ) );
-
+		$flags = array_merge( $m->getTags(), $flags );
 
 		$ctxt = self::chainGetter( 'msgctxt', $pot, $trans, false );
 		if ( $ctxt ) {
@@ -737,7 +738,12 @@ PHP;
 		}
 
 		$msgid = $m->definition();
-		$msgstr = str_replace( TRANSLATE_FUZZY, '', $m->translation() );
+		$msgstr = $m->translation();
+		if ( strpos( $msgstr, TRANSLATE_FUZZY ) !== false ) {
+			$msgstr = str_replace( TRANSLATE_FUZZY, '', $msgstr );
+			// Might by fuzzy infile
+			$flags[] = 'fuzzy';
+		}
 
 		if ( preg_match( '/{{PLURAL:GETTEXT/i', $msgid ) ) {
 			$forms = $this->splitPlural( $msgid, 2 );
@@ -763,7 +769,7 @@ PHP;
 
 		if ( $flags ) {
 			sort( $flags );
-			$header .= "#, " . implode( ', ', $flags ) . "\n";
+			$header .= "#, " . implode( ', ', array_unique( $flags ) ) . "\n";
 		}
 
 		$output = $header ? $header : "#\n";
