@@ -244,10 +244,12 @@ Erstellt von der Universität Bamberg. Lizenziert unter GPL 2.0 oder später. En
  * @author Litlok
  * @author Peter17
  * @author PieRRoMaN
+ * @author Sherbrooke
  * @author Verdy p
  * @author Xapitoun
  */
 $messages['fr'] = array(
+	'translategroupdescriptions-desc' => "Descriptions des groupes de messages pour les produits pris en charge par l'[http://mediawiki.org/wiki/Extension:Translate extension Translate]",
 	'translate-group-desc-nodesc' => 'Aucune description n’est disponible pour ce groupe de messages',
 	'translate-group-desc-mediawikicore' => 'Ce groupe de messages contient les messages utilisés dans la version alpha actuelle de MediaWiki ({{CURRENTVERSION}}).',
 	'translate-group-desc-mediawikimostused' => 'Ce groupe de messages contient les [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 messages les plus souvent utilisés] dans MediaWiki.',
@@ -265,6 +267,7 @@ $messages['fr'] = array(
 	'bw-desc-freecol' => 'Avant de traduire FreeCol dans votre langue, veuillez lire [[Translating:FreeCol]]. Freecol est publié sous licence GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], un forum internet écrit en PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] est un système gratuit pour le suivi sur le web des anomalies. Rapportez tous les problèmes sur [[Support]].',
+	'translate-group-desc-mantisbt-plugin-core' => 'Un plugin de base pour [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Les messages pour la version stable 1.15 de [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mediawiki-core-116' => 'Les messages pour la version stable 1.16 de [[Translating:MediaWiki|MediaWiki]]',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' est une bibliothèque Python pour créer des documents PDF à partir des articles de MediaWiki qui ont été analysés par la bibliothèque mwlib.
