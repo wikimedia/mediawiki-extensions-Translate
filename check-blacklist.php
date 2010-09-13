@@ -51,6 +51,14 @@ array(
 		'revisionasof', // Optional time parameters
 		'siteuser', // Optional GENDER parameter
 		'sp-contributions-blocked-notice', // Optional GENDER parameter
+		'diff-multi-manyusers',
+	),
+),
+array(
+	'group' => 'core',
+	'check' => 'plural',
+	'message' => array(
+		'diff-multi-manyusers', // Likely to not be needed in languages with same plural as English (many)
 	),
 ),
 array(
