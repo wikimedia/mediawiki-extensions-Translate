@@ -260,40 +260,7 @@ class MessageChecker {
 	 * @param $warnings \array Array where warnings are appended to.
 	 */
 	protected function printfCheck( $messages, $code, &$warnings ) {
-		foreach ( $messages as $message ) {
-			$key = $message->key();
-			$definition = $message->definition();
-			$translation = $message->translation();
-
-			preg_match_all( '/%(\d+\$)[sduf]/U', $definition, $defVars );
-			preg_match_all( '/%(\d+\$)[sduf]/U', $translation, $transVars );
-
-			// Check for missing variables in the translation
-			$subcheck = 'missing';
-			$params = self::compareArrays( $defVars[0], $transVars[0] );
-
-			if ( count( $params ) ) {
-				$warnings[$key][] = array(
-					array( 'printf', $subcheck, $key, $code ),
-					'translate-checks-parameters',
-					array( 'PARAMS', $params ),
-					array( 'COUNT', count( $params ) ),
-				);
-			}
-
-			// Check for unknown variables in the translatio
-			$subcheck = 'unknown';
-			$params = self::compareArrays( $transVars[0], $defVars[0] );
-
-			if ( count( $params ) ) {
-				$warnings[$key][] = array(
-					array( 'printf', $subcheck, $key, $code ),
-					'translate-checks-parameters-unknown',
-					array( 'PARAMS', $params ),
-					array( 'COUNT', count( $params ) ),
-				);
-			}
-		}
+		return $this->parameterCheck( $messages, $code, &$warnings, '/%(\d+\$)?[sduf]/U' );
 	}
 
 	/**
@@ -345,4 +312,50 @@ class MessageChecker {
 			}
 		}
 	}
+
+	/**
+	 * Checks for missing and unknown printf formatting characters in
+	 * translations.
+	 * @param $messages \mixed Iterable list of TMessage objects.
+	 * @param $code \string Language code
+	 * @param $warnings \array Array where warnings are appended to.
+	 * @param $pattern \string Regular expression for matching variables.
+	 */
+	protected function parameterCheck( $messages, $code, &$warnings, $pattern ) {
+		foreach ( $messages as $message ) {
+			$key = $message->key();
+			$definition = $message->definition();
+			$translation = $message->translation();
+
+			preg_match_all( $pattern, $definition, $defVars );
+			preg_match_all( $pattern, $translation, $transVars );
+
+			// Check for missing variables in the translation
+			$subcheck = 'missing';
+			$params = self::compareArrays( $defVars[0], $transVars[0] );
+
+			if ( count( $params ) ) {
+				$warnings[$key][] = array(
+					array( 'printf', $subcheck, $key, $code ),
+					'translate-checks-parameters',
+					array( 'PARAMS', $params ),
+					array( 'COUNT', count( $params ) ),
+				);
+			}
+
+			// Check for unknown variables in the translatio
+			$subcheck = 'unknown';
+			$params = self::compareArrays( $transVars[0], $defVars[0] );
+
+			if ( count( $params ) ) {
+				$warnings[$key][] = array(
+					array( 'printf', $subcheck, $key, $code ),
+					'translate-checks-parameters-unknown',
+					array( 'PARAMS', $params ),
+					array( 'COUNT', count( $params ) ),
+				);
+			}
+		}
+	}
+
 }
