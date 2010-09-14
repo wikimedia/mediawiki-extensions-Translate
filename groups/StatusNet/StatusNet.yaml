@@ -24,3 +24,8 @@ FILES:
   header: |
     # This file is distributed under the same license as the StatusNet package.
     #
+
+CHECKER:
+  class: MessageChecker
+  checks:
+    - printfCheck

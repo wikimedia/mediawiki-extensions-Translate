@@ -265,12 +265,10 @@ class MessageChecker {
 			$definition = $message->definition();
 			$translation = $message->translation();
 
-			preg_match_all( '/%[sd]/U', $definition, $defVars );
-			preg_match_all( '/%[sd]/U', $translation, $transVars );
+			preg_match_all( '/%(\d+\$)[sduf]/U', $definition, $defVars );
+			preg_match_all( '/%(\d+\$)[sduf]/U', $translation, $transVars );
 
-			/**
-			 * Check for missing variables in the translation
-			 */
+			// Check for missing variables in the translation
 			$subcheck = 'missing';
 			$params = self::compareArrays( $defVars[0], $transVars[0] );
 
@@ -283,9 +281,7 @@ class MessageChecker {
 				);
 			}
 
-			/**
-			 * Check for unknown variables in the translation
-			 */
+			// Check for unknown variables in the translatio
 			$subcheck = 'unknown';
 			$params = self::compareArrays( $transVars[0], $defVars[0] );
 
