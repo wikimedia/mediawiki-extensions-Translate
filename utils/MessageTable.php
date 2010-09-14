@@ -112,7 +112,7 @@ class MessageTable {
 			$tableheader .= Xml::closeElement( 'tr' );
 		}
 
-		return $tableheader;
+		return $tableheader ."\n";
 	}
 
 	public function contents() {
@@ -179,8 +179,7 @@ class MessageTable {
 				);
 
 				$output .= Xml::tags( 'tr', array( 'class' => 'new' ),
-					Xml::tags( 'td', null, TranslateUtils::convertWhiteSpaceToHTML( $message ) ) .
-					Xml::closeElement( 'tr' )
+					Xml::tags( 'td', null, TranslateUtils::convertWhiteSpaceToHTML( $message ) )
 				);
 			} else {
 				$output .= Xml::tags( 'tr', array( 'class' => 'def' ),
@@ -188,6 +187,7 @@ class MessageTable {
 					Xml::tags( 'td', $rclasses, TranslateUtils::convertWhiteSpaceToHTML( $message ) )
 				);
 			}
+			$output .= "\n";
 		}
 
 		return $output;
