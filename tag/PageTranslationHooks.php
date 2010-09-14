@@ -476,7 +476,12 @@ FOO;
 	}
 
 	public static function exportToolbox( $skin ) {
-		global $wgOut;
+		global $wgOut, $wgRequest;
+
+		if ( $wgRequest->getVal( 'action', 'view' ) !== 'view' || $wgRequest->getVal( 'oldid' ) ) {
+			return true;
+		}
+
 		$title = $wgOut->getTitle();
 
 		// Check if this is a source page or a translation page
