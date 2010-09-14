@@ -23,13 +23,6 @@ class TranslateEditAddons {
 	static function addNavigation( &$outputpage, &$text ) {
 		global $wgUser, $wgTitle;
 
-		static $done = false;
-		if ( $done ) {
-			return true;
-		}
-
-		$done = true;
-
 		if ( !self::isMessageNamespace( $wgTitle ) ) {
 			return true;
 		}
@@ -241,13 +234,7 @@ EOEO;
 		$group = $wgRequest->getText( 'loadgroup', '' );
 		$mg = MessageGroups::getGroup( $group );
 
-		/**
-		 * If we were not given group, or the group given was meta...
-		 */
-		if ( is_null( $mg ) || $mg->isMeta() ) {
-			/**
-			 * .. then try harder, because meta groups are *inefficient*.
-			 */
+		if ( $mg === null ) {
 			$group = TranslateUtils::messageKeyToGroup( $namespace, $key );
 			if ( $group ) {
 				$mg = MessageGroups::getGroup( $group );
@@ -314,7 +301,7 @@ EOEO;
 	 * @return \bool If title is in a message namespace.
 	 */
 	public static function isMessageNamespace( Title $title ) {
-		global $wgTranslateMessageNamespaces; ;
+		global $wgTranslateMessageNamespaces;
 
 		$namespace = $title->getNamespace();
 
