@@ -84,6 +84,8 @@ TAGS:
     - user.account.contributor terms.link
     - user.terms.consider_pd_why_url
     - user.terms.declined
+    - layouts.help_url
+    - layouts.wiki_url
   ignored:
     - geocoder.search_osm_namefinder.prefix
     - printable_name.with_id
