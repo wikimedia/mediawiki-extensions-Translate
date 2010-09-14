@@ -193,6 +193,10 @@ class TranslationHelpers {
 			$all['translation-memory'] = array( $this, 'getLazySuggestionBox' );
 		} elseif ( $suggestions === 'only' ) {
 			return (string) call_user_func( $all['translation-memory'], 'lazy' );
+		} elseif( $suggestions === 'checks' ) {
+			global $wgRequest;
+			$this->translation = $wgRequest->getText( 'translation' );
+			return (string) call_user_func( $all['check'] );
 		}
 
 		$boxes = array();
@@ -546,6 +550,8 @@ class TranslationHelpers {
 	protected function getCheckBox() {
 		global $wgTranslateDocumentationLanguageCode;
 
+		$placeholder = Html::element( 'div', array( 'class' => 'mw-translate-messagechecks' ) );
+
 		if ( $this->group === null ) {
 			return;
 		}
@@ -556,7 +562,7 @@ class TranslationHelpers {
 		$en = $this->getDefinition();
 
 		if ( strval( $translation ) === '' ) {
-			return null;
+			return $placeholder;
 		}
 
 		if ( $code === $wgTranslateDocumentationLanguageCode ) {
@@ -574,7 +580,7 @@ class TranslationHelpers {
 
 		$checks = $checker->checkMessage( $message, $code );
 		if ( !count( $checks ) ) {
-			return null;
+			return $placeholder;
 		}
 
 		$checkMessages = array();
@@ -583,10 +589,11 @@ class TranslationHelpers {
 			$checkMessages[] = call_user_func_array( 'wfMsgExt', $checkParams );
 		}
 
-		return TranslateUtils::fieldset(
+		return Html::rawElement( 'div', array( 'class' => 'mw-translate-messagechecks' ),
+			TranslateUtils::fieldset(
 			wfMsgHtml( 'translate-edit-warnings' ), implode( '<hr />', $checkMessages ),
 			array( 'class' => 'mw-sp-translate-edit-warnings' )
-		);
+		) );
 	}
 
 	protected function getOtherLanguagesBox() {

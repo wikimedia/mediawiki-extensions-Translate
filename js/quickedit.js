@@ -21,6 +21,28 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+function MessageCheckUpdater( callback ) {
+	this.callback = callback;
+	
+	this.act = function() {
+		callback();
+		delete this.timeoutID;
+	},
+
+	this.setup = function() {
+		this.cancel();
+		var self = this;
+		this.timeoutID = window.setTimeout( self.act, 600 );
+	},
+
+	this.cancel = function() {
+		if(typeof this.timeoutID == "number") {
+			window.clearTimeout(this.timeoutID);
+			delete this.timeoutID;
+		}
+	}
+}
+
 var dialogwidth = false;
 
 function trlOpenJsEdit( page, group ) {
@@ -61,7 +83,22 @@ function trlOpenJsEdit( page, group ) {
 			return false;
 		});
 
-		form.find( ".mw-translate-edit-area" ).focus();
+		var textarea = form.find( ".mw-translate-edit-area" );
+		textarea.focus();
+		var checks = form.find( ".mw-translate-messagechecks" );
+		if ( checks ) {
+
+			var checker = new MessageCheckUpdater( function() {
+				var url = wgScript + "?title=Special:Translate/editpage&suggestions=checks&page=$1&loadgroup=$2";
+				url = url.replace( "$1", page ).replace( "$2", group );
+				jQuery.post( url, { translation: textarea.val() } , function(mydata) {
+					checks.html( mydata );
+				});
+			});
+
+			textarea.keyup( function() { checker.setup(); } );
+		}
+		
 		addAccessKeys( form );
 		var b = form.find(".mw-translate-save"); b.val( b.val() + " (a)" );
 		var b = form.find(".mw-translate-next"); b.val( b.val() + " (s)" );

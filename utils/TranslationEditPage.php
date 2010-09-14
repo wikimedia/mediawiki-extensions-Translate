@@ -74,6 +74,11 @@ class TranslationEditPage {
 			return;
 		}
 
+		if ( $this->suggestions === 'checks' ) {
+			echo $helpers->getBoxes( $this->suggestions );
+			return;
+		}
+
 		$translation = $helpers->getTranslation();
 		$short = strpos( $translation, "\n" ) === false && strlen( $translation ) < 200;
 		$textareaParams = array(
