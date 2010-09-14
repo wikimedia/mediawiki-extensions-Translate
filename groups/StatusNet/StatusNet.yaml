@@ -1,6 +1,6 @@
 ---
 BASIC:
-  id: out-statusnet-beta
+  id: out-statusnet
   label: StatusNet
   description: "{{int:bw-desc-statusnet}}"
   namespace: NS_STATUSNET

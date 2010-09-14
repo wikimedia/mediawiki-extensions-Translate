@@ -1,6 +1,6 @@
 ---
 BASIC:
-  id: out-mwlibrl-beta
+  id: out-mwlibrl
   label: Mwlib.rl
   description: "{{int:bw-desc-mwlibrl}}"
   namespace: NS_MWLIB
