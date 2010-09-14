@@ -41,11 +41,8 @@ class MessageIndexRebuilder {
 			self::checkAndAdd( $hugearray, $g, true );
 		}
 
-		$filename = TranslateUtils::cacheFile( 'translate_messageindex.cdb' );
-
-		$writer = CdbWriter::open( $filename );
-		$writer->set( 'map', serialize( $hugearray ) );
-		$writer->close();
+		$filename = TranslateUtils::cacheFile( 'translate_messageindex.ser' );
+		file_put_contents( $filename, serialize( $hugearray ) );
 	}
 
 	protected static function checkAndAdd( &$hugearray, $g, $ignore = false ) {

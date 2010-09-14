@@ -304,18 +304,17 @@ class TranslateUtils {
 	 * @return \array or \type{false}
 	 */
 	public static function messageIndex() {
-		$filename = self::cacheFile( 'translate_messageindex.cdb' );
+		wfDebug( __METHOD__ . ": loading from file...\n" );
+		$filename = self::cacheFile( 'translate_messageindex.ser' );
 
 		if ( !file_exists( $filename ) ) {
 			MessageIndexRebuilder::execute();
 		}
 
 		if ( file_exists( $filename ) ) {
-			$reader = CdbReader::open( $filename );
-			$keyToGroup = unserialize( $reader->get( 'map' ) );
+			$keyToGroup = unserialize( file_get_contents( $filename ) );
 		} else {
-			$keyToGroup = false;
-			wfDebug( __METHOD__ . ": Message index missing." );
+			throw new MWException( 'Unable to get message index' );
 		}
 
 		self::$mi = $keyToGroup;
