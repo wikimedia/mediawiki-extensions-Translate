@@ -756,7 +756,7 @@ PHP;
 					$content .= "msgstr[$index] " . $this->escape( $form ) . "\n";
 				}
 			} catch ( GettextPluralException $e ) {
-				$flags[] = 'x-invalid-plural';
+				$flags[] = 'invalid-plural';
 				for ( $i = 0; $i < $pluralCount; $i++ ) {
 					$content .= "msgstr[$i] \"\"\n";
 				}
