@@ -721,6 +721,7 @@ PHP;
 
 	protected function formatMessageBlock( $key, $m, $trans, $pot, $pluralCount ) {
 		$header = $this->formatDocumentation( $key );
+		$content = '';
 
 		$comments = self::chainGetter( 'comments', $pot, $trans, array() );
 		foreach ( $comments as $type => $typecomments ) {
@@ -732,9 +733,9 @@ PHP;
 		$flags = self::chainGetter( 'flags', $pot, $trans, array() );
 		$flags = array_merge( $m->getTags(), $flags );
 
-		$ctxt = self::chainGetter( 'msgctxt', $pot, $trans, false );
+		$ctxt = self::chainGetter( 'ctxt', $pot, $trans, false );
 		if ( $ctxt ) {
-			$output .= 'msgctxt ' . self::escape( $ctxt ) . "\n";
+			$content .= 'msgctxt ' . self::escape( $ctxt ) . "\n";
 		}
 
 		$msgid = $m->definition();
@@ -747,7 +748,7 @@ PHP;
 
 		if ( preg_match( '/{{PLURAL:GETTEXT/i', $msgid ) ) {
 			$forms = $this->splitPlural( $msgid, 2 );
-			$content  = 'msgid ' . $this->escape( $forms[0] ) . "\n";
+			$content .= 'msgid ' . $this->escape( $forms[0] ) . "\n";
 			$content .= 'msgid_plural ' . $this->escape( $forms[1] ) . "\n";
 
 			try {
@@ -763,7 +764,7 @@ PHP;
 			}
 
 		} else {
-			$content  = 'msgid ' . self::escape( $msgid ) . "\n";
+			$content .= 'msgid ' . self::escape( $msgid ) . "\n";
 			$content .= 'msgstr ' . self::escape( $msgstr ) . "\n";
 		}
 
