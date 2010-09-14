@@ -1463,6 +1463,8 @@ User Throttle
 
 Validator
 
+Variable Page
+
 Vote
 aliasfile = Vote/Vote.alias.php
 
