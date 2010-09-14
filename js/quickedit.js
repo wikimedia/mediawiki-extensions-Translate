@@ -85,14 +85,13 @@ function trlOpenJsEdit( page, group ) {
 
 		var textarea = form.find( ".mw-translate-edit-area" );
 		textarea.focus();
-		var checks = form.find( ".mw-translate-messagechecks" );
-		if ( checks ) {
 
+		if ( form.find( ".mw-translate-messagechecks" ) ) {
 			var checker = new MessageCheckUpdater( function() {
 				var url = wgScript + "?title=Special:Translate/editpage&suggestions=checks&page=$1&loadgroup=$2";
 				url = url.replace( "$1", page ).replace( "$2", group );
 				jQuery.post( url, { translation: textarea.val() } , function(mydata) {
-					checks.html( mydata );
+					form.find( ".mw-translate-messagechecks" ).replaceWith( mydata );
 				});
 			});
 
