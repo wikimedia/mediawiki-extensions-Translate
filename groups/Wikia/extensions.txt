@@ -71,7 +71,7 @@ Grace Expired
 file = GraceExpired/SpecialGraceExpired.i18n.php
 
 HA Welcome
-ignored = welcome-enabled, welcome-user
+ignored = welcome-enabled, welcome-user, welcome-bot
 
 Health Check
 file = SpecialHealthcheck/HealthCheck.i18n.php
