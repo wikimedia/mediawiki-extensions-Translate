@@ -51,6 +51,7 @@ $wgExtensionAliasesFiles['Translate'] = $dir . 'Translate.alias.php';
 // Register initialization hook
 $wgExtensionFunctions[] = 'efTranslateInit';
 $wgHooks['CanonicalNamespaces'][] = 'efTranslateNamespaces';
+$wgHooks['ResourceLoaderRegisterModules'][] = 'efTranslateResources';
 
 // Register special pages into MediaWiki
 $wgSpecialPages['Translate'] = 'SpecialTranslate';
@@ -404,11 +405,11 @@ $wgTranslateYamlLibrary = 'spyc';
 
 
 # Startup code
-
-if ( class_exists( 'ResourceLoader' ) ) {
+function efTranslateResources() {
 	ResourceLoader::register( array( 'translate-css' =>
 		new ResourceLoaderFileModule( array( 'styles' => 'extensions/Translate/Translate.css' ) )
 	) );
+	return true;
 }
 
 function efTranslateNamespaces( &$list ) {
