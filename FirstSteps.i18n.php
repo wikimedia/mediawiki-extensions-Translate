@@ -986,7 +986,12 @@ Wänn Du kei Newsletter witt iberchuu, chasch di im Tab „{{int:prefs-personal}
  * @author SpeedyGonsales
  */
 $messages['hr'] = array(
+	'firststeps' => 'Prvi koraci',
+	'translate-fs-pagetitle-done' => ' - učinjeno!',
 	'translate-fs-signup-title' => 'Prijavite se',
+	'translate-fs-settings-title' => 'Namjestite vaše postavke',
+	'translate-fs-userpage-title' => 'Stvorite svoju suradničku stranicu',
+	'translate-fs-permissions-title' => 'Zatražite prevoditeljski status',
 	'translate-fs-userpage-submit' => 'Stvori moju suradničku stranicu',
 );
 

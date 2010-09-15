@@ -2012,6 +2012,7 @@ $messages['he'] = array(
 
 /** Croatian (Hrvatski)
  * @author Ex13
+ * @author Herr Mlinka
  * @author SpeedyGonsales
  */
 $messages['hr'] = array(
@@ -2030,6 +2031,7 @@ Ime: $1',
 	'tpt-sections-oldnew' => 'Novi i postojeći prijevodi',
 	'tpt-sections-deleted' => 'Obrisane grupe prijevoda',
 	'tpt-sections-template' => 'Predložak stranice za prijevod',
+	'tpt-nosuchpage' => 'Stranica $1 ne postoji',
 	'tpt-rev-latest' => 'Najnovija inačica',
 	'tpt-rev-old' => 'razlika u odnosu na prethodnu označenu inačicu',
 	'tpt-rev-mark-new' => 'označi ovu inačicu za prijevod',
@@ -2037,6 +2039,7 @@ Ime: $1',
 	'translate-tag-translate-link-desc' => 'Prevedi ovu stranicu',
 	'translate-tag-markthis' => 'Označi ovu stranicu za prijevod',
 	'tpt-languages-legend' => 'Drugi jezici:',
+	'pt-movepage-list-other' => 'Ostale podstranice',
 	'pt-movepage-current' => 'Trenutačni naziv:',
 	'pt-movepage-new' => 'Novi naziv:',
 	'pt-movepage-reason' => 'Razlog:',
