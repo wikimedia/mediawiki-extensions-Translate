@@ -494,6 +494,7 @@ class TranslationHelpers {
 				error_log( __METHOD__ . " with ($serviceName ($candidate)): " . $response->responseDetails );
 			} else {
 				$sug = Sanitizer::decodeCharReferences( $response->responseData->translatedText );
+				$sug = trim( $sug );
 				$sug = $this->suggestionField( $sug );
 				$suggestions[] = Html::rawElement( 'div',
 					array( 'title' => $text ),
