@@ -22,7 +22,7 @@
  */
 
 function MessageCheckUpdater( callback ) {
-	this.callback = callback;
+	var callback = callback;
 	
 	this.act = function() {
 		callback();
@@ -161,8 +161,10 @@ function trlLoadNext( title ) {
 	var namespace = title.replace( /:.*/, "");
 	var found = false;
 	for ( key in trlKeys ) {
+		if ( !typeof key !== "string" ) { continue; }
 		value = trlKeys[key];
 		if (found) {
+			console.log( value );
 			return trlOpenJsEdit( namespace + ":" + value );
 		} else if( page === value ) {
 			found = true;
