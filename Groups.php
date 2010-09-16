@@ -399,9 +399,21 @@ class FileBasedMessageGroup extends MessageGroupBase {
 	}
 
 	public function mapCode( $code ) {
+		if ( !isset( $this->conf['FILES']['codeMap'] ) ) {
+			return $code;
+		}
+
 		if ( isset( $this->conf['FILES']['codeMap'][$code] ) ) {
 			return $this->conf['FILES']['codeMap'][$code];
 		} else {
+			if ( !isset( $this->reverseCodeMap ) ) {
+				$this->reverseCodeMap = array_flip( $this->conf['FILES']['codeMap'] );
+			}
+
+			if ( isset( $this->reverseCodeMap[$code] ) ) {
+				return 'x-invalidLanguageCode';
+			}
+
 			return $code;
 		}
 	}
