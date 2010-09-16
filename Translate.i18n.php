@@ -3082,6 +3082,7 @@ Ovo uključuje poruke koje su označene kao neažurne.',
 	'translate-percentage-fuzzy' => 'Zastarijelo',
 	'translate-nothing-to-do' => 'Izgleda da su napravljeni svi mogući prijevodi.
 Savjetujemo Vam da izvršite pregled poruke preko [[Special:Translate|{{int:translate}}]].',
+	'supportedlanguages' => 'Podržani jezici',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Prevodioc|Prevodioci}}: $1',
 	'supportedlanguages-recenttranslations' => 'nedavni prevodi',
 	'translate-save' => 'Spremi ($1)',

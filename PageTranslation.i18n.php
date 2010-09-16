@@ -383,6 +383,29 @@ $messages['ast'] = array(
 	'translate-tag-translate-link-desc' => 'Traducir esta páxina',
 );
 
+/** Bavarian (Boarisch)
+ * @author Mucalexx
+ */
+$messages['bar'] = array(
+	'tpt-section-new' => 'Naiche Ywersetzungsoahait. Nåm $1',
+	'tpt-section-deleted' => 'Ywersetzungsoahait $1',
+	'tpt-template' => 'Saitenvurlog',
+	'tpt-templatediff' => 'De Saitenvurlog hod se gendert.',
+	'tpt-diff-old' => 'Vuriger Text',
+	'tpt-diff-new' => 'Naicher Text',
+	'tpt-submit' => 'De Version dodan zur Ywersetzung markirn',
+	'tpt-sections-oldnew' => 'Naiche und vurhåndane Ywersetzungsoahaiten',
+	'tpt-sections-deleted' => 'Gleschte Ywersetzungsoahaiten',
+	'tpt-sections-template' => 'Ywersetzungssaitenvurlog',
+	'tpt-action-nofuzzy' => "Setz d' Ywersetzungen ned ausser Kroft",
+	'tpt-badtitle' => 'Da ågewane Saitennåm „$1“ is koa güitiger Titl ned',
+	'tpt-nosuchpage' => 'De Saiten $1 existird ned',
+	'tpt-oldrevision' => "$2 is ned d' letzte Verson vo derer Saiten [[$1]].
+Netter de letzte Version kå zur Ywersetzung markird wern.",
+	'tpt-notsuitable' => 'De Saiten $1 is ned zum Ywersetzen gaignet.
+Söi sicher, das a <nowiki><translate></nowiki>-Tag und güitige Syntax vawendt werd.',
+);
+
 /** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
  * @author EugeneZelenko
  * @author Jim-by
