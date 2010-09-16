@@ -885,7 +885,7 @@ descmsg = qp_desc
 optional = qp_parentheses, qp_full_category_name, qp_results_line_qpul, qp_results_line_qucl
 optional = qp_header_line_qucl
 
-QR Code
+Qr Code
 
 Quiz
 descmsg = quiz_desc
