@@ -186,10 +186,6 @@ ignored = theorytab-subpage
 
 Title Edit
 
-Unsubscribe
-file = SpecialUnsubscribe/Unsubscribe.i18n.php
-aliasfile = SpecialUnsubscribe/Unsubscribe.alias.php
-
 Video Embed Tool
 
 Watch Sub Pages
