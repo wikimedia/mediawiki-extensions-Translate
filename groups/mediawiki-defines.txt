@@ -1466,6 +1466,7 @@ User Throttle
 Validator
 
 Variable Page
+ignored = variablepage-randomurl
 
 Vote
 aliasfile = Vote/Vote.alias.php
