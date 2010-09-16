@@ -110,7 +110,8 @@ class MessageGroupCache {
 
 		// Timestamp and existence checks
 		if ( !$this->exists() ) {
-			return !file_exists( $filename );
+			// Cache is valid if the file doesn't exist or doesn't have translations
+			return !file_exists( $filename ) || !count( $group->load( $this->code ) );
 		} elseif ( !file_exists( $filename ) ) {
 			//$this->delete();
 			return false;
