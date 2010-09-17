@@ -43,3 +43,549 @@ FILES:
 
 MANGLER:
   prefix: adsense-
+---
+BASIC:
+  id: out-statusnet-plugin-autosandbox
+  label: StatusNet - AutoSandbox
+  display: out/statusnet/plugin/autosandbox
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/AutoSandbox/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/AutoSandbox/locale/%CODE%/LC_MESSAGES/AutoSandbox.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/AutoSandbox/locale/AutoSandbox.pot
+  targetPattern: statusnet/plugins/AutoSandbox/locale/%CODE%/LC_MESSAGES/AutoSandbox.po
+
+MANGLER:
+  prefix: autosandbox-
+---
+BASIC:
+  id: out-statusnet-plugin-autocomplete
+  label: StatusNet - Autocomplete
+  display: out/statusnet/plugin/autocomplete
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/Autocomplete/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/Autocomplete/locale/%CODE%/LC_MESSAGES/Autocomplete.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/Autocomplete/locale/Autocomplete.pot
+  targetPattern: statusnet/plugins/Autocomplete/locale/%CODE%/LC_MESSAGES/Autocomplete.po
+
+MANGLER:
+  prefix: autocomplete-
+---
+BASIC:
+  id: out-statusnet-plugin-bitlyurl
+  label: StatusNet - BitlyUrl
+  display: out/statusnet/plugin/bitlyurl
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/BitlyUrl/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/BitlyUrl/locale/%CODE%/LC_MESSAGES/BitlyUrl.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/BitlyUrl/locale/BitlyUrl.pot
+  targetPattern: statusnet/plugins/BitlyUrl/locale/%CODE%/LC_MESSAGES/BitlyUrl.po
+
+MANGLER:
+  prefix: bitlyurl-
+---
+BASIC:
+  id: out-statusnet-plugin-blacklist
+  label: StatusNet - Blacklist
+  display: out/statusnet/plugin/blacklist
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/Blacklist/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/Blacklist/locale/%CODE%/LC_MESSAGES/Blacklist.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/Blacklist/locale/Blacklist.pot
+  targetPattern: statusnet/plugins/Blacklist/locale/%CODE%/LC_MESSAGES/Blacklist.po
+
+MANGLER:
+  prefix: blacklist-
+---
+BASIC:
+  id: out-statusnet-plugin-casauthentication
+  label: StatusNet - CasAuthentication
+  display: out/statusnet/plugin/casauthentication
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/CasAuthentication/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/CasAuthentication/locale/%CODE%/LC_MESSAGES/CasAuthentication.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/CasAuthentication/locale/CasAuthentication.pot
+  targetPattern: statusnet/plugins/CasAuthentication/locale/%CODE%/LC_MESSAGES/CasAuthentication.po
+
+MANGLER:
+  prefix: casauthentication-
+---
+BASIC:
+  id: out-statusnet-plugin-clientsideshorten
+  label: StatusNet - ClientSideShorten
+  display: out/statusnet/plugin/clientsideshorten
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/ClientSideShorten/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/ClientSideShorten/locale/%CODE%/LC_MESSAGES/ClientSideShorten.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/ClientSideShorten/locale/ClientSideShorten.pot
+  targetPattern: statusnet/plugins/ClientSideShorten/locale/%CODE%/LC_MESSAGES/ClientSideShorten.po
+
+MANGLER:
+  prefix: clientsideshorten-
+---
+BASIC:
+  id: out-statusnet-plugin-directiondetector
+  label: StatusNet - DirectionDetector
+  display: out/statusnet/plugin/directiondetector
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/DirectionDetector/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/DirectionDetector/locale/%CODE%/LC_MESSAGES/DirectionDetector.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/DirectionDetector/locale/DirectionDetector.pot
+  targetPattern: statusnet/plugins/DirectionDetector/locale/%CODE%/LC_MESSAGES/DirectionDetector.po
+
+MANGLER:
+  prefix: directiondetector-
+---
+BASIC:
+  id: out-statusnet-plugin-emailauthentication
+  label: StatusNet - EmailAuthentication
+  display: out/statusnet/plugin/emailauthentication
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/EmailAuthentication/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/EmailAuthentication/locale/%CODE%/LC_MESSAGES/EmailAuthentication.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/EmailAuthentication/locale/EmailAuthentication.pot
+  targetPattern: statusnet/plugins/EmailAuthentication/locale/%CODE%/LC_MESSAGES/EmailAuthentication.po
+
+MANGLER:
+  prefix: emailauthentication-
+---
+BASIC:
+  id: out-statusnet-plugin-facebook
+  label: StatusNet - Facebook
+  display: out/statusnet/plugin/facebook
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/Facebook/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/Facebook/locale/%CODE%/LC_MESSAGES/Facebook.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/Facebook/locale/Facebook.pot
+  targetPattern: statusnet/plugins/Facebook/locale/%CODE%/LC_MESSAGES/Facebook.po
+
+MANGLER:
+  prefix: facebook-
+---
+BASIC:
+  id: out-statusnet-plugin-firephp
+  label: StatusNet - FirePHP
+  display: out/statusnet/plugin/firephp
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/FirePHP/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/FirePHP/locale/%CODE%/LC_MESSAGES/FirePHP.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/FirePHP/locale/FirePHP.pot
+  targetPattern: statusnet/plugins/FirePHP/locale/%CODE%/LC_MESSAGES/FirePHP.po
+
+MANGLER:
+  prefix: firephp-
+---
+BASIC:
+  id: out-statusnet-plugin-gravatar
+  label: StatusNet - Gravatar
+  display: out/statusnet/plugin/gravatar
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/Gravatar/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/Gravatar/locale/%CODE%/LC_MESSAGES/Gravatar.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/Gravatar/locale/Gravatar.pot
+  targetPattern: statusnet/plugins/Gravatar/locale/%CODE%/LC_MESSAGES/Gravatar.po
+
+MANGLER:
+  prefix: gravatar-
+---
+BASIC:
+  id: out-statusnet-plugin-imap
+  label: StatusNet - Imap
+  display: out/statusnet/plugin/imap
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/Imap/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/Imap/locale/%CODE%/LC_MESSAGES/Imap.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/Imap/locale/Imap.pot
+  targetPattern: statusnet/plugins/Imap/locale/%CODE%/LC_MESSAGES/Imap.po
+
+MANGLER:
+  prefix: imap-
+---
+BASIC:
+  id: out-statusnet-plugin-infinitescroll
+  label: StatusNet - InfiniteScroll
+  display: out/statusnet/plugin/infinitescroll
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/InfiniteScroll/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/InfiniteScroll/locale/%CODE%/LC_MESSAGES/InfiniteScroll.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/InfiniteScroll/locale/InfiniteScroll.pot
+  targetPattern: statusnet/plugins/InfiniteScroll/locale/%CODE%/LC_MESSAGES/InfiniteScroll.po
+
+MANGLER:
+  prefix: infinitescroll-
+---
+BASIC:
+  id: out-statusnet-plugin-ldapauthentication
+  label: StatusNet - LdapAuthentication
+  display: out/statusnet/plugin/ldapauthentication
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/LdapAuthentication/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/LdapAuthentication/locale/%CODE%/LC_MESSAGES/LdapAuthentication.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/LdapAuthentication/locale/LdapAuthentication.pot
+  targetPattern: statusnet/plugins/LdapAuthentication/locale/%CODE%/LC_MESSAGES/LdapAuthentication.po
+
+MANGLER:
+  prefix: ldapauthentication-
+---
+BASIC:
+  id: out-statusnet-plugin-ldapauthorization
+  label: StatusNet - LdapAuthorization
+  display: out/statusnet/plugin/ldapauthorization
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/LdapAuthorization/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/LdapAuthorization/locale/%CODE%/LC_MESSAGES/LdapAuthorization.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/LdapAuthorization/locale/LdapAuthorization.pot
+  targetPattern: statusnet/plugins/LdapAuthorization/locale/%CODE%/LC_MESSAGES/LdapAuthorization.po
+
+MANGLER:
+  prefix: ldapauthorization-
+---
+BASIC:
+  id: out-statusnet-plugin-lilurl
+  label: StatusNet - LilUrl
+  display: out/statusnet/plugin/lilurl
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/LilUrl/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/LilUrl/locale/%CODE%/LC_MESSAGES/LilUrl.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/LilUrl/locale/LilUrl.pot
+  targetPattern: statusnet/plugins/LilUrl/locale/%CODE%/LC_MESSAGES/LilUrl.po
+
+MANGLER:
+  prefix: lilurl-
+---
+BASIC:
+  id: out-statusnet-plugin-mapstraction
+  label: StatusNet - Mapstraction
+  display: out/statusnet/plugin/mapstraction
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/Mapstraction/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/Mapstraction/locale/%CODE%/LC_MESSAGES/Mapstraction.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/Mapstraction/locale/Mapstraction.pot
+  targetPattern: statusnet/plugins/Mapstraction/locale/%CODE%/LC_MESSAGES/Mapstraction.po
+
+MANGLER:
+  prefix: mapstraction-
+---
+BASIC:
+  id: out-statusnet-plugin-minify
+  label: StatusNet - Minify
+  display: out/statusnet/plugin/minify
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/Minify/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/Minify/locale/%CODE%/LC_MESSAGES/Minify.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/Minify/locale/Minify.pot
+  targetPattern: statusnet/plugins/Minify/locale/%CODE%/LC_MESSAGES/Minify.po
+
+MANGLER:
+  prefix: minify-
+---
+BASIC:
+  id: out-statusnet-plugin-mobileprofile
+  label: StatusNet - MobileProfile
+  display: out/statusnet/plugin/mobileprofile
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/MobileProfile/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/MobileProfile/locale/%CODE%/LC_MESSAGES/MobileProfile.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/MobileProfile/locale/MobileProfile.pot
+  targetPattern: statusnet/plugins/MobileProfile/locale/%CODE%/LC_MESSAGES/MobileProfile.po
+
+MANGLER:
+  prefix: mobileprofile-
+---
+BASIC:
+  id: out-statusnet-plugin-noticetitle
+  label: StatusNet - NoticeTitle
+  display: out/statusnet/plugin/noticetitle
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/NoticeTitle/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/NoticeTitle/locale/%CODE%/LC_MESSAGES/NoticeTitle.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/NoticeTitle/locale/NoticeTitle.pot
+  targetPattern: statusnet/plugins/NoticeTitle/locale/%CODE%/LC_MESSAGES/NoticeTitle.po
+
+MANGLER:
+  prefix: noticetitle-
+---
+BASIC:
+  id: out-statusnet-plugin-ostatus
+  label: StatusNet - OStatus
+  display: out/statusnet/plugin/ostatus
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/OStatus/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/OStatus/locale/%CODE%/LC_MESSAGES/OStatus.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/OStatus/locale/OStatus.pot
+  targetPattern: statusnet/plugins/OStatus/locale/%CODE%/LC_MESSAGES/OStatus.po
+
+MANGLER:
+  prefix: ostatus-
+---
+BASIC:
+  id: out-statusnet-plugin-openexternallinktarget
+  label: StatusNet - OpenExternalLinkTarget
+  display: out/statusnet/plugin/openexternallinktarget
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/OpenExternalLinkTarget/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/OpenExternalLinkTarget/locale/%CODE%/LC_MESSAGES/OpenExternalLinkTarget.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/OpenExternalLinkTarget/locale/OpenExternalLinkTarget.pot
+  targetPattern: statusnet/plugins/OpenExternalLinkTarget/locale/%CODE%/LC_MESSAGES/OpenExternalLinkTarget.po
+
+MANGLER:
+  prefix: openexternallinktarget-
+---
+BASIC:
+  id: out-statusnet-plugin-openid
+  label: StatusNet - OpenID
+  display: out/statusnet/plugin/openid
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/OpenID/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/OpenID/locale/%CODE%/LC_MESSAGES/OpenID.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/OpenID/locale/OpenID.pot
+  targetPattern: statusnet/plugins/OpenID/locale/%CODE%/LC_MESSAGES/OpenID.po
+
+MANGLER:
+  prefix: openid-
+---
+BASIC:
+  id: out-statusnet-plugin-postdebug
+  label: StatusNet - PostDebug
+  display: out/statusnet/plugin/postdebug
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/PostDebug/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/PostDebug/locale/%CODE%/LC_MESSAGES/PostDebug.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/PostDebug/locale/PostDebug.pot
+  targetPattern: statusnet/plugins/PostDebug/locale/%CODE%/LC_MESSAGES/PostDebug.po
+
+MANGLER:
+  prefix: postdebug-
+---
+BASIC:
+  id: out-statusnet-plugin-poweredbystatusnet
+  label: StatusNet - PoweredByStatusNet
+  display: out/statusnet/plugin/poweredbystatusnet
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/PoweredByStatusNet/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/PoweredByStatusNet/locale/%CODE%/LC_MESSAGES/PoweredByStatusNet.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/PoweredByStatusNet/locale/PoweredByStatusNet.pot
+  targetPattern: statusnet/plugins/PoweredByStatusNet/locale/%CODE%/LC_MESSAGES/PoweredByStatusNet.po
+
+MANGLER:
+  prefix: poweredbystatusnet-
+---
+BASIC:
+  id: out-statusnet-plugin-ptiturl
+  label: StatusNet - PtitUrl
+  display: out/statusnet/plugin/ptiturl
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/PtitUrl/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/PtitUrl/locale/%CODE%/LC_MESSAGES/PtitUrl.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/PtitUrl/locale/PtitUrl.pot
+  targetPattern: statusnet/plugins/PtitUrl/locale/%CODE%/LC_MESSAGES/PtitUrl.po
+
+MANGLER:
+  prefix: ptiturl-
+---
+BASIC:
+  id: out-statusnet-plugin-rsscloud
+  label: StatusNet - RSSCloud
+  display: out/statusnet/plugin/rsscloud
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/RSSCloud/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/RSSCloud/locale/%CODE%/LC_MESSAGES/RSSCloud.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/RSSCloud/locale/RSSCloud.pot
+  targetPattern: statusnet/plugins/RSSCloud/locale/%CODE%/LC_MESSAGES/RSSCloud.po
+
+MANGLER:
+  prefix: rsscloud-
+---
+BASIC:
+  id: out-statusnet-plugin-recaptcha
+  label: StatusNet - Recaptcha
+  display: out/statusnet/plugin/recaptcha
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/Recaptcha/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/Recaptcha/locale/%CODE%/LC_MESSAGES/Recaptcha.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/Recaptcha/locale/Recaptcha.pot
+  targetPattern: statusnet/plugins/Recaptcha/locale/%CODE%/LC_MESSAGES/Recaptcha.po
+
+MANGLER:
+  prefix: recaptcha-
+---
+BASIC:
+  id: out-statusnet-plugin-registerthrottle
+  label: StatusNet - RegisterThrottle
+  display: out/statusnet/plugin/registerthrottle
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/RegisterThrottle/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/RegisterThrottle/locale/%CODE%/LC_MESSAGES/RegisterThrottle.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/RegisterThrottle/locale/RegisterThrottle.pot
+  targetPattern: statusnet/plugins/RegisterThrottle/locale/%CODE%/LC_MESSAGES/RegisterThrottle.po
+
+MANGLER:
+  prefix: registerthrottle-
+---
+BASIC:
+  id: out-statusnet-plugin-requirevalidatedemail
+  label: StatusNet - RequireValidatedEmail
+  display: out/statusnet/plugin/requirevalidatedemail
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/RequireValidatedEmail/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/RequireValidatedEmail/locale/%CODE%/LC_MESSAGES/RequireValidatedEmail.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/RequireValidatedEmail/locale/RequireValidatedEmail.pot
+  targetPattern: statusnet/plugins/RequireValidatedEmail/locale/%CODE%/LC_MESSAGES/RequireValidatedEmail.po
+
+MANGLER:
+  prefix: requirevalidatedemail-
+---
+BASIC:
+  id: out-statusnet-plugin-reverseusernameauthentication
+  label: StatusNet - ReverseUsernameAuthentication
+  display: out/statusnet/plugin/reverseusernameauthentication
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/ReverseUsernameAuthentication/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/ReverseUsernameAuthentication/locale/%CODE%/LC_MESSAGES/ReverseUsernameAuthentication.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/ReverseUsernameAuthentication/locale/ReverseUsernameAuthentication.pot
+  targetPattern: statusnet/plugins/ReverseUsernameAuthentication/locale/%CODE%/LC_MESSAGES/ReverseUsernameAuthentication.po
+
+MANGLER:
+  prefix: reverseusernameauthentication-
+---
+BASIC:
+  id: out-statusnet-plugin-sample
+  label: StatusNet - Sample
+  display: out/statusnet/plugin/sample
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/Sample/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/Sample/locale/%CODE%/LC_MESSAGES/Sample.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/Sample/locale/Sample.pot
+  targetPattern: statusnet/plugins/Sample/locale/%CODE%/LC_MESSAGES/Sample.po
+
+MANGLER:
+  prefix: sample-
+---
+BASIC:
+  id: out-statusnet-plugin-simpleurl
+  label: StatusNet - SimpleUrl
+  display: out/statusnet/plugin/simpleurl
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/SimpleUrl/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/SimpleUrl/locale/%CODE%/LC_MESSAGES/SimpleUrl.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/SimpleUrl/locale/SimpleUrl.pot
+  targetPattern: statusnet/plugins/SimpleUrl/locale/%CODE%/LC_MESSAGES/SimpleUrl.po
+
+MANGLER:
+  prefix: simpleurl-
+---
+BASIC:
+  id: out-statusnet-plugin-submirror
+  label: StatusNet - SubMirror
+  display: out/statusnet/plugin/submirror
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/SubMirror/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/SubMirror/locale/%CODE%/LC_MESSAGES/SubMirror.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/SubMirror/locale/SubMirror.pot
+  targetPattern: statusnet/plugins/SubMirror/locale/%CODE%/LC_MESSAGES/SubMirror.po
+
+MANGLER:
+  prefix: submirror-
+---
+BASIC:
+  id: out-statusnet-plugin-tabfocus
+  label: StatusNet - TabFocus
+  display: out/statusnet/plugin/tabfocus
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/TabFocus/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/TabFocus/locale/%CODE%/LC_MESSAGES/TabFocus.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/TabFocus/locale/TabFocus.pot
+  targetPattern: statusnet/plugins/TabFocus/locale/%CODE%/LC_MESSAGES/TabFocus.po
+
+MANGLER:
+  prefix: tabfocus-
+---
+BASIC:
+  id: out-statusnet-plugin-tighturl
+  label: StatusNet - TightUrl
+  display: out/statusnet/plugin/tighturl
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/TightUrl/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/TightUrl/locale/%CODE%/LC_MESSAGES/TightUrl.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/TightUrl/locale/TightUrl.pot
+  targetPattern: statusnet/plugins/TightUrl/locale/%CODE%/LC_MESSAGES/TightUrl.po
+
+MANGLER:
+  prefix: tighturl-
+---
+BASIC:
+  id: out-statusnet-plugin-tinymce
+  label: StatusNet - TinyMCE
+  display: out/statusnet/plugin/tinymce
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/TinyMCE/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/TinyMCE/locale/%CODE%/LC_MESSAGES/TinyMCE.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/TinyMCE/locale/TinyMCE.pot
+  targetPattern: statusnet/plugins/TinyMCE/locale/%CODE%/LC_MESSAGES/TinyMCE.po
+
+MANGLER:
+  prefix: tinymce-
+---
+BASIC:
+  id: out-statusnet-plugin-twitterbridge
+  label: StatusNet - TwitterBridge
+  display: out/statusnet/plugin/twitterbridge
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/TwitterBridge/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/TwitterBridge/locale/%CODE%/LC_MESSAGES/TwitterBridge.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/TwitterBridge/locale/TwitterBridge.pot
+  targetPattern: statusnet/plugins/TwitterBridge/locale/%CODE%/LC_MESSAGES/TwitterBridge.po
+
+MANGLER:
+  prefix: twitterbridge-
+---
+BASIC:
+  id: out-statusnet-plugin-wikihowprofile
+  label: StatusNet - WikiHowProfile
+  display: out/statusnet/plugin/wikihowprofile
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/WikiHowProfile/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/WikiHowProfile/locale/%CODE%/LC_MESSAGES/WikiHowProfile.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/WikiHowProfile/locale/WikiHowProfile.pot
+  targetPattern: statusnet/plugins/WikiHowProfile/locale/%CODE%/LC_MESSAGES/WikiHowProfile.po
+
+MANGLER:
+  prefix: wikihowprofile-
