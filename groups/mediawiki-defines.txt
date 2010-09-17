@@ -1315,11 +1315,6 @@ id = ext-uniwiki-mootools12core
 file = uniwiki/MooTools12core/MooTools12core.i18n.php
 descmsg = mootools12core-desc
 
-Usability Initiative - Usability Initiative
-id = ext-ui-usabilityinitiative
-file = UsabilityInitiative/UsabilityInitiative.i18n.php
-descmsg = usabilityinitiative-desc
-
 Usability Initiative - Click Tracking
 id = ext-ui-clicktracking
 file = UsabilityInitiative/ClickTracking/ClickTracking.i18n.php
