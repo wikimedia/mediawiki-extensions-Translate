@@ -387,15 +387,16 @@ class GettextFFS extends SimpleFFS {
 	}
 
 	public function parseGettext( $data ) {
+		$mangler = $this->group->getMangler();
 		$useCtxtAsKey = isset( $this->extra['CtxtAsKey'] ) && $this->extra['CtxtAsKey'];
-		return self::parseGettextData( $data, $useCtxtAsKey );
+		return self::parseGettextData( $data, $useCtxtAsKey, $mangler );
 	}
 
 	/**
 	 * Ugly hack to avoid code duplication between old and new style FFS.
 	 * @todo Refactor method into smaller parts.
 	 */
-	public static function parseGettextData( $data, $useCtxtAsKey = false ) {
+	public static function parseGettextData( $data, $useCtxtAsKey = false, $mangler ) {
 		$potmode = false;
 
 		// Normalise newlines, to make processing easier lates
@@ -536,6 +537,8 @@ class GettextFFS extends SimpleFFS {
 			} else {
 				$key = self::generateKeyFromItem( $item );
 			}
+
+			$key = $mangler->mangle( $key );
 
 			$messages[$key] = $potmode ? $item['id'] : $item['str'];
 			$template[$key] = $item;
