@@ -38,10 +38,10 @@ GROUPS:
   - out-statusnet-plugin-*
 ---
 BASIC:
-  id: out-statusnet-plugins-0-all
+  id: out-statusnet-plugin-0-all
   label: All StatusNet plugin messages
   description: "{{int:translate-group-desc-statusnet-plugin}}"
-  display: out/statusnet/plugins
+  display: out/statusnet/plugin
   meta: yes
   class: AggregateMessageGroup
 

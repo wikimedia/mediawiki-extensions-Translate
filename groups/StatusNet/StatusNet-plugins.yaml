@@ -34,7 +34,7 @@ TEMPLATE:
 BASIC:
   id: out-statusnet-plugin-adsense
   label: StatusNet - Adsense
-  display: out/statusnet/plugins/adsense
+  display: out/statusnet/plugin/adsense
 
 FILES:
   sourcePattern: %GROUPROOT%/statusnet/plugins/Adsense/locale/%CODE%/LC_MESSAGES/Adsense.po
