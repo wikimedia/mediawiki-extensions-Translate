@@ -977,7 +977,8 @@ class RubyYamlFFS extends YamlFFS {
 		while ( preg_match( $regex, $message, $match ) ) {
 			$uniqkey = $this->placeholder();
 			$placeholders[$uniqkey] = $match[0];
-			$message = preg_replace( $regex, $uniqkey, $message );
+			$search = preg_quote( $match[0], '~' );
+			$message = preg_replace( "~$search~", $uniqkey, $message );
 		}
 
 		// Then replace (possible multiple) plural instances into placeholders.
