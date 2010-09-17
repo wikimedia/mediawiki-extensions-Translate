@@ -89,8 +89,6 @@ GROUPS:
   - ext-trustedxff
   - ext-ui-clicktracking
   - ext-ui-dontswitchmeover
-  - ext-ui-optin
-  - ext-ui-optinlink
   - ext-ui-prefstats
   - ext-ui-prefswitch
   - ext-ui-prefswitchlink
