@@ -46,7 +46,6 @@ BASIC:
   class: AggregateMessageGroup
 
 GROUPS:
-  - out-statusnet-core
   - out-statusnet-plugin-*
 ---
 BASIC:
