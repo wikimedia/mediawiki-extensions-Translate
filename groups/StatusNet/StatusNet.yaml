@@ -1,31 +1,57 @@
+TEMPLATE:
+  BASIC:
+    description: "{{int:translate-group-desc-statusnet-plugin}}"
+    namespace: NS_STATUSNET
+    display: out/statusnet/
+    class: FileBasedMessageGroup
+    codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/%FILE%#line%LINE%
+
+  FILES:
+    class: GettextFFS
+    codeMap:
+      en-gb:   en_GB
+      en-us:   en_US
+      nl-be:   nl_BE
+      no:      nb
+      pt-br:   pt_BR
+      zh-hans: zh_CN
+      zh-hant: zh_TW
+
+    header: |
+      # This file is distributed under the same license as the StatusNet package.
+      #
+
+  CHECKER:
+    class: MessageChecker
+    checks:
+      - printfCheck
 ---
 BASIC:
-  id: out-statusnet
-  label: StatusNet
+  id: out-statusnet-0-all
+  label: All StatusNet messages
   description: "{{int:bw-desc-statusnet}}"
-  namespace: NS_STATUSNET
-  display: out/statusnet/
-  class: FileBasedMessageGroup
-  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/%FILE%#line%LINE%
+  display: out/statusnet
+  meta: yes
+  class: AggregateMessageGroup
+
+GROUPS:
+  - out-statusnet-core
+---
+BASIC:
+  id: out-statusnet-core
+  label: StatusNet - Core
+  description: "{{int:bw-desc-statusnet}}"
 
 FILES:
-  class: GettextFFS
   sourcePattern: %GROUPROOT%/statusnet/locale/%CODE%/LC_MESSAGES/statusnet.po
   definitionFile: %GROUPROOT%/statusnet/locale/statusnet.pot
   targetPattern: statusnet/locale/%CODE%/LC_MESSAGES/statusnet.po
-  codeMap:
-    no:    nb
-    nl-be: nl_BE
-    en-gb: en_GB
-    en-us: en_US
-    pt-br: pt_BR
-    zh-hans: zh_CN
-    zh-hant: zh_TW
-  header: |
-    # This file is distributed under the same license as the StatusNet package.
-    #
+---
+BASIC:
+  id: out-statusnet-plugin-adsense
+  label: StatusNet - Adsense
 
-CHECKER:
-  class: MessageChecker
-  checks:
-    - printfCheck
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/Adsense/locale/%CODE%/LC_MESSAGES/statusnet.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/Adsense/locale/statusnet.pot
+  targetPattern: statusnet/plugins/Adsense/locale/%CODE%/LC_MESSAGES/statusnet.po
