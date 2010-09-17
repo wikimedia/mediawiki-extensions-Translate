@@ -77,8 +77,6 @@ TEMPLATE:
        * along with MantisBT.  If not, see <http://www.gnu.org/licenses/>.
        */
 
-
-
   CHECKER:
     class: MessageChecker
     checks:
