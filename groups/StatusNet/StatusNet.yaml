@@ -1,6 +1,6 @@
 TEMPLATE:
   BASIC:
-    description: "{{int:translate-group-desc-statusnet-plugin}}"
+    description: "{{int:bw-desc-statusnet}}"
     namespace: NS_STATUSNET
     display: out/statusnet/
     class: FileBasedMessageGroup
@@ -21,11 +21,6 @@ TEMPLATE:
       # This file is distributed under the same license as the StatusNet package.
       #
 
-  MANGLER:
-    class: StringMatcher
-    patterns:
-      - "*"
-
   CHECKER:
     class: MessageChecker
     checks:
@@ -34,7 +29,6 @@ TEMPLATE:
 BASIC:
   id: out-statusnet-0-all
   label: All StatusNet messages
-  description: "{{int:bw-desc-statusnet}}"
   display: out/statusnet
   meta: yes
   class: AggregateMessageGroup
@@ -46,7 +40,7 @@ GROUPS:
 BASIC:
   id: out-statusnet-plugins-0-all
   label: All StatusNet plugin messages
-  description: "{{int:bw-desc-statusnet}}"
+  description: "{{int:translate-group-desc-statusnet-plugin}}"
   display: out/statusnet/plugins
   meta: yes
   class: AggregateMessageGroup
@@ -58,22 +52,9 @@ GROUPS:
 BASIC:
   id: out-statusnet-core
   label: StatusNet - Core
-  description: "{{int:bw-desc-statusnet}}"
+  display: out/statusnet/
 
 FILES:
   sourcePattern: %GROUPROOT%/statusnet/locale/%CODE%/LC_MESSAGES/statusnet.po
   definitionFile: %GROUPROOT%/statusnet/locale/statusnet.pot
   targetPattern: statusnet/locale/%CODE%/LC_MESSAGES/statusnet.po
----
-BASIC:
-  id: out-statusnet-plugin-adsense
-  label: StatusNet - Adsense
-  display: out/statusnet/plugins/adsense
-
-FILES:
-  sourcePattern: %GROUPROOT%/statusnet/plugins/Adsense/locale/%CODE%/LC_MESSAGES/Adsense.po
-  definitionFile: %GROUPROOT%/statusnet/plugins/Adsense/locale/Adsense.pot
-  targetPattern: statusnet/plugins/Adsense/locale/%CODE%/LC_MESSAGES/Adsense.po
-
-MANGLER:
-  prefix: adsense-
