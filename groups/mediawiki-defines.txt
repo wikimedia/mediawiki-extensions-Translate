@@ -1424,6 +1424,11 @@ file = Wikidata/Wikidata.i18n.php
 optional = ow_URL, ow_ID, prefs-omegawiki
 ignored = ow_editing_policy_url
 
+WikiEditor
+optional = wikieditor-toolbar-help-content-rereference-syntax, wikieditor-toolbar-help-content-showreferences-syntax
+optional = wikieditor-toolbar-tool-table-example-text
+ignored = wikieditor-toolbar-help-content-signaturetimestamp-syntax, wikieditor-toolbar-help-content-signature-syntax, wikieditor-toolbar-tool-file-pre
+
 Wikihiero
 file = wikihiero/wikihiero.i18n.php
 

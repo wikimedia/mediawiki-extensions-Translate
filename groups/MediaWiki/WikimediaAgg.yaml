@@ -97,5 +97,6 @@ GROUPS:
   - ext-uploadblacklist
   - ext-uploadblacklist
   - ext-vector
+  - ext-wikieditor
   - ext-wikimedialicensetexts # commons.wikimedia.org
   - ext-wikimediamessages
