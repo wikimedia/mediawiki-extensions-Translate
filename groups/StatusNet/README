@@ -7,34 +7,5 @@ Then check out the current development branch.
 
 Settings:
 wfAddNamespace( 1208, 'StatusNet' );
-
-As long as new message groups have not yet been implemented for gettext, the
-following settings are needed:
-
-$wgHooks['TranslatePostInitGroups'][] = array( 'setupStatusnet' );
-
-function setupStatusnet( &$cc ) {
-        global $wgTranslateGroupRoot;
-        global $IP;
-        $id = 'out-statusnet';
-        $mg = GettextMessageGroup::factory( 'StatusNet', $id );
-        $mg->setPotFile( 'locale/statusnet.pot' );
-        $mg->setPath( "$wgTranslateGroupRoot/statusnet/" );
-        $mg->filePattern = "locale/%CODE%/LC_MESSAGES/statusnet.po";
-        $mg->setDescription( "{{int:bw-desc-statusnet}}" );
-        $mg->namespaces = array( NS_STATUSNET, NS_STATUSNET_TALK );
-        $mg->setCodeMap( array(
-                'en-gb' => 'en_GB',
-                'no' => 'nb',
-                'pt-br' => 'pt_BR',
-                'zh-hans' => 'zh_CN',
-                'zh-hant' => 'zh_TW'
-        ) );
-        $cc[$id] = $mg;
-        return true;
-}
-
-When GettextMessageGroupFFS has been implemented, the following will suffice:
 $wgTranslateGroupFiles[] = "$IP/extensions/Translate/groups/StatusNet/StatusNet.yml";
-
-Add more to $wgTranslateGroupFiles for supported plugins.
+$wgTranslateGroupFiles[] = "$IP/extensions/Translate/groups/StatusNet/StatusNet-plugins.yml";

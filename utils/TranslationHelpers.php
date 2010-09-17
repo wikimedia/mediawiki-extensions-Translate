@@ -682,21 +682,6 @@ class TranslationHelpers {
 	}
 
 	protected function formatGettextComments() {
-		if ( $this->group instanceof GettextMessageGroup ) {
-			$reader = $this->group->getReader( 'en' );
-			if ( $reader ) {
-				global $wgContLang;
-
-				$mykey = $wgContLang->lcfirst( $this->page );
-				$data = $reader->parseFile();
-				$help = trim( GettextFormatWriter::formatComments( @$data[$mykey]['comments'], false, @$data[$mykey]['flags'] ) );
-				// Do not display an empty comment. That's no help and takes up unnecessary space.
-				if ( $help !== '#:' ) {
-					return "<hr /><pre>$help</pre>";
-				}
-			}
-		}
-
 		if ( $this->group instanceof FileBasedMessageGroup ) {
 			$ffs = $this->group->getFFS();
 			if ( $ffs instanceof GettextFFS ) {

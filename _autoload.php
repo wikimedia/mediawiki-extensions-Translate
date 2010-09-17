@@ -80,8 +80,6 @@ $wgAutoloadClasses['WikiFormatReader'] = $dir . 'ffs/Wiki.php';
 $wgAutoloadClasses['WikiFormatWriter'] = $dir . 'ffs/Wiki.php';
 $wgAutoloadClasses['WikiExtensionFormatReader'] = $dir . 'ffs/WikiExtension.php';
 $wgAutoloadClasses['WikiExtensionFormatWriter'] = $dir . 'ffs/WikiExtension.php';
-$wgAutoloadClasses['GettextFormatReader'] = $dir . 'ffs/Gettext.php';
-$wgAutoloadClasses['GettextFormatWriter'] = $dir . 'ffs/Gettext.php';
 $wgAutoloadClasses['XliffFormatWriter'] = $dir . 'ffs/Xliff.php';
 /**@}*/
 
