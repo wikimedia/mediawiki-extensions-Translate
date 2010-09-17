@@ -21,6 +21,11 @@ TEMPLATE:
       # This file is distributed under the same license as the StatusNet package.
       #
 
+  MANGLER:
+    class: StringMatcher
+    patterns:
+      - "*"
+
   CHECKER:
     class: MessageChecker
     checks:
@@ -55,3 +60,6 @@ FILES:
   sourcePattern: %GROUPROOT%/statusnet/plugins/Adsense/locale/%CODE%/LC_MESSAGES/Adsense.po
   definitionFile: %GROUPROOT%/statusnet/plugins/Adsense/locale/Adsense.pot
   targetPattern: statusnet/plugins/Adsense/locale/%CODE%/LC_MESSAGES/Adsense.po
+
+MANGLER:
+  prefix: adsense-
