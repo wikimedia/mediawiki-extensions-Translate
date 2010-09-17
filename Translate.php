@@ -296,7 +296,7 @@ $wgTranslateGroupStructure = array(
 	'/^out-osm/' => array( 'osm' ),
 	'/^out-shapado/' => array( 'shapado' ),
 	'/^out-statusnet/' => array( 'statusnet' ),
-	'/^out-statusnet-plugins/' => array( 'statusnet-plugins' ),
+	'/^out-statusnet-plugins/' => array( 'statusnet', 'plugins' ),
 //	'/^page\|/' => array( 'page' ),
 );
 
