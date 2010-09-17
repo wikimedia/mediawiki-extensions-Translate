@@ -92,7 +92,6 @@ GROUPS:
   - ext-ui-prefstats
   - ext-ui-prefswitch
   - ext-ui-prefswitchlink
-  - ext-ui-usabilityinitiative
   - ext-ui-userdailycontribs
   - ext-uploadblacklist
   - ext-vector
