@@ -52,6 +52,6 @@ BASIC:
   label: StatusNet - Adsense
 
 FILES:
-  sourcePattern: %GROUPROOT%/statusnet/plugins/Adsense/locale/%CODE%/LC_MESSAGES/statusnet.po
-  definitionFile: %GROUPROOT%/statusnet/plugins/Adsense/locale/statusnet.pot
-  targetPattern: statusnet/plugins/Adsense/locale/%CODE%/LC_MESSAGES/statusnet.po
+  sourcePattern: %GROUPROOT%/statusnet/plugins/Adsense/locale/%CODE%/LC_MESSAGES/Adsense.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/Adsense/locale/Adsense.pot
+  targetPattern: statusnet/plugins/Adsense/locale/%CODE%/LC_MESSAGES/Adsense.po
