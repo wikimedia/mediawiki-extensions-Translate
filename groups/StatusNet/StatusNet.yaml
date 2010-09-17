@@ -41,6 +41,19 @@ BASIC:
 
 GROUPS:
   - out-statusnet-core
+  - out-statusnet-plugin-*
+---
+BASIC:
+  id: out-statusnet-plugins-0-all
+  label: All StatusNet plugin messages
+  description: "{{int:bw-desc-statusnet}}"
+  display: out/statusnet/plugins
+  meta: yes
+  class: AggregateMessageGroup
+
+GROUPS:
+  - out-statusnet-core
+  - out-statusnet-plugin-*
 ---
 BASIC:
   id: out-statusnet-core
@@ -55,6 +68,7 @@ FILES:
 BASIC:
   id: out-statusnet-plugin-adsense
   label: StatusNet - Adsense
+  display: out/statusnet/plugins/adsense
 
 FILES:
   sourcePattern: %GROUPROOT%/statusnet/plugins/Adsense/locale/%CODE%/LC_MESSAGES/Adsense.po
