@@ -1380,6 +1380,8 @@ Validator
 Variable Page
 ignored = variablepage-randomurl
 
+Vector
+
 Vote
 aliasfile = Vote/Vote.alias.php
 

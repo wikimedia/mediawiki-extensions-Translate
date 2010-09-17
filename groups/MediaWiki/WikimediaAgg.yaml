@@ -95,6 +95,7 @@ GROUPS:
   - ext-ui-usabilityinitiative
   - ext-ui-userdailycontribs
   - ext-uploadblacklist
-  - ext-wikihiero
+  - ext-uploadblacklist
+  - ext-vector
   - ext-wikimedialicensetexts # commons.wikimedia.org
   - ext-wikimediamessages
