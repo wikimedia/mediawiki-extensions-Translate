@@ -116,16 +116,17 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	 * Statistics table element (heading or regular cell)
 	 *
 	 * @todo document
-	 * @param $in \string
-	 * @param $bgcolor \string
-	 * @return \string
+	 * @param $in \string Element contents.
+	 * @param $bgcolor \string Backround color in ABABAB format.
+	 * @param $sort \string Value used for sorting.
+	 * @return \string Html td element.
 	 */
-	function element( $in, $bgcolor = '' ) {
-		if ( $bgcolor ) {
-			$element = Xml::element( 'td', array( 'style' => "background-color: #" . $bgcolor ), $in );
-		} else {
-			$element = Xml::element( 'td', null, $in );
-		}
+	function element( $in, $bgcolor = '', $sort = '' ) {
+		$attributes = array();
+		if ( $sort ) $attributes['data-sort-value'] = $sort;
+		if ( $bgcolor ) $attributes['style'] = "background-color: #" . $bgcolor;
+
+		$element = Xml::element( 'td', $attributes, $in );
 		return "\t\t" . $element . "\n";
 	}
 
@@ -133,24 +134,18 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$v = @round( 255 * $subset / $total );
 
 		if ( $fuzzy ) {
-			/**
-			 * Weigh fuzzy with factor 20.
-			 */
+			// Weigh fuzzy with factor 20.
 			$v = $v * 20;
 			if ( $v > 255 ) $v = 255;
 			$v = 255 - $v;
 		}
 
 		if ( $v < 128 ) {
-			/**
-			 * Red to Yellow
-			 */
+			// Red to Yellow
 			$red = 'FF';
 			$green = sprintf( '%02X', 2 * $v );
 		} else {
-			/**
-			 * Yellow to Green
-			 */
+			// Yellow to Green
 			$red = sprintf( '%02X', 2 * ( 255 - $v ) );
 			$green = 'FF';
 		}
@@ -205,23 +200,13 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	function getGroupStats( $code, $suppressComplete = false ) {
 		global $wgUser, $wgLang, $wgOut;
 
-		$errorString = '&lt;error&gt;';
 		$out = '';
 
 		$cache = new ArrayMemoryCache( 'groupstats' );
-
-		/**
-		 * Fetch groups stats have to be displayed for.
-		 */
 		$groups = MessageGroups::singleton()->getGroups();
 
-		/**
-		 * Get statistics for the message groups,
-		 */
 		foreach ( $groups as $groupName => $g ) {
-			/**
-			 * Do not report if this group is blacklisted.
-			 */
+			// Do not report if this group is blacklisted.
 			$groupId = $g->getId();
 			$blacklisted = $this->isBlacklisted( $groupId, $code );
 
@@ -229,10 +214,16 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 				continue;
 			}
 
+			$fuzzy = $translated = $total = 0;
+
 			$incache = $cache->get( $groupName, $code );
 			if ( $incache !== false ) {
 				list( $fuzzy, $translated, $total ) = $incache;
-			} else {
+			}
+
+			// Re-calculate if cache is empty or insane
+			if ( !$total ) {
+				echo $g->getId() . "<br />\n";
 				// Initialise messages.
 				$collection = $g->initCollection( $code );
 				$collection->setInFile( $g->load( $code ) );
@@ -250,53 +241,35 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 				$translated = count( $collection );
 
 				$cache->set( $groupName, $code, array( $fuzzy, $translated, $total ) );
-
+				$cache->commit();
 			}
 
-			// Skip if $suppressComplete and complete
-			if ( $suppressComplete && !$fuzzy && $translated == $total ) {
+			if ( $total === 0 ) {
+				wfWarn( __METHOD__ . ": Group $groupName has zero message ($code)" );
 				continue;
 			}
 
-			// Division by 0 should not be possible, but does occur. Caching issue?
-			$translatedPercentage = $total ? $wgLang->formatNum( number_format( round( 100 * $translated / $total, 2 ), 2 ) ) : $errorString;
-			$translatedPercentage = $translatedPercentage == $errorString ? $translatedPercentage : wfMsg( 'percent', $translatedPercentage );
-
-			$fuzzyPercentage = $total ? $wgLang->formatNum( number_format( round( 100 * $fuzzy / $total, 2 ), 2 ) ) : $errorString;
-			$fuzzyPercentage = $fuzzyPercentage == $errorString ? $fuzzyPercentage : wfMsg( 'percent', $fuzzyPercentage );
-
-			$translateTitle = SpecialPage::getTitleFor( 'Translate' );
-			$queryParameters = array(
-				'group' => $groupId,
-				'language' => $code
-			);
-
-			if ( $translated == $total ) {
-				$queryParameters['task'] = 'reviewall';
+			// Skip if $suppressComplete and complete
+			if ( $suppressComplete && !$fuzzy && $translated === $total ) {
+				continue;
 			}
 
-			$groupLabel = $g->getLabel();
-
-			// Bold for meta groups.
-			if ( $g->isMeta() ) {
-				$groupLabel = Xml::element( 'b', null, $groupLabel );
+			if ( $translated === $total ) {
+				$extra = array( 'task' => 'reviewall' );
+			} else {
+				$extra = array();
 			}
-
-			$translateGroupLink = $wgUser->getSkin()->link(
-				$translateTitle,
-				$groupLabel,
-				array(
-					'title' => strip_tags( $wgOut->parse( $g->getDescription(), false ) )
-				),
-				$queryParameters
-			);
 
 			$out .= Xml::openElement( 'tr' );
-			$out .= '<td>' . $translateGroupLink . '</td>';
-			$out .= Xml::element( 'td', null, $total );
-			$out .= Xml::element( 'td', null, $total - $translated );
-			$out .= $this->element( $translatedPercentage, $translatedPercentage == $errorString ? '' : $this->getBackgroundColour( $translated, $total ) );
-			$out .= $this->element( $fuzzyPercentage, $translatedPercentage == $errorString ? '' : $this->getBackgroundColour( $fuzzy, $total, true ) );
+			$out .= '<td>' . $this->makeGroupLink( $g, $code, $extra ) . '</td>';
+			$out .= Xml::element( 'td', null, $wgLang->formatNum( $total ) );
+			$out .= Xml::element( 'td', null, $wgLang->formatNum( $total - $translated ) );
+			$out .= $this->element( $this->formatPercentage( $translated / $total ),
+				$this->getBackgroundColour( $translated, $total ),
+				sprintf( '%1.5f', $translated / $total ) );
+			$out .= $this->element( $this->formatPercentage( $fuzzy / $total ),
+				$this->getBackgroundColour( $fuzzy, $total, true ),
+				sprintf( '%1.5f', $fuzzy / $total ) );
 			$out .= Xml::closeElement( 'tr' );
 		}
 
@@ -310,7 +283,47 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		return $out;
 	}
 
-	private function isBlacklisted( $groupId, $code ) {
+	protected function formatPercentage( $num ) {
+		global $wgLang;
+		$fmt = $wgLang->formatNum( number_format( round( 100 * $num, 2 ), 2 ) );
+		return wfMsg( 'percent', $fmt );
+	}
+
+	protected function getGroupLabel( $group ) {
+		$groupLabel = htmlspecialchars( $group->getLabel() );
+
+		// Bold for meta groups.
+		if ( $group->isMeta() ) {
+			$groupLabel = Xml::tags( 'b', null, $groupLabel );
+		}
+
+		return $groupLabel;
+	}
+
+	protected function makeGroupLink( $group, $code, $params ) {
+		global $wgOut, $wgUser;
+
+		$specialTranslate = SpecialPage::getTitleFor( 'Translate' );
+		$skin = $wgUser->getSkin();
+
+		$queryParameters = $params + array(
+			'group' => $group->getId(),
+			'language' => $code
+		);
+
+		$attributes = array(
+			'title' => strip_tags( $wgOut->parse( $group->getDescription(), false ) )
+		);
+
+		$translateGroupLink = $skin->link(
+			$specialTranslate, $this->getGroupLabel( $group ), $attributes, $queryParameters
+		);
+
+		return $translateGroupLink;
+
+	}
+
+	protected function isBlacklisted( $groupId, $code ) {
 		global $wgTranslateBlacklist;
 
 		$blacklisted = null;
