@@ -7699,6 +7699,7 @@ Ako se grupa sastoji od podskupa ili nadskupa poruka iz drugih grupa, prikazana 
 	'translate-checks-links' => '{{PLURAL:$2|Sljedeća poveznica je problematična|$2 sljedećih poveznica su problematične}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Definicija koristi <nowiki>{{PLURAL:}}</nowiki>, ali prijevod ne.',
+	'translate-pref-nonewsletter' => 'Ne šalji mi e-poštom obavijesti translatewiki.net projekta',
 	'translate-pref-editassistlang' => 'Pomoćni jezici:',
 	'prefs-translate' => 'Mogućnosti prijevoda',
 	'translate-pref-editassistlang-help' => 'Popis jezičnih kodova odjeljen zarezima.
@@ -7762,6 +7763,10 @@ Sve vrijednosti imaju gornju i donju granicu.',
 	'supportedlanguages-recenttranslations' => 'nedavni prijevodi',
 	'translate-save' => 'Sačuvaj ($1)',
 	'translate-jssti-add' => 'Dodaj na popis',
+	'translate-manage-groups' => 'Upravljanje grupama poruka',
+	'translate-manage-listgroups' => 'Konfigurirane grupe poruka',
+	'translate-manage-listgroups-old' => 'Stare grupe poruka',
+	'translate-managegroups' => 'Upravljanje grupama poruka',
 	'translate-manage-import-new' => 'Nova poruka $1',
 	'translate-manage-import-deleted' => 'Obrisana poruka $1',
 	'translate-manage-action-import' => 'Uvezi',

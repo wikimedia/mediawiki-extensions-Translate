@@ -992,6 +992,8 @@ $messages['hr'] = array(
 	'translate-fs-settings-title' => 'Namjestite vaše postavke',
 	'translate-fs-userpage-title' => 'Stvorite svoju suradničku stranicu',
 	'translate-fs-permissions-title' => 'Zatražite prevoditeljski status',
+	'translate-fs-target-title' => 'Počnite prevoditi poruke!',
+	'translate-fs-email-title' => 'Potvrdite svoju adresu e-pošte',
 	'translate-fs-userpage-submit' => 'Stvori moju suradničku stranicu',
 );
 

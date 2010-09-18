@@ -231,6 +231,7 @@ Hinweis:
 * Benutze [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] zum Testen von Potlatch. Es kann dort alles in jedem Bereich getestet werden.',
 	'bw-desc-shapado' => 'Systemnachrichten von [[Translating:Shapado|Shapado]], einer freien Open-Source-Software für Fragen und Antworten',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] ist ein Open-Source-Mikroblogging-Server',
+	'translate-group-desc-statusnet-plugin' => 'Diese Nachrichten gehören zu einem Plug-in von [[Translating:StatusNet|StatusNet]]',
 	'bw-desc-voctrain' => 'Omegawiki-basierender Vokabeltrainer. Mithilfe eines Flashkartensystems können Vokabeln zwischen jeder Sprache zu jeder von Omagawiki unterstützten Sprache gelernt werden.
 Erstellt von der Universität Bamberg. Lizenziert unter GPL 2.0 oder später. Entwickelt von [[User:Kim Bruning|Kim Bruning]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] ermöglicht das schnelle Finden eines Autoren einer Seite auf Wikis der Wikimedia Foundation.',
@@ -284,6 +285,7 @@ Veuillez consulter [[mw:Extension:PDF Writer]] et http://code.pediapress.com/wik
 *utiliser [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] pour tester Potlatch. Vous pouvez tester autant que vous le voulez dans n’importe-quelle zone.',
 	'bw-desc-shapado' => 'Groupe de messages pour le logiciel libre et open-source de questions/réponses [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] est un serveur de microblogging en source ouverte',
+	'translate-group-desc-statusnet-plugin' => 'Les messages font partie d’une extension pour [[Translating:StatusNet|StatusNet]]',
 	'bw-desc-voctrain' => 'Entraîneur de vocabulaire basé sur [http://omegawiki.org OmegaWiki]. Utilise un système à base de cartes flash pour apprendre le vocabulaire de n’importe quel langue vers n’importe quelle langue prise en charge par Omegawiki.
 Créé pour l’Université de Bamberg. Publié sous licence GPL 2.0 ou plus récent. Développé par [[User:Kim Bruning|Kim Bruning]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] permet de trouver rapidement les auteurs d’une page dans un wiki de Wikimedia.',
@@ -330,6 +332,7 @@ Por favor, bótelle unha ollada a [[mw:Extension:PDF_Writer]] e a http://code.pe
 * Use [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] para probar o Potlatch. Alí pode comprobar todo o que queira en calquera área.',
 	'bw-desc-shapado' => 'Grupo de mensaxes para o software de código aberto de preguntas e respostas [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] é un servidor de mensaxes de blogue curtas de código aberto',
+	'translate-group-desc-statusnet-plugin' => 'Estas mensaxes forman parte dun complemento do [[Translating:StatusNet|StatusNet]]',
 	'bw-desc-voctrain' => 'Adestrador de vocabulario baseado en Omegawiki. Usa un sistema de tarxetas para aprender vocabulario de calquera lingua a calquera lingua soportado por Omegawiki.
 Extensión creada pola Universidade de Bamberg. Licenza GPL 2.0 ou posterior. Desenvolvido por [[User:Kim Bruning]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php?user_lang=gl Wikiblame] é capaz de atopar rapidamente os autores dunha páxina nun wiki da Wikimedia.',
@@ -376,11 +379,33 @@ Bitte lueg uf [[mw:Extension:PDF_Writer]] un uf http://code.pediapress.com/wiki/
 * Verwänd [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] zum Teschte vu Potlatch. Dert chasch Bearbeitige mache zum Versueche, wie Du witt.',
 	'bw-desc-shapado' => 'Syschtemnaochrichte vu [[Translating:Shapado|Shapado]], ere freje Open-Source-Software fir Froge un Antworte',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] isch e Opensource-Mikroblog-Server',
+	'translate-group-desc-statusnet-plugin' => 'Die Noorichte ghere zuen eme Plug-in vu [[Translating:StatusNet|StatusNet]]',
 	'bw-desc-voctrain' => 'Omegawiki-basierte Vokabeltrainer. Mithilf vun eme Flashchartesyschtem chenne Vokable vu jedere Sproch zue jedere vu Omagawiki unterstitzte Sproch glehrt wäre.
 Aagleit vu dr Universität Bamberg. Lizänziert unter GPL 2.0 oder speter. Entwicklet vum [[User:Kim Bruning|Kim Bruning]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] cha d Autore vun ere Syte im e Wikimedia-Wiki schnäll uusefinde.',
 	'bw-desc-wikimediamobile' => 'Di mobil Version vu dr Wikipedia findsch unter http://m.wikipedia.org. Si het s Ziil, Wikipedia uf Smartphones rund um d Wält z bringe.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] isch e Projäkt, wu ne Offline-Textversion vu dr Wikipedia fir e Mobilservice z Verfiegig stellt.',
+);
+
+/** Croatian (Hrvatski)
+ * @author Ex13
+ * @author SpeedyGonsales
+ */
+$messages['hr'] = array(
+	'translate-group-desc-mediawikicore' => 'Ova skupina poruka sadrži poruke koje se rabe u trenutačnoj alpha inačici MediaWikija ({{CURRENTVERSION}})',
+	'translate-group-desc-mediawikimostused' => 'Ova grupa sadrži [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 najčešće rabljenih poruka] u MediaWiki softveru',
+	'translate-group-desc-mediawikiextensions' => 'Grupa poruka koja sadrži sve poruke za podržane dogradnje za MediaWiki softver',
+	'translate-group-desc-collection' => 'Grupa poruka koja sadrži sve poruke za MediaWiki dogradnju [http://www.mediawiki.org/wiki/Extension:Collection Zbirke]',
+	'translate-group-desc-flaggedrevs' => 'Grupa poruka koja sadrži sve poruke za MediaWiki dogradnju [http://www.mediawiki.org/wiki/Extension:FlaggedRevs Označene promjene]',
+	'translate-group-desc-readerfeedback' => "Grupa poruka koja sadrži sve poruke za MediaWiki dogradnju [http://www.mediawiki.org/wiki/Extension:ReaderFeedback Odgovor čitatelja (''ReaderFeedback'')]",
+	'translate-group-desc-socialprofile' => 'Grupa poruka koja sadrži sve poruke za dogradnje povezane s MediaWiki dogradnjom [http://www.mediawiki.org/wiki/Extension:SocialProfile Društveni profil]',
+	'translate-group-desc-translate' => 'Grupa poruka koja sadrži sve poruke za MediaWiki dogradnju [http://www.mediawiki.org/wiki/Extension:Translate Prijevod sistemskih poruka]',
+	'translate-group-desc-wikiaextensions' => 'Grupa poruka koja sadrži sve poruke za podržane MediaWiki dogradnje koje rabi [http://www.wikia.com Wikia]',
+	'translate-group-desc-wikimediaextensions' => 'Grupa poruka koja sadrži sve poruke za podržane MediaWiki dogradnje koje rabi [http://wikimedia.org/ Zaklada Wikimedia]',
+	'translate-group-desc-uniwiki' => 'Grupa poruka koja sadrži sve poruke za podržane MediaWiki dogradnje koje rabi [http://unicefinnovation.org/wiki.php Uniwiki]',
+	'translate-group-desc-ui' => 'Grupa poruka koja sadrži sve poruke za podržane MediaWiki dogradnje koje rabi [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Inicijativa za povećanje uporabljivosti Wikipedije]',
+	'bw-desc-openstreetmap' => 'Sve poruke povezane s [[Translating:OpenStreetMap|OpenStreetMap]] projektom',
+	'bw-desc-osm-site' => '[[Translating:OpenStreetMap|OpenStreetMap]] je karta svijeta koju može svatko uređivati',
 );
 
 /** Interlingua (Interlingua)
@@ -472,6 +497,7 @@ $messages['ja'] = array(
 * [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] を Potlatch の試験のために使ってください。あらゆる領域において試験することができます。',
 	'bw-desc-shapado' => 'フリーでオープンソースの Q&A ソフトウェア [[Translating:Shapado|Shapado]] 用のメッセージグループ',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] はオープンソースのマイクロブログサーバーです',
+	'translate-group-desc-statusnet-plugin' => 'これらのメッセージは、[[Translating:StatusNet|StatusNet]]のプラグインの一部です',
 	'bw-desc-voctrain' => '[http://omegawiki.org OmegaWiki] ベースの語彙訓練ソフトウェアです。Omegawiki が対応するあらゆる言語から言語への語彙を学ぶためにフラッシュカードのシステムを採用しています。バンベルク大学での利用のために作成されました。GPL 2.0 以降でライセンスされています。[[User:Kim Bruning|Kim Bruning]] が開発しています。',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] はウィキメディアのウィキにおいてページの著者を素早く調べることができます。',
 	'bw-desc-wikimediamobile' => 'ウィキメディア・モバイルは http://m.wikipedia.org にあり、世界中でウィキペディアのスマートフォンでの利用をサポートすることが目的です。',
@@ -505,6 +531,7 @@ $messages['lb'] = array(
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] ass e Webmail-Client deen a PHP geschriwen ass. Wann dir Problemer oder Froen domat hutt da gitt w.e.g. op [[Support]].',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] ass en offline Wikipedia-Liesprogramm',
 	'bw-desc-openstreetmap' => 'All Messagen a Relatioun mat [[Translating:OpenStreetMap|OpenStreetMap]]',
+	'bw-desc-osm-site' => '[[Translating:OpenStreetMap|OpenStreetMap]] ass eng ännerbar Kaart vun der ganzer Welt',
 	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]] ass eng web-baséiert Fro an Äntwert Software',
 	'bw-desc-wikiblame' => "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] erlaabt et fir d'Auteure vun enger Säit op enger Wikimedia-Wiki séier ze fannen.",
 	'bw-desc-wikimediamobile' => "Wikimedia mobile fannt Dir op http://m.wikipedia.org an et huet als Zil fir Wikipedia op Smartphones rondrëm d'Welt ze bréngen.",
@@ -551,6 +578,7 @@ $messages['mk'] = array(
 * Користете [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] за испробување на Potlatch. Таму можете да испробувате што сакате и колку што сакате во секој дел и функција.',
 	'bw-desc-shapado' => '↓ Група пораки за слободниот и отворен програм за прашања и одговори [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] е отворен опслужувач за микроблогирање',
+	'translate-group-desc-statusnet-plugin' => 'Овие пораки се дел од приклучокот за [[Translating:StatusNet|StatusNet]]',
 	'bw-desc-voctrain' => 'Учител на вокабулар од [http://omegawiki.org ОмегаВики]. Користи систем на флеш-картички за учење на вокабулар од друг јазик и негова примена на било кој друг јазик поддржан од Омегавики.
 Изработено за Бамбершкиот универзитет. Лиценцирано со GPL 2.0 или подоцнежна верзија. Развивач: [[User:Kim Bruning|Kim Bruning]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] за многу кусо време може да ги пронајде авторите на некоја страница на едно вики.',
@@ -687,6 +715,7 @@ Për piasì varda [[mw:Extension:PDF_Writer]]  e http://code.pediapress.com/wiki
 * Dòvra [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] për prové Potlatch. It peule prové là tut lòn ch'it veule an tute le aire.",
 	'bw-desc-shapado' => 'Partìa ëd mëssagi për ël programa ëd domande e rispòste lìber e a sorgiss lìbera [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => "[[Translating:StatusNet|StatusNet]] a l'é un servent ëd microscartari a sorgiss duverta",
+	'translate-group-desc-statusnet-plugin' => "Sti mëssagi a son part d'un plugin për [[Translating:StatusNet|StatusNet]]",
 	'bw-desc-voctrain' => "[http://omegawiki.org OmegaWiki]-based vocabulary trainer. A dòvra un sistema ëd flashcard për amparé ël vocabolari da minca lenga a minca lenga apogià da OmegaWiki.
 Creà da l'Università ëd Bamberg. Licensià GPL 2.0 o pì anans. Svilupà da [[User:Kim Bruning|Kim Bruning]].",
 	'bw-desc-wikiblame' => "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] a peil trové an pressa j'àutor ëd na pàgina an na wiki ëd Wikimedia.",
@@ -736,6 +765,7 @@ Consulte [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plu
 * Use a [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] para testar o Potlatch, onde poderá testar quanto quiser em qualquer área.',
 	'bw-desc-shapado' => 'Grupo de mensagens do software de perguntas e respostas, livre e de código aberto, [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] é um servidor de microblogues de código aberto',
+	'translate-group-desc-statusnet-plugin' => 'Estas mensagens fazem parte de um plugin para o [[Translating:StatusNet|StatusNet]]',
 	'bw-desc-voctrain' => "Treinador de Vocabulário baseado no [http://omegawiki.org OmegaWiki]. Usa um sistema ''flashcard'' para aprender vocabulário de qualquer língua para qualquer língua suportada pelo Omegawiki.
 Criado para a Universidade de Bamberg. Licenciado GPL 2.0 ou posterior. Desenvolvido por [[User:Kim Bruning]].",
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] consegue encontrar rapidamente os autores de uma página numa wiki da Wikimedia.',
@@ -795,6 +825,7 @@ Created pela Universidade de Bamberg. Licenciado GPL 2.0 ou posterior. Desenvolv
 /** Russian (Русский)
  * @author Ferrer
  * @author Lockal
+ * @author MaxSem
  * @author Rubin
  * @author Александр Сигачёв
  */
@@ -834,6 +865,7 @@ $messages['ru'] = array(
 * Используйте [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] для проверки Potlatch. Здесь вы можете проверять любые функции.',
 	'bw-desc-shapado' => 'Группа сообщений свободного программного обеспечения вопросов и ответов [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] — сервер микроблоггинга с открытым исходным кодом',
+	'translate-group-desc-statusnet-plugin' => 'Это сообщения плагина для [[Translating:StatusNet|StatusNet]]',
 	'bw-desc-voctrain' => 'Словарный тренажёр на основе [http://omegawiki.org OmegaWiki]. Использует систему карточек для пополнения словарного запаса на любых языках, поддерживаемых Omegawiki.
 Создан для университета Бамберга. Лицензирован по GPL 2.0 или более поздним версиям. Разработан [[User:Kim Bruning|Кимом Брунингом]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] позволяет быстро найти авторов страницы в проектах Викимедиа.',
@@ -936,6 +968,7 @@ Xem thêm chi tiết tại [[MW:Extension:PDF Writer]] và http://code.pediapres
 * Thử Potlatch tại máy chủ [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org]. Bạn có thể thử ở đấy phần nào cũng được.',
 	'bw-desc-shapado' => 'Nhóm thông điệp cho phần mềm hỏi đáp nguồn mở miễn phí [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] là máy chủ tiểu blog nguồn mở',
+	'translate-group-desc-statusnet-plugin' => 'Các thông điệp này thuộc về một phần bổ trợ cho [[Translating:StatusNet|StatusNet]]',
 	'bw-desc-voctrain' => "Chương trình dạy từ vựng dựa trên [http://omegawiki.org OmegaWiki]. Sử dụng hệ thống thẻ nhớ (''flashcard'') để tập nói ngôn ngữ nào dùng ngôn ngữ nào tại Omegawiki.
 Được xây dựng bởi [[User:Kim Bruning|Kim Bruning]] cho Đại học Bamberg và cho phép sử dụng theo giấy phép GPL 2.0 hoặc phiên bản mới hơn.",
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] có thể nhanh chóng tìm ra tác giả của trang trong wiki của Wikimedia.',
