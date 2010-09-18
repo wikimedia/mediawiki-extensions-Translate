@@ -358,4 +358,34 @@ class MessageChecker {
 		}
 	}
 
+	protected function balancedTagsCheck( $messages, $code, &$warnings ) {
+		foreach ( $messages as $message ) {
+			$key = $message->key();
+			$translation = $message->translation();
+
+			libxml_use_internal_errors( true );
+			libxml_clear_errors();
+			$doc = simplexml_load_string( Xml::tags( 'root', null, $translation ));
+			if ($doc) continue;
+
+			$errors = libxml_get_errors();
+			$params = array();
+			foreach ( $errors as $error ) {
+				if ( $error->code !== 76 && $error->code !== 73 ) continue;
+				$params[] = "<br />• [{$error->code}] $error->message";
+			}
+
+			if ( !count( $params ) ) continue;
+
+			$warnings[$key][] = array(
+				array( 'tags', 'balance', $key, $code ),
+				'translate-checks-format',
+				array( 'PARAMS', $params ),
+				array( 'COUNT', count( $params ) ),
+			);
+		}
+
+		libxml_clear_errors();
+	}
+
 }
