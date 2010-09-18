@@ -31,6 +31,20 @@ TEMPLATE:
       - printfCheck
 ---
 BASIC:
+  id: out-statusnet-plugin-apc
+  label: StatusNet - APC
+  display: out/statusnet/plugin/apc
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/APC/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/APC/locale/%CODE%/LC_MESSAGES/APC.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/APC/locale/APC.pot
+  targetPattern: statusnet/plugins/APC/locale/%CODE%/LC_MESSAGES/APC.po
+
+MANGLER:
+  prefix: apc-
+---
+BASIC:
   id: out-statusnet-plugin-adsense
   label: StatusNet - Adsense
   display: out/statusnet/plugin/adsense
@@ -101,6 +115,20 @@ MANGLER:
   prefix: blacklist-
 ---
 BASIC:
+  id: out-statusnet-plugin-cachelog
+  label: StatusNet - CacheLog
+  display: out/statusnet/plugin/cachelog
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/CacheLog/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/CacheLog/locale/%CODE%/LC_MESSAGES/CacheLog.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/CacheLog/locale/CacheLog.pot
+  targetPattern: statusnet/plugins/CacheLog/locale/%CODE%/LC_MESSAGES/CacheLog.po
+
+MANGLER:
+  prefix: cachelog-
+---
+BASIC:
   id: out-statusnet-plugin-casauthentication
   label: StatusNet - CasAuthentication
   display: out/statusnet/plugin/casauthentication
@@ -143,6 +171,34 @@ MANGLER:
   prefix: directiondetector-
 ---
 BASIC:
+  id: out-statusnet-plugin-disqus
+  label: StatusNet - Disqus
+  display: out/statusnet/plugin/disqus
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/Disqus/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/Disqus/locale/%CODE%/LC_MESSAGES/Disqus.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/Disqus/locale/Disqus.pot
+  targetPattern: statusnet/plugins/Disqus/locale/%CODE%/LC_MESSAGES/Disqus.po
+
+MANGLER:
+  prefix: disqus-
+---
+BASIC:
+  id: out-statusnet-plugin-echo
+  label: StatusNet - Echo
+  display: out/statusnet/plugin/echo
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/Echo/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/Echo/locale/%CODE%/LC_MESSAGES/Echo.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/Echo/locale/Echo.pot
+  targetPattern: statusnet/plugins/Echo/locale/%CODE%/LC_MESSAGES/Echo.po
+
+MANGLER:
+  prefix: echo-
+---
+BASIC:
   id: out-statusnet-plugin-emailauthentication
   label: StatusNet - EmailAuthentication
   display: out/statusnet/plugin/emailauthentication
@@ -183,6 +239,48 @@ FILES:
 
 MANGLER:
   prefix: firephp-
+---
+BASIC:
+  id: out-statusnet-plugin-geourl
+  label: StatusNet - GeoURL
+  display: out/statusnet/plugin/geourl
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/GeoURL/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/GeoURL/locale/%CODE%/LC_MESSAGES/GeoURL.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/GeoURL/locale/GeoURL.pot
+  targetPattern: statusnet/plugins/GeoURL/locale/%CODE%/LC_MESSAGES/GeoURL.po
+
+MANGLER:
+  prefix: geourl-
+---
+BASIC:
+  id: out-statusnet-plugin-geonames
+  label: StatusNet - Geonames
+  display: out/statusnet/plugin/geonames
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/Geonames/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/Geonames/locale/%CODE%/LC_MESSAGES/Geonames.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/Geonames/locale/Geonames.pot
+  targetPattern: statusnet/plugins/Geonames/locale/%CODE%/LC_MESSAGES/Geonames.po
+
+MANGLER:
+  prefix: geonames-
+---
+BASIC:
+  id: out-statusnet-plugin-googleanalytics
+  label: StatusNet - GoogleAnalytics
+  display: out/statusnet/plugin/googleanalytics
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/GoogleAnalytics/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/GoogleAnalytics/locale/%CODE%/LC_MESSAGES/GoogleAnalytics.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/GoogleAnalytics/locale/GoogleAnalytics.pot
+  targetPattern: statusnet/plugins/GoogleAnalytics/locale/%CODE%/LC_MESSAGES/GoogleAnalytics.po
+
+MANGLER:
+  prefix: googleanalytics-
 ---
 BASIC:
   id: out-statusnet-plugin-gravatar
@@ -269,6 +367,20 @@ MANGLER:
   prefix: lilurl-
 ---
 BASIC:
+  id: out-statusnet-plugin-linkback
+  label: StatusNet - Linkback
+  display: out/statusnet/plugin/linkback
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/Linkback/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/Linkback/locale/%CODE%/LC_MESSAGES/Linkback.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/Linkback/locale/Linkback.pot
+  targetPattern: statusnet/plugins/Linkback/locale/%CODE%/LC_MESSAGES/Linkback.po
+
+MANGLER:
+  prefix: linkback-
+---
+BASIC:
   id: out-statusnet-plugin-mapstraction
   label: StatusNet - Mapstraction
   display: out/statusnet/plugin/mapstraction
@@ -281,6 +393,34 @@ FILES:
 
 MANGLER:
   prefix: mapstraction-
+---
+BASIC:
+  id: out-statusnet-plugin-memcache
+  label: StatusNet - Memcache
+  display: out/statusnet/plugin/memcache
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/Memcache/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/Memcache/locale/%CODE%/LC_MESSAGES/Memcache.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/Memcache/locale/Memcache.pot
+  targetPattern: statusnet/plugins/Memcache/locale/%CODE%/LC_MESSAGES/Memcache.po
+
+MANGLER:
+  prefix: memcache-
+---
+BASIC:
+  id: out-statusnet-plugin-memcached
+  label: StatusNet - Memcached
+  display: out/statusnet/plugin/memcached
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/Memcached/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/Memcached/locale/%CODE%/LC_MESSAGES/Memcached.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/Memcached/locale/Memcached.pot
+  targetPattern: statusnet/plugins/Memcached/locale/%CODE%/LC_MESSAGES/Memcached.po
+
+MANGLER:
+  prefix: memcached-
 ---
 BASIC:
   id: out-statusnet-plugin-minify
@@ -365,6 +505,20 @@ FILES:
 
 MANGLER:
   prefix: openid-
+---
+BASIC:
+  id: out-statusnet-plugin-piwikanalytics
+  label: StatusNet - PiwikAnalytics
+  display: out/statusnet/plugin/piwikanalytics
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/PiwikAnalytics/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/PiwikAnalytics/locale/%CODE%/LC_MESSAGES/PiwikAnalytics.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/PiwikAnalytics/locale/PiwikAnalytics.pot
+  targetPattern: statusnet/plugins/PiwikAnalytics/locale/%CODE%/LC_MESSAGES/PiwikAnalytics.po
+
+MANGLER:
+  prefix: piwikanalytics-
 ---
 BASIC:
   id: out-statusnet-plugin-postdebug
@@ -521,6 +675,20 @@ MANGLER:
   prefix: submirror-
 ---
 BASIC:
+  id: out-statusnet-plugin-subscriptionthrottle
+  label: StatusNet - SubscriptionThrottle
+  display: out/statusnet/plugin/subscriptionthrottle
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/SubscriptionThrottle/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/SubscriptionThrottle/locale/%CODE%/LC_MESSAGES/SubscriptionThrottle.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/SubscriptionThrottle/locale/SubscriptionThrottle.pot
+  targetPattern: statusnet/plugins/SubscriptionThrottle/locale/%CODE%/LC_MESSAGES/SubscriptionThrottle.po
+
+MANGLER:
+  prefix: subscriptionthrottle-
+---
+BASIC:
   id: out-statusnet-plugin-tabfocus
   label: StatusNet - TabFocus
   display: out/statusnet/plugin/tabfocus
@@ -577,6 +745,34 @@ MANGLER:
   prefix: twitterbridge-
 ---
 BASIC:
+  id: out-statusnet-plugin-userlimit
+  label: StatusNet - UserLimit
+  display: out/statusnet/plugin/userlimit
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/UserLimit/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/UserLimit/locale/%CODE%/LC_MESSAGES/UserLimit.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/UserLimit/locale/UserLimit.pot
+  targetPattern: statusnet/plugins/UserLimit/locale/%CODE%/LC_MESSAGES/UserLimit.po
+
+MANGLER:
+  prefix: userlimit-
+---
+BASIC:
+  id: out-statusnet-plugin-wikihashtags
+  label: StatusNet - WikiHashtags
+  display: out/statusnet/plugin/wikihashtags
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/WikiHashtags/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/WikiHashtags/locale/%CODE%/LC_MESSAGES/WikiHashtags.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/WikiHashtags/locale/WikiHashtags.pot
+  targetPattern: statusnet/plugins/WikiHashtags/locale/%CODE%/LC_MESSAGES/WikiHashtags.po
+
+MANGLER:
+  prefix: wikihashtags-
+---
+BASIC:
   id: out-statusnet-plugin-wikihowprofile
   label: StatusNet - WikiHowProfile
   display: out/statusnet/plugin/wikihowprofile
@@ -589,3 +785,17 @@ FILES:
 
 MANGLER:
   prefix: wikihowprofile-
+---
+BASIC:
+  id: out-statusnet-plugin-xcache
+  label: StatusNet - XCache
+  display: out/statusnet/plugin/xcache
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/XCache/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/XCache/locale/%CODE%/LC_MESSAGES/XCache.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/XCache/locale/XCache.pot
+  targetPattern: statusnet/plugins/XCache/locale/%CODE%/LC_MESSAGES/XCache.po
+
+MANGLER:
+  prefix: xcache-
