@@ -223,7 +223,6 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 			// Re-calculate if cache is empty or insane
 			if ( !$total ) {
-				echo $g->getId() . "<br />\n";
 				// Initialise messages.
 				$collection = $g->initCollection( $code );
 				$collection->setInFile( $g->load( $code ) );
