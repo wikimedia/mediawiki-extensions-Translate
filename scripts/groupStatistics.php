@@ -205,8 +205,6 @@ if ( isset( $options['help'] ) ) {
 // Show help and exit if '--most' does not have a valid value and no groups set
 if ( isset( $options['most'] ) && !isset( $localisedWeights[$options['most']] ) && !isset( $options['groups'] ) ) {
 	showUsage();
-} elseif ( !isset( $options['most'] ) && !isset( $options['groups'] ) ) {
-	showUsage();
 }
 
 if ( !isset( $options['output'] ) ) {
