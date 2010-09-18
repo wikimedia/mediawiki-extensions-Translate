@@ -261,14 +261,23 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 			$out .= Xml::openElement( 'tr' );
 			$out .= '<td>' . $this->makeGroupLink( $g, $code, $extra ) . '</td>';
-			$out .= Xml::element( 'td', null, $wgLang->formatNum( $total ) );
-			$out .= Xml::element( 'td', null, $wgLang->formatNum( $total - $translated ) );
+
+			$out .= Xml::element( 'td',
+				array( 'data-sort-value' => $total ),
+				$wgLang->formatNum( $total ) );
+
+			$out .= Xml::element( 'td',
+				array( 'data-sort-value' => $total - $translated ),
+				$wgLang->formatNum( $total - $translated ) );
+
 			$out .= $this->element( $this->formatPercentage( $translated / $total ),
 				$this->getBackgroundColour( $translated, $total ),
 				sprintf( '%1.5f', $translated / $total ) );
+
 			$out .= $this->element( $this->formatPercentage( $fuzzy / $total ),
 				$this->getBackgroundColour( $fuzzy, $total, true ),
 				sprintf( '%1.5f', $fuzzy / $total ) );
+
 			$out .= Xml::closeElement( 'tr' );
 		}
 
