@@ -18,6 +18,7 @@ CHECKER:
   checks:
     - FUDforumSyntaxCheck
     - FUDforumVariablesCheck
+    - FUDforumLongVariablesCheck
     - braceBalanceCheck
 
 AUTOLOAD:
