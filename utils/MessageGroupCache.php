@@ -140,7 +140,7 @@ class MessageGroupCache {
 		// Content hash check
 		if ( $this->get( '#msghash' ) === md5( serialize( ksort( $messages ) ) ) ) {
 			// Update cache so that we don't need to do slow checks next time
-			$cache->create( $createdat );
+			$cache->create( $created );
 			return true;
 		}
 	
