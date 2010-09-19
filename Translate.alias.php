@@ -6,9 +6,10 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+$specialPageAliases = array();
+
 /** English
  * @author Nike
- */
 $specialPageAliases['en'] = array(
 	'Translate' => array( 'Translate' ),
 	'Magic' => array( 'AdvancedTranslate', 'Magic' ),
