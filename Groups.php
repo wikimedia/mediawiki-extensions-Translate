@@ -502,7 +502,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 		return $this->mangler;
 	}
 
-	protected function getGroups() {
+	public function getGroups() {
 		if ( !isset( $this->groups ) ) {
 			$groups = array();
 			$ids = (array) $this->conf['GROUPS'];

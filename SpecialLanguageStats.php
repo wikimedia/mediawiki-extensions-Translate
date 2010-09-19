@@ -216,31 +216,15 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 			$fuzzy = $translated = $total = 0;
 
-			$incache = $cache->get( $groupName, $code );
-			if ( $incache !== false ) {
-				list( $fuzzy, $translated, $total ) = $incache;
-			}
-
-			// Re-calculate if cache is empty or insane
-			if ( !$total ) {
-				// Initialise messages.
-				$collection = $g->initCollection( $code );
-				$collection->setInFile( $g->load( $code ) );
-				$collection->filter( 'ignored' );
-				$collection->filter( 'optional' );
-				// Store the count of real messages for later calculation.
-				$total = count( $collection );
-
-				// Count fuzzy first.
-				$collection->filter( 'fuzzy' );
-				$fuzzy = $total - count( $collection );
-
-				// Count the completed translations.
-				$collection->filter( 'hastranslation', false );
-				$translated = count( $collection );
-
-				$cache->set( $groupName, $code, array( $fuzzy, $translated, $total ) );
-				$cache->commit();
+			if ( $g instanceof AggregateMessageGroup ) {
+				foreach ( $g->getGroups() as $subgroup ) {
+					$result = $this->loadPercentages( $cache, $subgroup, $code );
+					$fuzzy += $result[0];
+					$translated += $result[1];
+					$total += $result[2];
+				}
+			} else {
+				list( $fuzzy, $translated, $total ) = $this->loadPercentages( $cache, $g, $code );
 			}
 
 			if ( $total === 0 ) {
@@ -289,6 +273,38 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		}
 
 		return $out;
+	}
+
+	protected function loadPercentages( $cache, $group, $code ) {
+		$incache = $cache->get( $group->getId(), $code );
+		if ( $incache !== false ) {
+			return $incache;
+		}
+
+		// Initialise messages.
+		$collection = $group->initCollection( $code );
+		$collection->setInFile( $group->load( $code ) );
+		$collection->filter( 'ignored' );
+		$collection->filter( 'optional' );
+		// Store the count of real messages for later calculation.
+		$total = count( $collection );
+
+		// Count fuzzy first.
+		$collection->filter( 'fuzzy' );
+		$fuzzy = $total - count( $collection );
+
+		// Count the completed translations.
+		$collection->filter( 'hastranslation', false );
+		$translated = count( $collection );
+
+		$result = array( $fuzzy, $translated, $total );
+
+		$cache->set( $group->getId(), $code, $result );
+
+		static $i = 0;
+		if ( $i++ % 50 === 0 ) $cache->commit();
+
+		return $result;
 	}
 
 	protected function formatPercentage( $num ) {
