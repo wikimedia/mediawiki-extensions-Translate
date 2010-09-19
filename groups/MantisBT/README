@@ -1,10 +1,11 @@
-# Read-only repository setup
-cd %GROUPROOT%
-git clone git://git.mantisbt.org/mantisbt mantisbt
+== Setup ==
+ cd %GROUPROOT%
+ git clone git://git.mantisbt.org/mantisbt mantisbt
 
-# Configuration
-wfAddNamespace( 1210, 'Mantis' ); // Choose any free namespace number
-$wgTranslateGroupFiles[] = "$IP/extensions/Translate/groups/MantisBT/MantisBT.yaml";
+Add to your LocalSettings.php
+ wfAddNamespace( 1210, 'Mantis' );
+ $wgTranslateGroupFiles[] = "$IP/extensions/Translate/groups/MantisBT/MantisBT.yaml";
 
-# Commits
-To do.
+== Export ==
+@todo
+

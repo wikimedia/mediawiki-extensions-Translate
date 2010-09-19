@@ -1,5 +1,10 @@
-# Read-only repository setup
-cd %GROUPROOT%
-svn co https://fudforum.svn.sourceforge.net/svnroot/fudforum/trunk/install/forum_data/thm/default/i18n/ fudforum
+== Setup ==
+ cd %GROUPROOT%
+ svn co https://fudforum.svn.sourceforge.net/svnroot/fudforum/trunk/install/forum_data/thm/default/i18n/ fudforum
 
-# TODO: commits
+Add to your LocalSettings.php:
+ wfAddNamespace( 1218, 'FUDforum' );
+ $wgTranslateGroupFiles[] = "$IP/extensions/Translate/groups/FUDforum/FUDforum.yaml";
+
+== Export ==
+@todo
