@@ -918,7 +918,7 @@ aliasfile = RDFIO/specials/SpecialRDFImport.alias.php
 
 RDFIO - SPARQL Endpoint
 descmsg = rdfio-sparqlendpoint-desc
-file = RDFIO/specials/SPARQLEndpoint.i18n.php
+file = RDFIO/specials/SpecialSPARQLEndpoint.i18n.php
 aliasfile = RDFIO/specials/SPARQLEndpoint.alias.php
 
 Reader Feedback
