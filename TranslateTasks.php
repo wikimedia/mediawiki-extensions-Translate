@@ -406,125 +406,24 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 		return true;
 	}
 
-	/// @todo Encapsulate Gettext formatter.
 	public function output() {
-		global $wgServer, $wgTranslateDocumentationLanguageCode;
+		$ffs = null;
+		if ( $this->group instanceof FileBasedMessageGroup ) {
+			$ffs = $this->group->getFFS();
+		}
+		
+		if ( !$ffs instanceof GettextFFS ) {
+			$group = FileBasedMessageGroup::newFromMessageGroup( $this->group );
+			$ffs = new GettextFFS( $group );
+		}
 
-		$lang = Language::factory( 'en' );
+		$ffs->setOfflineMode( 'true' );
 
-		$out = '';
-		$now = wfTimestampNow();
-		$label = $this->group->getLabel();
 		$code = $this->options->getLanguage();
-		$languageName = TranslateUtils::getLanguageName( $code );
-
-		$filename = $code . '_' . $this->group->getID() . '.po';
+		$id = $this->group->getID();
+		$filename = "${id}_$code.po";
 		header( "Content-Disposition: attachment; filename=\"$filename\"" );
-
-		$headers = array();
-		$headers['Project-Id-Version'] = 'MediaWiki ' . SpecialVersion::getVersion( 'nodb' );
-		/// @todo Make this customisable or something.
-		$headers['Report-Msgid-Bugs-To'] = $wgServer;
-		/// @todo Language::sprintfDate() does not support any time zone flags.
-		$headers['POT-Creation-Date'] = $lang->sprintfDate( 'xnY-xnm-xnd xnH:xni:xns+0000', $now );
-		$headers['Language-Team'] = TranslateUtils::getLanguageName( $this->options->getLanguage() );
-		$headers['Content-Type'] = 'text-plain; charset=UTF-8';
-		$headers['Content-Transfer-Encoding'] = '8bit';
-		$headers['X-Generator'] = 'MediaWiki Translate extension ' . TRANSLATE_VERSION;
-		$headers['X-Language-Code'] = $this->options->getLanguage();
-		$headers['X-Message-Group'] = $this->group->getId();
-
-		$headerlines = array( '' );
-		foreach ( $headers as $key => $value ) {
-			$headerlines[] = "$key: $value\n";
-		}
-
-		$out .= "# Translation of $label to $languageName\n";
-		$out .= self::formatmsg( '', $headerlines  );
-
-		foreach ( $this->collection as $key => $m ) {
-			$flags = array();
-
-			$translation = $m->translation();
-			// CASE2: no translation.
-			if ( $translation === null ) {
-				$translation = '';
-			}
-
-			// CASE3: optional messages; accept only if different.
-			if ( $m->hasTag( 'optional' ) ) {
-				$flags[] = 'optional';
-			}
-
-			// Remove fuzzy markings before export, use the fuzzy flag.
-			if ( strpos( $translation, TRANSLATE_FUZZY ) !== false ) {
-				$translation = str_replace( TRANSLATE_FUZZY, '', $translation );
-				$flags[] = 'fuzzy';
-			}
-
-			$comments = '';
-			if ( $wgTranslateDocumentationLanguageCode ) {
-				$documentation = TranslateUtils::getMessageContent( $key, $wgTranslateDocumentationLanguageCode );
-				if ( $documentation ) {
-					$comments = $documentation;
-				}
-			}
-
-			$out .= self::formatComments( $comments, $flags );
-			$out .= self::formatmsg( $m->definition(), $translation, $key, $flags );
-
-		}
-
-		return $out;
-	}
-
-	private static function escape( $line ) {
-		$line = addcslashes( $line, '\\"' );
-		$line = str_replace( "\n", '\n', $line );
-		$line = '"' . $line . '"';
-
-		return $line;
-	}
-
-	private static function formatComments( $comments = false, $flags = false ) {
-		$output = array();
-
-		if ( $comments ) {
-			$output[] = '#. ' . implode( "\n#. ", explode( "\n", $comments ) );
-		}
-
-		if ( $flags ) {
-			$output[] = '#, ' . implode( ', ', $flags );
-		}
-
-		if ( !count( $output ) ) {
-			$output[] = '#:';
-		}
-
-		return implode( "\n", $output ) . "\n";
-	}
-
-	private static function formatmsg( $msgid, $msgstr, $msgctxt = false ) {
-		$output = array();
-
-		if ( $msgctxt ) {
-			$output[] = 'msgctxt ' . self::escape( $msgctxt );
-		}
-
-		if ( !is_array( $msgid ) ) {
-			$msgid = array( $msgid );
-		}
-
-		if ( !is_array( $msgstr ) ) {
-			$msgstr = array( $msgstr );
-		}
-
-		$output[] = 'msgid ' . implode( "\n", array_map( array( __CLASS__, 'escape' ), $msgid ) );
-		$output[] = 'msgstr ' . implode( "\n", array_map( array( __CLASS__, 'escape' ), $msgstr ) );
-
-		$out = implode( "\n", $output ) . "\n\n";
-
-		return $out;
+		return $ffs->writeIntoVariable( $this->collection );
 	}
 }
 

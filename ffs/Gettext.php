@@ -51,7 +51,12 @@ class GettextFFS extends SimpleFFS {
 	}
 
 	/**
-	 * Ugly hack to avoid code duplication between old and new style FFS.
+	 * Parses gettext data into internal representation.
+	 * @param $data \string
+	 * @param $useCtxtAsKey \bool Whether to create message keys from the context
+	 * or use msgctxt (non-standard po-files)
+	 * @param $mangler StringMangler
+	 * @return \array
 	 * @todo Refactor method into smaller parts.
 	 */
 	public static function parseGettextData( $data, $useCtxtAsKey = false, $mangler ) {
@@ -335,15 +340,23 @@ PHP;
 		$specs['Project-Id-Version'] = $this->group->getLabel();
 		$specs['Report-Msgid-Bugs-To'] = $wgSitename;
 		$specs['PO-Revision-Date'] = self::formatTime( wfTimestampNow() );
-		$specs['X-POT-Import-Date'] = self::formatTime( $this->getPotTime() );
+		if ( $this->offlineMode ) {
+			$specs['POT-Creation-Date'] = self::formatTime( wfTimestampNow() );
+		} else {
+			$specs['X-POT-Import-Date'] = self::formatTime( $this->getPotTime() );
+		}
 		$specs['Language-Team'] = "$name <$portal>";
 		$specs['Content-Type'] = 'text/plain; charset=UTF-8';
 		$specs['Content-Transfer-Encoding'] = '8bit';
 		$specs['X-Generator'] = $this->getGenerator();
 		$specs['X-Translation-Project'] = "$wgSitename at $wgServer";
 		$specs['X-Language-Code'] = $code;
-		// Prepend # so that message import does not think this is a file it can import
-		$specs['X-Message-Group'] = '#' . $this->group->getId();
+		if ( $this->offlineMode ) {
+			$specs['X-Message-Group'] = $this->group->getId();
+		} else {
+			// Prepend # so that message import does not think this is a file it can import
+			$specs['X-Message-Group'] = '#' . $this->group->getId();
+		}
 		$plural = self::getPluralRule( $code );
 		if ( $plural ) {
 			$specs['Plural-Forms'] = $plural;
@@ -394,9 +407,13 @@ PHP;
 		$flags = self::chainGetter( 'flags', $pot, $trans, array() );
 		$flags = array_merge( $m->getTags(), $flags );
 
-		$ctxt = self::chainGetter( 'ctxt', $pot, $trans, false );
-		if ( $ctxt ) {
-			$content .= 'msgctxt ' . self::escape( $ctxt ) . "\n";
+		if ( $this->offlineMode ) {
+			$content .= 'msgctxt ' . self::escape( $key ) . "\n";
+		} else {
+			$ctxt = self::chainGetter( 'ctxt', $pot, $trans, false );
+			if ( $ctxt ) {
+				$content .= 'msgctxt ' . self::escape( $ctxt ) . "\n";
+			}
 		}
 
 		$msgid = $m->definition();

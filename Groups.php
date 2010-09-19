@@ -350,6 +350,29 @@ abstract class MessageGroupBase implements MessageGroup {
  * custom type of message groups.
  */
 class FileBasedMessageGroup extends MessageGroupBase {
+
+	/**
+	 * Constructs a FileBasedMessageGroup from any normal message group.
+	 * Useful for doing special Gettext exports from any group.
+	 * @param $group MessageGroup
+	 * @return FileBasedMessageGroup
+	 */
+	public static function newFromMessageGroup( $group ) {
+		$conf = array(
+			'BASIC' => array(
+				'class' => 'FileBasedMessageGroup',
+				'id' => $group->getId(),
+				'label' => $group->getLabel(),
+				'namespace' => $group->getNamespace(),
+			),
+			'FILES' => array(
+				'sourcePattern' => '',
+				'targetPattern' => '',
+			),
+		);
+		return MessageGroupBase::factory( $conf );
+	}
+
 	public function exists() {
 		return $this->getFFS()->exists();
 	}
