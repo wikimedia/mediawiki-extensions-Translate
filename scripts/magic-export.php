@@ -42,7 +42,7 @@ class MagicExport extends Maintenance {
 		}
 
 		$this->openHandles();
-		// $this->writeHeaders();
+		$this->writeHeaders();
 		$this->writeFiles();
 		$this->writeFooters();
 		$this->closeHandles();
@@ -138,13 +138,7 @@ class MagicExport extends Maintenance {
 			switch( $this->type ) {
 				case 'special':
 					fwrite( $handle, <<<PHP
-<?php
-/**
- * Aliases for special pages
- *
- * @file
- * @ingroup Extensions
- */
+
 
 \$specialPageAliases = array();
 PHP
@@ -152,14 +146,7 @@ PHP
 					break;
 				case 'magic':
 					fwrite( $handle, <<<PHP
-<?php
 
-/**
- * Internationalisation file for magic words
- *
- * @file
- * @ingroup Extensions
- */
 
 \$magicWords = array();
 PHP
