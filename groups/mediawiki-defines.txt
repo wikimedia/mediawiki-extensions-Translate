@@ -805,6 +805,7 @@ Other Sites
 
 Package Force
 descmsg = pf-desc
+aliasfile = PackageForce/PackageForce.alias.php
 
 Page By
 
