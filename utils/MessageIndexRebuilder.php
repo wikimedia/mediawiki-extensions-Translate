@@ -18,6 +18,13 @@ class MessageIndexRebuilder {
 	public static function execute() {
 		$groups = MessageGroups::singleton()->getGroups();
 
+		$filename = TranslateUtils::cacheFile( 'translate_messageindex.ser' );
+		if ( file_exists( $filename ) ) {
+			$old = unserialize( file_get_contents( $filename ) );
+		} else {
+			$old = array();
+		}
+
 		$hugearray = array();
 		$postponed = array();
 
@@ -41,8 +48,21 @@ class MessageIndexRebuilder {
 			self::checkAndAdd( $hugearray, $g, true );
 		}
 
-		$filename = TranslateUtils::cacheFile( 'translate_messageindex.ser' );
 		file_put_contents( $filename, serialize( $hugearray ) );
+
+		$changes = array();
+		foreach ( array_diff_assoc( $hugearray, $old ) as $groups ) {
+			foreach ( (array) $groups as $group ) $changes[$group] = true;
+		}
+
+		foreach ( array_diff_assoc( $old, $hugearray ) as $groups ) {
+			foreach ( (array) $groups as $group ) $changes[$group] = true;
+		}
+
+		$cache = new ArrayMemoryCache( 'groupstats' );
+		foreach ( $changes as $key => $_ ) {
+			$cache->clearGroup( $key );
+		}
 	}
 
 	protected static function checkAndAdd( &$hugearray, $g, $ignore = false ) {
