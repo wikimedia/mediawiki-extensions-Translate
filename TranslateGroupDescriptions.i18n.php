@@ -668,6 +668,7 @@ Więcej informacji odnajdziesz na stronach [[mw:Extension:PDF_Writer]] oraz http
 * Użyj [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] do sprawdzenia Potlaczu. Możesz tam wszystko przetestować.',
 	'bw-desc-shapado' => 'Grupa komunikatów darmowego z otwartym kodem oprogramowania zadawania pytań i udzielania odpowiedzi [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] jest opartym na otwartym kodzie serwerem mikroblogów',
+	'translate-group-desc-statusnet-plugin' => 'Te komunikaty są częścią wtyczki do [[Translating:StatusNet|StatusNet]]',
 	'bw-desc-voctrain' => 'Nauczyciel słówek oparty na Omegawiki. Wykorzystuje system plansz do nauki słownictwa w dowolnym języku obsługiwanym przez Omegawiki.
 Utworzony dla Uniwersytetu w Bambergu. Licencja GPL w wersji 2.0 lub nowszej. Opracowane przez [[User:Kim Bruning]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] pozwala szybko odnaleźć autorów strony w Wikimedia wiki.',
@@ -815,6 +816,7 @@ Consulte [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plu
 * Use a [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] para testar o Potlatch. Você poderá testar quanto quiser em qualquer área.',
 	'bw-desc-shapado' => 'Grupo de mensagens do software de perguntas e respostas, livre e de código aberto, [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] é um servidor de microblogues de código aberto',
+	'translate-group-desc-statusnet-plugin' => 'Estas mensagens fazem parte de um plugin para o [[Translating:StatusNet|StatusNet]]',
 	'bw-desc-voctrain' => 'Treinador de Vocabulário baseado no Omegawiki. Utiliza um sistema de flashcard para aprender vocabulário de qualquer idioma para qualquer idioma suportado pelo Omegawiki.
 Created pela Universidade de Bamberg. Licenciado GPL 2.0 ou posterior. Desenvolvido por [[User:Kim Bruning]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] é capaz de encontrar rapidamente os autores de uma página em um wiki da Wikimedia.',

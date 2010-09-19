@@ -8507,8 +8507,8 @@ Le spatios de nomines pote haber solmente un traduction.
 In le traductiones de spatios de nomines, <code>$1 talk</code> es special. <code>$1</code> es reimplaciate per le nomine del sito (per exemplo <code>{{ns:project_talk}}</code>).
 Si non es possibile in tu lingua formar un expression valide sin cambiar le nomine del sito, per favor contacta un disveloppator.
 
-Es necessari appertiner al gruppo de traductores pro publicar le modificationes.
-Le modificationes non es immagazinate usque tu clicca super le button Publicar infra.',
+Es necessari appertiner al gruppo de traductores pro salveguardar le modificationes.
+Le modificationes non es salveguardate usque tu clicca super le button Salveguardar hic infra.',
 	'translate-magic-module' => 'Modulo:',
 	'translate-magic-submit' => 'Obtener',
 	'translate-magic-cm-export' => 'Exportar',
@@ -8517,15 +8517,15 @@ Le modificationes non es immagazinate usque tu clicca super le button Publicar i
 	'translate-magic-cm-current' => 'Actual',
 	'translate-magic-cm-original' => 'Original',
 	'translate-magic-cm-comment' => 'Commento:',
-	'translate-magic-cm-save' => 'Publicar',
+	'translate-magic-cm-save' => 'Salveguardar',
 	'translate-magic-cm-updatedusing' => 'Actualisate con [[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]]',
 	'translate-magic-cm-savefailed' => 'Non poteva salveguardar',
 	'translate-magic-special' => 'Aliases de paginas special',
 	'translate-magic-words' => 'Parolas magic',
 	'translate-magic-namespace' => 'Nomines de spatios de nomines',
-	'translate-magic-notsaved' => 'Tu modification non ha essite immagazinate!',
+	'translate-magic-notsaved' => 'Tu modification non ha essite salveguardate!',
 	'translate-magic-errors' => 'Corrige per favor le sequente {{PLURAL:$1|error|errores}} in le traductiones:',
-	'translate-magic-saved' => 'Tu modificationes ha essite immagazinate.',
+	'translate-magic-saved' => 'Le modificationes ha essite salveguardate con successo.',
 	'translationchanges' => 'Modificationes in traductiones',
 	'translationchanges-export' => 'exportar',
 	'translationchanges-change' => '$1: $2 per $3',
@@ -8636,7 +8636,7 @@ Vide le barra de menu pro un ligamine al portal pro le lingua de tu preferentia.
 In iste pagina apparera un lista de portales linguistic pro tote le portales correspondente con un codice de lingua definite e un subpagina appellate "translators".
 Le subpagina "translators" debe continer le patrono [[:{{ns:template}}:User|User]] que prende un nomine de usator como parametro.',
 	'supportedlanguages-recenttranslations' => 'traductiones recente',
-	'translate-save' => 'Publicar ($1)',
+	'translate-save' => 'Salveguardar ($1)',
 	'translate-jssti-add' => 'Adder al lista',
 	'translate-manage-groups' => 'Gestion de gruppos',
 	'translate-manage-listgroups' => 'Gruppos configurate',
