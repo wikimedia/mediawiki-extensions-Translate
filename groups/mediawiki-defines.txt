@@ -906,6 +906,21 @@ Random root page
 Random Users With Avatars
 descmsg = random-users-avatars-desc
 
+RDFIO - ARC2Admin
+descmsg = rdfio-arc2admin-desc
+file = RDFIO/specials/SpecialARC2Admin.i18n.php
+aliasfile = RDFIO/specials/SpecialARC2Admin.alias.php
+
+RDFIO - RDF Import
+descmsg = rdfio-arc2admin-desc
+file = RDFIO/specials/SpecialRDFImport.i18n.php
+aliasfile = RDFIO/specials/SpecialRDFImport.alias.php
+
+RDFIO - SPARQL Endpoint
+descmsg = rdfio-sparqlendpoint-desc
+file = RDFIO/specials/SPARQLEndpoint.i18n.php
+aliasfile = RDFIO/specials/SPARQLEndpoint.alias.php
+
 Reader Feedback
 id = ext-readerfeedback-readerfeedback
 file = ReaderFeedback/language/ReaderFeedback.i18n.php
