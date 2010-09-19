@@ -680,6 +680,7 @@ Mass Blank
 aliasfile = MassBlank/MassBlank.alias.php
 
 Mass Edit Regex
+aliasfile = MassEditRegex/MassEditRegex.alias.php
 
 Math Stat Functions
 descmsg = msfunc_desc
