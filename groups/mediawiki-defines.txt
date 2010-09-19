@@ -907,7 +907,6 @@ Random Users With Avatars
 descmsg = random-users-avatars-desc
 
 RDFIO
-descmsg = rdfio-arc2admin-desc
 aliasfile = RDFIO/RDFIO.alias.php
 
 Reader Feedback
