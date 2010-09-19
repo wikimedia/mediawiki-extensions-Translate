@@ -48,6 +48,7 @@ aliasfile = APC/APC.alias.php
 Api SVG Proxy
 
 Approved Revs
+aliasfile = ApprovedRevs/ApprovedRevs.alias.php
 
 Article Assessment Pilot
 
