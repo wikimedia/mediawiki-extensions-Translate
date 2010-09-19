@@ -436,10 +436,16 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 
 		foreach ( $labels as &$label ) {
 			if ( strpos( $label, '@' ) === false ) continue;
-			list( $groupId, $code ) = array_map( 'trim', explode( '@', $label, 2 ) );
-			$code = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() ) . " ($code)";
-			$group = MessageGroups::getGroup( $groupId )->getLabel();
-			$label = "$group @ $code";
+			list( $groupId, $code ) = explode( '@', $label, 2 );
+			if ( $code && $groupId ) {
+				$code = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() ) . " ($code)";
+				$group = MessageGroups::getGroup( $groupId )->getLabel();
+				$label = "$group @ $code";
+			} elseif( $code ) {
+				$label = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() ) . " ($code)";
+			} elseif( $groupId ) {
+				$label = MessageGroups::getGroup( $groupId )->getLabel();
+			}
 		}
 
 
@@ -791,10 +797,8 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 	 * @return \string Label.
 	 */
 	protected function makeLabel( $group, $code ) {
-		if ( $group && $code ) {
-			return "$group @ $code";
-		} elseif ( $group || $code ) {
-			return "$group$code";
+		if ( $group || $code ) {
+			return "$group@$code";
 		} else {
 			return 'all';
 		}
