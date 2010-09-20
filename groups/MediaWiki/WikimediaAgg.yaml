@@ -91,7 +91,6 @@ GROUPS:
   - ext-ui-dontswitchmeover
   - ext-ui-prefstats
   - ext-ui-prefswitch
-  - ext-ui-prefswitchlink
   - ext-ui-userdailycontribs
   - ext-uploadblacklist
   - ext-vector

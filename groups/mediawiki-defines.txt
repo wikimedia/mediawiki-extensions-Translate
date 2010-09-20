@@ -1356,11 +1356,6 @@ optional = prefswitch-survey-answer-browser-o9, prefswitch-survey-answer-browser
 optional = prefswitch-survey-answer-os-macos, prefswitch-survey-answer-os-linux, prefswitch-survey-answer-os-windowsmobile, prefswitch-survey-answer-os-iphoneos
 optional = prefswitch-survey-answer-browser-ie9, prefswitch-survey-answer-browser-c5, prefswitch-survey-answer-browser-s5, prefswitch-survey-answer-os-ios
 
-Usability Initiative - Pref Switch Link
-id = ext-ui-prefswitchlink
-descmsg = prefswitch-desc
-file = UsabilityInitiative/PrefSwitch/PrefSwitchLink.i18n.php
-
 Usability Initiative - User Daily Contribs
 file = UsabilityInitiative/UserDailyContribs/UserDailyContribs.i18n.php
 id = ext-ui-userdailycontribs
