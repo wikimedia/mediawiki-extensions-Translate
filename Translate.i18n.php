@@ -2076,6 +2076,14 @@ $1',
 	'translate-gs-avgscore' => 'Уртаса билдә',
 );
 
+/** Bavarian (Boarisch)
+ * @author Mucalexx
+ */
+$messages['bar'] = array(
+	'translate-sidebar-alltrans' => 'Auf åndre Sproochen',
+	'translations' => 'Olle Ywersetzungen',
+);
+
 /** Southern Balochi (بلوچی مکرانی)
  * @author Mostafadaneshvar
  */
@@ -11171,6 +11179,7 @@ $messages['lg'] = array(
 	'translate-statsf-scale-days' => 'Nnaku',
 	'translate-statsf-scale-hours' => 'Ssaawa',
 	'translate-statsf-submit' => 'Kulagako',
+	'languagestats' => 'Ebivvuunulidwa mu lulimi',
 	'translate-language' => 'Lulimi',
 );
 
@@ -12349,7 +12358,7 @@ Alle waarden hebben een limiet aan de boven- en onderzijde.',
 	'translate-language-code' => 'Taalcode',
 	'translate-language-code-field-name' => 'Taalcode:',
 	'translate-suppress-complete' => 'Volledig vertaalde berichtengroepen verbergen',
-	'translate-language' => 'Taal:',
+	'translate-language' => 'Taal',
 	'translate-total' => 'Berichten',
 	'translate-total-tooltip' => 'Het totaal aantal berichten in deze berichtengroep.',
 	'translate-untranslated' => 'Te vertalen',
@@ -15861,6 +15870,8 @@ $messages['sl'] = array(
 	'translate-talk' => 'pogovor',
 	'translate-history' => 'zgodovina',
 	'translate-showsub' => 'Prikaži {{PLURAL:$1|podskupino|$1 podskupini|$1 podskupine|$1 podskupin}}.',
+	'translate-grouplisting' => 'To je seznam vseh prevedljivih skupin.
+Kliknite na skupino sporočil za prikaz seznama neprevedenih sporočil.',
 	'translate-task-view' => 'Prikaži vsa sporočila',
 	'translate-task-untranslated' => 'Prikaži vsa neprevedena sporočila',
 	'translate-task-optional' => 'Prikaži neobvezna sporočila',

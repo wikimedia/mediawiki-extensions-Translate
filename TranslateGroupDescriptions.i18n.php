@@ -879,6 +879,7 @@ $messages['ru'] = array(
  * @author Dbc334
  */
 $messages['sl'] = array(
+	'translategroupdescriptions-desc' => 'Opisi skupin sporočil izdelkov, ki jih podpira razširitev [http://mediawiki.org/wiki/Extension:Translate Translate] extension',
 	'translate-group-desc-nodesc' => 'Za to skupino sporočil opis ni na voljo',
 	'translate-group-desc-mediawikicore' => 'Ta skupina sporočil zajema sporočila, uporabljena v trenutni alfarazličici MediaWiki ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'Ta skupina sporočil vsebuje [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 najbolj uporabljanih sporočil] v MediaWiki',
@@ -914,6 +915,7 @@ Oglejte si [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_p
 * Uporabljajte [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] za preizkušanje Potlatch. Tam lahko preizkušate vse kar hočete, v katerem koli območju.',
 	'bw-desc-shapado' => 'Skupina sporočil prostega in odprtokodnega programja za vprašanja in odgovore [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] je odprtokodni strežnik za mikrobloganje',
+	'translate-group-desc-statusnet-plugin' => 'Ta sporočila so del vtičnika za [[Translating:StatusNet|StatusNet]]',
 	'bw-desc-voctrain' => 'Trener besedišča temelječ na [http://omegawiki.org OmegaWiki]. Uporablja sistem kartic za učenje besedišča iz katerega koli jezika v kateri koli jezik, ki ga podpira Omegawiki.
 Ustvarjeno za Univerzo v Bambergu. Pod dovoljenjem GPL 2.0 ali poznejšim. Razvil [[User:Kim Bruning|Kim Bruning]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] je zmožen hitro najti avtorje strani na wikiju Wikimedije.',
