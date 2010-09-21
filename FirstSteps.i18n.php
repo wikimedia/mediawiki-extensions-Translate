@@ -473,6 +473,91 @@ Du erhältst außerdem bis zu einmal im Monat einen Newsletter.
 Wenn du keinen Newsletter erhalten möchtest, kannst du dich im Tab „{{int:prefs-personal}}“ in deinen [[Special:Preferences|Einstellungen]] austragen.',
 );
 
+/** German (formal address) (Deutsch (Sie-Form))
+ * @author The Evil IP address
+ */
+$messages['de-formal'] = array(
+	'translate-fs-settings-title' => 'Ihre Einstellungen anpassen',
+	'translate-fs-userpage-title' => 'Ihre Benutzerseite erstellen',
+	'translate-fs-email-title' => 'Ihre E-Mail-Adresse bestätigen',
+	'translate-fs-intro' => "Willkommen bei dem {{SITENAME}}-Startassistenten.
+Ihnen wird gezeigt, wie Sie Schritt für Schritt ein Übersetzer werden.
+Am Ende werden Sie alle ''Oberflächen-Nachrichten'' der von {{SITENAME}} unterstützten Projekte übersetzen können.",
+	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount.png|frame]]
+
+Als erstes müssen Sie sich ein Benutzerkonto anlegen.
+
+Ihr Benutzername wird in den Autorenlisten Ihrer Übersetzungen genannt.
+Das Bild rechts zeigt, wie Sie die Felder ausfüllen müssen.
+
+Wenn Sie sich bereits registriert haben, $1loggen Sie sich stattdessen ein$2.
+Wenn Sie eingeloggt sind, kehren Sie auf diese Seite zurück.
+
+$3Benutzerkonto anlegen$4',
+	'translate-fs-settings-text' => 'Gehen Sie nun zu Ihren Einstellungen und ändern Sie zumindest Ihre Oberflächensprache in die Sprache, die Sie übersetzen werden.
+
+Ihre Oberflächensprache wird als Standardsprache benutzt.
+Man vergisst leicht, die Sprache in die Richtige zu verändern, daher ist es empfohlen, dies sofort zu tun.
+
+Wenn Sie dabei sind, können Sie die Software auch bitten, Übersetzungen in anderen Sprachen anzuzeigen, die Sie kennen.
+Diese Einstellung finden Sie unter dem Tab „{{int:prefs-editing}}“.
+Gucken Sie sich auch ruhig die anderen Einstellungsmöglichkeiten an.
+
+Gehen Sie jetzt in Ihre [[Special:Preferences|Einstellungen]] und kehren Sie dann auf diese Seite zurück.',
+	'translate-fs-userpage-text' => 'Jetzt müssen du eine Benutzerseite erstellen.
+
+Bitte schreiben Sie etwas über sich, wer Sie sind und was Sie machen.
+Dies hilft der {{SITENAME}}-Gemeinschaft bei der Zusammenarbeit.
+Auf {{SITENAME}} gibt es Leute aus der ganzen Welt, die an verschiedenen Sprachen und Projekten arbeiten.
+
+In der ausgefüllten Box oben sehen Sie in der ersten Zeile <nowiki>{{#babel:en-2}}</nowiki>.
+Bitte füllen Sie es mit Ihren Sprachkenntnissen aus.
+Die Zahl hinter dem Sprachcode beschreibt wie gut Sie die Sprache kennen.
+Die Möglichkeiten sind:
+*1 - ein bisschen
+*2 - Basiswissen
+*3 - fließend
+*4 - nahezu Muttersprachler
+*5 - professionell, z.B. wenn Sie ein professioneller Übersetzer sind.
+
+Wenn Sie ein Muttersprachler sind, lassen Sie die Zahl aus und benutzen Sie nur den Sprachcode.
+Beispiel: Wenn Sie Deutsch als Muttersprache, Englisch gut und ein wenig Französisch sprechen, könnten Sie Folgendes schreiben:
+<code><nowiki>{{#babel:de|en-3|fr-1}}</nowiki></code>
+
+Wenn Sie den Sprachcode einer Sprache nicht kennen, dann gucken Sie ihn jetzt nach.
+Sie können die Liste unten benutzen.',
+	'translate-fs-userpage-done' => 'Gut gemacht! Sie haben nun eine Benutzerseite',
+	'translate-fs-permissions-text' => 'Jetzt müssen Sie einen Antrag stellen, um zur Übersetzergruppe hinzugefügt zu werden.
+
+Bis wir den Code korrigieren, gehe auf [[Project:Translator]] und folgen Sie den Anweisungen.
+Kehren Sie danach zurück auf diese Seite.
+
+Nachdem Sie den Antrag abgeschickt haben, wird ein freiwilliger Mitarbeiter Ihren Antrag prüfen und ihn so bald wie möglich akzeptieren.
+Bitte haben Sie dabei etwas Geduld.
+
+<del>Stellen Sie sicher, dass der folgende Antrag korrekt ausgefüllt ist und drücken Sie dann den Button.</del>',
+	'translate-fs-target-text' => "Glückwunsch!
+Sie können nun mit dem Übersetzen beginnen.
+
+Seien Sie nicht verwirrt, wenn es Ihnen noch neu und unübersichtlich vorkommt.
+Auf der Seite [[Project list|Projekte]] gibt es eine Übersicht der Projekte, die Sie übersetzen können.
+Die meisten Projekte haben eine kurze Beschreibungsseite zusammen mit einem „''Übersetzen''“- Link, der Sie auf eine Seite mit nicht-übersetzten Nachrichten bringt.
+Eine Liste aller Nachrichtengruppen und dem [[Special:LanguageStats|momentanen Status einer Sprache]] gibt es auch.
+
+Wenn Sie mehr hiervon verstehen möchten, können Sie die [[FAQ|häufig gestellten Fragen]] lesen.
+Leider kann die Dokumentation zeitweise veraltet sein.
+Wenn Sie etwas tun möchten, jedoch nicht wissen wie, zögern Sie nicht auf der [[Support|Hilfeseite]] zu fragen.
+
+Sie kannst auch Übersetzer Ihrer Sprache auf der [[Portal_talk:$1|Diskussionsseite]] [[Portal:$1|des entsprechenden Sprachportals]] kontaktieren.
+Das Portal verlinkt auf deine momentane [[Special:Preferences|Spracheinstellung]].
+Bitte ändern Sie sie falls nötig.",
+	'translate-fs-email-text' => 'Bitte geben Sie Ihre E-Mail-Adresse in [[Special:Preferences|Ihren Einstellungen]] ein und bestätigen Sie die an Sie versandte E-Mail.
+
+Dies gibt anderen die Möglichkeit, Sie über E-Mail zu erreichen.
+Sie erhalten außerdem bis zu einmal im Monat einen Newsletter.
+Wenn Sie keinen Newsletter erhalten möchten, können Sie sich im Tab „{{int:prefs-personal}}“ in Ihren [[Special:Preferences|Einstellungen]] austragen.',
+);
+
 /** Lower Sorbian (Dolnoserbski)
  * @author Michawiki
  */
@@ -2259,7 +2344,7 @@ $3Зарегистрироваться$4',
 Если вы не хотите получать рассылку, то вы можете отказаться от неё на вкладке «{{int:prefs-personal}}» ваших [[Special:Preferences|настроек]].',
 );
 
-/** Rusyn (русиньскый язык)
+/** Rusyn (Русиньскый)
  * @author Gazeb
  */
 $messages['rue'] = array(

@@ -1030,6 +1030,7 @@ Bitte prüfe das Übersetzungs-Logbuch auf Fehlermeldungen, bzw. die Vollzugsnac
 /** German (formal address) (Deutsch (Sie-Form))
  * @author Imre
  * @author Kghbln
+ * @author The Evil IP address
  * @author Umherirrender
  */
 $messages['de-formal'] = array(
@@ -1038,6 +1039,8 @@ $messages['de-formal'] = array(
 Stellen Sie sicher, dass ein <nowiki><translate></nowiki>-Tag und gültige Syntax verwendet wird.',
 	'tpt-showpage-intro' => 'Untenstehend sind neue, vorhandene und gelöschte Abschnitte aufgelistet.
 Bevor Sie diese Version zur Übersetzung markieren, stellen Sie bitte sicher, dass die Änderungen an den Abschnitten minimal sind, um unnötige Arbeit für Übersetzer zu verhindern.',
+	'pt-movepage-started' => 'Die Basisseite wurde nunmehr verschoben.
+Bitte prüfen Sie das Übersetzungs-Logbuch auf Fehlermeldungen, bzw. die Vollzugsnachricht.',
 );
 
 /** Lower Sorbian (Dolnoserbski)
@@ -4033,7 +4036,7 @@ $messages['ru'] = array(
 	'pt-locked-page' => 'Эта страница заблокирована, так как переводимая страница сейчас переименовывается.',
 );
 
-/** Rusyn (русиньскый язык)
+/** Rusyn (Русиньскый)
  * @author Gazeb
  */
 $messages['rue'] = array(
