@@ -87,6 +87,8 @@ Interwiki Dispatcher
 file = InterwikiDispatcher/SpecialInterwikiDispatcher.i18n.php
 aliasfile = InterwikiDispatcher/SpecialInterwikiDispatcher.alias.php
 
+Landing Page
+
 Link Suggest
 
 Lookup Contribs
@@ -117,6 +119,8 @@ New Edit Page
 
 Our 404 Handler
 file = Our404Handler/SpecialOur404Handler.i18n.php
+
+Partner Feed
 
 Problem Reports
 
@@ -185,6 +189,8 @@ Theory tab
 ignored = theorytab-subpage
 
 Title Edit
+
+Top Lists
 
 Video Embed Tool
 
