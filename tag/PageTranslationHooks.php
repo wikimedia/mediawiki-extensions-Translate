@@ -343,14 +343,20 @@ FOO;
 		return true;
 	}
 
-	public static function schemaUpdates() {
-		global $wgExtNewTables, $wgExtNewFields;
-
+	public static function schemaUpdates( $updater = null ) {
 		$dir = dirname( __FILE__ ) . '/..';
-		$wgExtNewTables[] = array( 'translate_sections', "$dir/translate.sql" );
-		$wgExtNewFields[] = array( 'translate_sections', 'trs_order', "$dir/translate-add-trs_order.patch.sql" );
-		$wgExtNewTables[] = array( 'revtag_type', "$dir/revtags.sql" );
 
+		if ( $updater === null ) {
+			global $wgExtNewTables, $wgExtNewFields;
+
+			$wgExtNewTables[] = array( 'translate_sections', "$dir/translate.sql" );
+			$wgExtNewFields[] = array( 'translate_sections', 'trs_order', "$dir/translate-add-trs_order.patch.sql" );
+			$wgExtNewTables[] = array( 'revtag_type', "$dir/revtags.sql" );
+		} else {
+			$updater->addExtensionUpdate( array( 'addTable', 'translate_sections', "$dir/translate.sql" ) );
+			$updater->addExtensionUpdate( array( 'addField', 'translate_sections', 'trs_order', "$dir/translate-add-trs_order.patch.sql" ) );
+			$updater->addExtensionUpdate( array( 'addTable', 'revtag_type', "$dir/revtags.sql" ) );
+		}
 		return true;
 	}
 
