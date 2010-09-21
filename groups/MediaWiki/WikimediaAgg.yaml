@@ -20,6 +20,7 @@ GROUPS:
   - ext-checkuser
   - ext-cite
   - ext-citespecial
+  - ext-clicktracking
   - ext-clientside # usability.wikimedia.org
   - ext-codereview # MediaWiki.org
   - ext-collection-core
@@ -33,6 +34,7 @@ GROUPS:
   - ext-crossnamespacelinks
   - ext-di-pfpg # wikimediafoundation.org
   - ext-dismissablesitenotice
+  - ext-dontswitchmeover
   - ext-doublewiki # Wikisource
   - ext-drafts # test.wikipedia.org
   - ext-expandtemplates
@@ -69,6 +71,8 @@ GROUPS:
   - ext-parserfunctions
   - ext-pdfhandler
   - ext-poem
+  - ext-prefstats
+  - ext-prefswitch
   - ext-proofreadpage # Wikisource
   - ext-quiz
   - ext-readerfeedback-ratedpages
@@ -88,12 +92,8 @@ GROUPS:
   - ext-titlekey
   - ext-torblock
   - ext-trustedxff
-  - ext-ui-clicktracking
-  - ext-ui-dontswitchmeover
-  - ext-ui-prefstats
-  - ext-ui-prefswitch
-  - ext-ui-userdailycontribs
   - ext-uploadblacklist
+  - ext-userdailycontribs
   - ext-vector
   - ext-wikieditor
   - ext-wikihiero
