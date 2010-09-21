@@ -401,6 +401,7 @@ ignored = farmerwikiurl, farmerinterwikiurl
 
 FB Connect
 aliasfile = FBConnect/FBConnect.alias.php
+optional = fbconnect-usernameprefix
 
 FCK editor
 
