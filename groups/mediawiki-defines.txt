@@ -182,6 +182,9 @@ file = cldr/cldr.i18n.php
 
 Clean Changes
 
+Click Tracking
+aliasfile = ClickTracking/ClickTracking.alias.php
+
 Client Side
 
 Close Wikis
@@ -341,6 +344,8 @@ optional = payflow_gateway-card-name-amex, payflow_gateway-card-name-visa, payfl
 #id = ext-di-ppg
 #file = DonationInterface/paypal_gateway/paypal_gateway.i18n.php
 #descmsg = paypal_gateway-desc
+
+Dont Switch Me Over
 
 Double Wiki
 
@@ -861,6 +866,20 @@ file = PovWatch/PovWatch.i18n.php
 aliasfile = PovWatch/PovWatch.alias.php
 descmsg = povwatch_desc
 
+Pref Stats
+aliasfile = PrefStats/PrefStats.alias.php
+ignored = prefstats-list-elem
+
+Pref Switch
+aliasfile = PrefSwitch/PrefSwitch.alias.php
+optional = prefswitch-survey-answer-browser-ie5, prefswitch-survey-answer-browser-ie6, prefswitch-survey-answer-browser-ie7, prefswitch-survey-answer-browser-ie8
+optional = prefswitch-survey-answer-browser-ff1, prefswitch-survey-answer-browser-ff2, prefswitch-survey-answer-browser-ff3, prefswitch-survey-answer-browser-cb
+optional = prefswitch-survey-answer-browser-c1, prefswitch-survey-answer-browser-c2, prefswitch-survey-answer-browser-c3, prefswitch-survey-answer-browser-c4
+optional = prefswitch-survey-answer-browser-s3, prefswitch-survey-answer-browser-s4, prefswitch-survey-answer-browser-ffb, prefswitch-survey-answer-browser-cd
+optional = prefswitch-survey-answer-browser-o9, prefswitch-survey-answer-browser-o9.5, prefswitch-survey-answer-browser-o10, prefswitch-survey-answer-os-windows
+optional = prefswitch-survey-answer-os-macos, prefswitch-survey-answer-os-linux, prefswitch-survey-answer-os-windowsmobile, prefswitch-survey-answer-os-iphoneos
+optional = prefswitch-survey-answer-browser-ie9, prefswitch-survey-answer-browser-c5, prefswitch-survey-answer-browser-s5, prefswitch-survey-answer-os-ios
+
 Preloader
 
 Profile Monitor
@@ -1326,46 +1345,12 @@ id = ext-uniwiki-mootools12core
 file = uniwiki/MooTools12core/MooTools12core.i18n.php
 descmsg = mootools12core-desc
 
-Usability Initiative - Click Tracking
-id = ext-ui-clicktracking
-file = UsabilityInitiative/ClickTracking/ClickTracking.i18n.php
-aliasfile = UsabilityInitiative/ClickTracking/ClickTracking.alias.php
-descmsg = clicktracking-desc
-
-Usability Initiative - Dont Switch Me Over
-file = UsabilityInitiative/DontSwitchMeOver/DontSwitchMeOver.i18n.php
-id = ext-ui-dontswitchmeover
-descmsg = updatemyprefs-desc
-
-Usability Initiative - Pref Stats
-id = ext-ui-prefstats
-file = UsabilityInitiative/PrefStats/PrefStats.i18n.php
-aliasfile = UsabilityInitiative/PrefStats/PrefStats.alias.php
-descmsg = prefstats-desc
-ignored = prefstats-list-elem
-
-Usability Initiative - Pref Switch
-id = ext-ui-prefswitch
-file = UsabilityInitiative/PrefSwitch/PrefSwitch.i18n.php
-aliasfile = UsabilityInitiative/PrefSwitch/PrefSwitch.alias.php
-descmsg = prefswitch-desc
-optional = prefswitch-survey-answer-browser-ie5, prefswitch-survey-answer-browser-ie6, prefswitch-survey-answer-browser-ie7, prefswitch-survey-answer-browser-ie8
-optional = prefswitch-survey-answer-browser-ff1, prefswitch-survey-answer-browser-ff2, prefswitch-survey-answer-browser-ff3, prefswitch-survey-answer-browser-cb
-optional = prefswitch-survey-answer-browser-c1, prefswitch-survey-answer-browser-c2, prefswitch-survey-answer-browser-c3, prefswitch-survey-answer-browser-c4
-optional = prefswitch-survey-answer-browser-s3, prefswitch-survey-answer-browser-s4, prefswitch-survey-answer-browser-ffb, prefswitch-survey-answer-browser-cd
-optional = prefswitch-survey-answer-browser-o9, prefswitch-survey-answer-browser-o9.5, prefswitch-survey-answer-browser-o10, prefswitch-survey-answer-os-windows
-optional = prefswitch-survey-answer-os-macos, prefswitch-survey-answer-os-linux, prefswitch-survey-answer-os-windowsmobile, prefswitch-survey-answer-os-iphoneos
-optional = prefswitch-survey-answer-browser-ie9, prefswitch-survey-answer-browser-c5, prefswitch-survey-answer-browser-s5, prefswitch-survey-answer-os-ios
-
-Usability Initiative - User Daily Contribs
-file = UsabilityInitiative/UserDailyContribs/UserDailyContribs.i18n.php
-id = ext-ui-userdailycontribs
-descmsg = userdailycontribs-desc
-
 Usage Statistics
 aliasfile = UsageStatistics/UsageStatistics.alias.php
 
 User Contact Links
+
+User Daily Contribs
 
 User Images
 
