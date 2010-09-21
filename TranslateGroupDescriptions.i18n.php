@@ -127,6 +127,8 @@ $messages['bs'] = array(
 	'bw-desc-freecol' => 'Prije nego što počnete da prevodite FreeCol na Vaš jezik, molimo pročitajte [[Translating:FreeCol]]. FreeCol koristi GPL licencu.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], web forum napisan u PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] je slobodni sistem praćenja grešaka zasnovan na webu. Molimo prijavite svaku grešku na stranicu [[Support]].',
+	'translate-group-desc-mediawiki-core-115' => 'Poruke za stabilnu verziju 1.15 [[Translating:MediaWiki|MediaWiki]]ja',
+	'translate-group-desc-mediawiki-core-116' => 'Poruke za stabilnu verziju 1.16 [[Translating:MediaWiki|MediaWiki]]ja',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' je python biblioteka za pisanje PDF dokumenata iz MediaWiki članaka koji su obrađeni putem mwlib biblioteke.
 
 Molimo pogledajte [[mw:Extension:PDF_Writer]] i http://code.pediapress.com/wiki/wiki/mwlibrl za više informacija.",
@@ -150,6 +152,7 @@ Napravljeno na Univerzitetu Bamberg. Licencirano pod GPL 2.0 ili kasnijom. Razvi
  * @author Mormegil
  */
 $messages['cs'] = array(
+	'translategroupdescriptions-desc' => 'Popisy skupin zpráv pro produkty podporované rozšířením [http://mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-nodesc' => 'Pro tuto skupinu zpráv není popis k dispozici',
 	'translate-group-desc-mediawikicore' => 'Tato skupina zpráv obsahuje zprávy používané v současné alfaverzi MediaWiki ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'Tato skupina zpráv obsahuje [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 nejpoužívanějších zpráv] v MediaWiki',
@@ -163,13 +166,18 @@ $messages['cs'] = array(
 	'translate-group-desc-wikimediaextensions' => 'Nadskupina zpráv obsahující všechny zprávy používané v rozšířeních MediaWiki používaných na wiki [http://wikimedia.org/ nadace Wikimedia Foundation]',
 	'translate-group-desc-uniwiki' => 'Nadskupina zpráv obsahující všechny zprávy používané v podporovaných rozšířeních MediaWiki používaných na [http://www.unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Nadskupina zpráv obsahující všechny zprávy používané v rozšířeních MediaWiki souvisejících s akcí [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
+	'translate-group-desc-translatablepages' => 'Všechny přeložitelné stránky',
 	'bw-desc-freecol' => 'Před překládáním FreeCol do vašeho jazyka si přečtěte [[Translating:FreeCol]]. FreeCol používá licenci GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], webové fórum napsané v PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] je webový systém pro správu chyb. Problémy hlaste na stránku [[Support]].',
+	'translate-group-desc-mantisbt-plugin-core' => 'Základní modul pro [[Translating:MantisBT|MantisBT]]',
+	'translate-group-desc-mediawiki-core-115' => 'Hlášení ze stabilní verze [[Translating:MediaWiki|MediaWiki]] 1.15',
+	'translate-group-desc-mediawiki-core-116' => 'Hlášení ze stabilní verze [[Translating:MediaWiki|MediaWiki]] 1.16',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' je knihovna pro Python umožňující tvorbu PDF dokumentů podle článků MediaWiki zpracovaných knihovnou mwlib.
 
 Podrobnosti najdete na stránkách [[mw:Extension:PDF_Writer]] a http://code.pediapress.com/wiki/wiki/mwlibrl.",
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] je webmail napsaný v PHP. Dotazy a chyby pište na stránku [[Support]].',
+	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] je offline čtečka Wikipedie',
 	'bw-desc-openlayers' => 'OpenLayers je open source generátor dynamických map. Problémy hlaste na stránce [[Support]].',
 	'bw-desc-openstreetmap' => 'Skupina pro všechny zprávy [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Tato skupina obsahuje zprávy rozhraní pro [[Translating:Open Street Map|Open Street Map]].
@@ -180,6 +188,7 @@ Vysvětlení klíčů u funkce PLURAL najdete na [http://unicode.org/repos/cldr-
 * Potlatch můžete testovat na [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org]. Můžete tam zkoušet cokoli, kdekoli.',
 	'bw-desc-shapado' => 'Skupina zpráv pro svobodný open-source software pro otázky a odpovědi [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] je open-source mikroblovací server',
+	'translate-group-desc-statusnet-plugin' => 'Tyto zprávy jsou částí modulu pro [[Translating:StatusNet|StatusNet]]',
 	'bw-desc-voctrain' => 'Program pro výuku slovíček založený na [http://omegawiki.org OmegaWiki]. Používá systém učebních kartiček k výuce slovíček z libovolného jazyka v libovolném jazyce podporovaném na Omegawiki.
 Vytvořeno pro Univerzitu v Bamberku. Licencováno pod GPL 2.0 nebo novější. Autorem je [[User:Kim Bruning|Kim Bruning]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] dokáže rychle zjistit autory libovolné stránky na wiki nadace Wikimedia.',

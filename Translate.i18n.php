@@ -3088,10 +3088,24 @@ Ovo uključuje poruke koje su označene kao neažurne.',
 	'translate-percentage-complete' => 'Završeno',
 	'translate-percentage-complete-tooltip' => 'Postotak poruka u grupi koje su prevedene i nisu označene kao zastarijele.',
 	'translate-percentage-fuzzy' => 'Zastarijelo',
+	'translate-percentage-fuzzy-tooltip' => 'Postotak poruka u grupi koje su prevedene i označene kao zastarijele.
+Poruke su označene kao zastarijele jer se promijenila izvorna poruka na engleskom jeziku, jer nije uspjela automatska provjera poruke ili je neko označio poruku zastarijelom.',
 	'translate-nothing-to-do' => 'Izgleda da su napravljeni svi mogući prijevodi.
 Savjetujemo Vam da izvršite pregled poruke preko [[Special:Translate|{{int:translate}}]].',
 	'supportedlanguages' => 'Podržani jezici',
+	'supportedlanguages-summary' => 'Ova stranica prikazuje spisak svih jezika podržanih na {{SITENAME}}, zajedno sa imenima prevodioca koji rade na tom jeziku.
+Ako želite više podataka o pojedinom jeziku, možete kliknuti na link portala tog jezika.
+Klikom na ime prevodioca će vas odvesti na korisničku stranicu tog prevodioca.
+
+Ako jezik nije naveden, možete potražiti kako možete početi lokalizacijski projekat za taj jezik putem stranice "[[Translating:Process|Novi Jezik]]".
+
+Ako prevodite na određeni jezik, a vaše ime nije prikazano, molimo dodajte vaše ime na spisak prevodioca na [[:Category:Languages|portal]] za taj jezik.
+Pogledajte traku menija za link na portal za jezik koji ste naveli u svojim postavkama.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Prevodioc|Prevodioci}}: $1',
+	'supportedlanguages-noportal-title' => 'Nije definiran imenski prostor portala',
+	'supportedlanguages-noportal' => "Wiki administrator nije definirao NS_PORTAL, tako da ova stranica ne radi.
+Na ovoj stranici će se pojaviti spisak jezičkih portala za sve portale koje se odnose na definirani jezički kod i podstranica nazvana ''prevodioci''.
+Podstranica ''prevodioci'' mora sadržavati šablon [[:{{ns:template}}:User|User]], koristeći korisničko ime kao parametar.",
 	'supportedlanguages-recenttranslations' => 'nedavni prevodi',
 	'translate-save' => 'Spremi ($1)',
 	'translate-jssti-add' => 'Dodaj na spisak',
@@ -3465,6 +3479,7 @@ $messages['cs'] = array(
 	'translate-edit' => 'editovat',
 	'translate-talk' => 'diskuse',
 	'translate-history' => 'historie',
+	'translate-showsub' => 'Zobrazit {{PLURAL:$1|podskupinu|$1 podskupiny|$1 podskupin}}.',
 	'translate-task-view' => 'Zobrazit všechny zprávy z',
 	'translate-task-untranslated' => 'Zobrazit všechny nepřeložené zprávy z',
 	'translate-task-optional' => 'Zobrazit volitelné zprávy z',

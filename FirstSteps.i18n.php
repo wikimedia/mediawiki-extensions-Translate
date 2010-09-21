@@ -350,11 +350,14 @@ Lezit ac'hanon da genderc'hel.",
 );
 
 /** Bosnian (Bosanski)
+ * @author CERminator
  * @author Palapa
  */
 $messages['bs'] = array(
 	'firststeps' => 'Prvi koraci',
 	'translate-fs-pagetitle-done' => 'Urađeno!',
+	'translate-fs-pagetitle' => 'Čarobnjak za početak - $1',
+	'translate-fs-signup-title' => 'Prijavite se',
 	'translate-fs-settings-title' => 'Podesi svoje postavke',
 	'translate-fs-userpage-title' => 'Napravi svoju korisničku stranicu',
 	'translate-fs-permissions-title' => 'Zahtijevaj prevodilačku dozvolu',
