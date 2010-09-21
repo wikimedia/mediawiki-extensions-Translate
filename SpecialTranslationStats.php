@@ -439,12 +439,14 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 			list( $groupId, $code ) = explode( '@', $label, 2 );
 			if ( $code && $groupId ) {
 				$code = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() ) . " ($code)";
-				$group = MessageGroups::getGroup( $groupId )->getLabel();
+				$group = MessageGroups::getGroup( $groupId );
+				$group = $group ? $group->getLabel() : $groupId;
 				$label = "$group @ $code";
 			} elseif( $code ) {
 				$label = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() ) . " ($code)";
 			} elseif( $groupId ) {
-				$label = MessageGroups::getGroup( $groupId )->getLabel();
+				$group = MessageGroups::getGroup( $groupId );
+				$label = $group ? $group->getLabel() : $groupId;
 			}
 		}
 
