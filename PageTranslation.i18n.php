@@ -404,6 +404,7 @@ $messages['bar'] = array(
 Netter de letzte Version kå zur Ywersetzung markird wern.",
 	'tpt-notsuitable' => 'De Saiten $1 is ned zum Ywersetzen gaignet.
 Söi sicher, das a <nowiki><translate></nowiki>-Tag und güitige Syntax vawendt werd.',
+	'tpt-languages-legend' => 'Ånderne Sproochen:',
 );
 
 /** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
@@ -676,7 +677,9 @@ $messages['bs'] = array(
 	'tpt-sections-oldnew' => 'Nove i postojeće prevodilačke jedinice',
 	'tpt-sections-deleted' => 'Obrisane prevodilačke jedinice',
 	'tpt-sections-template' => 'Šablon stranice prevođenja',
+	'tpt-action-nofuzzy' => 'Ne poništavajte prevode',
 	'tpt-badtitle' => 'Zadano ime stranice ($1) nije valjan naslov',
+	'tpt-nosuchpage' => 'Stranica $1 ne postoji',
 	'tpt-oldrevision' => '$2 nije posljednja verzija stranice [[$1]].
 Jedino posljednje verzije se mogu označiti za prevođenje.',
 	'tpt-notsuitable' => 'Stranica $1 nije pogodna za prevođenje.
@@ -689,6 +692,7 @@ Prije nego što označite ovu verziju za prevođenje, provjerite da su izmjene s
 	'tpt-mark-summary' => 'Ova vezija označena za prevođenje',
 	'tpt-edit-failed' => 'Nije moguće ažurirati stranicu: $1',
 	'tpt-already-marked' => 'Posljednja verzija ove stranice je već označena za prevođenje.',
+	'tpt-unmarked' => 'Stranica $1 više nije označena za prevođenje.',
 	'tpt-list-nopages' => 'Nijedna stranica nije označena za prevođenje niti je spremna za označavanje.',
 	'tpt-old-pages' => 'Neke verzije {{PLURAL:$1|ove stranice|ovih stranica}} su označene za prevođenje.',
 	'tpt-new-pages' => '{{PLURAL:$1|Ova stranica sadrži|Ove stranice sadrže}} tekst sa oznakama prijevoda, ali nijedna od verzija {{PLURAL:$1|ove stranice|ovih stranica}} nije trenutno označena za prevođenje.',
@@ -986,7 +990,7 @@ Text des Tag: <pre>$1</pre>',
 Text des Abschnitts: <pre>$1</pre>',
 	'pt-shake-position' => 'Abschnittsmarker befinden sich an unerwarteter Stelle.
 Text des Abschnitts: <pre>$1</pre>',
-	'pt-shake-empty' => 'Abschnitt für Marker $1  leeren.',
+	'pt-shake-empty' => 'Der Abschnitt für Marker $1 ist leer.',
 	'pt-log-header' => 'Logbuch der Änderungen im Zusammenhang mit dem Übersetzungssystem',
 	'pt-log-name' => 'Übersetzungs-Logbuch',
 	'pt-log-mark' => '{{GENDER:$2|gab}} Version $3 der Seite „[[:$1]]“ zur Übersetzung frei',
@@ -2752,7 +2756,9 @@ $messages['ksh'] = array(
 	'tpt-sections-oldnew' => 'De Knubbelle för ze Övversäze (Jez neu, un de älldere, zosamme)',
 	'tpt-sections-deleted' => 'Fottjeschmeße Knubbelle för et Övversäze',
 	'tpt-sections-template' => 'Övversäzungßsiggschabloon',
+	'tpt-action-nofuzzy' => 'Donn de Övversäzunge nit als övverhollt makeere',
 	'tpt-badtitle' => 'Dä Name „$1“ es keine jöltijje Tittel för en Sigg',
+	'tpt-nosuchpage' => 'De Sigg „$1“ jidd_et nit.',
 	'tpt-oldrevision' => '„$2“ es nit de neuste Version fun dä Sigg „[[$1]]“, ävver bloß de neuste kam_mer för et Övversäze makeere.',
 	'tpt-notsuitable' => 'Di Sigg „$1“ paß nit för et Övversäze. Maach <code><nowiki><translate></nowiki></code>-Makeerunge erin, un looer dat de Süntax shtemmp.',
 	'tpt-saveok' => 'De Sigg „$1“ es för ze Övversäze makeet. Doh dren {{PLURAL:$2|es eine Knubbel|sinn_er $2 Knubbelle|es ävver keine Knubbel}} för ze Övversäze. Di Sigg kam_mer <span class="plainlinks">[$3 jäz övversäze]</span>.',
@@ -2761,6 +2767,7 @@ $messages['ksh'] = array(
 	'tpt-mark-summary' => 'Han di Version för ze Övversäze makeet',
 	'tpt-edit-failed' => 'Kunnt de Sigg „$1“ nit ändere',
 	'tpt-already-marked' => 'De neuste Version vun dä Sigg es ald för zem Övversäze makeet.',
+	'tpt-unmarked' => 'De Sigg „$1“ es nit ieh för ze övversäze makeet.',
 	'tpt-list-nopages' => 'Et sinn_er kein Sigge för zem Övversäze makeet, un et sin och kein doh, wo esu en Makeerunge eren künnte.',
 	'tpt-old-pages' => 'En Version vun hee dä {{PLURAL:$1|Sigg|Sigge|-}} es för zem Övversäze makeet.',
 	'tpt-new-pages' => '{{PLURAL:$1|Di Sigg hät|Di Sigge han|Kein Sigg hät}} ene <code lang="en">translation</code>-Befähl en sesch, ävve kei Version dofun es för ze Övversäze makeet.',
@@ -2780,6 +2787,7 @@ $messages['ksh'] = array(
 	'tpt-install' => 'Lohß op Dingem Wiki singem ẞööver dat Skrip <code>php maintenance/update.php</code> loufe, udder schmiiß dat Enreeschdungsprojramm övver et Web aan, öm de Müjjeleschkeit för Sigge ze övversäze en däm Wiki aan et Loufe ze bränge.',
 	'tpt-render-summary' => 'Ändere, öm op de neue Version fun de Ojinaal_Sigg ze kumme',
 	'tpt-download-page' => 'Sigge met Övversäzunge expotteere',
+	'pt-shake-empty' => 'Em Affschnett met dä Makeerong „$1“ es nix dren.',
 );
 
 /** Luxembourgish (Lëtzebuergesch)

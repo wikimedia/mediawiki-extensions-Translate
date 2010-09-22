@@ -14653,6 +14653,7 @@ $messages['roa-tara'] = array(
 	'translate-page-navigation-legend' => 'Navigazzione',
 	'translate-page-description-legend' => "'Mbormazione sus a 'u gruppe",
 	'translate-page-edit' => 'cange',
+	'translate-edit-title' => 'Cange "$1"',
 	'translate-magic-module' => 'Module:',
 	'translate-magic-cm-export' => 'Esporte',
 	'translate-magic-cm-original' => 'Origginale',
@@ -14668,6 +14669,8 @@ $messages['roa-tara'] = array(
 	'translationstats' => 'Statisteche de le traduziune',
 	'translate-stats-edits' => 'Cangiaminde',
 	'translate-stats-users' => 'Tradutture',
+	'translate-statsf-scale-months' => 'Mise',
+	'translate-statsf-scale-weeks' => 'Sumáne',
 	'translate-statsf-scale-days' => 'Giurne',
 	'translate-statsf-scale-hours' => 'Ore',
 	'translate-statsf-count-edits' => 'Numere de cangiaminde',
@@ -14685,6 +14688,7 @@ $messages['roa-tara'] = array(
 	'translate-untranslated' => 'Senza traduzione',
 	'translate-percentage-complete' => '% de Combletamende',
 	'translate-percentage-fuzzy' => 'Non aggiornete',
+	'supportedlanguages-translators' => '{{PLURAL:$2|Traduttore|Tradutture}}: $1',
 );
 
 /** Russian (Русский)

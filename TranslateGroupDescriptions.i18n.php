@@ -250,9 +250,11 @@ $messages['br'] = array(
 	'translate-group-desc-wikimediaextensions' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astennoù MediaWiki implijet gant [http://wikimedia.org/ Wikimedia Foundation]',
 	'translate-group-desc-uniwiki' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astennoù stag ouzh [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astennoù stag ouzh [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
+	'translate-group-desc-translatablepages' => 'An holl bajennoù da dreiñ',
 	'bw-desc-freecol' => 'Kent stagañ da dreiñ FreeCol en ho yezh, lennit [[Translating:FreeCol]]. Ober a ra Freecol gant an aotre GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], ur forom web skrivet e PHP.',
 	'bw-desc-mantisbt' => "Ur meziant digoust da c'hwennat drein eo [http://www.mantisbt.org MantisBT]. Roit keloù war [[Support]] m'en em gavit gant kudenn pe gudenn.",
+	'translate-group-desc-mantisbt-plugin-core' => 'Ur plugin diazez evit [[Translating:MantisBT|MantisBT]]',
 	'bw-desc-mwlibrl' => "Ul levraoueg Python, da skrivañ teulioù PDF diwar pennadoù eus Mediawiki bet dielfennet gant levraoueg mwlib, eo '''mwlib.rl'''.
 
 Sellit 'ta [[mw:Extension:PDF_Writer]] hag http://code.pediapress.com/wiki/wiki/mwlibrl evit gouzout hiroc'h.",
@@ -1274,6 +1276,7 @@ $messages['nl'] = array(
 	'translate-group-desc-translate' => 'Metaberichtengroep die alle berichten bevat voor de MediaWiki-uitbreiding [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-wikiaextensions' => 'Metaberichtengroep die alle berichten bevat voor ondersteunde MediaWiki-uitbreidingen gebruikt door [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Metaberichtengroep die alle berichten bevat voor ondersteunde MediaWiki-uitbreidingen gebruikt door de [http://wikimedia.org/ Wikimedia Foundation]',
+	'translate-group-desc-wikimediaextensions-main' => 'Metaberichtengroep die alle berichten bevat voor ondersteunde MediaWiki-uitbreidingen die verplicht vertaald moeten worden voor het [http://meta.wikimedia.org/wiki/Language_committee Taalcomité] van Wikimedia',
 	'translate-group-desc-uniwiki' => 'Metaberichtengroep die alle berichten bevat voor uitbreidingen gerelateerd aan [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Metaberichtengroep die alle berichten bevat voor uitbreidingen gerelateerd aan het [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Bruikbaarheidsinitiatief]',
 	'translate-group-desc-translatablepages' => "Alle te vertalen pagina's",
