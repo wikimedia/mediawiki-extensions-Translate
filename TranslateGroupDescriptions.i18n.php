@@ -29,6 +29,7 @@ $messages['en'] = array(
 	'translate-group-desc-translate' => 'Meta message group containing all messages for the MediaWiki extension [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-wikiaextensions' => 'Meta message group containing all messages for supported MediaWiki extensions used by [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Meta message group containing all messages for supported MediaWiki extensions used by the [http://wikimedia.org/ Wikimedia Foundation]',
+	'translate-group-desc-wikimediaextensions-main' => 'Meta message group containing all messages for supported MediaWiki extensions required to be translated for the Wikimedia [http://meta.wikimedia.org/wiki/Language_committee Language committee]',
 	'translate-group-desc-uniwiki' => 'Meta message group containing all messages for extensions related to [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Meta message group containing all messages for extensions related to the [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 	'translate-group-desc-translatablepages' => 'All translatable pages',

@@ -1,0 +1,60 @@
+BASIC:
+  id: ext-0-wikimedia-main
+  label: Extensions used by Wikimedia (main group)
+  display: ext/wikimediamain
+  meta: yes
+  class: AggregateMessageGroup
+  description: '{{int:translate-group-desc-wikimediaextensions-main}}'
+  namespace: NS_MEDIAWIKI
+
+GROUPS:
+  - ext-antispoof
+  - ext-assertedit # bots
+  - ext-categorytree
+  - ext-centralauth
+  - ext-centralnotice
+  - ext-cite
+  - ext-citespecial
+  - ext-confirmedit
+  - ext-confirmeditfancycaptcha
+  - ext-crossnamespacelinks
+  - ext-dismissablesitenotice
+  - ext-gadgets
+  - ext-globalblocking
+  - ext-globalusage
+  - ext-imagemap
+  - ext-inputbox
+  - ext-intersection
+  - ext-newusermessage
+  - ext-ogghandler
+  - ext-parserfunctions
+  - ext-pdfhandler
+  - ext-quiz
+  - ext-renameuser
+  - ext-securepoll
+  - ext-sitematrix
+  - ext-timeline
+  - ext-titleblacklist
+  - ext-titlekey
+  - ext-torblock
+  - ext-ui-dontswitchmeover
+  - ext-ui-optin
+  - ext-ui-optinlink
+  - ext-ui-prefstats
+  - ext-ui-prefswitch
+  - ext-ui-prefswitchlink
+  - ext-ui-usabilityinitiative
+  - ext-ui-vector
+  - ext-ui-vector-collapsiblenav
+  - ext-ui-vector-editwarning
+  - ext-ui-vector-simplesearch
+  - ext-ui-wikieditor
+  - ext-ui-wikieditor-addmediawizard
+  - ext-ui-wikieditor-highlight
+  - ext-ui-wikieditor-preview
+  - ext-ui-wikieditor-publish
+  - ext-ui-wikieditor-templateeditor
+  - ext-ui-wikieditor-templates
+  - ext-ui-wikieditor-toc
+  - ext-ui-wikieditor-toolbar
+  - ext-wikimediamessages
