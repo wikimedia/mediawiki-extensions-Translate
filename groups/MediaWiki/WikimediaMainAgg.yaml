@@ -1,6 +1,6 @@
 BASIC:
   id: ext-0-wikimedia-main
-  label: Extensions used by Wikimedia (main group)
+  label: Extensions used by Wikimedia - Main
   display: ext/wikimediamain
   meta: yes
   class: AggregateMessageGroup
