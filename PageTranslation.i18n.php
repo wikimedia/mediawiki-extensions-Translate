@@ -2788,6 +2788,28 @@ $messages['ksh'] = array(
 	'tpt-render-summary' => 'Ändere, öm op de neue Version fun de Ojinaal_Sigg ze kumme',
 	'tpt-download-page' => 'Sigge met Övversäzunge expotteere',
 	'pt-shake-empty' => 'Em Affschnett met dä Makeerong „$1“ es nix dren.',
+	'pt-movepage-title' => 'De övversäzbaa Sigg „$1“ ömnänne',
+	'pt-movepage-blockers' => 'Di övversäbaa Sigg künne mer nit ömbenänne. {{PLURAL:$1|Der Jrond es:|De Jrönd sin:|Mer weße ävver kein Jrönd doför.}}',
+	'pt-movepage-block-base-exists' => 'De Zielsigg „[[:$1]]“ jidd_et ald.',
+	'pt-movepage-block-base-invalid' => 'De aanjejovve Zielsigg hät keine jölteje Siggetittel.',
+	'pt-movepage-block-tp-exists' => 'De övversäzbaa Zielsigg „[[:$2]]“ jidd_et ald.',
+	'pt-movepage-block-tp-invalid' => 'De aanjejovve övversäzbaa Zielsigg iere Tittel för „[[:$1]]“ wöhr nit jöltejsch, Velleisch zoh lang?',
+	'pt-movepage-block-section-exists' => 'En Zielsigg met dämm Afschnett „[[:$2]]“ jidd_et ald.',
+	'pt-movepage-block-section-invalid' => 'Dä Tittel för de Ziel_Affschnetts_Sigg för „[[:$1]]“ wöhr nit jöltejsch, Velleisch zoh lang?',
+	'pt-movepage-block-subpage-exists' => 'De Ziel_Ongersigg „[[:$2]]“ jidd_et ald.',
+	'pt-movepage-block-subpage-invalid' => 'Dä Tittel för de Onger_Sigg för „[[:$1]]“ wöhr nit jöltejsch, Velleisch zoh lang?',
+	'pt-movepage-list-pages' => 'De Leß met dä Sigge zom Ömbenänne',
+	'pt-movepage-list-section' => 'Affschnetts_Sigge',
+	'pt-movepage-list-other' => 'Ander Ongersigge',
+	'pt-movepage-legend' => 'Övversäzbaa Sigg ömnänne',
+	'pt-movepage-current' => 'Der Name em Momang:',
+	'pt-movepage-new' => 'Der neue Name:',
+	'pt-movepage-reason' => 'För et Logbooch, der Aanlaß:',
+	'pt-movepage-subpages' => 'De Ongersigge all met ömnänne',
+	'pt-movepage-action-check' => 'Fengk erus, ov dat Ömnänne müjjlesch es',
+	'pt-movepage-action-perform' => 'Ömnänne!',
+	'pt-movepage-logreason' => 'Deil vun dä övversäzbaa Sigg „$1“',
+	'pt-locked-page' => 'Dat Stöck heh is jesperrt, däm sing övversäbaa Sigg weed nämmisch jrad ömbenannt.',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
@@ -4648,6 +4670,7 @@ $messages['tt-cyrl'] = array(
 	'tpt-diff-new' => 'Яңа текст',
 	'tpt-translate-this' => 'бу битне тәрҗемә итү',
 	'translate-tag-translate-link-desc' => 'Бу битне тәрҗемә итү',
+	'tpt-translation-intro' => 'Әлеге бит [[$2]] сәхифәсенең <span class="plainlinks">[$1 тәрҗемәсе булып тора]</span>. Тәрҗемә $3% башкарылган.',
 );
 
 /** ئۇيغۇرچە (ئۇيغۇرچە)

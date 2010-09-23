@@ -12519,6 +12519,9 @@ $messages['no'] = array(
 	'translate-edit' => 'rediger',
 	'translate-talk' => 'diskusjon',
 	'translate-history' => 'historikk',
+	'translate-showsub' => 'Vis {{PLURAL:$1|undergruppen|de $1 undergruppene}}',
+	'translate-grouplisting' => 'Dette er listen over alle oversettbare grupper.
+Klikk på meldingsgruppenavnet for å vise en liste over uoversatte meldinger.',
 	'translate-task-view' => 'Vis alle meldinger fra',
 	'translate-task-untranslated' => 'Vis alle uoversatte meldinger fra',
 	'translate-task-optional' => 'Vis valgfrie beskjeder fra',
@@ -16828,6 +16831,7 @@ $messages['szl'] = array(
 );
 
 /** Tamil (தமிழ்)
+ * @author TRYPPN
  * @author Trengarasu
  */
 $messages['ta'] = array(
@@ -16837,8 +16841,14 @@ $messages['ta'] = array(
 	'translate-history' => 'வரலாறு',
 	'translate-page-no-such-language' => 'குறித்த மொழி செல்லுபடியற்றதாகும்.',
 	'translate-page-language' => 'மொழி',
+	'translate-page-limit' => 'அளவு',
 	'translate-next' => 'அடுத்தப் பக்கம்',
 	'translate-prev' => 'முந்தைய பக்கம்',
+	'translate-page-edit' => 'தொகு',
+	'translate-edit-title' => '"$1" -ஐ தொகுக்கவும்',
+	'translate-edit-contribute' => 'பங்களி',
+	'translate-edit-goto-no-prev' => 'முந்தய செய்தியொன்றுமில்லை',
+	'translate-edit-goto-no-next' => 'அடுத்த செய்திகள் இல்லை',
 	'translate-magic-cm-save' => 'பக்கத்தை சேமி',
 	'translate-magic-cm-savefailed' => 'சேமிப்பு தோல்வி',
 	'translationchanges-export' => 'ஏற்றுமதி',
@@ -17431,9 +17441,13 @@ $messages['tl'] = array(
 	'translate-edit' => 'baguhin',
 	'translate-talk' => 'usapan',
 	'translate-history' => 'kasaysayan',
+	'translate-showsub' => 'Ipakita ang {{PLURAL:$1|kabahaging pangkat|$1 kabahaging mga pangkat}}.',
+	'translate-grouplisting' => 'Ito ang talaan ng lahat ng mga pangkat na maisasalinwika.
+Pindutin ang pangalan ng pangkat ng mensahe upang tumanaw ng isang talaan ng mga mensaheng hindi pa naisasalinwika.',
 	'translate-task-view' => 'Tingnan ang lahat ng mga mensahe mula sa',
 	'translate-task-untranslated' => 'Tingnan ang lahat ng hindi pa naisasalinwikang mga mensahe mula sa',
 	'translate-task-optional' => 'Tingnan ang mga hindi naman talaga kailangang (maaaring wala naman na) mga mensahe mula sa',
+	'translate-task-suggestions' => 'Tingnan ang mga mensaheng may mga mungkahi mula sa alaala ng pagsasalinwika',
 	'translate-task-untranslatedoptional' => 'Tingnan ang hindi pa naisasalinwikang mga mensaheng hindi naman talaga kailangang mayroon (opsyonal) mula sa',
 	'translate-task-problematic' => 'Tingnan ang mga mensaheng may mga suliranin',
 	'translate-task-review' => 'Suriing muli ang mga pagbabago sa',
@@ -17555,17 +17569,21 @@ Nakasalalay sa wika mo ang likas na nakatakdang talaan ng mga wika.',
 	'translationstats' => 'Mga estadistikang pangsalinwika',
 	'translate-stats-edits' => 'Mga pagbabago',
 	'translate-stats-users' => 'Mga tagapagsalinwika',
+	'translate-stats-registrations' => 'Mga pagpapatala',
 	'translate-statsf-intro' => 'Maaari kang makagawa ng payak na estadistika/palaulatan sa pamamagitan ng pormularyong ito.  Ang lahat ng mga halaga ay may pangitaas at pangibabang mga hangganan.',
 	'translate-statsf-options' => 'Mga pagpipiliang pangtalangguhit',
 	'translate-statsf-width' => 'Lapad na nasa mga piksel:',
 	'translate-statsf-height' => 'Taas na nasa mga piksel:',
 	'translate-statsf-days' => 'Kapanuhan ayon sa mga araw:',
 	'translate-statsf-scale' => 'Kaantasan ng pagkakaroon ng mga butil (granularidad):',
+	'translate-statsf-scale-months' => 'Mga buwan',
+	'translate-statsf-scale-weeks' => 'Mga linggo',
 	'translate-statsf-scale-days' => 'Mga araw',
 	'translate-statsf-scale-hours' => 'Mga oras',
 	'translate-statsf-count' => 'Sukatin:',
 	'translate-statsf-count-edits' => 'Bilang ng mga pagbabago',
 	'translate-statsf-count-users' => 'Masisiglang mga tagapagsalinwika',
+	'translate-statsf-count-registrations' => 'Bagong mga tagagamit',
 	'translate-statsf-language' => 'Talaan ng kodigo ng mga wikang pinaghihiwahiwalay ng mga kuwit:',
 	'translate-statsf-group' => 'Talaan ng kodigo ng mga pangkat na pinaghiwahiwalay ng mga kuwit:',
 	'translate-statsf-submit' => 'Paunang tingin',
@@ -17617,6 +17635,7 @@ Tingnan ang kahon ng pilian para sa isang kawing sa portada para wikang nais mo.
 	'supportedlanguages-noportal' => 'Hindi nabigyang kahulugan ng tagapangasiwa ng wiki ang NS_PORTAL, kaya hindi gumagana ang pahinang ito.
 Lilitaw sa pahinang ito ang isang talaan ng mga pintuan ng wika para sa lahat ng mga portadang may kaugnayan sa isang nabigyang kahulugang kodigo ng wika at isang kabahaging pahinang tinatawag na "mga tagapagsalinwika".
 Ang kabahaging pahinang "tagapagsalinwika" ay dapat na maglaman ng suleras na [[:{{ns:template}}:User|Tagagamit]], na kinuha ang pangalan ng tagagamit bilang parametro.',
+	'supportedlanguages-recenttranslations' => 'kamakailang mga pagsasalinwika',
 	'translate-save' => 'Sagipin ($1)',
 	'translate-jssti-add' => 'Idagdag sa talaan',
 	'translate-manage-groups' => 'Pamamahala ng pangkat',

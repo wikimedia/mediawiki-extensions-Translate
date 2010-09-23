@@ -297,6 +297,7 @@ $messages['bs'] = array(
 	'bw-desc-freecol' => 'Prije nego što počnete da prevodite FreeCol na Vaš jezik, molimo pročitajte [[Translating:FreeCol]]. FreeCol koristi GPL licencu.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], web forum napisan u PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] je slobodni sistem praćenja grešaka zasnovan na webu. Molimo prijavite svaku grešku na stranicu [[Support]].',
+	'translate-group-desc-mantisbt-plugin-core' => 'Plugin jezgre za [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Poruke za stabilnu verziju 1.15 [[Translating:MediaWiki|MediaWiki]]ja',
 	'translate-group-desc-mediawiki-core-116' => 'Poruke za stabilnu verziju 1.16 [[Translating:MediaWiki|MediaWiki]]ja',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' je python biblioteka za pisanje PDF dokumenata iz MediaWiki članaka koji su obrađeni putem mwlib biblioteke.
@@ -1320,6 +1321,7 @@ Sjå [[mw:Extension:PDF_Writer]] og http://code.pediapress.com/wiki/wiki/mwlibrl
  * @author Nghtwlkr
  */
 $messages['no'] = array(
+	'translategroupdescriptions-desc' => 'Meldingsgruppebeskrivelser for produkt støttet av utvidelsen [http://mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-nodesc' => 'Ingen beskrivelse er tilgjengelig for denne meldingsgruppen',
 	'translate-group-desc-mediawikicore' => 'Denne meldingsgruppen inneholder meldinger brukt i den gjeldende alfaversjonen av MediaWiki ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'Denne meldingsgruppen inneholder [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki de 500 mest brukte meldingene] i MediaWiki',
@@ -1331,15 +1333,21 @@ $messages['no'] = array(
 	'translate-group-desc-translate' => 'Metameldingsgruppen inneholder alle meldinger for MediaWiki-utvidelsen [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-wikiaextensions' => 'Metameldingsgruppen inneholder alle meldinger for støttede MediaWiki-utvidelser brukt av [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Metameldingsgruppen inneholder alle meldinger for støttede MediaWiki-utvidelser brukt av [http://wikimedia.org/ Wikimedia Foundation]',
+	'translate-group-desc-wikimediaextensions-main' => 'Metameldingsgruppe som inneholder alle meldinger for støttede MediaWikiutvidelser som kreves for å bli oversatt for Wikimedias [http://meta.wikimedia.org/wiki/Language_committee språkkomite]',
 	'translate-group-desc-uniwiki' => 'Metameldingsgruppen inneholder alle meldinger for utvidelser relatert til [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Metameldingsgruppen inneholder alle meldinger for utvidelser relatert til [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
+	'translate-group-desc-translatablepages' => 'Alle sider som kan oversettes',
 	'bw-desc-freecol' => 'Før du oversetter FreeCol til ditt språk, les gjennom [[Translating:FreeCol]]. FreeCol bruker GPL-lisensen.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], et nettforum skrevet i PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] er et gratis nettbasert feilsporingssystem. Vennligst meld fra om problem på [[Support]].',
+	'translate-group-desc-mantisbt-plugin-core' => 'A kjerneutvidelse for [[Translating:MantisBT|MantisBT]]',
+	'translate-group-desc-mediawiki-core-115' => 'Meldinger for den stabile versjonen 1.15 av [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawiki-core-116' => 'Meldinger for den stabile versjonen 1.16 av [[Translating:MediaWiki|MediaWiki]]',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' er et python-bibliotek for skriving av PDF-dokument fra MediaWiki-artikler som har blitt tolket av mwlib-biblioteket.
 
 Se [[mw:Extension:PDF_Writer]] og http://code.pediapress.com/wiki/wiki/mwlibrl for mer informasjon.",
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] er en nettbasert e-postklient skrevet i PHP. Vennligst rapporter problemer til [[Support]].',
+	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] er en frakoblet Wikipedialeser',
 	'bw-desc-openlayers' => 'OpenLayers er en dynamisk kartgenerator med åpen kildekode. Vennligst rapporter problemer til [[support]].',
 	'bw-desc-openstreetmap' => 'Meldingsgruppe for alle [[Translating:OpenStreetMap|OpenStreetMap]]-meldinger',
 	'bw-desc-osm-site' => 'Denne meldingsgruppen inneholder grensesnittsmeldingene for [[Translating:Open Street Map|Open Street Map]].
@@ -1350,6 +1358,7 @@ Se [http://unicode.org/repos//cldr-tmp/trunk/diff/supplemental/language_plural_r
 * Bruk [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] for å teste Potlatch. Du kan teste alt du vil på alle områder der.',
 	'bw-desc-shapado' => 'Meldingsgruppe for Q&A-programvaren [[Translating:Shapado|Shapado]] som er gratis og har åpen kildekode',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] er en mikrobloggtjener med åpen kildekode',
+	'translate-group-desc-statusnet-plugin' => 'Disse meldingene er en del av en utvidelse for [[Translating:StatusNet|StatusNet]]',
 	'bw-desc-voctrain' => '[http://omegawiki.org OmegaWiki]-basert ordforrådstrener. Bruker et huskekortsystem for å lære ordforråd fra ethvert språk til ethvert språk støttet av OmegaWiki.
 Opprettet for universitetet i Bamberg. Lisensiert under GPL 2.0 eller senere. Utviklet av [[User:Kim Bruning|Kim Bruning]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] kan kjapt finne ut hvem som har forfattet en side på en Wikimedia-wiki.',

@@ -356,7 +356,7 @@ Lezit ac'hanon da genderc'hel.",
 $messages['bs'] = array(
 	'firststeps' => 'Prvi koraci',
 	'firststeps-desc' => '[[Special:FirstSteps|Posebna stranica]] za pomoć korisnicima koji počinju sa wiki korištenjem proširenja za prevod',
-	'translate-fs-pagetitle-done' => 'Urađeno!',
+	'translate-fs-pagetitle-done' => ' - urađeno!',
 	'translate-fs-pagetitle' => 'Čarobnjak za početak - $1',
 	'translate-fs-signup-title' => 'Prijavite se',
 	'translate-fs-settings-title' => 'Podesi svoje postavke',
