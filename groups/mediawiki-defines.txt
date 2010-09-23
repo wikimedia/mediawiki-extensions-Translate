@@ -1370,6 +1370,7 @@ User Throttle
 Validator
 
 Variable Page
+aliasfile = VariablePage/VariablePage.alias.php
 
 Vector
 
