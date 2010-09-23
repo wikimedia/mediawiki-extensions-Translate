@@ -143,7 +143,7 @@ Failures will be logged in the page translation log and they need to be repaired
 	'pt-movepage-started' => 'The base page is now moved.
 Please check the page translation log for errors and completion message.',
 
-	'pt-locked-page' => 'This page is locked because translatable page is currently being moved.',
+	'pt-locked-page' => 'This page is locked because the translatable page is currently being moved.',
 );
 
 /** Message documentation (Message documentation)
