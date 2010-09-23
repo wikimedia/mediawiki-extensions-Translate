@@ -94,6 +94,7 @@ GROUPS:
   - ext-trustedxff
   - ext-uploadblacklist
   - ext-userdailycontribs
+  - ext-variablepage
   - ext-vector
   - ext-wikieditor
   - ext-wikihiero
