@@ -11928,6 +11928,7 @@ $messages['myv'] = array(
 	'translate-untranslated' => 'Апак ютавто',
 	'translate-percentage-fuzzy' => 'Таштамозь',
 	'translate-manage-modlang-new' => '$1 (од)',
+	'translate-manage-action-import' => 'Совавтомс',
 	'translate-manage-submit' => 'Топавтомс',
 );
 

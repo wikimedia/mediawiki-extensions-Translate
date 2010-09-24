@@ -2801,6 +2801,7 @@ $messages['ksh'] = array(
 	'pt-movepage-list-pages' => 'De Leß met dä Sigge zom Ömbenänne',
 	'pt-movepage-list-section' => 'Affschnetts_Sigge',
 	'pt-movepage-list-other' => 'Ander Ongersigge',
+	'pt-movepage-list-count' => 'Ensjesamp ham_mer {{PLURAL:$1|ein Sigg|$1 Sigge|kein Sigg}} för ömzenänne.',
 	'pt-movepage-legend' => 'Övversäzbaa Sigg ömnänne',
 	'pt-movepage-current' => 'Der Name em Momang:',
 	'pt-movepage-new' => 'Der neue Name:',
@@ -2809,6 +2810,8 @@ $messages['ksh'] = array(
 	'pt-movepage-action-check' => 'Fengk erus, ov dat Ömnänne müjjlesch es',
 	'pt-movepage-action-perform' => 'Ömnänne!',
 	'pt-movepage-logreason' => 'Deil vun dä övversäzbaa Sigg „$1“',
+	'pt-movepage-started' => 'Di Sigg weed jäz ömjenannt.
+Don op jede Fall em [[Special:Log/pagetranslation|Logbooch vum Övversäze]] noh Fähler loore, un dat dat öhndlesch aan et Eng jekumme es.',
 	'pt-locked-page' => 'Dat Stöck heh is jesperrt, däm sing övversäbaa Sigg weed nämmisch jrad ömbenannt.',
 );
 

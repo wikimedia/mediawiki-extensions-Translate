@@ -915,6 +915,7 @@ $messages['ia'] = array(
 	'translate-group-desc-translate' => 'Metagruppo con tote le messages pro le extension de MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Traducer].',
 	'translate-group-desc-wikiaextensions' => 'Metagruppo con tote le messages pro le extensiones supportate de MediaWiki usate per [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Metagruppo con tote le messages pro le extensiones supportate de MediaWiki usate per le [http://wikimedia.org/ Fundation Wikimedia]',
+	'translate-group-desc-wikimediaextensions-main' => 'Metagruppo que contine tote le messages pro le extensiones supportate per MediaWiki que debe esser traducite pro le [http://meta.wikimedia.org/wiki/Language_committee Comité de linguas] del Fundation Wikimedia',
 	'translate-group-desc-uniwiki' => 'Metagruppo con tote le messages pro le extensiones connexe a [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Metagruppo de messages continente tote le messages pro extensiones connexe al [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Initiativa de Usabilitate de Wikipedia]',
 	'translate-group-desc-translatablepages' => 'Tote le paginas traducibile',
