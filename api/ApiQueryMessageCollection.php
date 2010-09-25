@@ -156,7 +156,6 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 				'definition  - message definition',
 				'translation - current translation',
 				'tags        - message tags, like optional, ignored and fuzzy',
-				'author      - last author of the message',
 			),
 			'filter' => array(
 				'Message collection filters. Use ! to negate condition. For example !fuzzy means list only all non-fuzzy messages. Filters are applied in the order given.',
