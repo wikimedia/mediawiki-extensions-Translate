@@ -4,7 +4,7 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2007-2010, Niklas Laxström
+ * @copyright Copyright © 2010, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -32,7 +32,6 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 	}
 
 	private function run( $resultPageSet = null ) {
-		$db = $this->getDB();
 		$params = $this->extractRequestParams();
 
 		$group = MessageGroups::getGroup( $params['group'] );
