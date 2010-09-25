@@ -890,7 +890,7 @@ descmsg = profiling-desc
 Proofread Page
 aliasfile = ProofreadPage/ProofreadPage.alias.php
 descmsg = proofreadpage_desc
-ignored = proofreadpage_default_header, proofreadpage_default_footer, proofreadpage_quality_message
+ignored = proofreadpage_default_header, proofreadpage_default_footer
 ignored = proofreadpage_specialpage_text
 
 Protect Section
