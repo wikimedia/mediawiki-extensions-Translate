@@ -31,6 +31,8 @@ And for the code at:
 == Change log ==
 
 === Changes in ??? ===
+* 2010-09-25
+- First Api Query Module messagecollection
 * 2010-08-23
 - Fixed multiple bugs in Special:TranslationStats
 * 2010-08-20

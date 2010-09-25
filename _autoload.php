@@ -172,3 +172,11 @@ $wgAutoloadClasses['HtmlTag'] = $dir . 'utils/Html.php';
 $wgAutoloadClasses['RawHtml'] = $dir . 'utils/Html.php';
 $wgAutoloadClasses['TagContainer'] = $dir . 'utils/Html.php';
 /**@}*/
+
+/**
+ * @name   API modules
+ * @{
+ */
+$wgAutoloadClasses['ApiQueryMessageCollection'] = $dir . 'api/ApiQueryMessageCollection.php';
+
+/**@}*/

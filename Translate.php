@@ -77,6 +77,9 @@ $wgSpecialPages['SupportedLanguages'] = 'SpecialSupportedLanguages';
 // Unlisted special page; does not need $wgSpecialPageGroups.
 $wgSpecialPages['MyLanguage'] = 'SpecialMyLanguage';
 
+// API
+$wgAPIListModules['messagecollection'] = 'ApiQueryMessageCollection';
+
 // Register hooks.
 $wgHooks['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';
 $wgHooks['OutputPageBeforeHTML'][] = 'TranslateEditAddons::addNavigation';

@@ -2,7 +2,6 @@
 /**
  * This file contains classes that implements message collections.
  *
- * @ingroup Extensions
  * @file
  * @author Niklas Laxström
  * @copyright Copyright © 2007-2010, Niklas Laxström
@@ -250,6 +249,17 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			default:
 				throw new MWException( "Unknown filter $type" );
 		}
+	}
+
+	public static function getAvailableFilters() {
+		return array(
+			'fuzzy',
+			'optional',
+			'ignored',
+			'hastranslation',
+			'changed',
+			'translated',
+		);
 	}
 
 	/**
