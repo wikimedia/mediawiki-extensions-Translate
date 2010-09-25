@@ -1823,6 +1823,7 @@ $messages['th'] = array(
  * @author AnakngAraw
  */
 $messages['tl'] = array(
+	'translategroupdescriptions-desc' => 'Mga paglalarawan sa pangkat ng mensahe para sa mga produktong tinatangkilik ng dugtong na [http://mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-nodesc' => 'Walang makukulang paglalarawan para sa pangkat ng mensaheng ito',
 	'translate-group-desc-mediawikicore' => 'Naglalaman ang pangkat ng mensaheng ito ng mga mensaheng ginagamit sa kasalukuyang bersyong alpa ng MediaWiki ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'Naglalaman ang pangkat ng mensaheng ito ng [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 pinakamadalas gamiting mga mensahe] sa MediaWiki',
@@ -1834,16 +1835,23 @@ $messages['tl'] = array(
 	'translate-group-desc-translate' => 'Pangkat ng mensahe ng Meta na naglalaman ng lahat ng mga mensahe para dugtong ng MediaWiki na [http://www.mediawiki.org/wiki/Extension:Translate Isalinwika]',
 	'translate-group-desc-wikiaextensions' => 'Pangkat ng mensahe ng Meta na naglalaman ng lahat ng mga mensahe para sa tinatangkilik na mga dugtong ng MediaWiki na ginagamit ng [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Pangkat ng mensahe ng Meta na naglalaman ng lahat ng mga mensahe para sa tinatangkilik na mga dugtong ng MediaWiki na ginagamit ng [http://wikimedia.org/ Pundasyong Wikimedia]',
+	'translate-group-desc-wikimediaextensions-main' => 'Pangkat ng mensahe ng Meta na naglalaman ng lahat  [http://meta.wikimedia.org/wiki/Language_committee lupon ng Wika] ng Wikimedia',
 	'translate-group-desc-uniwiki' => 'Pangkat ng mensahe ng Meta na naglalaman ng lahat ng mga mensahe para sa mga dugtong na may kaugnayan sa [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Pangkat ng mensahe ng Meta na naglalaman ng lahat ng mga mensahe para sa mga dugtong na may kaugnayan sa [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Pagpapanimula ng Pagkanagagamit ng Wikipedia]',
+	'translate-group-desc-translatablepages' => 'Lahat ng mga pahinang maisasalinwika',
 	'bw-desc-freecol' => 'Bago isalin ang FreeCol sa wika mo, paki basa ang [[Translating:FreeCol]]. Gumagamit ang Freecol ng lisensyang GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], isang poro sa web na nakasulat sa PHP.',
 	'bw-desc-mantisbt' => 'Ang [http://www.mantisbt.org MantisBT] ay isang malayang sistemang pangweb na pangtunton ng depekto. Paki-ulat ang anumang paksa sa [[Suporta]].',
+	'translate-group-desc-mantisbt-plugin-core' => 'Isang pangunahing pamasak para sa [[Translating:MantisBT|MantisBT]]',
+	'translate-group-desc-mediawiki-core-115' => 'Mga mensahe para sa matatag na bersyong 1.15 ng [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawiki-core-116' => 'Mga mensahe para sa matatag na bersyong 1.16 ng [[Translating:MediaWiki|MediaWiki]]',
 	'bw-desc-mwlibrl' => "Ang '''mwlib.rl''' ay isang aklatang-sawa para pagsusulat ng mga kasulatang PDF mula sa mga artikulo ng MediaWiki na nilitis ng aklatang mwlib.
 
 Mangyaring tingnan ang [[mw:Extension:PDF_Writer]] at ang http://code.pediapress.com/wiki/wiki/mwlibrl para sa mas marami pang kabatiran.",
 	'bw-desc-nocc' => 'Ang [http://nocc.sourceforge.net NOCC] ay isang kliyente ng webmail na nakasulat sa PHP.  Paki-ulat ang anumang mga paksa sa [[Support]].',
+	'translate-group-desc-okawix' => 'Ang [[Translating:Okawix|Okawix]] ay isang hindi nakakunekta sa Internet na pambasa ng Wikipedia',
 	'bw-desc-openlayers' => 'Ang OpenLayers ay isang manlilikha ng mapang masisigla na may bukas na pinagmumulan.  Mangyaring paki-ulat ang anumang mga paksa sa [[support]].',
+	'bw-desc-openstreetmap' => 'Lahat ng mga mensaheng may kaugnayan sa [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Naglalaman ang pangkat na pangmensaheng ito ng mga mensaheng panghangganang-mukha para sa [[Translating:Open Street Map|Bukas na Mapa ng Kalye]].  Tingnan ang [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} pahina ng Unikodigong CLDR para sa paliwanag ng mga susing pangmaramihan].',
 	'bw-desc-osm-potlatch' => "Naglalaman ang pangkat na pangmensaheng ito ng mga mensaheng panghangganang-mukha para sa [[Translating:OpenStreetMap|Potlatch]].  Mangyaring:
 
@@ -1851,6 +1859,7 @@ Mangyaring tingnan ang [[mw:Extension:PDF_Writer]] at ang http://code.pediapress
 * Gamitin ang [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] para sa pagsubok ng Potlatch.  Maaari kang magsubok doon hangga't nais mo sa loob ng alin mang lugar.",
 	'bw-desc-shapado' => 'Pangkat ng mensahe para sa malaya at bukas ang pinagmumulang sopwer ng T&S na [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => 'Ang [[Translating:StatusNet|StatusNet]] ay isang tagapaghaing pang-mikroblog na may bukas na pinagmumulan',
+	'translate-group-desc-statusnet-plugin' => 'Ang mga mensaheng ito ay bahagi ng isang pamasak para sa [[Translating:StatusNet|StatusNet]]',
 	'bw-desc-voctrain' => 'Pangsanay sa bokabularyo na nakabatay sa [http://omegawiki.org OmegaWiki].  Gumagamit na sistemang may lumilitaw na baraha upang matuto ng bokabularyo mula sa anumang wika papunta sa anumang wikang tinatangkilik ng Omegawiki.
 Nilikha para sa Pamantasan ng Bamberg. May lisensyang GPL 2.0 o mas luma.  Pinaunlad ni [[User:Kim Bruning|Kim Bruning]].
 
