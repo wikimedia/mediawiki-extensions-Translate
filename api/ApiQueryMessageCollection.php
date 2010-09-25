@@ -177,10 +177,10 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		$group = key( $groups );
 
 		return array(
-			'api.php?action=query&meta=siteinfo&siprop=languages List of support languages',
-			"api.php?action=query&list=messagecollection&mcgroup=$group List of non-optional message definitions",
-			"api.php?action=query&list=messagecollection&mcgroup=$group&mclanguage=fi&mcprop=definition|translation|tags&mcfilter=optional List of optional messages in Finnish with tags",
-			"api.php?action=query&generator=messagecollection&gmcgroup=$group&gmclanguage=nl&prop=revisions More information about latest translation revisions",
+			'api.php?action=query&meta=siteinfo&siprop=languages List of supported languages',
+			"api.php?action=query&list=messagecollection&mcgroup=$group List of non-optional message definitions for group $group",
+			"api.php?action=query&list=messagecollection&mcgroup=$group&mclanguage=fi&mcprop=definition|translation|tags&mcfilter=optional List of optional messages in Finnish with tags for group $group",
+			"api.php?action=query&generator=messagecollection&gmcgroup=$group&gmclanguage=nl&prop=revisions More information about latest translation revisions for group $group",
 		);
 	}
 
