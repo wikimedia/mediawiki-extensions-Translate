@@ -88,6 +88,8 @@ file = InterwikiDispatcher/SpecialInterwikiDispatcher.i18n.php
 aliasfile = InterwikiDispatcher/SpecialInterwikiDispatcher.alias.php
 
 Landing Page
+optional = landingpage-buttons-about-wikia-link, landingpage-buttons-new-look-link, landingpage-buttons-about-make-the-move-link, 
+ignored = landingpage-facebook-link, landingpage-wikia-blog-link, landingpage-twitter-link
 
 Link Suggest
 
@@ -191,6 +193,7 @@ ignored = theorytab-subpage
 Title Edit
 
 Top Lists
+ignored = toplists-msg-fb-OnRateArticle-link, toplists-msg-fb-OnRateArticle
 
 Video Embed Tool
 
