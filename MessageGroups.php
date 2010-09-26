@@ -743,6 +743,7 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 
 		$new_defs = array();
 		foreach ( $defs as $k => $v ) {
+			$k = str_replace( ' ', '_', $k );
 			$new_defs[$prefix . $k] = $v;
 		}
 
