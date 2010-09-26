@@ -170,6 +170,7 @@ $3 is an URL.',
 	'translate-tag-markthisagain' => '"has changes" is to be understood as "has been altered/edited"',
 	'translate-tag-hasnew' => '"has changes" is to be understood as "has been altered/edited"',
 	'tpt-languages-legend' => 'The caption of a language selector displayed using <code>&lt;languages /&gt;</code>, e.g. on [[Project list]].',
+	'pt-parse-open' => '"Translation template" is the structure of a translation page, where the place for the translations of each section is marked with a placeholder.',
 	'pt-shake-multiple' => 'Each translation (=section) unit can only contain one marker.',
 	'pt-shake-empty' => 'Translation unit (=section) is empty except for the translation marker (=<nowiki><!--T:1--></nowiki>)',
 	'pt-log-header' => 'Used on [[Special:Log/pagetranslation]]',
@@ -183,6 +184,45 @@ $3 is an URL.',
 	'pt-movepage-block-section-exists' => 'Section page is a translation of one section. Translation page consists of many translation sections.',
 	'pt-movepage-block-subpage-exists' => 'Subpage is here any subpage of translation page, which is not a translated version of the translatable page.',
 	'pt-movepage-reason' => '{{Identical|Reason}}',
+);
+
+/** Jamaican Creole English (Jamaican Creole English)
+ * @author Yocahuna
+ */
+$messages['jam'] = array(
+	'pagetranslation' => 'Piej chranslieshan',
+	'right-pagetranslation' => 'Maak voerjan a piejdem fi chranslieshan',
+	'tpt-desc' => 'Extenshan fi chransliet kantent piejdem',
+	'tpt-section' => 'Chranslieshan yuunit $1',
+	'tpt-section-new' => 'New chranslieshan yuunit.
+Niem: $1',
+	'tpt-section-deleted' => 'Chranslieshan yuunit $1',
+	'tpt-template' => 'Piej templit',
+	'tpt-templatediff' => 'Di piej templit chienj',
+	'tpt-diff-old' => 'Priivos tex',
+	'tpt-diff-new' => 'Nyuu tex',
+	'tpt-submit' => 'Maak dis voerjan fi chranslieshan',
+	'tpt-sections-oldnew' => 'Nyuu ahn egzisin chranslieshan yuunit',
+	'tpt-sections-deleted' => 'Chranslieshan yuunit wa diliit',
+	'tpt-sections-template' => 'Chranslieshan piej templit',
+	'tpt-action-nofuzzy' => 'No invalidiet no chranslieshan',
+	'tpt-badtitle' => 'Piej niem yu gi ($1) a no valid taikl',
+	'tpt-nosuchpage' => 'No piej ($1) no egzis',
+	'tpt-oldrevision' => '$2 a no di lietis voerjan a di piej [[$1]].
+Onggl lietis voerjan kiahn maak fi chranslieshan.',
+	'tpt-notsuitable' => 'Piej $1 no suutobl fi chranslieshan.
+Mek shuor se iab <nowiki><translate></nowiki> tag ahn gat valid sintax.',
+	'tpt-saveok' => 'Di piej [[$1]] maakop fi chranslieshan wid $2 {{PLURAL:$2|chranslieshan yuunit|chranslieshan yuunit}}.
+Di piej kiahn nou get <span class="plainlinks">[$3 chransliet]</span>.',
+	'tpt-badsect' => '"$1" a no valid niem fi chranslieshan yuunit $2.',
+	'tpt-showpage-intro' => 'Nyuu, egzisin ahn diliitid sekshan lis biluo.
+Bifuo yu maak dis voerjan fi chranslieshan, chek se di chienj to sekshandem minimaiz fi avaid anesiseri wok fi chranslietadem.',
+	'tpt-mark-summary' => 'Dis voerjan maak fi chranslieshan',
+	'tpt-edit-failed' => 'Kudn opdiet di piej: $1',
+	'tpt-already-marked' => 'Di lietis voerjan a dis piej don maak fi chranslieshan aredi.',
+	'tpt-unmarked' => 'Piej $1 no langa maak fi chranslieshan.',
+	'tpt-list-nopages' => 'No piej no maak fi chranslieshan nar redi fi maak fi chranslieshan.',
+	'tpt-old-pages' => 'Som voerjan a {{PLURAL:$1|dis piej|demaya piej}} don maak fi chranslieshan.',
 );
 
 /** Afrikaans (Afrikaans)
@@ -980,9 +1020,9 @@ Die Seite, die gerade bearbeitet wird, hat keine Verbindung zu einer übersetzba
 	'tpt-install' => 'Bitte <tt>maintenance/update.php</tt> oder Webinstallation ausführen, um die Seitenübersetzung zu aktivieren.',
 	'tpt-render-summary' => 'Übernehme Bearbeitung einer neuen Version der Quellseite',
 	'tpt-download-page' => 'Seite mit Übersetzungen exportieren',
-	'pt-parse-open' => 'Unsymmetrischer &lt;translate&gt;-Tag.
+	'pt-parse-open' => 'Eine &lt;translate&gt;-Markierung hat kein Gegenstück. 
 Übersetzungsvorlage: <pre>$1</pre>',
-	'pt-parse-close' => 'Unsymmetrischer &lt;&#47;translate&gt;-Tag.
+	'pt-parse-close' => 'Eine &lt;&#47;translate&gt;-Markierung hat kein Gegenstück.
 Übersetzungsvorlage: <pre>$1</pre>',
 	'pt-parse-nested' => 'Verschachtelte &lt;translate&gt;-Abschnitte sind nicht möglich.
 Text des Tag: <pre>$1</pre>',
@@ -991,7 +1031,7 @@ Text des Abschnitts: <pre>$1</pre>',
 	'pt-shake-position' => 'Abschnittsmarker befinden sich an unerwarteter Stelle.
 Text des Abschnitts: <pre>$1</pre>',
 	'pt-shake-empty' => 'Der Abschnitt für Marker $1 ist leer.',
-	'pt-log-header' => 'Logbuch der Änderungen im Zusammenhang mit dem Übersetzungssystem',
+	'pt-log-header' => 'Logbuch der Änderungen im Zusammenhang mit dem Übersetzungssystem für Seiten',
 	'pt-log-name' => 'Übersetzungs-Logbuch',
 	'pt-log-mark' => '{{GENDER:$2|gab}} Version $3 der Seite „[[:$1]]“ zur Übersetzung frei',
 	'pt-log-unmark' => '{{GENDER:$2|entfernte}} Seite „[[:$1]]“ aus der Übersetzung',
@@ -2771,12 +2811,14 @@ $messages['ksh'] = array(
 	'tpt-list-nopages' => 'Et sinn_er kein Sigge för zem Övversäze makeet, un et sin och kein doh, wo esu en Makeerunge eren künnte.',
 	'tpt-old-pages' => 'En Version vun hee dä {{PLURAL:$1|Sigg|Sigge|-}} es för zem Övversäze makeet.',
 	'tpt-new-pages' => '{{PLURAL:$1|Di Sigg hät|Di Sigge han|Kein Sigg hät}} ene <code lang="en">translation</code>-Befähl en sesch, ävve kei Version dofun es för ze Övversäze makeet.',
+	'tpt-other-pages' => '{{PLURAL:$1|En ällder Version vun heh dä Sigg es|$1 ällder Versione vun heh dä Sigg sin}} för et Övversäze frei jejovve, ävver de neuste Version löht sesh nit frei jävve.',
 	'tpt-rev-latest' => 'Neuste Version',
 	'tpt-rev-old' => 'Ongerscheid zor vörijje makeete Version',
 	'tpt-rev-mark-new' => 'donn di Version för et Övversäze makeere',
+	'tpt-rev-unmark' => 'Donn heh di Sigg vum Övversäze ußschleeße',
 	'tpt-translate-this' => 'donn di Sigg övversäze',
 	'translate-tag-translate-link-desc' => 'Don di Sigg hee övversäze',
-	'translate-tag-markthis' => 'Donn hee di Sigg för et Övversäze makeere',
+	'translate-tag-markthis' => 'Donn heh di Sigg för et Övversäze makeere',
 	'translate-tag-markthisagain' => 'Hee di Sigg es <span class="plainlinks">[$1 jeändert woode]</span> zick se et läz <span class="plainlinks">[$2 för ze Övversäze]</span> makeet woode es.',
 	'translate-tag-hasnew' => 'Hee di Sigg <span class="plainlinks">[$1 es jeändert woode]</span>, es ävver nit för ze Övversäze makeet woode.',
 	'tpt-translation-intro' => 'Hee di Sigg es en <span class="plainlinks">[$1 övversaz Version]</span> vun dä Sigg „[[$2]]“ un es zoh $3% jedonn un om aktoälle Shtandt.',
@@ -2784,10 +2826,21 @@ $messages['ksh'] = array(
 	'tpt-languages-legend' => 'Ander Shprooche:',
 	'tpt-target-page' => 'Hee di Sigg kam_mer nit vun Hand ändere. Dat hee es en Översäzungß_Sigg vun dä Sigg [[$1]]. De Övversäzung kam_mer övver däm Wiki sing [$2 Övversäzungß_Wärkzüsch] op der neußte Shtand bränge.',
 	'tpt-unknown-page' => 'Dat Appachtemang hee es för Sigge vum Enhallt vum Wiki ze Övversäze jedaach. Di Sigg, di de jraad ze ändere versöhks, schingk ävver nit met ööhnds en Sigg ze donn ze han, di för zem Övversäze makeet es.',
+	'tpt-delete-impossible' => 'Sigge fottzeschmieße, di för et Övversäze frei jejovve sin, es beß jäz noh_nit müjjelesh.',
 	'tpt-install' => 'Lohß op Dingem Wiki singem ẞööver dat Skrip <code>php maintenance/update.php</code> loufe, udder schmiiß dat Enreeschdungsprojramm övver et Web aan, öm de Müjjeleschkeit för Sigge ze övversäze en däm Wiki aan et Loufe ze bränge.',
 	'tpt-render-summary' => 'Ändere, öm op de neue Version fun de Ojinaal_Sigg ze kumme',
 	'tpt-download-page' => 'Sigge met Övversäzunge expotteere',
+	'pt-parse-open' => 'En &lt;translate&gt; es ohne Jääjeshtöck.
+De Siggeschabloon för ze övversäze: <pre>$1</pre>',
+	'pt-parse-close' => 'En &lt;/translate&gt; es ohne Jääjeshtöck.
+De Siggeschabloon för ze övversäze: <pre>$1</pre>',
 	'pt-shake-empty' => 'Em Affschnett met dä Makeerong „$1“ es nix dren.',
+	'pt-log-header' => 'Logbooch för di Saache, di mem Sigge Övversäze ze donn han',
+	'pt-log-name' => 'Logbooch vum Sigge Övversäze',
+	'pt-log-mark' => '{{GENDER:$2|hät}} de Version $3 vun dä Sigg „[[:$1]]“ för et Övversäze frei jejovve',
+	'pt-log-unmark' => '{{GENDER:$2|hät}} de Sigg „[[:$1]]“ vum Övversäze ußjeschloße',
+	'pt-log-moveok' => '{{GENDER:$2|hät}} dä Sigg „$1“ ene neue Tittel jejovve un dä Vörjang es jäz fäädesh',
+	'pt-log-movenok' => '{{GENDER:$2|wullt}} dä Tittel vun dä Sigg „[[:$1]]“ op „[[:$3]]“ ändere, dat hät nit jeflup',
 	'pt-movepage-title' => 'De övversäzbaa Sigg „$1“ ömnänne',
 	'pt-movepage-blockers' => 'Di övversäbaa Sigg künne mer nit ömbenänne. {{PLURAL:$1|Der Jrond es:|De Jrönd sin:|Mer weße ävver kein Jrönd doför.}}',
 	'pt-movepage-block-base-exists' => 'De Zielsigg „[[:$1]]“ jidd_et ald.',
@@ -2799,6 +2852,7 @@ $messages['ksh'] = array(
 	'pt-movepage-block-subpage-exists' => 'De Ziel_Ongersigg „[[:$2]]“ jidd_et ald.',
 	'pt-movepage-block-subpage-invalid' => 'Dä Tittel för de Onger_Sigg för „[[:$1]]“ wöhr nit jöltejsch, Velleisch zoh lang?',
 	'pt-movepage-list-pages' => 'De Leß met dä Sigge zom Ömbenänne',
+	'pt-movepage-list-translation' => 'Övversäzbaa Sigge',
 	'pt-movepage-list-section' => 'Affschnetts_Sigge',
 	'pt-movepage-list-other' => 'Ander Ongersigge',
 	'pt-movepage-list-count' => 'Ensjesamp ham_mer {{PLURAL:$1|ein Sigg|$1 Sigge|kein Sigg}} för ömzenänne.',
@@ -2809,9 +2863,15 @@ $messages['ksh'] = array(
 	'pt-movepage-subpages' => 'De Ongersigge all met ömnänne',
 	'pt-movepage-action-check' => 'Fengk erus, ov dat Ömnänne müjjlesch es',
 	'pt-movepage-action-perform' => 'Ömnänne!',
+	'pt-movepage-action-other' => 'Ander Zieltittel',
+	'pt-movepage-intro' => 'Heh di Extrasigg löht Desh Sigge ömdäufe, di för et Övversäze frei jejovve sin.
+Dat jeiht nit en einem Rötsch, weil ene Pönge Sigge un -Deile ömjenannt wääde möße.
+Em MediaWiki sing <i lang="en"> [http://www.mediawiki.org/wiki/Manual:Job_queue job queue] </i> weed doför jebruch.
+Su lang, wi de Sigge ömjenannt wääde, kam_mer met dänne nix söns maache.
+Fähler kumme en et [[Special:Log/pagetranslation|{{int:pt-log-name}}]] un möße vun Hand opjerühmp wääde.',
 	'pt-movepage-logreason' => 'Deil vun dä övversäzbaa Sigg „$1“',
 	'pt-movepage-started' => 'Di Sigg weed jäz ömjenannt.
-Don op jede Fall em [[Special:Log/pagetranslation|Logbooch vum Övversäze]] noh Fähler loore, un dat dat öhndlesch aan et Eng jekumme es.',
+Don op jede Fall em [[Special:Log/pagetranslation|{{int:pt-log-name}}]] noh Fähler loore, un dat dat öhndlesch aan et Eng jekumme es.',
 	'pt-locked-page' => 'Dat Stöck heh is jesperrt, däm sing övversäbaa Sigg weed nämmisch jrad ömbenannt.',
 );
 

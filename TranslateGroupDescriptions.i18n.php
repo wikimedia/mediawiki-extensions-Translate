@@ -532,6 +532,7 @@ $messages['eo'] = array(
 /** Spanish (Español)
  * @author Crazymadlover
  * @author Locos epraix
+ * @author Peter17
  * @author Translationista
  */
 $messages['es'] = array(
@@ -548,6 +549,7 @@ $messages['es'] = array(
 	'translate-group-desc-wikimediaextensions' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones MediaWiki soportadas usadas por [http://wikimedia.org/ Wikimedia Foundation]',
 	'translate-group-desc-uniwiki' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones relacionadas a [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones relacionadas a la [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Iniciativa de usabilidad de Wikipedia]',
+	'translate-group-desc-translatablepages' => 'Todas las páginas traducibles',
 	'bw-desc-freecol' => 'Antes de traducir FreeCol a tu idioma, por favor lee [[Translating:FreeCol]]. Freecol usa la licencia GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], un foro web escrito en PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] es un sistema de corrección de errores libre basado en web. Por favor reporta cualquier problema en [[Support]].',
@@ -625,6 +627,7 @@ $messages['fr'] = array(
 	'translate-group-desc-translate' => 'Groupe des messages Meta contenant tous les messages de l’extension MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-wikiaextensions' => 'Ce méta-groupe de messages contient tous les messages des extensions MediaWiki utilisées par [http://www.wikia.com Wikia].',
 	'translate-group-desc-wikimediaextensions' => 'Ce méta-groupe de messages contient tous les messages des extensions MediaWiki utilisées par la [http://wikimedia.org/ Wikimedia Foundation].',
+	'translate-group-desc-wikimediaextensions-main' => 'Groupe de messages méta comprenant tous les messages pour les extensions MediaWiki supportées et qui doivent être traduits pour le [http://meta.wikimedia.org/wiki/Language_committee Comité des langues] de Wikimedia',
 	'translate-group-desc-uniwiki' => 'Meta groupe de messages contenant tous les messages pour les extensions apparentées à [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Groupe de messages Meta contenant tous les messages des extensions liées à [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 	'translate-group-desc-translatablepages' => 'Toutes les pages traductibles',

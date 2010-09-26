@@ -121,6 +121,22 @@ $messages['qqq'] = array(
 	'translate-fs-permissions-text' => 'Synonym for "filed" is "submitted".',
 );
 
+/** Jamaican Creole English (Jamaican Creole English)
+ * @author Yocahuna
+ */
+$messages['jam'] = array(
+	'firststeps' => 'Fos tepdem',
+	'firststeps-desc' => '[[Special:FirstSteps|Peshal piej]] fi get yuuza taat pan a wiki a yuuz di Chransliet extenshan',
+	'translate-fs-pagetitle-done' => '- don!',
+	'translate-fs-pagetitle' => 'Taat op wizad - $1',
+	'translate-fs-signup-title' => 'Sain op',
+	'translate-fs-settings-title' => 'Kanfiga yu prefransdem',
+	'translate-fs-userpage-title' => 'Kriet yu yuuza piej',
+	'translate-fs-permissions-title' => 'Rikwes chranslieta pomishan',
+	'translate-fs-target-title' => 'Taat fi chransliet!',
+	'translate-fs-email-title' => 'Kanfoerm yu e-miel ajres.',
+);
+
 /** Arabic (العربية)
  * @author ترجمان05
  */
