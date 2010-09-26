@@ -194,7 +194,7 @@ class TranslatablePage {
 
 		// Add section to allow translating the page name
 		$displaytitle = new TPSection;
-		$displaytitle->id = $this->displayTitle
+		$displaytitle->id = $this->displayTitle;
 		$displaytitle->text = $this->getTitle()->getPrefixedText();
 		$sections[self::getUniq()] = $displaytitle;
 
