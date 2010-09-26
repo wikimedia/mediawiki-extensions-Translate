@@ -13,6 +13,8 @@ Auto Create Wiki
 optional = autocreatewiki-reminder-subject, autocreatewiki-language-top-list
 ignored = requestwiki-filter-language, autocreatewiki-tagline
 
+Auto Hubs Pages
+
 Badges
 file = Badges/UserBadges.i18n.php
 optional = user-badge-left-align, user-badge-center-align, user-badge-right-align
