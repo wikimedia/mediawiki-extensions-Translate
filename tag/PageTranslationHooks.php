@@ -34,6 +34,10 @@ class PageTranslationHooks {
 		if ( $page = TranslatablePage::isTranslationPage( $title ) ) {
 			list( , $code ) = TranslateUtils::figureMessage( $title->getText() );
 			$parser->getOptions()->setTargetLanguage( Language::factory( $code ) );
+			$name = $page->getPageDisplayTitle( $code );
+			if ( $name ) {
+				$parser->getOutput()->setDisplayTitle( $name );
+			}
 		}
 
 		return true;
@@ -394,7 +398,7 @@ FOO;
 
 		if ( $marked && $wgUser->isAllowed( 'translate' ) ) {
 			$par = array(
-				'group' => 'page|' . $title->getPrefixedText(),
+				'group' => $page->getMessageGroupId(),
 				'language' => $wgLang->getCode(),
 				'task' => 'view'
 			);
@@ -462,7 +466,7 @@ FOO;
 		$wgOut->wrapWikiMsg( $wrap, array( 'tpt-translation-intro', $url, $titleText, $per ) );
 
 		if ( ((int) $per) < 100 ) {
-			$group = MessageGroups::getGroup( 'page|' . $page->getTitle()->getPrefixedText() );
+			$group = $page->getMessageGroup();
 			$collection = $group->initCollection( $code );
 			$collection->filter( 'fuzzy', false );
 			if ( count( $collection ) ) {

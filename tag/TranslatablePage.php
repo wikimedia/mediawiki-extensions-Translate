@@ -39,6 +39,8 @@ class TranslatablePage {
 	 */
 	protected $init = false;
 
+	protected $displayTitle = 'Page display title';
+
 	/**
 	 * @param title Title object for the page
 	 */
@@ -146,6 +148,34 @@ class TranslatablePage {
 	// Public functions //
 
 	/**
+	 * Returns MessageGroup id (to be) used for translating this page.
+	 * @return \string
+	 */
+	public function getMessageGroupId() {
+		return 'page|' . $this->getTitle()->getPrefixedText();
+	}
+
+	/**
+	 * Returns MessageGroup used for translating this page. It may still be empty
+	 * if the page has not been ever marked.
+	 * @return \type{WikiPageMessageGroup}
+	 */
+	public function getMessageGroup() {
+		return MessageGroups::getGroup( $this->getMessageGroupId() );
+	}
+
+	/**
+	 * Get translated page title.
+	 * @param $code \string Language code.
+	 * @return \string or null
+	 */
+	public function getPageDisplayTitle( $code ) {
+		$section = str_replace( ' ', '_', $this->displayTitle );
+		$page = $this->getTitle()->getPrefixedDBKey();
+		return $this->getMessageGroup()->getMessage( "$page/$section", $code );
+	}
+
+	/**
 	 * Returns a TPParse object which represents the parsed page.
 	 * Throws TPExcetion if the page is malformed as a translatable
 	 * page.
@@ -161,6 +191,13 @@ class TranslatablePage {
 		$text = self::armourNowiki( $nowiki, $text );
 
 		$sections = array();
+
+		// Add section to allow translating the page name
+		$displaytitle = new TPSection;
+		$displaytitle->id = $this->displayTitle
+		$displaytitle->text = $this->getTitle()->getPrefixedText();
+		$sections[self::getUniq()] = $displaytitle;
+
 		$tagPlaceHolders = array();
 
 		while ( true ) {
@@ -500,7 +537,7 @@ class TranslatablePage {
 		$titles = $this->getTranslationPages();
 
 		// Calculate percentages for the available translations
-		$group = MessageGroups::getGroup( 'page|' . $this->getTitle()->getPrefixedText() );
+		$group = $this->getMessageGroup();
 		if ( !$group instanceof WikiPageMessageGroup ) {
 			return null;
 		}
@@ -629,7 +666,6 @@ class TranslatablePage {
 		$codes = Language::getLanguageNames( false );
 		global $wgTranslateDocumentationLanguageCode, $wgContLang;
 		unset( $codes[$wgTranslateDocumentationLanguageCode] );
-		unset( $codes[$wgContLang->getCode()] );
 
 		if ( !isset( $codes[$code] ) ) {
 			return false;
