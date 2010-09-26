@@ -346,7 +346,7 @@ class ExportMessagesTask extends ViewMessagesTask {
 	protected function doPaging() {}
 
 	public function output() {
-		if ( $this->group instanceof FileBasedMessageGroup ) {
+		if ( $this->group instanceof MessageGroupBase ) {
 			$ffs = $this->group->getFFS();
 			$data = $ffs->writeIntoVariable( $this->collection );
 		} else {
