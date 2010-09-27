@@ -32,6 +32,8 @@ Category Hubs
 
 Category Select
 
+Cloak Check
+
 Comments Forum
 file = CommentsForum/Forum.i18n.php
 
