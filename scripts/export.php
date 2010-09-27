@@ -104,7 +104,7 @@ if ( $group instanceof FileBasedMessageGroup ) {
 
 	foreach ( $langs as $lang ) {
 		// Do not export if language code is to be skipped.
-		if( in_array( $lang, $skip ) {
+		if( in_array( $lang, $skip ) ) {
 			continue;
 		}
 
