@@ -22,6 +22,9 @@ Options:
   --lang        Comma separated list of language codes or *
   --group       Group ID
   --threshold   Do not export under this percentage translated
+  --ppgettext   Group root path for checkout of product. "msgmerge" will post
+                process on the export result based on the current definitionFile
+                in that location
 EOT
 );
 	exit( 1 );
@@ -79,9 +82,38 @@ if ( $group instanceof FileBasedMessageGroup ) {
 	$ffs->setWritePath( $options['target'] );
 	$collection = $group->initCollection( 'en' );
 
+	$definitionFile = false;
+
+	if ( isset( $options['ppgettext'] ) && $ffs instanceof GettextFFS ) {
+		global $wgMaxShellMemory;
+
+		// Need more shell memory for msgmerge.
+		$wgMaxShellMemory = 302400;
+
+		$conf = $group->getConfiguration();
+		$definitionFile = str_replace( '%GROUPROOT%', $options['ppgettext'], $conf['FILES']['definitionFile'] );
+	}
+
 	foreach ( $langs as $lang ) {
 		$collection->resetForNewLanguage( $lang );
 		$ffs->write( $collection );
+
+		// Do post processing if requested.
+		if ( $definitionFile ) {
+			if ( is_file( $definitionFile ) ) {
+				$targetFileName = $ffs->getWritePath() . $group->getTargetFilename( $collection->code );
+				$cmd = "msgmerge --update --backup=off " . $targetFileName . ' ' . $definitionFile;
+				wfShellExec( $cmd, $ret );
+
+				// Report on errors.
+				if ( $ret ) {
+					STDERR( 'ERROR: ' . $ret );
+				}
+			} else {
+				STDERR( $definitionFile . ' does not exist.' );
+				exit( 1 );
+			}
+		}
 	}
 } else {
 	$writer = $group->getWriter();
