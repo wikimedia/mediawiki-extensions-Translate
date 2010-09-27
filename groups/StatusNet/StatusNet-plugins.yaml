@@ -115,6 +115,34 @@ MANGLER:
   prefix: blacklist-
 ---
 BASIC:
+  id: out-statusnet-plugin-blankad
+  label: StatusNet - BlankAd
+  display: out/statusnet/plugin/blankad
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/BlankAd/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/BlankAd/locale/%CODE%/LC_MESSAGES/BlankAd.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/BlankAd/locale/BlankAd.pot
+  targetPattern: statusnet/plugins/BlankAd/locale/%CODE%/LC_MESSAGES/BlankAd.po
+
+MANGLER:
+  prefix: blankad-
+---
+BASIC:
+  id: out-statusnet-plugin-blogspamnet
+  label: StatusNet - BlogspamNet
+  display: out/statusnet/plugin/blogspamnet
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/BlogspamNet/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/BlogspamNet/locale/%CODE%/LC_MESSAGES/BlogspamNet.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/BlogspamNet/locale/BlogspamNet.pot
+  targetPattern: statusnet/plugins/BlogspamNet/locale/%CODE%/LC_MESSAGES/BlogspamNet.po
+
+MANGLER:
+  prefix: blogspamnet-
+---
+BASIC:
   id: out-statusnet-plugin-cachelog
   label: StatusNet - CacheLog
   display: out/statusnet/plugin/cachelog
@@ -157,6 +185,20 @@ MANGLER:
   prefix: clientsideshorten-
 ---
 BASIC:
+  id: out-statusnet-plugin-comet
+  label: StatusNet - Comet
+  display: out/statusnet/plugin/comet
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/Comet/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/Comet/locale/%CODE%/LC_MESSAGES/Comet.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/Comet/locale/Comet.pot
+  targetPattern: statusnet/plugins/Comet/locale/%CODE%/LC_MESSAGES/Comet.po
+
+MANGLER:
+  prefix: comet-
+---
+BASIC:
   id: out-statusnet-plugin-directiondetector
   label: StatusNet - DirectionDetector
   display: out/statusnet/plugin/directiondetector
@@ -169,6 +211,20 @@ FILES:
 
 MANGLER:
   prefix: directiondetector-
+---
+BASIC:
+  id: out-statusnet-plugin-diskcache
+  label: StatusNet - DiskCache
+  display: out/statusnet/plugin/diskcache
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/DiskCache/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/DiskCache/locale/%CODE%/LC_MESSAGES/DiskCache.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/DiskCache/locale/DiskCache.pot
+  targetPattern: statusnet/plugins/DiskCache/locale/%CODE%/LC_MESSAGES/DiskCache.po
+
+MANGLER:
+  prefix: diskcache-
 ---
 BASIC:
   id: out-statusnet-plugin-disqus
@@ -421,6 +477,20 @@ FILES:
 
 MANGLER:
   prefix: memcached-
+---
+BASIC:
+  id: out-statusnet-plugin-meteor
+  label: StatusNet - Meteor
+  display: out/statusnet/plugin/meteor
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/Meteor/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/Meteor/locale/%CODE%/LC_MESSAGES/Meteor.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/Meteor/locale/Meteor.pot
+  targetPattern: statusnet/plugins/Meteor/locale/%CODE%/LC_MESSAGES/Meteor.po
+
+MANGLER:
+  prefix: meteor-
 ---
 BASIC:
   id: out-statusnet-plugin-minify
