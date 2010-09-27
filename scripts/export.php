@@ -3,12 +3,13 @@
  * Script to export translations of one message group to file(s).
  *
  * @author Niklas Laxstrom
- * @copyright Copyright © 2008-2010, Niklas Laxström
+ * @author Siebrand Mazeland
+ * @copyright Copyright © 2008-2010, Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  * @file
  */
 
-$optionsWithArgs = array( 'lang', 'target', 'group', 'threshold' );
+$optionsWithArgs = array( 'lang', 'skip', 'target', 'group', 'threshold', 'ppgettext' );
 require( dirname( __FILE__ ) . '/cli.inc' );
 
 function showUsage() {
@@ -20,6 +21,7 @@ Usage: php export.php [options...]
 Options:
   --target      Target directory for exported files
   --lang        Comma separated list of language codes or *
+  --skip        Languages to skip, comma separated list
   --group       Group ID
   --threshold   Do not export under this percentage translated
   --ppgettext   Group root path for checkout of product. "msgmerge" will post
@@ -42,6 +44,12 @@ if ( !isset( $options['target'] ) ) {
 if ( !isset( $options['lang'] ) ) {
 	STDERR( "You need to specify languages to export" );
 	exit( 1 );
+}
+
+if ( isset( $options['skip'] ) ) {
+	$skip = array_map( 'trim', explode( ',', $options['skip'] ) );
+} else {
+	$skip = array();
 }
 
 if ( !isset( $options['group'] ) ) {
@@ -95,6 +103,11 @@ if ( $group instanceof FileBasedMessageGroup ) {
 	}
 
 	foreach ( $langs as $lang ) {
+		// Do not export if language code is to be skipped.
+		if( in_array( $lang, $skip ) {
+			continue;
+		}
+
 		$collection->resetForNewLanguage( $lang );
 		$ffs->write( $collection );
 
@@ -102,7 +115,7 @@ if ( $group instanceof FileBasedMessageGroup ) {
 		if ( $definitionFile ) {
 			if ( is_file( $definitionFile ) ) {
 				$targetFileName = $ffs->getWritePath() . $group->getTargetFilename( $collection->code );
-				$cmd = "msgmerge --update --backup=off " . $targetFileName . ' ' . $definitionFile;
+				$cmd = "msgmerge --quiet --update --backup=off " . $targetFileName . ' ' . $definitionFile;
 				wfShellExec( $cmd, $ret );
 
 				// Report on errors.
