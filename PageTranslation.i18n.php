@@ -739,6 +739,7 @@ Prije nego što označite ovu verziju za prevođenje, provjerite da su izmjene s
 	'tpt-rev-latest' => 'posljednja verzija',
 	'tpt-rev-old' => 'razlika od ranije označene verzije',
 	'tpt-rev-mark-new' => 'označi ovu verziju za prevođenje',
+	'tpt-rev-unmark' => 'ukloni ovu stranicu iz prevođenja',
 	'tpt-translate-this' => 'prevedi ovu stranicu',
 	'translate-tag-translate-link-desc' => 'Prevedi ovu stranicu',
 	'translate-tag-markthis' => 'Označi ovu stranicu za prevođenje',
@@ -754,6 +755,15 @@ Stranica koju pokušavate uređivati ne odgovara nekoj od stranica koje su ozna�
 	'tpt-install' => 'Pokrenite php maintenance/update.php ili web install da biste omogućili osobinu prevođenja stranica.',
 	'tpt-render-summary' => 'Ažuriram na novu verziju izvorne stranice',
 	'tpt-download-page' => 'Izvezi stranicu sa prijevodima',
+	'pt-movepage-title' => 'Premještanje stranice za prevođenje $1',
+	'pt-movepage-list-pages' => 'Spisak stranica za premještanje',
+	'pt-movepage-list-section' => 'Stranice sekcije',
+	'pt-movepage-list-other' => 'Druge podstranice',
+	'pt-movepage-current' => 'Trenutni naziv:',
+	'pt-movepage-new' => 'Novi naziv:',
+	'pt-movepage-reason' => 'Razlog:',
+	'pt-movepage-subpages' => 'Premjesti sve podstranice',
+	'pt-movepage-action-other' => 'Promijeni cilj',
 );
 
 /** Buginese (ᨅᨔ ᨕᨘᨁᨗ)

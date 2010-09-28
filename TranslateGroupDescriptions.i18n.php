@@ -1041,6 +1041,7 @@ Per favore:
 );
 
 /** Japanese (日本語)
+ * @author Aphaia
  * @author Fryed-peach
  * @author Hosiryuhosi
  * @author 青子守歌
@@ -1058,6 +1059,7 @@ $messages['ja'] = array(
 	'translate-group-desc-translate' => 'MediaWiki 拡張機能 [http://www.mediawiki.org/wiki/Extension:Translate Translate] のすべてのメッセージを含んだメタメッセージグループ',
 	'translate-group-desc-wikiaextensions' => '[http://www.wikia.com Wikia] で使われている、サポート対象の MediaWiki 拡張機能のすべてのメッセージを含んだメタメッセージグループ',
 	'translate-group-desc-wikimediaextensions' => '[http://wikimedia.org/ ウィキメディア財団]で使われている、サポート対象の MediaWiki 拡張機能のすべてのメッセージを含んだメタメッセージグループ',
+	'translate-group-desc-wikimediaextensions-main' => 'ウィキメディア[http://meta.wikimedia.org/wiki/Language_committee 言語委員会 (LangCom)]が翻訳を要求するメディアウィキ拡張機能をサポートするすべてのメッセージからなるメタメッセージグループ',
 	'translate-group-desc-uniwiki' => '[http://unicefinnovation.org/wiki.php Uniwiki] に関連する拡張機能のすべてのメッセージを含んだメタメッセージグループ',
 	'translate-group-desc-ui' => '[http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative] に関連した拡張機能のすべてのメッセージを含んだメタメッセージグループ',
 	'translate-group-desc-translatablepages' => 'すべての翻訳可能なページ',
@@ -1533,6 +1535,7 @@ $messages['pt'] = array(
 	'translate-group-desc-translate' => 'Este meta-grupo contém todas as mensagens para a extensão do MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Traduzir]',
 	'translate-group-desc-wikiaextensions' => 'Este meta-grupo contém todas as mensagens para as extensões suportadas do MediaWiki que são usadas pela [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Este meta-grupo contém todas as mensagens para as extensões MediaWiki suportadas, usadas pela [http://wikimedia.org/ Wikimedia Foundation]',
+	'translate-group-desc-wikimediaextensions-main' => 'Este meta-grupo contém todas as mensagens para as extensões MediaWiki suportadas, que requerem tradução para o [http://meta.wikimedia.org/wiki/Language_committee Comité de Línguas] da Wikimedia',
 	'translate-group-desc-uniwiki' => 'Este meta-grupo contém todas as mensagens para as extensões relacionadas com o [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Este meta-grupo contém todas as mensagens para as extensões relacionadas com a [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Iniciativa de Usabilidade da Wikipédia]',
 	'translate-group-desc-translatablepages' => 'Todas as páginas traduzíveis',

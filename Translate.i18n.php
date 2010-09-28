@@ -2033,6 +2033,7 @@ $1',
 $messages['bar'] = array(
 	'translate-sidebar-alltrans' => 'Auf åndre Sproochen',
 	'translations' => 'Olle Ywersetzungen',
+	'translate-language' => 'Sprooch',
 );
 
 /** Southern Balochi (بلوچی مکرانی)
@@ -3872,7 +3873,7 @@ Du opfordres til at gennemse beskeder gennem [[Special:Translate|{{int:translate
  */
 $messages['de'] = array(
 	'translate' => 'Übersetzen',
-	'translate-desc' => '[[Special:Translate|Spezialseite]] für die Übersetzung von MediaWiki-Systemnachrichten',
+	'translate-desc' => 'Ergänzt eine [[Special:Translate|Spezialseite]] zur Übersetzung von MediaWiki-Systemnachrichten',
 	'translate-edit' => 'Bearbeiten',
 	'translate-talk' => 'Diskussion',
 	'translate-history' => 'Versionen',
@@ -13055,7 +13056,7 @@ $1",
 	'translate-import-err-no-headers' => "Lo fichièr es pas un fichièr ''Gettext'' plan format dins lo format esperat per l’extension ''Translate'' :
 es impossible de determinar lo grop e la lenga dempuèi las entèstas del fichièr.",
 	'translate-import-err-warnings' => 'Lo fichièr es pas format coma cal.
-Asseguratz-vos que vòstre esplech de traduccion suprimís pas los camps « msgctxt ».
+Asseguratz-vos que vòstra aisina de traduccion suprimís pas los camps « msgctxt ».
 Detalhs : $1',
 	'translate-js-next' => 'Salvar e dobrir lo seguent',
 	'translate-js-nonext' => "Èra lo darrièr messatge d'aquesta pagina.",
