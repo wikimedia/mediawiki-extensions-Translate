@@ -134,8 +134,8 @@ foreach( $groups as $groupId => $group ) {
 		}
 
 		foreach ( $langs as $lang ) {
-			// Do not export if language code is to be skipped.
-			if( in_array( $lang, $skip ) && !$group->isValidLanguage( $lang ) ) {
+			// Do not export if language code is to be skipped or is not a valid language.
+			if( in_array( $lang, $skip ) || !$group->isValidLanguage( $lang ) ) {
 				continue;
 			}
 
