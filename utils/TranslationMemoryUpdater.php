@@ -92,13 +92,18 @@ class TranslationMemoryUpdater {
 	 * @return DatabaseSqlite or null
 	 */
 	public static function getDatabaseHandle() {
-		global $wgTranslateTM;
+		global $wgTranslateTranslationServices;
 
-		if ( !isset( $wgTranslateTM['database'] ) ) {
-			return null;
+		$database = null;
+
+		foreach ( $wgTranslateTranslationServices as $service => $config ) {
+			if ( $config['type'] === 'tmserver' && isset( $config['database'] ) ) {
+				$database = $config['database'];
+				break;
+			}
 		}
 
-		$database = $wgTranslateTM['database'];
+		if ( $database === null ) return null;
 
 		if ( !is_string( $database ) ) {
 			wfDebugLog( 'tmserver', 'Database configuration is not a string' );
