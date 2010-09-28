@@ -103,6 +103,8 @@ foreach( $groups as $groupId => $group ) {
 		exit( 1 );
 	}
 
+	STDERR( 'Exporting ' . $groupId );
+
 	if ( $threshold ) {
 		$langs = TranslationStats::getPercentageTranslated(
 			$groupId,
@@ -111,8 +113,6 @@ foreach( $groups as $groupId => $group ) {
 			true
 		);
 	}
-
-	STDERR( 'Exporting ' . $groupId );
 
 	if ( $group instanceof FileBasedMessageGroup ) {
 		$ffs = $group->getFFS();
