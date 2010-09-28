@@ -71,7 +71,7 @@ if ( isset( $options['threshold'] ) && intval( $options['threshold'] ) ) {
 	$threshold = false;
 }
 
-$langs = Cli::parseLanguageCodes( $options['lang'] );
+$reqLangs = Cli::parseLanguageCodes( $options['lang'] );
 
 $groups = array();
 
@@ -108,10 +108,12 @@ foreach( $groups as $groupId => $group ) {
 	if ( $threshold ) {
 		$langs = TranslationStats::getPercentageTranslated(
 			$groupId,
-			$langs,
+			$reqLangs,
 			$threshold,
 			true
 		);
+	} else {
+		$langs = $reqLangs;
 	}
 
 	if ( $group instanceof FileBasedMessageGroup ) {
