@@ -869,3 +869,17 @@ FILES:
 
 MANGLER:
   prefix: xcache-
+---
+BASIC:
+  id: out-statusnet-plugin-yammerimport
+  label: StatusNet - YammerImport
+  display: out/statusnet/plugin/yammerimport
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/YammerImport/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/YammerImport/locale/%CODE%/LC_MESSAGES/YammerImport.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/YammerImport/locale/YammerImport.pot
+  targetPattern: statusnet/plugins/YammerImport/locale/%CODE%/LC_MESSAGES/YammerImport.po
+
+MANGLER:
+  prefix: yammerimport-
