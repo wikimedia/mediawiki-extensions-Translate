@@ -471,13 +471,10 @@ class TranslatablePage {
 	public function getTranslationUrl( $code = false ) {
 		$translate = SpecialPage::getTitleFor( 'Translate' );
 		$params = array(
-			'group' => 'page|' . $this->getTitle()->getPrefixedText(),
-			'task' => 'view'
+			'group' => $this->getMessageGroupId(),
+			'task' => 'view',
+			'language' => $code,
 		);
-
-		if ( $code ) {
-			$params['language'] = $code;
-		}
 
 		return $translate->getFullURL( $params );
 	}

@@ -253,16 +253,9 @@ class SpecialTranslate extends SpecialPage {
 	protected function taskSelector( $pageTranslation = false ) {
 		$selector = new HTMLSelector( 'task', 'task', $this->options['task'] );
 
-		/**
-		 * Check if this is a page translation group to return only appropriate tasks.
-		 */
-		$isPageTranslation = false;
-		if ( $this->group ) {
-			$isPageTranslation = strpos( $this->group->getId(), 'page|' ) === 0;
-		}
-
+		$isPageTranslation = $this->group instanceof WikiPageMessageGroup;
 		foreach ( TranslateTasks::getTasks( $isPageTranslation ) as $id ) {
-			$label = call_user_func( array( 'TranslateTask', 'labelForTask' ), $id );
+			$label = TranslateTask::labelForTask( $id );
 			$selector->addOption( $label, $id );
 		}
 
