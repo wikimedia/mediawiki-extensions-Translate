@@ -6,7 +6,7 @@
  * @todo Use Maitenance class and add target option for writing output file.
  * @file
  * @author Siebrand Mazeland
- * @copyright Copyright © 2010 Siebrand Mazeland
+ * @copyright Copyright Â© 2010 Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
