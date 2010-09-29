@@ -19,6 +19,7 @@ GROUPS:
   - ext-confirmeditfancycaptcha
   - ext-crossnamespacelinks
   - ext-dismissablesitenotice
+  - ext-dontswitchmeover
   - ext-gadgets
   - ext-globalblocking
   - ext-globalusage
@@ -29,12 +30,17 @@ GROUPS:
   - ext-ogghandler
   - ext-parserfunctions
   - ext-pdfhandler
+  - ext-prefstats
+  - ext-prefswitch
   - ext-quiz
   - ext-renameuser
   - ext-securepoll
+  - ext-simpleantispam
   - ext-sitematrix
+  - ext-spamblacklist
   - ext-timeline
   - ext-titleblacklist
-  - ext-titlekey
   - ext-torblock
+  - ext-vector
+  - ext-wikieditor
   - ext-wikimediamessages
