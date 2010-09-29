@@ -1,12 +1,25 @@
 <?php
 /**
- * Quick script to generate YAML configuration for StatusNet plugins.
+ * Script to generate YAML configuration for StatusNet plugins.
+ * @see StatusNet-plugins.yaml
  *
  * @todo Use Maitenance class and add target option for writing output file.
+ * @file
+ * @author Siebrand Mazeland
+ * @copyright Copyright © 2010 Siebrand Mazeland
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+// Array of found plugins.
 $plugins = array();
 
+/**
+ * Helper method to traverse a path and find plugins.
+ *
+ * @param $path string Starting path on file system.
+ * @param $pattern string Regular expression for files to find in $path.
+ * @return array Array of plugins found.
+ */
 function getPotFiles( $path, $pattern ) {
 	global $plugins;
 
@@ -29,11 +42,14 @@ function getPotFiles( $path, $pattern ) {
 	}
 }
 
+// translatewiki.net specific base folder.
 $baseFolder = '/home/betawiki/projects/statusnet/plugins/';
+// File pattern for gettext template files.
 $filePattern = '/[.]pot$/';
 
 getPotFiles( $baseFolder, $filePattern );
 
+// Template header for YAML config file.
 $header = <<<PHP
 TEMPLATE:
   BASIC:
@@ -78,6 +94,7 @@ asort( $plugins );
 $numberPlugins = count( $plugins );
 $count = 0;
 
+// Add config for each plugin.
 foreach ( $plugins as $plugin ) {
 	$pluginL = strtolower( $plugin );
 
