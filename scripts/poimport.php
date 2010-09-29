@@ -97,7 +97,7 @@ class PoImporter {
 		$data = str_replace( "\r\n", "\n", $data );
 
 		$matches = array();
-		if ( preg_match( '/X-Language-Code:\s+([a-zA-Z-_]+)/', $data, $matches ) ) {
+		if ( preg_match( '/X-Language-Code:\s+(.*)\\\n/', $data, $matches ) ) {
 			$code = $matches[1];
 			STDOUT( "Detected language as $code" );
 		} else {
@@ -105,7 +105,7 @@ class PoImporter {
 			return false;
 		}
 
-		if ( preg_match( '/X-Message-Group:\s+([a-zA-Z0-9-._\|]+)/', $data, $matches ) ) {
+		if ( preg_match( '/X-Message-Group:\s+(.*)\\\n/', $data, $matches ) ) {
 			$groupId = $matches[1];
 			STDOUT( "Detected message group as $groupId" );
 		} else {
@@ -179,6 +179,7 @@ class WikiWriter {
 	private $dryrun = true;
 	private $allclear = false;
 	private $group = null;
+	protected $user;
 
 	/**
 	 * @param $changes \array Array of key/langcode => translation.
@@ -190,12 +191,13 @@ class WikiWriter {
 		$this->changes = $changes;
 		$this->dryrun = $dryrun;
 		$this->group = MessageGroups::getGroup( $groupId );
+		if ( !$this->group ) {
+			STDERR( "Group $groupId does not exist." );
+			return;
+		}
 
-		global $wgUser;
-
-		$wgUser = User::newFromName( $user );
-
-		if ( !$wgUser->idForName() ) {
+		$this->user = User::newFromName( $user );
+		if ( !$this->user->idForName() ) {
 			STDERR( "User $user does not exist." );
 			return;
 		}
@@ -224,25 +226,23 @@ class WikiWriter {
 	/**
 	 * Actually adds the new translation.
 	 */
-	private function updateMessage( $namespace, $title, $text ) {
-		global $wgTitle, $wgArticle;
+	private function updateMessage( $namespace, $page, $text ) {
+		$title = Title::makeTitleSafe( $namespace, $page );
 
-		$wgTitle = Title::makeTitleSafe( $namespace, $title );
-
-		STDOUT( "Updating {$wgTitle->getPrefixedText()}... ", $title );
-		if ( !$wgTitle instanceof Title ) {
-			STDOUT( "INVALID TITLE!", $title );
+		if ( !$title instanceof Title ) {
+			STDOUT( "INVALID TITLE!", $page );
 			return;
 		}
+		STDOUT( "Updating {$title->getPrefixedText()}... ", $title );
 
 		if ( $this->dryrun ) {
 			STDOUT( "DRY RUN!", $title );
 			return;
 		}
 
-		$wgArticle = new Article( $wgTitle );
+		$article = new Article( $title, 0 );
 
-		$status = $wgArticle->doEdit( $text, 'Updating translation from gettext import' );
+		$status = $article->doEdit( $text, 'Updating translation from gettext import', 0, false, $this->user );
 
 		if ( $status === true || ( is_object( $status ) && $status->isOK() ) ) {
 			STDOUT( "OK!", $title );
