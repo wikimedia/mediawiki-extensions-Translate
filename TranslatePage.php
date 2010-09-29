@@ -16,8 +16,6 @@
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class SpecialTranslate extends SpecialPage {
-	const MSG = 'translate-page-';
-
 	protected $task = null;
 	protected $group = null;
 
@@ -60,17 +58,17 @@ class SpecialTranslate extends SpecialPage {
 		$codes = Language::getLanguageNames( false );
 
 		if ( !$this->options['language'] || !isset( $codes[$this->options['language']] ) ) {
-			$errors['language'] = wfMsgExt( self::MSG . 'no-such-language', array( 'parse' ) );
+			$errors['language'] = wfMsgExt( 'translate-page-no-such-language', array( 'parse' ) );
 			$this->options['language'] = $this->defaults['language'];
 		}
 
 		if ( !$this->task instanceof TranslateTask ) {
-			$errors['task'] = wfMsgExt( self::MSG . 'no-such-task', array( 'parse' ) );
+			$errors['task'] = wfMsgExt( 'translate-page-no-such-task', array( 'parse' ) );
 			$this->options['task'] = $this->defaults['task'];
 		}
 
 		if ( !$this->group instanceof MessageGroup ) {
-			$errors['group'] = wfMsgExt( self::MSG . 'no-such-group', array( 'parse' ) );
+			$errors['group'] = wfMsgExt( 'translate-page-no-such-group', array( 'parse' ) );
 			$this->options['group'] = $this->defaults['group'];
 		}
 
@@ -91,7 +89,7 @@ class SpecialTranslate extends SpecialPage {
 			foreach ( $checks as $check ) {
 				$reason = @$wgTranslateBlacklist[$check][$this->options['language']];
 				if ( $reason !== null ) {
-					$wgOut->addWikiMsg( self::MSG . 'disabled', $reason );
+					$wgOut->addWikiMsg( 'translate-page-disabled', $reason );
 					return;
 				}
 			}
@@ -120,7 +118,7 @@ class SpecialTranslate extends SpecialPage {
 		} else {
 			$description = $this->getGroupDescription( $this->group );
 			if ( $description ) {
-				$description = Xml::fieldset( wfMsg( self::MSG . 'description-legend' ), $description );
+				$description = Xml::fieldset( wfMsg( 'translate-page-description-legend' ), $description );
 			}
 
 			$links = $this->doStupidLinks();
@@ -199,13 +197,13 @@ class SpecialTranslate extends SpecialPage {
 		$group = $this->groupSelector();
 		$language = $this->languageSelector();
 		$limit = $this->limitSelector();
-		$button = Xml::submitButton( wfMsg( TranslateUtils::MSG . 'submit' ) );
+		$button = Xml::submitButton( wfMsg( 'translate-submit' ) );
 
 		$options = array();
 
 		foreach ( array( 'task', 'group', 'language', 'limit' ) as $g ) {
 			$options[] = self::optionRow(
-				Xml::tags( 'label', array( 'for' => $g ), wfMsgExt( self::MSG . $g, 'escapenoentities' ) ),
+				Xml::tags( 'label', array( 'for' => $g ), wfMsgExt( 'translate-page-' . $g, 'escapenoentities' ) ),
 				$$g,
 				array_key_exists( $g, $errors ) ? $errors[$g] : null
 			);
@@ -213,7 +211,7 @@ class SpecialTranslate extends SpecialPage {
 
 		$form =
 			Xml::openElement( 'fieldset', array( 'class' => 'mw-sp-translate-settings' ) ) .
-				Xml::element( 'legend', null, wfMsg( self::MSG . 'settings-legend' ) ) .
+				Xml::element( 'legend', null, wfMsg( 'translate-page-settings-legend' ) ) .
 				Xml::openElement( 'form', array( 'action' => $wgScript, 'method' => 'get' ) ) .
 					Xml::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
 					Xml::openElement( 'table' ) .
@@ -278,7 +276,7 @@ class SpecialTranslate extends SpecialPage {
 		$selector = new HTMLSelector( 'limit', 'limit', $this->options['limit'] );
 
 		foreach ( $items as $count ) {
-			$selector->addOption( wfMsgExt( self::MSG . 'limit-option', 'parsemag', $wgLang->formatNum( $count ) ), $count );
+			$selector->addOption( wfMsgExt( 'translate-page-limit-option', 'parsemag', $wgLang->formatNum( $count ) ), $count );
 		}
 
 		return $selector->getHTML();
@@ -306,21 +304,21 @@ class SpecialTranslate extends SpecialPage {
 		$allInThisPage = $start === 1 && $total <= $this->options['limit'];
 
 		if ( $this->paging['count'] === 0 ) {
-			$navigation = wfMsgExt( self::MSG . 'showing-none', array( 'parseinline' ) );
+			$navigation = wfMsgExt( 'translate-page-showing-none', array( 'parseinline' ) );
 		} elseif ( $allInThisPage ) {
 			$navigation = wfMsgExt(
-				self::MSG . 'showing-all',
+				'translate-page-showing-all',
 				array( 'parseinline' ),
 				$total
 			);
 		} else {
-			$previous = wfMsg( TranslateUtils::MSG . 'prev' );
+			$previous = wfMsg( 'translate-prev' );
 			if ( $this->options['offset'] > 0 ) {
 				$offset = max( 0, $this->options['offset'] - $this->options['limit'] );
 				$previous = $this->makeOffsetLink( $previous, $offset );
 			}
 
-			$nextious = wfMsg( TranslateUtils::MSG . 'next' );
+			$nextious = wfMsg( 'translate-next' );
 
 			if ( $this->paging['total'] != $this->paging['start'] + $this->paging['count'] ) {
 				$offset = $this->options['offset'] + $this->options['limit'];
@@ -332,14 +330,14 @@ class SpecialTranslate extends SpecialPage {
 			$total = $this->paging['total'];
 
 			$showing = wfMsgExt(
-				self::MSG . 'showing',
+				'translate-page-showing',
 				array( 'parseinline' ),
 				$start,
 				$stop,
 				$total );
 
 			$navigation = wfMsgExt(
-				self::MSG . 'paging-links',
+				'translate-page-paging-links',
 				array( 'escape', 'replaceafter' ),
 				$previous,
 				$nextious
@@ -350,7 +348,7 @@ class SpecialTranslate extends SpecialPage {
 
 		return
 			Xml::openElement( 'fieldset' ) .
-				Xml::element( 'legend', null, wfMsg( self::MSG . 'navigation-legend' ) ) .
+				Xml::element( 'legend', null, wfMsg( 'translate-page-navigation-legend' ) ) .
 				$navigation .
 			Xml::closeElement( 'fieldset' );
 	}
