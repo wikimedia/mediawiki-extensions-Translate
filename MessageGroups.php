@@ -900,17 +900,15 @@ class MessageGroups {
 			$res = $dbr->select( $tables, $vars, $conds, __METHOD__, $options );
 
 			foreach ( $res as $r ) {
-				/// @todo Lazy-construct translatable page message groups.
-				$title = Title::makeTitle( $r->page_namespace, $r->page_title )->getPrefixedText();
-				$id = "page|$title";
+				$title = Title::makeTitle( $r->page_namespace, $r->page_title );
+				$id = TranslatablePage::getMessageGroupIdFromTitle( $title );
 				$wgTranslateCC[$id] = new WikiPageMessageGroup( $id, $title );
-				$wgTranslateCC[$id]->setLabel( $title );
+				$wgTranslateCC[$id]->setLabel( $title->getPrefixedText() );
 			}
 		}
 
-		wfRunHooks( 'TranslatePostInitGroups', array( &$wgTranslateCC ) );
-
 		$autoload = array();
+		wfRunHooks( 'TranslatePostInitGroups', array( &$wgTranslateCC, &$deps, &$autoload ) );
 
 		foreach ( $wgTranslateGroupFiles as $configFile ) {
 			wfDebug( $configFile . "\n" );
@@ -962,15 +960,11 @@ class MessageGroups {
 			} else {
 				return new $creater;
 			}
-		} else {
-			if ( array_key_exists( $id, $wgTranslateCC ) ) {
-				if ( is_callable( $wgTranslateCC[$id] ) ) {
-					return call_user_func( $wgTranslateCC[$id], $id );
-				} else {
-					return $wgTranslateCC[$id];
-				}
+		} elseif ( isset( $wgTranslateCC[$id] ) ) {
+			if ( is_callable( $wgTranslateCC[$id] ) ) {
+				return call_user_func( $wgTranslateCC[$id], $id );
 			} else {
-				return null;
+				return $wgTranslateCC[$id];
 			}
 		}
 	}
