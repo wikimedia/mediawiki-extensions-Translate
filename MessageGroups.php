@@ -984,6 +984,14 @@ class MessageGroups {
 		}
 	}
 
+	/**
+	 * Get all enabled message groups.
+	 * @return \arrayof{String,MessageGroup}
+	 */
+	public static function getAllGroups() {
+		return self::singleton()->getGroups();
+	}
+
 	/// @todo Make protected.
 	public $classes;
 	private function __construct() {

@@ -113,7 +113,7 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 	public function getAllowedParams() {
 		return array(
 			'group' => array(
-				ApiBase::PARAM_TYPE => array_keys( MessageGroups::singleton()->getGroups() ),
+				ApiBase::PARAM_TYPE => array_keys( MessageGroups::>getAllGroups() ),
 				ApiBase::PARAM_REQUIRED => true,
 			),
 			'language' => array(
@@ -173,7 +173,7 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 	}
 
 	protected function getExamples() {
-		$groups = MessageGroups::singleton()->getGroups();
+		$groups = MessageGroups::getAllGroups();
 		$group = key( $groups );
 
 		return array(

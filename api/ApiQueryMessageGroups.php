@@ -25,7 +25,7 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 
 	public function execute() {
 		$params = $this->extractRequestParams();
-		$groups = MessageGroups::singleton()->getGroups();
+		$groups = MessageGroups::getAllGroups();
 		$result = $this->getResult();
 
 		foreach ( $groups as $id => $g ) {

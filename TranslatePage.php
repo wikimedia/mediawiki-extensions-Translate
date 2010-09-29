@@ -238,7 +238,7 @@ class SpecialTranslate extends SpecialPage {
 	/* Selectors ahead */
 
 	protected function groupSelector() {
-		$groups = MessageGroups::singleton()->getGroups();
+		$groups = MessageGroups::getAllGroups();
 		$selector = new HTMLSelector( 'group', 'group', $this->options['group'] );
 
 		foreach ( $groups as $id => $class ) {
@@ -403,7 +403,7 @@ class SpecialTranslate extends SpecialPage {
 	public function getGroupStructure() {
 		global $wgTranslateGroupStructure;
 
-		$groups = MessageGroups::singleton()->getGroups();
+		$groups = MessageGroups::getAllGroups();
 		$structure = array();
 
 		foreach ( $groups as $id => $o ) {
