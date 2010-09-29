@@ -34,7 +34,7 @@ class RenderJob extends Job {
 	function run() {
 		// Initialization
 		$title = $this->title;
-		list( $key, $code ) = TranslateUtils::figureMessage( $title->getPrefixedText() );
+		list( , $code ) = TranslateUtils::figureMessage( $title->getPrefixedText() );
 
 		// Return the actual translation page...
 		$page = TranslatablePage::isTranslationPage( $title );
@@ -44,7 +44,7 @@ class RenderJob extends Job {
 			throw new MWException( "Oops, this should not happen!" );
 		}
 
-		$group = MessageGroups::getGroup( "page|$key" );
+		$group = $page->getMessageGroup();
 		$collection = $group->initCollection( $code );
 
 		$text = $page->getParse()->getTranslationPageText( $collection );
@@ -59,18 +59,9 @@ class RenderJob extends Job {
 		// @todo Fuzzybot hack
 		PageTranslationHooks::$allowTargetEdit = true;
 
-		// User hack
-		global $wgUser;
-
-		$oldUser = $wgUser;
-		$wgUser = $user;
-
 		// Do the edit
-		$status = $article->doEdit( $text, $summary, $flags );
+		$status = $article->doEdit( $text, $summary, $flags, false, $user );
 		SpecialPageTranslation::superDebug( __METHOD__, 'edit', $user, $title, $flags, $status );
-
-		// User hack
-		$wgUser = $oldUser;
 
 		PageTranslationHooks::$allowTargetEdit = false;
 

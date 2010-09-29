@@ -131,7 +131,7 @@ class SpecialPageTranslation extends SpecialPage {
 		$titleText = $page->getTitle()->getPrefixedText();
 		$num = $wgLang->formatNum( $page->getParse()->countSections() );
 		$link = SpecialPage::getTitleFor( 'Translate' )->getFullUrl(
-			array( 'group' => 'page|' . $page->getTitle()->getPrefixedText() ) );
+			array( 'group' => $page->getMessageGroupId() ) );
 
 		$wgOut->addWikiMsg( 'tpt-saveok', $titleText, $num, $link );
 	}
@@ -301,7 +301,7 @@ class SpecialPageTranslation extends SpecialPage {
 				SpecialPage::getTitleFor( 'Translate' ),
 				wfMsgHtml( 'tpt-translate-this' ),
 				array(),
-				array( 'group' => 'page|' . $title->getPrefixedText() )
+				array( 'group' => TranslatablePage::getMessageGroupIdFromTitle( $title )
 			);
 		}
 
@@ -527,7 +527,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 		// Re-generate caches
 		$page->getTranslationPercentages( /*re-generate*/ true );
-		ArrayMemoryCache::factory( 'groupstats' )->clearGroup( 'page|' . $page->getTitle()->getPrefixedText() );
+		ArrayMemoryCache::factory( 'groupstats' )->clearGroup( $page->getMessageGroupId() );
 		MessageIndexRebuilder::execute();
 		return false;
 	}
