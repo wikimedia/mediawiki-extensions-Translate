@@ -969,15 +969,6 @@ class MessageGroups {
 				} else {
 					return $wgTranslateCC[$id];
 				}
-			} elseif ( strpos( $id, 'page|' ) === 0 ) {
-				list( , $title ) = explode( '|', $id, 2 );
-
-				// Check first if it valid page title at all.
-				if ( !Title::newFromText( $title ) ) {
-					return null;
-				}
-
-				return new WikiPageMessageGroup( $id, $title );
 			} else {
 				return null;
 			}
