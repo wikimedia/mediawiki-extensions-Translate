@@ -523,7 +523,9 @@ function efTranslateInit() {
 		$wgHooks['ArticleSaveComplete'][] = 'PageTranslationHooks::addTranstag';
 
 		// Prevent editing of unknown pages in Translations namespace
-		$wgHooks['getUserPermissionsErrorsExpensive'][] = 'PageTranslationHooks::translationsCheck';
+		$wgHooks['getUserPermissionsErrorsExpensive'][] = 'PageTranslationHooks::preventUnknownTranslations';
+		// Prevent editing of translation pages directly
+		$wgHooks['getUserPermissionsErrorsExpensive'][] = 'PageTranslationHooks::preventDirectEditing';
 
 		// Locking during page moves
 		$wgHooks['getUserPermissionsErrorsExpensive'][] = 'PageTranslationHooks::lockedPagesCheck';

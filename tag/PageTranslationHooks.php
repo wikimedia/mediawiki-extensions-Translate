@@ -303,23 +303,23 @@ FOO;
 		return true;
 	}
 
-	// Here we disable editing of some existing or unknown pages
-	public static function translationsCheck( $title, $user, $action, &$result ) {
-		// Case 1: Unknown section translations
+	/// Prevent editing of unknown pages in Translations namespace
+	public static function preventUnknownTranslations( $title, $user, $action, &$result ) {
 		if ( $title->getNamespace() == NS_TRANSLATIONS && $action === 'edit' ) {
 			$group = self::titleToGroup( $title );
 			if ( $group === null ) {
 				// No group means that the page is currently not
 				// registered to any page translation message groups
 				$result = array( 'tpt-unknown-page' );
-
 				return false;
 			}
-
-			return true;
 		}
 
-		// Case 2: Target pages
+		return true;
+	}
+
+	/// Prevent editing of translation pages directly
+	public static function preventDirectEditing( $title, $user, $action, &$result ) {
 		$page = TranslatablePage::isTranslationPage( $title );
 		if ( $page !== false ) {
 			if ( self::$allowTargetEdit ) {
