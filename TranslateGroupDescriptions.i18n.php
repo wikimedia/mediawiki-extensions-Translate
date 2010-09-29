@@ -183,6 +183,7 @@ $messages['be-tarask'] = array(
 	'translate-group-desc-translate' => 'Мэта-група паведамленьняў, якая ўтрымлівае ўсе паведамленьні для пашырэньня MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-wikiaextensions' => 'Мэта-група паведамленьняў, якая ўтрымлівае ўсе паведамленьні для падтрымліваемых пашырэньняў MediaWiki, выкарыстоўваемых [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Мэта-група паведамленьняў, якая ўтрымлівае ўсе паведамленьні для падтрымліваемых пашырэньняў MediaWiki, выкарыстоўваемых [http://wikimedia.org/ фундацыяй «Вікімэдыя»]',
+	'translate-group-desc-wikimediaextensions-main' => 'Мэта-група паведамленьняў, якая утрымлівае ўсе паведамленьні для пашырэньняў MediaWiki, якія патрабуюць перакладу для [http://meta.wikimedia.org/wiki/Language_committee моўнага камітэту] Wikimedia',
 	'translate-group-desc-uniwiki' => 'Мэта-група паведамленьняў, якая ўтрымлівае ўсе паведамленьні для пашырэньняў зьвязаных з [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Група мэта-паведамленьняў, якая ўтрымлівае ўсе паведамленьні для пашырэньняў, якія адносяцца да [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 	'translate-group-desc-translatablepages' => 'Усе старонкі, якія магчыма перакласьці',
@@ -207,6 +208,7 @@ $messages['be-tarask'] = array(
 * Выкарыстоўвайце [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] для праверкі Potlatch. Там Вы можаце пратэставаць неабходныя функцыі.',
 	'bw-desc-shapado' => 'Група паведамленьняў для вольнай плятформы пытаньняў і адказаў [[Translating:Shapado|Shapado]].',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] — сэрвэр мікраблёгаў з адкрытым кодам',
+	'translate-group-desc-statusnet-plugin' => 'Гэтыя паведамленьні зьяўляюцца часткай дапаўненьня для [[Translating:StatusNet|StatusNet]]',
 	'bw-desc-voctrain' => 'Слоўнікавы трэнажэр на аснове [http://omegawiki.org OmegaWiki]. Выкарыстоўвае сыстэму картак для вывучэньня любой мовы, што ёсьць у OmegaWiki.
 Створаны для ўнівэрсытэту ў Бамбэргу. Распаўсюджваецца на ўмовах ліцэнзіі GPL 2.0 ці болей позьняй вэрсіі. Распрацаваны [[User:Kim Bruning|Кімам Брунінгам]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] дазваляе хутка знайсьці аўтараў пэўнай старонкі ці выказваньня ў праектах Фундацыі «Вікімэдыя».',

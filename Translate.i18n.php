@@ -11430,8 +11430,8 @@ $messages['mk'] = array(
 	'languagestats-summary' => 'Оваа страница прикажува статистики на превод за сите групи на пораки за одреден јазик.',
 	'languagestats-stats-for' => 'Преводни статистики за $1 ($2).',
 	'languagestats-recenttranslations' => 'скорешни преводи',
-	'translate-language-code' => 'Код на јазик',
-	'translate-language-code-field-name' => 'Код на јазик:',
+	'translate-language-code' => 'Јазичен код',
+	'translate-language-code-field-name' => 'Јазичен код:',
 	'translate-suppress-complete' => 'Сокриј потполно преведени групи на пораки',
 	'translate-language' => 'Јазик',
 	'translate-total' => 'Пораки',
@@ -16848,14 +16848,14 @@ $messages['szl'] = array(
  * @author Trengarasu
  */
 $messages['ta'] = array(
-	'translate' => 'மொழிப்பெயர்ப்பு',
+	'translate' => 'மொழி பெயர்ப்பு',
 	'translate-edit' => 'தொகு',
 	'translate-talk' => 'உரையாடல்',
 	'translate-history' => 'வரலாறு',
 	'translate-page-no-such-language' => 'குறித்த மொழி செல்லுபடியற்றதாகும்.',
 	'translate-page-language' => 'மொழி',
 	'translate-page-limit' => 'அளவு',
-	'translate-next' => 'அடுத்தப் பக்கம்',
+	'translate-next' => 'அடுத்த பக்கம்',
 	'translate-prev' => 'முந்தைய பக்கம்',
 	'translate-page-edit' => 'தொகு',
 	'translate-edit-title' => '"$1" -ஐ தொகுக்கவும்',
