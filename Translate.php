@@ -411,8 +411,8 @@ $wgTranslateYamlLibrary = 'spyc';
 
 
 # Startup code
-function efTranslateResources() {
-	ResourceLoader::register( array( 'translate-css' =>
+function efTranslateResources( &$resourceLoader ) {
+	$resourceLoader->register( array( 'translate-css' =>
 		new ResourceLoaderFileModule( array( 'styles' => 'extensions/Translate/Translate.css' ) )
 	) );
 	return true;
