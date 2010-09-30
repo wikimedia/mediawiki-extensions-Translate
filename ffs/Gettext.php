@@ -342,8 +342,8 @@ PHP;
 		$specs['PO-Revision-Date'] = self::formatTime( wfTimestampNow() );
 		if ( $this->offlineMode ) {
 			$specs['POT-Creation-Date'] = self::formatTime( wfTimestampNow() );
-		} else {
-			$specs['X-POT-Import-Date'] = self::formatTime( $this->getPotTime() );
+		} elseif ( $this->group instanceof MessageGroupBase ) {
+			$specs['X-POT-Import-Date'] = self::formatTime( wfTimestamp( TS_MW, $this->getPotTime() ) );
 		}
 		$specs['Language-Team'] = "$name <$portal>";
 		$specs['Content-Type'] = 'text/plain; charset=UTF-8';
