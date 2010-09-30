@@ -32,6 +32,7 @@ GROUPS:
   - ext-contributionreporting # wikimediafoundation.org
   - ext-contributiontracking # wikimediafoundation.org
   - ext-crossnamespacelinks
+  - ext-di-di
   - ext-dismissablesitenotice
   - ext-dontswitchmeover
   - ext-doublewiki # Wikisource

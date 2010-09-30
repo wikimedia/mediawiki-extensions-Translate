@@ -324,14 +324,13 @@ Dismissable SiteNotice
 descmsg = sitenotice-desc
 ignored = sitenotice_id
 
-# tomaszf indicates this is not used, and that it is unlikely it will be used.
-# Mind the duplicate keys with ext-di-pfpg!
-#Donation Interface - Donate Interface
-#id = ext-di-di
-#file = DonationInterface/donate_interface/donate_interface.i18n.php
-#descmsg = donate_interface-desc
-#ignored = donate_interface-big-amount-display, donate_interface-medium-amount-display, donate_interface-small-amount-display, donate_interface-big-amount-value
-#ignored = donate_interface-medium-amount-value, donate_interface-small-amount-value
+Donation Interface - Donate Interface
+id = ext-di-di
+file = DonationInterface/donate_interface/donate_interface.i18n.php
+descmsg = donate_interface-desc
+ignored = donate_interface-big-amount-display, donate_interface-medium-amount-display
+ignored = donate_interface-small-amount-display, donate_interface-big-amount-value
+ignored = donate_interface-medium-amount-value, donate_interface-small-amount-value
 
 # Disabled until the huge list if country names is imported from CLDR or similar - 2010-09-30 Raymond
 #Donation Interface - Payflow Pro Gateway
