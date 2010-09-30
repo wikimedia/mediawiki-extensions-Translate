@@ -1,0 +1,46 @@
+TEMPLATE:
+  BASIC:
+    namespace: NS_MIFOS
+
+  CHECKER:
+    class: MifosMessageChecker
+    checks:
+      - MifosVariablesCheck
+
+  AUTOLOAD:
+    MifosMessageChecker: Checker.php
+
+
+---
+BASIC:
+  id: out-mifos-0-all
+  label: All Mifos messages
+  description: "<div class=error>'''WARNING:''' Development of support for this product is under construction. We are working with developers to improve i18n.</div>[[Translating:Mifos|Mifos]] is a microloan and savings management platform, used by microfinance institutions to end world poverty."
+  meta: yes
+  class: AggregateMessageGroup
+
+GROUPS:
+  - out-mifos-*
+
+---
+BASIC:
+  id: out-mifos-questionnaire
+  label: Mifos - Questionnaire
+  class: FileBasedMessageGroup
+
+MANGLER:
+  class: StringMatcher
+  prefix: questionnaire-
+  patterns:
+    - "*"
+
+FILES:
+  class: JavaFFS
+  sourcePattern: %GROUPROOT%/mifos/questionnaire/src/main/resources/org/mifos/platform/questionnaire/ui/localizedProperties/questionnaire_messages_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/questionnaire/src/main/resources/org/mifos/platform/questionnaire/ui/localizedProperties/questionnaire_messages.properties
+  targetPattern: mifos/questionnaire/src/main/resources/org/mifos/platform/questionnaire/ui/localizedProperties/questionnaire_messages_%CODE%.properties
+
+TAGS:
+  ignored:
+    - questionnaire-questionnaire.create.question.*
+    - questionnaire-questionnaire.create.question.group.*
