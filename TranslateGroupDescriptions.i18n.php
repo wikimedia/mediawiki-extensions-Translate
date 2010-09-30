@@ -586,6 +586,7 @@ $messages['et'] = array(
 /** Finnish (Suomi)
  * @author Cimon Avaro
  * @author Crt
+ * @author Nike
  * @author Silvonen
  * @author Str4nd
  * @author ZeiP
@@ -593,7 +594,7 @@ $messages['et'] = array(
 $messages['fi'] = array(
 	'translate-group-desc-mediawikicore' => 'Tämä viestiryhmä sisältää viestit, joita käytetään nykyisessä MediaWikin alfaversiossa ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'Tämä viestiryhmä sisältää [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki MediaWikin 500 useimmin käytettyä viestiä]',
-	'translate-group-desc-mediawikiextensions' => 'Kokoava viestiryhmä kaikille MediaWikiä tukeville laajennuksille',
+	'translate-group-desc-mediawikiextensions' => 'Kokoava viestiryhmä kaikille tuetuille MediaWiki-laajennuksille',
 	'translate-group-desc-collection' => 'Tämä metaviestiryhmä sisältää kaikki viestit, joita käytetään MediaWikin laajennuksessa [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
 	'translate-group-desc-flaggedrevs' => 'Tämä metaviestiryhmä sisältää kaikki viestit MediaWikin [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs-laajennusta] varten',
 	'translate-group-desc-readerfeedback' => 'Tämä metaviestiryhmä sisältää kaikki MediaWikin [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback-laajennuksen] viestit',
@@ -1432,6 +1433,7 @@ $messages['pl'] = array(
 	'translate-group-desc-translate' => 'Metagrupa komunikatów zawierająca wszystkie komunikaty rozszerzeń MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-wikiaextensions' => 'Metagrupa zawiera wszystkie komunikaty obsługiwanych rozszerzeń MediaWiki używanych przez [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Metagrupa zawiera wszystkie komunikaty obsługiwanych rozszerzeń MediaWiki używanych przez [http://wikimedia.org/ Fundację Wikimedia]',
+	'translate-group-desc-wikimediaextensions-main' => 'Grupa meta komunikatów zawierająca wszystkie wymagające przetłumaczenia komunikaty wspieranych rozszerzeń MediaWiki na potrzeby [http://meta.wikimedia.org/wiki/Language_committee komitetu językowego] Wikimedia',
 	'translate-group-desc-uniwiki' => 'Metagrupa komunikatów zawierająca wszystkie komunikaty rozszerzeń związanych z [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Metagrupa komunikatów zawierająca wszystkie komunikaty rozszerzeń związanych z [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Inicjatywą użyteczności Wikipedii]',
 	'translate-group-desc-translatablepages' => 'Wszystkie przetłumaczalne strony',
