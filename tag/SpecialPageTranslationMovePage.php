@@ -375,10 +375,10 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		MoveJob::forceRedirects( true );
 
 		$newTpage = TranslatablePage::newFromTitle( $this->newTitle );
-		$newTpage->addReadyTag( $this->newTitle->getLatestRevId( GAID_FOR_UPDATE ) );
+		$newTpage->addReadyTag( $this->newTitle->getLatestRevId( Title::GAID_FOR_UPDATE ) );
 
 		if ( $newTpage->getMarkedTag() === $oldLatest ) {
-			$newTpage->addMarkedTag( $this->newTitle->getLatestRevId( GAID_FOR_UPDATE ) );
+			$newTpage->addMarkedTag( $this->newTitle->getLatestRevId( Title::GAID_FOR_UPDATE ) );
 		}
 
 		MessageGroups::clearCache();
