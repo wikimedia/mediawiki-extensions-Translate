@@ -113,7 +113,7 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 	public function getAllowedParams() {
 		return array(
 			'group' => array(
-				ApiBase::PARAM_TYPE => array_keys( MessageGroups::>getAllGroups() ),
+				ApiBase::PARAM_TYPE => array_keys( MessageGroups::getAllGroups() ),
 				ApiBase::PARAM_REQUIRED => true,
 			),
 			'language' => array(
