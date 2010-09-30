@@ -301,7 +301,7 @@ class SpecialPageTranslation extends SpecialPage {
 				SpecialPage::getTitleFor( 'Translate' ),
 				wfMsgHtml( 'tpt-translate-this' ),
 				array(),
-				array( 'group' => TranslatablePage::getMessageGroupIdFromTitle( $title )
+				array( 'group' => TranslatablePage::getMessageGroupIdFromTitle( $title ) )
 			);
 		}
 
