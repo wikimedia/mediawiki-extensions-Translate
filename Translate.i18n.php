@@ -3927,11 +3927,7 @@ Sofern die Gruppe aus einer Teil- oder Obermenge von Systemnachrichten einer and
 	'translate-edit-tmsugs' => 'Vorschläge aus dem Übersetzungsspeicher',
 	'translate-edit-tmmatch' => '$1 % Übereinstimmung',
 	'translate-use-suggestion' => 'Füge diesen Vorschlag in das Übersetzungsfeld ein. Diese ersetzt dabei alle aktuellen Inhalte.',
-	'translate-edit-goto-no-prev' => 'Keine vorherige Systemnachricht',
-	'translate-edit-goto-no-next' => 'Keine weitere Systemnachricht',
-	'translate-edit-goto-prev' => 'Vorherige Systemnachricht bearbeiten',
-	'translate-edit-goto-next' => 'Nächste Systemnachricht bearbeiten',
-	'translate-edit-goto-list' => 'Zurück zur Liste',
+	'translate-edit-tab-list' => 'Nachrichtenliste',
 	'translate-magic-pagename' => 'Erweiterte MediaWiki-Übersetzung',
 	'translate-magic-help' => 'Du kannst hier Aliase für Spezialseiten, magische Wörter und Namensraumnamen übersetzen.
 
@@ -5562,6 +5558,7 @@ $messages['fi'] = array(
 	'translate-edit' => 'muokkaa',
 	'translate-talk' => 'keskustelu',
 	'translate-history' => 'historia',
+	'translate-showsub' => 'Näytä {{PLURAL:$1|alaryhmä|$1 alaryhmää}}.',
 	'translate-task-view' => 'nähdä kaikki viestit',
 	'translate-task-untranslated' => 'nähdä kaikki kääntämättömät viestit',
 	'translate-task-optional' => 'nähdä valinnaiset viestit',
@@ -5610,11 +5607,7 @@ Jos ryhmä koostuu osittain muista ryhmistä, se näytetään lihavoituna.',
 	'translate-edit-tmsugs' => 'Ehdotukset käännösmuistista',
 	'translate-edit-tmmatch' => 'Vastaavuus $1%',
 	'translate-use-suggestion' => 'Korvaa nykyinen käännös tällä ehdotuksella.',
-	'translate-edit-goto-no-prev' => 'Ei edellistä viestiä',
-	'translate-edit-goto-no-next' => 'Ei seuraavaa viestiä',
-	'translate-edit-goto-prev' => 'Muokkaa edellistä viestiä',
-	'translate-edit-goto-next' => 'Muokkaa seuraavaa viestiä',
-	'translate-edit-goto-list' => 'Takaisin listaan',
+	'translate-edit-tab-list' => 'Viestiluettelo',
 	'translate-magic-pagename' => 'Laajennettu MediaWikin kääntäminen',
 	'translate-magic-help' => 'Voit kääntää toimintosivujen vaihtoehtoisia nimiä, taikasanoja ja nimiavaruuksien nimiä.
 
@@ -6147,7 +6140,7 @@ $messages['frp'] = array(
 Rêson :
 
 ''$1''",
-	'translate-page-settings-legend' => 'Configuracion',
+	'translate-page-settings-legend' => 'Paramètres',
 	'translate-page-task' => 'Vuel',
 	'translate-page-group' => 'Tropa',
 	'translate-page-group-tooltip' => 'Un nom de tropa de mèssâjos.
@@ -6179,11 +6172,6 @@ Se la tropa contint des sot-ensemblos ou ben des sur-ensemblos de mèssâjos d�
 	'translate-edit-tmsugs' => 'Consèlys de la mèmouère de traduccion',
 	'translate-edit-tmmatch' => '$1 % de corrèspondance',
 	'translate-use-suggestion' => 'Entrebetar ceti consèly dens la fenétra de traduccion. Cen remplace l’ensemblo du contegnu d’ora.',
-	'translate-edit-goto-no-prev' => 'Gins de mèssâjo devant',
-	'translate-edit-goto-no-next' => 'Gins de mèssâjo aprés',
-	'translate-edit-goto-prev' => 'Changiér lo mèssâjo devant',
-	'translate-edit-goto-next' => 'Changiér lo mèssâjo aprés',
-	'translate-edit-goto-list' => 'Tornar a la lista',
 	'translate-magic-pagename' => 'Traduccion ètendua de MediaWiki',
 	'translate-magic-help' => 'Vos pouede traduire los noms paralèlos de les pâges spèciâles, los mots magicos et los noms des èspâços de noms.
 
@@ -6524,11 +6512,7 @@ Se o grupo está composto por un subconxunto ou un superconxunto de mensaxes dou
 	'translate-edit-tmsugs' => 'Suxestións da memoria de tradución',
 	'translate-edit-tmmatch' => '$1% de coincidencia',
 	'translate-use-suggestion' => 'Inserir esta suxestión na zona de tradución. Isto substitúe todo o contido actual.',
-	'translate-edit-goto-no-prev' => 'Non hai mensaxe previa',
-	'translate-edit-goto-no-next' => 'Non hai mensaxe seguinte',
-	'translate-edit-goto-prev' => 'Editar a mensaxe previa',
-	'translate-edit-goto-next' => 'Editar a mensaxe seguinte',
-	'translate-edit-goto-list' => 'Volver á lista',
+	'translate-edit-tab-list' => 'Lista de mensaxes',
 	'translate-magic-pagename' => 'Tradución estendida de MediaWiki',
 	'translate-magic-help' => 'Pode traducir os alias das páxinas especiais, as palabras máxicas e mais os nomes dos espazos de nomes.
 
@@ -8395,11 +8379,7 @@ Si tu sape ubi o como iste message es usate, tu pote adjutar le altere traductor
 	'translate-edit-tmsugs' => 'Suggestiones ab le memoria de traductiones',
 	'translate-edit-tmmatch' => '$1% de correspondentia',
 	'translate-use-suggestion' => 'Inserer iste suggestion in le area de traduction. Isto reimplacia tote le contento actual.',
-	'translate-edit-goto-no-prev' => 'Nulle message precedente',
-	'translate-edit-goto-no-next' => 'Nulle message sequente',
-	'translate-edit-goto-prev' => 'Modificar le message precedente',
-	'translate-edit-goto-next' => 'Modificar le message sequente',
-	'translate-edit-goto-list' => 'Retornar al lista',
+	'translate-edit-tab-list' => 'Lista de messages',
 	'translate-magic-pagename' => 'Traduction extendite de MediaWiki',
 	'translate-magic-help' => 'Tu pote traducer le aliases de paginas special, le parolas magic e le nomines de spatios de nomines.
 
@@ -12093,11 +12073,7 @@ Als de groep bestaat uit een subset of superset van berichten van andere groepen
 	'translate-edit-tmsugs' => 'Suggesties uit het vertaalgeheugen',
 	'translate-edit-tmmatch' => '$1% overeenkomst',
 	'translate-use-suggestion' => 'Deze suggestie in het vertaalvenster gebruiken. Dit vervangt alle huidige inhoud.',
-	'translate-edit-goto-no-prev' => 'Geen vorig bericht',
-	'translate-edit-goto-no-next' => 'Geen volgend bericht',
-	'translate-edit-goto-prev' => 'Vorige bericht bewerken',
-	'translate-edit-goto-next' => 'Volgende bericht bewerken',
-	'translate-edit-goto-list' => 'Terug naar de lijst',
+	'translate-edit-tab-list' => 'Berichtenlijst',
 	'translate-magic-pagename' => 'Uitgebreide MediaWiki-vertaling',
 	'translate-magic-help' => 'U kunt alternatieven voor speciale pagina\'s, magische woorden en naamruimtebenamingen vertalen.
 
@@ -12584,11 +12560,7 @@ Om du vet hvor eller hvordan denne meldingen brukes kan du hjelpe andre oversett
 	'translate-edit-tmsugs' => 'Forslag fra oversettelsesminnet',
 	'translate-edit-tmmatch' => 'samsvarer $1%',
 	'translate-use-suggestion' => 'Sett inn dette forslaget i oversettelsesområdet. Dette erstatter alt det nåværende innholdet.',
-	'translate-edit-goto-no-prev' => 'Ingen foregående melding',
-	'translate-edit-goto-no-next' => 'Ingen neste melding',
-	'translate-edit-goto-prev' => 'Rediger forrige melding',
-	'translate-edit-goto-next' => 'Rediger neste melding',
-	'translate-edit-goto-list' => 'Tilbake til listen',
+	'translate-edit-tab-list' => 'Meldingsliste',
 	'translate-magic-pagename' => 'Utvidet MediaWiki-oversettelse',
 	'translate-magic-help' => 'Du kan oversette spesialsidealias, magiske ord og navneromnavn.
 
@@ -14186,11 +14158,7 @@ Se o grupo é composto por um subconjunto ou superconjunto de mensagens de outro
 	'translate-edit-tmsugs' => 'Sugestões da memória de traduções',
 	'translate-edit-tmmatch' => '$1% coincidente',
 	'translate-use-suggestion' => 'Inserir esta sugestão na área de tradução. Isto substitui todo o conteúdo existente.',
-	'translate-edit-goto-no-prev' => 'Não há mensagens anteriores',
-	'translate-edit-goto-no-next' => 'Não há mensagens posteriores',
-	'translate-edit-goto-prev' => 'Editar mensagem anterior',
-	'translate-edit-goto-next' => 'Editar mensagem posterior',
-	'translate-edit-goto-list' => 'Voltar à listagem',
+	'translate-edit-tab-list' => 'Lista de mensagem',
 	'translate-magic-pagename' => 'Tradução extra do MediaWiki',
 	'translate-magic-help' => 'Você pode traduzir nomes alternativos de páginas especiais, palavras mágicas e nomes de espaços nominais.
 
@@ -14775,11 +14743,7 @@ $messages['ru'] = array(
 	'translate-edit-tmsugs' => 'Предложения из памяти переводов',
 	'translate-edit-tmmatch' => '$1% соответствие',
 	'translate-use-suggestion' => 'Вставить этот совет в участок переводов. Это заменит всё прежнее содержание.',
-	'translate-edit-goto-no-prev' => 'Это первое сообщение',
-	'translate-edit-goto-no-next' => 'Это последнее сообщение',
-	'translate-edit-goto-prev' => 'Править предыдущее сообщение',
-	'translate-edit-goto-next' => 'Править следующее сообщение',
-	'translate-edit-goto-list' => 'Вернуться к списку',
+	'translate-edit-tab-list' => 'Список сообщений',
 	'translate-magic-pagename' => 'Углублённый перевод MediaWiki',
 	'translate-magic-help' => 'Вы можете переводить псевдонимы служебных страниц, магические слова и названия пространств имён.
 

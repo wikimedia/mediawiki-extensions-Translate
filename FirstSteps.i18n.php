@@ -1198,12 +1198,15 @@ Jeli nochceš powěsćowe listy dóstać, móžeš tutu opciju na rajtarku "{{in
 );
 
 /** Hungarian (Magyar)
+ * @author Dani
  * @author Misibacsi
  */
 $messages['hu'] = array(
 	'firststeps' => 'Első lépések',
 	'translate-fs-pagetitle-done' => ' - kész!',
 	'translate-fs-signup-title' => 'Feliratkozás',
+	'translate-fs-userpage-title' => 'Hozz létre egy felhasználói lapot',
+	'translate-fs-permissions-title' => 'Kérj fordítói jogosultságot',
 	'translate-fs-target-title' => 'Kezdj fordítani!',
 	'translate-fs-email-title' => 'Erősítsd meg az email címedet!',
 	'translate-fs-userpage-submit' => 'Felhasználói lap létrehozása',
