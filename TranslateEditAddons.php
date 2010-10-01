@@ -18,123 +18,92 @@
 class TranslateEditAddons {
 
 	/**
-	 * Add some ugly navigation links below translations.
+	 * Add some tabs for navigation for users who do not use Ajax interface.
 	 */
-	static function addNavigation( &$outputpage, &$text ) {
-		global $wgUser, $wgTitle;
+	static function addNavigationTabs( $skin, &$tabs ) {
+		global $wgRequest;
 
-		if ( !self::isMessageNamespace( $wgTitle ) ) {
+		$title = $skin->getTitle();
+
+		if ( !self::isMessageNamespace( $title ) ) {
 			return true;
 		}
 
-		list( $key, $code, $group ) = self::getKeyCodeGroup( $wgTitle );
+		list( $key, $code, $group ) = self::getKeyCodeGroup( $title );
 		if ( !$group || !$code ) {
 			return true;
 		}
 
-		if ( $group instanceof MessageGroupBase ) {
-			$cache = new MessageGroupCache( $group );
-
-			if ( !$cache->exists() ) {
-				return true;
-			}
-
-			$keys = $cache->getKeys();
-			$defs = array();
-
-			foreach ( $keys as $_ ) {
-				$defs[$_] = $cache->get( $_ );
-			}
-
-			$skip = array_merge( $group->getTags( 'ignored' ), $group->getTags( 'optional' ) );
-		} else {
-			$defs = $group->getDefinitions();
-			$skip = array_merge( $group->getIgnored(), $group->getOptional() );
-		}
+		$collection = $group->initCollection( 'en' );
+		$collection->filter( 'optional' );
+		$keys = array_keys( $collection->keys() );
+		$count = count( $keys );
 
 		$key = strtolower( strtr( $key, ' ', '_' ) );
 
-		$next = $prev = $def = null;
-		foreach ( array_keys( $defs ) as $tkey ) {
-			if ( in_array( $tkey, $skip ) ) {
-				continue;
-			}
-
-			/*
-			 * Keys can have mixed case, but they have to be unique in a case
-			 * insensitive manner. It is therefore safe and a must to use case
-			 * insensitive comparison method.
-			 */
-			if ( $key === strtolower( strtr( $tkey, ' ', '_' ) ) ) {
-				$next = true;
-				$def = $defs[$tkey];
-				continue;
-			} elseif ( $next === true ) {
-				$next = $tkey;
-				break;
-			}
-
-			$prev = $tkey;
+		$next = $prev = null;
+		foreach ( $keys as $index => $tkey ) {
+			if ( $key === strtolower( strtr( $tkey, ' ', '_' ) ) ) break;
+			if ( $index === $count -1 ) $index = -666;
 		}
 
-		$skin = $wgUser->getSkin();
+		if ( isset( $keys[$index-1] ) ) $prev = $keys[$index-1];
+		if ( isset( $keys[$index+1] ) ) $next = $keys[$index+1];
+	
+
 		$id = $group->getId();
+		$ns = $title->getNamespace();
 
-		$ns = $wgTitle->getNamespace();
-		$title = Title::makeTitleSafe( $ns, "$prev/$code" );
-		$prevLink = wfMsgHtml( 'translate-edit-goto-no-prev' );
+		$translate = SpecialPage::getTitleFor( 'Translate' );
+		$fragment = htmlspecialchars( "#msg_$key" );
 
-		$params = array();
+		$nav_params = array();
+		$nav_params['loadgroup'] = $id;
+		$nav_params['action'] = $wgRequest->getText( 'action', 'edit' );
+
+		$tabindex = 2;
 
 		if ( $prev !== null ) {
-			$params['loadgroup'] = $id;
-			if ( !$title->exists() ) {
-				$params['action'] = 'edit';
-			}
-
-			$prevLink = $skin->link( $title,
-				wfMsgHtml( 'translate-edit-goto-prev' ), array(), $params );
+			$linktitle = Title::makeTitleSafe( $ns, "$prev/$code" );
+			$data = array(
+				'text' => wfMsg( 'translate-edit-tab-prev' ),
+				'href' => $linktitle->getLocalUrl( $nav_params ),
+			);
+			self::addTab( $skin, $tabs, 'prev', $data, $tabindex );
 		}
 
-		$title = Title::makeTitleSafe( $ns, "$next/$code" );
-		$nextLink = wfMsgHtml( 'translate-edit-goto-no-next' );
+		$params = array(
+			'group' => $id,
+			'language' => $code,
+			'task' => 'view',
+			'offset' => max( 0, $index - 250 ),
+			'limit' => 500,
+		);
+		$data = array(
+			'text' => wfMsg( 'translate-edit-tab-list' ),
+			'href' => $translate->getLocalUrl( $params ) . $fragment,
+		);
+		self::addTab( $skin, $tabs, 'list', $data, $tabindex );
 
 		if ( $next !== null && $next !== true ) {
-			$params['loadgroup'] = $id;
-
-			if ( !$title->exists() ) {
-				$params['action'] = 'edit';
-			}
-
-			$nextLink = $skin->link( $title,
-				wfMsgHtml( 'translate-edit-goto-next' ), array(), $params );
+			$linktitle = Title::makeTitleSafe( $ns, "$next/$code" );
+			$data = array(
+				'text' => wfMsg( 'translate-edit-tab-next' ),
+				'href' => $linktitle->getLocalUrl( $nav_params ),
+			);
+			self::addTab( $skin, $tabs, 'next', $data, $tabindex );
 		}
 
-		$title = SpecialPage::getTitleFor( 'Translate' );
-		$title->mFragment = "msg_$next";
-		$list = $skin->link(
-			$title,
-			wfMsgHtml( 'translate-edit-goto-list' ),
-			array(),
-			array(
-				'group' => $id,
-				'language' => $code
-			)
-		);
-
-		$def = TranslateUtils::convertWhiteSpaceToHTML( $def );
-
-		$text .= <<<EOEO
-<hr />
-<ul class="mw-translate-nav-prev-next-list">
-<li>$prevLink</li>
-<li>$nextLink</li>
-<li>$list</li>
-</ul><hr />
-<div class="mw-translate-definition-preview">$def</div>
-EOEO;
-
 		return true;
+	}
+
+	protected static function addTab( $skin, &$tabs, $name, $data, &$index ) {
+			if ( $skin instanceof SkinVector ) {
+				$data['class'] = false; // Vector needs it for some reason
+				$tabs['namespaces'][$name] = $data;
+			} else {
+				array_splice( $tabs, $index++, 0, array( $name => $data ) );
+			}
 	}
 
 	/**
@@ -154,7 +123,6 @@ EOEO;
 			return true;
 		}
 
-		TranslateEditAddons::addNavigation( $ignored, $object->editFormTextTop );
 		$object->editFormTextTop .= self::editBoxes( $object );
 
 		return true;

@@ -83,11 +83,9 @@ If you know where or how this message is used, you can help other translators by
 	'translate-edit-tmmatch'            => '$1% match',
 	'translate-use-suggestion'          => 'Insert this suggestion in the translation area. This replaces all current content.',
 
-	'translate-edit-goto-no-prev'       => 'No previous message',
-	'translate-edit-goto-no-next'       => 'No next message',
-	'translate-edit-goto-prev'          => 'Edit previous message',
-	'translate-edit-goto-next'          => 'Edit next message',
-	'translate-edit-goto-list'          => 'Back to the list',
+	'translate-edit-tab-prev'          => '<<<',
+	'translate-edit-tab-next'          => '>>>',
+	'translate-edit-tab-list'           => 'Message list',
 
 	'translate-magic-pagename'    => 'Extended MediaWiki translation',
 	'translate-magic-help'        => 'You can translate special pages aliases, magic words and namespace names.

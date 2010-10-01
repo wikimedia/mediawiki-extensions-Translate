@@ -83,12 +83,13 @@ $wgAPIMetaModules['messagegroups'] = 'ApiQueryMessageGroups';
 
 // Register hooks.
 $wgHooks['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';
-$wgHooks['OutputPageBeforeHTML'][] = 'TranslateEditAddons::addNavigation';
+$wgHooks['SkinTemplateTabs'][] = 'TranslateEditAddons::addNavigationTabs';
+// Same for Vector skin
+$wgHooks['SkinTemplateNavigation'][] = 'TranslateEditAddons::addNavigationTabs';
 $wgHooks['AlternateEdit'][] = 'TranslateEditAddons::intro';
 $wgHooks['EditPageBeforeEditButtons'][] = 'TranslateEditAddons::buttonHack';
 $wgHooks['EditPage::showEditForm:fields'][] = 'TranslateEditAddons::keepFields';
 $wgHooks['SkinTemplateTabs'][] = 'TranslateEditAddons::tabs';
-# $wgHooks['ArticleAfterFetchContent'][] = 'TranslateEditAddons::customDisplay';
 
 // Custom preferences
 $wgDefaultUserOptions['translate'] = 0;
