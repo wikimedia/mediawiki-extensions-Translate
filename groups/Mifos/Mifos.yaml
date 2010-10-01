@@ -15,7 +15,7 @@ TEMPLATE:
 BASIC:
   id: out-mifos-0-all
   label: All Mifos messages
-  description: "<div class=error>'''WARNING:''' Development of support for this product is under construction. We are working with developers to improve i18n.</div>[[Translating:Mifos|Mifos]] is a microloan and savings management platform, used by microfinance institutions to end world poverty."
+  description: "{{int:translate-group-desc-mifos}}<br /><div class=error>'''WARNING:''' Development of support for this product is under construction. We are working with developers to improve i18n.</div>[[Translating:Mifos|Mifos]] is a microloan and savings management platform, used by microfinance institutions to end world poverty."
   meta: yes
   class: AggregateMessageGroup
 
