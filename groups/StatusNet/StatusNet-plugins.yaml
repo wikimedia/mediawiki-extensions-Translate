@@ -59,6 +59,20 @@ MANGLER:
   prefix: adsense-
 ---
 BASIC:
+  id: out-statusnet-plugin-anonymousfave
+  label: StatusNet - AnonymousFave
+  display: out/statusnet/plugin/anonymousfave
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/AnonymousFave/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/AnonymousFave/locale/%CODE%/LC_MESSAGES/AnonymousFave.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/AnonymousFave/locale/AnonymousFave.pot
+  targetPattern: statusnet/plugins/AnonymousFave/locale/%CODE%/LC_MESSAGES/AnonymousFave.po
+
+MANGLER:
+  prefix: anonymousfave-
+---
+BASIC:
   id: out-statusnet-plugin-autosandbox
   label: StatusNet - AutoSandbox
   display: out/statusnet/plugin/autosandbox
@@ -297,6 +311,20 @@ MANGLER:
   prefix: firephp-
 ---
 BASIC:
+  id: out-statusnet-plugin-forcegroup
+  label: StatusNet - ForceGroup
+  display: out/statusnet/plugin/forcegroup
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/ForceGroup/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/ForceGroup/locale/%CODE%/LC_MESSAGES/ForceGroup.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/ForceGroup/locale/ForceGroup.pot
+  targetPattern: statusnet/plugins/ForceGroup/locale/%CODE%/LC_MESSAGES/ForceGroup.po
+
+MANGLER:
+  prefix: forcegroup-
+---
+BASIC:
   id: out-statusnet-plugin-geourl
   label: StatusNet - GeoURL
   display: out/statusnet/plugin/geourl
@@ -351,6 +379,20 @@ FILES:
 
 MANGLER:
   prefix: gravatar-
+---
+BASIC:
+  id: out-statusnet-plugin-groupfavorited
+  label: StatusNet - GroupFavorited
+  display: out/statusnet/plugin/groupfavorited
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/GroupFavorited/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/GroupFavorited/locale/%CODE%/LC_MESSAGES/GroupFavorited.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/GroupFavorited/locale/GroupFavorited.pot
+  targetPattern: statusnet/plugins/GroupFavorited/locale/%CODE%/LC_MESSAGES/GroupFavorited.po
+
+MANGLER:
+  prefix: groupfavorited-
 ---
 BASIC:
   id: out-statusnet-plugin-imap
@@ -717,6 +759,20 @@ MANGLER:
   prefix: sample-
 ---
 BASIC:
+  id: out-statusnet-plugin-sharenotice
+  label: StatusNet - ShareNotice
+  display: out/statusnet/plugin/sharenotice
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/ShareNotice/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/ShareNotice/locale/%CODE%/LC_MESSAGES/ShareNotice.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/ShareNotice/locale/ShareNotice.pot
+  targetPattern: statusnet/plugins/ShareNotice/locale/%CODE%/LC_MESSAGES/ShareNotice.po
+
+MANGLER:
+  prefix: sharenotice-
+---
+BASIC:
   id: out-statusnet-plugin-simpleurl
   label: StatusNet - SimpleUrl
   display: out/statusnet/plugin/simpleurl
@@ -729,6 +785,20 @@ FILES:
 
 MANGLER:
   prefix: simpleurl-
+---
+BASIC:
+  id: out-statusnet-plugin-slicedfavorites
+  label: StatusNet - SlicedFavorites
+  display: out/statusnet/plugin/slicedfavorites
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/SlicedFavorites/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/SlicedFavorites/locale/%CODE%/LC_MESSAGES/SlicedFavorites.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/SlicedFavorites/locale/SlicedFavorites.pot
+  targetPattern: statusnet/plugins/SlicedFavorites/locale/%CODE%/LC_MESSAGES/SlicedFavorites.po
+
+MANGLER:
+  prefix: slicedfavorites-
 ---
 BASIC:
   id: out-statusnet-plugin-submirror
