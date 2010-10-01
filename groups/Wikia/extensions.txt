@@ -92,8 +92,9 @@ file = InterwikiDispatcher/SpecialInterwikiDispatcher.i18n.php
 aliasfile = InterwikiDispatcher/SpecialInterwikiDispatcher.alias.php
 
 Landing Page
-optional = landingpage-buttons-about-wikia-link, landingpage-buttons-new-look-link, landingpage-buttons-about-make-the-move-link, 
-ignored = landingpage-facebook-link, landingpage-wikia-blog-link, landingpage-twitter-link
+optional = landingpage-buttons-about-wikia-link, landingpage-buttons-new-look-link, landingpage-buttons-about-make-the-move-link, landingpage-change-back-link
+optional = landingpage-quote-2, landingpage-quote-3
+ignored = landingpage-facebook-link, landingpage-wikia-blog-link, landingpage-twitter-link, landingpage-buttons-new-user-link
 
 Link Suggest
 
