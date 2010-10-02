@@ -372,10 +372,10 @@ class ExportToFileMessagesTask extends ExportMessagesTask {
 
 	public function output() {
 		if ( $this->group instanceof MessageGroupBase ) {
-			$ffs = $this->group->getFFS();
-			if ( !$ffs ) {
+			if ( !$this->group instanceof FileBasedMessageGroup ) {
 				$data = 'Not supported';
 			} else {
+				$ffs = $this->group->getFFS();
 				$data = $ffs->writeIntoVariable( $this->collection );
 			}
 		} else {
