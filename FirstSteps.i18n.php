@@ -697,6 +697,23 @@ También recibirás boletines de noticias como máximo una vez al mes.
 Si no deseas recibir boletines de noticias, puedes cancelarlas en la pestaña  "{{int:prefs-personal}}" de tus [[Special:Preferences|preferencias]].',
 );
 
+/** Basque (Euskara)
+ * @author An13sa
+ */
+$messages['eu'] = array(
+	'firststeps' => 'Lehen urratsak',
+	'translate-fs-pagetitle-done' => ' - egina!',
+	'translate-fs-pagetitle' => 'Martxan jarri - $1',
+	'translate-fs-signup-title' => 'Kontua sortu',
+	'translate-fs-settings-title' => 'Zure hobespenak konfiguratu',
+	'translate-fs-userpage-title' => 'Zure lankide orria sortu',
+	'translate-fs-permissions-title' => 'Itzultzaile eskubidea eskatu',
+	'translate-fs-settings-skip' => 'Egina.
+Aurrera jarraitu.',
+	'translate-fs-userpage-submit' => 'Nire lankide orria sortu',
+	'translate-fs-userpage-done' => 'Ondo egina! Orain lankide orrialdea duzu.',
+);
+
 /** Finnish (Suomi)
  * @author Nike
  * @author ZeiP

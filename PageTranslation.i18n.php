@@ -1441,6 +1441,12 @@ Izena: $1',
 	'tpt-translate-this' => 'Itzuli orrialde hau',
 	'translate-tag-translate-link-desc' => 'Itzuli orri hau',
 	'tpt-languages-legend' => 'Beste hizkuntzak:',
+	'pt-movepage-list-translation' => 'Itzulpen orrialdeak',
+	'pt-movepage-list-other' => 'Bestelako azpiorrialdeak',
+	'pt-movepage-current' => 'Oraingo izena:',
+	'pt-movepage-new' => 'Izen berria:',
+	'pt-movepage-reason' => 'Arrazoia:',
+	'pt-movepage-subpages' => 'Azpiorrialde guztiak mugitu',
 );
 
 /** Finnish (Suomi)
