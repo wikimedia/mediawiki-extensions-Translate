@@ -1155,7 +1155,7 @@ descmsg = filelist-desc
 Sphinx Search
 aliasfile = SphinxSearch/SphinxSearch.alias.php
 
-SpecialTalk
+Special Talk
 
 Stale Pages
 aliasfile = StalePages/StalePages.alias.php
