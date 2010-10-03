@@ -2573,6 +2573,9 @@ $messages['br'] = array(
 	'translate-edit' => 'kemmañ',
 	'translate-talk' => 'kaozeal',
 	'translate-history' => 'istor',
+	'translate-showsub' => 'Diskouez {{PLURAL:$1|an istrollad|$1 istrollad}}.',
+	'translate-grouplisting' => "Hemañ eo roll an holl strolladoù a c'haller da dreiñ.
+Klikañ war anv ar strollad kemennadennoù evit gwelet ur roll eus ar c'hemennadennoù didro.",
 	'translate-task-view' => 'Welet an holl gemennadennoù evit',
 	'translate-task-untranslated' => 'Welet an holl gemennadennoù didro evit',
 	'translate-task-optional' => 'Welet an holl gemennadennoù diret evit',
@@ -2623,11 +2626,7 @@ Ma ya d'ober ar strollad istrolladoù pe usstrolladoù kemennadennoù tennet eus
 	'translate-edit-tmsugs' => 'Kinnig a-berzh ar memor treiñ',
 	'translate-edit-tmmatch' => '$1% kenglotañ',
 	'translate-use-suggestion' => "Ensoc'hañ ar c'hinnig-mañ er prenestr treiñ. Erlec'hiañ a ra hollad an danvez a-vremañ.",
-	'translate-edit-goto-no-prev' => 'Kemennadenn ebet a-raok',
-	'translate-edit-goto-no-next' => "Kemennadenn ebet war-lerc'h",
-	'translate-edit-goto-prev' => "Mont d'ar gemennadenn a-raok",
-	'translate-edit-goto-next' => "Mont d'ar gemennadenn war-lerc'h",
-	'translate-edit-goto-list' => "Distreiñ d'ar roll",
+	'translate-edit-tab-list' => 'Roll kemennadennoù',
 	'translate-magic-pagename' => 'Troidigezh MediaWiki astennet',
 	'translate-magic-help' => "Gallout a rit treiñ aliasoù ar pajennoù dibar, ar gerioù burzhudus hag anvioù an esaouennoù anv.
 
@@ -2862,8 +2861,8 @@ Kliknite na ime grupe poruka da pogledate spisak neprevedenih poruka.',
 	'translate-task-reviewall' => 'pregledam sve prevedene poruke u',
 	'translate-task-export' => 'izvezem prijevode iz',
 	'translate-task-export-to-file' => 'izvezem prijevode u datoteku iz',
-	'translate-task-export-as-po' => 'izvezem prijevode u formatu Gettext',
-	'translate-task-export-to-xliff' => 'izvezem prijevode u formatu Xliff',
+	'translate-task-export-as-po' => 'Izvoz prijevoda u formatu Gettext',
+	'translate-task-export-to-xliff' => 'Izvoz prijevoda u formatu Xliff',
 	'translate-page-no-such-language' => 'Navedeni jezik ne postoji.',
 	'translate-page-no-such-task' => 'Navedeni zadatak ne postoji.',
 	'translate-page-no-such-group' => 'Navedena grupa ne postoji.',
@@ -2901,11 +2900,7 @@ Ako se grupa sastoji iz podseta ili nadseta poruke iz drugih grupa, prikazana je
 	'translate-edit-tmsugs' => 'Prijedlozi iz prevodilačke memorije',
 	'translate-edit-tmmatch' => '$1% slaganja',
 	'translate-use-suggestion' => 'Ubacite ovaj prijedlog u okvir prevoda. Ovo zamjenjuje sav dosadašnji sadržaj.',
-	'translate-edit-goto-no-prev' => 'Nema ranijih poruka',
-	'translate-edit-goto-no-next' => 'Nema slijedeće poruke',
-	'translate-edit-goto-prev' => 'Uredi prethodnu poruku',
-	'translate-edit-goto-next' => 'Uredi slijedeću poruku',
-	'translate-edit-goto-list' => 'Nazad na spisak',
+	'translate-edit-tab-list' => 'Spisak poruka',
 	'translate-magic-pagename' => 'Prošireni MediaWiki prijevod',
 	'translate-magic-help' => 'Možete prevoditi skraćenice posebnih stranica, magične riječi i imena imenskih prostora.
 
@@ -5005,11 +5000,7 @@ Si el grupo consiste en un subconjunto o superconjunto de mensajes de otros grup
 	'translate-edit-tmsugs' => 'Sugerencias de la memoria de traducciones',
 	'translate-edit-tmmatch' => '$1% coincidente',
 	'translate-use-suggestion' => 'Insertar esta sugerencia en el área de traducción. Esto reemplaza todo el contenido actual.',
-	'translate-edit-goto-no-prev' => 'No hay mensaje anterior',
-	'translate-edit-goto-no-next' => 'No hay mensaje posterior',
-	'translate-edit-goto-prev' => 'Editar el mensaje anterior',
-	'translate-edit-goto-next' => 'Editar el mensaje posterior',
-	'translate-edit-goto-list' => 'Volver a la lista',
+	'translate-edit-tab-list' => 'Lista de mensajes',
 	'translate-magic-pagename' => 'Traducción extendida de MediaWiki',
 	'translate-magic-help' => 'Puedes traducir los nombres de las páginas especiales, las palabras mágicas, y los de los espacios de nombre
 
@@ -13853,11 +13844,7 @@ Se o grupo é composto por um subconjunto ou superconjunto de mensagens de outro
 	'translate-edit-tmsugs' => 'Sugestões da memória de traduções',
 	'translate-edit-tmmatch' => '$1% coincidente',
 	'translate-use-suggestion' => 'Inserir esta sugestão na área de tradução. Isto substitui todo o conteúdo existente.',
-	'translate-edit-goto-no-prev' => 'Não há mensagens anteriores',
-	'translate-edit-goto-no-next' => 'Não há mensagens posteriores',
-	'translate-edit-goto-prev' => 'Editar mensagem anterior',
-	'translate-edit-goto-next' => 'Editar mensagem seguinte',
-	'translate-edit-goto-list' => 'Voltar à listagem',
+	'translate-edit-tab-list' => 'Lista de mensagens',
 	'translate-magic-pagename' => 'Tradução extra do MediaWiki',
 	'translate-magic-help' => 'Pode traduzir nomes alternativos de páginas especiais, palavras mágicas e nomes de espaços nominais.
 
@@ -17446,11 +17433,7 @@ Kung alam mo kung saan o paano ginagamit ang mensaheng ito, makakatulong ka sa i
 	'translate-edit-tmsugs' => 'Mga mungkahi mula sa alaala ng salinwika',
 	'translate-edit-tmmatch' => '$1% tumugma',
 	'translate-use-suggestion' => 'Isingit ang mungkahing ito sa pook ng salinwika.  Pinapalitan nito ang lahat ng kasalukuyang nilalaman.',
-	'translate-edit-goto-no-prev' => 'Walang sinusundang mensahe',
-	'translate-edit-goto-no-next' => 'Walang kasunod na mensahe',
-	'translate-edit-goto-prev' => 'Baguhin ang sinusundang mensahe',
-	'translate-edit-goto-next' => 'Baguhin ang susunod na mensahe',
-	'translate-edit-goto-list' => 'Magbalik sa talaan',
+	'translate-edit-tab-list' => 'Talaan ng mensahe',
 	'translate-magic-pagename' => 'Dinugtungang salinwika ng MediaWiki',
 	'translate-magic-help' => 'Maaari mong isalinwika ang mga bansag ng natatanging mga pahina, mga salitang pangsalamangka at mga pangalan ng mga espasyo ng pangalan.
 

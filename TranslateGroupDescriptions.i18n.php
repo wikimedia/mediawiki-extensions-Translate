@@ -732,6 +732,7 @@ $messages['gl'] = array(
 	'translate-group-desc-mantisbt-plugin-core' => 'Un complemento fundamental para [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Mensaxes da versión estable 1.15 de [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mediawiki-core-116' => 'Mensaxes da versión estable 1.16 de [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] é un sistema de información de xestión para microfinanzas',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' é unha libraría python para escribir documentos en formato PDF desde os artigos MediaWiki, e que foron analizados pola libraría mwlib.
 
 Por favor, bótelle unha ollada a [[mw:Extension:PDF_Writer]] e a http://code.pediapress.com/wiki/wiki/mwlibrl para obter máis información.",
@@ -1189,6 +1190,7 @@ $messages['lb'] = array(
 	'bw-desc-openstreetmap' => 'All Messagen a Relatioun mat [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => '[[Translating:OpenStreetMap|OpenStreetMap]] ass eng ännerbar Kaart vun der ganzer Welt',
 	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]] ass eng web-baséiert Fro an Äntwert Software',
+	'translate-group-desc-statusnet-plugin' => 'Dës Messagen sinn Deel vun engem Plugin fir [[Translating:StatusNet|StatusNet]]',
 	'bw-desc-voctrain' => '[[Translating:Voctrain|Voctrain]] ass en Trainingsprogramm fir Vokabelen den op OmegaWiki baséiert',
 	'bw-desc-wikiblame' => "[[Translating:WikiBlame|WikiBlame]] erlaabt et fir d'Auteure vun enger Säit op enger Wikimedia-Wiki séier ze fannen.",
 	'bw-desc-wikimediamobile' => '[[Translating:Wikimedia_mobile|Wikimedia mobile]] as de mobilen Interface fir Wikipedia',
@@ -1560,6 +1562,7 @@ $messages['pt'] = array(
 	'translate-group-desc-mantisbt-plugin-core' => 'Um plugin para o [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Mensagens da versão estável 1.15 do [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mediawiki-core-116' => 'Mensagens da versão estável 1.16 do [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] é um sistema de informação de gestão (MIS) para microfinanças',
 	'bw-desc-mwlibrl' => "O '''mwlib.rl''' é uma biblioteca em python para produzir documentos PDF a partir de artigos MediaWiki que forem analisados pela biblioteca mwlib.
 
 Por favor veja [[mw:Extension:PDF_Writer]] e http://code.pediapress.com/wiki/wiki/mwlibrl para mais informações.",
@@ -1611,6 +1614,7 @@ $messages['pt-br'] = array(
 	'translate-group-desc-mantisbt-plugin-core' => 'Um plugin para o [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Mensagens da versão estável 1.15 do [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mediawiki-core-116' => 'Mensagens da versão estável 1.16 do [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] é um sistema de informação de gestão (MIS) para microfinanças',
 	'bw-desc-mwlibrl' => "O '''mwlib.rl''' é uma biblioteca python para produzir documentos PDF a partir de artigos MediaWiki que forem analisados pela biblioteca mwlib.
 
 Por favor veja [[mw:Extension:PDF_Writer]] e http://code.pediapress.com/wiki/wiki/mwlibrl para mais informações.",
@@ -1873,6 +1877,7 @@ $messages['tl'] = array(
 	'translate-group-desc-mantisbt-plugin-core' => 'Isang pangunahing pamasak para sa [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Mga mensahe para sa matatag na bersyong 1.15 ng [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mediawiki-core-116' => 'Mga mensahe para sa matatag na bersyong 1.16 ng [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mifos' => 'Ang [[Translating:Mifos|Mifos]] ay isang sistema ng kabatiran na pangpamamahala para sa mikropinansiya',
 	'bw-desc-mwlibrl' => "Ang '''mwlib.rl''' ay isang aklatang-sawa para pagsusulat ng mga kasulatang PDF mula sa mga artikulo ng MediaWiki na nilitis ng aklatang mwlib.
 
 Mangyaring tingnan ang [[mw:Extension:PDF_Writer]] at ang http://code.pediapress.com/wiki/wiki/mwlibrl para sa mas marami pang kabatiran.",

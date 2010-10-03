@@ -2674,7 +2674,34 @@ $messages['th'] = array(
  * @author AnakngAraw
  */
 $messages['tl'] = array(
+	'firststeps' => 'Unang mga hakbang',
+	'firststeps-desc' => '[[Special:FirstSteps|Natatanging pahina]] upang magawang magsimula ang mga tagagamit sa isang wiki sa pamamagitan ng dugtong na Pagsasalinwika',
 	'translate-fs-pagetitle-done' => ' - gawa na!',
+	'translate-fs-pagetitle' => 'Masalamangkang pagsisimula - $1',
+	'translate-fs-signup-title' => 'Magpatala',
+	'translate-fs-settings-title' => 'Isaayos ang mga nais mo',
+	'translate-fs-userpage-title' => 'Likhain ang pahina mo ng tagagamit',
+	'translate-fs-permissions-title' => 'Humiling ng mga pahintulot na pangtagapagsalinwika',
+	'translate-fs-target-title' => 'Magsimulang magsalinwika!',
+	'translate-fs-email-title' => 'Tiyakin ang tirahan mo ng e-liham',
+	'translate-fs-intro' => "Maligayang pagdating sa masalamangkang unang mga hakbang ng {{SITENAME}}. 
+Hakbang-hakbang na gagabayan ka sa proseso ng pagiging isang tagapagsalinwika.
+Sa huli, makakapagsalinwika ka ng ''mga mensahe ng ugnayang-mukha'' ng lahat ng tinatangkilik na mga proyekto sa {{SITENAME}}.",
+	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount.png|balangkas]]
+
+Sa unang hakbang ay dapat kang magpatala.
+
+Ang pagpapatungkol sa iyong mga pagsasalinwika ay ipinapatungkol sa iyong pangalan ng tagagamit.
+Ang larawan sa kanan ay nagpapakita ng kung paano pupunuin ang mga hanay.
+
+Kung nakapagpatala ka na, $1lumagda$2 sa halip.
+Kapag nakapagpatala ka na, mangyaring bumalik sa pahinang ito.
+
+$3Magpatala$4',
+	'translate-fs-settings-skip' => 'Tapos na ako.
+Bayaan akong magpatuloy.',
+	'translate-fs-userpage-submit' => 'Likhain ang aking pahina ng tagagamit',
+	'translate-fs-userpage-done' => 'Mahusay! Mayroon ka na ngayong isang pahina ng tagagamit.',
 );
 
 /** ئۇيغۇرچە (ئۇيغۇرچە)
