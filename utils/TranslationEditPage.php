@@ -80,7 +80,7 @@ class TranslationEditPage {
 		}
 
 		$translation = $helpers->getTranslation();
-		$rows = substr_count( $translation, "\n" ) + 3;
+		$rows = substr_count( $translation, "\n" ) + 2;
 		$textareaParams = array(
 			'name' => 'text',
 			'class' => 'mw-translate-edit-area',
