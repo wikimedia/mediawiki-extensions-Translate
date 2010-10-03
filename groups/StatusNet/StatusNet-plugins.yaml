@@ -885,6 +885,20 @@ MANGLER:
   prefix: twitterbridge-
 ---
 BASIC:
+  id: out-statusnet-plugin-userflag
+  label: StatusNet - UserFlag
+  display: out/statusnet/plugin/userflag
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/UserFlag/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/UserFlag/locale/%CODE%/LC_MESSAGES/UserFlag.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/UserFlag/locale/UserFlag.pot
+  targetPattern: statusnet/plugins/UserFlag/locale/%CODE%/LC_MESSAGES/UserFlag.po
+
+MANGLER:
+  prefix: userflag-
+---
+BASIC:
   id: out-statusnet-plugin-userlimit
   label: StatusNet - UserLimit
   display: out/statusnet/plugin/userlimit
