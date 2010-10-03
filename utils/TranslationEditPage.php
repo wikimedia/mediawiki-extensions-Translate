@@ -80,11 +80,11 @@ class TranslationEditPage {
 		}
 
 		$translation = $helpers->getTranslation();
-		$short = strpos( $translation, "\n" ) === false && strlen( $translation ) < 200;
+		$rows = substr_count( $translation, "\n" ) + 3;
 		$textareaParams = array(
 			'name' => 'text',
 			'class' => 'mw-translate-edit-area',
-			'rows' =>  $short ? 3: 10,
+			'rows' =>  $rows <= 15 ? $rows : 15,
 			'id' => $id,
 		);
 		$textarea = Html::element( 'textarea', $textareaParams, $translation );
