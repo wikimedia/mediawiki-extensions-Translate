@@ -787,6 +787,20 @@ MANGLER:
   prefix: simpleurl-
 ---
 BASIC:
+  id: out-statusnet-plugin-sitemap
+  label: StatusNet - Sitemap
+  display: out/statusnet/plugin/sitemap
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/Sitemap/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/Sitemap/locale/%CODE%/LC_MESSAGES/Sitemap.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/Sitemap/locale/Sitemap.pot
+  targetPattern: statusnet/plugins/Sitemap/locale/%CODE%/LC_MESSAGES/Sitemap.po
+
+MANGLER:
+  prefix: sitemap-
+---
+BASIC:
   id: out-statusnet-plugin-slicedfavorites
   label: StatusNet - SlicedFavorites
   display: out/statusnet/plugin/slicedfavorites
@@ -799,6 +813,20 @@ FILES:
 
 MANGLER:
   prefix: slicedfavorites-
+---
+BASIC:
+  id: out-statusnet-plugin-sphinxsearch
+  label: StatusNet - SphinxSearch
+  display: out/statusnet/plugin/sphinxsearch
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/SphinxSearch/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/SphinxSearch/locale/%CODE%/LC_MESSAGES/SphinxSearch.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/SphinxSearch/locale/SphinxSearch.pot
+  targetPattern: statusnet/plugins/SphinxSearch/locale/%CODE%/LC_MESSAGES/SphinxSearch.po
+
+MANGLER:
+  prefix: sphinxsearch-
 ---
 BASIC:
   id: out-statusnet-plugin-submirror
