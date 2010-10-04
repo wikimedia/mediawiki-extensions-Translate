@@ -769,7 +769,10 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 	public function getMessage( $key, $code ) {
 		if ( $code === 'en' ) {
 			$stuff = $this->load( 'en' );
-			return $stuff[$key];
+			if ( !isset( $stuff[$key] ) ) {
+				wfWarn( __METHOD__ . " called for unknown key $key from " . wfGetAllCallers( 6 ) );
+			}
+			return isset( $stuff[$key] ) ? $stuff[$key] : null;
 		}
 
 		$title = Title::makeTitleSafe( $this->namespaces[0], "$key/$code" );
