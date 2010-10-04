@@ -194,6 +194,7 @@ $messages['be-tarask'] = array(
 	'translate-group-desc-mantisbt-plugin-core' => 'Асноўнае дапаўненьне [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Паведамленьні стабільнай вэрсіі [[Translating:MediaWiki|MediaWiki]] 1.15',
 	'translate-group-desc-mediawiki-core-116' => 'Паведамленьні стабільнай вэрсіі [[Translating:MediaWiki|MediaWiki]] 1.16',
+	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] — сыстэма кіраваньня інфармацыяй для мікрафінансаў',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' — бібліятэка на Python для стварэньня PDF-дакумэнтаў з артыкулаў MediaWiki, прааналізаваных бібліятэкай mwlib.
 
 Для дадатковай інфармацыі, калі ласка, глядзіце [[mw:Extension:PDF_Writer]] і http://code.pediapress.com/wiki/wiki/mwlibrl.",
@@ -308,6 +309,7 @@ $messages['bs'] = array(
 Molimo pogledajte [[mw:Extension:PDF_Writer]] i http://code.pediapress.com/wiki/wiki/mwlibrl za više informacija.",
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] je klijent za webmail napisan u PHP. Molimo prijavite sve greške na stranicu [[Support]].',
 	'bw-desc-openlayers' => 'OpenLayers je generator dinamičkih mapa otvorenog koda. Molimo prijavite sve greške na [[support]].',
+	'bw-desc-openstreetmap' => 'Sve poruke vezane za [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Ova grupa poruka sadrži poruke interfejsa za [[Translating:Open Street Map|Open Street Map]].
 Pogledajte [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} Unicode CLDR stranicu za objašnjenje o ključevima množine].',
 	'bw-desc-osm-potlatch' => 'Ova grupa poruka sadrži poruke interfejsa za [[Translating:OpenStreetMap|Potlatch]]. Molimo:
@@ -422,6 +424,7 @@ $messages['de'] = array(
 	'translate-group-desc-mantisbt-plugin-core' => 'Ein Haupt-Plugin für [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Nachrichten für die stabile Version 1.15 von [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mediawiki-core-116' => 'Nachrichten für die stabile Version 1.16 von [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] ist ein Management-Informationssystem für Mikrofinanzinstitutionen',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' ist eine Python-Bibliothek zur Erstellung von PDF-Dokumenten aus MediaWiki-Seiten, welche mit Hilfe der mwlib-Bibliothek geparst wurden.
 
 Weitere Information finden sich unter [[mw:Extension:PDF Writer]] und http://code.pediapress.com/wiki/wiki/mwlibrl",
@@ -781,6 +784,7 @@ $messages['gsw'] = array(
 	'translate-group-desc-mantisbt-plugin-core' => 'E Haupt-Plugin fir [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Nochrichte fir di stabil Version 1.15 vu [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mediawiki-core-116' => 'Nochrichte fir di stabil Version 1.16 vu [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] isch e Management-Informationssyschtem fir Mikrofinanze',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' isch e Python-Bibliothek zum Schrybe vu PDF-Dokumänt us MediaWiki-Artikel, wu dur d mwlib-Bibliothek parsed wore sin.
 
 Bitte lueg uf [[mw:Extension:PDF_Writer]] un uf http://code.pediapress.com/wiki/wiki/mwlibrl fir meh Informatione.",
@@ -1183,6 +1187,7 @@ $messages['lb'] = array(
 	'translate-group-desc-translatablepages' => 'All iwwersetzbar Säiten',
 	'bw-desc-freecol' => "Ier Dir ufänkt FreeCol an Är Sprooch z'iwwersetzen, liest w.e.g. [[Translating:FreeCol]]. Freecol benotzt d'GPL-Lizenz.",
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], e Webforum deen a PHP geschriwwen ass.',
+	'translate-group-desc-mantisbt-plugin-core' => 'En Haapt-Plugin fir [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Message fir déi stabil Versioun 1.15 vu [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mediawiki-core-116' => 'Message fir déi stabil Versioun 1.16 vu [[Translating:MediaWiki|MediaWiki]]',
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] ass e Webmail-Client deen a PHP geschriwen ass. Wann dir Problemer oder Froen domat hutt da gitt w.e.g. op [[Support]].',
@@ -1495,7 +1500,7 @@ $messages['pms'] = array(
 	'translate-group-desc-translate' => "Meta partìa ëd mëssagi contenent tùit ij mëssagi për l'estension MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Tradussion]",
 	'translate-group-desc-wikiaextensions' => "Meta partìa ëd mëssagi contenent tùit ij mëssagi për l'estension mantnùa MediaWiki dovrà da [http://www.wikia.com Wikia]",
 	'translate-group-desc-wikimediaextensions' => "Meta partìa ëd mëssagi contenent tùit ij mëssagi për l'estension mantnùa MediaWiki dovrà da [http://wikimedia.org/ Fondassion Wikimedia]",
-	'translate-group-desc-wikimediaextensions-main' => "Partìa ëd meta mëssagi contenent tùit ij mëssagi ciamà për j'estension MediaWiki apogià da volté për ël [http://meta.wikimedia.org/wiki/Language_committee Language committee] ëd Wikimedia",
+	'translate-group-desc-wikimediaextensions-main' => "Partìa ëd meta mëssagi contenent tùit ij mëssagi për j'estension MediaWiki mantnùe e ch'a venta volté për ël [http://meta.wikimedia.org/wiki/Language_committee Comità dle lenghe] ëd Wikimedia",
 	'translate-group-desc-uniwiki' => "Meta partìa ëd mëssagi contenent tùit ij mëssagi për l'estension relativa a [http://unicefinnovation.org/wiki.php Uniwiki]",
 	'translate-group-desc-ui' => "Meta partìa ëd mëssagi contenent tùit ij mëssagi për l'estension relativa a [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]",
 	'translate-group-desc-translatablepages' => "Tute le pàgine ch'as peulo volté",
@@ -1519,7 +1524,7 @@ Për piasì varda [[mw:Extension:PDF_Writer]]  e http://code.pediapress.com/wiki
 * Dòvra [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] për prové Potlatch. It peule prové là tut lòn ch'it veule an tute le aire.",
 	'bw-desc-shapado' => 'Partìa ëd mëssagi për ël programa ëd domande e rispòste lìber e a sorgiss lìbera [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => "[[Translating:StatusNet|StatusNet]] a l'é un servent ëd microscartari a sorgiss duverta",
-	'translate-group-desc-statusnet-plugin' => "Sti mëssagi a son part d'un plugin për [[Translating:StatusNet|StatusNet]]",
+	'translate-group-desc-statusnet-plugin' => "Sti mëssagi a fan part ëd n'estension për [[Translating:StatusNet|StatusNet]]",
 	'bw-desc-voctrain' => "[http://omegawiki.org OmegaWiki]-based vocabulary trainer. A dòvra un sistema ëd flashcard për amparé ël vocabolari da minca lenga a minca lenga apogià da OmegaWiki.
 Creà da l'Università ëd Bamberg. Licensià GPL 2.0 o pì anans. Svilupà da [[User:Kim Bruning|Kim Bruning]].",
 	'bw-desc-wikiblame' => "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] a peil trové an pressa j'àutor ëd na pàgina an na wiki ëd Wikimedia.",

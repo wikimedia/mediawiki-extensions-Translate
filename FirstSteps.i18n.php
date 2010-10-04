@@ -135,6 +135,34 @@ $messages['jam'] = array(
 	'translate-fs-permissions-title' => 'Rikwes chranslieta pomishan',
 	'translate-fs-target-title' => 'Taat fi chransliet!',
 	'translate-fs-email-title' => 'Kanfoerm yu e-miel ajres.',
+	'translate-fs-intro' => "Welkom tu di {{SITENAME}} fos tep wizad.
+Yu wi gaid chruu di pruoses fi ton chranslieta tep bi tep.
+Wen yu don yu wi iebl fi chransliet '''intafies mechiz''' a aal prajek wa supuot a {{SITENAME}}.",
+	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount.png|friem]]
+
+Ina di fos tep yu fi sain op.
+
+Kredit fi yu chranslieshan achribiut tu yu yuuza niem.
+Di imij pahn di rait shuo ou fi fulop di fiildem.
+
+Ef yu sain op aredi, $1lag iin$2 insted.
+Wans yu sain op, begyu kumbak a dis piej.
+
+$3Sain op$4',
+	'translate-fs-settings-text' => 'Yu fi go nou tu yu prefransdem ahn akliis chienj yu intafies langwij tu di langwij yu a go chransliet tu.
+
+Yu intafies langwij wi yuuz az di difaalt taagit langwij.
+Ihiizi fi figat fi chienj dilangwij tu di karek wan, so wi aili rekomen yu fi seti nou.
+
+Wails yu di de, yu kiahn alzwel rikwes di saafwier fi displie chranslieshan in ada langwij yu nuo.
+Di setn kiahn fain anda di tab "{{int:prefs-editing}}".
+Fiil frii fi expluor ada setn tu.
+
+Go tu yu [[Special:Preferences|prefrans piej]] nou ahn den kumbak a dis piej.',
+	'translate-fs-settings-skip' => 'Mi don.
+Mek mi prosiid.',
+	'translate-fs-userpage-submit' => 'Kriet mi yuuza piej',
+	'translate-fs-userpage-done' => 'Yaa gwaan! Yu nou ab a yuuza piej.',
 );
 
 /** Arabic (العربية)

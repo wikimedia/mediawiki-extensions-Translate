@@ -2134,11 +2134,7 @@ $messages['be-tarask'] = array(
 	'translate-edit-tmsugs' => 'Прапановы з памяці перакладу',
 	'translate-edit-tmmatch' => '$1% супадзеньне',
 	'translate-use-suggestion' => 'Устаўце прапанову ў вобласьць перакладаў. Гэта заменіць увесь цяперашні зьмест.',
-	'translate-edit-goto-no-prev' => 'Няма папярэдняга паведамленьня',
-	'translate-edit-goto-no-next' => 'Няма наступнага паведамленьня',
-	'translate-edit-goto-prev' => 'Рэдагаваць папярэдняе паведамленьне',
-	'translate-edit-goto-next' => 'Рэдагаваць наступнае паведамленьне',
-	'translate-edit-goto-list' => 'Вярнуцца да сьпісу',
+	'translate-edit-tab-list' => 'Сьпіс паведамленьняў',
 	'translate-magic-pagename' => 'Пашыраны пераклад MediaWiki',
 	'translate-magic-help' => 'Вы можаце перакладаць псэўданімы спэцыяльных старонак, магічныя словы і прасторы назваў.
 
@@ -6839,11 +6835,7 @@ Wänn d Gruppe us ere Deil- oder Obermängi vu Syschtemnochrichte vun ere andere
 	'translate-edit-tmsugs' => 'Vorschleg vum Ibersetzigsspycher',
 	'translate-edit-tmmatch' => '$1% Ibereinstimmig',
 	'translate-use-suggestion' => 'Dää Vorschlag in s Ibersetzigsfäld yyfiege. Des ersetzt alli aktuälle Inhalt.',
-	'translate-edit-goto-no-prev' => 'Kei vorige Syschtemnochricht',
-	'translate-edit-goto-no-next' => 'Kei wyteri Syschtemnochricht',
-	'translate-edit-goto-prev' => 'Vorigi Syschtemnochricht bearbeite',
-	'translate-edit-goto-next' => 'Negschti Syschtemnochricht bearbeite',
-	'translate-edit-goto-list' => 'Zrugg zue dr Lischt',
+	'translate-edit-tab-list' => 'Nochrichtelischte',
 	'translate-magic-pagename' => 'Erwytereti MediaWiki-Ibersetzig',
 	'translate-magic-help' => 'Du chasch doo Alias fir Spezialsyte, magischi Werter un Namensruumnäme ibersetze.
 
