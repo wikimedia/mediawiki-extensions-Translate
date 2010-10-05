@@ -560,6 +560,73 @@ $messages['niu'] = array(
 	'translate-page-navigation-legend' => 'Navikati',
 );
 
+/** Jamaican Creole English (Jamaican Creole English)
+ * @author Yocahuna
+ */
+$messages['jam'] = array(
+	'translate' => 'Chransliet',
+	'translate-desc' => '[[Special:Translate|Special page]] fi chransliet MediaWiki ahn biyan',
+	'translate-edit' => 'edit',
+	'translate-talk' => 'taak',
+	'translate-history' => 'ischri',
+	'translate-showsub' => 'Shuo di {{PLURAL:$1|sobgruup|$1 sobgruup}}.',
+	'translate-grouplisting' => 'Dis a di laas a aal chranslietobl gruup.
+Klik di mechiz gruup niem fi vyuu a lis a anchranslietobl mechiz',
+	'translate-task-view' => 'Vyuu aal mechiz frahn',
+	'translate-task-untranslated' => 'Vyuu aal anchranslietobl mechiz frahn',
+	'translate-task-optional' => 'Vyuu apshanal mechiz frahn',
+	'translate-task-suggestions' => 'Vyuu mechiz wid sojeshan frahn chranslietobl memari',
+	'translate-task-untranslatedoptional' => 'Vyuu anchranslietobl apshanal mechiz frahn',
+	'translate-task-problematic' => 'Vyuu mechiz wa ab prablem',
+	'translate-task-review' => 'Rivyuu chienjdem tu',
+	'translate-task-reviewall' => 'Rivyuu aal chranslietid mechiz ina',
+	'translate-task-export' => 'Expuot chranslieshan frahn',
+	'translate-task-export-to-file' => 'Expuot chranslieshan tu fail frahn',
+	'translate-task-export-as-po' => 'Expuot chranslieshan ina Gettext faamat',
+	'translate-task-export-to-xliff' => 'Expuot chranslieshan ina Xliff faamat',
+	'translate-page-no-such-language' => 'Spesifai langwij ehn invalid.',
+	'translate-page-no-such-task' => 'Spesifai taas ehn invalid.',
+	'translate-page-no-such-group' => 'Spesifai gruup ehn invalid.',
+	'translate-page-disabled' => "Chranslieshan tu dis langwij ina dis gruup disiebl.
+Riizn:
+
+''$1''",
+	'translate-page-settings-legend' => 'Setndem',
+	'translate-page-task' => 'Mi waahn fi',
+	'translate-page-group' => 'Gruup',
+	'translate-page-group-tooltip' => 'Di niem a wahn gruup a mechiz.
+Ef di gruup kansis a wahn sobset ar syuupaset a mechiz frahn ada gruup, idisplie ina buol.',
+	'translate-page-language' => 'Langwij',
+	'translate-page-limit' => 'Limit',
+	'translate-page-limit-option' => '$1 {{PLURAL:$1|mechiz|mechiz}} a piej',
+	'translate-submit' => 'Fech',
+	'translate-page-navigation-legend' => 'Navigieshan',
+	'translate-page-showing' => 'Mechiz frahn $1 tu $2 a $3 a shuo.',
+	'translate-page-showing-all' => 'A shuo $1 {{PLURAL:$1|mechiz|mechiz}}.',
+	'translate-page-showing-none' => 'No mechiz fi shuo.',
+	'translate-next' => 'Nex piej',
+	'translate-prev' => 'Priivos piej',
+	'translate-page-description-legend' => 'Infamieshan bout di gruup',
+	'translate-page-edit' => 'edit',
+	'translate-ext-url' => '<hr />Websait: $1',
+	'translate-optional' => '(apshanal)',
+	'translate-ignored' => '(ignuor)',
+	'translate-edit-title' => 'Edit "$1"',
+	'translate-edit-definition' => 'Mechiz definishan',
+	'translate-edit-contribute' => 'kanchribiut',
+	'translate-edit-no-information' => "''Dis mechiz naa no dakiumentieshan.
+Ef yu nuo we ar ou dis mechiz yuuz, yu kiahn elp ada chranslieta bai ad dakiumentieshan tu dis mechiz.''",
+	'translate-edit-information' => 'Infamieshan bout mechiz "$2" ($1)',
+	'translate-edit-in-other-languages' => 'Mechiz "$1" in ada langwij',
+	'translate-edit-committed' => 'Korant chranslieshan ina saafwier',
+	'translate-edit-warnings' => 'Waanin bout inkompliit chranslieshan',
+	'translate-edit-tmsugs' => 'Sojeshan frahn chranslieshan memari',
+	'translate-edit-tmmatch' => '$1% mach',
+	'translate-use-suggestion' => 'Insoert dis sojeshan ina di chranslieshan ieria. Dis riplies aal korant kantent.',
+	'translate-edit-tab-list' => 'Mechiz lis',
+	'translate-magic-pagename' => 'Extendid MediaWiki chranslieshan',
+);
+
 /** Moroccan Spoken Arabic (Maġribi)
  * @author Enzoreg
  */
@@ -3875,7 +3942,7 @@ Klicke auf die Nachrichtengruppe, um eine Liste der unübersetzten Nachrichten a
 	'translate-task-reviewall' => 'Prüfe alle Übersetzungen der',
 	'translate-task-export' => 'Exportiere alle Übersetzungen der',
 	'translate-task-export-to-file' => 'Exportiere alle Übersetzungen in eine Datei der',
-	'translate-task-export-as-po' => 'Exportiere alle Übersetzungen in das Gettext-Format der',
+	'translate-task-export-as-po' => 'Exportiere alle Übersetzungen in das Gettext-Format',
 	'translate-task-export-to-xliff' => 'Exportiere alle Übersetzungen in das Xliff-Format',
 	'translate-page-no-such-language' => 'Die angegebene Sprache ist ungültig.',
 	'translate-page-no-such-task' => 'Die angegebene Aufgabe ist ungültig.',
@@ -13422,11 +13489,7 @@ S'a sa andoa o coma 's mëssagi a l'é dovrà, a peul giuté d'àutri tradutor a
 	'translate-edit-tmsugs' => 'Sugeriment da le tradussion an memòria',
 	'translate-edit-tmmatch' => 'corëspondensa ëd $1%',
 	'translate-use-suggestion' => 'A anseriss sto sugeriment-sì ant la fnestra ëd tradussion. Sòn a rampiassa tut ël contnù corent.',
-	'translate-edit-goto-no-prev' => 'Gnun mëssagi prima',
-	'translate-edit-goto-no-next' => 'Gnun mëssagi apress',
-	'translate-edit-goto-prev' => 'Modifiché ël mëssagi prima',
-	'translate-edit-goto-next' => 'Modifiché ël mëssagi apress',
-	'translate-edit-goto-list' => 'Andaré a la lista',
+	'translate-edit-tab-list' => 'Lista ëd mëssagi',
 	'translate-magic-pagename' => 'Viragi estèis ëd MediaWiki',
 	'translate-magic-help' => "A peul volté j'àlias dle pàgine speciaj, le paròle màgiche e ij nòm ëd jë spassi nominaj.
 
@@ -18586,11 +18649,7 @@ Nhấn chuột vào tên nhóm thông điệp để xem một danh sách thông 
 	'translate-edit-tmsugs' => 'Gợi ý từ bộ nhớ biên dịch',
 	'translate-edit-tmmatch' => 'trùng $1%',
 	'translate-use-suggestion' => 'Thay thế nội dung hộp dịch với đề nghị này.',
-	'translate-edit-goto-no-prev' => 'Không có thông báo trước',
-	'translate-edit-goto-no-next' => 'Không có thông báo kế',
-	'translate-edit-goto-prev' => 'Sửa thông báo trước',
-	'translate-edit-goto-next' => 'Sửa thông báo kế',
-	'translate-edit-goto-list' => 'Quay về danh sách',
+	'translate-edit-tab-list' => 'Danh sách thông điệp',
 	'translate-magic-pagename' => 'Bản dịch MediaWiki mở rộng',
 	'translate-magic-help' => 'Bạn có thể dịch bí danh của các trang đặc biệt, câu thần chú và tên của không gian tên.
 

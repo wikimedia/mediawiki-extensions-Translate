@@ -424,7 +424,7 @@ $messages['de'] = array(
 	'translate-group-desc-mantisbt-plugin-core' => 'Ein Haupt-Plugin für [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Nachrichten für die stabile Version 1.15 von [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mediawiki-core-116' => 'Nachrichten für die stabile Version 1.16 von [[Translating:MediaWiki|MediaWiki]]',
-	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] ist ein Management-Informationssystem für Mikrofinanzinstitutionen',
+	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] ist ein Managementinformationssystem für Mikrofinanzinstitutionen',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' ist eine Python-Bibliothek zur Erstellung von PDF-Dokumenten aus MediaWiki-Seiten, welche mit Hilfe der mwlib-Bibliothek geparst wurden.
 
 Weitere Information finden sich unter [[mw:Extension:PDF Writer]] und http://code.pediapress.com/wiki/wiki/mwlibrl",
@@ -1510,6 +1510,7 @@ $messages['pms'] = array(
 	'translate-group-desc-mantisbt-plugin-core' => 'Un plugin sentral për [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Mëssagi për la version ëstàbil 1.15 ëd [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mediawiki-core-116' => 'Mëssagi për la version ëstàbil 1.16 ëd [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mifos' => "[[Translating:Mifos|Mifos]] a l'é un sistem anformativ ëd gestion për la microfinansa",
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' a l'é na liberìa python për ëscrive document PDF da partìcoj MediaWiki che a son ëstàit analisà da la librerìa mwlib.
 
 Për piasì varda [[mw:Extension:PDF_Writer]]  e http://code.pediapress.com/wiki/wiki/mwlibrl  për pì d'anformassion.",

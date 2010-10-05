@@ -431,14 +431,14 @@ $messages['cs'] = array(
 $messages['de'] = array(
 	'firststeps' => 'Erste Schritte',
 	'firststeps-desc' => '[[Special:FirstSteps|Spezialseite]] zur Starterleichterung auf Wikis mit der „Translate“-Extension',
-	'translate-fs-pagetitle-done' => '- erledigt!',
+	'translate-fs-pagetitle-done' => ' – erledigt!',
 	'translate-fs-pagetitle' => 'Startassistent - $1',
-	'translate-fs-signup-title' => 'Registrieren',
-	'translate-fs-settings-title' => 'Deine Einstellungen anpassen',
-	'translate-fs-userpage-title' => 'Deine Benutzerseite erstellen',
+	'translate-fs-signup-title' => 'Registrierung durchführen',
+	'translate-fs-settings-title' => 'Einstellungen anpassen',
+	'translate-fs-userpage-title' => 'Benutzerseite erstellen',
 	'translate-fs-permissions-title' => 'Übersetzerrechte beantragen',
 	'translate-fs-target-title' => 'Übersetzen!',
-	'translate-fs-email-title' => 'Deine E-Mail-Adresse bestätigen',
+	'translate-fs-email-title' => 'E-Mail-Adresse bestätigen',
 	'translate-fs-intro' => "Willkommen bei dem {{SITENAME}}-Startassistenten.
 Dir wird gezeigt, wie du Schritt für Schritt ein Übersetzer wirst.
 Am Ende wirst du alle ''Oberflächen-Nachrichten'' der von {{SITENAME}} unterstützten Projekte übersetzen können.",
