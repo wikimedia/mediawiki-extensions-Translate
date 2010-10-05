@@ -357,9 +357,9 @@ FOO;
 			$wgExtNewFields[] = array( 'translate_sections', 'trs_order', "$dir/translate-add-trs_order.patch.sql" );
 			$wgExtNewTables[] = array( 'revtag_type', "$dir/revtags.sql" );
 		} else {
-			$updater->addExtensionUpdate( array( 'addTable', 'translate_sections', "$dir/translate.sql" ) );
-			$updater->addExtensionUpdate( array( 'addField', 'translate_sections', 'trs_order', "$dir/translate-add-trs_order.patch.sql" ) );
-			$updater->addExtensionUpdate( array( 'addTable', 'revtag_type', "$dir/revtags.sql" ) );
+			$updater->addExtensionUpdate( array( 'addTable', 'translate_sections', "$dir/translate.sql", true ) );
+			$updater->addExtensionUpdate( array( 'addField', 'translate_sections', 'trs_order', "$dir/translate-add-trs_order.patch.sql", true ) );
+			$updater->addExtensionUpdate( array( 'addTable', 'revtag_type', "$dir/revtags.sql", true ) );
 		}
 		return true;
 	}
