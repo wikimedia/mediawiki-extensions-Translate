@@ -408,10 +408,38 @@ $messages['bs'] = array(
 	'translate-fs-permissions-title' => 'Zahtijevaj prevodilačku dozvolu',
 	'translate-fs-target-title' => 'Počni prevoditi!',
 	'translate-fs-email-title' => 'Potvrdi svoju e-mail adresu',
+	'translate-fs-intro' => "Dobro došli u čarobnjak za prve korake na {{SITENAME}}.
+Ovaj čarobnjak će vas postepeno voditi kroz proces dobijanja prava prevodioca.
+Na kraju ćete moći prevoditi ''poruke interfejsa'' svih podržanih projekata na {{SITENAME}}.",
+	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount.png|frame]]
+
+U prvom koraku se morate prijaviti.
+
+Zasluge za vaš prevod će biti dodijeljene vašem korisničkom imenu.
+Slika s desne strane pokazuje kako se popunjavaju polja.
+
+Ako ste već registrirani, $1prijavite se$2.
+Jednom kad ste registrirani, vratite se na ovu stranicu.
+
+$3Registracija$4',
 	'translate-fs-settings-skip' => 'Završio sam.
 Želim nastaviti.',
 	'translate-fs-userpage-submit' => 'Napravi moju korisničku stranicu',
 	'translate-fs-userpage-done' => 'Odlično urađeno! Sada imate korisničku stranicu.',
+	'translate-fs-permissions-text' => 'Sada trebate da podnesete zahtjev da vas dodaju u grupu prevodioca.
+
+Dok ne popravimo kod, molimo idite na [[Project:Translator]] i slijedite uputstva.
+Zatim se vratite na ovu stranicu.
+
+Nakon što ste podnijeli zahtjev, jedan od članova našeg volonterskog osoblja će provjeriti vaš zahtjev i odobriti ga kad se steknu uslovi za to.
+Molimo da budete strpljivi.
+
+<del>Provjerite da je slijedeći zahtjev pravilno ispunjen i zatim pritisnite dugme za zahtjev.</del>',
+	'translate-fs-email-text' => 'Molimo navedite vašu e-mail adresu u [[Special:Preferences|vašim postavkama]] i potvrdite je iz vašeg e-maila koji vam je poslan.
+
+Ovo omogućava drugim korisnicima da vas kontaktiraju putem e-maila.
+Također ćete dobijati novosti najviše jednom mjesečno.
+Ako ne želite primati novosti, možete se odjaviti na jezičku "{{int:prefs-personal}}" u vašim [[Special:Preferences|postavkama]].',
 );
 
 /** Czech (Česky)

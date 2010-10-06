@@ -284,6 +284,7 @@ Gant skol-veur Bamberg eo bet savet. Aotre GPL 2.0 pe nevesoc'h. Diorroet gant [
  * @author Smooth O
  */
 $messages['bs'] = array(
+	'translategroupdescriptions-desc' => 'Opisi grupe poruka za proizvode podržane od strane dodatka [http://mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-nodesc' => 'Nije dostupan opis za ovu grupu poruka',
 	'translate-group-desc-mediawikicore' => 'Ova grupa poruka sadrži poruke koje se koriste u trenutnoj alfa verziji MediaWiki ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'Ova grupa poruka sadrži [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 najčešće korištenih poruka] na MediaWiki',
@@ -295,6 +296,7 @@ $messages['bs'] = array(
 	'translate-group-desc-translate' => 'Grupa meta poruka koje sadrže sve poruke za MediaWiki proširenje [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-wikiaextensions' => 'Grupa meta poruka koja sadrži sve poruke za podržana MediaWiki proširenja za [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Grupa meta poruka koja sadrži sve poruke za podržana MediaWiki proširenja korištena od strane [http://wikimedia.org/ Wikimedia Foundation]',
+	'translate-group-desc-wikimediaextensions-main' => 'Grupa meta poruka koja sadrži sve poruke za podršku MediaWiki proširenja neophodnih za prevođenje za Wikimedia [http://meta.wikimedia.org/wiki/Language_committee Jezični komitet]',
 	'translate-group-desc-uniwiki' => 'Grupa meta poruka koja sadrži sve poruke za proširenja vezana za [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Grupa meta poruka koja sadrži sve poruke za proširenja vezana za [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia inicijativu upotrebljivosti]',
 	'translate-group-desc-translatablepages' => 'Sve stranice koje se mogu prevesti',
@@ -304,10 +306,12 @@ $messages['bs'] = array(
 	'translate-group-desc-mantisbt-plugin-core' => 'Plugin jezgre za [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Poruke za stabilnu verziju 1.15 [[Translating:MediaWiki|MediaWiki]]ja',
 	'translate-group-desc-mediawiki-core-116' => 'Poruke za stabilnu verziju 1.16 [[Translating:MediaWiki|MediaWiki]]ja',
+	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] je upravljački informacioni sistem za mikrofinansiranje',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' je python biblioteka za pisanje PDF dokumenata iz MediaWiki članaka koji su obrađeni putem mwlib biblioteke.
 
 Molimo pogledajte [[mw:Extension:PDF_Writer]] i http://code.pediapress.com/wiki/wiki/mwlibrl za više informacija.",
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] je klijent za webmail napisan u PHP. Molimo prijavite sve greške na stranicu [[Support]].',
+	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] je program za vanmrežno čitanje Wikipedije',
 	'bw-desc-openlayers' => 'OpenLayers je generator dinamičkih mapa otvorenog koda. Molimo prijavite sve greške na [[support]].',
 	'bw-desc-openstreetmap' => 'Sve poruke vezane za [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Ova grupa poruka sadrži poruke interfejsa za [[Translating:Open Street Map|Open Street Map]].
@@ -316,7 +320,9 @@ Pogledajte [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_p
 
 *Pokušajte držati Vaše prijevoda što sličnijim dužini originalnog engleskog teksta zbog ograničenja UI okvira. Također pogledajte [http://trac.openstreetmap.org/ticket/2067 otvorene greške].
 *Koristite [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] za isprobavanje Potlatch. Možete ovdje probati sve što želite u toj oblasti.',
+	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]] je program za pitanja i odgovore zasnovan na internetu',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] je platforma otvorenog koda za mikro blogiranje',
+	'translate-group-desc-statusnet-plugin' => 'Ove poruke su dio priključka za [[Translating:StatusNet|StatusNet]]',
 	'bw-desc-voctrain' => 'Riječnički trener zasnovan na Omegawiki. Koristi sistem flashcard za učenje riječi sa bilo kojeg jezika na drugi jezik koji omogućuje Omegawiki.
 Napravljeno na Univerzitetu Bamberg. Licencirano pod GPL 2.0 ili kasnijom. Razvijeno od strane korisnika [[User:Kim Bruning]].',
 	'bw-desc-wikiblame' => 'Putem [http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] je moguće brzo pronaći autore stranica u Wikimedia wikijima.',
@@ -647,6 +653,7 @@ $messages['fr'] = array(
 	'translate-group-desc-mantisbt-plugin-core' => 'Un plugin de base pour [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Les messages pour la version stable 1.15 de [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mediawiki-core-116' => 'Les messages pour la version stable 1.16 de [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] est un système de gestion de l’information pour la microfinance',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' est une bibliothèque Python pour créer des documents PDF à partir des articles de MediaWiki qui ont été analysés par la bibliothèque mwlib.
 
 Veuillez consulter [[mw:Extension:PDF Writer]] et http://code.pediapress.com/wiki/wiki/mwlibrl pour plus d’informations.",
@@ -1510,7 +1517,7 @@ $messages['pms'] = array(
 	'translate-group-desc-mantisbt-plugin-core' => 'Un plugin sentral për [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Mëssagi për la version ëstàbil 1.15 ëd [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mediawiki-core-116' => 'Mëssagi për la version ëstàbil 1.16 ëd [[Translating:MediaWiki|MediaWiki]]',
-	'translate-group-desc-mifos' => "[[Translating:Mifos|Mifos]] a l'é un sistem anformativ ëd gestion për la microfinansa",
+	'translate-group-desc-mifos' => "[[Translating:Mifos|Mifos]] a l'é un sistema anformativ ëd gestion për la microfinansa",
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' a l'é na liberìa python për ëscrive document PDF da partìcoj MediaWiki che a son ëstàit analisà da la librerìa mwlib.
 
 Për piasì varda [[mw:Extension:PDF_Writer]]  e http://code.pediapress.com/wiki/wiki/mwlibrl  për pì d'anformassion.",
@@ -1648,7 +1655,41 @@ Created pela Universidade de Bamberg. Licenciado GPL 2.0 ou posterior. Desenvolv
  * @author Minisarm
  */
 $messages['ro'] = array(
+	'translategroupdescriptions-desc' => 'Descrieri ale grupului de mesaje pentru produse susținute de extensia [http://mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-nodesc' => 'Nu există descriere pentru acest grup de mesaje',
+	'translate-group-desc-mediawikicore' => 'Acest grup de mesaje conține mesajele utilizate în actuala versiune alpha a software-ului [[Translating:MediaWiki|MediaWiki]] ({{CURRENTVERSION}})',
+	'translate-group-desc-mediawikimostused' => 'Acest grup de mesaje conține [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki cele mai utilizate 500 de mesaje] de [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawikiextensions' => 'Grup de mesaje meta conținând toate mesajele extensiilor sotware-ului [[Translating:MediaWiki|MediaWiki]] suportate',
+	'translate-group-desc-collection' => 'Grup de mesaje meta conținând toate mesajele extensiei [http://www.mediawiki.org/wiki/Extension:Collection Collection] a MediaWiki',
+	'translate-group-desc-flaggedrevs' => 'Grup de mesaje meta conținând toate mesajele extensiei [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs] a MediaWiki',
+	'translate-group-desc-readerfeedback' => 'Grup de mesaje meta conținând toate mesajele extensiei [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback] a MediaWiki',
+	'translate-group-desc-socialprofile' => 'Grup de mesaje meta conținând toate mesajele extensiilor asociate extensiei [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile] a MediaWiki',
+	'translate-group-desc-translate' => 'Grup de mesaje meta conținând toate mesajele extensiei [http://www.mediawiki.org/wiki/Extension:Translate Translate] a MediaWiki',
+	'translate-group-desc-wikiaextensions' => 'Grup de mesaje meta conținând toate mesajele extensiilor susținute de MediaWiki și utilizate de [http://www.wikia.com Wikia]',
+	'translate-group-desc-wikimediaextensions' => 'Grup de mesaje meta conținând toate mesajele extensiilor susținute de MediaWiki și utilizate de [http://wikimedia.org/ Fundația Wikimedia]',
+	'translate-group-desc-wikimediaextensions-main' => 'Grup de mesaje meta conținând toate mesajele extensiilor susținute de MediaWiki și solicitate a fi traduse pentru [http://meta.wikimedia.org/wiki/Language_committee Comitetul lingvistic] al Wikimedia',
+	'translate-group-desc-uniwiki' => 'Grup de mesaje meta conținând toate mesajele extensiilor asociate [http://unicefinnovation.org/wiki.php Uniwiki]',
+	'translate-group-desc-ui' => 'Grup de mesaje meta conținând toate mesajele extensiilor asociate [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Inițiativei de Utilizabilitate a Wikipediei]',
+	'translate-group-desc-translatablepages' => 'Toate paginile traductibile',
+	'bw-desc-freecol' => "[[Translating:FreeCol|FreeCol]] este un joc de strategie de tip ''turn-based''",
+	'bw-desc-fudforum' => '[[Translating:FUDforum|FUDforum]] este un software bazat pe web dedicat forumurilor de discuții',
+	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]] este un urmăritor de erori bazat pe web',
+	'translate-group-desc-mantisbt-plugin-core' => 'Un plugin-nucleu pentru [[Translating:MantisBT|MantisBT]]',
+	'translate-group-desc-mediawiki-core-115' => 'Mesaje pentru versiunea stabilă 1.15 a software-ului [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawiki-core-116' => 'Mesaje pentru versiunea stabilă 1.16 a software-ului [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] este un sistem pentru microfinanțare de administrare a informației',
+	'bw-desc-mwlibrl' => '[[Translating:Mwlib.rl|Mwlib.rl]] este o bibliotecă pentru salvarea paginilor MediaWiki ca documente PDF',
+	'bw-desc-nocc' => '[[Translating:NOCC|NOCC]] este un client de poștă electronică',
+	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] este un navigator off-line pentru Wikipedia',
+	'bw-desc-openlayers' => '[[Translating:OpenLayers|OpenLayers]] este un generator dinamic de hărți în JavaScript',
+	'bw-desc-openstreetmap' => 'Toate mesajele asociate cu [[Translating:OpenStreetMap|OpenStreetMap]]',
+	'bw-desc-osm-site' => '[[Translating:OpenStreetMap|OpenStreetMap]] este o hartă a lumii care poate fi liber modificată',
+	'bw-desc-osm-potlatch' => '[[Translating:OpenStreetMap|Potlatch]] este un editor al OpenStreetMap bazat pe Flash',
+	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]] este un software bazat pe web de tip întrebări și răspunsuri',
+	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] este un server pentru microblogging',
+	'translate-group-desc-statusnet-plugin' => 'Aceste mesaje sunt componente ale unui plugin pentru [[Translating:StatusNet|StatusNet]]',
+	'bw-desc-voctrain' => '[[Translating:Voctrain|Voctrain]] este un antrenor de vocabular bazat pe OmegaWiki',
+	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] este capabil să găsească rapid autorii unei pagini dintr-un site wiki susținut de Wikimedia',
 	'bw-desc-wikimediamobile' => 'Wikimedia mobilă se poate accesa la http://m.wikipedia.org și are ca scop aducerea Wikipediei direct pe telefoanele mobile din întreaga lume.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] este un proiect ce are ca scop furnizarea unei versiuni off-line (care să conțină doar text) a Wikipediei pe un dispozitiv mobil.',
 );

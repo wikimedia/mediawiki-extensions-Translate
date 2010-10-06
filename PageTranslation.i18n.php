@@ -2782,6 +2782,7 @@ $messages['km'] = array(
 $messages['kn'] = array(
 	'tpt-translate-this' => 'ಈ ಪುಟವನ್ನು ಅನುವಾದಿಸಿ',
 	'translate-tag-translate-link-desc' => 'ಈ ಪುಟವನ್ನು ಅನುವಾದಿಸಿ',
+	'pt-movepage-reason' => 'ಕಾರಣ:',
 );
 
 /** Korean (한국어)
@@ -2850,6 +2851,12 @@ $messages['ksh'] = array(
 De Siggeschabloon för ze övversäze: <pre>$1</pre>',
 	'pt-parse-close' => 'En &lt;/translate&gt; es ohne Jääjeshtöck.
 De Siggeschabloon för ze övversäze: <pre>$1</pre>',
+	'pt-parse-nested' => 'En einem &lt;translate> Affschned kann nit noch eine su ene Affschned dren shteishe.
+Dä Täx vun dä Makeerung es: <pre>$1</pre>',
+	'pt-shake-multiple' => 'Mieh wi eine Makeerung för dersellve ene Affschned es nit müjjelesh.
+Dä Täx vun däm Affschned es: <pre>$1</pre>',
+	'pt-shake-position' => 'Makeerunge för Affschnede sin aan dä Pusizjuhn nit müjjelesh.
+Dä Täx vun däm Affschned es: <pre>$1</pre>',
 	'pt-shake-empty' => 'Em Affschnett met dä Makeerong „$1“ es nix dren.',
 	'pt-log-header' => 'Logbooch för di Saache, di mem Sigge Övversäze ze donn han',
 	'pt-log-name' => 'Logbooch vum Sigge Övversäze',
@@ -3990,7 +3997,7 @@ $messages['ro'] = array(
 	'tpt-section-new' => 'Unitate de traducere nouă.
 Nume: $1',
 	'tpt-section-deleted' => 'Unitate de traducere $1',
-	'tpt-template' => 'Şablon pagină',
+	'tpt-template' => 'Șablon pagină',
 	'tpt-diff-old' => 'Text precedent',
 	'tpt-diff-new' => 'Text nou',
 	'tpt-submit' => 'Marchează această versiune pentru traducere',
@@ -3999,6 +4006,7 @@ Nume: $1',
 	'tpt-nosuchpage' => 'Pagina $1 nu există',
 	'tpt-badsect' => '„$1” nu este un nume valid pentru unitatea de traducere $2.',
 	'tpt-mark-summary' => 'Marcat această versiune pentru traducere',
+	'tpt-edit-failed' => 'Pagina nu a putut fi actualizată: $1',
 	'tpt-already-marked' => 'Ultima versiune a acestei pagini a fost deja marcată pentru traducere.',
 	'tpt-list-nopages' => 'Nici o pagină nu este marcată pentru traducere sau gata să fie marcată pentru traducere.',
 	'tpt-rev-latest' => 'ultima versiune',
@@ -4008,7 +4016,12 @@ Nume: $1',
 	'translate-tag-markthis' => 'Marchează această pagină pentru traducere',
 	'tpt-translation-intro-fuzzy' => 'Traducerile învechite sunt marcate în acest fel.',
 	'tpt-languages-legend' => 'Alte limbi:',
+	'pt-log-name' => 'Jurnal traducere pagini',
+	'pt-movepage-list-other' => 'Alte subpagini',
+	'pt-movepage-current' => 'Nume actual:',
+	'pt-movepage-new' => 'Nume nou:',
 	'pt-movepage-reason' => 'Motiv:',
+	'pt-movepage-logreason' => 'Parte a paginii traductibile $1.',
 );
 
 /** Tarandíne (Tarandíne)
