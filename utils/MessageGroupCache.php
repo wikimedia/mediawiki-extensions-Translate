@@ -28,9 +28,9 @@ class MessageGroupCache {
 	 */
 	public function __construct( $group, $code = 'en' ) {
 		if ( is_object( $group ) ) {
-			$this->group = $group->getId();
-		} else {
 			$this->group = $group;
+		} else {
+			$this->group = MessageGroups::getGroup( $group );
 		}
 		$this->code = $code;
 	}
@@ -74,12 +74,15 @@ class MessageGroupCache {
 	public function create( $created = false ) {
 		$this->close(); // Close the reader instance just to be sure
 
-		$group = MessageGroups::getGroup( $this->group );
-		$messages = $group->load( $this->code );
+		$messages = $this->group->load( $this->code );
 		if ( !count( $messages ) ) {
+			if ( $this->exists() ) {
+				// Delete stale cache files
+				unlink( $this->getCacheFileName() );
+			}
 			return; // Don't create empty caches
 		}
-		$hash = md5( file_get_contents( $group->getSourceFilePath( $this->code ) ) );
+		$hash = md5( file_get_contents( $this->group->getSourceFilePath( $this->code ) ) );
 
 		$cache = CdbWriter::open( $this->getCacheFileName() );
 		$keys = array_keys( $messages );
@@ -105,26 +108,38 @@ class MessageGroupCache {
 	 * @return \bool Wether the cache is up to date.
 	 */
 	public function isValid() {
-		$group = MessageGroups::getGroup( $this->group );
+		$group = $this->group;
+		$groupId = $group->getId();
+
 		$filename = $group->getSourceFilePath( $this->code );
 
-		// Timestamp and existence checks
-		if ( !$this->exists() ) {
-			// Cache is valid if the file doesn't exist or doesn't have translations
-			return !file_exists( $filename ) || !count( $group->load( $this->code ) );
-		} elseif ( !file_exists( $filename ) ) {
-			//$this->delete();
-			return false;
-		} else {
-			// Cache is up-to-date if created after file was last modified
-			return filemtime( $filename ) <= $this->get( '#updated' );
+		static $globCache = null;
+		if ( !isset( $globCache[$groupId] ) ) {
+			$pattern = $group->getSourceFilePath( '*' );
+			$globCache[$groupId] = array_flip( glob( $pattern, GLOB_NOESCAPE ) );
+			// Definition file might not match the above pattern
+			$globCache[$groupId][$group->getSourceFilePath( 'en' )] = true;
 		}
+
+		$cache = $this->exists();
+		$source = isset( $globCache[$groupId][$filename] );
+
+		// Timestamp and existence checks
+		if ( !$cache && !$source ) {
+			return true;
+		} elseif ( $cache xor $source ) {
+			// Either exists but not both
+			return false;
+		} elseif ( filemtime( $filename ) <= $this->get( '#updated' ) ) {
+			return true;
+		}
+
 		// From now on cache and source file exists, but source file mtime is newer
 		$created = $this->get( '#created' );
 
 		// File hash check
 		$newhash = md5( file_get_contents( $filename ) );
-		if ( $this->get( '#filehash' === $oldhash ) ) {
+		if ( $this->get( '#filehash' ) === $newhash ) {
 			// Update cache so that we don't need to compare hashes next time
 			$cache->create( $created );
 			return true;
@@ -177,7 +192,7 @@ class MessageGroupCache {
 	 * Returns full path the the cache file.
 	 */
 	protected function getCacheFileName() {
-		return TranslateUtils::cacheFile( "translate_groupcache-{$this->group}-{$this->code}.cdb" );
+		return TranslateUtils::cacheFile( "translate_groupcache-{$this->group->getId()}-{$this->code}.cdb" );
 	}
 
 	/**

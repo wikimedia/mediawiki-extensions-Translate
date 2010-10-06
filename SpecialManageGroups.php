@@ -73,6 +73,8 @@ class SpecialManageGroups extends SpecialPage {
 			$wgOut->wrapWikiMsg( '==$1==', 'translate-manage-listgroups' );
 			$separator = wfMsg( 'word-separator' );
 
+			$languages = array_keys( Language::getLanguageNames( false ) );
+
 			foreach ( $groups as $group ) {
 				if ( !$group instanceof FileBasedMessageGroup ) {
 					continue;
@@ -91,7 +93,6 @@ class SpecialManageGroups extends SpecialPage {
 						$wgLang->time( $timestamp )
 					);
 
-					$languages = array_keys( Language::getLanguageNames( false ) );
 					$modified = array();
 
 					foreach ( $languages as $code ) {
