@@ -261,6 +261,11 @@ class TranslatablePage {
 			$text = str_replace( $ph, $value, $text );
 		}
 
+		if ( count( $sections ) === 1 ) {
+			// Don't return display title for pages which have no sections
+			$sections = array();
+		}
+
 		$text = self::unArmourNowiki( $nowiki, $text );
 
 		$parse = new TPParse( $this->getTitle() );
@@ -276,7 +281,7 @@ class TranslatablePage {
 	// Inner functionality //
 
 	public static function armourNowiki( &$holders, $text ) {
-		$re = '~(<nowiki>)(.*?)(</nowiki>)~';
+		$re = '~(<nowiki>)(.*?)(</nowiki>)~s';
 
 		while ( preg_match( $re, $text, $matches ) ) {
 			$ph = self::getUniq();
@@ -300,7 +305,6 @@ class TranslatablePage {
 	 */
 	protected static function getUniq() {
 		static $i = 0;
-
 		return "\x7fUNIQ" . dechex( mt_rand( 0, 0x7fffffff ) ) . dechex( mt_rand( 0, 0x7fffffff ) ) . '|' . $i++;
 	}
 
