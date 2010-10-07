@@ -617,9 +617,12 @@ class AggregateMessageGroup extends MessageGroupBase {
 	}
 
 	public function getMessage( $key, $code ) {
-		foreach ( $this->getGroups() as $group ) {
-			$message = $group->getMessage( $key, $code );
-			if ( $message !== null ) return $message;
+		$id = TranslateUtils::messageKeyToGroup( $this->getNamespace(), $key );
+		$groups = $this->getGroups();
+		if ( isset( $groups[$id] ) ) {
+			return $groups[$id]->getMessage( $key, $code );
+		} else {
+			return null;
 		}
 	}
 
