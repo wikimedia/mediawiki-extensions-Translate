@@ -16837,6 +16837,7 @@ $messages['sw'] = array(
 	'translate-prev' => 'Ukurasa uliotangulia',
 	'translate-page-edit' => 'hariri',
 	'translate-ext-url' => '<hr />Tovuti: $1',
+	'translate-pref-jsedit' => 'Mhariri tafsiri uliozidishwa (JavaScript)',
 	'languagestats' => 'Takwimu za lugha',
 	'languagestats-summary' => 'Ukurasa huu unaonyesha takwimu za kutafsiri kwa ajili ya vikundi vya jumbe vya lugha fulani.',
 	'translate-language-code' => 'Kodi ya lugha',
