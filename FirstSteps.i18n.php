@@ -1927,6 +1927,13 @@ Du vil også motta nyhetsbrev høyst én gang i måneden.
 Om du ikke vil motta nyhetsbrevet kan du melde deg ut i fanen «{{int:prefs-personal}}» i [[Special:Preferences|innstillingene]] dine.',
 );
 
+/** Deitsch (Deitsch)
+ * @author Xqt
+ */
+$messages['pdc'] = array(
+	'translate-fs-pagetitle-done' => '- geduh!',
+);
+
 /** Polish (Polski)
  * @author Sp5uhe
  */

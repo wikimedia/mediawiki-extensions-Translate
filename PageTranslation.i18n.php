@@ -3504,6 +3504,7 @@ $messages['pdc'] = array(
 	'tpt-translate-this' => 'des Blatt iwwersetze',
 	'translate-tag-translate-link-desc' => 'Des Blatt iwwersetze',
 	'tpt-languages-legend' => 'Annre Schprooche:',
+	'pt-movepage-new' => 'Neier Naame:',
 	'pt-movepage-reason' => 'Grund:',
 );
 
