@@ -687,6 +687,10 @@ magicfile = MathStatFunctions/MathStatFunctions.i18n.magic.php
 Media Functions
 magicfile = MediaFunctions/MediaFunctions.i18n.magic.php
 
+MediaWiki Search
+id = ext-mwsearch
+file = MWSearch/MWSearch.i18n.php
+
 Metadata Edit
 
 Meta Keywords
@@ -727,9 +731,11 @@ Multi Upload
 aliasfile = MultiUpload/MultiUpload.alias.php
 descmsg = multiupload-desc
 
-MediaWiki Search
-id = ext-mwsearch
-file = MWSearch/MWSearch.i18n.php
+MwEmbed
+
+MwEmbed - MwEmbedModule
+file = MwEmbed/MwEmbedModule/mwEmbed.i18n.php
+optional = mwe-size-gigabytes, mwe-size-megabytes, mwe-size-kilobytes, mwe-size-bytes
 
 Natural Language List
 descmsg = nll-desc
