@@ -619,13 +619,6 @@ optional = jsbreadcrumbs-separator
 
 JS Kit
 
-JS2 Support
-
-JS2 Support - mwEmbed
-file = JS2Support/mwEmbed/mwEmbed.i18n.php
-descmsg = js2support-desc
-optional = mwe-size-gigabytes, mwe-size-megabytes, mwe-size-kilobytes, mwe-size-bytes
-
 Labeled Section Transclusion
 file = LabeledSectionTransclusion/lst.i18n.php
 descmsg = lst-desc
