@@ -43,10 +43,6 @@ class PageTranslationHooks {
 		return true;
 	}
 
-	public static function replaceTagCb( $matches ) {
-		return $matches[2];
-	}
-
 	// Only called form hook
 	public static function injectCss( $outputpage, $text ) {
 		TranslateUtils::injectCSS();
