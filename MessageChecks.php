@@ -260,7 +260,7 @@ class MessageChecker {
 	 * @param $warnings \array Array where warnings are appended to.
 	 */
 	protected function printfCheck( $messages, $code, &$warnings ) {
-		return $this->parameterCheck( $messages, $code, &$warnings, '/%(\d+\$)?[sduf]/U' );
+		return $this->parameterCheck( $messages, $code, $warnings, '/%(\d+\$)?[sduf]/U' );
 	}
 
 	/**
