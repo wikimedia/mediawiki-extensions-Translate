@@ -968,6 +968,29 @@ Afsnit tekst: <pre>$1</pre>',
 	'pt-movepage-block-section-exists' => 'Mål oversættelses sektionen [[:$2]] findes.',
 	'pt-movepage-block-section-invalid' => 'Mål sections side titlen for [[:$1]] ville være ugyldig (for lang?).',
 	'pt-movepage-block-subpage-exists' => 'Mål undersiden [[:$2]] findes.',
+	'pt-movepage-block-subpage-invalid' => 'Mål underside titlen for [[:$1]] ville være ugyldig (for lang?).',
+	'pt-movepage-list-pages' => 'Liste over sider til at flytte',
+	'pt-movepage-list-translation' => 'Oversættelse sider',
+	'pt-movepage-list-section' => 'Afsnit sider',
+	'pt-movepage-list-other' => 'Andre undersider',
+	'pt-movepage-list-count' => 'I alt $1 {{PLURAL:$1|side|sider}} til at flytte.',
+	'pt-movepage-legend' => 'Flyt oversætbare side',
+	'pt-movepage-current' => 'Nuværende navn:',
+	'pt-movepage-new' => 'Nyt navn:',
+	'pt-movepage-reason' => 'Årsag:',
+	'pt-movepage-subpages' => 'Flyt alle undersider',
+	'pt-movepage-action-check' => 'Tjek om flytningen er muligt',
+	'pt-movepage-action-perform' => 'Gennemfør flytningen',
+	'pt-movepage-action-other' => 'Skift mål',
+	'pt-movepage-intro' => 'Denne speciale side tillader dig at flytte sider, der er markeret til oversættelse. 
+Flytningen vil ikke være øjeblikkelig, fordi mange sider skal flyttes. 
+Jobkøen vil bliver brugt til at flytte siderne. 
+Mens siderne bliver flyttet, er det ikke muligt at interagere med de omtalte sider. 
+Fejl vil blive logget på siden oversættelse log og de har brug for at blive repareret manuelt.',
+	'pt-movepage-logreason' => 'Del af oversætbar side $1.',
+	'pt-movepage-started' => 'Base siden er nu flyttet.
+Husk at tjekke siden oversættelsen log for fejl og færdiggørelses besked.',
+	'pt-locked-page' => 'Denne side er låst, fordi den oversætbare side, der aktuelt er ved at blive flyttet.',
 );
 
 /** German (Deutsch)

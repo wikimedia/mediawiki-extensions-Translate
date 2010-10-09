@@ -3237,8 +3237,8 @@ $messages['ca'] = array(
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|missatge|missatges}} per pàgina',
 	'translate-submit' => 'Mostra',
 	'translate-page-navigation-legend' => 'Navegació',
-	'translate-page-showing' => 'Mostrant missatges del $1 al $2 de $3.',
-	'translate-page-showing-all' => 'Mostrant $1 {{PLURAL:$1|missatge|missatges}}.',
+	'translate-page-showing' => "S'estan mostrant missatges del $1 al $2 de $3.",
+	'translate-page-showing-all' => "S'estan mostrant $1 {{PLURAL:$1|missatge|missatges}}.",
 	'translate-page-showing-none' => 'No hi ha missatges a mostrar.',
 	'translate-next' => 'Pàgina següent',
 	'translate-prev' => 'Pàgina anterior',
@@ -3253,11 +3253,6 @@ $messages['ca'] = array(
 	'translate-edit-in-other-languages' => 'Missatge «$1» en altres idiomes',
 	'translate-edit-committed' => 'Traducció utilitzada actualment pel programa',
 	'translate-edit-warnings' => 'Avisos de traducció incompleta',
-	'translate-edit-goto-no-prev' => 'Cap missatge previ',
-	'translate-edit-goto-no-next' => 'Cap missatge posterior',
-	'translate-edit-goto-prev' => 'Modificar el missatge anterior',
-	'translate-edit-goto-next' => 'Modificar el missatge següent',
-	'translate-edit-goto-list' => 'Tornar a la llista',
 	'translate-magic-pagename' => 'Traducció ampliada del MediaWiki',
 	'translate-magic-help' => "Aquí podeu traduir els noms de les pàgines especials, les paraules màgiques i els títols dels diferents espais de noms (''namespaces'').
 
@@ -3731,6 +3726,7 @@ $messages['cy'] = array(
 
 /** Danish (Dansk)
  * @author Byrial
+ * @author Emilkris33
  * @author Jon Harald Søby
  * @author MGA73
  * @author Nghtwlkr
@@ -3741,9 +3737,13 @@ $messages['da'] = array(
 	'translate-edit' => 'redigér',
 	'translate-talk' => 'diskussion',
 	'translate-history' => 'historik',
+	'translate-showsub' => 'Vis {{PLURAL:$1|undergruppen|de $1 undergrupper}}.',
+	'translate-grouplisting' => 'Dette er listen over alle oversætbare grupper. 
+Klik på meddelelsen gruppens navn for at se en liste over uoversatte beskeder.',
 	'translate-task-view' => 'Se alle beskeder fra',
 	'translate-task-untranslated' => 'Se alle uoversatte beskeder fra',
 	'translate-task-optional' => 'Se valgfrie beskeder fra',
+	'translate-task-suggestions' => 'Vis meddelelser med forslag fra oversættelseshukommelse',
 	'translate-task-untranslatedoptional' => 'Se uoversatte valgfrie beskeder fra',
 	'translate-task-problematic' => 'Se beskeder som har problemer',
 	'translate-task-review' => 'Gennemse ændringer af',
@@ -3762,6 +3762,8 @@ $messages['da'] = array(
 	'translate-page-settings-legend' => 'Indstillinger',
 	'translate-page-task' => 'Jeg vil',
 	'translate-page-group' => 'Gruppe',
+	'translate-page-group-tooltip' => 'Navnet på en gruppe af meddelelser. 
+Hvis gruppen består af en delmængde eller kun af budskaber fra andre grupper, vises den med fed skrift.',
 	'translate-page-language' => 'Sprog',
 	'translate-page-limit' => 'Antal',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|besked|beskeder}} per side',
@@ -3777,6 +3779,7 @@ $messages['da'] = array(
 	'translate-ext-url' => '<hr />Webside: $1',
 	'translate-optional' => '(valgfri)',
 	'translate-ignored' => '(ignoreres)',
+	'translate-edit-title' => 'Rediger "$1"',
 	'translate-edit-definition' => 'Beskeden som skal oversættes',
 	'translate-edit-contribute' => 'bidrag',
 	'translate-edit-no-information' => "''Denne besked har ingen dokumentation.
@@ -3787,11 +3790,8 @@ Hvis du ved hvor eller hvordan denne besked bruges, kan du hjælpe andre oversæ
 	'translate-edit-warnings' => 'Advarsler om ufuldstændige oversætelser',
 	'translate-edit-tmsugs' => 'Forslag fra oversættelseshukommelsen',
 	'translate-edit-tmmatch' => '$1 % overensstemmelse',
-	'translate-edit-goto-no-prev' => 'Ingen forrige besked',
-	'translate-edit-goto-no-next' => 'Ingen næste besked',
-	'translate-edit-goto-prev' => 'Redigér forrige besked',
-	'translate-edit-goto-next' => 'Redigér næste besked',
-	'translate-edit-goto-list' => 'Tilbage til listen',
+	'translate-use-suggestion' => 'Sæt dette forslag i oversættelsen området. Dette erstatter alt aktuelt indhold.',
+	'translate-edit-tab-list' => 'Besked liste',
 	'translate-magic-pagename' => 'Udvidet MediaWiki-oversættelse',
 	'translate-magic-help' => 'Du kan oversætte specialside-aliaser, magiske ord og navnerumsnavne.
 
@@ -3839,6 +3839,7 @@ Du skal være i oversættergruppen for at gemme ændringer.
 	'translate-checks-plural' => 'Originalen bruger <nowiki>{{PLURAL:}}</nowiki>, men oversættelsen gør det ikke.',
 	'translate-checks-pagename' => 'Navnerum er anderledes end i originalen',
 	'translate-checks-format' => 'Denne oversættelse følger ikke originalen eller har ugyldig syntaks: $1',
+	'translate-checks-escape' => 'Følgende undtagelser kan være fejltagelser: <strong>$1</strong>',
 	'translate-checks-fudforum-syntax' => 'Brug <nowiki>$1</nowiki> i stedet for <nowiki>$2</nowiki> i dette projekt.',
 	'translate-pref-nonewsletter' => 'Send ikke e-mail-nyhedsbreve til mig',
 	'translate-pref-editassistlang' => 'Hjælpesprog:',
@@ -3860,6 +3861,7 @@ Standardlisten afhænger af dit sprog.',
 	'translationstats' => 'Oversættelsesstatistik',
 	'translate-stats-edits' => 'Redigeringer',
 	'translate-stats-users' => 'Oversættere',
+	'translate-stats-registrations' => 'Registreringer',
 	'translate-statsf-intro' => 'Du kan generere enkle statistikker med denne formular.
 Alle værdier har øvre og nedre grænser.',
 	'translate-statsf-options' => 'Grafindstillinger',
@@ -3867,11 +3869,14 @@ Alle værdier har øvre og nedre grænser.',
 	'translate-statsf-height' => 'Højde i pixels:',
 	'translate-statsf-days' => 'Tidsperiode i dage:',
 	'translate-statsf-scale' => 'Tidsopløsning:',
+	'translate-statsf-scale-months' => 'Måneder',
+	'translate-statsf-scale-weeks' => 'Uger',
 	'translate-statsf-scale-days' => 'Dage',
 	'translate-statsf-scale-hours' => 'Timer',
 	'translate-statsf-count' => 'Måling:',
 	'translate-statsf-count-edits' => 'Antal redigeringer',
 	'translate-statsf-count-users' => 'Aktive oversættere',
+	'translate-statsf-count-registrations' => 'Nye brugere',
 	'translate-statsf-language' => 'Kommasepareret liste med sprogkoder:',
 	'translate-statsf-group' => 'Kommasepareret liste med gruppekoder:',
 	'translate-statsf-submit' => 'Forhåndsvisning',
@@ -3888,24 +3893,119 @@ Alle værdier har øvre og nedre grænser.',
 	'translate-translations-messagename' => 'Navn:',
 	'translate-translations-project' => 'Projekt:',
 	'translate-translations-including-no-param' => 'Angiv venligst en gyldig beskednøgle i undersiderparameteren',
+	'translate-translations-history-short' => 'h',
 	'languagestats' => 'Sprogstatistik',
 	'languagestats-summary' => 'Denne side viser oversættelsesstatistik for alle beskedgrupper for et sprog.',
+	'languagestats-stats-for' => 'Oversættelse statistik for $1 ($2).',
+	'languagestats-recenttranslations' => 'seneste oversættelser',
 	'translate-language-code' => 'Sprogkode',
 	'translate-language-code-field-name' => 'Sprogkode',
 	'translate-suppress-complete' => 'Vis ikke beskedgrupper som er fuldt oversatte',
 	'translate-language' => 'Sprog',
 	'translate-total' => 'Beskeder',
+	'translate-total-tooltip' => 'Det samlede antal meddelelser i denne meddelelse gruppe.',
 	'translate-untranslated' => 'Uoversatte',
+	'translate-untranslated-tooltip' => 'Det samlede antal uoversatte beskeder i denne meddelelse gruppe.
+Dette omfatter de meddelelser, der er blevet mærket som forældet.',
 	'translate-percentage-complete' => 'Færdiggørelse',
+	'translate-percentage-complete-tooltip' => 'Den procentvise andel af meddelelser i den gruppe, der er blevet oversat og ikke er markeret som forældet.',
 	'translate-percentage-fuzzy' => 'Forældede',
+	'translate-percentage-fuzzy-tooltip' => 'Den procentvise andel af meddelelser i den gruppe, der er blevet oversat og er blevet markeret som forældet.
+Beskeder er markeret forældet, fordi den engelske sprog kilde besked har ændret sig, fordi en automatiseret kontrol for beskeden mislykkedes, eller fordi nogen markeret den som forældet.',
 	'translate-nothing-to-do' => 'Det ser ud til at alle mulige oversættelser er lavet.
 Du opfordres til at gennemse beskeder gennem [[Special:Translate|{{int:translate}}]].',
+	'supportedlanguages' => 'Understøttede sprog',
+	'supportedlanguages-summary' => 'Denne side viser en liste over alle de sprog, der understøttes af {{SITENAME}}, sammen med navnene på de oversættere, der arbejder på dette sprog.
+Hvis du ønsker yderligere oplysninger om et bestemt sprog, kan du klikke på linket til portalen for det pågældende sprog.
+Hvis du klikker på en oversætters navn vil det tage dig til deres brugerside.
+
+Hvis et sprog ikke er på listen, kan du finde ud af hvordan man starter en lokalisering projekt for et sprog på "[[Translating:Process|Nye Sprog]]". 
+
+Hvis du oversætter til et sprog og dit navn ikke er inkluderet, kan du tilføje dit navn til listen af oversættere på [[:Category:Languages|portal]] for det pågældende sprog.
+Se menulinjen for et link til portalen for det sprog du foretrækker.',
+	'supportedlanguages-translators' => '{{PLURAL:$2|Oversætter|Oversættere}}: $1',
+	'supportedlanguages-noportal-title' => 'Intet portal navnerum defineret',
+	'supportedlanguages-noportal' => 'Wiki Administratoren har ikke defineret NS_PORTAL, så denne side ikke virker. 
+På denne side vil en liste over sprog portaler vises for alle portaler svarer til en defineret sprogkode og en underside kaldet "translators". 
+Undersiden "translators" skal indeholde denne skabelon [[:{{ns:template}}:User|User]], under et brugernavn som parameter.',
+	'supportedlanguages-recenttranslations' => 'seneste oversættelser',
 	'translate-save' => 'Gem ($1)',
 	'translate-jssti-add' => 'Tilføj til listen',
+	'translate-manage-groups' => 'Gruppehåndtering',
+	'translate-manage-listgroups' => 'Konfigurerede grupper',
+	'translate-manage-listgroups-old' => 'Grupper med gammel stil',
+	'translate-managegroups' => 'Gruppehåndtering',
+	'translate-manage-newgroup' => 'Dette indlæg gruppe har ikke været importeret tidligere.',
+	'translate-manage-cacheat' => 'Importeret d. $1 kl. $2',
+	'translate-manage-return-to-group' => 'Tilbage til gruppe detaljer siden',
+	'translate-manage-modlangs' => 'Tjek venligst for eventuelle ændringer i følgende {{PLURAL:$1|sprog|sprog}}:',
 	'translate-manage-modlang-new' => '$1 (ny)',
+	'translate-manage-import-diff' => 'Besked $1 | Handlinger: $2',
 	'translate-manage-import-new' => 'Ny meddelelse $1',
 	'translate-manage-import-deleted' => 'Slettet meddelelse $1',
+	'translate-manage-action-import' => 'Importer',
+	'translate-manage-action-conflict' => 'Importer og fuzzy',
 	'translate-manage-action-ignore' => 'Ignorer',
+	'translate-manage-action-fuzzy' => 'Importer og fuzzy oversættelser',
+	'translate-manage-submit' => 'Udfør',
+	'translate-manage-nochanges' => 'Der er ingen ændringer i meddelelse definitionerne for denne gruppe.',
+	'translate-manage-nochanges-other' => 'Der var ingen ændringer til dette sprog.
+Brug linket nedenfor til at vende tilbage til gruppe detaljer visningen.',
+	'translate-manage-inconsistent' => 'Opdagede en inkonsistens i anmodningen.
+Tjek venligst for ændringer og prøv igen.
+Detaljer: $1.',
+	'translate-manage-toolong' => 'Den maksimale sagsbehandlingstid på $1 {{PLURAL:$1|sekund|sekunder}} overskredet.
+Send venligst formularen igen for at fortsætte behandlingen.',
+	'translate-manage-import-ok' => 'Importerede ny version af siden $1.',
+	'translate-manage-import-noks' => 'Kunne ikke importere ny version af siden $1: $2',
+	'translate-manage-import-ignore' => 'Springer besked over $1.',
+	'translate-manage-import-summary' => 'Import af en ny version fra ekstern kilde',
+	'translate-manage-conflict-summary' => 'Importere en ny version fra ekstern kilde.
+Tjek venligst.',
+	'translate-manage-fuzzy-summary' => 'Definitionen er ændret',
+	'translate-manage-import-fuzzy' => 'Importere og fuzzyer: $1',
+	'translate-manage-import-done' => 'Alt færdigt!',
+	'translate-manage-import-rebuild' => 'Cache genopbyggelse.',
+	'translate-manage-intro-en' => 'Nedenfor er listen over besked ændringer i denne gruppe.
+Gennemgå venligst ændringer neog vælg en handling du ønsker at gøre for hver besked.
+Når du har opdateret besked definitioner, kontrollere for ydre ændringer på andre sprog, hvis nogen.
+Bemærk også, at <code>ignorer</code> handlingen kun er midlertidig.',
+	'translate-manage-intro-other' => 'Nedenfor er listen over oversættelse ændringer i $1 sprog.
+Gennemgå veligst ændringerne og vælg en handling du ønsker at gøre for hver oversættelse.
+Hvis du vælger at ignorere ændringer, vil de blive overskrevet ved næste eksport.',
+	'translate-manage-subtitle' => 'Administrer',
+	'translate-manage-import-rebuild-all' => 'Genopbyg alle sprog og ignorere alle ændringer',
+	'importtranslations' => 'Importer oversættelser',
+	'translate-import-from-url' => 'URL til filen:',
+	'translate-import-from-wiki' => 'Fil i dette wiki:',
+	'translate-import-from-local' => 'Lokal fil upload:',
+	'translate-import-load' => 'Indlæs fil',
+	'translate-import-err-type-not-supported' => 'Kunne ikke indlæse filen:
+Metoden <code>$1</code> er ikke understøttet.',
+	'translate-import-err-dl-failed' => 'Kunne ikke hente filen:
+$1',
+	'translate-import-err-ul-failed' => 'Fil upload lykkedes ikke',
+	'translate-import-err-invalid-title' => 'Det angivne filnavn <nowiki>$1</nowiki> var ugyldig.',
+	'translate-import-err-no-such-file' => 'Fil <nowiki>$1</nowiki> eksisterer ikke eller er ikke blevet uploadet lokalt.',
+	'translate-import-err-no-headers' => 'Filen er ikke en velformateret Gettext fil i Oversæt tilføjelsens format:
+Kan ikke bestemme gruppe og sprog fra fil headere.',
+	'translate-import-err-warnings' => 'Filen er ikke velformateret.
+Sørg for, at din editor ikke fjerner msgctxt felter.
+Detaljer: $1',
+	'translate-js-next' => 'Gem og åben næste',
+	'translate-js-nonext' => 'Dette var den sidste besked på denne side.',
+	'translate-js-skip' => 'Gå til næste',
+	'translate-js-save-failed' => 'Lagring mislykkedes. Rapporter venligst denne fejl.',
+	'translate-js-history' => 'Oversættelses historie',
+	'translate-gs-pos' => 'Pos.',
+	'translate-gs-code' => 'Kode',
+	'translate-gs-continent' => 'Kontinent',
+	'translate-gs-speakers' => 'Talere',
+	'translate-gs-score' => 'Point',
+	'translate-gs-multiple' => 'Flere',
+	'translate-gs-count' => 'Antal',
+	'translate-gs-total' => 'I alt',
+	'translate-gs-avgscore' => 'Gennemsnitlig point',
 );
 
 /** German (Deutsch)
@@ -10518,12 +10618,12 @@ $messages['ksh'] = array(
 
 ''$1''",
 	'translate-page-settings-legend' => 'Ennshtellonge',
-	'translate-page-task' => 'Aufjab',
-	'translate-page-group' => 'Jrupp',
+	'translate-page-task' => 'Aufjab:',
+	'translate-page-group' => 'Jrupp:',
 	'translate-page-group-tooltip' => 'Dä Name vun ene Jropp vun Täxte un Nohreeschte.
 En Fättschreff wäde de Jroppe aanjezeish, di noch Ongerjroppe han.',
-	'translate-page-language' => 'Shprooch',
-	'translate-page-limit' => 'Ömfang',
+	'translate-page-language' => 'Shprooch:',
+	'translate-page-limit' => 'Ömfang:',
 	'translate-page-limit-option' => '{{PLURAL:$1|Eijn Noherscht|$1 Nohreschte|Nix aan Nohreschte}} pro Sigk',
 	'translate-submit' => 'Lohß Jonn!',
 	'translate-page-navigation-legend' => 'Aanzahl',
@@ -17915,6 +18015,13 @@ $messages['tt-cyrl'] = array(
 	'translate-task-optional' => 'Кирәк булмаган мәкаләләрне карау',
 	'translate-task-suggestions' => 'Мәкаләләрне тәрҗемәләр хәтереннән карау',
 	'translate-task-untranslatedoptional' => 'Тәрҗемә ителмәгән кирәксенмәгән мәкаләләр',
+	'translate-page-task' => 'Минем теләгем',
+	'translate-page-group' => 'Төркем',
+	'translate-page-language' => 'Тел',
+	'translate-page-limit' => 'Чикләү',
+	'translate-page-limit-option' => 'Биткә $1 {{PLURAL:$1|мәкалә}} күрсәтү',
+	'translate-submit' => 'Чыгарырга',
+	'translate-page-navigation-legend' => 'Күчешлек',
 	'translate-next' => 'киләсе бит',
 	'translate-prev' => 'алдагы бит',
 	'translate-edit-definition' => 'Мәкаләнең тасвирламасы',
@@ -17925,11 +18032,7 @@ $messages['tt-cyrl'] = array(
 	'translate-edit-warnings' => 'Тулы булмаган тәрҗемәләр турында искәрмә',
 	'translate-edit-tmsugs' => 'Тәрҗемәләр хәтереннән тәкъдим',
 	'translate-edit-tmmatch' => '$1% туры килү',
-	'translate-edit-goto-no-prev' => 'Бу беренче мәкалә',
-	'translate-edit-goto-no-next' => 'Бу соңгы мәкалә',
-	'translate-edit-goto-prev' => 'Алдагы битне үзгәртү',
-	'translate-edit-goto-next' => 'Киләсе битне үзгәртү',
-	'translate-edit-goto-list' => 'Исемлеккә кире кайту',
+	'translate-edit-tab-list' => 'Мәкаләләр исемлеге',
 	'translate-magic-pagename' => 'MediaWiki-ны тулысынча тәрҗемә итү',
 	'translate-magic-module' => 'Модуль:',
 	'translate-magic-submit' => 'Чыгарырга',
