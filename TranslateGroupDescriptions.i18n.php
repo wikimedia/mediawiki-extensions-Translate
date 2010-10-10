@@ -1795,6 +1795,7 @@ $messages['sl'] = array(
 	'translate-group-desc-translate' => 'Krovna skupina sporočil, ki vsebuje vsa sporočila razširitve MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-wikiaextensions' => 'Krovna skupina sporočil, ki vsebuje vsa sporočila podprtih razširitev MediaWiki, ki jih uporablja [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Krovna skupina sporočil, ki vsebuje vsa sporočila podprtih razširitev MediaWiki, ki jih uporablja [http://wikimedia.org/ Fundacija Wikimedia]',
+	'translate-group-desc-wikimediaextensions-main' => 'Skupina sporočil Meta, ki vsebuje vsa sporočila za podprte razširitve MediaWiki, katera morajo biti prevedena za [http://meta.wikimedia.org/wiki/Language_committee Jezikovni odbor] Wikimedie',
 	'translate-group-desc-uniwiki' => 'Krovna skupina sporočil, ki vsebuje vsa sporočila razširitev, povezanih z [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Krovna skupina sporočil, ki vsebuje vsa sporočila razširitev, povezanih z [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedijino Pobudo za uporabnost]',
 	'translate-group-desc-translatablepages' => 'Vse prevedljive strani',
@@ -1804,6 +1805,7 @@ $messages['sl'] = array(
 	'translate-group-desc-mantisbt-plugin-core' => 'Jedrni vtičnik za [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Sporočila ustaljene različice [[Translating:MediaWiki|MediaWiki]] 1.15',
 	'translate-group-desc-mediawiki-core-116' => 'Sporočila ustaljene različice [[Translating:MediaWiki|MediaWiki]] 1.16',
+	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] je vodstven informacijski sistem za mikrofinance',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' je knjižica python za pisanje dokumentov PDF iz člankov MediaWiki, ki so bili razčlenjeni s knjižico mwlib.
 
 Za več informacij si, prosimo, oglejte [[mw:Extension:PDF Writer]] in http://code.pediapress.com/wiki/wiki/mwlibrl.",

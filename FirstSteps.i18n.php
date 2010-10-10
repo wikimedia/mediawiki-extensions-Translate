@@ -358,6 +358,14 @@ $3Зарэгістравацца$4',
 Калі Вы не жадаеце атрымліваць лісты з навінамі, Вы можаце адмовіцца ад іх на закладцы «{{int:prefs-personal}}» Вашых [[Special:Preferences|установак]].',
 );
 
+/** Bengali (বাংলা)
+ * @author Bellayet
+ */
+$messages['bn'] = array(
+	'translate-fs-pagetitle-done' => ' - সম্পন্ন!',
+	'translate-fs-userpage-title' => 'আপনার ব্যবহারকারী পাতা তৈরি করুন',
+);
+
 /** Breton (Brezhoneg)
  * @author Fulup
  * @author Y-M D
