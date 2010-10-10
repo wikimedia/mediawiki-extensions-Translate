@@ -146,12 +146,12 @@ class PageTranslationHooks {
 		// Invalidate caches
 		$pages = $page->getTranslationPages();
 		foreach ( $pages as $title ) {
-			$article = new Article( $title );
+			$article = new Article( $title, 0 );
 			$article->doPurge();
 		}
 
 		// And the source page itself too
-		$article = new Article( $page->getTitle() );
+		$article = new Article( $page->getTitle(), 0 );
 		$article->doPurge();
 	}
 
