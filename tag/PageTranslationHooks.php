@@ -451,17 +451,18 @@ FOO;
 
 		// Get the translation percentage
 		$pers = $page->getTranslationPercentages();
-		$per = @$pers[$code];
-		$per = ( $per === null ) ? 0 : $per * 100;
+		$per = 0;
+		if ( isset( $pers[$code] ) ) {
+			$per = $pers[$code] * 100;
+		}
 		$titleText = $page->getTitle()->getPrefixedText();
 		$url = $page->getTranslationUrl( $code );
 
 		// Output
 		$wrap = '<div style="font-size: x-small; text-align: center">$1</div>';
-
 		$wgOut->wrapWikiMsg( $wrap, array( 'tpt-translation-intro', $url, $titleText, $per ) );
 
-		if ( ((int) $per) < 100 ) {
+		if ( floor( $per ) < 100 ) {
 			$group = $page->getMessageGroup();
 			$collection = $group->initCollection( $code );
 			$collection->filter( 'fuzzy', false );
