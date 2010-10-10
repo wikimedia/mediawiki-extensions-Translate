@@ -3,6 +3,8 @@ file = AchievementsII/i18n/AchievementsII.i18n.php
 
 Action Panel
 
+Ad SS
+
 Combo Ajax Login
 file = AjaxLogin/ComboAjaxLogin.i18n.php
 descmsg = comboajaxlogin-desc
