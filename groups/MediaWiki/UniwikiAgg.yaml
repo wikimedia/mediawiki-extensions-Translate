@@ -1,6 +1,6 @@
 BASIC:
   id: ext-uniwiki-0-all
-  label: All Usability Initiative messages
+  label: All Uniwiki messages
   display: ext/uniwiki
   meta: yes
   class: AggregateMessageGroup
