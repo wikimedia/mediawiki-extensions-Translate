@@ -6700,9 +6700,9 @@ Os cambios non se gardan ata que prema no botón "Gardar" de embaixo.',
 	'translationchanges' => 'Modificacións nas traducións',
 	'translationchanges-export' => 'exportar',
 	'translationchanges-change' => '$1: $2 por $3',
-	'translate-checks-parameters' => '{{PLURAL:$2|O seguinte parámetro non é usado|Os seguintes parámetros non son usados}}:
+	'translate-checks-parameters' => '{{PLURAL:$2|Non se emprega o seguinte parámetro|Non se empregan os seguintes parámetros}}:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-parameters-unknown' => '{{PLURAL:$2|O seguinte parámetro é descoñecido|Os seguintes parámetros son descoñecidos}}:
+	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Descoñécese o seguinte parámetro|Descoñécense os seguintes parámetros}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Hai unha cantidade irregular de {{PLURAL:$2|parénteses|parénteses}}:
 <strong><nowiki>$1</nowiki></strong>',
