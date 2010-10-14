@@ -4682,6 +4682,7 @@ Pangalan: $1',
 	'tpt-sections-oldnew' => 'Bago at umiiral ng mga yunit ng salinwika',
 	'tpt-sections-deleted' => 'Naburang mga yunit ng salinwika',
 	'tpt-sections-template' => 'Suleras ng pahina ng salinwika',
+	'tpt-action-nofuzzy' => 'Huwag hindi tanggapin ang mga salinwika',
 	'tpt-badtitle' => 'Ang pangalan ng pahinang ibinigay ($1) ay isang hindi tanggap na pamagat',
 	'tpt-nosuchpage' => 'Hindi umiiral ang pahinang $1',
 	'tpt-oldrevision' => 'Ang $2 ay hindi ang pinakabagong bersyon ng pahinang [[$1]].
@@ -4719,6 +4720,7 @@ subalit ang pinakabagong {{PLURAL:$1|bersyon|mga bersyon}} ay hindi matatatakan 
 Ang pahinang ito ay isang salinwika ng pahinang [[$1]] at maisasapanahon ang salinwika sa pamamagitan ng [$2 kasangkapang pansalinwika].',
 	'tpt-unknown-page' => 'Nakalaan ang puwang na pampangalang ito para sa mga salinwika ng pahina ng nilalaman.
 Tila hindi tumutugma ang pahinang sinusubukan mong baguhin sa anumang pahinang natatakan para sa pagsasalinwika.',
+	'tpt-delete-impossible' => 'Hindi pa maaari ang pagbubura ng mga pahinang minarkahan upang isalinwika.',
 	'tpt-install' => 'Patakbuhin ang pagpapanatiling php/update.php o paglalagay na pang-web upang mapaandar ang kasangkapang-katangiang pangsalinwika ng pahina.',
 	'tpt-render-summary' => 'Isinasapanahon upang tumugma sa bagong bersyon ng pinagmulang pahina',
 	'tpt-download-page' => 'Iluwas ang pahinang may mga pagsasalinwika',
@@ -4733,6 +4735,44 @@ Teksto ng seksyon: <pre>$1</pre>',
 	'pt-shake-position' => 'Mga panandang pangseksyon sa loob ng posisyong hindi inaasahan.
 Teksto ng seksyon: <pre>$1</pre>',
 	'pt-shake-empty' => 'Seksyong walang laman para sa panandang $1.',
+	'pt-log-header' => 'Itala para sa mga gawaing may kaugnayan sa sistema ng pagsasalinwika ng pahina',
+	'pt-log-name' => 'Tala ng pagsasalinwika ng pahina',
+	'pt-log-mark' => '{{GENDER:$2|minarkahang}} rebisyong  $3 ng pahinang "[[:$1]]" para sa pagsasalinwika',
+	'pt-log-unmark' => '{{GENDER:$2|tinanggal}} na pahinang "[[:$1]]" mula sa pagsasalinwika',
+	'pt-log-moveok' => '{{Gender:$2|nakumpleto}}ng pagpapalit ng pangalan ng maisasalinwikang pahina $1 papunta sa isang bagong pangalan',
+	'pt-log-movenok' => '{{Gender:$2|nakaranas}} ng suliranin habang inililipat ang [[:$1]] papunta sa [[:$3]]',
+	'pt-movepage-title' => 'Ilipat ang maisasalinwikang pahinang $1',
+	'pt-movepage-blockers' => 'Hindi malilipat ang maisasalinwikang pahina papunta sa bagong pangalan dahil sa sumusunod na {{PLURAL:$1|kamalian|mga kamalian}}:',
+	'pt-movepage-block-base-exists' => 'Umiiral ang puntiryang batayang pahina na [[:$1]].',
+	'pt-movepage-block-base-invalid' => 'Hindi isang tanggap na pamagat ang puntiryang batayang pahina.',
+	'pt-movepage-block-tp-exists' => 'Umiiral ang puntiryang pahina ng salinwika na [[:$2]].',
+	'pt-movepage-block-tp-invalid' => 'Ang pinupukol na pamagat ng pahinang maisasalinwika para sa [[:$1]] ay hindi matatanggap (napakahaba?).',
+	'pt-movepage-block-section-exists' => 'Umiiral ang pahina ng seksyong pinupukol na [[:$2]].',
+	'pt-movepage-block-section-invalid' => 'Ang pamagat ng pahina ng seksyong pinupukol para sa [[:$1]] ay hindi matatanggap (napakahaba?).',
+	'pt-movepage-block-subpage-exists' => 'Umiiral ang pinupukol na kabahaging pahinang [[:$2]].',
+	'pt-movepage-block-subpage-invalid' => 'Ang pinupukol na pamagat ng kabahaging pahina para sa [[:$1]] ay hindi matatanggap (napakahaba?).',
+	'pt-movepage-list-pages' => 'Talaan ng mga pahinang ililipat',
+	'pt-movepage-list-translation' => 'Mga pahina ng salinwika',
+	'pt-movepage-list-section' => 'Mga pahina ng seksyon',
+	'pt-movepage-list-other' => 'Iba pang kabahaging mga pahina',
+	'pt-movepage-list-count' => 'Sa kabuoan ay $1 {{PLURAL:$1|pahina|mga pahina}}ng ililipat.',
+	'pt-movepage-legend' => 'Ilipat ang pahinang maisasalinwika',
+	'pt-movepage-current' => 'Kasalukuyang pangalan:',
+	'pt-movepage-new' => 'Bagong pangalan:',
+	'pt-movepage-reason' => 'Dahilan:',
+	'pt-movepage-subpages' => 'Ilipat ang lahat ng kabahaging mga pahina',
+	'pt-movepage-action-check' => 'Suriin kung maaari ang paglilipat',
+	'pt-movepage-action-perform' => 'Gawin ang paglipat',
+	'pt-movepage-action-other' => 'Baguhin ang pinupukol',
+	'pt-movepage-intro' => 'Ang natatanging pahinang ito ay nagpapahintulot sa iyong mailipat ang mga pahinang minarkahan para sa pagsasalinwika.
+Ang galaw ng paglipat ay hindi magiging kaagad, dahil maraming mga pahina ang kailangang ilipat.
+Ang pila ng gawain ay gagamitin para sa paglilipat ng mga pahina.
+Habang inililipat ang mga pahina, hindi maaaring kasalamuhain ang mga pahinang tinutukoy.
+Ang mga kabiguan ay itatala sa tala ng pagsasalinwika ng pahina at kailangan silang kinakamay na pagsasaayos.',
+	'pt-movepage-logreason' => 'Bahagi ng maisasalinwikang pahinang $1.',
+	'pt-movepage-started' => 'Nailipat na ang pahinang batayan.
+Pakisuri ang tala ng pagsasalinwika ng pahina para sa mga kamalian at mensahe ng pagkakabuo.',
+	'pt-locked-page' => 'Ikinandao ang pahinang ito dahil ang pahinang maisasalinwika ay kasalukuyang inililipat.',
 );
 
 /** Turkish (Türkçe)
