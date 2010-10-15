@@ -4560,6 +4560,17 @@ Innan den här versionen märks för översättning, kontrollera att förändrin
 	'pt-locked-page' => 'Denna sida är låst eftersom den översättningsbara sidan håller på att flyttas.',
 );
 
+/** Tamil (தமிழ்)
+ * @author TRYPPN
+ */
+$messages['ta'] = array(
+	'pagetranslation' => 'பக்கத்தின் மொழிபெயர்ப்பு',
+	'tpt-template' => 'பக்கத்தின் வார்ப்புரு',
+	'tpt-diff-old' => 'முந்தைய சொற்றொடர்',
+	'tpt-diff-new' => 'புதிய சொற்றொடர்',
+	'tpt-languages-legend' => 'மற்ற மொழிகள்:',
+);
+
 /** Telugu (తెలుగు)
  * @author Kiranmayee
  * @author Veeven
