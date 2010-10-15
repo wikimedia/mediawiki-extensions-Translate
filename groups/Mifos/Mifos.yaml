@@ -31,8 +31,8 @@ BASIC:
 FILES:
   class: JavaFFS
   sourcePattern: %GROUPROOT%/mifos/userInterface/src/main/resources/org/mifos/ui/localizedProperties/messages_%CODE%.properties
-  definitionFile: %GROUPROOT%/mifos/userInterface/src/main/resources/org/mifos/ui/localizedProperties/messages_%CODE%.properties
-  targetPattern: mifos/userInterface/src/main/resources/org/mifos/ui/localizedProperties/messages.properties
+  definitionFile: %GROUPROOT%/mifos/userInterface/src/main/resources/org/mifos/ui/localizedProperties/messages.properties
+  targetPattern: mifos/userInterface/src/main/resources/org/mifos/ui/localizedProperties/messages_%CODE%.properties
 
 TAGS:
   ignored:
