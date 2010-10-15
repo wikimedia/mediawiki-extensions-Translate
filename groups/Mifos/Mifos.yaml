@@ -1,6 +1,11 @@
 TEMPLATE:
   BASIC:
     namespace: NS_MIFOS
+    description: >
+      {{int:translate-group-desc-mifos}}<br />
+      <div class=error>'''WARNING:''' Development of support for this product is under construction.
+      We are working with developers to improve i18n.
+      Please report all translation issues to [[Translating_talk:Mifos|Mifos issues page]].</div>
 
   CHECKER:
     class: MifosMessageChecker
@@ -15,7 +20,6 @@ TEMPLATE:
 BASIC:
   id: out-mifos-0-all
   label: All Mifos messages
-  description: "{{int:translate-group-desc-mifos}}<br /><div class=error>'''WARNING:''' Development of support for this product is under construction. We are working with developers to improve i18n.</div>[[Translating:Mifos|Mifos]] is a microloan and savings management platform, used by microfinance institutions to end world poverty."
   meta: yes
   class: AggregateMessageGroup
 
@@ -36,12 +40,12 @@ FILES:
 
 TAGS:
   ignored:
-    - '*1.'
-    - '*2.'
-    - '*3.'
-    - '*4.'
-    - '*5.'
-    - '*6.'
+    - '*1.*'
+    - '*2.*'
+    - '*3.*'
+    - '*4.*'
+    - '*5.*'
+    - '*6.*'
 
 ---
 BASIC:
