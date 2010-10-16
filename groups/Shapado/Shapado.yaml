@@ -113,16 +113,16 @@ MANGLER:
 
 ---
 BASIC:
-  id: out-shapado-divise
-  label: Shapado - Divise
-  display: out/shapado/divise
+  id: out-shapado-devise
+  label: Shapado - devise
+  display: out/shapado/devise
 
 FILES:
-  sourcePattern: %GROUPROOT%/shapado/config/locales/divise/divise.%CODE%.yml
-  targetPattern: shapado/config/locales/divise/divise.%CODE%.yml
+  sourcePattern: %GROUPROOT%/shapado/config/locales/devise/devise.%CODE%.yml
+  targetPattern: shapado/config/locales/devise/devise.%CODE%.yml
 
 MANGLER:
-  prefix: divise-
+  prefix: devise-
 
 ---
 BASIC:
