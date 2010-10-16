@@ -118,8 +118,8 @@ BASIC:
   display: out/shapado/divise
 
 FILES:
-  sourcePattern: %GROUPROOT%/shapado/config/locales/divise/%CODE%.yml
-  targetPattern: shapado/config/locales/divise/%CODE%.yml
+  sourcePattern: %GROUPROOT%/shapado/config/locales/divise/divise.%CODE%.yml
+  targetPattern: shapado/config/locales/divise/divise.%CODE%.yml
 
 MANGLER:
   prefix: divise-
