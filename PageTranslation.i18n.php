@@ -3164,6 +3164,13 @@ $messages['mk'] = array(
 	'pt-locked-page' => 'Оваа страница е заклучена бидејќи е во тек преместување на преводлива страница.',
 );
 
+/** Mongolian (Монгол)
+ * @author Chinneeb
+ */
+$messages['mn'] = array(
+	'pt-movepage-reason' => 'Шалтгаан:',
+);
+
 /** Maltese (Malti)
  * @author Chrisportelli
  */
