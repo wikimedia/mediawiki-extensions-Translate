@@ -259,10 +259,14 @@ $messages['br'] = array(
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], ur forom web skrivet e PHP.',
 	'bw-desc-mantisbt' => "Ur meziant digoust da c'hwennat drein eo [http://www.mantisbt.org MantisBT]. Roit keloù war [[Support]] m'en em gavit gant kudenn pe gudenn.",
 	'translate-group-desc-mantisbt-plugin-core' => 'Ur plugin diazez evit [[Translating:MantisBT|MantisBT]]',
+	'translate-group-desc-mediawiki-core-115' => 'Kemennoù evit ar stumm stabil 1.15 eus [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawiki-core-116' => 'Kemennoù evit ar stumm stabil 1.16 eus [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mifos' => 'Ur reizhiad merañ roadennoù evit ar mikrokredoù eo [[Translating:Mifos|Mifos]]',
 	'bw-desc-mwlibrl' => "Ul levraoueg Python, da skrivañ teulioù PDF diwar pennadoù eus Mediawiki bet dielfennet gant levraoueg mwlib, eo '''mwlib.rl'''.
 
 Sellit 'ta [[mw:Extension:PDF_Writer]] hag http://code.pediapress.com/wiki/wiki/mwlibrl evit gouzout hiroc'h.",
 	'bw-desc-nocc' => "Ur c'hliant webmail skrivet e PHP eo [http://nocc.sourceforge.net NOCC]. Kasit keloù da [[Support]] ma verzit kudenn pe gudenn.",
+	'translate-group-desc-okawix' => 'Ul lenner wikipedia ezlinenn eo [[Translating:Okawix|Okawix]]',
 	'bw-desc-openlayers' => 'Ur ganer kartennoù dinamek digor o zarzh eo OpenLayers. Kasit keloù da [[Support]] ma verzit kudenn pe gudenn.',
 	'bw-desc-openstreetmap' => 'An holl gemennadennoù a denn da [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Er strollad kemennadennoù-mañ emañ kemennadennoù etrefas [[Translating:Open Street Map|Open Street Map]].',
@@ -272,6 +276,7 @@ Sellit 'ta [[mw:Extension:PDF_Writer]] hag http://code.pediapress.com/wiki/wiki/
 * Grit gant [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] evit testiñ Potlatch. Eno e c'hallot amprouiñ kement a garot e kement korn zo.",
 	'bw-desc-shapado' => "Strollad ar c'hemmadennoù evit ar meziant G&R hag a zo frank hag open-source [[Translating:Shapado|Shapado]]",
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] zo ur servijer mikroblogiñ frank a wirioù',
+	'translate-group-desc-statusnet-plugin' => "Darn eus un astenn evit [[Translating:StatusNet|StatusNet]] eo ar c'hemennoù-mañ",
 	'bw-desc-voctrain' => "Pleustrer gerioù diazezet war [http://omegawiki.org OmegaWiki]. Implijout a ra ur reizhiad flashcard da zeskiñ gerioù adal nep yezh pleustret war Omegawiki.
 Gant skol-veur Bamberg eo bet savet. Aotre GPL 2.0 pe nevesoc'h. Diorroet gant [[User:Kim Bruning|Kim Bruning]].",
 	'bw-desc-wikiblame' => 'Gouest eo [http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] da gavout fonnus aozerien ur bajenn eus ur wiki Wikimedia.',
@@ -1194,6 +1199,7 @@ $messages['lb'] = array(
 	'translate-group-desc-translatablepages' => 'All iwwersetzbar Säiten',
 	'bw-desc-freecol' => "Ier Dir ufänkt FreeCol an Är Sprooch z'iwwersetzen, liest w.e.g. [[Translating:FreeCol]]. Freecol benotzt d'GPL-Lizenz.",
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], e Webforum deen a PHP geschriwwen ass.',
+	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]] ass eng webbaséierte Bug-Tracking-Software.',
 	'translate-group-desc-mantisbt-plugin-core' => 'En Haapt-Plugin fir [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Message fir déi stabil Versioun 1.15 vu [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mediawiki-core-116' => 'Message fir déi stabil Versioun 1.16 vu [[Translating:MediaWiki|MediaWiki]]',
