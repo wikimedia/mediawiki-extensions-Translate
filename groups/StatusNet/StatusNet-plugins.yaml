@@ -563,6 +563,20 @@ MANGLER:
   prefix: mobileprofile-
 ---
 BASIC:
+  id: out-statusnet-plugin-modhelper
+  label: StatusNet - ModHelper
+  display: out/statusnet/plugin/modhelper
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/ModHelper/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/ModHelper/locale/%CODE%/LC_MESSAGES/ModHelper.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/ModHelper/locale/ModHelper.pot
+  targetPattern: statusnet/plugins/ModHelper/locale/%CODE%/LC_MESSAGES/ModHelper.po
+
+MANGLER:
+  prefix: modhelper-
+---
+BASIC:
   id: out-statusnet-plugin-noticetitle
   label: StatusNet - NoticeTitle
   display: out/statusnet/plugin/noticetitle
