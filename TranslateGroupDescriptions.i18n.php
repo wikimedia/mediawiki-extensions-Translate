@@ -556,6 +556,7 @@ $messages['eo'] = array(
  * @author Translationista
  */
 $messages['es'] = array(
+	'translategroupdescriptions-desc' => 'Descripciones de los grupos de mensajes de los productos compatibles con la extensión [http://mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-nodesc' => 'No hay descripción disponible para este grupo de mensaje',
 	'translate-group-desc-mediawikicore' => 'Este grupo de mensajes contiene los mensajes usados en la actual versión alpha de MediaWiki ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'Este grupo de mensajes contiene los [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 mensajes más comunmente usados] en MediaWiki',
@@ -567,16 +568,22 @@ $messages['es'] = array(
 	'translate-group-desc-translate' => 'Grupo de mensajes Meta conteniendo todos los mensajes para la extensión MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-wikiaextensions' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones MediaWiki soportadas usadas por [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones MediaWiki soportadas usadas por [http://wikimedia.org/ Wikimedia Foundation]',
+	'translate-group-desc-wikimediaextensions-main' => 'Grupo de meta mensajes que contiene todos los mensajes para extensiones MediaWiki compatibles que debe ntraducirse para el [http://meta.wikimedia.org/wiki/Language_committee Comité de Idioma] Wikimedia',
 	'translate-group-desc-uniwiki' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones relacionadas a [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones relacionadas a la [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Iniciativa de usabilidad de Wikipedia]',
 	'translate-group-desc-translatablepages' => 'Todas las páginas traducibles',
 	'bw-desc-freecol' => 'Antes de traducir FreeCol a tu idioma, por favor lee [[Translating:FreeCol]]. Freecol usa la licencia GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], un foro web escrito en PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] es un sistema de corrección de errores libre basado en web. Por favor reporta cualquier problema en [[Support]].',
+	'translate-group-desc-mantisbt-plugin-core' => 'Un complemento nuclear para [[Translating:MantisBT|MantisBT]]',
+	'translate-group-desc-mediawiki-core-115' => 'Mensajes de la versión estable 1.15 del [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawiki-core-116' => 'Mensajes de la versión estable 1.16 de [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] es un sistema de información de gestión (MIS) para microfinanzas',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' es una biblioteca python para escribir documentos PDF de artículos MediaWiki los cuales fueron analizados por la biblioteca mwlib.
 
 Por favor mira [[mw:Extension:PDF_Writer]] y http://code.pediapress.com/wiki/wiki/mwlibrl para mayor información.",
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] es un cliente de correo basado en web escrito en PHP. Por favor reporta cualquier problema en [[Support]].',
+	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] es un lector de Wikipedia sin conexión',
 	'bw-desc-openlayers' => 'OpenLayers es un generador de mapas dinámico de fuente abierta. Por favor reporta cualquier problema en [[support]].',
 	'bw-desc-openstreetmap' => 'Grupo de mensajes para todos los mensajes de [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Este grupo de mensajes contiene los mensajes de interfaz para [[Translating:Open Street Map|Open Street Map]]',
@@ -586,6 +593,7 @@ Por favor mira [[mw:Extension:PDF_Writer]] y http://code.pediapress.com/wiki/wik
 * Utilice [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] para probar Potlatch. Allí puede probar todo lo que desee en cualquier área.',
 	'bw-desc-shapado' => 'Grupo de mensajes para el sofware Q&A de fuente libre y abierta [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] es un servidor de microblogueo de fuente abierta',
+	'translate-group-desc-statusnet-plugin' => 'Estos mensajes forman parte de un complemento para [[Translating:StatusNet|StatusNet]]',
 	'bw-desc-voctrain' => 'Entrenador de vocabulario basado en [http://omegawiki.org OmegaWiki]. Usa un sistema flashcard para aprender vocabulario de cualquier idioma soportado por Omegawiki.
 Creado por la Universidad de Bamberg. Licenciado GPL 2.0 o posterior. Desarrollado por [[User:Kim Bruning|Kim Bruning]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] es capaz de encontrar rápidamente los autores de una página en una wiki de Wikimedia.',
@@ -821,10 +829,13 @@ Aagleit vu dr Universität Bamberg. Lizänziert unter GPL 2.0 oder speter. Entwi
 
 /** Hebrew (עברית)
  * @author Rotemliss
+ * @author YaronSh
  */
 $messages['he'] = array(
 	'translate-group-desc-mediawikicore' => 'קבוצת הודעות זו כוללת את ההודעות בהן נעשה שימוש בגרסת האלפא הנוכחית של מדיה־ויקי ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'קבוצת הודעות זו כוללת את [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 ההודעות הנפוצות ביותר] במדיה־ויקי',
+	'translate-group-desc-translatablepages' => 'כל הדפים הניתנים לתרגום',
+	'translate-group-desc-mantisbt-plugin-core' => 'תוסף ליבה עבור [[Translating:MantisBT|MantisBT]]',
 );
 
 /** Croatian (Hrvatski)

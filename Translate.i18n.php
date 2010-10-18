@@ -7455,11 +7455,6 @@ $messages['he'] = array(
 	'translate-edit-warnings' => 'אזהרות על תרגומים חלקיים',
 	'translate-edit-tmsugs' => 'הצעות מזיכרון התרגום',
 	'translate-edit-tmmatch' => 'התאמה $1%',
-	'translate-edit-goto-no-prev' => 'אין הודעה קודמת',
-	'translate-edit-goto-no-next' => 'אין הודעה לאחר זו',
-	'translate-edit-goto-prev' => 'עריכת ההודעה הקודמת',
-	'translate-edit-goto-next' => 'עריכת ההודעה הבאה',
-	'translate-edit-goto-list' => 'חזרה לרשימה',
 	'translate-magic-pagename' => 'תרגום מורחב של מדיה־ויקי',
 	'translate-magic-help' => 'באפשרותכם לתרגם שמות דפים מיוחדים, מילות קסם ושמות מרחבי שם.
 
@@ -7612,6 +7607,7 @@ $1',
 	'translate-import-err-warnings' => 'הקובץ אינו מאורגן כראוי.
 אנא ודאו כי העורך שלכם אינו מסיר את שדות ה־msgctxt.
 פרטים: $1',
+	'translate-js-history' => 'היסטוריית התרגום',
 	'translate-gs-code' => 'קוד',
 	'translate-gs-continent' => 'יבשת',
 	'translate-gs-speakers' => 'דוברים',
@@ -11745,7 +11741,9 @@ $messages['ml'] = array(
  * @author Chinneeb
  */
 $messages['mn'] = array(
+	'translate-page-language' => 'Хэл',
 	'translate-magic-cm-comment' => 'Тайлбар:',
+	'translate-language' => 'Хэл',
 );
 
 /** Marathi (मराठी)

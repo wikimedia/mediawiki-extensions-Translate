@@ -1265,6 +1265,16 @@ Du chunnsch derno derzue eimol im Monet e Newsletter iber.
 Wänn Du kei Newsletter witt iberchuu, chasch di im Tab „{{int:prefs-personal}}“ in [[Special:Preferences|Dyyne Yystellige]] uustrage.',
 );
 
+/** Hebrew (עברית)
+ * @author YaronSh
+ */
+$messages['he'] = array(
+	'translate-fs-signup-title' => 'הרשמה',
+	'translate-fs-target-title' => 'התחלה בתרגום!',
+	'translate-fs-userpage-submit' => 'יצירת דף המשתמש שלי',
+	'translate-fs-userpage-done' => 'מצוין! כעת יש לך דף משתמש.',
+);
+
 /** Croatian (Hrvatski)
  * @author SpeedyGonsales
  */

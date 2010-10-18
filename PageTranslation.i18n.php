@@ -2122,6 +2122,9 @@ $messages['he'] = array(
 הדף אותו אתם מנסים לערוך אינו תואם לאף דף המסומן לתרגום.',
 	'tpt-render-summary' => 'עדכון להתאמת הגרסה החדשה של דף המקור',
 	'tpt-download-page' => 'ייצוא דף עם תרגומים',
+	'pt-movepage-current' => 'השם הנוכחי:',
+	'pt-movepage-new' => 'השם החדש:',
+	'pt-movepage-reason' => 'סיבה:',
 );
 
 /** Croatian (Hrvatski)
