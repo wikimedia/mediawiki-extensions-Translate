@@ -740,8 +740,8 @@ descmsg = multiupload-desc
 
 MwEmbed
 
-MwEmbed - MwEmbedModule
-file = MwEmbed/MwEmbedModule/mwEmbed.i18n.php
+MwEmbed - MwEmbed
+file = MwEmbed/MwEmbed/MwEmbed.i18n.php
 optional = mwe-size-gigabytes, mwe-size-megabytes, mwe-size-kilobytes, mwe-size-bytes
 
 Natural Language List
