@@ -379,6 +379,13 @@ array(
 	)
 ),
 array(
+	'group' => 'wikia-sharedhelp',
+	'check' => 'links',
+	'message' => array(
+		'sharedhelp-desc', // Contains link parts that may need translation
+	)
+),
+array(
 	'group' => 'wikia-specialsponsorpage',
 	'check' => 'variable',
 	'message' => array(
