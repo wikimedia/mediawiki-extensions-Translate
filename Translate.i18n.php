@@ -8487,9 +8487,9 @@ Clicca sur le nomine de un gruppo de messages pro vider un lista de messages non
 	'translate-task-export-to-file' => 'Exportar le traduction in un file',
 	'translate-task-export-as-po' => 'Exportar traduction in formato Gettext',
 	'translate-task-export-to-xliff' => 'Exportar traduction in formato Xliff',
-	'translate-page-no-such-language' => 'Le lingua specificate esseva invalide.',
-	'translate-page-no-such-task' => 'Le action specificate esseva invalide.',
-	'translate-page-no-such-group' => 'Le gruppo specificate esseva invalide.',
+	'translate-page-no-such-language' => 'Le lingua specificate es invalide.',
+	'translate-page-no-such-task' => 'Le action specificate es invalide.',
+	'translate-page-no-such-group' => 'Le gruppo specificate es invalide.',
 	'translate-page-disabled' => "Le traductiones in iste lingua in iste gruppo ha essite disactivate. Motivo:
 
 ''$1''",
@@ -10915,7 +10915,7 @@ Wann de Grupp aus Ënnergruppen besteet oder Messagen aus anere Gruppen drastinn
 	'translate-page-showing-all' => '$1 {{PLURAL:$1|Message gëtt|Message gi}} gewisen',
 	'translate-page-showing-none' => 'Kee Message fir ze weisen',
 	'translate-next' => 'Nächst Säit',
-	'translate-prev' => 'Säit virdrun',
+	'translate-prev' => 'Vireg Säit',
 	'translate-page-description-legend' => 'Informatiounen iwwert de Grupp',
 	'translate-page-edit' => 'änneren',
 	'translate-ext-url' => '<hr />Internet-Site: $1',
@@ -18255,6 +18255,8 @@ $messages['uk'] = array(
 	'translate-talk' => 'обговорення',
 	'translate-history' => 'історія',
 	'translate-showsub' => 'Показати {{PLURAL:$1|підгрупу|$1 підгрупи|$1 підгруп}}.',
+	'translate-grouplisting' => 'Це список усіх груп, що можуть перекладатися. 
+Натисніть на назву групи повідомлень, щоб подивитися список неперекладених повідомлень.',
 	'translate-task-view' => 'Переглянути всі повідомлення',
 	'translate-task-untranslated' => 'Переглянути неперекладені повідомлення',
 	'translate-task-optional' => "Переглянути необов'язкові повідомлення",

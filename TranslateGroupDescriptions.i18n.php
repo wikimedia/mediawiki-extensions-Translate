@@ -2003,6 +2003,7 @@ $messages['uk'] = array(
 	'translate-group-desc-wikimediaextensions' => 'Метагрупа, що містить повідомлення для MediaWiki-розширень, які використовуються [http://wikimedia.org/ Фондом Вікімедіа]',
 	'translate-group-desc-uniwiki' => 'Метагрупа, що містить повідомлення для MediaWiki-розширень, які використовуються [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Метагрупа, що містить повідомлення для MediaWiki-розширень, які використовуються [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
+	'translate-group-desc-translatablepages' => 'Усі сторінки, що можуть перекладатися',
 	'bw-desc-freecol' => 'Перед тим, як перекладати FreeCol на вашу мову, прочитайте, будь ласка, [[Translating:FreeCol]]. Freecol використовує ліцензію GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum] — веб-форум, написаний на PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] це вільна веб-система для відслідковування багів. Будь ласка, повідомляйте будь-які проблеми у [[Support|службу підтримки]].',
@@ -2020,6 +2021,7 @@ $messages['uk'] = array(
 * Використовуйте [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] для тестування Potlatch. Тут ви можете тестувати усі можливості.',
 	'bw-desc-shapado' => 'Група повідомлень відкритого та вільного програмного забезпечення питань та відповідей [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] — сервер мікроблогінгу з відкритим вихідним кодом',
+	'translate-group-desc-statusnet-plugin' => 'Ці повідомлення є частиною плагіна для [[Translating:StatusNet|StatusNet]]',
 	'bw-desc-voctrain' => 'Словниковий тренажер на основі [http://omegawiki.org OmegaWiki]. Використовує систему карток для поповнення словарного запасу на будь-яких мовах, які підтримуються Omegawiki.
 Створений для університету Бамберга. Ліцензований з GPL 2.0 або пізнішими версіями. Розроблений [[User:Kim Bruning|Кімом Брунінгом]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] дозволяє швидко знайти авторів сторінки в проектах Вікімедіа.',
