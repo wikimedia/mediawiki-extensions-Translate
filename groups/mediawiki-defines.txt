@@ -993,6 +993,7 @@ optional = rightfunctions-rest1, rightfunctions-rest2, rightfunctions-rest3, rig
 RPED
 
 RSS
+ignored = rss-item
 
 RT
 
