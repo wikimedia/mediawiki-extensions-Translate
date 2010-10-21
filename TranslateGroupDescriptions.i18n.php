@@ -917,6 +917,7 @@ $messages['hu'] = array(
 	'translate-group-desc-wikimediaextensions' => 'Gyűjtőcsoport, ami a [http://wikimedia.org/ Wikimédia Alapítvány] által használt MediaWiki-kiterjesztések összes üzenetét tartalmazza',
 	'translate-group-desc-uniwiki' => 'Gyűjtőcsoport, ami az [http://unicefinnovation.org/wiki.php Uniwiki]hez kapcsolódó MediaWiki-kiterjesztések összes üzenetét tartalmazza',
 	'translate-group-desc-ui' => 'Gyűjtőcsoport, ami a [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]-hez kapcsolódó MediaWiki-kiterjesztések összes üzenetét tartalmazza',
+	'translate-group-desc-translatablepages' => 'Az összes fordítható lap',
 	'bw-desc-freecol' => 'Mielőtt elkezdenéd fordítani a FreeColt a saját nyelvedre, olvasd el a [[Translating:FreeCol]] lapot. A FreeCol GPL-licencet használ.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], egy PHP-ben írt webfórum',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT], egy ingyenes webalapú hibakövető rendszer. A problémákat a [[Support|Segítség]] oldalon jelezheted.',

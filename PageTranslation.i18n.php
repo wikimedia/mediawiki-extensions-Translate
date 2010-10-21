@@ -166,6 +166,7 @@ $2 is a count of sections which can be used with PLURAL,
 $3 is an URL.',
 	'tpt-mark-summary' => 'This message is used as an edit summary.',
 	'tpt-old-pages' => 'The words "some version" refer to "one version of the page", or "a single version of each of the pages", respectively. Each page can have either one or none of its versions marked for translaton.',
+	'tpt-other-pages' => '$1 is the number of pages in the following list.',
 	'tpt-rev-old' => '',
 	'translate-tag-markthisagain' => '"has changes" is to be understood as "has been altered/edited"',
 	'translate-tag-hasnew' => '"has changes" is to be understood as "has been altered/edited"',
@@ -445,6 +446,13 @@ Netter de letzte Version kå zur Ywersetzung markird wern.",
 	'tpt-notsuitable' => 'De Saiten $1 is ned zum Ywersetzen gaignet.
 Söi sicher, das a <nowiki><translate></nowiki>-Tag und güitige Syntax vawendt werd.',
 	'tpt-languages-legend' => 'Ånderne Sproochen:',
+);
+
+/** Belarusian (Беларуская)
+ * @author Тест
+ */
+$messages['be'] = array(
+	'pt-movepage-reason' => 'Прычына:',
 );
 
 /** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
@@ -2339,7 +2347,22 @@ A lap, amit szerkeszteni próbálsz, úgy tűnik hogy nem egyezik egy fordítás
 	'tpt-install' => 'Futtasd a <code>maintenance/update.php</code>-t vagy a webes telepítőt, hogy engedélyezd a lapfordítás funkciót.',
 	'tpt-render-summary' => 'Frissítés, hogy megegyezzen a forráslap új változatával',
 	'tpt-download-page' => 'Lap exportálása fordításokkal együtt',
+	'pt-log-name' => 'Oldalfordítási napló',
+	'pt-movepage-title' => 'A(z) $1 fordítható lap átnevezése',
+	'pt-movepage-blockers' => 'Nem lehet átnevezni a fordítható lapot az új névre a következő {{PLURAL:$1|hiba|hibák}} miatt:',
+	'pt-movepage-list-pages' => 'Átnevezendő lapok listája',
+	'pt-movepage-list-translation' => 'Fordítható lapok',
+	'pt-movepage-list-section' => 'Szakaszlapok',
+	'pt-movepage-list-other' => 'További allapok',
+	'pt-movepage-list-count' => 'Összesen {{PLURAL:$1|egy|$1}} lapot kell átnevezni.',
+	'pt-movepage-legend' => 'Fordítható lap átnevezése',
+	'pt-movepage-current' => 'Jelenlegi név:',
+	'pt-movepage-new' => 'Új név:',
 	'pt-movepage-reason' => 'Indoklás:',
+	'pt-movepage-subpages' => 'Összes allap átnevezése',
+	'pt-movepage-action-perform' => 'Átnevezés végrehajtása',
+	'pt-movepage-action-other' => 'Cél megváltoztatása',
+	'pt-movepage-logreason' => 'A(z) $1 fordítható lap része',
 );
 
 /** Interlingua (Interlingua)

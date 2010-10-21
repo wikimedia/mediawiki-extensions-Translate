@@ -2064,6 +2064,27 @@ $messages['pl'] = array(
 	'translate-fs-intro' => "Witaj w kreatorze pierwszych kroków na {{GRAMMAR:MS,pl|{{SITENAME}}}}.
 Pomożemy Ci krok po kroku przejść przez proces zostania tłumaczem.
 Po jego zakończeniu będziesz mógł tłumaczyć ''komunikatu interfejsu'' wszystkich wspieranych przez {{GRAMMAR:B.lp|{{SITENAME}}}} projektów.",
+	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount.png|frame]]
+
+Najpierw należy się zarejestrować.
+
+Możliwość wykonywania tłumaczeń jest przypisana do Twojej nazwy użytkownika.
+Po prawej stronie na obrazku przedstawiono jak należy wypełnić pola.
+
+Jeśli już się rejestrowałeś i posiadasz konto, po prostu $1zaloguj się$2.
+Po utworzeniu konta wróć na tę stronę.
+
+$3Zarejestruj się$4',
+	'translate-fs-settings-text' => 'Teraz powinieneś wejść do swoich preferencji i co najmniej ustawić język interfejsu na ten, na który zamierzasz tłumaczyć.
+
+Język interfejsu jest wykorzystywany jako docelowy domyślny język tłumaczeń.
+Łatwo jest zapomnieć zmienić język na właściwy, więc ustawienie języka jest wysoce zalecane.
+
+Gdy tam jesteś, możesz również nakazać oprogramowaniu wyświetlać tłumaczenia na inne języki, które znasz.
+Opcję tę można znaleźć w zakładce „{{int:prefs-editing}}”.
+Zapraszamy również do korzystania z innych ustawień.
+
+Przejdź teraz na [[Special:Preferences|stronę preferencji]], a następnie wrócić tutaj.',
 	'translate-fs-settings-skip' => 'Skończyłem. 
 Pozwól mi przejść dalej.',
 	'translate-fs-userpage-submit' => 'Utwórz moją stronę użytkownika',

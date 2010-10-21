@@ -2136,6 +2136,13 @@ $messages['bcl'] = array(
 	'translate-magic-cm-savefailed' => 'Bigô an pagtagama',
 );
 
+/** Belarusian (Беларуская)
+ * @author Тест
+ */
+$messages['be'] = array(
+	'translate-history' => 'гісторыя',
+);
+
 /** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
  * @author EugeneZelenko
  * @author Jim-by
@@ -8261,11 +8268,7 @@ $messages['hu'] = array(
 	'translate-edit-warnings' => 'Hiányosságok a fordításban',
 	'translate-edit-tmsugs' => 'Javaslatok a fordítómemóriából',
 	'translate-edit-tmmatch' => '$1%-os egyezés',
-	'translate-edit-goto-no-prev' => 'Nincs előző üzenet',
-	'translate-edit-goto-no-next' => 'Nincs következő üzenet',
-	'translate-edit-goto-prev' => 'Előző üzenet szerkesztése',
-	'translate-edit-goto-next' => 'Következő üzenet szerkesztése',
-	'translate-edit-goto-list' => 'Vissza a listához',
+	'translate-edit-tab-list' => 'Üzenetlista',
 	'translate-magic-pagename' => 'Kibővített MediaWiki-fordítás',
 	'translate-magic-help' => 'Lefordíthatod a speciális lapok álneveit, a varázsszavakat és a névterek neveit.
 
@@ -8335,12 +8338,15 @@ A nyelvek alapértelmezett listája a nyelvedtől függ.',
 	'translationstats' => 'Fordítási statisztika',
 	'translate-stats-edits' => 'Szerkesztések',
 	'translate-stats-users' => 'Fordítók',
+	'translate-stats-registrations' => 'Regisztrációk',
 	'translate-statsf-intro' => 'A lenti űrlap segítségével egy egyszerű statisztikát generáltathatsz. Minden értéknek van alsó és felső határa.',
 	'translate-statsf-options' => 'Grafikon beállításai',
 	'translate-statsf-width' => 'Szélesség pixelekben:',
 	'translate-statsf-height' => 'Magasság pixelekben:',
 	'translate-statsf-days' => 'Időtartam napokban:',
 	'translate-statsf-scale' => 'Időköz:',
+	'translate-statsf-scale-months' => 'Hónapok',
+	'translate-statsf-scale-weeks' => 'Hetek',
 	'translate-statsf-scale-days' => 'naponként',
 	'translate-statsf-scale-hours' => 'óránként',
 	'translate-statsf-count' => 'Értékek:',
@@ -8384,6 +8390,7 @@ A  [[Special:Translate|{{int:translate}}]] lapon átnézheted az elkészített f
 	'supportedlanguages' => 'Támogatott nyelvek',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Fordító|Fordítók}}: $1',
 	'supportedlanguages-noportal-title' => 'Nincs portál-névtér meghatározva',
+	'supportedlanguages-recenttranslations' => 'friss fordítások',
 	'translate-save' => 'Mentés ($1)',
 	'translate-jssti-add' => 'Hozzáadás a listához',
 	'translate-manage-groups' => 'Csoportok kezelése',
@@ -11339,19 +11346,72 @@ Pakeitimai nebus įrašyti iki Jūs nuspausite išsaugojimo mygtuką apačioje.'
 
 /** Latvian (Latviešu)
  * @author Marozols
+ * @author Papuass
  * @author Yyy
  */
 $messages['lv'] = array(
+	'translate' => 'Tulkošana',
+	'translate-desc' => '[[Special:Translate|Īpašā lapa]] MediaWiki un citu projektu tulkošanai',
+	'translate-edit' => 'labot',
 	'translate-talk' => 'diskusija',
+	'translate-history' => 'vēsture',
+	'translate-page-settings-legend' => 'Uzstādījumi',
+	'translate-page-task' => 'Es vēlos',
+	'translate-page-group' => 'Grupa',
+	'translate-page-language' => 'Valoda',
+	'translate-page-limit' => 'Ierobežojums',
+	'translate-page-limit-option' => '$1 {{PLURAL:$1|ziņojums|ziņojumi}} lapā',
+	'translate-submit' => 'Atlasīt',
+	'translate-page-navigation-legend' => 'Navigācija',
+	'translate-page-showing' => 'Rāda ziņojumus no $1 līdz $2 no $3.',
 	'translate-next' => 'Nākamā lapa',
 	'translate-prev' => 'Iepriekšējā lapa',
+	'translate-page-description-legend' => 'Informācija par grupu',
+	'translate-page-edit' => 'labot',
+	'translate-edit-tmmatch' => '$1% atbilstība',
+	'translate-magic-module' => 'Modulis:',
+	'translate-magic-submit' => 'Atlasīt',
+	'translate-magic-cm-comment' => 'Komentārs:',
+	'translate-magic-cm-save' => 'Saglabāt',
+	'translationchanges' => 'Tulkojuma izmaiņas',
 	'translate-pref-nonewsletter' => 'Nevēlos pa e-pastu saņemt lapas jaunumus',
 	'translate-pref-editassistlang' => 'Palīgvalodas:',
 	'prefs-translate' => 'Tulkošanas uzstādījumi',
 	'translate-pref-editassistlang-help' => 'Saraksts ar valodu kodiem, kas atdalīti ar komatiem.
 Norādītajās valodās pieejamie tulkojumi būs redzami tulkošanas lapā.
 Noklusētā saraksta vērtība ir atkarīga no tavas valodas.',
+	'translate-rc-translation-filter-no' => 'Nedarīt neko',
+	'translate-stats-edits' => 'Labojumi',
+	'translate-stats-users' => 'Tulkotāji',
+	'translate-stats-registrations' => 'Reģistrācijas',
+	'translate-statsf-width' => 'Platums pikseļos:',
+	'translate-statsf-height' => 'Augstums pikseļos:',
+	'translate-statsf-days' => 'Laika periods dienās:',
+	'translate-statsf-scale-months' => 'Mēneši',
+	'translate-statsf-scale-weeks' => 'Nedēļas',
+	'translate-statsf-scale-days' => 'Dienas',
+	'translate-statsf-scale-hours' => 'Stundas',
+	'translate-tag-category' => 'Tulkojamās lapas',
+	'translate-sidebar-alltrans' => 'Citās valodās',
+	'translations' => 'Visi tulkojumi',
+	'translate-translations-project' => 'Projekts:',
+	'languagestats' => 'Valodas statistika',
+	'languagestats-summary' => 'Šī lapa parāda tulkojumu statistiku visām ziņojumu grupām konkrētai valodai.',
+	'languagestats-stats-for' => 'Tulkojuma statistika $1 ($2).',
+	'languagestats-recenttranslations' => 'pēdējie tulkojumi',
+	'translate-language-code' => 'Valodas kods',
+	'translate-language-code-field-name' => 'Valodas kods:',
+	'translate-suppress-complete' => 'Nerādīt pilnībā iztulkotās ierakstu grupas',
+	'translate-language' => 'Valoda',
+	'translate-total' => 'Ieraksti',
+	'translate-untranslated' => 'Neiztulkoti',
+	'translate-percentage-complete' => 'Pabeigtība',
+	'translate-percentage-fuzzy' => 'Novecojis',
+	'supportedlanguages-translators' => '{{PLURAL:$2|Tulkotājs|Tulkotāji}}: $1',
+	'translate-save' => 'Saglabāt ($1)',
 	'translate-jssti-add' => 'Pievienot sarakstam',
+	'translate-manage-groups' => 'Grupu pārvaldība',
+	'translate-manage-submit' => 'Izpildīt',
 );
 
 /** Lazuri (Lazuri)
@@ -11600,7 +11660,7 @@ $messages['mk'] = array(
 	'translate-save' => 'Зачувај ($1)',
 	'translate-jssti-add' => 'Додај во список',
 	'translate-manage-groups' => 'Раководење со групи',
-	'translate-manage-listgroups' => 'Конфигурирани групи',
+	'translate-manage-listgroups' => 'Наместени групи',
 	'translate-manage-listgroups-old' => 'Групи по стар стил',
 	'translate-managegroups' => 'Раководење со групи',
 	'translate-manage-newgroup' => 'Оваа група пораки не била увезувана претходно.',
@@ -17049,6 +17109,7 @@ $messages['te'] = array(
 	'translate-edit-warnings' => 'అసంపూర్తి అనువాదాల గురించి హెచ్చరికలు',
 	'translate-edit-tmsugs' => 'అనువాద కోశం నుండి సలహాలు',
 	'translate-edit-tmmatch' => '$1% పోలిక',
+	'translate-edit-tab-list' => 'సందేశాల జాబితా',
 	'translate-magic-submit' => 'తీసుకురా',
 	'translate-magic-cm-export' => 'ఎగుమతించు',
 	'translate-magic-cm-current' => 'ప్రస్తుత',
