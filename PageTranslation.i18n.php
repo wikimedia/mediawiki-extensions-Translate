@@ -4631,6 +4631,7 @@ $messages['te'] = array(
 	'translate-tag-markthisagain' => 'చివరిసారి <span class="plainlinks">[$2 అనువాదానికి గుర్తించినప్పటి నుండి]</span> ఈ పేజీకి <span class="plainlinks">[$1 మార్పులు]</span> జరిగాయి.',
 	'tpt-languages-legend' => 'ఇతర భాషలు:',
 	'pt-log-name' => 'పేజీ అనువాదాల చిట్టా',
+	'pt-movepage-list-pages' => 'తరలించాల్సిన పుటల యొక్క జాబితా',
 	'pt-movepage-list-translation' => 'అనువాద పుటలు',
 	'pt-movepage-list-other' => 'ఇతర ఉపపుటలు',
 	'pt-movepage-current' => 'ప్రస్తుత పేరు:',
