@@ -34,6 +34,7 @@ class TranslateEditAddons {
 			return true;
 		}
 
+
 		$collection = $group->initCollection( 'en' );
 		$collection->filter( 'optional' );
 		$keys = array_keys( $collection->keys() );
@@ -309,9 +310,7 @@ class TranslateEditAddons {
 
 		list( $key, $code, $group ) = self::getKeyCodeGroup( $title );
 
-		/**
-		 * Unknown message, do not handle.
-		 */
+		// Unknown message, do not handle.
 		if ( !$group || !$code ) {
 			return true;
 		}
@@ -323,14 +322,10 @@ class TranslateEditAddons {
 			$cache->clear( $g, $code );
 		}
 
-		/**
-		 * Check for explicit tag.
-		 */
+		// Check for explicit tag.
 		$fuzzy = self::hasFuzzyString( $text );
 
-		/**
-		 * Check for problems, but only if not fuzzy already.
-		 */
+		// Check for problems, but only if not fuzzy already.
 		global $wgTranslateDocumentationLanguageCode;
 		if ( $code !== $wgTranslateDocumentationLanguageCode ) {
 			$checker = $group->getChecker();
@@ -396,10 +391,10 @@ class TranslateEditAddons {
 				'rt_page' => $title->getArticleId(),
 				'rt_type' => $id,
 				'rt_revision' => $rev,
+				'rt_value' => $definitionRevision,
 			);
-			$dbw->delete( 'revtag', $conds, __METHOD__ );
-			$conds['rt_value'] = $definitionRevision;
-			$dbw->insert( 'revtag', $conds, __METHOD__ );
+			$index = array( 'rt_type', 'rt_page', 'rt_revision' );
+			$dbw->replace( 'revtag', array( $index ), $conds, __METHOD__ );
 		}
 
 		return true;
