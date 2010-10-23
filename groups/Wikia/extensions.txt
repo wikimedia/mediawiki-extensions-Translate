@@ -207,7 +207,7 @@ ignored = toplists-msg-fb-OnRateArticle-link, toplists-msg-fb-OnRateArticle
 
 User Rename Tool
 file = UserRenameTool/SpecialRenameuser.i18n.php
-ignored = userrename, right-userrename
+ignored = renameuser, right-renameuser
 
 Video Embed Tool
 
