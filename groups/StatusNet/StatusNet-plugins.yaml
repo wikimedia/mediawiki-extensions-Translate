@@ -633,6 +633,20 @@ MANGLER:
   prefix: openid-
 ---
 BASIC:
+  id: out-statusnet-plugin-openx
+  label: StatusNet - OpenX
+  display: out/statusnet/plugin/openx
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/OpenX/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/OpenX/locale/%CODE%/LC_MESSAGES/OpenX.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/OpenX/locale/OpenX.pot
+  targetPattern: statusnet/plugins/OpenX/locale/%CODE%/LC_MESSAGES/OpenX.po
+
+MANGLER:
+  prefix: openx-
+---
+BASIC:
   id: out-statusnet-plugin-piwikanalytics
   label: StatusNet - PiwikAnalytics
   display: out/statusnet/plugin/piwikanalytics
