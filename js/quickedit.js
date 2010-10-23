@@ -47,7 +47,7 @@ var dialogwidth = false;
 
 function trlOpenJsEdit( page, group ) {
 	var url = wgScript + "?title=Special:Translate/editpage&suggestions=async&page=$1&loadgroup=$2";
-	url = url.replace( "$1", page ).replace( "$2", group );
+	url = url.replace( "$1", encodeURIComponent( page ) ).replace( "$2", encodeURIComponent( group ) );
 	var id = "jsedit" +  page.replace( /[^a-zA-Z0-9_]/g, '_' );
 
 	var dialog = jQuery("#"+id);
@@ -89,7 +89,7 @@ function trlOpenJsEdit( page, group ) {
 		if ( form.find( ".mw-translate-messagechecks" ) ) {
 			var checker = new MessageCheckUpdater( function() {
 				var url = wgScript + "?title=Special:Translate/editpage&suggestions=checks&page=$1&loadgroup=$2";
-				url = url.replace( "$1", page ).replace( "$2", group );
+				url = url.replace( "$1", encodeURIComponent( page ) ).replace( "$2", encodeURIComponent( group ) );
 				jQuery.post( url, { translation: textarea.val() } , function(mydata) {
 					form.find( ".mw-translate-messagechecks" ).replaceWith( mydata );
 				});
