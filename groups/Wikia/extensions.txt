@@ -126,6 +126,9 @@ New Edit Page
 #New Wiki Builder
 #aliasfile = NewWikiBuilder/NewWikiBuilder.alias.php
 
+Oasis
+ignored = wiki-navigation, categoryblacklist, photosblacklist
+
 Our 404 Handler
 file = Our404Handler/SpecialOur404Handler.i18n.php
 
@@ -201,6 +204,9 @@ Title Edit
 
 Top Lists
 ignored = toplists-msg-fb-OnRateArticle-link, toplists-msg-fb-OnRateArticle
+
+User Rename Tool
+file = UserRenameTool/SpecialRenameuser.i18n.php
 
 Video Embed Tool
 
