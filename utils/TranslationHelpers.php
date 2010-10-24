@@ -424,7 +424,6 @@ class TranslationHelpers {
 
 		$code = $this->targetLanguage;
 		$definition = trim( strval( $this->getDefinition() ) );
-		$definition = str_replace( "\n", "<newline/>", $definition );
 
 		$memckey = wfMemckey( 'translate-tmsug-badcodes-' . $serviceName );
 		$unsupported = $wgMemc->get( $memckey );
