@@ -430,6 +430,17 @@ Ako ste već registrirani, $1prijavite se$2.
 Jednom kad ste registrirani, vratite se na ovu stranicu.
 
 $3Registracija$4',
+	'translate-fs-settings-text' => 'Sada bi ste trebali otići na vaše postavke i
+barem promijeniti vaš jezik interfejsa na jezik na kojem ćete prevoditi.
+
+Vaš jezik interfejsa se koristi kao osnovni ciljni jezik.
+Veoma je lahko zaboraviti prebaciti jezik na pravi, tako da je preporučljivo da se to odmah postavi.
+
+Dok ste na postavkama, također možete postaviti softver za prikaz prevoda na drugim jezicima koje poznajete.
+Ova postavka se može naći na jezičku "{{int:prefs-editing}}".
+Slobodno istraživajte i druge postavke.
+
+Idite na [[Special:Preferences|stranicu postavki]] sad i zatim se vratite na ovu stranicu.',
 	'translate-fs-settings-skip' => 'Završio sam.
 Želim nastaviti.',
 	'translate-fs-userpage-submit' => 'Napravi moju korisničku stranicu',

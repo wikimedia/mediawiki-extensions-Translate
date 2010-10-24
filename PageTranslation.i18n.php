@@ -1606,6 +1606,7 @@ Tarkista mahdolliset virheet ja valmistumisviestit sivunkääntölokista.',
  * @author IAlex
  * @author Peter17
  * @author Urhixidur
+ * @author Verdy p
  * @author Y-M D
  */
 $messages['fr'] = array(
@@ -1642,8 +1643,8 @@ Avant de marquer ces versions pour être traduites, vérifier que les modificati
 	'tpt-list-nopages' => 'Aucune page n’a été marquée pour être traduite ni n’est prête à l’être.',
 	'tpt-old-pages' => 'Des versions de {{PLURAL:$1|cette page|ces pages}} ont été marquées pour être traduites.',
 	'tpt-new-pages' => '{{PLURAL:$1|Cette page contient|Ces pages contiennent}} du texte avec des balises de traduction, mais aucune version de {{PLURAL:$1|cette page n’est marquée pour être traduite|ces pages ne sont marquées pour être traduites}}.',
-	'tpt-other-pages' => 'Une ancienne version de {{PLURAL:$1|cette page|ces pages}} a été marquée pour être traduite,
-mais la dernière version ne peut pas être marquée pour être traduite.',
+	'tpt-other-pages' => 'Une ancienne version de {{PLURAL:$1|la page suivante|chacune des pages suivantes}} a été marquée pour être traduite,
+mais {{PLURAL:$1|sa dernière version|leur dernière version respective}} ne peut pas être marquée ainsi :',
 	'tpt-rev-latest' => 'dernière version',
 	'tpt-rev-old' => 'différence avec la version marquée précédente',
 	'tpt-rev-mark-new' => 'marquer cette version pour être traduite',
@@ -4631,9 +4632,11 @@ $messages['te'] = array(
 	'translate-tag-markthisagain' => 'చివరిసారి <span class="plainlinks">[$2 అనువాదానికి గుర్తించినప్పటి నుండి]</span> ఈ పేజీకి <span class="plainlinks">[$1 మార్పులు]</span> జరిగాయి.',
 	'tpt-languages-legend' => 'ఇతర భాషలు:',
 	'pt-log-name' => 'పేజీ అనువాదాల చిట్టా',
+	'pt-movepage-block-subpage-exists' => 'ఆ లక్ష్యిత ఉపపుట [[:$2]] ఉనికిలో ఉంది.',
 	'pt-movepage-list-pages' => 'తరలించాల్సిన పుటల యొక్క జాబితా',
 	'pt-movepage-list-translation' => 'అనువాద పుటలు',
 	'pt-movepage-list-other' => 'ఇతర ఉపపుటలు',
+	'pt-movepage-list-count' => 'మొత్తం తరలించాల్సినవి $1 {{PLURAL:$1|పుట|పుటలు}}.',
 	'pt-movepage-current' => 'ప్రస్తుత పేరు:',
 	'pt-movepage-new' => 'కొత్త పేరు:',
 	'pt-movepage-reason' => 'కారణం:',
@@ -4945,7 +4948,7 @@ $messages['uk'] = array(
 	'tpt-old-pages' => 'Деякі версії {{PLURAL:$1|цієї сторінки|цих сторінок}} були відмічені для перекладу.',
 	'tpt-new-pages' => '{{PLURAL:$1|Ця сторінка містить|Ці сторінки містять}} текст з тегами перекладу, але жодна з версій {{PLURAL:$1|цієї сторінки|цих сторінок}} не відмічена для перекладу.',
 	'tpt-other-pages' => '{{PLURAL:$1|Стара версія цієї сторінки відмічена|Старі версії цих сторінок відмічені}} для перекладу,
-але {{PLURAL:$1|остання версія не може|останні версії не можуть}} бути відмечена для перекладу.',
+але {{PLURAL:$1|остання версія не може бути відмічена|останні версії не можуть бути відмічені}} для перекладу.',
 	'tpt-rev-latest' => 'остання версія',
 	'tpt-rev-old' => 'різниця з попередньою позначеною версією',
 	'tpt-rev-mark-new' => 'позначити цю версію для перекладу',
