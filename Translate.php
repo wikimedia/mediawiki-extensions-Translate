@@ -180,6 +180,13 @@ $wgTranslateTranslationServices['Google'] = array(
 	'timeout-async' => 6,
 	'type' => 'google',
 );
+$wgTranslateTranslationServices['Microsoft'] = array(
+	'url' => 'http://api.microsofttranslator.com/V2/Http.svc/Translate',
+	'key' => null,
+	'timeout-sync' => 3,
+	'timeout-async' => 6,
+	'type' => 'microsoft',
+);
 $wgTranslateTranslationServices['Apertium'] = array(
 	'url' => 'http://api.apertium.org/json/translate',
 	'pairs' => 'http://api.apertium.org/json/listPairs',

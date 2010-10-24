@@ -314,6 +314,8 @@ class TranslationHelpers {
 				$boxes[] = $this->getTmBox( $name, $config );
 			} elseif ( $config['type'] === 'google' ) {
 				$boxes[] = $this->getGoogleSuggestion( $name, $config );
+			} elseif ( $config['type'] === 'microsoft' ) {
+				$boxes[] = $this->getMicrosoftSuggestion( $name, $config );
 			} elseif ( $config['type'] === 'apertium' ) {
 				$boxes[] = $this->getApertiumSuggestion( $name, $config );
 			} else {
@@ -411,6 +413,67 @@ class TranslationHelpers {
 		}
 
 		return $options;
+	}
+
+	protected function getMicrosoftSuggestion( $serviceName, $config ) {
+		global $wgMemc;
+
+		if ( self::checkTranslationServiceFailure( $serviceName ) ) {
+			return null;
+		}
+
+		$code = $this->targetLanguage;
+		$definition = trim( strval( $this->getDefinition() ) );
+		$definition = str_replace( "\n", "<newline/>", $definition );
+
+		$memckey = wfMemckey( 'translate-tmsug-badcodes-' . $serviceName );
+		$unsupported = $wgMemc->get( $memckey );
+
+		if ( $definition === '' || isset( $unsupported[$code] ) ) {
+			return null;
+		}
+
+		global $wgSitename, $wgVersion, $wgProxyKey;
+		$options = array();
+		$options['timeout'] = $config['timeout'];
+
+		$params = array( 
+			'text' => $definition,
+			'to' => $code,
+		);
+
+		if ( isset( $config['key'] ) ) {
+			$params['appId'] = $config['key'];
+		} else {
+			return null;
+		}
+
+		$url = $config['url'] . '?' . wfArrayToCgi( $params );
+		$url = wfExpandUrl( $url );
+
+		$options['method'] = 'GET';
+		$req = HttpRequest::factory( $url, $options );
+		$status = $req->execute();
+
+		if ( !$status->isOK() ) {
+			$error = $req->getContent();
+			if ( strpos( $error, 'must be a valid language' ) !== false ) {
+				$unsupported[$code] = true;
+				$wgMemc->set( $memckey, $unsupported, 60 * 60 * 8 );
+				return null;
+			}
+
+			wfWarn(  __METHOD__ . ': Http::get failed:' . $error );
+			// Most likely a timeout or other general error
+			self::reportTranslationServiceFailure( $serviceName );
+			return null;
+		}
+		
+		$ret = $req->getContent();
+		$text = preg_replace( '~<string.*>(.*)</string>~', '\\1', $ret  );
+		$text = Sanitizer::decodeCharReferences( $text );
+		$text = $this->suggestionField( $text );
+		return Html::rawElement( 'div', null, self::legend( $serviceName ) . $text . self::clear() );
 	}
 
 	protected function getApertiumSuggestion( $serviceName, $config ) {
