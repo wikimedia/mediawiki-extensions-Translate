@@ -127,6 +127,7 @@ New Edit Page
 #aliasfile = NewWikiBuilder/NewWikiBuilder.alias.php
 
 Oasis
+optional = oasis-latest-photos-single
 ignored = wiki-navigation, categoryblacklist, photosblacklist
 
 Our 404 Handler
