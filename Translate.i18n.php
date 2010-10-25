@@ -6000,7 +6000,8 @@ Cliquer sur le nom du groupe de messages pour voir une liste des messages qui ne
 	'translate-page-no-such-language' => 'Le code langue indiqué est incorrect.',
 	'translate-page-no-such-task' => 'La tâche spécifiée est incorrecte.',
 	'translate-page-no-such-group' => 'Le groupe spécifié est incorrect.',
-	'translate-page-disabled' => "Les traductions dans cette langue ont été désactivées pour ce groupe. Motif :
+	'translate-page-disabled' => "Les traductions dans cette langue ont été désactivées pour ce groupe.
+Motif :
 
 ''$1''",
 	'translate-page-settings-legend' => 'Paramètres',
@@ -6026,7 +6027,8 @@ Si le groupe contient des sous-ensembles ou des sur-ensembles de messages d'autr
 	'translate-edit-title' => 'Modifier « $1 »',
 	'translate-edit-definition' => 'Définition du message',
 	'translate-edit-contribute' => 'contribuer',
-	'translate-edit-no-information' => "''Ce message n’est pas documenté. Si vous savez où ou comment il est utilisé, vous pouvez aider les autres traducteurs en créant la documentation de ce message.''",
+	'translate-edit-no-information' => "''Ce message n’est pas documenté.
+Si vous savez où ou comment il est utilisé, vous pouvez aider les autres traducteurs en créant la documentation de ce message.''",
 	'translate-edit-information' => 'Informations concernant le message « $2 » ($1)',
 	'translate-edit-in-other-languages' => 'Message « $1 » dans d’autres langues',
 	'translate-edit-committed' => 'Traduction actuelle dans le logiciel',
