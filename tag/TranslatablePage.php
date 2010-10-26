@@ -674,7 +674,7 @@ class TranslatablePage {
 		}
 
 		$codes = Language::getLanguageNames( false );
-		global $wgTranslateDocumentationLanguageCode, $wgContLang;
+		global $wgTranslateDocumentationLanguageCode;
 		unset( $codes[$wgTranslateDocumentationLanguageCode] );
 
 		if ( !isset( $codes[$code] ) ) {

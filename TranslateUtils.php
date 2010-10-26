@@ -135,7 +135,7 @@ class TranslateUtils {
 
 		// Fetch results, prepare a batch link existence check query.
 		$rows = array();
-		while ( $row = $dbr->fetchObject( $res ) ) {
+		foreach( $res as $row ) {
 			$rows[] = $row;
 		}
 		$dbr->freeResult( $res );

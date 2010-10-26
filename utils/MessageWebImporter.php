@@ -83,9 +83,9 @@ class MessageWebImporter {
 
 		return
 			Xml::openElement( 'form', $formParams ) .
-			Xml::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
-			Xml::hidden( 'token', $this->getUser()->editToken() ) .
-			Xml::hidden( 'process', 1 );
+			Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
+			Html::hidden( 'token', $this->getUser()->editToken() ) .
+			Html::hidden( 'process', 1 );
 	}
 
 	protected function doFooter() {
@@ -266,7 +266,7 @@ class MessageWebImporter {
 					$lang = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() );
 					$this->out->addWikiMsg( 'translate-manage-intro-other', $lang );
 				}
-				$this->out->addHTML( Xml::hidden( 'language', $code ) );
+				$this->out->addHTML( Html::hidden( 'language', $code ) );
 				$this->out->addHTML( implode( "\n", $changed ) );
 				$this->out->addHTML( Xml::submitButton( wfMsg( 'translate-manage-submit' ) ) );
 			} else {

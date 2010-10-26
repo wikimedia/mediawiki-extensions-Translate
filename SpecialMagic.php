@@ -77,7 +77,7 @@ class SpecialMagic extends SpecialPage {
 				Xml::submitButton( wfMsg( self::MSG . 'submit' ) ) . ' ' .
 				Xml::submitButton( wfMsg( 'translate-magic-cm-export' ), array( 'name' => 'export' ) ) .
 			'</td></tr></table>' .
-			Xml::hidden( 'title', $this->getTitle()->getPrefixedText() )
+			Html::hidden( 'title', $this->getTitle()->getPrefixedText() )
 		);
 		return $form;
 	}
@@ -143,8 +143,9 @@ class SpecialMagic extends SpecialPage {
 
 		$wgOut->addHTML( $this->getForm() );
 
-		if ( !$this->options['module'] ) { return; }
-		$o = null;
+		if ( !$this->options['module'] ) {
+			return;
+		}
 		switch ( $this->options['module'] ) {
 			case 'alias':
 			case self::MODULE_SPECIAL:

@@ -18,8 +18,6 @@ class FlatPhpFFS extends SimpleFFS {
 	// READ
 	//
 	public function readFromVariable( $data ) {
-		$authors = $messages = array();
-
 		# Authors first
 		$matches = array();
 		preg_match_all( '/^ \* @author\s+(.+)$/m', $data, $matches );

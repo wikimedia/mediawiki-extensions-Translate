@@ -709,8 +709,6 @@ EOT;
 class YamlFFS extends SimpleFFS {
 
 	public function readFromVariable( $data ) {
-		$authors = $messages = array();
-
 		// Authors first.
 		$matches = array();
 		preg_match_all( '/^#\s*Author:\s*(.*)$/m', $data, $matches );

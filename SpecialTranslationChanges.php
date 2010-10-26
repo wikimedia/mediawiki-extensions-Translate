@@ -55,7 +55,7 @@ class SpecialTranslationChanges extends SpecialPage {
 				'action' => $wgScript,
 				'method' => 'get'
 			),
-			Xml::hidden( 'title', $this->getTitle()->getPrefixedText() ) . $limit . $button
+			Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) . $limit . $button
 		);
 		return $form;
 	}
@@ -137,7 +137,7 @@ class SpecialTranslationChanges extends SpecialPage {
 		$userLang = $wgLang->getCode();
 
 		$changes = $this->sort( $rows );
-		foreach ( $changes as $class => $groups ) {
+		foreach ( $changes as $groups ) {
 			foreach ( $groups as $group => $languages ) {
 				$label = $group;
 

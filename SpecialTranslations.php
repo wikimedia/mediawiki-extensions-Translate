@@ -33,8 +33,6 @@ class SpecialTranslations extends SpecialAllpages {
 
 		self::includeAssets();
 
-		$title = null;
-
 		if ( $this->including() ) {
 			$title = Title::newFromText( $par );
 			if ( !$title ) {
@@ -86,7 +84,7 @@ class SpecialTranslations extends SpecialAllpages {
 
 		$out  = Xml::openElement( 'div', array( 'class' => 'namespaceoptions' ) );
 		$out .= Xml::openElement( 'form', array( 'method' => 'get', 'action' => $wgScript ) );
-		$out .= Xml::hidden( 'title', $t->getPrefixedText() );
+		$out .= Html::hidden( 'title', $t->getPrefixedText() );
 		$out .= Xml::openElement( 'fieldset' );
 		$out .= Xml::element( 'legend', null, wfMsg( 'translate-translations-fieldset-title' ) );
 		$out .= Xml::openElement( 'table', array( 'id' => 'nsselect', 'class' => 'allpages' ) );

@@ -418,7 +418,7 @@ abstract class ComplexMessages {
 		$this->validate( $errors, $filter );
 		foreach ( $errors as $_ ) $text .= "#!!# $_\n";
 
-		foreach ( $groups = $this->getGroups() as $group => $data ) {
+		foreach ( $this->getGroups() as $group => $data ) {
 			if (  $filter !== false && !in_array( $group, (array) $filter, true ) ) {
 				continue;
 			}
@@ -579,7 +579,7 @@ class SpecialPageAliasesCM extends ComplexMessages {
 		foreach ( $this->getIterator( $group ) as $key ) {
 			$values = $this->val( $group, self::LANG_CURRENT, $key );
 
-			foreach ( $values as $i => $_ ) {
+			foreach ( $values as $_ ) {
 				wfSuppressWarnings();
 				$title = SpecialPage::getTitleFor( $_ );
 				wfRestoreWarnings();

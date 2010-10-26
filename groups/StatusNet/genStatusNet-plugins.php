@@ -24,8 +24,7 @@ function getPotFiles( $path, $pattern ) {
 	global $plugins;
 
 	$path = rtrim( str_replace( "\\", "/", $path ), '/' ) . '/';
-	$matches = Array();
-	$entries = Array();
+	$entries = array();
 	$dir = dir( $path );
 	while ( false !== ( $entry = $dir->read() ) ) {
 		$entries[] = $entry;

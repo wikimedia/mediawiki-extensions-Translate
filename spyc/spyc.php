@@ -480,11 +480,14 @@ class Spyc {
      * @param string $line A line from the YAML file
      */
   private function _parseLine($line) {
-    if (!$line) return array();
+    if (!$line) {
+	    return array();
+    }
     $line = trim($line);
-    if (!$line) return array();
+    if (!$line) {
+	    return array();
+    }
 
-    $array = array();
 
     $group = $this->nodeContainsGroup($line);
     if ($group) {
@@ -693,7 +696,7 @@ class Spyc {
     }
 
     $finished = true;
-    foreach ($explode as $key => $value) {
+    foreach ($explode as $value) {
       if (strpos($value,'YAMLSeq') !== false) {
         $finished = false; break;
       }
@@ -965,7 +968,6 @@ class Spyc {
 
   private function returnKeyValuePair ($line) {
     $array = array();
-    $key = '';
     if (strpos ($line, ':')) {
       // It's a key/value pair most likely
       // If the key is in double quotes pull it out
@@ -987,9 +989,7 @@ class Spyc {
       $array = array ($line);
     }
     return $array;
-
   }
-
 
   private function returnArrayElement ($line) {
      if (strlen($line) <= 1) return array(array()); // Weird %)

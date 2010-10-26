@@ -433,7 +433,6 @@ class TranslationHelpers {
 			return null;
 		}
 
-		global $wgSitename, $wgVersion, $wgProxyKey;
 		$options = array();
 		$options['timeout'] = $config['timeout'];
 
@@ -764,12 +763,12 @@ class TranslationHelpers {
 					foreach ( $help as $type => $lines ) {
 						if ( $type === ':' ) {
 							$files = '';
-							foreach ( $lines as $index => $line ) {
+							foreach ( $lines as $line ) {
 								$files .= ' ' . preg_replace( '/([^ :]+):(\d+)/', $pattern, $line );
 							}
 							$out .= "<nowiki>#:</nowiki> $files<br />";
 						} else {
-							foreach ( $lines as $index => $line ) {
+							foreach ( $lines as $line ) {
 								$out .= "<nowiki>#$type</nowiki> $line<br />";
 							}
 						}
@@ -1041,11 +1040,13 @@ class TranslationHelpers {
 	/**
 	 * Checks whether the given service has exceeded failure count */
 	public static function checkTranslationServiceFailure( $service ) {
-		global $wgMemc, $wgContLang;
+		global $wgMemc;
 
 		$key = wfMemckey( "translate-service-$service" );
 		$value = $wgMemc->get( $key );
-		if ( !is_string( $value ) ) return false;
+		if ( !is_string( $value ) ) {
+			return false;
+		}
 		list( $count, $failed ) = explode( '|', $value, 2 );
 
 		if ( $failed + ( 2 * self::$serviceFailurePeriod ) < wfTimestamp() ) {

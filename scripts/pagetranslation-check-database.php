@@ -121,7 +121,6 @@ class PTCheckDB extends Maintenance {
 			$title = Title::newFromID( $id );
 			$name = $title ? $title->getPrefixedText() : "#$id";
 
-
 			if ( !$title ) {
 				$name = "#$id";
 				$deleted = $this->findDeletedPage( $id );

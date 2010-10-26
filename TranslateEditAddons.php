@@ -44,12 +44,20 @@ class TranslateEditAddons {
 
 		$next = $prev = null;
 		foreach ( $keys as $index => $tkey ) {
-			if ( $key === strtolower( strtr( $tkey, ' ', '_' ) ) ) break;
-			if ( $index === $count -1 ) $index = -666;
+			if ( $key === strtolower( strtr( $tkey, ' ', '_' ) ) ) {
+				break;
+			}
+			if ( $index === $count -1 ) {
+				$index = -666;
+			}
 		}
 
-		if ( isset( $keys[$index-1] ) ) $prev = $keys[$index-1];
-		if ( isset( $keys[$index+1] ) ) $next = $keys[$index+1];
+		if ( isset( $keys[$index-1] ) ) {
+			$prev = $keys[$index-1];
+		}
+		if ( isset( $keys[$index+1] ) ) {
+			$next = $keys[$index+1];
+		}
 	
 
 		$id = $group->getId();
@@ -291,8 +299,8 @@ class TranslateEditAddons {
 		global $wgRequest;
 
 		$out->addHTML( "\n" .
-			Xml::hidden( 'loadgroup', $wgRequest->getText( 'loadgroup' ) ) .
-			Xml::hidden( 'loadtask', $wgRequest->getText( 'loadtask' ) ) .
+			Html::hidden( 'loadgroup', $wgRequest->getText( 'loadgroup' ) ) .
+			Html::hidden( 'loadtask', $wgRequest->getText( 'loadtask' ) ) .
 			"\n"
 		);
 

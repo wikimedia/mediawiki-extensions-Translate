@@ -87,7 +87,6 @@ class SimpleFormatReader {
 		$messages = array();
 		$matches = array();
 
-		$match = array();
 		preg_match_all( $this->messagePattern, $data, $matches, PREG_SET_ORDER );
 		foreach ( $matches as $match ) {
 			list( , $key, $value ) = $match;

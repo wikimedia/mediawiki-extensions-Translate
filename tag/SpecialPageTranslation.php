@@ -362,10 +362,10 @@ class SpecialPageTranslation extends SpecialPage {
 
 		$wgOut->addHTML(
 			Xml::openElement( 'form', $formParams ) .
-			Xml::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
-			Xml::hidden( 'revision', $page->getRevision() ) .
-			Xml::hidden( 'target', $page->getTitle()->getPrefixedtext() ) .
-			Xml::hidden( 'token', $this->user->editToken() )
+			Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
+			Html::hidden( 'revision', $page->getRevision() ) .
+			Html::hidden( 'target', $page->getTitle()->getPrefixedtext() ) .
+			Html::hidden( 'token', $this->user->editToken() )
 		);
 
 		$wgOut->wrapWikiMsg( '==$1==', 'tpt-sections-oldnew' );

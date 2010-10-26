@@ -90,16 +90,16 @@ class TranslationEditPage {
 		$textarea = Html::element( 'textarea', $textareaParams, $translation );
 
 		$hidden = array();
-		$hidden[] = Xml::hidden( 'title', $this->getTitle()->getPrefixedDbKey() );
+		$hidden[] = Html::hidden( 'title', $this->getTitle()->getPrefixedDbKey() );
 
 		if ( isset( $data['revisions'][0]['timestamp'] ) ) {
-			$hidden[] = Xml::hidden( 'basetimestamp', $data['revisions'][0]['timestamp'] );
+			$hidden[] = Html::hidden( 'basetimestamp', $data['revisions'][0]['timestamp'] );
 		}
 
-		$hidden[] = Xml::hidden( 'starttimestamp', $data['starttimestamp'] );
-		$hidden[] = Xml::hidden( 'token', $data['edittoken'] );
-		$hidden[] = Xml::hidden( 'format', 'json' );
-		$hidden[] = Xml::hidden( 'action', 'edit' );
+		$hidden[] = Html::hidden( 'starttimestamp', $data['starttimestamp'] );
+		$hidden[] = Html::hidden( 'token', $data['edittoken'] );
+		$hidden[] = Html::hidden( 'format', 'json' );
+		$hidden[] = Html::hidden( 'action', 'edit' );
 
 		$summary = Xml::inputLabel( wfMsg( 'summary' ), 'summary', 'summary', 40 );
 		$save = Xml::submitButton( wfMsg( 'savearticle' ), array( 'style' => 'font-weight:bold', 'class' => 'mw-translate-save' ) );

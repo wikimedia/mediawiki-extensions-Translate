@@ -96,7 +96,7 @@ class TranslationMemoryUpdater {
 
 		$database = null;
 
-		foreach ( $wgTranslateTranslationServices as $service => $config ) {
+		foreach ( $wgTranslateTranslationServices as $config ) {
 			if ( $config['type'] === 'tmserver' && isset( $config['database'] ) ) {
 				$database = $config['database'];
 				break;

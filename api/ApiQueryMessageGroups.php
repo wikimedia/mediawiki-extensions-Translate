@@ -24,7 +24,6 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 	}
 
 	public function execute() {
-		$params = $this->extractRequestParams();
 		$groups = MessageGroups::getAllGroups();
 		$result = $this->getResult();
 
@@ -39,7 +38,6 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 		}
 
 		$result->setIndexedTagName_internal( array( 'query', $this->getModuleName() ), 'group' );
-
 	}
 
 	public function getDescription() {

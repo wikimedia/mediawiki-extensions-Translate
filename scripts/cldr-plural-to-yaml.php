@@ -35,7 +35,7 @@ class CLDRPluralToYaml extends Maintenance {
 		$doc->load( 'plurals.xml' );
 		
 		$rulesets = $doc->getElementsByTagName( "pluralRules" );
-		foreach( $rulesets as $index => $ruleset ) {
+		foreach( $rulesets as $ruleset ) {
 			$codes = $ruleset->getAttribute( 'locales' );
 			$parsed = array();
 			$rules = $ruleset->getElementsByTagName( "pluralRule" );

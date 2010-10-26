@@ -263,7 +263,7 @@ PHP
 	protected function writeFooters() {
 		$this->output( "Writing file footers...\n" );
 		if( $this->type === 'special' ) {
-			foreach( $this->handles as $group => $handle ) {
+			foreach( $this->handles as $handle ) {
 				fwrite( $handle, <<<PHP
 
 
@@ -282,7 +282,7 @@ PHP
 	 */
 	protected function closeHandles() {
 		$this->output( "Closing file handles...\n" );
-		foreach ( $this->handles as $group => $handle ) {
+		foreach ( $this->handles as $handle ) {
 			fclose( $handle );
 		}
 	}

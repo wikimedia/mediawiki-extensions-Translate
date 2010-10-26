@@ -48,7 +48,7 @@ class WikiExtensionFormatReader extends WikiFormatReader {
 
 		$sections = array();
 		$unknown = array();
-		foreach ( $sectionMatches as $index => $data ) {
+		foreach ( $sectionMatches as $data ) {
 			$code = array();
 			if ( !preg_match( "~$codeP~xsu", $data[0], $code ) ) {
 				echo "Malformed section:\n$data[0]";

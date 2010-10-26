@@ -133,8 +133,8 @@ class SpecialImportTranslations extends SpecialPage {
 				'enctype' => 'multipart/form-data',
 				'id' => 'mw-translate-import',
 			) ) .
-			Xml::hidden( 'token', $this->user->editToken() ) .
-			Xml::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
+			Html::hidden( 'token', $this->user->editToken() ) .
+			Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
 			Xml::openElement( 'table' ) .
 			Xml::openElement( 'tr' ) .
 			Xml::openElement( 'td' )

@@ -813,7 +813,9 @@ class MessageGroups {
 	/// Initialises the list of groups (but not the groups itself if possible).
 	public static function init() {
 		static $loaded = false;
-		if ( $loaded ) return;
+		if ( $loaded ) {
+			return;
+		}
 		$loaded = true;
 
 		global $wgTranslateCC, $wgTranslateEC, $wgTranslateAC;
@@ -872,7 +874,7 @@ class MessageGroups {
 		global $wgTranslateAddMWExtensionGroups;
 		global $wgEnablePageTranslation, $wgTranslateGroupFiles;
 		global $wgTranslateAC, $wgTranslateEC, $wgTranslateCC;
-		global $wgAutoloadClasses, $wgTranslateExtensionDirectory;
+		global $wgAutoloadClasses;
 
 		$deps = array();
 		$deps[] = new GlobalDependency( 'wgTranslateAddMWExtensionGroups' );

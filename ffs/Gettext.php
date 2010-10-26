@@ -26,8 +26,6 @@ class GettextFFS extends SimpleFFS {
 	}
 
 	public function readFromVariable( $data ) {
-		$authors = array();
-
 		# Authors first
 		$matches = array();
 		preg_match_all( '/^#\s*Author:\s*(.*)$/m', $data, $matches );
