@@ -193,6 +193,7 @@ class SpecialTranslate extends SpecialPage {
 	protected function settingsForm( $errors ) {
 		global $wgScript;
 
+		//These are used, in the $$g black magic below. Do not remove!
 		$task = $this->taskSelector();
 		$group = $this->groupSelector();
 		$language = $this->languageSelector();
