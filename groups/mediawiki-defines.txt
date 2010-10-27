@@ -1421,6 +1421,9 @@ descmsg = wah-desc
 ignored = specialwikiathome
 aliasfile = WikiAtHome/WikiAtHome.alias.php
 
+WikiBhasha
+optional = wikibhasha, wikiBhashaLink
+
 Wikidata
 file = Wikidata/Wikidata.i18n.php
 optional = ow_URL, ow_ID, prefs-omegawiki
