@@ -23,8 +23,8 @@ optional = user-badge-left-align, user-badge-center-align, user-badge-right-alig
 
 Blogs
 aliasfile = Blogs/Blogs.alias.php
-optional = blug-cut-sign, blog-avatar-defaults
-ignored = create-blog-empty-article, blog-listing-zero-self, blogs-recent-url
+optional = blug-cut-sign
+ignored = create-blog-empty-article, blog-listing-zero-self, blogs-recent-url, blog-avatar-defaults
 
 Batch User Rights
 file = SpecialBatchUserRights/BatchUserRights.i18n.php
