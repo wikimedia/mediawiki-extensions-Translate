@@ -422,8 +422,9 @@ $wgTranslateYamlLibrary = 'spyc';
 function efTranslateResources( &$resourceLoader ) {
 	global $wgExtensionAssetsPath;
 	$resourceLoader->register( array( 'translate-css' =>
-		new ResourceLoaderFileModule( array( 'styles' => 'Translate.css' ) )
-	), dirname( __FILE__ ), "$wgExtensionAssetsPath/Translate" );
+		new ResourceLoaderFileModule( array( 'styles' => 'Translate.css' ),
+		dirname( __FILE__ ), "$wgExtensionAssetsPath/Translate" )
+	) );
 	return true;
 }
 
