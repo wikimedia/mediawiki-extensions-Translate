@@ -193,6 +193,11 @@ class SpecialTranslate extends SpecialPage {
 	protected function settingsForm( $errors ) {
 		global $wgScript;
 
+		$task = $this->taskSelector();
+		$group = $this->groupSelector();
+		$language = $this->languageSelector();
+		$limit = $this->limitSelector();
+
 		$button = Xml::submitButton( wfMsg( 'translate-submit' ) );
 
 		$options = array();
