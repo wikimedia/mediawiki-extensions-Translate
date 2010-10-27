@@ -766,6 +766,7 @@ Stranica koju pokušavate uređivati ne odgovara nekoj od stranica koje su ozna�
 	'tpt-download-page' => 'Izvezi stranicu sa prijevodima',
 	'pt-shake-empty' => 'Prazna sekcija za marker $1.',
 	'pt-log-mark' => '{{GENDER:$2|označen|označena}} revizija $3 stranice "[[:$1]]" za prevod',
+	'pt-log-unmark' => '{{GENDER:$2|uklonio|uklonila}} stranicu "[[:$1]]" iz prevoda',
 	'pt-movepage-title' => 'Premještanje stranice za prevođenje $1',
 	'pt-movepage-block-base-exists' => 'Ciljna bazna stranica [[:$1]] postoji.',
 	'pt-movepage-block-base-invalid' => 'Ciljna bazna stranica nije valjan naslov.',

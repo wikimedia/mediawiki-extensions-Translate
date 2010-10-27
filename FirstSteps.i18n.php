@@ -443,6 +443,28 @@ Slobodno istraživajte i druge postavke.
 Idite na [[Special:Preferences|stranicu postavki]] sad i zatim se vratite na ovu stranicu.',
 	'translate-fs-settings-skip' => 'Završio sam.
 Želim nastaviti.',
+	'translate-fs-userpage-text' => 'Sada je potrebno da napravite korisničku stranicu.
+
+Molimo napišite nešto o sebi; ko ste i šta radite.
+To će pomoći zajednici oko {{SITENAME}} da radimo zajedno.
+Na {{SITENAME}} rade ljudi iz svih dijelova svijeta na različitim jezicima i projektima.
+
+U popunjenom polju iznad na prvoj liniji možete vidjeti <nowiki>{{#babel:en-2}}</nowiki>.
+Molimo dovršite sa jezicima koje vi poznajete.
+Broj poslije jezičkog koda opisuje koliko dobro poznajete taj jezik.
+Mogućnosti su:
+* 1 - vrlo slabo
+* 2 - osnovno znanje
+* 3 - dobro znanje
+* 4 - nivo blizu maternjeg jezika
+* 5 - koristite jezik profesionalno, npr. vi ste profesionalni prevodioc.
+
+Ako vam je taj jezik maternji, ostavite broj nivoa prazan i koristite samo jezički kod.
+Naprimjer: ako vam je bosanski maternji jezik, dobro poznajete engleski i vrlo malo svahili jezik, napišite slijedeće:
+<code><nowiki>{{#babel:bs|en-3|sw-1}}</nowiki></code>
+
+Ako ne znate tačan jezički kod jezika, sada je vrijeme da ga potražite.
+Možete koristiti spisak ispod.',
 	'translate-fs-userpage-submit' => 'Napravi moju korisničku stranicu',
 	'translate-fs-userpage-done' => 'Odlično urađeno! Sada imate korisničku stranicu.',
 	'translate-fs-permissions-text' => 'Sada trebate da podnesete zahtjev da vas dodaju u grupu prevodioca.
@@ -454,6 +476,19 @@ Nakon što ste podnijeli zahtjev, jedan od članova našeg volonterskog osoblja 
 Molimo da budete strpljivi.
 
 <del>Provjerite da je slijedeći zahtjev pravilno ispunjen i zatim pritisnite dugme za zahtjev.</del>',
+	'translate-fs-target-text' => 'Čestitamo!
+Sad možete početi prevoditi.
+
+Ne plašite se ako se još osjećate novi i zbunjeni.
+Na stranici [[Project list]] postavljen je pregled projekata na kojima možete raditi na prevodu.
+Najveći dio projekata ima stranicu sa kratkim opisom sa linkom "\'\'Prevedite ovaj projekat\'", koji će vas odvesti na stranicu sa spiskom svih neprevedenih poruka.
+Spisak svih grupa poruka sa [[Special:LanguageStats|trenutnim stanjem prevoda za jezik]] je također dostupan.
+Ako želite da shvatite više o samom prevođenju prije nego što počnete, možete pročitati [[FAQ|Najčešće postavljana pitanja]].
+Nažalost, dokumentacija nekad može biti zastarjela.
+Ako nađete nešto što mislite da možete da uradite, a ne znate kako, ne ustručavajte se da pitate na [[Support|stranici za podršku]].
+
+Također možete kontaktirati prijatelje prevodioce na isti jezik na[[Portal_talk:$1|stranici za razgovor]] [[Portal:$1|portala vašeg jezika]].
+Ako već niste uradili, [[Special:Preferences|promijenite vaš jezik interfejsa na jezik na koji želite prevoditi]], tako će wiki biti u mogućnosti da vam prikaže najvažnije linkove za vas.',
 	'translate-fs-email-text' => 'Molimo navedite vašu e-mail adresu u [[Special:Preferences|vašim postavkama]] i potvrdite je iz vašeg e-maila koji vam je poslan.
 
 Ovo omogućava drugim korisnicima da vas kontaktiraju putem e-maila.
