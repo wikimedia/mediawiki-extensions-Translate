@@ -311,6 +311,20 @@ MANGLER:
   prefix: firephp-
 ---
 BASIC:
+  id: out-statusnet-plugin-followeveryone
+  label: StatusNet - FollowEveryone
+  display: out/statusnet/plugin/followeveryone
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/FollowEveryone/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/FollowEveryone/locale/%CODE%/LC_MESSAGES/FollowEveryone.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/FollowEveryone/locale/FollowEveryone.pot
+  targetPattern: statusnet/plugins/FollowEveryone/locale/%CODE%/LC_MESSAGES/FollowEveryone.po
+
+MANGLER:
+  prefix: followeveryone-
+---
+BASIC:
   id: out-statusnet-plugin-forcegroup
   label: StatusNet - ForceGroup
   display: out/statusnet/plugin/forcegroup
