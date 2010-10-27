@@ -7,6 +7,10 @@ TEMPLATE:
       We are working with developers to improve i18n.
       Please report all translation issues to [[Translating_talk:Mifos|Mifos issues page]].</div>
 
+  FILES:
+    codeMap:
+      zh-hans: zh_CN
+
   CHECKER:
     class: MifosMessageChecker
     checks:
