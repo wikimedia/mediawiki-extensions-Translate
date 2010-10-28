@@ -23,12 +23,12 @@ GROUPS:
   - out-okawix-doc
   - out-okawix-dtd
   - out-okawix-prop
+  - out-okawix-site
 
 ---
 BASIC:
   id: out-okawix-doc
   label: Okawix - Documentation
-  description: "{{int:translate-group-desc-okawix}}"
   display: out/okawix/doc
 
 FILES:
@@ -39,7 +39,6 @@ FILES:
 BASIC:
   id: out-okawix-dtd
   label: Okawix - DTD
-  description: "{{int:translate-group-desc-okawix}}"
   display: out/okawix/dtd
 
 FILES:
@@ -54,9 +53,18 @@ AUTOLOAD:
 BASIC:
   id: out-okawix-prop
   label: Okawix - Properties
-  description: "{{int:translate-group-desc-okawix}}"
   display: out/okawix/prop
 
 FILES:
   sourcePattern: %GROUPROOT%/okawix/locale/%CODE%/interfacewiki/okawix.properties
   targetPattern: okawix/%CODE%/interfacewiki/okawix.properties
+
+---
+BASIC:
+  id: out-okawix-site
+  label: Okawix - Site
+  display: out/okawix/site
+
+FILES:
+  sourcePattern: %GROUPROOT%/okawix/locale/%CODE%/interfacewiki/okawix-site.properties
+  targetPattern: okawix/%CODE%/interfacewiki/okawix-site.properties
