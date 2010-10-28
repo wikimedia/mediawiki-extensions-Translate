@@ -2,7 +2,7 @@
  cd %GROUPROOT%
  mkdir freecol
  cd freecol
- svn co https://freecol.svn.sourceforge.net/svnroot/freecol/freecol/trunk/src/net/sf/freecol/client/gui/i18n trunk
+ svn co http://svn.freecol.org/svnroot/freecol/freecol/trunk/data/strings trunk
 
 Add to your LocalSettings.php:
  wfAddNamespace( 1202, 'FreeCol' );
@@ -12,7 +12,7 @@ Add to your LocalSettings.php:
 Check out writable copy to suitable place
  mkdir freecol
  cd freecol
- svn co https://USERNAME@freecol.svn.sourceforge.net/svnroot/freecol/freecol/trunk/src/net/sf/freecol/client/gui/i18n
+ svn co https://USERNAME@svn.freecol.org/svnroot/freecol/freecol/trunk/data/strings
 
 Make an export script, like export.sh:
  EXPORTERPATH=/var/www/w/extensions/Translate/scripts
