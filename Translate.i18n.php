@@ -2991,8 +2991,8 @@ Skraćenice posebnih stranica i magične riječi mogu imati višestruke prijevod
 Prijevodi su odvojeni zarezom (,).
 Imenski prostori mogu imati samo jedan prijevod.
 
-U prijevodima imenskih prostora <code>$1 razgovor</code> je poseban. <code>$1</code> je zamijeneno sa imenom sajta (naprimjer <code>{{ns:project_talk}}</code>).
-Ako nije moguće na Vašem jeziku da se obrazuje validan izraz bez promjene imena sajta, molimo da kontaktirate razvojnog programera..
+U prijevodima imenskih prostora <code>$1 razgovor</code> je poseban. <code>$1</code> je zamijenjeno sa imenom sajta (naprimjer <code>{{ns:project_talk}}</code>).
+Ako nije moguće na Vašem jeziku da se obrazuje valjan izraz bez promjene imena sajta, molimo da kontaktirate razvojnog programera.
 
 Morate pripadati grupi prevodioca da bi spremili promjene.
 Promjene nisu spremljene sve dok ne kliknete dugme spremi koje se nalazi ispod.',
