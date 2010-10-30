@@ -920,6 +920,7 @@ Aurrera jarraitu.',
 );
 
 /** Finnish (Suomi)
+ * @author Centerlink
  * @author Nike
  * @author ZeiP
  */
@@ -996,7 +997,7 @@ Olethan kärsivällinen.',
 Voit nyt aloittaa kääntämisen.
 
 Älä huolestu, vaikka et vielä täysin ymmärtäisi miten kaikki toimii.
-Meillä on [[Project list|lista projekteista]], joiden kääntämiseen voit osallistua.
+Meillä on [[Project list|luettelo projekteista]], joiden kääntämiseen voit osallistua.
 Useimmilla projekteilla on lyhyt kuvaussivu, jossa on linkki varsinaiselle käännössivulle.
 [[Special:LanguageStats|Kielen nykyisen käännöstilanteen]] näyttävä lista on myös saatavilla.
 
@@ -1004,9 +1005,14 @@ Jos haluat tietää lisää, voit lukea vaikkapa [[FAQ|usein kysyttyjä kysymyks
 Valitettavasti dokumentaatio voi joskus olla hivenen vanhentunutta.
 Jos et keksi, miten joku tarvitsemasi asia tehdään, älä epäröi pyytää apua [[Support|tukisivulla]].
 
-Voit myös ottaa yhteyttä muihin saman kielen kääntäjiin [[Portal:$1|oman kielesi portaalissa]].
+Voit myös ottaa yhteyttä muihin saman kielen kääntäjiin [[Portal:$1|oman kielesi portaalin]] [[Portal talk:$1|keskustelusivulla]].
 Valikon portaalilinkki osoittaa [[Special:Preferences|valitsemasi kielen]] portaaliin.
 Jos valitsemasi kieli on väärä, muuta se.',
+	'translate-fs-email-text' => 'Anna sähköpostiosoitteesi [[Special: Preferences |asetuksissasi]] ja vahvista se sähköpostiviestistä, joka lähetetään sinulle. 
+
+ Tämä mahdollistaa muiden käyttäjien ottaa sinuun yhteyttä sähköpostitse. 
+ Saat myös uutiskirjeen korkeintaan kerran kuukaudessa. 
+ Jos et halua vastaanottaa uutiskirjeitä, voit valita sen pois välilehdellä "{{int: prefs-henkilökohtainen}}" omat [[Special: Preferences |asetukset]].',
 );
 
 /** French (Français)
