@@ -1245,6 +1245,11 @@ ignored = todoTasksValidProjects
 
 Tooltip
 
+Toolserver Tools - Kolossos Kml On Openlayers
+file = ToolserverTools/KolossosKmlOnOpenlayers/kml-on-ol-source.i18n.php
+id = ext-ts-kmlonol
+optional = ts-kml-on-ol-openstreetmap, ts-kml-on-ol-wikipedia
+
 Tor Block
 
 Translate - Core
