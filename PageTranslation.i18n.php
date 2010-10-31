@@ -773,11 +773,15 @@ Stranica koju pokušavate uređivati ne odgovara nekoj od stranica koje su ozna�
 	'pt-movepage-list-pages' => 'Spisak stranica za premještanje',
 	'pt-movepage-list-section' => 'Stranice sekcije',
 	'pt-movepage-list-other' => 'Druge podstranice',
+	'pt-movepage-legend' => 'Premjesti stranicu koja se prevodi',
 	'pt-movepage-current' => 'Trenutni naziv:',
 	'pt-movepage-new' => 'Novi naziv:',
 	'pt-movepage-reason' => 'Razlog:',
 	'pt-movepage-subpages' => 'Premjesti sve podstranice',
+	'pt-movepage-action-check' => 'Provjeri da li je moguće premještanje',
+	'pt-movepage-action-perform' => 'Izvrši premještanje',
 	'pt-movepage-action-other' => 'Promijeni cilj',
+	'pt-movepage-logreason' => 'Dio stranice koja se prevodi $1.',
 );
 
 /** Buginese (ᨅᨔ ᨕᨘᨁᨗ)
