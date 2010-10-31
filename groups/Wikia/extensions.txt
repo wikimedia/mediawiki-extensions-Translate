@@ -17,6 +17,11 @@ ignored = requestwiki-filter-language, autocreatewiki-tagline
 
 Auto Hubs Pages
 
+Automatic Wiki Adaption
+# Extension is not completely done yet. Ignoring unfinished parts.
+ignored = automaticwikiadoption-desc, automaticwikiadoption-description, automaticwikiadoption-mail-first-content, automaticwikiadoption-mail-first-content-HTML
+ignored = automaticwikiadoption-mail-second-content, automaticwikiadoption-mail-second-content-HTML, automaticwikiadoption-mail-adoption-content
+
 Badges
 file = Badges/UserBadges.i18n.php
 optional = user-badge-left-align, user-badge-center-align, user-badge-right-align
@@ -211,6 +216,10 @@ Title Edit
 
 Top Lists
 ignored = toplists-msg-fb-OnRateArticle-link, toplists-msg-fb-OnRateArticle
+
+User Profile Page
+optional = recipes-template-skip-toggle-types
+ignored = recipes-template-aboutuser-fields, recipes-template-aboutuser-wikitext
 
 User Rename Tool
 file = UserRenameTool/SpecialRenameuser.i18n.php
