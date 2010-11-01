@@ -609,6 +609,7 @@ $messages['et'] = array(
 );
 
 /** Finnish (Suomi)
+ * @author Centerlink
  * @author Cimon Avaro
  * @author Crt
  * @author Nike
@@ -617,9 +618,11 @@ $messages['et'] = array(
  * @author ZeiP
  */
 $messages['fi'] = array(
+	'translategroupdescriptions-desc' => 'Viestiryhmäkuvaukset tuotteille, joita [http://mediawiki.org/wiki/Extension:Translate Translate]-laajennos tukee',
+	'translate-group-desc-nodesc' => 'Kuvausta ei ole saatavilla tälle viestiryhmälle',
 	'translate-group-desc-mediawikicore' => 'Tämä viestiryhmä sisältää viestit, joita käytetään nykyisessä MediaWikin alfaversiossa ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'Tämä viestiryhmä sisältää [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki MediaWikin 500 useimmin käytettyä viestiä]',
-	'translate-group-desc-mediawikiextensions' => 'Kokoava viestiryhmä kaikille tuetuille MediaWiki-laajennuksille',
+	'translate-group-desc-mediawikiextensions' => 'Meta-viestiryhmä sisältää kaikki viestit tuetuille [[Translating:MediaWiki|MediaWiki]]-laajennoksille',
 	'translate-group-desc-collection' => 'Tämä metaviestiryhmä sisältää kaikki viestit, joita käytetään MediaWikin laajennuksessa [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
 	'translate-group-desc-flaggedrevs' => 'Tämä metaviestiryhmä sisältää kaikki viestit MediaWikin [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs-laajennusta] varten',
 	'translate-group-desc-readerfeedback' => 'Tämä metaviestiryhmä sisältää kaikki MediaWikin [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback-laajennuksen] viestit',
@@ -628,6 +631,7 @@ $messages['fi'] = array(
 	'translate-group-desc-wikiaextensions' => 'Tämä metaviestiryhmä sisältää kaikki ne tuetut MediaWikin laajennuksien viestit, joita [http://www.wikia.com Wikia] käyttää',
 	'translate-group-desc-wikimediaextensions' => 'Tämä metaviestiryhmä sisältää kaikki tuetut MediaWikin laajennuksien viestit, joita [http://wikimedia.org/ Wikimedia Foundation] käyttää',
 	'translate-group-desc-uniwiki' => 'Metaviestiryhmä, joka sisältää kaikki [http://unicefinnovation.org/wiki.php Uniwikiin] liittyvien laajennuksien viestit.',
+	'translate-group-desc-translatablepages' => 'Kaikki käännettävät sivut',
 	'bw-desc-freecol' => 'Ennen kuin käännät FreeColia kielellesi, luethan sivun [[Translating:FreeCol]]. Freecol käyttää GPL-lisenssiä.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], PHP:llä tehty keskustelufoorumi.',
 );
@@ -1254,8 +1258,8 @@ $messages['mk'] = array(
 	'translate-group-desc-readerfeedback' => 'Мета-група која ги содржи сите пораки за МедијаВики проширувањето [http://www.mediawiki.org/wiki/Extension:ReaderFeedback Мислења на читателите (ReaderFeedback)]',
 	'translate-group-desc-socialprofile' => 'Мета-група која ги содржи сите пораки за додатоците поврзани со МедијаВики проширувањето [http://www.mediawiki.org/wiki/Extension:SocialProfile Друштвен профил (Social Profile)]',
 	'translate-group-desc-translate' => 'Мета-група која ги содржи сите пораки за МедијаВики проширувањето [http://www.mediawiki.org/wiki/Extension:Translate Преведување (Translate)]',
-	'translate-group-desc-wikiaextensions' => 'Мета-група која ги содржи сите пораки за поддржаните МедијаВики додатоци кои се користат на [http://www.wikia.com Викија]',
-	'translate-group-desc-wikimediaextensions' => 'Мета-група која ги содржи сите пораки за поддржаните МедијаВики додатоци кои ги користи [http://wikimedia.org/ Фондацијата Викимедија]',
+	'translate-group-desc-wikiaextensions' => 'Мета-група која ги содржи сите пораки за поддржаните додатоци на МедијаВики што се користат на [http://www.wikia.com Викија]',
+	'translate-group-desc-wikimediaextensions' => 'Мета-група која ги содржи сите пораки за поддржаните додатоци на МедијаВики што ги користи [http://wikimedia.org/ Фондацијата Викимедија]',
 	'translate-group-desc-wikimediaextensions-main' => 'Метагрупа на пораки која ги содржи сите пораки за поддржаните дополнувања за МедијаВики што треба да се преведат за [http://meta.wikimedia.org/wiki/Language_committee Јазичниот комитет] на Викимедија.',
 	'translate-group-desc-uniwiki' => 'Мета-група која ги содржи сите пораки за додатоците поврзани со [http://unicefinnovation.org/wiki.php Унивики]',
 	'translate-group-desc-ui' => 'Мета-група која ги содржи сите пораки за додатоците поврзани со [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Иницијативата за употребливост на Википедија]',

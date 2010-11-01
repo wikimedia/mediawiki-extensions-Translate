@@ -5659,6 +5659,8 @@ $messages['fi'] = array(
 	'translate-talk' => 'keskustelu',
 	'translate-history' => 'historia',
 	'translate-showsub' => 'Näytä {{PLURAL:$1|alaryhmä|$1 alaryhmää}}.',
+	'translate-grouplisting' => 'Tämä on kaikkien käännettävien ryhmien luettelo.
+Näpsäytä viestiryhmänimeä katsoaksesi kääntämättömien viestien luetteloa.',
 	'translate-task-view' => 'nähdä kaikki viestit',
 	'translate-task-untranslated' => 'nähdä kaikki kääntämättömät viestit',
 	'translate-task-optional' => 'nähdä valinnaiset viestit',
@@ -5853,6 +5855,11 @@ Alasivun ”translators” tulee käyttää mallinetta [[:{{ns:template}}:User|U
 	'translate-manage-action-fuzzy' => 'Tuo ja merkitse käännökset tarkistettavaksi',
 	'translate-manage-submit' => 'Suorita',
 	'translate-manage-nochanges' => 'Tämän ryhmän viestien määritelmiin ei ole mitään muutoksia.',
+	'translate-manage-nochanges-other' => 'Ei ollut mitään muutoksia tälle kielelle. 
+Käytä alla olevaa linkkiä palataksesi ryhmän yksityiskohtanäkymään.',
+	'translate-manage-inconsistent' => 'Havaittu epäjohdonmukaisuus pyynnössä. 
+Tarkista muutokset ja yritä uudelleen. 
+Yksityiskohdat: $1.',
 	'translate-manage-import-ok' => 'Tuotiin uusi versio sivusta $1.',
 	'translate-manage-import-noks' => 'Sivun $1 uuden version ($2) tuonti epäonnistui',
 	'translate-manage-import-ignore' => 'Ohitetaan viesti $1.',
@@ -5864,6 +5871,7 @@ Tarkistathan.',
 	'translate-manage-import-done' => 'Kaikki tehty.',
 	'translate-manage-import-rebuild' => 'Välimuistin uudelleenrakennus.',
 	'translate-manage-subtitle' => 'Hallitse',
+	'translate-manage-import-rebuild-all' => 'Rakenna uudelleen kaikki kielet ja ohita kaikki muutokset',
 	'importtranslations' => 'Tuo käännökset',
 	'translate-import-from-url' => 'Tiedoston osoite',
 	'translate-import-from-wiki' => 'Tiedosto tässä wikissä',
@@ -8540,7 +8548,7 @@ Le lista predefinite de linguas depende de tu lingua.',
 	'translate-statsf-scale-days' => 'Dies',
 	'translate-statsf-scale-hours' => 'Horas',
 	'translate-statsf-count' => 'Mesura:',
-	'translate-statsf-count-edits' => 'Numero de modifiationes',
+	'translate-statsf-count-edits' => 'Numero de modificationes',
 	'translate-statsf-count-users' => 'Traductores active',
 	'translate-statsf-count-registrations' => 'Nove usatores',
 	'translate-statsf-language' => 'Lista de codices de lingua separate per commas:',
@@ -19024,7 +19032,7 @@ Kod:
 	'translate-language-code-field-name' => 'Pükakot:',
 	'translate-language' => 'Pük',
 	'translate-total' => 'Nuns',
-	'translate-untranslated' => 'No petradutöl',
+	'translate-untranslated' => 'No petradutöls',
 	'translate-percentage-complete' => 'Lölöfükam',
 );
 
