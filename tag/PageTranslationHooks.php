@@ -225,6 +225,7 @@ class PageTranslationHooks {
 		}
 
 		$legend = wfMsg( 'tpt-languages-legend' );
+		// @todo FIXME: Separator should be localisable.
 		$languages = implode( ' •&#160;', $languages );
 
 		return <<<FOO
