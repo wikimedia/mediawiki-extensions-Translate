@@ -731,6 +731,20 @@ MANGLER:
   prefix: rsscloud-
 ---
 BASIC:
+  id: out-statusnet-plugin-realtime
+  label: StatusNet - Realtime
+  display: out/statusnet/plugin/realtime
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/Realtime/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/Realtime/locale/%CODE%/LC_MESSAGES/Realtime.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/Realtime/locale/Realtime.pot
+  targetPattern: statusnet/plugins/Realtime/locale/%CODE%/LC_MESSAGES/Realtime.po
+
+MANGLER:
+  prefix: realtime-
+---
+BASIC:
   id: out-statusnet-plugin-recaptcha
   label: StatusNet - Recaptcha
   display: out/statusnet/plugin/recaptcha
