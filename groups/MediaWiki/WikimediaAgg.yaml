@@ -54,7 +54,6 @@ GROUPS:
   - ext-flaggedrevs-validationstatistics
   - ext-fundraiserportal # 2009-10-08: test.wikipedia.org
   - ext-gadgets
-  - ext-geolite # 2009-11-13: meta.wikimedia.org
   - ext-globalblocking
   - ext-globalusage # 2009-11-11: commons.wikimedia.org
   - ext-honeypotintegration # 2009-08-13: test.wikipedia.org
@@ -62,6 +61,7 @@ GROUPS:
   - ext-inputbox
   - ext-intersection
   - ext-labeledsectiontransclusion # Wikisource
+  - ext-landingcheck
   - ext-liquidthreads # 2009-11-11: MediaWiki.org and some *.labs.wikimedia.org
   - ext-mwsearch
   - ext-newusermessage

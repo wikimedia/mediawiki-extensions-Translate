@@ -630,6 +630,9 @@ Labeled Section Transclusion
 file = LabeledSectionTransclusion/lst.i18n.php
 descmsg = lst-desc
 
+Landing Check
+aliasfile = LandingCheck/LandingCheck.alias.php
+
 Language Selector
 
 Last User Login
