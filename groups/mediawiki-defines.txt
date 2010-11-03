@@ -1482,6 +1482,9 @@ optional = wm-license-pd-wiki-link
 ignored = wm-license-gfdl-full-1.2-link, wm-license-gfdl-full-1.3-link, wm-license-gpl-2-full-link, wm-license-gpl-3-full-link
 ignored = wm-license-lgpl-2.1-full-link, wm-license-lgpl-3-full-link
 
+Wiki Sync
+aliasfile = WikiSync/WikiSync.alias.php
+
 Wiki Text Logged In Out
 
 Woopra
