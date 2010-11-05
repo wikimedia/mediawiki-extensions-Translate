@@ -336,7 +336,7 @@ class MessageChecker {
 
 			if ( count( $params ) ) {
 				$warnings[$key][] = array(
-					array( 'printf', $subcheck, $key, $code ),
+					array( 'variable', $subcheck, $key, $code ),
 					'translate-checks-parameters',
 					array( 'PARAMS', $params ),
 					array( 'COUNT', count( $params ) ),
@@ -349,7 +349,7 @@ class MessageChecker {
 
 			if ( count( $params ) ) {
 				$warnings[$key][] = array(
-					array( 'printf', $subcheck, $key, $code ),
+					array( 'variable', $subcheck, $key, $code ),
 					'translate-checks-parameters-unknown',
 					array( 'PARAMS', $params ),
 					array( 'COUNT', count( $params ) ),
