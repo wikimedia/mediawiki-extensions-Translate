@@ -443,7 +443,7 @@ class SpecialPageTranslation extends SpecialPage {
 		global $wgRequest;
 
 		// Add the section markers to the source page
-		$article = new Article( $page->getTitle() );
+		$article = new Article( $page->getTitle(), 0 );
 		$status = $article->doEdit(
 			$page->getParse()->getSourcePageText(), // Content
 			wfMsgForContent( 'tpt-mark-summary' ),  // Summary

@@ -322,7 +322,7 @@ class MessageWebImporter {
 	}
 
 	public static function doImport( $title, $message, $comment, $user = null, $editFlags = 0 ) {
-		$article = new Article( $title );
+		$article = new Article( $title, 0 );
 		$status = $article->doEdit( $message, $comment, $editFlags, false, $user );
 		$success = $status->isOK();
 
