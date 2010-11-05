@@ -85,7 +85,10 @@ If you know where or how this message is used, you can help other translators by
 
 	'translate-edit-tab-prev'          => '<<<',
 	'translate-edit-tab-next'          => '>>>',
-	'translate-edit-tab-list'           => 'Message list',
+	'translate-edit-tab-list'          => 'Message list',
+
+	'translate-edit-show-def'     => 'Message definition',
+	'translate-edit-show-trans'   => 'Translation',
 
 	'translate-magic-pagename'    => 'Extended MediaWiki translation',
 	'translate-magic-help'        => 'You can translate special pages aliases, magic words and namespace names.

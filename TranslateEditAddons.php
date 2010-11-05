@@ -409,8 +409,23 @@ class TranslateEditAddons {
 	}
 
 	public static function customDisplay( $article, &$content ) {
-		if ( self::isMessageNamespace( $article->getTitle() ) ) {
-			$content = "<pre><nowiki>$content</nowiki></pre>";
+		global $wgRequest, $wgTitle;
+		if (
+			$wgRequest->getVal( 'action' ) !== 'edit' &&
+			$article->getTitle()->equals( $wgTitle ) &&
+			self::isMessageNamespace( $article->getTitle() ) )
+		{
+			list( $key, $code, $group ) = self::getKeyCodeGroup( $article->getTitle() );
+			$def = $group->getMessage( $key, 'en' );
+			$content = TranslateUtils::convertWhiteSpaceToHTML( $content );
+			$deftext = wfMsgNoTrans( 'translate-edit-show-def' );
+			$trans = wfMsgNoTrans( 'translate-edit-show-trans' );
+			$content = <<<HTML
+<table class=wikitable>
+	<tr><th>$deftext</th><th>$trans</th></tr>
+	<tr><td><nowiki>$def</nowiki></td><td><nowiki>$content</nowiki></td></tr>
+</table>
+HTML;
 		}
 		return true;
 	}
