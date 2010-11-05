@@ -477,18 +477,19 @@ class SpecialTranslate extends SpecialPage {
 		$desc = $this->getGroupDescription( $block );
 		$hasSubblocks = is_array( $blocks ) && count( $blocks );
 
-		$subid = "mw-subgroup-$id";
+		$subid = Sanitizer::escapeId( "mw-subgroup-$id" );
 
 		if ( $hasSubblocks ) {
 			$msg = wfMsgExt( 'translate-showsub', 'parsemag', $wgLang->formatNum( count( $blocks ) ) );
-			$desc .= Html::element( 'a', array( 'onclick' => "jQuery('#$subid').toggle()", 'class' => 'mw-sp-showmore' ), $msg );
+			$target = TranslationHelpers::jQueryPathId( $subid );
+			$desc .= Html::element( 'a', array( 'onclick' => "jQuery($target).toggle()", 'class' => 'mw-sp-showmore' ), $msg );
 		}
 
 		$out = "\n<tr><td>$label</td>\n<td>$desc</td></tr>\n";
 		if ( $hasSubblocks ) {
 			$out .= "<tr><td></td><td>\n";
 			$tableParams = array(
-				'id' => "mw-subgroup-$id",
+				'id' => $subid,
 				'style' => 'display:none;',
 				'class' => "mw-sp-translate-subgroup depth-$level",
 			);

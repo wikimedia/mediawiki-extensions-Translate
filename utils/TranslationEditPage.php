@@ -169,21 +169,14 @@ class TranslationEditPage {
 	public static function jsEdit( Title $title, $group = "" ) {
 		global $wgUser;
 
-		if ( !$wgUser->isAllowed( 'translate' ) ) {
+		if ( !$wgUser->isAllowed( 'translate' ) ||  !$wgUser->getOption( 'translate-jsedit' ) ) {
 			return array();
 		}
-
-		if ( !$wgUser->getOption( 'translate-jsedit' ) ) {
-			return array();
-		}
-
-		$dbKey = $title->getPrefixedDbKey();
-		$jsTitle = Xml::escapeJsString( $dbKey );
-		$jsGroup = Xml::escapeJsString( $group );
 
 		return array(
-			'onclick' => "return trlOpenJsEdit( \"$jsTitle\", \"$jsGroup\" );",
-			'title' => wfMsg( 'translate-edit-title', $dbKey )
+			'onclick' => TranslateBC::encodeJsCall(
+				'return trlOpenJsEdit', array( $title->getPrefixedDbKey(), $group ) ),
+			'title' => wfMsg( 'translate-edit-title', $title->getPrefixedText() )
 		);
 	}
 }

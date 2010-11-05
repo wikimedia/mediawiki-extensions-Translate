@@ -110,6 +110,8 @@ $wgAutoloadClasses['TranslationStats'] = $dir . 'utils/TranslationStats.php';
 $wgAutoloadClasses['TranslationMemoryUpdater'] = $dir . 'utils/TranslationMemoryUpdater.php';
 
 $wgAutoloadClasses['TranslateYaml'] = $dir . 'utils/TranslateYaml.php';
+
+$wgAutoloadClasses['TranslateBC'] = $dir . 'utils/CompatibilityCode.php';
 /**@}*/
 
 /**
