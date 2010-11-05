@@ -418,16 +418,26 @@ class TranslateEditAddons {
 			list( $key, $code, $group ) = self::getKeyCodeGroup( $article->getTitle() );
 			if ( !$group ) return true;
 			$def = $group->getMessage( $key, 'en' );
-			$content = TranslateUtils::convertWhiteSpaceToHTML( $content );
+			$content = self::preserveWhitespaces( $content );
+			$def = self::preserveWhitespaces( $def );
 			$deftext = wfMsgNoTrans( 'translate-edit-show-def' );
 			$trans = wfMsgNoTrans( 'translate-edit-show-trans' );
 			$content = <<<HTML
 <table class=wikitable>
 	<tr><th>$deftext</th><th>$trans</th></tr>
-	<tr><td><nowiki>$def</nowiki></td><td><nowiki>$content</nowiki></td></tr>
+	<tr><td style=vertical-align:top>$def</td><td style=vertical-align:top>$content</td></tr>
 </table>
 HTML;
 		}
 		return true;
+	}
+
+	public static function preserveWhitespaces( $text ) {
+		$text = wfEscapeWikiText( $text );
+		$text = preg_replace( '/^ /m', '&#160;', $text );
+		$text = preg_replace( '/ $/m', '&#160;', $text );
+		$text = preg_replace( '/  /', '&#160; ', $text );
+		$text = str_replace( "\n", '<br />', $text );
+		return $text;
 	}
 }
