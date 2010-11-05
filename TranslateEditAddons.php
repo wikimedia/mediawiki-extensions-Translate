@@ -416,6 +416,7 @@ class TranslateEditAddons {
 			self::isMessageNamespace( $article->getTitle() ) )
 		{
 			list( $key, $code, $group ) = self::getKeyCodeGroup( $article->getTitle() );
+			if ( !$group ) return true;
 			$def = $group->getMessage( $key, 'en' );
 			$content = TranslateUtils::convertWhiteSpaceToHTML( $content );
 			$deftext = wfMsgNoTrans( 'translate-edit-show-def' );
