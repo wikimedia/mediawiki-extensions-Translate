@@ -412,7 +412,7 @@ class TranslateEditAddons {
 		global $wgRequest, $wgTitle;
 		if (
 			$wgRequest->getVal( 'action' ) !== 'edit' &&
-			$article->getTitle()->equals( $wgTitle ) &&
+			$wgTitle instanceof Title && $article->getTitle()->equals( $wgTitle ) &&
 			self::isMessageNamespace( $article->getTitle() ) )
 		{
 			list( $key, $code, $group ) = self::getKeyCodeGroup( $article->getTitle() );
