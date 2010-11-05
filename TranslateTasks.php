@@ -211,7 +211,7 @@ class ReviewMessagesTask extends ViewMessagesTask {
 /**
  * Lists untranslated non-optional messages.
  */
-class ViewUntranslatedTask extends ReviewMessagesTask {
+class ViewUntranslatedTask extends ViewMessagesTask {
 	protected $id = 'untranslated';
 
 	protected function preinit() {
