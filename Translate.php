@@ -91,6 +91,7 @@ $wgHooks['EditPageBeforeEditButtons'][] = 'TranslateEditAddons::buttonHack';
 $wgHooks['EditPage::showEditForm:fields'][] = 'TranslateEditAddons::keepFields';
 $wgHooks['SkinTemplateTabs'][] = 'TranslateEditAddons::tabs';
 $wgHooks['ArticleAfterFetchContent'][] = 'TranslateEditAddons::customDisplay';
+$wgHooks['ParserBeforeStrip'][] = 'TranslateEditAddons::injectTranslationDisplayJs';
 
 // Custom preferences
 $wgDefaultUserOptions['translate'] = 0;
@@ -422,10 +423,16 @@ $wgTranslateYamlLibrary = 'spyc';
 # Startup code
 function efTranslateResources( &$resourceLoader ) {
 	global $wgExtensionAssetsPath;
-	$resourceLoader->register( array( 'translate-css' =>
-		new ResourceLoaderFileModule( array( 'styles' => 'Translate.css' ),
-		dirname( __FILE__ ), "$wgExtensionAssetsPath/Translate" )
-	) );
+	$resourceLoader->register(
+		array(
+			'translate-css' =>
+				new ResourceLoaderFileModule( array( 'styles' => 'Translate.css' ),
+					dirname( __FILE__ ), "$wgExtensionAssetsPath/Translate" ),
+			'translationdisplay' =>
+				new ResourceLoaderFileModule( array( 'scripts' => 'translationdisplay.js' ),
+					dirname( __FILE__ ) . '/js' , "$wgExtensionAssetsPath/Translate/js" ),
+		)
+);
 	return true;
 }
 

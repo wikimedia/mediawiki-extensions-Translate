@@ -418,9 +418,6 @@ class TranslateEditAddons {
 			list( $key, $code, $group ) = self::getKeyCodeGroup( $article->getTitle() );
 			if ( !$group ) return true;
 
-			global $wgOut;
-			$wgOut->addScriptFile( TranslateUtils::assetPath( 'js/translationdisplay.js' ) );
-
 			$def = self::preserveWhitespaces( $group->getMessage( $key, 'en' ) );
 			$content = self::preserveWhitespaces( $content );
 
@@ -451,5 +448,20 @@ HTML;
 		$text = preg_replace( '/  /', '&#160; ', $text );
 		$text = str_replace( "\n", '<br />', $text );
 		return $text;
+	}
+
+	public static function injectTranslationDisplayJs( $parser, &$text, $state ) {
+		if ( strpos( $text, 'translationdisplay' ) !== false ) {
+			$output = $parser->getOutput();
+			if ( method_exists( $output, 'addModules' ) ) {
+				$output->addModules( 'translationdisplay' );
+			} else {
+				$file = TranslateUtils::assetPath( 'js/translationdisplay.js' );
+				$script = Html::linkedScript( $file );
+				// How to make sure jQuery is included??
+				//$output->addHeadItem( $script, 'translationdisplay' );
+			}
+		}
+		return true;
 	}
 }
