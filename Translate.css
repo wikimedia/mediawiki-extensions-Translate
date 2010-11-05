@@ -218,3 +218,17 @@ a.mw-sp-showmore {
 	-webkit-border-radius: 10px;
 	background-color: #D1E231 !important;
 }
+
+
+table.translationdisplay {
+	-moz-box-shadow: 3px 3px 4px #BDA;
+	-webkit-box-shadow: 3px 3px 4px #BDA;
+	box-shadow: 3px 3px 4px #BDA;
+}
+
+
+table.translationdisplay-hover {
+	-moz-box-shadow: 3px 3px 4px #000;
+	-webkit-box-shadow: 3px 3px 4px #000;
+	box-shadow: 3px 3px 4px #000;
+}
