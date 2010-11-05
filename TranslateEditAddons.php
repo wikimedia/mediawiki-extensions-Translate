@@ -417,15 +417,27 @@ class TranslateEditAddons {
 		{
 			list( $key, $code, $group ) = self::getKeyCodeGroup( $article->getTitle() );
 			if ( !$group ) return true;
-			$def = $group->getMessage( $key, 'en' );
+
+			global $wgOut;
+			$wgOut->addScriptFile( TranslateUtils::assetPath( 'js/translationdisplay.js' ) );
+
+			$def = self::preserveWhitespaces( $group->getMessage( $key, 'en' ) );
 			$content = self::preserveWhitespaces( $content );
-			$def = self::preserveWhitespaces( $def );
+
 			$deftext = wfMsgNoTrans( 'translate-edit-show-def' );
 			$trans = wfMsgNoTrans( 'translate-edit-show-trans' );
+			$click = htmlspecialchars( wfMsgNoTrans( 'translate-edit-show-click' ) );
+
 			$content = <<<HTML
-<table class=wikitable>
+<table class="wikitable translationdisplay" id=tt1 title="$click">
 	<tr><th>$deftext</th><th>$trans</th></tr>
 	<tr><td style=vertical-align:top>$def</td><td style=vertical-align:top>$content</td></tr>
+</table>
+<table class="wikitable translationdisplay" id=tt2 title="$click" style=display:none>
+	<tr><th>$deftext</th></tr>
+	<tr><td style=vertical-align:top>$def</td></tr>
+	<tr><th>$trans</th></tr>
+	<tr><td style=vertical-align:top>$content</td></tr>
 </table>
 HTML;
 		}
