@@ -983,7 +983,7 @@ class TranslationHelpers {
 			$target = self::jQueryPathId( $this->getTextareaId() );
 			$source = self::jQueryPathId( $source );
 			$params = array(
-				'onclick' => "jQuery($target).val($source).text()).focus(); return false;",
+				'onclick' => "jQuery($target).val(jQuery($source).text()).focus(); return false;",
 				'href' => '#',
 				'title' => wfMsg( 'translate-use-suggestion' )
 			);
