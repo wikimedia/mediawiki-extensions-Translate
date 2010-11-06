@@ -4060,6 +4060,9 @@ Sofern die Gruppe aus einer Teil- oder Obermenge von Systemnachrichten einer and
 	'translate-edit-tmmatch' => '$1 % Übereinstimmung',
 	'translate-use-suggestion' => 'Füge diesen Vorschlag in das Übersetzungsfeld ein. Diese ersetzt dabei alle aktuellen Inhalte.',
 	'translate-edit-tab-list' => 'Nachrichtenliste',
+	'translate-edit-show-def' => 'Systemnachricht im Original',
+	'translate-edit-show-trans' => 'Übersetzung',
+	'translate-edit-show-click' => 'Zum Wechseln des Layouts klicken',
 	'translate-magic-pagename' => 'Erweiterte MediaWiki-Übersetzung',
 	'translate-magic-help' => 'Du kannst hier Aliase für Spezialseiten, magische Wörter und Namensraumnamen übersetzen.
 
@@ -5417,6 +5420,8 @@ Vaikeloetelu sõltub kasutaja keelest.',
 	'translate-translations-project' => 'Projekt:',
 	'languagestats' => 'Keele arvandmed',
 	'languagestats-summary' => 'Sel lehel esitatakse tõlkimise statistika kõigi sõnumirühmade jaoks antud keeles.',
+	'languagestats-stats-for' => 'Tõlgete arvandmed $1 keele jaoks ($2).',
+	'languagestats-recenttranslations' => 'viimased tõlked',
 	'translate-language-code' => 'Keele kood',
 	'translate-language-code-field-name' => 'Keele kood:',
 	'translate-suppress-complete' => 'Peida täielikult tõlgitud sõnumirühmad',
@@ -5984,6 +5989,9 @@ Si vous savez où ou comment il est utilisé, vous pouvez aider les autres tradu
 	'translate-edit-tmmatch' => '$1 % de correspondance',
 	'translate-use-suggestion' => 'Insère cette suggestion dans la fenêtre de traduction. Ceci remplace l’ensemble du contenu actuel.',
 	'translate-edit-tab-list' => 'Liste de messages',
+	'translate-edit-show-def' => 'Définition du message',
+	'translate-edit-show-trans' => 'Traduction',
+	'translate-edit-show-click' => 'Cliquez pour changer la disposition',
 	'translate-magic-pagename' => 'Traduction étendue de MediaWiki',
 	'translate-magic-help' => 'Vous pouvez traduire les alias de pages spéciales, les mots magiques et les noms des espaces de noms.
 
@@ -6624,6 +6632,9 @@ Se o grupo está composto por un subconxunto ou un superconxunto de mensaxes dou
 	'translate-edit-tmmatch' => '$1% de coincidencia',
 	'translate-use-suggestion' => 'Inserir esta suxestión na zona de tradución. Isto substitúe todo o contido actual.',
 	'translate-edit-tab-list' => 'Lista de mensaxes',
+	'translate-edit-show-def' => 'Definición da mensaxe',
+	'translate-edit-show-trans' => 'Tradución',
+	'translate-edit-show-click' => 'Prema para cambiar a disposición',
 	'translate-magic-pagename' => 'Tradución estendida de MediaWiki',
 	'translate-magic-help' => 'Pode traducir os alias das páxinas especiais, as palabras máxicas e mais os nomes dos espazos de nomes.
 
@@ -6968,6 +6979,9 @@ Wänn d Gruppe us ere Deil- oder Obermängi vu Syschtemnochrichte vun ere andere
 	'translate-edit-tmmatch' => '$1% Ibereinstimmig',
 	'translate-use-suggestion' => 'Dää Vorschlag in s Ibersetzigsfäld yyfiege. Des ersetzt alli aktuälle Inhalt.',
 	'translate-edit-tab-list' => 'Nochrichtelischte',
+	'translate-edit-show-def' => 'Syschtemnochricht im Original',
+	'translate-edit-show-trans' => 'Ibersetzig',
+	'translate-edit-show-click' => 'Zum Wächsle vum Layout klicke',
 	'translate-magic-pagename' => 'Erwytereti MediaWiki-Ibersetzig',
 	'translate-magic-help' => 'Du chasch doo Alias fir Spezialsyte, magischi Werter un Namensruumnäme ibersetze.
 
@@ -7320,7 +7334,7 @@ $messages['gv'] = array(
 	'translate-page-group' => 'Possan',
 	'translate-page-language' => 'Çhengey',
 	'translate-page-limit' => 'Jeoraght',
-	'translate-edit-in-other-languages' => 'Çhaghteraght ayns çhengaghyn elley',
+	'translate-edit-in-other-languages' => 'Çhaghteraght "$1" ayns çhengaghyn elley',
 );
 
 /** Hausa (هَوُسَ) */
@@ -8472,6 +8486,9 @@ Si tu sape ubi o como iste message es usate, tu pote adjutar le altere traductor
 	'translate-edit-tmmatch' => '$1% de correspondentia',
 	'translate-use-suggestion' => 'Inserer iste suggestion in le area de traduction. Isto reimplacia tote le contento actual.',
 	'translate-edit-tab-list' => 'Lista de messages',
+	'translate-edit-show-def' => 'Definition del message',
+	'translate-edit-show-trans' => 'Traduction',
+	'translate-edit-show-click' => 'Clicca pro cambiar de disposition',
 	'translate-magic-pagename' => 'Traduction extendite de MediaWiki',
 	'translate-magic-help' => 'Tu pote traducer le aliases de paginas special, le parolas magic e le nomines de spatios de nomines.
 
@@ -10849,6 +10866,9 @@ Wann de Grupp aus Ënnergruppen besteet oder Messagen aus anere Gruppen drastinn
 	'translate-edit-tmmatch' => '$1% Iwwereestëmmung',
 	'translate-use-suggestion' => "Setzt dëse Virschlag an d'Iwwersetzungsfeld. Doduerch gëtt de kompletten Inhalt am Iwwersetzungsfeld iwwerschriwwen.",
 	'translate-edit-tab-list' => 'Lëscht vun de Messagen',
+	'translate-edit-show-def' => 'Definitioun vum Message',
+	'translate-edit-show-trans' => 'Iwwersetzung',
+	'translate-edit-show-click' => 'Klickt fir de Layout ëmzeschalten',
 	'translate-magic-pagename' => 'Erweidert MediaWiki Iwwersetzung',
 	'translate-magic-help' => "Dir kënnt d'Aliase vu Spezialsäiten, magesch Wierder an Nummraum Nimm iwwersetzen.
 
@@ -11426,6 +11446,9 @@ $messages['mk'] = array(
 	'translate-edit-tmmatch' => '$1% совпаѓање',
 	'translate-use-suggestion' => 'Вметнете го овој предлог во полето за превод. Тоа ќе ја замени моменталната содржина.',
 	'translate-edit-tab-list' => 'Список на пораки',
+	'translate-edit-show-def' => 'Изворна содржина',
+	'translate-edit-show-trans' => 'Превод',
+	'translate-edit-show-click' => 'Префрли распоред',
 	'translate-magic-pagename' => 'Превод на додатоци за МедијаВики',
 	'translate-magic-help' => "Можете да ги преведете алијасите на специјалните страници, волшебните зборови и називите на именските простори.
 
@@ -12181,6 +12204,9 @@ Als de groep bestaat uit een subset of superset van berichten van andere groepen
 	'translate-edit-tmmatch' => '$1% overeenkomst',
 	'translate-use-suggestion' => 'Deze suggestie in het vertaalvenster gebruiken. Dit vervangt alle huidige inhoud.',
 	'translate-edit-tab-list' => 'Berichtenlijst',
+	'translate-edit-show-def' => 'Berichtdefinitie',
+	'translate-edit-show-trans' => 'Vertaling',
+	'translate-edit-show-click' => 'Klik om de opmaak te wijzigen',
 	'translate-magic-pagename' => 'Uitgebreide MediaWiki-vertaling',
 	'translate-magic-help' => 'U kunt alternatieven voor speciale pagina\'s, magische woorden en naamruimtebenamingen vertalen.
 
