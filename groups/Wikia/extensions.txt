@@ -35,6 +35,9 @@ Batch User Rights
 file = SpecialBatchUserRights/BatchUserRights.i18n.php
 aliasfile = SpecialBatchUserRights/BatchUserRights.alias.php
 
+Category Exhibition
+file = CategoryExhibition/i18n/CategoryExhibition.i18n.php
+
 Category Hubs
 
 Category Select
@@ -140,6 +143,9 @@ ignored = wiki-navigation, categoryblacklist, photosblacklist
 
 Our 404 Handler
 file = Our404Handler/SpecialOur404Handler.i18n.php
+
+Paginator
+file = Paginator/i18n/Paginator.i18n.php
 
 Partner Feed
 
