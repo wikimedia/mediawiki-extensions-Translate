@@ -43,13 +43,9 @@ FILES:
   targetPattern: mifos/userInterface/src/main/resources/org/mifos/ui/localizedProperties/messages_%CODE%.properties
 
 TAGS:
+  optional:
+    - login.chinese.translation.attribution
   ignored:
-    - '*1.*'
-    - '*2.*'
-    - '*3.*'
-    - '*4.*'
-    - '*5.*'
-    - '*6.*'
     - manageReports.*
     - thelasttimeyouloggedonwas
     - thelinkstotheleft
