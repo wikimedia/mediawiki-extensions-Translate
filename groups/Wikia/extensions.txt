@@ -209,6 +209,8 @@ optional = sponsor-template
 
 Special Widget Dashboard
 
+Staff Log
+
 Staff Powers
 
 Tags Report
