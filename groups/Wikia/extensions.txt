@@ -49,6 +49,8 @@ file = CommentsForum/Forum.i18n.php
 
 Community Messages
 
+Content Feeds
+
 Contest Tool
 file = ContestTool/SpecialContestTool.i18n.php
 
