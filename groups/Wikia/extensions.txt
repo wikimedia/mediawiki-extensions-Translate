@@ -151,6 +151,8 @@ file = Paginator/i18n/Paginator.i18n.php
 
 Partner Feed
 
+Piggyback
+
 Problem Reports
 
 Quick Create
