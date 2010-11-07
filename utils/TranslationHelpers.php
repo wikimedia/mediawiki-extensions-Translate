@@ -365,15 +365,13 @@ class TranslationHelpers {
 		$response = FormatJson::decode( $json );
 
 		if ( $json === false ) {
-				wfWarn(  __METHOD__ . ': Http::get failed' );
+				error_log(  __METHOD__ . ': Http::get failed' );
 				// Most likely a timeout or other general error
 				self::reportTranslationServiceFailure( $serviceName );
 
 				return null;
 		} elseif ( !is_object( $response ) ) {
-				wfWarn(  __METHOD__ . ': Unable to parse reply: ' . strval( $json ) );
 				error_log(  __METHOD__ . ': Unable to parse reply: ' . strval( $json ) );
-
 				return null;
 		}
 
@@ -462,7 +460,7 @@ class TranslationHelpers {
 				return null;
 			}
 
-			wfWarn(  __METHOD__ . ': Http::get failed:' . $error );
+			error_log(  __METHOD__ . ': Http::get failed:' . $error );
 			// Most likely a timeout or other general error
 			self::reportTranslationServiceFailure( $serviceName );
 			return null;
