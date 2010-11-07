@@ -888,8 +888,8 @@ Předtím než tuto verzi označíte pro překlad zkontrolujte, že změny čás
 	'tpt-languages-legend' => 'Jiné jazyky:',
 	'tpt-target-page' => 'Tuto stránku nelze ručně aktualizovat.
 Tato stránka je překladem stránky [[$1]] a překlad lze aktualizovat pomocí [$2 nástroje pro překlad].',
-	'tpt-unknown-page' => 'Tento jmenný prostor je vyhrazený pro překlady stránek s obsahem.
-Zdá se, že stránka, kterou se pokoušíte upravovat neodpovídá žádné stránce označené pro překlad.',
+	'tpt-unknown-page' => 'Tento jmenný prostor je vyhrazen pro překlady stránek s obsahem.
+Zdá se, že stránka, kterou se pokoušíte upravovat, neodpovídá žádné stránce označené pro překlad.',
 	'tpt-install' => 'Funkci překladu stránek povolíte spuštěním <code>php maintenance/update.php</code> nebo webové instalace.',
 	'tpt-render-summary' => 'Aktualizace na novou verzi zdrojové stránky',
 	'tpt-download-page' => 'Exportovat stránky s překlady',

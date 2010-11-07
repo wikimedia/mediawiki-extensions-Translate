@@ -3500,6 +3500,9 @@ Pokud skupina obsahuje podmnožinu či nadmnožinu zpráv z jiných skupin, zobr
 	'translate-edit-tmmatch' => '$1% shoda',
 	'translate-use-suggestion' => 'Vložit tento návrh do okna pro překlad. Nahradí se jím veškerý stávající obsah.',
 	'translate-edit-tab-list' => 'Seznam zpráv',
+	'translate-edit-show-def' => 'Zdroj zprávy',
+	'translate-edit-show-trans' => 'Překlad',
+	'translate-edit-show-click' => 'Kliknutím přepnete rozložení',
 	'translate-magic-pagename' => 'Rozšířená možnost překladu MediaWiki',
 	'translate-magic-help' => "Můžete překládat aliasy speciálních stránek, kouzelná slova a názvy jmenných prostorů.
 
@@ -12697,6 +12700,9 @@ Om du vet hvor eller hvordan denne meldingen brukes kan du hjelpe andre oversett
 	'translate-edit-tmmatch' => 'samsvarer $1%',
 	'translate-use-suggestion' => 'Sett inn dette forslaget i oversettelsesområdet. Dette erstatter alt det nåværende innholdet.',
 	'translate-edit-tab-list' => 'Meldingsliste',
+	'translate-edit-show-def' => 'Meldingsdefinisjon',
+	'translate-edit-show-trans' => 'Oversettelse',
+	'translate-edit-show-click' => 'Klikk for å bytte oppsett',
 	'translate-magic-pagename' => 'Utvidet MediaWiki-oversettelse',
 	'translate-magic-help' => 'Du kan oversette spesialsidealias, magiske ord og navneromnavn.
 
@@ -15862,6 +15868,9 @@ Razlog:
 	'translate-edit-tmmatch' => '$1 % ujemanje',
 	'translate-use-suggestion' => 'Vstavi ta predlog v prevajalno območje. To zamenja vso trenutno vsebino.',
 	'translate-edit-tab-list' => 'Seznam sporočil',
+	'translate-edit-show-def' => 'Opredelitev sporočila',
+	'translate-edit-show-trans' => 'Prevod',
+	'translate-edit-show-click' => 'Kliknite, da preklopite postavitev',
 	'translate-magic-pagename' => 'Razširjeno prevajanje MediaWiki',
 	'translate-magic-help' => 'Prevedete lahko vzdevke posebnih strani, čarobne besede in imena imenskih prostorov.
 
