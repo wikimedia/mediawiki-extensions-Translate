@@ -394,6 +394,14 @@ array(
 		'sponsor-price-5mo', // Contains $ sign that can be translated differently.
 	)
 ),
+array(
+	'group' => 'wikia-stafflog',
+	'check' => 'variable',
+	'message' => array(
+		'stafflog-piggybackloginmsg', // Contains optional additional parameters.
+		'stafflog-piggybacklogoutmsg', // Contains optional additional parameters.
+	)
+),
 // translatewiki.net specific
 array(
 	'group' => 'page|Translating:Intro',
