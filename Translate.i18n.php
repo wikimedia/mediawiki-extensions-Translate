@@ -2949,6 +2949,9 @@ Ako se grupa sastoji iz podseta ili nadseta poruke iz drugih grupa, prikazana je
 	'translate-edit-tmmatch' => '$1% slaganja',
 	'translate-use-suggestion' => 'Ubacite ovaj prijedlog u okvir prevoda. Ovo zamjenjuje sav dosadašnji sadržaj.',
 	'translate-edit-tab-list' => 'Spisak poruka',
+	'translate-edit-show-def' => 'Definicija poruke',
+	'translate-edit-show-trans' => 'Prijevod',
+	'translate-edit-show-click' => 'Klikni za promjenu izgleda',
 	'translate-magic-pagename' => 'Prošireni MediaWiki prijevod',
 	'translate-magic-help' => 'Možete prevoditi skraćenice posebnih stranica, magične riječi i imena imenskih prostora.
 
@@ -3711,6 +3714,7 @@ $messages['cy'] = array(
  * @author Jon Harald Søby
  * @author MGA73
  * @author Nghtwlkr
+ * @author Sarrus
  */
 $messages['da'] = array(
 	'translate' => 'Oversæt',
@@ -3977,7 +3981,7 @@ Detaljer: $1',
 	'translate-js-nonext' => 'Dette var den sidste besked på denne side.',
 	'translate-js-skip' => 'Gå til næste',
 	'translate-js-save-failed' => 'Lagring mislykkedes. Rapporter venligst denne fejl.',
-	'translate-js-history' => 'Oversættelses historie',
+	'translate-js-history' => 'Oversættelseshistorik',
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Kode',
 	'translate-gs-continent' => 'Kontinent',
@@ -5129,6 +5133,9 @@ Si el grupo consiste en un subconjunto o superconjunto de mensajes de otros grup
 	'translate-edit-tmmatch' => '$1% coincidente',
 	'translate-use-suggestion' => 'Insertar esta sugerencia en el área de traducción. Esto reemplaza todo el contenido actual.',
 	'translate-edit-tab-list' => 'Lista de mensajes',
+	'translate-edit-show-def' => 'Definición de mensaje',
+	'translate-edit-show-trans' => 'Traducción',
+	'translate-edit-show-click' => 'Haz clic para cambiar el diseño',
 	'translate-magic-pagename' => 'Traducción extendida de MediaWiki',
 	'translate-magic-help' => 'Puedes traducir los nombres de las páginas especiales, las palabras mágicas, y los de los espacios de nombre
 
@@ -7877,6 +7884,9 @@ Jeli skupina zestaja so z podskupiny abo nadskupiny zdźělenkow z druhich skupi
 	'translate-edit-tmmatch' => '$1 % wotpowědowanja',
 	'translate-use-suggestion' => 'Zasuń tutón namjet do přełožowanskeho pola. To naruna wšón aktualny wobsah.',
 	'translate-edit-tab-list' => 'Lisćina zdźělenkow',
+	'translate-edit-show-def' => 'Definicija zdźělenki',
+	'translate-edit-show-trans' => 'Přełožk',
+	'translate-edit-show-click' => 'Kliknyć, zo by wuhotowanje wuměniło',
 	'translate-magic-pagename' => 'Rozšěrjeny přełožk MediaWiki',
 	'translate-magic-help' => 'Móžěs aliasy specialnych stronow, magiske słowa a mjena mjenowych rumow přełožić.
 
@@ -13652,6 +13662,9 @@ S'a sa andoa o coma 's mëssagi a l'é dovrà, a peul giuté d'àutri tradutor a
 	'translate-edit-tmmatch' => 'corëspondensa ëd $1%',
 	'translate-use-suggestion' => 'A anseriss sto sugeriment-sì ant la fnestra ëd tradussion. Sòn a rampiassa tut ël contnù corent.',
 	'translate-edit-tab-list' => 'Lista ëd mëssagi',
+	'translate-edit-show-def' => 'Definission dël mëssagi',
+	'translate-edit-show-trans' => 'Viragi',
+	'translate-edit-show-click' => 'Sgnaca për cangé presentassion',
 	'translate-magic-pagename' => 'Viragi estèis ëd MediaWiki',
 	'translate-magic-help' => "A peul volté j'àlias dle pàgine speciaj, le paròle màgiche e ij nòm ëd jë spassi nominaj.
 
@@ -14060,6 +14073,9 @@ Se o grupo é composto por um subconjunto ou superconjunto de mensagens de outro
 	'translate-edit-tmmatch' => '$1% coincidente',
 	'translate-use-suggestion' => 'Inserir esta sugestão na área de tradução. Isto substitui todo o conteúdo existente.',
 	'translate-edit-tab-list' => 'Lista de mensagens',
+	'translate-edit-show-def' => 'Definição da mensagem',
+	'translate-edit-show-trans' => 'Tradução',
+	'translate-edit-show-click' => 'Clique para mudar a disposição',
 	'translate-magic-pagename' => 'Tradução extra do MediaWiki',
 	'translate-magic-help' => 'Pode traduzir nomes alternativos de páginas especiais, palavras mágicas e nomes de espaços nominais.
 
@@ -14275,6 +14291,7 @@ Detalhes: $1',
 /** Brazilian Portuguese (Português do Brasil)
  * @author Eduardo.mps
  * @author Giro720
+ * @author Helder.wiki
  * @author Heldergeovane
  * @author Luckas Blade
  */
@@ -14337,6 +14354,9 @@ Se o grupo é composto por um subconjunto ou superconjunto de mensagens de outro
 	'translate-edit-tmmatch' => '$1% coincidente',
 	'translate-use-suggestion' => 'Inserir esta sugestão na área de tradução. Isto substitui todo o conteúdo existente.',
 	'translate-edit-tab-list' => 'Lista de mensagem',
+	'translate-edit-show-def' => 'Definição da mensagem',
+	'translate-edit-show-trans' => 'Tradução',
+	'translate-edit-show-click' => 'Clique para mudar a disposição',
 	'translate-magic-pagename' => 'Tradução extra do MediaWiki',
 	'translate-magic-help' => 'Você pode traduzir nomes alternativos de páginas especiais, palavras mágicas e nomes de espaços nominais.
 
@@ -18306,10 +18326,8 @@ $messages['uk'] = array(
 	'translationchanges' => 'Зміни в перекладах',
 	'translationchanges-export' => 'експортувати',
 	'translationchanges-change' => '$1: $2 $3',
-	'translate-checks-parameters' => '{{PLURAL:$2|Наступний параметр не використовується|Наступні параметри не використовуються}}:
-<strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Наступний параметр невідомий|Наступні параметри невідомі}}:
-<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters' => '{{PLURAL:$2|Параметр <strong><nowiki>$1</nowiki></strong> не використовується|Параметри <strong><nowiki>$1</nowiki></strong> не використовуються}}',
+	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Параметр <strong><nowiki>$1</nowiki></strong> невідомий|Параметри <strong><nowiki>$1</nowiki></strong> невідомі}}',
 	'translate-checks-balance' => 'Непарна кількість відкритих і закритих {{PLURAL:$2|дужок|дужок}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '{{PLURAL:$2|Наступне посилання проблематичне|Наступні посилання проблематичні}} : <strong>$1</strong>',
