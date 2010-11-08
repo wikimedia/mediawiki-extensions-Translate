@@ -96,6 +96,8 @@ Helper Panel
 
 Image Placeholder
 
+Image Serving
+
 Interstitial - Outbound Screen
 file = Interstitial/OutboundScreen.i18n.php
 
