@@ -185,6 +185,9 @@ Shared Help
 
 Share Feature
 
+Signup
+file = SpecialSignup/Signup.i18n.php
+
 Sitemap
 aliasfile = Sitemap/Sitemap.alias.php
 
