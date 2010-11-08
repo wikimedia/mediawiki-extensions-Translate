@@ -183,6 +183,8 @@ Search
 
 Shared Help
 
+Shared Messages
+
 Share Feature
 
 Signup
