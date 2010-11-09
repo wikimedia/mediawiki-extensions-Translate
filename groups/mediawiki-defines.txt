@@ -747,6 +747,9 @@ MwEmbed - MwEmbed
 file = MwEmbed/MwEmbed/MwEmbed.i18n.php
 optional = mwe-size-gigabytes, mwe-size-megabytes, mwe-size-kilobytes, mwe-size-bytes
 
+MwEmbed - modules - ApiProxy
+file = MwEmbed/MwEmbed/modules/ApiEmbed/ApiProxy.i18n.php 
+
 Natural Language List
 descmsg = nll-desc
 ignored = nll-itemoutput
