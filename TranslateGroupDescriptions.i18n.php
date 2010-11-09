@@ -867,6 +867,7 @@ $messages['hr'] = array(
  * @author Michawiki
  */
 $messages['hsb'] = array(
+	'translategroupdescriptions-desc' => 'Wopisanje za skupiny zdźělenkow za produkty, kotrež so přez rozšěrjenje [http://mediawiki.org/wiki/Extension:Translate Translate] pdopěruja',
 	'translate-group-desc-nodesc' => 'Za tutu skupinu zdźělenkow wopisanje k dispoziciji njesteji.',
 	'translate-group-desc-mediawikicore' => 'Tuta skupina zdźělenkow wobsahuje zdźělenki, kotrež so w aktualnej alfa-wersiji MediaWiki ({{CURRENTVERSION}}) wužiwaja',
 	'translate-group-desc-mediawikimostused' => 'Tuta skupina zdźělenkow wobsahuje [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 najhusćišo wužiwanych zdźělenkow] w MediaWiki',
@@ -878,15 +879,22 @@ $messages['hsb'] = array(
 	'translate-group-desc-translate' => 'Hłowna skupina, kotraž wšě zdźělenki za rozšěrjenje MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate] wobsahuje',
 	'translate-group-desc-wikiaextensions' => 'Hłowna skupina, kotraž wšě zdźělenki za podpěrowane rozšěrjenja MediaWiki wobsahuje, kotrež so wot [http://www.wikia.com Wikia] wužiwaja',
 	'translate-group-desc-wikimediaextensions' => 'Hłowna skupina, kotraž wšě zdźělenki za podpěrowane rozšěrjenja MediaWiki wobsahuje, kotrež so přez [http://wikimedia.org/ Wikimedia Foundation] wužiwaja',
+	'translate-group-desc-wikimediaextensions-main' => 'Metaskupina zdźělenkow, kotraž wšě powěsće za podpěrowane rozšěrjenja MediaWiki wobsahuje, kotrež dyrbja so za [http://meta.wikimedia.org/wiki/Language_committee rěčny komitej] Wikimedije přełožować',
 	'translate-group-desc-uniwiki' => 'Hłowna skupina, kotraž wšě zdźělenki za rozšěrjenja wobsahuje, kotrež su z [http://unicefinnovation.org/wiki.php Uniwiki] přiwuzne',
 	'translate-group-desc-ui' => 'Metaskupina zdźělenkow, kotraž wšě zdźělenki za rozšěrjenja wobsahuje, kotrež so na [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative iniciatiwu wužiwajomnosće Wikipedije] poćahuja.',
+	'translate-group-desc-translatablepages' => 'Wšě přełožujomne strony',
 	'bw-desc-freecol' => 'Prjedy hač přełožuješ FreeCol do swojeje rěče, přečitaj prošu [[Translating:FreeCol]]. FreeCol wužiwa licencu GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], webforum, spisany w PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] je swobodny system na zakładźe weba za slědowanje programowych zmylkow. Zdźěl prošu problemy na stronje [[Support|Podpěra]].',
+	'translate-group-desc-mantisbt-plugin-core' => 'Hłowny tykač za [[Translating:MantisBT|MantisBT]]',
+	'translate-group-desc-mediawiki-core-115' => 'Zdźělenki za stabilnu wersiju 1.1.5 [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawiki-core-116' => 'Zdźělenki za stabilnu wersiju 1.1.6 [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] je zarjadowanski informaciski system za mikrofinancne institucije',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' je pythonowa biblioteka za wutworjenje PDF-dokumentow z nastawkow MediaWiki, kotrež buchu přez biblioteku mwlib analyzowane.
 
 Prošu hlej [[mw:Extension:PDF_Writer]] a http://code.pediapress.com/wiki/wiki/mwlibrl za dalše informacije.",
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] je webmejlowy klient spisany w PHP. Zdźěl prošu problemy na stronje [[Support|Podpěra]].',
+	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] je čitak offline za Wikipediju',
 	'bw-desc-openlayers' => 'OpenLayers je dynamiski generator kartow ze zjawnym žórłowym kodom. Prošu zdźěl problemy na stronje [[Support|Podpěra]]',
 	'bw-desc-openstreetmap' => 'Skupina zdźělenkow za wšě zdźělenki z [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Tuta skupina zdźělenkow wobsahuje zdźělenki wužiwarskeho powjercha za [[Translating:Open Street Map|Open Street Map]]',
@@ -896,6 +904,7 @@ Prošu hlej [[mw:Extension:PDF_Writer]] a http://code.pediapress.com/wiki/wiki/m
 * Wužij [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org], zo by Potlatch testował. Móžeš tam wšě funkcije testować.',
 	'bw-desc-shapado' => 'Skupina zdźělenkow za zjawnje k dispoziciji stejacu softwaru Q&A [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] je serwer za mikroblogowanje ze zjawnym žórłowym kodom',
+	'translate-group-desc-statusnet-plugin' => 'Tute zdzělenki su dźěl tykača za [[Translating:StatusNet|StatusNet]]',
 	'bw-desc-voctrain' => 'Trenowak wokablow z OmegaWiki. Wužiwa system flashcard za wuknjenje wokablow z někajkeje rěče do rěče, kotruž OmegaWiki podpěruje.
 Za uniwersitu Bamberg wutworjeny. Pod licencu GPL 2.0 abo wyše licencowany. Wot [[User:Kim Bruning|Kima Bruninga]] wuwity.',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] móže awtorow nastawka we wikiju Wikimedije spěšnje namakać.',

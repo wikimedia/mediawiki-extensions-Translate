@@ -14952,6 +14952,9 @@ $messages['ru'] = array(
 	'translate-edit-tmmatch' => '$1% соответствие',
 	'translate-use-suggestion' => 'Вставить этот совет в участок переводов. Это заменит всё прежнее содержание.',
 	'translate-edit-tab-list' => 'Список сообщений',
+	'translate-edit-show-def' => 'Формулировка сообщения',
+	'translate-edit-show-trans' => 'Перевод',
+	'translate-edit-show-click' => 'Нажмите, чтобы переключить макет',
 	'translate-magic-pagename' => 'Углублённый перевод MediaWiki',
 	'translate-magic-help' => 'Вы можете переводить псевдонимы служебных страниц, магические слова и названия пространств имён.
 
