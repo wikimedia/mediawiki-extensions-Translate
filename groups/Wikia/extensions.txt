@@ -19,8 +19,7 @@ Auto Hubs Pages
 
 Automatic Wiki Adoption
 # Extension is not completely done yet. Ignoring unfinished parts.
-ignored = automaticwikiadoption-desc, automaticwikiadoption-description, automaticwikiadoption-mail-first-content, automaticwikiadoption-mail-first-content-HTML
-ignored = automaticwikiadoption-mail-second-content, automaticwikiadoption-mail-second-content-HTML, automaticwikiadoption-mail-adoption-content, automaticwikiadoption-mail-adoption-content-HTML
+ignored = automaticwikiadoption-desc, automaticwikiadoption-description, automaticwikiadoption-mail-first-content
 
 Badges
 file = Badges/UserBadges.i18n.php
