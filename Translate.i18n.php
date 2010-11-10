@@ -9440,6 +9440,9 @@ $messages['ja'] = array(
 	'translate-edit-tmmatch' => '$1%の一致',
 	'translate-use-suggestion' => 'この翻訳提案を、編集領域に挿入します。現在入力されている内容は全て置き換えられます。',
 	'translate-edit-tab-list' => 'メッセージ一覧',
+	'translate-edit-show-def' => 'メッセージ定義',
+	'translate-edit-show-trans' => '翻訳',
+	'translate-edit-show-click' => 'レイアウトを切り替えるにはクリック',
 	'translate-magic-pagename' => 'MediaWiki拡張翻訳',
 	'translate-magic-help' => '特別ページへのエイリアス、マジックワード、名前空間名を翻訳できます。
 
@@ -13384,6 +13387,9 @@ Jeśli grupa zawiera podzbiór lub nadzbiór komunikatów innej grupy, jest wyś
 	'translate-edit-tmmatch' => 'pasuje $1%',
 	'translate-use-suggestion' => 'Wstaw tę propozycję w obszar edycji tłumaczenia. Dotychczasowa treść zostanie zastąpiona.',
 	'translate-edit-tab-list' => 'Spis komunikatów',
+	'translate-edit-show-def' => 'Definicja komunikatu',
+	'translate-edit-show-trans' => 'Tłumaczenie',
+	'translate-edit-show-click' => 'Kliknij, aby przełączyć układ',
 	'translate-magic-pagename' => 'Rozszerzone tłumaczenie MediaWiki',
 	'translate-magic-help' => 'Istnieje możliwość tłumaczenia aliasów stron specjalnych, magicznych słów i nazw poszczególnych przestrzeni nazw.
 

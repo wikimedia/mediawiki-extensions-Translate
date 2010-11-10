@@ -2141,6 +2141,11 @@ Przejdź teraz na [[Special:Preferences|stronę preferencji]], a następnie wró
 Pozwól mi przejść dalej.',
 	'translate-fs-userpage-submit' => 'Utwórz moją stronę użytkownika',
 	'translate-fs-userpage-done' => 'Udało się! Masz już swoją stronę użytkownika.',
+	'translate-fs-email-text' => 'Podaj swój adres e‐mail w [[Special:Preferences|preferencjach]] i potwierdź go korzystając z e‐maila wysłanego do Ciebie.
+
+Umożliwi to innym użytkownikom kontakt z Tobą.
+Będziesz również, nie częściej niż co miesiąc, otrzymywać biuletyny.
+Jeśli nie chcesz otrzymywać informacji o aktualnościach możesz z nich zrezygnować w zakładce „{{int:prefs-personal}}” w swoich [[Special:Preferences|preferencjach]].',
 );
 
 /** Piedmontese (Piemontèis)
