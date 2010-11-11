@@ -2675,6 +2675,9 @@ Ma ya d'ober ar strollad istrolladoù pe usstrolladoù kemennadennoù tennet eus
 	'translate-edit-tmmatch' => '$1% kenglotañ',
 	'translate-use-suggestion' => "Ensoc'hañ ar c'hinnig-mañ er prenestr treiñ. Erlec'hiañ a ra hollad an danvez a-vremañ.",
 	'translate-edit-tab-list' => 'Roll kemennadennoù',
+	'translate-edit-show-def' => 'Termenadur ar gemennadenn',
+	'translate-edit-show-trans' => 'Troidigezh',
+	'translate-edit-show-click' => 'Klikañ evit cheñch an tres',
 	'translate-magic-pagename' => 'Troidigezh MediaWiki astennet',
 	'translate-magic-help' => "Gallout a rit treiñ aliasoù ar pajennoù dibar, ar gerioù burzhudus hag anvioù an esaouennoù anv.
 
