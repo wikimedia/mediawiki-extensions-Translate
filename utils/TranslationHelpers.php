@@ -449,7 +449,13 @@ class TranslationHelpers {
 		$url = wfExpandUrl( $url );
 
 		$options['method'] = 'GET';
-		$req = HttpRequest::factory( $url, $options );
+
+		if ( class_exists( 'MWHttpRequest' ) ) {
+			$req = MWHttpRequest::factory( $url, $options );
+		} else {
+			$req = HttpRequest::factory( $url, $options );
+		}
+
 		$status = $req->execute();
 
 		if ( !$status->isOK() ) {
