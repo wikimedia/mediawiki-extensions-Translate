@@ -96,6 +96,10 @@ $localisedWeights = array(
 		'core'            => 30,
 		'ext-0-wikimedia' => 30
 	),
+	'fundraiser' => array(
+		'ext-di-di'   => 16,
+		'ext-di-pfpg' => 84,
+	),
 	'mediawiki' => array(
 		'core-0-mostused' => 30,
 		'core'            => 30,
