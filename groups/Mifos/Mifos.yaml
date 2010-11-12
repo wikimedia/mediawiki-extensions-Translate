@@ -46,7 +46,6 @@ TAGS:
   optional:
     - login.chinese.translation.attribution
   ignored:
-    - manageReports.*
     - thelasttimeyouloggedonwas
     - thelinkstotheleft
     - thesearchtoolbelow
