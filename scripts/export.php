@@ -127,7 +127,7 @@ foreach( $groups as $groupId => $group ) {
 			global $wgMaxShellMemory;
 
 			// Need more shell memory for msgmerge.
-			$wgMaxShellMemory = 302400;
+			$wgMaxShellMemory = 402400;
 
 			$conf = $group->getConfiguration();
 			$definitionFile = str_replace( '%GROUPROOT%', $options['ppgettext'], $conf['FILES']['definitionFile'] );
