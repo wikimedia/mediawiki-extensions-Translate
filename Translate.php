@@ -423,14 +423,16 @@ $wgTranslateYamlLibrary = 'spyc';
 # Startup code
 function efTranslateResources( &$resourceLoader ) {
 	global $wgExtensionAssetsPath;
+	$localPath = dirname( __FILE__ );
+	$remotePath = "$wgExtensionAssetsPath/Translate";
 	$resourceLoader->register(
 		array(
 			'translate-css' =>
 				new ResourceLoaderFileModule( array( 'styles' => 'Translate.css' ),
-					dirname( __FILE__ ), "$wgExtensionAssetsPath/Translate" ),
+					$localPath, $remotePath ),
 			'translationdisplay' =>
-				new ResourceLoaderFileModule( array( 'scripts' => 'translationdisplay.js' ),
-					dirname( __FILE__ ) . '/js' , "$wgExtensionAssetsPath/Translate/js" ),
+				new ResourceLoaderFileModule( array( 'scripts' => 'js/translationdisplay.js' ),
+					$localPath, $remotePath ),
 		)
 );
 	return true;
