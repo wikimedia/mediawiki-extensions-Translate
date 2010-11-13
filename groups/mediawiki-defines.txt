@@ -344,6 +344,7 @@ id = ext-di-pfpg
 file = DonationInterface/payflowpro_gateway/payflowpro_gateway.i18n.php
 descmsg = payflowpro_gateway-desc
 optional = payflow_gateway-card-name-amex, payflow_gateway-card-name-visa, payflow_gateway-card-name-mc, payflow_gateway-card-name-discover
+optional = payflowpro_gateway-month
 
 # tomaszf indicates this is not used, and that it is unlikely it will be used.
 #Donation Interface - PayPal Gateway
