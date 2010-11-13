@@ -909,6 +909,8 @@ ignored = proofreadpage_specialpage_text
 Protect Section
 descmsg = protectsection_desc
 
+Proxy Connect
+
 PSI NoTocNum
 magicfile = PSINoTocNum/PSINoTocNum.i18n.magic.php
 
