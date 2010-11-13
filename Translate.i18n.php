@@ -1847,6 +1847,9 @@ $messages['ba'] = array(
 	'translate-edit' => 'үҙгәртергә',
 	'translate-talk' => 'Фекер алышыу',
 	'translate-history' => 'Тарих',
+	'translate-showsub' => '{{PLURAL:$1|Эске төркөмдө|$1 эске төркөмдө}} күрһәтергә.',
+	'translate-grouplisting' => 'Был — бөтә тәржемә ителә торған хәбәрҙәр исемлеге.
+Бөтә тәржемә ителмәгән хәбәрҙәр исемлеген ҡарау өсөн, хәбәрҙәр төркөмөнөң исеменә баҫығыҙ.',
 	'translate-task-view' => 'Бөтә яҙмаларҙы ҡарарға',
 	'translate-task-untranslated' => 'Тәржемә ителмәгән яҙмаларҙы ҡарарға',
 	'translate-task-optional' => 'Мөһим булмаған яҙмаларҙы ҡарарға',
@@ -1886,6 +1889,7 @@ $messages['ba'] = array(
 	'translate-ignored' => '(иғтибарға алынмай)',
 	'translate-edit-title' => 'Мөхәрирләү "$1"',
 	'translate-edit-definition' => 'Яҙманың билдәләмәһе',
+	'translate-edit-contribute' => 'үҙгәртергә',
 	'translate-edit-no-information' => "''Был яҙманың тасуирламаһы юҡ. Әгәр һеҙ был яҙманың ҡайҙа һәм нисек ҡулланылғанын белһәгеҙ, был яҙмаға тасуирлама өҫтәп, бүтән тәржемәселәргә ярҙам итә  алаһығыҙ.''",
 	'translate-edit-information' => '"$2" яҙмаһы тураһында мәғлүмәт ($1)',
 	'translate-edit-in-other-languages' => '"$1" яҙмаһы башҡа телдәрҙә',
@@ -1893,6 +1897,11 @@ $messages['ba'] = array(
 	'translate-edit-warnings' => 'Тулы булмаған тәржемәләр тураһында иҫкәртеү',
 	'translate-edit-tmsugs' => 'Тәржемәләр хәтеренән тәҡдимдәр',
 	'translate-edit-tmmatch' => '$1% тап килеү',
+	'translate-use-suggestion' => 'Был тәҡдимде тәржемә өлкәһенә ҡуйырға. Был бөтә хәҙерге эстәлекте алыштырасаҡ.',
+	'translate-edit-tab-list' => 'Хәбәрҙәр исемлеге',
+	'translate-edit-show-def' => 'Яҙманың билдәләмәһе',
+	'translate-edit-show-trans' => 'Тәржемә',
+	'translate-edit-show-click' => 'Ҡалыпҡа күсереү өсөн баҫығыҙ',
 	'translate-magic-pagename' => 'MediaWiki тәрәнәйтелгән тәржемәһе',
 	'translate-magic-submit' => 'Сығарырға',
 	'translate-magic-cm-export' => 'Сығарырға',
@@ -15499,6 +15508,7 @@ $messages['sah'] = array(
 );
 
 /** Sinhala (සිංහල)
+ * @author Singhalawap
  * @author චතුනි අලහප්පෙරුම
  * @author බිඟුවා
  */
@@ -15508,6 +15518,7 @@ $messages['si'] = array(
 	'translate-edit' => 'සංස්කරණය',
 	'translate-talk' => 'සාකච්ඡාව',
 	'translate-history' => 'ඉතිහාසය',
+	'translate-showsub' => '{{PLURAL:$1|subgroup|$1 subgroups}} පෙන්වන්න.',
 	'translate-task-view' => 'පහත කාණඩයෙහි සියළු පණිවුඩ නැරඹීමටය',
 	'translate-task-untranslated' => 'පහත කාණ්ඩයෙහි පරිවර්තනය නොකෙරුනු සියළු පණිවුඩ නැරඹීමටය',
 	'translate-task-optional' => 'පහත කාණ්ඩයෙහි වෛකල්පික පණිවුඩ නැරඹීමටය',
@@ -15536,12 +15547,14 @@ $messages['si'] = array(
 	'translate-prev' => 'පූර්ව පිටුව',
 	'translate-page-description-legend' => 'කාණ්ඩය පිළිබඳ විස්තර',
 	'translate-page-edit' => 'සංස්කරණය',
+	'translate-ext-url' => '<hr />වෙබ් අඩවිය: $1',
 	'translate-optional' => '(වෛකල්පික)',
 	'translate-ignored' => '(නොසලකන ලදි)',
 	'translate-edit-title' => '"$1" සංස්කරණය කරන්න',
 	'translate-edit-definition' => 'පණිවුඩ විග්‍රහය',
 	'translate-edit-contribute' => 'දායකවන්න',
 	'translate-edit-tmmatch' => '$1% ගැලපේ',
+	'translate-edit-show-trans' => 'පරිවර්තනය',
 	'translate-magic-module' => 'මොඩියුලය:',
 	'translate-magic-submit' => 'ආහරනය කරන්න',
 	'translate-magic-cm-export' => 'නිර්යාත',
