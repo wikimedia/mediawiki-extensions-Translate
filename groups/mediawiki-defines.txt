@@ -294,6 +294,9 @@ aliasfile = CountEdits/CountEdits.alias.php
 
 Create Box
 
+Create Redirect
+aliasfile = CreateRedirect/CreateRedirect.alias.php
+
 Cross Namespace Links
 aliasfile = CrossNamespaceLinks/CrossNamespaceLinks.alias.php
 
