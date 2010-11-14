@@ -1016,6 +1016,7 @@ Jos et halua vastaanottaa uutiskirjeitä, voit valita sen pois välilehdellä "{
 );
 
 /** French (Français)
+ * @author Hashar
  * @author Peter17
  */
 $messages['fr'] = array(
@@ -1060,7 +1061,7 @@ Veuillez écrire quelque chose à propos de vous : qui vous êtes et ce que vous
 Cela aidera la communauté de {{SITENAME}} à travailler ensemble.
 Sur {{SITENAME}}, il y a des gens de tous les coins du monde qui travaillent sur différentes langues et projets.
 
-Dans la boîte pré-remplie ci-dessus, dans la toute première ligne, vous voyez <nowiki>{{#babel:en-2}}</nowiki>.
+Dans la boîte pré-remplie ci-dessous, dans la toute première ligne, vous voyez <nowiki>{{#babel:en-2}}</nowiki>.
 Veuillez la compléter avec votre connaissance des langues.
 Le nombre qui suit le code de la langue décrit comment vous maîtrisez cette langue.
 Les valeurs possibles sont :

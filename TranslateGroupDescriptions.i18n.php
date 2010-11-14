@@ -1832,9 +1832,7 @@ $messages['sl'] = array(
 	'translate-group-desc-mediawiki-core-115' => 'Sporočila ustaljene različice [[Translating:MediaWiki|MediaWiki]] 1.15',
 	'translate-group-desc-mediawiki-core-116' => 'Sporočila ustaljene različice [[Translating:MediaWiki|MediaWiki]] 1.16',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] je vodstven informacijski sistem za mikrofinance',
-	'bw-desc-mwlibrl' => "'''mwlib.rl''' je knjižica python za pisanje dokumentov PDF iz člankov MediaWiki, ki so bili razčlenjeni s knjižico mwlib.
-
-Za več informacij si, prosimo, oglejte [[mw:Extension:PDF Writer]] in http://code.pediapress.com/wiki/wiki/mwlibrl.",
+	'bw-desc-mwlibrl' => '[[Translating:Mwlib.rl|Mwlib.rl]] je knjižnica za ustvarjanje dokumentov PDF iz strani MediaWiki',
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] je spletni odjemalec e-pošte napisan v PHP. Prosimo, sporočite morebitne težave na [[Support|Podpora]].',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] je nepovezan bralnik Wikipedije',
 	'bw-desc-openlayers' => 'OpenLayers je odprtokodni dinamični ustvarjalnik zemljevidov. Prosimo, sporočite morebitne težave na [[support|podpora]].',
