@@ -531,6 +531,7 @@ $messages['el'] = array(
 
 /** Esperanto (Esperanto)
  * @author ArnoLagrange
+ * @author Petrus Adamus
  */
 $messages['eo'] = array(
 	'translate-group-desc-nodesc' => 'Neniu priskribo estas havebla por ĉi tiu mesaĝogrupo',
@@ -546,7 +547,7 @@ $messages['eo'] = array(
 	'translate-group-desc-wikimediaextensions' => 'Meta-mesaĝogrupo enhavanta ĉiujn mesaĝojn por subtenitaj  MediaWiki-etendaĵoj uzitaj de [http://wikimedia.org/ Vikimedia Fondaĵo]',
 	'translate-group-desc-uniwiki' => 'Meta-mesaĝogrupo enhavanta ĉiujn mesaĝojn por etendaĵoj rilataj al [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Meta-mesaĝogrupo enhavanta ĉiujn mesaĝojn por etendaĵoj rilataj al [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Vikipedia Uzebleca Iniciato]',
-	'bw-desc-freecol' => 'Antaŭ tradukante FreeCol al via lingvo, bonvolu legi [[Translating:FreeCol]]. FreeCol utiligas GPL-licenco.',
+	'bw-desc-freecol' => 'Antaŭ tradukante FreeCol al via lingvo, bonvolu legi [[Translating:FreeCol]]. FreeCol uzas la Ĝeneralan Publikan Permesilon.',
 );
 
 /** Spanish (Español)
