@@ -3788,7 +3788,7 @@ Hvis du ved hvor eller hvordan denne besked bruges, kan du hjælpe andre oversæ
 	'translate-edit-tmsugs' => 'Forslag fra oversættelseshukommelsen',
 	'translate-edit-tmmatch' => '$1 % overensstemmelse',
 	'translate-use-suggestion' => 'Sæt dette forslag i oversættelsen området. Dette erstatter alt aktuelt indhold.',
-	'translate-edit-tab-list' => 'Besked liste',
+	'translate-edit-tab-list' => 'Beskedliste',
 	'translate-magic-pagename' => 'Udvidet MediaWiki-oversættelse',
 	'translate-magic-help' => 'Du kan oversætte specialside-aliaser, magiske ord og navnerumsnavne.
 
@@ -13325,6 +13325,16 @@ $messages['pdc'] = array(
 	'translate-manage-modlang-new' => '$1 (nei)',
 	'translate-manage-import-done' => 'Alles geduh!',
 	'translate-import-load' => 'Feil ufflaade',
+);
+
+/** Pfälzisch (Pfälzisch)
+ * @author Xqt
+ */
+$messages['pfl'] = array(
+	'translate-edit' => 'Bearwaide',
+	'translate-page-edit' => 'bearwaide',
+	'translate-edit-title' => '„$1“ bearwaide',
+	'translate-stats-edits' => 'Bearwaidunge',
 );
 
 /** Polish (Polski)
