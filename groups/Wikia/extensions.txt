@@ -267,19 +267,6 @@ Wikia Mini Upload
 
 Wikia Photo Gallery
 
-Wikia Stats
-file = WikiaStats/SpecialWikiaStats.i18n.php
-optional = wikiastats_prev_rank, wikiastats_prev_rank_xls, wikiastats_xls_files_stats
-optional = wikiastats_history_mainstats_value1, wikiastats_history_mainstats_value2, wikiastats_history_mainstats_value3, wikiastats_history_mainstats_value4
-optional = wikiastats_creation_wikia_filename
-ignored = wikiastats_distrib_article_counting, wikiastats_filename_mainstats, wikiastats_filename_other1, wikiastats_filename_other2
-ignored = wikiastats_filename_other3, wikiastats_filename_other4, wikiastats_filename_other5, wikiastats_filename_other6
-ignored = wikiastats_filename_other7, wikiastats_filename_other8, wikiastats_filename_trend, wikiastats_filename_creation
-ignored = wikiastats_filename_column_A, wikiastats_filename_column_B, wikiastats_filename_column_C, wikiastats_filename_column_D
-ignored = wikiastats_filename_column_E, wikiastats_filename_column_F, wikiastats_filename_column_G, wikiastats_filename_column_H
-ignored = wikiastats_filename_column_I, wikiastats_filename_column_J, wikiastats_filename_column_K, wikiastats_filename_column_L
-ignored = wikiastats_filename_column_M, wikiastats_filename_column_N, wikiastats_filename_column_O
-
 Wikia Upload
 
 Wikia Video
