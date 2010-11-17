@@ -2188,6 +2188,9 @@ $messages['be-tarask'] = array(
 	'translate-edit-tmmatch' => '$1% супадзеньне',
 	'translate-use-suggestion' => 'Устаўце прапанову ў вобласьць перакладаў. Гэта заменіць увесь цяперашні зьмест.',
 	'translate-edit-tab-list' => 'Сьпіс паведамленьняў',
+	'translate-edit-show-def' => 'Вызначэньне паведамленьня',
+	'translate-edit-show-trans' => 'Пераклад',
+	'translate-edit-show-click' => 'Націсьніце для пераключэньня макету',
 	'translate-magic-pagename' => 'Пашыраны пераклад MediaWiki',
 	'translate-magic-help' => 'Вы можаце перакладаць псэўданімы спэцыяльных старонак, магічныя словы і прасторы назваў.
 
@@ -5594,6 +5597,7 @@ $messages['ext'] = array(
 /** Persian (فارسی)
  * @author Huji
  * @author Tofighi
+ * @author ZxxZxxZ
  */
 $messages['fa'] = array(
 	'translate' => 'ترجمه',
@@ -5627,8 +5631,10 @@ $messages['fa'] = array(
 	'translate-next' => 'صفحهٔ بعدی',
 	'translate-prev' => 'صفحهٔ قبلی',
 	'translate-page-description-legend' => 'اطلاعات در مورد گروه',
+	'translate-page-edit' => 'ویرایش',
 	'translate-optional' => '(اختیاری)',
 	'translate-ignored' => '(نادیده گرفته شده)',
+	'translate-edit-title' => 'ویرایش «$1»',
 	'translate-edit-definition' => 'تعریف پیغام',
 	'translate-edit-contribute' => 'مشارکت',
 	'translate-edit-no-information' => "''این پیغام دارای توضیحات نیست. اگر شما می‌دانید که این پیغام چگونه یا در کجا استفاده می‌شود، شما می‌توانید با اضافه کردن توضیحات به دیگر ترجمه‌کنندگان کمک کنید.''",
@@ -5658,6 +5664,7 @@ $messages['fa'] = array(
 	'translate-magic-special' => 'نام مستعار صفحه‌های ویژه',
 	'translate-magic-words' => 'واژه‌های جادویی',
 	'translate-magic-namespace' => 'اسم فضاهای نام',
+	'translate-magic-notsaved' => 'ویرایشتان ذخیره نشد!',
 	'translationchanges' => 'تغییرهای ترجمه',
 	'translationchanges-export' => 'صدور',
 	'translationchanges-change' => '$1: $2 توسط $3',

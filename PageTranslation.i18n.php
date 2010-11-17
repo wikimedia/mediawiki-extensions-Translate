@@ -2611,6 +2611,7 @@ $messages['ig'] = array(
 );
 
 /** Italian (Italiano)
+ * @author Beta16
  * @author Civvì
  * @author Darth Kule
  * @author Gianfranco
@@ -2674,6 +2675,7 @@ La pagina che stai cercando di modificare non sembra corrispondere ad alcuna pag
 	'tpt-render-summary' => 'Aggiornamento per riscontrare la nuova versione della pagina di origine',
 	'tpt-download-page' => 'Esporta la pagina con le traduzioni',
 	'pt-shake-empty' => 'Sezione vuota per il marcatore $1.',
+	'pt-movepage-reason' => 'Motivo:',
 );
 
 /** Japanese (日本語)
