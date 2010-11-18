@@ -11,7 +11,7 @@ GROUPS:
   - ext-abusefilter
   - ext-antibot # anti spam and such (usually all wikis)
   - ext-antispoof
-  - ext-articleassessmentpilot
+  - ext-articlefeedback
   - ext-assertedit # bots
   - ext-categorytree
   - ext-centralauth
