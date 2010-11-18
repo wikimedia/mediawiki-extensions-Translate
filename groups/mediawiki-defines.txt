@@ -430,7 +430,7 @@ descmsg = firefoggcu-desc
 Fixed Image
 
 Flag Page
-aliasfile = FlagPag/FlagPag.alias.php
+aliasfile = FlagPage/FlagPage.alias.php
 
 Flagged Revisions - Flagged Revs
 id = ext-flaggedrevs-flaggedrevs
