@@ -430,6 +430,9 @@ descmsg = firefoggcu-desc
 
 Fixed Image
 
+Flag Page
+aliasfile = FlagPag/FlagPag.alias.php
+
 Flagged Revisions - Flagged Revs
 id = ext-flaggedrevs-flaggedrevs
 file = FlaggedRevs/language/FlaggedRevs.i18n.php
