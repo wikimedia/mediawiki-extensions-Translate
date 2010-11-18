@@ -3368,7 +3368,7 @@ $messages['nn'] = array(
 	'tpt-oldrevision' => '$2 er ikkje den siste versjonen av sida [[$1]].
 Berre siste versjonar kan verta markert for omsetjing.',
 	'tpt-notsuitable' => 'Side $1 er ikkje høveleg for omsetjing.
-Sjekk at sida er merka med <nowiki><translate></nowiki> merke og har ein gyldig syntaks.',
+Sjekk at sida er merkt med <nowiki><translate></nowiki>-merke og har ein gyldig syntaks.',
 	'tpt-saveok' => 'Sida [[$1]] er vorten merkt for omsetjing med {{PLURAL:$2|éi omsetjingseining|$2 omsetjingseiningar}}. Ho kan no verta <span class="plainlinks">[$3 sett om]</span>.',
 	'tpt-badsect' => '«$1» er ikkje eit gyldig namn for omsetjingseininga $2.',
 	'tpt-mark-summary' => 'Markerte denne versjonen for omsetjing',

@@ -463,6 +463,7 @@ Erstellt von der Universität Bamberg. Lizenziert unter GPL 2.0 oder später. En
  * @author Michawiki
  */
 $messages['dsb'] = array(
+	'translategroupdescriptions-desc' => 'Wopisanja kupkow powěźeńkow za produkty pódpěrane wót rozšyrjenja [http://mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-nodesc' => 'Wopisanje njestoj k dispoziciji za toś tu kupku.',
 	'translate-group-desc-mediawikicore' => 'Toś ta kupka powěźeńkow wopśimujo powěźeńki, kótarež wužywaju se w aktualnej alfa-wersiji MediaWiki ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'Toś ta kupka powěźeńkow wopśimujo [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 nejcesćej wužywanych powěźeńkow] w MediaWiki',
@@ -475,15 +476,22 @@ $messages['dsb'] = array(
 	'translate-group-desc-translate' => 'Toś ta głowna kupka wopśimujo wše powěźeńki za rozšyrjenje MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-wikiaextensions' => 'Toś ta głowna kupka wopśimujo wše powěźeńki za pódpěrane rozšyrjenja MediaWiki, kótarež wužywaju se pśez [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Toś ta głowna kupka wopśimujo wše powěźeńki za pódpěrane rozšyrjenja MediaWiki, kótarež wužywaju se pśez [http://wikimedia.org/ Wikimedia Foundation]',
+	'translate-group-desc-wikimediaextensions-main' => 'Metakupka powěźeńkow, kótaraž wopśimujo wšykne powěźeńki za pódpěrane rozšyrjenja MediaWiki, kótarež muse se za [http://meta.wikimedia.org/wiki/Language_committee Rěcny komitej] Wikimedije pśełožyś',
 	'translate-group-desc-uniwiki' => 'Toś ta głowna kupka wopśimujo wše powěźeńki za rozšyrjenja, kótarež su pśiswójźbne z [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Metakupka powěźeńkow, kótaraž wopśimujo wše powěźeńki za rozšyrjenja, kótarež póśěguju se na [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative iniciatiwu wužywajobnosći Wikipedije]',
+	'translate-group-desc-translatablepages' => 'Wšykne pśełožujobne boki',
 	'bw-desc-freecol' => 'Nježli až pśełožujoš FreeCol do swójeje rěcy, pśecytaj pšosym [[Translating:FreeCol]]. FreeCol wužywa licencu GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], webforum napisany w PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] jo swobodny system za slědowanje programowych zmólkow na zakłaźe weba. Pšosym daj problemy na boku [[Support|Pódpěra]] k wěsći.',
+	'translate-group-desc-mantisbt-plugin-core' => 'Głowny tykac za [[Translating:MantisBT|MantisBT]]',
+	'translate-group-desc-mediawiki-core-115' => 'Powěźeńki za stabilnu wersiju 1.1.5 [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawiki-core-116' => 'Powěźeńki za stabilnu wersiju 1.1.6 [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] jo informaciski system managementa za mikrofinancěrowanje',
 	'bw-desc-mwlibrl' => "'''mwlib.rl'' jo pythonowa biblioteka za napóranje PDF-dokumentow z nastawkow MediaWiki, kótarež su se pśez biblioteku mwlib analyzěrowali.
 
 Pšosym glědaj [[mw:Extension:PDF_Writer]] a http://code.pediapress.com/wiki/wiki/mwlibrl za dalšne informacije.",
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] jo webmailowy klient spisany w PHP. Pšosym daj problemy na boku  [[Support|Pódpěra]] k wěsći.',
+	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] jo cytak za cytanje Wikipedije offline',
 	'bw-desc-openlayers' => 'OpenLayers jo dynamiski generator kórtow ze zajwnym žrědłowym kodom. Daj pšosym problemy na boku [[Support|Pódpěra]] k wěsći.',
 	'bw-desc-openstreetmap' => 'Kupka powěźeńkow za wšykne powěźeńki z [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Toś ta kupka powěźeńkow wopśimujo powěźeńki wužywarskego powjercha za [[Translating:Open Street Map|Open Street Map]]',
@@ -493,6 +501,7 @@ Pšosym glědaj [[mw:Extension:PDF_Writer]] a http://code.pediapress.com/wiki/wi
 * Wužyj [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org], aby testował Potlatch. Móžoš tam wšykne funkcije testowaś.',
 	'bw-desc-shapado' => 'Kupka powěźeńkow za zjawnje k dispoziciji stojecu softwaru Q&A [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] jo serwer za mikroblogowanje ze zjawnym žrědłowym kodom',
+	'translate-group-desc-statusnet-plugin' => 'Toś te powěźeńki su źěl tykaca za [[Translating:StatusNet|StatusNet]]',
 	'bw-desc-voctrain' => 'Treněrowak wokablow na zakłaźe [http://omegawiki.org OmegaWiki]. Wužywa system flashcard za wuknjenje wokablow z někakeje rěcy do rěcy, kótaruž OmegaWiki pódpěrujo.
 Za Uniwersitu Bamberg napórany. Stoj pód licencu GPL 2.0 abo wušej. Wót [[User:Kim Bruning|Kima Bruninga]] wuwity.',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] móžo awtorow boka we wikiju Wikimedije malsnje namakaś.',

@@ -4358,6 +4358,9 @@ $messages['dsb'] = array(
 	'translate-edit' => 'wobźěłaś',
 	'translate-talk' => 'Diskusija',
 	'translate-history' => 'Wersije',
+	'translate-showsub' => '{{PLURAL:$1|pódkupku|$1 pódkupce|$1 pódkupki|$1 pódkupkow}} pokazaś',
+	'translate-grouplisting' => 'To jo lisćina wšyknych pśełožujobnych kupkow.
+Klikni na mě kupki powěźeńkow, aby se woglědał lisćinu njepśełožonych powěźeńkow.',
 	'translate-task-view' => 'Wšykne powěsći pokazaś',
 	'translate-task-untranslated' => 'Njepśełožone powěsći pokazaś',
 	'translate-task-optional' => 'Opcionelne powěsći pokazaś',
@@ -4407,6 +4410,10 @@ Jolic kupka jo z pódkupki abo nadkupki powěźeńkow drugich kupkow, zwobraznju
 	'translate-edit-tmsugs' => 'Naraźenja z pśełožowańskego spomnjeśa',
 	'translate-edit-tmmatch' => '$1 % makanja',
 	'translate-use-suggestion' => 'Zasuń toś to naraźenje do pśełožowańskego póla. To buźo wšykne aktuelne wopśimjeśe wuměnjaś.',
+	'translate-edit-tab-list' => 'Lisćina powěźeńkow',
+	'translate-edit-show-def' => 'Definicija powěsći',
+	'translate-edit-show-trans' => 'Pśełožk',
+	'translate-edit-show-click' => 'Kliknuś, aby se wugótowanje pśešaltowało',
 	'translate-magic-pagename' => 'Rozšyrjony pśełožk MediaWiki',
 	'translate-magic-help' => 'Móžoš aliasy specialnych bokow, magiske słowa a mjenja mjenjowych rumow pśełožyś.
 
