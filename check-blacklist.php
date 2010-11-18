@@ -200,6 +200,13 @@ array(
 	)
 ),
 array(
+	'group' => 'ext-flagpage',
+	'check' => 'links',
+	'message' => array(
+		'flagpage-templatelist', // Contains link in HTML comment
+	)
+),
+array(
 	'group' => 'ext-flaggedrevs-reviewedpages',
 	'check' => 'variable',
 	'message' => array(
