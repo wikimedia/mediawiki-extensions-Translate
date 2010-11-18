@@ -51,13 +51,12 @@ Api SVG Proxy
 Approved Revs
 aliasfile = ApprovedRevs/ApprovedRevs.alias.php
 
-Article Assessment Pilot
-
 Article Comments
 descmsg = article-comments-desc
 ignored = article-comments-prefilled-comment-text, article-comments-new-comment-heading
 ignored = article-comments-comment-contents
 
+Article Feedback
 
 Article To Category 2
 
