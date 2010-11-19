@@ -51,7 +51,6 @@ $wgExtensionAliasesFiles['Translate'] = $dir . 'Translate.alias.php';
 // Register initialization hook
 $wgExtensionFunctions[] = 'efTranslateInit';
 $wgHooks['CanonicalNamespaces'][] = 'efTranslateNamespaces';
-$wgHooks['ResourceLoaderRegisterModules'][] = 'efTranslateResources';
 
 // Register special pages into MediaWiki
 $wgSpecialPages['Translate'] = 'SpecialTranslate';
@@ -113,6 +112,18 @@ $wgHooks['ArticleSaveComplete'][] = 'TranslationMemoryUpdater::update';
 $wgAvailableRights[] = 'translate';
 $wgAvailableRights[] = 'translate-import';
 $wgAvailableRights[] = 'translate-manage';
+
+// Client-side resource modules
+$wgResourceModules['translate-css'] = array( 
+	'styles' => 'Translate.css',
+	'localBasePath' => dirname( __FILE__ ), 
+	'remoteExtPath' => 'Translate'
+);
+$wgResourceModules['translationdisplay'] = array(
+	'scripts' => 'js/translationdisplay.js',
+	'localBasePath' => dirname( __FILE__ ), 
+	'remoteExtPath' => 'Translate'
+);
 
 /** @endcond */
 
@@ -421,23 +432,6 @@ $wgTranslateYamlLibrary = 'spyc';
 
 
 # Startup code
-function efTranslateResources( &$resourceLoader ) {
-	global $wgExtensionAssetsPath;
-	$localPath = dirname( __FILE__ );
-	$remotePath = "$wgExtensionAssetsPath/Translate";
-	$resourceLoader->register(
-		array(
-			'translate-css' =>
-				new ResourceLoaderFileModule( array( 'styles' => 'Translate.css' ),
-					$localPath, $remotePath ),
-			'translationdisplay' =>
-				new ResourceLoaderFileModule( array( 'scripts' => 'js/translationdisplay.js' ),
-					$localPath, $remotePath ),
-		)
-);
-	return true;
-}
-
 function efTranslateNamespaces( &$list ) {
 	global $wgPageTranslationNamespace;
 	if ( !defined( 'NS_TRANSLATIONS' ) ) {
