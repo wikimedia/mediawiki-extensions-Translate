@@ -8760,6 +8760,9 @@ $messages['id'] = array(
 	'translate-edit' => 'sunting',
 	'translate-talk' => 'bicara',
 	'translate-history' => 'versi',
+	'translate-showsub' => 'Tampilkan {{PLURAL:$1|subkelompok|$1 subkelompok}}.',
+	'translate-grouplisting' => 'Berikut daftar dari semua kelompok yang dapat diterjemahkan.
+Klik nama kelompok pesan untuk melihat daftar pesan yang belum diterjemahkan.',
 	'translate-task-view' => 'Tampilkan semua pesan dari',
 	'translate-task-untranslated' => 'Tampilkan semua pesan yang belum diterjemahkan dari',
 	'translate-task-optional' => 'Tampilkan pesan opsional dari',
@@ -8809,6 +8812,10 @@ Jika grup berisi subset atau superset pesan dari grup lain, maka akan ditampilka
 	'translate-edit-tmsugs' => 'Saran dari memori terjemahan',
 	'translate-edit-tmmatch' => '$1% sesuai',
 	'translate-use-suggestion' => 'Masukkan saran ini ke wilayah penerjemahan. Tindakan ini akan menggantikan semua isi saat ini.',
+	'translate-edit-tab-list' => 'Daftar pesan',
+	'translate-edit-show-def' => 'Definisi pesan',
+	'translate-edit-show-trans' => 'Terjemahan',
+	'translate-edit-show-click' => 'Klik untuk beralih tata letak',
 	'translate-magic-pagename' => 'Perluasan terjemahan MediaWiki',
 	'translate-magic-help' => 'Anda dapat menerjemahkan alias untuk halaman istimewa, kata-kata magis, dan ruang-ruang nama.
 
@@ -8935,7 +8942,7 @@ Silakan meninjau pesan-pesan melalui [[Special:Translate|{{int:translate}}]].',
 Jika Anda menginginkan informasi lebih lanjut mengenai suatu bahasa, Anda dapat mengklik pranala menuju portal bahasa tersebut.
 Mengklik nama penerjemah akan membawa Anda ke halaman pengguna mereka.
 
-Jika sebuah bahasa belum terdaftar, Anda dapat mencari tahu cara memulai proyek lokalisasi untuk sebuah bahasa di "[[Translating:Process|Bahasa Baru]]".
+Jika sebuah bahasa belum terdaftar, Anda dapat mencari tahu cara memulai proyek pelokalan untuk sebuah bahasa di "[[Translating:Process|Bahasa Baru]]".
 
 Jika Anda menerjemahkan ke sebuah bahasa dan nama Anda tidak dimasukkan, silakan tambahkan nama Anda ke daftar penerjemah di [[:Category:Languages|portal]] bahasa tersebut.
 Lihat kotak menu untuk pranala ke portal bahasa preferensi Anda.',
@@ -9010,7 +9017,7 @@ Pastikan penyunting Anda tidak membuang ''field'' msgctxt.
 Detil: $1",
 	'translate-js-next' => 'Simpan dan buka selanjutnya',
 	'translate-js-nonext' => 'Ini adalah pesan terakhir di halaman ini.',
-	'translate-js-skip' => 'Lompat ke tahap selanjutnya',
+	'translate-js-skip' => 'Lewati ke selanjutnya',
 	'translate-js-save-failed' => 'Gagal menyimpan. Silakan laporkan kesalahan ini.',
 	'translate-js-history' => 'Terjemahan terdahulu',
 	'translate-gs-pos' => 'Tingkat.',

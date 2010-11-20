@@ -1021,6 +1021,7 @@ Create pro le Universitate de Bamberg. Sub licentia GPL 2.0 o plus recente. Disv
  * @author Rex
  */
 $messages['id'] = array(
+	'translategroupdescriptions-desc' => 'Deskripsi kelompok pesan untuk produk yang didukung oleh ekstensi [http://mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-nodesc' => 'Tidak ada deskripsi untuk kelompok pesan ini',
 	'translate-group-desc-mediawikicore' => 'Grup pesan ini berisikan pesan-pesan sistem yang digunakan dalam MediaWiki versi alfa terbaru ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'Grup ini berisikan [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 pesan sistem yang paling sering digunakan] di MediaWiki',
@@ -1032,15 +1033,22 @@ $messages['id'] = array(
 	'translate-group-desc-translate' => 'Grup pesan meta yang berisikan semua pesan untuk ekstensi MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-wikiaextensions' => 'Grup pesan meta yang berisikan semua pesan untuk ekstensi MediaWiki yang didukung yang digunakan oleh [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Grup pesan meta yang berisikan semua pesan sistem untuk ekstensi MediaWiki yang didukung yang digunakan oleh [http://wikimedia.org Wikimedia Foundation]',
+	'translate-group-desc-wikimediaextensions-main' => 'Kelompok pesan meta yang berisi semua pesan untuk ekstensi MediaWiki yang didukung yang perlu diterjemahkan untuk [http://meta.wikimedia.org/wiki/Language_committee Komite bahasa] Wikimedia',
 	'translate-group-desc-uniwiki' => 'Grup pesan meta yang berisikan semua pesan untuk ekstensi yang berkaitan dengan [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Grup pesan meta yang berisikan semua pesan untuk ekstensi yang berkaitan dengan [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Proyek Inisiatif Kebergunaan Wikipedia]',
+	'translate-group-desc-translatablepages' => 'Semua halaman yang dapat diterjemahkan',
 	'bw-desc-freecol' => 'Sebelum menerjemahkan FreeCol ke bahasa Anda, harap baca [[Translating:FreeCol]] terlebih dahulu. FreeCol menggunakan lisensi GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], sebuah web forum yang ditulis dalam PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] adalah sebuah sistem penelusuran bug berbasis web. Laporkan temuan-temuan masalah di [[Support]].',
+	'translate-group-desc-mantisbt-plugin-core' => 'Plugin inti untuk [[Translating:MantisBT|MantisBT]]',
+	'translate-group-desc-mediawiki-core-115' => 'Pesan untuk versi stabil 1.15 dari [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawiki-core-116' => 'Pesan untuk versi stabil 1.16 dari [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] adalah sebuah sistem informasi manajemen keuangan mikro',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' adalah sebuah pustaka python untuk membuat dokumen PDF dari artikel-artikel MediaWiki yang diparser menggunakan pustaka mwlib.
 
 Lihat pula [[mw:Extension:PDF Writer]] dan http://code.pediapress.com/wiki/wiki/mwlibrl untuk informasi lebih lanjut.",
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] adalah sebuah klien webmail yang ditulis menggunakan PHP. Laporkan temuan-temuan masalah di [[Support]].',
+	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] adalah pembaca Wikipedia luring',
 	'bw-desc-openlayers' => 'OpenLayers adalah sebuah generator peta dinamis bersumber terbuka. Laporkan temuan-temuan masalah di [[Support]].',
 	'bw-desc-openstreetmap' => 'Kumpulan pesan untuk semua pesan [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Kelompok pesan ini berisi pesan antarmuka untuk [[Translating:Open Street Map|Peta jalan terbuka]].',
@@ -1050,6 +1058,7 @@ Lihat pula [[mw:Extension:PDF Writer]] dan http://code.pediapress.com/wiki/wiki/
 * Gunakan [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] untuk uji coba Potlatch. Anda dapat mencoba disana  di daerah mana saja yang anda suka.',
 	'bw-desc-shapado' => 'Pesan grup untuk perangkat lunak bebas dan sumber terbuka Q&A [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] adalah suatu server mikroblog sumber terbuka',
+	'translate-group-desc-statusnet-plugin' => 'Pesan ini adalah bagian dari sebuah plugin untuk [[Translating:StatusNet|StatusNet]]',
 	'bw-desc-voctrain' => 'Pelatih kosakata berbasis-[http://omegawiki.org OmegaWiki]. Menggunakan sistem kartu flash untuk mempelajari kosakata dari suatu bahasa ke bahasa lain yang didukung oleh OmegaWiki.
 Diciptakan untuk University of Bamberg. Dilisensikan di bawah GPL 2.0 atau lebih tinggi. Dikembangkan oleh [[User:Kim Bruning|Kim Bruning]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] dapat dengan cepat menampilkan daftar penulis suatu halaman wiki Wikimedia.',
