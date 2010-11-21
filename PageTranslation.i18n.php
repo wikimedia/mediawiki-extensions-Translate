@@ -1200,7 +1200,8 @@ Zda se, až bok, kótaryž wopytujoš wobźěłaś, njewótpowědujo bokoju, kó
 Pśełožowańska pśedłoga: <pre>$1</pre>',
 	'pt-parse-close' => 'Asymetriska toflicka &lt;/translate>.
 Pśełožowańska pśedłoga: <pre>$1</pre>',
-	'pt-parse-nested' => '',
+	'pt-parse-nested' => 'Zakašćikowane wótrězki &lt;translate&gt; njejsu dowólone.
+Tekst toflicki: <pre>$1</pre>',
 	'pt-shake-multiple' => 'Někotare wótrězkowe marki za jaden wótrězk.
 Tekst wótrězka: <pre>$1</pre>',
 	'pt-shake-position' => 'Wótrězkowe marki na njewócakowanem městnje.
