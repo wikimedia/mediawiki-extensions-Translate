@@ -11436,7 +11436,7 @@ $messages['mhr'] = array(
  * @author Brest2008
  */
 $messages['mk'] = array(
-	'translate' => 'Преведи',
+	'translate' => 'Преведување',
 	'translate-desc' => '[[Special:Translate|Специјална страница]] за преведување на МедијаВики и други пораки',
 	'translate-edit' => 'уреди',
 	'translate-talk' => 'разговор',
