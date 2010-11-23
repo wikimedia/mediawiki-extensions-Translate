@@ -31,7 +31,6 @@ GROUPS:
   - ext-parserfunctions
   - ext-pdfhandler
   - ext-prefstats
-  - ext-prefswitch
   - ext-quiz
   - ext-renameuser
   - ext-securepoll
