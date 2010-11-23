@@ -744,6 +744,8 @@ Prije nego što označite ovu verziju za prevođenje, provjerite da su izmjene s
 	'tpt-list-nopages' => 'Nijedna stranica nije označena za prevođenje niti je spremna za označavanje.',
 	'tpt-old-pages' => 'Neke verzije {{PLURAL:$1|ove stranice|ovih stranica}} su označene za prevođenje.',
 	'tpt-new-pages' => '{{PLURAL:$1|Ova stranica sadrži|Ove stranice sadrže}} tekst sa oznakama prijevoda, ali nijedna od verzija {{PLURAL:$1|ove stranice|ovih stranica}} nije trenutno označena za prevođenje.',
+	'tpt-other-pages' => '{{PLURAL:$1|Stara verzija ove stranice je označena|Stare verzije ovih stranica su označene}} za prevođenje,
+ali {{PLURAL:$1|posljednja verzija ne može|posljednje verzije ne mogu}} biti {{PLURAL:$1|označena|označene}} za prevođenje.',
 	'tpt-rev-latest' => 'posljednja verzija',
 	'tpt-rev-old' => 'razlika od ranije označene verzije',
 	'tpt-rev-mark-new' => 'označi ovu verziju za prevođenje',
@@ -764,9 +766,23 @@ Stranica koju pokušavate uređivati ne odgovara nekoj od stranica koje su ozna�
 	'tpt-install' => 'Pokrenite php maintenance/update.php ili web install da biste omogućili osobinu prevođenja stranica.',
 	'tpt-render-summary' => 'Ažuriram na novu verziju izvorne stranice',
 	'tpt-download-page' => 'Izvezi stranicu sa prijevodima',
+	'pt-parse-open' => 'Neuravnotežena &lt;translate> oznaka.
+Šablon za prevođenje: <pre>$1</pre>',
+	'pt-parse-close' => 'Neuravnotežena &lt;/translate> oznaka.
+Šablon za prevođenje: <pre>$1</pre>',
+	'pt-parse-nested' => 'Uklopljene &lt;translate> sekcije nisu dozvoljene.
+Tekst oznake: <pre>$1</pre>',
+	'pt-shake-multiple' => 'Veći broj oznaka sekcija za istu sekciju.
+Tekst sekcije: <pre>$1</pre>',
+	'pt-shake-position' => 'Oznake sekcija na nepredviđenoj poziciji.
+Tekst sekcije: <pre>$1</pre>',
 	'pt-shake-empty' => 'Prazna sekcija za marker $1.',
+	'pt-log-header' => 'Zapisnik akcije vezanih za sistem prevođenja stranica',
+	'pt-log-name' => 'Zapisnik prijevoda stranice',
 	'pt-log-mark' => '{{GENDER:$2|označen|označena}} revizija $3 stranice "[[:$1]]" za prevod',
 	'pt-log-unmark' => '{{GENDER:$2|uklonio|uklonila}} stranicu "[[:$1]]" iz prevoda',
+	'pt-log-moveok' => '{{GENDER:$2|završeno}} preimenovanje stranice za prevod $1 na novo ime',
+	'pt-log-movenok' => '{{GENDER:$2|desio}} se problem pri premještanju [[:$1]] na [[:$3]]',
 	'pt-movepage-title' => 'Premještanje stranice za prevođenje $1',
 	'pt-movepage-block-base-exists' => 'Ciljna bazna stranica [[:$1]] postoji.',
 	'pt-movepage-block-base-invalid' => 'Ciljna bazna stranica nije valjan naslov.',

@@ -1659,6 +1659,7 @@ $1',
 
 /** Assamese (অসমীয়া)
  * @author Chaipau
+ * @author Gahori
  */
 $messages['as'] = array(
 	'translate' => 'ভাঙনি কৰক',
@@ -1666,31 +1667,34 @@ $messages['as'] = array(
 	'translate-edit' => 'সম্পাদনা',
 	'translate-talk' => 'আলোচনা',
 	'translate-history' => 'ইতিহাস',
+	'translate-showsub' => ' {{PLURAL:$1|subgroup|$1 subgroups}} দেখুৱাওক',
+	'translate-grouplisting' => 'এইখন ভাঙনি কৰিব পৰা সকলো গোটৰ তালিকা।
+ভাঙনি নোহোৱা বার্ত্তাবোৰ চাবলৈ বার্ত্তাগোটৰ নামটোত ক্লিক কৰক।',
 	'translate-task-view' => 'সকলো বাৰ্তা',
-	'translate-task-untranslated' => 'ভাঙনি নোহোৱা সকলো বাণী',
+	'translate-task-untranslated' => 'ভাঙনি নোহোৱা সকলো বার্ত্তা',
 	'translate-task-problematic' => 'আপদযোক্ত বাৰ্তা দেখোৱাওক',
 	'translate-task-review' => 'সালসলনিসমূহৰ পুনৰ্বিবেচনা',
 	'translate-task-reviewall' => 'সকলো ভাঙনি পুনৰ্বিবেচনা',
 	'translate-task-export' => 'সালসলনিসমূহ প্ৰেৰণ',
 	'translate-task-export-to-file' => 'ভহাঙনি ফাইললৈ প্ৰেৰণ',
-	'translate-page-task' => 'মোৰ বাঞ্চা',
+	'translate-page-task' => 'মই বিচাৰোঁ',
 	'translate-page-group' => 'গোট',
 	'translate-page-language' => 'ভাষা',
 	'translate-page-limit' => 'সীমা',
-	'translate-page-limit-option' => '$1 {{PLURAL:$1|বাৰ্তা|বাৰ্তা}} প্ৰতি পৃষ্ঠা',
-	'translate-submit' => 'অৰ্জন',
+	'translate-page-limit-option' => '$1টা {{PLURAL:$1|বাৰ্তা|বাৰ্তা}} প্ৰতি পৃষ্ঠা',
+	'translate-submit' => 'দেখুৱাওক',
 	'translate-page-navigation-legend' => 'দিকদৰ্শন',
-	'translate-page-showing' => '$3 বাৰ্তাৰ ভিতৰত $1-ৰ পৰা $2-লৈ দেখোৱাওক',
-	'translate-page-showing-all' => '$1 {{PLURAL:$1|বাৰ্তা|বাৰ্তা}} দেখোৱা হৈছে',
-	'translate-page-showing-none' => 'দেখোৱাবলৈ কোনো বৰ্তা নাই',
+	'translate-page-showing' => '$3টা বাৰ্তাৰ ভিতৰত $1-ৰ পৰা $2-লৈ দেখুৱাওক',
+	'translate-page-showing-all' => '$1টা {{PLURAL:$1|বাৰ্তা|বাৰ্তা}} দেখুউৱা হৈছে',
+	'translate-page-showing-none' => 'দেখুৱাবলৈ একো বাৰ্তা নাই',
 	'translate-next' => 'পৰৱৰ্তী পৃষ্ঠা',
 	'translate-prev' => 'পূৰ্ববৰ্তী পৃষ্ঠা',
-	'translate-page-description-legend' => 'এই গোটৰ বিষয়ে সবিশেষ',
+	'translate-page-description-legend' => 'এই গোটটোৰ বিষয়ে সবিশেষ',
 	'translate-page-edit' => 'সম্পাদনা',
 	'translate-edit-contribute' => 'বৰঙণি',
-	'translate-edit-information' => '"$2" বাৰ্তাৰ বিষয়ে সবিশেষ ($1)',
+	'translate-edit-information' => '"$2" বাৰ্তাটোৰৰ বিষয়ে সবিশেষ ($1)',
 	'translate-edit-in-other-languages' => 'আন ভাষাত বাৰ্তা "$1"',
-	'translate-magic-submit' => 'অৰ্জন',
+	'translate-magic-submit' => 'দেখুৱাওক',
 	'translate-magic-cm-original' => 'মৌলিক',
 	'translate-pref-editassistlang' => 'সহযোগী ভাষাসমূহ:',
 	'prefs-translate' => 'ভাঙনি বিকল্পসমূহ',
@@ -2525,6 +2529,7 @@ $messages['bg'] = array(
 
 /** Bengali (বাংলা)
  * @author Bellayet
+ * @author Gahori
  * @author Zaheen
  */
 $messages['bn'] = array(
@@ -2588,10 +2593,10 @@ $messages['bn'] = array(
 	'translate-translations-fieldset-title' => 'বার্তা',
 	'translate-translations-messagename' => 'নাম:',
 	'translate-translations-project' => 'প্রকল্প:',
-	'languagestats' => 'ভাষা পরিসংখ্যান',
+	'languagestats' => 'ভাষাৰ পৰিসংখ্যা',
 	'languagestats-recenttranslations' => 'সাম্প্রতিক অনুবাদ',
 	'translate-language-code' => 'ভাষার কোড',
-	'translate-language-code-field-name' => 'ভাষার কোড:',
+	'translate-language-code-field-name' => "ভাষাৰ ক'ডঃ",
 	'translate-language' => 'ভাষা',
 	'translate-total' => 'বার্তা',
 	'translate-untranslated' => 'অনুবাদ হয়নি',
