@@ -385,6 +385,10 @@ aliasfile = EditUser/EditUser.alias.php
 
 Email Address Image
 
+Email Page
+aliasfile = EmailPage/EmailPage.alias.php
+descmsg = ea-desc
+
 Embed Video
 
 Emergency DeSysop
