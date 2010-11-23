@@ -824,6 +824,9 @@ OpenID
 aliasfile = OpenID/OpenID.alias.php
 optional = prefs-openid, openid-urls-url
 
+Open Graph Meta
+magicfile = OpenGraphMeta/OpenGraphMeta.magic.php
+
 Open Search Xml
 
 Other Sites
