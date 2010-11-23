@@ -73,7 +73,6 @@ GROUPS:
   - ext-pdfhandler
   - ext-poem
   - ext-prefstats
-  - ext-prefswitch
   - ext-proofreadpage # Wikisource
   - ext-quiz
   - ext-readerfeedback-ratedpages
