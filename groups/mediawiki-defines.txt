@@ -323,6 +323,8 @@ Delete Queue
 aliasfile = DeleteQueue/DeleteQueue.alias.php
 optional = deletequeue-prod-reasons, deletequeue-speedy-reasons
 
+Description2
+
 Did You Mean
 
 Discussion Threading
