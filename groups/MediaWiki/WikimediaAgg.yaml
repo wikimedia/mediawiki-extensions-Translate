@@ -93,6 +93,7 @@ GROUPS:
   - ext-torblock
   - ext-trustedxff
   - ext-uploadblacklist
+  - ext-uploadwizard
   - ext-userdailycontribs
   - ext-variablepage
   - ext-vector
