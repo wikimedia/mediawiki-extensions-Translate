@@ -79,6 +79,7 @@ GROUPS:
   - ext-readerfeedback-ratinghistory
   - ext-readerfeedback-readerfeedback
   - ext-renameuser
+  - ext-rss # 2010-11-25: Wikimediafoundation.org
   - ext-scanset
   - ext-securepoll
   - ext-simpleantispam
