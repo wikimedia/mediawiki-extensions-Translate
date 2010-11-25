@@ -1129,6 +1129,8 @@ Smooth Gallery
 magicfile = SmoothGallery/SmoothGallery.i18n.magic.php
 ignored = smoothgallery-pagetext
 
+SNMP query
+
 Social Profile - System Gifts
 aliasfile = SocialProfile/SocialProfile.alias.php
 id = ext-socialprofile-systemgifts
