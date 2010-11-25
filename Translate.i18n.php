@@ -8934,13 +8934,13 @@ Daftar bahasa baku tergantung pada bahasa Anda.',
 	'translate-total' => 'Pesan',
 	'translate-total-tooltip' => 'Jumlah total pesan di grup pesan ini.',
 	'translate-untranslated' => 'Belum diterjemahkan',
-	'translate-untranslated-tooltip' => 'Jumlah pesan yang belum diterjemahkan di grup pesan ini.
-Ini meliputi pesan yang telah ditandai sebagai kadaluwarsa.',
+	'translate-untranslated-tooltip' => 'Jumlah pesan yang belum diterjemahkan dalam kelompok pesan ini.
+Ini meliputi pesan yang telah ditandai sebagai kedaluwarsa.',
 	'translate-percentage-complete' => 'Selesai',
-	'translate-percentage-complete-tooltip' => 'Persentase pesan di grup yang telah diterjemahkan dan tidak ditandai sebagai kadaluwarsa.',
+	'translate-percentage-complete-tooltip' => 'Persentase pesan di grup yang telah diterjemahkan dan tidak ditandai sebagai kedaluwarsa.',
 	'translate-percentage-fuzzy' => 'Usang',
-	'translate-percentage-fuzzy-tooltip' => 'Persentase pesan di grup yang telah diterjemahkan dan telah ditandai sebagai kadaluwarsa.
-Pesan ditandai kadaluwarsa karena pesan sumber berbahasa Inggris telah berubah, karena pemeriksaan otomatis untuk pesan gagal, atau karena seseorang menandainya sebagai kadaluwarsa.',
+	'translate-percentage-fuzzy-tooltip' => 'Persentase pesan di grup yang telah diterjemahkan dan telah ditandai sebagai kedaluwarsa.
+Pesan ditandai kedaluwarsa karena pesan sumber berbahasa Inggris telah berubah, karena pemeriksaan otomatis untuk pesan gagal, atau karena seseorang menandainya sebagai kedaluwarsa.',
 	'translate-nothing-to-do' => 'Semua terjemahan yang mungkin tampaknya telah dibuat.
 Silakan meninjau pesan-pesan melalui [[Special:Translate|{{int:translate}}]].',
 	'supportedlanguages' => 'Bahasa yang didukung',
@@ -11625,6 +11625,9 @@ $messages['mk'] = array(
 Пораките се означуваат како застарени кога ќе се измени изворната порака на англиски, или кога нема да успее автоматската проверка на пораката.',
 	'translate-nothing-to-do' => 'Извршени се сите можни преводи.
 Ви препорачуваме да ги прегледате пораките преку [[Special:Translate|{{int:translate}}]].',
+	'translate-languagestats-groups' => '# Додајте назнаки (ID) на групите пораки (по една во секој ред) за да ги ограничите групите пораки што
+ # ќе се прикажат на Special:LanguageStats. Непостоечките назнаки ќе
+ # бидат занемарени.',
 	'supportedlanguages' => 'Поддржани јазици',
 	'supportedlanguages-summary' => 'На оваа страница се наведени сите јазици што ги поддржува {{SITENAME}}, како и имињата на преведувачите кои работат на секој јазик.
 Ако сакате повеќе информации за некој јазик, можете да кликнете на врската до матичниот портал за тој јазик.

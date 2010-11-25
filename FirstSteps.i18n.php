@@ -690,7 +690,7 @@ Wenn du etwas tun möchtest, jedoch nicht weißt wie, zögere nicht auf der [[Su
 Du kannst auch Übersetzer deiner Sprache auf der [[Portal_talk:$1|Diskussionsseite]] [[Portal:$1|des entsprechenden Sprachportals]] kontaktieren.
 Das Portal verlinkt auf deine momentane [[Special:Preferences|Spracheinstellung]].
 Bitte ändere sie falls nötig.",
-	'translate-fs-email-text' => 'Bitte gebe deine E-Mail-Adresse in [[Special:Preferences|deinen Einstellungen]] ein und bestätige die an dich versandte E-Mail.
+	'translate-fs-email-text' => 'Bitte gib deine E-Mail-Adresse in [[Special:Preferences|deinen Einstellungen]] ein und bestätige die an dich versandte E-Mail.
 
 Dies gibt anderen die Möglichkeit, dich über E-Mail zu erreichen.
 Du erhältst außerdem bis zu einmal im Monat einen Newsletter.
@@ -1548,6 +1548,7 @@ Si tu non vole reciper bulletines de novas, tu pote disactivar los in le scheda 
 /** Indonesian (Bahasa Indonesia)
  * @author Farras
  * @author Irwangatot
+ * @author IvanLanin
  */
 $messages['id'] = array(
 	'firststeps' => 'Langkah pertama',
@@ -1629,7 +1630,7 @@ Sebagian besar proyek memiliki halaman deskripsi pendek dengan pranala "\'\'Terj
 Daftar semua grup pesan dengan [[Special:LanguageStats|status terjemahan saat ini untuk suatu bahasa]] juga tersedia.
 
 Jika Anda merasa bahwa Anda perlu untuk memahami lebih lanjut sebelum mulai menerjemahkan, Anda dapat membaca [[FAQ|Pertanyaan-pertanyaan yang Sering Diajukan]].
-Sayangnya dokumentasi kadang dapat kadaluwarsa.
+Sayangnya dokumentasi kadang dapat kedaluwarsa.
 Jika ada sesuatu yang Anda pikir Anda harus mampu lakukan, tetapi tidak dapat menemukan caranya, jangan ragu untuk menanyakannya di [[Support|halaman dukungan]].
 
 Anda juga dapat menghubungi sesama penerjemah bahasa yang sama di [[Portal_talk:$1|halaman pembicaraan]] [[Portal:$1|portal bahasa Anda]].
