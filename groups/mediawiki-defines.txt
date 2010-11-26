@@ -1073,6 +1073,10 @@ optional = smw_rss_description, smw_browse_more, specialpages-group-smw_group
 optional = smw_csv_link
 optional = smw_json_link
 
+Semantic Project Management
+file = SemanticProjectManagement/includes/SPM_Messages.php
+aliasfile = SemanticProjectManagement/includes/SPM_Alias.php
+
 Semantic Result Formats
 file = SemanticResultFormats/SRF_Messages.php
 magicfile = SemanticResultFormats/SRF_Magic.php
