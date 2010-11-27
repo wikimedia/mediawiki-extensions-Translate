@@ -3585,7 +3585,7 @@ $messages['pdc'] = array(
 	'tpt-rev-latest' => 'Letscht Version',
 	'tpt-translate-this' => 'des Blatt iwwersetze',
 	'translate-tag-translate-link-desc' => 'Des Blatt iwwersetze',
-	'tpt-languages-legend' => 'Annre Schprooche:',
+	'tpt-languages-legend' => 'Annere Schprooche:',
 	'pt-movepage-new' => 'Neier Naame:',
 	'pt-movepage-reason' => 'Grund:',
 );
