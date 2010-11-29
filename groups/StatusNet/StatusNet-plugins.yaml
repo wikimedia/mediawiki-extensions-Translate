@@ -283,6 +283,20 @@ MANGLER:
   prefix: emailauthentication-
 ---
 BASIC:
+  id: out-statusnet-plugin-emailsummary
+  label: StatusNet - EmailSummary
+  display: out/statusnet/plugin/emailsummary
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/EmailSummary/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/EmailSummary/locale/%CODE%/LC_MESSAGES/EmailSummary.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/EmailSummary/locale/EmailSummary.pot
+  targetPattern: statusnet/plugins/EmailSummary/locale/%CODE%/LC_MESSAGES/EmailSummary.po
+
+MANGLER:
+  prefix: emailsummary-
+---
+BASIC:
   id: out-statusnet-plugin-facebook
   label: StatusNet - Facebook
   display: out/statusnet/plugin/facebook
@@ -295,6 +309,20 @@ FILES:
 
 MANGLER:
   prefix: facebook-
+---
+BASIC:
+  id: out-statusnet-plugin-facebookbridge
+  label: StatusNet - FacebookBridge
+  display: out/statusnet/plugin/facebookbridge
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/FacebookBridge/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/FacebookBridge/locale/%CODE%/LC_MESSAGES/FacebookBridge.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/FacebookBridge/locale/FacebookBridge.pot
+  targetPattern: statusnet/plugins/FacebookBridge/locale/%CODE%/LC_MESSAGES/FacebookBridge.po
+
+MANGLER:
+  prefix: facebookbridge-
 ---
 BASIC:
   id: out-statusnet-plugin-firephp
@@ -479,6 +507,20 @@ MANGLER:
   prefix: lilurl-
 ---
 BASIC:
+  id: out-statusnet-plugin-linkpreview
+  label: StatusNet - LinkPreview
+  display: out/statusnet/plugin/linkpreview
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/LinkPreview/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/LinkPreview/locale/%CODE%/LC_MESSAGES/LinkPreview.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/LinkPreview/locale/LinkPreview.pot
+  targetPattern: statusnet/plugins/LinkPreview/locale/%CODE%/LC_MESSAGES/LinkPreview.po
+
+MANGLER:
+  prefix: linkpreview-
+---
+BASIC:
   id: out-statusnet-plugin-linkback
   label: StatusNet - Linkback
   display: out/statusnet/plugin/linkback
@@ -491,6 +533,20 @@ FILES:
 
 MANGLER:
   prefix: linkback-
+---
+BASIC:
+  id: out-statusnet-plugin-logfilter
+  label: StatusNet - LogFilter
+  display: out/statusnet/plugin/logfilter
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/LogFilter/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/LogFilter/locale/%CODE%/LC_MESSAGES/LogFilter.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/LogFilter/locale/LogFilter.pot
+  targetPattern: statusnet/plugins/LogFilter/locale/%CODE%/LC_MESSAGES/LogFilter.po
+
+MANGLER:
+  prefix: logfilter-
 ---
 BASIC:
   id: out-statusnet-plugin-mapstraction
@@ -589,6 +645,20 @@ FILES:
 
 MANGLER:
   prefix: modhelper-
+---
+BASIC:
+  id: out-statusnet-plugin-modplus
+  label: StatusNet - ModPlus
+  display: out/statusnet/plugin/modplus
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/ModPlus/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/ModPlus/locale/%CODE%/LC_MESSAGES/ModPlus.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/ModPlus/locale/ModPlus.pot
+  targetPattern: statusnet/plugins/ModPlus/locale/%CODE%/LC_MESSAGES/ModPlus.po
+
+MANGLER:
+  prefix: modplus-
 ---
 BASIC:
   id: out-statusnet-plugin-noticetitle
