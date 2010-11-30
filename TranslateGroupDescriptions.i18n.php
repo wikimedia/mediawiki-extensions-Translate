@@ -241,6 +241,7 @@ $messages['bg'] = array(
  * @author Y-M D
  */
 $messages['br'] = array(
+	'translategroupdescriptions-desc' => 'Deskrivadurioù ar strolladoù kemennadennoù evit ar produioù skoret gant an astenn [http://mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-nodesc' => "N'eus deskrivadur ebet da gaout evit ar strollad kemennadennoù-mañ",
 	'translate-group-desc-mediawikicore' => "Er strollad kemennadennoù-mañ emañ ar c'hemennadennoù implijet e stumm red MediaWiki ({{CURRENTVERSION}})",
 	'translate-group-desc-mediawikimostused' => 'Er strollad kemennadennoù-mañ emañ [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 kemennadenn implijetañ] MediaWiki',
@@ -252,6 +253,7 @@ $messages['br'] = array(
 	'translate-group-desc-translate' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astenn MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Treiñ]',
 	'translate-group-desc-wikiaextensions' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astennoù MediaWiki implijet gant [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astennoù MediaWiki implijet gant [http://wikimedia.org/ Wikimedia Foundation]',
+	'translate-group-desc-wikimediaextensions-main' => 'Stroll kemennadennoù Meta enno holl gemennadennoù an astennoù MediaWiki skoret a zle bezañ troet evit [http://meta.wikimedia.org/wiki/Language_committee Bodad yezh] wikimedia',
 	'translate-group-desc-uniwiki' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astennoù stag ouzh [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astennoù stag ouzh [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 	'translate-group-desc-translatablepages' => 'An holl bajennoù da dreiñ',

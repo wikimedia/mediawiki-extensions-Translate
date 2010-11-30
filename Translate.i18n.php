@@ -18361,6 +18361,7 @@ $messages['uk'] = array(
 	'translate-edit-tmmatch' => '$1% відповідність',
 	'translate-use-suggestion' => 'Вставити цю пропозицію в поле перекладу. Це замінить увесь поточний зміст.',
 	'translate-edit-tab-list' => 'Список повідомлень',
+	'translate-edit-show-trans' => 'Переклад',
 	'translate-magic-pagename' => 'Поглиблений переклад MediaWiki',
 	'translate-magic-help' => "Ви можете перекладати псевдоніми спеціальних сторінок, магічні слова, і простори назв.
 
