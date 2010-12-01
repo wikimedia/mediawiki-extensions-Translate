@@ -3096,6 +3096,16 @@ $messages['lg'] = array(
 	'tpt-languages-legend' => 'Nnimi ndala:',
 );
 
+/** Latgalian (Latgaļu)
+ * @author Dark Eagle
+ */
+$messages['ltg'] = array(
+	'tpt-diff-new' => 'Jauns teksts',
+	'tpt-languages-legend' => 'Cytys volūdys:',
+	'pt-movepage-new' => 'Jauna pasauka:',
+	'pt-movepage-reason' => 'Īmesle:',
+);
+
 /** Malagasy (Malagasy)
  * @author Jagwar
  */
@@ -4313,6 +4323,7 @@ $messages['sah'] = array(
 
 /** Sinhala (සිංහල)
  * @author චතුනි අලහප්පෙරුම
+ * @author තඹරු විජේසේකර
  * @author බිඟුවා
  */
 $messages['si'] = array(
@@ -4330,6 +4341,7 @@ $messages['si'] = array(
 	'pt-movepage-current' => 'වත්මන් නාමය:',
 	'pt-movepage-new' => 'නව නම:',
 	'pt-movepage-reason' => 'හේතුව:',
+	'pt-movepage-action-perform' => 'ගෙනයන්න',
 	'pt-movepage-action-other' => 'ඉලක්කය මාරු කරන්න',
 );
 

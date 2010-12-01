@@ -11323,6 +11323,39 @@ Pakeitimai nebus įrašyti iki Jūs nuspausite išsaugojimo mygtuką apačioje.'
 	'translate-stats-users' => 'Vertėjai',
 );
 
+/** Latgalian (Latgaļu)
+ * @author Dark Eagle
+ */
+$messages['ltg'] = array(
+	'translate' => 'Puorviersšona',
+	'translate-edit' => 'pataiseit',
+	'translate-talk' => 'sprīža',
+	'translate-history' => 'viesture',
+	'translate-page-task' => 'Es grybu',
+	'translate-page-group' => 'Grupa',
+	'translate-page-language' => 'Volūda',
+	'translate-page-limit' => 'Aprūbežuojums',
+	'translate-submit' => 'Paruodeit',
+	'translate-page-navigation-legend' => 'Navigaceja',
+	'translate-next' => 'Cyta puslopa',
+	'translate-page-edit' => 'pataiseit',
+	'translate-ext-url' => '<hr />Teiklavīta: $1',
+	'translate-edit-title' => 'Pataiseit "$1"',
+	'translate-magic-submit' => 'Paruodeit',
+	'translate-magic-cm-save' => 'Izglobuot',
+	'translate-stats-users' => 'Puorvārsuoji',
+	'translate-statsf-scale-months' => 'Mieneši',
+	'translate-statsf-scale-weeks' => 'Nedeļis',
+	'translate-statsf-scale-days' => 'Dīnys',
+	'translate-statsf-scale-hours' => 'Stuņdis',
+	'translate-translations-project' => 'Projekts:',
+	'translate-translations-history-short' => 'v',
+	'languagestats' => 'Volūdys statistika',
+	'translate-language' => 'Volūda',
+	'supportedlanguages-translators' => '{{PLURAL:$2|Puorvārsuojs|Puorvārsuoji}}: $1',
+	'translate-save' => 'Izglobuot ($1)',
+);
+
 /** Latvian (Latviešu)
  * @author Marozols
  * @author Papuass
