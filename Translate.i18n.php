@@ -11824,6 +11824,16 @@ $messages['mn'] = array(
 	'translate-language' => 'Хэл',
 );
 
+/** Moldavian (Молдовеняскэ)
+ * @author Node ue
+ */
+$messages['mo'] = array(
+	'translate-edit' => 'едитязэ',
+	'translate-talk' => 'Дискуций',
+	'translate-page-navigation-legend' => 'Навигаре',
+	'translate-page-edit' => 'едитязэ',
+);
+
 /** Marathi (मराठी)
  * @author Kaustubh
  * @author Mahitgar
