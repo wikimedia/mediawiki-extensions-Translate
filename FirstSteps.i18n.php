@@ -496,6 +496,14 @@ Također ćete dobijati novosti najviše jednom mjesečno.
 Ako ne želite primati novosti, možete se odjaviti na jezičku "{{int:prefs-personal}}" u vašim [[Special:Preferences|postavkama]].',
 );
 
+/** Catalan (Català)
+ * @author Toniher
+ */
+$messages['ca'] = array(
+	'translate-fs-settings-skip' => 'He acabat.
+Deixeu-me procedir.',
+);
+
 /** Czech (Česky)
  * @author Mormegil
  */
