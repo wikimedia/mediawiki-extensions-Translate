@@ -417,10 +417,6 @@ aliasfile = Farmer/Farmer.alias.php
 optional = farmercreateurl
 ignored = farmerwikiurl, farmerinterwikiurl
 
-FB Connect
-aliasfile = FBConnect/FBConnect.alias.php
-optional = fbconnect-usernameprefix
-
 FCK editor
 
 File Page Masking
