@@ -361,6 +361,9 @@ Double Wiki
 DPL Forum
 file = DPLforum/DPLforum.i18n.php
 
+DSMW
+aliasfile = DSMW/DSMW.alias.php
+
 Drafts
 aliasfile = Drafts/Drafts.alias.php
 ignored = accesskey-drafts-save
