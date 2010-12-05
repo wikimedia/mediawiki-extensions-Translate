@@ -1274,6 +1274,10 @@ ignored = todoTasksValidProjects
 
 Tooltip
 
+Toolserver Tools - Holeks Cite book template generator
+file = ToolserverTools/HolekCiteGen/allMessages.php 
+id = ext-ts-citegen
+
 Toolserver Tools - Kolossos Kml On Openlayers
 file = ToolserverTools/KolossosKmlOnOpenlayers/kml-on-ol-source.i18n.php
 id = ext-ts-kmlonol
