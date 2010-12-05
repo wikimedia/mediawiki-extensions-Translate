@@ -1244,6 +1244,7 @@ $messages['lb'] = array(
 	'translate-group-desc-mantisbt-plugin-core' => 'En Haapt-Plugin fir [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Message fir déi stabil Versioun 1.15 vu [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mediawiki-core-116' => 'Message fir déi stabil Versioun 1.16 vu [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] ass e Managementinformatiounssystem fir Mikrofinanzinstitutiounen',
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] ass e Webmail-Client deen a PHP geschriwen ass. Wann dir Problemer oder Froen domat hutt da gitt w.e.g. op [[Support]].',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] ass en offline Wikipedia-Liesprogramm',
 	'bw-desc-openstreetmap' => 'All Messagen a Relatioun mat [[Translating:OpenStreetMap|OpenStreetMap]]',
@@ -1870,7 +1871,7 @@ Oglejte si [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_p
 	'bw-desc-voctrain' => 'Trener besedišča temelječ na [http://omegawiki.org OmegaWiki]. Uporablja sistem kartic za učenje besedišča iz katerega koli jezika v kateri koli jezik, ki ga podpira Omegawiki.
 Ustvarjeno za Univerzo v Bambergu. Pod dovoljenjem GPL 2.0 ali poznejšim. Razvil [[User:Kim Bruning|Kim Bruning]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] je zmožen hitro najti avtorje strani na wikiju Wikimedije.',
-	'bw-desc-wikimediamobile' => 'Mobilno Wikimedia je mogoče najti na http://m.wikipedia.org, njen cilj pa je dostaviti Wikipedijo na podprte pametne telefone po celem svetu.',
+	'bw-desc-wikimediamobile' => '[[Translating:Wikimedia_mobile|Mobilna Wikimedia]] je mobilni vmesnik za Wikipedijo.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] je projekt za dostavljanje nepovezane, samo tekstovne različice Wikipedije na mobilne naprave.',
 );
 

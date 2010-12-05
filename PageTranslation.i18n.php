@@ -3225,6 +3225,24 @@ $messages['mk'] = array(
 	'pt-locked-page' => 'Оваа страница е заклучена бидејќи е во тек преместување на преводлива страница.',
 );
 
+/** Malayalam (മലയാളം)
+ * @author Praveenp
+ */
+$messages['ml'] = array(
+	'tpt-diff-old' => 'പഴയ എഴുത്ത്',
+	'tpt-diff-new' => 'പുതിയ എഴുത്ത്',
+	'tpt-edit-failed' => 'താൾ പുതുക്കാൻ കഴിഞ്ഞില്ല: $1',
+	'tpt-translate-this' => 'ഈ താൾ പരിഭാഷപ്പെടുത്തുക',
+	'translate-tag-translate-link-desc' => 'ഈ താൾ പരിഭാഷപ്പെടുത്തുക',
+	'tpt-languages-legend' => 'മറ്റു ഭാഷകൾ:',
+	'pt-movepage-block-subpage-exists' => 'ലക്ഷ്യം വെച്ച ഉപതാൾ [[:$2]] നിലവിലുണ്ട്.',
+	'pt-movepage-current' => 'ഇപ്പോഴത്തെ പേര്:',
+	'pt-movepage-new' => 'പുതിയ പേര്:',
+	'pt-movepage-reason' => 'കാരണം:',
+	'pt-movepage-subpages' => 'എല്ലാ ഉപതാളുകളും മാറ്റുക',
+	'pt-movepage-action-perform' => 'മാറ്റുക',
+);
+
 /** Mongolian (Монгол)
  * @author Chinneeb
  */

@@ -399,6 +399,11 @@ $3En em enskrivañ$4",
 Lezit ac'hanon da genderc'hel.",
 	'translate-fs-userpage-submit' => 'Krouiñ ma fajenn implijer',
 	'translate-fs-userpage-done' => "Dispar ! Ur bajenn implijer hoc'h eus bremañ.",
+	'translate-fs-email-text' => "Lakait ho chomlec'h postel en [[Special:Preferences|ho penndibaboù]] ha kadarnait dre ar postel a vo kaset deoc'h.
+
+Evel-se e c'hallo an implijerien all mont e darempred ganeoc'h dre bostel.
+Keleier a resevot ivez ur wezh ar miz.
+Mar ne fell ket deoc'h resev keleier e c'hallit disteuler anezho dre ivinell \"{{int:prefs-personal}}\" en ho [[Special:Preferences|penndibaboù]].",
 );
 
 /** Bosnian (Bosanski)
@@ -1911,6 +1916,19 @@ $3Регистрација$4',
 Ова им овозможува на корисниците да ве контактираат преку е-пошта.
 На таа адреса ќе добивате и билтени со новости, највеќе еднаш месечно.
 Ако не сакате да добиват билтени, можете да се отпишете преку јазичето „{{int:prefs-personal}}“ во вашите [[Special:Preferences|нагодувања]].',
+);
+
+/** Malayalam (മലയാളം)
+ * @author Praveenp
+ */
+$messages['ml'] = array(
+	'firststeps' => 'ആദ്യ ചുവടുകൾ',
+	'translate-fs-pagetitle-done' => '- ചെയ്തു കഴിഞ്ഞു!',
+	'translate-fs-signup-title' => 'അംഗത്വമെടുക്കുക',
+	'translate-fs-target-title' => 'പരിഭാഷപ്പെടുത്തൽ തുടങ്ങുക!',
+	'translate-fs-email-title' => 'ഇമെയിൽ വിലാസം സ്ഥിരീകരിക്കുക',
+	'translate-fs-userpage-submit' => 'എന്റെ ഉപയോക്തൃ താൾ സൃഷ്ടിക്കുക',
+	'translate-fs-userpage-done' => 'കൊള്ളാം! താങ്കൾക്കിപ്പോൾ ഒരു ഉപയോക്തൃതാൾ ഉണ്ട്.',
 );
 
 /** Dutch (Nederlands)
