@@ -1326,6 +1326,7 @@ $messages['mk'] = array(
 $messages['ml'] = array(
 	'translate-group-desc-mediawikicore' => 'ഇപ്പോഴത്തെ മീഡിയവിക്കി ആൽഫാ പതിപ്പ് ({{CURRENTVERSION}}) ഉപയോഗിക്കുന്ന എല്ലാ സന്ദേശങ്ങളുമുൾപ്പെടുന്ന ഗണം',
 	'translate-group-desc-wikimediaextensions' => '[http://wikimedia.org/ വിക്കിമീഡിയ ഫൗണ്ടേഷൻ] ഉപയോഗിക്കുന്ന മീഡിയവിക്കി അനുബന്ധങ്ങളിലെ എല്ലാ സന്ദേശങ്ങളുമുൾപ്പെടുന്ന ഗണം',
+	'translate-group-desc-translatablepages' => 'പരിഭാഷപ്പെടുത്താവുന്ന എല്ലാ താളുകളും',
 );
 
 /** Maltese (Malti)

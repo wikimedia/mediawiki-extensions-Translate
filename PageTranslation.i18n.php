@@ -3231,16 +3231,21 @@ $messages['mk'] = array(
 $messages['ml'] = array(
 	'tpt-diff-old' => 'പഴയ എഴുത്ത്',
 	'tpt-diff-new' => 'പുതിയ എഴുത്ത്',
+	'tpt-badtitle' => 'താളിനു നൽകിയ പേര് ($1) സാധുവായ തലക്കെട്ട് അല്ല',
+	'tpt-nosuchpage' => '$1 എന്ന താൾ നിലവിലില്ല.',
 	'tpt-edit-failed' => 'താൾ പുതുക്കാൻ കഴിഞ്ഞില്ല: $1',
+	'tpt-rev-latest' => 'ഏറ്റവും പുതിയ പതിപ്പ്',
 	'tpt-translate-this' => 'ഈ താൾ പരിഭാഷപ്പെടുത്തുക',
 	'translate-tag-translate-link-desc' => 'ഈ താൾ പരിഭാഷപ്പെടുത്തുക',
 	'tpt-languages-legend' => 'മറ്റു ഭാഷകൾ:',
 	'pt-movepage-block-subpage-exists' => 'ലക്ഷ്യം വെച്ച ഉപതാൾ [[:$2]] നിലവിലുണ്ട്.',
+	'pt-movepage-list-other' => 'മറ്റ് ഉപതാളുകൾ',
 	'pt-movepage-current' => 'ഇപ്പോഴത്തെ പേര്:',
 	'pt-movepage-new' => 'പുതിയ പേര്:',
 	'pt-movepage-reason' => 'കാരണം:',
 	'pt-movepage-subpages' => 'എല്ലാ ഉപതാളുകളും മാറ്റുക',
 	'pt-movepage-action-perform' => 'മാറ്റുക',
+	'pt-movepage-action-other' => 'ലക്ഷ്യം മാറ്റുക',
 );
 
 /** Mongolian (Монгол)
