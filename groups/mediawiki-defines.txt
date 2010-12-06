@@ -361,8 +361,9 @@ Double Wiki
 DPL Forum
 file = DPLforum/DPLforum.i18n.php
 
-DSMW
-aliasfile = DSMW/DSMW.alias.php
+# Disabled per Jeroen: Can you remove the DSMW extension from translatewiki? It's broken beyond hope, so no point in translators wasting their time on it. 2010-12-06
+# DSMW
+# aliasfile = DSMW/DSMW.alias.php
 
 Drafts
 aliasfile = Drafts/Drafts.alias.php
