@@ -141,7 +141,7 @@ class MessageGroupCache {
 		$newhash = md5( file_get_contents( $filename ) );
 		if ( $this->get( '#filehash' ) === $newhash ) {
 			// Update cache so that we don't need to compare hashes next time
-			$cache->create( $created );
+			$this->create( $created );
 			return true;
 		}
 
@@ -155,7 +155,7 @@ class MessageGroupCache {
 		// Content hash check
 		if ( $this->get( '#msghash' ) === md5( serialize( ksort( $messages ) ) ) ) {
 			// Update cache so that we don't need to do slow checks next time
-			$cache->create( $created );
+			$this->create( $created );
 			return true;
 		}
 	
