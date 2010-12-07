@@ -365,7 +365,6 @@ class TranslationHelpers {
 		$response = FormatJson::decode( $json );
 
 		if ( $json === false ) {
-				error_log(  __METHOD__ . ': Http::get failed' );
 				// Most likely a timeout or other general error
 				self::reportTranslationServiceFailure( $serviceName );
 
@@ -466,7 +465,9 @@ class TranslationHelpers {
 				return null;
 			}
 
-			error_log(  __METHOD__ . ': Http::get failed:' . $error );
+			if ( $error ) {
+				error_log(  __METHOD__ . ': Http::get failed:' . $error );
+			}
 			// Most likely a timeout or other general error
 			self::reportTranslationServiceFailure( $serviceName );
 			return null;
