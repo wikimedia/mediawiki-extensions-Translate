@@ -11876,6 +11876,7 @@ $messages['ml'] = array(
 	'translate-tag-page-desc' => '[[$2|$1]] എന്ന വിക്കി താളിന്റെ തർജ്ജമ.',
 	'translate-sidebar-alltrans' => 'ഇതര ഭാഷകളിൽ',
 	'translations' => 'എല്ലാ തർജ്ജമകളും',
+	'translate-translations-no-message' => '"$1" പരിഭാഷപ്പെടുത്താവുന്ന സന്ദേശമല്ല',
 	'translate-translations-none' => '"$1" എന്നതിന് പരിഭാഷയൊന്നും നിലവിലില്ല',
 	'translate-translations-fieldset-title' => 'സന്ദേശം',
 	'translate-translations-messagename' => 'പേര്‌:',
