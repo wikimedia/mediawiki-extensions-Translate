@@ -1215,6 +1215,9 @@ String Functions
 Sub Page List 3
 descmsg = spl3-desc
 
+Sudo
+aliasfile = Sudo/Sudo.alias.php
+
 SVG Zoom
 ignored = svgzoom
 
