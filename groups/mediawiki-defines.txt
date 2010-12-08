@@ -938,7 +938,7 @@ Purge Cache
 aliasfile = PurgeCache/PurgeCache.alias.php
 
 Push
-file = Push/Push.i18n.php
+aliasfile = Push/Push.alias.php
 
 QPoll
 file = QPoll/qp_i18n.php
