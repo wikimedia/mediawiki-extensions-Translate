@@ -550,9 +550,6 @@ function efTranslateInit() {
 		// Our tables are needed for parser tests
 		$wgHooks['ParserTestTables'][] = 'PageTranslationHooks::parserTestTables';
 
-		// The unuseful export all translations item in the toolbox
-		$wgHooks['SkinTemplateToolboxEnd'][] = 'PageTranslationHooks::exportToolbox';
-
 		// Prevent section pages appearing in categories
 		$wgHooks['LinksUpdate'][] = 'PageTranslationHooks::preventCategorization';
 

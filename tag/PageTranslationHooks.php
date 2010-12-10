@@ -485,42 +485,6 @@ FOO;
 		return true;
 	}
 
-	public static function exportToolbox( $skin ) {
-		global $wgOut, $wgRequest;
-
-		if ( $wgRequest->getVal( 'action', 'view' ) !== 'view' || $wgRequest->getVal( 'oldid' ) ) {
-			return true;
-		}
-
-		$title = $wgOut->getTitle();
-
-		// Check if this is a source page or a translation page
-		$page = TranslatablePage::newFromTitle( $title );
-		if ( $page->getMarkedTag() === false ) {
-			$page = TranslatablePage::isTranslationPage( $title );
-		}
-
-		if ( $page === false || $page->getMarkedTag() === false ) {
-			return true;
-		}
-
-		$export = array( $page->getTitle()->getPrefixedText() ); // Source page
-		$titles = $page->getTranslationPages();
-
-		foreach ( $titles as $title ) {
-			$export[] = $title->getPrefixedText();
-		}
-
-		$params = array( 'pages' => implode( "\n", $export ) );
-
-		$href = SpecialPage::getTitleFor( 'Export' )->getLocalUrl( $params );
-		$linkText = wfMsgHtml( 'tpt-download-page' );
-
-		print "<li id=\"t-export-translationpages\"><a href=\"$href\" rel=\"nofollow\">$linkText</a></li>";
-
-		return true;
-	}
-
 	public static function preventCategorization( $updater ) {
 		global $wgTranslateDocumentationLanguageCode;
 		$title = $updater->getTitle();
