@@ -36,6 +36,8 @@ class PageTranslationHooks {
 			$parser->getOptions()->setTargetLanguage( Language::factory( $code ) );
 			$name = $page->getPageDisplayTitle( $code );
 			if ( $name ) {
+				global $wgMessageCache;
+				$name = $wgMessageCache->transform( $name, false, Language::factory( $code ) );
 				$parser->getOutput()->setDisplayTitle( $name );
 			}
 		}
