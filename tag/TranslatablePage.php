@@ -448,27 +448,34 @@ class TranslatablePage {
 
 	// Returns false if not found
 	protected function getTag( $tag, $dbt = DB_SLAVE ) {
-		$db = wfGetDB( $dbt );
-
-		$id = $this->getTagId( $tag );
 
 		if ( !$this->getTitle()->exists() ) {
 			return false;
 		}
 
+		static $cache = array();
+		$aid = $this->getTitle()->getArticleId();
+
+		if ( isset( $cache[$aid][$tag] ) ) {
+			return $cache[$aid][$tag];
+		}
+
+		$db = wfGetDB( $dbt );
+		$id = $this->getTagId( $tag );
+
 		$fields = 'rt_revision';
 		$conds = array(
-			'rt_page' => $this->getTitle()->getArticleId(),
+			'rt_page' => $aid,
 			'rt_type' => $id,
 		);
 
 		$options = array( 'ORDER BY' => 'rt_revision DESC' );
 
-		$tag = $db->selectField( 'revtag', $fields, $conds, __METHOD__, $options );
-		if ( $tag !== false ) {
-			return intval( $tag );
+		$tagRevision = $db->selectField( 'revtag', $fields, $conds, __METHOD__, $options );
+		if ( $tagRevision !== false ) {
+			return $cache[$aid][$tag] = intval( $tagRevision );
 		} else {
-			return false;
+			return $cache[$aid][$tag] = false;
 		}
 	}
 
@@ -634,7 +641,7 @@ class TranslatablePage {
 		return $db->selectField( 'revtag', $fields, $conds, __METHOD__, $options );
 	}
 
-	protected function getTagId( $tag ) {
+	protected static function getTagId( $tag ) {
 		$validTags = array( 'tp:mark', 'tp:tag', 'tp:transver' );
 		if ( !in_array( $tag, $validTags ) ) {
 			throw new MWException( "Invalid tag $tag requested" );
@@ -698,6 +705,45 @@ class TranslatablePage {
 
 	protected static function changeTitleText( Title $title, $text ) {
 		return Title::makeTitleSafe( $title->getNamespace(), $text );
+	}
+
+	public static function isSourcePage( Title $title ) {
+		static $cache = null;
+
+		$cacheObj = wfGetCache( CACHE_ANYTHING );
+		$cacheKey = wfMemcKey( 'pagetranslation', 'sourcepages' );
+
+		if ( $cache === null ) {
+			$cache = $cacheObj->get( $cacheKey );
+		}
+		if ( !is_array( $cache ) ) {
+			$cache = self::getTranslatablePages();
+			$cacheObj->set( $cacheKey, $cache, 60 * 5 );
+		}
+
+		return in_array( $title->getArticleId(), $cache );
+	}
+
+	/// List of page ids where the latest revision is either tagged or marked
+	public static function getTranslatablePages() {
+		$dbr = wfGetDB( DB_SLAVE );
+
+		$tables = array( 'revtag', 'page' );
+		$fields = 'rt_page';
+		$conds = array(
+			'rt_page = page_id',
+			'rt_revision = page_latest',
+			'rt_type' => array( self::getTagId( 'tp:mark' ), self::getTagId( 'tp:tag' ) ),
+		);
+		$options = array( 'GROUP BY' => 'rt_page' );
+
+		$res = $dbr->select( $tables, $fields, $conds, __METHOD__, $options );
+		$results = array(); 
+		foreach ( $res as $row ) {
+			$results[] = $row->rt_page;
+		}
+
+		return $results;
 	}
 }
 

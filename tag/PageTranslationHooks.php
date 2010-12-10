@@ -373,19 +373,20 @@ FOO;
 	}
 
 	public static function header( Title $title ) {
-		$page = TranslatablePage::newFromTitle( $title );
-		$marked = $page->getMarkedTag();
-		$ready = $page->getReadyTag();
-
-		if ( $marked || $ready ) {
-			self::sourcePageHeader( $page, $marked, $ready );
-		} else  {
+		if ( TranslatablePage::isSourcePage( $title ) ) {
+			self::sourcePageHeader( $title );
+		} elseif ( TranslatablePage::isTranslationPage( $title ) )  {
 			self::translationPageHeader( $title );
 		}
 	}
 
-	protected static function sourcePageHeader( TranslatablePage $page, $marked, $ready ) {
+	protected static function sourcePageHeader( Title $title ) {
 		global $wgUser, $wgLang;
+
+		$page = TranslatablePage::newFromTitle( $title );
+
+		$marked = $page->getMarkedTag();
+		$ready = $page->getReadyTag();
 
 		$title = $page->getTitle();
 		$sk = $wgUser->getSkin();
