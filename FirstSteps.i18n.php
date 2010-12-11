@@ -399,6 +399,15 @@ $3En em enskrivañ$4",
 Lezit ac'hanon da genderc'hel.",
 	'translate-fs-userpage-submit' => 'Krouiñ ma fajenn implijer',
 	'translate-fs-userpage-done' => "Dispar ! Ur bajenn implijer hoc'h eus bremañ.",
+	'translate-fs-permissions-text' => "Ret eo deoc'h goulenn bezañ enskrivet d'ar strollad troerien.
+
+Da c'hortoz ma vo kempennet ar c'hod ganeomp, kit da welet war [[Project:Translator]] ha heuilhit an erbedadennoù.
+Goude-se, distroit d'ar bajenn-mañ.
+
+Pa vo bet lakaet ho koulenn ez aio unan eus hor skipailh a-youl vat da wiriañ anezhañ hag e vo aprouet kerkent ha ma vo tu.
+Un tamm pasianted mar plij.
+
+<del>Gwiriit mat eo leuniet prop ar goulenn-mañ ha klikit war ar bouton goulenn.</del>",
 	'translate-fs-email-text' => "Lakait ho chomlec'h postel en [[Special:Preferences|ho penndibaboù]] ha kadarnait dre ar postel a vo kaset deoc'h.
 
 Evel-se e c'hallo an implijerien all mont e darempred ganeoc'h dre bostel.
