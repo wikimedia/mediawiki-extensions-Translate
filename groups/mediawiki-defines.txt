@@ -1221,6 +1221,8 @@ descmsg = spl3-desc
 Sudo
 aliasfile = Sudo/Sudo.alias.php
 
+SVG Edit
+
 SVG Zoom
 ignored = svgzoom
 
