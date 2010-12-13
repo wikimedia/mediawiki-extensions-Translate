@@ -113,6 +113,8 @@ ignored = cb_lbracket_op, cb_rbracket_op, cb_ge_op, cb_le_op, cb_eq_op
 Category Intersection
 aliasfile = CategoryIntersection/CategoryIntersection.alias.php
 
+Category Members On Sidebar
+
 Category Multisort
 
 Category Multisort Chinese
