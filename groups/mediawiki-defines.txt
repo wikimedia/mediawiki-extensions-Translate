@@ -665,6 +665,8 @@ descmsg = lqt-desc
 optional = lqt_rc_ellipsis
 ignored = lqt_header_warning_before_big
 
+LiveTranslate
+
 Livelets
 
 Localisation Update
