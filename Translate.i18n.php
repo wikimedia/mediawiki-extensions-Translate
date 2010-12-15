@@ -19003,6 +19003,9 @@ Nhấn chuột vào tên nhóm thông điệp để xem một danh sách thông 
 	'translate-edit-tmmatch' => 'trùng $1%',
 	'translate-use-suggestion' => 'Thay thế nội dung hộp dịch với đề nghị này.',
 	'translate-edit-tab-list' => 'Danh sách thông điệp',
+	'translate-edit-show-def' => 'Định nghĩa thông điệp',
+	'translate-edit-show-trans' => 'Bản dịch',
+	'translate-edit-show-click' => 'Thay đổi cách bố trí',
 	'translate-magic-pagename' => 'Bản dịch MediaWiki mở rộng',
 	'translate-magic-help' => 'Bạn có thể dịch bí danh của các trang đặc biệt, câu thần chú và tên của không gian tên.
 
