@@ -43,9 +43,6 @@ Category Select
 
 Cloak Check
 
-Comments Forum
-file = CommentsForum/Forum.i18n.php
-
 Community Messages
 
 Content Feeds
