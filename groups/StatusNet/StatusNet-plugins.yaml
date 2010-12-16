@@ -101,6 +101,20 @@ MANGLER:
   prefix: autocomplete-
 ---
 BASIC:
+  id: out-statusnet-plugin-awesomeness
+  label: StatusNet - Awesomeness
+  display: out/statusnet/plugin/awesomeness
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/Awesomeness/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/Awesomeness/locale/%CODE%/LC_MESSAGES/Awesomeness.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/Awesomeness/locale/Awesomeness.pot
+  targetPattern: statusnet/plugins/Awesomeness/locale/%CODE%/LC_MESSAGES/Awesomeness.po
+
+MANGLER:
+  prefix: awesomeness-
+---
+BASIC:
   id: out-statusnet-plugin-bitlyurl
   label: StatusNet - BitlyUrl
   display: out/statusnet/plugin/bitlyurl
@@ -449,6 +463,20 @@ FILES:
 
 MANGLER:
   prefix: imap-
+---
+BASIC:
+  id: out-statusnet-plugin-inprocesscache
+  label: StatusNet - InProcessCache
+  display: out/statusnet/plugin/inprocesscache
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/InProcessCache/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/InProcessCache/locale/%CODE%/LC_MESSAGES/InProcessCache.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/InProcessCache/locale/InProcessCache.pot
+  targetPattern: statusnet/plugins/InProcessCache/locale/%CODE%/LC_MESSAGES/InProcessCache.po
+
+MANGLER:
+  prefix: inprocesscache-
 ---
 BASIC:
   id: out-statusnet-plugin-infinitescroll
