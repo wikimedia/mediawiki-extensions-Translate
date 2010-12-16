@@ -889,7 +889,8 @@ Poem
 Pool Counter
 file = PoolCounter/PoolCounterClient.i18n.php
 
-Post comment
+# Insufficient escaping and other issues
+# Post comment
 
 POV Watch
 file = PovWatch/PovWatch.i18n.php
