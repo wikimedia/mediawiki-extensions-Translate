@@ -9000,7 +9000,7 @@ Subhalaman "penerjemah" harus berisi templat [[:{{ns:template}}:User|User]], men
 Gunakan pranala berikut untuk kembali ke tampilan rincian kelompok.',
 	'translate-manage-inconsistent' => 'Ketidakkonsistenan terdeteksi pada permintaan.
 Periksa ulang perubahan yang dilakukan dan cobalah lagi.
-Detil: $1.',
+Detail: $1.',
 	'translate-manage-toolong' => 'Waktu proses maksimum {{PLURAL:$1||}}$1 detik telah terlampaui.
 Mohon kirimkan kembali formulir untuk melanjutkan proses.',
 	'translate-manage-import-ok' => 'Impor versi baru dari halaman $1.',
@@ -9038,7 +9038,7 @@ $1',
 Tidak dapat menentukan grup dan bahasa dari kepala berkas.',
 	'translate-import-err-warnings' => "Berkas ini tidak diciptakan dengan benar.
 Pastikan penyunting Anda tidak membuang ''field'' msgctxt.
-Detil: $1",
+Detail: $1",
 	'translate-js-next' => 'Simpan dan buka selanjutnya',
 	'translate-js-nonext' => 'Ini adalah pesan terakhir di halaman ini.',
 	'translate-js-skip' => 'Lewati ke selanjutnya',
