@@ -631,10 +631,10 @@ $messages['et'] = array(
  */
 $messages['fi'] = array(
 	'translategroupdescriptions-desc' => 'Viestiryhmäkuvaukset tuotteille, joita [http://mediawiki.org/wiki/Extension:Translate Translate]-laajennos tukee',
-	'translate-group-desc-nodesc' => 'Kuvausta ei ole saatavilla tälle viestiryhmälle',
+	'translate-group-desc-nodesc' => 'Viestiryhmällä ei ole kuvausta',
 	'translate-group-desc-mediawikicore' => 'Tämä viestiryhmä sisältää viestit, joita käytetään nykyisessä MediaWikin alfaversiossa ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'Tämä viestiryhmä sisältää [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki MediaWikin 500 useimmin käytettyä viestiä]',
-	'translate-group-desc-mediawikiextensions' => 'Meta-viestiryhmä sisältää kaikki viestit tuetuille [[Translating:MediaWiki|MediaWiki]]-laajennoksille',
+	'translate-group-desc-mediawikiextensions' => 'Kokoelmaviestiryhmä, joka sisältää kaikkien [[Translating:MediaWiki|MediaWiki]]-laajennosten viestit.',
 	'translate-group-desc-collection' => 'Tämä metaviestiryhmä sisältää kaikki viestit, joita käytetään MediaWikin laajennuksessa [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
 	'translate-group-desc-flaggedrevs' => 'Tämä metaviestiryhmä sisältää kaikki viestit MediaWikin [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs-laajennusta] varten',
 	'translate-group-desc-readerfeedback' => 'Tämä metaviestiryhmä sisältää kaikki MediaWikin [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback-laajennuksen] viestit',
