@@ -5724,7 +5724,7 @@ $messages['fa'] = array(
  */
 $messages['fi'] = array(
 	'translate' => 'Käännä',
-	'translate-desc' => '[[Special:Translate|Toimintosivu]], jolla voi kääntää MediaWikiä ja muutakin',
+	'translate-desc' => '[[Special:Translate|Toimintosivu]], jolla voi kääntää MediaWikiä ja muutakin.',
 	'translate-edit' => 'muokkaa',
 	'translate-talk' => 'keskustelu',
 	'translate-history' => 'historia',

@@ -1507,6 +1507,15 @@ Izena: $1',
 	'pt-movepage-subpages' => 'Azpiorrialde guztiak mugitu',
 );
 
+/** Persian (فارسی)
+ * @author Mjbmr
+ */
+$messages['fa'] = array(
+	'pt-log-name' => 'سیاههٔ ترجمه صفحه',
+	'pt-log-mark' => 'نسخه $3 از صفحهٔ "[[:$1]]" برای ترجمه {{GENDER:$2|علامت زده شد}}',
+	'pt-log-unmark' => 'صفحهٔ "[[:$1]]" از ترجمه {{GENDER:$2|حذف شد}}',
+);
+
 /** Finnish (Suomi)
  * @author Cimon Avaro
  * @author Crt
