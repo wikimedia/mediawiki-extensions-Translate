@@ -15717,6 +15717,7 @@ $messages['sah'] = array(
  * @author Singhalawap
  * @author චතුනි අලහප්පෙරුම
  * @author බිඟුවා
+ * @author ශ්වෙත
  */
 $messages['si'] = array(
 	'translate' => 'පරිවර්තනය කරන්න',
@@ -15724,10 +15725,12 @@ $messages['si'] = array(
 	'translate-edit' => 'සංස්කරණය',
 	'translate-talk' => 'සාකච්ඡාව',
 	'translate-history' => 'ඉතිහාසය',
-	'translate-showsub' => '{{PLURAL:$1|subgroup|$1 subgroups}} පෙන්වන්න.',
-	'translate-task-view' => 'පහත කාණඩයෙහි සියළු පණිවුඩ නැරඹීමටය',
-	'translate-task-untranslated' => 'පහත කාණ්ඩයෙහි පරිවර්තනය නොකෙරුනු සියළු පණිවුඩ නැරඹීමටය',
-	'translate-task-optional' => 'පහත කාණ්ඩයෙහි වෛකල්පික පණිවුඩ නැරඹීමටය',
+	'translate-showsub' => '{{PLURAL:$1|උපකණ්ඩායම|උපකණ්ඩායම් $1 ක්}} පෙන්වන්න.',
+	'translate-grouplisting' => 'මේ සමස්ත පරිවර්තනය කල හැකි කාණ්ඩ ලැයිස්තුවයි.
+පරිවර්තනය නොවුනු පණිවුඩ ලැයිස්තුවක් නැරඹීම සඳහා පණිවුඩ කාණ්ඩ නාමය ක්ලික් කරන්න.',
+	'translate-task-view' => 'මෙතැන් සිට සියළු පණිවුඩ නරඹන්න',
+	'translate-task-untranslated' => 'මෙතැන් සිට පරිවර්තනය නොකෙරුනු සියළු පණිවුඩ නරඹන්න',
+	'translate-task-optional' => 'මෙතැන් සිට වෛකල්පික පණිවුඩ නරඹන්න',
 	'translate-task-untranslatedoptional' => 'පහත කාණ්ඩයෙහි පරිවර්තනය නොනෙරුනු වෛකල්පික පණිවුඩ නැරඹීමටය',
 	'translate-task-problematic' => 'ගැටළු සහිත පණිවුඩ නැරඹීමටය',
 	'translate-task-review' => 'පහත කාණඩයෙහි වූ වෙනස්කම් පෙරදසුන් කරන්න',
@@ -18249,8 +18252,10 @@ $messages['tt-cyrl'] = array(
 	'translate-page-limit-option' => 'Биткә $1 {{PLURAL:$1|мәкалә}} күрсәтү',
 	'translate-submit' => 'Чыгарырга',
 	'translate-page-navigation-legend' => 'Күчешлек',
+	'translate-page-showing' => '$3 мәкалә арасыннан $1 алып $2 кадәр күрсәтелгән.',
 	'translate-next' => 'киләсе бит',
 	'translate-prev' => 'алдагы бит',
+	'translate-page-description-legend' => 'Төркем турында мәгълүмат',
 	'translate-edit-definition' => 'Мәкаләнең тасвирламасы',
 	'translate-edit-contribute' => 'үзгәртү',
 	'translate-edit-information' => '«$2» мәкаләсе турында мәгълүмат ($1)',
@@ -18312,6 +18317,7 @@ $messages['tt-cyrl'] = array(
 	'translate-js-next' => 'Сакларга һәм яңасын ачарга',
 	'translate-js-nonext' => 'Әлеге биттәге бу соңгы мәкалә иде.',
 	'translate-js-skip' => 'Киләсе биткә күчү',
+	'translate-js-history' => 'Тәрҗемә тарихы',
 );
 
 /** Uighur (ئۇيغۇرچە / Uyghurche‎) */
