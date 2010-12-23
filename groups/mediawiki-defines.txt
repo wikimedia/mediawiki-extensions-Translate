@@ -556,8 +556,7 @@ descmsg = gm-desc
 var = wgGoogleMapsMessages
 
 Google News Sitemap
-descmsg = gnsm-desc
-ignored = gnsm_categorymap
+ignored = googlenewssitemap_categorymap
 aliasfile = GoogleNewsSitemap/GoogleNewsSitemap.alias.php
 
 Go To Category
