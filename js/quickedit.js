@@ -66,7 +66,7 @@ function trlOpenJsEdit( page, group ) {
 	dialog.load(url, false, function() {
 		var form = jQuery("#"+ id + " form");
 
-		form.hide().show( "clip" );
+		//form.hide().show( "clip" );
 
 		form.find( ".mw-translate-next" ).click( function() {
 			trlLoadNext( page );
