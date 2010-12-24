@@ -64,9 +64,12 @@ function trlOpenJsEdit( page, group ) {
 	dialog.html( jQuery("<div/>").attr("class", "mw-ajax-dialog").html( spinner ) );
 
 	dialog.load(url, false, function() {
-		var form = jQuery("#"+ id + " form");
+		var form = jQuery("#" + id + " form");
 
 		//form.hide().show( "clip" );
+
+		// Enable the collapsible element
+		$( '.mw-identical-title' ).makeCollapsible();
 
 		form.find( ".mw-translate-next" ).click( function() {
 			trlLoadNext( page );
