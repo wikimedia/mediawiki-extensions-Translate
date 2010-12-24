@@ -48,7 +48,9 @@ function trlVpWidth() {
 
 function addAccessKeys(dialog) {
 	jQuery( '[accesskey=a], [accesskey=s], [accesskey=d], [accesskey=h]' ).each(
-		function(i) { jQuery(this).removeAttr( 'accesskey' ); }
+		function( i ) {
+			jQuery(this).removeAttr( 'accesskey' );
+		}
 	);
 	dialog.find( '.mw-translate-save' ).attr( 'accesskey', 'a' ).attr( 'title', '[' + tooltipAccessKeyPrefix + 'a]' );
 	dialog.find( '.mw-translate-next' ).attr( 'accesskey', 's' ).attr( 'title', '[' + tooltipAccessKeyPrefix + 's]' );
@@ -106,12 +108,14 @@ function trlOpenJsEdit( page, group ) {
 			var checker = new MessageCheckUpdater( function() {
 				var url = wgScript + '?title=Special:Translate/editpage&suggestions=checks&page=$1&loadgroup=$2';
 				url = url.replace( '$1', encodeURIComponent( page ) ).replace( '$2', encodeURIComponent( group ) );
-				jQuery.post( url, { translation: textarea.val() } , function( mydata ) {
+				jQuery.post( url, { translation: textarea.val() }, function( mydata ) {
 					form.find( '.mw-translate-messagechecks' ).replaceWith( mydata );
 				} );
 			} );
 
-			textarea.keyup( function() { checker.setup(); } );
+			textarea.keyup( function() {
+				checker.setup();
+			} );
 		}
 		
 		addAccessKeys( form );
