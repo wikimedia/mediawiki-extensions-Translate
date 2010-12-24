@@ -66,7 +66,7 @@ function trlOpenJsEdit( page, group ) {
 	dialog.load(url, false, function() {
 		var form = jQuery("#" + id + " form");
 
-		//form.hide().show( "clip" );
+		form.hide().slideDown();
 
 		// Enable the collapsible element
 		$( '.mw-identical-title' ).makeCollapsible();
