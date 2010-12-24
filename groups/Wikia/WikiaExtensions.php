@@ -15,6 +15,7 @@ class PremadeWikiaExtensionGroups extends PremadeMediawikiExtensionGroups {
 	protected $useConfigure = false;
 	protected $idPrefix = 'wikia-';
 	protected $path = null;
+	protected $namespaces = array( NS_WIKIA, NS_WIKIA_TALK );
 
 	public function __construct() {
 		global $wgTranslateGroupRoot;

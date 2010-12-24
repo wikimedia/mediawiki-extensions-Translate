@@ -16,6 +16,7 @@ class PremadeMediawikiExtensionGroups {
 	protected $definitionFile = null;
 	protected $useConfigure = true;
 	protected $idPrefix = 'ext-';
+	protected $namespaces = array( NS_MEDIAWIKI, NS_MEDIAWIKI_TALK );
 
 	public function __construct() {
 		global $wgTranslateExtensionDirectory;
@@ -190,6 +191,7 @@ class PremadeMediawikiExtensionGroups {
 		$group = ExtensionMessageGroup::factory( $info['name'], $id );
 		$group->setMessageFile( $info['file'] );
 		$group->setPath( $this->path );
+		$group->namespaces = $this->namespaces;
 
 		if ( isset( $info['prefix'] ) ) {
 			$mangler = new StringMatcher( $info['prefix'], $info['mangle'] );
