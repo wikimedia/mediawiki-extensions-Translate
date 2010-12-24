@@ -22,49 +22,62 @@
  */
 
 function MessageCheckUpdater( callback ) {
-	var callback = callback;
 	
 	this.act = function() {
 		callback();
 		delete this.timeoutID;
-	},
+	};
 
 	this.setup = function() {
 		this.cancel();
 		var self = this;
 		this.timeoutID = window.setTimeout( self.act, 600 );
-	},
+	};
 
 	this.cancel = function() {
-		if(typeof this.timeoutID == "number") {
-			window.clearTimeout(this.timeoutID);
+		if ( typeof this.timeoutID == 'number' ) {
+			window.clearTimeout( this.timeoutID );
 			delete this.timeoutID;
 		}
-	}
+	};
+}
+
+function trlVpWidth() {
+	return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+}
+
+function addAccessKeys(dialog) {
+	jQuery( '[accesskey=a], [accesskey=s], [accesskey=d], [accesskey=h]' ).each(
+		function(i) { jQuery(this).removeAttr( 'accesskey' ); }
+	);
+	dialog.find( '.mw-translate-save' ).attr( 'accesskey', 'a' ).attr( 'title', '[' + tooltipAccessKeyPrefix + 'a]' );
+	dialog.find( '.mw-translate-next' ).attr( 'accesskey', 's' ).attr( 'title', '[' + tooltipAccessKeyPrefix + 's]' );
+	dialog.find( '.mw-translate-skip' ).attr( 'accesskey', 'd' ).attr( 'title', '[' + tooltipAccessKeyPrefix + 'd]' );
+	dialog.find( '.mw-translate-history' ).attr( 'accesskey', 'h' ).attr( 'title', '[' + tooltipAccessKeyPrefix + 'h]' );
 }
 
 var dialogwidth = false;
 
 function trlOpenJsEdit( page, group ) {
-	var url = wgScript + "?title=Special:Translate/editpage&suggestions=async&page=$1&loadgroup=$2";
-	url = url.replace( "$1", encodeURIComponent( page ) ).replace( "$2", encodeURIComponent( group ) );
-	var id = "jsedit" +  page.replace( /[^a-zA-Z0-9_]/g, '_' );
+	var url = wgScript + '?title=Special:Translate/editpage&suggestions=async&page=$1&loadgroup=$2';
+	url = url.replace( '$1', encodeURIComponent( page ) ).replace( '$2', encodeURIComponent( group ) );
+	var id = 'jsedit' +  page.replace( /[^a-zA-Z0-9_]/g, '_' );
 
-	var dialog = jQuery('#' + id);
+	var dialog = jQuery( '#' + id );
 	if ( dialog.size() > 0 ) {
-		dialog.dialog('option', 'position', 'top' );
-		dialog.dialog('open');
+		dialog.dialog( 'option', 'position', 'top' );
+		dialog.dialog( 'open' );
 		return false;
 	}
 
-	jQuery('<div/>').attr('id', id).appendTo( jQuery('body') );
-	dialog = jQuery('#' + id);
+	jQuery( '<div/>' ).attr( 'id', id ).appendTo( jQuery( 'body' ) );
+	dialog = jQuery( '#' + id );
 
-	var spinner = jQuery('<div/>').attr('class', 'mw-ajax-loader' );
-	dialog.html( jQuery('<div/>').attr('class', 'mw-ajax-dialog').html( spinner ) );
+	var spinner = jQuery( '<div/>' ).attr( 'class', 'mw-ajax-loader' );
+	dialog.html( jQuery( '<div/>' ).attr( 'class', 'mw-ajax-dialog' ).html( spinner ) );
 
 	dialog.load(url, false, function() {
-		var form = jQuery('#' + id + ' form');
+		var form = jQuery( '#' + id + ' form' );
 
 		form.hide().slideDown();
 
@@ -73,70 +86,71 @@ function trlOpenJsEdit( page, group ) {
 
 		form.find( '.mw-translate-next' ).click( function() {
 			trlLoadNext( page );
-		});
+		} );
 
 		form.find( '.mw-translate-skip' ).click( function() {
 			trlLoadNext( page );
-			dialog.dialog('close');
+			dialog.dialog( 'close' );
 			return false;
-		});
+		} );
 
 		form.find( '.mw-translate-history' ).click( function() {
-			window.open( wgServer + wgScript + "?action=history&title=" + form.find( "input[name=title]" ).val() );
+			window.open( wgServer + wgScript + '?action=history&title=' + form.find( 'input[name=title]' ).val() );
 			return false;
-		});
+		} );
 
-		var textarea = form.find( ".mw-translate-edit-area" );
+		var textarea = form.find( '.mw-translate-edit-area' );
 		textarea.focus();
 
-		if ( form.find( ".mw-translate-messagechecks" ) ) {
+		if ( form.find( '.mw-translate-messagechecks' ) ) {
 			var checker = new MessageCheckUpdater( function() {
-				var url = wgScript + "?title=Special:Translate/editpage&suggestions=checks&page=$1&loadgroup=$2";
-				url = url.replace( "$1", encodeURIComponent( page ) ).replace( "$2", encodeURIComponent( group ) );
-				jQuery.post( url, { translation: textarea.val() } , function(mydata) {
-					form.find( ".mw-translate-messagechecks" ).replaceWith( mydata );
-				});
-			});
+				var url = wgScript + '?title=Special:Translate/editpage&suggestions=checks&page=$1&loadgroup=$2';
+				url = url.replace( '$1', encodeURIComponent( page ) ).replace( '$2', encodeURIComponent( group ) );
+				jQuery.post( url, { translation: textarea.val() } , function( mydata ) {
+					form.find( '.mw-translate-messagechecks' ).replaceWith( mydata );
+				} );
+			} );
 
 			textarea.keyup( function() { checker.setup(); } );
 		}
 		
 		addAccessKeys( form );
-		var b = form.find(".mw-translate-save");
-			b.val( b.val() + " (a)" );
-		var b = form.find(".mw-translate-next");
-			b.val( b.val() + " (s)" );
-		var b = form.find(".mw-translate-skip");
-			b.val( b.val() + " (d)" );
-		var b = form.find(".mw-translate-history");
-			b.val( b.val() + " (h)" );
+		var b = null;
+		b = form.find( '.mw-translate-save' );
+			b.val( b.val() + ' (a)' );
+		b = form.find( '.mw-translate-next' );
+			b.val( b.val() + ' (s)' );
+		b = form.find( '.mw-translate-skip' );
+			b.val( b.val() + ' (d)' );
+		b = form.find( '.mw-translate-history' );
+			b.val( b.val() + ' (h)' );
 
-		form.ajaxForm({
-			dataType: "json",
+		form.ajaxForm( {
+			dataType: 'json',
 			success: function(json) {
 				if ( json.error ) {
-					alert( json.error.info + " (" + json.error.code +")" );
-				} else if ( json.edit.result === "Failure" ) {
-					alert(trlMsgSaveFailed);
-				} else if ( json.edit.result === "Success" ) {
-					dialog.dialog("close");
+					alert( json.error.info + ' (' + json.error.code +')' );
+				} else if ( json.edit.result === 'Failure' ) {
+					alert( trlMsgSaveFailed );
+				} else if ( json.edit.result === 'Success' ) {
+					dialog.dialog( 'close' );
 				} else {
-					alert(trlMsgSaveFailed);
+					alert( trlMsgSaveFailed );
 				}
 			}
-		});
-	});
+		} );
+	} );
 
-	dialog.dialog({
+	dialog.dialog( {
 		bgiframe: true,
-		width: dialogwidth ? dialogwidth : parseInt(trlVpWidth()*0.8),
+		width: dialogwidth ? dialogwidth : parseInt( trlVpWidth()*0.8, 10 ),
 		title: page,
-		position: "top",
+		position: 'top',
 		resize: function(event, ui) {
-			jQuery("#"+ id + " textarea").width( "100%" );
+			jQuery( '#' + id + ' textarea' ).width( '100%' );
 		},
 		resizeStop: function(event, ui) {
-			dialogwidth = jQuery("#"+ id).width();
+			dialogwidth = jQuery( '#' + id ).width();
 		},
 		focus: function(event, ui) {
 			addAccessKeys( dialog );
@@ -144,34 +158,20 @@ function trlOpenJsEdit( page, group ) {
 		close: function(event, ui) {
 			addAccessKeys( jQuery([]) );
 		}
-	});
+	} );
 
 	return false;
 }
 
-function addAccessKeys(dialog) {
-	jQuery("[accesskey=a], [accesskey=s], [accesskey=d], [accesskey=h]").each(
-		function(i) { jQuery(this).removeAttr( "accesskey" ); }
-	);
-	dialog.find(".mw-translate-save").attr( "accesskey", "a" ).attr( "title", "[" + tooltipAccessKeyPrefix + "a]" );
-	dialog.find(".mw-translate-next").attr( "accesskey", "s" ).attr( "title", "[" + tooltipAccessKeyPrefix + "s]" );
-	dialog.find(".mw-translate-skip").attr( "accesskey", "d" ).attr( "title", "[" + tooltipAccessKeyPrefix + "d]" );
-	dialog.find(".mw-translate-history").attr( "accesskey", "h" ).attr( "title", "[" + tooltipAccessKeyPrefix + "h]" );
-}
-
-function trlVpWidth() {
-	return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-}
-
 function trlLoadNext( title ) {
-	var page = title.replace( /[^:]+:/, "");
-	var namespace = title.replace( /:.*/, "");
+	var page = title.replace( /[^:]+:/, '' );
+	var namespace = title.replace( /:.*/, '' );
 	var found = false;
 	for ( key in trlKeys ) {
 		if ( !trlKeys.hasOwnProperty(key) ) { continue; }
 		value = trlKeys[key];
 		if (found) {
-			return trlOpenJsEdit( namespace + ":" + value );
+			return trlOpenJsEdit( namespace + ':' + value );
 		} else if( page === value ) {
 			found = true;
 		}
