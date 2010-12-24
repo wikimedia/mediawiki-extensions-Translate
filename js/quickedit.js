@@ -50,38 +50,38 @@ function trlOpenJsEdit( page, group ) {
 	url = url.replace( "$1", encodeURIComponent( page ) ).replace( "$2", encodeURIComponent( group ) );
 	var id = "jsedit" +  page.replace( /[^a-zA-Z0-9_]/g, '_' );
 
-	var dialog = jQuery("#"+id);
+	var dialog = jQuery('#' + id);
 	if ( dialog.size() > 0 ) {
-		dialog.dialog("option", "position", "top" );
-		dialog.dialog("open");
+		dialog.dialog('option', 'position', 'top' );
+		dialog.dialog('open');
 		return false;
 	}
 
-	jQuery('<div/>').attr('id', id).appendTo(jQuery('body'));
-	var dialog = jQuery("#"+id);
+	jQuery('<div/>').attr('id', id).appendTo( jQuery('body') );
+	dialog = jQuery('#' + id);
 
-	var spinner = jQuery("<div/>").attr("class", "mw-ajax-loader" );
-	dialog.html( jQuery("<div/>").attr("class", "mw-ajax-dialog").html( spinner ) );
+	var spinner = jQuery('<div/>').attr('class', 'mw-ajax-loader' );
+	dialog.html( jQuery('<div/>').attr('class', 'mw-ajax-dialog').html( spinner ) );
 
 	dialog.load(url, false, function() {
-		var form = jQuery("#" + id + " form");
+		var form = jQuery('#' + id + 'form');
 
 		form.hide().slideDown();
 
 		// Enable the collapsible element
-		$( '.mw-identical-title' ).makeCollapsible();
+		jQuery( '.mw-identical-title' ).makeCollapsible();
 
-		form.find( ".mw-translate-next" ).click( function() {
+		form.find( '.mw-translate-next' ).click( function() {
 			trlLoadNext( page );
 		});
 
-		form.find( ".mw-translate-skip" ).click( function() {
+		form.find( '.mw-translate-skip' ).click( function() {
 			trlLoadNext( page );
-			dialog.dialog("close");
+			dialog.dialog('close');
 			return false;
 		});
 
-		form.find( ".mw-translate-history" ).click( function() {
+		form.find( '.mw-translate-history' ).click( function() {
 			window.open( wgServer + wgScript + "?action=history&title=" + form.find( "input[name=title]" ).val() );
 			return false;
 		});
@@ -102,10 +102,14 @@ function trlOpenJsEdit( page, group ) {
 		}
 		
 		addAccessKeys( form );
-		var b = form.find(".mw-translate-save"); b.val( b.val() + " (a)" );
-		var b = form.find(".mw-translate-next"); b.val( b.val() + " (s)" );
-		var b = form.find(".mw-translate-skip"); b.val( b.val() + " (d)" );
-		var b = form.find(".mw-translate-history"); b.val( b.val() + " (h)" );
+		var b = form.find(".mw-translate-save");
+			b.val( b.val() + " (a)" );
+		var b = form.find(".mw-translate-next");
+			b.val( b.val() + " (s)" );
+		var b = form.find(".mw-translate-skip");
+			b.val( b.val() + " (d)" );
+		var b = form.find(".mw-translate-history");
+			b.val( b.val() + " (h)" );
 
 		form.ajaxForm({
 			dataType: "json",
