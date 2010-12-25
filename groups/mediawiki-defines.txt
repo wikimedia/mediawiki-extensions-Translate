@@ -1195,6 +1195,9 @@ aliasfile = SpamDiffTool/SpamDiffTool.alias.php
 Spam Regex
 aliasfile = SpamRegex/SpamRegex.alias.php
 
+Special 404
+aliasfile = Special404/Special404.alias.php
+
 Special File List
 file = SpecialFileList/SpecialFilelist.i18n.php
 descmsg = filelist-desc
