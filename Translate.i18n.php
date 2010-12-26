@@ -2626,6 +2626,17 @@ $messages['bn'] = array(
 	'translate-gs-avgscore' => 'গড় স্কোর',
 );
 
+/** Tibetan (བོད་ཡིག)
+ * @author Freeyak
+ */
+$messages['bo'] = array(
+	'translate-edit' => 'རྩོམ་སྒྲིག',
+	'translate-talk' => 'བཤད།',
+	'translate-history' => 'ལོ་རྒྱུས།',
+	'translate-magic-cm-save' => 'ཉར་ཚགས།',
+	'translate-rc-translation-filter-no' => 'ཅི་ཡང་མི་བྱེད།',
+);
+
 /** Bishnupria Manipuri (ইমার ঠার/বিষ্ণুপ্রিয়া মণিপুরী)
  * @author Usingha
  */
@@ -4065,7 +4076,7 @@ Klicke auf die Nachrichtengruppe, um eine Liste der unübersetzten Nachrichten a
 	'translate-task-review' => 'Prüfe Änderungen der',
 	'translate-task-reviewall' => 'Prüfe alle Übersetzungen der',
 	'translate-task-export' => 'Übersetzungen exportieren',
-	'translate-task-export-to-file' => 'Exportiere alle Übersetzungen in eine Datei der',
+	'translate-task-export-to-file' => 'Übersetzungen in eine Datei exportieren',
 	'translate-task-export-as-po' => 'Übersetzungen zur Offline-Übersetzung exportieren',
 	'translate-task-export-to-xliff' => 'Exportiere alle Übersetzungen in das Xliff-Format',
 	'translate-page-no-such-language' => 'Die angegebene Sprache ist ungültig.',
@@ -6005,9 +6016,9 @@ Cliquer sur le nom du groupe de messages pour voir une liste des messages qui ne
 	'translate-task-problematic' => 'Voir les messages ayant des problèmes',
 	'translate-task-review' => 'Revoir les modifications au',
 	'translate-task-reviewall' => 'Revoir tous les messages traduits du',
-	'translate-task-export' => 'Exporter les traductions du',
-	'translate-task-export-to-file' => 'Exporter dans un fichier les traductions du',
-	'translate-task-export-as-po' => 'Exporter au format Gettext les traductions du',
+	'translate-task-export' => 'Exporter des traductions',
+	'translate-task-export-to-file' => 'Exporter les traductions dans un fichier',
+	'translate-task-export-as-po' => 'Exporter des traductions pour une traduction hors ligne',
 	'translate-task-export-to-xliff' => 'Exporter les traductions au format Xliff',
 	'translate-page-no-such-language' => 'Le code langue indiqué est incorrect.',
 	'translate-page-no-such-task' => 'La tâche spécifiée est incorrecte.',
@@ -7892,9 +7903,9 @@ Klikń na mjeno skupiny zdźělinkow, zo by sej lisćinu njepřełoženych zdź�
 	'translate-task-problematic' => 'Zdźělenki pokazać, kotrež maja problemy',
 	'translate-task-review' => 'Přepruwuj změny za',
 	'translate-task-reviewall' => 'Přepruwuj wšě přełožki w',
-	'translate-task-export' => 'Eksportuj přełožki',
-	'translate-task-export-to-file' => 'Eksportuj přełožk do dataje',
-	'translate-task-export-as-po' => 'Přełožk we formaće Gettext eksportować',
+	'translate-task-export' => 'Přełožki eksportować',
+	'translate-task-export-to-file' => 'Přełožki do dataje eksportować',
+	'translate-task-export-as-po' => 'Přełožki za offline-přełožowanje eksportować',
 	'translate-task-export-to-xliff' => 'Přełožk do formata Xliff eksportować',
 	'translate-page-no-such-language' => 'Njepłaćiwy rěčny kod podaty',
 	'translate-page-no-such-task' => 'Podaty nadawk bě njepłaćiwy.',
@@ -8506,9 +8517,9 @@ Clicca sur le nomine de un gruppo de messages pro vider un lista de messages non
 	'translate-task-problematic' => 'Vider le messages que ha problemas',
 	'translate-task-review' => 'Revider le modificationes al',
 	'translate-task-reviewall' => 'Revider tote le messages traducite in',
-	'translate-task-export' => 'Exportar traductiones ab',
-	'translate-task-export-to-file' => 'Exportar le traduction in un file',
-	'translate-task-export-as-po' => 'Exportar traduction in formato Gettext',
+	'translate-task-export' => 'Exportar traductiones',
+	'translate-task-export-to-file' => 'Exportar traductiones in un file',
+	'translate-task-export-as-po' => 'Exportar traductiones pro traduction foras de linea',
 	'translate-task-export-to-xliff' => 'Exportar traduction in formato Xliff',
 	'translate-page-no-such-language' => 'Le lingua specificate es invalide.',
 	'translate-page-no-such-task' => 'Le action specificate es invalide.',
@@ -8795,9 +8806,9 @@ Klik nama kelompok pesan untuk melihat daftar pesan yang belum diterjemahkan.',
 	'translate-task-problematic' => 'Tampilkan pesan-pesan bermasalah',
 	'translate-task-review' => 'Tinjau perubahan dari',
 	'translate-task-reviewall' => 'Tinjau semua perubahan pada',
-	'translate-task-export' => 'Ekspor terjemahan dari',
-	'translate-task-export-to-file' => 'Ekspor terjemahan ke berkas dari',
-	'translate-task-export-as-po' => 'Ekspor terjemahan ke format Gettext dari',
+	'translate-task-export' => 'Ekspor terjemahan',
+	'translate-task-export-to-file' => 'Ekspor terjemahan ke berkas',
+	'translate-task-export-as-po' => 'Ekspor terjemahan untuk penerjemahan luring',
 	'translate-task-export-to-xliff' => 'Ekspor terjemahan dalam format Xliff',
 	'translate-page-no-such-language' => 'Bahasa yang dipilih tak valid.',
 	'translate-page-no-such-task' => 'Operasi yang dipilih tak valid.',
@@ -11509,9 +11520,9 @@ $messages['mk'] = array(
 	'translate-task-problematic' => 'Преглед на пораки кои имаат некој проблем',
 	'translate-task-review' => 'Преглед на промени',
 	'translate-task-reviewall' => 'Преглед на сите преведени пораки',
-	'translate-task-export' => 'Извоз на преводи од',
-	'translate-task-export-to-file' => 'Извоз на превод во податотека од',
-	'translate-task-export-as-po' => 'Извоз на превод во Gettext формат',
+	'translate-task-export' => 'Извези преводи',
+	'translate-task-export-to-file' => 'Извези преводи во податотека',
+	'translate-task-export-as-po' => 'Извези преводи за преведување без интернет',
 	'translate-task-export-to-xliff' => 'Извоз на превод во Xliff формат',
 	'translate-page-no-such-language' => 'Наведениот јазик е погрешен',
 	'translate-page-no-such-task' => 'Наведената задача е погрешна',
@@ -13843,9 +13854,9 @@ Ch'a sgnaca ël nòm dla partìa ëd mëssagi për vëdde na lista dij mëssagi 
 	'translate-task-problematic' => "S-ciairé ij mëssagi ch'a l'han dij problema",
 	'translate-task-review' => 'Controlé le modìfiche a',
 	'translate-task-reviewall' => 'Controlé tuti ij viragi ëd',
-	'translate-task-export' => 'Esporté ij viragi ëd',
-	'translate-task-export-to-file' => "Esporté ij viragi ant n'archivi da",
-	'translate-task-export-as-po' => 'Esporté le tradussion an formà Gettext',
+	'translate-task-export' => 'Esporté dij viragi',
+	'translate-task-export-to-file' => "Esporté dij viragi ant n'archivi",
+	'translate-task-export-as-po' => 'Esporté dij viragi për viragi fòra linia',
 	'translate-task-export-to-xliff' => 'Esporté le tradussion an formà Xliff',
 	'translate-page-no-such-language' => "La lenga spessificà a l'é nen vàlida.",
 	'translate-page-no-such-task' => "Ël travaj spessificà a l'é nen bon.",
@@ -15109,6 +15120,7 @@ $messages['roa-tara'] = array(
 /** Russian (Русский)
  * @author Ahonc
  * @author AlexSm
+ * @author Byulent
  * @author Ferrer
  * @author Huuchin
  * @author Kaganer
@@ -15137,7 +15149,7 @@ $messages['ru'] = array(
 	'translate-task-reviewall' => 'Проверить все переводы',
 	'translate-task-export' => 'Выгрузить переводы',
 	'translate-task-export-to-file' => 'Выгрузить переводы в файл',
-	'translate-task-export-as-po' => 'Выгрузить переводы в формате gettext',
+	'translate-task-export-as-po' => 'Экспорт переводов для офф-лайн перевода',
 	'translate-task-export-to-xliff' => 'Экспортировать перевод в формате Xliff',
 	'translate-page-no-such-language' => 'Передан неверный код языка',
 	'translate-page-no-such-task' => 'Неверно указана задача.',
@@ -18494,8 +18506,8 @@ $messages['uk'] = array(
 	'translate-task-review' => 'Перевірити зміни',
 	'translate-task-reviewall' => 'Перевірити всі переклади',
 	'translate-task-export' => 'Експортувати переклади',
-	'translate-task-export-to-file' => 'Експортувати переклади до файлу',
-	'translate-task-export-as-po' => 'Експортувати переклади у форматі gettext',
+	'translate-task-export-to-file' => 'Експортувати переклади у файл',
+	'translate-task-export-as-po' => 'Експортувати повідомлення для автономного перекладу',
 	'translate-task-export-to-xliff' => 'Експортувати переклад у форматі Xliff',
 	'translate-page-no-such-language' => 'Зазначена неправильна мова.',
 	'translate-page-no-such-task' => 'Зазначене неправильне завдання.',

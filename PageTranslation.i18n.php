@@ -594,6 +594,13 @@ $messages['bn'] = array(
 	'tpt-languages-legend' => 'অন্য ভাষা:',
 );
 
+/** Tibetan (བོད་ཡིག)
+ * @author Freeyak
+ */
+$messages['bo'] = array(
+	'pagetranslation' => 'ཤོག་ངོས་ཡིག་སྒྱུར།',
+);
+
 /** Breton (Brezhoneg)
  * @author Fohanno
  * @author Fulup

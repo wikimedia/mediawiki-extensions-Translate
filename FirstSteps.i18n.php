@@ -366,6 +366,21 @@ $messages['bn'] = array(
 	'translate-fs-userpage-title' => 'আপনার ব্যবহারকারী পাতা তৈরি করুন',
 );
 
+/** Tibetan (བོད་ཡིག)
+ * @author Freeyak
+ */
+$messages['bo'] = array(
+	'firststeps' => 'ཐོག་མའི་གོམ་པ།',
+	'translate-fs-pagetitle-done' => '- འགྲིག་སོང་།',
+	'translate-fs-signup-title' => 'ཐོ་འགོད་པ།',
+	'translate-fs-userpage-title' => 'སྤྱོད་པ་པོའི་ཤོག་ངོས་བཟོ་བ།',
+	'translate-fs-permissions-title' => 'སྐད་བསྒྱུར་བའི་ཆོག་འཆན་ཞུ་བ།',
+	'translate-fs-target-title' => 'སྐད་སྒྱུར་འགོ་འཛུགས་པ།',
+	'translate-fs-email-title' => 'ཁྱེད་ཀྱི་གློག་འཕྲིན་ཁ་བྱང་གཏན་འཁེལ་བྱེད་པ།',
+	'translate-fs-userpage-submit' => 'ངའི་སྤྱོད་པ་པོའི་ཤོག་ངོས་བཟོ་བ།',
+	'translate-fs-userpage-done' => 'ཡག་པོ་བྱུང་། ད་ནི་ཁྱོད་ལ་སྤྱོད་པ་པོའི་ཤོག་ངོས་ཡོད།',
+);
+
 /** Breton (Brezhoneg)
  * @author Fulup
  * @author Y-M D
