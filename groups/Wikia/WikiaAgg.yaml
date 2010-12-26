@@ -5,7 +5,7 @@ BASIC:
   meta: yes
   class: AggregateMessageGroup
   description: '{{int:translate-group-desc-wikiaextensions}}'
-  namespace: NS_MEDIAWIKI
+  namespace: NS_WIKIA
 
 GROUPS:
   - wikia-*
