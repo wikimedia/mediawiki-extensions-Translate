@@ -261,6 +261,7 @@ The subpage "translators" must contain the template [[:{{ns:template}}:User|User
 
 	'translate-jssti-add' => 'Add to list',
 
+	'managemessagegroups' => 'Message group management',
 	'translate-manage-groups' => 'Group management',
 	'translate-manage-listgroups' => 'Configured groups',
 	'translate-manage-listgroups-old' => 'Old style groups',
