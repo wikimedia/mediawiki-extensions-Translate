@@ -21,10 +21,6 @@ Automatic Wiki Adoption
 # Extension is not completely done yet. Ignoring unfinished parts.
 ignored = automaticwikiadoption-desc, automaticwikiadoption-description, automaticwikiadoption-mail-first-content
 
-Badges
-file = Badges/UserBadges.i18n.php
-optional = user-badge-left-align, user-badge-center-align, user-badge-right-align
-
 Blogs
 aliasfile = Blogs/Blogs.alias.php
 optional = blug-cut-sign
@@ -47,9 +43,6 @@ Community Messages
 
 Content Feeds
 
-Contest Tool
-file = ContestTool/SpecialContestTool.i18n.php
-
 #Commented out 2010-02-01 -- tor
 #Dropping in favour of CreatePage (below)
 #Create A Page
@@ -60,20 +53,13 @@ Create Page
 file = CreatePage/CreatePage.i18n.php
 ignored = createpage-newpagelayout
 
-Daemon Loader
-file = DaemonLoader/SpecialDaemonLoader.i18n.php
-
 Edit Account
 file = EditAccount/SpecialEditAccount.i18n.php
 
 Editing Tips
 
-Edit Research
-
 Follow
 aliasfile = Follow/Follow.alias.php
-
-Force Subject For New Section
 
 Founder Emails
 
@@ -87,8 +73,6 @@ ignored = welcome-enabled, welcome-user, welcome-bot
 
 Health Check
 file = SpecialHealthcheck/HealthCheck.i18n.php
-
-Helper Panel
 
 Image Placeholder
 
@@ -116,9 +100,6 @@ file = LookupContribs/SpecialLookupContribs.i18n.php
 
 Masthead
 
-Most Popular Articles
-file = MostPopularArticles/SpecialMostPopularArticles.i18n.php
-
 Most Popular Categories
 file = MostPopularCategories/SpecialMostPopularCategories.i18n.php
 
@@ -129,8 +110,6 @@ Multi Tasks
 
 My Home
 ignored = accesskey-pt-myhome
-
-New Edit Page
 
 # Do not enable. Uses globals in messages and elsewhere in the file
 # and is moved to JS unparsed.
@@ -151,14 +130,10 @@ Partner Feed
 
 Piggyback
 
-Problem Reports
-
 Quick Create
 
 Random Wiki
 file = RandomWiki/SpecialRandomWiki.i18n.php
-
-Recipes Tweaks
 
 Related Pages
 descmsg = wikiarelatedpages-desc
@@ -196,8 +171,6 @@ ignored = swm-expire-options
 Slider Tag
 
 Special Interwiki Edit
-
-Special Mini Upload
 
 Special Multiple Lookup
 
@@ -264,8 +237,6 @@ Wikia Mini Upload
 
 Wikia Photo Gallery
 
-Wikia Upload
-
 Wikia Video
 
 Wikia Widget
@@ -280,9 +251,6 @@ Wiki Factory
 file = WikiFactory/SpecialWikiFactory.i18n.php
 optional = wikifactory-label-eznamespace
 ignored = awc-metrics-language-top-list
-
-Wiki Stickies
-aliasfile = WikiStickies/SpecialWikiStickies.alias.php
 
 Without images
 file = WikiStickies/SpecialWithoutimages.i18n.php
