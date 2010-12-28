@@ -791,11 +791,20 @@ Tekst sekcije: <pre>$1</pre>',
 	'pt-log-moveok' => '{{GENDER:$2|završeno}} preimenovanje stranice za prevod $1 na novo ime',
 	'pt-log-movenok' => '{{GENDER:$2|desio}} se problem pri premještanju [[:$1]] na [[:$3]]',
 	'pt-movepage-title' => 'Premještanje stranice za prevođenje $1',
+	'pt-movepage-blockers' => 'Stranica koja se može prevoditi ne može biti premještena na novo ime zbog {{PLURAL:$1|slijedeće greške|slijedećih grešaka}}:',
 	'pt-movepage-block-base-exists' => 'Ciljna bazna stranica [[:$1]] postoji.',
 	'pt-movepage-block-base-invalid' => 'Ciljna bazna stranica nije valjan naslov.',
+	'pt-movepage-block-tp-exists' => 'Ciljna stranica za prijevod [[:$2]] postoji.',
+	'pt-movepage-block-tp-invalid' => 'Naslov ciljne stranice za prijevod za [[:$1]] bi bio nevaljan (predugačak?).',
+	'pt-movepage-block-section-exists' => 'Ciljna sekcija stranice [[:$2]] postoji.',
+	'pt-movepage-block-section-invalid' => 'Naslov ciljne sekcije za [[:$1]] bi bio nevaljan (predugačak?).',
+	'pt-movepage-block-subpage-exists' => 'Ciljna podstranica [[:$2]] postoji.',
+	'pt-movepage-block-subpage-invalid' => 'Naslov ciljne podstranice za [[:$1]] bi bio nevaljan (predugačak?).',
 	'pt-movepage-list-pages' => 'Spisak stranica za premještanje',
+	'pt-movepage-list-translation' => 'Stranice za prijevod',
 	'pt-movepage-list-section' => 'Stranice sekcije',
 	'pt-movepage-list-other' => 'Druge podstranice',
+	'pt-movepage-list-count' => 'Ukupno $1 {{PLURAL:$1|stranica|stranice|stranica}} za premještanje.',
 	'pt-movepage-legend' => 'Premjesti stranicu koja se prevodi',
 	'pt-movepage-current' => 'Trenutni naziv:',
 	'pt-movepage-new' => 'Novi naziv:',
@@ -804,7 +813,15 @@ Tekst sekcije: <pre>$1</pre>',
 	'pt-movepage-action-check' => 'Provjeri da li je moguće premještanje',
 	'pt-movepage-action-perform' => 'Izvrši premještanje',
 	'pt-movepage-action-other' => 'Promijeni cilj',
+	'pt-movepage-intro' => 'Ova posebna stranica vam omogućava da premještate stranice koje su obilježene za prevođenje.
+Akcija premještanja neće biti odmah, jer mnoge stranice trebaju biti premještene.
+Red na čekanju će se koristiti za premještanje stranica.
+Dok se stranice premještaju, neće biti mogućnosti koristiti se s tim stranicama.
+Greške će biti zapisane u zapisnik prevođenja stranice te se one moraju ispravljati ručno.',
 	'pt-movepage-logreason' => 'Dio stranice koja se prevodi $1.',
+	'pt-movepage-started' => 'Osnovna stranica se sad premješta.
+Molimo provjerite zapisnik prevoda stranice za greške i poruke završetka.',
+	'pt-locked-page' => 'Ova stranica je zaključana jer se stranica za prevođenje sada premješta.',
 );
 
 /** Buginese (ᨅᨔ ᨕᨘᨁᨗ)
