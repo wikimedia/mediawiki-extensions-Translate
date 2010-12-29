@@ -70,7 +70,7 @@ class SpecialManageGroups extends SpecialPage {
 
 			$groups = MessageGroups::singleton()->getGroups();
 
-			$wgOut->wrapWikiMsg( '==$1==', 'translate-manage-listgroups' );
+			$wgOut->wrapWikiMsg( '<h2>$1</h2>', 'translate-manage-listgroups' );
 			$separator = wfMsg( 'word-separator' );
 
 			$languages = array_keys( Language::getLanguageNames( false ) );
@@ -105,7 +105,6 @@ class SpecialManageGroups extends SpecialPage {
 					} else {
 						$out = Html::rawElement( 'span', array( 'style' => 'color:grey' ), $out );
 					}
-
 				} else {
 					$out .= wfMsg( 'translate-manage-newgroup' );
 				}
@@ -114,7 +113,7 @@ class SpecialManageGroups extends SpecialPage {
 				$wgOut->addHtml( '<hr>' );
 			}
 
-			$wgOut->wrapWikiMsg( '==$1==', 'translate-manage-listgroups-old' );
+			$wgOut->wrapWikiMsg( '<h2>$1</h2>', 'translate-manage-listgroups-old' );
 			$wgOut->addHTML( '<ul>' );
 
 			foreach ( $groups as $group ) {
@@ -458,5 +457,4 @@ class SpecialManageGroups extends SpecialPage {
 
 		$this->out->setSubtitle( implode( ' > ', $links ) );
 	}
-
 }
