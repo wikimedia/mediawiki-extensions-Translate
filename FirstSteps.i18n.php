@@ -3221,6 +3221,7 @@ Nếu bạn không muốn nhận thư tin tức, bạn có thể bỏ nó ra kh�
 
 /** Simplified Chinese (‪中文(简体)‬)
  * @author Chenxiaoqino
+ * @author Hydra
  */
 $messages['zh-hans'] = array(
 	'firststeps' => '第一步',
@@ -3289,21 +3290,20 @@ $3 注册$4',
 
 在你提交申请之后，其中一名志愿者员工会检查您的申请并尽快批准。
 请耐心点。',
-	'translate-fs-target-text' => '恭喜！
-你现在可以进行翻译了。
+	'translate-fs-target-text' => '恭喜 ！
+您现在可以开始翻译。
 
-如果你还觉得初来乍到，有些困惑，别害怕，开始翻译吧。
+不要害怕如果仍然认为新的和令人困惑，你。
+在 [[Project list|项目列表]] 有你可以贡献的翻译项目的概述。
+的大多数项目有一个简短说明页"翻译此项目 \'"的链接，将带您到一个页面，其中列出了所有未翻译的消息。
+[[Special:LanguageStats|current 翻译状态的一种语言]] 所有邮件组的列表也是可用。
 
- [[Project list|项目列表]] 列出了所有你可以进行贡献的项目。
-每个项目都有一条简短的描述，以及能显示所有未翻译条目的“翻译此项目”的链接。
-你也可以查看某个语言下[[Special:LanguageStats|所有项目的翻译状态]]。
+是否你感觉到您需要了解更多，你开始翻译之前，你可以读，[[FAQ|Frequently 问问题]]。
+不幸的是文档是过时的有时。
+如果有什么，你认为你应该能够做到，但是不能找出如何，不要犹豫，请在 [[Support|帮助页]]。
 
-如果你需要在开始翻译前了解更多，请查看[[FAQ]]。
-不幸的是，某些文档有时是过时的。
-如果你想帮忙却不知到怎么办，请大胆的到[[Support|技术支持页面]]提问。
-
-你也可以在[[Portal:$1|你的翻译语言]]的[[Portal_talk:$1|讨论页]]联系和你翻译同样语言的人。
-请确保你已经在[[Special:Preferences|选项里变更你的用户界面语言]]，这样Wiki也能给你展示最合适的链接。',
+您也可以联系同翻译人员在语言相同的语言的 [[Portal:$1|your 语言门户]] 的 [[Portal_talk:$1|talk 页]]。
+如果已经这样 [[Special:Preferences|change 您的用户界面语言，您要翻译的语言]]，做以便 wiki 是能够为您显示最相关的链接。',
 	'translate-fs-email-text' => '请在[[Special:Preferences|选项]]页面留下电子邮箱地址并进行验证。
 
 这能让其他用户通过电子邮件联系你。
