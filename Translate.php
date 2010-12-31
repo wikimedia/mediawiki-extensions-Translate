@@ -91,6 +91,7 @@ $wgHooks['EditPage::showEditForm:fields'][] = 'TranslateEditAddons::keepFields';
 $wgHooks['SkinTemplateTabs'][] = 'TranslateEditAddons::tabs';
 $wgHooks['ArticleAfterFetchContent'][] = 'TranslateEditAddons::customDisplay';
 $wgHooks['ParserBeforeStrip'][] = 'TranslateEditAddons::injectTranslationDisplayJs';
+$wgHooks['LanguageGetTranslatedLanguageNames'][] = 'TranslateEditAddons::translateMessageDocumentationLanguage';
 
 // Custom preferences
 $wgDefaultUserOptions['translate'] = 0;

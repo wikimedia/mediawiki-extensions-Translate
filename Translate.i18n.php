@@ -349,6 +349,8 @@ Details: $1',
 	'translate-gs-count' => 'Count',
 	'translate-gs-total' => 'Total',
 	'translate-gs-avgscore' => 'Avg. score',
+
+	'translate-documentation-language' => 'Message documentation',
 );
 
 /** Message documentation (Message documentation)
