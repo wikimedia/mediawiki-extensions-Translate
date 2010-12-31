@@ -71,20 +71,18 @@ class SpecialTranslations extends SpecialAllpages {
 	 * @return \string HTML for fieldset.
 	 */
 	function namespaceMessageForm( Title $title = null ) {
-		global $wgContLang, $wgScript, $wgTranslateMessageNamespaces;
-
-		$t = $this->getTitle();
+		global $wgScript;
 
 		$namespaces = new XmlSelect( 'namespace', 'namespace' );
 		$namespaces->setDefault( $title->getNamespace() );
 
-		foreach ( $wgTranslateMessageNamespaces as $ns ) {
-			$namespaces->addOption( $wgContLang->getFormattedNsText( $ns ), $ns );
+		foreach ( $this->getSortedNamespaces() as $text => $index ) {
+			$namespaces->addOption( $text, $index );
 		}
 
 		$out  = Xml::openElement( 'div', array( 'class' => 'namespaceoptions' ) );
 		$out .= Xml::openElement( 'form', array( 'method' => 'get', 'action' => $wgScript ) );
-		$out .= Html::hidden( 'title', $t->getPrefixedText() );
+		$out .= Html::hidden( 'title', $this->getTitle()->getPrefixedText() );
 		$out .= Xml::openElement( 'fieldset' );
 		$out .= Xml::element( 'legend', null, wfMsg( 'translate-translations-fieldset-title' ) );
 		$out .= Xml::openElement( 'table', array( 'id' => 'nsselect', 'class' => 'allpages' ) );
@@ -114,13 +112,30 @@ class SpecialTranslations extends SpecialAllpages {
 	}
 
 	/**
+	 * Returns sorted array of namespaces.
+	 *
+	 * @return \arrayof{String,Integer}
+	 */
+	public function getSortedNamespaces() {
+		global $wgTranslateMessageNamespaces, $wgContLang;
+
+		$nslist = array();
+		foreach ( $wgTranslateMessageNamespaces as $ns ) {
+			$nslist[$wgContLang->getFormattedNsText( $ns )] = $ns;
+		}
+		ksort( $nslist );
+
+		return $nslist;
+	}
+
+	/**
 	 * Builds a table with all translations of $title.
 	 *
 	 * @param $title Title (default: null)
 	 * @return void
 	 */
 	function showTranslations( Title $title ) {
-		global $wgOut, $wgUser;
+		global $wgOut, $wgUser, $wgLang;
 
 		$sk = $wgUser->getSkin();
 
@@ -131,7 +146,6 @@ class SpecialTranslations extends SpecialAllpages {
 
 		if ( !$inMessageGroup ) {
 			$wgOut->addWikiMsg( 'translate-translations-no-message', $title->getPrefixedText() );
-
 			return;
 		}
 
@@ -152,13 +166,12 @@ class SpecialTranslations extends SpecialAllpages {
 
 		if ( !$res->numRows() ) {
 			$wgOut->addWikiMsg( 'translate-translations-no-message', $title->getPrefixedText() );
-
 			return;
+		} else {
+			$wgOut->addWikiMsg( 'translate-translations-count', $wgLang->formatNum( $res->numRows() ) );
 		}
 
-		/**
-		 * Normal output.
-		 */
+		// Normal output.
 		$titles = array();
 
 		foreach ( $res as $s ) {
@@ -168,7 +181,7 @@ class SpecialTranslations extends SpecialAllpages {
 		$pageInfo = TranslateUtils::getContents( $titles, $namespace );
 
 		$tableheader = Xml::openElement( 'table', array(
-			'class'   => 'mw-sp-translate-table'
+			'class'   => 'mw-sp-translate-table sortable'
 		) );
 
 		$tableheader .= Xml::openElement( 'tr' );
@@ -176,22 +189,23 @@ class SpecialTranslations extends SpecialAllpages {
 		$tableheader .= Xml::element( 'th', null, wfMsg( 'allmessagescurrent' ) );
 		$tableheader .= Xml::closeElement( 'tr' );
 
-		/**
-		 * Adapted version of TranslateUtils:makeListing() by Nikerabbit.
-		 */
+		// Adapted version of TranslateUtils:makeListing() by Nikerabbit.
 		$out = $tableheader;
 
 		$canTranslate = $wgUser->isAllowed( 'translate' );
 
 		$ajaxPageList = array();
-		$historyText = "&#160;<sup>" . wfMsg( 'translate-translations-history-short' ) . "</sup>&#160;";
+		$historyText = "&#160;<sup>" . wfMsgHtml( 'translate-translations-history-short' ) . "</sup>&#160;";
 
 		foreach ( $res as $s ) {
 			$key = $s->page_title;
 			$tTitle = Title::makeTitle( $s->page_namespace, $key );
 			$ajaxPageList[] = $tTitle->getDBkey();
 
-			$text = htmlspecialchars( $this->getCode( $s->page_title ) );
+			$code = $this->getCode( $s->page_title );
+
+			$text = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() ) . " ($code)";
+			$text = htmlspecialchars( $text );
 
 			if ( $canTranslate ) {
 				$tools['edit'] = TranslationHelpers::ajaxEditLink(
