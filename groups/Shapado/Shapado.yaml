@@ -34,7 +34,7 @@ TEMPLATE:
 ---
 BASIC:
   id: out-shapado-0-all
-  label: All Shapado messages
+  label: Shapado
   display: out/shapado
   meta: yes
   class: AggregateMessageGroup

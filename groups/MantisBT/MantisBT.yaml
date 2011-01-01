@@ -89,7 +89,7 @@ TEMPLATE:
 ---
 BASIC:
   id: out-mantis-0-all
-  label: All MantisBT messages
+  label: MantisBT
   display: out/mantis
   description: "{{int:bw-desc-mantisbt}}"
   meta: yes
@@ -104,7 +104,7 @@ GROUPS:
 ---
 BASIC:
   id: out-mantis-core
-  label: MantisBT
+  label: MantisBT core messages
   description: "{{int:bw-desc-mantisbt}}"
   display: out/mantis/core
 

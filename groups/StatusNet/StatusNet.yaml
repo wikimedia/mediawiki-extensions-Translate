@@ -28,7 +28,7 @@ TEMPLATE:
 ---
 BASIC:
   id: out-statusnet-0-all
-  label: All StatusNet messages
+  label: StatusNet
   display: out/statusnet
   meta: yes
   class: AggregateMessageGroup

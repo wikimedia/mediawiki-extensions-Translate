@@ -23,7 +23,7 @@ TEMPLATE:
 ---
 BASIC:
   id: out-mifos-0-all
-  label: All Mifos messages
+  label: Mifos
   meta: yes
   class: AggregateMessageGroup
 
@@ -33,7 +33,7 @@ GROUPS:
 ---
 BASIC:
   id: out-mifos-core
-  label: Mifos
+  label: Mifos core messages
   class: FileBasedMessageGroup
 
 FILES:

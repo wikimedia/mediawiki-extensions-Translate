@@ -394,8 +394,8 @@ class SpecialTranslate extends SpecialPage {
 		global $wgTranslateGroupStructure;
 
 		$groups = MessageGroups::getAllGroups();
-		$structure = array();
 
+		$structure = array();
 		foreach ( $groups as $id => $o ) {
 			if ( !MessageGroups::getGroup( $id )->exists() ) {
 				continue;
@@ -403,24 +403,30 @@ class SpecialTranslate extends SpecialPage {
 
 			foreach ( $wgTranslateGroupStructure as $pattern => $hypergroup ) {
 				if ( preg_match( $pattern, $id ) ) {
-					/**
-					 * Emulate deepArraySet, because AFAIK php does not have one
-					 */
+					// Emulate deepArraySet, because AFAIK php does not have one
 					self::deepArraySet( $structure, $hypergroup, $id, $o );
-					/**
-					 * We need to continue the outer loop, because we have finished this item.
-					 */
+					// We need to continue the outer loop, because we have finished this item.
 					continue 2;
 				}
 			}
 
-			/**
-			 * Does not belong to any subgroup, just shove it into main level.
-			 */
+			// Does not belong to any subgroup, just shove it into main level.
 			$structure[$id] = $o;
 		}
 
-		return $structure;
+		// Sort top-level groups according to labels, not ids
+		foreach ( $structure as $id => $data ) {
+			// Either it is a group itself, or the first group of the array
+			$nid = is_array( $data ) ? key( $data ) : $id;
+			$labels[$id] = $groups[$nid]->getLabel();
+		}
+		natcasesort( $labels );
+
+		foreach ( array_keys( $labels ) as $id ) {
+			$sorted[$id] = $structure[$id];
+		}
+
+		return $sorted;
 	}
 
 	/**

@@ -14,7 +14,7 @@ TEMPLATE:
 ---
 BASIC:
   id: out-okawix-0-all
-  label: All Okawix messages
+  label: Okawix
   display: out/okawix
   meta: yes
   class: AggregateMessageGroup

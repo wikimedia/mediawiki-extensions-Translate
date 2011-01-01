@@ -16,7 +16,7 @@ TEMPLATE:
 ---
 BASIC:
   id: out-osm-0-all
-  label: All OpenStreetMap messages
+  label: OpenStreetMap
   description: "{{int:bw-desc-openstreetmap}}"
   display: out/osm
   meta: yes
