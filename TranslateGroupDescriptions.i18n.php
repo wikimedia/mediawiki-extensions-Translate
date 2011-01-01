@@ -1249,6 +1249,7 @@ $messages['lb'] = array(
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] ass en offline Wikipedia-Liesprogramm',
 	'bw-desc-openstreetmap' => 'All Messagen a Relatioun mat [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => '[[Translating:OpenStreetMap|OpenStreetMap]] ass eng ännerbar Kaart vun der ganzer Welt',
+	'bw-desc-osm-potlatch' => '[[Translating:OpenStreetMap|Potlatch]] ass en Editeur fir OpenStreetMap den op Flash baséiert',
 	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]] ass eng web-baséiert Fro an Äntwert Software',
 	'translate-group-desc-statusnet-plugin' => 'Dës Messagen sinn Deel vun engem Plugin fir [[Translating:StatusNet|StatusNet]]',
 	'bw-desc-voctrain' => '[[Translating:Voctrain|Voctrain]] ass en Trainingsprogramm fir Vokabelen den op OmegaWiki baséiert',

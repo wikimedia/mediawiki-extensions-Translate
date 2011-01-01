@@ -447,6 +447,7 @@ These messages will not be submitted to svn, but will only affect the interface 
 	'translations-summary' => 'Used in [[Special:Translations]].',
 	'translate-translations-no-message' => 'Error message used in [[Special:Translations]].',
 	'translate-translations-none' => 'Used in [[Special:Translations]] if no translations exist.',
+	'translate-translations-count' => 'Show in Special:Translations before the listing.',
 	'translate-translations-fieldset-title' => 'Name of fieldset in [[Special:Translations]].
 
 {{Identical|Message}}',
@@ -539,6 +540,9 @@ $1 is a language name.',
 
 {{Identical|Total}}',
 	'translate-gs-avgscore' => 'Used in summary wiki tables for localisation statistics as a column header for the average score of languages on a continent in the table above it. See [[Project:MediaWiki localisation in the 50 most spoken languages|example]]',
+	'translate-documentation-language' => 'This is the name of the message documentation language code (qqq). Follow the rules of your languages and use small first letter if it doesn\'t capitalize language names always.
+
+It might be easier to translate it as "translation guidelines" or "translation help".',
 );
 
 /** Faeag Rotuma (Faeag Rotuma)
@@ -3090,6 +3094,7 @@ Pretpostavljeni spisak jezika zavisi od postavki Vašeg jezika.',
 	'translations-summary' => 'Unesite naziv poruke ispod da bi prikazali sve dostupne prijevode.',
 	'translate-translations-no-message' => '"$1" je poruka koja se ne može prevoditi',
 	'translate-translations-none' => 'Ne postoje prijevodi za "$1"',
+	'translate-translations-count' => '{{PLURAL:$1|Pronađen jedan prijevod|Pronađeno $1 prijevoda}}.',
 	'translate-translations-fieldset-title' => 'Poruka',
 	'translate-translations-messagename' => 'Naziv:',
 	'translate-translations-project' => 'Projekt:',
@@ -3207,6 +3212,7 @@ Detalji: $1',
 	'translate-gs-count' => 'Broj',
 	'translate-gs-total' => 'Ukupno',
 	'translate-gs-avgscore' => 'Prosj. rezultat',
+	'translate-documentation-language' => 'Dokumentacija poruke',
 );
 
 /** Buginese (ᨅᨔ ᨕᨘᨁᨗ)
@@ -4073,7 +4079,7 @@ $messages['de'] = array(
 	'translate-grouplisting' => 'Dies ist die Liste aller übersetzbarer Gruppen.
 Klicke auf die Nachrichtengruppe, um eine Liste der unübersetzten Nachrichten anzuzeigen.',
 	'translate-task-view' => 'Zeige alle Systemnachrichten',
-	'translate-task-untranslated' => 'Zeige alle nicht übersetzten oder veralteten Systemnachrichten',
+	'translate-task-untranslated' => 'Zeige nicht übersetzte oder veraltete Systemnachrichten',
 	'translate-task-optional' => 'Zeige optionale Systemnachrichten',
 	'translate-task-suggestions' => 'Zeige alle Nachrichten mit Vorschlägen aus dem Übersetzungsspeicher',
 	'translate-task-untranslatedoptional' => 'Zeige nicht übersetzte optionale Systemnachrichten',
@@ -4214,6 +4220,7 @@ Die Standardliste ist abhängig von der Sprache der Benutzeroberfläche.',
 	'translations-summary' => 'Gib einen Nachrichtennamen ein, um alle verfügbaren Übersetzungen anzuzeigen.',
 	'translate-translations-no-message' => '„$1“ ist keine übersetzbare Nachricht',
 	'translate-translations-none' => 'Keine Übersetzungen für „$1“ verfügbar',
+	'translate-translations-count' => 'Es {{PLURAL:$1|wurde eine Übersetzung|wurden $1 Übersetzungen}} gefunden.',
 	'translate-translations-fieldset-title' => 'Nachricht',
 	'translate-translations-messagename' => 'Name:',
 	'translate-translations-project' => 'Projekt:',
@@ -4335,6 +4342,7 @@ Details: $1',
 	'translate-gs-count' => 'Anzahl',
 	'translate-gs-total' => 'Gesamt',
 	'translate-gs-avgscore' => 'Durchschnittliches Ergebnis',
+	'translate-documentation-language' => 'Nachrichtendokumentation',
 );
 
 /** Swiss High German (Schweizer Hochdeutsch)
@@ -4541,6 +4549,7 @@ Standardna lisćina rěcow wótwisujo wót swójeje rěcy.',
 	'translations-summary' => 'Zapódaj dołojce zdźěleńske mě, aby wšykne k dispozciji stojece pśełožki pokazał.',
 	'translate-translations-no-message' => '"$1" njejo zdźělenje, kótarež dajo se pśełožowaś.',
 	'translate-translations-none' => 'Njejsu pśełožki za "$1"',
+	'translate-translations-count' => '{{PLURAL:$1|jaden pśełožk namakany|$1 pśełožka namkanej|$1 pśełožki namakane|$1 pśełožkow namakanych}}',
 	'translate-translations-fieldset-title' => 'Powěźeńka',
 	'translate-translations-messagename' => 'Mě:',
 	'translate-translations-project' => 'Projekt:',
@@ -4659,6 +4668,7 @@ Drobnostki: $1',
 	'translate-gs-count' => 'Licba',
 	'translate-gs-total' => 'Dogromady',
 	'translate-gs-avgscore' => 'Pśerězne pogódnośenje',
+	'translate-documentation-language' => 'Pokazki za pśełožowanje',
 );
 
 /** Ewe (Eʋegbe)
@@ -5985,6 +5995,7 @@ $1',
 	'translate-gs-count' => 'Määrä',
 	'translate-gs-total' => 'Yhteensä',
 	'translate-gs-avgscore' => 'Keskim. pisteet',
+	'translate-documentation-language' => 'käännösohjeet',
 );
 
 /** French (Français)
@@ -6166,6 +6177,7 @@ Toutes les valeurs ont des limites supérieure et inférieure.',
 	'translations-summary' => 'Entrez un nom de message ci-dessous pour visualiser toutes les traductions disponibles.',
 	'translate-translations-no-message' => '« $1 » n’est pas un message traduisible',
 	'translate-translations-none' => 'Il n’y a pas de traduction pour « $1 »',
+	'translate-translations-count' => 'Il existe {{PLURAL:$1|une traduction|$1 traductions}}.',
 	'translate-translations-fieldset-title' => 'Message',
 	'translate-translations-messagename' => 'Nom :',
 	'translate-translations-project' => 'Projet :',
@@ -6211,6 +6223,7 @@ La sous-page « translators » doit contenir le modèle [[:{{ns:template}}:User|
 	'supportedlanguages-recenttranslations' => 'traductions récentes',
 	'translate-save' => 'Publier ($1)',
 	'translate-jssti-add' => 'Ajouter à la liste',
+	'managemessagegroups' => 'Gestion du groupe des messages',
 	'translate-manage-groups' => 'Gestion du groupe',
 	'translate-manage-listgroups' => 'Groupes configurés',
 	'translate-manage-listgroups-old' => 'Ancien style des groupes',
@@ -6283,6 +6296,7 @@ Détails : $1',
 	'translate-gs-count' => 'Compte',
 	'translate-gs-total' => 'Total',
 	'translate-gs-avgscore' => 'Score moyen',
+	'translate-documentation-language' => 'Documentation du message',
 );
 
 /** Cajun French (Français cadien)
@@ -8043,6 +8057,7 @@ Standardna lisćina rěčow wotwisuje wot twojeje rěče.',
 	'translations-summary' => 'Zapodaj deleka zdźělenske mjeno, zo by wšě k dispoziciji stejce přełožki pokazał.',
 	'translate-translations-no-message' => '"$1" přełožujomna zdźělenka njeje',
 	'translate-translations-none' => 'Přełožki za "$1" njejsu',
+	'translate-translations-count' => '{{PLURAL:$1|jedyn přełožk namakany|$1 přełožkaj namkanej|$1 přełožki namakane|$1 přełožkow namakanych}}',
 	'translate-translations-fieldset-title' => 'Zdźělenka',
 	'translate-translations-messagename' => 'Mjeno:',
 	'translate-translations-project' => 'Projekt:',
@@ -8085,6 +8100,7 @@ Podstrona "translators" dyrbi předłohu  [[:{{ns:template}}:User|User]] wobsaho
 	'supportedlanguages-recenttranslations' => 'najnowše přełožki',
 	'translate-save' => 'Składować ($1)',
 	'translate-jssti-add' => 'Lisćinje přidać',
+	'managemessagegroups' => 'Zrjadowanje zdźělenskich skupinow',
 	'translate-manage-groups' => 'Zrjadowanje skupinow',
 	'translate-manage-listgroups' => 'Konfigurowane skupiny',
 	'translate-manage-listgroups-old' => 'Skupiny stareho stila',
@@ -8160,6 +8176,7 @@ Podrobnosće: $1',
 	'translate-gs-count' => 'Ličba',
 	'translate-gs-total' => 'Dohromady',
 	'translate-gs-avgscore' => 'Přerězne pohódnoćenje',
+	'translate-documentation-language' => 'Pokazki za přełožowanje',
 );
 
 /** Haitian (Kreyòl ayisyen)
@@ -8666,6 +8683,7 @@ Le lista predefinite de linguas depende de tu lingua.',
 	'translations-summary' => 'Entra le nomine de un message infra pro monstrar tote le traductiones disponibile.',
 	'translate-translations-no-message' => '"$1" non es un message traducibile',
 	'translate-translations-none' => 'Non existe alcun traduction pro "$1"',
+	'translate-translations-count' => '{{PLURAL:$1|Un traduction|$1 traductiones}} trovate.',
 	'translate-translations-fieldset-title' => 'Message',
 	'translate-translations-messagename' => 'Nomine:',
 	'translate-translations-project' => 'Projecto:',
@@ -8787,6 +8805,7 @@ Detalios: $1',
 	'translate-gs-count' => 'Conto',
 	'translate-gs-total' => 'Total',
 	'translate-gs-avgscore' => 'Score medie',
+	'translate-documentation-language' => 'documentation de messages',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -11058,6 +11077,7 @@ D'Standard-Lëscht vu Sproochen hànkt vun Ärer Sprooch of.",
 	'translations-summary' => 'Gitt w.e.g. en Numm vun engem Message hei ënnendrënner an fir all disponibel Iwwersetzungen ze weisen.',
 	'translate-translations-no-message' => '"$1" ass kee Message den iwwersat ka ginn',
 	'translate-translations-none' => 'Et gëtt keng Iwwersetzunge fir "$1"',
+	'translate-translations-count' => '{{PLURAL:$1|Eng Iwwersetzung|$1 Iwwersetzunge}} fonnt.',
 	'translate-translations-fieldset-title' => 'Message',
 	'translate-translations-messagename' => 'Numm:',
 	'translate-translations-project' => 'Projet:',
@@ -11099,6 +11119,7 @@ Op dëser Säit ass eng Lëscht vu Sproocheportal fir all Portaler déi mat enge
 	'supportedlanguages-recenttranslations' => 'rezent Iwwersetzungen',
 	'translate-save' => 'Späicher ($1)',
 	'translate-jssti-add' => "Op d'Lëscht derbäisetzen",
+	'managemessagegroups' => 'Gestioun vun de Gruppe vu Messagen',
 	'translate-manage-groups' => 'Gestioun vum Grupp',
 	'translate-manage-listgroups' => 'Agestallte Gruppen',
 	'translate-manage-listgroups-old' => 'Gruppen am ale Stil',
@@ -11172,6 +11193,7 @@ Detailler: $1',
 	'translate-gs-count' => 'Zuel',
 	'translate-gs-total' => 'Total',
 	'translate-gs-avgscore' => 'Duerchschnëttleche Score',
+	'translate-documentation-language' => 'Dokumentatioun vum Message',
 );
 
 /** Ganda (Luganda)
@@ -11613,7 +11635,7 @@ $messages['mk'] = array(
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Непарен број на загради, {{PLURAL:$2|заграда|загради}}:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links' => '{{PLURAL:$2|Следната врска е|Следните $2 врски се}} проблематични:
+	'translate-checks-links' => '{{PLURAL:$2|Следнава врска предизвикува проблеми|Следниве $2 врски предизвикуваат проблеми}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links-missing' => '{{PLURAL:$2|Недостасува следнава врска|$2 Недостасуваат следниве врски}}:
 <strong><nowiki>$1</nowiki></strong>',
@@ -11671,6 +11693,7 @@ $messages['mk'] = array(
 	'translations-summary' => 'Внесете име на порака за приказ на сите достапни преводи.',
 	'translate-translations-no-message' => '"$1" не е порака која се преведува',
 	'translate-translations-none' => 'Нема преводи за "$1"',
+	'translate-translations-count' => '{{PLURAL:$1|Пронајден е еден превод|Пронајдени се $1 преводи}}.',
 	'translate-translations-fieldset-title' => 'Порака',
 	'translate-translations-messagename' => 'Име:',
 	'translate-translations-project' => 'Проект:',
@@ -11791,6 +11814,7 @@ $1',
 	'translate-gs-count' => 'Број',
 	'translate-gs-total' => 'Вкупно',
 	'translate-gs-avgscore' => 'Средн. оцена',
+	'translate-documentation-language' => 'документација на пораки',
 );
 
 /** Malayalam (മലയാളം)
@@ -15333,6 +15357,7 @@ $messages['ru'] = array(
 	'translations-summary' => 'Введите имя сообщения для вывода всех доступных переводов.',
 	'translate-translations-no-message' => '«$1» не является сообщением, доступным для перевода',
 	'translate-translations-none' => 'Нет переводов для «$1»',
+	'translate-translations-count' => '{{PLURAL:$1|Найден один перевод|Найдено $1 перевода|Найдены $1 переводов}}.',
 	'translate-translations-fieldset-title' => 'Сообщение',
 	'translate-translations-messagename' => 'Имя:',
 	'translate-translations-project' => 'Проект:',
@@ -15375,6 +15400,7 @@ $messages['ru'] = array(
 	'supportedlanguages-recenttranslations' => 'недавние переводы',
 	'translate-save' => 'Сохранить ($1)',
 	'translate-jssti-add' => 'Добавить в список',
+	'managemessagegroups' => 'Управление группами сообщений',
 	'translate-manage-groups' => 'Управление группами',
 	'translate-manage-listgroups' => 'Настроенные группы',
 	'translate-manage-listgroups-old' => 'Старый стиль групп',
@@ -15447,6 +15473,7 @@ $1',
 	'translate-gs-count' => 'Кол-во',
 	'translate-gs-total' => 'Всего',
 	'translate-gs-avgscore' => 'Ср. оценка',
+	'translate-documentation-language' => 'документация сообщений',
 );
 
 /** Rusyn (Русиньскый)
