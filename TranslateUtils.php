@@ -91,7 +91,7 @@ class TranslateUtils {
 			__METHOD__
 		);
 
-
+		$titles = array();
 		foreach ( $rows as $row ) {
 			$titles[$row->page_title] = array(
 				Revision::getRevisionText( $row ),
