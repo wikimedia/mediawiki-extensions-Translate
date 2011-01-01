@@ -227,8 +227,9 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 				list( $fuzzy, $translated, $total ) = $this->loadPercentages( $cache, $g, $code );
 			}
 
-			if ( $total === 0 ) {
-				wfWarn( __METHOD__ . ": Group $groupName has zero message ($code)" );
+			if ( $total == 0 ) {
+				$zero = serialize( $total );
+				error_log( __METHOD__ . ": Group $groupName has zero message ($code): $zero" );
 				continue;
 			}
 
