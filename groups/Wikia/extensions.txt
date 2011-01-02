@@ -252,6 +252,7 @@ file = WikiFactory/SpecialWikiFactory.i18n.php
 optional = wikifactory-label-eznamespace
 ignored = awc-metrics-language-top-list
 
-Without images
-file = WikiStickies/SpecialWithoutimages.i18n.php
-aliasfile = WikiStickies/SpecialWithoutimages.alias.php
+# Doesn't exist anymore? -Nike
+# Without images
+# file = WikiStickies/SpecialWithoutimages.i18n.php
+# aliasfile = WikiStickies/SpecialWithoutimages.alias.php
