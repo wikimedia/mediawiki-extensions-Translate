@@ -87,7 +87,6 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 
 			$wgOut->setPagetitle( wfMsg( 'pt-movepage-title', $this->oldText ) );
 			$link = $this->user->getSkin()->link( $this->oldTitle );
-			$wgOut->setSubtitle( wfMsg( 'move-page-backlink', $link ) );
 
 
 			if ( !$this->user->isAllowed( 'pagetranslation' ) ) {
