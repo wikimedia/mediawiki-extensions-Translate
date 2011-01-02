@@ -1223,6 +1223,10 @@ file = StrategyWiki/ActiveStrategy/ActiveStrategy.i18n.php
 
 String Functions
 
+Sub Page List
+descmsg = spl-desc
+magicfile = SubPageList/SubPageList.i18n.magic.php
+
 Sub Page List 3
 descmsg = spl3-desc
 
