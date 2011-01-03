@@ -29,6 +29,5 @@ BASIC:
   description: "{{int:translate-group-desc-openimages-all}}"
 
 GROUPS:
-  - out-openimages
-  - out-openimages-verifyemailtemplate
+  - out-openimages-*
 
