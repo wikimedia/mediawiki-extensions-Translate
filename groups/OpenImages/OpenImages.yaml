@@ -1,0 +1,34 @@
+---
+BASIC:
+  id: out-openimages
+  label: Open Images
+  description: "{{int:bw-desc-openimages}}"
+  namespace: NS_OPENIMAGES
+  display: out/openimages/
+  class: FileBasedMessageGroup
+
+FILES:
+  class: JavaFFS
+  sourcePattern: %GROUPROOT%/openimages/messages_%CODE%.properties
+  definitionFile: %GROUPROOT%/openimages/messages.properties
+  targetPattern: openimages/messages_%CODE%.properties
+
+TAGS:
+  ignored:
+    - user.nodestodelete
+    - user.deleted
+
+---
+BASIC:
+  id: out-openimages-0-all
+  label: Open Images - All messages
+  display: out/openimages
+  meta: yes
+  class: AggregateMessageGroup
+  namespace: NS_OPENIMAGES
+  description: "{{int:translate-group-desc-openimages-all}}"
+
+GROUPS:
+  - out-openimages
+  - out-openimages-verifyemailtemplate
+

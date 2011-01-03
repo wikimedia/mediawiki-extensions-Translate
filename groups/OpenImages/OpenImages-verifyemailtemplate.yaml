@@ -1,0 +1,15 @@
+---
+BASIC:
+  id: out-openimages-verifyemailtemplate
+  label: Open Images - Verify Email Template
+  description: "{{int:translate-groups-desc-openimages-verifyemailtemplate}}"
+  namespace: NS_OPENIMAGES
+  display: out/openimages/
+  class: FileBasedMessageGroup
+
+FILES:
+  class: JavaFFS
+  sourcePattern: %GROUPROOT%/openimages/verifyemailtemplate_%CODE%.properties
+  definitionFile: %GROUPROOT%/openimages/verifyemailtemplate.properties
+  targetPattern: openimages/verifyemailtemplate_%CODE%.properties
+
