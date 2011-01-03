@@ -2,7 +2,7 @@
 BASIC:
   id: out-openimages-verifyemailtemplate
   label: Open Images - Verify Email Template
-  description: "{{int:translate-groups-desc-openimages-verifyemailtemplate}}"
+  description: "{{int:translate-group-desc-openimages-verifyemailtemplate}}"
   namespace: NS_OPENIMAGES
   display: out/openimages/
   class: FileBasedMessageGroup
