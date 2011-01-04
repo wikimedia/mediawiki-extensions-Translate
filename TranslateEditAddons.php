@@ -464,4 +464,13 @@ HTML;
 		}
 		return true;
 	}
+
+	public static function translateMessageDocumentationLanguage( &$names, $code ) {
+		global $wgTranslateDocumentationLanguageCode;
+		if ( $wgTranslateDocumentationLanguageCode ) {
+			$names[$wgTranslateDocumentationLanguageCode] =
+				wfMessage( 'translate-documentation-language' )->inLanguage( $code )->plain();
+		}
+		return true;
+	}
 }
