@@ -125,6 +125,12 @@ $wgResourceModules['translationdisplay'] = array(
 	'localBasePath' => dirname( __FILE__ ), 
 	'remoteExtPath' => 'Translate'
 );
+$wgResourceModules['ext.translate.langstats'] = array(
+	'scripts' => 'js/translate.langstats.js',
+	'styles' => 'js/translate.langstats.css',
+	'localBasePath' => dirname( __FILE__ ),
+	'remoteExtPath' => 'Translate',
+);
 
 /** @endcond */
 
