@@ -422,7 +422,11 @@ class ExtensionMessageGroup extends MessageGroupOld {
 
 		global $wgLang;
 
-		$desc = $this->getMessage( $key, $wgLang->getCode() );
+		$desc = null;
+
+		if ( !wfEmptyMsg( $key ) ) {
+			$desc = wfMsgNoTrans( $key );
+		}
 
 		if ( $desc === null ) {
 			$desc = $this->getMessage( $key, 'en' );
@@ -1013,4 +1017,61 @@ class MessageGroups {
 		}
 		return $this->classes;
 	}
+
+	/**
+	 * Returns group strucuted into sub groups. First group in each subgroup is
+	 * considered as the main group.
+	 */
+	public static function getGroupStructure() {
+		global $wgTranslateGroupStructure;
+
+		$groups = self::getAllGroups();
+
+		$structure = array();
+		foreach ( $groups as $id => $o ) {
+			if ( !MessageGroups::getGroup( $id )->exists() ) {
+				continue;
+			}
+
+			foreach ( $wgTranslateGroupStructure as $pattern => $hypergroup ) {
+				if ( preg_match( $pattern, $id ) ) {
+					// Emulate deepArraySet, because AFAIK php does not have one
+					self::deepArraySet( $structure, $hypergroup, $id, $o );
+					// We need to continue the outer loop, because we have finished this item.
+					continue 2;
+				}
+			}
+
+			// Does not belong to any subgroup, just shove it into main level.
+			$structure[$id] = $o;
+		}
+
+		// Sort top-level groups according to labels, not ids
+		foreach ( $structure as $id => $data ) {
+			// Either it is a group itself, or the first group of the array
+			$nid = is_array( $data ) ? key( $data ) : $id;
+			$labels[$id] = $groups[$nid]->getLabel();
+		}
+		natcasesort( $labels );
+
+		foreach ( array_keys( $labels ) as $id ) {
+			$sorted[$id] = $structure[$id];
+		}
+
+		return $sorted;
+	}
+
+	/**
+	 * Function do do $array[level1][level2]...[levelN][$key] = $value, if we have
+	 * the indexes in an array.
+	 */
+	public static function deepArraySet( &$array, array $indexes, $key, $value ) {
+		foreach ( $indexes as $index ) {
+			if ( !isset( $array[$index] ) ) $array[$index] = array();
+			$array = &$array[$index];
+		}
+
+		$array[$key] = $value;
+	}
+
 }

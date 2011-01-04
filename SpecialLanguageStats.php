@@ -58,7 +58,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 		if ( array_key_exists( $code, Language::getLanguageNames() ) ) {
 			$out .= $this->getGroupStats( $code, $suppressComplete );
-		} else if ( $code ) {
+		} elseif ( $code ) {
 			$wgOut->wrapWikiMsg( "<div class='error'>$1</div>", 'translate-page-no-such-language' );
 		}
 
@@ -126,8 +126,8 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		if ( $sort ) $attributes['data-sort-value'] = $sort;
 		if ( $bgcolor ) $attributes['style'] = "background-color: #" . $bgcolor;
 
-		$element = Xml::element( 'td', $attributes, $in );
-		return "\t\t" . $element . "\n";
+		$element = Html::element( 'td', $attributes, $in );
+		return $element;
 	}
 
 	function getBackgroundColour( $subset, $total, $fuzzy = false ) {
@@ -171,20 +171,20 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$out = wfMsgExt( 'languagestats-stats-for', array( 'parse', 'replaceafter' ), $languageName, $rcInLangLink );
 
 		// Create table header
-		$out .= Xml::openElement(
+		$out .= Html::openElement(
 			'table',
 			array(
 				'class' => "sortable wikitable mw-sp-translate-table"
 			)
 		);
 
-		$out .= Xml::openElement( 'tr' );
-		$out .= Xml::element( 'th', array( 'title' => self::newlineToWordSeparator( wfMsg( 'translate-page-group-tooltip' ) ) ), wfMsg( 'translate-page-group' ) );
-		$out .= Xml::element( 'th', array( 'title' => self::newlineToWordSeparator( wfMsg( 'translate-total-tooltip' ) ) ), wfMsg( 'translate-total' ) );
-		$out .= Xml::element( 'th', array( 'title' => self::newlineToWordSeparator( wfMsg( 'translate-untranslated-tooltip' ) ) ), wfMsg( 'translate-untranslated' ) );
-		$out .= Xml::element( 'th', array( 'title' => self::newlineToWordSeparator( wfMsg( 'translate-percentage-complete-tooltip' ) ) ), wfMsg( 'translate-percentage-complete' ) );
-		$out .= Xml::element( 'th', array( 'title' => self::newlineToWordSeparator( wfMsg( 'translate-percentage-fuzzy-tooltip' ) ) ), wfMsg( 'translate-percentage-fuzzy' ) );
-		$out .= Xml::closeElement( 'tr' );
+		$out .= "\n\t" . Html::openElement( 'tr' );
+		$out .= "\n\t\t" . Html::element( 'th', array( 'title' => self::newlineToWordSeparator( wfMsg( 'translate-page-group-tooltip' ) ) ), wfMsg( 'translate-page-group' ) );
+		$out .= "\n\t\t" . Html::element( 'th', array( 'title' => self::newlineToWordSeparator( wfMsg( 'translate-total-tooltip' ) ) ), wfMsg( 'translate-total' ) );
+		$out .= "\n\t\t" . Html::element( 'th', array( 'title' => self::newlineToWordSeparator( wfMsg( 'translate-untranslated-tooltip' ) ) ), wfMsg( 'translate-untranslated' ) );
+		$out .= "\n\t\t" . Html::element( 'th', array( 'title' => self::newlineToWordSeparator( wfMsg( 'translate-percentage-complete-tooltip' ) ) ), wfMsg( 'translate-percentage-complete' ) );
+		$out .= "\n\t\t" . Html::element( 'th', array( 'title' => self::newlineToWordSeparator( wfMsg( 'translate-percentage-fuzzy-tooltip' ) ) ), wfMsg( 'translate-percentage-fuzzy' ) );
+		$out .= "\n\t" . Xml::closeElement( 'tr' );
 
 		return $out;
 	}
@@ -198,81 +198,118 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	 * @return \string HTML
 	 */
 	function getGroupStats( $code, $suppressComplete = false ) {
-		global $wgLang;
+		$this->code = $code;
+		$this->suppressComplete = $suppressComplete;
 
 		$out = '';
 
 		$cache = new ArrayMemoryCache( 'groupstats' );
-		$groups = MessageGroups::singleton()->getGroups();
+		$structure = MessageGroups::getGroupStructure();
 
-		foreach ( $groups as $groupName => $g ) {
-			// Do not report if this group is blacklisted.
-			$groupId = $g->getId();
-			$blacklisted = $this->isBlacklisted( $groupId, $code );
-
-			if ( $blacklisted !== null ) {
-				continue;
-			}
-
-			$fuzzy = $translated = $total = 0;
-
-			if ( $g instanceof AggregateMessageGroup ) {
-				foreach ( $g->getGroups() as $subgroup ) {
-					$result = $this->loadPercentages( $cache, $subgroup, $code );
-					$fuzzy += $result[0];
-					$translated += $result[1];
-					$total += $result[2];
-				}
-			} else {
-				list( $fuzzy, $translated, $total ) = $this->loadPercentages( $cache, $g, $code );
-			}
-
-			if ( $total == 0 ) {
-				$zero = serialize( $total );
-				error_log( __METHOD__ . ": Group $groupName has zero message ($code): $zero" );
-				continue;
-			}
-
-			// Skip if $suppressComplete and complete
-			if ( $suppressComplete && !$fuzzy && $translated === $total ) {
-				continue;
-			}
-
-			if ( $translated === $total ) {
-				$extra = array( 'task' => 'reviewall' );
-			} else {
-				$extra = array();
-			}
-
-			$out .= Xml::openElement( 'tr' );
-			$out .= '<td>' . $this->makeGroupLink( $g, $code, $extra ) . '</td>';
-
-			$out .= Xml::element( 'td',
-				array( 'data-sort-value' => $total ),
-				$wgLang->formatNum( $total ) );
-
-			$out .= Xml::element( 'td',
-				array( 'data-sort-value' => $total - $translated ),
-				$wgLang->formatNum( $total - $translated ) );
-
-			$out .= $this->element( $this->formatPercentage( $translated / $total ),
-				$this->getBackgroundColour( $translated, $total ),
-				sprintf( '%1.5f', $translated / $total ) );
-
-			$out .= $this->element( $this->formatPercentage( $fuzzy / $total ),
-				$this->getBackgroundColour( $fuzzy, $total, true ),
-				sprintf( '%1.5f', $fuzzy / $total ) );
-
-			$out .= Xml::closeElement( 'tr' );
+		foreach ( $structure as $item ) {
+			$out .= $this->makeGroupGroup( $item, $cache );
 		}
 
 		if ( $out ) {
-			$out = $this->createHeader( $code ) . $out;
+			$out = $this->createHeader( $code ) ."\n" . $out;
 			$out .= Xml::closeElement( 'table' );
 		} else {
 			$out = wfMsgExt( 'translate-nothing-to-do', 'parse' );
 		}
 
+		return $out;
+	}
+
+	protected function makeGroupGroup( $item, $cache, $parent = '' ) {
+		$out = '';
+		if ( !is_array( $item ) ) {
+			return $this->makeGroupRow( $item, $cache, $parent === '' ? false : $parent );
+		}
+
+		$out = '';
+		$top = array_shift( $item );
+		$out .= $this->makeGroupRow( $top, $cache, $parent === '' ? true : $parent );
+		foreach ( $item as $subgroup ) {
+			$parents = trim( $parent . ' ' .$top->getId() );
+			$out .= $this->makeGroupGroup( $subgroup, $cache, $parents );
+		}
+		return $out;
+	}
+
+	protected function makeGroupRow( $group, $cache, $parent = false ) {
+		global $wgLang;
+
+		$out = '';
+		$code = $this->code;
+		$suppressComplete = $this->suppressComplete;
+		$g = $group;
+		$groupName = $g->getId();
+		// Do not report if this group is blacklisted.
+		$groupId = $g->getId();
+		$blacklisted = $this->isBlacklisted( $groupId, $code );
+
+		if ( $blacklisted !== null ) {
+			continue;
+		}
+
+		$fuzzy = $translated = $total = 0;
+
+		if ( $g instanceof AggregateMessageGroup ) {
+			foreach ( $g->getGroups() as $subgroup ) {
+				$result = $this->loadPercentages( $cache, $subgroup, $code );
+				$fuzzy += $result[0];
+				$translated += $result[1];
+				$total += $result[2];
+			}
+		} else {
+			list( $fuzzy, $translated, $total ) = $this->loadPercentages( $cache, $g, $code );
+		}
+
+		if ( $total == 0 ) {
+			$zero = serialize( $total );
+			error_log( __METHOD__ . ": Group $groupName has zero message ($code): $zero" );
+			continue;
+		}
+
+		// Skip if $suppressComplete and complete
+		if ( $suppressComplete && !$fuzzy && $translated === $total ) {
+			continue;
+		}
+
+		if ( $translated === $total ) {
+			$extra = array( 'task' => 'reviewall' );
+		} else {
+			$extra = array();
+		}
+
+		$rowParams = array();
+		$rowParams['data-groupid'] = $groupId;
+		if ( is_string( $parent ) ) {
+			$rowParams['data-parentgroups'] = $parent;
+		} elseif( $parent === true ) {
+			$rowParams['data-ismeta'] = '1';
+		}
+
+		$out .= "\t" . Html::openElement( 'tr', $rowParams );
+		$out .= "\n\t\t" . Html::rawElement( 'td', array(), $this->makeGroupLink( $g, $code, $extra ) );
+
+		$out .= "\n\t\t" . Html::element( 'td',
+			array( 'data-sort-value' => $total ),
+			$wgLang->formatNum( $total ) );
+
+		$out .= "\n\t\t" . Html::element( 'td',
+			array( 'data-sort-value' => $total - $translated ),
+			$wgLang->formatNum( $total - $translated ) );
+
+		$out .= "\n\t\t" .$this->element( $this->formatPercentage( $translated / $total ),
+			$this->getBackgroundColour( $translated, $total ),
+			sprintf( '%1.3f', $translated / $total ) );
+
+		$out .= "\n\t\t" .$this->element( $this->formatPercentage( $fuzzy / $total ),
+			$this->getBackgroundColour( $fuzzy, $total, true ),
+			sprintf( '%1.3f', $fuzzy / $total ) );
+
+		$out .= "\n\t" . Xml::closeElement( 'tr' ) ."\n";
 		return $out;
 	}
 
