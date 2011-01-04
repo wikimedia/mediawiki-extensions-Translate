@@ -12,31 +12,6 @@ jQuery( document ).ready( function() {
 	// Only do stuff if there are any meta group rows on this pages
 	if ( $metaRows.size() ) {
 
-		var $allChildRows = $( 'tr[data-parentgroups]', $translateTable ),
-			$allToggles = $( '.mw-sp-langstats-toggle', $translateTable ),
-			$toggleAllButton = $( '<span class="mw-sp-langstats-expander">[</span>' ).append( $( '<a href="#" onclick="return false;">' ).text( mw.msg( 'translate-langstats-expandall' ) ) ).append( ']' ).click( function() {
-				var	$el = $( this );
-				// Switch the state and toggle the rows
-				// and update the local toggles too
-				if ( $el.hasClass( 'mw-sp-langstats-expander' ) ) {
-					$allChildRows.show();
-					$el.add( $allToggles ).removeClass( 'mw-sp-langstats-expander' ).addClass( 'mw-sp-langstats-collapser' )
-					$el.find( '> a' ).text( mw.msg( 'translate-langstats-collapseall' ) );
-					$allToggles.find( '> a' ).text( mw.msg( 'translate-langstats-collapse' ) );
-				} else {
-					$allChildRows.hide();
-					$el.add( $allToggles ).addClass( 'mw-sp-langstats-expander' ).removeClass( 'mw-sp-langstats-collapser' )
-					$el.find( '> a' ).text( mw.msg( 'translate-langstats-expandall' ) );
-					$allToggles.find( '> a' ).text( mw.msg( 'translate-langstats-expand' ) );
-				}
-			} );
-
-		// Initially hide them
-		$allChildRows.hide();
-
-		// Add the toggle-all button above the table
-		$( '<p class="mw-sp-langstats-toggleall"></p>' ).append( $toggleAllButton ).insertBefore( $translateTable );
-
 		$metaRows.each( function() {
 			// Get info and cache selectors
 			var	$thisGroup = $(this),
@@ -65,5 +40,32 @@ jQuery( document ).ready( function() {
 				$thisGroup.find( ' > td:first' ).append( $toggler );
 			}
 		} );
+
+		// Create, bind and append the toggle-all button
+		var $allChildRows = $( 'tr[data-parentgroups]', $translateTable ),
+			$allToggles_cache = null,
+			$toggleAllButton = $( '<span class="mw-sp-langstats-expander">[</span>' ).append( $( '<a href="#" onclick="return false;">' ).text( mw.msg( 'translate-langstats-expandall' ) ) ).append( ']' ).click( function() {
+				var	$el = $( this ),
+					$allToggles = !!$allToggles_cache ? $allToggles_cache : $( '.mw-sp-langstats-toggle', $translateTable ),
+				// Switch the state and toggle the rows
+				// and update the local toggles too
+				if ( $el.hasClass( 'mw-sp-langstats-expander' ) ) {
+					$allChildRows.show();
+					$el.add( $allToggles ).removeClass( 'mw-sp-langstats-expander' ).addClass( 'mw-sp-langstats-collapser' )
+					$el.find( '> a' ).text( mw.msg( 'translate-langstats-collapseall' ) );
+					$allToggles.find( '> a' ).text( mw.msg( 'translate-langstats-collapse' ) );
+				} else {
+					$allChildRows.hide();
+					$el.add( $allToggles ).addClass( 'mw-sp-langstats-expander' ).removeClass( 'mw-sp-langstats-collapser' )
+					$el.find( '> a' ).text( mw.msg( 'translate-langstats-expandall' ) );
+					$allToggles.find( '> a' ).text( mw.msg( 'translate-langstats-expand' ) );
+				}
+			} );
+
+		// Initially hide them
+		$allChildRows.hide();
+
+		// Add the toggle-all button above the table
+		$( '<p class="mw-sp-langstats-toggleall"></p>' ).append( $toggleAllButton ).insertBefore( $translateTable );
 	}
 } );
