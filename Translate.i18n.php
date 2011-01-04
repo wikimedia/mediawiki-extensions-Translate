@@ -6824,6 +6824,7 @@ A lista de linguas por defecto depende da súa.',
 	'translations-summary' => 'Insira embaixo o nome dunha mensaxe para ver todas as traducións dispoñibles.',
 	'translate-translations-no-message' => '"$1" non é unha mensaxe que se poida traducir',
 	'translate-translations-none' => 'Non hai traducións da mensaxe "$1"',
+	'translate-translations-count' => '{{PLURAL:$1|Existe unha tradución|Existen $1 traducións}}.',
 	'translate-translations-fieldset-title' => 'Mensaxe',
 	'translate-translations-messagename' => 'Nome:',
 	'translate-translations-project' => 'Proxecto:',
@@ -6866,6 +6867,7 @@ Esta subpáxina "translators" debe conter o modelo [[:{{ns:template}}:User|User]
 	'supportedlanguages-recenttranslations' => 'traducións recentes',
 	'translate-save' => 'Gardar ($1)',
 	'translate-jssti-add' => 'Engadir á lista',
+	'managemessagegroups' => 'Xestión do grupo de mensaxes',
 	'translate-manage-groups' => 'Xestión do grupo',
 	'translate-manage-listgroups' => 'Grupos configurados',
 	'translate-manage-listgroups-old' => 'Grupos de estilo vello',
@@ -6939,6 +6941,7 @@ Detalles: $1',
 	'translate-gs-count' => 'Conta',
 	'translate-gs-total' => 'Total',
 	'translate-gs-avgscore' => 'Puntuación media',
+	'translate-documentation-language' => 'documentación das mensaxes',
 );
 
 /** Gothic (Gothic)
@@ -11626,7 +11629,7 @@ $messages['mk'] = array(
 	'translate-magic-cm-savefailed' => 'Неуспешно зачувување',
 	'translate-magic-special' => 'Алијаси на специјални страници',
 	'translate-magic-words' => 'Волшебни зборови',
-	'translate-magic-namespace' => 'Називи на именски простор',
+	'translate-magic-namespace' => 'Називи на именски простори',
 	'translate-magic-notsaved' => 'Вашето уредување не беше зачувано!',
 	'translate-magic-errors' => 'Поправете {{PLURAL:$1|ја следнава грешка|ги следниве грешки}} во преводот:',
 	'translate-magic-saved' => 'Вашите промени се успешно зачувани.',
@@ -14056,6 +14059,7 @@ Tùit ij valor a l'han dij lìmit superior e anferior.",
 	'translations-summary' => 'Buté un nòm ëd mëssagi sì-sota për vëdde tute le tradussion disponìbij.',
 	'translate-translations-no-message' => '"$1" a l\'é nen un mëssagi voltàbil',
 	'translate-translations-none' => 'A-i é pa ëd tradussion për "$1"',
+	'translate-translations-count' => 'Trovà {{PLURAL:$1|na tradussion|$1 tradussion}}.',
 	'translate-translations-fieldset-title' => 'Mëssagi',
 	'translate-translations-messagename' => 'Nòm:',
 	'translate-translations-project' => 'Proget:',
@@ -14098,6 +14102,7 @@ La sot-pàgina "translators" a deuv conten-e lë stamp [[:{{ns:template}}:User|U
 	'supportedlanguages-recenttranslations' => 'tradussion recente',
 	'translate-save' => 'Salva ($1)',
 	'translate-jssti-add' => 'Gionté a la lista',
+	'managemessagegroups' => 'Gestion ëd le partìe ëd mëssagi',
 	'translate-manage-groups' => 'Gestion dla partìa',
 	'translate-manage-listgroups' => 'Partìe configurà',
 	'translate-manage-listgroups-old' => 'Partìe veja manera',
@@ -14173,6 +14178,7 @@ Detaj: $1",
 	'translate-gs-count' => 'Cont',
 	'translate-gs-total' => 'Total',
 	'translate-gs-avgscore' => 'Pontegi medi',
+	'translate-documentation-language' => 'Documentassion dël mëssagi',
 );
 
 /** Western Punjabi (پنجابی)
@@ -16485,6 +16491,7 @@ $messages['sq'] = array(
 );
 
 /** Serbian Cyrillic ekavian (Српски (ћирилица))
+ * @author Rancher
  * @author Sasa Stefanovic
  * @author Жељко Тодоровић
  * @author Михајло Анђелковић
@@ -16546,7 +16553,7 @@ $messages['sr-ec'] = array(
 	'translate-magic-cm-comment' => 'Коментар:',
 	'translate-magic-cm-save' => 'Сачувај',
 	'translate-magic-cm-updatedusing' => 'Актуелизовано коришћењем [[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]]',
-	'translate-magic-cm-savefailed' => 'Промене нису запамћене',
+	'translate-magic-cm-savefailed' => 'Измене нису сачуване.',
 	'translate-magic-special' => 'Кодови за специјалне стране',
 	'translate-magic-words' => 'Магичне речи',
 	'translate-magic-namespace' => 'Називи именских простора',
@@ -16615,7 +16622,7 @@ $messages['sr-ec'] = array(
 Ипак би можда било добро да их прегледате на [[Special:Translate|{{int:translate}}]].',
 	'supportedlanguages' => 'Подржани језици',
 	'translate-save' => 'Сними ($1)',
-	'translate-manage-cacheat' => 'Увезено $1, у $2',
+	'translate-manage-cacheat' => 'Увезено $1 у $2',
 	'translate-manage-modlang-new' => '$1 (ново)',
 	'translate-manage-import-diff' => 'Порука $1 | Кација: $2',
 	'translate-manage-import-new' => 'Нова порука $1',
@@ -19074,9 +19081,9 @@ Nhấn chuột vào tên nhóm thông điệp để xem một danh sách thông 
 	'translate-task-problematic' => 'Xem các thông báo có vấn đề',
 	'translate-task-review' => 'Kiểm lại các thay đổi trong',
 	'translate-task-reviewall' => 'Kiểm lại tất cả các bản dịch trong',
-	'translate-task-export' => 'Xuất các bản dịch từ',
-	'translate-task-export-to-file' => 'Xuất bản dịch ra tập tin từ',
-	'translate-task-export-as-po' => 'Xuất bản dịch theo dạng Gettext',
+	'translate-task-export' => 'Xuất các bản dịch',
+	'translate-task-export-to-file' => 'Xuất bản dịch ra tập tin',
+	'translate-task-export-as-po' => 'Xuất bản dịch ra dạng ngoại tuyến',
 	'translate-task-export-to-xliff' => 'Xuất bản dịch theo định dạng Xliff',
 	'translate-page-no-such-language' => 'Ngôn ngữ chỉ định không đúng.',
 	'translate-page-no-such-task' => 'Tác vụ chỉ định không đúng.',
@@ -19215,6 +19222,7 @@ Danh sách các ngôn ngữ mặc định sẽ tùy thuộc vào ngôn ngữ mà
 	'translations-summary' => 'Nhập vào một tên thông điệp phía dưới để hiển thị tất cả các bản dịch hiện có.',
 	'translate-translations-no-message' => '"$1" không phải là thông điệp cần dịch',
 	'translate-translations-none' => 'Không có bản dịch cho "$1"',
+	'translate-translations-count' => 'Tìm thấy {{PLURAL:$1|một bản dịch|$1 bản dịch}}.',
 	'translate-translations-fieldset-title' => 'Thông điệp',
 	'translate-translations-messagename' => 'Tên:',
 	'translate-translations-project' => 'Dự án:',
@@ -19258,6 +19266,7 @@ Trang con "translators" phải chứa bản mẫu [[:{{ns:template}}:User|User]]
 	'supportedlanguages-recenttranslations' => 'các bản dịch gần đây',
 	'translate-save' => 'Lưu ($1)',
 	'translate-jssti-add' => 'Thêm vào danh sách',
+	'managemessagegroups' => 'Quản lý nhóm thông điệp',
 	'translate-manage-groups' => 'Quản lý nhóm',
 	'translate-manage-listgroups' => 'Nhóm được cấu hình',
 	'translate-manage-listgroups-old' => 'Nhóm theo kiểu cũ',
@@ -19333,6 +19342,7 @@ Chi tiết:$1',
 	'translate-gs-count' => 'Số lượng',
 	'translate-gs-total' => 'Tổng cộng',
 	'translate-gs-avgscore' => 'Điểm t.bình',
+	'translate-documentation-language' => 'Tài liệu thông điệp',
 );
 
 /** Volapük (Volapük)
