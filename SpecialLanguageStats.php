@@ -224,7 +224,6 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	}
 
 	protected function makeGroupGroup( $item, $cache, $parent = '' ) {
-		$out = '';
 		if ( !is_array( $item ) ) {
 			return $this->makeGroupRow( $item, $cache, $parent === '' ? false : $parent );
 		}
@@ -252,7 +251,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$blacklisted = $this->isBlacklisted( $groupId, $code );
 
 		if ( $blacklisted !== null ) {
-			continue;
+			return '';
 		}
 
 		$fuzzy = $translated = $total = 0;
@@ -271,12 +270,12 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		if ( $total == 0 ) {
 			$zero = serialize( $total );
 			error_log( __METHOD__ . ": Group $groupName has zero message ($code): $zero" );
-			continue;
+			return '';
 		}
 
 		// Skip if $suppressComplete and complete
 		if ( $suppressComplete && !$fuzzy && $translated === $total ) {
-			continue;
+			return '';
 		}
 
 		if ( $translated === $total ) {
