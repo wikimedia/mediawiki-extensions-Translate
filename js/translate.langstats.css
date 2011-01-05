@@ -1,3 +1,7 @@
+.mw-sp-translate-table.wikitable tr:hover td {
+	background: white;
+}
+
 .mw-sp-langstats-toggleall {
 	text-align: right;
 }
