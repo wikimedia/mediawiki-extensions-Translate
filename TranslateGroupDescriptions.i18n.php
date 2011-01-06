@@ -322,6 +322,9 @@ $messages['bs'] = array(
 Molimo pogledajte [[mw:Extension:PDF_Writer]] i http://code.pediapress.com/wiki/wiki/mwlibrl za više informacija.",
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] je klijent za webmail napisan u PHP. Molimo prijavite sve greške na stranicu [[Support]].',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] je program za vanmrežno čitanje Wikipedije',
+	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] je otvorena medijska platforma',
+	'translate-group-desc-openimages-verifyemailtemplate' => 'Ove poruke su dio [[Translating:Open Images|Open Images]] šablona potvrđivanja emaila',
+	'translate-group-desc-openimages-all' => 'Ove poruke su dio [[Translating:Open Images|Open Images]] projekta',
 	'bw-desc-openlayers' => 'OpenLayers je generator dinamičkih mapa otvorenog koda. Molimo prijavite sve greške na [[support]].',
 	'bw-desc-openstreetmap' => 'Sve poruke vezane za [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Ova grupa poruka sadrži poruke interfejsa za [[Translating:Open Street Map|Open Street Map]].
