@@ -1078,8 +1078,7 @@ descmsg = smw-desc
 ignored = smw_ask_doculink, smw_service_online_maps, smw_uri_blacklist
 optional = smw_rss_link, smw_decseparator, smw_kiloseparator
 optional = smw_rss_description, smw_browse_more, specialpages-group-smw_group
-optional = smw_csv_link
-optional = smw_json_link
+optional = smw_csv_link, smw_json_link, smw_rdf_link
 
 Semantic Project Management
 file = SemanticProjectManagement/includes/SPM_Messages.php
