@@ -1272,6 +1272,7 @@ $messages['lb'] = array(
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] ass e Webmail-Client deen a PHP geschriwen ass. Wann dir Problemer oder Froen domat hutt da gitt w.e.g. op [[Support]].',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] ass en offline Wikipedia-Liesprogramm',
 	'translate-group-desc-openimages-all' => 'Dës Message sinn en Deel vum [[Translating:Open Images|Open Images]]-Projet',
+	'bw-desc-openlayers' => '[[Translating:OpenLayers|OpenLayers]] ass en dynameschen Kaarte-Generator a JavaScript',
 	'bw-desc-openstreetmap' => 'All Messagen a Relatioun mat [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => '[[Translating:OpenStreetMap|OpenStreetMap]] ass eng ännerbar Kaart vun der ganzer Welt',
 	'bw-desc-osm-potlatch' => '[[Translating:OpenStreetMap|Potlatch]] ass en Editeur fir OpenStreetMap den op Flash baséiert',

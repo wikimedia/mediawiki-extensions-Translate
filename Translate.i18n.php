@@ -8241,26 +8241,27 @@ Podrobnosće: $1',
 );
 
 /** Haitian (Kreyòl ayisyen)
+ * @author Boukman
  * @author Jvm
  * @author Masterches
  */
 $messages['ht'] = array(
 	'translate' => 'Tradui',
 	'translate-desc' => '[[Special:Translate|Paj espesyal]] pou tradui MediaWiki e plis ankò.',
-	'translate-edit' => 'edite',
-	'translate-talk' => 'pale',
+	'translate-edit' => 'modifye',
+	'translate-talk' => 'Diskite',
 	'translate-history' => 'istwa',
-	'translate-task-view' => 'Wè tout mesaj soti nan',
-	'translate-task-untranslated' => 'Wè tout mesaj ki pa tradui soti nan',
-	'translate-task-optional' => 'Wè mesaj optional soti nan',
+	'translate-task-view' => 'Wè tout mesaj ki soti nan',
+	'translate-task-untranslated' => 'Wè tout mesaj ki pa tradui ki soti nan',
+	'translate-task-optional' => 'Wè mesaj fakiltatif ki soti nan',
 	'translate-task-review' => 'Revize chanjman nan',
 	'translate-task-reviewall' => 'Revize tout tradiksyon yo nan',
-	'translate-task-export' => 'Ekspòte tradiksyon yo nan',
-	'translate-task-export-to-file' => 'Ekspòte tradisyon a nan yon fichye depi',
-	'translate-task-export-as-po' => 'Ekspòte nan fòma Gettext tradiksyon pou',
-	'translate-page-no-such-language' => 'Langaj espesifye-a envalid.',
-	'translate-page-no-such-task' => 'Tach espesifye-a envalid.',
-	'translate-page-no-such-group' => 'Group espesifye-a invalid',
+	'translate-task-export' => 'Ekspòte tradiksyon yo',
+	'translate-task-export-to-file' => 'Ekspòte tradiksyon yo nan yon fichye',
+	'translate-task-export-as-po' => 'Ekspòte pou fè tradiksyon andeyò',
+	'translate-page-no-such-language' => 'Lang ki endike a pa bon.',
+	'translate-page-no-such-task' => 'Travay ki endike a pa bon.',
+	'translate-page-no-such-group' => 'Gwoup ki endike a pa bon',
 	'translate-page-settings-legend' => 'Konfigirasyon, preferans',
 	'translate-page-task' => 'Mwen vle',
 	'translate-page-group' => 'Gwoup',
@@ -8274,54 +8275,55 @@ $messages['ht'] = array(
 	'translate-page-showing-none' => 'Pa genyen pyès mesaj pou montre.',
 	'translate-next' => 'Paj swivan',
 	'translate-prev' => 'Paj presedan',
-	'translate-page-description-legend' => 'Enfòmasyon sou group la',
+	'translate-page-description-legend' => 'Enfòmasyon sou gwoup la',
 	'translate-page-edit' => 'modifye',
 	'translate-optional' => '(opsyon)',
-	'translate-ignored' => '(ignore)',
+	'translate-ignored' => '(inyore)',
 	'translate-edit-definition' => 'Definisyon pou mesaj sa',
 	'translate-edit-contribute' => 'kontribiye',
 	'translate-edit-no-information' => "''Mesaj sa pa dokimante.
-Si w konnen ki kote mesaj sa itilize, ou kapab ede lòt tradiktè pa ajoute dokimantasyon pou mesaj sa.''",
-	'translate-edit-information' => 'Enfòmasyon konsène mesaj sa ($1)',
-	'translate-edit-in-other-languages' => 'Mesaj nan lòt langaj yo',
-	'translate-edit-committed' => 'Trandiksyon kouran nan logisye',
-	'translate-edit-warnings' => 'Kosyon konsène tradiksyon enkonplete yo',
-	'translate-magic-pagename' => 'MediaWiki tradiksyon prolonje',
-	'translate-magic-help' => 'Ou kapab tradui alias paj especial yo, mo majik, non po yo ak non nonespas yo.
+Si w konnen ki kote mesaj sa itilize, ou kapab ede lòt tradiktè lè ou ajoute dokimantasyon pou mesaj sa.''",
+	'translate-edit-information' => 'Enfòmasyon sou mesaj "$2" ($1)',
+	'translate-edit-in-other-languages' => 'Mesaj "$1" nan lòt lang yo',
+	'translate-edit-committed' => 'Tradiksyon kouran nan logisyèl',
+	'translate-edit-warnings' => 'Avètisman sou tradiksyon ki pa konplete yo',
+	'translate-magic-pagename' => 'Tradiksyon MediaWiki pwolonje',
+	'translate-magic-help' => 'Ou kapab tradui alias paj espesyal yo, mo majik ak non espas non yo.
 
-Nan mo majik yo ou bezwen enkli tradiksyon angle oubyen yo sispann travay.
-Epi kite premye bagay la (0 or 1) kòm li ye.
-
-Alias paj espesyal yo ak mo majik yo kapab gen miltip tradiksyon.
+Alias pou paj espesyal yo ak mo majik yo ka gen plizyè tradiksyon.
 Tradiksyon yo separe pa yon vigil (,).
-Non po ak nonespas kapab gen yon sèl tradiksyon.
+Espas non yo ka genyen yon sèl tradiksyon sèlman.
 
-Nan nonespas tradiksyon yo <code>$1 pale</code> espesyal. <code>$1</code> ranplase pa nonsitwèb (pa ekzanp <code>{{SITENAME}} pale</code>).
-Si li pa posib nan langaj ou pou fòme expresyon valid san ou pa chanje nonsitwèb, souple kontakte yon devlopè.
+Nan tradiksyon espas non yo <code>$1 talk</code> espesyal. <code>$1</code> ranplase pa non sitwèb (pa ekzanp <code>{{ns:project_talk}}</code>).
+Si li pa posib nan lang ou pou fòme ekspresyon valid san ou pa chanje nonsitwèb, souple kontakte yon devlopè.
 
-Fò ke ou nan yon group tradiktè pou ou kapab sove chanjman.
-Chanjman yo pa sove tou pandan ou pa klike sou bouton sove anba.',
+Fòk ou fè pati group tradiktè yo pou ou kapab sove chanjman yo.
+Chanjman yo pa sove jouk ou klike sou bouton sove anba.',
 	'translate-magic-submit' => 'Mande',
 	'translate-magic-cm-export' => 'Expòte',
 	'translate-magic-cm-to-be' => "Ap vin'",
 	'translate-magic-cm-current' => 'Aktyèl',
 	'translate-magic-cm-original' => 'Orijinal',
 	'translate-magic-cm-comment' => 'Kòmantè:',
-	'translate-magic-cm-save' => 'Sove',
-	'translate-magic-cm-updatedusing' => 'Met an kouran itilize [[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]]',
-	'translate-magic-cm-savefailed' => 'Sove chwe',
+	'translate-magic-cm-save' => 'Anrejistre',
+	'translate-magic-cm-updatedusing' => 'Mete a jou pa [[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]]',
+	'translate-magic-cm-savefailed' => 'Anrejistreman pa t reyisi',
 	'translate-magic-special' => 'Alias paj espesyal yo',
 	'translate-magic-words' => 'Mo majik yo',
-	'translate-magic-namespace' => 'Non nonespas yo',
-	'translationchanges' => 'Tradiksyon chanjman',
+	'translate-magic-namespace' => 'Non espas non yo',
+	'translationchanges' => 'Chanjman nan tradiksyon yo',
 	'translationchanges-export' => 'expòte',
 	'translationchanges-change' => '$1: $2 pa $3',
-	'translate-checks-parameters' => 'Paramèt swivan yo pa itilize: <strong>$1</strong>',
-	'translate-checks-balance' => 'Genyen yon kantite paramè enpè: <strong>$1</strong>',
-	'translate-checks-links' => 'Chèn swivan yo problèmatik: <strong>$1</strong>',
-	'translate-checks-xhtml' => 'Souple ranplase tag swivan yo avèk sa ki kòrèk yo: <strong>$1</strong>',
+	'translate-checks-parameters' => 'Paramèt {{PLURAL:$2|swivan|swivan yo}} pa itilize:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-balance' => 'Genyen yon kantite {{PLURAL:$2|parantèz|parantèz yo}} ki enpè:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links' => '{{PLURAL:$2|Lyen swivan an|$2 lyen swivan yo}} gen pwoblèm:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-xhtml' => 'Tanpri, ranplase {{PLURAL:$2|etikèt swivan|etikèt swivan yo}} avèk sa ki kòrèk yo:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Definisyon itilize <nowiki>{{PLURAL:}}</nowiki> men pa tradiksyon.',
-	'translate-pref-nonewsletter' => 'Piga voye e-mèl korespondans ban mwen',
+	'translate-pref-nonewsletter' => 'Pa voye imèl nouvèl yo ban mwen',
 );
 
 /** Hungarian (Magyar)
@@ -11164,6 +11166,10 @@ D'Standard-Lëscht vu Sproochen hànkt vun Ärer Sprooch of.",
 	'languagestats-summary' => "Dës Säit weist d'Statistike vun der Iwwersetzung fir all Gruppe vu Message fir eng Sprooch.",
 	'languagestats-stats-for' => 'Iwwersetzungsstatistike fir $1 ($2).',
 	'languagestats-recenttranslations' => 'Rezent Iwwersetzungen',
+	'translate-langstats-expand' => 'opklappen',
+	'translate-langstats-collapse' => 'zesummeklappen',
+	'translate-langstats-expandall' => 'alles opklappen',
+	'translate-langstats-collapseall' => 'alles zouklappen',
 	'translate-language-code' => 'Sproochecode',
 	'translate-language-code-field-name' => 'Sproochecode:',
 	'translate-suppress-complete' => 'Gruppe vu Messagen. déi komplett iwwersat sinn, net weisen',
@@ -15485,6 +15491,10 @@ $messages['ru'] = array(
 	'languagestats-summary' => 'На этой странице представлена статистика переводов для всех групп сообщений данного языка.',
 	'languagestats-stats-for' => 'Статистика переводов для $1 ($2).',
 	'languagestats-recenttranslations' => 'недавние переводы',
+	'translate-langstats-expand' => 'раскрыть',
+	'translate-langstats-collapse' => 'свернуть',
+	'translate-langstats-expandall' => 'раскрыть все',
+	'translate-langstats-collapseall' => 'свернуть все',
 	'translate-language-code' => 'Код языка',
 	'translate-language-code-field-name' => 'Код языка:',
 	'translate-suppress-complete' => 'Не показывать полностью переведённые группы сообщений',
