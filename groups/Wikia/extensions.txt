@@ -33,6 +33,8 @@ aliasfile = SpecialBatchUserRights/BatchUserRights.alias.php
 Category Exhibition
 file = CategoryExhibition/i18n/CategoryExhibition.i18n.php
 
+Category Galleries
+
 Category Hubs
 
 Category Select
@@ -78,6 +80,9 @@ Image Placeholder
 
 Image Serving
 
+Interstitial
+ignored = exitstitial-title
+
 Interstitial - Outbound Screen
 file = Interstitial/OutboundScreen.i18n.php
 
@@ -95,10 +100,16 @@ ignored = landingpage-sites
 
 Link Suggest
 
+Logger
+file = Logger/SpecialLogger.i18n.php
+
 Lookup Contribs
 file = LookupContribs/SpecialLookupContribs.i18n.php
 
 Masthead
+
+Mobile API
+file = MobileApi/MobileApi.i18n.php
 
 Most Popular Categories
 file = MostPopularCategories/SpecialMostPopularCategories.i18n.php
@@ -122,6 +133,8 @@ ignored = wiki-navigation, categoryblacklist, photosblacklist
 
 Our 404 Handler
 file = Our404Handler/SpecialOur404Handler.i18n.php
+
+Page Layout Builder
 
 Paginator
 file = Paginator/i18n/Paginator.i18n.php
@@ -158,6 +171,8 @@ Shared Messages
 
 Share Feature
 
+Show Performance Stats
+
 Signup
 file = SpecialSignup/Signup.i18n.php
 
@@ -167,6 +182,8 @@ aliasfile = Sitemap/Sitemap.alias.php
 Site Wide Messages
 file = SiteWideMessages/SpecialSiteWideMessages.i18n.php
 ignored = swm-expire-options
+
+Skin Chooser
 
 Slider Tag
 
@@ -203,10 +220,16 @@ Theme Designer
 Theory tab
 ignored = theorytab-subpage
 
+Time Ago Messaging
+descmsg = timeago-desc
+
 Title Edit
 
 Top Lists
 ignored = toplists-msg-fb-OnRateArticle-link, toplists-msg-fb-OnRateArticle
+
+Unsubscribe
+file = SpecialUnsubscribe/Unsubscribe.i18n.php
 
 User Profile Page
 optional = recipes-template-skip-toggle-types
@@ -237,9 +260,22 @@ Wikia Mini Upload
 
 Wikia Photo Gallery
 
+Wiki Stats
+file = WikiStats/SpecialWikiStats.i18n.php
+descmsg = wikistats
+ignored = wikistats_filename_mainstats, wikistats_filename_trend, wikistats_filename_creation, 
+ignored = wikistats_filename_other1, wikistats_filename_other2, wikistats_filename_other3, wikistats_filename_other4
+ignored = wikistats_filename_other5, wikistats_filename_other6, wikistats_filename_other7, wikistats_filename_other8
+ignored = wikistats_filename_column_A, wikistats_filename_column_B, wikistats_filename_column_C, wikistats_filename_column_D
+ignored = wikistats_filename_column_E, wikistats_filename_column_F, wikistats_filename_column_G, wikistats_filename_column_H
+ignored = wikistats_filename_column_I, wikistats_filename_column_J, wikistats_filename_column_K, wikistats_filename_column_L
+ignored = wikistats_filename_column_M, wikistats_filename_column_N, wikistats_filename_column_O
+
 Wikia Video
 
 Wikia Widget
+
+Wiki Builder
 
 Wiki Factory Dumps
 file = WikiFactory/Dumps/DumpsOnDemand.i18n.php
@@ -252,7 +288,5 @@ file = WikiFactory/SpecialWikiFactory.i18n.php
 optional = wikifactory-label-eznamespace
 ignored = awc-metrics-language-top-list
 
-# Doesn't exist anymore? -Nike
-# Without images
-# file = WikiStickies/SpecialWithoutimages.i18n.php
-# aliasfile = WikiStickies/SpecialWithoutimages.alias.php
+Wiki Payment
+ignored = wikipayment-click-here
