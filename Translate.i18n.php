@@ -3481,6 +3481,7 @@ $messages['ce'] = array(
 	'translate-language' => 'Мотт',
 	'translate-save' => 'lалашдан ($1)',
 	'translate-jssti-add' => 'Тlетоха могlам чу',
+	'translate-import-load' => 'Чуйаккха хlум',
 	'translate-gs-code' => 'Ишар',
 	'translate-gs-multiple' => 'Маситта',
 	'translate-gs-total' => 'Йеригге',
@@ -6237,6 +6238,10 @@ Toutes les valeurs ont des limites supérieure et inférieure.',
 	'languagestats-summary' => 'Cette page affiche les statistiques de traduction de tous les groupes de messages dans une langue donnée.',
 	'languagestats-stats-for' => 'Statistiques de traduction pour $1 ($2).',
 	'languagestats-recenttranslations' => 'traductions récentes',
+	'translate-langstats-expand' => 'Développer',
+	'translate-langstats-collapse' => 'Replier',
+	'translate-langstats-expandall' => 'Tout développer',
+	'translate-langstats-collapseall' => 'Tout replier',
 	'translate-language-code' => 'Code de langue',
 	'translate-language-code-field-name' => 'Code de langue :',
 	'translate-suppress-complete' => 'Ne pas afficher les groupes de messages entièrement traduits',
@@ -7339,6 +7344,7 @@ Detail: $1',
 
 /** Gujarati (ગુજરાતી)
  * @author Ashok modhvadia
+ * @author Dsvyas
  */
 $messages['gu'] = array(
 	'translate' => 'ભાષાંતર',
@@ -7436,7 +7442,7 @@ $messages['gu'] = array(
 	'translate-rc-translation-filter-site' => 'ફક્ત સાઇટ સંદેશાઓમાં પરિવર્તનો',
 	'translationstats' => 'ભાષાંતર અંક વિવરણ',
 	'translate-stats-edits' => 'સંપાદનો',
-	'translate-stats-users' => 'ભાષાંતરકારો',
+	'translate-stats-users' => 'ભાષાંતરકર્તાઓ',
 	'translate-statsf-intro' => 'તમે આ ફોર્મ વડે સરળ અંકગણતરીઓ કરી શકો છો.
 
 બધાજ મુલ્યોને ઉપલી અને નિચલી સીમાઓ છે.',
@@ -8327,6 +8333,7 @@ Chanjman yo pa sove jouk ou klike sou bouton sove anba.',
 );
 
 /** Hungarian (Magyar)
+ * @author BáthoryPéter
  * @author Dani
  * @author Glanthor Reviol
  * @author Tgr
@@ -8382,6 +8389,7 @@ $messages['hu'] = array(
 	'translate-edit-warnings' => 'Hiányosságok a fordításban',
 	'translate-edit-tmsugs' => 'Javaslatok a fordítómemóriából',
 	'translate-edit-tmmatch' => '$1%-os egyezés',
+	'translate-use-suggestion' => 'Javaslat átmásolása a fordítási mezőbe, lecserélve annak teljes aktuális tartalmát.',
 	'translate-edit-tab-list' => 'Üzenetlista',
 	'translate-magic-pagename' => 'Kibővített MediaWiki-fordítás',
 	'translate-magic-help' => 'Lefordíthatod a speciális lapok álneveit, a varázsszavakat és a névterek neveit.
@@ -13704,6 +13712,7 @@ $messages['pfl'] = array(
  * @author Sp5uhe
  * @author ToSter
  * @author Wpedzich
+ * @author Žekřil71pl
  */
 $messages['pl'] = array(
 	'translate' => 'Przetłumacz',
@@ -13863,6 +13872,7 @@ Domyślna lista języków zależy od Twojego języka.',
 	'translations-summary' => 'Wprowadź poniżej nazwę komunikatu, aby zobaczyć wszystkie dostępne tłumaczenia.',
 	'translate-translations-no-message' => 'Komunikatu „$1” nie można przetłumaczyć',
 	'translate-translations-none' => 'Nie istnieją tłumaczenia dla „$1”',
+	'translate-translations-count' => 'Znaleziono {{PLURAL:$1|jedno tłumaczenie|$1 tłumaczeń}}',
 	'translate-translations-fieldset-title' => 'Komunikat',
 	'translate-translations-messagename' => 'Nazwa:',
 	'translate-translations-project' => 'Projekt:',
@@ -13872,6 +13882,10 @@ Domyślna lista języków zależy od Twojego języka.',
 	'languagestats-summary' => 'Strona pokazuje statystykę tłumaczenia dla wszystkich grup komunikatów we wskazanym języku.',
 	'languagestats-stats-for' => 'Statystyki tłumaczenia na język $1 ($2).',
 	'languagestats-recenttranslations' => 'ostatnie tłumaczenia',
+	'translate-langstats-expand' => 'rozwiń',
+	'translate-langstats-collapse' => 'zwiń',
+	'translate-langstats-expandall' => 'rozwiń wszystkie',
+	'translate-langstats-collapseall' => 'zwiń wszystkie',
 	'translate-language-code' => 'Kod języka',
 	'translate-language-code-field-name' => 'Kod języka',
 	'translate-suppress-complete' => 'Pomiń grupy komunikatów całkowicie przetłumaczone',
@@ -13905,6 +13919,7 @@ Podstrona „translators“ musi zawierać szablon [[:{{ns:template}}:User|User]
 	'supportedlanguages-recenttranslations' => 'ostatnie tłumaczenia',
 	'translate-save' => 'Zapisz ($1)',
 	'translate-jssti-add' => 'Dodaj do listy',
+	'managemessagegroups' => 'Zarządzanie grupami komunikatów',
 	'translate-manage-groups' => 'Zarządzanie grupą',
 	'translate-manage-listgroups' => 'Grupy skonfigurowane',
 	'translate-manage-listgroups-old' => 'Grupy w starym stylu',
@@ -13963,7 +13978,7 @@ Jeśli polecisz zignorować zmiany, zostaną one nadpisane przy następnym ekspo
 	'translate-import-err-warnings' => 'Plik nie ma prawidłowego formatu.
 Sprawdź, czy edytor którym się posługujesz nie usuwa pól msgctxt.
 Szczegóły – $1',
-	'translate-js-next' => 'Zapisz i otwórz następy',
+	'translate-js-next' => 'Zapisz i otwórz następny',
 	'translate-js-nonext' => 'To był ostatni komunikat na tej stronie.',
 	'translate-js-skip' => 'Przejdź do następnego',
 	'translate-js-save-failed' => 'Zapisywanie nie powiodło się. Powiadom o wystąpieniu błędu.',
@@ -13977,6 +13992,7 @@ Szczegóły – $1',
 	'translate-gs-count' => 'Liczba',
 	'translate-gs-total' => 'Razem',
 	'translate-gs-avgscore' => 'Średni wynik',
+	'translate-documentation-language' => 'opis komunikatu',
 );
 
 /** Piedmontese (Piemontèis)
@@ -14155,6 +14171,10 @@ Tùit ij valor a l'han dij lìmit superior e anferior.",
 	'languagestats-summary' => 'Sta pàgina-sì a smon le statìstiche ëd tradussion për tute le partìe ëd mëssagi për na lenga.',
 	'languagestats-stats-for' => 'Statìstiche ëd tradussion për $1 ($2).',
 	'languagestats-recenttranslations' => 'tradussion recente',
+	'translate-langstats-expand' => 'deurbe',
+	'translate-langstats-collapse' => 'sëré',
+	'translate-langstats-expandall' => 'deurbe tut',
+	'translate-langstats-collapseall' => 'saré tut',
 	'translate-language-code' => 'Còdes ëd lenga',
 	'translate-language-code-field-name' => 'Còdes ëd lenga:',
 	'translate-suppress-complete' => 'Stërma le partìe ëd mëssagi voltà completament',
@@ -18479,6 +18499,8 @@ $messages['tt-cyrl'] = array(
 	'translate-submit' => 'Чыгарырга',
 	'translate-page-navigation-legend' => 'Күчешлек',
 	'translate-page-showing' => '$3 мәкалә арасыннан $1 алып $2 кадәр күрсәтелгән.',
+	'translate-page-showing-all' => '$1 {{PLURAL:$1|хәбәр}} чыгарылгын.',
+	'translate-page-showing-none' => 'Күрсәтү өчен хәбәрләр юк.',
 	'translate-next' => 'киләсе бит',
 	'translate-prev' => 'алдагы бит',
 	'translate-page-description-legend' => 'Төркем турында мәгълүмат',

@@ -444,6 +444,7 @@ $messages['de'] = array(
 	'translate-group-desc-mantisbt-plugin-core' => 'Ein Haupt-Plugin für [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Nachrichten für die stabile Version 1.15 von [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mediawiki-core-116' => 'Nachrichten für die stabile Version 1.16 von [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawiki-core-117' => 'Nachrichten für die stabile Version 1.17 von [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] ist ein Managementinformationssystem für Mikrofinanzinstitutionen',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' ist eine Python-Bibliothek zur Erstellung von PDF-Dokumenten aus MediaWiki-Seiten, welche mit Hilfe der mwlib-Bibliothek geparst wurden.
 
@@ -701,6 +702,9 @@ $messages['fr'] = array(
 Veuillez consulter [[mw:Extension:PDF Writer]] et http://code.pediapress.com/wiki/wiki/mwlibrl pour plus d’informations.",
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] est un client webmail écrit en PHP. Rapportez tous les problèmes sur [[Support]].',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] est un lecteur Wikipédia hors-ligne',
+	'bw-desc-openimages' => "[[Translating:Open Images|Open Images]] est une plate-forme média libre (''open'')",
+	'translate-group-desc-openimages-verifyemailtemplate' => 'Ces messages font partie du modèle de vérification de [[Translating:Open Images|Open Images]] des courriels',
+	'translate-group-desc-openimages-all' => 'Ces messages font partie du [[Translating:Open Images|Projet Open Images]]',
 	'bw-desc-openlayers' => 'OpenLayers est logiciel en source ouvert pour la génération dynamique de cartes. Rapportez tous les problèmes sur [[Support]].',
 	'bw-desc-openstreetmap' => 'Groupe de messages pour tous les message de [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => "Ce groupe de messages contient les messages de l'interface d'[[Translating:Open Street Map|Open Street Map]].",
@@ -1010,6 +1014,7 @@ $messages['ia'] = array(
 	'translate-group-desc-mantisbt-plugin-core' => 'Un plugin fundamental pro [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Messages pro le version stabile 1.15 de [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mediawiki-core-116' => 'Messages pro le version stabile 1.16 de [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawiki-core-117' => 'Messages pro le version stabile 1.17 de [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] es un systema de gestion pro microfinanciamento',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' es un bibliotheca de Python pro facer documentos PDF ex articulos MediaWiki convertite per le bibliotheca mwlib.
 
@@ -1667,6 +1672,9 @@ $messages['pt'] = array(
 Por favor veja [[mw:Extension:PDF_Writer]] e http://code.pediapress.com/wiki/wiki/mwlibrl para mais informações.",
 	'bw-desc-nocc' => 'O [http://nocc.sourceforge.net NOCC] é um cliente de email escrito em PHP. Por favor reporte quaisquer problemas em [[Support]].',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] é um leitor da Wikipédia em offline',
+	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] é uma plataforma multimédia aberta',
+	'translate-group-desc-openimages-verifyemailtemplate' => 'Estas mensagens fazem parte do modelo de verificação de correio electrónico do [[Translating:Open Images|Open Images]]',
+	'translate-group-desc-openimages-all' => 'Estas mensagens fazem parte do projecto [[Translating:Open Images|Open Images]]',
 	'bw-desc-openlayers' => 'O OpenLayers é um gerador dinâmico de mapas de código aberto. Por favor reporte quaisquer problemas em [[support]].',
 	'bw-desc-openstreetmap' => 'Grupo para todas as mensagens do [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Este grupo contém as mensagens de interface do [[Translating:Open Street Map|Open Street Map]].
