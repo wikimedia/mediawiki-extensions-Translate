@@ -1,5 +1,18 @@
 ---
 BASIC:
+  id: out-openimages-0-all
+  label: Open Images
+  display: out/openimages
+  meta: yes
+  class: AggregateMessageGroup
+  namespace: NS_OPENIMAGES
+  description: "{{int:translate-group-desc-openimages-all}}"
+
+GROUPS:
+  - out-openimages-*
+
+---
+BASIC:
   id: out-openimages-core
   label: Open Images core messages
   description: "{{int:bw-desc-openimages}}"
@@ -20,14 +33,15 @@ TAGS:
 
 ---
 BASIC:
-  id: out-openimages-0-all
-  label: Open Images
-  display: out/openimages
-  meta: yes
-  class: AggregateMessageGroup
+  id: out-openimages-verifyemailtemplate
+  label: Open Images - Verify Email Template
+  description: "{{int:translate-group-desc-openimages-verifyemailtemplate}}"
   namespace: NS_OPENIMAGES
-  description: "{{int:translate-group-desc-openimages-all}}"
+  display: out/openimages/
+  class: FileBasedMessageGroup
 
-GROUPS:
-  - out-openimages-*
-
+FILES:
+  class: JavaFFS
+  sourcePattern: %GROUPROOT%/openimages/verifyemailtemplate_%CODE%.properties
+  definitionFile: %GROUPROOT%/openimages/verifyemailtemplate.properties
+  targetPattern: openimages/verifyemailtemplate_%CODE%.properties
