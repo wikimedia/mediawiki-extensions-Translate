@@ -319,6 +319,7 @@ array(
 		'translate-fs-signup-text', // Contains links that are translated
 	)
 ),
+/* Disabled in mediawiki-defines.txt 2010-11-23 
 array(
 	'group' => 'ext-ui-prefswitch',
 	'check' => 'links',
@@ -326,8 +327,9 @@ array(
 		'prefswitch-main', // Contains links that are translated
 	)
 ),
+*/ 
 array(
-	'group' => 'ext-ui-wikieditor-toolbar',
+	'group' => 'ext-wikieditor',
 	'check' => 'links',
 	'message' => array(
 		'wikieditor-toolbar-help-content-ilink-syntax', // Contains links that are translated
