@@ -317,6 +317,7 @@ $messages['bs'] = array(
 	'translate-group-desc-mantisbt-plugin-core' => 'Plugin jezgre za [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Poruke za stabilnu verziju 1.15 [[Translating:MediaWiki|MediaWiki]]ja',
 	'translate-group-desc-mediawiki-core-116' => 'Poruke za stabilnu verziju 1.16 [[Translating:MediaWiki|MediaWiki]]ja',
+	'translate-group-desc-mediawiki-core-117' => 'Poruke za stabilnu verziju 1.17 [[Translating:MediaWiki|MediaWiki]]ja',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] je upravljački informacioni sistem za mikrofinansiranje',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' je python biblioteka za pisanje PDF dokumenata iz MediaWiki članaka koji su obrađeni putem mwlib biblioteke.
 
@@ -788,6 +789,7 @@ $messages['gl'] = array(
 	'translate-group-desc-mantisbt-plugin-core' => 'Un complemento fundamental para [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Mensaxes da versión estable 1.15 de [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mediawiki-core-116' => 'Mensaxes da versión estable 1.16 de [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawiki-core-117' => 'Mensaxes da versión estable 1.17 de [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] é un sistema de información de xestión para microfinanzas',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' é unha libraría python para escribir documentos en formato PDF desde os artigos MediaWiki, e que foron analizados pola libraría mwlib.
 
@@ -1329,6 +1331,7 @@ $messages['mk'] = array(
 	'translate-group-desc-mantisbt-plugin-core' => 'Основен приклучок за [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Пораки за стабилната верзија 1.15 на [[Translating:MediaWiki|МедијаВики]]',
 	'translate-group-desc-mediawiki-core-116' => 'Пораки за стабилната верзија 1.16 на [[Translating:MediaWiki|МедијаВики]]',
+	'translate-group-desc-mediawiki-core-117' => 'Пораки за стабилната верзија 1.17 на [[Translating:MediaWiki|МедијаВики]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] е раководен инфосистем за микрофинансирање',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' е питонска библиотека за пишување на PDF документи од МедијаВики статии кои се анализираат (парсираат) од библиотеката mwlib.
 
@@ -1406,6 +1409,7 @@ $messages['nl'] = array(
 	'translate-group-desc-mantisbt-plugin-core' => 'Een core-plugin voor [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Berichten voor de stabiele versie 1.15 van [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mediawiki-core-116' => 'Berichten voor de stabiele versie 1.16 van [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawiki-core-117' => 'Berichten voor de stabiele versie 1.17 van [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] is een beheersysteem voor microfinanciering',
 	'bw-desc-mwlibrl' => "[[Translating:Mwlib.rl|Mwlib.rl]] is een bibliotheek voor het maken van PDF-documenten van MediaWiki-pagina's",
 	'bw-desc-nocc' => '[[Translating:NOCC|NOCC]] is een webmailclient',
@@ -1666,6 +1670,7 @@ $messages['pt'] = array(
 	'translate-group-desc-mantisbt-plugin-core' => 'Um plugin para o [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Mensagens da versão estável 1.15 do [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mediawiki-core-116' => 'Mensagens da versão estável 1.16 do [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawiki-core-117' => 'Mensagens da versão estável 1.17 do [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] é um sistema de informação de gestão (MIS) para microfinanças',
 	'bw-desc-mwlibrl' => "O '''mwlib.rl''' é uma biblioteca em python para produzir documentos PDF a partir de artigos MediaWiki que forem analisados pela biblioteca mwlib.
 
@@ -1821,6 +1826,7 @@ $messages['ru'] = array(
 	'translate-group-desc-mantisbt-plugin-core' => 'Основной плагин для [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Сообщения для стабильной версии 1.15 [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mediawiki-core-116' => 'Сообщения для стабильной версии 1.16 [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawiki-core-117' => 'Сообщения для стабильной версии 1.17 [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] — это система управления информацией в области микрофинансов',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' — python-библиотека для создания PDF-документов из статей MediaWiki, обработанных библиотекой mwlib.
 
@@ -1905,6 +1911,7 @@ $messages['sl'] = array(
 	'translate-group-desc-mantisbt-plugin-core' => 'Jedrni vtičnik za [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Sporočila ustaljene različice [[Translating:MediaWiki|MediaWiki]] 1.15',
 	'translate-group-desc-mediawiki-core-116' => 'Sporočila ustaljene različice [[Translating:MediaWiki|MediaWiki]] 1.16',
+	'translate-group-desc-mediawiki-core-117' => 'Sporočila ustaljene različice [[Translating:MediaWiki|MediaWiki]] 1.17',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] je vodstven informacijski sistem za mikrofinance',
 	'bw-desc-mwlibrl' => '[[Translating:Mwlib.rl|Mwlib.rl]] je knjižnica za ustvarjanje dokumentov PDF iz strani MediaWiki',
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] je spletni odjemalec e-pošte napisan v PHP. Prosimo, sporočite morebitne težave na [[Support|Podpora]].',

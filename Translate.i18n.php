@@ -8257,20 +8257,33 @@ $messages['ht'] = array(
 	'translate-edit' => 'modifye',
 	'translate-talk' => 'Diskite',
 	'translate-history' => 'istwa',
+	'translate-showsub' => 'Montre {{PLURAL:$1|sougwoup|$1 sougwoup yo}}.',
+	'translate-grouplisting' => 'Sa se lis tout gwoup ki kapab tradui yo.
+Klike sou non gwoup mesaj la pou wè yon lis mesaj ki pa tradui.',
 	'translate-task-view' => 'Wè tout mesaj ki soti nan',
 	'translate-task-untranslated' => 'Wè tout mesaj ki pa tradui ki soti nan',
 	'translate-task-optional' => 'Wè mesaj fakiltatif ki soti nan',
+	'translate-task-suggestions' => 'Wè mesaj yo ak sijesyon ki soti nan memwa tradiksyon',
+	'translate-task-untranslatedoptional' => 'Wè mesaj fakiltatif ki pa tradui yo ki soti nan',
+	'translate-task-problematic' => 'Gade mesaj yo ki gen pwoblèm',
 	'translate-task-review' => 'Revize chanjman nan',
 	'translate-task-reviewall' => 'Revize tout tradiksyon yo nan',
 	'translate-task-export' => 'Ekspòte tradiksyon yo',
 	'translate-task-export-to-file' => 'Ekspòte tradiksyon yo nan yon fichye',
 	'translate-task-export-as-po' => 'Ekspòte pou fè tradiksyon andeyò',
+	'translate-task-export-to-xliff' => 'Ekspòte tradiksyon yo nan fòma Xliff',
 	'translate-page-no-such-language' => 'Lang ki endike a pa bon.',
 	'translate-page-no-such-task' => 'Travay ki endike a pa bon.',
 	'translate-page-no-such-group' => 'Gwoup ki endike a pa bon',
+	'translate-page-disabled' => "Tradiksyon nan lang sa a te deaktive pou gwoup sa.
+Rezon:
+
+''$1''",
 	'translate-page-settings-legend' => 'Konfigirasyon, preferans',
 	'translate-page-task' => 'Mwen vle',
 	'translate-page-group' => 'Gwoup',
+	'translate-page-group-tooltip' => 'Non pou yon gwoup mesaj.
+Si gwoup la fèt ak messaj ki soti nan lòt group yo, li parèt an karaktè fonse.',
 	'translate-page-language' => 'Lang',
 	'translate-page-limit' => 'Limit',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|mesaj|mesaj}} nan chak paj',
@@ -8283,8 +8296,10 @@ $messages['ht'] = array(
 	'translate-prev' => 'Paj presedan',
 	'translate-page-description-legend' => 'Enfòmasyon sou gwoup la',
 	'translate-page-edit' => 'modifye',
+	'translate-ext-url' => '<hr /> Sit wèb: $1',
 	'translate-optional' => '(opsyon)',
 	'translate-ignored' => '(inyore)',
+	'translate-edit-title' => 'Modifye "$1"',
 	'translate-edit-definition' => 'Definisyon pou mesaj sa',
 	'translate-edit-contribute' => 'kontribiye',
 	'translate-edit-no-information' => "''Mesaj sa pa dokimante.
@@ -8293,6 +8308,13 @@ Si w konnen ki kote mesaj sa itilize, ou kapab ede lòt tradiktè lè ou ajoute 
 	'translate-edit-in-other-languages' => 'Mesaj "$1" nan lòt lang yo',
 	'translate-edit-committed' => 'Tradiksyon kouran nan logisyèl',
 	'translate-edit-warnings' => 'Avètisman sou tradiksyon ki pa konplete yo',
+	'translate-edit-tmsugs' => 'Sijesyon ki soti nan memwa tradiksyon',
+	'translate-edit-tmmatch' => '$1% korespondans',
+	'translate-use-suggestion' => 'Mete sijesyon sa a nan zòn tradiksyon a. L ap ranplase tout kontni aktyèl.',
+	'translate-edit-tab-list' => 'Lis mesaj',
+	'translate-edit-show-def' => 'Definisyon pou mesaj',
+	'translate-edit-show-trans' => 'Tradiksyon',
+	'translate-edit-show-click' => 'Klike pou chanje plasman',
 	'translate-magic-pagename' => 'Tradiksyon MediaWiki pwolonje',
 	'translate-magic-help' => 'Ou kapab tradui alias paj espesyal yo, mo majik ak non espas non yo.
 
@@ -8305,8 +8327,10 @@ Si li pa posib nan lang ou pou fòme ekspresyon valid san ou pa chanje nonsitwè
 
 Fòk ou fè pati group tradiktè yo pou ou kapab sove chanjman yo.
 Chanjman yo pa sove jouk ou klike sou bouton sove anba.',
+	'translate-magic-module' => 'Modil:',
 	'translate-magic-submit' => 'Mande',
 	'translate-magic-cm-export' => 'Expòte',
+	'translate-magic-nothing-to-export' => 'Pa gen anyen pou ekspòte.',
 	'translate-magic-cm-to-be' => "Ap vin'",
 	'translate-magic-cm-current' => 'Aktyèl',
 	'translate-magic-cm-original' => 'Orijinal',
@@ -8317,19 +8341,45 @@ Chanjman yo pa sove jouk ou klike sou bouton sove anba.',
 	'translate-magic-special' => 'Alias paj espesyal yo',
 	'translate-magic-words' => 'Mo majik yo',
 	'translate-magic-namespace' => 'Non espas non yo',
+	'translate-magic-notsaved' => 'Modifikasyon ou pa t anrejistre!',
+	'translate-magic-errors' => 'Tanpri, korije {{PLURAL:$1|erè sa|erè sa yo}} nan tradiksyon:',
+	'translate-magic-saved' => 'Modifikasyon ou yo te byen anrejistre.',
 	'translationchanges' => 'Chanjman nan tradiksyon yo',
-	'translationchanges-export' => 'expòte',
+	'translationchanges-export' => 'ekspòte',
 	'translationchanges-change' => '$1: $2 pa $3',
 	'translate-checks-parameters' => 'Paramèt {{PLURAL:$2|swivan|swivan yo}} pa itilize:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-balance' => 'Genyen yon kantite {{PLURAL:$2|parantèz|parantèz yo}} ki enpè:
+	'translate-checks-parameters-unknown' => 'Nou pa konnen paramèt {{PLURAL:$2|swivan|swivan yo}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-balance' => 'Genyen yon kantite {{PLURAL:$2|parantèz|parantèz}} ki enpè:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '{{PLURAL:$2|Lyen swivan an|$2 lyen swivan yo}} gen pwoblèm:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links-missing' => '{{PLURAL:$2|Lyen swivan an|$2 lyen swivan yo}} manke:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Tanpri, ranplase {{PLURAL:$2|etikèt swivan|etikèt swivan yo}} avèk sa ki kòrèk yo:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Definisyon itilize <nowiki>{{PLURAL:}}</nowiki> men pa tradiksyon.',
+	'translate-checks-pagename' => 'Espas non chanje apati definisyon an',
+	'translate-checks-format' => 'Tradiksyon sa a pa swiv definisyon a oubyen gen yon sentaks ki pa bon: $1',
+	'translate-checks-escape' => 'Echapman sa yo kapab rive pa aksidan: <strong>$1</strong>',
+	'translate-checks-fudforum-syntax' => 'Pito ou sèvi ak <nowiki>$1</nowiki> pase <nowiki>$2</nowiki> nan pwojè sa a.',
 	'translate-pref-nonewsletter' => 'Pa voye imèl nouvèl yo ban mwen',
+	'translate-pref-editassistlang' => 'Lang pou sipòte:',
+	'prefs-translate' => 'Opsyon pou tradiksyon',
+	'translate-pref-editassistlang-help' => 'Lis kòd lang yo ki separe pa vigil.
+Tradiksyon pou yon mesaj nan lang sa yo parèt lè w ap tradui.
+Lis lang pa defo depann de lang ou an.',
+	'translate-pref-editassistlang-bad' => 'Kòd pou lang ki pa bon nan lis:
+<nowiki>$1</nowiki>.',
+	'translate-pref-jsedit' => 'Fenèt modifikasyon pou tradiksyon amelyore (JavaScript)',
+	'right-translate' => 'Itilize fenèt tradiksyon pou fè modifikasyon yo',
+	'right-translate-manage' => 'Jere gwoup tradiksyon yo',
+	'right-translate-import' => 'Chaje tradiksyon ki te fèt andeyò.',
+	'translate-rc-translation-filter' => 'Filtre tradiksyon yo:',
+	'translate-rc-translation-filter-no' => 'Pa fè anyen',
+	'translate-rc-translation-filter-only' => 'Montre tradiksyon yo sèlman',
+	'translate-rc-translation-filter-filter' => 'Pa montre tradiksyon yo',
 );
 
 /** Hungarian (Magyar)
@@ -11758,7 +11808,7 @@ $messages['mk'] = array(
 	'translate-stats-edits' => 'Уредувања',
 	'translate-stats-users' => 'Преведувачи',
 	'translate-stats-registrations' => 'Регистрации',
-	'translate-statsf-intro' => 'Може да генерирате едноставни статистики со помош на оваа форма. Сите вредности имаат максимални и минимални граници.',
+	'translate-statsf-intro' => 'Со овој образец можете да создадете едноставен статистички преглед. Сите вредности имаат максимални и минимални граници.',
 	'translate-statsf-options' => 'Нагодувања за графиконот',
 	'translate-statsf-width' => 'Ширина во пиксели:',
 	'translate-statsf-height' => 'Висина во пиксели:',
