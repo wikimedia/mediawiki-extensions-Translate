@@ -171,6 +171,20 @@ MANGLER:
   prefix: blogspamnet-
 ---
 BASIC:
+  id: out-statusnet-plugin-bookmark
+  label: StatusNet - Bookmark
+  display: out/statusnet/plugin/bookmark
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/Bookmark/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/Bookmark/locale/%CODE%/LC_MESSAGES/Bookmark.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/Bookmark/locale/Bookmark.pot
+  targetPattern: statusnet/plugins/Bookmark/locale/%CODE%/LC_MESSAGES/Bookmark.po
+
+MANGLER:
+  prefix: bookmark-
+---
+BASIC:
   id: out-statusnet-plugin-cachelog
   label: StatusNet - CacheLog
   display: out/statusnet/plugin/cachelog
@@ -689,6 +703,20 @@ MANGLER:
   prefix: modplus-
 ---
 BASIC:
+  id: out-statusnet-plugin-newmenu
+  label: StatusNet - NewMenu
+  display: out/statusnet/plugin/newmenu
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/NewMenu/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/NewMenu/locale/%CODE%/LC_MESSAGES/NewMenu.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/NewMenu/locale/NewMenu.pot
+  targetPattern: statusnet/plugins/NewMenu/locale/%CODE%/LC_MESSAGES/NewMenu.po
+
+MANGLER:
+  prefix: newmenu-
+---
+BASIC:
   id: out-statusnet-plugin-noticetitle
   label: StatusNet - NoticeTitle
   display: out/statusnet/plugin/noticetitle
@@ -897,6 +925,20 @@ FILES:
 
 MANGLER:
   prefix: reverseusernameauthentication-
+---
+BASIC:
+  id: out-statusnet-plugin-sqlprofile
+  label: StatusNet - SQLProfile
+  display: out/statusnet/plugin/sqlprofile
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/SQLProfile/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/SQLProfile/locale/%CODE%/LC_MESSAGES/SQLProfile.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/SQLProfile/locale/SQLProfile.pot
+  targetPattern: statusnet/plugins/SQLProfile/locale/%CODE%/LC_MESSAGES/SQLProfile.po
+
+MANGLER:
+  prefix: sqlprofile-
 ---
 BASIC:
   id: out-statusnet-plugin-sample
