@@ -2,10 +2,7 @@ TEMPLATE:
   BASIC:
     namespace: NS_MIFOS
     description: >
-      {{int:translate-group-desc-mifos}}<br />
-      <div class=error>'''WARNING:''' Development of support for this product is under construction.
-      We are working with developers to improve i18n.
-      Please report all translation issues to [[Translating_talk:Mifos|Mifos issues page]].</div>
+      {{int:translate-group-desc-mifos}}
 
   FILES:
     codeMap:
