@@ -128,7 +128,7 @@ ignored = accesskey-pt-myhome
 #aliasfile = NewWikiBuilder/NewWikiBuilder.alias.php
 
 Oasis
-optional = oasis-latest-photos-single
+optional = oasis-latest-photos-single, oasis-corporatefooter-hub-Entertainment-link, oasis-corporatefooter-hub-Gaming-link, oasis-corporatefooter-hub-Lifestyle-link
 ignored = wiki-navigation, categoryblacklist, photosblacklist
 
 Our 404 Handler
