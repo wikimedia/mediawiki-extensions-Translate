@@ -311,7 +311,7 @@ class JavaFFS extends SimpleFFS {
 				$linecontinuation = false;
 				$valuecont = $line;
 				$valuecont = str_replace( '\n', "\n", $valuecont );
-				$value .= $valuecont;
+				$value .= ' ' . $valuecont;
 			} else {
 				if ( $line === '' ) {
 					continue;
