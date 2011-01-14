@@ -1053,3 +1053,62 @@ class RubyYamlFFS extends YamlFFS {
 		return "\x7fUNIQ" . dechex( mt_rand( 0, 0x7fffffff ) ) . dechex( mt_rand( 0, 0x7fffffff ) ) . $i++;
 	}
 }
+
+/**
+ * Generic file format support for Phython single dictionary formatted files.
+ * @ingroup FFS
+ */
+class PythonSingleFFS extends SimpleFFS {
+	private $fw = null;
+	private $data = null;
+
+	public function read( $code ) {
+		if( $this->data === null ) {
+			$filename = $this->group->getSourceFilePath( $code );
+			$json = shell_exec( "python -c'import simplejson as json; execfile(\"$filename\"); print json.dumps(msg)'" );
+			$this->data = json_decode( $json, true );
+		}
+		if( !isset( $this->data[$code] ) ) $this->data[$code] = array();
+		return array( 'MESSAGES' => $this->data[$code] );
+	}
+
+	public function write( MessageCollection $collection ) {
+		if( $this->fw === null ) {
+			$this->fw = fopen( $this->writePath . '/' . $this->group->getTargetFilename( 'en' ), 'w' );
+			fwrite( $this->fw, "# -*- coding: utf-8 -*-\nmsg = {\n" );
+		}
+
+		// Not sure why this is needed, only continue if there are translations.
+		$collection->loadTranslations();
+		$ok = false;
+		foreach( $collection as $messages ) {
+			if( $messages->translation() != '' ) $ok = true;
+		}
+		if( !$ok ) return;
+
+		fwrite( $this->fw, "\t'{$collection->code}': {\n" );
+		fwrite( $this->fw, $this->writeBlock( $collection ) );
+		fwrite( $this->fw, "\t},\n" );
+	}
+
+	public function writeIntoVariable( MessageCollection $collection ) {
+		return "# -*- coding: utf-8 -*-\nmsg = {\n" . $this->writeBlock( $collection ) . '}';
+	}
+
+	protected function writeBlock( MessageCollection $collection ) {
+		$mangler = $this->group->getMangler();
+		$block = '';
+		foreach( $collection as $message ) {
+			if( $message->translation() == '' ) continue;
+			$block .= "\t\t'{$message->key()}': u'{$message->translation()}',\n";
+		}
+		return $block;
+	}
+
+	public function __destruct() {
+		if( $this->fw !== null ) {
+			fwrite( $this->fw, "}" );
+			 fclose( $this->fw );
+		}
+	}
+}

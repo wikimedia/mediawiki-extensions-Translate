@@ -1,0 +1,14 @@
+---
+BASIC:
+  id: out-pywikipedia
+  label: Pywikipedia
+  description: "{{int:bw-desc-pywikipedia}}"
+  namespace: NS_PYWIKIPEDIA
+  display: out/pywikipedia/
+  class: FileBasedMessageGroup
+
+FILES:
+  class: PythonSingleFFS
+  sourcePattern: %GROUPROOT%/pywikipedia/interwiki.py
+  definitionFile: %GROUPROOT%/pywikipedia/interwiki.py
+  targetPattern: pywikipedia/interwiki.py
