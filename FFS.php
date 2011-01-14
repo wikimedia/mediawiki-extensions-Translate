@@ -1086,13 +1086,21 @@ class PythonSingleFFS extends SimpleFFS {
 		}
 		if( !$ok ) return;
 
+		$authors = $this->doAuthors($collection);
+		if( $authors != '' ) fwrite( $this->fw, "\t$authors" );
 		fwrite( $this->fw, "\t'{$collection->code}': {\n" );
 		fwrite( $this->fw, $this->writeBlock( $collection ) );
 		fwrite( $this->fw, "\t},\n" );
 	}
 
 	public function writeIntoVariable( MessageCollection $collection ) {
-		return "# -*- coding: utf-8 -*-\nmsg = {\n" . $this->writeBlock( $collection ) . '}';
+		return <<<PHP
+# -*- coding: utf-8 -*-
+{$this->doAuthors($collection)}msg = {
+\t'{$collection->code}': {
+{$this->writeBlock( $collection )}\t}
+}
+PHP;
 	}
 
 	protected function writeBlock( MessageCollection $collection ) {
@@ -1100,9 +1108,22 @@ class PythonSingleFFS extends SimpleFFS {
 		$block = '';
 		foreach( $collection as $message ) {
 			if( $message->translation() == '' ) continue;
-			$block .= "\t\t'{$message->key()}': u'{$message->translation()}',\n";
+			$translation = str_replace( '\'', '\\\'', $message->translation() );
+			$block .= "\t\t'{$message->key()}': u'{$translation}',\n";
 		}
 		return $block;
+	}
+
+	protected function doAuthors( MessageCollection $collection ) {
+		$output = '';
+		$authors = $collection->getAuthors();
+		$authors = $this->filterAuthors( $authors, $collection->code );
+
+		foreach ( $authors as $author ) {
+			$output .= "# Author: $author\n";
+		}
+
+		return $output;
 	}
 
 	public function __destruct() {
