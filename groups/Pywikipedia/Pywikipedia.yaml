@@ -1,10 +1,25 @@
+TEMPLATE:
+  BASIC:
+    namespace: NS_PYWIKIPEDIA
+    class: FileBasedMessageGroup
+    description: "{{int:translate-group-desc-pywikipedia}}"
 ---
 BASIC:
-  id: out-pywikipedia
+  id: out-pywikipedia-0-all
   label: Pywikipedia
-  description: "{{int:bw-desc-pywikipedia}}"
-  namespace: NS_PYWIKIPEDIA
-  display: out/pywikipedia/
+  display: out/pywikipedia
+  meta: yes
+  class: AggregateMessageGroup
+
+GROUPS:
+  - out-pywikipedia-interwiki
+  - out-pywikipedia-category
+---
+BASIC:
+  id: out-pywikipedia-interwiki
+  label: Pywikipedia Interwiki
+  description: "{{int:bw-desc-pywikipedia-interwiki}}"
+  display: out/pywikipedia/interwiki
   class: FileBasedMessageGroup
 
 FILES:
@@ -12,3 +27,16 @@ FILES:
   sourcePattern: %GROUPROOT%/pywikipedia/interwiki.py
   definitionFile: %GROUPROOT%/pywikipedia/interwiki.py
   targetPattern: pywikipedia/interwiki.py
+---
+BASIC:
+  id: out-pywikipedia-category
+  label: Pywikipedia Category
+  description: "{{int:bw-desc-pywikipedia-category}}"
+  display: out/pywikipedia/category
+  class: FileBasedMessageGroup
+
+FILES:
+  class: PythonSingleFFS
+  sourcePattern: %GROUPROOT%/pywikipedia/category.py
+  definitionFile: %GROUPROOT%/pywikipedia/category.py
+  targetPattern: pywikipedia/category.py
