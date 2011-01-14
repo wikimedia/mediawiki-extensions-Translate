@@ -1074,6 +1074,7 @@ $messages['id'] = array(
 	'translate-group-desc-mantisbt-plugin-core' => 'Plugin inti untuk [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Pesan untuk versi stabil 1.15 dari [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mediawiki-core-116' => 'Pesan untuk versi stabil 1.16 dari [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawiki-core-117' => 'Pesan untuk versi stabil 1.17 dari [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] adalah sebuah sistem informasi manajemen keuangan mikro',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' adalah sebuah pustaka python untuk membuat dokumen PDF dari artikel-artikel MediaWiki yang diparser menggunakan pustaka mwlib.
 
@@ -2103,6 +2104,7 @@ $messages['uk'] = array(
 
 Гляньте, будь ласка, [[mw:Extension:PDF_Writer]] та http://code.pediapress.com/wiki/wiki/mwlibrl для доклднішої інформації.",
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] це клієнт веб-пошти (webmail) написаний на PHP. Будь ласка, повідомляйте про будь-які проблеми на [[Support|сторінці підтримки]].',
+	'translate-group-desc-openimages-all' => 'Ці повідомлення є частиною проекту [[Translating:Open Images|Open Images]]',
 	'bw-desc-openlayers' => 'OpenLayers це генератор динамічних карт з відкритими вихідними кодами. Будь ласка, повідомляйте про будь-які проблеми на [[Support|сторінці підтримки]].',
 	'bw-desc-openstreetmap' => 'Група повідомлень [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Ця група містить повідомлення інтерфейсу [[Translating:Open Street Map|Open Street Map]].
