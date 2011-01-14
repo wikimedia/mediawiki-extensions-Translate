@@ -14,7 +14,7 @@ FILES:
   targetPattern: europeana/messages_%CODE%.properties
 
 TAGS:
-  optional:
+  ignored:
     - austria_t
     - croatia_t
     - denmark_t
