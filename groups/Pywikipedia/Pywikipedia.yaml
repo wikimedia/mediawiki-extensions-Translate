@@ -14,6 +14,7 @@ BASIC:
 GROUPS:
   - out-pywikipedia-interwiki
   - out-pywikipedia-category
+  - out-pywikipedia-redirect
 ---
 BASIC:
   id: out-pywikipedia-interwiki
@@ -40,3 +41,16 @@ FILES:
   sourcePattern: %GROUPROOT%/pywikipedia/category.py
   definitionFile: %GROUPROOT%/pywikipedia/category.py
   targetPattern: pywikipedia/category.py
+---
+BASIC:
+  id: out-pywikipedia-redirect
+  label: Pywikipedia Redirect
+  description: "{{int:bw-desc-pywikipedia-redirect}}"
+  display: out/pywikipedia/redirect
+  class: FileBasedMessageGroup
+
+FILES:
+  class: PythonSingleFFS
+  sourcePattern: %GROUPROOT%/pywikipedia/redirect.py
+  definitionFile: %GROUPROOT%/pywikipedia/redirect.py
+  targetPattern: pywikipedia/redirect.py
