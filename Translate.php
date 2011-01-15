@@ -327,6 +327,7 @@ $wgTranslateGroupStructure = array(
 	'/^out-mifos/' => array( 'mifos' ),
 	'/^out-okawix/' => array( 'okawix' ),
 	'/^out-osm/' => array( 'osm' ),
+	'/^out-pywikipedia/' => array( 'pywikipedia' ),
 	'/^out-shapado/' => array( 'shapado' ),
 	'/^out-statusnet-plugin/' => array( 'statusnet', 'plugin' ),
 	'/^out-statusnet/' => array( 'statusnet' ),
