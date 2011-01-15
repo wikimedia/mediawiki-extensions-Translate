@@ -19,7 +19,6 @@ GROUPS:
 BASIC:
   id: out-pywikipedia-interwiki
   label: Pywikipedia Interwiki
-  description: "{{int:bw-desc-pywikipedia-interwiki}}"
   display: out/pywikipedia/interwiki
   class: FileBasedMessageGroup
 
@@ -32,7 +31,6 @@ FILES:
 BASIC:
   id: out-pywikipedia-category
   label: Pywikipedia Category
-  description: "{{int:bw-desc-pywikipedia-category}}"
   display: out/pywikipedia/category
   class: FileBasedMessageGroup
 
@@ -45,7 +43,6 @@ FILES:
 BASIC:
   id: out-pywikipedia-redirect
   label: Pywikipedia Redirect
-  description: "{{int:bw-desc-pywikipedia-redirect}}"
   display: out/pywikipedia/redirect
   class: FileBasedMessageGroup
 

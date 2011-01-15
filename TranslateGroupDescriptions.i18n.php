@@ -35,6 +35,7 @@ $messages['en'] = array(
 	'translate-group-desc-translatablepages' => 'All translatable pages',
 
 	# Supported product message group descriptions
+	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] enables people to explore the digital cultural resources of Europe',
 	'bw-desc-freecol' => '[[Translating:FreeCol|FreeCol]] is a turn-based strategy game',
 	'bw-desc-fudforum' => '[[Translating:FUDforum|FUDforum]] is web-based discussion forum software',
 	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]] is web-based issue tracking software',
@@ -53,6 +54,7 @@ $messages['en'] = array(
 	'bw-desc-openstreetmap' => 'All messages related to [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => '[[Translating:OpenStreetMap|OpenStreetMap]] is an editable map of the whole world',
 	'bw-desc-osm-potlatch' => '[[Translating:OpenStreetMap|Potlatch]] is a Flash-based OpenStreetMap editor',
+	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] is a collection of tools to edit Wikipedia',
 	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]] is web-based Question and Answer software',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] is a microblogging server',
 	'translate-group-desc-statusnet-plugin' => 'These messages are part of a plugin for [[Translating:StatusNet|StatusNet]]',
