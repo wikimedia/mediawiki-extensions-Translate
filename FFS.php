@@ -1071,6 +1071,7 @@ class PythonSingleFFS extends SimpleFFS {
 		if( !isset( $this->data[$code] ) ) $this->data[$code] = array();
 		return array( 'MESSAGES' => $this->data[$code] );
 	}
+	
 
 	public function write( MessageCollection $collection ) {
 		if( $this->fw === null ) {
@@ -1087,7 +1088,7 @@ class PythonSingleFFS extends SimpleFFS {
 		if( !$ok ) return;
 
 		$authors = $this->doAuthors($collection);
-		if( $authors != '' ) fwrite( $this->fw, "\t$authors" );
+		if( $authors != '' ) fwrite( $this->fw, "$authors" );
 		fwrite( $this->fw, "\t'{$collection->code}': {\n" );
 		fwrite( $this->fw, $this->writeBlock( $collection ) );
 		fwrite( $this->fw, "\t},\n" );
@@ -1096,8 +1097,8 @@ class PythonSingleFFS extends SimpleFFS {
 	public function writeIntoVariable( MessageCollection $collection ) {
 		return <<<PHP
 # -*- coding: utf-8 -*-
-{$this->doAuthors($collection)}msg = {
-\t'{$collection->code}': {
+msg = {
+{$this->doAuthors($collection)}\t'{$collection->code}': {
 {$this->writeBlock( $collection )}\t}
 }
 PHP;
@@ -1116,11 +1117,26 @@ PHP;
 
 	protected function doAuthors( MessageCollection $collection ) {
 		$output = '';
-		$authors = $collection->getAuthors();
-		$authors = $this->filterAuthors( $authors, $collection->code );
+
+		// Read authors.
+		$fr = fopen( $this->group->getSourceFilePath( $collection->code ), 'r' );
+		$authors = array();
+		while( !feof( $fr ) ) {
+			$line = fgets( $fr );
+			if( strpos( $line, "\t# Author:" ) === 0 ) {
+				$authors[] = trim( substr( $line, strlen( "\t# Author: " ) ) );
+			} elseif( $line === "\t'{$collection->code}': {\n" ) {
+				break;
+			} else {
+				$authors = array();
+			}
+		}
+		$authors2 = $collection->getAuthors();
+		$authors2 = $this->filterAuthors( $authors2, $collection->code );
+		$authors = array_unique( array_merge( $authors, $authors2 ) );
 
 		foreach ( $authors as $author ) {
-			$output .= "# Author: $author\n";
+			$output .= "\t# Author: $author\n";
 		}
 
 		return $output;
