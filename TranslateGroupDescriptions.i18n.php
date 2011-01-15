@@ -441,6 +441,7 @@ $messages['de'] = array(
 	'translate-group-desc-uniwiki' => 'Diese Hauptgruppe beinhaltet alle Systemnachrichten für verwandte Erweiterungen von [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Diese Hauptgruppe beinhaltet alle Systemnachrichten der [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 	'translate-group-desc-translatablepages' => 'Alle übersetzbaren Seiten',
+	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] ermöglicht einen Zugang zum europäischen Kulturerbe',
 	'bw-desc-freecol' => 'Vor dem Übersetzungsstart für FreeCol bitte [[Translating:FreeCol]] lesen. FreeCol nutzt die GPL-Lizenz.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], ein in PHP geschriebenes Web-Forum.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] ist ein webbasierendes Bug-Tracking-System. Fragen und Fehler sollten auf [[Support]] berichtet werden.',
@@ -465,6 +466,7 @@ Weitere Information finden sich unter [[mw:Extension:PDF Writer]] und http://cod
 Hinweis:
 * Die Oberfläche hat Probleme mit langem Text. Bitte versuche die Textlänge der Übersetzung entsprechend dem Original zu halten ([http://trac.openstreetmap.org/ticket/2067 Offener Bug]).
 * Benutze [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] zum Testen von Potlatch. Es kann dort alles in jedem Bereich getestet werden.',
+	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] ist eine Sammlung von Werkzeugen zum Bearbeiten der Wikipedia',
 	'bw-desc-shapado' => 'Systemnachrichten von [[Translating:Shapado|Shapado]], einer freien Open-Source-Software für Fragen und Antworten',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] ist ein Open-Source-Mikroblogging-Server',
 	'translate-group-desc-statusnet-plugin' => 'Diese Nachrichten gehören zu einem Plug-in von [[Translating:StatusNet|StatusNet]]',
@@ -502,6 +504,7 @@ $messages['dsb'] = array(
 	'translate-group-desc-mantisbt-plugin-core' => 'Głowny tykac za [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Powěźeńki za stabilnu wersiju 1.1.5 [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mediawiki-core-116' => 'Powěźeńki za stabilnu wersiju 1.1.6 [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawiki-core-117' => 'Powěźeńki za stabilnu wersiju 1.1.7 [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] jo informaciski system managementa za mikrofinancěrowanje',
 	'bw-desc-mwlibrl' => "'''mwlib.rl'' jo pythonowa biblioteka za napóranje PDF-dokumentow z nastawkow MediaWiki, kótarež su se pśez biblioteku mwlib analyzěrowali.
 
@@ -925,6 +928,7 @@ $messages['hsb'] = array(
 	'translate-group-desc-mantisbt-plugin-core' => 'Hłowny tykač za [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Zdźělenki za stabilnu wersiju 1.1.5 [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mediawiki-core-116' => 'Zdźělenki za stabilnu wersiju 1.1.6 [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawiki-core-117' => 'Zdźělenki za stabilnu wersiju 1.1.7 [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] je zarjadowanski informaciski system za mikrofinancne institucije',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' je pythonowa biblioteka za wutworjenje PDF-dokumentow z nastawkow MediaWiki, kotrež buchu přez biblioteku mwlib analyzowane.
 
@@ -1406,6 +1410,7 @@ $messages['nl'] = array(
 	'translate-group-desc-uniwiki' => 'Metaberichtengroep die alle berichten bevat voor uitbreidingen gerelateerd aan [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Metaberichtengroep die alle berichten bevat voor uitbreidingen gerelateerd aan het [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Bruikbaarheidsinitiatief]',
 	'translate-group-desc-translatablepages' => "Alle te vertalen pagina's",
+	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] maakt het mogelijk het digitale cultureel erfgoed van Europa te verkennen',
 	'bw-desc-freecol' => '[[Translating:FreeCol|FreeCol]] is a beurtgebaseerd strategiespel',
 	'bw-desc-fudforum' => '[[Translating:FUDforum|FUDforum]] is webgebaseerde forumsoftware',
 	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]] is webgebaseerde software voor het volgen van meldingen',
@@ -1424,6 +1429,7 @@ $messages['nl'] = array(
 	'bw-desc-openstreetmap' => 'Berichtengroep voor alle [[Translating:OpenStreetMap|OpenStreetMap-berichten]]',
 	'bw-desc-osm-site' => '[[Translating:OpenStreetMap|OpenStreetMap]] is een bewerkbare kaart van de hele wereld',
 	'bw-desc-osm-potlatch' => '[[Translating:OpenStreetMap|Potlatch]] is een op Flash gebaseerde tekstverwerker voor OpenStreetMap',
+	'translate-group-desc-pywikipedia' => "[[Translating:Pywikipedia|Pywikipedia]] is een verzameling hulpprogramma's om Wikipedia mee te bewerken",
 	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]] is webgebaseerde Vraag en Antwoordsoftware',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] is een microblogserver',
 	'translate-group-desc-statusnet-plugin' => 'Deze berichten maken onderdeel uit van een plug-in voor [[Translating:StatusNet|StatusNet]]',
