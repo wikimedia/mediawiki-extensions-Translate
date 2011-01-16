@@ -15,6 +15,7 @@ GROUPS:
   - out-pywikipedia-interwiki
   - out-pywikipedia-category
   - out-pywikipedia-redirect
+  - out-pywikipedia-isbn
 ---
 BASIC:
   id: out-pywikipedia-interwiki
@@ -51,3 +52,15 @@ FILES:
   sourcePattern: %GROUPROOT%/pywikipedia/redirect.py
   definitionFile: %GROUPROOT%/pywikipedia/redirect.py
   targetPattern: pywikipedia/redirect.py
+---
+BASIC:
+  id: out-pywikipedia-isbn
+  label: Pywikipedia ISBN
+  display: out/pywikipedia/isbn
+  class: FileBasedMessageGroup
+
+FILES:
+  class: PythonSingleFFS
+  sourcePattern: %GROUPROOT%/pywikipedia/isbn.py
+  definitionFile: %GROUPROOT%/pywikipedia/isbn.py
+  targetPattern: pywikipedia/isbn.py
