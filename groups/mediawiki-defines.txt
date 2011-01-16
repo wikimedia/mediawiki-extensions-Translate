@@ -1380,7 +1380,6 @@ descmsg = csshooks-desc
 Uniwiki - Custom Toolbar
 id = ext-uniwiki-customtoolbar
 file = uniwiki/CustomToolbar/CustomToolbar.i18n.php
-var = wgCustomToolbarMessages
 descmsg = ct-desc
 ignored = ct_external_sample
 
