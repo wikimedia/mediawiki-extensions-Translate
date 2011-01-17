@@ -475,9 +475,10 @@ HTML;
 	}
 
 	public static function disablePreSaveTransform( $article, $popts ) {
-		global $wgTranslateMessageNamespaces, $wgTranslateDocumentationLanguageCode;
-		if( in_array( $article->getTitle()->getNamespace(), $wgTranslateMessageNamespaces )
-			&& $article->getTitle()->getSubpageText() !== $wgTranslateDocumentationLanguageCode ) {
+		global $wgTranslateDocumentationLanguageCode;
+		$keycodegroup = self::getKeyCodeGroup( $article->getTitle() );
+		if( self::isMessageNamespace( $article->getTitle() )
+			&& $keycodegroup[1] !== $wgTranslateDocumentationLanguageCode ) {
 			$popts->setPreSaveTransform( false );
 		}
 		return true;
