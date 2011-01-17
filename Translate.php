@@ -92,6 +92,7 @@ $wgHooks['SkinTemplateTabs'][] = 'TranslateEditAddons::tabs';
 $wgHooks['ArticleAfterFetchContent'][] = 'TranslateEditAddons::customDisplay';
 $wgHooks['ParserBeforeStrip'][] = 'TranslateEditAddons::injectTranslationDisplayJs';
 $wgHooks['LanguageGetTranslatedLanguageNames'][] = 'TranslateEditAddons::translateMessageDocumentationLanguage';
+$wgHooks['ArticlePrepareTextForEdit'][] = 'TranslateEditAddons::disablePreSaveTransform';
 
 // Custom preferences
 $wgDefaultUserOptions['translate'] = 0;

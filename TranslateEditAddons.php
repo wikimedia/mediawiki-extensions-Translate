@@ -473,4 +473,13 @@ HTML;
 		}
 		return true;
 	}
+
+	public static function disablePreSaveTransform( $article, $popts ) {
+		global $wgTranslateMessageNamespaces, $wgTranslateDocumentationLanguageCode;
+		if( in_array( $article->getTitle()->getNamespace(), $wgTranslateMessageNamespaces )
+			&& $article->getTitle()->getSubpageText() !== $wgTranslateDocumentationLanguageCode ) {
+			$popts->setPreSaveTransform( false );
+		}
+		return true;
+	}
 }
