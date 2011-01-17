@@ -172,7 +172,7 @@ $messages['ba'] = array(
 	'translate-group-desc-flaggedrevs' => 'MediaWiki проектының [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs] киңәйеүенең бөтә яҙмаларын үҙ эсенә алыусы мета төркөм.',
 );
 
-/** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
+/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Jim-by
  * @author Wizardist
@@ -194,18 +194,23 @@ $messages['be-tarask'] = array(
 	'translate-group-desc-uniwiki' => 'Мэта-група паведамленьняў, якая ўтрымлівае ўсе паведамленьні для пашырэньняў зьвязаных з [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Група мэта-паведамленьняў, якая ўтрымлівае ўсе паведамленьні для пашырэньняў, якія адносяцца да [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 	'translate-group-desc-translatablepages' => 'Усе старонкі, якія магчыма перакласьці',
+	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] дае магчымасьць людзям знаёміцца з лічбавымі культурнымі крыніцамі Эўропы',
 	'bw-desc-freecol' => 'Перад тым, як перакладаць FreeCol на Вашую мову, калі ласка, прачытайце [[Translating:FreeCol]]. Freecol выкарыстоўвае ліцэнзію GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum] — рухавік для вэб-форумаў на PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] — вольная ўэб-сыстэма сачэньня за памылкамі. Калі ласка, паведамляйце пра любыя праблемы ў [[Support]].',
 	'translate-group-desc-mantisbt-plugin-core' => 'Асноўнае дапаўненьне [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Паведамленьні стабільнай вэрсіі [[Translating:MediaWiki|MediaWiki]] 1.15',
 	'translate-group-desc-mediawiki-core-116' => 'Паведамленьні стабільнай вэрсіі [[Translating:MediaWiki|MediaWiki]] 1.16',
+	'translate-group-desc-mediawiki-core-117' => 'Паведамленьні для стабільнай вэрсіі 1.17 [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] — сыстэма кіраваньня інфармацыяй для мікрафінансаў',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' — бібліятэка на Python для стварэньня PDF-дакумэнтаў з артыкулаў MediaWiki, прааналізаваных бібліятэкай mwlib.
 
 Для дадатковай інфармацыі, калі ласка, глядзіце [[mw:Extension:PDF_Writer]] і http://code.pediapress.com/wiki/wiki/mwlibrl.",
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] — кліент электроннай пошты, напісаны на PHP. Калі ласка, паведамляйце пра любыя праблемы на [[Support|Падтрымку]].',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] — афляйн-чытальнік Вікіпэдыі',
+	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] — адкрытая мэдыя-плятформа',
+	'translate-group-desc-openimages-verifyemailtemplate' => 'Гэтыя паведамленьні зьяўляюцца часткай шаблёну вэрыфікацыі праз электронную пошту [[Translating:Open Images|Open Images]]',
+	'translate-group-desc-openimages-all' => 'Гэтыя паведамленьні зьяўляюцца часткай праекту [[Translating:Open Images|Open Images]]',
 	'bw-desc-openlayers' => 'OpenLayers — генэратар дынамічных мапаў з адкрытым кодам. Калі ласка, паведамляйце пра ўсе праблемы на [[support|старонцы падтрымкі]].',
 	'bw-desc-openstreetmap' => 'Група паведамленьняў для ўсіх паведамленьняў [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Гэтая група зьмяшчае паведамленьні для [[Translating:Open Street Map|Open Street Map]].
@@ -214,6 +219,7 @@ $messages['be-tarask'] = array(
 
 * Пры магчымасьці не рабіце паведамленьні даўжэйшымі за ангельскія; інтэрфэйс мае абмежаваньні па даўжыні радкоў. Глядзіце [http://trac.openstreetmap.org/ticket/2067 адкрытае паведамленьне пра памылку].
 * Выкарыстоўвайце [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] для праверкі Potlatch. Там Вы можаце пратэставаць неабходныя функцыі.',
+	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] — калекцыя інструмэнтаў для рэдагаваньня Вікіпэдыі',
 	'bw-desc-shapado' => 'Група паведамленьняў для вольнай плятформы пытаньняў і адказаў [[Translating:Shapado|Shapado]].',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] — сэрвэр мікраблёгаў з адкрытым кодам',
 	'translate-group-desc-statusnet-plugin' => 'Гэтыя паведамленьні зьяўляюцца часткай дапаўненьня для [[Translating:StatusNet|StatusNet]]',
@@ -313,6 +319,7 @@ $messages['bs'] = array(
 	'translate-group-desc-uniwiki' => 'Grupa meta poruka koja sadrži sve poruke za proširenja vezana za [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Grupa meta poruka koja sadrži sve poruke za proširenja vezana za [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia inicijativu upotrebljivosti]',
 	'translate-group-desc-translatablepages' => 'Sve stranice koje se mogu prevesti',
+	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] omogućava ljudima da istraže digitalne kulturne resurse Evrope',
 	'bw-desc-freecol' => 'Prije nego što počnete da prevodite FreeCol na Vaš jezik, molimo pročitajte [[Translating:FreeCol]]. FreeCol koristi GPL licencu.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], web forum napisan u PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] je slobodni sistem praćenja grešaka zasnovan na webu. Molimo prijavite svaku grešku na stranicu [[Support]].',
@@ -337,6 +344,7 @@ Pogledajte [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_p
 
 *Pokušajte držati Vaše prijevoda što sličnijim dužini originalnog engleskog teksta zbog ograničenja UI okvira. Također pogledajte [http://trac.openstreetmap.org/ticket/2067 otvorene greške].
 *Koristite [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] za isprobavanje Potlatch. Možete ovdje probati sve što želite u toj oblasti.',
+	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] je kolekcija alata za uređivanje Wikipedije',
 	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]] je program za pitanja i odgovore zasnovan na internetu',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] je platforma otvorenog koda za mikro blogiranje',
 	'translate-group-desc-statusnet-plugin' => 'Ove poruke su dio priključka za [[Translating:StatusNet|StatusNet]]',
@@ -379,18 +387,23 @@ $messages['cs'] = array(
 	'translate-group-desc-uniwiki' => 'Nadskupina zpráv obsahující všechny zprávy používané v podporovaných rozšířeních MediaWiki používaných na [http://www.unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Nadskupina zpráv obsahující všechny zprávy používané v rozšířeních MediaWiki souvisejících s akcí [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 	'translate-group-desc-translatablepages' => 'Všechny přeložitelné stránky',
+	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] umožňuje lidem prozkoumávat digitální kulturní zdroje Evropy',
 	'bw-desc-freecol' => 'Před překládáním FreeCol do vašeho jazyka si přečtěte [[Translating:FreeCol]]. FreeCol používá licenci GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], webové fórum napsané v PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] je webový systém pro správu chyb. Problémy hlaste na stránku [[Support]].',
 	'translate-group-desc-mantisbt-plugin-core' => 'Základní modul pro [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Hlášení ze stabilní verze [[Translating:MediaWiki|MediaWiki]] 1.15',
 	'translate-group-desc-mediawiki-core-116' => 'Hlášení ze stabilní verze [[Translating:MediaWiki|MediaWiki]] 1.16',
+	'translate-group-desc-mediawiki-core-117' => 'Hlášení ze stabilní verze [[Translating:MediaWiki|MediaWiki]] 1.17',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] je informační systém pro správu mikrofinancování',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' je knihovna pro Python umožňující tvorbu PDF dokumentů podle článků MediaWiki zpracovaných knihovnou mwlib.
 
 Podrobnosti najdete na stránkách [[mw:Extension:PDF_Writer]] a http://code.pediapress.com/wiki/wiki/mwlibrl.",
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] je webmail napsaný v PHP. Dotazy a chyby pište na stránku [[Support]].',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] je offline čtečka Wikipedie',
+	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] je otevřená platforma pro média',
+	'translate-group-desc-openimages-verifyemailtemplate' => 'Tato hlášení jsou součástí šablony pro ověření e-mailu v [[Translating:Open Images|Open Images]]',
+	'translate-group-desc-openimages-all' => 'Tato hlášení jsou součástí projektu [[Translating:Open Images|Open Images]]',
 	'bw-desc-openlayers' => 'OpenLayers je open source generátor dynamických map. Problémy hlaste na stránce [[Support]].',
 	'bw-desc-openstreetmap' => 'Skupina pro všechny zprávy [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Tato skupina obsahuje zprávy rozhraní pro [[Translating:Open Street Map|Open Street Map]].
@@ -399,6 +412,7 @@ Vysvětlení klíčů u funkce PLURAL najdete na [http://unicode.org/repos/cldr-
 
 * Pokuste se zachovat délku zpráv pokud možno co nejpodobnější anglickému originálu kvůli omezení knihovny uživatelského rozhraní. Vizte také [http://trac.openstreetmap.org/ticket/2067 chybové hlášení].
 * Potlatch můžete testovat na [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org]. Můžete tam zkoušet cokoli, kdekoli.',
+	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] je soubor nástrojů pro editaci Wikipedie',
 	'bw-desc-shapado' => 'Skupina zpráv pro svobodný open-source software pro otázky a odpovědi [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] je open-source mikroblovací server',
 	'translate-group-desc-statusnet-plugin' => 'Tyto zprávy jsou částí modulu pro [[Translating:StatusNet|StatusNet]]',
@@ -498,6 +512,7 @@ $messages['dsb'] = array(
 	'translate-group-desc-uniwiki' => 'Toś ta głowna kupka wopśimujo wše powěźeńki za rozšyrjenja, kótarež su pśiswójźbne z [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Metakupka powěźeńkow, kótaraž wopśimujo wše powěźeńki za rozšyrjenja, kótarež póśěguju se na [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative iniciatiwu wužywajobnosći Wikipedije]',
 	'translate-group-desc-translatablepages' => 'Wšykne pśełožujobne boki',
+	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] zmóžnja luźim digitalne kulturne resurse Europy pśeslěźiś',
 	'bw-desc-freecol' => 'Nježli až pśełožujoš FreeCol do swójeje rěcy, pśecytaj pšosym [[Translating:FreeCol]]. FreeCol wužywa licencu GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], webforum napisany w PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] jo swobodny system za slědowanje programowych zmólkow na zakłaźe weba. Pšosym daj problemy na boku [[Support|Pódpěra]] k wěsći.',
@@ -521,6 +536,7 @@ Pšosym glědaj [[mw:Extension:PDF_Writer]] a http://code.pediapress.com/wiki/wi
 
 * Wopytaj swóje pśełožki tak dłujko ako engelski original źaržaś, dla wobgranicowanjow za system wužywarskego powjercha. Glědaj teke [http://trac.openstreetmap.org/ticket/2067 wócynjony problem].
 * Wužyj [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org], aby testował Potlatch. Móžoš tam wšykne funkcije testowaś.',
+	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] jo zběrka rědow za wobźěłowanjoju Wikipedije',
 	'bw-desc-shapado' => 'Kupka powěźeńkow za zjawnje k dispoziciji stojecu softwaru Q&A [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] jo serwer za mikroblogowanje ze zjawnym žrědłowym kodom',
 	'translate-group-desc-statusnet-plugin' => 'Toś te powěźeńki su źěl tykaca za [[Translating:StatusNet|StatusNet]]',
@@ -922,6 +938,7 @@ $messages['hsb'] = array(
 	'translate-group-desc-uniwiki' => 'Hłowna skupina, kotraž wšě zdźělenki za rozšěrjenja wobsahuje, kotrež su z [http://unicefinnovation.org/wiki.php Uniwiki] přiwuzne',
 	'translate-group-desc-ui' => 'Metaskupina zdźělenkow, kotraž wšě zdźělenki za rozšěrjenja wobsahuje, kotrež so na [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative iniciatiwu wužiwajomnosće Wikipedije] poćahuja.',
 	'translate-group-desc-translatablepages' => 'Wšě přełožujomne strony',
+	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] zmóžnja ludźom digitalne kulturne resursy Europy přeslědźić.',
 	'bw-desc-freecol' => 'Prjedy hač přełožuješ FreeCol do swojeje rěče, přečitaj prošu [[Translating:FreeCol]]. FreeCol wužiwa licencu GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], webforum, spisany w PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] je swobodny system na zakładźe weba za slědowanje programowych zmylkow. Zdźěl prošu problemy na stronje [[Support|Podpěra]].',
@@ -945,6 +962,7 @@ Prošu hlej [[mw:Extension:PDF_Writer]] a http://code.pediapress.com/wiki/wiki/m
 
 * Spytaj swoje přełožki tak dołho kaž jendźelski original dźeržeć, dla wobmjezowanjow  za system wužiwarskeho powjercha. Hlej tež [http://trac.openstreetmap.org/ticket/2067 wotewrjeny problem].
 * Wužij [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org], zo by Potlatch testował. Móžeš tam wšě funkcije testować.',
+	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] je zběrka nastrojow za wobdźěłowanju Wikipedije',
 	'bw-desc-shapado' => 'Skupina zdźělenkow za zjawnje k dispoziciji stejacu softwaru Q&A [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] je serwer za mikroblogowanje ze zjawnym žórłowym kodom',
 	'translate-group-desc-statusnet-plugin' => 'Tute zdzělenki su dźěl tykača za [[Translating:StatusNet|StatusNet]]',
@@ -1016,6 +1034,7 @@ $messages['ia'] = array(
 	'translate-group-desc-uniwiki' => 'Metagruppo con tote le messages pro le extensiones connexe a [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Metagruppo de messages continente tote le messages pro extensiones connexe al [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Initiativa de Usabilitate de Wikipedia]',
 	'translate-group-desc-translatablepages' => 'Tote le paginas traducibile',
+	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] permitte explorar le ressources cultural digital de Europa',
 	'bw-desc-freecol' => 'Ante de traducer FreeCol in tu lingua, per favor lege [[Translating:FreeCol]]. FreeCol usa le licentia GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], un foro web scribite in PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] es un systema libere pro gerer defectos via web. Per favor reporta omne problema in [[Support]].',
@@ -1040,6 +1059,7 @@ Vide le [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plur
 
 * Tenta mantener tu traductiones tanto similar al longitude del original anglese como possibile a causa del restrictiones inherente in le interfacie de usator. Vide tamben [http://trac.openstreetmap.org/ticket/2067 iste reporto de defecto].
 * Usa [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] pro testar Potlatch. Tu pote testar ibi tanto como tu vole in omne area.',
+	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] es un collection de instrumentos pro modificar Wikipedia',
 	'bw-desc-shapado' => 'Gruppo de messages pro le software libere pro questiones e responsas [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] es un servitor open source de microblogging',
 	'translate-group-desc-statusnet-plugin' => 'Iste messages face parte de un plug-in pro [[Translating:StatusNet|StatusNet]]',
@@ -1074,6 +1094,7 @@ $messages['id'] = array(
 	'translate-group-desc-uniwiki' => 'Grup pesan meta yang berisikan semua pesan untuk ekstensi yang berkaitan dengan [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Grup pesan meta yang berisikan semua pesan untuk ekstensi yang berkaitan dengan [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Proyek Inisiatif Kebergunaan Wikipedia]',
 	'translate-group-desc-translatablepages' => 'Semua halaman yang dapat diterjemahkan',
+	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] memungkinkan eksplorasi sumber daya budaya digital Eropa',
 	'bw-desc-freecol' => 'Sebelum menerjemahkan FreeCol ke bahasa Anda, harap baca [[Translating:FreeCol]] terlebih dahulu. FreeCol menggunakan lisensi GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], sebuah web forum yang ditulis dalam PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] adalah sebuah sistem penelusuran bug berbasis web. Laporkan temuan-temuan masalah di [[Support]].',
@@ -1097,6 +1118,7 @@ Lihat pula [[mw:Extension:PDF Writer]] dan http://code.pediapress.com/wiki/wiki/
 
 * Cobalah untuk menjaga terjemahan anda semirip mungkin dengan panjang bahasa asli Inggris karena pembatasan bingkai kerja UI. Lihat juga [http://trac.openstreetmap.org/ticket/2067 open bug].
 * Gunakan [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] untuk uji coba Potlatch. Anda dapat mencoba disana  di daerah mana saja yang anda suka.',
+	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] adalah koleksi peralatan untuk menyunting Wikipedia',
 	'bw-desc-shapado' => 'Pesan grup untuk perangkat lunak bebas dan sumber terbuka Q&A [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] adalah suatu server mikroblog sumber terbuka',
 	'translate-group-desc-statusnet-plugin' => 'Pesan ini adalah bagian dari sebuah plugin untuk [[Translating:StatusNet|StatusNet]]',
@@ -1332,6 +1354,7 @@ $messages['mk'] = array(
 	'translate-group-desc-uniwiki' => 'Мета-група која ги содржи сите пораки за додатоците поврзани со [http://unicefinnovation.org/wiki.php Унивики]',
 	'translate-group-desc-ui' => 'Мета-група која ги содржи сите пораки за додатоците поврзани со [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Иницијативата за употребливост на Википедија]',
 	'translate-group-desc-translatablepages' => 'Сите преводливи страници',
+	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] им овозможува на читателите да ја истражат дигиталната културна ризница на Европа',
 	'bw-desc-freecol' => 'Пред да го преведете FreeCol на вашиот јазик, прво прочитајте ја страницата [[Translating:FreeCol]]. Freecol користи општа јавна лиценца (GPL).',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], форум напишан во PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] е слободен интернет-систем за следење на бубачки (грешки). Ако имате проблеми, пријавете ги на [[Support|Поддршка]].',
@@ -1356,6 +1379,7 @@ $messages['mk'] = array(
 
 * Потрудете се преводите да ви бидат со што послична должина од оние на англискиот оригинал поради ограничувањата на должината на речениците. Погледајте и [http://trac.openstreetmap.org/ticket/2067 отворен проблем].
 * Користете [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] за испробување на Potlatch. Таму можете да испробувате што сакате и колку што сакате во секој дел и функција.',
+	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] е збир од алатки за уредување на Википедија',
 	'bw-desc-shapado' => '↓ Група пораки за слободниот и отворен програм за прашања и одговори [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] е отворен опслужувач за микроблогирање',
 	'translate-group-desc-statusnet-plugin' => 'Овие пораки се дел од приклучокот за [[Translating:StatusNet|StatusNet]]',
@@ -1391,6 +1415,7 @@ $messages['ne'] = array(
 );
 
 /** Dutch (Nederlands)
+ * @author McDutchie
  * @author Siebrand
  */
 $messages['nl'] = array(
@@ -1410,7 +1435,7 @@ $messages['nl'] = array(
 	'translate-group-desc-uniwiki' => 'Metaberichtengroep die alle berichten bevat voor uitbreidingen gerelateerd aan [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Metaberichtengroep die alle berichten bevat voor uitbreidingen gerelateerd aan het [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Bruikbaarheidsinitiatief]',
 	'translate-group-desc-translatablepages' => "Alle te vertalen pagina's",
-	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] maakt het mogelijk het digitale cultureel erfgoed van Europa te verkennen',
+	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] maakt het mogelijk het digitale culturele erfgoed van Europa te verkennen',
 	'bw-desc-freecol' => '[[Translating:FreeCol|FreeCol]] is a beurtgebaseerd strategiespel',
 	'bw-desc-fudforum' => '[[Translating:FUDforum|FUDforum]] is webgebaseerde forumsoftware',
 	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]] is webgebaseerde software voor het volgen van meldingen',
@@ -1612,12 +1637,14 @@ $messages['pms'] = array(
 	'translate-group-desc-uniwiki' => "Meta partìa ëd mëssagi contenent tùit ij mëssagi për l'estension relativa a [http://unicefinnovation.org/wiki.php Uniwiki]",
 	'translate-group-desc-ui' => "Meta partìa ëd mëssagi contenent tùit ij mëssagi për l'estension relativa a [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]",
 	'translate-group-desc-translatablepages' => "Tute le pàgine ch'as peulo volté",
+	'translate-group-desc-europeana' => "[[Translating:Europeana|Europeana]] a abìlita le përson-e a esploré j'arzòrse culturaj digitaj d'Euròpa",
 	'bw-desc-freecol' => "Prima ëd volté FreeCol an soa lenga, për piasì ch'a lesa [[Translating:FreeCol]]. Freecol a deuvra la licensa GPL.",
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], un forum web scrivù an PHP.',
 	'bw-desc-mantisbt' => "[http://www.mantisbt.org MantisBT] a l'é un sistema lìber ëd trassadura dj'eror web-based. Për piasì arpòrta minca problema an [[Support]].",
 	'translate-group-desc-mantisbt-plugin-core' => 'Un plugin sentral për [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Mëssagi për la version ëstàbil 1.15 ëd [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mediawiki-core-116' => 'Mëssagi për la version ëstàbil 1.16 ëd [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawiki-core-117' => 'Mëssagi për la version ëstàbil 1.17 ëd [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => "[[Translating:Mifos|Mifos]] a l'é un sistema anformativ ëd gestion për la microfinansa",
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' a l'é na liberìa python për ëscrive document PDF da partìcoj MediaWiki che a son ëstàit analisà da la librerìa mwlib.
 
@@ -1634,6 +1661,7 @@ Për piasì varda [[mw:Extension:PDF_Writer]]  e http://code.pediapress.com/wiki
 
 * Preuva a manten-e toe tradussion ël pì possibil istesse a la lunghëssa dl'original anglèis a causa dle restrission dël framework UI. Varda ëdcò [http://trac.openstreetmap.org/ticket/2067 open bug].
 * Dòvra [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] për prové Potlatch. It peule prové là tut lòn ch'it veule an tute le aire.",
+	'translate-group-desc-pywikipedia' => "[[Translating:Pywikipedia|Pywikipedia]] a l'é na colession d'ùtiss për modifiché Wikipedia",
 	'bw-desc-shapado' => 'Partìa ëd mëssagi për ël programa ëd domande e rispòste lìber e a sorgiss lìbera [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => "[[Translating:StatusNet|StatusNet]] a l'é un servent ëd microscartari a sorgiss duverta",
 	'translate-group-desc-statusnet-plugin' => "Sti mëssagi a fan part ëd n'estension për [[Translating:StatusNet|StatusNet]]",

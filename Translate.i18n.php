@@ -451,7 +451,7 @@ These messages will not be submitted to svn, but will only affect the interface 
 	'translations-summary' => 'Used in [[Special:Translations]].',
 	'translate-translations-no-message' => 'Error message used in [[Special:Translations]].',
 	'translate-translations-none' => 'Used in [[Special:Translations]] if no translations exist.',
-	'translate-translations-count' => 'Show in Special:Translations before the listing.',
+	'translate-translations-count' => 'Show in [[Special:Translations]] before the listing.',
 	'translate-translations-fieldset-title' => 'Name of fieldset in [[Special:Translations]].
 
 {{Identical|Message}}',
@@ -2149,7 +2149,7 @@ $messages['be'] = array(
 	'translate-history' => 'гісторыя',
 );
 
-/** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
+/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Jim-by
  * @author Red Winged Duck
@@ -2314,6 +2314,7 @@ $messages['be-tarask'] = array(
 	'translations-summary' => 'Увядзіце ўнізе назву паведамленьня, каб паглядзець усе даступныя пераклады.',
 	'translate-translations-no-message' => 'Паведамленьне «$1» нельга перакласьці',
 	'translate-translations-none' => 'Няма перакладаў для «$1»',
+	'translate-translations-count' => '{{PLURAL:$1|Знойдзены $1 пераклад|Знойдзеныя $1 пераклады|Знойдзеныя $1 перакладаў}}.',
 	'translate-translations-fieldset-title' => 'Паведамленьне',
 	'translate-translations-messagename' => 'Назва:',
 	'translate-translations-project' => 'Праект:',
@@ -2323,6 +2324,10 @@ $messages['be-tarask'] = array(
 	'languagestats-summary' => 'Гэта старонка паказвае статыстыку перакладаў для ўсіх групаў паведамленьняў для мовы.',
 	'languagestats-stats-for' => 'Статыстыка перакладаў для $1 ($2).',
 	'languagestats-recenttranslations' => 'апошнія пераклады',
+	'translate-langstats-expand' => 'разгарнуць',
+	'translate-langstats-collapse' => 'згарнуць',
+	'translate-langstats-expandall' => 'разгарнуць усе',
+	'translate-langstats-collapseall' => 'згарнуць усе',
 	'translate-language-code' => 'Код мовы',
 	'translate-language-code-field-name' => 'Код мовы:',
 	'translate-suppress-complete' => 'Поўнасьцю схаваць перакладзеныя групы паведамленьняў',
@@ -2356,6 +2361,7 @@ $messages['be-tarask'] = array(
 	'supportedlanguages-recenttranslations' => 'апошнія пераклады',
 	'translate-save' => 'Захаваць ($1)',
 	'translate-jssti-add' => 'Дадаць у сьпіс',
+	'managemessagegroups' => 'Кіраваньне групамі паведамленьняў',
 	'translate-manage-groups' => 'Кіраваньне групамі',
 	'translate-manage-listgroups' => 'Сканфігураваныя групы',
 	'translate-manage-listgroups-old' => 'Групы старога стылю',
@@ -2428,6 +2434,7 @@ $1',
 	'translate-gs-count' => 'Колькасьць',
 	'translate-gs-total' => 'Усяго',
 	'translate-gs-avgscore' => 'Сярэдняя адзнака',
+	'translate-documentation-language' => 'дакумэнтацыя паведамленьня',
 );
 
 /** Bulgarian (Български)
@@ -3462,14 +3469,20 @@ $messages['ce'] = array(
 	'translate-history' => 'исторе',
 	'translate-task-reviewall' => 'Нисдé массо гочдарш',
 	'translate-page-settings-legend' => 'Барамаш',
+	'translate-page-task' => 'Суна лаьа',
 	'translate-page-group' => 'Тоба',
 	'translate-page-language' => 'Мотт',
+	'translate-page-limit' => 'Доза тохар',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|хаам|хаам|хаамаш}} цхьан агlон',
+	'translate-submit' => 'Арайаккха',
 	'translate-page-navigation-legend' => 'Шавигар',
 	'translate-page-showing-all' => 'Ара баьккхина $1 {{PLURAL:$1|хаам|хаам|хаамаш}}.',
+	'translate-page-description-legend' => 'Тобанах хаам',
 	'translate-page-edit' => 'Нисйé',
 	'translate-edit-contribute' => 'нисйé',
 	'translate-edit-in-other-languages' => 'Хаам «$1» кхечу меттанашкахь',
+	'translate-edit-tab-list' => 'Хаамийн могlам',
+	'translate-magic-submit' => 'Арайаккха',
 	'translate-magic-cm-save' => 'lалашдан',
 	'translationchanges' => 'Гочдарна хийцамаш',
 	'translate-rc-translation-filter' => 'Литта гочдарш:',
@@ -3705,6 +3718,7 @@ Implicitní seznam (''default'') závisí na vašem jazyce.",
 	'translations-summary' => 'Všechny dostupné překlady zobrazíte po zadání názvu zprávy.',
 	'translate-translations-no-message' => 'Nelze překládat zprávu „$1“',
 	'translate-translations-none' => 'Neexistují žádné překlady zprávy „$1“',
+	'translate-translations-count' => '{{PLURAL:$1|Nalezen jeden překlad|Nalezeny $1 překlady|Nalezeno $1 překladů}}.',
 	'translate-translations-fieldset-title' => 'Zpráva',
 	'translate-translations-messagename' => 'Název:',
 	'translate-translations-project' => 'Projekt:',
@@ -3713,6 +3727,10 @@ Implicitní seznam (''default'') závisí na vašem jazyce.",
 	'languagestats-summary' => 'Tato stránka zobrazuje statistiku překladů všech skupin zpráv v daném jazyce.',
 	'languagestats-stats-for' => 'Statistiky překladů pro jazyk $1 ($2).',
 	'languagestats-recenttranslations' => 'nedávné překlady',
+	'translate-langstats-expand' => 'rozbalit',
+	'translate-langstats-collapse' => 'sbalit',
+	'translate-langstats-expandall' => 'rozbalit vše',
+	'translate-langstats-collapseall' => 'sbalit vše',
 	'translate-language-code' => 'Kód jazyka',
 	'translate-language-code-field-name' => 'Kód jazyka:',
 	'translate-suppress-complete' => 'Nevypisovat úplně přeložené skupiny zpráv',
@@ -3770,6 +3788,7 @@ Metoda <code>$1</code> není podporována.',
 	'translate-gs-count' => 'Počet',
 	'translate-gs-total' => 'Celkem',
 	'translate-gs-avgscore' => 'Prům. skóre',
+	'translate-documentation-language' => 'dokumentace k hlášením',
 );
 
 /** Kashubian (Kaszëbsczi)
@@ -8443,11 +8462,30 @@ Yon mesaj vin make ansyen lè mesaj sous an anglè chanje, lè yon verifikasyon 
 	'translate-nothing-to-do' => 'Sanble tout tradiksyon yo fèt.
 Nou ankouraje ou pou ou revize mesaj yo nan [[Special:Translate|{{int:translate}}]].',
 	'supportedlanguages' => 'Lang ki sipòte yo',
+	'supportedlanguages-summary' => 'Paj sa a montre yon lis tout lang ki sipòte pa {{SITENAME}}, ansanm ak non tradiktè yo ki ap travay nan lang sa yo.
+Si nou ta renmen konn pi plis sou yon lang, klike sou lyen pou paj prensipal lang sa a.
+Si ou klike sou non yon tradiktè, w ap jwenn paj itilizatè li.
+
+Si yon lang pa parèt nan lis, ou kapab gade "[[Translating:Process|nouvèl lang]]" pou ou konnen ki jan ou fè pou komanse yon pwojè lokalizasyon pou li.
+
+Si ou tradui vè yon lang epi non ou pa nan lis tradiktè pou lang sa, tanpri ajoute l nan [[:Category:Languages|paj prensipal]].
+Gade meni a pou jwenn lyen pou paj prensipal lang ou prefere a.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Tradiktè|Tradiktè yo}}: $1',
 	'supportedlanguages-noportal-title' => 'Pa gen espas non pou paj prensipal sa ki defini',
+	'supportedlanguages-noportal' => 'Administratè wiki a pa defini NS_PORTAL, se sak fè paj sa pa mache.
+Nan paj sa a, genyen yon lis paj prensipal yo pou tout lang ki genyen yon kòd ki ekziste deja, ak yon lòt paj anba ki rele "tradiktè yo".
+Paj "tradiktè yo" dwe genyen modèl [[:{{ns:template}}:User|Itilizatè]] ladan l, ki pran yon non itilizatè kòm paramèt.',
 	'supportedlanguages-recenttranslations' => 'dènye tradiksyon yo',
 	'translate-save' => 'Anrejistre ($1)',
 	'translate-jssti-add' => 'Ajoute nan lis',
+	'managemessagegroups' => 'Jesyon gwoup mesaj',
+	'translate-manage-groups' => 'Jesyon gwoup',
+	'translate-manage-listgroups' => 'Gwoup ki konfigire yo',
+	'translate-manage-listgroups-old' => 'Gwoup ki gen ansyen stil yo',
+	'translate-managegroups' => 'Jesyon gwoup',
+	'translate-manage-newgroup' => 'Gwoup mesaj sa a pa t enpòte deja.',
+	'translate-manage-cacheat' => 'Enpòte nan $1 a $2',
+	'translate-manage-return-to-group' => 'Retounen nan paj ki bay detay sou gwoup',
 );
 
 /** Hungarian (Magyar)
@@ -20174,6 +20212,7 @@ $messages['zh-hans'] = array(
  * @author Alexsh
  * @author Gzdavidwong
  * @author Liangent
+ * @author Mark85296341
  * @author Wrightbus
  */
 $messages['zh-hant'] = array(
@@ -20221,8 +20260,8 @@ $messages['zh-hant'] = array(
 	'translate-edit-contribute' => '貢獻',
 	'translate-edit-no-information' => "''本介面訊息沒有任何說明資訊
 如果您知道這個訊息是使用在哪個地方，您可以增加說明資訊以協助其他翻譯者''",
-	'translate-edit-information' => '關於介“$2”面訊息的資訊 （$1）',
-	'translate-edit-in-other-languages' => '其他語言的訊息“$1”',
+	'translate-edit-information' => '關於介面訊息「$2」的資訊（$1）',
+	'translate-edit-in-other-languages' => '其他語言的介面訊息「$1」',
 	'translate-edit-committed' => '當前翻譯',
 	'translate-edit-warnings' => '未完成翻譯的警告',
 	'translate-edit-tmsugs' => '來自翻譯記憶的建議',
@@ -20246,7 +20285,7 @@ $messages['zh-hant'] = array(
 	'translate-magic-cm-current' => '目前',
 	'translate-magic-cm-original' => '原始訊息',
 	'translate-magic-cm-comment' => '原因：',
-	'translate-magic-cm-save' => '保存',
+	'translate-magic-cm-save' => '儲存',
 	'translate-magic-cm-updatedusing' => '已使用[[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]]更新',
 	'translate-magic-cm-savefailed' => '保存失敗',
 	'translate-magic-special' => '特殊頁面別名',
@@ -20254,7 +20293,7 @@ $messages['zh-hant'] = array(
 	'translate-magic-namespace' => '名字空間名稱',
 	'translate-magic-notsaved' => '您的編輯尚未被保存！',
 	'translate-magic-errors' => '請修復翻譯中的以下{{PLURAL:$1|錯誤|錯誤}}：',
-	'translate-magic-saved' => '你的改變已經成功保存。',
+	'translate-magic-saved' => '你的變更已經成功儲存。',
 	'translationchanges' => '翻譯更改',
 	'translationchanges-export' => '{{int:translate-magic-cm-export}}',
 	'translationchanges-change' => '$1: $2 由$3翻譯',
@@ -20312,7 +20351,7 @@ $messages['zh-hant'] = array(
 	'translate-translations-none' => '沒有"$1"的翻譯',
 	'translate-translations-fieldset-title' => '所有翻譯',
 	'translate-translations-messagename' => '消息：',
-	'translate-translations-project' => '計畫:',
+	'translate-translations-project' => '計畫：',
 	'languagestats' => '語言統計',
 	'languagestats-recenttranslations' => '最近的翻譯',
 	'translate-language-code' => '語言代碼',
@@ -20322,7 +20361,8 @@ $messages['zh-hant'] = array(
 	'translate-untranslated' => '未翻譯',
 	'translate-percentage-complete' => '完成度',
 	'translate-percentage-fuzzy' => '已過時',
-	'supportedlanguages-translators' => '{{PLURAL:$2|翻譯者|翻譯者}}: $1',
+	'supportedlanguages' => '支援的語言',
+	'supportedlanguages-translators' => '{{PLURAL:$2|翻譯者|翻譯者}}：$1',
 	'translate-save' => '儲存 （$1）',
 	'translate-jssti-add' => '新增至清單',
 	'translate-manage-groups' => '組管理',

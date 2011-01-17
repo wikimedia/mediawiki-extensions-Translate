@@ -1355,6 +1355,98 @@ Du chunnsch derno derzue eimol im Monet e Newsletter iber.
 Wänn Du kei Newsletter witt iberchuu, chasch di im Tab „{{int:prefs-personal}}“ in [[Special:Preferences|Dyyne Yystellige]] uustrage.',
 );
 
+/** Hawaiian (Hawai`i)
+ * @author Kolonahe
+ */
+$messages['haw'] = array(
+	'firststeps' => 'Nā Mea Mua Loa',
+	'firststeps-desc' => '[[Special:FirstSteps|Special page]] no ka hoʻomaka ʻana o nā mea hoʻohana ma kekahi wiki i hoʻohana i ka pākuʻi unuhi',
+	'translate-fs-pagetitle-done' => ' - hoʻopau ʻia!',
+	'translate-fs-pagetitle' => 'Polokalamu Hana Kōkua me ka Hoʻomaka ʻana - $1',
+	'translate-fs-signup-title' => 'Kāinoa',
+	'translate-fs-settings-title' => 'Hoʻololi i Kau Makemake',
+	'translate-fs-userpage-title' => 'Hana i Kau ʻAoʻao Mea hoʻohana',
+	'translate-fs-permissions-title' => 'Noi no nā ʻAe Unuhi',
+	'translate-fs-target-title' => 'E Hoʻomaka i ka ʻUnuhina!',
+	'translate-fs-email-title' => 'Hōʻoia i Kau Wahi leka uila',
+	'translate-fs-intro' => 'Welina mai i ke Polokalamu hana kōkua no nā mea hana mua loa o {{SITENAME}}.
+E  alakaʻi ana ʻoe i kēia hana o ka lilo ʻana i mea unuhi.
+Ma ka hopena, hiki iā ʻoe ke uhuhi i nā "leka aloloko" o nā papa hana a pau i kākoʻo ʻia ma {{SITENAME}}.',
+	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount.png|frame]]
+
+I ka mea mua, pono e kāinoa.
+
+Inā loaʻa nā uhuhi, e kau ʻia nā hōʻaiʻē ma muli hoʻi o kau inoa kapakapa.
+Hōʻike ke kiʻi ma ka ʻaoʻao ʻākau i ka hana ʻana i nā kahua like ʻole.
+
+Inā ua kāinoa ʻia, $1ʻEʻe$2 i loko.
+Ma hope o kou kāinoa ʻana, hoʻi mai i kēia ʻaoʻao.
+
+$3Kāinoa$4',
+	'translate-fs-settings-text' => 'Pono e hele i kau makemake a hoʻololi i kau ʻōlelo aloloko i ka ʻōlelo āu e uhuhi ana.
+
+ʻO kau ʻōlelo aloloko ka ʻōlelo paʻamau.
+Hiki ke poina e hoʻololi i ka ʻōlelo i ka ʻōlelo pololei, no laila, e hana i kēia manawa.
+
+I kou noho ʻana i laila, hiki ke noi i ka polokalamu e hōʻike i nā uhuhi ma nā ʻōlelo ʻē aʻe āu e ʻike ai.
+Hiki ke loaʻa ka makemake i loko o ka kāwāholo "{{int:prefs-editing}}".
+E ʻike i nā makemake ʻē aʻe, inā makemake.
+
+Hele i kau [[Special:Preferences|ʻaoʻao makemake]] i kēia manawa a laila hoʻi i kēia ʻaoʻao ma hope',
+	'translate-fs-settings-skip' => 'Ua pau ka hana.
+Neʻe i mua.',
+	'translate-fs-userpage-text' => 'Pono e hana i kekahi ʻaoʻao mea hoʻohana i kēia manawa.
+
+E ʻoluʻolu e kākau e pili ana iā ʻoe; ʻo wai ʻoe? a me he aha kau e hana ai?
+Hiki kēia ke kōkua i ke kaiāulu {{SITENAME}} e laulima.
+Ma {{SITENAME}}, aia nā poʻe he nui mai ʻō a ʻō ka hōnua e hana nei ma nā ʻōlelo a me nā papa hana ʻokoʻa.
+
+I loko o ka pahu i hoʻopiha ma mua, aia kekahi laina āu e ʻika ana: <nowiki>{{#babel:en-2}}</nowiki>.
+E ʻoluʻolu e hana me kau ʻike ʻōlelo.
+Hōʻike ʻano ka helu ma hope i ka ʻike o ka ʻōlelo kau e ʻike ai.
+Nā koho:
+* 1 - liʻiliʻi
+* 2 - ʻikena kumu
+* 3 - ʻikena maikaʻi
+* 4 - ʻōlelo like nā mānaleo
+* 5 - Hana ʻoe i ka ʻōlelo no ka ʻoihana
+
+Inā he mānaleo ʻoe, kāpae ka mākau and hana ke pāʻālua ʻōlelo wale nō.
+Lāʻana: Inā mānaleo ʻoe me ka ʻōlelo Kepanī, ʻōlelo maikaʻi ka ʻōlelo Pelekānia a ʻōlelo liʻi ka ʻōlelo Kōlea, e kākau:
+<code><nowiki>{{#babel:ja|en-3|ko-1}}</nowiki></code>
+
+Inā ʻaʻole maopopo ka pāʻālua ʻōlelo o kekahi ʻōlelo, pono e ʻimi.
+Hiki ke hana i ka helu i lalo.',
+	'translate-fs-userpage-submit' => 'Hana i kaʻu ʻaoʻao mea hoʻohana',
+	'translate-fs-userpage-done' => 'Maikaʻi! Loaʻa ka ʻaoʻao mea hoʻohana i kēia manawa.',
+	'translate-fs-permissions-text' => 'Pono e kau i kekahi noi no ka hoʻohui ʻana i ka hui unuhi.
+
+A hiki i ka hoʻopololei ʻana i ka pāʻālua, e ʻoluʻolu, e hele i [[Project:Translator]] a hahai i nā aʻona.
+A laila hoʻi i kēia ʻaoʻao.
+
+Ma hope o ka hoʻouna ʻana o ka noina, e ʻike ana ʻia ka noina e kekahi poʻe hana ʻaʻa a ʻae.
+E hoʻomanawanui ke ʻoluʻolu',
+	'translate-fs-target-text' => 'Hoʻomaikaʻi ʻana!
+Hiki ke hoʻomaka i ka uhuni ʻana.
+
+Mai makaʻu inā huikau ʻoe.
+Ma [[Project list]], aia kekahi ʻike piha o nā papa hana i hiki iā ʻoe ke kōkua.
+ʻO ka nui o nā papa hana, loaʻa kekahi ʻaoʻao kikoʻī pōkole me kekahi loulou "\'\'Translate this project\'\'" e lawe ana ʻoe i kekahi ʻaoʻao i helu i nā leka unuhi ʻole.
+Loaʻa nō hoʻi kekahi helu no nā leka hui a pau me ke [[Special:LanguageStats|nā kūlana unuhi o kēia wa no kekahi ʻōlelo]].
+
+Inā makemake ʻoe e maopopo ma mua hoʻi o kou unuhi ʻana, hiki ke heluhelu i ka [[FAQ|Nīnau i nīnau pinepine]].
+Akā hiki i nā hana palapala ke hele a kahiko i kekahi mau manawa.
+Inā loaʻa kekahi mau mea āu i noʻonoʻo hiki paha iā ʻoe ke hana, akā ʻaʻole maopopo, mai nīnau ʻole ma ke [[Support|ʻaoʻao kākoʻo]].
+
+Hiki ke walaʻau kekahi me nā mea unuhi ʻē aʻe o ka ʻōlelo like ma loko o ko [[Portal:$1|kau wahi ʻōlelo]] [[Portal_talk:$1|ʻaoʻao kūkākūkā]].
+Inā ʻaʻole i hana, [[Special:Preferences|hoʻololi i kau mea hoʻohana aloloko ʻōlelo i ka ʻōlelo āu e makemake e unuhi]], i hiki i ka wiki ke hōʻike i nā loulou e pili ana nau.',
+	'translate-fs-email-text' => 'E ʻoluʻolu, e kau kau wahi leka uila i loko o [[Special:Preferences|kau makemake]] a ʻae mai loko o ka leka uila e hoʻouna ana iā ʻoe.
+
+Hiki i kēia ʻano hana ke hoʻokuʻu i nā mea hoʻohana ʻē aʻe ke walaʻau me ʻoe i ka leka uila ʻana.
+E loaʻa ana nā nū hou i hoʻokahi manawa kēlā me kēia māhina.
+Inā ʻaʻole makemake e loaʻa nā nū hou, hiki ke pale i ke kāwāholo "{{int:prefs-personal}}" o kau [[Special:Preferences|makemake]].',
+);
+
 /** Hebrew (עברית)
  * @author YaronSh
  */
@@ -3309,5 +3401,12 @@ $3 注册$4',
 这能让其他用户通过电子邮件联系你。
 你也会收到至多每月一次的电子通讯。
 如果你不想收到通讯，你可以在[[Special:Preferences|选项]]"页面的{{int:prefs-personal}}"标签选择停止接收。',
+);
+
+/** Traditional Chinese (‪中文(繁體)‬)
+ * @author Mark85296341
+ */
+$messages['zh-hant'] = array(
+	'translate-fs-userpage-title' => '建立您的使用者頁面',
 );
 
