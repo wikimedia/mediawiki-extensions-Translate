@@ -69,3 +69,15 @@ FILES:
   sourcePattern: %GROUPROOT%/pywikipedia/isbn.py
   definitionFile: %GROUPROOT%/pywikipedia/isbn.py
   targetPattern: pywikipedia/isbn.py
+---
+BASIC:
+  id: out-pywikipedia-replace
+  label: Pywikipedia Replace
+  display: out/pywikipedia/replace
+  class: FileBasedMessageGroup
+
+FILES:
+  class: PythonSingleFFS
+  sourcePattern: %GROUPROOT%/pywikipedia/replace.py
+  definitionFile: %GROUPROOT%/pywikipedia/replace.py
+  targetPattern: pywikipedia/replace.py
