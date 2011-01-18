@@ -21,6 +21,7 @@ GROUPS:
   - out-pywikipedia-category
   - out-pywikipedia-redirect
   - out-pywikipedia-isbn
+  - out-pywikipedia-replace
 ---
 BASIC:
   id: out-pywikipedia-interwiki
