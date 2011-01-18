@@ -1306,6 +1306,11 @@ file = ToolserverTools/KolossosKmlOnOpenlayers/kml-on-ol-source.i18n.php
 id = ext-ts-kmlonol
 optional = ts-kml-on-ol-openstreetmap, ts-kml-on-ol-wikipedia
 
+Toolserver Tools - Soxred93
+file = ToolserverTools/Soxred93EditCounter/ToolbaseMessages.i18n.php
+id = ext-ts-soxred-toolbase
+optional = toolbase-header-twitter, toolbase-navigation-api
+
 Tor Block
 
 Translate - Core
