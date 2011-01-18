@@ -3,6 +3,11 @@ TEMPLATE:
     namespace: NS_PYWIKIPEDIA
     class: FileBasedMessageGroup
     description: "{{int:translate-group-desc-pywikipedia}}"
+
+  CHECKER:
+    class: MessageChecker
+    checks:
+      - pythonInterpolationCheck
 ---
 BASIC:
   id: out-pywikipedia-0-all
