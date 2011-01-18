@@ -14741,6 +14741,10 @@ Todos os valores têm limites máximos e mínimos.',
 	'languagestats-summary' => 'Esta página mostra estatísticas de tradução para todos os grupos de mensagens de uma língua.',
 	'languagestats-stats-for' => 'Estatísticas de tradução para $1 ($2).',
 	'languagestats-recenttranslations' => 'traduções recentes',
+	'translate-langstats-expand' => 'expandir',
+	'translate-langstats-collapse' => 'ocultar',
+	'translate-langstats-expandall' => 'expandir tudo',
+	'translate-langstats-collapseall' => 'contrair tudo',
 	'translate-language-code' => 'Código de língua',
 	'translate-language-code-field-name' => 'Código de língua:',
 	'translate-suppress-complete' => 'Suprimir os grupos de mensagens completamente traduzidos',
@@ -20245,7 +20249,7 @@ $messages['zh-hant'] = array(
 	'translate-page-limit' => '每頁顯示',
 	'translate-page-limit-option' => '$1個訊息',
 	'translate-submit' => '擷取',
-	'translate-page-navigation-legend' => '導航',
+	'translate-page-navigation-legend' => '導覽',
 	'translate-page-showing' => '顯示第 $1 到第 $2 個訊息，總共有 $3 個',
 	'translate-page-showing-all' => '顯示 $1 個訊息',
 	'translate-page-showing-none' => '沒有任何訊息',
@@ -20314,8 +20318,8 @@ $messages['zh-hant'] = array(
 	'translate-pref-editassistlang' => '輔助語言：',
 	'prefs-translate' => '翻譯選項',
 	'translate-pref-editassistlang-help' => '逗號分隔的語言代碼列表。
-當你翻譯的時候，這些語言的相應消息的翻譯會顯示。
-默認語言列表取決於你的語言。',
+當你翻譯的時候，這些語言的相應訊息的翻譯會顯示。
+預設語言列表取決於你的語言。',
 	'translate-pref-editassistlang-bad' => '列表中的無效語言代碼：
 <nowiki>$1</nowiki>。',
 	'translate-pref-jsedit' => '增強的翻譯編輯器（JavaScript）',

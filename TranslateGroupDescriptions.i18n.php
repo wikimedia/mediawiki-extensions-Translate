@@ -827,6 +827,7 @@ Por favor, bótelle unha ollada a [[mw:Extension:PDF_Writer]] e a http://code.pe
 
 * Intente manter na medida do posible as súas traducións o máis semellantes ao longo da orixinal en inglés por mor das restricións da estrutura da interface de usuario. Olle tamén [http://trac.openstreetmap.org/ticket/2067 os erros abertos].
 * Use [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] para probar o Potlatch. Alí pode comprobar todo o que queira en calquera área.',
+	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] é unha colección de ferramentas para editar a Wikipedia',
 	'bw-desc-shapado' => 'Grupo de mensaxes para o software de código aberto de preguntas e respostas [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] é un servidor de mensaxes de blogue curtas de código aberto',
 	'translate-group-desc-statusnet-plugin' => 'Estas mensaxes forman parte dun complemento do [[Translating:StatusNet|StatusNet]]',
