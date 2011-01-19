@@ -1858,6 +1858,7 @@ $messages['ru'] = array(
 	'translate-group-desc-uniwiki' => 'Мета-группа сообщений, содержащая все сообщения расширений, связанных с [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Мета-группа сообщений, содержащая все сообщения расширений, относящихся к [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Инициативе юзабилити Википедии]',
 	'translate-group-desc-translatablepages' => 'Все страницы для перевода',
+	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] даёт людям возможность исследовать цифровые культурные ресурсы Европы',
 	'bw-desc-freecol' => 'Прежде чем переводить FreeCol на ваш язык, пожалуйста, прочтите [[Translating:FreeCol]]. Freecol использует лицензию GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum] — веб-форум, написанный на PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] — свободная веб-система отслеживания ошибок. Пожалуйста, сообщайте о любых недостатках на странице [[Support]].',
@@ -1881,6 +1882,7 @@ $messages['ru'] = array(
 
 * Постарайтесь, чтобы ваши переводы не превышали длину английского оригинала; в интерфейсе есть ограничения на длину строк. См. [http://trac.openstreetmap.org/ticket/2067 открытую проблему].
 * Используйте [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] для проверки Potlatch. Здесь вы можете проверять любые функции.',
+	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] — набор инструментов для редактирования Википедии',
 	'bw-desc-shapado' => 'Группа сообщений свободного программного обеспечения вопросов и ответов [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] — сервер микроблоггинга с открытым исходным кодом',
 	'translate-group-desc-statusnet-plugin' => 'Это сообщения плагина для [[Translating:StatusNet|StatusNet]]',
