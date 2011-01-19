@@ -17,23 +17,7 @@ BASIC:
   class: AggregateMessageGroup
 
 GROUPS:
-  - out-pywikipedia-interwiki
-  - out-pywikipedia-category
-  - out-pywikipedia-redirect
-  - out-pywikipedia-isbn
-  - out-pywikipedia-replace
----
-BASIC:
-  id: out-pywikipedia-interwiki
-  label: Pywikipedia Interwiki
-  display: out/pywikipedia/interwiki
-  class: FileBasedMessageGroup
-
-FILES:
-  class: PythonSingleFFS
-  sourcePattern: %GROUPROOT%/pywikipedia/interwiki.py
-  definitionFile: %GROUPROOT%/pywikipedia/interwiki.py
-  targetPattern: pywikipedia/interwiki.py
+  - out-pywikipedia-*
 ---
 BASIC:
   id: out-pywikipedia-category
@@ -48,16 +32,16 @@ FILES:
   targetPattern: pywikipedia/category.py
 ---
 BASIC:
-  id: out-pywikipedia-redirect
-  label: Pywikipedia Redirect
-  display: out/pywikipedia/redirect
+  id: out-pywikipedia-interwiki
+  label: Pywikipedia Interwiki
+  display: out/pywikipedia/interwiki
   class: FileBasedMessageGroup
 
 FILES:
   class: PythonSingleFFS
-  sourcePattern: %GROUPROOT%/pywikipedia/redirect.py
-  definitionFile: %GROUPROOT%/pywikipedia/redirect.py
-  targetPattern: pywikipedia/redirect.py
+  sourcePattern: %GROUPROOT%/pywikipedia/interwiki.py
+  definitionFile: %GROUPROOT%/pywikipedia/interwiki.py
+  targetPattern: pywikipedia/interwiki.py
 ---
 BASIC:
   id: out-pywikipedia-isbn
@@ -70,6 +54,18 @@ FILES:
   sourcePattern: %GROUPROOT%/pywikipedia/isbn.py
   definitionFile: %GROUPROOT%/pywikipedia/isbn.py
   targetPattern: pywikipedia/isbn.py
+---
+BASIC:
+  id: out-pywikipedia-redirect
+  label: Pywikipedia Redirect
+  display: out/pywikipedia/redirect
+  class: FileBasedMessageGroup
+
+FILES:
+  class: PythonSingleFFS
+  sourcePattern: %GROUPROOT%/pywikipedia/redirect.py
+  definitionFile: %GROUPROOT%/pywikipedia/redirect.py
+  targetPattern: pywikipedia/redirect.py
 ---
 BASIC:
   id: out-pywikipedia-replace
