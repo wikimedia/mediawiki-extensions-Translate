@@ -561,6 +561,8 @@ aliasfile = GoogleNewsSitemap/GoogleNewsSitemap.alias.php
 
 Go To Category
 
+GraphViz
+
 Groups Sidebar
 
 Hide Namespace
