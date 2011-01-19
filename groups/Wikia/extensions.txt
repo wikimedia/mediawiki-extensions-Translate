@@ -108,9 +108,6 @@ file = LookupContribs/SpecialLookupContribs.i18n.php
 
 Masthead
 
-Mobile API
-file = MobileApi/MobileApi.i18n.php
-
 Most Popular Categories
 file = MostPopularCategories/SpecialMostPopularCategories.i18n.php
 
