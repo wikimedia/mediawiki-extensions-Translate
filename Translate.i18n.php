@@ -7374,7 +7374,7 @@ $messages['gu'] = array(
 	'translate-desc' => 'મીડિયાવિકિ અને આગળ ભાષાંતરણ માટે [[Special:Translate|ખાસ પાનું]]',
 	'translate-edit' => 'સંપાદન કરો',
 	'translate-talk' => 'ચર્ચા',
-	'translate-history' => 'ઈતિહાસ',
+	'translate-history' => 'ઇતિહાસ',
 	'translate-task-view' => 'કે બધા સંદેશાઓ બતાવો',
 	'translate-task-untranslated' => 'કે બધા અભાષાંતરીત સંદેશાઓ બતાવો',
 	'translate-task-optional' => 'કે વૈકલ્પિક સંદેશાઓ બતાવો',
@@ -8490,6 +8490,24 @@ Paj "tradiktè yo" dwe genyen modèl [[:{{ns:template}}:User|Itilizatè]] ladan 
 	'translate-manage-newgroup' => 'Gwoup mesaj sa a pa t enpòte deja.',
 	'translate-manage-cacheat' => 'Enpòte nan $1 a $2',
 	'translate-manage-return-to-group' => 'Retounen nan paj ki bay detay sou gwoup',
+	'translate-manage-modlangs' => 'Tanpri, gade si te gen modifikasyon nan {{PLURAL:$1|lang sa|lang sa yo}}:',
+	'translate-manage-modlang-new' => '$1 (nouvo)',
+	'translate-manage-import-diff' => 'Mesaj: $1 | Aksyon yo: $2',
+	'translate-manage-import-new' => 'Nouvo mesaj $1',
+	'translate-manage-import-deleted' => 'Mesaj efase $1',
+	'translate-manage-action-import' => 'Enpòte',
+	'translate-manage-action-conflict' => 'Enpòte epi make kòm flou',
+	'translate-manage-action-ignore' => 'Pa okipe',
+	'translate-manage-action-fuzzy' => 'Enpòte epi make tradiksyon yo kòm flou',
+	'translate-manage-submit' => 'Ekzekite',
+	'translate-manage-nochanges' => 'Pa gen chanjman nan definisyon mesaj yo pou gwoup sa a.',
+	'translate-manage-nochanges-other' => 'Pa t gen okenn chanjman pou lang sa a.
+Sèvi ak lyen ki anba pou tounen wè detay yo.',
+	'translate-manage-inconsistent' => 'Detekte enkonsistans nan demann lan. 
+Tanpri gade si gen chanjman epi eseye ankò. 
+Detay: $1.',
+	'translate-manage-toolong' => 'Tan $1 {{PLURAL:$1|segonn|segonn}} maksimòm pou tretman an depase.
+Tanpri, soumèt fòmilè ankò pou kontinye tretman.',
 );
 
 /** Hungarian (Magyar)
@@ -11145,6 +11163,17 @@ $1',
 	'translate-gs-count' => 'Aanzahl',
 	'translate-gs-total' => 'Zosamme',
 	'translate-gs-avgscore' => 'Prozänt jedonn em Schnett',
+);
+
+/** Kurdish (Latin) (Kurdî (Latin))
+ * @author George Animal
+ */
+$messages['ku-latn'] = array(
+	'translate-history' => 'dîrok',
+	'translate-page-group' => 'Grûp',
+	'translate-page-language' => 'Ziman',
+	'translate-edit-show-trans' => 'Wergerr',
+	'translate-statsf-scale-months' => 'Mehan',
 );
 
 /** Latin (Latina)
@@ -20014,6 +20043,7 @@ $messages['yue'] = array(
  * @author Gzdavidwong
  * @author Jimmy xu wrk
  * @author Liangent
+ * @author Mark85296341
  * @author PhiLiP
  * @author Sahran
  * @author Wmr89502270
@@ -20168,7 +20198,7 @@ $messages['zh-hans'] = array(
 	'translate-translations-fieldset-title' => '界面消息',
 	'translate-translations-messagename' => '名称：',
 	'translate-translations-project' => '计划:',
-	'translate-translations-history-short' => '史',
+	'translate-translations-history-short' => '历',
 	'languagestats' => '语言统计',
 	'languagestats-summary' => '这个页面显示了当前语言的所有项目组的完成度。',
 	'languagestats-stats-for' => '$1 ($2) 的翻译统计。',
@@ -20264,6 +20294,7 @@ $messages['zh-hant'] = array(
 	'translate-ext-url' => '<hr />網站：$1',
 	'translate-optional' => '（可選）',
 	'translate-ignored' => '（已略過）',
+	'translate-edit-title' => '開始翻譯「$1」',
 	'translate-edit-definition' => '訊息原文',
 	'translate-edit-contribute' => '貢獻',
 	'translate-edit-no-information' => "''本介面訊息沒有任何說明資訊
@@ -20354,12 +20385,13 @@ $messages['zh-hant'] = array(
 	'translate-tag-fuzzy-reason' => '由"$1"的評論"$3"在$2作出的定義改變。',
 	'translate-sidebar-alltrans' => '其他翻譯',
 	'translations' => '所有翻譯',
-	'translations-summary' => '在下方輸入界面消息的名稱來顯示所有可用的翻譯。',
+	'translations-summary' => '在下方輸入介面訊息的名稱來顯示所有可用的翻譯。',
 	'translate-translations-no-message' => '"$1"不是可翻譯的訊息',
 	'translate-translations-none' => '沒有"$1"的翻譯',
 	'translate-translations-fieldset-title' => '所有翻譯',
-	'translate-translations-messagename' => '消息：',
+	'translate-translations-messagename' => '訊息名稱：',
 	'translate-translations-project' => '計畫：',
+	'translate-translations-history-short' => '歷',
 	'languagestats' => '語言統計',
 	'languagestats-summary' => '這個頁面顯示了目前語言的所有計畫群組的完成進度。',
 	'languagestats-recenttranslations' => '最近的翻譯',

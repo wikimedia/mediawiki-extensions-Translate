@@ -1945,6 +1945,7 @@ $messages['sl'] = array(
 	'translate-group-desc-uniwiki' => 'Krovna skupina sporočil, ki vsebuje vsa sporočila razširitev, povezanih z [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Krovna skupina sporočil, ki vsebuje vsa sporočila razširitev, povezanih z [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedijino Pobudo za uporabnost]',
 	'translate-group-desc-translatablepages' => 'Vse prevedljive strani',
+	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] omogoča ljudem raziskovati digitalne kulturne vire Evrope',
 	'bw-desc-freecol' => 'Pred prevajanjem FreeCol v vaš jezik, prosimo, preberite [[Translating:FreeCol]]. Freecol uporablja dovoljenje GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], spletni forum napisan v PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] je prost spletni sistem za sledenje hroščem. Prosimo, sporočite morebitne težave na [[Support|Podpora]].',
@@ -1967,6 +1968,7 @@ Oglejte si [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_p
 
 * Poskusite ohraniti vaše prevode podobne dolžine kot so angleški izvirniki kolikor se le da, zaradi omejitve ogrodja uporabniškega vmesnika. Oglejte si tudi [http://trac.openstreetmap.org/ticket/2067 odprti hrošč].
 * Uporabljajte [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] za preizkušanje Potlatch. Tam lahko preizkušate vse kar hočete, v katerem koli območju.',
+	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] je zbirka orodij za urejanje Wikipedije',
 	'bw-desc-shapado' => 'Skupina sporočil prostega in odprtokodnega programja za vprašanja in odgovore [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] je odprtokodni strežnik za mikrobloganje',
 	'translate-group-desc-statusnet-plugin' => 'Ta sporočila so del vtičnika za [[Translating:StatusNet|StatusNet]]',

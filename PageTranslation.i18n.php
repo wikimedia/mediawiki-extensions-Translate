@@ -3010,6 +3010,15 @@ Don op jede Fall em [[Special:Log/pagetranslation|{{int:pt-log-name}}]] noh Fäh
 	'pt-locked-page' => 'Dat Stöck heh is jesperrt, däm sing övversäbaa Sigg weed nämmisch jrad ömbenannt.',
 );
 
+/** Kurdish (Latin) (Kurdî (Latin))
+ * @author George Animal
+ */
+$messages['ku-latn'] = array(
+	'pt-movepage-current' => 'Navê niha:',
+	'pt-movepage-new' => 'Navê nû:',
+	'pt-movepage-reason' => 'Sedem:',
+);
+
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
  */
