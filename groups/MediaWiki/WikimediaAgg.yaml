@@ -37,10 +37,8 @@ GROUPS:
   - ext-dismissablesitenotice
   - ext-dontswitchmeover
   - ext-doublewiki # Wikisource
-  - ext-drafts # test.wikipedia.org
   - ext-expandtemplates
   - ext-extensiondistributor # MediaWiki.org
-  - ext-externalpages # 2009-11-30: test.wikipedia.org
   - ext-flaggedrevs-flaggedrevs
   - ext-flaggedrevs-configuredpages
   - ext-flaggedrevs-pendingchanges
@@ -56,7 +54,6 @@ GROUPS:
   - ext-gadgets
   - ext-globalblocking
   - ext-globalusage # 2009-11-11: commons.wikimedia.org
-  - ext-honeypotintegration # 2009-08-13: test.wikipedia.org
   - ext-imagemap
   - ext-inputbox
   - ext-intersection
@@ -102,3 +99,4 @@ GROUPS:
   - ext-wikihiero
   - ext-wikimedialicensetexts # commons.wikimedia.org
   - ext-wikimediamessages
+  - ext-wikimediamobile
