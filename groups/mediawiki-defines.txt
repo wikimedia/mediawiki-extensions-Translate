@@ -82,7 +82,7 @@ optional = babel-1-male, babel-2-male, babel-3-male, babel-4-male, babel-5-male
 optional = babel-N-male, babel-0-n-male, babel-1-n-male, babel-2-n-male
 optional = babel-3-n-male, babel-4-n-male, babel-5-n-male, babel-N-n-male
 optional = babel-autocreate-user
-ignored = babel-box-cellspacing, babel-category-prefix, babel-category-suffix
+ignored = babel-box-cellspacing
 ignored = babel-portal-prefix, babel-portal-suffix, babel-template-prefix
 ignored = babel-template-suffix, babel-footer
 
