@@ -1864,7 +1864,7 @@ Los cambeos nun se graben hasta que calques nel botón guardar d'abaxo.",
 	'translate-total' => 'Mensaxes',
 );
 
-/** Bashkir (Башҡорт)
+/** Bashkir (Башҡортса)
  * @author Assele
  * @author Рустам Нурыев
  */
@@ -4425,7 +4425,7 @@ $messages['de-ch'] = array(
 	'translate-edit-no-information' => "''Diese Systemnachricht hat noch keine Dokumentation. Wenn du weisst, wo und in welchem Zusammenhang sie benutzt wird, kannst du anderen Übersetzern helfen, indem du eine Dokumentation hinzufügst.''",
 );
 
-/** German (formal address) (Deutsch (Sie-Form))
+/** German (formal address) (‪Deutsch (Sie-Form)‬)
  * @author Imre
  * @author Kghbln
  * @author MichaelFrey
@@ -13940,7 +13940,7 @@ $messages['pdc'] = array(
 	'translate-import-load' => 'Feil ufflaade',
 );
 
-/** Pfälzisch (Pfälzisch)
+/** Pälzisch (Pälzisch)
  * @author Xqt
  */
 $messages['pfl'] = array(
@@ -16876,7 +16876,7 @@ $messages['sq'] = array(
 	'translate-statsf-submit' => 'Parapamja',
 );
 
-/** Serbian Cyrillic ekavian (Српски (ћирилица))
+/** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
  * @author Rancher
  * @author Sasa Stefanovic
  * @author Жељко Тодоровић
@@ -16887,7 +16887,7 @@ $messages['sr-ec'] = array(
 	'translate-desc' => '[[Special:Translate|Специјална страна]] за превођене МедијаВикија и осталог',
 	'translate-edit' => 'уреди',
 	'translate-talk' => 'разговор',
-	'translate-history' => 'историја',
+	'translate-history' => 'историјат',
 	'translate-task-view' => 'Приказ свих порука од',
 	'translate-task-untranslated' => 'Приказ свих непреведених порука од',
 	'translate-task-optional' => 'Приказ необавезних порука од',
@@ -16920,7 +16920,7 @@ $messages['sr-ec'] = array(
 	'translate-next' => 'Следећа страница',
 	'translate-prev' => 'Претходна страница',
 	'translate-page-description-legend' => 'Информације о групи',
-	'translate-page-edit' => 'измени',
+	'translate-page-edit' => 'уреди',
 	'translate-optional' => '(необавезно)',
 	'translate-ignored' => '(игнорисано)',
 	'translate-edit-definition' => 'Дефиниција поруке',
@@ -17023,7 +17023,7 @@ $messages['sr-ec'] = array(
 	'translate-import-from-local' => 'Слање локалног фајла:',
 );
 
-/** Serbian Latin ekavian (Srpski (latinica))
+/** Serbian Latin ekavian (‪Srpski (latinica)‬)
  * @author Michaello
  * @author Rancher
  * @author Жељко Тодоровић

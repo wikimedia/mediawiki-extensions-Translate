@@ -160,7 +160,7 @@ $messages['az'] = array(
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] Vikimedia layihələrində səhifə müəlliflərini tez bir zamanda axtarıb tapmağa imkan verir.',
 );
 
-/** Bashkir (Башҡорт)
+/** Bashkir (Башҡортса)
  * @author Assele
  */
 $messages['ba'] = array(
@@ -1750,6 +1750,7 @@ Criado para a Universidade de Bamberg. Licenciado GPL 2.0 ou posterior. Desenvol
 /** Brazilian Portuguese (Português do Brasil)
  * @author Giro720
  * @author Hamilton Abreu
+ * @author Helder.wiki
  * @author Heldergeovane
  */
 $messages['pt-br'] = array(
