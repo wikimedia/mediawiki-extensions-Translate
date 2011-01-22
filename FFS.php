@@ -1110,7 +1110,9 @@ PHP;
 		$block = '';
 		foreach( $collection as $message ) {
 			if( $message->translation() == '' ) continue;
-			$translation = str_replace( '\'', '\\\'', $message->translation() );
+			$translation = str_replace( '\\', '\\\\', $message->translation() );
+			$translation = str_replace( '\'', '\\\'', $translation );
+			$translation = str_replace( "\n", '\n', $translation );
 			$block .= "\t\t'{$message->key()}': u'{$translation}',\n";
 		}
 		return $block;
