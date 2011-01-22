@@ -1022,6 +1022,9 @@ magicfile = ReplaceSet/ReplaceSet.i18n.magic.php
 Replace Text
 aliasfile = ReplaceText/ReplaceText.alias.php
 
+Research Tools
+aliasfile = ResearchTools/ResearchTools.alias.php
+
 Right Functions
 optional = rightfunctions-rest1, rightfunctions-rest2, rightfunctions-rest3, rightfunctions-sep
 
