@@ -1565,6 +1565,22 @@ Dóstanješ tež powěsćowe listy, zwjetša jónkróć wob měsać.
 Jeli nochceš powěsćowe listy dóstać, móžeš tutu opciju na rajtarku "{{int:prefs-personal}}" swojich [[Special:Preferences|preferencow]] znjemóžnić.',
 );
 
+/** Haitian (Kreyòl ayisyen)
+ * @author Boukman
+ */
+$messages['ht'] = array(
+	'firststeps' => 'Premye etap yo',
+	'firststeps-desc' => '[[Special:FirstSteps|Paj espesyal]] pou gide itilizatè yo sou yon wiki ki sèvi ak ekstansyon Tradiksyon',
+	'translate-fs-pagetitle-done' => '- fini!',
+	'translate-fs-pagetitle' => 'Gid pou komanse - $1',
+	'translate-fs-signup-title' => 'Anrejistre ou',
+	'translate-fs-settings-title' => 'Konfigire preferans ou yo',
+	'translate-fs-userpage-title' => 'Kreye paj itilizatè ou an',
+	'translate-fs-permissions-title' => 'Mande pou otorizasyon tradiktè yo',
+	'translate-fs-target-title' => 'Kòmanse tradui!',
+	'translate-fs-email-title' => 'Konfime adrès imèl ou an',
+);
+
 /** Hungarian (Magyar)
  * @author Dani
  * @author Misibacsi
@@ -3407,6 +3423,42 @@ $3 注册$4',
  * @author Mark85296341
  */
 $messages['zh-hant'] = array(
+	'translate-fs-pagetitle-done' => ' - 完成！',
 	'translate-fs-userpage-title' => '建立您的使用者頁面',
+	'translate-fs-permissions-title' => '請求翻譯者權限',
+	'translate-fs-target-title' => '開始翻譯！',
+	'translate-fs-settings-text' => '現在你應該到選項頁面並且至少將介面語言設定成你希望翻譯成的語言。
+
+你的介面語言將會是預設的翻譯目標語言。
+設定語言很容易被忘記，所以我們建議你現在就去設定。
+
+你也可以要求軟體顯示你懂得的其他語言，這可以在「{{int:prefs-editing}}」進行設定。
+自由探索其他設定選項吧。
+
+到[[Special:Preferences|設定頁面]]完成設定，並回到此頁面。',
+	'translate-fs-userpage-text' => '現在你需要建立使用者頁面。
+
+請寫一些關於你的東西，比如，你是誰？你希望做些什麼？
+這會幫助凝聚 {{SITENAME}} 用戶群體。
+在 {{SITENAME}} 有來自世界各地的使用者在翻譯不同的語言和項目。
+
+在已經填好的文字區域中的第一行你會看到<nowiki>{{#babel:en-2}}</nowiki>。
+繼續填入其他你懂得的語言知識。
+跟在語言代碼後面的表示你通曉這門語言的程度。
+他們表示：
+* 1 - 懂得一點點；
+* 2 - 懂得基本知識；
+* 3 - 能很好的掌握；
+* 4 - 母語水準；
+* 5 - 專業水準，比如說你是專業語言學家。
+
+如果你使用某種語言作為母語，不要填寫通曉程度代碼。
+樣例：如果你的母語是中文，能說英語說的很好，還會一點日語，那麼你應該寫：
+<code><nowiki>{{#babel:zh|en-3|ja-1}}</nowiki></code>
+
+如果你還不知道一門語言的代碼，現在是時候尋找一下了。
+你可以使用下面的列表。',
+	'translate-fs-userpage-submit' => '建立我的使用者頁面',
+	'translate-fs-userpage-done' => '很好！現在你擁有了一個使用者頁面。',
 );
 

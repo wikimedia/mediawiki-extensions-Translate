@@ -5322,6 +5322,7 @@ $messages['zh-hans'] = array(
 
 /** Traditional Chinese (‪中文(繁體)‬)
  * @author Liangent
+ * @author Mark85296341
  * @author Wrightbus
  */
 $messages['zh-hant'] = array(
@@ -5339,7 +5340,7 @@ $messages['zh-hant'] = array(
 	'tpt-sections-template' => '翻譯頁面模版',
 	'tpt-translate-this' => '翻譯本頁',
 	'translate-tag-translate-link-desc' => '翻譯本頁',
-	'tpt-languages-legend' => '其它語言：',
+	'tpt-languages-legend' => '其他語言：',
 	'tpt-download-page' => '匯出含翻譯的頁面',
 );
 
