@@ -31,7 +31,6 @@ GROUPS:
   - ext-contactpage # on nl.wp and wikimediafoundation.org
   - ext-contributionreporting # wikimediafoundation.org
   - ext-contributiontracking # wikimediafoundation.org
-  - ext-crossnamespacelinks
   - ext-di-di
   - ext-di-pfpg # wikimediafoundation.org
   - ext-dismissablesitenotice
