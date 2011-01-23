@@ -78,3 +78,15 @@ FILES:
   sourcePattern: %GROUPROOT%/pywikipedia/replace.py
   definitionFile: %GROUPROOT%/pywikipedia/replace.py
   targetPattern: pywikipedia/replace.py
+---
+BASIC:
+  id: out-pywikipedia-solve_disambiguation
+  label: Pywikipedia Solve Disambiguation
+  display: out/pywikipedia/solve_disambiguation
+  class: FileBasedMessageGroup
+
+FILES:
+  class: PythonSingleFFS
+  sourcePattern: %GROUPROOT%/pywikipedia/solve_disambiguation.py
+  definitionFile: %GROUPROOT%/pywikipedia/solve_disambiguation.py
+  targetPattern: pywikipedia/solve_disambiguation.py
