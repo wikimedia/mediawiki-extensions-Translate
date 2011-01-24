@@ -57,17 +57,17 @@ $wgAutoloadClasses['MessageWriter'] = $IP . '/maintenance/language/writeMessages
  * There are few more special pages in page translation section.
  * @{
  */
-$wgAutoloadClasses['SpecialTranslate'] = $dir . 'SpecialTranslate.php';
-$wgAutoloadClasses['SpecialMagic'] = $dir . 'SpecialMagic.php';
-$wgAutoloadClasses['SpecialTranslationChanges'] = $dir . 'SpecialTranslationChanges.php';
-$wgAutoloadClasses['SpecialTranslationStats'] = $dir . 'SpecialTranslationStats.php';
-$wgAutoloadClasses['SpecialTranslations'] = $dir . 'SpecialTranslations.php';
-$wgAutoloadClasses['SpecialLanguageStats'] = $dir . 'SpecialLanguageStats.php';
-$wgAutoloadClasses['SpecialImportTranslations'] = $dir . 'SpecialImportTranslations.php';
-$wgAutoloadClasses['SpecialFirstSteps'] = $dir . 'SpecialFirstSteps.php';
-$wgAutoloadClasses['SpecialSupportedLanguages'] = $dir . 'SpecialSupportedLanguages.php';
-$wgAutoloadClasses['SpecialMyLanguage'] = $dir . 'SpecialMyLanguage.php';
-$wgAutoloadClasses['SpecialManageGroups'] = $dir . 'SpecialManageGroups.php';
+$wgAutoloadClasses['SpecialTranslate'] = $dir . 'specials/SpecialTranslate.php';
+$wgAutoloadClasses['SpecialMagic'] = $dir . 'specials/SpecialMagic.php';
+$wgAutoloadClasses['SpecialTranslationChanges'] = $dir . 'specials/SpecialTranslationChanges.php';
+$wgAutoloadClasses['SpecialTranslationStats'] = $dir . 'specials/SpecialTranslationStats.php';
+$wgAutoloadClasses['SpecialTranslations'] = $dir . 'specials/SpecialTranslations.php';
+$wgAutoloadClasses['SpecialLanguageStats'] = $dir . 'specials/SpecialLanguageStats.php';
+$wgAutoloadClasses['SpecialImportTranslations'] = $dir . 'specials/SpecialImportTranslations.php';
+$wgAutoloadClasses['SpecialFirstSteps'] = $dir . 'specials/SpecialFirstSteps.php';
+$wgAutoloadClasses['SpecialSupportedLanguages'] = $dir . 'specials/SpecialSupportedLanguages.php';
+$wgAutoloadClasses['SpecialMyLanguage'] = $dir . 'specials/SpecialMyLanguage.php';
+$wgAutoloadClasses['SpecialManageGroups'] = $dir . 'specials/SpecialManageGroups.php';
 /**@}*/
 
 /**
