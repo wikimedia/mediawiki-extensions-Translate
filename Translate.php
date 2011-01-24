@@ -485,7 +485,7 @@ function efTranslateInit() {
 	// Page translation setup check and init if enabled.
 	if ( $wgEnablePageTranslation ) {
 		// Special page and the right to use it
-		global $wgSpecialPages, $wgAvailableRights;
+		global $wgSpecialPages, $wgAvailableRights, $wgSpecialPageGroups;
 		$wgSpecialPages['PageTranslation'] = 'SpecialPageTranslation';
 		$wgSpecialPageGroups['PageTranslation'] = 'pagetools';
 		$wgAvailableRights[] = 'pagetranslation';
