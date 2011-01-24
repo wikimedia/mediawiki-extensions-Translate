@@ -78,7 +78,7 @@ class MessageIndexRebuilder {
 			$messages = $g->getDefinitions();
 
 			if ( !is_array( $messages ) ) {
-				continue;
+				return;
 			}
 
 			$keys = array_keys( $messages );
