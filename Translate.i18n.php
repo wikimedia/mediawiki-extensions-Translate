@@ -73,8 +73,8 @@ If the group consists of a subset or superset of messages from other groups, it 
 	'translate-edit-title'              => 'Edit "$1"',
 	'translate-edit-definition'         => 'Message definition',
 	'translate-edit-contribute'         => 'contribute',
-	'translate-edit-no-information'     => "''This message has no documentation.
-If you know where or how this message is used, you can help other translators by adding documentation to this message.''",
+	'translate-edit-no-information'     => "''This message has no documentation.''
+''If you know where or how this message is used, you can help other translators by adding documentation to this message.''",
 	'translate-edit-information'        => 'Information about message "$2" ($1)',
 	'translate-edit-in-other-languages' => 'Message "$1" in other languages',
 	'translate-edit-committed'          => 'Current translation in software',
