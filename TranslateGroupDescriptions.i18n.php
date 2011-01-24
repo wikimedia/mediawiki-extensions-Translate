@@ -1285,7 +1285,7 @@ Opjepaß:
 * Jooht op [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] öm <i lang="en">Potlatch</i> ußzeprobeere. doh kam_mer en jeedem Berett alles maache, wat mer löstich es.',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] es ene ẞööver för et Mini-Blogge met offe Quälltäxt.',
 	'bw-desc-voctrain' => 'Ene Trääner för Vokabele, dä op [http://omegawiki.org OmegaWiki] bout. Dä bruch ene Pöngel „Käätshe“, öm Wööter vun öhnßwelsh Shprooche met öhnßwelsh Shprooche us em OmegaWiki ze liehre. Shteiht unger de GPL 2.0 udder shpääder. Wood för de Univäsitäht vun Bammbersh jemat, un shtammp vum [[User:Kim Bruning|Kim Bruning]].',
-	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] kann flöck de Schriiver vun ene Sigg en enem Wikimedia Wiki fenge.',
+	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] kann flöck de Schriiver vun enem Stöck vun ener Sigg en enem Wikimedia Wiki fenge.',
 	'bw-desc-wikimediamobile' => 'De Wikipedija ier bewääschlijje Version fengk mer unger http://m.wikipedia.org, un se well de Wikipedija op de Händi-Tellefoone rund öm der Jlobus brenge.',
 );
 
@@ -1597,18 +1597,23 @@ $messages['pl'] = array(
 	'translate-group-desc-uniwiki' => 'Metagrupa komunikatów zawierająca wszystkie komunikaty rozszerzeń związanych z [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Metagrupa komunikatów zawierająca wszystkie komunikaty rozszerzeń związanych z [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Inicjatywą użyteczności Wikipedii]',
 	'translate-group-desc-translatablepages' => 'Wszystkie przetłumaczalne strony',
+	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] umożliwia ludziom odkrywanie dorobku kulturowego Europy',
 	'bw-desc-freecol' => 'Zanim rozpoczniesz tłumaczenie FreeCol, zapoznaj się z [[Translating:FreeCol]]. Freecol udostępniane jest na licencji GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum] – forum internetowe napisane w PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] jest bezpłatnym internetowym systemem obsługi zgłoszeń usterek. Prosimy o zgłaszanie wszelkich problemów [[Support|obsłudze]].',
 	'translate-group-desc-mantisbt-plugin-core' => 'Główna wtyczka dla [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Komunikaty stabilnej wersji 1.15 oprogramowania [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mediawiki-core-116' => 'Komunikaty stabilnej wersji 1.16 oprogramowania [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawiki-core-117' => 'Komunikaty stabilnej wersji 1.17 oprogramowania [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] jest systemem zarządzania informacją dla mikrofinansów',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' jest biblioteką w języku Python zapisującą dokumenty w formacie PDF z artykułami MediaWiki, które zostały przeanalizowane przez bibliotekę mwlib. 
 
 Więcej informacji odnajdziesz na stronach [[mw:Extension:PDF_Writer]] oraz http://code.pediapress.com/wiki/wiki/mwlibrl.",
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] jest internetowym klientem poczty napisanym w PHP. Prosimy o zgłaszanie wszelkich problemów [[Support|obsłudze]].',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] jest czytnikiem offline Wikipedii',
+	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] to otwarta platforma multimediów',
+	'translate-group-desc-openimages-verifyemailtemplate' => 'Komunikaty szablonu weryfikacji poprzez e‐mail dla [[Translating:Open Images|Open Images]]',
+	'translate-group-desc-openimages-all' => 'Komunikaty projektu [[Translating:Open Images|Open Images]]',
 	'bw-desc-openlayers' => 'OpenLayers jest oprogramowaniem z otwartym kodem generującym dynamiczne mapy. Prosimy o zgłaszanie wszelkich problemów [[support|obsłudze]].',
 	'bw-desc-openstreetmap' => 'Grupa wszystkich komunikatów [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Ta grupa komunikatów zawiera interfejs [[Translating:Open Street Map|Open Street Map]]. Zobacz [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} stronę Unicode CLDR wyjaśniającą zasady tworzenia liczby mnogiej].',
@@ -1616,6 +1621,7 @@ Więcej informacji odnajdziesz na stronach [[mw:Extension:PDF_Writer]] oraz http
 
 * Jeśli to możliwe staraj się zachować w swoim tłumaczeniu zbliżoną długość komunikatu do angielskojęzycznego oryginału, ze względu na ograniczenia szablonu interfejsu użytkownika. Zobacz również [http://trac.openstreetmap.org/ticket/2067 nieusunięty błąd].
 * Użyj [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] do sprawdzenia Potlaczu. Możesz tam wszystko przetestować.',
+	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] to kolekcja narzędzi służących do edycji Wikipedii',
 	'bw-desc-shapado' => 'Grupa komunikatów darmowego z otwartym kodem oprogramowania zadawania pytań i udzielania odpowiedzi [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] jest opartym na otwartym kodzie serwerem mikroblogów',
 	'translate-group-desc-statusnet-plugin' => 'Te komunikaty są częścią wtyczki do [[Translating:StatusNet|StatusNet]]',
@@ -2216,12 +2222,14 @@ $messages['vi'] = array(
 	'translate-group-desc-uniwiki' => 'Nhóm thông báo “mẹ”, chứa thông báo của các phần mở rộng có liên quan đến [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Nhóm thông điệp meta chứa tất cả các thông điệp dùng cho bộ mở rộng liên quan đến [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Sáng kiến Khả dụng Wikipedia]',
 	'translate-group-desc-translatablepages' => 'Mọi trang dịch được',
+	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] cho phép mọi người thám hiểm những tài nguyên văn hóa số của châu Âu',
 	'bw-desc-freecol' => 'Trước khi dịch FreeCol ra ngôn ngữ của bạn, xin hãy đọc [[Translating:FreeCol]]. Freecol sử dụng giấy phép GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], một diễn đàn mạng được viết bằng PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] là hệ thống miễn phí để theo dõi lỗi trên Web. Xin hãy báo cáo lỗi tại [[Support]].',
 	'translate-group-desc-mantisbt-plugin-core' => 'Một trong những phần bổ trợ chính của [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Các thông điệp trong phiên bản ổn định 1.15 của [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mediawiki-core-116' => 'Các thông điệp trong phiên bản ổn định 1.16 của [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawiki-core-117' => 'Các thông điệp trong phiên bản ổn định 1.17 của [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] là hệ thống quản lý thông tin về tài chính vi mô',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' là một thư viện Python để tạo ra tài liệu PDF từ những bài MediaWiki được thư viện mwlib xử lý.
 
@@ -2238,6 +2246,7 @@ Xem thêm chi tiết tại [[MW:Extension:PDF Writer]] và http://code.pediapres
 
 * Cố gắng dịch càng gần độ dài của bản gốc tiếng Anh càng tốt vì những hạn chế của nền giao diện. Xem thêm [http://trac.openstreetmap.org/ticket/2067 lỗi chưa giải quyết].
 * Thử Potlatch tại máy chủ [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org]. Bạn có thể thử ở đấy phần nào cũng được.',
+	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] là một thư viện để lập chương trình tự động sửa đổi Wikipedia',
 	'bw-desc-shapado' => 'Nhóm thông điệp cho phần mềm hỏi đáp nguồn mở miễn phí [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] là máy chủ tiểu blog nguồn mở',
 	'translate-group-desc-statusnet-plugin' => 'Các thông điệp này thuộc về một phần bổ trợ cho [[Translating:StatusNet|StatusNet]]',

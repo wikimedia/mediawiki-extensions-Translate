@@ -268,6 +268,7 @@ $3Теркәлергә$4',
  * @author EugeneZelenko
  * @author Jim-by
  * @author Wizardist
+ * @author Zedlik
  */
 $messages['be-tarask'] = array(
 	'firststeps' => 'Першыя крокі',
@@ -275,7 +276,7 @@ $messages['be-tarask'] = array(
 	'translate-fs-pagetitle-done' => ' — зроблена!',
 	'translate-fs-pagetitle' => 'Майстар пачатковага навучаньня — $1',
 	'translate-fs-signup-title' => 'Зарэгіструйцеся',
-	'translate-fs-settings-title' => 'Устанавіце Вашыя ўстаноўкі',
+	'translate-fs-settings-title' => 'Устанавіце Вашыя налады',
 	'translate-fs-userpage-title' => 'Стварыце Вашую старонку ўдзельніка',
 	'translate-fs-permissions-title' => 'Запытайце правы перакладчыка',
 	'translate-fs-target-title' => 'Пачніце перакладаць!',
@@ -294,17 +295,17 @@ $messages['be-tarask'] = array(
 Пасьля рэгістрацыі, калі ласка, вярніцеся на гэтую старонку.
 
 $3Зарэгістравацца$4',
-	'translate-fs-settings-text' => 'Цяпер Вам неабходна перайсьці ў устаноўкі і
+	'translate-fs-settings-text' => 'Цяпер Вам неабходна перайсьці ў налады і
 зьмяніць мову інтэрфэйсу на мову, на якую Вы зьбіраецеся перакладаць.
 
 Мова Вашага інтэрфэйсу будзе выкарыстоўвацца, як мова перакладу па змоўчваньні.
 Вельмі лёгка забыцца зьмяніць мову, таму настойліва рэкамэндуем зьмяніць яе зараз.
 
 Пакуль Вы там, Вы можаце ўключыць паказ перакладаў на іншыя мовы, якія Вы ведаеце.
-Гэтая ўстаноўка знаходзіцца ў закладцы «{{int:prefs-editing}}».
-Таксама, Вы можаце паспрабаваць іншыя ўстаноўкі.
+Гэтая налада знаходзіцца ў закладцы «{{int:prefs-editing}}».
+Таксама, Вы можаце паспрабаваць іншыя налады.
 
-Перайдзіце на Вашую [[Special:Preferences|старонку ўстановак]], а потым вярніцеся на гэтую старонку.',
+Перайдзіце на Вашую [[Special:Preferences|старонку наладаў]], а потым вярніцеся на гэтую старонку.',
 	'translate-fs-settings-skip' => 'Я ўсё выканаў.
 Перайсьці далей.',
 	'translate-fs-userpage-text' => 'Цяпер Вам неабходна стварыць старонку ўдзельніка.
@@ -350,12 +351,12 @@ $3Зарэгістравацца$4',
 Калі ёсьць што-небудзь, што, як Вы мяркуеце, Вы можаце зрабіць, але ня ведаеце як, не вагаючыся пытайцеся на [[Support|старонцы падтрымкі]].
 
 Таксама, Вы можаце зьвязацца з перакладчыкамі на Вашую мову на [[Portal_talk:$1|старонцы абмеркаваньня]] [[Portal:$1|парталу Вашай мовы]].
-Калі Вы яшчэ гэтага не зрабілі, Вы можаце [[Special:Preferences|зьмяніць Вашыя моўныя ўстаноўкі інтэрфэйсу на мову, на якую жадаеце перакладаць]], для таго каб вікі паказала Вам адпаведныя спасылкі.",
-	'translate-fs-email-text' => 'Калі ласка, падайце адрас Вашай электроннай пошты ў [[Special:Preferences|Вашых устаноўках]] і пацьвердзіце яго з электроннага ліста, які будзе Вам дасланы.
+Калі Вы яшчэ гэтага не зрабілі, Вы можаце [[Special:Preferences|зьмяніць Вашыя моўныя налады інтэрфэйсу на мову, на якую жадаеце перакладаць]], для таго каб вікі паказала Вам адпаведныя спасылкі.",
+	'translate-fs-email-text' => 'Калі ласка, падайце адрас Вашай электроннай пошты ў [[Special:Preferences|Вашых наладах]] і пацьвердзіце яго з электроннага ліста, які будзе Вам дасланы.
 
 Гэта дазволіць іншым удзельнікам зносіцца з Вамі праз электронную пошту.
 Таксама, Вы будзеце атрымліваць штомесячныя лісты з навінамі.
-Калі Вы не жадаеце атрымліваць лісты з навінамі, Вы можаце адмовіцца ад іх на закладцы «{{int:prefs-personal}}» Вашых [[Special:Preferences|установак]].',
+Калі Вы не жадаеце атрымліваць лісты з навінамі, Вы можаце адмовіцца ад іх на закладцы «{{int:prefs-personal}}» Вашых [[Special:Preferences|наладаў]].',
 );
 
 /** Bengali (বাংলা)
@@ -1579,6 +1580,86 @@ $messages['ht'] = array(
 	'translate-fs-permissions-title' => 'Mande pou otorizasyon tradiktè yo',
 	'translate-fs-target-title' => 'Kòmanse tradui!',
 	'translate-fs-email-title' => 'Konfime adrès imèl ou an',
+	'translate-fs-intro' => "Byenveni nan asistan premye etap {{SITENAME}}.
+N ap gide ou atravè tout etap pwosesis pou ou vin yon tradiktè.
+Lè ou rive nan bout pwosesis sa, w ap kapab tradui tou ''mesaj entèfas'' pou tout pwojè ki sipòte nan {{SITENAME}}.",
+	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount.png|kad]]
+
+Nan premye etap, ou dwe kreye yon kont.
+
+Tout tradiksyon ou fè ap tonbe sou kont ou.
+Imaj ki sou bò dwat montre ki jan pou ou ranpli chan yo.
+
+Si ou te gentan kreye kont ou deja, tanpri $1konekte ou$2.
+Apre ou fin konekte, tanpri tounen nan paj sa a.
+
+$3Kreye yon kont$4',
+	'translate-fs-settings-text' => 'Kounye a, alel nan preferans ou yo epi
+omwens chanje lang entèfas ou an pou lang vè ki sa w ap tradui.
+
+Lang entèfas ou an sèvi pa defo kòm lang sib.
+Li fasil pou ou bliye chanje lang pou sa ki bon, kidonk fè sa tousuit.
+
+Toutpandan ou la, ou mèt mande pou logisyèl montre tradiksyon nan lòt lang ou konn pale tou.
+Ou ka jwenn preferans sa anbe onglè "{{int:prefs-editing}}".
+
+Ou kapab gade lòt preferans tou.
+
+Ale nan [[Special:Preferences|paj preferans]] ou kounye a epi tounen nan paj sa a.',
+	'translate-fs-settings-skip' => 'Mwen fini.
+Kite m kontinye.',
+	'translate-fs-userpage-text' => 'Kounye a, ou bezwen kreye yon paj itilizatè. 
+
+Tanpri ekri yon bagay sou tèt ou; ki moun ou ye epi kisa ou fè. 
+Sa pral ede kominote {{SITENAME}} pou yo travay ansanm. 
+Nan {{SITENAME}} gen moun ki soti nan lemonnantye k ap travay sou diferan lang ak pwojè. 
+
+Nan bwat ki deja ranpli anwo a, nan premye liy la ou wè <nowiki>{{#babel:en-2}}</nowiki> . 
+Tanpri, ranpli li ak lang ou konnen yo. 
+Nimewo ki vin apre kòd lang la dekri nan ki nivo ou konnen lang nan. 
+Men chwa yo: 
+ * 1 - yon ti kras 
+ * 2 - konesans debaz 
+ * 3 - bon konesans 
+ * 4 - menm ak natif natal 
+ * 5 - ou itilize lang nan yon nivo pwofesyonèl, pa egzanp ou se yon tradiktè pwofesyonèl. 
+
+Si ou natif natal nan yon lang, pa sèvi ak nivo konpetans, epi itilize sèlman kòd lang la. 
+Egzanp: Si se natif natal tamil ou pale, angle byen, epi ti swahili, ou ta ekri: 
+<code><nowiki>{{#babel:ta|en-3|sw-1}}</nowiki></code>
+
+Si ou pa konnen kòd pou yon lang, kounye a se yon bon moman pou ou jwenn li. 
+Ou ka itilize lis ki anba a.',
+	'translate-fs-userpage-submit' => 'Kreye paj itilizatè mwen',
+	'translate-fs-userpage-done' => 'Byen fè!  Kounye a ou gen yon paj itilizatè.',
+	'translate-fs-permissions-text' => 'Kounye a, ou bezwen fè yon demann pou ou ajoute nan gwoup tradiktè yo.
+
+Jiskaske nou ranje kòd la, tanpri ale nan [[Project:Translator]] epi swiv enstriksyon yo. 
+Apre sa, tounen nan paj sa a.
+
+Apre ou finn soumèt demann ou an, youn nan manm pèsonèl volontè yo ap verifye demann ou an pou l aprouve l osito sa posib.
+Tanpri pran pasyans.
+
+<del>Verifye ke demann sa te byen ranpli epi klike sou bouton pou fè demann ou an.</del>',
+	'translate-fs-target-text' => 'Konpliman!
+Ou kapab komanse tradui kounye a.
+
+Ou pa bezwen pè si ou santi bagay sa nouvo epi le ba ou konfizyon.
+Nan [[Project list|Lis pwojè yo]], genyen yon apèsi tout projè ou kapab kontribye tradiksyon pou yo.
+Pifò nan pwojè yo gen yon paj ki bay yon deskripsyon kout avèk yon lyen "\'\'Tradui pwojè sa a\'", k ap mennen ou nan yon paj ki liste tout mesaj ki poko tradui.
+Yon lis ak tout gwoup mesaj yo ki bay [[Special:LanguageStats|estati tradiksyon yo pou yon lang]] disponib tou.
+
+Si ou santi ou ta bezwen konnen pi plis anvan ou komanse tradui, ou ka li [[FAQ|Kesyon ki mande souvan]].
+Malerezman, dokimantasyon gendwa pa a jou.
+Si gen yon bagay ou panse ou ta dwe kapab fè, men ou pa ka jwenn kijan, pa ezite mande nan [[Support|paj sipò]].
+
+Ou kapab kontakte lòt tradiktè nan menm lang tou nan [[Portal_talk:$1|paj diskisyon]] pou [[Portal:$1|potay pou lang ou an]].
+Si ou poko fè sa, [[Special:Preferences|chanje lang entèfas itilizatè ou an pou l sèvi ak lang ou pral tradui ladan l]]',
+	'translate-fs-email-text' => 'Tanpri, bay adrès imèl ou an nan [[Special:Preferences|preferans ou yo]] epi konfime l depi imèl ki te voye ba ou.
+
+Sa ap pèmèt lòt itilizatè kontakte ou pa imèl.
+W ap resevwa nouvèl tou yon fwa pa mwa o maksimòm.
+Si ou pa vle resevwa nouvèl, ou kapab retire ou nan opsyon sa nan onglè "{{int:prefs-personal}}" ki nan [[Special:Preferences|preferans ou yo]].',
 );
 
 /** Hungarian (Magyar)
@@ -3330,12 +3411,13 @@ Nếu bạn không muốn nhận thư tin tức, bạn có thể bỏ nó ra kh�
 /** Simplified Chinese (‪中文(简体)‬)
  * @author Chenxiaoqino
  * @author Hydra
+ * @author Mark85296341
  */
 $messages['zh-hans'] = array(
 	'firststeps' => '第一步',
 	'firststeps-desc' => '让用户开始wiki翻译的[[Special:FirstSteps|引导页面]]',
 	'translate-fs-pagetitle-done' => ' - 完成！',
-	'translate-fs-pagetitle' => '$1 入门向导',
+	'translate-fs-pagetitle' => '入门向导 - $1',
 	'translate-fs-signup-title' => '注册',
 	'translate-fs-settings-title' => '设置你的选项',
 	'translate-fs-userpage-title' => '创建你的用户页面',
@@ -3424,9 +3506,14 @@ $3 注册$4',
  */
 $messages['zh-hant'] = array(
 	'translate-fs-pagetitle-done' => ' - 完成！',
+	'translate-fs-pagetitle' => '入門指導 - $1',
+	'translate-fs-signup-title' => '註冊',
 	'translate-fs-userpage-title' => '建立您的使用者頁面',
 	'translate-fs-permissions-title' => '請求翻譯者權限',
 	'translate-fs-target-title' => '開始翻譯！',
+	'translate-fs-intro' => "歡迎來到 {{SITENAME}} 入門指導。
+你會被指導如何成為一名翻譯者。
+最後你將可以翻譯 {{SITENAME}} 裡所有計畫的''介面訊息''.",
 	'translate-fs-settings-text' => '現在你應該到選項頁面並且至少將介面語言設定成你希望翻譯成的語言。
 
 你的介面語言將會是預設的翻譯目標語言。
