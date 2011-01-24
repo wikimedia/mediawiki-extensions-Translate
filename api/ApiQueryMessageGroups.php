@@ -34,6 +34,8 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 			$a['description'] = $g->getDescription();
 			$a['class'] = get_class( $g );
 			$a['exists'] = $g->exists();
+
+			// TODO: Evaluate $fit
 			$fit = $result->addValue( array( 'query', $this->getModuleName() ), null, $a );
 		}
 

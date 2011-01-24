@@ -18,6 +18,13 @@ class PageTranslationHooks {
 	// Uuugly hack
 	static $allowTargetEdit = false;
 
+	/**
+	 * @static
+	 * @param  $parser Parser
+	 * @param  $text String
+	 * @param  $state
+	 * @return bool
+	 */
 	public static function renderTagPage( $parser, &$text, $state ) {
 		$title = $parser->getTitle();
 
@@ -31,7 +38,8 @@ class PageTranslationHooks {
 		}
 
 		// For translation pages, parse plural, grammar etc with correct language
-		if ( $page = TranslatablePage::isTranslationPage( $title ) ) {
+		$page = TranslatablePage::isTranslationPage( $title );
+		if ( $page ) {
 			list( , $code ) = TranslateUtils::figureMessage( $title->getText() );
 			$parser->getOptions()->setTargetLanguage( Language::factory( $code ) );
 			$name = $page->getPageDisplayTitle( $code );

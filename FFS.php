@@ -1106,7 +1106,6 @@ PHP;
 	}
 
 	protected function writeBlock( MessageCollection $collection ) {
-		$mangler = $this->group->getMangler();
 		$block = '';
 		foreach( $collection as $message ) {
 			if( $message->translation() == '' ) continue;
