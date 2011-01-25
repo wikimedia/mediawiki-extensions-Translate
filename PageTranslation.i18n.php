@@ -599,6 +599,16 @@ $messages['bn'] = array(
  */
 $messages['bo'] = array(
 	'pagetranslation' => 'ཤོག་ངོས་ཡིག་སྒྱུར།',
+	'tpt-diff-old' => 'ཡིག་འབྲུ་གོང་མ།',
+	'tpt-diff-new' => 'ཡིག་འབྲུ་གསར་བ།',
+	'tpt-translate-this' => 'ཤོག་ངོས་འདི་བསྒྱུར་བ།',
+	'translate-tag-translate-link-desc' => 'ཤོག་ངོས་འདི་བསྒྱུར་བ།',
+	'tpt-languages-legend' => 'སྐད་རིགས་གཞན།',
+	'pt-movepage-list-translation' => 'ཡིག་སྒྱུར་ཤོག་ངོས།',
+	'pt-movepage-legend' => 'བསྒྱུར་རུང་བའི་ཤོག་ངོས་སྤོར་བ།',
+	'pt-movepage-current' => 'ད་ཡོད་མིང་།',
+	'pt-movepage-new' => 'མིང་གསར་བ།',
+	'pt-movepage-reason' => 'རྒྱུ་མཚན།',
 );
 
 /** Breton (Brezhoneg)
@@ -2345,6 +2355,57 @@ Zmylki budu so w přełožowanskim protokolu protokolować  a dyrbja so manuelnj
 	'pt-movepage-started' => 'Zakładna strona je nětko přesunjena.
 Prošu skontroluj překožowanski protokol strony za zmylkami a zdźělenku wukonjenja.',
 	'pt-locked-page' => 'Tuta strona je zawrjena, dokelž přełožujomna strona so runje přesuwa.',
+);
+
+/** Haitian (Kreyòl ayisyen)
+ * @author Boukman
+ */
+$messages['ht'] = array(
+	'pagetranslation' => 'Tradiksyon paj yo',
+	'right-pagetranslation' => 'Make vèsyon paj yo pou tradui',
+	'tpt-desc' => 'Ekstansyon pou tradui paj kontni yo',
+	'tpt-section' => 'Inite tradiksyon $1',
+	'tpt-section-new' => 'Nouvo inite tradiksyon. 
+Non: $1',
+	'tpt-section-deleted' => 'Inite tradiksyon $1',
+	'tpt-template' => 'Modèl pou paj',
+	'tpt-templatediff' => 'Modèl pou paj la chanje',
+	'tpt-diff-old' => 'Teks presedan',
+	'tpt-diff-new' => 'Nouvo tèks',
+	'tpt-submit' => 'Make vèsyon sa pou tradui',
+	'tpt-sections-oldnew' => 'Inite tradiksyon ki deja egziste ak nouvo yo',
+	'tpt-sections-deleted' => 'Inite tradiksyon ki efase',
+	'tpt-sections-template' => 'Modèl pou paj tradiksyon',
+	'tpt-action-nofuzzy' => 'Pa rann tradiksyon envalid',
+	'tpt-badtitle' => 'Non ou bay pou paj ($1) pa yon tit ki bon',
+	'tpt-nosuchpage' => 'Paj $1 pa egziste',
+	'tpt-oldrevision' => '$2 se pa dènye vèsyon paj [[$1]].
+Se sèlman dènye vèsyon ki kapab make pou tradui.',
+	'tpt-notsuitable' => 'Paj $1 pa bon pou tradui.
+Asire w li gen etikèt <nowiki><translate></nowiki> epi ke li gen yon sentaks ki bon.',
+	'tpt-saveok' => 'Paj [[$1]] te make pou yo tradui l ak 2 {{PLURAL:$2|inite tradiksyon|inite tradiksyon yo}}.
+Paj sa kapab <span class="plainlinks">[$3 tradui]</span> kounye a.',
+	'tpt-badsect' => '"$1" pa yon bon non pou inite tradiksyon $2.',
+	'tpt-showpage-intro' => 'Anba, gen yon lis tout sèksyon ki nouvo, sa ki egzsite ak sa ki te efase yo.
+Anvan ou make vèsyon sa pou yo tradui, verifye ki chanjman nan seksyon yo pa anpil, yon fason pou pa bay tradiktè yo travay ki pa nesesè.',
+	'tpt-mark-summary' => 'Make vèsyon sa pou tradui',
+	'tpt-edit-failed' => 'Pa t kapab mete paj sa ajou: $1',
+	'tpt-already-marked' => 'Dènye vèsyon paj sa te make pou yo tradui l deja.',
+	'tpt-unmarked' => 'Paj $1 pa make pou tradui ankò.',
+	'tpt-list-nopages' => 'Pa gen okenn paj ki make pou tradui oubyen ki pare pou sa.',
+	'tpt-old-pages' => 'Kèk nan vèsyon {{PLURAL:$1|paj sa|paj sa yo}} te make pou tradui.',
+	'tpt-rev-latest' => 'dènye vèsyon',
+	'tpt-rev-old' => 'diferans ak dènye vèsyon ki te make',
+	'tpt-rev-mark-new' => 'Make vèsyon sa pou tradui',
+	'tpt-rev-unmark' => 'Retire paj sa nan tradiksyon',
+	'tpt-translate-this' => 'tradui paj sa a',
+	'translate-tag-translate-link-desc' => 'Tradui paj sa a',
+	'translate-tag-markthis' => 'Make paj sa pou tradui',
+	'translate-tag-markthisagain' => 'Paj sa te <span class="plainlinks">[$1 chanje]</span> depi li te <span class="plainlinks">[$2 make pou tradui]</span>.',
+	'translate-tag-hasnew' => 'Paj sa genyen <span class="plainlinks">[$1 chanjman]</span> ki pa make pou tradui.',
+	'tpt-translation-intro' => 'Paj sa a, se yon <span class="plainlinks">[$1 vèsyon ki tradui]</span> de paj [[$2]], epi tradiksyon a fèt a $3%.',
+	'tpt-translation-intro-fuzzy' => 'Tradiksyon ki ansyen yo make konsa.',
+	'tpt-languages-legend' => 'Lòt lang yo:',
 );
 
 /** Hungarian (Magyar)

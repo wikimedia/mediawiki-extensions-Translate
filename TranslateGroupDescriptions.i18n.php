@@ -1287,6 +1287,7 @@ Opjepaß:
 	'bw-desc-voctrain' => 'Ene Trääner för Vokabele, dä op [http://omegawiki.org OmegaWiki] bout. Dä bruch ene Pöngel „Käätshe“, öm Wööter vun öhnßwelsh Shprooche met öhnßwelsh Shprooche us em OmegaWiki ze liehre. Shteiht unger de GPL 2.0 udder shpääder. Wood för de Univäsitäht vun Bammbersh jemat, un shtammp vum [[User:Kim Bruning|Kim Bruning]].',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] kann flöck de Schriiver vun enem Stöck vun ener Sigg en enem Wikimedia Wiki fenge.',
 	'bw-desc-wikimediamobile' => 'De Wikipedija ier bewääschlijje Version fengk mer unger http://m.wikipedia.org, un se well de Wikipedija op de Händi-Tellefoone rund öm der Jlobus brenge.',
+	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] es e Projäk för en offlain Version vun de Wikipedia, ävver bloß Täx, op klein Jeräte.',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
