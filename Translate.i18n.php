@@ -2355,7 +2355,7 @@ $messages['be-tarask'] = array(
 Калі мовы няма ў сьпісе, Вы можаце знайсьці інфармацыю пра тое, як пачаць лякалізацыю на [[Translating:Process|новай мове]]".
 
 Калі Вы перакладаеце на нейкую мову, а Вашага імя няма ў сьпісе, калі ласка, дадайце Вашае імя ў сьпіс перакладчыкаў на [[:Category:Languages|партале]] гэтай мовы.
-Шукайце спасылку на партал на мове, пададзенай ў Вашых наладах, у мэню.',
+Шукайце ў мэню спасылку на партал на мове, пададзенай ў Вашых наладах.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Перакладчык|Перакладчыкі}}: $1',
 	'supportedlanguages-noportal-title' => 'Прастора назваў парталаў ня вызначаная',
 	'supportedlanguages-noportal' => 'Адміністратар {{SITENAME}} ня вызначыў NS_PORTAL, таму гэтая старонка не працуе.
@@ -14328,8 +14328,8 @@ S'a sa andoa o coma 's mëssagi a l'é dovrà, a peul giuté d'àutri tradutor a
 	'translate-use-suggestion' => 'A anseriss sto sugeriment-sì ant la fnestra ëd tradussion. Sòn a rampiassa tut ël contnù corent.',
 	'translate-edit-tab-list' => 'Lista ëd mëssagi',
 	'translate-edit-show-def' => 'Definission dël mëssagi',
-	'translate-edit-show-trans' => 'Viragi',
-	'translate-edit-show-click' => 'Sgnaca për cangé presentassion',
+	'translate-edit-show-trans' => 'Tradussion',
+	'translate-edit-show-click' => "Ch'a sgnaca për cangé la disposission",
 	'translate-magic-pagename' => 'Viragi estèis ëd MediaWiki',
 	'translate-magic-help' => "A peul volté j'àlias dle pàgine speciaj, le paròle màgiche e ij nòm ëd jë spassi nominaj.
 
@@ -20521,6 +20521,7 @@ $messages['zh-hant'] = array(
 	'translate-statsf-count' => '測量：',
 	'translate-statsf-count-edits' => '編輯次數',
 	'translate-statsf-count-users' => '活躍的翻譯者',
+	'translate-statsf-count-registrations' => '新用戶',
 	'translate-statsf-group' => '由逗號分隔的列表群組代碼',
 	'translate-statsf-submit' => '預覽',
 	'translate-tag-category' => '可翻譯的頁面',
