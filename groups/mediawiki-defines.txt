@@ -1345,6 +1345,8 @@ descmsg = tpt-desc
 Transliterator
 magicfile = Transliterator/Transliterator.i18n.magic.php
 
+Trusted Math
+
 Trusted XFF
 
 TSPoll
