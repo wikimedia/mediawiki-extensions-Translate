@@ -631,10 +631,6 @@ ignored = interwiki_logentry, interwiki_defaulturl
 Interwiki List
 aliasfile = InterwikiList/InterwikiList.alias.php
 
-Invitations
-aliasfile = Invitations/Invitations.alias.php
-ignored = invitations-uninvitedlist-item
-
 IP Auth
 
 JS Bread Crumbs
