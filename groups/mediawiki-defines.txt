@@ -502,6 +502,8 @@ descmsg = flaggedrevs-desc
 Flv Handler
 descmsg = flvhandler_desc
 
+Folk Tag Cloud
+
 Force Preview
 
 Form
