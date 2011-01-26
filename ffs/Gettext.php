@@ -322,7 +322,7 @@ class GettextFFS extends SimpleFFS {
 
 		$output = <<<PHP
 # Translation of {$this->group->getLabel()} to $name ($native)
-# Expored from $wgSitename
+# Exported from $wgSitename
 #
 $authors$extra
 PHP;
