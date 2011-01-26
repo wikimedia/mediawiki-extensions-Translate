@@ -44,8 +44,13 @@ class PageTranslationHooks {
 			$parser->getOptions()->setTargetLanguage( Language::factory( $code ) );
 			$name = $page->getPageDisplayTitle( $code );
 			if ( $name ) {
-				global $wgMessageCache;
-				$name = $wgMessageCache->transform( $name, false, Language::factory( $code ) );
+				if ( method_exists( 'MessageCache', 'singleton' ) ) {
+					$cache = MessageCache::singleton();
+				} else {
+					global $wgMessageCache;
+					$cache = $wgMessageCache;
+				}
+				$name = $cache->transform( $name, false, Language::factory( $code ) );
 				$parser->getOutput()->setDisplayTitle( $name );
 			}
 		}
