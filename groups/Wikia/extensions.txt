@@ -226,8 +226,6 @@ ignored = theorytab-subpage
 Time Ago Messaging
 descmsg = timeago-desc
 
-Title Edit
-
 Top Lists
 ignored = toplists-msg-fb-OnRateArticle-link, toplists-msg-fb-OnRateArticle
 
