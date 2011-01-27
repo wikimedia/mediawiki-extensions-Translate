@@ -398,6 +398,9 @@ Email Page
 aliasfile = EmailPage/EmailPage.alias.php
 descmsg = ea-desc
 
+Email Users
+aliasfile = EmailUsers/EmailUsers.alias.php
+
 Embed Video
 
 Emergency DeSysop
