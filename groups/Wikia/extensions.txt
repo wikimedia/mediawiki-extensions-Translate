@@ -260,6 +260,7 @@ ignored = ircgate-channellist
 Wikia Mini Upload
 
 Wikia Poll
+optional = wikiapoll-question-mark-before, wikiapoll-question-mark-after
 
 Wikia Photo Gallery
 
@@ -291,7 +292,7 @@ file = WikiStats/SpecialWikiStats.i18n.php
 descmsg = wikistats
 optional = wikistats_help_stats, wikistats_prev_rank_xls, wikistats_prev_rank, wikistats_distrib_article_counting
 optional = wikistats_language_toplist
-ignored = wikistats_filename_mainstats, wikistats_filename_trend, wikistats_filename_creation, 
+ignored = wikistats_filename_mainstats, wikistats_filename_trend, wikistats_filename_creation,
 ignored = wikistats_filename_other1, wikistats_filename_other2, wikistats_filename_other3, wikistats_filename_other4
 ignored = wikistats_filename_other5, wikistats_filename_other6, wikistats_filename_other7, wikistats_filename_other8
 ignored = wikistats_filename_column_A, wikistats_filename_column_B, wikistats_filename_column_C, wikistats_filename_column_D
