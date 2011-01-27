@@ -851,9 +851,11 @@ descmsg = tiff-desc
 Password Reset
 aliasfile = PasswordReset/PasswordReset.alias.php
 
-Parser Functions
-descmsg = pfunc_desc
-magicfile = ParserFunctions/ParserFunctions.i18n.magic.php
+# Temporarly disabled due to r81074. This revision adds 217 (!) new messages
+# and I want to avoid the waste of translators time in case of a revert.
+#Parser Functions
+#descmsg = pfunc_desc
+#magicfile = ParserFunctions/ParserFunctions.i18n.magic.php
 
 Parser Wiki
 
