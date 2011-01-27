@@ -6100,6 +6100,7 @@ $1',
  * @author Urhixidur
  * @author Verdy p
  * @author Yumeki
+ * @author Zetud
  */
 $messages['fr'] = array(
 	'translate' => 'Traduire',
@@ -6216,7 +6217,7 @@ Les modifications ne sont pas enregistrées tant que vous n’avez pas cliqué s
 	'translate-pref-nonewsletter' => 'Ne pas m’envoyer les courriels d’informations',
 	'translate-pref-editassistlang' => 'Langues d’assistance :',
 	'prefs-translate' => 'Options de traduction',
-	'translate-pref-editassistlang-help' => 'Liste de code de langues séparée par une virgule.
+	'translate-pref-editassistlang-help' => 'Liste de codes de langues séparés par une virgule.
 La traduction d’un message dans ces langues est affiché quand vous êtes en train de le traduire.
 La liste par défaut des langues varie en fonction de votre langue.',
 	'translate-pref-editassistlang-bad' => 'Code langue invalide dans la liste :

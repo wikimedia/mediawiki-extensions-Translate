@@ -1082,7 +1082,7 @@ $messages['de'] = array(
 	'tpt-sections-template' => 'Übersetzungsseitenvorlage',
 	'tpt-action-nofuzzy' => 'Setze die Übersetzungen nicht außer Kraft',
 	'tpt-badtitle' => 'Der angegebene Seitenname „$1“ ist kein gültiger Titel',
-	'tpt-nosuchpage' => 'Die Seite $1 existiert nicht',
+	'tpt-nosuchpage' => 'Die Seite „$1“ ist nicht vorhanden',
 	'tpt-oldrevision' => '$2 ist nicht die letzte Version der Seite [[$1]].
 Nur die letzte Version kann zur Übersetzung markiert werden.',
 	'tpt-notsuitable' => 'Die Seite $1 ist nicht zum Übersetzen geeignet.
