@@ -15,6 +15,7 @@ class MessageTable {
 	protected $reviewMode = false;
 	protected $collection = null;
 	protected $group = null;
+	protected $code = null;
 	protected $editLinkParams = array();
 
 	protected $headers = array(
@@ -23,9 +24,10 @@ class MessageTable {
 		'default' => array( 'msg', 'allmessagesdefault' ),
 	);
 
-	public function __construct( MessageCollection $collection, MessageGroup $group ) {
+	public function __construct( MessageCollection $collection, MessageGroup $group, $code ) {
 		$this->collection = $collection;
 		$this->group = $group;
+		$this->code = $code;
 		$this->setHeaderText( 'table', $group->getLabel() );
 		$this->appendEditLinkParams( 'loadgroup', $group->getId() );
 	}
@@ -122,6 +124,10 @@ class MessageTable {
 
 		$optional = wfMsgHtml( 'translate-optional' );
 
+		$mlang = Language::factory( $this->code );
+		$mespa = array( 'dir' => $mlang->getDir(), 'lang' => $this->code );
+		unset($mlang);
+
 		$batch = new LinkBatch();
 		if ( method_exists( $batch, 'setCaller' ) ) {
 			$batch->setCaller( __METHOD__ );
@@ -142,9 +148,10 @@ class MessageTable {
 			$title = $this->keyToTitle( $key );
 
 			$original = $m->definition();
+			#TODO: handle directionality of fallback language(s) 
 			if ( $m->translation() ) {
 				$message = $m->translation();
-				$rclasses = array( 'class' => 'translated' );
+				$rclasses = array_merge ( $mespa, array( 'class' => 'translated' ) );
 			} else {
 				$message = $original;
 				$rclasses = array( 'class' => 'untranslated' );
@@ -179,7 +186,7 @@ class MessageTable {
 				);
 
 				$output .= Xml::tags( 'tr', array( 'class' => 'new' ),
-					Xml::tags( 'td', null, TranslateUtils::convertWhiteSpaceToHTML( $message ) )
+					Xml::tags( 'td', $mespa, TranslateUtils::convertWhiteSpaceToHTML( $message ) )
 				);
 			} else {
 				$output .= Xml::tags( 'tr', array( 'class' => 'def' ),
