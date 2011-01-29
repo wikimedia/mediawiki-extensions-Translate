@@ -9974,6 +9974,10 @@ $messages['ja'] = array(
 	'languagestats-summary' => 'このページでは指定した言語におけるメッセージの翻訳状況をメッセージ群ごとに表示しています。',
 	'languagestats-stats-for' => '$1の翻訳統計（$2）。',
 	'languagestats-recenttranslations' => '最近の翻訳',
+	'translate-langstats-expand' => '展開',
+	'translate-langstats-collapse' => '折り畳む',
+	'translate-langstats-expandall' => 'すべて展開',
+	'translate-langstats-collapseall' => 'すべて折り畳む',
 	'translate-language-code' => '言語コード',
 	'translate-language-code-field-name' => '言語コード:',
 	'translate-suppress-complete' => '翻訳が完了したグループを表示しない',
@@ -20182,6 +20186,7 @@ $messages['yue'] = array(
  * @author Chenxiaoqino
  * @author Gaoxuewei
  * @author Gzdavidwong
+ * @author Hydra
  * @author Jimmy xu wrk
  * @author Liangent
  * @author Mark85296341
@@ -20196,16 +20201,20 @@ $messages['zh-hans'] = array(
 	'translate-edit' => '编辑',
 	'translate-talk' => '讨论',
 	'translate-history' => '历史',
+	'translate-showsub' => '显示{{PLURAL:$1|分组|$1 分组}}。',
+	'translate-grouplisting' => '这是所有的可翻译组的列表。
+单击要查看的未翻译的消息列表的消息组名称。',
 	'translate-task-view' => '查看全部界面消息',
 	'translate-task-untranslated' => '查看尚未翻译的界面消息',
 	'translate-task-optional' => '查看可选的界面消息',
+	'translate-task-suggestions' => '查看消息从翻译记忆库的建议',
 	'translate-task-untranslatedoptional' => '查看未翻译的界面消息',
 	'translate-task-problematic' => '查看有问题的界面消息',
 	'translate-task-review' => '检查该处的更改',
 	'translate-task-reviewall' => '检查该群组的翻译',
 	'translate-task-export' => '导出翻译',
-	'translate-task-export-to-file' => '导出翻译至文件',
-	'translate-task-export-as-po' => '以纯文字格式导出翻译',
+	'translate-task-export-to-file' => '导出到文件的翻译',
+	'translate-task-export-as-po' => '出口离线的翻译',
 	'translate-task-export-to-xliff' => '以Xliff格式导出翻译',
 	'translate-page-no-such-language' => '选择的语言错误',
 	'translate-page-no-such-task' => '选择的功能错误',
@@ -20216,6 +20225,8 @@ $messages['zh-hans'] = array(
 	'translate-page-settings-legend' => '设置',
 	'translate-page-task' => '选择功能',
 	'translate-page-group' => '群组',
+	'translate-page-group-tooltip' => '邮件的组的名称。
+如果组是由子集或来自其他组的邮件的超集组成的它是以粗体显示。',
 	'translate-page-language' => '语言',
 	'translate-page-limit' => '每页显示',
 	'translate-page-limit-option' => '每页$1条界面消息',
@@ -20242,6 +20253,10 @@ $messages['zh-hans'] = array(
 	'translate-edit-tmsugs' => '来自翻译记忆的建议',
 	'translate-edit-tmmatch' => '$1%匹配',
 	'translate-use-suggestion' => '请将此建议插入到翻译区域。这会代替所有当前的内容。',
+	'translate-edit-tab-list' => '消息列表',
+	'translate-edit-show-def' => '消息定义',
+	'translate-edit-show-trans' => '翻译',
+	'translate-edit-show-click' => '单击以切换布局',
 	'translate-magic-pagename' => '扩展的MediaWiki翻译',
 	'translate-magic-help' => '您可以面翻译特殊页面别名、魔术字以及名字空间名称。
 
@@ -20278,18 +20293,19 @@ $messages['zh-hans'] = array(
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '以下$2 个参数未知：
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-balance' => '括号不对称：
+	'translate-checks-balance' => '有一个不均匀的量的 {{PLURAL:$2|括号|括号}}：
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links' => '以下链接可能有问题：
+	'translate-checks-links' => '后 {{PLURAL:$2|个链接是|$2 个链接是}}有问题：
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links-missing' => '以下$2 个链接丢失：
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-xhtml' => '请修正以下的标签：
+	'translate-checks-xhtml' => '请替换以下 {{PLURAL:$2|标签|标签}} 与正确的：
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => '原始消息使用了<nowiki>{{PLURAL:}}</nowiki>，但翻译并未使用。',
-	'translate-checks-pagename' => '名字空间从定义中改变',
+	'translate-checks-pagename' => '名字空间从定义的更改',
 	'translate-checks-format' => '这个翻译不遵从定义或有无效的语法：$1',
 	'translate-checks-escape' => '以下转义可能是意外：<strong>$1</strong>',
+	'translate-checks-fudforum-syntax' => '使用 <nowiki>$1</nowiki>，而不是在这个项目中的 <nowiki>$2</nowiki>。',
 	'translate-pref-nonewsletter' => '不要给我发送新闻邮件',
 	'translate-pref-editassistlang' => '辅助语言：',
 	'prefs-translate' => '翻译选项',
@@ -20311,6 +20327,8 @@ $messages['zh-hans'] = array(
 	'translate-stats-edits' => '编辑',
 	'translate-stats-users' => '翻译者',
 	'translate-stats-registrations' => '注册',
+	'translate-statsf-intro' => '您可以生成简单的统计数据，与此窗体。
+所有值都具有上限和下限。',
 	'translate-statsf-options' => '制图选项',
 	'translate-statsf-width' => '宽度：',
 	'translate-statsf-height' => '高度：',
@@ -20336,14 +20354,20 @@ $messages['zh-hans'] = array(
 	'translations-summary' => '在下方输入界面消息的名称来显示所有可用的翻译。',
 	'translate-translations-no-message' => '“$1”不是可翻译的界面消息',
 	'translate-translations-none' => '没有“$1”的翻译',
+	'translate-translations-count' => '发现 {{PLURAL:$1|一个翻译|$1 个翻译}}。',
 	'translate-translations-fieldset-title' => '界面消息',
 	'translate-translations-messagename' => '名称：',
 	'translate-translations-project' => '计划:',
+	'translate-translations-including-no-param' => '请在子页面参数中指定一个有效的消息键',
 	'translate-translations-history-short' => '历',
 	'languagestats' => '语言统计',
 	'languagestats-summary' => '这个页面显示了当前语言的所有项目组的完成度。',
 	'languagestats-stats-for' => '$1 ($2) 的翻译统计。',
 	'languagestats-recenttranslations' => '最近的翻译',
+	'translate-langstats-expand' => '展开',
+	'translate-langstats-collapse' => '折叠',
+	'translate-langstats-expandall' => '全部展开',
+	'translate-langstats-collapseall' => '全部折叠',
 	'translate-language-code' => '语言代码',
 	'translate-language-code-field-name' => '语言代码：',
 	'translate-suppress-complete' => '隐藏已全部翻译完成的项目组',
@@ -20359,9 +20383,23 @@ $messages['zh-hans'] = array(
 	'translate-nothing-to-do' => '似乎所有的翻译都已经完成。
 你可以在[[Special:Translate|{{int:translate}}]]查看其他的翻译项目。',
 	'supportedlanguages' => '支持的语言',
+	'supportedlanguages-summary' => '此页显示 {{SITENAME}} 所支持的所有语言的列表，连同工作对该语言的翻译人员的姓名。
+如果特定语言的详细信息您可以单击链接到该语言的门户。
+点击翻译名称将带您向用户页。
+
+如果一种语言有没有您可以找出如何启动在"[[Translating:Process|的语言的本地化项目新的语言]]"。
+
+如果你翻译成一种语言，并且您的名称不包括请将您的姓名添加，[[:Category:Languages|门户]] 该语言的翻译列表。
+请参阅链接，您喜欢的语言门户菜单栏。',
 	'supportedlanguages-translators' => '{{PLURAL:$2|翻译者|翻译者}}: $1',
+	'supportedlanguages-noportal-title' => '门户定义的命名空间',
+	'supportedlanguages-noportal' => '维基管理员已定义 NS_PORTAL，因此此页不会工作。
+在此页的语言门户列表将显示与定义的语言代码和一个称为"翻译"的子页面对应的所有门户。
+子页"translators"必须包含该模板 [[:{{ns:template}}:User|User]]，以用户名称作为参数。',
+	'supportedlanguages-recenttranslations' => '最近的翻译',
 	'translate-save' => '保存（$1）',
 	'translate-jssti-add' => '新增至清单',
+	'managemessagegroups' => '邮件组管理',
 	'translate-manage-groups' => '组管理',
 	'translate-manage-listgroups' => '配置组',
 	'translate-manage-listgroups-old' => '旧样式组',

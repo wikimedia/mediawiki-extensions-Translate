@@ -2406,6 +2406,19 @@ Anvan ou make vèsyon sa pou yo tradui, verifye ki chanjman nan seksyon yo pa an
 	'tpt-translation-intro' => 'Paj sa a, se yon <span class="plainlinks">[$1 vèsyon ki tradui]</span> de paj [[$2]], epi tradiksyon a fèt a $3%.',
 	'tpt-translation-intro-fuzzy' => 'Tradiksyon ki ansyen yo make konsa.',
 	'tpt-languages-legend' => 'Lòt lang yo:',
+	'pt-movepage-list-pages' => 'Lis paj yo pou deplase',
+	'pt-movepage-list-translation' => 'Paj tradiksyon',
+	'pt-movepage-list-section' => 'Paj seksyon',
+	'pt-movepage-list-other' => 'Lòt sou-paj',
+	'pt-movepage-list-count' => '$1 {{PLURAL:$1|paj|paj}} total pou deplase.',
+	'pt-movepage-legend' => 'Deplase paj ki ka tradui.',
+	'pt-movepage-current' => 'Non aktyèl:',
+	'pt-movepage-new' => 'Nouvo non:',
+	'pt-movepage-reason' => 'Poukisa:',
+	'pt-movepage-subpages' => 'Deplase tout sou-paj yo',
+	'pt-movepage-action-check' => 'Gade si deplasman an posib',
+	'pt-movepage-action-perform' => 'Fè deplasman an',
+	'pt-movepage-action-other' => 'Chanje sib',
 );
 
 /** Hungarian (Magyar)
@@ -5351,6 +5364,7 @@ $messages['yi'] = array(
 /** Simplified Chinese (‪中文(简体)‬)
  * @author Chenxiaoqino
  * @author Gzdavidwong
+ * @author Hydra
  * @author Liangent
  * @author PhiLiP
  * @author Yfdyh000
@@ -5371,7 +5385,7 @@ $messages['zh-hans'] = array(
 	'tpt-sections-deleted' => '已删除的翻译模块',
 	'tpt-sections-template' => '翻译页面模版',
 	'tpt-action-nofuzzy' => '不要使翻译作废',
-	'tpt-badtitle' => '提供的页面名($1 )不是有效的标题。',
+	'tpt-badtitle' => '页面名称 ($1) 不是一个有效的标题',
 	'tpt-nosuchpage' => '页面$1 不存在。',
 	'tpt-translate-this' => '翻译此页',
 	'translate-tag-translate-link-desc' => '翻译本页',
