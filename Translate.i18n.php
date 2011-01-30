@@ -20193,42 +20193,40 @@ $messages['yue'] = array(
  * @author PhiLiP
  * @author Sahran
  * @author Wmr89502270
+ * @author Xiaomingyan
  * @author Yfdyh000
  */
 $messages['zh-hans'] = array(
 	'translate' => '翻译',
-	'translate-desc' => '翻译MediaWiki及其他软件界面消息的[[Special:Translate|特殊页面]]',
+	'translate-desc' => '用以翻译MediaWiki和其他软件界面信息的[[Special:Translate|特殊页面]]',
 	'translate-edit' => '编辑',
 	'translate-talk' => '讨论',
 	'translate-history' => '历史',
-	'translate-showsub' => '显示{{PLURAL:$1|分组|$1 分组}}。',
-	'translate-grouplisting' => '这是所有的可翻译组的列表。
-单击要查看的未翻译的消息列表的消息组名称。',
-	'translate-task-view' => '查看全部界面消息',
-	'translate-task-untranslated' => '查看尚未翻译的界面消息',
-	'translate-task-optional' => '查看可选的界面消息',
-	'translate-task-suggestions' => '查看消息从翻译记忆库的建议',
-	'translate-task-untranslatedoptional' => '查看未翻译的界面消息',
-	'translate-task-problematic' => '查看有问题的界面消息',
-	'translate-task-review' => '检查该处的更改',
-	'translate-task-reviewall' => '检查该群组的翻译',
+	'translate-showsub' => '显示子组。',
+	'translate-grouplisting' => '本列表显示所有可翻译组。单击信息组名查看未翻译信息列表。',
+	'translate-task-view' => '查看所有信息',
+	'translate-task-untranslated' => '查看所有未翻译信息',
+	'translate-task-optional' => '查看可选信息',
+	'translate-task-suggestions' => '查看有翻译建议的信息',
+	'translate-task-untranslatedoptional' => '查看未翻译可选信息',
+	'translate-task-problematic' => '查看出错信息',
+	'translate-task-review' => '检查更改',
+	'translate-task-reviewall' => '检查所有已翻译信息',
 	'translate-task-export' => '导出翻译',
-	'translate-task-export-to-file' => '导出到文件的翻译',
-	'translate-task-export-as-po' => '出口离线的翻译',
-	'translate-task-export-to-xliff' => '以Xliff格式导出翻译',
-	'translate-page-no-such-language' => '选择的语言错误',
-	'translate-page-no-such-task' => '选择的功能错误',
-	'translate-page-no-such-group' => '选择的群组错误',
-	'translate-page-disabled' => "该群组翻译到此语言的功能已被禁用。原因：
-
-''$1''",
+	'translate-task-export-to-file' => '导出翻译至文件',
+	'translate-task-export-as-po' => '导出线下翻译文件',
+	'translate-task-export-to-xliff' => '导出Xliff格式的翻译',
+	'translate-page-no-such-language' => '指定语言无效。',
+	'translate-page-no-such-task' => '指定操作无效。',
+	'translate-page-no-such-group' => '指定组无效。',
+	'translate-page-disabled' => "本组至该语言的翻译已禁用。原因：''$1''",
 	'translate-page-settings-legend' => '设置',
-	'translate-page-task' => '选择功能',
-	'translate-page-group' => '群组',
-	'translate-page-group-tooltip' => '邮件的组的名称。
+	'translate-page-task' => '操作',
+	'translate-page-group' => '组',
+	'translate-page-group-tooltip' => '信息组名称。
 如果组是由子集或来自其他组的邮件的超集组成的它是以粗体显示。',
 	'translate-page-language' => '语言',
-	'translate-page-limit' => '每页显示',
+	'translate-page-limit' => '限制',
 	'translate-page-limit-option' => '每页$1条界面消息',
 	'translate-submit' => '获取',
 	'translate-page-navigation-legend' => '导航',
