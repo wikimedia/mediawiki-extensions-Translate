@@ -281,6 +281,7 @@ $messages['br'] = array(
 Sellit 'ta [[mw:Extension:PDF_Writer]] hag http://code.pediapress.com/wiki/wiki/mwlibrl evit gouzout hiroc'h.",
 	'bw-desc-nocc' => "Ur c'hliant webmail skrivet e PHP eo [http://nocc.sourceforge.net NOCC]. Kasit keloù da [[Support]] ma verzit kudenn pe gudenn.",
 	'translate-group-desc-okawix' => 'Ul lenner wikipedia ezlinenn eo [[Translating:Okawix|Okawix]]',
+	'translate-group-desc-openimages-all' => 'Ar gemennadennoù-mañ a zo er [[Translating:Open Images|Raktres Open Images]]',
 	'bw-desc-openlayers' => 'Ur ganer kartennoù dinamek digor o zarzh eo OpenLayers. Kasit keloù da [[Support]] ma verzit kudenn pe gudenn.',
 	'bw-desc-openstreetmap' => 'An holl gemennadennoù a denn da [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Er strollad kemennadennoù-mañ emañ kemennadennoù etrefas [[Translating:Open Street Map|Open Street Map]].',
