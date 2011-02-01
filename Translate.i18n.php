@@ -18825,6 +18825,11 @@ $messages['tt-cyrl'] = array(
 	'translate-task-optional' => 'Кирәк булмаган мәкаләләрне карау',
 	'translate-task-suggestions' => 'Мәкаләләрне тәрҗемәләр хәтереннән карау',
 	'translate-task-untranslatedoptional' => 'Тәрҗемә ителмәгән кирәксенмәгән мәкаләләр',
+	'translate-page-no-such-group' => 'Төркем дөрес күрсәтелмәгән',
+	'translate-page-disabled' => "Әлеге бүлектә бу тел буенча тәрҗемәләр ябылган. Сәбәбе:
+
+''$1''",
+	'translate-page-settings-legend' => 'Көйләнмәләр',
 	'translate-page-task' => 'Минем теләгем',
 	'translate-page-group' => 'Төркем',
 	'translate-page-language' => 'Тел',
@@ -18878,6 +18883,10 @@ $messages['tt-cyrl'] = array(
 	'languagestats-summary' => 'Бу биттә бирелгән тел өчен тәрҗемәләр статистикасы бирелә.',
 	'languagestats-stats-for' => '$1 ($2) өчен тәрҗемә статистикасы.',
 	'languagestats-recenttranslations' => 'яңа тәрҗемәләр',
+	'translate-langstats-expand' => 'ачу',
+	'translate-langstats-collapse' => 'ябу',
+	'translate-langstats-expandall' => 'барысын да ачу',
+	'translate-langstats-collapseall' => 'барысын да ябу',
 	'translate-language-code' => 'Телнең коды',
 	'translate-language-code-field-name' => 'Телнең коды:',
 	'translate-suppress-complete' => 'Тулысынча тәрҗемә ителгән төркемнәрне күрсәтмәскә',

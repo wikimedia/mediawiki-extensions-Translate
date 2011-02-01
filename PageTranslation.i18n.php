@@ -2394,6 +2394,9 @@ Anvan ou make vèsyon sa pou yo tradui, verifye ki chanjman nan seksyon yo pa an
 	'tpt-unmarked' => 'Paj $1 pa make pou tradui ankò.',
 	'tpt-list-nopages' => 'Pa gen okenn paj ki make pou tradui oubyen ki pare pou sa.',
 	'tpt-old-pages' => 'Kèk nan vèsyon {{PLURAL:$1|paj sa|paj sa yo}} te make pou tradui.',
+	'tpt-new-pages' => '{{PLURAL:$1|Paj sa genyen|Paj sa yo genyen}} teks ak baliz tradiksyon, men pa gen okenn vèsyon {{PLURAL:$1|paj sa|paj sa yo}} ki make pou tradui.',
+	'tpt-other-pages' => '{{PLURAL:$1|Yon ansyen vèsyon paj sa a|Ansyen vèsyon paj sa yo}} make pou tradui,
+men dènye {{PLURAL:$1|vèsyon|vèsyon yo}} pa ka make pou tradui.',
 	'tpt-rev-latest' => 'dènye vèsyon',
 	'tpt-rev-old' => 'diferans ak dènye vèsyon ki te make',
 	'tpt-rev-mark-new' => 'Make vèsyon sa pou tradui',
@@ -2406,6 +2409,19 @@ Anvan ou make vèsyon sa pou yo tradui, verifye ki chanjman nan seksyon yo pa an
 	'tpt-translation-intro' => 'Paj sa a, se yon <span class="plainlinks">[$1 vèsyon ki tradui]</span> de paj [[$2]], epi tradiksyon a fèt a $3%.',
 	'tpt-translation-intro-fuzzy' => 'Tradiksyon ki ansyen yo make konsa.',
 	'tpt-languages-legend' => 'Lòt lang yo:',
+	'tpt-target-page' => 'Paj sa a, se yon tradiksyon paj [[$1]] epi ou kapab mete a jou tradiksyon an lè ou itilize [$2 zouti tradiksyon an].',
+	'tpt-unknown-page' => 'Espas non sa a rezève pou tradiksyon paj yo.
+Paj w ap eseye modifye pa sanble koresponn ak yon paj ki make pou tradiksyon.',
+	'tpt-delete-impossible' => 'Ou pa ka efase paj ki make pou tradui.',
+	'tpt-install' => 'Chaje php maintenance/update.php oubyen enstalasyon wèb pou aktive fonksyon tradiksyon paj la.',
+	'tpt-render-summary' => 'N ap mete ajou pou nou genyen nouvo vèsyon paj sous la.',
+	'tpt-download-page' => 'Ekspòte paj ki gen tradiksyon',
+	'pt-parse-open' => 'Baliz &lt;translate> pa balanse.
+Modèle tradiksyon: <pre>$1</pre>',
+	'pt-parse-close' => 'Baliz &lt;/translate> pa balanse.
+Modèle tradiksyon: <pre>$1</pre>',
+	'pt-parse-nested' => 'Seksyon enbrike &lt;translate> pa otorize.
+Teks baliz la: <pre>$1</pre>',
 	'pt-movepage-list-pages' => 'Lis paj yo pou deplase',
 	'pt-movepage-list-translation' => 'Paj tradiksyon',
 	'pt-movepage-list-section' => 'Paj seksyon',
