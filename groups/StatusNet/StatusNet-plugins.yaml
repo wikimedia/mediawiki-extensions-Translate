@@ -325,20 +325,6 @@ MANGLER:
   prefix: emailsummary-
 ---
 BASIC:
-  id: out-statusnet-plugin-facebook
-  label: StatusNet - Facebook
-  display: out/statusnet/plugin/facebook
-  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/Facebook/%FILE%#line%LINE%
-
-FILES:
-  sourcePattern: %GROUPROOT%/statusnet/plugins/Facebook/locale/%CODE%/LC_MESSAGES/Facebook.po
-  definitionFile: %GROUPROOT%/statusnet/plugins/Facebook/locale/Facebook.pot
-  targetPattern: statusnet/plugins/Facebook/locale/%CODE%/LC_MESSAGES/Facebook.po
-
-MANGLER:
-  prefix: facebook-
----
-BASIC:
   id: out-statusnet-plugin-facebookbridge
   label: StatusNet - FacebookBridge
   display: out/statusnet/plugin/facebookbridge
