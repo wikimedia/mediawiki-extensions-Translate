@@ -167,7 +167,9 @@ $wgTranslateLanguageFallbacks = array();
  * Text that will be shown in translations if the translation is outdated.
  * Must be something that does not conflict with actual content.
  */
-define( 'TRANSLATE_FUZZY', '!!FUZZY!!' );
+if( !defined( 'TRANSLATE_FUZZY' ) ) {
+	define( 'TRANSLATE_FUZZY', '!!FUZZY!!' );
+}
 
 /**
  * Define various web services that provide translation suggestions.
