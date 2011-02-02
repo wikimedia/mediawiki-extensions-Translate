@@ -58,7 +58,7 @@ class TranslateEditAddons {
 		if ( isset( $keys[$index+1] ) ) {
 			$next = $keys[$index+1];
 		}
-	
+
 
 		$id = $group->getId();
 		$ns = $title->getNamespace();
@@ -405,39 +405,6 @@ class TranslateEditAddons {
 			$dbw->replace( 'revtag', array( $index ), $conds, __METHOD__ );
 		}
 
-		return true;
-	}
-
-	public static function customDisplay( $article, &$content ) {
-		global $wgRequest, $wgTitle;
-		if (
-			$wgRequest->getVal( 'action' ) !== 'edit' &&
-			$wgTitle instanceof Title && $article->getTitle()->equals( $wgTitle ) &&
-			self::isMessageNamespace( $article->getTitle() ) )
-		{
-			list( $key, $code, $group ) = self::getKeyCodeGroup( $article->getTitle() );
-			if ( !$group ) return true;
-
-			$def = self::preserveWhitespaces( $group->getMessage( $key, 'en' ) );
-			$content = self::preserveWhitespaces( $content );
-
-			$deftext = wfMsgNoTrans( 'translate-edit-show-def' );
-			$trans = wfMsgNoTrans( 'translate-edit-show-trans' );
-			$click = htmlspecialchars( wfMsgNoTrans( 'translate-edit-show-click' ) );
-
-			$content = <<<HTML
-<table class="wikitable translationdisplay" id=tt1 title="$click">
-	<tr><th>$deftext</th><th>$trans</th></tr>
-	<tr><td style=vertical-align:top>$def</td><td style=vertical-align:top>$content</td></tr>
-</table>
-<table class="wikitable translationdisplay" id=tt2 title="$click" style=display:none>
-	<tr><th>$deftext</th></tr>
-	<tr><td style=vertical-align:top>$def</td></tr>
-	<tr><th>$trans</th></tr>
-	<tr><td style=vertical-align:top>$content</td></tr>
-</table>
-HTML;
-		}
 		return true;
 	}
 

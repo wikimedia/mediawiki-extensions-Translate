@@ -89,7 +89,6 @@ $wgHooks['AlternateEdit'][] = 'TranslateEditAddons::intro';
 $wgHooks['EditPageBeforeEditButtons'][] = 'TranslateEditAddons::buttonHack';
 $wgHooks['EditPage::showEditForm:fields'][] = 'TranslateEditAddons::keepFields';
 $wgHooks['SkinTemplateTabs'][] = 'TranslateEditAddons::tabs';
-$wgHooks['ArticleAfterFetchContent'][] = 'TranslateEditAddons::customDisplay';
 $wgHooks['ParserBeforeStrip'][] = 'TranslateEditAddons::injectTranslationDisplayJs';
 $wgHooks['LanguageGetTranslatedLanguageNames'][] = 'TranslateEditAddons::translateMessageDocumentationLanguage';
 $wgHooks['ArticlePrepareTextForEdit'][] = 'TranslateEditAddons::disablePreSaveTransform';
