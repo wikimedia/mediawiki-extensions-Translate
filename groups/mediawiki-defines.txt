@@ -763,10 +763,11 @@ Multi Upload
 aliasfile = MultiUpload/MultiUpload.alias.php
 descmsg = multiupload-desc
 
-MwEmbed
+MwEmbed Support
+file = MwEmbedSupport/MwEmbed.i18n.php 
 
-MwEmbed - MwEmbed
-file = MwEmbed/MwEmbed/MwEmbed.i18n.php
+MwEmbed Support - MwEmbed Support
+file = MwEmbedSupport/MwEmbedSupport/MwEmbedSupport.i18n.php
 optional = mwe-size-gigabytes, mwe-size-megabytes, mwe-size-kilobytes, mwe-size-bytes
 
 MwEmbed - modules - ApiProxy
