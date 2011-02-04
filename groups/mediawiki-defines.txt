@@ -606,6 +606,8 @@ aliasfile = ImportUsers/ImportUsers.alias.php
 
 IM Status
 
+Include WP
+
 Index Function
 aliasfile = IndexFunction/IndexFunction.alias.php
 descmsg = indexfunc-desc
