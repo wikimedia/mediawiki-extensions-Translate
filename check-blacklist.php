@@ -36,6 +36,7 @@ array(
 		'blocklog-showsuppresslog', // Optional GENDER parameter
 		'confirmemail_body', // Optional time parameters
 		'confirmemail_body_changed', // Optional time parameters
+		'confirmemail_body_set', // Optional time parameters
 		'currentrev-asof', // Optional time parameters
 		'filehist-thumbtext', // Optional time parameters
 		'history-feed-item-nocomment', // Optional time parameters
