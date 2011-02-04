@@ -2154,6 +2154,7 @@ $messages['ha'] = array(
 );
 
 /** Hebrew (עברית)
+ * @author Amire80
  * @author Rotemliss
  * @author YaronSh
  */
@@ -2173,17 +2174,21 @@ $messages['he'] = array(
 	'tpt-sections-oldnew' => 'יחידות תרגום חדשות וקיימות',
 	'tpt-sections-deleted' => 'יחידות תרגום שנמחקו',
 	'tpt-sections-template' => 'תבנית דף תרגום',
+	'tpt-action-nofuzzy' => 'לא לפסול תרגומים',
 	'tpt-badtitle' => 'שם הדף שניתן ($1) אינו כותרת תקינה',
+	'tpt-nosuchpage' => 'הדף $1 אינו קיים',
 	'tpt-notsuitable' => 'הדף $1 אינו מתאים לתרגום.
 אנא ודאו שהוא מכיל תגיות <nowiki><translate></nowiki> ושהתחביר שלו תקין.',
 	'tpt-badsect' => 'השם "$1" אינו שם תקין ליחידת התרגום $2.',
 	'tpt-mark-summary' => 'גרסה זו סומנה לתרגום',
 	'tpt-edit-failed' => 'לא ניתן לעדכן את הדף: $1',
 	'tpt-already-marked' => 'הגרסה העדכנית ביותר של דף זה כבר סומנה לתרגום.',
+	'tpt-unmarked' => 'הדף $1 כבר אינו מסומן לתרגום.',
 	'tpt-list-nopages' => 'אין דפים המסומנים לתרגום וגם לא דפים המוכנים להיות מסומנים לתרגום.',
 	'tpt-rev-latest' => 'הגרסה האחרונה',
 	'tpt-rev-old' => 'הבדלים מאז הגרסה האחרונה שסומנה',
 	'tpt-rev-mark-new' => 'סימון גרסה זו לתרגום',
+	'tpt-rev-unmark' => 'הסר דף זה מהתרגום',
 	'tpt-translate-this' => 'תרגום דף זה',
 	'translate-tag-translate-link-desc' => 'תרגום דף זה',
 	'translate-tag-markthis' => 'סימון דף זה לתרגום',
@@ -2194,11 +2199,42 @@ $messages['he'] = array(
 דף זה הוא תרגום של הדף [[$1]] וניתן לעדכן את התרגום באמצעות [$2 כלי התרגום].',
 	'tpt-unknown-page' => 'מרחב שם זה שמור לצורך תרגומי דפי התוכן.
 הדף אותו אתם מנסים לערוך אינו תואם לאף דף המסומן לתרגום.',
+	'tpt-delete-impossible' => 'מחיקה של דפים המסומנים לתרגום אינה אפשרית עדיין.',
+	'tpt-install' => 'הריצו php maintenance/update.php או התקנת רשת כדי לאפשר את תכונת תרגום הדפים.',
 	'tpt-render-summary' => 'עדכון להתאמת הגרסה החדשה של דף המקור',
 	'tpt-download-page' => 'ייצוא דף עם תרגומים',
+	'pt-parse-nested' => 'מקטעים מקוננים של &lt;translate> אינם מורשים.
+תוכן התג: <pre>$1</pre>',
+	'pt-shake-empty' => 'מקטע ריק כבור מסמן $1.',
+	'pt-log-header' => 'יומן של פעולות שמיוחדות למערכת תרגום דפים',
+	'pt-log-name' => 'יומן תרגום דפים',
+	'pt-log-mark' => '{{GENDER:$2|סימן}} את גרסה $3 של הדף "[[:$1]]" לתרגום',
+	'pt-log-unmark' => '{{GENDER:$2|הוציא|הוציאה}} את הדף "[[:$1]]" מהתרגום',
+	'pt-log-moveok' => '{{GENDER:$2|השלים|השלימה}} את שינוי השם של הדף הניתן לתרגום $1',
+	'pt-log-movenok' => '{{GENDER:$2|מצא|מצאה}} בעיה בעת העברת [[:$1]] אל [[:$3]]',
+	'pt-movepage-title' => 'להעביר את הדף הניתן לתרגום $1',
+	'pt-movepage-blockers' => 'דף שניתן לתרגום אינו יכול להיות מועבר לשם חדש בגלל {{PLURAL:$1|השגיאה הבאה|השגיאות הבאות}}:',
+	'pt-movepage-block-base-exists' => 'דף הבסיס המיועד [[:$1]] קיים.',
+	'pt-movepage-block-base-invalid' => 'לדף הבסיס המיועד אין כותרת תקינה.',
+	'pt-movepage-block-tp-exists' => 'דף התרגום המיועד [[:$2]] קיים.',
+	'pt-movepage-block-tp-invalid' => 'כותרת דף התרגום המיועד עבור [[:$1]] אינה תקינה (אולי ארוכה מדי).',
+	'pt-movepage-block-section-exists' => 'דף המקטע המיודע [[:$2]] קיים.',
+	'pt-movepage-block-section-invalid' => 'כותרת דף המקטע המיועד עבור [[:$1]] אינו תקין (אולי ארוך מדי).',
+	'pt-movepage-block-subpage-exists' => 'דף המשנה המיועד [[:$2]] קיים.',
+	'pt-movepage-block-subpage-invalid' => 'כותרת דף המשנה המיועד עבור [[:$1]] אינה תקינה (אולי ארוכה מדי).',
+	'pt-movepage-list-pages' => 'רשימת הדפים להעביר',
+	'pt-movepage-list-translation' => 'דפי תרגום',
+	'pt-movepage-list-section' => 'דפי מקטע',
+	'pt-movepage-list-other' => 'דפי משנה אחרים',
+	'pt-movepage-list-count' => 'בסך הכול יש {{PLURAL:$1|דף אחד|$1 דפים}} להעברה.',
+	'pt-movepage-legend' => 'העברת דף שאפשר לתרגום',
 	'pt-movepage-current' => 'השם הנוכחי:',
 	'pt-movepage-new' => 'השם החדש:',
 	'pt-movepage-reason' => 'סיבה:',
+	'pt-movepage-subpages' => 'העברת כל עמודי המשנה',
+	'pt-movepage-action-check' => 'לבדוק אם ההעברה אפשרית',
+	'pt-movepage-action-perform' => 'לבצע את ההעברה',
+	'pt-movepage-action-other' => 'שינוי יעד',
 );
 
 /** Croatian (Hrvatski)

@@ -1449,11 +1449,20 @@ Inā ʻaʻole makemake e loaʻa nā nū hou, hiki ke pale i ke kāwāholo "{{int
 );
 
 /** Hebrew (עברית)
+ * @author Amire80
  * @author YaronSh
  */
 $messages['he'] = array(
+	'firststeps' => 'הצעדים הראשונים',
+	'translate-fs-pagetitle-done' => '- בוצע!',
 	'translate-fs-signup-title' => 'הרשמה',
+	'translate-fs-settings-title' => 'הגדרת ההעדפות שלך',
+	'translate-fs-userpage-title' => 'ליצור את דף המשתמש שלך',
+	'translate-fs-permissions-title' => 'לבקש הרשאות מתרגם',
 	'translate-fs-target-title' => 'התחלה בתרגום!',
+	'translate-fs-email-title' => 'לאשר את כתובת הדוא״ל',
+	'translate-fs-settings-skip' => 'סיימתי. 
+תנו לי להמשיך.',
 	'translate-fs-userpage-submit' => 'יצירת דף המשתמש שלי',
 	'translate-fs-userpage-done' => 'מצוין! כעת יש לך דף משתמש.',
 );
