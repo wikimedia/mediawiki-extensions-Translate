@@ -1192,7 +1192,7 @@ Random Users With Avatars
 descmsg = random-users-avatars-desc
 
 Rdf
-optional = rdf-output-xml, rdf-output-turtle, rdf-output-ntriples
+optional = rdf, rdf-output-xml, rdf-output-turtle, rdf-output-ntriples
 
 RDFIO
 aliasfile = RDFIO/RDFIO.alias.php
