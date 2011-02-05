@@ -3826,7 +3826,9 @@ $messages['cu'] = array(
  * @author Lloffiwr
  */
 $messages['cy'] = array(
+	'translate' => 'Cyfieithu',
 	'translate-edit' => 'golygu',
+	'translate-talk' => 'sgwrs',
 	'translate-page-edit' => 'golygu',
 	'translate-pref-nonewsletter' => 'Peidier ag anfon cylchlythyron e-bost ataf',
 	'translate-translations-history-short' => 'h',
@@ -5249,9 +5251,9 @@ Pulse en el nombre del grupo de mensajes para ver la lista de mensajes sin tradu
 	'translate-task-problematic' => 'Ver los mensajes que tienen problemas',
 	'translate-task-review' => 'Revisar cambios en',
 	'translate-task-reviewall' => 'Revisar todas las traducciones en',
-	'translate-task-export' => 'Exportar traducciones desde',
-	'translate-task-export-to-file' => 'Exportar a un archivo las traducciones de',
-	'translate-task-export-as-po' => 'Exportar traducción en formato Gettext',
+	'translate-task-export' => 'Exportar traducciones',
+	'translate-task-export-to-file' => 'Exportar traducciones a un archivo',
+	'translate-task-export-as-po' => 'Exportar traducciones para su traducción fuera de línea',
 	'translate-task-export-to-xliff' => 'Exportar traducción en formato Xliff',
 	'translate-page-no-such-language' => 'No se especificó un idioma válido',
 	'translate-page-no-such-task' => 'La tarea especificada no es válida.',
@@ -5389,6 +5391,7 @@ Todos los valores tienen límites superiores e inferiores.',
 	'translations-summary' => 'Introduce un nombre de mensaje para ver todas las traducciones disponibles.',
 	'translate-translations-no-message' => '"$1" no es un mensaje traducible',
 	'translate-translations-none' => 'No hay traducciones para "$1"',
+	'translate-translations-count' => 'Se {{PLURAL:$1|ha|han}} encontrado {{PLURAL:$1|una traducción|$1 traducciones}}.',
 	'translate-translations-fieldset-title' => 'Mensaje',
 	'translate-translations-messagename' => 'Nombre:',
 	'translate-translations-project' => 'Proyecto:',
@@ -10873,6 +10876,20 @@ $messages['km'] = array(
 	'translate-import-err-type-not-supported' => 'មិន​អាចផ្ទុក​ឯកសារ​៖
 វិធីសាស្រ្ត​ <code>$1</code> មិនត្រូវបាន​ទទួលស្គាល់​។​',
 	'translate-import-err-ul-failed' => 'ការផ្ទុក​ឡើង​នៃឯកសារ​ មិនបានជោគជ័យ​',
+	'translate-js-next' => 'រក្សាទុករួចបើកសារបន្ទាប់',
+	'translate-js-nonext' => 'នេះជាសារចុងក្រោយគេនៅលើទំព័រនេះ',
+	'translate-js-skip' => 'រំលងទៅកាន់សារបន្ទាប់',
+	'translate-js-save-failed' => 'ការរក្សាទុកបានបរាជ័រ។ សូមរាយការណ៍អំពីបញ្ហានេះ។',
+	'translate-js-history' => 'ប្រវត្តិនៃការបកប្រែ',
+	'translate-gs-pos' => 'ទីតាំង',
+	'translate-gs-code' => 'កូដ',
+	'translate-gs-continent' => 'ទ្វីប',
+	'translate-gs-speakers' => 'អ្នកនិយាយ',
+	'translate-gs-score' => 'ពិន្ទុ',
+	'translate-gs-multiple' => 'ច្រើនទ្វីប',
+	'translate-gs-count' => 'ចំនួន',
+	'translate-gs-total' => 'សរុប',
+	'translate-gs-avgscore' => 'ពិន្ទុមធ្យម',
 );
 
 /** Kannada (ಕನ್ನಡ)

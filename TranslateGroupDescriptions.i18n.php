@@ -600,6 +600,7 @@ $messages['eo'] = array(
 
 /** Spanish (Español)
  * @author Crazymadlover
+ * @author Dferg
  * @author Locos epraix
  * @author Peter17
  * @author Translationista
@@ -640,6 +641,7 @@ Por favor mira [[mw:Extension:PDF_Writer]] y http://code.pediapress.com/wiki/wik
 
 * Trate de mantener sus traducciones similares en longitud al original en inglés tanto como posible a causa de las restricciones de la interfaz de usuario. Véase también este [http://trac.openstreetmap.org/ticket/2067 bug].
 * Utilice [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] para probar Potlatch. Allí puede probar todo lo que desee en cualquier área.',
+	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] es una colección de herramientas para editar Wikipedia',
 	'bw-desc-shapado' => 'Grupo de mensajes para el sofware Q&A de fuente libre y abierta [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] es un servidor de microblogueo de fuente abierta',
 	'translate-group-desc-statusnet-plugin' => 'Estos mensajes forman parte de un complemento para [[Translating:StatusNet|StatusNet]]',

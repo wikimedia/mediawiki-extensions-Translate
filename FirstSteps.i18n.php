@@ -1955,6 +1955,13 @@ $3登録$4',
 これにより、他の利用者があなたに電子メールを通じて連絡できるようになります。また、多くて月に1回ほどニュースレターが送られてきます。ニュースレターを受け取りたくない場合は、[[Special:Preferences|個人設定]]の「{{int:prefs-personal}}」タブで受信の中止を設定できます。',
 );
 
+/** Khmer (ភាសាខ្មែរ)
+ * @author គីមស៊្រុន
+ */
+$messages['km'] = array(
+	'firststeps' => 'ជំហានដំបូង',
+);
+
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
  */
