@@ -6681,9 +6681,11 @@ Dètalys : $1',
  */
 $messages['fur'] = array(
 	'translate' => 'Traduzion',
+	'translate-edit' => 'cambie',
 	'translate-task-view' => 'Mostre ducj i messaçs dai',
 	'translate-task-untranslated' => 'Mostre ducj i messaçs no tradusûts dal',
 	'translate-task-optional' => 'viodi i messaçs opzionâi di',
+	'translate-task-suggestions' => 'viôt i messaçs cun sugjeriments de memorie di traduzion',
 	'translate-task-untranslatedoptional' => 'viodi i messaçs opzionâi no tradusûts di',
 	'translate-task-problematic' => 'Mostre messaçs che a àn problemis',
 	'translate-page-settings-legend' => 'Impostazions',
@@ -6697,13 +6699,24 @@ $messages['fur'] = array(
 	'translate-page-showing' => 'Daûr a mostrâ i messaçs di $1 a $2 su $3.',
 	'translate-page-showing-all' => 'Daûr a mostrâ $1 {{PLURAL:$1|messaç|messaçs}}.',
 	'translate-page-showing-none' => 'Nissun messaç di mostrâ.',
+	'translate-next' => 'Prossime pagjine',
+	'translate-prev' => 'Pagjine precedente',
 	'translate-page-description-legend' => 'Informazions sul grup',
 	'translate-edit-definition' => 'Definizion dal messaç',
 	'translate-edit-contribute' => 'contribuìs',
+	'translate-edit-no-information' => "''Chest messaç nol à documentazion.''
+''Se tu sâs dulà o cemût chest messaç al è doprât, tu puedis judâ altris tradutôrs zontant alc come documentazion a chest messaç.''",
+	'translate-edit-information' => 'Informazions sul messaç "$2" ($1)',
 	'translate-edit-in-other-languages' => 'Messaç «$1» in altris lenghis',
 	'translate-edit-tmsugs' => 'Sugjeriments de memorie di traduzion',
 	'translate-edit-tmmatch' => 'corispuint al $1%',
+	'translate-edit-tab-list' => 'Liste dai messaçs',
+	'translate-edit-show-trans' => 'Traduzions',
+	'translate-magic-cm-original' => 'Origjinâl',
+	'translate-magic-cm-comment' => 'Coment:',
 	'translate-magic-cm-save' => 'Salve',
+	'translate-checks-parameters' => '{{PLURAL:$2|Il parametri cas sot nol è doprât|I parametris ca sot no son doprâts}}:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-pref-editassistlang' => 'Assistent lenghis:',
 	'prefs-translate' => 'Opzions pe traduzion',
 	'translate-pref-editassistlang-bad' => 'Codis de lenghe no valit inte liste:
@@ -7580,16 +7593,16 @@ $messages['he'] = array(
 לחצו על שם הקבוצה בשביל להציג רשימה של הודעות לא מתורגמות.',
 	'translate-task-view' => 'הצגת כל ההודעות מתוך',
 	'translate-task-untranslated' => 'הצגת כל ההודעות שאינן מתורגמות מתוך',
-	'translate-task-optional' => 'הצגת הודעות אופציונאליות מתוך',
+	'translate-task-optional' => 'הצגת הודעות אופציונליות מתוך',
 	'translate-task-suggestions' => 'הצגת הודעות עם הצעות מתוך זיכרון תרגום',
-	'translate-task-untranslatedoptional' => 'הצגת הודעות אופציונאליות שאינן מתורגמות מ־',
+	'translate-task-untranslatedoptional' => 'הצגת הודעות אופציונליות שאינן מתורגמות מ־',
 	'translate-task-problematic' => 'הצגת הודעות עם בעיות',
 	'translate-task-review' => 'הצגת שינויים בתוך',
 	'translate-task-reviewall' => 'הצגת שינויים בכל ההודעות שתורגמו בתוך',
 	'translate-task-export' => 'יצוא תרגומים',
 	'translate-task-export-to-file' => 'יצוא תרגומים לקובץ',
 	'translate-task-export-as-po' => 'יצוא תרגומים לתרגום לא מקוון',
-	'translate-task-export-to-xliff' => 'ייצוא תרגומים בפורמט Xliff',
+	'translate-task-export-to-xliff' => 'יצוא תרגומים בפורמט Xliff',
 	'translate-page-no-such-language' => 'השפה שצוינה שגויה.',
 	'translate-page-no-such-task' => 'המשימה שצוינה שגויה.',
 	'translate-page-no-such-group' => 'הקבוצה שצוינה שגויה.',
@@ -7614,7 +7627,7 @@ $messages['he'] = array(
 	'translate-page-description-legend' => 'מידע על הקבוצה',
 	'translate-page-edit' => 'עריכה',
 	'translate-ext-url' => '<hr />אתר אינטרנט: $1',
-	'translate-optional' => '(אופציונאלי)',
+	'translate-optional' => '(אופציונלי)',
 	'translate-ignored' => '(לא לתרגום)',
 	'translate-edit-title' => 'לערוך את "$1"',
 	'translate-edit-definition' => 'הגדרת ההודעה',
@@ -7626,7 +7639,7 @@ $messages['he'] = array(
 	'translate-edit-committed' => 'התרגום הנוכחי בתוכנה',
 	'translate-edit-warnings' => 'אזהרות על תרגומים חלקיים',
 	'translate-edit-tmsugs' => 'הצעות מזיכרון התרגום',
-	'translate-edit-tmmatch' => 'התאמה $1%',
+	'translate-edit-tmmatch' => 'רמת התאמה: $1%',
 	'translate-use-suggestion' => 'להכניס את ההצעה הזאת בשדה התרגום. זה יחליף את כל התוכן הנוכחי.',
 	'translate-edit-tab-list' => 'רשימת הודעות',
 	'translate-edit-show-def' => 'הגדרת הודעת',
@@ -7640,13 +7653,13 @@ $messages['he'] = array(
 למרחבי שם יכול להיות תרגום אחד בלבד.
 
 בתרגום מרחבי השם, <code>שיחת $1</code> הוא מקרה מיוחד. <code>$1</code> יוחלף בשם האתר (לדוגמה, <code>{{ns:project_talk}}</code>).
-אם אין זה אפשרי בשפתכם לתרגם את מרחב השם הזה מבלי לשנות את שם האתר, אנא צרו קשר עם מפתח.
+אם אין זה אפשרי בשפתכם לתרגם את מרחב השם הזה מבלי לשנות את שם האתר, אנא צרו קשר עם מְפַתֵּחַ.
 
 עליכם להיות בקבוצת המתרגמים כדי לשמור שינויים.
 השינויים לא יישמרו עד שתלחצו על כפתור השמירה שלהלן.',
 	'translate-magic-module' => 'מידע לתרגום:',
 	'translate-magic-submit' => 'הצגה',
-	'translate-magic-cm-export' => 'ייצוא',
+	'translate-magic-cm-export' => 'יצוא',
 	'translate-magic-nothing-to-export' => 'אין מה לייצא.',
 	'translate-magic-cm-to-be' => 'עתידיים',
 	'translate-magic-cm-current' => 'נוכחיים',
@@ -7662,34 +7675,34 @@ $messages['he'] = array(
 	'translate-magic-errors' => 'אנא תקנו את {{PLURAL:$1|השגיאה הבאה|$1 השגיאות הבאות}} בתרגום:',
 	'translate-magic-saved' => 'השינויים שביצעתם נשמרו בהצלחה.',
 	'translationchanges' => 'שינויים בתרגום',
-	'translationchanges-export' => 'ייצוא',
+	'translationchanges-export' => 'יצוא',
 	'translationchanges-change' => '$1: $2 על ידי $3',
-	'translate-checks-parameters' => 'ה{{PLURAL:$2|פרמטר הבא אינו|פרמטרים הבאים אינם}} בשימוש:
+	'translate-checks-parameters' => '{{PLURAL:$2|הפרמטר הבא אינו|הפרמטרים הבאים אינם}} בשימוש:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-parameters-unknown' => 'ה{{PLURAL:$2|פרמטר הבא אינו|פרמטרים הבאים אינם}} ידועים:
+	'translate-checks-parameters-unknown' => '{{PLURAL:$2|הפרמטר הבא אינו|הפרמטרים הבאים אינם}} ידועים:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-balance' => 'מספר ה{{PLURAL:$2|סוגריים|סוגריים}} אינו מאוזן:
+	'translate-checks-balance' => 'מספר {{PLURAL:$2|הסוגריים|הסוגריים}} אינו מאוזן:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links' => '{{PLURAL:$2|הקישור הבא הינו|$2 הקישורים הבאים הינם}} בעייתיים:
+	'translate-checks-links' => '{{PLURAL:$2|הקישור הבא|$2 הקישורים הבאים}} בעייתיים:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links-missing' => '{{PLURAL:$2|הקישור הבא חסר|$2 הקישורים הבאים חסרים}}:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-xhtml' => 'נא החליפו את ה{{PLURAL:$2|תגית הבאה בתגית הנכונה|תגיות הבאות בתגיות הנכונות}}:
+	'translate-checks-xhtml' => 'נא החליפו את {{PLURAL:$2|התג הבא בתג הנכון|התגים הבאים בתגים הנכונים}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'ההגדרה משתמשת ב־<nowiki>{{PLURAL:}}</nowiki>, אך התרגום אינו משתמש בו.',
 	'translate-checks-pagename' => 'מרחבי שם ששונו מהגדרתם',
 	'translate-checks-format' => 'תרגום זה אינו תואם להגדרות או שהוא בעל תחביר שגוי: $1',
-	'translate-checks-escape' => 'ייתכן שהחילוף הבא נוצר בשגגה: <strong>$1</strong>',
+	'translate-checks-escape' => 'ייתכן שהחילופים הבאים נוצרו בשגגה: <strong>$1</strong>',
 	'translate-checks-fudforum-syntax' => 'השתמשו ב־<nowiki>$1</nowiki> ולא ב־<nowiki>$2</nowiki> בפרויקט הזה.',
 	'translate-pref-nonewsletter' => 'אל תשלחו אלי הודעות בדואר האלקטרוני',
 	'translate-pref-editassistlang' => 'שפות הסיוע:',
 	'prefs-translate' => 'אפשרויות תרגום',
-	'translate-pref-editassistlang-help' => 'רשימת קודי שפות המופרדים בפסיקים.
+	'translate-pref-editassistlang-help' => 'רשימה מופרדת בפסיקים של קודי שפות.
 תרגום הודעה בשפות אלו יופיע בעת תרגום המונחים.
-רשימת שפות ברירת המחדל תלויה בשפה בה אתם דוברים.',
+רשימת שפות ברירת המחדל תלויה בשפה שאתם דוברים.',
 	'translate-pref-editassistlang-bad' => 'קוד שפה שגוי ברשימה:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'עורך תרגומים משופר (JavaScript)',
+	'translate-pref-jsedit' => 'עורך תרגומים מורחב (JavaScript)',
 	'right-translate' => 'עריכה באמצעות ממשק התרגום',
 	'right-translate-manage' => 'ניהול קבוצות תרגום',
 	'right-translate-import' => 'יבוא תרגומים לא מקוונים',
@@ -7759,8 +7772,18 @@ $messages['he'] = array(
 	'translate-nothing-to-do' => 'נראה כי כל הפריטים כבר תורגמו.
 עם זאת, אתם מוזמנים לבדוק את ההודעות דרך [[Special:Translate|{{int:translate}}]].',
 	'supportedlanguages' => 'שפות נתמכות',
+	'supportedlanguages-summary' => 'הדף הזה מציג רשימה של כל השפות שהאתר {{SITENAME}} תומך בהן, עם שמות של מתרגמים שעובדים על אותן השפות.
+אם אינכם רוצים מידע נוסף על שפה מסוימת, אתם יכולים ללחוץ על הקישור לפורטל עבור אותה השפה.
+לחיצה על שמות המתרגמים תוביל אתכם לדף המשתמש שלהם.
+
+אם שפה אינה ברשימה, אפשר למצוא איך להתחיל לתרגם אליה בדף "[[Translating:Process|New Language]]".
+
+אם אתם מתרגמים לשפה ושמכם אינו כלול ברשימה, אנא הוסיפו את שמכם לרשימת המתרגמים ב[[:Category:Languages|פורטל]] עבור אותה השפה. בשורת התפריט נמצא קישור לפורטל עבור השפות שתרצו.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|מתרגם|מתרגמים}}: $1',
 	'supportedlanguages-noportal-title' => 'מרחב שם פורטל אינו מוגדר',
+	'supportedlanguages-noportal' => 'מעפיל הוויקי הזה לא הגדיר את NS_PORTAL, ולכן הדף הזה אינו עובד.
+בדף הזה תופיע רשימת פורטלים של שפות עבור כל כל הפורטלים שמוגדר להם קוד שפה ודף משנה בשם "translators".
+דף המשנה "translators" צריך להכיל את התבנית [[:{{ns:template}}:User|User]], שהפרמטר שלה הוא שם המשתמש.',
 	'supportedlanguages-recenttranslations' => 'תרגומים אחרונים',
 	'translate-save' => 'שמירה ($1)',
 	'translate-jssti-add' => 'הוספת לרשימה',
@@ -7800,6 +7823,13 @@ $messages['he'] = array(
 	'translate-manage-import-fuzzy' => 'יבוא וטשטוש: $1',
 	'translate-manage-import-done' => 'הכול בוצע!',
 	'translate-manage-import-rebuild' => 'בניית המטמון מחדש.',
+	'translate-manage-intro-en' => 'להלן רשימה של שינויים בהודעות בקבוצה זו.
+נא לסקור את השינויים ולבחור את הפעולה שברצונכם לעשות עבור כל הודעה.
+כשתסיימו לעדכן את הגדרות ההודעות, בדקו אם יש שינויים בשפות אחרות.
+שימו לב גם שפעולת <code>{{int:translate-manage-action-ignore ("Ignore")}}</code> זמנית בלבד.',
+	'translate-manage-intro-other' => 'להלן רשימה של שינויי תרגום ב$1.
+נא לסקור את השינויים ולבחור את הפעולה שברצונכם לעשות עבור כל תרגום.
+אם תבחרו להתעלם מהשינויים, הם יידרסו בייצוא הבא.',
 	'translate-manage-subtitle' => 'ניהול',
 	'translate-manage-import-rebuild-all' => 'בנייה מחדש של כל השפות והתעלמות משינויים כלשהם',
 	'importtranslations' => 'יבוא תרגומים',
@@ -11124,7 +11154,7 @@ Dozwesche shteijt jeeweijls_e "," (Komma).
 De Name fö_de Appachtemangs könne nur eijn Övversätzong han.
 
 Beij de Övversäzonge för de Appachtemangs ier Name hät „<code>$1 talk</code>“ ene shpezjälle Senn.
-Dat „<code>$1</code>“ shteijt doh als enne Plazhallder för dä Projäkname (zem Beijshpöll dat „<code>{{SITENAME}}</code>“ en: „<code>Övver {{SITENAME}} Klaafe</code>“).
+Dat „<code>$1</code>“ shteijt doh als enne Plazhallder för dä Projäkname (zem Beijshpöll dat „<code>{{SITENAME}}</code>“ en: „<code>Övver {{GRAMMAR:Akkusative|{{SITENAME}}}} klaafe</code>“).
 Wann Ding Shprooch ed nit heerjitt, dat_De ene grammatesch reschtejje Forrem henkreßß, ohne an dämm Projek singem Name ändere zo mößße, dann donn ene Äntwecklor do drop aansäzze.
 
 Do moß en de Jrop „Övversäzer“ sen, för hee Änderonge maache ze könne.
@@ -17039,7 +17069,7 @@ $messages['sr-ec'] = array(
 	'translate-desc' => '[[Special:Translate|Специјална страна]] за превођене МедијаВикија и осталог',
 	'translate-edit' => 'уреди',
 	'translate-talk' => 'разговор',
-	'translate-history' => 'историјат',
+	'translate-history' => 'историја',
 	'translate-task-view' => 'Приказ свих порука од',
 	'translate-task-untranslated' => 'Приказ свих непреведених порука од',
 	'translate-task-optional' => 'Приказ необавезних порука од',
