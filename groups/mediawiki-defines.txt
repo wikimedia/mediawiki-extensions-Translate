@@ -843,7 +843,8 @@ magicfile = OpenGraphMeta/OpenGraphMeta.magic.php
 
 Open Search Xml
 
-OpenStackManager
+Open Stack Manager
+aliasfile = OpenStackManager/OpenStackManager.alias.php
 
 Other Sites
 
