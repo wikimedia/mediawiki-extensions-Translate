@@ -4303,7 +4303,7 @@ Die Standardliste ist abhängig von der Sprache der Benutzeroberfläche.',
 	'translate-translations-project' => 'Projekt:',
 	'translate-translations-including-no-param' => 'Bitte gib einen gültigen Nachrichtennamen als Unterseitenparameter an',
 	'translate-translations-history-short' => 'V',
-	'languagestats' => 'Statistiken zu Sprachen',
+	'languagestats' => 'Statistiken zur Sprache',
 	'languagestats-summary' => 'Diese Seite zeigt Übersetzungsstatistiken für alle Nachrichtengruppen einer Sprache.',
 	'languagestats-stats-for' => 'Übersetzungsstatistiken für $1 ($2).',
 	'languagestats-recenttranslations' => 'Aktuelle Übersetzungen',
@@ -7591,14 +7591,14 @@ $messages['he'] = array(
 	'translate-showsub' => 'להציג {{PLURAL:$1|קבוצת|$1 קבוצות}} משנה.',
 	'translate-grouplisting' => 'זוהי רשימה של כל הקבוצות שאפשר לתרגם. 
 לחצו על שם הקבוצה בשביל להציג רשימה של הודעות לא מתורגמות.',
-	'translate-task-view' => 'הצגת כל ההודעות מתוך',
-	'translate-task-untranslated' => 'הצגת כל ההודעות שאינן מתורגמות מתוך',
-	'translate-task-optional' => 'הצגת הודעות אופציונליות מתוך',
+	'translate-task-view' => 'הצגת כל ההודעות בקבוצה',
+	'translate-task-untranslated' => 'הצגת כל ההודעות שאינן מתורגמות בקבוצה',
+	'translate-task-optional' => 'הצגת הודעות אופציונליות בקבוצה',
 	'translate-task-suggestions' => 'הצגת הודעות עם הצעות מתוך זיכרון תרגום',
-	'translate-task-untranslatedoptional' => 'הצגת הודעות אופציונליות שאינן מתורגמות מ־',
+	'translate-task-untranslatedoptional' => 'הצגת הודעות אופציונליות שאינן מתורגמות בקבוצה',
 	'translate-task-problematic' => 'הצגת הודעות עם בעיות',
-	'translate-task-review' => 'הצגת שינויים בתוך',
-	'translate-task-reviewall' => 'הצגת שינויים בכל ההודעות שתורגמו בתוך',
+	'translate-task-review' => 'סקירת השינויים בקבוצה',
+	'translate-task-reviewall' => 'סקירה של כל ההודעות המתורגמות בקבוצה',
 	'translate-task-export' => 'יצוא תרגומים',
 	'translate-task-export-to-file' => 'יצוא תרגומים לקובץ',
 	'translate-task-export-as-po' => 'יצוא תרגומים לתרגום לא מקוון',
@@ -7761,10 +7761,10 @@ $messages['he'] = array(
 	'translate-language' => 'שפה',
 	'translate-total' => 'הודעות',
 	'translate-total-tooltip' => 'המספר הכולל של הודעות בקבוצה הודעות זו.',
-	'translate-untranslated' => 'ללא תרגום',
+	'translate-untranslated' => 'לא מתורגמות',
 	'translate-untranslated-tooltip' => 'המספר הכולל של הודעות לא מתורגמות בקבוצת הודעות זו.
 פעולה זו כוללת הודעות שסומנו כלא מעודכנות.',
-	'translate-percentage-complete' => 'השלמה',
+	'translate-percentage-complete' => 'התקדמות',
 	'translate-percentage-complete-tooltip' => 'אחוז ההודאות בקבוצה שתורגמו ולא סומנו כלא מעודכנות.',
 	'translate-percentage-fuzzy' => 'לא מעודכנות',
 	'translate-percentage-fuzzy-tooltip' => 'אחוז ההודעות בקבוצה שתורגמו וסומנו כלא מעודכנות.
@@ -11094,6 +11094,7 @@ $messages['ksh'] = array(
 	'translate-edit' => 'Änndere',
 	'translate-talk' => 'Klaaf',
 	'translate-history' => 'Versione',
+	'translate-showsub' => 'Zeisch de {{PLURAL:$1|Ongerjropp|$1 Ongerjroppe|kei Ongerjroppe}} aan!',
 	'translate-task-view' => 'Zeijsh de Täxte un Nohreschte',
 	'translate-task-untranslated' => 'Zeijsh de onnövversaz Täxte un Nohreschte',
 	'translate-task-optional' => "Zeijsh de 'nit esu nüüdijje' Täxte un Nohreschte",
@@ -11102,9 +11103,9 @@ $messages['ksh'] = array(
 	'translate-task-problematic' => 'Zeijsh de probleemattesche Täxte un Nohreeschte',
 	'translate-task-review' => 'Zeijsh de jeännderte Täxte un Nohreeschte zom Prööfe',
 	'translate-task-reviewall' => 'Zeijsh de övversaz Täxte un Nohreeschte zom Prööfe',
-	'translate-task-export' => 'Donn de Övversäzzonge Äxpochteere',
-	'translate-task-export-to-file' => 'Donn de Övversäzzonge en_en Datteij Äxpochteere',
-	'translate-task-export-as-po' => 'Donn de Övversäzzonge en et Jettäx Fommaat en_en Dattei Äxpochteere',
+	'translate-task-export' => 'Donn de Övversäzzonge äxpotteere',
+	'translate-task-export-to-file' => 'Donn de Övversäzzonge en_en Datteij äxpotteere',
+	'translate-task-export-as-po' => 'Donn de Övversäzzonge <!--en et Jettäx Fommaat en_en Dattei--> för et offlain-Övversäze äxpotteere',
 	'translate-task-export-to-xliff' => 'Donn de Översetzunge em Xliff Fomaat en_en Datteij äxpochteere',
 	'translate-page-no-such-language' => 'De aanjejoove {{int:translate-page-language}} känne me nit.',
 	'translate-page-no-such-task' => 'De aanjejoove {{int:translate-page-task}} känne me nit.',
@@ -11146,6 +11147,8 @@ En Fättschreff wäde de Jroppe aanjezeish, di noch Ongerjroppe han.',
 	'translate-edit-tmmatch' => '$1% zopaß',
 	'translate-use-suggestion' => 'Donn heh dä Vörschlaach en et Övversäzongsfeld endraare. Wat alt dren es, verschwindt.',
 	'translate-edit-tab-list' => 'Leß',
+	'translate-edit-show-def' => 'Ojinaal-Täx udder -Nohreesch',
+	'translate-edit-show-trans' => 'Övversäzong',
 	'translate-magic-pagename' => 'MediaWiki sing Extras övversäze',
 	'translate-magic-help' => 'Hee kanns_De Zweijtname fö Söndersigge, Zauberwööter, un de Appachtemangname översäze.
 
@@ -11237,12 +11240,13 @@ Wat De jezeich kreß, wann De nix enndrähß, deiht vun dä Shprooch afhange, en
 	'translations-summary' => 'Jif ene Name för en Nohresch enn, öm all de Övversätzunge aanzezeije.',
 	'translate-translations-no-message' => 'Mer han kein Nohresch „$1“ för ze övversetze',
 	'translate-translations-none' => 'Mer han kei Övversätzunge för „$1“',
+	'translate-translations-count' => '{{PLURAL:$1|Ein Övversäzong|$1 Övversäzonge|Kein Övversäzong}} jefonge.',
 	'translate-translations-fieldset-title' => 'Nohrich',
 	'translate-translations-messagename' => 'Tittel:',
 	'translate-translations-project' => 'Projäk:',
 	'translate-translations-including-no-param' => 'Jif ene jöltijje Siggetittel för die Nohrich als Parrammeeter för di Ongersigg aan',
 	'translate-translations-history-short' => 'V',
-	'languagestats' => 'Statistike för en Sprooch',
+	'languagestats' => 'Statistike för di Sprooch',
 	'languagestats-summary' => 'Di Sigg hee zeich Statistike vun de Övversetzung för all Nohrechtejroppe fun ener Shprooch.',
 	'languagestats-stats-for' => 'Övversäzongsstatistike för $1 ($2)',
 	'languagestats-recenttranslations' => 'Neuste Övversäzonge',
@@ -11267,6 +11271,16 @@ de Söndersigg [[Special:Translate|{{int:translate}}]] norrens ze prööfe.',
  # Aanzeije op Special:LanguageStats enzeschrängke. Nohreschtejroppe, woh et
  # de Nommere nit jit, donn nix.',
 	'supportedlanguages' => 'Ongerstöz Shprooche',
+	'supportedlanguages-summary' => 'He sin alle Shprooche opjeleß, di mer {{GRAMMAR:em|{{SITENAME}}}} ongershtöze.
+Dobei shtonn de Övversäzer, di aan dä Shprooch aam ärbeide sin.
+Wann de mieh övver en Shprooch weße wells, dann jangk op di Pooz-Sigg vun dä Shprooch.
+Wann de ävver op enem Övversetzer singem Name klcks, küss_De op däm sing Metmaacher-Sigg.
+
+Wann en Shprooch heh nit bei es, dann kanns De op dä Sigg övver [[Translating:Process|neu Shprooche]] lässe, wi mer en neu Sproocheprojäk opsäz.
+
+Wann De en en Sprooch aam övversäze bes, un Dinge Name es nit als Övversäzer opjeföhrt, dann donn op dä ier [[:Category:Languages|Pooz-Sigg]] Dinge Metmaacher-Name noch enndraare.
+En dä Leß met Lengks es och eine op di Pooz-Sigg för di Shprooch, di De ein Dinge Ennstellunge ußjewählt häs.',
+	'supportedlanguages-translators' => '{{PLURAL:$2|Eine Övversäzer:|$2 Övversäzer:|Keine Övversäzer}} $1',
 	'supportedlanguages-noportal-title' => 'Mer han kei Appachtemang „Pooz:“ ennjerescht',
 	'supportedlanguages-noportal' => 'En heh däm Wiki es <code lang="en">$NS_PORTAL</code> nit bikannt.
 Dröm deiht heh di Sigg_et nit.

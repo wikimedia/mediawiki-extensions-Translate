@@ -1461,7 +1461,7 @@ $messages['he'] = array(
 	'translate-fs-settings-title' => 'הגדרת ההעדפות שלך',
 	'translate-fs-userpage-title' => 'ליצור את דף המשתמש שלך',
 	'translate-fs-permissions-title' => 'לבקש הרשאות מתרגם',
-	'translate-fs-target-title' => 'התחלה בתרגום!',
+	'translate-fs-target-title' => 'להתחיל לתרגם!',
 	'translate-fs-email-title' => 'לאשר את כתובת הדוא״ל',
 	'translate-fs-intro' => "ברוכים הבאים לאשף הצעדים הראשונים של אתר {{SITENAME}}.
 האשף ידריך אתכם בתהליך שיהפוך אתכם לחלק מצוות המתרגמים.
@@ -2037,6 +2037,15 @@ $3登録$4',
  */
 $messages['km'] = array(
 	'firststeps' => 'ជំហានដំបូង',
+);
+
+/** Colognian (Ripoarisch)
+ * @author Purodha
+ */
+$messages['ksh'] = array(
+	'firststeps' => 'Eetste Schredde',
+	'firststeps-desc' => '[[Special:FirstSteps|Extra Sigg]] för Metmaacher op Wikis met däm Zohsazprojramm <i lang="en">Translate</i> aan et werke ze krijje.',
+	'translate-fs-pagetitle-done' => ' - jedonn!',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
