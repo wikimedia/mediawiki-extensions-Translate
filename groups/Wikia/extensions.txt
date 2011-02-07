@@ -1,3 +1,9 @@
+#a    createnewwiki/createnewwiki.i18n.php
+#a    specialuserdata/specialuserdata.i18n.php
+#a    ScavengerHunt
+#u    sponsorshipdashboard/sponsorshipdashboard.i18n.php
+#u    wikialabs/wikialabs.i18n.php
+
 Achievements II
 file = AchievementsII/i18n/AchievementsII.i18n.php
 
@@ -134,7 +140,7 @@ Our 404 Handler
 file = Our404Handler/SpecialOur404Handler.i18n.php
 
 Page Layout Builder
-ignored = plb-special-form-none-value
+ignored = plb-special-form-none-value, plb-editor-info
 
 Paginator
 file = Paginator/i18n/Paginator.i18n.php
