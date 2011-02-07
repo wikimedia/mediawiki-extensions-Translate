@@ -843,6 +843,8 @@ magicfile = OpenGraphMeta/OpenGraphMeta.magic.php
 
 Open Search Xml
 
+OpenStackManager
+
 Other Sites
 
 Package Force
