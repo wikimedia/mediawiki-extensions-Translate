@@ -3170,6 +3170,7 @@ Don op jede Fall em [[Special:Log/pagetranslation|{{int:pt-log-name}}]] noh Fäh
  * @author George Animal
  */
 $messages['ku-latn'] = array(
+	'pt-movepage-list-other' => 'Binrûpelên din',
 	'pt-movepage-current' => 'Navê niha:',
 	'pt-movepage-new' => 'Navê nû:',
 	'pt-movepage-reason' => 'Sedem:',

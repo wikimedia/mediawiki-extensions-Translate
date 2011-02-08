@@ -411,6 +411,7 @@ $messages['qqq'] = array(
 	'translate-edit-warnings' => 'Title of the warnings box when editing a message.
 This box list the problems found in the translation.',
 	'translate-use-suggestion' => 'Used as a tooltip for the "down arrow" to insert translation suggestions in the translation edit page.',
+	'translate-magic-pagename' => '"Extended" can as well be understood as "Extra" or "Special" or "Advanced". It refers to the translations of pieces of text such as names of namespaces or special pages, which are not part of normal message or wiki page translation.',
 	'translate-magic-help' => 'Description of [[Special:AdvancedTranslate]].',
 	'translate-magic-submit' => '{{Identical|Fetch}}',
 	'translate-magic-cm-export' => '{{Identical|Export}}',
@@ -11361,10 +11362,28 @@ $1',
  */
 $messages['ku-latn'] = array(
 	'translate-history' => 'dîrok',
+	'translate-task-view' => 'Hemû mesajan bibîne ji',
+	'translate-page-task' => 'Ez dixwazim',
 	'translate-page-group' => 'Grûp',
 	'translate-page-language' => 'Ziman',
+	'translate-page-limit' => 'Sînor',
+	'translate-next' => 'Rûpela din',
+	'translate-prev' => 'Rûpela berî',
+	'translate-page-description-legend' => 'Agahiyên der barê grûpê de',
+	'translate-page-edit' => 'biguherîne',
+	'translate-ext-url' => '<hr />Malper: $1',
 	'translate-edit-show-trans' => 'Wergerr',
+	'translate-magic-cm-save' => 'Qeyd bike',
 	'translate-statsf-scale-months' => 'Mehan',
+	'translate-statsf-count-registrations' => 'Bikarhênerên nû',
+	'translate-translations-fieldset-title' => 'Mesaj',
+	'translate-translations-messagename' => 'Nav:',
+	'translate-translations-project' => 'Proje:',
+	'languagestats-recenttranslations' => 'wergerrên niha',
+	'translate-language-code' => 'Koda ziman',
+	'translate-language-code-field-name' => 'Koda ziman:',
+	'translate-gs-continent' => 'Parzemîn',
+	'translate-gs-total' => 'Hemû',
 );
 
 /** Latin (Latina)

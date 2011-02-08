@@ -2046,6 +2046,15 @@ $messages['ksh'] = array(
 	'firststeps' => 'Eetste Schredde',
 	'firststeps-desc' => '[[Special:FirstSteps|Extra Sigg]] för Metmaacher op Wikis met däm Zohsazprojramm <i lang="en">Translate</i> aan et werke ze krijje.',
 	'translate-fs-pagetitle-done' => ' - jedonn!',
+	'translate-fs-pagetitle' => 'En de Jäng kumme - $1',
+);
+
+/** Kurdish (Latin) (Kurdî (Latin))
+ * @author George Animal
+ */
+$messages['ku-latn'] = array(
+	'firststeps' => 'Gavên yekem',
+	'translate-fs-target-title' => 'Bi wergerrê dest pê bike!',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
