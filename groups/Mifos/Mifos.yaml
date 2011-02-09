@@ -50,6 +50,43 @@ TAGS:
 
 ---
 BASIC:
+  id: out-mifos-apt
+  label: Mifos - Accepted Payment Type
+  class: FileBasedMessageGroup
+
+MANGLER:
+  class: StringMatcher
+  prefix: apt-
+  patterns:
+    - "*"
+
+FILES:
+  class: JavaFFS
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/AcceptedPaymentTypeUIResources_%CODE%.properties 
+
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/AcceptedPaymentTypeUIResources.properties 
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/AcceptedPaymentTypeUIResources_%CODE%.properties 
+
+---
+BASIC:
+  id: out-mifos-cmb
+  label: Mifos - Column Mapping Bundle
+  class: FileBasedMessageGroup
+
+MANGLER:
+  class: StringMatcher
+  prefix: cmb-
+  patterns:
+    - "*"
+
+FILES:
+  class: JavaFFS
+  sourcePattern: %GROUPROOT%/mifos/appdomain/src/main/resources/org/mifos/config/localizedResources/ColumnMappingBundle_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/appdomain/src/main/resources/org/mifos/config/localizedResources/ColumnMappingBundle.properties
+  targetPattern: mifos/appdomain/src/main/resources/org/mifos/config/localizedResources/ColumnMappingBundle_%CODE%.properties
+
+---
+BASIC:
   id: out-mifos-questionnaire
   label: Mifos - Questionnaire
   class: FileBasedMessageGroup
@@ -70,3 +107,4 @@ TAGS:
   ignored:
     - questionnaire-questionnaire.create.question.*
     - questionnaire-questionnaire.create.question.group.*
+
