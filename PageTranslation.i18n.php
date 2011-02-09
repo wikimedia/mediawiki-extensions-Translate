@@ -3581,10 +3581,10 @@ Sectietekst: <pre>$1</pre>',
 	'pt-movepage-action-check' => 'Controleren of hernoemen mogelijk is',
 	'pt-movepage-action-perform' => 'Hernoemen',
 	'pt-movepage-action-other' => 'Doel wijzigen',
-	'pt-movepage-intro' => "Via dezespeciale pagina kunt u een te vertalen pagina's hernoemen.
+	'pt-movepage-intro' => "Via deze speciale pagina kunt u een te vertalen pagina's hernoemen.
 Dit wordt niet direct gedaan, omdat het mogelijk is dat heel veel pagina's hernoemd moeten worden.
 De jobqueue hernoemt uiteindelijke de pagina.
-Terwijl de pagina's worden hernoemd, is het niet mogelijk handeling uit te voeren op betrokken pagina's.
+Terwijl de pagina's worden hernoemd, is het niet mogelijk handelingen uit te voeren op betrokken pagina's.
 In het logboek paginavertaling worden fouten opgeslagen die op een later moment handmatig hersteld kunnen worden.",
 	'pt-movepage-logreason' => 'Onderdeel van te vertalen pagina $1.',
 	'pt-movepage-started' => 'De basispagina is nu hernoemd.

@@ -64,6 +64,39 @@ $messages['en'] = array(
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] delivers an offline, text-only version of Wikipedia on a mobile device.',
 );
 
+/** Message documentation (Message documentation)
+ * @author Purodha
+ */
+$messages['qqq'] = array(
+	'translate-group-desc-europeana' => 'Do not translate the link target <code>Translating:Europeana</code>.',
+	'bw-desc-freecol' => 'Do not translate the link target <code>Translating:FreeCol</code>.',
+	'bw-desc-fudforum' => 'Do not translate the link target <code>Translating:FUDforum</code>.',
+	'bw-desc-mantisbt' => 'Do not translate the link target <code>Translating:MantisBT</code>.',
+	'translate-group-desc-mantisbt-plugin-core' => 'Do not translate the link target <code>Translating:MantisBT</code>.',
+	'translate-group-desc-mediawiki-core-115' => 'Do not translate the link target <code>Translating:MediaWiki</code>.',
+	'translate-group-desc-mediawiki-core-116' => 'Do not translate the link target <code>Translating:MediaWiki</code>.',
+	'translate-group-desc-mediawiki-core-117' => 'Do not translate the link target <code>Translating:MediaWiki</code>.',
+	'translate-group-desc-mifos' => 'Do not translate the link target <code>Translating:Mifos</code>.',
+	'bw-desc-mwlibrl' => 'Do not translate the link target <code>Translating:Mwlib.rl</code>.',
+	'bw-desc-nocc' => 'Do not translate the link target <code>Translating:NOCC</code>.',
+	'translate-group-desc-okawix' => 'Do not translate the link target <code>Translating:Okawix</code>.',
+	'bw-desc-openimages' => 'Do not translate the link target <code>Translating:Open Images</code>.',
+	'translate-group-desc-openimages-verifyemailtemplate' => 'Do not translate the link target <code>Translating:Open Images</code>.',
+	'translate-group-desc-openimages-all' => 'Do not translate the link target <code>Translating:Open Images</code>.',
+	'bw-desc-openlayers' => 'Do not translate the link target <code>Translating:OpenLayers</code>.',
+	'bw-desc-openstreetmap' => 'Do not translate the link target <code>Translating:OpenStreetMap</code>.',
+	'bw-desc-osm-site' => 'Do not translate the link target <code>Translating:OpenStreetMap</code>.',
+	'bw-desc-osm-potlatch' => 'Do not translate the link target <code>Translating:OpenStreetMap</code>.',
+	'translate-group-desc-pywikipedia' => 'Do not translate the link target <code>Translating:Pywikipedia</code>.',
+	'bw-desc-shapado' => 'Do not translate the link target <code>Translating:Shapado</code>.',
+	'bw-desc-statusnet' => 'Do not translate the link target <code>Translating:StatusNet</code>.',
+	'translate-group-desc-statusnet-plugin' => 'Do not translate the link target <code>Translating:StatusNet</code>.',
+	'bw-desc-voctrain' => 'Do not translate the link target <code>Translating:Voctrain</code>.',
+	'bw-desc-wikiblame' => 'Do not translate the link target <code>Translating:WikiBlame</code>.',
+	'bw-desc-wikimediamobile' => 'Do not translate the link target <code>Translating:Wikimedia_mobile</code>.',
+	'bw-desc-wikireader' => 'Do not translate the link target <code>Translating:WikiReader</code>.',
+);
+
 /** Afrikaans (Afrikaans)
  * @author Naudefj
  */
@@ -1300,6 +1333,8 @@ $messages['ko'] = array(
  * @author Purodha
  */
 $messages['ksh'] = array(
+	'translategroupdescriptions-desc' => 'Enfomazjuhne övver de Jroppe vun Täxte un Nohreeschte, di vun däm Zohsazprojramm <i lang="en">[http://mediawiki.org/wiki/Extension:Translate Translate]</i> för MediaWiki ongershtöz wääde.',
+	'translate-group-desc-nodesc' => 'Mer han kein Enfommazjuhne övver heh di Jropp vun Nohreeschte un Täxte',
 	'translate-group-desc-mediawikicore' => 'En dä Jropp hee sin all de Täxte un Nohreeschte uß däm MediaWiki singe aktoälle <i lang="de">alpha</i>-Version ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'En dä Jropp hee sin dem MediaWiki sing [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 am mihßte jebruch Täxte un Nohreeschte]',
 	'translate-group-desc-mediawikiextensions' => 'Hee di Sammeljropp hät de janze Täxte un Nohreschte vun alle Zohsatzprojramme vum MediaWiki',
@@ -1310,23 +1345,39 @@ $messages['ksh'] = array(
 	'translate-group-desc-translate' => 'Hee di Sammeljropp hät de janze Täxte un Nohreschte vun alle Aandeile vum MediaWiki singem Pöngel Zohsatzprojramme mem Name <code lang="en">[http://www.mediawiki.org/wiki/Extension:Translate Translate]</code>',
 	'translate-group-desc-wikiaextensions' => 'Hee di Sammeljropp hät de Täxte un Nohreschte vun alle Zohsatzprojramme vum MediaWiki, di mer hee ongershtöze donn, un di bei [http://www.wikia.com Wikia] jebruch wäde',
 	'translate-group-desc-wikimediaextensions' => 'Hee di Sammeljropp hät de Täxte un Nohreschte vun alle Zohsatzprojramme vum MediaWiki, di mer hee ongershtöze donn, un di en en Wikis vun de  <i lang="en">[http://wikimedia.org/ Wikimedia Foundation]</i> jebruch wäde',
+	'translate-group-desc-wikimediaextensions-main' => 'En heh dä Sammeljropp sin all de Täxte un Nohreeschte us dä Zohsazprojramme vum MediaWiki, di et [http://meta.wikimedia.org/wiki/Language_committee Kumitte för de Shprooche] vun de Wikimedia Shteftong övversaz han well.',
 	'translate-group-desc-uniwiki' => 'Hee di Sammeljropp hät de Täxte un Nohreschte vun alle Zohsatzprojramme vum MediaWiki, di mem <i lang="en">[http://unicefinnovation.org/wiki.php Uniwiki]</i> ze donn han',
 	'translate-group-desc-ui' => 'Hee di Sammeljropp hät all de Texnohreeschte uß de divärse Zohsazprojramme vun dä [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative „<i lang="en">Wikipedia Usability Initiative</i>“].',
+	'translate-group-desc-translatablepages' => 'All övversäzbaa Sigge',
+	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] määd et müjjelesch, dat Lück dorsch de dijitalliseete Kultuur vun Europpa jonn künne.',
 	'bw-desc-freecol' => 'Iih dat De <i lang="en">FreeCol</i> en Ding Shprooch övversäz, donn ens di Sigg „<i lang="en">[[Translating:FreeCol]]</i>“ lässe. <i lang="en">FreeCol</i> shteiht unger dä GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], e Forumsprojramm för et Web, jeschrevve en dä Projrammiershprooch <i lang="en">PHP</i>.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] es e frei Süßteem för övver et Web Faählere un Fählermeldunge ze Verwallde. Wann Üsch jät opfällt, doht et op di Sigg „[[Support|{{int:bw-mainpage-support-title}}]]“ schriive.',
+	'translate-group-desc-mantisbt-plugin-core' => 'Ene Houp-Zohsaz för [[Translating:MantisBT|MantisBT]]',
+	'translate-group-desc-mediawiki-core-115' => 'Täxde un Nohreeschde för de stabile Version 1.15 vum [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawiki-core-116' => 'Täxde un Nohreeschde för de stabile Version 1.16 vum [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawiki-core-117' => 'Täxde un Nohreeschde för de stabile Version 1.17 vum [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] es e Süßteem för Enfomzjuhne övver klein Jeldbedrääsch ze verwallde.',
 	'bw-desc-mwlibrl' => '\'\'\'<i lang="en">mwlib.rl</i>\'\'\' es en Versammlong udder Biplijoteek vun Projramme en dä Projrammierschprooch „<i lang="en">Python</i>“, öm Dateie em Fomaat PDF uß Sigge en enem MediaWiki Wiki ze maache, di dovöör vun dä Projramme uß dä Sammlong „<i lang="en">mwlib</i>“ opjeärbeidt woode wohre.
 
 Jangk op di Sigge „<i lang="en">[[mw:Extension:PDF_Writer]]</i>“ un „<i lang="en">http://code.pediapress.com/wiki/wiki/mwlibrl</i>“, wann De doh drövver mieh weße wells.',
 	'bw-desc-nocc' => '<i lang="en">[http://nocc.sourceforge.net NOCC]</i> es e Projramm för övver et Web <i lang="en">e-mail</i> ze krijje, ze schriive, un ze verwallde. Wann Üsch jät opfällt, un wann_er Froore hat, doht dat op dä Sigg „[[Support|{{int:bw-mainpage-support-title}}]]“ opschriive.',
+	'translate-group-desc-okawix' => 'Met [[Translating:Okawix|Okawix]] kam_mer offlain en de Wikipedia lässe.',
+	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]]</i> es ene Werkplaz för offe Belder.',
+	'translate-group-desc-openimages-verifyemailtemplate' => 'Heh di Täxde un Nohreeschde sin Deil vum Fomulaa för de Addräß för de <i lang="en">e-mail</i> em Projäk <i lang="en">[[Translating:Open Images|Open Images]]</i> ze pröfe.',
+	'translate-group-desc-openimages-all' => 'Heh di Täxde un Nohreeschde sin Deil vum Projäk <i lang="en">[[Translating:Open Images|Open Images]]</i>.',
 	'bw-desc-openlayers' => '<i lang="en">OpenLayers</i> es en <i lang="en">open-source</i>-Süßteem för dünnamesch Landkaate ußzejävve. Wann Üsch jät opfällt, doht et op de Sigg „[[Support|{{int:bw-mainpage-support-title}}]]“ schriive.',
+	'bw-desc-openstreetmap' => 'En dä Jropp sen Täxde un Nohreeschte em Zosammehang, di met <i lang="en">[[Translating:OpenStreetMap|OpenStreetMap]]</i> shtonn.',
 	'bw-desc-osm-site' => 'Heh di Jropp hät de Nohreeschte uß dä Bovverfläsch vun <i lang="en">[[Translating:Open Street Map|Open Street Map]]</i>.',
 	'bw-desc-osm-potlatch' => 'En heh dä Jropp sin de Täxschtöckscher un Nohreeschte vun dä Bovverfläch för <i lang="en">[[Translating:OpenStreetMap|Potlatch]]</i>.
 
 Opjepaß:
 * Di Bovverfläch hät Probleeme met lange Täxschtöcker, dröm doht versöhke, de Övversäzunge esu koot ze hallde, wi et Ojjinaal (doh drövver jidd-et ene [http://trac.openstreetmap.org/ticket/2067 unjedonn Fählerbereesch]).
 * Jooht op [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] öm <i lang="en">Potlatch</i> ußzeprobeere. doh kam_mer en jeedem Berett alles maache, wat mer löstich es.',
+	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] es n Versammlong vun Projramme un Wärkzüsch för en de Wikipedija un ander WikiMedia Wikis ze ändere.',
+	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]] es e Projramm för Froore un Antwoote övver et Internet.',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] es ene ẞööver för et Mini-Blogge met offe Quälltäxt.',
+	'translate-group-desc-statusnet-plugin' => 'Heh di Täxte un Nohreeschte sin Deil vun enem Zohsazprojramm för [[Translating:StatusNet|StatusNet]]',
 	'bw-desc-voctrain' => 'Ene Trääner för Vokabele, dä op [http://omegawiki.org OmegaWiki] bout. Dä bruch ene Pöngel „Käätshe“, öm Wööter vun öhnßwelsh Shprooche met öhnßwelsh Shprooche us em OmegaWiki ze liehre. Shteiht unger de GPL 2.0 udder shpääder. Wood för de Univäsitäht vun Bammbersh jemat, un shtammp vum [[User:Kim Bruning|Kim Bruning]].',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] kann flöck de Schriiver vun enem Stöck vun ener Sigg en enem Wikimedia Wiki fenge.',
 	'bw-desc-wikimediamobile' => 'De Wikipedija ier bewääschlijje Version fengk mer unger http://m.wikipedia.org, un se well de Wikipedija op de Händi-Tellefoone rund öm der Jlobus brenge.',
