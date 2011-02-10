@@ -3428,6 +3428,7 @@ $messages['mk'] = array(
  * @author Praveenp
  */
 $messages['ml'] = array(
+	'pagetranslation' => 'താളിന്റെ പരിഭാഷ',
 	'tpt-diff-old' => 'പഴയ എഴുത്ത്',
 	'tpt-diff-new' => 'പുതിയ എഴുത്ത്',
 	'tpt-badtitle' => 'താളിനു നൽകിയ പേര് ($1) സാധുവായ തലക്കെട്ട് അല്ല',

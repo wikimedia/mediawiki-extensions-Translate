@@ -2253,6 +2253,8 @@ $messages['ml'] = array(
 	'translate-fs-permissions-title' => 'തർജ്ജമയ്ക്കുള്ള അനുമതി ആവശ്യപ്പെടുക',
 	'translate-fs-target-title' => 'പരിഭാഷപ്പെടുത്തൽ തുടങ്ങുക!',
 	'translate-fs-email-title' => 'ഇമെയിൽ വിലാസം സ്ഥിരീകരിക്കുക',
+	'translate-fs-settings-skip' => 'മതിയായേ.
+എന്നെ ഒന്നനുവദിക്കൂ.',
 	'translate-fs-userpage-submit' => 'എന്റെ ഉപയോക്തൃ താൾ സൃഷ്ടിക്കുക',
 	'translate-fs-userpage-done' => 'കൊള്ളാം! താങ്കൾക്കിപ്പോൾ ഒരു ഉപയോക്തൃതാൾ ഉണ്ട്.',
 );
