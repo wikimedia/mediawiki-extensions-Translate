@@ -764,7 +764,8 @@ aliasfile = MultiUpload/MultiUpload.alias.php
 descmsg = multiupload-desc
 
 MwEmbed Support
-file = MwEmbedSupport/MwEmbed.i18n.php 
+descmsg = mwembed-desc
+file = MwEmbedSupport/MwEmbedSupport.i18n.php 
 
 MwEmbed Support - MwEmbed Support
 id = ext-mwembedsupport-mwembedsupport
@@ -1502,12 +1503,12 @@ Timed Media Handler
 descmsg = timedmedia-desc
 
 Timed Media Handler - Timed Text
-file = TimedMediaHandler/TimedText/TimedText.i18n.php
+file = TimedMediaHandler/resources/TimedText/TimedText.i18n.php
 descmsg = timedmedia-desc
 optional = mwe-timedtext-key-language
 
 Timed Media Handler - Embed Player
-file = TimedMediaHandler/EmbedPlayer/EmbedPlayer.i18n.php
+file = TimedMediaHandler/resources/EmbedPlayer/EmbedPlayer.i18n.php
 descmsg = timedmedia-desc
 optional = mwe-embedplayer-ogg-player-cortado
 
