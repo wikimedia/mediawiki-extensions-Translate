@@ -1500,6 +1500,9 @@ descmsg = tidy-desc
 Timed Media Handler
 # Siebrand 201005-13: conflicting magic words with Ogghandler
 #magicfile = TimedMediaHandler/TimedMediaHandler.i18n.magic.php
+optional = timedmedia-derivative-200_200kbs_ogv, timedmedia-derivative-360_400kbs.ogv
+optional = timedmedia-derivative-480_600kbs.ogv, timedmedia-derivative-720_VBR.ogv
+optional = timedmedia-derivative-480_600kbs.webm, timedmedia-derivative-720_VBR.webm
 descmsg = timedmedia-desc
 
 Timed Media Handler - Timed Text
