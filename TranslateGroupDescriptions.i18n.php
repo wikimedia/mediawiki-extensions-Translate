@@ -843,6 +843,7 @@ $messages['gl'] = array(
 	'translate-group-desc-uniwiki' => 'Grupo de mensaxes que contén todas as mensaxes das extensións relacionadas con [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Grupo de mensaxes meta que contén todas as mensaxes das extensións relacionadas coa [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Iniciativa de usabilidade da Wikipedia]',
 	'translate-group-desc-translatablepages' => 'Todas as páxinas que se poden traducir',
+	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] permite á xente explorar os recursos culturais dixitais de Europa',
 	'bw-desc-freecol' => 'Antes de traducir o xogo FreeCol na súa lingua, por favor, bótelle un ollo a [[Translating:FreeCol]]. Freecol está baixo os termos da licenza GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], un foro web escrito en PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] é un sistema web de xestión de erros. Por favor, informe de calquera problema en [[Support]].',
@@ -1491,8 +1492,7 @@ $messages['mk'] = array(
 	'bw-desc-shapado' => '↓ Група пораки за слободниот и отворен програм за прашања и одговори [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] е отворен опслужувач за микроблогирање',
 	'translate-group-desc-statusnet-plugin' => 'Овие пораки се дел од приклучокот за [[Translating:StatusNet|StatusNet]]',
-	'bw-desc-voctrain' => 'Учител на вокабулар од [http://omegawiki.org ОмегаВики]. Користи систем на флеш-картички за учење на вокабулар од друг јазик и негова примена на било кој друг јазик поддржан од Омегавики.
-Изработено за Бамбершкиот универзитет. Лиценцирано со GPL 2.0 или подоцнежна верзија. Развивач: [[User:Kim Bruning|Kim Bruning]].',
+	'bw-desc-voctrain' => '[[Translating:Voctrain|Voctrain]] е програм за учење на зборови од разни јазици врз основа на ОмегаВики',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] за многу кусо време може да ги пронајде авторите на некоја страница на едно вики.',
 	'bw-desc-wikimediamobile' => 'Википедија мобилен се наоѓа на http://m.wikipedia.org и има за цел да ја доведе Википедија на поддржаните „smartphone“ мобилни телефони ширум светот.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|ВикиЧитач]] (WikiReader) е проект за создавање на текстуална верзија на Википедија наменета за мобилен уред.',
