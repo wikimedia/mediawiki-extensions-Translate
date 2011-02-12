@@ -283,7 +283,7 @@ class GettextFFS extends SimpleFFS {
 	public static function parseHeaderTags( $headers ) {
 		$tags = array();
 		foreach ( explode( "\n", $headers ) as $line ) {
-			if ( strpos( $header, ':' ) === false ) {
+			if ( strpos( $line, ':' ) === false ) {
 				error_log( __METHOD__ . ": $line" );
 			}
 			list( $key, $value ) = explode( ': ', $line, 2 );
