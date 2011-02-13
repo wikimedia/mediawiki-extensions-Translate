@@ -3170,6 +3170,10 @@ Don op jede Fall em [[Special:Log/pagetranslation|{{int:pt-log-name}}]] noh Fäh
  * @author George Animal
  */
 $messages['ku-latn'] = array(
+	'tpt-diff-new' => 'Nivîsa nû',
+	'tpt-translate-this' => 've rûpelê wergerrîne',
+	'translate-tag-translate-link-desc' => 'Vê rûpelê werrgerrîne',
+	'tpt-download-page' => 'Rûpelelên bi wergerran eksport bike',
 	'pt-movepage-list-translation' => 'Rûpelên wergerrê',
 	'pt-movepage-list-other' => 'Binrûpelên din',
 	'pt-movepage-current' => 'Navê niha:',
@@ -4756,6 +4760,7 @@ Prosimo, preverite dnevnik strani prevodov za napake in sporočila o dokončanju
 );
 
 /** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
+ * @author Rancher
  * @author Михајло Анђелковић
  */
 $messages['sr-ec'] = array(
@@ -4763,6 +4768,7 @@ $messages['sr-ec'] = array(
 	'tpt-diff-new' => 'Следећи текст',
 	'tpt-submit' => 'Означи ову верзију за превод',
 	'translate-tag-translate-link-desc' => 'Преведите ову страну',
+	'tpt-translation-intro' => 'Ова страница је <span class="plainlinks">[$1 преведено издање]</span> странице [[$2]]. Превод је $3% завршен.',
 );
 
 /** Serbian Latin ekavian (‪Srpski (latinica)‬)

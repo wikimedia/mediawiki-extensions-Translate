@@ -411,6 +411,17 @@ M'emaoc'h enskrivet dija, hoc'h eus da $1gevreañ$2 kentoc'h.
 Ur wezh enskrivet, distroit d'ar bajenn-mañ.
 
 $3En em enskrivañ$4",
+	'translate-fs-settings-text' => "Dleout a rafec'h mont da welet ho penndibaboù ha
+da nebeutañ lakaat da yezh an etrefas ar yezh emaoc'h o vont da reiñ enni.
+
+Lakaet e vez yezh hoc'h etrefas da yezh treiñ dre ziouer.
+Aes eo disoñjal lakaat ar yezh a zere, setu eo kenkoulz en ober diouzhtu.
+
+E-keit ha m'emaoc'h ganti e c'hallit ivez goulenn digant ar meziant diskouez an troidigezhioù e yezhoù all anavezet ganeoc'h.
+Emañ an arventenn-se en ivinell \"{{int:prefs-editing}}\".
+Taolit ur sell ouzh an arventennoù all ma karit ivez.
+
+Kit d'ho [[Special:Preferences|pajenn penndibaboù]] diouzhtu ha distroit d'ar bajenn-mañ goude-se.",
 	'translate-fs-settings-skip' => "Echuet eo ganin.
 Lezit ac'hanon da genderc'hel.",
 	'translate-fs-userpage-submit' => 'Krouiñ ma fajenn implijer',
@@ -2047,6 +2058,53 @@ $messages['ksh'] = array(
 	'firststeps-desc' => '[[Special:FirstSteps|Extra Sigg]] för Metmaacher op Wikis met däm Zohsazprojramm <i lang="en">Translate</i> aan et werke ze krijje.',
 	'translate-fs-pagetitle-done' => ' - jedonn!',
 	'translate-fs-pagetitle' => 'En de Jäng kumme - $1',
+	'translate-fs-signup-title' => 'Aanmälde',
+	'translate-fs-settings-title' => 'Enstellunge maache',
+	'translate-fs-userpage-title' => 'Metmaachersigg aanlääje',
+	'translate-fs-permissions-title' => 'Noh dem Rääsch als {{int:Group-translator-member}} froore',
+	'translate-fs-target-title' => 'Loßlääje mem Övversäze!',
+	'translate-fs-email-title' => 'De <i lang="en">e-mail</i> Adress bestätije',
+	'translate-fs-intro' => 'Wellkumme bei {{GRAMMAR:Genitiv ier|{{SITENAME}}}} Hölp bei de eetsde Schredde för neu Metmaacher.
+Heh kreß De Schrett för Schrett jesaat, wi De ene Övversäzer weeß.
+Aam Engk kanns De de Täxte un Nohreeschte uß alle Projäkte övversäze, di {{GRAMMAR:em Dativ|{{SITENAME}}}} ongerstoz wääde.',
+	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount.png|frame]]
+
+Dä eetsde Schredd es et Aanmelde.
+
+För Ding Övversäzonge weed Dinge Name als Metmaacher hehem
+Wiki als Urhävver un Verantwootlescher jenannt.
+Dat Beld heh bei zeisch, wi mer dat Fommulaa ußfölle moß.
+
+Wann De alld aanjemäldt bes, don $1enlogge$2 un
+wann de ennjelogg bes, küß De wider op heh di Sigg.
+
+Söns $3don Desch anmällde$4.',
+	'translate-fs-settings-text' => 'Jäz sullts De op di Sigg met Dinge Enstellunge jon un doh
+winneschsdens ens de Schprooch för de Bedeenbofferfläsh
+op di Shprooch säze, woh De noh övversäze wells.
+
+Di Shprooch, di doh enjeshtalld es, weed als Ding Standatt-Shprooch
+för Ding Övversäzonge jenumme.
+
+Wann De alld dobei bes, kanns De doh och jlish enstelle, dat De
+Övversäzonge en andere Shprooche aanjezeish kriß, di De kanns.
+Di Enstellung fengks De onger „{{int:prefs-editing}}“ onge.
+Wann De löstich bes, kanns De nattörlish och noch ander
+Enstelluinge ußprobeere.
+
+Jangk jäz op di [[Special:Preferences|Sigg met Dinge Enstellunge]]
+un wann De doh fäädesch bes, küß De wider retuur noh heh dä Sigg.',
+	'translate-fs-settings-skip' => 'Ben fäädesch.
+Wigger maache!',
+	'translate-fs-userpage-submit' => 'Metmaachersigg aanlääje',
+	'translate-fs-userpage-done' => 'Joot jemaat! Jäz häs De en Metmaachersigg.',
+	'translate-fs-email-text' => 'Bes esu joot un jiff Ding Adräß för de <i lang="en">e-mail</i> en [[Special:Preferences|Dinge Enstellunge]]
+aan, un dun se beschtäätejje. Doför es ene Lengk udder en <i lang="en">URL</i> en dä <i lang="en">e-mail</i>
+an Desh dren.
+
+Dat määd et müjjelesch, dat ander Metmaacher Dir en <i lang="en">e-mail</i> schecke künne.
+Do kriß och Neueschkeite vum Wiki zohjescheck, esu ätwa eijmohl em Mohnd.
+Wann De dat nit han wells, kanns De et onger „{{int:prefs-personal}}“ en [[Special:Preferences|Dinge Enstellunge]] afschallde.',
 );
 
 /** Kurdish (Latin) (Kurdî (Latin))
@@ -2054,6 +2112,7 @@ $messages['ksh'] = array(
  */
 $messages['ku-latn'] = array(
 	'firststeps' => 'Gavên yekem',
+	'translate-fs-pagetitle-done' => '-çêbû!',
 	'translate-fs-target-title' => 'Bi wergerrê dest pê bike!',
 );
 
