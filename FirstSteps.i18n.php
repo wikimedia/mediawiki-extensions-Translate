@@ -2096,8 +2096,52 @@ Jangk jäz op di [[Special:Preferences|Sigg met Dinge Enstellunge]]
 un wann De doh fäädesch bes, küß De wider retuur noh heh dä Sigg.',
 	'translate-fs-settings-skip' => 'Ben fäädesch.
 Wigger maache!',
-	'translate-fs-userpage-submit' => 'Metmaachersigg aanlääje',
+	'translate-fs-userpage-text' => 'Jäz moß De en Metmaachersigg för Desch enreeschte.
+
+Donn jät övver Desch schrieve, wä De bes, wat De määß un esu.
+Dat sull dä {{GRAMMAR:Genitiv ier|{{SITENAME}}}} Gemeinschaff hellfe,joot zosammezewerke.
+Dat sin Minsche vun övverall op de Wält, di aan de öngerscheidleschßte Shprooche un Projäkte aam brasselle sin.
+
+En dämm för-ußjeföllte Kaste bovve en de allereezte Reih sühß De <nowiki>{{#babel:en-2}}</nowiki>.
+Bes esu joot un donn dä met Dinge Shproochkäntneße fölle.
+De Nommere noh dä Afköözung för en Shprooch saare, wi joot De se kanns.
+Doh bedügge:
+* 1 — e beßje,
+* 2 — jrundlääje Weße,
+* 3 — joode Kenntneß,
+* 4 — wi ene Einheimesche,
+* 5 — Do schwaads di Shprooch berooflesch, för e Beishpell, Do bes ene Dolmätscher.
+
+För Ding Mottershprooch schrief jaa kein Nommer hen, un donn bloß di Afköözung dohenn.
+För e Beishpell, wann De Tamiilesch vun klein aan kalls, joot Änglesch un e beßje Kisuaheeli kanns, dann deihß De schriive: <code><nowiki>{{#babel:ta|en-3|sw-1}}</nowiki></code>
+
+Künnt sin, dat De di Affköözung för en Shprooche nit weiß, dann es dat en joode Jelääjeheit, se nohzeloore.
+Dat kanns De en dä Leß heh dronger maache.',
+	'translate-fs-userpage-submit' => 'En Metmaachersigg aanlääje',
 	'translate-fs-userpage-done' => 'Joot jemaat! Jäz häs De en Metmaachersigg.',
+	'translate-fs-permissions-text' => 'Jäz möß De dröm froore, dat De en de Metmaacherjropp „{{int:group-translator}}“ opjenumme wees.
+
+Bes mer doh draan jet verändert han, jangk op di Sigg [[Project:Translator]] un donn, wat doh shteiht.
+Donoh jangk retuur op heh di Sigg.
+
+Wann de di Aanfrooch loßjescheck häs, weed eine vun dä Freiwellije, di dat maache künne, dobei jonn un alles prööfe, un dämm nohkumme.
+Bes dohenn bes esu joot un han e beßje Jedold.
+
+<del>Föll dat Fommulaa heh dronger reschtesch uß, un donn dann op dä Knopp klecke.</del>',
+	'translate-fs-target-text' => 'Onse Jlöckwonsch!
+Jez kanns De e t Övversäze aanfange
+
+Lohß Desch nit jeck maache, wann dat eets ens jet fresch un onövversseshlesh schingk.
+Op dä Sigg [[Project list|met dä Leß met de Projäkte]] kanns Der enne Övverbleck holle, woh De jäz övverall jet zoh beidraare kanns met Dinge Övversäzonge.
+De miehßte Projäkte han en koote Sigg övver dat Projäk, woh ene Lengk „Translate this project<!--{{int:xxxxxxxxxxx}}-->“ drop es. Dä brengk Desh op en Leß met alle Täxte un Nohreeschte för dat Projäk, di noch nit övversaz sin.
+Et jitt och en [[Special:Languagestats|Leß met alle Jroppe vun Täxte un Nohreeshte un de Zahle dohzoh]].
+
+Wann De meins, dat De noch jät mieh wesse mööts, ih dat De mem Övversäze aanfängks, jangk en de [[FAQ|öff jeshtallte Froore]] dorsh.
+Onjlöcklesch es, uns Dokemäntazjuhn künnt ald ens övverhollt sin.
+Wann De jät donn wells, wat De nit esu eifach henkriß wie et sin sullt, dann bes nit bang un donn op dä Sigg „[[Support|{{int:bw-mainpage-support-title}}]]“ donoh froore.
+
+Do kanns och met Dinge Kolleje, di de sellve Shprooche övversäze wi Do, övver de [[Portal:$1|Pooz-Sigg för Ding Shprooch]] ier [[Portal_talk:$1|Klaafsigg]] zosamme kumme.
+Wann De dat noch nit jedonn häs, [[Special:Preferences|donn Ding Shprooch för de Bovverflääsch vum Wiki op di Shprooch ensthälle, woh de noh övversäze wells]], domet et wiki Der de beß zopaß Lengks automattesch aanzeije kann.',
 	'translate-fs-email-text' => 'Bes esu joot un jiff Ding Adräß för de <i lang="en">e-mail</i> en [[Special:Preferences|Dinge Enstellunge]]
 aan, un dun se beschtäätejje. Doför es ene Lengk udder en <i lang="en">URL</i> en dä <i lang="en">e-mail</i>
 an Desh dren.

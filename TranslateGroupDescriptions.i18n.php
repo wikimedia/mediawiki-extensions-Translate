@@ -2095,6 +2095,13 @@ Ustvarjeno za Univerzo v Bambergu. Pod dovoljenjem GPL 2.0 ali poznejšim. Razvi
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] je projekt za dostavljanje nepovezane, samo tekstovne različice Wikipedije na mobilne naprave.',
 );
 
+/** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
+ * @author Rancher
+ */
+$messages['sr-ec'] = array(
+	'translate-group-desc-mediawikicore' => 'Ова група садржи поруке које се користе у алфа издању [[Translating:MediaWiki|Медијавикија]] ({{CURRENTVERSION}})',
+);
+
 /** Swedish (Svenska)
  * @author Boivie
  * @author Fluff

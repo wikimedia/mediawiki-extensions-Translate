@@ -3170,15 +3170,20 @@ Don op jede Fall em [[Special:Log/pagetranslation|{{int:pt-log-name}}]] noh Fäh
  * @author George Animal
  */
 $messages['ku-latn'] = array(
+	'tpt-diff-old' => 'Nivîsa pêşî',
 	'tpt-diff-new' => 'Nivîsa nû',
+	'tpt-submit' => 'Vê versiyonên ji bo wergerrê îşaret bike',
 	'tpt-translate-this' => 've rûpelê wergerrîne',
 	'translate-tag-translate-link-desc' => 'Vê rûpelê werrgerrîne',
+	'translate-tag-markthis' => 'Vê rûpelê ji bo wergerrê îşaret bike',
+	'tpt-languages-legend' => 'Zimanên din:',
 	'tpt-download-page' => 'Rûpelelên bi wergerran eksport bike',
 	'pt-movepage-list-translation' => 'Rûpelên wergerrê',
 	'pt-movepage-list-other' => 'Binrûpelên din',
 	'pt-movepage-current' => 'Navê niha:',
 	'pt-movepage-new' => 'Navê nû:',
 	'pt-movepage-reason' => 'Sedem:',
+	'pt-movepage-subpages' => 'Hemû binrûpelan bigerîne',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
