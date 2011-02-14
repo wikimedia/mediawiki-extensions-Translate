@@ -139,6 +139,7 @@ Our 404 Handler
 file = Our404Handler/SpecialOur404Handler.i18n.php
 
 Page Layout Builder
+optional = plb-helpbox-help-link-title
 ignored = plb-special-form-none-value, plb-editor-info
 
 Paginator
