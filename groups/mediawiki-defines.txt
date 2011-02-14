@@ -537,6 +537,8 @@ Gadgets
 aliasfile = Gadgets/Gadgets.alias.php
 ignored = gadgets-definition
 
+GeeQuBox
+
 GeoLite
 optional = geolite
 
