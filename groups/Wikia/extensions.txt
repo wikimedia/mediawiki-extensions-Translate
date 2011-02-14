@@ -1,7 +1,3 @@
-#a    createnewwiki/createnewwiki.i18n.php
-#a    specialuserdata/specialuserdata.i18n.php
-#a    ScavengerHunt
-#u    sponsorshipdashboard/sponsorshipdashboard.i18n.php
 #u    wikialabs/wikialabs.i18n.php
 
 Achievements II
@@ -56,6 +52,9 @@ Content Feeds
 #Create A Page
 #file = CreateAPage/MultiEdit.i18n.php
 #optional = createplate-Blank, createplate-list
+
+Create New Wiki
+ignored = cnw-name-wiki-language
 
 Create Page
 file = CreatePage/CreatePage.i18n.php
@@ -147,6 +146,9 @@ file = Paginator/i18n/Paginator.i18n.php
 
 Partner Feed
 
+Phalanx
+ignored = phalanx-expire-durations
+
 Piggyback
 
 Quick Create
@@ -165,6 +167,8 @@ file = RTE/i18n/RTE.i18n.php
 
 RTE - CK Wikia
 file = RTE/i18n/CK.wikia.i18n.php
+
+Scavenger Hunt
 
 Scribe
 file = Scribe/SpecialScribeEvents.i18n.php
@@ -196,6 +200,8 @@ Slider Tag
 Special Cache Epoch
 descmsg = cacheepoch-desc
 
+Special Contact
+
 Special Interwiki Edit
 
 Special Multiple Lookup
@@ -209,7 +215,11 @@ descmsg = sponsorpage-desc
 file = SpecialSponsorPage/Sponsor.i18n.php
 optional = sponsor-template
 
+Special User Data
+
 Special Widget Dashboard
+
+Sponsorship Dashboard
 
 Staff Log
 
@@ -244,7 +254,6 @@ ignored = recipes-template-aboutuser-fields, recipes-template-aboutuser-wikitext
 
 User Rename Tool
 file = UserRenameTool/SpecialRenameuser.i18n.php
-ignored = renameuser, right-renameuser
 
 Video Embed Tool
 
