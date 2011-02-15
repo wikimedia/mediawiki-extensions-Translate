@@ -2134,7 +2134,7 @@ Jez kanns De e t Övversäze aanfange
 Lohß Desch nit jeck maache, wann dat eets ens jet fresch un onövversseshlesh schingk.
 Op dä Sigg [[Project list|met dä Leß met de Projäkte]] kanns Der enne Övverbleck holle, woh De jäz övverall jet zoh beidraare kanns met Dinge Övversäzonge.
 De miehßte Projäkte han en koote Sigg övver dat Projäk, woh ene Lengk „Translate this project<!--{{int:xxxxxxxxxxx}}-->“ drop es. Dä brengk Desh op en Leß met alle Täxte un Nohreeschte för dat Projäk, di noch nit övversaz sin.
-Et jitt och en [[Special:Languagestats|Leß met alle Jroppe vun Täxte un Nohreeshte un de Zahle dohzoh]].
+Et jitt och en [[Special:LanguageStats|Leß met alle Jroppe vun Täxte un Nohreeshte un de Zahle dohzoh]].
 
 Wann De meins, dat De noch jät mieh wesse mööts, ih dat De mem Övversäze aanfängks, jangk en de [[FAQ|öff jeshtallte Froore]] dorsh.
 Onjlöcklesch es, uns Dokemäntazjuhn künnt ald ens övverhollt sin.

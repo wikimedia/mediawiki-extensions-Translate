@@ -3170,9 +3170,12 @@ Don op jede Fall em [[Special:Log/pagetranslation|{{int:pt-log-name}}]] noh Fäh
  * @author George Animal
  */
 $messages['ku-latn'] = array(
+	'right-pagetranslation' => 'Versiyonên rûpelên ji bo wergerrê îşaret bike',
 	'tpt-diff-old' => 'Nivîsa pêşî',
 	'tpt-diff-new' => 'Nivîsa nû',
 	'tpt-submit' => 'Vê versiyonên ji bo wergerrê îşaret bike',
+	'tpt-nosuchpage' => 'Rûpela $1 tune.',
+	'tpt-rev-mark-new' => 'vê versiyonên ji bo wergerrê îşaret bike',
 	'tpt-translate-this' => 've rûpelê wergerrîne',
 	'translate-tag-translate-link-desc' => 'Vê rûpelê werrgerrîne',
 	'translate-tag-markthis' => 'Vê rûpelê ji bo wergerrê îşaret bike',
@@ -5464,6 +5467,7 @@ $messages['yi'] = array(
  * @author Liangent
  * @author PhiLiP
  * @author Yfdyh000
+ * @author 阿pp
  */
 $messages['zh-hans'] = array(
 	'pagetranslation' => '页面翻译',
@@ -5488,6 +5492,8 @@ $messages['zh-hans'] = array(
 	'tpt-languages-legend' => '其他语言：',
 	'tpt-download-page' => '汇出含翻译的页面',
 	'pt-movepage-reason' => '原因：',
+	'pt-movepage-action-perform' => '确认移动',
+	'pt-movepage-action-other' => '更改目标',
 	'pt-movepage-logreason' => '可翻译页面$1 的部分。',
 	'pt-locked-page' => '此页面已被锁定，因为可翻译页面正在被移动。',
 );

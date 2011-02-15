@@ -2100,6 +2100,23 @@ Ustvarjeno za Univerzo v Bambergu. Pod dovoljenjem GPL 2.0 ali poznejšim. Razvi
  */
 $messages['sr-ec'] = array(
 	'translate-group-desc-mediawikicore' => 'Ова група садржи поруке које се користе у алфа издању [[Translating:MediaWiki|Медијавикија]] ({{CURRENTVERSION}})',
+	'translate-group-desc-mediawikiextensions' => 'Мета група порука која садржи све поруке за подржана проширења [[Translating:MediaWiki|Медијавикија]]',
+	'translate-group-desc-collection' => 'Мета група порука која садржи све поруке проширења [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
+	'translate-group-desc-flaggedrevs' => 'Мета група порука која садржи све поруке проширења [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
+	'translate-group-desc-socialprofile' => 'Мета група порука која садржи све поруке проширења везаних за [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
+	'translate-group-desc-translate' => 'Мета група порука која садржи све поруке проширења [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
+	'translate-group-desc-wikiaextensions' => 'Мета група порука која садржи све поруке за подржана проширења које користи [http://www.wikia.com Викија]',
+	'translate-group-desc-wikimediaextensions' => 'Мета група порука која садржи све поруке за подржана проширења које користи [http://wikimedia.org/ Задужбина Викимедија]',
+	'translate-group-desc-translatablepages' => 'Све преводиве странице',
+	'bw-desc-freecol' => '[[Translating:FreeCol|Фрикол]] је стратешка игра',
+	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]] је систем за праћење грешака',
+	'translate-group-desc-mantisbt-plugin-core' => 'Основно проширење за [[Translating:MantisBT|MantisBT]]',
+	'translate-group-desc-mifos' => '[[Translating:Mifos|Мифоз]] је систем за управљање подацима о микрофинансирању',
+	'translate-group-desc-okawix' => '[[Translating:Okawix|Окавикс]] је програм за читање Википедије ван мреже',
+	'bw-desc-openlayers' => '[[Translating:OpenLayers|Опенлејерс]] је динамички генератор мапи',
+	'bw-desc-openstreetmap' => '[[Translating:OpenStreetMap|Опенстритмап]] је бесплатна карта целог света',
+	'bw-desc-shapado' => '[[Translating:Shapado|Шападо]] је интернет окружење за питања и одговоре',
+	'bw-desc-statusnet' => '[[Translating:StatusNet|Статуснет]] је платформа за микро-блогирање',
 );
 
 /** Swedish (Svenska)
