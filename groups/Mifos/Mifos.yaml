@@ -202,3 +202,67 @@ TAGS:
     - center-Center.s
     - center-Center.Colon
 
+---
+BASIC:
+  id: out-mifos-checklist
+  label: Mifos - Checklists
+
+MANGLER:
+  class: StringMatcher
+  prefix: checklist-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/CheckListUIResources_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/CheckListUIResources.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/CheckListUIResources_%CODE%.properties
+
+TAGS:
+  ignored:
+    - checklist-errors.footer
+    - checklist-errors.header
+    - checklist-errors.prefix
+    - checklist-errors.suffix
+
+---
+BASIC:
+  id: out-mifos-client
+  label: Mifos - Clients
+
+MANGLER:
+  class: StringMatcher
+  prefix: client-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/ClientUIResources_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/ClientUIResources.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/ClientUIResources_%CODE%.properties
+
+TAGS:
+  ignored:
+    - client-client.EditRemoveSeparator
+
+---
+BASIC:
+  id: out-mifos-cfg
+  label: Mifos - Configuration
+
+MANGLER:
+  class: StringMatcher
+  prefix: cfg-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/ConfigurationUIResources_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/ConfigurationUIResources.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/ConfigurationUIResources_%CODE%.properties
+
+TAGS:
+  ignored:
+    - cfg-errors.prefix
+    - cfg-errors.suffix
+
