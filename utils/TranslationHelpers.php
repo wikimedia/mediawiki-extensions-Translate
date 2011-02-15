@@ -559,7 +559,7 @@ class TranslationHelpers {
 				self::reportTranslationServiceFailure( $serviceName );
 				break; // Too slow, back off
 			} elseif ( $response->responseStatus !== 200 ) {
-				error_log( __METHOD__ . " with ($serviceName ($candidate)): " . $response->responseDetails );
+				error_log( __METHOD__ . " with ($serviceName ($candidate|$code)): " . $response->responseDetails );
 			} else {
 				$sug = Sanitizer::decodeCharReferences( $response->responseData->translatedText );
 				$sug = trim( $sug );
