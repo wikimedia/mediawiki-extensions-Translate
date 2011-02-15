@@ -19,6 +19,7 @@ class TranslateEditAddons {
 
 	/**
 	 * Add some tabs for navigation for users who do not use Ajax interface.
+	 * @param $skin Skin
 	 */
 	static function addNavigationTabs( $skin, &$tabs ) {
 		global $wgRequest;
@@ -34,7 +35,6 @@ class TranslateEditAddons {
 			return true;
 		}
 
-
 		$collection = $group->initCollection( 'en' );
 		$collection->filter( 'optional' );
 		$keys = array_keys( $collection->keys() );
@@ -43,6 +43,7 @@ class TranslateEditAddons {
 		$key = strtolower( strtr( $key, ' ', '_' ) );
 
 		$next = $prev = null;
+
 		foreach ( $keys as $index => $tkey ) {
 			if ( $key === strtolower( strtr( $tkey, ' ', '_' ) ) ) {
 				break;
@@ -58,7 +59,6 @@ class TranslateEditAddons {
 		if ( isset( $keys[$index+1] ) ) {
 			$next = $keys[$index+1];
 		}
-
 
 		$id = $group->getId();
 		$ns = $title->getNamespace();
@@ -107,12 +107,12 @@ class TranslateEditAddons {
 	}
 
 	protected static function addTab( $skin, &$tabs, $name, $data, &$index ) {
-			if ( $skin instanceof SkinVector ) {
-				$data['class'] = false; // Vector needs it for some reason
-				$tabs['namespaces'][$name] = $data;
-			} else {
-				array_splice( $tabs, $index++, 0, array( $name => $data ) );
-			}
+		if ( $skin instanceof SkinVector ) {
+			$data['class'] = false; // Vector needs it for some reason
+			$tabs['namespaces'][$name] = $data;
+		} else {
+			array_splice( $tabs, $index++, 0, array( $name => $data ) );
+		}
 	}
 
 	/**
@@ -377,7 +377,6 @@ class TranslateEditAddons {
 		if ( $fuzzy !== false ) {
 			$dbw->insert( 'revtag', $conds, __METHOD__ );
 		}
-
 
 		// Diffs for changed messages.
 		if ( $fuzzy !== false ) {
