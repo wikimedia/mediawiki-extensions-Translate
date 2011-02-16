@@ -5454,10 +5454,11 @@ $messages['yi'] = array(
 	'tpt-diff-old' => 'פֿריערדיגער טעקסט',
 	'tpt-diff-new' => 'נײַער טעקסט',
 	'tpt-translate-this' => 'פֿאַרטײַטשן דעם בלאַט',
-	'translate-tag-translate-link-desc' => 'פֿארטײַטשט דעם בלאט',
+	'translate-tag-translate-link-desc' => 'פֿאַרטײַטשט דעם בלאַט',
 	'tpt-languages-legend' => 'אנדערע שפראַכן:',
 	'pt-movepage-list-pages' => 'רשימה פון בלעטער צו באַוועגן',
 	'pt-movepage-list-translation' => 'טײַטש  בלעטער',
+	'pt-movepage-new' => 'נײַער נאָמען:',
 );
 
 /** Simplified Chinese (‪中文(简体)‬)

@@ -3624,6 +3624,13 @@ Bạn cũng sẽ nhận được thư tin tức tối đa một bức một thá
 Nếu bạn không muốn nhận thư tin tức, bạn có thể bỏ nó ra khỏi thẻ "{{int:prefs-personal}}" trong [[Special:Preferences|tùy chọn cá nhân]].',
 );
 
+/** Yiddish (ייִדיש)
+ * @author פוילישער
+ */
+$messages['yi'] = array(
+	'translate-fs-userpage-submit' => 'שאַפֿן מיין באַניצער בלאַט',
+);
+
 /** Simplified Chinese (‪中文(简体)‬)
  * @author Chenxiaoqino
  * @author Hydra
