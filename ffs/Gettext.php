@@ -286,8 +286,8 @@ class GettextFFS extends SimpleFFS {
 			if ( strpos( $line, ':' ) === false ) {
 				error_log( __METHOD__ . ": $line" );
 			}
-			list( $key, $value ) = explode( ': ', $line, 2 );
-			$tags[$key] = $value;
+			list( $key, $value ) = explode( ':', $line, 2 );
+			$tags[trim($key)] = trim($value);
 		}
 
 		return $tags;
