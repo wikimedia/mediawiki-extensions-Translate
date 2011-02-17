@@ -1,5 +1,3 @@
-#u    wikialabs/wikialabs.i18n.php
-
 Achievements II
 file = AchievementsII/i18n/AchievementsII.i18n.php
 
@@ -12,6 +10,8 @@ file = AjaxLogin/ComboAjaxLogin.i18n.php
 descmsg = comboajaxlogin-desc
 
 Ajax Poll
+
+Article Comments
 
 Auto Create Wiki
 optional = autocreatewiki-reminder-subject, autocreatewiki-language-top-list
@@ -219,6 +219,8 @@ optional = sponsor-template
 Special User Data
 
 Special Widget Dashboard
+
+Spell Checker
 
 Sponsorship Dashboard
 
