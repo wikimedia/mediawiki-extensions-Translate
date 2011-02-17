@@ -170,6 +170,7 @@ RTE - CK Wikia
 file = RTE/i18n/CK.wikia.i18n.php
 
 Scavenger Hunt
+ignored = scavengerhunt-form-error-name
 
 Scribe
 file = Scribe/SpecialScribeEvents.i18n.php
