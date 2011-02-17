@@ -19,18 +19,24 @@ class TranslateToolbox {
 	 * actually is a translatable/translated message.
 	 */
 	static function toolboxAllTranslations( &$skin ) {
-		global $wgTitle, $wgTranslateMessageNamespaces;
+		global $wgTranslateMessageNamespaces;
 
-		$ns = $wgTitle->getNamespace();
+		if ( method_exists( $skin, 'getSkin' ) ) {
+			$title = $skin->getSkin()->getTitle();
+		} else {
+			global $wgTitle;
+			$title = $wgTitle;
+		}
+		$ns = $title->getNamespace();
 		if ( !in_array( $ns, $wgTranslateMessageNamespaces ) ) {
 			return true;
 		}
 
-		$inMessageGroup = TranslateUtils::messageKeyToGroup( $wgTitle->getNamespace(), $wgTitle->getBaseText() );
+		$inMessageGroup = TranslateUtils::messageKeyToGroup( $title->getNamespace(), $title->getBaseText() );
 
 		if ( $inMessageGroup ) {
 			// Add a slash at the end, to not have basename in the result of Special:Prefixindex
-			$message = $wgTitle->getNsText() . ":" . $wgTitle->getBaseText();
+			$message = $title->getNsText() . ":" . $title->getBaseText();
 			$desc = wfMsg( 'translate-sidebar-alltrans' );
 			$url = htmlspecialchars( SpecialPage::getTitleFor( 'Translations' )->getLocalURL( 'message=' . $message ) );
 
