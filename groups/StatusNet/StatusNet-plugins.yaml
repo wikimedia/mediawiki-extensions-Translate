@@ -451,6 +451,20 @@ MANGLER:
   prefix: groupfavorited-
 ---
 BASIC:
+  id: out-statusnet-plugin-groupprivatemessage
+  label: StatusNet - GroupPrivateMessage
+  display: out/statusnet/plugin/groupprivatemessage
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/GroupPrivateMessage/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/GroupPrivateMessage/locale/%CODE%/LC_MESSAGES/GroupPrivateMessage.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/GroupPrivateMessage/locale/GroupPrivateMessage.pot
+  targetPattern: statusnet/plugins/GroupPrivateMessage/locale/%CODE%/LC_MESSAGES/GroupPrivateMessage.po
+
+MANGLER:
+  prefix: groupprivatemessage-
+---
+BASIC:
   id: out-statusnet-plugin-imap
   label: StatusNet - Imap
   display: out/statusnet/plugin/imap
