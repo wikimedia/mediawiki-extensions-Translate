@@ -1503,12 +1503,12 @@ optional = timedmedia-derivative-480_600kbs.webm, timedmedia-derivative-720_VBR.
 descmsg = timedmedia-desc
 
 Timed Media Handler - Timed Text
-file = TimedMediaHandler/resources/TimedText/TimedText.i18n.php
+file = TimedMediaHandler/MwEmbedModules/TimedText/TimedText.i18n.php
 descmsg = timedmedia-desc
 optional = mwe-timedtext-key-language
 
 Timed Media Handler - Embed Player
-file = TimedMediaHandler/resources/EmbedPlayer/EmbedPlayer.i18n.php
+file = TimedMediaHandler/MwEmbedModules/EmbedPlayer/EmbedPlayer.i18n.php
 descmsg = timedmedia-desc
 optional = mwe-embedplayer-ogg-player-cortado
 
