@@ -12609,10 +12609,64 @@ $messages['mn'] = array(
  * @author Node ue
  */
 $messages['mo'] = array(
+	'translate' => 'Традуче',
+	'translate-desc' => '[[Special:Translate|Паӂинэ спечиалэ]] пентру традучеря програмулуй МедияВики, дар ну нумай',
 	'translate-edit' => 'едитязэ',
 	'translate-talk' => 'Дискуций',
+	'translate-history' => 'историк',
+	'translate-showsub' => 'Аратэ {{PLURAL:$1|субгрупул|челе $1 субгрупурь}}.',
+	'translate-grouplisting' => 'Ачаста есте листа тутурор групурилор де месаже традуктибиле.
+Апасэ пе нумеле групулуй де месаже пентру а визуализа о листэ а месажелор нетрадусе.',
+	'translate-task-view' => 'везь тоате месажеле де ла',
+	'translate-task-untranslated' => 'Везь тоате месажеле нетрадусе де ла',
+	'translate-task-optional' => 'Везь месажеле опционале де ла',
+	'translate-task-suggestions' => 'Везь месаже ку суӂестий дин мемория де традучере',
+	'translate-task-untranslatedoptional' => 'Везь месажеле опционале нетрадусе де ла',
+	'translate-task-problematic' => 'Везь месажеле каре ау проблеме',
+	'translate-task-export' => 'Експорт традучерь',
+	'translate-task-export-to-file' => 'Експорт традучерь ын фишиер',
+	'translate-page-no-such-language' => 'Лимба спечификатэ есте инкоректэ.',
+	'translate-page-no-such-task' => 'Сарчина спечификатэ есте инвалидэ.',
+	'translate-page-no-such-group' => 'Групул спечификат есте инвалид.',
+	'translate-page-disabled' => "Посибилитатя де а традуче ачест груп ын ачастэ лимбэ а фост дезактиватэ.
+Мотив:
+
+''$1''",
+	'translate-page-settings-legend' => 'Сетэрь:',
+	'translate-page-task' => 'Дореск сэ',
+	'translate-page-group' => 'Груп',
+	'translate-page-group-tooltip' => 'Нумеле групулуй де месаже.
+Дакэ групул репрезинтэ ун субсет сау ун суперсет де месаже каре провин де ла алте групурь, есте афишат ынгрошат.',
+	'translate-page-language' => 'Лимбэ',
+	'translate-page-limit' => 'Лимитэ',
+	'translate-page-limit-option' => '$1 {{PLURAL:$1|месаж|месаже}} пе паӂинэ',
+	'translate-submit' => 'Адуче',
 	'translate-page-navigation-legend' => 'Навигаре',
+	'translate-page-showing' => "Се афишазэ месажеле де ла $1 ла $2 динтр'ун тотал де $3.",
+	'translate-page-showing-all' => 'Се афишазэ $1 {{PLURAL:$1|месаж|де месаже}}.',
+	'translate-next' => 'Паӂина урмэтоаре',
+	'translate-prev' => 'Паӂина антериоарэ',
+	'translate-page-description-legend' => 'Информаций деспре груп',
 	'translate-page-edit' => 'едитязэ',
+	'translate-optional' => '(опционал)',
+	'translate-ignored' => '(игнорат)',
+	'translate-edit-title' => 'Едитязэ «$1»',
+	'translate-edit-definition' => 'Дефиниция месажулуй',
+	'translate-edit-contribute' => 'контрибуе',
+	'translate-edit-no-information' => "''Ачест месаж ну аре документацие.
+Дакэ штий унде сау кум есте фолосит, ый поць ажута пе чеилалць традукэторь прин адэугаря документацией сале.''",
+	'translate-edit-information' => 'Информаций деспре месажул «$2» ($1)',
+	'translate-edit-in-other-languages' => 'Месажул «$1» ын алте лимбь',
+	'translate-edit-show-def' => 'Дефиниция месажулуй',
+	'translate-magic-submit' => 'Адуче',
+	'translate-magic-cm-current' => 'актуал',
+	'translate-magic-cm-original' => 'Ориӂинал',
+	'translate-magic-cm-comment' => 'Коментариу:',
+	'translate-magic-cm-save' => 'Салвязэ',
+	'translate-stats-users' => 'Традукэторь',
+	'translate-js-next' => 'Салвязэ ши мерӂь май департе',
+	'translate-js-nonext' => 'Ачеста есте ултимул месаж де пе ачастэ паӂинэ.',
+	'translate-js-skip' => 'Сарь май департе',
 );
 
 /** Marathi (मराठी)
