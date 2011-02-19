@@ -320,15 +320,6 @@ array(
 		'translate-fs-signup-text', // Contains links that are translated
 	)
 ),
-/* Disabled in mediawiki-defines.txt 2010-11-23 
-array(
-	'group' => 'ext-ui-prefswitch',
-	'check' => 'links',
-	'message' => array(
-		'prefswitch-main', // Contains links that are translated
-	)
-),
-*/ 
 array(
 	'group' => 'ext-wikieditor',
 	'check' => 'links',
@@ -378,7 +369,7 @@ array(
 ),
 array(
 	'group' => 'wikia-createnewwiki',
-	'check' => 'parameters',
+	'check' => 'variable',
 	'message' => array(
 		'cnw-upgrade-marketing', // Contains price with "$" which causes warnings when formatting differently.
 	)
