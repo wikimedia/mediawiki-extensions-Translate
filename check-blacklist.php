@@ -251,6 +251,7 @@ array(
 array(
 	'group' => 'ext-openstackmanager',
 	'check' => 'plural',
+	'code' => array( 'fr' ),
 	'message' => array(
 		'openstackmanager-instancetypelabel', // PLURAL not needed in French
 	)
