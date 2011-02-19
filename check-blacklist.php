@@ -249,6 +249,13 @@ array(
 	)
 ),
 array(
+	'group' => 'ext-openstackmanager',
+	'check' => 'plural',
+	'message' => array(
+		'openstackmanager-instancetypelabel', // PLURAL not needed in French
+	)
+),
+array(
 	'group' => 'ext-socialprofile-usergifts',
 	'check' => 'variable',
 	'message' => array(
