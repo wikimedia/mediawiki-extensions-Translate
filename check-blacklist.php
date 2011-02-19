@@ -377,6 +377,13 @@ array(
 	)
 ),
 array(
+	'group' => 'wikia-createnewwiki',
+	'check' => 'parameters',
+	'message' => array(
+		'cnw-upgrade-marketing', // Contains price with "$" which causes warnings when formatting differently.
+	)
+),
+array(
 	'group' => 'wikia-graceexpired',
 	'check' => 'links',
 	'message' => array(
