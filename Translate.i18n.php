@@ -19346,6 +19346,7 @@ $messages['tt-cyrl'] = array(
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Билгесез параметр|Билгесез параметрлар}}:
 <strong><nowiki>$1</nowiki></strong>',
+	'translate-pref-nonewsletter' => 'Минем электрон почтага мәгълүмати бюллетень җибәрмәскә',
 	'translate-sidebar-alltrans' => 'Башка телләрдә',
 	'translations' => 'Барлык тәрҗемәләр',
 	'languagestats' => 'Тел статистикасы',
