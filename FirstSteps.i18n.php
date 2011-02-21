@@ -872,6 +872,14 @@ Buźoš teke powěsćowe listy jaden raz na mjasec dostaś.
 Jolic njocoš  powěsćowe listy dostaś, móžoš to na rejtarku "{{int:prefs-personal}}" swójich [[Special:Preferences|nastajenjow]] wótwóliś.',
 );
 
+/** Esperanto (Esperanto)
+ * @author Yekrats
+ */
+$messages['eo'] = array(
+	'translate-fs-pagetitle-done' => '- farita!',
+	'translate-fs-target-title' => 'Ek traduku!',
+);
+
 /** Spanish (Español)
  * @author Crazymadlover
  * @author Diego Grez
