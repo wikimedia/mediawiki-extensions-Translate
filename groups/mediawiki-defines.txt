@@ -774,6 +774,8 @@ id = ext-mwembedsupport-mwembedsupport
 file = MwEmbedSupport/MwEmbedModules/MwEmbedSupport/MwEmbedSupport.i18n.php
 optional = mwe-size-gigabytes, mwe-size-megabytes, mwe-size-kilobytes, mwe-size-bytes
 
+Narayam
+
 Natural Language List
 descmsg = nll-desc
 ignored = nll-itemoutput
