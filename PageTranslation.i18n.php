@@ -4820,6 +4820,7 @@ $messages['su'] = array(
  * @author M.M.S.
  * @author Najami
  * @author Rotsee
+ * @author WikiPhoenix
  */
 $messages['sv'] = array(
 	'pagetranslation' => 'Sidöversättning',
@@ -4837,6 +4838,7 @@ $messages['sv'] = array(
 	'tpt-sections-deleted' => 'Raderade översättningsenheter',
 	'tpt-sections-template' => 'Mall för översättningssida',
 	'tpt-badtitle' => 'Det angivna sidnammet ($1) är inte en giltlig titel',
+	'tpt-nosuchpage' => 'Sidan $1 finns inte',
 	'tpt-oldrevision' => '$2 är inte den senaste versionen av sidan [[$1]].
 Endast den senaste versionen kan märkas för översättning.',
 	'tpt-notsuitable' => 'Sidan $1 är inte redo för översättning.
@@ -4848,9 +4850,12 @@ Innan den här versionen märks för översättning, kontrollera att förändrin
 	'tpt-mark-summary' => 'Den här versionen är märkt för översättning',
 	'tpt-edit-failed' => 'Sidan "$1" kunde inte uppdateras.',
 	'tpt-already-marked' => 'Den senaste versionen av den här sidan har redan märkts för översättning.',
+	'tpt-unmarked' => 'Sidan $1 är inte längre markerad för översättning.',
 	'tpt-list-nopages' => 'Det finns inga sidor som är märkta för översättning eller är klara att märkas för översättning.',
 	'tpt-old-pages' => 'En version av {{PLURAL:$1|den här sidan|de här sidorna}} har märkts för översättning.',
 	'tpt-new-pages' => '{{PLURAL:$1|Den här sidan|De här sidorna}} innehåller text med översättningstaggar, men ingen version av {{PLURAL:$1|den här sidan|de här sidorna}} är märkt för översättning.',
+	'tpt-other-pages' => '{{PLURAL:$1|En gammal version av den här sidan är markerad|Äldre versioner av dessa sidor är markerade}} för översättning,
+men {{PLURAL:$1|den senaste versionen|de senaste versionerna}} kan inte markeras för översättning.',
 	'tpt-rev-latest' => 'senaste versionen',
 	'tpt-rev-old' => 'skillnad mot föregående markerad version',
 	'tpt-rev-mark-new' => 'märk den här versionen för översättning',
@@ -4869,6 +4874,10 @@ Innan den här versionen märks för översättning, kontrollera att förändrin
 	'tpt-install' => 'Kör php-underhåll/update.php eller webb-installation för att  möjliggöra sidans översättningsfunktioner.',
 	'tpt-render-summary' => 'Uppdaterar för att matcha den nya versionen av källpaketet',
 	'tpt-download-page' => 'Exportera sidan med översättningar',
+	'pt-parse-open' => 'Obalanserad &lt;translate>-tagg.
+Översättningsmall: <pre>$1</pre>',
+	'pt-parse-close' => 'Obalanserad &lt;/translate>-tagg.
+Översättningsmall: <pre>$1</pre>',
 	'pt-movepage-list-pages' => 'Lista över sidor att flytta',
 	'pt-movepage-list-translation' => 'Översättningssidor',
 	'pt-movepage-list-section' => 'Avsnittssidor',

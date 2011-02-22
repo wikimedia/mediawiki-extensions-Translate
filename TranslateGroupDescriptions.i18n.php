@@ -302,6 +302,7 @@ $messages['br'] = array(
 	'translate-group-desc-uniwiki' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astennoù stag ouzh [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astennoù stag ouzh [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 	'translate-group-desc-translatablepages' => 'An holl bajennoù da dreiñ',
+	'translate-group-desc-europeana' => "[[Translating:Europeana|Europeana]] a ginnig d'an dud ergerzhiñ dafar sevenadurel niverel Europa",
 	'bw-desc-freecol' => 'Kent stagañ da dreiñ FreeCol en ho yezh, lennit [[Translating:FreeCol]]. Ober a ra Freecol gant an aotre GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], ur forom web skrivet e PHP.',
 	'bw-desc-mantisbt' => "Ur meziant digoust da c'hwennat drein eo [http://www.mantisbt.org MantisBT]. Roit keloù war [[Support]] m'en em gavit gant kudenn pe gudenn.",
@@ -2129,6 +2130,7 @@ $messages['sr-ec'] = array(
  * @author Per
  * @author Poxnar
  * @author Skalman
+ * @author WikiPhoenix
  */
 $messages['sv'] = array(
 	'translate-group-desc-nodesc' => 'Det finns ingen beskrivning av denna meddelandegrupp',
@@ -2144,9 +2146,14 @@ $messages['sv'] = array(
 	'translate-group-desc-wikimediaextensions' => 'Metagrupp som innehåller alla meddelanden för MediaWiki-tillägg som används av [http://wikimedia.org/ Wikimedia Foundation]',
 	'translate-group-desc-uniwiki' => 'Metagrupp som innehåller alla meddelanden för tillägg relaterade till [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Metagrupp som innehåller alla meddelanden för tillägg relaterade till [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
+	'translate-group-desc-translatablepages' => 'Alla översättningsbara sidor',
+	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] tillåter folk att utforska digitala kulturella resurser i Europa',
 	'bw-desc-freecol' => 'Innan du översätter FreeCol till ditt språk, var god läs [[Translating:FreeCol]]. FreeCol använder GPL-licensen.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], ett webbforum skrivet i PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] är ett gratis webbaserat bugspårningssystem. Vänligen rapportera alla problem på [[Support]].',
+	'translate-group-desc-mediawiki-core-115' => 'Meddelanden för den stabila versionen 1.15 av [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawiki-core-116' => 'Meddelanden för den stabila versionen 1.16 av [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawiki-core-117' => 'Meddelanden för den stabila versionen 1.17 av [[Translating:MediaWiki|MediaWiki]]',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' är ett pythonbibliotek för att skapa PDF-document från MediaWiki-artiklar som tolkats av mwlib-biblioteket.
 
 Se [[mw:Extension:PDF_Writer]] och http://code.pediapress.com/wiki/wiki/mwlibrl för mer information.",
@@ -2159,8 +2166,10 @@ Observera följande:
 
 *Försök att hålla längden på översättningarna så lika de engelska orginal texterna som möjligt, på grund av implementationen av det grafiska gränssnittet. Se även [http://trac.openstreetmap.org/ticket/2067 open bug].
 *Använd [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] för att prova Potlatch. Du kan testa i vilket område du vill där.',
+	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] är en samling verktyg för att redigera Wikipedia',
 	'bw-desc-shapado' => 'Meddelandegrupp för Q&A-programvaran [[Translating:Shapado|Shapado]] som är fri och har öppen källkod',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] microblog server med öppen källkod',
+	'translate-group-desc-statusnet-plugin' => 'Dessa meddelanden är en del av ett tillägg för [[Translating:StatusNet|StatusNet]]',
 	'bw-desc-voctrain' => '[http://omegawiki.org OmegaWiki]-baserad ordförrådstränare. Använder ett minneskortssystem för att lära ord mellan de språk som Omegawiki stöder.
 Skapat för Bambergs universitetet. Licensierat under GPL 2.0 eller senare. Utvecklat av [[User:Kim Bruning|Kim Bruning]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] kan snabbt hitta författarna till en sida på en Wikimedia wiki.',
