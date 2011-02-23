@@ -928,3 +928,63 @@ FILES:
   sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/security_%CODE%.properties
   definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/security.properties
   targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/security_%CODE%.properties
+
+---
+BASIC:
+  id: out-mifos-ftl
+  label: Mifos - Ftl
+
+MANGLER:
+  class: StringMatcher
+  prefix: ftl-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/userInterface/src/main/resources/org/mifos/ui/localizedProperties/FtlDefinedLabelsMessages_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/userInterface/src/main/resources/org/mifos/ui/localizedProperties/FtlDefinedLabelsMessages.properties
+  targetPattern: mifos/userInterface/src/main/resources/org/mifos/ui/localizedProperties/FtlDefinedLabelsMessages_%CODE%.properties
+
+TAGS:
+  ignored:
+    - ftl-ftlDefinedLabels.viewOfficeHierarchy.areaOffice
+    - ftl-ftlDefinedLabels.viewOfficeHierarchy.branchOffice
+    - ftl-ftlDefinedLabels.manadatoryHiddenFields.externalId
+    - ftl-ftlDefinedLabels.manadatoryHiddenFields.ethnicity
+    - ftl-ftlDefinedLabels.manadatoryHiddenFields.citizenship
+    - ftl-ftlDefinedLabels.manadatoryHiddenFields.handicapped
+    - ftl-ftlDefinedLabels.manadatoryHiddenFields.address1
+    - ftl-ftlDefinedLabels.manadatoryHiddenFields.address2
+    - ftl-ftlDefinedLabels.manadatoryHiddenFields.address3
+    - ftl-ftlDefinedLabels.manadatoryHiddenFields.state
+    - ftl-ftlDefinedLabels.manadatoryHiddenFields.postalCode
+    - ftl-ftlDefinedLabels.manadatoryHiddenFields.governmentID
+    - ftl-ftlDefinedLabels.manadatoryHiddenFields.groupfields fields
+    - ftl-ftlDefinedLabels.manageProducts.viewProductCategories.loans
+    - ftl-ftlDefinedLabels.manageProducts.viewProductCategories.savings
+    - ftl-ftlDefinedLabels.manageProducts.editLatenessDormancy.loan
+    - ftl-ftlDefinedLabels.manageProducts.editLatenessDormancy.setLatenessDefinition
+    - ftl-ftlDefinedLabels.manageProducts.editLatenessDormancy.savings
+    - ftl-ftlDefinedLabels.manageProduct.viewProductMix.loan
+    - ftl-ftlDefinedLabels.manageProduct.viewProductMix.savings
+    - ftl-ftlDefinedLabels.inactive
+    - ftl-ftlDefinedLabels.active
+    - ftl-ftlDefinedLabels.manageProducts.editCategory.loan
+    - ftl-ftlDefinedLabels.manageProducts.editCategory.savings
+    - ftl-ftlDefinedLabels.manageProducts.defineNewCategory.productname
+
+---
+BASIC:
+  id: out-mifos-cashflow
+  label: Mifos - Cashflow
+
+MANGLER:
+  class: StringMatcher
+  prefix: cash-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/cashflow/src/main/resources/org/mifos/platform/cashflow/ui/localizedProperties/cashflow_messages_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/cashflow/src/main/resources/org/mifos/platform/cashflow/ui/localizedProperties/cashflow_messages.properties
+  targetPattern: mifos/cashflow/src/main/resources/org/mifos/platform/cashflow/ui/localizedProperties/cashflow_messages_%CODE%.properties
