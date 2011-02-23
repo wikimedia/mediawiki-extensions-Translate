@@ -266,3 +266,135 @@ TAGS:
     - cfg-errors.prefix
     - cfg-errors.suffix
 
+---
+BASIC:
+  id: out-mifos-cs
+  label: Mifos - Customer Search
+
+MANGLER:
+  class: StringMatcher
+  prefix: cs-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/CustomerSearchUIResources_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/CustomerSearchUIResources.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/CustomerSearchUIResources_%CODE%.properties
+
+---
+BASIC:
+  id: out-mifos-cui
+  label: Mifos - Customer UI
+
+MANGLER:
+  class: StringMatcher
+  prefix: cui-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/CustomerUIResources_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/CustomerUIResources.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/CustomerUIResources_%CODE%.properties
+
+TAGS:
+  ignored:
+    - cui-label.colon
+    - cui-errors.prefix
+    - cui-errors.suffix
+
+---
+BASIC:
+  id: out-mifos-exception
+  label: Mifos - Exceptions
+
+MANGLER:
+  class: StringMatcher
+  prefix: exception-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/ExceptionResources_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/ExceptionResources.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/ExceptionResources_%CODE%.properties
+
+---
+BASIC:
+  id: out-mifos-fees
+  label: Mifos - Fees
+
+MANGLER:
+  class: StringMatcher
+  prefix: fees-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/FeesUIResources_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/FeesUIResources.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/FeesUIResources_%CODE%.properties
+
+TAGS:
+  ignored:
+    - fees-errors.footer
+    - fees-errors.header
+    - fees-errors.prefix
+    - fees-errors.suffix
+
+---
+BASIC:
+  id: out-mifos-field
+  label: Mifos - Fields
+
+MANGLER:
+  class: StringMatcher
+  prefix: field-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/FieldUIResources_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/FieldUIResources.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/FieldUIResources_%CODE%.properties
+
+---
+BASIC:
+  id: out-mifos-framework
+  label: Mifos - Framework
+
+MANGLER:
+  class: StringMatcher
+  prefix: framework-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/FrameworkUIResources_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/FrameworkUIResources.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/FrameworkUIResources_%CODE%.properties
+
+---
+BASIC:
+  id: out-mifos-fund
+  label: Mifos - Funds
+
+MANGLER:
+  class: StringMatcher
+  prefix: fund-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/FundUIResources_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/FundUIResources.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/FundUIResources_%CODE%.properties
+
+TAGS:
+  ignored:
+    - fund-errors.footer
+    - fund-errors.header
+    - fund-errors.prefix
+    - fund-errors.suffix
+
