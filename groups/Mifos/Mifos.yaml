@@ -121,49 +121,44 @@ TAGS:
   optional:
     - as-accountStatus.hierarchydelimiter
 
-# Many strings need documentation
-# ---
-# BASIC:
-#   id: out-mifos-ad
-#   label: Mifos - Admin Documents
-# 
-# MANGLER:
-#   class: StringMatcher
-#   prefix: ad-
-#   patterns:
-#     - "*"
-# 
-# FILES:
-#   sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/AdmindocumentsUIResources_%CODE%.properties
-#   definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/AdmindocumentsUIResources.properties
-#   targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/AdmindocumentsUIResources_%CODE%.properties
-# 
-# TAGS:
-#   ignored:
-#     - ad-accounts.allowed_amount
-#     - ad-accounts.allowed_interest
-#     - ad-accounts.allowed_no_of_inst
-#     - ad-errors.prefix
-#     - ad-errors.suffix
-#   optional:
-#     - ad-accounts.colon
+---
+BASIC:
+  id: out-mifos-ad
+  label: Mifos - Admin Documents
 
-# No .properties file
-# ---
-# BASIC:
-#   id: out-mifos-app
-#   label: Mifos - Application
-# 
-# MANGLER:
-#   class: StringMatcher
-#   prefix: app-
-#   patterns:
-#     - "*"
-# 
-# FILES:
-#   sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/ApplicationResources_%CODE%.properties
-#   definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/ApplicationResources.properties
-#   targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/ApplicationResources_%CODE%.properties
+MANGLER:
+  class: StringMatcher
+  prefix: ad-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/AdmindocumentsUIResources_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/AdmindocumentsUIResources.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/AdmindocumentsUIResources_%CODE%.properties
+
+TAGS:
+  ignored:
+    - ad-errors.prefix
+    - ad-errors.suffix
+  optional:
+    - ad-accounts.colon
+
+---
+BASIC:
+  id: out-mifos-app
+  label: Mifos - Application
+
+MANGLER:
+  class: StringMatcher
+  prefix: app-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/ApplicationResources_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/ApplicationResources.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/ApplicationResources_%CODE%.properties
 
 ---
 BASIC:
@@ -405,3 +400,531 @@ TAGS:
     - fund-errors.prefix
     - fund-errors.suffix
 
+---
+BASIC:
+  id: out-mifos-group
+  label: Mifos - Groups
+
+MANGLER:
+  class: StringMatcher
+  prefix: group-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/GroupUIResources_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/GroupUIResources.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/GroupUIResources_%CODE%.properties
+
+TAGS:
+  optional:
+    - group-Group.S
+    - group-Group.comma
+    - group-Group.dot
+  ignored:
+    - group-errors.prefix
+    - group-errors.suffix
+
+---
+BASIC:
+  id: out-mifos-holiday
+  label: Mifos - Holidays
+
+MANGLER:
+  class: StringMatcher
+  prefix: holiday-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/HolidayUIResources_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/HolidayUIResources.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/HolidayUIResources_%CODE%.properties
+
+TAGS:
+  ignored:
+    - holiday-errors.prefix
+    - holiday-errors.suffix
+
+---
+BASIC:
+  id: out-mifos-loan
+  label: Mifos - Loans
+
+MANGLER:
+  class: StringMatcher
+  prefix: loan-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/LoanUIResources_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/LoanUIResources.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/LoanUIResources_%CODE%.properties
+
+TAGS:
+  ignored:
+    - loan-errors.prefix
+    - loan-errors.suffix
+    - loan-accounts.colon
+    - loan-loan.Slash
+    - loan-loan.colon
+
+---
+BASIC:
+  id: out-mifos-logging
+  label: Mifos - Logging
+
+MANGLER:
+  class: StringMatcher
+  prefix: logging-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/LoggerStatements_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/LoggerStatements.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/LoggerStatements_%CODE%.properties
+
+---
+BASIC:
+  id: out-mifos-login
+  label: Mifos - Login
+
+MANGLER:
+  class: StringMatcher
+  prefix: login-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/LoginUIResources_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/LoginUIResources.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/LoginUIResources_%CODE%.properties
+
+TAGS:
+  ignored:
+    - login-errors.prefix
+    - login-errors.suffix
+
+---
+BASIC:
+  id: out-mifos-lookup
+  label: Mifos - Lookup Values
+
+MANGLER:
+  class: StringMatcher
+  prefix: lookup-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/userInterface/src/main/resources/org/mifos/ui/localizedProperties/LookupValueMessages_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/userInterface/src/main/resources/org/mifos/ui/localizedProperties/LookupValueMessages.properties
+  targetPattern: mifos/userInterface/src/main/resources/org/mifos/ui/localizedProperties/LookupValueMessages_%CODE%.properties
+
+---
+BASIC:
+  id: out-mifos-meeting
+  label: Mifos - Meetings
+
+MANGLER:
+  class: StringMatcher
+  prefix: meeting-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/Meeting_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/Meeting.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/Meeting_%CODE%.properties
+
+TAGS:
+  ignored:
+    - meeting-errors.prefix
+    - meeting-errors.suffix
+
+---
+BASIC:
+  id: out-mifos-menu
+  label: Mifos - Menus
+
+MANGLER:
+  class: StringMatcher
+  prefix: menu-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/MenuResources_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/MenuResources.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/MenuResources_%CODE%.properties
+
+---
+BASIC:
+  id: out-mifos-ml
+  label: Mifos - Messages in Database
+
+MANGLER:
+  class: StringMatcher
+  prefix: ml-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/MessageLookupMessages_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/MessageLookupMessages.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/MessageLookupMessages_%CODE%.properties
+
+---
+BASIC:
+  id: out-mifos-office
+  label: Mifos - Offices
+
+MANGLER:
+  class: StringMatcher
+  prefix: office-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/Office_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/Office.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/Office_%CODE%.properties
+
+---
+BASIC:
+  id: out-mifos-offficeui
+  label: Mifos - Office UI
+
+MANGLER:
+  class: StringMatcher
+  prefix: offficeui-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/OfficeUIResources_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/OfficeUIResources.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/OfficeUIResources_%CODE%.properties
+
+TAGS:
+  ignored:
+    - office-errors.prefix
+    - office-errors.suffix
+
+---
+BASIC:
+  id: out-mifos-ppi
+  label: Mifos - PPI
+
+MANGLER:
+  class: StringMatcher
+  prefix: ppi-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/PPIUIResources_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/PPIUIResources.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/PPIUIResources_%CODE%.properties
+
+TAGS:
+  ignored:
+    - ppi-errors.prefix
+    - ppi-errors.suffix
+
+---
+BASIC:
+  id: out-mifos-personnel
+  label: Mifos - Personnel
+
+MANGLER:
+  class: StringMatcher
+  prefix: personnel-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/PersonnelUIResources_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/PersonnelUIResources.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/PersonnelUIResources_%CODE%.properties
+
+TAGS:
+  ignored:
+    - personnel-errors.prefix
+    - personnel-errors.suffix
+    - personnel-errors.footer
+    - personnel-errors.header
+
+---
+BASIC:
+  id: out-mifos-pd
+  label: Mifos - Product Definition
+
+MANGLER:
+  class: StringMatcher
+  prefix: pd-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/ProductDefinitionResources_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/ProductDefinitionResources.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/ProductDefinitionResources_%CODE%.properties
+
+TAGS:
+  ignored:
+    - pd-errors.prefix
+    - pd-errors.suffix
+    - pd-errors.footer
+    - pd-errors.header
+
+---
+BASIC:
+  id: out-mifos-rc
+  label: Mifos - Reports Categories
+
+MANGLER:
+  class: StringMatcher
+  prefix: rc-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/ReportsCategoryUIResources_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/ReportsCategoryUIResources.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/ReportsCategoryUIResources_%CODE%.properties
+
+TAGS:
+  ignored:
+    - rc-errors.prefix
+    - rc-errors.suffix
+    - rc-errors.footer
+    - rc-errors.header
+
+---
+BASIC:
+  id: out-mifos-reports
+  label: Mifos - Reports
+
+MANGLER:
+  class: StringMatcher
+  prefix: reports-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/ReportsUIResources_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/ReportsUIResources.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/ReportsUIResources_%CODE%.properties
+
+TAGS:
+  ignored:
+    - reports-errors.prefix
+    - reports-errors.suffix
+    - reports-errors.footer
+    - reports-errors.header
+    - reports-reports.dot
+
+---
+BASIC:
+  id: out-mifos-resources
+  label: Mifos - General Resources
+
+MANGLER:
+  class: StringMatcher
+  prefix: resources-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/Resources_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/Resources.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/Resources_%CODE%.properties
+
+---
+BASIC:
+  id: out-mifos-rap
+  label: Mifos - Roles and Permissions
+
+MANGLER:
+  class: StringMatcher
+  prefix: rap-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/RolesAndPermission_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/RolesAndPermission.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/RolesAndPermission_%CODE%.properties
+
+TAGS:
+  ignored:
+    - rap-errors.prefix
+    - rap-errors.suffix
+
+---
+BASIC:
+  id: out-mifos-savings
+  label: Mifos - Savings
+
+MANGLER:
+  class: StringMatcher
+  prefix: savings-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/SavingsUIResources_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/SavingsUIResources.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/SavingsUIResources_%CODE%.properties
+
+TAGS:
+  ignored:
+    - savings-errors.prefix
+    - savings-errors.suffix
+
+---
+BASIC:
+  id: out-mifos-shared
+  label: Mifos - Shared Messages
+
+MANGLER:
+  class: StringMatcher
+  prefix: shared-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/SharedMessages_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/SharedMessages.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/SharedMessages_%CODE%.properties
+
+---
+BASIC:
+  id: out-mifos-surveys
+  label: Mifos - Surveys
+
+MANGLER:
+  class: StringMatcher
+  prefix: surveys-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/SurveysUIResources_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/SurveysUIResources.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/SurveysUIResources_%CODE%.properties
+
+TAGS:
+  ignored:
+    - surveys-errors.prefix
+    - surveys-errors.suffix
+
+---
+BASIC:
+  id: out-mifos-ui
+  label: Mifos - General UI Resources
+
+MANGLER:
+  class: StringMatcher
+  prefix: ui-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/UIResources_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/UIResources.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/UIResources_%CODE%.properties
+
+---
+BASIC:
+  id: out-mifos-vos
+  label: Mifos - View Organization Settings
+
+MANGLER:
+  class: StringMatcher
+  prefix: vos-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/ViewOrganizationSettingsUIResources_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/ViewOrganizationSettingsUIResources.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/ViewOrganizationSettingsUIResources_%CODE%.properties
+
+---
+BASIC:
+  id: out-mifos-accounts
+  label: Mifos - Accounts
+
+MANGLER:
+  class: StringMatcher
+  prefix: accounts-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/accountsUIResources_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/accountsUIResources.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/accountsUIResources_%CODE%.properties
+
+TAGS:
+  ignored:
+    - accounts-errors.prefix
+    - accounts-errors.suffix
+    - accounts-accounts.colon
+
+---
+BASIC:
+  id: out-mifos-admin
+  label: Mifos - Admin Area
+
+MANGLER:
+  class: StringMatcher
+  prefix: admin-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/adminUIResources_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/adminUIResources.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/adminUIResources_%CODE%.properties
+
+TAGS:
+  ignored:
+    - admin-errors.prefix
+    - admin-errors.suffix
+
+---
+BASIC:
+  id: out-mifos-re
+  label: Mifos - Report Errors
+
+MANGLER:
+  class: StringMatcher
+  prefix: re-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/reporterrors_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/reporterrors.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/reporterrors_%CODE%.properties
+
+---
+BASIC:
+  id: out-mifos-security
+  label: Mifos - Security
+
+MANGLER:
+  class: StringMatcher
+  prefix: security-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/security_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/security.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/security_%CODE%.properties
