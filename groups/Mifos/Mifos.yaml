@@ -282,6 +282,13 @@ FILES:
   definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/CustomerSearchUIResources.properties
   targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/CustomerSearchUIResources_%CODE%.properties
 
+TAGS:
+  ignored:
+    - cs-errors.footer
+    - cs-errors.header
+    - cs-errors.prefix
+    - cs-errors.suffix
+
 ---
 BASIC:
   id: out-mifos-cui
