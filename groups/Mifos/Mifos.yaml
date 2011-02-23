@@ -610,8 +610,8 @@ FILES:
 
 TAGS:
   ignored:
-    - office-errors.prefix
-    - office-errors.suffix
+    - officeui-errors.prefix
+    - officeui-errors.suffix
 
 ---
 BASIC:
