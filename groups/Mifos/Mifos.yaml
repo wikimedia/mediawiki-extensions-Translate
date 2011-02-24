@@ -32,7 +32,7 @@ GROUPS:
 ---
 BASIC:
   id: out-mifos-core
-  label: Mifos core messages
+  label: Mifos - Core
 
 FILES:
   sourcePattern: %GROUPROOT%/mifos/userInterface/src/main/resources/org/mifos/ui/localizedProperties/messages_%CODE%.properties
