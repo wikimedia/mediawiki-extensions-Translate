@@ -1,8 +1,6 @@
 Achievements II
 file = AchievementsII/i18n/AchievementsII.i18n.php
 
-Action Panel
-
 Ad SS
 
 Combo Ajax Login
@@ -37,8 +35,6 @@ file = CategoryExhibition/i18n/CategoryExhibition.i18n.php
 
 Category Galleries
 
-Category Hubs
-
 Category Select
 
 Cloak Check
@@ -62,8 +58,6 @@ ignored = createpage-newpagelayout
 
 Edit Account
 file = EditAccount/SpecialEditAccount.i18n.php
-
-Editing Tips
 
 Ez API
 
@@ -206,8 +200,6 @@ Special Interwiki Edit
 
 Special Multiple Lookup
 
-Special Private Domains
-
 Special Protect Site
 
 Special Sponsor Page
@@ -216,8 +208,6 @@ file = SpecialSponsorPage/Sponsor.i18n.php
 optional = sponsor-template
 
 Special User Data
-
-Special Widget Dashboard
 
 Spell Checker
 
@@ -264,9 +254,6 @@ descmsg = wikia-watchsubpages-desc
 
 Where Is Extension
 file = WhereIsExtension/SpecialWhereIsExtension.i18n.php
-
-Widget Special Page
-file = WidgetSpecialPage/WidgetsSpecialPage.i18n.php
 
 Wikia Game Guides
 ignored = wikiagameguides-tab-more-content, wikiagameguides-contents
