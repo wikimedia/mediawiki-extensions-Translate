@@ -615,6 +615,9 @@ aliasfile = IndexFunction/IndexFunction.alias.php
 descmsg = indexfunc-desc
 ignored = index-exclude-categories
 
+Inline Editor
+descmsg = inline-editor-desc
+
 Input Box
 
 Inspect Cache
