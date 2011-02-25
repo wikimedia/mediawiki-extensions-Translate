@@ -615,8 +615,9 @@ aliasfile = IndexFunction/IndexFunction.alias.php
 descmsg = indexfunc-desc
 ignored = index-exclude-categories
 
-Inline Editor
-descmsg = inline-editor-desc
+# Disable again per http://www.mediawiki.org/wiki/Special:Code/MediaWiki/82789#c14456
+#Inline Editor
+#descmsg = inline-editor-desc
 
 Input Box
 
