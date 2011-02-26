@@ -141,6 +141,7 @@ TAGS:
   ignored:
     - ad-errors.prefix
     - ad-errors.suffix
+    - ad-accounts.modeofpayment
   optional:
     - ad-accounts.colon
 
