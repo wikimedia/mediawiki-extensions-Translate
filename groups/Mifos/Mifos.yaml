@@ -875,6 +875,7 @@ TAGS:
     - accounts-errors.prefix
     - accounts-errors.suffix
     - accounts-accounts.colon
+    - accounts-accounts.modeofpayment
 
 ---
 BASIC:
