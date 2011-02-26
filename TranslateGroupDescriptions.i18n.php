@@ -2119,6 +2119,7 @@ $messages['sr-ec'] = array(
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Окавикс]] је програм за читање Википедије ван мреже',
 	'bw-desc-openlayers' => '[[Translating:OpenLayers|Опенлејерс]] је динамички генератор мапи',
 	'bw-desc-openstreetmap' => '[[Translating:OpenStreetMap|Опенстритмап]] је бесплатна карта целог света',
+	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Пајвикипедија]] је збирка алатки за уређивање Википедије',
 	'bw-desc-shapado' => '[[Translating:Shapado|Шападо]] је интернет окружење за питања и одговоре',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|Статуснет]] је платформа за микро-блогирање',
 );
