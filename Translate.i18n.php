@@ -11166,9 +11166,9 @@ Donn op en Jropp klecke, öm en Leßß met allem ze sinn ze krijje, wat doh dren
 	'translate-task-export-to-file' => 'Donn de Övversäzzonge en_en Datteij äxpotteere',
 	'translate-task-export-as-po' => 'Donn de Övversäzzonge <!--en et Jettäx Fommaat en_en Dattei--> för et offlain-Övversäze äxpotteere',
 	'translate-task-export-to-xliff' => 'Donn de Översetzunge em Xliff Fomaat en_en Datteij äxpochteere',
-	'translate-page-no-such-language' => 'De aanjejoove {{int:translate-page-language}} känne me nit.',
-	'translate-page-no-such-task' => 'De aanjejoove {{int:translate-page-task}} känne me nit.',
-	'translate-page-no-such-group' => 'De aanjejoove {{int:translate-page-group}} känne me nit.',
+	'translate-page-no-such-language' => 'De aanjejovve {{int:translate-page-language}} känne mer nit.',
+	'translate-page-no-such-task' => 'De aanjejovve {{int:translate-page-task}} känne mer nit.',
+	'translate-page-no-such-group' => 'De aanjejovve {{int:translate-page-group}} känne mer nit.',
 	'translate-page-disabled' => "Övversezonge sen affjeschalldt för di {{int:translate-page-group}} un {{int:translate-page-language}}, weil:
 
 ''$1''",
