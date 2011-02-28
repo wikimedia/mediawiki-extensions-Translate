@@ -57,7 +57,6 @@ ignored = article-comments-prefilled-comment-text, article-comments-new-comment-
 ignored = article-comments-comment-contents
 
 Article Feedback
-ignored = articlefeedback-pitch-survey-message, articlefeedback-pitch-join-message, articlefeedback-pitch-edit-message
 
 Article To Category 2
 
