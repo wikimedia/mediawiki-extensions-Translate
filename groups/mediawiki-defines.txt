@@ -1281,8 +1281,6 @@ optional = securepoll-header-ip, securepoll-header-xff, securepoll-header-token-
 optional = securepoll-header-url, securepoll-header-id, securepoll-header-trans-id
 ignored = securepoll-custom-unqualified, securepoll-voter-name-remote, securepoll-voter-name-local
 
-Select Category
-
 Semantic Compound Queries
 magicfile = SemanticCompoundQueries/SemanticCompoundQueries.i18n.magic.php
 
