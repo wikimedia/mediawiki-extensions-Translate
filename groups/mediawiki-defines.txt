@@ -83,7 +83,7 @@ optional = babel-3-n-male, babel-4-n-male, babel-5-n-male, babel-N-n-male
 optional = babel-autocreate-user
 ignored = babel-box-cellspacing, babel-cellspacing
 ignored = babel-portal, babel-template
-ignored = babel-footer
+ignored = babel-footer, babel-box-cellpadding, babel-box-cellpadding
 
 Back and Forth
 file = BackAndForth/BackAndForth.i18n.php
@@ -639,7 +639,7 @@ aliasfile = Interwiki/Interwiki.alias.php
 optional = interwiki_defaulturl, interwiki_url, interwiki-url-label
 ignored = interwiki_logentry, interwiki_defaulturl
 
-# 2010-06-22: Disabled for the moment. Under heavy construction 
+# 2010-06-22: Disabled for the moment. Under heavy construction
 #Interwiki Integration
 #aliasfile = InterwikiIntegration/InterwikiIntegration.alias.php
 
@@ -770,7 +770,7 @@ descmsg = multiupload-desc
 
 MwEmbed Support
 descmsg = mwembed-desc
-file = MwEmbedSupport/MwEmbedSupport.i18n.php 
+file = MwEmbedSupport/MwEmbedSupport.i18n.php
 
 MwEmbed Support - MwEmbed Support
 id = ext-mwembedsupport-mwembedsupport
@@ -914,7 +914,7 @@ ignored = pfunc-convert-prefix-pico
 ignored = pfunc-convert-prefix-femto
 ignored = pfunc-convert-prefix-atto
 ignored = pfunc-convert-prefix-zepto
-ignored = pfunc-convert-prefix-yocto, 
+ignored = pfunc-convert-prefix-yocto,
 ignored = pfunc-convert-prefix-yotta-abbr
 ignored = pfunc-convert-prefix-zetta-abbr
 ignored = pfunc-convert-prefix-exa-abbr
@@ -1535,7 +1535,7 @@ ignored = todoTasksValidProjects
 Tooltip
 
 Toolserver Tools - Holeks Cite book template generator
-file = ToolserverTools/HolekCiteGen/allMessages.php 
+file = ToolserverTools/HolekCiteGen/allMessages.php
 id = ext-ts-citegen
 
 Toolserver Tools - Kolossos Kml On Openlayers
