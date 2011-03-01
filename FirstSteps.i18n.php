@@ -747,6 +747,7 @@ Wenn du keinen Newsletter erhalten möchtest, kannst du dich im Tab „{{int:pre
 );
 
 /** German (formal address) (‪Deutsch (Sie-Form)‬)
+ * @author Purodha
  * @author The Evil IP address
  */
 $messages['de-formal'] = array(
@@ -777,7 +778,7 @@ Diese Einstellung finden Sie unter dem Tab „{{int:prefs-editing}}“.
 Gucken Sie sich auch ruhig die anderen Einstellungsmöglichkeiten an.
 
 Gehen Sie jetzt in Ihre [[Special:Preferences|Einstellungen]] und kehren Sie dann auf diese Seite zurück.',
-	'translate-fs-userpage-text' => 'Jetzt müssen du eine Benutzerseite erstellen.
+	'translate-fs-userpage-text' => 'Jetzt müssen Sie eine Benutzerseite erstellen.
 
 Bitte schreiben Sie etwas über sich, wer Sie sind und was Sie machen.
 Dies hilft der {{SITENAME}}-Gemeinschaft bei der Zusammenarbeit.
