@@ -14181,10 +14181,11 @@ Detalhs : $1',
 
 /** Oriya (ଓଡ଼ିଆ)
  * @author Jose77
+ * @author Psubhashish
  */
 $messages['or'] = array(
 	'translate-history' => 'ଇତିହାସ',
-	'translate-page-navigation-legend' => 'ଦିଗ୍ଦର୍ଶକ',
+	'translate-page-navigation-legend' => 'ଦିଗବାରେଣି (ନାଭିଗେସନ)',
 );
 
 /** Ossetic (Иронау)
