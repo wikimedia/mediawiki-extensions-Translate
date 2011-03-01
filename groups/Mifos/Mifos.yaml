@@ -60,9 +60,9 @@ MANGLER:
     - "*"
 
 FILES:
-  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/AcceptedPaymentTypeUIResources_%CODE%.properties 
-  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/AcceptedPaymentTypeUIResources.properties 
-  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/AcceptedPaymentTypeUIResources_%CODE%.properties 
+  sourcePattern: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/AcceptedPaymentTypeUIResources_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/AcceptedPaymentTypeUIResources.properties
+  targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/AcceptedPaymentTypeUIResources_%CODE%.properties
 
 ---
 BASIC:
@@ -594,6 +594,10 @@ FILES:
   definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/Office.properties
   targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/Office_%CODE%.properties
 
+TAGS:
+  ignored:
+    - office-errors.prefix
+    - office-errors.suffix
 ---
 BASIC:
   id: out-mifos-offficeui
