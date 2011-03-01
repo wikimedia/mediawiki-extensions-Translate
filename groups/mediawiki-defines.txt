@@ -83,7 +83,7 @@ optional = babel-3-n-male, babel-4-n-male, babel-5-n-male, babel-N-n-male
 optional = babel-autocreate-user
 ignored = babel-box-cellspacing, babel-cellspacing
 ignored = babel-portal, babel-template
-ignored = babel-footer, babel-box-cellpadding, babel-box-cellpadding
+ignored = babel-footer, babel-box-cellpadding, babel-cellpadding
 
 Back and Forth
 file = BackAndForth/BackAndForth.i18n.php
