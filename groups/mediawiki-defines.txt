@@ -1268,6 +1268,8 @@ RT
 
 Search Box
 
+Search Log
+
 See also
 
 Scan Set
