@@ -73,6 +73,19 @@ class PageTranslationHooks {
 		return TranslateUtils::messageKeyToGroup( $namespace, $key );
 	}
 
+	/**
+	 * @static
+	 * @param $article Article
+	 * @param $user User
+	 * @param  $text
+	 * @param  $summary
+	 * @param  $minor
+	 * @param  $_
+	 * @param  $_
+	 * @param  $flags
+	 * @param  $revision
+	 * @return bool
+	 */
 	public static function onSectionSave( $article, $user, $text, $summary, $minor,
 		$_, $_, $flags, $revision ) {
 		$title = $article->getTitle();

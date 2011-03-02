@@ -12,6 +12,19 @@
  *  Class for updating the tmserver from translate toolkit during runtime.
  */
 class TranslationMemoryUpdater {
+	/**
+	 * @static
+	 * @param $article Article
+	 * @param $user User
+	 * @param  $text
+	 * @param  $summary
+	 * @param  $minor
+	 * @param  $_
+	 * @param  $_
+	 * @param  $flags
+	 * @param  $revision
+	 * @return bool
+	 */
 	public static function update( $article, $user, $text, $summary, $minor, $_, $_, $flags, $revision ) {
 		global $wgContLang;
 
