@@ -15133,7 +15133,7 @@ As alterações não serão gravadas até clicar no botão de gravar abaixo.',
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Há {{PLURAL:$2|um parênteses irregular|$2 parênteses irregulares}}: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '{{PLURAL:$2|O seguinte link tem|Os seguintes $2 links têm}} problemas: <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links-missing' => '{{PLURAL:$2|O link seguinte está|Os $2 links seguintes estão}} em falta:
+	'translate-checks-links-missing' => '{{PLURAL:$2|Falta o seguinte link|Faltam os seguintes $2 links}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => "Por favor, corrija {{PLURAL:$2|a seguinte ''tag''|as seguintes ''tags''}}:
 <strong>$1</strong>",
