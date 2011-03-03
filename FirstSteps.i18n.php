@@ -665,9 +665,9 @@ $messages['de'] = array(
 	'translate-fs-permissions-title' => 'Übersetzerrechte beantragen',
 	'translate-fs-target-title' => 'Übersetzen!',
 	'translate-fs-email-title' => 'E-Mail-Adresse bestätigen',
-	'translate-fs-intro' => "Willkommen bei dem {{SITENAME}}-Startassistenten.
-Dir wird gezeigt, wie du Schritt für Schritt ein Übersetzer wirst.
-Am Ende wirst du alle ''Oberflächen-Nachrichten'' der von {{SITENAME}} unterstützten Projekte übersetzen können.",
+	'translate-fs-intro' => "Willkommen beim translatewiki.net-Startassistenten.
+Dir wird hier gezeigt, wie du Schritt für Schritt ein Übersetzer bei  translatewiki.net wirst.
+Am Ende wirst du alle ''Nachrichten der Benutzeroberfläche'' der von translatewiki.net unterstützten Projekte übersetzen können.",
 	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount.png|frame]]
 
 Als erstes musst du dir ein Benutzerkonto anlegen.
