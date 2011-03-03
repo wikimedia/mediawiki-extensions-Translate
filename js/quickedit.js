@@ -35,7 +35,7 @@ function MessageCheckUpdater( callback ) {
 	};
 
 	this.cancel = function() {
-		if ( typeof this.timeoutID == 'number' ) {
+		if ( typeof this.timeoutID === 'number' ) {
 			window.clearTimeout( this.timeoutID );
 			delete this.timeoutID;
 		}
@@ -171,9 +171,9 @@ function trlLoadNext( title ) {
 	var page = title.replace( /[^:]+:/, '' );
 	var namespace = title.replace( /:.*/, '' );
 	var found = false;
-	for ( key in trlKeys ) {
+	for ( var key in trlKeys ) {
 		if ( !trlKeys.hasOwnProperty(key) ) { continue; }
-		value = trlKeys[key];
+		var value = trlKeys[key];
 		if (found) {
 			return trlOpenJsEdit( namespace + ':' + value );
 		} else if( page === value ) {
