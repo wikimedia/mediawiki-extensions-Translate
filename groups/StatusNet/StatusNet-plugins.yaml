@@ -45,6 +45,20 @@ MANGLER:
   prefix: apc-
 ---
 BASIC:
+  id: out-statusnet-plugin-accountmanager
+  label: StatusNet - AccountManager
+  display: out/statusnet/plugin/accountmanager
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/AccountManager/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/AccountManager/locale/%CODE%/LC_MESSAGES/AccountManager.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/AccountManager/locale/AccountManager.pot
+  targetPattern: statusnet/plugins/AccountManager/locale/%CODE%/LC_MESSAGES/AccountManager.po
+
+MANGLER:
+  prefix: accountmanager-
+---
+BASIC:
   id: out-statusnet-plugin-adsense
   label: StatusNet - Adsense
   display: out/statusnet/plugin/adsense
@@ -57,6 +71,20 @@ FILES:
 
 MANGLER:
   prefix: adsense-
+---
+BASIC:
+  id: out-statusnet-plugin-aim
+  label: StatusNet - Aim
+  display: out/statusnet/plugin/aim
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/Aim/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/Aim/locale/%CODE%/LC_MESSAGES/Aim.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/Aim/locale/Aim.pot
+  targetPattern: statusnet/plugins/Aim/locale/%CODE%/LC_MESSAGES/Aim.po
+
+MANGLER:
+  prefix: aim-
 ---
 BASIC:
   id: out-statusnet-plugin-anonymousfave
@@ -325,6 +353,20 @@ MANGLER:
   prefix: emailsummary-
 ---
 BASIC:
+  id: out-statusnet-plugin-extendedprofile
+  label: StatusNet - ExtendedProfile
+  display: out/statusnet/plugin/extendedprofile
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/ExtendedProfile/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/ExtendedProfile/locale/%CODE%/LC_MESSAGES/ExtendedProfile.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/ExtendedProfile/locale/ExtendedProfile.pot
+  targetPattern: statusnet/plugins/ExtendedProfile/locale/%CODE%/LC_MESSAGES/ExtendedProfile.po
+
+MANGLER:
+  prefix: extendedprofile-
+---
+BASIC:
   id: out-statusnet-plugin-facebookbridge
   label: StatusNet - FacebookBridge
   display: out/statusnet/plugin/facebookbridge
@@ -505,6 +547,20 @@ FILES:
 
 MANGLER:
   prefix: infinitescroll-
+---
+BASIC:
+  id: out-statusnet-plugin-irc
+  label: StatusNet - Irc
+  display: out/statusnet/plugin/irc
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/Irc/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/Irc/locale/%CODE%/LC_MESSAGES/Irc.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/Irc/locale/Irc.pot
+  targetPattern: statusnet/plugins/Irc/locale/%CODE%/LC_MESSAGES/Irc.po
+
+MANGLER:
+  prefix: irc-
 ---
 BASIC:
   id: out-statusnet-plugin-ldapauthentication
@@ -701,6 +757,20 @@ FILES:
 
 MANGLER:
   prefix: modplus-
+---
+BASIC:
+  id: out-statusnet-plugin-msn
+  label: StatusNet - Msn
+  display: out/statusnet/plugin/msn
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/Msn/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/Msn/locale/%CODE%/LC_MESSAGES/Msn.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/Msn/locale/Msn.pot
+  targetPattern: statusnet/plugins/Msn/locale/%CODE%/LC_MESSAGES/Msn.po
+
+MANGLER:
+  prefix: msn-
 ---
 BASIC:
   id: out-statusnet-plugin-newmenu
@@ -1025,6 +1095,20 @@ MANGLER:
   prefix: sphinxsearch-
 ---
 BASIC:
+  id: out-statusnet-plugin-stricttransportsecurity
+  label: StatusNet - StrictTransportSecurity
+  display: out/statusnet/plugin/stricttransportsecurity
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/StrictTransportSecurity/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/StrictTransportSecurity/locale/%CODE%/LC_MESSAGES/StrictTransportSecurity.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/StrictTransportSecurity/locale/StrictTransportSecurity.pot
+  targetPattern: statusnet/plugins/StrictTransportSecurity/locale/%CODE%/LC_MESSAGES/StrictTransportSecurity.po
+
+MANGLER:
+  prefix: stricttransportsecurity-
+---
+BASIC:
   id: out-statusnet-plugin-submirror
   label: StatusNet - SubMirror
   display: out/statusnet/plugin/submirror
@@ -1177,6 +1261,20 @@ FILES:
 
 MANGLER:
   prefix: xcache-
+---
+BASIC:
+  id: out-statusnet-plugin-xmpp
+  label: StatusNet - Xmpp
+  display: out/statusnet/plugin/xmpp
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/plugins/Xmpp/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/Xmpp/locale/%CODE%/LC_MESSAGES/Xmpp.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/Xmpp/locale/Xmpp.pot
+  targetPattern: statusnet/plugins/Xmpp/locale/%CODE%/LC_MESSAGES/Xmpp.po
+
+MANGLER:
+  prefix: xmpp-
 ---
 BASIC:
   id: out-statusnet-plugin-yammerimport
