@@ -1,30 +1,49 @@
+TEMPLATE:
+  BASIC:
+    description: "{{int:translate-group-desc-ihris}}"
+    namespace: NS_IHRIS
+    class: FileBasedMessageGroup
+
+  FILES:
+    class: GettextFFS
+    codeMap:
+      en-gb:   en_GB
+      en-us:   en_US
+      nl-be:   nl_BE
+      no:      nb
+      pt-br:   pt_BR
+      zh-hans: zh_CN
+      zh-hant: zh_TW
+
+    header: |
+      # Copyright (c) 2011 <hris@capacityproject.org> Capacity Project partnership via IntraHealth International, Inc.
+      # Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
+      # Copyright (c) 2011 translatewiki.net contributors
+      # This file is distributed under the same license as the iHRIS package.
+      #
+
+  CHECKER:
+    class: MessageChecker
+    checks:
+      - printfCheck
+---
 BASIC:
+  id: out-ihris-0-all
+  label: iHRIS
+  display: out/ihris
+  meta: yes
+  class: AggregateMessageGroup
+
+GROUPS:
+  - out-ihris-*
+---
+BASIC:
+  description: "{{int:translate-group-desc-ihris}}"
   id: out-ihris-manage-0-all
-  label: iHRIS Manage
+  label: iHRIS - Manage
   display: out/ihris/manage
   meta: yes
   class: AggregateMessageGroup
-  description: '{{int:bw-desc-ihris-manage}}'
-  namespace: NS_IHRIS
 
 GROUPS:
-  - out-ihris-manage-acci
-  - out-ihris-manage-app
-  - out-ihris-manage-bene
-  - out-ihris-manage-crfp
-  - out-ihris-manage-crfr
-  - out-ihris-manage-crpr
-  - out-ihris-manage-crsp
-  - out-ihris-manage-crsr
-  - out-ihris-manage-cure
-  - out-ihris-manage-diac
-  - out-ihris-manage-job
-  - out-ihris-manage-manage
-  - out-ihris-manage-masi
-  - out-ihris-manage-pede
-  - out-ihris-manage-pepo
-  - out-ihris-manage-regi
-  - out-ihris-manage-sade
-  - out-ihris-manage-sala
-  - out-ihris-manage-side
-  - out-ihris-manage-siwa
+  - out-ihris-manage-*
