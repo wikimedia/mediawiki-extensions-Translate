@@ -22,7 +22,7 @@ TEMPLATE:
       # This file is distributed under the same license as the iHRIS package.
       #
 
-  MANGLER:
+  MANGLER::
     class: StringMatcher
     patterns:
       - "*"
@@ -42,7 +42,7 @@ FILES:
   sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/accident/%CODE%.po
   targetPattern: ihris/ihris-manage/translations/templates/accident/%CODE%.po
 
-MANGLER
+MANGLER:
   prefix: man-acci-
 
 ---
@@ -56,7 +56,7 @@ FILES:
   sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/disciplinary-action/%CODE%.po
   targetPattern: ihris/ihris-manage/translations/templates/disciplinary-action/%CODE%.po
 
-MANGLER
+MANGLER:
   prefix: man-diac-
 
 ---
@@ -70,7 +70,7 @@ FILES:
   sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-application/%CODE%.po
   targetPattern: ihris/ihris-manage/translations/templates/ihris-manage-application/%CODE%.po
 
-MANGLER
+MANGLER:
   prefix: man-appl-
 
 ---
@@ -84,7 +84,7 @@ FILES:
   sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-benefit/%CODE%.po
   targetPattern: ihris/ihris-manage/translations/templates/ihris-manage-benefit/%CODE%.po
 
-MANGLER
+MANGLER:
   prefix: man-bene-
 
 ---
@@ -98,7 +98,7 @@ FILES:
   sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-custom-reports/%CODE%.po
   targetPattern: ihris/ihris-manage/translations/templates/ihris-manage-custom-reports/%CODE%.po
 
-MANGLER
+MANGLER:
   prefix: man-cure-
 
 ---
@@ -112,7 +112,7 @@ FILES:
   sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-custom-reports-facility-reports/%CODE%.po
   targetPattern: ihris/ihris-manage/translations/templates/ihris-manage-custom-reports-facility-reports/%CODE%.po
 
-MANGLER
+MANGLER:
   prefix: man-crfr-
 
 ---
@@ -126,7 +126,7 @@ FILES:
   sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-custom-reports-filled-positions/%CODE%.po
   targetPattern: ihris/ihris-manage/translations/templates/ihris-manage-custom-reports-filled-positions/%CODE%.po
 
-MANGLER
+MANGLER:
   prefix: man-crfp-
 
 ---
@@ -140,7 +140,7 @@ FILES:
   sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-custom-reports-position-reports/%CODE%.po
   targetPattern: ihris/ihris-manage/translations/templates/ihris-manage-custom-reports-position-reports/%CODE%.po
 
-MANGLER
+MANGLER:
   prefix: man-crpr-
 
 ---
@@ -154,7 +154,7 @@ FILES:
   sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-custom-reports-search-people/%CODE%.po
   targetPattern: ihris/ihris-manage/translations/templates/ihris-manage-custom-reports-search-people/%CODE%.po
 
-MANGLER
+MANGLER:
   prefix: man-crsp-
 
 ---
@@ -168,7 +168,7 @@ FILES:
   sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-custom-reports-staff-reports/%CODE%.po
   targetPattern: ihris/ihris-manage/translations/templates/ihris-manage-custom-reports-staff-reports/%CODE%.po
 
-MANGLER
+MANGLER:
   prefix: man-crsr-
 
 ---
@@ -182,7 +182,7 @@ FILES:
   sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage/%CODE%.po
   targetPattern: ihris/ihris-manage/translations/templates/ihris-manage/%CODE%.po
 
-MANGLER
+MANGLER:
   prefix: man-mana-
 
 ---
@@ -196,7 +196,7 @@ FILES:
   sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-job/%CODE%.po
   targetPattern: ihris/ihris-manage/translations/templates/ihris-manage-job/%CODE%.po
 
-MANGLER
+MANGLER:
   prefix: man-job-
 
 ---
@@ -210,7 +210,7 @@ FILES:
   sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-person-demographic/%CODE%.po
   targetPattern: ihris/ihris-manage/translations/templates/ihris-manage-person-demographic/%CODE%.po
 
-MANGLER
+MANGLER:
   prefix: man-pede-
 
 ---
@@ -224,7 +224,7 @@ FILES:
   sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-person-position/%CODE%.po
   targetPattern: ihris/ihris-manage/translations/templates/ihris-manage-person-position/%CODE%.po
 
-MANGLER
+MANGLER:
   prefix: man-pepo-
 
 ---
@@ -238,7 +238,7 @@ FILES:
   sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-salary/%CODE%.po
   targetPattern: ihris-manage/translations/templates/ihris-manage-salary/%CODE%.po
 
-MANGLER
+MANGLER:
   prefix: man-sala-
 
 ---
@@ -252,7 +252,7 @@ FILES:
   sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-site/%CODE%.po
   targetPattern: ihris/ihris-manage/translations/templates/ihris-manage-site/%CODE%.po
 
-MANGLER
+MANGLER:
   prefix: man-masi-
 
 ---
@@ -266,7 +266,7 @@ FILES:
   sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-site-wamp/%CODE%.po
   targetPattern: ihris/ihris-manage/translations/templates/ihris-manage-site-wamp/%CODE%.po
 
-MANGLER
+MANGLER:
   prefix: man-siwa-
 
 ---
@@ -280,5 +280,5 @@ FILES:
   sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/manage-registration/%CODE%.po
   targetPattern: ihris/ihris-manage/translations/templates/manage-registration/%CODE%.po
 
-MANGLER
+MANGLER:
   prefix: man-regi-
