@@ -4,7 +4,7 @@ TEMPLATE:
     namespace: NS_STATUSNET
     display: out/statusnet/
     class: FileBasedMessageGroup
-    codeBrowser: http://gitorious.org/statusnet/mainline/blobs/0.9.x/%FILE%#line%LINE%
+    codeBrowser: http://gitorious.org/statusnet/mainline/blobs/1.0.x/%FILE%#line%LINE%
 
   FILES:
     class: GettextFFS
