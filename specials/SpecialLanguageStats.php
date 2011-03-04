@@ -321,6 +321,8 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			return $incache;
 		}
 
+		wfProfileIn( __METHOD__ );
+
 		// Initialise messages.
 		$collection = $group->initCollection( $code );
 		$collection->setInFile( $group->load( $code ) );
@@ -345,6 +347,8 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		if ( $i++ % 50 === 0 ) {
 			$cache->commit();
 		}
+
+		wfProfileOut( __METHOD__ );
 
 		return $result;
 	}
