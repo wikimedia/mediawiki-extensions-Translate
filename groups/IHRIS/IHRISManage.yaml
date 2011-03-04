@@ -21,6 +21,11 @@ TEMPLATE:
       # This file is distributed under the same license as the iHRIS package.
       #
 
+  MANGLER:
+    class: StringMatcher
+    patterns:
+      - "*"
+
   CHECKER:
     class: MessageChecker
     checks:
