@@ -47,8 +47,8 @@ BASIC:
 
 FILES:
   definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/disciplinary-action/disciplinary-action.pot
-  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/%CODE%.po
-  targetPattern: ihris/ihris-manage/translations/templates/%CODE%.po
+  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/disciplinary-action/%CODE%.po
+  targetPattern: ihris/ihris-manage/translations/templates/disciplinary-action/%CODE%.po
 
 MANGLER
     prefix: man-diac
