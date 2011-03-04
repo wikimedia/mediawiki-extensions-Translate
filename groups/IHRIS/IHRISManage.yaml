@@ -22,7 +22,7 @@ TEMPLATE:
       # This file is distributed under the same license as the iHRIS package.
       #
 
-  MANGLER::
+  MANGLER:
     class: StringMatcher
     patterns:
       - "*"
