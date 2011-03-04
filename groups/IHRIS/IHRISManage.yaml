@@ -2,6 +2,7 @@ TEMPLATE:
   BASIC:
     description: "{{int:translate-group-desc-ihris-manage}}"
     namespace: NS_IHRIS
+    display: out/ihris/
     class: FileBasedMessageGroup
 
   FILES:
@@ -37,8 +38,8 @@ BASIC:
   display: out/ihris/manage/acci
 
 FILES:
-  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/accident/accident.pot
-  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/accident/%CODE%.po
+  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/accident/accident.pot
+  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/accident/%CODE%.po
   targetPattern: ihris/ihris-manage/translations/templates/accident/%CODE%.po
 
 MANGLER
@@ -51,8 +52,8 @@ BASIC:
   display: out/ihris/manage/diac
 
 FILES:
-  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/disciplinary-action/disciplinary-action.pot
-  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/disciplinary-action/%CODE%.po
+  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/disciplinary-action/disciplinary-action.pot
+  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/disciplinary-action/%CODE%.po
   targetPattern: ihris/ihris-manage/translations/templates/disciplinary-action/%CODE%.po
 
 MANGLER
@@ -65,8 +66,8 @@ BASIC:
   display: out/ihris/manage/app
 
 FILES:
-  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-application/ihris-manage-application.pot
-  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-application/%CODE%.po
+  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-application/ihris-manage-application.pot
+  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-application/%CODE%.po
   targetPattern: ihris/ihris-manage/translations/templates/ihris-manage-application/%CODE%.po
 
 MANGLER
@@ -79,8 +80,8 @@ BASIC:
   display: out/ihris/manage/bene
 
 FILES:
-  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-benefit/ihris-manage-benefit.pot
-  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-benefit/%CODE%.po
+  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-benefit/ihris-manage-benefit.pot
+  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-benefit/%CODE%.po
   targetPattern: ihris/ihris-manage/translations/templates/ihris-manage-benefit/%CODE%.po
 
 MANGLER
@@ -93,8 +94,8 @@ BASIC:
   display: out/ihris/manage/cure
 
 FILES:
-  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-custom-reports/ihris-manage-custom-reports.pot
-  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-custom-reports/%CODE%.po
+  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-custom-reports/ihris-manage-custom-reports.pot
+  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-custom-reports/%CODE%.po
   targetPattern: ihris/ihris-manage/translations/templates/ihris-manage-custom-reports/%CODE%.po
 
 MANGLER
@@ -107,8 +108,8 @@ BASIC:
   display: out/ihris/manage/crfr
 
 FILES:
-  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-custom-reports-facility-reports/ihris-manage-custom-reports-facility-reports.pot
-  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-custom-reports-facility-reports/%CODE%.po
+  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-custom-reports-facility-reports/ihris-manage-custom-reports-facility-reports.pot
+  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-custom-reports-facility-reports/%CODE%.po
   targetPattern: ihris/ihris-manage/translations/templates/ihris-manage-custom-reports-facility-reports/%CODE%.po
 
 MANGLER
@@ -121,8 +122,8 @@ BASIC:
   display: out/ihris/manage/crfp
 
 FILES:
-  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-custom-reports-filled-positions/ihris-manage-custom-reports-filled-positions.pot
-  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-custom-reports-filled-positions/%CODE%.po
+  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-custom-reports-filled-positions/ihris-manage-custom-reports-filled-positions.pot
+  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-custom-reports-filled-positions/%CODE%.po
   targetPattern: ihris/ihris-manage/translations/templates/ihris-manage-custom-reports-filled-positions/%CODE%.po
 
 MANGLER
@@ -135,8 +136,8 @@ BASIC:
   display: out/ihris/manage/crpr
 
 FILES:
-  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-custom-reports-position-reports/ihris-manage-custom-reports-position-reports.pot
-  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-custom-reports-position-reports/%CODE%.po
+  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-custom-reports-position-reports/ihris-manage-custom-reports-position-reports.pot
+  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-custom-reports-position-reports/%CODE%.po
   targetPattern: ihris/ihris-manage/translations/templates/ihris-manage-custom-reports-position-reports/%CODE%.po
 
 MANGLER
@@ -149,8 +150,8 @@ BASIC:
   display: out/ihris/manage/crsp
 
 FILES:
-  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-custom-reports-search-people/ihris-manage-custom-reports-search-people.pot
-  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-custom-reports-search-people/%CODE%.po
+  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-custom-reports-search-people/ihris-manage-custom-reports-search-people.pot
+  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-custom-reports-search-people/%CODE%.po
   targetPattern: ihris/ihris-manage/translations/templates/ihris-manage-custom-reports-search-people/%CODE%.po
 
 MANGLER
@@ -163,8 +164,8 @@ BASIC:
   display: out/ihris/manage/crsr
 
 FILES:
-  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-custom-reports-staff-reports/ihris-manage-custom-reports-staff-reports.pot
-  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-custom-reports-staff-reports/%CODE%.po
+  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-custom-reports-staff-reports/ihris-manage-custom-reports-staff-reports.pot
+  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-custom-reports-staff-reports/%CODE%.po
   targetPattern: ihris/ihris-manage/translations/templates/ihris-manage-custom-reports-staff-reports/%CODE%.po
 
 MANGLER
@@ -177,8 +178,8 @@ BASIC:
   display: out/ihris/manage/manage
 
 FILES:
-  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage/ihris-manage.pot
-  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage/%CODE%.po
+  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage/ihris-manage.pot
+  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage/%CODE%.po
   targetPattern: ihris/ihris-manage/translations/templates/ihris-manage/%CODE%.po
 
 MANGLER
@@ -191,8 +192,8 @@ BASIC:
   display: out/ihris/manage/jpb
 
 FILES:
-  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-job/ihris-manage-job.pot
-  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-job/%CODE%.po
+  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-job/ihris-manage-job.pot
+  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-job/%CODE%.po
   targetPattern: ihris/ihris-manage/translations/templates/ihris-manage-job/%CODE%.po
 
 MANGLER
@@ -205,8 +206,8 @@ BASIC:
   display: out/ihris/manage/pede
 
 FILES:
-  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-person-demographic/ihris-manage-person-demographic.pot
-  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-person-demographic/%CODE%.po
+  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-person-demographic/ihris-manage-person-demographic.pot
+  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-person-demographic/%CODE%.po
   targetPattern: ihris/ihris-manage/translations/templates/ihris-manage-person-demographic/%CODE%.po
 
 MANGLER
@@ -219,8 +220,8 @@ BASIC:
   display: out/ihris/manage/pepo
 
 FILES:
-  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-person-position/ihris-manage-person-position.pot
-  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-person-position/%CODE%.po
+  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-person-position/ihris-manage-person-position.pot
+  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-person-position/%CODE%.po
   targetPattern: ihris/ihris-manage/translations/templates/ihris-manage-person-position/%CODE%.po
 
 MANGLER
@@ -233,8 +234,8 @@ BASIC:
   display: out/ihris/manage/sala
 
 FILES:
-  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-salary/ihris-manage-salary.pot
-  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-salary/%CODE%.po
+  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-salary/ihris-manage-salary.pot
+  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-salary/%CODE%.po
   targetPattern: ihris-manage/translations/templates/ihris-manage-salary/%CODE%.po
 
 MANGLER
@@ -247,8 +248,8 @@ BASIC:
   display: out/ihris/manage/
 
 FILES:
-  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-site/ihris-manage-site.pot
-  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-site/%CODE%.po
+  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-site/ihris-manage-site.pot
+  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-site/%CODE%.po
   targetPattern: ihris/ihris-manage/translations/templates/ihris-manage-site/%CODE%.po
 
 MANGLER
@@ -261,8 +262,8 @@ BASIC:
   display: out/ihris/manage/siwa
 
 FILES:
-  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-site-wamp/ihris-manage-site-wamp.pot
-  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-site-wamp/%CODE%.po
+  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-site-wamp/ihris-manage-site-wamp.pot
+  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-site-wamp/%CODE%.po
   targetPattern: ihris/ihris-manage/translations/templates/ihris-manage-site-wamp/%CODE%.po
 
 MANGLER
@@ -275,8 +276,8 @@ BASIC:
   display: out/ihris/manage/regi
 
 FILES:
-  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/manage-registration/manage-registration.pot
-  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/manage-registration/%CODE%.po
+  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/manage-registration/manage-registration.pot
+  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/manage-registration/%CODE%.po
   targetPattern: ihris/ihris-manage/translations/templates/manage-registration/%CODE%.po
 
 MANGLER
