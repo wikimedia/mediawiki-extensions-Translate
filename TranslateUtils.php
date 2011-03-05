@@ -42,7 +42,7 @@ class TranslateUtils {
 	/**
 	 * Splits page name into message key and language code.
 	 * @param $text \string
-	 * @return \type{Tuple[String,String]} Key and language code.
+	 * @return Array \type{Tuple[String,String]} Key and language code.
 	 * @todo Handle names without slash.
 	 */
 	public static function figureMessage( $text ) {
@@ -74,7 +74,7 @@ class TranslateUtils {
 	 *
 	 * @param $titles \types{String,\list{String}} Database page names.
 	 * @param $namespace \int The number of the namespace.
-	 * @return \arrayof{\string,\type{Tuple[String,String]}} Tuples of page
+	 * @return Array \arrayof{\string,\type{Tuple[String,String]}} Tuples of page
 	 * text and last author indexed by page name.
 	 */
 	public static function getContents( $titles, $namespace ) {

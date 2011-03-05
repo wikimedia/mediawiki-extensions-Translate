@@ -20,6 +20,7 @@ class TranslateEditAddons {
 	/**
 	 * Add some tabs for navigation for users who do not use Ajax interface.
 	 * @param $skin Skin
+	 * @param $tabs Array
 	 */
 	static function addNavigationTabs( $skin, &$tabs ) {
 		global $wgRequest;
