@@ -705,8 +705,9 @@ magicfile = MagicNoNumberedHeadings/MagicNoNumberedHeadings.i18n.magic.php
 
 Maintenance
 aliasfile = Maintenance/Maintenance.alias.php
-ignored = maintenance-initEditCount, maintenance-runJobs, maintenance-showJobs
-ignored = maintenance-stats
+ignored = maintenance-initEditCount, maintenance-runJobs, maintenance-showJobs, maintenance-showJobs-output-job
+ignored = maintenance-stats, maintenance-generic-notrans, maintenance-runJobs-output-job, maintenance-showJobs-output-job
+ignored = maintenance-sql-output-row
 
 Maps
 magicfile = Maps/Maps.i18n.magic.php
