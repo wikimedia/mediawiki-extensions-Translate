@@ -146,7 +146,7 @@ foreach( $groups as $groupId => $group ) {
 			if ( $definitionFile ) {
 				if ( is_file( $definitionFile ) ) {
 					$targetFileName = $ffs->getWritePath() . $group->getTargetFilename( $collection->code );
-					$cmd = "msgmerge --quiet --update --backup=off " . $targetFileName . ' ' . $definitionFile;
+					$cmd = "msgmerge --quiet --output-file=" . $targetFileName . ' ' . $targetFileName . ' ' . $definitionFile;
 					wfShellExec( $cmd, $ret );
 
 					// Report on errors.
