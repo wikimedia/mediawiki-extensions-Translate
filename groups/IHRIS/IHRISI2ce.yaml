@@ -174,20 +174,6 @@ MANGLER:
 
 ---
 BASIC:
-  id: out-ihris-i2ce-fields
-  label: iHRIS I2CE - Fields
-  display: out/ihris/i2ce/fields
-
-FILES:
-  definitionFile: %GROUPROOT%/ihris/i2ce/translations/templates/fields/fields.pot
-  sourcePattern: %GROUPROOT%/ihris/i2ce/translations/templates/fields/%CODE%.po
-  targetPattern: ihris/i2ce/translations/templates/fields/%CODE%.po
-
-MANGLER:
-  prefix: i2ce-fields-
-
----
-BASIC:
   id: out-ihris-i2ce-fdu
   label: iHRIS I2CE - File Dump
   display: out/ihris/i2ce/fdu
