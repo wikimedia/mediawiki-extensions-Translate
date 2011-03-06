@@ -34,7 +34,7 @@ TEMPLATE:
 ---
 BASIC:
   id: out-ihris-manage-acci
-  label: iHRIS - Manage - Accident
+  label: iHRIS Manage - Accident
   display: out/ihris/manage/acci
 
 FILES:
@@ -48,7 +48,7 @@ MANGLER:
 ---
 BASIC:
   id: out-ihris-manage-diac
-  label: iHRIS - Manage - Desciplinary Action
+  label: iHRIS Manage - Desciplinary Action
   display: out/ihris/manage/diac
 
 FILES:
@@ -62,7 +62,7 @@ MANGLER:
 ---
 BASIC:
   id: out-ihris-manage-appl
-  label: iHRIS - Manage - Application
+  label: iHRIS Manage - Application
   display: out/ihris/manage/appl
 
 FILES:
@@ -76,7 +76,7 @@ MANGLER:
 ---
 BASIC:
   id: out-ihris-manage-appa
-  label: iHRIS - Manage - Application Attachment
+  label: iHRIS Manage - Application Attachment
   display: out/ihris/manage/appa
 
 FILES:
@@ -90,7 +90,7 @@ MANGLER:
 ---
 BASIC:
   id: out-ihris-manage-bene
-  label: iHRIS - Manage - Benefit
+  label: iHRIS Manage - Benefit
   display: out/ihris/manage/bene
 
 FILES:
@@ -104,7 +104,7 @@ MANGLER:
 ---
 BASIC:
   id: out-ihris-manage-conf
-  label: iHRIS - Manage - Confirmation
+  label: iHRIS Manage - Confirmation
   display: out/ihris/manage/conf
 
 FILES:
@@ -118,7 +118,7 @@ MANGLER:
 ---
 BASIC:
   id: out-ihris-manage-cona
-  label: iHRIS - Manage - Confirmation Attachment
+  label: iHRIS Manage - Confirmation Attachment
   display: out/ihris/manage/cona
 
 FILES:
@@ -132,7 +132,7 @@ MANGLER:
 ---
 BASIC:
   id: out-ihris-manage-cure
-  label: iHRIS - Manage - Custom Reports
+  label: iHRIS Manage - Custom Reports
   display: out/ihris/manage/cure
 
 FILES:
@@ -146,7 +146,7 @@ MANGLER:
 ---
 BASIC:
   id: out-ihris-manage-crfr
-  label: iHRIS - Manage - Custom Reports - Facility Reports
+  label: iHRIS Manage - Custom Reports - Facility Reports
   display: out/ihris/manage/crfr
 
 FILES:
@@ -160,7 +160,7 @@ MANGLER:
 ---
 BASIC:
   id: out-ihris-manage-crfp
-  label: iHRIS - Manage - Custom Reports - Filled Positions
+  label: iHRIS Manage - Custom Reports - Filled Positions
   display: out/ihris/manage/crfp
 
 FILES:
@@ -174,7 +174,7 @@ MANGLER:
 ---
 BASIC:
   id: out-ihris-manage-crpr
-  label: iHRIS - Manage - Custom Reports - Position Reports
+  label: iHRIS Manage - Custom Reports - Position Reports
   display: out/ihris/manage/crpr
 
 FILES:
@@ -188,7 +188,7 @@ MANGLER:
 ---
 BASIC:
   id: out-ihris-manage-crsp
-  label: iHRIS - Manage - Custom Reports - Search People
+  label: iHRIS Manage - Custom Reports - Search People
   display: out/ihris/manage/crsp
 
 FILES:
@@ -202,7 +202,7 @@ MANGLER:
 ---
 BASIC:
   id: out-ihris-manage-crsr
-  label: iHRIS - Manage - Custom Reports - Staff Reports
+  label: iHRIS Manage - Custom Reports - Staff Reports
   display: out/ihris/manage/crsr
 
 FILES:
@@ -216,7 +216,7 @@ MANGLER:
 ---
 BASIC:
   id: out-ihris-manage-manage
-  label: iHRIS - Manage - Manage
+  label: iHRIS Manage - Manage
   display: out/ihris/manage/manage
 
 FILES:
@@ -230,7 +230,7 @@ MANGLER:
 ---
 BASIC:
   id: out-ihris-manage-job
-  label: iHRIS - Manage - Job
+  label: iHRIS Manage - Job
   display: out/ihris/manage/jpb
 
 FILES:
@@ -244,7 +244,7 @@ MANGLER:
 ---
 BASIC:
   id: out-ihris-manage-pede
-  label: iHRIS - Manage - Person Demographic
+  label: iHRIS Manage - Person Demographic
   display: out/ihris/manage/pede
 
 FILES:
@@ -258,7 +258,7 @@ MANGLER:
 ---
 BASIC:
   id: out-ihris-manage-pepo
-  label: iHRIS - Manage - Person Position
+  label: iHRIS Manage - Person Position
   display: out/ihris/manage/pepo
 
 FILES:
@@ -272,7 +272,7 @@ MANGLER:
 ---
 BASIC:
   id: out-ihris-manage-sala
-  label: iHRIS - Manage - Salary
+  label: iHRIS Manage - Salary
   display: out/ihris/manage/sala
 
 FILES:
@@ -286,7 +286,7 @@ MANGLER:
 ---
 BASIC:
   id: out-ihris-manage-masi
-  label: iHRIS - Manage - Manage Site
+  label: iHRIS Manage - Manage Site
   display: out/ihris/manage/
 
 FILES:
@@ -300,7 +300,7 @@ MANGLER:
 ---
 BASIC:
   id: out-ihris-manage-regi
-  label: iHRIS - Manage - Registration
+  label: iHRIS Manage - Registration
   display: out/ihris/manage/regi
 
 FILES:
@@ -315,7 +315,7 @@ MANGLER:
 #---
 #BASIC:
 #  id: out-ihris-manage-saes
-#  label: iHRIS - Manage - Sample Data Establishment
+#  label: iHRIS Manage - Sample Data Establishment
 #  display: out/ihris/manage/saes
 #
 #FILES:
@@ -329,7 +329,7 @@ MANGLER:
 #---
 #BASIC:
 #  id: out-ihris-manage-sasl
-#  label: iHRIS - Manage - Sample SL
+#  label: iHRIS Manage - Sample SL
 #  display: out/ihris/manage/sasl
 #
 #FILES:
@@ -343,7 +343,7 @@ MANGLER:
 #---
 #BASIC:
 #  id: out-ihris-manage-side
-#  label: iHRIS - Manage - Site Demo
+#  label: iHRIS Manage - Site Demo
 #  display: out/ihris/manage/side
 #
 #FILES:
@@ -357,7 +357,7 @@ MANGLER:
 #---
 #BASIC:
 #  id: out-ihris-manage-siwa
-#  label: iHRIS - Manage - Site Wamp
+#  label: iHRIS Manage - Site Wamp
 #  display: out/ihris/manage/siwa
 #
 #FILES:

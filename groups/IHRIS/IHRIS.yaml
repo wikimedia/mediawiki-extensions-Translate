@@ -48,7 +48,7 @@ GROUPS:
 ---
 BASIC:
   id: out-ihris-manage-0-all
-  label: iHRIS - Manage
+  label: iHRIS Manage
   display: out/ihris/manage
   meta: yes
   class: AggregateMessageGroup
