@@ -213,6 +213,8 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			$out .= $this->makeGroupGroup( $item, $cache );
 		}
 
+		$cache->commit();
+
 		if ( $out ) {
 			$out = $this->createHeader( $code ) ."\n" . $out;
 			$out .= Xml::closeElement( 'table' );
@@ -325,7 +327,8 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 		// Initialise messages.
 		$collection = $group->initCollection( $code );
-		$collection->setInFile( $group->load( $code ) );
+		// Takes too much memory and only hides inconsistent import state
+		#$collection->setInFile( $group->load( $code ) );
 		$collection->filter( 'ignored' );
 		$collection->filter( 'optional' );
 		// Store the count of real messages for later calculation.
@@ -344,10 +347,11 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$cache->set( $group->getId(), $code, $result );
 
 		static $i = 0;
-		if ( $i++ % 50 === 0 ) {
+		if ( $i++ % 10 === 0 ) {
 			$cache->commit();
 		}
 
+		unset( $collection );
 		wfProfileOut( __METHOD__ );
 
 		return $result;
