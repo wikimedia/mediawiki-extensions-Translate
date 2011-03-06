@@ -135,7 +135,6 @@ Section text: <pre>$1</pre>',
 
 	'pt-movepage-intro' => 'This special page allows you to move pages which are marked for translation.
 The move action will not be instant, because many pages will need to be moved.
-The [http://www.mediawiki.org/wiki/Manual:Job_queue job queue] will be used for moving the pages.
 While the pages are being moved, it is not possible to interact with the pages in question.
 Failures will be logged in the [[Special:Log/pagetranslation|page translation log]] and they need to be repaired by hand.',
 
