@@ -236,7 +236,7 @@ BASIC:
 FILES:
   definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-salary/ihris-manage-salary.pot
   sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-salary/%CODE%.po
-  targetPattern: ihris-manage/translations/templates/ihris-manage-salary/%CODE%.po
+  targetPattern: ihris/ihris-manage/translations/templates/ihris-manage-salary/%CODE%.po
 
 MANGLER:
   prefix: man-sala-
