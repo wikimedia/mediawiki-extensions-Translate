@@ -47,6 +47,16 @@ GROUPS:
   - out-ihris-common-*
 ---
 BASIC:
+  id: out-ihris-i2ce-0-all
+  label: iHRIS I2CE
+  display: out/ihris/i2ce
+  meta: yes
+  class: AggregateMessageGroup
+
+GROUPS:
+  - out-ihris-i2ce-*
+---
+BASIC:
   id: out-ihris-manage-0-all
   label: iHRIS Manage
   display: out/ihris/manage
