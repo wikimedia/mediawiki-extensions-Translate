@@ -706,11 +706,12 @@ magicfile = MagicNoNumberedHeadings/MagicNoNumberedHeadings.i18n.magic.php
 Maintenance
 aliasfile = Maintenance/Maintenance.alias.php
 optional = maintenance-cleanupCaps-output-moved
-ignored = maintenance-initEditCount, maintenance-runJobs, maintenance-showJobs, maintenance-showJobs-output-job
-ignored = maintenance-stats, maintenance-generic-notrans, maintenance-runJobs-output-job, maintenance-showJobs-output-job
-ignored = maintenance-sql-output-row, maintenance-checkAutoLoader-output-list1, maintenance-cleanupCaps-option-dry-run, maintenance-cleanupCaps-output-moved
-ignored = maintenance-cleanupCaps-output-check, maintenance-cleanupCaps-output-checkfix, maintenance-cleanupCaps-output-progress, maintenance-cleanupCaps-output-processing
-ignored = maintenance-cleanupCaps-error-missingparam
+ignored = maintenance-changePassword-option-password, maintenance-changePassword-option-user, maintenance-checkAutoLoader-output-list1, maintenance-checkSyntax-output-done
+ignored = maintenance-cleanupCaps-error-missingparam, maintenance-cleanupCaps-option-dry-run, maintenance-cleanupCaps-output-check, maintenance-cleanupCaps-output-checkfix
+ignored = maintenance-cleanupCaps-output-finished, maintenance-cleanupCaps-output-moved, maintenance-cleanupCaps-output-processing, maintenance-cleanupCaps-output-progress
+ignored = maintenance-generic-notrans, maintenance-initEditCount, maintenance-runJobs, maintenance-runJobs-output-job
+ignored = maintenance-showJobs, maintenance-showJobs-output-job, maintenance-sql-error-sql, maintenance-sql-output-row
+ignored = maintenance-stats
 
 Maps
 magicfile = Maps/Maps.i18n.magic.php
