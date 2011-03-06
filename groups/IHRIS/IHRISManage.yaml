@@ -2,7 +2,7 @@ TEMPLATE:
   BASIC:
     description: "{{int:translate-group-desc-ihris-manage}}"
     namespace: NS_IHRIS
-    display: out/ihris/
+    display: out/ihris/manage/
     class: FileBasedMessageGroup
 
   FILES:
@@ -61,9 +61,9 @@ MANGLER:
 
 ---
 BASIC:
-  id: out-ihris-manage-app
+  id: out-ihris-manage-appl
   label: iHRIS - Manage - Application
-  display: out/ihris/manage/app
+  display: out/ihris/manage/appl
 
 FILES:
   definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-application/ihris-manage-application.pot
@@ -72,6 +72,20 @@ FILES:
 
 MANGLER:
   prefix: man-appl-
+
+---
+BASIC:
+  id: out-ihris-manage-appa
+  label: iHRIS - Manage - Application Attachment
+  display: out/ihris/manage/appa
+
+FILES:
+  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-application-attachment/ihris-manage-application-attachment.pot
+  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-application-attachment/%CODE%.po
+  targetPattern: ihris/ihris-manage/translations/templates/ihris-manage-application-attachment/%CODE%.po
+
+MANGLER:
+  prefix: man-appa-
 
 ---
 BASIC:
@@ -86,6 +100,34 @@ FILES:
 
 MANGLER:
   prefix: man-bene-
+
+---
+BASIC:
+  id: out-ihris-manage-conf
+  label: iHRIS - Manage - Confirmation
+  display: out/ihris/manage/conf
+
+FILES:
+  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-confirmation/ihris-manage-confirmation.pot
+  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-confirmation/%CODE%.po
+  targetPattern: ihris/ihris-manage/translations/templates/ihris-manage-confirmation/%CODE%.po
+
+MANGLER:
+  prefix: man-conf-
+
+---
+BASIC:
+  id: out-ihris-manage-cona
+  label: iHRIS - Manage - Confirmation Attachment
+  display: out/ihris/manage/cona
+
+FILES:
+  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-confirmation-attachment/ihris-manage-confirmation-attachment.pot
+  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-confirmation-attachment/%CODE%.po
+  targetPattern: ihris/ihris-manage/translations/templates/ihris-manage-confirmation-attachment/%CODE%.po
+
+MANGLER:
+  prefix: man-cona-
 
 ---
 BASIC:
@@ -256,20 +298,6 @@ MANGLER:
   prefix: man-masi-
 
 ---
-#BASIC:
-#  id: out-ihris-manage-siwa
-#  label: iHRIS - Manage - Site Wamp
-#  display: out/ihris/manage/siwa
-#
-#FILES:
-#  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-site-wamp/ihris-manage-site-wamp.pot
-#  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-site-wamp/%CODE%.po
-#  targetPattern: ihris/ihris-manage/translations/templates/ihris-manage-site-wamp/%CODE%.po
-#
-#MANGLER:
-#  prefix: man-siwa-
-#
-#---
 BASIC:
   id: out-ihris-manage-regi
   label: iHRIS - Manage - Registration
@@ -282,3 +310,60 @@ FILES:
 
 MANGLER:
   prefix: man-regi-
+
+## These groups are for demo purposes and should probably not be active.
+#---
+#BASIC:
+#  id: out-ihris-manage-saes
+#  label: iHRIS - Manage - Sample Data Establishment
+#  display: out/ihris/manage/saes
+#
+#FILES:
+#  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/sample-data-establishment/sample-data-establishment.pot
+#  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/sample-data-establishment/%CODE%.po
+#  targetPattern: ihris/ihris-manage/translations/templates/sample-data-establishment/%CODE%.po
+#
+#MANGLER:
+#  prefix: man-saes-
+#
+#---
+#BASIC:
+#  id: out-ihris-manage-sasl
+#  label: iHRIS - Manage - Sample SL
+#  display: out/ihris/manage/sasl
+#
+#FILES:
+#  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-sample-sl/ihris-manage-sample-sl.pot
+#  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-sample-sl/%CODE%.po
+#  targetPattern: ihris/ihris-manage/translations/templates/ihris-manage-sample-sl/%CODE%.po
+#
+#MANGLER:
+#  prefix: man-sasl-
+#
+#---
+#BASIC:
+#  id: out-ihris-manage-side
+#  label: iHRIS - Manage - Site Demo
+#  display: out/ihris/manage/side
+#
+#FILES:
+#  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-site-demo/ihris-manage-site-demo.pot
+#  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-site-demo/%CODE%.po
+#  targetPattern: ihris/ihris-manage/translations/templates/ihris-manage-site-demo/%CODE%.po
+#
+#MANGLER:
+#  prefix: man-side-
+#
+#---
+#BASIC:
+#  id: out-ihris-manage-siwa
+#  label: iHRIS - Manage - Site Wamp
+#  display: out/ihris/manage/siwa
+#
+#FILES:
+#  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-site-wamp/ihris-manage-site-wamp.pot
+#  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-site-wamp/%CODE%.po
+#  targetPattern: ihris/ihris-manage/translations/templates/ihris-manage-site-wamp/%CODE%.po
+#
+#MANGLER:
+#  prefix: man-siwa-
