@@ -37,7 +37,16 @@ GROUPS:
   - out-ihris-*
 ---
 BASIC:
-  description: "{{int:translate-group-desc-ihris}}"
+  id: out-ihris-common-0-all
+  label: iHRIS Common
+  display: out/ihris/common
+  meta: yes
+  class: AggregateMessageGroup
+
+GROUPS:
+  - out-ihris-common-*
+---
+BASIC:
   id: out-ihris-manage-0-all
   label: iHRIS - Manage
   display: out/ihris/manage
