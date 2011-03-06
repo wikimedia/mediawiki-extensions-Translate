@@ -32,7 +32,6 @@ TEMPLATE:
     checks:
       - printfCheck
 ---
----
 BASIC:
   id: out-ihris-common-ceus
   label: iHRIS Common - Ceus
