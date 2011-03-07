@@ -43,6 +43,7 @@ $messages['en'] = array(
 	'translate-group-desc-ihris-common' => 'A message group for [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], a module of [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-i2ce' => 'A message group for [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], a module of [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-manage' => 'A message group for [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], a module of [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-qualify' => 'A message group for [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]], a module of [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'A core plugin for [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Messages for the stable version 1.15 of [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mediawiki-core-116' => 'Messages for the stable version 1.16 of [[Translating:MediaWiki|MediaWiki]]',

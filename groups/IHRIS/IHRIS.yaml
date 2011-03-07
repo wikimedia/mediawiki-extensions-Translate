@@ -65,3 +65,13 @@ BASIC:
 
 GROUPS:
   - out-ihris-manage-*
+---
+BASIC:
+  id: out-ihris-qualify-0-all
+  label: iHRIS Qualify
+  display: out/ihris/qualify
+  meta: yes
+  class: AggregateMessageGroup
+
+GROUPS:
+  - out-ihris-qualify-*
