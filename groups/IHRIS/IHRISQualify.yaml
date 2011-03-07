@@ -199,20 +199,20 @@ FILES:
 MANGLER:
   prefix: qua-pfr-
 
-#---
-#BASIC:
-#  id: out-ihris-qualify-site
-#  label: iHRIS Qualify - Site
-#  display: out/ihris/qualify/site
-#
-#FILES:
-#  definitionFile: %GROUPROOT%/ihris/ihris-qualify/translations/templates/ihris-qualify-site/ihris-qualify-site.pot
-#  sourcePattern: %GROUPROOT%/ihris/ihris-qualify/translations/templates/ihris-qualify-site/%CODE%.po
-#  targetPattern: ihris/ihris-qualify/translations/templates/ihris-qualify-site/%CODE%.po
-#
-#MANGLER:
-#  prefix: qua-site-
-#
+---
+BASIC:
+  id: out-ihris-qualify-site
+  label: iHRIS Qualify - Site
+  display: out/ihris/qualify/site
+
+FILES:
+  definitionFile: %GROUPROOT%/ihris/ihris-qualify/translations/templates/ihris-qualify-site/ihris-qualify-site.pot
+  sourcePattern: %GROUPROOT%/ihris/ihris-qualify/translations/templates/ihris-qualify-site/%CODE%.po
+  targetPattern: ihris/ihris-qualify/translations/templates/ihris-qualify-site/%CODE%.po
+
+MANGLER:
+  prefix: qua-site-
+
 #---
 #BASIC:
 #  id: out-ihris-qualify-sdi
@@ -227,20 +227,20 @@ MANGLER:
 #MANGLER:
 #  prefix: qua-sdi-
 #
----
-BASIC:
-  id: out-ihris-qualify-swi
-  label: iHRIS Qualify - Site Wamp
-  display: out/ihris/qualify/swi
-
-FILES:
-  definitionFile: %GROUPROOT%/ihris/ihris-qualify/translations/templates/ihris-qualify-site-wamp/ihris-qualify-site-wamp.pot
-  sourcePattern: %GROUPROOT%/ihris/ihris-qualify/translations/templates/ihris-qualify-site-wamp/%CODE%.po
-  targetPattern: ihris/ihris-qualify/translations/templates/ihris-qualify-site-wamp/%CODE%.po
-
-MANGLER:
-  prefix: qua-swi-
-
+#---
+#BASIC:
+#  id: out-ihris-qualify-swa
+#  label: iHRIS Qualify - Site Wamp
+#  display: out/ihris/qualify/swa
+#
+#FILES:
+#  definitionFile: %GROUPROOT%/ihris/ihris-qualify/translations/templates/ihris-qualify-site-wamp/ihris-qualify-site-wamp.pot
+#  sourcePattern: %GROUPROOT%/ihris/ihris-qualify/translations/templates/ihris-qualify-site-wamp/%CODE%.po
+#  targetPattern: ihris/ihris-qualify/translations/templates/ihris-qualify-site-wamp/%CODE%.po
+#
+#MANGLER:
+#  prefix: qua-swa-
+#
 ---
 BASIC:
   id: out-ihris-qualify-rve
