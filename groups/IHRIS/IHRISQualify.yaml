@@ -47,9 +47,9 @@ MANGLER:
 
 ---
 BASIC:
-  id: out-ihris-qualify-crs
+  id: out-ihris-qualify-crd
   label: iHRIS Qualify - Custom Reports Disruption
-  display: out/ihris/qualify/crs
+  display: out/ihris/qualify/crd
 
 FILES:
   definitionFile: %GROUPROOT%/ihris/ihris-qualify/translations/templates/ihris-qualify-custom-reports-disruption/ihris-qualify-custom-reports-disruption.pot
@@ -57,13 +57,13 @@ FILES:
   targetPattern: ihris/ihris-qualify/translations/templates/ihris-qualify-custom-reports-disruption/%CODE%.po
 
 MANGLER:
-  prefix: qua-crs-
+  prefix: qua-crd-
 
 ---
 BASIC:
-  id: out-ihris-qualify-crs
+  id: out-ihris-qualify-cre
   label: iHRIS Qualify - Custom Reports Exam
-  display: out/ihris/qualify/crs
+  display: out/ihris/qualify/cre
 
 FILES:
   definitionFile: %GROUPROOT%/ihris/ihris-qualify/translations/templates/ihris-qualify-custom-reports-exam/ihris-qualify-custom-reports-exam.pot
@@ -71,7 +71,7 @@ FILES:
   targetPattern: ihris/ihris-qualify/translations/templates/ihris-qualify-custom-reports-exam/%CODE%.po
 
 MANGLER:
-  prefix: qua-crs-
+  prefix: qua-cre-
 
 ---
 BASIC:
