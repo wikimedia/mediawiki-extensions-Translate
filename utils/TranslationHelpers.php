@@ -467,6 +467,8 @@ class TranslationHelpers {
 
 			if ( $error ) {
 				error_log(  __METHOD__ . ': Http::get failed:' . $error );
+			} else {
+				error_log( __METHOD__ . ': Unknown error, grr' );
 			}
 			// Most likely a timeout or other general error
 			self::reportTranslationServiceFailure( $serviceName );
