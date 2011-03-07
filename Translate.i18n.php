@@ -10132,6 +10132,7 @@ $messages['ja'] = array(
 	'supportedlanguages-recenttranslations' => '最近の翻訳',
 	'translate-save' => '保存 ($1)',
 	'translate-jssti-add' => '追加',
+	'managemessagegroups' => 'メッセージ群の管理',
 	'translate-manage-groups' => 'グループの管理',
 	'translate-manage-listgroups' => '設定済みのグループ',
 	'translate-manage-listgroups-old' => '古いスタイルのグループ',
