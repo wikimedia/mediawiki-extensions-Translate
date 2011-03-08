@@ -15,7 +15,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
 /**
  * Version number used in extension credits and in other placed where needed.
  */
-define( 'TRANSLATE_VERSION', '2011-03-07' );
+define( 'TRANSLATE_VERSION', '2011-03-08' );
 
 /**
  * Extension credits properties.
@@ -253,8 +253,8 @@ $wgTranslateTasks = array(
 $wgEnablePageTranslation = false;
 
 /**
- * Number for the Translations namespace. Change this if it conflicts with a
- * namespace in your wiki.
+ * Number for the Translations namespace. Change this if it conflicts with
+ * other namespace in your wiki.
  */
 $wgPageTranslationNamespace = 1198;
 
@@ -432,7 +432,7 @@ $wgTranslatePHPlotFont = '/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf';
 # ==== YAML driver ====
 
 /**
- * Currently supported YAML drivers are spyc and syck.
+ * Currently supported YAML drivers are spyc and syck and sycl-pecl.
  *
  * For syck we're shelling out to perl. So you need:
  *
@@ -444,6 +444,8 @@ $wgTranslatePHPlotFont = '/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf';
  *
  * You should be able to do this with:
  *   for module in 'YAML::Syck' 'PHP::Serialization' 'File::Slurp'; do cpanp -i $module; done
+ *
+ * For syck-pecl you need libsyck and pecl install syck-beta
  */
 $wgTranslateYamlLibrary = 'spyc';
 
