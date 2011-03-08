@@ -2,8 +2,7 @@ TEMPLATE:
   BASIC:
     namespace: NS_MIFOS
     class: FileBasedMessageGroup
-    description: >
-      {{int:translate-group-desc-mifos}}
+    description: "{{int:translate-group-desc-mifos}}"
 
   FILES:
     class: JavaFFS

@@ -60,12 +60,39 @@ class TranslateYaml {
 		switch ( $wgTranslateYamlLibrary ) {
 			case 'spyc':
 				require_once( dirname( __FILE__ ) . '/../spyc/spyc.php' );
-				return spyc_load( $text );
+				$yaml = spyc_load( $text );
+				return self::fixSpycSpaces( $yaml );
 			case 'syck':
-				return self::syckLoad( $text );
+				$yaml = self::syckLoad( $text );
+				return self::fixSyckBooleans( $yaml );
+			case 'syck-pecl':
+				$text = preg_replace( '~^(\s*)no(\s*:\s*[a-zA-Z-_]+\s*)$~m', '\1"no"\2', $text );
+				return syck_load( $text );
 			default:
 				throw new MWException( "Unknown Yaml library" );
 		}
+	}
+
+	public static function fixSyckBooleans( &$yaml ) {
+		foreach ( $yaml as $key => &$value ) {
+			if ( is_array( $value ) ) {
+				self::fixSyckBooleans( $value );
+			} elseif ( $value === 'yes' ) {
+				$value = true;
+			}
+		}
+		return $yaml;
+	}
+
+	public static function fixSpycSpaces( &$yaml ) {
+		foreach ( $yaml as $key => &$value ) {
+			if ( is_array( $value ) ) {
+				self::fixSpycSpaces( $value );
+			} elseif ( is_string( $value ) && $key === 'header' ) {
+				$value = preg_replace( '~^\*~m', ' *', $value ). "\n";
+			}
+		}
+		return $yaml;
 	}
 
 	public static function load( $file ) {
@@ -83,6 +110,8 @@ class TranslateYaml {
 				return Spyc::YAMLDump( $text );
 			case 'syck':
 				return self::syckDump( $text );
+			case 'syck-pecl':
+				return syck_dump( $text );
 			default:
 				throw new MWException( "Unknown Yaml library" );
 		}
