@@ -1072,10 +1072,13 @@ class PythonSingleFFS extends SimpleFFS {
 		if( !isset( $this->data[$code] ) ) $this->data[$code] = array();
 		return array( 'MESSAGES' => $this->data[$code] );
 	}
-	
+
 
 	public function write( MessageCollection $collection ) {
 		if( $this->fw === null ) {
+			$outputFile = $this->writePath . '/' . $this->group->getTargetFilename( 'en' );
+			wfMkdirParents( dirname( $outputFile ), null, __METHOD__ );
+			$this->fw = fopen( $outputFile, 'w' );
 			$this->fw = fopen( $this->writePath . '/' . $this->group->getTargetFilename( 'en' ), 'w' );
 			fwrite( $this->fw, "# -*- coding: utf-8 -*-\nmsg = {\n" );
 		}
