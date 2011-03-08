@@ -26,7 +26,10 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	}
 
 	function execute( $par ) {
-		global $wgRequest, $wgOut;
+		global $wgRequest, $wgOut, $wgUser;
+
+		$this->linker = $wgUser->getSkin();
+		$this->translate = SpecialPage::getTitleFor( 'Translate' );
 
 		$this->setHeaders();
 		$this->outputHeader();
@@ -48,7 +51,6 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		}
 
 		if ( !$code ) {
-			global $wgUser;
 
 			if ( $wgUser->isLoggedIn() ) {
 				global $wgLang;
@@ -318,12 +320,15 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	}
 
 	protected function loadPercentages( $cache, $group, $code ) {
-		$incache = $cache->get( $group->getId(), $code );
-		if ( $incache !== false ) {
-			return $incache;
-		}
-
 		wfProfileIn( __METHOD__ );
+		$id = $group->getId();
+
+
+		$result = $cache->get( $id, $code );
+		if ( is_array( $result ) ) {
+			wfProfileOut( __METHOD__ );
+			return $result;
+		}
 
 		// Initialise messages.
 		$collection = $group->initCollection( $code );
@@ -344,14 +349,13 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 		$result = array( $fuzzy, $translated, $total );
 
-		$cache->set( $group->getId(), $code, $result );
+		$cache->set( $id, $code, $result );
 
 		static $i = 0;
-		if ( $i++ % 10 === 0 ) {
+		if ( $i++ % 50 === 0 ) {
 			$cache->commit();
 		}
 
-		unset( $collection );
 		wfProfileOut( __METHOD__ );
 
 		return $result;
@@ -375,10 +379,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	}
 
 	protected function makeGroupLink( $group, $code, $params ) {
-		global $wgOut, $wgUser;
-
-		$specialTranslate = SpecialPage::getTitleFor( 'Translate' );
-		$skin = $wgUser->getSkin();
+		global $wgOut;
 
 		$queryParameters = $params + array(
 			'group' => $group->getId(),
@@ -386,15 +387,19 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		);
 
 		$attributes = array(
-			'title' => strip_tags( $wgOut->parse( $group->getDescription(), false ) )
+			'title' => $this->getGroupDescription( $group )
 		);
 
-		$translateGroupLink = $skin->link(
-			$specialTranslate, $this->getGroupLabel( $group ), $attributes, $queryParameters
+		$translateGroupLink = $this->linker->link(
+			$this->translate, $this->getGroupLabel( $group ), $attributes, $queryParameters
 		);
 
 		return $translateGroupLink;
+	}
 
+	protected function getGroupDescription( $group ) {
+		global $wgLang;
+		return MessageCache::singleton()->transform( $group->getDescription(), true, $wgLang, $this->getTitle() );
 	}
 
 	protected function isBlacklisted( $groupId, $code ) {
