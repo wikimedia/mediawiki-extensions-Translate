@@ -399,7 +399,13 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 	protected function getGroupDescription( $group ) {
 		global $wgLang;
-		return MessageCache::singleton()->transform( $group->getDescription(), true, $wgLang, $this->getTitle() );
+		if ( method_exists( 'MessageCache', 'singleton' ) ) {
+			$cache = MessageCache::singleton();
+		} else {
+			global $wgMessageCache;
+			$cache = $wgMessageCache;
+		}
+		return $cache->transform( $group->getDescription(), true, $wgLang, $this->getTitle() );
 	}
 
 	protected function isBlacklisted( $groupId, $code ) {
