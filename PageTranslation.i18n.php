@@ -556,12 +556,11 @@ $messages['be-tarask'] = array(
 	'pt-movepage-action-other' => 'Зьмяніць цэль',
 	'pt-movepage-intro' => 'Гэтая спэцыяльная старонка дазваляе пераносіць старонкі, пазначаныя да перакладу.
 Перанос не адбудзецца імгненна, таму што спатрэбіцца пераносіць шмат старонак.
-Для гэтага будзе выкарыстаная чарга заданьняў.
 Падчас пераносу маніпуляцыя са старонкамі будзе немагчымая.
-Усе памылкі падчас пераносу будуць занесеныя ў журнал перакладу старонак, і будзе патрэбная іх ручная апрацоўка.',
+Усе памылкі падчас пераносу будуць занесеныя ў [[Special:Log/pagetranslation|журнал перакладу старонак]], і будзе патрэбная іх ручная апрацоўка.',
 	'pt-movepage-logreason' => 'Частка старонкі $1, якую магчыма перакласьці.',
 	'pt-movepage-started' => 'Асноўная старонка перанесеная.
-Праверце журнал перакладаў старонак наконт памылак і паведамленьня пра выкананьне.',
+Праверце [[Special:Log/pagetranslation|журнал перакладаў старонак]] наконт памылак і паведамленьня пра выкананьне.',
 	'pt-locked-page' => 'Гэтая старонка заблякаваная з-за працэсу пераносу старонкі, якую магчыма перакласьці.',
 );
 
@@ -947,6 +946,7 @@ Zdá se, že stránka, kterou se pokoušíte upravovat, neodpovídá žádné st
 /** Danish (Dansk)
  * @author Byrial
  * @author Emilkris33
+ * @author Purodha
  */
 $messages['da'] = array(
 	'pagetranslation' => 'Sideoversættelse',
@@ -1052,7 +1052,7 @@ Mens siderne bliver flyttet, er det ikke muligt at interagere med de omtalte sid
 Fejl vil blive logget på siden oversættelse log og de har brug for at blive repareret manuelt.',
 	'pt-movepage-logreason' => 'Del af oversætbar side $1.',
 	'pt-movepage-started' => 'Base siden er nu flyttet.
-Husk at tjekke siden oversættelsen log for fejl og færdiggørelses besked.',
+Husk at tjekke [[Special:Log/pagetranslation|siden oversættelsen log]] for fejl og færdiggørelses besked.',
 	'pt-locked-page' => 'Denne side er låst, fordi den oversætbare side, der aktuelt er ved at blive flyttet.',
 );
 
@@ -1162,12 +1162,11 @@ Text des Abschnitts: <pre>$1</pre>',
 	'pt-movepage-action-other' => 'Ziel ändern',
 	'pt-movepage-intro' => 'Diese Spezialseite ermöglicht es Seiten zu verschieben, die zur Übersetzung gekennzeichnet wurden.
 Die Verschiebung wird nicht unverzüglich erfolgen, da dabei viele Seiten zu verschieben sind.
-Es wird daher die Auftragswarteschlange zum Verschieben der Seiten verwendet.
 Während des Verschiebevorgangs ist es nicht möglich, die entsprechenden Seiten zu nutzen.
-Verschiebefehler werden im Übersetzungs-Logbuch aufgezeichnet und müssen manuell korrigiert werden.',
+Verschiebefehler werden im [[Special:Log/pagetranslation|Übersetzungs-Logbuch]] aufgezeichnet und müssen manuell korrigiert werden.',
 	'pt-movepage-logreason' => 'Teil der Übersetzungsseite $1.',
 	'pt-movepage-started' => 'Die Basisseite wurde nunmehr verschoben.
-Bitte prüfe das Übersetzungs-Logbuch auf Fehlermeldungen, bzw. die Vollzugsnachricht.',
+Bitte prüfe das [[Special:Log/pagetranslation|Übersetzungs-Logbuch]] auf Fehlermeldungen, bzw. die Vollzugsnachricht.',
 	'pt-locked-page' => 'Diese Seite ist gesperrt, da die Übersetzungsseite momentan verschoben wird.',
 );
 
@@ -1385,6 +1384,7 @@ Certigu ke ĝi havas etikedojn <nowiki><translate></nowiki> kaj havas validan si
  * @author Antur
  * @author Crazymadlover
  * @author Diego Grez
+ * @author Purodha
  * @author Sanbec
  * @author Translationista
  */
@@ -1491,7 +1491,7 @@ Cuando la página está siendo movida, no esposible interactuar con la páginas 
 Las fallas serán registradas en la página de registro de traducción y necesitarán ser reparadas manualmente.',
 	'pt-movepage-logreason' => 'Parte de la página traducible $1.',
 	'pt-movepage-started' => 'La página base está ahora movida.
-Por favor verifica el registro de traducción de página para errores y mensaje de conclusión.',
+Por favor verifica el [[Special:Log/pagetranslation|registro de traducción de página]] para errores y mensaje de conclusión.',
 	'pt-locked-page' => 'Esta página está bloqueada porque la página traducible está siendo movida actualmente.',
 );
 
@@ -1669,6 +1669,7 @@ Tarkista mahdolliset virheet ja valmistumisviestit sivunkääntölokista.',
  * @author Grondin
  * @author IAlex
  * @author Peter17
+ * @author Purodha
  * @author Urhixidur
  * @author Verdy p
  * @author Y-M D
@@ -1776,12 +1777,13 @@ Pendant que les pages sont déplacées, il n'est pas possible d’interagir avec
 Les échecs seront enregistrés dans le journal de traduction et devront être corrigés manuellement.",
 	'pt-movepage-logreason' => 'Extrait de la page à traduire $1.',
 	'pt-movepage-started' => 'La page de base est à présent renommée.
-Veuillez vérifier le journal des traductions pour repérer d’éventuelles erreurs et lire le message de complétion.',
+Veuillez vérifier le [[Special:Log/pagetranslation|journal des traductions]] pour repérer d’éventuelles erreurs et lire le message de complétion.',
 	'pt-locked-page' => 'Cette page est verrouillée parce que la page à traduire est en cours de renommage.',
 );
 
 /** Franco-Provençal (Arpetan)
  * @author ChrisPtDe
+ * @author Purodha
  */
 $messages['frp'] = array(
 	'pagetranslation' => 'Traduccion de pâges',
@@ -1883,7 +1885,7 @@ Tèxto de la sèccion : <pre>$1</pre>',
 	'pt-movepage-action-other' => 'Changiér la ciba',
 	'pt-movepage-logreason' => 'Èxtrèt de la pâge a traduire $1.',
 	'pt-movepage-started' => 'Ora, la pâge de bâsa est renomâ.
-Volyéd controlar lo jornal de les traduccions de pâges por repèrar des èrrors et por liére lo mèssâjo d’avance.',
+Volyéd controlar lo [[Special:Log/pagetranslation|jornal de les traduccions de pâges]] por repèrar des èrrors et por liére lo mèssâjo d’avance.',
 	'pt-locked-page' => 'Ceta pâge est vèrrolyê perce que la pâge a traduire est aprés étre renomâ.',
 );
 
@@ -1987,17 +1989,17 @@ Texto da sección: <pre>$1</pre>',
 	'pt-movepage-action-other' => 'Cambiar o destino',
 	'pt-movepage-intro' => 'Esta páxina especial permite mover páxinas que están marcadas para a súa tradución.
 A acción de traslado non será inmediata porque é necesario mover moitas outras páxinas.
-A cola de traballos usarase para mover as páxinas.
 Mentres as páxinas son trasladadas, non é posible traballar nelas.
-Os erros quedarán rexistrados no rexistro de páxinas de tradución e deberán ser reparados manualmente.',
+Os erros quedarán rexistrados no [[Special:Log/pagetranslation|rexistro de páxinas de tradución]] e deberán ser reparados manualmente.',
 	'pt-movepage-logreason' => 'Parte da páxina traducible "$1".',
 	'pt-movepage-started' => 'Estase a mover a páxina base.
-Comprobe o rexistro de páxinas de tradución por se houbese algún erro e para ler as mensaxes de conclusión.',
+Comprobe o [[Special:Log/pagetranslation|rexistro de páxinas de tradución]] por se houbese algún erro e para ler as mensaxes de conclusión.',
 	'pt-locked-page' => 'Esta páxina está bloqueada porque se está a mover a páxina traducible.',
 );
 
 /** Swiss German (Alemannisch)
  * @author Als-Holder
+ * @author Purodha
  */
 $messages['gsw'] = array(
 	'pagetranslation' => 'Sytenibersetzig',
@@ -2102,7 +2104,7 @@ Bim Verschiebigsvorgang isch s nit megli, die Syte z nutze.
 Verschiebigsfähler wäre im Ibersetzigs-Logbuech ufzeichnet un mien vu Hand verbesseret wäre.',
 	'pt-movepage-logreason' => 'Teil vu dr Ibersetzigssyte $1.',
 	'pt-movepage-started' => 'D Basissyte isch jetz verschobe wore.
-Bitte prief s Ibersetzigs-Logbuech uf Fählermäldige un d Vollzugsnochricht.',
+Bitte prief s [[Special:Log/pagetranslation|Ibersetzigs-Logbuech]] uf Fählermäldige un d Vollzugsnochricht.',
 	'pt-locked-page' => 'Die Syte isch gsperrt, wel d Ibersetzigssyte zurzyt verschobe wird.',
 );
 
@@ -2256,13 +2258,12 @@ $messages['he'] = array(
 	'pt-movepage-action-perform' => 'לבצע את ההעברה',
 	'pt-movepage-action-other' => 'שינוי יעד',
 	'pt-movepage-intro' => 'דף מיוחד זה מאפשר לך להעביר דפים מסומנים לתרגום.
-פעולת ההעברה אינה מידית, מכיוון שצריך להעביר עמודים רבים.
-תור המשימות ישמש להעברת הדפים.
+פעולת ההעברה אינה מידית, מכיוון שצריך להעביר דפים רבים.
 בזמן שהדפים מועברים, לא ניתן לקיים שום קשר אִתם.
-כשלים יירשמו ביומן תרגום דפים, ויהיה צריך לתקן אותם באופן ידני.',
+כשלים יירשמו ב[[Special:Log/pagetranslation|יומן תרגום דפים]], ויהיה צריך לתקן אותם באופן ידני.',
 	'pt-movepage-logreason' => 'חלק מהדף הניתן לתרגום $1.',
 	'pt-movepage-started' => 'עכשיו דף הבסיס הועבר.
-נא לבדוק את השגיאות ואת הודעת ההשלמה ביומן תרגום הדפים.',
+נא לבדוק את השגיאות ואת הודעת ההשלמה ב[[Special:Log/pagetranslation|יומן תרגום הדפים]].',
 	'pt-locked-page' => 'הדף הזה נעול כי הדף הניתן לתרגום מועבר כעת.',
 );
 
@@ -2413,12 +2414,11 @@ Tekst wotrězka: <pre>$1</pre>',
 	'pt-movepage-action-other' => 'Cil změnić',
 	'pt-movepage-intro' => 'Tuta specialna strona zmóžnja přesuwanje stronow, kotrež su za přełožowanje markěrowane.
 Přesunjenje so hnydom njestawa, dokelž wjele stronow dyrbi so přesunyć.
-Za přesuwanje stronow budźe so čakanski rynk wužiwać.
 Při přesuwanju stronow njeje móžno, z wotpowědnymi stronami do zwiska stupić.
-Zmylki budu so w přełožowanskim protokolu protokolować  a dyrbja so manuelnje skorigować.',
+Zmylki budu so w [[Special:Log/pagetranslation|přełožowanskim protokolu strony]] protokolować  a dyrbja so manuelnje skorigować.',
 	'pt-movepage-logreason' => 'Dźěl přełožujomneje strony $1.',
 	'pt-movepage-started' => 'Zakładna strona je nětko přesunjena.
-Prošu skontroluj překožowanski protokol strony za zmylkami a zdźělenku wukonjenja.',
+Prošu skontroluj [[Special:Log/pagetranslation|přełožowanski protokol strony]] za zmylkami a zdźělenku wukonjenja.',
 	'pt-locked-page' => 'Tuta strona je zawrjena, dokelž přełožujomna strona so runje přesuwa.',
 );
 
@@ -2677,12 +2677,11 @@ Texto del section: <pre>$1</pre>',
 	'pt-movepage-action-other' => 'Cambiar destination',
 	'pt-movepage-intro' => 'Iste pagina special permitte renominar paginas marcate pro traduction.
 Le renomination non essera instantanee, proque il essera necessari renominar multe paginas.
-Le cauda de actiones essera usate pro renominar le paginas.
 Durante le renomination del paginas, il non es possibile interager con le paginas in question.
-Le fallimentos essera registrate in le registro de traduction de paginas e illos necessita reparation manual.',
+Le fallimentos essera registrate in le [[Special:Log/pagetranslation|registro de traduction de paginas]] e illos necessita reparation manual.',
 	'pt-movepage-logreason' => 'Parte del pagina traducibile $1.',
 	'pt-movepage-started' => 'Le pagina de base ha essite renominate.
-Per favor verifica le registro de traductiones de paginas pro reparar eventual errores e leger le message de completion.',
+Per favor verifica le [[Special:Log/pagetranslation|registro de traductiones de paginas]] pro reparar eventual errores e leger le message de completion.',
 	'pt-locked-page' => 'Iste pagina es serrate proque le pagina traducibile es actualmente in curso de renomination.',
 );
 
@@ -3155,7 +3154,7 @@ Dä Täx vun däm Affschned es: <pre>$1</pre>',
 	'pt-movepage-action-perform' => 'Ömnänne!',
 	'pt-movepage-action-other' => 'Ander Zieltittel',
 	'pt-movepage-intro' => 'Heh di Extrasigg löht Desh Sigge ömdäufe, di för et Övversäze frei jejovve sin.
-Dat jeiht nit en einem Rötsch, weil ene Pönge Sigge un -Deile ömjenannt wääde möße.
+Dat jeiht nit en einem Rötsch, weil ene Pöngel Sigge un -Deile ömjenannt wääde möße.
 Em MediaWiki sing <i lang="en"> [http://www.mediawiki.org/wiki/Manual:Job_queue job queue] </i> weed doför jebruch.
 Su lang, wi de Sigge ömjenannt wääde, kam_mer met dänne nix söns maache.
 Fähler kumme en et [[Special:Log/pagetranslation|{{int:pt-log-name}}]] un möße vun Hand opjerühmp wääde.',
@@ -3291,10 +3290,10 @@ Text vum Abschnitt: <pre>$1</pre>',
 D'Réckelaktioun gëtt net direkt gemaach wëll vill Säite geréckelt musse ginn.
 D'Job-Queue gëtt fir d'Réckele vun de Säite benotzt.
 Da wann d'Säite geréckelt ginn ass et net méiglech mat deene Säiten déi grad geréckelt ginn ze schaffen.
-Wann et net fonctionnéiert gëtt dat am Iwwersetungs-Logbuch festgehal an et muss vun Hand reparéiert ginn.",
+Wann et net fonctionnéiert gëtt dat am [[Special:Log/pagetranslation|Iwwersetzungs-Logbuch]] festgehal an et muss vun Hand reparéiert ginn.",
 	'pt-movepage-logreason' => 'Deel vun der iwwersetzbarer Säit $1.',
-	'pt-movepage-started' => "D'Basissäit ass geréckelt.
-Kuckt w.e.g. d'Logbuch vun den Iwwersetzunge vu Säiten no fir Feelermeldungen respektiv d'Meldung datt alles ok ass.",
+	'pt-movepage-started' => "D'Basissäit ass elo geréckelt.
+Kuckt w.e.g. d'[[Special:Log/pagetranslation|Logbuch vun den Iwwersetzunge]] fir Feelermeldungen respektiv d'Meldung datt alles ok ass.",
 	'pt-locked-page' => 'Dës Säit ass gespaart wëll déi iwwersetzbar Säit elo geréckelt gëtt.',
 );
 
@@ -3429,10 +3428,10 @@ $messages['mk'] = array(
 Самото преместување нема да се случи веднаш, бидејќи треба да се преместат голем број на страници.
 Преместувањето ќе се води по редица на задачи.
 Додека се преместуваат страниците, со нив нема да може да се работи.
-Неуспешните ќе бидат заведени во дневникот на преводи на страници и тие ќе треба да се поправаат рачно.',
+Неуспешните ќе бидат заведени во [[Special:Log/pagetranslation|дневникот на преводи на страници]] и тие ќе треба да се поправаат рачно.',
 	'pt-movepage-logreason' => 'Дел од преводливата страница $1.',
 	'pt-movepage-started' => 'Страницата сега е преместена.
-Проверете дали дневникот на преводи на страници има пријавено грешки и порака за завршена задача.',
+Проверете дали [[Special:Log/pagetranslation|дневникот на преводи на страници]] има пријавено грешки и порака за завршена задача.',
 	'pt-locked-page' => 'Оваа страница е заклучена бидејќи е во тек преместување на преводлива страница.',
 );
 
@@ -3596,12 +3595,11 @@ Sectietekst: <pre>$1</pre>',
 	'pt-movepage-action-other' => 'Doel wijzigen',
 	'pt-movepage-intro' => "Via deze speciale pagina kunt u een te vertalen pagina's hernoemen.
 Dit wordt niet direct gedaan, omdat het mogelijk is dat heel veel pagina's hernoemd moeten worden.
-De jobqueue hernoemt uiteindelijke de pagina.
 Terwijl de pagina's worden hernoemd, is het niet mogelijk handelingen uit te voeren op betrokken pagina's.
-In het logboek paginavertaling worden fouten opgeslagen die op een later moment handmatig hersteld kunnen worden.",
+In het [[Special:Log/pagetranslation|logboek paginavertaling]] worden fouten opgeslagen die op een later moment handmatig hersteld kunnen worden.",
 	'pt-movepage-logreason' => 'Onderdeel van te vertalen pagina $1.',
 	'pt-movepage-started' => 'De basispagina is nu hernoemd.
-Kijk in het logboek paginavertaling na of er fouten zijn gemeld en of de complete handeling is afgerond.',
+Kijk in het [[Special:Log/pagetranslation|logboek paginavertaling]] na of er fouten zijn gemeld en of de complete handeling is afgerond.',
 	'pt-locked-page' => 'Deze pagina kan niet gewijzigd worden omdat de te vertalen pagina op dit moment hernoemd wordt.',
 );
 
@@ -3655,6 +3653,7 @@ Sjekk at sida er merkt med <nowiki><translate></nowiki>-merke og har ein gyldig 
  * @author Jon Harald Søby
  * @author Laaknor
  * @author Nghtwlkr
+ * @author Purodha
  */
 $messages['no'] = array(
 	'pagetranslation' => 'Sideoversetting',
@@ -3759,7 +3758,7 @@ Mens sidene flyttes er det ikke mulig å samhandle med gjeldende sider.
 Feil vil bli logget i sideoversettelsesloggen og de må repareres for hånd.',
 	'pt-movepage-logreason' => 'Del av oversettbar side $1.',
 	'pt-movepage-started' => 'Basesiden har nå blitt flyttet.
-Kontroller sideoversettelsesloggen for feil- og fullføringsmeldinger.',
+Kontroller [[Special:Log/pagetranslation|sideoversettelsesloggen]] for feil- og fullføringsmeldinger.',
 	'pt-locked-page' => 'Denne siden er låst fordi oversettelsessiden blir flyttet nå.',
 );
 
@@ -4186,12 +4185,11 @@ Texto da secção: <pre>$1</pre>',
 	'pt-movepage-action-other' => 'Alterar o destino',
 	'pt-movepage-intro' => 'Esta página especial permite-lhe mover páginas que estão marcadas para tradução.
 A operação de movimentação não é instantânea, porque será necessário mover muitas páginas.
-A fila de tarefas será usada para mover as páginas.
-Enquanto estão a ser movidas, não é possível interagir com as páginas em questão.
-As falhas serão registadas no registo de tradução de páginas e necessitam de ser reparadas manualmente.',
+Enquanto estas estão a ser movidas, não é possível interagir com as páginas em questão.
+As falhas serão registadas no [[Special:Log/pagetranslation|registo de tradução de páginas]] e necessitam de ser reparadas manualmente.',
 	'pt-movepage-logreason' => 'Parte da página traduzível $1.',
 	'pt-movepage-started' => 'A página base foi movida.
-Verifique no registo de tradução de páginas se ocorreram erros e se existe a mensagem de conclusão, por favor.',
+Verifique no [[Special:Log/pagetranslation|registo de tradução de páginas]] se ocorreram erros e se existe a mensagem de conclusão, por favor.',
 	'pt-locked-page' => 'Está página está bloqueada porque a página traduzível está a ser movida.',
 );
 
@@ -4382,6 +4380,7 @@ $messages['roa-tara'] = array(
  * @author G0rn
  * @author Grigol
  * @author Hypers
+ * @author Purodha
  * @author Александр Сигачёв
  */
 $messages['ru'] = array(
@@ -4487,7 +4486,7 @@ $messages['ru'] = array(
 Возникшие проблемы будут записаны в журнал переименований переводимых страниц, их нужно будет исправить вручную.',
 	'pt-movepage-logreason' => 'Часть переводимой страницы $1.',
 	'pt-movepage-started' => 'Основная страница переименована.
-Пожалуйста, проверьте журнал переводимых страниц на наличие ошибок.',
+Пожалуйста, проверьте [[Special:Log/pagetranslation|журнал переводимых страниц]] на наличие ошибок.',
 	'pt-locked-page' => 'Эта страница заблокирована, так как переводимая страница сейчас переименовывается.',
 );
 
@@ -4757,12 +4756,11 @@ Besedilo razdelka: <pre>$1</pre>',
 	'pt-movepage-action-other' => 'Spremeni cilj',
 	'pt-movepage-intro' => 'Ta posebna stran omogoča prestavljanje strani, ki so označene za prevajanje.
 Dejanje prestavitve ne bo izvedeno takoj, saj bo potrebno prestaviti veliko strani.
-Za prestavljanje strani bo uporabljena čakalna vrsta.
 Medtem ko se strani premikajo, ne bo mogoče delovati na straneh v obravnavi.
-Neuspehi bodo zabeleženi v dnevniku strani prevodov in jih je potrebno ročno popraviti.',
+Neuspehi bodo zabeleženi v [[Special:Log/pagetranslation|dnevniku strani prevodov]] in jih je potrebno ročno popraviti.',
 	'pt-movepage-logreason' => 'Del prevedljive strani $1.',
 	'pt-movepage-started' => 'Izhodna stran je prestavljena.
-Prosimo, preverite dnevnik strani prevodov za napake in sporočila o dokončanju.',
+Prosimo, preverite [[Special:Log/pagetranslation|dnevnik strani prevodov]] za napake in sporočila o dokončanju.',
 	'pt-locked-page' => 'Stran je zaklenjena, ker se prevedljiva stran trenutno prestavlja.',
 );
 
