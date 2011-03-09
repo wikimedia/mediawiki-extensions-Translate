@@ -345,7 +345,7 @@ class TranslationHelpers {
 
 		$code = $this->targetLanguage;
 		$definition = trim( strval( $this->getDefinition() ) );
-		$definition = str_replace( "\n", "<newline/>", $definition );
+		$definition = self::wrapUntranslatable( $definition );
 
 		$memckey = wfMemckey( 'translate-tmsug-badcodes-' . $serviceName );
 		$unsupported = $wgMemc->get( $memckey );
@@ -376,7 +376,7 @@ class TranslationHelpers {
 
 		if ( $response->responseStatus === 200 ) {
 			$text = Sanitizer::decodeCharReferences( $response->responseData->translatedText );
-			$text = str_replace( "<newline/>", "\n", $text );
+			$text = self::unwrapUntranslatable( $text );
 			$text = $this->suggestionField( $text );
 			return Html::rawElement( 'div', null, self::legend( $serviceName ) . $text . self::clear() );
 		} elseif ( $response->responseDetails === 'invalid translation language pair' ) {
@@ -421,7 +421,7 @@ class TranslationHelpers {
 
 		$code = $this->targetLanguage;
 		$definition = trim( strval( $this->getDefinition() ) );
-		$definition = str_replace( "\n", "<newline/>", $definition );
+		$definition = self::wrapUntranslatable( $definition );
 
 		$memckey = wfMemckey( 'translate-tmsug-badcodes-' . $serviceName );
 		$unsupported = $wgMemc->get( $memckey );
@@ -478,9 +478,22 @@ class TranslationHelpers {
 		$ret = $req->getContent();
 		$text = preg_replace( '~<string.*>(.*)</string>~', '\\1', $ret  );
 		$text = Sanitizer::decodeCharReferences( $text );
-		$text = trim( preg_replace( "~\s*<newline></newline>\s*~", "\n", $text ) );
+		$text = self::unwrapUntranslatable( $text );
 		$text = $this->suggestionField( $text );
 		return Html::rawElement( 'div', null, self::legend( $serviceName ) . $text . self::clear() );
+	}
+
+	protected static function wrapUntranslatable( $text ) {
+		$text = str_replace( "\n", "!N!", $text );
+		$wrap = '<span class="notranslate">\0</span>';
+		$text = preg_replace( '~%[^% ]+%|\$\d|{VAR:[^}]+}|{?{(PLURAL|GRAMMAR|GENDER):[^|]+\||%(\d\$)?[sd]~', $wrap, $text );
+		return $text;
+	}
+
+	protected static function unwrapUntranslatable( $text ) {
+		$text = str_replace( '!N!', "\n", $text );
+		$text = preg_replace( '~<span class="notranslate">(.*?)</span>~', '\1', $text );
+		return $text;
 	}
 
 	protected function getApertiumSuggestion( $serviceName, $config ) {
