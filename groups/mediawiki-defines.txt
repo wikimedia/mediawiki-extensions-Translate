@@ -51,6 +51,8 @@ Api SVG Proxy
 Approved Revs
 aliasfile = ApprovedRevs/ApprovedRevs.alias.php
 
+Array Extension
+
 Article Comments
 descmsg = article-comments-desc
 ignored = article-comments-prefilled-comment-text, article-comments-new-comment-heading
