@@ -21,6 +21,11 @@ class MessageWebImporter {
 	protected $code;
 
 	/**
+	 * @var OutputPage
+	 */
+	protected $out;
+
+	/**
 	 * Maximum processing time in seconds.
 	 */
 	protected $processingTime = 60;
@@ -31,7 +36,11 @@ class MessageWebImporter {
 		$this->setCode( $code );
 	}
 
-	// Wrapper for consistency with SpecialPage
+	/**
+	 * Wrapper for consistency with SpecialPage
+	 *
+	 * @return Title
+	 */
 	public function getTitle() { return $this->title; }
 	public function setTitle( Title $title ) { $this->title = $title; }
 
@@ -45,6 +54,9 @@ class MessageWebImporter {
 		$this->user = $user;
 	}
 
+	/**
+	 * @return MessageGroup
+	 */
 	public function getGroup() {
 		return $this->group;
 	}
@@ -182,7 +194,9 @@ class MessageWebImporter {
 						$process = false;
 					} else {
 						// Check processing time
-						if ( !isset( $this->time ) ) $this->time = wfTimestamp();
+						if ( !isset( $this->time ) ) {
+							$this->time = wfTimestamp();
+						}
 
 						$message = self::doAction(
 							$action,
@@ -321,6 +335,16 @@ class MessageWebImporter {
 		return wfTimestamp() - $this->time >= $this->processingTime;
 	}
 
+	/**
+	 * @static
+	 * @throws MWException
+	 * @param Title $title
+	 * @param  $message
+	 * @param  $comment
+	 * @param null $user
+	 * @param int $editFlags
+	 * @return array
+	 */
 	public static function doImport( $title, $message, $comment, $user = null, $editFlags = 0 ) {
 		$article = new Article( $title, 0 );
 		$status = $article->doEdit( $message, $comment, $editFlags, false, $user );
@@ -335,6 +359,15 @@ class MessageWebImporter {
 		}
 	}
 
+	/**
+	 * @static
+	 * @param Title $title
+	 * @param  $message
+	 * @param  $comment
+	 * @param  $user
+	 * @param int $editFlags
+	 * @return array|String
+	 */
 	public static function doFuzzy( $title, $message, $comment, $user, $editFlags = 0 ) {
 		global $wgUser;
 
