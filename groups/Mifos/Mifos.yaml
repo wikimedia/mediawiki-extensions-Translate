@@ -994,3 +994,51 @@ FILES:
   sourcePattern: %GROUPROOT%/mifos/cashflow/src/main/resources/org/mifos/platform/cashflow/ui/localizedProperties/cashflow_messages_%CODE%.properties
   definitionFile: %GROUPROOT%/mifos/cashflow/src/main/resources/org/mifos/platform/cashflow/ui/localizedProperties/cashflow_messages.properties
   targetPattern: mifos/cashflow/src/main/resources/org/mifos/platform/cashflow/ui/localizedProperties/cashflow_messages_%CODE%.properties
+
+---
+BASIC:
+  id: out-mifos-uisavings
+  label: Mifos - Savings (UI)
+
+MANGLER:
+  class: StringMatcher
+  prefix: uisabings-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/userInterface/src/main/resources/org/mifos/ui/localizedProperties/savings_messages_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/userInterface/src/main/resources/org/mifos/ui/localizedProperties/savings_messages.properties
+  targetPattern: mifos/userInterface/src/main/resources/org/mifos/ui/localizedProperties/savings_messages_%CODE%.properties
+
+---
+BASIC:
+  id: out-mifos-uiloan
+  label: Mifos - Loan (UI)
+
+MANGLER:
+  class: StringMatcher
+  prefix: uiloan-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/userInterface/src/main/resources/org/mifos/ui/localizedProperties/loan_messages_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/userInterface/src/main/resources/org/mifos/ui/localizedProperties/loan_messages.properties
+  targetPattern: mifos/userInterface/src/main/resources/org/mifos/ui/localizedProperties/loan_messages_%CODE%.properties
+
+---
+BASIC:
+  id: out-mifos-uiwidget
+  label: Mifos - Widget (UI)
+
+MANGLER:
+  class: StringMatcher
+  prefix: uiwidget-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/userInterface/src/main/resources/org/mifos/ui/localizedProperties/widget_messages_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/userInterface/src/main/resources/org/mifos/ui/localizedProperties/widget_messages.properties
+  targetPattern: mifos/userInterface/src/main/resources/org/mifos/ui/localizedProperties/widget_messages_%CODE%.properties
