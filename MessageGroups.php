@@ -975,6 +975,10 @@ class MessageGroups {
 		}
 	}
 
+	public static function exists( $id ) {
+		return (bool) self::getGroup( $id );
+	}
+
 	/**
 	 * Get all enabled message groups.
 	 * @return \arrayof{String,MessageGroup}

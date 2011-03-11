@@ -330,6 +330,7 @@ $1',
 	'translate-import-err-ul-failed' => 'File upload was not successful',
 	'translate-import-err-invalid-title' => 'Provided file name <nowiki>$1</nowiki> was invalid.',
 	'translate-import-err-no-such-file' => 'File <nowiki>$1</nowiki> does not exist or has not been uploaded locally.',
+	'translate-import-err-stale-group' => 'The message group this file belongs to does not exist.',
 
 	'translate-import-err-no-headers' => 'File is not a well formed Gettext file in Translate extension format:
 Unable to determine group and language from file headers.',

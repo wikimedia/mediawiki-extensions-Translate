@@ -37,9 +37,7 @@ class SpecialImportTranslations extends SpecialPage {
 	public function execute( $parameters ) {
 		$this->setHeaders();
 
-		/**
-		 * Security and validity checks
-		 */
+		// Security and validity checks
 		if ( !$this->userCanExecute( $this->user ) ) {
 			$this->displayRestrictionError();
 			return;
@@ -51,9 +49,6 @@ class SpecialImportTranslations extends SpecialPage {
 		}
 
 		if ( !$this->user->matchEditToken( $this->request->getVal( 'token' ) ) ) {
-			/**
-			 * @todo Core... bad.
-			 */
 			$this->out->addWikiMsg( 'session_fail_preview' );
 			$this->outputForm();
 			return;
@@ -62,9 +57,6 @@ class SpecialImportTranslations extends SpecialPage {
 		if ( $this->request->getCheck( 'process' ) ) {
 			$data = $this->getCachedData();
 			if ( !$data ) {
-				/**
-				 * @todo Core... bad.
-				 */
 				$this->out->addWikiMsg( 'session_fail_preview' );
 				$this->outputForm();
 				return;
@@ -89,6 +81,12 @@ class SpecialImportTranslations extends SpecialPage {
 		$messages = $data['MESSAGES'];
 		$group = $data['METADATA']['group'];
 		$code = $data['METADATA']['code'];
+
+		if ( !MessageGroups::exists( $group )  ) {
+			$errorWrap = "<div class='error'>\n$1\n</div>";
+			$this->out->wrapWikiMsg( $errorWrap, 'translate-import-err-stale-group' );
+			return;
+		}
 
 		$importer = new MessageWebImporter( $this->getTitle(), $group, $code );
 		$alldone = $importer->execute( $messages );
