@@ -270,13 +270,16 @@ class SpecialManageGroups extends SpecialPage {
 				}
 
 				$act = array();
-				$defaction = $fuzzy ? 'conflict' : 'import';
 
-				foreach ( $actions as $action ) {
-					$label = wfMsg( "translate-manage-action-$action" );
-					$name = MessageWebImporter::escapeNameForPHP( "action-$type-$key" );
-					$id = Sanitizer::escapeId( "action-$key-$action" );
-					$act[] = Xml::radioLabel( $label, $name, $action, $id, $action === $defaction );
+				if ( $this->user->isAllowed( 'translate-manage' ) ) {
+					$defaction = $fuzzy ? 'conflict' : 'import';
+
+					foreach ( $actions as $action ) {
+						$label = wfMsg( "translate-manage-action-$action" );
+						$name = MessageWebImporter::escapeNameForPHP( "action-$type-$key" );
+						$id = Sanitizer::escapeId( "action-$key-$action" );
+						$act[] = Xml::radioLabel( $label, $name, $action, $id, $action === $defaction );
+					}
 				}
 
 				$name = wfMsg( 'translate-manage-import-diff',
@@ -331,8 +334,10 @@ class SpecialManageGroups extends SpecialPage {
 				}
 				$this->out->addHTML( Html::hidden( 'language', $code ) );
 				$this->out->addHTML( implode( "\n", $changed ) );
-				$this->out->addHTML( Xml::submitButton( wfMsg( 'translate-manage-submit' ) ) );
-			} else {
+				if ( $this->user->isAllowed( 'translate-manage' ) ) {
+					$this->out->addHTML( Xml::submitButton( wfMsg( 'translate-manage-submit' ) ) );
+				}
+			} elseif( $this->user->isAllowed( 'translate-manage' ) ) {
 				$cache->create(); // Update timestamp
 				$this->out->addWikiMsg( 'translate-manage-nochanges' );
 			}
@@ -395,16 +400,20 @@ class SpecialManageGroups extends SpecialPage {
 				'action' => $this->getTitle()->getFullURL( array( 'group' => $group->getId() ) ),
 			);
 
-			$this->out->addHTML(
-				Xml::openElement( 'form', $formParams ) .
-				Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
-				Html::hidden( 'token', $this->user->editToken() ) .
-				Html::hidden( 'group', $group->getId() ) .
-				Html::hidden( 'codes', implode( ',', $codes ) ) .
-				Html::hidden( 'rebuildall', 1 ) .
-				Xml::submitButton( wfMsg( 'translate-manage-import-rebuild-all' ) ) .
-				Xml::closeElement( 'form' )
-			);
+			if ( $this->user->isAllowed( 'translate-manage' ) ) {
+
+				$this->out->addHTML(
+					Xml::openElement( 'form', $formParams ) .
+					Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
+					Html::hidden( 'token', $this->user->editToken() ) .
+					Html::hidden( 'group', $group->getId() ) .
+					Html::hidden( 'codes', implode( ',', $codes ) ) .
+					Html::hidden( 'rebuildall', 1 ) .
+					Xml::submitButton( wfMsg( 'translate-manage-import-rebuild-all' ) ) .
+					Xml::closeElement( 'form' )
+				);
+
+			}
 
 			$this->out->addHTML(
 				'<ul><li>' . implode( "</li>\n<li>", $modified ) . '</li></ul>'
