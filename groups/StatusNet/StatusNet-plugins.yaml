@@ -282,6 +282,20 @@ MANGLER:
   prefix: directiondetector-
 ---
 BASIC:
+  id: out-statusnet-plugin-directory
+  label: StatusNet - Directory
+  display: out/statusnet/plugin/directory
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/1.0.x/plugins/Directory/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/Directory/locale/%CODE%/LC_MESSAGES/Directory.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/Directory/locale/Directory.pot
+  targetPattern: statusnet/plugins/Directory/locale/%CODE%/LC_MESSAGES/Directory.po
+
+MANGLER:
+  prefix: directory-
+---
+BASIC:
   id: out-statusnet-plugin-diskcache
   label: StatusNet - DiskCache
   display: out/statusnet/plugin/diskcache
@@ -350,6 +364,20 @@ FILES:
 
 MANGLER:
   prefix: emailsummary-
+---
+BASIC:
+  id: out-statusnet-plugin-event
+  label: StatusNet - Event
+  display: out/statusnet/plugin/event
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/1.0.x/plugins/Event/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/Event/locale/%CODE%/LC_MESSAGES/Event.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/Event/locale/Event.pot
+  targetPattern: statusnet/plugins/Event/locale/%CODE%/LC_MESSAGES/Event.po
+
+MANGLER:
+  prefix: event-
 ---
 BASIC:
   id: out-statusnet-plugin-extendedprofile
@@ -868,6 +896,20 @@ FILES:
 
 MANGLER:
   prefix: piwikanalytics-
+---
+BASIC:
+  id: out-statusnet-plugin-poll
+  label: StatusNet - Poll
+  display: out/statusnet/plugin/poll
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/1.0.x/plugins/Poll/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/Poll/locale/%CODE%/LC_MESSAGES/Poll.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/Poll/locale/Poll.pot
+  targetPattern: statusnet/plugins/Poll/locale/%CODE%/LC_MESSAGES/Poll.po
+
+MANGLER:
+  prefix: poll-
 ---
 BASIC:
   id: out-statusnet-plugin-postdebug
