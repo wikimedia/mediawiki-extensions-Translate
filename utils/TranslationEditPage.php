@@ -119,6 +119,8 @@ class TranslationEditPage {
 			$history = '';
 		}
 
+		$support = $this->getSupportButton( $this->getTitle() );
+
 		// Use the api to submit edits
 		$formParams = array(
 			'action' => "{$wgServer}{$wgScriptPath}/api.php",
@@ -128,7 +130,7 @@ class TranslationEditPage {
 		$form = Html::rawElement( 'form', $formParams,
 			implode( "\n", $hidden ) . "\n" .
 			$helpers->getBoxes( $this->suggestions ) . "\n" .
-			"$textarea\n$summary$save$saveAndNext$skip$history"
+			"$textarea\n$summary$save$saveAndNext$skip$history$support"
 		);
 
 		echo Html::rawElement( 'div', array( 'class' => 'mw-ajax-dialog' ), $form );
@@ -179,4 +181,30 @@ class TranslationEditPage {
 			'title' => wfMsg( 'translate-edit-title', $title->getPrefixedText() )
 		);
 	}
+
+	protected function getSupportButton( $title ) {
+		global $wgTranslateSupportUrl;
+		if ( !$wgTranslateSupportUrl ) return '';
+
+		$supportTitle = Title::newFromText( $wgTranslateSupportUrl['page'] );
+		if ( !$supportTitle ) return '';
+
+		$supportParams = $wgTranslateSupportUrl['params'];
+		foreach ( $supportParams as &$value ) {
+			$value = str_replace( '%MESSAGE%', $title->getPrefixedText(), $value );
+		}
+
+		$support = Html::element(
+			'input',
+			array( 
+				'class' => 'mw-translate-support',
+				'type' => 'button',
+				'value' => wfMsg( 'translate-js-support' ),
+				'title' => wfMsg( 'translate-js-support-title' ),
+				'data-load-url' => $supportTitle->getLocalUrl( $supportParams ),
+			)
+		);
+		return $support;
+	}
+
 }

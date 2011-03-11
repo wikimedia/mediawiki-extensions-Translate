@@ -15,7 +15,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
 /**
  * Version number used in extension credits and in other placed where needed.
  */
-define( 'TRANSLATE_VERSION', '2011-03-08' );
+define( 'TRANSLATE_VERSION', '2011-03-11' );
 
 /**
  * Extension credits properties.
@@ -237,6 +237,18 @@ $wgTranslateTasks = array(
 	'export-to-file'       => 'ExportToFileMessagesTask',
 //	'export-to-xliff'      => 'ExportToXliffMessagesTask',
 );
+
+/**
+ * Experimental support for Ask help button.
+ * Might change into hook later on.
+ * This is an array with keys page and params.
+ * - page is a title of a local wiki page
+ * - params is an array of key-value pairs of request params
+ * -- param value can contain variable %MESSAGE% which will be replaced with
+ *    full page name.
+ * @since 2011-03-11
+ */
+$wgTranslateSupportUrl = false;
 
 
 # === Page translation feature ===

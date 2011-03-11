@@ -342,6 +342,9 @@ Details: $1',
 	'translate-js-skip' => 'Skip to next',
 	'translate-js-save-failed' => 'Saving failed. Please report this error.',
 	'translate-js-history' => 'Translation history',
+	'translate-js-support' => 'Ask question',
+	'translate-js-support-title' => 'Ask help if there is not enough information to translate this message correctly',
+
 
 	// scripts/groupStatistics.php related messages
 	'translate-gs-pos' => 'Pos.',

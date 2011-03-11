@@ -1,5 +1,3 @@
-hookEvent("load", translateImportInit);
-
 /** Call this to enable suggestions on input (id=inputId), on a form (name=formName) */
 function translateImportInit(){
 	os_initHandlers( 'mw-translate-up-wiki-input', 'mw-translate-import', document.getElementById('mw-translate-up-wiki-input') );
@@ -13,3 +11,5 @@ function translateImportInit(){
 		});
 	});
 }
+
+hookEvent("load", translateImportInit);

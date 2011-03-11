@@ -100,6 +100,12 @@ function trlOpenJsEdit( page, group ) {
 			window.open( wgServer + wgScript + '?action=history&title=' + form.find( 'input[name=title]' ).val() );
 			return false;
 		} );
+		
+		form.find( '.mw-translate-support' ).click( function() {
+			// Can use .data() only with 1.4.3 or newer
+			window.open( jQuery(this).attr('data-load-url') );
+			return false;
+		} );
 
 		var textarea = form.find( '.mw-translate-edit-area' );
 		textarea.focus();
