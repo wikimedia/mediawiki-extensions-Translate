@@ -10,6 +10,7 @@ BASIC:
 GROUPS:
   - ext-antispoof
   - ext-assertedit # bots
+  - ext-babel
   - ext-categorytree
   - ext-centralauth
   - ext-centralnotice
