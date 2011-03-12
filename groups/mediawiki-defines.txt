@@ -10,14 +10,19 @@ aliasfile = AbuseFilter/AbuseFilter.alias.php
 Add Media Wizard
 
 Add Media Wizard - Add Media
-file = AddMediaWizard/AddMedia/AddMedia.i18n.php
+file = AddMediaWizard/MwEmbedModules/AddMedia/AddMedia.i18n.php
 descmsg = addmediawizard-desc
-optional = rsd-archive_org-title, rsd-flickr-title, rsd-metavid-title, mwe-no-import-by-url-linktext
-optional = rsd-wiki_commons-title, mwe-cc_title
-ignored = mwe-license-header, mwe-filedesc
+optional = mwe-cc_title
+ignored = mwe-license-header, mwe-filedesc, mwe-no-import-by-url-linktext
+optional = mwe-am-archive_org-title, mwe-am-flickr-title
+optional = mwe-am-commons-title, mwe-am-metavid-title
 
 Add Media Wizard - Clip Edit
-file = AddMediaWizard/ClipEdit/ClipEdit.i18n.php
+file = AddMediaWizard/MwEmbedModules/ClipEdit/ClipEdit.i18n.php
+descmsg = addmediawizard-desc
+
+Add Media Wizard - Firefogg GUI
+file = AddMediaWizard/MwEmbedModules/FirefoggGUI/FirefoggGUI.i18n.php
 descmsg = addmediawizard-desc
 
 Admin Links
