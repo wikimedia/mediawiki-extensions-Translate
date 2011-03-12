@@ -662,6 +662,20 @@ $messages['ary'] = array(
 	'translate-manage-import-deleted' => 'Méṣaj memḫi $1',
 );
 
+/** Dusun Bundu-liwan (Dusun Bundu-liwan)
+ * @author FRANCIS5091
+ */
+$messages['dtp'] = array(
+	'translate-edit' => 'idito',
+	'translate-talk' => 'bolotok',
+	'translate-history' => 'susuyan',
+	'translate-page-navigation-legend' => 'Popotunud',
+	'translate-next' => 'Bolikon sumuhut',
+	'translate-page-edit' => 'idito',
+	'translate-magic-cm-current' => 'Timpu diti',
+	'translate-magic-cm-comment' => 'Kanu:',
+);
+
 /** Afrikaans (Afrikaans)
  * @author Arnobarnard
  * @author Byeboer
@@ -2426,6 +2440,7 @@ $1',
 	'translate-import-err-ul-failed' => 'Загрузка файла не атрымалася',
 	'translate-import-err-invalid-title' => 'Пададзеная назва файла <nowiki>$1</nowiki> — няслушная.',
 	'translate-import-err-no-such-file' => 'Файл <nowiki>$1</nowiki> не існуе альбо не загружаны лякальна.',
+	'translate-import-err-stale-group' => 'Група паведамленьняў, да якой належыць гэты файл, не існуе.',
 	'translate-import-err-no-headers' => 'Файл не зьяўляецца слушным файлам Gettext у фармаце пашырэньня Translate:
 Немагчыма вызначыць групу і мову з загалоўку файла.',
 	'translate-import-err-warnings' => 'Няслушны файл.
@@ -2436,6 +2451,8 @@ $1',
 	'translate-js-skip' => 'Адкрыць наступнае',
 	'translate-js-save-failed' => 'Немагчыма захаваць. Калі ласка, паведаміце пра гэтую памылку.',
 	'translate-js-history' => 'Гісторыя перакладу',
+	'translate-js-support' => 'Задаць пытаньне',
+	'translate-js-support-title' => 'Можаце задаць пытаньне, калі Вам бракуе інфармацыі пра кантэкст паведамленьня.',
 	'translate-gs-pos' => 'Пазыцыя',
 	'translate-gs-code' => 'Код',
 	'translate-gs-continent' => 'Кантынэнт',
@@ -7895,6 +7912,7 @@ $1',
 	'translate-import-err-ul-failed' => 'העלאת הקובץ לא הצליחה',
 	'translate-import-err-invalid-title' => 'שם הקובץ שצוין, <nowiki>$1</nowiki>, אינו תקין.',
 	'translate-import-err-no-such-file' => 'הקובץ <nowiki>$1</nowiki> אינו קיים או שהוא לא הועלה באופן מקומי.',
+	'translate-import-err-stale-group' => 'קבוצת ההודעות שהקובץ הזה שייך אליה אינה קיימת.',
 	'translate-import-err-no-headers' => 'הקובץ זה אינו קובץ Gettext תקין בתסדיר שתואם להרחבת התרגום:
 לא ניתן לקבוע אץ הקבוצה ואת השפה מכותרות הקובץ.',
 	'translate-import-err-warnings' => 'הקובץ אינו תקין.
@@ -7905,6 +7923,8 @@ $1',
 	'translate-js-skip' => 'מעבר להודעה הבאה',
 	'translate-js-save-failed' => 'השמירה נכשלה. נא לדווח את השגיאה הזאת.',
 	'translate-js-history' => 'היסטוריית התרגום',
+	'translate-js-support' => 'לשאול שאלה',
+	'translate-js-support-title' => 'לבקש עזרה אם אין מספיק מידע לתרגום נכון של ההודעה הזאת.',
 	'translate-gs-pos' => 'מקום',
 	'translate-gs-code' => 'קוד',
 	'translate-gs-continent' => 'יבשת',
@@ -9253,6 +9273,7 @@ $1',
 	'translate-import-err-ul-failed' => 'Le cargamento del file non ha succedite',
 	'translate-import-err-invalid-title' => 'Le nomine de file <nowiki>$1</nowiki> es invalide.',
 	'translate-import-err-no-such-file' => 'Le file <nowiki>$1</nowiki> non existe o non ha essite cargate localmente.',
+	'translate-import-err-stale-group' => 'Le gruppo de messages al qual iste file pertine non existe.',
 	'translate-import-err-no-headers' => 'Le file non es un file Gettext ben formate in le formato del extension Translate:
 Non pote determinar le gruppo e lingua ex le capites del file.',
 	'translate-import-err-warnings' => 'Le file non es ben formate.
@@ -9263,6 +9284,8 @@ Detalios: $1',
 	'translate-js-skip' => 'Saltar al sequente',
 	'translate-js-save-failed' => 'Salveguarda fallite. Per favor reporta iste error.',
 	'translate-js-history' => 'Historia de traduction',
+	'translate-js-support' => 'Poner question',
+	'translate-js-support-title' => 'Demandar adjuta si il non ha sufficiente informationes pro traducer iste message correctemente.',
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Codice',
 	'translate-gs-continent' => 'Continente',
@@ -12417,6 +12440,7 @@ $1',
 	'translate-import-err-ul-failed' => 'Подигањето на податотеката не успеа',
 	'translate-import-err-invalid-title' => 'Наведеното име на податотеката <nowiki>$1</nowiki> е погрешно.',
 	'translate-import-err-no-such-file' => 'Податотеката <nowiki>$1</nowiki> не постои или не е подигната локално.',
+	'translate-import-err-stale-group' => 'Податотекава припаѓа на непостоечка група пораки.',
 	'translate-import-err-no-headers' => 'Податотеката не е добро обликувана Gettext податотека во форматот за преведување на додатоци:
 Не можам да одредам група и јазик од насловите на податотеката.',
 	'translate-import-err-warnings' => 'Податотеката не е добро формулирана.
@@ -12427,6 +12451,8 @@ $1',
 	'translate-js-skip' => 'Прејди на следно',
 	'translate-js-save-failed' => 'Зачувувањето не успеа. Ве молиме пријавете ја оваа грешка.',
 	'translate-js-history' => 'Минати преводи',
+	'translate-js-support' => 'Постави прашање',
+	'translate-js-support-title' => 'Побарајте помош ако немате доволно информации за да направите точен превод на пораката.',
 	'translate-gs-pos' => 'Поз.',
 	'translate-gs-code' => 'Код',
 	'translate-gs-continent' => 'Континент',
@@ -14351,6 +14377,7 @@ $messages['pfl'] = array(
  * @author Marcin Łukasz Kiejzik
  * @author McMonster
  * @author Qblik
+ * @author Saper
  * @author Sp5uhe
  * @author ToSter
  * @author Wpedzich
@@ -14362,7 +14389,7 @@ $messages['pl'] = array(
 	'translate-edit' => 'edytuj',
 	'translate-talk' => 'dyskusja',
 	'translate-history' => 'historia',
-	'translate-showsub' => 'Pokaż {{PLURAL:$1|podgrupę|$1 podgrupy|$1 podbrup}}.',
+	'translate-showsub' => 'Pokaż {{PLURAL:$1|tą podgrupę|$1 podgrupy|$1 podgrup}} komunikatów.',
 	'translate-grouplisting' => 'Oto spis wszystkich grup przeznaczonych do tłumaczenia.
 Kliknij nazwę grupy aby zobaczyć listę nieprzetłumaczonych komunikatów.',
 	'translate-task-view' => 'zobaczyć wszystkie komunikaty',
@@ -14850,7 +14877,7 @@ La sot-pàgina "translators" a deuv conten-e lë stamp [[:{{ns:template}}:User|U
 	'supportedlanguages-recenttranslations' => 'tradussion recente',
 	'translate-save' => 'Salva ($1)',
 	'translate-jssti-add' => 'Gionté a la lista',
-	'managemessagegroups' => 'Gestion ëd le partìe ëd mëssagi',
+	'managemessagegroups' => 'Gestion ëd la partìa dij mëssagi',
 	'translate-manage-groups' => 'Gestion dla partìa',
 	'translate-manage-listgroups' => 'Partìe configurà',
 	'translate-manage-listgroups-old' => 'Partìe veja manera',
@@ -17265,6 +17292,7 @@ $1',
 	'translate-import-err-ul-failed' => 'Nalaganje datoteke ni bilo uspešno',
 	'translate-import-err-invalid-title' => 'Določeno ime datoteke <nowiki>$1</nowiki> je bilo neveljavno.',
 	'translate-import-err-no-such-file' => 'Datoteka <nowiki>$1</nowiki> ne obstaja ali pa ni bila naložena lokalno.',
+	'translate-import-err-stale-group' => 'Skupina sporočil, kateri pripada ta datoteka, ne obstaja.',
 	'translate-import-err-no-headers' => 'Datoteka ni dobro oblikovana datoteka Gettext v obliki razširitve Translate:
 Ne morem določiti skupine in jezika iz glav datoteke.',
 	'translate-import-err-warnings' => 'Datoteka ni dobro oblikovana.
@@ -17275,6 +17303,8 @@ Podrobnosti: $1',
 	'translate-js-skip' => 'Preskoči na naslednje',
 	'translate-js-save-failed' => 'Shranjevanje je spodletelo. Prosimo, prijavite to napako.',
 	'translate-js-history' => 'Zgodovina prevoda',
+	'translate-js-support' => 'Zastavi vprašanje',
+	'translate-js-support-title' => 'Prosite za pomoč, če tukaj ni navedenih dovolj informacij, da bi lahko sporočilo pravilno prevedli.',
 	'translate-gs-pos' => 'Št.',
 	'translate-gs-code' => 'Koda',
 	'translate-gs-continent' => 'Celina',
