@@ -353,17 +353,3 @@ MANGLER:
 #
 #MANGLER:
 #  prefix: man-side-
-#
-#---
-#BASIC:
-#  id: out-ihris-manage-siwa
-#  label: iHRIS Manage - Site Wamp
-#  display: out/ihris/manage/siwa
-#
-#FILES:
-#  definitionFile: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-site-wamp/ihris-manage-site-wamp.pot
-#  sourcePattern: %GROUPROOT%/ihris/ihris-manage/translations/templates/ihris-manage-site-wamp/%CODE%.po
-#  targetPattern: ihris/ihris-manage/translations/templates/ihris-manage-site-wamp/%CODE%.po
-#
-#MANGLER:
-#  prefix: man-siwa-

@@ -227,20 +227,6 @@ MANGLER:
 #MANGLER:
 #  prefix: qua-sdi-
 #
-#---
-#BASIC:
-#  id: out-ihris-qualify-swa
-#  label: iHRIS Qualify - Site Wamp
-#  display: out/ihris/qualify/swa
-#
-#FILES:
-#  definitionFile: %GROUPROOT%/ihris/ihris-qualify/translations/templates/ihris-qualify-site-wamp/ihris-qualify-site-wamp.pot
-#  sourcePattern: %GROUPROOT%/ihris/ihris-qualify/translations/templates/ihris-qualify-site-wamp/%CODE%.po
-#  targetPattern: ihris/ihris-qualify/translations/templates/ihris-qualify-site-wamp/%CODE%.po
-#
-#MANGLER:
-#  prefix: qua-swa-
-#
 ---
 BASIC:
   id: out-ihris-qualify-rve
