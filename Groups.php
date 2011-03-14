@@ -263,7 +263,13 @@ abstract class MessageGroupBase implements MessageGroup {
 
 	protected function parseTags( $patterns ) {
 		$cache = new MessageGroupCache( $this->getId() );
-		$messageKeys = $cache->getKeys();
+
+		if ( !$cache->exists() ) {
+			wfWarn( "By-passing message group cache" );
+			$messageKeys = array_keys( $this->load( 'en' ) );
+		} else {
+			$messageKeys = $cache->getKeys();
+		}
 
 		$matches = array();
 
