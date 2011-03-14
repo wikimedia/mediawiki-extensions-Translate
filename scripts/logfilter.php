@@ -40,5 +40,5 @@ while ( true ) {
 		echo trim( $prefix.$line ) . "\n";
 	}
 
-	sleep( 10 );
+	sleep( 30 );
 }
