@@ -1670,6 +1670,7 @@ Tarkista mahdolliset virheet ja valmistumisviestit sivunkääntölokista.',
  * @author IAlex
  * @author Peter17
  * @author Purodha
+ * @author Sherbrooke
  * @author Urhixidur
  * @author Verdy p
  * @author Y-M D
@@ -1774,7 +1775,7 @@ Texte de la section : <pre>$1</pre>',
 L’action de renommage ne sera pas immédiate, car de nombreuses pages devront être déplacés.
 La file d'attente sera utilisée pour renommer les pages.
 Pendant que les pages sont déplacées, il n'est pas possible d’interagir avec elles.
-Les échecs seront enregistrés dans le journal de traduction et devront être corrigés manuellement.",
+Les échecs seront enregistrés dans le [[Special:Log/pagetranslation|journal de traduction]] et devront être corrigés manuellement.",
 	'pt-movepage-logreason' => 'Extrait de la page à traduire $1.',
 	'pt-movepage-started' => 'La page de base est à présent renommée.
 Veuillez vérifier le [[Special:Log/pagetranslation|journal des traductions]] pour repérer d’éventuelles erreurs et lire le message de complétion.',
@@ -5108,13 +5109,12 @@ Teksto ng seksyon: <pre>$1</pre>',
 	'pt-movepage-action-perform' => 'Gawin ang paglipat',
 	'pt-movepage-action-other' => 'Baguhin ang pinupukol',
 	'pt-movepage-intro' => 'Ang natatanging pahinang ito ay nagpapahintulot sa iyong mailipat ang mga pahinang minarkahan para sa pagsasalinwika.
-Ang galaw ng paglipat ay hindi magiging kaagad, dahil maraming mga pahina ang kailangang ilipat.
-Ang pila ng gawain ay gagamitin para sa paglilipat ng mga pahina.
+Ang galaw ng paglipat ay hindi magiging kaagad-agad, dahil maraming mga pahina ang kailangang ilipat.
 Habang inililipat ang mga pahina, hindi maaaring kasalamuhain ang mga pahinang tinutukoy.
-Ang mga kabiguan ay itatala sa tala ng pagsasalinwika ng pahina at kailangan silang kinakamay na pagsasaayos.',
+Ang mga kabiguan ay itatala sa loob ng [[Special:Log/pagetranslation|talaan ng pagsasalinwika ng pahina]] at nangangailangan sila ng kinakamay na pagkukumpuni.',
 	'pt-movepage-logreason' => 'Bahagi ng maisasalinwikang pahinang $1.',
-	'pt-movepage-started' => 'Nailipat na ang pahinang batayan.
-Pakisuri ang tala ng pagsasalinwika ng pahina para sa mga kamalian at mensahe ng pagkakabuo.',
+	'pt-movepage-started' => 'Nailipat na ngayon ang pahinang batayan.
+Pakisuri ang [[Special:Log/pagetranslation|talaan ng pagsasalinwika ng pahina]] para sa mga kamalian at mensahe ng pagkakabuo.',
 	'pt-locked-page' => 'Ikinandao ang pahinang ito dahil ang pahinang maisasalinwika ay kasalukuyang inililipat.',
 );
 
