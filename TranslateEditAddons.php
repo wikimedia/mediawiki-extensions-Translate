@@ -417,21 +417,6 @@ class TranslateEditAddons {
 		return $text;
 	}
 
-	public static function injectTranslationDisplayJs( $parser, &$text, $state ) {
-		if ( strpos( $text, 'translationdisplay' ) !== false ) {
-			$output = $parser->getOutput();
-			if ( method_exists( $output, 'addModules' ) ) {
-				$output->addModules( 'translationdisplay' );
-			} else {
-				$file = TranslateUtils::assetPath( 'js/translationdisplay.js' );
-				$script = Html::linkedScript( $file );
-				// How to make sure jQuery is included??
-				//$output->addHeadItem( $script, 'translationdisplay' );
-			}
-		}
-		return true;
-	}
-
 	public static function translateMessageDocumentationLanguage( &$names, $code ) {
 		global $wgTranslateDocumentationLanguageCode;
 		if ( $wgTranslateDocumentationLanguageCode ) {
@@ -449,5 +434,30 @@ class TranslateEditAddons {
 			$popts->setPreSaveTransform( false );
 		}
 		return true;
+	}
+
+	public static function displayOnDiff( $de, $out ) {
+		$title = $de->getTitle();
+		$handle = new MessageHandle( $title );
+
+		if ( !$handle->exists() ) {
+			return true;
+		}
+
+		$de->loadNewText();
+		$out->setRevisionId( $de->mNewRev->getId() );
+
+		$th = new TranslationHelpers( $title );
+		$th->setEditMode( false );
+		$th->setTranslation( $de->mNewtext );
+		TranslateUtils::injectCSS();
+		
+		$boxes = array();
+		$boxes[] = $th->getDocumentationBox();
+		$boxes[] = $th->getDefinitionBox();
+		$boxes[] = $th->getTranslationDisplayBox();
+		$output = Html::rawElement( 'div', array( 'class' => 'mw-sp-translate-edit-fields' ), implode( "\n\n", $boxes ) );
+		$out->addHtml( $output );
+		return false;
 	}
 }

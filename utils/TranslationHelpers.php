@@ -44,6 +44,10 @@ class TranslationHelpers {
 	 * suggestion directly into the text area, for example.
 	 */
 	protected $textareaId = 'wpTextbox1';
+	/**
+	 * Whether to include extra tools to aid translating.
+	 */
+	protected $editMode = 'true';
 
 	/**
 	 * @param $title Title Title of a page that holds a translation.
@@ -104,6 +108,15 @@ class TranslationHelpers {
 	 */
 	public function setTextareaId( $id ) {
 		$this->textareaId = $id;
+	}
+
+
+	/**
+	 * Enable or disable extra help for editing.
+	 * @param $mode Boolean
+	 */
+	public function setEditMode( $mode = true ) {
+		$this->editMode = $mode;
 	}
 
 	/**
@@ -178,16 +191,7 @@ class TranslationHelpers {
 	 */
 	public function getBoxes( $suggestions = 'sync' ) {
 		// Box filter
-		$all = array(
-			'other-languages' => array( $this, 'getOtherLanguagesBox' ),
-			'translation-memory' => array( $this, 'getSuggestionBox' ),
-			'translation-diff' => array( $this, 'getPageDiff' ),
-			'page-translation' => array( $this, 'getTranslationPageDiff' ),
-			'separator' => array( $this, 'getSeparatorBox' ),
-			'documenation' => array( $this, 'getDocumentationBox' ),
-			'definition' => array( $this, 'getDefinitionBox' ),
-			'check' => array( $this, 'getCheckBox' ),
-		);
+		$all = $this->getBoxNames();
 
 		if ( $suggestions === 'async' ) {
 			$all['translation-memory'] = array( $this, 'getLazySuggestionBox' );
@@ -213,6 +217,19 @@ class TranslationHelpers {
 		} else {
 			return '';
 		}
+	}
+
+	public function getBoxNames() {
+		return array(
+			'other-languages' => array( $this, 'getOtherLanguagesBox' ),
+			'translation-memory' => array( $this, 'getSuggestionBox' ),
+			'translation-diff' => array( $this, 'getPageDiff' ),
+			'page-translation' => array( $this, 'getTranslationPageDiff' ),
+			'separator' => array( $this, 'getSeparatorBox' ),
+			'documentation' => array( $this, 'getDocumentationBox' ),
+			'definition' => array( $this, 'getDefinitionBox' ),
+			'check' => array( $this, 'getCheckBox' ),
+		);
 	}
 
 	/**
@@ -299,7 +316,7 @@ class TranslationHelpers {
 		return $result;
 	}
 
-	protected function getSuggestionBox( $async = false ) {
+	public function getSuggestionBox( $async = false ) {
 		global $wgTranslateTranslationServices;
 
 		$boxes = array();
@@ -594,7 +611,7 @@ class TranslationHelpers {
 		return implode( "$divider\n", $suggestions );
 	}
 
-	protected function getDefinitionBox() {
+	public function getDefinitionBox() {
 		$en = $this->getDefinition();
 		if ( $en === null ) {
 			return null;
@@ -631,7 +648,22 @@ class TranslationHelpers {
 		return TranslateUtils::fieldset( $label, $msg, $class );
 	}
 
-	protected function getCheckBox() {
+	public function getTranslationDisplayBox() {
+		$en = $this->getTranslation();
+		if ( $en === null ) {
+			return null;
+		}
+		$label = wfMsg( 'translate-edit-translation' );
+		$class = array( 'class' => 'mw-translate-edit-translation' );
+		$msg = Html::rawElement( 'span',
+			array( 'class' => 'mw-translate-edit-translationtext' ),
+			TranslateUtils::convertWhiteSpaceToHTML( $en )
+		);
+
+		return TranslateUtils::fieldset( $label, $msg, $class );
+	}
+
+	public function getCheckBox() {
 		global $wgTranslateDocumentationLanguageCode;
 
 		$placeholder = Html::element( 'div', array( 'class' => 'mw-translate-messagechecks' ) );
@@ -680,7 +712,7 @@ class TranslationHelpers {
 		) );
 	}
 
-	protected function getOtherLanguagesBox() {
+	public function getOtherLanguagesBox() {
 		global $wgLang;
 
 		$code = $this->targetLanguage;
@@ -746,12 +778,13 @@ class TranslationHelpers {
 
 		$class = 'mw-sp-translate-edit-info';
 
-		if ( $info === null ) {
+		if ( $info !== null ) $info .= Html::element( 'hr' );
+		$info .= $this->formatGettextComments();
+
+		if ( strval( $info ) === '' ) {
 			$info = wfMsg( 'translate-edit-no-information' );
 			$class = 'mw-sp-translate-edit-noinfo';
 		}
-
-		$info .= $this->formatGettextComments();
 		$class .= ' mw-sp-translate-message-documentation';
 
 		$contents = $wgOut->parse( $info );
@@ -759,7 +792,7 @@ class TranslationHelpers {
 		$contents = preg_replace( '~^<([a-z]+)>(.*)</\1>$~us', '\2', $contents );
 
 		return TranslateUtils::fieldset(
-			wfMsgHtml( 'translate-edit-information', $edit , $page ), $contents, array( 'class' => $class )
+			wfMsgHtml( 'translate-edit-information', $edit, $page ), $contents, array( 'class' => $class )
 		);
 
 	}
@@ -793,7 +826,7 @@ class TranslationHelpers {
 							}
 						}
 					}
-					return "<hr />$out";
+					return "$out";
 				}
 			}
 		}
@@ -999,15 +1032,18 @@ class TranslationHelpers {
 	}
 
 	public function adder( $source ) {
-			$target = self::jQueryPathId( $this->getTextareaId() );
-			$source = self::jQueryPathId( $source );
-			$params = array(
-				'onclick' => "jQuery($target).val(jQuery($source).text()).focus(); return false;",
-				'href' => '#',
-				'title' => wfMsg( 'translate-use-suggestion' )
-			);
+		if ( !$this->editMode ) {
+			return '';
+		}
+		$target = self::jQueryPathId( $this->getTextareaId() );
+		$source = self::jQueryPathId( $source );
+		$params = array(
+			'onclick' => "jQuery($target).val(jQuery($source).text()).focus(); return false;",
+			'href' => '#',
+			'title' => wfMsg( 'translate-use-suggestion' )
+		);
 
-			return Html::element( 'a', $params, '↓' );
+		return Html::element( 'a', $params, '↓' );
 	}
 
 	public function wrapInsert( $id, $text ) {

@@ -89,7 +89,6 @@ $wgHooks['AlternateEdit'][] = 'TranslateEditAddons::intro';
 $wgHooks['EditPageBeforeEditButtons'][] = 'TranslateEditAddons::buttonHack';
 $wgHooks['EditPage::showEditForm:fields'][] = 'TranslateEditAddons::keepFields';
 $wgHooks['SkinTemplateTabs'][] = 'TranslateEditAddons::tabs';
-$wgHooks['ParserBeforeStrip'][] = 'TranslateEditAddons::injectTranslationDisplayJs';
 $wgHooks['LanguageGetTranslatedLanguageNames'][] = 'TranslateEditAddons::translateMessageDocumentationLanguage';
 $wgHooks['ArticlePrepareTextForEdit'][] = 'TranslateEditAddons::disablePreSaveTransform';
 
@@ -109,6 +108,9 @@ $wgHooks['SkinTemplateToolboxEnd'][] = 'TranslateToolbox::toolboxAllTranslations
 // Translation memory updates
 $wgHooks['ArticleSaveComplete'][] = 'TranslationMemoryUpdater::update';
 
+// Translation display related
+$wgHooks['ArticleContentOnDiff'][] = 'TranslateEditAddons::displayOnDiff';
+
 // New rights
 $wgAvailableRights[] = 'translate';
 $wgAvailableRights[] = 'translate-import';
@@ -122,6 +124,7 @@ $wgResourceModules['translate-css'] = array(
 );
 $wgResourceModules['translationdisplay'] = array(
 	'scripts' => 'js/translationdisplay.js',
+	'styles' => 'js/translationdisplay.css',
 	'localBasePath' => dirname( __FILE__ ), 
 	'remoteExtPath' => 'Translate'
 );
