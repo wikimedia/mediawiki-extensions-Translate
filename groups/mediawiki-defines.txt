@@ -1313,8 +1313,7 @@ Semantic Internal Objects
 magicfile = SemanticInternalObjects/SemanticInternalObjects.i18n.magic.php
 
 Semantic Maps
-descmsg = semanticmaps_desc
-optional = semanticmaps_name, sm_googlemaps_printername, sm_yahoomaps_printername, sm_openlayers_printername
+optional = sm_googlemaps_printername, sm_yahoomaps_printername, sm_openlayers_printername
 optional = semanticmaps-kml
 
 Semantic MediaWiki
