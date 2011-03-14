@@ -30,6 +30,8 @@ Options:
   --ppgettext   Group root path for checkout of product. "msgmerge" will post
                 process on the export result based on the current definitionFile
                 in that location
+  --no-location Only used combined with "ppgettext". This option will rebuild
+                the gettext file without location information.
 EOT
 );
 	exit( 1 );
@@ -69,6 +71,12 @@ if ( isset( $options['threshold'] ) && intval( $options['threshold'] ) ) {
 	$threshold = $options['threshold'];
 } else {
 	$threshold = false;
+}
+
+if ( isset( $options['nolocation'] ) ) {
+	$noLocation = '--no-location ';
+} else {
+	$noLocation = '';
 }
 
 $reqLangs = Cli::parseLanguageCodes( $options['lang'] );
@@ -146,7 +154,7 @@ foreach( $groups as $groupId => $group ) {
 			if ( $definitionFile ) {
 				if ( is_file( $definitionFile ) ) {
 					$targetFileName = $ffs->getWritePath() . $group->getTargetFilename( $collection->code );
-					$cmd = "msgmerge --quiet --output-file=" . $targetFileName . ' ' . $targetFileName . ' ' . $definitionFile;
+					$cmd = "msgmerge --quiet " . $noLocation . "--output-file=" . $targetFileName . ' ' . $targetFileName . ' ' . $definitionFile;
 					wfShellExec( $cmd, $ret );
 
 					// Report on errors.
