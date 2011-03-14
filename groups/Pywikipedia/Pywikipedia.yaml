@@ -1,7 +1,7 @@
 TEMPLATE:
   BASIC:
     namespace: NS_PYWIKIPEDIA
-    class: FileBasedMessageGroup
+    class: SingleFileBasedMessageGroup
     description: "{{int:translate-group-desc-pywikipedia}}"
 
   CHECKER:
@@ -23,7 +23,6 @@ BASIC:
   id: out-pywikipedia-category
   label: Pywikipedia Category
   display: out/pywikipedia/category
-  class: FileBasedMessageGroup
 
 FILES:
   class: PythonSingleFFS
@@ -35,7 +34,6 @@ BASIC:
   id: out-pywikipedia-interwiki
   label: Pywikipedia Interwiki
   display: out/pywikipedia/interwiki
-  class: FileBasedMessageGroup
 
 FILES:
   class: PythonSingleFFS
@@ -47,8 +45,6 @@ BASIC:
   id: out-pywikipedia-isbn
   label: Pywikipedia ISBN
   display: out/pywikipedia/isbn
-  class: FileBasedMessageGroup
-
 FILES:
   class: PythonSingleFFS
   sourcePattern: %GROUPROOT%/pywikipedia/isbn.py
@@ -71,7 +67,6 @@ BASIC:
   id: out-pywikipedia-replace
   label: Pywikipedia Replace
   display: out/pywikipedia/replace
-  class: FileBasedMessageGroup
 
 FILES:
   class: PythonSingleFFS
@@ -83,7 +78,6 @@ BASIC:
   id: out-pywikipedia-solve_disambiguation
   label: Pywikipedia Solve Disambiguation
   display: out/pywikipedia/solve_disambiguation
-  class: FileBasedMessageGroup
 
 FILES:
   class: PythonSingleFFS

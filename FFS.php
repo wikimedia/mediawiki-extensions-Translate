@@ -1061,16 +1061,17 @@ class RubyYamlFFS extends YamlFFS {
  */
 class PythonSingleFFS extends SimpleFFS {
 	private $fw = null;
-	private $data = null;
+	static $data = null;
 
 	public function read( $code ) {
-		if( $this->data === null ) {
+		// TODO: Improve this code to not use static variables.
+		if( !isset( self::$data[$this->group->getId()] ) ) {
 			$filename = $this->group->getSourceFilePath( $code );
 			$json = shell_exec( "python -c'import simplejson as json; execfile(\"$filename\"); print json.dumps(msg)'" );
-			$this->data = json_decode( $json, true );
+			self::$data[$this->group->getId()] = json_decode( $json, true );
 		}
-		if( !isset( $this->data[$code] ) ) $this->data[$code] = array();
-		return array( 'MESSAGES' => $this->data[$code] );
+		if( !isset( self::$data[$this->group->getId()][$code] ) ) self::$data[$this->group->getId()][$code] = array();
+		return array( 'MESSAGES' => self::$data[$this->group->getId()][$code] );
 	}
 
 

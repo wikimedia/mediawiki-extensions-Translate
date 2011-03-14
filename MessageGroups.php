@@ -1079,3 +1079,5 @@ class MessageGroups {
 	}
 
 }
+
+class SingleFileBasedMessageGroup extends FileBasedMessageGroup{}

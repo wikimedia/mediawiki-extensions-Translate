@@ -75,7 +75,7 @@ class MessageGroupCache {
 		$this->close(); // Close the reader instance just to be sure
 
 		$messages = $this->group->load( $this->code );
-		if ( !count( $messages ) ) {
+		if ( !count( $messages ) && !( $this->group instanceof SingleFileBasedMessageGroup ) ) {
 			if ( $this->exists() ) {
 				// Delete stale cache files
 				unlink( $this->getCacheFileName() );
@@ -96,7 +96,8 @@ class MessageGroupCache {
 		$cache->set( '#updated',  wfTimestamp() );
 		$cache->set( '#filehash', $hash );
 		$cache->set( '#msgcount', count( $messages ) );
-		$cache->set( '#msghash',  md5( serialize( ksort( $messages ) ) ) );
+		ksort( $messages );
+		$cache->set( '#msghash',  md5( serialize( $messages ) ) );
 		$cache->set( '#version',  '3' );
 		$cache->close();
 	}
@@ -111,54 +112,73 @@ class MessageGroupCache {
 		$group = $this->group;
 		$groupId = $group->getId();
 
-		$filename = $group->getSourceFilePath( $this->code );
+		if( $group instanceof SingleFileBasedMessageGroup ) {
+			$messages = $group->load( $this->code );
 
-		static $globCache = null;
-		if ( !isset( $globCache[$groupId] ) ) {
-			$pattern = $group->getSourceFilePath( '*' );
-			$globCache[$groupId] = array_flip( glob( $pattern, GLOB_NOESCAPE ) );
-			// Definition file might not match the above pattern
-			$globCache[$groupId][$group->getSourceFilePath( 'en' )] = true;
-		}
+			$cache = $this->exists();
+			$source = count( $messages ) > 0;
 
-		$cache = $this->exists();
-		$source = isset( $globCache[$groupId][$filename] );
+			// Existence checks
+			if ( !$cache && !$source ) {
+				return true;
+			} elseif ( $cache xor $source ) {
+				// Either exists but not both
+				return false;
+			}
 
-		// Timestamp and existence checks
-		if ( !$cache && !$source ) {
-			return true;
-		} elseif ( $cache xor $source ) {
-			// Either exists but not both
-			return false;
-		} elseif ( filemtime( $filename ) <= $this->get( '#updated' ) ) {
-			return true;
-		}
+			$created = false;
+		} else {
+			$filename = $group->getSourceFilePath( $this->code );
 
-		// From now on cache and source file exists, but source file mtime is newer
-		$created = $this->get( '#created' );
+			static $globCache = null;
+			if ( !isset( $globCache[$groupId] ) ) {
+				$pattern = $group->getSourceFilePath( '*' );
+				$globCache[$groupId] = array_flip( glob( $pattern, GLOB_NOESCAPE ) );
+				// Definition file might not match the above pattern
+				$globCache[$groupId][$group->getSourceFilePath( 'en' )] = true;
+			}
 
-		// File hash check
-		$newhash = md5( file_get_contents( $filename ) );
-		if ( $this->get( '#filehash' ) === $newhash ) {
-			// Update cache so that we don't need to compare hashes next time
-			$this->create( $created );
-			return true;
+			$cache = $this->exists();
+			$source = isset( $globCache[$groupId][$filename] );
+
+			// Timestamp and existence checks
+			if ( !$cache && !$source ) {
+				return true;
+			} elseif ( $cache xor $source ) {
+				// Either exists but not both
+				return false;
+			} elseif ( filemtime( $filename ) <= $this->get( '#updated' ) ) {
+				return true;
+			}
+
+			// From now on cache and source file exists, but source file mtime is newer
+			$created = $this->get( '#created' );
+
+			// File hash check
+			$newhash = md5( file_get_contents( $filename ) );
+			if ( $this->get( '#filehash' ) === $newhash ) {
+				// Update cache so that we don't need to compare hashes next time
+				$this->create( $created );
+				return true;
+			}
+
 		}
 
 		// Message count check
 		$messages = $group->load( $this->code );
-		if ( $this->get( '#msgcount' ) !== count( $messages ) ) {
+		if ( $this->get( '#msgcount' ) != count( $messages ) ) {
 			// Number of messsages has changed
 			return false;
 		}
 
 		// Content hash check
-		if ( $this->get( '#msghash' ) === md5( serialize( ksort( $messages ) ) ) ) {
+		ksort( $messages );
+		if ( $this->get( '#msghash' ) === md5( serialize( $messages ) ) ) {
 			// Update cache so that we don't need to do slow checks next time
 			$this->create( $created );
 			return true;
 		}
-	
+
 		return false;
 	}
 
@@ -214,7 +234,8 @@ class MessageGroupCache {
 			$messages[$key] = $oldcache->get( $key );
 		}
 
-		$conv['#msghash'] = md5( serialize( ksort( $messages ) ) );
+		ksort( $messages );
+		$conv['#msghash'] = md5( serialize( $messages ) );
 		$oldcache->close();
 
 		// Store the data in new format
