@@ -73,7 +73,7 @@
 .mw-sp-translate-edit-fields fieldset {
 	line-height: normal;
 	margin: 0px;
-	border: 1px solid #2F6FAB;
+	border: 1px solid #DBDBDB;
 	text-align: left;
 }
 
@@ -123,7 +123,7 @@
 .mw-sp-translate-edit-inother { background-color: #F8F8FF; }
 .mw-sp-translate-in-other-small { background-color: #F0F8FF; }
 .mw-sp-translate-in-other-big { background-color: #F0F8FF; }
-.mw-sp-translate-message-documentation { background-color: #C0C8FF; }
+.mw-sp-translate-message-documentation { background-color: #EBEBEB; }
 .mw-sp-translate-edit-definition { background-color: #EAF3FC; }
 .mw-sp-translate-edit-warnings { background-color: #FFDBDB; }
 .mw-translate-definition-preview { padding: 3px; }
@@ -217,18 +217,4 @@ a.mw-sp-showmore {
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	background-color: #D1E231 !important;
-}
-
-
-table.translationdisplay {
-	-moz-box-shadow: 3px 3px 4px #BDA;
-	-webkit-box-shadow: 3px 3px 4px #BDA;
-	box-shadow: 3px 3px 4px #BDA;
-}
-
-
-table.translationdisplay-hover {
-	-moz-box-shadow: 3px 3px 4px #000;
-	-webkit-box-shadow: 3px 3px 4px #000;
-	box-shadow: 3px 3px 4px #000;
 }
