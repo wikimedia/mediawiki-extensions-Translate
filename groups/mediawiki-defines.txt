@@ -723,8 +723,7 @@ ignored = maintenance-stats
 
 Maps
 magicfile = Maps/Maps.i18n.magic.php
-descmsg = maps_desc
-optional = maps_name, maps_googlemaps2, maps_googlemaps3, maps_yahoomaps, maps_openlayers, maps_osm
+optional = maps_googlemaps2, maps_googlemaps3, maps_yahoomaps, maps_openlayers, maps_osm
 
 Mass Blank
 aliasfile = MassBlank/MassBlank.alias.php
