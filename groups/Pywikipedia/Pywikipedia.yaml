@@ -20,6 +20,28 @@ GROUPS:
   - out-pywikipedia-*
 ---
 BASIC:
+  id: out-pywikipedia-basic
+  label: Pywikipedia Basic
+  display: out/pywikipedia/basic
+
+FILES:
+  class: PythonSingleFFS
+  sourcePattern: %GROUPROOT%/pywikipedia/basic.py
+  definitionFile: %GROUPROOT%/pywikipedia/basic.py
+  targetPattern: pywikipedia/basic.py
+---
+BASIC:
+  id: out-pywikipedia-category_redirect
+  label: Pywikipedia Category Redirect
+  display: out/pywikipedia/category_redirect
+
+FILES:
+  class: PythonSingleFFS
+  sourcePattern: %GROUPROOT%/pywikipedia/category_redirect.py
+  definitionFile: %GROUPROOT%/pywikipedia/category_redirect.py
+  targetPattern: pywikipedia/category_redirect.py
+---
+BASIC:
   id: out-pywikipedia-category
   label: Pywikipedia Category
   display: out/pywikipedia/category
@@ -29,6 +51,17 @@ FILES:
   sourcePattern: %GROUPROOT%/pywikipedia/category.py
   definitionFile: %GROUPROOT%/pywikipedia/category.py
   targetPattern: pywikipedia/category.py
+---
+BASIC:
+  id: out-pywikipedia-cosmetic_changes
+  label: Pywikipedia Cosmetic Changes
+  display: out/pywikipedia/cosmetic_changes
+
+FILES:
+  class: PythonSingleFFS
+  sourcePattern: %GROUPROOT%/pywikipedia/cosmetic_changes.py
+  definitionFile: %GROUPROOT%/pywikipedia/cosmetic_changes.py
+  targetPattern: pywikipedia/cosmetic_changes.py
 ---
 BASIC:
   id: out-pywikipedia-interwiki
