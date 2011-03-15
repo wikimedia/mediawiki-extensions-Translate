@@ -78,6 +78,7 @@ BASIC:
   id: out-pywikipedia-isbn
   label: Pywikipedia ISBN
   display: out/pywikipedia/isbn
+
 FILES:
   class: PythonSingleFFS
   sourcePattern: %GROUPROOT%/pywikipedia/isbn.py
@@ -88,7 +89,6 @@ BASIC:
   id: out-pywikipedia-redirect
   label: Pywikipedia Redirect
   display: out/pywikipedia/redirect
-  class: FileBasedMessageGroup
 
 FILES:
   class: PythonSingleFFS
