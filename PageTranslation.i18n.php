@@ -1772,8 +1772,7 @@ Texte de la section : <pre>$1</pre>',
 	'pt-movepage-action-perform' => 'Renommer',
 	'pt-movepage-action-other' => 'Changer la cible',
 	'pt-movepage-intro' => "Cette page spéciale vous permet de renommer des pages qui sont marquées pour être traduites.
-L’action de renommage ne sera pas immédiate, car de nombreuses pages devront être déplacés.
-La file d'attente sera utilisée pour renommer les pages.
+L’action de renommage ne sera pas immédiate, car de nombreuses pages devront être déplacées.
 Pendant que les pages sont déplacées, il n'est pas possible d’interagir avec elles.
 Les échecs seront enregistrés dans le [[Special:Log/pagetranslation|journal de traduction]] et devront être corrigés manuellement.",
 	'pt-movepage-logreason' => 'Extrait de la page à traduire $1.',
@@ -4481,9 +4480,8 @@ $messages['ru'] = array(
 	'pt-movepage-action-other' => 'Изменить цель',
 	'pt-movepage-intro' => 'Эта служебная страница позволяет переименовывать страницы, отмеченные для перевода.
 Переименование не будет произведено одномоментно, так как требуется сменить название многим страницам.
-Для этой задачи будет использована очередь заданий.
 Во время процесса переименования пропадает возможность взаимодействия с этими страницами.
-Возникшие проблемы будут записаны в журнал переименований переводимых страниц, их нужно будет исправить вручную.',
+Возникшие проблемы будут записаны в [[Special:Log/pagetranslation|журнал]], их нужно будет исправить вручную.',
 	'pt-movepage-logreason' => 'Часть переводимой страницы $1.',
 	'pt-movepage-started' => 'Основная страница переименована.
 Пожалуйста, проверьте [[Special:Log/pagetranslation|журнал переводимых страниц]] на наличие ошибок.',
