@@ -538,9 +538,11 @@ Ako ne želite primati novosti, možete se odjaviti na jezičku "{{int:prefs-per
 );
 
 /** Catalan (Català)
+ * @author SMP
  * @author Toniher
  */
 $messages['ca'] = array(
+	'translate-fs-pagetitle-done' => ' - fet!',
 	'translate-fs-settings-skip' => 'He acabat.
 Deixeu-me procedir.',
 );

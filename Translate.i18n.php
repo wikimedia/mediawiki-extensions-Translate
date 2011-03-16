@@ -408,7 +408,7 @@ $messages['qqq'] = array(
 	'translate-edit-title' => 'Used as a tooltip for edit links in lists with translatable messages. Parameters:
 * $1 is the name of the page to be edited.
 {{Identical|Edit}}',
-	'translate-edit-translation' => 'Legend for box like {{msg-mw|Translate-edit-definition}} or {{msg-mw|Translate-edit-inotherlanguages}}.',
+	'translate-edit-translation' => 'Legend for box like {{msg-mw|Translate-edit-definition}} or {{msg-mw|Translate-edit-in-other-languages}}.',
 	'translate-edit-no-information' => 'Message is used as a hint to translators that documentation for a message without documentation is needed.',
 	'translate-edit-information' => 'Caption for box which contains information about the message. $1 is {{msg-mw|translate-edit-contribute}}.',
 	'translate-edit-in-other-languages' => 'Caption for box which contains translation of message in other languages.',
@@ -1898,6 +1898,15 @@ Los cambeos nun se graben hasta que calques nel botón guardar d'abaxo.",
 	'translate-language-code-field-name' => 'Códigu de llingua:',
 	'translate-language' => 'Llingua',
 	'translate-total' => 'Mensaxes',
+);
+
+/** Azerbaijani (Azərbaycanca)
+ * @author Wertuose
+ */
+$messages['az'] = array(
+	'translate' => 'Tərcümə et',
+	'translate-page-language' => 'Dil',
+	'translate-submit' => 'Gətir',
 );
 
 /** Bashkir (Башҡортса)
@@ -3507,6 +3516,15 @@ El mètode <code>$1</code> no està suportat.",
 $1",
 	'translate-import-err-ul-failed' => "La càrrega del fitxer no s'ha completat",
 	'translate-import-err-invalid-title' => 'El nom del fitxer <nowiki>$1</nowiki> no és vàlid.',
+	'translate-gs-pos' => 'Pos.',
+	'translate-gs-code' => 'Codi',
+	'translate-gs-continent' => 'Continent',
+	'translate-gs-speakers' => 'Parlants',
+	'translate-gs-score' => 'Puntuació',
+	'translate-gs-multiple' => 'Diversos',
+	'translate-gs-count' => 'Recompte',
+	'translate-gs-total' => 'Total',
+	'translate-gs-avgscore' => 'Puntuació mitjana',
 );
 
 /** Chechen (Нохчийн)
@@ -3662,10 +3680,11 @@ Pokud skupina obsahuje podmnožinu či nadmnožinu zpráv z jiných skupin, zobr
 	'translate-ignored' => '(ignorované)',
 	'translate-edit-title' => 'Editovat „$1“',
 	'translate-edit-definition' => 'Zdroj zprávy',
+	'translate-edit-translation' => 'Překlad',
 	'translate-edit-contribute' => 'přispět',
 	'translate-edit-no-information' => "''K této zprávě není dokumentace. Pokud víte, kde nebo jak se zpráva používá, můžete pomoci dalším překladatelům tím, že přidáte dokumentaci k této zprávě.''",
-	'translate-edit-information' => 'Informace o zprávě „$2“ ($1)',
-	'translate-edit-in-other-languages' => 'Zpráva „$1“ v jiných jazycích',
+	'translate-edit-information' => 'Informace o zprávě ($1)',
+	'translate-edit-in-other-languages' => 'Zpráva v jiných jazycích',
 	'translate-edit-committed' => 'Současný překlad v úložišti',
 	'translate-edit-warnings' => 'Upozornění na neúplný překlad',
 	'translate-edit-tmsugs' => 'Návrhy z překladové paměti',
@@ -11209,11 +11228,12 @@ En Fättschreff wäde de Jroppe aanjezeish, di noch Ongerjroppe han.',
 	'translate-ignored' => '(övverjange)',
 	'translate-edit-title' => '„$1“ ändere',
 	'translate-edit-definition' => 'De Ojinaal Nohreesch',
+	'translate-edit-translation' => 'Övversäzong',
 	'translate-edit-contribute' => 'beijdraare',
 	'translate-edit-no-information' => "''Mer han kein Dokementazjohn för dat Täxshtöck.''
 ''Wann De weijß, wann un woh dat Shtöck jenou jebruch weed, dann kanns De dä Anndere hellefe, un jet för_et ennjävve.''",
-	'translate-edit-information' => 'Ennfommazjohne övver de Nohreesch „$2“ ($1)',
-	'translate-edit-in-other-languages' => 'Di Nohreesch „$1“ in annder Shprooche',
+	'translate-edit-information' => 'Ennfommazjohne övver dä Täx udder de Nohreesch ($1)',
+	'translate-edit-in-other-languages' => 'Dä Täx udder di Nohreesch in annder Shprooche',
 	'translate-edit-committed' => 'Es aktowäll övversaz met',
 	'translate-edit-warnings' => 'Warnonge wääje unkomplätte Övversäzonge',
 	'translate-edit-tmsugs' => 'Vörschlääsch vum elläktrohnesche Övversäzongs-Jedähschneß',
