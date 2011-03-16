@@ -50,11 +50,17 @@ class MessageHandle {
 		return array( $this->key, $this->code );
 	}
 
+	/**
+	 * @return String
+	 */
 	public function getKey() {
 		$this->figureMessage();
 		return $this->key;
 	}
 
+	/**
+	 * @return String
+	 */
 	public function getCode() {
 		$this->figureMessage();
 		return $this->code;
@@ -67,15 +73,28 @@ class MessageHandle {
 		return $this->groupIds;
 	}
 
+	/**
+	 * Get the primary MessageGroup this message belongs to.
+	 * You should check first that the handle is valid.
+	 * @return MessageGroup
+	 */
 	public function getGroup() {
 		$ids = $this->getGroupIds();
 		return MessageGroups::getGroup( $ids[0] );
 	}
 
-	public function exists() {
+	/**
+	 * Checks if the title corresponds to a known message.
+	 * @since 2011-03-16
+	 * @return \bool
+	 */
+	public function isValid() {
 		return $this->isMessageNamespace() && $this->getGroupIds();
 	}
 
+	/**
+	 * @return Title
+	*/
 	public function getTitle() {
 		return $this->title;
 	}

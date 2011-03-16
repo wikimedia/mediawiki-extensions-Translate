@@ -143,31 +143,51 @@ class TranslateEditAddons {
 	 * message documentation to try to avoid accidents.
 	 */
 	static function buttonHack( $editpage, &$buttons, $tabindex ) {
-		global $wgTranslateDocumentationLanguageCode;
+		global $wgTranslateDocumentationLanguageCode, $wgLang;
 
-		if ( !self::isMessageNamespace( $editpage->mTitle ) ) {
+		$handle = new MessageHandle( $editpage->mTitle );
+		if ( !$handle->isValid() ) {
 			return true;
 		}
 
-		global $wgLang;
+		$code = $handle->getCode();
 
-		list( , $code ) = self::figureMessage( $editpage->mTitle );
-
-		if ( $code !== $wgTranslateDocumentationLanguageCode ) {
-			return true;
+		if ( $code === $wgTranslateDocumentationLanguageCode ) {
+			$name = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() );
+			$temp = array(
+				'id'        => 'wpSave',
+				'name'      => 'wpSave',
+				'type'      => 'submit',
+				'tabindex'  => ++$tabindex,
+				'value'     => wfMsg( 'translate-save', $name ),
+				'accesskey' => wfMsg( 'accesskey-save' ),
+				'title'     => wfMsg( 'tooltip-save' ) . ' [' . wfMsg( 'accesskey-save' ) . ']',
+			);
+			$buttons['save'] = Xml::element( 'input', $temp, '' );
 		}
 
-		$name = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() );
+		global $wgTranslateSupportUrl;
+		if ( !$wgTranslateSupportUrl ) return true;
+
+		$supportTitle = Title::newFromText( $wgTranslateSupportUrl['page'] );
+		if ( !$supportTitle ) return true;
+
+		$supportParams = $wgTranslateSupportUrl['params'];
+		foreach ( $supportParams as &$value ) {
+			$value = str_replace( '%MESSAGE%', $handle->getTitle()->getPrefixedText(), $value );
+		}
+
 		$temp = array(
-			'id'        => 'wpSave',
-			'name'      => 'wpSave',
-			'type'      => 'submit',
+			'id'        => 'wpSupport',
+			'name'      => 'wpSupport',
+			'type'      => 'button',
 			'tabindex'  => ++$tabindex,
-			'value'     => wfMsg( 'translate-save', $name ),
-			'accesskey' => wfMsg( 'accesskey-save' ),
-			'title'     => wfMsg( 'tooltip-save' ) . ' [' . wfMsg( 'accesskey-save' ) . ']',
+			'value'     => wfMsg( 'translate-js-support' ),
+			'title'     => wfMsg( 'translate-js-support-title' ),
+			'data-load-url' => $supportTitle->getLocalUrl( $supportParams ),
+			'onclick'   => "window.open( jQuery(this).attr('data-load-url') );",
 		);
-		$buttons['save'] = Xml::element( 'input', $temp, '' );
+		$buttons['ask'] = Html::element( 'input', $temp, '' );
 
 		return true;
 	}
@@ -440,7 +460,7 @@ class TranslateEditAddons {
 		$title = $de->getTitle();
 		$handle = new MessageHandle( $title );
 
-		if ( !$handle->exists() ) {
+		if ( !$handle->isValid() ) {
 			return true;
 		}
 
