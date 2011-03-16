@@ -778,8 +778,9 @@ class TranslationHelpers {
 
 		$class = 'mw-sp-translate-edit-info';
 
-		if ( $info !== null ) $info .= Html::element( 'hr' );
-		$info .= $this->formatGettextComments();
+		$gettext = $this->formatGettextComments();
+		if ( $info !== null && $gettext ) $info .= Html::element( 'hr' );
+		$info .= $gettext;
 
 		if ( strval( $info ) === '' ) {
 			$info = wfMsg( 'translate-edit-no-information' );
