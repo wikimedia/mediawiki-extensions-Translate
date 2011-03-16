@@ -54,7 +54,7 @@ if ( $group === null ) {
 	$groups = array( $group );
 }
 
-if ( !isset( $options['lang'] ) ) {
+if ( !isset( $options['lang'] ) || strval( $options['lang'] ) === '' ) {
 	STDERR( "ESG3: List of language codes must be supplied with lang parameter." );
 	exit( 1 );
 }
