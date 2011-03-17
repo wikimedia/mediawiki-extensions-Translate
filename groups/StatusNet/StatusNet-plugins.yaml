@@ -1066,6 +1066,20 @@ MANGLER:
   prefix: sample-
 ---
 BASIC:
+  id: out-statusnet-plugin-searchsub
+  label: StatusNet - SearchSub
+  display: out/statusnet/plugin/searchsub
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/1.0.x/plugins/SearchSub/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/SearchSub/locale/%CODE%/LC_MESSAGES/SearchSub.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/SearchSub/locale/SearchSub.pot
+  targetPattern: statusnet/plugins/SearchSub/locale/%CODE%/LC_MESSAGES/SearchSub.po
+
+MANGLER:
+  prefix: searchsub-
+---
+BASIC:
   id: out-statusnet-plugin-sharenotice
   label: StatusNet - ShareNotice
   display: out/statusnet/plugin/sharenotice
@@ -1190,6 +1204,20 @@ FILES:
 
 MANGLER:
   prefix: tabfocus-
+---
+BASIC:
+  id: out-statusnet-plugin-tagsub
+  label: StatusNet - TagSub
+  display: out/statusnet/plugin/tagsub
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/1.0.x/plugins/TagSub/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/TagSub/locale/%CODE%/LC_MESSAGES/TagSub.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/TagSub/locale/TagSub.pot
+  targetPattern: statusnet/plugins/TagSub/locale/%CODE%/LC_MESSAGES/TagSub.po
+
+MANGLER:
+  prefix: tagsub-
 ---
 BASIC:
   id: out-statusnet-plugin-tighturl
