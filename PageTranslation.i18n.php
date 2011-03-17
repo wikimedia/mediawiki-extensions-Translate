@@ -2099,9 +2099,8 @@ Text vum Abschnitt: <pre>$1</pre>',
 	'pt-movepage-action-other' => 'Ziil ändere',
 	'pt-movepage-intro' => 'Die Spezialsyte macht s megli Syte z verschiebe, wu fir d Ibersetzig zeichnet sin.
 D Verschiebig chunnt nit sofort, wel vil Syte derby mien verschobe wäre.
-S wird wäge däm d Uftragswarteschlang zum Verschiebe vu dr Syte verwändet.
 Bim Verschiebigsvorgang isch s nit megli, die Syte z nutze.
-Verschiebigsfähler wäre im Ibersetzigs-Logbuech ufzeichnet un mien vu Hand verbesseret wäre.',
+Verschiebigsfähler wäre im [[Special:Log/pagetranslation|Ibersetzigs-Logbuech]] ufzeichnet un mien vu Hand verbesseret wäre.',
 	'pt-movepage-logreason' => 'Teil vu dr Ibersetzigssyte $1.',
 	'pt-movepage-started' => 'D Basissyte isch jetz verschobe wore.
 Bitte prief s [[Special:Log/pagetranslation|Ibersetzigs-Logbuech]] uf Fählermäldige un d Vollzugsnochricht.',
