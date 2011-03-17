@@ -73,7 +73,7 @@ if ( isset( $options['threshold'] ) && intval( $options['threshold'] ) ) {
 	$threshold = false;
 }
 
-if ( isset( $options['nolocation'] ) ) {
+if ( isset( $options['no-location'] ) ) {
 	$noLocation = '--no-location ';
 } else {
 	$noLocation = '';
