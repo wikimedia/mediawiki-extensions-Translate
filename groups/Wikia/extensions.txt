@@ -37,6 +37,8 @@ Category Galleries
 
 Category Select
 
+Chat
+
 Cloak Check
 
 Community Messages
