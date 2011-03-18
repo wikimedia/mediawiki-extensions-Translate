@@ -69,6 +69,7 @@ GROUPS:
   - ext-parserfunctions
   - ext-pdfhandler
   - ext-poem
+  - ext-poolcounter # 2011-03-18 on all projects
   - ext-prefstats
   - ext-proofreadpage # Wikisource
   - ext-quiz
