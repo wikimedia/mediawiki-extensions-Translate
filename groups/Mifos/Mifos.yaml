@@ -843,6 +843,60 @@ FILES:
   definitionFile: %GROUPROOT%/mifos/application/src/main/resources/org/mifos/config/localizedResources/UIResources.properties
   targetPattern: mifos/application/src/main/resources/org/mifos/config/localizedResources/UIResources_%CODE%.properties
 
+TAGS:
+  optional:
+    - ui-confirmBranchTransfer
+    - ui-confirmGroupTransfer
+    - ui-confirmParentTransfer
+    - ui-editMFIInfo
+    - ui-editPersonalInfo
+    - ui-getAllFunds
+    - ui-getDetails
+    - ui-getHomePage
+    - ui-getInstallmentDetails
+    - ui-getInstallmentHistory
+    - ui-getOfficeHomePage
+    - ui-getPrdOfferings
+    - ui-getReportPage
+    - ui-hierarchyCheck
+    - ui-loadAllBranches
+    - ui-loadBranchTransfer
+    - ui-loadCenters
+    - ui-loadChangePassword
+    - ui-loadCustomers
+    - ui-loadGroupTransfer
+    - ui-loadHistoricalData
+    - ui-loadLoanOfficers
+    - ui-loadMeeting
+    - ui-loadParent
+    - ui-loadParentTransfer
+    - ui-loadSearch
+    - ui-loadStatus
+    - ui-loadTransfer
+    - ui-loadUnLockUser
+    - ui-loadall
+    - ui-login
+    - ui-logout
+    - ui-manage
+    - ui-preLoad
+    - ui-prevMFIInfo
+    - ui-prevPersonalInfo
+    - ui-previewMFIInfo
+    - ui-previewPersonalInfo
+    - ui-retrievePicture
+    - ui-retrievePictureOnPreview
+    - ui-searchNext
+    - ui-searchPrev
+    - ui-setDefaultFormedByPersonnel
+    - ui-showPicture
+    - ui-unLockUserAccount
+    - ui-updateBranch
+    - ui-updateMeeting
+    - ui-updateMfi
+    - ui-updateParent
+    - ui-updateSettings
+    - ui-updateStatus
+
 ---
 BASIC:
   id: out-mifos-vos
