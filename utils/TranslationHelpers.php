@@ -29,6 +29,7 @@ class TranslationHelpers {
 	protected $targetLanguage;
 	/**
 	 * The group object of the message (or null if there isn't any)
+	 * @var MessageGroup
 	 */
 	protected $group;
 	/**
@@ -109,7 +110,6 @@ class TranslationHelpers {
 	public function setTextareaId( $id ) {
 		$this->textareaId = $id;
 	}
-
 
 	/**
 	 * Enable or disable extra help for editing.
@@ -992,7 +992,9 @@ class TranslationHelpers {
 
 		$msg = TranslateUtils::convertWhiteSpaceToHTML( $msg );
 
-		if ( !$title ) $title = "$name ($code)";
+		if ( !$title ) {
+			$title = "$name ($code)";
+		}
 
 		if ( $makelink ) {
 			$linkTitle = Title::newFromText( $makelink );
