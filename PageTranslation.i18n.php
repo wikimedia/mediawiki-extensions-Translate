@@ -576,6 +576,11 @@ $messages['bg'] = array(
 	'translate-tag-translate-link-desc' => 'Превеждане на тази страница',
 	'tpt-languages-legend' => 'Други езици:',
 	'tpt-download-page' => 'Изнасяне на страница с преводите',
+	'pt-movepage-list-other' => 'Други подстраници',
+	'pt-movepage-current' => 'Текущо име:',
+	'pt-movepage-new' => 'Ново име:',
+	'pt-movepage-reason' => 'Причина:',
+	'pt-movepage-subpages' => 'Преместване на всички подстраници',
 );
 
 /** Bengali (বাংলা)
@@ -4343,6 +4348,7 @@ Nume: $1',
 	'tpt-translate-this' => 'tradu aceasta pagină',
 	'translate-tag-translate-link-desc' => 'Tradu această pagină',
 	'translate-tag-markthis' => 'Marchează această pagină pentru traducere',
+	'tpt-translation-intro' => 'Această pagină reprezintă <span class="plainlinks">[$1 versiunea tradusă]</span> a paginii [[$2]], procesul de traducere fiind completat în proporție de $3%.',
 	'tpt-translation-intro-fuzzy' => 'Traducerile învechite sunt marcate în acest fel.',
 	'tpt-languages-legend' => 'Alte limbi:',
 	'pt-log-name' => 'Jurnal traducere pagini',

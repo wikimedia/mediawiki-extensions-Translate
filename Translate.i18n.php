@@ -1138,6 +1138,7 @@ $messages['ang'] = array(
 
 /** Arabic (العربية)
  * @author Alnokta
+ * @author Basharh
  * @author Meno25
  * @author OsamaK
  * @author Ouda
@@ -1189,7 +1190,7 @@ $messages['ar'] = array(
 	'translate-edit-no-information' => "''ليس لهذه الرسالة توثيق.
 إذا كنت تعرف أين أو كيف يتم استخدام هذه الرسالة، فيمكنك مساعدة المترجمين الآخرين بإضافة توثيق إلى هذه الرسالة.''",
 	'translate-edit-information' => 'معلومات حول الرسالة "$2" ($1)',
-	'translate-edit-in-other-languages' => 'الرسالة "$1" بلغات أخرى',
+	'translate-edit-in-other-languages' => 'الرسالة بلغات أخرى',
 	'translate-edit-committed' => 'الترجمة الحالية في البرنامج',
 	'translate-edit-warnings' => 'التحذيرات حول الترجمات غير المكتملة',
 	'translate-edit-tmsugs' => 'مقترحات من ذاكرة الترجمة',
@@ -1420,7 +1421,7 @@ $messages['arc'] = array(
 	'translate-page-edit' => 'ܫܚܠܦ',
 	'translate-optional' => '(ܨܒܝܢܝܐ)',
 	'translate-edit-contribute' => 'ܫܘܬܦ',
-	'translate-edit-in-other-languages' => 'ܐܓܪܬܐ "$1" ܒܠܫܢ̈ܐ ܐܚܪ̈ܢܐ',
+	'translate-edit-in-other-languages' => 'ܐܓܪܬܐ ܒܠܫܢ̈ܐ ܐܚܪ̈ܢܐ',
 	'translate-edit-tab-list' => 'ܡܟܬܒܘܬܐ ܕܐܓܪ̈ܬܐ',
 	'translate-magic-submit' => 'ܒܨܝܐ',
 	'translate-magic-cm-export' => 'ܐܦܩ',
@@ -2497,9 +2498,9 @@ $messages['bg'] = array(
 	'translate-task-problematic' => 'Преглед на съобщенията, които имат проблем',
 	'translate-task-review' => 'Преглед на променените съобщения в',
 	'translate-task-reviewall' => 'Преглед на всички преводи в',
-	'translate-task-export' => 'Изнасяне на преводите от',
-	'translate-task-export-to-file' => 'Изнасяне във файл на преведените съобщения от',
-	'translate-task-export-as-po' => 'Изнасяне на превода в Gettext формат',
+	'translate-task-export' => 'Изнасяне на преводите',
+	'translate-task-export-to-file' => 'Изнасяне във файл на преведените съобщения',
+	'translate-task-export-as-po' => 'Изнасяне на преводите за офлайн превеждане',
 	'translate-task-export-to-xliff' => 'Изнасяне на превода в Xliff формат',
 	'translate-page-no-such-language' => 'Избраният език е невалиден.',
 	'translate-page-no-such-task' => 'Избраната задача е невалидна.',
@@ -2528,8 +2529,8 @@ $messages['bg'] = array(
 	'translate-edit-definition' => 'Оригинално съобщение',
 	'translate-edit-contribute' => 'добавяне на документация',
 	'translate-edit-no-information' => 'За това съобщение няма документация. Ако знаете къде и как се използва, можете да помогнете на останалите преводачи като добавите документация за това съобщение.',
-	'translate-edit-information' => 'Информация за съобщението „$2“ ($1)',
-	'translate-edit-in-other-languages' => 'Съобщението „$1“ на други езици',
+	'translate-edit-information' => 'Информация за съобщението ($1)',
+	'translate-edit-in-other-languages' => 'Съобщението на други езици',
 	'translate-edit-committed' => 'Текущ превод в софтуера',
 	'translate-edit-warnings' => 'Забележки за непълни преводи',
 	'translate-magic-pagename' => 'Разширено превеждане на МедияУики',
@@ -2547,6 +2548,7 @@ $messages['bg'] = array(
 	'translate-magic-words' => 'Вълшебни думички',
 	'translate-magic-namespace' => 'Имена на именни пространства',
 	'translate-magic-notsaved' => 'Редакцията не беше съхранена!',
+	'translate-magic-errors' => 'Необходимо е да {{PLURAL:$1|се отстрани следната грешка|се отстранят следните грешки}} в преводите:',
 	'translate-magic-saved' => 'Промените бяха съхранени успешно.',
 	'translationchanges' => 'Промени в преводите',
 	'translationchanges-export' => 'изнасяне',
@@ -2578,6 +2580,7 @@ $messages['bg'] = array(
 	'translate-statsf-scale-hours' => 'Часове',
 	'translate-statsf-count-edits' => 'Брой редакции',
 	'translate-statsf-count-users' => 'Активни преводачи',
+	'translate-statsf-count-registrations' => 'Нови потребители',
 	'translate-statsf-language' => 'Списък с езикови кодове, разделени със запетаи:',
 	'translate-statsf-group' => 'Списък с групови кодове, разделени със запетаи:',
 	'translate-statsf-submit' => 'Преглед',
@@ -2595,10 +2598,13 @@ $messages['bg'] = array(
 	'translate-suppress-complete' => 'Скриване на изцяло преведените групи съобщения',
 	'translate-language' => 'Език',
 	'translate-total' => 'Съобщения',
+	'supportedlanguages' => 'Поддържани езици',
+	'supportedlanguages-translators' => '{{PLURAL:$2|Преводач|Преводачи}}: $1',
 	'translate-save' => 'Съхраняване ($1)',
 	'translate-manage-action-import' => 'Внасяне',
 	'translate-manage-submit' => 'Изпълняване',
 	'translate-manage-subtitle' => 'Управление',
+	'translate-import-err-ul-failed' => 'Качването на файла не беше успешно',
 	'translate-gs-total' => 'Общо',
 );
 
@@ -5806,6 +5812,7 @@ $messages['ext'] = array(
 );
 
 /** Persian (فارسی)
+ * @author Ebraminio
  * @author Huji
  * @author Tofighi
  * @author ZxxZxxZ
@@ -5866,7 +5873,7 @@ $messages['fa'] = array(
 	'translate-magic-submit' => 'بیاور',
 	'translate-magic-cm-export' => 'برون‌بری',
 	'translate-magic-cm-to-be' => 'آینده',
-	'translate-magic-cm-current' => 'اخیر',
+	'translate-magic-cm-current' => 'کنونی',
 	'translate-magic-cm-original' => 'اصلی',
 	'translate-magic-cm-comment' => 'توضیح:',
 	'translate-magic-cm-save' => 'ذخیره',
@@ -12504,11 +12511,12 @@ $messages['ml'] = array(
 	'translate-ignored' => '(അവഗണച്ചിരിക്കുന്നു)',
 	'translate-edit-title' => '"$1" തിരുത്തുക',
 	'translate-edit-definition' => 'സന്ദേശത്തിന്റെ നിർ‌വചനം',
+	'translate-edit-translation' => 'പരിഭാഷ',
 	'translate-edit-contribute' => 'തിരുത്തുക',
 	'translate-edit-no-information' => "''ഈ സന്ദേശത്തിനു ഡോക്കുമെന്റേഷൻ ഇല്ല.
 ഈ സന്ദേശം എങ്ങനെയാണു ഉപയോഗിക്കപ്പെടുന്നത് എന്ന് താങ്കൾക്ക് അറിയാമെങ്കിൽ, അതിനെകുറിച്ചുള്ള ഡോക്കുമെന്റേഷൻ ചേർത്ത് താങ്കൾക്ക് മറ്റുള്ള പരിഭാഷകർക്കു സഹായമേകാം.''",
-	'translate-edit-information' => '"$2" എന്ന സന്ദേശത്തെക്കുറിച്ചുള്ള വിശദീകരണം ($1)',
-	'translate-edit-in-other-languages' => 'സന്ദേശം "$1" മറ്റു ഭാഷകളിൽ',
+	'translate-edit-information' => 'സന്ദേശത്തെക്കുറിച്ചുള്ള വിശദീകരണം ($1)',
+	'translate-edit-in-other-languages' => 'സന്ദേശം മറ്റു ഭാഷകളിൽ',
 	'translate-edit-committed' => 'സന്ദേശത്തിന്റെ നിലവിലുള്ള പരിഭാഷ',
 	'translate-edit-warnings' => 'അപൂർണ്ണമായ പരിഭാഷയെക്കുറിച്ചുള്ള മുന്നറിയിപ്പ്',
 	'translate-edit-tmsugs' => 'ഓർത്തുവെച്ച പരിഭാഷപ്പെടുത്തലുകളിൽ നിന്നുള്ള സൂചനകൾ',
@@ -12639,6 +12647,7 @@ $messages['ml'] = array(
 	'translate-js-nonext' => 'ഇത് ഈ താളിലെ അവസാന സന്ദേശമാണ്.',
 	'translate-js-skip' => 'അടുത്തതിലേയ്ക്ക് പോവുക',
 	'translate-js-history' => 'പരിഭാഷയുടെ നാൾവഴി',
+	'translate-js-support' => 'ചോദ്യം ചോദിക്കുക',
 	'translate-gs-pos' => 'സ്ഥാനം',
 	'translate-gs-code' => 'കോഡ്',
 	'translate-gs-continent' => 'ഭൂഖണ്ഡം',
@@ -15114,8 +15123,8 @@ Se o grupo é composto por um subconjunto ou superconjunto de mensagens de outro
 	'translate-edit-definition' => 'Definição da mensagem',
 	'translate-edit-contribute' => 'contribua',
 	'translate-edit-no-information' => "''Esta mensagem ainda não foi documentada. Caso saiba onde ou como ela é utilizada, pode ajudar outros tradutores adicionando essa informação.''",
-	'translate-edit-information' => 'Informações sobre a mensagem "$2" ($1)',
-	'translate-edit-in-other-languages' => 'Mensagem "$1" noutras línguas',
+	'translate-edit-information' => 'Informações sobre a mensagem ($1)',
+	'translate-edit-in-other-languages' => 'Esta mensagem noutras línguas',
 	'translate-edit-committed' => "Tradução actualmente disponível no ''software''",
 	'translate-edit-warnings' => 'Avisos sobre traduções incompletas',
 	'translate-edit-tmsugs' => 'Sugestões da memória de traduções',
@@ -15319,6 +15328,7 @@ $1',
 	'translate-import-err-ul-failed' => 'Carregamento do ficheiro falhou',
 	'translate-import-err-invalid-title' => 'O nome de ficheiro fornecido <nowiki>$1</nowiki> era inválido.',
 	'translate-import-err-no-such-file' => 'O ficheiro <nowiki>$1</nowiki> não existe ou não foi carregado localmente.',
+	'translate-import-err-stale-group' => 'O grupo de mensagens a que este ficheiro pertence não existe.',
 	'translate-import-err-no-headers' => 'O ficheiro não é um ficheiro Gettext válido, com o formato da extensão Translate:
 Não foi possível determinar o grupo e a língua a partir dos cabeçalhos.',
 	'translate-import-err-warnings' => 'Este ficheiro não é válido.
@@ -15329,6 +15339,8 @@ Detalhes: $1',
 	'translate-js-skip' => 'Saltar para a seguinte',
 	'translate-js-save-failed' => 'A gravação falhou. Por favor, informe-nos deste erro.',
 	'translate-js-history' => 'Histórico de traduções',
+	'translate-js-support' => 'Fazer pergunta',
+	'translate-js-support-title' => 'Peça ajuda se não existir informação suficiente para traduzir esta mensagem correctamente.',
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Código',
 	'translate-gs-continent' => 'Continente',
@@ -15879,6 +15891,8 @@ Detalii: $1',
 	'translate-js-skip' => 'Sari mai departe',
 	'translate-js-save-failed' => 'Salvarea a eșuat. Vă rugăm să raportați această eroare.',
 	'translate-js-history' => 'Istoricul traducerii',
+	'translate-js-support' => 'Adresați o întrebare',
+	'translate-js-support-title' => 'Cereți ajutor în cazul în care nu există suficiente informații pentru a traduce corect acest mesaj.',
 	'translate-gs-pos' => 'Poz.',
 	'translate-gs-code' => 'Cod',
 	'translate-gs-continent' => 'Continent',
