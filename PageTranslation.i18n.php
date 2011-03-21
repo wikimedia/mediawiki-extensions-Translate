@@ -828,12 +828,11 @@ Tekst sekcije: <pre>$1</pre>',
 	'pt-movepage-action-other' => 'Promijeni cilj',
 	'pt-movepage-intro' => 'Ova posebna stranica vam omogućava da premještate stranice koje su obilježene za prevođenje.
 Akcija premještanja neće biti odmah, jer mnoge stranice trebaju biti premještene.
-Red na čekanju će se koristiti za premještanje stranica.
 Dok se stranice premještaju, neće biti mogućnosti koristiti se s tim stranicama.
-Greške će biti zapisane u zapisnik prevođenja stranice te se one moraju ispravljati ručno.',
+Greške će biti zapisane u [[Special:Log/pagetranslation|zapisnik prevođenja stranice]] te se one moraju ispravljati ručno.',
 	'pt-movepage-logreason' => 'Dio stranice koja se prevodi $1.',
 	'pt-movepage-started' => 'Osnovna stranica se sad premješta.
-Molimo provjerite zapisnik prevoda stranice za greške i poruke završetka.',
+Molimo provjerite [[Special:Log/pagetranslation|zapisnik prevoda stranice]] za greške i poruke završetka.',
 	'pt-locked-page' => 'Ova stranica je zaključana jer se stranica za prevođenje sada premješta.',
 );
 
