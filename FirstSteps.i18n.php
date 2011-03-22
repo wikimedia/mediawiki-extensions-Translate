@@ -112,10 +112,12 @@ If you do not want to receive newsletters, you can opt-out in the tab "{{int:pre
 );
 
 /** Message documentation (Message documentation)
+ * @author EugeneZelenko
  * @author Lloffiwr
  * @author The Evil IP address
  */
 $messages['qqq'] = array(
+	'translate-fs-signup-title' => '{{Identical|Sign up}}',
 	'translate-fs-signup-text' => 'The parameters represent the start and end of an HTML link.',
 	'translate-fs-userpage-text' => 'You may replace "Tamil" (ta) and "Swahili" (sw) with languages that people from your language are more likely to speak.',
 	'translate-fs-permissions-text' => 'Synonym for "filed" is "submitted".',

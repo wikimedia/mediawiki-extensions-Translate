@@ -410,10 +410,18 @@ $messages['arz'] = array(
  */
 $messages['as'] = array(
 	'pagetranslation' => 'পৃষ্ঠা ভাঙনি',
+	'tpt-template' => 'পৃষ্ঠা সাঁচ',
+	'tpt-diff-old' => 'আগৰ পাঠ্য',
+	'tpt-diff-new' => 'নতুন পাঠ্য',
 	'tpt-submit' => 'এই সংস্কৰণ ভাঙনিৰ বাবে বাচক',
 	'tpt-translate-this' => 'এই পৃষ্ঠা ভাঙনি কৰক',
 	'translate-tag-translate-link-desc' => 'এই পৃষ্ঠা ভাঙনি কৰক',
 	'tpt-languages-legend' => 'অন্য ভাষা:',
+	'pt-movepage-list-translation' => 'ভাঙনি পৃষ্ঠাসমূহ',
+	'pt-movepage-current' => 'সাম্প্ৰতিক নাম:',
+	'pt-movepage-new' => 'নতুন নাম:',
+	'pt-movepage-reason' => 'কাৰণ:',
+	'pt-movepage-action-perform' => 'স্থানান্তৰ নকৰিব',
 );
 
 /** Asturian (Asturianu)
