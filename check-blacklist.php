@@ -211,7 +211,14 @@ array(
 	'group' => 'ext-flaggedrevs-reviewedpages',
 	'check' => 'variable',
 	'message' => array(
-		'reviewedpages-list', // Parameter only used when required for plural
+		'reviewedpages-list', // Parameter $1 only used when required for plural
+	)
+),
+array(
+	'group' => 'ext-flaggedrevs-unreviewedpages',
+	'check' => 'variable',
+	'message' => array(
+		'unreviewedpages-list', // Parameter $1 only used when required for plural
 	)
 ),
 array(
@@ -226,6 +233,34 @@ array(
 	'check' => 'variable',
 	'message' => array(
 		'stabilize-expiring', // Optional time parameters
+	)
+),
+array(
+	'group' => 'ext-flaggedrevs-pendingchanges',
+	'check' => 'variable',
+	'message' => array(
+		'pendingchanges-list', // Parameter $1 only used when required for plural
+	)
+),
+array(
+	'group' => 'ext-flaggedrevs-problemchanges',
+	'check' => 'variable',
+	'message' => array(
+		'problemchanges-list', // Parameter $1 only used when required for plural
+	)
+),
+array(
+	'group' => 'ext-flaggedrevs-qualityoversight',
+	'check' => 'variable',
+	'message' => array(
+		'qualityoversight-list', // Parameter $1 only used when required for plural
+	)
+),
+array(
+	'group' => 'ext-flaggedrevs-configuredpages',
+	'check' => 'variable',
+	'message' => array(
+		'configuredpages-list', // Parameter $1 only used when required for plural
 	)
 ),
 array(
