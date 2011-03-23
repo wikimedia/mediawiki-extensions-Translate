@@ -879,12 +879,13 @@ $messages['ce'] = array(
 );
 
 /** Sorani (کوردی)
+ * @author Asoxor
  * @author Marmzok
  * @author رزگار
  */
 $messages['ckb'] = array(
-	'pagetranslation' => 'وەرگێڕانی لاپەڕە',
-	'tpt-template' => 'داڕێژەی لاپەڕە',
+	'pagetranslation' => 'وەرگێڕانی پەڕە',
+	'tpt-template' => 'داڕێژەی پەڕە',
 	'tpt-templatediff' => 'داڕێژەی لاپەڕەکە گۆڕاوە.',
 	'tpt-diff-old' => 'دەقی پێشوو',
 	'tpt-diff-new' => 'دەقی نوێ',

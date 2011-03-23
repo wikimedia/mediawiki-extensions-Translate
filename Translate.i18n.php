@@ -7758,11 +7758,12 @@ $messages['he'] = array(
 	'translate-ignored' => '(לא לתרגום)',
 	'translate-edit-title' => 'לערוך את "$1"',
 	'translate-edit-definition' => 'הגדרת ההודעה',
+	'translate-edit-translation' => 'תרגום',
 	'translate-edit-contribute' => 'תרומה',
 	'translate-edit-no-information' => "'''להודעה זו אין תיעוד.
 אם אתם יודעים היכן או כיצד משתמשים בהודעה זו, באפשרותכם לעזור למתרגמים אחרים באמצעות הוספת תיעוד להודעה זו.'''",
-	'translate-edit-information' => 'מידע על ההודעה "$2" ($1)',
-	'translate-edit-in-other-languages' => 'ההודעה "$1" בשפות אחרות',
+	'translate-edit-information' => 'מידע על ההודעה ($1)',
+	'translate-edit-in-other-languages' => 'ההודעה בשפות אחרות',
 	'translate-edit-committed' => 'התרגום הנוכחי בתוכנה',
 	'translate-edit-warnings' => 'אזהרות על תרגומים חלקיים',
 	'translate-edit-tmsugs' => 'הצעות מזיכרון התרגום',
@@ -12842,15 +12843,24 @@ $messages['mr'] = array(
 );
 
 /** Malay (Bahasa Melayu)
+ * @author Anakmalaysia
  * @author Aurora
  * @author Emrrans
  * @author Kurniasan
  */
 $messages['ms'] = array(
 	'translate' => 'Terjemah',
-	'translate-task-view' => 'Papar semua mesej daripada',
+	'translate-desc' => '[[Special:Translate|Laman khas]] untuk menterjemah MediaWiki dan lain-lain',
+	'translate-edit' => 'sunting',
+	'translate-talk' => 'bincang',
+	'translate-history' => 'sejarah',
+	'translate-showsub' => 'Tunjukkan {{PLURAL:$1|subkumpulan|$1 subkumpulan}}.',
+	'translate-grouplisting' => 'Berikut ialah senarai semua kumpulan yang boleh diterjemah.
+Klik nama kumpulan pesanan untuk melihat senarai pesanan yang belum diterjemah.',
+	'translate-task-view' => 'Papar semua pesanan daripada',
 	'translate-task-untranslated' => 'Papar semua pesanan yang belum diterjemah daripada',
 	'translate-task-optional' => 'Papar pesanan tidak wajib daripada',
+	'translate-task-suggestions' => 'Lihat pesanan cadangan dari sistem ingatan penterjemahan',
 	'translate-task-untranslatedoptional' => 'Papar pesanan tidak wajib yang belum diterjemah daripada',
 	'translate-task-problematic' => 'Papar pesanan yang bermasalah',
 	'translate-task-review' => 'Semak perubahan ke atas',
@@ -12859,9 +12869,18 @@ $messages['ms'] = array(
 	'translate-task-export-to-file' => 'Eksport terjemahan kepada fail daripada',
 	'translate-task-export-as-po' => 'Eksport terjemahan dalam format Gettext',
 	'translate-task-export-to-xliff' => 'Eksport terjemahan dalam format Xliff',
+	'translate-page-no-such-language' => 'Bahasa yang dinyatakan tidak sah.',
+	'translate-page-no-such-task' => 'Tugas yang dinyatakan tidak sah.',
+	'translate-page-no-such-group' => 'Kumpulan yang dinyatakan tidak sah.',
+	'translate-page-disabled' => "Penterjemahan kepada bahasa ini dalam kumpulan ini telah dimatikan.
+Sebab:
+
+''$1''",
 	'translate-page-settings-legend' => 'Ketetapan',
 	'translate-page-task' => 'Saya mahu',
 	'translate-page-group' => 'Kumpulan',
+	'translate-page-group-tooltip' => 'Nama kumpulan pesanan.
+Jika kumpulan itu terdiri daripada subset atau superset pesanan dari kumpulan lain, ia dipaparkan dalam huruf tebal.',
 	'translate-page-language' => 'Bahasa',
 	'translate-page-limit' => 'Had',
 	'translate-page-limit-option' => '$1 pesanan per laman',
@@ -12875,18 +12894,53 @@ $messages['ms'] = array(
 	'translate-prev' => 'Laman sebelumnya',
 	'translate-page-description-legend' => 'Maklumat mengenai kumpulan',
 	'translate-page-edit' => 'sunting',
+	'translate-ext-url' => '<hr />Tapak web: $1',
 	'translate-optional' => '(tidak wajib)',
 	'translate-ignored' => '(tidak diendahkan)',
+	'translate-edit-title' => 'Sunting "$1"',
 	'translate-edit-definition' => 'Takrifan pesanan',
+	'translate-edit-translation' => 'Terjemahan',
 	'translate-edit-contribute' => 'sumbangkan',
 	'translate-edit-no-information' => "''Pesanan in tidak mempunyai dokumentasi. Jika anda tahu di mana atau bagaimana pesanan ini digunakan, anda boleh membantu para penterjemah dengan menambahkannya kepada pesanan ini.''",
 	'translate-edit-information' => 'Maklumat mengenai pesanan "$2" ($1)',
-	'translate-edit-in-other-languages' => 'Pesanan "$1" di dalam bahasa lain',
+	'translate-edit-in-other-languages' => 'Pesanan "$1" dalam bahasa lain',
 	'translate-edit-committed' => 'Penterjemahan terkini di dalam perisian',
 	'translate-edit-warnings' => 'Amaran-amaran tentang penterjemahan yang tidak lengkap',
+	'translate-edit-tmsugs' => 'Cadangan dari sistem ingatan penterjemahan',
+	'translate-edit-tmmatch' => '$1% berpadan',
+	'translate-use-suggestion' => 'Sisipkan cadangan ini dalam ruangan terjemahan. Ini menggantikan semua kandungan semasa.',
+	'translate-edit-tab-list' => 'Senarai pesanan',
 	'translate-magic-pagename' => 'Terjemahan tambahan MediaWiki',
+	'translate-magic-module' => 'Modul:',
+	'translate-magic-submit' => 'Ambil',
+	'translate-magic-cm-export' => 'Eksport',
+	'translate-magic-nothing-to-export' => 'Tiada apa-apa untuk dieksport.',
+	'translate-magic-cm-current' => 'Semasa',
+	'translate-magic-cm-original' => 'Asal',
+	'translate-magic-cm-comment' => 'Ulasan:',
+	'translate-magic-cm-save' => 'Simpan',
+	'translate-magic-cm-updatedusing' => 'Dikemaskini dengan [[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]]',
+	'translate-magic-cm-savefailed' => 'Tidak dapat disimpan',
 	'translationchanges' => 'Perubahan terjemahan',
+	'translationchanges-export' => 'eksport',
+	'translationchanges-change' => '$1: $2 daripada $3',
+	'translate-checks-parameters' => '{{PLURAL:$2|Parameter|Parameter-parameter}} berikut tidak digunakan:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Parameter|Parameter-parameter}} berikut tidak dikenali:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-balance' => 'Bilangan {{PLURAL:$2|tanda kurungan|tanda kurungan}} tidak sekata:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links' => '{{PLURAL:$2|Pautan|$2 pautan}} yang berikut ada masalah:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links-missing' => '{{PLURAL:$2|Pautan|$2 pautan}} yang berikut tidak dijumpai:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-xhtml' => 'Sila gantikan {{PLURAL:$2|tag|tag-tag}} berikut dengan yang betul:
+<strong><nowiki>$1</nowiki></strong>',
+	'prefs-translate' => 'Pilihan penterjemahan',
 	'translate-rc-translation-filter' => 'Tapis terjemahan:',
+	'translate-rc-translation-filter-no' => 'Tidak berbuat apa-apa',
+	'translate-rc-translation-filter-only' => 'Tunjukkan terjemahan sahaja',
+	'translate-rc-translation-filter-filter' => 'Tapiskan terjemahan',
 	'translationstats' => 'Statistik terjemahan',
 	'translate-sidebar-alltrans' => 'Dalam bahasa lain',
 );
@@ -14749,11 +14803,12 @@ Se la partìa a consist d'un sot-ansema o un dzor-ansema ëd mëssagi da àutre 
 	'translate-ignored' => '(ignorà)',
 	'translate-edit-title' => 'Modìfica "$1"',
 	'translate-edit-definition' => 'Definission dël mëssagi',
+	'translate-edit-translation' => 'Tradussion',
 	'translate-edit-contribute' => 'colaboré',
 	'translate-edit-no-information' => "''Ës mëssagi a l'ha gnun-a documentassion.
 S'a sa andoa o coma 's mëssagi a l'é dovrà, a peul giuté d'àutri tradutor an giontant dla documentassion a cost mëssagi.''",
-	'translate-edit-information' => 'Anformassion an sël mëssagi «$2» ($1)',
-	'translate-edit-in-other-languages' => "Mëssagi «$1» ant j'àutre lenghe",
+	'translate-edit-information' => 'Anformassion an sël mëssagi ($1)',
+	'translate-edit-in-other-languages' => 'Mëssagi an àutre lenghe',
 	'translate-edit-committed' => 'Tradussion corenta ant ël programa',
 	'translate-edit-warnings' => 'Avertensa an sle tradussion incomplete',
 	'translate-edit-tmsugs' => 'Sugeriment da le tradussion an memòria',
@@ -14961,6 +15016,7 @@ $1",
 	'translate-import-err-ul-failed' => "Ël cariagi dl'archivi a l'ha pa marcià",
 	'translate-import-err-invalid-title' => "Ël nòm dl'archivi dàit <nowiki>$1</nowiki>  a l'é pa bon.",
 	'translate-import-err-no-such-file' => "L'archivi <nowiki>$1</nowiki> a esist pa o a l'é pa stàit carià localment.",
+	'translate-import-err-stale-group' => 'La partìa ëd mëssagi dont sto file a ponta a esist pa.',
 	'translate-import-err-no-headers' => "L'archivi a l'é pa n'archivi Gettext bin formà ant ël formà dl'estension Translate:
 As peul pa determinesse la partìa e la lenga da l'antestassion dl'archivi.",
 	'translate-import-err-warnings' => "L'archivi a l'é pa bin formà.
@@ -14971,6 +15027,8 @@ Detaj: $1",
 	'translate-js-skip' => "Sàuta a col ch'a ven",
 	'translate-js-save-failed' => 'Salvatagi falì. Për piasì arpòrta sto eror-sì.',
 	'translate-js-history' => 'Stòria dël viragi',
+	'translate-js-support' => 'Ciama',
+	'translate-js-support-title' => "Ciama agiut s'a-i é pa basta anformassion për volté bin sto mëssagi.",
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Còdes',
 	'translate-gs-continent' => 'Continent',
@@ -18353,6 +18411,7 @@ $1',
 	'translate-import-err-ul-failed' => 'Filuppladdningen misslyckades',
 	'translate-import-err-invalid-title' => 'Det angivna filnamnet <nowiki>$1</nowiki> är inte giltigt.',
 	'translate-import-err-no-such-file' => 'Fil <nowiki>$1</nowiki> finns inte, eller har inte laddats upp lokalt.',
+	'translate-import-err-stale-group' => 'Meddelandegruppen som den här filen tillhör finns inte.',
 	'translate-import-err-warnings' => 'Filen är inte välformaterad.
 Kontrollera att din editor inte tar bort msgctxt fält.
 Detaljer: $1',
