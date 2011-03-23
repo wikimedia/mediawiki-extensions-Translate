@@ -208,31 +208,10 @@ array(
 	)
 ),
 array(
-	'group' => 'ext-flaggedrevs-reviewedpages',
+	'group' => 'ext-flaggedrevs-configuredpages',
 	'check' => 'variable',
 	'message' => array(
-		'reviewedpages-list', // Parameter $1 only used when required for plural
-	)
-),
-array(
-	'group' => 'ext-flaggedrevs-unreviewedpages',
-	'check' => 'variable',
-	'message' => array(
-		'unreviewedpages-list', // Parameter $1 only used when required for plural
-	)
-),
-array(
-	'group' => 'ext-flaggedrevs-reviewedversions',
-	'check' => 'variable',
-	'message' => array(
-		'reviewedversions-review', // Optional time parameters, and name for GENDER
-	)
-),
-array(
-	'group' => 'ext-flaggedrevs-stabilization',
-	'check' => 'variable',
-	'message' => array(
-		'stabilize-expiring', // Optional time parameters
+		'configuredpages-list', // Parameter $1 only used when required for plural
 	)
 ),
 array(
@@ -257,10 +236,38 @@ array(
 	)
 ),
 array(
-	'group' => 'ext-flaggedrevs-configuredpages',
+	'group' => 'ext-flaggedrevs-reviewedpages',
 	'check' => 'variable',
 	'message' => array(
-		'configuredpages-list', // Parameter $1 only used when required for plural
+		'reviewedpages-list', // Parameter $1 only used when required for plural
+	)
+),
+array(
+	'group' => 'ext-flaggedrevs-reviewedversions',
+	'check' => 'variable',
+	'message' => array(
+		'reviewedversions-review', // Optional time parameters, and name for GENDER
+	)
+),
+array(
+	'group' => 'ext-flaggedrevs-stabilization',
+	'check' => 'variable',
+	'message' => array(
+		'stabilize-expiring', // Optional time parameters
+	)
+),
+array(
+	'group' => 'ext-flaggedrevs-stablepages',
+	'check' => 'variable',
+	'message' => array(
+		'stablepages-list', // Parameter $1 only used when required for plural
+	)
+),
+array(
+	'group' => 'ext-flaggedrevs-unreviewedpages',
+	'check' => 'variable',
+	'message' => array(
+		'unreviewedpages-list', // Parameter $1 only used when required for plural
 	)
 ),
 array(
