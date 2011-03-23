@@ -110,6 +110,7 @@ Book Manager
 Book Manager - Print Version
 descmsg = printversion-desc
 aliasfile = BookManager/PrintVersion.alias.php
+file = BookManager/PrintVersion.i18n.php
 
 Bread Crumbs
 
