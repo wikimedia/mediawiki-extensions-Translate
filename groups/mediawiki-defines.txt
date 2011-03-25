@@ -1131,8 +1131,6 @@ Plotters
 aliasfile = Plotters/Plotters.alias.php
 magicfile = Plotters/Plotters.i18n.magic.php
 
-PNG Handler
-
 Poem
 
 Pool Counter
