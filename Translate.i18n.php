@@ -2298,11 +2298,12 @@ $messages['be-tarask'] = array(
 	'translate-ignored' => '(ігнараванае)',
 	'translate-edit-title' => 'Рэдагаваньне «$1»',
 	'translate-edit-definition' => 'Тэкст паведамленьня',
+	'translate-edit-translation' => 'Пераклад',
 	'translate-edit-contribute' => 'рэдагаваць',
 	'translate-edit-no-information' => "''Гэтае паведамленьне ня мае дакумэнтацыі.
 Калі Вы ведаеце дзе ці як выкарыстоўваецца гэтае паведамленьне, то Вы можаце дапамагчы іншым перакладчыкам дадаўшы дакумэнтацыю да гэтага паведамленьня.''",
-	'translate-edit-information' => 'Інфармацыя пра паведамленьне «$2» ($1)',
-	'translate-edit-in-other-languages' => 'Паведамленьне «$1» на іншых мовах',
+	'translate-edit-information' => 'Інфармацыя пра паведамленьне ($1)',
+	'translate-edit-in-other-languages' => 'Паведамленьне на іншых мовах',
 	'translate-edit-committed' => 'Цяперашні пераклад у праграме',
 	'translate-edit-warnings' => 'Папярэджаньне аб няпоўных перакладах',
 	'translate-edit-tmsugs' => 'Прапановы з памяці перакладу',
@@ -12096,6 +12097,7 @@ $messages['ltg'] = array(
 	'translate-submit' => 'Paruodeit',
 	'translate-page-navigation-legend' => 'Navigaceja',
 	'translate-next' => 'Cyta puslopa',
+	'translate-page-description-legend' => 'Informaceja ap grupu',
 	'translate-page-edit' => 'pataiseit',
 	'translate-ext-url' => '<hr />Teiklavīta: $1',
 	'translate-edit-title' => 'Pataiseit "$1"',
@@ -12106,12 +12108,14 @@ $messages['ltg'] = array(
 	'translate-statsf-scale-weeks' => 'Nedeļis',
 	'translate-statsf-scale-days' => 'Dīnys',
 	'translate-statsf-scale-hours' => 'Stuņdis',
+	'translate-translations-fieldset-title' => 'Viestejums',
 	'translate-translations-project' => 'Projekts:',
 	'translate-translations-history-short' => 'v',
 	'languagestats' => 'Volūdys statistika',
 	'translate-language' => 'Volūda',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Puorvārsuojs|Puorvārsuoji}}: $1',
 	'translate-save' => 'Izglobuot ($1)',
+	'translate-gs-continent' => 'Koņtinents',
 );
 
 /** Latvian (Latviešu)
@@ -13011,8 +13015,8 @@ Agħfas l-isem tal-grupp ta' messaġġi sabiex tara lista sħiħa ta' messaġġi
 	'translate-edit-contribute' => 'ikkontribwixxi',
 	'translate-edit-no-information' => "''Dan il-messaġġ m'għandu l-ebda dokumentazzjoni.''
 ''Jekk taf fejn jew kif jiġi wżat dan il-messaġġ, tista' tgħin lit-tradutturi l-oħra billi żżid id-dokumentazzjoni ma' dan il-messaġġ.''",
-	'translate-edit-information' => 'Informazzjoni dwar il-messaġġ "$2" ($1)',
-	'translate-edit-in-other-languages' => 'Messaġġ "$1" f\'lingwi oħra',
+	'translate-edit-information' => 'Informazzjoni dwar il-messaġġ ($1)',
+	'translate-edit-in-other-languages' => "Il-messaġġ f'lingwi oħra",
 	'translate-edit-committed' => 'Traduzzjoni attwali fis-software',
 	'translate-edit-warnings' => 'Twissijiet dwar traduzzjonijiet mhux kompluti',
 	'translate-edit-tmsugs' => 'Suġġerimenti mill-memorja tat-traduzzjonijiet',
@@ -13096,6 +13100,7 @@ Il-lista predefinita tal-lingwi tiddependi fuq il-lingwa tiegħek.",
 	'translate-js-skip' => 'Li jmiss',
 	'translate-js-save-failed' => 'L-issejvjar tal-paġna falla. Jekk jogħġbok irraporta dan l-iżball.',
 	'translate-js-history' => 'Kronoloġija',
+	'translate-js-support' => 'Staqsi mistoqsija',
 	'translate-gs-pos' => 'Poż.',
 	'translate-gs-code' => 'Kodiċi',
 	'translate-gs-continent' => 'Kontinent',
@@ -17542,7 +17547,7 @@ $messages['sr-ec'] = array(
 	'translate-edit-contribute' => 'допринеси',
 	'translate-edit-no-information' => "''Ова порука нема пратећу документацију.''
 ''Ако знате где се и како користи, можете помоћи осталим преводиоцима додавањем њеног описа.''",
-	'translate-edit-information' => 'Подаци о поруци „$2“ ($1)',
+	'translate-edit-information' => 'Подаци о поруци ($1)',
 	'translate-edit-in-other-languages' => 'Порука „$1“ на другим језицима',
 	'translate-edit-committed' => 'Текући превод у софтверу',
 	'translate-edit-warnings' => 'Напомене о непотпуним преводима',
@@ -17823,7 +17828,7 @@ Razlog:
 	'translate-edit-contribute' => 'doprinesi',
 	'translate-edit-no-information' => "''Ova poruka nema prateću dokumentaciju.
 Ako znate gde se i kako koristi, možete pomoći ostalim prevodiocima dodavanjem njenog opisa.''",
-	'translate-edit-information' => 'Informacije o poruci "$2" ($1)',
+	'translate-edit-information' => 'Podaci o poruci ($1)',
 	'translate-edit-in-other-languages' => 'Poruka „$1“ na drugim jezicima',
 	'translate-edit-committed' => 'Trenutni prevod u softveru',
 	'translate-edit-warnings' => 'Napomene o nekompletnim prevodima',
@@ -18579,9 +18584,9 @@ $messages['te'] = array(
 	'translationchanges' => 'అనువాద మార్పులు',
 	'translationchanges-export' => 'ఎగుమతించు',
 	'translationchanges-change' => '$1: $3 చే $2',
-	'translate-checks-parameters' => 'ఈ {{PLURAL:$2|పారామీటరుని|పారామీటర్లని}} వాడనేలేదు:
+	'translate-checks-parameters' => 'ఈ {{PLURAL:$2|పరామితిని|పరామితులను}} వాడనేలేదు:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-parameters-unknown' => 'ఈ {{PLURAL:$2|పారామీటరు|పారామీటర్లు}} తెలియనివి:
+	'translate-checks-parameters-unknown' => '{{PLURAL:$2|ఇది గుర్తుతెలియని పరామితి|ఇవి గుర్తుతెలియని పరామితులు}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => '{{PLURAL:$2|బ్రాకెట్లు|బ్రాకెట్లు}} సరి సమాన సంఖ్యలో లేవు:
 <strong><nowiki>$1</nowiki></strong>',
