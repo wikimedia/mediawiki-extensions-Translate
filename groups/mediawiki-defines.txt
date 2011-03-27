@@ -1310,6 +1310,7 @@ Semantic Forms
 file = SemanticForms/languages/SF_Messages.php
 aliasfile = SemanticForms/languages/SF_Aliases.php
 magicfile = SemanticForms/languages/SF_Magic.php
+ignored = sf_formedit_accesskey_saveandcontinueediting
 
 Semantic Forms Inputs
 optional = semanticformsinputs-dateformatlong, semanticformsinputs-dateformatshort, semanticformsinputs-firstdayofweek
