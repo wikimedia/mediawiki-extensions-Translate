@@ -868,6 +868,37 @@ Assegureu-vos que té les etiquetes <nowiki><translate></nowiki> i una sintaxi v
 	'tpt-rev-latest' => 'última versió',
 	'translate-tag-translate-link-desc' => 'Traduir aquesta pàgina',
 	'tpt-languages-legend' => 'Altres idiomes:',
+	'pt-movepage-title' => 'Mou la pàgina traduïble $1',
+	'pt-movepage-blockers' => "La pàgina traduïble no pot ser reanomenada a causa {{PLURAL:$1|de l'error següent|dels errors següents}}:",
+	'pt-movepage-block-base-exists' => 'La pàgina base de destinació [[:$1]] ja existeix.',
+	'pt-movepage-block-base-invalid' => 'La pàgina base de destinació no té un títol vàlid.',
+	'pt-movepage-block-tp-exists' => 'La pàgina de traducció de destinació [[:$2]] ja existeix.',
+	'pt-movepage-block-tp-invalid' => 'El títol de la pàgina de traducció de destinació [[:$1]] no seria vàlid (potser seria massa llarg).',
+	'pt-movepage-block-section-exists' => 'La pàgina de secció de destinació [[:$2]] ja existeix.',
+	'pt-movepage-block-section-invalid' => 'El títol de la pàgina de secció de destinació [[:$1]] no seria vàlid (potser seria massa llarg).',
+	'pt-movepage-block-subpage-exists' => 'La subpàgina de destinació [[:$2]] ja existeix.',
+	'pt-movepage-block-subpage-invalid' => 'El títol de la subpàgina de destinació [[:$1]] no seria vàlid (potser seria massa llarg).',
+	'pt-movepage-list-pages' => 'Llista de pàgines per moure',
+	'pt-movepage-list-translation' => 'Pàgines de traducció',
+	'pt-movepage-list-section' => 'Pàgines de secció',
+	'pt-movepage-list-other' => 'Altres subpàgines',
+	'pt-movepage-list-count' => 'En total, $1 {{PLURAL:$1|pàgina|pàgines}} a moure.',
+	'pt-movepage-legend' => 'Mou la pàgina traduïble',
+	'pt-movepage-current' => 'Nom actual:',
+	'pt-movepage-new' => 'Nom nou:',
+	'pt-movepage-reason' => 'Motiu:',
+	'pt-movepage-subpages' => 'Mou totes les subpàgines',
+	'pt-movepage-action-check' => 'Verifica si és possible el trasllat',
+	'pt-movepage-action-perform' => 'Fes el trasllat',
+	'pt-movepage-action-other' => 'Canvia la destinació',
+	'pt-movepage-intro' => "Aquesta pàgina especial permet desplaçar pàgines que estan marcades per a la traducció.
+El trasllat no serà instantani, perquè moltes pàgines hauran de ser mogudes.
+Mentre s'estiguin traslladant les pàgines no serà possible interaccionar amb les pàgines en qüestió.
+Els errors sortiran indicats al [[Special:Log/pagetranslation|registre de traducció de pàgines]] i hauran d'ésser reparats a mà.",
+	'pt-movepage-logreason' => 'Part de la pàgina a traduir $1.',
+	'pt-movepage-started' => 'La pàgina base està traslladada.
+Comproveu el [[Special:Log/pagetranslation|registre de traducció de pàgines]] pels errors i el missatge de finalització.',
+	'pt-locked-page' => 'Aquesta pàgina està bloquejada perquè la pàgina a traduir està en un procés de trasllat.',
 );
 
 /** Chechen (Нохчийн)
