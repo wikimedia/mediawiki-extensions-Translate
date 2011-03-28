@@ -106,11 +106,8 @@ Block Titles
 Book Information
 
 Book Manager
-
-Book Manager - Print Version
 descmsg = printversion-desc
-aliasfile = BookManager/PrintVersion.alias.php
-file = BookManager/PrintVersion.i18n.php
+aliasfile = BookManager/BookManager.alias.php
 
 Bread Crumbs
 
