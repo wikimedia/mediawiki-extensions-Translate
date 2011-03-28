@@ -12975,6 +12975,61 @@ Jika kumpulan itu terdiri daripada subset atau superset pesanan dari kumpulan la
 	'translate-rc-translation-filter-filter' => 'Tapiskan terjemahan',
 	'translationstats' => 'Statistik terjemahan',
 	'translate-sidebar-alltrans' => 'Dalam bahasa lain',
+	'languagestats' => 'Statistik bahasa',
+	'languagestats-summary' => 'Laman ini menunjukkan statistik penterjemahan untuk semua kumpulan pesanan dalam satu bahasa.',
+	'languagestats-stats-for' => 'Statistik penterjemahan kepada $1 ($2).',
+	'languagestats-recenttranslations' => 'terjemahan terbaru',
+	'translate-langstats-expand' => 'bentangkan',
+	'translate-langstats-collapse' => 'lipat',
+	'translate-langstats-expandall' => 'bentangkan semua',
+	'translate-langstats-collapseall' => 'lipat semua',
+	'translate-language-code' => 'Kod bahasa',
+	'translate-language-code-field-name' => 'Kod bahasa:',
+	'translate-suppress-complete' => 'Sekat kumpulan pesanan yang diterjemah sepenuhnya',
+	'translate-language' => 'Bahasa',
+	'translate-total' => 'Pesanan',
+	'translate-total-tooltip' => 'Jumlah pesanan dalam kumpulan ini.',
+	'translate-untranslated' => 'Belum diterjemahkan',
+	'translate-untranslated-tooltip' => 'Jumlah pesanan yang belum diterjemahkan dalam kumpulan pesanan ini.
+Termasuk pesanan yang ditandai sebagai lapuk.',
+	'translate-percentage-complete' => 'Takat kelengkapan',
+	'translate-percentage-complete-tooltip' => 'Peratusan pesanan dalam kumpulan ini yang diterjemahkan dan tidak ditandai sebagai lapuk.',
+	'translate-percentage-fuzzy' => 'Lapuk',
+	'translate-percentage-fuzzy-tooltip' => 'Peratusan pesanan dalam kumpulan ini yang telah diterjemah tetapi ditandai sebagai lapuk.
+Pesanan-pesanan berkenaan ditandai sebagai lapuk kerana pesanan sumber bahasa Inggeris telah diubah, kerana semakan pesanan secara automatik gagal, atau ada orang yang menandainya sebagai lapuk.',
+	'translate-nothing-to-do' => 'Nampaknya semua terjemahan yang boleh telah dilakukan.
+Anda disaran untuk menyemak pesanan melalui [[Special:Translate|{{int:translate}}]].',
+	'supportedlanguages' => 'Bahasa yang disokong',
+	'supportedlanguages-summary' => 'Laman ini memaparkan senarai semua bahasa yang disokong oleh {{SITENAME}}, bersama dengan nama-nama penterjemah yang mengusahakan versi bahasa berkenaan.
+Jika anda mahu keterangan lanjut mengenai bahasa yang tertentu, anda boleh mengklik pautan kepada portal bahasa itu.
+Klik nama penterjemah untuk ke laman penggunanya.
+
+Jika bahasa yang anda cari tidak tersenarai, anda boleh mengetahui cara untuk memulakan projek penyetempatan untuk bahasa itu dalam "[[Translating:Process|Bahasa Baru]]".
+
+Jika anda menterjemah ke dalam satu bahasa tetapi nama anda tidak tersenarai, sila bubuh nama anda pada senarai penterjemah di [[:Category:Languages|portal]] bahasa itu.
+Lihat bar menu untuk pautan ke portal bahasa keutamaan anda.',
+	'supportedlanguages-recenttranslations' => 'terjemahan terbaru',
+	'translate-save' => 'Simpan ($1)',
+	'translate-jssti-add' => 'Tambahkan kepada senarai',
+	'managemessagegroups' => 'Pengurusan kumpulan pesanan',
+	'translate-manage-groups' => 'Pengurusan kumpulan',
+	'translate-manage-listgroups' => 'Kumpulan yang dikonfigurasi',
+	'translate-manage-listgroups-old' => 'Kumpulan gaya lama',
+	'translate-managegroups' => 'Pengurusan kumpulan',
+	'translate-manage-newgroup' => 'Kumpulan pesanan ini tidak pernah diimport.',
+	'translate-manage-cacheat' => 'Diimport pada $1, $2',
+	'translate-manage-return-to-group' => 'Kembali ke laman butiran kumpulan',
+	'translate-manage-modlangs' => 'Sila semak kemungkinan pengubahsuaian dalam {{PLURAL:$1|bahasa|bahasa-bahasa}} berikut:',
+	'translate-manage-modlang-new' => '$1 (baru)',
+	'translate-manage-import-diff' => 'Pesanan $1 | Tindakan: $2',
+	'translate-manage-import-new' => 'Pesanan baru ($1)',
+	'translate-js-next' => 'Simpan dan buka yang seterusnya',
+	'translate-js-nonext' => 'Inilah pesanan terakhir di laman ini.',
+	'translate-js-skip' => 'Langkau ke pesanan seterusnya',
+	'translate-js-save-failed' => 'Gagal disimpan. Sila laporkan ralat ini.',
+	'translate-js-history' => 'Sejarah penterjemahan',
+	'translate-js-support' => 'Tanyakan soalan',
+	'translate-js-support-title' => 'Minta tolong kalau tak cukup maklumat untuk menterjemahkan pesanan ini dengan betul.',
 );
 
 /** Maltese (Malti)
