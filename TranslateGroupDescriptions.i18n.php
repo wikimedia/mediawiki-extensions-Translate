@@ -1577,6 +1577,13 @@ $messages['ml'] = array(
 	'translate-group-desc-translatablepages' => 'പരിഭാഷപ്പെടുത്താവുന്ന എല്ലാ താളുകളും',
 );
 
+/** Malay (Bahasa Melayu)
+ * @author Anakmalaysia
+ */
+$messages['ms'] = array(
+	'translate-group-desc-nodesc' => 'Keterangan tidak disediakan untuk kumpulan mesej ini',
+);
+
 /** Maltese (Malti)
  * @author Chrisportelli
  */
