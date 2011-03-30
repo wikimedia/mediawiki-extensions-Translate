@@ -54,6 +54,8 @@ array(
 		'siteuser', // Optional GENDER parameter
 		'sp-contributions-blocked-notice', // Optional GENDER parameter
 		'diff-multi-manyusers',
+		'userrights-groupsmember', // Optional PLURAL parameter
+		'userrights-groupsmember-auto', // Optional PLURAL parameter
 	),
 ),
 array(
