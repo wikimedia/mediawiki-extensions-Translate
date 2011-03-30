@@ -3796,9 +3796,8 @@ Seksjonstekst: <pre>$1</pre>',
 	'pt-movepage-action-other' => 'Endre mål',
 	'pt-movepage-intro' => 'Denne spesialsiden tillater deg å flytte sider som er markert for oversettelse.
 Flyttehandlingen vil ikke skje umiddelbart fordi mange sider må flyttes.
-Jobbkøen vil bli brukt for å flytte sidene.
 Mens sidene flyttes er det ikke mulig å samhandle med gjeldende sider.
-Feil vil bli logget i sideoversettelsesloggen og de må repareres for hånd.',
+Feil vil bli logget i [[Special:Log/pagetranslation|sideoversettelsesloggen]] og de må repareres for hånd.',
 	'pt-movepage-logreason' => 'Del av oversettbar side $1.',
 	'pt-movepage-started' => 'Basesiden har nå blitt flyttet.
 Kontroller [[Special:Log/pagetranslation|sideoversettelsesloggen]] for feil- og fullføringsmeldinger.',

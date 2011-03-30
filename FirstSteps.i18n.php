@@ -361,6 +361,13 @@ $3Зарэгістравацца$4',
 Калі Вы не жадаеце атрымліваць лісты з навінамі, Вы можаце адмовіцца ад іх на закладцы «{{int:prefs-personal}}» Вашых [[Special:Preferences|наладаў]].',
 );
 
+/** Bulgarian (Български)
+ * @author DCLXVI
+ */
+$messages['bg'] = array(
+	'firststeps' => 'Първи стъпки',
+);
+
 /** Bengali (বাংলা)
  * @author Bellayet
  */

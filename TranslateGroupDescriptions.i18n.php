@@ -1688,18 +1688,28 @@ $messages['no'] = array(
 	'translate-group-desc-uniwiki' => 'Metameldingsgruppen inneholder alle meldinger for utvidelser relatert til [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Metameldingsgruppen inneholder alle meldinger for utvidelser relatert til [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 	'translate-group-desc-translatablepages' => 'Alle sider som kan oversettes',
+	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] lar folk utforske de digitale kulturelle ressursene i Europa',
 	'bw-desc-freecol' => 'Før du oversetter FreeCol til ditt språk, les gjennom [[Translating:FreeCol]]. FreeCol bruker GPL-lisensen.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], et nettforum skrevet i PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] er et gratis nettbasert feilsporingssystem. Vennligst meld fra om problem på [[Support]].',
+	'translate-group-desc-ihris' => 'En meldingsgruppe for [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-common' => 'En meldingsgruppe for [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], en modul av [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-i2ce' => 'En meldingsgruppe for [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], en modul av [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-manage' => 'En meldingsgruppe for [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], en modul av [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-qualify' => 'En meldingsgruppe for [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]], en modul av [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'A kjerneutvidelse for [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Meldinger for den stabile versjonen 1.15 av [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mediawiki-core-116' => 'Meldinger for den stabile versjonen 1.16 av [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawiki-core-117' => 'Meldinger for den stabile versjonen 1.17 av [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] er et informasjonhåndteringssystem for mikrofinans',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' er et python-bibliotek for skriving av PDF-dokument fra MediaWiki-artikler som har blitt tolket av mwlib-biblioteket.
 
 Se [[mw:Extension:PDF_Writer]] og http://code.pediapress.com/wiki/wiki/mwlibrl for mer informasjon.",
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] er en nettbasert e-postklient skrevet i PHP. Vennligst rapporter problemer til [[Support]].',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] er en frakoblet Wikipedialeser',
+	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] er en åpen mediaplattform',
+	'translate-group-desc-openimages-verifyemailtemplate' => 'Disse meldingene er en del av e-postbekreftelsesmalen for [[Translating:Open Images|Open Images]]',
+	'translate-group-desc-openimages-all' => 'Disse meldingene er en del av [[Translating:Open Images|Open Images]]-prosjektet',
 	'bw-desc-openlayers' => 'OpenLayers er en dynamisk kartgenerator med åpen kildekode. Vennligst rapporter problemer til [[support]].',
 	'bw-desc-openstreetmap' => 'Meldingsgruppe for alle [[Translating:OpenStreetMap|OpenStreetMap]]-meldinger',
 	'bw-desc-osm-site' => 'Denne meldingsgruppen inneholder grensesnittsmeldingene for [[Translating:Open Street Map|Open Street Map]].
@@ -1708,6 +1718,7 @@ Se [http://unicode.org/repos//cldr-tmp/trunk/diff/supplemental/language_plural_r
 
 * Forsøk å holde oversettelsene så nærme orginalen på engelsk i antall tegn, på grunn av begrensninger i brukergrensesnittet. Se også [http://trac.openstreetmap.org/ticket/2067 åpen feilmelding].
 * Bruk [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] for å teste Potlatch. Du kan teste alt du vil på alle områder der.',
+	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] er en samling av verktøy for å redigere Wikipedia',
 	'bw-desc-shapado' => 'Meldingsgruppe for Q&A-programvaren [[Translating:Shapado|Shapado]] som er gratis og har åpen kildekode',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] er en mikrobloggtjener med åpen kildekode',
 	'translate-group-desc-statusnet-plugin' => 'Disse meldingene er en del av en utvidelse for [[Translating:StatusNet|StatusNet]]',
