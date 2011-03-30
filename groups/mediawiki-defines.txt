@@ -684,6 +684,8 @@ Ldap Authentication
 Link OpenID
 optional = linkopenid-prefs, linkopenid-prefstext-xrdsurl
 
+Link Suggest
+
 Liquid Threads
 file = LiquidThreads/i18n/Lqt.i18n.php
 aliasfile = LiquidThreads/i18n/Lqt.alias.php
