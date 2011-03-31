@@ -20842,11 +20842,13 @@ $messages['yi'] = array(
 	'translate-ignored' => '(איגנאָרירט)',
 	'translate-edit-title' => 'רעדאַקטירן"$1"',
 	'translate-edit-definition' => 'מעלדונג דעפֿיניציע',
+	'translate-edit-translation' => 'איבערזעצונג',
 	'translate-edit-contribute' => 'בײַשטײַערן',
 	'translate-edit-no-information' => "'''די מעלדונג פעלט דאקומענטאציע.
 אויב איר ווייסט וואו אדער ווי די מעלדונג ווערט געניצט, קענט איר העלפֿן אנדערע פארטייטשערס דורך צולייגן דאקומענטאציע צו דער מעלדונג.'''",
-	'translate-edit-information' => 'אינפֿארמאציע וועגן מעלדונג "$2" ($1)',
-	'translate-edit-in-other-languages' => '"$1" מעלדונג אין אַנדערע שפּראַכן',
+	'translate-edit-information' => 'אינפֿארמאציע וועגן מעלדונג ($1)',
+	'translate-edit-in-other-languages' => ' מעלדונג אין אַנדערע שפּראַכן',
+	'translate-edit-committed' => 'לויפֿיגע איבערזעצונג אין ווייכוואַרג',
 	'translate-edit-tmmatch' => '$1% צופאַסונג',
 	'translate-edit-tab-list' => 'מעלדונג־ליסטע',
 	'translate-magic-pagename' => 'פֿאַרברײטערטע מעדיעוויקי איבערזעצונג',
@@ -20872,10 +20874,15 @@ $messages['yi'] = array(
 	'translationchanges-change' => '$1: $2 דורך $3',
 	'translate-checks-parameters' => '{{PLURAL:$2|דער פֿאלגנדער פאראמעטער ווערט|די פֿאלגנדע פאראמעטערס ווערן}} נישט געניצט:
 <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters-unknown' => '{{PLURAL:$2|דער פֿאלגנדער פאַראַמעטער איז|די פֿאלגנדע פאַראַמעטערס זענען}} נישט באַקאַנט:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links-missing' => '{{PLURAL:$2|דער פֿאלגנדער לינק פֿעלט|די פֿאלגנדע $2 לינקס פֿעלן}}:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-pagename' => 'נאמענטייל געענדערט פון דער דעפיניציע',
 	'translate-checks-fudforum-syntax' => 'באַניצט <nowiki>$1</nowiki> אַנשטאט <nowiki>$2</nowiki> אין דעם דאָזיקן פראיעקט.',
 	'translate-pref-editassistlang-bad' => 'אומגילטיקער שפּראַך קאָד אין דער רשימה: 
 <nowiki>$1</nowiki> .',
+	'translate-rc-translation-filter' => 'פֿילטערן איבערזעצונגען:',
 	'translate-rc-translation-filter-no' => 'גאָרנישט',
 	'translationstats' => 'פֿארטײַטשן סטאטיסטיק',
 	'translate-stats-edits' => 'רעדאקטירונגען',
@@ -20913,6 +20920,7 @@ $messages['yi'] = array(
 	'translate-manage-action-import' => 'אימפארטירן',
 	'translate-manage-import-done' => 'אַלץ ערליידיקט!',
 	'translate-manage-subtitle' => 'פֿאַרוואַלטן',
+	'importtranslations' => 'אימפארטירן איבערזעצונגען',
 	'translate-import-from-wiki' => 'טעקע אין דער דאזיקער וויקי',
 	'translate-import-load' => 'לאָדן טעקע',
 );
