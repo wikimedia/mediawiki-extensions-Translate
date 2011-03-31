@@ -786,6 +786,20 @@ MANGLER:
   prefix: modplus-
 ---
 BASIC:
+  id: out-statusnet-plugin-mollom
+  label: StatusNet - Mollom
+  display: out/statusnet/plugin/mollom
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/1.0.x/plugins/Mollom/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/Mollom/locale/%CODE%/LC_MESSAGES/Mollom.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/Mollom/locale/Mollom.pot
+  targetPattern: statusnet/plugins/Mollom/locale/%CODE%/LC_MESSAGES/Mollom.po
+
+MANGLER:
+  prefix: mollom-
+---
+BASIC:
   id: out-statusnet-plugin-msn
   label: StatusNet - Msn
   display: out/statusnet/plugin/msn
