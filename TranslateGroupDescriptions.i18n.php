@@ -63,7 +63,7 @@ $messages['en'] = array(
 	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]] is web-based Question and Answer software',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] is a microblogging server',
 	'translate-group-desc-statusnet-plugin' => 'These messages are part of a plugin for [[Translating:StatusNet|StatusNet]]',
-	'translate-group-desc-tsint' => '[[Translating:Toolserver|Toolserver]] tools',
+	'translate-group-desc-tsint' => 'A message group for [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], the i18n system for [http://toolserver.org Toolserver] tools (<span class="plainlinks">[[Translating talk:Toolserver|support]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition technical details]</span>)',
 	'bw-desc-voctrain' => '[[Translating:Voctrain|Voctrain]] is an OmegaWiki-based vocabulary trainer',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] is able to quickly find the authors of a part of a page in a Wikimedia wiki',
 	'bw-desc-wikimediamobile' => '[[Translating:Wikimedia_mobile|Wikimedia mobile]] is the mobile interface for Wikipedia',
