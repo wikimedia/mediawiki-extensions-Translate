@@ -124,6 +124,7 @@ $wgAutoloadClasses['MessageHandle'] = $dir . 'utils/MessageHandle.php';
  */
 $wgAutoloadClasses['PremadeMediawikiExtensionGroups'] = $dir . 'groups/MediaWikiExtensions.php';
 $wgAutoloadClasses['PremadeWikiaExtensionGroups'] = $dir . 'groups/Wikia/WikiaExtensions.php';
+$wgAutoloadClasses['PremadeToolserverTextdomains'] = $dir . 'groups/Toolserver/ToolserverTextdomains.php';
 $wgAutoloadClasses['MediaWikiMessageChecker'] = $dir . 'groups/MediaWiki/Checker.php';
 /**@}*/
 

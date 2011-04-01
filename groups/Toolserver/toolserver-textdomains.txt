@@ -1,0 +1,10 @@
+General
+
+Getwikiapi
+ignored = title
+
+Svgtranslate
+optional = format-filename-example, format-fullurl-example
+
+Tsintuition
+ignored = title

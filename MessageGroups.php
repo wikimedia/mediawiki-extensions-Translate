@@ -890,6 +890,7 @@ class MessageGroups {
 		$deps[] = new GlobalDependency( 'wgTranslateExtensionDirectory' );
 		$deps[] = New FileDependency( dirname( __FILE__ ) . '/groups/mediawiki-defines.txt' );
 		$deps[] = New FileDependency( dirname( __FILE__ ) . '/groups/Wikia/extensions.txt' );
+		$deps[] = New FileDependency( dirname( __FILE__ ) . '/groups/Toolserver/toolserver-textdomains.txt' );;
 
 		if ( $wgTranslateAddMWExtensionGroups ) {
 			$a = new PremadeMediawikiExtensionGroups;

@@ -334,6 +334,7 @@ $wgTranslateGroupStructure = array(
 	'/^ext-ui/' => array( 'ext', 'usabilityinitiative' ),
 	'/^ext/' => array( 'ext' ),
 	'/^wikia/' => array( 'wikia' ),
+	'/^tsint/' => array( 'tsint' ),
 	'/^out-ihris-common/' => array( 'ihris', 'common' ),
 	'/^out-ihris-i2ce/' => array( 'ihris', 'i2ce' ),
 	'/^out-ihris-manage/' => array( 'ihris', 'manage' ),

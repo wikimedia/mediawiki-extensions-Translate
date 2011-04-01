@@ -550,6 +550,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 			foreach ( $ids as $id ) {
 				// Do not try to include self and go to infinite loop.
 				if ( $id === $this->getId() ) {
+					throw MWException('foo');
 					continue;
 				}
 
