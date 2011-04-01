@@ -26,7 +26,7 @@ class PremadeToolserverTextdomains extends PremadeMediawikiExtensionGroups {
 		parent::__construct();
 		$dir = dirname( __FILE__ );
 		$this->definitionFile = $dir . '/toolserver-textdomains.txt';
-		$this->path = "$wgTranslateGroupRoot/ToolserverI18N/language/messages/";
+		$this->path = "$wgTranslateGroupRoot/toolserver/language/messages/";
 	}
 
 	protected function processGroups( $groups ) {

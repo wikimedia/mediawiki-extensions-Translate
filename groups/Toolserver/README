@@ -1,6 +1,6 @@
 # Checkout repository to $wgTranslateGroupRoot 
 cd %GROUPROOT%
-svn co http://svn.wikimedia.org/svnroot/mediawiki/trunk/tools/ToolserverI18N/ ToolserverI18N
+svn co http://svn.wikimedia.org/svnroot/mediawiki/trunk/tools/ToolserverI18N/ toolserver
 
 # Add following code to LocalSettings.php or a file included by it:
 $wgHooks['TranslatePostInitGroups'][] = array( 'setupToolserverI18N' );
