@@ -1,6 +1,6 @@
 <?php
 /**
- * Classes for %Toolserver tools translation for TranslateWiki.net
+ * Class for Toolserver Intuition for TranslateWiki.net
  *
  * @file
  * @author Niklas Laxström
@@ -11,7 +11,7 @@
  */
 
 /**
- * Support for tools using TsIntuition at the Toolserver.
+ * Support for tools using Toolserver Intuition at the Toolserver.
  */
 class PremadeToolserverTextdomains extends PremadeMediawikiExtensionGroups {
 	protected $useConfigure = false;
@@ -166,12 +166,10 @@ class PremadeToolserverTextdomains extends PremadeMediawikiExtensionGroups {
 			// Allow a custom prefix if needed
 			if ( !isset( $g['prefix'] ) ) {
 				$g['prefix'] = "$sanatizedName-";
-				// We prefix all messages with their groupname in TsIntuition
-				if ( !isset( $g['mangle'] ) ) {
-					$g['mangle'] = array( '*' );
-				}
 			}
-
+			// All messages are prefixed with their groupname
+			$g['mangle'] = array( '*' );
+			
 			// Prevent E_NOTICE undefined index.
 			// PremadeMediawikiExtensionGroups::factory should probably check this better instead
 			if ( !isset( $g['ignored'] ) )  $g['ignored'] = array();

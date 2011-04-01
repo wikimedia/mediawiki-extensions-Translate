@@ -1,10 +1,13 @@
 General
 
-Getwikiapi
+GetWikiAPI
 ignored = title
 
-Svgtranslate
+SVG Translate
 optional = format-filename-example, format-fullurl-example
 
-Tsintuition
+Toolserver Intuition - Core
+id=tsint-core
+prefix=tsintuition- | 
+file=Tsintuition.i18n.php
 ignored = title
