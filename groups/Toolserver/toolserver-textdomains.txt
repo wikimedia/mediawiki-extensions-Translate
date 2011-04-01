@@ -1,4 +1,5 @@
 General
+optional = colon-separator
 
 GetWikiAPI
 ignored = title
