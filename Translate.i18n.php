@@ -145,6 +145,7 @@ Changes are not saved until you click save button below.',
 	'translate-checks-format'             => 'This translation does not follow the definition or has invalid syntax: $1',
 	'translate-checks-escape'             => 'The following escapes may be accidental: <strong>$1</strong>',
 	'translate-checks-fudforum-syntax'    => 'Use <nowiki>$1</nowiki> instead of <nowiki>$2</nowiki> in this project.',
+	'translate-checks-prefs'              => 'Message conflicts with $1. These messages must not be the same.',
 
 	'translate-pref-nonewsletter' => 'Do not send me e-mail newsletters',
 	'translate-pref-editassistlang' => 'Assistant languages:',

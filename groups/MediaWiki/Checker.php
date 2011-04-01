@@ -247,4 +247,65 @@ class MediaWikiMessageChecker extends MessageChecker {
 			}
 		}
 	}
+
+	/**
+	 * Checks that messages used for some preferences are not equal, otherwise Special:Preferences may explode
+	 * (bug 28152).
+	 *
+	 * @param $messages \array Iterable list of TMessage objects.
+	 * @param $code \string Language code of the translations.
+	 * @param $warnings \array Array where warnings are appended to.
+	 */
+	protected function prefMessagesCheck( $messages, $code, &$warnings ) {
+		$prefs = self::getPrefMessages();
+
+		foreach ( $messages as $message ) {
+			foreach ( $prefs as $group ) {
+				if ( !in_array( $message->key(), $group ) ) {
+					continue;
+				}
+				$conflicts = array();
+				foreach ( $group as $key ) {
+					if ( $key == $message->key() ) {
+						continue;
+					}
+					if ( $message->translation() == wfMessage( $key )->inLanguage( $code )->text() ) {
+						$conflicts[] = $key;
+					}
+				}
+				if ( count( $conflicts ) ) {
+					$conflicts = preg_replace( '/^(.*)$/', "[[MediaWiki:$1/$code|$1]]", $conflicts );
+					global $wgLang;
+					$warnings[$message->key()][] = array(
+						array( 'prefmessages', 'match', $message->key(), $code ),
+						'translate-checks-prefs',
+						$wgLang->listToText( $conflicts ),
+					);
+				}
+			}
+		}
+	}
+
+	/**
+	 * Returns an array of message keys that may cause conflicts for prefMessagesCheck()
+	 * @return \array
+	 */
+	protected static function getPrefMessages() {
+		// @todo: moar?
+		return array( 
+			array(
+				'Mw_math_png',
+				'Mw_math_simple',
+				'Mw_math_html',
+				'Mw_math_source',
+				'Mw_math_modern',
+				'Mw_math_mathml',
+			),
+			array(
+				'Gender-male',
+				'Gender-female',
+				'Gender-unknown',
+			),
+		);
+	}
 }
