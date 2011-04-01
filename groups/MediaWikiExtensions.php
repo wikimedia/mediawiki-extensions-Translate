@@ -28,33 +28,62 @@ class PremadeMediawikiExtensionGroups {
 	/// Initialisation function
 	public function init() {
 		if ( $this->groups !== null ) return;
+		$groups = $this->parseFile();
+		$this->groups = $this->processGroups( $groups );
+	}
 
-		global $wgAutoloadClasses, $IP, $wgTranslateExtensionDirectory;
+	/// Makes an group id from extension name
+	static function foldId( $name ) {
+		return preg_replace( '/\s+/', '', strtolower( $name ) );
+	}
 
-		$postfix = 'Configure/load_txt_def/TxtDef.php';
-		if ( file_exists( "$IP/extensions/$postfix" ) ) {
-			$prefix = "$IP/extensions";
-		} elseif( file_exists( "$wgTranslateExtensionDirectory/$postfix" ) ) {
-			$prefix = $wgTranslateExtensionDirectory;
-		} else {
-			$prefix = false;
+	/// Registers all extensions
+	public function addAll() {
+		global $wgTranslateAC, $wgTranslateEC;
+		$this->init();
+
+		if ( !count( $this->groups ) ) return;
+
+		foreach ( $this->groups as $id => $g ) {
+			$wgTranslateAC[$id] = array( $this, 'factory' );
+			$wgTranslateEC[] = $id;
+		}
+	}
+
+	public function factory( $id ) {
+		$info = $this->groups[$id];
+		$group = ExtensionMessageGroup::factory( $info['name'], $id );
+		$group->setMessageFile( $info['file'] );
+		$group->setPath( $this->path );
+		$group->namespaces = $this->namespaces;
+
+		if ( isset( $info['prefix'] ) ) {
+			$mangler = new StringMatcher( $info['prefix'], $info['mangle'] );
+			$group->setMangler( $mangler );
+			$info['ignored'] = $mangler->mangle( $info['ignored'] );
+			$info['optional'] = $mangler->mangle( $info['optional'] );
 		}
 
-		if ( $this->useConfigure && $prefix ) {
-			$wgAutoloadClasses['TxtDef'] = "$prefix/$postfix";
-			$tmp = TxtDef::loadFromFile( "$prefix/Configure/settings/Settings-ext.txt" );
-			$configureData = array_combine( array_map( array( __CLASS__, 'foldId' ), array_keys( $tmp ) ), array_values( $tmp ) );
+		if ( !empty( $info['var'] ) ) $group->setVariableName( $info['var'] );
+		if ( !empty( $info['optional'] ) ) $group->setOptional( $info['optional'] );
+		if ( !empty( $info['ignored'] ) ) $group->setIgnored( $info['ignored'] );
+		if ( isset( $info['desc'] ) ) {
+			$group->setDescription( $info['desc'] );
 		} else {
-			$configureData = array();
+			$group->setDescriptionMsg( $info['descmsg'], $info['url'] );
 		}
 
+		if ( isset( $info['aliasfile'] ) ) $group->setAliasFile( $info['aliasfile'] );
+		if ( isset( $info['magicfile'] ) ) $group->setMagicFile( $info['magicfile'] );
+
+		return $group;
+	}
+
+	protected function parseFile() {
 		$defines = file_get_contents( $this->definitionFile );
-
 		$linefeed = '(\r\n|\n)';
-
 		$sections = array_map( 'trim', preg_split( "/$linefeed{2,}/", $defines, - 1, PREG_SPLIT_NO_EMPTY ) );
-
-		$groups = $fixedGroups = array();
+		$groups = array();
 
 		foreach ( $sections as $section ) {
 			$lines = array_map( 'trim', preg_split( "/$linefeed/", $section ) );
@@ -115,7 +144,12 @@ class PremadeMediawikiExtensionGroups {
 			}
 		}
 
+		return $groups;
+	}
 
+	protected function processGroups( $groups ) {
+		$configureData = $this->loadConfigureExtensionData();
+		$fixedGroups = array();
 		foreach ( $groups as $g ) {
 			if ( !is_array( $g ) ) {
 				$g = array( $g );
@@ -164,54 +198,33 @@ class PremadeMediawikiExtensionGroups {
 
 			$fixedGroups[$id] = $newgroup;
 		}
-
-		$this->groups = $fixedGroups;
+		return $fixedGroups;
 	}
 
-	/// Makes an group id from extension name
-	static function foldId( $name ) {
-		return preg_replace( '/\s+/', '', strtolower( $name ) );
-	}
-
-	/// Registers all extensions
-	public function addAll() {
-		global $wgTranslateAC, $wgTranslateEC;
-		$this->init();
-
-		if ( !count( $this->groups ) ) return;
-
-		foreach ( $this->groups as $id => $g ) {
-			$wgTranslateAC[$id] = array( $this, 'factory' );
-			$wgTranslateEC[] = $id;
-		}
-	}
-
-	public function factory( $id ) {
-		$info = $this->groups[$id];
-		$group = ExtensionMessageGroup::factory( $info['name'], $id );
-		$group->setMessageFile( $info['file'] );
-		$group->setPath( $this->path );
-		$group->namespaces = $this->namespaces;
-
-		if ( isset( $info['prefix'] ) ) {
-			$mangler = new StringMatcher( $info['prefix'], $info['mangle'] );
-			$group->setMangler( $mangler );
-			$info['ignored'] = $mangler->mangle( $info['ignored'] );
-			$info['optional'] = $mangler->mangle( $info['optional'] );
+	protected function loadConfigureExtensionData() {
+		if ( !$this->useConfigure ) {
+			return array();
 		}
 
-		if ( !empty( $info['var'] ) ) $group->setVariableName( $info['var'] );
-		if ( !empty( $info['optional'] ) ) $group->setOptional( $info['optional'] );
-		if ( !empty( $info['ignored'] ) ) $group->setIgnored( $info['ignored'] );
-		if ( isset( $info['desc'] ) ) {
-			$group->setDescription( $info['desc'] );
+		global $wgAutoloadClasses, $IP, $wgTranslateExtensionDirectory;
+
+		$postfix = 'Configure/load_txt_def/TxtDef.php';
+		if ( file_exists( "$IP/extensions/$postfix" ) ) {
+			$prefix = "$IP/extensions";
+		} elseif( file_exists( "$wgTranslateExtensionDirectory/$postfix" ) ) {
+			$prefix = $wgTranslateExtensionDirectory;
 		} else {
-			$group->setDescriptionMsg( $info['descmsg'], $info['url'] );
+			$prefix = false;
 		}
 
-		if ( isset( $info['aliasfile'] ) ) $group->setAliasFile( $info['aliasfile'] );
-		if ( isset( $info['magicfile'] ) ) $group->setMagicFile( $info['magicfile'] );
+		if ( $prefix ) {
+			$wgAutoloadClasses['TxtDef'] = "$prefix/$postfix";
+			$tmp = TxtDef::loadFromFile( "$prefix/Configure/settings/Settings-ext.txt" );
+			return array_combine( array_map( array( __CLASS__, 'foldId' ), array_keys( $tmp ) ), array_values( $tmp ) );
+		}
 
-		return $group;
+		return array();
 	}
+
+
 }

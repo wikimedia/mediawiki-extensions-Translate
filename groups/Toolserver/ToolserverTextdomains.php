@@ -1,6 +1,6 @@
 <?php
 /**
- * Class for Toolserver Intuition for TranslateWiki.net
+ * Class for Toolserver Intuition for Translatewiki.net
  *
  * @file
  * @author Niklas Laxström
