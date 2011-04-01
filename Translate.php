@@ -130,6 +130,12 @@ $wgResourceModules['ext.translate.langstats'] = array(
 	'remoteExtPath' => 'Translate',
 );
 
+$wgResourceModules['ext.translate.quickedit'] = array(
+	'scripts' => 'js/quickedit.js',
+	'localBasePath' => dirname( __FILE__ ),
+	'remoteExtPath' => 'Translate',
+);
+
 /** @endcond */
 
 

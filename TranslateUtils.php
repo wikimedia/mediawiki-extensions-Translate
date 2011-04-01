@@ -360,7 +360,7 @@ class TranslateUtils {
 	public static function injectCSS() {
 		global $wgOut;
 
-		if ( class_exists( 'ResourceLoader' ) ) {
+		if ( method_exists( $wgOut, 'addModules' ) ) {
 			$wgOut->addModuleStyles( 'translate-css' );
 			return true;
 		}

@@ -63,18 +63,27 @@ class MessageTable {
 	public function includeAssets() {
 		global $wgOut;
 
-		// Our class
-		$wgOut->addScriptFile( TranslateUtils::assetPath( 'js/quickedit.js' ) );
+		if ( method_exists( $wgOut, 'addModules' ) ) {
+			$wgOut->addModules( array(
+				'jquery.form',
+				'jquery.ui.dialog',
+				'ext.translate.quickedit',
+			) );
+		} else {
 
-		// Core jQuery
-		$wgOut->includeJQuery();
-		$wgOut->addScriptFile( TranslateUtils::assetPath( 'js/jquery-ui-1.7.2.custom.min.js' ) );
+			// Our class
+			$wgOut->addScriptFile( TranslateUtils::assetPath( 'js/quickedit.js' ) );
 
-		// Additional jQuery stuff
-		$wgOut->addScriptFile( TranslateUtils::assetPath( 'js/jquery.form.js' ) );
-		$wgOut->addExtensionStyle( TranslateUtils::assetPath( 'js/base/custom-theme/jquery-ui-1.7.2.custom.css' ) );
+			// Core jQuery
+			$wgOut->includeJQuery();
+			$wgOut->addScriptFile( TranslateUtils::assetPath( 'js/jquery-ui-1.7.2.custom.min.js' ) );
 
-		// Helper stuff for JS
+			// Additional jQuery stuff
+			$wgOut->addScriptFile( TranslateUtils::assetPath( 'js/jquery.form.js' ) );
+			$wgOut->addExtensionStyle( TranslateUtils::assetPath( 'js/base/custom-theme/jquery-ui-1.7.2.custom.css' ) );
+		}
+
+		// Helper stuff for JS, TODO: port to RL
 		$trlKeys = array_values( $this->collection->keys() );
 
 		$vars = array(

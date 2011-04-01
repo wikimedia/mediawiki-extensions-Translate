@@ -21,6 +21,8 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+(function($) {
+
 function MessageCheckUpdater( callback ) {
 	
 	this.act = function() {
@@ -47,9 +49,9 @@ function trlVpWidth() {
 }
 
 function addAccessKeys(dialog) {
-	jQuery( '[accesskey=a], [accesskey=s], [accesskey=d], [accesskey=h]' ).each(
+	$( '[accesskey=a], [accesskey=s], [accesskey=d], [accesskey=h]' ).each(
 		function( i ) {
-			jQuery(this).removeAttr( 'accesskey' );
+			$(this).removeAttr( 'accesskey' );
 		}
 	);
 	dialog.find( '.mw-translate-save' ).attr( 'accesskey', 'a' ).attr( 'title', '[' + tooltipAccessKeyPrefix + 'a]' );
@@ -60,31 +62,31 @@ function addAccessKeys(dialog) {
 
 var dialogwidth = false;
 
-function trlOpenJsEdit( page, group ) {
+window.trlOpenJsEdit = function( page, group ) {
 	var url = wgScript + '?title=Special:Translate/editpage&suggestions=async&page=$1&loadgroup=$2';
 	url = url.replace( '$1', encodeURIComponent( page ) ).replace( '$2', encodeURIComponent( group ) );
 	var id = 'jsedit' +  page.replace( /[^a-zA-Z0-9_]/g, '_' );
 
-	var dialog = jQuery( '#' + id );
+	var dialog = $( '#' + id );
 	if ( dialog.size() > 0 ) {
 		dialog.dialog( 'option', 'position', 'top' );
 		dialog.dialog( 'open' );
 		return false;
 	}
 
-	jQuery( '<div/>' ).attr( 'id', id ).appendTo( jQuery( 'body' ) );
-	dialog = jQuery( '#' + id );
+	$( '<div/>' ).attr( 'id', id ).appendTo( $( 'body' ) );
+	dialog = $( '#' + id );
 
-	var spinner = jQuery( '<div/>' ).attr( 'class', 'mw-ajax-loader' );
-	dialog.html( jQuery( '<div/>' ).attr( 'class', 'mw-ajax-dialog' ).html( spinner ) );
+	var spinner = $( '<div/>' ).attr( 'class', 'mw-ajax-loader' );
+	dialog.html( $( '<div/>' ).attr( 'class', 'mw-ajax-dialog' ).html( spinner ) );
 
 	dialog.load(url, false, function() {
-		var form = jQuery( '#' + id + ' form' );
+		var form = $( '#' + id + ' form' );
 
 		form.hide().slideDown();
 
 		// Enable the collapsible element
-		jQuery( '.mw-identical-title' ).makeCollapsible();
+		$( '.mw-identical-title' ).makeCollapsible();
 
 		form.find( '.mw-translate-next' ).click( function() {
 			trlLoadNext( page );
@@ -103,7 +105,7 @@ function trlOpenJsEdit( page, group ) {
 		
 		form.find( '.mw-translate-support' ).click( function() {
 			// Can use .data() only with 1.4.3 or newer
-			window.open( jQuery(this).attr('data-load-url') );
+			window.open( $(this).attr('data-load-url') );
 			return false;
 		} );
 
@@ -114,7 +116,7 @@ function trlOpenJsEdit( page, group ) {
 			var checker = new MessageCheckUpdater( function() {
 				var url = wgScript + '?title=Special:Translate/editpage&suggestions=checks&page=$1&loadgroup=$2';
 				url = url.replace( '$1', encodeURIComponent( page ) ).replace( '$2', encodeURIComponent( group ) );
-				jQuery.post( url, { translation: textarea.val() }, function( mydata ) {
+				$.post( url, { translation: textarea.val() }, function( mydata ) {
 					form.find( '.mw-translate-messagechecks' ).replaceWith( mydata );
 				} );
 			} );
@@ -157,16 +159,16 @@ function trlOpenJsEdit( page, group ) {
 		title: page,
 		position: 'top',
 		resize: function(event, ui) {
-			jQuery( '#' + id + ' textarea' ).width( '100%' );
+			$( '#' + id + ' textarea' ).width( '100%' );
 		},
 		resizeStop: function(event, ui) {
-			dialogwidth = jQuery( '#' + id ).width();
+			dialogwidth = $( '#' + id ).width();
 		},
 		focus: function(event, ui) {
 			addAccessKeys( dialog );
 		},
 		close: function(event, ui) {
-			addAccessKeys( jQuery([]) );
+			addAccessKeys( $([]) );
 		}
 	} );
 
@@ -189,3 +191,5 @@ function trlLoadNext( title ) {
 	alert(trlMsgNoNext);
 	return;
 }
+
+})(jQuery);
