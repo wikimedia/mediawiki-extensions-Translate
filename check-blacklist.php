@@ -56,6 +56,8 @@ array(
 		'diff-multi-manyusers',
 		'userrights-groupsmember', // Optional PLURAL parameter
 		'userrights-groupsmember-auto', // Optional PLURAL parameter
+		'userrights-changeable-col', // Optional PLURAL parameter
+		'userrights-unchangeable-col', // Optional PLURAL parameter
 	),
 ),
 array(
