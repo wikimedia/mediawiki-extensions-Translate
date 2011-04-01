@@ -147,7 +147,7 @@ class PremadeToolserverTextdomains extends PremadeMediawikiExtensionGroups {
 			if ( isset( $g['descmsg'] ) ) {
 				$descmsg = $g['descmsg'];
 			} else {
-				$descmsg = str_replace( $this->idPrefix, '', $id ) . '-desc';
+				$descmsg = "$id-desc";
 			}
 
 			if ( isset( $g['url'] ) ) {
