@@ -184,6 +184,13 @@ class TranslationHelpers {
 	}
 
 	/**
+	 * Get target language code
+	 */
+	public function getTargetLanguage() {
+		return $this->targetLanguage;
+	}
+
+	/**
 	 * Returns block element HTML snippet that contains the translation aids.
 	 * Not all boxes are shown all the time depending on whether they have
 	 * any information to show and on configuration variables.
