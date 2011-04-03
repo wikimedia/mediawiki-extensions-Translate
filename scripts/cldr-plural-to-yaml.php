@@ -33,7 +33,7 @@ class CLDRPluralToYaml extends Maintenance {
 
 		$doc = new DOMDocument();
 		$doc->load( 'plurals.xml' );
-		
+
 		$rulesets = $doc->getElementsByTagName( "pluralRules" );
 		foreach( $rulesets as $ruleset ) {
 			$codes = $ruleset->getAttribute( 'locales' );
@@ -69,7 +69,7 @@ class CLDRPluralToYaml extends Maintenance {
 			}
 		}
 
-		file_put_contents( 'plural-CLDR.yaml', TranslateYaml::dump( array(
+		file_put_contents( 'plural-cldr.yaml', TranslateYaml::dump( array(
 			'locales' => $outLocales,
 			'rulesets' => $outRulesets,
 		) ) );

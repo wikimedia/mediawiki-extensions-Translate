@@ -11,6 +11,8 @@ locales:
   bm: Zero
   bn: Default
   bo: Zero
+  br: Rule S
+  brx: Default
   bs: Rule J
   ca: Default
   chr: Default
@@ -157,6 +159,7 @@ rulesets:
     one: n is 1
   Rule L: 
     few: n mod 10 in 2..4 and n mod 100 not in 12..14
+    many: n is not 1 and n mod 10 in 0..1 or n mod 10 in 5..9 or n mod 100 in 12..14
     one: n is 1
   Rule M: 
     few: n mod 100 in 3..4
@@ -169,14 +172,22 @@ rulesets:
   Rule O: 
     one: n mod 10 is 1 and n is not 11
   Rule P: 
-    many: n is 8 or n is 11
+    few: n is 3
+    many: n is 6
     one: n is 1
     two: n is 2
+    zero: n is 0
   Rule Q: 
     one: n within 0..2 and n is not 0 and n is not 2
     zero: n is 0
   Rule R: 
     few: n in 2..10
     one: n within 0..1
+  Rule S: 
+    few: n is 3
+    many: n is 6
+    one: n is 1
+    two: n is 2
+    zero: n is 0
   Zero: []
 
