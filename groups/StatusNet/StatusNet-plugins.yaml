@@ -968,6 +968,20 @@ MANGLER:
   prefix: ptiturl-
 ---
 BASIC:
+  id: out-statusnet-plugin-qna
+  label: StatusNet - QnA
+  display: out/statusnet/plugin/qna
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/1.0.x/plugins/QnA/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/QnA/locale/%CODE%/LC_MESSAGES/QnA.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/QnA/locale/QnA.pot
+  targetPattern: statusnet/plugins/QnA/locale/%CODE%/LC_MESSAGES/QnA.po
+
+MANGLER:
+  prefix: qna-
+---
+BASIC:
   id: out-statusnet-plugin-rsscloud
   label: StatusNet - RSSCloud
   display: out/statusnet/plugin/rsscloud
