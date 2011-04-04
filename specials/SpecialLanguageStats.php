@@ -399,7 +399,9 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 	protected function getGroupDescription( $group ) {
 		global $wgLang;
-		if ( method_exists( 'MessageCache', 'singleton' ) ) {
+
+		$realFunction = array( 'MessageCache', 'singleton' );
+		if ( is_callable( $realFunction ) ) {
 			$cache = MessageCache::singleton();
 		} else {
 			global $wgMessageCache;

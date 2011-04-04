@@ -23,7 +23,8 @@ class TranslateBC {
 	 * @since 1.17
 	 */
 	public static function encodeJsCall( $name, $args ) {
-		if ( method_exists( 'Xml', 'encodeJsCall' ) ) {
+		$realFunction = array( 'Xml', 'encodeJsCall' );
+		if ( is_callable( $realFunction ) ) {
 			return Xml::encodeJsCall( $name, $args );
 		}
 

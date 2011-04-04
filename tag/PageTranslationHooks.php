@@ -44,7 +44,8 @@ class PageTranslationHooks {
 			$parser->getOptions()->setTargetLanguage( Language::factory( $code ) );
 			$name = $page->getPageDisplayTitle( $code );
 			if ( $name ) {
-				if ( method_exists( 'MessageCache', 'singleton' ) ) {
+				$realFunction = array( 'MessageCache', 'singleton' );
+				if ( is_callable( $realFunction ) ) {
 					$cache = MessageCache::singleton();
 				} else {
 					global $wgMessageCache;
