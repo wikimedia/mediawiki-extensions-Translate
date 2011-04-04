@@ -1,7 +1,7 @@
 <?php
 /**
    * Spyc -- A Simple PHP YAML Class
-   * @version 0.4.5
+   * @version 0.4.5-svn
    * @author Vlad Andersen <vlad.andersen@gmail.com>
    * @author Chris Wanstrath <chris@ozmm.org>
    * @link http://code.google.com/p/spyc/
@@ -230,11 +230,10 @@ class Spyc {
 
     // Start at the base of the array and move through it.
     if ($array) {
-      $array = (array)$array;
-      $first_key = key($array);
-      
+      $array = (array)$array; 
       $previous_key = -1;
       foreach ($array as $key => $value) {
+        if (!isset($first_key)) $first_key = $key;
         $string .= $this->_yamlize($key,$value,0,$previous_key, $first_key, $array);
         $previous_key = $key;
       }
@@ -279,9 +278,8 @@ class Spyc {
     if (is_array($array)) {
       $string = '';
       $previous_key = -1;
-      $first_key = key($array);
-
       foreach ($array as $key => $value) {
+        if (!isset($first_key)) $first_key = $key;
         $string .= $this->_yamlize($key, $value, $indent, $previous_key, $first_key, $array);
         $previous_key = $key;
       }
@@ -303,7 +301,7 @@ class Spyc {
     // do some folding here, for blocks
     if (is_string ($value) && ((strpos($value,"\n") !== false || strpos($value,": ") !== false || strpos($value,"- ") !== false ||
       strpos($value,"*") !== false || strpos($value,"#") !== false || strpos($value,"<") !== false || strpos($value,">") !== false || strpos ($value, '  ') !== false ||
-      strpos($value,"[") !== false || strpos($value,"]") !== false || strpos($value,"{") !== false || strpos($value,"}") !== false) || strpos($value,"&") !== false ||
+      strpos($value,"[") !== false || strpos($value,"]") !== false || strpos($value,"{") !== false || strpos($value,"}") !== false) || strpos($value,"&") !== false || strpos($value, "'") !== false || strpos($value, "!") === 0 ||
       substr ($value, -1, 1) == ':')
     ) {
       $value = $this->_doLiteralBlock($value,$indent);
@@ -480,14 +478,11 @@ class Spyc {
      * @param string $line A line from the YAML file
      */
   private function _parseLine($line) {
-    if (!$line) {
-	    return array();
-    }
+    if (!$line) return array();
     $line = trim($line);
-    if (!$line) {
-	    return array();
-    }
+    if (!$line) return array();
 
+    $array = array();
 
     $group = $this->nodeContainsGroup($line);
     if ($group) {
@@ -584,7 +579,7 @@ class Spyc {
       return null;
     }
 
-    if (intval($first_character) > 0 && preg_match ('/^[1-9]+[0-9]*$/', $value)) {
+    if ( is_numeric($value) && preg_match ('/^(-|)[1-9]+[0-9]*$/', $value) ){
       $intvalue = (int)$value;
       if ($intvalue != PHP_INT_MAX)
         $value = $intvalue;
@@ -603,7 +598,7 @@ class Spyc {
 
     if (is_numeric($value)) {
       if ($value === '0') return 0;
-      if (trim ($value, 0) === $value)
+      if (rtrim ($value, 0) === $value)
         $value = (float)$value;
       return $value;
     }
@@ -696,7 +691,7 @@ class Spyc {
     }
 
     $finished = true;
-    foreach ($explode as $value) {
+    foreach ($explode as $key => $value) {
       if (strpos($value,'YAMLSeq') !== false) {
         $finished = false; break;
       }
@@ -860,7 +855,7 @@ class Spyc {
       if (is_array($_))
         $lineArray[$k] = $this->revertLiteralPlaceHolder ($_, $literalBlock);
       else if (substr($_, -1 * strlen ($this->LiteralPlaceHolder)) == $this->LiteralPlaceHolder)
-	       $lineArray[$k] = rtrim ($literalBlock, " \r\n");
+        $lineArray[$k] = rtrim ($literalBlock, " \r\n");
      }
      return $lineArray;
    }
@@ -968,6 +963,7 @@ class Spyc {
 
   private function returnKeyValuePair ($line) {
     $array = array();
+    $key = '';
     if (strpos ($line, ':')) {
       // It's a key/value pair most likely
       // If the key is in double quotes pull it out
@@ -989,7 +985,9 @@ class Spyc {
       $array = array ($line);
     }
     return $array;
+
   }
+
 
   private function returnArrayElement ($line) {
      if (strlen($line) <= 1) return array(array()); // Weird %)
