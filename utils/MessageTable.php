@@ -67,6 +67,7 @@ class MessageTable {
 			$wgOut->addModules( array(
 				'jquery.form',
 				'jquery.ui.dialog',
+				'jquery.autoresize',
 				'ext.translate.quickedit',
 			) );
 		} else {

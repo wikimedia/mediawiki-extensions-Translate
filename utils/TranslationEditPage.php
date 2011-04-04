@@ -80,11 +80,9 @@ class TranslationEditPage {
 		}
 
 		$translation = $helpers->getTranslation();
-		$rows = substr_count( $helpers->getDefinition(), "\n" ) + 2;
 		$textareaParams = array(
 			'name' => 'text',
 			'class' => 'mw-translate-edit-area',
-			'rows' =>  $rows <= 15 ? $rows : 15,
 			'id' => $id,
 			/* Target language might differ from interface language. Set
 			 * a suitable default direction */

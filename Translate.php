@@ -136,6 +136,12 @@ $wgResourceModules['ext.translate.quickedit'] = array(
 	'remoteExtPath' => 'Translate',
 );
 
+$wgResourceModules['jquery.autoresize'] = array(
+	'scripts' => 'js/jquery.autoresize.js',
+	'localBasePath' => dirname( __FILE__ ),
+	'remoteExtPath' => 'Translate',
+);
+
 /** @endcond */
 
 

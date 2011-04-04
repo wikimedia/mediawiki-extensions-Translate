@@ -66,6 +66,13 @@
 	font-size: small;
 }
 
+.mw-ajax-dialog #summary {
+	width: 5em;
+}
+.mw-ajax-dialog #summary:focus {
+	width: 85%;
+}
+
 .mw-translate-tmsug {
 	margin-bottom: 0.2em;
 }

@@ -111,6 +111,7 @@ window.trlOpenJsEdit = function( page, group ) {
 
 		var textarea = form.find( '.mw-translate-edit-area' );
 		textarea.focus();
+		textarea.autoResize({extraSpace: 15, limit: 200}).trigger( 'change' );
 
 		if ( form.find( '.mw-translate-messagechecks' ) ) {
 			var checker = new MessageCheckUpdater( function() {
