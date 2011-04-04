@@ -3091,6 +3091,7 @@ $messages['km'] = array(
 $messages['kn'] = array(
 	'tpt-translate-this' => 'ಈ ಪುಟವನ್ನು ಅನುವಾದಿಸಿ',
 	'translate-tag-translate-link-desc' => 'ಈ ಪುಟವನ್ನು ಅನುವಾದಿಸಿ',
+	'tpt-languages-legend' => 'ಇತರ ಭಾಷೆಗಳು:',
 	'pt-movepage-reason' => 'ಕಾರಣ:',
 );
 
@@ -4810,6 +4811,7 @@ Prosimo, preverite [[Special:Log/pagetranslation|dnevnik strani prevodov]] za na
  * @author Михајло Анђелковић
  */
 $messages['sr-ec'] = array(
+	'right-pagetranslation' => 'означавање издања страница за превод',
 	'tpt-diff-old' => 'Претходни текст',
 	'tpt-diff-new' => 'Следећи текст',
 	'tpt-submit' => 'Означи ову верзију за превод',

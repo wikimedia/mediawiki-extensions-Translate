@@ -399,6 +399,7 @@ Pogledajte [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_p
 	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]] je program za pitanja i odgovore zasnovan na internetu',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] je platforma otvorenog koda za mikro blogiranje',
 	'translate-group-desc-statusnet-plugin' => 'Ove poruke su dio priključka za [[Translating:StatusNet|StatusNet]]',
+	'translate-group-desc-tsint' => 'Grupa poruka za [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], i18n sistem za [http://toolserver.org Toolserver] alate (<span class="plainlinks">[[Translating talk:Toolserver|podrška]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition tehnički detalji]</span>)',
 	'bw-desc-voctrain' => 'Riječnički trener zasnovan na Omegawiki. Koristi sistem flashcard za učenje riječi sa bilo kojeg jezika na drugi jezik koji omogućuje Omegawiki.
 Napravljeno na Univerzitetu Bamberg. Licencirano pod GPL 2.0 ili kasnijom. Razvijeno od strane korisnika [[User:Kim Bruning]].',
 	'bw-desc-wikiblame' => 'Putem [http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] je moguće brzo pronaći autore stranica u Wikimedia wikijima.',
@@ -545,6 +546,7 @@ Hinweis:
 	'bw-desc-shapado' => 'Systemnachrichten von [[Translating:Shapado|Shapado]], einer freien Open-Source-Software für Fragen und Antworten',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] ist ein Open-Source-Mikroblogging-Server',
 	'translate-group-desc-statusnet-plugin' => 'Diese Nachrichten gehören zu einem Plug-in von [[Translating:StatusNet|StatusNet]]',
+	'translate-group-desc-tsint' => 'Nachrichtengruppe für [http://toolserver.org/~krinkle/TsIntuition „Toolserver Intuition“], das I18N-System für die auf dem [http://toolserver.org Toolserver] gehosteten Hilfsprogramme. (<span class="plainlinks">[[Translating talk:Toolserver|Hilfe]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition technische Hinweise]</span>)',
 	'bw-desc-voctrain' => 'Omegawiki-basierender Vokabeltrainer. Mithilfe eines Flashkartensystems können Vokabeln zwischen jeder Sprache zu jeder von Omagawiki unterstützten Sprache gelernt werden.
 Erstellt von der Universität Bamberg. Lizenziert unter GPL 2.0 oder später. Entwickelt von [[User:Kim Bruning|Kim Bruning]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] ermöglicht das schnelle Finden eines Autoren einer Seite auf Wikis der Wikimedia Foundation.',
@@ -1207,6 +1209,7 @@ Vide le [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plur
 	'bw-desc-shapado' => 'Gruppo de messages pro le software libere pro questiones e responsas [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] es un servitor open source de microblogging',
 	'translate-group-desc-statusnet-plugin' => 'Iste messages face parte de un plug-in pro [[Translating:StatusNet|StatusNet]]',
+	'translate-group-desc-tsint' => 'Un gruppo de messages pro [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], le systema de internationalisation pro le instrumentos de [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|adjuta]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition detalios technic]</span>)',
 	'bw-desc-voctrain' => 'Trainator de vocabulario a base de [http://omegawiki.org OmegaWiki]. Usa un systema de flashcard pro apprender vocabulario de omne lingua a omne lingua supportate per OmegaWiki.
 Create pro le Universitate de Bamberg. Sub licentia GPL 2.0 o plus recente. Disveloppate per [[User:Kim Bruning|Kim Bruning]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] pote rapidemente trovar le autores de un pagina in un wiki de Wikimedia.',
@@ -1563,6 +1566,7 @@ $messages['mk'] = array(
 	'bw-desc-shapado' => '↓ Група пораки за слободниот и отворен програм за прашања и одговори [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] е отворен опслужувач за микроблогирање',
 	'translate-group-desc-statusnet-plugin' => 'Овие пораки се дел од приклучокот за [[Translating:StatusNet|StatusNet]]',
+	'translate-group-desc-tsint' => 'Група пораки за [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition] - i18n-систем за алатки на [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|поддршка]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition технички податоци]</span>)',
 	'bw-desc-voctrain' => '[[Translating:Voctrain|Voctrain]] е програм за учење на зборови од разни јазици врз основа на ОмегаВики',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] за многу кусо време може да ги пронајде авторите на некоја страница на едно вики.',
 	'bw-desc-wikimediamobile' => 'Википедија мобилен се наоѓа на http://m.wikipedia.org и има за цел да ја доведе Википедија на поддржаните „smartphone“ мобилни телефони ширум светот.',
@@ -1649,6 +1653,7 @@ $messages['nl'] = array(
 	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]] is webgebaseerde Vraag en Antwoordsoftware',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] is een microblogserver',
 	'translate-group-desc-statusnet-plugin' => 'Deze berichten maken onderdeel uit van een plug-in voor [[Translating:StatusNet|StatusNet]]',
+	'translate-group-desc-tsint' => 'Een berichtengroep voor [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], het i18n-systeem voor [http://toolserver.org Toolserverprogramma\'s] (<span class="plainlinks">[[Translating talk:Toolserver|support]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition technische gegevens]</span>)',
 	'bw-desc-voctrain' => '[[Translating:Voctrain|Voctrain]] is een op Omegawiki-gebaseerde Vocabulairetrainer',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] is in staat om snel de auteurs van een pagina in een Wikimedia-wiki te vinden',
 	'bw-desc-wikimediamobile' => '[[Translating:Wikimedia_mobile|Wikimedia mobile]] is de mobiele interface voor Wikipedia',
@@ -1948,6 +1953,7 @@ Consulte [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plu
 	'bw-desc-shapado' => 'Grupo de mensagens do software de perguntas e respostas, livre e de código aberto, [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] é um servidor de microblogues de código aberto',
 	'translate-group-desc-statusnet-plugin' => 'Estas mensagens fazem parte de um plugin para o [[Translating:StatusNet|StatusNet]]',
+	'translate-group-desc-tsint' => 'Um grupo de mensagens para o [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], o sistema de internacionalização das ferramentas [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|apoio]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition detalhes técnicos]</span>)',
 	'bw-desc-voctrain' => "Treinador de Vocabulário baseado no [http://omegawiki.org OmegaWiki]. Usa um sistema ''flashcard'' para aprender vocabulário de qualquer língua para qualquer língua suportada pelo Omegawiki.
 Criado para a Universidade de Bamberg. Licenciado GPL 2.0 ou posterior. Desenvolvido por [[User:Kim Bruning]].",
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] consegue encontrar rapidamente os autores de uma página numa wiki da Wikimedia.',
@@ -2205,6 +2211,7 @@ Oglejte si [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_p
 	'bw-desc-shapado' => 'Skupina sporočil prostega in odprtokodnega programja za vprašanja in odgovore [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] je odprtokodni strežnik za mikrobloganje',
 	'translate-group-desc-statusnet-plugin' => 'Ta sporočila so del vtičnika za [[Translating:StatusNet|StatusNet]]',
+	'translate-group-desc-tsint' => 'Skupina sporočil za [http://toolserver.org/~krinkle/TsIntuition Toolserverjevo intuicijo], sistem i18n za orodja [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|podpora]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition tehnične podrobnosti]</span>)',
 	'bw-desc-voctrain' => 'Trener besedišča temelječ na [http://omegawiki.org OmegaWiki]. Uporablja sistem kartic za učenje besedišča iz katerega koli jezika v kateri koli jezik, ki ga podpira Omegawiki.
 Ustvarjeno za Univerzo v Bambergu. Pod dovoljenjem GPL 2.0 ali poznejšim. Razvil [[User:Kim Bruning|Kim Bruning]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] je zmožen hitro najti avtorje strani na wikiju Wikimedije.',
