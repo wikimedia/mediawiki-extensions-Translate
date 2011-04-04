@@ -1,5 +1,5 @@
 General
-optional = colon-separator
+optional = colon-separator, dateformat
 
 GetWikiAPI
 ignored = title
@@ -8,7 +8,7 @@ SVG Translate
 optional = format-filename-example, format-fullurl-example
 
 Toolserver Intuition - Core
-id=tsint-core
-prefix=tsintuition- | 
-file=Tsintuition.i18n.php
+id = tsint-core
+prefix = tsintuition- | 
+file = Tsintuition.i18n.php
 ignored = title
