@@ -108,10 +108,11 @@ class TranslateYaml {
 			case 'spyc':
 				require_once( dirname( __FILE__ ) . '/../spyc/spyc.php' );
 				return Spyc::YAMLDump( $text );
+			case 'syck-pecl':
+				// Just horrible output
+				//return syck_dump( $text );
 			case 'syck':
 				return self::syckDump( $text );
-			case 'syck-pecl':
-				return syck_dump( $text );
 			default:
 				throw new MWException( "Unknown Yaml library" );
 		}
