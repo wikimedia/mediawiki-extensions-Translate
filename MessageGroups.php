@@ -732,7 +732,7 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		$tables = 'translate_sections';
 		$vars = array( 'trs_key', 'trs_text' );
 		$conds = array( 'trs_page' => $this->getTitle()->getArticleId() );
-		$options = array( 'ORDER BY' => 'trs_order');
+		$options = array( 'ORDER BY' => 'trs_order' );
 		$res = $dbr->select( $tables, $vars, $conds, __METHOD__, $options );
 
 		$defs = array();
@@ -1082,4 +1082,4 @@ class MessageGroups {
 
 }
 
-class SingleFileBasedMessageGroup extends FileBasedMessageGroup{}
+class SingleFileBasedMessageGroup extends FileBasedMessageGroup {}

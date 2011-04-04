@@ -11,7 +11,7 @@
  * Caches messages of file based message group source file. Can also track
  * that the cache is up to date. Parsing the source files can be slow, so
  * constructing CDB cache makes accessing that data constant speed regardless
- * of the actual format. 
+ * of the actual format.
  */
 class MessageGroupCache {
 	/// \string 
@@ -112,7 +112,7 @@ class MessageGroupCache {
 		$group = $this->group;
 		$groupId = $group->getId();
 
-		if( $group instanceof SingleFileBasedMessageGroup ) {
+		if ( $group instanceof SingleFileBasedMessageGroup ) {
 			$messages = $group->load( $this->code );
 
 			$cache = $this->exists();
@@ -228,7 +228,7 @@ class MessageGroupCache {
 			'#version'  => '3',
 		);
 		$conv['#msgcount'] = count( $conv['#keys'] );
-		
+
 		$messages = array();
 		foreach ( unserialize( $conv['#keys'] ) as $key ) {
 			$messages[$key] = $oldcache->get( $key );

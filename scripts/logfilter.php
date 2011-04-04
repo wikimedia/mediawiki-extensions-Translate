@@ -37,7 +37,7 @@ while ( true ) {
 		if ( mb_strlen( $line ) > 400 ) {
 			$line = mb_substr( $line, 0, 400 ) . '...';
 		}
-		echo trim( $prefix.$line ) . "\n";
+		echo trim( $prefix . $line ) . "\n";
 	}
 
 	sleep( 30 );

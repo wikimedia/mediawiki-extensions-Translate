@@ -337,7 +337,7 @@ class SpecialManageGroups extends SpecialPage {
 				if ( $this->user->isAllowed( 'translate-manage' ) ) {
 					$this->out->addHTML( Xml::submitButton( wfMsg( 'translate-manage-submit' ) ) );
 				}
-			} elseif( $this->user->isAllowed( 'translate-manage' ) ) {
+			} elseif ( $this->user->isAllowed( 'translate-manage' ) ) {
 				$cache->create(); // Update timestamp
 				$this->out->addWikiMsg( 'translate-manage-nochanges' );
 			}

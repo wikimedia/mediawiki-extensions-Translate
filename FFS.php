@@ -725,7 +725,7 @@ class YamlFFS extends SimpleFFS {
 
 		$messages = $this->flatten( $messages );
 		$messages = $this->group->getMangler()->mangle( $messages );
-		foreach( $messages as $key => &$value ) {
+		foreach ( $messages as $key => &$value ) {
 			$value = rtrim( $value, "\n" );
 		}
 
@@ -1065,18 +1065,18 @@ class PythonSingleFFS extends SimpleFFS {
 
 	public function read( $code ) {
 		// TODO: Improve this code to not use static variables.
-		if( !isset( self::$data[$this->group->getId()] ) ) {
+		if ( !isset( self::$data[$this->group->getId()] ) ) {
 			$filename = $this->group->getSourceFilePath( $code );
 			$json = shell_exec( "python -c'import simplejson as json; execfile(\"$filename\"); print json.dumps(msg)'" );
 			self::$data[$this->group->getId()] = json_decode( $json, true );
 		}
-		if( !isset( self::$data[$this->group->getId()][$code] ) ) self::$data[$this->group->getId()][$code] = array();
+		if ( !isset( self::$data[$this->group->getId()][$code] ) ) self::$data[$this->group->getId()][$code] = array();
 		return array( 'MESSAGES' => self::$data[$this->group->getId()][$code] );
 	}
 
 
 	public function write( MessageCollection $collection ) {
-		if( $this->fw === null ) {
+		if ( $this->fw === null ) {
 			$outputFile = $this->writePath . '/' . $this->group->getTargetFilename( 'en' );
 			wfMkdirParents( dirname( $outputFile ), null, __METHOD__ );
 			$this->fw = fopen( $outputFile, 'w' );
@@ -1087,13 +1087,13 @@ class PythonSingleFFS extends SimpleFFS {
 		// Not sure why this is needed, only continue if there are translations.
 		$collection->loadTranslations();
 		$ok = false;
-		foreach( $collection as $messages ) {
-			if( $messages->translation() != '' ) $ok = true;
+		foreach ( $collection as $messages ) {
+			if ( $messages->translation() != '' ) $ok = true;
 		}
-		if( !$ok ) return;
+		if ( !$ok ) return;
 
-		$authors = $this->doAuthors($collection);
-		if( $authors != '' ) fwrite( $this->fw, "$authors" );
+		$authors = $this->doAuthors( $collection );
+		if ( $authors != '' ) fwrite( $this->fw, "$authors" );
 		fwrite( $this->fw, "\t'{$collection->code}': {\n" );
 		fwrite( $this->fw, $this->writeBlock( $collection ) );
 		fwrite( $this->fw, "\t},\n" );
@@ -1112,15 +1112,15 @@ PHP;
 	protected function writeBlock( MessageCollection $collection ) {
 		$block = '';
 		$messages = array();
-		foreach( $collection as $message ) {
-			if( $message->translation() == '' ) continue;
+		foreach ( $collection as $message ) {
+			if ( $message->translation() == '' ) continue;
 			$translation = str_replace( '\\', '\\\\', $message->translation() );
 			$translation = str_replace( '\'', '\\\'', $translation );
 			$translation = str_replace( "\n", '\n', $translation );
 			$messages[$message->key()] = $translation;
 		}
 		ksort( $messages );
-		foreach( $messages as $key => $translation ) {
+		foreach ( $messages as $key => $translation ) {
 			$block .= "\t\t'{$key}': u'{$translation}',\n";
 		}
 		return $block;
@@ -1132,11 +1132,11 @@ PHP;
 		// Read authors.
 		$fr = fopen( $this->group->getSourceFilePath( $collection->code ), 'r' );
 		$authors = array();
-		while( !feof( $fr ) ) {
+		while ( !feof( $fr ) ) {
 			$line = fgets( $fr );
-			if( strpos( $line, "\t# Author:" ) === 0 ) {
+			if ( strpos( $line, "\t# Author:" ) === 0 ) {
 				$authors[] = trim( substr( $line, strlen( "\t# Author: " ) ) );
-			} elseif( $line === "\t'{$collection->code}': {\n" ) {
+			} elseif ( $line === "\t'{$collection->code}': {\n" ) {
 				break;
 			} else {
 				$authors = array();
@@ -1154,7 +1154,7 @@ PHP;
 	}
 
 	public function __destruct() {
-		if( $this->fw !== null ) {
+		if ( $this->fw !== null ) {
 			fwrite( $this->fw, "}" );
 			 fclose( $this->fw );
 		}

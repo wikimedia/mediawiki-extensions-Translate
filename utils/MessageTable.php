@@ -123,7 +123,7 @@ class MessageTable {
 			$tableheader .= Xml::closeElement( 'tr' );
 		}
 
-		return $tableheader ."\n";
+		return $tableheader . "\n";
 	}
 
 	public function contents() {
@@ -135,7 +135,7 @@ class MessageTable {
 
 		$mlang = Language::factory( $this->code );
 		$mespa = array( 'dir' => $mlang->getDir(), 'lang' => $this->code );
-		unset($mlang);
+		unset( $mlang );
 
 		$batch = new LinkBatch();
 		if ( method_exists( $batch, 'setCaller' ) ) {
@@ -157,7 +157,7 @@ class MessageTable {
 			$title = $this->keyToTitle( $key );
 
 			$original = $m->definition();
-			#TODO: handle directionality of fallback language(s) 
+			# @todo Handle directionality of fallback language(s)
 			if ( $m->translation() ) {
 				$message = $m->translation();
 				$rclasses = array_merge ( $mespa, array( 'class' => 'translated' ) );

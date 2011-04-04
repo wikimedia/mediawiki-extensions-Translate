@@ -117,9 +117,9 @@ $wgAvailableRights[] = 'translate-import';
 $wgAvailableRights[] = 'translate-manage';
 
 // Client-side resource modules
-$wgResourceModules['translate-css'] = array( 
+$wgResourceModules['translate-css'] = array(
 	'styles' => 'Translate.css',
-	'localBasePath' => dirname( __FILE__ ), 
+	'localBasePath' => dirname( __FILE__ ),
 	'remoteExtPath' => 'Translate'
 );
 $wgResourceModules['ext.translate.langstats'] = array(
@@ -169,7 +169,7 @@ $wgTranslateLanguageFallbacks = array();
  * Text that will be shown in translations if the translation is outdated.
  * Must be something that does not conflict with actual content.
  */
-if( !defined( 'TRANSLATE_FUZZY' ) ) {
+if ( !defined( 'TRANSLATE_FUZZY' ) ) {
 	define( 'TRANSLATE_FUZZY', '!!FUZZY!!' );
 }
 

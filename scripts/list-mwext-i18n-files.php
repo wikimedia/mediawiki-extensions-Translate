@@ -18,7 +18,7 @@ if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 }
 require_once( "$IP/maintenance/Maintenance.php" );
 
-/// Script which lists required i18n files for mediawiki extensions.
+/// Script which lists required i18n files for MediaWiki extensions.
 class MWExtFileList extends Maintenance {
 	public function __construct() {
 		parent::__construct();
@@ -34,9 +34,9 @@ class MWExtFileList extends Maintenance {
 		foreach ( $groups as $group ) {
 			if ( !$group instanceof ExtensionMessageGroup ) continue;
 			if ( $target && $group->getPath() !== $target ) continue;
-			$this->addPaths( $group->getMessageFile('en') );
-			$this->addPaths( $group->getAliasFile('en') );
-			$this->addPaths( $group->getMagicFile('en') );
+			$this->addPaths( $group->getMessageFile( 'en' ) );
+			$this->addPaths( $group->getAliasFile( 'en' ) );
+			$this->addPaths( $group->getMagicFile( 'en' ) );
 		}
 
 		$files = array_keys( $this->files );

@@ -35,7 +35,7 @@ class CLDRPluralToYaml extends Maintenance {
 		$doc->load( 'plurals.xml' );
 
 		$rulesets = $doc->getElementsByTagName( "pluralRules" );
-		foreach( $rulesets as $ruleset ) {
+		foreach ( $rulesets as $ruleset ) {
 			$codes = $ruleset->getAttribute( 'locales' );
 			$parsed = array();
 			$rules = $ruleset->getElementsByTagName( "pluralRule" );
@@ -50,13 +50,13 @@ class CLDRPluralToYaml extends Maintenance {
 				$name = "Zero";
 			} elseif ( $codes === 'ar' ) {
 				$name = "Arabic";
-			} elseif( count( $parsed ) === 1 ) {
+			} elseif ( count( $parsed ) === 1 ) {
 				if ( isset( $parsed['one'] ) && $parsed['one'] === 'n is 1' ) {
 					$name = "Default";
-				} elseif( isset( $parsed['one'] ) && $parsed['one'] === 'n in 0..1' ) {
+				} elseif ( isset( $parsed['one'] ) && $parsed['one'] === 'n in 0..1' ) {
 					$name = "One-zero";
 				}
-			} elseif( count( $parsed ) === 2 ) {
+			} elseif ( count( $parsed ) === 2 ) {
 				if ( isset( $parsed['one'] ) && isset( $parsed['two'] ) ) {
 					$name = "Has-dual";
 				}

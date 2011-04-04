@@ -417,7 +417,7 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 		if ( $this->group instanceof FileBasedMessageGroup ) {
 			$ffs = $this->group->getFFS();
 		}
-		
+
 		if ( !$ffs instanceof GettextFFS ) {
 			$group = FileBasedMessageGroup::newFromMessageGroup( $this->group );
 			$ffs = new GettextFFS( $group );

@@ -416,7 +416,7 @@ class HTMLSelector {
 	private $selected = false;
 	/// \array Extra html attributes.
 	private $attributes = array();
-	
+
 	/**
 	 * @param $name \string
 	 * @param $id \string Default false.

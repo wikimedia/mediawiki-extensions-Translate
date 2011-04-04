@@ -211,7 +211,7 @@ class PremadeMediawikiExtensionGroups {
 		$postfix = 'Configure/load_txt_def/TxtDef.php';
 		if ( file_exists( "$IP/extensions/$postfix" ) ) {
 			$prefix = "$IP/extensions";
-		} elseif( file_exists( "$wgTranslateExtensionDirectory/$postfix" ) ) {
+		} elseif ( file_exists( "$wgTranslateExtensionDirectory/$postfix" ) ) {
 			$prefix = $wgTranslateExtensionDirectory;
 		} else {
 			$prefix = false;

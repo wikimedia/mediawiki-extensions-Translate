@@ -33,7 +33,7 @@ class PluralCompare extends Maintenance {
 		sort( $allkeys );
 
 		$this->output( sprintf( "%12s %3s %3s %4s\n", 'Code', 'MW', 'Get', 'CLDR' ) );
-		foreach( $allkeys as $index => $code ) {
+		foreach ( $allkeys as $index => $code ) {
 			$mw = isset( $mwLanguages[$code] ) ? ( $mwLanguages[$code] === false ? '.' : '+' ) : '';
 			$gt = isset( $gtLanguages[$code] ) ? ( $gtLanguages[$code] === '(n != 1);' ? '.' : '+' ) : '';
 			$cl = isset( $clLanguages[$code] ) ? ( $clLanguages[$code][0] === 'Default' ? '.' : '+' ) : '';
@@ -72,7 +72,7 @@ class PluralCompare extends Maintenance {
 			$cldrmap = array();
 			$error = false;
 
-			for( $i = 0; $i <= 200; $i++ ) {
+			for ( $i = 0; $i <= 200; $i++ ) {
 				$mw = $obj ? $obj->convertPlural( $i, array( 0, 1, 2, 3, 4, 5 ) ) : '?';
 				$gt = $gtExp ? eval( $gtExp ) : '?';
 				$cldr = $cldrExp !== false ? $this->evalCLDRRule( $i, $cldrExp ) : '?';
@@ -116,7 +116,7 @@ class PluralCompare extends Maintenance {
 		$ruleExps = array();
 		foreach ( $data['rulesets'] as $name => $rules ) {
 			$ruleExps[$name] = array();
-			foreach( $rules as $rulename => $rule ) {
+			foreach ( $rules as $rulename => $rule ) {
 				$ruleExps[$name][$rulename] = $this->parseCLDRRule( $rule );
 			}
 		}
@@ -172,11 +172,11 @@ class PluralCompare extends Maintenance {
 		$rule = preg_replace( '/([^ ]+) within (\d+)\.\.(\d+)/', 'self::within(\1,\2,\3)', $rule );
 		// AND takes precedence over OR
 		$andrule = '/([^ ]+) and ([^ ]+)/i';
-		while( preg_match( $andrule, $rule ) ) {
+		while ( preg_match( $andrule, $rule ) ) {
 			$rule = preg_replace( $andrule, '(\1&&\2)', $rule );
 		}
 		$orrule = '/([^ ]+) or ([^ ]+)/i';
-		while( preg_match( $orrule, $rule ) ) {
+		while ( preg_match( $orrule, $rule ) ) {
 			$rule = preg_replace( $orrule, '(\1||\2)', $rule );
 		}
 

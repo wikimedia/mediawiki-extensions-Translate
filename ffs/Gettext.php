@@ -182,7 +182,7 @@ class GettextFFS extends SimpleFFS {
 				}
 			}
 			$item['flags'] = $flags;
-		
+
 			// Rest of the comments
 			$matches = array();
 			if ( preg_match_all( '/^#(.?) (.*)$/m', $section, $matches, PREG_SET_ORDER ) ) {
@@ -287,7 +287,7 @@ class GettextFFS extends SimpleFFS {
 				error_log( __METHOD__ . ": $line" );
 			}
 			list( $key, $value ) = explode( ':', $line, 2 );
-			$tags[trim($key)] = trim($value);
+			$tags[trim( $key )] = trim( $value );
 		}
 
 		return $tags;
@@ -304,7 +304,7 @@ class GettextFFS extends SimpleFFS {
 				$template['TEMPLATE'][$key] : array();
 			$potTemplate = isset( $pot['TEMPLATE'][$key] ) ?
 				$pot['TEMPLATE'][$key] : array();
-			
+
 			$output .= $this->formatMessageBlock( $key, $m, $transTemplate, $potTemplate, $pluralCount );
 		}
 
@@ -333,7 +333,7 @@ PHP;
 		// Make sure there is no empty line before msgid
 		$output = trim( $output ) . "\n";
 
-		/// @todo twn specific
+		// @todo twn specific
 		$portal = Title::makeTitle( NS_PORTAL, $code )->getFullUrl();
 
 		$specs = isset( $template['HEADERS'] ) ? $template['HEADERS'] : array();
@@ -361,7 +361,7 @@ PHP;
 		$plural = self::getPluralRule( $code );
 		if ( $plural ) {
 			$specs['Plural-Forms'] = $plural;
-		} elseif( !isset( $specs['Plural-Forms'] ) ) {
+		} elseif ( !isset( $specs['Plural-Forms'] ) ) {
 			$specs['Plural-Forms'] = 'nplurals=2; plural=(n != 1);';
 		}
 

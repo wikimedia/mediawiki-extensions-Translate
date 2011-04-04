@@ -43,7 +43,7 @@ class ArrayMemoryCache {
 	}
 
 	/**
-	 * @copydoc ArrayMemoryCache::__construct() 
+	 * @copydoc ArrayMemoryCache::__construct()
 	 * Static factory function for the constructor.
 	 */
 	public static function factory( $table ) {

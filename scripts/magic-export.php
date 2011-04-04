@@ -122,7 +122,7 @@ class MagicExport extends Maintenance {
 		// Seek first '*/'.
 		$end = strpos( $data, '*/' ) + 2;
 
-		if( $end === false ) {
+		if ( $end === false ) {
 			die( "No header found in '$file'.\n" );
 		}
 
@@ -262,8 +262,8 @@ PHP
 	 */
 	protected function writeFooters() {
 		$this->output( "Writing file footers...\n" );
-		if( $this->type === 'special' ) {
-			foreach( $this->handles as $handle ) {
+		if ( $this->type === 'special' ) {
+			foreach ( $this->handles as $handle ) {
 				fwrite( $handle, <<<PHP
 
 

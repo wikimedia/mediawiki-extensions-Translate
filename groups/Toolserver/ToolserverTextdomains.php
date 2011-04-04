@@ -82,7 +82,7 @@ class PremadeToolserverTextdomains extends PremadeMediawikiExtensionGroups {
 
 			// All messages are prefixed with their groupname
 			$g['mangle'] = array( '*' );
-			
+
 			// Prevent E_NOTICE undefined index.
 			// PremadeMediawikiExtensionGroups::factory should probably check this better instead
 			if ( !isset( $g['ignored'] ) )  $g['ignored'] = array();

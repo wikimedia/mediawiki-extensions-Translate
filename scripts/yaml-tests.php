@@ -79,11 +79,11 @@ class YamlTests extends Maintenance {
 		return $groups;
 	}
 
-  public static function sortNestedArrayAssoc(&$a) {
-    ksort($a);
-    foreach ($a as $key => &$value) {
-      if (is_array($value)) {
-        self::sortNestedArrayAssoc($value);
+  public static function sortNestedArrayAssoc( &$a ) {
+    ksort( $a );
+    foreach ( $a as $key => &$value ) {
+      if ( is_array( $value ) ) {
+        self::sortNestedArrayAssoc( $value );
       }
     }
   }

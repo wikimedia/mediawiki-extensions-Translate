@@ -54,11 +54,11 @@ class TranslateEditAddons {
 			}
 		}
 
-		if ( isset( $keys[$index-1] ) ) {
-			$prev = $keys[$index-1];
+		if ( isset( $keys[$index -1] ) ) {
+			$prev = $keys[$index -1];
 		}
-		if ( isset( $keys[$index+1] ) ) {
-			$next = $keys[$index+1];
+		if ( isset( $keys[$index + 1] ) ) {
+			$next = $keys[$index + 1];
 		}
 
 		$id = $group->getId();
@@ -449,7 +449,7 @@ class TranslateEditAddons {
 	public static function disablePreSaveTransform( $article, $popts ) {
 		global $wgTranslateDocumentationLanguageCode;
 		$keycodegroup = self::getKeyCodeGroup( $article->getTitle() );
-		if( self::isMessageNamespace( $article->getTitle() )
+		if ( self::isMessageNamespace( $article->getTitle() )
 			&& $keycodegroup[1] !== $wgTranslateDocumentationLanguageCode ) {
 			$popts->setPreSaveTransform( false );
 		}
@@ -471,7 +471,7 @@ class TranslateEditAddons {
 		$th->setEditMode( false );
 		$th->setTranslation( $de->mNewtext );
 		TranslateUtils::injectCSS();
-		
+
 		$boxes = array();
 		$boxes[] = $th->getDocumentationBox();
 		$boxes[] = $th->getDefinitionBox();

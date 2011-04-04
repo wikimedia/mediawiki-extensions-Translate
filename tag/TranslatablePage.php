@@ -738,7 +738,7 @@ class TranslatablePage {
 		$options = array( 'GROUP BY' => 'rt_page' );
 
 		$res = $dbr->select( $tables, $fields, $conds, __METHOD__, $options );
-		$results = array(); 
+		$results = array();
 		foreach ( $res as $row ) {
 			$results[] = $row->rt_page;
 		}

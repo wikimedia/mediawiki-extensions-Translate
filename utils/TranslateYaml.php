@@ -89,7 +89,7 @@ class TranslateYaml {
 			if ( is_array( $value ) ) {
 				self::fixSpycSpaces( $value );
 			} elseif ( is_string( $value ) && $key === 'header' ) {
-				$value = preg_replace( '~^\*~m', ' *', $value ). "\n";
+				$value = preg_replace( '~^\*~m', ' *', $value ) . "\n";
 			}
 		}
 		return $yaml;

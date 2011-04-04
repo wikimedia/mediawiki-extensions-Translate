@@ -199,7 +199,7 @@ class TranslationEditPage {
 
 		$support = Html::element(
 			'input',
-			array( 
+			array(
 				'class' => 'mw-translate-support',
 				'type' => 'button',
 				'value' => wfMsg( 'translate-js-support' ),

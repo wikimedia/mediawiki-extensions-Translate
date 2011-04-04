@@ -14,8 +14,8 @@
 class TranslateBC {
 
 	/**
-	 * Create a call to a JavaScript function. The supplied arguments will be 
-	 * encoded using Xml::encodeJsVar(). 
+	 * Create a call to a JavaScript function. The supplied arguments will be
+	 * encoded using Xml::encodeJsVar().
 	 *
 	 * @param $name The name of the function to call, or a JavaScript expression
 	 *    which evaluates to a function object which is called.

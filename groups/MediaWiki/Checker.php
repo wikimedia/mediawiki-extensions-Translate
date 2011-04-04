@@ -292,7 +292,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 	 */
 	protected static function getPrefMessages() {
 		// @todo: moar?
-		return array( 
+		return array(
 			array(
 				'Mw_math_png',
 				'Mw_math_simple',

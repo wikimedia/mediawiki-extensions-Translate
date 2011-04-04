@@ -204,7 +204,7 @@ class TranslationHelpers {
 			$all['translation-memory'] = array( $this, 'getLazySuggestionBox' );
 		} elseif ( $suggestions === 'only' ) {
 			return (string) call_user_func( $all['translation-memory'], 'lazy' );
-		} elseif( $suggestions === 'checks' ) {
+		} elseif ( $suggestions === 'checks' ) {
 			global $wgRequest;
 			$this->translation = $wgRequest->getText( 'translation' );
 			return (string) call_user_func( $all['check'] );
@@ -457,7 +457,7 @@ class TranslationHelpers {
 		$options = array();
 		$options['timeout'] = $config['timeout'];
 
-		$params = array( 
+		$params = array(
 			'text' => $definition,
 			'to' => $code,
 		);
@@ -498,7 +498,7 @@ class TranslationHelpers {
 			self::reportTranslationServiceFailure( $serviceName );
 			return null;
 		}
-		
+
 		$ret = $req->getContent();
 		$text = preg_replace( '~<string.*>(.*)</string>~', '\\1', $ret  );
 		$text = Sanitizer::decodeCharReferences( $text );

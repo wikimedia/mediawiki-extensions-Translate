@@ -218,7 +218,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$cache->commit();
 
 		if ( $out ) {
-			$out = $this->createHeader( $code ) ."\n" . $out;
+			$out = $this->createHeader( $code ) . "\n" . $out;
 			$out .= Xml::closeElement( 'table' );
 		} else {
 			$out = wfMsgExt( 'translate-nothing-to-do', 'parse' );
@@ -236,7 +236,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$top = array_shift( $item );
 		$out .= $this->makeGroupRow( $top, $cache, $parent === '' ? true : $parent );
 		foreach ( $item as $subgroup ) {
-			$parents = trim( $parent . ' ' .$top->getId() );
+			$parents = trim( $parent . ' ' . $top->getId() );
 			$out .= $this->makeGroupGroup( $subgroup, $cache, $parents );
 		}
 		return $out;
@@ -292,7 +292,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$rowParams['data-groupid'] = $groupId;
 		if ( is_string( $parent ) ) {
 			$rowParams['data-parentgroups'] = $parent;
-		} elseif( $parent === true ) {
+		} elseif ( $parent === true ) {
 			$rowParams['data-ismeta'] = '1';
 		}
 
@@ -307,15 +307,15 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			array( 'data-sort-value' => $total - $translated ),
 			$wgLang->formatNum( $total - $translated ) );
 
-		$out .= "\n\t\t" .$this->element( $this->formatPercentage( $translated / $total ),
+		$out .= "\n\t\t" . $this->element( $this->formatPercentage( $translated / $total ),
 			$this->getBackgroundColour( $translated, $total ),
 			sprintf( '%1.3f', $translated / $total ) );
 
-		$out .= "\n\t\t" .$this->element( $this->formatPercentage( $fuzzy / $total ),
+		$out .= "\n\t\t" . $this->element( $this->formatPercentage( $fuzzy / $total ),
 			$this->getBackgroundColour( $fuzzy, $total, true ),
 			sprintf( '%1.3f', $fuzzy / $total ) );
 
-		$out .= "\n\t" . Xml::closeElement( 'tr' ) ."\n";
+		$out .= "\n\t" . Xml::closeElement( 'tr' ) . "\n";
 		return $out;
 	}
 
@@ -333,7 +333,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		// Initialise messages.
 		$collection = $group->initCollection( $code );
 		// Takes too much memory and only hides inconsistent import state
-		#$collection->setInFile( $group->load( $code ) );
+		# $collection->setInFile( $group->load( $code ) );
 		$collection->filter( 'ignored' );
 		$collection->filter( 'optional' );
 		// Store the count of real messages for later calculation.

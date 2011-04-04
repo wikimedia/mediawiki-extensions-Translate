@@ -83,9 +83,9 @@ $reqLangs = Cli::parseLanguageCodes( $options['lang'] );
 
 $groups = array();
 
-if( isset( $options['group'] ) ) {
+if ( isset( $options['group'] ) ) {
 	$groups[$options['group']] = MessageGroups::getGroup( $options['group'] );
-} elseif( isset( $options['groups'] ) ) {
+} elseif ( isset( $options['groups'] ) ) {
 	// Explode parameter
 	$groupIds = explode( ',', trim( $options['groups'] ) );
 
@@ -98,14 +98,14 @@ if( isset( $options['group'] ) ) {
 	$allGroups = MessageGroups::singleton()->getGroups();
 
 	// Add matching groups to groups array.
-	foreach( $allGroups as $groupId => $messageGroup ) {
-		if( strpos( $groupId, $options['grouptrail'] ) === 0 && !$messageGroup->isMeta() ) {
+	foreach ( $allGroups as $groupId => $messageGroup ) {
+		if ( strpos( $groupId, $options['grouptrail'] ) === 0 && !$messageGroup->isMeta() ) {
 			$groups[$groupId] = $messageGroup;
 		}
 	}
 }
 
-foreach( $groups as $groupId => $group ) {
+foreach ( $groups as $groupId => $group ) {
 	if ( !$group instanceof MessageGroup ) {
 		STDERR( "Invalid group: " . $groupId );
 		exit( 1 );
@@ -143,7 +143,7 @@ foreach( $groups as $groupId => $group ) {
 
 		foreach ( $langs as $lang ) {
 			// Do not export if language code is to be skipped or is not a valid language.
-			if( in_array( $lang, $skip ) || !$group->isValidLanguage( $lang ) ) {
+			if ( in_array( $lang, $skip ) || !$group->isValidLanguage( $lang ) ) {
 				continue;
 			}
 

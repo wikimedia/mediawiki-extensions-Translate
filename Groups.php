@@ -582,7 +582,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 	protected function expandWildcards( $ids ) {
 		$hasWild = false;
 		foreach ( $ids as $id ) {
-			if ( strpos( $id, '*' ) !== false ) { 
+			if ( strpos( $id, '*' ) !== false ) {
 				$hasWild = true;
 				break;
 			}

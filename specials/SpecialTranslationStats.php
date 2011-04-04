@@ -442,9 +442,9 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 				$group = MessageGroups::getGroup( $groupId );
 				$group = $group ? $group->getLabel() : $groupId;
 				$label = "$group @ $code";
-			} elseif( $code ) {
+			} elseif ( $code ) {
 				$label = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() ) . " ($code)";
-			} elseif( $groupId ) {
+			} elseif ( $groupId ) {
 				$group = MessageGroups::getGroup( $groupId );
 				$label = $group ? $group->getLabel() : $groupId;
 			}
@@ -545,7 +545,7 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 	 * - roundToSignificant( 1234, 1 ) = 2000
 	 * - roundToSignificant( 1234, 2 ) = 1300
 	 * - roundToSignificant( 1234, 3 ) = 1240
-	 * 
+	 *
 	 * @param $number \int Number to round.
 	 * @param $significant \int How many signficant numbers to keep.
 	 * @return \int Rounded number.

@@ -376,8 +376,8 @@ class MessageChecker {
 
 			libxml_use_internal_errors( true );
 			libxml_clear_errors();
-			$doc = simplexml_load_string( Xml::tags( 'root', null, $translation ));
-			if ($doc) continue;
+			$doc = simplexml_load_string( Xml::tags( 'root', null, $translation ) );
+			if ( $doc ) continue;
 
 			$errors = libxml_get_errors();
 			$params = array();
