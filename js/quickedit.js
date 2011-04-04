@@ -109,6 +109,10 @@ window.trlOpenJsEdit = function( page, group ) {
 			return false;
 		} );
 
+		form.find( 'input#summary' ).focus( function() {
+			$(this).css('width', '85%');
+		});
+		
 		var textarea = form.find( '.mw-translate-edit-area' );
 		textarea.focus();
 		textarea.autoResize({extraSpace: 15, limit: 200}).trigger( 'change' );
