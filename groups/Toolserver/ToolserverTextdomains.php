@@ -19,7 +19,6 @@ class PremadeToolserverTextdomains extends PremadeMediawikiExtensionGroups {
 	protected $idPrefix = 'tsint-';
 	protected $namespaces = array( NS_TOOLSERVER, NS_TOOLSERVER_TALK );
 
-
 	public function __construct() {
 		global $wgTranslateGroupRoot;
 
