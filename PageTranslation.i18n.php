@@ -2192,6 +2192,13 @@ $messages['gu'] = array(
 	'tpt-languages-legend' => 'અન્ય ભાષાઓ:',
 );
 
+/** Manx (Gaelg)
+ * @author Shimmin Beg
+ */
+$messages['gv'] = array(
+	'pt-movepage-reason' => 'Fa:',
+);
+
 /** Hausa (هَوُسَ) */
 $messages['ha'] = array(
 	'pt-movepage-reason' => 'Dalili:',

@@ -1981,7 +1981,7 @@ $messages['ba'] = array(
 	'translate-task-reviewall' => 'Бөтә тәржемәләрҙе ҡарап сығырға',
 	'translate-task-export' => 'Тәржемәләрҙе сығарырға',
 	'translate-task-export-to-file' => 'Тәржемәләрҙе файлға сығарырға',
-	'translate-task-export-as-po' => 'Тәржемәләрҙе gettext форматында сығарырға',
+	'translate-task-export-as-po' => 'Тәржемәләрҙе оффлайн тәржемә өсөн сығарырға',
 	'translate-task-export-to-xliff' => 'Тәржемәне Xliff форматында сығарырға',
 	'translate-page-no-such-language' => 'Тел коды дөрөҫ түгел.',
 	'translate-page-no-such-task' => 'Мәсьәлә дөрөҫ күрһәтелмәгән.',
@@ -2010,10 +2010,11 @@ $messages['ba'] = array(
 	'translate-ignored' => '(иғтибарға алынмай)',
 	'translate-edit-title' => 'Мөхәрирләү "$1"',
 	'translate-edit-definition' => 'Яҙманың билдәләмәһе',
+	'translate-edit-translation' => 'Тәржемә',
 	'translate-edit-contribute' => 'үҙгәртергә',
 	'translate-edit-no-information' => "''Был яҙманың тасуирламаһы юҡ. Әгәр һеҙ был яҙманың ҡайҙа һәм нисек ҡулланылғанын белһәгеҙ, был яҙмаға тасуирлама өҫтәп, бүтән тәржемәселәргә ярҙам итә  алаһығыҙ.''",
-	'translate-edit-information' => '"$2" яҙмаһы тураһында мәғлүмәт ($1)',
-	'translate-edit-in-other-languages' => '"$1" яҙмаһы башҡа телдәрҙә',
+	'translate-edit-information' => 'Яҙма тураһында мәғлүмәт ($1)',
+	'translate-edit-in-other-languages' => 'Яҙма башҡа телдәрҙә',
 	'translate-edit-committed' => 'Программала хәҙерге тәржемәһе',
 	'translate-edit-warnings' => 'Тулы булмаған тәржемәләр тураһында иҫкәртеү',
 	'translate-edit-tmsugs' => 'Тәржемәләр хәтеренән тәҡдимдәр',
@@ -2053,8 +2054,10 @@ $messages['ba'] = array(
 	'translate-checks-xhtml' => 'Түбәндәге {{PLURAL:$2|тэгты|тэгтарҙы}} төҙәтегеҙ, зинһар:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Сығанаҡ <nowiki>{{PLURAL:}}</nowiki> ҡуллана, ә тәржемә ҡулланмай.',
+	'translate-checks-pagename' => 'Исемдәр арауығының билдәләмәһе үҙгәргән',
 	'translate-checks-format' => 'Был тәржемә билдәләмәһе менән тап килмәй йәки синтаксик хаталары бар: $1',
 	'translate-checks-fudforum-syntax' => 'Был проектта  <nowiki>$2</nowiki> урынына  <nowiki>$1</nowiki> ҡулланырға.',
+	'translate-checks-prefs' => 'Яҙма $1 яҙмаһына ҡаршы килә. Яҙмалар бер иш булырға тейеш түгел.',
 	'translate-pref-nonewsletter' => 'Минең электрон почтаға яңылыҡтар ебәрмәҫкә',
 	'translate-pref-editassistlang' => 'Ярҙамсы телдәр:',
 	'prefs-translate' => 'Тәржемә көйләүҙәре',
@@ -2065,6 +2068,7 @@ $messages['ba'] = array(
 	'translate-pref-jsedit' => 'Яҡшыртылған тәржемә ҡоралы (JavaScript)',
 	'right-translate' => 'Тәржемә интерфейсы ярҙамында үҙгәртеү',
 	'right-translate-manage' => 'Тәржемә төркөмдәрен мөхәррирләү',
+	'right-translate-import' => 'Offline тәржемәләрҙе индереү',
 	'translate-rc-translation-filter' => 'Тәржемәләрҙе һайлап алырға:',
 	'translate-rc-translation-filter-no' => 'Барыһы ла',
 	'translate-rc-translation-filter-only' => 'Тәржемәләр генә',
@@ -2073,6 +2077,7 @@ $messages['ba'] = array(
 	'translationstats' => 'Тәржемәләр статисикаһы',
 	'translate-stats-edits' => 'Үҙгәртеүҙәр',
 	'translate-stats-users' => 'Тәржемәселәр',
+	'translate-stats-registrations' => 'Теркәүҙәр',
 	'translate-statsf-intro' => 'Был формала ябай статистика рәсеме ҡарарға мөмкин.
 Статистика сиктәрен бөтә параметрҙар буйынса билдәләргә була.',
 	'translate-statsf-options' => 'Рәсемде көйләү',
@@ -2093,19 +2098,27 @@ $messages['ba'] = array(
 	'translate-statsf-submit' => 'Ҡарап сығырға',
 	'translate-tag-category' => 'Тәржемә ителә торған биттәр',
 	'translate-tag-page-desc' => '[[$2|$1]] вики-битенең тәржемәһе',
+	'translate-tag-fuzzy-comment' => 'Билдәләмә $2 өлгөһөндә [[User:$1|$1]] тарафынан үҙгәртелгән.',
+	'translate-tag-fuzzy-reason' => 'Билдәләмә $2 өлгөһөндә "$1" тарафынан "$3" аңлатмаһы менән үҙгәртелгән.',
 	'translate-sidebar-alltrans' => 'Башҡа телдәрҙә',
 	'translations' => 'Бөтә тәржемәләр',
 	'translations-summary' => 'Бөтә мөмкин булған телдәрҙә тәржемәләр сығарыр өсөн, яҙманың исемен керетегеҙ.',
 	'translate-translations-no-message' => '"$1" - тәржемә ителә торған яҙма түгел',
 	'translate-translations-none' => '"$1" өсөн тәржемәләр юҡ',
+	'translate-translations-count' => '{{PLURAL:$1|Бер тәржемә|$1 тәржемә}} табылды.',
 	'translate-translations-fieldset-title' => 'Яҙма',
 	'translate-translations-messagename' => 'Исем',
 	'translate-translations-project' => 'Проект:',
+	'translate-translations-including-no-param' => 'Зинһар, эске биттең параметры рәүешендә яҙманың асҡысын күрһәтегеҙ',
 	'translate-translations-history-short' => 'т',
 	'languagestats' => 'Тел статистикаһы',
 	'languagestats-summary' => 'Был биттә бөтә төркөмдәр өсөн һайланған телдә тәржемәләр статистикаһы күрһәтелгән.',
 	'languagestats-stats-for' => '$1 теле өсөн тәржемәләр статистикаһы ($2).',
 	'languagestats-recenttranslations' => 'яңыраҡ эшләнгән тәржемәләр',
+	'translate-langstats-expand' => 'асырға',
+	'translate-langstats-collapse' => 'төрөргә',
+	'translate-langstats-expandall' => 'барыһын да асырға',
+	'translate-langstats-collapseall' => 'барыһын да төрөргә',
 	'translate-language-code' => 'Тел коды',
 	'translate-language-code-field-name' => 'Тел коды:',
 	'translate-suppress-complete' => 'Тулыһынса тәржемә ителгән төркөмдәрҙе күрһәтмәҫкә',
@@ -2132,13 +2145,20 @@ $messages['ba'] = array(
 Әгәр һеҙ ниндәй ҙә булһа телгә тәржемә итәһегеҙ һәм һеҙҙең исемегеҙ тәржемәселәр исемлегендә юҡ икән, зинһар, исемегеҙҙе был телдең [[:Category:Languages|порталында]] тәржемәселәр исемлегенә өҫтәгеҙ.
 Һеҙҙең көйләүҙәрегеҙҙәге тел порталына һылтанманы менюла табырға була.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Тәржемәсе|Тәржемәселәр}}: $1',
+	'supportedlanguages-noportal-title' => 'Порталдың исемдәр арауығы билдәләнмәгән',
+	'supportedlanguages-noportal' => 'Вики хакимы NS_PORTAL билдәләмәгән, шуға күрә был бит эшләмәй.
+Был биттә бөтә тел кодына яраған порталдарҙың исемлеге һәм "тәржемәселәр" эске бите буласаҡ.
+"Тәржемәселәр" эске бите параметр рәүешендә ҡатнашыусы исеме күрһәтелгән [[:{{ns:template}}:User|User]] ҡалыбын үҙ эсенә алырға тейеш.',
 	'supportedlanguages-recenttranslations' => 'яңыраҡ эшләнгән тәржемәләр',
 	'translate-save' => 'Һаҡларға ($1)',
 	'translate-jssti-add' => 'Исемлеккә өҫтәргә',
+	'managemessagegroups' => 'Яҙмалар төркөмдәре менән идара итеү',
 	'translate-manage-groups' => 'Төркөмдәр менән идара итеү',
 	'translate-manage-listgroups' => 'Көйләнгән төркөмдәр',
 	'translate-manage-listgroups-old' => 'Иҫке күренеш төркөмдәре',
 	'translate-managegroups' => 'Төркөмдәр менән идара итеү',
+	'translate-manage-newgroup' => 'Был яҙмалар төркөмө бығаса индерелмәгән.',
+	'translate-manage-cacheat' => '$1 $2 индерелгән',
 	'translate-manage-return-to-group' => 'Төркөм тураһында мәғлүмәт битенә ҡайтырға',
 	'translate-manage-modlangs' => 'Зинһар түбәндәге {{PLURAL:$1|телдә|телдәрҙә}} мөмкин булған үҙгәрештәрҙе тикшерегеҙ:',
 	'translate-manage-modlang-new' => '$1 (яңы)',
@@ -2146,8 +2166,11 @@ $messages['ba'] = array(
 	'translate-manage-import-new' => 'Яңы яҙма: $1',
 	'translate-manage-import-deleted' => 'Юйылған яҙма: $1',
 	'translate-manage-action-import' => 'Тейәргә',
+	'translate-manage-action-conflict' => 'Индереү һәм хаталар',
 	'translate-manage-action-ignore' => 'Иғтибарһыҙ ҡалдырырға',
+	'translate-manage-action-fuzzy' => 'Индереү һәм хаталы тәржемәләр',
 	'translate-manage-submit' => 'Үтәргә',
+	'translate-manage-nochanges' => 'Был төркөм өсөн яҙма билдәмәләрендә бер үҙгәреш тә юҡ.',
 	'translate-manage-nochanges-other' => 'Был телдә бер ниндәй ҙә үҙгәрештәр юҡ.
 Төркөм тураһында мәғләмәт битенә ҡайтыу өсөн түбәндәге һылтанмаға баҫығыҙ.',
 	'translate-manage-inconsistent' => 'Һорауҙа тап килмәүҙәр бар.
@@ -2155,8 +2178,16 @@ $messages['ba'] = array(
 Ентеклерәк: $1.',
 	'translate-manage-toolong' => '$1 һорауында мөмкин булған үтәү ваҡыты — {{PLURAL:$1|секунд|секунд}} үтте.
 Дауам итеү өсөн, форма мәғлүмәтен ҡабаттан ебәрегеҙ, зинһар.',
+	'translate-manage-import-ok' => '$1 битенең яңы өлгөһө индерелгән.',
+	'translate-manage-import-noks' => '$1 битенең яңы өлгөһөн индереү хатаһы: $2',
+	'translate-manage-import-ignore' => '$1 яҙмаһын ҡалдырыу.',
+	'translate-manage-import-summary' => 'Тышҡы сығанаҡтан яңы өлгө индереү',
+	'translate-manage-conflict-summary' => 'Тышҡы сығанаҡтан яңы өлгө индереү.
+Зинһар, тикшерегеҙ.',
 	'translate-manage-fuzzy-summary' => 'Билдәләмә үҙгәрҙе',
+	'translate-manage-import-fuzzy' => 'Индереү һәм хата: $1',
 	'translate-manage-import-done' => 'Барыһы ла үтәлде!',
+	'translate-manage-import-rebuild' => 'Кэшты яңынан яһау.',
 	'translate-manage-intro-en' => 'Түбәндә — был төркөмдәге яҙмаларҙы үҙгәртеү исемлеге. 
 Һәр яҙма өсөн үҙгәрештәрҙе тикшерегеҙ һәм был яҙма менән ни эшләргә теләгәнегеҙҙе һайлағыҙ, зинһар.
 Яҙмаларҙың билдәләмәһе яңырғас, әгәр булһа, башҡа телдәрҙәге тышҡы үҙгәрештәрҙе тикшерегеҙ.
@@ -2171,16 +2202,26 @@ $messages['ba'] = array(
 	'translate-import-from-wiki' => 'Файл бил викила:',
 	'translate-import-from-local' => 'Урындағы файлды индерергә:',
 	'translate-import-load' => 'Файлды индерергә:',
+	'translate-import-err-type-not-supported' => 'Файлды тейәп булмай:
+<code>$1</code> методы ҡулланылмай.',
 	'translate-import-err-dl-failed' => 'Файлды индереү мөмкин түгел:
 $1',
 	'translate-import-err-ul-failed' => 'Файлды индереп булманы',
 	'translate-import-err-invalid-title' => 'Күрһәтелгән файл исеме <nowiki>$1</nowiki> дөрөҫ түгел.',
 	'translate-import-err-no-such-file' => 'Файл <nowiki>$1</nowiki> юҡ йәки урында индерелмәгән.',
+	'translate-import-err-stale-group' => 'Был файлға ҡараған яҙмалар төркөмө юҡ.',
+	'translate-import-err-no-headers' => 'Файл —Translate киңәйеүе форматында дөрөҫ Gettext-файл түгел:
+Файлдың башлыҡтарынан төркөмдө һәм телде билдәләп булмай.',
+	'translate-import-err-warnings' => 'Файл дөрөҫ төҙөлмәгән.
+Һеҙҙең мөхәррирләүсегеҙ msgctxt юлдарын юймай икәнен тикшерегеҙ.
+Тулыраҡ: $1',
 	'translate-js-next' => 'Һаҡларға һәм сираттағыны асырға',
 	'translate-js-nonext' => 'Был яҙма әлеге биттә аҙаҡҡыһы булды.',
 	'translate-js-skip' => 'Сираттағыға күсергә',
 	'translate-js-save-failed' => 'Яҙҙырып ҡуйыу үтәлмәне. Был хата тураһында хәбәр итегеҙ, зинһар.',
 	'translate-js-history' => 'Тәржемә тарихы',
+	'translate-js-support' => 'Һорау бирергә',
+	'translate-js-support-title' => 'Был яҙманы дөрөҫ тәржемә итер өсөн мәғлүмәт етмәһә, ярҙам һорап мөрәжәғәт итегеҙ.',
 	'translate-gs-pos' => 'Урын',
 	'translate-gs-code' => 'Код',
 	'translate-gs-continent' => 'Донъя өлөшө',
@@ -2190,6 +2231,7 @@ $1',
 	'translate-gs-count' => 'Һан',
 	'translate-gs-total' => 'Барыһы',
 	'translate-gs-avgscore' => 'Уртаса билдә',
+	'translate-documentation-language' => 'Яҙмалар документтары',
 );
 
 /** Bavarian (Boarisch)
@@ -7701,6 +7743,7 @@ $messages['gu'] = array(
 
 /** Manx (Gaelg)
  * @author MacTire02
+ * @author Shimmin Beg
  */
 $messages['gv'] = array(
 	'translate' => 'Dy hyndaa',
@@ -7709,7 +7752,7 @@ $messages['gv'] = array(
 	'translate-page-group' => 'Possan',
 	'translate-page-language' => 'Çhengey',
 	'translate-page-limit' => 'Jeoraght',
-	'translate-edit-in-other-languages' => 'Çhaghteraght "$1" ayns çhengaghyn elley',
+	'translate-edit-in-other-languages' => 'Çhaghteraght ayns çhengaghyn elley',
 );
 
 /** Hausa (هَوُسَ) */

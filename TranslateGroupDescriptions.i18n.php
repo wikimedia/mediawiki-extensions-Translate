@@ -910,6 +910,7 @@ Por favor, bótelle unha ollada a [[mw:Extension:PDF_Writer]] e a http://code.pe
 	'bw-desc-shapado' => 'Grupo de mensaxes para o software de código aberto de preguntas e respostas [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] é un servidor de mensaxes de blogue curtas de código aberto',
 	'translate-group-desc-statusnet-plugin' => 'Estas mensaxes forman parte dun complemento do [[Translating:StatusNet|StatusNet]]',
+	'translate-group-desc-tsint' => 'Un grupo de mensaxes para o [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], o sistema i18n das ferramentas do [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|axuda]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition detalles técnicos]</span>)',
 	'bw-desc-voctrain' => 'Adestrador de vocabulario baseado en Omegawiki. Usa un sistema de tarxetas para aprender vocabulario de calquera lingua a calquera lingua soportado por Omegawiki.
 Extensión creada pola Universidade de Bamberg. Licenza GPL 2.0 ou posterior. Desenvolvido por [[User:Kim Bruning]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php?user_lang=gl Wikiblame] é capaz de atopar rapidamente os autores dunha páxina nun wiki da Wikimedia.',
@@ -1563,7 +1564,7 @@ $messages['mk'] = array(
 * Потрудете се преводите да ви бидат со што послична должина од оние на англискиот оригинал поради ограничувањата на должината на речениците. Погледајте и [http://trac.openstreetmap.org/ticket/2067 отворен проблем].
 * Користете [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] за испробување на Potlatch. Таму можете да испробувате што сакате и колку што сакате во секој дел и функција.',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] е збир од алатки за уредување на Википедија',
-	'bw-desc-shapado' => '↓ Група пораки за слободниот и отворен програм за прашања и одговори [[Translating:Shapado|Shapado]]',
+	'bw-desc-shapado' => 'Група пораки за слободниот и отворен програм за прашања и одговори [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] е отворен опслужувач за микроблогирање',
 	'translate-group-desc-statusnet-plugin' => 'Овие пораки се дел од приклучокот за [[Translating:StatusNet|StatusNet]]',
 	'translate-group-desc-tsint' => 'Група пораки за [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition] - i18n-систем за алатки на [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|поддршка]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition технички податоци]</span>)',
