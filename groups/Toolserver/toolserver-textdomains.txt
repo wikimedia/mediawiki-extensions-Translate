@@ -4,6 +4,9 @@ optional = colon-separator, dateformat
 GetWikiAPI
 ignored = title
 
+OrphanTalk2
+optional = label-wiki
+
 SVG Translate
 optional = format-filename-example, format-fullurl-example
 
