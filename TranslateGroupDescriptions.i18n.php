@@ -2212,7 +2212,7 @@ Oglejte si [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_p
 	'bw-desc-shapado' => 'Skupina sporočil prostega in odprtokodnega programja za vprašanja in odgovore [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] je odprtokodni strežnik za mikrobloganje',
 	'translate-group-desc-statusnet-plugin' => 'Ta sporočila so del vtičnika za [[Translating:StatusNet|StatusNet]]',
-	'translate-group-desc-tsint' => 'Skupina sporočil za [http://toolserver.org/~krinkle/TsIntuition Toolserverjevo intuicijo], sistem i18n za orodja [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|podpora]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition tehnične podrobnosti]</span>)',
+	'translate-group-desc-tsint' => 'Skupina sporočil za [http://toolserver.org/~krinkle/TsIntuition Toolserverjevo Intuicijo], sistem i18n za orodja [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|podpora]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition tehnične podrobnosti]</span>)',
 	'bw-desc-voctrain' => 'Trener besedišča temelječ na [http://omegawiki.org OmegaWiki]. Uporablja sistem kartic za učenje besedišča iz katerega koli jezika v kateri koli jezik, ki ga podpira Omegawiki.
 Ustvarjeno za Univerzo v Bambergu. Pod dovoljenjem GPL 2.0 ali poznejšim. Razvil [[User:Kim Bruning|Kim Bruning]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] je zmožen hitro najti avtorje strani na wikiju Wikimedije.',
