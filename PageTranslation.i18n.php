@@ -3517,6 +3517,13 @@ $messages['mn'] = array(
 	'pt-movepage-reason' => 'Шалтгаан:',
 );
 
+/** Malay (Bahasa Melayu)
+ * @author Anakmalaysia
+ */
+$messages['ms'] = array(
+	'translate-tag-translate-link-desc' => 'Terjemahkan laman ini',
+);
+
 /** Maltese (Malti)
  * @author Chrisportelli
  */

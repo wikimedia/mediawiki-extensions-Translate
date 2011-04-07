@@ -1588,6 +1588,7 @@ $messages['ml'] = array(
  */
 $messages['ms'] = array(
 	'translate-group-desc-nodesc' => 'Keterangan tidak disediakan untuk kumpulan mesej ini',
+	'translate-group-desc-ihris' => 'Kumpulan pesanan [[Translating:iHRIS|iHRIS]]',
 );
 
 /** Maltese (Malti)
@@ -2121,6 +2122,7 @@ $messages['ru'] = array(
 	'bw-desc-shapado' => 'Группа сообщений свободного программного обеспечения вопросов и ответов [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] — сервер микроблоггинга с открытым исходным кодом',
 	'translate-group-desc-statusnet-plugin' => 'Это сообщения плагина для [[Translating:StatusNet|StatusNet]]',
+	'translate-group-desc-tsint' => 'Группа сообщений для [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], системы интернационализации [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|поддержка]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition технические подробности]</span>)',
 	'bw-desc-voctrain' => 'Словарный тренажёр на основе [http://omegawiki.org OmegaWiki]. Использует систему карточек для пополнения словарного запаса на любых языках, поддерживаемых Omegawiki.
 Создан для университета Бамберга. Лицензирован по GPL 2.0 или более поздним версиям. Разработан [[User:Kim Bruning|Кимом Брунингом]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] позволяет быстро найти авторов страницы в проектах Викимедиа.',

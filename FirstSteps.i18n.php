@@ -2382,6 +2382,82 @@ $messages['ml'] = array(
 	'translate-fs-userpage-done' => 'കൊള്ളാം! താങ്കൾക്കിപ്പോൾ ഒരു ഉപയോക്തൃതാൾ ഉണ്ട്.',
 );
 
+/** Malay (Bahasa Melayu)
+ * @author Anakmalaysia
+ */
+$messages['ms'] = array(
+	'firststeps' => 'Langkah pertama',
+	'firststeps-desc' => '[[Special:FirstSteps|Laman khas]] untuk melatih pengguna untuk menggunakan sambungan Terjemahan untuk membangunkan wiki',
+	'translate-fs-pagetitle-done' => '- siap!',
+	'translate-fs-pagetitle' => 'Pendeta permulaan - $1',
+	'translate-fs-signup-title' => 'Berdaftar',
+	'translate-fs-settings-title' => 'Tataletak keutamaan anda',
+	'translate-fs-userpage-title' => 'Cipta laman pengguna anda',
+	'translate-fs-permissions-title' => 'Pohon kebenaran penterjemah',
+	'translate-fs-target-title' => 'Mula menterjemah!',
+	'translate-fs-email-title' => 'Sahkan alamat e-mel anda',
+	'translate-fs-intro' => 'Selamat datang ke pendeta langkah pertama {{SITENAME}}.
+Anda akan dibimbing sepanjang proses langkah demi langkah untuk menjadi penterjemah.
+Pada akhirnya, anda akan dapat menterjemahkan "pesanan antara muka" bagi semua projek yang disokong di {{SITENAME}}.',
+	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount.png|frame]]
+
+Langkah pertama sekali, anda mesti mendaftar diri.
+
+Segala terjemahan yang anda buat dilakukan di bawah nama pengguna anda.
+Gambarajah di kanan menunjukkan cara mengisi ruangannya.
+
+Jika anda sudah berdaftar, $1log masuk$2 sahaja.
+Selepas mendaftar, sila kembali ke laman ini.
+
+$3Daftar$4',
+	'translate-fs-settings-text' => 'Sekarang, anda haruslah pergi ke keutamaan anda dan sekurang-kurangnya mengubah bahasa antara muka kepada bahasa sasar terjemahan anda.
+
+Bahasa antara muka anda dijadikan bahasa sasar yang sediakala. Anda disarankan supaya menetapkan bahasa itu supaya tidak perlu lupa menukar opsyen bahasa kepada yang betul setiap kali anda datang ke sini.
+
+Di sana, anda boleh memohon perisian untuk memaparkan terjemahan dalam bahasa-bahasa lain yang anda tahu. Tetapan ini boleh dijumpai di bawah tab "{{int:prefs-editing}}". Jangan malu untuk mencuba tetapan lain juga.
+
+Pergi ke [[Special:Preferences|laman keutamaan]] anda sekarang, kemudian kembali ke laman ini.',
+	'translate-fs-settings-skip' => 'Dah siap.
+Saya nak teruskan.',
+	'translate-fs-userpage-text' => 'Sekarang, anda perlu mencipta laman pengguna.
+
+Sila tuliskan perihal diri anda untuk memperkenalkan diri kepada orang lain. Ini akan mengeratkan lagi jalinan sesama komuniti {{SITENAME}}. Di {{SITENAME}}, terdapat ramai orang dari seluruh dunia yang mengusahakan projek-projek dalam pelbagai bahasa.
+
+Dalam petak yang tersedia diisi di atas di baris pertama sekali, anda melihat <nowiki>{{#babel:en-2}}</nowiki>. Sila isinya dengan pengetahuan bahasa anda. Nombor selepas kod bahasa itu memerikan tahap kefasihan bahasa itu. Pilihan-pilihannya adalah seperti berikut:
+* 1 - sedikit sahaja
+* 2 - pengetahuan asas
+* 3 - cukup fasih
+* 4 - fasih seperti penutur asli
+* 5 - anda menuturkan bahasa itu seperti profesional, misalnya anda merupakan penterjemah profesional.
+
+Untuk bahasa pertuturan asli anda, jangan nyatakan nombor kemahiran, gunakan sahaja kod bahasa.
+Cth: jika anda penutur asli bahasa Melayu, dan cukup fasih berbahasa Inggeris dan sedikit bahasa Cina, tuliskan:
+<code><nowiki>{{#babel:ms|en-3|zh-1}}</nowiki></code>
+
+Jika anda tidak tahu kod bahasa itu, lebih baik anda perci mencarinya sekarang dengan mencari dalam senarai di bawah.',
+	'translate-fs-userpage-submit' => 'Cipta laman pengguna saya',
+	'translate-fs-userpage-done' => 'Syabas! Sekarang, anda ada laman pengguna.',
+	'translate-fs-permissions-text' => 'Sekarang, anda perlu membuat permohonan untuk menyertai kumpulan penterjemah.
+
+Sehingga kami membetulkan kodnya, sila ke [[Project:Translator]] dan ikut arahan-arahan di situ, kemudian balik ke sini.
+
+Selepas anda menyerahkan permohonan anda, seorang ahli kakitangan sukarela akan menyemak permohonan anda dan meluluskan sebaik mungkin. Sila bersabar.
+
+<del>Pastikan bahawa permintaan berikut diisikan dengan betul, kemudian tekan butang permohonan.</del>',
+	'translate-fs-target-text' => "Syabas! Sekarang, anda boleh mulai menterjemah.
+
+Jangan risau jika kebingungan kerana anda memerlukan masa untuk membiasakan diri. Di [[Project list]] terdapat sekilas pandang projek yang boleh anda sumbangkan terjemahan. Kebanyakan projek mempunyai laman keterangan ringkas dengan pautan \"''Translate this project''\" yang membawa anda ke laman yang menyenaraikan pesanan yang belum diterjemah. Juga terdapat senarai semua kumpulan pesanan dengan [[Special:LanguageStats|status penterjemahan semasa bahasa itu]].
+
+Jika anda rasa anda perlu meningkatkan kefahaman anda sebelum memulakan penterjemahan, anda boleh membaca [[FAQ|Soalan Lazim]] kami, tetapi berhati-hati kerana sesetengah isinya mungkin ketinggalan zaman. Jika anda merasa apa-apa yang anda sepatutnya boleh lakukan, tetapi tidak dapat mengetahui caranya, jangan malu untuk bertanya di [[Support|laman bantuan]].
+
+Anda juga boleh menghubungi para penterjemah lain yang sama bahasa dengan anda di [[Portal_talk:\$1|laman perbincangan]] [[Portal:\$1|portal bahasa anda]]. Sekiranya anda belum berbuat demikian, sila [[Special:Preferences|ubah bahasa antara muka pengguna anda kepada bahasa terjemahan anda]] supaya wiki ini dapat menunjukkan pautan-pautan (''links'') yang paling relevan kepada anda.",
+	'translate-fs-email-text' => 'Sila berikan alamat e-mel anda di [[Special:Preferences|keutamaan anda]] dan sahkannya daripada e-mel yang dihantar kepada anda.
+
+Ini membolehkan pengguna lain untuk menghubungi anda melalui e-mel.
+Anda juga akan menerima surat berita selebih-lebihnya sebulan sekali.
+Jika anda tidak ingi menerima surat berita, anda boleh memilih untuk mengecualikan diri daripada senarai penghantaran kami dalam tab "{{int:prefs-personal}}" dalam [[Special:Preferences|keutamaan]] anda.',
+);
+
 /** Dutch (Nederlands)
  * @author Siebrand
  */

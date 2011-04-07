@@ -12989,7 +12989,7 @@ Klik nama kumpulan pesanan untuk melihat senarai pesanan yang belum diterjemah.'
 Sebab:
 
 ''$1''",
-	'translate-page-settings-legend' => 'Ketetapan',
+	'translate-page-settings-legend' => 'Tetapan',
 	'translate-page-task' => 'Saya mahu',
 	'translate-page-group' => 'Kumpulan',
 	'translate-page-group-tooltip' => 'Nama kumpulan pesanan.
@@ -13822,8 +13822,8 @@ Om gruppa er sett saman av eit delsett eller eit overordna sett av meldingar fr�
 	'translate-edit-definition' => 'Melding som skal setjast om',
 	'translate-edit-contribute' => 'bidra',
 	'translate-edit-no-information' => "''Denne meldinga har ikkje dokumentasjon. Om du veit kvar eller korleis denne meldinga vert nytta, kan du hjelpe andre omsetjarar ved å legge inn dokumentasjon til denne meldinga.''",
-	'translate-edit-information' => 'Informasjon om meldinga «$2» ($1)',
-	'translate-edit-in-other-languages' => 'Meldinga «$1» på andre språk',
+	'translate-edit-information' => 'Informasjon om meldinga ($1)',
+	'translate-edit-in-other-languages' => 'Meldinga på andre språk',
 	'translate-edit-committed' => 'Noverande omsetjing i programvaren',
 	'translate-edit-warnings' => 'Åtvaringar om ufullstendige omsetjingar',
 	'translate-edit-tmsugs' => 'Framlegg frå omsetjingsminnet',
@@ -16422,6 +16422,7 @@ $messages['ru'] = array(
 	'translate-checks-format' => 'Этот перевод не соответствует определению или содержит синтаксическую ошибку: $1',
 	'translate-checks-escape' => 'Следующие экранирующие последовательности могут быть случайны: <strong>$1</strong>',
 	'translate-checks-fudforum-syntax' => 'Использовать в этом проекте <nowiki>$1</nowiki> вместо <nowiki>$2</nowiki>.',
+	'translate-checks-prefs' => 'Сообщение противоречит $1. Эти сообщения не должны быть одинаковыми.',
 	'translate-pref-nonewsletter' => 'Не отправлять мне информационный бюллетень по электронной почте',
 	'translate-pref-editassistlang' => 'Вспомогательные языки:',
 	'prefs-translate' => 'Настройки перевода',
