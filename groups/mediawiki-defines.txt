@@ -1719,6 +1719,8 @@ aliasfile = WatchSubpages/WatchSubpages.alias.php
 Web Chat
 aliasfile = WebChat/WebChat.alias.php
 
+Web Fonts
+
 Web Store
 
 What Is My IP
