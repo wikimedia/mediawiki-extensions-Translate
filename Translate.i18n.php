@@ -2888,7 +2888,7 @@ Klikañ war anv ar strollad kemennadennoù evit gwelet ur roll eus ar c'hemennad
 Abeg :
 
 ''$1''",
-	'translate-page-settings-legend' => 'Dibaboù',
+	'translate-page-settings-legend' => 'Arventennoù',
 	'translate-page-task' => "C'hoant am eus da",
 	'translate-page-group' => 'Strollad',
 	'translate-page-group-tooltip' => "Anv ur strollad kemennadennoù.
@@ -11370,7 +11370,7 @@ Donn op en Jropp klecke, öm en Leßß met allem ze sinn ze krijje, wat doh dren
 	'translate-page-disabled' => "Övversezonge sen affjeschalldt för di {{int:translate-page-group}} un {{int:translate-page-language}}, weil:
 
 ''$1''",
-	'translate-page-settings-legend' => 'Ennshtellonge',
+	'translate-page-settings-legend' => 'Enshtällonge',
 	'translate-page-task' => 'Aufjab:',
 	'translate-page-group' => 'Jrupp:',
 	'translate-page-group-tooltip' => 'Dä Name vun ene Jropp vun Täxte un Nohreeschte.
@@ -14729,7 +14729,7 @@ Jeśli grupa zawiera podzbiór lub nadzbiór komunikatów innej grupy, jest wyś
 	'translate-edit-definition' => 'Tekst źródłowy komunikatu',
 	'translate-edit-contribute' => 'prześlij',
 	'translate-edit-no-information' => "''Ten komunikat nie posiada dokumentacji. Jeśli wiesz gdzie lub jak ten komunikat jest używany, możesz pomóc innym tłumaczom przez dodanie dokumentacji do tego komunikatu.''",
-	'translate-edit-information' => 'Informacja na temat komunikatu „$2” ($1)',
+	'translate-edit-information' => 'Objaśnienie komunikatu ($1)',
 	'translate-edit-in-other-languages' => 'Komunikat „$1” w innych językach',
 	'translate-edit-committed' => 'Aktualne tłumaczenie oprogramowania',
 	'translate-edit-warnings' => 'Ostrzeżenia o niedokończonych tłumaczeniach',
