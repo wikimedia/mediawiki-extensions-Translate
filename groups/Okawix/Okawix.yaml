@@ -35,21 +35,6 @@ FILES:
   sourcePattern: %GROUPROOT%/okawix/locale/%CODE%/interfacewiki/okawix-doc.properties
   targetPattern: okawix/%CODE%/interfacewiki/okawix-doc.properties
 
-TAGS:
-  ignored:
-    - de
-    - en
-    - es
-    - fi
-    - fr
-    - hu
-    - id
-    - ja
-    - nl
-    - pl
-    - ru
-    - sk
-
 ---
 BASIC:
   id: out-okawix-dtd
@@ -73,6 +58,21 @@ BASIC:
 FILES:
   sourcePattern: %GROUPROOT%/okawix/locale/%CODE%/interfacewiki/okawix.properties
   targetPattern: okawix/%CODE%/interfacewiki/okawix.properties
+
+TAGS:
+  ignored:
+    - de
+    - en
+    - es
+    - fi
+    - fr
+    - hu
+    - id
+    - ja
+    - nl
+    - pl
+    - ru
+    - sk
 
 ---
 BASIC:
