@@ -1316,6 +1316,9 @@ ignored = sf_formedit_accesskey_saveandcontinueediting
 Semantic Forms Inputs
 optional = semanticformsinputs-dateformatlong, semanticformsinputs-dateformatshort, semanticformsinputs-firstdayofweek
 
+Semantic Glossary
+aliasfile = SemanticGlossary/SemanticGlossary.alias.php
+
 Semantic Internal Objects
 magicfile = SemanticInternalObjects/SemanticInternalObjects.i18n.magic.php
 
