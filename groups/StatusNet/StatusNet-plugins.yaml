@@ -100,6 +100,20 @@ MANGLER:
   prefix: anonymousfave-
 ---
 BASIC:
+  id: out-statusnet-plugin-apilogger
+  label: StatusNet - ApiLogger
+  display: out/statusnet/plugin/apilogger
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/1.0.x/plugins/ApiLogger/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/ApiLogger/locale/%CODE%/LC_MESSAGES/ApiLogger.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/ApiLogger/locale/ApiLogger.pot
+  targetPattern: statusnet/plugins/ApiLogger/locale/%CODE%/LC_MESSAGES/ApiLogger.po
+
+MANGLER:
+  prefix: apilogger-
+---
+BASIC:
   id: out-statusnet-plugin-autosandbox
   label: StatusNet - AutoSandbox
   display: out/statusnet/plugin/autosandbox
@@ -1078,6 +1092,20 @@ FILES:
 
 MANGLER:
   prefix: sqlprofile-
+---
+BASIC:
+  id: out-statusnet-plugin-sqlstats
+  label: StatusNet - SQLStats
+  display: out/statusnet/plugin/sqlstats
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/1.0.x/plugins/SQLStats/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/SQLStats/locale/%CODE%/LC_MESSAGES/SQLStats.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/SQLStats/locale/SQLStats.pot
+  targetPattern: statusnet/plugins/SQLStats/locale/%CODE%/LC_MESSAGES/SQLStats.po
+
+MANGLER:
+  prefix: sqlstats-
 ---
 BASIC:
   id: out-statusnet-plugin-sample
