@@ -858,6 +858,7 @@ $messages['bug'] = array(
  */
 $messages['ca'] = array(
 	'pagetranslation' => "Traducció d'una pàgina",
+	'right-pagetranslation' => 'Marcar versions de pàgines per a traduir',
 	'tpt-section' => 'Unitat de traducció $1',
 	'tpt-section-new' => 'Nova unitat de traducció. Nom: $1',
 	'tpt-diff-old' => 'Text anterior',
@@ -5487,12 +5488,11 @@ Phần văn bản: <pre>$1</pre>',
 	'pt-movepage-action-perform' => 'Di chuyển',
 	'pt-movepage-intro' => 'Trang đặc biệt này cho phép bạn di chuyển các trang được đánh dấu là cần dịch.
 Tác vụ này sẽ không được thực hiện ngay vì cần di chuyển nhiều trang một lúc.
-Các trang sẽ được đưa vào hàng đợi việc để được di chuyển.
 Trong khi các trang đang được di chuyển, không thể tương tác các trang đó.
-Những vụ thất bại sẽ được ghi vào nhật trình dịch trang; các trang được ảnh hưởng sẽ cần được sửa đổi bằng tay.',
+Những vụ thất bại sẽ được ghi vào [[Special:Log/pagetranslation|nhật trình dịch trang]]; các trang được ảnh hưởng sẽ cần được sửa đổi bằng tay.',
 	'pt-movepage-logreason' => 'Một phần của trang dịch được $1.',
 	'pt-movepage-started' => 'Trang gốc đã được di chuyển.
-Xin hãy kiểm tra những lỗi hay thông điệp kết quả thành công trong nhật trình dịch trang.',
+Xin hãy kiểm tra những lỗi hay thông điệp kết quả thành công trong [[Special:Log/pagetranslation|nhật trình dịch trang]].',
 	'pt-locked-page' => 'Trang này bị khóa vì trang dịch được hiện đang được di chuyển.',
 );
 
