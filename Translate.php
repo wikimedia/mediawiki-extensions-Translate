@@ -467,8 +467,8 @@ $wgTranslatePHPlotFont = '/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf';
  * You should be able to do this with:
  *   for module in 'YAML::Syck' 'PHP::Serialization' 'File::Slurp'; do cpanp -i $module; done
  *
- * For the shell to work, you also need an en.UTL-8 locale installed on your system.
- * add a line "en.UTL-8" to your /etc/locale.gen or uncomment an existing one and run locale-gen
+ * For the shell to work, you also need an en.UTF-8 locale installed on your system.
+ * add a line "en.UTF-8" to your /etc/locale.gen or uncomment an existing one and run locale-gen
  * if you do not have it already.
  *
  * For syck-pecl you need libsyck and pecl install syck-beta
