@@ -460,62 +460,67 @@ aliasfile = FlagPage/FlagPage.alias.php
 
 Flagged Revisions - Flagged Revs
 id = ext-flaggedrevs-flaggedrevs
-file = FlaggedRevs/language/FlaggedRevs.i18n.php
+file = FlaggedRevs/presentation/language/FlaggedRevs.i18n.php
 descmsg = flaggedrevs-desc
-aliasfile = FlaggedRevs/language/FlaggedRevs.alias.php
+aliasfile = FlaggedRevs/presentation/language/FlaggedRevs.alias.php
 optional = revreview-toggle-show, revreview-toggle-hide, revreview-ak-review, accesskey-ca-current, accesskey-ca-stable
 ignored = flaggedrevs-stable-categories
 
 Flagged Revisions - Configured Pages
 id = ext-flaggedrevs-configuredpages
-file = FlaggedRevs/language/ConfiguredPages.i18n.php
+file = FlaggedRevs/presentation/language/ConfiguredPages.i18n.php
 descmsg = flaggedrevs-desc
 
 Flagged Revisions - Pending Changes
 id = ext-flaggedrevs-pendingchanges
-file = FlaggedRevs/language/PendingChanges.i18n.php
+file = FlaggedRevs/presentation/language/PendingChanges.i18n.php
 descmsg = flaggedrevs-desc
 
 Flagged Revisions - Problem Changes
 id = ext-flaggedrevs-problemchanges
-file = FlaggedRevs/language/ProblemChanges.i18n.php
+file = FlaggedRevs/presentation/language/ProblemChanges.i18n.php
 descmsg = flaggedrevs-desc
 
 Flagged Revisions - Quality Oversight
 id = ext-flaggedrevs-qualityoversight
-file = FlaggedRevs/language/QualityOversight.i18n.php
+file = FlaggedRevs/presentation/language/QualityOversight.i18n.php
+descmsg = flaggedrevs-desc
+
+Flagged Revisions - Revision Review
+id = ext-flaggedrevs-revisionreview
+file = FlaggedRevs/presentation/language/RevisionReview.i18n.php
 descmsg = flaggedrevs-desc
 
 Flagged Revisions - Reviewed Pages
 id = ext-flaggedrevs-reviewedpages
-file = FlaggedRevs/language/ReviewedPages.i18n.php
+file = FlaggedRevs/presentation/language/ReviewedPages.i18n.php
 descmsg = flaggedrevs-desc
 optional = reviewedpages-lev-0, reviewedpages-lev-1, reviewedpages-lev-2
 
 Flagged Revisions - Reviewed Versions
 id = ext-flaggedrevs-reviewedversions
-file = FlaggedRevs/language/ReviewedVersions.i18n.php
+file = FlaggedRevs/presentation/language/ReviewedVersions.i18n.php
 descmsg = flaggedrevs-desc
 
 Flagged Revisions - Stabilization
 id = ext-flaggedrevs-stabilization
-file = FlaggedRevs/language/Stabilization.i18n.php
+file = FlaggedRevs/presentation/language/Stabilization.i18n.php
 descmsg = flaggedrevs-desc
 ignored = stabilize_protect_quota
 
 Flagged Revisions - Stable Pages
 id = ext-flaggedrevs-stablepages
-file = FlaggedRevs/language/StablePages.i18n.php
+file = FlaggedRevs/presentation/language/StablePages.i18n.php
 descmsg = flaggedrevs-desc
 
 Flagged Revisions - Unreviewed Pages
 id = ext-flaggedrevs-unreviewedpages
-file = FlaggedRevs/language/UnreviewedPages.i18n.php
+file = FlaggedRevs/presentation/language/UnreviewedPages.i18n.php
 descmsg = flaggedrevs-desc
 
 Flagged Revisions - Validation Statistics
 id = ext-flaggedrevs-validationstatistics
-file = FlaggedRevs/language/ValidationStatistics.i18n.php
+file = FlaggedRevs/presentation/language/ValidationStatistics.i18n.php
 descmsg = flaggedrevs-desc
 
 Flv Handler
