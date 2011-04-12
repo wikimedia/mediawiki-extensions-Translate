@@ -486,11 +486,6 @@ id = ext-flaggedrevs-qualityoversight
 file = FlaggedRevs/presentation/language/QualityOversight.i18n.php
 descmsg = flaggedrevs-desc
 
-Flagged Revisions - Revision Review
-id = ext-flaggedrevs-revisionreview
-file = FlaggedRevs/presentation/language/RevisionReview.i18n.php
-descmsg = flaggedrevs-desc
-
 Flagged Revisions - Reviewed Pages
 id = ext-flaggedrevs-reviewedpages
 file = FlaggedRevs/presentation/language/ReviewedPages.i18n.php
@@ -500,6 +495,11 @@ optional = reviewedpages-lev-0, reviewedpages-lev-1, reviewedpages-lev-2
 Flagged Revisions - Reviewed Versions
 id = ext-flaggedrevs-reviewedversions
 file = FlaggedRevs/presentation/language/ReviewedVersions.i18n.php
+descmsg = flaggedrevs-desc
+
+Flagged Revisions - Revision Review
+id = ext-flaggedrevs-revisionreview
+file = FlaggedRevs/presentation/language/RevisionReview.i18n.php
 descmsg = flaggedrevs-desc
 
 Flagged Revisions - Stabilization

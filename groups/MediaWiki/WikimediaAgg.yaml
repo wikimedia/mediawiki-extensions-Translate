@@ -45,6 +45,7 @@ GROUPS:
   - ext-flaggedrevs-qualityoversight
   - ext-flaggedrevs-reviewedpages
   - ext-flaggedrevs-reviewedversions
+  - ext-flaggedrevs-revisionreview
   - ext-flaggedrevs-stabilization
   - ext-flaggedrevs-stablepages
   - ext-flaggedrevs-unreviewedpages
