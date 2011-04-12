@@ -562,6 +562,92 @@ Deixeu-me procedir.',
 $messages['cs'] = array(
 	'firststeps' => 'První kroky',
 	'firststeps-desc' => '[[Special:FirstSteps|Speciální stránka]] pomáhající uživatelům začít pracovat na wiki s rozšířením Translate',
+	'translate-fs-pagetitle-done' => ' – hotovo!',
+	'translate-fs-pagetitle' => 'Průvodce začátkem – $1',
+	'translate-fs-signup-title' => 'Registrace',
+	'translate-fs-settings-title' => 'Úprava nastavení',
+	'translate-fs-userpage-title' => 'Založení uživatelské stránky',
+	'translate-fs-permissions-title' => 'Žádost o překladatelská práva',
+	'translate-fs-target-title' => 'Začněte překládat!',
+	'translate-fs-email-title' => 'Ověření e-mailové adresy',
+	'translate-fs-intro' => "Vítejte v průvodci prvními kroky po {{grammar:7sg|{{SITENAME}}}}.
+Provedeme vás všemi kroky, které jsou třeba, abyste se {{gender:|mohl stát překladatelem|mohla stát překladatelkou|mohli stát překladateli}}.
+Na konci budete moci překládat ''zprávy uživatelského rozhraní'' všech projektů podporovaných na {{grammar:6sg|{{SITENAME}}}}.",
+	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount.png|frame]]
+
+Nejprve se budete muset zaregistrovat.
+
+Autorství překladu je připisováno pod vaším uživatelským jménem.
+Obrázek vpravo ukazuje, jak vyplnit všechny položky.
+
+Pokud jste se již zaregistrovali, stačí se $1přihlásit$2.
+Po registraci se vraťte na tuto stránku.
+
+$3Zaregistrovat se$4',
+	'translate-fs-settings-text' => 'Teď byste měli jít do svého nastavení a přinejmenším si přepnout jazyk rozhraní na jazyk, do kterého se chystáte překládat.
+
+Váš jazyk rozhraní se používá jako implicitní cílový jazyk.
+Snadno se zapomene na jeho změnu na ten správný, proto důrazně doporučujeme nastavit si ho teď.
+
+Dokud tam budete, můžete si také nastavit, aby vám software ukazoval překlady v dalších jazycích, které ovládáte.
+Toto nastavení najdete na záložce „{{int:prefs-editing}}“.
+Klidně se rozhlédněte i po dalších možnostech.
+
+Teď jděte do [[Special:Preferences|svého uživatelského nastavení]] a pak se sem vraťte.',
+	'translate-fs-settings-skip' => 'Hotovo.
+Nechte mě pokračovat.',
+	'translate-fs-userpage-text' => 'Teď je potřeba, abyste si {{gender:|založil|založila|založili}} uživatelskou stránku.
+
+Napište tam něco o sobě; kdo jste a co děláte.
+To pomůže komunitě {{grammar:2sg|{{SITENAME}}}} spolupracovat.
+Na {{grammar:6sg|{{SITENAME}}}} lidé z celého světa pracují na mnoha jazycích a projektech.
+
+V předvyplněném poli nahoře hned na prvním řádku vidíte <nowiki>{{#babel:en-2}}</nowiki>.
+Doplňte tam své jazykové znalosti.
+Číslo po kódu jazyka popisuje, jak dobře jazyk znáte.
+Možnosti jsou:
+* 1 – trochu,
+* 2 – základní znalosti,
+* 3 – dobré znalosti,
+* 4 – téměř úroveň rodilého mluvčího,
+* 5 – pokud jazyk užíváte profesionálně, například jste profesionální překladatel.
+
+Pokud jste rodilým mluvčím nějakého jazyka, úroveň vynechte a napište jen kód.
+Příklad: Pokud jste rodilým mluvčím češtiny, umíte dobře anglicky a trochu německy, napište:
+<code><nowiki>{{#babel:cs|en-3|de-1}}</nowiki></code>
+
+Pokud neznáte kód nějakého jazyka, je teď nejlepší chvíle si ho najít.
+Můžete použít seznam níže.',
+	'translate-fs-userpage-submit' => 'Založit mou uživatelskou stránku',
+	'translate-fs-userpage-done' => 'Výtečně! Teď máte svou uživatelskou stránku.',
+	'translate-fs-permissions-text' => "Nyní si musíte požádat, abyste {{gender:|byl přidán|byla přidána|byli přidáni}} do uživatelské skupiny ''překladatelé''.
+
+Dokud neopravíme program, je potřeba jít na [[Project:Translator]] a následovat instrukce.
+Pak se vraťte na tuto stránku.
+
+Poté, co vložíte svou žádost, některý z dobrovolníků žádost zkontroluje a schválí ji, co nejdříve to bude možné.
+Mějte prosím trpělivost.
+
+<del>Zkontrolujte, že je následující žádost správně vyplněna, a klikněte na tlačítko.</del>",
+	'translate-fs-target-text' => "Gratulujeme!
+Teď můžete začít překládat.
+
+Nebojte se, pokud vám to tu připadá nové a matoucí.
+Na stránce [[Project list]] najdete přehled projektů, do kterých můžete přispívat překlady.
+Většina projektů obsahuje stručný popis a odkaz ''Translate this project'', který vás dovede na stránku s přehledem všech nepřeložených zpráv.
+Také je k dispozici seznam všech skupin zpráv spolu s [[Special:LanguageStats|aktuálním stavem překladu do daného jazyka]].
+
+Pokud máte potřebu rozumět věcem lépe, ještě než začnete překládat, můžete si přečíst [[FAQ|často kladené otázky]].
+Dokumentace může být bohužel někdy zastaralá.
+Pokud najdete něco, co si myslíte, že byste {{gender:|měl být schopen|měla být schopna|měli být schopni}} dělat, ale nejde to, neváhejte se zeptat na [[Support|stránce podpory]].
+
+Také můžete kontaktovat spolupřekladatele do stejného jazyka pomocí [[Portal_talk:$1|diskusní stránky]] [[Portal:$1|vašeho jazykového portálu]].
+Pokud jste to dosud {{gender:|neučinil|neučinila|neučinili}}, [[Special:Preferences|nastavte svůj jazyk rozhraní na jazyk, do kterého chcete překládat]], aby vám tato wiki byla schopna ukazovat nejrelevantnější odkazy.",
+	'translate-fs-email-text' => 'Prosíme, uveďte v [[Special:Preferences|nastavení]] svou e-mailovou adresu a potvrďte ji pomocí zprávy, která vám byla poslána.
+
+To umožní ostatním, aby vás kontaktovali pomocí e-mailu.
+Také budete maximálně jednou měsíčně dostávat novinky.
+Pokud novinky nechcete dostávat, můžete se z odběru odhlásit na záložce „{{int:prefs-personal}}“ v [[Special:Preferences|nastavení]].',
 );
 
 /** Danish (Dansk)
