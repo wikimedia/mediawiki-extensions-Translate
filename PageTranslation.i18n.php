@@ -725,13 +725,12 @@ Testenn ar rannbennad : <pre>$1</pre>",
 	'pt-movepage-action-perform' => 'Adenvel',
 	'pt-movepage-action-other' => 'Kemmañ ar moned',
 	'pt-movepage-intro' => "Gant ar bajenn dibar-mañ e c'hallit adenvel ar pajennoù merket da vezañ troet.
-Ne zeuio ket an wir diouzhtu an adenvel rak ret e vo dilec'hiañ kalz a bajennoù.
-Implijet e vo al lostad gortoz evit adenvel ar pajennoù.
-N'eus ket tu da etreober gant ar pajennoù e-keit hag emeur ouzh o adenvel.
-Er marilh treiñ e vo enrollet ar mankoù adenvel; eno e vo deoc'h o reizhañ gant an dorn.",
+Ne zeuio ket da wir diouzhtu an adenvel rak ret e vo dilec'hiañ kalz a bajennoù.
+Amzer dilec'hiañ ar pajennoù ne vo ket posupl c'hoari ganto.
+Er [[Special:Log/pagetranslation|page marilh treiñ]] e vo enrollet ar mankoù adenvel; eno e vo deoc'h o reizhañ gant an dorn.",
 	'pt-movepage-logreason' => 'Tennad eus ar bajenn da dreiñ $1.',
-	'pt-movepage-started' => 'Ar bajenn diazez a zo bet adanvet.
-Mar plij gwiriekait marilh an droidigezhioù evit kempenn fazioù, ma vefe, ha lenn ar gemennadenn echuiñ.',
+	'pt-movepage-started' => 'Adanvet eo bet ar bajenn diazez.
+Mar plij gwiriit [[Special:Log/pagetranslation|pajenn marilh an troidigezhioù]] evit kempenn ar fazioù, mar bez, ha lenn ar gemennadenn glozañ.',
 	'pt-locked-page' => "Prennet eo ar bajenn-mañ dre m' emeur oc'h adenvel ar bajenn da dreiñ.",
 );
 
