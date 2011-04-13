@@ -469,7 +469,7 @@ class TranslateEditAddons {
 		$th = new TranslationHelpers( $title );
 		$th->setEditMode( false );
 		$th->setTranslation( $de->mNewtext );
-		TranslateUtils::injectCSS();
+		TranslationHelpers::addModules( $out );
 
 		$boxes = array();
 		$boxes[] = $th->getDocumentationBox();
