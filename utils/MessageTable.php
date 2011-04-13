@@ -62,42 +62,10 @@ class MessageTable {
 
 	public function includeAssets() {
 		global $wgOut;
-
-		if ( method_exists( $wgOut, 'addModules' ) ) {
-			$wgOut->addModules( array(
-				'jquery.form',
-				'jquery.ui.dialog',
-				'jquery.autoresize',
-				'ext.translate.quickedit',
-			) );
-		} else {
-
-			// Our class
-			$wgOut->addScriptFile( TranslateUtils::assetPath( 'js/quickedit.js' ) );
-
-			// Core jQuery
-			$wgOut->includeJQuery();
-			$wgOut->addScriptFile( TranslateUtils::assetPath( 'js/jquery-ui-1.7.2.custom.min.js' ) );
-
-			// Additional jQuery stuff
-			$wgOut->addScriptFile( TranslateUtils::assetPath( 'js/jquery.form.js' ) );
-			$wgOut->addExtensionStyle( TranslateUtils::assetPath( 'js/base/custom-theme/jquery-ui-1.7.2.custom.css' ) );
-		}
-
-		// Helper stuff for JS, TODO: port to RL
-		$trlKeys = array_values( $this->collection->keys() );
-
-		$vars = array(
-			'trlKeys' => $trlKeys,
-			'trlMsgNoNext' => wfMsg( 'translate-js-nonext' ),
-			'trlMsgSaveFailed' => wfMsg( 'translate-js-save-failed' ),
-		);
-
+		TranslationHelpers::addModules( $wgOut );
+		$vars = array( 'trlKeys' => array_values( $this->collection->keys() ) );
 		$wgOut->addScript( Skin::makeVariablesScript( $vars ) );
-
-		// Might be needed, but ajax doesn't load it
-		$diff = new DifferenceEngine;
-		$diff->showDiffStyle();
+		TranslateUtils::addModules( $wgOut, 'ext.translate.messagetable' );
 	}
 
 	public function header() {

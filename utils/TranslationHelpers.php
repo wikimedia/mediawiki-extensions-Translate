@@ -1159,4 +1159,38 @@ class TranslationHelpers {
 			error_log( "Translation service $service still suspended" );
 		}
 	}
+
+	public static function addModules( OutputPage $out ) {
+		if ( method_exists( $out, 'addModules' ) ) {
+			$out->addModules( array(
+				'jquery.form',
+				'jquery.ui.dialog',
+				'jquery.autoresize',
+				'ext.translate.quickedit',
+			) );
+		} else {
+			// Our class
+			$out->addScriptFile( TranslateUtils::assetPath( 'js/quickedit.js' ) );
+
+			// Core jQuery
+			$out->includeJQuery();
+			$out->addScriptFile( TranslateUtils::assetPath( 'js/jquery-ui-1.7.2.custom.min.js' ) );
+
+			// Additional jQuery stuff
+			$out->addScriptFile( TranslateUtils::assetPath( 'js/jquery.form.js' ) );
+			$out->addExtensionStyle( TranslateUtils::assetPath( 'js/base/custom-theme/jquery-ui-1.7.2.custom.css' ) );
+		}
+
+		$vars = array(
+			'trlMsgNoNext' => wfMsg( 'translate-js-nonext' ),
+			'trlMsgSaveFailed' => wfMsg( 'translate-js-save-failed' ),
+		);
+
+		$out->addScript( Skin::makeVariablesScript( $vars ) );
+
+		// Might be needed, but ajax doesn't load it
+		// Globals :(
+		$diff = new DifferenceEngine;
+		$diff->showDiffStyle();
+	}
 }

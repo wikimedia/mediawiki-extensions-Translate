@@ -384,6 +384,24 @@ class TranslateUtils {
 		return "$wgExtensionAssetsPath/Translate/$path";
 	}
 
+	public static function addModules( $out, $modules ) {
+		if ( method_exists( $out, 'addModules' ) ) {
+			$out->addModules( $modules );
+		} else {
+			global $wgResourceModules;
+			foreach ( (array) $modules as $module ) {
+				if ( isset( $wgResourceModules[$module]['styles'] ) ) {
+					$file = $wgResourceModules[$module]['styles'];
+					$out->addExtensionStyle( TranslateUtils::assetPath( $file ) );
+				}
+				if ( isset( $wgResourceModules[$module]['scripts'] ) ) {
+					$file = $wgResourceModules[$module]['scripts'];
+					$out->addScriptFile( TranslateUtils::assetPath( $file ) );
+				}
+			}
+		}
+	}
+
 	/**
 	 * Gets the path for cache files
 	 * @param $filename \string

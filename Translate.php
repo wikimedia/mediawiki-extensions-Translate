@@ -116,31 +116,38 @@ $wgAvailableRights[] = 'translate';
 $wgAvailableRights[] = 'translate-import';
 $wgAvailableRights[] = 'translate-manage';
 
-// Client-side resource modules
-$wgResourceModules['translate-css'] = array(
-	'styles' => 'Translate.css',
+$resourcePaths = array(
 	'localBasePath' => dirname( __FILE__ ),
 	'remoteExtPath' => 'Translate'
 );
-$wgResourceModules['ext.translate.langstats'] = array(
-	'scripts' => 'js/translate.langstats.js',
-	'styles' => 'js/translate.langstats.css',
+
+// Client-side resource modules
+$wgResourceModules['translate-css'] = array(
+	'styles' => 'Translate.css',
+) + $resourcePaths;
+
+$wgResourceModules['ext.translate.special.languagestats'] = array(
+	'scripts' => 'js/ext.translate.special.languagestats.js',
+	'styles' => 'js/ext.translate.special.languagestats.css',
 	'messages' => array( 'translate-langstats-expandall', 'translate-langstats-collapseall', 'translate-langstats-expand', 'translate-langstats-collapse' ),
-	'localBasePath' => dirname( __FILE__ ),
-	'remoteExtPath' => 'Translate',
-);
+) + $resourcePaths;
 
 $wgResourceModules['ext.translate.quickedit'] = array(
 	'scripts' => 'js/quickedit.js',
-	'localBasePath' => dirname( __FILE__ ),
-	'remoteExtPath' => 'Translate',
-);
+	'styles' => 'js/ext.translate.quickedit.css',
+) + $resourcePaths;
+
+$wgResourceModules['ext.translate.messagetable'] = array(
+	'styles' => 'js/ext.translate.messagetable.css',
+) + $resourcePaths;
+
+$wgResourceModules['ext.translate.special.translate'] = array(
+	'styles' => 'js/ext.translate.special.translate.css',
+) + $resourcePaths;
 
 $wgResourceModules['jquery.autoresize'] = array(
 	'scripts' => 'js/jquery.autoresize.js',
-	'localBasePath' => dirname( __FILE__ ),
-	'remoteExtPath' => 'Translate',
-);
+) + $resourcePaths;
 
 /** @endcond */
 

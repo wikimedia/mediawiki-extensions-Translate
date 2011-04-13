@@ -34,10 +34,8 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$this->setHeaders();
 		$this->outputHeader();
 
-		if ( class_exists( 'ResourceLoader' ) ) {
-			$wgOut->addModules( 'ext.translate.langstats' );
-		}
-		$wgOut->addExtensionStyle( TranslateUtils::assetPath( 'Translate.css' ) );
+		TranslateUtils::addModules( $wgOut, 'ext.translate.special.languagestats' );
+		TranslateUtils::addModules( $wgOut, 'ext.translate.messagetable' );
 
 		// no UI when including()
 		if ( !$this->including() ) {
