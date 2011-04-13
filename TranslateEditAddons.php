@@ -252,8 +252,7 @@ class TranslateEditAddons {
 			$th->setTranslation( $object->textbox1 );
 		}
 
-		TranslateUtils::injectCSS();
-		$wgOut->includeJQuery();
+		TranslationHelpers::addModules( $wgOut );
 
 		return $th->getBoxes();
 	}
