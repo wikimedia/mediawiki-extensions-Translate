@@ -410,6 +410,8 @@ aliasfile = EditUser/EditUser.alias.php
 
 Email Address Image
 
+Email Capture
+
 Email Page
 aliasfile = EmailPage/EmailPage.alias.php
 descmsg = ea-desc
