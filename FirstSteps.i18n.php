@@ -1283,6 +1283,13 @@ Lèssiéd-mè continuar.',
 	'translate-fs-userpage-done' => 'Bien fêt ! Ora, vos avéd una pâge utilisator.',
 );
 
+/** Friulian (Furlan)
+ * @author Klenje
+ */
+$messages['fur'] = array(
+	'translate-fs-email-title' => 'Conferme la tô direzion email',
+);
+
 /** Galician (Galego)
  * @author Toliño
  */

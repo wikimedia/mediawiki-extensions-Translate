@@ -1933,6 +1933,13 @@ Volyéd controlar lo [[Special:Log/pagetranslation|jornal de les traduccions de 
 	'pt-locked-page' => 'Ceta pâge est vèrrolyê perce que la pâge a traduire est aprés étre renomâ.',
 );
 
+/** Friulian (Furlan)
+ * @author Klenje
+ */
+$messages['fur'] = array(
+	'tpt-languages-legend' => 'Altris lenghis:',
+);
+
 /** Galician (Galego)
  * @author Toliño
  */
