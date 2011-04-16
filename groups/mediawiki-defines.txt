@@ -346,6 +346,8 @@ Description2
 
 Did You Mean
 
+Disable Account
+
 Discussion Threading
 
 Dismissable SiteNotice
