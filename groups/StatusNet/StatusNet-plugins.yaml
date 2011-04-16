@@ -338,6 +338,20 @@ MANGLER:
   prefix: disqus-
 ---
 BASIC:
+  id: out-statusnet-plugin-domainwhitelist
+  label: StatusNet - DomainWhitelist
+  display: out/statusnet/plugin/domainwhitelist
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/1.0.x/plugins/DomainWhitelist/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/DomainWhitelist/locale/%CODE%/LC_MESSAGES/DomainWhitelist.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/DomainWhitelist/locale/DomainWhitelist.pot
+  targetPattern: statusnet/plugins/DomainWhitelist/locale/%CODE%/LC_MESSAGES/DomainWhitelist.po
+
+MANGLER:
+  prefix: domainwhitelist-
+---
+BASIC:
   id: out-statusnet-plugin-echo
   label: StatusNet - Echo
   display: out/statusnet/plugin/echo
