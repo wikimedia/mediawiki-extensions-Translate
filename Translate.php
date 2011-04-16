@@ -139,6 +139,7 @@ $wgResourceModules['ext.translate.quickedit'] = array(
 
 $wgResourceModules['ext.translate.messagetable'] = array(
 	'styles' => 'js/ext.translate.messagetable.css',
+	'position' => 'top',
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.translate'] = array(

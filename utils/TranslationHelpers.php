@@ -748,7 +748,7 @@ class TranslationHelpers {
 
 			$params = array( 'class' => 'mw-translate-edit-item' );
 
-			$contents = $this->adder( $id ) . "\n" . self::legend( $label ) .
+			$contents = self::legend( $label ) . "\n" . $this->adder( $id ) .
 				TranslateUtils::convertWhiteSpaceToHTML( $text ) . self::clear();
 
 			$boxes[] = Html::rawElement( 'div', $params, $contents ) .
