@@ -588,73 +588,6 @@ $messages['niu'] = array(
 	'translate-page-navigation-legend' => 'Navikati',
 );
 
-/** Jamaican Creole English (Jamaican Creole English)
- * @author Yocahuna
- */
-$messages['jam'] = array(
-	'translate' => 'Chransliet',
-	'translate-desc' => '[[Special:Translate|Special page]] fi chransliet MediaWiki ahn biyan',
-	'translate-edit' => 'edit',
-	'translate-talk' => 'taak',
-	'translate-history' => 'ischri',
-	'translate-showsub' => 'Shuo di {{PLURAL:$1|sobgruup|$1 sobgruup}}.',
-	'translate-grouplisting' => 'Dis a di laas a aal chranslietobl gruup.
-Klik di mechiz gruup niem fi vyuu a lis a anchranslietobl mechiz',
-	'translate-task-view' => 'Vyuu aal mechiz frahn',
-	'translate-task-untranslated' => 'Vyuu aal anchranslietobl mechiz frahn',
-	'translate-task-optional' => 'Vyuu apshanal mechiz frahn',
-	'translate-task-suggestions' => 'Vyuu mechiz wid sojeshan frahn chranslietobl memari',
-	'translate-task-untranslatedoptional' => 'Vyuu anchranslietobl apshanal mechiz frahn',
-	'translate-task-problematic' => 'Vyuu mechiz wa ab prablem',
-	'translate-task-review' => 'Rivyuu chienjdem tu',
-	'translate-task-reviewall' => 'Rivyuu aal chranslietid mechiz ina',
-	'translate-task-export' => 'Expuot chranslieshan frahn',
-	'translate-task-export-to-file' => 'Expuot chranslieshan tu fail frahn',
-	'translate-task-export-as-po' => 'Expuot chranslieshan ina Gettext faamat',
-	'translate-task-export-to-xliff' => 'Expuot chranslieshan ina Xliff faamat',
-	'translate-page-no-such-language' => 'Spesifai langwij ehn invalid.',
-	'translate-page-no-such-task' => 'Spesifai taas ehn invalid.',
-	'translate-page-no-such-group' => 'Spesifai gruup ehn invalid.',
-	'translate-page-disabled' => "Chranslieshan tu dis langwij ina dis gruup disiebl.
-Riizn:
-
-''$1''",
-	'translate-page-settings-legend' => 'Setndem',
-	'translate-page-task' => 'Mi waahn fi',
-	'translate-page-group' => 'Gruup',
-	'translate-page-group-tooltip' => 'Di niem a wahn gruup a mechiz.
-Ef di gruup kansis a wahn sobset ar syuupaset a mechiz frahn ada gruup, idisplie ina buol.',
-	'translate-page-language' => 'Langwij',
-	'translate-page-limit' => 'Limit',
-	'translate-page-limit-option' => '$1 {{PLURAL:$1|mechiz|mechiz}} a piej',
-	'translate-submit' => 'Fech',
-	'translate-page-navigation-legend' => 'Navigieshan',
-	'translate-page-showing' => 'Mechiz frahn $1 tu $2 a $3 a shuo.',
-	'translate-page-showing-all' => 'A shuo $1 {{PLURAL:$1|mechiz|mechiz}}.',
-	'translate-page-showing-none' => 'No mechiz fi shuo.',
-	'translate-next' => 'Nex piej',
-	'translate-prev' => 'Priivos piej',
-	'translate-page-description-legend' => 'Infamieshan bout di gruup',
-	'translate-page-edit' => 'edit',
-	'translate-ext-url' => '<hr />Websait: $1',
-	'translate-optional' => '(apshanal)',
-	'translate-ignored' => '(ignuor)',
-	'translate-edit-title' => 'Edit "$1"',
-	'translate-edit-definition' => 'Mechiz definishan',
-	'translate-edit-contribute' => 'kanchribiut',
-	'translate-edit-no-information' => "''Dis mechiz naa no dakiumentieshan.
-Ef yu nuo we ar ou dis mechiz yuuz, yu kiahn elp ada chranslieta bai ad dakiumentieshan tu dis mechiz.''",
-	'translate-edit-information' => 'Infamieshan bout mechiz "$2" ($1)',
-	'translate-edit-in-other-languages' => 'Mechiz "$1" in ada langwij',
-	'translate-edit-committed' => 'Korant chranslieshan ina saafwier',
-	'translate-edit-warnings' => 'Waanin bout inkompliit chranslieshan',
-	'translate-edit-tmsugs' => 'Sojeshan frahn chranslieshan memari',
-	'translate-edit-tmmatch' => '$1% mach',
-	'translate-use-suggestion' => 'Insoert dis sojeshan ina di chranslieshan ieria. Dis riplies aal korant kantent.',
-	'translate-edit-tab-list' => 'Mechiz lis',
-	'translate-magic-pagename' => 'Extendid MediaWiki chranslieshan',
-);
-
 /** Moroccan Spoken Arabic (Maġribi)
  * @author Enzoreg
  */
@@ -662,20 +595,6 @@ $messages['ary'] = array(
 	'translate-manage-modlang-new' => '$1 (jdid)',
 	'translate-manage-import-new' => 'Méṣaj jdid $1',
 	'translate-manage-import-deleted' => 'Méṣaj memḫi $1',
-);
-
-/** Dusun Bundu-liwan (Dusun Bundu-liwan)
- * @author FRANCIS5091
- */
-$messages['dtp'] = array(
-	'translate-edit' => 'idito',
-	'translate-talk' => 'bolotok',
-	'translate-history' => 'susuyan',
-	'translate-page-navigation-legend' => 'Popotunud',
-	'translate-next' => 'Bolikon sumuhut',
-	'translate-page-edit' => 'idito',
-	'translate-magic-cm-current' => 'Timpu diti',
-	'translate-magic-cm-comment' => 'Kanu:',
 );
 
 /** Afrikaans (Afrikaans)
@@ -1821,6 +1740,7 @@ $1",
 
 /** Asturian (Asturianu)
  * @author Esbardu
+ * @author Xuacu
  */
 $messages['ast'] = array(
 	'translate' => 'Traducir',
@@ -1931,7 +1851,7 @@ Los cambeos nun se graben hasta que calques nel botón guardar d'abaxo.",
 	'translate-statsf-count-users' => 'Traductores activos',
 	'translate-statsf-language' => 'Llista de códigos de llingua separtaos por comes:',
 	'translate-statsf-group' => 'Llista de códigos de grupu separtaos por comes:',
-	'translate-statsf-submit' => 'Previsualizar',
+	'translate-statsf-submit' => 'Entever',
 	'translate-tag-category' => 'Páxines traducibles',
 	'translate-tag-page-desc' => 'Traducción de la páxina wiki [[$2|$1]].',
 	'translate-tag-fuzzy-comment' => 'Definición camudada por [[User:$1|$1]] na revisión $2.',
@@ -2630,6 +2550,7 @@ $messages['bg'] = array(
 	'translate-magic-module' => 'Модул:',
 	'translate-magic-submit' => 'Извличане',
 	'translate-magic-cm-export' => 'Изнасяне',
+	'translate-magic-nothing-to-export' => 'Няма нищо за изнасяне.',
 	'translate-magic-cm-to-be' => 'Желано',
 	'translate-magic-cm-current' => 'Текущо',
 	'translate-magic-cm-original' => 'Оригинално',
@@ -2664,11 +2585,14 @@ $messages['bg'] = array(
 	'translationstats' => 'Статистики за преводите',
 	'translate-stats-edits' => 'Редакции',
 	'translate-stats-users' => 'Преводачи',
+	'translate-stats-registrations' => 'Регистрации',
 	'translate-statsf-intro' => 'Формулярът по-долу слуижи за създаване на статистика. Всички възможности имат минимални и максимални стойности.',
 	'translate-statsf-options' => 'Графични настройки',
 	'translate-statsf-width' => 'Ширина в пиксели:',
 	'translate-statsf-height' => 'Височина в пиксели:',
 	'translate-statsf-days' => 'Времеви период в дни:',
+	'translate-statsf-scale-months' => 'Месеци',
+	'translate-statsf-scale-weeks' => 'Седмици',
 	'translate-statsf-scale-days' => 'Дни',
 	'translate-statsf-scale-hours' => 'Часове',
 	'translate-statsf-count-edits' => 'Брой редакции',
@@ -2686,6 +2610,7 @@ $messages['bg'] = array(
 	'translate-translations-project' => 'Проект:',
 	'languagestats' => 'Езикови статистики',
 	'languagestats-summary' => 'Тази страница показва статистиките за преводите на всички групи съобщения за езика.',
+	'languagestats-stats-for' => 'Статистики за преводите на $1 ($2).',
 	'translate-language-code' => 'Езиков код',
 	'translate-language-code-field-name' => 'Езиков код:',
 	'translate-suppress-complete' => 'Скриване на изцяло преведените групи съобщения',
@@ -2694,7 +2619,9 @@ $messages['bg'] = array(
 	'supportedlanguages' => 'Поддържани езици',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Преводач|Преводачи}}: $1',
 	'translate-save' => 'Съхраняване ($1)',
+	'translate-jssti-add' => 'Добавяне към списъка',
 	'translate-manage-action-import' => 'Внасяне',
+	'translate-manage-action-ignore' => 'Пренебрегване',
 	'translate-manage-submit' => 'Изпълняване',
 	'translate-manage-import-done' => 'Всичко е готово!',
 	'translate-manage-subtitle' => 'Управление',
@@ -3725,18 +3652,27 @@ $messages['ch'] = array(
  * @author رزگار
  */
 $messages['ckb'] = array(
-	'translate' => 'وەرگێڕان',
+	'translate' => 'وەرگێڕە',
+	'translate-edit' => 'دەستکاری',
 	'translate-talk' => 'لێدوان',
 	'translate-history' => 'مێژوو',
 	'translate-task-view' => 'گشت پەیامەکان ببینم لە',
+	'translate-task-untranslated' => 'گشت پەیامە وەرنەگێڕدراوەکان ببینم لە',
 	'translate-task-problematic' => 'دیتنی ئەو پەیامانەی کێشەیان هەیە',
-	'translate-page-language' => 'زمانەکان',
+	'translate-page-task' => 'من دەمەوێ',
+	'translate-page-group' => 'گرووپ',
+	'translate-page-language' => 'زمان',
+	'translate-page-limit' => 'سنوور',
+	'translate-page-limit-option' => '$1 {{PLURAL:$1|پەیام|پەیام}} لەھەر پەڕەیکدا',
 	'translate-submit' => '',
+	'translate-page-showing' => 'نیشاندانی پەیامەکانی $1 تا $2 لە کۆی $3.',
+	'translate-page-showing-none' => 'ھیچ پەیامێک بۆ نیشاندان نییە',
 	'translate-next' => 'پەڕەی دواتر',
 	'translate-prev' => 'پەڕەی پێشوو',
 	'translate-magic-cm-export' => 'هەناردن',
 	'translate-magic-nothing-to-export' => 'هیچ شتێک نیە بۆ هەناردن.',
-	'translate-magic-cm-save' => 'پاشەکەوت کردن',
+	'translate-magic-cm-comment' => 'بۆچوون:',
+	'translate-magic-cm-save' => 'پاشەکەوت',
 	'translate-magic-cm-savefailed' => 'پاشەکەوت‌کردن سەرکەوتوو نەبوو',
 	'translate-magic-saved' => 'گۆڕانکاریەکانت بە سەرکەوتووی پاشەکەوت کرا.',
 	'translationchanges-export' => 'هەناردن',
@@ -4948,6 +4884,20 @@ Drobnostki: $1',
 	'translate-gs-total' => 'Dogromady',
 	'translate-gs-avgscore' => 'Pśerězne pogódnośenje',
 	'translate-documentation-language' => 'Pokazki za pśełožowanje',
+);
+
+/** Dusun Bundu-liwan (Dusun Bundu-liwan)
+ * @author FRANCIS5091
+ */
+$messages['dtp'] = array(
+	'translate-edit' => 'idito',
+	'translate-talk' => 'bolotok',
+	'translate-history' => 'susuyan',
+	'translate-page-navigation-legend' => 'Popotunud',
+	'translate-next' => 'Bolikon sumuhut',
+	'translate-page-edit' => 'idito',
+	'translate-magic-cm-current' => 'Timpu diti',
+	'translate-magic-cm-comment' => 'Kanu:',
 );
 
 /** Ewe (Eʋegbe)
@@ -10441,6 +10391,73 @@ $1',
 	'translate-gs-count' => '件数',
 	'translate-gs-total' => '合計',
 	'translate-gs-avgscore' => '平均点',
+);
+
+/** Jamaican Creole English (Jamaican Creole English)
+ * @author Yocahuna
+ */
+$messages['jam'] = array(
+	'translate' => 'Chransliet',
+	'translate-desc' => '[[Special:Translate|Special page]] fi chransliet MediaWiki ahn biyan',
+	'translate-edit' => 'edit',
+	'translate-talk' => 'taak',
+	'translate-history' => 'ischri',
+	'translate-showsub' => 'Shuo di {{PLURAL:$1|sobgruup|$1 sobgruup}}.',
+	'translate-grouplisting' => 'Dis a di laas a aal chranslietobl gruup.
+Klik di mechiz gruup niem fi vyuu a lis a anchranslietobl mechiz',
+	'translate-task-view' => 'Vyuu aal mechiz frahn',
+	'translate-task-untranslated' => 'Vyuu aal anchranslietobl mechiz frahn',
+	'translate-task-optional' => 'Vyuu apshanal mechiz frahn',
+	'translate-task-suggestions' => 'Vyuu mechiz wid sojeshan frahn chranslietobl memari',
+	'translate-task-untranslatedoptional' => 'Vyuu anchranslietobl apshanal mechiz frahn',
+	'translate-task-problematic' => 'Vyuu mechiz wa ab prablem',
+	'translate-task-review' => 'Rivyuu chienjdem tu',
+	'translate-task-reviewall' => 'Rivyuu aal chranslietid mechiz ina',
+	'translate-task-export' => 'Expuot chranslieshan frahn',
+	'translate-task-export-to-file' => 'Expuot chranslieshan tu fail frahn',
+	'translate-task-export-as-po' => 'Expuot chranslieshan ina Gettext faamat',
+	'translate-task-export-to-xliff' => 'Expuot chranslieshan ina Xliff faamat',
+	'translate-page-no-such-language' => 'Spesifai langwij ehn invalid.',
+	'translate-page-no-such-task' => 'Spesifai taas ehn invalid.',
+	'translate-page-no-such-group' => 'Spesifai gruup ehn invalid.',
+	'translate-page-disabled' => "Chranslieshan tu dis langwij ina dis gruup disiebl.
+Riizn:
+
+''$1''",
+	'translate-page-settings-legend' => 'Setndem',
+	'translate-page-task' => 'Mi waahn fi',
+	'translate-page-group' => 'Gruup',
+	'translate-page-group-tooltip' => 'Di niem a wahn gruup a mechiz.
+Ef di gruup kansis a wahn sobset ar syuupaset a mechiz frahn ada gruup, idisplie ina buol.',
+	'translate-page-language' => 'Langwij',
+	'translate-page-limit' => 'Limit',
+	'translate-page-limit-option' => '$1 {{PLURAL:$1|mechiz|mechiz}} a piej',
+	'translate-submit' => 'Fech',
+	'translate-page-navigation-legend' => 'Navigieshan',
+	'translate-page-showing' => 'Mechiz frahn $1 tu $2 a $3 a shuo.',
+	'translate-page-showing-all' => 'A shuo $1 {{PLURAL:$1|mechiz|mechiz}}.',
+	'translate-page-showing-none' => 'No mechiz fi shuo.',
+	'translate-next' => 'Nex piej',
+	'translate-prev' => 'Priivos piej',
+	'translate-page-description-legend' => 'Infamieshan bout di gruup',
+	'translate-page-edit' => 'edit',
+	'translate-ext-url' => '<hr />Websait: $1',
+	'translate-optional' => '(apshanal)',
+	'translate-ignored' => '(ignuor)',
+	'translate-edit-title' => 'Edit "$1"',
+	'translate-edit-definition' => 'Mechiz definishan',
+	'translate-edit-contribute' => 'kanchribiut',
+	'translate-edit-no-information' => "''Dis mechiz naa no dakiumentieshan.
+Ef yu nuo we ar ou dis mechiz yuuz, yu kiahn elp ada chranslieta bai ad dakiumentieshan tu dis mechiz.''",
+	'translate-edit-information' => 'Infamieshan bout mechiz "$2" ($1)',
+	'translate-edit-in-other-languages' => 'Mechiz "$1" in ada langwij',
+	'translate-edit-committed' => 'Korant chranslieshan ina saafwier',
+	'translate-edit-warnings' => 'Waanin bout inkompliit chranslieshan',
+	'translate-edit-tmsugs' => 'Sojeshan frahn chranslieshan memari',
+	'translate-edit-tmmatch' => '$1% mach',
+	'translate-use-suggestion' => 'Insoert dis sojeshan ina di chranslieshan ieria. Dis riplies aal korant kantent.',
+	'translate-edit-tab-list' => 'Mechiz lis',
+	'translate-magic-pagename' => 'Extendid MediaWiki chranslieshan',
 );
 
 /** Javanese (Basa Jawa)
