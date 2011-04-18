@@ -214,6 +214,7 @@ Special User Data
 Spell Checker
 
 Sponsorship Dashboard
+optional = sponsorship-dashboard-empty-description
 
 Staff Log
 
