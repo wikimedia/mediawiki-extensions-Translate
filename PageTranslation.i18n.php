@@ -186,45 +186,6 @@ $3 is an URL.',
 	'pt-movepage-reason' => '{{Identical|Reason}}',
 );
 
-/** Jamaican Creole English (Jamaican Creole English)
- * @author Yocahuna
- */
-$messages['jam'] = array(
-	'pagetranslation' => 'Piej chranslieshan',
-	'right-pagetranslation' => 'Maak voerjan a piejdem fi chranslieshan',
-	'tpt-desc' => 'Extenshan fi chransliet kantent piejdem',
-	'tpt-section' => 'Chranslieshan yuunit $1',
-	'tpt-section-new' => 'New chranslieshan yuunit.
-Niem: $1',
-	'tpt-section-deleted' => 'Chranslieshan yuunit $1',
-	'tpt-template' => 'Piej templit',
-	'tpt-templatediff' => 'Di piej templit chienj',
-	'tpt-diff-old' => 'Priivos tex',
-	'tpt-diff-new' => 'Nyuu tex',
-	'tpt-submit' => 'Maak dis voerjan fi chranslieshan',
-	'tpt-sections-oldnew' => 'Nyuu ahn egzisin chranslieshan yuunit',
-	'tpt-sections-deleted' => 'Chranslieshan yuunit wa diliit',
-	'tpt-sections-template' => 'Chranslieshan piej templit',
-	'tpt-action-nofuzzy' => 'No invalidiet no chranslieshan',
-	'tpt-badtitle' => 'Piej niem yu gi ($1) a no valid taikl',
-	'tpt-nosuchpage' => 'No piej ($1) no egzis',
-	'tpt-oldrevision' => '$2 a no di lietis voerjan a di piej [[$1]].
-Onggl lietis voerjan kiahn maak fi chranslieshan.',
-	'tpt-notsuitable' => 'Piej $1 no suutobl fi chranslieshan.
-Mek shuor se iab <nowiki><translate></nowiki> tag ahn gat valid sintax.',
-	'tpt-saveok' => 'Di piej [[$1]] maakop fi chranslieshan wid $2 {{PLURAL:$2|chranslieshan yuunit|chranslieshan yuunit}}.
-Di piej kiahn nou get <span class="plainlinks">[$3 chransliet]</span>.',
-	'tpt-badsect' => '"$1" a no valid niem fi chranslieshan yuunit $2.',
-	'tpt-showpage-intro' => 'Nyuu, egzisin ahn diliitid sekshan lis biluo.
-Bifuo yu maak dis voerjan fi chranslieshan, chek se di chienj to sekshandem minimaiz fi avaid anesiseri wok fi chranslietadem.',
-	'tpt-mark-summary' => 'Dis voerjan maak fi chranslieshan',
-	'tpt-edit-failed' => 'Kudn opdiet di piej: $1',
-	'tpt-already-marked' => 'Di lietis voerjan a dis piej don maak fi chranslieshan aredi.',
-	'tpt-unmarked' => 'Piej $1 no langa maak fi chranslieshan.',
-	'tpt-list-nopages' => 'No piej no maak fi chranslieshan nar redi fi maak fi chranslieshan.',
-	'tpt-old-pages' => 'Som voerjan a {{PLURAL:$1|dis piej|demaya piej}} don maak fi chranslieshan.',
-);
-
 /** Afrikaans (Afrikaans)
  * @author Naudefj
  */
@@ -3042,6 +3003,45 @@ $messages['ja'] = array(
 	'pt-movepage-started' => '基底ページが移動されました。
 ページの翻訳ログで、エラーや完了メッセージを確認してください。',
 	'pt-locked-page' => '現在、翻訳ページが移動されているため、このページはロックされています',
+);
+
+/** Jamaican Creole English (Jamaican Creole English)
+ * @author Yocahuna
+ */
+$messages['jam'] = array(
+	'pagetranslation' => 'Piej chranslieshan',
+	'right-pagetranslation' => 'Maak voerjan a piejdem fi chranslieshan',
+	'tpt-desc' => 'Extenshan fi chransliet kantent piejdem',
+	'tpt-section' => 'Chranslieshan yuunit $1',
+	'tpt-section-new' => 'New chranslieshan yuunit.
+Niem: $1',
+	'tpt-section-deleted' => 'Chranslieshan yuunit $1',
+	'tpt-template' => 'Piej templit',
+	'tpt-templatediff' => 'Di piej templit chienj',
+	'tpt-diff-old' => 'Priivos tex',
+	'tpt-diff-new' => 'Nyuu tex',
+	'tpt-submit' => 'Maak dis voerjan fi chranslieshan',
+	'tpt-sections-oldnew' => 'Nyuu ahn egzisin chranslieshan yuunit',
+	'tpt-sections-deleted' => 'Chranslieshan yuunit wa diliit',
+	'tpt-sections-template' => 'Chranslieshan piej templit',
+	'tpt-action-nofuzzy' => 'No invalidiet no chranslieshan',
+	'tpt-badtitle' => 'Piej niem yu gi ($1) a no valid taikl',
+	'tpt-nosuchpage' => 'No piej ($1) no egzis',
+	'tpt-oldrevision' => '$2 a no di lietis voerjan a di piej [[$1]].
+Onggl lietis voerjan kiahn maak fi chranslieshan.',
+	'tpt-notsuitable' => 'Piej $1 no suutobl fi chranslieshan.
+Mek shuor se iab <nowiki><translate></nowiki> tag ahn gat valid sintax.',
+	'tpt-saveok' => 'Di piej [[$1]] maakop fi chranslieshan wid $2 {{PLURAL:$2|chranslieshan yuunit|chranslieshan yuunit}}.
+Di piej kiahn nou get <span class="plainlinks">[$3 chransliet]</span>.',
+	'tpt-badsect' => '"$1" a no valid niem fi chranslieshan yuunit $2.',
+	'tpt-showpage-intro' => 'Nyuu, egzisin ahn diliitid sekshan lis biluo.
+Bifuo yu maak dis voerjan fi chranslieshan, chek se di chienj to sekshandem minimaiz fi avaid anesiseri wok fi chranslietadem.',
+	'tpt-mark-summary' => 'Dis voerjan maak fi chranslieshan',
+	'tpt-edit-failed' => 'Kudn opdiet di piej: $1',
+	'tpt-already-marked' => 'Di lietis voerjan a dis piej don maak fi chranslieshan aredi.',
+	'tpt-unmarked' => 'Piej $1 no langa maak fi chranslieshan.',
+	'tpt-list-nopages' => 'No piej no maak fi chranslieshan nar redi fi maak fi chranslieshan.',
+	'tpt-old-pages' => 'Som voerjan a {{PLURAL:$1|dis piej|demaya piej}} don maak fi chranslieshan.',
 );
 
 /** Javanese (Basa Jawa)
