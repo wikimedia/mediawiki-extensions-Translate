@@ -172,7 +172,7 @@ class TranslationEditPage {
 	public static function jsEdit( Title $title, $group = "" ) {
 		global $wgUser;
 
-		if ( !$wgUser->isAllowed( 'translate' ) ||  !$wgUser->getOption( 'translate-jsedit' ) ) {
+		if ( !$wgUser->getOption( 'translate-jsedit' ) ) {
 			return array();
 		}
 
