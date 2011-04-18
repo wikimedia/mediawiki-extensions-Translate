@@ -305,8 +305,14 @@ class TranslateEditAddons {
 		return in_array( $namespace, $wgTranslateMessageNamespaces, true );
 	}
 
+	/**
+	 * @static
+	 * @param $skin Skin
+	 * @param $tabs
+	 * @return bool
+	 */
 	public static function tabs( $skin, &$tabs ) {
-		if ( !self::isMessageNamespace( $skin->mTitle ) ) {
+		if ( !self::isMessageNamespace( $skin->getTitle() ) ) {
 			return true;
 		}
 
