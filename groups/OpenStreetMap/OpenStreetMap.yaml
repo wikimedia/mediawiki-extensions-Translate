@@ -81,8 +81,8 @@ TAGS:
     - trace.trace_form.help_url
     - trace.trace_form.visibility_help_url
     - user.account.public_editing.enabled_link
-    - user.account.contributor_terms.link
-    - user.new.terms declined_url
+    - user.account.contributor terms.link
+    - user.new.terms declined url
     - user.terms.consider_pd_why_url
     - user.terms.declined
     - layouts.help_url
