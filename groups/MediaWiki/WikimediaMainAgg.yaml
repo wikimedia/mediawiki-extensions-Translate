@@ -30,6 +30,7 @@ GROUPS:
   - ext-ogghandler
   - ext-parserfunctions
   - ext-pdfhandler
+  - ext-poolcounter
   - ext-prefstats
   - ext-quiz
   - ext-renameuser
