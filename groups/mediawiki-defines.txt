@@ -1225,9 +1225,6 @@ descmsg = random-users-avatars-desc
 
 Ratings
 
-Rdf
-optional = rdf, rdf-output-xml, rdf-output-turtle, rdf-output-ntriples
-
 RDFIO
 aliasfile = RDFIO/RDFIO.alias.php
 
