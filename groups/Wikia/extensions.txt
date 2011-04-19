@@ -129,6 +129,7 @@ ignored = accesskey-pt-myhome
 
 Oasis
 optional = oasis-latest-photos-single, oasis-corporatefooter-hub-Entertainment-link, oasis-corporatefooter-hub-Gaming-link, oasis-corporatefooter-hub-Lifestyle-link
+optional = oasis-corporatefooter-hub-Food and Drink-link
 ignored = wiki-navigation, categoryblacklist, photosblacklist
 
 Our 404 Handler
