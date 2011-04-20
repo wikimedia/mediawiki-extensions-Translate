@@ -210,6 +210,7 @@ class PageTranslationHooks {
 
 		$options = $parser->getOptions();
 
+		$sk = $options->getSkin();
 		if ( method_exists( $options, 'getUserLang' ) ) {
 			$userLangCode = $options->getUserLang();
 		} else {
@@ -246,9 +247,9 @@ class PageTranslationHooks {
 			if ( $parser->getTitle()->getText() === $_title->getText() ) {
 				$languages[] = Html::rawElement( 'b', null, "*$name* $percent" );
 			} elseif ( $code === $userLangCode ) {
-				$languages[] = Linker::linkKnown( $_title, Html::rawElement( 'b', null, "$name $percent" ) );
+				$languages[] = $sk->linkKnown( $_title, Html::rawElement( 'b', null, "$name $percent" ) );
 			} else {
-				$languages[] = Linker::linkKnown( $_title, "$name $percent" );
+				$languages[] = $sk->linkKnown( $_title, "$name $percent" );
 			}
 		}
 
