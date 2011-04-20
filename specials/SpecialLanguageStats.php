@@ -89,28 +89,28 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$out .= Html::openElement( 'tr' );
 		$out .= Html::openElement( 'td', array( 'class' => 'mw-label' ) );
 		$out .= Xml::label( wfMsg( 'translate-language-code-field-name' ), 'code' );
-		$out .= Html::closeElement( 'td' );
+		$out .= Xml::closeElement( 'td' );
 		$out .= Html::openElement( 'td', array( 'class' => 'mw-input' ) );
 		$out .= Xml::input( 'code', 30, str_replace( '_', ' ', $code ), array( 'id' => 'code' ) );
-		$out .= Html::closeElement( 'td' );
-		$out .= Html::closeElement( 'tr' );
+		$out .= Xml::closeElement( 'td' );
+		$out .= Xml::closeElement( 'tr' );
 
 		$out .= Html::openElement( 'tr' );
 		$out .= Html::openElement( 'td', array( 'colspan' => 2 ) );
 		$out .= Xml::checkLabel( wfMsg( 'translate-suppress-complete' ), 'suppresscomplete', 'suppresscomplete', $suppressComplete );
-		$out .= Html::closeElement( 'td' );
-		$out .= Html::closeElement( 'tr' );
+		$out .= Xml::closeElement( 'td' );
+		$out .= Xml::closeElement( 'tr' );
 
 		$out .= Html::openElement( 'tr' );
 		$out .= Html::openElement( 'td', array( 'class' => 'mw-input', 'colspan' => 2 ) );
 		$out .= Xml::submitButton( wfMsg( 'allpagessubmit' ) );
-		$out .= Html::closeElement( 'td' );
-		$out .= Html::closeElement( 'tr' );
+		$out .= Xml::closeElement( 'td' );
+		$out .= Xml::closeElement( 'tr' );
 
-		$out .= Html::closeElement( 'table' );
-		$out .= Html::closeElement( 'fieldset' );
-		$out .= Html::closeElement( 'form' );
-		$out .= Html::closeElement( 'div' );
+		$out .= Xml::closeElement( 'table' );
+		$out .= Xml::closeElement( 'fieldset' );
+		$out .= Xml::closeElement( 'form' );
+		$out .= Xml::closeElement( 'div' );
 
 		return $out;
 	}
@@ -187,7 +187,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$out .= "\n\t\t" . Html::element( 'th', array( 'title' => self::newlineToWordSeparator( wfMsg( 'translate-untranslated-tooltip' ) ) ), wfMsg( 'translate-untranslated' ) );
 		$out .= "\n\t\t" . Html::element( 'th', array( 'title' => self::newlineToWordSeparator( wfMsg( 'translate-percentage-complete-tooltip' ) ) ), wfMsg( 'translate-percentage-complete' ) );
 		$out .= "\n\t\t" . Html::element( 'th', array( 'title' => self::newlineToWordSeparator( wfMsg( 'translate-percentage-fuzzy-tooltip' ) ) ), wfMsg( 'translate-percentage-fuzzy' ) );
-		$out .= "\n\t" . Html::closeElement( 'tr' );
+		$out .= "\n\t" . Xml::closeElement( 'tr' );
 
 		return $out;
 	}
@@ -217,7 +217,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 		if ( $out ) {
 			$out = $this->createHeader( $code ) . "\n" . $out;
-			$out .= Html::closeElement( 'table' );
+			$out .= Xml::closeElement( 'table' );
 		} else {
 			$out = wfMsgExt( 'translate-nothing-to-do', 'parse' );
 		}
@@ -313,7 +313,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			$this->getBackgroundColour( $fuzzy, $total, true ),
 			sprintf( '%1.3f', $fuzzy / $total ) );
 
-		$out .= "\n\t" . Html::closeElement( 'tr' ) . "\n";
+		$out .= "\n\t" . Xml::closeElement( 'tr' ) . "\n";
 		return $out;
 	}
 
