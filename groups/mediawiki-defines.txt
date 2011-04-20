@@ -64,6 +64,7 @@ ignored = article-comments-prefilled-comment-text, article-comments-new-comment-
 ignored = article-comments-comment-contents
 
 Article Feedback
+optional = articlefeedback-form-panel-helpimprove-email-placeholder
 ignored = articlefeedback-pitch-survey-body, articlefeedback-pitch-edit-body
 
 Article To Category 2
