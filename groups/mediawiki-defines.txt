@@ -896,9 +896,6 @@ Page Object Model
 Paged Tiff Handler
 descmsg = tiff-desc
 
-Password Reset
-aliasfile = PasswordReset/PasswordReset.alias.php
-
 Parser Functions
 descmsg = pfunc_desc
 magicfile = ParserFunctions/ParserFunctions.i18n.magic.php
