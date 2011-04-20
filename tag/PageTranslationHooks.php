@@ -210,12 +210,14 @@ class PageTranslationHooks {
 
 		$options = $parser->getOptions();
 
-		$sk = $options->getSkin();
+		// Backward compat for MediaWiki 1.17
 		if ( method_exists( $options, 'getUserLang' ) ) {
 			$userLangCode = $options->getUserLang();
+			$sk = $options->getSkin();
 		} else {
 			global $wgLang;
 			$userLangCode = $wgLang->getCode();
+			$sk = false;
 		}
 
 		$languages = array();
@@ -247,9 +249,19 @@ class PageTranslationHooks {
 			if ( $parser->getTitle()->getText() === $_title->getText() ) {
 				$languages[] = Html::rawElement( 'b', null, "*$name* $percent" );
 			} elseif ( $code === $userLangCode ) {
-				$languages[] = $sk->linkKnown( $_title, Html::rawElement( 'b', null, "$name $percent" ) );
+				// Backward compat for MediaWiki 1.17
+				if( $sk ) {
+					$languages[] = $sk->linkKnown( $_title, Html::rawElement( 'b', null, "$name $percent" ) );
+				} else {
+					$languages[] = Linker::linkKnown( $_title, Html::rawElement( 'b', null, "$name $percent" ) );
+				}
 			} else {
-				$languages[] = $sk->linkKnown( $_title, "$name $percent" );
+				// Backward compat for MediaWiki 1.17
+				if( $sk ) {
+					$languages[] = $sk->linkKnown( $_title, "$name $percent" );
+				} else {
+					$languages[] = Linker::linkKnown( $_title, "$name $percent" );
+				}
 			}
 		}
 
