@@ -1,11 +1,21 @@
+Commonshelper 2
+
 General
 optional = colon-separator, dateformat
 
 GetWikiAPI
 ignored = title
 
+Jarry
+
+Krinkle
+
+Monuments API
+
 OrphanTalk2
 optional = label-wiki
+
+Recent Anonymous Activity
 
 SVG Translate
 optional = format-filename-example, format-fullurl-example
