@@ -210,14 +210,13 @@ class PageTranslationHooks {
 
 		$options = $parser->getOptions();
 
-		// Backward compat for MediaWiki 1.17
 		if ( method_exists( $options, 'getUserLang' ) ) {
 			$userLangCode = $options->getUserLang();
-			$sk = $options->getSkin();
-		} else {
+			$sk = false;
+		} else { // Backward compat for MediaWiki 1.17
 			global $wgLang;
 			$userLangCode = $wgLang->getCode();
-			$sk = false;
+			$sk = $options->getSkin();
 		}
 
 		$languages = array();
