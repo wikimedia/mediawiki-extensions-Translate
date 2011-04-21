@@ -380,6 +380,20 @@ MANGLER:
   prefix: emailauthentication-
 ---
 BASIC:
+  id: out-statusnet-plugin-emailregistration
+  label: StatusNet - EmailRegistration
+  display: out/statusnet/plugin/emailregistration
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/1.0.x/plugins/EmailRegistration/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/EmailRegistration/locale/%CODE%/LC_MESSAGES/EmailRegistration.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/EmailRegistration/locale/EmailRegistration.pot
+  targetPattern: statusnet/plugins/EmailRegistration/locale/%CODE%/LC_MESSAGES/EmailRegistration.po
+
+MANGLER:
+  prefix: emailregistration-
+---
+BASIC:
   id: out-statusnet-plugin-emailsummary
   label: StatusNet - EmailSummary
   display: out/statusnet/plugin/emailsummary
