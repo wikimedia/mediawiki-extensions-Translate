@@ -1511,6 +1511,7 @@ $messages['lb'] = array(
 );
 
 /** Lithuanian (Lietuvių)
+ * @author Perkunas
  * @author Tomasdd
  */
 $messages['lt'] = array(
@@ -1519,6 +1520,7 @@ $messages['lt'] = array(
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] yra nemokama klaidų stebėjimo sistema. [[Support]] puslapyje prašome pranešti bet kokius netikslumus ar klaidas.',
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] yra elektroninio pašto klientas, parašytas PHP kodu. [[Support]] prašome pranešti apie bet kokias problemas ar klaidas.',
 	'bw-desc-openlayers' => 'OpenLayers yra atviro kodo dinaminis žemėlapių generatorius. [[Support]] prašome pranešti apie bet kokias problemas ar klaidas.',
+	'bw-desc-osm-site' => '[[Translating:OpenStreetMap|OpenStreetMap]] - tai redaguojamas pasaulio žemėlapis',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] padeda greitai surasti puslapio autorių įvairuose Vikimedia projektuose.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] projetas, kuris pateikia automatinę Vikipedijos versiją mobiliose įrangose.',
 );

@@ -6434,6 +6434,7 @@ Les modifications ne sont pas enregistrées tant que vous n’avez pas cliqué s
 	'translate-checks-format' => 'Cette traduction ne suit pas la définition ou a une syntaxe incorrecte : $1',
 	'translate-checks-escape' => 'Les échappements suivants peuvent être accidentels : <strong>$1</strong>',
 	'translate-checks-fudforum-syntax' => 'Utiliser <nowiki>$1</nowiki> au lieu de <nowiki>$2</nowiki> dans ce projet.',
+	'translate-checks-prefs' => 'Message en conflit avec $1. Ces messages ne doivent pas être les mêmes.',
 	'translate-pref-nonewsletter' => 'Ne pas m’envoyer les courriels d’informations',
 	'translate-pref-editassistlang' => 'Langues d’assistance :',
 	'prefs-translate' => 'Options de traduction',
@@ -12237,6 +12238,7 @@ $messages['lo'] = array(
 /** Lithuanian (Lietuvių)
  * @author Garas
  * @author Homo
+ * @author Perkunas
  * @author Vpovilaitis
  */
 $messages['lt'] = array(
@@ -12249,10 +12251,12 @@ $messages['lt'] = array(
 	'translate-task-optional' => 'Pažiūrėti nebūtinus pranešimus iš',
 	'translate-task-review' => 'Peržiūrėti pakeitimus iš',
 	'translate-task-reviewall' => 'Peržiūrėti visus vertimus iš',
-	'translate-task-export' => 'Eksportuoti vertimus iš',
-	'translate-task-export-to-file' => 'Eksportuoti į failą vertimus iš',
-	'translate-task-export-as-po' => 'Eksportuoti vertimą Gettext formatu',
+	'translate-task-export' => 'Eksportuoti vertimus',
+	'translate-task-export-to-file' => 'Eksportuoti vertimus į failą',
+	'translate-task-export-as-po' => 'Eksportuoti vertimus darbui neprisijungus',
 	'translate-page-no-such-language' => 'Buvo nurodytas klaidingas kalbos kodas',
+	'translate-page-no-such-task' => 'Nurodyta nekorektiška užduotis.',
+	'translate-page-no-such-group' => 'Nurodyta nekorektiška grupė.',
 	'translate-page-settings-legend' => 'Nustatymai',
 	'translate-page-task' => 'Aš noriu',
 	'translate-page-group' => 'Grupė',
@@ -12272,8 +12276,8 @@ $messages['lt'] = array(
 	'translate-edit-definition' => 'Pranešimo aprašymas',
 	'translate-edit-contribute' => 'papildyti',
 	'translate-edit-no-information' => "''Šis pranešimas dar neturi dokumentacijos. Jei žinote kur ar kaip šis pranešimas naudojamas, jūs galite padėti kitiems vertėjams pridėdami dokumentacijos į šį pranešimą.''",
-	'translate-edit-information' => 'Informacija apie pranešimą „$2“ ($1)',
-	'translate-edit-in-other-languages' => 'Pranešimas "$1" kitomis kalbomis',
+	'translate-edit-information' => 'Informacija apie pranešimą ($1)',
+	'translate-edit-in-other-languages' => 'Pranešimas kitomis kalbomis',
 	'translate-magic-pagename' => 'MediaWiki išplėtimų vertimas',
 	'translate-magic-help' => 'Jūs galite išversti specialių puslapių pavadinimus, magiškus žodžius ir vardų sričių pavadinimus.
 
@@ -12303,6 +12307,8 @@ Pakeitimai nebus įrašyti iki Jūs nuspausite išsaugojimo mygtuką apačioje.'
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Aprašymas naudoja <nowiki>{{PLURAL:}}</nowiki>, bet vertimas ne.',
 	'translate-stats-users' => 'Vertėjai',
+	'translate-untranslated' => 'Neišverstas',
+	'translate-percentage-fuzzy' => 'Pasenęs',
 );
 
 /** Latgalian (Latgaļu)
