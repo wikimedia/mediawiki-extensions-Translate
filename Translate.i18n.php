@@ -357,6 +357,10 @@ Details: $1',
 	'translate-gs-avgscore' => 'Avg. score',
 
 	'translate-documentation-language' => 'Message documentation',
+
+	// Search profile hook
+	'translate-searchprofile' => 'Translations',
+	'translate-searchprofile-tooltip' => 'Search from all translations',
 );
 
 /** Message documentation (Message documentation)

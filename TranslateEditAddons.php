@@ -485,4 +485,17 @@ class TranslateEditAddons {
 		$out->addHtml( $output );
 		return false;
 	}
+
+	public static function searchProfile( &$profiles ) {
+		global $wgTranslateMessageNamespaces;
+		$insert = array();
+		$insert['translation'] = array(
+			'message' => 'translate-searchprofile',
+			'tooltip' => 'translate-searchprofile-tooltip',
+			'namespaces' => $wgTranslateMessageNamespaces,
+		);
+		
+		$profiles = wfArrayInsertAfter( $profiles, $insert, 'help' );
+		return true;
+	}
 }

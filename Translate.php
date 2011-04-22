@@ -111,6 +111,9 @@ $wgHooks['ArticleSaveComplete'][] = 'TranslationMemoryUpdater::update';
 // Translation display related
 $wgHooks['ArticleContentOnDiff'][] = 'TranslateEditAddons::displayOnDiff';
 
+// Search profile
+$wgHooks['SpecialSearchProfiles'][] = 'TranslateEditAddons::searchProfile';
+
 // New rights
 $wgAvailableRights[] = 'translate';
 $wgAvailableRights[] = 'translate-import';
