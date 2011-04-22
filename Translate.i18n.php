@@ -565,6 +565,8 @@ $1 is a language name.',
 	'translate-documentation-language' => 'This is the name of the message documentation language code (qqq). Follow the rules of your languages and use small first letter if it doesn\'t capitalize language names always.
 
 It might be easier to translate it as "translation guidelines" or "translation help".',
+	'translate-searchprofile' => 'Tab in [[Special:Search]]',
+	'translate-searchprofile-tooltip' => 'Tooltip for a tab in [[Special:Search]]',
 );
 
 /** Faeag Rotuma (Faeag Rotuma)
@@ -4616,6 +4618,10 @@ Details: $1',
 	'translate-gs-total' => 'Gesamt',
 	'translate-gs-avgscore' => 'Durchschnittliches Ergebnis',
 	'translate-documentation-language' => 'Systemnachrichtendokumentation',
+	'translate-searchprofile' => 'Übersetzungen',
+	'translate-searchprofile-tooltip' => 'Suche in allen Übersetzungen',
+	'translate-search-languagefilter' => 'Nach Sprache filtern:',
+	'translate-search-nofilter' => 'Alle Sprachen',
 );
 
 /** Swiss High German (Schweizer Hochdeutsch)
@@ -5763,7 +5769,7 @@ $messages['et'] = array(
 	'translate-edit-definition' => 'Sõnumi kuju',
 	'translate-edit-contribute' => 'täienda',
 	'translate-edit-information' => 'Selle sõnumi teave ($1)',
-	'translate-edit-in-other-languages' => 'Sõnum "$1" teistes keeltes',
+	'translate-edit-in-other-languages' => 'Sõnum teistes keeltes',
 	'translate-edit-committed' => 'Kehtiv tõlge tarkvaras',
 	'translate-edit-warnings' => 'Hoiatused puuduliku tõlke kohta',
 	'translate-edit-tab-list' => 'Sõnumiloend',
@@ -6308,6 +6314,8 @@ $1',
 	'translate-gs-total' => 'Yhteensä',
 	'translate-gs-avgscore' => 'Keskim. pisteet',
 	'translate-documentation-language' => 'käännösohjeet',
+	'translate-searchprofile' => 'Käännökset',
+	'translate-searchprofile-tooltip' => 'Hae kaikista käännöksistä',
 );
 
 /** French (Français)
@@ -9499,6 +9507,10 @@ Detalios: $1',
 	'translate-gs-total' => 'Total',
 	'translate-gs-avgscore' => 'Score medie',
 	'translate-documentation-language' => 'documentation de messages',
+	'translate-searchprofile' => 'Traductiones',
+	'translate-searchprofile-tooltip' => 'Cercar in tote le traductiones',
+	'translate-search-languagefilter' => 'Filtrar per lingua:',
+	'translate-search-nofilter' => 'Non filtrar',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -9560,7 +9572,7 @@ Jika grup berisi subset atau superset pesan dari grup lain, maka akan ditampilka
 	'translate-edit-definition' => 'Definisi pesan',
 	'translate-edit-contribute' => 'berkontribusi',
 	'translate-edit-no-information' => "''Pesan ini tak memiliki dokumentasi. Jika Anda tahu di mana dan bagaimana pesan ini digunakan, Anda dapat menolong penerjemah lain dengan menambahkan dokumentasi bagi pesan ini.''",
-	'translate-edit-information' => 'Informasi tentang pesan "$2" ($1)',
+	'translate-edit-information' => 'Informasi pesan ($1)',
 	'translate-edit-in-other-languages' => 'Pesan "$1" dalam bahasa lain',
 	'translate-edit-committed' => 'Terjemahan terkini yang ada di perangkat lunak',
 	'translate-edit-warnings' => 'Peringatan mengenai terjemahan yang tak lengkap',
@@ -11755,6 +11767,10 @@ $1',
 	'translate-gs-total' => 'Zosamme',
 	'translate-gs-avgscore' => 'Prozänt jedonn em Schnett',
 	'translate-documentation-language' => 'övver de Täxte un Nohreeschte',
+	'translate-searchprofile' => 'Övversäzonge',
+	'translate-searchprofile-tooltip' => 'Söhk en alle Övversäzonge',
+	'translate-search-languagefilter' => 'Donn en Shprooch ußwähle:',
+	'translate-search-nofilter' => 'Nä — all de Shprooche',
 );
 
 /** Kurdish (Latin) (Kurdî (Latin))
@@ -12599,7 +12615,7 @@ $messages['mk'] = array(
 	'translate-rc-translation-filter-only' => 'Прикажи само преводи',
 	'translate-rc-translation-filter-filter' => 'Филтрирај преводи',
 	'translate-rc-translation-filter-site' => 'Промени само во пораките на мреж. место',
-	'translationstats' => 'Статистики на преведување',
+	'translationstats' => 'Статистики за преводите',
 	'translate-stats-edits' => 'Уредувања',
 	'translate-stats-users' => 'Преведувачи',
 	'translate-stats-registrations' => 'Регистрации',
@@ -12758,6 +12774,8 @@ $1',
 	'translate-gs-total' => 'Вкупно',
 	'translate-gs-avgscore' => 'Средн. оцена',
 	'translate-documentation-language' => 'документација на пораки',
+	'translate-searchprofile' => 'Преводи',
+	'translate-searchprofile-tooltip' => 'Пребарување по сите преводи',
 );
 
 /** Malayalam (മലയാളം)
@@ -15213,6 +15231,7 @@ Le modìfiche as salvo nen fin ch'a-i da nen un colp ansima al al boton ambeless
 	'translate-checks-format' => "Sta tradussion-sì a-i va nen dapress a la definission o a l'ha na sintassi pa bon-a: $1",
 	'translate-checks-escape' => 'Le scapade sì-dapress a peulo esse casuaj: <strong>$1</strong>',
 	'translate-checks-fudforum-syntax' => 'Dovré <nowiki>$1</nowiki> nopà ëd <nowiki>$2</nowiki> an cost proget-sì.',
+	'translate-checks-prefs' => "Ël mëssagi a l'ha ëd conflit con $1. Sto mëssagi a deuv pa esse ël midem.",
 	'translate-pref-nonewsletter' => "Mandeme nen ij mëssagi d'anformassion an pòsta eletrònica",
 	'translate-pref-editassistlang' => "Lenghe dl'assistent:",
 	'prefs-translate' => 'Opsion ëd tradussion',
