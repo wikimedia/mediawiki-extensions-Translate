@@ -554,6 +554,7 @@ class TranslateEditAddons {
 		$selected = $context->getRequest()->getVal( 'languagefilter' );
 		if ( $selected !== '-' && $selected ) {
 			$engine->setFeatureData( 'title-suffix-filter', "/$selected" );
+			$search->setExtraParam( 'languagefilter', $selected );
 		}
 		return true;
 	}
