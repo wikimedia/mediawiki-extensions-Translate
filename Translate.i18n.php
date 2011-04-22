@@ -361,6 +361,8 @@ Details: $1',
 	// Search profile hook
 	'translate-searchprofile' => 'Translations',
 	'translate-searchprofile-tooltip' => 'Search from all translations',
+	'translate-search-languagefilter' => 'Filter by language:',
+	'translate-search-nofilter' => 'No filtering',
 );
 
 /** Message documentation (Message documentation)

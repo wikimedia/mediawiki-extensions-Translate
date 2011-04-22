@@ -113,6 +113,8 @@ $wgHooks['ArticleContentOnDiff'][] = 'TranslateEditAddons::displayOnDiff';
 
 // Search profile
 $wgHooks['SpecialSearchProfiles'][] = 'TranslateEditAddons::searchProfile';
+$wgHooks['SpecialSearchProfileForm'][] = 'TranslateEditAddons::searchProfileForm';
+$wgHooks['SpecialSearchSetupEngine'][] = 'TranslateEditAddons::searchProfileSetupEngine';
 
 // New rights
 $wgAvailableRights[] = 'translate';
