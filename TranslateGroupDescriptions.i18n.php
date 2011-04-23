@@ -171,6 +171,7 @@ $messages['ar'] = array(
 	'translate-group-desc-wikimediaextensions' => 'مجموعة رسائل علوية تحتوي كل رسائل امتدادات ميدياويكي المدعومة التي تستخدمها [http://wikimedia.org/ مؤسسة ويكيميديا]',
 	'translate-group-desc-uniwiki' => 'مجموعة رسائل علوية تحتوي كل رسائل امتدادات ميدياويكي المدعومة التي تستخدمها [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'مجموعة رسائل علوية تحتوي كل رسائل الامتدادات المتعلقة ب[http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative مبادرة استخدامية ويكيبيديا]',
+	'translate-group-desc-translatablepages' => 'جميع الصفحات التي يمكن ترجمتها',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum] منتدى وب مكتوب بلغة PHP',
 );
 
@@ -1559,9 +1560,7 @@ $messages['mk'] = array(
 	'translate-group-desc-mediawiki-core-116' => 'Пораки за стабилната верзија 1.16 на [[Translating:MediaWiki|МедијаВики]]',
 	'translate-group-desc-mediawiki-core-117' => 'Пораки за стабилната верзија 1.17 на [[Translating:MediaWiki|МедијаВики]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] е раководен инфосистем за микрофинансирање',
-	'bw-desc-mwlibrl' => "'''mwlib.rl''' е питонска библиотека за пишување на PDF документи од МедијаВики статии кои се анализираат (парсираат) од библиотеката mwlib.
-
-Погледајте ги страниците [[mw:Extension:PDF_Writer]] и http://code.pediapress.com/wiki/wiki/mwlibrl за повеќе информации.",
+	'bw-desc-mwlibrl' => '[[Translating:Mwlib.rl|Mwlib.rl]] е python-библиотека за пишување на PDF документи од МедијаВики статии кои се анализираат (парсираат) од библиотеката mwlib.',
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] е клиент за е-пошта напишан во PHP. Ако имате проблеми, пријавете ги на [[Support|Поддршка]].',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] е програм за безмрежно читање на Википедија',
 	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] е отворена медиумска платформа',
@@ -1897,6 +1896,7 @@ Për piasì varda [[mw:Extension:PDF_Writer]]  e http://code.pediapress.com/wiki
 	'bw-desc-shapado' => 'Partìa ëd mëssagi për ël programa ëd domande e rispòste lìber e a sorgiss lìbera [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => "[[Translating:StatusNet|StatusNet]] a l'é un servent ëd microscartari a sorgiss duverta",
 	'translate-group-desc-statusnet-plugin' => "Sti mëssagi a fan part ëd n'estension për [[Translating:StatusNet|StatusNet]]",
+	'translate-group-desc-tsint' => 'Na partìa ëd mëssagi për [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], ël sistem i18n për [http://toolserver.org Toolserver] utiss (<span class="plainlinks">[[Translating talk:Toolserver|support]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition technical details]</span>)',
 	'bw-desc-voctrain' => "[http://omegawiki.org OmegaWiki]-based vocabulary trainer. A dòvra un sistema ëd flashcard për amparé ël vocabolari da minca lenga a minca lenga apogià da OmegaWiki.
 Creà da l'Università ëd Bamberg. Licensià GPL 2.0 o pì anans. Svilupà da [[User:Kim Bruning|Kim Bruning]].",
 	'bw-desc-wikiblame' => "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] a peil trové an pressa j'àutor ëd na pàgina an na wiki ëd Wikimedia.",
@@ -2387,18 +2387,28 @@ $messages['tl'] = array(
 	'translate-group-desc-uniwiki' => 'Pangkat ng mensahe ng Meta na naglalaman ng lahat ng mga mensahe para sa mga dugtong na may kaugnayan sa [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Pangkat ng mensahe ng Meta na naglalaman ng lahat ng mga mensahe para sa mga dugtong na may kaugnayan sa [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Pagpapanimula ng Pagkanagagamit ng Wikipedia]',
 	'translate-group-desc-translatablepages' => 'Lahat ng mga pahinang maisasalinwika',
+	'translate-group-desc-europeana' => 'Ang [[Translating:Europeana|Europeana]] ay nagbibigay-daan sa mga taong galugarin ang dihital na mga yamang pangkalinangan ng Europa',
 	'bw-desc-freecol' => 'Bago isalin ang FreeCol sa wika mo, paki basa ang [[Translating:FreeCol]]. Gumagamit ang Freecol ng lisensyang GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], isang poro sa web na nakasulat sa PHP.',
 	'bw-desc-mantisbt' => 'Ang [http://www.mantisbt.org MantisBT] ay isang malayang sistemang pangweb na pangtunton ng depekto. Paki-ulat ang anumang paksa sa [[Suporta]].',
+	'translate-group-desc-ihris' => 'Isang pangkat ng mensahe para sa [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-common' => 'Isang pangkat ng mensahe para sa [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], isang modyul ng [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-i2ce' => 'Isang pangkat ng mensahe para sa [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], isang modyul ng [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-manage' => 'Isang pangkat ng mensahe para sa  [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], isang modyul ng [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-qualify' => 'Isang pangkat ng mensahe para sa [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]], isang modyul ng [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'Isang pangunahing pamasak para sa [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Mga mensahe para sa matatag na bersyong 1.15 ng [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mediawiki-core-116' => 'Mga mensahe para sa matatag na bersyong 1.16 ng [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawiki-core-117' => 'Mga mensahe para sa matatag na bersyong 1.17 ng [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => 'Ang [[Translating:Mifos|Mifos]] ay isang sistema ng kabatiran na pangpamamahala para sa mikropinansiya',
 	'bw-desc-mwlibrl' => "Ang '''mwlib.rl''' ay isang aklatang-sawa para pagsusulat ng mga kasulatang PDF mula sa mga artikulo ng MediaWiki na nilitis ng aklatang mwlib.
 
 Mangyaring tingnan ang [[mw:Extension:PDF_Writer]] at ang http://code.pediapress.com/wiki/wiki/mwlibrl para sa mas marami pang kabatiran.",
 	'bw-desc-nocc' => 'Ang [http://nocc.sourceforge.net NOCC] ay isang kliyente ng webmail na nakasulat sa PHP.  Paki-ulat ang anumang mga paksa sa [[Support]].',
 	'translate-group-desc-okawix' => 'Ang [[Translating:Okawix|Okawix]] ay isang hindi nakakunekta sa Internet na pambasa ng Wikipedia',
+	'bw-desc-openimages' => 'Ang [[Translating:Open Images|Open Images]] ay isang bukas na batalan ng midya',
+	'translate-group-desc-openimages-verifyemailtemplate' => 'Ang mga mensaheng ito ay bahagi ng suleras ng pagpapatunay ng e-liham ng [[Translating:Open Images|Open Images]]',
+	'translate-group-desc-openimages-all' => 'Ang mga mensaheng ito ay bahagi ng proyektong [[Translating:Open Images|Open Images]]',
 	'bw-desc-openlayers' => 'Ang OpenLayers ay isang manlilikha ng mapang masisigla na may bukas na pinagmumulan.  Mangyaring paki-ulat ang anumang mga paksa sa [[support]].',
 	'bw-desc-openstreetmap' => 'Lahat ng mga mensaheng may kaugnayan sa [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Naglalaman ang pangkat na pangmensaheng ito ng mga mensaheng panghangganang-mukha para sa [[Translating:Open Street Map|Bukas na Mapa ng Kalye]].  Tingnan ang [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} pahina ng Unikodigong CLDR para sa paliwanag ng mga susing pangmaramihan].',
@@ -2406,9 +2416,11 @@ Mangyaring tingnan ang [[mw:Extension:PDF_Writer]] at ang http://code.pediapress
 
 * Pakisubok hangga't maaari na mapanatili ang mga salinwika mo na katulad ng haba ng orihinal na Ingles dahil sa mga hangganan ng balangkas ng UI.  Tingnan din ang [http://trac.openstreetmap.org/ticket/2067 bukas na depekto].
 * Gamitin ang [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] para sa pagsubok ng Potlatch.  Maaari kang magsubok doon hangga't nais mo sa loob ng alin mang lugar.",
+	'translate-group-desc-pywikipedia' => 'Ang [[Translating:Pywikipedia|Pywikipedia]] ay isang kalipunan ng mga kasangkapan upang mapatnugutan ang Wikipedia',
 	'bw-desc-shapado' => 'Pangkat ng mensahe para sa malaya at bukas ang pinagmumulang sopwer ng T&S na [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => 'Ang [[Translating:StatusNet|StatusNet]] ay isang tagapaghaing pang-mikroblog na may bukas na pinagmumulan',
 	'translate-group-desc-statusnet-plugin' => 'Ang mga mensaheng ito ay bahagi ng isang pamasak para sa [[Translating:StatusNet|StatusNet]]',
+	'translate-group-desc-tsint' => 'Isang pangkat ng mensahe para sa [http://toolserver.org/~krinkle/TsIntuition Intuition ng Toolserver], ang sistemang i18n para sa mga kasangkapan ng [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|pagtangkilik]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition mga detalyeng teknikal]</span>)',
 	'bw-desc-voctrain' => 'Pangsanay sa bokabularyo na nakabatay sa [http://omegawiki.org OmegaWiki].  Gumagamit na sistemang may lumilitaw na baraha upang matuto ng bokabularyo mula sa anumang wika papunta sa anumang wikang tinatangkilik ng Omegawiki.
 Nilikha para sa Pamantasan ng Bamberg. May lisensyang GPL 2.0 o mas luma.  Pinaunlad ni [[User:Kim Bruning|Kim Bruning]].
 

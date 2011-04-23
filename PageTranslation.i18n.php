@@ -302,6 +302,14 @@ $messages['ar'] = array(
 	'tpt-install' => 'شغل php maintenance/update.php أو نصب من الويب لتفعيل خاصية ترجمة الصفحات.',
 	'tpt-render-summary' => 'تحديث لمطابقة نسخة صفحة المصدر الجديدة',
 	'tpt-download-page' => 'صدّر الصفحة مع الترجمات',
+	'pt-movepage-list-pages' => 'قائمة الصفحات التي ستنقل',
+	'pt-movepage-list-translation' => 'صفحات الترجمة',
+	'pt-movepage-list-other' => 'صفحات فرعية أخرى',
+	'pt-movepage-current' => 'الاسم الحالي:',
+	'pt-movepage-new' => 'الاسم الجديد:',
+	'pt-movepage-reason' => 'السبب:',
+	'pt-movepage-subpages' => 'انقل جميع الصفحات الفرعية',
+	'pt-movepage-action-perform' => 'لا تنقل',
 );
 
 /** Aramaic (ܐܪܡܝܐ)
@@ -2707,6 +2715,7 @@ Per favor verifica le [[Special:Log/pagetranslation|registro de traductiones de 
  * @author Bennylin
  * @author Farras
  * @author Irwangatot
+ * @author IvanLanin
  * @author Rex
  */
 $messages['id'] = array(
@@ -2806,13 +2815,12 @@ Teks bagian: <pre>$1</pre>',
 	'pt-movepage-action-perform' => 'Lakukan langkah ini',
 	'pt-movepage-action-other' => 'Ubah target',
 	'pt-movepage-intro' => 'Halaman istimewa ini memungkinkan Anda untuk memindahkan halaman yang ditandai untuk diterjemahkan.
-Tindakan pemindahan tidak akan berlangsung cepat, karena banyak halaman yang perlu dipindahkan.
-Antrean kerja akan digunakan untuk memindahkan halaman.
-Ketika halaman dipindahkan, tidak dimungkinkan untuk berinteraksi dengan halaman yang bersangkutan.
-Kegagalan akan dicatat di catatan terjemahan halaman dan halaman tersebut perlu diperbaiki.',
+Tindakan pemindahan tidak akan berlangsung seketika karena banyak halaman yang perlu dipindahkan.
+Saat halaman dipindahkan, tidak dimungkinkan untuk berinteraksi dengan halaman yang bersangkutan.
+Kegagalan akan dicatat di [[Special:Log/pagetranslation|log terjemahan halaman]] dan perlu diperbaiki secara manual.',
 	'pt-movepage-logreason' => 'Bagian dari halaman yang dapat diterjemahkan $1.',
-	'pt-movepage-started' => 'Halaman dasar sekarang pindah.
-Silakan periksa log penerjemahan halaman untuk pesan kesalahan dan selesai.',
+	'pt-movepage-started' => 'Halaman dasar telah dipindahkan.
+Silakan periksa [[Special:Log/pagetranslation|log penerjemahan halaman]] untuk pesan kesalahan dan penyelesaian.',
 	'pt-locked-page' => 'Halaman ini dikunci karena halaman yang dapat diterjemahkan saat ini sedang dipindahkan.',
 );
 
@@ -4261,6 +4269,7 @@ Verifique no [[Special:Log/pagetranslation|registo de tradução de páginas]] s
  * @author Giro720
  * @author Helder.wiki
  * @author Heldergeovane
+ * @author 555
  */
 $messages['pt-br'] = array(
 	'pagetranslation' => 'Tradução de páginas',
@@ -4358,14 +4367,14 @@ Texto da seção: <pre>$1</pre>',
 	'pt-movepage-action-check' => 'Verificar se a movimentação é possível',
 	'pt-movepage-action-perform' => 'Realizar a movimentação',
 	'pt-movepage-action-other' => 'Alterar o destino',
-	'pt-movepage-intro' => 'Esta página especial permite-lhe mover páginas que estão marcadas para tradução.
+	'pt-movepage-intro' => 'Esta página especial permite mover páginas que estão marcadas para tradução.
 A operação de movimentação não é instantânea, porque será necessário mover muitas páginas.
 A fila de tarefas será usada para mover as páginas.
-Enquanto estão a ser movidas, não é possível interagir com as páginas em questão.
-As falhas serão registradas no registro de tradução de páginas e necessitam de ser reparadas manualmente.',
+Enquanto estão sendo movidas, não é possível interagir com as páginas em questão.
+As falhas serão registradas no [[Special:Log/pagetranslation|registro de tradução de páginas]] e necessitarão ser reparadas manualmente.',
 	'pt-movepage-logreason' => 'Parte da página traduzível $1.',
 	'pt-movepage-started' => 'A página base foi movida.
-Verifique no registo de tradução de páginas se ocorreram erros e se existe a mensagem de conclusão, por favor.',
+Verifique no [[Special:Log/pagetranslation|registo de tradução de páginas]] eventuais mensagens de erro e/ou de atividade concluída.',
 	'pt-locked-page' => 'Está página está bloqueada porque a página traduzível está sendo movida.',
 );
 

@@ -124,10 +124,13 @@ $messages['qqq'] = array(
 );
 
 /** Arabic (العربية)
+ * @author OsamaK
  * @author ترجمان05
  */
 $messages['ar'] = array(
+	'firststeps' => 'الخطوات الأولى',
 	'translate-fs-pagetitle-done' => '- تمّ!',
+	'translate-fs-signup-title' => 'سجّل',
 	'translate-fs-target-title' => 'إبدأ بالترجمة',
 );
 
@@ -1835,11 +1838,28 @@ Si ou pa vle resevwa nouvèl, ou kapab retire ou nan opsyon sa nan onglè "{{int
 $messages['hu'] = array(
 	'firststeps' => 'Első lépések',
 	'translate-fs-pagetitle-done' => ' - kész!',
-	'translate-fs-signup-title' => 'Feliratkozás',
+	'translate-fs-signup-title' => 'Regisztráció',
+	'translate-fs-settings-title' => 'Nézd át a beállításaidat!',
 	'translate-fs-userpage-title' => 'Hozz létre egy felhasználói lapot',
-	'translate-fs-permissions-title' => 'Kérj fordítói jogosultságot',
+	'translate-fs-permissions-title' => 'Kérj fordítói jogosultságot!',
 	'translate-fs-target-title' => 'Kezdj fordítani!',
-	'translate-fs-email-title' => 'Erősítsd meg az email címedet!',
+	'translate-fs-email-title' => 'Erősítsd meg az e-mail címedet!',
+	'translate-fs-intro' => "Üdvözlünk a {{SITENAME}} használatának első lépéseiben segítő varázslóban!
+Lépésről lépésre segítünk a fordítóvá válás folyamatában.
+A végén hozzákezdhetsz bármelyik, {{SITENAME}} által támogatott projekt ''felületének üzeneteinek'' fordításához.",
+	'translate-fs-settings-text' => 'Most menj a beállításaidhoz, és ha mást nem is,
+de állítsd át a felület nyelvét arra, amire fordítani fogsz.
+
+A felület nyelve lesz az alapértelmezett célnyelv.
+Könnyű elfelejteni a helyes nyelvre váltást, így erősen ajánlott a módosítás.
+
+Míg ott vagy, beállíthatod, hogy a szoftver más olyan nyelveken is megjelenítse a fordításokat, melyeket ismersz.
+Ez a beállítás a „{{int:prefs-editing}}” fülön található.
+Ezeken kívül további beállításokat is kipróbálhatsz.
+
+Menj a [[Special:Preferences|beállításaidhoz]], majd térj vissza erre a lapra.',
+	'translate-fs-settings-skip' => 'Végeztem.
+Szeretném folytatni.',
 	'translate-fs-userpage-submit' => 'Felhasználói lap létrehozása',
 	'translate-fs-userpage-done' => 'Felhasználói lap létrehozva.',
 );
