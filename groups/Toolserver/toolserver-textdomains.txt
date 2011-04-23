@@ -1,6 +1,6 @@
 Commonshelper 2
-optional = commonshelper2
-ignored = standard_language, standard_project
+optional = checkusage, commonshelper2
+ignored = tusc, standard_language, standard_project
 
 General
 optional = colon-separator, dateformat
