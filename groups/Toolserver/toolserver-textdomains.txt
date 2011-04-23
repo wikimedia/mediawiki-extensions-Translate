@@ -1,4 +1,4 @@
-Commonshelper 2
+CommonsHelper 2
 optional = checkusage, commonshelper2
 ignored = tusc, standard_language, standard_project
 
