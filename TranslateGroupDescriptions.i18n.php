@@ -1038,6 +1038,7 @@ $messages['he'] = array(
 	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]] היא תוכנת שאלות ותשובות מבוססת רשת',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] הוא שרת מיקרובלוגים.',
 	'translate-group-desc-statusnet-plugin' => 'ההודעות האלו הן חלק מתוסף עבור [[Translating:StatusNet|StatusNet]]',
+	'translate-group-desc-tsint' => 'קבוצת הודעות ל־[http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], מערכת התרגום עבור כלי [http://toolserver.org Toolserver‏ (<span class="plainlinks">[[Translating talk:Toolserver|תמיכה]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition פרטים טכניים]</span>)',
 	'bw-desc-voctrain' => '[[Translating:Voctrain|Voctrain]] הוא מאמן אוצר מילים מבוסס אומגה־ויקי',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] מסוגל לזהות את הכותבים של חלק מדף האתר ויקי של ויקימדיה',
 	'bw-desc-wikimediamobile' => '[[Translating:Wikimedia_mobile|Wikimedia mobile]] הוא ממשק ויקיפדיה עבור מכשירים ניידים',
@@ -1151,6 +1152,9 @@ $messages['hu'] = array(
 
 További információkat az [[mw:Extension:PDF_Writer]] és a http://code.pediapress.com/wiki/wiki/mwlibrl lapokon találhatsz.",
 	'bw-desc-nocc' => 'A [http://nocc.sourceforge.net NOCC] egy PHP-ban írt webmail-kliens. A problémákat [[Support|Segítség]] oldalon jelezheted.',
+	'translate-group-desc-okawix' => 'Az [[Translating:Okawix|Okawix]] egy offline Wikipédia-olvasó',
+	'bw-desc-openimages' => 'Az [[Translating:Open Images|Open Images]] egy nyílt médiaplatform',
+	'translate-group-desc-openimages-all' => 'Ezek az üzenetek az [[Translating:Open Images|Open Images]] projekt részei',
 	'bw-desc-openlayers' => 'Az OpenLayers egy nyílt forráskódú dinamikus térképgenerátor. A problémákat [[Support|Segítség]] oldalon jelezheted.',
 	'bw-desc-osm-site' => 'Ez a csoport tartalmazza az [[Translating:Open Street Map|Open Street Map]] felhasználói felületének szövegeit.
 A többesszám formátumáról [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} itt] tudhatsz meg többet.',
@@ -1158,7 +1162,10 @@ A többesszám formátumáról [http://unicode.org/repos/cldr-tmp/trunk/diff/sup
 
 * tartsd meg a szövegek hosszát akkorának, amekkorák az eredeti angolban voltak (erre a felhasználói felület keretrendszerének korlátozásai miatt van szükség). Lásd az [http://trac.openstreetmap.org/ticket/2067 erről nyitott hibajelentést].
 * használd az [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] oldalt a Potlatch teszteléséhez. Itt bármelyik részét tesztelheted, bárhol.',
+	'translate-group-desc-pywikipedia' => 'A [[Translating:Pywikipedia|Pywikipedia]] a Wikipédia szerkesztéséhez szükséges eszközök gyűjteménye',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]], egy nyílt forrású mikroblogging szerver',
+	'translate-group-desc-statusnet-plugin' => 'Ezek az üzenetek egy [[Translating:StatusNet|StatusNet]]-kiegészítő részei',
+	'translate-group-desc-tsint' => 'Üzenetcsoport a [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition]hez, ami egy i18n-rendszer [http://toolserver.org toolserveres] eszközökhöz (<span class="plainlinks">[[Translating talk:Toolserver|támogatás]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition technikai részletek]</span>)',
 	'bw-desc-voctrain' => '[http://omegawiki.org OmegaWiki]-alapú szótanító. Memóriakártya alapú rendszert használ szavak tanulásához bármely nyelvről bármely nyelvre, melyet az OmegaWiki támogat.
 A Bambergi Egyetem részére készült, a GPL licenc 2.0-ás vagy későbbi változata alatt lett közzétéve. Fejlesztette [[User:Kim Bruning|Kim Bruning]].',
 	'bw-desc-wikiblame' => 'A [http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] segítségével könnyen megtalálhatod egy Wikimédia-wikis lap szerkesztőit.',

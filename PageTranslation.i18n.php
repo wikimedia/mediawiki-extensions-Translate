@@ -4265,11 +4265,11 @@ Verifique no [[Special:Log/pagetranslation|registo de tradução de páginas]] s
 );
 
 /** Brazilian Portuguese (Português do Brasil)
+ * @author 555
  * @author Eduardo.mps
  * @author Giro720
  * @author Helder.wiki
  * @author Heldergeovane
- * @author 555
  */
 $messages['pt-br'] = array(
 	'pagetranslation' => 'Tradução de páginas',
