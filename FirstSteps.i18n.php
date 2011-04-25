@@ -131,7 +131,13 @@ $messages['ar'] = array(
 	'firststeps' => 'الخطوات الأولى',
 	'translate-fs-pagetitle-done' => '- تمّ!',
 	'translate-fs-signup-title' => 'سجّل',
-	'translate-fs-target-title' => 'إبدأ بالترجمة',
+	'translate-fs-settings-title' => 'اضبط تفضيلاتك',
+	'translate-fs-userpage-title' => 'أنشئ صفحة المستخدم',
+	'translate-fs-permissions-title' => 'اطلب صلاحيات مترجم',
+	'translate-fs-target-title' => 'ابدأ الترجمة!',
+	'translate-fs-email-title' => 'أكّد عنوان بريدك الإلكتروني',
+	'translate-fs-userpage-submit' => 'أنشئ صفحة المستخدم',
+	'translate-fs-userpage-done' => 'أحسنت! لديك الآن صفحة مستخدم.',
 );
 
 /** Bashkir (Башҡортса)

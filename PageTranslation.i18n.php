@@ -1907,6 +1907,7 @@ Volyéd controlar lo [[Special:Log/pagetranslation|jornal de les traduccions de 
  */
 $messages['fur'] = array(
 	'tpt-languages-legend' => 'Altris lenghis:',
+	'pt-movepage-reason' => 'Reson:',
 );
 
 /** Galician (Galego)

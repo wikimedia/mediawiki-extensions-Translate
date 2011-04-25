@@ -343,6 +343,7 @@ Sellit 'ta [[mw:Extension:PDF_Writer]] hag http://code.pediapress.com/wiki/wiki/
 
 * Strivit evit ma vo keit ho troidigezhioù ouzh hirder an termenoù orin saoznek abalamour da strishadurioù an etrefas implijer. Gwelet ivez [http://trac.openstreetmap.org/ticket/2067 danevell an drein].
 * Grit gant [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] evit testiñ Potlatch. Eno e c'hallot amprouiñ kement a garot e kement korn zo.",
+	'translate-group-desc-pywikipedia' => 'Un dastumad ostilhoù da zegas kemmoù e Wikipedia eo [[Translating:Pywikipedia|Pywikipedia]]',
 	'bw-desc-shapado' => "Strollad ar c'hemmadennoù evit ar meziant G&R hag a zo frank hag open-source [[Translating:Shapado|Shapado]]",
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] zo ur servijer mikroblogiñ frank a wirioù',
 	'translate-group-desc-statusnet-plugin' => "Darn eus un astenn evit [[Translating:StatusNet|StatusNet]] eo ar c'hemennoù-mañ",
@@ -819,6 +820,7 @@ Veuillez consulter [[mw:Extension:PDF Writer]] et http://code.pediapress.com/wik
 	'bw-desc-shapado' => 'Groupe de messages pour le logiciel libre et open-source de questions/réponses [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] est un serveur de microblogging en source ouverte',
 	'translate-group-desc-statusnet-plugin' => 'Les messages font partie d’une extension pour [[Translating:StatusNet|StatusNet]]',
+	'translate-group-desc-tsint' => 'Un groupe de messages pour [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], le système d\'internationalisation des outils du [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|support]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition détails techniques]</span>)',
 	'bw-desc-voctrain' => 'Entraîneur de vocabulaire basé sur [http://omegawiki.org OmegaWiki]. Utilise un système à base de cartes flash pour apprendre le vocabulaire de n’importe quel langue vers n’importe quelle langue prise en charge par Omegawiki.
 Créé pour l’Université de Bamberg. Publié sous licence GPL 2.0 ou plus récent. Développé par [[User:Kim Bruning|Kim Bruning]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] permet de trouver rapidement les auteurs d’une page dans un wiki de Wikimedia.',
@@ -865,6 +867,13 @@ Fêt por l’Univèrsitât de Bamberg. Publeyê desot licence GPL 2.0 ou ben ple
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] pèrmèt de trovar rêdo los ôtors d’una pâge dens un vouiqui de Wikimedia.',
 	'bw-desc-wikimediamobile' => 'Wikimedia mobilo pôt étre trovâ a http://m.wikipedia.org et at por fin de facilitar l’accès a Vouiquipèdia sur los enfatâblos recognus a travèrs lo mondo.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] est un projèt visent a semondre una vèrsion tèxto de Vouiquipèdia en defôr de legne sur un pèrifèrico mobilo.',
+);
+
+/** Friulian (Furlan)
+ * @author Klenje
+ */
+$messages['fur'] = array(
+	'translate-group-desc-translatablepages' => 'Dutis lis pagjinis che si puedin tradusi',
 );
 
 /** Galician (Galego)
@@ -1748,6 +1757,7 @@ Se [http://unicode.org/repos//cldr-tmp/trunk/diff/supplemental/language_plural_r
 	'bw-desc-shapado' => 'Meldingsgruppe for Q&A-programvaren [[Translating:Shapado|Shapado]] som er gratis og har åpen kildekode',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] er en mikrobloggtjener med åpen kildekode',
 	'translate-group-desc-statusnet-plugin' => 'Disse meldingene er en del av en utvidelse for [[Translating:StatusNet|StatusNet]]',
+	'translate-group-desc-tsint' => 'En meldingsgruppe for [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], i18n-systemet for [http://toolserver.org Toolserver]-verktøy (<span class="plainlinks">[[Translating talk:Toolserver|støtte]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition tekniske detaljer]</span>)',
 	'bw-desc-voctrain' => '[http://omegawiki.org OmegaWiki]-basert ordforrådstrener. Bruker et huskekortsystem for å lære ordforråd fra ethvert språk til ethvert språk støttet av OmegaWiki.
 Opprettet for universitetet i Bamberg. Lisensiert under GPL 2.0 eller senere. Utviklet av [[User:Kim Bruning|Kim Bruning]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] kan kjapt finne ut hvem som har forfattet en side på en Wikimedia-wiki.',
