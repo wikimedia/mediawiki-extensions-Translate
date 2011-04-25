@@ -748,8 +748,15 @@ class TranslationHelpers {
 
 			$params = array( 'class' => 'mw-translate-edit-item' );
 
+			$display = TranslateUtils::convertWhiteSpaceToHTML( $text );
+			$display = Html::rawElement( 'span', array(
+				'lang' => $fbcode,
+				'dir' => Language::factory( $fbcode )->getDir() ),
+				$display
+			);
+
 			$contents = self::legend( $label ) . "\n" . $this->adder( $id ) .
-				TranslateUtils::convertWhiteSpaceToHTML( $text ) . self::clear();
+				$display . self::clear();
 
 			$boxes[] = Html::rawElement( 'div', $params, $contents ) .
 				$this->wrapInsert( $id, $text );
