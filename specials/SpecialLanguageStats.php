@@ -181,6 +181,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			)
 		);
 
+		$out .= "\n\t" . Html::openElement( 'thead' );
 		$out .= "\n\t" . Html::openElement( 'tr' );
 		$out .= "\n\t\t" . Html::element( 'th', array( 'title' => self::newlineToWordSeparator( wfMsg( 'translate-page-group-tooltip' ) ) ), wfMsg( 'translate-page-group' ) );
 		$out .= "\n\t\t" . Html::element( 'th', array( 'title' => self::newlineToWordSeparator( wfMsg( 'translate-total-tooltip' ) ) ), wfMsg( 'translate-total' ) );
@@ -188,6 +189,8 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$out .= "\n\t\t" . Html::element( 'th', array( 'title' => self::newlineToWordSeparator( wfMsg( 'translate-percentage-complete-tooltip' ) ) ), wfMsg( 'translate-percentage-complete' ) );
 		$out .= "\n\t\t" . Html::element( 'th', array( 'title' => self::newlineToWordSeparator( wfMsg( 'translate-percentage-fuzzy-tooltip' ) ) ), wfMsg( 'translate-percentage-fuzzy' ) );
 		$out .= "\n\t" . Xml::closeElement( 'tr' );
+		$out .= "\n\t" . Xml::closeElement( 'thead' );
+		$out .= "\n\t" . Html::openElement( 'tbody' );
 
 		return $out;
 	}
@@ -217,6 +220,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 		if ( $out ) {
 			$out = $this->createHeader( $code ) . "\n" . $out;
+			$out .= Xml::closeElement( 'tbody' );
 			$out .= Xml::closeElement( 'table' );
 		} else {
 			$out = wfMsgExt( 'translate-nothing-to-do', 'parse' );
