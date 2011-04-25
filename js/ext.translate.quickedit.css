@@ -7,6 +7,10 @@
 	font-size: small;
 }
 
+.mw-sp-translate-edit-fields a {
+	color: blue;
+}
+
 .mw-ajax-dialog #summary {
 	width: 5em;
 }
@@ -30,20 +34,29 @@
 	border-bottom: 1px solid black;
 }
 
-.ltr .mw-translate-legend {
-	float: right;
+.mw-translate-legend {
 	border-left: 1px solid black;
 	font-weight: bold;
+}
+
+.ltr .mw-translate-legend {
+	float: right;
 	margin-left: 5pt;
 	padding-left: 5pt;
 }
 
 .rtl .mw-translate-legend {
 	float: left;
-	border-left: 1px solid black;
-	font-weight: bold;
 	margin-right: 5pt;
 	padding-right: 5pt;
+}
+
+.ltr .mw-translate-adder {
+	float: left;
+}
+
+.rtl .mw-translate-adder {
+	float: right;
 }
 
 .mw-translate-sep {

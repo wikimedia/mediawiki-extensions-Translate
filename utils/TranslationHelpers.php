@@ -1050,7 +1050,8 @@ class TranslationHelpers {
 		$params = array(
 			'onclick' => "jQuery($target).val(jQuery($source).text()).focus(); return false;",
 			'href' => '#',
-			'title' => wfMsg( 'translate-use-suggestion' )
+			'title' => wfMsg( 'translate-use-suggestion' ),
+			'class' => 'mw-translate-adder',
 		);
 
 		return Html::element( 'a', $params, '↓' );
