@@ -33,7 +33,7 @@ function MessageCheckUpdater( callback ) {
 	this.setup = function() {
 		this.cancel();
 		var self = this;
-		this.timeoutID = window.setTimeout( self.act, 600 );
+		this.timeoutID = window.setTimeout( self.act, 1000 );
 	};
 
 	this.cancel = function() {
@@ -114,8 +114,9 @@ window.trlOpenJsEdit = function( page, group ) {
 		});
 		
 		var textarea = form.find( '.mw-translate-edit-area' );
-		textarea.focus();
+		textarea.css( 'display', 'block' );
 		textarea.autoResize({extraSpace: 15, limit: 200}).trigger( 'change' );
+		textarea.focus();
 
 		if ( form.find( '.mw-translate-messagechecks' ) ) {
 			var checker = new MessageCheckUpdater( function() {

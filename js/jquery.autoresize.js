@@ -2,6 +2,7 @@
  * jQuery autoResize (textarea auto-resizer)
  * @copyright James Padolsey http://james.padolsey.com
  * @version 1.04
+ * Modified by Nike
  */
 
 (function($){
@@ -16,8 +17,11 @@
             animateDuration : 150,
             animateCallback : function(){},
             extraSpace : 20,
-            limit: 1000
+            limit: 1000,
+            delay: 1000,
         }, options);
+        
+        var timer;
         
         // Only textarea's auto-resize:
         this.filter('textarea').each(function(){
@@ -47,30 +51,34 @@
                         top: 0,
                         left: -9999
                     }).css(propOb).attr('tabIndex','-1').insertBefore(textarea);
-					
+          
                 })(),
                 lastScrollTop = null,
                 updateSize = function() {
-					
+                  var that = this;
+                  if (timer !== null) clearTimeout(timer);
+                  timer = setTimeout(updateSizeLazy, settings.delay, that);
+                },
+                updateSizeLazy = function(that) {
                     // Prepare the clone:
-                    clone.height(0).val($(this).val()).scrollTop(10000);
-					
+                    clone.height(0).val($(that).val()).scrollTop(10000);
+          
                     // Find the height of text:
                     var scrollTop = Math.max(clone.scrollTop(), origHeight) + settings.extraSpace,
-                        toChange = $(this).add(clone);
-						
+                        toChange = $(that).add(clone);
+            
                     // Don't do anything if scrollTip hasen't changed:
                     if (lastScrollTop === scrollTop) { return; }
                     lastScrollTop = scrollTop;
-					
+          
                     // Check for limit:
                     if ( scrollTop >= settings.limit ) {
-                        $(this).css('overflow-y','');
+                        $(that).css('overflow-y','');
                         return;
                     }
                     // Fire off callback:
-                    settings.onResize.call(this);
-					
+                    settings.onResize.call(that);
+          
                     // Either animate or directly apply height:
                     settings.animate && textarea.css('display') === 'block' ?
                         toChange.stop().animate({height:scrollTop}, settings.animateDuration, settings.animateCallback)
