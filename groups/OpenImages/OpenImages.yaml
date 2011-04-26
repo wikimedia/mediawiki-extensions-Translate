@@ -14,7 +14,7 @@ GROUPS:
 ---
 BASIC:
   id: out-openimages-core
-  label: Open Images core messages
+  label: Open Images - Core
   description: "{{int:bw-desc-openimages}}"
   namespace: NS_OPENIMAGES
   display: out/openimages/

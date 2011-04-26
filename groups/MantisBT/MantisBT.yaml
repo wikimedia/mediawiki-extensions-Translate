@@ -101,7 +101,7 @@ GROUPS:
 ---
 BASIC:
   id: out-mantis-core
-  label: MantisBT core messages
+  label: MantisBT - Core
   display: out/mantis/core
 
 FILES:
