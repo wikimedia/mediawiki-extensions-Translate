@@ -1,10 +1,24 @@
+TEMPLATE:
+  BASIC:
+    namespace: NS_NOCC
+    description: "{{int:bw-desc-nocc}}"
+    class: FileBasedMessageGroup
+
 BASIC:
-  id: out-nocc
+  id: out-nocc-0-all
   label: NOCC
-  namespace: NS_NOCC
-  class: FileBasedMessageGroup
-  description: "{{int:bw-desc-nocc}}"
   display: out/nocc
+  meta: yes
+  class: AggregateMessageGroup
+
+GROUPS:
+  - out-nocc-*
+
+---
+BASIC:
+  id: out-nocc-core
+  label: NOCC - Core
+    display: out/nocc/core
 
 FILES:
   class: FlatPhpFFS
@@ -42,3 +56,34 @@ CHECKER:
   checks:
     - printfCheck
     - braceBalanceCheck
+
+---
+BASIC:
+  id: out-nocc-site
+  label: NOCC - Site
+    display: out/nocc/site
+
+FILES:
+  class: GettextFFS
+  definitionFile: %GROUPROOT%/nocc/htdocs/engine/languages/en.pot
+  sourcePattern: %GROUPROOT%/nocc/htdocs/engine/languages/%CODE%.po
+  targetPattern: nocc/htdocs/engine/languages/%CODE%.po
+  codeMap:
+    en-gb:   en_GB
+    en-us:   en_US
+    no:      nb
+    pt-br:   pt_BR
+    zh-hans: zh_CN
+    zh-hant: zh_TW
+  header: |
+    # This file is part of NOCC <http://nocc.sf.net/>
+    # Released under the "GNU General Public License"
+    #
+    # You should have received a copy of the GNU General Public License
+    # along with NOCC. If not, see <http://www.gnu.org/licenses/>.
+    #
+
+CHECKER:
+  class: MessageChecker
+  checks:
+    - printfCheck
