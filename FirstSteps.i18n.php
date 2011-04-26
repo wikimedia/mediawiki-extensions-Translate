@@ -516,6 +516,7 @@ Ako ne želite primati novosti, možete se odjaviti na jezičku "{{int:prefs-per
  * @author Toniher
  */
 $messages['ca'] = array(
+	'firststeps' => 'Primers passos',
 	'translate-fs-pagetitle-done' => ' - fet!',
 	'translate-fs-settings-skip' => 'He acabat.
 Deixeu-me procedir.',
