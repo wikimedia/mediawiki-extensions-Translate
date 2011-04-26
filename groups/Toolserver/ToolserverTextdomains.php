@@ -68,7 +68,7 @@ class PremadeToolserverTextdomains extends PremadeMediawikiExtensionGroups {
 			}
 
 			$newgroup = array(
-				'name' => $name,
+				'name' => 'Toolserver - ' . $name,
 				'file' => $file,
 				'descmsg' => $descmsg,
 				'url' => $url,
