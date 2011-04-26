@@ -4,6 +4,7 @@ TEMPLATE:
     description: "{{int:bw-desc-nocc}}"
     class: FileBasedMessageGroup
 
+---
 BASIC:
   id: out-nocc-0-all
   label: NOCC
