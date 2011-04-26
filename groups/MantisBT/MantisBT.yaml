@@ -2,6 +2,7 @@ TEMPLATE:
   BASIC:
     namespace: NS_MANTIS
     display: out/mantis/
+    description: "{{int:bw-desc-mantisbt}}"
     class: FileBasedMessageGroup
 
   FILES:
@@ -91,7 +92,6 @@ BASIC:
   id: out-mantis-0-all
   label: MantisBT
   display: out/mantis
-  description: "{{int:bw-desc-mantisbt}}"
   meta: yes
   class: AggregateMessageGroup
 
@@ -102,7 +102,6 @@ GROUPS:
 BASIC:
   id: out-mantis-core
   label: MantisBT core messages
-  description: "{{int:bw-desc-mantisbt}}"
   display: out/mantis/core
 
 FILES:
