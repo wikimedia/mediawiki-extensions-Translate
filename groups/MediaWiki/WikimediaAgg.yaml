@@ -31,6 +31,7 @@ GROUPS:
   - ext-contactpage # on nl.wp and wikimediafoundation.org
   - ext-contributionreporting # wikimediafoundation.org
   - ext-contributiontracking # wikimediafoundation.org
+  - ext-customusersignup # r86967 
   - ext-di-di
   - ext-di-pfpg # wikimediafoundation.org
   - ext-disableaccount # r86932 for some private wikis

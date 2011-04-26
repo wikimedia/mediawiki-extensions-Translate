@@ -325,6 +325,9 @@ Crowd Authentication
 
 CSS
 
+Custom User Signup
+ignored = customusersignup
+
 Data Transclusion
 magicfile = DataTransclusion/DataTransclusion.i18n.magic.php
 ignored = datatransclusion-test-wikitext, datatransclusion-test-evil-html, datatransclusion-test-nowiki
