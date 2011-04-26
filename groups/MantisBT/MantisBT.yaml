@@ -96,10 +96,7 @@ BASIC:
   class: AggregateMessageGroup
 
 GROUPS:
-  - out-mantis-core
-  - out-mantis-mantiscoreformatting
-  - out-mantis-mantisgraph
-  - out-mantis-xmlimportexport
+  - out-mantis-*
 
 ---
 BASIC:
