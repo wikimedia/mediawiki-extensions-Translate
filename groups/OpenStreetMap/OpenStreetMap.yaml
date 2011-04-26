@@ -10,8 +10,8 @@ TEMPLATE:
       be-tarask: be-TARASK
       pt-br: pt-BR
       sr-ec: sr-EC
-      zh-cn: zh-CN
-      zh-tw: zh-TW
+      zh-hans: zh-CN
+      zh-hant: zh-TW
 
 ---
 BASIC:
