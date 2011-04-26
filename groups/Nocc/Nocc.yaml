@@ -18,7 +18,7 @@ GROUPS:
 BASIC:
   id: out-nocc-core
   label: NOCC - Core
-    display: out/nocc/core
+  display: out/nocc/
 
 FILES:
   class: FlatPhpFFS
@@ -61,7 +61,7 @@ CHECKER:
 BASIC:
   id: out-nocc-site
   label: NOCC - Site
-    display: out/nocc/site
+  display: out/nocc/
 
 FILES:
   class: GettextFFS
