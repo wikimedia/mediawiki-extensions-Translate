@@ -33,6 +33,7 @@ GROUPS:
   - ext-contributiontracking # wikimediafoundation.org
   - ext-di-di
   - ext-di-pfpg # wikimediafoundation.org
+  - ext-disableaccount # r86932 for some private wikis
   - ext-dismissablesitenotice
   - ext-dontswitchmeover
   - ext-doublewiki # Wikisource
