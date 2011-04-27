@@ -454,6 +454,8 @@ ignored = farmerwikiurl, farmerinterwikiurl
 
 FCK editor
 
+File Attach
+
 File Page Masking
 
 Find Spam
