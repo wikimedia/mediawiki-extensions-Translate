@@ -856,20 +856,6 @@ MANGLER:
   prefix: msn-
 ---
 BASIC:
-  id: out-statusnet-plugin-newmenu
-  label: StatusNet - NewMenu
-  display: out/statusnet/plugin/newmenu
-  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/1.0.x/plugins/NewMenu/%FILE%#line%LINE%
-
-FILES:
-  sourcePattern: %GROUPROOT%/statusnet/plugins/NewMenu/locale/%CODE%/LC_MESSAGES/NewMenu.po
-  definitionFile: %GROUPROOT%/statusnet/plugins/NewMenu/locale/NewMenu.pot
-  targetPattern: statusnet/plugins/NewMenu/locale/%CODE%/LC_MESSAGES/NewMenu.po
-
-MANGLER:
-  prefix: newmenu-
----
-BASIC:
   id: out-statusnet-plugin-noticetitle
   label: StatusNet - NoticeTitle
   display: out/statusnet/plugin/noticetitle
