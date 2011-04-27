@@ -4363,6 +4363,7 @@ Detaljer: $1',
  * @author Kghbln
  * @author Lukas9950
  * @author Lyzzy
+ * @author MF-Warburg
  * @author MichaelFrey
  * @author Pill
  * @author Purodha
@@ -4374,7 +4375,7 @@ Detaljer: $1',
  */
 $messages['de'] = array(
 	'translate' => 'Übersetzen',
-	'translate-desc' => 'Ergänzt eine [[Special:Translate|Spezialseite]] zum Übersetzen von MediaWiki-Systemnachrichten',
+	'translate-desc' => 'Ergänzt eine [[Special:Translate|Spezialseite]] zum Übersetzen von MediaWiki-Systemnachrichten und weiteren Anwendungen',
 	'translate-edit' => 'Bearbeiten',
 	'translate-talk' => 'Diskussion',
 	'translate-history' => 'Versionen',
@@ -9687,6 +9688,7 @@ Jika grup berisi subset atau superset pesan dari grup lain, maka akan ditampilka
 	'translate-ignored' => '(diabaikan)',
 	'translate-edit-title' => 'Sunting "$1"',
 	'translate-edit-definition' => 'Definisi pesan',
+	'translate-edit-translation' => 'Terjemahan',
 	'translate-edit-contribute' => 'berkontribusi',
 	'translate-edit-no-information' => "''Pesan ini tak memiliki dokumentasi. Jika Anda tahu di mana dan bagaimana pesan ini digunakan, Anda dapat menolong penerjemah lain dengan menambahkan dokumentasi bagi pesan ini.''",
 	'translate-edit-information' => 'Informasi pesan ($1)',
@@ -9746,6 +9748,7 @@ Perubahan tidak akan disimpan hingga Anda mengklik tombol simpan di bawah.',
 	'translate-checks-format' => 'Terjemahan ini tidak mengikuti definisi atau memiliki sintaksis yang tidak valid: $1',
 	'translate-checks-escape' => "Rangkaian kontrol (''escape sequence'') berikut mungkin tidak disengaja: <strong>$1</strong>",
 	'translate-checks-fudforum-syntax' => 'Gunakan <nowiki>$1</nowiki> bukan <nowiki>$2</nowiki> pada proyek ini.',
+	'translate-checks-prefs' => 'Pesan berkonflik dengan $1. Pesan-pesan ini tidak boleh sama.',
 	'translate-pref-nonewsletter' => 'Jangan kirimkan saya surel nawala',
 	'translate-pref-editassistlang' => 'Bahasa penunjang:',
 	'prefs-translate' => 'Opsi terjemahan',
@@ -9897,6 +9900,7 @@ $1',
 	'translate-import-err-ul-failed' => 'Pemuatan berkas tidak berhasil',
 	'translate-import-err-invalid-title' => 'Nama berkas <nowiki>$1</nowiki> yang diberikan tidak sah.',
 	'translate-import-err-no-such-file' => 'Berkas <nowiki>$1</nowiki> tidak ada atau belum di unggah kelokal.',
+	'translate-import-err-stale-group' => 'Kelompok pesan berkas ini tidak ditemukan.',
 	'translate-import-err-no-headers' => 'Berkas bukan merupakan berkas Gettext dalam format pengaya Translate yang diciptakan dengan benar:
 Tidak dapat menentukan grup dan bahasa dari kepala berkas.',
 	'translate-import-err-warnings' => "Berkas ini tidak diciptakan dengan benar.
@@ -9907,6 +9911,8 @@ Detail: $1",
 	'translate-js-skip' => 'Lewati ke selanjutnya',
 	'translate-js-save-failed' => 'Gagal menyimpan. Silakan laporkan kesalahan ini.',
 	'translate-js-history' => 'Terjemahan terdahulu',
+	'translate-js-support' => 'Ajukan pertanyaan',
+	'translate-js-support-title' => 'Mintalah bantuan jika informasi yang ada tidak cukup untuk menerjemahkan pesan ini dengan benar.',
 	'translate-gs-pos' => 'Tingkat.',
 	'translate-gs-code' => 'Kode',
 	'translate-gs-continent' => 'Benua',
@@ -9917,6 +9923,10 @@ Detail: $1",
 	'translate-gs-total' => 'Total',
 	'translate-gs-avgscore' => 'Nilai rata-rata',
 	'translate-documentation-language' => 'Dokumentasi pesan',
+	'translate-searchprofile' => 'Terjemahan',
+	'translate-searchprofile-tooltip' => 'Cari dari semua terjemahan',
+	'translate-search-languagefilter' => 'Saring menurut bahasa:',
+	'translate-search-nofilter' => 'Tanpa penyaringan',
 );
 
 /** Igbo (Igbo)
@@ -13891,7 +13901,7 @@ $messages['ne'] = array(
 	'translate-page-limit-option' => 'प्रति पृष्ठ $1 {{PLURAL:$1|सन्देश|सन्देशहरु}}',
 	'translate-submit' => 'छाँटेर हेर्ने',
 	'translate-page-navigation-legend' => 'अन्वेषण',
-	'translate-page-showing' => '$3का $1 देखि $2 सम्म सन्देशहरु देखाइँदै',
+	'translate-page-showing' => '$3 मध्येका $1 देखि $2 सम्म सन्देशहरु देखाइँदै',
 	'translate-page-showing-all' => '$1 {{PLURAL:$1|सन्देश|सन्देशहरु}} देखाइँदै।',
 	'translate-page-showing-none' => 'देखाउनु पर्ने सन्देश छैन।',
 	'translate-next' => 'अर्को पृष्ठ',
@@ -19452,7 +19462,7 @@ $messages['tet'] = array(
 	'translate-prev' => 'Pájina molok',
 	'translate-page-description-legend' => 'Informasaun kona-ba lubu',
 	'translate-page-edit' => 'edita',
-	'translate-edit-in-other-languages' => 'Mensajen "$1" iha lian seluk',
+	'translate-edit-in-other-languages' => 'Mensajen iha lian seluk',
 	'translate-magic-submit' => 'Hola',
 	'translate-language' => 'Lian',
 );

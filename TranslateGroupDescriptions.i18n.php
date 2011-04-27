@@ -1272,6 +1272,11 @@ $messages['id'] = array(
 	'bw-desc-freecol' => 'Sebelum menerjemahkan FreeCol ke bahasa Anda, harap baca [[Translating:FreeCol]] terlebih dahulu. FreeCol menggunakan lisensi GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], sebuah web forum yang ditulis dalam PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] adalah sebuah sistem penelusuran bug berbasis web. Laporkan temuan-temuan masalah di [[Support]].',
+	'translate-group-desc-ihris' => 'Kelompok pesan untuk [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-common' => 'Kelompok pesan untuk [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], suatu modul dari [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-i2ce' => 'Kelompok pesan untuk [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], suatu modul dari [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-manage' => 'Kelompok pesan untuk [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], suatu modul dari [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-qualify' => 'Kelompok pesan untuk [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]], suatu modul dari [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'Plugin inti untuk [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-115' => 'Pesan untuk versi stabil 1.15 dari [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mediawiki-core-116' => 'Pesan untuk versi stabil 1.16 dari [[Translating:MediaWiki|MediaWiki]]',
@@ -1296,6 +1301,7 @@ Lihat pula [[mw:Extension:PDF Writer]] dan http://code.pediapress.com/wiki/wiki/
 	'bw-desc-shapado' => 'Pesan grup untuk perangkat lunak bebas dan sumber terbuka Q&A [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] adalah suatu server mikroblog sumber terbuka',
 	'translate-group-desc-statusnet-plugin' => 'Pesan ini adalah bagian dari sebuah plugin untuk [[Translating:StatusNet|StatusNet]]',
+	'translate-group-desc-tsint' => 'Kelompok pesan untuk [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], sistem i18n untuk alat [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|dukungan]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition detail teknis]</span>)',
 	'bw-desc-voctrain' => 'Pelatih kosakata berbasis-[http://omegawiki.org OmegaWiki]. Menggunakan sistem kartu flash untuk mempelajari kosakata dari suatu bahasa ke bahasa lain yang didukung oleh OmegaWiki.
 Diciptakan untuk University of Bamberg. Dilisensikan di bawah GPL 2.0 atau lebih tinggi. Dikembangkan oleh [[User:Kim Bruning|Kim Bruning]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] dapat dengan cepat menampilkan daftar penulis suatu halaman wiki Wikimedia.',
@@ -2308,6 +2314,7 @@ $messages['sr-ec'] = array(
 /** Swedish (Svenska)
  * @author Boivie
  * @author Fluff
+ * @author Lokal Profil
  * @author Ozp
  * @author Per
  * @author Poxnar
@@ -2315,6 +2322,7 @@ $messages['sr-ec'] = array(
  * @author WikiPhoenix
  */
 $messages['sv'] = array(
+	'translategroupdescriptions-desc' => 'Meddelandegruppsbeskrivningar för produkter som stöds av [http://mediawiki.org/wiki/Extension:Translate Translate]-tillägget',
 	'translate-group-desc-nodesc' => 'Det finns ingen beskrivning av denna meddelandegrupp',
 	'translate-group-desc-mediawikicore' => 'Den här gruppen av meddelanden innehåller de meddelanden som används i de nuvarande alfaversionen av MediaWiki ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'Den här gruppen av meddelanden innehåller de [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 mest använda meddelanden] i MediaWiki',
@@ -2333,14 +2341,25 @@ $messages['sv'] = array(
 	'bw-desc-freecol' => 'Innan du översätter FreeCol till ditt språk, var god läs [[Translating:FreeCol]]. FreeCol använder GPL-licensen.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], ett webbforum skrivet i PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] är ett gratis webbaserat bugspårningssystem. Vänligen rapportera alla problem på [[Support]].',
+	'translate-group-desc-ihris' => 'En meddelandegrupp för [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-common' => 'En meddelandegrupp för  [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], en modul i [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-i2ce' => 'En meddelandegrupp för [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], en modul i [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-manage' => 'En meddelandegrupp för [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], en modul i [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-qualify' => 'En meddelandegrupp för [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]], en modul i [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-mediawiki-core-115' => 'Meddelanden för den stabila versionen 1.15 av [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mediawiki-core-116' => 'Meddelanden för den stabila versionen 1.16 av [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mediawiki-core-117' => 'Meddelanden för den stabila versionen 1.17 av [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] är ett informationshanteringsverktyg för mikrofinans',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' är ett pythonbibliotek för att skapa PDF-document från MediaWiki-artiklar som tolkats av mwlib-biblioteket.
 
 Se [[mw:Extension:PDF_Writer]] och http://code.pediapress.com/wiki/wiki/mwlibrl för mer information.",
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] är en e-postklient som är skriven i PHP. Var god att rapportera några problem [[Support|här]].',
+	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] är en offline Wikipedia-läsare',
+	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] är en plattform för öppna media',
+	'translate-group-desc-openimages-verifyemailtemplate' => 'Dessa meddelanden är en del av e-postbekräftelsemallen för [[Translating:Open Images|Open Images]]',
+	'translate-group-desc-openimages-all' => 'Dessa meddelanden är en del av [[Translating:Open Images|Open Images]]-projektet',
 	'bw-desc-openlayers' => 'OpenLayers är en dynamisk kartgenerator med öppen källkod. Vänligen rapportera problem till [[support]].',
+	'bw-desc-openstreetmap' => 'Alla meddelanden som rör [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Den här gruppen av meddelanden innehåller gränssnittet för [[Translating:Open Street Map|Open Street Map]].
 Se [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} Unicode CLDR sida för förklaring av plural hantering].',
 	'bw-desc-osm-potlatch' => 'Den här gruppen innehåller gränssnitts meddelandena för [[Translating:OpenStreetMap|Potlatch]]. 
