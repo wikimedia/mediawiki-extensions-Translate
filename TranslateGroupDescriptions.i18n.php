@@ -347,6 +347,7 @@ Sellit 'ta [[mw:Extension:PDF_Writer]] hag http://code.pediapress.com/wiki/wiki/
 	'bw-desc-shapado' => "Strollad ar c'hemmadennoù evit ar meziant G&R hag a zo frank hag open-source [[Translating:Shapado|Shapado]]",
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] zo ur servijer mikroblogiñ frank a wirioù',
 	'translate-group-desc-statusnet-plugin' => "Darn eus un astenn evit [[Translating:StatusNet|StatusNet]] eo ar c'hemennoù-mañ",
+	'translate-group-desc-tsint' => 'Ur strollad kemennadennoù evit [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], ar reizhiad etrebroadelaat ostilhoù an [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|support]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition technical details]</span>)',
 	'bw-desc-voctrain' => "Pleustrer gerioù diazezet war [http://omegawiki.org OmegaWiki]. Implijout a ra ur reizhiad flashcard da zeskiñ gerioù adal nep yezh pleustret war Omegawiki.
 Gant skol-veur Bamberg eo bet savet. Aotre GPL 2.0 pe nevesoc'h. Diorroet gant [[User:Kim Bruning|Kim Bruning]].",
 	'bw-desc-wikiblame' => 'Gouest eo [http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] da gavout fonnus aozerien ur bajenn eus ur wiki Wikimedia.',

@@ -398,6 +398,28 @@ Taolit ur sell ouzh an arventennoù all ma karit ivez.
 Kit d'ho [[Special:Preferences|pajenn penndibaboù]] diouzhtu ha distroit d'ar bajenn-mañ goude-se.",
 	'translate-fs-settings-skip' => "Echuet eo ganin.
 Lezit ac'hanon da genderc'hel.",
+	'translate-fs-userpage-text' => "Bremañ hoc'h eus da sevel ho pajenn implijer.
+
+Merkit un dra bennak diwar ho penn ; piv oc'h ha petra a rit da skouer.
+Sikour a raio tud kumuniezh {{SITENAME}} da genlabourat ganeoc'h.
+E {{SITENAME}} ez eus tud eus ar bed-holl a labour war raktresoù disheñvel e yezhoù disheñvel.
+
+Er voest rakleuniet a-us, el linenn gentañ diouzhtu e welit <nowiki>{{#babel:en-2}}</nowiki>.
+Klokait anezhi diouzh ho parregezhioù yezh.
+Merkañ a ra an niver goude kod ar yezh pegen mat e komzit yezh pe yezh.
+Setu a c'haller dibab :
+* 1 - Un tammig bihan
+* 2 - Un anaoudegezh diazez
+* 3 - Un anaoudegezh vat
+* 4 - Live unan a gomz a-vihanik
+* 5 - Implijout a rit ar yezh en un doare micherel, da kouer ma'z oc'h troer a-vicher.
+
+Ma komzit ur yezh a-vihanik, lezit al live barregezh disifr ha merkit hepken ar c'hod yezh.
+Da skouer : ma komzit brezhineg a-vihanik, galleg evel m'eo dleet, ma tistripit un tamm saozneg ha m'hoc'h eus tamm anaoudegezh eus ar swahileg, e c'hallot skrivañ :
+<code><nowiki>{{#babel:br|fr-3|en-2|sw-1}}</nowiki></code>
+
+Ma n'anavezit ket kod yezh ar yezhoù a rit ganto eo deuet ar mare da glask anezho.
+Implijout a roll a-is a c'hallit.",
 	'translate-fs-userpage-submit' => 'Krouiñ ma fajenn implijer',
 	'translate-fs-userpage-done' => "Dispar ! Ur bajenn implijer hoc'h eus bremañ.",
 	'translate-fs-permissions-text' => "Ret eo deoc'h goulenn bezañ enskrivet d'ar strollad troerien.
@@ -2500,6 +2522,18 @@ $messages['ml'] = array(
 എന്നെ ഒന്നനുവദിക്കൂ.',
 	'translate-fs-userpage-submit' => 'എന്റെ ഉപയോക്തൃ താൾ സൃഷ്ടിക്കുക',
 	'translate-fs-userpage-done' => 'കൊള്ളാം! താങ്കൾക്കിപ്പോൾ ഒരു ഉപയോക്തൃതാൾ ഉണ്ട്.',
+);
+
+/** Marathi (मराठी)
+ * @author Htt
+ */
+$messages['mr'] = array(
+	'firststeps' => 'पहिल्या पायर्‍या',
+	'translate-fs-pagetitle-done' => ' - झाले!',
+	'translate-fs-userpage-title' => 'माझे सदस्यपान तयार करा.',
+	'translate-fs-target-title' => 'भाषांतरास सुरुवात करा!',
+	'translate-fs-userpage-submit' => 'माझे सदस्यपान तयार करा.',
+	'translate-fs-userpage-done' => 'छान! तुम्हाला आता सदस्यपान आहे.',
 );
 
 /** Malay (Bahasa Melayu)
