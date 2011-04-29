@@ -7420,6 +7420,10 @@ Detalles: $1',
 	'translate-gs-total' => 'Total',
 	'translate-gs-avgscore' => 'Puntuación media',
 	'translate-documentation-language' => 'documentación das mensaxes',
+	'translate-searchprofile' => 'Traducións',
+	'translate-searchprofile-tooltip' => 'Procurar en todas as traducións',
+	'translate-search-languagefilter' => 'Filtrar por lingua:',
+	'translate-search-nofilter' => 'Non filtrar',
 );
 
 /** Gothic (Gothic)
@@ -13939,7 +13943,7 @@ $messages['ne'] = array(
 	'translate-use-suggestion' => 'यस सुझाउलाई अनुवादको कोठामा हाल्नुहोस्। यसले वर्तमान सामग्री(शव्दहरु)को स्थान लिनेछ।',
 	'translate-edit-tab-list' => 'सन्देश सूची',
 	'translate-magic-pagename' => 'विस्तारित मीडियाविकि अनुवाद',
-	'translate-magic-submit' => 'छाँटेर हेर्ने',
+	'translate-magic-submit' => 'हेर्ने',
 	'translate-magic-cm-export' => 'निर्यात गर्ने',
 	'translate-magic-cm-current' => 'वर्तमान',
 	'translate-magic-cm-original' => 'मूल',
@@ -14002,9 +14006,11 @@ $messages['ne'] = array(
 	'translate-untranslated' => 'अनुवाद नगरिएका',
 	'translate-untranslated-tooltip' => 'यस सन्देश समूहमा अनुवाद नगरिएका सन्देशहरुको जम्मा संख्या।
 यसभित्र ती सन्देशहरु पनि पर्छन् जसलाई अप्रचलितको रुपमा ट्याग गरिएकोछ।',
-	'translate-percentage-complete' => 'समापन',
+	'translate-percentage-complete' => 'सकिएका',
+	'translate-percentage-fuzzy' => 'पुराना (काम नलाग्ने)',
 	'supportedlanguages-recenttranslations' => 'भर्खरैका अनुवादहरु',
 	'translate-manage-cacheat' => '$1 का दिन  $2मा आयात गरिएको',
+	'translate-manage-modlang-new' => '$1 (नयाँ)',
 	'translate-searchprofile' => 'अनुवाद',
 );
 
@@ -15077,6 +15083,7 @@ Detalhs : $1',
 $messages['or'] = array(
 	'translate-history' => 'ଇତିହାସ',
 	'translate-page-navigation-legend' => 'ଦିଗବାରେଣି (ନାଭିଗେସନ)',
+	'translate-edit-in-other-languages' => 'ଅଲଗା ଭାଷାରେ ମେସେଜ',
 	'translate-language' => 'ଭାଷା',
 );
 
@@ -20393,6 +20400,7 @@ $messages['tt-cyrl'] = array(
 	'translate-js-nonext' => 'Әлеге биттәге бу соңгы мәкалә иде.',
 	'translate-js-skip' => 'Киләсе биткә күчү',
 	'translate-js-history' => 'Тәрҗемә тарихы',
+	'translate-js-support' => 'Сорау бирү',
 );
 
 /** Uighur (ئۇيغۇرچە / Uyghurche‎) */
