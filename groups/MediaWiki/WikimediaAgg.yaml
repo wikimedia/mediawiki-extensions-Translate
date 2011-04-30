@@ -57,6 +57,7 @@ GROUPS:
   - ext-gadgets
   - ext-globalblocking
   - ext-globalusage # 2009-11-11: commons.wikimedia.org
+  - ext-googlenewssitemap # r87149 for wikinews
   - ext-imagemap
   - ext-inputbox
   - ext-intersection
