@@ -2511,6 +2511,7 @@ $messages['uk'] = array(
 
 Гляньте, будь ласка, [[mw:Extension:PDF_Writer]] та http://code.pediapress.com/wiki/wiki/mwlibrl для доклднішої інформації.",
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] це клієнт веб-пошти (webmail) написаний на PHP. Будь ласка, повідомляйте про будь-які проблеми на [[Support|сторінці підтримки]].',
+	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] це автономна читалка Вікіпедії',
 	'translate-group-desc-openimages-all' => 'Ці повідомлення є частиною проекту [[Translating:Open Images|Open Images]]',
 	'bw-desc-openlayers' => 'OpenLayers це генератор динамічних карт з відкритими вихідними кодами. Будь ласка, повідомляйте про будь-які проблеми на [[Support|сторінці підтримки]].',
 	'bw-desc-openstreetmap' => 'Група повідомлень [[Translating:OpenStreetMap|OpenStreetMap]]',
