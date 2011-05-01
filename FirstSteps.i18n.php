@@ -1866,7 +1866,9 @@ Si ou pa vle resevwa nouvèl, ou kapab retire ou nan opsyon sa nan onglè "{{int
  */
 $messages['hu'] = array(
 	'firststeps' => 'Első lépések',
+	'firststeps-desc' => '[[Special:FirstSteps|Speciális lap]], ami felkészíti az új felhasználókat a fordító kiterjesztés használatára',
 	'translate-fs-pagetitle-done' => ' - kész!',
+	'translate-fs-pagetitle' => 'Első lépések varázsló – $1',
 	'translate-fs-signup-title' => 'Regisztráció',
 	'translate-fs-settings-title' => 'Nézd át a beállításaidat!',
 	'translate-fs-userpage-title' => 'Hozz létre egy felhasználói lapot',
@@ -1876,6 +1878,17 @@ $messages['hu'] = array(
 	'translate-fs-intro' => "Üdvözlünk a {{SITENAME}} használatának első lépéseiben segítő varázslóban!
 Lépésről lépésre segítünk a fordítóvá válás folyamatában.
 A végén hozzákezdhetsz bármelyik, {{SITENAME}} által támogatott projekt ''felületének üzeneteinek'' fordításához.",
+	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount.png|frame]]
+
+Első lépés a regisztráció.
+
+A fordításaid a te felhasználónevedhez lesznek kötve.
+A jobb oldalon található kép megmutatja, hogyan kell helyesen kitölteni a mezőket.
+
+Ha már korábban regisztráltál, inkább $1jelentkezz be$2.
+Ha megtörtént a regisztráció, látogass vissza erre a lapra.
+
+$3Regisztráció$4',
 	'translate-fs-settings-text' => 'Most menj a beállításaidhoz, és ha mást nem is,
 de állítsd át a felület nyelvét arra, amire fordítani fogsz.
 
@@ -1889,8 +1902,52 @@ Ezeken kívül további beállításokat is kipróbálhatsz.
 Menj a [[Special:Preferences|beállításaidhoz]], majd térj vissza erre a lapra.',
 	'translate-fs-settings-skip' => 'Végeztem.
 Szeretném folytatni.',
+	'translate-fs-userpage-text' => 'Most létre kell hoznod egy felhasználói lapot!
+
+Írj valamit magadról: ki vagy és mit csinálsz.
+Ez elősegíti a {{SITENAME}} közösség közös munkáját.
+A {{SITENAME}}-en a világ minden tájáról végeznek szerkesztéseket különböző nyelven és projekteken.
+
+A fenti, előre kitöltött dobozban az első sorban ezt látod: <nowiki>{{#babel:en-2}}</nowiki>.
+Egészítsd ki a nyelvtudásoddal.
+A nyelv utáni szám leírja, hogy milyen tudással rendelkezel az adott nyelvből.
+A lehetőségek:
+* 1 – minimális
+* 2 – alaptudás
+* 3 – jó tudás
+* 4 – anyanyelvi szinten
+* 5 – a nyelvet hivatásszerűen használod, például hivatásos fordító vagy.
+
+Ha a nyelv anyanyelved, akkor hagyd ki a tudásszintet, és csak a nyelvkódot írd be.
+Például ha magyar az anyanyelved, jól beszélsz angolul és még egy kicsit németül, akkor a következőt írd:
+<code><nowiki>{{#babel:hu|en-3|de-1}}</nowiki></code>
+
+Ha nem tudod egy nyelv kódját, itt az ideje, hogy megkeresd.
+Az alábbi listát használhatod hozzá.',
 	'translate-fs-userpage-submit' => 'Felhasználói lap létrehozása',
 	'translate-fs-userpage-done' => 'Felhasználói lap létrehozva.',
+	'translate-fs-permissions-text' => 'Most kérned kell, hogy a fordítói csoportba kerülhess.
+
+Amíg nem javítjuk ki a kódot, menj a [[Project:Translator]] lapra, és kövesd az ott megjelenő információkat, majd gyere vissza erre a lapra.
+
+Miután elküldted a kérésedet, a személyzet egyik önkéntes tagja ellenőrzi a kérésedet, és elfogadja, amilyen gyorsan lehetséges
+Légy türelmes.
+
+<del>Ellenőrizd, hogy az alábbi kérelem megfelelően ki van-e töltve, majd kattints a Kérelem elküldése gombra.</del>',
+	'translate-fs-target-text' => "Gratulálunk!
+Most már elkezdhetsz fordítani.
+
+Ne ijedj meg, ha még új a felület, és valami összezavar.
+A [[Project list|projektlista]] lapon megtalálod azon projektek listáját, melyek fordításában részt vehetsz.
+A legtöbb projekthez tartozik egy rövid leírás és egy „''Projekt fordítása''” hivatkozás, ami elvezet arra a lapra, ahol a fordítatlan üzenetek vannak listázva.
+Rendelkezésre áll egy olyan lista is, ahol az üzenetcsoportok tekinthetőek meg, a hozzátartozó, [[Special:LanguageStats|adott nyelvre vonatkozó fordítási állapottal]].
+
+Ha a fordítás előtt inkább tájékozódni szeretnél, olvasd el a [[FAQ|gyakran ismételt kérdéseket]].
+Sajnos a dokumentáció néha kicsit elavult lehet.
+Ha úgy érzed, hogy valamit meg tudnál csinálni, de nem jössz rá, hogyan, ne habozz, kérdezz a [[Support|támogatással foglalkozó oldalon]].
+
+Kapcsolatba léphetsz fordítótársaiddal a [[Portal:$1|nyelvedhez tartozó portál]] [[Portal_talk:$1|vitalapján]] keresztül.
+Ha még nem tetted meg, [[Special:Preferences|állítsd át a felhasználói felületed nyelvét arra a nyelvre, amire fordítani szeretnél]], hogy a wiki a megfelelő linkeket tudja nyújtani neked.",
 );
 
 /** Interlingua (Interlingua)
@@ -3603,6 +3660,7 @@ Om du inte vill få några nyhetsbrev så kan kan välja bort dem under fliken "
 );
 
 /** Telugu (తెలుగు)
+ * @author Chaduvari
  * @author Veeven
  */
 $messages['te'] = array(
@@ -3614,8 +3672,65 @@ $messages['te'] = array(
 	'translate-fs-permissions-title' => 'అనువాద అనుమతులకై అభ్యర్థించండి',
 	'translate-fs-target-title' => 'అనువదించడం మొదలుపెట్టండి!',
 	'translate-fs-email-title' => 'మీ ఈమెయిలు చిరునామాని నిర్ధారించండి',
+	'translate-fs-intro' => '{{SITENAME}} యొక్క తొలి అడుగుల విజార్డుకు స్వాగతం.
+అంచెలంచెలుగా అనువాదకుడిగా తయారయే విధానం గురించి మీకిక్కడ మార్గదర్శకత్వం లభిస్తుంది.
+చివరికి, {{SITENAME}} లో మద్దతు ఉన్న అన్ని ప్రాజెక్టుల్లోను "ఇంటరుఫేసు సందేశాల"ను అనువదించే సామర్ధ్యం మీకు లభిస్తుంది.',
+	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount.png|frame]]
+
+మొదటి మెట్టుగా మీరు నమోదు చేసుకోవాలి.
+
+మీరు చేసే అనువాదాల శ్రేయస్సు మీ వాడుకరిపేరుకు లభిస్తుంది.
+కుడివైపున ఉన్న బొమ్మ, ఫీల్డులను ఎలా నింపాలో చూపిస్తుంది.
+
+మీరు ఈపాటికే నమోదై ఉంటే, $1లాగినవండి$2.
+నమోదయ్యాక, తిరిగి ఈ పేజీకి రండి.
+
+$3నమోదు$4',
+	'translate-fs-settings-text' => 'ఇప్పుడు మీరు మీ అభిరుచులు పేజీకి వెళ్ళి
+కనీసం ఏ భాషలోకి అనువాదాలు చెయ్యదలచుకున్నారో ఆ భాషకు మీ ఇంటరుఫెసు భాషను మార్చండి.
+
+మీ ఇంటరుఫేసు భాషే మీ డిఫాల్టు లక్ష్య భాష అవుతుంది.
+భాషను మార్చడమనే సంగతిని మర్చిపోవడం బహు తేలిక. అంచేత ఇప్పుడే మార్చుకోవడం మంచిదని నొక్కి చెబుతున్నాం.
+
+అక్కడే, మీకు తెలిసిన ఇతర భాషల్లోని అనువాదాలను కూడా చూపించమని సాఫ్టువేరును అడగండి..
+ఈ సెట్టింగు "{{int:prefs-editing}}" ట్యాబులో కనిపిస్తుంది.
+ఇతర సెట్టింగుల్లో కూడా ఏముందో శోధించండి.
+
+ఇక మీ [[Special:Preferences|అభిరుచులు పేజీ]] కి వెళ్ళి, తిరిగి ఇక్కడికి రండి.',
+	'translate-fs-settings-skip' => 'పూర్తి చేసాను.
+ఇక ముందుకు తీసుకెళ్ళు.',
+	'translate-fs-userpage-text' => 'ఇప్పుడు మీరో వాడుకరి పేజీని తయారు చేసుకోవాలి.
+
+మీ గురించి కాస్త రాయండి -  మీ రెవెఅరు, ఏం చేస్తూంటారు లాంటివి.
+{{SITENAME}} సమాజంతో కలిసి పనిచేయడానికి ఇది ఉపయోగపడుతుంది. 
+{{SITENAME}} లో ప్రపంచం నలుమూల నుండి వచ్చిన ప్రజలు వివిధ భాషలు, ప్రాజెక్టులపై పనిచేస్తున్నారు.
+
+పైనున్న మొదటి లైనులోని ముందే నింపిన పెట్టెలో <nowiki>{{#babel:en-2}}</nowiki> అని మీకు కనిపిస్తుంది.
+మీ భాషా పరిజ్ఞానపు స్థాయిని అక్కడ నింపండి.
+భాషా సంకేతం తరువాత ఉన్న సంఖ్య ఆ భాషలో మీకున్న ప్రావీణ్యాన్ని తెలియజేస్తుంది.
+మీకున్న ప్రత్యామ్నాయాలు:
+* 1 - కొద్దిగా
+* 2 - సాధారణ పరిజ్ఞానం
+* 3 - మంచి పరిజ్ఞానం
+* 4 - స్వంత భాష స్థాయి (మాతృ భాష వంటిది)
+* 5 - వృత్తి రీత్యా భాషను వాడుతారు, ఉదాహరణకు మీరు ప్రొఫెషనల్ అనువాదకులు.
+ఏదైనా భాషను మీరు స్వంత భాష లాగా మాట్లాడగలిగితే, నైపుణ్యం స్థాయిని వదిలేసి, భాష సంకేతం మాత్రమే రాయండి.
+ఉదా: మీరు తెలుగు స్వంత భాషలాగా మాట్లాడగలిగి, ఇంగ్లీషులో మంచి పరిజ్ఞానం ఉండి, కొద్దిగా స్వాహిలి వస్తే, ఇలా రాయాలి:
+<code><nowiki>{{#babel:te|en-3|sw-1}}</nowiki></code>
+
+ఏదైనా భాషకు సంబంధించిన కోడు మీకు తెలియకపోతే, తెలుసుకొనేందుకు ఇది సరైన సమయం.
+కింది జాబితాను వాడండి.',
 	'translate-fs-userpage-submit' => 'నా వాడుకరి పుటని సృష్టించు',
 	'translate-fs-userpage-done' => 'భళా! మీకు ఇప్పుడు వాడుకరి పుట ఉంది.',
+	'translate-fs-permissions-text' => 'ఇప్పుడిక మిమ్మల్ని అనువాదకుల గుంపుకు చేర్చమని అడగండి. 
+
+మేం కోడును సరిచేసే లోపు [[Project:Translator]] కు వెళ్ళి అక్కడి సూచనలను పాటించండి.
+ఆ తరువాత ఈ పేజీకి రండి.
+
+మీ అభ్యర్ధనను పంపించాక, మా ఔత్సాహిక సభ్యులు వీలైనంత త్వరగా మీ అభ్యర్ధనను పరిశీలించి, ఆమోదిస్తారు.
+ఓపికగా ఉండండి.
+
+<del>కింది అభ్యర్ధనను సరిగ్గా పూర్తి చేసారని నిర్ధారించుకుని, అభ్యర్ధించు బొత్తాన్ని నొక్కండి.</del>',
 );
 
 /** Thai (ไทย)

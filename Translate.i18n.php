@@ -12301,6 +12301,10 @@ Detailler: $1',
 	'translate-gs-total' => 'Total',
 	'translate-gs-avgscore' => 'Duerchschnëttleche Score',
 	'translate-documentation-language' => 'Dokumentatioun vum Message',
+	'translate-searchprofile' => 'Iwwersetzungen',
+	'translate-searchprofile-tooltip' => 'An allen Iwwersetzunge sichen',
+	'translate-search-languagefilter' => 'Filter no der Sprooch:',
+	'translate-search-nofilter' => 'Kee Filter',
 );
 
 /** Ganda (Luganda)
@@ -19357,6 +19361,7 @@ $messages['ta'] = array(
 );
 
 /** Telugu (తెలుగు)
+ * @author Chaduvari
  * @author Kiranmayee
  * @author Veeven
  */
@@ -19516,7 +19521,8 @@ $messages['te'] = array(
 	'translate-manage-action-ignore' => 'పట్టించుకోవద్దు',
 	'translate-manage-fuzzy-summary' => 'నిర్వచనం మారింది',
 	'translate-manage-import-done' => 'అంతా పూర్తయ్యింది!',
-	'translate-manage-subtitle' => 'నిర్వహణ',
+	'translate-manage-subtitle' => 'నిర్వహించు',
+	'translate-manage-import-rebuild-all' => 'అన్ని భాషలనూ పునర్నిర్మించు. మార్పులేమైనా ఉంటే పట్టించుకోకు.',
 	'importtranslations' => 'అనువాదాల దిగుమతి',
 	'translate-import-from-wiki' => 'ఈ వికీలోని దస్త్రం:',
 	'translate-import-from-local' => 'స్థానిక దస్త్రపు ఎక్కింపు:',
@@ -19524,9 +19530,10 @@ $messages['te'] = array(
 	'translate-js-next' => 'భద్రపరిచి తర్వాతి దానికి వెళ్ళు',
 	'translate-js-nonext' => 'ఈ పుటలో ఇది చివరి సందేశం',
 	'translate-js-skip' => 'వదిలేసి తర్వాతి దానికి వెళ్ళు',
-	'translate-js-save-failed' => 'భద్రపరచడం విఫలమైంది. దయచేసి ఈ పొరపాటుని నివేదించండి.',
+	'translate-js-save-failed' => 'భద్రపరచడం విఫలమైంది. ఈ లోపం గురించి ఫిర్యాదు చెయ్యండి.',
 	'translate-js-history' => 'అనువాద చరిత్ర',
-	'translate-js-support' => 'సందేహాముంటే అడగండి',
+	'translate-js-support' => 'సందేహముంటే అడగండి',
+	'translate-js-support-title' => 'ఈ సందేశాన్ని సరిగ్గా అనువదించేందుకు అవసరమైన సమాచారం సరిపడా లేకపోతే సాయం కోసం అడగండి',
 	'translate-gs-pos' => 'స్ధానం',
 	'translate-gs-code' => 'సంకేతం',
 	'translate-gs-continent' => 'ఖండం',
