@@ -1096,3 +1096,19 @@ FILES:
   sourcePattern: %GROUPROOT%/mifos/userInterface/src/main/resources/org/mifos/ui/localizedProperties/widget_messages_%CODE%.properties
   definitionFile: %GROUPROOT%/mifos/userInterface/src/main/resources/org/mifos/ui/localizedProperties/widget_messages.properties
   targetPattern: mifos/userInterface/src/main/resources/org/mifos/ui/localizedProperties/widget_messages_%CODE%.properties
+
+---
+BASIC:
+  id: out-mifos-accounting
+  label: Mifos - Accounting
+
+MANGLER:
+  class: StringMatcher
+  prefix: accounting-
+  patterns:
+    - "*"
+
+FILES:
+  sourcePattern: %GROUPROOT%/mifos/accounting/src/main/resources/org/mifos/platform/accounting/ui/localizedProperties/accounting_messages_%CODE%.properties
+  definitionFile: %GROUPROOT%/mifos/accounting/src/main/resources/org/mifos/platform/accounting/ui/localizedProperties/accounting_messages.properties
+  targetPattern: mifos/mifos/accounting/src/main/resources/org/mifos/platform/accounting/ui/localizedProperties/accounting_messages_%CODE%.properties
