@@ -12715,17 +12715,17 @@ $messages['mk'] = array(
 	'translate-use-suggestion' => 'Вметнете го овој предлог во полето за превод. Тоа ќе ја замени моменталната содржина.',
 	'translate-edit-tab-list' => 'Список на пораки',
 	'translate-magic-pagename' => 'Превод на додатоци за МедијаВики',
-	'translate-magic-help' => "Можете да ги преведете алијасите на специјалните страници, волшебните зборови и називите на именските простори.
+	'translate-magic-help' => 'Можете да ги преведете алијасите на специјалните страници, волшебните зборови и називите на именските простори.
 
 Алијасите на специјалните страници и волшебните зборови може да имаат повеќе преводи.
 Преводите се одделуваат со запирка (,).
-Именските простори може да имаат само еден превод.
+Именските простори може да имаат само по еден превод.
 
-Преведувањето на <code>Разговор за $1</code> е специфично. <code>$1</code> се заменува со името на мрежното место (на пр. <code>Разговор за {{SITENAME}} </code>).
-Ако не е можно во вашиот јазик да обликувате правилен израз без промена на името на страницата, ве молиме контактирајте со развивачите на програмската опрема.
+<code>Разговор за $1</code> е посебен случај во преводите на именските простори. <code>$1</code> се заменува со името на мрежното место (на пр. <code>Разговор за {{SITENAME}}</code>).
+Ако на вашиот не може да се обликува правилен израз без промена на името на страницата, тогаш обратете се кај некој од развивачите.
 
-За да ги зачувате промените треба да припаѓате на групата на преведувачи.
-Промените нема да бидат зачувани без да притиснете на долуприкажаното копче '''зачувај'''.",
+За да ги зачувате промените треба да припаѓате на групата преведувачи.
+Промените нема да се зачуваат без да стиснете на долуприкажаното копче „Зачувај“.',
 	'translate-magic-module' => 'Модул:',
 	'translate-magic-submit' => 'Филтрирај',
 	'translate-magic-cm-export' => 'Извоз',
@@ -12930,7 +12930,7 @@ $1',
 	'translate-js-history' => 'Минати преводи',
 	'translate-js-support' => 'Постави прашање',
 	'translate-js-support-title' => 'Побарајте помош ако немате доволно информации за да направите точен превод на пораката.',
-	'translate-gs-pos' => 'Поз.',
+	'translate-gs-pos' => 'Место',
 	'translate-gs-code' => 'Код',
 	'translate-gs-continent' => 'Континент',
 	'translate-gs-speakers' => 'Говорници',
@@ -19373,17 +19373,20 @@ $messages['te'] = array(
 	'translate-history' => 'చరిత్ర',
 	'translate-showsub' => '{{PLURAL:$1|ఉపసమూహాన్ని|$1 ఉపసమూహాలను}} చూపించు.',
 	'translate-task-view' => 'అన్ని సందేశాలు చూడాలనుకుంటున్నాను',
-	'translate-task-untranslated' => 'అన్ని అనువాదంకాని సందేశాలు చూడాలనుకుంటున్నాను',
-	'translate-task-optional' => 'ఐచ్చిక సందేశాలు చూడాలనుకుంటున్నాను',
-	'translate-task-untranslatedoptional' => 'అనువాదంకాని ఐచ్చిక సందేశాలను చూడాలనుకుంటున్నాను',
+	'translate-task-untranslated' => 'అనువాదం కాని సందేశాలన్నిటినీ చూడాలనుకుంటున్నాను',
+	'translate-task-optional' => 'ఐచ్ఛిక సందేశాలు చూడాలనుకుంటున్నాను',
+	'translate-task-suggestions' => 'అనువాద జ్ఞాపక కోశంలో సూచనలు కలిగి ఉన్న సందేశాలను చూపించు',
+	'translate-task-untranslatedoptional' => 'అనువాదంకాని ఐచ్ఛిక సందేశాలను చూడాలనుకుంటున్నాను',
 	'translate-task-problematic' => 'సమస్యాత్మక సందేశాలను చూడాలనుకుంటున్నాను',
 	'translate-task-review' => 'మార్పులని సమీక్షించాలనుకుంటున్నాను',
-	'translate-task-reviewall' => 'అన్ని అనువాదాలనూ సమీక్షించాలనుకుంటున్నాను',
+	'translate-task-reviewall' => 'ఇక్కడి అన్ని అనువాదాలనూ సమీక్షించాలనుకుంటున్నాను',
 	'translate-task-export' => 'అనువాదాల ఎగుమతి',
+	'translate-task-export-to-file' => 'అనువాదాలను ఫైలుకు ఎగుమతి చెయ్యి',
 	'translate-page-no-such-language' => 'ఎంచుకున్న భాష సరైనది కాదు.',
 	'translate-page-no-such-task' => 'ఎంచుకున్న పని సరైనది కాదు.',
 	'translate-page-no-such-group' => 'ఇచ్చిన సమూహం సరైనది కాదు.',
-	'translate-page-disabled' => "ఈ భాషకి ఈ సమూహంలో అనువాదాలని అచేతనం చేసారు. కారణం:
+	'translate-page-disabled' => "ఈ భాషకి ఈ సమూహంలో అనువాదాలని అచేతనం చేసారు. 
+కారణం:
 
 ''$1''",
 	'translate-page-settings-legend' => 'అమరికలు',
@@ -19415,6 +19418,7 @@ $messages['te'] = array(
 	'translate-edit-warnings' => 'అసంపూర్తి అనువాదాల గురించి హెచ్చరికలు',
 	'translate-edit-tmsugs' => 'అనువాద కోశం నుండి సలహాలు',
 	'translate-edit-tmmatch' => '$1% పోలిక',
+	'translate-use-suggestion' => 'ఈ సూచనను అనువాద స్థలంలోకి చేర్చు. ఇప్పుడున్న కంటెంటును తీసేసి దాని స్థానంలో ఇది చేరుతుంది.',
 	'translate-edit-tab-list' => 'సందేశాల జాబితా',
 	'translate-magic-pagename' => 'విస్తరిత మీడియావికీ అనువాదం',
 	'translate-magic-module' => 'మాడ్యూలు:',
@@ -19453,7 +19457,7 @@ $messages['te'] = array(
 	'translate-pref-editassistlang-bad' => 'జాబితాలో తప్పుడు భాషా సంకేతం:
 <nowiki>$1</nowiki>.',
 	'right-translate-manage' => 'అనువాద సమూహాలని నిర్వహించడం',
-	'translate-rc-translation-filter' => 'అనువాదాల పడపోత:',
+	'translate-rc-translation-filter' => 'అనువాదాల వడపోత:',
 	'translate-rc-translation-filter-no' => 'ఏమీ చేయకు',
 	'translate-rc-translation-filter-only' => 'అనువాదాలు మాత్రమే చూపించు',
 	'translate-rc-translation-filter-site' => 'సైటు సందేశాల మార్పులు మాత్రమే',
@@ -21423,6 +21427,10 @@ Chi tiết:$1',
 	'translate-gs-total' => 'Tổng cộng',
 	'translate-gs-avgscore' => 'Điểm t.bình',
 	'translate-documentation-language' => 'Tài liệu thông điệp',
+	'translate-searchprofile' => 'Bản dịch',
+	'translate-searchprofile-tooltip' => 'Tìm kiếm tất cả các bản dịch',
+	'translate-search-languagefilter' => 'Lọc theo ngôn ngữ:',
+	'translate-search-nofilter' => 'Không lọc',
 );
 
 /** Volapük (Volapük)

@@ -3934,7 +3934,7 @@ Bạn cứ thoải mái khám phá các thiết lập khác nhé.
 Đến [[Special:Preferences|trang tùy chọn cá nhân]] của bạn ngay bây giờ rồi trở lại trang này.',
 	'translate-fs-settings-skip' => 'Tôi đã xong.
 Cho tôi xem tiếp nào.',
-	'translate-fs-userpage-text' => 'Bây giờ bạn cần phải tạo trang thành viên của mình.
+	'translate-fs-userpage-text' => 'Bây giờ bạn cần phải tạo trang cá nhân của mình.
 
 Xin hãy viết một chút về bản thân; giới thiệu bạn là ai và bạn làm gì.
 Điều này sẽ giúp cho cộng đồng {{SITENAME}} cộng tác với nhau dễ hơn.
