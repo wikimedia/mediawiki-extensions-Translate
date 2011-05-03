@@ -1945,6 +1945,8 @@ Los cambeos nun se graben hasta que calques nel botón guardar d'abaxo.",
  */
 $messages['az'] = array(
 	'translate' => 'Tərcümə et',
+	'translate-history' => 'tarix',
+	'translate-page-group' => 'Qrup',
 	'translate-page-language' => 'Dil',
 	'translate-submit' => 'Seç',
 );

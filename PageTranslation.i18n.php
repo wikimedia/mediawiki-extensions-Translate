@@ -4136,7 +4136,7 @@ Antramentre che le pàgine a son tramudà, a l'é nen possìbil anteragì con co
 J'eror a saran registrà ant ël [[Special:Log/pagetranslation|registr ëd tradussion ëd le pàgine]] e a dovran esse rangià a man.",
 	'pt-movepage-logreason' => 'Tòch ëd la pàgina da volté $1.',
 	'pt-movepage-started' => "La pàgina base adess a l'é tramudà.
-Për piasì contròla ël [[Special:Log/pagetranslation|registr ëd viragi dle pàgine]] për eror e mëssagi ëd completament.",
+Për piasì, ch'a contròla ël [[Special:Log/pagetranslation|registr ëd tradussion dle pàgine]] për eror e mëssagi ëd completament.",
 	'pt-locked-page' => "Cota pàgina a l'é blocà përchè la pàgina da volté a l'é an camin ch'as tramuda.",
 );
 
