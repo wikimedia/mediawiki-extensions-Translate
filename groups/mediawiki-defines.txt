@@ -1190,6 +1190,9 @@ ignored = proofreadpage_specialpage_text
 Protect Section
 descmsg = protectsection_desc
 
+Protect Site
+aliasfile = ProtectSite/ProtectSite.alias.php
+
 Proxy Connect
 
 PSI NoTocNum
