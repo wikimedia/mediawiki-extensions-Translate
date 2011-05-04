@@ -51,6 +51,10 @@ ignored = antispoof-conflict-item
 APC
 aliasfile = APC/APC.alias.php
 
+Api Sandbox
+aliasfile = ApiSandbox/ApiSandbox.alias.php
+descmsg = apisb-desc
+
 Api SVG Proxy
 
 Approved Revs
