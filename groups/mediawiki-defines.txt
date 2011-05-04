@@ -1743,6 +1743,9 @@ aliasfile = WhatIsMyIP/WhatIsMyIP.alias.php
 White List Edit
 aliasfile = WhiteListEdit/WhiteListEdit.alias.php
 
+Whitelist Pages
+ignored = public_read_whitelist
+
 Whos Online
 aliasfile = WhosOnline/WhosOnline.alias.php
 
