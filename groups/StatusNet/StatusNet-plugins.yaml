@@ -338,6 +338,20 @@ MANGLER:
   prefix: disqus-
 ---
 BASIC:
+  id: out-statusnet-plugin-domainstatusnetwork
+  label: StatusNet - DomainStatusNetwork
+  display: out/statusnet/plugin/domainstatusnetwork
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/1.0.x/plugins/DomainStatusNetwork/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/DomainStatusNetwork/locale/%CODE%/LC_MESSAGES/DomainStatusNetwork.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/DomainStatusNetwork/locale/DomainStatusNetwork.pot
+  targetPattern: statusnet/plugins/DomainStatusNetwork/locale/%CODE%/LC_MESSAGES/DomainStatusNetwork.po
+
+MANGLER:
+  prefix: domainstatusnetwork-
+---
+BASIC:
   id: out-statusnet-plugin-domainwhitelist
   label: StatusNet - DomainWhitelist
   display: out/statusnet/plugin/domainwhitelist
@@ -660,6 +674,20 @@ MANGLER:
   prefix: ldapauthorization-
 ---
 BASIC:
+  id: out-statusnet-plugin-ldapcommon
+  label: StatusNet - LdapCommon
+  display: out/statusnet/plugin/ldapcommon
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/1.0.x/plugins/LdapCommon/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/LdapCommon/locale/%CODE%/LC_MESSAGES/LdapCommon.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/LdapCommon/locale/LdapCommon.pot
+  targetPattern: statusnet/plugins/LdapCommon/locale/%CODE%/LC_MESSAGES/LdapCommon.po
+
+MANGLER:
+  prefix: ldapcommon-
+---
+BASIC:
   id: out-statusnet-plugin-lilurl
   label: StatusNet - LilUrl
   display: out/statusnet/plugin/lilurl
@@ -924,6 +952,20 @@ FILES:
 
 MANGLER:
   prefix: openx-
+---
+BASIC:
+  id: out-statusnet-plugin-orbited
+  label: StatusNet - Orbited
+  display: out/statusnet/plugin/orbited
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/1.0.x/plugins/Orbited/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/Orbited/locale/%CODE%/LC_MESSAGES/Orbited.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/Orbited/locale/Orbited.pot
+  targetPattern: statusnet/plugins/Orbited/locale/%CODE%/LC_MESSAGES/Orbited.po
+
+MANGLER:
+  prefix: orbited-
 ---
 BASIC:
   id: out-statusnet-plugin-piwikanalytics
