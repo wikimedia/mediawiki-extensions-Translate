@@ -431,6 +431,20 @@ Pa vo bet lakaet ho koulenn ez aio unan eus hor skipailh a-youl vat da wiriañ a
 Un tamm pasianted mar plij.
 
 <del>Gwiriit mat eo leuniet prop ar goulenn-mañ ha klikit war ar bouton goulenn.</del>",
+	'translate-fs-target-text' => "Gourc'hemennoù !
+Kregiñ da dreiñ a c'hallit ober bremañ.
+
+Arabat bezañ chalet ma seblant pep tra bezañ nevez ha divoas.
+E [[Project list|Roll ar raktresoù]] e c'hallit kaout ur sell war an holl raktresoù a c'hallit kemer perzh en o zroidigezh.
+Ar pep brasañ eus ar raktresoù zo bet savet evito ur bajenn warni un deskrivadur berr gant ul liamm \"''Troit ar raktres-mañ''\", a gaso ac'hanoc'h d'ur bajenn ma kavot an holl gemennadennoù didro.
+Gallout a c'haller kaout ivez roll an holl gemennadennoù dre strollad dre [[Special:LanguageStats|stad an troidigezhioù en ur yezh bennak]].
+
+Ma soñj deoc'h eo ret deoc'h kompren gwelloc'h an traoù a-raok stagañ ganti, e c'hallit lenn [[FAQ|Foar ar Goulennoù]].
+Diwallit, a-wezhioù e c'hall bezañ blaz ar c'hozh gant an titouroù.
+Ma soñj deoc'h ez eus un dra bennak a zlefec'h bezañ gouest d'ober ha ma ne gavit ket, kit da c'houlenn war [[Support|ar bajenn skoazell]].
+
+Gallout a rit ivez mont e darempred gant ho keneiled troourien a ra gant ho yezh war [[Portal_talk:\$1|pajenn gaozeal]] [[Portal:\$1|ar porched evit ho yezhl]].
+Mar n'eo ket bet graet ganeoc'h c'hoazh e c'hallit [[Special:Preferences|lakaat yezh hoc'h etrefas implijer er yezh a fell deoc'h treiñ enni]]. Evel-se e c'hallo ar wiki kinnig deoc'h al liammoù a zere ar gwellañ evideoc'h.",
 	'translate-fs-email-text' => "Lakait ho chomlec'h postel en [[Special:Preferences|ho penndibaboù]] ha kadarnait dre ar postel a vo kaset deoc'h.
 
 Evel-se e c'hallo an implijerien all mont e darempred ganeoc'h dre bostel.

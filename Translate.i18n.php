@@ -3460,6 +3460,14 @@ $messages['bug'] = array(
 	'translate-statsf-submit' => 'Pribiu',
 );
 
+/** Буряад (Буряад)
+ * @author ОйЛ
+ */
+$messages['bxr'] = array(
+	'translate-page-language' => 'Хэлэн',
+	'translate-language' => 'Хэлэн',
+);
+
 /** Catalan (Català)
  * @author Jordi Roqué
  * @author Paucabot
@@ -13223,6 +13231,7 @@ $messages['mo'] = array(
 );
 
 /** Marathi (मराठी)
+ * @author Htt
  * @author Kaustubh
  * @author Mahitgar
  */
@@ -13249,7 +13258,7 @@ $messages['mr'] = array(
 	'translate-page-language' => 'भाषा',
 	'translate-page-limit' => 'मर्यादा',
 	'translate-page-limit-option' => 'प्रतिपान {{PLURAL:$1|संदेश|संदेश}}$1',
-	'translate-submit' => 'शेंदा(ओढा)',
+	'translate-submit' => 'मिळवा',
 	'translate-page-navigation-legend' => 'सुचालन',
 	'translate-page-showing' => '$3चे $1पासून $2पर्यंत संदेश दाखवत आहे.',
 	'translate-page-showing-all' => '$1 {{PLURAL:$1|संदेश|संदेश}} दाखवत आहे .',
