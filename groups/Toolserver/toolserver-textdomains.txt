@@ -3,7 +3,7 @@ optional = checkusage, commonshelper2
 ignored = title, tusc, standard_language, standard_project
 
 General
-optional = colon-separator, dateformat
+optional = colon-separator, dateformat, parentheses
 
 GetWikiAPI
 ignored = title
