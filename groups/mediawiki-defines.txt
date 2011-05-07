@@ -419,6 +419,9 @@ Edit Subpages
 Edit User
 aliasfile = EditUser/EditUser.alias.php
 
+Elm Easy Ref
+descmsg = elm-easyref-desc
+
 Email Address Image
 
 Email Capture
