@@ -242,9 +242,7 @@ $messages['be-tarask'] = array(
 	'translate-group-desc-ihris-manage' => 'Група паведамленьняў [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], модуля [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-qualify' => 'Група паведамленьняў [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]], модуля [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'Асноўнае дапаўненьне [[Translating:MantisBT|MantisBT]]',
-	'translate-group-desc-mediawiki-core-115' => 'Паведамленьні стабільнай вэрсіі [[Translating:MediaWiki|MediaWiki]] 1.15',
-	'translate-group-desc-mediawiki-core-116' => 'Паведамленьні стабільнай вэрсіі [[Translating:MediaWiki|MediaWiki]] 1.16',
-	'translate-group-desc-mediawiki-core-117' => 'Паведамленьні для стабільнай вэрсіі 1.17 [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawiki-core-branch' => 'Паведамленьні стабільнай вэрсіі [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] — сыстэма кіраваньня інфармацыяй для мікрафінансаў',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' — бібліятэка на Python для стварэньня PDF-дакумэнтаў з артыкулаў MediaWiki, прааналізаваных бібліятэкай mwlib.
 
@@ -266,6 +264,7 @@ $messages['be-tarask'] = array(
 	'bw-desc-shapado' => 'Група паведамленьняў для вольнай плятформы пытаньняў і адказаў [[Translating:Shapado|Shapado]].',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] — сэрвэр мікраблёгаў з адкрытым кодам',
 	'translate-group-desc-statusnet-plugin' => 'Гэтыя паведамленьні зьяўляюцца часткай дапаўненьня для [[Translating:StatusNet|StatusNet]]',
+	'translate-group-desc-tsint' => 'Група паведамленьняў [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], сыстэмы перакладаў для [http://tolserver.org сэрвэра інструмэнтаў] (<span class="plainlinks">[[Translating talk:Toolserver|падтрымка]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition тэхнічныя дэталі]</span>)',
 	'bw-desc-voctrain' => 'Слоўнікавы трэнажэр на аснове [http://omegawiki.org OmegaWiki]. Выкарыстоўвае сыстэму картак для вывучэньня любой мовы, што ёсьць у OmegaWiki.
 Створаны для ўнівэрсытэту ў Бамбэргу. Распаўсюджваецца на ўмовах ліцэнзіі GPL 2.0 ці болей позьняй вэрсіі. Распрацаваны [[User:Kim Bruning|Кімам Брунінгам]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] дазваляе хутка знайсьці аўтараў пэўнай старонкі ці выказваньня ў праектах Фундацыі «Вікімэдыя».',
@@ -1022,9 +1021,7 @@ $messages['he'] = array(
 	'translate-group-desc-ihris-manage' => 'קבוצת הודעות עבור [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], מודול של [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-qualify' => 'קבוצת הודעות ל־[[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]], מודול של [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'תוסף ליבה עבור [[Translating:MantisBT|MantisBT]]',
-	'translate-group-desc-mediawiki-core-115' => 'הודעות עבור הגרסה היציבה 1.15 של [[Translating:MediaWiki|MediaWiki]]',
-	'translate-group-desc-mediawiki-core-116' => 'הודעות עבור הגרסה היציבה 1.16 של [[Translating:MediaWiki|MediaWiki]]',
-	'translate-group-desc-mediawiki-core-117' => 'הודעות עבור הגרסה היציבה 1.17 של [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawiki-core-branch' => 'הודעות לגרסה היציבה של [[Translating:MediaWiki|מדיה־ויקי]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] היא מערכת ניהול מידע לארגון פיננסי זעיר',
 	'bw-desc-mwlibrl' => '[[Translating:Mwlib.rl|Mwlib.rl]] היא ספרייה ליצירת מסמכי PDF מדפי מדיה־ויקי',
 	'bw-desc-nocc' => '[[Translating:NOCC|NOCC]] היא תוכנת דואר מבוססת וב',
