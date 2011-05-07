@@ -306,6 +306,8 @@ class MessageWebImporter {
 	 * @return \string Action result
 	 */
 	public static function doAction( $action, $group, $key, $code, $message, $comment = '', $user = null, $editFlags = 0 ) {
+		global $wgTranslateDocumentationLanguageCode;
+
 		$title = self::makeTranslationTitle( $group, $key, $code );
 
 		if ( $action === 'import' || $action === 'conflict' ) {
@@ -317,10 +319,9 @@ class MessageWebImporter {
 			}
 
 			return self::doImport( $title, $message, $comment, $user, $editFlags );
-
 		} elseif ( $action === 'ignore' ) {
 			return array( 'translate-manage-import-ignore', $key );
-		} elseif ( $action === 'fuzzy' && $code !== 'en' ) {
+		} elseif ( $action === 'fuzzy' && $code !== 'en' && $code !== $wgTranslateDocumentationLanguageCode ) {
 			$message = self::makeTextFuzzy( $message );
 
 			return self::doImport( $title, $message, $comment, $user, $editFlags );
@@ -403,10 +404,12 @@ class MessageWebImporter {
 		// Process all rows.
 		$changed = array();
 		foreach ( $rows as $row ) {
+			global $wgTranslateDocumentationLanguageCode;
+
 			$ttitle = Title::makeTitle( $row->page_namespace, $row->page_title );
 
-			// No fuzzy for English original
-			if ( $ttitle->getSubpageText() == 'en' ) {
+			// No fuzzy for English original or documentation language code.
+			if ( $ttitle->getSubpageText() == 'en' || $ttitle->getSubpageText() == $wgTranslateDocumentationLanguageCode ) {
 				// Use imported text, not database text.
 				$text = $message;
 			} else {
