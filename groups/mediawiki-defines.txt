@@ -1789,6 +1789,9 @@ optional = wikieditor-toolbar-help-content-rereference-syntax, wikieditor-toolba
 optional = wikieditor-toolbar-tool-table-example-text
 ignored = wikieditor-toolbar-help-content-signaturetimestamp-syntax, wikieditor-toolbar-help-content-signature-syntax
 
+Wiki Forum
+ignored = wikiforum-day-definition-new, wikiforum-max-threads-per-page, wikiforum-max-replies-per-page
+
 Wikihiero
 file = wikihiero/wikihiero.i18n.php
 
