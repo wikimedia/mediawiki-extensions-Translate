@@ -2413,9 +2413,7 @@ $messages['tl'] = array(
 	'translate-group-desc-ihris-manage' => 'Isang pangkat ng mensahe para sa  [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], isang modyul ng [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-qualify' => 'Isang pangkat ng mensahe para sa [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]], isang modyul ng [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'Isang pangunahing pamasak para sa [[Translating:MantisBT|MantisBT]]',
-	'translate-group-desc-mediawiki-core-115' => 'Mga mensahe para sa matatag na bersyong 1.15 ng [[Translating:MediaWiki|MediaWiki]]',
-	'translate-group-desc-mediawiki-core-116' => 'Mga mensahe para sa matatag na bersyong 1.16 ng [[Translating:MediaWiki|MediaWiki]]',
-	'translate-group-desc-mediawiki-core-117' => 'Mga mensahe para sa matatag na bersyong 1.17 ng [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawiki-core-branch' => 'Mga mensahe para sa matatag na bersyon ng [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => 'Ang [[Translating:Mifos|Mifos]] ay isang sistema ng kabatiran na pangpamamahala para sa mikropinansiya',
 	'bw-desc-mwlibrl' => "Ang '''mwlib.rl''' ay isang aklatang-sawa para pagsusulat ng mga kasulatang PDF mula sa mga artikulo ng MediaWiki na nilitis ng aklatang mwlib.
 
