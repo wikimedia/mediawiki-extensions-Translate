@@ -1266,9 +1266,7 @@ $messages['id'] = array(
 	'translate-group-desc-ihris-manage' => 'Kelompok pesan untuk [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], suatu modul dari [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-qualify' => 'Kelompok pesan untuk [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]], suatu modul dari [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'Plugin inti untuk [[Translating:MantisBT|MantisBT]]',
-	'translate-group-desc-mediawiki-core-115' => 'Pesan untuk versi stabil 1.15 dari [[Translating:MediaWiki|MediaWiki]]',
-	'translate-group-desc-mediawiki-core-116' => 'Pesan untuk versi stabil 1.16 dari [[Translating:MediaWiki|MediaWiki]]',
-	'translate-group-desc-mediawiki-core-117' => 'Pesan untuk versi stabil 1.17 dari [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawiki-core-branch' => 'Pesan untuk versi stabil [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] adalah sebuah sistem informasi manajemen keuangan mikro',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' adalah sebuah pustaka python untuk membuat dokumen PDF dari artikel-artikel MediaWiki yang diparser menggunakan pustaka mwlib.
 
@@ -2116,9 +2114,6 @@ $messages['ru'] = array(
 	'translate-group-desc-ihris-manage' => 'Группа сообщений для [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], части [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-qualify' => 'Группа сообщений для [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]], части [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'Основной плагин для [[Translating:MantisBT|MantisBT]]',
-	'translate-group-desc-mediawiki-core-115' => 'Сообщения для стабильной версии 1.15 [[Translating:MediaWiki|MediaWiki]]',
-	'translate-group-desc-mediawiki-core-116' => 'Сообщения для стабильной версии 1.16 [[Translating:MediaWiki|MediaWiki]]',
-	'translate-group-desc-mediawiki-core-117' => 'Сообщения для стабильной версии 1.17 [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] — это система управления информацией в области микрофинансов',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' — python-библиотека для создания PDF-документов из статей MediaWiki, обработанных библиотекой mwlib.
 
@@ -2137,7 +2132,7 @@ $messages['ru'] = array(
 * Используйте [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] для проверки Potlatch. Здесь вы можете проверять любые функции.',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] — набор инструментов для редактирования Википедии',
 	'bw-desc-shapado' => 'Группа сообщений свободного программного обеспечения вопросов и ответов [[Translating:Shapado|Shapado]]',
-	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] — сервер микроблоггинга с открытым исходным кодом',
+	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] — сервер микроблогинга с открытым исходным кодом',
 	'translate-group-desc-statusnet-plugin' => 'Это сообщения плагина для [[Translating:StatusNet|StatusNet]]',
 	'translate-group-desc-tsint' => 'Группа сообщений для [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], системы интернационализации [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|поддержка]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition технические подробности]</span>)',
 	'bw-desc-voctrain' => 'Словарный тренажёр на основе [http://omegawiki.org OmegaWiki]. Использует систему карточек для пополнения словарного запаса на любых языках, поддерживаемых Omegawiki.

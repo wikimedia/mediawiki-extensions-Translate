@@ -13892,6 +13892,7 @@ $messages['nds-nl'] = array(
 );
 
 /** Nepali (नेपाली)
+ * @author Bhawani Gautam
  * @author Bhawani Gautam Rhk
  * @author सरोज कुमार ढकाल
  */
@@ -13924,7 +13925,7 @@ $messages['ne'] = array(
 
 ''$1''",
 	'translate-page-settings-legend' => 'सेटिंग्स',
-	'translate-page-task' => 'म चाहना हो',
+	'translate-page-task' => 'मेरो इच्छा छ',
 	'translate-page-group' => 'समूह',
 	'translate-page-group-tooltip' => 'सन्देशहरुको एउटा समूहको नाम।
 यदि समूहमा अन्य समूहका सन्देशहरुको सब-सेट अथवा सुपर-सेट भए यो मोटा अक्षरमा प्रदर्शित गरिन्छ।',
