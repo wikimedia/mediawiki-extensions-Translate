@@ -15846,6 +15846,7 @@ $messages['pnb'] = array(
 
 /** Pashto (پښتو)
  * @author Ahmed-Najib-Biabani-Ibrahimkhel
+ * @author Waldir
  */
 $messages['ps'] = array(
 	'translate' => 'ژباړل',
@@ -15888,7 +15889,8 @@ In namespace translations <code>$1 talk</code> is special. <code>$1</code> is re
 If it is not possible in your language to form valid expression without changing sitename, please contact a developer.
 
 You need to be in the translators group to save changes.
-Changes are not saved until you click save button below.',
+Changes are not saved until you click save button below.
+',
 	'translate-magic-submit' => 'راغونډول',
 	'translate-magic-cm-current' => 'اوسنی',
 	'translate-magic-cm-original' => 'آرنی',
@@ -17176,6 +17178,10 @@ $1',
 	'translate-gs-total' => 'Всего',
 	'translate-gs-avgscore' => 'Ср. оценка',
 	'translate-documentation-language' => 'документация сообщений',
+	'translate-searchprofile' => 'Переводы',
+	'translate-searchprofile-tooltip' => 'Поиск во всех переводах',
+	'translate-search-languagefilter' => 'Фильтр по языку:',
+	'translate-search-nofilter' => 'Без фильтрации',
 );
 
 /** Rusyn (Русиньскый)
