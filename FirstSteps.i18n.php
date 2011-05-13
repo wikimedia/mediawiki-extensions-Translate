@@ -4007,6 +4007,10 @@ Nếu bạn không muốn nhận thư tin tức, bạn có thể bỏ nó ra kh�
  * @author פוילישער
  */
 $messages['yi'] = array(
+	'translate-fs-userpage-title' => 'שאַפֿן אײַער באַניצער בלאַט',
+	'translate-fs-permissions-title' => 'בעטן איבערזעצער אויטאריזאַציע',
+	'translate-fs-target-title' => 'אָנהייבן איבערזעצן!',
+	'translate-fs-email-title' => 'באַשטעטיקט אײַער בליצפּאָסט אַדרעס',
 	'translate-fs-userpage-submit' => 'שאַפֿן מיין באַניצער בלאַט',
 );
 

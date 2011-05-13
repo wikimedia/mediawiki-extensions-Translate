@@ -1878,9 +1878,7 @@ $messages['pms'] = array(
 	'translate-group-desc-ihris-manage' => 'Na partìa ëd mëssagi për [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], un mòdul ëd [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-qualify' => 'Na partìa ëd mëssagi për [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]], un mòdul ëd [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'Un plugin sentral për [[Translating:MantisBT|MantisBT]]',
-	'translate-group-desc-mediawiki-core-115' => 'Mëssagi për la version ëstàbil 1.15 ëd [[Translating:MediaWiki|MediaWiki]]',
-	'translate-group-desc-mediawiki-core-116' => 'Mëssagi për la version ëstàbil 1.16 ëd [[Translating:MediaWiki|MediaWiki]]',
-	'translate-group-desc-mediawiki-core-117' => 'Mëssagi për la version ëstàbil 1.17 ëd [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawiki-core-branch' => 'Mëssagi për na version ëstàbil ëd [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => "[[Translating:Mifos|Mifos]] a l'é un sistema anformativ ëd gestion për la microfinansa",
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' a l'é na liberìa python për ëscrive document PDF da partìcoj MediaWiki che a son ëstàit analisà da la librerìa mwlib.
 

@@ -1933,7 +1933,7 @@ Los cambeos nun se graben hasta que calques nel botón guardar d'abaxo.",
 	'translate-gs-speakers' => 'Falantes',
 	'translate-gs-score' => 'Pesu',
 	'translate-gs-multiple' => 'Múltiple',
-	'translate-gs-count' => 'Cuenta',
+	'translate-gs-count' => 'Recuentu',
 	'translate-gs-total' => 'Total',
 	'translate-gs-avgscore' => 'Pesu mediu',
 	'translate-documentation-language' => 'Guíes de traducción',
@@ -21640,6 +21640,8 @@ $messages['yi'] = array(
 	'translate-talk' => 'רעדן',
 	'translate-history' => 'היסטאריע',
 	'translate-showsub' => 'ווײַזן די {{PLURAL:$1|אונטערגרופע|$1 אונטערגרופעס}}.',
+	'translate-grouplisting' => 'דאָס איז די ליסטע פֿון אַלע איבערזעצבאַרע גרופעס.
+קליקט דעם מעלדונג גרופע נאָמען צו ווײַזן א ליסטע פֿון אַלע נישט־פֿאַרטײַטשע מעלדונגען.',
 	'translate-task-view' => 'באַקוקן אלע מעלדונגען פֿון',
 	'translate-task-untranslated' => 'באקוקן אלע נישט פארטײַטשטע מעלדונגען פון',
 	'translate-task-optional' => 'באקוקן ברירהדיקן מעלדונגען פון',
@@ -21713,6 +21715,8 @@ $messages['yi'] = array(
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|דער פֿאלגנדער פאַראַמעטער איז|די פֿאלגנדע פאַראַמעטערס זענען}} נישט באַקאַנט:
 <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links' => '{{PLURAL:$2|דער פֿאלגנדער לינק איז|די פֿאלגנדע $2 לינקען זענען}} פראבלעמאַטיש:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links-missing' => '{{PLURAL:$2|דער פֿאלגנדער לינק פֿעלט|די פֿאלגנדע $2 לינקס פֿעלן}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-pagename' => 'נאמענטייל געענדערט פון דער דעפיניציע',
@@ -21721,6 +21725,8 @@ $messages['yi'] = array(
 <nowiki>$1</nowiki> .',
 	'translate-rc-translation-filter' => 'פֿילטערן איבערזעצונגען:',
 	'translate-rc-translation-filter-no' => 'גאָרנישט',
+	'translate-rc-translation-filter-only' => 'ווײַזן נאר איבערזעצונגען',
+	'translate-rc-translation-filter-filter' => 'פֿילטערן איבערזעצונגען:',
 	'translationstats' => 'פֿארטײַטשן סטאטיסטיק',
 	'translate-stats-edits' => 'רעדאקטירונגען',
 	'translate-stats-users' => 'איבערזעצער',
@@ -21748,6 +21754,7 @@ $messages['yi'] = array(
 	'translate-untranslated' => 'נישט פֿאַרטײַטשט',
 	'translate-percentage-complete' => 'פֿאַרענדיקונג',
 	'translate-percentage-fuzzy' => 'פֿאַרעלטערט',
+	'supportedlanguages' => 'געשטיצטע שפראַכן',
 	'translate-save' => 'אויפֿהיטן ($1)',
 	'translate-jssti-add' => 'צולייגן צו ליסטע',
 	'translate-manage-modlang-new' => '$1 (נײַ)',
@@ -21755,11 +21762,18 @@ $messages['yi'] = array(
 	'translate-manage-import-new' => 'נייע מעלדונג $1',
 	'translate-manage-import-deleted' => 'אויסגעמעקטע מעלדונג $1',
 	'translate-manage-action-import' => 'אימפארטירן',
+	'translate-manage-action-ignore' => 'איגנאָרירן',
+	'translate-manage-submit' => 'אויספֿירן',
+	'translate-manage-nochanges' => 'נישטא קיין ענדערונגען אין דעפֿיניציעס פֿאַר דער דאָזיגער גרופע.',
 	'translate-manage-import-done' => 'אַלץ ערליידיקט!',
 	'translate-manage-subtitle' => 'פֿאַרוואַלטן',
 	'importtranslations' => 'אימפארטירן איבערזעצונגען',
 	'translate-import-from-wiki' => 'טעקע אין דער דאזיקער וויקי',
 	'translate-import-load' => 'לאָדן טעקע',
+	'translate-import-err-ul-failed' => 'טעקע אַרויפֿלאָד נישט געראָטן',
+	'translate-js-next' => 'אײַנשפייכלערן און עפֿענען נעקסטע',
+	'translate-js-skip' => 'ווײַטער צום נעקסטן',
+	'translate-js-support' => 'פֿרעגן א שאלה',
 );
 
 /** Cantonese (粵語)
