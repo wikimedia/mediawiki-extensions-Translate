@@ -1809,7 +1809,7 @@ Wikilog Feed
 file = Wikilog/WlFeed.i18n.php
 descmsg = wlfeed-desc
 
-Wiki boLove
+Wiki Love
 
 Wikimedia Incubator
 descmsg = wminc-desc
