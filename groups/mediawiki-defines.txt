@@ -113,7 +113,8 @@ Book Information
 
 Book Manager
 descmsg = printversion-desc
-aliasfile = BookManager/BookManager.alias.php
+file = BookManager/language/BookManager.i18n.php
+aliasfile = BookManager/language/BookManager.alias.php
 
 Bread Crumbs
 
@@ -1808,7 +1809,7 @@ Wikilog Feed
 file = Wikilog/WlFeed.i18n.php
 descmsg = wlfeed-desc
 
-Wiki Love
+Wiki boLove
 
 Wikimedia Incubator
 descmsg = wminc-desc
