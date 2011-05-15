@@ -2552,9 +2552,7 @@ $messages['vi'] = array(
 	'translate-group-desc-ihris-manage' => 'Nhóm thông điệp của [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], một mô đun của [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-qualify' => 'Nhóm thông điệp của [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]], một mô đun của [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'Một trong những phần bổ trợ chính của [[Translating:MantisBT|MantisBT]]',
-	'translate-group-desc-mediawiki-core-115' => 'Các thông điệp trong phiên bản ổn định 1.15 của [[Translating:MediaWiki|MediaWiki]]',
-	'translate-group-desc-mediawiki-core-116' => 'Các thông điệp trong phiên bản ổn định 1.16 của [[Translating:MediaWiki|MediaWiki]]',
-	'translate-group-desc-mediawiki-core-117' => 'Các thông điệp trong phiên bản ổn định 1.17 của [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawiki-core-branch' => 'Các thông điệp trong một phiên bản ổn định của [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] là hệ thống quản lý thông tin về tài chính vi mô',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' là một thư viện Python để tạo ra tài liệu PDF từ những bài MediaWiki được thư viện mwlib xử lý.
 

@@ -13247,8 +13247,8 @@ $messages['mr'] = array(
 	'translate-edit' => 'संपादन',
 	'translate-talk' => 'चर्चा',
 	'translate-history' => 'इतिहास',
-	'translate-task-view' => 'खालीलवर्गाचे सारे सदेश बघावे',
-	'translate-task-untranslated' => 'मधील सर्व अभाषांतरीत संदेश बघावे',
+	'translate-task-view' => 'या वर्गाचे सारे संदेश बघावे',
+	'translate-task-untranslated' => 'यामधील सर्व अभाषांतरीत संदेश बघावे',
 	'translate-task-optional' => 'चे पर्यायी संदेश बघावे',
 	'translate-task-review' => 'चे बदल तपासा',
 	'translate-task-reviewall' => 'मधील सर्व भाषांतरणे तपासा',
@@ -13258,7 +13258,7 @@ $messages['mr'] = array(
 	'translate-page-no-such-language' => 'दिलेली भाषा अयोग्य आहे.',
 	'translate-page-no-such-task' => 'दिलेले कार्य अयोग्य आहे.',
 	'translate-page-no-such-group' => 'दिलेला गट अयोग्य आहे.',
-	'translate-page-settings-legend' => 'सेटिंग',
+	'translate-page-settings-legend' => 'रुपरेषा',
 	'translate-page-task' => 'मी इच्छीतो की',
 	'translate-page-group' => 'गट',
 	'translate-page-language' => 'भाषा',
@@ -13297,8 +13297,8 @@ $messages['mr'] = array(
 	'translationchanges' => 'भाषांतरांमधील बदल',
 	'translationchanges-export' => 'नीर्यात',
 	'translationchanges-change' => '$1: $2 ने $3',
-	'translate-checks-parameters' => 'खालील पॅरॅमीटर्स वापरलेले नाहीत:
-<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters' => 'खालील मापदंड {{PLURAL:$2|वापरला नाही|वापरलेले नाहीत}}:
+<strong><nowiki>$2</nowiki></strong>',
 	'translate-checks-balance' => 'चुकीची कंस संख्या:
 <strong><nowiki>$1</nowiki></strong>',
 );
