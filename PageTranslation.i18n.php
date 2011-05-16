@@ -71,7 +71,7 @@ but the latest {{PLURAL:$1|version|versions}} cannot be marked for translation.'
 	'tpt-translation-intro-fuzzy' => 'Outdated translations are marked like this.',
 
 	'tpt-languages-legend' => 'Other languages:',
-	'tpt-languages-legend' => '&#160;•&#160;',
+	'tpt-languages-separator' => '&#160;•&#160;',
 
 	'tpt-target-page' => 'This page cannot be updated manually.
 This page is a translation of page [[$1]] and the translation can be updated using [$2 the translation tool].',
