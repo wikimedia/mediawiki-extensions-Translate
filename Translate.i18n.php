@@ -13298,7 +13298,7 @@ $messages['mr'] = array(
 	'translationchanges-export' => 'नीर्यात',
 	'translationchanges-change' => '$1: $2 ने $3',
 	'translate-checks-parameters' => 'खालील मापदंड {{PLURAL:$2|वापरला नाही|वापरलेले नाहीत}}:
-<strong><nowiki>$2</nowiki></strong>',
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'चुकीची कंस संख्या:
 <strong><nowiki>$1</nowiki></strong>',
 );
