@@ -469,9 +469,6 @@ File Page Masking
 Find Spam
 aliasfile = FindSpam/FindSpam.alias.php
 
-Firefogg Chunked Upload
-descmsg = firefoggcu-desc
-
 Fixed Image
 
 Flag Page
@@ -1298,6 +1295,8 @@ aliasfile = ReplaceText/ReplaceText.alias.php
 
 Research Tools
 aliasfile = ResearchTools/ResearchTools.alias.php
+
+Resumable Upload
 
 Right Functions
 optional = rightfunctions-rest1, rightfunctions-rest2, rightfunctions-rest3, rightfunctions-sep
