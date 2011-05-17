@@ -754,6 +754,9 @@ $messages['fi'] = array(
 	'translate-group-desc-translatablepages' => 'Kaikki käännettävät sivut',
 	'bw-desc-freecol' => 'Ennen kuin käännät FreeColia kielellesi, luethan sivun [[Translating:FreeCol]]. Freecol käyttää GPL-lisenssiä.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], PHP:llä tehty keskustelufoorumi.',
+	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]] on verkossa toimiva virheenseurantaohjelmisto',
+	'bw-desc-nocc' => '[[Translating:NOCC|NOCC]] on sähköpostiohjelma',
+	'translate-group-desc-statusnet-plugin' => 'Nämä viestit ovat osa [[Translating:StatusNet|StatusNet]]in liitännäistä',
 );
 
 /** French (Français)
