@@ -1111,4 +1111,4 @@ MANGLER:
 FILES:
   sourcePattern: %GROUPROOT%/mifos/accounting/src/main/resources/org/mifos/platform/accounting/ui/localizedProperties/accounting_messages_%CODE%.properties
   definitionFile: %GROUPROOT%/mifos/accounting/src/main/resources/org/mifos/platform/accounting/ui/localizedProperties/accounting_messages.properties
-  targetPattern: mifos/mifos/accounting/src/main/resources/org/mifos/platform/accounting/ui/localizedProperties/accounting_messages_%CODE%.properties
+  targetPattern: mifos/accounting/src/main/resources/org/mifos/platform/accounting/ui/localizedProperties/accounting_messages_%CODE%.properties
