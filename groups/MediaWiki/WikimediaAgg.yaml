@@ -20,6 +20,7 @@ GROUPS:
   - ext-checkuser
   - ext-cite
   - ext-citespecial
+  - ext-cldr # r88299 on all wikis
   - ext-clicktracking
   - ext-clientside # usability.wikimedia.org
   - ext-codereview # MediaWiki.org
