@@ -41,6 +41,7 @@ GROUPS:
   - ext-timeline
   - ext-titleblacklist
   - ext-torblock
+  - ext-uploadwizard
   - ext-vector
   - ext-wikieditor
   - ext-wikimedialicensetexts
