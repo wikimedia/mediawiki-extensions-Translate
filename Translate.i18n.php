@@ -13168,6 +13168,7 @@ $messages['ml'] = array(
 	'translate-translations-project' => 'പദ്ധതി:',
 	'translate-translations-history-short' => 'നാ',
 	'languagestats' => 'ഭാഷയുടെ സ്ഥിതിവിവരക്കണക്കുകൾ',
+	'languagestats-summary' => 'എല്ലാ സന്ദേശ സഞ്ചയങ്ങളുടെയും ഒരു ഭാഷയിലെ പരിഭാഷാ സ്ഥിതിവിവരം ഈ താളിൽ കാണാം.',
 	'languagestats-stats-for' => '$1 ഭാഷയുടെ പരിഭാഷാ സ്ഥിതിവിവരം ($2)',
 	'languagestats-recenttranslations' => 'സമീപകാല പരിഭാഷകൾ',
 	'translate-langstats-expand' => 'വികസിപ്പിക്കുക',
