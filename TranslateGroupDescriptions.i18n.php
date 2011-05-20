@@ -491,10 +491,14 @@ Vytvořeno pro Univerzitu v Bamberku. Licencováno pod GPL 2.0 nebo novější. 
 
 /** Danish (Dansk)
  * @author Byrial
+ * @author Peter Alberti
  */
 $messages['da'] = array(
+	'translate-group-desc-nodesc' => 'Der er ikke nogen tilgængelig beskrivelse for denne gruppe af beskeder',
 	'translate-group-desc-mediawikicore' => 'Denne beskedgruppe indeholder beskederne som bruges i den nuværende alfaversion af MediaWiki ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'Denne beskedgruppe indeholder de [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 oftest brugte beskeder] i MediaWiki',
+	'translate-group-desc-translatablepages' => 'Alle sider som kan oversættes',
+	'bw-desc-freecol' => '[[Translating:FreeCol|FreeCol]] er et turbaseret strategispil',
 );
 
 /** German (Deutsch)
