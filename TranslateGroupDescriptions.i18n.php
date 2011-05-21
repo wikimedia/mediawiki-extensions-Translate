@@ -321,9 +321,7 @@ $messages['br'] = array(
 	'translate-group-desc-ihris-manage' => 'Ur strollad kemennadennoù evit [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], ur vodulenn eus [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-qualify' => 'Ur strollad kemennadennoù evit [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]], ur vodulenn eus [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'Ur plugin diazez evit [[Translating:MantisBT|MantisBT]]',
-	'translate-group-desc-mediawiki-core-115' => 'Kemennadennoù evit ar stumm stabil 1.15 eus [[Translating:MediaWiki|MediaWiki]]',
-	'translate-group-desc-mediawiki-core-116' => 'Kemennadennoù evit ar stumm stabil 1.16 eus [[Translating:MediaWiki|MediaWiki]]',
-	'translate-group-desc-mediawiki-core-117' => 'Kemennadennoù evit ar stumm stabil 1.15 eus [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawiki-core-branch' => 'Kemennadennoù evit ur stumm stabil eus [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => 'Ur reizhiad merañ roadennoù evit ar mikrokredoù eo [[Translating:Mifos|Mifos]]',
 	'bw-desc-mwlibrl' => "Ul levraoueg Python, da skrivañ teulioù PDF diwar pennadoù eus Mediawiki bet dielfennet gant levraoueg mwlib, eo '''mwlib.rl'''.
 

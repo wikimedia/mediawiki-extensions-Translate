@@ -4019,14 +4019,13 @@ Tekst sekcji – <pre>$1</pre>',
 	'pt-movepage-action-check' => 'Sprawdź czy przeniesienie jest wykonalne',
 	'pt-movepage-action-perform' => 'Przenieś',
 	'pt-movepage-action-other' => 'Zmiana celu',
-	'pt-movepage-intro' => 'Ta strona specjalna pozwala na przenoszenie stron, które zostały oznaczone jako wymagające tłumaczenia.
+	'pt-movepage-intro' => 'Ta strona specjalna umożliwia przenoszenie stron, które zostały oznaczone jako wymagające tłumaczenia.
 Działanie przenoszenia nie jest natychmiastowe, ponieważ wiele stron wymaga przenoszenia.
-Do przenoszenia stron jest wykorzystywana kolejka zadań.
 Podczas gdy strony są przenoszone, nie jest możliwa praca z tymi stronami poprzez zapytania.
-Błędy zostaną zalogowane na stronie rejestru tłumaczeń i muszą zostać naprawione ręcznie.',
+Błędy zostaną odnotowane na [[Special:Log/pagetranslation|stronie rejestru tłumaczeń]] i muszą zostać naprawione ręcznie.',
 	'pt-movepage-logreason' => 'Część przetłumaczalnej strony $1.',
 	'pt-movepage-started' => 'Strona bazowa jest teraz przenoszona. 
-Proszę sprawdzić na stronie dziennika tłumaczeń czy nie wystąpiły błędy oraz komunikat o zakończeniu operacji.',
+Proszę sprawdzić na [[Special:Log/pagetranslation|stronie rejestru tłumaczeń]] czy nie wystąpiły błędy oraz komunikat o zakończeniu operacji.',
 	'pt-locked-page' => 'Ta strona jest zablokowana ponieważ jest przygotowana do przeniesienia.',
 );
 
