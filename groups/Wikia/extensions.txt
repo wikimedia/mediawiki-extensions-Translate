@@ -62,6 +62,7 @@ Edit Account
 file = EditAccount/SpecialEditAccount.i18n.php
 
 Edit Page Layout
+ignored = anoneditwarning-notice
 
 Ez API
 
