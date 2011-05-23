@@ -3583,6 +3583,7 @@ $messages['su'] = array(
 
 /** Swedish (Svenska)
  * @author Fredrik
+ * @author WikiPhoenix
  */
 $messages['sv'] = array(
 	'firststeps' => 'Komma igång',
@@ -3603,10 +3604,10 @@ Först behöver du skapa ett användarkonto.
 Poäng för dina översättningar tillskrivs ditt användarnamn.
 Bilden till höger visar hur du fyller i fälten.
 
-Om du redan har registrerat dig så logga in istället.
-När du har registrerat dig, gå tillbaka till denna sida.
+Om du redan har registrerat dig så $1logga in$2 istället.
+När du har registrerat dig går du tillbaka till denna sida.
 
-Skapa ett användarkonto',
+$3Skapa ett användarkonto$4',
 	'translate-fs-settings-text' => 'Du bör nu gå till dina inställningar och
 åtminstone byta språk för gränssnittet till det språk du ska översätta till.
 
@@ -3653,19 +3654,19 @@ När du har skickat din förfrågan kommer en av de frivilligarbetande medlemmar
 Ha tålamod.
 
 <del>Kontrollera att följande förfrågan är korrekt ifylld och tryck sedan på knappen för att skicka förfrågan.</del>',
-	'translate-fs-target-text' => "Grattis! Nu kan du börja översätta.
+	'translate-fs-target-text' => 'Grattis! Nu kan du börja översätta.
 
 Var inte rädd om det fortfarande känns nytt och främmande för dig.
-På sidan [[Project list]] finns en översikt över projekt du kan bidra med översättningar till. De flesta projekt har en sida med en kort beskrivning och en länk \"''Översätt det här projektet''\" som tar dig till en sida som listar alla oöversatta meddelanden.
+På sidan [[Project list|Projektlista]] finns en översikt över projekt du kan bidra med översättningar till. De flesta projekt har en sida med en kort beskrivning och en länk "\'\'Översätt det här projektet\'\'" som tar dig till en sida som listar alla oöversatta meddelanden.
 Det finns även en förteckning över alla meddelandegrupper med [[Special:LanguageStats|den aktuella översättningsstatusen för ett språk]].
 
 Om du känner att du behöver förstå mer innan du börjar översätta kan du läsa igenom [[FAQ|Vanliga frågor]].
 Tyvärr kan dokumentationen vara föråldrad ibland.
 Om det finns något som du tror att du skulle kunna göra men inte lyckas ta på reda på hur, så tveka inte att fråga på [[Support|supportsidan]].
 
-Du kan också ta kontakt med de andra översättarna av samma språk på [[Portal:\$1|din språkportal]].
+Du kan också ta kontakt med de andra översättarna av samma språk på [[Portal:$1|din språkportals]] [[Portal_talk:$1|diskussionssida]].
 Portalen länkar till språket i din nuvarande [[Special:Preferences|språkinställning]].
-Du kan ändra om det behövs.",
+Du kan ändra om det behövs.',
 	'translate-fs-email-text' => 'Ange din e-postadress i [[Special:Preferences|dina inställningar]] och bekräfta den genom det e-postmeddelande som skickas till dig.
 
 Detta gör det möjligt för andra användare att kontakta dig via e-post.
