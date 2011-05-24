@@ -15175,16 +15175,17 @@ $messages['or'] = array(
 
 /** Ossetic (Иронау)
  * @author Amikeco
+ * @author Bouron
  */
 $messages['os'] = array(
-	'translate-edit' => 'баив æй',
+	'translate-edit' => 'ивын',
 	'translate-history' => 'истори',
 	'translate-page-task' => 'Мæн фæнды',
 	'translate-page-group' => 'Къорд',
 	'translate-page-language' => 'Æвзаг',
 	'translate-next' => 'Фæдылдзог фарс',
 	'translate-prev' => 'Раздæры фарс',
-	'translate-page-edit' => 'баив æй',
+	'translate-page-edit' => 'ивын',
 	'translate-magic-cm-current' => 'Нырыккон',
 	'translate-magic-cm-save' => 'Афтæ уæд',
 	'translate-statsf-submit' => 'Разæркаст',
