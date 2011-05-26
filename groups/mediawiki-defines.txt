@@ -480,7 +480,7 @@ file = FlaggedRevs/presentation/language/FlaggedRevs.i18n.php
 descmsg = flaggedrevs-desc
 aliasfile = FlaggedRevs/presentation/language/FlaggedRevs.alias.php
 optional = revreview-toggle-show, revreview-toggle-hide, revreview-ak-review, accesskey-ca-current, accesskey-ca-stable
-ignored = flaggedrevs-stable-categories
+ignored = flaggedrevs-stable-categories, flaggedrevs-diffonly
 
 Flagged Revisions - Configured Pages
 id = ext-flaggedrevs-configuredpages
