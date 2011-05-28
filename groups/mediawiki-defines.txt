@@ -1482,6 +1482,8 @@ aliasfile = SpamDiffTool/SpamDiffTool.alias.php
 Spam Regex
 aliasfile = SpamRegex/SpamRegex.alias.php
 
+Spark
+
 Special 404
 aliasfile = Special404/Special404.alias.php
 
