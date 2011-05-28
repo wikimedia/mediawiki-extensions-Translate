@@ -6801,6 +6801,7 @@ $messages['frp'] = array(
 	'translate-edit' => 'changiér',
 	'translate-talk' => 'discutar',
 	'translate-history' => 'historico',
+	'translate-showsub' => 'Fâre vêre l{{PLURAL:$1|a sot-tropa|es $1 sot-tropes}}.',
 	'translate-task-view' => 'Vêre tôs los mèssâjos de la',
 	'translate-task-untranslated' => 'Vêre tôs los mèssâjos pas traduits de la',
 	'translate-task-optional' => 'Vêre los mèssâjos u chouèx de la',
