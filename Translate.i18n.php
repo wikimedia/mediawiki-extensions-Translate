@@ -6843,6 +6843,7 @@ Se la tropa contint des sot-ensemblos ou ben des sur-ensemblos de mèssâjos d�
 	'translate-ignored' => '(ignorâ)',
 	'translate-edit-title' => 'Changiér « $1 »',
 	'translate-edit-definition' => 'Dèfinicion du mèssâjo',
+	'translate-edit-translation' => 'Traduccion',
 	'translate-edit-contribute' => 'édiér',
 	'translate-edit-no-information' => "''Ceti mèssâjo est pas documentâ.''
 ''Se vos sâde yô ou ben coment il est utilisâ, vos pouede édiér los ôtros traductors en fassent la documentacion de ceti mèssâjo.''",
@@ -6853,6 +6854,7 @@ Se la tropa contint des sot-ensemblos ou ben des sur-ensemblos de mèssâjos d�
 	'translate-edit-tmsugs' => 'Consèlys de la mèmouère de traduccion',
 	'translate-edit-tmmatch' => '$1 % de corrèspondance',
 	'translate-use-suggestion' => 'Entrebetar ceti consèly dens la fenétra de traduccion. Cen remplace l’ensemblo du contegnu d’ora.',
+	'translate-edit-tab-list' => 'Lista de mèssâjos',
 	'translate-magic-pagename' => 'Traduccion ètendua de MediaWiki',
 	'translate-magic-help' => 'Vos pouede traduire los noms paralèlos de les pâges spèciâles, los mots magicos et los noms des èspâços de noms.
 
