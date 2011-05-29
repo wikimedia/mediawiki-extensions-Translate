@@ -400,6 +400,8 @@ Drafts
 aliasfile = Drafts/Drafts.alias.php
 ignored = accesskey-drafts-save
 
+Dublin Core Rdf
+
 Duplicator
 
 Dynamic Sidebar
