@@ -1350,6 +1350,8 @@ optional = semanticformsinputs-dateformatlong, semanticformsinputs-dateformatsho
 Semantic Glossary
 aliasfile = SemanticGlossary/SemanticGlossary.alias.php
 
+Semantic Graph
+
 Semantic Internal Objects
 magicfile = SemanticInternalObjects/SemanticInternalObjects.i18n.magic.php
 
