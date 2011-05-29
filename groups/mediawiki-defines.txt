@@ -320,7 +320,7 @@ Create Box
 Create Redirect
 aliasfile = CreateRedirect/CreateRedirect.alias.php
 
-Creative Core Rdf
+Creative Commons Rdf
 
 Cross Namespace Links
 aliasfile = CrossNamespaceLinks/CrossNamespaceLinks.alias.php
