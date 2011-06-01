@@ -14493,6 +14493,7 @@ Om gruppa er sett saman av eit delsett eller eit overordna sett av meldingar fr�
 	'translate-edit-warnings' => 'Åtvaringar om ufullstendige omsetjingar',
 	'translate-edit-tmsugs' => 'Framlegg frå omsetjingsminnet',
 	'translate-edit-tmmatch' => '$1% treff',
+	'translate-edit-tab-list' => 'Meldingsliste',
 	'translate-magic-pagename' => 'Utvida MediaWiki-omsetjing',
 	'translate-magic-help' => 'Du kan setje om spesialsidenamn, magiske ord og namna på namnerom.
 
