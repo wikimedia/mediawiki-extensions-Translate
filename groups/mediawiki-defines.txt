@@ -1392,6 +1392,7 @@ aliasfile = SharedUserRights/SharedUserRights.alias.php
 descmsg = gblrights-desc
 
 Short Url
+aliasfile = ShortUrl/ShortUrl.alias.php
 
 Show Processlist
 aliasfile = ShowProcesslist/ShowProcesslist.alias.php
