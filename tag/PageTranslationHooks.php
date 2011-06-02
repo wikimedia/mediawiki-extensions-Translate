@@ -569,4 +569,63 @@ FOO;
 
 		return true;
 	}
+
+	public static function replaceSubtitle( &$subpages, $skin, $out ) {
+		global $wgOut, $wgUser;
+		if ( $out === null ) $out = $wgOut;
+		if ( $skin === null ) $skin = $wgUser->getSkin();
+
+		if ( !TranslatablePage::isTranslationPage( $out->getTitle() )
+				&& !TranslatablePage::isSourcePage( $out->getTitle() ) ) {
+			return true;
+		}
+
+		// Copied from Skin::subPageSubtitle()
+		if ( $out->isArticle() && MWNamespace::hasSubpages( $out->getTitle()->getNamespace() ) ) {
+			$ptext = $out->getTitle()->getPrefixedText();
+			if ( preg_match( '/\//', $ptext ) ) {
+				$links = explode( '/', $ptext );
+				array_pop( $links );
+				// Also pop of one extra for language code is needed
+				if ( TranslatablePage::isTranslationPage( $out->getTitle() ) ) {
+					array_pop( $links );
+				}
+				$c = 0;
+				$growinglink = '';
+				$display = '';
+
+				foreach ( $links as $link ) {
+					$growinglink .= $link;
+					$display .= $link;
+					$linkObj = Title::newFromText( $growinglink );
+
+					if ( is_object( $linkObj ) && $linkObj->exists() ) {
+						$getlink = $skin->linkKnown(
+							SpecialPage::getTitleFor( 'MyLanguage', $growinglink ),
+							htmlspecialchars( $display )
+						);
+
+						$c++;
+
+						if ( $c > 1 ) {
+							$subpages .= wfMsgExt( 'pipe-separator', 'escapenoentities' );
+						} else  {
+							// This one is stupid imho, doesn't work with chihuahua
+							//$subpages .= '&lt; ';
+						}
+
+						$subpages .= $getlink;
+						$display = '';
+					} else {
+						$display .= '/';
+					}
+					$growinglink .= '/';
+				}
+			}
+			return false;
+		}
+
+		return true;
+	}
+
 }

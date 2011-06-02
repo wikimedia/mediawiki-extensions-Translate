@@ -615,6 +615,9 @@ function efTranslateInit() {
 
 		// Custom move page that can move all the associated pages too
 		$wgHooks['SpecialPage_initList'][] = 'PageTranslationHooks::replaceMovePage';
+
+		// Replace subpage logic behaviour
+		$wgHooks['SkinSubPageSubtitle'][] = 'PageTranslationHooks::replaceSubtitle';
 	}
 }
 
