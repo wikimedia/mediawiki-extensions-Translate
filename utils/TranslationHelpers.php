@@ -1169,17 +1169,14 @@ class TranslationHelpers {
 	}
 
 	public static function addModules( OutputPage $out ) {
-		if ( method_exists( $out, 'addModules' ) ) {
-			$out->addModules( array(
-				'jquery.form',
-				'jquery.ui.dialog',
-				'jquery.autoresize',
-				'ext.translate.quickedit',
-			) );
-		} else {
-			// Our class
-			$out->addScriptFile( TranslateUtils::assetPath( 'js/quickedit.js' ) );
+		TranslateUtils::addModules( $out, array(
+			'jquery.form',
+			'jquery.ui.dialog',
+			'jquery.autoresize',
+			'ext.translate.quickedit',
+		) );
 
+		if ( !method_exists( $out, 'addModules' ) ) {
 			// Core jQuery
 			$out->includeJQuery();
 			$out->addScriptFile( TranslateUtils::assetPath( 'js/jquery-ui-1.7.2.custom.min.js' ) );
