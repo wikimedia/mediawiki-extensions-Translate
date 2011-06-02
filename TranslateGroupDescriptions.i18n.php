@@ -39,6 +39,7 @@ $messages['en'] = array(
 	'bw-desc-freecol' => '[[Translating:FreeCol|FreeCol]] is a turn-based strategy game',
 	'bw-desc-fudforum' => '[[Translating:FUDforum|FUDforum]] is web-based discussion forum software',
 	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]] is web-based issue tracking software',
+	'translate-group-desc-eol' => 'A message group for [[Translating:EOL|Encyclopedia of Life]]',
 	'translate-group-desc-ihris' => 'A message group for [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-common' => 'A message group for [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], a module of [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-i2ce' => 'A message group for [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], a module of [[Translating:iHRIS|iHRIS]]',

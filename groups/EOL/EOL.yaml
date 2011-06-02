@@ -1,0 +1,73 @@
+TEMPLATE:
+  BASIC:
+    namespace: NS_EOL
+    class: FileBasedMessageGroup
+    description: "{{int:translate-group-desc-eol}}"
+
+  FILES:
+    class: RubyYamlFFS
+    codeAsRoot: 1
+    codeMap:
+      be-tarask: be-TARASK
+      pt-br: pt-BR
+      sr-ec: sr-EC
+      no: nb
+      zh-hans: zh-CN
+      zh-hant: zh-TW
+
+  AUTOLOAD:
+    RubyMessageChecker: Checker.php
+
+---
+BASIC:
+  id: out-eol-0-all
+  label: Encyclopedia of Life
+  display: out/eol
+  meta: yes
+  class: AggregateMessageGroup
+
+GROUPS:
+  - out-eol-*
+
+---
+BASIC:
+  id: out-eol-site
+  label: Encyclopedia of Life - Website
+  display: out/eol/website
+
+FILES:
+  sourcePattern: %GROUPROOT%/eol/config/locales/initial/%CODE%.yml
+  targetPattern: eol/config/locales/%CODE%.yml
+
+CHECKER:
+  class: RubyMessageChecker
+  checks:
+    - RubyVariablesCheck
+
+MANGLER:
+  class: StringMatcher
+  patterns:
+    - "*"
+  prefix: website-
+
+TAGS:
+  optional:
+    - dummy
+  ignored:
+    - dummy
+
+---
+BASIC:
+  id: out-eol-database
+  label: Encyclopedia of Life - Database
+  display: out/eol/database
+
+FILES:
+  sourcePattern: %GROUPROOT%/eol/config/locales/%CODE%-db.yml
+  targetPattern: eol/config/locales/%CODE%-db.yml
+
+MANGLER:
+  class: StringMatcher
+  patterns:
+    - "*"
+  prefix: database-

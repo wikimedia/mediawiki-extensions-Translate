@@ -15,7 +15,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
 /**
  * Version number used in extension credits and in other placed where needed.
  */
-define( 'TRANSLATE_VERSION', '2011-05-15' );
+define( 'TRANSLATE_VERSION', '2011-06-02' );
 
 /**
  * Extension credits properties.
@@ -360,6 +360,7 @@ $wgTranslateGroupStructure = array(
 	'/^ext/' => array( 'ext' ),
 	'/^wikia/' => array( 'wikia' ),
 	'/^tsint/' => array( 'tsint' ),
+	'/^out-eol/' => array( 'eol' ),
 	'/^out-ihris-common/' => array( 'ihris', 'common' ),
 	'/^out-ihris-i2ce/' => array( 'ihris', 'i2ce' ),
 	'/^out-ihris-manage/' => array( 'ihris', 'manage' ),
