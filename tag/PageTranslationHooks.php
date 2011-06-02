@@ -570,7 +570,7 @@ FOO;
 		return true;
 	}
 
-	public static function replaceSubtitle( &$subpages, $skin, $out ) {
+	public static function replaceSubtitle( &$subpages, $skin = null , $out = null ) {
 		global $wgOut, $wgUser;
 		if ( $out === null ) $out = $wgOut;
 		if ( $skin === null ) $skin = $wgUser->getSkin();
