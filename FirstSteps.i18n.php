@@ -1289,6 +1289,11 @@ Lèssiéd-mè continuar.',
  * @author Klenje
  */
 $messages['fur'] = array(
+	'firststeps' => 'Prins pas',
+	'translate-fs-signup-title' => 'Regjistriti',
+	'translate-fs-settings-title' => 'Configure lis tôs preferencis',
+	'translate-fs-userpage-title' => 'Cree la tô pagjine utent',
+	'translate-fs-target-title' => 'Scomence a tradusi!',
 	'translate-fs-email-title' => 'Conferme la tô direzion email',
 );
 
