@@ -264,6 +264,17 @@ class MessageChecker {
 	}
 
 	/**
+	 * Checks for missing and unknown Ruby variables (%{var}) in
+	 * translations.
+	 * @param $messages \mixed Iterable list of TMessage objects.
+	 * @param $code \string Language code
+	 * @param $warnings \array Array where warnings are appended to.
+	 */
+	protected function rubyVariableCheck( $messages, $code, &$warnings ) {
+		return $this->parameterCheck( $messages, $code, $warnings, '/%{[a-zA-Z_]+}/' );
+	}
+
+	/**
 	 * Checks for missing and unknown python string interpolation operators in
 	 * translations.
 	 * @param $messages \mixed Iterable list of TMessage objects.
