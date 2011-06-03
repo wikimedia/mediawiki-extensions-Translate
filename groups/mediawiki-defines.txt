@@ -1567,6 +1567,7 @@ optional = timedmedia-derivative-200_200kbs_ogv, timedmedia-derivative-360_560kb
 optional = timedmedia-derivative-480_880kbs.ogv, timedmedia-derivative-720_VBR.ogv
 optional = timedmedia-derivative-480_900kbs.webm, timedmedia-derivative-720_VBR.webm
 optional = timedmedia-derivative-360_560kbs.webm
+optional = timedmedia-days-hours-min-sec-time
 descmsg = timedmedia-desc
 
 Timed Media Handler - Timed Text
