@@ -108,7 +108,7 @@ class TranslateEditAddons {
 	}
 
 	protected static function addTab( $skin, &$tabs, $name, $data, &$index ) {
-		if ( $skin instanceof SkinVector ) {
+		if ( $skin instanceof SkinVector || $skin instanceof SkinChihuahua ) {
 			$data['class'] = false; // Vector needs it for some reason
 			$tabs['namespaces'][$name] = $data;
 		} else {
