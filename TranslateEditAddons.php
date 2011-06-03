@@ -122,6 +122,11 @@ class TranslateEditAddons {
 	static function intro( $object ) {
 		$object->suppressIntro = true;
 
+		$msg = wfMsgForContent( 'translate-edit-tag-warning' );
+		if ( $msg !== '' && $msg !== '-' && TranslatablePage::isSourcePage( $object->mTitle ) ) {
+			global $wgOut;
+			$object->editFormTextTop .= $wgOut->parse( $msg );
+		}
 		return true;
 	}
 

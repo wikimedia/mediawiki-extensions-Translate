@@ -1620,6 +1620,7 @@ file = Translate/Translate.i18n.php
 aliasfile = Translate/Translate.alias.php
 optional = translate-page-paging-links, translate-languagestats-groups, supportedlanguages-portallink, supportedlanguages-portallink-nocldr
 optional = translate-edit-tab-next, translate-edit-tab-prev
+ignored = translate-edit-tag-warning
 
 Translate - First Steps
 id = ext-translate-firststeps

@@ -88,6 +88,8 @@ If the group consists of a subset or superset of messages from other groups, it 
 	'translate-edit-tab-next'          => '>>>',
 	'translate-edit-tab-list'          => 'Message list',
 
+	'translate-edit-tag-warning' => '',
+
 	'translate-magic-pagename'    => 'Extended MediaWiki translation',
 	'translate-magic-help'        => 'You can translate special pages aliases, magic words and namespace names.
 
