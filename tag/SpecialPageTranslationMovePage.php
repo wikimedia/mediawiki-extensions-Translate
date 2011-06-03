@@ -217,15 +217,14 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 
 		$br = Html::element( 'br' );
 		$subaction = array( 'name' => 'subaction' );
-		$disabled =  array( 'disabled' => 'disabled' );
+		$readonly =  array( 'readonly' => 'readonly' );
 		$formParams = array( 'method' => 'post', 'action' => $this->getTitle( $this->oldText )->getLocalURL() );
 
 		$form = array();
 		$form[] = Xml::fieldset( wfMsg( 'pt-movepage-legend' ) );
 		$form[] = Html::openElement( 'form', $formParams );
 		$form[] = Html::hidden( 'wpEditToken', $this->user->editToken() );
-		$form[] = Html::hidden( 'wpOldTitle', $this->oldText );
-		$this->addInputLabel( $form, wfMsg( 'pt-movepage-current' ), 'wpOldTitleFake', 30, $this->oldText, $disabled );
+		$this->addInputLabel( $form, wfMsg( 'pt-movepage-current' ), 'wpOldTitle', 30, $this->oldText, $readonly );
 		$this->addInputLabel( $form, wfMsg( 'pt-movepage-new' ), 'wpNewTitle', 30, $this->newText );
 		$this->addInputLabel( $form, wfMsg( 'pt-movepage-reason' ), 'reason', 60, $this->reason );
 		$form[] = Xml::checkLabel( wfMsg( 'pt-movepage-subpages' ), 'subpages', 'mw-subpages', $this->moveSubpages ) . $br;
@@ -293,7 +292,7 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		$wgOut->addWikiMsg( 'pt-movepage-list-count', $wgLang->formatNum( $count ) );
 
 		$br = Html::element( 'br' );
-		$disabled =  array( 'disabled' => 'disabled' );
+		$readonly =  array( 'readonly' => 'readonly' );
 		$subaction = array( 'name' => 'subaction' );
 		$formParams = array( 'method' => 'post', 'action' => $this->getTitle( $this->oldText )->getLocalURL() );
 
@@ -301,14 +300,11 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		$form[] = Xml::fieldset( wfMsg( 'pt-movepage-legend' ) );
 		$form[] = Html::openElement( 'form', $formParams );
 		$form[] = Html::hidden( 'wpEditToken', $this->user->editToken() );
-		// Apparently HTML spec says that disabled elements are not submitted... ARGH!
-		$form[] = Html::hidden( 'wpOldTitle', $this->oldText );
-		$form[] = Html::hidden( 'wpNewTitle', $this->newText );
-		$this->addInputLabel( $form, wfMsg( 'pt-movepage-current' ), 'wpOldTitleFake', 30, $this->oldText, $disabled );
-		$this->addInputLabel( $form, wfMsg( 'pt-movepage-new' ), 'wpNewTitleFake', 30, $this->newText, $disabled );
+		$this->addInputLabel( $form, wfMsg( 'pt-movepage-current' ), 'wpOldTitle', 30, $this->oldText, $readonly );
+		$this->addInputLabel( $form, wfMsg( 'pt-movepage-new' ), 'wpNewTitle', 30, $this->newText, $readonly );
 		$this->addInputLabel( $form, wfMsg( 'pt-movepage-reason' ), 'reason', 60, $this->reason );
 		$form[] = Html::hidden( 'subpages', $this->moveSubpages );
-		$form[] = Xml::checkLabel( wfMsg( 'pt-movepage-subpages' ), 'subpagesFake', 'mw-subpages', $this->moveSubpages, $disabled ) . $br;
+		$form[] = Xml::checkLabel( wfMsg( 'pt-movepage-subpages' ), 'subpagesFake', 'mw-subpages', $this->moveSubpages, $readonly ) . $br;
 		$form[] = Xml::submitButton( wfMsg( 'pt-movepage-action-perform' ), $subaction );
 		$form[] = Xml::submitButton( wfMsg( 'pt-movepage-action-other' ), $subaction );
 		$form[] = Html::closeElement( 'form' );
