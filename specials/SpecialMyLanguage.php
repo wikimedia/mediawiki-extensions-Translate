@@ -33,7 +33,7 @@ class SpecialMyLanguage extends UnlistedSpecialPage {
 		$title = null;
 		if ( strval( $par ) !== '' ) {
 			$title = Title::newFromText( $par );
-			if ( $title && $title->exists() ) {
+			if ( $title && $title->exists() && $wgLang->getCode() !== 'en' ) {
 				$local = Title::newFromText( "$par/" . $wgLang->getCode() );
 				if ( $local && $local->exists() ) {
 					$title = $local;
