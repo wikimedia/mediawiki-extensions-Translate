@@ -57,7 +57,7 @@ class SpecialMyLanguage extends UnlistedSpecialPage {
 	 */
 	public static function linkfix( $dummy, $target, &$html, &$customAttribs, &$query, &$options, &$ret ) {
 		if ( $target->getNamespace() == NS_SPECIAL ) {
-			list( $name, $subpage ) = SpecialPage::resolveAlias( $target->getDBkey() );
+			list( $name, $subpage ) = SpecialPage::resolveAliasWithSubpage( $target->getDBkey() );
 			if ( $name === 'MyLanguage' ) {
 				$realTarget = Title::newFromText( $subpage );
 				if ( !$realTarget->exists() ) {
