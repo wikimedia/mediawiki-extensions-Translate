@@ -116,6 +116,8 @@ $wgHooks['SpecialSearchProfiles'][] = 'TranslateEditAddons::searchProfile';
 $wgHooks['SpecialSearchProfileForm'][] = 'TranslateEditAddons::searchProfileForm';
 $wgHooks['SpecialSearchSetupEngine'][] = 'TranslateEditAddons::searchProfileSetupEngine';
 
+$wgHooks['LinkBegin'][] = 'SpecialMyLanguage::linkfix';
+
 // New rights
 $wgAvailableRights[] = 'translate';
 $wgAvailableRights[] = 'translate-import';

@@ -50,4 +50,26 @@ class SpecialMyLanguage extends UnlistedSpecialPage {
 
 		$wgOut->redirect( $title->getLocalURL() );
 	}
+
+	/**
+	 * Make Special:MyLanguage links red if the target page doesn't exists.
+	 * A bit hacky because the core code is not so flexible.
+	 */
+	public static function linkfix( $dummy, $target, &$html, &$customAttribs, &$query, &$options, &$ret ) {
+		if ( $target->getNamespace() == NS_SPECIAL ) {
+			list( $name, $subpage ) = SpecialPage::resolveAlias( $target->getDBkey() );
+			if ( $name === 'MyLanguage' ) {
+				$realTarget = Title::newFromText( $subpage );
+				if ( !$realTarget->exists() ) {
+					$options[] = 'broken';
+					$index = array_search( 'known', $options, true );
+					if ( $index !== false ) unset( $options[$index] );
+
+					$index = array_search( 'noclasses', $options, true );
+					if ( $index !== false ) unset( $options[$index] );
+				}
+			}
+		}
+		return true;
+	}
 }
