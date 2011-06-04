@@ -4,7 +4,7 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2008-2010, Niklas Laxström
+ * @copyright Copyright © 2008-2011, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -115,7 +115,6 @@ $wgAutoloadClasses['TranslateBC'] = $dir . 'utils/CompatibilityCode.php';
 
 $wgAutoloadClasses['MessageHandle'] = $dir . 'utils/MessageHandle.php';
 
-
 /**@}*/
 
 /**
@@ -150,8 +149,10 @@ $wgAutoloadClasses['TPParse'] = $dir . 'tag/TPParse.php';
 $wgAutoloadClasses['TPSection'] = $dir . 'tag/TPSection.php';
 $wgAutoloadClasses['SpecialPageTranslation'] = $dir . 'tag/SpecialPageTranslation.php';
 $wgAutoloadClasses['SpecialPageTranslationMovePage'] = $dir . 'tag/SpecialPageTranslationMovePage.php';
+$wgAutoloadClasses['SpecialPageTranslationDeletePage'] = $dir . 'tag/SpecialPageTranslationDeletePage.php';
 $wgAutoloadClasses['RenderJob'] = $dir . 'tag/RenderJob.php';
 $wgAutoloadClasses['MoveJob'] = $dir . 'tag/MoveJob.php';
+$wgAutoloadClasses['DeleteJob'] = $dir . 'tag/MoveJob.php';
 /**@}*/
 
 /**

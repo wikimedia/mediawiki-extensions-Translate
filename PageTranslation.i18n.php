@@ -77,7 +77,6 @@ but the latest {{PLURAL:$1|version|versions}} cannot be marked for translation.'
 This page is a translation of page [[$1]] and the translation can be updated using [$2 the translation tool].',
 	'tpt-unknown-page' => 'This namespace is reserved for content page translations.
 The page you are trying to edit does not seem to correspond any page marked for translation.',
-	'tpt-delete-impossible' => 'Deleting pages marked for translation is not yet possible.',
 
 	'tpt-install' => 'Run php maintenance/update.php or web install to enable page translation feature.',
 
@@ -104,6 +103,10 @@ Section text: <pre>$1</pre>',
 	'pt-log-unmark' => '{{GENDER:$2|removed}} page "[[:$1]]" from translation',
 	'pt-log-moveok' => '{{GENDER:$2|completed}} renaming of translatable page $1 to a new name',
 	'pt-log-movenok' => '{{GENDER:$2|encountered}} a problem while moving [[:$1]] to [[:$3]]',
+	'pt-log-delete-full-ok' => '{{GENDER:$2|completed}} deletion of translatable page $1',
+	'pt-log-delete-full-nok' => '{{GENDER:$2|encountered}} a problem while deleting translatable page [[:$1]]',
+	'pt-log-delete-lang-ok' => '{{GENDER:$2|completed}} deletion of translation page $e',
+	'pt-log-delete-lang-nok' => '{{GENDER:$2|encountered}} a problem while deleting translation page [[:$1]]',
 
 
 	# move page replacement
@@ -144,6 +147,39 @@ Failures will be logged in the [[Special:Log/pagetranslation|page translation lo
 Please check the [[Special:Log/pagetranslation|page translation log]] for errors and completion message.',
 
 	'pt-locked-page' => 'This page is locked because the translatable page is currently being moved.',
+
+
+	'pt-deletepage-lang-title' => 'Deleting translation page $1.',
+	'pt-deletepage-full-title' => 'Deleting translatable page $1.',
+
+	'pt-deletepage-invalid-title' => 'The specified page is not valid.',
+	'pt-deletepage-invalid-text' => 'The specified page is not a translatable page nor translation of it.',
+
+	'pt-deletepage-action-check' => 'List pages to be deleted',
+	'pt-deletepage-action-perform' => 'Do the deletion',
+	'pt-deletepage-action-other' => 'Change target',
+
+	'pt-deletepage-lang-legend' => 'Delete translation page',
+	'pt-deletepage-full-legend' => 'Delete translatable page',
+	'pt-deletepage-any-legend' => 'Delete translatable page or translation of translatable page',
+	'pt-deletepage-current' => 'Page name:',
+	'pt-deletepage-reason' => 'Reason:',
+	'pt-deletepage-subpages' => 'Delete all subpages',
+
+	'pt-deletepage-list-pages' => 'List of pages to delete',
+	'pt-deletepage-list-translation' => 'Translation pages',
+	'pt-deletepage-list-section' => 'Section pages',
+	'pt-deletepage-list-other' => 'Other subpages',
+	'pt-deletepage-list-count' => 'In total $1 {{PLURAL:$1|page|pages}} to delete.',
+
+	'pt-deletepage-full-logreason' => 'Part of translatable page $1.',
+	'pt-deletepage-lang-logreason' => 'Part of translation page $1.',
+	'pt-deletepage-started' => 'Please check the [[Special:Log/pagetranslation|page translation log]] for errors and completion message.',
+
+	'pt-deletepage-intro' => 'This special page allows you delete whole translatable pages or translations into one language.
+The delete action will not be instant, because many pages will need to be deleted.
+Failures will be logged in the [[Special:Log/pagetranslation|page translation log]] and they need to be repaired by hand.',
+
 );
 
 /** Message documentation (Message documentation)

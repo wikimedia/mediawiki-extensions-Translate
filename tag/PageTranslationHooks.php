@@ -357,7 +357,7 @@ FOO;
 	/// Prevent editing of translation pages directly
 	public static function preventDirectEditing( $title, $user, $action, &$result ) {
 		$page = TranslatablePage::isTranslationPage( $title );
-		if ( $page !== false ) {
+		if ( $page !== false && $action !== 'delete' ) {
 			if ( self::$allowTargetEdit ) {
 				return true;
 			}
@@ -372,14 +372,16 @@ FOO;
 
 				return false;
 			}
-		} elseif ( $action === 'delete' ) {
-			$page = TranslatablePage::newFromTitle( $title );
-			if ( $page->getMarkedTag() ) {
-				$result = array( 'tpt-delete-impossible' );
-				return false;
-			}
 		}
 
+		return true;
+	}
+
+	public static function disableDelete( $article, $wgOut, &$reason ) {
+		if ( TranslatablePage::isSourcePage( $article->mTitle ) || TranslatablePage::isTranslationPage( $article->mTitle ) ) {
+			$new = SpecialPage::getTitleFor( 'PageTranslationDeletePage', $article->mTitle->getPrefixedText() );
+			$wgOut->redirect( $new->getFullUrl() );
+		}
 		return true;
 	}
 
@@ -550,6 +552,14 @@ FOO;
 			return wfMsgExt( 'pt-log-moveok', $opts, $title->getPrefixedText(), $user );
 		} elseif ( $action === 'movenok' ) {
 			return wfMsgExt( 'pt-log-movenok', $opts, $title->getPrefixedText(), $user, $_['target'] );
+		} elseif ( $action === 'deletefnok' ) {
+			return wfMsgExt( 'pt-log-delete-full-nok', $opts, $title->getPrefixedText(), $user, $_['target'] );
+		} elseif ( $action === 'deletelnok' ) {
+			return wfMsgExt( 'pt-log-delete-lang-nok', $opts, $title->getPrefixedText(), $user, $_['target'] );
+		} elseif ( $action === 'deletelok' ) {
+			return wfMsgExt( 'pt-log-delete-full-ok', $opts, $title->getPrefixedText(), $user );
+		} elseif ( $action === 'deletefok' ) {
+			return wfMsgExt( 'pt-log-delete-lang-ok', $opts, $title->getPrefixedText(), $user );
 		}
 	}
 

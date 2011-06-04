@@ -8,7 +8,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
  *
  * @author Niklas Laxström
  * @author Siebrand Mazeland
- * @copyright Copyright © 2006-2010, Niklas Laxström, Siebrand Mazeland
+ * @copyright Copyright © 2006-2011, Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -541,6 +541,8 @@ function efTranslateInit() {
 		global $wgSpecialPages, $wgAvailableRights, $wgSpecialPageGroups;
 		$wgSpecialPages['PageTranslation'] = 'SpecialPageTranslation';
 		$wgSpecialPageGroups['PageTranslation'] = 'pagetools';
+		$wgSpecialPages['PageTranslationDeletePage'] = 'SpecialPageTranslationDeletePage';
+		$wgSpecialPageGroups['PageTranslationDeletePage'] = 'pagetools';
 		$wgAvailableRights[] = 'pagetranslation';
 
 		global $wgLogNames, $wgLogActionsHandlers, $wgLogTypes, $wgLogHeaders;
@@ -621,6 +623,9 @@ function efTranslateInit() {
 
 		// Replace subpage logic behaviour
 		$wgHooks['SkinSubPageSubtitle'][] = 'PageTranslationHooks::replaceSubtitle';
+
+		// Disable action=delete
+		$wgHooks['ArticleConfirmDelete'][] = 'PageTranslationHooks::disableDelete';
 	}
 }
 
