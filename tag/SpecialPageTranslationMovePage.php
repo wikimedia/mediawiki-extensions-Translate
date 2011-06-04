@@ -229,8 +229,8 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		$this->addInputLabel( $form, wfMsg( 'pt-movepage-reason' ), 'reason', 60, $this->reason );
 		$form[] = Xml::checkLabel( wfMsg( 'pt-movepage-subpages' ), 'subpages', 'mw-subpages', $this->moveSubpages ) . $br;
 		$form[] = Xml::submitButton( wfMsg( 'pt-movepage-action-check' ), $subaction );
-		$form[] = Html::closeElement( 'form' );
-		$form[] = Html::closeElement( 'fieldset' );
+		$form[] = Xml::closeElement( 'form' );
+		$form[] = Xml::closeElement( 'fieldset' );
 		$wgOut->addHTML( implode( "\n", $form ) );
 	}
 
@@ -307,8 +307,8 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		$form[] = Xml::checkLabel( wfMsg( 'pt-movepage-subpages' ), 'subpagesFake', 'mw-subpages', $this->moveSubpages, $readonly ) . $br;
 		$form[] = Xml::submitButton( wfMsg( 'pt-movepage-action-perform' ), $subaction );
 		$form[] = Xml::submitButton( wfMsg( 'pt-movepage-action-other' ), $subaction );
-		$form[] = Html::closeElement( 'form' );
-		$form[] = Html::closeElement( 'fieldset' );
+		$form[] = Xml::closeElement( 'form' );
+		$form[] = Xml::closeElement( 'fieldset' );
 		$wgOut->addHTML( implode( "\n", $form ) );
 	}
 
