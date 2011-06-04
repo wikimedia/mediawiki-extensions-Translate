@@ -1,6 +1,6 @@
 CommonsHelper 2
-optional = checkusage, commonshelper2, standard_project
 ignored = title, tusc
+optional = commonshelper2, standard_project, checkusage
 
 General
 optional = colon-separator, dateformat, parentheses
@@ -9,18 +9,24 @@ GetWikiAPI
 ignored = title
 
 Jarry
+ignored = title
 
 Krinkle
+optional = alws-label
 
 Monuments API
+ignored = title
 
 OrphanTalk2
-optional = label-wiki
 
 Recent Anonymous Activity
 
 SVG Translate
-optional = format-filename-example, format-fullurl-example
+optional = title
+ignored = format-filename-example, format-fullurl-example
+
+Templatecount
+optional = title
 
 Toolserver Intuition - Core
 id = tsint-core
