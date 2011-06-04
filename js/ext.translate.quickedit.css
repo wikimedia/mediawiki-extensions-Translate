@@ -11,10 +11,6 @@
 	color: blue;
 }
 
-.mw-ajax-dialog #summary {
-	width: 5em;
-}
-
 .mw-translate-tmsug {
 	margin-bottom: 0.2em;
 }
@@ -72,9 +68,19 @@
 	width: 100%;
 }
 
+/* Buttons */
+.mw-translate-save {
+	font-weight: bold;
+}
+
 .mw-translate-history {
 	float: right;
 }
+
+.mw-ajax-dialog #summary {
+	width: 5em;
+}
+
 
 /* Blue tints for translate fieldsets */
 .mw-sp-translate-edit-inother { background-color: #F8F8FF; }
