@@ -83,7 +83,9 @@ class SpecialSupportedLanguages extends UnlistedSpecialPage {
 				$user = Title::capitalize( $match[1], NS_USER );
 				$lb->add( NS_USER, $user );
 				$lb->add( NS_USER_TALK, $user );
-				@$users[$code][] = $user;
+
+				if ( !isset( $users[$code] ) ) $users[$code] = array();
+				$users[$code][] = $user;
 			}
 		}
 
@@ -94,9 +96,7 @@ class SpecialSupportedLanguages extends UnlistedSpecialPage {
 		$skin = $wgUser->getSkin();
 		$portalBaseText = wfMsg( 'portal' );
 
-		/**
-		 * Information to be used inside the foreach loop.
-		 */
+		// Information to be used inside the foreach loop.
 		$linkInfo['rc']['title'] = SpecialPage::getTitleFor( 'Recentchanges' );
 		$linkInfo['rc']['msg'] = wfMsg( 'supportedlanguages-recenttranslations' );
 		$linkInfo['stats']['title'] = SpecialPage::getTitleFor( 'LanguageStats' );
@@ -173,5 +173,7 @@ class SpecialSupportedLanguages extends UnlistedSpecialPage {
 				count( $users[$code] )
 			) . "</p>\n" );
 		}
+		$wgOut->addHtml( Html::element( 'hr' ) );
+		$wgOut->addWikiMsg( 'supportedlanguages-count', $wgLang->formatNum( count( $users ) ) );
 	}
 }
