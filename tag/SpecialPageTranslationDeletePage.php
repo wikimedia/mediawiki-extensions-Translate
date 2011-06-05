@@ -260,16 +260,16 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 	protected function performAction() {
 		$jobs = array();
 		$target = $this->title;
+		$base = $this->title->getPrefixedText();
 
 		$translationPages = $this->getTranslationPages();
 		foreach ( $translationPages as $old ) {
-			$jobs[$old->getPrefixedText()] = DeleteJob::newJob( $old, !$this->singleLanguage(), $this->user );
+			$jobs[$old->getPrefixedText()] = DeleteJob::newJob( $old, $base, !$this->singleLanguage(), $this->user );
 		}
 
 		$sectionPages = $this->getSectionPages();
 		foreach ( $sectionPages as $old ) {
-			$to = $this->newPageTitle( $base, $old, $target );
-			$jobs[$old->getPrefixedText()] = DeleteJob::newJob( $old, !$this->singleLanguage(), $this->user );
+			$jobs[$old->getPrefixedText()] = DeleteJob::newJob( $old, $base, !$this->singleLanguage(), $this->user );
 		}
 
 		if ( !$this->doSubpages ) {
@@ -279,15 +279,14 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 					continue;
 				}
 
-				$to = $this->newPageTitle( $base, $old, $target );
-				$jobs[$old->getPrefixedText()] = DeleteJob::newJob( $old, !$this->singleLanguage(), $this->user );
+				$jobs[$old->getPrefixedText()] = DeleteJob::newJob( $old, $base, !$this->singleLanguage(), $this->user );
 			}
 		}
 
 		Job::batchInsert( $jobs );
 
-		global $wgMemc;
-		$wgMemc->set( wfMemcKey( 'pt-base', $base ), array_keys( $jobs ), 60 * 60 * 6 );
+		$cache = wfGetCache( CACHE_DB );
+		$cache->set( wfMemcKey( 'pt-base', $target->getPrefixedText() ), array_keys( $jobs ), 60 * 60 * 6 );
 
 
 		if ( !$this->singleLanguage() ) {
@@ -296,7 +295,7 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 
 		MessageGroups::clearCache();
 		// TODO: defer or make faster
-		MessageIndexRebuilder::execute();
+		//MessageIndexRebuilder::execute();
 
 		global $wgOut;
 		$wgOut->addWikiMsg( 'pt-deletepage-started' );

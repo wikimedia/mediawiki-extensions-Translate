@@ -15,16 +15,16 @@
  * @todo Get rid of direct reference to $wgMemc.
  */
 class DeleteJob extends Job {
-	public static function newJob( Title $target, $full, /*User*/ $performer ) {
+	public static function newJob( Title $target, $base, $full, /*User*/ $performer ) {
 		global $wgTranslateFuzzyBotName;
 
 		$job = new self( $target );
 		$job->setUser( $wgTranslateFuzzyBotName );
 		$job->setFull( $full );
+		$job->setBase( $base );
 		$msg = $job->getFull() ? 'pt-deletepage-full-logreason' : 'pt-deletepage-lang-logreason';
-		$job->setSummary( wfMsgForContent( 'pt-deletepage-logreason', $target->getPrefixedText() ) );
+		$job->setSummary( wfMsgForContent( $msg, $target->getPrefixedText() ) );
 		$job->setPerformer( $performer );
-		$job->lock();
 		return $job;
 	}
 
@@ -40,7 +40,7 @@ class DeleteJob extends Job {
 		// Other stuff
 		$user    = $this->getUser();
 		$summary = $this->getSummary();
-		$target  = $this->getTarget();
+		$base    = $this->getBase();
 
 		PageTranslationHooks::$allowTargetEdit = true;
 		$oldUser = $wgUser;
@@ -53,7 +53,7 @@ class DeleteJob extends Job {
 			$logger = new LogPage( 'pagetranslation' );
 			$params = array(
 				'user' => $this->getPerformer(),
-				'target' => $target->getPrefixedText(),
+				'target' => $title->getPrefixedText(),
 				'error' => base64_encode( serialize( $ok ) ), // This is getting ridiculous
 			);
 			$doer = User::newFromName( $this->getPerformer() );
@@ -63,24 +63,23 @@ class DeleteJob extends Job {
 
 		PageTranslationHooks::$allowTargetEdit = false;
 
-		global $wgMemc;
-		$pages = (array) $wgMemc->get( wfMemcKey( 'pt-base', $title->getPrefixedText() ) );
-		$last = true;
-
-		foreach ( $pages as $page ) {
-			if ( $wgMemc->get( wfMemcKey( 'pt-lock', $page ) ) === true ) {
-				$last = false;
-				break;
-			}
-		}
-
-		if ( $last )  {
-			$wgMemc->delete( wfMemcKey( 'pt-base',  $title->getPrefixedText() ) );
+		$cache = wfGetCache( CACHE_DB );
+		$pages = (array) $cache->get( wfMemcKey( 'pt-base', $base ) );
+		$lastitem = array_pop( $pages );
+		if ( $title->getPrefixedText() === $lastitem ) {
+			$cache->delete( wfMemcKey( 'pt-base', $base ) );
 			$logger = new LogPage( 'pagetranslation' );
 			$params = array( 'user' => $this->getPerformer() );
 			$doer = User::newFromName( $this->getPerformer() );
 			$msg = $this->getFull() ? 'deletefok' : 'deletelok';
-			$logger->addEntry( $msg, $title, null, array( serialize( $params ) ), $doer );
+			$logger->addEntry( $msg, Title::newFromText( $base ), null, array( serialize( $params ) ), $doer );
+
+			$tpage = TranslatablePage::newFromTitle( $title );
+			$tpage->getTranslationPercentages( true );
+			foreach ( $tpage->getTranslationPages() as $page ) {
+				$page->invalidateCache();
+			}
+			$title->invalidateCache();
 		}
 
 		$wgUser = $oldUser;
@@ -122,6 +121,14 @@ class DeleteJob extends Job {
 		} else {
 			$this->params['user'] = $user;
 		}
+	}
+
+	public function setBase( $base ) {
+		$this->params['base'] = $base;
+	}
+
+	public function getBase() {
+		return $this->params['base'];
 	}
 
 	/**

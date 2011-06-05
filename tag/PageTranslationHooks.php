@@ -556,9 +556,9 @@ FOO;
 			return wfMsgExt( 'pt-log-delete-full-nok', $opts, $title->getPrefixedText(), $user, $_['target'] );
 		} elseif ( $action === 'deletelnok' ) {
 			return wfMsgExt( 'pt-log-delete-lang-nok', $opts, $title->getPrefixedText(), $user, $_['target'] );
-		} elseif ( $action === 'deletelok' ) {
-			return wfMsgExt( 'pt-log-delete-full-ok', $opts, $title->getPrefixedText(), $user );
 		} elseif ( $action === 'deletefok' ) {
+			return wfMsgExt( 'pt-log-delete-full-ok', $opts, $title->getPrefixedText(), $user );
+		} elseif ( $action === 'deletelok' ) {
 			return wfMsgExt( 'pt-log-delete-lang-ok', $opts, $title->getPrefixedText(), $user );
 		}
 	}

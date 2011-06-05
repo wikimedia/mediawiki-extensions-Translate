@@ -553,10 +553,16 @@ function efTranslateInit() {
 		$wgLogActionsHandlers['pagetranslation/unmark'] = 'PageTranslationHooks::formatLogEntry';
 		$wgLogActionsHandlers['pagetranslation/moveok'] = 'PageTranslationHooks::formatLogEntry';
 		$wgLogActionsHandlers['pagetranslation/movenok'] = 'PageTranslationHooks::formatLogEntry';
+		$wgLogActionsHandlers['pagetranslation/deletelok'] = 'PageTranslationHooks::formatLogEntry';
+		$wgLogActionsHandlers['pagetranslation/deletefok'] = 'PageTranslationHooks::formatLogEntry';
+		$wgLogActionsHandlers['pagetranslation/deletelnok'] = 'PageTranslationHooks::formatLogEntry';
+		$wgLogActionsHandlers['pagetranslation/deletefnok'] = 'PageTranslationHooks::formatLogEntry';
+
 
 		global $wgJobClasses;
 		$wgJobClasses['RenderJob'] = 'RenderJob';
 		$wgJobClasses['MoveJob'] = 'MoveJob';
+		$wgJobClasses['DeleteJob'] = 'DeleteJob';
 
 		// Namespaces
 		global $wgPageTranslationNamespace, $wgExtraNamespaces;
