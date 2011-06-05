@@ -1633,6 +1633,7 @@ $messages['ne'] = array(
 
 /** Dutch (Nederlands)
  * @author McDutchie
+ * @author SPQRobin
  * @author Siebrand
  */
 $messages['nl'] = array(
@@ -1656,6 +1657,7 @@ $messages['nl'] = array(
 	'bw-desc-freecol' => '[[Translating:FreeCol|FreeCol]] is a beurtgebaseerd strategiespel',
 	'bw-desc-fudforum' => '[[Translating:FUDforum|FUDforum]] is webgebaseerde forumsoftware',
 	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]] is webgebaseerde software voor het volgen van meldingen',
+	'translate-group-desc-eol' => 'Een berichtengroep voor [[Translating:EOL|Encyclopedia of Life]]',
 	'translate-group-desc-ihris' => 'Een berichtengroep voor [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-common' => 'Een berichtengroep voor [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], een module van [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-i2ce' => 'Een berichtengroep voor [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], een module van [[Translating:iHRIS|iHRIS]]',
@@ -1824,10 +1826,14 @@ $messages['pl'] = array(
 	'bw-desc-freecol' => 'Zanim rozpoczniesz tłumaczenie FreeCol, zapoznaj się z [[Translating:FreeCol]]. Freecol udostępniane jest na licencji GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum] – forum internetowe napisane w PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] jest bezpłatnym internetowym systemem obsługi zgłoszeń usterek. Prosimy o zgłaszanie wszelkich problemów [[Support|obsłudze]].',
+	'translate-group-desc-eol' => 'Grupa komunikatów [[Translating:EOL|Encyklopedii życia]]',
+	'translate-group-desc-ihris' => 'Grupa komunikatów [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-common' => 'Grupa [[Special:Translate/out-ihris-common-0-all|wspólnych komunikatów iHRIS]], moduł [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-i2ce' => 'Grupa komunikatów [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], moduł [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-manage' => 'Grupa komunikatów [[Special:Translate/out-ihris-manage-0-all|menadżera iHRIS]], moduł [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-qualify' => 'Grupa komunikatów [[Special:Translate/out-ihris-qualify-0-all|kwalifikacji iHRIS]], modułu [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'Główna wtyczka dla [[Translating:MantisBT|MantisBT]]',
-	'translate-group-desc-mediawiki-core-115' => 'Komunikaty stabilnej wersji 1.15 oprogramowania [[Translating:MediaWiki|MediaWiki]]',
-	'translate-group-desc-mediawiki-core-116' => 'Komunikaty stabilnej wersji 1.16 oprogramowania [[Translating:MediaWiki|MediaWiki]]',
-	'translate-group-desc-mediawiki-core-117' => 'Komunikaty stabilnej wersji 1.17 oprogramowania [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawiki-core-branch' => 'Komunikaty stabilnej wersji oprogramowania [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] jest systemem zarządzania informacją dla mikrofinansów',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' jest biblioteką w języku Python zapisującą dokumenty w formacie PDF z artykułami MediaWiki, które zostały przeanalizowane przez bibliotekę mwlib. 
 

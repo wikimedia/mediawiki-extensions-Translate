@@ -4289,6 +4289,7 @@ Undersiden "translators" skal indeholde denne skabelon [[:{{ns:template}}:User|U
 	'supportedlanguages-recenttranslations' => 'seneste oversættelser',
 	'translate-save' => 'Gem ($1)',
 	'translate-jssti-add' => 'Tilføj til listen',
+	'managemessagegroups' => 'Håndtering af beskedgrupper',
 	'translate-manage-groups' => 'Gruppehåndtering',
 	'translate-manage-listgroups' => 'Konfigurerede grupper',
 	'translate-manage-listgroups-old' => 'Grupper med gammel stil',
@@ -4345,6 +4346,7 @@ $1',
 	'translate-import-err-ul-failed' => 'Fil upload lykkedes ikke',
 	'translate-import-err-invalid-title' => 'Det angivne filnavn <nowiki>$1</nowiki> var ugyldig.',
 	'translate-import-err-no-such-file' => 'Fil <nowiki>$1</nowiki> eksisterer ikke eller er ikke blevet uploadet lokalt.',
+	'translate-import-err-stale-group' => 'Beskedgruppen, som denne fil tilhører, findes ikke.',
 	'translate-import-err-no-headers' => 'Filen er ikke en velformateret Gettext fil i Oversæt tilføjelsens format:
 Kan ikke bestemme gruppe og sprog fra fil headere.',
 	'translate-import-err-warnings' => 'Filen er ikke velformateret.
@@ -4356,6 +4358,7 @@ Detaljer: $1',
 	'translate-js-save-failed' => 'Lagring mislykkedes. Rapporter venligst denne fejl.',
 	'translate-js-history' => 'Oversættelseshistorik',
 	'translate-js-support' => 'Stil spørgsmål',
+	'translate-js-support-title' => 'Spørg om hjælp, hvis der ikke er nok information til at oversætte denne besked korrekt.',
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Kode',
 	'translate-gs-continent' => 'Kontinent',
@@ -4365,7 +4368,9 @@ Detaljer: $1',
 	'translate-gs-count' => 'Antal',
 	'translate-gs-total' => 'I alt',
 	'translate-gs-avgscore' => 'Gennemsnitlig point',
+	'translate-documentation-language' => 'Beskeddokumentation',
 	'translate-searchprofile' => 'Oversættelser',
+	'translate-searchprofile-tooltip' => 'Søg i alle oversættelser',
 	'translate-search-languagefilter' => 'Filtrer efter sprog:',
 	'translate-search-nofilter' => 'Ingen filtrering',
 );
@@ -4570,6 +4575,7 @@ Es wird empfohlen, Systemnachrichten mit der Spezialseite [[Special:Translate|{{
 	'translate-languagestats-groups' => ' # Ergänze die ID einer Systemnachrichtengruppe (eine per Zeile) um die Gruppen von
  # Special:LanguageStats auszuschließen. Nicht existerende IDs
  # werden ignoriert.',
+	'translate-languagestats-overall' => 'Alle Systemnachrichtengruppen zusammen',
 	'supportedlanguages' => 'Unterstützte Sprachen',
 	'supportedlanguages-summary' => 'Diese Seite zeigt eine Liste aller unterstützen Sprachen auf {{SITENAME}}, zusammen mit den Namen der Übersetzer, die an der jeweiligen Sprache mitgearbeitet haben.
 Weitere Informationen zu einer Sprache, gibt es beim Klick auf den Portallink.
@@ -4585,6 +4591,7 @@ Im Menü befindet sich ein Link zum Portal der eingestellten Sprache.',
 Auf dieser Seite wird eine Liste der Sprachportale erscheinen, die nach einem entsprechenden Sprachcode benannt sind und eine Unterseite mit dem Namen „translators“ haben.
 Die Unterseite „translators“ muss die Vorlage [[:{{ns:template}}:User|User]] beinhalten, mit einem Benutzernamen als Parameter.',
 	'supportedlanguages-recenttranslations' => 'Aktuelle Übersetzungen',
+	'supportedlanguages-count' => 'Insgesamt $1 {{plural:$1|Sprache|Sprachen}}.',
 	'translate-save' => 'Speichern ($1)',
 	'translate-jssti-add' => 'Zur Liste hinzufügen',
 	'managemessagegroups' => 'Nachrichtengruppenverwaltung',
@@ -7416,6 +7423,7 @@ Isto inclúe as mensaxes que se marcaron como obsoletas.',
 As mensaxes están marcadas como obsoletas porque cambiou a mensaxe orixinal en inglés, ben porque fallou a comprobación automática da mensaxe ou ben porque alguén a marcou como tal.',
 	'translate-nothing-to-do' => 'Semella que todas as traducións posibles foron feitas.
 Animámolo a que revise as mensaxes existentes mediante a páxina especial [[Special:Translate|{{int:translate}}]].',
+	'translate-languagestats-overall' => 'Todos os grupos mensaxes xuntos',
 	'supportedlanguages' => 'Linguas soportadas',
 	'supportedlanguages-summary' => 'Esta páxina amosa unha lista de todas as linguas soportadas por {{SITENAME}}, así como os nomes dos tradutores que traballan nelas.
 Se quere obter máis información sobre unha lingua en concreto, pode premer na ligazón cara ao portal desa lingua.
@@ -7431,6 +7439,7 @@ Na barra do menú terá unha ligazón ao portal da súa lingua.',
 Nesta páxina aparecerá unha lista con todos os portais nas diferentes linguas que teñan un código de lingua definido e unha subpáxina chamada "translators".
 Esta subpáxina "translators" debe conter o modelo [[:{{ns:template}}:User|User]], sendo o nome dun usuario o parámetro.',
 	'supportedlanguages-recenttranslations' => 'traducións recentes',
+	'supportedlanguages-count' => '$1 {{plural:$1|lingua|linguas}} en total.',
 	'translate-save' => 'Gardar ($1)',
 	'translate-jssti-add' => 'Engadir á lista',
 	'managemessagegroups' => 'Xestión do grupo de mensaxes',
@@ -12935,6 +12944,7 @@ $messages['mk'] = array(
 	'translate-languagestats-groups' => '# Додајте назнаки (ID) на групите пораки (по една во секој ред) за да ги ограничите групите пораки што
  # ќе се прикажат на Special:LanguageStats. Непостоечките назнаки ќе
  # бидат занемарени.',
+	'translate-languagestats-overall' => 'Сите групи на пораки заедно',
 	'supportedlanguages' => 'Поддржани јазици',
 	'supportedlanguages-summary' => 'На оваа страница се наведени сите јазици што ги поддржува {{SITENAME}}, како и имињата на преведувачите кои работат на секој јазик.
 Ако сакате повеќе информации за некој јазик, можете да кликнете на врската до матичниот портал за тој јазик.
@@ -12949,6 +12959,7 @@ $messages['mk'] = array(
 	'supportedlanguages-noportal' => 'Администраторот на викито нема определено NS_PORTAL, па затоа страницата не работи.
 На страницава се јавува список на сите портали што одговараат на определен јазичен код и потстраница наречена „преведувачи“ која го содржи шаблонот [[:{{ns:template}}:User|User]] земајќи корисничко име како параметар.',
 	'supportedlanguages-recenttranslations' => 'скорешни преводи',
+	'supportedlanguages-count' => 'Вкупно $1 {{plural:$1|јазик|јазици}}.',
 	'translate-save' => 'Зачувај ($1)',
 	'translate-jssti-add' => 'Додај во список',
 	'managemessagegroups' => 'Раководење со групи на пораки',
@@ -14336,6 +14347,7 @@ Dit aantal bevat ook berichten die als verouderd zijn gemarkeerd.',
 Berichten zijn gemarkeerd als verouderd omdat het Engelstalige bronbericht is gewijzigd, omdat een automatische controle op het bericht is mislukt, of omdat iemand het bericht heeft aangemerkt als verouderd.',
 	'translate-nothing-to-do' => 'Alle mogelijke vertalingen lijken te zijn gemaakt.
 U wordt aangemoedigd om via [[Special:Translate|{{int:translate}}]] vertalingen te controleren.',
+	'translate-languagestats-overall' => 'Alle berichtengroepen samen',
 	'supportedlanguages' => 'Ondersteunde talen',
 	'supportedlanguages-summary' => 'Op deze pagina wordt een lijst van alle talen die in {{SITENAME}} worden ondersteund weergegeven, samen met de namen van de vertalers die werken aan die taal.
 Als u meer informatie over een bepaalde taal wilt, kunt u klikken op de verwijzing naar het portaal voor die taal.
@@ -14351,6 +14363,7 @@ Zie de menubalk voor een verwijzing naar het portaal voor uw voorkeurstaal.',
 Op deze pagina wordt een lijst van taalportalen weergegevens voor alle portalen die overeenkomen met een ingestelde taalcode en een subpagina "translators".
 De subpagina "translators" moet het sjabloon [[:{{ns:template}}:User|User]] bevatten, waarbij een gebruikersnaam als parameter wordt geaccepteerd.',
 	'supportedlanguages-recenttranslations' => 'recente vertalingen',
+	'supportedlanguages-count' => '$1 {{plural:$1|taal|talen}} in totaal.',
 	'translate-save' => 'Opslaan ($1)',
 	'translate-jssti-add' => 'Aan lijst toevoegen',
 	'managemessagegroups' => 'Berichtengroepen beheren',
@@ -15560,6 +15573,7 @@ W menu odnajdziesz link do portalu języka, który wybrałeś w preferencjach.',
 Na tej stronie znajduje się lista portali językowych dla każdego z portali odpowiadającemu kodowi języka oraz podstronie „translators“.
 Podstrona „translators“ musi zawierać szablon [[:{{ns:template}}:User|User]] z nazwą użytkownika jako parametrem.',
 	'supportedlanguages-recenttranslations' => 'ostatnie tłumaczenia',
+	'supportedlanguages-count' => '$1 {{plural:$1|język|języki|języków}} łącznie.',
 	'translate-save' => 'Zapisz ($1)',
 	'translate-jssti-add' => 'Dodaj do listy',
 	'managemessagegroups' => 'Zarządzanie grupami komunikatów',
@@ -15617,6 +15631,7 @@ Jeśli polecisz zignorować zmiany, zostaną one nadpisane przy następnym ekspo
 	'translate-import-err-ul-failed' => 'Nie udało się przesłać pliku',
 	'translate-import-err-invalid-title' => 'Podana nazwa pliku <nowiki>$1</nowiki> jest nieprawidłowa.',
 	'translate-import-err-no-such-file' => 'Plik <nowiki>$1</nowiki> nie istnieje lub nie został jeszcze przesłany.',
+	'translate-import-err-stale-group' => 'Grupa komunikatów do której należy ten plik nie istnieje.',
 	'translate-import-err-no-headers' => 'Plik nie jest prawidłowo sformatowanym plikiem Gettext właściwym dla rozszerzenia Translate – nie udało się odczytać grupy i języka z nagłówków pliku.',
 	'translate-import-err-warnings' => 'Plik nie ma prawidłowego formatu.
 Sprawdź, czy edytor którym się posługujesz nie usuwa pól msgctxt.
@@ -15626,6 +15641,8 @@ Szczegóły – $1',
 	'translate-js-skip' => 'Przejdź do następnego',
 	'translate-js-save-failed' => 'Zapisywanie nie powiodło się. Powiadom o wystąpieniu błędu.',
 	'translate-js-history' => 'Historia tłumaczeń',
+	'translate-js-support' => 'Zadaj pytanie',
+	'translate-js-support-title' => 'Poproś o pomoc jeśli brak jest wystarczających informacji, aby przetłumaczyć ten komunikat właściwie.',
 	'translate-gs-pos' => 'Poz.',
 	'translate-gs-code' => 'Kod',
 	'translate-gs-continent' => 'Kontynent',
@@ -15636,6 +15653,10 @@ Szczegóły – $1',
 	'translate-gs-total' => 'Razem',
 	'translate-gs-avgscore' => 'Średni wynik',
 	'translate-documentation-language' => 'opis komunikatu',
+	'translate-searchprofile' => 'Tłumaczenia',
+	'translate-searchprofile-tooltip' => 'Szukaj we wszystkich tłumaczeniach',
+	'translate-search-languagefilter' => 'Filtruj według języka',
+	'translate-search-nofilter' => 'Bez filtrowania',
 );
 
 /** Piedmontese (Piemontèis)
@@ -16256,6 +16277,7 @@ Isto inclui as mensagens que foram marcadas como desactualizadas.',
 As mensagens estão marcadas como desactualizadas porque a mensagem original em inglês mudou ou porque uma verificação automática da mensagem detectou um problema.',
 	'translate-nothing-to-do' => 'Todas as traduções possíveis parecem já ter sido feitas.
 Encorajamo-lo a rever as mensagens usando [[Special:Translate|{{int:translate}}]].',
+	'translate-languagestats-overall' => 'Todos os grupos de mensagens em conjunto',
 	'supportedlanguages' => 'Línguas suportadas',
 	'supportedlanguages-summary' => 'Esta página apresenta uma lista de todas as línguas suportadas pela {{SITENAME}}, com os nomes dos tradutores de cada língua.
 Para obter mais informação sobre uma língua em particular, pode clicar o link para o portal dessa língua.
@@ -16270,6 +16292,7 @@ Na barra lateral à esquerda existe um link para o portal da língua da sua pref
 	'supportedlanguages-noportal' => 'O administrador da wiki não definiu NS_PORTAL, por isso esta página não funciona.
 Nesta página aparece uma lista de todos os portais de línguas que correspondem a um código de língua existente e uma subpágina chamada "translators". Para cada tradutor, a subpágina deve chamar a predefinição [[:{{ns:template}}:User|User]], passando como parâmetro um nome de utilizador.',
 	'supportedlanguages-recenttranslations' => 'traduções recentes',
+	'supportedlanguages-count' => '$1 {{plural:$1|língua|línguas}} no total.',
 	'translate-save' => 'Gravar ($1)',
 	'translate-jssti-add' => 'Adicionar à lista',
 	'managemessagegroups' => 'Administração de grupos de mensagens',
@@ -20856,15 +20879,15 @@ $messages['uk'] = array(
 	'translate-use-suggestion' => 'Вставити цю пропозицію в поле перекладу. Це замінить увесь поточний зміст.',
 	'translate-edit-tab-list' => 'Список повідомлень',
 	'translate-magic-pagename' => 'Поглиблений переклад MediaWiki',
-	'translate-magic-help' => "Ви можете перекладати псевдоніми спеціальних сторінок, магічні слова, і простори назв.
+	'translate-magic-help' => "Ви можете перекладати псевдоніми спеціальних сторінок, магічні слова й простори назв.
 
 Псевдоніми спеціальних сторінок і магічні слова можуть мати декілька варіантів перекладу, які розділяються комою (,).
 Простори назв можуть мати тільки один переклад.
 
-У перекладах просторів назв рядок <code>Обговорення $1</code> обробляється по-особливому. <code>$1</code> замінюється на назву сайту (наприклад <code>{{ns:project_talk}}</code>). Зв'яжіться з розробниками, якщо подібна граматична конструкція невірна для вашої мови.
+У перекладах просторів назв рядок <code>Обговорення $1</code> обробляється по-особливому. <code>$1</code> замінюється на назву сайту (наприклад <code>{{ns:project_talk}}</code>). Зв'яжіться з розробниками, якщо подібна граматична конструкція неправильна для Вашої мови.
 
-Щоб зберегти зміни, ви повинні належати до групи перекладачів.
-Зміни не будуть збережені, поки ви не натиснете кнопку нижче.",
+Щоб зберегти зміни, Ви повинні належати до групи перекладачів.
+Зміни не будуть збережені, поки Ви не натиснете кнопку нижче.",
 	'translate-magic-module' => 'Модуль:',
 	'translate-magic-submit' => 'Вивести',
 	'translate-magic-cm-export' => 'Експортувати',
