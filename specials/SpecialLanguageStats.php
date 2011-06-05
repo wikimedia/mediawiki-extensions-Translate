@@ -206,6 +206,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	function getGroupStats( $code, $suppressComplete = false ) {
 		$this->code = $code;
 		$this->suppressComplete = $suppressComplete;
+		$this->totals = array( 0, 0, 0 );
 
 		$out = '';
 
@@ -220,12 +221,43 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 		if ( $out ) {
 			$out = $this->createHeader( $code ) . "\n" . $out;
+			$out .= $this->makeTotalRow( $this->totals );
 			$out .= Xml::closeElement( 'tbody' );
 			$out .= Xml::closeElement( 'table' );
 		} else {
 			$out = wfMsgExt( 'translate-nothing-to-do', 'parse' );
 		}
 
+		return $out;
+	}
+
+	protected function makeTotalRow( $numbers ) {
+		list( $fuzzy, $translated, $total ) = $numbers;
+		$out  = "\t" . Html::openElement( 'tr' );
+		$out .= "\n\t\t" . Html::rawElement( 'td', array(), wfMsg( 'translate-languagestats-overall' ) );
+		$out .= $this->makeNumberColumns( $fuzzy, $translated, $total );
+		return $out;
+	}
+
+	protected function makeNumberColumns( $fuzzy, $translated, $total ) {
+		global $wgLang;
+		$out  = "\n\t\t" . Html::element( 'td',
+			array( 'data-sort-value' => $total ),
+			$wgLang->formatNum( $total ) );
+
+		$out .= "\n\t\t" . Html::element( 'td',
+			array( 'data-sort-value' => $total - $translated ),
+			$wgLang->formatNum( $total - $translated ) );
+
+		$out .= "\n\t\t" . $this->element( $this->formatPercentage( $translated / $total ),
+			$this->getBackgroundColour( $translated, $total ),
+			sprintf( '%1.3f', $translated / $total ) );
+
+		$out .= "\n\t\t" . $this->element( $this->formatPercentage( $fuzzy / $total ),
+			$this->getBackgroundColour( $fuzzy, $total, true ),
+			sprintf( '%1.3f', $fuzzy / $total ) );
+
+		$out .= "\n\t" . Xml::closeElement( 'tr' ) . "\n";
 		return $out;
 	}
 
@@ -273,6 +305,10 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			list( $fuzzy, $translated, $total ) = $this->loadPercentages( $cache, $g, $code );
 		}
 
+		$this->totals[2] += $total;
+		$this->totals[1] += $translated;
+		$this->totals[0] += $fuzzy;
+
 		if ( $total == 0 ) {
 			$zero = serialize( $total );
 			error_log( __METHOD__ . ": Group $groupName has zero message ($code): $zero" );
@@ -300,24 +336,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 		$out .= "\t" . Html::openElement( 'tr', $rowParams );
 		$out .= "\n\t\t" . Html::rawElement( 'td', array(), $this->makeGroupLink( $g, $code, $extra ) );
-
-		$out .= "\n\t\t" . Html::element( 'td',
-			array( 'data-sort-value' => $total ),
-			$wgLang->formatNum( $total ) );
-
-		$out .= "\n\t\t" . Html::element( 'td',
-			array( 'data-sort-value' => $total - $translated ),
-			$wgLang->formatNum( $total - $translated ) );
-
-		$out .= "\n\t\t" . $this->element( $this->formatPercentage( $translated / $total ),
-			$this->getBackgroundColour( $translated, $total ),
-			sprintf( '%1.3f', $translated / $total ) );
-
-		$out .= "\n\t\t" . $this->element( $this->formatPercentage( $fuzzy / $total ),
-			$this->getBackgroundColour( $fuzzy, $total, true ),
-			sprintf( '%1.3f', $fuzzy / $total ) );
-
-		$out .= "\n\t" . Xml::closeElement( 'tr' ) . "\n";
+		$out .= $this->makeNumberColumns( $fuzzy, $translated, $total );
 		return $out;
 	}
 
@@ -334,6 +353,20 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 		// Initialise messages.
 		$collection = $group->initCollection( $code );
+		
+		$ffs = $group->getFFS();
+		if ( $ffs instanceof GettextFFS && $code === 'qqq' ) {
+			$template = $ffs->read( 'en' );
+			$infile = array();
+			foreach( $template['TEMPLATE'] as $key => $data ) {
+				if ( isset( $data['comments']['.'] ) ) {
+					$infile[$key] = '1';
+				}
+			}
+			$collection->setInFile( $infile );
+		}
+
+
 		// Takes too much memory and only hides inconsistent import state
 		# $collection->setInFile( $group->load( $code ) );
 		$collection->filter( 'ignored' );
