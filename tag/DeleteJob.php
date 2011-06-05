@@ -21,7 +21,7 @@ class DeleteJob extends Job {
 		$job = new self( $target );
 		$job->setUser( $wgTranslateFuzzyBotName );
 		$job->setFull( $full );
-		$msg = $this->getFull() ? 'pt-deletepage-full-logreason' : 'pt-deletepage-lang-logreason';
+		$msg = $job->getFull() ? 'pt-deletepage-full-logreason' : 'pt-deletepage-lang-logreason';
 		$job->setSummary( wfMsgForContent( 'pt-deletepage-logreason', $target->getPrefixedText() ) );
 		$job->setPerformer( $performer );
 		$job->lock();
@@ -131,34 +131,4 @@ class DeleteJob extends Job {
 		return User::newFromName( $this->params['user'], false );
 	}
 
-	/**
-	 * Adapted from wfSuppressWarnings to allow not leaving redirects.
-	 */
-	public static function forceRedirects( $end = false ) {
-		static $suppressCount = 0;
-		static $originalLevel = null;
-
-		global $wgGroupPermissions;
-		global $wgUser;
-
-		if ( $end ) {
-			if ( $suppressCount ) {
-				--$suppressCount;
-				if ( !$suppressCount ) {
-					if ( $originalLevel === null ) {
-						unset( $wgGroupPermissions['*']['suppressredirect'] );
-					} else {
-						$wgGroupPermissions['*']['suppressredirect'] = $originalLevel;
-					}
-				}
-			}
-		} else {
-			if ( !$suppressCount ) {
-				$originalLevel = isset( $wgGroupPermissions['*']['suppressredirect'] ) ? $wgGroupPermissions['*']['suppressredirect'] : null;
-				$wgGroupPermissions['*']['suppressredirect'] = true;
-			}
-			++$suppressCount;
-		}
-		$wgUser->clearInstanceCache();
-	}
 }
