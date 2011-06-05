@@ -47,7 +47,8 @@ class DeleteJob extends Job {
 		$wgUser = $user;
 
 		$error = '';
-		$ok = new Article( $title, 0 )->doDeleteArticle( $summary, false, 0, true, $error );
+		$article = new Article( $title, 0 );
+		$ok = $article->doDeleteArticle( $summary, false, 0, true, $error );
 		if ( !$ok ) {
 			$logger = new LogPage( 'pagetranslation' );
 			$params = array(
