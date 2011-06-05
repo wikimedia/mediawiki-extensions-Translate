@@ -152,7 +152,7 @@ $wgAutoloadClasses['SpecialPageTranslationMovePage'] = $dir . 'tag/SpecialPageTr
 $wgAutoloadClasses['SpecialPageTranslationDeletePage'] = $dir . 'tag/SpecialPageTranslationDeletePage.php';
 $wgAutoloadClasses['RenderJob'] = $dir . 'tag/RenderJob.php';
 $wgAutoloadClasses['MoveJob'] = $dir . 'tag/MoveJob.php';
-$wgAutoloadClasses['DeleteJob'] = $dir . 'tag/MoveJob.php';
+$wgAutoloadClasses['DeleteJob'] = $dir . 'tag/DeleteJob.php';
 /**@}*/
 
 /**
