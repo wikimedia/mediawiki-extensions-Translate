@@ -303,12 +303,10 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			}
 		} else {
 			list( $fuzzy, $translated, $total ) = $this->loadPercentages( $cache, $g, $code );
+			$this->totals[2] += $total;
+			$this->totals[1] += $translated;
+			$this->totals[0] += $fuzzy;
 		}
-
-		$this->totals[2] += $total;
-		$this->totals[1] += $translated;
-		$this->totals[0] += $fuzzy;
-
 		if ( $total == 0 ) {
 			$zero = serialize( $total );
 			error_log( __METHOD__ . ": Group $groupName has zero message ($code): $zero" );
