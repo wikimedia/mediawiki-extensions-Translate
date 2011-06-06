@@ -1110,6 +1110,7 @@ Husk at tjekke [[Special:Log/pagetranslation|siden oversættelsen log]] for fejl
  * @author ChrisiPK
  * @author Imre
  * @author Kghbln
+ * @author McDutchie
  * @author Purodha
  * @author The Evil IP address
  * @author Umherirrender
@@ -1188,8 +1189,8 @@ Text des Abschnitts: <pre>$1</pre>',
 	'pt-log-movenok' => '{{GENDER:$2|hat}} ein Problem während der Verschiebung von [[:$1]] nach [[:$3]]',
 	'pt-log-delete-full-ok' => '{{GENDER:$2|schloss}} das Löschen der übersetzbaren Seite $1 ab',
 	'pt-log-delete-full-nok' => '{{GENDER:$2|hatte}} ein Problem während des Löschens der übersetzbaren Seite [[:$1]]',
-	'pt-log-delete-lang-ok' => '{{GENDER:$2|schloss}} das Löschen der übersetzbaren Seite $1 ab',
-	'pt-log-delete-lang-nok' => '{{GENDER:$2|hatte}} ein Problem während des Löschens der übersetzbaren Seite [[:$1]]',
+	'pt-log-delete-lang-ok' => '{{GENDER:$2|schloss}} das Löschen der übersetzten Seite $1 ab',
+	'pt-log-delete-lang-nok' => '{{GENDER:$2|hatte}} ein Problem während des Löschens der übersetzten Seite [[:$1]]',
 	'pt-movepage-title' => 'Die Übersetzungsseite $1 verschieben',
 	'pt-movepage-blockers' => 'Die zum Übersetzen vorgesehene Seite konnte aufgrund {{PLURAL:$1|folgendes Fehlers|folgender Fehler}} nicht zur neuen Bezeichnung verschoben werden:',
 	'pt-movepage-block-base-exists' => 'Die Basisseite [[:$1]] existiert bereits.',
@@ -2730,7 +2731,6 @@ ma le ultime {{PLURAL:$1|version|versiones}} non pote esser marcate pro traducti
 Iste pagina es un traduction del pagina [[$1]] e le traduction pote esser actualisate con le [$2 instrumento de traduction].',
 	'tpt-unknown-page' => 'Iste spatio de nomines es reservate pro traductiones de paginas de contento.
 Le pagina que tu vole modificar non pare corresponder con alcun pagina marcate pro traduction.',
-	'tpt-delete-impossible' => 'Le deletion de paginas marcate pro traduction non es ancora possibile.',
 	'tpt-install' => 'Executa maintenance/update.php o le installation web pro activar le traduction de paginas.',
 	'tpt-render-summary' => 'Actualisation a un nove version del pagina de origine',
 	'tpt-download-page' => 'Exportar pagina con traductiones',
@@ -2751,6 +2751,10 @@ Texto del section: <pre>$1</pre>',
 	'pt-log-unmark' => '{{GENDER:$2|removeva}} le pagina "[[:$1]]" del traduction.',
 	'pt-log-moveok' => '{{GENDER:$2|completava}} le renomination del pagina traducibile $1 a un nove nomine',
 	'pt-log-movenok' => '{{GENDER:$2|incontrava}} un problema movente [[:$1]] a [[:$3]]',
+	'pt-log-delete-full-ok' => '{{GENDER:$2|completava}} le deletion del pagina traducibile $1',
+	'pt-log-delete-full-nok' => '{{GENDER:$2|incontrava}} un problema durante le deletion del pagina traducibile [[:$1]]',
+	'pt-log-delete-lang-ok' => '{{GENDER:$2|completava}} le deletion del pagina traducite $1',
+	'pt-log-delete-lang-nok' => '{{GENDER:$2|incontrava}} un problema durante le deletion del pagina traducite [[:$1]]',
 	'pt-movepage-title' => 'Renominar le pagina traducibile $1',
 	'pt-movepage-blockers' => 'Le pagina traducibile non pote esser renominate a causa del sequente {{PLURAL:$1|error|errores}}:',
 	'pt-movepage-block-base-exists' => 'Le pagina de base de destination [[:$1]] existe.',
@@ -2782,6 +2786,30 @@ Le fallimentos essera registrate in le [[Special:Log/pagetranslation|registro de
 	'pt-movepage-started' => 'Le pagina de base ha essite renominate.
 Per favor verifica le [[Special:Log/pagetranslation|registro de traductiones de paginas]] pro reparar eventual errores e leger le message de completion.',
 	'pt-locked-page' => 'Iste pagina es serrate proque le pagina traducibile es actualmente in curso de renomination.',
+	'pt-deletepage-lang-title' => 'Le pagina traducite $1 es delite.',
+	'pt-deletepage-full-title' => 'Le pagina traducibile $1 es delite.',
+	'pt-deletepage-invalid-title' => 'Le pagina specificate non es valide.',
+	'pt-deletepage-invalid-text' => 'Le pagina specificate es ni traducibile ni traducite.',
+	'pt-deletepage-action-check' => 'Listar paginas a deler',
+	'pt-deletepage-action-perform' => 'Exequer le deletion',
+	'pt-deletepage-action-other' => 'Cambiar destination',
+	'pt-deletepage-lang-legend' => 'Deler pagina traducite',
+	'pt-deletepage-full-legend' => 'Deler pagina traducibile',
+	'pt-deletepage-any-legend' => 'Deler pagina traducibile o traducite',
+	'pt-deletepage-current' => 'Nomine del pagina:',
+	'pt-deletepage-reason' => 'Motivo:',
+	'pt-deletepage-subpages' => 'Deler tote le subpaginas',
+	'pt-deletepage-list-pages' => 'Lista de paginas a deler',
+	'pt-deletepage-list-translation' => 'Paginas traducite',
+	'pt-deletepage-list-section' => 'Paginas de section',
+	'pt-deletepage-list-other' => 'Altere subpaginas',
+	'pt-deletepage-list-count' => 'In total $1 {{PLURAL:$1|pagina|paginas}} a deler.',
+	'pt-deletepage-full-logreason' => 'Parte del pagina traducibile $1.',
+	'pt-deletepage-lang-logreason' => 'Parte del pagina traducite $1.',
+	'pt-deletepage-started' => 'Per favor verifica in le [[Special:Log/pagetranslation|registro de traduction de paginas]] le existentia de errores e del message de completion.',
+	'pt-deletepage-intro' => 'Iste pagina special permitte deler tote paginas traducibile o lor traductiones in un certe lingua.
+Le deletion non essera instantanee perque il essera necessari deler multe paginas.
+Fallimentos essera registrate in le [[Special:Log/pagetranslation|registro de traduction de paginas]] e requirera reparation manual.',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -4935,7 +4963,6 @@ vendar {{PLURAL:$1|trenutne različice|trenutnih različic}} ni mogoče označit
 Ta stran je prevod strani [[$1]], njen prevod lahko posodobite z uporabo [$2 prevajalskega orodja].',
 	'tpt-unknown-page' => 'Ta imenski prostor je pridržan za prevode vsebinskih strani.
 Stran, ki jo poskušate urediti, ne ustreza nobeni strani označeni za prevajanje.',
-	'tpt-delete-impossible' => 'Brisanje strani, označenih za prevajanje, še ni mogoče.',
 	'tpt-install' => 'Zaženite php maintenance/update.php ali spletno namestitev, da omogočite zmožnost prevajanja strani.',
 	'tpt-render-summary' => 'Posodabljanje za ujemanje nove različice izvorne strani',
 	'tpt-download-page' => 'Izvozi stran s prevodi',
@@ -4987,6 +5014,18 @@ Neuspehi bodo zabeleženi v [[Special:Log/pagetranslation|dnevniku strani prevod
 	'pt-movepage-started' => 'Izhodna stran je prestavljena.
 Prosimo, preverite [[Special:Log/pagetranslation|dnevnik strani prevodov]] za napake in sporočila o dokončanju.',
 	'pt-locked-page' => 'Stran je zaklenjena, ker se prevedljiva stran trenutno prestavlja.',
+	'pt-deletepage-action-check' => 'Navedi strani za izbris',
+	'pt-deletepage-action-perform' => 'Izvedi izbris',
+	'pt-deletepage-action-other' => 'Spremeni cilj',
+	'pt-deletepage-lang-legend' => 'Izbriši stran prevoda',
+	'pt-deletepage-full-legend' => 'Izbriši prevedljivo stran',
+	'pt-deletepage-current' => 'Naslov strani:',
+	'pt-deletepage-reason' => 'Razlog:',
+	'pt-deletepage-subpages' => 'Izbriši vse podstrani',
+	'pt-deletepage-list-pages' => 'Seznam strani za izbris',
+	'pt-deletepage-list-other' => 'Druge podstrani',
+	'pt-deletepage-full-logreason' => 'Del prevedljive strani $1.',
+	'pt-deletepage-lang-logreason' => 'Del strani prevoda $1.',
 );
 
 /** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
@@ -5619,7 +5658,6 @@ Trước khi đánh dấu phiên bản này chờ dịch, hãy kiểm tra nhữn
 Nó là một bản dịch của trang [[$1]] và có thể cập nhật bản dịch bằng cách sử dụng [$2 công cụ dịch thuật].',
 	'tpt-unknown-page' => 'Không gian tên này được dành cho các bản dịch trang nội dung.
 Trang bạn muốn sửa đổi dường như không tương ứng với trang nào đã được đánh dấu cần dịch.',
-	'tpt-delete-impossible' => 'Chưa có thể xóa những trang được đánh dấu là cần dịch',
 	'tpt-install' => 'Chạy php maintenance/update.php hoặc cài đặt web để bật tính năng dịch trang.',
 	'tpt-render-summary' => 'Cập nhật đến phiên bản mới của trang nguồn',
 	'tpt-download-page' => 'Xuất trang cùng các bản dịch',
@@ -5640,6 +5678,10 @@ Phần văn bản: <pre>$1</pre>',
 	'pt-log-unmark' => '{{GENDER:$2|đã di chuyển}} trang "[[:$1]]" từ bản dịch',
 	'pt-log-moveok' => '{{GENDER:$2|}}đã hoàn thành việc đổi tên của trang dịch được $1',
 	'pt-log-movenok' => '{{GENDER:$2|}}đã gặp vấn đề trong khi di chuyển [[:$1]] đến [[:$3]]',
+	'pt-log-delete-full-ok' => '{{GENDER:$2|}}đã hoàn thành xóa trang dịch được $1',
+	'pt-log-delete-full-nok' => '{{GENDER:$2|}}đã gặp một vấn đề khi xóa trang dịch được [[:$1]]',
+	'pt-log-delete-lang-ok' => '{{GENDER:$2|}}đã hoàn thành xóa trang dịch $1',
+	'pt-log-delete-lang-nok' => '{{GENDER:$2|}}đã gặp một vấn đề khi xóa trang dịch [[:$1]]',
 	'pt-movepage-title' => 'Di chuyển trang dịch được $1',
 	'pt-movepage-blockers' => 'Trang dịch được không thể được đổi tên vì {{PLURAL:$1|lỗi|các lỗi}} sau:',
 	'pt-movepage-list-pages' => 'Danh sách trang để di chuyển',
@@ -5662,6 +5704,29 @@ Những vụ thất bại sẽ được ghi vào [[Special:Log/pagetranslation|n
 	'pt-movepage-started' => 'Trang gốc đã được di chuyển.
 Xin hãy kiểm tra những lỗi hay thông điệp kết quả thành công trong [[Special:Log/pagetranslation|nhật trình dịch trang]].',
 	'pt-locked-page' => 'Trang này bị khóa vì trang dịch được hiện đang được di chuyển.',
+	'pt-deletepage-lang-title' => 'Đang xóa trang dịch $1.',
+	'pt-deletepage-full-title' => 'Đang xóa trang dịch được $1.',
+	'pt-deletepage-invalid-title' => 'Trang đã chỉ định là không hợp lệ.',
+	'pt-deletepage-invalid-text' => 'Trang đã chỉ định không phải là trang dịch được mà cũng không phải là bản dịch của nó.',
+	'pt-deletepage-action-check' => 'Danh sách các trang sẽ được xóa',
+	'pt-deletepage-action-perform' => 'Thực hiện xóa',
+	'pt-deletepage-lang-legend' => 'Xóa trang dịch',
+	'pt-deletepage-full-legend' => 'Xóa trang dịch được',
+	'pt-deletepage-any-legend' => 'Xóa trang dịch được hoặc bản dịch của trang dịch được',
+	'pt-deletepage-current' => 'Tên trang:',
+	'pt-deletepage-reason' => 'Lý do:',
+	'pt-deletepage-subpages' => 'Xóa mọi trang phụ',
+	'pt-deletepage-list-pages' => 'Danh sách các trang sẽ được xóa',
+	'pt-deletepage-list-translation' => 'Các trang dịch',
+	'pt-deletepage-list-section' => 'Các trang đề mục',
+	'pt-deletepage-list-other' => 'Những trang phụ khác',
+	'pt-deletepage-list-count' => 'Tổng cộng $1 trang sẽ được xóa.',
+	'pt-deletepage-full-logreason' => 'Một phần của trang dịch được $1.',
+	'pt-deletepage-lang-logreason' => 'Một phần của trang dịch $1.',
+	'pt-deletepage-started' => 'Xin hãy kiểm tra những lỗi hay thông điệp kết quả thành công trong [[Special:Log/pagetranslation|nhật trình dịch trang]].',
+	'pt-deletepage-intro' => 'Trang đặc biệt này cho phép bạn xóa toàn bộ trang dịch được hoặc các bản dịch trong một ngôn ngữ nào đó.
+Tác vụ xóa sẽ không được thực hiện ngay, bởi vì nhiều trang sẽ cần phải bị xóa.
+Các thất bại được ghi vào [[Special:Log/pagetranslation|nhật trình dịch trang]] sẽ cần phải được sửa bằng tay.',
 );
 
 /** Volapük (Volapük)

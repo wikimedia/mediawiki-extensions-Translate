@@ -4272,6 +4272,7 @@ Dette omfatter de meddelelser, der er blevet mærket som forældet.',
 Beskeder er markeret forældet, fordi den engelske sprog kilde besked har ændret sig, fordi en automatiseret kontrol for beskeden mislykkedes, eller fordi nogen markeret den som forældet.',
 	'translate-nothing-to-do' => 'Det ser ud til at alle mulige oversættelser er lavet.
 Du opfordres til at gennemse beskeder gennem [[Special:Translate|{{int:translate}}]].',
+	'translate-languagestats-overall' => 'Alle beskedgrupper lagt sammen',
 	'supportedlanguages' => 'Understøttede sprog',
 	'supportedlanguages-summary' => 'Denne side viser en liste over alle de sprog, der understøttes af {{SITENAME}}, sammen med navnene på de oversættere, der arbejder på dette sprog.
 Hvis du ønsker yderligere oplysninger om et bestemt sprog, kan du klikke på linket til portalen for det pågældende sprog.
@@ -4287,6 +4288,7 @@ Se menulinjen for et link til portalen for det sprog du foretrækker.',
 På denne side vil en liste over sprog portaler vises for alle portaler svarer til en defineret sprogkode og en underside kaldet "translators". 
 Undersiden "translators" skal indeholde denne skabelon [[:{{ns:template}}:User|User]], under et brugernavn som parameter.',
 	'supportedlanguages-recenttranslations' => 'seneste oversættelser',
+	'supportedlanguages-count' => '$1 {{plural:$1|sprog|sprog}} i alt.',
 	'translate-save' => 'Gem ($1)',
 	'translate-jssti-add' => 'Tilføj til listen',
 	'managemessagegroups' => 'Håndtering af beskedgrupper',
@@ -9641,6 +9643,7 @@ Es recommendate revider le messages per medio del pagina [[Special:Translate|{{i
 	'translate-languagestats-groups' => ' # Adde IDs de gruppos de messages, un per linea, pro limitar le
  # gruppos monstrate in Special:LanguageStats. Le gruppos non existente
  # essera ignorate.',
+	'translate-languagestats-overall' => 'Tote le gruppos de messages insimul',
 	'supportedlanguages' => 'Linguas supportate',
 	'supportedlanguages-summary' => 'Iste pagina presenta un lista de tote le linguas supportate per {{SITENAME}}, con le nomines del traductores laborante a iste lingua.
 Pro ulterior informationes a proposito de un particular lingua, clicca super le ligamine al portal pro iste lingua.
@@ -9656,6 +9659,7 @@ Vide le barra de menu pro un ligamine al portal pro le lingua de tu preferentia.
 In iste pagina apparera un lista de portales linguistic pro tote le portales correspondente con un codice de lingua definite e un subpagina appellate "translators".
 Le subpagina "translators" debe continer le patrono [[:{{ns:template}}:User|User]] que prende un nomine de usator como parametro.',
 	'supportedlanguages-recenttranslations' => 'traductiones recente',
+	'supportedlanguages-count' => '$1 {{plural:$1|lingua|linguas}} in total.',
 	'translate-save' => 'Salveguardar ($1)',
 	'translate-jssti-add' => 'Adder al lista',
 	'managemessagegroups' => 'Gestion de gruppos de messages',
@@ -13025,7 +13029,7 @@ $1',
 	'translate-import-err-warnings' => 'Податотеката не е добро формулирана.
 Осигурајте се дека вашиот обработувач не ги отстранува msgctxt полињата.
 Детали: $1',
-	'translate-js-next' => 'Зачувај и отвори текст',
+	'translate-js-next' => 'Зачувај и отвори следна',
 	'translate-js-nonext' => 'Ова беше последната порака на страницава.',
 	'translate-js-skip' => 'Прејди на следно',
 	'translate-js-save-failed' => 'Зачувувањето не успеа. Ве молиме пријавете ја оваа грешка.',
@@ -18263,6 +18267,7 @@ Vključuje sporočila, ki so bila označena kot zastarela.',
 Sporočila so označena kot zastarela, ker se je izvorno sporočilo v angleškem jeziku spremenilo, ker je samodejno preverjanje sporočila spodletelo ali ker ga je nekdo označil kot zastarelega.',
 	'translate-nothing-to-do' => 'Kaže, da so vsi mogoči prevodi dokončani.
 Predlagamo vam, da pregledate sporočila preko [[Special:Translate|{{int:translate}}]].',
+	'translate-languagestats-overall' => 'Vse skupine sporočil skupaj',
 	'supportedlanguages' => 'Podprti jeziki',
 	'supportedlanguages-summary' => 'Ta stran prikazuje seznam vseh jezikov, ki jih podpira {{SITENAME}}, skupaj z imeni prevajalcev, ki delujejo na tem jeziku.
 Če želite več informacij o določenem jeziku, lahko kliknete na povezavo do portala tega jezika.
@@ -18278,6 +18283,7 @@ Oglejte si stransko vrstico za povezavo do portala jezika, določenega v vaših 
 Na tej stran bo prikazan seznam jezikovnih portalov za vse portale z določeno kodo jezika in podstranjo imenovano »translators«.
 Podstran »translators« mora vsebovati predlogo [[:{{ns:template}}:User|User]], ki kot parameter sprejme uporabniško ime.',
 	'supportedlanguages-recenttranslations' => 'nedavni prevodi',
+	'supportedlanguages-count' => '$1 {{PLURAL:$1|jezik|jezika|jeziki|jezikov}} skupno.',
 	'translate-save' => 'Shrani ($1)',
 	'translate-jssti-add' => 'Dodaj na seznam',
 	'managemessagegroups' => 'Upravljanje skupin sporočil',
@@ -21494,6 +21500,7 @@ Bạn được khuyến khích xem lại các thông điệp tại [[Special:Tra
 	'translate-languagestats-groups' => ' # Thêm mã nhóm thông điệp, mỗi mã một dòng để ngăn các nhóm thông điệp
  # được hiển thị ở Special:LanguageStats. Các mã nhóm thông điệp không tồn tại
  # sẽ bị bỏ qua.',
+	'translate-languagestats-overall' => 'Tổng cộng các nhóm thông điệp',
 	'supportedlanguages' => 'Ngôn ngữ có sẵn',
 	'supportedlanguages-summary' => "Trang này liệt kê tất cả các ngôn ngữ được {{SITENAME}} hỗ trợ, cùng với tên các biên dịch viên đang làm việc trên ngôn ngữ đó.
 Nếu bạn muốn biết thêm thông tin về một ngôn ngữ cụ thể, bạn có nhấn vào cổng chào của ngôn ngữ đó.
@@ -21509,6 +21516,7 @@ Xem thanh trình đơn để biết liên kết đến cổng ngôn ngữ của 
 Tại trang này danh sách các cổng chào ngôn ngữ sẽ xuất hiện cho tất cả các cổng chào tương ứng với một mã ngôn ngữ đã định nghĩa cùng một trang con có tên "translators" (biên dịch viên).
 Trang con "translators" phải chứa bản mẫu [[:{{ns:template}}:User|User]], đưa tên người dùng vào thông số.',
 	'supportedlanguages-recenttranslations' => 'các bản dịch gần đây',
+	'supportedlanguages-count' => '$1 ngôn ngữ tổng cộng.',
 	'translate-save' => 'Lưu ($1)',
 	'translate-jssti-add' => 'Thêm vào danh sách',
 	'managemessagegroups' => 'Quản lý nhóm thông điệp',
