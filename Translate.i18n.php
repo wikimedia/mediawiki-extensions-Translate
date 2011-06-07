@@ -10228,6 +10228,7 @@ Ef þú veist hvar eða hvernig meldingin er notuð getur þú hjálpað öðrum
  * @author Klutzy
  * @author McDutchie
  * @author Melos
+ * @author Nemo bis
  * @author Pietrodn
  * @author VittGam
  */
@@ -10377,7 +10378,7 @@ L'elenco predefinito (default) delle lingue dipende dalla propria lingua.",
 	'translate-translations-messagename' => 'Nome:',
 	'translate-translations-project' => 'Progetto:',
 	'translate-translations-including-no-param' => 'Specificare una chiave di messaggio valida nel parametro sottopagina',
-	'languagestats' => 'Statistiche delle lingue',
+	'languagestats' => 'Statistiche della lingua',
 	'languagestats-summary' => 'Questa pagina mostra le statistiche delle traduzioni per tutti i gruppi di messaggi di una lingua.',
 	'languagestats-stats-for' => 'Statistiche traduzione per $1 ($2).',
 	'languagestats-recenttranslations' => 'traduzioni recenti',
@@ -12311,6 +12312,7 @@ Dobäi ginn déi Messagen déi als vereelst markéiert sinn matgezielt.",
 Message ginn als vereelst markéiert, esoubal déi englesch Original-Versioun verännert gouf, déi automatesche Kontroll vun der Iwwersetzung net fonctionnéiert huet, oder well een se manuell als vereelst markéiert huet.',
 	'translate-nothing-to-do' => "All méiglech Iwwersetzunge sinn anscheinend scho gemaach.
 Dir sidd awer häerzlech Invitéiert fir d'Systemmessagn op [[Special:Translate|{{int:translate}}]] nozekucken.",
+	'translate-languagestats-overall' => 'All Systemmessagen zesummen',
 	'supportedlanguages' => 'Ënnerstetzte Sproochen',
 	'supportedlanguages-summary' => "Op dëser Säit steet eng Lëscht vun alle Sproochen déi op {{SITENAME}} ënnerstëtzt ginn, zesumme mam Numm vun den Iwwersetzer déi un däer Sprooch schaffen.
 Wann Dir méi Informatiounen iwwer eng bestëmmte Sprooch wëllt hunn, da kënnt Dir op de Link vum Portal fir déi Sprooch klickt.
@@ -12325,6 +12327,7 @@ Kuckt de Menu fir e Link op de Portal fir déi Sprooch déi dir an Äre Preferen
 	'supportedlanguages-noportal' => 'De Wiki Administrateur huet NS_PORTAL net definéiert, dofir fonctionnéiert dës Säit net.
 Op dëser Säit ass eng Lëscht vu Sproocheportal fir all Portaler déi mat engem bestëmmte Sproochecode an enger Ënnersäit mam Numm "translators" wou d\'Schabloun [[:{{ns:template}}:User|Benotzer]] dran ass an déi de Benotzernumm als Parameter huet.',
 	'supportedlanguages-recenttranslations' => 'rezent Iwwersetzungen',
+	'supportedlanguages-count' => '{{plural:$1|Eng Sprooch|$1 Sproochen}} am Ganzen.',
 	'translate-save' => 'Späicher ($1)',
 	'translate-jssti-add' => "Op d'Lëscht derbäisetzen",
 	'managemessagegroups' => 'Gestioun vun de Gruppe vu Messagen',
@@ -12879,7 +12882,7 @@ $messages['mk'] = array(
 	'translate-pref-jsedit' => 'Подобрен уредник на преводи (JavaScript)',
 	'right-translate' => 'Уредување со користење на посредникот за преведување',
 	'right-translate-manage' => 'Раководење со преводни групи',
-	'right-translate-import' => 'Увезување на преводи од сметач (безмрежни)',
+	'right-translate-import' => 'Увезување на преводи од сметач (вонмрежни)',
 	'translate-rc-translation-filter' => 'Филтрирање на преводи:',
 	'translate-rc-translation-filter-no' => 'Не прави ништо',
 	'translate-rc-translation-filter-only' => 'Прикажи само преводи',
@@ -17221,6 +17224,7 @@ $messages['ru'] = array(
 Сообщения отмечаются устаревшим, если изменилось исходное английское сообщение, если сообщение не прошло автоматическую проверку, или если кто-то отметил его как устаревшее.',
 	'translate-nothing-to-do' => 'По всей видимости, все возможные переводы уже сделаны.
 Вы можете проверить сообщения с помощью [[Special:Translate|{{int:translate}}]].',
+	'translate-languagestats-overall' => 'Сообщения всех групп',
 	'supportedlanguages' => 'Поддерживаемые языки',
 	'supportedlanguages-summary' => 'На этой странице приведён список поддерживаемых проектом {{SITENAME}} языков и имена переводчиков, работающих над ними.
 Более подробную информацию о конкретном языке, вы можете найти нажав на ссылку языкового портала соответствующего языка.
@@ -17236,6 +17240,7 @@ $messages['ru'] = array(
 На этой странице появится список языковых порталов, соответствующих определённым кодам языков, и подстраница «Переводчики».
 Подстраница «Переводчики» должна содержать шаблон [[:{{ns:template}}:User|User]], с именем участника в качестве параметра.',
 	'supportedlanguages-recenttranslations' => 'недавние переводы',
+	'supportedlanguages-count' => 'Всего $1 {{plural:$1|язык|языка|языков}}',
 	'translate-save' => 'Сохранить ($1)',
 	'translate-jssti-add' => 'Добавить в список',
 	'managemessagegroups' => 'Управление группами сообщений',

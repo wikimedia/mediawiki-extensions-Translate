@@ -1917,7 +1917,6 @@ mas {{PLURAL:$1|la dèrriére vèrsion pôt pas étre marcâ|les dèrriéres vè
 El est una traduccion de [[$1]] et la traduccion pôt étre betâ a jorn en utilisent l’[$2 outil de traduccion].',
 	'tpt-unknown-page' => 'Ceti èspâço de noms est resèrvâ por la traduccion de pâges de contegnu.
 La pâge que vos tâchiéd de changiér semble corrèspondre a gins de pâge marcâ por la traduccion.',
-	'tpt-delete-impossible' => 'Suprimar des pâges marcâs por la traduccion est p’oncor possiblo.',
 	'tpt-install' => 'Lanciéd « php maintenance/update.php » ou ben l’enstalacion vouèbe por activar la fonccionalitât de traduccion de pâges.',
 	'tpt-render-summary' => 'Misa a jorn por étre en acôrd avouéc la novèla vèrsion de la pâge d’origina',
 	'tpt-download-page' => 'Èxportar la pâge avouéc ses traduccions',
@@ -1965,6 +1964,19 @@ Tèxto de la sèccion : <pre>$1</pre>',
 	'pt-movepage-started' => 'Ora, la pâge de bâsa est renomâ.
 Volyéd controlar lo [[Special:Log/pagetranslation|jornal de les traduccions de pâges]] por repèrar des èrrors et por liére lo mèssâjo d’avance.',
 	'pt-locked-page' => 'Ceta pâge est vèrrolyê perce que la pâge a traduire est aprés étre renomâ.',
+	'pt-deletepage-action-other' => 'Changiér la ciba',
+	'pt-deletepage-lang-legend' => 'Suprimar la pâge de traduccion',
+	'pt-deletepage-full-legend' => 'Suprimar la pâge a traduire',
+	'pt-deletepage-current' => 'Nom de la pâge :',
+	'pt-deletepage-reason' => 'Rêson :',
+	'pt-deletepage-subpages' => 'Suprimar totes les sot-pâges',
+	'pt-deletepage-list-pages' => 'Lista de les pâges a suprimar',
+	'pt-deletepage-list-translation' => 'Pâges de traduccion',
+	'pt-deletepage-list-section' => 'Pâges de sèccion',
+	'pt-deletepage-list-other' => 'Ôtres sot-pâges',
+	'pt-deletepage-list-count' => 'En tot, $1 pâge{{PLURAL:$1||s}} a suprimar.',
+	'pt-deletepage-full-logreason' => 'Èxtrèt de la pâge a traduire $1.',
+	'pt-deletepage-lang-logreason' => 'Èxtrèt de la pâge de traduccion $1.',
 );
 
 /** Friulian (Furlan)
@@ -2029,7 +2041,6 @@ Antes de marcar esta versión para ser traducida, comprobe que as modificacións
 Esta páxina é unha tradución da páxina "[[$1]]" e a tradución pódese actualizar usando [$2 a ferramenta de tradución].',
 	'tpt-unknown-page' => 'Este espazo de nomes está reservado para traducións de páxinas de contido.
 A páxina que está intentando editar parece non corresponder a algunha páxina marcada para ser traducida.',
-	'tpt-delete-impossible' => 'Aínda non é posible borrar páxinas marcadas para traducir.',
 	'tpt-install' => 'Executar o php maintenance/update.php ou o instalador web para activar a funcionalidade de tradución de páxinas.',
 	'tpt-render-summary' => 'Actualizando para coincidir coa nova versión da páxina de orixe',
 	'tpt-download-page' => 'Exportar a páxina coas traducións',
@@ -2050,6 +2061,10 @@ Texto da sección: <pre>$1</pre>',
 	'pt-log-unmark' => '{{GENDER:$2|retirou}} a páxina "[[:$1]]" da tradución',
 	'pt-log-moveok' => '{{GENDER:$2|trasladou}} a páxina traducible "$1" a un novo nome',
 	'pt-log-movenok' => '{{GENDER:$2|deu}} cun problema ao mover "[[:$1]]" a "[[:$3]]"',
+	'pt-log-delete-full-ok' => '{{GENDER:$2|completou}} o borrado da páxina traducible "$1"',
+	'pt-log-delete-full-nok' => '{{GENDER:$2|atopou}} un problema durante o borrado da páxina traducible "[[:$1]]"',
+	'pt-log-delete-lang-ok' => '{{GENDER:$2|completou}} o borrado da páxina de tradución "$1"',
+	'pt-log-delete-lang-nok' => '{{GENDER:$2|atopou}} un problema durante o borrado da páxina de tradución "[[:$1]]"',
 	'pt-movepage-title' => 'Mover a páxina traducible "$1"',
 	'pt-movepage-blockers' => 'Non se pode trasladar a páxina traducible a un novo nome debido {{PLURAL:$1|ao seguinte erro|aos seguintes erros}}:',
 	'pt-movepage-block-base-exists' => 'Existe a páxina de destino "[[:$1]]".',
@@ -2081,6 +2096,30 @@ Os erros quedarán rexistrados no [[Special:Log/pagetranslation|rexistro de páx
 	'pt-movepage-started' => 'Estase a mover a páxina base.
 Comprobe o [[Special:Log/pagetranslation|rexistro de páxinas de tradución]] por se houbese algún erro e para ler as mensaxes de conclusión.',
 	'pt-locked-page' => 'Esta páxina está bloqueada porque se está a mover a páxina traducible.',
+	'pt-deletepage-lang-title' => 'Borrar a páxina de tradución "$1".',
+	'pt-deletepage-full-title' => 'Borrar a páxina traducible "$1".',
+	'pt-deletepage-invalid-title' => 'A páxina especificada non é válida.',
+	'pt-deletepage-invalid-text' => 'A páxina especificada non é unha páxina traducible nin unha tradución dela.',
+	'pt-deletepage-action-check' => 'Lista de páxinas a borrar',
+	'pt-deletepage-action-perform' => 'Realizar o borrado',
+	'pt-deletepage-action-other' => 'Cambiar o destino',
+	'pt-deletepage-lang-legend' => 'Borrar a páxina de tradución',
+	'pt-deletepage-full-legend' => 'Borrar a páxina traducible',
+	'pt-deletepage-any-legend' => 'Borrar a páxina traducible ou a tradución da páxina traducible',
+	'pt-deletepage-current' => 'Nome da páxina:',
+	'pt-deletepage-reason' => 'Motivo:',
+	'pt-deletepage-subpages' => 'Borrar todas as subpáxinas',
+	'pt-deletepage-list-pages' => 'Lista de páxinas a borrar',
+	'pt-deletepage-list-translation' => 'Páxinas de tradución',
+	'pt-deletepage-list-section' => 'Sección de páxina',
+	'pt-deletepage-list-other' => 'Outras subpáxinas',
+	'pt-deletepage-list-count' => 'En total, $1 {{PLURAL:$1|páxina|páxinas}} a borrar.',
+	'pt-deletepage-full-logreason' => 'Parte da páxina traducible "$1".',
+	'pt-deletepage-lang-logreason' => 'Parte da páxina de tradución "$1".',
+	'pt-deletepage-started' => 'Comprobe os erros e as mensaxes de conclusión no [[Special:Log/pagetranslation|rexistro de páxinas de tradución]].',
+	'pt-deletepage-intro' => 'Esta páxina especial permite borrar por completo páxinas traducibles ou traducións nunha lingua.
+A acción de borrado non será inmediata porque cómpre eliminar moitas páxinas.
+Os erros quedarán rexistrados no [[Special:Log/pagetranslation|rexistro de páxinas de tradución]] e terán que arranxarse manualmente.',
 );
 
 /** Swiss German (Alemannisch)
