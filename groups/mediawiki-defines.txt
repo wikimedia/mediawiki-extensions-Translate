@@ -706,6 +706,8 @@ Latex Doc
 
 Ldap Authentication
 
+Lingo
+
 Link OpenID
 optional = linkopenid-prefs, linkopenid-prefstext-xrdsurl
 
