@@ -795,6 +795,7 @@ $messages['fr'] = array(
 	'bw-desc-freecol' => 'Avant de traduire FreeCol dans votre langue, veuillez lire [[Translating:FreeCol]]. Freecol est publié sous licence GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], un forum internet écrit en PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] est un système gratuit pour le suivi sur le web des anomalies. Rapportez tous les problèmes sur [[Support]].',
+	'translate-group-desc-eol' => "Un groupe de message pour l’''[[Translating:EOL| Encyclopedia of Life]]''",
 	'translate-group-desc-ihris' => 'Un groupe de messages pour [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-common' => 'Un groupe de messages pour [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], un module de [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-i2ce' => 'Un groupe de messages pour [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], un module de [[Translating:iHRIS|iHRIS]]',

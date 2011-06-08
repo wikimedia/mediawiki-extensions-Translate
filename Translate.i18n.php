@@ -6682,6 +6682,7 @@ Vous êtes encouragé à revoir les messages depuis [[Special:Translate|{{int:tr
 	'translate-languagestats-groups' => ' # Ajoutez des ID de groupes de messages, un par ligne pour limiter les groupes
  # qui sont affichés sur Special:LanguageStats. Les groupes inexistants seront
  # ignorés.',
+	'translate-languagestats-overall' => 'Tous les groupes de messages ensemble',
 	'supportedlanguages' => 'Langues prises en charge',
 	'supportedlanguages-summary' => "Cette page affiche une liste de toutes les langues prises en charge par {{SITENAME}}, avec les noms des traducteurs qui travaillent dans cette langue.
 Si vous souhaitez plus d'informations sur une langue particulière, vous pouvez cliquer sur le lien vers le portail de la langue.
@@ -6697,6 +6698,7 @@ Voyez la barre de menu pour un lien vers le portail de la langue de vos préfér
 Sur cette page apparaitront une liste de language pour tous les portails correspondant à une langue définie et une sous-page appelée « translators ».
 La sous-page « translators » doit contenir le modèle [[:{{ns:template}}:User|User]] qui prend un nom d'utilisateur comme paramètre.",
 	'supportedlanguages-recenttranslations' => 'traductions récentes',
+	'supportedlanguages-count' => '$1 {{PLURAL:$1|langue|langues}} au total.',
 	'translate-save' => 'Publier ($1)',
 	'translate-jssti-add' => 'Ajouter à la liste',
 	'managemessagegroups' => 'Gestion du groupe des messages',
@@ -7000,8 +7002,10 @@ Vos éte encoragiê a revêre los mèssâjos dês [[Special:Translate|{{int:tran
 	'supportedlanguages-translators' => 'Traductor{{PLURAL:$2||s}} : $1',
 	'supportedlanguages-noportal-title' => 'Èspâço de noms « Portâl » pas dèfeni',
 	'supportedlanguages-recenttranslations' => 'novèles traduccions',
+	'supportedlanguages-count' => 'En tot, $1 lengou{{PLURAL:$1|a|es}}.',
 	'translate-save' => 'Sôvar ($1)',
 	'translate-jssti-add' => 'Apondre a la lista',
+	'managemessagegroups' => 'Administracion de la tropa des mèssâjos',
 	'translate-manage-groups' => 'Administracion de les tropes',
 	'translate-manage-listgroups' => 'Tropes configurâs',
 	'translate-manage-listgroups-old' => 'Viely stilo de les tropes',
@@ -7061,6 +7065,7 @@ Dètalys : $1',
 	'translate-js-skip' => 'Alar a celi d’aprés',
 	'translate-js-save-failed' => 'L’encartâjo at pas reussi. Volyéd raportar ceta èrror.',
 	'translate-js-history' => 'Historico de traduccion',
+	'translate-js-support' => 'Posar una quèstion',
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Code',
 	'translate-gs-continent' => 'Continent',
@@ -7070,6 +7075,11 @@ Dètalys : $1',
 	'translate-gs-count' => 'Compto',
 	'translate-gs-total' => 'Soma',
 	'translate-gs-avgscore' => 'Mârca moyena',
+	'translate-documentation-language' => 'Documentacion du mèssâjo',
+	'translate-searchprofile' => 'Traduccions',
+	'translate-searchprofile-tooltip' => 'Rechèrchiér dens totes les traduccions',
+	'translate-search-languagefilter' => 'Filtrar per lengoua :',
+	'translate-search-nofilter' => 'Gins de filtracion',
 );
 
 /** Friulian (Furlan)
