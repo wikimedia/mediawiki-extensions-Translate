@@ -153,6 +153,10 @@ $wgResourceModules['ext.translate.special.translate'] = array(
 	'styles' => 'js/ext.translate.special.translate.css',
 ) + $resourcePaths;
 
+$wgResourceModules['ext.translate.special.supportedlanguages'] = array(
+	'styles' => 'js/ext.translate.special.supportedlanguages.css',
+) + $resourcePaths;
+
 $wgResourceModules['jquery.autoresize'] = array(
 	'scripts' => 'js/jquery.autoresize.js',
 ) + $resourcePaths;
