@@ -8,7 +8,7 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-if ( !defined( GAID_FOR_UPDATE ) )  {
+if ( !defined( 'GAID_FOR_UPDATE' ) )  {
 	/* Backwards-compatible define for 1.17+ (see r75379) */
 	define( 'GAID_FOR_UPDATE', Title::GAID_FOR_UPDATE );
 }
