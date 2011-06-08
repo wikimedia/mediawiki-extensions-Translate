@@ -412,10 +412,11 @@ FOO;
 	}
 
 	public static function header( Title $title ) {
-		if ( TranslatablePage::isSourcePage( $title ) ) {
-			self::sourcePageHeader( $title );
-		} elseif ( TranslatablePage::isTranslationPage( $title ) )  {
+		if ( TranslatablePage::isTranslationPage( $title ) )  {
 			self::translationPageHeader( $title );
+		} else {
+			// Check for pages that are tagged or marked
+			self::sourcePageHeader( $title );
 		}
 	}
 
