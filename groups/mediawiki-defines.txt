@@ -862,6 +862,9 @@ New User Notification
 file = NewUserNotif/NewUserNotif.i18n.php
 descmsg = newusernotif-desc
 
+Notificator
+aliasfile = Notificator/Notificator.alias.php
+
 NS File Repo
 
 Nss MySQL Auth
