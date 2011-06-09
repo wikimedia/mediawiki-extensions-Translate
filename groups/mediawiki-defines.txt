@@ -804,6 +804,9 @@ Mini Preview
 
 Mirror Tools
 
+Mobile Frontend
+descmsg = mobile-frontend-desc
+
 Most Revisors
 aliasfile = MostRevisors/MostRevisors.alias.php
 ignored = mostrevisors-limit-few-revisors
