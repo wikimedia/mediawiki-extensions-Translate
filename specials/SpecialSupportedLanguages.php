@@ -5,7 +5,7 @@
  * @file
  * @author Niklas Laxström
  * @author Siebrand Mazeland
- * @copyright  Copyright © 2010, Niklas Laxström, Siebrand Mazeland
+ * @copyright  Copyright © 2011, Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -30,16 +30,10 @@ class SpecialSupportedLanguages extends UnlistedSpecialPage {
 	public function execute( $par ) {
 		global $wgLang, $wgOut, $wgRequest;
 
-		// Requires NS_PORTAL. If not present, display error text.
-		if ( !defined( 'NS_PORTAL' ) ) {
-			$wgOut->showErrorPage( 'supportedlanguages-noportal-title', 'supportedlanguages-noportal' );
-			return;
-		}
-
 		$this->purge = $wgRequest->getVal( 'action' ) === 'purge';
 
 		$this->setHeaders();
-		$wgOut->addModuleStyles( 'ext.translate.special.supportedlanguages' );
+		TranslateUtils::addModules( $wgOut, 'ext.translate.special.supportedlanguages' );
 
 		$cache = wfGetCache( CACHE_ANYTHING );
 		$cachekey = wfMemcKey( 'translate-supportedlanguages', $wgLang->getCode() );
@@ -64,48 +58,22 @@ class SpecialSupportedLanguages extends UnlistedSpecialPage {
 		$natives = Language::getLanguageNames( false );
 		ksort( $natives );
 
-		$titles = array();
-		foreach ( $natives as $code => $_ ) {
-			$titles[] = Title::capitalize( $code, NS_PORTAL ) . '/translators';
+		$this->outputLanguageCloud( $natives );
+
+
+		// Requires NS_PORTAL. If not present, display error text.
+		if ( !defined( 'NS_PORTAL' ) ) {
+			$users = $this->fetchTranslatorsAuto();
+		} else {
+			$users = $this->fetchTranslatorsPortal( $natives );
 		}
 
-		$dbr = wfGetDB( DB_SLAVE );
-		$tables = array( 'page', 'revision', 'text' );
-		$vars = array_merge( Revision::selectTextFields(), array( 'page_title', 'page_namespace' ), Revision::selectFields() );
-		$conds = array(
-			'page_latest = rev_id',
-			'rev_text_id = old_id',
-			'page_namespace' => NS_PORTAL,
-			'page_title' => $titles,
-		);
-
-		$res = $dbr->select( $tables, $vars, $conds, __METHOD__ );
-
-		$users = array();
-		$lb = new LinkBatch;
-
-		foreach ( $res as $row ) {
-			$rev = new Revision( $row );
-			$text = $rev->getText();
-			$code = strtolower( preg_replace( '!/translators$!', '', $row->page_title ) );
-
-			preg_match_all( '!{{[Uu]ser\|([^}|]+)!', $text, $matches,  PREG_SET_ORDER );
-			foreach ( $matches as $match ) {
-				$user = Title::capitalize( $match[1], NS_USER );
-				$lb->add( NS_USER, $user );
-				$lb->add( NS_USER_TALK, $user );
-				if ( !isset( $users[$code] ) ) $users[$code] = array();
-				$users[$code][] = strtr( $user, '_', ' ' );
-			}
-		}
-
-		$lb->execute();
+		$this->preQueryUsers( $users );
 
 		list( $editcounts, $lastedits ) = $this->getUserStats();
 		global $wgUser;
 
 		$skin = $wgUser->getSkin();
-		$portalBaseText = wfMsg( 'portal' );
 
 		// Information to be used inside the foreach loop.
 		$linkInfo['rc']['title'] = SpecialPage::getTitleFor( 'Recentchanges' );
@@ -113,32 +81,28 @@ class SpecialSupportedLanguages extends UnlistedSpecialPage {
 		$linkInfo['stats']['title'] = SpecialPage::getTitleFor( 'LanguageStats' );
 		$linkInfo['stats']['msg'] = wfMsg( 'languagestats' );
 
-		foreach ( array_keys( $users ) as $code ) {
-			$portalTitle = Title::makeTitleSafe( NS_PORTAL, $code );
-			$portalText = $portalBaseText;
+		foreach ( array_keys( $natives ) as $code ) {
+			if ( !isset( $users[$code] ) ) continue;
 
 			// If CLDR is installed, add localised header and link title.
 			if ( $cldrInstalled ) {
 				$headerText = wfMsg( 'supportedlanguages-portallink', $code, $locals[$code], $natives[$code] );
-				$portalText .= ' ' . $locals[$code];
 			} else {
 				// No CLDR, so a less localised header and link title.
 				$headerText = wfMsg( 'supportedlanguages-portallink-nocldr', $code, $natives[$code] );
-				$portalText .= ' ' . $natives[$code];
 			}
 
-			$portalLink = $skin->link(
-				$portalTitle,
-				$headerText,
-				array(
-					'id' => $code,
-					'title' => $portalText
-				),
-				array(),
-				array( 'known', 'noclasses' )
-			);
+			$headerText = htmlspecialchars( $headerText );
 
-			$wgOut->addHTML( "<h2>" . $portalLink . "</h2>" );
+			$wgOut->addHtml( Html::openElement( 'h2', array( 'id' => $code ) ) );
+			if ( defined( 'NS_PORTAL' ) ) {
+				$portalTitle = Title::makeTitleSafe( NS_PORTAL, $code );
+				$wgOut->addHtml( $skin->linkKnown( $portalTitle, $headerText ) );
+			} else {
+				$wgOut->addHtml( $headerText );
+			}
+
+			$wgOut->addHTML( "</h2>" );
 
 			// Add useful links for language stats and recent changes for the language.
 			$links = array();
@@ -174,6 +138,131 @@ class SpecialSupportedLanguages extends UnlistedSpecialPage {
 		$cache->set( $cachekey, $wgOut->getHTML(), 3600 );
 	}
 
+	protected function languageCloud() {
+		global $wgTranslateMessageNamespaces;
+
+		$cache = wfGetCache( CACHE_ANYTHING );
+		$cachekey = wfMemcKey( 'translate-supportedlanguages-language-cloud' );
+		$data = $cache->get( $cachekey );
+		if ( !$this->purge && is_array( $data ) ) {
+			return $data;
+		}
+
+		$dbr = wfGetDB( DB_SLAVE );
+		$tables = array( 'recentchanges' );
+		$fields = array( 'substring_index(rc_title, \'/\', -1) as lang', 'count(*) as count' );
+		$conds = array(
+			'rc_title' . $dbr->buildLike( $dbr->anyString(), '/', $dbr->anyString() ),
+			'rc_namespace' => $wgTranslateMessageNamespaces,
+			'rc_timestamp > ' . $dbr->timestamp( TS_DB, wfTimeStamp( TS_UNIX ) - 60*60*24*180 ),
+		);
+		$options = array( 'GROUP BY' => 'lang', 'HAVING' => 'count > 20' );
+		
+		$res = $dbr->select( $tables, $fields, $conds, __METHOD__, $options );
+
+		$data = array();
+		foreach ( $res as $row ) {
+			$data[$row->lang] = $row->count;
+		}
+
+		$cache->set( $cachekey, $data, 3600 );
+		return $data;
+	}
+
+	protected function fetchTranslatorsAuto() {
+		global $wgTranslateMessageNamespaces;
+
+		$cache = wfGetCache( CACHE_ANYTHING );
+		$cachekey = wfMemcKey( 'translate-supportedlanguages-translator-list' );
+		$data = $cache->get( $cachekey );
+		if ( !$this->purge && is_array( $data ) ) {
+			return $data;
+		}
+
+		$dbr = wfGetDB( DB_SLAVE );
+		$tables = array( 'page', 'revision' );
+		$fields = array( 'rev_user_text', 'substring_index(page_title, \'/\', -1) as lang', 'count(page_id) as count' );
+		$conds = array(
+			'page_title' . $dbr->buildLike( $dbr->anyString(), '/', $dbr->anyString() ),
+			'page_namespace' => $wgTranslateMessageNamespaces,
+			'page_id=rev_page',
+		);
+		$options = array( 'GROUP BY' => 'rev_user_text, lang' );
+		
+		$res = $dbr->select( $tables, $fields, $conds, __METHOD__, $options );
+
+		$data = array();
+		foreach ( $res as $row ) {
+			$data[$row->lang][$row->rev_user_text] = $row->count;
+		}
+
+		$cache->set( $cachekey, $data, 3600 );
+		return $data;
+	}
+
+	public function fetchTranslatorsPortal( $natives ) {
+		$titles = array();
+		foreach ( $natives as $code => $_ ) {
+			$titles[] = Title::capitalize( $code, NS_PORTAL ) . '/translators';
+		}
+
+		$dbr = wfGetDB( DB_SLAVE );
+		$tables = array( 'page', 'revision', 'text' );
+		$vars = array_merge( Revision::selectTextFields(), array( 'page_title', 'page_namespace' ), Revision::selectFields() );
+		$conds = array(
+			'page_latest = rev_id',
+			'rev_text_id = old_id',
+			'page_namespace' => NS_PORTAL,
+			'page_title' => $titles,
+		);
+
+		$res = $dbr->select( $tables, $vars, $conds, __METHOD__ );
+
+		$users = array();
+		$lb = new LinkBatch;
+
+		foreach ( $res as $row ) {
+			$rev = new Revision( $row );
+			$text = $rev->getText();
+			$code = strtolower( preg_replace( '!/translators$!', '', $row->page_title ) );
+
+			preg_match_all( '!{{[Uu]ser\|([^}|]+)!', $text, $matches,  PREG_SET_ORDER );
+			foreach ( $matches as $match ) {
+				$user = Title::capitalize( $match[1], NS_USER );
+				$lb->add( NS_USER, $user );
+				$lb->add( NS_USER_TALK, $user );
+				if ( !isset( $users[$code] ) ) $users[$code] = array();
+				$users[$code][strtr( $user, '_', ' ' )] = -1;
+			}
+		}
+
+		$lb->execute();
+		return $users;
+	}
+
+
+	protected function outputLanguageCloud( $names ) {
+		global $wgOut;
+
+		$langs = $this->languageCloud();
+		$wgOut->addHtml( '<div class="tagcloud">' );
+		$langs = $this->shuffle_assoc( $langs );
+		foreach ( $langs as $k => $v ) {
+			$name = isset( $names[$k] ) ? $names[$k] : $k;
+			$size = round( log( $v ) * 20 ) + 10;
+
+			$params = array(
+				'href' => "#$k",
+				'class' => 'tag',
+				'style' => "font-size:$size%",
+			);
+
+			$tag = Html::element( 'a', $params, $name );
+			$wgOut->addHtml( $tag ."\n" );
+		}
+		$wgOut->addHtml( '</div>' );
+	}
+
 	protected function makeUserList( $users, $editcounts, $lastedits ) {
 		global $wgOut, $wgLang, $wgUser;
 		$skin = $wgUser->getSkin();
@@ -184,14 +273,17 @@ class SpecialSupportedLanguages extends UnlistedSpecialPage {
 		// longer than this is just inactive
 		$period = 180;
 
-		foreach ( $users as $index => $username ) {
+		$links = array();
+
+		foreach ( $users as $username => $count ) {
 			$title = Title::makeTitleSafe( NS_USER, $username );
 			$enc = htmlspecialchars( $username );
 
 			$attribs = array();
 			$styles = array();
 			if ( isset( $editcounts[$username] ) ) {
-				$count = $editcounts[$username];
+				if ( $count === -1 ) $count = $editcounts[$username];
+
 				$styles['font-size'] = round( log( $count, 10 ) * 30 ) + 70 . '%';
 
 				$last = wfTimestamp( TS_UNIX ) - $lastedits[$username];
@@ -208,14 +300,14 @@ class SpecialSupportedLanguages extends UnlistedSpecialPage {
 			$stylestr = $this->formatStyle( $styles );
 			if ( $stylestr ) $attribs['style'] = $stylestr;
 
-			$users[$index] = $skin->link( $title, $enc, $attribs );
+			$links[] = $skin->link( $title, $enc, $attribs );
 		}
 
 		$wgOut->addHTML( "<p class='mw-translate-spsl-translators'>" . wfMsgExt(
 			'supportedlanguages-translators',
 			'parsemag',
-			$wgLang->listToText( $users ),
-			count( $users )
+			$wgLang->listToText( $links ),
+			count( $links )
 		) . "</p>\n" );
 	}
 
@@ -270,4 +362,29 @@ class SpecialSupportedLanguages extends UnlistedSpecialPage {
 
 		return $red . $green . $blue;
 	}
+
+	function shuffle_assoc($list) { 
+		if (!is_array($list)) return $list; 
+
+		$keys = array_keys($list); 
+		shuffle($keys); 
+		$random = array(); 
+		foreach ($keys as $key) 
+			$random[$key] = $list[$key]; 
+
+		return $random; 
+	}
+
+	protected function preQueryUsers( $users ) {
+		$lb = new LinkBatch;
+		foreach ( $users as $translators ) {
+			foreach ( $translators as $user => $count ) {
+				$user = Title::capitalize( $user, NS_USER );
+				$lb->add( NS_USER, $user );
+				$lb->add( NS_USER_TALK, $user );
+			}
+		}
+		$lb->execute();
+	}
+
 }
