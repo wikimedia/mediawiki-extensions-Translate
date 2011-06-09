@@ -4585,12 +4585,9 @@ Falls eine Sprache nicht aufgeführt wird, gibt es Informationen zum Starten ein
 Falls der Name eines Übersetzers fehlt, muss dieser zur Liste der Übersetzer im jeweiligen [[:Category:Languages|Portal]] hinzugefügt werden.
 Im Menü befindet sich ein Link zum Portal der eingestellten Sprache.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Übersetzer|Übersetzer}}: $1',
-	'supportedlanguages-noportal-title' => 'Kein Portal-Namensraum definiert',
-	'supportedlanguages-noportal' => 'Der Wiki-Administrator hat die Variable <code>NS_PORTAL</code> nicht definiert, daher funktioniert diese Seite nicht.
-Auf dieser Seite wird eine Liste der Sprachportale erscheinen, die nach einem entsprechenden Sprachcode benannt sind und eine Unterseite mit dem Namen „translators“ haben.
-Die Unterseite „translators“ muss die Vorlage [[:{{ns:template}}:User|User]] beinhalten, mit einem Benutzernamen als Parameter.',
 	'supportedlanguages-recenttranslations' => 'Aktuelle Übersetzungen',
 	'supportedlanguages-count' => 'Insgesamt $1 {{plural:$1|Sprache|Sprachen}}.',
+	'supportedlanguages-activity' => '$1: $2 {{PLURAL:$2|Bearbeitung|Bearbeitungen}} - letzte Bearbeitung vor $3 {{PLURAL:$3|Tag|Tagen}}',
 	'translate-save' => 'Speichern ($1)',
 	'translate-jssti-add' => 'Zur Liste hinzufügen',
 	'managemessagegroups' => 'Nachrichtengruppenverwaltung',
@@ -7443,12 +7440,9 @@ Se algunha lingua non aparece listada, infórmese de como iniciar un novo proxec
 Se colaborou na tradución a unha lingua e o seu nome non aparece listado, engádao á lista de tradutores no [[:Category:Languages|portal]] desa lingua.
 Na barra do menú terá unha ligazón ao portal da súa lingua.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Tradutor|Tradutores}}: $1',
-	'supportedlanguages-noportal-title' => 'Non hai definido ningún espazo de nomes para os portais',
-	'supportedlanguages-noportal' => 'O administrador do wiki non definiu NS_PORTAL, polo tanto esta páxina non funciona.
-Nesta páxina aparecerá unha lista con todos os portais nas diferentes linguas que teñan un código de lingua definido e unha subpáxina chamada "translators".
-Esta subpáxina "translators" debe conter o modelo [[:{{ns:template}}:User|User]], sendo o nome dun usuario o parámetro.',
 	'supportedlanguages-recenttranslations' => 'traducións recentes',
 	'supportedlanguages-count' => '$1 {{plural:$1|lingua|linguas}} en total.',
+	'supportedlanguages-activity' => '$1: $2 {{PLURAL:$2|edición|edicións}}; última edición hai $3 {{PLURAL:$3|día|días}}',
 	'translate-save' => 'Gardar ($1)',
 	'translate-jssti-add' => 'Engadir á lista',
 	'managemessagegroups' => 'Xestión do grupo de mensaxes',
@@ -12969,11 +12963,9 @@ $messages['mk'] = array(
 Ако преведувате на некој јазик, но вашето име не е наведено, тогаш додајте се на списокот на преведувачи која се наоѓа на [[:Category:Languages|матичниот портал]] за тој јазик.
 Во менито лево ќе најдете врска до матичниот портал на јазикот што го сакате.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Преведувач|Преведувачи}}: $1',
-	'supportedlanguages-noportal-title' => 'Нема определено именски простор за портал',
-	'supportedlanguages-noportal' => 'Администраторот на викито нема определено NS_PORTAL, па затоа страницата не работи.
-На страницава се јавува список на сите портали што одговараат на определен јазичен код и потстраница наречена „преведувачи“ која го содржи шаблонот [[:{{ns:template}}:User|User]] земајќи корисничко име како параметар.',
 	'supportedlanguages-recenttranslations' => 'скорешни преводи',
 	'supportedlanguages-count' => 'Вкупно $1 {{plural:$1|јазик|јазици}}.',
+	'supportedlanguages-activity' => '$1: $2 {{PLURAL:$2|уредување|уредувања}} - последното пред $3 {{PLURAL:$3|ден|дена}}',
 	'translate-save' => 'Зачувај ($1)',
 	'translate-jssti-add' => 'Додај во список',
 	'managemessagegroups' => 'Раководење со групи на пораки',
@@ -14170,6 +14162,7 @@ $messages['ne'] = array(
 /** Dutch (Nederlands)
  * @author SPQRobin
  * @author Siebrand
+ * @author Tjcool007
  * @author Tvdm
  */
 $messages['nl'] = array(
@@ -14372,12 +14365,9 @@ Als een taal niet wordt vermeld, kunt u nalezen hoe een nieuwe taal toegevoegd t
 Als u vertaalt naar een taal en uw naam is niet opgenomen, dan kunt u uw naam toevoegen aan de lijst van vertalers op het [[:Category:Languages|portaal]] voor die taal.
 Zie de menubalk voor een verwijzing naar het portaal voor uw voorkeurstaal.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Vertaler|Vertalers}}: $1',
-	'supportedlanguages-noportal-title' => 'De portaalnaamruimte is niet ingesteld',
-	'supportedlanguages-noportal' => 'De wikibeheerder heeft NS_PORTAL niet ingesteld, zodat deze pagina niet werkt.
-Op deze pagina wordt een lijst van taalportalen weergegevens voor alle portalen die overeenkomen met een ingestelde taalcode en een subpagina "translators".
-De subpagina "translators" moet het sjabloon [[:{{ns:template}}:User|User]] bevatten, waarbij een gebruikersnaam als parameter wordt geaccepteerd.',
 	'supportedlanguages-recenttranslations' => 'recente vertalingen',
 	'supportedlanguages-count' => '$1 {{plural:$1|taal|talen}} in totaal.',
+	'supportedlanguages-activity' => '$1: $2 {{PLURAL:$2|bewerking|bewerkingen}} - laatste bewerking $3 {{PLURAL:$3|dag|dagen}} geleden',
 	'translate-save' => 'Opslaan ($1)',
 	'translate-jssti-add' => 'Aan lijst toevoegen',
 	'managemessagegroups' => 'Berichtengroepen beheren',
@@ -16302,11 +16292,9 @@ Se uma língua não aparecer na lista, pode descobrir como iniciar um projecto d
 Se faz traduções para uma língua e o seu nome não aparece na lista, adicione-o à lista de tradutores no [[:Category:Languages|portal]] dessa língua, por favor.
 Na barra lateral à esquerda existe um link para o portal da língua da sua preferência.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Tradutor|Tradutores}}: $1',
-	'supportedlanguages-noportal-title' => 'Não foi definido um espaço nominal para portais',
-	'supportedlanguages-noportal' => 'O administrador da wiki não definiu NS_PORTAL, por isso esta página não funciona.
-Nesta página aparece uma lista de todos os portais de línguas que correspondem a um código de língua existente e uma subpágina chamada "translators". Para cada tradutor, a subpágina deve chamar a predefinição [[:{{ns:template}}:User|User]], passando como parâmetro um nome de utilizador.',
 	'supportedlanguages-recenttranslations' => 'traduções recentes',
 	'supportedlanguages-count' => '$1 {{plural:$1|língua|línguas}} no total.',
+	'supportedlanguages-activity' => '$1: $2 {{PLURAL:$2|edição|edições}} - a última edição foi há $3 {{PLURAL:$3|dia|dias}}',
 	'translate-save' => 'Gravar ($1)',
 	'translate-jssti-add' => 'Adicionar à lista',
 	'managemessagegroups' => 'Administração de grupos de mensagens',
