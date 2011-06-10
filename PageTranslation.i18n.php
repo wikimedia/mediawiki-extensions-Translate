@@ -3543,7 +3543,7 @@ $messages['mg'] = array(
  * @author Brest
  */
 $messages['mk'] = array(
-	'pagetranslation' => 'Превод на страница',
+	'pagetranslation' => 'Превод на страници',
 	'right-pagetranslation' => 'Обележување на верзии на страници за преведување',
 	'tpt-desc' => 'Додаток за преведување на страници со содржини',
 	'tpt-section' => 'Преводна единица $1',
