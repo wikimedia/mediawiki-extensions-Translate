@@ -47,7 +47,7 @@ class MessageChecker {
 	private static $globalBlacklist = null;
 
 	/**
-	 * Cosntructs a suitable checker for given message group.
+	 * Constructs a suitable checker for given message group.
 	 * @param $group MessageGroup
 	 */
 	public function __construct( MessageGroup $group ) {
