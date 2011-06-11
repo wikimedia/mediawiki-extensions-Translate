@@ -53,6 +53,17 @@ FILES:
   targetPattern: pywikipedia/category.py
 ---
 BASIC:
+  id: out-pywikipedia-clean_sandbox
+  label: Pywikipedia Clean Sandbox
+  display: out/pywikipedia/clean_sandbox
+
+FILES:
+  class: PythonSingleFFS
+  sourcePattern: %GROUPROOT%/pywikipedia/clean_sandbox.py
+  definitionFile: %GROUPROOT%/pywikipedia/clean_sandbox.py
+  targetPattern: pywikipedia/clean_sandbox.py
+---
+BASIC:
   id: out-pywikipedia-cosmetic_changes
   label: Pywikipedia Cosmetic Changes
   display: out/pywikipedia/cosmetic_changes
