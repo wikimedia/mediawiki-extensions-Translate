@@ -450,15 +450,14 @@ $messages['cs'] = array(
 	'bw-desc-freecol' => 'Před překládáním FreeCol do vašeho jazyka si přečtěte [[Translating:FreeCol]]. FreeCol používá licenci GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], webové fórum napsané v PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] je webový systém pro správu chyb. Problémy hlaste na stránku [[Support]].',
+	'translate-group-desc-eol' => 'Skupina zpráv pro [[Translating:EOL|Encyclopedia of Life]]',
 	'translate-group-desc-ihris' => 'Skupina zpráv pro [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-common' => 'Skupina zpráv pro [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], modul [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-i2ce' => 'Skupina zpráv pro [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], modul [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-manage' => 'Skupina zpráv pro [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], modul [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-qualify' => 'Skupina zpráv pro [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]], modul [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'Základní modul pro [[Translating:MantisBT|MantisBT]]',
-	'translate-group-desc-mediawiki-core-115' => 'Hlášení ze stabilní verze [[Translating:MediaWiki|MediaWiki]] 1.15',
-	'translate-group-desc-mediawiki-core-116' => 'Hlášení ze stabilní verze [[Translating:MediaWiki|MediaWiki]] 1.16',
-	'translate-group-desc-mediawiki-core-117' => 'Hlášení ze stabilní verze [[Translating:MediaWiki|MediaWiki]] 1.17',
+	'translate-group-desc-mediawiki-core-branch' => 'Zprávy ze stabilní verze [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] je informační systém pro správu mikrofinancování',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' je knihovna pro Python umožňující tvorbu PDF dokumentů podle článků MediaWiki zpracovaných knihovnou mwlib.
 
@@ -490,14 +489,48 @@ Vytvořeno pro Univerzitu v Bamberku. Licencováno pod GPL 2.0 nebo novější. 
 
 /** Danish (Dansk)
  * @author Byrial
+ * @author Emilkris33
  * @author Peter Alberti
  */
 $messages['da'] = array(
+	'translategroupdescriptions-desc' => 'Besked gruppe beskrivelser for produkter der understøttes af [http://mediawiki.org/wiki/Extension:Translate Translate] udvidelsen',
 	'translate-group-desc-nodesc' => 'Der er ikke nogen tilgængelig beskrivelse for denne gruppe af beskeder',
 	'translate-group-desc-mediawikicore' => 'Denne beskedgruppe indeholder beskederne som bruges i den nuværende alfaversion af MediaWiki ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'Denne beskedgruppe indeholder de [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 oftest brugte beskeder] i MediaWiki',
+	'translate-group-desc-mediawikiextensions' => 'Meta besked gruppe der indeholder alle beskeder til understøttede udvidelser til [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-collection' => 'Meta besked gruppe der indeholder alle beskeder til MediaWiki udvidelsen [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
+	'translate-group-desc-flaggedrevs' => 'Meta besked gruppe der indeholder alle beskeder til MediaWiki udvidelsen [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
+	'translate-group-desc-readerfeedback' => 'Meta besked gruppe der indeholder alle beskeder til MediaWiki udvidelsen [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
+	'translate-group-desc-socialprofile' => 'Meta besked gruppe der indeholder alle beskeder relateret til MediaWiki udvidelsen [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
+	'translate-group-desc-translate' => 'Meta besked gruppe der indeholder alle beskeder til MediaWiki udvidelsen [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
+	'translate-group-desc-wikiaextensions' => 'Meta besked gruppe der indeholder alle beskeder til understøttede MediaWiki udvidelser brugt af [http://www.wikia.com Wikia]',
+	'translate-group-desc-wikimediaextensions' => 'Meta besked gruppe der indeholder alle beskeder til understøttede MediaWiki udvidelser brugt af [http://wikimedia.org/ Wikimedia Foundation]',
+	'translate-group-desc-wikimediaextensions-main' => 'Meta besked gruppe der indeholder alle beskeder til understøttede MediaWiki udvidelser der kræves oversættelse af for Wikimedia [http://meta.wikimedia.org/wiki/Language_committee Language committee]',
+	'translate-group-desc-uniwiki' => 'Meta besked gruppe der indeholder alle beskeder til MediaWiki udvidelser relateret til [http://unicefinnovation.org/wiki.php Uniwiki]',
+	'translate-group-desc-ui' => 'Meta besked gruppe der indeholder alle beskeder til MediaWiki udvidelser relateret til [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 	'translate-group-desc-translatablepages' => 'Alle sider som kan oversættes',
+	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] giver folk mulighed for at udforske de digitale kulturelle ressourcer i Europa',
 	'bw-desc-freecol' => '[[Translating:FreeCol|FreeCol]] er et turbaseret strategispil',
+	'bw-desc-fudforum' => '[[Translating:FUDforum|FUDforum]] er en webbaseret  diskussion forum software',
+	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]] er en webbaseret problemsporing software',
+	'translate-group-desc-eol' => 'En besked gruppe for [[Translating:EOL|Encyclopedia of Life]]',
+	'translate-group-desc-ihris' => 'En besked gruppe for [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-common' => 'En besked gruppe for [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], et modul af [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-i2ce' => 'En besked gruppe for [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], et modul af [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-manage' => 'En besked gruppe for [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], et modul af [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-qualify' => 'En besked gruppe for [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]], et modul af [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-mantisbt-plugin-core' => 'Et centralt plugin til [[Translating:MantisBT|MantisBT]]',
+	'translate-group-desc-mediawiki-core-branch' => 'Beskeder til en stabil version af [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] er et management informationssystem for mikrofinansiering',
+	'bw-desc-mwlibrl' => '[[Translating:Mwlib.rl|Mwlib.rl]] er et bibliotek til at oprette PDF-dokumenter fra MediaWiki sider',
+	'bw-desc-nocc' => '[[Translating:NOCC|NOCC]] er en webmail klient',
+	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] er en offline Wikipedia læser',
+	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] er en åben media platform',
+	'translate-group-desc-openimages-verifyemailtemplate' => 'Disse meddelelser er en del af [[Translating:Open Images|Open Images]] verifikation emailskabelonen',
+	'translate-group-desc-openimages-all' => 'Disse meddelelser er en del af [[Translating:Open Images|Open Images]] projektet',
+	'bw-desc-openlayers' => '[[Translating:OpenLayers|OpenLayers]] er en dynamisk kort generator i JavaScript',
+	'bw-desc-openstreetmap' => 'Alle meddelelser relateret til [[Translating:OpenStreetMap|OpenStreetMap]]',
+	'bw-desc-osm-site' => '[[Translating:OpenStreetMap|OpenStreetMap]] er et redigerbart kort over hele verden',
 );
 
 /** German (Deutsch)
@@ -1414,9 +1447,11 @@ $messages['km'] = array(
 );
 
 /** Korean (한국어)
+ * @author Kwj2772
  * @author ToePeu
  */
 $messages['ko'] = array(
+	'translate-group-desc-nodesc' => '이 메시지 그룹에 대한 설명이 없습니다.',
 	'translate-group-desc-mediawikicore' => '여기에는 최신 미디어위키 알파 버전 ({{CURRENTVERSION}}) 의 메세지가 있습니다.',
 );
 
@@ -2611,12 +2646,17 @@ $messages['yi'] = array(
 
 /** Simplified Chinese (‪中文(简体)‬)
  * @author Bencmq
+ * @author Hydra
  * @author PhiLiP
  * @author Tommyang
  * @author Xiaomingyan
  */
 $messages['zh-hans'] = array(
+	'translategroupdescriptions-desc' => '消息组说明 [http://mediawiki.org/wiki/Extension:Translate 翻译] 扩展所支持的产品',
+	'translate-group-desc-nodesc' => '没有描述用于此消息组',
 	'translate-group-desc-mediawikicore' => '此界面消息群组包含了当前MediaWiki alpha版本所使用的消息（{{CURRENTVERSION}}）',
+	'translate-group-desc-translatablepages' => '所有翻译网页',
+	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] 使人们能够探索欧洲数字文化资源',
 	'bw-desc-freecol' => '在将FreeCol翻译至你的语言之前，请阅读[[Translating:FreeCol]]。Freecol使用GPL许可协议。',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum]，一个用PHP编写的论坛。',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT]是一个免费的基于Web的Bug追踪系统。请在[[Support|支持]]报告问题。',

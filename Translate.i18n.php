@@ -2473,6 +2473,7 @@ $messages['be-tarask'] = array(
 Паведамленьні пазначаюцца як састарэлыя, таму што крынічныя паведамленьні на ангельскай мове былі зьмененыя, таму што не прайшлі аўтаматычную праверку, альбо таму што нехта пазначыў іх як састарэлыя.',
 	'translate-nothing-to-do' => 'Былі зроблены ўсе магчымыя пераклады.
 Вы можаце праверыць пераклады з дапамогай [[Special:Translate|{{int:translate}}]].',
+	'translate-languagestats-overall' => 'Усе паведамленьні групаў разам',
 	'supportedlanguages' => 'Мовы перакладу',
 	'supportedlanguages-summary' => 'На гэтай старонцы пададзены сьпіс усіх моваў, якія падтрымліваюцца ў {{GRAMMAR:месны|{{SITENAME}}}}, разам з імёнамі перакладчыкаў, якія перакладаюць на гэтыя мовы.
 Калі Вам неабходна дадатковая інфармацыя па пэўнай мове, Вы можаце перайсьці на партал гэтай мовы.
@@ -2483,11 +2484,9 @@ $messages['be-tarask'] = array(
 Калі Вы перакладаеце на нейкую мову, а Вашага імя няма ў сьпісе, калі ласка, дадайце Вашае імя ў сьпіс перакладчыкаў на [[:Category:Languages|партале]] гэтай мовы.
 Шукайце ў мэню спасылку на партал на мове, пададзенай ў Вашых наладах.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Перакладчык|Перакладчыкі}}: $1',
-	'supportedlanguages-noportal-title' => 'Прастора назваў парталаў ня вызначаная',
-	'supportedlanguages-noportal' => 'Адміністратар {{SITENAME}} ня вызначыў NS_PORTAL, таму гэтая старонка не працуе.
-На гэтай старонцы зьявіцца сьпіс моўных парталаў, адпаведна вызначаным моўным кодам і падстаронка з назваў «translators».
-Падстаронка «translators» павінна ўтрымліваць шаблён [[:{{ns:template}}:User|User]], з іменем удзельніка ў якасьці парамэтра.',
 	'supportedlanguages-recenttranslations' => 'апошнія пераклады',
+	'supportedlanguages-count' => '$1 {{PLURAL:$1|мова|мовы|моваў}} агулам.',
+	'supportedlanguages-activity' => '$1: $2 {{PLURAL:$2|праўка|праўкі|правак}}, апошняя — $3 {{PLURAL:$3|дзень|дні|дзён}} таму',
 	'translate-save' => 'Захаваць ($1)',
 	'translate-jssti-add' => 'Дадаць у сьпіс',
 	'managemessagegroups' => 'Кіраваньне групамі паведамленьняў',
@@ -3907,6 +3906,7 @@ Změny se neuloží, dokud nekliknete na tlačítko „Uložit změny“ pod edi
 	'translate-checks-format' => 'Tento překlad neodpovídá definici nebo má neplatnou syntaxi: $1',
 	'translate-checks-escape' => 'Následující escape sekvence možná nebyly zamýšleny: <strong>$1</strong>',
 	'translate-checks-fudforum-syntax' => 'V tomto projektu musíte namísto <nowiki>$2</nowiki> používat <nowiki>$1</nowiki>.',
+	'translate-checks-prefs' => 'Konflikt se zprávou $1. Tyto zprávy nesmí být shodné.',
 	'translate-pref-nonewsletter' => 'Neposílat mi novinky emailem',
 	'translate-pref-editassistlang' => 'Pomocné jazyky:',
 	'prefs-translate' => 'Nastavení pro překládání',
@@ -3983,6 +3983,7 @@ Zahrnuje zprávy označené jako zastaralé.',
 Zprávy se označují jako zastaralé v případě, že se zdrojová anglická zpráva změnila, protože nevyhověly automatické kontrole nebo protože je někdo označil jako zastaralé.',
 	'translate-nothing-to-do' => 'Vypadá to, že všechny možné překlady jsou hotové.
 Teď doporučujeme zkontrolovat hlášení pomocí stránky [[Special:Translate|{{int:translate}}]].',
+	'translate-languagestats-overall' => 'Všechny skupiny zpráv dohromady',
 	'supportedlanguages' => 'Podporované jazyky',
 	'supportedlanguages-summary' => 'Na této stránce se nachází seznam všech jazyků podporovaných na {{grammar:6sg|{{SITENAME}}}} spolu se jmény překladatelů, kteří na jazyku pracují.
 Více informací ke každému jazyku získáte na jazykovém portálu, na který se dostanete kliknutím na příslušný jazyk.
@@ -3994,6 +3995,8 @@ Pokud nějaký jazyk překládáte, ale vaše jméno zde není uvedeno, přidejt
 Odkaz na portál vašeho preferovaného jazyka naleznete v menu.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Překladatel|Překladatelé}}: $1',
 	'supportedlanguages-recenttranslations' => 'nedávné překlady',
+	'supportedlanguages-count' => 'Celkem $1 {{PLURAL:$1|jazyk|jazyky|jazyků}}.',
+	'supportedlanguages-activity' => '$1: $2 editace – poslední editace před $3 {{PLURAL:$3|dnem|dny}}',
 	'translate-save' => 'Uložit ($1)',
 	'translate-jssti-add' => 'Přidat do seznamu',
 	'translate-manage-groups' => 'Správa skupin',
@@ -4027,6 +4030,10 @@ Metoda <code>$1</code> není podporována.',
 	'translate-gs-total' => 'Celkem',
 	'translate-gs-avgscore' => 'Prům. skóre',
 	'translate-documentation-language' => 'dokumentace k hlášením',
+	'translate-searchprofile' => 'Překlady',
+	'translate-searchprofile-tooltip' => 'Hledat ve všech překladech',
+	'translate-search-languagefilter' => 'Filtr podle jazyka:',
+	'translate-search-nofilter' => 'Nefiltrovat',
 );
 
 /** Kashubian (Kaszëbsczi)
@@ -4280,12 +4287,9 @@ Hvis et sprog ikke er på listen, kan du finde ud af hvordan man starter en loka
 Hvis du oversætter til et sprog og dit navn ikke er inkluderet, kan du tilføje dit navn til listen af oversættere på [[:Category:Languages|portal]] for det pågældende sprog.
 Se menulinjen for et link til portalen for det sprog du foretrækker.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Oversætter|Oversættere}}: $1',
-	'supportedlanguages-noportal-title' => 'Intet portal navnerum defineret',
-	'supportedlanguages-noportal' => 'Wiki Administratoren har ikke defineret NS_PORTAL, så denne side ikke virker. 
-På denne side vil en liste over sprog portaler vises for alle portaler svarer til en defineret sprogkode og en underside kaldet "translators". 
-Undersiden "translators" skal indeholde denne skabelon [[:{{ns:template}}:User|User]], under et brugernavn som parameter.',
 	'supportedlanguages-recenttranslations' => 'seneste oversættelser',
 	'supportedlanguages-count' => '$1 {{plural:$1|sprog|sprog}} i alt.',
+	'supportedlanguages-activity' => '$1: $2 {{PLURAL:$2|redigering|redigeringer}} - seneste redigering var for $3 {{PLURAL:$3|dag|dage}} siden',
 	'translate-save' => 'Gem ($1)',
 	'translate-jssti-add' => 'Tilføj til listen',
 	'managemessagegroups' => 'Håndtering af beskedgrupper',
@@ -8172,7 +8176,7 @@ $messages['he'] = array(
 	'translate-checks-escape' => 'ייתכן שהחילופים הבאים נוצרו בשגגה: <strong>$1</strong>',
 	'translate-checks-fudforum-syntax' => 'השתמשו ב־<nowiki>$1</nowiki> ולא ב־<nowiki>$2</nowiki> בפרויקט הזה.',
 	'translate-checks-prefs' => 'ההודעה מתנגשת עם $1. ההודעות האלה לא יכולות להיות זהות.',
-	'translate-pref-nonewsletter' => 'אל תשלחו אלי הודעות בדואר האלקטרוני',
+	'translate-pref-nonewsletter' => 'אל תשלחו אליי הודעות בדואר האלקטרוני',
 	'translate-pref-editassistlang' => 'שפות הסיוע:',
 	'prefs-translate' => 'אפשרויות תרגום',
 	'translate-pref-editassistlang-help' => 'רשימה מופרדת בפסיקים של קודי שפות.
@@ -8249,6 +8253,7 @@ $messages['he'] = array(
 הודעות מסומנות כלא מעודכנות כי ההודעות באנגלית השתנו, כי בדיקה אוטומטית של ההודעה נכשלה, או כי מישהו סימן אותה כלא מעודכנת.',
 	'translate-nothing-to-do' => 'נראה כי כל הפריטים כבר תורגמו.
 עם זאת, אתם מוזמנים לבדוק את ההודעות דרך [[Special:Translate|{{int:translate}}]].',
+	'translate-languagestats-overall' => 'כל הקבוצות ההודעות יחד',
 	'supportedlanguages' => 'שפות נתמכות',
 	'supportedlanguages-summary' => 'הדף הזה מציג רשימה של כל השפות שהאתר {{SITENAME}} תומך בהן, עם שמות של מתרגמים שעובדים על אותן השפות.
 אם אינכם רוצים מידע נוסף על שפה מסוימת, אתם יכולים ללחוץ על הקישור לפורטל עבור אותה השפה.
@@ -8258,11 +8263,9 @@ $messages['he'] = array(
 
 אם אתם מתרגמים לשפה ושמכם אינו כלול ברשימה, אנא הוסיפו את שמכם לרשימת המתרגמים ב[[:Category:Languages|פורטל]] עבור אותה השפה. בשורת התפריט נמצא קישור לפורטל עבור השפות שתרצו.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|מתרגם|מתרגמים}}: $1',
-	'supportedlanguages-noportal-title' => 'מרחב שם פורטל אינו מוגדר',
-	'supportedlanguages-noportal' => 'מעפיל הוויקי הזה לא הגדיר את NS_PORTAL, ולכן הדף הזה אינו עובד.
-בדף הזה תופיע רשימת פורטלים של שפות עבור כל כל הפורטלים שמוגדר להם קוד שפה ודף משנה בשם "translators".
-דף המשנה "translators" צריך להכיל את התבנית [[:{{ns:template}}:User|User]], שהפרמטר שלה הוא שם המשתמש.',
 	'supportedlanguages-recenttranslations' => 'תרגומים אחרונים',
+	'supportedlanguages-count' => '{{PLURAL:$1|שפה אחת|$1 שפות}} בסך הכול.',
+	'supportedlanguages-activity' => '$1: {{PLURAL:$2|עריכה אחת|$2 עריכות}} - עריכה אחרונה לפני {{PLURAL:$3|יום אחד|$3 ימים}}',
 	'translate-save' => 'שמירה ($1)',
 	'translate-jssti-add' => 'הוספת לרשימה',
 	'managemessagegroups' => 'ניהול קבוצות הודעות',
@@ -12324,11 +12327,9 @@ Wann eng Sprooch net an der Lëscht drasteet da fannt dir Informatioune wéi ee 
 Wann den Numm vun engem Iwwersetzer feelt, muss deen op d'Lëscht vun den Iwwersetzer op dem [[:Category:Languages|Portal]] vun däer Sprooch derbäi.
 Kuckt de Menu fir e Link op de Portal fir déi Sprooch déi dir an Äre Preferenzen agestallt hutt.",
 	'supportedlanguages-translators' => '{{PLURAL:$2|Iwwersetzer|Iwwersetzer}}: $1',
-	'supportedlanguages-noportal-title' => 'Kee Portal-Nummraum definéiert',
-	'supportedlanguages-noportal' => 'De Wiki Administrateur huet NS_PORTAL net definéiert, dofir fonctionnéiert dës Säit net.
-Op dëser Säit ass eng Lëscht vu Sproocheportal fir all Portaler déi mat engem bestëmmte Sproochecode an enger Ënnersäit mam Numm "translators" wou d\'Schabloun [[:{{ns:template}}:User|Benotzer]] dran ass an déi de Benotzernumm als Parameter huet.',
 	'supportedlanguages-recenttranslations' => 'rezent Iwwersetzungen',
 	'supportedlanguages-count' => '{{plural:$1|Eng Sprooch|$1 Sproochen}} am Ganzen.',
+	'supportedlanguages-activity' => '$1: $2 {{PLURAL:$2|Ännerung|Ännerungen}} - lescht Ännerung viru(n) $3 {{PLURAL:$3|Dag|Deeg}}',
 	'translate-save' => 'Späicher ($1)',
 	'translate-jssti-add' => "Op d'Lëscht derbäisetzen",
 	'managemessagegroups' => 'Gestioun vun de Gruppe vu Messagen',
@@ -21511,12 +21512,9 @@ Nếu trong danh sách không có ngôn ngữ nào đó, bạn có thể đọc 
 Nếu bạn dịch sang một ngôn ngữ mà không thấy tên bạn được ghi, xin ghi tên bạn vào danh sách các biên dịch viên tại [[:Category:Languages|cổng chào]] của ngôn ngữ đó.
 Xem thanh trình đơn để biết liên kết đến cổng ngôn ngữ của ngôn ngữ mà bạn chọn.",
 	'supportedlanguages-translators' => '{{PLURAL:$2|Biên dịch viên|Các biên dịch viên}}: $1',
-	'supportedlanguages-noportal-title' => 'Chưa định rõ không gian tên chủ đề',
-	'supportedlanguages-noportal' => 'Bảo quản viên wiki chưa định nghĩa NS_PORTAL, do đó trang này không hoạt động.
-Tại trang này danh sách các cổng chào ngôn ngữ sẽ xuất hiện cho tất cả các cổng chào tương ứng với một mã ngôn ngữ đã định nghĩa cùng một trang con có tên "translators" (biên dịch viên).
-Trang con "translators" phải chứa bản mẫu [[:{{ns:template}}:User|User]], đưa tên người dùng vào thông số.',
 	'supportedlanguages-recenttranslations' => 'các bản dịch gần đây',
 	'supportedlanguages-count' => '$1 ngôn ngữ tổng cộng.',
+	'supportedlanguages-activity' => '$1: $2 lần sửa đổi – lần cuối cách đây $3 ngày',
 	'translate-save' => 'Lưu ($1)',
 	'translate-jssti-add' => 'Thêm vào danh sách',
 	'managemessagegroups' => 'Quản lý nhóm thông điệp',
@@ -22060,10 +22058,11 @@ $messages['zh-hans'] = array(
 	'translate-ignored' => '（已略过）',
 	'translate-edit-title' => '开始翻译 $1',
 	'translate-edit-definition' => '界面消息原文',
+	'translate-edit-translation' => '翻译',
 	'translate-edit-contribute' => '贡献',
 	'translate-edit-no-information' => "''本界面消息没有任何说明文档。如果您知道这个消息在哪使用或如何使用，您可以增加该消息的说明文档来帮助其他翻译者。''",
-	'translate-edit-information' => '关于界面消息“$2”的信息（$1）',
-	'translate-edit-in-other-languages' => '其他语言的界面消息“$1”',
+	'translate-edit-information' => '有关消息的信息（$1）',
+	'translate-edit-in-other-languages' => '在其他语言中的消息',
 	'translate-edit-committed' => '当前翻译',
 	'translate-edit-warnings' => '未完成翻译的警告',
 	'translate-edit-tmsugs' => '来自翻译记忆的建议',
@@ -22119,6 +22118,7 @@ $messages['zh-hans'] = array(
 	'translate-checks-format' => '这个翻译不遵从定义或有无效的语法：$1',
 	'translate-checks-escape' => '以下转义可能是意外：<strong>$1</strong>',
 	'translate-checks-fudforum-syntax' => '使用 <nowiki>$1</nowiki>，而不是在这个项目中的 <nowiki>$2</nowiki>。',
+	'translate-checks-prefs' => '消息与 $1 冲突。这些消息不是必须是相同的。',
 	'translate-pref-nonewsletter' => '不要给我发送新闻邮件',
 	'translate-pref-editassistlang' => '辅助语言：',
 	'prefs-translate' => '翻译选项',
@@ -22195,6 +22195,7 @@ $messages['zh-hans'] = array(
 	'translate-percentage-fuzzy-tooltip' => '此项目组中被翻译并被标记为过时的消息的百分比。消息可能因为原文改变、自动检查未通过或者某人的标记而被标记为过时。',
 	'translate-nothing-to-do' => '似乎所有的翻译都已经完成。
 你可以在[[Special:Translate|{{int:translate}}]]查看其他的翻译项目。',
+	'translate-languagestats-overall' => '一起的所有邮件组',
 	'supportedlanguages' => '支持的语言',
 	'supportedlanguages-summary' => '此页显示 {{SITENAME}} 所支持的所有语言的列表，连同工作对该语言的翻译人员的姓名。
 如果特定语言的详细信息您可以单击链接到该语言的门户。
@@ -22205,11 +22206,8 @@ $messages['zh-hans'] = array(
 如果你翻译成一种语言，并且您的名称不包括请将您的姓名添加，[[:Category:Languages|门户]] 该语言的翻译列表。
 请参阅链接，您喜欢的语言门户菜单栏。',
 	'supportedlanguages-translators' => '{{PLURAL:$2|翻译者|翻译者}}: $1',
-	'supportedlanguages-noportal-title' => '门户定义的命名空间',
-	'supportedlanguages-noportal' => '维基管理员已定义 NS_PORTAL，因此此页不会工作。
-在此页的语言门户列表将显示与定义的语言代码和一个称为"翻译"的子页面对应的所有门户。
-子页"translators"必须包含该模板 [[:{{ns:template}}:User|User]]，以用户名称作为参数。',
 	'supportedlanguages-recenttranslations' => '最近的翻译',
+	'supportedlanguages-count' => '总共有 $1 语言',
 	'translate-save' => '保存（$1）',
 	'translate-jssti-add' => '新增至清单',
 	'managemessagegroups' => '邮件组管理',
@@ -22218,24 +22216,77 @@ $messages['zh-hans'] = array(
 	'translate-manage-listgroups-old' => '旧样式组',
 	'translate-managegroups' => '组管理',
 	'translate-manage-newgroup' => '以前此消息组没有被导入过。',
+	'translate-manage-cacheat' => '导入$1在$2',
+	'translate-manage-return-to-group' => '返回组详细信息页面',
 	'translate-manage-modlang-new' => '$1（新）',
 	'translate-manage-import-new' => '新消息 $1',
 	'translate-manage-import-deleted' => '删除的消息  $1',
 	'translate-manage-action-import' => '导入',
+	'translate-manage-action-conflict' => '导入和模糊',
 	'translate-manage-action-ignore' => '忽略',
+	'translate-manage-action-fuzzy' => '导入和模糊的翻译',
 	'translate-manage-submit' => '执行',
+	'translate-manage-nochanges' => '消息定义为此组中有任何更改。',
+	'translate-manage-nochanges-other' => '有没有这种语言的更改。
+返回组详细信息视图中使用下面的链接。',
+	'translate-manage-inconsistent' => '检测到请求中的不一致。
+请检查是否有变化，然后重试。
+详细信息：$1。',
+	'translate-manage-toolong' => '最大加工时间的 $1 秒超出。
+请重新提交该窗体以继续进行处理。',
+	'translate-manage-import-ok' => '导入新版本的网页$1。',
+	'translate-manage-import-noks' => '无法导入页面的新版本$1：$2',
 	'translate-manage-import-ignore' => '跳过消息 $1。',
+	'translate-manage-import-summary' => '从外部源导入一个新的版本',
+	'translate-manage-conflict-summary' => '从外部源导入一个新的版本。
+请检查。',
+	'translate-manage-fuzzy-summary' => '定义已更改',
+	'translate-manage-import-fuzzy' => '导入和模糊：$1',
 	'translate-manage-import-done' => '全部完成！',
+	'translate-manage-import-rebuild' => '缓存重建。',
+	'translate-manage-intro-en' => '下面是此组中的消息更改的列表。
+请检查所做的更改，并选择您想要为每个邮件的操作。
+一旦您已更新消息定义，检查外部更改在其他语言中，如果任何。
+此外请注意，<code>ignore</code>的行动只是暂时的。',
+	'translate-manage-intro-other' => '下面是在翻译更改列表$1语言。
+请检查所做的更改，并选择您想要为每个翻译的操作。
+如果您选择忽略更改，他们将被覆盖对下一步的出口。',
 	'translate-manage-subtitle' => '管理',
+	'translate-manage-import-rebuild-all' => '重新生成所有的语言，并忽略任何更改',
+	'importtranslations' => '导入翻译',
+	'translate-import-from-url' => '文件的 URL：',
+	'translate-import-from-wiki' => '在这个维基中的文件：',
+	'translate-import-from-local' => '本地文件上传：',
 	'translate-import-load' => '载入档案',
+	'translate-import-err-type-not-supported' => '无法加载该文件：
+方法 <code>$1</code> 不受支持。',
+	'translate-import-err-dl-failed' => '无法读取该文件：
+$1',
+	'translate-import-err-ul-failed' => '文件上传不成功',
+	'translate-import-err-invalid-title' => '提供文件名称 <nowiki>$1</nowiki> 是无效的。',
+	'translate-import-err-no-such-file' => '文件 <nowiki>$1</nowiki> 不存在或本地已上载。',
+	'translate-import-err-stale-group' => '此文件所属的消息组不存在。',
 	'translate-js-next' => '保存并打开下一条',
 	'translate-js-nonext' => '这是本页的最后一条信息。',
 	'translate-js-skip' => '跳至下一条',
 	'translate-js-save-failed' => '保存失败。请报告此错误。',
 	'translate-js-history' => '翻译历史',
+	'translate-js-support' => '问问题',
+	'translate-js-support-title' => '如果没有足够的信息来正确翻译此消息，要求帮助。',
+	'translate-gs-pos' => '位置',
+	'translate-gs-code' => '代码',
+	'translate-gs-continent' => '大陆',
+	'translate-gs-speakers' => '扬声器',
 	'translate-gs-score' => '分数',
+	'translate-gs-multiple' => '多个',
 	'translate-gs-count' => '数量',
 	'translate-gs-total' => '总数',
+	'translate-gs-avgscore' => '平均得分',
+	'translate-documentation-language' => '消息文件',
+	'translate-searchprofile' => '翻译',
+	'translate-searchprofile-tooltip' => '从所有翻译搜索',
+	'translate-search-languagefilter' => '按语言筛选：',
+	'translate-search-nofilter' => '没有过滤',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)

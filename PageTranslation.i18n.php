@@ -996,6 +996,7 @@ Zdá se, že stránka, kterou se pokoušíte upravovat, neodpovídá žádné st
 /** Danish (Dansk)
  * @author Byrial
  * @author Emilkris33
+ * @author Peter Alberti
  * @author Purodha
  */
 $messages['da'] = array(
@@ -1051,7 +1052,6 @@ men {{PLURAL:$1|den seneste version|de seneste versioner}} kan ikke mærkes til 
 Siden er en oversættelse af siden [[$1]] og oversættelsen kan opdateres ved at bruge [$2 oversættelsesværktøjet].',
 	'tpt-unknown-page' => 'Dette navnerum er reserveret til oversættelser af indholdssider.
 Siden som du prøver at redigere, ser ikke ud til at svare til nogen side markeret for oversættelse.',
-	'tpt-delete-impossible' => 'Sletning af sider markeret til oversættelse, er endnu ikke muligt.',
 	'tpt-install' => 'Kør php maintenance/update.php eller webinstallering for at slå sideoversættelsesfunktionen til.',
 	'tpt-render-summary' => 'Opdaterer for at passe til en ny version af kildesiden',
 	'tpt-download-page' => 'Eksportér side med oversættelser',
@@ -1072,6 +1072,10 @@ Afsnit tekst: <pre>$1</pre>',
 	'pt-log-unmark' => '{{GENDER:$2|fjernet}} side "[[:$1]]" fra oversættelse',
 	'pt-log-moveok' => '{{GENDER:$2|fuldført}} omdøbning af oversætbare side $1 til et nyt navn',
 	'pt-log-movenok' => '{{GENDER:$2|støtte på}} et problem under flytningen af [[:$1]] til [[:$3]]',
+	'pt-log-delete-full-ok' => '{{GENDER:$2|færdiggjorte}} sletning af oversætbar side $1',
+	'pt-log-delete-full-nok' => '{{GENDER:$2|stødte på}} et problem under sletning oversætbar side [[:$1]]',
+	'pt-log-delete-lang-ok' => '{{GENDER:$2|Fuldførte}} sletning af oversættelses side $1',
+	'pt-log-delete-lang-nok' => '{{GENDER:$2|stødte på}} et problem under sletning oversættelses side [[:$1]]',
 	'pt-movepage-title' => 'Flyt oversætbare side $1',
 	'pt-movepage-blockers' => 'Den oversætbare side kan ikke flyttes til et nyt navn på grund af følgende {{PLURAL:$1|fejl|fejl}}:',
 	'pt-movepage-block-base-exists' => 'Målbase siden [[:$1]] findes.',
@@ -1097,13 +1101,36 @@ Afsnit tekst: <pre>$1</pre>',
 	'pt-movepage-action-other' => 'Skift mål',
 	'pt-movepage-intro' => 'Denne speciale side tillader dig at flytte sider, der er markeret til oversættelse. 
 Flytningen vil ikke være øjeblikkelig, fordi mange sider skal flyttes. 
-Jobkøen vil bliver brugt til at flytte siderne. 
 Mens siderne bliver flyttet, er det ikke muligt at interagere med de omtalte sider. 
-Fejl vil blive logget på siden oversættelse log og de har brug for at blive repareret manuelt.',
+Fejl vil blive logget på [[Special:Log/pagetranslation|sideoversættelsesloggen]], og de skal repareres manuelt.',
 	'pt-movepage-logreason' => 'Del af oversætbar side $1.',
 	'pt-movepage-started' => 'Base siden er nu flyttet.
 Husk at tjekke [[Special:Log/pagetranslation|siden oversættelsen log]] for fejl og færdiggørelses besked.',
 	'pt-locked-page' => 'Denne side er låst, fordi den oversætbare side, der aktuelt er ved at blive flyttet.',
+	'pt-deletepage-lang-title' => 'Sletter oversættelses side $1.',
+	'pt-deletepage-full-title' => 'Sletter oversætbar side $1.',
+	'pt-deletepage-invalid-title' => 'Den angivne side er ikke gyldig.',
+	'pt-deletepage-invalid-text' => 'Den angivne side er ikke en oversætbar side eller en oversættelse af én.',
+	'pt-deletepage-action-check' => 'List sider der skal slettes',
+	'pt-deletepage-action-perform' => 'Udfør sletningen',
+	'pt-deletepage-action-other' => 'Skift mål',
+	'pt-deletepage-lang-legend' => 'Slet oversættelses side',
+	'pt-deletepage-full-legend' => 'Slet oversætbar side',
+	'pt-deletepage-any-legend' => 'Slet en oversætbar side eller oversættelse af en oversætbare side',
+	'pt-deletepage-current' => 'Sidenavn:',
+	'pt-deletepage-reason' => 'Årsag:',
+	'pt-deletepage-subpages' => 'Slet alle undersider',
+	'pt-deletepage-list-pages' => 'Liste over sider til at slette',
+	'pt-deletepage-list-translation' => 'Oversættelses sider',
+	'pt-deletepage-list-section' => 'Afsnits sider',
+	'pt-deletepage-list-other' => 'Andre undersider',
+	'pt-deletepage-list-count' => 'I alt $1 {{PLURAL:$1|side|sider}} til at slette.',
+	'pt-deletepage-full-logreason' => 'Del af oversætbar side $1.',
+	'pt-deletepage-lang-logreason' => 'En del af oversættelses side $1 .',
+	'pt-deletepage-started' => 'Tjek venligst [[Special:Log/pagetranslation|side oversættelses log]] for fejl og færdiggørelses besked.',
+	'pt-deletepage-intro' => 'Denne med specielle side kan du slette hele oversætbare sider eller oversættelser til et sprog.
+Sletningen vil ikke ske med det samme, fordi mange sider vil være nød til at blive slettet.
+Fejl vil blive registreret i [[Special:Log/pagetranslation|side oversættelses log]], og de skal repareres i manuelt.',
 );
 
 /** German (Deutsch)
@@ -2325,7 +2352,7 @@ $messages['he'] = array(
 	'tpt-saveok' => 'הדף [[$1]] סומן לתרגום עם {{PLURAL:$2|יחידת תרגום אחת|$2 יחידות תרגום}}.
 עכשיו אפשר <span class="plainlinks">[$3 לתרגם]</span> את הדף.',
 	'tpt-badsect' => 'השם "$1" אינו שם תקין ליחידת התרגום $2.',
-	'tpt-showpage-intro' => 'להלן רשימת מקטעים חדשים, קיימים ומחוקים.
+	'tpt-showpage-intro' => 'להלן רשימת קטעים חדשים, קיימים ומחוקים.
 לפני סימון גרסה זו לתרגום, בדקו שהשינויים למקטעים מזעריים, כדי למנוע עבודה מיותרת של מתרגמים.',
 	'tpt-mark-summary' => 'גרסה זו סומנה לתרגום',
 	'tpt-edit-failed' => 'לא ניתן לעדכן את הדף: $1',
@@ -2353,7 +2380,6 @@ $messages['he'] = array(
 דף זה הוא תרגום של הדף [[$1]] וניתן לעדכן את התרגום באמצעות [$2 כלי התרגום].',
 	'tpt-unknown-page' => 'מרחב שם זה שמור לצורך תרגומי דפי התוכן.
 הדף אותו אתם מנסים לערוך אינו תואם לאף דף המסומן לתרגום.',
-	'tpt-delete-impossible' => 'מחיקה של דפים המסומנים לתרגום אינה אפשרית עדיין.',
 	'tpt-install' => 'הריצו php maintenance/update.php או התקנת רשת כדי לאפשר את תכונת תרגום הדפים.',
 	'tpt-render-summary' => 'עדכון להתאמת הגרסה החדשה של דף המקור',
 	'tpt-download-page' => 'ייצוא דף עם תרגומים',
@@ -2361,32 +2387,36 @@ $messages['he'] = array(
 תבנית תרגום: <pre>$1</pre>',
 	'pt-parse-close' => 'תג &lt;/translate> לא מאוזן.
 תבנית תרגום: <pre>$1</pre>',
-	'pt-parse-nested' => 'מקטעים מקוננים של &lt;translate> אינם מורשים.
+	'pt-parse-nested' => 'קטעים &lt;translate> מקוננים אינם מורשים.
 תוכן התג: <pre>$1</pre>',
-	'pt-shake-multiple' => 'מסמני מקטעים רבים עבור מקטע אחד.
-טקסט המקטע: <pre>$1</pre>',
-	'pt-shake-position' => 'מסמני מקטעים במיקום בלתי צפוי.
-טקסט המקטע: <pre>$1</pre>',
-	'pt-shake-empty' => 'מקטע ריק כבור מסמן $1.',
+	'pt-shake-multiple' => 'סמני קטעים מרובים עבור קטע אחד.
+טקסט הקטע: <pre>$1</pre>',
+	'pt-shake-position' => 'סמני קטעים במיקום בלתי צפוי.
+תוכן הקטע: <pre>$1</pre>',
+	'pt-shake-empty' => 'קטע ריק עבור סמן $1.',
 	'pt-log-header' => 'יומן של פעולות שמיוחדות למערכת תרגום דפים',
 	'pt-log-name' => 'יומן תרגום דפים',
 	'pt-log-mark' => '{{GENDER:$2|סימן}} את גרסה $3 של הדף "[[:$1]]" לתרגום',
 	'pt-log-unmark' => '{{GENDER:$2|הוציא|הוציאה}} את הדף "[[:$1]]" מהתרגום',
 	'pt-log-moveok' => '{{GENDER:$2|השלים|השלימה}} את שינוי השם של הדף הניתן לתרגום $1',
 	'pt-log-movenok' => '{{GENDER:$2|מצא|מצאה}} בעיה בעת העברת [[:$1]] אל [[:$3]]',
+	'pt-log-delete-full-ok' => '{{GENDER:$2|השלים|השלימה}} את המחיקה של הדף הניתן לתרגום $1',
+	'pt-log-delete-full-nok' => '{{GENDER:$2|נתקל|נתקלה}} בבעיה בזמן מחיקת הדף הניתן לתרגום [[:$1]]',
+	'pt-log-delete-lang-ok' => '{{GENDER:$2|השלים|השלימה}} את המחיקה של דף התרגום $1',
+	'pt-log-delete-lang-nok' => '{{GENDER:$2|נתקל|נתקלה}} בבעיה בזמן מחיקת דף התרגום [[:$1]]',
 	'pt-movepage-title' => 'להעביר את הדף הניתן לתרגום $1',
 	'pt-movepage-blockers' => 'דף שניתן לתרגום אינו יכול להיות מועבר לשם חדש בגלל {{PLURAL:$1|השגיאה הבאה|השגיאות הבאות}}:',
 	'pt-movepage-block-base-exists' => 'דף הבסיס המיועד [[:$1]] קיים.',
 	'pt-movepage-block-base-invalid' => 'לדף הבסיס המיועד אין כותרת תקינה.',
 	'pt-movepage-block-tp-exists' => 'דף התרגום המיועד [[:$2]] קיים.',
 	'pt-movepage-block-tp-invalid' => 'כותרת דף התרגום המיועד עבור [[:$1]] אינה תקינה (אולי ארוכה מדי).',
-	'pt-movepage-block-section-exists' => 'דף המקטע המיודע [[:$2]] קיים.',
-	'pt-movepage-block-section-invalid' => 'כותרת דף המקטע המיועד עבור [[:$1]] אינו תקין (אולי ארוך מדי).',
+	'pt-movepage-block-section-exists' => 'דף הקטע המיועד [[:$2]] קיים.',
+	'pt-movepage-block-section-invalid' => 'כותרת דף הקטע המיועד עבור [[:$1]] תהיה בלתי תקינה (אולי ארוך מדי?).',
 	'pt-movepage-block-subpage-exists' => 'דף המשנה המיועד [[:$2]] קיים.',
 	'pt-movepage-block-subpage-invalid' => 'כותרת דף המשנה המיועד עבור [[:$1]] אינה תקינה (אולי ארוכה מדי).',
 	'pt-movepage-list-pages' => 'רשימת הדפים להעביר',
 	'pt-movepage-list-translation' => 'דפי תרגום',
-	'pt-movepage-list-section' => 'דפי מקטע',
+	'pt-movepage-list-section' => 'דפי קטע',
 	'pt-movepage-list-other' => 'דפי משנה אחרים',
 	'pt-movepage-list-count' => 'בסך הכול יש {{PLURAL:$1|דף אחד|$1 דפים}} להעברה.',
 	'pt-movepage-legend' => 'העברת דף שאפשר לתרגום',
@@ -2405,6 +2435,30 @@ $messages['he'] = array(
 	'pt-movepage-started' => 'עכשיו דף הבסיס הועבר.
 נא לבדוק את השגיאות ואת הודעת ההשלמה ב[[Special:Log/pagetranslation|יומן תרגום הדפים]].',
 	'pt-locked-page' => 'הדף הזה נעול כי הדף הניתן לתרגום מועבר כעת.',
+	'pt-deletepage-lang-title' => 'מחיקת דף התרגום $1.',
+	'pt-deletepage-full-title' => 'מחיקת הדף הניתן לתרגום $1.',
+	'pt-deletepage-invalid-title' => 'הדף השצוין אינו תקין.',
+	'pt-deletepage-invalid-text' => 'הדף שצוין אינו דף ניתן לתרגום או תרגום של דף כזה.',
+	'pt-deletepage-action-check' => 'רשימת דפים למחיקה',
+	'pt-deletepage-action-perform' => 'לבצע את המחיקה',
+	'pt-deletepage-action-other' => 'שינוי היעד',
+	'pt-deletepage-lang-legend' => 'מחיקת דף תרגום',
+	'pt-deletepage-full-legend' => 'מחיקת דף ניתן לתרגום',
+	'pt-deletepage-any-legend' => 'מחיקת דף ניתן לתרגום או תרגום של דף כזה',
+	'pt-deletepage-current' => 'שם הדף:',
+	'pt-deletepage-reason' => 'סיבה:',
+	'pt-deletepage-subpages' => 'מחק את כל דפי המשנה',
+	'pt-deletepage-list-pages' => 'רשימת דפים למחיקה',
+	'pt-deletepage-list-translation' => 'דפי תרגום',
+	'pt-deletepage-list-section' => 'דפי קטע',
+	'pt-deletepage-list-other' => 'דפי משנה אחרים',
+	'pt-deletepage-list-count' => 'סך הכול {{PLURAL:$1|דף אחד|$1 דפים}} למחוק.',
+	'pt-deletepage-full-logreason' => 'חלק מהדף הניתן לתרגום $1.',
+	'pt-deletepage-lang-logreason' => 'חלק מדך התרגום $1.',
+	'pt-deletepage-started' => 'נא לבדוק את השגיאות ואת הודעת ההשלמה ב[[Special:Log/pagetranslation|יומן תרגום הדפים]]',
+	'pt-deletepage-intro' => 'הדך המיוחד הזה מאפשר למחוק בשלמותם דפים ניתנים לתרגום או תרגומים שלהם לשפה אחת.
+פעולת המחיקה לא תהיה מידית, כי יש למחוק דפים מרובים.
+הכישלונות יירשמו ב[[Special:Log/pagetranslation|יומן תרגום דפים]] ויהיה צריך לתקן אותם ידנית.',
 );
 
 /** Croatian (Hrvatski)
@@ -5825,21 +5879,75 @@ $messages['zh-hans'] = array(
 	'tpt-templatediff' => '页面模板已改变。',
 	'tpt-diff-old' => '上一个文字',
 	'tpt-diff-new' => '下一个文字',
+	'tpt-submit' => '标记此版本的翻译',
 	'tpt-sections-oldnew' => '新的和现存的翻译单元',
 	'tpt-sections-deleted' => '已删除的翻译模块',
 	'tpt-sections-template' => '翻译页面模版',
 	'tpt-action-nofuzzy' => '不要使翻译作废',
 	'tpt-badtitle' => '页面名称 ($1) 不是一个有效的标题',
 	'tpt-nosuchpage' => '页面$1 不存在。',
+	'tpt-oldrevision' => '$2 不是最新版本的页面 [[$1]]。
+最新版本只可以将标记为翻译。',
+	'tpt-notsuitable' => '页$1不适合翻译。
+请确保它具有 <nowiki><translate></nowiki> 标记，并具有有效的语法。',
+	'tpt-mark-summary' => '标记此版本的翻译',
+	'tpt-edit-failed' => '无法更新该页面：$1',
+	'tpt-already-marked' => '此页面的最新版本已经已标记为翻译。',
+	'tpt-unmarked' => '页 $1 不再被标记为翻译。',
+	'tpt-list-nopages' => '没有页面被标记为翻译，也不愿意被标记为翻译。',
+	'tpt-rev-latest' => '最新版本',
+	'tpt-rev-old' => '标记的以前版本的区别',
+	'tpt-rev-mark-new' => '标记此版本的翻译',
+	'tpt-rev-unmark' => '从翻译中删除此页',
 	'tpt-translate-this' => '翻译此页',
 	'translate-tag-translate-link-desc' => '翻译本页',
+	'translate-tag-markthis' => '标记此页面的翻译',
+	'tpt-translation-intro-fuzzy' => '像这样标记为过时的翻译。',
 	'tpt-languages-legend' => '其他语言：',
+	'tpt-install' => '运行 php maintenance/update.php 或网络安装启用页翻译功能。',
+	'tpt-render-summary' => '要匹配的源页的新版本更新',
 	'tpt-download-page' => '汇出含翻译的页面',
+	'pt-shake-empty' => '空节标记为 $1。',
+	'pt-log-header' => '与有关的网页翻译系统操作日志',
+	'pt-log-name' => '网页翻译日志',
+	'pt-movepage-title' => '移动可翻译页面$1',
+	'pt-movepage-block-base-exists' => '目标基页 [[:$1]] 存在。',
+	'pt-movepage-block-base-invalid' => '目标基页不是一个有效的标题。',
+	'pt-movepage-block-tp-exists' => '目标翻译页 [[:$2]] 存在。',
+	'pt-movepage-list-pages' => '移动到页面的列表',
+	'pt-movepage-list-translation' => '翻译网页',
+	'pt-movepage-list-section' => '第页',
+	'pt-movepage-list-other' => '其他子页面',
+	'pt-movepage-legend' => '移动可翻译页面',
+	'pt-movepage-current' => '当前的名称：',
+	'pt-movepage-new' => '新的名称：',
 	'pt-movepage-reason' => '原因：',
+	'pt-movepage-subpages' => '移动所有子页面',
+	'pt-movepage-action-check' => '检查是否可以移动',
 	'pt-movepage-action-perform' => '确认移动',
 	'pt-movepage-action-other' => '更改目标',
 	'pt-movepage-logreason' => '可翻译页面$1 的部分。',
 	'pt-locked-page' => '此页面已被锁定，因为可翻译页面正在被移动。',
+	'pt-deletepage-lang-title' => '删除翻译网页 $1。',
+	'pt-deletepage-full-title' => '删除可翻译网页 $1。',
+	'pt-deletepage-invalid-title' => '指定的页不是有效的。',
+	'pt-deletepage-invalid-text' => '指定的页不是可翻译页面也的翻译。',
+	'pt-deletepage-action-check' => '要删除的列表页',
+	'pt-deletepage-action-perform' => '不要删除',
+	'pt-deletepage-action-other' => '更改目标',
+	'pt-deletepage-lang-legend' => '删除翻译页面',
+	'pt-deletepage-full-legend' => '删除可翻译页面',
+	'pt-deletepage-any-legend' => '删除可翻译页面或翻译的翻译页面',
+	'pt-deletepage-current' => '页面名称：',
+	'pt-deletepage-reason' => '原因：',
+	'pt-deletepage-subpages' => '删除所有子页面',
+	'pt-deletepage-list-pages' => '若要删除的页面列表',
+	'pt-deletepage-list-translation' => '翻译网页',
+	'pt-deletepage-list-section' => '第页',
+	'pt-deletepage-list-other' => '其他子页面',
+	'pt-deletepage-full-logreason' => '翻译页面的一部分 $1。',
+	'pt-deletepage-lang-logreason' => '翻译页面的一部分 $1。',
+	'pt-deletepage-started' => '请检查 [[Special:Log/pagetranslation|页面翻译日志]] 错误和完成消息。',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
