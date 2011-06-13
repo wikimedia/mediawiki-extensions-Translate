@@ -485,6 +485,10 @@ FOO;
 	protected static function translationPageHeader( Title $title ) {
 		global $wgOut;
 
+		if ( !$title->exists() ) {
+			return;
+		}
+
 		// Check if applicable
 		$page = TranslatablePage::isTranslationPage( $title );
 		if ( $page === false ) {
