@@ -3049,6 +3049,7 @@ En o zouez ar c'hemennadennoù merket evel dispredet.",
 Merket e vez kemennadennoù zo evel dispredet pe peogwir eo bet cheñchet ar gemennadenn orin e saozneg pe peogwir eo bet c'hwitet ar gwiriekadur emgefre.",
 	'translate-nothing-to-do' => "Evit doare eo bet kaset da benn kement troidigezh posupl.
 Broudet oc'h da adwelet ar c'hemennadennoù adal [[Special:Translate|{{int:translate}}]].",
+	'translate-languagestats-overall' => 'An holl strolladoù kemennadennoù war un dro',
 	'supportedlanguages' => 'Yezhoù skoret',
 	'supportedlanguages-summary' => "Diskouez a ra ar bajenn-mañ roll ar yezhoù skoret gant {{SITENAME}} a-gevret gant roll an droerien a labour warno.
 Mar fell deoc'h gouzout hiroc'h a-zivout ur yezh bennak e c'hallit klikañ war porched ar yezh-se.
@@ -3059,11 +3060,9 @@ Ma vank ur yezh bennak er roll e c'hallit kavout penaos kregiñ gant ur raktres 
 Ma troit en ur yezh bennak ha ma ne zeu ket hoc'h anv war wel e c'hallit ouzhpennañ anezhañ war [[:Category:Languages|porched]] ar yezh-se.
 Sellit ouzh al lañser evit al liamm a gas d'ar yezh spisaet ganeoc'h en ho penndibaboù.",
 	'supportedlanguages-translators' => '{{PLURAL:$2|Troer|Troerien}} : $1',
-	'supportedlanguages-noportal-title' => "N'eo termenet esaouenn anv ebet evit ar porchedoù",
-	'supportedlanguages-noportal' => 'N\'eus bet termenet NS_PORTAL ebet gant merour ar wiki. Gant se n\'hall ket ar bajenn-mañ mont en-dro.
-War ar bajenn-mañ e vo gwelet ur roll yezhoù evit an holl borchedoù a glot gant ur yezh resis hag un ispajenn anvet "translators".
-Dre ret emañ en ispajenn "translators" ar patrom [[:{{ns:template}}:User|User]], a gemer un anv implijer da arventenn.',
 	'supportedlanguages-recenttranslations' => 'troidigezhioù ziwezhañ',
+	'supportedlanguages-count' => '$1 {{PLURAL:$1|yezh|yezh}} en holl.',
+	'supportedlanguages-activity' => "$1 : $2 {{PLURAL:$2|c'hemm|kemm}} - kemm diwezhañ $3 {{PLURAL:$3|devezh|devezh}} zo",
 	'translate-save' => 'Enrollañ ($1)',
 	'translate-jssti-add' => "Ouzhpennañ d'ar roll",
 	'managemessagegroups' => 'Merañ ar strollad kemennadennoù',
@@ -7433,7 +7432,7 @@ Isto inclúe as mensaxes que se marcaron como obsoletas.',
 As mensaxes están marcadas como obsoletas porque cambiou a mensaxe orixinal en inglés, ben porque fallou a comprobación automática da mensaxe ou ben porque alguén a marcou como tal.',
 	'translate-nothing-to-do' => 'Semella que todas as traducións posibles foron feitas.
 Animámolo a que revise as mensaxes existentes mediante a páxina especial [[Special:Translate|{{int:translate}}]].',
-	'translate-languagestats-overall' => 'Todos os grupos mensaxes xuntos',
+	'translate-languagestats-overall' => 'Todos os grupos de mensaxes xuntos',
 	'supportedlanguages' => 'Linguas soportadas',
 	'supportedlanguages-summary' => 'Esta páxina amosa unha lista de todas as linguas soportadas por {{SITENAME}}, así como os nomes dos tradutores que traballan nelas.
 Se quere obter máis información sobre unha lingua en concreto, pode premer na ligazón cara ao portal desa lingua.
@@ -13965,7 +13964,7 @@ $messages['nah'] = array(
 	'translate-page-description-legend' => 'Olōltechopa',
 	'translate-page-edit' => 'ticpatlāz',
 	'translate-edit-contribute' => 'titlapalēhuīz',
-	'translate-edit-in-other-languages' => 'Tītlantlahtōlli "$1" occēquīntīn tlahtōlco',
+	'translate-edit-in-other-languages' => 'Tētītlaniliztli "$1" occē tlahtōltica',
 	'translate-magic-cm-export' => 'Ticnamacāz',
 	'translate-magic-cm-to-be' => 'Yez',
 	'translate-magic-cm-current' => 'Āxcān',

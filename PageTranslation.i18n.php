@@ -221,6 +221,7 @@ $3 is an URL.',
 	'pt-movepage-block-section-exists' => 'Section page is a translation of one section. Translation page consists of many translation sections.',
 	'pt-movepage-block-subpage-exists' => 'Subpage is here any subpage of translation page, which is not a translated version of the translatable page.',
 	'pt-movepage-reason' => '{{Identical|Reason}}',
+	'pt-deletepage-reason' => '{{Identical|Reason}}',
 );
 
 /** Afrikaans (Afrikaans)
@@ -686,7 +687,6 @@ ar {{PLURAL:$1|stumm|stummoù}} diwezhañ avat n'hallont ket bezañ merket da ve
 Ur stumm troet eus [[$1]] eo ar bajenn-mañ; gallout a ra bezañ hizivaet en ur implijout [$2 an ostilh treiñ].",
 	'tpt-unknown-page' => "Miret eo an esaouenn anv-mañ evit troidigezh ar pajennoù.
 Ar bajenn hoc'h eus klasket kemm ne seblant ket klotañ gant pajenn ebet bet merket evit bezañ troet.",
-	'tpt-delete-impossible' => "Evit poent n'eo ket posupl dilemel pajennoù merket evit bezañ troet.",
 	'tpt-install' => 'Lañsit php maintenance/update.php pe ar staliadur web evit gweredekaat an treiñ pajennoù.',
 	'tpt-render-summary' => 'Hizivadenn da glotañ gant stumm nevez mammenn ar bajenn',
 	'tpt-download-page' => 'Ezporzhiañ ar bajenn gant an troidigezhioù',
@@ -720,8 +720,8 @@ Testenn ar rannbennad : <pre>$1</pre>",
 	'pt-movepage-list-pages' => 'Roll ar pajennoù da fiñval',
 	'pt-movepage-list-translation' => 'Pajennoù treiñ',
 	'pt-movepage-list-section' => 'Pajennoù e rann',
-	'pt-movepage-list-other' => 'Is-pajennoù all',
-	'pt-movepage-list-count' => '$1 pajenn{{PLURAL:}} da fiñval en holl',
+	'pt-movepage-list-other' => 'Ispajennoù all',
+	'pt-movepage-list-count' => "$1 {{PLURAL:bajenn|pajenn}} da zilec'hiañ en holl.",
 	'pt-movepage-legend' => 'Fiñval ar bajenn da dreiñ',
 	'pt-movepage-current' => 'Anv red :',
 	'pt-movepage-new' => 'Anv nevez :',
@@ -734,10 +734,24 @@ Testenn ar rannbennad : <pre>$1</pre>",
 Ne zeuio ket da wir diouzhtu an adenvel rak ret e vo dilec'hiañ kalz a bajennoù.
 Amzer dilec'hiañ ar pajennoù ne vo ket posupl c'hoari ganto.
 Er [[Special:Log/pagetranslation|page marilh treiñ]] e vo enrollet ar mankoù adenvel; eno e vo deoc'h o reizhañ gant an dorn.",
-	'pt-movepage-logreason' => 'Tennad eus ar bajenn da dreiñ $1.',
+	'pt-movepage-logreason' => 'Rann eus ar bajenn da dreiñ $1.',
 	'pt-movepage-started' => 'Adanvet eo bet ar bajenn diazez.
 Mar plij gwiriit [[Special:Log/pagetranslation|pajenn marilh an troidigezhioù]] evit kempenn ar fazioù, mar bez, ha lenn ar gemennadenn glozañ.',
 	'pt-locked-page' => "Prennet eo ar bajenn-mañ dre m' emeur oc'h adenvel ar bajenn da dreiñ.",
+	'pt-deletepage-invalid-title' => 'Faziek eo ar bajenn spisaet.',
+	'pt-deletepage-action-other' => 'Kemmañ ar moned',
+	'pt-deletepage-lang-legend' => 'Diverkañ ar bajenn dreiñ',
+	'pt-deletepage-full-legend' => "Diverkañ ar bajenn a c'haller treiñ",
+	'pt-deletepage-current' => 'Anv ar bajenn :',
+	'pt-deletepage-reason' => 'Abeg :',
+	'pt-deletepage-subpages' => 'Diverkañ an holl ispajennoù',
+	'pt-deletepage-list-pages' => 'Roll ar pajennoù da ziverkañ',
+	'pt-deletepage-list-translation' => 'Pajennoù treiñ',
+	'pt-deletepage-list-section' => 'Pajennoù e rann',
+	'pt-deletepage-list-other' => 'Ispajennoù all',
+	'pt-deletepage-list-count' => '$1 {{PLURAL:bajenn|pajenn}} da ziverkañ en holl.',
+	'pt-deletepage-full-logreason' => 'Rann eus ar bajenn da dreiñ $1.',
+	'pt-deletepage-lang-logreason' => 'Rann eus ar bajenn da dreiñ $1.',
 );
 
 /** Bosnian (Bosanski)
@@ -3511,7 +3525,6 @@ awer déi lescht Versioun kann fir d'Iwwersetzung markéiert ginn.",
 Dës Säit ass eng Iwwersetzung vun der Säit [[$1]] an d'Iwwersetzung ka mat Hëllef vun der [$2 Iwwersetzungs-Fonctioun] aktulaiséiert ginn.",
 	'tpt-unknown-page' => "Dëse Nummraum ass fir d'Iwwersetze vu Säitemat Inhalt reservéiert.
 D'Säit, déi Dir versicht z'änneren schéngt net mat enger Säit déi fir d'iwwersetzung markéiert ass ze korrespondéieren.",
-	'tpt-delete-impossible' => "D'Läsche vu Säiten, déi fir d'Iwwersetzung markéiert sinn, ass bis elo net méiglech.",
 	'tpt-install' => "Lancéiert php maintenance/update.php oder web install fir d'Fonctioun vun der Säiteniwwersetzung anzeschalten.",
 	'tpt-render-summary' => 'Aktualiséieren fir mat der neier Versioun vun der Quellsäit iwwereneenzestëmmen',
 	'tpt-download-page' => 'Säit mat Iwwersetzungen exportéieren',
@@ -3564,6 +3577,11 @@ Wann et net fonctionnéiert gëtt dat am [[Special:Log/pagetranslation|Iwwersetz
 	'pt-movepage-started' => "D'Basissäit ass elo geréckelt.
 Kuckt w.e.g. d'[[Special:Log/pagetranslation|Logbuch vun den Iwwersetzunge]] fir Feelermeldungen respektiv d'Meldung datt alles ok ass.",
 	'pt-locked-page' => 'Dës Säit ass gespaart wëll déi iwwersetzbar Säit elo geréckelt gëtt.',
+	'pt-deletepage-action-check' => 'Lëscht vun de Säiten déi geläscht solle ginn',
+	'pt-deletepage-action-perform' => 'Elo läschen',
+	'pt-deletepage-current' => 'Numm vun der Säit:',
+	'pt-deletepage-reason' => 'Grond:',
+	'pt-deletepage-subpages' => 'All Ënnersäite läschen',
 );
 
 /** Ganda (Luganda)
