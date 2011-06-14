@@ -809,6 +809,8 @@ Mirror Tools
 Mobile Frontend
 descmsg = mobile-frontend-desc
 
+Mood Bar
+
 Most Revisors
 aliasfile = MostRevisors/MostRevisors.alias.php
 ignored = mostrevisors-limit-few-revisors
