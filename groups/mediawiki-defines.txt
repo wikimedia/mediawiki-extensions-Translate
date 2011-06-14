@@ -709,6 +709,7 @@ Latex Doc
 Ldap Authentication
 
 Lingo
+magicfile = Lingo/Lingo.i18n.magic.php
 
 Link OpenID
 optional = linkopenid-prefs, linkopenid-prefstext-xrdsurl
