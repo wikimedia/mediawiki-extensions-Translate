@@ -906,6 +906,8 @@ Open Search Xml
 Open Stack Manager
 aliasfile = OpenStackManager/OpenStackManager.alias.php
 
+Oracle Text Search
+
 Other Sites
 
 Package Force
