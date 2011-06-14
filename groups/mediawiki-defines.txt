@@ -920,6 +920,8 @@ Page By
 
 Page Object Model
 
+Page Schemas
+
 Paged Tiff Handler
 descmsg = tiff-desc
 
