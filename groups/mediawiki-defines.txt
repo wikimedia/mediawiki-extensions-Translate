@@ -675,7 +675,7 @@ file = intersection/DynamicPageList.i18n.php
 
 Interwiki
 aliasfile = Interwiki/Interwiki.alias.php
-optional = interwiki-defaulturl, interwiki_url, interwiki-url-label
+optional = interwiki_url, interwiki-url-label
 ignored = interwiki_logentry, interwiki-defaulturl
 
 # 2010-06-22: Disabled for the moment. Under heavy construction
