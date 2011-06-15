@@ -6689,12 +6689,9 @@ Si une langue n'est pas répertoriée, vous pouvez trouver la façon de démarre
 Si vous traduisez dans une langue et votre nom ne figure pas, veuillez ajouter votre nom à la liste des traducteurs dans le [[:Category:Languages|portail]] de cette langue.
 Voyez la barre de menu pour un lien vers le portail de la langue de vos préférences.",
 	'supportedlanguages-translators' => '{{PLURAL:$2|Traducteur|Traducteurs}} : $1',
-	'supportedlanguages-noportal-title' => 'Espace de noms « Portail » non défini',
-	'supportedlanguages-noportal' => "L'administrateur du wiki n'a pas défini NS_PORTAL, donc cette page ne peut pas fonctionner.
-Sur cette page apparaitront une liste de language pour tous les portails correspondant à une langue définie et une sous-page appelée « translators ».
-La sous-page « translators » doit contenir le modèle [[:{{ns:template}}:User|User]] qui prend un nom d'utilisateur comme paramètre.",
 	'supportedlanguages-recenttranslations' => 'traductions récentes',
 	'supportedlanguages-count' => '$1 {{PLURAL:$1|langue|langues}} au total.',
+	'supportedlanguages-activity' => '$1 : $2 modification{{PLURAL:$2||s}} - Dernière modification il y a $3 jour{{PLURAL:$3||s}}',
 	'translate-save' => 'Publier ($1)',
 	'translate-jssti-add' => 'Ajouter à la liste',
 	'managemessagegroups' => 'Gestion du groupe des messages',
@@ -14367,7 +14364,7 @@ Zie de menubalk voor een verwijzing naar het portaal voor uw voorkeurstaal.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Vertaler|Vertalers}}: $1',
 	'supportedlanguages-recenttranslations' => 'recente vertalingen',
 	'supportedlanguages-count' => '$1 {{plural:$1|taal|talen}} in totaal.',
-	'supportedlanguages-activity' => '$1: $2 {{PLURAL:$2|bewerking|bewerkingen}} - laatste bewerking $3 {{PLURAL:$3|dag|dagen}} geleden',
+	'supportedlanguages-activity' => '$1: $2 {{PLURAL:$2|bewerking|bewerkingen}} - laatste bewerking {{PLURAL:$3|gisteren|$1 dagen}} geleden',
 	'translate-save' => 'Opslaan ($1)',
 	'translate-jssti-add' => 'Aan lijst toevoegen',
 	'managemessagegroups' => 'Berichtengroepen beheren',
