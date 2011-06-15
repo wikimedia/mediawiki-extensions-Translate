@@ -103,6 +103,7 @@ GROUPS:
   - ext-variablepage
   - ext-vector
   - ext-wikieditor
+  - ext-wikilove # r90124
   - ext-wikihiero
   - ext-wikimedialicensetexts # commons.wikimedia.org
   - ext-wikimediamessages
