@@ -574,7 +574,14 @@ class SpecialPageTranslation extends SpecialPage {
 	}
 
 	public function setupRenderJobs( TranslatablePage $page ) {
+		global $wgContLang;
 		$titles = $page->getTranslationPages();
+
+		# If this page is marked for the first time, /en may not yet exists
+		# TODO: make sure there will be no two render jobs for the same subpage
+		$en = Title::newFromText( $page->getTitle()->getPrefixedText() . '/' . $wgContLang->getCode() );
+		$titles[] = $en;
+		
 		$jobs = array();
 
 		foreach ( $titles as $t ) {
