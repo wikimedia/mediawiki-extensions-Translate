@@ -378,15 +378,14 @@ $messages['bs'] = array(
 	'bw-desc-freecol' => 'Prije nego što počnete da prevodite FreeCol na Vaš jezik, molimo pročitajte [[Translating:FreeCol]]. FreeCol koristi GPL licencu.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], web forum napisan u PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] je slobodni sistem praćenja grešaka zasnovan na webu. Molimo prijavite svaku grešku na stranicu [[Support]].',
+	'translate-group-desc-eol' => 'Grupa poruka za [[Translating:EOL|Enciklopediju života]]',
 	'translate-group-desc-ihris' => 'Grupa poruka za [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-common' => 'Grupa poruka za [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], modul od [[Translating:iHRIS|iHRISa]]',
 	'translate-group-desc-ihris-i2ce' => 'Grupa poruka za [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], modul od [[Translating:iHRIS|iHRISa]]',
 	'translate-group-desc-ihris-manage' => 'Grupa poruka od [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], modul od [[Translating:iHRIS|iHRISa]]',
 	'translate-group-desc-ihris-qualify' => 'Grupa poruka za [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]], modul od [[Translating:iHRIS|iHRISa]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'Plugin jezgre za [[Translating:MantisBT|MantisBT]]',
-	'translate-group-desc-mediawiki-core-115' => 'Poruke za stabilnu verziju 1.15 [[Translating:MediaWiki|MediaWiki]]ja',
-	'translate-group-desc-mediawiki-core-116' => 'Poruke za stabilnu verziju 1.16 [[Translating:MediaWiki|MediaWiki]]ja',
-	'translate-group-desc-mediawiki-core-117' => 'Poruke za stabilnu verziju 1.17 [[Translating:MediaWiki|MediaWiki]]ja',
+	'translate-group-desc-mediawiki-core-branch' => 'Poruke za stabilnu verziju [[Translating:MediaWiki|MediaWiki]]ja',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] je upravljački informacioni sistem za mikrofinansiranje',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' je python biblioteka za pisanje PDF dokumenata iz MediaWiki članaka koji su obrađeni putem mwlib biblioteke.
 

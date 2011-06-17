@@ -2720,8 +2720,8 @@ $messages['bn'] = array(
 	'translate-task-untranslated' => 'অনুবাদ হয়নি এমন সব বার্তা',
 	'translate-task-review' => 'পরিবর্তনসমূহ পুনর্বিবেচনা',
 	'translate-task-reviewall' => 'সমস্ত অনুবাদ পুনর্বিবেচনা',
-	'translate-task-export' => 'অনুবাদসমুহ প্রেরণ',
-	'translate-task-export-to-file' => 'অনুবাদসমূহ ফাইলে প্রেরণ',
+	'translate-task-export' => 'অনুবাদ রফতানি',
+	'translate-task-export-to-file' => 'অনুবাদসমূহ ফাইলে রফতানি',
 	'translate-page-settings-legend' => 'সেটিং',
 	'translate-page-task' => 'আমি চাই',
 	'translate-page-group' => 'দল',
@@ -2738,6 +2738,7 @@ $messages['bn'] = array(
 	'translate-optional' => '(ঐচ্ছিক)',
 	'translate-ignored' => '(উপেক্ষিত)',
 	'translate-edit-title' => 'সম্পাদনা "$1"',
+	'translate-edit-translation' => 'অনুবাদ',
 	'translate-edit-contribute' => 'অবদান',
 	'translate-edit-tmmatch' => '$1% মিল রয়েছে',
 	'translate-edit-tab-list' => 'বার্তা তালিকা',
@@ -2750,6 +2751,7 @@ $messages['bn'] = array(
 	'translate-magic-cm-save' => 'সংরক্ষণ',
 	'translate-magic-cm-savefailed' => 'সংরক্ষণ ব্যর্থ',
 	'translate-magic-namespace' => 'নেমস্পেসের নাম',
+	'translationchanges' => 'অনুবাদ পরিবর্তনসমূহ',
 	'translationchanges-export' => 'রপ্তানি',
 	'translate-pref-editassistlang' => 'সহযোগী ভাষা:',
 	'translate-rc-translation-filter-no' => 'কিছু করা হবে না',
@@ -2774,6 +2776,10 @@ $messages['bn'] = array(
 	'translate-translations-project' => 'প্রকল্প:',
 	'languagestats' => 'ভাষার পরিসংখ্যান',
 	'languagestats-recenttranslations' => 'সাম্প্রতিক অনুবাদ',
+	'translate-langstats-expand' => 'প্রসারণ',
+	'translate-langstats-collapse' => 'সংকোচন',
+	'translate-langstats-expandall' => 'সকল প্রসারণ',
+	'translate-langstats-collapseall' => 'সকল সংকোচন',
 	'translate-language-code' => 'ভাষার কোড',
 	'translate-language-code-field-name' => 'ভাষার কোড:',
 	'translate-language' => 'ভাষা',
@@ -2787,6 +2793,7 @@ $messages['bn'] = array(
 	'translate-jssti-add' => 'তালিকায় যোগ করো',
 	'translate-manage-groups' => 'দল ব্যবস্থাপনা',
 	'translate-managegroups' => 'দল ব্যবস্থাপনা',
+	'translate-manage-action-import' => 'আমদানি',
 	'translate-manage-action-ignore' => 'উপেক্ষা',
 	'translate-manage-import-done' => 'সমস্ত সম্পন্ন!',
 	'translate-js-skip' => 'বাতিল ও পরবর্তী',
@@ -3341,6 +3348,7 @@ Ovo uključuje poruke koje su označene kao neažurne.',
 Poruke su označene kao zastarijele jer se promijenila izvorna poruka na engleskom jeziku, jer nije uspjela automatska provjera poruke ili je neko označio poruku zastarijelom.',
 	'translate-nothing-to-do' => 'Izgleda da su napravljeni svi mogući prijevodi.
 Savjetujemo Vam da izvršite pregled poruke preko [[Special:Translate|{{int:translate}}]].',
+	'translate-languagestats-overall' => 'Sve grupe poruka zajedno',
 	'supportedlanguages' => 'Podržani jezici',
 	'supportedlanguages-summary' => 'Ova stranica prikazuje spisak svih jezika podržanih na {{SITENAME}}, zajedno sa imenima prevodioca koji rade na tom jeziku.
 Ako želite više podataka o pojedinom jeziku, možete kliknuti na link portala tog jezika.
@@ -3351,11 +3359,9 @@ Ako jezik nije naveden, možete potražiti kako možete početi lokalizacijski p
 Ako prevodite na određeni jezik, a vaše ime nije prikazano, molimo dodajte vaše ime na spisak prevodioca na [[:Category:Languages|portal]] za taj jezik.
 Pogledajte traku menija za link na portal za jezik koji ste naveli u svojim postavkama.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Prevodioc|Prevodioci}}: $1',
-	'supportedlanguages-noportal-title' => 'Nije definiran imenski prostor portala',
-	'supportedlanguages-noportal' => "Wiki administrator nije definirao NS_PORTAL, tako da ova stranica ne radi.
-Na ovoj stranici će se pojaviti spisak jezičkih portala za sve portale koje se odnose na definirani jezički kod i podstranica nazvana ''prevodioci''.
-Podstranica ''prevodioci'' mora sadržavati šablon [[:{{ns:template}}:User|User]], koristeći korisničko ime kao parametar.",
 	'supportedlanguages-recenttranslations' => 'nedavni prevodi',
+	'supportedlanguages-count' => '$1 {{PLURAL:$1|jezik|jezika}} ukupno.',
+	'supportedlanguages-activity' => '$1: $2 {{PLURAL:$2|izmjena|izmjene}} - posljednja izmjena prije $3 {{PLURAL:$3|dan|dana}}',
 	'translate-save' => 'Spremi ($1)',
 	'translate-jssti-add' => 'Dodaj na spisak',
 	'managemessagegroups' => 'Upravljanje grupama poruka',
@@ -3437,6 +3443,10 @@ Detalji: $1',
 	'translate-gs-total' => 'Ukupno',
 	'translate-gs-avgscore' => 'Prosj. rezultat',
 	'translate-documentation-language' => 'Dokumentacija poruke',
+	'translate-searchprofile' => 'Prijevodi',
+	'translate-searchprofile-tooltip' => 'Traženje iz svih prevoda',
+	'translate-search-languagefilter' => 'Filtriranje po jeziku:',
+	'translate-search-nofilter' => 'Bez filtriranja',
 );
 
 /** Buginese (ᨅᨔ ᨕᨘᨁᨗ)
@@ -18275,12 +18285,9 @@ S klikom na ime prevajalca boste prišli na njegovo uporabniško stran.
 Če prevajate v jezik in vaše ime ni vključeno, ga, prosimo, dodajte na seznam prevajalcev na [[:Category:Languages|portalu]] tega jezika.
 Oglejte si stransko vrstico za povezavo do portala jezika, določenega v vaših nastavitvah.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Prevajalec|Prevajalca|Prevajalci}}: $1',
-	'supportedlanguages-noportal-title' => 'Določen ni noben imenski prostor portala',
-	'supportedlanguages-noportal' => 'Administrator wikija ni opredelil NS_PORTAL, zato ta stran ne deluje.
-Na tej stran bo prikazan seznam jezikovnih portalov za vse portale z določeno kodo jezika in podstranjo imenovano »translators«.
-Podstran »translators« mora vsebovati predlogo [[:{{ns:template}}:User|User]], ki kot parameter sprejme uporabniško ime.',
 	'supportedlanguages-recenttranslations' => 'nedavni prevodi',
 	'supportedlanguages-count' => '$1 {{PLURAL:$1|jezik|jezika|jeziki|jezikov}} skupno.',
+	'supportedlanguages-activity' => '$1: $2 {{PLURAL:$2|urejanje|urejanji|urejanja|urejanj}} – zadnje urejanje pred $3 {{PLURAL:$3|dnem|dnema|dnemi}}',
 	'translate-save' => 'Shrani ($1)',
 	'translate-jssti-add' => 'Dodaj na seznam',
 	'managemessagegroups' => 'Upravljanje skupin sporočil',
@@ -18421,7 +18428,7 @@ $messages['sr-ec'] = array(
 	'translate-talk' => 'разговор',
 	'translate-history' => 'историја',
 	'translate-showsub' => 'прикажи {{PLURAL:$1|подгрупу|$1 подгрупе|$1 подгрупа}}',
-	'translate-grouplisting' => 'Ово је списак свих преводивих група порука.
+	'translate-grouplisting' => 'Ово је списак свих група порука које се могу превести.
 Кликните на назив групе да бисте видели списак непреведених порука.',
 	'translate-task-view' => 'све поруке',
 	'translate-task-untranslated' => 'све непреведене поруке',
@@ -18434,7 +18441,7 @@ $messages['sr-ec'] = array(
 	'translate-task-export' => 'извоз превода',
 	'translate-task-export-to-file' => 'извоз превода у датотеку',
 	'translate-task-export-as-po' => 'извоз превода за превођење ван мреже',
-	'translate-task-export-to-xliff' => 'извоз превода у Xliff формату',
+	'translate-task-export-to-xliff' => 'извоз превода у формату Xliff',
 	'translate-page-no-such-language' => 'Изабрани језик није исправан.',
 	'translate-page-no-such-task' => 'Изабрани задатак није исправан.',
 	'translate-page-no-such-group' => 'Изабрана група није исправна.',
@@ -18528,11 +18535,11 @@ $messages['sr-ec'] = array(
 	'translate-checks-prefs' => 'Сукоби порука са $1. Ове поруке не смеју бити исте.',
 	'translate-pref-nonewsletter' => 'Не шаљи ми билтене преко е-поште',
 	'translate-pref-editassistlang' => 'Помоћни језици:',
-	'prefs-translate' => 'Поставке превода',
+	'prefs-translate' => 'Могућности превода',
 	'translate-pref-editassistlang-help' => 'Списак језичких кодова који су одвојени зарезом.
 Превод поруке у овим језицима приказан је у току превођења.
 Подразумевани списак језика зависи од вашег језика.',
-	'translate-pref-editassistlang-bad' => 'Неисправан језички кôд на списку:
+	'translate-pref-editassistlang-bad' => 'Неисправан језички код на списку:
 <nowiki>$1</nowiki>.',
 	'translate-pref-jsedit' => 'Проширени уређивач превода',
 	'right-translate' => 'уређивање путем преводилачког сучеља',
@@ -18605,7 +18612,7 @@ $messages['sr-ec'] = array(
 	'translate-nothing-to-do' => "Изгледа да су све поруке преведене.
 Можете их прегледати на страници ''[[Special:Translate|{{int:translate}}]]''.",
 	'supportedlanguages' => 'Подржани језици',
-	'supportedlanguages-summary' => "Ова страница приказује списак свих подржаних језика на овој викији, заједно с именима преводиоца који раде на тим језицима.
+	'supportedlanguages-summary' => "Ова страница приказује списак свих подржаних језика на овом викију, заједно с именима преводиоца који раде на тим језицима.
 Ако желите више података о одређеном језику, кликните на везу портала.
 Када кликнете на име преводиоца, то ће вас одвести на његову/њену корисничку страницу.
 
@@ -18614,10 +18621,6 @@ $messages['sr-ec'] = array(
 Уколико сте активан преводилац, додајте своје име на списак преводилаца у [[:Category:Languages|порталу]].
 Погледајте бочну палету на којој се налази веза ка порталу вашег језика који сте наместили у подешавањима.",
 	'supportedlanguages-translators' => '{{PLURAL:$2|Преводилац|Преводиоци}}: $1',
-	'supportedlanguages-noportal-title' => 'Именски простор портала није одређен.',
-	'supportedlanguages-noportal' => "Администратор викије није одредио NS_PORTAL, зато ова страница не ради.
-На овој страници се налази списак језичких портала који одговарају свим порталима с одређеним језичким кодом и подстраницом ''translators''.
-Подстраница ''translators'' мора садржати шаблон ''[[:{{ns:template}}:User|User]]'', узимајући корисничко име као параметар.",
 	'supportedlanguages-recenttranslations' => 'скорашњи преводи',
 	'translate-save' => 'Сачувај ($1)',
 	'translate-jssti-add' => 'Додај на списак',
@@ -18710,82 +18713,131 @@ $1',
  */
 $messages['sr-el'] = array(
 	'translate' => 'Prevod',
-	'translate-desc' => '[[Special:Translate|Specijalna strana]] za prevođene MedijaVikija i ostalog',
+	'translate-desc' => '[[Special:Translate|Posebna stranica]] za prevođenje Medijavikija',
 	'translate-edit' => 'uredi',
 	'translate-talk' => 'razgovor',
 	'translate-history' => 'istorija',
-	'translate-task-view' => 'Prikaz svih poruka od',
-	'translate-task-untranslated' => 'Prikaz svih neprevedenih poruka od',
-	'translate-task-optional' => 'Prikaz neobaveznih poruka od',
-	'translate-task-untranslatedoptional' => 'Prikaz neprevedenih neobaveznih poruka od',
-	'translate-task-problematic' => 'Prikaz poruka sa problemima',
-	'translate-task-review' => 'Pregled promena do',
-	'translate-task-reviewall' => 'Pregled svih prevedenih poruka u',
-	'translate-task-export' => 'Izvoz prevoda od',
-	'translate-task-export-to-file' => 'Izvoz prevoda u fajl od',
-	'translate-task-export-as-po' => 'Izvoz prevoda u Gettext formatu',
-	'translate-task-export-to-xliff' => 'Izvoz prevoda u Xliff formatu',
-	'translate-page-no-such-language' => 'Izabrani jezik nije bio validan.',
-	'translate-page-no-such-task' => 'Izabrani zadatak nije bio validan.',
-	'translate-page-no-such-group' => 'Izabrana grupa nije bila validna.',
-	'translate-page-disabled' => "Prevodi za ovaj jezik u ovoj grupi su bili onemogućeni.
+	'translate-showsub' => 'prikaži {{PLURAL:$1|podgrupu|$1 podgrupe|$1 podgrupa}}',
+	'translate-grouplisting' => 'Ovo je spisak svih grupa poruka koje se mogu prevesti.
+Kliknite na naziv grupe da biste videli spisak neprevedenih poruka.',
+	'translate-task-view' => 'sve poruke',
+	'translate-task-untranslated' => 'sve neprevedene poruke',
+	'translate-task-optional' => 'neobavezne poruke',
+	'translate-task-suggestions' => 'poruke s predlozima iz prevodilačke memorije',
+	'translate-task-untranslatedoptional' => 'neprevedene neobavezne poruke',
+	'translate-task-problematic' => 'problematične poruke',
+	'translate-task-review' => 'pregled promena',
+	'translate-task-reviewall' => 'pregled svih prevedenih poruka',
+	'translate-task-export' => 'izvoz prevoda',
+	'translate-task-export-to-file' => 'izvoz prevoda u datoteku',
+	'translate-task-export-as-po' => 'izvoz prevoda za prevođenje van mrežeмреже',
+	'translate-task-export-to-xliff' => 'izvoz prevoda u formatu Xliff',
+	'translate-page-no-such-language' => 'Izabrani jezik nije ispravan.',
+	'translate-page-no-such-task' => 'Izabrani zadatak nije ispravan.',
+	'translate-page-no-such-group' => 'Izabrana grupa nije ispravna.',
+	'translate-page-disabled' => "Prevodi za ovaj jezik u ovoj grupi su onemogućeni.
 Razlog:
 
 ''$1''",
-	'translate-page-settings-legend' => 'Podešavanja',
-	'translate-page-task' => 'Želim da',
-	'translate-page-group' => 'Grupa',
-	'translate-page-language' => 'Jezik',
-	'translate-page-limit' => 'Granica',
-	'translate-page-limit-option' => '$1 {{PLURAL:$1|poruka|poruke|poruka}} po strani',
+	'translate-page-settings-legend' => 'Postavke',
+	'translate-page-task' => 'Prikaz:',
+	'translate-page-group' => 'Grupa:',
+	'translate-page-group-tooltip' => 'Naziv grupe poruka.
+Ako se grupa sastoji od podskupa ili nadskupa poruka iz ostalih grupa, prikazano je podebljano.',
+	'translate-page-language' => 'Jezik:',
+	'translate-page-limit' => 'Ograničenje:',
+	'translate-page-limit-option' => '$1 {{PLURAL:$1|poruka|poruke|poruka}} po stranici',
 	'translate-submit' => 'Dobavi',
 	'translate-page-navigation-legend' => 'Navigacija',
 	'translate-page-showing' => 'Prikaz poruka od $1 do $2, od $3.',
-	'translate-page-showing-all' => 'Prikaz $1 {{PLURAL:$1|poruke|poruka}}.',
-	'translate-page-showing-none' => 'Nema poruka u prikazu.',
-	'translate-next' => 'Sledeća strana',
-	'translate-prev' => 'Prethodna strana',
-	'translate-page-description-legend' => 'Informacije o grupi',
-	'translate-page-edit' => 'izmeni',
+	'translate-page-showing-all' => 'Prikaz $1 {{PLURAL:$1|poruke|poruke|poruka}}.',
+	'translate-page-showing-none' => 'Nema poruka.',
+	'translate-next' => 'Sledeća stranica',
+	'translate-prev' => 'Prethodna stranica',
+	'translate-page-description-legend' => 'Podaci o grupi',
+	'translate-page-edit' => 'uredi',
+	'translate-ext-url' => '<hr />Adresa: $1',
 	'translate-optional' => '(neobavezno)',
-	'translate-ignored' => '(ignorisano)',
-	'translate-edit-definition' => 'Definicija poruke',
+	'translate-ignored' => '(zanemareno)',
+	'translate-edit-title' => 'Uređivanje „$1“',
+	'translate-edit-definition' => 'Značenje poruke',
+	'translate-edit-translation' => 'Prevod',
 	'translate-edit-contribute' => 'doprinesi',
-	'translate-edit-no-information' => "''Ova poruka nema prateću dokumentaciju.
-Ako znate gde se i kako koristi, možete pomoći ostalim prevodiocima dodavanjem njenog opisa.''",
+	'translate-edit-no-information' => "''Ova poruka nema prateću dokumentaciju.''
+''Ako znate gde se i kako koristi, pomozite drugim prevodiocima dodavanjem njenog opisa.''",
 	'translate-edit-information' => 'Podaci o poruci ($1)',
-	'translate-edit-in-other-languages' => 'Poruka „$1“ na drugim jezicima',
-	'translate-edit-committed' => 'Trenutni prevod u softveru',
-	'translate-edit-warnings' => 'Napomene o nekompletnim prevodima',
-	'translate-magic-pagename' => 'Proširen prevod MedijaVikija',
+	'translate-edit-in-other-languages' => 'Poruka na drugim jezicima',
+	'translate-edit-committed' => 'Tekući prevod u softveru',
+	'translate-edit-warnings' => 'Napomene o nepotpunim prevodima',
+	'translate-edit-tmsugs' => 'Predlozi iz prevodilačke memorije',
+	'translate-edit-tmmatch' => '$1% poklapanja',
+	'translate-use-suggestion' => 'Unesite ovaj predlog u prevodilački okvir. Ovo zamenjuje sav sadržaj.',
+	'translate-edit-tab-list' => 'Spisak poruka',
+	'translate-magic-pagename' => 'Prošireni prevod Medijavikija',
+	'translate-magic-help' => 'Možete prevesti kodove za posebne stranice, magične reči i imenske prostore.
+
+Kodovi za posebne stranice i magične reči mogu imati više prevoda.
+Prevodi su odvojeni zarezom.
+Imenski prostori mogu imati samo jedan prevod.
+
+U prevodima imenskih prostora, <code>$1 razgovor</code> je poseban. <code>$1</code> je zamenjen s nazivom sajta (npr. <code>{{ns:project_talk}}</code>).
+Ako na vašem jeziku nije moguće formirati ispravan izraz bez menjanja naziv sajta, kontaktirajte programera.
+
+Morate biti prevodilac da biste sačuvali izmene.
+To ćete uraditi klikom na dugme „Sačuvaj“ koje se nalazi ispod.',
 	'translate-magic-module' => 'Modul:',
-	'translate-magic-cm-export' => 'Izvoz',
-	'translate-magic-cm-current' => 'Trenutno',
-	'translate-magic-cm-original' => 'Original',
+	'translate-magic-submit' => 'Dobavi',
+	'translate-magic-cm-export' => 'Izvezi',
+	'translate-magic-nothing-to-export' => 'Nema ništa za izvoz.',
+	'translate-magic-cm-to-be' => 'Buduće',
+	'translate-magic-cm-current' => 'Tekuće',
+	'translate-magic-cm-original' => 'Izvorno',
 	'translate-magic-cm-comment' => 'Komentar:',
 	'translate-magic-cm-save' => 'Sačuvaj',
-	'translate-magic-cm-updatedusing' => 'Aktuelizovano korišćenjem [[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]]',
-	'translate-magic-cm-savefailed' => 'Promene nisu zapamćene',
-	'translate-magic-special' => 'Kodovi za specijalne strane',
-	'translate-magic-words' => 'Magične reči',
-	'translate-magic-namespace' => 'Nazivi imenskih prostora',
-	'translationchanges' => 'Promene prevoda',
-	'translationchanges-export' => 'izvoz',
+	'translate-magic-cm-updatedusing' => "Ažurirano koristeći ''[[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]]''",
+	'translate-magic-cm-savefailed' => 'Izmene nisu sačuvane.',
+	'translate-magic-special' => 'kodovi za posebne stranice',
+	'translate-magic-words' => 'magične reči',
+	'translate-magic-namespace' => 'nazivi imenskih prostora',
+	'translate-magic-notsaved' => 'Vaša izmena nije sačuvana!',
+	'translate-magic-errors' => 'Ispravite {{PLURAL:$1|sledeću grešku|sledeće greške}} u prevodima:',
+	'translate-magic-saved' => 'Vaše izmene su sačuvane.',
+	'translationchanges' => 'Izmene prevoda',
+	'translationchanges-export' => 'izvezi',
 	'translationchanges-change' => '$1: $2 od $3',
-	'translate-checks-parameters' => 'Sledeći {{PLURAL:$2|paramatar se ne koristi|parametri se ne koriste}}: <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters' => 'Sledeći {{PLURAL:$2|parametar se ne koristi|parametri se ne koriste}}:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => 'Sledeći {{PLURAL:$2|parametar je nepoznat|parametri su nepoznati}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Prisutan je neparan broj {{PLURAL:$2|zagrada|zagrada}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '{{PLURAL:$2|Sledeća veza je problematična|Sledeće $2 veze su problematične|Sledećih $2 veza je problematično}}:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-xhtml' => 'Molimo Vas, zamenite {{PLURAL:$2|sledeći tag|sledeće tagove}} ispravnim:
+	'translate-checks-links-missing' => '{{PLURAL:$2|Sledeća veza nedostaje|Sledeće $2 veze nedostaju|Sledećih $2 veza nedostaju}}:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-plural' => 'Definicija koristi <nowiki>{{PLURAL:}}</nowiki>, ali translacija ne.',
-	'translate-checks-format' => 'Ovaj prevod nema formu definicije ili ima sintaksnih grešaka: $1',
-	'prefs-translate' => 'Opcije prevoda',
-	'translate-rc-translation-filter-no' => 'Ne radi ništa',
-	'translate-rc-translation-filter-only' => 'Prikaži samo prevode',
+	'translate-checks-xhtml' => 'Zamenite {{PLURAL:$2|sledeću oznaku|sledeće oznake}} s ispravnim:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-plural' => 'Značenje koristi <nowiki>{{PLURAL:}}</nowiki>, a prevod ne.',
+	'translate-checks-pagename' => 'Imenski prostor je promenjen iz značenja',
+	'translate-checks-format' => 'Ovaj prevod nema značenjsku formu ili ima neispravnu sintaksu: $1',
+	'translate-checks-escape' => 'Sledeći izlazi mogu biti slučajni: <strong>$1</strong>',
+	'translate-checks-fudforum-syntax' => 'Koristi <nowiki>$1</nowiki> umesto <nowiki>$2</nowiki> u ovom projektu.',
+	'translate-checks-prefs' => 'Sukobi poruka sa $1. Ove poruke ne smeju biti iste.',
+	'translate-pref-nonewsletter' => 'Ne šalji mi biltene preko e-pošte',
+	'translate-pref-editassistlang' => 'Pomoćni jezici:',
+	'prefs-translate' => 'Mogućnosti prevoda',
+	'translate-pref-editassistlang-help' => 'Spisak jezičkih kodova koji su odvojeni zarezom.
+Prevod poruke u ovim jezicima prikazan je u toku prevođenja.
+Podrazumevani spisak jezika zavisi od vašeg jezika.',
+	'translate-pref-editassistlang-bad' => 'Неисправан језички кoд на списку:
+<nowiki>$1</nowiki>.',
+	'translate-pref-jsedit' => 'Prošireni uređivač prevoda',
+	'right-translate' => 'uređivanje putem prevodilačkog sučelja',
+	'right-translate-manage' => 'upravljanje prevodilačkim grupama',
+	'right-translate-import' => 'uvoženje vanmrežnih prevoda',
+	'translate-rc-translation-filter' => 'Svrstavanje prevoda:',
+	'translate-rc-translation-filter-no' => 'ne radi ništa',
+	'translate-rc-translation-filter-only' => 'prikaži samo prevode',
 	'translate-rc-translation-filter-filter' => 'Isfiltriraj prevode',
 	'translationstats' => 'Statistike prevođenja',
 	'translate-stats-edits' => 'Izmene',
@@ -18834,6 +18886,14 @@ Sve vrednosti imaju svoja gornja i donja ograničenja.',
 	'translate-nothing-to-do' => 'Izgleda da su sve poruke prevedene.
 Ipak bi možda bilo dobro da ih pregledate na [[Special:Translate|{{int:translate}}]].',
 	'supportedlanguages' => 'Podržani jezici',
+	'supportedlanguages-summary' => "Ова страница приказује списак свих подржаних језика на овом викију, заједно с именима преводиоца који раде на тим језицима.
+Ако желите више података о одређеном језику, кликните на везу портала.
+Када кликнете на име преводиоца, то ће вас одвести на његову/њену корисничку страницу.
+
+Ако ваш језик није на списку, прочитајте како да започнете локализацију на страници ''[[Translating:Process|Нови језик]]''.
+
+Уколико сте активан преводилац, додајте своје име на списак преводилаца у [[:Category:Languages|порталу]].
+Погледајте бочну палету на којој се налази веза ка порталу вашег језика који сте наместили у подешавањима.",
 	'translate-save' => 'Snimi ($1)',
 	'translate-jssti-add' => 'Dodaj na spisak',
 	'translate-manage-cacheat' => 'Uvezeno $1, u $2',
