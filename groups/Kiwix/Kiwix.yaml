@@ -1,0 +1,17 @@
+---
+BASIC:
+  id: out-kiwix
+  label: Kiwix
+  description: "{{int:translate-group-desc-kiwix}}"
+  namespace: NS_KIWIX
+  display: out/kiwix/
+  class: FileBasedMessageGroup
+
+FILES:
+  class: JavaFFS
+  sourcePattern: %GROUPROOT%/kiwix/%CODE%
+  targetPattern: kiwix/%CODE%
+
+TAGS:
+  optional:
+    - *.accesskey

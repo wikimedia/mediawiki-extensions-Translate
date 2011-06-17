@@ -45,6 +45,7 @@ $messages['en'] = array(
 	'translate-group-desc-ihris-i2ce' => 'A message group for [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], a module of [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-manage' => 'A message group for [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], a module of [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-qualify' => 'A message group for [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]], a module of [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-kiwix' => 'A message group for [[Translating:Kiwix|Kiwix]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'A core plugin for [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-branch' => 'Messages for a stable version of [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] is a management information system for microfinance',
