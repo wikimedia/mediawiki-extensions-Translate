@@ -34,7 +34,7 @@ function getPotFiles( $path, $pattern ) {
 		$fullname = $path . $entry;
 		if ( $entry != '.' && $entry != '..' && is_dir( $fullname ) ) {
 			$subFolderResults = getPotFiles( $fullname, $pattern );
-		} else if ( is_file( $fullname ) && preg_match( $pattern, $entry ) ) {
+		} elseif ( is_file( $fullname ) && preg_match( $pattern, $entry ) ) {
 			$pathParts = explode( '/', $fullname );
 			$plugins[] = substr( array_pop( $pathParts ), 0, -4 );
 		}
