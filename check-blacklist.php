@@ -303,6 +303,13 @@ array(
 	)
 ),
 array(
+	'group' => 'ext-semanticmediawiki',
+	'check' => 'links',
+	'message' => array(
+		'smw_qc_query_help', // Contains links that are translated
+	)
+),
+array(
 	'group' => 'ext-socialprofile-usergifts',
 	'check' => 'variable',
 	'message' => array(
