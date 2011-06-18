@@ -408,6 +408,20 @@ MANGLER:
   prefix: emailregistration-
 ---
 BASIC:
+  id: out-statusnet-plugin-emailreminder
+  label: StatusNet - EmailReminder
+  display: out/statusnet/plugin/emailreminder
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/1.0.x/plugins/EmailReminder/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/EmailReminder/locale/%CODE%/LC_MESSAGES/EmailReminder.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/EmailReminder/locale/EmailReminder.pot
+  targetPattern: statusnet/plugins/EmailReminder/locale/%CODE%/LC_MESSAGES/EmailReminder.po
+
+MANGLER:
+  prefix: emailreminder-
+---
+BASIC:
   id: out-statusnet-plugin-emailsummary
   label: StatusNet - EmailSummary
   display: out/statusnet/plugin/emailsummary
@@ -1260,6 +1274,20 @@ FILES:
 
 MANGLER:
   prefix: sphinxsearch-
+---
+BASIC:
+  id: out-statusnet-plugin-spotify
+  label: StatusNet - Spotify
+  display: out/statusnet/plugin/spotify
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/1.0.x/plugins/Spotify/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/Spotify/locale/%CODE%/LC_MESSAGES/Spotify.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/Spotify/locale/Spotify.pot
+  targetPattern: statusnet/plugins/Spotify/locale/%CODE%/LC_MESSAGES/Spotify.po
+
+MANGLER:
+  prefix: spotify-
 ---
 BASIC:
   id: out-statusnet-plugin-stricttransportsecurity
