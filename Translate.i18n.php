@@ -15786,7 +15786,7 @@ Le modìfiche as salvo nen fin ch'a-i da nen un colp ansima al al boton ambeless
 	'translate-checks-format' => "Sta tradussion-sì a-i va nen dapress a la definission o a l'ha na sintassi pa bon-a: $1",
 	'translate-checks-escape' => 'Le scapade sì-dapress a peulo esse casuaj: <strong>$1</strong>',
 	'translate-checks-fudforum-syntax' => 'Dovré <nowiki>$1</nowiki> nopà ëd <nowiki>$2</nowiki> an cost proget-sì.',
-	'translate-checks-prefs' => "Ël mëssagi a l'ha ëd conflit con $1. Sto mëssagi a deuv pa esse ël midem.",
+	'translate-checks-prefs' => "Ël mëssagi a l'ha ëd conflit con $1. Costi mëssagi a devo pa esse ij midem.",
 	'translate-pref-nonewsletter' => "Mandeme nen ij mëssagi d'anformassion an pòsta eletrònica",
 	'translate-pref-editassistlang' => "Lenghe dl'assistent:",
 	'prefs-translate' => 'Opsion ëd tradussion',
@@ -15875,10 +15875,6 @@ Se na lenga a l'é nen ant la lista, a peul trové coma anandié un proget ëd l
 Se chiel a fa 'd tradussion an na lenga e sò nòm a l'é nen comprèis, për piasì ch'a gionta sò nòm a la lista dij tradutor an sël [[:Category:Languages|portal]] ëd cola lenga.
 Ch'a bèica la bara ëd menù për n'anliura al portal ëd la lenga soa preferensa.",
 	'supportedlanguages-translators' => '{{PLURAL:$2|Tradutor|Tradutor}}: $1',
-	'supportedlanguages-noportal-title' => 'Gnun ëspassi nominal ëd portal definì',
-	'supportedlanguages-noportal' => 'L\'aministrator dla wiki a l\'ha pa definì NS_PORTAL, parèj sta pàgina-sì a travaja pa.
-Su sta pàgina-sì na lista ëd portaj ëd lenghe a comparrirà për tùit ij portaj corespondent con un còdes ëd lenga definì e con na pàgina ciamà "translators".
-La sot-pàgina "translators" a deuv conten-e lë stamp [[:{{ns:template}}:User|User]], ch\'a pija un nòm utent com paràmetr.',
 	'supportedlanguages-recenttranslations' => 'tradussion recente',
 	'translate-save' => 'Salva ($1)',
 	'translate-jssti-add' => 'Gionté a la lista',
