@@ -4464,7 +4464,7 @@ Sofern die Gruppe aus einer Teil- oder Obermenge von Systemnachrichten einer and
 	'translate-edit-tmmatch' => '$1 % Übereinstimmung',
 	'translate-use-suggestion' => 'Füge diesen Vorschlag in das Übersetzungsfeld ein. Diese ersetzt dabei alle aktuellen Inhalte.',
 	'translate-edit-tab-list' => 'Nachrichtenliste',
-	'translate-magic-pagename' => 'Erweiterte MediaWiki-Übersetzung',
+	'translate-magic-pagename' => 'Übersetzen (extra)',
 	'translate-magic-help' => 'Du kannst hier Aliase für Spezialseiten, magische Wörter und Namensraumnamen übersetzen.
 
 Spezialseiten und magische Wörter können mehrere Übersetzungen haben, sie werden jeweils durch ein Komma (,) getrennt. Namensräume dürfen nur je eine Übersetzung haben.
@@ -5582,7 +5582,7 @@ Si el grupo consiste en un subconjunto o superconjunto de mensajes de otros grup
 	'translate-edit-definition' => 'Mensaje original',
 	'translate-edit-contribute' => 'contribuye',
 	'translate-edit-no-information' => "''No hay datos para este mensaje. Si sabes dónde o cómo se usa, puedes ayudar a otros traductores añadiéndole datos.''",
-	'translate-edit-information' => 'Información acerca del mensaje "$2" ($1)',
+	'translate-edit-information' => 'Información acerca del mensaje ($1)',
 	'translate-edit-in-other-languages' => 'Mensaje "$1" en otros idiomas',
 	'translate-edit-committed' => 'Traducción actual en el software',
 	'translate-edit-warnings' => 'Advertencias acerca de traducciones incompletas',
@@ -5719,8 +5719,6 @@ Si un idioma no está en la lista, puede descubrir como empezar un proyecto de l
 Si ayudó traduciendo a un lenguaje y su nombre no está incluido, por favor añada su nombre a la lista de traductores en [[:Category:Languages|portal]] para dicho idioma.
 Vea la barra del menú para un enlace al portal para el idioma de su preferencia.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Traductor|Traductores}}: $1',
-	'supportedlanguages-noportal-title' => 'No hay definido ningún espacio de nombres para los portales',
-	'supportedlanguages-noportal' => 'El administrador del wiki no ha definido NS_PORTAL, por lo que esta página no funciona. En esta página aparecerá un listado con cada portal de idioma, cada uno con un código de idioma definido y una subpágina llamada "traductores". La subpágina "traductores" debe contener la plantilla [[:{{ns:template}}:User|User]], con un nombre de usuario como parámetro.',
 	'supportedlanguages-recenttranslations' => 'traducciones recientes',
 	'translate-save' => 'Grabar($1)',
 	'translate-jssti-add' => 'Añadir a la lista',

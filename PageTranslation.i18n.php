@@ -1157,7 +1157,7 @@ Fejl vil blive registreret i [[Special:Log/pagetranslation|side oversættelses l
  * @author Umherirrender
  */
 $messages['de'] = array(
-	'pagetranslation' => 'Übersetzung von Seiten',
+	'pagetranslation' => 'Seiten übersetzen',
 	'right-pagetranslation' => 'Seitenversionen für die Übersetzung markieren',
 	'tpt-desc' => 'Ermöglicht das Übersetzen von Inhaltsseiten',
 	'tpt-section' => 'Übersetzungseinheit $1',
@@ -4481,7 +4481,7 @@ Antes de marcar esta versão para tradução, verifique que as alterações às 
 	'tpt-translation-intro-fuzzy' => 'Traduções desactualizadas estão marcadas desta forma.',
 	'tpt-languages-legend' => 'Outras línguas:',
 	'tpt-target-page' => 'Esta página não pode ser actualizada manualmente.
-Esta página é uma tradução da página [[$1]] e a tradução pode ser actualizada usando [$2 a ferramenta de tradução].',
+Ela é uma tradução da página [[$1]] e a tradução pode ser actualizada usando [$2 a ferramenta de tradução].',
 	'tpt-unknown-page' => 'Este espaço nominal está reservado para traduções de páginas de conteúdo.
 A página que está a tentar editar não parece corresponder a nenhuma página marcada para tradução.',
 	'tpt-install' => "Execute ''maintenance/update.php'' ou instale através da internet para possibilitar a funcionalidade de tradução de páginas.",
