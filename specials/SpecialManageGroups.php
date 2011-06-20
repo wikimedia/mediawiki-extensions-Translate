@@ -277,8 +277,9 @@ class SpecialManageGroups extends SpecialPage {
 					foreach ( $actions as $action ) {
 						$label = wfMsg( "translate-manage-action-$action" );
 						$name = MessageWebImporter::escapeNameForPHP( "action-$type-$key" );
+						$selected = $wgRequest->getVal( $name, $defaction );
 						$id = Sanitizer::escapeId( "action-$key-$action" );
-						$act[] = Xml::radioLabel( $label, $name, $action, $id, $action === $defaction );
+						$act[] = Xml::radioLabel( $label, $name, $action, $id, $action === $selected );
 					}
 				}
 
