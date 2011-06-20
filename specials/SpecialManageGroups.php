@@ -44,6 +44,7 @@ class SpecialManageGroups extends SpecialPage {
 		}
 
 		if ( $group ) {
+
 			if (
 				$wgRequest->getBool( 'rebuildall', false ) &&
 				$wgRequest->wasPosted() &&
@@ -64,68 +65,94 @@ class SpecialManageGroups extends SpecialPage {
 				$code = 'en';
 			}
 
-			$this->importForm( $group, $code );
-		} else {
-			global $wgLang, $wgOut;
+			if ( $wgRequest->getVal( 'from' ) !== 'main' ) {
+				$this->importForm( $group, $code );
+				return;
+			}
 
-			$groups = MessageGroups::singleton()->getGroups();
+		}
+		// Main list
+		global $wgLang, $wgOut;
 
-			$wgOut->wrapWikiMsg( '<h2>$1</h2>', 'translate-manage-listgroups' );
-			$separator = wfMsg( 'word-separator' );
+		$groups = MessageGroups::singleton()->getGroups();
 
-			$languages = array_keys( Language::getLanguageNames( false ) );
+		$wgOut->wrapWikiMsg( '<h2>$1</h2>', 'translate-manage-listgroups' );
+		$separator = wfMsg( 'word-separator' );
 
-			foreach ( $groups as $group ) {
-				if ( !$group instanceof FileBasedMessageGroup ) {
-					continue;
+		$languages = array_keys( Language::getLanguageNames( false ) );
+
+		foreach ( $groups as $group ) {
+			if ( !$group instanceof FileBasedMessageGroup ) {
+				continue;
+			}
+
+			wfDebug( __METHOD__ . ": {$group->getId()}\n" );
+
+			$link = $this->skin->link( $this->getTitle(), $group->getLabel(), array(), array( 'group' => $group->getId() ) );
+			$out = $link . $separator;
+
+			$cache = new MessageGroupCache( $group );
+			if ( $cache->exists() ) {
+				$timestamp = wfTimestamp( TS_MW, $cache->getTimestamp() );
+				$out .= wfMsg( 'translate-manage-cacheat',
+					$wgLang->date( $timestamp ),
+					$wgLang->time( $timestamp )
+				);
+
+				$modified = array();
+
+				foreach ( $languages as $code ) {
+					$cache = new MessageGroupCache( $group, $code );
+					if ( !$cache->isValid() ) $modified[] = $code;
 				}
 
-				wfDebug( __METHOD__ . ": {$group->getId()}\n" );
-
-				$link = $this->skin->link( $this->getTitle(), $group->getLabel(), array(), array( 'group' => $group->getId() ) );
-				$out = $link . $separator;
-
-				$cache = new MessageGroupCache( $group );
-				if ( $cache->exists() ) {
-					$timestamp = wfTimestamp( TS_MW, $cache->getTimestamp() );
-					$out .= wfMsg( 'translate-manage-cacheat',
-						$wgLang->date( $timestamp ),
-						$wgLang->time( $timestamp )
-					);
-
-					$modified = array();
-
-					foreach ( $languages as $code ) {
-						$cache = new MessageGroupCache( $group, $code );
-						if ( !$cache->isValid() ) $modified[] = $code;
-					}
-
-					if ( count( $modified ) ) {
-						$out = '[' . implode( ",", $modified ) . '] ' . $out;
-					} else {
-						$out = Html::rawElement( 'span', array( 'style' => 'color:grey' ), $out );
+				if ( count( $modified ) ) {
+					$out = '[' . implode( ",", $modified ) . '] ' . $out;
+					if ( !in_array( 'en', $modified ) && $this->user->isAllowed( 'translate-manage' ) ) {
+						$out .= $this->rebuildButton( $group, $modified, 'main' );
 					}
 				} else {
-					$out .= wfMsg( 'translate-manage-newgroup' );
+					$out = Html::rawElement( 'span', array( 'style' => 'color:grey' ), $out );
 				}
-
-				$wgOut->addHtml( $out );
-				$wgOut->addHtml( '<hr>' );
+			} else {
+				$out .= wfMsg( 'translate-manage-newgroup' );
 			}
 
-			$wgOut->wrapWikiMsg( '<h2>$1</h2>', 'translate-manage-listgroups-old' );
-			$wgOut->addHTML( '<ul>' );
-
-			foreach ( $groups as $group ) {
-				if ( $group instanceof FileBasedMessageGroup ) {
-					continue;
-				}
-
-				$wgOut->addHtml( Xml::element( 'li', null, $group->getLabel() ) );
-			}
-
-			$wgOut->addHTML( '</ul>' );
+			$wgOut->addHtml( $out );
+			$wgOut->addHtml( '<hr>' );
 		}
+
+		$wgOut->wrapWikiMsg( '<h2>$1</h2>', 'translate-manage-listgroups-old' );
+		$wgOut->addHTML( '<ul>' );
+
+		foreach ( $groups as $group ) {
+			if ( $group instanceof FileBasedMessageGroup ) {
+				continue;
+			}
+
+			$wgOut->addHtml( Xml::element( 'li', null, $group->getLabel() ) );
+		}
+
+		$wgOut->addHTML( '</ul>' );
+	}
+
+	protected function rebuildButton( $group, $codes, $from ) {
+		$formParams = array(
+			'method' => 'post',
+			'action' => $this->getTitle()->getLocalURL(),
+		);
+
+		$html =
+			Xml::openElement( 'form', $formParams ) .
+			Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
+			Html::hidden( 'token', $this->user->editToken() ) .
+			Html::hidden( 'group', $group->getId() ) .
+			Html::hidden( 'codes', implode( ',', $codes ) ) .
+			Html::hidden( 'rebuildall', 1 ) .
+			Html::hidden( 'from', $from ) .
+			Xml::submitButton( wfMsg( 'translate-manage-import-rebuild-all' ) ) .
+			Xml::closeElement( 'form' );
+		return $html;
 	}
 
 	/**
@@ -402,18 +429,7 @@ class SpecialManageGroups extends SpecialPage {
 			);
 
 			if ( $this->user->isAllowed( 'translate-manage' ) ) {
-
-				$this->out->addHTML(
-					Xml::openElement( 'form', $formParams ) .
-					Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
-					Html::hidden( 'token', $this->user->editToken() ) .
-					Html::hidden( 'group', $group->getId() ) .
-					Html::hidden( 'codes', implode( ',', $codes ) ) .
-					Html::hidden( 'rebuildall', 1 ) .
-					Xml::submitButton( wfMsg( 'translate-manage-import-rebuild-all' ) ) .
-					Xml::closeElement( 'form' )
-				);
-
+				$this->out->addHTML( $this->rebuildButton( $group, $codes, 'import' ) );
 			}
 
 			$this->out->addHTML(
