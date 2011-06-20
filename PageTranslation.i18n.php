@@ -4425,6 +4425,8 @@ $messages['ps'] = array(
 	'pt-movepage-current' => 'اوسنی نوم:',
 	'pt-movepage-new' => 'نوی نوم:',
 	'pt-movepage-reason' => 'سبب:',
+	'pt-deletepage-current' => 'د مخ نوم:',
+	'pt-deletepage-reason' => 'سبب:',
 );
 
 /** Portuguese (Português)

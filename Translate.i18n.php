@@ -5522,6 +5522,7 @@ $1',
  * @author Antur
  * @author Crazymadlover
  * @author Dferg
+ * @author Fitoschido
  * @author Imre
  * @author Kobazulo
  * @author Lin linao
@@ -5550,7 +5551,7 @@ Pulse en el nombre del grupo de mensajes para ver la lista de mensajes sin tradu
 	'translate-task-reviewall' => 'Revisar todas las traducciones en',
 	'translate-task-export' => 'Exportar traducciones',
 	'translate-task-export-to-file' => 'Exportar traducciones a un archivo',
-	'translate-task-export-as-po' => 'Exportar traducciones para su traducción fuera de línea',
+	'translate-task-export-as-po' => 'Exportar traducciones para su traducción sin conexión',
 	'translate-task-export-to-xliff' => 'Exportar traducción en formato Xliff',
 	'translate-page-no-such-language' => 'No se especificó un idioma válido',
 	'translate-page-no-such-task' => 'La tarea especificada no es válida.',
@@ -5578,17 +5579,18 @@ Si el grupo consiste en un subconjunto o superconjunto de mensajes de otros grup
 	'translate-ext-url' => '<hr />Página web: $1',
 	'translate-optional' => '(opcional)',
 	'translate-ignored' => '(ignorado)',
-	'translate-edit-title' => 'Editar "$1"',
+	'translate-edit-title' => 'Editar «$1»',
 	'translate-edit-definition' => 'Mensaje original',
+	'translate-edit-translation' => 'Traducción',
 	'translate-edit-contribute' => 'contribuye',
 	'translate-edit-no-information' => "''No hay datos para este mensaje. Si sabes dónde o cómo se usa, puedes ayudar a otros traductores añadiéndole datos.''",
 	'translate-edit-information' => 'Información acerca del mensaje ($1)',
-	'translate-edit-in-other-languages' => 'Mensaje "$1" en otros idiomas',
+	'translate-edit-in-other-languages' => 'Mensaje en otros idiomas',
 	'translate-edit-committed' => 'Traducción actual en el software',
 	'translate-edit-warnings' => 'Advertencias acerca de traducciones incompletas',
 	'translate-edit-tmsugs' => 'Sugerencias de la memoria de traducciones',
 	'translate-edit-tmmatch' => '$1% coincidente',
-	'translate-use-suggestion' => 'Insertar esta sugerencia en el área de traducción. Esto reemplaza todo el contenido actual.',
+	'translate-use-suggestion' => 'Inserta esta sugerencia en el área de traducción. Esto reemplaza todo el contenido actual.',
 	'translate-edit-tab-list' => 'Lista de mensajes',
 	'translate-magic-pagename' => 'Traducción extendida de MediaWiki',
 	'translate-magic-help' => 'Puedes traducir los nombres de las páginas especiales, las palabras mágicas, y los de los espacios de nombre
@@ -5601,28 +5603,28 @@ En las traducciones de espacios de nombre <code>$1 talk</code> es especial. <cod
 Para guardar los cambios debes pertenecer al grupo de traductores
 Los cambios no se graban hasta que no pulses el boton de guardar de abajo.',
 	'translate-magic-module' => 'Módulo:',
-	'translate-magic-submit' => 'Buscar',
+	'translate-magic-submit' => 'Obtener',
 	'translate-magic-cm-export' => 'Exportar',
-	'translate-magic-nothing-to-export' => 'No hay nada para exportar',
+	'translate-magic-nothing-to-export' => 'No hay nada para exportar.',
 	'translate-magic-cm-to-be' => 'Será',
 	'translate-magic-cm-current' => 'Actual',
 	'translate-magic-cm-original' => 'Original',
 	'translate-magic-cm-comment' => 'Comentario:',
 	'translate-magic-cm-save' => 'Guardar',
 	'translate-magic-cm-updatedusing' => 'Actualizado usando [[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]]',
-	'translate-magic-cm-savefailed' => 'Grabación fallada',
+	'translate-magic-cm-savefailed' => 'Error al guardar',
 	'translate-magic-special' => 'Nombres de páginas especiales',
 	'translate-magic-words' => 'Palabras mágicas',
 	'translate-magic-namespace' => 'Nombres de los espacios de nombres',
-	'translate-magic-notsaved' => 'Tu edición no fue grabada!',
-	'translate-magic-errors' => 'Por favor corrija {{PLURAL:$1|el siguiente error|los siguientes errores}} en la traducción:',
-	'translate-magic-saved' => 'Tus cambios fueron grabados exitosamente.',
-	'translationchanges' => 'Cambios de traducción',
+	'translate-magic-notsaved' => 'No se guardó tu edición.',
+	'translate-magic-errors' => 'Por favor corrige {{PLURAL:$1|el siguiente error|los siguientes errores}} en la traducción:',
+	'translate-magic-saved' => 'Los cambios se guardaron correctamente.',
+	'translationchanges' => 'Cambios en la traducción',
 	'translationchanges-export' => 'exportar',
 	'translationchanges-change' => '$1: $2 por $3',
 	'translate-checks-parameters' => '{{PLURAL:$2|El siguiente parámetro no se está|Los siguientes parámetros no se están}} usando:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-parameters-unknown' => '{{PLURAL:$2|El siguiente parámetro es desconocidp|Los siguientes parámetros son desconocidos}}:
+	'translate-checks-parameters-unknown' => '{{PLURAL:$2|El siguiente parámetro es desconocido|Los siguientes parámetros son desconocidos}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Hay algún signo de agrupación de {{PLURAL:$2|la siguiente clase|las siguientes clases}} sin emparejar:
 <strong><nowiki>$1</nowiki></strong>',
@@ -5637,6 +5639,7 @@ Los cambios no se graban hasta que no pulses el boton de guardar de abajo.',
 	'translate-checks-format' => 'Esta traducción no sigue la definición o tiene sintaxis inválida: $1',
 	'translate-checks-escape' => 'Los siguientes escapes pueden ser accidentales: <strong>$1</strong>',
 	'translate-checks-fudforum-syntax' => 'Usar <nowiki>$1</nowiki> en lugar de <nowiki>$2</nowiki> en este proyecto.',
+	'translate-checks-prefs' => 'El mensaje entra en conflicto con $1. Estos mensajes no deben ser iguales.',
 	'translate-pref-nonewsletter' => 'No quiero recibir correos de noticias',
 	'translate-pref-editassistlang' => 'Idiomas soportados:',
 	'prefs-translate' => 'Opciones de traducción',
@@ -5653,7 +5656,7 @@ La lista de idiomas por defecto depende de su idioma.',
 	'translate-rc-translation-filter-no' => 'No filtrar nada',
 	'translate-rc-translation-filter-only' => 'Mostrar sólo traducciones',
 	'translate-rc-translation-filter-filter' => 'No mostrar traducciones',
-	'translate-rc-translation-filter-site' => 'Sólo cambios en mensajes del sitio',
+	'translate-rc-translation-filter-site' => 'Solo cambios en mensajes del sitio',
 	'translationstats' => 'Estadísticas de traducción',
 	'translate-stats-edits' => 'Ediciones',
 	'translate-stats-users' => 'Traductores',
@@ -5695,6 +5698,10 @@ Todos los valores tienen límites superiores e inferiores.',
 	'languagestats-summary' => 'Esta página muestra estadísticas de traducción para todos los grupos de mensajes para un idioma.',
 	'languagestats-stats-for' => 'Estadísticas de traducción para $1 ($2).',
 	'languagestats-recenttranslations' => 'Traducciones recientes',
+	'translate-langstats-expand' => 'expandir',
+	'translate-langstats-collapse' => 'contraer',
+	'translate-langstats-expandall' => 'expandir todo',
+	'translate-langstats-collapseall' => 'contraer todo',
 	'translate-language-code' => 'Código de idioma',
 	'translate-language-code-field-name' => 'Código de idioma',
 	'translate-suppress-complete' => 'Eliminar grupos de mensajes completamente traducidos',
@@ -5711,6 +5718,7 @@ Esto incluye los mensajes que han sido etiquetados como desactualizados.',
 Los mensajes están marcados como desactualizados porque la fuente en idioma inglés ha cambiado, porque una verificación automática del mensaje falló, o porque lo marcó como desactualizado.',
 	'translate-nothing-to-do' => 'Todas las posibles traducciones parecen haber sido hechas.
 Se te anima a revisar los mensajes a través de [[Special:Translate|{{int:translate}}]].',
+	'translate-languagestats-overall' => 'Todos los grupos de mensajes juntos',
 	'supportedlanguages' => 'Idiomas soportados',
 	'supportedlanguages-summary' => 'Esta página muestra una lista de todos los idiomas soportados por {{SITENAME}}, junto con los nombres de los traductores que trabajan en ese idioma. Si desea información adicional acerca de un idioma en concreto, puede hacer clic en el enlace al portal para dicho idioma. Al hacer clic en el nombre de un traductor le llevará a su página de usuario.
 
@@ -5720,8 +5728,11 @@ Si ayudó traduciendo a un lenguaje y su nombre no está incluido, por favor añ
 Vea la barra del menú para un enlace al portal para el idioma de su preferencia.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Traductor|Traductores}}: $1',
 	'supportedlanguages-recenttranslations' => 'traducciones recientes',
-	'translate-save' => 'Grabar($1)',
+	'supportedlanguages-count' => '$1 {{PLURAL:$1|idioma|idiomas}} en total.',
+	'supportedlanguages-activity' => '$1: $2 {{PLURAL:$2|edición|ediciones}} - última edición $3 {{PLURAL:$3|día|días}} atrás',
+	'translate-save' => 'Guardar ($1)',
 	'translate-jssti-add' => 'Añadir a la lista',
+	'managemessagegroups' => 'Gestión de grupos de mensajes',
 	'translate-manage-groups' => 'Gestión de grupo',
 	'translate-manage-listgroups' => 'Grupos configurados',
 	'translate-manage-listgroups-old' => 'Grupos en estilo antiguo',
@@ -5788,6 +5799,7 @@ Detalle: $1',
 	'translate-js-skip' => 'Saltar al siguiente',
 	'translate-js-save-failed' => 'El guardado ha fallado. Por favor informe de este error.',
 	'translate-js-history' => 'Historial de traducción',
+	'translate-js-support' => 'Pregunta',
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Código',
 	'translate-gs-continent' => 'Continente',
@@ -5797,6 +5809,11 @@ Detalle: $1',
 	'translate-gs-count' => 'Cantidad',
 	'translate-gs-total' => 'Total',
 	'translate-gs-avgscore' => 'Puntuación media',
+	'translate-documentation-language' => 'Documentación de mensaje',
+	'translate-searchprofile' => 'Traducciones',
+	'translate-searchprofile-tooltip' => 'Buscar en todas las traducciones',
+	'translate-search-languagefilter' => 'Filtrar por idioma:',
+	'translate-search-nofilter' => 'Sin filtro',
 );
 
 /** Estonian (Eesti)
@@ -10448,6 +10465,7 @@ la modalità <code>$1</code> non è supportata.',
 );
 
 /** Japanese (日本語)
+ * @author Akaniji
  * @author Aotake
  * @author Fryed-peach
  * @author Hosiryuhosi
@@ -10609,6 +10627,7 @@ $messages['ja'] = array(
 	'translations-summary' => '既存のすべての訳文を見るには下欄にメッセージの名前を入力してください。',
 	'translate-translations-no-message' => '「$1」は翻訳できないメッセージです',
 	'translate-translations-none' => '「$1」には翻訳がありません',
+	'translate-translations-count' => '$1言語での翻訳が見つかりました。',
 	'translate-translations-fieldset-title' => 'メッセージ',
 	'translate-translations-messagename' => '名前:',
 	'translate-translations-project' => 'プロジェクト:',
@@ -10639,6 +10658,7 @@ $messages['ja'] = array(
 	'translate-languagestats-groups' => ' # Special:LanguageStatsに表示するメッセージ群を制限するには
  # メッセージ群のIDを1行1つずつ記入します。
  # 無効なIDは無視されます。',
+	'translate-languagestats-overall' => '合計',
 	'supportedlanguages' => 'サポートしている言語',
 	'supportedlanguages-summary' => 'このページには、{{SITENAME}}でサポートしている全言語の一覧、および各言語で活動している翻訳者の名前を表示しています。各言語についての詳細情報を知りたい場合は、その言語のポータルへのリンクをクリックしてください。翻訳者の名前をクリックすると、その人物の利用者ページに飛びます。
 
@@ -10647,10 +10667,6 @@ $messages['ja'] = array(
 いずれかの言語への翻訳経験があるにもかかわらず、あなたの名前が一覧に含まれていない場合には、その言語の[[:Category:Languages|ポータル]]にて翻訳者一覧にご自身の名前を書き加えてください。
 個人設定で選んだ言語のポータルへのリンクは、メニューバーに表示されます。',
 	'supportedlanguages-translators' => '{{PLURAL:$2|翻訳者}}: $1',
-	'supportedlanguages-noportal-title' => 'ポータル用の名前区間が定義されていません',
-	'supportedlanguages-noportal' => 'ウィキの管理者が NS_PORTAL を定義していないため、このページは機能しません。
-このページには定義された言語コードに対応するポータルと "translators" と名付けられたサブページを持つ、言語ポータルの一覧が表示されます。
-"translators" サブページには、利用者名を引数とするテンプレート [[:{{ns:template}}:User|User]] が含まれている必要があります。',
 	'supportedlanguages-recenttranslations' => '最近の翻訳',
 	'translate-save' => '保存 ($1)',
 	'translate-jssti-add' => '追加',
@@ -10707,6 +10723,7 @@ $1',
 	'translate-js-skip' => '次へスキップ',
 	'translate-js-save-failed' => '保存に失敗しました。このエラーを報告してください。',
 	'translate-js-history' => '翻訳履歴',
+	'translate-js-support' => 'サポートに質問',
 	'translate-gs-pos' => '順位',
 	'translate-gs-code' => 'コード',
 	'translate-gs-continent' => '大陸',
@@ -10716,6 +10733,9 @@ $1',
 	'translate-gs-count' => '件数',
 	'translate-gs-total' => '合計',
 	'translate-gs-avgscore' => '平均点',
+	'translate-searchprofile' => '訳文',
+	'translate-search-languagefilter' => '言語で絞り込み：',
+	'translate-search-nofilter' => 'すべて表示',
 );
 
 /** Jamaican Creole English (Jamaican Creole English)
@@ -11397,7 +11417,7 @@ $messages['km'] = array(
 	'translate-page-limit' => 'កម្រិត',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|សារ|សារ}} ក្នុងមួយទំព័រ',
 	'translate-submit' => 'នាំមក​បង្ហាញ',
-	'translate-page-navigation-legend' => 'នាំទិស',
+	'translate-page-navigation-legend' => 'ការណែនាំ',
 	'translate-page-showing' => 'កំពុងបង្ហាញ​សារ​តាមលំដាប់ ពី $1 ដល់ $2 នៃ $3 ។',
 	'translate-page-showing-all' => 'កំពុងបង្ហាញ $1 {{PLURAL:$1|សារ|សារ}}។',
 	'translate-page-showing-none' => 'មិនមានសារ​ត្រូវបង្ហាញទេ។',
@@ -16012,6 +16032,7 @@ $messages['ps'] = array(
 	'translate-ext-url' => '<hr />وېبځی: $1',
 	'translate-ignored' => '(بابېزه ګڼل شوی)',
 	'translate-edit-title' => '"$1" سمول',
+	'translate-edit-translation' => 'ژباړه',
 	'translate-edit-contribute' => 'ونډه اخيستل',
 	'translate-edit-information' => 'د "$2" پيغام په اړه مالومات ($1)',
 	'translate-edit-in-other-languages' => 'د "$1" پيغام په نورو ژبو کې',

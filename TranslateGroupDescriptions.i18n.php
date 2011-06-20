@@ -458,6 +458,7 @@ $messages['cs'] = array(
 	'translate-group-desc-ihris-i2ce' => 'Skupina zpráv pro [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], modul [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-manage' => 'Skupina zpráv pro [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], modul [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-qualify' => 'Skupina zpráv pro [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]], modul [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-kiwix' => 'Skupina zpráv pro [[Translating:Kiwix|Kiwix]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'Základní modul pro [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-branch' => 'Zprávy ze stabilní verze [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] je informační systém pro správu mikrofinancování',
