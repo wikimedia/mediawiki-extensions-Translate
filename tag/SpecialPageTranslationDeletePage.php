@@ -116,6 +116,11 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 			return;
 		}
 
+		if ( $this->title === null ) {
+			$wgOut->showErrorPage( 'notargettitle', 'notargettext' );
+			return;
+		}
+
 		if ( !$this->title->exists() ) {
 			$wgOut->showErrorPage( 'nopagetitle', 'nopagetext' );
 			return;
