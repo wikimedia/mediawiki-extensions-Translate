@@ -75,6 +75,17 @@ FILES:
   targetPattern: pywikipedia/cosmetic_changes.py
 ---
 BASIC:
+  id: out-pywikipedia-editarticle
+  label: Pywikipedia Edit Article
+  display: out/pywikipedia/editarticle
+
+FILES:
+  class: PythonSingleFFS
+  sourcePattern: %GROUPROOT%/pywikipedia/editarticle.py
+  definitionFile: %GROUPROOT%/pywikipedia/editarticle.py
+  targetPattern: pywikipedia/editarticle.py
+---
+BASIC:
   id: out-pywikipedia-interwiki
   label: Pywikipedia Interwiki
   display: out/pywikipedia/interwiki
