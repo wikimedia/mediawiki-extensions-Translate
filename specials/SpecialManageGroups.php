@@ -88,7 +88,9 @@ class SpecialManageGroups extends SpecialPage {
 
 			wfDebug( __METHOD__ . ": {$group->getId()}\n" );
 
-			$link = $this->skin->link( $this->getTitle(), $group->getLabel(), array(), array( 'group' => $group->getId() ) );
+			$id = $group->getId();
+			$link = $this->skin->link( $this->getTitle(), $group->getLabel(),
+				array( 'id' => "mw-group-$id" ), array( 'group' => $id ) );
 			$out = $link . $separator;
 
 			$cache = new MessageGroupCache( $group );
@@ -139,7 +141,7 @@ class SpecialManageGroups extends SpecialPage {
 	protected function rebuildButton( $group, $codes, $from ) {
 		$formParams = array(
 			'method' => 'post',
-			'action' => $this->getTitle()->getLocalURL(),
+			'action' => $this->getTitle()->getLocalURL() . '#mw-group-' . $group->getId(),
 		);
 
 		$html =
