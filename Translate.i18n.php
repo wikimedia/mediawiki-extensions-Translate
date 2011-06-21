@@ -9679,12 +9679,9 @@ Si un lingua non es listate, tu pote leger como comenciar un projecto de localis
 Si tu traduce in un lingua e tu nomine non es includite, per favor adde tu nomine al lista de traductores in le [[:Category:Languages|portal]] pro iste lingua.
 Vide le barra de menu pro un ligamine al portal pro le lingua de tu preferentia.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Traductor|Traductores}}: $1',
-	'supportedlanguages-noportal-title' => 'Le spatio de nomines "portal" non es definite',
-	'supportedlanguages-noportal' => 'Le administrator del wiki non ha definite NS_PORTAL, dunque iste pagina non functiona.
-In iste pagina apparera un lista de portales linguistic pro tote le portales correspondente con un codice de lingua definite e un subpagina appellate "translators".
-Le subpagina "translators" debe continer le patrono [[:{{ns:template}}:User|User]] que prende un nomine de usator como parametro.',
 	'supportedlanguages-recenttranslations' => 'traductiones recente',
 	'supportedlanguages-count' => '$1 {{plural:$1|lingua|linguas}} in total.',
+	'supportedlanguages-activity' => '$1: $2 {{PLURAL:$2|modification|modificationes}} - ultime modification $3 {{PLURAL:$3|die|dies}} retro',
 	'translate-save' => 'Salveguardar ($1)',
 	'translate-jssti-add' => 'Adder al lista',
 	'managemessagegroups' => 'Gestion de gruppos de messages',
@@ -13203,7 +13200,7 @@ $messages['ml'] = array(
 	'translate-statsf-scale-days' => 'ദിവസങ്ങൾ',
 	'translate-statsf-scale-hours' => 'മണിക്കൂറുകൾ',
 	'translate-statsf-count' => 'അളവ്:',
-	'translate-statsf-count-edits' => 'തിരുത്തലുകളുടെ എണ്ണം',
+	'translate-statsf-count-edits' => 'ആകെ തിരുത്തലുകൾ',
 	'translate-statsf-count-users' => 'സജീവ പരിഭാഷകർ',
 	'translate-statsf-count-registrations' => 'പുതിയ ഉപയോക്താക്കൾ',
 	'translate-statsf-submit' => 'എങ്ങനെയുണ്ടെന്ന് കാണുക',
@@ -13243,7 +13240,6 @@ $messages['ml'] = array(
 	'translate-percentage-fuzzy' => 'കാലഹരണപ്പെട്ടവ',
 	'supportedlanguages' => 'പിന്തുണയ്ക്കുന്ന ഭാഷകൾ',
 	'supportedlanguages-translators' => '{{PLURAL:$2|പരിഭാഷക(ൻ)|പരിഭാഷകർ}}: $1',
-	'supportedlanguages-noportal-title' => 'കവാടം നാമമേഖല നിർവചിച്ചിട്ടില്ല',
 	'supportedlanguages-recenttranslations' => 'സമീപകാല പരിഭാഷകൾ',
 	'translate-save' => 'സേവ് ചെയ്യുക ($1)',
 	'translate-jssti-add' => 'പട്ടികയിലേക്ക് ചേർക്കുക',
@@ -13971,6 +13967,7 @@ $messages['myv'] = array(
 /** Nahuatl (Nāhuatl)
  * @author Fluence
  * @author Ricardo gs
+ * @author Teòtlalili
  */
 $messages['nah'] = array(
 	'translate' => 'Tictlahtōlcuepāz',
@@ -13979,7 +13976,7 @@ $messages['nah'] = array(
 	'translate-history' => 'tlahcuilōlloh',
 	'translate-page-task' => 'Nitlanequi',
 	'translate-page-group' => 'Olōlli',
-	'translate-page-language' => 'Tlahtōlli',
+	'translate-page-language' => 'Tlâtòlli',
 	'translate-page-navigation-legend' => 'Ācalpapanōliztli',
 	'translate-page-showing' => 'Tiquintta tlahcuilōltzin īhuīcpa $1 oc $2 īmpan $3.',
 	'translate-page-showing-all' => '{{PLURAL:$1|Tiquintta|Tiquintta}} $1 tlahcuilōltzin.',
