@@ -14,7 +14,7 @@
  * @ingroup SpecialPage
  * @ingroup PageTranslation
  */
-class SpecialPageTranslationDeletePage extends SpecialPage {
+class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 	// Basic form parameters both as text and as titles
 	protected $text, $title;
 
