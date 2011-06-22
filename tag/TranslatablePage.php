@@ -401,6 +401,8 @@ class TranslatablePage {
 
 	// Tag methods //
 
+	protected static $tagCache = array();
+
 	/**
 	 * Adds a tag which indicates that this page is
 	 * suitable for translation.
@@ -424,13 +426,14 @@ class TranslatablePage {
 		$dbw = wfGetDB( DB_MASTER );
 
 		$id = $this->getTagId( $tag );
+		$aid = $this->getTitle()->getArticleId();
 
 		if ( is_object( $revision ) ) {
 			throw new MWException( 'Got object, excepted id' );
 		}
 
 		$conds = array(
-			'rt_page' => $this->getTitle()->getArticleId(),
+			'rt_page' => $aid,
 			'rt_type' => $id,
 			'rt_revision' => $revision
 		);
@@ -441,12 +444,24 @@ class TranslatablePage {
 		}
 
 		$dbw->insert( 'revtag', $conds, __METHOD__ );
+
+		self::$tagCache[$aid][$tag] = $revision;
 	}
 
+	/**
+	 * Returns the latest revision which has marked tag, if any.
+	 * @param $db Database connection type
+	 * @return integer|false
+	 */
 	public function getMarkedTag( $db = DB_SLAVE ) {
 		return $this->getTag( 'tp:mark' );
 	}
 
+	/**
+	 * Returns the latest revision which has ready tag, if any.
+	 * @param $db Database connection type
+	 * @return integer|false
+	 */
 	public function getReadyTag( $db = DB_SLAVE ) {
 		return $this->getTag( 'tp:tag' );
 	}
@@ -457,9 +472,11 @@ class TranslatablePage {
 	 * @todo Change name to something better.
 	 */
 	public function removeTags() {
+		$aid = $this->getTitle()->getArticleId();
+
 		$dbw = wfGetDB( DB_MASTER );
 		$conds = array(
-			'rt_page' => $this->getTitle()->getArticleId(),
+			'rt_page' => $aid,
 			'rt_type' => array(
 				$this->getTagId( 'tp:mark' ),
 				$this->getTagId( 'tp:tag' ),
@@ -467,27 +484,25 @@ class TranslatablePage {
 		);
 
 		$dbw->delete( 'revtag', $conds, __METHOD__ );
-		$dbw->delete( 'translate_sections', array( 'trs_page' => $this->getTitle()->getArticleId() ), __METHOD__ );
+		$dbw->delete( 'translate_sections', array( 'trs_page' => $aid ), __METHOD__ );
+		unset( self::$tagCache[$aid] );
 	}
 
-	// Returns false if not found
+	/// @return false if tag is not found
 	protected function getTag( $tag, $dbt = DB_SLAVE ) {
-
 		if ( !$this->getTitle()->exists() ) {
 			return false;
 		}
 
-		static $cache = array();
 		$aid = $this->getTitle()->getArticleId();
 
-		if ( isset( $cache[$aid][$tag] ) ) {
-			return $cache[$aid][$tag];
+		if ( isset( self::$tagCache[$aid][$tag] ) ) {
+			return self::$tagCache[$aid][$tag];
 		}
 
 		$db = wfGetDB( $dbt );
 		$id = $this->getTagId( $tag );
 
-		$fields = 'rt_revision';
 		$conds = array(
 			'rt_page' => $aid,
 			'rt_type' => $id,
@@ -495,11 +510,12 @@ class TranslatablePage {
 
 		$options = array( 'ORDER BY' => 'rt_revision DESC' );
 
-		$tagRevision = $db->selectField( 'revtag', $fields, $conds, __METHOD__, $options );
+		// Tag values are not stored, only the associated revision
+		$tagRevision = $db->selectField( 'revtag', 'rt_revision', $conds, __METHOD__, $options );
 		if ( $tagRevision !== false ) {
-			return $cache[$aid][$tag] = intval( $tagRevision );
+			return self::$tagCache[$aid][$tag] = intval( $tagRevision );
 		} else {
-			return $cache[$aid][$tag] = false;
+			return self::$tagCache[$aid][$tag] = false;
 		}
 	}
 
