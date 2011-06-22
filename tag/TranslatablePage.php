@@ -39,6 +39,9 @@ class TranslatablePage {
 	 */
 	protected $init = false;
 
+	/**
+	 * Name of the section which contains the translated page title.
+	 */
 	protected $displayTitle = 'Page display title';
 
 	/**
@@ -67,8 +70,11 @@ class TranslatablePage {
 	 * Constructs a translatable page from given revision.
 	 * The revision must belong to the title given or unspecified
 	 * behaviour will happen.
+	 *
+	 * @param $title Title
+	 * @param $revision integer Revision number
+	 * @return TranslatablePage
 	 */
-
 	public static function newFromRevision( Title $title, $revision ) {
 		$rev = Revision::newFromTitle( $title, $revision );
 		if ( $rev === null ) {
@@ -85,6 +91,9 @@ class TranslatablePage {
 	/**
 	 * Constructs a translatable page from title.
 	 * The text of last marked revision is loaded when neded.
+	 *
+	 * @param $title Title
+	 * @return TranslatablePage
 	 */
 	public static function newFromTitle( Title $title ) {
 		$obj = new self( $title );
@@ -97,6 +106,7 @@ class TranslatablePage {
 
 	/**
 	 * Returns the title for this translatable page.
+	 * @return Title
 	 */
 	public function getTitle() {
 		return $this->title;
@@ -104,6 +114,7 @@ class TranslatablePage {
 
 	/**
 	 * Returns the text for this translatable page.
+	 * @return \string
 	 */
 	public function getText() {
 		if ( $this->init === false ) {
@@ -186,8 +197,9 @@ class TranslatablePage {
 
 	/**
 	 * Returns a TPParse object which represents the parsed page.
-	 * Throws TPExcetion if the page is malformed as a translatable
+	 * @throws TPExcetion if the page is malformed as a translatable
 	 * page.
+	 * @return TPParse
 	 */
 	public function getParse() {
 		if ( isset( $this->cachedParse ) ) {
@@ -318,7 +330,7 @@ class TranslatablePage {
 	 * in the template and not included in the sections.
 	 * @param $sections Array of placeholder => TPSection.
 	 * @param $text Contents of one pair of \<translate> tags.
-	 * @return string Templace with placeholders for sections, which itself are added to $sections.
+	 * @return \string Templace with placeholders for sections, which itself are added to $sections.
 	 */
 	protected function sectionise( &$sections, $text ) {
 		$flags = PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE;
@@ -387,11 +399,23 @@ class TranslatablePage {
 		return $section;
 	}
 
+	// Tag methods //
+
+	/**
+	 * Adds a tag which indicates that this page is
+	 * suitable for translation.
+	 * @param $revision integer
+	 */
 	public function addMarkedTag( $revision, $value = null ) {
 		$this->addTag( 'tp:mark', $revision, $value );
 		MessageGroups::clearCache();
 	}
 
+	/**
+	 * Adds a tag which indicates that this page source is
+	 * ready for marking for translation.
+	 * @param $revision integer
+	 */
 	public function addReadyTag( $revision ) {
 		$this->addTag( 'tp:tag', $revision );
 	}
