@@ -530,17 +530,13 @@ class TranslatablePage {
 		return $translate->getFullURL( $params );
 	}
 
-	public function getMarkedRevs( $tag ) {
+	public function getMarkedRevs() {
 		$db = wfGetDB( DB_SLAVE );
-
-		// Can this be done in one query?
-		$id = $db->selectField( 'revtag_type', 'rtt_id',
-			array( 'rtt_name' => $tag ), __METHOD__ );
 
 		$fields = array( 'rt_revision', 'rt_value' );
 		$conds = array(
 			'rt_page' => $this->getTitle()->getArticleId(),
-			'rt_type' => $id,
+			'rt_type' => $this->getTagId( 'tp:mark' ),
 		);
 		$options = array( 'ORDER BY' => 'rt_revision DESC' );
 
@@ -599,7 +595,7 @@ class TranslatablePage {
 			return null;
 		}
 
-		$markedRevs = $this->getMarkedRevs( 'tp:mark' );
+		$markedRevs = $this->getMarkedRevs();
 
 		$temp = array();
 		foreach ( $titles as $t ) {
