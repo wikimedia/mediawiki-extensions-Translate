@@ -425,7 +425,7 @@ class TranslatablePage {
 	protected function addTag( $tag, $revision, $value = null ) {
 		$dbw = wfGetDB( DB_MASTER );
 
-		$id = $this->getTagId( $tag );
+		$id = self::getTagId( $tag );
 		$aid = $this->getTitle()->getArticleId();
 
 		if ( is_object( $revision ) ) {
@@ -478,8 +478,8 @@ class TranslatablePage {
 		$conds = array(
 			'rt_page' => $aid,
 			'rt_type' => array(
-				$this->getTagId( 'tp:mark' ),
-				$this->getTagId( 'tp:tag' ),
+				self::getTagId( 'tp:mark' ),
+				self::getTagId( 'tp:tag' ),
 			),
 		);
 
@@ -501,7 +501,7 @@ class TranslatablePage {
 		}
 
 		$db = wfGetDB( $dbt );
-		$id = $this->getTagId( $tag );
+		$id = self::getTagId( $tag );
 
 		$conds = array(
 			'rt_page' => $aid,
@@ -536,7 +536,7 @@ class TranslatablePage {
 		$fields = array( 'rt_revision', 'rt_value' );
 		$conds = array(
 			'rt_page' => $this->getTitle()->getArticleId(),
-			'rt_type' => $this->getTagId( 'tp:mark' ),
+			'rt_type' => self::getTagId( 'tp:mark' ),
 		);
 		$options = array( 'ORDER BY' => 'rt_revision DESC' );
 
@@ -663,7 +663,7 @@ class TranslatablePage {
 	}
 
 	public function getTransRev( $suffix ) {
-		$id = $this->getTagId( 'tp:transver' );
+		$id = self::getTagId( 'tp:transver' );
 		$title = Title::makeTitle( NS_TRANSLATIONS, $suffix );
 
 		$db = wfGetDB( DB_SLAVE );
