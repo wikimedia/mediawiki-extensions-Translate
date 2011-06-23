@@ -91,6 +91,7 @@ GROUPS:
   - ext-skinperpage # Wikimediafoundation.org
   - ext-spamblacklist
   - ext-strategywiki-activestrategy # 2010-05-08: strategywiki.wikimedia.org
+  - ext-subpagelist3 # r90651
   - ext-syntaxhighlightgeshi
   - ext-timeline
   - ext-titleblacklist
