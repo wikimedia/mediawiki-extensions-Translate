@@ -2176,6 +2176,7 @@ $messages['ru'] = array(
 	'translate-group-desc-ihris-i2ce' => 'Группа сообщений для [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], части [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-manage' => 'Группа сообщений для [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], части [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-qualify' => 'Группа сообщений для [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]], части [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-kiwix' => 'Группа сообщений для [[Translating:Kiwix|Kiwix]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'Основной плагин для [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-branch' => 'Сообщения для стабильной версии [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] — это система управления информацией в области микрофинансов',

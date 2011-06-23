@@ -9696,7 +9696,7 @@ Vide le barra de menu pro un ligamine al portal pro le lingua de tu preferentia.
 	'translate-manage-modlang-new' => '$1 (nove)',
 	'translate-manage-import-diff' => 'Message $1 | Actiones: $2',
 	'translate-manage-import-new' => 'Nove message $1',
-	'translate-manage-import-deleted' => 'Message delite $1',
+	'translate-manage-import-deleted' => 'Message $1 delite',
 	'translate-manage-action-import' => 'Importar',
 	'translate-manage-action-conflict' => 'Importar e marcar como "fuzzy"',
 	'translate-manage-action-ignore' => 'Ignorar',
@@ -17251,12 +17251,9 @@ $messages['ru'] = array(
 Если вы переводите на некоторый язык, но ваше имя не включено в список, пожалуйста, добавить своё имя в список переводчиков на [[:Category:Languages|портале]] данного языка.
 Ссылку на языковой портал языка из ваших настроек можно найти в меню.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Переводчик|Переводчики}}: $1',
-	'supportedlanguages-noportal-title' => 'Не определено пространство имён портала',
-	'supportedlanguages-noportal' => 'Администратор вики не определил NS_PORTAL, поэтому данная страница не работает.
-На этой странице появится список языковых порталов, соответствующих определённым кодам языков, и подстраница «Переводчики».
-Подстраница «Переводчики» должна содержать шаблон [[:{{ns:template}}:User|User]], с именем участника в качестве параметра.',
 	'supportedlanguages-recenttranslations' => 'недавние переводы',
 	'supportedlanguages-count' => 'Всего $1 {{plural:$1|язык|языка|языков}}',
+	'supportedlanguages-activity' => '$1: $2 {{PLURAL:$2|правка|правки|правок}} — последняя правка $3 {{PLURAL:$3|день|дня|дней}} назад',
 	'translate-save' => 'Сохранить ($1)',
 	'translate-jssti-add' => 'Добавить в список',
 	'managemessagegroups' => 'Управление группами сообщений',

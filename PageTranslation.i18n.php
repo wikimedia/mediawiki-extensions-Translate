@@ -1901,9 +1901,16 @@ Les échecs seront enregistrés dans le [[Special:Log/pagetranslation|journal de
 	'pt-movepage-started' => 'La page de base est à présent renommée.
 Veuillez vérifier le [[Special:Log/pagetranslation|journal des traductions]] pour repérer d’éventuelles erreurs et lire le message de complétion.',
 	'pt-locked-page' => 'Cette page est verrouillée parce que la page à traduire est en cours de renommage.',
+	'pt-deletepage-lang-title' => 'Suppression de la page de traduction $1.',
+	'pt-deletepage-full-title' => 'Suppression de la page à traduire $1.',
+	'pt-deletepage-invalid-title' => "La page spécifiée n'est pas valide.",
+	'pt-deletepage-invalid-text' => "La page spécifiée n'est pas une page à traduire, ni une traduction de celle-ci.",
 	'pt-deletepage-action-check' => 'Lister les pages à supprimer',
 	'pt-deletepage-action-perform' => 'Faire la suppression',
 	'pt-deletepage-action-other' => 'Changer la cible',
+	'pt-deletepage-lang-legend' => 'Supprimer la page traduite',
+	'pt-deletepage-full-legend' => 'Supprimer la page à traduire',
+	'pt-deletepage-any-legend' => 'Supprimer la page à traduire ou la traduction de la page à traduire',
 	'pt-deletepage-current' => 'Nom de la page :',
 	'pt-deletepage-reason' => 'Motif :',
 	'pt-deletepage-subpages' => 'Supprimer tous les sous-pages',
@@ -1911,6 +1918,12 @@ Veuillez vérifier le [[Special:Log/pagetranslation|journal des traductions]] po
 	'pt-deletepage-list-translation' => 'Pages de traduction',
 	'pt-deletepage-list-other' => 'Autres sous-pages',
 	'pt-deletepage-list-count' => 'Au total, $1 {{PLURAL:$1|page|pages}} à supprimer.',
+	'pt-deletepage-full-logreason' => 'Partie de la page à traduire $1.',
+	'pt-deletepage-lang-logreason' => 'Partie de la page de traduction $1.',
+	'pt-deletepage-started' => 'Veuillez vérifier le [[Special:Log/pagetranslation|journal des traductions]] pour les erreurs et le message de la fin.',
+	'pt-deletepage-intro' => "Cette page spéciale vous permet de supprimer des pages à traduire entières ou des traductions dans une langue.
+La suppression n'est pas instantanée, car plusieurs pages seront supprimées.
+Les échecs seront inscrits dans le [[Special:Log/pagetranslation|journal des traductions]] et ils doivent être corrigés à la main.",
 );
 
 /** Franco-Provençal (Arpetan)
