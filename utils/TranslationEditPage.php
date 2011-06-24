@@ -103,7 +103,7 @@ class TranslationEditPage {
 		$hidden[] = Html::hidden( 'action', 'edit' );
 
 		$summary = Xml::inputLabel( wfMsg( 'summary' ), 'summary', 'summary', 40 );
-		$save = Xml::submitButton( wfMsg( 'savearticle' ), array( 'style' => 'font-weight:bold', 'class' => 'mw-translate-save' ) );
+		$save = Xml::submitButton( wfMsg( 'savearticle' ), array( 'class' => 'mw-translate-save' ) );
 		$saveAndNext = Xml::submitButton( wfMsg( 'translate-js-next' ), array( 'class' => 'mw-translate-next' ) );
 		$skip = Html::element( 'input', array( 'class' => 'mw-translate-skip', 'type' => 'button', 'value' => wfMsg( 'translate-js-skip' ) ) );
 
