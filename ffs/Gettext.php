@@ -338,11 +338,12 @@ PHP;
 
 		$specs = isset( $template['HEADERS'] ) ? $template['HEADERS'] : array();
 
+		$timestamp = wfTimestampNow();
 		$specs['Project-Id-Version'] = $this->group->getLabel();
 		$specs['Report-Msgid-Bugs-To'] = $wgSitename;
-		$specs['PO-Revision-Date'] = self::formatTime( wfTimestampNow() );
+		$specs['PO-Revision-Date'] = self::formatTime( $timestamp );
 		if ( $this->offlineMode ) {
-			$specs['POT-Creation-Date'] = self::formatTime( wfTimestampNow() );
+			$specs['POT-Creation-Date'] = self::formatTime( $timestamp );
 		} elseif ( $this->group instanceof MessageGroupBase ) {
 			$specs['X-POT-Import-Date'] = self::formatTime( wfTimestamp( TS_MW, $this->getPotTime() ) );
 		}
