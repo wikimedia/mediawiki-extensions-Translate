@@ -15,7 +15,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
 /**
  * Version number used in extension credits and in other placed where needed.
  */
-define( 'TRANSLATE_VERSION', '2011-06-02' );
+define( 'TRANSLATE_VERSION', '2011-06-24' );
 
 /**
  * Extension credits properties.
@@ -398,7 +398,6 @@ $wgTranslateMessageNamespaces = array( NS_MEDIAWIKI );
 $wgTranslateAC = array(
 	'core'                => 'CoreMessageGroup',
 	'core-0-mostused'     => 'CoreMostUsedMessageGroup',
-	'core-0-mostused-old' => 'OldCoreMostUsedMessageGroup',
 );
 
 /**

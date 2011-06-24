@@ -641,37 +641,6 @@ class CoreMostUsedMessageGroup extends CoreMessageGroup {
 	}
 }
 
-/**
- * This class implements the "Most used messages" group for %MediaWiki for the old group.
- * Should be removed in June 2011.
- * @todo Move to the new interface.
- */
-class OldCoreMostUsedMessageGroup extends CoreMessageGroup {
-	protected $label = 'MediaWiki (most used - 2009)';
-	protected $id    = 'core-0-mostused-old';
-	protected $meta  = true;
-
-	protected $description = '{{int:translate-group-desc-mediawikimostused}}';
-
-	public function export( MessageCollection $messages ) { return 'Not supported'; }
-	public function exportToFile( MessageCollection $messages, $authors ) { return 'Not supported'; }
-
-	function getDefinitions() {
-		$data = file_get_contents( dirname( __FILE__ ) . '/wikimedia-mostused-2009.txt' );
-		$data = str_replace( "\r", '', $data );
-		$messages = explode( "\n", $data );
-		$contents = Language::getMessagesFor( 'en' );
-		$definitions = array();
-
-		foreach ( $messages as $key ) {
-			if ( isset( $contents[$key] ) ) {
-				$definitions[$key] = $contents[$key];
-			}
-		}
-
-		return $definitions;
-	}
-}
 
 /**
  * Group for messages that can be controlled via a page in %MediaWiki namespace.
