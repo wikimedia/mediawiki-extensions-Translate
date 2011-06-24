@@ -809,7 +809,6 @@ ali {{PLURAL:$1|posljednja verzija ne može|posljednje verzije ne mogu}} biti {{
 Ova stranica je prijevod stranice [[$1]] a prevodi se mogu ažurirati putem [$2 alata za prevođenje].',
 	'tpt-unknown-page' => 'Ovaj imenski prostor je rezervisan za prevode stranica sadržaja.
 Stranica koju pokušavate uređivati ne odgovara nekoj od stranica koje su označene za prevođenje.',
-	'tpt-delete-impossible' => 'Brisanje stranica koje su označene za prevod još nije moguće.',
 	'tpt-install' => 'Pokrenite php maintenance/update.php ili web install da biste omogućili osobinu prevođenja stranica.',
 	'tpt-render-summary' => 'Ažuriram na novu verziju izvorne stranice',
 	'tpt-download-page' => 'Izvezi stranicu sa prijevodima',
@@ -861,6 +860,14 @@ Greške će biti zapisane u [[Special:Log/pagetranslation|zapisnik prevođenja s
 	'pt-movepage-started' => 'Osnovna stranica se sad premješta.
 Molimo provjerite [[Special:Log/pagetranslation|zapisnik prevoda stranice]] za greške i poruke završetka.',
 	'pt-locked-page' => 'Ova stranica je zaključana jer se stranica za prevođenje sada premješta.',
+	'pt-deletepage-action-check' => 'Spisak stranica za brisanje',
+	'pt-deletepage-action-other' => 'Promijeni cilj',
+	'pt-deletepage-current' => 'Naslov stranice:',
+	'pt-deletepage-reason' => 'Razlog:',
+	'pt-deletepage-subpages' => 'Obriši sve podstranice',
+	'pt-deletepage-list-translation' => 'Stranice za prijevod',
+	'pt-deletepage-list-section' => 'Stranice sekcije',
+	'pt-deletepage-list-other' => 'Druge podstranice',
 );
 
 /** Buginese (ᨅᨔ ᨕᨘᨁᨗ)
@@ -3599,6 +3606,9 @@ Kuckt w.e.g. d'[[Special:Log/pagetranslation|Logbuch vun den Iwwersetzunge]] fir
 	'pt-deletepage-current' => 'Numm vun der Säit:',
 	'pt-deletepage-reason' => 'Grond:',
 	'pt-deletepage-subpages' => 'All Ënnersäite läschen',
+	'pt-deletepage-list-section' => 'Abschnitter vu Säiten',
+	'pt-deletepage-list-other' => 'Aner Ënnersäiten',
+	'pt-deletepage-lang-logreason' => 'Deel vun der iwwersater Säit $1.',
 );
 
 /** Ganda (Luganda)
