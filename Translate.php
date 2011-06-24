@@ -359,6 +359,7 @@ $wgTranslateGroupStructure = array(
 	'/^ext-collection/' => array( 'ext', 'collection' ),
 	'/^ext-flaggedrevs/' => array( 'ext', 'flaggedrevs' ),
 	'/^ext-readerfeedback/' => array( 'ext', 'readerfeedback' ),
+        '/^ext-semantic/' => array( 'ext', 'semantic' ),
 	'/^ext-socialprofile/' => array( 'ext', 'socialprofile' ),
 	'/^ext-translate/' => array( 'ext', 'translate' ),
 	'/^ext-uniwiki/' => array( 'ext', 'uniwiki' ),

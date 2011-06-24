@@ -1,0 +1,13 @@
+BASIC:
+  id: ext-semantic-0-all
+  label: All Semantic MediaWiki extensions' messages
+  display: ext/semantic
+  meta: yes
+  class: AggregateMessageGroup
+  description: '{{int:translate-group-desc-semantic}}'
+  namespace: NS_MEDIAWIKI
+
+GROUPS:
+  - ext-folktagcloud
+  - ext-rdfio
+  - ext-semantic*
