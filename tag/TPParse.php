@@ -4,7 +4,7 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2009-2010 Niklas Laxström
+ * @copyright Copyright © 2009-2011 Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -88,7 +88,7 @@ class TPParse {
 		foreach ( $sections as $s ) {
 			$s->type = 'old';
 
-			if ( $s->id === - 1 ) {
+			if ( $s->id === -1 ) {
 				$s->type = 'new';
 				$s->id = ++$highest;
 			} else {
