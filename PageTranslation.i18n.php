@@ -738,7 +738,12 @@ Er [[Special:Log/pagetranslation|page marilh treiñ]] e vo enrollet ar mankoù a
 	'pt-movepage-started' => 'Adanvet eo bet ar bajenn diazez.
 Mar plij gwiriit [[Special:Log/pagetranslation|pajenn marilh an troidigezhioù]] evit kempenn ar fazioù, mar bez, ha lenn ar gemennadenn glozañ.',
 	'pt-locked-page' => "Prennet eo ar bajenn-mañ dre m' emeur oc'h adenvel ar bajenn da dreiñ.",
+	'pt-deletepage-lang-title' => 'O tiverkañ ar bajenn dreiñ $1.',
+	'pt-deletepage-full-title' => 'O tiverkañ ar bajenn da dreiñ $1.',
 	'pt-deletepage-invalid-title' => 'Faziek eo ar bajenn spisaet.',
+	'pt-deletepage-invalid-text' => "N'eus ket eus ar bajenn spisaet ur bajenn da vezañ troet, nag un droidigezh anezhi.",
+	'pt-deletepage-action-check' => 'Rollañ ar pajennoù da vezañ diverket',
+	'pt-deletepage-action-perform' => 'Diverkañ',
 	'pt-deletepage-action-other' => 'Kemmañ ar moned',
 	'pt-deletepage-lang-legend' => 'Diverkañ ar bajenn dreiñ',
 	'pt-deletepage-full-legend' => "Diverkañ ar bajenn a c'haller treiñ",
