@@ -1429,6 +1429,8 @@ file = SignDocument/SpecialSignDocument.i18n.php
 descmsg = signdocument
 optional = sign-emailto
 
+Signup API
+
 Simple Anti Spam
 
 Simple Security
