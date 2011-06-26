@@ -141,6 +141,8 @@ Category Multisort Chinese
 Category On Upload
 optional = categoryonupload-none
 
+Category Sort Headers
+
 Category Stepper
 ignored = categorystepper
 
