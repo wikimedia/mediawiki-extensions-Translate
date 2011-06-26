@@ -529,6 +529,7 @@ class SpecialPageTranslation extends SpecialPage {
 		$page->getTranslationPercentages( /*re-generate*/ true );
 		ArrayMemoryCache::factory( 'groupstats' )->clearGroup( $page->getMessageGroupId() );
 		MessageIndexRebuilder::execute();
+		MessageGroups::clearCache();
 		return false;
 	}
 
@@ -574,14 +575,8 @@ class SpecialPageTranslation extends SpecialPage {
 	}
 
 	public function setupRenderJobs( TranslatablePage $page ) {
-		global $wgContLang;
 		$titles = $page->getTranslationPages();
-
-		# If this page is marked for the first time, /en may not yet exists
-		# TODO: make sure there will be no two render jobs for the same subpage
-		$en = Title::newFromText( $page->getTitle()->getPrefixedText() . '/' . $wgContLang->getCode() );
-		$titles[] = $en;
-		
+		$this->addInitialRenderJob( $page, $titles );
 		$jobs = array();
 
 		foreach ( $titles as $t ) {
@@ -598,6 +593,27 @@ class SpecialPageTranslation extends SpecialPage {
 			// Use the job queue
 			self::superDebug( __METHOD__, 'renderjob-delayed' );
 			Job::batchInsert( $jobs );
+		}
+	}
+
+	/**
+	 * If this page is marked for the first time, /en may not yet exists.
+	 * If this is the case, add a RenderJob for it, but don't execute it
+	 * immediately, since the message group doesn't exist during this request.
+	 */
+	protected function addInitialRenderJob( $page, $titles ) {
+		global $wgContLang;
+		$en = Title::newFromText( $page->getTitle()->getPrefixedText() . '/' . $wgContLang->getCode() );
+		$hasen = false;
+		foreach ( $titles as $t ) {
+			if ( $t->equals( $en ) ) {
+				$hasen = true;
+				break;
+			}
+		}
+
+		if ( !$hasen ) {
+			$job = RenderJob::newJob( $en )->insert();
 		}
 	}
 
