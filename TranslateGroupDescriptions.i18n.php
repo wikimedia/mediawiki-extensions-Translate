@@ -296,6 +296,7 @@ $messages['bg'] = array(
  * @author Fohanno
  * @author Fulup
  * @author Gwendal
+ * @author McDutchie
  * @author Y-M D
  */
 $messages['br'] = array(
@@ -307,7 +308,7 @@ $messages['br'] = array(
 	'translate-group-desc-collection' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astenn MediaWiki [http://www.mediawiki.org/wiki/Extension:Collection Dastumad]',
 	'translate-group-desc-flaggedrevs' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astenn MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astenn MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
-	'translate-group-desc-semantic' => 'Stroll kemennadennoù Meta ennañ an holl gemennadennoù evit holl astennoù [http://http://semantic-mediawiki.org/ Semantic MediaWiki]',
+	'translate-group-desc-semantic' => 'Stroll kemennadennoù Meta ennañ an holl gemennadennoù evit holl astennoù [http://semantic-mediawiki.org/ Semantic MediaWiki]',
 	'translate-group-desc-socialprofile' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astenn MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
 	'translate-group-desc-translate' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astenn MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Treiñ]',
 	'translate-group-desc-wikiaextensions' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astennoù MediaWiki implijet gant [http://www.wikia.com Wikia]',
@@ -526,6 +527,7 @@ $messages['da'] = array(
 	'translate-group-desc-ihris-i2ce' => 'En besked gruppe for [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], et modul af [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-manage' => 'En besked gruppe for [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], et modul af [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-qualify' => 'En besked gruppe for [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]], et modul af [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-kiwix' => 'En beskedgruppe for [[Translating:Kiwix|Kiwix]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'Et centralt plugin til [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-branch' => 'Beskeder til en stabil version af [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] er et management informationssystem for mikrofinansiering',
@@ -538,6 +540,16 @@ $messages['da'] = array(
 	'bw-desc-openlayers' => '[[Translating:OpenLayers|OpenLayers]] er en dynamisk kort generator i JavaScript',
 	'bw-desc-openstreetmap' => 'Alle meddelelser relateret til [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => '[[Translating:OpenStreetMap|OpenStreetMap]] er et redigerbart kort over hele verden',
+	'bw-desc-osm-potlatch' => '[[Translating:OpenStreetMap|Potlatch]] er en Flash-baseret OpenStreetMap editor',
+	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] er en samling af værktøjer til at redigere Wikipedia',
+	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]] er web-baseret Spørgsmål og Svar software',
+	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] er en microblogging server',
+	'translate-group-desc-statusnet-plugin' => 'Disse meddelelser er en del af et plugin til [[Translating:StatusNet|StatusNet]]',
+	'translate-group-desc-tsint' => 'En besked gruppe for [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], i18n systemet til [http://toolserver.org Toolserver] værktøjer (<span class="plainlinks">[[Translating talk:Toolserver|support]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition technical details]</span>)',
+	'bw-desc-voctrain' => '[[Translating:Voctrain|Voctrain]] er en OmegaWiki-baseret ordforråd træner',
+	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] er i stand til hurtigt at finde forfatterne til en del af en side i en Wikimedia wiki',
+	'bw-desc-wikimediamobile' => '[[Translating:Wikimedia_mobile|Wikimedia mobile]] er den mobile brugerflade til Wikipedia',
+	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] giver en frakoblet tekstudgave af Wikipedia på en mobil enhed.',
 );
 
 /** German (Deutsch)
@@ -1056,6 +1068,7 @@ $messages['he'] = array(
 	'translate-group-desc-collection' => 'מטא־קבוצה המכילה את כל ההודעות של הרחבות הקשורות ל־[http://www.mediawiki.org/wiki/Extension:Collection Collection]',
 	'translate-group-desc-flaggedrevs' => 'מטא־קבוצה המכילה את כל ההודעות של הרחבות הקשורות ל־[http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'מטא־קבוצה המכילה את כל ההודעות של הרחבות הקשורות ל־[http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
+	'translate-group-desc-semantic' => 'מטא־קבוצת הודעות שמכילה את כל ההודעות עובר כל ההרחבות ממשפחת [http://semantic-mediawiki.org/ מדיה־ויקי סמנטית]',
 	'translate-group-desc-socialprofile' => 'מטא־קבוצה המכילה את כל ההודעות של הרחבות הקשורות ל־[http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
 	'translate-group-desc-translate' => 'מטא־קבוצה המכילה את כל ההודעות של הרחבות הקשורות להרחבה [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-wikiaextensions' => 'מטא־קבוצה המכילה את כל ההודעות של הרחבות הקשורות לאתר [http://www.wikia.com ויקיה]',
@@ -1239,6 +1252,7 @@ $messages['ia'] = array(
 	'translate-group-desc-collection' => 'Metagruppo con tote le messages pro le extension de MediaWiki [http://www.mediawiki.org/wiki/Extension:Collection Collection].',
 	'translate-group-desc-flaggedrevs' => 'Metagruppo con tote le messages pro le extension de MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs Marcaversiones].',
 	'translate-group-desc-readerfeedback' => 'Metagruppo con tote le messages pro le extension MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
+	'translate-group-desc-semantic' => 'Meta-gruppo que contine le messages pro tote le extensiones de [http://semantic-mediawiki.org/ Semantic MediaWiki]',
 	'translate-group-desc-socialprofile' => 'Metagruppo con tote le messages pro le extensiones connexe al extension de MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Profilo social]',
 	'translate-group-desc-translate' => 'Metagruppo con tote le messages pro le extension de MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Traducer].',
 	'translate-group-desc-wikiaextensions' => 'Metagruppo con tote le messages pro le extensiones supportate de MediaWiki usate per [http://www.wikia.com Wikia]',
@@ -1698,6 +1712,7 @@ $messages['nl'] = array(
 	'translate-group-desc-collection' => 'Metaberichtengroep die alle berichten bevat voor de MediaWiki-uitbreiding [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
 	'translate-group-desc-flaggedrevs' => 'Metaberichtengroep die alle berichten bevat voor de MediaWiki-uitbreiding [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Metaberichtengroep met alle berichten voor de MediaWiki-uitbreiding [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
+	'translate-group-desc-semantic' => 'Metaberichtengroep die alle berichten bevat voor alle [http://http://semantic-mediawiki.org/ Semantische MediaWiki]-extensies',
 	'translate-group-desc-socialprofile' => 'Metaberichtengroep die alle berichten bevat voor uitbreidingen gerelateerd aan [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
 	'translate-group-desc-translate' => 'Metaberichtengroep die alle berichten bevat voor de MediaWiki-uitbreiding [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-wikiaextensions' => 'Metaberichtengroep die alle berichten bevat voor ondersteunde MediaWiki-uitbreidingen gebruikt door [http://www.wikia.com Wikia]',
@@ -1716,6 +1731,7 @@ $messages['nl'] = array(
 	'translate-group-desc-ihris-i2ce' => 'Een berichtengroep voor [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], een module van [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-manage' => 'Een berichtengroep voor [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], een module van [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-qualify' => 'Een berichtengroep voor [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]], een module van [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-kiwix' => 'Een berichtengroep voor [[Translating:Kiwix|Kiwix]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'Een core-plugin voor [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-branch' => 'Berichten voor een stabiele versie van [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] is een beheersysteem voor microfinanciering',
@@ -1984,6 +2000,7 @@ $messages['ps'] = array(
 /** Portuguese (Português)
  * @author Giro720
  * @author Hamilton Abreu
+ * @author McDutchie
  * @author Waldir
  */
 $messages['pt'] = array(
@@ -1995,7 +2012,7 @@ $messages['pt'] = array(
 	'translate-group-desc-collection' => 'Este meta-grupo contém todas as mensagens para a extensão do MediaWiki [http://www.mediawiki.org/wiki/Extension:Collection Colecção]',
 	'translate-group-desc-flaggedrevs' => 'Este meta-grupo contém todas as mensagens para a extensão do MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs Revisão de Edições]',
 	'translate-group-desc-readerfeedback' => 'Este meta-grupo contém todas as mensagens para a extensão do MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs ReaderFeedback]',
-	'translate-group-desc-semantic' => 'Este meta-grupo contém todas as mensagens para todas as extensões do [http://http://semantic-mediawiki.org/ MediaWiki Semântico]',
+	'translate-group-desc-semantic' => 'Este meta-grupo contém todas as mensagens para todas as extensões do [http://semantic-mediawiki.org/ MediaWiki Semântico]',
 	'translate-group-desc-socialprofile' => 'Este meta-grupo contém todas as mensagens para as extensões relacionadas com a extensão do MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Perfil Social]',
 	'translate-group-desc-translate' => 'Este meta-grupo contém todas as mensagens para a extensão do MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Traduzir]',
 	'translate-group-desc-wikiaextensions' => 'Este meta-grupo contém todas as mensagens para as extensões suportadas do MediaWiki que são usadas pela [http://www.wikia.com Wikia]',
