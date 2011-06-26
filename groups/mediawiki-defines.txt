@@ -728,6 +728,8 @@ Live Translate
 
 Livelets
 
+Local JQuery
+
 Localisation Update
 
 Lockdown
