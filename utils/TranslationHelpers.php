@@ -643,8 +643,8 @@ class TranslationHelpers {
 
 		$dialogID = $this->dialogID();
 		$id = Sanitizer::escapeId( "def-$dialogID" );
-		$msg = $this->adder( $id ) . "\n" . Html::rawElement( 'span',
-			array( 'class' => 'mw-translate-edit-deftext' ),
+		$msg = $this->adder( $id ) . "\n" . Html::rawElement( 'div',
+			array( 'class' => 'mw-translate-edit-deftext', 'dir' => 'ltr', 'lang' => 'en' ),
 			TranslateUtils::convertWhiteSpaceToHTML( $en )
 		);
 
@@ -749,7 +749,7 @@ class TranslationHelpers {
 			$params = array( 'class' => 'mw-translate-edit-item' );
 
 			$display = TranslateUtils::convertWhiteSpaceToHTML( $text );
-			$display = Html::rawElement( 'span', array(
+			$display = Html::rawElement( 'div', array(
 				'lang' => $fbcode,
 				'dir' => Language::factory( $fbcode )->getDir() ),
 				$display
@@ -807,7 +807,8 @@ class TranslationHelpers {
 		$contents = preg_replace( '~^<([a-z]+)>(.*)</\1>$~us', '\2', $contents );
 
 		return TranslateUtils::fieldset(
-			wfMsgHtml( 'translate-edit-information', $edit, $page ), $contents, array( 'class' => $class )
+			wfMsgHtml( 'translate-edit-information', $edit, $page ), Html::rawElement( 'span',
+			array( 'dir' => 'ltr', 'lang' => 'en' ), $contents ), array( 'class' => $class )
 		);
 
 	}
@@ -1074,7 +1075,9 @@ class TranslationHelpers {
 		$counter++;
 		$dialogID = $this->dialogID();
 		$id = Sanitizer::escapeId( "tmsug-$dialogID-$counter" );
-		$contents = TranslateUtils::convertWhiteSpaceToHTML( $text );
+		$contents = Html::rawElement( 'div', array( 'lang' => $this->targetLanguage,
+			'dir' => Language::factory( $this->targetLanguage )->getDir() ),
+			TranslateUtils::convertWhiteSpaceToHTML( $text ) );
 		$contents .= $this->wrapInsert( $id, $text );
 
 		return $this->adder( $id ) . "\n" . $contents;
