@@ -203,7 +203,7 @@ file = Cite/SpecialCite.i18n.php
 aliasfile = Cite/SpecialCite.alias.php
 descmsg = cite_article_desc
 ignored = cite_text, accesskey-cite-article
-mood
+
 CLDR
 file = cldr/cldr.i18n.php
 
