@@ -796,9 +796,15 @@ class TranslationHelpers {
 		if ( $info !== null && $gettext ) $info .= Html::element( 'hr' );
 		$info .= $gettext;
 
+		// The information is most likely in English
+		$divAttribs = array( 'dir' => 'ltr', 'lang' => 'en' );
+
 		if ( strval( $info ) === '' ) {
+			global $wgLang;
 			$info = wfMsg( 'translate-edit-no-information' );
 			$class = 'mw-sp-translate-edit-noinfo';
+			// The message saying that there's no info, should be translated
+			$divAttribs = array( 'dir' => $wgLang->getDir(), 'lang' => $wgLang->getCode() );
 		}
 		$class .= ' mw-sp-translate-message-documentation';
 
@@ -808,7 +814,7 @@ class TranslationHelpers {
 
 		return TranslateUtils::fieldset(
 			wfMsgHtml( 'translate-edit-information', $edit, $page ), Html::rawElement( 'div',
-			array( 'dir' => 'ltr', 'lang' => 'en' ), $contents ), array( 'class' => $class )
+			$divAttribs, $contents ), array( 'class' => $class )
 		);
 
 	}
