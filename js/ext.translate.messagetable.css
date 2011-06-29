@@ -33,6 +33,7 @@
 
 .mw-sp-translate-table .untranslated {
 	background-color: #a2f290;
+	/* @noflip */direction: ltr;
 }
 
 
