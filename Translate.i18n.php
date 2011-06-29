@@ -13563,6 +13563,7 @@ Senarai bahasa tersedia bergantung pada bahasa anda.',
 	'translate-statsf-intro' => 'Anda boleh menjana statistik ringkas dengan borang ini.
 Semua nilai ada had maksimum dan minimun.',
 	'translate-sidebar-alltrans' => 'Dalam bahasa lain',
+	'translate-translations-messagename' => 'Nama:',
 	'translate-translations-history-short' => 's',
 	'languagestats' => 'Statistik bahasa',
 	'languagestats-summary' => 'Laman ini menunjukkan statistik penterjemahan untuk semua kumpulan mesej dalam satu bahasa.',
@@ -13598,10 +13599,6 @@ Jika bahasa yang anda cari tidak tersenarai, anda boleh mengetahui cara untuk me
 Jika anda menterjemah ke dalam satu bahasa tetapi nama anda tidak tersenarai, sila bubuh nama anda pada senarai penterjemah di [[:Category:Languages|portal]] bahasa itu.
 Lihat bar menu untuk pautan ke portal bahasa keutamaan anda.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Penterjemah|Penterjemah}}: $1',
-	'supportedlanguages-noportal-title' => 'Ruang nama portal tidak dinyatakan',
-	'supportedlanguages-noportal' => 'Pentadbir wiki belum menakrifkan NS_PORTAL, jadi laman ini tidak berfungsi.
-Di laman ini, satu senarai portal bahasa akan dipaparkan untuk semua portal yang sepadan dengan kod bahasa yang ditakrifkan serta sublaman "translators".
-Sublaman "translators" mesti mengandungi templat [[:{{ns:template}}:User|User]], yang mana nama pengguna dijadikan parameter.',
 	'supportedlanguages-recenttranslations' => 'terjemahan terbaru',
 	'translate-save' => 'Simpan ($1)',
 	'translate-jssti-add' => 'Tambahkan kepada senarai',

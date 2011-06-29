@@ -869,6 +869,7 @@ Greške će biti zapisane u [[Special:Log/pagetranslation|zapisnik prevođenja s
 	'pt-movepage-started' => 'Osnovna stranica se sad premješta.
 Molimo provjerite [[Special:Log/pagetranslation|zapisnik prevoda stranice]] za greške i poruke završetka.',
 	'pt-locked-page' => 'Ova stranica je zaključana jer se stranica za prevođenje sada premješta.',
+	'pt-deletepage-lang-title' => 'Brisanje stranice za prevođenje $1.',
 	'pt-deletepage-action-check' => 'Spisak stranica za brisanje',
 	'pt-deletepage-action-perform' => 'Izvrši brisanje',
 	'pt-deletepage-action-other' => 'Promijeni cilj',
@@ -3825,6 +3826,8 @@ $messages['mn'] = array(
  */
 $messages['ms'] = array(
 	'translate-tag-translate-link-desc' => 'Terjemahkan laman ini',
+	'pt-movepage-reason' => 'Sebab:',
+	'pt-deletepage-reason' => 'Sebab:',
 );
 
 /** Maltese (Malti)
@@ -5186,6 +5189,7 @@ Prosimo, preverite [[Special:Log/pagetranslation|dnevnik strani prevodov]] za na
 	'pt-deletepage-subpages' => 'Izbriši vse podstrani',
 	'pt-deletepage-list-pages' => 'Seznam strani za izbris',
 	'pt-deletepage-list-other' => 'Druge podstrani',
+	'pt-deletepage-list-count' => 'Skupno je za izbrisati $1 {{PLURAL:$1|stran|strani}}.',
 	'pt-deletepage-full-logreason' => 'Del prevedljive strani $1.',
 	'pt-deletepage-lang-logreason' => 'Del strani prevoda $1.',
 );
