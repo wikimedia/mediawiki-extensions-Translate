@@ -132,7 +132,7 @@ class MessageTable {
 				$rclasses = array_merge ( $mespa, array( 'class' => 'translated' ) );
 			} else {
 				$message = $original;
-				$rclasses = array( 'class' => 'untranslated' );
+				$rclasses = array( 'lang' => 'en', 'dir' => 'ltr', 'class' => 'untranslated' );
 			}
 
 			global $wgLang;
@@ -160,7 +160,8 @@ class MessageTable {
 			if ( $this->reviewMode && $original !== $message ) {
 				$output .= Xml::tags( 'tr', array( 'class' => 'orig' ),
 					Xml::tags( 'td', array( 'rowspan' => '2' ), $leftColumn ) .
-					Xml::tags( 'td', null, TranslateUtils::convertWhiteSpaceToHTML( $original ) )
+					Xml::tags( 'td', array( 'lang' => 'en', 'dir' => 'ltr' ),
+						TranslateUtils::convertWhiteSpaceToHTML( $original ) )
 				);
 
 				$output .= Xml::tags( 'tr', array( 'class' => 'new' ),
