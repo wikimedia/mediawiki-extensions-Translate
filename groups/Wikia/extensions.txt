@@ -30,6 +30,7 @@ Batch User Rights
 file = SpecialBatchUserRights/BatchUserRights.i18n.php
 aliasfile = SpecialBatchUserRights/BatchUserRights.alias.php
 
+Campfire 
 Category Exhibition
 file = CategoryExhibition/i18n/CategoryExhibition.i18n.php
 
@@ -44,6 +45,8 @@ Cloak Check
 Community Messages
 
 Content Feeds
+
+Control Center
 
 #Commented out 2010-02-01 -- tor
 #Dropping in favour of CreatePage (below)
@@ -70,6 +73,12 @@ Follow
 aliasfile = Follow/Follow.alias.php
 
 Founder Emails
+
+Founder Progress Bar
+
+Game Guides
+
+Global Notification
 
 Global Watchlist
 
