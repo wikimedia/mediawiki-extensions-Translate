@@ -460,6 +460,17 @@ Netter de letzte Version kå zur Ywersetzung markird wern.",
 	'tpt-notsuitable' => 'De Saiten $1 is ned zum Ywersetzen gaignet.
 Söi sicher, das a <nowiki><translate></nowiki>-Tag und güitige Syntax vawendt werd.',
 	'tpt-languages-legend' => 'Ånderne Sproochen:',
+	'pt-deletepage-current' => 'Seitennåm',
+	'pt-deletepage-reason' => 'Grund:',
+	'pt-deletepage-subpages' => 'Olle Unterseiten leschen',
+	'pt-deletepage-list-pages' => "Listen vo de z' leschenden Seiten",
+	'pt-deletepage-list-translation' => 'Ywersetzte Seiten',
+	'pt-deletepage-list-section' => 'Obschnitsseiten',
+	'pt-deletepage-list-other' => 'Weiderne Unterseiten',
+	'pt-deletepage-list-count' => "Insgsåmt gibts $1 z' leschende {{PLURAL:$1|Seite|Seiten}}.",
+	'pt-deletepage-full-logreason' => 'Teil vo da ywersetzborn Seiten $1.',
+	'pt-deletepage-lang-logreason' => 'Teil vo da ywersetzten Seiten $1.',
+	'pt-deletepage-started' => "Bittschee 's [[Special:Log/pagetranslation|Ywersetzungs-Logbuach]] noch Feelern und Ausfyrungsnoochrichten priaffm.",
 );
 
 /** Belarusian (Беларуская)
