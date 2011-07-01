@@ -31,6 +31,7 @@ file = SpecialBatchUserRights/BatchUserRights.i18n.php
 aliasfile = SpecialBatchUserRights/BatchUserRights.alias.php
 
 Campfire 
+
 Category Exhibition
 file = CategoryExhibition/i18n/CategoryExhibition.i18n.php
 
