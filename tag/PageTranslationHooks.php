@@ -212,12 +212,13 @@ class PageTranslationHooks {
 
 		if ( method_exists( $options, 'getUserLang' ) ) {
 			$userLangCode = $options->getUserLang();
-			$sk = false;
 		} else { // Backward compat for MediaWiki 1.17
 			global $wgLang;
 			$userLangCode = $wgLang->getCode();
-			$sk = $options->getSkin();
 		}
+
+		// BC for <1.19
+		$linker = class_exists('DummyLinker') ? new DummyLinker : new Linker;
 
 		$languages = array();
 		foreach ( $status as $code => $percent ) {
@@ -248,19 +249,9 @@ class PageTranslationHooks {
 			if ( $parser->getTitle()->getText() === $_title->getText() ) {
 				$languages[] = Html::rawElement( 'b', null, "*$name* $percent" );
 			} elseif ( $code === $userLangCode ) {
-				// Backward compat for MediaWiki 1.17
-				if( $sk ) {
-					$languages[] = $sk->linkKnown( $_title, Html::rawElement( 'b', null, "$name $percent" ) );
-				} else {
-					$languages[] = Linker::linkKnown( $_title, Html::rawElement( 'b', null, "$name $percent" ) );
-				}
+				$languages[] = $linker->linkKnown( $_title, Html::rawElement( 'b', null, "$name $percent" ) );
 			} else {
-				// Backward compat for MediaWiki 1.17
-				if( $sk ) {
-					$languages[] = $sk->linkKnown( $_title, "$name $percent" );
-				} else {
-					$languages[] = Linker::linkKnown( $_title, "$name $percent" );
-				}
+				$languages[] = $linker->linkKnown( $_title, "$name $percent" );
 			}
 		}
 
@@ -429,7 +420,7 @@ FOO;
 		$ready = $page->getReadyTag();
 
 		$title = $page->getTitle();
-		$sk = $wgUser->getSkin();
+		$linker = class_exists('DummyLinker') ? new DummyLinker : new Linker;
 
 		$latest = $title->getLatestRevId();
 		$canmark = $ready === $latest && $marked !== $latest;
@@ -445,7 +436,7 @@ FOO;
 
 			$translate = SpecialPage::getTitleFor( 'Translate' );
 			$linkDesc  = wfMsgHtml( 'translate-tag-translate-link-desc' );
-			$actions[] = $sk->link( $translate, $linkDesc, array(), $par );
+			$actions[] = $linker->link( $translate, $linkDesc, array(), $par );
 		}
 
 		if ( $canmark ) {
@@ -457,7 +448,7 @@ FOO;
 				// This page has never been marked
 				if ( $marked === false ) {
 					$linkDesc  = wfMsgHtml( 'translate-tag-markthis' );
-					$actions[] = $sk->link( $translate, $linkDesc, array(), $par );
+					$actions[] = $linker->link( $translate, $linkDesc, array(), $par );
 				} else {
 					$markUrl = $translate->getFullUrl( $par );
 					$actions[] = wfMsgExt( 'translate-tag-markthisagain', 'parseinline', $diffUrl, $markUrl );
@@ -587,8 +578,9 @@ FOO;
 
 	public static function replaceSubtitle( &$subpages, $skin = null , $out = null ) {
 		global $wgOut, $wgUser;
+		// $out was only added in some MW version
 		if ( $out === null ) $out = $wgOut;
-		if ( $skin === null ) $skin = $wgUser->getSkin();
+		$linker = class_exists('DummyLinker') ? new DummyLinker : new Linker;
 
 		if ( !TranslatablePage::isTranslationPage( $out->getTitle() )
 				&& !TranslatablePage::isSourcePage( $out->getTitle() ) ) {
@@ -615,7 +607,7 @@ FOO;
 					$linkObj = Title::newFromText( $growinglink );
 
 					if ( is_object( $linkObj ) && $linkObj->exists() ) {
-						$getlink = $skin->linkKnown(
+						$getlink = $linker->linkKnown(
 							SpecialPage::getTitleFor( 'MyLanguage', $growinglink ),
 							htmlspecialchars( $display )
 						);
