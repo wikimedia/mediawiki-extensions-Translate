@@ -161,6 +161,13 @@ $wgResourceModules['jquery.autoresize'] = array(
 	'scripts' => 'js/jquery.autoresize.js',
 ) + $resourcePaths;
 
+// Doesn't exist in 1.17, but declaring twice causes an error
+if ( version_compare( $wgVersion, '1.18', '<' ) ) {
+$wgResourceModules['jquery.form'] = array(
+	'scripts' => 'js/jquery.form.js',
+) + $resourcePaths;
+}
+
 /** @endcond */
 
 
@@ -359,7 +366,7 @@ $wgTranslateGroupStructure = array(
 	'/^ext-collection/' => array( 'ext', 'collection' ),
 	'/^ext-flaggedrevs/' => array( 'ext', 'flaggedrevs' ),
 	'/^ext-readerfeedback/' => array( 'ext', 'readerfeedback' ),
-        '/^ext-semantic/' => array( 'ext', 'semantic' ),
+	'/^ext-semantic/' => array( 'ext', 'semantic' ),
 	'/^ext-socialprofile/' => array( 'ext', 'socialprofile' ),
 	'/^ext-translate/' => array( 'ext', 'translate' ),
 	'/^ext-uniwiki/' => array( 'ext', 'uniwiki' ),
