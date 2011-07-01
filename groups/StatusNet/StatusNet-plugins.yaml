@@ -198,6 +198,20 @@ MANGLER:
   prefix: blankad-
 ---
 BASIC:
+  id: out-statusnet-plugin-blog
+  label: StatusNet - Blog
+  display: out/statusnet/plugin/blog
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/1.0.x/plugins/Blog/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/Blog/locale/%CODE%/LC_MESSAGES/Blog.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/Blog/locale/Blog.pot
+  targetPattern: statusnet/plugins/Blog/locale/%CODE%/LC_MESSAGES/Blog.po
+
+MANGLER:
+  prefix: blog-
+---
+BASIC:
   id: out-statusnet-plugin-blogspamnet
   label: StatusNet - BlogspamNet
   display: out/statusnet/plugin/blogspamnet
