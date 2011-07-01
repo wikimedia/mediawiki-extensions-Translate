@@ -4,7 +4,7 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2010 Niklas Laxström
+ * @copyright Copyright © 2010-2011 Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -17,16 +17,12 @@
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class SpecialMyLanguage extends UnlistedSpecialPage {
-	/**
-	 * Construct
-	 */
+
 	public function __construct() {
 		parent::__construct( 'MyLanguage' );
 	}
 
-	/**
-	 * Execute method
-	 */
+	/// Only takes arguments from $par
 	public function execute( $par ) {
 		global $wgOut, $wgLang;
 
@@ -41,9 +37,7 @@ class SpecialMyLanguage extends UnlistedSpecialPage {
 			}
 		}
 
-		/**
-		 * Go to the main page if given invalid title.
-		 */
+		// Go to the main page if given invalid title.
 		if ( !$title ) {
 			$title = Title::newMainPage();
 		}
@@ -60,7 +54,7 @@ class SpecialMyLanguage extends UnlistedSpecialPage {
 			list( $name, $subpage ) = SpecialPage::resolveAliasWithSubpage( $target->getDBkey() );
 			if ( $name === 'MyLanguage' ) {
 				$realTarget = Title::newFromText( $subpage );
-				if ( !$realTarget->exists() ) {
+				if ( !$realTarget || !$realTarget->exists() ) {
 					$options[] = 'broken';
 					$index = array_search( 'known', $options, true );
 					if ( $index !== false ) unset( $options[$index] );
