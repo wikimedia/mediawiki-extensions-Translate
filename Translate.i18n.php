@@ -607,6 +607,14 @@ $messages['ary'] = array(
 	'translate-manage-import-deleted' => 'Méṣaj memḫi $1',
 );
 
+/** ꢱꣃꢬꢵꢯ꣄ꢡ꣄ꢬꢵ (ꢱꣃꢬꢵꢯ꣄ꢡ꣄ꢬꢵ)
+ * @author MooRePrabu
+ */
+$messages['saz'] = array(
+	'translate-statsf-scale-days' => 'ꢣꢶꢥ꣄ꢥꢸꢥ꣄',
+	'translate-statsf-count-registrations' => 'ꢥꣁꢮ꣄ꢮꣁ ꢮꢮ꣄ꢬꢸꢥꢵꢬꢸꢥ꣄',
+);
+
 /** Afrikaans (Afrikaans)
  * @author Arnobarnard
  * @author Byeboer
@@ -13280,6 +13288,10 @@ $messages['ml'] = array(
 	'translate-gs-count' => 'എണ്ണം',
 	'translate-gs-total' => 'ആകെ',
 	'translate-gs-avgscore' => 'ശരാശരി സ്കോർ',
+	'translate-documentation-language' => 'സന്ദേശ വിവരണം',
+	'translate-searchprofile' => 'പരിഭാഷകൾ',
+	'translate-searchprofile-tooltip' => 'എല്ലാ പരിഭാഷകളിൽ നിന്നും തിരയുക',
+	'translate-search-languagefilter' => 'ഭാഷയനുസരിച്ച് എടുക്കുക:',
 );
 
 /** Mongolian (Монгол)

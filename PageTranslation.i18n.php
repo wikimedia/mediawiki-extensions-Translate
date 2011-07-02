@@ -224,6 +224,14 @@ $3 is an URL.',
 	'pt-deletepage-reason' => '{{Identical|Reason}}',
 );
 
+/** ꢱꣃꢬꢵꢯ꣄ꢡ꣄ꢬꢵ (ꢱꣃꢬꢵꢯ꣄ꢡ꣄ꢬꢵ)
+ * @author MooRePrabu
+ */
+$messages['saz'] = array(
+	'pt-movepage-current' => 'ꢂꢡ꣄ꢡꢵ ꢥꢵꢮ꣄',
+	'pt-movepage-new' => 'ꢥꣁꢮ꣄ꢮꣁ ꢥꢵꢮ꣄',
+);
+
 /** Afrikaans (Afrikaans)
  * @author Naudefj
  */
@@ -3816,6 +3824,7 @@ $messages['ml'] = array(
 	'translate-tag-translate-link-desc' => 'ഈ താൾ പരിഭാഷപ്പെടുത്തുക',
 	'tpt-languages-legend' => 'മറ്റു ഭാഷകൾ:',
 	'pt-movepage-block-subpage-exists' => 'ലക്ഷ്യം വെച്ച ഉപതാൾ [[:$2]] നിലവിലുണ്ട്.',
+	'pt-movepage-list-translation' => 'പരിഭാഷാ താളുകൾ',
 	'pt-movepage-list-other' => 'മറ്റ് ഉപതാളുകൾ',
 	'pt-movepage-current' => 'ഇപ്പോഴത്തെ പേര്:',
 	'pt-movepage-new' => 'പുതിയ പേര്:',
@@ -3823,6 +3832,13 @@ $messages['ml'] = array(
 	'pt-movepage-subpages' => 'എല്ലാ ഉപതാളുകളും മാറ്റുക',
 	'pt-movepage-action-perform' => 'മാറ്റുക',
 	'pt-movepage-action-other' => 'ലക്ഷ്യം മാറ്റുക',
+	'pt-deletepage-action-perform' => 'മായ്ക്കൽ നടപ്പിൽ വരുത്തുക',
+	'pt-deletepage-lang-legend' => 'പരിഭാഷാ താൾ മായ്ക്കുക',
+	'pt-deletepage-full-legend' => 'പരിഭാഷപ്പെടുത്താവുന്ന താൾ മായ്ക്കുക',
+	'pt-deletepage-current' => 'താളിന്റെ പേര്:',
+	'pt-deletepage-reason' => 'കാരണം:',
+	'pt-deletepage-subpages' => 'എല്ലാ ഉപതാളുകളും മായ്ക്കുക',
+	'pt-deletepage-list-other' => 'മറ്റ് ഉപതാളുകൾ',
 );
 
 /** Mongolian (Монгол)
