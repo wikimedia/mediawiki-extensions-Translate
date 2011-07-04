@@ -1501,7 +1501,7 @@ descmsg = topusers
 
 Social Profile - User Status
 id = ext-socialprofile-userstatus
-file = SocialProfile/UserStats/UserStatus.i18n.php
+file = SocialProfile/UserStatus/UserStatus.i18n.php
 
 Social Profile - User Welcome
 id = ext-socialprofile-userwelcome
