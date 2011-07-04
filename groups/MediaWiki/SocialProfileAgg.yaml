@@ -15,4 +15,5 @@ GROUPS:
   - ext-socialprofile-userprofile
   - ext-socialprofile-userrelationship
   - ext-socialprofile-userstats
+  - ext-socialprofile-userstatus
   - ext-socialprofile-userwelcome
