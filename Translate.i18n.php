@@ -11981,6 +11981,7 @@ de Söndersigg [[Special:Translate|{{int:translate}}]] norrens ze prööfe.',
 	'translate-languagestats-groups' => ' # Jif dä Nohreschtejroppe ier Nommere hee en, öm de Nohreschtejroppe en dä
  # Aanzeije op Special:LanguageStats enzeschrängke. Nohreschtejroppe, woh et
  # de Nommere nit jit, donn nix.',
+	'translate-languagestats-overall' => 'Alle Jroppe vun Täxte un Nohreeschte zosamme',
 	'supportedlanguages' => 'Ongerstöz Shprooche',
 	'supportedlanguages-summary' => 'He sin alle Shprooche opjeleß, di mer {{GRAMMAR:em|{{SITENAME}}}} ongershtöze.
 Dobei shtonn de Övversäzer, di aan dä Shprooch aam ärbeide sin.
@@ -11992,12 +11993,9 @@ Wann en Shprooch heh nit bei es, dann kanns De op dä Sigg övver [[Translating:
 Wann De en en Sprooch aam övversäze bes, un Dinge Name es nit als Övversäzer opjeföhrt, dann donn op dä ier [[:Category:Languages|Pooz-Sigg]] Dinge Metmaacher-Name noch enndraare.
 En dä Leß met Lengks es och eine op di Pooz-Sigg för di Shprooch, di De ein Dinge Ennstellunge ußjewählt häs.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Eine Övversäzer:|$2 Övversäzer:|Keine Övversäzer}} $1',
-	'supportedlanguages-noportal-title' => 'Mer han kei Appachtemang „Pooz:“ ennjerescht',
-	'supportedlanguages-noportal' => 'En heh däm Wiki es <code lang="en">$NS_PORTAL</code> nit bikannt.
-Dröm deiht heh di Sigg_et nit.
-Op heh dä SIgg köhm süns_en Leß met de Pooz-Sigge för all de Shprooche medd_enem Köözel un en Ongersigg met dämm Naame „<i lang="en">translators</i>“.
-En dä Ongersigg moß de Schabloon <code lang="en">[[:{{ns:template}}:User|User]]</code> dren sin, di enem Metmaacher singe Naame als Parrameeter bruch.',
 	'supportedlanguages-recenttranslations' => 'neuste Övversäzunge',
+	'supportedlanguages-count' => '{{plural:$1|Ein Schprooch|$1 Schprooche|Kein Schprooche}} ensjesamp.',
+	'supportedlanguages-activity' => '$1: {{PLURAL:$2|Ein Änderong|$2 Änderonge|Kein Änderonge}} — de lätzde wohr {{PLURAL:$3|vör einem Daach|vör $3 Dääsch|hück}}.',
 	'translate-save' => 'Save ($1)',
 	'translate-jssti-add' => 'Bei de Leß dobei donn',
 	'managemessagegroups' => 'Jroppeverwalldong',
