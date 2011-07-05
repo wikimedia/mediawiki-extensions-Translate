@@ -68,6 +68,14 @@ array(
 	),
 ),
 array(
+	'group' => 'core',
+	'check' => 'plural',
+	'code' => array( 'fr' ),
+	'message' => array(
+		'viewcount', // PLURAL not needed in French
+	)
+),
+array(
 	'group' => 'ext-abusefilter',
 	'check' => 'variable',
 	'message' => array(
