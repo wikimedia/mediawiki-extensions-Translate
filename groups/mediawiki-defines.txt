@@ -1243,7 +1243,8 @@ Push
 aliasfile = Push/Push.alias.php
 
 QPoll
-file = QPoll/qp_i18n.php
+file = QPoll/i18n/qp.i18n.php
+aliasfile = QPoll/i18n/qp.alias.php
 descmsg = qp_desc
 optional = qp_parentheses, qp_full_category_name, qp_results_line_qpul, qp_results_line_qucl
 optional = qp_header_line_qucl
