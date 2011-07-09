@@ -89,7 +89,11 @@ class SimpleFFS implements FFS {
 	public function setWritePath( $writePath ) { $this->writePath = $writePath; }
 	public function getWritePath() { return $this->writePath; }
 
-	public function exists( $code ) {
+	public function exists( $code = false ) {
+		if ( $code === false ) {
+			$code = $this->group->getSourceLanguage();
+		}
+
 		$filename = $this->group->getSourceFilePath( $code );
 		if ( $filename === null ) {
 			return false;
