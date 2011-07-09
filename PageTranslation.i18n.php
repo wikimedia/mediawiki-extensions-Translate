@@ -221,6 +221,7 @@ $3 is an URL.',
 	'pt-movepage-block-section-exists' => 'Section page is a translation of one section. Translation page consists of many translation sections.',
 	'pt-movepage-block-subpage-exists' => 'Subpage is here any subpage of translation page, which is not a translated version of the translatable page.',
 	'pt-movepage-reason' => '{{Identical|Reason}}',
+	'pt-deletepage-action-check' => 'This is a button label. "List" is an imperative verb.',
 	'pt-deletepage-reason' => '{{Identical|Reason}}',
 );
 
@@ -2071,6 +2072,8 @@ Tèxto de la sèccion : <pre>$1</pre>',
 	'pt-movepage-started' => 'Ora, la pâge de bâsa est renomâ.
 Volyéd controlar lo [[Special:Log/pagetranslation|jornal de les traduccions de pâges]] por repèrar des èrrors et por liére lo mèssâjo d’avance.',
 	'pt-locked-page' => 'Ceta pâge est vèrrolyê perce que la pâge a traduire est aprés étre renomâ.',
+	'pt-deletepage-action-check' => 'Listar les pâges a suprimar',
+	'pt-deletepage-action-perform' => 'Fâre la suprèssion',
 	'pt-deletepage-action-other' => 'Changiér la ciba',
 	'pt-deletepage-lang-legend' => 'Suprimar la pâge de traduccion',
 	'pt-deletepage-full-legend' => 'Suprimar la pâge a traduire',
@@ -3509,7 +3512,7 @@ Don op jede Fall em [[Special:Log/pagetranslation|{{int:pt-log-name}}]] noh Fäh
 	'pt-deletepage-full-title' => 'De övversäzbaa Sigg „$1“ fottschmieße.',
 	'pt-deletepage-invalid-title' => 'Di aanjejovve Sigg es nit jöltesch.',
 	'pt-deletepage-invalid-text' => 'Di aanjejovve Sigg es nit övversäbaa un och kein Övversäzong vun einer.',
-	'pt-deletepage-action-check' => 'Don de Sigge opleßte, di fott sulle ',
+	'pt-deletepage-action-check' => 'Don de Sigge opleßte, di fott sulle',
 	'pt-deletepage-action-perform' => 'Maach nu fott!',
 	'pt-deletepage-action-other' => 'Nemm ene andere Zieltittel',
 	'pt-deletepage-lang-legend' => 'Övversäzongssigg fottschmieße',
@@ -3555,6 +3558,7 @@ $messages['ku-latn'] = array(
 );
 
 /** Luxembourgish (Lëtzebuergesch)
+ * @author Purodha
  * @author Robby
  */
 $messages['lb'] = array(
@@ -5335,6 +5339,10 @@ Besedilo razdelka: <pre>$1</pre>',
 	'pt-log-unmark' => '{{GENDER:$2|odstranil|odstranila}} stran »[[:$1]]« iz prevajanja',
 	'pt-log-moveok' => '{{GENDER:$2|končal|končala|končal(-a)}} s preimenovanjem prevedljive strani $1 v novo ime',
 	'pt-log-movenok' => '{{GENDER:$2|naletel|naletela|naletel(-a)}} na težavo med prestavljanjem [[:$1]] na [[:$3]]',
+	'pt-log-delete-full-ok' => 'je {{GENDER:$2|zaključil|zaključila}} z brisanjem prevedljive strani $1',
+	'pt-log-delete-full-nok' => 'je {{GENDER:$2|naletel|naletela}} na težavo med brisanjem prevedljive strani [[:$1]]',
+	'pt-log-delete-lang-ok' => 'je {{GENDER:$2|zaključil|zaključila}} z brisanjem strani prevoda $1',
+	'pt-log-delete-lang-nok' => 'je {{GENDER:$2|naletel|naletela}} na težavo med brisanjem strani prevoda [[:$1]]',
 	'pt-movepage-title' => 'Premakni prevedljivo stran $1',
 	'pt-movepage-blockers' => 'Prevedljive strani ni mogoče prestaviti na novo ime zaradi {{PLURAL:$1|naslednje napake|naslednjih napak}}:',
 	'pt-movepage-block-base-exists' => 'Ciljna izhodiščna stran [[:$1]] obstaja.',
@@ -5366,19 +5374,30 @@ Neuspehi bodo zabeleženi v [[Special:Log/pagetranslation|dnevniku strani prevod
 	'pt-movepage-started' => 'Izhodna stran je prestavljena.
 Prosimo, preverite [[Special:Log/pagetranslation|dnevnik strani prevodov]] za napake in sporočila o dokončanju.',
 	'pt-locked-page' => 'Stran je zaklenjena, ker se prevedljiva stran trenutno prestavlja.',
+	'pt-deletepage-lang-title' => 'Brisanje strani pravoda $1.',
+	'pt-deletepage-full-title' => 'Brisanje prevedljive strani $1.',
+	'pt-deletepage-invalid-title' => 'Določena stran ni veljavna.',
+	'pt-deletepage-invalid-text' => 'Določena stran ni prevedljiva stran niti njen prevod.',
 	'pt-deletepage-action-check' => 'Navedi strani za izbris',
 	'pt-deletepage-action-perform' => 'Izvedi izbris',
 	'pt-deletepage-action-other' => 'Spremeni cilj',
 	'pt-deletepage-lang-legend' => 'Izbriši stran prevoda',
 	'pt-deletepage-full-legend' => 'Izbriši prevedljivo stran',
+	'pt-deletepage-any-legend' => 'Izbriši prevedljivo stran ali prevod prevedljive strani',
 	'pt-deletepage-current' => 'Naslov strani:',
 	'pt-deletepage-reason' => 'Razlog:',
 	'pt-deletepage-subpages' => 'Izbriši vse podstrani',
 	'pt-deletepage-list-pages' => 'Seznam strani za izbris',
+	'pt-deletepage-list-translation' => 'Strani prevodov',
+	'pt-deletepage-list-section' => 'Strani razdelkov',
 	'pt-deletepage-list-other' => 'Druge podstrani',
 	'pt-deletepage-list-count' => 'Skupno je za izbrisati $1 {{PLURAL:$1|stran|strani}}.',
 	'pt-deletepage-full-logreason' => 'Del prevedljive strani $1.',
 	'pt-deletepage-lang-logreason' => 'Del strani prevoda $1.',
+	'pt-deletepage-started' => 'Prosimo, preverite [[Special:Log/pagetranslation|dnevnik prevajanja strani]] za napake in sporočilo o dokončanju.',
+	'pt-deletepage-intro' => 'Ta posebna stran vam omogoča izbrisati celotne prevedljive strani ali prevode enega jezika.
+Dejanje izbrisa ne bo izvedeno takoj, ker je potrebno izbrisati veliko strani.
+Neuspehi bodo zabeleženi v [[Special:Log/pagetranslation|dnevniku prevajanja strani]] in jih morate urediti ročno.',
 );
 
 /** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)

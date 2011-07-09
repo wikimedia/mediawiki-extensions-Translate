@@ -2034,7 +2034,7 @@ Për piasì varda [[mw:Extension:PDF_Writer]]  e http://code.pediapress.com/wiki
 	'bw-desc-shapado' => 'Partìa ëd mëssagi për ël programa ëd domande e rispòste lìber e a sorgiss lìbera [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => "[[Translating:StatusNet|StatusNet]] a l'é un servent ëd microscartari a sorgiss duverta",
 	'translate-group-desc-statusnet-plugin' => "Sti mëssagi a fan part ëd n'estension për [[Translating:StatusNet|StatusNet]]",
-	'translate-group-desc-tsint' => 'Na partìa ëd mëssagi për [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], ël sistem i18n për [http://toolserver.org Toolserver] utiss (<span class="plainlinks">[[Translating talk:Toolserver|support]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition technical details]</span>)',
+	'translate-group-desc-tsint' => 'Na partìa ëd mëssagi për [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], ël sistema i18n për [http://toolserver.org Toolserver] utiss (<span class="plainlinks">[[Translating talk:Toolserver|support]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition detaj técnich]</span>)',
 	'bw-desc-voctrain' => "[http://omegawiki.org OmegaWiki]-based vocabulary trainer. A dòvra un sistema ëd flashcard për amparé ël vocabolari da minca lenga a minca lenga apogià da OmegaWiki.
 Creà da l'Università ëd Bamberg. Licensià GPL 2.0 o pì anans. Svilupà da [[User:Kim Bruning|Kim Bruning]].",
 	'bw-desc-wikiblame' => "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] a peil trové an pressa j'àutor ëd na pàgina an na wiki ëd Wikimedia.",
