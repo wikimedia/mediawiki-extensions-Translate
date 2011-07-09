@@ -4,7 +4,7 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2010, Niklas Laxström
+ * @copyright Copyright © 2010-2011, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -106,6 +106,12 @@ interface MessageGroup {
 	 * @return string or null
 	 */
 	public function getMessage( $key, $code );
+
+	/**
+	 * Returns language code depicting the language of source text.
+	 * @return string
+	 */
+	public function getSourceLanguage();
 }
 
 /**
@@ -136,6 +142,11 @@ abstract class MessageGroupBase implements MessageGroup {
 	public function getNamespace() { return $this->namespace; }
 
 	public function isMeta() { return $this->getFromConf( 'BASIC', 'meta' ); }
+
+	public function getSourceLanguage() {
+		$conf = $this->getFromConf( 'BASIC', 'sourcelanguage' );
+		return $conf !== 'null' ? $conf : 'en';
+	}
 
 	protected function getFromConf( $section, $key ) {
 		return isset( $this->conf[$section][$key] ) ? $this->conf[$section][$key] : null;
@@ -211,7 +222,7 @@ abstract class MessageGroupBase implements MessageGroup {
 		$cache = new MessageGroupCache( $this );
 		if ( !$cache->exists() ) {
 			wfWarn( "By-passing message group cache" );
-			$messages = $this->load( 'en' );
+			$messages = $this->load( $this->getSourceLanguage() );
 		} else {
 			foreach ( $cache->getKeys() as $key ) {
 				$messages[$key] = $cache->get( $key );
@@ -266,7 +277,7 @@ abstract class MessageGroupBase implements MessageGroup {
 
 		if ( !$cache->exists() ) {
 			wfWarn( "By-passing message group cache" );
-			$messageKeys = array_keys( $this->load( 'en' ) );
+			$messageKeys = array_keys( $this->load( $this->getSourceLanguage() ) );
 		} else {
 			$messageKeys = $cache->getKeys();
 		}
@@ -346,6 +357,10 @@ abstract class MessageGroupBase implements MessageGroup {
 
 		return $index;
 	}
+
+	protected function isSourceLanguage( $code ) {
+		return $code === $this->getSourceLanguage();
+	}
 }
 
 /**
@@ -390,7 +405,7 @@ class FileBasedMessageGroup extends MessageGroupBase {
 	}
 
 	public function getSourceFilePath( $code ) {
-		if ( $code === 'en' ) {
+		if ( $this->isSourceLanguage( $code ) ) {
 			$pattern = $this->getFromConf( 'FILES', 'definitionFile' );
 			if ( $pattern !== null ) {
 				return $this->replaceVariables( $pattern, $code );
@@ -610,7 +625,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 				}
 			} else {
 				// BC for MessageGroupOld
-				$messages += $group->load( 'en' );
+				$messages += $group->load( $this->getSourceLanguage() );
 			}
 		}
 

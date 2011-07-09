@@ -132,7 +132,7 @@ class TranslationHelpers {
 			return;
 		}
 
-		$this->definition = $this->group->getMessage( $this->page, 'en' );
+		$this->definition = $this->group->getMessage( $this->page, $this->group->getSourceLanguage() );
 
 		return $this->definition;
 	}
@@ -641,10 +641,17 @@ class TranslationHelpers {
 			wfMsg( 'word-separator' ) .
 			wfMsg( 'parentheses', $title );
 
+		// Source language object
+		$sl = Language::factory( $this->group->getSourceLanguage() );
+
 		$dialogID = $this->dialogID();
 		$id = Sanitizer::escapeId( "def-$dialogID" );
 		$msg = $this->adder( $id ) . "\n" . Html::rawElement( 'div',
-			array( 'class' => 'mw-translate-edit-deftext', 'dir' => 'ltr', 'lang' => 'en' ),
+			array(
+				'class' => 'mw-translate-edit-deftext',
+				'dir' => $sl->getDir(),
+				'lang' => $sl->getCode(),
+			),
 			TranslateUtils::convertWhiteSpaceToHTML( $en )
 		);
 
@@ -825,7 +832,7 @@ class TranslationHelpers {
 			if ( $ffs instanceof GettextFFS ) {
 				global $wgContLang;
 				$mykey = $wgContLang->lcfirst( $this->page );
-				$data = $ffs->read( 'en' );
+				$data = $ffs->read( $this->group->getSourceLanguage() );
 				$help = $data['TEMPLATE'][$mykey]['comments'];
 				// Do not display an empty comment. That's no help and takes up unnecessary space.
 				$conf = $this->group->getConfiguration();

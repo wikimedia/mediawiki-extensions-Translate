@@ -263,6 +263,7 @@ class ViewWithSuggestionsTask extends ViewMessagesTask {
 		$server = $config['server'];
 		$port   = $config['port'];
 		$timeout = $config['timeout-sync'];
+		$sourceLanguage = $this->group->getSourceLanguage();
 
 		$this->collection = $this->group->initCollection( $code );
 		$this->collection->setInfile( $this->group->load( $code ) );
@@ -282,7 +283,7 @@ class ViewWithSuggestionsTask extends ViewMessagesTask {
 			}
 
 			$def = rawurlencode( $this->collection[$key]->definition() );
-			$url = "$server:$port/tmserver/en/$code/unit/$def";
+			$url = "$server:$port/tmserver/$sourceLanguage/$code/unit/$def";
 			$suggestions = Http::get( $url, $timeout );
 
 			if ( $suggestions !== false ) {

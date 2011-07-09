@@ -5,7 +5,7 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2008-2010, Niklas Laxström
+ * @copyright Copyright © 2008-2011, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -69,6 +69,10 @@ abstract class MessageGroupOld implements MessageGroup {
 	public function isMeta() { return $this->meta; }
 	public function setMeta( $value ) { $this->meta = $value; }
 
+	public function getSourceLanguage() {
+		return 'en';
+	}
+
 	/**
 	 * To avoid key conflicts between groups or separated changed messages between
 	 * branches one can set a message key mangler.
@@ -113,7 +117,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	 * @return Array of messages definitions indexed by key.
 	 */
 	public function getDefinitions() {
-		$defs = $this->load( 'en' );
+		$defs = $this->load( $this->getSourceLanguage() );
 		if ( !is_array( $defs ) ) {
 			throw new MWException( "Unable to load definitions for " . $this->getLabel() );
 		}
@@ -244,6 +248,10 @@ abstract class MessageGroupOld implements MessageGroup {
 
 		return isset( $tags[$type] ) ? $tags[$type] : array();
 	}
+
+	protected function isSourceLanguage( $code ) {
+		return $code === $this->getSourceLanguage();
+	}
 }
 
 /**
@@ -334,7 +342,7 @@ class CoreMessageGroup extends MessageGroupOld {
 		);
 
 		if ( $this->parentId ) {
-			if ( $code !== 'en' ) {
+			if ( !$this->isSourceLanguage( $code ) ) {
 				// For branches, load newer compatible messages for missing entries, if any.
 				$trunk = MessageGroups::getGroup( $this->parentId );
 				$messages += $trunk->mangler->unmangle( $trunk->load( $code ) );
@@ -430,7 +438,7 @@ class ExtensionMessageGroup extends MessageGroupOld {
 		}
 
 		if ( $desc === null ) {
-			$desc = $this->getMessage( $key, 'en' );
+			$desc = $this->getMessage( $key, $this->getSourceLanguage() );
 		}
 
 		if ( $desc !== null ) {
@@ -503,7 +511,7 @@ class ExtensionMessageGroup extends MessageGroupOld {
 	}
 
 	public function exists() {
-		return is_readable( $this->getMessageFileWithPath( 'en' ) );
+		return is_readable( $this->getMessageFileWithPath( $this->getSourceLanguage() ) );
 	}
 
 	public function getChecker() {
@@ -543,7 +551,7 @@ class AliasMessageGroup extends ExtensionMessageGroup {
 	public function initCollection( $code, $unique = false ) {
 		$collection = parent::initCollection( $code, $unique );
 
-		$defs = $this->load( 'en' );
+		$defs = $this->load( $this->getSourceLanguage() );
 		foreach ( $defs as $key => $value ) {
 			$collection[$key] = new FatMessage( $key, implode( ", ", $value ) );
 		}
@@ -628,7 +636,7 @@ class CoreMostUsedMessageGroup extends CoreMessageGroup {
 		$data = file_get_contents( dirname( __FILE__ ) . '/wikimedia-mostused-2011.txt' );
 		$data = str_replace( "\r", '', $data );
 		$messages = explode( "\n", $data );
-		$contents = Language::getMessagesFor( 'en' );
+		$contents = Language::getMessagesFor( $this->getSourceLanguage() );
 		$definitions = array();
 
 		foreach ( $messages as $key ) {
@@ -640,7 +648,6 @@ class CoreMostUsedMessageGroup extends CoreMessageGroup {
 		return $definitions;
 	}
 }
-
 
 /**
  * Group for messages that can be controlled via a page in %MediaWiki namespace.
@@ -664,6 +671,12 @@ class WikiMessageGroup extends MessageGroupOld {
 		parent::__construct();
 		$this->id = $id;
 		$this->source = $source;
+	}
+
+	/// Defaults to wiki content language.
+	public function getSourceLanguage() {
+		global $wgLanguagecode;
+		return $wgLanguagecode;
 	}
 
 	/**
@@ -721,6 +734,12 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		$this->namespaces = array( NS_TRANSLATIONS, NS_TRANSLATIONS_TALK );
 	}
 
+	/// Defaults to wiki content language.
+	public function getSourceLanguage() {
+		global $wgLanguagecode;
+		return $wgLanguagecode;
+	}
+
 	public function getTitle() {
 		if ( is_string( $this->title ) ) {
 			$this->title = Title::newFromText( $this->title );
@@ -757,7 +776,7 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 	}
 
 	public function load( $code ) {
-		if ( $code === 'en' ) {
+		if ( $this->isSourceLanguage( $code ) ) {
 			return $this->getDefinitions();
 		}
 
@@ -773,8 +792,8 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 	 * @return \mixed Stored translation or null.
 	 */
 	public function getMessage( $key, $code ) {
-		if ( $code === 'en' ) {
-			$stuff = $this->load( 'en' );
+		if ( $this->isSourceLanguage( $code ) ) {
+			$stuff = $this->load( $code );
 			return isset( $stuff[$key] ) ? $stuff[$key] : null;
 		}
 

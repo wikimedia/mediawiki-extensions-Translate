@@ -6,7 +6,7 @@
  * @file
  * @author Niklas Laxström
  * @author Siebrand Mazeland
- * @copyright Copyright © 2007-2010 Niklas Laxström, Siebrand Mazeland
+ * @copyright Copyright © 2007-2011 Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -36,7 +36,7 @@ class TranslateEditAddons {
 			return true;
 		}
 
-		$collection = $group->initCollection( 'en' );
+		$collection = $group->initCollection( $group->getSourceLanguage() );
 		$collection->filter( 'optional' );
 		$keys = array_keys( $collection->keys() );
 		$count = count( $keys );
@@ -370,7 +370,7 @@ class TranslateEditAddons {
 			$checker = $group->getChecker();
 
 			if ( $checker ) {
-				$en = $group->getMessage( $key, 'en' );
+				$en = $group->getMessage( $key, $group->getSourceLanguage() );
 				$message = new FatMessage( $key, $en );
 				/**
 				 * Take the contents from edit field as a translation.
@@ -418,7 +418,9 @@ class TranslateEditAddons {
 			return true;
 		}
 
-		$definitionTitle = Title::makeTitleSafe( $title->getNamespace(), "$key/en" );
+		
+
+		$definitionTitle = Title::makeTitleSafe( $title->getNamespace(), "$key/" . $group->getSourceLanguage() );
 		if ( $definitionTitle && $definitionTitle->exists() ) {
 			$definitionRevision = $definitionTitle->getLatestRevID();
 

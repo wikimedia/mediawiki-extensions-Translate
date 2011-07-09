@@ -8,7 +8,7 @@
  * @file
  * @defgroup FFS File format support
  * @author Niklas Laxström
- * @copyright Copyright © 2008-2010, Niklas Laxström
+ * @copyright Copyright © 2008-2011, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -89,7 +89,7 @@ class SimpleFFS implements FFS {
 	public function setWritePath( $writePath ) { $this->writePath = $writePath; }
 	public function getWritePath() { return $this->writePath; }
 
-	public function exists( $code = 'en' ) {
+	public function exists( $code ) {
 		$filename = $this->group->getSourceFilePath( $code );
 		if ( $filename === null ) {
 			return false;
@@ -1077,10 +1077,11 @@ class PythonSingleFFS extends SimpleFFS {
 
 	public function write( MessageCollection $collection ) {
 		if ( $this->fw === null ) {
-			$outputFile = $this->writePath . '/' . $this->group->getTargetFilename( 'en' );
+			$sourceLanguage = $this->group->getSourceLanguage();
+			$outputFile = $this->writePath . '/' . $this->group->getTargetFilename( $sourceLanguage );
 			wfMkdirParents( dirname( $outputFile ), null, __METHOD__ );
 			$this->fw = fopen( $outputFile, 'w' );
-			$this->fw = fopen( $this->writePath . '/' . $this->group->getTargetFilename( 'en' ), 'w' );
+			$this->fw = fopen( $this->writePath . '/' . $this->group->getTargetFilename( $sourceLanguage ), 'w' );
 			fwrite( $this->fw, "# -*- coding: utf-8 -*-\nmsg = {\n" );
 		}
 
