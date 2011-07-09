@@ -64,6 +64,17 @@ FILES:
   targetPattern: pywikipedia/clean_sandbox.py
 ---
 BASIC:
+  id: out-pywikipedia-commons
+  label: Pywikipedia Commons
+  display: out/pywikipedia/commons
+
+FILES:
+  class: PythonSingleFFS
+  sourcePattern: %GROUPROOT%/pywikipedia/commons.py
+  definitionFile: %GROUPROOT%/pywikipedia/commons.py
+  targetPattern: pywikipedia/commons.py
+---
+BASIC:
   id: out-pywikipedia-cosmetic_changes
   label: Pywikipedia Cosmetic Changes
   display: out/pywikipedia/cosmetic_changes
