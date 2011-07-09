@@ -797,7 +797,7 @@ class TranslationHelpers {
 		$info .= $gettext;
 
 		// The information is most likely in English
-		$divAttribs = array( 'dir' => 'ltr', 'lang' => 'en' );
+		$divAttribs = array( 'dir' => 'ltr', 'lang' => 'en', 'class' => 'mw-content-ltr' );
 
 		if ( strval( $info ) === '' ) {
 			global $wgLang;
