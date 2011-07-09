@@ -5,7 +5,7 @@
  * @file
  * @author Siebrand Mazeland
  * @author Niklas Laxström
- * @copyright Copyright © 2008-2010 Siebrand Mazeland, Niklas Laxström
+ * @copyright Copyright © 2008-2011 Siebrand Mazeland, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -21,6 +21,8 @@
  * @ingroup SpecialPage TranslateSpecialPage Stats
  */
 class SpecialLanguageStats extends IncludableSpecialPage {
+	protected $purge = false;
+
 	function __construct() {
 		parent::__construct( 'LanguageStats' );
 	}
@@ -28,6 +30,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	function execute( $par ) {
 		global $wgRequest, $wgOut, $wgUser;
 
+		$this->purge = $wgRequest->getVal( 'action' ) === 'purge';
 		$this->linker = $wgUser->getSkin();
 		$this->translate = SpecialPage::getTitleFor( 'Translate' );
 
@@ -307,6 +310,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			$this->totals[1] += $translated;
 			$this->totals[0] += $fuzzy;
 		}
+
 		if ( $total == 0 ) {
 			$zero = serialize( $total );
 			error_log( __METHOD__ . ": Group $groupName has zero message ($code): $zero" );
@@ -344,7 +348,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 
 		$result = $cache->get( $id, $code );
-		if ( is_array( $result ) ) {
+		if ( !$this->purge && is_array( $result ) ) {
 			wfProfileOut( __METHOD__ );
 			return $result;
 		}
