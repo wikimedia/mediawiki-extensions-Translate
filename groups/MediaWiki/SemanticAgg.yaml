@@ -8,6 +8,6 @@ BASIC:
   namespace: NS_MEDIAWIKI
 
 GROUPS:
-  - ext-folktagcloud
-  - ext-rdfio
   - ext-semantic*
+  - ext-rdfio
+  - ext-metavidwiki
