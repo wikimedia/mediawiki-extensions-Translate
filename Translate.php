@@ -118,7 +118,7 @@ $wgHooks['SpecialSearchSetupEngine'][] = 'TranslateEditAddons::searchProfileSetu
 
 $wgHooks['LinkBegin'][] = 'SpecialMyLanguage::linkfix';
 
-$wgHooks['UnitTestsList'][] = 'TranslateTestSuite::registerUnitTests';
+$wgHooks['UnitTestsList'][] = 'efTranslateAppendTestsToVariable';
 
 // New rights
 $wgAvailableRights[] = 'translate';
@@ -719,6 +719,12 @@ function efTranslateCheckWarn( $msg, &$sitenotice ) {
 function efTranslateInitTags( $parser ) {
 	// For nice language list in-page
 	$parser->setHook( 'languages', array( 'PageTranslationHooks', 'languages' ) );
+	return true;
+}
+
+function efTranslateAppendTestsToVariable( &$files ) {
+	$testDir = dirname( __FILE__ ) . '/tests/';
+	$files[] = $testDir . 'MessageGroupBaseTest.php';
 	return true;
 }
 

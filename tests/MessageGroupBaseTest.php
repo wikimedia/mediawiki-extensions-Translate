@@ -1,6 +1,6 @@
 <?php
 
-class MessageGroupBaseTest extends PHPUnit_Framework_TestCase {
+class MessageGroupBaseTest extends MediaWikiTestCase {
 	protected $groupConfiguration = array(
 		'BASIC' => array(
 			'class' => 'FileBasedMessageGroup',
