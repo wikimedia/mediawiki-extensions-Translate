@@ -123,6 +123,9 @@ aliasfile = Call/Call.alias.php
 
 Cassandra
 
+Categorize
+ignored = categorize-subtitle
+
 Category Browser
 aliasfile = CategoryBrowser/CategoryBrowser.alias.php
 optional = cb_previous_items_stats
