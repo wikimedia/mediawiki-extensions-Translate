@@ -145,7 +145,7 @@ abstract class MessageGroupBase implements MessageGroup {
 
 	public function getSourceLanguage() {
 		$conf = $this->getFromConf( 'BASIC', 'sourcelanguage' );
-		return $conf !== 'null' ? $conf : 'en';
+		return $conf !== null ? $conf : 'en';
 	}
 
 	protected function getFromConf( $section, $key ) {
