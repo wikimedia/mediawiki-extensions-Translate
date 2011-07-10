@@ -188,5 +188,11 @@ $wgAutoloadClasses['TagContainer'] = $dir . 'utils/Html.php';
  */
 $wgAutoloadClasses['ApiQueryMessageCollection'] = $dir . 'api/ApiQueryMessageCollection.php';
 $wgAutoloadClasses['ApiQueryMessageGroups'] = $dir . 'api/ApiQueryMessageGroups.php';
+/**@}*/
 
+/**
+ * @name   Tests
+ * @{
+ */
+$wgAutoloadClasses['TranslateTestSuite'] = $dir . 'tests/TranslateTestSuite.php';
 /**@}*/

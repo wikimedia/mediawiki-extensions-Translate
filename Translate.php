@@ -118,6 +118,8 @@ $wgHooks['SpecialSearchSetupEngine'][] = 'TranslateEditAddons::searchProfileSetu
 
 $wgHooks['LinkBegin'][] = 'SpecialMyLanguage::linkfix';
 
+$wgHooks['UnitTestsList'][] = 'TranslateTestSuite::registerUnitTests';
+
 // New rights
 $wgAvailableRights[] = 'translate';
 $wgAvailableRights[] = 'translate-import';
