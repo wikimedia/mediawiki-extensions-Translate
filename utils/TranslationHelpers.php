@@ -309,7 +309,7 @@ class TranslationHelpers {
 				}
 
 				$legend = implode( ' | ', $legend );
-				$boxes[] = Html::rawElement( 'div', $params, self::legend( $legend ) . $text . self::clear() ) . "\n";
+				$boxes[] = Html::rawElement( 'div', $params, self::legend( $legend, $code ) . $text . self::clear() ) . "\n";
 			}
 		} else {
 			// Assume timeout
@@ -403,7 +403,7 @@ class TranslationHelpers {
 			$text = Sanitizer::decodeCharReferences( $response->responseData->translatedText );
 			$text = self::unwrapUntranslatable( $text );
 			$text = $this->suggestionField( $text );
-			return Html::rawElement( 'div', null, self::legend( $serviceName ) . $text . self::clear() );
+			return Html::rawElement( 'div', null, self::legend( $serviceName, $code ) . $text . self::clear() );
 		} elseif ( $response->responseDetails === 'invalid translation language pair' ) {
 			$unsupported[$code] = true;
 			$wgMemc->set( $memckey, $unsupported, 60 * 60 * 8 );
@@ -505,7 +505,7 @@ class TranslationHelpers {
 		$text = Sanitizer::decodeCharReferences( $text );
 		$text = self::unwrapUntranslatable( $text );
 		$text = $this->suggestionField( $text );
-		return Html::rawElement( 'div', null, self::legend( $serviceName ) . $text . self::clear() );
+		return Html::rawElement( 'div', null, self::legend( $serviceName, $code ) . $text . self::clear() );
 	}
 
 	protected static function wrapUntranslatable( $text ) {
@@ -606,7 +606,7 @@ class TranslationHelpers {
 				$sug = $this->suggestionField( $sug );
 				$suggestions[] = Html::rawElement( 'div',
 					array( 'title' => $text ),
-					self::legend( "$serviceName ($candidate)" ) . $sug . self::clear()
+					self::legend( "$serviceName ($candidate)", $code ) . $sug . self::clear()
 				);
 			}
 		}
@@ -647,7 +647,7 @@ class TranslationHelpers {
 
 		$dialogID = $this->dialogID();
 		$id = Sanitizer::escapeId( "def-$dialogID" );
-		$msg = $this->adder( $id ) . "\n" . Html::rawElement( 'div',
+		$msg = $this->adder( $id, $sl ) . "\n" . Html::rawElement( 'div',
 			array(
 				'class' => 'mw-translate-edit-deftext',
 				'dir' => $sl->getDir(),
@@ -763,7 +763,7 @@ class TranslationHelpers {
 				$display
 			);
 
-			$contents = self::legend( $label ) . "\n" . $this->adder( $id ) .
+			$contents = self::legend( $label, $fbcode ) . "\n" . $this->adder( $id ) .
 				$display . self::clear();
 
 			$boxes[] = Html::rawElement( 'div', $params, $contents ) .
@@ -958,8 +958,11 @@ class TranslationHelpers {
 		return $diff->getDiff( wfMsgHtml( 'tpt-diff-old' ), wfMsgHtml( 'tpt-diff-new' ) );
 	}
 
-	protected static function legend( $label ) {
-		return Html::rawElement( 'div', array( 'class' => 'mw-translate-legend' ), $label );
+	protected static function legend( $label, $lang = null ) {
+		# Float it to the opposite direction
+		return Html::rawElement( 'div',
+			array( 'class' => 'mw-translate-legend mw-translate-legend-' .
+				wfGetLangObj( $lang ? $lang : 'en' )->getDir() ), $label );
 	}
 
 	protected static function clear() {
@@ -1063,17 +1066,18 @@ class TranslationHelpers {
 		return substr( $hash, 0, 4 );
 	}
 
-	public function adder( $source ) {
+	public function adder( $source, $lang = null ) {
 		if ( !$this->editMode ) {
 			return '';
 		}
 		$target = self::jQueryPathId( $this->getTextareaId() );
 		$source = self::jQueryPathId( $source );
+		$dir = wfGetLangObj( $lang ? $lang : $this->targetLanguage )->getDir();
 		$params = array(
 			'onclick' => "jQuery($target).val(jQuery($source).text()).focus(); return false;",
 			'href' => '#',
 			'title' => wfMsg( 'translate-use-suggestion' ),
-			'class' => 'mw-translate-adder',
+			'class' => 'mw-translate-adder mw-translate-adder-' . $dir,
 		);
 
 		return Html::element( 'a', $params, '↓' );

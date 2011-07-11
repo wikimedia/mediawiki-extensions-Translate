@@ -30,27 +30,30 @@
 }
 
 .mw-translate-legend {
-	border-left: 1px solid black;
 	font-weight: bold;
 }
 
-.ltr .mw-translate-legend {
+/* Align the legend opposite to the target language */
+/* @noflip */ .mw-translate-legend-ltr {
+	border-left: 1px solid black;
 	float: right;
 	margin-left: 5pt;
 	padding-left: 5pt;
 }
 
-.rtl .mw-translate-legend {
+/* @noflip */ .mw-translate-legend-rtl {
+	border-right: 1px solid black;
 	float: left;
 	margin-right: 5pt;
 	padding-right: 5pt;
 }
 
-.ltr .mw-translate-adder {
+/* Align the adder according to the target language */
+/* @noflip */ .mw-translate-adder-ltr {
 	float: left;
 }
 
-.rtl .mw-translate-adder {
+/* @noflip */ .mw-translate-adder-rtl {
 	float: right;
 }
 
@@ -60,7 +63,7 @@
 }
 
 .mw-translate-edit-deftext {
-	font-family: monospace;
+	font-family: monospace, "Courier New";
 }
 
 .mw-translate-edit-area {
