@@ -384,7 +384,8 @@ class TranslationHelpers {
 			return null;
 		}
 
-		$options = self::makeGoogleQueryParams( $definition, "en|$code", $config );
+		$source = $this->group->getSourceLanguage();
+		$options = self::makeGoogleQueryParams( $definition, "$source|$code", $config );
 		$json = Http::post( $config['url'], $options );
 		$response = FormatJson::decode( $json );
 
