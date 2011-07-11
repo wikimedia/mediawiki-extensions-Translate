@@ -3668,6 +3668,7 @@ Kuckt w.e.g. d'[[Special:Log/pagetranslation|Logbuch vun den Iwwersetzunge]] fir
 	'pt-deletepage-action-check' => 'Lëscht vun de Säiten déi geläscht solle ginn',
 	'pt-deletepage-action-perform' => 'Elo läschen',
 	'pt-deletepage-lang-legend' => 'Iwwersetzungssäit läschen',
+	'pt-deletepage-full-legend' => 'Iwwersetzbar Säit läschen',
 	'pt-deletepage-current' => 'Numm vun der Säit:',
 	'pt-deletepage-reason' => 'Grond:',
 	'pt-deletepage-subpages' => 'All Ënnersäite läschen',
