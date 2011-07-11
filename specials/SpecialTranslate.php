@@ -271,7 +271,7 @@ class SpecialTranslate extends SpecialPage {
 	protected function limitSelector() {
 		global $wgLang;
 
-		$items = array( 100, 250, 500, 1000, 2500 );
+		$items = array( 100, 1000, 5000 );
 		$selector = new HTMLSelector( 'limit', 'limit', $this->options['limit'] );
 
 		foreach ( $items as $count ) {
