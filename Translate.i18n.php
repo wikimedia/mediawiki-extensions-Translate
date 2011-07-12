@@ -13511,7 +13511,7 @@ Jika kumpulan itu terdiri daripada subset atau superset mesej dari kumpulan lain
 	'translate-edit-warnings' => 'Amaran penterjemahan tak lengkap',
 	'translate-edit-tmsugs' => 'Cadangan dari sistem ingatan penterjemahan',
 	'translate-edit-tmmatch' => '$1% berpadan',
-	'translate-use-suggestion' => 'Sisipkan cadangan ini dalam ruangan terjemahan. Ini menggantikan semua kandungan semasa.',
+	'translate-use-suggestion' => 'Sisipkan cadangan ini dalam ruangan terjemahan. Ini akan mengganti semua kandungan semasa.',
 	'translate-edit-tab-list' => 'Senarai mesej',
 	'translate-magic-pagename' => 'Terjemahan tambahan MediaWiki',
 	'translate-magic-help' => 'Anda boleh menterjemahkan alias laman khas, kata sakti dan nama ruang nama.
@@ -13555,7 +13555,7 @@ Perubahan tidak disimpan sehingga anda mengklik butang Simpan di bawah.',
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links-missing' => '{{PLURAL:$2|Pautan|$2 pautan}} yang berikut tidak dijumpai:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-xhtml' => 'Sila gantikan {{PLURAL:$2|tag|tag-tag}} berikut dengan yang betul:
+	'translate-checks-xhtml' => 'Sila ganti {{PLURAL:$2|tag|tag-tag}} berikut dengan yang betul:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Takrifan menggunakan <nowiki>{{PLURAL:}}</nowiki> tapi terjemahan pula tidak.',
 	'translate-checks-pagename' => 'Ruang nama diubah dari takrifan',
@@ -13573,8 +13573,8 @@ Senarai bahasa tersedia bergantung pada bahasa anda.',
 <nowiki>$1</nowiki>.',
 	'translate-pref-jsedit' => 'Editor penterjemahan termaju (JavaScript)',
 	'right-translate' => 'Sunting dengan menggunakan antara muka penterjemahan',
-	'right-translate-manage' => 'Uruskan kumpulan penterjemah',
-	'right-translate-import' => 'Import terjemahan luar talian',
+	'right-translate-manage' => 'Menguruskan kumpulan penterjemah',
+	'right-translate-import' => 'Mengimport terjemahan luar talian',
 	'translate-rc-translation-filter' => 'Tapis terjemahan:',
 	'translate-rc-translation-filter-no' => 'Tidak berbuat apa-apa',
 	'translate-rc-translation-filter-only' => 'Tunjukkan terjemahan sahaja',

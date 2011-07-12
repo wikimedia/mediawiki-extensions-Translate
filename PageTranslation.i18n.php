@@ -1827,6 +1827,7 @@ Tarkista mahdolliset virheet ja valmistumisviestit sivunkääntölokista.',
 /** French (Français)
  * @author Crochet.david
  * @author Grondin
+ * @author Houcinee1
  * @author IAlex
  * @author Peter17
  * @author Purodha
@@ -1957,6 +1958,7 @@ Veuillez vérifier le [[Special:Log/pagetranslation|journal des traductions]] po
 	'pt-deletepage-subpages' => 'Supprimer tous les sous-pages',
 	'pt-deletepage-list-pages' => 'Liste des pages à supprimer',
 	'pt-deletepage-list-translation' => 'Pages de traduction',
+	'pt-deletepage-list-section' => 'Section pages',
 	'pt-deletepage-list-other' => 'Autres sous-pages',
 	'pt-deletepage-list-count' => 'Au total, $1 {{PLURAL:$1|page|pages}} à supprimer.',
 	'pt-deletepage-full-logreason' => 'Partie de la page à traduire $1.',
@@ -3889,7 +3891,7 @@ $messages['mn'] = array(
  */
 $messages['ms'] = array(
 	'pagetranslation' => 'Penterjemahan laman',
-	'right-pagetranslation' => 'Tandai versi-versi laman untuk diterjemah',
+	'right-pagetranslation' => 'Menandai versi-versi laman untuk diterjemah',
 	'tpt-desc' => 'Sambungan untuk menterjemah laman-laman kandungan',
 	'tpt-section' => 'Unit penterjemahan $1',
 	'tpt-section-new' => 'Unit penterjemahan baru.

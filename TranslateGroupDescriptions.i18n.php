@@ -820,6 +820,7 @@ $messages['fi'] = array(
 
 /** French (Français)
  * @author Crochet.david
+ * @author Houcinee1
  * @author IAlex
  * @author Jean-Frédéric
  * @author Litlok
@@ -838,6 +839,7 @@ $messages['fr'] = array(
 	'translate-group-desc-collection' => 'Ce méta-groupe de messages contient tous les messages de l’extension MediaWiki [http://www.mediawiki.org/wiki/Extension:Collection Collection].',
 	'translate-group-desc-flaggedrevs' => 'Groupe des messages Meta contenant tous les messages de l’extension MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Groupe des messages Meta contenant tous les messages de l’extension MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
+	'translate-group-desc-semantic' => 'Groupe de message de Meta contenant tous les messages pour toutes les extensions [http://semantic-mediawiki.org/ Semantic MediaWiki]',
 	'translate-group-desc-socialprofile' => 'Groupe des messages Meta contenant tous les messages des extensions liées à l’extension MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
 	'translate-group-desc-translate' => 'Groupe des messages Meta contenant tous les messages de l’extension MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-wikiaextensions' => 'Ce méta-groupe de messages contient tous les messages des extensions MediaWiki utilisées par [http://www.wikia.com Wikia].',
