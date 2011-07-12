@@ -278,6 +278,10 @@ Confirm Edit
 aliasfile = ConfirmEdit/ConfirmEdit.alias.php
 descmsg = captcha-desc
 
+ConfirmEdit Asirra
+file = ConfirmEdit/Asirra.i18n.php
+descmsg = asirra-desc
+
 ConfirmEdit Fancy Captcha
 file = ConfirmEdit/FancyCaptcha.i18n.php
 descmsg = fancycaptcha-desc
