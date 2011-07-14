@@ -33,28 +33,22 @@
 	font-weight: bold;
 }
 
-/* Align the legend opposite to the target language */
-/* @noflip */ .mw-translate-legend-ltr {
+.mw-translate-legend {
 	border-left: 1px solid black;
 	float: right;
-	margin-left: 5pt;
+	margin-left: 1em;
 	padding-left: 5pt;
-}
-
-/* @noflip */ .mw-translate-legend-rtl {
-	border-right: 1px solid black;
-	float: left;
-	margin-right: 5pt;
-	padding-right: 5pt;
 }
 
 /* Align the adder according to the target language */
 /* @noflip */ .mw-translate-adder-ltr {
 	float: left;
+	padding-right: 1px;
 }
 
 /* @noflip */ .mw-translate-adder-rtl {
 	float: right;
+	padding-left: 1px;
 }
 
 .mw-translate-sep {
