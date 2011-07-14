@@ -1544,6 +1544,7 @@ Certigu ke ĝi havas etikedojn <nowiki><translate></nowiki> kaj havas validan si
  * @author Antur
  * @author Crazymadlover
  * @author Diego Grez
+ * @author Mor
  * @author Purodha
  * @author Sanbec
  * @author Translationista
@@ -1564,7 +1565,7 @@ $messages['es'] = array(
 	'tpt-sections-deleted' => 'Unidades de traducción borradas',
 	'tpt-sections-template' => 'Plantilla de página de traducción',
 	'tpt-action-nofuzzy' => 'No invalidar traducciones',
-	'tpt-badtitle' => 'Nombre de página dado ($1) no es un título válido',
+	'tpt-badtitle' => 'El nombre de página dado ($1) no es un título válido',
 	'tpt-nosuchpage' => 'Página $1 no existe',
 	'tpt-oldrevision' => '$2 no es la última versión de la página [[$1]].
 Solamente las últimas versiones pueden ser marcadas para traducción',
@@ -1573,21 +1574,21 @@ Asegúrate que tiene etiquetas <nowiki><translate></nowiki> y tiene una sintaxis
 	'tpt-saveok' => 'La página [[$1]] ha sido marcada para traducción con $2 {{PLURAL:$2|unidad de traducción |unidades de traducción}}.
 La página puede ser ahora <span class="plainlinks">[$3 traducida]</span>.',
 	'tpt-badsect' => '"$1" no es un nombre válido para una unidad de traducción $2.',
-	'tpt-showpage-intro' => 'Debajo secciones nuevas, existentes y borradas están listadas.
+	'tpt-showpage-intro' => 'Debajo están listadas secciones nuevas, existentes y borradas .
 Antes de marcar esta versión para traducción, verifica que los cambios a las secciones son mínimos para evitar trabajo innecesario a los traductores.',
 	'tpt-mark-summary' => 'Marcada esta sección para traducción',
 	'tpt-edit-failed' => 'No pudo actualizar la página : $1',
 	'tpt-already-marked' => 'La última versión de esta página ya ha sido marcada para traducción.',
-	'tpt-unmarked' => 'Página $1 no está más marcada para traducción.',
+	'tpt-unmarked' => 'Página $1 ya no está marcada para traducción.',
 	'tpt-list-nopages' => 'Ninguna página está marcada para traducción ni lista para ser marcada para traducción.',
 	'tpt-old-pages' => 'Alguna versión de {{PLURAL:$1|esta página|estas páginas han}} sido marcadas para traducción.',
 	'tpt-new-pages' => '{{PLURAL:$1|Esta página contiene|Estas páginas contienen}} texto con etiquetas de traducción, pero ninguna versión de {{PLURAL:$1|esta página est|estas páginas están}} actualmente marcadas para traducción.',
 	'tpt-other-pages' => 'Versión antigua de {{PLURAL:$1|esta página está|estas páginas están}} marcadas para traducción,
 pero la última versión no puede ser marcada para traducción.',
 	'tpt-rev-latest' => 'última versión',
-	'tpt-rev-old' => 'diferenciar a la versión marcada previa',
+	'tpt-rev-old' => 'diferencia con la versión marcada anterior',
 	'tpt-rev-mark-new' => 'marcar esta versión para traducción',
-	'tpt-rev-unmark' => 'remover esta página de la traducción',
+	'tpt-rev-unmark' => 'eliminar esta página de la traducción',
 	'tpt-translate-this' => 'traducir esta página',
 	'translate-tag-translate-link-desc' => 'Traducir esta página',
 	'translate-tag-markthis' => 'Marcar esta página para traducción',
@@ -1600,8 +1601,7 @@ pero la última versión no puede ser marcada para traducción.',
 Esta página es una traducción de la página [[$1]] y la traducción puede ser actualizada usando [$2 la herramienta de traducción].',
 	'tpt-unknown-page' => 'Este espacio de nombre está reservado para traducciones de páginas de contenido.
 La página que estás tratando de editar no parece corresponder con alguna página marcada para traducción.',
-	'tpt-delete-impossible' => 'Borrado de páginas marcadas para traducción aún no es posible.',
-	'tpt-install' => 'Corra maintenance/update.php o instale desde la web para activar las funciones de traducción.',
+	'tpt-install' => 'Ejecute maintenance/update.php o instale desde la web para activar las funciones de traducción.',
 	'tpt-render-summary' => 'Actualizando para hallar una nueva versión de la página fuente',
 	'tpt-download-page' => 'Exportar página con traducciones',
 	'pt-parse-open' => 'Etiqueta &lt;translate> desequilibrada.
@@ -1621,6 +1621,7 @@ Texto de sección: <pre>$1</pre>',
 	'pt-log-unmark' => 'Revisión {{GENDER:$2|marcada}} de página "[[:$1]]" para traducción',
 	'pt-log-moveok' => '{{GENDER:$2|completado}} renombrado de página traducible $1 a un nuevo nombre',
 	'pt-log-movenok' => '{{GENDER:$2|encontrado}} un problema mientras se movía [[:$1]] a [[:$3]]',
+	'pt-log-delete-lang-nok' => '{{GENDER:$2|encontró}} un problema al eliminar la página de traducción [[:$1]]',
 	'pt-movepage-title' => 'Mover página traducible $1',
 	'pt-movepage-blockers' => 'La página traducible no puede ser movida a un nuevo nombre por los siguientes {{PLURAL:$1|error|errores}}:',
 	'pt-movepage-block-base-exists' => 'La página base de destino [[:$1]] existe.',
@@ -1650,9 +1651,16 @@ La cola de trabajo será usada para mover las páginas.
 Cuando la página está siendo movida, no esposible interactuar con la páginas en cuestión.
 Las fallas serán registradas en la página de registro de traducción y necesitarán ser reparadas manualmente.',
 	'pt-movepage-logreason' => 'Parte de la página traducible $1.',
-	'pt-movepage-started' => 'La página base está ahora movida.
+	'pt-movepage-started' => 'La página base se ha trasladado.
 Por favor verifica el [[Special:Log/pagetranslation|registro de traducción de página]] para errores y mensaje de conclusión.',
 	'pt-locked-page' => 'Esta página está bloqueada porque la página traducible está siendo movida actualmente.',
+	'pt-deletepage-current' => 'Nombre de la página:',
+	'pt-deletepage-reason' => 'Razón:',
+	'pt-deletepage-subpages' => 'Eliminar todas las subpáginas',
+	'pt-deletepage-list-pages' => 'Lista de páginas para eliminar',
+	'pt-deletepage-list-translation' => 'Páginas de traducción',
+	'pt-deletepage-list-other' => 'Otras subpáginas',
+	'pt-deletepage-intro' => 'Esta página especial permite eliminar páginas traducibles enteras o traducciones a un idioma. La eliminación no será instantánea, porque deben borrarse muchas páginas. Los fallos se registrarán en el [[Special:Log/pagetranslation|registro de traducción de la página]] y tendrán que ser reparados a mano.',
 );
 
 /** Estonian (Eesti)
@@ -3667,7 +3675,7 @@ Wann et net fonctionnéiert gëtt dat am [[Special:Log/pagetranslation|Iwwersetz
 	'pt-movepage-started' => "D'Basissäit ass elo geréckelt.
 Kuckt w.e.g. d'[[Special:Log/pagetranslation|Logbuch vun den Iwwersetzunge]] fir Feelermeldungen respektiv d'Meldung datt alles ok ass.",
 	'pt-locked-page' => 'Dës Säit ass gespaart wëll déi iwwersetzbar Säit elo geréckelt gëtt.',
-	'pt-deletepage-action-check' => 'Lëscht vun de Säiten déi geläscht solle ginn',
+	'pt-deletepage-action-check' => 'Säiten déi geläscht solle ginn opzielen',
 	'pt-deletepage-action-perform' => 'Elo läschen',
 	'pt-deletepage-lang-legend' => 'Iwwersetzungssäit läschen',
 	'pt-deletepage-full-legend' => 'Iwwersetzbar Säit läschen',

@@ -984,18 +984,19 @@ $messages['eo'] = array(
  * @author Crazymadlover
  * @author Diego Grez
  * @author Drini
+ * @author Mor
  * @author Tempestas
  */
 $messages['es'] = array(
 	'firststeps' => 'Primeros pasos',
 	'firststeps-desc' => '[[Special:FirstSteps|Página especial]] para que los usuarios comiencen en un wiki usando la extensión de traducción',
-	'translate-fs-pagetitle-done' => '- hecho!',
+	'translate-fs-pagetitle-done' => '- ¡hecho!',
 	'translate-fs-pagetitle' => 'Guía de inicio - $1',
 	'translate-fs-signup-title' => 'Registrarse',
 	'translate-fs-settings-title' => 'Configurar tus preferencias',
 	'translate-fs-userpage-title' => 'Crear tu página de usuario',
 	'translate-fs-permissions-title' => 'Solicitar permisos de traducción',
-	'translate-fs-target-title' => 'Comenzar a traducir!',
+	'translate-fs-target-title' => '¡Comenzar a traducir!',
 	'translate-fs-email-title' => 'Confirmar tu dirección de correo electrónico',
 	'translate-fs-intro' => "Bienvenido al asistente de los primeros pasos en {{SITENAME}}.
 Serás guíado a través del proceso de convertirte en un traductor pasa a paso.
@@ -1005,10 +1006,10 @@ Al final serás capaz de traducir los ''mensajes de interfaz'' de todos los proy
 El primer paso es que debes registrarte.
 
 Los créditos por tu traducción se atribuyen a tu nombre de usuario.
-La imagen de la derecha muestra como llenar los campos.
+La imagen de la derecha muestra como rellenar los campos.
 
-Si ya te has registrado, $1inicia sesión$2 entonces.
-Una vez que te has registrado, por favor regresa a esta página.
+Si ya te has registrado, entonces $1inicia sesión$2.
+Una vez que te hayas registrado, por favor regresa a esta página.
 
 $3Registrarse$4',
 	'translate-fs-settings-text' => 'Ahora debes ir a tus preferencias y
@@ -1029,16 +1030,16 @@ Por favor escribe algo sobre ti; Quién eres y qué haces.
 Esto ayudará a la {{SITENAME}} comunidad para trabajar juntos.
 En {{SITENAME}} hay gente de todo el mundo trabajando en distintos idiomas y proyectos.',
 	'translate-fs-userpage-submit' => 'Crear mi página de usuario',
-	'translate-fs-userpage-done' => 'Bien hecho! Ahora tienes una página de usuario.',
-	'translate-fs-permissions-text' => 'Ahora necesitas colocar una solicitud para ser agregado al grupo de traductores.
+	'translate-fs-userpage-done' => '¡Bien hecho! Ahora tienes una página de usuario.',
+	'translate-fs-permissions-text' => 'Ahora tienes que hacer una solicitud para ser agregado al grupo de traductores.
 
 Hasta que arreglemos el código, por favor ve a [[Project:Translator]] y sigue las instrucciones.
 
-Después que hayas enviado tu solicitud, uno de los miembros del staff de voluntarios verificará tu solicitud y lo aprobará tan pronto como sea posible. Por favor se paciente.
+Después de que hayas enviado tu solicitud, uno de los miembros voluntarios del personal verificará tu solicitud y la aprobará tan pronto como sea posible. Por favor se paciente.
 
-<del>Verifica que la siguiente solicitud está correctamente llenada y luego presiona el botón de solicitud.</del>',
-	'translate-fs-target-text' => 'Felicitaciones!
-Puedes ahora comenzar a traducir.
+<del>Verifica que la siguiente solicitud está correctamente rellenada y luego presiona el botón de solicitud.</del>',
+	'translate-fs-target-text' => '¡Felicidades!
+Ahora puedes comenzar a traducir.
 
 No temas si lo sientes nuevo y confuso para ti.
 En la [[Project list]] hay una visión general de los proyectos en los que puedes contribuir con traducciones.
@@ -1047,16 +1048,16 @@ Una lista de todos los grupos de mensajes con el [[Special:LanguageStats|status 
 
 Si sientes que necesitas entender más antes de empezar a traducir, puedes leer las [[FAQ|Preguntas frecuentes]].
 Desafortunadamente la documentación puede estar desactualizada a veces.
-Si hay algo que pienses que deberías ser capaz de hacer, pero no cómo, no dudes en preguntarlo en la [[Support|página de soporte]].
+Si hay algo que crees que deberías ser capaz de hacer, pero no sabes cómo, no dudes en preguntarlo en la [[Support|página de apoyo]].
 
-Puedes también contactar con otros traductores al mismo idioma en la [[Portal_talk:$1|página de discusión]] del [[Portal:$1|portal de tu idioma]].
+También puedes contactar con otros traductores del mismo idioma en la [[Portal_talk:$1|página de discusión]] del [[Portal:$1|portal de tu idioma]].
 El portal enlaza a tu [[Special:Preferences|preferencia de idioma]] actual.
-Por favor cámbialo si es necesario.',
-	'translate-fs-email-text' => 'Por favor brinda tu dirección de correo electrónico en [[Special:Preferences|tus preferencias]] y confírmalo desde el correo que se te envíe.
+Si todavía no lo has hecho, [[Special:Preferences|cambia el idioma de tu interfaz de usuario al idioma al que quieras traducir]], para que el wiki te pueda mostrar los enlaces más relevantes para ti.',
+	'translate-fs-email-text' => 'Por favor proporciona tu dirección de correo electrónico en [[Special:Preferences|tus preferencias]] y confírmala desde el mensaje de correo que se te envíe.
 
-Esto permite a los otros usuarios contactarte por correo electrónico.
+Esto permite a los otros usuarios contactar contigo por correo electrónico.
 También recibirás boletines de noticias como máximo una vez al mes.
-Si no deseas recibir boletines de noticias, puedes cancelarlas en la pestaña  "{{int:prefs-personal}}" de tus [[Special:Preferences|preferencias]].',
+Si no deseas recibir boletines de noticias, puedes cancelarlos en la pestaña "{{int:prefs-personal}}" de tus [[Special:Preferences|preferencias]].',
 );
 
 /** Basque (Euskara)
