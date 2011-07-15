@@ -28,6 +28,9 @@ descmsg = addmediawizard-desc
 Admin Links
 aliasfile = AdminLinks/AdminLinks.alias.php
 
+Advanced Meta
+descmsg = ameta-desc
+
 Advanced Random
 aliasfile = AdvancedRandom/AdvancedRandom.alias.php
 
