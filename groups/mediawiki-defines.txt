@@ -169,7 +169,7 @@ ignored = centralauth-editset-item-ro, centralauth-admin-notblocked
 
 Central Notice
 aliasfile = CentralNotice/CentralNotice.alias.php
-optional = centralnotice-language-listing
+optional = centralnotice-language-listing, centralnotice-log-label, centralnotice-user-links
 
 Change Author
 aliasfile = ChangeAuthor/ChangeAuthor.alias.php
