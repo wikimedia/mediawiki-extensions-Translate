@@ -86,7 +86,10 @@ window.trlOpenJsEdit = function( page, group ) {
 		form.hide().slideDown();
 
 		// Enable the collapsible element
-		$( '.mw-identical-title' ).makeCollapsible();
+		var $identical = $( '.mw-identical-title' );
+		if ( $.isFunction( $identical.makeCollapsible ) ) {
+			$identical.makeCollapsible();
+		}
 
 		form.find( '.mw-translate-next' ).click( function() {
 			trlLoadNext( page );
