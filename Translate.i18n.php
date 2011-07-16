@@ -2240,9 +2240,18 @@ $1',
  * @author Mucalexx
  */
 $messages['bar'] = array(
+	'translate-edit-information' => 'Informazión zur da Systémnoochricht ($1)',
+	'translate-edit-in-other-languages' => 'Systémnoochricht auf åndre Sproochen',
+	'translate-edit-tab-list' => 'Noochrichtenlisten',
+	'translationstats' => "Staatistiken zua d' Ywersétzungen",
 	'translate-sidebar-alltrans' => 'Auf åndre Sproochen',
 	'translations' => 'Olle Ywersetzungen',
+	'languagestats' => 'Staatistiken zur Sprooch',
+	'translate-langstats-expandall' => 'olle auskloppm',
 	'translate-language' => 'Sprooch',
+	'supportedlanguages-recenttranslations' => 'Aktuelle Ywersétzungen',
+	'translate-js-history' => 'Ywersétzungsgschicht',
+	'translate-js-support' => 'A Frog stön',
 );
 
 /** Southern Balochi (بلوچی مکرانی)
