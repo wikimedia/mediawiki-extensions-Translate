@@ -2305,7 +2305,7 @@ $messages['ksh'] = array(
 	'translate-fs-email-title' => 'De <i lang="en">e-mail</i> Adress bestätije',
 	'translate-fs-intro' => 'Wellkumme bei {{GRAMMAR:Genitiv ier|{{SITENAME}}}} Hölp bei de eetsde Schredde för neu Metmaacher.
 Heh kreß De Schrett för Schrett jesaat, wi De ene Övversäzer weeß.
-Aam Engk kanns De de Täxte un Nohreeschte uß alle Projäkte övversäze, di {{GRAMMAR:em Dativ|{{SITENAME}}}} ongerstoz wääde.',
+Aam Engk kanns De de Täxte un Nohreeschte uß alle Projäkte övversäze, di {{GRAMMAR:em Dativ|{{SITENAME}}}} ongerstöz wääde.',
 	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount.png|frame]]
 
 Dä eetsde Schredd es et Aanmelde.
@@ -2368,7 +2368,7 @@ Bes dohenn bes esu joot un han e beßje Jedold.
 
 <del>Föll dat Fommulaa heh dronger reschtesch uß, un donn dann op dä Knopp klecke.</del>',
 	'translate-fs-target-text' => 'Onse Jlöckwonsch!
-Jez kanns De e t Övversäze aanfange
+Jez kanns De et Övversäze aanfange
 
 Lohß Desch nit jeck maache, wann dat eets ens jet fresch un onövversseshlesh schingk.
 Op dä Sigg [[Project list|met dä Leß met de Projäkte]] kanns Der enne Övverbleck holle, woh De jäz övverall jet zoh beidraare kanns met Dinge Övversäzonge.
