@@ -1872,6 +1872,15 @@ optional = wikilove-commons-url, wikilove-commons-link
 Wikimedia Incubator
 descmsg = wminc-desc
 
+Wikimedia Incubator Info Page
+descmsg = wminc-desc
+file = WikimediaIncubator/InfoPage.i18n.php
+optional = wminc-logo-wikipedia, wminc-logo-wiktionary, wminc-logo-wikibooks, wminc-logo-wikinews
+optional = wminc-logo-wikiquote, wminc-logo-wikisource, wminc-logo-wikiversity, wminc-logo-meta-wiki
+optional = wminc-logo-wikimedia-commons, wminc-logo-wikispecies, wminc-logo-mediawiki
+optional = wminc-manual-url, wminc-infopage-title
+ignored = wminc-infopage-prefill
+
 Wikimedia Messages
 ignored = sidebar, robots.txt
 optional = grouppage-steward, grouppage-sysadmin, grouppage-Global_bot
