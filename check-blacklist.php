@@ -406,6 +406,13 @@ array(
 	)
 ),
 array(
+	'group' => 'ext-wikimediaincubator',
+	'check' => 'links',
+	'message' => array(
+		'wminc-code-macrolanguage', // Contains link that can be translated
+	)
+),
+array(
 	'group' => 'out-fudforum',
 	'check' => 'variable',
 	'message' => array(
