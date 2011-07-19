@@ -7044,6 +7044,7 @@ Vos éte encoragiê a revêre los mèssâjos dês [[Special:Translate|{{int:tran
 	'translate-languagestats-groups' => ' # Apondéd des numerôs de tropes de mèssâjos, yon per legne por limitar les tropes
  # que sont montrâs dessus Special:LanguageStats. Les tropes pas ègzistentes seront
  # ignorâs.',
+	'translate-languagestats-overall' => 'Totes les tropes de mèssâjos ensemblo',
 	'supportedlanguages' => 'Lengoues recognues',
 	'supportedlanguages-translators' => 'Traductor{{PLURAL:$2||s}} : $1',
 	'supportedlanguages-recenttranslations' => 'novèles traduccions',
