@@ -3675,9 +3675,11 @@ Wann et net fonctionnéiert gëtt dat am [[Special:Log/pagetranslation|Iwwersetz
 	'pt-movepage-started' => "D'Basissäit ass elo geréckelt.
 Kuckt w.e.g. d'[[Special:Log/pagetranslation|Logbuch vun den Iwwersetzunge]] fir Feelermeldungen respektiv d'Meldung datt alles ok ass.",
 	'pt-locked-page' => 'Dës Säit ass gespaart wëll déi iwwersetzbar Säit elo geréckelt gëtt.',
+	'pt-deletepage-lang-title' => "D'Iwwersetzungssäit $1 gëtt geläscht.",
 	'pt-deletepage-invalid-title' => 'Déi spezifizéiert Säit ass net valabel.',
 	'pt-deletepage-action-check' => 'Säiten déi geläscht solle ginn opzielen',
 	'pt-deletepage-action-perform' => 'Elo läschen',
+	'pt-deletepage-action-other' => 'Zil änneren',
 	'pt-deletepage-lang-legend' => 'Iwwersetzungssäit läschen',
 	'pt-deletepage-full-legend' => 'Iwwersetzbar Säit läschen',
 	'pt-deletepage-current' => 'Numm vun der Säit:',
