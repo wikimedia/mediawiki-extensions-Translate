@@ -826,6 +826,7 @@ descmsg = mobile-frontend-desc
 
 Mood Bar
 ignored = tooltip-p-moodbar-trigger-using, tooltip-p-moodbar-trigger-feedback, moodbar-what-target
+ignored = moodbar-what-expanded, moodbar-what-collapsed, moodbar-what-content
 
 Most Revisors
 aliasfile = MostRevisors/MostRevisors.alias.php
