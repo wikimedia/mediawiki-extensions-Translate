@@ -429,6 +429,8 @@ Edit Messages
 
 Edit Own
 
+Edit Page Tracking
+
 Edit Section Hilite Link
 
 Edit Similar
