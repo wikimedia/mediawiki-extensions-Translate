@@ -470,12 +470,17 @@ class MessageWebImporter {
 	 * @param $legend \string Legend as raw html.
 	 * @param $type \string Contents of type class.
 	 * @param $content \string Contents as raw html.
+	 * @param $lang Language The language in which the text is written.
 	 * @return \string Section element as html.
 	 */
-	public static function makeSectionElement( $legend, $type, $content ) {
+	public static function makeSectionElement( $legend, $type, $content, $lang = null ) {
 		$containerParams = array( 'class' => "mw-tpt-sp-section mw-tpt-sp-section-type-{$type}" );
 		$legendParams = array( 'class' => 'mw-tpt-sp-legend' );
 		$contentParams = array( 'class' => 'mw-tpt-sp-content' );
+		if( $lang ) {
+			$contentParams['dir'] = wfGetLangObj( $lang )->getDir();
+			$contentParams['lang'] = wfGetLangObj( $lang )->getCode();
+		}
 
 		$items = new TagContainer();
 		$items[] = new HtmlTag( 'div', new RawHtml( $legend ), $legendParams );

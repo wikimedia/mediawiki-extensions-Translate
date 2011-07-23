@@ -347,7 +347,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 	/** Displays the sections and changes for the user to review */
 	public function showPage( TranslatablePage $page, Array $sections ) {
-		global $wgOut;
+		global $wgOut, $wgContLang;
 
 		$wgOut->setSubtitle( $this->user->getSkin()->link( $page->getTitle() ) );
 		TranslateUtils::injectCSS();
@@ -380,6 +380,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 			if ( $s->type === 'changed' ) {
 				$diff = new DifferenceEngine;
+				$diff->setDiffLang( $wgContLang );
 				$diff->setText( $s->getOldText(), $s->getText() );
 				$text = $diff->getDiff( wfMsgHtml( 'tpt-diff-old' ), wfMsgHtml( 'tpt-diff-new' ) );
 				$diff->showDiffStyle();
@@ -391,7 +392,9 @@ class SpecialPageTranslation extends SpecialPage {
 				$text = TranslateUtils::convertWhiteSpaceToHTML( $s->getText() );
 			}
 
-			$wgOut->addHTML( MessageWebImporter::makeSectionElement( $name, $s->type, $text ) );
+			# For changed text, the language is set by $diff->setDiffLang()
+			$lang = $s->type === 'changed' ? null : $wgContLang;
+			$wgOut->addHTML( MessageWebImporter::makeSectionElement( $name, $s->type, $text, $lang ) );
 		}
 
 		$deletedSections = $page->getParse()->getDeletedSections();
@@ -401,7 +404,7 @@ class SpecialPageTranslation extends SpecialPage {
 			foreach ( $deletedSections as $s ) {
 				$name = wfMsgHtml( 'tpt-section-deleted', htmlspecialchars( $s->id ) );
 				$text = TranslateUtils::convertWhiteSpaceToHTML( $s->getText() );
-				$wgOut->addHTML( MessageWebImporter::makeSectionElement( $name, $s->type, $text ) );
+				$wgOut->addHTML( MessageWebImporter::makeSectionElement( $name, $s->type, $text, $wgContLang ) );
 			}
 		}
 
@@ -415,6 +418,7 @@ class SpecialPageTranslation extends SpecialPage {
 				$wgOut->wrapWikiMsg( '==$1==', 'tpt-sections-template' );
 
 				$diff = new DifferenceEngine;
+				$diff->setDiffLang( $wgContLang );
 				$diff->setText( $oldTemplate, $newTemplate );
 				$text = $diff->getDiff( wfMsgHtml( 'tpt-diff-old' ), wfMsgHtml( 'tpt-diff-new' ) );
 				$diff->showDiffStyle();
