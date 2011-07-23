@@ -498,7 +498,7 @@ FOO;
 		$url = $page->getTranslationUrl( $code );
 
 		// Output
-		$wrap = '<div style="font-size: x-small; text-align: center">$1</div>';
+		$wrap = '<div class="mw-translate-page-info">$1</div>';
 		$wgOut->wrapWikiMsg( $wrap, array( 'tpt-translation-intro', $url, $titleText, $per ) );
 
 		if ( floor( $per ) < 100 ) {
@@ -506,7 +506,7 @@ FOO;
 			$collection = $group->initCollection( $code );
 			$collection->filter( 'fuzzy', false );
 			if ( count( $collection ) ) {
-				$wrap = '<div style="font-size: x-small; text-align: center" class="mw-translate-fuzzy">$1</div>';
+				$wrap = '<div class="mw-translate-page-info mw-translate-fuzzy">$1</div>';
 				$wgOut->wrapWikiMsg( $wrap, array( 'tpt-translation-intro-fuzzy' ) );
 			}
 		}
