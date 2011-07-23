@@ -380,7 +380,9 @@ class SpecialPageTranslation extends SpecialPage {
 
 			if ( $s->type === 'changed' ) {
 				$diff = new DifferenceEngine;
-				$diff->setDiffLang( $wgContLang );
+				if( method_exists( 'DifferenceEngine', 'setDiffLang' ) ) {
+					$diff->setDiffLang( $wgContLang );
+				}
 				$diff->setText( $s->getOldText(), $s->getText() );
 				$text = $diff->getDiff( wfMsgHtml( 'tpt-diff-old' ), wfMsgHtml( 'tpt-diff-new' ) );
 				$diff->showDiffStyle();
@@ -418,7 +420,9 @@ class SpecialPageTranslation extends SpecialPage {
 				$wgOut->wrapWikiMsg( '==$1==', 'tpt-sections-template' );
 
 				$diff = new DifferenceEngine;
-				$diff->setDiffLang( $wgContLang );
+				if( method_exists( 'DifferenceEngine', 'setDiffLang' ) ) {
+					$diff->setDiffLang( $wgContLang );
+				}
 				$diff->setText( $oldTemplate, $newTemplate );
 				$text = $diff->getDiff( wfMsgHtml( 'tpt-diff-old' ), wfMsgHtml( 'tpt-diff-new' ) );
 				$diff->showDiffStyle();
