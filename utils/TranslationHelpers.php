@@ -902,7 +902,9 @@ class TranslationHelpers {
 		}
 
 		$diff = new DifferenceEngine;
-		$diff->setDiffLang( $this->group->getSourceLanguage() );
+		if( method_exists( 'DifferenceEngine', 'setDiffLang' ) ) {
+			$diff->setDiffLang( $this->group->getSourceLanguage() );
+		}
 		$diff->setText( $oldtext, $newtext );
 		$diff->setReducedLineNumbers();
 		$diff->showDiffStyle();
@@ -952,7 +954,9 @@ class TranslationHelpers {
 		}
 
 		$diff = new DifferenceEngine;
-		$diff->setDiffLang( $this->group->getSourceLanguage() );
+		if( method_exists( 'DifferenceEngine', 'setDiffLang' ) ) {
+			$diff->setDiffLang( $this->group->getSourceLanguage() );
+		}
 		$diff->setText( $oldtext, $newtext );
 		$diff->setReducedLineNumbers();
 		$diff->showDiffStyle();
