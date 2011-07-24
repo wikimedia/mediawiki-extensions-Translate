@@ -12250,14 +12250,14 @@ Wann de Grupp aus Ënnergruppen besteet oder Messagen aus anere Gruppen drastinn
 	'translate-magic-help' => "Dir kënnt d'Aliase vu Spezialsäiten, magesch Wierder an Nummraum Nimm iwwersetzen.
 
 Spezial Säit ''Aliasen'' a ''magesch Wierder'' kënne méi Iwwersetzungen hunn.
-Iwwersetzungen gi mat engem Komma (,) getrennt.
-Nummraim kënne nëmmen eng Iwwersetzung hunn.
+Iwwersetzunge gi mat engem Komma (,) getrennt.
+Nummraim kënnen nëmmen eng Iwwersetzung hunn.
 
 Am Nummraum Iwwersetzungen ass <code>$1 Diskussioun</code> speziell. <code>$1</code> gëtt duerch ''sitename'' ersat (zum Beispill <code>{{ns:project_talk}}</code>).
 Wann et an ärer Sprooch net méiglech ass fir e gëltegen Ausdrock ze maachen ouni ''sitename'' z'änneren, da kontaktéiert w.e.g. en Entwéckler (developer).
 
 Dir musst am Grupp vun den Iwwersetzer si fir Ännerungen ofspäicheren ze kënnen.
-Ännerunge ginn net gespäichert bis Dir de knäppchen hei ënndrënner geklickt hutt.",
+Ännerunge ginn net gespäichert bis Dir de Knäppchen hei ënnendrënner geklickt hutt.",
 	'translate-magic-module' => 'Modul:',
 	'translate-magic-submit' => 'Weisen',
 	'translate-magic-cm-export' => 'Export',
@@ -14419,7 +14419,7 @@ Alle waarden hebben een limiet aan de boven- en onderzijde.',
 	'translations-summary' => 'Voer de naam van een bericht in om alle beschikbare vertalingen weer te geven.',
 	'translate-translations-no-message' => '"$1" is geen vertaalbaar bericht',
 	'translate-translations-none' => 'Er zijn geen vertalingen beschikbaar voor "$1"',
-	'translate-translations-count' => 'Er {{PLURAL:$1|één vertaling|$1 vertalingen}}.',
+	'translate-translations-count' => 'Er {{PLURAL:$1|is één vertaling|zijn $1 vertalingen}} gevonden.',
 	'translate-translations-fieldset-title' => 'Bericht',
 	'translate-translations-messagename' => 'Naam:',
 	'translate-translations-project' => 'Project:',

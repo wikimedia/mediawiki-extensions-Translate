@@ -905,6 +905,7 @@ $messages['frp'] = array(
 	'translate-group-desc-wikimediaextensions' => 'Ceta mèta-tropa de mèssâjos contint tôs los mèssâjos de les èxtensions MediaWiki utilisâs per la [http://wikimedia.org/ Wikimedia Foundation].',
 	'translate-group-desc-uniwiki' => 'Ceta mèta-tropa de mèssâjos contint tôs los mèssâjos de les èxtensions liyês a [http://unicefinnovation.org/wiki.php Uniwiki].',
 	'translate-group-desc-ui' => 'Ceta mèta-tropa de mèssâjos contint tôs los mèssâjos de les èxtensions liyês a l’[http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative iniciativa d’utilisabilitât de Vouiquipèdia].',
+	'translate-group-desc-translatablepages' => 'Totes les pâges a traduire',
 	'bw-desc-freecol' => 'Devant que traduire FreeCol dens voutra lengoua, volyéd liére [[Translating:FreeCol]]. FreeCol utilise la licence GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], un barjacâjo vouèbe ècrit en PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] est un sistèmo abado por la survelyence sur lo Malyâjo de les cofieries. Volyéd raportar tôs los problèmos dessus [[Support|Assistance]].',
