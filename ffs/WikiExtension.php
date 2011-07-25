@@ -101,7 +101,7 @@ class WikiExtensionFormatWriter extends WikiFormatWriter {
 		$filename = $this->group->getMessageFile( '' );
 		$target = $targetDirectory . '/' . $filename;
 
-		wfMkdirParents( dirname( $target ) );
+		wfMkdirParents( dirname( $target ), null, __METHOD__ );
 		$handle = fopen( $target, 'wt' );
 		if ( $handle === false ) {
 			throw new MWException( "Unable to open target for writing" );

@@ -152,7 +152,7 @@ class SimpleFormatWriter {
 			}
 			$target = $targetDirectory . '/' . $filename;
 
-			wfMkdirParents( dirname( $target ) );
+			wfMkdirParents( dirname( $target ), null, __METHOD__ );
 			$handle = fopen( $target, 'wt' );
 
 			if ( $handle === false ) {

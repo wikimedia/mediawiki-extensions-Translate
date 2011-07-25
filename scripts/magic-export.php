@@ -108,7 +108,7 @@ class MagicExport extends Maintenance {
 			}
 
 			$outFile = $this->target . '/' . $filename;
-			wfMkdirParents( dirname( $outFile ) );
+			wfMkdirParents( dirname( $outFile ), null, __METHOD__ );
 			$this->handles[$group->getId()] = fopen( $outFile, 'w' );
 			fwrite( $this->handles[$group->getId()], $this->readHeader( $inFile ) );
 
