@@ -7239,12 +7239,16 @@ $messages['fur'] = array(
 	'translate-percentage-complete' => 'Completament',
 	'translate-percentage-fuzzy' => 'Di inzornâ',
 	'supportedlanguages' => 'Lenghis supuartadis',
+	'supportedlanguages-translators' => '{{PLURAL:$2|Tradutôr|Tradutôrs}}: $1',
 	'supportedlanguages-recenttranslations' => 'traduzions recentis',
+	'supportedlanguages-count' => '$1 {{PLURAL:$1|lenghe|lenghis}} in dut.',
 	'translate-save' => 'Salve ($1)',
+	'translate-jssti-add' => 'Zonte ae liste',
 	'translate-manage-import-new' => 'Gnûf messaç $1',
 	'translate-manage-action-import' => 'Impuarte',
 	'translate-manage-action-ignore' => 'Ignore',
 	'importtranslations' => 'Impuarte traduzions',
+	'translate-import-load' => 'Cjame file',
 	'translate-js-next' => 'Salve e passe al prossim',
 	'translate-js-nonext' => "Chest al jere l'ultin messaç su cheste pagjine.",
 	'translate-js-skip' => 'Passe al prossim',
@@ -7254,6 +7258,7 @@ $messages['fur'] = array(
 	'translate-gs-speakers' => 'Fevelants',
 	'translate-gs-score' => 'Punteç',
 	'translate-gs-total' => 'Totâl',
+	'translate-searchprofile' => 'Traduzions',
 );
 
 /** Western Frisian (Frysk)

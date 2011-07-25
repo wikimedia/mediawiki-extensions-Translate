@@ -2104,6 +2104,8 @@ Volyéd controlar lo [[Special:Log/pagetranslation|jornal de les traduccions de 
  * @author Klenje
  */
 $messages['fur'] = array(
+	'tpt-translate-this' => 'tradûs cheste pagjine',
+	'translate-tag-translate-link-desc' => 'Tradûs cheste pagjine',
 	'tpt-languages-legend' => 'Altris lenghis:',
 	'pt-movepage-reason' => 'Reson:',
 );

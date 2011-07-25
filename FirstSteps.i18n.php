@@ -1291,6 +1291,7 @@ Lèssiéd-mè continuar.',
  */
 $messages['fur'] = array(
 	'firststeps' => 'Prins pas',
+	'translate-fs-pagetitle-done' => '- fat!',
 	'translate-fs-signup-title' => 'Regjistriti',
 	'translate-fs-settings-title' => 'Configure lis tôs preferencis',
 	'translate-fs-userpage-title' => 'Cree la tô pagjine utent',
