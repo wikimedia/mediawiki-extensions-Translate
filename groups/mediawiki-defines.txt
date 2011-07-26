@@ -434,6 +434,8 @@ Edit Own
 
 Edit Page Tracking
 
+Edit Section Clearer Link
+
 Edit Section Hilite Link
 
 Edit Similar
