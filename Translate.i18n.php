@@ -498,7 +498,6 @@ These messages will not be submitted to svn, but will only affect the interface 
 	'translate-percentage-complete' => 'Used in [[Special:LanguageStats]].',
 	'translate-percentage-fuzzy' => 'Used in [[Special:LanguageStats]].',
 	'translate-languagestats-groups' => "You can translate the text, including 'Leave this line exactly as it is'. The lines of this messages have one (1) leading space.",
-	'supportedlanguages-noportal' => '{{doc-important|Do not translate "translators" and "<nowiki>[[:{{ns:template}}:User|User]]</nowiki>"!}}',
 	'supportedlanguages-recenttranslations' => 'Link on [[Special:SupportedLanguages]] to the Recent Changes special page.',
 	'translate-save' => '{{Identical|Save}}',
 	'translate-jssti-add' => 'Name of button in [[Special:Preferences]], tab Editing.',
@@ -558,7 +557,8 @@ $1 is a language name.',
 	'translate-gs-speakers' => 'Used in wiki tables for localisation statistics as a column header for the number of speakers of a language. See [[Project:MediaWiki localisation in the 50 most spoken languages|example]]',
 	'translate-gs-score' => 'Used in wiki tables for localisation statistics as a column header for the weighted score of the localisation of a language. See [[Project:MediaWiki localisation in the 50 most spoken languages|example]]',
 	'translate-gs-multiple' => 'Used in wiki tables for localisation statistics as a value in the Continent column when a language is spoken on more than one continent . See [[Project:MediaWiki localisation in the 50 most spoken languages|example]]',
-	'translate-gs-count' => 'Used in summary wiki tables for localisation statistics as a column header for the number of languages on a continent in the table above it. See [[Project:MediaWiki localisation in the 50 most spoken languages|example]]',
+	'translate-gs-count' => 'Used in summary wiki tables for localisation statistics as a column header for the number of languages on a continent in the table above it. See [[Project:MediaWiki localisation in the 50 most spoken languages|example]]
+{{Identical|Count}}',
 	'translate-gs-total' => 'Used in summary wiki tables for localisation statistics as a row description for the row that contains summarised data for the table. See bottom table on [[Project:MediaWiki localisation in the 50 most spoken languages|example]]
 
 {{Identical|Total}}',
