@@ -231,6 +231,9 @@ aliasfile = CodeReview/CodeReview.alias.php
 ignored = code-rev-comment-preview-accesskey, code-rev-submit-accesskey, code-rev-submit-next-accesskey
 ignored = code-rev-id, code-rev-next-accesskey
 
+Collab Watchlist
+ignored = collabwatchlist-unset-tag
+
 Collection - Core
 id = ext-collection-core
 file = Collection/CollectionCore.i18n.php
