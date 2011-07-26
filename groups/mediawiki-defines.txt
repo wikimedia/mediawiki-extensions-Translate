@@ -1691,6 +1691,8 @@ optional = tpt-languages-separator
 Transliterator
 magicfile = Transliterator/Transliterator.i18n.magic.php
 
+Tree And Menu
+
 Trusted Math
 
 Trusted XFF
