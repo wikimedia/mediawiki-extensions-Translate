@@ -865,7 +865,7 @@ class TranslationHelpers {
 	}
 
 	protected function getPageDiff() {
-		if ( $this->group instanceof WikiPageMessageGroup ) {
+		if ( $this->group instanceof WikiPageMessageGroup || $this->group === null ) {
 			return null;
 		}
 
