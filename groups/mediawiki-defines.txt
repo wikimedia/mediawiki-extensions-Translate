@@ -489,8 +489,6 @@ Favorites
 file = Favorites/favorites.i18n.php
 ignored = accesskey-pt-favoritelist, accesskey-ca-favorite, accesskey-ca-unfavorite, accesskey-favorite
 
-FCK editor
-
 File Attach
 
 File Page Masking
