@@ -66,6 +66,7 @@ GROUPS:
   - ext-labeledsectiontransclusion # Wikisource
   - ext-landingcheck
   - ext-liquidthreads # 2009-11-11: MediaWiki.org and some *.labs.wikimedia.org
+  - ext-mobilefrontend # r93435
   - ext-moodbar # r93131
   - ext-mwsearch
   - ext-narayam # 2011-03-16: ml-wikis
