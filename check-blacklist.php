@@ -99,6 +99,13 @@ array(
 	)
 ),
 array(
+	'group' => 'ext-authorprotect',
+	'check' => 'links',
+	'message' => array(
+		'categorysortheaders-desc', // Contains links that are translated
+	)
+),
+array(
 	'group' => 'ext-babel',
 	'check' => 'variable',
 	'message' => array(
