@@ -1078,7 +1078,6 @@ class PythonSingleFFS extends SimpleFFS {
 		return array( 'MESSAGES' => self::$data[$this->group->getId()][$code] );
 	}
 
-
 	public function write( MessageCollection $collection ) {
 		if ( $this->fw === null ) {
 			$sourceLanguage = $this->group->getSourceLanguage();
@@ -1098,7 +1097,10 @@ class PythonSingleFFS extends SimpleFFS {
 		if ( !$ok ) return;
 
 		$authors = $this->doAuthors( $collection );
-		if ( $authors != '' ) fwrite( $this->fw, "$authors" );
+		if ( $authors != '' ) {
+			fwrite( $this->fw, "$authors" );
+		}
+
 		fwrite( $this->fw, "\t'{$collection->code}': {\n" );
 		fwrite( $this->fw, $this->writeBlock( $collection ) );
 		fwrite( $this->fw, "\t},\n" );
@@ -1117,17 +1119,22 @@ PHP;
 	protected function writeBlock( MessageCollection $collection ) {
 		$block = '';
 		$messages = array();
+
 		foreach ( $collection as $message ) {
 			if ( $message->translation() == '' ) continue;
 			$translation = str_replace( '\\', '\\\\', $message->translation() );
 			$translation = str_replace( '\'', '\\\'', $translation );
 			$translation = str_replace( "\n", '\n', $translation );
+			$translation = str_replace( TRANSLATE_FUZZY, '', $translation );
 			$messages[$message->key()] = $translation;
 		}
+
 		ksort( $messages );
+
 		foreach ( $messages as $key => $translation ) {
 			$block .= "\t\t'{$key}': u'{$translation}',\n";
 		}
+
 		return $block;
 	}
 
@@ -1137,8 +1144,10 @@ PHP;
 		// Read authors.
 		$fr = fopen( $this->group->getSourceFilePath( $collection->code ), 'r' );
 		$authors = array();
+
 		while ( !feof( $fr ) ) {
 			$line = fgets( $fr );
+
 			if ( strpos( $line, "\t# Author:" ) === 0 ) {
 				$authors[] = trim( substr( $line, strlen( "\t# Author: " ) ) );
 			} elseif ( $line === "\t'{$collection->code}': {\n" ) {
@@ -1147,6 +1156,7 @@ PHP;
 				$authors = array();
 			}
 		}
+
 		$authors2 = $collection->getAuthors();
 		$authors2 = $this->filterAuthors( $authors2, $collection->code );
 		$authors = array_unique( array_merge( $authors, $authors2 ) );
@@ -1161,7 +1171,7 @@ PHP;
 	public function __destruct() {
 		if ( $this->fw !== null ) {
 			fwrite( $this->fw, "}" );
-			 fclose( $this->fw );
+			fclose( $this->fw );
 		}
 	}
 }
