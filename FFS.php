@@ -1074,7 +1074,11 @@ class PythonSingleFFS extends SimpleFFS {
 			$json = shell_exec( "python -c'import simplejson as json; execfile(\"$filename\"); print json.dumps(msg)'" );
 			self::$data[$this->group->getId()] = json_decode( $json, true );
 		}
-		if ( !isset( self::$data[$this->group->getId()][$code] ) ) self::$data[$this->group->getId()][$code] = array();
+
+		if ( !isset( self::$data[$this->group->getId()][$code] ) ) {
+			self::$data[$this->group->getId()][$code] = array();
+		}
+
 		return array( 'MESSAGES' => self::$data[$this->group->getId()][$code] );
 	}
 
@@ -1092,9 +1096,14 @@ class PythonSingleFFS extends SimpleFFS {
 		$collection->loadTranslations();
 		$ok = false;
 		foreach ( $collection as $messages ) {
-			if ( $messages->translation() != '' ) $ok = true;
+			if ( $messages->translation() != '' ) {
+				$ok = true;
+			}
 		}
-		if ( !$ok ) return;
+
+		if ( !$ok ) {
+			return;
+		}
 
 		$authors = $this->doAuthors( $collection );
 		if ( $authors != '' ) {
@@ -1121,11 +1130,15 @@ PHP;
 		$messages = array();
 
 		foreach ( $collection as $message ) {
-			if ( $message->translation() == '' ) continue;
+			if ( $message->translation() == '' ) {
+				continue;
+			}
+
 			$translation = str_replace( '\\', '\\\\', $message->translation() );
 			$translation = str_replace( '\'', '\\\'', $translation );
 			$translation = str_replace( "\n", '\n', $translation );
 			$translation = str_replace( TRANSLATE_FUZZY, '', $translation );
+
 			$messages[$message->key()] = $translation;
 		}
 
