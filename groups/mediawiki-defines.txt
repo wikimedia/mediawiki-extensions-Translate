@@ -955,7 +955,8 @@ descmsg = tiff-desc
 
 Parser Functions
 descmsg = pfunc_desc
-magicfile = ParserFunctions/ParserFunctions.i18n.magic.php
+# Disabled. #language collision.
+#magicfile = ParserFunctions/ParserFunctions.i18n.magic.php
 ignored = pfunc-convert-dimensionmismatch
 ignored = pfunc-convert-unknownunit
 ignored = pfunc-convert-unknowndimension
