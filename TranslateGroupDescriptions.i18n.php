@@ -446,6 +446,7 @@ $messages['cs'] = array(
 	'translate-group-desc-collection' => 'Nadskupina zpráv obsahující všechny zprávy rozšíření [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
 	'translate-group-desc-flaggedrevs' => 'Nadskupina zpráv obsahující všechny zprávy rozšíření [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Nadskupina zpráv obsahující všechny zprávy rozšíření [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
+	'translate-group-desc-semantic' => 'Nadskupina zpráv obsahující všechny zprávy pro všechna rozšíření [http://semantic-mediawiki.org/ Semantic MediaWiki]',
 	'translate-group-desc-socialprofile' => 'Nadskupina zpráv obsahující všechny zprávy rozšíření [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
 	'translate-group-desc-translate' => 'Nadskupina zpráv obsahující všechny zprávy rozšíření [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-wikiaextensions' => 'Nadskupina zpráv obsahující všechny zprávy používané v podporovaných rozšířeních MediaWiki používaných na [http://www.wikia.com Wikia]',
@@ -824,6 +825,7 @@ $messages['fi'] = array(
  * @author IAlex
  * @author Jean-Frédéric
  * @author Litlok
+ * @author Od1n
  * @author Peter17
  * @author PieRRoMaN
  * @author Sherbrooke
@@ -852,7 +854,7 @@ $messages['fr'] = array(
 	'bw-desc-freecol' => 'Avant de traduire FreeCol dans votre langue, veuillez lire [[Translating:FreeCol]]. Freecol est publié sous licence GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], un forum internet écrit en PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] est un système gratuit pour le suivi sur le web des anomalies. Rapportez tous les problèmes sur [[Support]].',
-	'translate-group-desc-eol' => "Un groupe de message pour l’''[[Translating:EOL| Encyclopedia of Life]]''",
+	'translate-group-desc-eol' => "Un groupe de message pour l’''[[Translating:EOL|Encyclopedia of Life]]''",
 	'translate-group-desc-ihris' => 'Un groupe de messages pour [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-common' => 'Un groupe de messages pour [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], un module de [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-i2ce' => 'Un groupe de messages pour [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], un module de [[Translating:iHRIS|iHRIS]]',
@@ -870,8 +872,8 @@ Veuillez consulter [[mw:Extension:PDF Writer]] et http://code.pediapress.com/wik
 	'bw-desc-openimages' => "[[Translating:Open Images|Open Images]] est une plate-forme média libre (''open'')",
 	'translate-group-desc-openimages-verifyemailtemplate' => 'Ces messages font partie du modèle de vérification de [[Translating:Open Images|Open Images]] des courriels',
 	'translate-group-desc-openimages-all' => 'Ces messages font partie du [[Translating:Open Images|Projet Open Images]]',
-	'bw-desc-openlayers' => 'OpenLayers est logiciel en source ouvert pour la génération dynamique de cartes. Rapportez tous les problèmes sur [[Support]].',
-	'bw-desc-openstreetmap' => 'Groupe de messages pour tous les message de [[Translating:OpenStreetMap|OpenStreetMap]]',
+	'bw-desc-openlayers' => '[[Translating:OpenLayers|OpenLayers]] est un générateur de cartes dynamiques en JavaScript',
+	'bw-desc-openstreetmap' => 'Groupe de messages pour tous les messages de [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => "Ce groupe de messages contient les messages de l'interface d'[[Translating:Open Street Map|Open Street Map]].",
 	'bw-desc-osm-potlatch' => 'Ce groupe de messages contient les messages de l’interface de [[Translating:OpenStreetMap|Potlatch]]. Veuillez :
 *essayer de faire des traductions de longueur équivalente à l’original anglais, en raison de restrictions de l’interface utilisateur. Voir le [http://trac.openstreetmap.org/ticket/2067 rapport de bug].
@@ -2587,6 +2589,7 @@ Created for University of Bamberg. Licensed GPL 2.0 or later. Developed by [[Use
 );
 
 /** Tatar (Cyrillic) (Татарча/Tatarça (Cyrillic))
+ * @author March
  * @author Rinatus
  * @author Ильнар
  */
@@ -2595,7 +2598,7 @@ $messages['tt-cyrl'] = array(
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum] —  PHPда язылган веб-форум.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT — килгән хаталарны карау өчен нигезләнгән веб-система. Зинһар, булган кимчелекләрне [[Support]] битендә әйтегез.',
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] — PHP телендә язылган почта веб-клиенты. Зинхар очен, барлык җитешсезлекләр турында [[Support|ярдәм битенә]] хәбәр итегез.',
-	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] — ачык кодлы микроблоггинг үзәге',
+	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] — ачык кодлы микроблогинг үзәге',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] Викимедиа авторларының битен табарга ярдәм итә.',
 	'bw-desc-wikimediamobile' => 'Викимедианең мобиль юрамасы менә бу сылтама буенча урнашкан http://m.wikipedia.org',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] —  Википедиянең кәрәзле телефондагы автаном юрамасы',
