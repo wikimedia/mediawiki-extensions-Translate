@@ -17,7 +17,7 @@
 class SpecialImportTranslations extends SpecialPage {
 	/**
 	 * Set up and fill some dependencies.
-	*/
+	 */
 	public function __construct() {
 		parent::__construct( 'ImportTranslations', 'translate-import' );
 		global $wgUser, $wgOut, $wgRequest;
@@ -61,7 +61,6 @@ class SpecialImportTranslations extends SpecialPage {
 				$this->outputForm();
 				return;
 			}
-
 		} else {
 			/**
 			 * Proceed to loading and parsing if possible
@@ -195,6 +194,7 @@ class SpecialImportTranslations extends SpecialPage {
 			}
 		} elseif ( $source === 'local' ) {
 			$filename = $this->request->getFileTempname( 'upload-local' );
+
 			if ( !is_uploaded_file( $filename ) ) {
 				return array( 'ul-failed' );
 			}

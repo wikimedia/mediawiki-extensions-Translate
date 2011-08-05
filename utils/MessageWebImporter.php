@@ -251,6 +251,7 @@ class MessageWebImporter {
 			$diff = array_diff( $keys, array_keys( $messages ) );
 
 			foreach ( $diff as $s ) {
+				// @todo FIXME: Use CSS file.
 				$name = wfMsgHtml( 'translate-manage-import-deleted',
 					'<code style="font-weight:normal;">' . htmlspecialchars( $s ) . '</code>'
 				);

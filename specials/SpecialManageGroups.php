@@ -44,7 +44,6 @@ class SpecialManageGroups extends SpecialPage {
 		}
 
 		if ( $group ) {
-
 			if (
 				$wgRequest->getBool( 'rebuildall', false ) &&
 				$wgRequest->wasPosted() &&
@@ -71,6 +70,7 @@ class SpecialManageGroups extends SpecialPage {
 			}
 
 		}
+
 		// Main list
 		global $wgLang, $wgOut;
 
@@ -114,6 +114,7 @@ class SpecialManageGroups extends SpecialPage {
 						$out .= $this->rebuildButton( $group, $modified, 'main' );
 					}
 				} else {
+					// @todo FIXME: should be in CSS file.
 					$out = Html::rawElement( 'span', array( 'style' => 'color:grey' ), $out );
 				}
 			} else {
