@@ -617,6 +617,9 @@ function efTranslateInit() {
 		$wgHooks['ArticleSave'][] = 'PageTranslationHooks::tpSyntaxCheck';
 		$wgHooks['EditFilterMerged'][] = 'PageTranslationHooks::tpSyntaxCheckForEditPage';
 
+		// Set the page content language
+		$wgHooks['PageContentLanguage'][] = 'PageTranslationHooks::onPageContentLanguage';
+
 		// Add transtag to page props for discovery
 		$wgHooks['ArticleSaveComplete'][] = 'PageTranslationHooks::addTranstag';
 

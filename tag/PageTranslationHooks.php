@@ -37,11 +37,10 @@ class PageTranslationHooks {
 			}
 		}
 
-		// For translation pages, parse plural, grammar etc with correct language
+		// Set display title
 		$page = TranslatablePage::isTranslationPage( $title );
 		if ( $page ) {
 			list( , $code ) = TranslateUtils::figureMessage( $title->getText() );
-			$parser->getOptions()->setTargetLanguage( Language::factory( $code ) );
 			$name = $page->getPageDisplayTitle( $code );
 			if ( $name ) {
 				$realFunction = array( 'MessageCache', 'singleton' );
@@ -56,6 +55,20 @@ class PageTranslationHooks {
 			}
 		}
 
+		return true;
+	}
+
+	/**
+	 * Set the right page content language for translated pages ("Page/xx")
+	 * and namespaces used for translating messages (similar to MediaWiki namespace pages)
+	 */
+	function onPageContentLanguage( $title, &$pageLang ) {
+		global $wgTranslateMessageNamespaces;
+		// For translation pages, parse plural, grammar etc with correct language, and set the right direction
+		if ( TranslatablePage::isTranslationPage( $title ) || in_array( $title->getNamespace(), $wgTranslateMessageNamespaces ) ) {
+			list( , $code ) = TranslateUtils::figureMessage( $title->getText() );
+			$pageLang = $code;
+		}
 		return true;
 	}
 
