@@ -418,7 +418,7 @@ class TranslateEditAddons {
 			return true;
 		}
 
-		
+
 
 		$definitionTitle = Title::makeTitleSafe( $title->getNamespace(), "$key/" . $group->getSourceLanguage() );
 		if ( $definitionTitle && $definitionTitle->exists() ) {
@@ -501,7 +501,7 @@ class TranslateEditAddons {
 			'tooltip' => 'translate-searchprofile-tooltip',
 			'namespaces' => $wgTranslateMessageNamespaces,
 		);
-		
+
 		$profiles = wfArrayInsertAfter( $profiles, $insert, 'help' );
 		return true;
 	}
@@ -511,12 +511,12 @@ class TranslateEditAddons {
 			return true;
 		}
 
-		if( !$search->getSearchEngine()->supports( 'title-suffix-filter' ) ) {
+		if ( !$search->getSearchEngine()->supports( 'title-suffix-filter' ) ) {
 			return false;
 		}
 
 		$hidden = '';
-		foreach( $opts as $key => $value ) {
+		foreach ( $opts as $key => $value ) {
 			$hidden .= Html::hidden( $key, $value );
 		}
 

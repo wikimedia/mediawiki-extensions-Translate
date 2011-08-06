@@ -355,12 +355,12 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 		// Initialise messages.
 		$collection = $group->initCollection( $code );
-		
+
 		$ffs = $group->getFFS();
 		if ( $ffs instanceof GettextFFS && $code === 'qqq' ) {
 			$template = $ffs->read( 'en' );
 			$infile = array();
-			foreach( $template['TEMPLATE'] as $key => $data ) {
+			foreach ( $template['TEMPLATE'] as $key => $data ) {
 				if ( isset( $data['comments']['.'] ) ) {
 					$infile[$key] = '1';
 				}

@@ -380,7 +380,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 			if ( $s->type === 'changed' ) {
 				$diff = new DifferenceEngine;
-				if( method_exists( 'DifferenceEngine', 'setDiffLang' ) ) {
+				if ( method_exists( 'DifferenceEngine', 'setDiffLang' ) ) {
 					$diff->setDiffLang( $wgContLang );
 				}
 				$diff->setText( $s->getOldText(), $s->getText() );
@@ -420,7 +420,7 @@ class SpecialPageTranslation extends SpecialPage {
 				$wgOut->wrapWikiMsg( '==$1==', 'tpt-sections-template' );
 
 				$diff = new DifferenceEngine;
-				if( method_exists( 'DifferenceEngine', 'setDiffLang' ) ) {
+				if ( method_exists( 'DifferenceEngine', 'setDiffLang' ) ) {
 					$diff->setDiffLang( $wgContLang );
 				}
 				$diff->setText( $oldTemplate, $newTemplate );

@@ -478,7 +478,7 @@ class MessageWebImporter {
 		$containerParams = array( 'class' => "mw-tpt-sp-section mw-tpt-sp-section-type-{$type}" );
 		$legendParams = array( 'class' => 'mw-tpt-sp-legend' );
 		$contentParams = array( 'class' => 'mw-tpt-sp-content' );
-		if( $lang ) {
+		if ( $lang ) {
 			$contentParams['dir'] = wfGetLangObj( $lang )->getDir();
 			$contentParams['lang'] = wfGetLangObj( $lang )->getCode();
 		}

@@ -154,10 +154,10 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$conds = array(
 			'rc_title' . $dbr->buildLike( $dbr->anyString(), '/', $dbr->anyString() ),
 			'rc_namespace' => $wgTranslateMessageNamespaces,
-			'rc_timestamp > ' . $dbr->timestamp( TS_DB, wfTimeStamp( TS_UNIX ) - 60*60*24*180 ),
+			'rc_timestamp > ' . $dbr->timestamp( TS_DB, wfTimeStamp( TS_UNIX ) - 60 * 60 * 24 * 180 ),
 		);
 		$options = array( 'GROUP BY' => 'lang', 'HAVING' => 'count > 20' );
-		
+
 		$res = $dbr->select( $tables, $fields, $conds, __METHOD__, $options );
 
 		$data = array();
@@ -188,7 +188,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 			'page_id=rev_page',
 		);
 		$options = array( 'GROUP BY' => 'rev_user_text, lang' );
-		
+
 		$res = $dbr->select( $tables, $fields, $conds, __METHOD__, $options );
 
 		$data = array();
@@ -258,7 +258,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 			);
 
 			$tag = Html::element( 'a', $params, $name );
-			$wgOut->addHtml( $tag ."\n" );
+			$wgOut->addHtml( $tag . "\n" );
 		}
 		$wgOut->addHtml( '</div>' );
 	}
@@ -267,7 +267,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 		global $wgOut, $wgLang, $wgUser;
 		$skin = $wgUser->getSkin();
 
-		$day = 60*60*24;
+		$day = 60 * 60 * 24;
 
 		// Scale of the activity colors, anything
 		// longer than this is just inactive
@@ -292,7 +292,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 					$username, $wgLang->formatNum( $count ), $wgLang->formatNum( $last ) );
 				$last = max( 1, min( $period, $last ) );
 				$styles['border-bottom'] = '3px solid #' . $this->getActivityColour( $period - $last, $period );
-				#$styles['color'] = '#' . $this->getBackgroundColour( $period - $last, $period );
+				# $styles['color'] = '#' . $this->getBackgroundColour( $period - $last, $period );
 			} else {
 				$enc = "<s>$enc</s>";
 			}
@@ -325,7 +325,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$fields = array( 'user_name', 'user_editcount', 'MAX(rev_timestamp) as lastedit' );
 		$conds = array( 'user_id = rev_user' );
 		$options = array( 'GROUP BY' => 'user_name' );
-		
+
 		$res = $dbr->select( $tables, $fields, $conds, __METHOD__, $options );
 		foreach ( $res as $row ) {
 			$editcounts[$row->user_name] = $row->user_editcount;
@@ -363,16 +363,16 @@ class SpecialSupportedLanguages extends SpecialPage {
 		return $red . $green . $blue;
 	}
 
-	function shuffle_assoc($list) { 
-		if (!is_array($list)) return $list; 
+	function shuffle_assoc( $list ) {
+		if ( !is_array( $list ) ) return $list;
 
-		$keys = array_keys($list); 
-		shuffle($keys); 
-		$random = array(); 
-		foreach ($keys as $key) 
-			$random[$key] = $list[$key]; 
+		$keys = array_keys( $list );
+		shuffle( $keys );
+		$random = array();
+		foreach ( $keys as $key )
+			$random[$key] = $list[$key];
 
-		return $random; 
+		return $random;
 	}
 
 	protected function preQueryUsers( $users ) {

@@ -231,7 +231,7 @@ class PageTranslationHooks {
 		}
 
 		// BC for <1.19
-		$linker = class_exists('DummyLinker') ? new DummyLinker : new Linker;
+		$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
 
 		$languages = array();
 		foreach ( $status as $code => $percent ) {
@@ -433,7 +433,7 @@ FOO;
 		$ready = $page->getReadyTag();
 
 		$title = $page->getTitle();
-		$linker = class_exists('DummyLinker') ? new DummyLinker : new Linker;
+		$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
 
 		$latest = $title->getLatestRevId();
 		$canmark = $ready === $latest && $marked !== $latest;
@@ -593,7 +593,7 @@ FOO;
 		global $wgOut, $wgUser;
 		// $out was only added in some MW version
 		if ( $out === null ) $out = $wgOut;
-		$linker = class_exists('DummyLinker') ? new DummyLinker : new Linker;
+		$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
 
 		if ( !TranslatablePage::isTranslationPage( $out->getTitle() )
 				&& !TranslatablePage::isSourcePage( $out->getTitle() ) ) {
@@ -631,7 +631,7 @@ FOO;
 							$subpages .= wfMsgExt( 'pipe-separator', 'escapenoentities' );
 						} else  {
 							// This one is stupid imho, doesn't work with chihuahua
-							//$subpages .= '&lt; ';
+							// $subpages .= '&lt; ';
 						}
 
 						$subpages .= $getlink;

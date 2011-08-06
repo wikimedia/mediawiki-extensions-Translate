@@ -110,7 +110,7 @@ class TranslateYaml {
 				return Spyc::YAMLDump( $text );
 			case 'syck-pecl':
 				// Just horrible output
-				//return syck_dump( $text );
+				// return syck_dump( $text );
 			case 'syck':
 				return self::syckDump( $text );
 			default:
