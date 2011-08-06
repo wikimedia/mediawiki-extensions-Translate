@@ -160,7 +160,7 @@ abstract class MessageGroupBase implements MessageGroup {
 		}
 
 		if ( !class_exists( $class ) ) {
-			throw new MWException( "FFS class $class does not exists" );
+			throw new MWException( "FFS class $class does not exist." );
 		}
 
 		return new $class( $this );
@@ -174,14 +174,14 @@ abstract class MessageGroupBase implements MessageGroup {
 		}
 
 		if ( !class_exists( $class ) ) {
-			throw new MWException( "Checker class $class does not exists" );
+			throw new MWException( "Checker class $class does not exist." );
 		}
 
 		$checker = new $class( $this );
 		$checks = $this->getFromConf( 'CHECKER', 'checks' );
 
 		if ( !is_array( $checks ) ) {
-			throw new MWException( "Checker class $class not supplied with proper checks" );
+			throw new MWException( "Checker class $class not supplied with proper checks." );
 		}
 
 		foreach ( $checks as $check ) {
@@ -201,7 +201,7 @@ abstract class MessageGroupBase implements MessageGroup {
 			}
 
 			if ( !class_exists( $class ) ) {
-				throw new MWException( "Mangler class $class does not exists" );
+				throw new MWException( "Mangler class $class does not exist." );
 			}
 
 			/**
@@ -352,7 +352,7 @@ abstract class MessageGroupBase implements MessageGroup {
 		$index = $wgContLang->getNsIndex( $ns );
 
 		if ( !$index ) {
-			throw new MWException( "No valid namespace defined, got $ns" );
+			throw new MWException( "No valid namespace defined, got $ns." );
 		}
 
 		return $index;
@@ -414,7 +414,7 @@ class FileBasedMessageGroup extends MessageGroupBase {
 
 		$pattern = $this->getFromConf( 'FILES', 'sourcePattern' );
 		if ( $pattern === null ) {
-			throw new MWException( 'No source file pattern defined' );
+			throw new MWException( 'No source file pattern defined.' );
 		}
 
 		return $this->replaceVariables( $pattern, $code );
@@ -424,7 +424,7 @@ class FileBasedMessageGroup extends MessageGroupBase {
 		$pattern = $this->getFromConf( 'FILES', 'targetPattern' );
 
 		if ( $pattern === null ) {
-			throw new MWException( 'No target file pattern defined' );
+			throw new MWException( 'No target file pattern defined.' );
 		}
 
 		return $this->replaceVariables( $pattern, $code );
@@ -486,19 +486,19 @@ class MediaWikiMessageGroup extends FileBasedMessageGroup {
 		$path = $this->getFromConf( 'BASIC', 'metadataPath' );
 
 		if ( $path === null ) {
-			throw new MWException( "metadataPath is not configured" );
+			throw new MWException( "metadataPath is not configured." );
 		}
 
 		$filename = "$path/messageTypes.inc";
 
 		if ( !is_readable( $filename ) ) {
-			throw new MWException( "$filename is not readable" );
+			throw new MWException( "$filename is not readable." );
 		}
 
 		$data = file_get_contents( $filename );
 
 		if ( $data === false ) {
-			throw new MWException( "Failed to read $filename" );
+			throw new MWException( "Failed to read $filename." );
 		}
 
 		$reader = new ConfEditor( $data );

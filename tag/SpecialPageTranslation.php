@@ -508,7 +508,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 		$dbw = wfGetDB( DB_MASTER );
 		if ( !$dbw->fieldExists( 'translate_sections', 'trs_order', __METHOD__ ) ) {
-			error_log( 'Field trs_order does not exists. Please run update.php.' );
+			error_log( 'Field trs_order does not exist. Please run update.php.' );
 			foreach ( array_keys( $inserts ) as $index ) {
 				unset( $inserts[$index]['trs_order'] );
 			}

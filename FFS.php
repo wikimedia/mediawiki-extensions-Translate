@@ -114,7 +114,7 @@ class SimpleFFS implements FFS {
 		$filename = $this->group->getSourceFilePath( $code );
 		$input = file_get_contents( $filename );
 		if ( $input === false ) {
-			throw new MWException( "Unable to read file $filename" );
+			throw new MWException( "Unable to read file $filename." );
 		}
 
 		return $this->readFromVariable( $input );
@@ -124,7 +124,7 @@ class SimpleFFS implements FFS {
 		$parts = explode( "\0\0\0\0", $data );
 
 		if ( count( $parts ) !== 2 ) {
-			throw new MWException( 'Wrong number of parts' );
+			throw new MWException( 'Wrong number of parts.' );
 		}
 
 		list( $authorsPart, $messagesPart ) = $parts;
@@ -139,7 +139,7 @@ class SimpleFFS implements FFS {
 			$lineParts = explode( '=', $line, 2 );
 
 			if ( count( $lineParts ) !== 2 ) {
-				throw new MWException( "Wrong number of parts in line $line" );
+				throw new MWException( "Wrong number of parts in line $line." );
 			}
 
 			list( $key, $message ) = $lineParts;
@@ -159,15 +159,15 @@ class SimpleFFS implements FFS {
 		$writePath = $this->writePath;
 
 		if ( $writePath === null ) {
-			throw new MWException( "Write path is not set" );
+			throw new MWException( "Write path is not set." );
 		}
 
 		if ( !file_exists( $writePath ) ) {
-			throw new MWException( "Write path '$writePath' does not exists" );
+			throw new MWException( "Write path '$writePath' does not exist." );
 		}
 
 		if ( !is_writable( $writePath ) ) {
-			throw new MWException( "Write path '$writePath' is not writable" );
+			throw new MWException( "Write path '$writePath' is not writable." );
 		}
 
 		$targetFile = $writePath . '/' . $this->group->getTargetFilename( $collection->code );
@@ -234,12 +234,12 @@ class SimpleFFS implements FFS {
 		}
 
 		if ( !is_readable( $filename ) ) {
-			throw new MWException( "File $filename is not readable" );
+			throw new MWException( "File $filename is not readable." );
 		}
 
 		$data = file_get_contents( $filename );
 		if ( $data == false ) {
-			throw new MWException( "Unable to read file $filename" );
+			throw new MWException( "Unable to read file $filename." );
 		}
 
 		return $data;
@@ -333,14 +333,14 @@ class JavaFFS extends SimpleFFS {
 				}
 
 				if ( strpos( $line, $this->keySeparator ) === false ) {
-					throw new MWException( "Line without '{$this->keySeparator}': $line" );
+					throw new MWException( "Line without '{$this->keySeparator}': $line." );
 				}
 
 				list( $key, $value ) = explode( $this->keySeparator, $line, 2 );
 				$key = trim( $key );
 
 				if ( $key === '' ) {
-					throw new MWException( "Empty key in line $line" );
+					throw new MWException( "Empty key in line $line." );
 				}
 
 				$value = str_replace( '\n', "\n", $value );
@@ -940,7 +940,7 @@ class RubyYamlFFS extends YamlFFS {
 			if ( isset( self::$pluralWords[$key] ) ) {
 				$plurals = true;
 			} elseif ( $plurals ) {
-				throw new MWException( "Reserved plural keywords mixed with other keys: $key" );
+				throw new MWException( "Reserved plural keywords mixed with other keys: $key." );
 			}
 		}
 
