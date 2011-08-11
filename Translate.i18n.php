@@ -11122,6 +11122,13 @@ $messages['kg'] = array(
 	'translate-talk' => 'disolo',
 );
 
+/** کھوار (کھوار)
+ * @author Rachitrali
+ */
+$messages['khw'] = array(
+	'translate' => 'ترجمہ کورے',
+);
+
 /** Kazakh (Arabic script) (‫قازاقشا (تٴوتە)‬)
  * @author AlefZet
  */
@@ -12797,8 +12804,8 @@ $messages['mg'] = array(
 	'translate-task-untranslatedoptional' => 'Jerena ny hafatra tsy voatery hadika tsy voadika',
 	'translate-task-review' => "Jerena fanindroany ny fanovana natao tamin'i",
 	'translate-task-reviewall' => "Jerena fanindroany ny hafatra voadikan'i",
-	'translate-task-export-to-file' => "Avoaka anaty rakitra ny fandikana an'i",
-	'translate-task-export-as-po' => "Avoaka amin'ny rakitra Gettext ny dikan-tenin'i",
+	'translate-task-export-to-file' => 'Hamoaka ny dikanteny ao anaty rakitra iray',
+	'translate-task-export-as-po' => "Hamoaka ny dikan-teny ho an'ny fandikan-teny offline",
 	'translate-page-task' => 'Tiako',
 	'right-translate' => 'Manova ny interface fandikana',
 	'right-translate-manage' => 'Mitantana ny gropy fandikana',
@@ -14077,7 +14084,7 @@ $messages['nah'] = array(
 	'translationstats' => 'Tlahtōlcuepaliztli tlapōhualli',
 	'translate-stats-edits' => 'Tlapatlaliztli',
 	'translate-stats-users' => 'Tlahtōlcuepalōnih',
-	'translate-statsf-scale-days' => 'Tōnaltin',
+	'translate-statsf-scale-days' => 'Tōnalli',
 	'translate-statsf-submit' => 'Achtochīhualiztli',
 	'translate-tag-page-desc' => 'Huiquizāzanilli ītlahtōlcuepaliz [[$2|$1]].',
 	'translate-sidebar-alltrans' => 'Occēquīntīn tlahtōlco',
