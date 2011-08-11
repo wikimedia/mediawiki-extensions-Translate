@@ -26,6 +26,7 @@ GROUPS:
   - ext-imagemap
   - ext-inputbox
   - ext-intersection
+  - ext-mobilefrontend
   - ext-newusermessage
   - ext-ogghandler
   - ext-parserfunctions
