@@ -3,11 +3,20 @@ file = AchievementsII/i18n/AchievementsII.i18n.php
 
 Ad SS
 
+Admin Dashboard
+
+Admin Dashboard - Quick Stats
+file = AdminDashboard/QuickStats.i18n.php
+
 Combo Ajax Login
 file = AjaxLogin/ComboAjaxLogin.i18n.php
 descmsg = comboajaxlogin-desc
 
 Ajax Poll
+
+Answers
+
+Answers Namespace
 
 Article Comments
 
@@ -87,6 +96,8 @@ ignored = welcome-enabled, welcome-user, welcome-bot
 
 Health Check
 file = SpecialHealthcheck/HealthCheck.i18n.php
+
+Image Lightbox
 
 Image Placeholder
 
