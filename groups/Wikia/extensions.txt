@@ -16,7 +16,8 @@ Ajax Poll
 
 Answers
 
-Answers Namespace
+# Disabled. Duplicate key with Answers extension.
+#Answers Namespace
 
 Article Comments
 
