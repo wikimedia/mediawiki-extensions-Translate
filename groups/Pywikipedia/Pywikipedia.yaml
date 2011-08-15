@@ -20,6 +20,17 @@ GROUPS:
   - out-pywikipedia-*
 ---
 BASIC:
+  id: out-pywikipedia-add_text
+  label: Pywikipedia Add Text
+  display: out/pywikipedia/add_text
+
+FILES:
+  class: PythonSingleFFS
+  sourcePattern: %GROUPROOT%/pywikipedia/add_text.py
+  definitionFile: %GROUPROOT%/pywikipedia/add_text.py
+  targetPattern: pywikipedia/add_text.py
+---
+BASIC:
   id: out-pywikipedia-basic
   label: Pywikipedia Basic
   display: out/pywikipedia/basic
@@ -31,15 +42,15 @@ FILES:
   targetPattern: pywikipedia/basic.py
 ---
 BASIC:
-  id: out-pywikipedia-category_redirect
-  label: Pywikipedia Category Redirect
-  display: out/pywikipedia/category_redirect
+  id: out-pywikipedia-capitalize_redirects
+  label: Pywikipedia Capitalize Redirects
+  display: out/pywikipedia/capitalize_redirects
 
 FILES:
   class: PythonSingleFFS
-  sourcePattern: %GROUPROOT%/pywikipedia/category_redirect.py
-  definitionFile: %GROUPROOT%/pywikipedia/category_redirect.py
-  targetPattern: pywikipedia/category_redirect.py
+  sourcePattern: %GROUPROOT%/pywikipedia/capitalize_redirects.py
+  definitionFile: %GROUPROOT%/pywikipedia/capitalize_redirects.py
+  targetPattern: pywikipedia/capitalize_redirects.py
 ---
 BASIC:
   id: out-pywikipedia-category
@@ -51,6 +62,17 @@ FILES:
   sourcePattern: %GROUPROOT%/pywikipedia/category.py
   definitionFile: %GROUPROOT%/pywikipedia/category.py
   targetPattern: pywikipedia/category.py
+---
+BASIC:
+  id: out-pywikipedia-category_redirect
+  label: Pywikipedia Category Redirect
+  display: out/pywikipedia/category_redirect
+
+FILES:
+  class: PythonSingleFFS
+  sourcePattern: %GROUPROOT%/pywikipedia/category_redirect.py
+  definitionFile: %GROUPROOT%/pywikipedia/category_redirect.py
+  targetPattern: pywikipedia/category_redirect.py
 ---
 BASIC:
   id: out-pywikipedia-clean_sandbox
@@ -97,6 +119,17 @@ FILES:
   targetPattern: pywikipedia/editarticle.py
 ---
 BASIC:
+  id: out-pywikipedia-featured
+  label: Pywikipedia Featured
+  display: out/pywikipedia/featured
+
+FILES:
+  class: PythonSingleFFS
+  sourcePattern: %GROUPROOT%/pywikipedia/featured.py
+  definitionFile: %GROUPROOT%/pywikipedia/featured.py
+  targetPattern: pywikipedia/featured.py
+---
+BASIC:
   id: out-pywikipedia-interwiki
   label: Pywikipedia Interwiki
   display: out/pywikipedia/interwiki
@@ -117,6 +150,17 @@ FILES:
   sourcePattern: %GROUPROOT%/pywikipedia/isbn.py
   definitionFile: %GROUPROOT%/pywikipedia/isbn.py
   targetPattern: pywikipedia/isbn.py
+---
+BASIC:
+  id: out-pywikipedia-noreferences
+  label: Pywikipedia No References
+  display: out/pywikipedia/noreferences
+
+FILES:
+  class: PythonSingleFFS
+  sourcePattern: %GROUPROOT%/pywikipedia/noreferences.py
+  definitionFile: %GROUPROOT%/pywikipedia/noreferences.py
+  targetPattern: pywikipedia/noreferences.py
 ---
 BASIC:
   id: out-pywikipedia-redirect
@@ -150,3 +194,25 @@ FILES:
   sourcePattern: %GROUPROOT%/pywikipedia/solve_disambiguation.py
   definitionFile: %GROUPROOT%/pywikipedia/solve_disambiguation.py
   targetPattern: pywikipedia/solve_disambiguation.py
+---
+BASIC:
+  id: out-pywikipedia-table2wiki
+  label: Pywikipedia Table2Wiki
+  display: out/pywikipedia/table2wiki
+
+FILES:
+  class: PythonSingleFFS
+  sourcePattern: %GROUPROOT%/pywikipedia/table2wiki.py
+  definitionFile: %GROUPROOT%/pywikipedia/table2wiki.py
+  targetPattern: pywikipedia/table2wiki.py
+---
+BASIC:
+  id: out-pywikipedia-welcome
+  label: Pywikipedia Welcome 
+  display: out/pywikipedia/welcome
+
+FILES:
+  class: PythonSingleFFS
+  sourcePattern: %GROUPROOT%/pywikipedia/welcome.py
+  definitionFile: %GROUPROOT%/pywikipedia/welcome.py
+  targetPattern: pywikipedia/welcome.py
