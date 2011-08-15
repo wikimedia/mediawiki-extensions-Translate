@@ -47,8 +47,6 @@ Community Messages
 
 Content Feeds
 
-Control Center
-
 #Commented out 2010-02-01 -- tor
 #Dropping in favour of CreatePage (below)
 #Create A Page
@@ -67,8 +65,6 @@ file = EditAccount/SpecialEditAccount.i18n.php
 
 Edit Page Layout
 ignored = anoneditwarning-notice, longpagewarning-notice
-
-Ez API
 
 Follow
 aliasfile = Follow/Follow.alias.php
@@ -283,9 +279,6 @@ descmsg = wikia-watchsubpages-desc
 
 Where Is Extension
 file = WhereIsExtension/SpecialWhereIsExtension.i18n.php
-
-Wikia Game Guides
-ignored = wikiagameguides-tab-more-content, wikiagameguides-contents
 
 Wikia Irc Gateway
 ignored = ircgate-channellist
