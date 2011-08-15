@@ -926,6 +926,20 @@ MANGLER:
   prefix: noticetitle-
 ---
 BASIC:
+  id: out-statusnet-plugin-omb
+  label: StatusNet - OMB
+  display: out/statusnet/plugin/omb
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/1.0.x/plugins/OMB/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/OMB/locale/%CODE%/LC_MESSAGES/OMB.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/OMB/locale/OMB.pot
+  targetPattern: statusnet/plugins/OMB/locale/%CODE%/LC_MESSAGES/OMB.po
+
+MANGLER:
+  prefix: omb-
+---
+BASIC:
   id: out-statusnet-plugin-ostatus
   label: StatusNet - OStatus
   display: out/statusnet/plugin/ostatus
