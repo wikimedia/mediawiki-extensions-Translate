@@ -1422,6 +1422,9 @@ magicfile = SemanticResultFormats/SRF_Magic.php
 descmsg = srf-desc
 optional = srf_icalendar_link, srf_vcard_link, srf_bibtex_link
 
+SemanticSignup
+aliasfile = SemanticSignup.i18n.aliases.php
+
 Semantic Tasks
 
 Semantic Watchlist
