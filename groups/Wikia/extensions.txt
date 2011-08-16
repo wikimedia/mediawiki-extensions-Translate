@@ -208,7 +208,7 @@ RTE - CK Wikia
 file = RTE/i18n/CK.wikia.i18n.php
 
 Scavenger Hunt
-ignored = scavengerhunt-form-error-name, scavengerhunt-editor-tip-article-congrats, scavengerhunt-editor-tip-article-congrats, scavengerhunt-editor-tip-article-clue-text
+ignored = scavengerhunt-form-error-name, scavengerhunt-editor-tip-article-congrats, scavengerhunt-editor-tip-progressBarHintLabel, scavengerhunt-editor-tip-article-clue-text
 
 Scribe
 file = Scribe/SpecialScribeEvents.i18n.php
