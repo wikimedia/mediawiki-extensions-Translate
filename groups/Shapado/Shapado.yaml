@@ -452,6 +452,13 @@ FILES:
 MANGLER:
   prefix: widgets-
 
+TAGS:
+  ignored:
+    - widgets-widgets.settings.google_ad_client
+    - widgets-widgets.settings.google_ad_slot
+    - widgets-widgets.settings.google_ad_width
+    - widgets-widgets.settings.google_ad_height
+
 ---
 BASIC:
   id: out-shapado-wiki
