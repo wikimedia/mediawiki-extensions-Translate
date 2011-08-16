@@ -252,7 +252,7 @@ FILES:
   targetPattern: shapado/config/locales/imports/%CODE%.yml
 
 MANGLER:
-  prefix: invitations-
+  prefix: imports-
 
 ---
 BASIC:
