@@ -44,6 +44,19 @@ GROUPS:
 
 ---
 BASIC:
+  id: out-shapado-activities
+  label: Shapado - Activities
+  display: out/shapado/activities
+
+FILES:
+  sourcePattern: %GROUPROOT%/shapado/config/locales/activities/%CODE%.yml
+  targetPattern: shapado/config/locales/activities/%CODE%.yml
+
+MANGLER:
+  prefix: activities-
+
+---
+BASIC:
   id: out-shapado-ads
   label: Shapado - Ads
   display: out/shapado/ads
@@ -113,19 +126,6 @@ MANGLER:
 
 ---
 BASIC:
-  id: out-shapado-devise
-  label: Shapado - devise
-  display: out/shapado/devise
-
-FILES:
-  sourcePattern: %GROUPROOT%/shapado/config/locales/devise/devise.%CODE%.yml
-  targetPattern: shapado/config/locales/devise/devise.%CODE%.yml
-
-MANGLER:
-  prefix: devise-
-
----
-BASIC:
   id: out-shapado-comments
   label: Shapado - Comments
   display: out/shapado/comments
@@ -136,6 +136,32 @@ FILES:
 
 MANGLER:
   prefix: comments-
+
+---
+BASIC:
+  id: out-shapado-constrainsconfig
+  label: Shapado - Constraints Config
+  display: out/shapado/constrainsconfig
+
+FILES:
+  sourcePattern: %GROUPROOT%/shapado/config/locales/constrains_config/%CODE%.yml
+  targetPattern: shapado/config/locales/constrains_config/%CODE%.yml
+
+MANGLER:
+  prefix: constrainsconfig-
+
+---
+BASIC:
+  id: out-shapado-devise
+  label: Shapado - devise
+  display: out/shapado/devise
+
+FILES:
+  sourcePattern: %GROUPROOT%/shapado/config/locales/devise/devise.%CODE%.yml
+  targetPattern: shapado/config/locales/devise/devise.%CODE%.yml
+
+MANGLER:
+  prefix: devise-
 
 ---
 BASIC:
@@ -226,7 +252,33 @@ FILES:
   targetPattern: shapado/config/locales/imports/%CODE%.yml
 
 MANGLER:
-  prefix: imports-
+  prefix: invitations-
+
+---
+BASIC:
+  id: out-shapado-invitations
+  label: Shapado - Invitations
+  display: out/shapado/invitations
+
+FILES:
+  sourcePattern: %GROUPROOT%/shapado/config/locales/invitations/%CODE%.yml
+  targetPattern: shapado/config/locales/invitations/%CODE%.yml
+
+MANGLER:
+  prefix: invitations-
+
+---
+BASIC:
+  id: out-shapado-jobs
+  label: Shapado - Jobs
+  display: out/shapado/jobs
+
+FILES:
+  sourcePattern: %GROUPROOT%/shapado/config/locales/jobs/%CODE%.yml
+  targetPattern: shapado/config/locales/jobs/%CODE%.yml
+
+MANGLER:
+  prefix: jobs-
 
 ---
 BASIC:
@@ -350,6 +402,19 @@ MANGLER:
 
 ---
 BASIC:
+  id: out-shapado-rewards
+  label: Shapado - Rewards
+  display: out/shapado/rewards
+
+FILES:
+  sourcePattern: %GROUPROOT%/shapado/config/locales/rewards/%CODE%.yml
+  targetPattern: shapado/config/locales/rewards/%CODE%.yml
+
+MANGLER:
+  prefix: rewards-
+
+---
+BASIC:
   id: out-shapado-searches
   label: Shapado - Searches
   display: out/shapado/searches
@@ -386,6 +451,19 @@ FILES:
 
 MANGLER:
   prefix: shared-
+
+---
+BASIC:
+  id: out-shapado-themes
+  label: Shapado - Themes
+  display: out/shapado/themes
+
+FILES:
+  sourcePattern: %GROUPROOT%/shapado/config/locales/themes/%CODE%.yml
+  targetPattern: shapado/config/locales/themes/%CODE%.yml
+
+MANGLER:
+  prefix: themes-
 
 ---
 BASIC:
