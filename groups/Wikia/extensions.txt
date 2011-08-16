@@ -4,6 +4,7 @@ file = AchievementsII/i18n/AchievementsII.i18n.php
 Ad SS
 
 Admin Dashboard
+optional = admindashboard-control-help-url
 
 Admin Dashboard - Quick Stats
 file = AdminDashboard/QuickStats.i18n.php
