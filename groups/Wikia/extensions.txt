@@ -8,6 +8,7 @@ optional = admindashboard-control-help-url
 
 Admin Dashboard - Quick Stats
 file = AdminDashboard/QuickStats.i18n.php
+optional = quickstats-date-format
 
 Combo Ajax Login
 file = AjaxLogin/ComboAjaxLogin.i18n.php
