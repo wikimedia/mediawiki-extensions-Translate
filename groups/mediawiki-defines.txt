@@ -1597,6 +1597,9 @@ User Contact Links
 
 User Daily Contribs
 
+User Debug Info
+aliasfile = UserDebugInfo/UserDebugInfo.alias.php
+
 User Images
 
 User Merge
