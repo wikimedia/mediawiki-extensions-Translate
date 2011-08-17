@@ -80,9 +80,6 @@ $messages['qqq'] = array(
 	'bw-desc-fudforum' => 'Do not translate the link target <code>Translating:FUDforum</code>.',
 	'bw-desc-mantisbt' => 'Do not translate the link target <code>Translating:MantisBT</code>.',
 	'translate-group-desc-mantisbt-plugin-core' => 'Do not translate the link target <code>Translating:MantisBT</code>.',
-	'translate-group-desc-mediawiki-core-115' => 'Do not translate the link target <code>Translating:MediaWiki</code>.',
-	'translate-group-desc-mediawiki-core-116' => 'Do not translate the link target <code>Translating:MediaWiki</code>.',
-	'translate-group-desc-mediawiki-core-117' => 'Do not translate the link target <code>Translating:MediaWiki</code>.',
 	'translate-group-desc-mifos' => 'Do not translate the link target <code>Translating:Mifos</code>.',
 	'bw-desc-mwlibrl' => 'Do not translate the link target <code>Translating:Mwlib.rl</code>.',
 	'bw-desc-nocc' => 'Do not translate the link target <code>Translating:NOCC</code>.',
@@ -647,9 +644,6 @@ $messages['dsb'] = array(
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], webforum napisany w PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] jo swobodny system za slědowanje programowych zmólkow na zakłaźe weba. Pšosym daj problemy na boku [[Support|Pódpěra]] k wěsći.',
 	'translate-group-desc-mantisbt-plugin-core' => 'Głowny tykac za [[Translating:MantisBT|MantisBT]]',
-	'translate-group-desc-mediawiki-core-115' => 'Powěźeńki za stabilnu wersiju 1.1.5 [[Translating:MediaWiki|MediaWiki]]',
-	'translate-group-desc-mediawiki-core-116' => 'Powěźeńki za stabilnu wersiju 1.1.6 [[Translating:MediaWiki|MediaWiki]]',
-	'translate-group-desc-mediawiki-core-117' => 'Powěźeńki za stabilnu wersiju 1.1.7 [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] jo informaciski system managementa za mikrofinancěrowanje',
 	'bw-desc-mwlibrl' => "'''mwlib.rl'' jo pythonowa biblioteka za napóranje PDF-dokumentow z nastawkow MediaWiki, kótarež su se pśez biblioteku mwlib analyzěrowali.
 
@@ -755,8 +749,6 @@ $messages['es'] = array(
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], un foro web escrito en PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] es un sistema de corrección de errores libre basado en web. Por favor reporta cualquier problema en [[Support]].',
 	'translate-group-desc-mantisbt-plugin-core' => 'Un complemento nuclear para [[Translating:MantisBT|MantisBT]]',
-	'translate-group-desc-mediawiki-core-115' => 'Mensajes de la versión estable 1.15 del [[Translating:MediaWiki|MediaWiki]]',
-	'translate-group-desc-mediawiki-core-116' => 'Mensajes de la versión estable 1.16 de [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] es un sistema de información de gestión (MIS) para microfinanzas',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' es una biblioteca python para escribir documentos PDF de artículos MediaWiki los cuales fueron analizados por la biblioteca mwlib.
 
@@ -911,6 +903,14 @@ $messages['frp'] = array(
 	'bw-desc-freecol' => 'Devant que traduire FreeCol dens voutra lengoua, volyéd liére [[Translating:FreeCol]]. FreeCol utilise la licence GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], un barjacâjo vouèbe ècrit en PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] est un sistèmo abado por la survelyence sur lo Malyâjo de les cofieries. Volyéd raportar tôs los problèmos dessus [[Support|Assistance]].',
+	'translate-group-desc-eol' => 'Una tropa de mèssâjos por l’[[Translating:EOL|Enciclopèdia de la via]].',
+	'translate-group-desc-ihris' => 'Una tropa de mèssâjos por [[Translating:iHRIS|iHRIS]].',
+	'translate-group-desc-ihris-common' => 'Una tropa de mèssâjos por [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], un modulo de [[Translating:iHRIS|iHRIS]].',
+	'translate-group-desc-ihris-i2ce' => 'Una tropa de mèssâjos por [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], un modulo de [[Translating:iHRIS|iHRIS]].',
+	'translate-group-desc-ihris-manage' => 'Una tropa de mèssâjos por [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], un modulo de [[Translating:iHRIS|iHRIS]].',
+	'translate-group-desc-ihris-qualify' => 'Una tropa de mèssâjos por [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]], un modulo de [[Translating:iHRIS|iHRIS]].',
+	'translate-group-desc-kiwix' => 'Una tropa de mèssâjos por [[Translating:Kiwix|Kiwix]].',
+	'translate-group-desc-mediawiki-core-branch' => 'Mèssâjos por una vèrsion stâbla de [[Translating:MediaWiki|MediaWiki]].',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' est una bibliotèca Python por fâre des documents PDF dês des articllos de MediaWiki qu’ont étâ analisâs per la bibliotèca mwlib.
 
 Vêde [[mw:Extension:PDF_Writer]] et pués http://code.pediapress.com/wiki/wiki/mwlibrl por més d’enformacions.",
@@ -1031,9 +1031,6 @@ $messages['gsw'] = array(
 	'translate-group-desc-ihris-manage' => 'Nochrichte fir [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], eme Modul vu [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-qualify' => 'Nochrichte fir [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]],, eme Modul vu [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'E Haupt-Plugin fir [[Translating:MantisBT|MantisBT]]',
-	'translate-group-desc-mediawiki-core-115' => 'Nochrichte fir di stabil Version 1.15 vu [[Translating:MediaWiki|MediaWiki]]',
-	'translate-group-desc-mediawiki-core-116' => 'Nochrichte fir di stabil Version 1.16 vu [[Translating:MediaWiki|MediaWiki]]',
-	'translate-group-desc-mediawiki-core-117' => 'Nochrichte fir di stabil Version 1.17 vu [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] isch e Management-Informationssyschtem fir Mikrofinanze',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' isch e Python-Bibliothek zum Schrybe vu PDF-Dokumänt us MediaWiki-Artikel, wu dur d mwlib-Bibliothek parsed wore sin.
 
@@ -1170,9 +1167,6 @@ $messages['hsb'] = array(
 	'translate-group-desc-ihris-manage' => 'Skupina powěsćow za [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], modul za [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-qualify' => 'Skupina powěsćow za [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]], modul za [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'Hłowny tykač za [[Translating:MantisBT|MantisBT]]',
-	'translate-group-desc-mediawiki-core-115' => 'Zdźělenki za stabilnu wersiju 1.1.5 [[Translating:MediaWiki|MediaWiki]]',
-	'translate-group-desc-mediawiki-core-116' => 'Zdźělenki za stabilnu wersiju 1.1.6 [[Translating:MediaWiki|MediaWiki]]',
-	'translate-group-desc-mediawiki-core-117' => 'Zdźělenki za stabilnu wersiju 1.1.7 [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] je zarjadowanski informaciski system za mikrofinancne institucije',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' je pythonowa biblioteka za wutworjenje PDF-dokumentow z nastawkow MediaWiki, kotrež buchu přez biblioteku mwlib analyzowane.
 
@@ -1443,8 +1437,6 @@ $messages['ja'] = array(
 	'bw-desc-fudforum' => '[[Translating:FUDforum|FUDforum]]は、ウェブ上での議論フォーラムのためのソフトウェアです',
 	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]]はウェブ上でのバグ追跡ソフトウェアです',
 	'translate-group-desc-mantisbt-plugin-core' => '[[Translating:MantisBT|MantisBT]]の中核プラグイン',
-	'translate-group-desc-mediawiki-core-115' => '[[Translating:MediaWiki|MediaWiki]]1.15安定版のメッセージ',
-	'translate-group-desc-mediawiki-core-116' => '[[Translating:MediaWiki|MediaWiki]]1.16安定版のメッセージ',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]]は、マイクロファイナンスのための経営情報システムです',
 	'bw-desc-mwlibrl' => '[[Translating:Mwlib.rl|Mwlib.rl]]は、MediaWikiのページからPDF文書を作るためのライブラリです',
 	'bw-desc-nocc' => '[[Translating:NOCC|NOCC]]はウェブメールのクライアントです',
@@ -1462,7 +1454,7 @@ $messages['ja'] = array(
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]]は、携帯可能な機器で、オフラインかつ文字のみのウィキペディアを提供します',
 );
 
-/** Kabardian (Cyrillic) (къэбэрдеибзэ/qabardjajəbza (Cyrillic))
+/** Kabardian (Cyrillic) (Адыгэбзэ (Cyrillic))
  * @author Тамэ Балъкъэрхэ
  */
 $messages['kbd-cyrl'] = array(
@@ -1857,9 +1849,6 @@ $messages['no'] = array(
 	'translate-group-desc-ihris-manage' => 'En meldingsgruppe for [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], en modul av [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-qualify' => 'En meldingsgruppe for [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]], en modul av [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'A kjerneutvidelse for [[Translating:MantisBT|MantisBT]]',
-	'translate-group-desc-mediawiki-core-115' => 'Meldinger for den stabile versjonen 1.15 av [[Translating:MediaWiki|MediaWiki]]',
-	'translate-group-desc-mediawiki-core-116' => 'Meldinger for den stabile versjonen 1.16 av [[Translating:MediaWiki|MediaWiki]]',
-	'translate-group-desc-mediawiki-core-117' => 'Meldinger for den stabile versjonen 1.17 av [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] er et informasjonhåndteringssystem for mikrofinans',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' er et python-bibliotek for skriving av PDF-dokument fra MediaWiki-artikler som har blitt tolket av mwlib-biblioteket.
 
@@ -2147,8 +2136,6 @@ $messages['pt-br'] = array(
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], um fórum web escrito em PHP.',
 	'bw-desc-mantisbt' => 'O [http://www.mantisbt.org MantisBT] é um sistema de seguimento de bugs livre e online. Por favor reporte quaisquer problemas em [[Support]].',
 	'translate-group-desc-mantisbt-plugin-core' => 'Um plugin para o [[Translating:MantisBT|MantisBT]]',
-	'translate-group-desc-mediawiki-core-115' => 'Mensagens da versão estável 1.15 do [[Translating:MediaWiki|MediaWiki]]',
-	'translate-group-desc-mediawiki-core-116' => 'Mensagens da versão estável 1.16 do [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] é um sistema de informação de gestão (MIS) para microfinanças',
 	'bw-desc-mwlibrl' => "O '''mwlib.rl''' é uma biblioteca python para produzir documentos PDF a partir de artigos MediaWiki que forem analisados pela biblioteca mwlib.
 
@@ -2198,9 +2185,6 @@ $messages['ro'] = array(
 	'bw-desc-fudforum' => '[[Translating:FUDforum|FUDforum]] este un software bazat pe web dedicat forumurilor de discuții',
 	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]] este un urmăritor de erori bazat pe web',
 	'translate-group-desc-mantisbt-plugin-core' => 'Un plugin-nucleu pentru [[Translating:MantisBT|MantisBT]]',
-	'translate-group-desc-mediawiki-core-115' => 'Mesaje pentru versiunea stabilă 1.15 a software-ului [[Translating:MediaWiki|MediaWiki]]',
-	'translate-group-desc-mediawiki-core-116' => 'Mesaje pentru versiunea stabilă 1.16 a software-ului [[Translating:MediaWiki|MediaWiki]]',
-	'translate-group-desc-mediawiki-core-117' => 'Mesajele versiunii stabile 1.17 a software-ului [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] este un sistem pentru microfinanțare de administrare a informației',
 	'bw-desc-mwlibrl' => '[[Translating:Mwlib.rl|Mwlib.rl]] este o bibliotecă pentru salvarea paginilor MediaWiki ca documente PDF',
 	'bw-desc-nocc' => '[[Translating:NOCC|NOCC]] este un client de poștă electronică',
@@ -2469,9 +2453,6 @@ $messages['sv'] = array(
 	'translate-group-desc-ihris-i2ce' => 'En meddelandegrupp för [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], en modul i [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-manage' => 'En meddelandegrupp för [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], en modul i [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-qualify' => 'En meddelandegrupp för [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]], en modul i [[Translating:iHRIS|iHRIS]]',
-	'translate-group-desc-mediawiki-core-115' => 'Meddelanden för den stabila versionen 1.15 av [[Translating:MediaWiki|MediaWiki]]',
-	'translate-group-desc-mediawiki-core-116' => 'Meddelanden för den stabila versionen 1.16 av [[Translating:MediaWiki|MediaWiki]]',
-	'translate-group-desc-mediawiki-core-117' => 'Meddelanden för den stabila versionen 1.17 av [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] är ett informationshanteringsverktyg för mikrofinans',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' är ett pythonbibliotek för att skapa PDF-document från MediaWiki-artiklar som tolkats av mwlib-biblioteket.
 

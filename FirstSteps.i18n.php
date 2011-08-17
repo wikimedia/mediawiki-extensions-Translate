@@ -846,6 +846,7 @@ Wenn du keinen Newsletter erhalten möchtest, kannst du dich im Tab „{{int:pre
 );
 
 /** German (formal address) (‪Deutsch (Sie-Form)‬)
+ * @author Kghbln
  * @author Purodha
  * @author The Evil IP address
  */
@@ -853,9 +854,9 @@ $messages['de-formal'] = array(
 	'translate-fs-settings-title' => 'Ihre Einstellungen anpassen',
 	'translate-fs-userpage-title' => 'Ihre Benutzerseite erstellen',
 	'translate-fs-email-title' => 'Ihre E-Mail-Adresse bestätigen',
-	'translate-fs-intro' => "Willkommen bei dem {{SITENAME}}-Startassistenten.
-Ihnen wird gezeigt, wie Sie Schritt für Schritt ein Übersetzer werden.
-Am Ende werden Sie alle ''Oberflächen-Nachrichten'' der von {{SITENAME}} unterstützten Projekte übersetzen können.",
+	'translate-fs-intro' => "Willkommen beim translatewiki.net-Startassistenten.
+Ihnen wird hier gezeigt, wie Sie Schritt für Schritt ein Übersetzer bei translatewiki.net werden.
+Am Ende werden Sie alle ''Nachrichten der Benutzeroberfläche'' der von translatewiki.net unterstützten Projekte übersetzen können.",
 	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount.png|frame]]
 
 Als erstes müssen Sie sich ein Benutzerkonto anlegen.
@@ -2239,7 +2240,7 @@ $3登録$4',
 これにより、他の利用者があなたに電子メールを通じて連絡できるようになります。また、多くて月に1回ほどニュースレターが送られてきます。ニュースレターを受け取りたくない場合は、[[Special:Preferences|個人設定]]の「{{int:prefs-personal}}」タブで受信の中止を設定できます。',
 );
 
-/** Jamaican Creole English (Jamaican Creole English)
+/** Jamaican Creole English (Patios)
  * @author Yocahuna
  */
 $messages['jam'] = array(

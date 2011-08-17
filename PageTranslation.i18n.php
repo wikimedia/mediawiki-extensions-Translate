@@ -550,7 +550,6 @@ $messages['be-tarask'] = array(
 Гэта старонка зьяўляецца перакладам старонкі [[$1]], пераклад можа быць абноўлены з выкарыстаньнем [$2 інструмэнта перакладу].',
 	'tpt-unknown-page' => 'Гэта прастора назваў зарэзэрваваная для перакладаў старонак зьместу.
 Старонка, якую Вы спрабуеце рэдагаваць, верагодна не зьвязана зь якой-небудзь старонкай пазначанай для перакладу.',
-	'tpt-delete-impossible' => 'Выдаленьне пазначаных на пераклад старонак пакуль немагчымае.',
 	'tpt-install' => 'Запусьціце php maintenance/update.php альбо усталюйце праз вэб-інтэрфэйс для актывізацыі інструмэнтаў перакладу старонак.',
 	'tpt-render-summary' => 'Абнаўленьне для адпаведнасьці новай вэрсіі крынічнай старонкі',
 	'tpt-download-page' => 'Экспартаваць старонку з перакладамі',
@@ -602,6 +601,7 @@ $messages['be-tarask'] = array(
 	'pt-movepage-started' => 'Асноўная старонка перанесеная.
 Праверце [[Special:Log/pagetranslation|журнал перакладаў старонак]] наконт памылак і паведамленьня пра выкананьне.',
 	'pt-locked-page' => 'Гэтая старонка заблякаваная з-за працэсу пераносу старонкі, якую магчыма перакласьці.',
+	'pt-deletepage-reason' => 'Прычына:',
 );
 
 /** Bulgarian (Български)
@@ -1338,6 +1338,7 @@ Fehler werden im [[Special:Log/pagetranslation|Übersetzungs-Logbuch]] aufgezeic
 /** German (formal address) (‪Deutsch (Sie-Form)‬)
  * @author Imre
  * @author Kghbln
+ * @author Purodha
  * @author The Evil IP address
  * @author Umherirrender
  */
@@ -1348,7 +1349,7 @@ Stellen Sie sicher, dass ein <nowiki><translate></nowiki>-Tag und gültige Synta
 	'tpt-showpage-intro' => 'Untenstehend sind neue, vorhandene und gelöschte Abschnitte aufgelistet.
 Bevor Sie diese Version zur Übersetzung markieren, stellen Sie bitte sicher, dass die Änderungen an den Abschnitten minimal sind, um unnötige Arbeit für Übersetzer zu verhindern.',
 	'pt-movepage-started' => 'Die Basisseite wurde nunmehr verschoben.
-Bitte prüfen Sie das Übersetzungs-Logbuch auf Fehlermeldungen, bzw. die Vollzugsnachricht.',
+Bitte prüfen Sie das [[Special:Log/pagetranslation|Übersetzungs-Logbuch]] auf Fehlermeldungen, bzw. die Vollzugsnachricht.',
 );
 
 /** Lower Sorbian (Dolnoserbski)
@@ -1405,7 +1406,6 @@ ale nejnowša wersija njedajo se za pśełožowanje markěrowaś.',
 Toś ten bok jo pśełožk boka [[$1]] a pśełožk dajo se z pomocu [$2 Pśełožyś] aktualizěrowaś.',
 	'tpt-unknown-page' => 'Toś ten mjenjowy rum jo za pśełožki wopśimjeśowych bokow wuměnjony.
 Zda se, až bok, kótaryž wopytujoš wobźěłaś, njewótpowědujo bokoju, kótaryž jo za pśełožowanje markěrowany.',
-	'tpt-delete-impossible' => 'Wulašowanje bokow, kótarež su za pśełožowanje markěrowane, hyšći njejo móžno.',
 	'tpt-install' => 'Wuwjeź php maintenance/update.php abo webinstalaciju, aby zmóžnił funkciju pśełožowanja bokow.',
 	'tpt-render-summary' => 'Aktualizacija pó nowej wersiji žrědłowego boka',
 	'tpt-download-page' => 'Bok z pśełožkami eksportěrowaś',
@@ -1782,7 +1782,6 @@ mutta viimeisintä versiota ei voi merkitä käännettäväksi.',
 Tämä sivu on käännös sivusta [[$1]] ja käännöstä voi päivittää käyttämällä [$2 käännöstyökalua].',
 	'tpt-unknown-page' => 'Tämä nimiavaruus on varattu sisältösivujen käännöksille.
 Sivu, jota yrität muokata, ei näytä vastaavan mitään sivua, joka on merkitty käännettäväksi.',
-	'tpt-delete-impossible' => 'Käännettäväksi merkittyjen sivujen poistaminen ei ole vielä mahdollista.',
 	'tpt-install' => 'Suorita maintenance/update.php tai verkkoasennus, jotta sivujen käännösominaisuus toimii.',
 	'tpt-render-summary' => 'Päivittäminen vastaamaan uutta versiota lähdesivusta',
 	'tpt-download-page' => 'Sivun vienti käännösten kera',
@@ -2060,6 +2059,10 @@ Tèxto de la sèccion : <pre>$1</pre>',
 	'pt-log-unmark' => 'at {{GENDER:$2|suprimâ}} la pâge « [[:$1]] » de la traduccion',
 	'pt-log-moveok' => 'at {{GENDER:$2|renomâ}} la pâge a traduire $1',
 	'pt-log-movenok' => 'at {{GENDER:$2|rencontrâ}} un problèmo pendent lo changement de nom de [[:$1]] de vers [[:$3]]',
+	'pt-log-delete-full-ok' => '{{GENDER:$2||}}at complètâ la suprèssion de la pâge a traduire $1',
+	'pt-log-delete-full-nok' => '{{GENDER:$2||}}at rencontrâ un problèmo pendent la suprèssion de la pâge a traduire [[:$1]]',
+	'pt-log-delete-lang-ok' => '{{GENDER:$2||}}at complètâ la suprèssion de la pâge de traduccion $1',
+	'pt-log-delete-lang-nok' => '{{GENDER:$2||}}at rencontrâ un problèmo pendent la suprèssion de la pâge de traduccion [[:$1]]',
 	'pt-movepage-title' => 'Dèplaciér la pâge a traduire $1',
 	'pt-movepage-blockers' => 'La pâge a traduire pôt pas étre renomâ a côsa de {{PLURAL:$1|ceta èrror|cetes èrrors}} :',
 	'pt-movepage-block-base-exists' => 'La pâge de bâsa ciba [[:$1]] ègziste.',
@@ -2087,6 +2090,8 @@ Tèxto de la sèccion : <pre>$1</pre>',
 	'pt-movepage-started' => 'Ora, la pâge de bâsa est renomâ.
 Volyéd controlar lo [[Special:Log/pagetranslation|jornal de les traduccions de pâges]] por repèrar des èrrors et por liére lo mèssâjo d’avance.',
 	'pt-locked-page' => 'Ceta pâge est vèrrolyê perce que la pâge a traduire est aprés étre renomâ.',
+	'pt-deletepage-lang-title' => 'Suprèssion de la pâge de traduccion $1.',
+	'pt-deletepage-full-title' => 'Suprèssion de la pâge a traduire $1.',
 	'pt-deletepage-invalid-title' => 'La pâge spècefiâ est pas valida.',
 	'pt-deletepage-action-check' => 'Listar les pâges a suprimar',
 	'pt-deletepage-action-perform' => 'Fâre la suprèssion',
@@ -2306,7 +2311,6 @@ Di {{PLURAL:$1|nejscht Version cha dergege nit markiert wäre, ass si mueß|nejs
 Die Syte isch e Ibersetzig vu dr Syte [[$1]] un d Ibersetzig cha aktualisert wäre mit em [$2 Ibersetzigstool].',
 	'tpt-unknown-page' => 'Dää Namensruum isch reserviert fir Ibersetzige vu Inhaltssyte.
 D Syte, wu Du witt bearbeite, ghert schyns zue keire Syte, wu zum Ibersetze markiert isch.',
-	'tpt-delete-impossible' => 'S Lesche vu Syte, wu frejgee sin fir d Ibersetzig, isch nonig megli.',
 	'tpt-install' => 'php maintenance/update.php oder d Webinstallation laufe loo go s Syte-Ibersetzigs-Feature megli mache.',
 	'tpt-render-summary' => 'Aktualisiere zum e neji Version vu dr Quällsyte z finde',
 	'tpt-download-page' => 'Syte mit Ibersetzige exportiere',
@@ -2654,7 +2658,6 @@ ale aktualna wersija njehodźi so za přełožowanje markěrować..',
 Tuta strona je přełožk strony [[$1]] a přełožk hodźi so z pomocu [$2 Přełožić] aktualizować.',
 	'tpt-unknown-page' => 'Tutón mjenowy rum je za přełožki wobsahowych stronow wuměnjeny.
 Strona, kotruž pospytuješ wobdźěłać, po wšěm zdaću stronje markěrowanej za přełožowanje njewotpowěduje.',
-	'tpt-delete-impossible' => 'Zhašenje stronow, kotrež su za přełožowanje markěrowane, hišće móžno njeje.',
 	'tpt-install' => 'Wuwjedź php maintenance/update.php ab webinstalaciju, zo by funkcija přełožowanje stronow zmóžnił.',
 	'tpt-render-summary' => 'Aktualizacija po nowej wersiji žórłoweje strony',
 	'tpt-download-page' => 'Stronu z přełožkami eksportować',
@@ -2763,7 +2766,6 @@ men dènye {{PLURAL:$1|vèsyon|vèsyon yo}} pa ka make pou tradui.',
 	'tpt-target-page' => 'Paj sa a, se yon tradiksyon paj [[$1]] epi ou kapab mete a jou tradiksyon an lè ou itilize [$2 zouti tradiksyon an].',
 	'tpt-unknown-page' => 'Espas non sa a rezève pou tradiksyon paj yo.
 Paj w ap eseye modifye pa sanble koresponn ak yon paj ki make pou tradiksyon.',
-	'tpt-delete-impossible' => 'Ou pa ka efase paj ki make pou tradui.',
 	'tpt-install' => 'Chaje php maintenance/update.php oubyen enstalasyon wèb pou aktive fonksyon tradiksyon paj la.',
 	'tpt-render-summary' => 'N ap mete ajou pou nou genyen nouvo vèsyon paj sous la.',
 	'tpt-download-page' => 'Ekspòte paj ki gen tradiksyon',
@@ -2844,7 +2846,6 @@ Mielőtt fordításra jelölöd ezt a változatot, ellenőrizd hogy a szakaszok 
 A(z) [[$1]] lap fordítása, és a fordítását [$2 a fordítás segédeszköz] segítségével lehet frissíteni.',
 	'tpt-unknown-page' => 'Ez a névtér a tartalmi lapok fordításainak van fenntartva.
 A lap, amit szerkeszteni próbálsz, úgy tűnik hogy nem egyezik egy fordításra jelölt lappal sem.',
-	'tpt-delete-impossible' => 'Fordíthatónak jelölt lapok törlése még nem lehetséges.',
 	'tpt-install' => 'Futtasd a <code>maintenance/update.php</code>-t vagy a webes telepítőt, hogy engedélyezd a lapfordítás funkciót.',
 	'tpt-render-summary' => 'Frissítés, hogy megegyezzen a forráslap új változatával',
 	'tpt-download-page' => 'Lap exportálása fordításokkal együtt',
@@ -3065,7 +3066,6 @@ tetapi {{PLURAL:$1|versi|versi}} terakhir tidak dapat ditandai untuk diterjemahk
 Halaman ini adalah terjemahan dari halaman [[$1]] dan terjemahannya dapat diperbarui menggunakan [$2 peralatan penerjemahan].',
 	'tpt-unknown-page' => 'Ruang nama ini dicadangkan untuk terjemahan halaman isi.
 Halaman yang ingin Anda sunting ini tampaknya tidak memiliki hubungan dengan halaman mana pun yang ditandai untuk diterjemahkan.',
-	'tpt-delete-impossible' => 'Menghapus halaman yang ditandai untuk diterjemahkan tidak memungkinkan.',
 	'tpt-install' => 'Jalankan php maintenance/update.php atau instalasi web untuk mengaktifkan fitur terjemahan halaman.',
 	'tpt-render-summary' => 'Memperbarui ke revisi terbaru halaman sumber',
 	'tpt-download-page' => 'Ekspor halaman dengan terjemahan',
@@ -3195,7 +3195,6 @@ ma {{PLURAL:$1|l'ultima versione non può essere marcata|le ultime versioni non 
 	'tpt-target-page' => 'Questa pagina non può essere aggiornata manualmente. Questa pagina è una traduzione della pagina [[$1]] e la traduzione può essere aggiornata tramite [$2 lo strumento di traduzione].',
 	'tpt-unknown-page' => 'Questo namespace è riservato alle traduzioni del contenuto delle pagine.
 La pagina che stai cercando di modificare non sembra corrispondere ad alcuna pagina segnata per la traduzione.',
-	'tpt-delete-impossible' => 'La cancellazione di pagine contrassegnate per la traduzione non è ancora possibile.',
 	'tpt-install' => "Esegui lo script php maintenance/update.php o riesegui l'installazione web per abilitare il servizio di traduzione pagine.",
 	'tpt-render-summary' => 'Aggiornamento per riscontrare la nuova versione della pagina di origine',
 	'tpt-download-page' => 'Esporta la pagina con le traduzioni',
@@ -3253,7 +3252,6 @@ $messages['ja'] = array(
 	'tpt-languages-legend' => '他言語での翻訳:',
 	'tpt-target-page' => 'このページは手動で更新できません。このページはページ [[$1]] の翻訳で、[$2 翻訳ツール]を使用して更新します。',
 	'tpt-unknown-page' => 'この名前空間はコンテンツページの翻訳のために使用します。あなたが編集しようとしているページに対応する翻訳対象ページが存在しないようです。',
-	'tpt-delete-impossible' => '翻訳対象として指定されたページの削除はまだ不可能です。',
 	'tpt-install' => 'ページ翻訳機能を有効にするために、php maintenance/update.php またはウェブ・インストーラーを実行する。',
 	'tpt-render-summary' => '翻訳元ページの新版に適合するように更新中',
 	'tpt-download-page' => '翻訳付きでページを書き出し',
@@ -3308,7 +3306,7 @@ $messages['ja'] = array(
 	'pt-locked-page' => '現在、翻訳ページが移動されているため、このページはロックされています',
 );
 
-/** Jamaican Creole English (Jamaican Creole English)
+/** Jamaican Creole English (Patios)
  * @author Yocahuna
  */
 $messages['jam'] = array(
@@ -3361,7 +3359,7 @@ $messages['ka'] = array(
 	'tpt-diff-new' => 'ახალი ტექსტი',
 );
 
-/** Kabardian (Cyrillic) (къэбэрдеибзэ/qabardjajəbza (Cyrillic))
+/** Kabardian (Cyrillic) (Адыгэбзэ (Cyrillic))
  * @author Тамэ Балъкъэрхэ
  */
 $messages['kbd-cyrl'] = array(
@@ -4314,7 +4312,6 @@ Før denne versjonen merkes for oversettelse, sjekk at endringene i avsnittene e
 Denne siden er en oversettelse av siden [[$1]] og oversettelsen kan bli oppdatert ved å bruke [$2 oversettelsesverktøyet].',
 	'tpt-unknown-page' => 'Dette navnerommet er reservert for oversettelser av innholdssider.
 Denne siden som du prøver å redigere ser ikke ut til å samsvare med noen av sidene som er markert for oversettelse.',
-	'tpt-delete-impossible' => 'Sletting av sider markert for oversettelse er ikke mulig ennå.',
 	'tpt-install' => 'Kjør php maintenance/update.php eller nettinnstallering for å muliggjøre sideoversettelsesfunksjonen.',
 	'tpt-render-summary' => 'Oppdaterer for å svare til ny versjon av kildesiden',
 	'tpt-download-page' => 'Eksporter side med oversettelser',
@@ -4446,6 +4443,7 @@ $messages['pdc'] = array(
  * @author Leinad
  * @author Sp5uhe
  * @author ToSter
+ * @author Woytecr
  */
 $messages['pl'] = array(
 	'pagetranslation' => 'Tłumaczenie strony',
@@ -4499,7 +4497,6 @@ Przed oznaczeniem tej wersji do tłumaczenia, aby uniknąć niepotrzebnej pracy 
 Jest ona tłumaczeniem strony [[$1]], a tłumaczenie może zostać zmienione za pomocą [$2 narzędzia tłumacza].',
 	'tpt-unknown-page' => 'Ta przestrzeń nazw jest zarezerwowana dla tłumaczeń stron z zawartością.
 Strona, którą próbujesz edytować, prawdopodobnie nie odpowiada żadnej stronie oznaczonej do tłumaczenia.',
-	'tpt-delete-impossible' => 'Usuwanie stron oznaczonych do tłumaczenia nie jest jeszcze możliwe.',
 	'tpt-install' => 'Uruchom php maintenance/update.php lub przeprowadź instalację webową, aby włączyć opcję tłumaczenia stron.',
 	'tpt-render-summary' => 'Aktualizowanie w celu dopasowania nowej wersji strony źródłowej',
 	'tpt-download-page' => 'Wyeksportuj stronę z tłumaczeniami',
@@ -4551,6 +4548,12 @@ Błędy zostaną odnotowane na [[Special:Log/pagetranslation|stronie rejestru t�
 	'pt-movepage-started' => 'Strona bazowa jest teraz przenoszona. 
 Proszę sprawdzić na [[Special:Log/pagetranslation|stronie rejestru tłumaczeń]] czy nie wystąpiły błędy oraz komunikat o zakończeniu operacji.',
 	'pt-locked-page' => 'Ta strona jest zablokowana ponieważ jest przygotowana do przeniesienia.',
+	'pt-deletepage-invalid-title' => 'Określona strona nie jest poprawna.',
+	'pt-deletepage-current' => 'Nazwa strony:',
+	'pt-deletepage-reason' => 'Powód:',
+	'pt-deletepage-subpages' => 'Usuń wszystkie podstrony',
+	'pt-deletepage-list-translation' => 'Strony tłumaczeń',
+	'pt-deletepage-list-other' => 'Inne podstrony',
 );
 
 /** Piedmontese (Piemontèis)
@@ -4610,7 +4613,6 @@ ma {{PLURAL:$1|l'ùltima version a peul|j'ùltime version a peulo}} pa esse marc
 Sta pàgina-sì a l'é na tradussion ëd la pàgina [[$1]] e la tradussion a peul esse modificà an dovrand [$2 l'utiss ëd tradussion].",
 	'tpt-unknown-page' => "Sto spassi nominal-sì a l'é riservà për tradussion ëd pàgine ëd contnù.
 La pàgina ch'it preuve a modifiché a smija pa ch'a corisponda a na pàgina marcà për tradussion.",
-	'tpt-delete-impossible' => "Scancelé dle pàgine marcà për la tradussion a l'é ancor nen possìbil.",
 	'tpt-install' => "Fa giré ël php maintnance/update php o l'instalassion dl'aragnà për abilité la possibilità ëd tradussion ëd pàgine.",
 	'tpt-render-summary' => 'Modifiché për esse com la neuva version dla pàgina sorgiss',
 	'tpt-download-page' => 'Espòrta pàgina con tradussion',
@@ -4885,7 +4887,6 @@ Antes de marcar esta versão para tradução, verifique se as mudanças nas seç
 Esta página é uma tradução da página [[$1]] e a tradução pode ser atualizada usando [$2 a ferramenta de tradução].',
 	'tpt-unknown-page' => 'Este domínio é reservado para traduções de páginas de conteúdo.
 Esta página que você está tentando editar não aparenta corresponder a nenhuma página marcada para tradução.',
-	'tpt-delete-impossible' => 'Ainda não é possível eliminar páginas marcadas para tradução.',
 	'tpt-install' => 'Execute a manutenção do php/update.php ou a instalação "web" para habilitar a funcionalidade de tradução de páginas.',
 	'tpt-render-summary' => 'Atualizando para corresponder a nova versão da página fonte',
 	'tpt-download-page' => 'Exportar página com traduções',
@@ -5070,7 +5071,6 @@ $messages['ru'] = array(
 Эта страница является переводом страницы [[$1]], перевод может быть обновлен с помощью специального [$2 инструмента перевода].',
 	'tpt-unknown-page' => 'Это пространство имён зарезервировано для переводов текстов страниц.
 Страница, которую вы пытаетесь изменить, не соответствует какой-либо странице, отмеченной для перевода.',
-	'tpt-delete-impossible' => 'Удаление помеченных для перевода страниц пока не возможно.',
 	'tpt-install' => 'Запустите php-скрипт maintenance/update.php или веб-установку, чтобы включить возможность перевода страниц.',
 	'tpt-render-summary' => 'Обновление для соответствия новой версии исходной страницы.',
 	'tpt-download-page' => 'Экспортировать страницу с переводами',
@@ -5157,7 +5157,7 @@ $messages['rue'] = array(
 	'pt-movepage-action-other' => 'Змінити ціль',
 );
 
-/** Yakut (Саха тыла)
+/** Sakha (Саха тыла)
  * @author HalanTul
  */
 $messages['sah'] = array(
@@ -5529,7 +5529,6 @@ men {{PLURAL:$1|den senaste versionen|de senaste versionerna}} kan inte markeras
 	'tpt-languages-legend' => 'Andra språk:',
 	'tpt-target-page' => 'Den här sidan kan inte uppdateras manuellt. Den här sidan är en översättning av [[$1]] och översättningen kan uppdateras genom att använda [$2 översättningsverktyget].',
 	'tpt-unknown-page' => 'Den här namnrymden är reserverad för översättningar av sidor. Sidan du försöker redigera verkar inte stämma överens med någon sida som är märkt för översättning.',
-	'tpt-delete-impossible' => 'Radera sidor som markerats för översättning är ännu inte är möjligt.',
 	'tpt-install' => 'Kör php-underhåll/update.php eller webb-installation för att  möjliggöra sidans översättningsfunktioner.',
 	'tpt-render-summary' => 'Uppdaterar för att matcha den nya versionen av källpaketet',
 	'tpt-download-page' => 'Exportera sidan med översättningar',
@@ -5726,7 +5725,6 @@ subalit ang pinakabagong {{PLURAL:$1|bersyon|mga bersyon}} ay hindi matatatakan 
 Ang pahinang ito ay isang salinwika ng pahinang [[$1]] at maisasapanahon ang salinwika sa pamamagitan ng [$2 kasangkapang pansalinwika].',
 	'tpt-unknown-page' => 'Nakalaan ang puwang na pampangalang ito para sa mga salinwika ng pahina ng nilalaman.
 Tila hindi tumutugma ang pahinang sinusubukan mong baguhin sa anumang pahinang natatakan para sa pagsasalinwika.',
-	'tpt-delete-impossible' => 'Hindi pa maaari ang pagbubura ng mga pahinang minarkahan upang isalinwika.',
 	'tpt-install' => 'Patakbuhin ang pagpapanatiling php/update.php o paglalagay na pang-web upang mapaandar ang kasangkapang-katangiang pangsalinwika ng pahina.',
 	'tpt-render-summary' => 'Isinasapanahon upang tumugma sa bagong bersyon ng pinagmulang pahina',
 	'tpt-download-page' => 'Iluwas ang pahinang may mga pagsasalinwika',
@@ -5922,7 +5920,6 @@ $messages['uk'] = array(
 Це – переклад сторінки [[$1]] і його можна оновити за допомогою [$2 засобу перекладу].',
 	'tpt-unknown-page' => 'Цей простір імен зарезервовано для перекладів текстів сторінок.
 Сторінка, яку ви намагаєтесь редагувати, скоріше за все, не відповідає жодній сторінці, відміченій для перекладу.',
-	'tpt-delete-impossible' => 'Видалення сторінок, відмічених для перекладу, наразі неможливе.',
 	'tpt-install' => 'Виконайте php-скрипт maintenance/update.php або веб-установку, щоб увімкнути можливість перекладу сторінок.',
 	'tpt-render-summary' => 'Оновлення для відповідності новій версії вихідної сторінки',
 	'tpt-download-page' => 'Експортувати сторінку з перекладами',

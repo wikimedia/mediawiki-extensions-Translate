@@ -798,7 +798,6 @@ Dit sluit ook boodskappe wat as verouderd gemerk is in.',
 U word aangemoedig om vertalings via [[Special:Translate|{{int:translate}}]] te kontroleer.',
 	'supportedlanguages' => 'Ondersteunde tale',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Vertaler|Vertalers}}: $1',
-	'supportedlanguages-noportal-title' => 'Die portaalnaamruimte is nie gedefinieer nie',
 	'supportedlanguages-recenttranslations' => 'onlangse vertalings',
 	'translate-save' => 'Stoor ($1)',
 	'translate-jssti-add' => 'Voeg by lys',
@@ -2147,10 +2146,6 @@ $messages['ba'] = array(
 Әгәр һеҙ ниндәй ҙә булһа телгә тәржемә итәһегеҙ һәм һеҙҙең исемегеҙ тәржемәселәр исемлегендә юҡ икән, зинһар, исемегеҙҙе был телдең [[:Category:Languages|порталында]] тәржемәселәр исемлегенә өҫтәгеҙ.
 Һеҙҙең көйләүҙәрегеҙҙәге тел порталына һылтанманы менюла табырға була.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Тәржемәсе|Тәржемәселәр}}: $1',
-	'supportedlanguages-noportal-title' => 'Порталдың исемдәр арауығы билдәләнмәгән',
-	'supportedlanguages-noportal' => 'Вики хакимы NS_PORTAL билдәләмәгән, шуға күрә был бит эшләмәй.
-Был биттә бөтә тел кодына яраған порталдарҙың исемлеге һәм "тәржемәселәр" эске бите буласаҡ.
-"Тәржемәселәр" эске бите параметр рәүешендә ҡатнашыусы исеме күрһәтелгән [[:{{ns:template}}:User|User]] ҡалыбын үҙ эсенә алырға тейеш.',
 	'supportedlanguages-recenttranslations' => 'яңыраҡ эшләнгән тәржемәләр',
 	'translate-save' => 'Һаҡларға ($1)',
 	'translate-jssti-add' => 'Исемлеккә өҫтәргә',
@@ -4953,10 +4948,6 @@ Jolic rěc njejo pódane, móžoš pód "[[Translating:Process|Nowa rěc]]" zgó
 Jolic pśełožujoš do rěcy a twójo mě njejo pódane, pśidaj pšosym swójo mě lisćinje pśełožowarjow na [[:Category:Languages|portalu]] teje rěcy.
 Glědaj menijowu lejstwu za wótkaz k portaloju twójeje preferowaneje rěcy.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Pśełožowaŕ|Pśełožowarja|Pśełožowarje|Pśełožowarjow}}: $1',
-	'supportedlanguages-noportal-title' => 'Žeden portalowy mjenjowy rum definěrowany',
-	'supportedlanguages-noportal' => 'Wikiadministrator njejo NS_PORTAL definěrował, togodla bok njefunkcioněrujo.
-Na toś tom boku buźo se lisćina rěcnych portalow pokazowaś, za wšykne portale, kótarež wótpowěduju definěrowanemu rěcnemu kodoju pódbokoju z mjenim "pśełožowarje".
-Pódbok "pśełožowarje" musy pśedłogu [[:{{ns:template}}:User|Wužywaŕ]] wopśimjeś, z wužywarskim mjenim ako parameter.',
 	'supportedlanguages-recenttranslations' => 'nejnowše pśełožki',
 	'translate-save' => 'Składowaś ($1)',
 	'translate-jssti-add' => 'Lisćinje pśidaś',
@@ -5039,7 +5030,7 @@ Drobnostki: $1',
 	'translate-documentation-language' => 'Pokazki za pśełožowanje',
 );
 
-/** Dusun Bundu-liwan (Dusun Bundu-liwan)
+/** Central Dusun (Dusun Bundu-liwan)
  * @author FRANCIS5091
  */
 $messages['dtp'] = array(
@@ -6440,10 +6431,6 @@ Luku sisältää vanhentuneiksi merkityt viestit.',
 Voit tarkistaa käännöksiä toimintosivulla [[Special:Translate|{{int:translate}}]].',
 	'supportedlanguages' => 'Tuetut kielet',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Kääntäjä|Kääntäjät}}: $1',
-	'supportedlanguages-noportal-title' => 'Portaalinimiavaruutta ei ole määritelty',
-	'supportedlanguages-noportal' => 'Tämä sivu ei toimi, koska wikin ylläpitäjä ei ole määritellyt NS_PORTAL-asetusta.
-Tällä sivulla on lista kaikista kieliportaaleista joilla on alasivu nimellä ”translators”.
-Alasivun ”translators” tulee käyttää mallinetta [[:{{ns:template}}:User|User]], joka ottaa käyttäjätunnuksen parametrina.',
 	'supportedlanguages-recenttranslations' => 'tuoreet käännökset',
 	'translate-save' => 'Tallenna ($1)',
 	'translate-jssti-add' => 'Lisää listaan',
@@ -6964,6 +6951,7 @@ Los changements sont pas encartâs tant que vos éd pas clicâ sur lo boton « E
 	'translate-checks-format' => 'Ceta traduccion siut pas la dèfinicion ou ben el at una sintaxa fôssa : $1',
 	'translate-checks-escape' => 'Cetos èchapaments pôvont étre emprèvus : <strong>$1</strong>',
 	'translate-checks-fudforum-syntax' => 'Utilisâd <nowiki>$1</nowiki> nan pas <nowiki>$2</nowiki> dens ceti projèt.',
+	'translate-checks-prefs' => 'Mèssâjo en conflit avouéc $1. Celos mèssâjos dêvont pas étre los mémos.',
 	'translate-pref-nonewsletter' => 'Pas mè mandar les lètres de novèles per mèssageria èlèctronica',
 	'translate-pref-editassistlang' => 'Lengoues d’assistance :',
 	'prefs-translate' => 'Chouèx de traduccion',
@@ -7050,6 +7038,7 @@ Vos éte encoragiê a revêre los mèssâjos dês [[Special:Translate|{{int:tran
 	'supportedlanguages-translators' => 'Traductor{{PLURAL:$2||s}} : $1',
 	'supportedlanguages-recenttranslations' => 'novèles traduccions',
 	'supportedlanguages-count' => 'En tot, $1 lengou{{PLURAL:$1|a|es}}.',
+	'supportedlanguages-activity' => '$1 : $2 changement{{PLURAL:$2||s}} - dèrriér changement cen fât $3 jorn{{PLURAL:$3||s}}',
 	'translate-save' => 'Sôvar ($1)',
 	'translate-jssti-add' => 'Apondre a la lista',
 	'managemessagegroups' => 'Administracion de la tropa des mèssâjos',
@@ -7102,6 +7091,7 @@ $1',
 	'translate-import-err-ul-failed' => 'Lo tèlèchargement du fichiér at pas reussi',
 	'translate-import-err-invalid-title' => 'Lo nom du fichiér balyê <nowiki>$1</nowiki> est envalido.',
 	'translate-import-err-no-such-file' => 'Lo fichiér <nowiki>$1</nowiki> ègziste pas ou ben il at pas étâ importâ localament.',
+	'translate-import-err-stale-group' => 'La tropa de mèssâjos que cél fichiér apartint ègziste pas.',
 	'translate-import-err-no-headers' => "Lo fichiér est pas un fichiér ''gettext'' bien formâ dens lo format atendu per l’èxtension ''Translate'' :
 o est empossiblo de dètèrmenar la tropa et la lengoua dês les en-tétes du fichiér.",
 	'translate-import-err-warnings' => 'Lo fichiér est pas bien formâ.
@@ -7849,10 +7839,6 @@ Wänn imfall e Sproch nit ufgfiert wird, git s Informatione zum Starte vun ere n
 Wänn imfall dr Name vun eme Ibersetzer fählt, muess dää zue dr Lischte vu dr Ibersetzer im jewylige [[:Category:Languages|Portal]] zuegfiegt wäre.
 Im Menü git s e Link zum Portal vu dr yygstellte Sproch.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Ibersetzer|Ibersetzer}}: $1',
-	'supportedlanguages-noportal-title' => 'Kei Portal-Namensruum definiert',
-	'supportedlanguages-noportal' => 'Dr Wiki-Administrator het d Variable <code>NS_PORTAL</code> nit definiert, wäge däm funktioniert die Syte nit.
-Uf däre Syte erschyynt e Lischt vu dr Sprochportal mit allene Portal, wu e definierte Sprochcode hän un e Untersyte hän mit eme Name „translators“.
-In dr Untersyte „translators“ mueß es d Vorlag [[:{{ns:template}}:User|User]] din haa, mit eme Benutzername as Parameter.',
 	'supportedlanguages-recenttranslations' => 'Aktuälli Ibersetzige',
 	'translate-save' => 'Spychere ($1)',
 	'translate-jssti-add' => 'Zue dr Lischt zuefiege',
@@ -8834,10 +8820,6 @@ Jeli rěč njeje podata, móžeš pod "[[Translating:Process|Nowa rěč]]" zhoni
 Jeli přełožuješ do rěče a twoje mjeno njeje podate, přidaj prošu swoje mjeno lisćinje přełožowarjow na [[:Category:Languages|portalu]] teje rěče.
 Hlej menijowu lajstu za wotkaz k portalej swojeje preferowaneje rěče.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Přełožowar|Přełožowarjej|Přełožowarjo|Přełožowarjow}}: $1',
-	'supportedlanguages-noportal-title' => 'Žadyn mjenowy rum za portal definowany',
-	'supportedlanguages-noportal' => 'Wikiadministrator njeje NS_PORTAL definował, tohodla tuta strona njefunguje.
-Na tutej stronje budźe so lisćina rěčnych portalow jewić, za wšě portale, kotrež definowemu rěčnemu kodej a podstronje z mjenom "translators" wotpowěduja.
-Podstrona "translators" dyrbi předłohu  [[:{{ns:template}}:User|User]] wobsahować a wužiwa wužiwarske mjeno jako parameter.',
 	'supportedlanguages-recenttranslations' => 'najnowše přełožki',
 	'translate-save' => 'Składować ($1)',
 	'translate-jssti-add' => 'Lisćinje přidać',
@@ -9126,10 +9108,6 @@ Si yon lang pa parèt nan lis, ou kapab gade "[[Translating:Process|nouvèl lang
 Si ou tradui vè yon lang epi non ou pa nan lis tradiktè pou lang sa, tanpri ajoute l nan [[:Category:Languages|paj prensipal]].
 Gade meni a pou jwenn lyen pou paj prensipal lang ou prefere a.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Tradiktè|Tradiktè yo}}: $1',
-	'supportedlanguages-noportal-title' => 'Pa gen espas non pou paj prensipal sa ki defini',
-	'supportedlanguages-noportal' => 'Administratè wiki a pa defini NS_PORTAL, se sak fè paj sa pa mache.
-Nan paj sa a, genyen yon lis paj prensipal yo pou tout lang ki genyen yon kòd ki ekziste deja, ak yon lòt paj anba ki rele "tradiktè yo".
-Paj "tradiktè yo" dwe genyen modèl [[:{{ns:template}}:User|Itilizatè]] ladan l, ki pran yon non itilizatè kòm paramèt.',
 	'supportedlanguages-recenttranslations' => 'dènye tradiksyon yo',
 	'translate-save' => 'Anrejistre ($1)',
 	'translate-jssti-add' => 'Ajoute nan lis',
@@ -9415,10 +9393,6 @@ Ha egy nyelv nincs listázva, a következő linken megtudhatod, hogy kezdhetsz n
 Ha fordítasz egy nyelvre, de a neved nem szerepel ott, add hozzá a nevedet az adott nyelv [[:Category:Languages|portálján]] található listához.
 A oldalsávon megtalálhatod a beállatásaidban megadott nyelvhez tartozó portál linkjét.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Fordító|Fordítók}}: $1',
-	'supportedlanguages-noportal-title' => 'Nincs portál-névtér meghatározva',
-	'supportedlanguages-noportal' => 'A wiki adminisztrátora nem állította be az NS_PORTAL értékét, tehát ez a lap nem működik.
-Ezen a lapon a nyelvi portálok listája fog megjelenni a megadott nyelvkóddal, és a hozzájuk tartozó „translators” allappal.
-A „translators” allapon a [[:{{ns:template}}:User|User]] sablonnak kell szerepelnie, aminek első bemenete a felhasználó neve legyen.',
 	'supportedlanguages-recenttranslations' => 'friss fordítások',
 	'translate-save' => 'Mentés ($1)',
 	'translate-jssti-add' => 'Hozzáadás a listához',
@@ -10009,10 +9983,6 @@ Jika sebuah bahasa belum terdaftar, Anda dapat mencari tahu cara memulai proyek 
 Jika Anda menerjemahkan ke sebuah bahasa dan nama Anda tidak dimasukkan, silakan tambahkan nama Anda ke daftar penerjemah di [[:Category:Languages|portal]] bahasa tersebut.
 Lihat kotak menu untuk pranala ke portal bahasa preferensi Anda.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Penerjemah|Penerjemah}}: $1',
-	'supportedlanguages-noportal-title' => 'Tidak ada ruang nama portal yang disebutkan',
-	'supportedlanguages-noportal' => 'Pengurus wiki belum menetapkan NS_PORTAL, jadi halaman ini tidak bekerja.
-Di halaman ini, daftar portal bahasa akan muncul untuk semua portal yang berhubungan dengan kode bahasa yang ditetapkan dan sebuah subhalaman bernama "penerjemah".
-Subhalaman "penerjemah" harus berisi templat [[:{{ns:template}}:User|User]], menggunakan nama pengguna sebagai parameter.',
 	'supportedlanguages-recenttranslations' => 'terjemahan terbaru',
 	'translate-save' => 'Simpan ($1)',
 	'translate-jssti-add' => 'Tambahkan pada daftar',
@@ -10778,7 +10748,7 @@ $1',
 	'translate-search-nofilter' => 'すべて表示',
 );
 
-/** Jamaican Creole English (Jamaican Creole English)
+/** Jamaican Creole English (Patios)
  * @author Yocahuna
  */
 $messages['jam'] = array(
@@ -11100,7 +11070,7 @@ $messages['kaa'] = array(
 	'right-translate' => "Awdarma interfeysi ja'rdeminde o'zgertiw",
 );
 
-/** Kabardian (Cyrillic) (къэбэрдеибзэ/qabardjajəbza (Cyrillic))
+/** Kabardian (Cyrillic) (Адыгэбзэ (Cyrillic))
  * @author Тамэ Балъкъэрхэ
  */
 $messages['kbd-cyrl'] = array(
@@ -11800,7 +11770,6 @@ $1',
 	'translate-percentage-complete' => '완료',
 	'translate-percentage-fuzzy' => '업데이트 필요',
 	'supportedlanguages-translators' => '{{PLURAL:$2|번역자}}: $1',
-	'supportedlanguages-noportal-title' => '포털 네임스페이스가 정의되지 않음',
 	'translate-save' => '저장 ($1)',
 	'translate-manage-fuzzy-summary' => '메시지 정의가 바뀌었습니다.',
 	'translate-js-next' => '저장하고 다음으로 넘어가기',
@@ -12136,7 +12105,6 @@ $messages['ku-latn'] = array(
 	'translate-ext-url' => '<hr />Malper: $1',
 	'translate-edit-title' => 'Biguherîne "$1"',
 	'translate-edit-tab-list' => 'Lîsteya mesajan',
-	'translate-edit-show-trans' => 'Wergerr',
 	'translate-magic-submit' => 'Biçe',
 	'translate-magic-cm-export' => 'Eksport',
 	'translate-magic-cm-current' => 'Niha',
@@ -14977,10 +14945,6 @@ Hvis et språk ikke er listet opp kan du finne ut hvordan du starter et lokalise
 Hvis du oversetter til et språk og navnet ditt ikke er inkludert kan du legge til navnet ditt i listen over oversettere på [[:Category:Languages|språkportalen]] deres.
 Se menylinjen for en lenke til språkportalen til ditt språk.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Oversetter|Oversettere}}: $1',
-	'supportedlanguages-noportal-title' => 'Ingen portalnavnerom definert',
-	'supportedlanguages-noportal' => 'Wikiadministratoren har ikke definert NS_PORTAL, så denne siden virker ikke.
-På denne siden vil en liste over språkportaler vises for alle portaler som tilsvarer en definert språkkode og en underside kalt «translators».
-Undersiden «translators» må innholde malen [[:{{ns:template}}:User|User]] som tar et brukernavn som en parameter.',
 	'supportedlanguages-recenttranslations' => 'siste oversettelser',
 	'translate-save' => 'Lagre ($1)',
 	'translate-jssti-add' => 'Legg til i listen',
@@ -15340,7 +15304,7 @@ $messages['or'] = array(
 	'translate-language' => 'ଭାଷା',
 );
 
-/** Ossetic (Иронау)
+/** Ossetic (Ирон)
  * @author Amikeco
  * @author Bouron
  */
@@ -16680,9 +16644,6 @@ Se uma língua não aparecer na lista, pode descobrir como iniciar um projeto de
 Se faz traduções para uma língua e o seu nome não aparece na lista, adicione-o à lista de tradutores no [[:Category:Languages|portal]] dessa língua, por favor.
 Na barra lateral à esquerda existe um link para o portal da língua da sua preferência.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Tradutor|Tradutores}}: $1',
-	'supportedlanguages-noportal-title' => 'Não foi definido um espaço nominal para portais',
-	'supportedlanguages-noportal' => 'O administrador da wiki não definiu NS_PORTAL, por isso esta página não funciona.
-Nesta página aparece uma lista de todos os portais de línguas que correspondem a um código de língua existente e uma subpágina chamada "translators". Para cada tradutor, a subpágina deve chamar a predefinição [[:{{ns:template}}:User|User]], passando como parâmetro um nome de utilizador.',
 	'supportedlanguages-recenttranslations' => 'traduções recentes',
 	'translate-save' => 'Gravar ($1)',
 	'translate-jssti-add' => 'Adicionar à lista',
@@ -16909,9 +16870,15 @@ Dacă știți unde sau cum este folosit, îi puteți ajuta pe ceilalți traducă
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Definiția folosește <nowiki>{{PLURAL:}}</nowiki>, dar traducerea nu.',
 	'translate-checks-pagename' => 'Spațiul de nume schimbat față de definiție',
+	'translate-checks-format' => 'Această traducere nu respectă definiția sau conține o sintaxă incorectă: $1',
+	'translate-checks-escape' => 'Următoarele scăpări pot fi accidentale: <strong>$1</strong>',
+	'translate-checks-prefs' => 'Conflicte de mesaj cu $1. Aceste mesaje nu trebuie să fie identice.',
 	'translate-pref-nonewsletter' => 'Nu-mi trimite știri prin e-mail',
 	'translate-pref-editassistlang' => 'Limbi ajutătoare',
 	'prefs-translate' => 'Opțiuni de traducere',
+	'translate-pref-editassistlang-bad' => 'Cod de limbă incorect în lista:
+<nowiki>$1</nowiki>.',
+	'translate-pref-jsedit' => 'Editor avansat de traducere (JavaScript)',
 	'right-translate' => 'Modifică utilizând interfața de traducere',
 	'right-translate-manage' => 'Administrează grupurile de traduceri',
 	'right-translate-import' => 'Importă traduceri efectuate off-line',
@@ -16976,9 +16943,12 @@ Sunt incluse și mesajele marcate ca învechite.',
 	'translate-percentage-complete' => 'Completare',
 	'translate-percentage-complete-tooltip' => 'Procentul mesajelor din grup care au fost traduse și nu au fost marcate ca învechite.',
 	'translate-percentage-fuzzy' => 'Învechite',
+	'translate-languagestats-overall' => 'Toate grupurile de mesaje laolaltă',
 	'supportedlanguages' => 'Limbi întreținute',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Traducător|Traducători}}: $1',
 	'supportedlanguages-recenttranslations' => 'traduceri recente',
+	'supportedlanguages-count' => '$1 {{PLURAL:$1|limbă|limbi}} în total.',
+	'supportedlanguages-activity' => '$1: $2 {{PLURAL:$2|modificare|modificări}} – ultima modificare datează de acum $3 {{PLURAL:$3|zi|zile}}',
 	'translate-save' => 'Salvare ($1)',
 	'translate-jssti-add' => 'Adaugă în listă',
 	'managemessagegroups' => 'Administrarea grupului de mesaje',
@@ -16989,6 +16959,7 @@ Sunt incluse și mesajele marcate ca învechite.',
 	'translate-manage-newgroup' => 'Acest grup de mesaje nu a fost importat în trecut',
 	'translate-manage-cacheat' => 'Importat pe $1 la $2',
 	'translate-manage-return-to-group' => 'Înapoi la pagina cu detaliile grupului',
+	'translate-manage-modlangs' => 'Vă rugăm să căutați posibile modificări în {{PLURAL:$1|următoarea|următoarele}} {{PLURAL:$1|limbă|limbi}}:',
 	'translate-manage-modlang-new' => '$1 ({{PLURAL:$1|nou|noi}})',
 	'translate-manage-import-diff' => 'Mesajul $1 | Acțiuni: $2',
 	'translate-manage-import-new' => 'Mesaj nou $1',
@@ -17085,8 +17056,6 @@ Cazze 'u nome d'u gruppe de le messagge pe vedè l'elenghe de le messagge da tra
 	'translate-edit-title' => 'Cange "$1"',
 	'translate-edit-tmmatch' => '$1% de combronde',
 	'translate-edit-tab-list' => 'Elenghe de le messagge',
-	'translate-edit-show-def' => 'Definizione de le messagge',
-	'translate-edit-show-trans' => 'Traduzione',
 	'translate-magic-module' => 'Module:',
 	'translate-magic-cm-export' => 'Esporte',
 	'translate-magic-cm-original' => 'Origginale',
@@ -17627,7 +17596,6 @@ $messages['rue'] = array(
 Кідь даякый язык перекладате, а ваше імя ту не є уведжене, додайте ся до списку перекладателїв на одповідаючім [[:Category:Languages|языковім порталї]].
 Одказ на портал вашого преферованого языка найдете в меню.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Перекладатель|Перекладателї}}: $1',
-	'supportedlanguages-noportal-title' => 'Недефінованый простор назв порталу',
 	'supportedlanguages-recenttranslations' => 'найновшы переклады',
 	'translate-save' => 'Уложыти ($1)',
 	'translate-jssti-add' => 'Придати до списку',
@@ -17658,7 +17626,7 @@ $messages['rue'] = array(
 	'translate-gs-avgscore' => 'Сер. оцінка',
 );
 
-/** Yakut (Саха тыла)
+/** Sakha (Саха тыла)
  * @author Bert Jickty
  * @author HalanTul
  */
@@ -17887,7 +17855,6 @@ $messages['si'] = array(
 	'translate-edit-definition' => 'පණිවුඩ විග්‍රහය',
 	'translate-edit-contribute' => 'දායකවන්න',
 	'translate-edit-tmmatch' => '$1% ගැලපේ',
-	'translate-edit-show-trans' => 'පරිවර්තනය',
 	'translate-magic-module' => 'මොඩියුලය:',
 	'translate-magic-submit' => 'ආහරනය කරන්න',
 	'translate-magic-cm-export' => 'නිර්යාත',
@@ -20479,10 +20446,6 @@ Kung hindi nakatala ang isang wika, malalaman mo kung paanong magsimula ng isang
 Kapag nagsalinwika ka papunta sa isang wika at hindi kabilang ang pangalan mo, pakidagdag ang pangalan mo sa talaan ng mga tagapagsalinwika sa [[:Category:Languages|portada]] para sa wikang iyon.
 Tingnan ang kahon ng pilian para sa isang kawing sa portada para wikang nais mo.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Tagapagsalinwika|Mga tagapagsalinwika}}: $1',
-	'supportedlanguages-noportal-title' => 'Walang tinukoy na puwang na pampangalan ng portada',
-	'supportedlanguages-noportal' => 'Hindi nabigyang kahulugan ng tagapangasiwa ng wiki ang NS_PORTAL, kaya hindi gumagana ang pahinang ito.
-Lilitaw sa pahinang ito ang isang talaan ng mga pintuan ng wika para sa lahat ng mga portadang may kaugnayan sa isang nabigyang kahulugang kodigo ng wika at isang kabahaging pahinang tinatawag na "mga tagapagsalinwika".
-Ang kabahaging pahinang "tagapagsalinwika" ay dapat na maglaman ng suleras na [[:{{ns:template}}:User|Tagagamit]], na kinuha ang pangalan ng tagagamit bilang parametro.',
 	'supportedlanguages-recenttranslations' => 'kamakailang mga pagsasalinwika',
 	'translate-save' => 'Sagipin ($1)',
 	'translate-jssti-add' => 'Idagdag sa talaan',
