@@ -82,10 +82,12 @@ aliasfile = Asksql/Asksql.alias.php
 
 Assert Edit
 
+Author Protect
+
 Autoincrement
 magicfile = Autoincrement/Autoincrement.i18n.magic.php
 
-Author Protect
+Automatic Board Welcome
 
 Babel
 magicfile = Babel/Babel.i18n.magic.php
