@@ -19273,6 +19273,8 @@ Klicka på meddelandegruppens namn för att visa en lista över oöversatta medd
 	'translate-page-settings-legend' => 'Inställningar',
 	'translate-page-task' => 'Jag vill',
 	'translate-page-group' => 'Grupp',
+	'translate-page-group-tooltip' => 'Namnet på en meddelandegrupp.
+Om gruppen består av en delmängd eller grundmängd av meddelanden från andra grupper, visas det i fetstil.',
 	'translate-page-language' => 'Språk',
 	'translate-page-limit' => 'Antal',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|meddelande|meddelanden}} per sida',
@@ -19420,8 +19422,11 @@ Det inkluderar meddelanden som har blivit märkta som föråldrade.',
 	'translate-percentage-complete' => 'Avklarat',
 	'translate-percentage-complete-tooltip' => 'Det procentuella antalet meddelanden i gruppen som har översatts och inte markerats som föråldrade.',
 	'translate-percentage-fuzzy' => 'Föråldrat',
+	'translate-percentage-fuzzy-tooltip' => 'Procentandelen av meddelanden i gruppen som har översatts och har markerats som föråldrad.
+Meddelanden markeras som föråldrade eftersom det engelska källmeddelandet har förändrats, eftersom en automatisk kontroll för meddelandet misslyckades eller på grund av någon markerade det som föråldrad.',
 	'translate-nothing-to-do' => 'Alla möjliga översättningar verkar ha gjorts.
 Du uppmuntras att granska meddelanden genom [[Special:Translate|{{int:translate}}]].',
+	'translate-languagestats-overall' => 'Alla meddelandegrupper tillsammans',
 	'supportedlanguages' => 'Språk som stöds',
 	'supportedlanguages-summary' => 'Denna sida visar en lista över alla språk som stöds av {{SITENAME}}, tillsammans med en lista över översättare som jobbar på detta språk.
 Om du vill ha mer information om ett speciellt språk så klicka på länken till portalen för detta språk.
@@ -19433,8 +19438,11 @@ Om du översätter till ett språk och ditt namn inte finns med, var vänlig och
 En länk till till portalen för ditt val av språk finns i menyn.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Översättare|Översättare}}: $1',
 	'supportedlanguages-recenttranslations' => 'senaste översättningar',
+	'supportedlanguages-count' => '$1 {{PLURAL:$1|språk|språk}} totalt.',
+	'supportedlanguages-activity' => '$1: $2 {{PLURAL:$2|redigering|redigeringar}} - senaste redigering $3 {{PLURAL:$3|dag|dagar}} sedan',
 	'translate-save' => 'Spara ($1)',
 	'translate-jssti-add' => 'Lägg till i listan',
+	'managemessagegroups' => 'Meddelandegruppshantering',
 	'translate-manage-groups' => 'Grupphantering',
 	'translate-manage-listgroups' => 'Bekräftade grupper',
 	'translate-manage-listgroups-old' => 'Grupper i gamla stilen',
@@ -19455,6 +19463,9 @@ En länk till till portalen för ditt val av språk finns i menyn.',
 	'translate-manage-nochanges' => 'Det finns inga förändringar i meddelande-definitionerna för den här gruppen.',
 	'translate-manage-nochanges-other' => 'Inga förändringar för det här språket.
 Använd länken nedan för att återgå till gruppdetaljerna.',
+	'translate-manage-inconsistent' => 'Upptäckte inkonsekvens i begäran.
+Leta efter ändringar och försök igen.
+Detaljer: $1.',
 	'translate-manage-toolong' => 'Den maximala behandlingstiden på $1 {{PLURAL:$1|sekund|sekunder}} har överskridits.
 Vänligen aktivera formuläret igen för att fortsätta behandla det.',
 	'translate-manage-import-ok' => 'Importerat ny version av sidan $1',
@@ -21765,7 +21776,7 @@ Kod:
 	'translate-edit-definition' => 'Miedet nuna',
 	'translate-edit-contribute' => 'keblünön',
 	'translate-edit-no-information' => 'Nun at no peplänon. If sevol, kiöpo u lio nun at pagebon, kanol yufön tradutanis votik medä penol pläni gudik dö geb onik.',
-	'translate-edit-information' => 'Plän nuna: "$2" ($1)',
+	'translate-edit-information' => 'Plän nuna ($1)',
 	'translate-edit-in-other-languages' => 'Nun: "$1" in püks votik',
 	'translate-edit-warnings' => 'Nüneds tefü tradutods no lölöfiks',
 	'translate-magic-cm-export' => 'Seveigön',
