@@ -102,13 +102,15 @@ abstract class ComplexMessages {
 		$current = $this->cleanData( $defs, $current );
 
 		$chain = $current;
-		while ( $this->chainable && $code = Language::getFallbackFor( $code ) ) {
-			$fbdata = $this->readVariable( $group, $code );
-			if ( $this->firstMagic ) {
-				$fbdata = $this->cleanData( $defs, $fbdata );
-			}
+		if ( $this->chainable } {
+			foreach ( Language::getFallbackFors( $code ) as $code ) {
+				$fbdata = $this->readVariable( $group, $code );
+				if ( $this->firstMagic ) {
+					$fbdata = $this->cleanData( $defs, $fbdata );
+				}
 
-			$chain = array_merge_recursive( $chain, $fbdata );
+				$chain = array_merge_recursive( $chain, $fbdata );
+			}
 		}
 
 		if ( $this->firstMagic ) {

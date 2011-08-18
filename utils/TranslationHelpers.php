@@ -995,11 +995,16 @@ class TranslationHelpers {
 			$fallbacks = (array) $wgTranslateLanguageFallbacks[$code];
 		}
 
-		// And the real fallback
-		// TODO: why only one?
-		$realFallback = $code ? Language::getFallbackFor( $code ) : false;
-		if ( $realFallback && $realFallback !== 'en' ) {
-			$fallbacks = array_merge( array( $realFallback ), $fallbacks );
+		// BC <1.19
+		if ( method_exists( 'Language', 'getFallbacksFor' ) ) {
+			$list = Language::getFallbacskFor( $code );
+			array_pop( $list ); // Get 'en' away from the end
+			$fallbacks = array_merge( $list , $fallbacks );
+		} else {
+			$realFallback = $code ? Language::getFallbackFor( $code ) : false;
+			if ( $realFallback && $realFallback !== 'en' ) {
+				$fallbacks = array_merge( array( $realFallback ), $fallbacks );
+			}
 		}
 
 		return $fallbacks;
