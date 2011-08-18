@@ -997,7 +997,7 @@ class TranslationHelpers {
 
 		// BC <1.19
 		if ( method_exists( 'Language', 'getFallbacksFor' ) ) {
-			$list = Language::getFallbacskFor( $code );
+			$list = Language::getFallbacksFor( $code );
 			array_pop( $list ); // Get 'en' away from the end
 			$fallbacks = array_merge( $list , $fallbacks );
 		} else {
