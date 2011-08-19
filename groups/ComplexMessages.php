@@ -102,7 +102,7 @@ abstract class ComplexMessages {
 		$current = $this->cleanData( $defs, $current );
 
 		$chain = $current;
-		if ( $this->chainable } {
+		if ( $this->chainable ) {
 			foreach ( Language::getFallbackFors( $code ) as $code ) {
 				$fbdata = $this->readVariable( $group, $code );
 				if ( $this->firstMagic ) {
