@@ -15,3 +15,4 @@ FILES:
 TAGS:
   optional:
     - *.accesskey
+    - ui.main.cssdirection
