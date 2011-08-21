@@ -5,7 +5,7 @@ TEMPLATE:
     description: "{{int:bw-desc-shapado}}"
 
   FILES:
-    class: YamlFFS
+    class: RubyYamlFFS
     codeAsRoot: 1
     codeMap:
       be-tarask: be-TARASK
@@ -153,7 +153,7 @@ MANGLER:
 ---
 BASIC:
   id: out-shapado-devise
-  label: Shapado - devise
+  label: Shapado - Devise
   display: out/shapado/devise
 
 FILES:
