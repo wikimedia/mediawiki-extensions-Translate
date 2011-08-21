@@ -60,6 +60,8 @@ Cloak Check
 
 Community Messages
 
+Confirm Email Prompt
+
 Content Feeds
 
 #Commented out 2010-02-01 -- tor
