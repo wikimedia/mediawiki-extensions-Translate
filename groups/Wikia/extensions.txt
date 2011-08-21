@@ -54,7 +54,7 @@ Category Galleries
 Category Select
 
 Chat
-optional = grouppage-bannedfromchat, grouppage-bannedfromchat
+optional = grouppage-bannedfromchat, grouppage-bannedfromchat, grouppage-chatmoderator
 
 Cloak Check
 
@@ -84,6 +84,7 @@ Edit Page Layout
 ignored = anoneditwarning-notice, longpagewarning-notice
 
 Foggy Foto
+optional = foggyfoto-progress-numbers
 
 Follow
 aliasfile = Follow/Follow.alias.php
