@@ -81,6 +81,8 @@ file = EditAccount/SpecialEditAccount.i18n.php
 Edit Page Layout
 ignored = anoneditwarning-notice, longpagewarning-notice
 
+Foggy Foto
+
 Follow
 aliasfile = Follow/Follow.alias.php
 
