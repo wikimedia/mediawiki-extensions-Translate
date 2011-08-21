@@ -1688,6 +1688,7 @@ ignored = wikiforum-day-definition-new, wikiforum-max-threads-per-page, wikiforu
 
 Wikihiero
 file = wikihiero/wikihiero.i18n.php
+aliasfile = wikihiero/wikihiero.alias.php
 
 Wikilog
 aliasfile = Wikilog/Wikilog.i18n.alias.php
