@@ -90,6 +90,7 @@ Follow
 aliasfile = Follow/Follow.alias.php
 
 Founder Emails
+ignored = founderemails-email-footer-line3
 
 Founder Progress Bar
 optional = founderprogressbar-commcentral-visit-url
