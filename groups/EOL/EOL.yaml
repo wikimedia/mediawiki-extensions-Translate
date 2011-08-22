@@ -73,3 +73,9 @@ MANGLER:
   patterns:
     - "*"
   prefix: database-
+
+TAGS:
+  optional:
+    - dummy
+  ignored:
+    - translated_languages__label__original_language_id*
