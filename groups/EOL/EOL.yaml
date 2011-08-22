@@ -78,4 +78,4 @@ TAGS:
   optional:
     - dummy
   ignored:
-    - database.translated_languages__label__original_language_id*
+    - database-translated_languages__label__original_language_id*
