@@ -495,6 +495,8 @@ File Attach
 
 File Page Masking
 
+Filter List Users
+
 Find Spam
 aliasfile = FindSpam/FindSpam.alias.php
 
