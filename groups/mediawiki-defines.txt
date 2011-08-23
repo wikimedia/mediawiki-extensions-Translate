@@ -74,7 +74,6 @@ Article Feedback
 aliasfile = ArticleFeedback/ArticleFeedback.alias.php
 optional = articlefeedback-form-panel-helpimprove-email-placeholder
 optional = articlefeedback-table-noratings
-
 ignored = articlefeedback-pitch-survey-body, articlefeedback-pitch-edit-body
 
 Article To Category 2
