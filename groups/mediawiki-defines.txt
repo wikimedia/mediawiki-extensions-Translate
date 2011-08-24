@@ -1402,6 +1402,8 @@ magicfile = SubPageList/SubPageList.i18n.magic.php
 Sub Page List 3
 descmsg = spl3-desc
 
+Subpage Sortkey
+
 Sudo
 aliasfile = Sudo/Sudo.alias.php
 
