@@ -2328,6 +2328,7 @@ $messages['be'] = array(
  * @author EugeneZelenko
  * @author Jim-by
  * @author Red Winged Duck
+ * @author Renessaince
  * @author Wizardist
  * @author Zedlik
  */
@@ -2383,7 +2384,7 @@ $messages['be-tarask'] = array(
 	'translate-edit-translation' => 'Пераклад',
 	'translate-edit-contribute' => 'рэдагаваць',
 	'translate-edit-no-information' => "''Гэтае паведамленьне ня мае дакумэнтацыі.
-Калі Вы ведаеце дзе ці як выкарыстоўваецца гэтае паведамленьне, то Вы можаце дапамагчы іншым перакладчыкам дадаўшы дакумэнтацыю да гэтага паведамленьня.''",
+Калі Вы ведаеце, дзе ці як выкарыстоўваецца гэтае паведамленьне, то Вы можаце дапамагчы іншым перакладнікам, дадаўшы дакумэнтацыю да гэтага паведамленьня.''",
 	'translate-edit-information' => 'Інфармацыя пра паведамленьне ($1)',
 	'translate-edit-in-other-languages' => 'Паведамленьне на іншых мовах',
 	'translate-edit-committed' => 'Цяперашні пераклад у праграме',
