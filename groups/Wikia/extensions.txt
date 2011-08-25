@@ -83,9 +83,6 @@ file = EditAccount/SpecialEditAccount.i18n.php
 Edit Page Layout
 ignored = anoneditwarning-notice, longpagewarning-notice
 
-Foggy Foto
-optional = foggyfoto-progress-numbers
-
 Follow
 aliasfile = Follow/Follow.alias.php
 
@@ -192,6 +189,9 @@ Partner Feed
 
 Phalanx
 ignored = phalanx-expire-durations
+
+Photo Pop
+optional = photopop-progress-numbers
 
 Piggyback
 
@@ -313,6 +313,9 @@ Wikia Labs
 
 Wikia Mini Upload
 
+Wikia Mobile
+ignored = wikiamobile-page-header-title
+
 Wikia Poll
 optional = wikiapoll-question-mark-before, wikiapoll-question-mark-after
 
@@ -339,6 +342,8 @@ Wiki Factory
 file = WikiFactory/SpecialWikiFactory.i18n.php
 optional = wikifactory-label-eznamespace
 ignored = awc-metrics-language-top-list
+
+Wiki Features
 
 Wiki Payment
 ignored = wikipayment-click-here
