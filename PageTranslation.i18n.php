@@ -4548,9 +4548,9 @@ Błędy zostaną odnotowane na [[Special:Log/pagetranslation|stronie rejestru t�
 	'pt-movepage-started' => 'Strona bazowa jest teraz przenoszona. 
 Proszę sprawdzić na [[Special:Log/pagetranslation|stronie rejestru tłumaczeń]] czy nie wystąpiły błędy oraz komunikat o zakończeniu operacji.',
 	'pt-locked-page' => 'Ta strona jest zablokowana ponieważ jest przygotowana do przeniesienia.',
-	'pt-deletepage-invalid-title' => 'Określona strona nie jest poprawna.',
-	'pt-deletepage-current' => 'Nazwa strony:',
-	'pt-deletepage-reason' => 'Powód:',
+	'pt-deletepage-invalid-title' => 'Wybrana strona nie jest poprawna.',
+	'pt-deletepage-current' => 'Tytuł strony',
+	'pt-deletepage-reason' => 'Powód',
 	'pt-deletepage-subpages' => 'Usuń wszystkie podstrony',
 	'pt-deletepage-list-translation' => 'Strony tłumaczeń',
 	'pt-deletepage-list-other' => 'Inne podstrony',

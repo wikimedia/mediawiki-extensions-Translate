@@ -4143,15 +4143,20 @@ $3 注册$4',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
+ * @author Lauhenry
  * @author Mark85296341
  */
 $messages['zh-hant'] = array(
+	'firststeps' => '第一步',
+	'firststeps-desc' => '讓用戶開始維基翻譯的[[Special:FirstSteps|引導頁面]]',
 	'translate-fs-pagetitle-done' => ' - 完成！',
 	'translate-fs-pagetitle' => '入門指導 - $1',
 	'translate-fs-signup-title' => '註冊',
+	'translate-fs-settings-title' => '設定你的偏好',
 	'translate-fs-userpage-title' => '建立您的使用者頁面',
 	'translate-fs-permissions-title' => '請求翻譯者權限',
 	'translate-fs-target-title' => '開始翻譯！',
+	'translate-fs-email-title' => '確認您的電郵地址',
 	'translate-fs-intro' => "歡迎來到 {{SITENAME}} 入門指導。
 你會被指導如何成為一名翻譯者。
 最後你將可以翻譯 {{SITENAME}} 裡所有計畫的''介面訊息''.",
@@ -4164,6 +4169,7 @@ $messages['zh-hant'] = array(
 自由探索其他設定選項吧。
 
 到[[Special:Preferences|設定頁面]]完成設定，並回到此頁面。',
+	'translate-fs-settings-skip' => '我完成了，讓我繼續。',
 	'translate-fs-userpage-text' => '現在你需要建立使用者頁面。
 
 請寫一些關於你的東西，比如，你是誰？你希望做些什麼？
@@ -4188,5 +4194,24 @@ $messages['zh-hant'] = array(
 你可以使用下面的列表。',
 	'translate-fs-userpage-submit' => '建立我的使用者頁面',
 	'translate-fs-userpage-done' => '很好！現在你擁有了一個使用者頁面。',
+	'translate-fs-permissions-text' => '你現在需要申請加入翻譯組。
+
+請到[[Project:Translator]]頁面，並跟隨指引，再回到此頁面。
+
+在你提交申請之後，其中一名義工會檢查您的申請並儘快批准。
+請耐心等候。',
+	'translate-fs-target-text' => '恭喜 ！
+您現在可以開始翻譯。
+
+如果你仍覺得不知所措，不要害怕。
+在[[Project list|項目列表]] 有你可以貢獻的翻譯項目的概述。
+大部分的項目有一個簡短的說明頁與“翻譯這個項目”鏈接，它將帶您到一個頁面，其中列出了所有未翻譯的消息。
+ [[Special:LanguageStats|同一語言中所有未翻譯的訊息]]列表也是一個好起點。
+
+如您開始翻譯前想了解更多，您可以去看一下[[FAQ|常見問題]]。
+不幸的是文檔可能是舊版，如果你找不到答案，不要猶豫，請到[[Support|幫助頁]]發問。
+
+您也可以在[[Portal:$1|語言門戶]] 的[[Portal_talk:$1|talk 頁]]聯繫相同語言的翻譯人員在。
+請到[[Special:Preferences|偏好設定]]設定您的用戶界面和要翻譯的語言，以便wiki顯示和適合您的鏈接。',
 );
 

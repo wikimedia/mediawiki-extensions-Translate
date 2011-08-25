@@ -2384,7 +2384,7 @@ $messages['be-tarask'] = array(
 	'translate-edit-translation' => 'Пераклад',
 	'translate-edit-contribute' => 'рэдагаваць',
 	'translate-edit-no-information' => "''Гэтае паведамленьне ня мае дакумэнтацыі.
-Калі Вы ведаеце, дзе ці як выкарыстоўваецца гэтае паведамленьне, то Вы можаце дапамагчы іншым перакладнікам, дадаўшы дакумэнтацыю да гэтага паведамленьня.''",
+Калі Вы ведаеце, дзе ці як выкарыстоўваецца гэтае паведамленьне, то Вы можаце дапамагчы іншым перакладчыкам, дадаўшы дакумэнтацыю да гэтага паведамленьня.''",
 	'translate-edit-information' => 'Інфармацыя пра паведамленьне ($1)',
 	'translate-edit-in-other-languages' => 'Паведамленьне на іншых мовах',
 	'translate-edit-committed' => 'Цяперашні пераклад у праграме',
@@ -6184,6 +6184,7 @@ $messages['ext'] = array(
 /** Persian (فارسی)
  * @author Ebraminio
  * @author Huji
+ * @author Mjbmr
  * @author Tofighi
  * @author ZxxZxxZ
  */
@@ -6265,6 +6266,7 @@ $messages['fa'] = array(
 	'translate-checks-xhtml' => 'لطفاً این {{PLURAL:$2|برچسب|برچسب‌ها}} را با موارد درست جایگزین کنید:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'تعریف از <nowiki>{{PLURAL:}}</nowiki> استفاده می‌کند اما ترجمه از آن استفاده نمی‌کند.',
+	'translate-js-support' => 'پرسش سؤال',
 );
 
 /** Finnish (Suomi)
