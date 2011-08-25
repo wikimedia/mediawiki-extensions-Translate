@@ -1260,7 +1260,7 @@ Short Url
 aliasfile = ShortUrl/ShortUrl.alias.php
 
 Shout Box
-ignored = shoutbox-url, shoutbox-url-with-css
+optional = shoutbox-url, shoutbox-url-with-css
 
 Show Processlist
 aliasfile = ShowProcesslist/ShowProcesslist.alias.php
