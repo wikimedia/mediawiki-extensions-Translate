@@ -54,8 +54,9 @@ MANGLER:
 
 TAGS:
   optional:
-    - dummy
+    - website-errors.format
   ignored:
+    - website-faker.lorem.*
     - website-date.*
     - website-time.*
     - website-support.*
