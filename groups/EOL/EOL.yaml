@@ -56,7 +56,13 @@ TAGS:
   optional:
     - dummy
   ignored:
-    - dummy
+    - website-date.*
+    - website-time.*
+    - website-support.*
+    - website-number.*
+    - website-datetime.*
+    - website-support.*
+    - website-support.*
 
 ---
 BASIC:
