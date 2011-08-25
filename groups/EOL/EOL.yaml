@@ -63,7 +63,6 @@ TAGS:
     - website-number.*
     - website-datetime.*
     - website-support.*
-    - website-support.*
 
 ---
 BASIC:
@@ -85,4 +84,4 @@ TAGS:
   optional:
     - dummy
   ignored:
-    - database-translated_languages__label__original_language_id*
+    - database-translated_languages-label-original_language_id-*
