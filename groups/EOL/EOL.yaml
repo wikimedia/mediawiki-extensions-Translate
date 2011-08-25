@@ -85,3 +85,7 @@ TAGS:
     - dummy
   ignored:
     - database-translated_languages-label-original_language_id-*
+    - database-translated_content_pages-main_content-content_page_id-13
+    - database-translated_content_pages-main_content-content_page_id-300
+    - database-translated_content_pages-main_content-content_page_id-301
+    - database-translated_content_pages-main_content-content_page_id-302
