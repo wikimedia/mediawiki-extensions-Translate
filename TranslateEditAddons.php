@@ -279,14 +279,13 @@ class TranslateEditAddons {
 	 */
 	public static function isFuzzy( Title $title ) {
 		$dbr = wfGetDB( DB_SLAVE );
-		$id = $dbr->selectField( 'revtag_type', 'rtt_id', array( 'rtt_name' => 'fuzzy' ), __METHOD__ );
 
 		$tables = array( 'page', 'revtag' );
 		$fields = array( 'rt_type' );
 		$conds  = array(
 			'page_namespace' => $title->getNamespace(),
 			'page_title' => $title->getDBkey(),
-			'rt_type' => $id,
+			'rt_type' => RevTag::getType( 'fuzzy' ),
 			'page_id=rt_page',
 			'page_latest=rt_revision'
 		);
@@ -394,11 +393,9 @@ class TranslateEditAddons {
 		// begin fuzzy tag.
 		$dbw = wfGetDB( DB_MASTER );
 
-		$id = $dbw->selectField( 'revtag_type', 'rtt_id', array( 'rtt_name' => 'fuzzy' ), __METHOD__ );
-
 		$conds = array(
 			'rt_page' => $article->getTitle()->getArticleId(),
-			'rt_type' => $id,
+			'rt_type' => RevTag::getType( 'fuzzy' ),
 			'rt_revision' => $rev
 		);
 		// Remove any existing fuzzy tags for this revision
@@ -424,12 +421,9 @@ class TranslateEditAddons {
 		if ( $definitionTitle && $definitionTitle->exists() ) {
 			$definitionRevision = $definitionTitle->getLatestRevID();
 
-			$id = $dbw->selectField( 'revtag_type', 'rtt_id',
-				array( 'rtt_name' => 'tp:transver' ), __METHOD__ );
-
 			$conds = array(
 				'rt_page' => $title->getArticleId(),
-				'rt_type' => $id,
+				'rt_type' => RevTag::getType( 'tp:transver' ),
 				'rt_revision' => $rev,
 				'rt_value' => $definitionRevision,
 			);

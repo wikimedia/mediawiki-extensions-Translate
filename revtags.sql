@@ -1,16 +1,8 @@
--- These tables could go into core someday
-
--- Revision tag type list
-CREATE TABLE /*$wgDBprefix*/revtag_type (
-  rtt_id int not null primary key auto_increment,
-  rtt_name varbinary(60) not null
-) /*$wgDBTableOptions*/;
-CREATE UNIQUE INDEX /*i*/rtt_name ON /*$wgDBprefix*/revtag_type (rtt_name);
+-- These tables could go into core someday, but not likely
 
 -- Revision tags
 CREATE TABLE /*$wgDBprefix*/revtag (
-  -- Link to revtag_type.rtt_id
-  rt_type int not null,
+  rt_type varbinary(60) not null,
 
   -- Link to page.page_id
   rt_page int not null,

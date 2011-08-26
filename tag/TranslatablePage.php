@@ -425,7 +425,6 @@ class TranslatablePage {
 	protected function addTag( $tag, $revision, $value = null ) {
 		$dbw = wfGetDB( DB_MASTER );
 
-		$id = self::getTagId( $tag );
 		$aid = $this->getTitle()->getArticleId();
 
 		if ( is_object( $revision ) ) {
@@ -434,7 +433,7 @@ class TranslatablePage {
 
 		$conds = array(
 			'rt_page' => $aid,
-			'rt_type' => $id,
+			'rt_type' => RevTag::getType( $tag ),
 			'rt_revision' => $revision
 		);
 		$dbw->delete( 'revtag', $conds, __METHOD__ );
@@ -478,8 +477,8 @@ class TranslatablePage {
 		$conds = array(
 			'rt_page' => $aid,
 			'rt_type' => array(
-				self::getTagId( 'tp:mark' ),
-				self::getTagId( 'tp:tag' ),
+				RevTag::getType( 'tp:mark' ),
+				RevTag::getType( 'tp:tag' ),
 			),
 		);
 
@@ -501,11 +500,10 @@ class TranslatablePage {
 		}
 
 		$db = wfGetDB( $dbt );
-		$id = self::getTagId( $tag );
 
 		$conds = array(
 			'rt_page' => $aid,
-			'rt_type' => $id,
+			'rt_type' => RevTag::getType( $tag ),
 		);
 
 		$options = array( 'ORDER BY' => 'rt_revision DESC' );
@@ -536,7 +534,7 @@ class TranslatablePage {
 		$fields = array( 'rt_revision', 'rt_value' );
 		$conds = array(
 			'rt_page' => $this->getTitle()->getArticleId(),
-			'rt_type' => self::getTagId( 'tp:mark' ),
+			'rt_type' => RevTag::getType( 'tp:mark' ),
 		);
 		$options = array( 'ORDER BY' => 'rt_revision DESC' );
 
@@ -663,50 +661,17 @@ class TranslatablePage {
 	}
 
 	public function getTransRev( $suffix ) {
-		$id = self::getTagId( 'tp:transver' );
 		$title = Title::makeTitle( NS_TRANSLATIONS, $suffix );
 
 		$db = wfGetDB( DB_SLAVE );
 		$fields = 'rt_value';
 		$conds = array(
 			'rt_page' => $title->getArticleId(),
-			'rt_type' => $id,
+			'rt_type' => RevTag::getType( 'tp:transver' ),
 		);
 		$options = array( 'ORDER BY' => 'rt_revision DESC' );
 
 		return $db->selectField( 'revtag', $fields, $conds, __METHOD__, $options );
-	}
-
-	protected static function getTagId( $tag ) {
-		$validTags = array( 'tp:mark', 'tp:tag', 'tp:transver' );
-		if ( !in_array( $tag, $validTags ) ) {
-			throw new MWException( "Invalid tag $tag requested" );
-		}
-
-		global $wgTranslateStaticTags;
-
-		if ( is_array( $wgTranslateStaticTags ) ) {
-			return $wgTranslateStaticTags[$tag];
-		}
-
-		// Simple static cache
-		static $tagcache = array();
-
-		if ( !count( $tagcache ) ) {
-			$db = wfGetDB( DB_SLAVE );
-			$res = $db->select(
-				'revtag_type', // Table
-				array( 'rtt_name', 'rtt_id' ),
-				array( 'rtt_name' => $validTags ),
-				__METHOD__
-			);
-
-			foreach ( $res as $r ) {
-				$tagcache[$r->rtt_name] = $r->rtt_id;
-			}
-		}
-
-		return $tagcache[$tag];
 	}
 
 	public static function isTranslationPage( Title $title ) {
@@ -769,7 +734,7 @@ class TranslatablePage {
 		$conds = array(
 			'rt_page = page_id',
 			'rt_revision = page_latest',
-			'rt_type' => array( self::getTagId( 'tp:mark' ), self::getTagId( 'tp:tag' ) ),
+			'rt_type' => array( RevTag::getType( 'tp:mark' ), RevTag::getType( 'tp:tag' ) ),
 		);
 		$options = array( 'GROUP BY' => 'rt_page' );
 

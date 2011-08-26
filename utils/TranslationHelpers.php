@@ -878,12 +878,9 @@ class TranslationHelpers {
 		}
 
 		$db = wfGetDB( DB_MASTER );
-		$id = $db->selectField( 'revtag_type', 'rtt_id',
-			array( 'rtt_name' => 'tp:transver' ), __METHOD__ );
-
 		$conds = array(
 			'rt_page' => $this->title->getArticleId(),
-			'rt_type' => $id,
+			'rt_type' => RevTag::getType( 'tp:transver' ),
 			'rt_revision' => $this->title->getLatestRevID(),
 		);
 

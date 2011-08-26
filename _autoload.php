@@ -112,6 +112,7 @@ $wgAutoloadClasses['TranslationMemoryUpdater'] = $dir . 'utils/TranslationMemory
 $wgAutoloadClasses['TranslateYaml'] = $dir . 'utils/TranslateYaml.php';
 
 $wgAutoloadClasses['TranslateBC'] = $dir . 'utils/CompatibilityCode.php';
+$wgAutoloadClasses['RevTag'] = $dir . 'utils/RevTag.php';
 
 $wgAutoloadClasses['MessageHandle'] = $dir . 'utils/MessageHandle.php';
 

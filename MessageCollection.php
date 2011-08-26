@@ -4,7 +4,7 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2007-2010, Niklas Laxström
+ * @copyright Copyright © 2007-2011, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -479,11 +479,6 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 		$dbr = wfGetDB( DB_SLAVE );
 
-		static $id = null;
-
-		if ( $id === null )
-			$id = $dbr->selectField( 'revtag_type', 'rtt_id', array( 'rtt_name' => 'fuzzy' ), __METHOD__ );
-
 		$tables = array( 'page', 'revtag' );
 		$fields = array( 'page_title', 'rt_type' );
 		$conds  = array(
@@ -493,7 +488,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$joins = array( 'revtag' =>
 			array(
 				'LEFT JOIN',
-				array( 'page_id=rt_page', 'page_latest=rt_revision', 'rt_type' => $id )
+				array( 'page_id=rt_page', 'page_latest=rt_revision', 'rt_type' => RevTag::getType( 'fuzzy' ) )
 			)
 		);
 

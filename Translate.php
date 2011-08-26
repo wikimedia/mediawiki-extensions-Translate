@@ -15,7 +15,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
 /**
  * Version number used in extension credits and in other placed where needed.
  */
-define( 'TRANSLATE_VERSION', '2011-08-23' );
+define( 'TRANSLATE_VERSION', '2011-08-26' );
 
 /**
  * Extension credits properties.
@@ -672,30 +672,13 @@ function efTranslateCheckPT() {
 		return true;
 	}
 
-	/** Add our tags if they are not registered yet
-	 *  tp:tag is called also the ready tag
-	 * @todo Remove useless complication that is revtag_type table.
-	 */
-	$tags = array( 'tp:mark', 'tp:tag', 'tp:transver', 'fuzzy' );
-
 	$dbw = wfGetDB( DB_MASTER );
-	if ( !$dbw->tableExists( 'revtag_type' ) ) {
+	if ( !$dbw->tableExists( 'revtag' ) ) {
 		$wgHooks['SiteNoticeAfter'][] = array( 'efTranslateCheckWarn', 'tpt-install' );
 		return false;
 	}
 
-	foreach ( $tags as $tag ) {
-		/// @todo: use insert ignore
-		$field = array( 'rtt_name' => $tag );
-		$ret = $dbw->selectField( 'revtag_type', 'rtt_name', $field, __METHOD__ );
-
-		if ( $ret !== $tag ) {
-			$dbw->insert( 'revtag_type', $field, __METHOD__ );
-		}
-	}
-
 	$wgMemc->set( $memcKey, $version );
-
 	return true;
 }
 

@@ -921,9 +921,9 @@ class MessageGroups {
 		if ( $wgEnablePageTranslation ) {
 			$dbr = wfGetDB( DB_SLAVE );
 
-			$tables = array( 'page', 'revtag', 'revtag_type' );
+			$tables = array( 'page', 'revtag' );
 			$vars   = array( 'page_id', 'page_namespace', 'page_title', );
-			$conds  = array( 'page_id=rt_page', 'rtt_id=rt_type', 'rtt_name' => 'tp:mark' );
+			$conds  = array( 'page_id=rt_page', 'rt_type' => RevTag::getType( 'tp:mark') );
 			$options = array( 'GROUP BY' => 'page_id' );
 			$res = $dbr->select( $tables, $vars, $conds, __METHOD__, $options );
 

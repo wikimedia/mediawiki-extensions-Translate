@@ -4,7 +4,7 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2008-2010, Niklas Laxström
+ * @copyright Copyright © 2008-2011, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -150,13 +150,9 @@ class PageTranslationHooks {
 
 		$dbw = wfGetDB( DB_MASTER );
 
-		// Can this be done in one query?
-		$id = $dbw->selectField( 'revtag_type', 'rtt_id',
-			array( 'rtt_name' => 'tp:transver' ), __METHOD__ );
-
 		$conds = array(
 			'rt_page' => $title->getArticleId(),
-			'rt_type' => $id,
+			'rt_type' => RevTag::getType( 'tp:transver' ),
 			'rt_revision' => $revision
 		);
 		$dbw->delete( 'revtag', $conds, __METHOD__ );
@@ -397,11 +393,11 @@ FOO;
 
 			$wgExtNewTables[] = array( 'translate_sections', "$dir/translate.sql" );
 			$wgExtNewFields[] = array( 'translate_sections', 'trs_order', "$dir/translate-add-trs_order.patch.sql" );
-			$wgExtNewTables[] = array( 'revtag_type', "$dir/revtags.sql" );
+			$wgExtNewTables[] = array( 'revtag', "$dir/revtags.sql" );
 		} else {
 			$updater->addExtensionUpdate( array( 'addTable', 'translate_sections', "$dir/translate.sql", true ) );
 			$updater->addExtensionUpdate( array( 'addField', 'translate_sections', 'trs_order', "$dir/translate-add-trs_order.patch.sql", true ) );
-			$updater->addExtensionUpdate( array( 'addTable', 'revtag_type', "$dir/revtags.sql", true ) );
+			$updater->addExtensionUpdate( array( 'addTable', 'revtag', "$dir/revtags.sql", true ) );
 		}
 		return true;
 	}
@@ -528,9 +524,7 @@ FOO;
 	}
 
 	public static function parserTestTables( &$tables ) {
-		$tables[] = 'revtag_type';
 		$tables[] = 'revtag';
-
 		return true;
 	}
 

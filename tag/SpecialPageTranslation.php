@@ -5,7 +5,7 @@
  * @file
  * @author Niklas Laxström
  * @author Siebrand Mazeland
- * @copyright Copyright © 2008-2010 Niklas Laxström, Siebrand Mazeland
+ * @copyright Copyright © 2008-2011 Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -138,16 +138,15 @@ class SpecialPageTranslation extends SpecialPage {
 
 	public function loadPagesFromDB() {
 		$dbr = wfGetDB( DB_SLAVE );
-		$tables = array( 'page', 'revtag_type', 'revtag' );
-		$vars = array( 'page_id', 'page_title', 'page_namespace', 'page_latest', 'MAX(rt_revision) as rt_revision', 'rtt_name' );
+		$tables = array( 'page', 'revtag' );
+		$vars = array( 'page_id', 'page_title', 'page_namespace', 'page_latest', 'MAX(rt_revision) as rt_revision', 'rt_type' );
 		$conds = array(
 			'page_id=rt_page',
-			'rt_type=rtt_id',
-			'rtt_name' => array( 'tp:mark', 'tp:tag' ),
+			'rt_type' => array( RevTag::getType( 'tp:mark' ), RevTag::getType( 'tp:tag' ) ),
 		);
 		$options = array(
 			'ORDER BY' => 'page_namespace, page_title',
-			'GROUP BY' => 'page_id, rtt_id',
+			'GROUP BY' => 'page_id, rt_type',
 		);
 		$res = $dbr->select( $tables, $vars, $conds, __METHOD__, $options );
 
@@ -172,7 +171,8 @@ class SpecialPageTranslation extends SpecialPage {
 				$pages[$r->page_id]['latest'] = intval( $title->getLatestRevID() );
 			}
 
-			$pages[$r->page_id][$r->rtt_name] = intval( $r->rt_revision );
+			$tag = RevTag::typeToTag( $r->rt_type );
+			$pages[$r->page_id][$tag] = intval( $r->rt_revision );
 		}
 
 		// Pages where mark <= tag
@@ -560,8 +560,6 @@ class SpecialPageTranslation extends SpecialPage {
 
 		$titleCond = $db->makeList( $titles, LIST_OR );
 
-		$id = $db->selectField( 'revtag_type', 'rtt_id', array( 'rtt_name' => 'fuzzy' ), __METHOD__ );
-
 		$fields = array( 'page_id', 'page_latest' );
 		$conds = array( 'page_namespace' => NS_TRANSLATIONS, $titleCond );
 		$res = $db->select( 'page', $fields, $conds, __METHOD__ );
@@ -571,7 +569,7 @@ class SpecialPageTranslation extends SpecialPage {
 		foreach ( $res as $r ) {
 			$inserts[] = array(
 				'rt_page' => $r->page_id,
-				'rt_type' => $id,
+				'rt_type' => RevTag::getType( 'fuzzy' ),
 				'rt_revision' => $r->page_latest,
 			);
 		}
