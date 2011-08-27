@@ -4160,6 +4160,17 @@ $messages['zh-hant'] = array(
 	'translate-fs-intro' => "歡迎來到 {{SITENAME}} 入門指導。
 你會被指導如何成為一名翻譯者。
 最後你將可以翻譯 {{SITENAME}} 裡所有計畫的''介面訊息''.",
+	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount.png|frame]]
+
+首先你必須註冊。
+
+您所有翻譯都會以用戶名記錄。
+參見右圖以了解如何註冊。
+
+如果你已經註冊了，請$1登入$2。
+當你完成註冊後，請回到此頁面。
+
+$3註冊$4',
 	'translate-fs-settings-text' => '現在你應該到選項頁面並且至少將介面語言設定成你希望翻譯成的語言。
 
 你的介面語言將會是預設的翻譯目標語言。
@@ -4213,5 +4224,9 @@ $messages['zh-hant'] = array(
 
 您也可以在[[Portal:$1|語言門戶]] 的[[Portal_talk:$1|talk 頁]]聯繫相同語言的翻譯人員在。
 請到[[Special:Preferences|偏好設定]]設定您的用戶界面和要翻譯的語言，以便wiki顯示和適合您的鏈接。',
+	'translate-fs-email-text' => '請到[[Special:Preferences|偏好設定]]留下並確認您的電郵地址。
+使其他譯者聯絡您，你亦可收取我們的每月電子報。
+
+如您不想收到月刊，可以到[[Special:Preferences|偏好設定]]頁面的{{int:prefs-personal}}標籤選擇停止接收。',
 );
 

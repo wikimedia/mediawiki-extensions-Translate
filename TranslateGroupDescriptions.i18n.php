@@ -1566,8 +1566,10 @@ $messages['lb'] = array(
 	'bw-desc-freecol' => "Ier Dir ufänkt FreeCol an Är Sprooch z'iwwersetzen, liest w.e.g. [[Translating:FreeCol]]. Freecol benotzt d'GPL-Lizenz.",
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], e Webforum deen a PHP geschriwwen ass.',
 	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]] ass eng webbaséierte Bug-Tracking-Software.',
+	'translate-group-desc-eol' => 'Message fir [[Translating:EOL|Encyclopedia of Life]]',
 	'translate-group-desc-ihris' => 'Message fir [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-manage' => 'Message fir [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], ee Modul vun [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-kiwix' => 'Message fir [[Translating:Kiwix|Kiwix]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'En Haapt-Plugin fir [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-branch' => 'Message fir eng stabil Versioun vu [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] ass e Managementinformatiounssystem fir Mikrofinanzinstitutiounen',
@@ -1584,9 +1586,7 @@ $messages['lb'] = array(
 	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]] ass eng web-baséiert Fro an Äntwert Software',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] ass ee Microblogging-Server',
 	'translate-group-desc-statusnet-plugin' => 'Dës Messagen sinn Deel vun engem Plugin fir [[Translating:StatusNet|StatusNet]]',
-	'bw-desc-voctrain' => '[[Translating:Voctrain|Voctrain]] ass en Trainingsprogramm fir Vokabelen den op OmegaWiki baséiert',
 	'bw-desc-wikiblame' => "[[Translating:WikiBlame|WikiBlame]] erlaabt et fir d'Auteure vun enger Säit op enger Wikimedia-Wiki séier ze fannen.",
-	'bw-desc-wikimediamobile' => '[[Translating:Wikimedia_mobile|Wikimedia mobile]] as de mobilen Interface fir Wikipedia',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] ass e Projet fir eng reng Textversioun vu Wikipedia offline op engem mobilen Apparat zur Verfügung ze stellen.',
 );
 
