@@ -292,7 +292,7 @@ class TranslateEditAddons {
 
 		$res = $dbr->selectField( $tables, $fields, $conds, __METHOD__ );
 
-		return $res === $id;
+		return $res === RevTag::getType( 'fuzzy' );
 	}
 
 
