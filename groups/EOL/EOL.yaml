@@ -44,11 +44,6 @@ FILES:
   sourcePattern: %GROUPROOT%/eol/config/locales/initial/%CODE%.yml
   targetPattern: eol/config/locales/initial/%CODE%.yml
 
-CHECKER:
-  class: RubyMessageChecker
-  checks:
-    - RubyVariablesCheck
-
 MANGLER:
   class: StringMatcher
   patterns:
