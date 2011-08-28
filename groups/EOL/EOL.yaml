@@ -16,9 +16,12 @@ TEMPLATE:
       zh-hant: zh-TW
 
   CHECKER:
-    class: MessageChecker
+    class: EOLMessageChecker
     checks:
-      - rubyVariableCheck
+      - EOLVariablesCheck
+
+  AUTOLOAD:
+    EOLMessageChecker: Checker.php
 
 ---
 BASIC:

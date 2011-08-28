@@ -37,13 +37,13 @@ FILES:
   sourcePattern: %GROUPROOT%/osm/config/locales/%CODE%.yml
   targetPattern: osm/config/locales/%CODE%.yml
 
-CHECKER:
-  class: RubyMessageChecker
-  checks:
-    - RubyVariablesCheck
+  CHECKER:
+    class: OSMMessageChecker
+    checks:
+      - OSMVariablesCheck
 
-AUTOLOAD:
-  RubyMessageChecker: Checker.php
+  AUTOLOAD:
+    OSMMessageChecker: Checker.php
 
 TAGS:
   optional:

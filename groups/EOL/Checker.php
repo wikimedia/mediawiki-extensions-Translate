@@ -1,6 +1,6 @@
 <?php
 /**
- * Implements MessageChecker for OSM.
+ * Implements MessageChecker for EOL.
  *
  * @file
  * @author Niklas Laxström
@@ -9,11 +9,11 @@
  */
 
 /**
- * Message checks for OSM
+ * Message checks for EOL
  *
  * @ingroup MessageCheckers
  */
-class OSMMessageChecker extends MessageChecker {
+class EOLMessageChecker extends MessageChecker {
 	/**
 	 * Checks for missing and unknown variables in translations.
 	 *
@@ -21,7 +21,7 @@ class OSMMessageChecker extends MessageChecker {
 	 * @param $code \string Language code of the translations.
 	 * @param $warnings \array Array where warnings are appended to.
 	 */
-	protected function OSMVariablesCheck( $messages, $code, &$warnings ) {
+	protected function EOLVariablesCheck( $messages, $code, &$warnings ) {
 		return parent::parameterCheck( $messages, $code, $warnings, '/%{[a-zA-Z_]+}/' );
 	}
 }
