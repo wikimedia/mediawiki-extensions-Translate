@@ -292,6 +292,8 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	protected function doStupidLinks() {
+		global $wgLang;
+
 		if ( $this->paging === null ) {
 			return '';
 		}
@@ -308,7 +310,7 @@ class SpecialTranslate extends SpecialPage {
 			$navigation = wfMsgExt(
 				'translate-page-showing-all',
 				array( 'parseinline' ),
-				$total
+				$wgLang->formatNum( $total )
 			);
 		} else {
 			$previous = wfMsg( 'translate-prev' );
