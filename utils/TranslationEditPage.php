@@ -80,13 +80,15 @@ class TranslationEditPage {
 		}
 
 		$translation = $helpers->getTranslation();
+		$targetLang = Language::factory( $helpers->getTargetLanguage() );
 		$textareaParams = array(
 			'name' => 'text',
 			'class' => 'mw-translate-edit-area',
 			'id' => $id,
 			/* Target language might differ from interface language. Set
 			 * a suitable default direction */
-			'dir' => Language::factory( $helpers->getTargetLanguage() )->getDir(),
+			'lang' => $targetLang->getCode(),
+			'dir' => $targetLang->getDir(),
 		);
 		$textarea = Html::element( 'textarea', $textareaParams, $translation );
 
