@@ -333,9 +333,10 @@ class SpecialTranslate extends SpecialPage {
 			$showing = wfMsgExt(
 				'translate-page-showing',
 				array( 'parseinline' ),
-				$start,
-				$stop,
-				$total );
+				$wgLang->formatNum( $start ),
+				$wgLang->formatNum( $stop ),
+				$wgLang->formatNum( $total ),
+			);
 
 			$navigation = wfMsgExt(
 				'translate-page-paging-links',
