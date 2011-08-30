@@ -15,7 +15,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
 /**
  * Version number used in extension credits and in other placed where needed.
  */
-define( 'TRANSLATE_VERSION', '2011-08-26' );
+define( 'TRANSLATE_VERSION', '2011-08-30' );
 
 /**
  * Extension credits properties.
@@ -250,7 +250,7 @@ $wgTranslateTranslationServices['Apertium'] = array(
 	'url' => 'http://api.apertium.org/json/translate',
 	'pairs' => 'http://api.apertium.org/json/listPairs',
 	'key' => null,
-	'timeout-sync' => 2,
+	'timeout-sync' => 6,
 	'timeout-async' => 6,
 	'type' => 'apertium',
 	'codemap' => array( 'no' => 'nb' ),
