@@ -228,7 +228,7 @@ class TranslateUtils {
 	 */
 	public static function messageKeyToGroup( $namespace, $key ) {
 		$groups = self::messageKeyToGroups( $namespace, $key );
-		return count( $group ) ? $group[0] : null;
+		return count( $groups ) ? $groups[0] : null;
 	}
 
 	/**
