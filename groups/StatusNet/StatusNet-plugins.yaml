@@ -58,6 +58,20 @@ MANGLER:
   prefix: accountmanager-
 ---
 BASIC:
+  id: out-statusnet-plugin-activity
+  label: StatusNet - Activity
+  display: out/statusnet/plugin/activity
+  codeBrowser: http://gitorious.org/statusnet/mainline/blobs/1.0.x/plugins/Activity/%FILE%#line%LINE%
+
+FILES:
+  sourcePattern: %GROUPROOT%/statusnet/plugins/Activity/locale/%CODE%/LC_MESSAGES/Activity.po
+  definitionFile: %GROUPROOT%/statusnet/plugins/Activity/locale/Activity.pot
+  targetPattern: statusnet/plugins/Activity/locale/%CODE%/LC_MESSAGES/Activity.po
+
+MANGLER:
+  prefix: activity-
+---
+BASIC:
   id: out-statusnet-plugin-adsense
   label: StatusNet - Adsense
   display: out/statusnet/plugin/adsense
