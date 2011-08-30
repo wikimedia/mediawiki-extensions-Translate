@@ -161,7 +161,7 @@ class TranslateUtils {
 
 		foreach ( $items as $item ) {
 			$item = strval( $item );
-			$options[] = Xml::option( $item, $item, $item == $selected );
+			$options[] = Xml::option( $item, $item, $item === $selected );
 		}
 
 		return self::selector( $name, implode( "\n", $options ) );
@@ -243,21 +243,8 @@ class TranslateUtils {
 	 * @return \types{\string,\null} Group id or null.
 	 */
 	public static function messageKeyToGroup( $namespace, $key ) {
-		if ( self::$mi === null ) {
-			self::messageIndex();
-		}
-
-		// Performance hotspot.
-		# $normkey = self::normaliseKey( $namespace, $key );
-		$normkey = str_replace( " ", "_", strtolower( "$namespace:$key" ) );
-
-		$group = isset( self::$mi[$normkey] ) ? self::$mi[$normkey] : null;
-
-		if ( is_array( $group ) ) {
-			$group = $group[0];
-		}
-
-		return $group;
+		$groups = self::messageKeyToGroups( $namespace, $key );
+		return count( $group ) ? $group[0] : null;
 	}
 
 	/**
@@ -271,9 +258,7 @@ class TranslateUtils {
 			self::messageIndex();
 		}
 
-		// Performance hotspot.
-		# $normkey = self::normaliseKey( $namespace, $key );
-		$normkey = str_replace( " ", "_", strtolower( "$namespace:$key" ) );
+		$normkey = self::normaliseKey( $namespace, $key );
 
 		if ( isset( self::$mi[$normkey] ) ) {
 			return (array) self::$mi[$normkey];
@@ -289,7 +274,7 @@ class TranslateUtils {
 	 * @return \string
 	 */
 	public static function normaliseKey( $namespace, $key ) {
-		return str_replace( " ", "_", strtolower( "$namespace:$key" ) );
+		return strtr( strtolower( "$namespace:$key" ), " ", "_"  );
 	}
 
 
