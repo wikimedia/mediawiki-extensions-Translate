@@ -357,9 +357,7 @@ class ExportMessagesTask extends ViewMessagesTask {
 			$data = $writer->webExport( $this->collection );
 		}
 
-		return Xml::openElement( 'textarea', array( 'id' => 'wpTextbox1', 'rows' => '50' ) ) .
-			$data .
-			"</textarea>";
+		return Html::element( 'textarea', array( 'id' => 'wpTextbox1', 'rows' => '50' ), $text );
 	}
 }
 
