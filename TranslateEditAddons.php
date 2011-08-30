@@ -123,12 +123,12 @@ class TranslateEditAddons {
 	 * Hook: AlternateEdit
 	 */
 	public static function intro( $editpage ) {
-		$object->suppressIntro = true;
+		$object->editpage = true;
 
 		$msg = wfMsgForContent( 'translate-edit-tag-warning' );
 		if ( $msg !== '' && $msg !== '-' && TranslatablePage::isSourcePage( $editpage->mTitle ) ) {
 			global $wgOut;
-			$object->editFormTextTop .= $wgOut->parse( $msg );
+			$editpage->editFormTextTop .= $wgOut->parse( $msg );
 		}
 		return true;
 	}
