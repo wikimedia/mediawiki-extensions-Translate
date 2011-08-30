@@ -184,27 +184,11 @@ class TranslateUtils {
 			$languages = Language::getLanguageNames( false );
 		}
 
-		$parts = explode( '-', $code );
-		$suffix = '';
-
-		$parts1 = isset( $parts[1] ) ? $parts[1] : '';
-
-		/// @todo Add missing scripts that are in use (deva, arab).
-		switch ( $parts1 ) {
-			case 'latn':
-				/// @todo i18n.
-				$suffix = ' (Latin)';
-				unset( $parts[1] );
-				break;
-			case 'cyrl':
-				/// @todo i18n.
-				$suffix = ' (Cyrillic)';
-				unset( $parts[1] );
-				break;
+		if ( isset( $languages[$code] ) ) {
+			return $languages[$code];
+		} else {
+			return $code;
 		}
-		$code = implode( '-', $parts );
-
-		return isset( $languages[$code] ) ? $languages[$code] . $suffix : false;
 	}
 
 	/**
