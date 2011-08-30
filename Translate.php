@@ -538,13 +538,6 @@ function efTranslateInit() {
 	// Hook for database schema.
 	$wgHooks['LoadExtensionSchemaUpdates'][] = 'PageTranslationHooks::schemaUpdates';
 
-	// Do not activate hooks if not setup properly
-	global $wgEnablePageTranslation;
-	if ( !efTranslateCheckPT() ) {
-		$wgEnablePageTranslation = false;
-		return true;
-	}
-
 	// Fuzzy tags for speed.
 	$wgHooks['ArticleSaveComplete'][] = 'TranslateEditAddons::onSave';
 
@@ -649,52 +642,6 @@ function efTranslateInit() {
 		// Disable action=delete
 		$wgHooks['ArticleConfirmDelete'][] = 'PageTranslationHooks::disableDelete';
 	}
-}
-
-/**
- * Checks if page translation was set up properly.
- * @ingroup PageTranslation
- * @private
- */
-function efTranslateCheckPT() {
-	global $wgHooks, $wgMemc, $wgCommandLineMode;
-
-	# Short circuit tests on cli, useless db trip and no reporting.
-	if ( $wgCommandLineMode ) {
-		return true;
-	}
-
-	$version = "3"; # Must be a string
-	$memcKey = wfMemcKey( 'pt' );
-	$ok = $wgMemc->get( $memcKey );
-
-	if ( $ok === $version ) {
-		return true;
-	}
-
-	$dbw = wfGetDB( DB_MASTER );
-	if ( !$dbw->tableExists( 'revtag' ) ) {
-		$wgHooks['SiteNoticeAfter'][] = array( 'efTranslateCheckWarn', 'tpt-install' );
-		return false;
-	}
-
-	$wgMemc->set( $memcKey, $version );
-	return true;
-}
-
-/**
- * Replaces the sitenotice with a warning that the extension is not
- * set up properly. Also disables caching to avoid the notices getting
- * stuck.
- * @param $msg \string Message key
- * @param $sitenotice \string
- * @return \bool true
- */
-function efTranslateCheckWarn( $msg, &$sitenotice ) {
-	global $wgOut;
-	$sitenotice = wfMsg( $msg );
-	$wgOut->enableClientCache( false );
-	return true;
 }
 
 /**
