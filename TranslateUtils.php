@@ -119,6 +119,9 @@ class TranslateUtils {
 		$cutoff = $dbr->timestamp( $cutoff_unixtime );
 
 		$namespaces = $dbr->makeList( $wgTranslateMessageNamespaces );
+		if ( $ns ) {
+			$namespaces = $dbr->makeList( $ns );
+		}
 
 		$fields = 'rc_title, rc_timestamp, rc_user_text, rc_namespace';
 
@@ -126,18 +129,11 @@ class TranslateUtils {
 		$sql = "SELECT $fields, substring_index(rc_title, '/', -1) as lang FROM $recentchanges " .
 		"WHERE rc_timestamp >= '{$cutoff}' " .
 		( $bots ? '' : 'AND rc_bot = 0 ' ) .
-		( $ns ? 'AND rc_namespace IN (' . implode( ',', $ns ) . ') ' : "AND rc_namespace in ($namespaces) " ) .
+		"AND rc_namespace in ($namespaces) " .
 		"ORDER BY lang ASC, rc_timestamp DESC";
 
 		$res = $dbr->query( $sql, __METHOD__ );
-
-		// Fetch results, prepare a batch link existence check query.
-		$rows = array();
-		foreach( $res as $row ) {
-			$rows[] = $row;
-		}
-		$dbr->freeResult( $res );
-
+		$rows = iterator_to_array( $res ); 
 		return $rows;
 	}
 
