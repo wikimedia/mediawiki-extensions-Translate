@@ -902,6 +902,8 @@ New User Notification
 file = NewUserNotif/NewUserNotif.i18n.php
 descmsg = newusernotif-desc
 
+New Users List
+
 Notificator
 aliasfile = Notificator/Notificator.alias.php
 
