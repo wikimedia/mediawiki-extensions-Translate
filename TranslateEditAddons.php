@@ -108,8 +108,9 @@ class TranslateEditAddons {
 	}
 
 	protected static function addTab( $skin, &$tabs, $name, $data, &$index ) {
+		// SkinChihuahua is an exception for userbase.kde.org.
 		if ( $skin instanceof SkinVector || $skin instanceof SkinChihuahua ) {
-			$data['class'] = false; // Vector needs it for some reason
+			$data['class'] = false; // These skins need it for some reason
 			$tabs['namespaces'][$name] = $data;
 		} else {
 			array_splice( $tabs, $index++, 0, array( $name => $data ) );
