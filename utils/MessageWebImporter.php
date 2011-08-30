@@ -28,7 +28,7 @@ class MessageWebImporter {
 	/**
 	 * Maximum processing time in seconds.
 	 */
-	protected $processingTime = 60;
+	protected $processingTime = 43;
 
 	public function __construct( Title $title = null, $group = null, $code = 'en' ) {
 		$this->setTitle( $title );
