@@ -955,8 +955,8 @@ Page By
 
 Page Object Model
 
-# Temporarly disabled due to FIXME r94177
-# Page Schemas
+Page Schemas
+descmsg = ps-desc
 
 Paged Tiff Handler
 descmsg = tiff-desc
