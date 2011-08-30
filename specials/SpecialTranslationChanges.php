@@ -16,7 +16,6 @@
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class SpecialTranslationChanges extends SpecialPage {
-	const MSG = 'translationchanges-';
 
 	function __construct() {
 		parent::__construct( 'TranslationChanges' );
@@ -48,7 +47,7 @@ class SpecialTranslationChanges extends SpecialPage {
 		global $wgScript;
 
 		$limit = self::timeLimitSelector( $this->hours );
-		$button = Xml::submitButton( wfMsg( TranslateUtils::MSG . 'submit' ) );
+		$button = Xml::submitButton( wfMsg( 'translationchanges-submit' ) );
 
 		$form = Xml::tags( 'form',
 			array(
@@ -147,7 +146,7 @@ class SpecialTranslationChanges extends SpecialPage {
 
 				$output .= Xml::element( 'h3', null, $label );
 
-				$exportLabel = wfMsgHtml( self::MSG . 'export' );
+				$exportLabel = wfMsgHtml( 'translationchanges-export' );
 
 				foreach ( $languages as $language => $rows ) {
 					$index++;
@@ -193,7 +192,7 @@ class SpecialTranslationChanges extends SpecialPage {
 					foreach ( $rows as $row ) {
 						$date = $wgLang->timeAndDate( $row->rc_timestamp, /* adj */ true, /* format */ true );
 						$msg = wfMsgExt(
-							self::MSG . 'change',
+							'translationchanges-change',
 							array( 'parsemag', 'escape' ),
 							$date,
 							wfEscapeWikiText( $row->rc_title ),

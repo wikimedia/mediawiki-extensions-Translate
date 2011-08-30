@@ -12,8 +12,6 @@
  * Essentially random collection of helper functions, similar to GlobalFunctions.php.
  */
 class TranslateUtils {
-	/// @todo Get rid of this constant.
-	const MSG = 'translate-';
 
 	/**
 	 * Does quick normalisation of message name so that in can be looked from the

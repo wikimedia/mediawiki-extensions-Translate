@@ -129,6 +129,7 @@ Changes are not saved until you click save button below.',
 	'translationchanges'        => 'Translation changes',
 	'translationchanges-export' => 'export',
 	'translationchanges-change' => '$1: $2 by $3',
+	'translationchanges-submit' => 'Fetch',
 
 	'translate-checks-parameters'         => 'Following {{PLURAL:$2|parameter is|parameters are}} not used:
 <strong><nowiki>$1</nowiki></strong>',
