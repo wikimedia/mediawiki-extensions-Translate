@@ -286,7 +286,7 @@ class TranslateEditAddons {
 		$dbr = wfGetDB( DB_SLAVE );
 
 		$tables = array( 'page', 'revtag' );
-		$fields = 'rt_type';
+		$field = 'rt_type';
 		$conds  = array(
 			'page_namespace' => $title->getNamespace(),
 			'page_title' => $title->getDBkey(),
