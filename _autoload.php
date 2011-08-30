@@ -22,6 +22,8 @@ $wgAutoloadClasses['TaskOptions'] = $dir . 'TranslateTasks.php';
 $wgAutoloadClasses['TranslateUtils'] = $dir . 'TranslateUtils.php';
 $wgAutoloadClasses['HTMLSelector'] = $dir . 'TranslateUtils.php';
 
+$wgAutoloadClasses['TranslateHooks'] = $dir . 'TranslateHooks.php';
+
 $wgAutoloadClasses['MessageChecker'] = $dir . 'MessageChecks.php';
 
 $wgAutoloadClasses['MessageGroup'] = $dir . 'Groups.php';
