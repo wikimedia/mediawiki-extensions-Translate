@@ -19,6 +19,7 @@ class TranslateEditAddons {
 
 	/**
 	 * Add some tabs for navigation for users who do not use Ajax interface.
+	 * Hooks: SkinTemplateNavigation, SkinTemplateTabs
 	 * @param $skin Skin
 	 * @param $tabs Array
 	 */
@@ -95,7 +96,7 @@ class TranslateEditAddons {
 		);
 		self::addTab( $skin, $tabs, 'list', $data, $tabindex );
 
-		if ( $next !== null && $next !== true ) {
+		if ( $next !== null ) {
 			$linktitle = Title::makeTitleSafe( $ns, "$next/$code" );
 			$data = array(
 				'text' => wfMsg( 'translate-edit-tab-next' ),
@@ -119,12 +120,13 @@ class TranslateEditAddons {
 
 	/**
 	 * Keep the usual diiba daaba hidden from translators.
+	 * Hook: AlternateEdit
 	 */
-	static function intro( $object ) {
+	public static function intro( $editpage ) {
 		$object->suppressIntro = true;
 
 		$msg = wfMsgForContent( 'translate-edit-tag-warning' );
-		if ( $msg !== '' && $msg !== '-' && TranslatablePage::isSourcePage( $object->mTitle ) ) {
+		if ( $msg !== '' && $msg !== '-' && TranslatablePage::isSourcePage( $editpage->mTitle ) ) {
 			global $wgOut;
 			$object->editFormTextTop .= $wgOut->parse( $msg );
 		}
@@ -133,6 +135,7 @@ class TranslateEditAddons {
 
 	/**
 	 * Adds the translation aids and navigation to the normal edit page.
+	 * Hook: EditPage::showEditForm:initial
 	 */
 	static function addTools( $object ) {
 		if ( !self::isMessageNamespace( $object->mTitle ) ) {
@@ -147,6 +150,7 @@ class TranslateEditAddons {
 	/**
 	 * Replace the normal save button with one that says if you are editing
 	 * message documentation to try to avoid accidents.
+	 * Hook: EditPageBeforeEditButtons
 	 */
 	static function buttonHack( $editpage, &$buttons, $tabindex ) {
 		global $wgTranslateDocumentationLanguageCode, $wgLang;
@@ -199,8 +203,8 @@ class TranslateEditAddons {
 	}
 
 	/**
-	* @return Array of the message and the language
-	*/
+	 * @return Array of the message and the language
+	 */
 	public static function figureMessage( Title $title ) {
 		$text = $title->getDBkey();
 		$pos = strrpos( $text, '/' );
@@ -273,8 +277,8 @@ class TranslateEditAddons {
 		return strpos( $text, TRANSLATE_FUZZY ) !== false;
 	}
 
-	/** Check if a title is marked as fuzzy.
-	 *
+	/**
+	 * Check if a title is marked as fuzzy.
 	 * @param $title Title
 	 * @return \bool If title is marked fuzzy.
 	 */
@@ -282,7 +286,7 @@ class TranslateEditAddons {
 		$dbr = wfGetDB( DB_SLAVE );
 
 		$tables = array( 'page', 'revtag' );
-		$fields = array( 'rt_type' );
+		$fields = 'rt_type';
 		$conds  = array(
 			'page_namespace' => $title->getNamespace(),
 			'page_title' => $title->getDBkey(),
@@ -291,14 +295,14 @@ class TranslateEditAddons {
 			'page_latest=rt_revision'
 		);
 
-		$res = $dbr->selectField( $tables, $fields, $conds, __METHOD__ );
+		$res = $dbr->selectField( $tables, $field, $conds, __METHOD__ );
 
-		return $res === RevTag::getType( 'fuzzy' );
+		return $res !== false;
 	}
 
 
-	/** Check if a title is in a message namespace.
-	 *
+	/**
+	 * Check if a title is in a message namespace.
 	 * @param $title Title
 	 * @return \bool If title is in a message namespace.
 	 */
@@ -311,10 +315,8 @@ class TranslateEditAddons {
 	}
 
 	/**
-	 * @static
-	 * @param $skin Skin
-	 * @param $tabs
-	 * @return bool
+	 * Removes protection tab for message namespaces - not useful.
+	 * Hook: SkinTemplateTabs
 	 */
 	public static function tabs( $skin, &$tabs ) {
 		if ( !self::isMessageNamespace( $skin->getTitle() ) ) {
@@ -326,6 +328,7 @@ class TranslateEditAddons {
 		return true;
 	}
 
+	/// Hook: EditPage::showEditForm:fields
 	public static function keepFields( $edit, $out ) {
 		global $wgRequest;
 
@@ -338,6 +341,7 @@ class TranslateEditAddons {
 		return true;
 	}
 
+	/// Hook: ArticleSaveComplete
 	public static function onSave( $article, $user, $text, $summary,
 			$minor, $_, $_, $flags, $revision
 	) {
@@ -444,6 +448,7 @@ class TranslateEditAddons {
 		return $text;
 	}
 
+	/// Hook: LanguageGetTranslatedLanguageNames
 	public static function translateMessageDocumentationLanguage( &$names, $code ) {
 		global $wgTranslateDocumentationLanguageCode;
 		if ( $wgTranslateDocumentationLanguageCode ) {
@@ -453,6 +458,7 @@ class TranslateEditAddons {
 		return true;
 	}
 
+	/// Hook: ArticlePrepareTextForEdit
 	public static function disablePreSaveTransform( $article, $popts ) {
 		global $wgTranslateDocumentationLanguageCode;
 		$keycodegroup = self::getKeyCodeGroup( $article->getTitle() );
@@ -463,6 +469,7 @@ class TranslateEditAddons {
 		return true;
 	}
 
+	/// Hook: ArticleContentOnDiff
 	public static function displayOnDiff( $de, $out ) {
 		$title = $de->getTitle();
 		$handle = new MessageHandle( $title );
@@ -488,6 +495,7 @@ class TranslateEditAddons {
 		return false;
 	}
 
+	/// Hook: SpecialSearchProfiles
 	public static function searchProfile( &$profiles ) {
 		global $wgTranslateMessageNamespaces;
 		$insert = array();
@@ -501,6 +509,7 @@ class TranslateEditAddons {
 		return true;
 	}
 
+	/// Hook: SpecialSearchProfileForm
 	public static function searchProfileForm( $search, &$form, $profile, $term, $opts ) {
 		if ( $profile !== 'translation' ) {
 			return true;
@@ -547,6 +556,7 @@ class TranslateEditAddons {
 		return false;
 	}
 
+	/// Hook: SpecialSearchSetupEngine
 	public static function searchProfileSetupEngine( $search, $profile, $engine ) {
 		if ( $profile !== 'translation' ) {
 			return true;
