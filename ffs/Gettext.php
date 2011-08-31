@@ -313,6 +313,8 @@ class GettextFFS extends SimpleFFS {
 
 	protected function doGettextHeader( MessageCollection $collection, $template, &$pluralCount ) {
 		global $wgSitename, $wgServer;
+
+		$server = wfExpandUrl( $wgServer, PROTO_CANONICAL );
 		$code = $collection->code;
 		$name = TranslateUtils::getLanguageName( $code );
 		$native = TranslateUtils::getLanguageName( $code, true );
@@ -334,7 +336,7 @@ PHP;
 		$output = trim( $output ) . "\n";
 
 		// @todo twn specific
-		$portal = Title::makeTitle( NS_PORTAL, $code )->getFullUrl();
+		$portal = Title::makeTitle( NS_PORTAL, $code )->getCanonicalUrl();
 
 		$specs = isset( $template['HEADERS'] ) ? $template['HEADERS'] : array();
 
@@ -351,7 +353,7 @@ PHP;
 		$specs['Content-Type'] = 'text/plain; charset=UTF-8';
 		$specs['Content-Transfer-Encoding'] = '8bit';
 		$specs['X-Generator'] = $this->getGenerator();
-		$specs['X-Translation-Project'] = "$wgSitename at $wgServer";
+		$specs['X-Translation-Project'] = "$wgSitename at $server";
 		$specs['X-Language-Code'] = $code;
 		if ( $this->offlineMode ) {
 			$specs['X-Message-Group'] = $this->group->getId();
