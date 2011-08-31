@@ -6597,6 +6597,7 @@ $1',
  * @author ChrisPtDe
  * @author Crochet.david
  * @author Dereckson
+ * @author Gomoko
  * @author Grondin
  * @author Guillom
  * @author IAlex
@@ -6706,6 +6707,7 @@ Les modifications ne sont pas enregistrées tant que vous n’avez pas cliqué s
 	'translationchanges' => 'Traductions modifiées',
 	'translationchanges-export' => 'exporter',
 	'translationchanges-change' => '$1 : $2 par $3',
+	'translationchanges-submit' => 'Rapporter',
 	'translate-checks-parameters' => '{{PLURAL:$2|Le paramètre suivant n’est pas utilisé|Les paramètres suivants ne sont pas utilisés}} :
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Le paramètre suivant est inconnu|Les paramètres suivants sont inconnus}} :
@@ -7414,7 +7416,7 @@ Se o grupo está composto por un subconxunto ou un superconxunto de mensaxes dou
 	'translate-page-language' => 'Lingua',
 	'translate-page-limit' => 'Límite',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|mensaxe|mensaxes}} por páxina',
-	'translate-submit' => 'Amosar',
+	'translate-submit' => 'Mostrar',
 	'translate-page-navigation-legend' => 'Navegación',
 	'translate-page-showing' => 'Amosando as mensaxes da $1 á $2, dun total de $3.',
 	'translate-page-showing-all' => 'Amosando {{PLURAL:$1|unha mensaxe|$1 mensaxes}}.',
@@ -7453,7 +7455,7 @@ Se na súa lingua non resulta posíbel formar unha expresión válida sen mudar 
 Ten que estar no grupo de tradutores para gardar os cambios.
 Os cambios non se gardan ata que prema no botón "Gardar" de embaixo.',
 	'translate-magic-module' => 'Módulo:',
-	'translate-magic-submit' => 'Amosar',
+	'translate-magic-submit' => 'Mostrar',
 	'translate-magic-cm-export' => 'Exportar',
 	'translate-magic-nothing-to-export' => 'Non hai nada que exportar.',
 	'translate-magic-cm-to-be' => 'Será',
@@ -7472,6 +7474,7 @@ Os cambios non se gardan ata que prema no botón "Gardar" de embaixo.',
 	'translationchanges' => 'Modificacións nas traducións',
 	'translationchanges-export' => 'exportar',
 	'translationchanges-change' => '$1: $2 por $3',
+	'translationchanges-submit' => 'Mostrar',
 	'translate-checks-parameters' => '{{PLURAL:$2|Non se emprega o seguinte parámetro|Non se empregan os seguintes parámetros}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Descoñécese o seguinte parámetro|Descoñécense os seguintes parámetros}}:
@@ -12981,6 +12984,7 @@ $messages['mk'] = array(
 	'translationchanges' => 'Промени на превод',
 	'translationchanges-export' => 'извоз',
 	'translationchanges-change' => '$1: $2 од $3',
+	'translationchanges-submit' => 'Преземи',
 	'translate-checks-parameters' => '{{PLURAL:$2|Следниов параметар не се користи|Следниве параметри се користат}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Следниов параметар е непознат|Следниве параметри се непознати}}:
@@ -14422,6 +14426,7 @@ Wijzigingen worden niet bewaard totdat u op "Pagina opslaan" hebt geklikt.',
 	'translationchanges' => 'Recente vertalingen',
 	'translationchanges-export' => 'exporteren',
 	'translationchanges-change' => '$1: $2 door $3',
+	'translationchanges-submit' => 'Ophalen',
 	'translate-checks-parameters' => 'De volgende {{PLURAL:$2|parameter wordt|parameters worden}} niet gebruikt:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => 'De volgende {{PLURAL:$2|parameter is|parameters zijn}} onbekend:
@@ -21622,6 +21627,7 @@ Các thay đổi sẽ không được lưu lại đến khi nào bạn nhấn v�
 	'translationchanges' => 'Các thay đổi bản dịch',
 	'translationchanges-export' => 'xuất',
 	'translationchanges-change' => '$1: $2 bởi $3',
+	'translationchanges-submit' => 'Xem',
 	'translate-checks-parameters' => '{{PLURAL:$2|Tham số|Những tham số}} sau không sử dụng:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2||Các}} tham số sau không rõ:
