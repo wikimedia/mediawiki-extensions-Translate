@@ -1200,16 +1200,6 @@ class TranslationHelpers {
 			'ext.translate.quickedit',
 		) );
 
-		if ( !method_exists( $out, 'addModules' ) ) {
-			// Core jQuery
-			$out->includeJQuery();
-			$out->addScriptFile( TranslateUtils::assetPath( 'js/jquery-ui-1.7.2.custom.min.js' ) );
-
-			// Additional jQuery stuff
-			$out->addScriptFile( TranslateUtils::assetPath( 'js/jquery.form.js' ) );
-			$out->addExtensionStyle( TranslateUtils::assetPath( 'js/base/custom-theme/jquery-ui-1.7.2.custom.css' ) );
-		}
-
 		// Might be needed, but ajax doesn't load it
 		// Globals :(
 		$diff = new DifferenceEngine;
