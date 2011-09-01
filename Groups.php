@@ -30,16 +30,19 @@ interface MessageGroup {
 	 * @return string
 	 */
 	public function getId();
+
 	/**
 	 * Returns the human readable label (as plain text).
 	 * @return string
 	 */
 	public function getLabel();
+
 	/**
 	 * Returns a longer description about the group. Description can use wiki text.
 	 * @return string
 	 */
 	public function getDescription();
+
 	/**
 	 * Returns the namespace where messages are placed.
 	 * @return int
@@ -52,6 +55,7 @@ interface MessageGroup {
 	 * @return bool
 	 */
 	public function isMeta();
+
 	/**
 	 * If this function returns false, the message group is ignored and treated
 	 * like it would not be configured at all. Useful for graceful degradation.
@@ -66,12 +70,14 @@ interface MessageGroup {
 	 * @return FFS or null
 	 */
 	public function getFFS();
+
 	/**
 	 * Returns a message checker object or null.
 	 * @todo Make an interface for message checkers.
 	 * @return MessageChecker or null
 	 */
 	public function getChecker();
+
 	/**
 	 * Return a message mangler or null.
 	 * @todo Make an interface for message manglers
@@ -85,6 +91,7 @@ interface MessageGroup {
 	 * @return MessageCollection
 	 */
 	public function initCollection( $code );
+
 	/**
 	 * Returns a list of messages in a given language code. For some groups
 	 * that list may be identical with the translation in the wiki. For other
@@ -93,12 +100,14 @@ interface MessageGroup {
 	 * @return array
 	 */
 	public function load( $code );
+
 	/**
 	 * Returns message tags. If type is given, only messages keys with that
 	 * tag is returnted. Otherwise an array[tag => keys] is returnted.
 	 * @return array
 	 */
 	public function getTags( $type = null );
+
 	/**
 	 * Returns the definition or translation for given message key in given
 	 * language code.
@@ -145,6 +154,7 @@ abstract class MessageGroupBase implements MessageGroup {
 
 	public function getSourceLanguage() {
 		$conf = $this->getFromConf( 'BASIC', 'sourcelanguage' );
+
 		return $conf !== null ? $conf : 'en';
 	}
 
@@ -263,9 +273,11 @@ abstract class MessageGroupBase implements MessageGroup {
 	public function getTags( $type = null ) {
 		if ( $type === null ) {
 			$taglist = array();
+
 			foreach ( $this->getRawTags() as $type => $patterns ) {
 				$taglist[$type] = $this->parseTags( $patterns );
 			}
+
 			return $taglist;
 		} else {
 			return $this->parseTags( $this->getRawTags( $type ) );
@@ -371,7 +383,6 @@ abstract class MessageGroupBase implements MessageGroup {
  * custom type of message groups.
  */
 class FileBasedMessageGroup extends MessageGroupBase {
-
 	/**
 	 * Constructs a FileBasedMessageGroup from any normal message group.
 	 * Useful for doing special Gettext exports from any group.
@@ -391,6 +402,7 @@ class FileBasedMessageGroup extends MessageGroupBase {
 				'targetPattern' => '',
 			),
 		);
+
 		return MessageGroupBase::factory( $conf );
 	}
 
@@ -401,18 +413,21 @@ class FileBasedMessageGroup extends MessageGroupBase {
 	public function load( $code ) {
 		$ffs = $this->getFFS();
 		$data = $ffs->read( $code );
+
 		return $data ? $data['MESSAGES'] : array();
 	}
 
 	public function getSourceFilePath( $code ) {
 		if ( $this->isSourceLanguage( $code ) ) {
 			$pattern = $this->getFromConf( 'FILES', 'definitionFile' );
+
 			if ( $pattern !== null ) {
 				return $this->replaceVariables( $pattern, $code );
 			}
 		}
 
 		$pattern = $this->getFromConf( 'FILES', 'sourcePattern' );
+
 		if ( $pattern === null ) {
 			throw new MWException( 'No source file pattern defined.' );
 		}
@@ -470,7 +485,6 @@ class FileBasedMessageGroup extends MessageGroupBase {
 	public function isValidLanguage( $code ) {
 		return $this->mapCode( $code ) !== 'x-invalidLanguageCode';
 	}
-
 }
 
 /**
@@ -527,7 +541,6 @@ class MediaWikiMessageGroup extends FileBasedMessageGroup {
  *  - Only groups of same type and in the same namespace.
  */
 class AggregateMessageGroup extends MessageGroupBase {
-
 	public function exists() {
 		// Group exists if there are any subgroups.
 		$exists = (bool) $this->conf['GROUPS'];
@@ -553,6 +566,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 		if ( !isset( $this->mangler ) ) {
 			$this->mangler = StringMatcher::emptyMatcher();
 		}
+
 		return $this->mangler;
 	}
 
@@ -582,8 +596,10 @@ class AggregateMessageGroup extends MessageGroupBase {
 
 				$groups[$id] = $group;
 			}
+
 			$this->groups = $groups;
 		}
+
 		return $this->groups;
 	}
 
@@ -596,6 +612,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 	 */
 	protected function expandWildcards( $ids ) {
 		$hasWild = false;
+
 		foreach ( $ids as $id ) {
 			if ( strpos( $id, '*' ) !== false ) {
 				$hasWild = true;
@@ -603,10 +620,13 @@ class AggregateMessageGroup extends MessageGroupBase {
 			}
 		}
 
-		if ( !$hasWild ) return $ids;
+		if ( !$hasWild ) {
+			return $ids;
+		}
 
 		$matcher = new StringMatcher( '', $ids );
 		$all = array();
+
 		foreach ( MessageGroups::singleton()->getGroups() as $id => $_ ) {
 			if ( $matcher->match( $id ) ) {
 				$all[] = $id;
@@ -617,6 +637,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 
 	public function initCollection( $code ) {
 		$messages = array();
+
 		foreach ( $this->getGroups() as $group ) {
 			$cache = new MessageGroupCache( $group );
 			if ( $cache->exists() ) {
@@ -632,6 +653,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 		$namespace = $this->getNamespace();
 		$definitions = new MessageDefinitions( $namespace, $messages );
 		$collection = MessageCollection::newFromDefinitions( $definitions, $code );
+
 		$this->setTags( $collection );
 
 		return $collection;
@@ -640,6 +662,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 	public function getMessage( $key, $code ) {
 		$id = TranslateUtils::messageKeyToGroup( $this->getNamespace(), $key );
 		$groups = $this->getGroups();
+
 		if ( isset( $groups[$id] ) ) {
 			return $groups[$id]->getMessage( $key, $code );
 		} else {
@@ -649,9 +672,11 @@ class AggregateMessageGroup extends MessageGroupBase {
 
 	public function getTags( $type = null ) {
 		$tags = array();
+
 		foreach ( $this->getGroups() as $group ) {
 			$tags = array_merge_recursive( $tags, $group->getTags( $type ) );
 		}
+
 		return $tags;
 	}
 }
