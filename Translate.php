@@ -143,6 +143,7 @@ $wgResourceModules['ext.translate.special.languagestats'] = array(
 $wgResourceModules['ext.translate.quickedit'] = array(
 	'scripts' => 'js/quickedit.js',
 	'styles' => 'js/ext.translate.quickedit.css',
+	'messages' => array( 'translate-js-nonext', 'translate-js-save-failed' ),
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.messagetable'] = array(

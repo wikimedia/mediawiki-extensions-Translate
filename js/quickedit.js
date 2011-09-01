@@ -11,13 +11,11 @@
  *
  * TODO list:
  * * On succesful save, update the MessageTable display too.
- * * Integrate the (new) edittoolbar
  * * Autoload ui classes
  * * Instead of hc'd onscript, give them a class and use necessary triggers
- * * Live-update the checks assistant
  *
  * @author Niklas Laxström
- * @copyright Copyright © 2009-2010 Niklas Laxström
+ * @copyright Copyright © 2009-2011 Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -152,11 +150,11 @@ window.trlOpenJsEdit = function( page, group ) {
 				if ( json.error ) {
 					alert( json.error.info + ' (' + json.error.code +')' );
 				} else if ( json.edit.result === 'Failure' ) {
-					alert( trlMsgSaveFailed );
+					alert( mw.msg( 'translate-js-save-failed' ) );
 				} else if ( json.edit.result === 'Success' ) {
 					dialog.dialog( 'close' );
 				} else {
-					alert( trlMsgSaveFailed );
+					alert( mw.msg( 'translate-js-save-failed' ) );
 				}
 			}
 		} );
@@ -197,7 +195,7 @@ function trlLoadNext( title ) {
 			found = true;
 		}
 	}
-	alert(trlMsgNoNext);
+	alert( mw.msg( 'translate-js-nonext' ) );
 	return;
 }
 

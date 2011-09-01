@@ -1213,13 +1213,6 @@ class TranslationHelpers {
 			$out->addExtensionStyle( TranslateUtils::assetPath( 'js/base/custom-theme/jquery-ui-1.7.2.custom.css' ) );
 		}
 
-		$vars = array(
-			'trlMsgNoNext' => wfMsg( 'translate-js-nonext' ),
-			'trlMsgSaveFailed' => wfMsg( 'translate-js-save-failed' ),
-		);
-
-		$out->addScript( Skin::makeVariablesScript( $vars ) );
-
 		// Might be needed, but ajax doesn't load it
 		// Globals :(
 		$diff = new DifferenceEngine;
