@@ -1197,9 +1197,6 @@ class TranslationHelpers {
 
 	public static function addModules( OutputPage $out ) {
 		TranslateUtils::addModules( $out, array(
-			'jquery.form',
-			'jquery.ui.dialog',
-			'jquery.autoresize',
 			'ext.translate.quickedit',
 		) );
 
