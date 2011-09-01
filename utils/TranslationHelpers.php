@@ -881,12 +881,14 @@ class TranslationHelpers {
 		$conds = array(
 			'rt_page' => $this->title->getArticleId(),
 			'rt_type' => RevTag::getType( 'tp:transver' ),
-			'rt_revision' => $this->title->getLatestRevID(),
+		);
+		$options = array(
+			'ORDER BY' => 'rt_revision DESC',
 		);
 
 		$latestRevision = $definitionTitle->getLatestRevID();
 
-		$translationRevision =  $db->selectField( 'revtag', 'rt_value', $conds, __METHOD__ );
+		$translationRevision =  $db->selectField( 'revtag', 'rt_value', $conds, __METHOD__, $options );
 		if ( $translationRevision === false ) {
 			return null;
 		}
