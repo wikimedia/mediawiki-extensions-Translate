@@ -2207,6 +2207,7 @@ $messages['ro'] = array(
 
 /** Russian (Русский)
  * @author Ferrer
+ * @author Kaganer
  * @author Lockal
  * @author MaxSem
  * @author Rubin
@@ -2221,6 +2222,7 @@ $messages['ru'] = array(
 	'translate-group-desc-collection' => 'Мета-группа сообщений, содержащая все сообщения расширения MediaWiki [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
 	'translate-group-desc-flaggedrevs' => 'Мета-группа сообщений, содержащая все сообщения расширения MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Мета-группа сообщений, содержащая все сообщения расширения MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
+	'translate-group-desc-semantic' => 'Мета-группа сообщений, содержащая все сообщения для всех расширений [http://semantic-mediawiki.org/ Semantic MediaWiki]',
 	'translate-group-desc-socialprofile' => 'Мета-группа сообщений, содержащая все сообщения расширений, связанных с расширением MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
 	'translate-group-desc-translate' => 'Мета-группа сообщений, содержащая все сообщения расширения MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-wikiaextensions' => 'Мета-группа сообщений, содержащая все сообщения поддерживаемых расширений MediaWiki, используемых [http://www.wikia.com Wikia]',
@@ -2263,10 +2265,7 @@ $messages['ru'] = array(
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] — сервер микроблогинга с открытым исходным кодом',
 	'translate-group-desc-statusnet-plugin' => 'Это сообщения плагина для [[Translating:StatusNet|StatusNet]]',
 	'translate-group-desc-tsint' => 'Группа сообщений для [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], системы интернационализации [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|поддержка]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition технические подробности]</span>)',
-	'bw-desc-voctrain' => 'Словарный тренажёр на основе [http://omegawiki.org OmegaWiki]. Использует систему карточек для пополнения словарного запаса на любых языках, поддерживаемых Omegawiki.
-Создан для университета Бамберга. Лицензирован по GPL 2.0 или более поздним версиям. Разработан [[User:Kim Bruning|Кимом Брунингом]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] позволяет быстро найти авторов страницы в проектах Викимедиа.',
-	'bw-desc-wikimediamobile' => 'Мобильная Викимедиа находится по адресу http://m.wikipedia.org и предназначена для работы с Википедией с поддерживаемых смартфонов по всему миру.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] — это проект, предоставляющий автономную текстовую версию Википедии на мобильном устройстве.',
 );
 

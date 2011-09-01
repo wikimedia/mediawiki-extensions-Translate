@@ -6251,6 +6251,7 @@ $messages['fa'] = array(
 	'translate-edit-warnings' => 'هشدار در مورد ترجمه‌های ناکامل',
 	'translate-edit-tmsugs' => 'پیشنهادها ا زحافظه ترجمه',
 	'translate-edit-tmmatch' => '$1٪ مطابقت',
+	'translate-edit-tab-list' => 'فهرست پیغام‌ها',
 	'translate-magic-pagename' => 'ترجمهٔ گسترش یافتهٔ مدیاویکی',
 	'translate-magic-help' => 'شما می‌توانید نام مستعار صفحه‌های ویژه، واژه‌های جادویی، نام پوسته‌ها و نام فضاهای نام را ترجمه کنید.
 
@@ -6300,6 +6301,7 @@ $messages['fa'] = array(
 	'translate-statsf-count-users' => 'مترجمان فعال',
 	'translate-statsf-count-registrations' => 'کاربران تازه',
 	'translate-statsf-language' => 'فهرست کدهای زبان جدا شده با کاما:',
+	'translate-sidebar-alltrans' => 'در زبان‌های دیگر',
 	'translate-js-next' => 'ذخیره و بازکردن بعدی',
 	'translate-js-nonext' => 'این آخرین پیغام این صفحه بود.',
 	'translate-js-skip' => 'پرش به بعدی',
