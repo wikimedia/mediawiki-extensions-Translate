@@ -131,7 +131,7 @@ $resourcePaths = array(
 
 // Client-side resource modules
 $wgResourceModules['ext.translate'] = array(
-	'styles' => 'Translate.css',
+	'styles' => 'js/ext.translate.css',
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.languagestats'] = array(
@@ -141,7 +141,7 @@ $wgResourceModules['ext.translate.special.languagestats'] = array(
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.quickedit'] = array(
-	'scripts' => 'js/quickedit.js',
+	'scripts' => 'js/ext.translate.quickedit.js',
 	'styles' => 'js/ext.translate.quickedit.css',
 	'messages' => array( 'translate-js-nonext', 'translate-js-save-failed' ),
 	'dependencies' => array(
