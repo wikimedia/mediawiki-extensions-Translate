@@ -18,7 +18,6 @@ class TranslationStats {
 	 * Returns translated percentage for message group in given
 	 * languages
 	 *
-	 * @todo Add ability to return localised fuzzy percentage.
 	 * @param $group \string Unique key identifying the group
 	 * @param $languages \array List of language codes
 	 * @param $threshold \int Minimum required percentage translated to
