@@ -63,6 +63,7 @@ class TranslatePreferences {
 			'help-message' => 'translate-pref-editassistlang-help',
 			'select' => $select,
 			'valid-values' => array_keys( $languages ),
+			'name' => 'translate-editlangs',
 		);
 
 		return true;

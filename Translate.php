@@ -168,6 +168,10 @@ $wgResourceModules['ext.translate.special.importtranslations'] = array(
 	'scripts' => 'resources/ext.translate.special.importtranslations.js',
 ) + $resourcePaths;
 
+$wgResourceModules['ext.translate.selecttoinput'] = array(
+	'scripts' => 'resources/ext.translate.selecttoinput.js',
+) + $resourcePaths;
+
 $wgResourceModules['jquery.autoresize'] = array(
 	'scripts' => 'resources/jquery.autoresize.js',
 ) + $resourcePaths;

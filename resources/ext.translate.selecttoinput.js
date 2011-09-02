@@ -1,4 +1,4 @@
-function appendFromSelect(selectid,targetid) {
+window.appendFromSelect = function(selectid,targetid) {
 	var select = document.getElementById(selectid);
 	var target = document.getElementById(targetid);
 	if(!target || !select) return;

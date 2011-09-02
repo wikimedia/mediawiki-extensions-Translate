@@ -112,6 +112,6 @@ class JsSelectToInput {
 		if ( $done ) return;
 
 		global $wgOut;
-		$wgOut->addScriptFile( TranslateUtils::assetPath( 'utils/JsSelectToInput.js' ) );
+		$wgOut->addModules( 'ext.translate.selecttoinput' );
 	}
 }
