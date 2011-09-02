@@ -130,7 +130,7 @@ $resourcePaths = array(
 );
 
 // Client-side resource modules
-$wgResourceModules['translate-css'] = array(
+$wgResourceModules['ext.translate'] = array(
 	'styles' => 'Translate.css',
 ) + $resourcePaths;
 

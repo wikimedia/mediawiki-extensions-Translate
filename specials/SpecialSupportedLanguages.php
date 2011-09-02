@@ -33,7 +33,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$this->purge = $wgRequest->getVal( 'action' ) === 'purge';
 
 		$this->setHeaders();
-		TranslateUtils::addModules( $wgOut, 'ext.translate.special.supportedlanguages' );
+		$wgOut->addModules( 'ext.translate.special.supportedlanguages' );
 
 		$cache = wfGetCache( CACHE_ANYTHING );
 		$cachekey = wfMemcKey( 'translate-supportedlanguages', $wgLang->getCode() );

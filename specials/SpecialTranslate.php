@@ -33,7 +33,7 @@ class SpecialTranslate extends SpecialPage {
 	public function execute( $parameters ) {
 		global $wgOut, $wgTranslateBlacklist, $wgRequest;
 
-		TranslateUtils::addModules( $wgOut, 'ext.translate.special.translate' );
+		$wgOut->addModules( 'ext.translate.special.translate' );
 
 		$this->setHeaders();
 

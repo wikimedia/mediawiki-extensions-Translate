@@ -318,26 +318,6 @@ class TranslateUtils {
 	}
 
 	/**
-	 * Injects extension css (only once).
-	 */
-	public static function injectCSS() {
-		global $wgOut;
-
-		if ( method_exists( $wgOut, 'addModules' ) ) {
-			$wgOut->addModuleStyles( 'translate-css' );
-			return true;
-		}
-
-		static $done = false;
-
-		if ( !$done ) {
-			$wgOut->addExtensionStyle( self::assetPath( 'Translate.css' ) );
-		}
-
-		return $done = true;
-	}
-
-	/**
 	 * Construct the web address to given asset.
 	 * @param $path \string Path to the resource relative to extensions root directory.
 	 * @return \string Full or partial web path.
@@ -345,24 +325,6 @@ class TranslateUtils {
 	public static function assetPath( $path ) {
 		global $wgExtensionAssetsPath;
 		return "$wgExtensionAssetsPath/Translate/$path";
-	}
-
-	public static function addModules( $out, $modules ) {
-		if ( method_exists( $out, 'addModules' ) ) {
-			$out->addModules( $modules );
-		} else {
-			global $wgResourceModules;
-			foreach ( (array) $modules as $module ) {
-				if ( isset( $wgResourceModules[$module]['styles'] ) ) {
-					$file = $wgResourceModules[$module]['styles'];
-					$out->addExtensionStyle( TranslateUtils::assetPath( $file ) );
-				}
-				if ( isset( $wgResourceModules[$module]['scripts'] ) ) {
-					$file = $wgResourceModules[$module]['scripts'];
-					$out->addScriptFile( TranslateUtils::assetPath( $file ) );
-				}
-			}
-		}
 	}
 
 	/**

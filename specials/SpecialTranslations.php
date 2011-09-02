@@ -271,6 +271,6 @@ class SpecialTranslations extends SpecialAllpages {
 	private static function includeAssets() {
 		global $wgOut;
 		TranslationHelpers::addModules( $wgOut );
-		TranslateUtils::addModules( $wgOut, 'ext.translate.messagetable' );
+		$wgOut->addModules( 'ext.translate.messagetable' );
 	}
 }

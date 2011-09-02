@@ -85,7 +85,8 @@ class MessageWebImporter {
 	}
 
 	protected function doHeader() {
-		TranslateUtils::injectCSS();
+		global $wgOut;
+		$wgOut->addModules( 'ext.translate' );
 
 		$formParams = array(
 			'method' => 'post',

@@ -72,9 +72,9 @@ class PageTranslationHooks {
 		return true;
 	}
 
-	// Only called form hook
+	// Only called from hook
 	public static function injectCss( $outputpage, $text ) {
-		TranslateUtils::injectCSS();
+		$outputpage->addModules( 'ext.translate' );
 
 		return true;
 	}

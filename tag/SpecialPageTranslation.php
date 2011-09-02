@@ -350,7 +350,7 @@ class SpecialPageTranslation extends SpecialPage {
 		global $wgOut, $wgContLang;
 
 		$wgOut->setSubtitle( $this->user->getSkin()->link( $page->getTitle() ) );
-		TranslateUtils::injectCSS();
+		$wgOut->addModules( 'ext.translate' );
 
 		$wgOut->addWikiMsg( 'tpt-showpage-intro' );
 

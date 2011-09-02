@@ -37,8 +37,8 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$this->setHeaders();
 		$this->outputHeader();
 
-		TranslateUtils::addModules( $wgOut, 'ext.translate.special.languagestats' );
-		TranslateUtils::addModules( $wgOut, 'ext.translate.messagetable' );
+		$wgOut->addModules( 'ext.translate.special.languagestats' );
+		$wgOut->addModules( 'ext.translate.messagetable' );
 
 		// no UI when including()
 		if ( !$this->including() ) {
