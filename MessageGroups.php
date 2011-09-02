@@ -878,11 +878,7 @@ class MessageGroups {
 	 * Returns a cacher object.
 	 */
 	protected static function getCache() {
-		$cacher = wfGetCache( CACHE_MEMCACHED );
-		if ( $cacher instanceof FakeMemCachedClient ) {
-			$cacher = wfGetCache( CACHE_DB );
-		}
-		return $cacher;
+		return wfGetCache( CACHE_ANYTHING );
 	}
 
 	/**
