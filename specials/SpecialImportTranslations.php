@@ -117,8 +117,7 @@ class SpecialImportTranslations extends SpecialPage {
 	protected function outputForm() {
 		global $wgOut;
 
-		$wgOut->includeJQuery();
-		$this->out->addScriptFile( TranslateUtils::assetPath( 'js/import.js' ) );
+		$wgOut->addModules( 'ext.translate.special.importtranslations' );
 
 		/**
 		 * Ugly but necessary form building ahead, ohoy
