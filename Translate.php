@@ -131,18 +131,18 @@ $resourcePaths = array(
 
 // Client-side resource modules
 $wgResourceModules['ext.translate'] = array(
-	'styles' => 'js/ext.translate.css',
+	'styles' => 'resources/ext.translate.css',
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.languagestats'] = array(
-	'scripts' => 'js/ext.translate.special.languagestats.js',
-	'styles' => 'js/ext.translate.special.languagestats.css',
+	'scripts' => 'resources/ext.translate.special.languagestats.js',
+	'styles' => 'resources/ext.translate.special.languagestats.css',
 	'messages' => array( 'translate-langstats-expandall', 'translate-langstats-collapseall', 'translate-langstats-expand', 'translate-langstats-collapse' ),
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.quickedit'] = array(
-	'scripts' => 'js/ext.translate.quickedit.js',
-	'styles' => 'js/ext.translate.quickedit.css',
+	'scripts' => 'resources/ext.translate.quickedit.js',
+	'styles' => 'resources/ext.translate.quickedit.css',
 	'messages' => array( 'translate-js-nonext', 'translate-js-save-failed' ),
 	'dependencies' => array(
 		'jquery.form',
@@ -152,26 +152,26 @@ $wgResourceModules['ext.translate.quickedit'] = array(
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.messagetable'] = array(
-	'styles' => 'js/ext.translate.messagetable.css',
+	'styles' => 'resources/ext.translate.messagetable.css',
 	'position' => 'top',
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.translate'] = array(
-	'styles' => 'js/ext.translate.special.translate.css',
+	'styles' => 'resources/ext.translate.special.translate.css',
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.supportedlanguages'] = array(
-	'styles' => 'js/ext.translate.special.supportedlanguages.css',
+	'styles' => 'resources/ext.translate.special.supportedlanguages.css',
 ) + $resourcePaths;
 
 $wgResourceModules['jquery.autoresize'] = array(
-	'scripts' => 'js/jquery.autoresize.js',
+	'scripts' => 'resources/jquery.autoresize.js',
 ) + $resourcePaths;
 
 // Doesn't exist in 1.17, but declaring twice causes an error
 if ( version_compare( $wgVersion, '1.18', '<' ) ) {
 $wgResourceModules['jquery.form'] = array(
-	'scripts' => 'js/jquery.form.js',
+	'scripts' => 'resources/jquery.form.js',
 ) + $resourcePaths;
 }
 
