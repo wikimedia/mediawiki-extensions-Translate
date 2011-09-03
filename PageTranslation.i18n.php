@@ -495,6 +495,7 @@ $messages['be'] = array(
 /** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Jim-by
+ * @author Renessaince
  * @author Wizardist
  */
 $messages['be-tarask'] = array(
@@ -548,7 +549,6 @@ $messages['be-tarask'] = array(
 Гэта старонка зьяўляецца перакладам старонкі [[$1]], пераклад можа быць абноўлены з выкарыстаньнем [$2 інструмэнта перакладу].',
 	'tpt-unknown-page' => 'Гэта прастора назваў зарэзэрваваная для перакладаў старонак зьместу.
 Старонка, якую Вы спрабуеце рэдагаваць, верагодна не зьвязана зь якой-небудзь старонкай пазначанай для перакладу.',
-	'tpt-install' => 'Запусьціце php maintenance/update.php альбо усталюйце праз вэб-інтэрфэйс для актывізацыі інструмэнтаў перакладу старонак.',
 	'tpt-render-summary' => 'Абнаўленьне для адпаведнасьці новай вэрсіі крынічнай старонкі',
 	'tpt-download-page' => 'Экспартаваць старонку з перакладамі',
 	'pt-parse-open' => 'Незбалянсаваны тэг &lt;translate>.
@@ -568,6 +568,10 @@ $messages['be-tarask'] = array(
 	'pt-log-unmark' => '{{GENDER:$2|выдаліў|выдаліла}} метку перакладу са старонкі «[[:$1]]».',
 	'pt-log-moveok' => '{{GENDER:$2|зьмяніў|зьмяніла}} назву старонкі да перакладу $1',
 	'pt-log-movenok' => '{{GENDER:$2|выклікаў|выклікала}} праблему пад час пераносу [[:$1]] у [[:$3]]',
+	'pt-log-delete-full-ok' => '{{GENDER:$2|зьдзейсьніў|зьдзейсьніла}} выдаленьне магчымай для перакладу старонкі $1',
+	'pt-log-delete-full-nok' => '{{GENDER:$2|атрымаў|атрымала}} памылку пры выдаленьні магчымай для перакладу старонкі [[:$1]]',
+	'pt-log-delete-lang-ok' => '{{GENDER:$2|зьдзейсьніў|зьдзейсьніла}} выдаленьне старонкі з перакладам $1',
+	'pt-log-delete-lang-nok' => '{{GENDER:$2|атрымаў|атрымала}} памылку пры выдаленьні старонкі з перакладам [[:$1]]',
 	'pt-movepage-title' => 'Перанесьці старонку $1, якую магчыма перакласьці',
 	'pt-movepage-blockers' => 'Немагчыма перанесьці старонкі, якія магчыма перакладаць, з-за {{PLURAL:$1|наступнай памылкі|наступных памылак}}:',
 	'pt-movepage-block-base-exists' => 'Існуе мэтавая базавая старонка [[:$1]].',
@@ -590,7 +594,7 @@ $messages['be-tarask'] = array(
 	'pt-movepage-subpages' => 'Перанесьці ўсе падстаронкі',
 	'pt-movepage-action-check' => 'Праверыць, ці магчымы перанос',
 	'pt-movepage-action-perform' => 'Перанесьці',
-	'pt-movepage-action-other' => 'Зьмяніць цэль',
+	'pt-movepage-action-other' => 'Зьмяніць мэту',
 	'pt-movepage-intro' => 'Гэтая спэцыяльная старонка дазваляе пераносіць старонкі, пазначаныя да перакладу.
 Перанос не адбудзецца імгненна, таму што спатрэбіцца пераносіць шмат старонак.
 Падчас пераносу маніпуляцыя са старонкамі будзе немагчымая.
@@ -599,7 +603,30 @@ $messages['be-tarask'] = array(
 	'pt-movepage-started' => 'Асноўная старонка перанесеная.
 Праверце [[Special:Log/pagetranslation|журнал перакладаў старонак]] наконт памылак і паведамленьня пра выкананьне.',
 	'pt-locked-page' => 'Гэтая старонка заблякаваная з-за працэсу пераносу старонкі, якую магчыма перакласьці.',
+	'pt-deletepage-lang-title' => 'Выдаленьне старонкі перакладу $1.',
+	'pt-deletepage-full-title' => 'Выдаленьне магчымай да перакладу старонкі $1.',
+	'pt-deletepage-invalid-title' => 'Пазначаная старонка няслушная.',
+	'pt-deletepage-invalid-text' => 'Пазначаная старонка ані магчымая да перакладу, ані зьяўляецца перакладам.',
+	'pt-deletepage-action-check' => 'Сьпіс старонак да выдаленьня',
+	'pt-deletepage-action-perform' => 'Выканаць выдаленьне',
+	'pt-deletepage-action-other' => 'Зьмяніць мэту',
+	'pt-deletepage-lang-legend' => 'Выдаліць старонку перакладу',
+	'pt-deletepage-full-legend' => 'Выдаліць магчымую да перакладу старонку',
+	'pt-deletepage-any-legend' => 'Выдаліць магчымую да перакладу старонку ці перакладзеную старонку',
+	'pt-deletepage-current' => 'Назва старонкі',
 	'pt-deletepage-reason' => 'Прычына:',
+	'pt-deletepage-subpages' => 'Выдаліць усе падстаронкі',
+	'pt-deletepage-list-pages' => 'Сьпіс старонак да выдаленьня',
+	'pt-deletepage-list-translation' => 'Старонкі перакладаў',
+	'pt-deletepage-list-section' => 'Старонкі сэкцыі',
+	'pt-deletepage-list-other' => 'Іншыя падстаронкі',
+	'pt-deletepage-list-count' => 'Агулам $1 {{PLURAL:$1|старонка|старонкі|старонак}} да выдаленьня.',
+	'pt-deletepage-full-logreason' => 'Частка старонкі $1, якую магчыма перакласьці.',
+	'pt-deletepage-lang-logreason' => 'Частка перакладзенай старонкі $1.',
+	'pt-deletepage-started' => 'Калі ласка, праверце [[Special:Log/pagetranslation|старонку журналу перакладаў]] адносна памылак і паведамленьняў пра выкананьне.',
+	'pt-deletepage-intro' => 'Гэтая спэцыяльная старонка дазваляе вам выдаляць цэлыя старонкі, магчымыя для перакладу, або перакладзеныя на іншыя мовы старонкі.
+Выдаленьне не здарыцца хутка, таму што патрэбна выдаліць шмат старонак.
+Памылкі будуць запратакаляваныя на [[Special:Log/pagetranslation|старонцы журналу перакладаў]] і патрабуюць ручнога ўмяшальніцтва.',
 );
 
 /** Bulgarian (Български)
@@ -3250,7 +3277,6 @@ $messages['ja'] = array(
 	'tpt-languages-legend' => '他言語での翻訳:',
 	'tpt-target-page' => 'このページは手動で更新できません。このページはページ [[$1]] の翻訳で、[$2 翻訳ツール]を使用して更新します。',
 	'tpt-unknown-page' => 'この名前空間はコンテンツページの翻訳のために使用します。あなたが編集しようとしているページに対応する翻訳対象ページが存在しないようです。',
-	'tpt-install' => 'ページ翻訳機能を有効にするために、php maintenance/update.php またはウェブ・インストーラーを実行する。',
 	'tpt-render-summary' => '翻訳元ページの新版に適合するように更新中',
 	'tpt-download-page' => '翻訳付きでページを書き出し',
 	'pt-parse-open' => '&lt;translate> タグの対応がとれていません。
@@ -3270,6 +3296,10 @@ $messages['ja'] = array(
 	'pt-log-unmark' => 'ページ「[[:$1]]」の翻訳指定を{{GENDER:$2|解除}}',
 	'pt-log-moveok' => '翻訳可能ページ$1を新しい名前に変更{{GENDER:$2|完了}}',
 	'pt-log-movenok' => '[[:$1]]を[[:$3]]へ移動中に問題が{{GENDER:$2|発生しました}}',
+	'pt-log-delete-full-ok' => '翻訳可能ページ$1の削除が{{GENDER:$2|完了しました}}',
+	'pt-log-delete-full-nok' => '翻訳可能ページ[[:$1]]の削除中に問題が{{GENDER:$2|発生しました}}',
+	'pt-log-delete-lang-ok' => '翻訳ページ$1の削除が{{GENDER:$2|完了しました}}',
+	'pt-log-delete-lang-nok' => '翻訳ページ[[:$1]]の削除中に問題が{{GENDER:$2|発生しました}}',
 	'pt-movepage-title' => '翻訳可能ページ$1を移動',
 	'pt-movepage-blockers' => '翻訳可能ページは、{{PLURAL:$1|以下の問題}}により、新しい名前に移動できません：',
 	'pt-movepage-block-base-exists' => '対象の基底ページ[[:$1]]は既に存在しています。',
@@ -3283,7 +3313,7 @@ $messages['ja'] = array(
 	'pt-movepage-list-pages' => '移動するページの一覧',
 	'pt-movepage-list-translation' => '翻訳ページ',
 	'pt-movepage-list-section' => '節ページ',
-	'pt-movepage-list-other' => 'その他のサブページ',
+	'pt-movepage-list-other' => 'その他の下位ページ',
 	'pt-movepage-list-count' => '合計で$1ページが移動',
 	'pt-movepage-legend' => '翻訳可能ページを移動',
 	'pt-movepage-current' => '現在の名前：',
@@ -3295,13 +3325,36 @@ $messages['ja'] = array(
 	'pt-movepage-action-other' => '対象を変更',
 	'pt-movepage-intro' => 'この特別ページは、翻訳用に設定されたページを移動することができます。
 多くのページを移動しなければならないため、移動操作はすぐに完了はしません。
-ページの移動には、ジョブ・キューが使用されます。
 ページが移動されている間、そのページの質問ページで対話することができません。
-失敗はページの翻訳ログに記録されるので、それらは手動で修正される必要があります。',
+失敗した場合は、その[[Special:Log/pagetranslation|ページの翻訳ログ]]に記録されるので、手動で修正される必要があります。',
 	'pt-movepage-logreason' => '翻訳可能ページ$1の一部。',
 	'pt-movepage-started' => '基底ページが移動されました。
-ページの翻訳ログで、エラーや完了メッセージを確認してください。',
+[[Special:Log/pagetranslation|ページの翻訳記録]]で、エラーや完了メッセージを確認してください。',
 	'pt-locked-page' => '現在、翻訳ページが移動されているため、このページはロックされています',
+	'pt-deletepage-lang-title' => '翻訳ページ$1を削除中。',
+	'pt-deletepage-full-title' => '翻訳可能ページ$1を削除中。',
+	'pt-deletepage-invalid-title' => '指定されたページは無効です。',
+	'pt-deletepage-invalid-text' => '指定されたページは、翻訳可能ページでも、その翻訳ページでもありません。',
+	'pt-deletepage-action-check' => '削除するページの一覧',
+	'pt-deletepage-action-perform' => '削除を実行',
+	'pt-deletepage-action-other' => '対象を変更',
+	'pt-deletepage-lang-legend' => '翻訳ページを削除する',
+	'pt-deletepage-full-legend' => '翻訳可能ページを削除する',
+	'pt-deletepage-any-legend' => '翻訳可能ページや、翻訳可能ページや翻訳を削除する',
+	'pt-deletepage-current' => 'ページ名：',
+	'pt-deletepage-reason' => '理由：',
+	'pt-deletepage-subpages' => '全ての下位ページを削除する',
+	'pt-deletepage-list-pages' => '削除するページの一覧',
+	'pt-deletepage-list-translation' => '翻訳ページ',
+	'pt-deletepage-list-section' => '節ページ',
+	'pt-deletepage-list-other' => 'その他の下位ページ',
+	'pt-deletepage-list-count' => '合計で$1ページが削除',
+	'pt-deletepage-full-logreason' => '翻訳可能ページ$1の一部。',
+	'pt-deletepage-lang-logreason' => '翻訳ページ$1の一部。',
+	'pt-deletepage-started' => '[[Special:Log/pagetranslation|ページの翻訳記録]]で、エラーや完了メッセージを確認して下さい。',
+	'pt-deletepage-intro' => 'この特別ページでは、翻訳可能ページ全体やある言語への翻訳全てを削除することができます。
+多くのページを削除しなければならないため、削除操作は即実行されません。
+失敗した場合、その[[Special:Log/pagetranslation|ページの翻訳記録]]に記録されるので、手動で修正する必要があります。',
 );
 
 /** Jamaican Creole English (Patios)

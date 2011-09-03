@@ -212,6 +212,7 @@ $messages['ba'] = array(
 /** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Jim-by
+ * @author Renessaince
  * @author Wizardist
  */
 $messages['be-tarask'] = array(
@@ -223,6 +224,7 @@ $messages['be-tarask'] = array(
 	'translate-group-desc-collection' => 'Мэта-група паведамленьняў, якая ўтрымлівае ўсе паведамленьні для пашырэньня MediaWiki [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
 	'translate-group-desc-flaggedrevs' => 'Мэта-група паведамленьняў, якая ўтрымлівае ўсе паведамленьні для пашырэньня MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Мэта-група паведамленьняў, якая ўтрымлівае ўсе паведамленьні для пашырэньня MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
+	'translate-group-desc-semantic' => 'Мэта-група, якая ўтрымлівае ўсе паведамленьні для ўсіх пашырэньняў [http://semantic-mediawiki.org/ Semantic MediaWiki]',
 	'translate-group-desc-socialprofile' => 'Мэта-група паведамленьняў, якая ўтрымлівае ўсе паведамленьні для пашырэньняў зьвязаных з пашырэньнем [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
 	'translate-group-desc-translate' => 'Мэта-група паведамленьняў, якая ўтрымлівае ўсе паведамленьні для пашырэньня MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-wikiaextensions' => 'Мэта-група паведамленьняў, якая ўтрымлівае ўсе паведамленьні для падтрымліваемых пашырэньняў MediaWiki, выкарыстоўваемых [http://www.wikia.com Wikia]',
@@ -241,6 +243,7 @@ $messages['be-tarask'] = array(
 	'translate-group-desc-ihris-i2ce' => 'Група паведамленьняў [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], модуля [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-manage' => 'Група паведамленьняў [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], модуля [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-qualify' => 'Група паведамленьняў [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]], модуля [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-kiwix' => 'Група паведамленьняў для [[Translating:Kiwix|Kiwix]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'Асноўнае дапаўненьне [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-branch' => 'Паведамленьні стабільнай вэрсіі [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] — сыстэма кіраваньня інфармацыяй для мікрафінансаў',
@@ -265,10 +268,7 @@ $messages['be-tarask'] = array(
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] — сэрвэр мікраблёгаў з адкрытым кодам',
 	'translate-group-desc-statusnet-plugin' => 'Гэтыя паведамленьні зьяўляюцца часткай дапаўненьня для [[Translating:StatusNet|StatusNet]]',
 	'translate-group-desc-tsint' => 'Група паведамленьняў [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], сыстэмы перакладаў для [http://tolserver.org сэрвэра інструмэнтаў] (<span class="plainlinks">[[Translating talk:Toolserver|падтрымка]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition тэхнічныя дэталі]</span>)',
-	'bw-desc-voctrain' => 'Слоўнікавы трэнажэр на аснове [http://omegawiki.org OmegaWiki]. Выкарыстоўвае сыстэму картак для вывучэньня любой мовы, што ёсьць у OmegaWiki.
-Створаны для ўнівэрсытэту ў Бамбэргу. Распаўсюджваецца на ўмовах ліцэнзіі GPL 2.0 ці болей позьняй вэрсіі. Распрацаваны [[User:Kim Bruning|Кімам Брунінгам]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] дазваляе хутка знайсьці аўтараў пэўнай старонкі ці выказваньня ў праектах Фундацыі «Вікімэдыя».',
-	'bw-desc-wikimediamobile' => 'Мабільная Вікімэдыя знаходзіцца па адрасе http://m.wikipedia.org і прызначаная для працы зь Вікіпэдыяй праз смартфоны ва ўсім сьвеце.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] — праект для аўтаномнага чытаньня тэкставай вэрсіі Вікіпэдыі для мабільных прылад.',
 );
 
@@ -1424,6 +1424,7 @@ $messages['ja'] = array(
 	'translate-group-desc-collection' => 'MediaWiki拡張機能[http://www.mediawiki.org/wiki/Extension:Collection Collection]のすべてのメッセージを含んだ上位メッセージ群',
 	'translate-group-desc-flaggedrevs' => 'MediaWiki拡張機能[http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]のすべてのメッセージを含んだ上位メッセージ群',
 	'translate-group-desc-readerfeedback' => 'MediaWiki拡張機能[http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]のすべてのメッセージを含んだ上位メッセージ群',
+	'translate-group-desc-semantic' => '[http://semantic-mediawiki.org/ Semantic MediaWiki]拡張機能の全てのメッセージを含んだ上位メッセージ群',
 	'translate-group-desc-socialprofile' => 'MediaWiki拡張機能[http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]のすべてのメッセージを含んだ上位メッセージ群',
 	'translate-group-desc-translate' => 'MediaWiki拡張機能[http://www.mediawiki.org/wiki/Extension:Translate Translate]のすべてのメッセージを含んだ上位メッセージ群',
 	'translate-group-desc-wikiaextensions' => '[http://www.wikia.com Wikia]で使われているMediaWiki拡張機能によってサポートされた、すべてのメッセージからなる上位メッセージ群',
@@ -1432,24 +1433,36 @@ $messages['ja'] = array(
 	'translate-group-desc-uniwiki' => '[http://unicefinnovation.org/wiki.php Uniwiki]に関連する拡張機能のすべてのメッセージを含んだ上位メッセージ群',
 	'translate-group-desc-ui' => '[http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative ウィキペディアの使用性改善]に関連した拡張機能のすべてのメッセージを含んだ上位メッセージ群',
 	'translate-group-desc-translatablepages' => 'すべての翻訳可能なページ',
+	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]]では、人々がヨーロッパのデジタル文化資源を探索できるようになります。',
 	'bw-desc-freecol' => '[[Translating:FreeCol|FreeCol]]は、ターン制戦略ゲームです',
 	'bw-desc-fudforum' => '[[Translating:FUDforum|FUDforum]]は、ウェブ上での議論フォーラムのためのソフトウェアです',
 	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]]はウェブ上でのバグ追跡ソフトウェアです',
+	'translate-group-desc-eol' => '[[Translating:EOL|Encyclopedia of Life]]のメッセージ群',
+	'translate-group-desc-ihris' => '[[Translating:iHRIS|iHRIS]]のメッセージ群',
+	'translate-group-desc-ihris-common' => '[[Translating:iHRIS|iHRIS]]のモジュールである[[Special:Translate/out-ihris-common-0-all|iHRIS Common]]のメッセージ群',
+	'translate-group-desc-ihris-i2ce' => '[[Translating:iHRIS|iHRIS]]のモジュールである[[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]]のメッセージ群',
+	'translate-group-desc-ihris-manage' => '[[Translating:iHRIS|iHRIS]]のモジュールである[[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]]のメッセージ群',
+	'translate-group-desc-ihris-qualify' => '[[Translating:iHRIS|iHRIS]]のモジュールである[[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]]のメッセージ群',
+	'translate-group-desc-kiwix' => '[[Translating:Kiwix|Kiwix]]のメッセージ群',
 	'translate-group-desc-mantisbt-plugin-core' => '[[Translating:MantisBT|MantisBT]]の中核プラグイン',
+	'translate-group-desc-mediawiki-core-branch' => '[[Translating:MediaWiki|MediaWiki]]安定板のメッセージ群',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]]は、マイクロファイナンスのための経営情報システムです',
 	'bw-desc-mwlibrl' => '[[Translating:Mwlib.rl|Mwlib.rl]]は、MediaWikiのページからPDF文書を作るためのライブラリです',
 	'bw-desc-nocc' => '[[Translating:NOCC|NOCC]]はウェブメールのクライアントです',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]]は、オフラインでのウィキペディア閲覧機器です',
+	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]]はオープンなメディアプラットフォームです。',
+	'translate-group-desc-openimages-verifyemailtemplate' => 'これらのメッセージは、[[Translating:Open Images|Open Images]]の電子メール確認テンプレートの一部です',
+	'translate-group-desc-openimages-all' => 'これらのメッセージは、[[Translating:Open Images|Open Images]]プロジェクトの一部です',
 	'bw-desc-openlayers' => '[[Translating:OpenLayers|OpenLayers]]は、JavaScriptでの動的な地図生成ツールです',
 	'bw-desc-openstreetmap' => '[[Translating:OpenStreetMap|OpenStreetMap]]に関連する全メッセージ',
 	'bw-desc-osm-site' => '[[Translating:OpenStreetMap|OpenStreetMap]]は、編集可能な全世界の地図です',
 	'bw-desc-osm-potlatch' => '[[Translating:OpenStreetMap|Potlatch]]はFlash上で動作するOpenStreetMapの編集ツールです',
+	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]]はウィキペディア編集ツールの集合体です',
 	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]]は、ウェブ上で動作する質問回答ソフトウェアです',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] はオープンソースのマイクロブログサーバーです',
 	'translate-group-desc-statusnet-plugin' => 'これらのメッセージは、[[Translating:StatusNet|StatusNet]]のプラグインの一部です',
-	'bw-desc-voctrain' => '[[Translating:Voctrain|Voctrain]]はOmegaWiki上で動作する語彙力の訓練ツールです',
+	'translate-group-desc-tsint' => '[http://toolserver.org Toolserver]にあるツールの国際化システム(<span class="plainlinks">[[Translating talk:Toolserver|サポート]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition 技術的詳細]</span>)である[http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition]のメッセージ群',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]]は、ウィキメディアのウィキ上のページの著者をすばやく検索することができます',
-	'bw-desc-wikimediamobile' => '[[Translating:Wikimedia_mobile|Wikimedia mobile]]は、ウィキペディアのための携帯機器用インターフェースです',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]]は、携帯可能な機器で、オフラインかつ文字のみのウィキペディアを提供します',
 );
 
@@ -1568,6 +1581,7 @@ $messages['lb'] = array(
 	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]] ass eng webbaséierte Bug-Tracking-Software.',
 	'translate-group-desc-eol' => 'Message fir [[Translating:EOL|Encyclopedia of Life]]',
 	'translate-group-desc-ihris' => 'Message fir [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-common' => 'Message fir [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], ee Modul vun [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-manage' => 'Message fir [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], ee Modul vun [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-kiwix' => 'Message fir [[Translating:Kiwix|Kiwix]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'En Haapt-Plugin fir [[Translating:MantisBT|MantisBT]]',
@@ -1577,6 +1591,7 @@ $messages['lb'] = array(
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] ass e Webmail-Client deen a PHP geschriwen ass. Wann dir Problemer oder Froen domat hutt da gitt w.e.g. op [[Support]].',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] ass en offline Wikipedia-Liesprogramm',
 	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] ass eng Plattform fir frei fräi Medien',
+	'translate-group-desc-openimages-verifyemailtemplate' => 'Dës Message sinn en Deel vun der [[Translating:Open Images|Open Images]]-Mail-Kontroll-Schabloun',
 	'translate-group-desc-openimages-all' => 'Dës Message sinn en Deel vum [[Translating:Open Images|Open Images]]-Projet',
 	'bw-desc-openlayers' => '[[Translating:OpenLayers|OpenLayers]] ass en dynameschen Kaarte-Generator a JavaScript',
 	'bw-desc-openstreetmap' => 'All Messagen a Relatioun mat [[Translating:OpenStreetMap|OpenStreetMap]]',

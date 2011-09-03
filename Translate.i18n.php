@@ -2427,6 +2427,7 @@ $messages['be-tarask'] = array(
 	'translationchanges' => 'Зьмены ў перакладах',
 	'translationchanges-export' => 'экспартаваць',
 	'translationchanges-change' => '$1: $2 праз $3',
+	'translationchanges-submit' => 'Выбарка',
 	'translate-checks-parameters' => '{{PLURAL:$2|Наступны парамэтар не выкарыстоўваецца|Наступныя парамэтры не выкарыстоўваюцца}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Невядомы парамэтар|Невядомыя парамэтры}}:
@@ -4571,7 +4572,7 @@ Die Übersetzungen der Systemnachrichten in der gewählten Sprachen werden beim 
 Die Standardliste ist abhängig von der Sprache der Benutzeroberfläche.',
 	'translate-pref-editassistlang-bad' => 'Ungültiger Sprachcode in der Liste:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Erweiterter Übersetzungseditor (JavaScript)',
+	'translate-pref-jsedit' => 'Erweiterter Übersetzungseditor (benötigt JavaScript)',
 	'right-translate' => 'Bearbeitungen mithilfe der Übersetzungsoberfläche',
 	'right-translate-manage' => 'Übersetzungsgruppen verwalten',
 	'right-translate-import' => 'Offlineübersetzungen importieren',
@@ -12353,6 +12354,7 @@ Dir musst am Grupp vun den Iwwersetzer si fir Ännerungen ofspäicheren ze kënn
 	'translationchanges' => 'Iwwersetzung ännert',
 	'translationchanges-export' => 'exportéieren',
 	'translationchanges-change' => '$1: $2 vun $3',
+	'translationchanges-submit' => 'Weisen',
 	'translate-checks-parameters' => '{{PLURAL:$2|Dëse Parameter gëtt|Dës Parameter ginn}} net benotzt:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Dëse Parameter ass|Dës Parameter sinn }} onbekannt:
@@ -18343,6 +18345,7 @@ Spremembe niso shranjene dokler ne kliknete spodnjega gumba za shranjevanje.',
 	'translationchanges' => 'Spremembe prevoda',
 	'translationchanges-export' => 'izvoz',
 	'translationchanges-change' => '$1: $2 od $3',
+	'translationchanges-submit' => 'Pridobi',
 	'translate-checks-parameters' => '{{PLURAL:$2|Naslednji parameter ni uporabljen|Naslednja parametra nista uporabljena|Naslednji parametri niso uporabljeni}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Naslednji parameter je neznan|Naslednja parametra sta neznana|Naslednji parametri so neznani}}:
