@@ -1006,7 +1006,7 @@ class TranslationHelpers {
 			}
 		}
 
-		return $fallbacks;
+		return array_unique( $fallbacks );
 	}
 
 	protected function doBox( $msg, $code, $title = false, $makelink = false ) {
