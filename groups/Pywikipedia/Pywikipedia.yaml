@@ -31,6 +31,17 @@ FILES:
   targetPattern: pywikipedia/add_text.py
 ---
 BASIC:
+  id: out-pywikipedia-archivebot
+  label: Pywikipedia Archive Bot
+  display: out/pywikipedia/archivebot
+
+FILES:
+  class: PythonSingleFFS
+  sourcePattern: %GROUPROOT%/pywikipedia/archivebot.py
+  definitionFile: %GROUPROOT%/pywikipedia/archivebot.py
+  targetPattern: pywikipedia/archivebot.py
+---
+BASIC:
   id: out-pywikipedia-basic
   label: Pywikipedia Basic
   display: out/pywikipedia/basic
@@ -106,6 +117,17 @@ FILES:
   sourcePattern: %GROUPROOT%/pywikipedia/cosmetic_changes.py
   definitionFile: %GROUPROOT%/pywikipedia/cosmetic_changes.py
   targetPattern: pywikipedia/cosmetic_changes.py
+---
+BASIC:
+  id: out-pywikipedia-delete
+  label: Pywikipedia Delete
+  display: out/pywikipedia/delete
+
+FILES:
+  class: PythonSingleFFS
+  sourcePattern: %GROUPROOT%/pywikipedia/delete.py
+  definitionFile: %GROUPROOT%/pywikipedia/delete.py
+  targetPattern: pywikipedia/delete.py
 ---
 BASIC:
   id: out-pywikipedia-editarticle
@@ -207,6 +229,28 @@ FILES:
   targetPattern: pywikipedia/table2wiki.py
 ---
 BASIC:
+  id: out-pywikipedia-template
+  label: Pywikipedia Template
+  display: out/pywikipedia/template
+
+FILES:
+  class: PythonSingleFFS
+  sourcePattern: %GROUPROOT%/pywikipedia/template.py
+  definitionFile: %GROUPROOT%/pywikipedia/template.py
+  targetPattern: pywikipedia/template.py
+---
+BASIC:
+  id: out-pywikipedia-thirdparty
+  label: Pywikipedia Third Party
+  display: out/pywikipedia/thirdparty
+
+FILES:
+  class: PythonSingleFFS
+  sourcePattern: %GROUPROOT%/pywikipedia/thirdparty.py
+  definitionFile: %GROUPROOT%/pywikipedia/thirdparty.py
+  targetPattern: pywikipedia/thirdparty.py
+---
+BASIC:
   id: out-pywikipedia-welcome
   label: Pywikipedia Welcome 
   display: out/pywikipedia/welcome
@@ -216,3 +260,14 @@ FILES:
   sourcePattern: %GROUPROOT%/pywikipedia/welcome.py
   definitionFile: %GROUPROOT%/pywikipedia/welcome.py
   targetPattern: pywikipedia/welcome.py
+---
+BASIC:
+  id: out-pywikipedia-wiktionary
+  label: Pywikipedia Wiktionary 
+  display: out/pywikipedia/wiktionary
+
+FILES:
+  class: PythonSingleFFS
+  sourcePattern: %GROUPROOT%/pywikipedia/wiktionary.py
+  definitionFile: %GROUPROOT%/pywikipedia/wiktionary.py
+  targetPattern: pywikipedia/wiktionary.py
