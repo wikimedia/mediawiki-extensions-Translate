@@ -380,8 +380,8 @@ class SpecialPageTranslation extends SpecialPage {
 
 			if ( $s->type === 'changed' ) {
 				$diff = new DifferenceEngine;
-				if ( method_exists( 'DifferenceEngine', 'setDiffLang' ) ) {
-					$diff->setDiffLang( $wgContLang );
+				if ( method_exists( 'DifferenceEngine', 'setTextLanguage' ) ) {
+					$diff->setTextLanguage( $wgContLang );
 				}
 				$diff->setText( $s->getOldText(), $s->getText() );
 				$text = $diff->getDiff( wfMsgHtml( 'tpt-diff-old' ), wfMsgHtml( 'tpt-diff-new' ) );
@@ -394,7 +394,7 @@ class SpecialPageTranslation extends SpecialPage {
 				$text = TranslateUtils::convertWhiteSpaceToHTML( $s->getText() );
 			}
 
-			# For changed text, the language is set by $diff->setDiffLang()
+			# For changed text, the language is set by $diff->setTextLanguage()
 			$lang = $s->type === 'changed' ? null : $wgContLang;
 			$wgOut->addHTML( MessageWebImporter::makeSectionElement( $name, $s->type, $text, $lang ) );
 		}
@@ -420,8 +420,8 @@ class SpecialPageTranslation extends SpecialPage {
 				$wgOut->wrapWikiMsg( '==$1==', 'tpt-sections-template' );
 
 				$diff = new DifferenceEngine;
-				if ( method_exists( 'DifferenceEngine', 'setDiffLang' ) ) {
-					$diff->setDiffLang( $wgContLang );
+				if ( method_exists( 'DifferenceEngine', 'setTextLanguage' ) ) {
+					$diff->setTextLanguage( $wgContLang );
 				}
 				$diff->setText( $oldTemplate, $newTemplate );
 				$text = $diff->getDiff( wfMsgHtml( 'tpt-diff-old' ), wfMsgHtml( 'tpt-diff-new' ) );

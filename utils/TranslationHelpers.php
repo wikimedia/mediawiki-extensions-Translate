@@ -901,8 +901,8 @@ class TranslationHelpers {
 		}
 
 		$diff = new DifferenceEngine;
-		if ( method_exists( 'DifferenceEngine', 'setDiffLang' ) ) {
-			$diff->setDiffLang( $this->group->getSourceLanguage() );
+		if ( method_exists( 'DifferenceEngine', 'setTextLanguage' ) ) {
+			$diff->setTextLanguage( $this->group->getSourceLanguage() );
 		}
 		$diff->setText( $oldtext, $newtext );
 		$diff->setReducedLineNumbers();
@@ -953,8 +953,8 @@ class TranslationHelpers {
 		}
 
 		$diff = new DifferenceEngine;
-		if ( method_exists( 'DifferenceEngine', 'setDiffLang' ) ) {
-			$diff->setDiffLang( $this->group->getSourceLanguage() );
+		if ( method_exists( 'DifferenceEngine', 'setTextLanguage' ) ) {
+			$diff->setTextLanguage( $this->group->getSourceLanguage() );
 		}
 		$diff->setText( $oldtext, $newtext );
 		$diff->setReducedLineNumbers();
