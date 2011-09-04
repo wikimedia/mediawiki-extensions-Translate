@@ -58,6 +58,7 @@ file = SharedHelp/CentralHelpSearch.i18n.php
 
 Chat
 optional = grouppage-bannedfromchat, grouppage-bannedfromchat, grouppage-chatmoderator
+ignored = emoticons
 
 Cloak Check
 
