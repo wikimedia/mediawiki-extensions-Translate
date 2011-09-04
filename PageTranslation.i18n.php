@@ -220,6 +220,7 @@ $3 is an URL.',
 	'pt-movepage-block-subpage-exists' => 'Subpage is here any subpage of translation page, which is not a translated version of the translatable page.',
 	'pt-movepage-reason' => '{{Identical|Reason}}',
 	'pt-deletepage-action-check' => 'This is a button label. "List" is an imperative verb.',
+	'pt-deletepage-current' => '{{Identical|Page name}}',
 	'pt-deletepage-reason' => '{{Identical|Reason}}',
 );
 
@@ -604,16 +605,16 @@ $messages['be-tarask'] = array(
 Праверце [[Special:Log/pagetranslation|журнал перакладаў старонак]] наконт памылак і паведамленьня пра выкананьне.',
 	'pt-locked-page' => 'Гэтая старонка заблякаваная з-за працэсу пераносу старонкі, якую магчыма перакласьці.',
 	'pt-deletepage-lang-title' => 'Выдаленьне старонкі перакладу $1.',
-	'pt-deletepage-full-title' => 'Выдаленьне магчымай да перакладу старонкі $1.',
-	'pt-deletepage-invalid-title' => 'Пазначаная старонка няслушная.',
-	'pt-deletepage-invalid-text' => 'Пазначаная старонка ані магчымая да перакладу, ані зьяўляецца перакладам.',
+	'pt-deletepage-full-title' => 'Выдаленьне старонкі $1, якую магчыма перакладаць.',
+	'pt-deletepage-invalid-title' => 'Пазначаная няслушная старонка.',
+	'pt-deletepage-invalid-text' => 'Пазначаная старонка не зьяўляецца старонкай, якія магчыма перакладаць, альбо перакладам.',
 	'pt-deletepage-action-check' => 'Сьпіс старонак да выдаленьня',
 	'pt-deletepage-action-perform' => 'Выканаць выдаленьне',
 	'pt-deletepage-action-other' => 'Зьмяніць мэту',
 	'pt-deletepage-lang-legend' => 'Выдаліць старонку перакладу',
-	'pt-deletepage-full-legend' => 'Выдаліць магчымую да перакладу старонку',
-	'pt-deletepage-any-legend' => 'Выдаліць магчымую да перакладу старонку ці перакладзеную старонку',
-	'pt-deletepage-current' => 'Назва старонкі',
+	'pt-deletepage-full-legend' => 'Выдаліць старонку, якую магчыма перакладаць',
+	'pt-deletepage-any-legend' => 'Выдаліць старонку, якую магчыма перакласьці, альбо перакладзеную старонку',
+	'pt-deletepage-current' => 'Назва старонкі:',
 	'pt-deletepage-reason' => 'Прычына:',
 	'pt-deletepage-subpages' => 'Выдаліць усе падстаронкі',
 	'pt-deletepage-list-pages' => 'Сьпіс старонак да выдаленьня',
@@ -623,10 +624,10 @@ $messages['be-tarask'] = array(
 	'pt-deletepage-list-count' => 'Агулам $1 {{PLURAL:$1|старонка|старонкі|старонак}} да выдаленьня.',
 	'pt-deletepage-full-logreason' => 'Частка старонкі $1, якую магчыма перакласьці.',
 	'pt-deletepage-lang-logreason' => 'Частка перакладзенай старонкі $1.',
-	'pt-deletepage-started' => 'Калі ласка, праверце [[Special:Log/pagetranslation|старонку журналу перакладаў]] адносна памылак і паведамленьняў пра выкананьне.',
-	'pt-deletepage-intro' => 'Гэтая спэцыяльная старонка дазваляе вам выдаляць цэлыя старонкі, магчымыя для перакладу, або перакладзеныя на іншыя мовы старонкі.
+	'pt-deletepage-started' => 'Калі ласка, праверце [[Special:Log/pagetranslation|старонку журнала перакладаў]] адносна памылак і паведамленьняў пра выкананьне.',
+	'pt-deletepage-intro' => 'Гэтая спэцыяльная старонка дазваляе Вам выдаляць цэлыя старонкі, якія магчыма перакладаць, альбо перакладзеныя на іншыя мовы.
 Выдаленьне не здарыцца хутка, таму што патрэбна выдаліць шмат старонак.
-Памылкі будуць запратакаляваныя на [[Special:Log/pagetranslation|старонцы журналу перакладаў]] і патрабуюць ручнога ўмяшальніцтва.',
+Памылкі будуць запратакаляваныя на [[Special:Log/pagetranslation|старонцы журналу перакладаў]] і патрабуюць выпраўленьня ўручную.',
 );
 
 /** Bulgarian (Български)
@@ -4938,7 +4939,6 @@ Antes de marcar esta versão para tradução, verifique se as mudanças nas seç
 Esta página é uma tradução da página [[$1]] e a tradução pode ser atualizada usando [$2 a ferramenta de tradução].',
 	'tpt-unknown-page' => 'Este domínio é reservado para traduções de páginas de conteúdo.
 Esta página que você está tentando editar não aparenta corresponder a nenhuma página marcada para tradução.',
-	'tpt-install' => 'Execute a manutenção do php/update.php ou a instalação "web" para habilitar a funcionalidade de tradução de páginas.',
 	'tpt-render-summary' => 'Atualizando para corresponder a nova versão da página fonte',
 	'tpt-download-page' => 'Exportar página com traduções',
 	'pt-parse-open' => 'O elemento &lt;translate> está desequilibrado.
@@ -4990,6 +4990,7 @@ As falhas serão registradas no [[Special:Log/pagetranslation|registro de tradu�
 	'pt-movepage-started' => 'A página base foi movida.
 Verifique no [[Special:Log/pagetranslation|registo de tradução de páginas]] eventuais mensagens de erro e/ou de atividade concluída.',
 	'pt-locked-page' => 'Está página está bloqueada porque a página traduzível está sendo movida.',
+	'pt-deletepage-list-translation' => 'Páginas de tradução',
 );
 
 /** Romansh (Rumantsch)

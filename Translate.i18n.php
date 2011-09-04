@@ -2427,7 +2427,7 @@ $messages['be-tarask'] = array(
 	'translationchanges' => 'Зьмены ў перакладах',
 	'translationchanges-export' => 'экспартаваць',
 	'translationchanges-change' => '$1: $2 праз $3',
-	'translationchanges-submit' => 'Выбарка',
+	'translationchanges-submit' => 'Выбраць',
 	'translate-checks-parameters' => '{{PLURAL:$2|Наступны парамэтар не выкарыстоўваецца|Наступныя парамэтры не выкарыстоўваюцца}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Невядомы парамэтар|Невядомыя парамэтры}}:
@@ -5406,6 +5406,7 @@ Klaku la mesaĝan grupnomon por vidi liston de mesaĝoj sen traduko.',
 	'translate-ignored' => '(ignorata)',
 	'translate-edit-title' => 'Redakti "$1"',
 	'translate-edit-definition' => 'Mesaĝa difino',
+	'translate-edit-translation' => 'Tradukado',
 	'translate-edit-contribute' => 'kontribui',
 	'translate-edit-no-information' => "''Ĉi tiu mesago ne havas dokumentaron. Se vi scias, kie aŭ kiel ĉi tiu mesaĝo estas uzata, vi povas helpi al aliaj tradukantoj aldonante la dokumentaron al ĉi tiu mesaĝo.''",
 	'translate-edit-information' => 'Informo pri la mesaĝo ($1)',
@@ -5447,6 +5448,7 @@ Vi devas esti en la grupo de tradukantoj por konservi ŝanĝojn.
 	'translationchanges' => 'Tradukŝanĝoj',
 	'translationchanges-export' => 'eksporti',
 	'translationchanges-change' => '$1: $2 de $3',
+	'translationchanges-submit' => 'Mendi',
 	'translate-checks-parameters' => '{{PLURAL:$2|Jenaj parametroj ne estas uzataj|Jena parametro ne estas uzata}}: <strong>$1</strong>',
 	'translate-checks-parameters-unknown' => 'Jenaj {{PLURAL:$2|parametro|parametroj}} estas nekonataj:
 <strong><nowiki>$1</nowiki></strong>',
@@ -16605,6 +16607,7 @@ Se o grupo é composto por um subconjunto ou superconjunto de mensagens de outro
 	'translate-ignored' => '(ignorada)',
 	'translate-edit-title' => 'Editar "$1"',
 	'translate-edit-definition' => 'Definição da mensagem',
+	'translate-edit-translation' => 'Tradução',
 	'translate-edit-contribute' => 'contribua',
 	'translate-edit-no-information' => "''Esta mensagem ainda não foi documentada. Caso você saiba onde ou como ela é utilizada, poderá ajudar outros tradutores adicionando dados sobre esta mensagem.''",
 	'translate-edit-information' => 'Informações sobre a mensagem ($1)',
@@ -16661,6 +16664,7 @@ As alterações não serão gravadas até que você clique abaixo no botão de g
 	'translate-checks-format' => 'Esta tradução não segue a definição ou tem uma sintaxe inválida: $1',
 	'translate-checks-escape' => 'As seguintes sequências de escape podem ter sido acidentais: <strong>$1</strong>',
 	'translate-checks-fudforum-syntax' => 'Use <nowiki>$1</nowiki> em vez de <nowiki>$2</nowiki> neste projeto.',
+	'translate-checks-prefs' => 'A mensagem entra em conflito com $1. Estas mensagens não devem ser iguais.',
 	'translate-pref-nonewsletter' => 'Não me enviar newsletters por e-mail',
 	'translate-pref-editassistlang' => 'Idiomas de ajuda:',
 	'prefs-translate' => 'Opções de tradução',
@@ -16708,6 +16712,7 @@ A lista padrão de idiomas depende do seu idioma.',
 	'translations-summary' => 'Introduza o título de uma mensagem abaixo para mostrar todas as traduções disponíveis.',
 	'translate-translations-no-message' => '"$1" não é uma mensagem traduzível',
 	'translate-translations-none' => 'Não existem traduções para "$1"',
+	'translate-translations-count' => '{{PLURAL:$1|Foi encontrada uma tradução|Foram encontradas $1 traduções}}.',
 	'translate-translations-fieldset-title' => 'Mensagem',
 	'translate-translations-messagename' => 'Nome:',
 	'translate-translations-project' => 'Projeto:',
@@ -16717,6 +16722,10 @@ A lista padrão de idiomas depende do seu idioma.',
 	'languagestats-summary' => 'Esta página mostra estatísticas de tradução para todos os grupos de mensagens para uma língua.',
 	'languagestats-stats-for' => 'Estatísticas de tradução para $1 ($2).',
 	'languagestats-recenttranslations' => 'traduções recentes',
+	'translate-langstats-expand' => 'expandir',
+	'translate-langstats-collapse' => 'ocultar',
+	'translate-langstats-expandall' => 'expandir todas',
+	'translate-langstats-collapseall' => 'recolher todas',
 	'translate-language-code' => 'Código de língua',
 	'translate-language-code-field-name' => 'Código de língua:',
 	'translate-suppress-complete' => 'Suprimir grupos de mensagens completamente traduzidos',
@@ -16733,6 +16742,7 @@ Isto inclui as mensagens que foram marcadas como desatualizadas.',
 As mensagens estão marcadas como desatualizadas porque a mensagem original em inglês mudou ou porque uma verificação automática da mensagem detectou um problema.',
 	'translate-nothing-to-do' => 'Aparentemente todas as traduções possíveis foram feitas.
 Você é encorajado a revisar mensagens através de [[Special:Translate|{{int:translate}}]].',
+	'translate-languagestats-overall' => 'Todos os grupos de mensagens em conjunto',
 	'supportedlanguages' => 'Línguas suportadas',
 	'supportedlanguages-summary' => 'Esta página apresenta uma lista de todas as línguas suportadas pela {{SITENAME}}, com os nomes dos tradutores de cada língua.
 Para obter mais informação sobre uma língua em particular, pode clicar o link para o portal dessa língua.
@@ -16744,8 +16754,11 @@ Se faz traduções para uma língua e o seu nome não aparece na lista, adicione
 Na barra lateral à esquerda existe um link para o portal da língua da sua preferência.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Tradutor|Tradutores}}: $1',
 	'supportedlanguages-recenttranslations' => 'traduções recentes',
+	'supportedlanguages-count' => '$1 {{plural:$1|língua|línguas}} no total.',
+	'supportedlanguages-activity' => '$1: $2 {{PLURAL:$2|edição|edições}} - a última edição foi há $3 {{PLURAL:$3|dia|dias}}',
 	'translate-save' => 'Gravar ($1)',
 	'translate-jssti-add' => 'Adicionar à lista',
+	'managemessagegroups' => 'Gerenciamento de grupos de mensagens',
 	'translate-manage-groups' => 'Gestão de grupos',
 	'translate-manage-listgroups' => 'Grupos configurados',
 	'translate-manage-listgroups-old' => 'Antigo estilo dos grupos',
@@ -16802,6 +16815,7 @@ $1',
 	'translate-import-err-ul-failed' => 'Carregamento de arquivo sem sucesso',
 	'translate-import-err-invalid-title' => 'O nome <nowiki>$1</nowiki> fornecido para o arquivo era inválido.',
 	'translate-import-err-no-such-file' => 'O arquivo <nowiki>$1</nowiki> não existe ou não foi carregado localmente.',
+	'translate-import-err-stale-group' => 'O grupo de mensagens a que este arquivo pertence não existe.',
 	'translate-import-err-no-headers' => 'O arquivo não é um arquivo Gettext válido, com o formato da extensão Translate:
 Não foi possível determinar o grupo e a língua a partir dos cabeçalhos.',
 	'translate-import-err-warnings' => 'Este arquivo não é válido.
@@ -16812,6 +16826,8 @@ Detalhes: $1',
 	'translate-js-skip' => 'Saltar para a seguinte',
 	'translate-js-save-failed' => 'A gravação falhou. Por favor, informe-nos deste erro.',
 	'translate-js-history' => 'Histórico de traduções',
+	'translate-js-support' => 'Fazer uma pergunta',
+	'translate-js-support-title' => 'Peça ajuda se não existir informação suficiente para traduzir esta mensagem corretamente.',
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Código',
 	'translate-gs-continent' => 'Continente',
@@ -16821,6 +16837,11 @@ Detalhes: $1',
 	'translate-gs-count' => 'Contagem',
 	'translate-gs-total' => 'Total',
 	'translate-gs-avgscore' => 'Pont. média',
+	'translate-documentation-language' => 'Documentação da mensagem',
+	'translate-searchprofile' => 'Traduções',
+	'translate-searchprofile-tooltip' => 'Pesquisar todas as traduções',
+	'translate-search-languagefilter' => 'Filtrar por língua:',
+	'translate-search-nofilter' => 'Não filtrar',
 );
 
 /** Tarifit (Tarifit)
@@ -21048,6 +21069,7 @@ $messages['ug-latn'] = array(
  * @author Ahonc
  * @author Aleksandrit
  * @author Apromix
+ * @author Dim Grits
  * @author Hypers
  * @author Microcell
  * @author NickK
@@ -21146,6 +21168,7 @@ $messages['uk'] = array(
 	'translationchanges' => 'Зміни в перекладах',
 	'translationchanges-export' => 'експортувати',
 	'translationchanges-change' => '$1: $2 $3',
+	'translationchanges-submit' => 'Вивести',
 	'translate-checks-parameters' => '{{PLURAL:$2|Параметр <strong><nowiki>$1</nowiki></strong> не використовується|Параметри <strong><nowiki>$1</nowiki></strong> не використовуються}}',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Параметр <strong><nowiki>$1</nowiki></strong> невідомий|Параметри <strong><nowiki>$1</nowiki></strong> невідомі}}',
 	'translate-checks-balance' => 'Непарна кількість відкритих і закритих {{PLURAL:$2|дужок|дужок}}:
@@ -21249,6 +21272,8 @@ $messages['uk'] = array(
 На бічній панель знаходиться посилання на портал мови вашого інтерфейсу.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Перекладач|Перекладачі}}: $1',
 	'supportedlanguages-recenttranslations' => 'останні переклади',
+	'supportedlanguages-count' => 'Всього $1 {{PLURAL:$1|мова|мови|мов}}.',
+	'supportedlanguages-activity' => '$1: $2 {{PLURAL:$2|редагування|редагувань}} — последняя правка $3 {{PLURAL:$3|день|дня|днів}} тому',
 	'translate-save' => 'Зберегти ($1)',
 	'translate-jssti-add' => 'Додати в список',
 	'managemessagegroups' => 'Керування групами повідомлень',
@@ -21330,6 +21355,10 @@ $1',
 	'translate-gs-total' => 'Всього',
 	'translate-gs-avgscore' => 'Сер. оцінка',
 	'translate-documentation-language' => 'Документація повідомлення',
+	'translate-searchprofile' => 'Переклади',
+	'translate-searchprofile-tooltip' => 'Пошук серед усіх перекладів',
+	'translate-search-languagefilter' => 'Фільтр мов:',
+	'translate-search-nofilter' => 'Без фільтрації',
 );
 
 /** Vèneto (Vèneto)
