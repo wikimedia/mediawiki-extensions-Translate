@@ -260,14 +260,3 @@ FILES:
   sourcePattern: %GROUPROOT%/pywikipedia/welcome.py
   definitionFile: %GROUPROOT%/pywikipedia/welcome.py
   targetPattern: pywikipedia/welcome.py
----
-BASIC:
-  id: out-pywikipedia-wiktionary
-  label: Pywikipedia Wiktionary 
-  display: out/pywikipedia/wiktionary
-
-FILES:
-  class: PythonSingleFFS
-  sourcePattern: %GROUPROOT%/pywikipedia/wiktionary.py
-  definitionFile: %GROUPROOT%/pywikipedia/wiktionary.py
-  targetPattern: pywikipedia/wiktionary.py
