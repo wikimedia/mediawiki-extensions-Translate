@@ -683,6 +683,8 @@ ignored = index-exclude-categories
 #Inline Editor
 #descmsg = inline-editor-desc
 
+Inline Categorizer
+
 Input Box
 
 Inspect Cache
