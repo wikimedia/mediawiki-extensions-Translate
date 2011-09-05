@@ -6290,6 +6290,9 @@ $messages['fa'] = array(
 	'translate-checks-xhtml' => 'لطفاً این {{PLURAL:$2|برچسب|برچسب‌ها}} را با موارد درست جایگزین کنید:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'تعریف از <nowiki>{{PLURAL:}}</nowiki> استفاده می‌کند اما ترجمه از آن استفاده نمی‌کند.',
+	'translate-pref-nonewsletter' => 'برای من خبرنامهٔ الکترونیکی ارسال نکن',
+	'translate-pref-editassistlang' => 'زبان‌های دستیار:',
+	'translate-pref-jsedit' => 'ویرایشگر پیشرفتهٔ ترجمه (جاوااسکریپت)',
 	'translationstats' => 'آمار ترجمه',
 	'translate-stats-edits' => 'ویرایش‌ها',
 	'translate-stats-users' => 'مترجمان',
@@ -8296,6 +8299,7 @@ $messages['he'] = array(
 	'translationchanges' => 'שינויים בתרגום',
 	'translationchanges-export' => 'יצוא',
 	'translationchanges-change' => '$1: $2 על ידי $3',
+	'translationchanges-submit' => 'אחזור',
 	'translate-checks-parameters' => '{{PLURAL:$2|הפרמטר הבא אינו|הפרמטרים הבאים אינם}} בשימוש:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|הפרמטר הבא אינו|הפרמטרים הבאים אינם}} ידועים:
@@ -12090,13 +12094,13 @@ de Söndersigg [[Special:Translate|{{int:translate}}]] norrens ze prööfe.',
 	'supportedlanguages' => 'Ongerstöz Shprooche',
 	'supportedlanguages-summary' => 'He sin alle Shprooche opjeleß, di mer {{GRAMMAR:em|{{SITENAME}}}} ongershtöze.
 Dobei shtonn de Övversäzer, di aan dä Shprooch aam ärbeide sin.
-Wann de mieh övver en Shprooch weße wells, dann jangk op di Pooz-Sigg vun dä Shprooch.
-Wann de ävver op enem Övversetzer singem Name klcks, küss_De op däm sing Metmaacher-Sigg.
+Wann De mieh övver en Shprooch weße wells, dann jangk op di Pooz-Sigg vun dä Shprooch.
+Wann De ävver op enem Övversetzer singem Name klecks, küss_De op däm sing Metmaacher-Sigg.
 
 Wann en Shprooch heh nit bei es, dann kanns De op dä Sigg övver [[Translating:Process|neu Shprooche]] lässe, wi mer en neu Sproocheprojäk opsäz.
 
 Wann De en en Sprooch aam övversäze bes, un Dinge Name es nit als Övversäzer opjeföhrt, dann donn op dä ier [[:Category:Languages|Pooz-Sigg]] Dinge Metmaacher-Name noch enndraare.
-En dä Leß met Lengks es och eine op di Pooz-Sigg för di Shprooch, di De ein Dinge Ennstellunge ußjewählt häs.',
+En dä Leß met Lengks es och eine op di Pooz-Sigg för di Shprooch, di De en Dinge Ennstellunge ußjewählt häs.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Eine Övversäzer:|$2 Övversäzer:|Keine Övversäzer}} $1',
 	'supportedlanguages-recenttranslations' => 'neuste Övversäzunge',
 	'supportedlanguages-count' => '{{plural:$1|Ein Schprooch|$1 Schprooche|Kein Schprooche}} ensjesamp.',
