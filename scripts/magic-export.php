@@ -123,7 +123,7 @@ class MagicExport extends Maintenance {
 		$end = strpos( $data, '*/' ) + 2;
 
 		if ( $end === false ) {
-			die( "No header found in '$file'.\n" );
+			return "<?php\n";
 		}
 
 		// Grab header.
