@@ -231,11 +231,11 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			$out = wfMsgExt( 'translate-nothing-to-do', 'parse' );
 		}
 
-		// @todo: Allow extra message here, once total translated volume goes
-		//        over a certain percentage? (former live hack at translatewiki)
-		// if ( $this->totals['2'] && ( $this->totals['1'] / $this->totals['2'] ) > 0.95 ) {
-		// 	$out .= wfMessage( 'translate-somekey' );
-		// }
+		/// @todo: Allow extra message here, once total translated volume goes
+		///        over a certain percentage? (former live hack at translatewiki)
+		/// if ( $this->totals['2'] && ( $this->totals['1'] / $this->totals['2'] ) > 0.95 ) {
+		/// 	$out .= wfMessage( 'translate-somekey' );
+		/// }
 
 		return $out;
 	}
