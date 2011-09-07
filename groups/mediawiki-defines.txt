@@ -1378,6 +1378,7 @@ file = SpecialFileList/SpecialFilelist.i18n.php
 descmsg = filelist-desc
 
 Sphinx Search
+aliasfile = SphinxSearch/SphinxSearch.alias.php
 
 Special Talk
 
