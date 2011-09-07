@@ -2815,7 +2815,7 @@ $messages['bn'] = array(
 	'translate-statsf-scale-weeks' => 'সপ্তাহ',
 	'translate-statsf-scale-days' => 'দিন',
 	'translate-statsf-scale-hours' => 'ঘন্টা',
-	'translate-statsf-count-edits' => 'সম্পাদনার সংখ্যা:',
+	'translate-statsf-count-edits' => 'সম্পাদনা সংখ্যা',
 	'translate-statsf-count-users' => 'সক্রিয় অনুবাদক',
 	'translate-statsf-count-registrations' => 'নতুন ব্যবহারকারী',
 	'translate-statsf-submit' => 'প্রাকদর্শন',
@@ -7033,6 +7033,7 @@ Los changements sont pas encartâs tant que vos éd pas clicâ sur lo boton « E
 	'translationchanges' => 'Traduccions changiês',
 	'translationchanges-export' => 'èxportar',
 	'translationchanges-change' => '$1 : $2 per $3',
+	'translationchanges-submit' => 'Listar',
 	'translate-checks-parameters' => '{{PLURAL:$2|Ceti paramètre est pas utilisâ|Cetos paramètres sont pas utilisâs}} :
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Ceti paramètre est encognu|Cetos paramètres sont encognus}} :
