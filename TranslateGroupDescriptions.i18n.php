@@ -507,6 +507,7 @@ $messages['da'] = array(
 	'translate-group-desc-collection' => 'Meta besked gruppe der indeholder alle beskeder til MediaWiki udvidelsen [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
 	'translate-group-desc-flaggedrevs' => 'Meta besked gruppe der indeholder alle beskeder til MediaWiki udvidelsen [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Meta besked gruppe der indeholder alle beskeder til MediaWiki udvidelsen [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
+	'translate-group-desc-semantic' => 'Metabeskedgruppe, der indeholder alle beskeder for alle udvidelser til [http://semantic-mediawiki.org/ Semantisk MediaWiki]',
 	'translate-group-desc-socialprofile' => 'Meta besked gruppe der indeholder alle beskeder relateret til MediaWiki udvidelsen [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
 	'translate-group-desc-translate' => 'Meta besked gruppe der indeholder alle beskeder til MediaWiki udvidelsen [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-wikiaextensions' => 'Meta besked gruppe der indeholder alle beskeder til understøttede MediaWiki udvidelser brugt af [http://www.wikia.com Wikia]',
@@ -544,9 +545,7 @@ $messages['da'] = array(
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] er en microblogging server',
 	'translate-group-desc-statusnet-plugin' => 'Disse meddelelser er en del af et plugin til [[Translating:StatusNet|StatusNet]]',
 	'translate-group-desc-tsint' => 'En besked gruppe for [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], i18n systemet til [http://toolserver.org Toolserver] værktøjer (<span class="plainlinks">[[Translating talk:Toolserver|support]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition technical details]</span>)',
-	'bw-desc-voctrain' => '[[Translating:Voctrain|Voctrain]] er en OmegaWiki-baseret ordforråd træner',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] er i stand til hurtigt at finde forfatterne til en del af en side i en Wikimedia wiki',
-	'bw-desc-wikimediamobile' => '[[Translating:Wikimedia_mobile|Wikimedia mobile]] er den mobile brugerflade til Wikipedia',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] giver en frakoblet tekstudgave af Wikipedia på en mobil enhed.',
 );
 
