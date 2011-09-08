@@ -219,7 +219,6 @@ file = cldr/cldr.i18n.php
 Clean Changes
 
 Click Tracking
-aliasfile = ClickTracking/ClickTracking.alias.php
 
 Client Side
 
