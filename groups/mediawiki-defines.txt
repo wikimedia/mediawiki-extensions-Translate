@@ -906,9 +906,6 @@ descmsg = newusernotif-desc
 
 New Users List
 
-Nimbus (skin)
-file = skins/Nimbus/Nimbus.i18n.php
-
 Notificator
 aliasfile = Notificator/Notificator.alias.php
 
@@ -1295,8 +1292,6 @@ descmsg = security-desc
 
 Site Matrix
 aliasfile = SiteMatrix/SiteMatrix.alias.php
-
-Site Metrics
 
 Skin Per Page
 
