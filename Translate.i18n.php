@@ -1992,6 +1992,21 @@ $messages['az'] = array(
 	'translate-page-group' => 'Qrup',
 	'translate-page-language' => 'Dil',
 	'translate-submit' => 'Seç',
+	'translate-magic-cm-current' => 'Hazırki',
+	'translate-magic-cm-original' => 'Orijinal',
+	'translate-magic-cm-comment' => 'Şərh:',
+	'translate-stats-edits' => 'Redaktələr',
+	'translate-stats-users' => 'Tərcüməçilər',
+	'translate-statsf-scale-months' => 'Aylar',
+	'translate-statsf-scale-weeks' => 'Həftələr',
+	'translate-statsf-scale-days' => 'Günlər',
+	'translate-statsf-scale-hours' => 'Saatlar',
+	'translate-statsf-count-registrations' => 'Yeni istifadəçilər',
+	'translate-translations-messagename' => 'Ad:',
+	'translate-translations-project' => 'Layihə:',
+	'translate-language' => 'Dil',
+	'translate-total' => 'Mesajlar',
+	'translate-manage-modlang-new' => '$1 (yeni)',
 );
 
 /** Bashkir (Башҡортса)
@@ -9680,6 +9695,7 @@ Le modificationes non es salveguardate usque tu clicca super le button Salveguar
 	'translationchanges' => 'Modificationes in traductiones',
 	'translationchanges-export' => 'exportar',
 	'translationchanges-change' => '$1: $2 per $3',
+	'translationchanges-submit' => 'Obtener',
 	'translate-checks-parameters' => 'Le sequente {{PLURAL:$2|parametro|parametros}} non es usate:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => 'Le sequente {{PLURAL:$2|parametro|parametros}} es incognite:
@@ -13642,6 +13658,7 @@ Perubahan tidak disimpan sehingga anda mengklik butang Simpan di bawah.',
 	'translationchanges' => 'Perubahan terjemahan',
 	'translationchanges-export' => 'eksport',
 	'translationchanges-change' => '$1: $2 daripada $3',
+	'translationchanges-submit' => 'Ambil',
 	'translate-checks-parameters' => '{{PLURAL:$2|Parameter|Parameter-parameter}} berikut tidak digunakan:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Parameter|Parameter-parameter}} berikut tidak dikenali:

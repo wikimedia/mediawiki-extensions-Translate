@@ -446,6 +446,16 @@ $messages['ast'] = array(
 	'translate-tag-translate-link-desc' => 'Traducir esta páxina',
 );
 
+/** Azerbaijani (Azərbaycanca)
+ * @author Cekli829
+ */
+$messages['az'] = array(
+	'tpt-diff-new' => 'Yeni mətn',
+	'pt-movepage-new' => 'Yeni ad:',
+	'pt-movepage-reason' => 'Səbəb:',
+	'pt-deletepage-reason' => 'Səbəb:',
+);
+
 /** Bavarian (Boarisch)
  * @author Mucalexx
  */
