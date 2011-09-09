@@ -57,19 +57,6 @@ MANGLER:
 
 ---
 BASIC:
-  id: out-shapado-ads
-  label: Shapado - Ads
-  display: out/shapado/ads
-
-FILES:
-  sourcePattern: %GROUPROOT%/shapado/config/locales/ads/%CODE%.yml
-  targetPattern: shapado/config/locales/ads/%CODE%.yml
-
-MANGLER:
-  prefix: ads-
-
----
-BASIC:
   id: out-shapado-announcements
   label: Shapado - Announcements
   display: out/shapado/announcements
