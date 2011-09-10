@@ -468,9 +468,6 @@ aliasfile = EmergencyDeSysop/EmergencyDeSysop.alias.php
 
 Error Handler
 
-Eval
-aliasfile = Eval/Eval.alias.php
-
 Expand Templates
 aliasfile = ExpandTemplates/ExpandTemplates.alias.php
 
