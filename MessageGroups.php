@@ -429,8 +429,6 @@ class ExtensionMessageGroup extends MessageGroupOld {
 	protected function setDescriptionMsgReal( $key, $url ) {
 		$this->description = '';
 
-		global $wgLang;
-
 		$desc = null;
 
 		if ( !wfEmptyMsg( $key ) ) {

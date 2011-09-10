@@ -21,6 +21,8 @@ class TranslateBC {
 	 *    which evaluates to a function object which is called.
 	 * @param $args Array of arguments to pass to the function.
 	 * @since 1.17
+	 *
+	 * @return string
 	 */
 	public static function encodeJsCall( $name, $args ) {
 		$realFunction = array( 'Xml', 'encodeJsCall' );

@@ -584,7 +584,7 @@ FOO;
 	}
 
 	public static function replaceSubtitle( &$subpages, $skin = null , $out = null ) {
-		global $wgOut, $wgUser;
+		global $wgOut;
 		// $out was only added in some MW version
 		if ( $out === null ) $out = $wgOut;
 		$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;

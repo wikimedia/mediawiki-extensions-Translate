@@ -74,7 +74,7 @@ class TranslateYaml {
 	}
 
 	public static function fixSyckBooleans( &$yaml ) {
-		foreach ( $yaml as $key => &$value ) {
+		foreach ( $yaml as &$value ) {
 			if ( is_array( $value ) ) {
 				self::fixSyckBooleans( $value );
 			} elseif ( $value === 'yes' ) {

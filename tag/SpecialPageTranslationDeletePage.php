@@ -154,7 +154,6 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 
 		$wgOut->addWikiMsg( 'pt-deletepage-intro' );
 
-		$br = Html::element( 'br' );
 		$subaction = array( 'name' => 'subaction' );
 		$formParams = array( 'method' => 'post', 'action' => $this->getTitle( $this->text )->getLocalURL() );
 
@@ -195,7 +194,6 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 
 		$wgOut->addWikiMsg( 'pt-deletepage-intro' );
 
-		$base = $this->title->getPrefixedText();
 		$target = $this->title;
 		$count = 1; // Base page
 

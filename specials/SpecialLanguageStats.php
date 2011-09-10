@@ -286,8 +286,6 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	}
 
 	protected function makeGroupRow( $group, $cache, $parent = false ) {
-		global $wgLang;
-
 		$out = '';
 		$code = $this->code;
 		$suppressComplete = $this->suppressComplete;
@@ -422,7 +420,6 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	}
 
 	protected function makeGroupLink( $group, $code, $params ) {
-		global $wgOut;
 
 		$queryParameters = $params + array(
 			'group' => $group->getId(),

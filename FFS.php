@@ -729,7 +729,7 @@ class YamlFFS extends SimpleFFS {
 
 		$messages = $this->flatten( $messages );
 		$messages = $this->group->getMangler()->mangle( $messages );
-		foreach ( $messages as $key => &$value ) {
+		foreach ( $messages as &$value ) {
 			$value = rtrim( $value, "\n" );
 		}
 

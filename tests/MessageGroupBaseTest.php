@@ -57,7 +57,6 @@ class MessageGroupBaseTest extends MediaWikiTestCase {
 	public function testGetNamespaceNumber() {
 		$conf = $this->groupConfiguration;
 		$conf['BASIC']['namespace'] = NS_MEDIAWIKI;
-		$group = MessageGroupBase::factory( $conf );
 
 		$this->assertEquals(
 			NS_MEDIAWIKI,
@@ -69,7 +68,6 @@ class MessageGroupBaseTest extends MediaWikiTestCase {
 	public function testGetNamespaceString() {
 		$conf = $this->groupConfiguration;
 		$conf['BASIC']['namespace'] = 'mediawiki';
-		$group = MessageGroupBase::factory( $conf );
 
 		$this->assertEquals(
 			NS_MEDIAWIKI,
@@ -85,7 +83,6 @@ class MessageGroupBaseTest extends MediaWikiTestCase {
 	public function testGetNamespaceInvalid() {
 		$conf = $this->groupConfiguration;
 		$conf['BASIC']['namespace'] = 'ergweofijwef';
-		$group = MessageGroupBase::factory( $conf );
 	}
 
 }
