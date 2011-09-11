@@ -544,7 +544,12 @@ FOO;
 		$language = $forUI === null ? $wgContLang : $wgLang;
 		$opts = array( 'parseinline', 'language' => $language );
 
-		$_ = unserialize( $params[0] );
+		// New logging system already unserializes it for us
+		if ( is_array( $params ) ) {
+			$_ = $params;
+		} else {
+			$_ = unserialize( $params[0] );
+		}
 		$user =  $_['user'];
 
 		if ( $action === 'mark' ) {
