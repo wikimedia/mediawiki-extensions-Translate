@@ -1494,6 +1494,7 @@ $messages['ko'] = array(
 
 /** Colognian (Ripoarisch)
  * @author Purodha
+ * @author Reedy
  */
 $messages['ksh'] = array(
 	'translategroupdescriptions-desc' => 'Enfomazjuhne övver de Jroppe vun Täxte un Nohreeschte, di vun däm Zohsazprojramm <i lang="en">[http://mediawiki.org/wiki/Extension:Translate Translate]</i> för MediaWiki ongershtöz wääde.',
@@ -1521,7 +1522,7 @@ $messages['ksh'] = array(
 	'translate-group-desc-ihris' => 'En Jrop Täxte un Nohreeschte för [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-common' => 'Täxte un Nohreeschte för <i lang="en">[[Special:Translate/out-ihris-common-0-all|iHRIS Common]]</i>, enem Modul vum <i lang="en">[[Translating:iHRIS|iHRIS]]</i>',
 	'translate-group-desc-ihris-i2ce' => 'Täxte un Nohreeschte för <i lang="en">[[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]]</i>, enem Modul vum <i lang="en">[[Translating:iHRIS|iHRIS]]</i>',
-	'translate-group-desc-ihris-manage' => 'Täxte un Nohreeschte för <i lang="en">[[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]]</i>, enem Modul vum <i lang="en">[[Translating:iHRIS|iHRIS]]</i',
+	'translate-group-desc-ihris-manage' => 'Täxte un Nohreeschte för <i lang="en">[[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]]</i>, enem Modul vum <i lang="en">[[Translating:iHRIS|iHRIS]]</i>',
 	'translate-group-desc-ihris-qualify' => 'En Jropp vun Täxde un Nohreeschde för de <i lang="en">[[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]]</i>, e Modul vum <i lang="en">[[Translating:iHRIS|iHRIS]]</i>',
 	'translate-group-desc-kiwix' => 'De Täxte un Nohreeschte vum [[Translating:Kiwix|Kiwix]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'Ene Houp-Zohsaz för [[Translating:MantisBT|MantisBT]]',
@@ -1548,9 +1549,7 @@ Opjepaß:
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] es ene ẞööver för et Mini-Blogge met offe Quälltäxt.',
 	'translate-group-desc-statusnet-plugin' => 'Heh di Täxte un Nohreeschte sin Deil vun enem Zohsazprojramm för [[Translating:StatusNet|StatusNet]]',
 	'translate-group-desc-tsint' => 'Heh di Jropp vun Täxte un Nohreeschte jehööt zom [http://toolserver.org/~krinkle/TsIntuition Tuulẞööver singem <i lang="en">Intuition</i>], enem Süßteem för et Övversäze vun  Projramme, di om [http://toolserver.org Tuulẞööver] loufe (<span class="plainlinks">[[Translating talk:Toolserver|{{int:bw-mainpage-support-title}}]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition täschnesch Einzelheite]</span>)',
-	'bw-desc-voctrain' => 'Ene Trääner för Vokabele, dä op [http://omegawiki.org OmegaWiki] bout. Dä bruch ene Pöngel „Käätshe“, öm Wööter vun öhnßwelsh Shprooche met öhnßwelsh Shprooche us em OmegaWiki ze liehre. Shteiht unger de GPL 2.0 udder shpääder. Wood för de Univäsitäht vun Bammbersh jemat, un shtammp vum [[User:Kim Bruning|Kim Bruning]].',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] kann flöck de Schriiver vun enem Stöck vun ener Sigg en enem Wikimedia Wiki fenge.',
-	'bw-desc-wikimediamobile' => 'De Wikipedija ier bewääschlijje Version fengk mer unger http://m.wikipedia.org, un se well de Wikipedija op de Händi-Tellefoone rund öm der Jlobus brenge.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] es e Projäk för en offlain Version vun de Wikipedia, ävver bloß Täx, op klein Jeräte.',
 );
 
