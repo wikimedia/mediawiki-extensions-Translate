@@ -23,8 +23,7 @@ BASIC:
   class: AggregateMessageGroup
 
 GROUPS:
-  - out-osm-potlatch
-  - out-osm-site
+  - out-osm-*
 
 ---
 BASIC:
@@ -94,29 +93,3 @@ TAGS:
     - site.edit.anon_edits_link
     - site.index.license.license_url
     - site.index.license.project_url
-
----
-BASIC:
-  id: out-osm-potlatch
-  label: OpenStreetMap - Potlatch
-  description: "{{int:bw-desc-osm-potlatch}}"
-  display: out/osm/potlatch
-
-FILES:
-  sourcePattern: %GROUPROOT%/osm/config/potlatch/locales/%CODE%.yml
-  targetPattern: osm/config/potlatch/locales/%CODE%.yml
-
-TAGS:
-  optional:
-    - help_html
-    - inspector_way
-    - inspector_way_name
-    - microblog_name_identica
-    - microblog_name_twitter
-    - option_layer_digitalglobe_haiti
-    - option_layer_geoeye_gravitystorm_haiti
-    - option_layer_geoeye_haiti
-    - option_layer_geoeye_nypl_haiti
-    - option_layer_mapnik
-    - option_layer_osmarender
-    - option_layer_yahoo
