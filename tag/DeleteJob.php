@@ -23,7 +23,7 @@ class DeleteJob extends Job {
 		$job->setFull( $full );
 		$job->setBase( $base );
 		$msg = $job->getFull() ? 'pt-deletepage-full-logreason' : 'pt-deletepage-lang-logreason';
-		$job->setSummary( wfMsgForContent( $msg, $target->getPrefixedText() ) );
+		$job->setSummary( wfMsgForContent( $msg, $base ) );
 		$job->setPerformer( $performer );
 		return $job;
 	}
@@ -53,7 +53,7 @@ class DeleteJob extends Job {
 			$logger = new LogPage( 'pagetranslation' );
 			$params = array(
 				'user' => $this->getPerformer(),
-				'target' => $title->getPrefixedText(),
+				'target' => $base,
 				'error' => base64_encode( serialize( $ok ) ), // This is getting ridiculous
 			);
 			$doer = User::newFromName( $this->getPerformer() );
