@@ -18,7 +18,7 @@ class MessageGroupBaseTest extends MediaWikiTestCase {
 	}
 
 	protected function tearDown() {
-		unset( $this->apple );
+		unset( $this->group );
 		parent::tearDown();
 	}
 
@@ -56,10 +56,11 @@ class MessageGroupBaseTest extends MediaWikiTestCase {
 
 	public function testGetNamespaceNumber() {
 		$conf = $this->groupConfiguration;
-		$conf['BASIC']['namespace'] = NS_MEDIAWIKI;
+		$conf['BASIC']['namespace'] = NS_IMAGE;
+		$this->group = MessageGroupBase::factory( $conf );
 
 		$this->assertEquals(
-			NS_MEDIAWIKI,
+			NS_IMAGE,
 			$this->group->getNamespace(),
 			"should parse integer namespace number."
 		);
@@ -67,10 +68,11 @@ class MessageGroupBaseTest extends MediaWikiTestCase {
 
 	public function testGetNamespaceString() {
 		$conf = $this->groupConfiguration;
-		$conf['BASIC']['namespace'] = 'mediawiki';
+		$conf['BASIC']['namespace'] = 'image';
+		$this->group = MessageGroupBase::factory( $conf );
 
 		$this->assertEquals(
-			NS_MEDIAWIKI,
+			NS_IMAGE,
 			$this->group->getNamespace(),
 			"should parse string namespace name."
 		);
@@ -83,6 +85,7 @@ class MessageGroupBaseTest extends MediaWikiTestCase {
 	public function testGetNamespaceInvalid() {
 		$conf = $this->groupConfiguration;
 		$conf['BASIC']['namespace'] = 'ergweofijwef';
+		MessageGroupBase::factory( $conf );
 	}
 
 }
