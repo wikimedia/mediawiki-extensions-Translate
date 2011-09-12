@@ -110,5 +110,6 @@ GROUPS:
   - ext-wikilove # r90124
   - ext-wikihiero
   - ext-wikimediaincubator # r89556
+  - ext-wikimediaincubatorinfopage
   - ext-wikimedialicensetexts # commons.wikimedia.org
   - ext-wikimediamessages
