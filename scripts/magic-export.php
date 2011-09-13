@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Script to export special page aliases and magic words of extensions.
  *
@@ -257,24 +256,10 @@ PHP
 	}
 
 	/**
-	 * For special page aliases we set $aliases as a reference to
-	 * the more modern $specialPageAliases for backwards compatibility.
+	 * Do whatever needs doing after writing the primary content.
 	 */
 	protected function writeFooters() {
 		$this->output( "Writing file footers...\n" );
-		if ( $this->type === 'special' ) {
-			foreach ( $this->handles as $handle ) {
-				fwrite( $handle, <<<PHP
-
-
-/**
- * For backwards compatibility with MediaWiki 1.15 and earlier.
- */
-\$aliases =& \$specialPageAliases;
-PHP
-				);
-			}
-		}
 	}
 
 	/**
