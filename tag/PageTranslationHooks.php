@@ -385,20 +385,12 @@ FOO;
 		return true;
 	}
 
-	public static function schemaUpdates( $updater = null ) {
-		$dir = dirname( __FILE__ ) . '/..';
+	public static function schemaUpdates( $updater ) {
+		$dir = dirname( __FILE__ ) . '/../sql';
 
-		if ( $updater === null ) {
-			global $wgExtNewTables, $wgExtNewFields;
-
-			$wgExtNewTables[] = array( 'translate_sections', "$dir/translate.sql" );
-			$wgExtNewFields[] = array( 'translate_sections', 'trs_order', "$dir/translate-add-trs_order.patch.sql" );
-			$wgExtNewTables[] = array( 'revtag', "$dir/revtags.sql" );
-		} else {
-			$updater->addExtensionUpdate( array( 'addTable', 'translate_sections', "$dir/translate.sql", true ) );
-			$updater->addExtensionUpdate( array( 'addField', 'translate_sections', 'trs_order', "$dir/translate-add-trs_order.patch.sql", true ) );
-			$updater->addExtensionUpdate( array( 'addTable', 'revtag', "$dir/revtags.sql", true ) );
-		}
+		$updater->addExtensionUpdate( array( 'addTable', 'translate_sections', "$dir/translate_sections.sql", true ) );
+		$updater->addExtensionUpdate( array( 'addField', 'translate_sections', 'trs_order', "$dir/translate_sections-trs_order.patch.sql", true ) );
+		$updater->addExtensionUpdate( array( 'addTable', 'revtag', "$dir/revtag.sql", true ) );
 		return true;
 	}
 
