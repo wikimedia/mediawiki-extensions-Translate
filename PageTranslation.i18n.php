@@ -6230,6 +6230,8 @@ $messages['yi'] = array(
 	'tpt-diff-new' => 'נײַער טעקסט',
 	'tpt-translate-this' => 'פֿאַרטײַטשן דעם בלאַט',
 	'translate-tag-translate-link-desc' => 'פֿאַרטײַטשט דעם בלאַט',
+	'translate-tag-markthisagain' => 'דער בלאַט האט <span class="plainlinks">[ $1 ענדערונגען]</span> זינט ער איז לעצט געווארן <span class="plainlinks">[ $2 אנגעצייכנט פֿאַר איבערזעצונג].</span>',
+	'translate-tag-hasnew' => 'דער בלאַט אַנטהאַלט  <span class="plainlinks">[ $1 ענדערונגען]</span> וואָס זענען נישט אנגעצייכנט פֿאַר איבערזעצונג.',
 	'tpt-languages-legend' => 'אנדערע שפראַכן:',
 	'pt-movepage-list-pages' => 'רשימה פון בלעטער צו באַוועגן',
 	'pt-movepage-list-translation' => 'טײַטש  בלעטער',
