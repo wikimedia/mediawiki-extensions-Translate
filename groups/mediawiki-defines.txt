@@ -1708,6 +1708,10 @@ descmsg = wlfeed-desc
 Wiki Love
 optional = wikilove-commons-url, wikilove-commons-link
 
+Wiki Object Model
+file = WikiObjectModel/languages/Messages.php
+descmsg = wom-desc
+
 Wikimedia Incubator
 descmsg = wminc-desc
 
