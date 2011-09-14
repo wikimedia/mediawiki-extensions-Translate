@@ -1401,6 +1401,10 @@ Subpage Sortkey
 Sudo
 aliasfile = Sudo/Sudo.alias.php
 
+Survey
+ignored = surveys-surveystats-question-nr, surveys-surveystats-question-#
+aliasfile = Survey/Survey.alias.php
+
 SVG Edit
 
 SVG Zoom
