@@ -104,6 +104,7 @@ $wgAutoloadClasses['MessageTable'] = $dir . 'utils/MessageTable.php';
 $wgAutoloadClasses['JsSelectToInput'] = $dir . 'utils/JsSelectToInput.php';
 $wgAutoloadClasses['HTMLJsSelectToInputField'] = $dir . 'utils/HTMLJsSelectToInputField.php';
 $wgAutoloadClasses['MessageGroupCache'] = $dir . 'utils/MessageGroupCache.php';
+$wgAutoloadClasses['MessageGroupStats'] = $dir . 'utils/MessageGroupStats.php';
 $wgAutoloadClasses['MessageWebImporter'] = $dir . 'utils/MessageWebImporter.php';
 $wgAutoloadClasses['TranslationEditPage'] = $dir . 'utils/TranslationEditPage.php';
 $wgAutoloadClasses['TranslationHelpers'] = $dir . 'utils/TranslationHelpers.php';
