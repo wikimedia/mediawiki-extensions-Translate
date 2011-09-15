@@ -99,4 +99,37 @@ class MessageHandle {
 		return $this->title;
 	}
 
+	/**
+	 * Check if a string contains the fuzzy string.
+	 *
+	 * @param $text \string Arbitrary text
+	 * @return \bool If string contains fuzzy string.
+	 */
+	public static function hasFuzzyString( $text ) {
+		return strpos( $text, TRANSLATE_FUZZY ) !== false;
+	}
+
+	/**
+	 * Check if a title is marked as fuzzy.
+	 * @param $title Title
+	 * @return \bool If title is marked fuzzy.
+	 */
+	public function isFuzzy() {
+		$dbr = wfGetDB( DB_SLAVE );
+
+		$tables = array( 'page', 'revtag' );
+		$field = 'rt_type';
+		$conds  = array(
+			'page_namespace' => $this->title->getNamespace(),
+			'page_title' => $this->title->getDBkey(),
+			'rt_type' => RevTag::getType( 'fuzzy' ),
+			'page_id=rt_page',
+			'page_latest=rt_revision'
+		);
+
+		$res = $dbr->selectField( $tables, $field, $conds, __METHOD__ );
+
+		return $res !== false;
+	}
+
 }

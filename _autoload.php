@@ -94,8 +94,6 @@ $wgAutoloadClasses['StringMangler'] = $dir . 'utils/StringMatcher.php';
 $wgAutoloadClasses['StringMatcher'] = $dir . 'utils/StringMatcher.php';
 $wgAutoloadClasses['FCFontFinder'] = $dir . 'utils/Font.php';
 
-$wgAutoloadClasses['ArrayMemoryCache'] = $dir . 'utils/MemoryCache.php';
-
 $wgAutoloadClasses['TranslatePreferences'] = $dir . 'utils/UserToggles.php';
 $wgAutoloadClasses['TranslateToolbox'] = $dir . 'utils/ToolBox.php';
 

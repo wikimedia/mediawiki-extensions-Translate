@@ -274,7 +274,8 @@ class TranslateEditAddons {
 	 * @return \bool If string contains fuzzy string.
 	 */
 	public static function hasFuzzyString( $text ) {
-		return strpos( $text, TRANSLATE_FUZZY ) !== false;
+		#wfDeprecated( __METHOD__, '1.19' );
+		return MessageHandle::hasFuzzyString( $text );
 	}
 
 	/**
@@ -283,23 +284,10 @@ class TranslateEditAddons {
 	 * @return \bool If title is marked fuzzy.
 	 */
 	public static function isFuzzy( Title $title ) {
-		$dbr = wfGetDB( DB_SLAVE );
-
-		$tables = array( 'page', 'revtag' );
-		$field = 'rt_type';
-		$conds  = array(
-			'page_namespace' => $title->getNamespace(),
-			'page_title' => $title->getDBkey(),
-			'rt_type' => RevTag::getType( 'fuzzy' ),
-			'page_id=rt_page',
-			'page_latest=rt_revision'
-		);
-
-		$res = $dbr->selectField( $tables, $field, $conds, __METHOD__ );
-
-		return $res !== false;
+		#wfDeprecated( __METHOD__, '1.19' );
+		$handle = new MessageHandle( $title );
+		return $handle->isFuzzy();
 	}
-
 
 	/**
 	 * Check if a title is in a message namespace.
@@ -346,46 +334,10 @@ class TranslateEditAddons {
 			$minor, $_, $_, $flags, $revision
 	) {
 		$title = $article->getTitle();
+		$handle = new MessageHandle( $title );
 
-		if ( !self::isMessageNamespace( $title ) ) {
+		if ( !$handle->isValid() ) {
 			return true;
-		}
-
-		list( $key, $code, $group ) = self::getKeyCodeGroup( $title );
-
-		// Unknown message, do not handle.
-		if ( !$group || !$code ) {
-			return true;
-		}
-
-		$groups = TranslateUtils::messageKeyToGroups( $title->getNamespace(), $key );
-		$cache = new ArrayMemoryCache( 'groupstats' );
-
-		foreach ( $groups as $g ) {
-			$cache->clear( $g, $code );
-		}
-
-		// Check for explicit tag.
-		$fuzzy = self::hasFuzzyString( $text );
-
-		// Check for problems, but only if not fuzzy already.
-		global $wgTranslateDocumentationLanguageCode;
-		if ( $code !== $wgTranslateDocumentationLanguageCode ) {
-			$checker = $group->getChecker();
-
-			if ( $checker ) {
-				$en = $group->getMessage( $key, $group->getSourceLanguage() );
-				$message = new FatMessage( $key, $en );
-				/**
-				 * Take the contents from edit field as a translation.
-				 */
-				$message->setTranslation( $text );
-
-				$checks = $checker->checkMessage( $message, $code );
-				if ( count( $checks ) ) {
-					$fuzzy = true;
-				}
-			}
 		}
 
 		// Update it.
@@ -395,48 +347,97 @@ class TranslateEditAddons {
 			$rev = $revision->getID();
 		}
 
-		// begin fuzzy tag.
-		$dbw = wfGetDB( DB_MASTER );
+		$fuzzy = self::checkNeedsFuzzy( $handle, $text );
+		self::updateFuzzyTag( $title, $rev, $fuzzy );
+		MessageGroupStats::clear( $handle );
 
-		$conds = array(
-			'rt_page' => $article->getTitle()->getArticleId(),
-			'rt_type' => RevTag::getType( 'fuzzy' ),
-			'rt_revision' => $rev
-		);
-		// Remove any existing fuzzy tags for this revision
-		$dbw->delete( 'revtag', $conds, __METHOD__ );
-
-		// Add the fuzzy tag if needed.
-		if ( $fuzzy !== false ) {
-			$dbw->insert( 'revtag', $conds, __METHOD__ );
-		}
-
-		// Diffs for changed messages.
-		if ( $fuzzy !== false ) {
-			return true;
-		}
-
-		if ( $group instanceof WikiPageMessageGroup ) {
-			return true;
-		}
-
-
-
-		$definitionTitle = Title::makeTitleSafe( $title->getNamespace(), "$key/" . $group->getSourceLanguage() );
-		if ( $definitionTitle && $definitionTitle->exists() ) {
-			$definitionRevision = $definitionTitle->getLatestRevID();
-
-			$conds = array(
-				'rt_page' => $title->getArticleId(),
-				'rt_type' => RevTag::getType( 'tp:transver' ),
-				'rt_revision' => $rev,
-				'rt_value' => $definitionRevision,
-			);
-			$index = array( 'rt_type', 'rt_page', 'rt_revision' );
-			$dbw->replace( 'revtag', array( $index ), $conds, __METHOD__ );
+		if ( $fuzzy === false ) {
+			// Fuzzy versions are not real translations
+			self::updateTransverTag( $handle, $rev );
 		}
 
 		return true;
+	}
+
+	protected static function checkNeedsFuzzy( MessageHandle $handle, $text ) {
+		// Check for explicit tag.
+		$fuzzy = self::hasFuzzyString( $text );
+
+		// Docs are exempt for checks
+		global $wgTranslateDocumentationLanguageCode;
+		if ( $code === $wgTranslateDocumentationLanguageCode ) {
+			return $fuzzy;
+		}
+		
+		// Not all groups have checkers
+		$group = $handle->getGroup();
+		$checker = $group->getChecker();
+		if ( !$checker ) {
+			return $fuzzy;
+		}
+
+		$en = $group->getMessage( $key, $group->getSourceLanguage() );
+		$message = new FatMessage( $key, $en );
+		// Take the contents from edit field as a translation.
+		$message->setTranslation( $text );
+
+		$checks = $checker->checkMessage( $message, $code );
+		if ( count( $checks ) ) {
+			$fuzzy = true;
+		}
+		return $fuzzy;
+	}
+
+	protected static function updateFuzzyTag( Title $title, $revision, $fuzzy ) {
+		$dbw = wfGetDB( DB_MASTER );
+
+		$conds = array(
+			'rt_page' => $title->getArticleId(),
+			'rt_type' => RevTag::getType( 'fuzzy' ),
+			'rt_revision' => $revision
+		);
+		
+		// Replace the existing fuzzy tag, if any
+		if ( $fuzzy !== false ) {
+			$index = array_keys( $conds );
+			$dbw->replace( 'revtag', array( $index ), $conds, __METHOD__ );
+		} else {
+			$dbw->delete( 'revtag', $conds, __METHOD__ );
+		}
+	}
+
+
+	/**
+	 * Adds tag which identifies the revision of source message at that time.
+	 * This is used to show diff against current version of source message
+	 * when updating a translation.
+	 */
+	protected static function updateTransverTag( MessageHandle $handle, $revision ) {
+		$group = $handle->getGroup();
+		if ( $group instanceof WikiPageMessageGroup ) {
+			// WikiPageMessageGroup has different method
+			return;
+		}
+
+		$title = $handle->getTitle();
+		$fullKey = $handle->getKey() . '/' . $group->getSourceLanguage();
+		$definitionTitle = Title::makeTitleSafe( $title->getNamespace(), $fullkey );
+		if ( !$definitionTitle || !$definitionTitle->exists() ) {
+			return;
+		}
+
+		$definitionRevision = $definitionTitle->getLatestRevID();
+
+		$dbw = wfGetDB( DB_MASTER );
+
+		$conds = array(
+			'rt_page' => $title->getArticleId(),
+			'rt_type' => RevTag::getType( 'tp:transver' ),
+			'rt_revision' => $revision,
+			'rt_value' => $definitionRevision,
+		);
+		$index = array( 'rt_type', 'rt_page', 'rt_revision' );
+		$dbw->replace( 'revtag', array( $index ), $conds, __METHOD__ );
 	}
 
 	public static function preserveWhitespaces( $text ) {

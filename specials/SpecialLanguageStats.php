@@ -23,6 +23,8 @@
 class SpecialLanguageStats extends IncludableSpecialPage {
 	protected $purge = false;
 
+	protected $incomplete = false;
+
 	function __construct() {
 		parent::__construct( 'LanguageStats' );
 	}
@@ -52,10 +54,8 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		}
 
 		if ( !$code ) {
-
 			if ( $wgUser->isLoggedIn() ) {
 				global $wgLang;
-
 				$code = $wgLang->getCode();
 			}
 		}
@@ -64,6 +64,9 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 		if ( array_key_exists( $code, Language::getLanguageNames() ) ) {
 			$out .= $this->getGroupStats( $code, $suppressComplete );
+			if ( $this->incomplete ) {
+				$wgOut->wrapWikiMsg( "<div class='error'>$1</div>", 'translate-langstats-incomplete' );
+			}
 		} elseif ( $code ) {
 			$wgOut->wrapWikiMsg( "<div class='error'>$1</div>", 'translate-page-no-such-language' );
 		}
@@ -213,14 +216,17 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 		$out = '';
 
-		$cache = new ArrayMemoryCache( 'groupstats' );
+		if ( $this->purge ) {
+			MessageGroupStats::clearLanguage( $code );
+		}
+
+		MessageGroupStats::setTimeLimit( 8 );
+		$cache = MessageGroupStats::forLanguage( $code );
 		$structure = MessageGroups::getGroupStructure();
 
 		foreach ( $structure as $item ) {
 			$out .= $this->makeGroupGroup( $item, $cache );
 		}
-
-		$cache->commit();
 
 		if ( $out ) {
 			$out = $this->createHeader( $code ) . "\n" . $out;
@@ -241,7 +247,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	}
 
 	protected function makeTotalRow( $numbers ) {
-		list( $fuzzy, $translated, $total ) = $numbers;
+		list( $total, $translated, $fuzzy ) = $numbers;
 		$out  = "\t" . Html::openElement( 'tr' );
 		$out .= "\n\t\t" . Html::rawElement( 'td', array(), wfMsg( 'translate-languagestats-overall' ) );
 		$out .= $this->makeNumberColumns( $fuzzy, $translated, $total );
@@ -249,6 +255,14 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	}
 
 	protected function makeNumberColumns( $fuzzy, $translated, $total ) {
+		if ( $total === null ) {
+			$na = "\n\t\t" . Html::element( 'td', array( 'data-sort-value' => -1 ), '...' );
+			$nap =  "\n\t\t" . $this->element( '...', 'AFAFAF', -1 );
+			$out = $na . $na . $nap . $nap;
+			$out .= "\n\t" . Xml::closeElement( 'tr' ) . "\n";
+			return $out;
+		}
+
 		global $wgLang;
 		$out  = "\n\t\t" . Html::element( 'td',
 			array( 'data-sort-value' => $total ),
@@ -299,38 +313,35 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			return '';
 		}
 
-		$fuzzy = $translated = $total = 0;
+		$stats = $cache[$groupId];
+		list( $total, $translated, $fuzzy ) = $stats;
+		if ( !$group instanceof AggregateMessageGroup ) {
+			$this->totals = MessageGroupStats::multiAdd( $this->totals, $stats );
+		}
+		if ( $total !== null ) {
 
-		if ( $g instanceof AggregateMessageGroup ) {
-			foreach ( $g->getGroups() as $subgroup ) {
-				$result = $this->loadPercentages( $cache, $subgroup, $code );
-				$fuzzy += $result[0];
-				$translated += $result[1];
-				$total += $result[2];
+
+			if ( $total == 0 ) {
+				$zero = serialize( $total );
+				error_log( __METHOD__ . ": Group $groupName has zero message ($code): $zero" );
+				return '';
+			}
+
+			// Skip if $suppressComplete and complete
+			if ( $suppressComplete && !$fuzzy && $translated === $total ) {
+				return '';
+			}
+
+			if ( $translated === $total ) {
+				$extra = array( 'task' => 'reviewall' );
+			} else {
+				$extra = array();
 			}
 		} else {
-			list( $fuzzy, $translated, $total ) = $this->loadPercentages( $cache, $g, $code );
-			$this->totals[2] += $total;
-			$this->totals[1] += $translated;
-			$this->totals[0] += $fuzzy;
-		}
-
-		if ( $total == 0 ) {
-			$zero = serialize( $total );
-			error_log( __METHOD__ . ": Group $groupName has zero message ($code): $zero" );
-			return '';
-		}
-
-		// Skip if $suppressComplete and complete
-		if ( $suppressComplete && !$fuzzy && $translated === $total ) {
-			return '';
-		}
-
-		if ( $translated === $total ) {
-			$extra = array( 'task' => 'reviewall' );
-		} else {
 			$extra = array();
+			$this->incomplete = true;
 		}
+
 
 		$rowParams = array();
 		$rowParams['data-groupid'] = $groupId;
@@ -343,63 +354,8 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$out .= "\t" . Html::openElement( 'tr', $rowParams );
 		$out .= "\n\t\t" . Html::rawElement( 'td', array(), $this->makeGroupLink( $g, $code, $extra ) );
 		$out .= $this->makeNumberColumns( $fuzzy, $translated, $total );
+
 		return $out;
-	}
-
-	protected function loadPercentages( $cache, $group, $code ) {
-		wfProfileIn( __METHOD__ );
-		$id = $group->getId();
-
-
-		$result = $cache->get( $id, $code );
-		if ( !$this->purge && is_array( $result ) ) {
-			wfProfileOut( __METHOD__ );
-			return $result;
-		}
-
-		// Initialise messages.
-		$collection = $group->initCollection( $code );
-
-		$ffs = $group->getFFS();
-		if ( $ffs instanceof GettextFFS && $code === 'qqq' ) {
-			$template = $ffs->read( 'en' );
-			$infile = array();
-			foreach ( $template['TEMPLATE'] as $key => $data ) {
-				if ( isset( $data['comments']['.'] ) ) {
-					$infile[$key] = '1';
-				}
-			}
-			$collection->setInFile( $infile );
-		}
-
-
-		// Takes too much memory and only hides inconsistent import state
-		# $collection->setInFile( $group->load( $code ) );
-		$collection->filter( 'ignored' );
-		$collection->filter( 'optional' );
-		// Store the count of real messages for later calculation.
-		$total = count( $collection );
-
-		// Count fuzzy first.
-		$collection->filter( 'fuzzy' );
-		$fuzzy = $total - count( $collection );
-
-		// Count the completed translations.
-		$collection->filter( 'hastranslation', false );
-		$translated = count( $collection );
-
-		$result = array( $fuzzy, $translated, $total );
-
-		$cache->set( $id, $code, $result );
-
-		static $i = 0;
-		if ( $i++ % 50 === 0 ) {
-			$cache->commit();
-		}
-
-		wfProfileOut( __METHOD__ );
-
-		return $result;
 	}
 
 	protected function formatPercentage( $num ) {
@@ -439,15 +395,27 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 	protected function getGroupDescription( $group ) {
 		global $wgLang;
+		$code = $wgLang->getCode();
+		
+		$cache = wfGetCache( CACHE_ANYTHING );
+		$key = wfMemckey( "translate-groupdesc-$code-" . $group->getId() );
+		$desc = $cache->get( $key );
+		if ( is_string( $desc ) ) {
+			return $desc;
+		}
+
+		global $wgLang;
 
 		$realFunction = array( 'MessageCache', 'singleton' );
 		if ( is_callable( $realFunction ) ) {
-			$cache = MessageCache::singleton();
+			$mc = MessageCache::singleton();
 		} else {
 			global $wgMessageCache;
-			$cache = $wgMessageCache;
+			$mc = $wgMessageCache;
 		}
-		return $cache->transform( $group->getDescription(), true, $wgLang, $this->getTitle() );
+		$desc = $mc->transform( $group->getDescription(), true, $wgLang, $this->getTitle() );
+		$cache->set( $key, $desc );
+		return $desc;
 	}
 
 	protected function isBlacklisted( $groupId, $code ) {

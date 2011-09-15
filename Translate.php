@@ -92,6 +92,10 @@ $wgHooks['EditPage::showEditForm:fields'][] = 'TranslateEditAddons::keepFields';
 $wgHooks['SkinTemplateTabs'][] = 'TranslateEditAddons::tabs';
 $wgHooks['LanguageGetTranslatedLanguageNames'][] = 'TranslateEditAddons::translateMessageDocumentationLanguage';
 $wgHooks['ArticlePrepareTextForEdit'][] = 'TranslateEditAddons::disablePreSaveTransform';
+// Hook for database schema.
+$wgHooks['LoadExtensionSchemaUpdates'][] = 'PageTranslationHooks::schemaUpdates';
+// Fuzzy tags for speed.
+$wgHooks['ArticleSaveComplete'][] = 'TranslateEditAddons::onSave';
 
 // Custom preferences
 $wgDefaultUserOptions['translate'] = 0;

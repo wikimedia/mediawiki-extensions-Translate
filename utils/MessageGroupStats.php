@@ -34,6 +34,26 @@ class MessageGroupStats {
 	}
 
 	/**
+	 * Returns stats for given group in given language.
+	 * @param $id string Group id
+	 * @param $code string Language code
+	 * @return Array
+	 */
+	public static function forItem( $id, $code ) {
+		$stats = array();
+		$res = self::selectRowsIdLang( $id, $code );
+		$stats = self::extractResults( $res, $stats );
+
+		$group = MessageGroups::getGroup( $id );
+
+		if ( !isset( $stats[$id][$code] ) ) {
+			$stats[$id][$code] = self::forItemInternal( $stats, $group, $code );
+		}
+
+		return $stats[$id][$code];
+	}
+
+	/**
 	 * Returns stats for all groups in given language.
 	 * @param $code string Language code
 	 * @return Array
@@ -76,6 +96,28 @@ class MessageGroupStats {
 		return $stats;
 	}
 
+	public static function clear( MessageHandle $handle ) {
+		$dbw = wfGetDB( DB_MASTER );
+		$conds = array(
+			'tgs_group' => $handle->getGroupIds(),
+			'tgs_lang' => $handle->getCode(),
+		);
+
+		$dbw->delete( self::TABLE, $conds, __METHOD__ );
+	}
+
+	public static function clearGroup( $id ) {
+		$dbw = wfGetDB( DB_MASTER );
+		$conds = array( 'tgs_group' => $id );
+		$dbw->delete( self::TABLE, $conds, __METHOD__ );
+	}
+
+	public static function clearLanguage( $code ) {
+		$dbw = wfGetDB( DB_MASTER );
+		$conds = array( 'tgs_lang' => $code );
+		$dbw->delete( self::TABLE, $conds, __METHOD__ );
+	}
+
 	/**
 	 * Purges all cached stats.
 	 */
@@ -89,6 +131,24 @@ class MessageGroupStats {
 			$stats[$row->tgs_group][$row->tgs_lang] = self::extractNumbers( $row );
 		}
 		return $stats;
+	}
+
+	public static function update( MessageHandle $handle, $changes = array() ) {
+		$dbw = wfGetDB( DB_MASTER );
+		$conds = array(
+			'tgs_group' => $handle->getGroupIds(),
+			'tgs_lang' => $handle->getCode(),
+		);
+
+		$values = array();
+		foreach ( array( 'total', 'translated', 'fuzzy' ) as $type ) {
+			if ( !isset( $changes[$type] ) ) {
+				$values[] = "tgs_$type=tgs_$type" .
+					self::stringifyNumber( $changes[$type] );
+			}
+		}
+
+		$dbw->update( self::TABLE, $values, $conds, __METHOD__ );
 	}
 
 	/**
@@ -162,7 +222,7 @@ class MessageGroupStats {
 				if ( !isset( $stats[$sid][$code] ) ) {
 					$stats[$sid][$code] = self::forItemInternal( $stats, $sgroup, $code );
 				}
-				self::multiAdd( $aggregates, $stats[$sid][$code] );
+				$aggregates = self::multiAdd( $aggregates, $stats[$sid][$code] );
 			}
 			$stats[$id] = $aggregates;
 		} else {
@@ -233,34 +293,6 @@ class MessageGroupStats {
 		$translated = count( $collection );
 
 		return array( $total, $translated, $fuzzy );
-	}
-
-	public static function update( MessageHandle $handle, $changes = array() ) {
-		$dbw = wfGetDB( DB_MASTER );
-		$conds = array(
-			'tgs_group' => $handle->getGroupIds(),
-			'tgs_lang' => $handle->getCode(),
-		);
-
-		$values = array();
-		foreach ( array( 'total', 'translated', 'fuzzy' ) as $type ) {
-			if ( !isset( $changes[$type] ) ) {
-				$values[] = "tgs_$type=tgs_$type" .
-					self::stringifyNumber( $changes[$type] );
-			}
-		}
-
-		$dbw->update( self::TABLE, $values, $conds, __METHOD__ );
-	}
-
-	public static function clear( MessageHandle $handle ) {
-		$dbw = wfGetDB( DB_MASTER );
-		$conds = array(
-			'tgs_group' => $handle->getGroupIds(),
-			'tgs_lang' => $handle->getCode(),
-		);
-
-		$dbw->delete( self::TABLE, $conds, __METHOD__ );
 	}
 
 	/**

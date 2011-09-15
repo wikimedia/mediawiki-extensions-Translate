@@ -59,10 +59,7 @@ class MessageIndexRebuilder {
 			foreach ( (array) $groups as $group ) $changes[$group] = true;
 		}
 
-		$cache = new ArrayMemoryCache( 'groupstats' );
-		foreach ( $changes as $key => $_ ) {
-			$cache->clearGroup( $key );
-		}
+		MessageGroupStats::clearGroup( array_keys( $changes ) );
 	}
 
 	protected static function checkAndAdd( &$hugearray, $g, $ignore = false ) {

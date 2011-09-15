@@ -222,15 +222,7 @@ class ViewUntranslatedTask extends ViewMessagesTask {
 		$this->collection->setInfile( $this->group->load( $code ) );
 		$this->collection->filter( 'ignored' );
 		$this->collection->filter( 'optional' );
-
-		// Update the cache while we are at it.
-		$total = count( $this->collection );
 		$this->collection->filter( 'translated' );
-		$translated = $total - count( $this->collection );
-		$fuzzy = count( $this->collection->getTags( 'fuzzy' ) );
-
-		$cache = new ArrayMemoryCache( 'groupstats' );
-		$cache->set( $this->group->getID(), $code, array( $fuzzy, $translated, $total ) );
 	}
 }
 

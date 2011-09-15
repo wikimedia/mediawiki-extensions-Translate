@@ -39,12 +39,6 @@ class TranslateHooks {
 		global $wgReservedUsernames, $wgTranslateFuzzyBotName;
 		$wgReservedUsernames[] = $wgTranslateFuzzyBotName;
 
-		// Hook for database schema.
-		$wgHooks['LoadExtensionSchemaUpdates'][] = 'PageTranslationHooks::schemaUpdates';
-
-		// Fuzzy tags for speed.
-		$wgHooks['ArticleSaveComplete'][] = 'TranslateEditAddons::onSave';
-
 		// Page translation setup check and init if enabled.
 		global $wgEnablePageTranslation;
 		if ( $wgEnablePageTranslation ) {

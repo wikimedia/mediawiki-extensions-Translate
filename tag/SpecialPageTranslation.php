@@ -535,7 +535,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 		// Re-generate caches
 		$page->getTranslationPercentages( /*re-generate*/ true );
-		ArrayMemoryCache::factory( 'groupstats' )->clearGroup( $page->getMessageGroupId() );
+		MessageGroupStats::clearGroup( $page->getMessageGroupId() );
 		MessageIndexRebuilder::execute();
 		MessageGroups::clearCache();
 		return false;
