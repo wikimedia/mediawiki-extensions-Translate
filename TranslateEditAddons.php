@@ -27,16 +27,15 @@ class TranslateEditAddons {
 		global $wgRequest;
 
 		$title = $skin->getTitle();
+		$handle = new MessageHandle( $title );
 
-		if ( !self::isMessageNamespace( $title ) ) {
+		if ( !$handle->isValid() ) {
 			return true;
 		}
 
-		list( $key, $code, $group ) = self::getKeyCodeGroup( $title );
-		if ( !$group || !$code ) {
-			return true;
-		}
-
+		$group = $handle->getGroup();
+		$key = $handle->getKey();
+		$code = $handle->getCode();
 		$collection = $group->initCollection( $group->getSourceLanguage() );
 		$collection->filter( 'optional' );
 		$keys = array_keys( $collection->keys() );
@@ -138,12 +137,12 @@ class TranslateEditAddons {
 	 * Hook: EditPage::showEditForm:initial
 	 */
 	static function addTools( $object ) {
-		if ( !self::isMessageNamespace( $object->mTitle ) ) {
+		$handle = new MessageHandle( $object->mTitle );
+		if ( !$handle->isValid() ) {
 			return true;
 		}
 
 		$object->editFormTextTop .= self::editBoxes( $object );
-
 		return true;
 	}
 
@@ -290,24 +289,12 @@ class TranslateEditAddons {
 	}
 
 	/**
-	 * Check if a title is in a message namespace.
-	 * @param $title Title
-	 * @return \bool If title is in a message namespace.
-	 */
-	public static function isMessageNamespace( Title $title ) {
-		global $wgTranslateMessageNamespaces;
-
-		$namespace = $title->getNamespace();
-
-		return in_array( $namespace, $wgTranslateMessageNamespaces, true );
-	}
-
-	/**
 	 * Removes protection tab for message namespaces - not useful.
 	 * Hook: SkinTemplateTabs
 	 */
 	public static function tabs( $skin, &$tabs ) {
-		if ( !self::isMessageNamespace( $skin->getTitle() ) ) {
+		$handle = new MessageHandle( $skin->getTitle() );
+		if ( !$handle->isMessageNamespace() ) {
 			return true;
 		}
 
@@ -352,8 +339,7 @@ class TranslateEditAddons {
 		MessageGroupStats::clear( $handle );
 
 		if ( $fuzzy === false ) {
-			// Fuzzy versions are not real translations
-			self::updateTransverTag( $handle, $rev );
+			wfRunHooks( 'Translate:newTranslation', array( $handle, $revision, $text, $user ) );
 		}
 
 		return true;
@@ -365,6 +351,7 @@ class TranslateEditAddons {
 
 		// Docs are exempt for checks
 		global $wgTranslateDocumentationLanguageCode;
+		$code = $handle->getCode();
 		if ( $code === $wgTranslateDocumentationLanguageCode ) {
 			return $fuzzy;
 		}
@@ -376,6 +363,7 @@ class TranslateEditAddons {
 			return $fuzzy;
 		}
 
+		$key = $handle->getKey();
 		$en = $group->getMessage( $key, $group->getSourceLanguage() );
 		$message = new FatMessage( $key, $en );
 		// Take the contents from edit field as a translation.
@@ -411,8 +399,9 @@ class TranslateEditAddons {
 	 * Adds tag which identifies the revision of source message at that time.
 	 * This is used to show diff against current version of source message
 	 * when updating a translation.
+	 * Hook: Translate:newTranslation
 	 */
-	protected static function updateTransverTag( MessageHandle $handle, $revision ) {
+	public static function updateTransverTag( MessageHandle $handle, $revision, $text, User $user ) {
 		$group = $handle->getGroup();
 		if ( $group instanceof WikiPageMessageGroup ) {
 			// WikiPageMessageGroup has different method
@@ -420,8 +409,8 @@ class TranslateEditAddons {
 		}
 
 		$title = $handle->getTitle();
-		$fullKey = $handle->getKey() . '/' . $group->getSourceLanguage();
-		$definitionTitle = Title::makeTitleSafe( $title->getNamespace(), $fullkey );
+		$name = $handle->getKey() . '/' . $group->getSourceLanguage();
+		$definitionTitle = Title::makeTitleSafe( $title->getNamespace(), $name );
 		if ( !$definitionTitle || !$definitionTitle->exists() ) {
 			return;
 		}
@@ -462,9 +451,12 @@ class TranslateEditAddons {
 	/// Hook: ArticlePrepareTextForEdit
 	public static function disablePreSaveTransform( $article, $popts ) {
 		global $wgTranslateDocumentationLanguageCode;
-		$keycodegroup = self::getKeyCodeGroup( $article->getTitle() );
-		if ( self::isMessageNamespace( $article->getTitle() )
-			&& $keycodegroup[1] !== $wgTranslateDocumentationLanguageCode ) {
+
+		$handle = new MessageHandle( $article->getTitle() );
+		$code = $handle->getCode();
+		if ( $handle->isMessageNamespace()
+			&& $code !== $wgTranslateDocumentationLanguageCode ) {
+
 			$popts->setPreSaveTransform( false );
 		}
 		return true;

@@ -96,6 +96,7 @@ $wgHooks['ArticlePrepareTextForEdit'][] = 'TranslateEditAddons::disablePreSaveTr
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'PageTranslationHooks::schemaUpdates';
 // Fuzzy tags for speed.
 $wgHooks['ArticleSaveComplete'][] = 'TranslateEditAddons::onSave';
+$wgHooks['Translate:newTranslation'][] = 'TranslateEditAddons::updateTransverTag';
 
 // Custom preferences
 $wgDefaultUserOptions['translate'] = 0;
@@ -111,7 +112,7 @@ $wgHooks['SpecialRecentChangesPanel'][] = 'TranslateRcFilter::translationFilterF
 $wgHooks['SkinTemplateToolboxEnd'][] = 'TranslateToolbox::toolboxAllTranslations';
 
 // Translation memory updates
-$wgHooks['ArticleSaveComplete'][] = 'TranslationMemoryUpdater::update';
+$wgHooks['Translate:newTranslation'][] = 'TranslationMemoryUpdater::update';
 
 // Translation display related
 $wgHooks['ArticleContentOnDiff'][] = 'TranslateEditAddons::displayOnDiff';
