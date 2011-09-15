@@ -160,4 +160,15 @@ class TranslateHooks {
 		return true;
 	}
 
+	/// Hook: LoadExtensionSchemaUpdates
+	public static function schemaUpdates( $updater ) {
+		$dir = dirname( __FILE__ ) . '/sql';
+
+		$updater->addExtensionUpdate( array( 'addTable', 'translate_sections', "$dir/translate_sections.sql", true ) );
+		$updater->addExtensionUpdate( array( 'addField', 'translate_sections', 'trs_order', "$dir/translate_sections-trs_order.patch.sql", true ) );
+		$updater->addExtensionUpdate( array( 'addTable', 'revtag', "$dir/revtag.sql", true ) );
+		$updater->addExtensionUpdate( array( 'addTable', 'translate_groupstats', "$dir/translate_groupstats.sql", true ) );
+		return true;
+	}
+
 }

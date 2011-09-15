@@ -52,6 +52,7 @@ $wgExtensionAliasesFiles['Translate'] = $dir . 'Translate.alias.php';
 $wgExtensionFunctions[] = 'TranslateHooks::setupTranslate';
 $wgHooks['CanonicalNamespaces'][] = 'TranslateHooks::setupNamespaces';
 $wgHooks['UnitTestsList'][] = 'TranslateHooks::setupUnitTests';
+$wgHooks['LoadExtensionSchemaUpdates'][] = 'TranslateHooks::schemaUpdates';
 
 // Register special pages into MediaWiki
 $wgSpecialPages['Translate'] = 'SpecialTranslate';
@@ -92,8 +93,6 @@ $wgHooks['EditPage::showEditForm:fields'][] = 'TranslateEditAddons::keepFields';
 $wgHooks['SkinTemplateTabs'][] = 'TranslateEditAddons::tabs';
 $wgHooks['LanguageGetTranslatedLanguageNames'][] = 'TranslateEditAddons::translateMessageDocumentationLanguage';
 $wgHooks['ArticlePrepareTextForEdit'][] = 'TranslateEditAddons::disablePreSaveTransform';
-// Hook for database schema.
-$wgHooks['LoadExtensionSchemaUpdates'][] = 'PageTranslationHooks::schemaUpdates';
 // Fuzzy tags for speed.
 $wgHooks['ArticleSaveComplete'][] = 'TranslateEditAddons::onSave';
 $wgHooks['Translate:newTranslation'][] = 'TranslateEditAddons::updateTransverTag';
