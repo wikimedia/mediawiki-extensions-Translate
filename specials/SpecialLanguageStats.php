@@ -276,9 +276,6 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		}
 
 		$stats = $cache[$group->getId()];
-		if ( !$group instanceof AggregateMessageGroup ) {
-			$this->totals = MessageGroupStats::multiAdd( $this->totals, $stats );
-		}
 
 		list( $total, $translated, $fuzzy ) = $stats;
 		if ( $total === null ) {
@@ -298,6 +295,10 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			} else {
 				$extra = array();
 			}
+		}
+
+		if ( !$group instanceof AggregateMessageGroup ) {
+			$this->totals = MessageGroupStats::multiAdd( $this->totals, $stats );
 		}
 
 		$rowParams = array();

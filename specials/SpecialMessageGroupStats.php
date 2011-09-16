@@ -146,7 +146,6 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 
 	protected function makeRow( $code, $cache ) {
 		$stats = $cache[$code];
-		$this->totals = MessageGroupStats::multiAdd( $this->totals, $stats );
 
 		list( $total, $translated, $fuzzy ) = $stats;
 		if ( $total === null ) {
@@ -167,6 +166,8 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 				$extra = array();
 			}
 		}
+
+		$this->totals = MessageGroupStats::multiAdd( $this->totals, $stats );
 
 		$out  = "\t" . Html::openElement( 'tr' );
 		$out .= "\n\t\t" . $this->getMainColumnCell( $code, $extra );
