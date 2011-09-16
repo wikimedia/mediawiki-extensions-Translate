@@ -508,6 +508,7 @@ These messages will not be submitted to svn, but will only affect the interface 
 	'translate-percentage-complete' => 'Used in [[Special:LanguageStats]].',
 	'translate-percentage-fuzzy' => 'Used in [[Special:LanguageStats]].',
 	'translate-languagestats-groups' => "You can translate the text, including 'Leave this line exactly as it is'. The lines of this messages have one (1) leading space.",
+	'translate-mgs-column-language' => '{{Identical|Language}}',
 	'supportedlanguages-recenttranslations' => 'Link on [[Special:SupportedLanguages]] to the Recent Changes special page.',
 	'translate-save' => '{{Identical|Save}}',
 	'translate-jssti-add' => 'Name of button in [[Special:Preferences]], tab Editing.',
@@ -661,8 +662,6 @@ Kliek op die boodskapgroep se naam om die lys van onvertaalde boodskappe te sien
 	'translate-page-settings-legend' => 'Instellings',
 	'translate-page-task' => 'Ek wil',
 	'translate-page-group' => 'Groep',
-	'translate-page-group-tooltip' => "Die naam van 'n groep boodskappe.
-As die groep uit 'n substel of superstel van boodskappe van ander groepe bestaan, word hulle in vetdruk vertoon.",
 	'translate-page-language' => 'Taal',
 	'translate-page-limit' => 'Limiet',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|boodskap|boodskappe}} per bladsy',
@@ -797,15 +796,12 @@ Alle waardes het hoër en laer limiete.',
 	'translate-suppress-complete' => 'Verberg volledig vertaalde boodskapgroepe',
 	'translate-language' => 'Taal',
 	'translate-total' => 'Boodskappe',
-	'translate-total-tooltip' => 'Die totale aantal inskrywings in hierdie boodskapgroep.',
 	'translate-untranslated' => 'Onvertaal',
-	'translate-untranslated-tooltip' => 'Die totale aantal onvertaalde boodskappe in hierdie boodskapgroep. 
-Dit sluit ook boodskappe wat as verouderd gemerk is in.',
 	'translate-percentage-complete' => 'Vertaal',
-	'translate-percentage-complete-tooltip' => 'Die persentasie van die boodskappe in die groep wat vertaal en nie as verouderd gemerk is nie.',
 	'translate-percentage-fuzzy' => 'Verouderd',
 	'translate-nothing-to-do' => 'Dit lyk of alle moontlike vertalings gemaak is. 
 U word aangemoedig om vertalings via [[Special:Translate|{{int:translate}}]] te kontroleer.',
+	'translate-mgs-column-language' => 'Taal',
 	'supportedlanguages' => 'Ondersteunde tale',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Vertaler|Vertalers}}: $1',
 	'supportedlanguages-recenttranslations' => 'onlangse vertalings',
@@ -1256,7 +1252,6 @@ $messages['ar'] = array(
 	'translate-suppress-complete' => 'تخطَ مجموعات الرسائل المترجمة كليا',
 	'translate-language' => 'اللغة:',
 	'translate-total' => 'الرسائل',
-	'translate-total-tooltip' => 'العدد الكلي لرسائل هذه المجموعة.',
 	'translate-untranslated' => 'غير المترجمة',
 	'translate-percentage-complete' => 'المكتمل',
 	'translate-percentage-fuzzy' => 'غير المحدث',
@@ -1809,8 +1804,6 @@ Calca nel nome del grupu de mensaxes para ver la llista de mensaxes ensin traduc
 	'translate-page-settings-legend' => 'Configuración',
 	'translate-page-task' => 'Quiero',
 	'translate-page-group' => 'Grupu',
-	'translate-page-group-tooltip' => "El nome d'un grupu de mensaxes.
-Si'l grupu ta compuestu por un subconxuntu o un superconxuntu de mensaxes d'otros grupos, s'amuesa en negrina.",
 	'translate-page-language' => 'Llingua',
 	'translate-page-limit' => 'Llímite',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|mensaxe|mensaxes}} per páxina',
@@ -1955,7 +1948,6 @@ La llista predeterminada de llingües depende de la to llingua.",
 	'translate-suppress-complete' => 'Anubrir los grupos de mensaxes completamente traducíos',
 	'translate-language' => 'Llingua',
 	'translate-total' => 'Mensaxes',
-	'translate-total-tooltip' => "El númberu total de mensaxes d'esti grupu de mensaxes.",
 	'translate-untranslated' => 'Ensin traducir',
 	'supportedlanguages-recenttranslations' => 'traducciones recientes',
 	'translate-save' => 'Guardar ($1)',
@@ -2051,8 +2043,6 @@ $messages['ba'] = array(
 	'translate-page-settings-legend' => 'Шарттар',
 	'translate-page-task' => 'Мин теләйем',
 	'translate-page-group' => 'Төркөм',
-	'translate-page-group-tooltip' => 'Төркөм исеме.
-Башҡа төркөмдәрҙән һәм башҡа төркөмдәрҙә булған яҙмаларҙан торған төркөмдәр ҡалын шрифт менән күрһәтелгән.',
 	'translate-page-language' => 'Тел',
 	'translate-page-limit' => 'Сикләү',
 	'translate-page-limit-option' => 'Бер биткә $1 {{PLURAL:$1|яҙма}}',
@@ -2184,15 +2174,9 @@ $messages['ba'] = array(
 	'translate-suppress-complete' => 'Тулыһынса тәржемә ителгән төркөмдәрҙе күрһәтмәҫкә',
 	'translate-language' => 'Тел',
 	'translate-total' => 'Яҙмалар',
-	'translate-total-tooltip' => 'Был төркөмдәге бөтә яҙмалар һаны',
 	'translate-untranslated' => 'Тәржемә ителмәгәндәр',
-	'translate-untranslated-tooltip' => 'Был төркөмдәге тәржемә ителмәгән яҙмаларҙың дөйөм һаны.
-Иҫкергән тип билдәләнгән яҙмаларҙы ла үҙ эсенә ала.',
 	'translate-percentage-complete' => 'Тәржемә ителгәндәр',
-	'translate-percentage-complete-tooltip' => 'Төркөмдөң тәржемә ителгән һәм иҫкергән тип билдәләнмәгән яҙмалары өлөшө.',
 	'translate-percentage-fuzzy' => 'Иҫкергән',
-	'translate-percentage-fuzzy-tooltip' => 'Төркөмдөң тәржемә ителгән һәм иҫкергән тип билдәләнгән яҙмалары өлөшө.
-Яҙма йә уның инглиз телендәге сығанағы үҙгәрһә, йә автоматик тикшереүҙе үтмәһә, йә кемдер уны иҫкергән тип билдәләһә иҫкергән тип иҫәпләнә.',
 	'translate-nothing-to-do' => 'Бөтә мөмкин булған тәржемәләр яһалған булырға тейеш.
 [[Special:Translate|{{int:translate}}]] ярҙамында яҙмаларҙы тикшерә алаһығыҙ.',
 	'supportedlanguages' => 'Ҡулланылған телдәр',
@@ -2389,8 +2373,6 @@ $messages['be-tarask'] = array(
 	'translate-page-settings-legend' => 'Парамэтры',
 	'translate-page-task' => 'Я хачу',
 	'translate-page-group' => 'Група',
-	'translate-page-group-tooltip' => 'Назва групы паведамленьняў.
-Калі група ўтрымлівае падмноствы ці супэрмноствы паведамленьняў з іншых групаў, яна будзе выдзеленая тлустым шрыфтам.',
 	'translate-page-language' => 'Мова',
 	'translate-page-limit' => 'Ліміт',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|паведамленьне|паведамленьні|паведамленьняў}} на старонцы',
@@ -2536,15 +2518,9 @@ $messages['be-tarask'] = array(
 	'translate-suppress-complete' => 'Поўнасьцю схаваць перакладзеныя групы паведамленьняў',
 	'translate-language' => 'Мова',
 	'translate-total' => 'Паведамленьні',
-	'translate-total-tooltip' => 'Агульная колькасьць паведамленьняў у гэтай групе паведамленьняў.',
 	'translate-untranslated' => 'Неперакладзеныя',
-	'translate-untranslated-tooltip' => 'Агульная колькасьць неперакладзеных паведамленьняў у гэтай групе паведамленьняў.
-Яна ўтрымлівае паведамленьні, якія пазначаны як састарэлыя.',
 	'translate-percentage-complete' => 'Перакладзеныя',
-	'translate-percentage-complete-tooltip' => 'Адсотак паведамленьняў у групе, якія былі перакладзены і не пазначаны як састарэлыя.',
 	'translate-percentage-fuzzy' => 'Састарэлыя',
-	'translate-percentage-fuzzy-tooltip' => 'Адсотак паведамленьняў у групе, якія былі перакладзены і былі пазначаныя як састарэлыя.
-Паведамленьні пазначаюцца як састарэлыя, таму што крынічныя паведамленьні на ангельскай мове былі зьмененыя, таму што не прайшлі аўтаматычную праверку, альбо таму што нехта пазначыў іх як састарэлыя.',
 	'translate-nothing-to-do' => 'Былі зроблены ўсе магчымыя пераклады.
 Вы можаце праверыць пераклады з дапамогай [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-overall' => 'Усе паведамленьні групаў разам',
@@ -2977,8 +2953,6 @@ Abeg :
 	'translate-page-settings-legend' => 'Arventennoù',
 	'translate-page-task' => "C'hoant am eus da",
 	'translate-page-group' => 'Strollad',
-	'translate-page-group-tooltip' => "Anv ur strollad kemennadennoù.
-Ma ya d'ober ar strollad istrolladoù pe usstrolladoù kemennadennoù tennet eus strolladoù all, e vo merket e tev.",
 	'translate-page-language' => 'Yezh',
 	'translate-page-limit' => 'Bevenn',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|gemennadenn|kemennadenn}} dre bajenn',
@@ -3120,15 +3094,9 @@ Bevennoù izel hag uhel zo d'an holl dalvoudoù.",
 	'translate-suppress-complete' => 'Arabat diskouez ar strolladoù kemennadennoù zo bet troet penn-da-benn.',
 	'translate-language' => 'Yezh :',
 	'translate-total' => 'Kemennadennoù',
-	'translate-total-tooltip' => 'An niver hollek a gemennadennoù er strollad-mañ.',
 	'translate-untranslated' => 'Didro',
-	'translate-untranslated-tooltip' => "An niver hollek a gemennadennoù didro zo er strollad-mañ.
-En o zouez ar c'hemennadennoù merket evel dispredet.",
 	'translate-percentage-complete' => 'Echu',
-	'translate-percentage-complete-tooltip' => "An dregantad a gemennadennoù er strollad-mañ hag a zo bet troet ha n'int ket dispredet.",
 	'translate-percentage-fuzzy' => 'Dispredet',
-	'translate-percentage-fuzzy-tooltip' => "An dregantad a gemennadennoù zo bet troet er strollad-mañ hag a zo bet merket evel dispredet.
-Merket e vez kemennadennoù zo evel dispredet pe peogwir eo bet cheñchet ar gemennadenn orin e saozneg pe peogwir eo bet c'hwitet ar gwiriekadur emgefre.",
 	'translate-nothing-to-do' => "Evit doare eo bet kaset da benn kement troidigezh posupl.
 Broudet oc'h da adwelet ar c'hemennadennoù adal [[Special:Translate|{{int:translate}}]].",
 	'translate-languagestats-overall' => 'An holl strolladoù kemennadennoù war un dro',
@@ -3266,8 +3234,6 @@ Kliknite na ime grupe poruka da pogledate spisak neprevedenih poruka.',
 	'translate-page-settings-legend' => 'Postavke',
 	'translate-page-task' => 'Želim da',
 	'translate-page-group' => 'Grupa',
-	'translate-page-group-tooltip' => 'Naziv grupe poruka.
-Ako se grupa sastoji iz podseta ili nadseta poruke iz drugih grupa, prikazana je podebljano.',
 	'translate-page-language' => 'Jezik',
 	'translate-page-limit' => 'Ograničenja',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|poruka|poruke|poruka}} po stranici',
@@ -3412,15 +3378,9 @@ Pretpostavljeni spisak jezika zavisi od postavki Vašeg jezika.',
 	'translate-suppress-complete' => 'Sakrij potpuno prevedene grupe poruka',
 	'translate-language' => 'Jezik',
 	'translate-total' => 'Poruke',
-	'translate-total-tooltip' => 'Ukupan broj poruka u ovoj grupi poruka.',
 	'translate-untranslated' => 'Neprevedeno',
-	'translate-untranslated-tooltip' => 'Ukupan broj neprevedenih poruka u ovoj grupi poruka.
-Ovo uključuje poruke koje su označene kao neažurne.',
 	'translate-percentage-complete' => 'Završeno',
-	'translate-percentage-complete-tooltip' => 'Postotak poruka u grupi koje su prevedene i nisu označene kao zastarijele.',
 	'translate-percentage-fuzzy' => 'Zastarijelo',
-	'translate-percentage-fuzzy-tooltip' => 'Postotak poruka u grupi koje su prevedene i označene kao zastarijele.
-Poruke su označene kao zastarijele jer se promijenila izvorna poruka na engleskom jeziku, jer nije uspjela automatska provjera poruke ili je neko označio poruku zastarijelom.',
 	'translate-nothing-to-do' => 'Izgleda da su napravljeni svi mogući prijevodi.
 Savjetujemo Vam da izvršite pregled poruke preko [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-overall' => 'Sve grupe poruka zajedno',
@@ -3722,7 +3682,6 @@ Heu de tenir permisos de traductor per a desar els canvis, que no es guardaran f
 	'translate-suppress-complete' => 'Oculta els missatges de grups completament traduïts',
 	'translate-language' => 'Idioma',
 	'translate-total' => 'Missatges',
-	'translate-total-tooltip' => 'El nombre total de missatges en aquest grup de missatges.',
 	'translate-untranslated' => 'Sense traduir',
 	'translate-percentage-complete' => 'Completesa',
 	'translate-percentage-fuzzy' => 'Desfasats',
@@ -3875,6 +3834,11 @@ $messages['ckb'] = array(
 	'translate-jssti-add' => 'زیادکردن بۆ سەر لیست',
 );
 
+/** Corsican (Corsu) */
+$messages['co'] = array(
+	'translate-history' => 'cronolugia',
+);
+
 /** Czech (Česky)
  * @author Danny B.
  * @author Li-sung
@@ -3911,8 +3875,6 @@ Kliknutím na název skupiny zobrazíte seznam nepřeložených zpráv.',
 	'translate-page-settings-legend' => 'Nastavení',
 	'translate-page-task' => 'Chci',
 	'translate-page-group' => 'skupina',
-	'translate-page-group-tooltip' => 'Název skupiny zpráv.
-Pokud skupina obsahuje podmnožinu či nadmnožinu zpráv z jiných skupin, zobrazuje se tučně.',
 	'translate-page-language' => 'Jazyk',
 	'translate-page-limit' => 's&nbsp;omezením',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|zpráva|zprávy|zpráv}} na stránce',
@@ -3973,6 +3935,7 @@ Změny se neuloží, dokud nekliknete na tlačítko „Uložit změny“ pod edi
 	'translationchanges' => 'Změny překladů',
 	'translationchanges-export' => 'exportovat',
 	'translationchanges-change' => '$1: $2 ($3)',
+	'translationchanges-submit' => 'Načíst',
 	'translate-checks-parameters' => 'Následující {{PLURAL:$2|parametr není použit|parametry nejsou použity}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => 'Následující {{PLURAL:$2|parametr není definován|parametry nejsou definovány}}:
@@ -4047,6 +4010,7 @@ Implicitní seznam (''default'') závisí na vašem jazyce.",
 	'languagestats-summary' => 'Tato stránka zobrazuje statistiku překladů všech skupin zpráv v daném jazyce.',
 	'languagestats-stats-for' => 'Statistiky překladů pro jazyk $1 ($2).',
 	'languagestats-recenttranslations' => 'nedávné překlady',
+	'translate-langstats-incomplete' => 'Některé statistiky na této stránce jsou neúplné. Více údajů získáte obnovením stránky.',
 	'translate-langstats-expand' => 'rozbalit',
 	'translate-langstats-collapse' => 'sbalit',
 	'translate-langstats-expandall' => 'rozbalit vše',
@@ -4054,20 +4018,27 @@ Implicitní seznam (''default'') závisí na vašem jazyce.",
 	'translate-language-code' => 'Kód jazyka',
 	'translate-language-code-field-name' => 'Kód jazyka:',
 	'translate-suppress-complete' => 'Nevypisovat úplně přeložené skupiny zpráv',
+	'translate-ls-noempty' => 'Skrýt zcela nepřeložené skupiny zpráv',
 	'translate-language' => 'Jazyk',
 	'translate-total' => 'Zprávy',
-	'translate-total-tooltip' => 'Celkový počet zpráv v této skupině.',
 	'translate-untranslated' => 'Nepřeložené',
-	'translate-untranslated-tooltip' => 'Celkový počet nepřeložených zpráv v této skupině.
-Zahrnuje zprávy označené jako zastaralé.',
 	'translate-percentage-complete' => 'Dokončené',
-	'translate-percentage-complete-tooltip' => 'Podíl zpráv v této skupině, které jsou přeloženy a nejsou označeny jako zastaralé.',
 	'translate-percentage-fuzzy' => 'Zastaralé',
-	'translate-percentage-fuzzy-tooltip' => 'Podíl zpráv v této skupině, které jsou přeloženy a jsou označeny jako zastaralé.
-Zprávy se označují jako zastaralé v případě, že se zdrojová anglická zpráva změnila, protože nevyhověly automatické kontrole nebo protože je někdo označil jako zastaralé.',
 	'translate-nothing-to-do' => 'Vypadá to, že všechny možné překlady jsou hotové.
 Teď doporučujeme zkontrolovat hlášení pomocí stránky [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-overall' => 'Všechny skupiny zpráv dohromady',
+	'translate-ls-submit' => 'Zobrazit statistiky',
+	'translate-ls-column-group' => 'Skupina zpráv',
+	'translate-mgs-pagename' => 'Statistiky skupin zpráv',
+	'translate-mgs-fieldset' => 'Volby zobrazení',
+	'translate-mgs-group' => 'Skupina zpráv:',
+	'translate-mgs-nocomplete' => 'Nezobrazovat jazyky s úplným překladem',
+	'translate-mgs-noempty' => 'Nezobrazovat jazyky neobsahující žádný překlad',
+	'translate-mgs-submit' => 'Zobrazit statistiky',
+	'translate-mgs-column-language' => 'Jazyk',
+	'translate-mgs-totals' => 'Všechny jazyky dohromady',
+	'translate-mgs-invalid-group' => 'Zadaná skupina $1 neexistuje.',
+	'translate-mgs-nothing' => 'U požadovaných statistik není co zobrazit.',
 	'supportedlanguages' => 'Podporované jazyky',
 	'supportedlanguages-summary' => 'Na této stránce se nachází seznam všech jazyků podporovaných na {{grammar:6sg|{{SITENAME}}}} spolu se jmény překladatelů, kteří na jazyku pracují.
 Více informací ke každému jazyku získáte na jazykovém portálu, na který se dostanete kliknutím na příslušný jazyk.
@@ -4205,8 +4176,6 @@ Klik på meddelelsen gruppens navn for at se en liste over uoversatte beskeder.'
 	'translate-page-settings-legend' => 'Indstillinger',
 	'translate-page-task' => 'Jeg vil',
 	'translate-page-group' => 'Gruppe',
-	'translate-page-group-tooltip' => 'Navnet på en gruppe af meddelelser. 
-Hvis gruppen består af en delmængde eller kun af budskaber fra andre grupper, vises den med fed skrift.',
 	'translate-page-language' => 'Sprog',
 	'translate-page-limit' => 'Antal',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|besked|beskeder}} per side',
@@ -4345,6 +4314,7 @@ Alle værdier har øvre og nedre grænser.',
 	'languagestats-summary' => 'Denne side viser oversættelsesstatistik for alle beskedgrupper for et sprog.',
 	'languagestats-stats-for' => 'Oversættelse statistik for $1 ($2).',
 	'languagestats-recenttranslations' => 'seneste oversættelser',
+	'translate-langstats-incomplete' => 'Nogle af statistikkerne på denne side er ufuldstændige. Genindlæs siden for at få yderligere statistik.',
 	'translate-langstats-expand' => 'fold ud',
 	'translate-langstats-collapse' => 'fold sammen',
 	'translate-langstats-expandall' => 'fold alle ud',
@@ -4352,20 +4322,27 @@ Alle værdier har øvre og nedre grænser.',
 	'translate-language-code' => 'Sprogkode',
 	'translate-language-code-field-name' => 'Sprogkode',
 	'translate-suppress-complete' => 'Vis ikke beskedgrupper som er fuldt oversatte',
+	'translate-ls-noempty' => 'Vis ikke beskedgrupper, som er helt uoversatte',
 	'translate-language' => 'Sprog',
 	'translate-total' => 'Beskeder',
-	'translate-total-tooltip' => 'Det samlede antal meddelelser i denne meddelelse gruppe.',
 	'translate-untranslated' => 'Uoversatte',
-	'translate-untranslated-tooltip' => 'Det samlede antal uoversatte beskeder i denne meddelelse gruppe.
-Dette omfatter de meddelelser, der er blevet mærket som forældet.',
 	'translate-percentage-complete' => 'Færdiggørelse',
-	'translate-percentage-complete-tooltip' => 'Den procentvise andel af meddelelser i den gruppe, der er blevet oversat og ikke er markeret som forældet.',
 	'translate-percentage-fuzzy' => 'Forældede',
-	'translate-percentage-fuzzy-tooltip' => 'Den procentvise andel af meddelelser i den gruppe, der er blevet oversat og er blevet markeret som forældet.
-Beskeder er markeret forældet, fordi den engelske sprog kilde besked har ændret sig, fordi en automatiseret kontrol for beskeden mislykkedes, eller fordi nogen markeret den som forældet.',
 	'translate-nothing-to-do' => 'Det ser ud til at alle mulige oversættelser er lavet.
 Du opfordres til at gennemse beskeder gennem [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-overall' => 'Alle beskedgrupper lagt sammen',
+	'translate-ls-submit' => 'Vis statistik',
+	'translate-ls-column-group' => 'Beskedgruppe',
+	'translate-mgs-pagename' => 'Statistik for beskedgruppen',
+	'translate-mgs-fieldset' => 'Visningsindstillinger',
+	'translate-mgs-group' => 'Beskedgruppe:',
+	'translate-mgs-nocomplete' => 'Vis ikke sprog, som har en komplet oversættelse',
+	'translate-mgs-noempty' => 'Vis ikke sprog, som ikke har nogen oversættelser',
+	'translate-mgs-submit' => 'Vis statistik',
+	'translate-mgs-column-language' => 'Sprog',
+	'translate-mgs-totals' => 'Alle sprog sammenlagt',
+	'translate-mgs-invalid-group' => 'Den angivne gruppe, $1, findes ikke.',
+	'translate-mgs-nothing' => 'Der er intet at vise for den ønskede statistik.',
 	'supportedlanguages' => 'Understøttede sprog',
 	'supportedlanguages-summary' => 'Denne side viser en liste over alle de sprog, der understøttes af {{SITENAME}}, sammen med navnene på de oversættere, der arbejder på dette sprog.
 Hvis du ønsker yderligere oplysninger om et bestemt sprog, kan du klikke på linket til portalen for det pågældende sprog.
@@ -4514,8 +4491,6 @@ Klicke auf die jeweilige Systemnachrichtengruppe, um eine Liste der nicht übers
 	'translate-page-settings-legend' => 'Einstellungen',
 	'translate-page-task' => 'Aufgabe',
 	'translate-page-group' => 'Systemnachrichtengruppe',
-	'translate-page-group-tooltip' => 'Der Name einer Gruppe von Systemnachrichten.
-Sofern die Gruppe aus einer Teil- oder Obermenge von Systemnachrichten einer anderen Gruppe besteht, wird sie in Fettschrift angezeigt.',
 	'translate-page-language' => 'Sprache',
 	'translate-page-limit' => 'Limit',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|Systemnachricht|Systemnachrichten}} pro Seite',
@@ -4613,7 +4588,7 @@ Die Standardliste ist abhängig von der Sprache der Benutzeroberfläche.',
 	'translate-statsf-options' => 'Zeichnungsoptionen',
 	'translate-statsf-width' => 'Breite in Pixel:',
 	'translate-statsf-height' => 'Höhe in Pixel:',
-	'translate-statsf-days' => 'Zeitraum in Tagen:',
+	'translate-statsf-days' => 'Anfangsdatum:',
 	'translate-statsf-scale' => 'Granularität:',
 	'translate-statsf-scale-months' => 'Monate',
 	'translate-statsf-scale-weeks' => 'Wochen',
@@ -4645,30 +4620,38 @@ Die Standardliste ist abhängig von der Sprache der Benutzeroberfläche.',
 	'languagestats-summary' => 'Diese Seite zeigt Statistiken zu Übersetzungen für alle Nachrichtengruppen einer Sprache.',
 	'languagestats-stats-for' => 'Statistiken zu Übersetzungen für $1 ($2).',
 	'languagestats-recenttranslations' => 'Aktuelle Übersetzungen',
+	'translate-langstats-incomplete' => 'Einige der Statistiken auf dieser Seite sind unvollständig. Lade sie erneut, um weitere Statistiken zu erhalten.',
 	'translate-langstats-expand' => 'ausklappen',
 	'translate-langstats-collapse' => 'einklappen',
 	'translate-langstats-expandall' => 'alle ausklappen',
 	'translate-langstats-collapseall' => 'alle einklappen',
 	'translate-language-code' => 'Sprachcode',
 	'translate-language-code-field-name' => 'Sprachcode:',
-	'translate-suppress-complete' => 'Unterdrücke komplett übersetzte Nachrichtengruppen',
+	'translate-suppress-complete' => 'Vollständig übersetzte Nachrichtengruppen unterdrücken',
+	'translate-ls-noempty' => 'Vollständig unübersetzte Nachrichtengruppen unterdrücken',
 	'translate-language' => 'Sprache',
 	'translate-total' => 'Systemnachrichten (insgesamt)',
-	'translate-total-tooltip' => 'Die Gesamtzahl der Systemnachrichten in dieser Gruppe.',
 	'translate-untranslated' => 'Systemnachrichten (übersetzbar)',
-	'translate-untranslated-tooltip' => 'Die Gesamtzahl der nicht übersetzten Systemnachrichten dieser Gruppe.
-Sie beinhaltet auch die Systemnachrichten, die als veraltet gekennzeichnet wurden.',
 	'translate-percentage-complete' => 'Vollständig',
-	'translate-percentage-complete-tooltip' => 'Der Prozentsatz der Systemnachrichten in der Gruppe, die übersetzt, bzw. nicht als veraltet gekennzeichnet wurden.',
 	'translate-percentage-fuzzy' => 'Veraltet',
-	'translate-percentage-fuzzy-tooltip' => 'Der Prozentsatz der Systemnachrichten in der Gruppe, die übersetzt, allerdings als veraltet gekennzeichnet wurden.
-Systemnachrichten werden als veraltet gekennzeichnet, sofern die englische Vorlage verändert wurde, die automatische Prüfung der übersetzten Systemnachricht fehlgeschlagen ist, oder weil sie jemand manuell als veraltet gekennzeichnet hat.',
 	'translate-nothing-to-do' => 'Alle möglichen Übersetzungen sind offenbar schon erledigt.
 Es wird empfohlen, Systemnachrichten mit der Spezialseite [[Special:Translate|{{int:translate}}]] zu überprüfen.',
 	'translate-languagestats-groups' => ' # Ergänze die ID einer Systemnachrichtengruppe (eine per Zeile) um die Gruppen von
  # Special:LanguageStats auszuschließen. Nicht existerende IDs
  # werden ignoriert.',
 	'translate-languagestats-overall' => 'Alle Systemnachrichtengruppen zusammen',
+	'translate-ls-submit' => 'Statistiken anzeigen',
+	'translate-ls-column-group' => 'Nachrichtengruppe',
+	'translate-mgs-pagename' => 'Statistiken zur Nachrichtengruppe',
+	'translate-mgs-fieldset' => 'Einstellungen anzeigen',
+	'translate-mgs-group' => 'Nachrichtengruppe:',
+	'translate-mgs-nocomplete' => 'Nicht die Sprachen anzeigen, zu denen die Übersetzungen fertiggestellt wurden',
+	'translate-mgs-noempty' => 'Nicht die Sprachen anzeigen, zu denen noch keine Übersetzungen fertiggestellt wurden',
+	'translate-mgs-submit' => 'Statistiken anzeigen',
+	'translate-mgs-column-language' => 'Sprache',
+	'translate-mgs-totals' => 'Alle Sprachen zusammen',
+	'translate-mgs-invalid-group' => 'Die angegebene Nachrichtengruppe $1 ist nicht vorhanden.',
+	'translate-mgs-nothing' => 'Zu den angeforderten Statistiken gibt es keine Daten zum Anzeigen.',
 	'supportedlanguages' => 'Unterstützte Sprachen',
 	'supportedlanguages-summary' => 'Diese Seite zeigt eine Liste aller unterstützen Sprachen auf {{SITENAME}}, zusammen mit den Namen der Übersetzer, die an der jeweiligen Sprache mitgearbeitet haben.
 Weitere Informationen zu einer Sprache, gibt es beim Klick auf den Portallink.
@@ -4802,6 +4785,7 @@ Sie müssen in der Übersetzer-Gruppe sein, um Änderungen zu speichern.
 	'translate-statsf-intro' => 'Sie können einfache Statistiken mit diesem Formular erstellen. Alle Werte haben untere und oberere Limits.',
 	'translations-summary' => 'Geben Sie einen Nachrichtennamen ein, um alle verfügbaren Übersetzungen anzuzeigen.',
 	'translate-translations-including-no-param' => 'Bitte geben Sie einen gültigen Nachrichtennamen als Unterseitenparameter an',
+	'translate-langstats-incomplete' => 'Einige der Statistiken auf dieser Seite sind unvollständig. Laden Sie sie erneut, um weitere Statistiken zu erhalten.',
 	'translate-manage-modlangs' => 'Bitte überprüfen Sie, ob es Änderungen in {{PLURAL:$1|der folgenden Sprache|den folgenden Sprachen}} gibt:',
 	'translate-manage-nochanges-other' => 'Es gibt keine Änderungen für diese Sprache.
 Verwenden Sie den Verweis unten, um zur Gruppendetailübersicht zurück zu gehen.',
@@ -4856,8 +4840,6 @@ Klikni na mě kupki powěźeńkow, aby se woglědał lisćinu njepśełožonych 
 	'translate-page-settings-legend' => 'Nastajenja',
 	'translate-page-task' => 'Cu',
 	'translate-page-group' => 'Kupka',
-	'translate-page-group-tooltip' => 'Mě kupki powěźeńkow.
-Jolic kupka jo z pódkupki abo nadkupki powěźeńkow drugich kupkow, zwobraznjujo se tucnje.',
 	'translate-page-language' => 'Rěc',
 	'translate-page-limit' => 'Licba powěsćow',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|powěsć|powěsći|powěsći|powěsćow}} na bok',
@@ -4990,15 +4972,9 @@ Standardna lisćina rěcow wótwisujo wót swójeje rěcy.',
 	'translate-suppress-complete' => 'Dopołnje pśełožone zdźěleńske kupki pódtłocyś',
 	'translate-language' => 'Rěc:',
 	'translate-total' => 'Zdźělenja',
-	'translate-total-tooltip' => 'Cełkowna licba powěźeńkow w toś tej kupce powěźeńkow.',
 	'translate-untranslated' => 'Njepśełožony',
-	'translate-untranslated-tooltip' => 'Cełkowna licba njepśełožonych powěźeńkow w toś tej kupce powěźeńkow.
-Wóna wopśimujo powěźeńki, kótarež su seako zestarjone markěrowali.',
 	'translate-percentage-complete' => 'Dopołnjenje',
-	'translate-percentage-complete-tooltip' => 'Procentualny późěl powěźeńkow w kupce, kótayž jo se pśełožył a njejo se markěrował ako zestarjony.',
 	'translate-percentage-fuzzy' => 'Zestarjony',
-	'translate-percentage-fuzzy-tooltip' => 'Procentualny późěl powěźeńkow w kupce, kótaryž jo se pśełožył a jo se markěrował ako zestarjony.
-Powěźeńki markěruju se ako zestarjone, dokulaž engelske žrědłowa powěźeńka jo se změniła, dokulaž awtomatiska kontrola za powěźeńku jo se njeraźiła abo dokulaž něchten jo ju ako zestarjonu markěrował.',
 	'translate-nothing-to-do' => 'Zda se, až móžne pśełožki su cynjone.
 Pśiraźijo se, až pśeglědujoš powěźeńki pśez [[Special:Translate|{{int:translate}}]].',
 	'supportedlanguages' => 'Pódpěrane rěcy',
@@ -5546,6 +5522,7 @@ Vi devas esti en la grupo de tradukantoj por konservi ŝanĝojn.
 	'translate-untranslated' => 'Netradukita',
 	'translate-percentage-complete' => 'Kompletigo',
 	'translate-percentage-fuzzy' => 'Malfreŝdata',
+	'translate-mgs-column-language' => 'Lingvo',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Tradukisto|Tradukistoj}}: $1',
 	'supportedlanguages-recenttranslations' => 'Lastatempaj tradukoj',
 	'translate-save' => 'Konservi ($1)',
@@ -5641,8 +5618,6 @@ Pulse en el nombre del grupo de mensajes para ver la lista de mensajes sin tradu
 	'translate-page-settings-legend' => 'Preferencias',
 	'translate-page-task' => 'Deseo',
 	'translate-page-group' => 'Grupo',
-	'translate-page-group-tooltip' => 'El nombre de un grupo de mensajes.
-Si el grupo consiste en un subconjunto o superconjunto de mensajes de otros grupos, esto es mostrado en negrita.',
 	'translate-page-language' => 'Idioma',
 	'translate-page-limit' => 'Límite',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|mensaje|mensajes}} por página',
@@ -5786,18 +5761,13 @@ Todos los valores tienen límites superiores e inferiores.',
 	'translate-suppress-complete' => 'Eliminar grupos de mensajes completamente traducidos',
 	'translate-language' => 'Idioma',
 	'translate-total' => 'Mensajes',
-	'translate-total-tooltip' => 'El número total de mensajes en este grupo de mensajes.',
 	'translate-untranslated' => 'Sin traducir',
-	'translate-untranslated-tooltip' => 'El número total de mensajes sin traducir en este grupo de mensajes.
-Esto incluye los mensajes que han sido etiquetados como desactualizados.',
 	'translate-percentage-complete' => 'Completados',
-	'translate-percentage-complete-tooltip' => 'El porcentaje de mensajes en el grupo que han sido traducidos y no están marcados como desactualizados.',
 	'translate-percentage-fuzzy' => 'Desactualizados',
-	'translate-percentage-fuzzy-tooltip' => 'El porcentaje de mensajes en el grupo que han sido traducidos y han sido marcados como desactualizados.
-Los mensajes están marcados como desactualizados porque la fuente en idioma inglés ha cambiado, porque una verificación automática del mensaje falló, o porque lo marcó como desactualizado.',
 	'translate-nothing-to-do' => 'Todas las posibles traducciones parecen haber sido hechas.
 Se te anima a revisar los mensajes a través de [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-overall' => 'Todos los grupos de mensajes juntos',
+	'translate-mgs-column-language' => 'Idioma',
 	'supportedlanguages' => 'Idiomas soportados',
 	'supportedlanguages-summary' => 'Esta página muestra una lista de todos los idiomas soportados por {{SITENAME}}, junto con los nombres de los traductores que trabajan en ese idioma. Si desea información adicional acerca de un idioma en concreto, puede hacer clic en el enlace al portal para dicho idioma. Al hacer clic en el nombre de un traductor le llevará a su página de usuario.
 
@@ -6397,8 +6367,6 @@ Saat listan kääntämättömistä viesteistä napsauttamalla ryhmän nimeä.',
 	'translate-page-settings-legend' => 'Asetukset',
 	'translate-page-task' => 'Haluan',
 	'translate-page-group' => 'Ryhmä',
-	'translate-page-group-tooltip' => 'Viestiryhmän nimi.
-Jos ryhmä koostuu osittain muista ryhmistä, se näytetään lihavoituna.',
 	'translate-page-language' => 'Kieli',
 	'translate-page-limit' => 'Rajoitus',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|viesti|viestiä}} sivulla',
@@ -6541,12 +6509,8 @@ Asetuksen oletusarvoiset kielet riippuvat kielestä jolle olet kääntämässä.
 	'translate-suppress-complete' => 'Älä näytä kokonaan käännettyjä viestiryhmiä',
 	'translate-language' => 'Kieli',
 	'translate-total' => 'Viestit',
-	'translate-total-tooltip' => 'Viestien kokonaismäärä tässä ryhmässä.',
 	'translate-untranslated' => 'Kääntämättömiä',
-	'translate-untranslated-tooltip' => 'Kääntämättömien viestien lukumäärä tässä ryhmässä.
-Luku sisältää vanhentuneiksi merkityt viestit.',
 	'translate-percentage-complete' => 'Käännösten kattavuus',
-	'translate-percentage-complete-tooltip' => 'Käännettyjen viestien osuus',
 	'translate-percentage-fuzzy' => 'Vanhentunut',
 	'translate-nothing-to-do' => 'Kaikki mahdolliset käännökset on merkitty tehdyiksi.
 Voit tarkistaa käännöksiä toimintosivulla [[Special:Translate|{{int:translate}}]].',
@@ -6677,8 +6641,6 @@ Motif :
 	'translate-page-settings-legend' => 'Paramètres',
 	'translate-page-task' => 'Je veux',
 	'translate-page-group' => 'Groupe',
-	'translate-page-group-tooltip' => "Un nom de groupe de messages.
-Si le groupe contient des sous-ensembles ou des sur-ensembles de messages d'autres groupes, il est affiché en gras.",
 	'translate-page-language' => 'Langue',
 	'translate-page-limit' => 'Limite',
 	'translate-page-limit-option' => '$1 message{{PLURAL:$1||s}} par page',
@@ -6825,21 +6787,16 @@ Toutes les valeurs ont des limites supérieure et inférieure.',
 	'translate-suppress-complete' => 'Ne pas afficher les groupes de messages entièrement traduits',
 	'translate-language' => 'Langue',
 	'translate-total' => 'Messages',
-	'translate-total-tooltip' => 'Le nombre total de messages dans ce groupe.',
 	'translate-untranslated' => 'Non traduits',
-	'translate-untranslated-tooltip' => 'Le nombre total de messages non traduits dans ce groupe.
-Ceci inclut les messages qui ont été marqués comme obsolètes.',
 	'translate-percentage-complete' => 'Achèvement',
-	'translate-percentage-complete-tooltip' => 'Le pourcentage de messages dans ce groupe qui ont été traduits et non marqués comme obsolètes.',
 	'translate-percentage-fuzzy' => 'Désuets',
-	'translate-percentage-fuzzy-tooltip' => 'Le pourcentage de messages dans ce groupe qui ont été traduits puis marqués comme obsolètes.
-Les messages sont marqués comme obsolètes soit parce que la source en anglais a été modifiée ou alors une vérification automatique a échoué.',
 	'translate-nothing-to-do' => 'Toutes les traductions possibles semblent avoir été effectuées.
 Vous êtes encouragé à revoir les messages depuis [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-groups' => ' # Ajoutez des ID de groupes de messages, un par ligne pour limiter les groupes
  # qui sont affichés sur Special:LanguageStats. Les groupes inexistants seront
  # ignorés.',
 	'translate-languagestats-overall' => 'Tous les groupes de messages ensemble',
+	'translate-mgs-column-language' => 'Langue',
 	'supportedlanguages' => 'Langues prises en charge',
 	'supportedlanguages-summary' => "Cette page affiche une liste de toutes les langues prises en charge par {{SITENAME}}, avec les noms des traducteurs qui travaillent dans cette langue.
 Si vous souhaitez plus d'informations sur une langue particulière, vous pouvez cliquer sur le lien vers le portail de la langue.
@@ -6994,8 +6951,6 @@ Rêson :
 	'translate-page-settings-legend' => 'Paramètres',
 	'translate-page-task' => 'Vuel',
 	'translate-page-group' => 'Tropa',
-	'translate-page-group-tooltip' => 'Un nom de tropa de mèssâjos.
-Se la tropa contint des sot-ensemblos ou ben des sur-ensemblos de mèssâjos d’ôtres tropes, el est montrâ en grâs.',
 	'translate-page-language' => 'Lengoua',
 	'translate-page-limit' => 'Limita',
 	'translate-page-limit-option' => '$1 mèssâjo{{PLURAL:$1||s}} per pâge',
@@ -7143,15 +7098,9 @@ Totes les valors ont des limites d’amont et desot.',
 	'translate-suppress-complete' => 'Pas fâre vêre les tropes de mèssâjos tot traduites',
 	'translate-language' => 'Lengoua',
 	'translate-total' => 'Mèssâjos',
-	'translate-total-tooltip' => 'La soma totâla de mèssâjos dens ceta tropa.',
 	'translate-untranslated' => 'Pas traduits',
-	'translate-untranslated-tooltip' => 'La soma totâla de mèssâjos pas traduits dens ceta tropa.
-Cen encllut los mèssâjos qu’ont étâ marcâs coment dèpassâs.',
 	'translate-percentage-complete' => 'Avance',
-	'translate-percentage-complete-tooltip' => 'Lo porcentâjo de mèssâjos dens ceta tropa qu’ont étâ traduits et pas marcâs coment dèpassâs.',
 	'translate-percentage-fuzzy' => 'Dèpassâs',
-	'translate-percentage-fuzzy-tooltip' => 'Lo porcentâjo de mèssâjos dens ceta tropa qu’ont étâ traduits et pués marcâs coment dèpassâs.
-Los mèssâjos sont marcâs coment dèpassâs seye perce que lo mèssâjo sôrsa en anglès at étâ changiê ou ben adonc un contrôlo ôtomatico at pas reussi.',
 	'translate-nothing-to-do' => 'Totes les traduccions possibles semblont avêr étâ fêtes.
 Vos éte encoragiê a revêre los mèssâjos dês [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-groups' => ' # Apondéd des numerôs de tropes de mèssâjos, yon per legne por limitar les tropes
@@ -7444,8 +7393,6 @@ Prema no nome do grupo de mensaxes para ollar a lista coas mensaxes sen traducir
 	'translate-page-settings-legend' => 'Configuracións',
 	'translate-page-task' => 'Quero',
 	'translate-page-group' => 'Grupo',
-	'translate-page-group-tooltip' => 'O nome dun grupo de mensaxes.
-Se o grupo está composto por un subconxunto ou un superconxunto de mensaxes doutros grupos, móstrase en negra.',
 	'translate-page-language' => 'Lingua',
 	'translate-page-limit' => 'Límite',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|mensaxe|mensaxes}} por páxina',
@@ -7592,15 +7539,9 @@ A lista de linguas por defecto depende da súa.',
 	'translate-suppress-complete' => 'Omitir os grupos de mensaxes completamente traducidos',
 	'translate-language' => 'Lingua',
 	'translate-total' => 'Mensaxes',
-	'translate-total-tooltip' => 'O número total de mensaxes neste grupo.',
 	'translate-untranslated' => 'Sen traducir',
-	'translate-untranslated-tooltip' => 'O número total de mensaxes non traducidas neste grupo.
-Isto inclúe as mensaxes que se marcaron como obsoletas.',
 	'translate-percentage-complete' => 'Completadas',
-	'translate-percentage-complete-tooltip' => 'A porcentaxe de mensaxes no grupo que se traduciron e non están marcadas como obsoletas.',
 	'translate-percentage-fuzzy' => 'Anticuadas',
-	'translate-percentage-fuzzy-tooltip' => 'A porcentaxe de mensaxes no grupo que se traduciron e están marcadas como obsoletas.
-As mensaxes están marcadas como obsoletas porque cambiou a mensaxe orixinal en inglés, ben porque fallou a comprobación automática da mensaxe ou ben porque alguén a marcou como tal.',
 	'translate-nothing-to-do' => 'Semella que todas as traducións posibles foron feitas.
 Animámolo a que revise as mensaxes existentes mediante a páxina especial [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-overall' => 'Todos os grupos de mensaxes xuntos',
@@ -7805,8 +7746,6 @@ Klick uf d Nochrichtegruppe go ne Lischt vu dr nit ibersetzte Nochrichte aaluege
 	'translate-page-settings-legend' => 'Yystellige',
 	'translate-page-task' => 'Uufgab',
 	'translate-page-group' => 'Gruppe',
-	'translate-page-group-tooltip' => 'Dr Name vun ere Gruppe vu Syschtemnochrichte.
-Wänn d Gruppe us ere Deil- oder Obermängi vu Syschtemnochrichte vun ere andere Gruppe bstoht, no wird si in Fettschrift aazeigt.',
 	'translate-page-language' => 'Sproch',
 	'translate-page-limit' => 'Gränz',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|Syschtemnochricht|Syschtemnochrichte}} pro Syte',
@@ -7943,15 +7882,9 @@ D Standardlischt vu Sproche hangt vu Dyyre Sproch ab.',
 	'translate-suppress-complete' => 'Unterdruck komplett ibersetzti Nochrichtegruppe',
 	'translate-language' => 'Sproch',
 	'translate-total' => 'Syschtemnochrichte',
-	'translate-total-tooltip' => 'D Gsamtzahl vu dr Syschtemnochrichte in däre Gruppe.',
 	'translate-untranslated' => 'Nit ibersetzt',
-	'translate-untranslated-tooltip' => 'D Gsamtzahl vu dr nit ibersetzte Syschtemnochrichte vu däre Gruppe.
-Do het s au d Syschtemnochrichte din, wu as veraltet gchännzeichnet wore sin.',
 	'translate-percentage-complete' => 'Vollständigkeit',
-	'translate-percentage-complete-tooltip' => 'Dr Prozäntsatz vu dr Syschtemnochrichte in dr Gruppe, wu ibersetzt bzw. nit as veraltet gchännzeichnet wore sin.',
 	'translate-percentage-fuzzy' => 'Veraltet',
-	'translate-percentage-fuzzy-tooltip' => 'Dr Prozäntsatz vu dr Syschtemnochrichte in dr Gruppe, wu ibersetzt sin, aber as veraltet gchännzeichnet wore sin.
-Syschtemnochrichte wäre as veraltet gchännzeichnet, wänn di änglisch Vorlag gänderet woren isch, di automatisch Priefig vu dr ibersetzte Syschtemnochricht fählgschlaa isch oder wel si vu eberem vu Hand as veraltet gchännzeichnet woren isch.',
 	'translate-nothing-to-do' => 'Alli meglige Ibersetzige sin schyns scho gmacht.
 S wird empfohle, Syschtemnochrichte mit dr Spezialsyte [[Special:Translate|{{int:translate}}]] z iberpriefe.',
 	'supportedlanguages' => 'Unterstitzti Sproche',
@@ -8261,8 +8194,6 @@ $messages['he'] = array(
 	'translate-page-settings-legend' => 'הגדרות',
 	'translate-page-task' => 'תצוגה',
 	'translate-page-group' => 'קבוצה',
-	'translate-page-group-tooltip' => 'השם של קבוצת הודעות.
-אם הקבוצה מכילה קבוצת משנה או קבוצת־על של הודעות מקבוצות אחרות, היא מוצגת בגופן בולט.',
 	'translate-page-language' => 'שפה',
 	'translate-page-limit' => 'הגבלה',
 	'translate-page-limit-option' => 'עד {{PLURAL:$1|הודעה אחת|$1 הודעות}} בדף',
@@ -8409,15 +8340,9 @@ $messages['he'] = array(
 	'translate-suppress-complete' => 'השמטת קבוצות הודעות שתורגמו במלואן',
 	'translate-language' => 'שפה',
 	'translate-total' => 'הודעות',
-	'translate-total-tooltip' => 'המספר הכולל של הודעות בקבוצה הודעות זו.',
 	'translate-untranslated' => 'לא מתורגמות',
-	'translate-untranslated-tooltip' => 'המספר הכולל של הודעות לא מתורגמות בקבוצת הודעות זו.
-פעולה זו כוללת הודעות שסומנו כלא מעודכנות.',
 	'translate-percentage-complete' => 'התקדמות',
-	'translate-percentage-complete-tooltip' => 'אחוז ההודאות בקבוצה שתורגמו ולא סומנו כלא מעודכנות.',
 	'translate-percentage-fuzzy' => 'לא מעודכנות',
-	'translate-percentage-fuzzy-tooltip' => 'אחוז ההודעות בקבוצה שתורגמו וסומנו כלא מעודכנות.
-הודעות מסומנות כלא מעודכנות כי ההודעות באנגלית השתנו, כי בדיקה אוטומטית של ההודעה נכשלה, או כי מישהו סימן אותה כלא מעודכנת.',
 	'translate-nothing-to-do' => 'נראה כי כל הפריטים כבר תורגמו.
 עם זאת, אתם מוזמנים לבדוק את ההודעות דרך [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-overall' => 'כל הקבוצות ההודעות יחד',
@@ -8593,8 +8518,6 @@ $messages['hr'] = array(
 	'translate-page-settings-legend' => 'Postavke',
 	'translate-page-task' => 'Želim',
 	'translate-page-group' => 'Skupina',
-	'translate-page-group-tooltip' => 'Ime grupe poruka.
-Ako se grupa sastoji od podskupa ili nadskupa poruka iz drugih grupa, prikazana je podebljano.',
 	'translate-page-language' => 'Jezik',
 	'translate-page-limit' => 'Prikaži najviše',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|poruka|poruke|poruka}} po stranici',
@@ -8707,7 +8630,6 @@ Sve vrijednosti imaju gornju i donju granicu.',
 	'translate-suppress-complete' => 'Izostavi potpuno prevedene grupe poruka',
 	'translate-language' => 'Jezik',
 	'translate-total' => 'Poruke',
-	'translate-total-tooltip' => 'Ukupan broj poruka u ovoj grupi poruka.',
 	'translate-untranslated' => 'Neprevedeno',
 	'translate-percentage-complete' => 'Dovršeno',
 	'translate-percentage-fuzzy' => 'Zastarjelo',
@@ -8788,8 +8710,6 @@ Klikń na mjeno skupiny zdźělinkow, zo by sej lisćinu njepřełoženych zdź�
 	'translate-page-settings-legend' => 'Nastajenja',
 	'translate-page-task' => 'Akcija',
 	'translate-page-group' => 'Skupina',
-	'translate-page-group-tooltip' => 'Mjeno powěsćoweje skupiny.
-Jeli skupina zestaja so z podskupiny abo nadskupiny zdźělenkow z druhich skupinow, zwobrazni so jako tučny tekst.',
 	'translate-page-language' => 'Rěč',
 	'translate-page-limit' => 'Ličba zdźělenkow',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|zdźělenka|zdźělence|zdźělenki|zdźělenkow}} na stronu',
@@ -8925,15 +8845,9 @@ Standardna lisćina rěčow wotwisuje wot twojeje rěče.',
 	'translate-suppress-complete' => 'Dospołnje přełožene zdźělenske skupiny potłóčić',
 	'translate-language' => 'Rěč:',
 	'translate-total' => 'Zdźělenki',
-	'translate-total-tooltip' => 'Cyłkowna ličba zdźělenkow w tutej powěsćowej skupinje.',
 	'translate-untranslated' => 'Njepřełoženy',
-	'translate-untranslated-tooltip' => 'Cyłkowna ličba njepřełoženych zdźělenkow w tutej powěsćowej skupinje.
-To zapřijima zdźělenki, kotrež su jako zestarjene woznamjenjene.',
 	'translate-percentage-complete' => 'Dospołny',
-	'translate-percentage-complete-tooltip' => 'Procentualny podźěl zdźělenkow w skupinje, kotryž je přełoženy a njeje jako zestarjeny markěrowany.',
 	'translate-percentage-fuzzy' => 'Zestarjeny',
-	'translate-percentage-fuzzy-tooltip' => 'Procentualny podźěl zdźělenkow w skupinje, kotryž je přełoženy a je jako zestarjeny markěrowany.
-Zdźělenki su jako zestarjene markěrowane, dokelž jendźelska žórłowa zdźělenka je so změniła, dokelž awtomatiska kontrola za zdźělenka je so njeporadźiła abo dokelž něchtó je je jako zestarjene markěrował.',
 	'translate-nothing-to-do' => 'Zda so, zo wšě móžne přełožki su sčinjene.
 Poruča so zdźělenki přez [[Special:Translate|{{int:translate}}]] přepruwować.',
 	'supportedlanguages' => 'Podpěrowane rěče',
@@ -9067,8 +8981,6 @@ Rezon:
 	'translate-page-settings-legend' => 'Konfigirasyon, preferans',
 	'translate-page-task' => 'Mwen vle',
 	'translate-page-group' => 'Gwoup',
-	'translate-page-group-tooltip' => 'Non pou yon gwoup mesaj.
-Si gwoup la fèt ak messaj ki soti nan lòt group yo, li parèt an karaktè fonse.',
 	'translate-page-language' => 'Lang',
 	'translate-page-limit' => 'Limit',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|mesaj|mesaj}} nan chak paj',
@@ -9213,15 +9125,9 @@ Tout valè yo gen limit anwo ak anba.',
 	'translate-suppress-complete' => 'Pa montre gwoup mesaj yo ki fin tradui nèt',
 	'translate-language' => 'Lang',
 	'translate-total' => 'Mesaj',
-	'translate-total-tooltip' => 'Kantite mesaj total ki genyen nan gwoup mesaj sa.',
 	'translate-untranslated' => 'Pa tradui',
-	'translate-untranslated-tooltip' => 'Kantite mesaj total ki pa tradui nan gwoup mesaj sa.
-Sa gen ladan l mesaj ki make ansyen.',
 	'translate-percentage-complete' => 'Konplete',
-	'translate-percentage-complete-tooltip' => 'Pousantaj mesaj nan gwoup la ki tradui e ki pa make ansyen.',
 	'translate-percentage-fuzzy' => 'Ansyen',
-	'translate-percentage-fuzzy-tooltip' => 'Pousantaj mesaj nan gwoup sa ki tradui e ki make ansyen.
-Yon mesaj vin make ansyen lè mesaj sous an anglè chanje, lè yon verifikasyon otomatik pa t reyisi oubyen lè yon moun make l ansyen.',
 	'translate-nothing-to-do' => 'Sanble tout tradiksyon yo fèt.
 Nou ankouraje ou pou ou revize mesaj yo nan [[Special:Translate|{{int:translate}}]].',
 	'supportedlanguages' => 'Lang ki sipòte yo',
@@ -9352,8 +9258,6 @@ Kattints az üzenetcsoport nevére a fordítandó üzenetek listájának megteki
 	'translate-page-settings-legend' => 'Beállítások',
 	'translate-page-task' => 'Elvégzendő művelet',
 	'translate-page-group' => 'Csoport',
-	'translate-page-group-tooltip' => 'Az üzenetcsoport neve.
-Ha a csoport más csoportok üzeneteinek egy részét vagy más csoportok összesítését tartalmazza, félkövérrel van jelölve.',
 	'translate-page-language' => 'Nyelv',
 	'translate-page-limit' => 'Megjelenítendő elemek',
 	'translate-page-limit-option' => '$1 üzenet/oldal',
@@ -9498,15 +9402,9 @@ A nyelvek alapértelmezett listája a nyelvedtől függ.',
 	'translate-suppress-complete' => 'Teljesen lefordított üzenetcsoportok elrejtése',
 	'translate-language' => 'Nyelv',
 	'translate-total' => 'Üzenetek',
-	'translate-total-tooltip' => 'Az üzenetcsoportban található összes üzenet száma.',
 	'translate-untranslated' => 'Lefordítatlan',
-	'translate-untranslated-tooltip' => 'Az üzenetcsoportban található összes fordítatlan üzenet száma.
-Ebbe bele vannak számolva az elavultnak jelölt üzenetek is.',
 	'translate-percentage-complete' => 'Készültségi fok',
-	'translate-percentage-complete-tooltip' => 'A csoport azon üzeneteinek százaléka, melyek le vannak fordítva, és nincsenek elavultnak jelölve.',
 	'translate-percentage-fuzzy' => 'Elavult',
-	'translate-percentage-fuzzy-tooltip' => 'A csoport azon üzeneteinek százaléka, melyek le vannak fordítva, de elavultnak vannak jelölve.
-Az üzenetek azért vannak elavultnak jelölve, mert az angol nyelvű szöveg megváltozott, egy automatikus ellenőrzés nem sikerült vagy valaki elavultnak jelölte.',
 	'translate-nothing-to-do' => 'Úgy tűnik, hogy az összes fordítás elkészült.
 A  [[Special:Translate|{{int:translate}}]] lapon átnézheted az elkészített fordításokat.',
 	'supportedlanguages' => 'Támogatott nyelvek',
@@ -9641,8 +9539,6 @@ Clicca sur le nomine de un gruppo de messages pro vider un lista de messages non
 	'translate-page-settings-legend' => 'Configurationes',
 	'translate-page-task' => 'Io vole',
 	'translate-page-group' => 'Gruppo',
-	'translate-page-group-tooltip' => 'Le nomine de un gruppo de messages.
-Si le gruppo consiste de un sub-insimul o de super-insimules de messages ex altere gruppos, illo es monstrate in litteras grasse.',
 	'translate-page-language' => 'Lingua',
 	'translate-page-limit' => 'Limite',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|message|messages}} per pagina',
@@ -9748,7 +9644,7 @@ Le lista predefinite de linguas depende de tu lingua.',
 	'translate-statsf-options' => 'Optiones de graphico',
 	'translate-statsf-width' => 'Latitude in pixeles:',
 	'translate-statsf-height' => 'Altitude in pixeles:',
-	'translate-statsf-days' => 'Periodo de tempore in dies:',
+	'translate-statsf-days' => 'Data de initio:',
 	'translate-statsf-scale' => 'Granularitate:',
 	'translate-statsf-scale-months' => 'Menses',
 	'translate-statsf-scale-weeks' => 'Septimanas',
@@ -9780,6 +9676,7 @@ Le lista predefinite de linguas depende de tu lingua.',
 	'languagestats-summary' => 'Iste pagina monstra le statisticas de traduction pro tote le gruppos de messages pro un lingua.',
 	'languagestats-stats-for' => 'Statisticas de traduction pro $1 ($2).',
 	'languagestats-recenttranslations' => 'traductiones recente',
+	'translate-langstats-incomplete' => 'Alcunes del statisticas in iste pagina es incomplete. Per favor recarga pro obtener plus statisticas.',
 	'translate-langstats-expand' => 'displicar',
 	'translate-langstats-collapse' => 'plicar',
 	'translate-langstats-expandall' => 'displicar totes',
@@ -9787,23 +9684,30 @@ Le lista predefinite de linguas depende de tu lingua.',
 	'translate-language-code' => 'Codice de lingua',
 	'translate-language-code-field-name' => 'Codice de lingua:',
 	'translate-suppress-complete' => 'Celar le gruppos de messages completemente traducite',
+	'translate-ls-noempty' => 'Supprimer gruppos de messages completemente sin traduction',
 	'translate-language' => 'Lingua',
 	'translate-total' => 'Messages',
-	'translate-total-tooltip' => 'Le numero total de messages in iste gruppo.',
 	'translate-untranslated' => 'Non traducite',
-	'translate-untranslated-tooltip' => 'Le numero de total de messages non traducite in iste gruppo.
-Isto include le messages que ha essite marcate como obsolete.',
 	'translate-percentage-complete' => 'Completion',
-	'translate-percentage-complete-tooltip' => 'Le percentage de messages in le gruppo que ha essite traducite e non marcate como obsolete.',
 	'translate-percentage-fuzzy' => 'Obsolete',
-	'translate-percentage-fuzzy-tooltip' => 'Le percentage de messages in le gruppo que ha essite traducite e marcate como obsolete.
-Le messages es marcate como obsolete proque le message original in anglese ha cambiate, o proque un verification automatic del message ha fallite.',
 	'translate-nothing-to-do' => 'Il pare que tote le traductiones possibile ha essite facite.
 Es recommendate revider le messages per medio del pagina [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-groups' => ' # Adde IDs de gruppos de messages, un per linea, pro limitar le
  # gruppos monstrate in Special:LanguageStats. Le gruppos non existente
  # essera ignorate.',
 	'translate-languagestats-overall' => 'Tote le gruppos de messages insimul',
+	'translate-ls-submit' => 'Monstrar statisticas',
+	'translate-ls-column-group' => 'Gruppo de messages',
+	'translate-mgs-pagename' => 'Statisticas de gruppo de messages',
+	'translate-mgs-fieldset' => 'Preferentias de presentation',
+	'translate-mgs-group' => 'Gruppo de messages:',
+	'translate-mgs-nocomplete' => 'Non monstrar linguas con traduction complete',
+	'translate-mgs-noempty' => 'Non monstrar linguas sin traductiones',
+	'translate-mgs-submit' => 'Monstrar statisticas',
+	'translate-mgs-column-language' => 'Lingua',
+	'translate-mgs-totals' => 'Tote le linguas insimul',
+	'translate-mgs-invalid-group' => 'Le gruppo specificate, "$1", non existe.',
+	'translate-mgs-nothing' => 'Nihil a monstrar pro le statisticas requestate.',
 	'supportedlanguages' => 'Linguas supportate',
 	'supportedlanguages-summary' => 'Iste pagina presenta un lista de tote le linguas supportate per {{SITENAME}}, con le nomines del traductores laborante a iste lingua.
 Pro ulterior informationes a proposito de un particular lingua, clicca super le ligamine al portal pro iste lingua.
@@ -9943,8 +9847,6 @@ Klik nama kelompok pesan untuk melihat daftar pesan yang belum diterjemahkan.',
 	'translate-page-settings-legend' => 'Pengaturan',
 	'translate-page-task' => 'Saya ingin',
 	'translate-page-group' => 'Kelompok',
-	'translate-page-group-tooltip' => 'Nama grup pesan.
-Jika grup berisi subset atau superset pesan dari grup lain, maka akan ditampilkan dalam huruf tebal.',
 	'translate-page-language' => 'Bahasa',
 	'translate-page-limit' => 'Batasan',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|pesan|pesan}} per halaman',
@@ -10089,17 +9991,12 @@ Daftar bahasa baku tergantung pada bahasa Anda.',
 	'translate-suppress-complete' => 'Sembunyikan grup yang telah diterjemahkan sepenuhnya',
 	'translate-language' => 'Bahasa',
 	'translate-total' => 'Pesan',
-	'translate-total-tooltip' => 'Jumlah total pesan di grup pesan ini.',
 	'translate-untranslated' => 'Belum diterjemahkan',
-	'translate-untranslated-tooltip' => 'Jumlah pesan yang belum diterjemahkan dalam kelompok pesan ini.
-Ini meliputi pesan yang telah ditandai sebagai kedaluwarsa.',
 	'translate-percentage-complete' => 'Selesai',
-	'translate-percentage-complete-tooltip' => 'Persentase pesan di grup yang telah diterjemahkan dan tidak ditandai sebagai kedaluwarsa.',
 	'translate-percentage-fuzzy' => 'Usang',
-	'translate-percentage-fuzzy-tooltip' => 'Persentase pesan di grup yang telah diterjemahkan dan telah ditandai sebagai kedaluwarsa.
-Pesan ditandai kedaluwarsa karena pesan sumber berbahasa Inggris telah berubah, karena pemeriksaan otomatis untuk pesan gagal, atau karena seseorang menandainya sebagai kedaluwarsa.',
 	'translate-nothing-to-do' => 'Semua terjemahan yang mungkin tampaknya telah dibuat.
 Silakan meninjau pesan-pesan melalui [[Special:Translate|{{int:translate}}]].',
+	'translate-mgs-column-language' => 'Bahasa',
 	'supportedlanguages' => 'Bahasa yang didukung',
 	'supportedlanguages-summary' => 'Halaman ini menampilkan daftar semua bahasa yang didukung oleh {{SITENAME}}, bersama dengan nama penerjemah yang bekerja dengan bahasa itu.
 Jika Anda menginginkan informasi lebih lanjut mengenai suatu bahasa, Anda dapat mengklik pranala menuju portal bahasa tersebut.
@@ -10549,6 +10446,7 @@ L'elenco predefinito (default) delle lingue dipende dalla propria lingua.",
 	'translate-percentage-fuzzy' => 'Da aggiornare',
 	'translate-nothing-to-do' => 'Sembra che siano state fatte tutte le traduzioni possibili.
 Si consiglia di ricontrollare i messaggi attraverso [[Special:Translate|{{int:translate}}]].',
+	'translate-mgs-column-language' => 'Lingua',
 	'supportedlanguages' => 'Lingue supportate',
 	'supportedlanguages-recenttranslations' => 'traduzioni recenti',
 	'translate-save' => 'Salva ($1)',
@@ -10636,7 +10534,6 @@ $messages['ja'] = array(
 	'translate-page-settings-legend' => '設定',
 	'translate-page-task' => '絞込み',
 	'translate-page-group' => '群',
-	'translate-page-group-tooltip' => 'メッセージ群の名前です。メッセージ群に下位群や他の群のメッセージを含む上位群がある場合、太字で表示されています。',
 	'translate-page-language' => '言語',
 	'translate-page-limit' => '表示数',
 	'translate-page-limit-option' => 'ページごとに$1{{PLURAL:$1|個}}のメッセージ',
@@ -10779,14 +10676,9 @@ $messages['ja'] = array(
 	'translate-suppress-complete' => '翻訳が完了したグループを表示しない',
 	'translate-language' => '言語',
 	'translate-total' => 'メッセージ数',
-	'translate-total-tooltip' => 'このメッセージ群に含まれるメッセージ総数',
 	'translate-untranslated' => '未翻訳',
-	'translate-untranslated-tooltip' => 'このメッセージ群における未翻訳メッセージの総数。更新が必要であるとタグ付けされたものも含みます。',
 	'translate-percentage-complete' => '完了',
-	'translate-percentage-complete-tooltip' => 'メッセージ群内で翻訳済みであり、かつ更新が必要であるとマークされていないメッセージの割合。',
 	'translate-percentage-fuzzy' => '要修正',
-	'translate-percentage-fuzzy-tooltip' => 'メッセージ群内で翻訳済みであり、かつ更新が必要であるとマークされているメッセージの割合。
-メッセージの更新が必要とされているのは、英語原文が変更されている、もしくはメッセージの自動確認に失敗した、もしくは誰かが更新が必要とマークしたためです。',
 	'translate-nothing-to-do' => '翻訳の可能なものはすべて翻訳されています。[[Special:Translate|{{int:translate}}]]を使ってメッセージを見直すことが推奨されます。',
 	'translate-languagestats-groups' => ' # Special:LanguageStatsに表示するメッセージ群を制限するには
  # メッセージ群のIDを1行1つずつ記入します。
@@ -11557,8 +11449,6 @@ $messages['km'] = array(
 	'translate-page-settings-legend' => 'ការកំណត់យក',
 	'translate-page-task' => 'ខ្ញុំចង់',
 	'translate-page-group' => 'ក្រុម',
-	'translate-page-group-tooltip' => 'ឈ្មោះរបស់ក្រុមសារ។
-បើសិនជាក្រុមមួយមានកញ្ចប់រងឬកញ្ចប់មេរបស់សារមកពីក្រុមដទៃ នោះវានឹងត្រូវបង្ហាញជាអក្សរដិត។',
 	'translate-page-language' => 'ភាសា',
 	'translate-page-limit' => 'កម្រិត',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|សារ|សារ}} ក្នុងមួយទំព័រ',
@@ -11706,15 +11596,9 @@ $messages['km'] = array(
 	'translate-suppress-complete' => 'លាក់ក្រុមសារដែលបានបកប្រែទាំងស្រុងហើយ',
 	'translate-language' => 'ភាសា',
 	'translate-total' => 'សារផ្សេងៗ',
-	'translate-total-tooltip' => 'ចំនួនសារសរុបនៅក្នុងក្រុមសារនេះ។',
 	'translate-untranslated' => 'មិនទាន់បកប្រែ',
-	'translate-untranslated-tooltip' => 'ចំនួនសារមិនទាន់បកប្រែសរុបនៅក្នុងក្រុមសារនេះ។
-នេះរាប់បញ្ចូលទាំងសារទាំងឡាយដែលហួសសម័យផងដែរ។',
 	'translate-percentage-complete' => 'ជាស្ថាពរ',
-	'translate-percentage-complete-tooltip' => 'ភាគរយសារនៅក្នុងក្រុមនេះដែលត្រូវបានបកប្រែហើយនិងមិនទាន់ហួសសម័យ។',
 	'translate-percentage-fuzzy' => 'ហួសសម័យ',
-	'translate-percentage-fuzzy-tooltip' => 'ភាគរយនៃសារនៅក្នុងក្រុមដែលបានបកប្រែហើយនិងត្រូវបានដាក់សំគាល់ថាហួសសម័យ។
-សារត្រូវបានដាក់សំគាល់ថាហួសសម័យព្រោះសារដើមជាភាសាអង់គ្លេសត្រូវបានផ្លាស់ប្ដូរ ឬព្រោះតែការពិនិត្យស្វ័យប្រវត្តិបានបរាជ័យ ឬព្រោះនរណាម្នាក់ដាក់សំគាល់វាថាហួសសម័យ។',
 	'translate-nothing-to-do' => 'ការបកប្រែដែលអាចធ្វើបានហាក់ដូចជាត្រូវបានធ្វើរួចហើយ។
 អ្នកត្រូវបានលើកទឹកចិត្តអោយពិនិត្យសារទាំងនោះឡើងវិញតាមរយៈ[[Special:Translate|{{int:translate}}]]។',
 	'supportedlanguages' => 'ភាសាដែលអាចប្រើបាន',
@@ -11959,8 +11843,6 @@ Donn op en Jropp klecke, öm en Leßß met allem ze sinn ze krijje, wat doh dren
 	'translate-page-settings-legend' => 'Enshtällonge',
 	'translate-page-task' => 'Aufjab:',
 	'translate-page-group' => 'Jrupp:',
-	'translate-page-group-tooltip' => 'Dä Name vun ene Jropp vun Täxte un Nohreeschte.
-En Fättschreff wäde de Jroppe aanjezeish, di noch Ongerjroppe han.',
 	'translate-page-language' => 'Shprooch:',
 	'translate-page-limit' => 'Ömfang:',
 	'translate-page-limit-option' => '{{PLURAL:$1|Eijn Noherscht|$1 Nohreschte|Nix aan Nohreschte}} pro Sigk',
@@ -12103,15 +11985,9 @@ Wat De jezeich kreß, wann De nix enndrähß, deiht vun dä Shprooch afhange, en
 	'translate-suppress-complete' => 'Komplät övversatz Nohrechtejroppe nit aanzeije',
 	'translate-language' => 'Shprooch',
 	'translate-total' => 'Nohreschte',
-	'translate-total-tooltip' => 'De Jesampzahl Täxte un Nohreeshte en heh dä Jropp.',
 	'translate-untranslated' => 'Nit övversaz',
-	'translate-untranslated-tooltip' => 'De Jesampzahl onövversaz Täxte un Nohreeshte en heh dä Jropp.
-Dobei metjezallt wat ens övversaz wohr, un jez övverholld es.',
 	'translate-percentage-complete' => 'Fädesch',
-	'translate-percentage-complete-tooltip' => 'De Prozentzahl vun Täxte un Nohreeschte en dä Jropp, di övversaz un nit als övverhollt makeet sin.',
 	'translate-percentage-fuzzy' => 'Övverhollt',
-	'translate-percentage-fuzzy-tooltip' => 'Der Prozent-Aandeil vun Täxte un Nohreeshte en dä Jropp, di övversaz un als övverhollt makeet sin.
-Als öövverhollt makeet wääde die, dänne ier Ojinaal en Änglesch verändert woode es, woh en automatteshe Pröövung för donevve jejange es, un die, wo Eine di Makeerung vun Hand jesatz hät.',
 	'translate-nothing-to-do' => 'Et süht donoh uß, wi wenn all müjjeliche Övversetzunge ald jemaat wöre.
 Et künnt en joode Idee sin, dem Süsteem sing Nohreschte un Texte övver
 de Söndersigg [[Special:Translate|{{int:translate}}]] norrens ze prööfe.',
@@ -12326,8 +12202,6 @@ Klickt den Numm vum Grupp vu Messagen un fir déi net iwwersate Messagen ze gesi
 	'translate-page-settings-legend' => 'Astellungen',
 	'translate-page-task' => 'Ech wëll',
 	'translate-page-group' => 'Grupp',
-	'translate-page-group-tooltip' => 'Den Numm vun engem Grupp vu Messagen.
-Wann de Grupp aus Ënnergruppen besteet oder Messagen aus anere Gruppen drastinn da gëtt en fett ugewisen.',
 	'translate-page-language' => 'Sprooch',
 	'translate-page-limit' => 'Maximum',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|Message|Message}} pro Säit',
@@ -12464,6 +12338,7 @@ D'Standard-Lëscht vu Sproochen hànkt vun Ärer Sprooch of.",
 	'languagestats-summary' => "Dës Säit weist d'Statistike vun der Iwwersetzung fir all Gruppe vu Message fir eng Sprooch.",
 	'languagestats-stats-for' => 'Iwwersetzungsstatistike fir $1 ($2).',
 	'languagestats-recenttranslations' => 'Rezent Iwwersetzungen',
+	'translate-langstats-incomplete' => "E puer vun de Statistiken op dëser Säit sinn net komplett. Lued d'Säit nei fir méi Statistiken ze kréien.",
 	'translate-langstats-expand' => 'opklappen',
 	'translate-langstats-collapse' => 'zesummeklappen',
 	'translate-langstats-expandall' => 'alles opklappen',
@@ -12473,18 +12348,20 @@ D'Standard-Lëscht vu Sproochen hànkt vun Ärer Sprooch of.",
 	'translate-suppress-complete' => 'Gruppe vu Messagen. déi komplett iwwersat sinn, net weisen',
 	'translate-language' => 'Sprooch',
 	'translate-total' => 'Messagen',
-	'translate-total-tooltip' => "D'Gesamtzuel vu Systemmessagen an dësem Grupp.",
 	'translate-untranslated' => 'Net iwwersat',
-	'translate-untranslated-tooltip' => "D'Gesamtzuel vun den net iwwersate Messagen an dësem Grupp.
-Dobäi ginn déi Messagen déi als vereelst markéiert sinn matgezielt.",
 	'translate-percentage-complete' => 'Fäerdeg zu',
-	'translate-percentage-complete-tooltip' => 'De Prozentsaz vu Systemmessagen an der Grupp, déi iwwersat, bzw. net als vereelst markéiert goufen.',
 	'translate-percentage-fuzzy' => 'Net à jour',
-	'translate-percentage-fuzzy-tooltip' => 'De Prozentsaz vu Messagen an der Grupp, déi iwwersat sinn, awer als vereelst markéiert goufen.
-Message ginn als vereelst markéiert, esoubal déi englesch Original-Versioun verännert gouf, déi automatesche Kontroll vun der Iwwersetzung net fonctionnéiert huet, oder well een se manuell als vereelst markéiert huet.',
 	'translate-nothing-to-do' => "All méiglech Iwwersetzunge sinn anscheinend scho gemaach.
 Dir sidd awer häerzlech Invitéiert fir d'Systemmessagn op [[Special:Translate|{{int:translate}}]] nozekucken.",
 	'translate-languagestats-overall' => 'All Systemmessagen zesummen',
+	'translate-ls-submit' => 'Statistike weisen',
+	'translate-ls-column-group' => 'Grupp vu Messagen',
+	'translate-mgs-fieldset' => 'Astellunge weisen',
+	'translate-mgs-group' => 'Grupp vu Messagen:',
+	'translate-mgs-submit' => 'Statistike weisen',
+	'translate-mgs-column-language' => 'Sprooch',
+	'translate-mgs-totals' => 'All Sproochen zesummen',
+	'translate-mgs-invalid-group' => 'De spezifizéierte Grupp $1 gëtt et net.',
 	'supportedlanguages' => 'Ënnerstetzte Sproochen',
 	'supportedlanguages-summary' => "Op dëser Säit steet eng Lëscht vun alle Sproochen déi op {{SITENAME}} ënnerstëtzt ginn, zesumme mam Numm vun den Iwwersetzer déi un däer Sprooch schaffen.
 Wann Dir méi Informatiounen iwwer eng bestëmmte Sprooch wëllt hunn, da kënnt Dir op de Link vum Portal fir déi Sprooch klickt.
@@ -12959,8 +12836,6 @@ $messages['mk'] = array(
 	'translate-page-settings-legend' => 'Нагодувања',
 	'translate-page-task' => 'Сакам',
 	'translate-page-group' => 'Група',
-	'translate-page-group-tooltip' => 'Називот на групата пораки.
-Ако групата се состои од подмножество или надмножество пораки од други групи, тогаш е прикажана со задебелени букви.',
 	'translate-page-language' => 'Јазик',
 	'translate-page-limit' => 'Ограничување',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|порака|пораки}} по страница',
@@ -13099,6 +12974,7 @@ $messages['mk'] = array(
 	'languagestats-summary' => 'Оваа страница прикажува статистики на превод за сите групи на пораки за одреден јазик.',
 	'languagestats-stats-for' => 'Преводни статистики за $1 ($2).',
 	'languagestats-recenttranslations' => 'скорешни преводи',
+	'translate-langstats-incomplete' => 'Некои од статистиките наведени на страницава се непотполни. Превчитувајте ја страницата за да добивате поцелосна претстава.',
 	'translate-langstats-expand' => 'прикажи',
 	'translate-langstats-collapse' => 'скриј',
 	'translate-langstats-expandall' => 'прикажи сè',
@@ -13108,15 +12984,9 @@ $messages['mk'] = array(
 	'translate-suppress-complete' => 'Скриј потполно преведени групи на пораки',
 	'translate-language' => 'Јазик',
 	'translate-total' => 'Пораки',
-	'translate-total-tooltip' => 'Вкупниот број на пораки во оваа група.',
 	'translate-untranslated' => 'Непреведени',
-	'translate-untranslated-tooltip' => 'Вкупниот број на непреведени пораки во оваа група.
-Тука спаѓаат пораките означени како застарени.',
 	'translate-percentage-complete' => 'Потполност',
-	'translate-percentage-complete-tooltip' => 'Постоток на пораки во групата што се преведени и не се означени како застарени.',
 	'translate-percentage-fuzzy' => 'Застарени',
-	'translate-percentage-fuzzy-tooltip' => 'Постоток на пораки во групата што биле преведени, но означени како зазстарени.
-Пораките се означуваат како застарени кога ќе се измени изворната порака на англиски, или кога нема да успее автоматската проверка на пораката.',
 	'translate-nothing-to-do' => 'Извршени се сите можни преводи.
 Ви препорачуваме да ги прегледате пораките преку [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-groups' => '# Додајте назнаки (ID) на групите пораки (по една во секој ред) за да ги ограничите групите пораки што
@@ -13379,12 +13249,8 @@ $messages['ml'] = array(
 	'translate-suppress-complete' => 'പൂർണ്ണമായും പരിഭാഷപ്പെടുത്തിയ സന്ദേശഗണങ്ങൾ ഒതുക്കുക',
 	'translate-language' => 'ഭാഷ',
 	'translate-total' => 'സന്ദേശങ്ങൾ',
-	'translate-total-tooltip' => 'ഈ സന്ദേശഗണത്തിലെ ആകെ സന്ദേശങ്ങളുടെ എണ്ണം.',
 	'translate-untranslated' => 'പരിഭാഷപ്പെടുത്താത്തവ',
-	'translate-untranslated-tooltip' => 'ഈ സന്ദേശഗണത്തിലെ പരിഭാഷപ്പെടുത്താത്ത സന്ദേശങ്ങളുടെ ആകെ എണ്ണം.
-കാലഹരണപ്പെട്ടതെന്ന് അടയാളപ്പെടുത്തിയ സന്ദേശങ്ങളും ഇതിൽ ഉൾപ്പെടുന്നു.',
 	'translate-percentage-complete' => 'പൂർണ്ണത',
-	'translate-percentage-complete-tooltip' => 'ഈ ഗണത്തിൽ പരിഭാഷപ്പെടുത്തിയതും കാലഹരണപ്പെട്ടതെന്ന് അടയാളപ്പെടുത്താത്തതുമായ സന്ദേശങ്ങളുടെ ശതമാനം.',
 	'translate-percentage-fuzzy' => 'കാലഹരണപ്പെട്ടവ',
 	'supportedlanguages' => 'പിന്തുണയ്ക്കുന്ന ഭാഷകൾ',
 	'supportedlanguages-translators' => '{{PLURAL:$2|പരിഭാഷക(ൻ)|പരിഭാഷകർ}}: $1',
@@ -13606,8 +13472,6 @@ Sebab:
 	'translate-page-settings-legend' => 'Tetapan',
 	'translate-page-task' => 'Saya mahu',
 	'translate-page-group' => 'Kumpulan',
-	'translate-page-group-tooltip' => 'Nama kumpulan mesej.
-Jika kumpulan itu terdiri daripada subset atau superset mesej dari kumpulan lain, ia dipaparkan dalam huruf tebal.',
 	'translate-page-language' => 'Bahasa',
 	'translate-page-limit' => 'Had',
 	'translate-page-limit-option' => '$1 mesej per laman',
@@ -13755,18 +13619,13 @@ Semua nilai ada had maksimum dan minimun.',
 	'translate-suppress-complete' => 'Sorokkan kumpulan mesej yang diterjemah sepenuhnya',
 	'translate-language' => 'Bahasa',
 	'translate-total' => 'Mesej',
-	'translate-total-tooltip' => 'Jumlah mesej dalam kumpulan mesej ini.',
 	'translate-untranslated' => 'Belum diterjemahkan',
-	'translate-untranslated-tooltip' => 'Jumlah mesej yang belum diterjemahkan dalam kumpulan mesej ini.
-Termasuk mesej yang ditandai sebagai lapuk.',
 	'translate-percentage-complete' => 'Takat kelengkapan',
-	'translate-percentage-complete-tooltip' => 'Peratusan mesej dalam kumpulan ini yang diterjemahkan dan tidak ditandai sebagai lapuk.',
 	'translate-percentage-fuzzy' => 'Lapuk',
-	'translate-percentage-fuzzy-tooltip' => 'Peratusan mesej dalam kumpulan ini yang telah diterjemah tetapi ditandai sebagai lapuk.
-Mesej-mesej berkenaan ditandai sebagai lapuk kerana mesej sumber bahasa Inggeris telah diubah, kerana semakan mesej secara automatik gagal, atau ada orang yang menandainya sebagai lapuk.',
 	'translate-nothing-to-do' => 'Nampaknya semua terjemahan yang boleh telah dilakukan.
 Anda disaran untuk menyemak mesej melalui [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-overall' => 'Semua kumpulan mesej sekali',
+	'translate-mgs-column-language' => 'Bahasa',
 	'supportedlanguages' => 'Bahasa yang disokong',
 	'supportedlanguages-summary' => 'Laman ini memaparkan senarai semua bahasa yang disokong oleh {{SITENAME}}, bersama dengan nama-nama penterjemah yang mengusahakan versi bahasa berkenaan.
 Jika anda mahu keterangan lanjut mengenai bahasa yang tertentu, anda boleh mengklik pautan kepada portal bahasa itu.
@@ -14029,6 +13888,7 @@ Il-lista predefinita tal-lingwi tiddependi fuq il-lingwa tiegħek.",
 	'translate-language-code' => 'Kodiċi tal-lingwa',
 	'translate-language-code-field-name' => 'Kodiċi tal-lingwa:',
 	'supportedlanguages-recenttranslations' => 'traduzzjonijiet riċenti',
+	'translate-jssti-add' => 'Żid mal-lista',
 	'translate-js-next' => 'Salvaha u għaddi għal li jmiss',
 	'translate-js-nonext' => "Dan kien l-aħħar messaġġ f'din il-paġna.",
 	'translate-js-skip' => 'Li jmiss',
@@ -14044,6 +13904,7 @@ Il-lista predefinita tal-lingwi tiddependi fuq il-lingwa tiegħek.",
 	'translate-gs-total' => 'Total',
 	'translate-gs-avgscore' => 'Medja tal-punteġġ',
 	'translate-documentation-language' => 'Dokumentazzjoni tal-messaġġ',
+	'translate-searchprofile' => 'Traduzzjonijiet',
 );
 
 /** Burmese (မြန်မာဘာသာ)
@@ -14264,8 +14125,6 @@ $messages['ne'] = array(
 	'translate-page-settings-legend' => 'सेटिंग्स',
 	'translate-page-task' => 'मेरो इच्छा छ',
 	'translate-page-group' => 'समूह',
-	'translate-page-group-tooltip' => 'सन्देशहरुको एउटा समूहको नाम।
-यदि समूहमा अन्य समूहका सन्देशहरुको सब-सेट अथवा सुपर-सेट भए यो मोटा अक्षरमा प्रदर्शित गरिन्छ।',
 	'translate-page-language' => 'भाषा',
 	'translate-page-limit' => 'सीमा',
 	'translate-page-limit-option' => 'प्रति पृष्ठ $1 {{PLURAL:$1|सन्देश|सन्देशहरु}}',
@@ -14355,10 +14214,7 @@ $messages['ne'] = array(
 	'translate-language-code-field-name' => 'भाषा कोड:',
 	'translate-language' => 'भाषा',
 	'translate-total' => 'सन्देशहरु',
-	'translate-total-tooltip' => 'यस सन्देश समूहमा सन्देशहरुको जम्मा संख्या।',
 	'translate-untranslated' => 'अनुवाद नगरिएका',
-	'translate-untranslated-tooltip' => 'यस सन्देश समूहमा अनुवाद नगरिएका सन्देशहरुको जम्मा संख्या।
-यसभित्र ती सन्देशहरु पनि पर्छन् जसलाई अप्रचलितको रुपमा ट्याग गरिएकोछ।',
 	'translate-percentage-complete' => 'सकिएका',
 	'translate-percentage-fuzzy' => 'पुराना (काम नलाग्ने)',
 	'supportedlanguages-recenttranslations' => 'भर्खरैका अनुवादहरु',
@@ -14403,8 +14259,6 @@ Klik op een berichtengroep om de lijst met nog niet vertaalde berichten te bekij
 	'translate-page-settings-legend' => 'Instellingen',
 	'translate-page-task' => 'Ik wil',
 	'translate-page-group' => 'Groep',
-	'translate-page-group-tooltip' => 'De naam van een groep berichten.
-Als de groep bestaat uit een subset of superset van berichten van andere groepen, dan wordt deze vet weergegeven.',
 	'translate-page-language' => 'Taal',
 	'translate-page-limit' => 'Maximaal',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|bericht|berichten}} per pagina',
@@ -14543,6 +14397,7 @@ Alle waarden hebben een limiet aan de boven- en onderzijde.',
 	'languagestats-summary' => 'Op deze pagina worden vertaalstatistieken weergegeven voor alle berichtengroepen voor een taal.',
 	'languagestats-stats-for' => 'Vertaalstatistieken voor $1 ($2).',
 	'languagestats-recenttranslations' => 'recente vertalingen',
+	'translate-langstats-incomplete' => 'Sommige statistieken op deze pagina zijn onvolledig. Herlaad de pagina voor meer complete statistieken.',
 	'translate-langstats-expand' => 'uitvouwen',
 	'translate-langstats-collapse' => 'inklappen',
 	'translate-langstats-expandall' => 'alles uitvouwen',
@@ -14550,20 +14405,27 @@ Alle waarden hebben een limiet aan de boven- en onderzijde.',
 	'translate-language-code' => 'Taalcode',
 	'translate-language-code-field-name' => 'Taalcode:',
 	'translate-suppress-complete' => 'Volledig vertaalde berichtengroepen verbergen',
+	'translate-ls-noempty' => 'Volledig onvertaalde berichtengroepen verbergen',
 	'translate-language' => 'Taal',
 	'translate-total' => 'Berichten',
-	'translate-total-tooltip' => 'Het totaal aantal berichten in deze berichtengroep.',
 	'translate-untranslated' => 'Te vertalen',
-	'translate-untranslated-tooltip' => 'Het totale aantal onvertaalde berichten in deze berichtengroep.
-Dit aantal bevat ook berichten die als verouderd zijn gemarkeerd.',
 	'translate-percentage-complete' => 'Vertaald',
-	'translate-percentage-complete-tooltip' => 'Het percentage van de berichten in de groep die zijn vertaald en niet zijn gemarkeerd als verouderd.',
 	'translate-percentage-fuzzy' => 'Verouderd',
-	'translate-percentage-fuzzy-tooltip' => 'Het percentage van de berichten in de groep die zijn vertaald en zijn gemarkeerd als verouderd.
-Berichten zijn gemarkeerd als verouderd omdat het Engelstalige bronbericht is gewijzigd, omdat een automatische controle op het bericht is mislukt, of omdat iemand het bericht heeft aangemerkt als verouderd.',
 	'translate-nothing-to-do' => 'Alle mogelijke vertalingen lijken te zijn gemaakt.
 U wordt aangemoedigd om via [[Special:Translate|{{int:translate}}]] vertalingen te controleren.',
 	'translate-languagestats-overall' => 'Alle berichtengroepen samen',
+	'translate-ls-submit' => 'Statistieken weergeven',
+	'translate-ls-column-group' => 'Berichtengroep',
+	'translate-mgs-pagename' => 'Berichtengroepstatistieken',
+	'translate-mgs-fieldset' => 'Voorkeuren weergeven',
+	'translate-mgs-group' => 'Berichtengroep:',
+	'translate-mgs-nocomplete' => 'Volledig vertaalde talen verbergen',
+	'translate-mgs-noempty' => 'Talen zonder vertalingen verbergen',
+	'translate-mgs-submit' => 'Statistieken weergeven',
+	'translate-mgs-column-language' => 'Taal',
+	'translate-mgs-totals' => 'Alle talen samen',
+	'translate-mgs-invalid-group' => 'De opgegeven groep "$1" bestaat niet.',
+	'translate-mgs-nothing' => 'Er is niets weer te geven voor de opgevraagde statistieken.',
 	'supportedlanguages' => 'Ondersteunde talen',
 	'supportedlanguages-summary' => 'Op deze pagina wordt een lijst van alle talen die in {{SITENAME}} worden ondersteund weergegeven, samen met de namen van de vertalers die werken aan die taal.
 Als u meer informatie over een bepaalde taal wilt, kunt u klikken op de verwijzing naar het portaal voor die taal.
@@ -14698,8 +14560,6 @@ $messages['nn'] = array(
 	'translate-page-settings-legend' => 'Innstillingar',
 	'translate-page-task' => 'Eg vil',
 	'translate-page-group' => 'Gruppe',
-	'translate-page-group-tooltip' => 'Namnet til ei meldingsgruppa.
-Om gruppa er sett saman av eit delsett eller eit overordna sett av meldingar frå andre grupper, er ho synt i feit skrift.',
 	'translate-page-language' => 'Språk',
 	'translate-page-limit' => 'Grense',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|melding|meldingar}} per side',
@@ -14828,15 +14688,9 @@ Endringar vert ikkje lagra før du klikkar på lagreknappen nedanfor.',
 	'translate-suppress-complete' => 'Skjul meldingsgrupper som er ferdig omsette',
 	'translate-language' => 'Språk',
 	'translate-total' => 'Meldingar',
-	'translate-total-tooltip' => 'Det totale talet på meldingar i denne meldingsgruppa.',
 	'translate-untranslated' => 'Uomsett',
-	'translate-untranslated-tooltip' => 'Det totale talet på meldingar i denne meldingsgruppa som ikkje er sette om.
-Dette talet inkluderer meldingane som er merkte som utdaterte.',
 	'translate-percentage-complete' => 'Ferdiggjort',
-	'translate-percentage-complete-tooltip' => 'Prosenttalet på meldingar i gruppa som er sette om og som ikkje er merkte som utdaterte.',
 	'translate-percentage-fuzzy' => 'Utdatert',
-	'translate-percentage-fuzzy-tooltip' => 'Prosenttalet på meldingar i gruppa som er sette om og som seinare vart merkte som utdaterte.
-Meldingane er merkte som utdaterte anten av di den engelske kjeldemeldinga er vorten endra, ein automatisk kontroll av meldinga ikkje gjekk gjennom eller av di nokon merkte ho som utdatert.',
 	'translate-nothing-to-do' => 'Det ser ut til at alle moglege omsetjingar er vortne gjorde.
 Sjå gjerne over meldingar gjennom [[Special:Translate|{{int:translate}}]].',
 	'supportedlanguages' => 'Støtta språk',
@@ -14910,8 +14764,6 @@ Klikk på meldingsgruppenavnet for å vise en liste over uoversatte meldinger.',
 	'translate-page-settings-legend' => 'Innstillinger',
 	'translate-page-task' => 'Jeg vil',
 	'translate-page-group' => 'Gruppe',
-	'translate-page-group-tooltip' => 'Navnet på en gruppe av meldinger.
-Om gruppen består av et delsett eller et overordnet sett meldinger fra andre grupper vises disse i fet skrift.',
 	'translate-page-language' => 'Språk',
 	'translate-page-limit' => 'Grense',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|melding|meldinger}} per side',
@@ -15058,15 +14910,9 @@ Alle verdiene har øvre og nedre grenser.',
 	'translate-suppress-complete' => 'Skjul ferdig oversatte meldingsgrupper',
 	'translate-language' => 'Språk',
 	'translate-total' => 'Meldinger',
-	'translate-total-tooltip' => 'Det totale antallet meldinger i denne meldingsgruppen.',
 	'translate-untranslated' => 'Uoversatte',
-	'translate-untranslated-tooltip' => 'Det totale antallet uoversatte meldinger i denne meldingsgruppen.
-Dette inkluderer meldingene som har blitt merket som utdaterte.',
 	'translate-percentage-complete' => 'Ferdigstilt',
-	'translate-percentage-complete-tooltip' => 'Prosentandelen av meldinger i gruppen som har blitt oversatt og som ikke er merket som utdatert.',
 	'translate-percentage-fuzzy' => 'Utdatert',
-	'translate-percentage-fuzzy-tooltip' => 'Prosentandelen av meldinger i gruppen som har blitt oversatt og har blitt merket som utdaterte.
-Meldinger blir merket som utdaterte fordi kildemeldingen på engelsk har blitt endret, fordi en automatisk sjekk for meldingen feilet eller fordi noen har merket den som utdatert.',
 	'translate-nothing-to-do' => 'Alle mulige oversettelser ser ut til å ha blitt gjort.
 Du oppfordres til å revidere meldinger gjennom [[Special:Translate|{{int:translate}}]].',
 	'supportedlanguages' => 'Støttede språk',
@@ -15610,8 +15456,6 @@ Kliknij nazwę grupy aby zobaczyć listę nieprzetłumaczonych komunikatów.',
 	'translate-page-settings-legend' => 'Ustawienia',
 	'translate-page-task' => 'Chcę',
 	'translate-page-group' => 'Grupa',
-	'translate-page-group-tooltip' => 'Nazwa grupy wiadomości.
-Jeśli grupa zawiera podzbiór lub nadzbiór komunikatów innej grupy, jest wyświetlana pogrubioną czcionką.',
 	'translate-page-language' => 'Język',
 	'translate-page-limit' => 'Ograniczenie',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|komunikat|komunikaty|komunikatów}} na stronę',
@@ -15756,15 +15600,9 @@ Domyślna lista języków zależy od Twojego języka.',
 	'translate-suppress-complete' => 'Pomiń grupy komunikatów całkowicie przetłumaczone',
 	'translate-language' => 'Język',
 	'translate-total' => 'Komunikaty',
-	'translate-total-tooltip' => 'Liczba wszystkich komunikatów w tej grupie.',
 	'translate-untranslated' => 'Nieprzetłumaczone',
-	'translate-untranslated-tooltip' => 'Liczba wszystkich nieprzetłumaczonych komunikatów w tej grupie.
-Uwzględnia ona komunikaty, które zostały oznaczone jako nieaktualne.',
 	'translate-percentage-complete' => 'Przetłumaczone',
-	'translate-percentage-complete-tooltip' => 'Odsetek wiadomości w grupie, które zostały przetłumaczone i nie są oznaczone jako nieaktualne.',
 	'translate-percentage-fuzzy' => 'Zdezaktualizowane',
-	'translate-percentage-fuzzy-tooltip' => 'Odsetek wiadomości w grupie, które zostały przetłumaczone i nie są oznaczone jako nieaktualne.
-Komunikaty oznaczane są jako nieaktualne gdy źródłowy komunikat w języku angielskim został zmieniony, jeśli automat wykryje nieprawidłowości lub ktoś oznaczy komunikat ręcznie.',
 	'translate-nothing-to-do' => 'Wszystkie możliwe tłumaczenia zostały wykonane.
 Proponujemy przejrzeć komunikaty korzystając z [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-overall' => 'Komunikaty ze wszystkich grup',
@@ -15902,8 +15740,6 @@ Rason:
 	'translate-page-settings-legend' => 'Configurassion',
 	'translate-page-task' => 'I veuj',
 	'translate-page-group' => 'Partìa',
-	'translate-page-group-tooltip' => "Ël nòm ëd na partìa ëd mëssagi.
-Se la partìa a consist d'un sot-ansema o un dzor-ansema ëd mëssagi da àutre partìe, a l'é smonù an grassèt.",
 	'translate-page-language' => 'Lenga',
 	'translate-page-limit' => 'Lìmit',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|mëssagi|mëssagi}} për pàgina',
@@ -16050,15 +15886,9 @@ Tùit ij valor a l'han dij lìmit superior e anferior.",
 	'translate-suppress-complete' => 'Stërma le partìe ëd mëssagi voltà completament',
 	'translate-language' => 'Lenga:',
 	'translate-total' => 'Mëssagi',
-	'translate-total-tooltip' => 'Ël nùmer total ëd mëssagi an sta partìa ëd mëssagi.',
 	'translate-untranslated' => 'Nen voltà',
-	'translate-untranslated-tooltip' => "Ël nùmer total ëd mëssagi pa voltà an sta partìa ëd mëssagi sì.
-Sòn a anclud ij mëssagi ch'a son ëstàit marcà com vej.",
 	'translate-percentage-complete' => 'Completà',
-	'translate-percentage-complete-tooltip' => "La përsentual ëd mëssagi ant la partìa ch'a son ëstàit voltà e pa marcà com vej.",
 	'translate-percentage-fuzzy' => 'Veje',
-	'translate-percentage-fuzzy-tooltip' => "La përsentual ëd mëssagi ant la partìa ch'a son ëstàit voltà e a son ëstàit marcà com vej.
-Ij mëssagi a son marcà com vej përchè ël mëssagi sorgiss an lenga anglèisa a l'é cangià, përchè un contròl automàtich për ël mëssagi a l'é falì, o përchè cheidun a l'ha marcalo com vej.",
 	'translate-nothing-to-do' => "Tute le tradussion possìbij a smijo esse stàite fàite.
 A l'é ancoragià a revisioné ij mëssagi con [[Special:Translate|{{int:translate}}]].",
 	'supportedlanguages' => 'Lenghe mantnùe',
@@ -16326,8 +16156,6 @@ Clique o nome do grupo de mensagens para ver a lista de mensagens não traduzida
 	'translate-page-settings-legend' => 'Configurações',
 	'translate-page-task' => 'Eu pretendo',
 	'translate-page-group' => 'Grupo',
-	'translate-page-group-tooltip' => 'O nome de um grupo de mensagens.
-Se o grupo é composto por um subconjunto ou superconjunto de mensagens de outros grupos, o mesmo é apresentado a negrito.',
 	'translate-page-language' => 'Língua',
 	'translate-page-limit' => 'Limite',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|mensagem|mensagens}} por página',
@@ -16470,18 +16298,13 @@ Todos os valores têm limites máximos e mínimos.',
 	'translate-suppress-complete' => 'Suprimir os grupos de mensagens completamente traduzidos',
 	'translate-language' => 'Língua',
 	'translate-total' => 'Mensagens (total)',
-	'translate-total-tooltip' => 'O número total de mensagens neste grupo de mensagens.',
 	'translate-untranslated' => 'Não traduzidas',
-	'translate-untranslated-tooltip' => 'O número total de mensagens não traduzidas neste grupo de mensagens.
-Isto inclui as mensagens que foram marcadas como desactualizadas.',
 	'translate-percentage-complete' => 'Progresso',
-	'translate-percentage-complete-tooltip' => 'A percentagem de mensagens no grupo que foram traduzidas e não estão marcadas como desactualizadas.',
 	'translate-percentage-fuzzy' => 'Desactualizadas',
-	'translate-percentage-fuzzy-tooltip' => 'A percentagem de mensagens do grupo que foram traduzidas e estão marcadas como desactualizadas.
-As mensagens estão marcadas como desactualizadas porque a mensagem original em inglês mudou ou porque uma verificação automática da mensagem detectou um problema.',
 	'translate-nothing-to-do' => 'Todas as traduções possíveis parecem já ter sido feitas.
 Encorajamo-lo a rever as mensagens usando [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-overall' => 'Todos os grupos de mensagens em conjunto',
+	'translate-mgs-column-language' => 'Língua',
 	'supportedlanguages' => 'Línguas suportadas',
 	'supportedlanguages-summary' => 'Esta página apresenta uma lista de todas as línguas suportadas pela {{SITENAME}}, com os nomes dos tradutores de cada língua.
 Para obter mais informação sobre uma língua em particular, pode clicar o link para o portal dessa língua.
@@ -16621,8 +16444,6 @@ Clique o nome do grupo de mensagens para ver a lista de mensagens não traduzida
 	'translate-page-settings-legend' => 'Configurações',
 	'translate-page-task' => 'Eu desejo',
 	'translate-page-group' => 'Grupo',
-	'translate-page-group-tooltip' => 'O nome de um grupo de mensagens.
-Se o grupo é composto por um subconjunto ou superconjunto de mensagens de outros grupos, o mesmo é apresentado em negrito.',
 	'translate-page-language' => 'Língua',
 	'translate-page-limit' => 'Limite',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|mensagem|mensagens}} por página',
@@ -16764,15 +16585,9 @@ A lista padrão de idiomas depende do seu idioma.',
 	'translate-suppress-complete' => 'Suprimir grupos de mensagens completamente traduzidos',
 	'translate-language' => 'Língua',
 	'translate-total' => 'Mensagens (total)',
-	'translate-total-tooltip' => 'O número total de mensagens neste grupo de mensagens.',
 	'translate-untranslated' => 'Não traduzidas',
-	'translate-untranslated-tooltip' => 'O número total de mensagens não traduzidas neste grupo de mensagens.
-Isto inclui as mensagens que foram marcadas como desatualizadas.',
 	'translate-percentage-complete' => 'Progresso',
-	'translate-percentage-complete-tooltip' => 'A percentagem de mensagens no grupo que foram traduzidas e não estão marcadas como desatualizadas',
 	'translate-percentage-fuzzy' => 'Obsoletas',
-	'translate-percentage-fuzzy-tooltip' => 'A percentagem de mensagens do grupo que foram traduzidas e estão marcadas como desatualizadas.
-As mensagens estão marcadas como desatualizadas porque a mensagem original em inglês mudou ou porque uma verificação automática da mensagem detectou um problema.',
 	'translate-nothing-to-do' => 'Aparentemente todas as traduções possíveis foram feitas.
 Você é encorajado a revisar mensagens através de [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-overall' => 'Todos os grupos de mensagens em conjunto',
@@ -16960,8 +16775,6 @@ Motiv:
 	'translate-page-settings-legend' => 'Setări',
 	'translate-page-task' => 'Doresc să',
 	'translate-page-group' => 'Grup',
-	'translate-page-group-tooltip' => 'Numele grupului de mesaje.
-Dacă grupul reprezintă un subset sau un superset de mesaje care provin de la alte grupuri, este afișat îngroșat.',
 	'translate-page-language' => 'Limbă',
 	'translate-page-limit' => 'Limită',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|mesaj|mesaje}} pe pagină',
@@ -17089,12 +16902,8 @@ Toate valorile au limite superioare și inferioare.',
 	'translate-suppress-complete' => 'Ascunde grupurile de mesaje traduse complet',
 	'translate-language' => 'Limbă',
 	'translate-total' => 'Mesaje',
-	'translate-total-tooltip' => 'Numărul total al mesajelor din acest grup de mesaje.',
 	'translate-untranslated' => 'Netraduse',
-	'translate-untranslated-tooltip' => 'Numărul total al mesajelor netraduse din acest grup de mesaje.
-Sunt incluse și mesajele marcate ca învechite.',
 	'translate-percentage-complete' => 'Completare',
-	'translate-percentage-complete-tooltip' => 'Procentul mesajelor din grup care au fost traduse și nu au fost marcate ca învechite.',
 	'translate-percentage-fuzzy' => 'Învechite',
 	'translate-languagestats-overall' => 'Toate grupurile de mesaje laolaltă',
 	'supportedlanguages' => 'Limbi întreținute',
@@ -17295,8 +17104,6 @@ $messages['ru'] = array(
 	'translate-page-settings-legend' => 'Параметры',
 	'translate-page-task' => 'Я хочу',
 	'translate-page-group' => 'Группа',
-	'translate-page-group-tooltip' => 'Название группы сообщений.
-Если группа состоит из подмножества или супермножества сообщений других групп, оно будет выделено жирным шрифтом.',
 	'translate-page-language' => 'Язык',
 	'translate-page-limit' => 'Ограничение',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|сообщение|сообщения|сообщений}} на страницу',
@@ -17441,15 +17248,9 @@ $messages['ru'] = array(
 	'translate-suppress-complete' => 'Не показывать полностью переведённые группы сообщений',
 	'translate-language' => 'Язык',
 	'translate-total' => 'Сообщения',
-	'translate-total-tooltip' => 'Общее число сообщений в этой группе сообщений.',
 	'translate-untranslated' => 'Непереведённые',
-	'translate-untranslated-tooltip' => 'Общее число непереведённых сообщений в этой группе сообщений.
-Включая сообщения, отмеченные как устаревшие.',
 	'translate-percentage-complete' => 'Выполнено',
-	'translate-percentage-complete-tooltip' => 'Доля сообщений группы, которые были переведены и не помечены как устаревшие.',
 	'translate-percentage-fuzzy' => 'Устарело',
-	'translate-percentage-fuzzy-tooltip' => 'Доля сообщений группы, которые были переведены и были отмечены как устаревшие.
-Сообщения отмечаются устаревшим, если изменилось исходное английское сообщение, если сообщение не прошло автоматическую проверку, или если кто-то отметил его как устаревшее.',
 	'translate-nothing-to-do' => 'По всей видимости, все возможные переводы уже сделаны.
 Вы можете проверить сообщения с помощью [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-overall' => 'Сообщения всех групп',
@@ -17584,8 +17385,6 @@ $messages['rue'] = array(
 	'translate-page-settings-legend' => 'Параметры',
 	'translate-page-task' => 'Я хочу',
 	'translate-page-group' => 'Ґрупа',
-	'translate-page-group-tooltip' => 'Назва ґрупы повідомлїнь.
-Кідь ґрупа обсягує підмножіну ці надмножіну повідомлїнь з іншых ґруп, зображує ся там грубо.',
 	'translate-page-language' => 'Язык',
 	'translate-page-limit' => 'Ліміт',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|повідомлїня|повідомлїня|повідомлїнь}} на сторінку',
@@ -17728,15 +17527,9 @@ $messages['rue'] = array(
 	'translate-suppress-complete' => 'Не выписовати цалком перекладены ґрупы повідомлїнь',
 	'translate-language' => 'Язык',
 	'translate-total' => 'Повідомлїня',
-	'translate-total-tooltip' => 'Цалкове чісло повідомлїнь у тій ґрупі.',
 	'translate-untranslated' => 'Непереложены',
-	'translate-untranslated-tooltip' => 'Цалкове чісло неперекладеных повідомлїнь у тій ґрупі.
-Загорнює повідомлїня означены як застарілы.',
 	'translate-percentage-complete' => 'Готово',
-	'translate-percentage-complete-tooltip' => 'Частка повідомлїнь у тій ґрупі, котры суть перекладены і не суть означены як застарілы.',
 	'translate-percentage-fuzzy' => 'Застарілы',
-	'translate-percentage-fuzzy-tooltip' => 'Частка повідомлїнь у ґрупі, котры суть перекладены і суть означены як застарілы.
-Повідомлїня ся означують як застарілы в припадї, же ся жрідлове анґліцьке повідомлїня змінило, бо не перешло автоматічнов контролёв або зато же го дахто означів як застаріле.',
 	'translate-nothing-to-do' => 'Вызерать то так, же вшыткы переклады суть зроблены.
 Можете перевірити повідомлїня за помочі [[Special:Translate|{{int:translate}}]].',
 	'supportedlanguages' => 'Підпорованы языкы',
@@ -17941,12 +17734,8 @@ $messages['sah'] = array(
 	'translate-suppress-complete' => 'Толору тылбаастаммыт этиилэрдээх бөлөхтөрү көрдөрүмэ',
 	'translate-language' => 'Ханнык тылынан:',
 	'translate-total' => 'Этии',
-	'translate-total-tooltip' => 'Бу бөлөх этиилэрин ахсаана.',
 	'translate-untranslated' => 'Тылбаастамматах',
-	'translate-untranslated-tooltip' => 'Бу бөлөх тылбаастамматах этиилэрин ахсаана.
-Эргэрбит тылбаастары ааҕан туран.',
 	'translate-percentage-complete' => 'Толоруллубут',
-	'translate-percentage-complete-tooltip' => 'Бу бөлөх тылбаастаммыт уонна эргэрбит курдук бэлиэтэммэтэх этиилэрин өлүүтэ',
 	'translate-gs-code' => 'Куод',
 	'translate-gs-continent' => 'Континент',
 	'translate-gs-speakers' => 'Саҥарааччы',
@@ -18336,8 +18125,6 @@ Razlog:
 	'translate-page-settings-legend' => 'Nastavitve',
 	'translate-page-task' => 'Želim',
 	'translate-page-group' => 'Skupina',
-	'translate-page-group-tooltip' => 'Ime skupine sporočil.
-Če je skupina sestavljena iz podmnožic ali nadmnožic sporočil iz ostalih skupin, je prikazana v krepkem tisku.',
 	'translate-page-language' => 'Jezik',
 	'translate-page-limit' => 'Omejitev',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|sporočilo|sporočili|sporočila|sporočil}} na stran',
@@ -18485,15 +18272,9 @@ Vse vrednosti imajo zgornje in spodnje omejitve.',
 	'translate-suppress-complete' => 'Preskoči v celoti prevedene skupine sporočil',
 	'translate-language' => 'Jezik',
 	'translate-total' => 'Sporočil',
-	'translate-total-tooltip' => 'Skupno število sporočil v tej skupini sporočil.',
 	'translate-untranslated' => 'Neprevedeno',
-	'translate-untranslated-tooltip' => 'Skupno število neprevedenih sporočil v tej skupini sporočil.
-Vključuje sporočila, ki so bila označena kot zastarela.',
 	'translate-percentage-complete' => 'Končano',
-	'translate-percentage-complete-tooltip' => 'Odstotek sporočil v skupini, ki so bila prevedena in ne označena kot zastarela.',
 	'translate-percentage-fuzzy' => 'Zastarelo',
-	'translate-percentage-fuzzy-tooltip' => 'Odstotek sporočil v skupini, ki so bila prevedena in označena kot zastarela.
-Sporočila so označena kot zastarela, ker se je izvorno sporočilo v angleškem jeziku spremenilo, ker je samodejno preverjanje sporočila spodletelo ali ker ga je nekdo označil kot zastarelega.',
 	'translate-nothing-to-do' => 'Kaže, da so vsi mogoči prevodi dokončani.
 Predlagamo vam, da pregledate sporočila preko [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-overall' => 'Vse skupine sporočil skupaj',
@@ -18637,7 +18418,7 @@ $messages['sq'] = array(
 	'translate-statsf-submit' => 'Parapamja',
 );
 
-/** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
  * @author Rancher
  * @author Sasa Stefanovic
  * @author Жељко Тодоровић
@@ -18674,8 +18455,6 @@ $messages['sr-ec'] = array(
 	'translate-page-settings-legend' => 'Поставке',
 	'translate-page-task' => 'Приказ:',
 	'translate-page-group' => 'Група:',
-	'translate-page-group-tooltip' => 'Назив групе порука.
-Ако се група састоји од подскупа или надскупа порука из осталих група, приказано је подебљано.',
 	'translate-page-language' => 'Језик:',
 	'translate-page-limit' => 'Ограничење:',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|порука|поруке|порука}} по страници',
@@ -18822,15 +18601,9 @@ $messages['sr-ec'] = array(
 	'translate-suppress-complete' => 'Не приказуј потпуно преведене групе порука',
 	'translate-language' => 'Језик',
 	'translate-total' => 'Порука',
-	'translate-total-tooltip' => 'Укупан број порука у овој групи.',
 	'translate-untranslated' => 'Непреведено',
-	'translate-untranslated-tooltip' => 'Укупан број непреведених порука у овој групи порука.
-У ово спадају поруке које су означене као застареле.',
 	'translate-percentage-complete' => 'Довршено',
-	'translate-percentage-complete-tooltip' => 'Процентна вредност порука у групи које су преведене, а нису застареле.',
 	'translate-percentage-fuzzy' => 'Застарело',
-	'translate-percentage-fuzzy-tooltip' => 'Процентна вредност порука у групи које су преведене, али су застареле.
-Поруке су означене као застареле када се енглеска изворна порука промени.',
 	'translate-nothing-to-do' => "Изгледа да су све поруке преведене.
 Можете их прегледати на страници ''[[Special:Translate|{{int:translate}}]]''.",
 	'supportedlanguages' => 'Подржани језици',
@@ -18928,7 +18701,7 @@ $1',
 	'translate-documentation-language' => 'Помоћ при превођењу',
 );
 
-/** Serbian Latin ekavian (‪Srpski (latinica)‬)
+/** Serbian (Latin script) (‪Srpski (latinica)‬)
  * @author Michaello
  * @author Rancher
  * @author Жељко Тодоровић
@@ -18964,8 +18737,6 @@ Razlog:
 	'translate-page-settings-legend' => 'Postavke',
 	'translate-page-task' => 'Prikaz:',
 	'translate-page-group' => 'Grupa:',
-	'translate-page-group-tooltip' => 'Naziv grupe poruka.
-Ako se grupa sastoji od podskupa ili nadskupa poruka iz ostalih grupa, prikazano je podebljano.',
 	'translate-page-language' => 'Jezik:',
 	'translate-page-limit' => 'Ograničenje:',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|poruka|poruke|poruka}} po stranici',
@@ -19427,8 +19198,6 @@ Klicka på meddelandegruppens namn för att visa en lista över oöversatta medd
 	'translate-page-settings-legend' => 'Inställningar',
 	'translate-page-task' => 'Jag vill',
 	'translate-page-group' => 'Grupp',
-	'translate-page-group-tooltip' => 'Namnet på en meddelandegrupp.
-Om gruppen består av en delmängd eller grundmängd av meddelanden från andra grupper, visas det i fetstil.',
 	'translate-page-language' => 'Språk',
 	'translate-page-limit' => 'Antal',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|meddelande|meddelanden}} per sida',
@@ -19489,6 +19258,7 @@ För att kunna spara ändringar så behöver du tillhöra översättargruppen.
 	'translationchanges' => 'Ändrade översättningar',
 	'translationchanges-export' => 'exportera',
 	'translationchanges-change' => '$1: $2 av $3',
+	'translationchanges-submit' => 'Hämta',
 	'translate-checks-parameters' => 'Följande {{PLURAL:$2|parameter|parametrar}} används inte: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => 'Följande {{PLURAL:$2|parameter är okänd|parametrar är okända}}:
 <strong><nowiki>$1</nowiki></strong>',
@@ -19567,20 +19337,27 @@ Standardlistan på språk avgörs av ditt språk.',
 	'translate-language-code' => 'Språkkod',
 	'translate-language-code-field-name' => 'Språkkod:',
 	'translate-suppress-complete' => 'Visa inte helt översatta meddelandegrupper',
+	'translate-ls-noempty' => 'Visa inte helt oöversatta meddelandegrupper',
 	'translate-language' => 'Språk',
 	'translate-total' => 'Meddelanden',
-	'translate-total-tooltip' => 'Totala antalet meddelanden i den här meddelandegruppen.',
 	'translate-untranslated' => 'Oöversatta',
-	'translate-untranslated-tooltip' => 'Totala antalet oöversatta meddelanden i den här meddelandegruppen.
-Det inkluderar meddelanden som har blivit märkta som föråldrade.',
 	'translate-percentage-complete' => 'Avklarat',
-	'translate-percentage-complete-tooltip' => 'Det procentuella antalet meddelanden i gruppen som har översatts och inte markerats som föråldrade.',
 	'translate-percentage-fuzzy' => 'Föråldrat',
-	'translate-percentage-fuzzy-tooltip' => 'Procentandelen av meddelanden i gruppen som har översatts och har markerats som föråldrad.
-Meddelanden markeras som föråldrade eftersom det engelska källmeddelandet har förändrats, eftersom en automatisk kontroll för meddelandet misslyckades eller på grund av någon markerade det som föråldrad.',
 	'translate-nothing-to-do' => 'Alla möjliga översättningar verkar ha gjorts.
 Du uppmuntras att granska meddelanden genom [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-overall' => 'Alla meddelandegrupper tillsammans',
+	'translate-ls-submit' => 'Visa statistik',
+	'translate-ls-column-group' => 'Meddelandegrupp',
+	'translate-mgs-pagename' => 'Statistik för meddelandegrupp',
+	'translate-mgs-fieldset' => 'Visningsinställningar',
+	'translate-mgs-group' => 'Meddelandegrupp:',
+	'translate-mgs-nocomplete' => 'Visa inte språk som har en fullbordad översättning',
+	'translate-mgs-noempty' => 'Visa inte språk som inte har några översättningar',
+	'translate-mgs-submit' => 'Visa statistik',
+	'translate-mgs-column-language' => 'Språk',
+	'translate-mgs-totals' => 'Alla språk tillsammans',
+	'translate-mgs-invalid-group' => 'Den angivna gruppen $1 finns inte.',
+	'translate-mgs-nothing' => 'Inget att visa för begärd statistik.',
 	'supportedlanguages' => 'Språk som stöds',
 	'supportedlanguages-summary' => 'Denna sida visar en lista över alla språk som stöds av {{SITENAME}}, tillsammans med en lista över översättare som jobbar på detta språk.
 Om du vill ha mer information om ett speciellt språk så klicka på länken till portalen för detta språk.
@@ -19775,7 +19552,6 @@ $messages['ta'] = array(
 	'translate-sidebar-alltrans' => 'மற்ற மொழிகளில்',
 	'translations' => 'எல்லா மொழிபெயர்ப்புகளும்',
 	'translate-total' => 'தகவல்கள்',
-	'translate-total-tooltip' => 'இந்தத் தகவல் குழுவில் உள்ள மொத்தத் தகவல்கள்',
 	'translate-untranslated' => 'மொழிபெயர்க்காதவை',
 	'translate-percentage-complete' => 'நிறைவு',
 	'supportedlanguages-recenttranslations' => 'அண்மைய மொழிபெயர்ப்புகள்',
@@ -19961,7 +19737,6 @@ $messages['te'] = array(
 	'translate-suppress-complete' => 'పూర్తిగా అనువాదమైన సందేశాల సమూహాలను దాచు',
 	'translate-language' => 'భాష',
 	'translate-total' => 'సందేశాలు',
-	'translate-total-tooltip' => 'ఈ సందేశ సమూహంలోని సందేశాల మొత్తం సంఖ్య.',
 	'translate-untranslated' => 'అనువాదంకానివి',
 	'translate-percentage-complete' => 'పూర్తైనవి',
 	'translate-percentage-fuzzy' => 'పాతబడినవి',
@@ -20444,8 +20219,6 @@ Pindutin ang pangalan ng pangkat ng mensahe upang tumanaw ng isang talaan ng mga
 	'translate-page-settings-legend' => 'Mga pagtatakda',
 	'translate-page-task' => 'Nais kong',
 	'translate-page-group' => 'Pangkat',
-	'translate-page-group-tooltip' => 'Ang pangalan ng isang pangkat ng mga mensahe.
-Kapag naglalaman ang mga pangkat ng isang kabahaging pangkat o kinapapaloobang pangkat ng mga mensahe mula sa ibang mga pangkat, ipinapakita itong may makapal na titik.',
 	'translate-page-language' => 'Wika',
 	'translate-page-limit' => 'Hangganan',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|mensahe|mga mensahe}} bawat pahina',
@@ -20590,15 +20363,9 @@ Nakasalalay sa wika mo ang likas na nakatakdang talaan ng mga wika.',
 	'translate-suppress-complete' => 'Pigiling ganap ang isinalinwikang mga pangkat ng mensahe',
 	'translate-language' => 'Wika',
 	'translate-total' => 'Mga mensahe',
-	'translate-total-tooltip' => 'Ang kabuoang bilang ng mga mensahe sa loob ng pangkat ng mensaheng ito.',
 	'translate-untranslated' => 'Hindi pa naisasalinwika',
-	'translate-untranslated-tooltip' => 'Ang kabuoang bilang ng hindi pa nasasalinwikang mga mensahe sa loob ng pangkat ng mensaheng ito.
-Kabilang dito ang mga mensaheng natatakan bilang lipas na sa panahon.',
 	'translate-percentage-complete' => 'Panahon ng pagtatapos (pagkakabuo)',
-	'translate-percentage-complete-tooltip' => 'Ang kabahagdanan ng mga mensahe sa loob ng pangkat na naisalinwika na at hindi natatakan bilang lipas na sa panahon.',
 	'translate-percentage-fuzzy' => 'Wala na sa panahon',
-	'translate-percentage-fuzzy-tooltip' => 'Ang kabahagdanan ng mga mensahe sa loob ng pangkat ay nasalinwika na at natatakan bilang lipas na sa panahon.
-Tinatatakang lipas na sa panahon ang mga mensahe dahil nagbago na ang pinagmulang wikang Ingles, dahil nabigo ang isang kusang pagsusuri para sa mensahe, o dahil may isang taong nagtatak dito bilang lipas na sa panahon.',
 	'translate-nothing-to-do' => 'Mukhang nagawa na ang lahat ng maaaring mga pagsasalinwika.
 Hinihikayat kang suriin ang mga mensahe sa pamamagitan ng [[Special:Translate|{{int:translate}}]].',
 	'supportedlanguages' => 'Tinatangkilik na mga wika',
@@ -20960,7 +20727,7 @@ $messages['ug'] = array(
 	'translate-history' => 'tarih',
 );
 
-/** ئۇيغۇرچە (ئۇيغۇرچە)
+/** Uyghur (Arabic script) (ئۇيغۇرچە)
  * @author Alfredie
  * @author Sahran
  */
@@ -21060,7 +20827,6 @@ $messages['ug-arab'] = array(
 	'translate-language-code-field-name' => ':تىل كودى',
 	'translate-language' => 'تىل',
 	'translate-total' => 'ئۇچۇرلار',
-	'translate-total-tooltip' => 'بۇ ئۇچۇر گۇرۇپپىسىدىكى جەمئى ئۇچۇر سانى.',
 	'translate-untranslated' => 'تەرجىمە قىلىنمىغان',
 	'translate-managegroups' => 'گۇرۇپپا باشقۇر',
 	'translate-manage-newgroup' => 'بۇ ئۇچۇر گۇرۇپپىسى ئىلگىرى ئەكىرىلمىگەن.',
@@ -21140,8 +20906,6 @@ $messages['uk'] = array(
 	'translate-page-settings-legend' => 'Параметри',
 	'translate-page-task' => 'Я хочу',
 	'translate-page-group' => 'Група',
-	'translate-page-group-tooltip' => 'Назва групи повідомлень.
-Якщо група складається з підмножини або надпідмножин повідомлень від інших груп, воно буде відображатися жирним шрифтом.',
 	'translate-page-language' => 'Мова',
 	'translate-page-limit' => 'Обмеження',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|повідомлення|повідомлення|повідомлень}} на сторінку',
@@ -21282,15 +21046,9 @@ $messages['uk'] = array(
 	'translate-suppress-complete' => 'Приховати повністю перекладені групи повідомлень',
 	'translate-language' => 'Мова',
 	'translate-total' => 'Повідомлення',
-	'translate-total-tooltip' => 'Загальна кількість повідомлень у цій групі повідомлень.',
 	'translate-untranslated' => 'Неперекладені',
-	'translate-untranslated-tooltip' => 'Загальна кількість неперекладених повідомлень у цій групі повідомлень.
-Вона включає повідомлення, які були помічені як застарілі.',
 	'translate-percentage-complete' => 'Готово',
-	'translate-percentage-complete-tooltip' => 'Частка повідомлень у групі, які були перекладені та не помічені як застарілі.',
 	'translate-percentage-fuzzy' => 'Застаріло',
-	'translate-percentage-fuzzy-tooltip' => 'Частка повідомлень у групі, які були перекладені та були відмічені як застарілі.
-Повідомлення відмічені застарілими, оскільки англомовне оригінальне повідомлення змінилося, автоматизована перевірка повідомлення не вдалася, або хтось позначив їх як застарілі.',
 	'translate-nothing-to-do' => 'Очевидно, всі можливі переклади вже зроблені.
 Ви можете перевірити повідомлення з допомогою [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-overall' => 'Повідомлення всіх груп',
@@ -21633,7 +21391,6 @@ Nhấn chuột vào tên nhóm thông điệp để xem một danh sách thông 
 	'translate-page-settings-legend' => 'Thiết lập',
 	'translate-page-task' => 'Tôi muốn',
 	'translate-page-group' => 'Nhóm',
-	'translate-page-group-tooltip' => 'Tên nhóm thông báo. Nếu nhóm gồm có bộ thông báo khác, nó được in đậm.',
 	'translate-page-language' => 'Ngôn ngữ',
 	'translate-page-limit' => 'Giới hạn',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|thông điệp|thông điệp}} mỗi trang',
@@ -21780,13 +21537,9 @@ Danh sách các ngôn ngữ mặc định sẽ tùy thuộc vào ngôn ngữ mà
 	'translate-suppress-complete' => 'Bỏ qua các nhóm thông điệp đã được dịch hoàn toàn',
 	'translate-language' => 'Ngôn ngữ',
 	'translate-total' => 'Thông điệp',
-	'translate-total-tooltip' => 'Tổng số thông báo trong nhóm thông báo này.',
 	'translate-untranslated' => 'Chưa dịch',
-	'translate-untranslated-tooltip' => 'Tổng số thông báo chưa được dịch trong nhóm thông báo này, tính cả các thông báo được đánh dấu là lỗi thời.',
 	'translate-percentage-complete' => 'Mức hoàn thành',
-	'translate-percentage-complete-tooltip' => 'Tỷ lệ các thông báo trong nhóm đã được dịch mà không được đánh dấu là lỗi thời.',
 	'translate-percentage-fuzzy' => 'Lỗi thời',
-	'translate-percentage-fuzzy-tooltip' => 'Tỷ lệ các thông báo trong nhóm đã được dịch và được đánh dấu là lỗi thời. Một thông báo có thể được đánh dấu là lỗi thời vì bản gốc tiếng Anh đã thay đổi, vì thông báo có lỗi theo lượt thử tự động, hoặc vì có người đánh dấu nó lấy.',
 	'translate-nothing-to-do' => 'Dường như tất cả những gì có thể dịch được đều đã được thực hiện.
 Bạn được khuyến khích xem lại các thông điệp tại [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-groups' => ' # Thêm mã nhóm thông điệp, mỗi mã một dòng để ngăn các nhóm thông điệp
@@ -22348,8 +22101,6 @@ $messages['zh-hans'] = array(
 	'translate-page-settings-legend' => '设置',
 	'translate-page-task' => '操作',
 	'translate-page-group' => '组',
-	'translate-page-group-tooltip' => '信息组名称。
-如果组是由子集或来自其他组的邮件的超集组成的它是以粗体显示。',
 	'translate-page-language' => '语言',
 	'translate-page-limit' => '限制',
 	'translate-page-limit-option' => '每页显示$1条信息',
@@ -22495,13 +22246,9 @@ $messages['zh-hans'] = array(
 	'translate-suppress-complete' => '隐藏已全部翻译完成的项目组',
 	'translate-language' => '语言',
 	'translate-total' => '信息',
-	'translate-total-tooltip' => '此项目组中的消息总数。',
 	'translate-untranslated' => '未翻译',
-	'translate-untranslated-tooltip' => '此项目组中未翻译的消息总数（包括被标记为过时的消息）。',
 	'translate-percentage-complete' => '完成度',
-	'translate-percentage-complete-tooltip' => '此项目组中已被翻译且没有被标记为过时的消息的百分比。',
 	'translate-percentage-fuzzy' => '已过时',
-	'translate-percentage-fuzzy-tooltip' => '此项目组中被翻译并被标记为过时的信息的百分比。信息可能因为原文改变、自动检查未通过或者某人的标记而被标记为过时。',
 	'translate-nothing-to-do' => '似乎所有的翻译都已经完成。
 你可以在[[Special:Translate|{{int:translate}}]]查看其他的翻译项目。',
 	'translate-languagestats-overall' => '所有信息组',
