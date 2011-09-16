@@ -176,13 +176,26 @@ class MessageGroupStats {
 		return $stats;
 	}
 
+	protected static function expandAggregates( MessageGroup $group ) {
+		$flattened = array( $group->getId() );
+		if ( $group instanceof AggregateMessageGroup ) {
+			foreach ( $group->getGroups() as $subgroup ) {
+				$flattened = array_merge( $flattened, self::expandAggregates( $subgroup ) );
+			}
+		}
+		return $flattened;
+	}
+
+	
+
 	protected static function forGroupInternal( $group, $stats = array() ) {
-		$id = $group->getId();
-		$res = self::selectRowsIdLang( $id, null );
+		$ids = array_unique( self::expandAggregates( $group ) );
+		$res = self::selectRowsIdLang( $ids, null );
 		$stats = self::extractResults( $res, $stats );
 
 		# Go over each language filling missing entries
-		$languages = array_keys( Language::getLanguageNames() );
+		$id = $group->getId();
+		$languages = array_keys( Language::getLanguageNames( false ) );
 		foreach ( $languages as $code ) {
 			if ( isset( $stats[$id][$code] ) ) continue;
 			$stats[$id][$code] = self::forItemInternal( $stats, $group, $code );
@@ -210,12 +223,7 @@ class MessageGroupStats {
 		$id = $group->getId();
 
 		if ( self::$timeStart !== null && ( microtime( true ) - self::$timeStart ) > self::$limit ) {
-			return array( null, null, null );
-		}
-
-		// Might happen when called recursively
-		if ( isset( $stats[$id][$code] ) ) {
-			return $stats[$id][$code];
+			return $stats[$id][$code] = array( null, null, null );
 		}
 
 		if ( $group instanceof AggregateMessageGroup ) {
@@ -226,7 +234,7 @@ class MessageGroupStats {
 				}
 				$aggregates = self::multiAdd( $aggregates, $stats[$sid][$code] );
 			}
-			$stats[$id] = $aggregates;
+			$stats[$id][$code] = $aggregates;
 		} else {
 			$aggregates = self::calculateGroup( $group, $code );
 		}
