@@ -497,7 +497,7 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 	}
 
 	protected static function roundingAddition( $ts, $amount, $dir ) {
-		if ( $direction === -1 ) {
+		if ( $dir === -1 ) {
 			return -1 * ( $ts % $amount );
 		} else {
 			return $amount - ( $ts % $amount );
