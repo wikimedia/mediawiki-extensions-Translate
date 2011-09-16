@@ -339,7 +339,7 @@ class TranslateEditAddons {
 		MessageGroupStats::clear( $handle );
 
 		if ( $fuzzy === false ) {
-			wfRunHooks( 'Translate:newTranslation', array( $handle, $revision, $text, $user ) );
+			wfRunHooks( 'Translate:newTranslation', array( $handle, $rev, $text, $user ) );
 		}
 
 		return true;
