@@ -107,12 +107,14 @@ class MessageGroupStats {
 	}
 
 	public static function clearGroup( $id ) {
+		if ( !count( $id ) ) return;
 		$dbw = wfGetDB( DB_MASTER );
 		$conds = array( 'tgs_group' => $id );
 		$dbw->delete( self::TABLE, $conds, __METHOD__ );
 	}
 
 	public static function clearLanguage( $code ) {
+		if ( !count( $code ) ) return;
 		$dbw = wfGetDB( DB_MASTER );
 		$conds = array( 'tgs_lang' => $code );
 		$dbw->delete( self::TABLE, $conds, __METHOD__ );
