@@ -899,6 +899,9 @@ descmsg = newusernotif-desc
 
 New Users List
 
+Nimbus
+ignored = morewikis, nimbus-advertise-url
+
 Notificator
 aliasfile = Notificator/Notificator.alias.php
 
