@@ -40,7 +40,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 	/// Overwritten from SpecialLanguageStats
 	protected function invalidTarget() {
 		global $wgOut;
-		$wgOut->wrapWikiMsg( "<div class='error'>$1</div>", 'translate-mgs-invalid-group', $this->target );
+		$wgOut->wrapWikiMsg( "<div class='error'>$1</div>", array( 'translate-mgs-invalid-group', $this->target ) );
 	}
 
 	/// Overwritten from SpecialLanguageStats
