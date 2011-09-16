@@ -16,6 +16,7 @@ $specialPageAliases['en'] = array(
 	'TranslationStats' => array( 'TranslationStats', 'TranslationStatistics' ),
 	'Translations' => array( 'Translations' ),
 	'LanguageStats' => array( 'LanguageStats' ),
+	'MessageGroupStats' => array( 'MessageGroupStats' ),
 	'PageTranslation' => array( 'PageTranslation' ),
 	'ImportTranslations' => array( 'ImportTranslations' ),
 	'ManageMessageGroups' => array( 'ManageMessageGroups' ),

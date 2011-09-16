@@ -65,6 +65,7 @@ $wgAutoloadClasses['SpecialTranslationChanges'] = $dir . 'specials/SpecialTransl
 $wgAutoloadClasses['SpecialTranslationStats'] = $dir . 'specials/SpecialTranslationStats.php';
 $wgAutoloadClasses['SpecialTranslations'] = $dir . 'specials/SpecialTranslations.php';
 $wgAutoloadClasses['SpecialLanguageStats'] = $dir . 'specials/SpecialLanguageStats.php';
+$wgAutoloadClasses['SpecialMessageGroupStats'] = $dir . 'specials/SpecialMessageGroupStats.php';
 $wgAutoloadClasses['SpecialImportTranslations'] = $dir . 'specials/SpecialImportTranslations.php';
 $wgAutoloadClasses['SpecialFirstSteps'] = $dir . 'specials/SpecialFirstSteps.php';
 $wgAutoloadClasses['SpecialSupportedLanguages'] = $dir . 'specials/SpecialSupportedLanguages.php';
@@ -99,6 +100,7 @@ $wgAutoloadClasses['TranslateToolbox'] = $dir . 'utils/ToolBox.php';
 
 $wgAutoloadClasses['MessageIndexRebuilder'] = $dir . 'utils/MessageIndexRebuilder.php';
 $wgAutoloadClasses['MessageTable'] = $dir . 'utils/MessageTable.php';
+$wgAutoloadClasses['StatsTable'] = $dir . 'utils/StatsTable.php';
 $wgAutoloadClasses['JsSelectToInput'] = $dir . 'utils/JsSelectToInput.php';
 $wgAutoloadClasses['HTMLJsSelectToInputField'] = $dir . 'utils/HTMLJsSelectToInputField.php';
 $wgAutoloadClasses['MessageGroupCache'] = $dir . 'utils/MessageGroupCache.php';

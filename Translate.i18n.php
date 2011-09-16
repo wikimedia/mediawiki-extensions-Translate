@@ -48,8 +48,6 @@ Reason:
 	'translate-page-settings-legend' => 'Settings',
 	'translate-page-task'            => 'I want to',
 	'translate-page-group'           => 'Group',
-	'translate-page-group-tooltip'   => 'The name of a group of messages.
-If the group consists of a subset or superset of messages from other groups, it is displayed in bold.',
 	'translate-page-language'        => 'Language',
 	'translate-page-limit'           => 'Limit',
 	'translate-page-limit-option'    => '$1 {{PLURAL:$1|message|messages}} per page',
@@ -182,6 +180,7 @@ All values have upper and lower limits.',
 	'translate-statsf-width' => 'Width in pixels:',
 	'translate-statsf-height' => 'Height in pixels:',
 	'translate-statsf-days' => 'Time period in days:',
+	'translate-statsf-days' => 'Starting date:',
 	'translate-statsf-scale' => 'Granularity:',
 	'translate-statsf-scale-months' => 'Months',
 	'translate-statsf-scale-weeks' => 'Weeks',
@@ -228,23 +227,32 @@ All values have upper and lower limits.',
 	'translate-language-code' => 'Language code',
 	'translate-language-code-field-name' => 'Language code:',
 	'translate-suppress-complete' => 'Suppress completely translated message groups',
+	'translate-ls-noempty' => 'Suppress completely untranslated message groups',
 	'translate-language' => 'Language',
 	'translate-total' => 'Messages',
-	'translate-total-tooltip' => 'The total number of messages in this message group.',
 	'translate-untranslated' => 'Untranslated',
-	'translate-untranslated-tooltip' => 'The total number of untranslated messages in this message group.
-This includes the messages that have been tagged as outdated.',
 	'translate-percentage-complete' => 'Completion',
-	'translate-percentage-complete-tooltip' => 'The percentage of messages in the group that have been translated and not marked as outdated.',
 	'translate-percentage-fuzzy' => 'Outdated',
-	'translate-percentage-fuzzy-tooltip' => 'The percentage of messages in the group that have been translated and have been marked as outdated.
-Messages are marked outdated because the English language source message has changed, because an automated check for the message failed, or because someone marked it as outdated.',
 	'translate-nothing-to-do' => 'All possible translations appear to have been made.
 You are encouraged to review messages through [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-groups' => ' # Add message group IDs, one per line to restrict the message groups that
  # are shown on Special:LanguageStats. Non-existing message group IDs will
  # be ignored.', # do not duplicate this message to other languages
 	'translate-languagestats-overall' => 'All message groups together',
+	'translate-ls-submit' => 'Show statistics',
+	'translate-ls-column-group' => 'Message group',
+
+	# Special:GroupStats
+	'translate-mgs-pagename' => 'Message group statistics',
+	'translate-mgs-fieldset' => 'Display preferences',
+	'translate-mgs-group' => 'Message group:',
+	'translate-mgs-nocomplete' => 'Do not display languages which have completed translation',
+	'translate-mgs-noempty' => 'Do not display languages which do not have any translations',
+	'translate-mgs-submit' => 'Show statistics',
+	'translate-mgs-column-language' => 'Language',
+	'translate-mgs-totals' => 'All languages together',
+	'translate-mgs-invalid-group' => 'The specified group $1 does on exist.',
+	'translate-mgs-nothing' => 'Nothing to show for requested statistics.',
 
 	# Special:SupportedLanguages
 	'supportedlanguages' => 'Supported languages',

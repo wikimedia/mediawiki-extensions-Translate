@@ -158,9 +158,9 @@ class MessageGroupStats {
 	 */
 	protected static function extractNumbers( $row ) {
 		return array(
-			$row->tgs_total,
-			$row->tgs_translated,
-			$row->tgs_fuzzy
+			(int)$row->tgs_total,
+			(int)$row->tgs_translated,
+			(int)$row->tgs_fuzzy
 		);
 	}
  
