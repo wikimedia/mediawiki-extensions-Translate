@@ -153,11 +153,11 @@ class StatsTable {
 
 		$out .= "\n\t\t" . $this->element( $this->formatPercentage( $translated / $total ),
 			$this->getBackgroundColour( $translated, $total ),
-			sprintf( '%1.3f', $translated / $total ) );
+			sprintf( '%1.5f', $translated / $total ) );
 
 		$out .= "\n\t\t" . $this->element( $this->formatPercentage( $fuzzy / $total ),
 			$this->getBackgroundColour( $fuzzy, $total, true ),
-			sprintf( '%1.3f', $fuzzy / $total ) );
+			sprintf( '%1.5f', $fuzzy / $total ) );
 
 		$out .= "\n\t" . Xml::closeElement( 'tr' ) . "\n";
 		return $out;
