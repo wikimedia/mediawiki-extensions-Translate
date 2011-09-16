@@ -238,7 +238,7 @@ class StatsTable {
 			global $wgMessageCache;
 			$mc = $wgMessageCache;
 		}
-		$desc = $mc->transform( $group->getDescription(), true, $this->lang, $this->getTitle() );
+		$desc = $mc->transform( $group->getDescription(), true, $this->lang );
 		$cache->set( $key, $desc );
 		return $desc;
 	}
