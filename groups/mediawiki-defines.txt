@@ -900,6 +900,7 @@ descmsg = newusernotif-desc
 New Users List
 
 Nimbus
+file = skins/Nimbus/Nimbus.i18n.php
 ignored = morewikis, nimbus-advertise-url
 
 Notificator
