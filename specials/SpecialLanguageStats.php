@@ -122,7 +122,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 				$wgOut->wrapWikiMsg( "<div class='error'>$1</div>", 'translate-mgs-nothing' );
 			}
 			$wgOut->addHTML( $output );
-		} elseif ( $target !== null ) {
+		} elseif ( $submitted ) {
 			$this->invalidTarget();
 		}
 
