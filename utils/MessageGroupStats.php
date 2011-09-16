@@ -241,6 +241,11 @@ class MessageGroupStats {
 
 		list( $total, $translated, $fuzzy ) = $aggregates;
 
+		// Don't add nulls to the database, causes annoying warnings
+		if ( $total === null ) {
+			return $aggregates;
+		}
+
 		$data = array(
 			'tgs_group' => $id,
 			'tgs_lang' => $code,
