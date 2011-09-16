@@ -405,14 +405,14 @@ class TranslateEditAddons {
 		$group = $handle->getGroup();
 		if ( $group instanceof WikiPageMessageGroup ) {
 			// WikiPageMessageGroup has different method
-			return;
+			return true;
 		}
 
 		$title = $handle->getTitle();
 		$name = $handle->getKey() . '/' . $group->getSourceLanguage();
 		$definitionTitle = Title::makeTitleSafe( $title->getNamespace(), $name );
 		if ( !$definitionTitle || !$definitionTitle->exists() ) {
-			return;
+			return true;
 		}
 
 		$definitionRevision = $definitionTitle->getLatestRevID();
@@ -427,6 +427,7 @@ class TranslateEditAddons {
 		);
 		$index = array( 'rt_type', 'rt_page', 'rt_revision' );
 		$dbw->replace( 'revtag', array( $index ), $conds, __METHOD__ );
+		return true;
 	}
 
 	public static function preserveWhitespaces( $text ) {
