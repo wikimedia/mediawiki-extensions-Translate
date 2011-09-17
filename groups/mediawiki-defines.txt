@@ -7,6 +7,8 @@ Abuse Filter
 optional = abusefilter-edit-builder-op-bool-xor
 aliasfile = AbuseFilter/AbuseFilter.alias.php
 
+Ad Manager
+
 Add Media Wizard
 
 Add Media Wizard - Add Media
