@@ -70,6 +70,8 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 	public function __construct() {
 		parent::__construct( 'LanguageStats' );
+		global $wgLang;
+		$this->target = $wgLang->getCode();
 	}
 
 	function execute( $par ) {
@@ -87,7 +89,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$wgOut->addModules( 'ext.translate.messagetable' );
 
 		$params = explode( '/', $par  );
-		if ( isset( $params[0] ) ) {
+		if ( isset( $params[0] ) && trim( $params[0] ) ) {
 			$this->target = $params[0];
 		}
 		if ( isset( $params[1] ) ) {
