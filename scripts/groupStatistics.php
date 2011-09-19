@@ -373,6 +373,8 @@ foreach ( $languages as $code => $name ) {
 }
 
 foreach ( $groups as $groupName => $g ) {
+	$stats = MessageGroupStats::forGroup( $groupName );
+
 	// Perform the statistic calculations on every language
 	foreach ( $languages as $code => $name ) {
 		// Skip list
@@ -390,7 +392,7 @@ foreach ( $groups as $groupName => $g ) {
 			continue;
 		}
 
-		list( $total, $translated, $fuzzy ) = MessageGroupStats::forItem( $groupName, $code );
+		list( $total, $translated, $fuzzy ) = $stats[$code];
 
 		$rows[$code][] = array( false, $translated, $total );
 

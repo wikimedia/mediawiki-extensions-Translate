@@ -40,9 +40,10 @@ class MessageGroupStats {
 	 * @return Array
 	 */
 	public static function forItem( $id, $code ) {
-		$stats = array();
-		$res = self::selectRowsIdLang( $id, $code );
-		$stats = self::extractResults( $res, $stats );
+		$group = MessageGroups::getGroup( $id );
+		$ids = array_unique( self::expandAggregates( $group ) );
+		$res = self::selectRowsIdLang( $ids, $code );
+		$stats = self::extractResults( $res );
 
 		$group = MessageGroups::getGroup( $id );
 
