@@ -41,8 +41,7 @@ class MessageGroupStats {
 	 */
 	public static function forItem( $id, $code ) {
 		$group = MessageGroups::getGroup( $id );
-		$ids = array_unique( self::expandAggregates( $group ) );
-		$res = self::selectRowsIdLang( $ids, $code );
+		$res = self::selectRowsIdLang( $id, $code );
 		$stats = self::extractResults( $res );
 
 		$group = MessageGroups::getGroup( $id );
@@ -190,12 +189,11 @@ class MessageGroupStats {
 	
 
 	protected static function forGroupInternal( $group, $stats = array() ) {
-		$ids = array_unique( self::expandAggregates( $group ) );
-		$res = self::selectRowsIdLang( $ids, null );
+		$id = $group->getId();
+		$res = self::selectRowsIdLang( $id, null );
 		$stats = self::extractResults( $res, $stats );
 
 		# Go over each language filling missing entries
-		$id = $group->getId();
 		$languages = array_keys( Language::getLanguageNames( false ) );
 		foreach ( $languages as $code ) {
 			if ( isset( $stats[$id][$code] ) ) continue;
@@ -228,6 +226,10 @@ class MessageGroupStats {
 		}
 
 		if ( $group instanceof AggregateMessageGroup ) {
+			$ids = array_unique( self::expandAggregates( $group ) );
+			$res = self::selectRowsIdLang( $ids, $code );
+			$stats = self::extractResults( $res, $stats );
+			
 			$aggregates = array( 0, 0, 0 );
 			foreach ( $group->getGroups() as $sid => $sgroup ) {
 				if ( !isset( $stats[$sid][$code] ) ) {
