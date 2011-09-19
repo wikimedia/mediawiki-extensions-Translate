@@ -80,7 +80,6 @@ class TranslateUtils {
 		$rows = $dbr->select( array( 'page', 'revision', 'text' ),
 			array( 'page_title', 'old_text', 'old_flags', 'rev_user_text' ),
 			array(
-				'page_is_redirect'  => 0,
 				'page_namespace'    => $namespace,
 				'page_latest=rev_id',
 				'rev_text_id=old_id',
