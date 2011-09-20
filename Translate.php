@@ -53,6 +53,7 @@ $wgExtensionFunctions[] = 'TranslateHooks::setupTranslate';
 $wgHooks['CanonicalNamespaces'][] = 'TranslateHooks::setupNamespaces';
 $wgHooks['UnitTestsList'][] = 'TranslateHooks::setupUnitTests';
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'TranslateHooks::schemaUpdates';
+$wgHooks['ParserTestTables'][] = 'PageTranslationHooks::parserTestTables';
 
 // Register special pages into MediaWiki
 $wgSpecialPages['Translate'] = 'SpecialTranslate';

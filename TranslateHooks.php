@@ -126,9 +126,6 @@ class TranslateHooks {
 			// Our custom header for translation pages
 			$wgHooks['ArticleViewHeader'][] = 'PageTranslationHooks::test';
 
-			// Our tables are needed for parser tests
-			$wgHooks['ParserTestTables'][] = 'PageTranslationHooks::parserTestTables';
-
 			// Prevent section pages appearing in categories
 			$wgHooks['LinksUpdate'][] = 'PageTranslationHooks::preventCategorization';
 
@@ -168,6 +165,13 @@ class TranslateHooks {
 		$updater->addExtensionUpdate( array( 'addField', 'translate_sections', 'trs_order', "$dir/translate_sections-trs_order.patch.sql", true ) );
 		$updater->addExtensionUpdate( array( 'addTable', 'revtag', "$dir/revtag.sql", true ) );
 		$updater->addExtensionUpdate( array( 'addTable', 'translate_groupstats', "$dir/translate_groupstats.sql", true ) );
+		return true;
+	}
+
+	/// Hook: ParserTestTables
+	public static function parserTestTables( &$tables ) {
+		$tables[] = 'revtag';
+		$tables[] = 'translate_groupstats';
 		return true;
 	}
 

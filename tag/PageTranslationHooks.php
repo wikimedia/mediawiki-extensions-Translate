@@ -506,12 +506,6 @@ FOO;
 		$wgOut->addHTML( '<hr />' );
 	}
 
-	public static function parserTestTables( &$tables ) {
-		$tables[] = 'revtag';
-		$tables[] = 'translate_groupstats';
-		return true;
-	}
-
 	public static function preventCategorization( $updater ) {
 		global $wgTranslateDocumentationLanguageCode;
 		$title = $updater->getTitle();
