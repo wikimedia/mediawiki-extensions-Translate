@@ -33,3 +33,6 @@ id = tsint-core
 prefix = tsintuition- | 
 file = Tsintuition.i18n.php
 ignored = title
+
+Wlm
+optional = date-format
