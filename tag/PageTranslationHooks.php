@@ -508,6 +508,7 @@ FOO;
 
 	public static function parserTestTables( &$tables ) {
 		$tables[] = 'revtag';
+		$tables[] = 'translate_groupstats';
 		return true;
 	}
 
