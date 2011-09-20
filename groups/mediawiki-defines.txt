@@ -936,8 +936,7 @@ ignored = onlinestatus-levels
 
 OpenID
 aliasfile = OpenID/OpenID.alias.php
-optional = prefs-openid, openid-urls-url
-ignored = openid-urls-registration-date-time	
+optional = prefs-openid, openid-urls-url, openid-urls-registration-date-time	
 
 Open Graph Meta
 magicfile = OpenGraphMeta/OpenGraphMeta.magic.php
