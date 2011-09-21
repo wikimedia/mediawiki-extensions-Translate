@@ -3612,21 +3612,22 @@ Dat Fottschmieße dohrt e Wielsche, weil en janze Aanzahl Sigge derbei fott jesc
 Fähler kumme en et [[Special:Log/pagetranslation|Logbooch vum Övversäze]] un möße vun Hand jraadjeröck wääde.',
 );
 
-/** Kurdish (Latin) (Kurdî (Latin))
+/** Kurdish (Latin script) (‪Kurdî (latînî)‬)
  * @author George Animal
+ * @author Gomada
  */
 $messages['ku-latn'] = array(
-	'right-pagetranslation' => 'Versiyonên rûpelên ji bo wergerrê îşaret bike',
+	'right-pagetranslation' => 'Versiyonên rûpelên ji bo wergerê nîşan bike',
 	'tpt-diff-old' => 'Nivîsa pêşî',
 	'tpt-diff-new' => 'Nivîsa nû',
-	'tpt-submit' => 'Vê versiyonên ji bo wergerrê îşaret bike',
+	'tpt-submit' => 'Vê versiyonê ji bo wergerê îşaret bike',
 	'tpt-nosuchpage' => 'Rûpela $1 tune.',
 	'tpt-rev-mark-new' => 'vê versiyonên ji bo wergerrê îşaret bike',
-	'tpt-translate-this' => 've rûpelê wergerrîne',
+	'tpt-translate-this' => 've rûpelê wergerîne',
 	'translate-tag-translate-link-desc' => 'Vê rûpelê werrgerrîne',
-	'translate-tag-markthis' => 'Vê rûpelê ji bo wergerrê îşaret bike',
+	'translate-tag-markthis' => 'Vê rûpelê ji bo wergerê îşaret bike',
 	'tpt-languages-legend' => 'Zimanên din:',
-	'tpt-download-page' => 'Rûpelelên bi wergerran eksport bike',
+	'tpt-download-page' => 'Rûpela bi wergeran bişîne',
 	'pt-movepage-list-translation' => 'Rûpelên wergerrê',
 	'pt-movepage-list-other' => 'Binrûpelên din',
 	'pt-movepage-current' => 'Navê niha:',

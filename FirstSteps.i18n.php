@@ -2392,12 +2392,13 @@ Do kriß och Neueschkeite vum Wiki zohjescheck, esu ätwa eijmohl em Mohnd.
 Wann De dat nit han wells, kanns De et onger „{{int:prefs-personal}}“ en [[Special:Preferences|Dinge Enstellunge]] afschallde.',
 );
 
-/** Kurdish (Latin) (Kurdî (Latin))
+/** Kurdish (Latin script) (‪Kurdî (latînî)‬)
  * @author George Animal
+ * @author Gomada
  */
 $messages['ku-latn'] = array(
 	'firststeps' => 'Gavên yekem',
-	'translate-fs-pagetitle-done' => '-çêbû!',
+	'translate-fs-pagetitle-done' => '- çêbû!',
 	'translate-fs-target-title' => 'Bi wergerrê dest pê bike!',
 );
 
