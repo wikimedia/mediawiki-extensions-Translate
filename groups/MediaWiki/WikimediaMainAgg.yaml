@@ -1,7 +1,7 @@
 BASIC:
   id: ext-0-wikimedia-main
   label: Extensions used by Wikimedia - Main
-  display: ext/wikimediamain
+  display: ext/wikimedia/main
   meta: yes
   class: AggregateMessageGroup
   description: '{{int:translate-group-desc-wikimediaextensions-main}}'
@@ -22,16 +22,16 @@ GROUPS:
   - ext-dontswitchmeover
   - ext-gadgets
   - ext-globalblocking
-  - ext-globalusage
+  - ext-globalusage # 2009-11-11: commons.wikimedia.org
   - ext-imagemap
   - ext-inputbox
   - ext-intersection
-  - ext-mobilefrontend
+  - ext-mobilefrontend # r93435
   - ext-newusermessage
   - ext-ogghandler
   - ext-parserfunctions
   - ext-pdfhandler
-  - ext-poolcounter
+  - ext-poolcounter # 2011-03-18 on all projects
   - ext-prefstats
   - ext-quiz
   - ext-renameuser
@@ -45,5 +45,5 @@ GROUPS:
   - ext-uploadwizard
   - ext-vector
   - ext-wikieditor
-  - ext-wikimedialicensetexts
+  - ext-wikimedialicensetexts # commons.wikimedia.org
   - ext-wikimediamessages
