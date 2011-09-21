@@ -588,12 +588,6 @@ class AggregateMessageGroup extends MessageGroupBase {
 					continue;
 				}
 
-				/** @todo Figure out a better way to skip groups which are in
-				* aggregate and as individual in the list. */
-				if ( $group instanceof AggregateMessageGroup ) {
-					continue;
-				}
-
 				$groups[$id] = $group;
 			}
 
