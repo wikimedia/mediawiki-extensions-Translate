@@ -59,13 +59,13 @@ class PageTranslationHooks {
 	}
 
 	/**
-	 * Set the right page content language for translated pages ("Page/xx")
-	 * and namespaces used for translating messages (similar to MediaWiki namespace pages)
+	 * Set the right page content language for translated pages ("Page/xx").
+	 * Hook: PageContentLanguage
 	 */
 	public static function onPageContentLanguage( $title, &$pageLang ) {
 		global $wgTranslateMessageNamespaces;
 		// For translation pages, parse plural, grammar etc with correct language, and set the right direction
-		if ( TranslatablePage::isTranslationPage( $title ) || in_array( $title->getNamespace(), $wgTranslateMessageNamespaces ) ) {
+		if ( TranslatablePage::isTranslationPage( $title ) ) {
 			list( , $code ) = TranslateUtils::figureMessage( $title->getText() );
 			$pageLang = $code;
 		}

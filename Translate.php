@@ -54,6 +54,7 @@ $wgHooks['CanonicalNamespaces'][] = 'TranslateHooks::setupNamespaces';
 $wgHooks['UnitTestsList'][] = 'TranslateHooks::setupUnitTests';
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'TranslateHooks::schemaUpdates';
 $wgHooks['ParserTestTables'][] = 'PageTranslationHooks::parserTestTables';
+$wgHooks['PageContentLanguage'][] = 'TranslateHooks::onPageContentLanguage';
 
 // Register special pages into MediaWiki
 $wgSpecialPages['Translate'] = 'SpecialTranslate';
