@@ -361,8 +361,7 @@ class CoreMessageGroup extends MessageGroupOld {
 			array( $checker, 'XhtmlCheck' ),
 			array( $checker, 'braceBalanceCheck' ),
 			array( $checker, 'pagenameMessagesCheck' ),
-			array( $checker, 'miscMWChecks' ),
-			array( $checker, 'prefMessagesCheck' ),
+			array( $checker, 'miscMWChecks' )
 		) );
 
 		return $checker;
