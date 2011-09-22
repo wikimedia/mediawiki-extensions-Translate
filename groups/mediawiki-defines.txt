@@ -731,6 +731,10 @@ Ldap Authentication
 Lingo
 magicfile = Lingo/Lingo.i18n.magic.php
 
+Link Filter
+optional = linkfilter-url
+aliasfile = LinkFilter/Link.alias.php
+
 Link OpenID
 optional = linkopenid-prefs, linkopenid-prefstext-xrdsurl
 
