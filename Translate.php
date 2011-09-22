@@ -15,7 +15,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
 /**
  * Version number used in extension credits and in other placed where needed.
  */
-define( 'TRANSLATE_VERSION', '2011-09-21' );
+define( 'TRANSLATE_VERSION', '2011-08-30' );
 
 /**
  * Extension credits properties.
@@ -53,7 +53,7 @@ $wgExtensionFunctions[] = 'TranslateHooks::setupTranslate';
 $wgHooks['CanonicalNamespaces'][] = 'TranslateHooks::setupNamespaces';
 $wgHooks['UnitTestsList'][] = 'TranslateHooks::setupUnitTests';
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'TranslateHooks::schemaUpdates';
-$wgHooks['ParserTestTables'][] = 'PageTranslationHooks::parserTestTables';
+$wgHooks['ParserTestTables'][] = 'TranslateHooks::parserTestTables';
 $wgHooks['PageContentLanguage'][] = 'TranslateHooks::onPageContentLanguage';
 
 // Register special pages into MediaWiki
