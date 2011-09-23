@@ -69,7 +69,7 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		global $wgOut, $wgRequest, $wgUser;
 
 		// Yes, the use of getVal() and getText() is wanted, see bug 20365
-		$this->oldText = $wgRequest->getVal( 'wpOldTitle', $par );
+		$this->oldText = $wgRequest->getVal( 'wpOldTitle', $wgRequest->getVal( 'target', $par ) );
 		$this->newText = $wgRequest->getText( 'wpNewTitle' );
 
 		$this->oldTitle = Title::newFromText( $this->oldText );
