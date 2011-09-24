@@ -3078,7 +3078,6 @@ Ne vo ket enrollet ar c'hemmoù e-keit ha ne vo ket bet pouezet war ar bouton en
 	'translate-checks-format' => 'Ne glot ket an droidigezh-mañ gant an termenadur pe faziek eo an ereadurezh anezhi : $1',
 	'translate-checks-escape' => "Dre fazi e c'hall bezañ an diflipadennoù da-heul : <strong>$1</strong>",
 	'translate-checks-fudforum-syntax' => "Ober gant <nowiki>$1</nowiki> e-lec'h <nowiki>$2</nowiki> er raktres-mañ.",
-	'translate-checks-prefs' => "Tabut kemennadenn gant $1. N'hall ket ar c'hemennadennoù-mañ bezañ heñvel.",
 	'translate-pref-nonewsletter' => "Arabat kas din kelc'hlizheroù dre bostel",
 	'translate-pref-editassistlang' => 'Yezhoù skoazell :',
 	'prefs-translate' => 'Dibarzhioù treiñ',
@@ -3152,6 +3151,9 @@ Bevennoù izel hag uhel zo d'an holl dalvoudoù.",
 	'translate-nothing-to-do' => "Evit doare eo bet kaset da benn kement troidigezh posupl.
 Broudet oc'h da adwelet ar c'hemennadennoù adal [[Special:Translate|{{int:translate}}]].",
 	'translate-languagestats-overall' => 'An holl strolladoù kemennadennoù war un dro',
+	'translate-mgs-submit' => 'Diskouez ar stadegoù',
+	'translate-mgs-column-language' => 'Yezh',
+	'translate-mgs-totals' => 'An holl yezhoù war ar memes tro',
 	'supportedlanguages' => 'Yezhoù skoret',
 	'supportedlanguages-summary' => "Diskouez a ra ar bajenn-mañ roll ar yezhoù skoret gant {{SITENAME}} a-gevret gant roll an droerien a labour warno.
 Mar fell deoc'h gouzout hiroc'h a-zivout ur yezh bennak e c'hallit klikañ war porched ar yezh-se.
