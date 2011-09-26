@@ -20,8 +20,11 @@
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class SpecialSupportedLanguages extends SpecialPage {
-	// Whether to skip and regenerate caches
+	/// Whether to skip and regenerate caches
 	protected $purge = false;
+
+	/// Cutoff time for inactivity in days
+	protected $period = 180;
 
 	public function __construct() {
 		parent::__construct( 'SupportedLanguages' );
@@ -44,6 +47,8 @@ class SpecialSupportedLanguages extends SpecialPage {
 		}
 
 		$this->outputHeader();
+		$wgOut->addWikiMsg( 'supportedlanguages-colorlegend', $this->getColorLegend() );
+		$wgOut->addWikiMsg( 'supportedlanguages-localsummary' );
 
 		// Check if CLDR extension has been installed.
 		$cldrInstalled = class_exists( 'LanguageNames' );
@@ -154,7 +159,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$conds = array(
 			'rc_title' . $dbr->buildLike( $dbr->anyString(), '/', $dbr->anyString() ),
 			'rc_namespace' => $wgTranslateMessageNamespaces,
-			'rc_timestamp > ' . $dbr->timestamp( TS_DB, wfTimeStamp( TS_UNIX ) - 60 * 60 * 24 * 180 ),
+			'rc_timestamp > ' . $dbr->timestamp( TS_DB, wfTimeStamp( TS_UNIX ) - 60 * 60 * 24 * $this->period ),
 		);
 		$options = array( 'GROUP BY' => 'lang', 'HAVING' => 'count > 20' );
 
@@ -271,7 +276,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 
 		// Scale of the activity colors, anything
 		// longer than this is just inactive
-		$period = 180;
+		$period = $this->period;
 
 		$links = array();
 
@@ -387,4 +392,12 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$lb->execute();
 	}
 
+	protected function getColorLegend() {
+		$legend = '';
+		$period = $this->period;
+		for ( $i = 0; $i <= $period; $i+=30 ) {
+			$legend .= '<span style="background-color:#' . $this->getActivityColour( $period - $i, $period ) . "\"> $i</span>";
+		}
+		return $legend;
+	}
 }

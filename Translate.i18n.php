@@ -255,14 +255,12 @@ You are encouraged to review messages through [[Special:Translate|{{int:translat
 
 	# Special:SupportedLanguages
 	'supportedlanguages' => 'Supported languages',
-	'supportedlanguages-summary' => 'This page displays a list of all the languages supported by {{SITENAME}}, together with the names of the translators working on that language.
-If you want more information on a particular language, you can click on the link to the portal for that language.
-Clicking on a translator name will take you to their user page.
-
-If a language is not listed, you can find out how to start a localization project for a language at "[[Translating:Process|New Language]]".
-
-If you translate to a language and your name is not included, please add your name to the list of translators on the [[:Category:Languages|portal]] for that language.
-See the menu bar for a link to the portal for the language of your preference.',
+	'supportedlanguages-summary' => 'This page shows a list of all languages supported by {{SITENAME}},
+together with the names of the translators working on that language.
+A translator\'s name appears larger, the more edits the translator has contributed.
+The colour of an underline indicates how recently a translator has been active here.',
+	'supportedlanguages-colorlegend' => 'Legend for the color: Last translation $1 days ago.',
+	'supportedlanguages-localsummary' => '',
 	'supportedlanguages-portallink' => '[$1] $2 - $3',
 	'supportedlanguages-portallink-nocldr' => '[$1] $2',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Translator|Translators}}: $1',

@@ -30,6 +30,9 @@ And for the code at:
 
 == Change log ==
 
+* 2011-09-26
+- Special:SupportedLanguages can now show site specific messages in
+  supportedlanguages-localsummary message
 * 2011-09-23
 - Change log up to date
 * 2011-09-21
