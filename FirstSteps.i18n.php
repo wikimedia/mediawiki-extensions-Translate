@@ -985,6 +985,7 @@ $messages['eo'] = array(
  * @author Crazymadlover
  * @author Diego Grez
  * @author Drini
+ * @author Fitoschido
  * @author Mor
  * @author Tempestas
  */
@@ -997,7 +998,7 @@ $messages['es'] = array(
 	'translate-fs-settings-title' => 'Configurar tus preferencias',
 	'translate-fs-userpage-title' => 'Crear tu página de usuario',
 	'translate-fs-permissions-title' => 'Solicitar permisos de traducción',
-	'translate-fs-target-title' => '¡Comenzar a traducir!',
+	'translate-fs-target-title' => '¡Comienza a traducir!',
 	'translate-fs-email-title' => 'Confirmar tu dirección de correo electrónico',
 	'translate-fs-intro' => "Bienvenido al asistente de los primeros pasos en {{SITENAME}}.
 Serás guíado a través del proceso de convertirte en un traductor pasa a paso.
