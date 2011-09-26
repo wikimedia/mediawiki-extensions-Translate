@@ -266,11 +266,9 @@ Conditional Show Section
 
 Configure
 aliasfile = Configure/Configure.alias.php
-optional = configure-section-html, configure-section-ajax
-optional = configure-section-djvu, configure-section-imagemagick
-optional = configure-section-interwiki, configure-section-memcached
+optional = configure-section-html, configure-section-ajax,configure-section-djvu, configure-section-imagemagick
+optional = configure-section-interwiki, configure-section-memcached, configure-section-tidy, configure-old-summary-datetime
 optional = configure-section-squid, configure-section-svg, configure-section-tex
-optional = configure-section-tidy, configure-old-summary-datetime
 
 Configure Settings
 file = Configure/settings/Settings.i18n.php
@@ -698,7 +696,7 @@ file = intersection/DynamicPageList.i18n.php
 Interwiki
 aliasfile = Interwiki/Interwiki.alias.php
 optional = interwiki_url, interwiki-url-label
-ignored = interwiki_logentry, interwiki-defaulturl
+ignored = interwiki-defaulturl, logentry-interwiki-interwiki
 
 # 2010-06-22: Disabled for the moment. Under heavy construction
 #Interwiki Integration
