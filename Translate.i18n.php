@@ -4699,14 +4699,10 @@ Es wird empfohlen, Systemnachrichten mit der Spezialseite [[Special:Translate|{{
 	'translate-mgs-invalid-group' => 'Die angegebene Nachrichtengruppe $1 ist nicht vorhanden.',
 	'translate-mgs-nothing' => 'Zu den angeforderten Statistiken gibt es keine Daten zum Anzeigen.',
 	'supportedlanguages' => 'Unterstützte Sprachen',
-	'supportedlanguages-summary' => 'Diese Seite zeigt eine Liste aller unterstützen Sprachen auf {{SITENAME}}, zusammen mit den Namen der Übersetzer, die an der jeweiligen Sprache mitgearbeitet haben.
-Weitere Informationen zu einer Sprache, gibt es beim Klick auf den Portallink.
-Ein Klick auf den Namen eines Übersetzers, führt zur Benutzerseite.
-
-Falls eine Sprache nicht aufgeführt wird, gibt es Informationen zum Starten einer neuen Sprache unter „[[Translating:Process|Neue Sprachen]]“.
-
-Falls der Name eines Übersetzers fehlt, muss dieser zur Liste der Übersetzer im jeweiligen [[:Category:Languages|Portal]] hinzugefügt werden.
-Im Menü befindet sich ein Link zum Portal der eingestellten Sprache.',
+	'supportedlanguages-summary' => 'Diese Seite zeigt eine Liste aller auf {{SITENAME}} unterstützen Sprachen, zusammen mit den Namen der Übersetzer, die an der jeweiligen Sprache mitgearbeitet haben.
+Je intensiver ein Übersetzer mitgearbeitet hat, desto größer wird sein Benutzername angezeigt.
+Die zur Unterstreichung des Benutzernamens genutzte Farbe zeigt an, wann der Übersetzer zuletzt aktiv mitgearbeitet hat.',
+	'supportedlanguages-colorlegend' => 'Legende zu den Farben: Letzte Übersetzung vor $1 Tagen.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Übersetzer|Übersetzer}}: $1',
 	'supportedlanguages-recenttranslations' => 'Aktuelle Übersetzungen',
 	'supportedlanguages-count' => 'Insgesamt $1 {{plural:$1|Sprache|Sprachen}}.',
@@ -8426,13 +8422,10 @@ $messages['he'] = array(
 	'translate-mgs-invalid-group' => 'הקבוצה $1 אינה קיימת.',
 	'translate-mgs-nothing' => 'אין מה להראות עבור הסטטיסטיקות המבוקשות.',
 	'supportedlanguages' => 'שפות נתמכות',
-	'supportedlanguages-summary' => 'הדף הזה מציג רשימה של כל השפות שהאתר {{SITENAME}} תומך בהן, עם שמות של מתרגמים שעובדים על אותן השפות.
-אם אינכם רוצים מידע נוסף על שפה מסוימת, אתם יכולים ללחוץ על הקישור לפורטל עבור אותה השפה.
-לחיצה על שמות המתרגמים תוביל אתכם לדף המשתמש שלהם.
-
-אם שפה אינה ברשימה, אפשר למצוא איך להתחיל לתרגם אליה בדף "[[Translating:Process|New Language]]".
-
-אם אתם מתרגמים לשפה ושמכם אינו כלול ברשימה, אנא הוסיפו את שמכם לרשימת המתרגמים ב[[:Category:Languages|פורטל]] עבור אותה השפה. בשורת התפריט נמצא קישור לפורטל עבור השפות שתרצו.',
+	'supportedlanguages-summary' => 'הדף הזה מציג רשימה של כל השפות שהאתר {{SITENAME}} תומך בהן,
+עם שמות של מתרגמים שעובדים על אותן השפות.
+גודל שם המתרגם יחסי למספק העריכות שלו.
+צבע הקו התחתי מראה כמה זמן המתרגם פעיל כאן.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|מתרגם|מתרגמים}}: $1',
 	'supportedlanguages-recenttranslations' => 'תרגומים אחרונים',
 	'supportedlanguages-count' => '{{PLURAL:$1|שפה אחת|$1 שפות}} בסך הכול.',
@@ -9787,13 +9780,8 @@ Es recommendate revider le messages per medio del pagina [[Special:Translate|{{i
 	'translate-mgs-nothing' => 'Nihil a monstrar pro le statisticas requestate.',
 	'supportedlanguages' => 'Linguas supportate',
 	'supportedlanguages-summary' => 'Iste pagina presenta un lista de tote le linguas supportate per {{SITENAME}}, con le nomines del traductores laborante a iste lingua.
-Pro ulterior informationes a proposito de un particular lingua, clicca super le ligamine al portal pro iste lingua.
-Un clic super le nomine de un traductor te portara a su pagina de usator.
-
-Si un lingua non es listate, tu pote leger como comenciar un projecto de localisation pro un lingua a "[[Translating:Process|New Language]]".
-
-Si tu traduce in un lingua e tu nomine non es includite, per favor adde tu nomine al lista de traductores in le [[:Category:Languages|portal]] pro iste lingua.
-Vide le barra de menu pro un ligamine al portal pro le lingua de tu preferentia.',
+Le nomine de un traductor appare tanto plus grande, quanto plus modificationes le traductor ha contribuite.
+Le color de un tracto de sublineamento indica quante tempore ha passate post le ultime activitate de un traductor.',
 	'supportedlanguages-colorlegend' => 'Legenda pro le colores: Ultime traduction $1 dies retro.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Traductor|Traductores}}: $1',
 	'supportedlanguages-recenttranslations' => 'traductiones recente',
@@ -12033,7 +12021,7 @@ Wat De jezeich kreß, wann De nix enndrähß, deiht vun dä Shprooch afhange, en
 	'translate-statsf-options' => 'Enstellunge för et Zeischne',
 	'translate-statsf-width' => 'De Breed in Pixelle:',
 	'translate-statsf-height' => 'De Hühde in Pixelle:',
-	'translate-statsf-days' => 'De Duur en Daare:',
+	'translate-statsf-days' => 'Et Aanfangs-Dattum:',
 	'translate-statsf-scale' => 'De Jenouschkeit udder Oplösung:',
 	'translate-statsf-scale-months' => 'Moohnde',
 	'translate-statsf-scale-weeks' => 'Woche',
@@ -12065,13 +12053,15 @@ Wat De jezeich kreß, wann De nix enndrähß, deiht vun dä Shprooch afhange, en
 	'languagestats-summary' => 'Di Sigg hee zeich Statistike vun de Övversetzung för all Nohrechtejroppe un för ein Shprooch.',
 	'languagestats-stats-for' => 'Övversäzongsstatistike för $1 ($2)',
 	'languagestats-recenttranslations' => 'Neuste Övversäzonge',
+	'translate-langstats-incomplete' => 'Ene Deil vun dä Shtatistike op heh dä Sigg sin nit kumplät. Mem di Sigg neu Laade kritt mer mih Daate aanjezeish.',
 	'translate-langstats-expand' => 'opfallde',
 	'translate-langstats-collapse' => 'zohklappe',
 	'translate-langstats-expandall' => 'alle opfallde',
 	'translate-langstats-collapseall' => 'alle zohklappe',
 	'translate-language-code' => 'Ußwahl',
 	'translate-language-code-field-name' => 'Shproochekood:',
-	'translate-suppress-complete' => 'Komplät övversatz Nohrechtejroppe nit aanzeije',
+	'translate-suppress-complete' => 'Kumplät övversaz Nohreechtejroppe nit aanzeije',
+	'translate-ls-noempty' => 'Kumplät onövversaz Nohreechtejroppe nit aanzeije',
 	'translate-language' => 'Shprooch',
 	'translate-total' => 'Nohreschte',
 	'translate-untranslated' => 'Nit övversaz',
@@ -12084,16 +12074,24 @@ de Söndersigg [[Special:Translate|{{int:translate}}]] norrens ze prööfe.',
  # Aanzeije op Special:LanguageStats enzeschrängke. Nohreschtejroppe, woh et
  # de Nommere nit jit, donn nix.',
 	'translate-languagestats-overall' => 'Alle Jroppe vun Täxte un Nohreeschte zosamme',
+	'translate-ls-submit' => 'Shtatistike Aanzeije',
+	'translate-ls-column-group' => 'Nohrechtejropp',
+	'translate-mgs-pagename' => 'Shtatistike för di Nohrechtejropp',
+	'translate-mgs-fieldset' => 'Enshtellonge aanzeije',
+	'translate-mgs-group' => 'Nohrechtejropp:',
+	'translate-mgs-nocomplete' => 'Don kein Shprooche aanzeije, woh de Övversäzong kumplädd es',
+	'translate-mgs-noempty' => 'Don kein Shprooche aanzeije, woh nix vun övversads es',
+	'translate-mgs-submit' => 'Lohß Jonn!',
+	'translate-mgs-column-language' => 'Shprooch',
+	'translate-mgs-totals' => 'Alle Shprooche zosamme',
+	'translate-mgs-invalid-group' => 'De aanjejovve Jropp „$1“ jidd_et nit.',
+	'translate-mgs-nothing' => 'För heh di Shtatistik ham_mer nix aanzezeije.',
 	'supportedlanguages' => 'Ongerstöz Shprooche',
 	'supportedlanguages-summary' => 'He sin alle Shprooche opjeleß, di mer {{GRAMMAR:em|{{SITENAME}}}} ongershtöze.
-Dobei shtonn de Övversäzer, di aan dä Shprooch aam ärbeide sin.
-Wann De mieh övver en Shprooch weße wells, dann jangk op di Pooz-Sigg vun dä Shprooch.
-Wann De ävver op enem Övversetzer singem Name klecks, küss_De op däm sing Metmaacher-Sigg.
-
-Wann en Shprooch heh nit bei es, dann kanns De op dä Sigg övver [[Translating:Process|neu Shprooche]] lässe, wi mer en neu Sproocheprojäk opsäz.
-
-Wann De en en Sprooch aam övversäze bes, un Dinge Name es nit als Övversäzer opjeföhrt, dann donn op dä ier [[:Category:Languages|Pooz-Sigg]] Dinge Metmaacher-Name noch enndraare.
-En dä Leß met Lengks es och eine op di Pooz-Sigg för di Shprooch, di De en Dinge Ennstellunge ußjewählt häs.',
+Dobei shtonn de Name vun dä Övversäzer, di aan dä Shprooch aam ärbeide sin.
+Jrüüßer jeschrewwe Övversäzer han mieh övversaz, wi kleiner jeschreve.
+Jröhne jeschrevve han köözlesch noch jet jedonn, je rüüder ene Name, desto länger hät dä nix mih jedonn.',
+	'supportedlanguages-colorlegend' => 'Lejände för de Färv: De läzde Övversäzong es $1 Dääsch her.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Eine Övversäzer:|$2 Övversäzer:|Keine Övversäzer}} $1',
 	'supportedlanguages-recenttranslations' => 'neuste Övversäzunge',
 	'supportedlanguages-count' => '{{plural:$1|Ein Schprooch|$1 Schprooche|Kein Schprooche}} ensjesamp.',
@@ -12467,14 +12465,9 @@ Dir sidd awer häerzlech Invitéiert fir d'Systemmessagn op [[Special:Translate|
 	'translate-mgs-invalid-group' => 'De spezifizéierte Grupp $1 gëtt et net.',
 	'translate-mgs-nothing' => 'Fir déi gefrote Statistike gëtt et näischt fir ze weisen.',
 	'supportedlanguages' => 'Ënnerstetzte Sproochen',
-	'supportedlanguages-summary' => "Op dëser Säit steet eng Lëscht vun alle Sproochen déi op {{SITENAME}} ënnerstëtzt ginn, zesumme mam Numm vun den Iwwersetzer déi un däer Sprooch schaffen.
-Wann Dir méi Informatiounen iwwer eng bestëmmte Sprooch wëllt hunn, da kënnt Dir op de Link vum Portal fir déi Sprooch klickt.
-Wann Dir op en Numm vun engem Iwwersetzer klickt da komm Dir op deem senger Benotzersäit eraus.
-
-Wann eng Sprooch net an der Lëscht drasteet da fannt dir Informatioune wéi ee mat enger neier Sprooch ufänkt ënnert [[Translating:Process|Nei Sproochen]]“.
-
-Wann den Numm vun engem Iwwersetzer feelt, muss deen op d'Lëscht vun den Iwwersetzer op dem [[:Category:Languages|Portal]] vun däer Sprooch derbäi.
-Kuckt de Menu fir e Link op de Portal fir déi Sprooch déi dir an Äre Preferenzen agestallt hutt.",
+	'supportedlanguages-summary' => "Op dëser Säit steet eng Lëscht vun alle Sproochen déi op {{SITENAME}} ënnerstëtzt ginn, zesumme mam Numm vun den Iwwersetzer déi un där Sprooch schaffen.
+Den Numm vum Iwwersetzer ass méi grouss desto méi Iwwersetzungen de Benotzer gemaach huet.
+D'Faarf mat där den Numm vum Benotzer ënnerstrach ass weist wéi rezent dee Benotzer hei aktiv war.",
 	'supportedlanguages-translators' => '{{PLURAL:$2|Iwwersetzer|Iwwersetzer}}: $1',
 	'supportedlanguages-recenttranslations' => 'rezent Iwwersetzungen',
 	'supportedlanguages-count' => '{{plural:$1|Eng Sprooch|$1 Sproochen}} am Ganzen.',
@@ -13110,14 +13103,11 @@ $messages['mk'] = array(
 	'translate-mgs-invalid-group' => 'Наведената група $1 не постои.',
 	'translate-mgs-nothing' => 'Нема што да се прикаже за побараните статистики.',
 	'supportedlanguages' => 'Поддржани јазици',
-	'supportedlanguages-summary' => 'На оваа страница се наведени сите јазици што ги поддржува {{SITENAME}}, како и имињата на преведувачите кои работат на секој јазик.
-Ако сакате повеќе информации за некој јазик, можете да кликнете на врската до матичниот портал за тој јазик.
-Со кликнување на името на некој преведувач ќе бидете одведени до неговата корисничка страница.
-
-Доколку не можете да најдете некој јазик на списокот, можете да дознаете како да започнете проект за локализација на тој јазик на страницата „[[Translating:Process|Нов јазик]]“.
-
-Ако преведувате на некој јазик, но вашето име не е наведено, тогаш додајте се на списокот на преведувачи која се наоѓа на [[:Category:Languages|матичниот портал]] за тој јазик.
-Во менито лево ќе најдете врска до матичниот портал на јазикот што го сакате.',
+	'supportedlanguages-summary' => 'На оваа страница се наведени сите јазици што ги поддржува {{SITENAME}},
+заедно со имињата на преведувачите што работат на секој јазик.
+Големината на името (т.е. буквите) на преведувачот зависи од тоа колку пораки има преведено.
+Бојата на линијата со која е подвлечено името ја покажува скорешноста на неговата активност.',
+	'supportedlanguages-colorlegend' => 'Легенда за бојата: Последен превод извршен пред $1 дена.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Преведувач|Преведувачи}}: $1',
 	'supportedlanguages-recenttranslations' => 'скорешни преводи',
 	'supportedlanguages-count' => 'Вкупно $1 {{plural:$1|јазик|јазици}}.',
@@ -13755,14 +13745,11 @@ Anda disaran untuk menyemak mesej melalui [[Special:Translate|{{int:translate}}]
 	'translate-mgs-invalid-group' => 'Kumpulan yang dinyatakan, $1 tidak wujud.',
 	'translate-mgs-nothing' => 'Statistik yang diminta itu tiada apa untuk ditunjukkan.',
 	'supportedlanguages' => 'Bahasa yang disokong',
-	'supportedlanguages-summary' => 'Laman ini memaparkan senarai semua bahasa yang disokong oleh {{SITENAME}}, bersama dengan nama-nama penterjemah yang mengusahakan versi bahasa berkenaan.
-Jika anda mahu keterangan lanjut mengenai bahasa yang tertentu, anda boleh mengklik pautan kepada portal bahasa itu.
-Klik nama penterjemah untuk ke laman penggunanya.
-
-Jika bahasa yang anda cari tidak tersenarai, anda boleh mengetahui cara untuk memulakan projek penyetempatan untuk bahasa itu dalam "[[Translating:Process|Bahasa Baru]]".
-
-Jika anda menterjemah ke dalam satu bahasa tetapi nama anda tidak tersenarai, sila bubuh nama anda pada senarai penterjemah di [[:Category:Languages|portal]] bahasa itu.
-Lihat bar menu untuk pautan ke portal bahasa keutamaan anda.',
+	'supportedlanguages-summary' => 'Laman ini menunjukkan senarai semua bahasa yang disokong oleh {{SITENAME}},
+bersama dengan nama-nama para penterjemah yang mengusahakan bahasa itu.
+Semakin besar nama penterjemah, semakin banyak suntingan yang disumbangkannya.
+Warna garis bawah menunjukkan betapa barunya seseorang penterjemah giat di sini.',
+	'supportedlanguages-colorlegend' => 'Petunjuk untuk warna: Terjemahan terakhir pada $1 hari yang lalu.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Penterjemah|Penterjemah}}: $1',
 	'supportedlanguages-recenttranslations' => 'terjemahan terbaru',
 	'supportedlanguages-count' => 'Sejumlah $1 bahasa.',
@@ -18460,9 +18447,7 @@ Predlagamo vam, da pregledate sporočila preko [[Special:Translate|{{int:transla
 	'supportedlanguages' => 'Podprti jeziki',
 	'supportedlanguages-summary' => 'Ta stran prikazuje seznam vseh jezikov, ki jih podpira {{SITENAME}},
 skupaj z imeni prevajalcev, ki delujejo na tem jeziku.
-
-Velikost izpisa imena prevajalca je odvisna od števila urejanj, ki jih je prevajalec prispeval.
-
+Več urejanj je prevajalec prispeval, večje je izpisano njegovo ime.
 Barva podrčtave kaže na zadnjo tukajšnjo dejavnost prevajalca.',
 	'supportedlanguages-colorlegend' => 'Legenda barv: Zadnji prevod pred $1 dnevi.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Prevajalec|Prevajalca|Prevajalci}}: $1',
@@ -18611,27 +18596,26 @@ $messages['sr-ec'] = array(
 	'translate-showsub' => 'прикажи {{PLURAL:$1|подгрупу|$1 подгрупе|$1 подгрупа}}',
 	'translate-grouplisting' => 'Ово је списак свих група порука које се могу превести.
 Кликните на назив групе да бисте видели списак непреведених порука.',
-	'translate-task-view' => 'све поруке',
-	'translate-task-untranslated' => 'све непреведене поруке',
-	'translate-task-optional' => 'необавезне поруке',
-	'translate-task-suggestions' => 'поруке с предлозима из преводилачке меморије',
-	'translate-task-untranslatedoptional' => 'непреведене необавезне поруке',
-	'translate-task-problematic' => 'проблематичне поруке',
-	'translate-task-review' => 'преглед промена',
-	'translate-task-reviewall' => 'преглед свих преведених порука',
-	'translate-task-export' => 'извоз превода',
-	'translate-task-export-to-file' => 'извоз превода у датотеку',
-	'translate-task-export-as-po' => 'извоз превода за превођење ван мреже',
-	'translate-task-export-to-xliff' => 'извоз превода у формату Xliff',
+	'translate-task-view' => 'прикажи све поруке',
+	'translate-task-untranslated' => 'прикажи непреведене поруке',
+	'translate-task-optional' => 'прикажи необавезне поруке',
+	'translate-task-suggestions' => 'прикажи поруке с предлозима из меморије',
+	'translate-task-untranslatedoptional' => 'прикажи непреведене необавезне поруке',
+	'translate-task-problematic' => 'прикажи проблематичне поруке',
+	'translate-task-review' => 'прикажи преглед измена',
+	'translate-task-reviewall' => 'прикажи преглед преведених порука',
+	'translate-task-export' => 'извези преводе',
+	'translate-task-export-to-file' => 'извези преводе у датотеку',
+	'translate-task-export-as-po' => 'извези преводе за ванмрежно превођење',
+	'translate-task-export-to-xliff' => 'извези преводе у формату Xliff',
 	'translate-page-no-such-language' => 'Изабрани језик није исправан.',
 	'translate-page-no-such-task' => 'Изабрани задатак није исправан.',
 	'translate-page-no-such-group' => 'Изабрана група није исправна.',
-	'translate-page-disabled' => "Преводи за овај језик у овој групи су онемогућени.
-Разлог:
+	'translate-page-disabled' => "Преводи на овом језику у овој групи су онемогућени. Разлог:
 
 ''$1''",
 	'translate-page-settings-legend' => 'Поставке',
-	'translate-page-task' => 'Приказ:',
+	'translate-page-task' => 'Радња:',
 	'translate-page-group' => 'Група:',
 	'translate-page-language' => 'Језик:',
 	'translate-page-limit' => 'Ограничење:',
