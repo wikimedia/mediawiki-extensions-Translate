@@ -61,7 +61,8 @@ $wgSpecialPages['Translate'] = 'SpecialTranslate';
 $wgSpecialPageGroups['Translate'] = 'wiki';
 $wgSpecialPages['Translations'] = 'SpecialTranslations';
 $wgSpecialPageGroups['Translations'] = 'pages';
-$wgSpecialPages['Magic'] = 'SpecialMagic';
+// Disabled by default
+// $wgSpecialPages['Magic'] = 'SpecialMagic';
 $wgSpecialPageGroups['Magic'] = 'wiki';
 $wgSpecialPages['TranslationStats'] = 'SpecialTranslationStats';
 $wgSpecialPageGroups['TranslationStats'] = 'wiki';
