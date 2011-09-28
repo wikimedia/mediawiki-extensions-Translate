@@ -29,7 +29,11 @@ And for the code at:
  http://translatewiki.net/docs/Translate/html/
 
 == Change log ==
-
+* 2011-09-28
+- Started taking PHP code out of the groups/ folder anticipating Wikimedia
+  review. Later we will move all content of the groups folder elsewhere to
+  reduce the number of changes of changes to the Translate extension
+  considerably.
 * 2011-09-26
 - Special:SupportedLanguages can now show site specific messages in
   supportedlanguages-localsummary message

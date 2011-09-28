@@ -125,20 +125,20 @@ $wgAutoloadClasses['MessageHandle'] = $dir . 'utils/MessageHandle.php';
  * @name   Classes for predefined old-style message groups
  * @{
  */
-$wgAutoloadClasses['PremadeMediawikiExtensionGroups'] = $dir . 'groups/MediaWikiExtensions.php';
-$wgAutoloadClasses['PremadeWikiaExtensionGroups'] = $dir . 'groups/Wikia/WikiaExtensions.php';
-$wgAutoloadClasses['PremadeToolserverTextdomains'] = $dir . 'groups/Toolserver/ToolserverTextdomains.php';
-$wgAutoloadClasses['MediaWikiMessageChecker'] = $dir . 'groups/MediaWiki/Checker.php';
+$wgAutoloadClasses['PremadeMediawikiExtensionGroups'] = $dir . 'ffs/MediaWikiExtensions.php';
+$wgAutoloadClasses['PremadeWikiaExtensionGroups'] = $dir . 'ffs//WikiaExtensions.php';
+$wgAutoloadClasses['PremadeToolserverTextdomains'] = $dir . 'ffs/ToolserverTextdomains.php';
+$wgAutoloadClasses['MediaWikiMessageChecker'] = $dir . 'ffs/MediaWikiChecker.php';
 /**@}*/
 
 /**
  * @name   Non-message translation item support
  * @{
  */
-$wgAutoloadClasses['ComplexMessages'] = $dir . 'groups/ComplexMessages.php';
-$wgAutoloadClasses['SpecialPageAliasesCM'] = $dir . 'groups/ComplexMessages.php';
-$wgAutoloadClasses['MagicWordsCM'] = $dir . 'groups/ComplexMessages.php';
-$wgAutoloadClasses['NamespaceCM'] = $dir . 'groups/ComplexMessages.php';
+$wgAutoloadClasses['ComplexMessages'] = $dir . 'ffs/MediaWikiComplexMessages.php';
+$wgAutoloadClasses['SpecialPageAliasesCM'] = $dir . 'ffs/MediaWikiComplexMessages.php';
+$wgAutoloadClasses['MagicWordsCM'] = $dir . 'ffs/MediaWikiComplexMessages.php';
+$wgAutoloadClasses['NamespaceCM'] = $dir . 'ffs/MediaWikiComplexMessages.php';
 /**@}*/
 
 /**
