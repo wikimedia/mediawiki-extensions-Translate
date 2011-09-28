@@ -21,8 +21,8 @@ class PremadeWikiaExtensionGroups extends PremadeMediawikiExtensionGroups {
 		global $wgTranslateGroupRoot;
 
 		parent::__construct();
-		$dir = dirname( __FILE__ );
-		$this->definitionFile = $dir . '/extensions.txt';
+		$dir = dirname( dirname( __FILE__ ) );
+		$this->definitionFile = $dir . 'groups/Wikia/extensions.txt';
 		$this->path = "$wgTranslateGroupRoot/wikia/";
 	}
 }

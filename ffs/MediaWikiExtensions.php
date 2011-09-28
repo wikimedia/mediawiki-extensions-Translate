@@ -20,8 +20,8 @@ class PremadeMediawikiExtensionGroups {
 
 	public function __construct() {
 		global $wgTranslateExtensionDirectory;
-		$dir = dirname( __FILE__ );
-		$this->definitionFile = $dir . '/mediawiki-defines.txt';
+		$dir = dirname( dirname( __FILE__ ) );
+		$this->definitionFile = $dir . 'groups/MediaWiki/mediawiki-defines.txt';
 		$this->path = $wgTranslateExtensionDirectory;
 	}
 
