@@ -61,7 +61,6 @@ $wgAutoloadClasses['MessageWriter'] = $IP . '/maintenance/language/writeMessages
  */
 $wgAutoloadClasses['SpecialTranslate'] = $dir . 'specials/SpecialTranslate.php';
 $wgAutoloadClasses['SpecialMagic'] = $dir . 'specials/SpecialMagic.php';
-$wgAutoloadClasses['SpecialTranslationChanges'] = $dir . 'specials/SpecialTranslationChanges.php';
 $wgAutoloadClasses['SpecialTranslationStats'] = $dir . 'specials/SpecialTranslationStats.php';
 $wgAutoloadClasses['SpecialTranslations'] = $dir . 'specials/SpecialTranslations.php';
 $wgAutoloadClasses['SpecialLanguageStats'] = $dir . 'specials/SpecialLanguageStats.php';

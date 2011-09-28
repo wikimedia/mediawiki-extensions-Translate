@@ -124,11 +124,6 @@ Changes are not saved until you click save button below.',
 	'translate-magic-errors' => 'Please fix following {{PLURAL:$1|error|errors}} in translations:',
 	'translate-magic-saved'  => 'Your changes were saved successfully.',
 
-	'translationchanges'        => 'Translation changes',
-	'translationchanges-export' => 'export',
-	'translationchanges-change' => '$1: $2 by $3',
-	'translationchanges-submit' => 'Fetch',
-
 	'translate-checks-parameters'         => 'Following {{PLURAL:$2|parameter is|parameters are}} not used:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => 'Following {{PLURAL:$2|parameter is|parameters are}} unknown:

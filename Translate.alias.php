@@ -12,7 +12,6 @@ $specialPageAliases = array();
 $specialPageAliases['en'] = array(
 	'Translate' => array( 'Translate' ),
 	'Magic' => array( 'AdvancedTranslate', 'Magic' ),
-	'TranslationChanges' => array( 'TranslationChanges' ),
 	'TranslationStats' => array( 'TranslationStats', 'TranslationStatistics' ),
 	'Translations' => array( 'Translations' ),
 	'LanguageStats' => array( 'LanguageStats' ),
