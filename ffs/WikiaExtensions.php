@@ -22,7 +22,7 @@ class PremadeWikiaExtensionGroups extends PremadeMediawikiExtensionGroups {
 
 		parent::__construct();
 		$dir = dirname( dirname( __FILE__ ) );
-		$this->definitionFile = $dir . 'groups/Wikia/extensions.txt';
+		$this->definitionFile = $dir . '/groups/Wikia/extensions.txt';
 		$this->path = "$wgTranslateGroupRoot/wikia/";
 	}
 }
