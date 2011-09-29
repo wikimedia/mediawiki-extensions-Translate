@@ -337,6 +337,9 @@ aliasfile = CreateRedirect/CreateRedirect.alias.php
 
 Creative Commons Rdf
 
+Credit Tab
+descmsg = credits-desc
+
 Cross Namespace Links
 aliasfile = CrossNamespaceLinks/CrossNamespaceLinks.alias.php
 
