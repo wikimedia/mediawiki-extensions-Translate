@@ -901,7 +901,7 @@ class YamlFFS extends SimpleFFS {
 		return $array;
 	}
 
-	protected function flattenPlural( $value ) {
+	public function flattenPlural( $value ) {
 		return false;
 	}
 
@@ -909,7 +909,7 @@ class YamlFFS extends SimpleFFS {
 	 * Override this. Return false to skip processing this value. Otherwise
 	 * return array with keys and values.
 	 */
-	protected function unflattenPlural( $key, $value ) {
+	public function unflattenPlural( $key, $value ) {
 		return array( $key => $value );
 	}
 }
@@ -933,7 +933,7 @@ class RubyYamlFFS extends YamlFFS {
 	/**
 	 * Flattens ruby plural arrays into special plural syntax.
 	 */
-	protected function flattenPlural( $messages ) {
+	public function flattenPlural( $messages ) {
 
 		$plurals = false;
 		foreach ( array_keys( $messages ) as $key ) {
@@ -966,7 +966,7 @@ class RubyYamlFFS extends YamlFFS {
 	/**
 	 * Converts the special plural syntax to array or ruby style plurals
 	 */
-	protected function unflattenPlural( $key, $message ) {
+	public function unflattenPlural( $key, $message ) {
 		// Quick escape.
 		if ( strpos( $message, '{{PLURAL' ) === false ) {
 			return array( $key => $message );
@@ -976,7 +976,7 @@ class RubyYamlFFS extends YamlFFS {
 		 * Replace all variables with placeholders. Possible source of bugs
 		 * if other characters that given below are used.
 		 */
-		$regex = '~\{\{[a-zA-Z_-]+}}~';
+		$regex = '~\{[a-zA-Z_-]+}~';
 		$placeholders = array();
 		$match = null;
 
