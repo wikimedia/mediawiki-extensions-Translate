@@ -523,7 +523,7 @@ FOO;
 		$opts = array( 'parseinline', 'language' => $language );
 
 		// New logging system already unserializes it for us
-		if ( is_array( $params ) ) {
+		if ( isset( $params['user'] ) ) {
 			$_ = $params;
 		} else {
 			$_ = unserialize( $params[0] );
