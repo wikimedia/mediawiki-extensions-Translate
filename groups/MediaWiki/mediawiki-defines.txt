@@ -1156,6 +1156,8 @@ aliasfile = regexBlock/regexBlock.alias.php
 Regex Functions
 magicfile = RegexFunctions/RegexFunctions.i18n.magic.php
 
+Relation Links
+
 Rename user
 aliasfile = Renameuser/Renameuser.alias.php
 ignored = renameuser-summary
