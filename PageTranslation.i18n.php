@@ -5606,17 +5606,20 @@ men {{PLURAL:$1|den senaste versionen|de senaste versionerna}} kan inte markeras
 	'tpt-languages-legend' => 'Andra språk:',
 	'tpt-target-page' => 'Den här sidan kan inte uppdateras manuellt. Den här sidan är en översättning av [[$1]] och översättningen kan uppdateras genom att använda [$2 översättningsverktyget].',
 	'tpt-unknown-page' => 'Den här namnrymden är reserverad för översättningar av sidor. Sidan du försöker redigera verkar inte stämma överens med någon sida som är märkt för översättning.',
-	'tpt-install' => 'Kör php-underhåll/update.php eller webb-installation för att  möjliggöra sidans översättningsfunktioner.',
 	'tpt-render-summary' => 'Uppdaterar för att matcha den nya versionen av källpaketet',
 	'tpt-download-page' => 'Exportera sidan med översättningar',
 	'pt-parse-open' => 'Obalanserad &lt;translate>-tagg.
 Översättningsmall: <pre>$1</pre>',
 	'pt-parse-close' => 'Obalanserad &lt;/translate>-tagg.
 Översättningsmall: <pre>$1</pre>',
+	'pt-log-delete-lang-nok' => '{{GENDER:$2|påträffade}} ett problem vid radering av översättningssidan [[:$1]]',
+	'pt-movepage-title' => 'Flytta översättningsbar sida $1',
+	'pt-movepage-blockers' => 'Den översättningsbara sidan kan inte flyttas till ett nytt namn på grund av följande {{PLURAL:$1|fel|fel}}:',
 	'pt-movepage-list-pages' => 'Lista över sidor att flytta',
 	'pt-movepage-list-translation' => 'Översättningssidor',
 	'pt-movepage-list-section' => 'Avsnittssidor',
 	'pt-movepage-list-other' => 'Andra undersidor',
+	'pt-movepage-list-count' => 'Totalt $1 {{PLURAL:$1|sida|sidor}} att flytta.',
 	'pt-movepage-legend' => 'Flytta översättningsbar sida',
 	'pt-movepage-current' => 'Nuvarande namn:',
 	'pt-movepage-new' => 'Nytt namn:',
@@ -5626,6 +5629,11 @@ men {{PLURAL:$1|den senaste versionen|de senaste versionerna}} kan inte markeras
 	'pt-movepage-action-perform' => 'Genomför flytten',
 	'pt-movepage-action-other' => 'Ändra mål',
 	'pt-locked-page' => 'Denna sida är låst eftersom den översättningsbara sidan håller på att flyttas.',
+	'pt-deletepage-current' => 'Sidnamn:',
+	'pt-deletepage-reason' => 'Anledning:',
+	'pt-deletepage-subpages' => 'Radera alla undersidor',
+	'pt-deletepage-list-other' => 'Andra undersidor',
+	'pt-deletepage-list-count' => 'Totalt $1 {{PLURAL:$1|sida|sidor}} att radera.',
 );
 
 /** Tamil (தமிழ்)

@@ -14428,10 +14428,6 @@ Wijzigingen worden niet bewaard totdat u op "Pagina opslaan" hebt geklikt.',
 	'translate-magic-notsaved' => 'Uw bewerking is niet opgeslagen!',
 	'translate-magic-errors' => 'Los de volgende {{PLURAL:$1|fout|fouten}} op in de vertalingen:',
 	'translate-magic-saved' => 'Uw wijzigingen zijn opgeslagen.',
-	'translationchanges' => 'Recente vertalingen',
-	'translationchanges-export' => 'exporteren',
-	'translationchanges-change' => '$1: $2 door $3',
-	'translationchanges-submit' => 'Ophalen',
 	'translate-checks-parameters' => 'De volgende {{PLURAL:$2|parameter wordt|parameters worden}} niet gebruikt:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => 'De volgende {{PLURAL:$2|parameter is|parameters zijn}} onbekend:
@@ -14538,13 +14534,8 @@ U wordt aangemoedigd om via [[Special:Translate|{{int:translate}}]] vertalingen 
 	'translate-mgs-nothing' => 'Er is niets weer te geven voor de opgevraagde statistieken.',
 	'supportedlanguages' => 'Ondersteunde talen',
 	'supportedlanguages-summary' => 'Op deze pagina wordt een lijst van alle talen die in {{SITENAME}} worden ondersteund weergegeven, samen met de namen van de vertalers die werken aan die taal.
-Als u meer informatie over een bepaalde taal wilt, kunt u klikken op de verwijzing naar het portaal voor die taal.
-Klikken op de naam van een brengt u naar de gebruikerspagina van die vertaler.
-
-Als een taal niet wordt vermeld, kunt u nalezen hoe een nieuwe taal toegevoegd te krijgen op "[[Translating:Process|Nieuwe taal]]".
-
-Als u vertaalt naar een taal en uw naam is niet opgenomen, dan kunt u uw naam toevoegen aan de lijst van vertalers op het [[:Category:Languages|portaal]] voor die taal.
-Zie de menubalk voor een verwijzing naar het portaal voor uw voorkeurstaal.',
+De naam van een vertaler wordt groter weergegeven als deze meer bewerkingen heeft gemaakt.
+De kleur van een onderstreping geeft aan hoe recent een vertaler actief is geweest.',
 	'supportedlanguages-colorlegend' => 'Legenda voor de kleuren: Laatste vertaling $1 dagen geleden.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Vertaler|Vertalers}}: $1',
 	'supportedlanguages-recenttranslations' => 'recente vertalingen',
@@ -18670,9 +18661,6 @@ $messages['sr-ec'] = array(
 	'translate-magic-notsaved' => 'Ваша измена није сачувана!',
 	'translate-magic-errors' => 'Исправите {{PLURAL:$1|следећу грешку|следеће грешке}} у преводима:',
 	'translate-magic-saved' => 'Ваше измене су сачуване.',
-	'translationchanges' => 'Измене превода',
-	'translationchanges-export' => 'извези',
-	'translationchanges-change' => '$1: $2 од $3',
 	'translate-checks-parameters' => 'Следећи {{PLURAL:$2|параметар се не користи|параметри се не користе}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => 'Следећи {{PLURAL:$2|параметар је непознат|параметри су непознати}}:
@@ -18846,7 +18834,7 @@ $1',
 	'translate-js-skip' => 'Прескочи на следеће',
 	'translate-js-save-failed' => 'Чување није успело. Пријавите ову грешку.',
 	'translate-js-history' => 'Историја превода',
-	'translate-js-support' => 'Питај питање',
+	'translate-js-support' => 'Постави питање',
 	'translate-js-support-title' => 'Питајте за помоћ ако нема довољно података за ваљано превођење поруке',
 	'translate-gs-pos' => 'Положај',
 	'translate-gs-code' => 'Кôд',
@@ -19413,10 +19401,6 @@ För att kunna spara ändringar så behöver du tillhöra översättargruppen.
 	'translate-magic-notsaved' => 'Din redigering sparades inte!',
 	'translate-magic-errors' => 'Vänligen rätta följande {{PLURAL:$1|fel|fel}} i översättningen:',
 	'translate-magic-saved' => 'Dina ändringar har sparats',
-	'translationchanges' => 'Ändrade översättningar',
-	'translationchanges-export' => 'exportera',
-	'translationchanges-change' => '$1: $2 av $3',
-	'translationchanges-submit' => 'Hämta',
 	'translate-checks-parameters' => 'Följande {{PLURAL:$2|parameter|parametrar}} används inte: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => 'Följande {{PLURAL:$2|parameter är okänd|parametrar är okända}}:
 <strong><nowiki>$1</nowiki></strong>',
@@ -19455,7 +19439,7 @@ Standardlistan på språk avgörs av ditt språk.',
 	'translate-statsf-options' => 'Diagramalternativ',
 	'translate-statsf-width' => 'Bredd i pixlar:',
 	'translate-statsf-height' => 'Höjd i pixlar:',
-	'translate-statsf-days' => 'Tidsperiod i dagar:',
+	'translate-statsf-days' => 'Startdatum:',
 	'translate-statsf-scale' => 'Tidsupplösning:',
 	'translate-statsf-scale-months' => 'Månader',
 	'translate-statsf-scale-weeks' => 'Veckor',
@@ -19487,6 +19471,7 @@ Standardlistan på språk avgörs av ditt språk.',
 	'languagestats-summary' => 'Den här sidan visar översättningsstatistik för alla meddelandegrupper för ett språk.',
 	'languagestats-stats-for' => 'Översättningsstatistik för $1 ($2).',
 	'languagestats-recenttranslations' => 'Senaste översättningar',
+	'translate-langstats-incomplete' => 'En del av statistikerna på denna sida är ofullständiga. Var god uppdatera sidan för att få mer statistik.',
 	'translate-langstats-expand' => 'visa',
 	'translate-langstats-collapse' => 'göm',
 	'translate-langstats-expandall' => 'visa alla',
@@ -19516,14 +19501,11 @@ Du uppmuntras att granska meddelanden genom [[Special:Translate|{{int:translate}
 	'translate-mgs-invalid-group' => 'Den angivna gruppen $1 finns inte.',
 	'translate-mgs-nothing' => 'Inget att visa för begärd statistik.',
 	'supportedlanguages' => 'Språk som stöds',
-	'supportedlanguages-summary' => 'Denna sida visar en lista över alla språk som stöds av {{SITENAME}}, tillsammans med en lista över översättare som jobbar på detta språk.
-Om du vill ha mer information om ett speciellt språk så klicka på länken till portalen för detta språk.
-Trycker du på en översättares namn kommer du till dennes användarsida.
-
-Om ett språk inte finns med i listan så kan du hitta information om hur du påbörjar ett lokaliseringsprojekt för detta språk på "[[Translating:Process|New Language]]".
-
-Om du översätter till ett språk och ditt namn inte finns med, var vänlig och lägg till dit namn till listan över översättare på [[:Category:Languages|portalen]] för detta språk.
-En länk till till portalen för ditt val av språk finns i menyn.',
+	'supportedlanguages-summary' => 'Denna sida visar en lista över alla språk som stöds av {{SITENAME}},
+tillsammans med en lista över översättare som jobbar på detta språk.
+En översättares namn visas större, desto mer ändringar översättaren har bidragit.
+Färgen för underlinjen anger hur mycket en översättare har varit aktiv här nyligen.',
+	'supportedlanguages-colorlegend' => 'Färgförklaring: Senaste översättningen gjordes $1 dagar sedan.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Översättare|Översättare}}: $1',
 	'supportedlanguages-recenttranslations' => 'senaste översättningar',
 	'supportedlanguages-count' => '$1 {{PLURAL:$1|språk|språk}} totalt.',
@@ -19587,6 +19569,8 @@ $1',
 	'translate-import-err-invalid-title' => 'Det angivna filnamnet <nowiki>$1</nowiki> är inte giltigt.',
 	'translate-import-err-no-such-file' => 'Fil <nowiki>$1</nowiki> finns inte, eller har inte laddats upp lokalt.',
 	'translate-import-err-stale-group' => 'Meddelandegruppen som den här filen tillhör finns inte.',
+	'translate-import-err-no-headers' => 'Filen är inte en välformerad Gettext-fil i översättnings-förlängningsformat:
+Det gick inte att bestämma grupp och språk från filhuvuden.',
 	'translate-import-err-warnings' => 'Filen är inte välformaterad.
 Kontrollera att din editor inte tar bort msgctxt fält.
 Detaljer: $1',

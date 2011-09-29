@@ -2459,11 +2459,15 @@ $messages['sv'] = array(
 	'bw-desc-freecol' => 'Innan du översätter FreeCol till ditt språk, var god läs [[Translating:FreeCol]]. FreeCol använder GPL-licensen.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], ett webbforum skrivet i PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] är ett gratis webbaserat bugspårningssystem. Vänligen rapportera alla problem på [[Support]].',
+	'translate-group-desc-eol' => 'En meddelandegrupp för [[Translating:EOL|Encyclopedia of Life]]',
 	'translate-group-desc-ihris' => 'En meddelandegrupp för [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-common' => 'En meddelandegrupp för  [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], en modul i [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-i2ce' => 'En meddelandegrupp för [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], en modul i [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-manage' => 'En meddelandegrupp för [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], en modul i [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-qualify' => 'En meddelandegrupp för [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]], en modul i [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-kiwix' => 'En meddelandegrupp för [[Translating:Kiwix|Kiwix]]',
+	'translate-group-desc-mantisbt-plugin-core' => 'Ett kärntillägg för [[Translating:MantisBT|MantisBT]]',
+	'translate-group-desc-mediawiki-core-branch' => 'Meddelanden för en stabil version av [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] är ett informationshanteringsverktyg för mikrofinans',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' är ett pythonbibliotek för att skapa PDF-document från MediaWiki-artiklar som tolkats av mwlib-biblioteket.
 
@@ -2486,10 +2490,7 @@ Observera följande:
 	'bw-desc-shapado' => 'Meddelandegrupp för Q&A-programvaran [[Translating:Shapado|Shapado]] som är fri och har öppen källkod',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] microblog server med öppen källkod',
 	'translate-group-desc-statusnet-plugin' => 'Dessa meddelanden är en del av ett tillägg för [[Translating:StatusNet|StatusNet]]',
-	'bw-desc-voctrain' => '[http://omegawiki.org OmegaWiki]-baserad ordförrådstränare. Använder ett minneskortssystem för att lära ord mellan de språk som Omegawiki stöder.
-Skapat för Bambergs universitetet. Licensierat under GPL 2.0 eller senare. Utvecklat av [[User:Kim Bruning|Kim Bruning]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] kan snabbt hitta författarna till en sida på en Wikimedia wiki.',
-	'bw-desc-wikimediamobile' => 'Wikimedia för mobiler hittar du på http://m.wikipedia.org och siktar mot att ta Wikipedia till mobiltelefoner som stöds världen över.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] är ett projekt  för att tillhandahålla en offline textversion av Wikipedia på en mobil enhet.',
 );
 
