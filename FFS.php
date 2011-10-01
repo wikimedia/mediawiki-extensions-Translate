@@ -1071,8 +1071,16 @@ class PythonSingleFFS extends SimpleFFS {
 	public function read( $code ) {
 		// TODO: Improve this code to not use static variables.
 		if ( !isset( self::$data[$this->group->getId()] ) ) {
+			/* N levels of escaping
+			 * - for PHP string
+			 * - for Python string
+			 * - for shell command
+			 * - and wfShellExec will wrap the whole command once more
+			 */
 			$filename = $this->group->getSourceFilePath( $code );
-			$json = shell_exec( "python -c'import simplejson as json; execfile(\"$filename\"); print json.dumps(msg)'" );
+			$filename = addcslashes( $filename, '\\"' );
+			$command = wfEscapeShellArg( "import simplejson as json; execfile(\"$filename\"); print json.dumps(msg)" );
+			$json = wfShellExec( "python -c $command" );
 			self::$data[$this->group->getId()] = json_decode( $json, true );
 		}
 
