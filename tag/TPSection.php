@@ -66,7 +66,7 @@ class TPSection {
 	 * @return \string Wikitext.
 	 */
 	public function getOldText() {
-		return isset( $this->oldtext ) ? $this->oldtext : $this->text;
+		return isset( $this->oldText ) ? $this->oldText : $this->text;
 	}
 
 	/**
