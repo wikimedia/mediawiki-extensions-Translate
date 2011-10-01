@@ -29,9 +29,16 @@ And for the code at:
  http://translatewiki.net/docs/Translate/html/
 
 == Change log ==
+* 2011-10-01
+- Fixed escaping in PythonSingleFFS parser
+- Fixed a bug in getSourceLanguage for certain message group classes
 * 2011-09-29
 - Groups folder was cleaned. See groups/README for more information.
+- Fixed PHP notice when marking page for Translation with MW 1.19
+- Fixed a bug in RubyYamlFFS::unflattenPlural, added unit tests
 * 2011-09-28
+- Special:AdvancedTranslate is not enabled by default anymore
+- Special:TranslationChanges was removed
 - Started taking PHP code out of the groups/ folder anticipating Wikimedia
   review. Later we will move all content of the groups folder elsewhere to
   reduce the number of changes of changes to the Translate extension
