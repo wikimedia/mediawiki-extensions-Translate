@@ -737,6 +737,8 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 	/// \arrayof{String,\bool} Cache used to count active users only once per day.
 	protected $usercache;
 
+	protected $codes, $groups;
+
 	public function __construct( FormOptions $opts ) {
 		parent::__construct( $opts );
 		// This query is slow... ensure a lower limit.

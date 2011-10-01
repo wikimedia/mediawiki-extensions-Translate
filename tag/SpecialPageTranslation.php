@@ -19,6 +19,12 @@
  * @ingroup SpecialPage PageTranslation
  */
 class SpecialPageTranslation extends SpecialPage {
+
+	/**
+	 * @var User
+	 */
+	protected $user;
+
 	function __construct() {
 		parent::__construct( 'PageTranslation' );
 	}

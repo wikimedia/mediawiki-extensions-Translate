@@ -133,10 +133,16 @@ abstract class MessageGroupBase implements MessageGroup {
 	protected $conf;
 	protected $namespace;
 
-	protected function __construct() { }
+	protected $groups;
 
 	/**
-	 * @static
+	 * @var StringMatcher
+	 */
+	protected $mangler;
+
+	protected function __construct() { }
+
+	/*
 	 * @param $conf
 	 *
 	 * @return MessageGroup
@@ -498,6 +504,7 @@ class FileBasedMessageGroup extends MessageGroupBase {
  * @todo Currently unused?
  */
 class MediaWikiMessageGroup extends FileBasedMessageGroup {
+
 	public function mapCode( $code ) {
 		return ucfirst( str_replace( '-', '_', parent::mapCode( $code ) ) );
 	}
