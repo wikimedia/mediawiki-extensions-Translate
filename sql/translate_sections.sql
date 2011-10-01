@@ -17,4 +17,4 @@ CREATE TABLE /*_*/translate_sections (
   PRIMARY KEY (trs_page, trs_key)
 ) /*$wgDBTableOptions*/;
 
-CREATE INDEX /*i*/trs_page on /*_*/translate_sections (trs_page);
+CREATE INDEX /*i*/trs_page_order on /*_*/translate_sections (trs_page, trs_order);
