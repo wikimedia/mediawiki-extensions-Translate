@@ -1081,7 +1081,7 @@ class PythonSingleFFS extends SimpleFFS {
 			$filename = addcslashes( $filename, '\\"' );
 			$command = wfEscapeShellArg( "import simplejson as json; execfile(\"$filename\"); print json.dumps(msg)" );
 			$json = wfShellExec( "python -c $command" );
-			self::$data[$this->group->getId()] = json_decode( $json, true );
+			self::$data[$this->group->getId()] = FormatJson::decode( $json, true );
 		}
 
 		if ( !isset( self::$data[$this->group->getId()][$code] ) ) {
