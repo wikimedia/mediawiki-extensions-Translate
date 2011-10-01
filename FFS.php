@@ -454,6 +454,7 @@ abstract class JavaScriptFFS extends SimpleFFS {
 		} else {
 			$authors = explode( "\n", $authors );
 			for ( $i = 0; $i < count( $authors ); $i++ ) {
+				// Each line should look like " *  - Translatorname"
 				$authors[$i] = substr( $authors[$i], 6 );
 			}
 		}
