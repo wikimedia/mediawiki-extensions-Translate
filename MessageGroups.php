@@ -672,8 +672,9 @@ class WikiMessageGroup extends MessageGroupOld {
 
 	/// Defaults to wiki content language.
 	public function getSourceLanguage() {
-		global $wgLanguagecode;
-		return $wgLanguagecode;
+		global $wgLanguageCode;
+
+		return $wgLanguageCode;
 	}
 
 	/**
@@ -733,8 +734,9 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 
 	/// Defaults to wiki content language.
 	public function getSourceLanguage() {
-		global $wgLanguagecode;
-		return $wgLanguagecode;
+		global $wgLanguageCode;
+
+		return $wgLanguageCode;
 	}
 
 	public function getTitle() {
