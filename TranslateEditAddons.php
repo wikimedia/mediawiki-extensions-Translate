@@ -22,6 +22,8 @@ class TranslateEditAddons {
 	 * Hooks: SkinTemplateNavigation, SkinTemplateTabs
 	 * @param $skin Skin
 	 * @param $tabs Array
+	 *
+	 * @return bool
 	 */
 	static function addNavigationTabs( $skin, &$tabs ) {
 		global $wgRequest;

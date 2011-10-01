@@ -15,6 +15,13 @@ class TranslationMemoryUpdater {
 	/**
 	 * Shovels the new translation into translation memory.
 	 * Hook: Translate:newTranslation
+	 *
+	 * @param $handle MessageHandle
+	 * @param $revision
+	 * @param $text string
+	 * @param $user User
+	 *
+	 * @return bool
 	 */
 	public static function update( MessageHandle $handle, $revision, $text, User $user ) {
 		global $wgContLang;

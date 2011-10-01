@@ -41,6 +41,9 @@ class TranslateYaml {
 
 	/**
 	 * Merges a document template (base) to actual definition (specific)
+	 * @param $base
+	 * @param $specific
+	 * @return array
 	 */
 	public static function mergeTemplate( $base, $specific ) {
 		foreach ( $specific as $key => $value ) {

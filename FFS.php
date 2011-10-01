@@ -73,7 +73,12 @@ interface FFS {
  * @ingroup FFS
  */
 class SimpleFFS implements FFS {
+
+	/**
+	 * @var FileBasedMessageGroup
+	 */
 	protected $group;
+
 	protected $writePath;
 	protected $extra;
 
@@ -83,12 +88,30 @@ class SimpleFFS implements FFS {
 		$this->extra = $conf['FILES'];
 	}
 
+	/**
+	 * @param $group FileBasedMessageGroup
+	 */
 	public function setGroup( FileBasedMessageGroup $group ) { $this->group = $group; }
+
+	/**
+	 * @return FileBasedMessageGroup
+	 */
 	public function getGroup() { return $this->group; }
 
+	/**
+	 * @param $writePath string
+	 */
 	public function setWritePath( $writePath ) { $this->writePath = $writePath; }
+
+	/**
+	 * @return string
+	 */
 	public function getWritePath() { return $this->writePath; }
 
+	/**
+	 * @param $code string|bool
+	 * @return bool
+	 */
 	public function exists( $code = false ) {
 		if ( $code === false ) {
 			$code = $this->group->getSourceLanguage();
@@ -106,6 +129,11 @@ class SimpleFFS implements FFS {
 		return true;
 	}
 
+	/**
+	 * @param $code string
+	 * @return array|bool
+	 * @throws MWException
+	 */
 	public function read( $code ) {
 		if ( !$this->exists( $code ) ) {
 			return false;
@@ -120,6 +148,11 @@ class SimpleFFS implements FFS {
 		return $this->readFromVariable( $input );
 	}
 
+	/**
+	 * @param $data array
+	 * @return array
+	 * @throws MWException
+	 */
 	public function readFromVariable( $data ) {
 		$parts = explode( "\0\0\0\0", $data );
 
@@ -155,6 +188,9 @@ class SimpleFFS implements FFS {
 		);
 	}
 
+	/**
+	 * @param $collection MessageCollection
+	 */
 	public function write( MessageCollection $collection ) {
 		$writePath = $this->writePath;
 
@@ -186,6 +222,10 @@ class SimpleFFS implements FFS {
 		}
 	}
 
+	/**
+	 * @param $collection MessageCollection
+	 * @return
+	 */
 	public function writeIntoVariable( MessageCollection $collection ) {
 		$sourceFile = $this->group->getSourceFilePath( $collection->code );
 		$this->tryReadSource( $sourceFile, $collection );
@@ -193,6 +233,10 @@ class SimpleFFS implements FFS {
 		return $this->writeReal( $collection );
 	}
 
+	/**
+	 * @param $collection MessageCollection
+	 * @return string
+	 */
 	protected function writeReal( MessageCollection $collection ) {
 		$output = '';
 
@@ -212,6 +256,10 @@ class SimpleFFS implements FFS {
 		return $output;
 	}
 
+	/**
+	 * @param $filename string
+	 * @param $collection MessageCollection
+	 */
 	protected function tryReadSource( $filename, $collection ) {
 		$sourceText = $this->tryReadFile( $filename );
 
@@ -224,6 +272,11 @@ class SimpleFFS implements FFS {
 		}
 	}
 
+	/**
+	 * @param $filename string
+	 * @return bool|string
+	 * @throws MWException
+	 */
 	protected function tryReadFile( $filename ) {
 		if ( !$filename ) {
 			return false;
@@ -245,6 +298,11 @@ class SimpleFFS implements FFS {
 		return $data;
 	}
 
+	/**
+	 * @param $authors array
+	 * @param $code string
+	 * @return array
+	 */
 	protected function filterAuthors( array $authors, $code ) {
 		global $wgTranslateAuthorBlacklist;
 		$groupId = $this->group->getId();
@@ -274,6 +332,10 @@ class SimpleFFS implements FFS {
 		return $authors;
 	}
 
+	/**
+	 * @param $data string
+	 * @return string
+	 */
 	public static function fixNewLines( $data ) {
 		$data = str_replace( "\r\n", "\n", $data );
 		$data = str_replace( "\r", "\n", $data );
@@ -294,6 +356,9 @@ class SimpleFFS implements FFS {
 class JavaFFS extends SimpleFFS {
 	protected $keySeparator = '=';
 
+	/**
+	 * @param $group FileBasedMessageGroup
+	 */
 	public function __construct( FileBasedMessageGroup $group ) {
 		parent::__construct( $group );
 
@@ -304,12 +369,18 @@ class JavaFFS extends SimpleFFS {
 
 	// READ
 
+	/**
+	 * @param $data array
+	 * @return array
+	 * @throws MWException
+	 */
 	public function readFromVariable( $data ) {
 		$data = self::fixNewLines( $data );
 		$lines = array_map( 'ltrim', explode( "\n", $data ) );
 		$authors = $messages = array();
 		$linecontinuation = false;
 
+		$value = '';
 		foreach ( $lines as $line ) {
 			if ( $linecontinuation ) {
 				$linecontinuation = false;
@@ -364,6 +435,10 @@ class JavaFFS extends SimpleFFS {
 
 	// Write
 
+	/**
+	 * @param $collection MessageCollection
+	 * @return string
+	 */
 	protected function writeReal( MessageCollection $collection ) {
 		$header  = $this->doHeader( $collection );
 		$header .= $this->doAuthors( $collection );
@@ -397,6 +472,10 @@ class JavaFFS extends SimpleFFS {
 		}
 	}
 
+	/**
+	 * @param $collection MessageCollection
+	 * @return string
+	 */
 	protected function doHeader( MessageCollection $collection ) {
 		if ( isset( $this->extra['header'] ) ) {
 			$output = $this->extra['header'];
@@ -413,6 +492,10 @@ class JavaFFS extends SimpleFFS {
 		return $output;
 	}
 
+	/**
+	 * @param $collection MessageCollection
+	 * @return string
+	 */
 	protected function doAuthors( MessageCollection $collection ) {
 		$output = '';
 		$authors = $collection->getAuthors();
@@ -433,11 +516,18 @@ class JavaFFS extends SimpleFFS {
 abstract class JavaScriptFFS extends SimpleFFS {
 	/**
 	 * Message keys format.
+	 *
+	 * @param $string
+	 *
+	 * @return string
 	 */
 	abstract protected function transformKey( $key );
 
 	/**
 	 * Header of message file.
+	 *
+	 * @param $code string
+	 * @param $authors array
 	 */
 	abstract protected function header( $code, $authors );
 
@@ -446,6 +536,10 @@ abstract class JavaScriptFFS extends SimpleFFS {
 	 */
 	abstract protected function footer();
 
+	/**
+	 * @param $data array
+	 * @return array
+	 */
 	public function readFromVariable( $data ) {
 		/* Parse authors list */
 		$authors = preg_replace( "#/\* Translators\:\n(.*?)\n \*/(.*)#s", '$1', $data );
@@ -543,6 +637,10 @@ abstract class JavaScriptFFS extends SimpleFFS {
 		);
 	}
 
+	/**
+	 * @param $collection MessageCollection
+	 * @return string
+	 */
 	public function writeReal( MessageCollection $collection ) {
 		$header = $this->header( $collection->code, $collection->getAuthors() );
 
@@ -578,6 +676,10 @@ abstract class JavaScriptFFS extends SimpleFFS {
 		return $header . $body . $this->footer();
 	}
 
+	/**
+	 * @param $authors array
+	 * @return string
+	 */
 	protected function authorsList( $authors ) {
 		if ( count( $authors ) === 0 ) {
 			return '';
@@ -594,6 +696,10 @@ abstract class JavaScriptFFS extends SimpleFFS {
 		return substr( " * Translators:\n$authorsList", 0, -1 );
 	}
 
+	/**
+	 * @param $string string
+	 * @return string
+	 */
 	protected static function unescapeJsString( $string ) {
 		// See ECMA 262 section 7.8.4 for string literal format
 		$pairs = array(
@@ -631,10 +737,20 @@ abstract class JavaScriptFFS extends SimpleFFS {
  * @ingroup FFS
  */
 class OpenLayersFFS extends JavaScriptFFS {
+
+	/**
+	 * @param $key string
+	 * @return string
+	 */
 	protected function transformKey( $key ) {
 		return "'$key'";
 	}
 
+	/**
+	 * @param $code string
+	 * @param $authors array
+	 * @return string
+	 */
 	protected function header( $code, $authors ) {
 		$names = Language::getLanguageNames();
 		$name = $names[ $code ];
@@ -665,6 +781,9 @@ EOT;
 		/** @endcond */
 	}
 
+	/**
+	 * @return string
+	 */
 	protected function footer() {
 		return "});\n";
 	}
@@ -675,10 +794,21 @@ EOT;
  * @ingroup FFS
  */
 class ShapadoJsFFS extends JavaScriptFFS {
+
+	/**
+	 * @param $key string
+	 *
+	 * @return string
+	 */
 	protected function transformKey( $key ) {
 		return $key;
 	}
 
+	/**
+	 * @param $code string
+	 * @param $authors array
+	 * @return string
+	 */
 	protected function header( $code, $authors ) {
 		global $wgSitename;
 
@@ -700,6 +830,9 @@ EOT;
 		/** @endcond */
 	}
 
+	/**
+	 * @return string
+	 */
 	protected function footer() {
 		return "};\n\n";
 	}
@@ -714,6 +847,10 @@ EOT;
  */
 class YamlFFS extends SimpleFFS {
 
+	/**
+	 * @param $data
+	 * @return array
+	 */
 	public function readFromVariable( $data ) {
 		// Authors first.
 		$matches = array();
@@ -740,6 +877,10 @@ class YamlFFS extends SimpleFFS {
 		);
 	}
 
+	/**
+	 * @param $collection MessageCollection
+	 * @return string
+	 */
 	protected function writeReal( MessageCollection $collection ) {
 		$output  = $this->doHeader( $collection );
 		$output .= $this->doAuthors( $collection );
@@ -775,6 +916,10 @@ class YamlFFS extends SimpleFFS {
 		return $output;
 	}
 
+	/**
+	 * @param $collection MessageCollection
+	 * @return string
+	 */
 	protected function doHeader( MessageCollection $collection ) {
 		global $wgSitename;
 		global $wgTranslateYamlLibrary;
@@ -792,6 +937,10 @@ class YamlFFS extends SimpleFFS {
 		return $output;
 	}
 
+	/**
+	 * @param $collection MessageCollection
+	 * @return string
+	 */
 	protected function doAuthors( MessageCollection $collection ) {
 		$output = '';
 		$authors = $collection->getAuthors();
@@ -807,6 +956,10 @@ class YamlFFS extends SimpleFFS {
 	/**
 	 * Flattens multidimensional array by using the path to the value as key
 	 * with each individual key separated by a dot.
+	 *
+	 * @param $messages array
+	 *
+	 * @return array
 	 */
 	protected function flatten( $messages ) {
 		$flat = true;
@@ -816,7 +969,8 @@ class YamlFFS extends SimpleFFS {
 				continue;
 			}
 
-			$flat = false; break;
+			$flat = false;
+			break;
 		}
 
 		if ( $flat ) {
@@ -852,6 +1006,10 @@ class YamlFFS extends SimpleFFS {
 	/**
 	 * Performs the reverse operation of flatten. Each dot in the key starts a
 	 * new subarray in the final array.
+	 *
+	 * @param $messages array
+	 *
+	 * @return array
 	 */
 	protected function unflatten( $messages ) {
 		$array = array();
@@ -902,13 +1060,21 @@ class YamlFFS extends SimpleFFS {
 		return $array;
 	}
 
+	/**
+	 * @param $value
+	 * @return bool
+	 */
 	public function flattenPlural( $value ) {
 		return false;
 	}
 
 	/**
 	 * Override this. Return false to skip processing this value. Otherwise
-	 * return array with keys and values.
+	 *
+	 * @param $key string
+	 * @param $value string
+	 *
+	 * @return array with keys and values.
 	 */
 	public function unflattenPlural( $key, $value ) {
 		return array( $key => $value );
@@ -933,6 +1099,10 @@ class RubyYamlFFS extends YamlFFS {
 
 	/**
 	 * Flattens ruby plural arrays into special plural syntax.
+	 *
+	 * @param $messages array
+	 *
+	 * @return bool|string
 	 */
 	public function flattenPlural( $messages ) {
 
@@ -966,6 +1136,11 @@ class RubyYamlFFS extends YamlFFS {
 
 	/**
 	 * Converts the special plural syntax to array or ruby style plurals
+	 *
+	 * @param $key string
+	 * @param $message string
+	 *
+	 * @return bool|array
 	 */
 	public function unflattenPlural( $key, $message ) {
 		// Quick escape.
@@ -1053,6 +1228,9 @@ class RubyYamlFFS extends YamlFFS {
 		return $alts;
 	}
 
+	/**
+	 * @return string
+	 */
 	protected function placeholder() {
 		static $i = 0;
 
@@ -1068,6 +1246,10 @@ class PythonSingleFFS extends SimpleFFS {
 	private $fw = null;
 	static $data = null;
 
+	/**
+	 * @param $code
+	 * @return array
+	 */
 	public function read( $code ) {
 		// TODO: Improve this code to not use static variables.
 		if ( !isset( self::$data[$this->group->getId()] ) ) {
@@ -1091,6 +1273,9 @@ class PythonSingleFFS extends SimpleFFS {
 		return array( 'MESSAGES' => self::$data[$this->group->getId()][$code] );
 	}
 
+	/**
+	 * @param $collection MessageCollection
+	 */
 	public function write( MessageCollection $collection ) {
 		if ( $this->fw === null ) {
 			$sourceLanguage = $this->group->getSourceLanguage();
@@ -1124,6 +1309,10 @@ class PythonSingleFFS extends SimpleFFS {
 		fwrite( $this->fw, "\t},\n" );
 	}
 
+	/**
+	 * @param $collection MessageCollection
+	 * @return string
+	 */
 	public function writeIntoVariable( MessageCollection $collection ) {
 		return <<<PHP
 # -*- coding: utf-8 -*-
@@ -1134,6 +1323,10 @@ msg = {
 PHP;
 	}
 
+	/**
+	 * @param $collection MessageCollection
+	 * @return string
+	 */
 	protected function writeBlock( MessageCollection $collection ) {
 		$block = '';
 		$messages = array();
@@ -1160,6 +1353,10 @@ PHP;
 		return $block;
 	}
 
+	/**
+	 * @param $collection MessageCollection
+	 * @return string
+	 */
 	protected function doAuthors( MessageCollection $collection ) {
 		$output = '';
 

@@ -42,6 +42,8 @@ class SpecialMagic extends SpecialPage {
 
 	/**
 	 * @see SpecialPage::getDescription
+	 *
+	 * @return string
 	 */
 	function getDescription() {
 		return wfMsg( 'translate-magic-pagename' );

@@ -1145,7 +1145,8 @@ class TranslationHelpers {
 	protected static $serviceFailurePeriod = 900;
 
 	/**
-	 * Checks whether the given service has exceeded failure count */
+	 * Checks whether the given service has exceeded failure count
+	 */
 	public static function checkTranslationServiceFailure( $service ) {
 		global $wgMemc;
 
@@ -1197,6 +1198,9 @@ class TranslationHelpers {
 		}
 	}
 
+	/**
+	 * @param $out OutputPage
+	 */
 	public static function addModules( OutputPage $out ) {
 		$out->addModules( 'ext.translate.quickedit' );
 

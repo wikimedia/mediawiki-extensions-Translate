@@ -16,6 +16,8 @@ class RevTag {
 
 	/**
 	 * Determines the schema version.
+	 *
+	 * @return int
 	 */
 	public static function checkSchema() {
 		if ( self::$schema !== false ) {
@@ -33,7 +35,7 @@ class RevTag {
 	/**
 	 * Returns value suitable for rt_type field.
 	 * @param $tag string tag name
-	 * return int|string
+	 * @return int|string
 	 */
 	public static function getType( $tag ) {
 		if ( self::checkSchema() === 2 ) {

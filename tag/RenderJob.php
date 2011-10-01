@@ -14,6 +14,11 @@
  * @ingroup PageTranslation JobQueue
  */
 class RenderJob extends Job {
+
+	/**
+	 * @param $target Title
+	 * @return RenderJob
+	 */
 	public static function newJob( Title $target ) {
 		global $wgTranslateFuzzyBotName;
 
@@ -87,6 +92,9 @@ class RenderJob extends Job {
 		return $this->params['summary'];
 	}
 
+	/**
+	 * @param $user User
+	 */
 	public function setUser( $user ) {
 		if ( $user instanceof User ) {
 			$this->params['user'] = $user->getName();
@@ -97,6 +105,8 @@ class RenderJob extends Job {
 
 	/**
 	 * Get a user object for doing edits.
+	 *
+	 * @return User
 	 */
 	public function getUser() {
 		return User::newFromName( $this->params['user'], false );

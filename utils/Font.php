@@ -19,6 +19,8 @@ class FCFontFinder {
 	/**
 	 * Searches for suitable font in the system.
 	 * @param $code \string Language code.
+	 *
+	 * @return bool|string
 	 */
 	public static function find( $code ) {
 		if ( ini_get( 'open_basedir' ) ) {
