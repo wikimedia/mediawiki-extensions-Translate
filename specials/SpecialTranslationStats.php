@@ -926,7 +926,6 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
  */
 class TranslateRegistrationStats extends TranslationStatsBase {
 	public function preQuery( &$tables, &$fields, &$conds, &$type, &$options, $start, $end ) {
-		$db = wfGetDB( DB_SLAVE );
 		$tables = 'user';
 		$fields = 'user_registration';
 		$conds = self::makeTimeCondition( 'user_registration', $start, $end );

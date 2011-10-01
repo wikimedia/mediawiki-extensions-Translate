@@ -135,6 +135,12 @@ abstract class MessageGroupBase implements MessageGroup {
 
 	protected function __construct() { }
 
+	/**
+	 * @static
+	 * @param $conf
+	 *
+	 * @return MessageGroup
+	 */
 	public static function factory( $conf ) {
 		$obj = new $conf['BASIC']['class']();
 		$obj->conf =  $conf;

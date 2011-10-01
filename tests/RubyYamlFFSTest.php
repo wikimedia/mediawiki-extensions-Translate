@@ -1,6 +1,12 @@
 <?php
 
 class RubyYamlFFSTest extends MediaWikiTestCase {
+
+	/**
+	 * @var MessageGroup
+	 */
+	protected $group;
+
 	protected $groupConfiguration = array(
 		'BASIC' => array(
 			'class' => 'FileBasedMessageGroup',

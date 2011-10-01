@@ -1,6 +1,12 @@
 <?php
 
 class MessageGroupBaseTest extends MediaWikiTestCase {
+
+	/**
+	 * @var MessageGroup
+	 */
+	protected $group;
+
 	protected $groupConfiguration = array(
 		'BASIC' => array(
 			'class' => 'FileBasedMessageGroup',
@@ -14,7 +20,6 @@ class MessageGroupBaseTest extends MediaWikiTestCase {
 	protected function setUp() {
 		parent::setUp();
 		$this->group = MessageGroupBase::factory( $this->groupConfiguration );
-
 	}
 
 	protected function tearDown() {
