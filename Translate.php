@@ -131,6 +131,9 @@ $wgAvailableRights[] = 'translate';
 $wgAvailableRights[] = 'translate-import';
 $wgAvailableRights[] = 'translate-manage';
 
+// New jobs
+$wgJobClasses['MessageIndexRebuildJob'] = 'MessageIndexRebuildJob';
+
 $resourcePaths = array(
 	'localBasePath' => dirname( __FILE__ ),
 	'remoteExtPath' => 'Translate'
@@ -483,6 +486,14 @@ $wgTranslateExtensionDirectory = "$IP/extensions/";
  * Set location of cache files. Defaults to $wgCacheDirectory.
  */
 $wgTranslateCacheDirectory = false;
+
+/**
+ * Configures where message index is stored.
+ * Available classes are CachedMessageIndex and FileCachedMessageIndex.
+ * FileCachedMessageIndex needs $wgCacheDirectory to be functional.
+ */
+$wgTranslateMessageIndex = array( 'CachedMessageIndex' );
+# $wgTranslateMessageIndex = array( 'FileCachedMessageIndex' );
 
 # ==== PHPlot ====
 

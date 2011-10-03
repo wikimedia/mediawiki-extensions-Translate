@@ -30,6 +30,7 @@ And for the code at:
 
 == Change log ==
 * 2011-10-03
+- MessageIndex can now be stored in object cache (default) or in a file.
 - Fixed an error that sometimes prevented translating messages that had
   been renamed
 * 2011-10-01

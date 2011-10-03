@@ -297,8 +297,7 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 		}
 
 		MessageGroups::clearCache();
-		// TODO: defer or make faster
-		//MessageIndexRebuilder::execute();
+		MessageIndexReduildJob::newJob()->insert();
 
 		global $wgOut;
 		$wgOut->addWikiMsg( 'pt-deletepage-started' );

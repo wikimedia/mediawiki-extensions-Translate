@@ -237,14 +237,11 @@ class TranslateUtils {
 	 * @return \list{String} Possibly empty list of group ids.
 	 */
 	public static function messageKeyToGroups( $namespace, $key ) {
-		if ( self::$mi === null ) {
-			self::messageIndex();
-		}
-
+		$mi = MessageIndex::singleton()->retrieve();
 		$normkey = self::normaliseKey( $namespace, $key );
 
-		if ( isset( self::$mi[$normkey] ) ) {
-			return (array) self::$mi[$normkey];
+		if ( isset( $mi[$normkey] ) ) {
+			return (array) $mi[$normkey];
 		} else {
 			return array();
 		}
@@ -258,30 +255,6 @@ class TranslateUtils {
 	 */
 	public static function normaliseKey( $namespace, $key ) {
 		return strtr( strtolower( "$namespace:$key" ), " ", "_"  );
-	}
-
-
-	/**
-	 * Opens and returns the message index.
-	 * @return \array or \type{false}
-	 */
-	public static function messageIndex() {
-		wfDebug( __METHOD__ . ": loading from file...\n" );
-		$filename = self::cacheFile( 'translate_messageindex.ser' );
-
-		if ( !file_exists( $filename ) ) {
-			MessageIndexRebuilder::execute();
-		}
-
-		if ( file_exists( $filename ) ) {
-			$keyToGroup = unserialize( file_get_contents( $filename ) );
-		} else {
-			throw new MWException( 'Unable to get message index' );
-		}
-
-		self::$mi = $keyToGroup;
-
-		return $keyToGroup;
 	}
 
 	/**

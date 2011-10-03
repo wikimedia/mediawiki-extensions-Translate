@@ -1,31 +1,47 @@
 <?php
 /**
- * Contains classes for rebuilding the message index.
+ * Contains classes for handling the message index.
  *
  * @file
  * @author Niklas Laxstrom
- * @copyright Copyright © 2008-2010, Niklas Laxström
+ * @copyright Copyright © 2008-2011, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
 /**
  * Creates a database of keys in all groups, so that namespace and key can be
- * used to get the group they belong to. This is used as a fallback when
+ * used to get the groups they belong to. This is used as a fallback when
  * loadgroup parameter is not provided in the request, which happens if someone
- * reaches a messages from somewhere else than Special:Translate.
+ * reaches a messages from somewhere else than Special:Translate. Also used
+ * by Special:TranslationStats and alike which need to map lots of titles
+ * to message groups.
  */
-class MessageIndexRebuilder {
-	public static function execute() {
+abstract class MessageIndex {
+	/// @var MessageIndex
+	protected static $instance;
+
+	/// @var array
+	protected $index;
+
+	public static function singleton() {
+		if ( self::$instance === null ) {
+			global $wgTranslateMessageIndex;
+			$params = $wgTranslateMessageIndex;
+			$class = array_shift( $params );
+			self::$instance = new $class( $params );
+		}
+		return self::$instance;
+	}
+
+	/** @return array */
+	abstract public function retrieve();
+	abstract protected function store( array $array );
+
+	public function rebuild() {
 		$groups = MessageGroups::singleton()->getGroups();
 
-		$filename = TranslateUtils::cacheFile( 'translate_messageindex.ser' );
-		if ( file_exists( $filename ) ) {
-			$old = unserialize( file_get_contents( $filename ) );
-		} else {
-			$old = array();
-		}
-
-		$hugearray = array();
+		$old = $this->retrieve();
+		$new = array();
 		$postponed = array();
 
 		STDOUT( "Working with ", 'main' );
@@ -41,28 +57,34 @@ class MessageIndexRebuilder {
 				continue;
 			}
 
-			self::checkAndAdd( $hugearray, $g );
+			$this->checkAndAdd( $new, $g );
 		}
 
 		foreach ( $postponed as $g ) {
-			self::checkAndAdd( $hugearray, $g, true );
+			$this->checkAndAdd( $new, $g, true );
 		}
 
-		file_put_contents( $filename, serialize( $hugearray ) );
-
+		$this->store( $new );
+		$this->clearMessageGroupStats( $old, $new );
+	}
+	
+	/**
+	 * Purge message group stats when set of keys have changed.
+	 */
+	protected function clearMessageGroupStats( array $old, array $new ) {
 		$changes = array();
-		foreach ( array_diff_assoc( $hugearray, $old ) as $groups ) {
+		foreach ( array_diff_assoc( $new, $old ) as $groups ) {
 			foreach ( (array) $groups as $group ) $changes[$group] = true;
 		}
 
-		foreach ( array_diff_assoc( $old, $hugearray ) as $groups ) {
+		foreach ( array_diff_assoc( $old, $new ) as $groups ) {
 			foreach ( (array) $groups as $group ) $changes[$group] = true;
 		}
 
 		MessageGroupStats::clearGroup( array_keys( $changes ) );
 	}
 
-	protected static function checkAndAdd( &$hugearray, $g, $ignore = false ) {
+	protected function checkAndAdd( &$hugearray, $g, $ignore = false ) {
 		if ( $g instanceof MessageGroupBase ) {
 			$cache = new MessageGroupCache( $g );
 
@@ -115,4 +137,64 @@ class MessageIndexRebuilder {
 		}
 		unset( $id ); // Disconnect the previous references to this $id
 	}
+}
+
+/**
+ * Storage on serialized file.
+ */
+class FileCachedMessageIndex extends MessageIndex {
+	protected $filename = 'translate_messageindex.ser';
+
+	/** @return array */
+	public function retrieve() {
+		if ( $this->index !== null ) {
+			return $this->index;
+		}
+
+		$file = TranslateUtils::cacheFile( $this->filename );
+		if ( file_exists( $file ) ) {
+			return $this->index = unserialize( file_get_contents( $file ) );
+		} else {
+			return $this->index = array();
+		}
+	}
+
+	protected function store( array $array ) {
+		$file = TranslateUtils::cacheFile( $this->filename );
+		file_put_contents( $file, serialize( $array ) );
+	}
+
+}
+
+/**
+ * Storage on ObjectCache.
+ */
+class CachedMessageIndex extends MessageIndex {
+	protected $key = 'translate-messageindex';
+	protected $cache;
+
+	protected function __construct( array $params ) {
+		$this->cache = wfGetCache( CACHE_ANYTHING );
+	}
+
+	/** @return array */
+	public function retrieve() {
+		if ( $this->index !== null ) {
+			return $this->index;
+		}
+
+		$key = wfMemckey( $this->key );
+		$data = $this->cache->get( $key );
+		if ( is_array( $data ) ) {
+			return $this->index = $data;
+		} else {
+			return $this->index = array();
+		}
+	}
+
+	protected function store( array $array ) {
+		$key = wfMemckey( $this->key );
+		$data = $this->cache->set( $key, $array );
+	}
+
 }

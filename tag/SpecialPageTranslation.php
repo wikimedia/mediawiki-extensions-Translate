@@ -540,10 +540,8 @@ class SpecialPageTranslation extends SpecialPage {
 		$this->setupRenderJobs( $page );
 
 		// Re-generate caches
-		$page->getTranslationPercentages( /*re-generate*/ true );
-		MessageGroupStats::clearGroup( $page->getMessageGroupId() );
-		MessageIndexRebuilder::execute();
 		MessageGroups::clearCache();
+		MessageIndexReduildJob::newJob()->insert();
 		return false;
 	}
 
