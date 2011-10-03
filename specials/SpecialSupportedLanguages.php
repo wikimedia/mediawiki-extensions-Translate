@@ -393,10 +393,14 @@ class SpecialSupportedLanguages extends SpecialPage {
 	}
 
 	protected function getColorLegend() {
+		global $wgLang;
+
 		$legend = '';
 		$period = $this->period;
+
 		for ( $i = 0; $i <= $period; $i+=30 ) {
-			$legend .= '<span style="background-color:#' . $this->getActivityColour( $period - $i, $period ) . "\"> $i</span>";
+			$iFormatted = $wgLang->formatNum( $i );
+			$legend .= '<span style="background-color:#' . $this->getActivityColour( $period - $i, $period ) . "\"> $iFormatted</span>";
 		}
 		return $legend;
 	}
