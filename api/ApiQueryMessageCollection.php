@@ -55,7 +55,6 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 
 		$messages->slice( $params['offset'], $params['limit'] + 1 );
 
-
 		$messages->loadTranslations();
 
 		$result = $this->getResult();
@@ -89,6 +88,12 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 
 	}
 
+	/**
+	 * @param $result ApiResult
+	 * @param $props array
+	 * @param $message ThinMessage
+	 * @return array
+	 */
 	public function extractMessageData( $result, $props, $message ) {
 		$data['key'] = $message->key();
 		if ( isset( $props['definition'] ) ) {
@@ -104,6 +109,9 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		return $data;
 	}
 
+	/**
+	 * @return array
+	 */
 	public function getFilters() {
 		$basic = MessageCollection::getAvailableFilters();
 		$full = array();
