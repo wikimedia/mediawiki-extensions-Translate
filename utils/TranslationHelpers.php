@@ -888,12 +888,13 @@ class TranslationHelpers {
 
 		$latestRevision = $definitionTitle->getLatestRevID();
 
-		$translationRevision =  $db->selectField( 'revtag', 'rt_value', $conds, __METHOD__, $options );
+		$translationRevision = $db->selectField( 'revtag', 'rt_value', $conds, __METHOD__, $options );
 		if ( $translationRevision === false ) {
 			return null;
 		}
 
-		$oldtext = Revision::newFromTitle( $definitionTitle, $translationRevision )->getText();
+		// Using newFromId instead of newFromTitle, because the page might have been renamed
+		$oldtext = Revision::newFromId( $translationRevision )->getText();
 		$newtext = Revision::newFromTitle( $definitionTitle, $latestRevision )->getText();
 
 		if ( $oldtext === $newtext ) {

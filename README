@@ -29,6 +29,9 @@ And for the code at:
  http://translatewiki.net/docs/Translate/html/
 
 == Change log ==
+* 2011-10-03
+- Fixed an error that sometimes prevented translating messages that had
+  been renamed
 * 2011-10-01
 - Changed index on translate_sections database table
 - Fixed escaping in PythonSingleFFS parser
